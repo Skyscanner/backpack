@@ -20,13 +20,26 @@
 
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Image } from 'react-native';
+import { Image, Modal, StyleSheet, View } from 'react-native';
 import { storiesOf } from '@storybook/react-native';
 import { action } from '@storybook/addon-actions';
+import { spacingBase } from 'bpk-tokens/tokens/base.react.native';
+import CenterDecorator from '../../storybook/CenterDecorator';
 
 import { BpkDialingCodeList } from './index';
+import { type Id, type Code } from './src/common-types';
 import BpkDialingCodeListItem from './src/BpkDialingCodeListItem';
 import BpkPhoneNumberInput, { type Props } from './src/BpkPhoneNumberInput';
+
+const styles = StyleSheet.create({
+  fullOuter: {
+    flex: 1,
+    width: '100%',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    paddingHorizontal: spacingBase,
+  },
+});
 
 const { value: _ignored, ...propTypes } = BpkPhoneNumberInput.propTypes;
 class StatefulBpkPhoneNumberInput extends Component<
@@ -84,7 +97,7 @@ const codes = [
       'International Telecommunications Public Correspondence Service trial (IPTCS)',
   },
   { id: 'IT', dialingCode: '+39', name: 'Italy' },
-  { id: 'JP81', dialingCode: '+81', name: 'Japan' },
+  { id: 'JP', dialingCode: '+81', name: 'Japan' },
   {
     id: 'VC',
     dialingCode: '+1784',
@@ -97,6 +110,8 @@ const codes = [
 ];
 
 const flags = {
+  AU:
+    'https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Flag_of_Australia_%28converted%29.svg/1280px-Flag_of_Australia_%28converted%29.svg.png',
   CA:
     'https://upload.wikimedia.org/wikipedia/en/thumb/c/cf/Flag_of_Canada.svg/1000px-Flag_of_Canada.svg.png',
   EG:
@@ -109,25 +124,34 @@ const flags = {
     'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Flag_of_the_Democratic_Republic_of_the_Congo.svg/800px-Flag_of_the_Democratic_Republic_of_the_Congo.svg.png',
   IS:
     'https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Flag_of_Iceland.svg/800px-Flag_of_Iceland.svg.png',
+  IT:
+    'https://upload.wikimedia.org/wikipedia/en/thumb/0/03/Flag_of_Italy.svg/800px-Flag_of_Italy.svg.png',
   AD:
     'https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Flag_of_Andorra.svg/800px-Flag_of_Andorra.svg.png',
+  JP:
+    'https://upload.wikimedia.org/wikipedia/en/thumb/9/9e/Flag_of_Japan.svg/900px-Flag_of_Japan.svg.png',
+  SE:
+    'https://upload.wikimedia.org/wikipedia/en/thumb/4/4c/Flag_of_Sweden.svg/800px-Flag_of_Sweden.svg.png',
+  GB:
+    'https://upload.wikimedia.org/wikipedia/en/thumb/a/ae/Flag_of_the_United_Kingdom.svg/800px-Flag_of_the_United_Kingdom.svg.png',
 };
 
 // eslint-disable-next-line react/no-multi-comp
 class StatefulBpkDialingCodeList extends React.Component<
   {},
   {
-    selectedId: ?string,
+    selectedId: ?Id,
   },
 > {
   constructor() {
     super();
     this.state = { selectedId: 'AU' };
   }
+
   render() {
     return (
       <BpkDialingCodeList
-        codes={codes}
+        dialingCodes={codes}
         selectedId={this.state.selectedId}
         onItemPress={item => {
           action(`${item.name} selected`);
@@ -141,11 +165,91 @@ class StatefulBpkDialingCodeList extends React.Component<
   }
 }
 
-storiesOf('BpkDialingCodeList', module).add('Example List', () => (
-  <StatefulBpkDialingCodeList />
-));
+// eslint-disable-next-line react/no-multi-comp
+class FullyIntegrated extends React.Component<
+  { initiallySelectedId: Id, codes: Array<Code> },
+  { pickerOpen: boolean, selectedId: ?Id, phoneNumber: string },
+> {
+  constructor(props) {
+    super(props);
+    this.state = {
+      selectedId: props.initiallySelectedId,
+      pickerOpen: false,
+      phoneNumber: '',
+    };
+  }
 
-storiesOf('BpkDialingCodeListItem', module)
+  onPhoneNumberChange = (value: string) => {
+    this.setState(() => ({ phoneNumber: value }));
+  };
+
+  onItemPicked = (item: Code) => {
+    this.setState(() => ({
+      selectedId: item.id,
+      pickerOpen: false,
+    }));
+  };
+
+  openPicker = () => {
+    this.setState(() => ({
+      pickerOpen: true,
+    }));
+  };
+
+  closePicker = () => {
+    this.setState(() => ({
+      pickerOpen: false,
+    }));
+  };
+
+  renderFlag = item =>
+    flags[item.id] ? <Image source={{ uri: flags[item.id] }} /> : null;
+
+  render() {
+    return (
+      <View style={styles.fullOuter}>
+        <Modal
+          visible={this.state.pickerOpen}
+          animationType="slide"
+          onRequestClose={this.closePicker}
+        >
+          <BpkDialingCodeList
+            dialingCodes={this.props.codes}
+            onItemPress={this.onItemPicked}
+            renderFlag={this.renderFlag}
+            selectedId={this.state.selectedId}
+          />
+        </Modal>
+        <BpkPhoneNumberInput
+          label="Phone number"
+          value={this.state.phoneNumber}
+          onDialingCodePress={this.openPicker}
+          // $FlowFixMe
+          dialingCode={this.props.codes.find(
+            code => code.id === this.state.selectedId,
+          )}
+          renderFlag={this.renderFlag}
+          onChangeText={this.onPhoneNumberChange}
+        />
+      </View>
+    );
+  }
+}
+
+storiesOf('react-native-bpk-component-phone-input/Integrated', module).add(
+  'Full component example',
+  () => <FullyIntegrated initiallySelectedId="CA" codes={codes} />,
+);
+
+storiesOf(
+  'react-native-bpk-component-phone-input/BpkDialingCodeList',
+  module,
+).add('docs:default', () => <StatefulBpkDialingCodeList />);
+
+storiesOf(
+  'react-native-bpk-component-phone-input/BpkDialingCodeListItem',
+  module,
+)
   .add('Standard', () => (
     <BpkDialingCodeListItem
       id="44"
@@ -197,14 +301,16 @@ storiesOf('BpkDialingCodeListItem', module)
     />
   ));
 
-storiesOf('BpkPhoneNumberInput', module)
+storiesOf('react-native-bpk-component-phone-input/BpkPhoneNumberInput', module)
+  .addDecorator(CenterDecorator)
   .add('docs:default', () => (
     <StatefulBpkPhoneNumberInput
+      placeholder="4XX XXX XXX"
       label="Phone number"
       initialValue=""
       keyboardType="phone-pad"
-      dialingCodeData={{ dialingCode: '+44', id: 'uk', name: 'United Kingdom' }}
-      renderFlag={() => <Image source={{ uri: flags.CA }} />}
+      dialingCode={{ dialingCode: '+44', id: 'uk', name: 'United Kingdom' }}
+      renderFlag={() => <Image source={{ uri: flags.AU }} />}
       onDialingCodePress={action('Dialing code pressed')}
     />
   ))
@@ -213,8 +319,8 @@ storiesOf('BpkPhoneNumberInput', module)
       label="Phone number"
       initialValue=""
       keyboardType="phone-pad"
-      dialingCodeData={{ dialingCode: '+44', id: 'uk', name: 'United Kingdom' }}
-      renderFlag={() => <Image source={{ uri: flags.CA }} />}
+      dialingCode={{ dialingCode: '+44', id: 'uk', name: 'United Kingdom' }}
+      renderFlag={() => <Image source={{ uri: flags.AU }} />}
       editable={false}
       onDialingCodePress={action('Dialing code pressed')}
     />

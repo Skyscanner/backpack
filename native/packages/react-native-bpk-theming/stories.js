@@ -31,6 +31,7 @@ import {
   colorYellow400,
   colorYellow500,
 } from 'bpk-tokens/tokens/base.react.native';
+import CenterDecorator from '../../storybook/CenterDecorator';
 
 import BpkThemeProvider from './index';
 
@@ -105,8 +106,10 @@ class BpkThemePicker extends Component {
   }
 }
 
-storiesOf('BpkTheming', module).add('Default', () => (
-  <View>
-    <BpkThemePicker />
-  </View>
-));
+storiesOf('react-native-bpk-theming', module)
+  .addDecorator(CenterDecorator)
+  .add('Default', () => (
+    <View>
+      <BpkThemePicker />
+    </View>
+  ));

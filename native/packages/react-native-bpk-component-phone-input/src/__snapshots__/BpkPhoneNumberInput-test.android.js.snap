@@ -48,7 +48,7 @@ exports[`Android BpkPhoneNumberInput should render correctly 1`] = `
       hitSlop={undefined}
       nativeBackgroundAndroid={
         Object {
-          "attribute": "selectableItemBackgroundBorderless",
+          "attribute": "selectableItemBackground",
           "type": "ThemeAttrAndroid",
         }
       }
@@ -151,6 +151,7 @@ exports[`Android BpkPhoneNumberInput should render correctly 1`] = `
         allowFontScaling={true}
         clearButtonMode="while-editing"
         editable={true}
+        keyboardType="phone-pad"
         onBlur={[Function]}
         onFocus={[Function]}
         placeholder={null}
@@ -225,7 +226,7 @@ exports[`Android BpkPhoneNumberInput should render correctly with \`editable\` f
       hitSlop={undefined}
       nativeBackgroundAndroid={
         Object {
-          "attribute": "selectableItemBackgroundBorderless",
+          "attribute": "selectableItemBackground",
           "type": "ThemeAttrAndroid",
         }
       }
@@ -335,6 +336,7 @@ exports[`Android BpkPhoneNumberInput should render correctly with \`editable\` f
         allowFontScaling={true}
         clearButtonMode="while-editing"
         editable={false}
+        keyboardType="phone-pad"
         onBlur={[Function]}
         onFocus={[Function]}
         placeholder={null}

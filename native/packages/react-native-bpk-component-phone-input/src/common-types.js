@@ -41,7 +41,7 @@ export type ListItemProps = {
 export type RenderFlag = Code => ?Flag;
 
 export type ListCommonProps = {
-  codes: Array<Code>,
+  dialingCodes: Array<Code>,
   renderFlag: RenderFlag,
   onItemPress: ListItemProps => void,
   selectedId: ?string,
@@ -61,7 +61,8 @@ export const LIST_ITEM_PROP_TYPES = {
 };
 
 export const LIST_COMMON_PROP_TYPES = {
-  codes: PropTypes.arrayOf(PropTypes.shape(...CODE_PROP_TYPES)).isRequired,
+  dialingCodes: PropTypes.arrayOf(PropTypes.shape(...CODE_PROP_TYPES))
+    .isRequired,
   onItemPress: PropTypes.func.isRequired,
   renderFlag: PropTypes.func.isRequired,
   selectedId: PropTypes.string,

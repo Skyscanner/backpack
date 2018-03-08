@@ -8,10 +8,12 @@ import {
 } from 'bpk-tokens/tokens/base.react.native';
 import { View, Platform } from 'react-native';
 import { storiesOf } from '@storybook/react-native';
+import CenterDecorator from '../../storybook/CenterDecorator';
 
 import BpkText from './index';
 
-storiesOf('BpkText', module)
+storiesOf('react-native-bpk-component-text', module)
+  .addDecorator(CenterDecorator)
   .add('docs:text-styles', () => (
     <View>
       <BpkText textStyle="xxl">Flights to Edinburgh</BpkText>

@@ -27,6 +27,7 @@ import { spacingBase } from 'bpk-tokens/tokens/base.react.native';
 import BpkHorizontalNav, { BpkHorizontalNavItem } from './index';
 import { StorySubheading } from '../../storybook/TextStyles';
 import themeAttributes from '../../storybook/themeAttributes';
+import CenterDecorator from '../../storybook/CenterDecorator';
 
 const styles = StyleSheet.create({
   bottomMargin: {
@@ -96,7 +97,8 @@ StoryNav.defaultProps = {
   items: 2,
 };
 
-storiesOf('BpkHorizontalNav', module)
+storiesOf('react-native-bpk-component-horizontal-nav', module)
+  .addDecorator(CenterDecorator)
   .add('docs:default', () => (
     <View style={styles.bottomMargin}>
       <BpkHorizontalNav selectedId="1">

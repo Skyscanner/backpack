@@ -48,7 +48,7 @@ const commonTests = () => {
       const tree = renderer
         .create(
           <BpkDialingCodeList
-            codes={CODES}
+            dialingCodes={CODES}
             onItemPress={onPressFn}
             renderFlag={() => <Image />}
           />,
@@ -61,7 +61,7 @@ const commonTests = () => {
       const tree = renderer
         .create(
           <BpkDialingCodeList
-            codes={CODES}
+            dialingCodes={CODES}
             onItemPress={onPressFn}
             selectedId="0"
             renderFlag={() => <Image />}

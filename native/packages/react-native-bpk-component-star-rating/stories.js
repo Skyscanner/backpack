@@ -21,6 +21,7 @@ import { View, StyleSheet, Text } from 'react-native';
 import { storiesOf } from '@storybook/react-native';
 import { spacingBase } from 'bpk-tokens/tokens/base.react.native';
 import BpkStarRating, { BpkStar, STAR_TYPES } from './index';
+import CenterDecorator from '../../storybook/CenterDecorator';
 
 const StarRating = props => (
   <BpkStarRating ratingLabel={(r, m) => `${r} out of ${m} stars`} {...props} />
@@ -30,7 +31,8 @@ const styles = StyleSheet.create({
     padding: spacingBase,
   },
 });
-storiesOf('BpkStarRating', module)
+storiesOf('react-native-bpk-component-star-rating/BpkStarRating', module)
+  .addDecorator(CenterDecorator)
   .add('docs:default', () => (
     <View>
       <View style={styles.container}>
@@ -84,7 +86,8 @@ storiesOf('BpkStarRating', module)
     </View>
   ));
 
-storiesOf('BpkStar', module)
+storiesOf('react-native-bpk-component-star-rating/BpkStar', module)
+  .addDecorator(CenterDecorator)
   .add('Full', () => (
     <View style={styles.container}>
       <Text>Full Star</Text>

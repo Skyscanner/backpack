@@ -15,21 +15,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import React from 'react';
-import { I18nManager, AppRegistry, StyleSheet, View } from 'react-native';
+import { I18nManager, AppRegistry } from 'react-native';
 import RNRestart from 'react-native-restart';
 import addon from '@storybook/addons';
-import {
-  getStorybookUI,
-  configure,
-  addDecorator,
-} from '@storybook/react-native';
+import { getStorybookUI, configure } from '@storybook/react-native';
 import { RTL_EVENT, CHANNEL_POLL_INTERVAL } from './constants';
-import {
-  spacingBase,
-  spacingLg,
-  spacingXxl,
-} from './../../packages/bpk-tokens/tokens/base.react.native';
 
 const toggleRTL = rtlEnabled => {
   I18nManager.forceRTL(!rtlEnabled);
@@ -51,26 +41,6 @@ const onChannelAvailable = (...fns) => {
 function enableRtlFromUi(channel) {
   channel.on(RTL_EVENT, toggleRTL);
 }
-const styles = StyleSheet.create({
-  centered: {
-    flex: 1,
-    flexDirection: 'column',
-    justifyContent: 'center',
-    padding: spacingBase,
-    width: '100%',
-    marginTop: spacingLg,
-  },
-  rtlButton: {
-    justifyContent: 'flex-end',
-    marginVertical: spacingBase,
-    width: spacingXxl * 3,
-  },
-});
-
-const CenterDecorator = getStory => (
-  <View style={styles.centered}>{getStory()}</View>
-);
-addDecorator(CenterDecorator);
 
 /* eslint-disable global-require */
 configure(() => {

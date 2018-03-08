@@ -71,6 +71,11 @@ const TouchablePlatformComponent = Platform.select({
 
 const Touchable = ({ editable, style, children, onPress }: TouchableProps) => {
   const accessibilityTraits = ['button'];
+  const platformProps = {};
+
+  if (Platform.OS === 'android') {
+    platformProps.borderlessBackground = false;
+  }
 
   if (!editable) {
     accessibilityTraits.push('disabled');
@@ -83,6 +88,7 @@ const Touchable = ({ editable, style, children, onPress }: TouchableProps) => {
       onPress={onPress}
       accessibilityComponentType="button"
       accessibilityTraits={accessibilityTraits}
+      {...platformProps}
     >
       {children}
     </TouchablePlatformComponent>

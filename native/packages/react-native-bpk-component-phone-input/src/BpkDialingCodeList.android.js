@@ -42,13 +42,13 @@ export type Props = {
 };
 
 const BpkDialingCodeList = ({
-  codes,
+  dialingCodes,
   onItemPress,
   renderFlag,
   selectedId,
 }: Props) => (
   <FlatList
-    data={codes}
+    data={dialingCodes}
     renderItem={({ item }) => (
       <BpkDialingCodeListItem
         {...item}

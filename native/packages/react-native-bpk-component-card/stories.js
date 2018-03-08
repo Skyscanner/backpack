@@ -22,6 +22,7 @@ import BpkText from 'react-native-bpk-component-text';
 import { storiesOf, action } from '@storybook/react-native';
 
 import BpkCard, { withDivider } from './index';
+import CenterDecorator from '../../storybook/CenterDecorator';
 
 const BpkCardWithDivider = withDivider(BpkCard);
 
@@ -56,7 +57,8 @@ const styles = StyleSheet.create({
   },
 });
 
-storiesOf('BpkCard', module)
+storiesOf('react-native-bpk-component-card', module)
+  .addDecorator(CenterDecorator)
   .add('docs:default', () => <BpkCard onPress={onPress}>{content}</BpkCard>)
   .add('docs:without-padding', () => (
     <BpkCard onPress={onPress} padded={false}>

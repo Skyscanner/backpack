@@ -20,6 +20,7 @@ import React from 'react';
 import { View, StyleSheet } from 'react-native';
 import BpkText from 'react-native-bpk-component-text';
 import { storiesOf, action } from '@storybook/react-native';
+import CenterDecorator from '../../storybook/CenterDecorator';
 
 import BpkTouchableNativeFeedback from './index';
 
@@ -43,7 +44,8 @@ const viewContent = <View style={styles.view}>{textContent}</View>;
 
 const onPress = action('Touchable native feedback press');
 
-storiesOf('BpkTouchableNativeFeedback', module)
+storiesOf('react-native-bpk-component-touchable-native-feedback', module)
+  .addDecorator(CenterDecorator)
   .add('docs:text-content', () => (
     <BpkTouchableNativeFeedback
       onPress={onPress}

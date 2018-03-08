@@ -28,7 +28,7 @@ import BpkDialingCodeAccessoryView from './BpkDialingCodeAccessoryView';
 
 export type Props = {
   ...$Exact<$Diff<BpkTextInputProps, { accessoryView: ?Node }>>,
-  dialingCodeData: Code,
+  dialingCode: Code,
   renderFlag: RenderFlag,
   onDialingCodePress: () => mixed,
 };
@@ -36,23 +36,24 @@ export type Props = {
 const BpkPhoneNumberInput = (props: Props) => {
   const {
     renderFlag,
-    dialingCodeData,
+    dialingCode,
     editable,
     onDialingCodePress,
     ...rest
   } = props;
-  const flag = renderFlag(dialingCodeData);
+  const flag = renderFlag(dialingCode);
 
   return (
     <BpkTextInput
       editable={editable}
+      keyboardType="phone-pad"
       {...rest}
       accessoryView={
         <BpkDialingCodeAccessoryView
           onPress={onDialingCodePress}
           editable={editable}
           flag={flag}
-          {...dialingCodeData}
+          {...dialingCode}
         />
       }
     />
@@ -70,7 +71,7 @@ const {
 
 BpkPhoneNumberInput.propTypes = {
   ...textInputPropTypes,
-  dialingCodeData: PropTypes.shape(...CODE_PROP_TYPES).isRequired,
+  dialingCode: PropTypes.shape(...CODE_PROP_TYPES).isRequired,
   renderFlag: PropTypes.func.isRequired,
   onDialingCodePress: PropTypes.func.isRequired,
 };

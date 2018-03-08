@@ -31,6 +31,7 @@ import {
 
 import BpkIcon, { icons } from './index';
 import { StorySubheading } from '../../storybook/TextStyles';
+import CenterDecorator from '../../storybook/CenterDecorator';
 
 const styles = StyleSheet.create({
   container: {
@@ -99,7 +100,8 @@ const getColouredIcons = () => (
   </View>
 );
 
-storiesOf('BpkIcon', module)
+storiesOf('react-native-bpk-component-icon', module)
+  .addDecorator(CenterDecorator)
   .add('docs:icons', () => (
     <View style={styles.container}>
       {getSmallIcons()}

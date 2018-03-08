@@ -28,6 +28,7 @@ import { spacingBase } from 'bpk-tokens/tokens/base.react.native';
 import BpkButtonLink from './src/BpkButtonLink';
 import { StorySubheading } from '../../storybook/TextStyles';
 import themeAttributes from '../../storybook/themeAttributes';
+import CenterDecorator from '../../storybook/CenterDecorator';
 
 const styles = StyleSheet.create({
   buttonStory: {
@@ -113,6 +114,7 @@ const allThemedButtons = (
   </BpkThemeProvider>
 );
 
-storiesOf('BpkButtonLink', module)
+storiesOf('react-native-bpk-component-button-link', module)
+  .addDecorator(CenterDecorator)
   .add('docs:default', () => createButtonStory())
   .add('docs:withTheme', () => allThemedButtons);
