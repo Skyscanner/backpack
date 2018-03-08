@@ -119,18 +119,18 @@ const ALERT_TYPE_STYLES = {
 };
 
 const DismissableButton = ({ dismissButtonLabel, onDismiss }) => (
-  <View style={styles.dismissableContainer}>
-    <View style={styles.dismissButtonContainerRadius}>
-      <BpkTouchableNativeFeedback
-        accessibilityComponentType="button"
-        accessibilityLabel={dismissButtonLabel}
-        onPress={onDismiss}
-      >
-        <BpkText textStyle="sm" emphasize style={styles.dismissLabel}>
-          {dismissButtonLabel.toUpperCase()}
-        </BpkText>
-      </BpkTouchableNativeFeedback>
-    </View>
+  <View
+    style={[styles.dismissableContainer, styles.dismissButtonContainerRadius]}
+  >
+    <BpkTouchableNativeFeedback
+      accessibilityComponentType="button"
+      accessibilityLabel={dismissButtonLabel}
+      onPress={onDismiss}
+    >
+      <BpkText textStyle="sm" emphasize style={styles.dismissLabel}>
+        {dismissButtonLabel.toUpperCase()}
+      </BpkText>
+    </BpkTouchableNativeFeedback>
   </View>
 );
 const ExpandableContent = ({ expanded, children }) => (

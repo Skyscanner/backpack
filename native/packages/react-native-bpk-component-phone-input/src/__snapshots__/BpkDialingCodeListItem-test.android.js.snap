@@ -13,7 +13,7 @@ exports[`Android BpkDialingCodeListItem should render correctly 1`] = `
   hitSlop={undefined}
   nativeBackgroundAndroid={
     Object {
-      "attribute": "selectableItemBackgroundBorderless",
+      "attribute": "selectableItemBackground",
       "type": "ThemeAttrAndroid",
     }
   }
@@ -130,7 +130,7 @@ exports[`Android BpkDialingCodeListItem should support the "flagImage" property 
   hitSlop={undefined}
   nativeBackgroundAndroid={
     Object {
-      "attribute": "selectableItemBackgroundBorderless",
+      "attribute": "selectableItemBackground",
       "type": "ThemeAttrAndroid",
     }
   }
@@ -248,7 +248,7 @@ exports[`Android BpkDialingCodeListItem should support the "selected" property 1
   hitSlop={undefined}
   nativeBackgroundAndroid={
     Object {
-      "attribute": "selectableItemBackgroundBorderless",
+      "attribute": "selectableItemBackground",
       "type": "ThemeAttrAndroid",
     }
   }

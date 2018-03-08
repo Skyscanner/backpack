@@ -94,6 +94,7 @@ class BpkDialingCodeListItem extends React.Component<Props> {
 
     return (
       <BpkTouchableNativeFeedback
+        borderlessBackground={false}
         accessibilityComponentType="button"
         accessibilityLabel={`${dialingCode} ${name}`}
         accessibilityTraits={['button']}

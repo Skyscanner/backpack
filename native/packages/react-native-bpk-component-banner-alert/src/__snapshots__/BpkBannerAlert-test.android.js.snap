@@ -1042,62 +1042,59 @@ exports[`Android BpkBannerAlert should render correctly dismissable 1`] = `
             </View>
             <View
               style={
-                Object {
-                  "backgroundColor": "rgb(243, 242, 245)",
-                  "justifyContent": "center",
-                  "paddingRight": 24,
-                }
-              }
-            >
-              <View
-                style={
+                Array [
+                  Object {
+                    "backgroundColor": "rgb(243, 242, 245)",
+                    "justifyContent": "center",
+                    "paddingRight": 24,
+                  },
                   Object {
                     "borderRadius": 2,
+                  },
+                ]
+              }
+            >
+              <Text
+                accessibilityComponentType="button"
+                accessibilityLabel="Dismiss"
+                accessibilityTraits={undefined}
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
+                hitSlop={undefined}
+                nativeBackgroundAndroid={
+                  Object {
+                    "attribute": "selectableItemBackgroundBorderless",
+                    "type": "ThemeAttrAndroid",
                   }
                 }
-              >
-                <Text
-                  accessibilityComponentType="button"
-                  accessibilityLabel="Dismiss"
-                  accessibilityTraits={undefined}
-                  accessible={true}
-                  allowFontScaling={true}
-                  ellipsizeMode="tail"
-                  hitSlop={undefined}
-                  nativeBackgroundAndroid={
+                onLayout={undefined}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Array [
                     Object {
-                      "attribute": "selectableItemBackgroundBorderless",
-                      "type": "ThemeAttrAndroid",
-                    }
-                  }
-                  onLayout={undefined}
-                  onResponderGrant={[Function]}
-                  onResponderMove={[Function]}
-                  onResponderRelease={[Function]}
-                  onResponderTerminate={[Function]}
-                  onResponderTerminationRequest={[Function]}
-                  onStartShouldSetResponder={[Function]}
-                  style={
-                    Array [
-                      Object {
-                        "color": "rgb(82, 76, 97)",
-                        "fontFamily": "sans-serif",
-                        "fontSize": 14,
-                        "fontWeight": "400",
-                      },
-                      Object {
-                        "fontFamily": "sans-serif-medium",
-                      },
-                      Object {
-                        "color": "rgb(0, 178, 214)",
-                      },
-                    ]
-                  }
-                  testID={undefined}
-                >
-                  DISMISS
-                </Text>
-              </View>
+                      "color": "rgb(82, 76, 97)",
+                      "fontFamily": "sans-serif",
+                      "fontSize": 14,
+                      "fontWeight": "400",
+                    },
+                    Object {
+                      "fontFamily": "sans-serif-medium",
+                    },
+                    Object {
+                      "color": "rgb(0, 178, 214)",
+                    },
+                  ]
+                }
+                testID={undefined}
+              >
+                DISMISS
+              </Text>
             </View>
           </View>
         </View>
@@ -1214,62 +1211,59 @@ exports[`Android BpkBannerAlert should render correctly dismissable 1`] = `
             </View>
             <View
               style={
-                Object {
-                  "backgroundColor": "rgb(243, 242, 245)",
-                  "justifyContent": "center",
-                  "paddingRight": 24,
-                }
-              }
-            >
-              <View
-                style={
+                Array [
+                  Object {
+                    "backgroundColor": "rgb(243, 242, 245)",
+                    "justifyContent": "center",
+                    "paddingRight": 24,
+                  },
                   Object {
                     "borderRadius": 2,
+                  },
+                ]
+              }
+            >
+              <Text
+                accessibilityComponentType="button"
+                accessibilityLabel="Dismiss"
+                accessibilityTraits={undefined}
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
+                hitSlop={undefined}
+                nativeBackgroundAndroid={
+                  Object {
+                    "attribute": "selectableItemBackgroundBorderless",
+                    "type": "ThemeAttrAndroid",
                   }
                 }
-              >
-                <Text
-                  accessibilityComponentType="button"
-                  accessibilityLabel="Dismiss"
-                  accessibilityTraits={undefined}
-                  accessible={true}
-                  allowFontScaling={true}
-                  ellipsizeMode="tail"
-                  hitSlop={undefined}
-                  nativeBackgroundAndroid={
+                onLayout={undefined}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Array [
                     Object {
-                      "attribute": "selectableItemBackgroundBorderless",
-                      "type": "ThemeAttrAndroid",
-                    }
-                  }
-                  onLayout={undefined}
-                  onResponderGrant={[Function]}
-                  onResponderMove={[Function]}
-                  onResponderRelease={[Function]}
-                  onResponderTerminate={[Function]}
-                  onResponderTerminationRequest={[Function]}
-                  onStartShouldSetResponder={[Function]}
-                  style={
-                    Array [
-                      Object {
-                        "color": "rgb(82, 76, 97)",
-                        "fontFamily": "sans-serif",
-                        "fontSize": 14,
-                        "fontWeight": "400",
-                      },
-                      Object {
-                        "fontFamily": "sans-serif-medium",
-                      },
-                      Object {
-                        "color": "rgb(0, 178, 214)",
-                      },
-                    ]
-                  }
-                  testID={undefined}
-                >
-                  DISMISS
-                </Text>
-              </View>
+                      "color": "rgb(82, 76, 97)",
+                      "fontFamily": "sans-serif",
+                      "fontSize": 14,
+                      "fontWeight": "400",
+                    },
+                    Object {
+                      "fontFamily": "sans-serif-medium",
+                    },
+                    Object {
+                      "color": "rgb(0, 178, 214)",
+                    },
+                  ]
+                }
+                testID={undefined}
+              >
+                DISMISS
+              </Text>
             </View>
           </View>
         </View>
@@ -1386,62 +1380,59 @@ exports[`Android BpkBannerAlert should render correctly dismissable 1`] = `
             </View>
             <View
               style={
-                Object {
-                  "backgroundColor": "rgb(243, 242, 245)",
-                  "justifyContent": "center",
-                  "paddingRight": 24,
-                }
-              }
-            >
-              <View
-                style={
+                Array [
+                  Object {
+                    "backgroundColor": "rgb(243, 242, 245)",
+                    "justifyContent": "center",
+                    "paddingRight": 24,
+                  },
                   Object {
                     "borderRadius": 2,
+                  },
+                ]
+              }
+            >
+              <Text
+                accessibilityComponentType="button"
+                accessibilityLabel="Dismiss"
+                accessibilityTraits={undefined}
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
+                hitSlop={undefined}
+                nativeBackgroundAndroid={
+                  Object {
+                    "attribute": "selectableItemBackgroundBorderless",
+                    "type": "ThemeAttrAndroid",
                   }
                 }
-              >
-                <Text
-                  accessibilityComponentType="button"
-                  accessibilityLabel="Dismiss"
-                  accessibilityTraits={undefined}
-                  accessible={true}
-                  allowFontScaling={true}
-                  ellipsizeMode="tail"
-                  hitSlop={undefined}
-                  nativeBackgroundAndroid={
+                onLayout={undefined}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Array [
                     Object {
-                      "attribute": "selectableItemBackgroundBorderless",
-                      "type": "ThemeAttrAndroid",
-                    }
-                  }
-                  onLayout={undefined}
-                  onResponderGrant={[Function]}
-                  onResponderMove={[Function]}
-                  onResponderRelease={[Function]}
-                  onResponderTerminate={[Function]}
-                  onResponderTerminationRequest={[Function]}
-                  onStartShouldSetResponder={[Function]}
-                  style={
-                    Array [
-                      Object {
-                        "color": "rgb(82, 76, 97)",
-                        "fontFamily": "sans-serif",
-                        "fontSize": 14,
-                        "fontWeight": "400",
-                      },
-                      Object {
-                        "fontFamily": "sans-serif-medium",
-                      },
-                      Object {
-                        "color": "rgb(0, 178, 214)",
-                      },
-                    ]
-                  }
-                  testID={undefined}
-                >
-                  DISMISS
-                </Text>
-              </View>
+                      "color": "rgb(82, 76, 97)",
+                      "fontFamily": "sans-serif",
+                      "fontSize": 14,
+                      "fontWeight": "400",
+                    },
+                    Object {
+                      "fontFamily": "sans-serif-medium",
+                    },
+                    Object {
+                      "color": "rgb(0, 178, 214)",
+                    },
+                  ]
+                }
+                testID={undefined}
+              >
+                DISMISS
+              </Text>
             </View>
           </View>
         </View>
@@ -1558,62 +1549,59 @@ exports[`Android BpkBannerAlert should render correctly dismissable 1`] = `
             </View>
             <View
               style={
-                Object {
-                  "backgroundColor": "rgb(243, 242, 245)",
-                  "justifyContent": "center",
-                  "paddingRight": 24,
-                }
-              }
-            >
-              <View
-                style={
+                Array [
+                  Object {
+                    "backgroundColor": "rgb(243, 242, 245)",
+                    "justifyContent": "center",
+                    "paddingRight": 24,
+                  },
                   Object {
                     "borderRadius": 2,
+                  },
+                ]
+              }
+            >
+              <Text
+                accessibilityComponentType="button"
+                accessibilityLabel="Dismiss"
+                accessibilityTraits={undefined}
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
+                hitSlop={undefined}
+                nativeBackgroundAndroid={
+                  Object {
+                    "attribute": "selectableItemBackgroundBorderless",
+                    "type": "ThemeAttrAndroid",
                   }
                 }
-              >
-                <Text
-                  accessibilityComponentType="button"
-                  accessibilityLabel="Dismiss"
-                  accessibilityTraits={undefined}
-                  accessible={true}
-                  allowFontScaling={true}
-                  ellipsizeMode="tail"
-                  hitSlop={undefined}
-                  nativeBackgroundAndroid={
+                onLayout={undefined}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Array [
                     Object {
-                      "attribute": "selectableItemBackgroundBorderless",
-                      "type": "ThemeAttrAndroid",
-                    }
-                  }
-                  onLayout={undefined}
-                  onResponderGrant={[Function]}
-                  onResponderMove={[Function]}
-                  onResponderRelease={[Function]}
-                  onResponderTerminate={[Function]}
-                  onResponderTerminationRequest={[Function]}
-                  onStartShouldSetResponder={[Function]}
-                  style={
-                    Array [
-                      Object {
-                        "color": "rgb(82, 76, 97)",
-                        "fontFamily": "sans-serif",
-                        "fontSize": 14,
-                        "fontWeight": "400",
-                      },
-                      Object {
-                        "fontFamily": "sans-serif-medium",
-                      },
-                      Object {
-                        "color": "rgb(0, 178, 214)",
-                      },
-                    ]
-                  }
-                  testID={undefined}
-                >
-                  DISMISS
-                </Text>
-              </View>
+                      "color": "rgb(82, 76, 97)",
+                      "fontFamily": "sans-serif",
+                      "fontSize": 14,
+                      "fontWeight": "400",
+                    },
+                    Object {
+                      "fontFamily": "sans-serif-medium",
+                    },
+                    Object {
+                      "color": "rgb(0, 178, 214)",
+                    },
+                  ]
+                }
+                testID={undefined}
+              >
+                DISMISS
+              </Text>
             </View>
           </View>
         </View>
