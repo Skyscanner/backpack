@@ -1,0 +1,1757 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Android BpkNudger should disable theming if the required attribute is omitted 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "flexDirection": "row",
+      },
+      null,
+    ]
+  }
+>
+  <View
+    style={
+      Array [
+        Array [
+          Object {
+            "borderRadius": 40,
+            "height": 32,
+          },
+          Object {
+            "width": 32,
+          },
+        ],
+        Object {
+          "marginRight": 4,
+        },
+      ]
+    }
+  >
+    <View
+      accessibilityComponentType="button"
+      accessibilityLabel="Decrease"
+      accessibilityTraits={
+        Array [
+          "button",
+        ]
+      }
+      accessible={true}
+      hitSlop={undefined}
+      nativeBackgroundAndroid={
+        Object {
+          "attribute": "selectableItemBackgroundBorderless",
+          "type": "ThemeAttrAndroid",
+        }
+      }
+      onLayout={undefined}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Array [
+          Array [
+            Object {
+              "borderRadius": 40,
+              "height": 32,
+              "paddingHorizontal": 12,
+              "paddingVertical": 8,
+            },
+            Object {
+              "borderColor": "rgb(230, 228, 235)",
+              "borderWidth": 2,
+              "paddingHorizontal": 10,
+              "paddingVertical": 6,
+            },
+            Object {
+              "paddingHorizontal": 0,
+            },
+          ],
+          Object {
+            "backgroundColor": "transparent",
+          },
+        ]
+      }
+      testID={undefined}
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "alignItems": "center",
+              "flex": 1,
+              "flexDirection": "row",
+              "justifyContent": "center",
+            },
+            undefined,
+          ]
+        }
+      >
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Array [
+              Object {
+                "color": "rgb(82, 76, 97)",
+                "fontFamily": "BpkIcon",
+                "fontSize": 24,
+                "lineHeight": 24,
+              },
+              Object {
+                "fontSize": 16,
+                "lineHeight": 16,
+              },
+              Array [
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                    "color": "rgb(255, 255, 255)",
+                    "lineHeight": 13,
+                  },
+                  Object {
+                    "color": "rgb(0, 178, 214)",
+                  },
+                  undefined,
+                ],
+                Object {},
+                Array [
+                  Object {
+                    "lineHeight": 16,
+                  },
+                  undefined,
+                ],
+              ],
+            ]
+          }
+        >
+          
+        </Text>
+      </View>
+    </View>
+  </View>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    style={
+      Array [
+        Object {
+          "color": "rgb(82, 76, 97)",
+          "fontFamily": "sans-serif",
+          "fontSize": 20,
+          "fontWeight": "400",
+        },
+        Object {
+          "fontFamily": "sans-serif-medium",
+        },
+        Object {
+          "minWidth": 24,
+          "textAlign": "center",
+        },
+      ]
+    }
+  >
+    3
+  </Text>
+  <View
+    style={
+      Array [
+        Array [
+          Object {
+            "borderRadius": 40,
+            "height": 32,
+          },
+          Object {
+            "width": 32,
+          },
+        ],
+        Object {
+          "marginLeft": 4,
+        },
+      ]
+    }
+  >
+    <View
+      accessibilityComponentType="button"
+      accessibilityLabel="Increase"
+      accessibilityTraits={
+        Array [
+          "button",
+        ]
+      }
+      accessible={true}
+      hitSlop={undefined}
+      nativeBackgroundAndroid={
+        Object {
+          "attribute": "selectableItemBackgroundBorderless",
+          "type": "ThemeAttrAndroid",
+        }
+      }
+      onLayout={undefined}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Array [
+          Array [
+            Object {
+              "borderRadius": 40,
+              "height": 32,
+              "paddingHorizontal": 12,
+              "paddingVertical": 8,
+            },
+            Object {
+              "borderColor": "rgb(230, 228, 235)",
+              "borderWidth": 2,
+              "paddingHorizontal": 10,
+              "paddingVertical": 6,
+            },
+            Object {
+              "paddingHorizontal": 0,
+            },
+          ],
+          Object {
+            "backgroundColor": "transparent",
+          },
+        ]
+      }
+      testID={undefined}
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "alignItems": "center",
+              "flex": 1,
+              "flexDirection": "row",
+              "justifyContent": "center",
+            },
+            undefined,
+          ]
+        }
+      >
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Array [
+              Object {
+                "color": "rgb(82, 76, 97)",
+                "fontFamily": "BpkIcon",
+                "fontSize": 24,
+                "lineHeight": 24,
+              },
+              Object {
+                "fontSize": 16,
+                "lineHeight": 16,
+              },
+              Array [
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                    "color": "rgb(255, 255, 255)",
+                    "lineHeight": 13,
+                  },
+                  Object {
+                    "color": "rgb(0, 178, 214)",
+                  },
+                  undefined,
+                ],
+                Object {},
+                Array [
+                  Object {
+                    "lineHeight": 16,
+                  },
+                  undefined,
+                ],
+              ],
+            ]
+          }
+        >
+          
+        </Text>
+      </View>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`Android BpkNudger should render correctly 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "flexDirection": "row",
+      },
+      null,
+    ]
+  }
+>
+  <View
+    style={
+      Array [
+        Array [
+          Object {
+            "borderRadius": 40,
+            "height": 32,
+          },
+          Object {
+            "width": 32,
+          },
+        ],
+        Object {
+          "marginRight": 4,
+        },
+      ]
+    }
+  >
+    <View
+      accessibilityComponentType="button"
+      accessibilityLabel="Decrease"
+      accessibilityTraits={
+        Array [
+          "button",
+        ]
+      }
+      accessible={true}
+      hitSlop={undefined}
+      nativeBackgroundAndroid={
+        Object {
+          "attribute": "selectableItemBackgroundBorderless",
+          "type": "ThemeAttrAndroid",
+        }
+      }
+      onLayout={undefined}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Array [
+          Array [
+            Object {
+              "borderRadius": 40,
+              "height": 32,
+              "paddingHorizontal": 12,
+              "paddingVertical": 8,
+            },
+            Object {
+              "borderColor": "rgb(230, 228, 235)",
+              "borderWidth": 2,
+              "paddingHorizontal": 10,
+              "paddingVertical": 6,
+            },
+            Object {
+              "paddingHorizontal": 0,
+            },
+          ],
+          Object {
+            "backgroundColor": "transparent",
+          },
+        ]
+      }
+      testID={undefined}
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "alignItems": "center",
+              "flex": 1,
+              "flexDirection": "row",
+              "justifyContent": "center",
+            },
+            undefined,
+          ]
+        }
+      >
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Array [
+              Object {
+                "color": "rgb(82, 76, 97)",
+                "fontFamily": "BpkIcon",
+                "fontSize": 24,
+                "lineHeight": 24,
+              },
+              Object {
+                "fontSize": 16,
+                "lineHeight": 16,
+              },
+              Array [
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                    "color": "rgb(255, 255, 255)",
+                    "lineHeight": 13,
+                  },
+                  Object {
+                    "color": "rgb(0, 178, 214)",
+                  },
+                  undefined,
+                ],
+                Object {},
+                Array [
+                  Object {
+                    "lineHeight": 16,
+                  },
+                  undefined,
+                ],
+              ],
+            ]
+          }
+        >
+          
+        </Text>
+      </View>
+    </View>
+  </View>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    style={
+      Array [
+        Object {
+          "color": "rgb(82, 76, 97)",
+          "fontFamily": "sans-serif",
+          "fontSize": 20,
+          "fontWeight": "400",
+        },
+        Object {
+          "fontFamily": "sans-serif-medium",
+        },
+        Object {
+          "minWidth": 24,
+          "textAlign": "center",
+        },
+      ]
+    }
+  >
+    3
+  </Text>
+  <View
+    style={
+      Array [
+        Array [
+          Object {
+            "borderRadius": 40,
+            "height": 32,
+          },
+          Object {
+            "width": 32,
+          },
+        ],
+        Object {
+          "marginLeft": 4,
+        },
+      ]
+    }
+  >
+    <View
+      accessibilityComponentType="button"
+      accessibilityLabel="Increase"
+      accessibilityTraits={
+        Array [
+          "button",
+        ]
+      }
+      accessible={true}
+      hitSlop={undefined}
+      nativeBackgroundAndroid={
+        Object {
+          "attribute": "selectableItemBackgroundBorderless",
+          "type": "ThemeAttrAndroid",
+        }
+      }
+      onLayout={undefined}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Array [
+          Array [
+            Object {
+              "borderRadius": 40,
+              "height": 32,
+              "paddingHorizontal": 12,
+              "paddingVertical": 8,
+            },
+            Object {
+              "borderColor": "rgb(230, 228, 235)",
+              "borderWidth": 2,
+              "paddingHorizontal": 10,
+              "paddingVertical": 6,
+            },
+            Object {
+              "paddingHorizontal": 0,
+            },
+          ],
+          Object {
+            "backgroundColor": "transparent",
+          },
+        ]
+      }
+      testID={undefined}
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "alignItems": "center",
+              "flex": 1,
+              "flexDirection": "row",
+              "justifyContent": "center",
+            },
+            undefined,
+          ]
+        }
+      >
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Array [
+              Object {
+                "color": "rgb(82, 76, 97)",
+                "fontFamily": "BpkIcon",
+                "fontSize": 24,
+                "lineHeight": 24,
+              },
+              Object {
+                "fontSize": 16,
+                "lineHeight": 16,
+              },
+              Array [
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                    "color": "rgb(255, 255, 255)",
+                    "lineHeight": 13,
+                  },
+                  Object {
+                    "color": "rgb(0, 178, 214)",
+                  },
+                  undefined,
+                ],
+                Object {},
+                Array [
+                  Object {
+                    "lineHeight": 16,
+                  },
+                  undefined,
+                ],
+              ],
+            ]
+          }
+        >
+          
+        </Text>
+      </View>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`Android BpkNudger should render correctly when value is a not an integer 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "flexDirection": "row",
+      },
+      null,
+    ]
+  }
+>
+  <View
+    style={
+      Array [
+        Array [
+          Object {
+            "borderRadius": 40,
+            "height": 32,
+          },
+          undefined,
+          Object {
+            "width": 32,
+          },
+        ],
+        Object {
+          "marginRight": 4,
+        },
+      ]
+    }
+  >
+    <View
+      accessibilityComponentType="button"
+      accessibilityLabel="Decrease"
+      accessibilityTraits={
+        Array [
+          "button",
+          "disabled",
+        ]
+      }
+      accessible={true}
+      hitSlop={undefined}
+      nativeBackgroundAndroid={
+        Object {
+          "attribute": "selectableItemBackgroundBorderless",
+          "type": "ThemeAttrAndroid",
+        }
+      }
+      onLayout={undefined}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Array [
+          Array [
+            Object {
+              "borderRadius": 40,
+              "height": 32,
+              "paddingHorizontal": 12,
+              "paddingVertical": 8,
+            },
+            Object {
+              "borderColor": "rgb(230, 228, 235)",
+              "borderWidth": 2,
+              "paddingHorizontal": 10,
+              "paddingVertical": 6,
+            },
+            Object {
+              "borderColor": "transparent",
+            },
+            Object {
+              "paddingHorizontal": 0,
+            },
+          ],
+          Object {
+            "backgroundColor": "rgb(230, 228, 235)",
+          },
+        ]
+      }
+      testID={undefined}
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "alignItems": "center",
+              "flex": 1,
+              "flexDirection": "row",
+              "justifyContent": "center",
+            },
+            undefined,
+            undefined,
+          ]
+        }
+      >
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Array [
+              Object {
+                "color": "rgb(82, 76, 97)",
+                "fontFamily": "BpkIcon",
+                "fontSize": 24,
+                "lineHeight": 24,
+              },
+              Object {
+                "fontSize": 16,
+                "lineHeight": 16,
+              },
+              Array [
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                    "color": "rgb(255, 255, 255)",
+                    "lineHeight": 13,
+                  },
+                  Object {
+                    "color": "rgb(0, 178, 214)",
+                  },
+                  Object {
+                    "color": "rgb(178, 174, 189)",
+                  },
+                  undefined,
+                ],
+                Object {},
+                Array [
+                  Object {
+                    "lineHeight": 16,
+                  },
+                  undefined,
+                  undefined,
+                ],
+              ],
+            ]
+          }
+        >
+          
+        </Text>
+      </View>
+    </View>
+  </View>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    style={
+      Array [
+        Object {
+          "color": "rgb(82, 76, 97)",
+          "fontFamily": "sans-serif",
+          "fontSize": 20,
+          "fontWeight": "400",
+        },
+        Object {
+          "fontFamily": "sans-serif-medium",
+        },
+        Object {
+          "minWidth": 24,
+          "textAlign": "center",
+        },
+      ]
+    }
+  >
+    1
+  </Text>
+  <View
+    style={
+      Array [
+        Array [
+          Object {
+            "borderRadius": 40,
+            "height": 32,
+          },
+          Object {
+            "width": 32,
+          },
+        ],
+        Object {
+          "marginLeft": 4,
+        },
+      ]
+    }
+  >
+    <View
+      accessibilityComponentType="button"
+      accessibilityLabel="Increase"
+      accessibilityTraits={
+        Array [
+          "button",
+        ]
+      }
+      accessible={true}
+      hitSlop={undefined}
+      nativeBackgroundAndroid={
+        Object {
+          "attribute": "selectableItemBackgroundBorderless",
+          "type": "ThemeAttrAndroid",
+        }
+      }
+      onLayout={undefined}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Array [
+          Array [
+            Object {
+              "borderRadius": 40,
+              "height": 32,
+              "paddingHorizontal": 12,
+              "paddingVertical": 8,
+            },
+            Object {
+              "borderColor": "rgb(230, 228, 235)",
+              "borderWidth": 2,
+              "paddingHorizontal": 10,
+              "paddingVertical": 6,
+            },
+            Object {
+              "paddingHorizontal": 0,
+            },
+          ],
+          Object {
+            "backgroundColor": "transparent",
+          },
+        ]
+      }
+      testID={undefined}
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "alignItems": "center",
+              "flex": 1,
+              "flexDirection": "row",
+              "justifyContent": "center",
+            },
+            undefined,
+          ]
+        }
+      >
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Array [
+              Object {
+                "color": "rgb(82, 76, 97)",
+                "fontFamily": "BpkIcon",
+                "fontSize": 24,
+                "lineHeight": 24,
+              },
+              Object {
+                "fontSize": 16,
+                "lineHeight": 16,
+              },
+              Array [
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                    "color": "rgb(255, 255, 255)",
+                    "lineHeight": 13,
+                  },
+                  Object {
+                    "color": "rgb(0, 178, 214)",
+                  },
+                  undefined,
+                ],
+                Object {},
+                Array [
+                  Object {
+                    "lineHeight": 16,
+                  },
+                  undefined,
+                ],
+              ],
+            ]
+          }
+        >
+          
+        </Text>
+      </View>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`Android BpkNudger should render correctly when value is greater than max 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "flexDirection": "row",
+      },
+      null,
+    ]
+  }
+>
+  <View
+    style={
+      Array [
+        Array [
+          Object {
+            "borderRadius": 40,
+            "height": 32,
+          },
+          Object {
+            "width": 32,
+          },
+        ],
+        Object {
+          "marginRight": 4,
+        },
+      ]
+    }
+  >
+    <View
+      accessibilityComponentType="button"
+      accessibilityLabel="Decrease"
+      accessibilityTraits={
+        Array [
+          "button",
+        ]
+      }
+      accessible={true}
+      hitSlop={undefined}
+      nativeBackgroundAndroid={
+        Object {
+          "attribute": "selectableItemBackgroundBorderless",
+          "type": "ThemeAttrAndroid",
+        }
+      }
+      onLayout={undefined}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Array [
+          Array [
+            Object {
+              "borderRadius": 40,
+              "height": 32,
+              "paddingHorizontal": 12,
+              "paddingVertical": 8,
+            },
+            Object {
+              "borderColor": "rgb(230, 228, 235)",
+              "borderWidth": 2,
+              "paddingHorizontal": 10,
+              "paddingVertical": 6,
+            },
+            Object {
+              "paddingHorizontal": 0,
+            },
+          ],
+          Object {
+            "backgroundColor": "transparent",
+          },
+        ]
+      }
+      testID={undefined}
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "alignItems": "center",
+              "flex": 1,
+              "flexDirection": "row",
+              "justifyContent": "center",
+            },
+            undefined,
+          ]
+        }
+      >
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Array [
+              Object {
+                "color": "rgb(82, 76, 97)",
+                "fontFamily": "BpkIcon",
+                "fontSize": 24,
+                "lineHeight": 24,
+              },
+              Object {
+                "fontSize": 16,
+                "lineHeight": 16,
+              },
+              Array [
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                    "color": "rgb(255, 255, 255)",
+                    "lineHeight": 13,
+                  },
+                  Object {
+                    "color": "rgb(0, 178, 214)",
+                  },
+                  undefined,
+                ],
+                Object {},
+                Array [
+                  Object {
+                    "lineHeight": 16,
+                  },
+                  undefined,
+                ],
+              ],
+            ]
+          }
+        >
+          
+        </Text>
+      </View>
+    </View>
+  </View>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    style={
+      Array [
+        Object {
+          "color": "rgb(82, 76, 97)",
+          "fontFamily": "sans-serif",
+          "fontSize": 20,
+          "fontWeight": "400",
+        },
+        Object {
+          "fontFamily": "sans-serif-medium",
+        },
+        Object {
+          "minWidth": 24,
+          "textAlign": "center",
+        },
+      ]
+    }
+  >
+    3
+  </Text>
+  <View
+    style={
+      Array [
+        Array [
+          Object {
+            "borderRadius": 40,
+            "height": 32,
+          },
+          undefined,
+          Object {
+            "width": 32,
+          },
+        ],
+        Object {
+          "marginLeft": 4,
+        },
+      ]
+    }
+  >
+    <View
+      accessibilityComponentType="button"
+      accessibilityLabel="Increase"
+      accessibilityTraits={
+        Array [
+          "button",
+          "disabled",
+        ]
+      }
+      accessible={true}
+      hitSlop={undefined}
+      nativeBackgroundAndroid={
+        Object {
+          "attribute": "selectableItemBackgroundBorderless",
+          "type": "ThemeAttrAndroid",
+        }
+      }
+      onLayout={undefined}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Array [
+          Array [
+            Object {
+              "borderRadius": 40,
+              "height": 32,
+              "paddingHorizontal": 12,
+              "paddingVertical": 8,
+            },
+            Object {
+              "borderColor": "rgb(230, 228, 235)",
+              "borderWidth": 2,
+              "paddingHorizontal": 10,
+              "paddingVertical": 6,
+            },
+            Object {
+              "borderColor": "transparent",
+            },
+            Object {
+              "paddingHorizontal": 0,
+            },
+          ],
+          Object {
+            "backgroundColor": "rgb(230, 228, 235)",
+          },
+        ]
+      }
+      testID={undefined}
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "alignItems": "center",
+              "flex": 1,
+              "flexDirection": "row",
+              "justifyContent": "center",
+            },
+            undefined,
+            undefined,
+          ]
+        }
+      >
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Array [
+              Object {
+                "color": "rgb(82, 76, 97)",
+                "fontFamily": "BpkIcon",
+                "fontSize": 24,
+                "lineHeight": 24,
+              },
+              Object {
+                "fontSize": 16,
+                "lineHeight": 16,
+              },
+              Array [
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                    "color": "rgb(255, 255, 255)",
+                    "lineHeight": 13,
+                  },
+                  Object {
+                    "color": "rgb(0, 178, 214)",
+                  },
+                  Object {
+                    "color": "rgb(178, 174, 189)",
+                  },
+                  undefined,
+                ],
+                Object {},
+                Array [
+                  Object {
+                    "lineHeight": 16,
+                  },
+                  undefined,
+                  undefined,
+                ],
+              ],
+            ]
+          }
+        >
+          
+        </Text>
+      </View>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`Android BpkNudger should render correctly when value is less than min 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "flexDirection": "row",
+      },
+      null,
+    ]
+  }
+>
+  <View
+    style={
+      Array [
+        Array [
+          Object {
+            "borderRadius": 40,
+            "height": 32,
+          },
+          undefined,
+          Object {
+            "width": 32,
+          },
+        ],
+        Object {
+          "marginRight": 4,
+        },
+      ]
+    }
+  >
+    <View
+      accessibilityComponentType="button"
+      accessibilityLabel="Decrease"
+      accessibilityTraits={
+        Array [
+          "button",
+          "disabled",
+        ]
+      }
+      accessible={true}
+      hitSlop={undefined}
+      nativeBackgroundAndroid={
+        Object {
+          "attribute": "selectableItemBackgroundBorderless",
+          "type": "ThemeAttrAndroid",
+        }
+      }
+      onLayout={undefined}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Array [
+          Array [
+            Object {
+              "borderRadius": 40,
+              "height": 32,
+              "paddingHorizontal": 12,
+              "paddingVertical": 8,
+            },
+            Object {
+              "borderColor": "rgb(230, 228, 235)",
+              "borderWidth": 2,
+              "paddingHorizontal": 10,
+              "paddingVertical": 6,
+            },
+            Object {
+              "borderColor": "transparent",
+            },
+            Object {
+              "paddingHorizontal": 0,
+            },
+          ],
+          Object {
+            "backgroundColor": "rgb(230, 228, 235)",
+          },
+        ]
+      }
+      testID={undefined}
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "alignItems": "center",
+              "flex": 1,
+              "flexDirection": "row",
+              "justifyContent": "center",
+            },
+            undefined,
+            undefined,
+          ]
+        }
+      >
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Array [
+              Object {
+                "color": "rgb(82, 76, 97)",
+                "fontFamily": "BpkIcon",
+                "fontSize": 24,
+                "lineHeight": 24,
+              },
+              Object {
+                "fontSize": 16,
+                "lineHeight": 16,
+              },
+              Array [
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                    "color": "rgb(255, 255, 255)",
+                    "lineHeight": 13,
+                  },
+                  Object {
+                    "color": "rgb(0, 178, 214)",
+                  },
+                  Object {
+                    "color": "rgb(178, 174, 189)",
+                  },
+                  undefined,
+                ],
+                Object {},
+                Array [
+                  Object {
+                    "lineHeight": 16,
+                  },
+                  undefined,
+                  undefined,
+                ],
+              ],
+            ]
+          }
+        >
+          
+        </Text>
+      </View>
+    </View>
+  </View>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    style={
+      Array [
+        Object {
+          "color": "rgb(82, 76, 97)",
+          "fontFamily": "sans-serif",
+          "fontSize": 20,
+          "fontWeight": "400",
+        },
+        Object {
+          "fontFamily": "sans-serif-medium",
+        },
+        Object {
+          "minWidth": 24,
+          "textAlign": "center",
+        },
+      ]
+    }
+  >
+    3
+  </Text>
+  <View
+    style={
+      Array [
+        Array [
+          Object {
+            "borderRadius": 40,
+            "height": 32,
+          },
+          Object {
+            "width": 32,
+          },
+        ],
+        Object {
+          "marginLeft": 4,
+        },
+      ]
+    }
+  >
+    <View
+      accessibilityComponentType="button"
+      accessibilityLabel="Increase"
+      accessibilityTraits={
+        Array [
+          "button",
+        ]
+      }
+      accessible={true}
+      hitSlop={undefined}
+      nativeBackgroundAndroid={
+        Object {
+          "attribute": "selectableItemBackgroundBorderless",
+          "type": "ThemeAttrAndroid",
+        }
+      }
+      onLayout={undefined}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Array [
+          Array [
+            Object {
+              "borderRadius": 40,
+              "height": 32,
+              "paddingHorizontal": 12,
+              "paddingVertical": 8,
+            },
+            Object {
+              "borderColor": "rgb(230, 228, 235)",
+              "borderWidth": 2,
+              "paddingHorizontal": 10,
+              "paddingVertical": 6,
+            },
+            Object {
+              "paddingHorizontal": 0,
+            },
+          ],
+          Object {
+            "backgroundColor": "transparent",
+          },
+        ]
+      }
+      testID={undefined}
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "alignItems": "center",
+              "flex": 1,
+              "flexDirection": "row",
+              "justifyContent": "center",
+            },
+            undefined,
+          ]
+        }
+      >
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Array [
+              Object {
+                "color": "rgb(82, 76, 97)",
+                "fontFamily": "BpkIcon",
+                "fontSize": 24,
+                "lineHeight": 24,
+              },
+              Object {
+                "fontSize": 16,
+                "lineHeight": 16,
+              },
+              Array [
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                    "color": "rgb(255, 255, 255)",
+                    "lineHeight": 13,
+                  },
+                  Object {
+                    "color": "rgb(0, 178, 214)",
+                  },
+                  undefined,
+                ],
+                Object {},
+                Array [
+                  Object {
+                    "lineHeight": 16,
+                  },
+                  undefined,
+                ],
+              ],
+            ]
+          }
+        >
+          
+        </Text>
+      </View>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`Android BpkNudger should support theming 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "flexDirection": "row",
+      },
+      null,
+    ]
+  }
+>
+  <View
+    style={
+      Array [
+        Array [
+          Object {
+            "borderRadius": 40,
+            "height": 32,
+          },
+          Object {
+            "width": 32,
+          },
+        ],
+        Object {
+          "marginRight": 4,
+        },
+      ]
+    }
+  >
+    <View
+      accessibilityComponentType="button"
+      accessibilityLabel="Decrease"
+      accessibilityTraits={
+        Array [
+          "button",
+        ]
+      }
+      accessible={true}
+      hitSlop={undefined}
+      nativeBackgroundAndroid={
+        Object {
+          "attribute": "selectableItemBackgroundBorderless",
+          "type": "ThemeAttrAndroid",
+        }
+      }
+      onLayout={undefined}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Array [
+          Array [
+            Object {
+              "borderRadius": 40,
+              "height": 32,
+              "paddingHorizontal": 12,
+              "paddingVertical": 8,
+            },
+            Object {
+              "borderColor": "rgb(230, 228, 235)",
+              "borderWidth": 2,
+              "paddingHorizontal": 10,
+              "paddingVertical": 6,
+            },
+            Object {
+              "paddingHorizontal": 0,
+            },
+          ],
+          Object {
+            "backgroundColor": "yellow",
+          },
+        ]
+      }
+      testID={undefined}
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "alignItems": "center",
+              "flex": 1,
+              "flexDirection": "row",
+              "justifyContent": "center",
+            },
+            undefined,
+          ]
+        }
+      >
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Array [
+              Object {
+                "color": "rgb(82, 76, 97)",
+                "fontFamily": "BpkIcon",
+                "fontSize": 24,
+                "lineHeight": 24,
+              },
+              Object {
+                "fontSize": 16,
+                "lineHeight": 16,
+              },
+              Array [
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                    "color": "rgb(255, 255, 255)",
+                    "lineHeight": 13,
+                  },
+                  Object {
+                    "color": "rgb(0, 178, 214)",
+                  },
+                  undefined,
+                ],
+                Object {
+                  "color": "red",
+                },
+                Array [
+                  Object {
+                    "lineHeight": 16,
+                  },
+                  undefined,
+                ],
+              ],
+            ]
+          }
+        >
+          
+        </Text>
+      </View>
+    </View>
+  </View>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    style={
+      Array [
+        Object {
+          "color": "rgb(82, 76, 97)",
+          "fontFamily": "sans-serif",
+          "fontSize": 20,
+          "fontWeight": "400",
+        },
+        Object {
+          "fontFamily": "sans-serif-medium",
+        },
+        Object {
+          "minWidth": 24,
+          "textAlign": "center",
+        },
+      ]
+    }
+  >
+    3
+  </Text>
+  <View
+    style={
+      Array [
+        Array [
+          Object {
+            "borderRadius": 40,
+            "height": 32,
+          },
+          Object {
+            "width": 32,
+          },
+        ],
+        Object {
+          "marginLeft": 4,
+        },
+      ]
+    }
+  >
+    <View
+      accessibilityComponentType="button"
+      accessibilityLabel="Increase"
+      accessibilityTraits={
+        Array [
+          "button",
+        ]
+      }
+      accessible={true}
+      hitSlop={undefined}
+      nativeBackgroundAndroid={
+        Object {
+          "attribute": "selectableItemBackgroundBorderless",
+          "type": "ThemeAttrAndroid",
+        }
+      }
+      onLayout={undefined}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Array [
+          Array [
+            Object {
+              "borderRadius": 40,
+              "height": 32,
+              "paddingHorizontal": 12,
+              "paddingVertical": 8,
+            },
+            Object {
+              "borderColor": "rgb(230, 228, 235)",
+              "borderWidth": 2,
+              "paddingHorizontal": 10,
+              "paddingVertical": 6,
+            },
+            Object {
+              "paddingHorizontal": 0,
+            },
+          ],
+          Object {
+            "backgroundColor": "yellow",
+          },
+        ]
+      }
+      testID={undefined}
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "alignItems": "center",
+              "flex": 1,
+              "flexDirection": "row",
+              "justifyContent": "center",
+            },
+            undefined,
+          ]
+        }
+      >
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Array [
+              Object {
+                "color": "rgb(82, 76, 97)",
+                "fontFamily": "BpkIcon",
+                "fontSize": 24,
+                "lineHeight": 24,
+              },
+              Object {
+                "fontSize": 16,
+                "lineHeight": 16,
+              },
+              Array [
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                    "color": "rgb(255, 255, 255)",
+                    "lineHeight": 13,
+                  },
+                  Object {
+                    "color": "rgb(0, 178, 214)",
+                  },
+                  undefined,
+                ],
+                Object {
+                  "color": "red",
+                },
+                Array [
+                  Object {
+                    "lineHeight": 16,
+                  },
+                  undefined,
+                ],
+              ],
+            ]
+          }
+        >
+          
+        </Text>
+      </View>
+    </View>
+  </View>
+</View>
+`;

@@ -12,6 +12,9 @@
 - react-native-bpk-component-button:
   - Android now supports the `iconOnly` prop.
 
+- react-native-bpk-component-nudger:
+  - Introducing the React Native nudger component.
+
 ## 2018-03-06 - New `BpkTouchableNativeFeedback` component
 
 **Added:**
