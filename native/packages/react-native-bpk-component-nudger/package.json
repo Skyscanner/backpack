@@ -1,6 +1,5 @@
 {
   "name": "react-native-bpk-component-nudger",
-  "private": true,
   "version": "0.0.1",
   "main": "index.js",
   "description": "Backpack React Native budger component.",

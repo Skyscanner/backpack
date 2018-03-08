@@ -57,7 +57,7 @@ const components = [
     title: 'Default',
     blurb: [
       <Paragraph>
-        Nudgers come with decrease and increase buttons to either side of the
+        Nudgers come with decrease and increase buttons on either side of the
         selected value. A minimum and maximum value need to be provided.
       </Paragraph>,
     ],

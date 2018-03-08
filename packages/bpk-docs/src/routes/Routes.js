@@ -101,6 +101,7 @@ import NativeCardsPage from './../pages/NativeCardsPage';
 import NativeHorizontalNavPage from './../pages/NativeHorizontalNavPage';
 import NativeIconsPage from './../pages/NativeIconsPage';
 import NativeInputPage from './../pages/NativeTextInputPage';
+import NativeNudgerPage from './../pages/NativeNudgerPage';
 import NativePhoneInputPage from './../pages/NativePhoneInputPage';
 import NativeSpinnerPage from './../pages/NativeSpinnerPage';
 import NativeStarRatingPage from './../pages/NativeStarRatingPage';
@@ -214,6 +215,7 @@ const Routes = (
         />
         <Route path={ROUTES.NATIVE_ICONS} component={NativeIconsPage} />
         <Route path={ROUTES.NATIVE_INPUT} component={NativeInputPage} />
+        <Route path={ROUTES.NATIVE_NUDGER} component={NativeNudgerPage} />
         <Route
           path={ROUTES.NATIVE_PHONE_INPUT}
           component={NativePhoneInputPage}

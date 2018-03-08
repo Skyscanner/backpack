@@ -54,4 +54,4 @@ export default class App extends Component {
 
 ## Theme Props
 
-Same as [secondary button](/components/native/buttons#theme-props).
+Same as [secondary button](/components/native/button#theme-props).
