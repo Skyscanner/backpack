@@ -1,0 +1,447 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Android BpkPicker should render correctly 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "marginVertical": 4,
+        "paddingVertical": 4,
+      },
+      null,
+    ]
+  }
+>
+  <View
+    accessibilityComponentType={undefined}
+    accessibilityLabel={undefined}
+    accessibilityTraits={undefined}
+    accessible={true}
+    collapsable={undefined}
+    hasTVPreferredFocus={undefined}
+    hitSlop={undefined}
+    isTVSelectable={true}
+    nativeID={undefined}
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "opacity": 1,
+      }
+    }
+    testID={undefined}
+    tvParallaxProperties={undefined}
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      collapsable={undefined}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "rgba(178, 174, 189, 1)",
+          "fontFamily": "sans-serif",
+          "fontSize": 16,
+          "fontWeight": "400",
+          "lineHeight": 24,
+          "position": "absolute",
+          "top": 23,
+        }
+      }
+    >
+      
+    </Text>
+    <View
+      collapsable={undefined}
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "rgba(0,0,0,0)",
+          "borderBottomColor": "rgba(230, 228, 235, 1)",
+          "borderBottomWidth": 1,
+          "flexDirection": "row",
+          "paddingRight": 8,
+          "paddingTop": 20,
+        }
+      }
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+              "fontFamily": "sans-serif",
+              "fontSize": 16,
+              "fontWeight": "400",
+            },
+            Object {
+              "color": "rgb(82, 76, 97)",
+              "flex": 1,
+              "minHeight": 32,
+              "paddingVertical": 4,
+            },
+          ]
+        }
+      >
+         
+      </Text>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+              "fontFamily": "BpkIcon",
+              "fontSize": 24,
+              "lineHeight": 24,
+            },
+            Object {
+              "fontSize": 16,
+              "lineHeight": 16,
+            },
+          ]
+        }
+      >
+        
+      </Text>
+    </View>
+  </View>
+  <Modal
+    animationType="slide"
+    hardwareAccelerated={false}
+    transparent={true}
+    visible={false}
+  >
+    <View
+      accessibilityComponentType={undefined}
+      accessibilityLabel={undefined}
+      accessibilityTraits={undefined}
+      accessible={true}
+      hitSlop={undefined}
+      nativeID={undefined}
+      onLayout={undefined}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "flex": 1,
+        }
+      }
+      testID={undefined}
+    />
+    <View
+      style={
+        Object {
+          "backgroundColor": "rgb(204, 201, 212)",
+          "bottom": 0,
+          "flexDirection": "column",
+          "position": "absolute",
+          "width": "100%",
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "backgroundColor": "rgb(243, 242, 245)",
+            "borderColor": "rgb(204, 201, 212)",
+            "borderTopWidth": 1,
+            "flex": 1,
+            "flexDirection": "row",
+            "paddingHorizontal": 8,
+            "paddingVertical": 2,
+          }
+        }
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "borderRadius": 4,
+              },
+            ]
+          }
+        >
+          <View
+            accessibilityComponentType="button"
+            accessibilityLabel="PREV"
+            accessibilityTraits={
+              Array [
+                "button",
+              ]
+            }
+            accessible={true}
+            collapsable={undefined}
+            hasTVPreferredFocus={undefined}
+            hitSlop={undefined}
+            isTVSelectable={true}
+            nativeID={undefined}
+            onLayout={undefined}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "opacity": 1,
+              }
+            }
+            testID={undefined}
+            tvParallaxProperties={undefined}
+          >
+            <View
+              style={
+                Array [
+                  Object {
+                    "alignItems": "center",
+                    "flexDirection": "row",
+                    "justifyContent": "center",
+                    "paddingVertical": 8,
+                  },
+                ]
+              }
+            >
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
+                style={
+                  Array [
+                    Object {
+                      "color": "rgb(82, 76, 97)",
+                      "fontFamily": "System",
+                      "fontSize": 13,
+                      "fontWeight": "400",
+                    },
+                    Object {
+                      "fontFamily": undefined,
+                    },
+                    Array [
+                      Object {
+                        "color": "rgb(0, 178, 214)",
+                      },
+                    ],
+                  ]
+                }
+              >
+                PREV
+              </Text>
+            </View>
+          </View>
+        </View>
+        <View
+          style={
+            Object {
+              "flex": 0,
+              "padding": 4,
+            }
+          }
+        />
+        <View
+          style={
+            Array [
+              Object {
+                "borderRadius": 4,
+              },
+            ]
+          }
+        >
+          <View
+            accessibilityComponentType="button"
+            accessibilityLabel="NEXT"
+            accessibilityTraits={
+              Array [
+                "button",
+              ]
+            }
+            accessible={true}
+            collapsable={undefined}
+            hasTVPreferredFocus={undefined}
+            hitSlop={undefined}
+            isTVSelectable={true}
+            nativeID={undefined}
+            onLayout={undefined}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "opacity": 1,
+              }
+            }
+            testID={undefined}
+            tvParallaxProperties={undefined}
+          >
+            <View
+              style={
+                Array [
+                  Object {
+                    "alignItems": "center",
+                    "flexDirection": "row",
+                    "justifyContent": "center",
+                    "paddingVertical": 8,
+                  },
+                ]
+              }
+            >
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
+                style={
+                  Array [
+                    Object {
+                      "color": "rgb(82, 76, 97)",
+                      "fontFamily": "System",
+                      "fontSize": 13,
+                      "fontWeight": "400",
+                    },
+                    Object {
+                      "fontFamily": undefined,
+                    },
+                    Array [
+                      Object {
+                        "color": "rgb(0, 178, 214)",
+                      },
+                    ],
+                  ]
+                }
+              >
+                NEXT
+              </Text>
+            </View>
+          </View>
+        </View>
+        <View
+          style={
+            Object {
+              "flex": 1,
+            }
+          }
+        />
+        <View
+          style={
+            Array [
+              Object {
+                "borderRadius": 4,
+              },
+            ]
+          }
+        >
+          <View
+            accessibilityComponentType="button"
+            accessibilityLabel="DONE"
+            accessibilityTraits={
+              Array [
+                "button",
+              ]
+            }
+            accessible={true}
+            collapsable={undefined}
+            hasTVPreferredFocus={undefined}
+            hitSlop={undefined}
+            isTVSelectable={true}
+            nativeID={undefined}
+            onLayout={undefined}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "opacity": 1,
+              }
+            }
+            testID={undefined}
+            tvParallaxProperties={undefined}
+          >
+            <View
+              style={
+                Array [
+                  Object {
+                    "alignItems": "center",
+                    "flexDirection": "row",
+                    "justifyContent": "center",
+                    "paddingVertical": 8,
+                  },
+                ]
+              }
+            >
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
+                style={
+                  Array [
+                    Object {
+                      "color": "rgb(82, 76, 97)",
+                      "fontFamily": "System",
+                      "fontSize": 13,
+                      "fontWeight": "400",
+                    },
+                    Object {
+                      "fontFamily": undefined,
+                    },
+                    Array [
+                      Object {
+                        "color": "rgb(0, 178, 214)",
+                      },
+                    ],
+                  ]
+                }
+              >
+                DONE
+              </Text>
+            </View>
+          </View>
+        </View>
+      </View>
+      <View
+        style={
+          Array [
+            Object {
+              "alignSelf": "flex-start",
+              "borderColor": "red",
+              "borderWidth": 1,
+            },
+            undefined,
+          ]
+        }
+      />
+    </View>
+  </Modal>
+</View>
+`;
+
+exports[`Android BpkPicker should render correctly with arbitrary props 1`] = `null`;
+
+exports[`Android BpkPicker should render correctly with custom style 1`] = `null`;
+
+exports[`Android BpkPicker should render correctly with hint value 1`] = `null`;
+
+exports[`Android BpkPicker should render correctly with valid 1`] = `null`;
+
+exports[`Android BpkPicker should render correctly with valid false 1`] = `null`;
+
+exports[`Android BpkPicker should render correctly with valid false and a validation message 1`] = `null`;
