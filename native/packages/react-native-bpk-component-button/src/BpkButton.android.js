@@ -86,26 +86,29 @@ const BpkButton = (props: Props) => {
       <BpkTouchableNativeFeedback
         disabled={disabled}
         onPress={onPress}
-        style={style}
         type={type}
         accessibilityComponentType="button"
         accessibilityLabel={accessibilityLabel || title}
         accessibilityTraits={accessibilityTraits}
         {...rest}
       >
-        <View style={[buttonStyle, backgroundColor]}>
-          <View style={getStyleForElement('view', props)}>
-            {!iconOnly && (
-              <BpkText textStyle="sm" emphasize style={textStyle(theme, props)}>
-                {title.toUpperCase()}
-              </BpkText>
-            )}
-            {typeof icon === 'string' ? (
-              <BpkIcon icon={icon} style={iconStyle(theme, props)} small />
-            ) : (
-              icon
-            )}
-          </View>
+        <View
+          style={[
+            buttonStyle,
+            backgroundColor,
+            getStyleForElement('view', props),
+          ]}
+        >
+          {!iconOnly && (
+            <BpkText textStyle="sm" emphasize style={textStyle(theme, props)}>
+              {title.toUpperCase()}
+            </BpkText>
+          )}
+          {typeof icon === 'string' ? (
+            <BpkIcon icon={icon} style={iconStyle(theme, props)} small />
+          ) : (
+            icon
+          )}
         </View>
       </BpkTouchableNativeFeedback>
     </View>
