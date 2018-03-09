@@ -20,7 +20,6 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import { View } from 'react-native';
 import { withTheme } from 'react-native-bpk-theming';
 import BpkIcon from 'react-native-bpk-component-icon';
 import BpkText from 'react-native-bpk-component-text';
@@ -96,30 +95,24 @@ const BpkButton = (props: Props) => {
         borderRadius="pill"
         disabled={disabled}
         onPress={onPress}
-        style={[buttonStyle, buttonTheme]}
+        style={[buttonStyle, buttonTheme, getStyleForElement('view', props)]}
         type={type}
         {...rest}
       >
-        <View style={getStyleForElement('view', props)}>
-          {!iconOnly && (
-            <BpkText
-              textStyle={large ? 'lg' : 'sm'}
-              emphasize
-              style={textStyle(theme, props)}
-            >
-              {title}
-            </BpkText>
-          )}
-          {typeof icon === 'string' ? (
-            <BpkIcon
-              icon={icon}
-              style={iconStyle(theme, props)}
-              small={!large}
-            />
-          ) : (
-            icon
-          )}
-        </View>
+        {!iconOnly && (
+          <BpkText
+            textStyle={large ? 'lg' : 'sm'}
+            emphasize
+            style={textStyle(theme, props)}
+          >
+            {title}
+          </BpkText>
+        )}
+        {typeof icon === 'string' ? (
+          <BpkIcon icon={icon} style={iconStyle(theme, props)} small={!large} />
+        ) : (
+          icon
+        )}
       </BpkTouchableOverlay>
     </LinearGradient>
   );

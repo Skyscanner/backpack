@@ -75,12 +75,6 @@ exports[`Android BpkNudger should disable theming if the required attribute is o
           Object {
             "backgroundColor": "transparent",
           },
-        ]
-      }
-      testID={undefined}
-    >
-      <View
-        style={
           Array [
             Object {
               "alignItems": "center",
@@ -89,51 +83,52 @@ exports[`Android BpkNudger should disable theming if the required attribute is o
               "justifyContent": "center",
             },
             undefined,
+          ],
+        ]
+      }
+      testID={undefined}
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+              "fontFamily": "BpkIcon",
+              "fontSize": 24,
+              "lineHeight": 24,
+            },
+            Object {
+              "fontSize": 16,
+              "lineHeight": 16,
+            },
+            Array [
+              Array [
+                Object {
+                  "backgroundColor": "transparent",
+                  "color": "rgb(255, 255, 255)",
+                  "lineHeight": 13,
+                },
+                Object {
+                  "color": "rgb(0, 178, 214)",
+                },
+                undefined,
+              ],
+              Object {},
+              Array [
+                Object {
+                  "lineHeight": 16,
+                },
+                undefined,
+              ],
+            ],
           ]
         }
       >
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
-          style={
-            Array [
-              Object {
-                "color": "rgb(82, 76, 97)",
-                "fontFamily": "BpkIcon",
-                "fontSize": 24,
-                "lineHeight": 24,
-              },
-              Object {
-                "fontSize": 16,
-                "lineHeight": 16,
-              },
-              Array [
-                Array [
-                  Object {
-                    "backgroundColor": "transparent",
-                    "color": "rgb(255, 255, 255)",
-                    "lineHeight": 13,
-                  },
-                  Object {
-                    "color": "rgb(0, 178, 214)",
-                  },
-                  undefined,
-                ],
-                Object {},
-                Array [
-                  Object {
-                    "lineHeight": 16,
-                  },
-                  undefined,
-                ],
-              ],
-            ]
-          }
-        >
-          
-        </Text>
-      </View>
+        
+      </Text>
     </View>
   </View>
   <Text
@@ -223,12 +218,6 @@ exports[`Android BpkNudger should disable theming if the required attribute is o
           Object {
             "backgroundColor": "transparent",
           },
-        ]
-      }
-      testID={undefined}
-    >
-      <View
-        style={
           Array [
             Object {
               "alignItems": "center",
@@ -237,51 +226,52 @@ exports[`Android BpkNudger should disable theming if the required attribute is o
               "justifyContent": "center",
             },
             undefined,
+          ],
+        ]
+      }
+      testID={undefined}
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+              "fontFamily": "BpkIcon",
+              "fontSize": 24,
+              "lineHeight": 24,
+            },
+            Object {
+              "fontSize": 16,
+              "lineHeight": 16,
+            },
+            Array [
+              Array [
+                Object {
+                  "backgroundColor": "transparent",
+                  "color": "rgb(255, 255, 255)",
+                  "lineHeight": 13,
+                },
+                Object {
+                  "color": "rgb(0, 178, 214)",
+                },
+                undefined,
+              ],
+              Object {},
+              Array [
+                Object {
+                  "lineHeight": 16,
+                },
+                undefined,
+              ],
+            ],
           ]
         }
       >
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
-          style={
-            Array [
-              Object {
-                "color": "rgb(82, 76, 97)",
-                "fontFamily": "BpkIcon",
-                "fontSize": 24,
-                "lineHeight": 24,
-              },
-              Object {
-                "fontSize": 16,
-                "lineHeight": 16,
-              },
-              Array [
-                Array [
-                  Object {
-                    "backgroundColor": "transparent",
-                    "color": "rgb(255, 255, 255)",
-                    "lineHeight": 13,
-                  },
-                  Object {
-                    "color": "rgb(0, 178, 214)",
-                  },
-                  undefined,
-                ],
-                Object {},
-                Array [
-                  Object {
-                    "lineHeight": 16,
-                  },
-                  undefined,
-                ],
-              ],
-            ]
-          }
-        >
-          
-        </Text>
-      </View>
+        
+      </Text>
     </View>
   </View>
 </View>
@@ -362,12 +352,6 @@ exports[`Android BpkNudger should render correctly 1`] = `
           Object {
             "backgroundColor": "transparent",
           },
-        ]
-      }
-      testID={undefined}
-    >
-      <View
-        style={
           Array [
             Object {
               "alignItems": "center",
@@ -376,51 +360,52 @@ exports[`Android BpkNudger should render correctly 1`] = `
               "justifyContent": "center",
             },
             undefined,
+          ],
+        ]
+      }
+      testID={undefined}
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+              "fontFamily": "BpkIcon",
+              "fontSize": 24,
+              "lineHeight": 24,
+            },
+            Object {
+              "fontSize": 16,
+              "lineHeight": 16,
+            },
+            Array [
+              Array [
+                Object {
+                  "backgroundColor": "transparent",
+                  "color": "rgb(255, 255, 255)",
+                  "lineHeight": 13,
+                },
+                Object {
+                  "color": "rgb(0, 178, 214)",
+                },
+                undefined,
+              ],
+              Object {},
+              Array [
+                Object {
+                  "lineHeight": 16,
+                },
+                undefined,
+              ],
+            ],
           ]
         }
       >
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
-          style={
-            Array [
-              Object {
-                "color": "rgb(82, 76, 97)",
-                "fontFamily": "BpkIcon",
-                "fontSize": 24,
-                "lineHeight": 24,
-              },
-              Object {
-                "fontSize": 16,
-                "lineHeight": 16,
-              },
-              Array [
-                Array [
-                  Object {
-                    "backgroundColor": "transparent",
-                    "color": "rgb(255, 255, 255)",
-                    "lineHeight": 13,
-                  },
-                  Object {
-                    "color": "rgb(0, 178, 214)",
-                  },
-                  undefined,
-                ],
-                Object {},
-                Array [
-                  Object {
-                    "lineHeight": 16,
-                  },
-                  undefined,
-                ],
-              ],
-            ]
-          }
-        >
-          
-        </Text>
-      </View>
+        
+      </Text>
     </View>
   </View>
   <Text
@@ -510,12 +495,6 @@ exports[`Android BpkNudger should render correctly 1`] = `
           Object {
             "backgroundColor": "transparent",
           },
-        ]
-      }
-      testID={undefined}
-    >
-      <View
-        style={
           Array [
             Object {
               "alignItems": "center",
@@ -524,51 +503,52 @@ exports[`Android BpkNudger should render correctly 1`] = `
               "justifyContent": "center",
             },
             undefined,
+          ],
+        ]
+      }
+      testID={undefined}
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+              "fontFamily": "BpkIcon",
+              "fontSize": 24,
+              "lineHeight": 24,
+            },
+            Object {
+              "fontSize": 16,
+              "lineHeight": 16,
+            },
+            Array [
+              Array [
+                Object {
+                  "backgroundColor": "transparent",
+                  "color": "rgb(255, 255, 255)",
+                  "lineHeight": 13,
+                },
+                Object {
+                  "color": "rgb(0, 178, 214)",
+                },
+                undefined,
+              ],
+              Object {},
+              Array [
+                Object {
+                  "lineHeight": 16,
+                },
+                undefined,
+              ],
+            ],
           ]
         }
       >
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
-          style={
-            Array [
-              Object {
-                "color": "rgb(82, 76, 97)",
-                "fontFamily": "BpkIcon",
-                "fontSize": 24,
-                "lineHeight": 24,
-              },
-              Object {
-                "fontSize": 16,
-                "lineHeight": 16,
-              },
-              Array [
-                Array [
-                  Object {
-                    "backgroundColor": "transparent",
-                    "color": "rgb(255, 255, 255)",
-                    "lineHeight": 13,
-                  },
-                  Object {
-                    "color": "rgb(0, 178, 214)",
-                  },
-                  undefined,
-                ],
-                Object {},
-                Array [
-                  Object {
-                    "lineHeight": 16,
-                  },
-                  undefined,
-                ],
-              ],
-            ]
-          }
-        >
-          
-        </Text>
-      </View>
+        
+      </Text>
     </View>
   </View>
 </View>
@@ -654,12 +634,6 @@ exports[`Android BpkNudger should render correctly when value is a not an intege
           Object {
             "backgroundColor": "transparent",
           },
-        ]
-      }
-      testID={undefined}
-    >
-      <View
-        style={
           Array [
             Object {
               "alignItems": "center",
@@ -669,55 +643,56 @@ exports[`Android BpkNudger should render correctly when value is a not an intege
             },
             undefined,
             undefined,
+          ],
+        ]
+      }
+      testID={undefined}
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+              "fontFamily": "BpkIcon",
+              "fontSize": 24,
+              "lineHeight": 24,
+            },
+            Object {
+              "fontSize": 16,
+              "lineHeight": 16,
+            },
+            Array [
+              Array [
+                Object {
+                  "backgroundColor": "transparent",
+                  "color": "rgb(255, 255, 255)",
+                  "lineHeight": 13,
+                },
+                Object {
+                  "color": "rgb(0, 178, 214)",
+                },
+                Object {
+                  "color": "rgb(178, 174, 189)",
+                },
+                undefined,
+              ],
+              Object {},
+              Array [
+                Object {
+                  "lineHeight": 16,
+                },
+                undefined,
+                undefined,
+              ],
+            ],
           ]
         }
       >
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
-          style={
-            Array [
-              Object {
-                "color": "rgb(82, 76, 97)",
-                "fontFamily": "BpkIcon",
-                "fontSize": 24,
-                "lineHeight": 24,
-              },
-              Object {
-                "fontSize": 16,
-                "lineHeight": 16,
-              },
-              Array [
-                Array [
-                  Object {
-                    "backgroundColor": "transparent",
-                    "color": "rgb(255, 255, 255)",
-                    "lineHeight": 13,
-                  },
-                  Object {
-                    "color": "rgb(0, 178, 214)",
-                  },
-                  Object {
-                    "color": "rgb(178, 174, 189)",
-                  },
-                  undefined,
-                ],
-                Object {},
-                Array [
-                  Object {
-                    "lineHeight": 16,
-                  },
-                  undefined,
-                  undefined,
-                ],
-              ],
-            ]
-          }
-        >
-          
-        </Text>
-      </View>
+        
+      </Text>
     </View>
   </View>
   <Text
@@ -807,12 +782,6 @@ exports[`Android BpkNudger should render correctly when value is a not an intege
           Object {
             "backgroundColor": "transparent",
           },
-        ]
-      }
-      testID={undefined}
-    >
-      <View
-        style={
           Array [
             Object {
               "alignItems": "center",
@@ -821,51 +790,52 @@ exports[`Android BpkNudger should render correctly when value is a not an intege
               "justifyContent": "center",
             },
             undefined,
+          ],
+        ]
+      }
+      testID={undefined}
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+              "fontFamily": "BpkIcon",
+              "fontSize": 24,
+              "lineHeight": 24,
+            },
+            Object {
+              "fontSize": 16,
+              "lineHeight": 16,
+            },
+            Array [
+              Array [
+                Object {
+                  "backgroundColor": "transparent",
+                  "color": "rgb(255, 255, 255)",
+                  "lineHeight": 13,
+                },
+                Object {
+                  "color": "rgb(0, 178, 214)",
+                },
+                undefined,
+              ],
+              Object {},
+              Array [
+                Object {
+                  "lineHeight": 16,
+                },
+                undefined,
+              ],
+            ],
           ]
         }
       >
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
-          style={
-            Array [
-              Object {
-                "color": "rgb(82, 76, 97)",
-                "fontFamily": "BpkIcon",
-                "fontSize": 24,
-                "lineHeight": 24,
-              },
-              Object {
-                "fontSize": 16,
-                "lineHeight": 16,
-              },
-              Array [
-                Array [
-                  Object {
-                    "backgroundColor": "transparent",
-                    "color": "rgb(255, 255, 255)",
-                    "lineHeight": 13,
-                  },
-                  Object {
-                    "color": "rgb(0, 178, 214)",
-                  },
-                  undefined,
-                ],
-                Object {},
-                Array [
-                  Object {
-                    "lineHeight": 16,
-                  },
-                  undefined,
-                ],
-              ],
-            ]
-          }
-        >
-          
-        </Text>
-      </View>
+        
+      </Text>
     </View>
   </View>
 </View>
@@ -946,12 +916,6 @@ exports[`Android BpkNudger should render correctly when value is greater than ma
           Object {
             "backgroundColor": "transparent",
           },
-        ]
-      }
-      testID={undefined}
-    >
-      <View
-        style={
           Array [
             Object {
               "alignItems": "center",
@@ -960,51 +924,52 @@ exports[`Android BpkNudger should render correctly when value is greater than ma
               "justifyContent": "center",
             },
             undefined,
+          ],
+        ]
+      }
+      testID={undefined}
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+              "fontFamily": "BpkIcon",
+              "fontSize": 24,
+              "lineHeight": 24,
+            },
+            Object {
+              "fontSize": 16,
+              "lineHeight": 16,
+            },
+            Array [
+              Array [
+                Object {
+                  "backgroundColor": "transparent",
+                  "color": "rgb(255, 255, 255)",
+                  "lineHeight": 13,
+                },
+                Object {
+                  "color": "rgb(0, 178, 214)",
+                },
+                undefined,
+              ],
+              Object {},
+              Array [
+                Object {
+                  "lineHeight": 16,
+                },
+                undefined,
+              ],
+            ],
           ]
         }
       >
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
-          style={
-            Array [
-              Object {
-                "color": "rgb(82, 76, 97)",
-                "fontFamily": "BpkIcon",
-                "fontSize": 24,
-                "lineHeight": 24,
-              },
-              Object {
-                "fontSize": 16,
-                "lineHeight": 16,
-              },
-              Array [
-                Array [
-                  Object {
-                    "backgroundColor": "transparent",
-                    "color": "rgb(255, 255, 255)",
-                    "lineHeight": 13,
-                  },
-                  Object {
-                    "color": "rgb(0, 178, 214)",
-                  },
-                  undefined,
-                ],
-                Object {},
-                Array [
-                  Object {
-                    "lineHeight": 16,
-                  },
-                  undefined,
-                ],
-              ],
-            ]
-          }
-        >
-          
-        </Text>
-      </View>
+        
+      </Text>
     </View>
   </View>
   <Text
@@ -1099,12 +1064,6 @@ exports[`Android BpkNudger should render correctly when value is greater than ma
           Object {
             "backgroundColor": "transparent",
           },
-        ]
-      }
-      testID={undefined}
-    >
-      <View
-        style={
           Array [
             Object {
               "alignItems": "center",
@@ -1114,55 +1073,56 @@ exports[`Android BpkNudger should render correctly when value is greater than ma
             },
             undefined,
             undefined,
+          ],
+        ]
+      }
+      testID={undefined}
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+              "fontFamily": "BpkIcon",
+              "fontSize": 24,
+              "lineHeight": 24,
+            },
+            Object {
+              "fontSize": 16,
+              "lineHeight": 16,
+            },
+            Array [
+              Array [
+                Object {
+                  "backgroundColor": "transparent",
+                  "color": "rgb(255, 255, 255)",
+                  "lineHeight": 13,
+                },
+                Object {
+                  "color": "rgb(0, 178, 214)",
+                },
+                Object {
+                  "color": "rgb(178, 174, 189)",
+                },
+                undefined,
+              ],
+              Object {},
+              Array [
+                Object {
+                  "lineHeight": 16,
+                },
+                undefined,
+                undefined,
+              ],
+            ],
           ]
         }
       >
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
-          style={
-            Array [
-              Object {
-                "color": "rgb(82, 76, 97)",
-                "fontFamily": "BpkIcon",
-                "fontSize": 24,
-                "lineHeight": 24,
-              },
-              Object {
-                "fontSize": 16,
-                "lineHeight": 16,
-              },
-              Array [
-                Array [
-                  Object {
-                    "backgroundColor": "transparent",
-                    "color": "rgb(255, 255, 255)",
-                    "lineHeight": 13,
-                  },
-                  Object {
-                    "color": "rgb(0, 178, 214)",
-                  },
-                  Object {
-                    "color": "rgb(178, 174, 189)",
-                  },
-                  undefined,
-                ],
-                Object {},
-                Array [
-                  Object {
-                    "lineHeight": 16,
-                  },
-                  undefined,
-                  undefined,
-                ],
-              ],
-            ]
-          }
-        >
-          
-        </Text>
-      </View>
+        
+      </Text>
     </View>
   </View>
 </View>
@@ -1248,12 +1208,6 @@ exports[`Android BpkNudger should render correctly when value is less than min 1
           Object {
             "backgroundColor": "transparent",
           },
-        ]
-      }
-      testID={undefined}
-    >
-      <View
-        style={
           Array [
             Object {
               "alignItems": "center",
@@ -1263,55 +1217,56 @@ exports[`Android BpkNudger should render correctly when value is less than min 1
             },
             undefined,
             undefined,
+          ],
+        ]
+      }
+      testID={undefined}
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+              "fontFamily": "BpkIcon",
+              "fontSize": 24,
+              "lineHeight": 24,
+            },
+            Object {
+              "fontSize": 16,
+              "lineHeight": 16,
+            },
+            Array [
+              Array [
+                Object {
+                  "backgroundColor": "transparent",
+                  "color": "rgb(255, 255, 255)",
+                  "lineHeight": 13,
+                },
+                Object {
+                  "color": "rgb(0, 178, 214)",
+                },
+                Object {
+                  "color": "rgb(178, 174, 189)",
+                },
+                undefined,
+              ],
+              Object {},
+              Array [
+                Object {
+                  "lineHeight": 16,
+                },
+                undefined,
+                undefined,
+              ],
+            ],
           ]
         }
       >
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
-          style={
-            Array [
-              Object {
-                "color": "rgb(82, 76, 97)",
-                "fontFamily": "BpkIcon",
-                "fontSize": 24,
-                "lineHeight": 24,
-              },
-              Object {
-                "fontSize": 16,
-                "lineHeight": 16,
-              },
-              Array [
-                Array [
-                  Object {
-                    "backgroundColor": "transparent",
-                    "color": "rgb(255, 255, 255)",
-                    "lineHeight": 13,
-                  },
-                  Object {
-                    "color": "rgb(0, 178, 214)",
-                  },
-                  Object {
-                    "color": "rgb(178, 174, 189)",
-                  },
-                  undefined,
-                ],
-                Object {},
-                Array [
-                  Object {
-                    "lineHeight": 16,
-                  },
-                  undefined,
-                  undefined,
-                ],
-              ],
-            ]
-          }
-        >
-          
-        </Text>
-      </View>
+        
+      </Text>
     </View>
   </View>
   <Text
@@ -1401,12 +1356,6 @@ exports[`Android BpkNudger should render correctly when value is less than min 1
           Object {
             "backgroundColor": "transparent",
           },
-        ]
-      }
-      testID={undefined}
-    >
-      <View
-        style={
           Array [
             Object {
               "alignItems": "center",
@@ -1415,51 +1364,52 @@ exports[`Android BpkNudger should render correctly when value is less than min 1
               "justifyContent": "center",
             },
             undefined,
+          ],
+        ]
+      }
+      testID={undefined}
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+              "fontFamily": "BpkIcon",
+              "fontSize": 24,
+              "lineHeight": 24,
+            },
+            Object {
+              "fontSize": 16,
+              "lineHeight": 16,
+            },
+            Array [
+              Array [
+                Object {
+                  "backgroundColor": "transparent",
+                  "color": "rgb(255, 255, 255)",
+                  "lineHeight": 13,
+                },
+                Object {
+                  "color": "rgb(0, 178, 214)",
+                },
+                undefined,
+              ],
+              Object {},
+              Array [
+                Object {
+                  "lineHeight": 16,
+                },
+                undefined,
+              ],
+            ],
           ]
         }
       >
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
-          style={
-            Array [
-              Object {
-                "color": "rgb(82, 76, 97)",
-                "fontFamily": "BpkIcon",
-                "fontSize": 24,
-                "lineHeight": 24,
-              },
-              Object {
-                "fontSize": 16,
-                "lineHeight": 16,
-              },
-              Array [
-                Array [
-                  Object {
-                    "backgroundColor": "transparent",
-                    "color": "rgb(255, 255, 255)",
-                    "lineHeight": 13,
-                  },
-                  Object {
-                    "color": "rgb(0, 178, 214)",
-                  },
-                  undefined,
-                ],
-                Object {},
-                Array [
-                  Object {
-                    "lineHeight": 16,
-                  },
-                  undefined,
-                ],
-              ],
-            ]
-          }
-        >
-          
-        </Text>
-      </View>
+        
+      </Text>
     </View>
   </View>
 </View>
@@ -1540,12 +1490,6 @@ exports[`Android BpkNudger should support theming 1`] = `
           Object {
             "backgroundColor": "yellow",
           },
-        ]
-      }
-      testID={undefined}
-    >
-      <View
-        style={
           Array [
             Object {
               "alignItems": "center",
@@ -1554,53 +1498,54 @@ exports[`Android BpkNudger should support theming 1`] = `
               "justifyContent": "center",
             },
             undefined,
+          ],
+        ]
+      }
+      testID={undefined}
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+              "fontFamily": "BpkIcon",
+              "fontSize": 24,
+              "lineHeight": 24,
+            },
+            Object {
+              "fontSize": 16,
+              "lineHeight": 16,
+            },
+            Array [
+              Array [
+                Object {
+                  "backgroundColor": "transparent",
+                  "color": "rgb(255, 255, 255)",
+                  "lineHeight": 13,
+                },
+                Object {
+                  "color": "rgb(0, 178, 214)",
+                },
+                undefined,
+              ],
+              Object {
+                "color": "red",
+              },
+              Array [
+                Object {
+                  "lineHeight": 16,
+                },
+                undefined,
+              ],
+            ],
           ]
         }
       >
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
-          style={
-            Array [
-              Object {
-                "color": "rgb(82, 76, 97)",
-                "fontFamily": "BpkIcon",
-                "fontSize": 24,
-                "lineHeight": 24,
-              },
-              Object {
-                "fontSize": 16,
-                "lineHeight": 16,
-              },
-              Array [
-                Array [
-                  Object {
-                    "backgroundColor": "transparent",
-                    "color": "rgb(255, 255, 255)",
-                    "lineHeight": 13,
-                  },
-                  Object {
-                    "color": "rgb(0, 178, 214)",
-                  },
-                  undefined,
-                ],
-                Object {
-                  "color": "red",
-                },
-                Array [
-                  Object {
-                    "lineHeight": 16,
-                  },
-                  undefined,
-                ],
-              ],
-            ]
-          }
-        >
-          
-        </Text>
-      </View>
+        
+      </Text>
     </View>
   </View>
   <Text
@@ -1690,12 +1635,6 @@ exports[`Android BpkNudger should support theming 1`] = `
           Object {
             "backgroundColor": "yellow",
           },
-        ]
-      }
-      testID={undefined}
-    >
-      <View
-        style={
           Array [
             Object {
               "alignItems": "center",
@@ -1704,53 +1643,54 @@ exports[`Android BpkNudger should support theming 1`] = `
               "justifyContent": "center",
             },
             undefined,
+          ],
+        ]
+      }
+      testID={undefined}
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+              "fontFamily": "BpkIcon",
+              "fontSize": 24,
+              "lineHeight": 24,
+            },
+            Object {
+              "fontSize": 16,
+              "lineHeight": 16,
+            },
+            Array [
+              Array [
+                Object {
+                  "backgroundColor": "transparent",
+                  "color": "rgb(255, 255, 255)",
+                  "lineHeight": 13,
+                },
+                Object {
+                  "color": "rgb(0, 178, 214)",
+                },
+                undefined,
+              ],
+              Object {
+                "color": "red",
+              },
+              Array [
+                Object {
+                  "lineHeight": 16,
+                },
+                undefined,
+              ],
+            ],
           ]
         }
       >
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
-          style={
-            Array [
-              Object {
-                "color": "rgb(82, 76, 97)",
-                "fontFamily": "BpkIcon",
-                "fontSize": 24,
-                "lineHeight": 24,
-              },
-              Object {
-                "fontSize": 16,
-                "lineHeight": 16,
-              },
-              Array [
-                Array [
-                  Object {
-                    "backgroundColor": "transparent",
-                    "color": "rgb(255, 255, 255)",
-                    "lineHeight": 13,
-                  },
-                  Object {
-                    "color": "rgb(0, 178, 214)",
-                  },
-                  undefined,
-                ],
-                Object {
-                  "color": "red",
-                },
-                Array [
-                  Object {
-                    "lineHeight": 16,
-                  },
-                  undefined,
-                ],
-              ],
-            ]
-          }
-        >
-          
-        </Text>
-      </View>
+        
+      </Text>
     </View>
   </View>
 </View>

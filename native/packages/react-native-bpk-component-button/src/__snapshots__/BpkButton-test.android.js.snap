@@ -50,12 +50,6 @@ exports[`Android API levels Android API<21 should render without ripple 1`] = `
         Object {
           "backgroundColor": "rgb(0, 215, 117)",
         },
-      ]
-    }
-    testID={undefined}
-  >
-    <View
-      style={
         Array [
           Object {
             "alignItems": "center",
@@ -63,36 +57,37 @@ exports[`Android API levels Android API<21 should render without ripple 1`] = `
             "flexDirection": "row",
             "justifyContent": "center",
           },
+        ],
+      ]
+    }
+    testID={undefined}
+  >
+    <Text
+      style={
+        Array [
+          Object {
+            "color": "rgb(82, 76, 97)",
+            "fontFamily": "sans-serif",
+            "fontSize": 14,
+            "fontWeight": "400",
+          },
+          Object {
+            "fontFamily": "sans-serif-medium",
+          },
+          Array [
+            Array [
+              Object {
+                "backgroundColor": "transparent",
+                "color": "rgb(255, 255, 255)",
+              },
+            ],
+            Object {},
+          ],
         ]
       }
     >
-      <Text
-        style={
-          Array [
-            Object {
-              "color": "rgb(82, 76, 97)",
-              "fontFamily": "sans-serif",
-              "fontSize": 14,
-              "fontWeight": "400",
-            },
-            Object {
-              "fontFamily": "sans-serif-medium",
-            },
-            Array [
-              Array [
-                Object {
-                  "backgroundColor": "transparent",
-                  "color": "rgb(255, 255, 255)",
-                },
-              ],
-              Object {},
-            ],
-          ]
-        }
-      >
-        LOREM IPSUM
-      </Text>
-    </View>
+      LOREM IPSUM
+    </Text>
   </View>
 </View>
 `;
@@ -147,12 +142,6 @@ exports[`Android API levels Android API>=21 should render with ripple 1`] = `
         Object {
           "backgroundColor": "rgb(0, 215, 117)",
         },
-      ]
-    }
-    testID={undefined}
-  >
-    <View
-      style={
         Array [
           Object {
             "alignItems": "center",
@@ -160,36 +149,37 @@ exports[`Android API levels Android API>=21 should render with ripple 1`] = `
             "flexDirection": "row",
             "justifyContent": "center",
           },
+        ],
+      ]
+    }
+    testID={undefined}
+  >
+    <Text
+      style={
+        Array [
+          Object {
+            "color": "rgb(82, 76, 97)",
+            "fontFamily": "sans-serif",
+            "fontSize": 14,
+            "fontWeight": "400",
+          },
+          Object {
+            "fontFamily": "sans-serif-medium",
+          },
+          Array [
+            Array [
+              Object {
+                "backgroundColor": "transparent",
+                "color": "rgb(255, 255, 255)",
+              },
+            ],
+            Object {},
+          ],
         ]
       }
     >
-      <Text
-        style={
-          Array [
-            Object {
-              "color": "rgb(82, 76, 97)",
-              "fontFamily": "sans-serif",
-              "fontSize": 14,
-              "fontWeight": "400",
-            },
-            Object {
-              "fontFamily": "sans-serif-medium",
-            },
-            Array [
-              Array [
-                Object {
-                  "backgroundColor": "transparent",
-                  "color": "rgb(255, 255, 255)",
-                },
-              ],
-              Object {},
-            ],
-          ]
-        }
-      >
-        LOREM IPSUM
-      </Text>
-    </View>
+      LOREM IPSUM
+    </Text>
   </View>
 </View>
 `;
@@ -244,12 +234,6 @@ exports[`Android BpkButton should render correctly 1`] = `
         Object {
           "backgroundColor": "rgb(0, 215, 117)",
         },
-      ]
-    }
-    testID={undefined}
-  >
-    <View
-      style={
         Array [
           Object {
             "alignItems": "center",
@@ -257,39 +241,40 @@ exports[`Android BpkButton should render correctly 1`] = `
             "flexDirection": "row",
             "justifyContent": "center",
           },
+        ],
+      ]
+    }
+    testID={undefined}
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "rgb(82, 76, 97)",
+            "fontFamily": "sans-serif",
+            "fontSize": 14,
+            "fontWeight": "400",
+          },
+          Object {
+            "fontFamily": "sans-serif-medium",
+          },
+          Array [
+            Array [
+              Object {
+                "backgroundColor": "transparent",
+                "color": "rgb(255, 255, 255)",
+              },
+            ],
+            Object {},
+          ],
         ]
       }
     >
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
-        style={
-          Array [
-            Object {
-              "color": "rgb(82, 76, 97)",
-              "fontFamily": "sans-serif",
-              "fontSize": 14,
-              "fontWeight": "400",
-            },
-            Object {
-              "fontFamily": "sans-serif-medium",
-            },
-            Array [
-              Array [
-                Object {
-                  "backgroundColor": "transparent",
-                  "color": "rgb(255, 255, 255)",
-                },
-              ],
-              Object {},
-            ],
-          ]
-        }
-      >
-        LOREM IPSUM
-      </Text>
-    </View>
+      LOREM IPSUM
+    </Text>
   </View>
 </View>
 `;
@@ -348,12 +333,6 @@ exports[`Android BpkButton should render correctly with iconAlignment="leading" 
         Object {
           "backgroundColor": "rgb(0, 215, 117)",
         },
-      ]
-    }
-    testID={undefined}
-  >
-    <View
-      style={
         Array [
           Object {
             "alignItems": "center",
@@ -367,83 +346,84 @@ exports[`Android BpkButton should render correctly with iconAlignment="leading" 
           Object {
             "flexDirection": "row-reverse",
           },
+        ],
+      ]
+    }
+    testID={undefined}
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "rgb(82, 76, 97)",
+            "fontFamily": "sans-serif",
+            "fontSize": 14,
+            "fontWeight": "400",
+          },
+          Object {
+            "fontFamily": "sans-serif-medium",
+          },
+          Array [
+            Array [
+              Object {
+                "backgroundColor": "transparent",
+                "color": "rgb(255, 255, 255)",
+              },
+              undefined,
+              undefined,
+            ],
+            Object {},
+          ],
         ]
       }
     >
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
-        style={
+      LOREM IPSUM
+    </Text>
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "rgb(82, 76, 97)",
+            "fontFamily": "BpkIcon",
+            "fontSize": 24,
+            "lineHeight": 24,
+          },
+          Object {
+            "fontSize": 16,
+            "lineHeight": 16,
+          },
           Array [
-            Object {
-              "color": "rgb(82, 76, 97)",
-              "fontFamily": "sans-serif",
-              "fontSize": 14,
-              "fontWeight": "400",
-            },
-            Object {
-              "fontFamily": "sans-serif-medium",
-            },
             Array [
-              Array [
-                Object {
-                  "backgroundColor": "transparent",
-                  "color": "rgb(255, 255, 255)",
-                },
-                undefined,
-                undefined,
-              ],
-              Object {},
+              Object {
+                "backgroundColor": "transparent",
+                "color": "rgb(255, 255, 255)",
+              },
+              undefined,
+              undefined,
             ],
-          ]
-        }
-      >
-        LOREM IPSUM
-      </Text>
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
-        style={
-          Array [
-            Object {
-              "color": "rgb(82, 76, 97)",
-              "fontFamily": "BpkIcon",
-              "fontSize": 24,
-              "lineHeight": 24,
-            },
-            Object {
-              "fontSize": 16,
-              "lineHeight": 16,
-            },
+            Object {},
             Array [
-              Array [
-                Object {
-                  "backgroundColor": "transparent",
-                  "color": "rgb(255, 255, 255)",
-                },
-                undefined,
-                undefined,
-              ],
-              Object {},
-              Array [
-                null,
-                Object {
-                  "marginLeft": 4,
-                },
-                Object {
-                  "marginLeft": 0,
-                  "marginRight": 4,
-                },
-              ],
+              null,
+              Object {
+                "marginLeft": 4,
+              },
+              Object {
+                "marginLeft": 0,
+                "marginRight": 4,
+              },
             ],
-          ]
-        }
-      >
-        
-      </Text>
-    </View>
+          ],
+        ]
+      }
+    >
+      
+    </Text>
   </View>
 </View>
 `;
@@ -500,12 +480,6 @@ exports[`Android BpkButton should render correctly with iconAlignment="trailing"
         Object {
           "backgroundColor": "rgb(0, 215, 117)",
         },
-      ]
-    }
-    testID={undefined}
-  >
-    <View
-      style={
         Array [
           Object {
             "alignItems": "center",
@@ -516,77 +490,78 @@ exports[`Android BpkButton should render correctly with iconAlignment="trailing"
           Object {
             "justifyContent": "space-between",
           },
+        ],
+      ]
+    }
+    testID={undefined}
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "rgb(82, 76, 97)",
+            "fontFamily": "sans-serif",
+            "fontSize": 14,
+            "fontWeight": "400",
+          },
+          Object {
+            "fontFamily": "sans-serif-medium",
+          },
+          Array [
+            Array [
+              Object {
+                "backgroundColor": "transparent",
+                "color": "rgb(255, 255, 255)",
+              },
+              undefined,
+            ],
+            Object {},
+          ],
         ]
       }
     >
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
-        style={
+      LOREM IPSUM
+    </Text>
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "rgb(82, 76, 97)",
+            "fontFamily": "BpkIcon",
+            "fontSize": 24,
+            "lineHeight": 24,
+          },
+          Object {
+            "fontSize": 16,
+            "lineHeight": 16,
+          },
           Array [
-            Object {
-              "color": "rgb(82, 76, 97)",
-              "fontFamily": "sans-serif",
-              "fontSize": 14,
-              "fontWeight": "400",
-            },
-            Object {
-              "fontFamily": "sans-serif-medium",
-            },
             Array [
-              Array [
-                Object {
-                  "backgroundColor": "transparent",
-                  "color": "rgb(255, 255, 255)",
-                },
-                undefined,
-              ],
-              Object {},
+              Object {
+                "backgroundColor": "transparent",
+                "color": "rgb(255, 255, 255)",
+              },
+              undefined,
             ],
-          ]
-        }
-      >
-        LOREM IPSUM
-      </Text>
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
-        style={
-          Array [
-            Object {
-              "color": "rgb(82, 76, 97)",
-              "fontFamily": "BpkIcon",
-              "fontSize": 24,
-              "lineHeight": 24,
-            },
-            Object {
-              "fontSize": 16,
-              "lineHeight": 16,
-            },
+            Object {},
             Array [
-              Array [
-                Object {
-                  "backgroundColor": "transparent",
-                  "color": "rgb(255, 255, 255)",
-                },
-                undefined,
-              ],
-              Object {},
-              Array [
-                null,
-                Object {
-                  "marginLeft": 4,
-                },
-              ],
+              null,
+              Object {
+                "marginLeft": 4,
+              },
             ],
-          ]
-        }
-      >
-        
-      </Text>
-    </View>
+          ],
+        ]
+      }
+    >
+      
+    </Text>
   </View>
 </View>
 `;
@@ -647,12 +622,6 @@ exports[`Android BpkButton should render correctly with type="destructive" 1`] =
         Object {
           "backgroundColor": "transparent",
         },
-      ]
-    }
-    testID={undefined}
-  >
-    <View
-      style={
         Array [
           Object {
             "alignItems": "center",
@@ -660,42 +629,43 @@ exports[`Android BpkButton should render correctly with type="destructive" 1`] =
             "flexDirection": "row",
             "justifyContent": "center",
           },
+        ],
+      ]
+    }
+    testID={undefined}
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "rgb(82, 76, 97)",
+            "fontFamily": "sans-serif",
+            "fontSize": 14,
+            "fontWeight": "400",
+          },
+          Object {
+            "fontFamily": "sans-serif-medium",
+          },
+          Array [
+            Array [
+              Object {
+                "backgroundColor": "transparent",
+                "color": "rgb(255, 255, 255)",
+              },
+              Object {
+                "color": "rgb(255, 84, 82)",
+              },
+            ],
+            Object {},
+          ],
         ]
       }
     >
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
-        style={
-          Array [
-            Object {
-              "color": "rgb(82, 76, 97)",
-              "fontFamily": "sans-serif",
-              "fontSize": 14,
-              "fontWeight": "400",
-            },
-            Object {
-              "fontFamily": "sans-serif-medium",
-            },
-            Array [
-              Array [
-                Object {
-                  "backgroundColor": "transparent",
-                  "color": "rgb(255, 255, 255)",
-                },
-                Object {
-                  "color": "rgb(255, 84, 82)",
-                },
-              ],
-              Object {},
-            ],
-          ]
-        }
-      >
-        LOREM IPSUM
-      </Text>
-    </View>
+      LOREM IPSUM
+    </Text>
   </View>
 </View>
 `;
@@ -761,12 +731,6 @@ exports[`Android BpkButton should render correctly with type="destructive" and d
         Object {
           "backgroundColor": "transparent",
         },
-      ]
-    }
-    testID={undefined}
-  >
-    <View
-      style={
         Array [
           Object {
             "alignItems": "center",
@@ -775,45 +739,46 @@ exports[`Android BpkButton should render correctly with type="destructive" and d
             "justifyContent": "center",
           },
           undefined,
+        ],
+      ]
+    }
+    testID={undefined}
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "rgb(82, 76, 97)",
+            "fontFamily": "sans-serif",
+            "fontSize": 14,
+            "fontWeight": "400",
+          },
+          Object {
+            "fontFamily": "sans-serif-medium",
+          },
+          Array [
+            Array [
+              Object {
+                "backgroundColor": "transparent",
+                "color": "rgb(255, 255, 255)",
+              },
+              Object {
+                "color": "rgb(255, 84, 82)",
+              },
+              Object {
+                "color": "rgb(178, 174, 189)",
+              },
+            ],
+            Object {},
+          ],
         ]
       }
     >
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
-        style={
-          Array [
-            Object {
-              "color": "rgb(82, 76, 97)",
-              "fontFamily": "sans-serif",
-              "fontSize": 14,
-              "fontWeight": "400",
-            },
-            Object {
-              "fontFamily": "sans-serif-medium",
-            },
-            Array [
-              Array [
-                Object {
-                  "backgroundColor": "transparent",
-                  "color": "rgb(255, 255, 255)",
-                },
-                Object {
-                  "color": "rgb(255, 84, 82)",
-                },
-                Object {
-                  "color": "rgb(178, 174, 189)",
-                },
-              ],
-              Object {},
-            ],
-          ]
-        }
-      >
-        LOREM IPSUM
-      </Text>
-    </View>
+      LOREM IPSUM
+    </Text>
   </View>
 </View>
 `;
@@ -868,12 +833,6 @@ exports[`Android BpkButton should render correctly with type="featured" 1`] = `
         Object {
           "backgroundColor": "rgb(250, 72, 138)",
         },
-      ]
-    }
-    testID={undefined}
-  >
-    <View
-      style={
         Array [
           Object {
             "alignItems": "center",
@@ -881,39 +840,40 @@ exports[`Android BpkButton should render correctly with type="featured" 1`] = `
             "flexDirection": "row",
             "justifyContent": "center",
           },
+        ],
+      ]
+    }
+    testID={undefined}
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "rgb(82, 76, 97)",
+            "fontFamily": "sans-serif",
+            "fontSize": 14,
+            "fontWeight": "400",
+          },
+          Object {
+            "fontFamily": "sans-serif-medium",
+          },
+          Array [
+            Array [
+              Object {
+                "backgroundColor": "transparent",
+                "color": "rgb(255, 255, 255)",
+              },
+            ],
+            Object {},
+          ],
         ]
       }
     >
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
-        style={
-          Array [
-            Object {
-              "color": "rgb(82, 76, 97)",
-              "fontFamily": "sans-serif",
-              "fontSize": 14,
-              "fontWeight": "400",
-            },
-            Object {
-              "fontFamily": "sans-serif-medium",
-            },
-            Array [
-              Array [
-                Object {
-                  "backgroundColor": "transparent",
-                  "color": "rgb(255, 255, 255)",
-                },
-              ],
-              Object {},
-            ],
-          ]
-        }
-      >
-        LOREM IPSUM
-      </Text>
-    </View>
+      LOREM IPSUM
+    </Text>
   </View>
 </View>
 `;
@@ -973,12 +933,6 @@ exports[`Android BpkButton should render correctly with type="featured" and disa
         Object {
           "backgroundColor": "rgb(230, 228, 235)",
         },
-      ]
-    }
-    testID={undefined}
-  >
-    <View
-      style={
         Array [
           Object {
             "alignItems": "center",
@@ -987,42 +941,43 @@ exports[`Android BpkButton should render correctly with type="featured" and disa
             "justifyContent": "center",
           },
           undefined,
+        ],
+      ]
+    }
+    testID={undefined}
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "rgb(82, 76, 97)",
+            "fontFamily": "sans-serif",
+            "fontSize": 14,
+            "fontWeight": "400",
+          },
+          Object {
+            "fontFamily": "sans-serif-medium",
+          },
+          Array [
+            Array [
+              Object {
+                "backgroundColor": "transparent",
+                "color": "rgb(255, 255, 255)",
+              },
+              Object {
+                "color": "rgb(178, 174, 189)",
+              },
+            ],
+            Object {},
+          ],
         ]
       }
     >
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
-        style={
-          Array [
-            Object {
-              "color": "rgb(82, 76, 97)",
-              "fontFamily": "sans-serif",
-              "fontSize": 14,
-              "fontWeight": "400",
-            },
-            Object {
-              "fontFamily": "sans-serif-medium",
-            },
-            Array [
-              Array [
-                Object {
-                  "backgroundColor": "transparent",
-                  "color": "rgb(255, 255, 255)",
-                },
-                Object {
-                  "color": "rgb(178, 174, 189)",
-                },
-              ],
-              Object {},
-            ],
-          ]
-        }
-      >
-        LOREM IPSUM
-      </Text>
-    </View>
+      LOREM IPSUM
+    </Text>
   </View>
 </View>
 `;
@@ -1077,12 +1032,6 @@ exports[`Android BpkButton should render correctly with type="primary" 1`] = `
         Object {
           "backgroundColor": "rgb(0, 215, 117)",
         },
-      ]
-    }
-    testID={undefined}
-  >
-    <View
-      style={
         Array [
           Object {
             "alignItems": "center",
@@ -1090,39 +1039,40 @@ exports[`Android BpkButton should render correctly with type="primary" 1`] = `
             "flexDirection": "row",
             "justifyContent": "center",
           },
+        ],
+      ]
+    }
+    testID={undefined}
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "rgb(82, 76, 97)",
+            "fontFamily": "sans-serif",
+            "fontSize": 14,
+            "fontWeight": "400",
+          },
+          Object {
+            "fontFamily": "sans-serif-medium",
+          },
+          Array [
+            Array [
+              Object {
+                "backgroundColor": "transparent",
+                "color": "rgb(255, 255, 255)",
+              },
+            ],
+            Object {},
+          ],
         ]
       }
     >
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
-        style={
-          Array [
-            Object {
-              "color": "rgb(82, 76, 97)",
-              "fontFamily": "sans-serif",
-              "fontSize": 14,
-              "fontWeight": "400",
-            },
-            Object {
-              "fontFamily": "sans-serif-medium",
-            },
-            Array [
-              Array [
-                Object {
-                  "backgroundColor": "transparent",
-                  "color": "rgb(255, 255, 255)",
-                },
-              ],
-              Object {},
-            ],
-          ]
-        }
-      >
-        LOREM IPSUM
-      </Text>
-    </View>
+      LOREM IPSUM
+    </Text>
   </View>
 </View>
 `;
@@ -1182,12 +1132,6 @@ exports[`Android BpkButton should render correctly with type="primary" and disab
         Object {
           "backgroundColor": "rgb(230, 228, 235)",
         },
-      ]
-    }
-    testID={undefined}
-  >
-    <View
-      style={
         Array [
           Object {
             "alignItems": "center",
@@ -1196,42 +1140,43 @@ exports[`Android BpkButton should render correctly with type="primary" and disab
             "justifyContent": "center",
           },
           undefined,
+        ],
+      ]
+    }
+    testID={undefined}
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "rgb(82, 76, 97)",
+            "fontFamily": "sans-serif",
+            "fontSize": 14,
+            "fontWeight": "400",
+          },
+          Object {
+            "fontFamily": "sans-serif-medium",
+          },
+          Array [
+            Array [
+              Object {
+                "backgroundColor": "transparent",
+                "color": "rgb(255, 255, 255)",
+              },
+              Object {
+                "color": "rgb(178, 174, 189)",
+              },
+            ],
+            Object {},
+          ],
         ]
       }
     >
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
-        style={
-          Array [
-            Object {
-              "color": "rgb(82, 76, 97)",
-              "fontFamily": "sans-serif",
-              "fontSize": 14,
-              "fontWeight": "400",
-            },
-            Object {
-              "fontFamily": "sans-serif-medium",
-            },
-            Array [
-              Array [
-                Object {
-                  "backgroundColor": "transparent",
-                  "color": "rgb(255, 255, 255)",
-                },
-                Object {
-                  "color": "rgb(178, 174, 189)",
-                },
-              ],
-              Object {},
-            ],
-          ]
-        }
-      >
-        LOREM IPSUM
-      </Text>
-    </View>
+      LOREM IPSUM
+    </Text>
   </View>
 </View>
 `;
@@ -1292,12 +1237,6 @@ exports[`Android BpkButton should render correctly with type="secondary" 1`] = `
         Object {
           "backgroundColor": "transparent",
         },
-      ]
-    }
-    testID={undefined}
-  >
-    <View
-      style={
         Array [
           Object {
             "alignItems": "center",
@@ -1305,42 +1244,43 @@ exports[`Android BpkButton should render correctly with type="secondary" 1`] = `
             "flexDirection": "row",
             "justifyContent": "center",
           },
+        ],
+      ]
+    }
+    testID={undefined}
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "rgb(82, 76, 97)",
+            "fontFamily": "sans-serif",
+            "fontSize": 14,
+            "fontWeight": "400",
+          },
+          Object {
+            "fontFamily": "sans-serif-medium",
+          },
+          Array [
+            Array [
+              Object {
+                "backgroundColor": "transparent",
+                "color": "rgb(255, 255, 255)",
+              },
+              Object {
+                "color": "rgb(0, 178, 214)",
+              },
+            ],
+            Object {},
+          ],
         ]
       }
     >
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
-        style={
-          Array [
-            Object {
-              "color": "rgb(82, 76, 97)",
-              "fontFamily": "sans-serif",
-              "fontSize": 14,
-              "fontWeight": "400",
-            },
-            Object {
-              "fontFamily": "sans-serif-medium",
-            },
-            Array [
-              Array [
-                Object {
-                  "backgroundColor": "transparent",
-                  "color": "rgb(255, 255, 255)",
-                },
-                Object {
-                  "color": "rgb(0, 178, 214)",
-                },
-              ],
-              Object {},
-            ],
-          ]
-        }
-      >
-        LOREM IPSUM
-      </Text>
-    </View>
+      LOREM IPSUM
+    </Text>
   </View>
 </View>
 `;
@@ -1406,12 +1346,6 @@ exports[`Android BpkButton should render correctly with type="secondary" and dis
         Object {
           "backgroundColor": "transparent",
         },
-      ]
-    }
-    testID={undefined}
-  >
-    <View
-      style={
         Array [
           Object {
             "alignItems": "center",
@@ -1420,45 +1354,46 @@ exports[`Android BpkButton should render correctly with type="secondary" and dis
             "justifyContent": "center",
           },
           undefined,
+        ],
+      ]
+    }
+    testID={undefined}
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "rgb(82, 76, 97)",
+            "fontFamily": "sans-serif",
+            "fontSize": 14,
+            "fontWeight": "400",
+          },
+          Object {
+            "fontFamily": "sans-serif-medium",
+          },
+          Array [
+            Array [
+              Object {
+                "backgroundColor": "transparent",
+                "color": "rgb(255, 255, 255)",
+              },
+              Object {
+                "color": "rgb(0, 178, 214)",
+              },
+              Object {
+                "color": "rgb(178, 174, 189)",
+              },
+            ],
+            Object {},
+          ],
         ]
       }
     >
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
-        style={
-          Array [
-            Object {
-              "color": "rgb(82, 76, 97)",
-              "fontFamily": "sans-serif",
-              "fontSize": 14,
-              "fontWeight": "400",
-            },
-            Object {
-              "fontFamily": "sans-serif-medium",
-            },
-            Array [
-              Array [
-                Object {
-                  "backgroundColor": "transparent",
-                  "color": "rgb(255, 255, 255)",
-                },
-                Object {
-                  "color": "rgb(0, 178, 214)",
-                },
-                Object {
-                  "color": "rgb(178, 174, 189)",
-                },
-              ],
-              Object {},
-            ],
-          ]
-        }
-      >
-        LOREM IPSUM
-      </Text>
-    </View>
+      LOREM IPSUM
+    </Text>
   </View>
 </View>
 `;
@@ -1519,12 +1454,6 @@ exports[`Android BpkButton should support elements as icons 1`] = `
         Object {
           "backgroundColor": "rgb(0, 215, 117)",
         },
-      ]
-    }
-    testID={undefined}
-  >
-    <View
-      style={
         Array [
           Object {
             "alignItems": "center",
@@ -1533,17 +1462,18 @@ exports[`Android BpkButton should support elements as icons 1`] = `
             "justifyContent": "center",
           },
           undefined,
-        ]
-      }
+        ],
+      ]
+    }
+    testID={undefined}
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
     >
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
-      >
-        foo
-      </Text>
-    </View>
+      foo
+    </Text>
   </View>
 </View>
 `;
@@ -1600,12 +1530,6 @@ exports[`Android BpkButton should support having an icon as well as a title 1`] 
         Object {
           "backgroundColor": "rgb(0, 215, 117)",
         },
-      ]
-    }
-    testID={undefined}
-  >
-    <View
-      style={
         Array [
           Object {
             "alignItems": "center",
@@ -1616,77 +1540,78 @@ exports[`Android BpkButton should support having an icon as well as a title 1`] 
           Object {
             "justifyContent": "space-between",
           },
+        ],
+      ]
+    }
+    testID={undefined}
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "rgb(82, 76, 97)",
+            "fontFamily": "sans-serif",
+            "fontSize": 14,
+            "fontWeight": "400",
+          },
+          Object {
+            "fontFamily": "sans-serif-medium",
+          },
+          Array [
+            Array [
+              Object {
+                "backgroundColor": "transparent",
+                "color": "rgb(255, 255, 255)",
+              },
+              undefined,
+            ],
+            Object {},
+          ],
         ]
       }
     >
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
-        style={
+      LOREM IPSUM
+    </Text>
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "rgb(82, 76, 97)",
+            "fontFamily": "BpkIcon",
+            "fontSize": 24,
+            "lineHeight": 24,
+          },
+          Object {
+            "fontSize": 16,
+            "lineHeight": 16,
+          },
           Array [
-            Object {
-              "color": "rgb(82, 76, 97)",
-              "fontFamily": "sans-serif",
-              "fontSize": 14,
-              "fontWeight": "400",
-            },
-            Object {
-              "fontFamily": "sans-serif-medium",
-            },
             Array [
-              Array [
-                Object {
-                  "backgroundColor": "transparent",
-                  "color": "rgb(255, 255, 255)",
-                },
-                undefined,
-              ],
-              Object {},
+              Object {
+                "backgroundColor": "transparent",
+                "color": "rgb(255, 255, 255)",
+              },
+              undefined,
             ],
-          ]
-        }
-      >
-        LOREM IPSUM
-      </Text>
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
-        style={
-          Array [
-            Object {
-              "color": "rgb(82, 76, 97)",
-              "fontFamily": "BpkIcon",
-              "fontSize": 24,
-              "lineHeight": 24,
-            },
-            Object {
-              "fontSize": 16,
-              "lineHeight": 16,
-            },
+            Object {},
             Array [
-              Array [
-                Object {
-                  "backgroundColor": "transparent",
-                  "color": "rgb(255, 255, 255)",
-                },
-                undefined,
-              ],
-              Object {},
-              Array [
-                null,
-                Object {
-                  "marginLeft": 4,
-                },
-              ],
+              null,
+              Object {
+                "marginLeft": 4,
+              },
             ],
-          ]
-        }
-      >
-        
-      </Text>
-    </View>
+          ],
+        ]
+      }
+    >
+      
+    </Text>
   </View>
 </View>
 `;
@@ -1743,12 +1668,6 @@ exports[`Android BpkButton should support overwriting styles 1`] = `
         Object {
           "backgroundColor": "rgb(0, 215, 117)",
         },
-      ]
-    }
-    testID={undefined}
-  >
-    <View
-      style={
         Array [
           Object {
             "alignItems": "center",
@@ -1756,39 +1675,40 @@ exports[`Android BpkButton should support overwriting styles 1`] = `
             "flexDirection": "row",
             "justifyContent": "center",
           },
+        ],
+      ]
+    }
+    testID={undefined}
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "rgb(82, 76, 97)",
+            "fontFamily": "sans-serif",
+            "fontSize": 14,
+            "fontWeight": "400",
+          },
+          Object {
+            "fontFamily": "sans-serif-medium",
+          },
+          Array [
+            Array [
+              Object {
+                "backgroundColor": "transparent",
+                "color": "rgb(255, 255, 255)",
+              },
+            ],
+            Object {},
+          ],
         ]
       }
     >
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
-        style={
-          Array [
-            Object {
-              "color": "rgb(82, 76, 97)",
-              "fontFamily": "sans-serif",
-              "fontSize": 14,
-              "fontWeight": "400",
-            },
-            Object {
-              "fontFamily": "sans-serif-medium",
-            },
-            Array [
-              Array [
-                Object {
-                  "backgroundColor": "transparent",
-                  "color": "rgb(255, 255, 255)",
-                },
-              ],
-              Object {},
-            ],
-          ]
-        }
-      >
-        LOREM IPSUM
-      </Text>
-    </View>
+      LOREM IPSUM
+    </Text>
   </View>
 </View>
 `;
@@ -1848,12 +1768,6 @@ exports[`Android BpkButton should support the "disabled" property 1`] = `
         Object {
           "backgroundColor": "rgb(230, 228, 235)",
         },
-      ]
-    }
-    testID={undefined}
-  >
-    <View
-      style={
         Array [
           Object {
             "alignItems": "center",
@@ -1862,42 +1776,43 @@ exports[`Android BpkButton should support the "disabled" property 1`] = `
             "justifyContent": "center",
           },
           undefined,
+        ],
+      ]
+    }
+    testID={undefined}
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "rgb(82, 76, 97)",
+            "fontFamily": "sans-serif",
+            "fontSize": 14,
+            "fontWeight": "400",
+          },
+          Object {
+            "fontFamily": "sans-serif-medium",
+          },
+          Array [
+            Array [
+              Object {
+                "backgroundColor": "transparent",
+                "color": "rgb(255, 255, 255)",
+              },
+              Object {
+                "color": "rgb(178, 174, 189)",
+              },
+            ],
+            Object {},
+          ],
         ]
       }
     >
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
-        style={
-          Array [
-            Object {
-              "color": "rgb(82, 76, 97)",
-              "fontFamily": "sans-serif",
-              "fontSize": 14,
-              "fontWeight": "400",
-            },
-            Object {
-              "fontFamily": "sans-serif-medium",
-            },
-            Array [
-              Array [
-                Object {
-                  "backgroundColor": "transparent",
-                  "color": "rgb(255, 255, 255)",
-                },
-                Object {
-                  "color": "rgb(178, 174, 189)",
-                },
-              ],
-              Object {},
-            ],
-          ]
-        }
-      >
-        LOREM IPSUM
-      </Text>
-    </View>
+      LOREM IPSUM
+    </Text>
   </View>
 </View>
 `;
@@ -1954,12 +1869,6 @@ exports[`Android BpkButton should support the "icon" property 1`] = `
         Object {
           "backgroundColor": "rgb(0, 215, 117)",
         },
-      ]
-    }
-    testID={undefined}
-  >
-    <View
-      style={
         Array [
           Object {
             "alignItems": "center",
@@ -1970,77 +1879,78 @@ exports[`Android BpkButton should support the "icon" property 1`] = `
           Object {
             "justifyContent": "space-between",
           },
+        ],
+      ]
+    }
+    testID={undefined}
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "rgb(82, 76, 97)",
+            "fontFamily": "sans-serif",
+            "fontSize": 14,
+            "fontWeight": "400",
+          },
+          Object {
+            "fontFamily": "sans-serif-medium",
+          },
+          Array [
+            Array [
+              Object {
+                "backgroundColor": "transparent",
+                "color": "rgb(255, 255, 255)",
+              },
+              undefined,
+            ],
+            Object {},
+          ],
         ]
       }
     >
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
-        style={
+      LOREM IPSUM
+    </Text>
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "rgb(82, 76, 97)",
+            "fontFamily": "BpkIcon",
+            "fontSize": 24,
+            "lineHeight": 24,
+          },
+          Object {
+            "fontSize": 16,
+            "lineHeight": 16,
+          },
           Array [
-            Object {
-              "color": "rgb(82, 76, 97)",
-              "fontFamily": "sans-serif",
-              "fontSize": 14,
-              "fontWeight": "400",
-            },
-            Object {
-              "fontFamily": "sans-serif-medium",
-            },
             Array [
-              Array [
-                Object {
-                  "backgroundColor": "transparent",
-                  "color": "rgb(255, 255, 255)",
-                },
-                undefined,
-              ],
-              Object {},
+              Object {
+                "backgroundColor": "transparent",
+                "color": "rgb(255, 255, 255)",
+              },
+              undefined,
             ],
-          ]
-        }
-      >
-        LOREM IPSUM
-      </Text>
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
-        style={
-          Array [
-            Object {
-              "color": "rgb(82, 76, 97)",
-              "fontFamily": "BpkIcon",
-              "fontSize": 24,
-              "lineHeight": 24,
-            },
-            Object {
-              "fontSize": 16,
-              "lineHeight": 16,
-            },
+            Object {},
             Array [
-              Array [
-                Object {
-                  "backgroundColor": "transparent",
-                  "color": "rgb(255, 255, 255)",
-                },
-                undefined,
-              ],
-              Object {},
-              Array [
-                null,
-                Object {
-                  "marginLeft": 4,
-                },
-              ],
+              null,
+              Object {
+                "marginLeft": 4,
+              },
             ],
-          ]
-        }
-      >
-        
-      </Text>
-    </View>
+          ],
+        ]
+      }
+    >
+      
+    </Text>
   </View>
 </View>
 `;
@@ -2101,12 +2011,6 @@ exports[`Android BpkButton should support the "iconOnly" property 1`] = `
         Object {
           "backgroundColor": "rgb(0, 215, 117)",
         },
-      ]
-    }
-    testID={undefined}
-  >
-    <View
-      style={
         Array [
           Object {
             "alignItems": "center",
@@ -2115,45 +2019,46 @@ exports[`Android BpkButton should support the "iconOnly" property 1`] = `
             "justifyContent": "center",
           },
           undefined,
+        ],
+      ]
+    }
+    testID={undefined}
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "rgb(82, 76, 97)",
+            "fontFamily": "BpkIcon",
+            "fontSize": 24,
+            "lineHeight": 24,
+          },
+          Object {
+            "fontSize": 16,
+            "lineHeight": 16,
+          },
+          Array [
+            Array [
+              Object {
+                "backgroundColor": "transparent",
+                "color": "rgb(255, 255, 255)",
+              },
+              undefined,
+            ],
+            Object {},
+            Array [
+              null,
+              undefined,
+            ],
+          ],
         ]
       }
     >
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
-        style={
-          Array [
-            Object {
-              "color": "rgb(82, 76, 97)",
-              "fontFamily": "BpkIcon",
-              "fontSize": 24,
-              "lineHeight": 24,
-            },
-            Object {
-              "fontSize": 16,
-              "lineHeight": 16,
-            },
-            Array [
-              Array [
-                Object {
-                  "backgroundColor": "transparent",
-                  "color": "rgb(255, 255, 255)",
-                },
-                undefined,
-              ],
-              Object {},
-              Array [
-                null,
-                undefined,
-              ],
-            ],
-          ]
-        }
-      >
-        
-      </Text>
-    </View>
+      
+    </Text>
   </View>
 </View>
 `;
@@ -2214,12 +2119,6 @@ exports[`Android BpkButton should support the "secondary" property 1`] = `
         Object {
           "backgroundColor": "transparent",
         },
-      ]
-    }
-    testID={undefined}
-  >
-    <View
-      style={
         Array [
           Object {
             "alignItems": "center",
@@ -2227,42 +2126,43 @@ exports[`Android BpkButton should support the "secondary" property 1`] = `
             "flexDirection": "row",
             "justifyContent": "center",
           },
+        ],
+      ]
+    }
+    testID={undefined}
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "rgb(82, 76, 97)",
+            "fontFamily": "sans-serif",
+            "fontSize": 14,
+            "fontWeight": "400",
+          },
+          Object {
+            "fontFamily": "sans-serif-medium",
+          },
+          Array [
+            Array [
+              Object {
+                "backgroundColor": "transparent",
+                "color": "rgb(255, 255, 255)",
+              },
+              Object {
+                "color": "rgb(0, 178, 214)",
+              },
+            ],
+            Object {},
+          ],
         ]
       }
     >
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
-        style={
-          Array [
-            Object {
-              "color": "rgb(82, 76, 97)",
-              "fontFamily": "sans-serif",
-              "fontSize": 14,
-              "fontWeight": "400",
-            },
-            Object {
-              "fontFamily": "sans-serif-medium",
-            },
-            Array [
-              Array [
-                Object {
-                  "backgroundColor": "transparent",
-                  "color": "rgb(255, 255, 255)",
-                },
-                Object {
-                  "color": "rgb(0, 178, 214)",
-                },
-              ],
-              Object {},
-            ],
-          ]
-        }
-      >
-        LOREM IPSUM
-      </Text>
-    </View>
+      LOREM IPSUM
+    </Text>
   </View>
 </View>
 `;
@@ -2317,12 +2217,6 @@ exports[`Android BpkButtonThemed should render correctly 1`] = `
         Object {
           "backgroundColor": "green",
         },
-      ]
-    }
-    testID={undefined}
-  >
-    <View
-      style={
         Array [
           Object {
             "alignItems": "center",
@@ -2330,41 +2224,42 @@ exports[`Android BpkButtonThemed should render correctly 1`] = `
             "flexDirection": "row",
             "justifyContent": "center",
           },
+        ],
+      ]
+    }
+    testID={undefined}
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "rgb(82, 76, 97)",
+            "fontFamily": "sans-serif",
+            "fontSize": 14,
+            "fontWeight": "400",
+          },
+          Object {
+            "fontFamily": "sans-serif-medium",
+          },
+          Array [
+            Array [
+              Object {
+                "backgroundColor": "transparent",
+                "color": "rgb(255, 255, 255)",
+              },
+            ],
+            Object {
+              "color": "red",
+            },
+          ],
         ]
       }
     >
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
-        style={
-          Array [
-            Object {
-              "color": "rgb(82, 76, 97)",
-              "fontFamily": "sans-serif",
-              "fontSize": 14,
-              "fontWeight": "400",
-            },
-            Object {
-              "fontFamily": "sans-serif-medium",
-            },
-            Array [
-              Array [
-                Object {
-                  "backgroundColor": "transparent",
-                  "color": "rgb(255, 255, 255)",
-                },
-              ],
-              Object {
-                "color": "red",
-              },
-            ],
-          ]
-        }
-      >
-        LOREM IPSUM
-      </Text>
-    </View>
+      LOREM IPSUM
+    </Text>
   </View>
 </View>
 `;
