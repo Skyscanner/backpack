@@ -16,7 +16,10 @@
  * limitations under the License.
  */
 
-import component, { BADGE_TYPES } from './src/BpkBadge';
+/* @flow */
 
+import component, { BADGE_TYPES, type Props } from './src/BpkBadge';
+
+export type BpkBadgeProps = Props;
 export default component;
 export { BADGE_TYPES };
