@@ -91,6 +91,7 @@ export const NATIVE_COMPONENTS = '/components/native';
 export const NATIVE_HORIZONTAL_NAV = '/components/native/horizontal-nav';
 export const NATIVE_ICONS = '/components/native/icons';
 export const NATIVE_INPUT = '/components/native/text-input';
+export const NATIVE_NUDGER = '/components/native/nudger';
 export const NATIVE_PHONE_INPUT = '/components/native/phone-input';
 export const NATIVE_SPINNER = '/components/native/spinners';
 export const NATIVE_STAR_RATING = '/components/native/star-rating';

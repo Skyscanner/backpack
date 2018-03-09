@@ -132,6 +132,7 @@ const links = [
         route: routes.NATIVE_INPUT,
         children: 'Text input',
       },
+      { id: 'NATIVE_NUDGER', route: routes.NATIVE_NUDGER, children: 'Nudger' },
       {
         id: 'NATIVE_PHONE_INPUT',
         route: routes.NATIVE_PHONE_INPUT,
@@ -158,8 +159,6 @@ const links = [
         route: routes.NATIVE_TOUCHABLE_OVERLAY,
         children: 'Touchable Overlay',
       },
-      { id: 'NATIVE_BUTTON_LINK', route: null, children: 'Button Link' },
-      { id: 'NATIVE_NUDGER', route: null, children: 'Nudger' },
     ],
   },
   {
