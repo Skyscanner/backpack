@@ -16,8 +16,10 @@
  * limitations under the License.
  */
 
+/* @flow */
+
 import PropTypes from 'prop-types';
-import React, { Children } from 'react';
+import React, { type Element, Children } from 'react';
 import { cssModules } from 'bpk-react-utils';
 
 import { BADGE_TYPES } from './index';
@@ -31,7 +33,13 @@ const LIGHT_BADGES = [
   BADGE_TYPES.outline,
 ];
 
-const BadgeLayout = ({ docked, children }) => {
+export type Props = {
+  docked: ?string,
+  children: Element<*>,
+};
+
+const BadgeLayout = (props: Props) => {
+  const { docked, children } = props;
   const classNames = [getClassName('bpk-badge-layout__container')];
 
   if (
@@ -45,12 +53,12 @@ const BadgeLayout = ({ docked, children }) => {
 };
 
 BadgeLayout.propTypes = {
-  docked: PropTypes.bool,
+  docked: PropTypes.string,
   children: PropTypes.node.isRequired,
 };
 
 BadgeLayout.defaultProps = {
-  docked: false,
+  docked: null,
 };
 
 export default BadgeLayout;

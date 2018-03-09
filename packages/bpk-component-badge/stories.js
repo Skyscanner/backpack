@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+/* @flow */
+
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
@@ -38,12 +40,12 @@ storiesOf('bpk-component-badge', module)
     </BadgeLayout>
   ))
   .add('Docked right', () => (
-    <BadgeLayout docked>
+    <BadgeLayout docked="right">
       <BpkBadge docked="right">Promocionado</BpkBadge>
     </BadgeLayout>
   ))
   .add('Docked left', () => (
-    <BadgeLayout docked>
+    <BadgeLayout docked="left">
       <BpkBadge docked="left">Promocionado</BpkBadge>
     </BadgeLayout>
   ))

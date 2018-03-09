@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+/* @flow */
+
 import PropTypes from 'prop-types';
 import React from 'react';
 import { cssModules } from 'bpk-react-utils';
@@ -42,7 +44,14 @@ const badgeTypeClassNames = {
   [BADGE_TYPES.outline]: getClassName('bpk-badge--outline'),
 };
 
-const BpkBadge = props => {
+export type Props = {
+  type: $Keys<typeof BADGE_TYPES>,
+  docked: ?string,
+  centered: boolean,
+  className: ?string,
+};
+
+const BpkBadge = (props: Props) => {
   const { type, docked, centered, className, ...rest } = props;
   const classNames = [getClassName('bpk-badge'), badgeTypeClassNames[type]];
 
