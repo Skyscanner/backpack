@@ -18,7 +18,7 @@
 
 /* @flow */
 
-import Popper from 'popper.js';
+import Popper from '@skyscanner/popper.js';
 import PropTypes from 'prop-types';
 import React, { Component, type Node } from 'react';
 import focusStore from 'a11y-focus-store';

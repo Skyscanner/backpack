@@ -24,7 +24,7 @@ import { mount } from 'enzyme';
 import renderer from 'react-test-renderer';
 
 jest.mock(
-  'popper.js',
+  '@skyscanner/popper.js',
   () =>
     class Popper {
       constructor(target, popover, options) {
