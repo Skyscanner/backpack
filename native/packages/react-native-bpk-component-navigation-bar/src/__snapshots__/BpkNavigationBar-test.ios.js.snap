@@ -1,0 +1,506 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ios BpkNavigationBar should render correctly 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "backgroundColor": "rgb(243, 242, 245)",
+        "flexDirection": "column",
+        "paddingHorizontal": 8,
+        "shadowColor": "rgb(230, 228, 235)",
+        "shadowOffset": Object {
+          "height": 1,
+          "width": 0,
+        },
+        "shadowOpacity": 1,
+        "shadowRadius": 0,
+        "width": "100%",
+      },
+    ]
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "height": 64,
+          "justifyContent": "space-between",
+          "overflow": "visible",
+          "paddingTop": 20,
+        },
+        false,
+      ]
+    }
+  >
+    <View
+      accessibilityComponentType="button"
+      accessibilityLabel="Back"
+      accessibilityTraits={
+        Array [
+          "button",
+        ]
+      }
+      accessible={true}
+      collapsable={undefined}
+      hasTVPreferredFocus={undefined}
+      hitSlop={undefined}
+      isTVSelectable={true}
+      nativeID={undefined}
+      onLayout={undefined}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "opacity": 1,
+          "zIndex": 2,
+        }
+      }
+      testID={undefined}
+      tvParallaxProperties={undefined}
+    >
+      <Image
+        source={
+          Object {
+            "testUri": "../../../packages/react-native-bpk-component-navigation-bar/src/chevron-left.png",
+          }
+        }
+        style={
+          Array [
+            Object {
+              "marginEnd": 8,
+            },
+            Object {
+              "tintColor": "rgb(82, 76, 97)",
+            },
+          ]
+        }
+      />
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+              "fontFamily": "sans-serif",
+              "fontSize": 20,
+              "fontWeight": "400",
+            },
+            Array [
+              Object {},
+              Object {
+                "color": "rgb(82, 76, 97)",
+              },
+            ],
+          ]
+        }
+      >
+        Back
+      </Text>
+    </View>
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "bottom": 0,
+          "height": 44,
+          "justifyContent": "center",
+          "left": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 20,
+        }
+      }
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="middle"
+        numberOfLines={1}
+        style={
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+              "fontFamily": "sans-serif",
+              "fontSize": 20,
+              "fontWeight": "400",
+            },
+            Object {
+              "fontWeight": "500",
+            },
+            Object {
+              "maxWidth": "70%",
+            },
+          ]
+        }
+      >
+        Backpack
+      </Text>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`ios BpkNavigationBar should render correctly with a subtitle view 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "backgroundColor": "rgb(243, 242, 245)",
+        "flexDirection": "column",
+        "paddingHorizontal": 8,
+        "shadowColor": "rgb(230, 228, 235)",
+        "shadowOffset": Object {
+          "height": 1,
+          "width": 0,
+        },
+        "shadowOpacity": 1,
+        "shadowRadius": 0,
+        "width": "100%",
+      },
+      Object {
+        "paddingBottom": 16,
+      },
+    ]
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "height": 64,
+          "justifyContent": "space-between",
+          "overflow": "visible",
+          "paddingTop": 20,
+        },
+        false,
+      ]
+    }
+  >
+    <View
+      accessibilityComponentType="button"
+      accessibilityLabel="Back"
+      accessibilityTraits={
+        Array [
+          "button",
+        ]
+      }
+      accessible={true}
+      collapsable={undefined}
+      hasTVPreferredFocus={undefined}
+      hitSlop={undefined}
+      isTVSelectable={true}
+      nativeID={undefined}
+      onLayout={undefined}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "opacity": 1,
+          "zIndex": 2,
+        }
+      }
+      testID={undefined}
+      tvParallaxProperties={undefined}
+    >
+      <Image
+        source={
+          Object {
+            "testUri": "../../../packages/react-native-bpk-component-navigation-bar/src/chevron-left.png",
+          }
+        }
+        style={
+          Array [
+            Object {
+              "marginEnd": 8,
+            },
+            Object {
+              "tintColor": "rgb(82, 76, 97)",
+            },
+          ]
+        }
+      />
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+              "fontFamily": "sans-serif",
+              "fontSize": 20,
+              "fontWeight": "400",
+            },
+            Array [
+              Object {},
+              Object {
+                "color": "rgb(82, 76, 97)",
+              },
+            ],
+          ]
+        }
+      >
+        Back
+      </Text>
+    </View>
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "bottom": 0,
+          "height": 44,
+          "justifyContent": "center",
+          "left": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 20,
+        }
+      }
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="middle"
+        numberOfLines={1}
+        style={
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+              "fontFamily": "sans-serif",
+              "fontSize": 20,
+              "fontWeight": "400",
+            },
+            Object {
+              "fontWeight": "500",
+            },
+            Object {
+              "maxWidth": "70%",
+            },
+          ]
+        }
+      >
+        Backpack
+      </Text>
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "paddingHorizontal": 8,
+      }
+    }
+  >
+    <View
+      testID="subtitle-view"
+    />
+  </View>
+</View>
+`;
+
+exports[`ios BpkNavigationBar should render correctly with trailing button 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "backgroundColor": "rgb(243, 242, 245)",
+        "flexDirection": "column",
+        "paddingHorizontal": 8,
+        "shadowColor": "rgb(230, 228, 235)",
+        "shadowOffset": Object {
+          "height": 1,
+          "width": 0,
+        },
+        "shadowOpacity": 1,
+        "shadowRadius": 0,
+        "width": "100%",
+      },
+    ]
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "height": 64,
+          "justifyContent": "space-between",
+          "overflow": "visible",
+          "paddingTop": 20,
+        },
+        false,
+      ]
+    }
+  >
+    <View
+      accessibilityComponentType="button"
+      accessibilityLabel="Cancel"
+      accessibilityTraits={
+        Array [
+          "button",
+        ]
+      }
+      accessible={true}
+      collapsable={undefined}
+      hasTVPreferredFocus={undefined}
+      hitSlop={undefined}
+      isTVSelectable={true}
+      nativeID={undefined}
+      onLayout={undefined}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "marginStart": 8,
+          "opacity": 1,
+          "zIndex": 2,
+        }
+      }
+      testID={undefined}
+      tvParallaxProperties={undefined}
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+              "fontFamily": "sans-serif",
+              "fontSize": 20,
+              "fontWeight": "400",
+            },
+            Array [
+              Object {
+                "color": "rgb(82, 76, 97)",
+              },
+            ],
+          ]
+        }
+      >
+        Cancel
+      </Text>
+    </View>
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "bottom": 0,
+          "height": 44,
+          "justifyContent": "center",
+          "left": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 20,
+        }
+      }
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="middle"
+        numberOfLines={1}
+        style={
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+              "fontFamily": "sans-serif",
+              "fontSize": 20,
+              "fontWeight": "400",
+            },
+            Object {
+              "fontWeight": "500",
+            },
+            Object {
+              "maxWidth": "70%",
+            },
+          ]
+        }
+      >
+        Backpack
+      </Text>
+    </View>
+    <View
+      accessibilityComponentType="button"
+      accessibilityLabel="Done"
+      accessibilityTraits={
+        Array [
+          "button",
+        ]
+      }
+      accessible={true}
+      collapsable={undefined}
+      hasTVPreferredFocus={undefined}
+      hitSlop={undefined}
+      isTVSelectable={true}
+      nativeID={undefined}
+      onLayout={undefined}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "marginEnd": 8,
+          "opacity": 1,
+          "zIndex": 2,
+        }
+      }
+      testID={undefined}
+      tvParallaxProperties={undefined}
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+              "fontFamily": "sans-serif",
+              "fontSize": 20,
+              "fontWeight": "400",
+            },
+            Object {
+              "fontWeight": "500",
+            },
+            Array [
+              Object {
+                "color": "rgb(82, 76, 97)",
+              },
+            ],
+          ]
+        }
+      >
+        Done
+      </Text>
+    </View>
+  </View>
+</View>
+`;

@@ -1,0 +1,175 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`iOS BpkNavigationBarTextButtonIOS should render correctly 1`] = `
+<View
+  accessibilityComponentType="button"
+  accessibilityLabel="Edit"
+  accessibilityTraits={
+    Array [
+      "button",
+    ]
+  }
+  accessible={true}
+  collapsable={undefined}
+  hasTVPreferredFocus={undefined}
+  hitSlop={undefined}
+  isTVSelectable={true}
+  nativeID={undefined}
+  onLayout={undefined}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "marginEnd": 8,
+      "opacity": 1,
+      "zIndex": 2,
+    }
+  }
+  testID={undefined}
+  tvParallaxProperties={undefined}
+>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    style={
+      Array [
+        Object {
+          "color": "rgb(82, 76, 97)",
+          "fontFamily": "System",
+          "fontSize": 17,
+          "fontWeight": "400",
+        },
+        Array [
+          Object {
+            "color": "rgb(82, 76, 97)",
+          },
+        ],
+      ]
+    }
+  >
+    Edit
+  </Text>
+</View>
+`;
+
+exports[`iOS BpkNavigationBarTextButtonIOS should render correctly emphasize 1`] = `
+<View
+  accessibilityComponentType="button"
+  accessibilityLabel="Done"
+  accessibilityTraits={
+    Array [
+      "button",
+    ]
+  }
+  accessible={true}
+  collapsable={undefined}
+  hasTVPreferredFocus={undefined}
+  hitSlop={undefined}
+  isTVSelectable={true}
+  nativeID={undefined}
+  onLayout={undefined}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "marginEnd": 8,
+      "opacity": 1,
+      "zIndex": 2,
+    }
+  }
+  testID={undefined}
+  tvParallaxProperties={undefined}
+>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    style={
+      Array [
+        Object {
+          "color": "rgb(82, 76, 97)",
+          "fontFamily": "System",
+          "fontSize": 17,
+          "fontWeight": "400",
+        },
+        Object {
+          "fontWeight": "600",
+        },
+        Array [
+          Object {
+            "color": "rgb(82, 76, 97)",
+          },
+        ],
+      ]
+    }
+  >
+    Done
+  </Text>
+</View>
+`;
+
+exports[`iOS BpkNavigationBarTextButtonIOS should render correctly leading configuration 1`] = `
+<View
+  accessibilityComponentType="button"
+  accessibilityLabel="Cancel"
+  accessibilityTraits={
+    Array [
+      "button",
+    ]
+  }
+  accessible={true}
+  collapsable={undefined}
+  hasTVPreferredFocus={undefined}
+  hitSlop={undefined}
+  isTVSelectable={true}
+  nativeID={undefined}
+  onLayout={undefined}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "marginStart": 8,
+      "opacity": 1,
+      "zIndex": 2,
+    }
+  }
+  testID={undefined}
+  tvParallaxProperties={undefined}
+>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    style={
+      Array [
+        Object {
+          "color": "rgb(82, 76, 97)",
+          "fontFamily": "System",
+          "fontSize": 17,
+          "fontWeight": "400",
+        },
+        Array [
+          Object {
+            "color": "rgb(82, 76, 97)",
+          },
+        ],
+      ]
+    }
+  >
+    Cancel
+  </Text>
+</View>
+`;

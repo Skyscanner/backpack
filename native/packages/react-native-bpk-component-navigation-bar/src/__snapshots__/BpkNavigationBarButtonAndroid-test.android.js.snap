@@ -1,0 +1,190 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`android BpkNavigationBarButton should render correctly back icon 1`] = `
+<View
+  style={
+    Object {
+      "borderRadius": 40,
+    }
+  }
+>
+  <View
+    accessibilityComponentType="button"
+    accessibilityLabel="Back"
+    accessibilityTraits={
+      Array [
+        "button",
+      ]
+    }
+    accessible={true}
+    hitSlop={undefined}
+    nativeBackgroundAndroid={
+      Object {
+        "borderless": true,
+        "color": 872415231,
+        "type": "RippleAndroid",
+      }
+    }
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    testID={undefined}
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "rgb(82, 76, 97)",
+            "fontFamily": "BpkIcon",
+            "fontSize": 24,
+            "lineHeight": 24,
+          },
+          Array [
+            Object {
+              "padding": 8,
+            },
+            Object {
+              "color": "rgb(255, 255, 255)",
+            },
+          ],
+        ]
+      }
+    >
+      
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`android BpkNavigationBarButton should render correctly with close icon 1`] = `
+<View
+  style={
+    Object {
+      "borderRadius": 40,
+    }
+  }
+>
+  <View
+    accessibilityComponentType="button"
+    accessibilityLabel="Close"
+    accessibilityTraits={
+      Array [
+        "button",
+      ]
+    }
+    accessible={true}
+    hitSlop={undefined}
+    nativeBackgroundAndroid={
+      Object {
+        "borderless": true,
+        "color": 872415231,
+        "type": "RippleAndroid",
+      }
+    }
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    testID={undefined}
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "rgb(82, 76, 97)",
+            "fontFamily": "BpkIcon",
+            "fontSize": 24,
+            "lineHeight": 24,
+          },
+          Array [
+            Object {
+              "padding": 8,
+            },
+            Object {
+              "color": "rgb(255, 255, 255)",
+            },
+          ],
+        ]
+      }
+    >
+      
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`android BpkNavigationBarButton should render correctly with tick icon 1`] = `
+<View
+  style={
+    Object {
+      "borderRadius": 40,
+    }
+  }
+>
+  <View
+    accessibilityComponentType="button"
+    accessibilityLabel="Done"
+    accessibilityTraits={
+      Array [
+        "button",
+      ]
+    }
+    accessible={true}
+    hitSlop={undefined}
+    nativeBackgroundAndroid={
+      Object {
+        "borderless": true,
+        "color": 872415231,
+        "type": "RippleAndroid",
+      }
+    }
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    testID={undefined}
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "rgb(82, 76, 97)",
+            "fontFamily": "BpkIcon",
+            "fontSize": 24,
+            "lineHeight": 24,
+          },
+          Array [
+            Object {
+              "padding": 8,
+            },
+            Object {
+              "color": "rgb(255, 255, 255)",
+            },
+          ],
+        ]
+      }
+    >
+      
+    </Text>
+  </View>
+</View>
+`;

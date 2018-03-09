@@ -1,0 +1,130 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`iOS BpkNavigationBarBackButtonIOS should render correctly 1`] = `
+<View
+  accessibilityComponentType="button"
+  accessibilityLabel="Back"
+  accessibilityTraits={
+    Array [
+      "button",
+    ]
+  }
+  accessible={true}
+  collapsable={undefined}
+  hasTVPreferredFocus={undefined}
+  hitSlop={undefined}
+  isTVSelectable={true}
+  nativeID={undefined}
+  onLayout={undefined}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "alignItems": "center",
+      "flexDirection": "row",
+      "opacity": 1,
+      "zIndex": 2,
+    }
+  }
+  testID={undefined}
+  tvParallaxProperties={undefined}
+>
+  <Image
+    source={
+      Object {
+        "testUri": "../../../packages/react-native-bpk-component-navigation-bar/src/chevron-left.png",
+      }
+    }
+    style={
+      Array [
+        Object {
+          "marginEnd": 8,
+        },
+        Object {
+          "tintColor": "rgb(82, 76, 97)",
+        },
+      ]
+    }
+  />
+</View>
+`;
+
+exports[`iOS BpkNavigationBarBackButtonIOS should render correctly with title 1`] = `
+<View
+  accessibilityComponentType="button"
+  accessibilityLabel="Back"
+  accessibilityTraits={
+    Array [
+      "button",
+    ]
+  }
+  accessible={true}
+  collapsable={undefined}
+  hasTVPreferredFocus={undefined}
+  hitSlop={undefined}
+  isTVSelectable={true}
+  nativeID={undefined}
+  onLayout={undefined}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "alignItems": "center",
+      "flexDirection": "row",
+      "opacity": 1,
+      "zIndex": 2,
+    }
+  }
+  testID={undefined}
+  tvParallaxProperties={undefined}
+>
+  <Image
+    source={
+      Object {
+        "testUri": "../../../packages/react-native-bpk-component-navigation-bar/src/chevron-left.png",
+      }
+    }
+    style={
+      Array [
+        Object {
+          "marginEnd": 8,
+        },
+        Object {
+          "tintColor": "rgb(82, 76, 97)",
+        },
+      ]
+    }
+  />
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    style={
+      Array [
+        Object {
+          "color": "rgb(82, 76, 97)",
+          "fontFamily": "System",
+          "fontSize": 17,
+          "fontWeight": "400",
+        },
+        Array [
+          Object {},
+          Object {
+            "color": "rgb(82, 76, 97)",
+          },
+        ],
+      ]
+    }
+  >
+    Back
+  </Text>
+</View>
+`;
