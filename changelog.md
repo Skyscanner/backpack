@@ -9,6 +9,12 @@
 - react-native-bpk-component-nudger:
   - Introducing the React Native nudger component.
 
+**Fixed:**
+- bpk-component-popover:
+- bpk-component-tooltip:
+- bpk-component-datepicker:
+  - Fixed compatibility with server side OC
+
 ## 2018-03-08 - Android buttons can be icon only and button links can be disabled
 
 **Added:**

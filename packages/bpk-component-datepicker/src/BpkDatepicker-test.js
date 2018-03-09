@@ -27,7 +27,7 @@ import {
 import { format } from 'bpk-component-calendar/src/date-utils';
 
 jest.mock(
-  './../node_modules/bpk-component-popover/node_modules/popper.js',
+  './../node_modules/bpk-component-popover/node_modules/@skyscanner/popper.js',
   () =>
     class Popper {
       scheduleUpdate = () => {};
