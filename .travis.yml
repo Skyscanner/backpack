@@ -37,6 +37,9 @@ deploy:
   repo: backpack/backpack.github.io
   target-branch: master
   verbose: true
+  ## See https://github.com/travis-ci/travis-ci/issues/9312#issuecomment-371590249
+  edge:
+    branch: v1.8.47
 notifications:
   slack:
     rooms:
