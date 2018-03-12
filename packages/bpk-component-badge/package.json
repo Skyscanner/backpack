@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-badge",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Backpack badge component.",
   "main": "index.js",
   "repository": {

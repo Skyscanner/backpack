@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-link",
-  "version": "1.1.5",
+  "version": "1.1.6",
   "description": "Backpack link component.",
   "main": "index.js",
   "repository": {
