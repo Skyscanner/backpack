@@ -14,6 +14,8 @@
 - bpk-component-tooltip:
 - bpk-component-datepicker:
   - Fixed compatibility with server side OC
+- bpk-scrim-utils:
+  - Pass `onClose` prop to the wrapped component in `withScrim` HOC
 
 ## 2018-03-08 - Android buttons can be icon only and button links can be disabled
 
