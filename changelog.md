@@ -6,15 +6,18 @@
 - react-native-bpk-component-phone-input:
   - New `BpkDiallingCodeList` component.
 
-- react-native-bpk-component-nudger:
+## 2018-03-12 - Native nudger component and SSR OC fixes
+
+**Added:**
+- react-native-bpk-component-nudger: 0.0.1 => 1.0.0
   - Introducing the React Native nudger component.
 
 **Fixed:**
-- bpk-component-popover:
-- bpk-component-tooltip:
-- bpk-component-datepicker:
+- bpk-component-popover: 2.1.1 => 2.1.2
+- bpk-component-tooltip: 3.1.1 => 3.1.2
+- bpk-component-datepicker: 8.0.14 => 8.0.15
   - Fixed compatibility with server side OC
-- bpk-scrim-utils:
+- bpk-scrim-utils: 3.1.15 => 3.1.16
   - Pass `onClose` prop to the wrapped component in `withScrim` HOC
 
 ## 2018-03-08 - Android buttons can be icon only and button links can be disabled
