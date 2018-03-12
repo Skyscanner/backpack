@@ -12,6 +12,7 @@ exports[`BpkScrim render should render correctly 1`] = `
   <TestComponent
     dialogRef={[Function]}
     isIphone={false}
+    onClose={[Function]}
   />
 </div>
 `;
@@ -28,6 +29,7 @@ exports[`BpkScrim render should render correctly when is iPhone 1`] = `
   <TestComponent
     dialogRef={[Function]}
     isIphone={true}
+    onClose={[Function]}
   />
 </div>
 `;
@@ -44,6 +46,7 @@ exports[`BpkScrim render should render correctly with closeOnScrimClick as false
   <TestComponent
     dialogRef={[Function]}
     isIphone={false}
+    onClose={[Function]}
   />
 </div>
 `;
@@ -60,6 +63,7 @@ exports[`BpkScrim render should render correctly with containerClassName 1`] = `
   <TestComponent
     dialogRef={[Function]}
     isIphone={false}
+    onClose={[Function]}
   />
 </div>
 `;
