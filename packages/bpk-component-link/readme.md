@@ -34,7 +34,7 @@ export default () => (
 | blank     | bool     | false    | false         |
 | alternate | bool     | false    | false         |
 
-### BpkLinkButton
+### BpkButtonLink
 
 | Property  | PropType | Required | Default Value |
 | --------  | -------- | -------- | ------------- |
@@ -44,7 +44,7 @@ export default () => (
 
 ## Theme props
 
-For both BpkLink and BpkLinkButton the following theme attributes are required.
+For both BpkLink and BpkButtonLink the following theme attributes are required.
 
 * `linkColor`
 * `linkHoverColor`

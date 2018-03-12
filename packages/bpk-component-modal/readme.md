@@ -77,12 +77,12 @@ class App extends Component {
 | Property              | PropType | Required | Default Value    |
 | --------------------- | -------- | -------- | ---------------- |
 | id                    | string   | true     | -                |
-| className             | string   | true     | -                |
 | children              | node     | true     | -                |
 | isOpen                | bool     | true     | -                |
 | onClose               | func     | true     | -                |
 | getApplicationElement | func     | true     | -                |
 | title                 | string   | true     | -                |
+| className             | string   | false    | null             |
 | closeLabel            | string   | false    | null             |
 | closeText             | string   | false    | null             |
 | renderTarget          | func     | false    | null             |

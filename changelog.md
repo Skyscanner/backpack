@@ -195,7 +195,7 @@
 
 - bpk-component-link: 1.0.44 => 1.1.0
   - The `alternate` style can now be themed.
-  - The `white` prop has been deprecated in favour of `alternate` in `BpkLink` and `BpkLinkButton`
+  - The `white` prop has been deprecated in favour of `alternate` in `BpkLink` and `BpkButtonLink`
 
 - bpk-component-modal: 1.5.2 => 1.6.0
   - New `fullScreen` prop as an accompanyment to `fullScreenOnMobile`. When true, it trumps the mobile prop.
