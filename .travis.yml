@@ -36,6 +36,7 @@ deploy:
   detect_encoding: true
   repo: backpack/backpack.github.io
   target-branch: master
+  verbose: true
 notifications:
   slack:
     rooms:
