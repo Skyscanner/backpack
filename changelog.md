@@ -5,6 +5,7 @@
 **Added:**
 - react-native-bpk-component-phone-input:
   - New `BpkDiallingCodeList` component.
+  - New `BpkPhoneNumberInput` component.
 
 ## 2018-03-12 - Native nudger component and SSR OC fixes
 
