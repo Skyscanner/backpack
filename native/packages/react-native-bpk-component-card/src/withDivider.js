@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import { View, StyleSheet, ViewPropTypes } from 'react-native';
+import { Platform, StyleSheet, View, ViewPropTypes } from 'react-native';
 import React from 'react';
 import PropTypes from 'prop-types';
 import Dash from 'react-native-dash';
@@ -57,6 +57,11 @@ const styles = StyleSheet.create({
     marginLeft: spacingMd,
     flexDirection: 'row',
   },
+  cardPunchlineBorder: {
+    borderColor: colorGray100,
+    borderWidth: 1,
+    borderStyle: 'dashed',
+  },
   cardStub: {
     flex: 1,
   },
@@ -95,6 +100,9 @@ const withDivider = CardComponent => {
       punchlineStyle.push(styles.cardPunchlineVertical);
       stubStyle.push(styles.cardStubVertical);
     }
+    if (Platform.OS === 'ios') {
+      punchlineStyle.push(styles.cardPunchlineBorder);
+    }
     if (userMainStyle) {
       mainStyle.push(userMainStyle);
     }
@@ -105,13 +113,17 @@ const withDivider = CardComponent => {
     return (
       <CardComponent padded={false} innerStyle={innerStyle} {...rest}>
         <View style={mainStyle}>{children}</View>
-        <Dash
-          style={punchlineStyle}
-          dashGap={spacingSm}
-          dashLength={spacingSm}
-          dashThickness={1}
-          dashColor={colorGray100}
-        />
+        {Platform.OS === 'ios' ? (
+          <View style={punchlineStyle} />
+        ) : (
+          <Dash
+            style={punchlineStyle}
+            dashGap={spacingSm}
+            dashLength={spacingSm}
+            dashThickness={1}
+            dashColor={colorGray100}
+          />
+        )}
         <View style={stubStyle}>{stub}</View>
       </CardComponent>
     );
