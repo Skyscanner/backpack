@@ -1,6 +1,5 @@
 {
   "name": "react-native-bpk-component-phone-input",
-  "private": true,
   "version": "0.0.3",
   "main": "index.js",
   "description": "Backpack React Native phone input component.",
