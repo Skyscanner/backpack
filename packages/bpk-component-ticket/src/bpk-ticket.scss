@@ -47,6 +47,7 @@
   &__paper {
     position: relative;
     background-color: $bpk-card-background-color;
+    transform-style: preserve-3d; // Fix on hover flicker bug on Safari
 
     @include bpk-box-shadow-sm;
 
@@ -63,6 +64,7 @@
       border-radius: inherit;
       box-shadow: $bpk-box-shadow-lg;
       opacity: 0;
+      backface-visibility: hidden; // Fix on hover flicker bug on Safari
       pointer-events: none; // To prevent the pseudo element absorbing click events
 
       // pointer-events doesn't work on ie

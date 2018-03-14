@@ -2,7 +2,9 @@
 
 ## Unreleased
 
-## 2018-03-13 - Native Phone Number Input
+**Fixed:**
+- bpk-component-ticket
+  - Fixed hover behaviour on Safari
 
 **Added:**
 - react-native-bpk-component-phone-input:
