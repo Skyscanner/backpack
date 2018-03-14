@@ -4,7 +4,7 @@
 
 **Added:**
 - react-native-bpk-component-panel:
-  - New pagination component. See https://backpack.github.io/components/native/panels
+  - New native panel component. See https://backpack.github.io/components/native/panels
 
 ## 2018-03-13 - Native Phone Number Input
 
