@@ -159,6 +159,11 @@ const links = [
         route: routes.NATIVE_TOUCHABLE_OVERLAY,
         children: 'Touchable Overlay',
       },
+      {
+        id: 'NATIVE_TOUCHABLE_NATIVE_FEEDBACK',
+        route: routes.NATIVE_TOUCHABLE_NATIVE_FEEDBACK,
+        children: 'Touchable Native Feedback',
+      },
     ],
   },
   {

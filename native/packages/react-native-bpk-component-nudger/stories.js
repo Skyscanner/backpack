@@ -99,7 +99,7 @@ const generateStoryNudgers = () => (
   </View>
 );
 
-storiesOf('BpkNudger', module)
+storiesOf('react-native-bpk-component-nudger', module)
   .add('docs:default', () => generateStoryNudgers())
   .add('Themed', () => (
     <BpkThemeProvider theme={themeAttributes}>

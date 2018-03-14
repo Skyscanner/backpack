@@ -31,6 +31,9 @@ const styles = StyleSheet.create({
   view: {
     padding: 10,
   },
+  wrappingView: {
+    borderRadius: 4,
+  },
 });
 
 const textContent = (
@@ -49,7 +52,7 @@ storiesOf('react-native-bpk-component-touchable-native-feedback', module)
   .add('docs:text-content', () => (
     <BpkTouchableNativeFeedback
       onPress={onPress}
-      accessibilityLabel="Example touchable overlay"
+      accessibilityLabel="Example touchable native feedback"
     >
       {textContent}
     </BpkTouchableNativeFeedback>
@@ -57,8 +60,18 @@ storiesOf('react-native-bpk-component-touchable-native-feedback', module)
   .add('docs:view-content', () => (
     <BpkTouchableNativeFeedback
       onPress={onPress}
-      accessibilityLabel="Example touchable overlay"
+      accessibilityLabel="Example touchable native feedback"
     >
       {viewContent}
     </BpkTouchableNativeFeedback>
+  ))
+  .add('docs:view-wrapper', () => (
+    <View style={styles.wrappingView}>
+      <BpkTouchableNativeFeedback
+        onPress={onPress}
+        accessibilityLabel="Example touchable native feedback"
+      >
+        {viewContent}
+      </BpkTouchableNativeFeedback>
+    </View>
   ));

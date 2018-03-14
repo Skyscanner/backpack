@@ -98,6 +98,8 @@ export const NATIVE_STAR_RATING = '/components/native/star-rating';
 export const NATIVE_SWITCH = '/components/native/switches';
 export const NATIVE_TEXT = '/components/native/text';
 export const NATIVE_TOUCHABLE_OVERLAY = '/components/native/touchable-overlay';
+export const NATIVE_TOUCHABLE_NATIVE_FEEDBACK =
+  '/components/native/touchable-native-feedback';
 
 // components/utilities/
 export const UTILITIES = '/components/utilities';
