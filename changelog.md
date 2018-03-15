@@ -2,19 +2,20 @@
 
 ## Unreleased
 
-_Nothing yet..._
+**Added:**
+- react-native-bpk-component-icon:
+- bpk-component-icon:
+- bpk-mixins:
+- bpk-svgs:
+  - New hotels amenities icons: `hotels--smoking`, `hotels--pets-allowed`, `hotels--jacuzzi` and `hotels--disabled-facilities`.
+  - New Android native back, forward and close icons: `native-android--back`, `native-android--forward` and `native-android--close`.
+    - **Note:** to be used on Android only...
 
 ## 2018-03-15 - Native Panel component
 
 **Added:**
 - react-native-bpk-component-panel: 1.0.0
   - New native panel component, see https://backpack.github.io/components/native/panels.
-
-- react-native-bpk-component-icon:
-- bpk-component-icon:
-- bpk-mixins:
-- bpk-svgs:
-  - New hotels amenities icons: `hotels--smoking`, `hotels--pets-allowed`, `hotels--jacuzzi` and `hotels--disabled-facilities`.
 
 ## 2018-03-13 - Native Phone Number Input
 

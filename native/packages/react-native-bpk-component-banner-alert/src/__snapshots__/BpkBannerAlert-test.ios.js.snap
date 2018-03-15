@@ -231,7 +231,7 @@ exports[`iOS BpkBannerAlert should accept user-stlying 1`] = `
                     ]
                   }
                 >
-                  
+                  
                 </Text>
                 <Text
                   accessible={true}
@@ -752,7 +752,7 @@ exports[`iOS BpkBannerAlert should render correctly 1`] = `
                     ]
                   }
                 >
-                  
+                  
                 </Text>
                 <Text
                   accessible={true}
@@ -1344,7 +1344,7 @@ exports[`iOS BpkBannerAlert should render correctly dismissable 1`] = `
                     ]
                   }
                 >
-                  
+                  
                 </Text>
                 <Text
                   accessible={true}
@@ -2177,7 +2177,7 @@ exports[`iOS BpkBannerAlert should render correctly expandable 1`] = `
                       ]
                     }
                   >
-                    
+                    
                   </Text>
                   <Text
                     accessible={true}
@@ -3020,7 +3020,7 @@ exports[`iOS BpkBannerAlert should render correctly expanded 1`] = `
                       ]
                     }
                   >
-                    
+                    
                   </Text>
                   <Text
                     accessible={true}
@@ -4001,7 +4001,7 @@ exports[`iOS BpkBannerAlert should render correctly long text 1`] = `
                       ]
                     }
                   >
-                    
+                    
                   </Text>
                   <Text
                     accessible={true}
@@ -4849,7 +4849,7 @@ exports[`iOS BpkBannerAlert should render correctly when not shown 1`] = `
                     ]
                   }
                 >
-                  
+                  
                 </Text>
                 <Text
                   accessible={true}
@@ -5380,7 +5380,7 @@ exports[`iOS BpkBannerAlert should render correctly with animateOnLeave 1`] = `
                     ]
                   }
                 >
-                  
+                  
                 </Text>
                 <Text
                   accessible={true}
