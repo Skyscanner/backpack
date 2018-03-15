@@ -1,0 +1,28 @@
+{
+  "name": "react-native-bpk-component-navigation-bar",
+  "version": "0.0.0",
+  "main": "index.js",
+  "description": "Backpack React Native navigation bar component.",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:Skyscanner/backpack.git"
+  },
+  "author": "Backpack Design System <backpack@skyscanner.net>",
+  "license": "Apache-2.0",
+  "peerDependencies": {
+    "react": "^16.0.0-alpha.1",
+    "react-native": ">= 0.47.0"
+  },
+  "devDependencies": {
+    "react-native-bpk-component-card": "^1.2.14"
+  },
+  "dependencies": {
+    "bpk-tokens": "^26.7.4",
+    "lodash": "^4.17.4",
+    "prop-types": "^15.5.8",
+    "react-native-bpk-component-icon": "^1.4.0",
+    "react-native-bpk-component-text": "^2.1.31",
+    "react-native-bpk-component-touchable-native-feedback": "^1.1.2",
+    "react-native-bpk-theming": "^1.0.40"
+  }
+}

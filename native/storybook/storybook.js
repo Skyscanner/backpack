@@ -52,6 +52,7 @@ configure(() => {
   require('../packages/react-native-bpk-component-card/stories');
   require('../packages/react-native-bpk-component-horizontal-nav/stories');
   require('../packages/react-native-bpk-component-icon/stories');
+  require('../packages/react-native-bpk-component-navigation-bar/stories');
   require('../packages/react-native-bpk-component-nudger/stories');
   require('../packages/react-native-bpk-component-panel/stories');
   require('../packages/react-native-bpk-component-phone-input/stories');
@@ -60,9 +61,9 @@ configure(() => {
   require('../packages/react-native-bpk-component-switch/stories');
   require('../packages/react-native-bpk-component-text-input/stories');
   require('../packages/react-native-bpk-component-text/stories');
-  require('../packages/react-native-bpk-theming/stories');
   require('../packages/react-native-bpk-component-touchable-overlay/stories');
   require('../packages/react-native-bpk-component-touchable-native-feedback/stories');
+  require('../packages/react-native-bpk-theming/stories');
 }, module);
 /* eslint-enable global-require */
 

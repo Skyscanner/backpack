@@ -29,16 +29,21 @@ import {
 type Props = {
   children: Element,
   borderlessBackground: boolean,
+  color: ?string,
   style: ?(Object | Array<Object>),
 };
 
 const BpkTouchableNativeFeedback = (props: Props) => {
-  const { children, style, borderlessBackground, ...rest } = props;
+  const { children, style, borderlessBackground, color, ...rest } = props;
   const preLollipop = Platform.Version < 21;
   let background = TouchableNativeFeedback.SelectableBackground();
 
   if (!preLollipop && borderlessBackground) {
-    background = TouchableNativeFeedback.SelectableBackgroundBorderless();
+    if (color) {
+      background = TouchableNativeFeedback.Ripple(color, true);
+    } else {
+      background = TouchableNativeFeedback.SelectableBackgroundBorderless();
+    }
   }
 
   return (
@@ -51,11 +56,13 @@ const BpkTouchableNativeFeedback = (props: Props) => {
 BpkTouchableNativeFeedback.propTypes = {
   children: PropTypes.element.isRequired,
   borderlessBackground: PropTypes.bool,
+  color: PropTypes.string,
   style: ViewPropTypes.style,
 };
 
 BpkTouchableNativeFeedback.defaultProps = {
   borderlessBackground: true,
+  color: null,
   style: null,
 };
 

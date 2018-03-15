@@ -43,6 +43,13 @@ const themeAttributes = {
 
   // Used in BpkSwitch.
   switchPrimaryColor: theme.contentColor,
+
+  // Used in BpkNavigationBar
+  navigationBarBackgroundColor: theme.brandColors.gradientStart,
+  navigationBarTintColor: theme.contentColor,
+  navigationBarStatusBarColor: theme.brandColors.gradientEnd,
+  navigationBarStatusBarStyle: 'dark-content',
+  navigationBarShadowColor: theme.brandColors.gradientEnd,
 };
 
 export default themeAttributes;
