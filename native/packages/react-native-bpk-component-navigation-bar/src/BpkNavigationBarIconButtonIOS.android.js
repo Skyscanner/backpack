@@ -15,23 +15,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+/* @flow */
 
-import BpkNavigationBar from './src/BpkNavigationBar';
-
-// Android
-import BpkNavigationBarButtonAndroid from './src/BpkNavigationBarButtonAndroid';
-
-// iOS
-import BpkNavigationBarBackButtonIOS from './src/BpkNavigationBarBackButtonIOS';
-import BpkNavigationBarTextButtonIOS from './src/BpkNavigationBarTextButtonIOS';
-import BpkNavigationBarIconButtonIOS from './src/BpkNavigationBarIconButtonIOS';
-
-export {
-  // Android
-  BpkNavigationBarButtonAndroid,
-  // iOS
-  BpkNavigationBarBackButtonIOS,
-  BpkNavigationBarTextButtonIOS,
-  BpkNavigationBarIconButtonIOS,
+const DummyBpkNavigationBarIconButtonIOS = () => {
+  throw new Error(
+    'BpkNavigationBarIconButtonIOS is not supported on this platform!',
+  );
 };
-export default BpkNavigationBar;
+
+export default DummyBpkNavigationBarIconButtonIOS;

@@ -29,6 +29,7 @@ import BpkNavigationBar, {
   BpkNavigationBarButtonAndroid,
   BpkNavigationBarBackButtonIOS,
   BpkNavigationBarTextButtonIOS,
+  BpkNavigationBarIconButtonIOS,
 } from './index';
 
 const exampleLogo = require('./logo.png');
@@ -86,6 +87,23 @@ const doneButton = Platform.select({
   ),
 });
 
+const addButton = Platform.select({
+  android: () => (
+    <BpkNavigationBarButtonAndroid
+      title="Done"
+      icon="plus"
+      onPress={action('Tapped trailing button')}
+    />
+  ),
+  ios: () => (
+    <BpkNavigationBarIconButtonIOS
+      title="Add"
+      icon="plus"
+      onPress={action('Tapped trailing button')}
+    />
+  ),
+});
+
 storiesOf('react-native-bpk-component-navigation-bar', module)
   .add('docs:default', () => (
     <BpkNavigationBar leadingButton={backButton()} title="Backpack" />
@@ -119,6 +137,9 @@ storiesOf('react-native-bpk-component-navigation-bar', module)
       }
       title="This is a very long title with a lot of content"
     />
+  ))
+  .add('iOS icon button', () => (
+    <BpkNavigationBar trailingButton={addButton()} title="Backpack" />
   ))
   .add('themed', () => (
     <BpkThemeProvider theme={themeAttributes}>

@@ -36,6 +36,7 @@ import {
 } from './common-types';
 import BpkNavigationBarBackButtonIOS from './BpkNavigationBarBackButtonIOS';
 import BpkNavigationBarTextButtonIOS from './BpkNavigationBarTextButtonIOS';
+import BpkNavigationBarIconButtonIOS from './BpkNavigationBarIconButtonIOS';
 import isIphoneX from './isIponeX';
 
 const IOS_THEME_ATTRIBUTES = [...THEME_ATTRIBUTES, 'navigationBarShadowColor'];
@@ -91,7 +92,10 @@ type IOSTheme = {
   navigationBarShadowColor: string,
 };
 
-type ButtonType = BpkNavigationBarBackButtonIOS | BpkNavigationBarTextButtonIOS;
+type ButtonType =
+  | BpkNavigationBarBackButtonIOS
+  | BpkNavigationBarTextButtonIOS
+  | BpkNavigationBarIconButtonIOS;
 
 export type Props = {
   title: string,
