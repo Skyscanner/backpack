@@ -77,9 +77,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
-  titleView: {
-    height: 32,
-  },
   leadingIcon: {
     padding: 8,
     color: colorWhite,
@@ -164,7 +161,7 @@ class BpkNavigationBar extends Component<Props, {}> {
 
     const barStyle = [styles.bar];
     const outerBarStyle = [styles.barOuter];
-    const titleStyle = [isTitleView ? styles.titleView : styles.titleString];
+    const titleStyle = [styles.titleString];
     let tintColor = colorWhite;
     let touchableColor = colorWhite;
 
@@ -199,7 +196,9 @@ class BpkNavigationBar extends Component<Props, {}> {
               tintColor,
             })}
           {isTitleView ? (
-            <View style={styles.titleViewOuter}>{title}</View>
+            <View style={styles.titleViewOuter}>
+              {React.cloneElement(title, { style: { height: 32 } })}
+            </View>
           ) : (
             <BpkText style={titleStyle} textStyle="lg" emphasize>
               {title}

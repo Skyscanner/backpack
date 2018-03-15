@@ -104,22 +104,22 @@ describe('ios', () => {
       expect(tree).toMatchSnapshot();
     });
 
-    // it('should render correctly with a title view', () => {
-    //   const tree = renderer
-    //     .create(
-    //       <BpkNavigationBar
-    //         title={<View testID="title-view" />}
-    //         leadingButton={
-    //           <BpkNavigationBarButtonAndroid
-    //             title="Back"
-    //             icon="long-arrow-left"
-    //             onPress={jest.fn()}
-    //           />
-    //         }
-    //       />,
-    //     )
-    //     .toJSON();
-    //   expect(tree).toMatchSnapshot();
-    // });
+    it('should render correctly with a title view', () => {
+      const tree = renderer
+        .create(
+          <BpkNavigationBar
+            title={<View testID="title-view" />}
+            leadingButton={
+              <BpkNavigationBarBackButtonIOS
+                title="Back"
+                showTitle
+                onPress={jest.fn()}
+              />
+            }
+          />,
+        )
+        .toJSON();
+      expect(tree).toMatchSnapshot();
+    });
   });
 });

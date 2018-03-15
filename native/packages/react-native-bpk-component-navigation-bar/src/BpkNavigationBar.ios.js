@@ -154,6 +154,7 @@ class BpkNavigationBar extends Component<Props, {}> {
 
   render() {
     const { title, leadingButton, trailingButton, subtitleView } = this.props;
+    const isTitleView = typeof title !== 'string';
     const hasSubtitleView = subtitleView !== null;
     const titleStyle = [styles.title];
     const outerBarStyle = [styles.barOuter];
@@ -191,15 +192,19 @@ class BpkNavigationBar extends Component<Props, {}> {
               leading: true,
             })}
           <View style={styles.titleContainer}>
-            <BpkText
-              textStyle="lg"
-              emphasize
-              style={styles.title}
-              numberOfLines={1}
-              ellipsizeMode="tail"
-            >
-              {title}
-            </BpkText>
+            {isTitleView ? (
+              React.cloneElement(title, { style: { height: 28 } })
+            ) : (
+              <BpkText
+                textStyle="lg"
+                emphasize
+                style={styles.title}
+                numberOfLines={1}
+                ellipsizeMode="tail"
+              >
+                {title}
+              </BpkText>
+            )}
           </View>
           {trailingButton &&
             React.cloneElement(trailingButton, {
