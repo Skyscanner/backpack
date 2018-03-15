@@ -25,9 +25,7 @@ import CenterDecorator from '../../storybook/CenterDecorator';
 import BpkTouchableNativeFeedback from './index';
 
 const styles = StyleSheet.create({
-  text: {
-    backgroundColor: 'white',
-  },
+  text: {},
   view: {
     padding: 10,
   },

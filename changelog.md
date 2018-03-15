@@ -10,6 +10,12 @@ _Nothing yet..._
 - react-native-bpk-component-panel: 1.0.0
   - New native panel component, see https://backpack.github.io/components/native/panels.
 
+- react-native-bpk-component-icon:
+- bpk-component-icon:
+- bpk-mixins:
+- bpk-svgs:
+  - New hotels amenities icons: `hotels--smoking`, `hotels--pets-allowed`, `hotels--jacuzzi` and `hotels--disabled-facilities`.
+
 ## 2018-03-13 - Native Phone Number Input
 
 **Added:**
