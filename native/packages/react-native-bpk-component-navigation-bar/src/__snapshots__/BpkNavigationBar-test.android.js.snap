@@ -220,7 +220,7 @@ exports[`android BpkNavigationBar should render correctly with a subtitle view 1
       <View
         style={
           Object {
-            "height": 32,
+            "maxHeight": 32,
           }
         }
         testID="title-view"
@@ -332,7 +332,7 @@ exports[`android BpkNavigationBar should render correctly with a title view 1`] 
       <View
         style={
           Object {
-            "height": 32,
+            "maxHeight": 32,
           }
         }
         testID="title-view"

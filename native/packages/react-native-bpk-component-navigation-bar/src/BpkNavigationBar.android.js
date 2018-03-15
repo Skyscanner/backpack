@@ -197,7 +197,7 @@ class BpkNavigationBar extends Component<Props, {}> {
             })}
           {isTitleView ? (
             <View style={styles.titleViewOuter}>
-              {React.cloneElement(title, { style: { height: 32 } })}
+              {React.cloneElement(title, { style: { maxHeight: 32 } })}
             </View>
           ) : (
             <BpkText style={titleStyle} textStyle="lg" emphasize>

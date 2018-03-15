@@ -441,7 +441,7 @@ exports[`ios BpkNavigationBar should render correctly with a title view 1`] = `
       <View
         style={
           Object {
-            "height": 28,
+            "maxHeight": 28,
           }
         }
         testID="title-view"
