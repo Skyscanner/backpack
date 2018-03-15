@@ -154,7 +154,7 @@ exports[`Android BpkDialingCodeList should render correctly 1`] = `
             ]
           }
         >
-          
+          
         </Text>
         <View
           style={
@@ -293,7 +293,7 @@ exports[`Android BpkDialingCodeList should render correctly 1`] = `
             ]
           }
         >
-          
+          
         </Text>
         <View
           style={
@@ -432,7 +432,7 @@ exports[`Android BpkDialingCodeList should render correctly 1`] = `
             ]
           }
         >
-          
+          
         </Text>
         <View
           style={
@@ -615,7 +615,7 @@ exports[`Android BpkDialingCodeList should render correctly with "selectedId" se
             ]
           }
         >
-          
+          
         </Text>
         <View
           style={
@@ -754,7 +754,7 @@ exports[`Android BpkDialingCodeList should render correctly with "selectedId" se
             ]
           }
         >
-          
+          
         </Text>
         <View
           style={
@@ -893,7 +893,7 @@ exports[`Android BpkDialingCodeList should render correctly with "selectedId" se
             ]
           }
         >
-          
+          
         </Text>
         <View
           style={

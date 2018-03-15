@@ -126,7 +126,7 @@ exports[`iOS BpkNudger should disable theming if the required attribute is omitt
           ]
         }
       >
-        
+        
       </Text>
       <View
         style={
@@ -287,7 +287,7 @@ exports[`iOS BpkNudger should disable theming if the required attribute is omitt
           ]
         }
       >
-        
+        
       </Text>
       <View
         style={
@@ -439,7 +439,7 @@ exports[`iOS BpkNudger should render correctly 1`] = `
           ]
         }
       >
-        
+        
       </Text>
       <View
         style={
@@ -600,7 +600,7 @@ exports[`iOS BpkNudger should render correctly 1`] = `
           ]
         }
       >
-        
+        
       </Text>
       <View
         style={
@@ -762,7 +762,7 @@ exports[`iOS BpkNudger should render correctly when value is a not an integer 1`
           ]
         }
       >
-        
+        
       </Text>
       <View
         style={
@@ -923,7 +923,7 @@ exports[`iOS BpkNudger should render correctly when value is a not an integer 1`
           ]
         }
       >
-        
+        
       </Text>
       <View
         style={
@@ -1075,7 +1075,7 @@ exports[`iOS BpkNudger should render correctly when value is greater than max 1`
           ]
         }
       >
-        
+        
       </Text>
       <View
         style={
@@ -1246,7 +1246,7 @@ exports[`iOS BpkNudger should render correctly when value is greater than max 1`
           ]
         }
       >
-        
+        
       </Text>
       <View
         style={
@@ -1408,7 +1408,7 @@ exports[`iOS BpkNudger should render correctly when value is less than min 1`] =
           ]
         }
       >
-        
+        
       </Text>
       <View
         style={
@@ -1569,7 +1569,7 @@ exports[`iOS BpkNudger should render correctly when value is less than min 1`] =
           ]
         }
       >
-        
+        
       </Text>
       <View
         style={
@@ -1725,7 +1725,7 @@ exports[`iOS BpkNudger should support theming 1`] = `
           ]
         }
       >
-        
+        
       </Text>
       <View
         style={
@@ -1890,7 +1890,7 @@ exports[`iOS BpkNudger should support theming 1`] = `
           ]
         }
       >
-        
+        
       </Text>
       <View
         style={
