@@ -32,7 +32,7 @@ const touchableHighlightUrl =
   'https://facebook.github.io/react-native/docs/0.52/touchablehighlight.html';
 
 const touchableNativeFeedbackUrl =
-  'https://facebook.github.io/react-native/docs/0.52/touchablenativefeedback.html';
+  '/components/native/touchable-native-feedback';
 
 const components = [
   {
@@ -64,20 +64,20 @@ const NativeTouchableOverlayPage = () => (
     title="Touchable Overlay"
     blurb={[
       <Paragraph>
-        The Backpack Touchable <em>Overlay</em> component is to be used instead
+        The Backpack <em>Touchable Overlay</em> component is to be used instead
         of the default{' '}
         <BpkLink href={touchableHighlightUrl} blank>
           React Native Touchable <em>Highlight</em>
         </BpkLink>{' '}
-        component. The default Touchable <em>Highlight</em> component works by
+        component. The default <em>Touchable Highlight</em> component works by
         decreasing the opacity of the wrapped view to show an underlay colour.
-        When views are nested within a Touchable <em>Highlight</em> wrapped
+        When views are nested within a <em>Touchable Highlight</em> wrapped
         view, their opacity is unchanged which produces an undesirable result.
         Have a look at the example below to see them both in action.
       </Paragraph>,
       <BpkBlockquote>
         <BpkText bold>Note:</BpkText> This component is iOS only, for Android
-        please stick to the default React Native{' '}
+        please use BpkTouchableNativeFeedback{' '}
         <BpkLink href={touchableNativeFeedbackUrl} blank>
           Touchable Native <em>Feedback</em>
         </BpkLink>{' '}
