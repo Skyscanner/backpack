@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-mobile-scroll-container",
-  "version": "1.0.55",
+  "version": "1.0.56",
   "description": "Backpack mobile scroll container component.",
   "main": "index.js",
   "repository": {
@@ -13,14 +13,14 @@
     "react": "^15.0.0 || ^16.0.0"
   },
   "dependencies": {
-    "bpk-mixins": "^17.3.7",
+    "bpk-mixins": "^17.4.0",
     "bpk-react-utils": "^2.5.0",
     "lodash.debounce": "^4.0.8",
     "prop-types": "^15.5.8"
   },
   "devDependencies": {
-    "bpk-component-button": "^2.0.8",
-    "bpk-component-table": "^1.0.50",
+    "bpk-component-button": "^2.0.9",
+    "bpk-component-table": "^1.0.51",
     "bpk-tokens": "^26.7.4"
   }
 }
