@@ -1,6 +1,6 @@
 {
   "name": "react-native-bpk-component-switch",
-  "version": "1.0.25",
+  "version": "1.0.26",
   "main": "index.js",
   "description": "Backpack React Native switch component.",
   "repository": {
@@ -16,6 +16,6 @@
   "dependencies": {
     "bpk-tokens": "^26.7.4",
     "prop-types": "^15.5.8",
-    "react-native-bpk-theming": "^1.0.38"
+    "react-native-bpk-theming": "^1.0.39"
   }
 }
