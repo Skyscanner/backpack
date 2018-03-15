@@ -20,26 +20,9 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import { View } from 'react-native';
 
-import BpkNavigationBar from './BpkNavigationBar.ios';
-import BpkNavigationBarBackButtonIOS from './BpkNavigationBarBackButtonIOS.ios';
-import BpkNavigationBarTextButtonIOS from './BpkNavigationBarTextButtonIOS.ios';
-
-jest.mock('./BpkNavigationBarBackButtonIOS.ios', () =>
-  jest.requireActual('./BpkNavigationBarBackButtonIOS.ios.js'),
-);
-
-jest.mock('./BpkNavigationBarTextButtonIOS.ios', () =>
-  jest.requireActual('./BpkNavigationBarTextButtonIOS.ios.js'),
-);
-
-jest.mock(
-  './../node_modules/react-native-bpk-component-text/node_modules/bpk-tokens/tokens/base.react.native',
-  () => jest.requireActual('bpk-tokens/tokens/base.react.native.android.js'),
-);
-
-jest.mock('bpk-tokens/tokens/base.react.native', () =>
-  jest.requireActual('bpk-tokens/tokens/base.react.native.android.js'),
-);
+import BpkNavigationBar from './BpkNavigationBar';
+import BpkNavigationBarBackButtonIOS from './BpkNavigationBarBackButtonIOS';
+import BpkNavigationBarTextButtonIOS from './BpkNavigationBarTextButtonIOS';
 
 describe('ios', () => {
   describe('BpkNavigationBar', () => {

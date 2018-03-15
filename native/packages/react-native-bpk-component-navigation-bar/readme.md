@@ -95,19 +95,13 @@ import BpkNavigationBar from 'react-native-bpk-component-navigation-bar'
 + `navigationBarBackgroundColor`
 + `navigationBarTintColor`
 
-
-
 **Android:**
 
 + `navigationBarStatusBarColor`
 
-
-
 **iOS:**
 
 + `navigationBarShadowColor`
-
-
 
 ### `BpkNavigationBarButtonAndroid`
 
@@ -116,8 +110,6 @@ Renders bar buttons on Android only.
 ```js
 import { BpkNavigationBarButtonAndroid } from 'react-native-bpk-component-navigation-bar'
 ```
-
-
 
 #### Props
 
@@ -137,8 +129,6 @@ Renders a back button on iOS with optional support to show a title.
 import { BpkNavigationBarBackButtonIOS } from 'react-native-bpk-component-navigation-bar'
 ```
 
-
-
 #### Props
 
 | Property  | PropType | Required | Default Value |
@@ -155,8 +145,6 @@ Renders a text button on iOS.
 import { BpkNavigationBarTextButtonIOS } from 'react-native-bpk-component-navigation-bar'
 ```
 
-
-
 #### Props
 
 | Property  | PropType | Required | Default Value |
@@ -172,8 +160,6 @@ Renders a text button on iOS.
 ```js
 import { BpkNavigationBarIconButtonIOS } from 'react-native-bpk-component-navigation-bar'
 ```
-
-
 
 #### Props
 

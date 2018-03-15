@@ -37,7 +37,7 @@ import {
 import BpkNavigationBarBackButtonIOS from './BpkNavigationBarBackButtonIOS';
 import BpkNavigationBarTextButtonIOS from './BpkNavigationBarTextButtonIOS';
 import BpkNavigationBarIconButtonIOS from './BpkNavigationBarIconButtonIOS';
-import isIphoneX from './isIponeX';
+import isIphoneX from './isIphoneX';
 
 const IOS_THEME_ATTRIBUTES = [...THEME_ATTRIBUTES, 'navigationBarShadowColor'];
 
@@ -57,7 +57,7 @@ const styles = StyleSheet.create({
   barOuterWithSubtitle: {
     paddingBottom: 16,
   },
-  bar: {
+  barInner: {
     paddingTop: statusBarPadding, // Status bar
     height: 64, // 44 for the bar + 20 for the status bar
     overflow: 'visible',
@@ -103,8 +103,8 @@ type ButtonType =
 export type Props = {
   title: string,
   theme: ?IOSTheme,
-  leadingButton: Element<ButtonType>,
-  trailingButton: Element<ButtonType>,
+  leadingButton: ?Element<ButtonType>,
+  trailingButton: ?Element<ButtonType>,
   subtitleView: ?Element<any>,
 };
 
@@ -154,11 +154,10 @@ class BpkNavigationBar extends Component<Props, {}> {
 
   render() {
     const { title, leadingButton, trailingButton, subtitleView } = this.props;
-    const isTitleView = typeof title !== 'string';
     const hasSubtitleView = subtitleView !== null;
     const titleStyle = [styles.title];
     const outerBarStyle = [styles.barOuter];
-    const innerBarStyle = [styles.bar, isIphoneX && styles.iPhoneXBar];
+    const innerBarStyle = [styles.barInner, isIphoneX && styles.iPhoneXBar];
     let tintColor = colorGray700;
 
     if (this.theme) {
@@ -192,7 +191,7 @@ class BpkNavigationBar extends Component<Props, {}> {
               leading: true,
             })}
           <View style={styles.titleContainer}>
-            {isTitleView ? (
+            {typeof title !== 'string' ? (
               React.cloneElement(title, { style: { maxHeight: 28 } })
             ) : (
               <BpkText

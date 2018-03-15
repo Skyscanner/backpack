@@ -19,25 +19,31 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 
-import BpkNavigationBarBackButtonIOS from './BpkNavigationBarBackButtonIOS.ios';
+import BpkNavigationBarIconButtonIOS from './BpkNavigationBarIconButtonIOS.ios';
 
 describe('iOS', () => {
-  describe('BpkNavigationBarBackButtonIOS', () => {
+  describe('BpkNavigationBarIconButtonIOS', () => {
     it('should render correctly', () => {
       const tree = renderer
         .create(
-          <BpkNavigationBarBackButtonIOS title="Back" onPress={jest.fn()} />,
+          <BpkNavigationBarIconButtonIOS
+            title="Edit"
+            icon="edit"
+            leading={false}
+            onPress={jest.fn()}
+          />,
         )
         .toJSON();
       expect(tree).toMatchSnapshot();
     });
 
-    it('should render correctly with title', () => {
+    it('should render correctly leading configuration', () => {
       const tree = renderer
         .create(
-          <BpkNavigationBarBackButtonIOS
-            title="Back"
-            showTitle
+          <BpkNavigationBarIconButtonIOS
+            title="Close"
+            icon="close"
+            leading
             onPress={jest.fn()}
           />,
         )

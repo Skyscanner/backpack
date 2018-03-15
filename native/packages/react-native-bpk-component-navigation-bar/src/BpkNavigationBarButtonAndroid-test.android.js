@@ -55,7 +55,7 @@ describe('android', () => {
         .create(
           <BpkNavigationBarButtonAndroid
             title="Back"
-            icon="long-arrow-left"
+            icon="native-android--back"
             onPress={jest.fn()}
             touchableColor={colorWhite}
             tintColor={colorWhite}

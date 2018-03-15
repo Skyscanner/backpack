@@ -92,12 +92,11 @@ exports[`ios BpkNavigationBar should render correctly 1`] = `
           Array [
             Object {
               "color": "rgb(82, 76, 97)",
-              "fontFamily": "sans-serif",
-              "fontSize": 20,
+              "fontFamily": "System",
+              "fontSize": 17,
               "fontWeight": "400",
             },
             Array [
-              Object {},
               Object {
                 "color": "rgb(82, 76, 97)",
               },
@@ -131,12 +130,12 @@ exports[`ios BpkNavigationBar should render correctly 1`] = `
           Array [
             Object {
               "color": "rgb(82, 76, 97)",
-              "fontFamily": "sans-serif",
-              "fontSize": 20,
+              "fontFamily": "System",
+              "fontSize": 17,
               "fontWeight": "400",
             },
             Object {
-              "fontWeight": "500",
+              "fontWeight": "600",
             },
             Object {
               "maxWidth": "60%",
@@ -246,12 +245,11 @@ exports[`ios BpkNavigationBar should render correctly with a subtitle view 1`] =
           Array [
             Object {
               "color": "rgb(82, 76, 97)",
-              "fontFamily": "sans-serif",
-              "fontSize": 20,
+              "fontFamily": "System",
+              "fontSize": 17,
               "fontWeight": "400",
             },
             Array [
-              Object {},
               Object {
                 "color": "rgb(82, 76, 97)",
               },
@@ -285,12 +283,12 @@ exports[`ios BpkNavigationBar should render correctly with a subtitle view 1`] =
           Array [
             Object {
               "color": "rgb(82, 76, 97)",
-              "fontFamily": "sans-serif",
-              "fontSize": 20,
+              "fontFamily": "System",
+              "fontSize": 17,
               "fontWeight": "400",
             },
             Object {
-              "fontWeight": "500",
+              "fontWeight": "600",
             },
             Object {
               "maxWidth": "60%",
@@ -408,12 +406,11 @@ exports[`ios BpkNavigationBar should render correctly with a title view 1`] = `
           Array [
             Object {
               "color": "rgb(82, 76, 97)",
-              "fontFamily": "sans-serif",
-              "fontSize": 20,
+              "fontFamily": "System",
+              "fontSize": 17,
               "fontWeight": "400",
             },
             Array [
-              Object {},
               Object {
                 "color": "rgb(82, 76, 97)",
               },
@@ -525,8 +522,8 @@ exports[`ios BpkNavigationBar should render correctly with trailing button 1`] =
           Array [
             Object {
               "color": "rgb(82, 76, 97)",
-              "fontFamily": "sans-serif",
-              "fontSize": 20,
+              "fontFamily": "System",
+              "fontSize": 17,
               "fontWeight": "400",
             },
             Array [
@@ -563,12 +560,12 @@ exports[`ios BpkNavigationBar should render correctly with trailing button 1`] =
           Array [
             Object {
               "color": "rgb(82, 76, 97)",
-              "fontFamily": "sans-serif",
-              "fontSize": 20,
+              "fontFamily": "System",
+              "fontSize": 17,
               "fontWeight": "400",
             },
             Object {
-              "fontWeight": "500",
+              "fontWeight": "600",
             },
             Object {
               "maxWidth": "60%",
@@ -618,12 +615,12 @@ exports[`ios BpkNavigationBar should render correctly with trailing button 1`] =
           Array [
             Object {
               "color": "rgb(82, 76, 97)",
-              "fontFamily": "sans-serif",
-              "fontSize": 20,
+              "fontFamily": "System",
+              "fontSize": 17,
               "fontWeight": "400",
             },
             Object {
-              "fontWeight": "500",
+              "fontWeight": "600",
             },
             Array [
               Object {

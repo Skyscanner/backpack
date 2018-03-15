@@ -120,7 +120,8 @@ describe('android', () => {
       const tree = renderer
         .create(
           <BpkNavigationBar
-            title={<View testID="title-view" />}
+            title="Backpack"
+            subtitleView={<View testID="subtitle-view" />}
             leadingButton={
               <BpkNavigationBarButtonAndroid
                 title="Back"

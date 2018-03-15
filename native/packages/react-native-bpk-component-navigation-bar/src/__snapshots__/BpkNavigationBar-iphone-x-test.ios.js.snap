@@ -100,7 +100,6 @@ exports[`ios - iPhone X  BpkNavigationBar should render correctly 1`] = `
               "fontWeight": "400",
             },
             Array [
-              Object {},
               Object {
                 "color": "rgb(82, 76, 97)",
               },

@@ -43,13 +43,12 @@ const styles = StyleSheet.create({
   backIcon: {
     marginEnd: 8,
   },
-  title: {},
 });
 
 const BpkNavigationBarBackButtonIOS = (props: Props) => {
   const { title, showTitle, onPress, tintColor } = props;
   const tintColorFinal = tintColor || colorGray700;
-  const titleStyle = [styles.title, { color: tintColorFinal }];
+  const titleStyle = [{ color: tintColorFinal }];
 
   return (
     <TouchableOpacity

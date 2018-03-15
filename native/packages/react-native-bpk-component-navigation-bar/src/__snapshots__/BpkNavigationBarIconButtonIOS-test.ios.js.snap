@@ -1,9 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`iOS BpkNavigationBarBackButtonIOS should render correctly 1`] = `
+exports[`iOS BpkNavigationBarIconButtonIOS should render correctly 1`] = `
 <View
   accessibilityComponentType="button"
-  accessibilityLabel="Back"
+  accessibilityLabel="Edit"
   accessibilityTraits={
     Array [
       "button",
@@ -24,8 +24,7 @@ exports[`iOS BpkNavigationBarBackButtonIOS should render correctly 1`] = `
   onStartShouldSetResponder={[Function]}
   style={
     Object {
-      "alignItems": "center",
-      "flexDirection": "row",
+      "marginEnd": 3,
       "opacity": 1,
       "zIndex": 2,
     }
@@ -33,76 +32,6 @@ exports[`iOS BpkNavigationBarBackButtonIOS should render correctly 1`] = `
   testID={undefined}
   tvParallaxProperties={undefined}
 >
-  <Image
-    source={
-      Object {
-        "testUri": "../../../packages/react-native-bpk-component-navigation-bar/src/chevron-left.png",
-      }
-    }
-    style={
-      Array [
-        Object {
-          "marginEnd": 8,
-        },
-        Object {
-          "tintColor": "rgb(82, 76, 97)",
-        },
-      ]
-    }
-  />
-</View>
-`;
-
-exports[`iOS BpkNavigationBarBackButtonIOS should render correctly with title 1`] = `
-<View
-  accessibilityComponentType="button"
-  accessibilityLabel="Back"
-  accessibilityTraits={
-    Array [
-      "button",
-    ]
-  }
-  accessible={true}
-  collapsable={undefined}
-  hasTVPreferredFocus={undefined}
-  hitSlop={undefined}
-  isTVSelectable={true}
-  nativeID={undefined}
-  onLayout={undefined}
-  onResponderGrant={[Function]}
-  onResponderMove={[Function]}
-  onResponderRelease={[Function]}
-  onResponderTerminate={[Function]}
-  onResponderTerminationRequest={[Function]}
-  onStartShouldSetResponder={[Function]}
-  style={
-    Object {
-      "alignItems": "center",
-      "flexDirection": "row",
-      "opacity": 1,
-      "zIndex": 2,
-    }
-  }
-  testID={undefined}
-  tvParallaxProperties={undefined}
->
-  <Image
-    source={
-      Object {
-        "testUri": "../../../packages/react-native-bpk-component-navigation-bar/src/chevron-left.png",
-      }
-    }
-    style={
-      Array [
-        Object {
-          "marginEnd": 8,
-        },
-        Object {
-          "tintColor": "rgb(82, 76, 97)",
-        },
-      ]
-    }
-  />
   <Text
     accessible={true}
     allowFontScaling={true}
@@ -111,11 +40,15 @@ exports[`iOS BpkNavigationBarBackButtonIOS should render correctly with title 1`
       Array [
         Object {
           "color": "rgb(82, 76, 97)",
-          "fontFamily": "System",
-          "fontSize": 17,
-          "fontWeight": "400",
+          "fontFamily": "BpkIcon",
+          "fontSize": 24,
+          "lineHeight": 24,
         },
         Array [
+          Object {
+            "fontSize": 28,
+            "lineHeight": 28,
+          },
           Object {
             "color": "rgb(82, 76, 97)",
           },
@@ -123,7 +56,68 @@ exports[`iOS BpkNavigationBarBackButtonIOS should render correctly with title 1`
       ]
     }
   >
-    Back
+    
+  </Text>
+</View>
+`;
+
+exports[`iOS BpkNavigationBarIconButtonIOS should render correctly leading configuration 1`] = `
+<View
+  accessibilityComponentType="button"
+  accessibilityLabel="Close"
+  accessibilityTraits={
+    Array [
+      "button",
+    ]
+  }
+  accessible={true}
+  collapsable={undefined}
+  hasTVPreferredFocus={undefined}
+  hitSlop={undefined}
+  isTVSelectable={true}
+  nativeID={undefined}
+  onLayout={undefined}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "marginStart": 3,
+      "opacity": 1,
+      "zIndex": 2,
+    }
+  }
+  testID={undefined}
+  tvParallaxProperties={undefined}
+>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    style={
+      Array [
+        Object {
+          "color": "rgb(82, 76, 97)",
+          "fontFamily": "BpkIcon",
+          "fontSize": 24,
+          "lineHeight": 24,
+        },
+        Array [
+          Object {
+            "fontSize": 28,
+            "lineHeight": 28,
+          },
+          Object {
+            "color": "rgb(82, 76, 97)",
+          },
+        ],
+      ]
+    }
+  >
+    
   </Text>
 </View>
 `;

@@ -156,7 +156,6 @@ class BpkNavigationBar extends Component<Props, {}> {
 
   render() {
     const { title, leadingButton, trailingButton, subtitleView } = this.props;
-    const isTitleView = typeof title !== 'string';
     const hasSubtitleView = subtitleView !== null;
 
     const barStyle = [styles.bar];
@@ -195,7 +194,7 @@ class BpkNavigationBar extends Component<Props, {}> {
               touchableColor,
               tintColor,
             })}
-          {isTitleView ? (
+          {typeof title !== 'string' ? (
             <View style={styles.titleViewOuter}>
               {React.cloneElement(title, { style: { maxHeight: 32 } })}
             </View>

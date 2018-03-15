@@ -31,7 +31,7 @@ jest.mock('./BpkNavigationBarTextButtonIOS.ios', () =>
   jest.requireActual('./BpkNavigationBarTextButtonIOS.ios.js'),
 );
 
-jest.mock('./isIponeX.js', () => true);
+jest.mock('./isIphoneX.js', () => true);
 
 jest.mock(
   './../node_modules/react-native-bpk-component-text/node_modules/bpk-tokens/tokens/base.react.native',

@@ -57,7 +57,7 @@ exports[`android BpkNavigationBarButton should render correctly back icon 1`] = 
         ]
       }
     >
-      
+      
     </Text>
   </View>
 </View>
