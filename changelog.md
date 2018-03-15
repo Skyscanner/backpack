@@ -2,16 +2,19 @@
 
 ## Unreleased
 
+_Nothing yet..._
+
+## 2018-03-15 - Native Panel component
+
 **Added:**
-- react-native-bpk-component-panel:
-  - New native panel component. See https://backpack.github.io/components/native/panels
+- react-native-bpk-component-panel: 1.0.0
+  - New native panel component, see https://backpack.github.io/components/native/panels.
 
 ## 2018-03-13 - Native Phone Number Input
 
 **Added:**
-- react-native-bpk-component-phone-input:
-  - New `BpkDiallingCodeList` component.
-  - New `BpkPhoneNumberInput` component.
+- react-native-bpk-component-phone-input: 1.0.0
+  - New phone input components, see https://backpack.github.io/components/native/phone-input.
 
 ## 2018-03-12 - Native nudger component and SSR OC fixes
 
