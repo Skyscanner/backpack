@@ -58,7 +58,7 @@ const cancelButton = Platform.select({
   android: () => (
     <BpkNavigationBarButtonAndroid
       title="Close"
-      icon="close"
+      icon="native-android--close"
       onPress={action('Tapped leading button')}
     />
   ),
@@ -128,13 +128,7 @@ storiesOf('react-native-bpk-component-navigation-bar', module)
   ))
   .add('extreme example', () => (
     <BpkNavigationBar
-      leadingButton={
-        <BpkNavigationBarButtonAndroid
-          title="Back"
-          icon={backIcon()}
-          onPress={action('Tapped leading button')}
-        />
-      }
+      leadingButton={backButton()}
       title="This is a very long title with a lot of content"
     />
   ))
