@@ -1,6 +1,6 @@
 {
   "name": "react-native-bpk-component-banner-alert",
-  "version": "2.1.10",
+  "version": "2.1.11",
   "main": "index.js",
   "description": "Backpack React Native banner alert component.",
   "repository": {
@@ -16,12 +16,12 @@
   "dependencies": {
     "bpk-tokens": "^26.7.4",
     "prop-types": "^15.5.8",
-    "react-native-bpk-component-touchable-native-feedback": "^1.1.2",
+    "react-native-bpk-component-touchable-native-feedback": "^1.1.3",
     "react-native-bpk-component-touchable-overlay": "^1.0.13"
   },
   "devDependencies": {
-    "react-native-bpk-component-animate-height": "^1.0.33",
-    "react-native-bpk-component-button": "^4.4.3",
+    "react-native-bpk-component-animate-height": "^1.0.34",
+    "react-native-bpk-component-button": "^4.4.4",
     "react-native-bpk-component-icon": "^1.4.0",
     "react-native-bpk-component-text": "^2.1.31"
   }
