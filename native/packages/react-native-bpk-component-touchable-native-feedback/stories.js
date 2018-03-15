@@ -20,22 +20,22 @@ import React from 'react';
 import { View, StyleSheet } from 'react-native';
 import BpkText from 'react-native-bpk-component-text';
 import { storiesOf, action } from '@storybook/react-native';
-import CenterDecorator from '../../storybook/CenterDecorator';
+import { borderRadiusSm, spacingMd } from 'bpk-tokens/tokens/base.react.native';
 
+import CenterDecorator from '../../storybook/CenterDecorator';
 import BpkTouchableNativeFeedback from './index';
 
 const styles = StyleSheet.create({
-  text: {},
   view: {
-    padding: 10,
+    padding: spacingMd,
   },
   wrappingView: {
-    borderRadius: 4,
+    borderRadius: borderRadiusSm,
   },
 });
 
 const textContent = (
-  <BpkText style={styles.text}>
+  <BpkText>
     Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
     ligula eget dolor. Aenean massa.
   </BpkText>
@@ -47,14 +47,6 @@ const onPress = action('Touchable native feedback press');
 
 storiesOf('react-native-bpk-component-touchable-native-feedback', module)
   .addDecorator(CenterDecorator)
-  .add('docs:text-content', () => (
-    <BpkTouchableNativeFeedback
-      onPress={onPress}
-      accessibilityLabel="Example touchable native feedback"
-    >
-      {textContent}
-    </BpkTouchableNativeFeedback>
-  ))
   .add('docs:view-content', () => (
     <BpkTouchableNativeFeedback
       onPress={onPress}
