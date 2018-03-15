@@ -128,7 +128,7 @@ exports[`ios - iPhone X  BpkNavigationBar should render correctly 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
-        ellipsizeMode="middle"
+        ellipsizeMode="tail"
         numberOfLines={1}
         style={
           Array [
@@ -142,7 +142,7 @@ exports[`ios - iPhone X  BpkNavigationBar should render correctly 1`] = `
               "fontWeight": "500",
             },
             Object {
-              "maxWidth": "70%",
+              "maxWidth": "60%",
             },
           ]
         }
@@ -263,7 +263,7 @@ exports[`ios - iPhone X  BpkNavigationBar should render correctly with trailing 
       <Text
         accessible={true}
         allowFontScaling={true}
-        ellipsizeMode="middle"
+        ellipsizeMode="tail"
         numberOfLines={1}
         style={
           Array [
@@ -277,7 +277,7 @@ exports[`ios - iPhone X  BpkNavigationBar should render correctly with trailing 
               "fontWeight": "500",
             },
             Object {
-              "maxWidth": "70%",
+              "maxWidth": "60%",
             },
           ]
         }

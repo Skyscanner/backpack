@@ -65,6 +65,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-between',
   },
+  barOnlyTrailingButton: {
+    justifyContent: 'flex-end',
+  },
   iPhoneXBar: {
     paddingTop: statusBarPadding,
     height: 88,
@@ -80,7 +83,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   title: {
-    maxWidth: '70%',
+    maxWidth: '60%',
   },
   subtitleViewContainer: {
     paddingHorizontal: 8,
@@ -175,6 +178,10 @@ class BpkNavigationBar extends Component<Props, {}> {
       outerBarStyle.push(styles.barOuterWithSubtitle);
     }
 
+    if (!leadingButton && trailingButton) {
+      innerBarStyle.push(styles.barOnlyTrailingButton);
+    }
+
     return (
       <View style={outerBarStyle}>
         <View style={innerBarStyle}>
@@ -189,7 +196,7 @@ class BpkNavigationBar extends Component<Props, {}> {
               emphasize
               style={styles.title}
               numberOfLines={1}
-              ellipsizeMode="middle"
+              ellipsizeMode="tail"
             >
               {title}
             </BpkText>

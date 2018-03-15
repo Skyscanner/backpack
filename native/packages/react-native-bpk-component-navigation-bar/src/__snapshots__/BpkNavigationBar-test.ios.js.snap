@@ -125,7 +125,7 @@ exports[`ios BpkNavigationBar should render correctly 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
-        ellipsizeMode="middle"
+        ellipsizeMode="tail"
         numberOfLines={1}
         style={
           Array [
@@ -139,7 +139,7 @@ exports[`ios BpkNavigationBar should render correctly 1`] = `
               "fontWeight": "500",
             },
             Object {
-              "maxWidth": "70%",
+              "maxWidth": "60%",
             },
           ]
         }
@@ -279,7 +279,7 @@ exports[`ios BpkNavigationBar should render correctly with a subtitle view 1`] =
       <Text
         accessible={true}
         allowFontScaling={true}
-        ellipsizeMode="middle"
+        ellipsizeMode="tail"
         numberOfLines={1}
         style={
           Array [
@@ -293,7 +293,7 @@ exports[`ios BpkNavigationBar should render correctly with a subtitle view 1`] =
               "fontWeight": "500",
             },
             Object {
-              "maxWidth": "70%",
+              "maxWidth": "60%",
             },
           ]
         }
@@ -422,7 +422,7 @@ exports[`ios BpkNavigationBar should render correctly with trailing button 1`] =
       <Text
         accessible={true}
         allowFontScaling={true}
-        ellipsizeMode="middle"
+        ellipsizeMode="tail"
         numberOfLines={1}
         style={
           Array [
@@ -436,7 +436,7 @@ exports[`ios BpkNavigationBar should render correctly with trailing button 1`] =
               "fontWeight": "500",
             },
             Object {
-              "maxWidth": "70%",
+              "maxWidth": "60%",
             },
           ]
         }

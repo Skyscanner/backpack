@@ -26,8 +26,10 @@ import { colorGray700 } from 'bpk-tokens/tokens/base.react.native';
 export type Props = {
   title: string,
   emphasize: boolean,
-  leading: boolean,
   onPress: ?() => mixed,
+
+  // Internal only
+  leading: boolean,
   tintColor: ?string,
 };
 

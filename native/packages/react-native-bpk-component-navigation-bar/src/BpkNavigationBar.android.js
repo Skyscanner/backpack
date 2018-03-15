@@ -51,13 +51,16 @@ const styles = StyleSheet.create({
     elevation: 3,
   },
   barOuterWithSubtitle: {
-    paddingBottom: 8,
+    paddingBottom: 16,
   },
   bar: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     height: 56,
     alignItems: 'center',
+  },
+  barOnlyTrailingButton: {
+    justifyContent: 'flex-end',
   },
   titleString: {
     position: 'absolute',
@@ -80,6 +83,9 @@ const styles = StyleSheet.create({
   leadingIcon: {
     padding: 8,
     color: colorWhite,
+  },
+  subtitleViewContainer: {
+    paddingHorizontal: 8,
   },
 });
 
@@ -180,6 +186,10 @@ class BpkNavigationBar extends Component<Props, {}> {
       outerBarStyle.push(styles.barOuterWithSubtitle);
     }
 
+    if (!leadingButton && trailingButton) {
+      barStyle.push(styles.barOnlyTrailingButton);
+    }
+
     return (
       <View style={outerBarStyle}>
         <View style={barStyle}>
@@ -201,7 +211,9 @@ class BpkNavigationBar extends Component<Props, {}> {
               tintColor,
             })}
         </View>
-        {subtitleView}
+        {hasSubtitleView && (
+          <View style={styles.subtitleViewContainer}>{subtitleView}</View>
+        )}
       </View>
     );
   }
