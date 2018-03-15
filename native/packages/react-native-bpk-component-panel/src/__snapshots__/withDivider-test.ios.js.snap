@@ -1,0 +1,327 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`iOS withDivider should render correctly 1`] = `
+<BpkPanel
+  padded={false}
+  style={
+    Array [
+      Object {
+        "flexDirection": "row",
+      },
+    ]
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "flex": 1,
+        },
+        Object {
+          "padding": 16,
+        },
+      ]
+    }
+  >
+    <BpkText
+      emphasize={false}
+      style={Object {}}
+      textStyle="base"
+    >
+      Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+    </BpkText>
+  </View>
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "rgb(230, 228, 235)",
+          "flexDirection": "column",
+          "width": 1,
+        },
+      ]
+    }
+  />
+  <View
+    style={
+      Array [
+        Object {
+          "flex": 1,
+        },
+        Object {
+          "padding": 16,
+        },
+      ]
+    }
+  >
+    <BpkText
+      emphasize={false}
+      style={Object {}}
+      textStyle="base"
+    >
+      Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+    </BpkText>
+  </View>
+</BpkPanel>
+`;
+
+exports[`iOS withDivider should render correctly with arbitrary props 1`] = `
+<BpkPanel
+  padded={false}
+  style={
+    Array [
+      Object {
+        "flexDirection": "row",
+      },
+    ]
+  }
+  testID="arbitrary value"
+>
+  <View
+    style={
+      Array [
+        Object {
+          "flex": 1,
+        },
+        Object {
+          "padding": 16,
+        },
+      ]
+    }
+  >
+    <BpkText
+      emphasize={false}
+      style={Object {}}
+      textStyle="base"
+    >
+      Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+    </BpkText>
+  </View>
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "rgb(230, 228, 235)",
+          "flexDirection": "column",
+          "width": 1,
+        },
+      ]
+    }
+  />
+  <View
+    style={
+      Array [
+        Object {
+          "flex": 1,
+        },
+        Object {
+          "padding": 16,
+        },
+      ]
+    }
+  >
+    <BpkText
+      emphasize={false}
+      style={Object {}}
+      textStyle="base"
+    >
+      Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+    </BpkText>
+  </View>
+</BpkPanel>
+`;
+
+exports[`iOS withDivider should render correctly with custom main style 1`] = `
+<BpkPanel
+  padded={false}
+  style={
+    Array [
+      Object {
+        "flexDirection": "row",
+      },
+    ]
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "flex": 1,
+        },
+        Object {
+          "padding": 16,
+        },
+        Object {
+          "flex": 2,
+        },
+      ]
+    }
+  >
+    <BpkText
+      emphasize={false}
+      style={Object {}}
+      textStyle="base"
+    >
+      Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+    </BpkText>
+  </View>
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "rgb(230, 228, 235)",
+          "flexDirection": "column",
+          "width": 1,
+        },
+      ]
+    }
+  />
+  <View
+    style={
+      Array [
+        Object {
+          "flex": 1,
+        },
+        Object {
+          "padding": 16,
+        },
+      ]
+    }
+  >
+    <BpkText
+      emphasize={false}
+      style={Object {}}
+      textStyle="base"
+    >
+      Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+    </BpkText>
+  </View>
+</BpkPanel>
+`;
+
+exports[`iOS withDivider should render correctly with custom stub style 1`] = `
+<BpkPanel
+  padded={false}
+  style={
+    Array [
+      Object {
+        "flexDirection": "row",
+      },
+    ]
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "flex": 1,
+        },
+        Object {
+          "padding": 16,
+        },
+      ]
+    }
+  >
+    <BpkText
+      emphasize={false}
+      style={Object {}}
+      textStyle="base"
+    >
+      Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+    </BpkText>
+  </View>
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "rgb(230, 228, 235)",
+          "flexDirection": "column",
+          "width": 1,
+        },
+      ]
+    }
+  />
+  <View
+    style={
+      Array [
+        Object {
+          "flex": 1,
+        },
+        Object {
+          "padding": 16,
+        },
+        Object {
+          "flex": 3,
+        },
+      ]
+    }
+  >
+    <BpkText
+      emphasize={false}
+      style={Object {}}
+      textStyle="base"
+    >
+      Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+    </BpkText>
+  </View>
+</BpkPanel>
+`;
+
+exports[`iOS withDivider should render correctly without padding 1`] = `
+<BpkPanel
+  padded={false}
+  style={
+    Array [
+      Object {
+        "flexDirection": "row",
+      },
+    ]
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "flex": 1,
+        },
+      ]
+    }
+  >
+    <BpkText
+      emphasize={false}
+      style={Object {}}
+      textStyle="base"
+    >
+      Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+    </BpkText>
+  </View>
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "rgb(230, 228, 235)",
+          "flexDirection": "column",
+          "width": 1,
+        },
+      ]
+    }
+  />
+  <View
+    style={
+      Array [
+        Object {
+          "flex": 1,
+        },
+      ]
+    }
+  >
+    <BpkText
+      emphasize={false}
+      style={Object {}}
+      textStyle="base"
+    >
+      Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+    </BpkText>
+  </View>
+</BpkPanel>
+`;

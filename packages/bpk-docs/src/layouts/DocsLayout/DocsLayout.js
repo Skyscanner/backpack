@@ -134,6 +134,11 @@ const links = [
       },
       { id: 'NATIVE_NUDGER', route: routes.NATIVE_NUDGER, children: 'Nudger' },
       {
+        id: 'NATIVE_PANELS',
+        route: routes.NATIVE_PANELS,
+        children: 'Panels',
+      },
+      {
         id: 'NATIVE_PHONE_INPUT',
         route: routes.NATIVE_PHONE_INPUT,
         children: 'Phone number input',
