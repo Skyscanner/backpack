@@ -2,11 +2,15 @@
 
 ## Unreleased
 
+_Nothing yet..._
+
+## 2018-03-15 - New hotels amenities icons and native android back/forward/close icons
+
 **Added:**
-- react-native-bpk-component-icon:
-- bpk-component-icon:
-- bpk-mixins:
-- bpk-svgs:
+- bpk-component-icon: 3.16.1 => 3.17.0
+- bpk-mixins: 17.3.7 => 17.4.0
+- bpk-svgs: 5.12.3 => 5.13.0
+- react-native-bpk-component-icon: 1.3.6 => 1.4.0
   - New hotels amenities icons: `hotels--smoking`, `hotels--pets-allowed`, `hotels--jacuzzi` and `hotels--disabled-facilities`.
   - New Android native back, forward and close icons: `native-android--back`, `native-android--forward` and `native-android--close`.
     - **Note:** to be used on Android only...
