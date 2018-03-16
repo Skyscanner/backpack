@@ -27,7 +27,7 @@ module.exports = {
   borderSizeXl: 3,
   borderRadiusSm: 2,
   borderRadiusPill: 40,
-  buttonBorderWidth: 0,
+  buttonBorderWidth: 2,
   buttonHeight: 32 + 4,
   buttonPaddingHorizontal: 4 * 3,
   buttonLineHeightLarge: 4 * 12,

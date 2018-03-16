@@ -632,7 +632,7 @@ exports[`Android BpkNudger should render correctly when value is a not an intege
             },
           ],
           Object {
-            "backgroundColor": "transparent",
+            "backgroundColor": "rgb(230, 228, 235)",
           },
           Array [
             Object {
@@ -1062,7 +1062,7 @@ exports[`Android BpkNudger should render correctly when value is greater than ma
             },
           ],
           Object {
-            "backgroundColor": "transparent",
+            "backgroundColor": "rgb(230, 228, 235)",
           },
           Array [
             Object {
@@ -1206,7 +1206,7 @@ exports[`Android BpkNudger should render correctly when value is less than min 1
             },
           ],
           Object {
-            "backgroundColor": "transparent",
+            "backgroundColor": "rgb(230, 228, 235)",
           },
           Array [
             Object {

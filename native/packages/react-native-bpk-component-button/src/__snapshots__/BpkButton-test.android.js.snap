@@ -614,9 +614,9 @@ exports[`Android BpkButton should render correctly with type="destructive" 1`] =
           },
           Object {
             "borderColor": "rgb(230, 228, 235)",
-            "borderWidth": 0,
-            "paddingHorizontal": 12,
-            "paddingVertical": 8,
+            "borderWidth": 2,
+            "paddingHorizontal": 10,
+            "paddingVertical": 6,
           },
         ],
         Object {
@@ -720,16 +720,16 @@ exports[`Android BpkButton should render correctly with type="destructive" and d
           },
           Object {
             "borderColor": "rgb(230, 228, 235)",
-            "borderWidth": 0,
-            "paddingHorizontal": 12,
-            "paddingVertical": 8,
+            "borderWidth": 2,
+            "paddingHorizontal": 10,
+            "paddingVertical": 6,
           },
           Object {
             "borderColor": "transparent",
           },
         ],
         Object {
-          "backgroundColor": "transparent",
+          "backgroundColor": "rgb(230, 228, 235)",
         },
         Array [
           Object {
@@ -1229,9 +1229,9 @@ exports[`Android BpkButton should render correctly with type="secondary" 1`] = `
           },
           Object {
             "borderColor": "rgb(230, 228, 235)",
-            "borderWidth": 0,
-            "paddingHorizontal": 12,
-            "paddingVertical": 8,
+            "borderWidth": 2,
+            "paddingHorizontal": 10,
+            "paddingVertical": 6,
           },
         ],
         Object {
@@ -1335,16 +1335,16 @@ exports[`Android BpkButton should render correctly with type="secondary" and dis
           },
           Object {
             "borderColor": "rgb(230, 228, 235)",
-            "borderWidth": 0,
-            "paddingHorizontal": 12,
-            "paddingVertical": 8,
+            "borderWidth": 2,
+            "paddingHorizontal": 10,
+            "paddingVertical": 6,
           },
           Object {
             "borderColor": "transparent",
           },
         ],
         Object {
-          "backgroundColor": "transparent",
+          "backgroundColor": "rgb(230, 228, 235)",
         },
         Array [
           Object {
@@ -2111,9 +2111,9 @@ exports[`Android BpkButton should support the "secondary" property 1`] = `
           },
           Object {
             "borderColor": "rgb(230, 228, 235)",
-            "borderWidth": 0,
-            "paddingHorizontal": 12,
-            "paddingVertical": 8,
+            "borderWidth": 2,
+            "paddingHorizontal": 10,
+            "paddingVertical": 6,
           },
         ],
         Object {

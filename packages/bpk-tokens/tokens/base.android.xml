@@ -28,7 +28,7 @@
   <property name="BORDER_SIZE_XL" category="borders">3dp</property>
   <property name="BORDER_RADIUS_SM" category="radii">2dp</property>
   <property name="BORDER_RADIUS_PILL" category="radii">40dp</property>
-  <property name="BUTTON_BORDER_WIDTH" category="spacings">0dp</property>
+  <property name="BUTTON_BORDER_WIDTH" category="spacings">2dp</property>
   <property name="BUTTON_HEIGHT" category="spacings">32 + 4dp</property>
   <property name="BUTTON_PADDING_HORIZONTAL" category="spacings">4 * 3dp</property>
   <property name="BUTTON_LINE_HEIGHT_LARGE" category="spacings">4 * 12dp</property>

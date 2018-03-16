@@ -178,10 +178,6 @@ export const getAndroidBackgroundColour = (
     backgroundColor: 'transparent',
   };
 
-  if (['secondary', 'destructive'].includes(props.type) && props.disabled) {
-    return StyleSheet.create({ style }).style;
-  }
-
   /**
    * The main colour of the button in Android is the start colour from the  gradient
    * for iOS, can be made explicit in the style file if needed
