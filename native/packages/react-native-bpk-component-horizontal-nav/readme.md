@@ -70,6 +70,7 @@ export default class App extends Component {
 | onPress             | func                                  | true     | -             |
 | title               | string                                | true     | -             |
 | accessibilityLabel  | string                                | false    | props.title   |
+| small               | bool                                  | false    | false         |
 | disabled            | bool                                  | false    | false         |
 | theme               | See [Theme Props](#theme-props) below | false    | null          |
 

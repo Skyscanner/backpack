@@ -70,12 +70,13 @@ class ManagedNav extends React.Component {
 }
 
 const StoryNav = props => {
-  const { items, ...rest } = props;
+  const { items, small, ...rest } = props;
   return (
     <BpkHorizontalNav selectedId="1" {...rest}>
       {[...Array(items)].map((_, index) => (
         <BpkHorizontalNavItem
           title="Item"
+          small={small}
           id={index.toString()}
           key={index.toString()}
           onPress={action(`Nav item ${index} pressed`)}
@@ -84,6 +85,7 @@ const StoryNav = props => {
       <BpkHorizontalNavItem
         title="Disabled Item"
         disabled
+        small={small}
         id="disabled"
         onPress={() => {}}
       />
@@ -92,9 +94,11 @@ const StoryNav = props => {
 };
 StoryNav.propTypes = {
   items: PropTypes.number,
+  small: PropTypes.bool,
 };
 StoryNav.defaultProps = {
   items: 2,
+  small: false,
 };
 
 storiesOf('react-native-bpk-component-horizontal-nav', module)
@@ -115,6 +119,30 @@ storiesOf('react-native-bpk-component-horizontal-nav', module)
         <BpkHorizontalNavItem
           title="Car hire"
           id="2"
+          onPress={action('Nav item three pressed')}
+        />
+      </BpkHorizontalNav>
+    </View>
+  ))
+  .add('docs:small-font', () => (
+    <View style={styles.bottomMargin}>
+      <BpkHorizontalNav selectedId="1">
+        <BpkHorizontalNavItem
+          title="Flights"
+          id="0"
+          small
+          onPress={action('Nav item one pressed')}
+        />
+        <BpkHorizontalNavItem
+          title="Hotels"
+          id="1"
+          small
+          onPress={action('Nav item two pressed')}
+        />
+        <BpkHorizontalNavItem
+          title="Car hire"
+          id="2"
+          small
           onPress={action('Nav item three pressed')}
         />
       </BpkHorizontalNav>
@@ -158,6 +186,10 @@ storiesOf('react-native-bpk-component-horizontal-nav', module)
       <View style={styles.bottomMargin}>
         <StorySubheading>Space Around, Overflowing</StorySubheading>
         <StoryNav items={5} spaceAround />
+      </View>
+      <View style={styles.bottomMargin}>
+        <StorySubheading>Small font size</StorySubheading>
+        <StoryNav items={5} small />
       </View>
       <View style={styles.bottomMargin}>
         <StorySubheading>Themed</StorySubheading>

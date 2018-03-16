@@ -141,6 +141,78 @@ exports[`iOS BpkHorizontalNavItem should render correctly with "selected" prop 1
 </View>
 `;
 
+exports[`iOS BpkHorizontalNavItem should render correctly with "small" prop 1`] = `
+<View
+  accessibilityComponentType="button"
+  accessibilityLabel="Nav"
+  accessibilityTraits={
+    Array [
+      "button",
+    ]
+  }
+  accessible={true}
+  hitSlop={undefined}
+  nativeID={undefined}
+  onLayout={undefined}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={null}
+  testID={undefined}
+>
+  <View
+    style={null}
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "rgb(82, 76, 97)",
+            "fontFamily": "System",
+            "fontSize": 13,
+            "fontWeight": "400",
+          },
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+              "paddingHorizontal": 16,
+              "paddingVertical": 8,
+            },
+            Object {
+              "paddingVertical": 4,
+            },
+          ],
+        ]
+      }
+    >
+      Nav
+    </Text>
+  </View>
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "rgb(37, 32, 51)",
+          "bottom": 0,
+          "flex": 1,
+          "left": 0,
+          "opacity": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        },
+      ]
+    }
+  />
+</View>
+`;
+
 exports[`iOS BpkHorizontalNavItem should render correctly with "spaceAround" prop 1`] = `
 <View
   accessibilityComponentType="button"

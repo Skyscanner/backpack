@@ -62,6 +62,17 @@ const commonTests = () => {
       expect(tree).toMatchSnapshot();
     });
 
+    it('should render correctly with "small" prop', () => {
+      const tree = renderer
+        .create(
+          <BpkHorizontalNavItem id="0" title="Nav" onPress={onPressFn} small>
+            My nav content.
+          </BpkHorizontalNavItem>,
+        )
+        .toJSON();
+      expect(tree).toMatchSnapshot();
+    });
+
     it('should render correctly with custom "style" prop', () => {
       const tree = renderer
         .create(
