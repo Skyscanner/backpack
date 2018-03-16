@@ -4,10 +4,15 @@
 
 _Nothing yet..._
 
-**Breaking:**
-- react-native-bpk-component-button:
-  - Android `secondary` and `destructive` buttons have been visually aligned with iOS by adding a border. Note that the existing visual look is available on both platforms via the [button-link component](https://backpack.github.io/components/native/button-link). This is a breaking change to prevent unintended updates to the button look and feel. 
+## 2018-03-16 - Android buttons style breaking change and React Native horizontal navigation now allows for small text
 
+**Breaking:**
+- react-native-bpk-component-button: 4.4.4 => 5.0.0
+  - Android `secondary` and `destructive` buttons have been visually aligned with iOS by adding a border. Note that the existing visual look is available on both platforms via the [button-link component](https://backpack.github.io/components/native/button-link). This is a breaking change to prevent unintended updates to the button look and feel.
+
+**Added**
+- react-native-bpk-component-horizontal-nav: 2.0.26 => 2.1.0
+  - New `small` prop is accepted in BpkHorizontalNavItem to allow for small text in the navigation item
 
 ## 2018-03-15 - New hotels amenities icons and native android back/forward/close icons
 
