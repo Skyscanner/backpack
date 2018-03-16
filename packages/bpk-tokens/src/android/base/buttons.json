@@ -8,7 +8,7 @@
   },
   "props": {
     "BUTTON_BORDER_WIDTH": {
-      "value": 0
+      "value": "{!BORDER_SIZE_LG}"
     },
     "BUTTON_HEIGHT": {
       "value": "{!SPACING_XL} + {!SPACING_SM}"

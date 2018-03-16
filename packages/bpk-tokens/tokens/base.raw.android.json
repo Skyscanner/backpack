@@ -371,7 +371,10 @@
     "BUTTON_BORDER_WIDTH": {
       "type": "size",
       "category": "spacings",
-      "value": 0,
+      "value": "2",
+      ".alias": {
+        "value": 2
+      },
       "name": "BUTTON_BORDER_WIDTH"
     },
     "BUTTON_HEIGHT": {

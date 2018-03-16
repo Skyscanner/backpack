@@ -10,6 +10,11 @@
   - New iOS native back, forward and close icons: `native-ios--back`, `native-ios--forward` and `native-ios--close`.
     - **Note:** to be used on iOS only...
 
+**Breaking:**
+- react-native-bpk-component-button:
+  - Android `secondary` and `destructive` buttons have been visually aligned with iOS by adding a border. Note that the existing visual look is available on both platforms via the [button-link component](https://backpack.github.io/components/native/button-link). This is a breaking change to prevent unintended updates to the button look and feel. 
+
+
 ## 2018-03-15 - New hotels amenities icons and native android back/forward/close icons
 
 **Added:**
