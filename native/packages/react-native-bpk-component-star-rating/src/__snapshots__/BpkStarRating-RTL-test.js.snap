@@ -38,7 +38,7 @@ exports[`RTL BpkStar should render correctly when empty 1`] = `
       ]
     }
   >
-    
+    
   </Text>
 </View>
 `;
@@ -81,7 +81,7 @@ exports[`RTL BpkStar should render correctly when full 1`] = `
       ]
     }
   >
-    
+    
   </Text>
   <Text
     accessible={true}
@@ -117,7 +117,7 @@ exports[`RTL BpkStar should render correctly when full 1`] = `
       ]
     }
   >
-    
+    
   </Text>
 </View>
 `;
@@ -160,7 +160,7 @@ exports[`RTL BpkStar should render correctly when half 1`] = `
       ]
     }
   >
-    
+    
   </Text>
   <Text
     accessible={true}
@@ -203,7 +203,7 @@ exports[`RTL BpkStar should render correctly when half 1`] = `
       ]
     }
   >
-    
+    
   </Text>
 </View>
 `;

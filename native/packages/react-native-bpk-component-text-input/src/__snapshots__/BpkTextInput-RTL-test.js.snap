@@ -870,7 +870,7 @@ exports[`RTL BpkTextInput should render correctly with valid 1`] = `
           ]
         }
       >
-        
+        
       </Text>
     </View>
   </View>

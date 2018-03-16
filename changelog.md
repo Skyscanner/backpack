@@ -2,7 +2,17 @@
 
 ## Unreleased
 
-_Nothing yet..._
+**Breaking:**
+- react-native-bpk-component-button:
+  - Android `secondary` and `destructive` buttons have been visually aligned with iOS by adding a border. Note that the existing visual look is available on both platforms via the [button-link component](https://backpack.github.io/components/native/button-link). This is a breaking change to prevent unintended updates to the button look and feel.
+
+**Added:**
+- bpk-component-icon:
+- bpk-mixins:
+- bpk-svgs:
+- react-native-bpk-component-icon:
+  - New iOS native close icon: `native-ios--close`.
+    - **Note:** to be used on iOS only...
 
 ## 2018-03-16 - Android buttons style breaking change and React Native horizontal navigation now allows for small text
 
