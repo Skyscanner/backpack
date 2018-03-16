@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49 (51002) - http://www.bohemiancoding.com/sketch -->
+    <title>native--ios-back</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="native--ios-back" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="iOS-Back" transform="translate(7.000000, 4.000000)" fill="#000000" fill-rule="nonzero">
+            <path d="M0.00278812578,8.16605921 C-0.0213162173,7.80477986 0.110966124,7.43601301 0.395990602,7.1693378 L7.69820096,0.337228028 C8.20231339,-0.134430726 8.99333222,-0.108121826 9.46499098,0.395990602 C9.93664973,0.900103029 9.91034083,1.69112186 9.4062284,2.16278062 L2.98987905,8.16605921 L9.4062284,14.1693378 C9.91034083,14.6409966 9.93664973,15.4320154 9.46499098,15.9361278 C8.99333222,16.4402402 8.20231339,16.4665491 7.69820096,15.9948904 L0.395990602,9.16278062 C0.110966124,8.8961054 -0.0213162173,8.52733856 0.00278812578,8.16605921 L0.00278812578,8.16605921 Z" id="Combined-Shape"></path>
+        </g>
+    </g>
+</svg>
