@@ -2,13 +2,7 @@
 
 ## Unreleased
 
-**Added:**
-- bpk-component-icon:
-- bpk-mixins:
-- bpk-svgs:
-- react-native-bpk-component-icon:
-  - New iOS native back, forward and close icons: `native-ios--back`, `native-ios--forward` and `native-ios--close`.
-    - **Note:** to be used on iOS only...
+_Nothing yet..._
 
 **Breaking:**
 - react-native-bpk-component-button:
