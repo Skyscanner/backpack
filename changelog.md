@@ -2,13 +2,7 @@
 
 ## Unreleased
 
-**Added:**
-- bpk-component-icon:
-- bpk-mixins:
-- bpk-svgs:
-- react-native-bpk-component-icon:
-  - New iOS native back, forward and close icons: `native-ios--back`, `native-ios--forward` and `native-ios--close`.
-    - **Note:** to be used on iOS only...
+_Nothing yet..._
 
 ## 2018-03-15 - New hotels amenities icons and native android back/forward/close icons
 
