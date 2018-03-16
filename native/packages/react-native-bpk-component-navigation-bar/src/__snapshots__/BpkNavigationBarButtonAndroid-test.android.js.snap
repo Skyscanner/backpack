@@ -183,7 +183,7 @@ exports[`android BpkNavigationBarButton should render correctly with tick icon 1
         ]
       }
     >
-      
+      
     </Text>
   </View>
 </View>

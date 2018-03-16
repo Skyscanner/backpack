@@ -532,7 +532,7 @@ exports[`android BpkNavigationBar should render correctly with trailing button 1
             ]
           }
         >
-          
+          
         </Text>
       </View>
     </View>
