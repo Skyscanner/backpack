@@ -1,6 +1,6 @@
 {
   "name": "bpk-mixins",
-  "version": "17.4.0",
+  "version": "17.4.1",
   "description": "Sass mixins and variables for Backpack.",
   "main": "_index.scss",
   "repository": {
@@ -10,8 +10,8 @@
   "author": "Backpack Design System <backpack@skyscanner.net>",
   "license": "Apache-2.0",
   "dependencies": {
-    "bpk-svgs": "^5.13.0",
-    "bpk-tokens": "^26.7.4"
+    "bpk-svgs": "^5.13.1",
+    "bpk-tokens": "^26.7.5"
   },
   "devDependencies": {
     "bpk-react-utils": "^2.5.0"
