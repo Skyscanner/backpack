@@ -2,18 +2,20 @@
 
 ## Unreleased
 
+## 2018-03-19 - Native Navigation Bars and visual alignment of native button styles
+
 **Breaking:**
-- react-native-bpk-component-button:
+- react-native-bpk-component-button: 5.0.0 => 6.0.0
   - Android `secondary` and `destructive` buttons have been visually aligned with iOS by adding a border. Note that the existing visual look is available on both platforms via the [button-link component](https://backpack.github.io/components/native/button-link). This is a breaking change to prevent unintended updates to the button look and feel.
 
 **Added:**
-- bpk-component-icon:
-- bpk-mixins:
-- bpk-svgs:
-- react-native-bpk-component-icon:
+- bpk-component-icon: 3.17.1 => 3.18.0
+- bpk-mixins: 17.4.1 => 17.5.0
+- bpk-svgs: 5.13.1 => 5.14.0
+- react-native-bpk-component-icon: 1.4.1 => 1.5.0
   - New iOS native close icon: `native-ios--close`.
     - **Note:** to be used on iOS only...
-- react-native-bpk-component-navigation-bar:
+- react-native-bpk-component-navigation-bar: 0.0.2 => 1.0.0
   - Introducing the React Native navigation bar component.
 
 ## 2018-03-16 - Android buttons style breaking change and React Native horizontal navigation now allows for small text
