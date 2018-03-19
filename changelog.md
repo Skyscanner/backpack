@@ -13,6 +13,8 @@
 - react-native-bpk-component-icon:
   - New iOS native close icon: `native-ios--close`.
     - **Note:** to be used on iOS only...
+- react-native-bpk-component-navigation-bar:
+  - Introducing the React Native navigation bar component.
 
 ## 2018-03-16 - Android buttons style breaking change and React Native horizontal navigation now allows for small text
 
