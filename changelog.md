@@ -2,11 +2,11 @@
 
 ## Unreleased
 
-## 2018-03-19 - Native Navigation Bars and visual alignment of native button styles
+## 2018-03-19 - Native Navigation Bars
 
 **Breaking:**
 - react-native-bpk-component-button: 5.0.0 => 6.0.0
-  - Android `secondary` and `destructive` buttons have been visually aligned with iOS by adding a border. Note that the existing visual look is available on both platforms via the [button-link component](https://backpack.github.io/components/native/button-link). This is a breaking change to prevent unintended updates to the button look and feel.
+  - Not actually a breaking change. This was released by mistake again. 5.0.0 and 6.0.0 are compatible.
 
 **Added:**
 - bpk-component-icon: 3.17.1 => 3.18.0
