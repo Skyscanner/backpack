@@ -40,6 +40,7 @@ import {
   NATIVE_BUTTON,
   NATIVE_BUTTON_LINK,
   NATIVE_HORIZONTAL_NAV,
+  NATIVE_NAVIGATION_BAR,
   NATIVE_SPINNER,
   NATIVE_SWITCH,
   NUDGERS,
@@ -68,6 +69,11 @@ const components = [
         <BpkListItem>
           <BpkRouterLink to={NATIVE_HORIZONTAL_NAV}>
             Horizontal navigation
+          </BpkRouterLink>
+        </BpkListItem>
+        <BpkListItem>
+          <BpkRouterLink to={NATIVE_NAVIGATION_BAR}>
+            Navigation Bar
           </BpkRouterLink>
         </BpkListItem>
         <BpkListItem>

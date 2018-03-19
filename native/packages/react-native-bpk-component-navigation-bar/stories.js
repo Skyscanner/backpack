@@ -71,13 +71,7 @@ const cancelButton = Platform.select({
 });
 
 const doneButton = Platform.select({
-  android: () => (
-    <BpkNavigationBarButtonAndroid
-      title="Done"
-      icon="tick"
-      onPress={action('Tapped trailing button')}
-    />
-  ),
+  android: () => null,
   ios: () => (
     <BpkNavigationBarTextButtonIOS
       title="Done"
@@ -98,7 +92,7 @@ const addButton = Platform.select({
   ios: () => (
     <BpkNavigationBarIconButtonIOS
       title="Add"
-      icon="plus"
+      icon="share--ios"
       onPress={action('Tapped trailing button')}
     />
   ),
@@ -126,6 +120,14 @@ storiesOf('react-native-bpk-component-navigation-bar', module)
       }
     />
   ))
+  .add('docs:themed', () => (
+    <BpkThemeProvider theme={themeAttributes}>
+      <BpkNavigationBar
+        leadingButton={backButton()}
+        title={<Image source={exampleLogo} />}
+      />
+    </BpkThemeProvider>
+  ))
   .add('extreme example', () => (
     <BpkNavigationBar
       leadingButton={backButton()}
@@ -134,12 +136,4 @@ storiesOf('react-native-bpk-component-navigation-bar', module)
   ))
   .add('iOS icon button', () => (
     <BpkNavigationBar trailingButton={addButton()} title="Backpack" />
-  ))
-  .add('themed', () => (
-    <BpkThemeProvider theme={themeAttributes}>
-      <BpkNavigationBar
-        leadingButton={backButton()}
-        title={<Image source={exampleLogo} />}
-      />
-    </BpkThemeProvider>
   ));

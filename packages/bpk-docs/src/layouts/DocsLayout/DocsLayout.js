@@ -132,6 +132,11 @@ const links = [
         route: routes.NATIVE_INPUT,
         children: 'Text input',
       },
+      {
+        id: 'NATIVE_NAVIGATION_BAR',
+        route: routes.NATIVE_NAVIGATION_BAR,
+        children: 'Navigation Bar',
+      },
       { id: 'NATIVE_NUDGER', route: routes.NATIVE_NUDGER, children: 'Nudger' },
       {
         id: 'NATIVE_PANELS',
