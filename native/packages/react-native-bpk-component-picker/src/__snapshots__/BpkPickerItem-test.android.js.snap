@@ -1,0 +1,144 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Android BpkPickerItem should render correctly 1`] = `
+<View
+  style={
+    Object {
+      "padding": 16,
+    }
+  }
+>
+  <Text
+    accessibilityComponentType={undefined}
+    accessibilityLabel="label"
+    accessibilityTraits={undefined}
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    hitSlop={undefined}
+    nativeBackgroundAndroid={
+      Object {
+        "attribute": "selectableItemBackgroundBorderless",
+        "type": "ThemeAttrAndroid",
+      }
+    }
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Array [
+        Object {
+          "color": "rgb(82, 76, 97)",
+          "fontFamily": "sans-serif",
+          "fontSize": 16,
+          "fontWeight": "400",
+        },
+        Object {},
+      ]
+    }
+    testID={undefined}
+  >
+    label
+  </Text>
+</View>
+`;
+
+exports[`Android BpkPickerItem should render correctly with an onPress function 1`] = `
+<View
+  style={
+    Object {
+      "padding": 16,
+    }
+  }
+>
+  <Text
+    accessibilityComponentType={undefined}
+    accessibilityLabel="label"
+    accessibilityTraits={undefined}
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    hitSlop={undefined}
+    nativeBackgroundAndroid={
+      Object {
+        "attribute": "selectableItemBackgroundBorderless",
+        "type": "ThemeAttrAndroid",
+      }
+    }
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Array [
+        Object {
+          "color": "rgb(82, 76, 97)",
+          "fontFamily": "sans-serif",
+          "fontSize": 16,
+          "fontWeight": "400",
+        },
+        Object {},
+      ]
+    }
+    testID={undefined}
+  >
+    label
+  </Text>
+</View>
+`;
+
+exports[`Android BpkPickerItem should render correctly with the selected prop 1`] = `
+<View
+  style={
+    Object {
+      "padding": 16,
+    }
+  }
+>
+  <Text
+    accessibilityComponentType={undefined}
+    accessibilityLabel="label"
+    accessibilityTraits={undefined}
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    hitSlop={undefined}
+    nativeBackgroundAndroid={
+      Object {
+        "attribute": "selectableItemBackgroundBorderless",
+        "type": "ThemeAttrAndroid",
+      }
+    }
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Array [
+        Object {
+          "color": "rgb(82, 76, 97)",
+          "fontFamily": "sans-serif",
+          "fontSize": 16,
+          "fontWeight": "400",
+        },
+        Object {
+          "color": "rgb(0, 178, 214)",
+        },
+      ]
+    }
+    testID={undefined}
+  >
+    label
+  </Text>
+</View>
+`;

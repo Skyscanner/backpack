@@ -1,0 +1,249 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Android BpkPicker should render correctly 1`] = `
+<Modal
+  animationType="fade"
+  hardwareAccelerated={false}
+  onRequestClose={[Function]}
+  transparent={true}
+  visible={false}
+>
+  <View
+    style={
+      Object {
+        "backgroundColor": "rgba(37, 32, 51, 0.8)",
+        "flex": 1,
+        "justifyContent": "center",
+      }
+    }
+  >
+    <RCTScrollView
+      style={
+        Object {
+          "backgroundColor": "rgb(255, 255, 255)",
+          "borderRadius": 2,
+          "flex": 0,
+          "margin": 16,
+          "maxHeight": 336,
+        }
+      }
+    >
+      <View>
+        <View
+          style={
+            Object {
+              "padding": 16,
+            }
+          }
+        >
+          <Text
+            accessibilityComponentType={undefined}
+            accessibilityLabel="foo"
+            accessibilityTraits={undefined}
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            hitSlop={undefined}
+            nativeBackgroundAndroid={
+              Object {
+                "attribute": "selectableItemBackgroundBorderless",
+                "type": "ThemeAttrAndroid",
+              }
+            }
+            onLayout={undefined}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Array [
+                Object {
+                  "color": "rgb(82, 76, 97)",
+                  "fontFamily": "sans-serif",
+                  "fontSize": 16,
+                  "fontWeight": "400",
+                },
+                Object {},
+              ]
+            }
+            testID={undefined}
+          >
+            foo
+          </Text>
+        </View>
+        <View
+          style={
+            Object {
+              "padding": 16,
+            }
+          }
+        >
+          <Text
+            accessibilityComponentType={undefined}
+            accessibilityLabel="bar"
+            accessibilityTraits={undefined}
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            hitSlop={undefined}
+            nativeBackgroundAndroid={
+              Object {
+                "attribute": "selectableItemBackgroundBorderless",
+                "type": "ThemeAttrAndroid",
+              }
+            }
+            onLayout={undefined}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Array [
+                Object {
+                  "color": "rgb(82, 76, 97)",
+                  "fontFamily": "sans-serif",
+                  "fontSize": 16,
+                  "fontWeight": "400",
+                },
+                Object {},
+              ]
+            }
+            testID={undefined}
+          >
+            bar
+          </Text>
+        </View>
+      </View>
+    </RCTScrollView>
+  </View>
+</Modal>
+`;
+
+exports[`Android BpkPicker should render correctly with a selected value 1`] = `
+<Modal
+  animationType="fade"
+  hardwareAccelerated={false}
+  onRequestClose={[Function]}
+  transparent={true}
+  visible={false}
+>
+  <View
+    style={
+      Object {
+        "backgroundColor": "rgba(37, 32, 51, 0.8)",
+        "flex": 1,
+        "justifyContent": "center",
+      }
+    }
+  >
+    <RCTScrollView
+      style={
+        Object {
+          "backgroundColor": "rgb(255, 255, 255)",
+          "borderRadius": 2,
+          "flex": 0,
+          "margin": 16,
+          "maxHeight": 336,
+        }
+      }
+    >
+      <View>
+        <View
+          style={
+            Object {
+              "padding": 16,
+            }
+          }
+        >
+          <Text
+            accessibilityComponentType={undefined}
+            accessibilityLabel="foo"
+            accessibilityTraits={undefined}
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            hitSlop={undefined}
+            nativeBackgroundAndroid={
+              Object {
+                "attribute": "selectableItemBackgroundBorderless",
+                "type": "ThemeAttrAndroid",
+              }
+            }
+            onLayout={undefined}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Array [
+                Object {
+                  "color": "rgb(82, 76, 97)",
+                  "fontFamily": "sans-serif",
+                  "fontSize": 16,
+                  "fontWeight": "400",
+                },
+                Object {
+                  "color": "rgb(0, 178, 214)",
+                },
+              ]
+            }
+            testID={undefined}
+          >
+            foo
+          </Text>
+        </View>
+        <View
+          style={
+            Object {
+              "padding": 16,
+            }
+          }
+        >
+          <Text
+            accessibilityComponentType={undefined}
+            accessibilityLabel="bar"
+            accessibilityTraits={undefined}
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            hitSlop={undefined}
+            nativeBackgroundAndroid={
+              Object {
+                "attribute": "selectableItemBackgroundBorderless",
+                "type": "ThemeAttrAndroid",
+              }
+            }
+            onLayout={undefined}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Array [
+                Object {
+                  "color": "rgb(82, 76, 97)",
+                  "fontFamily": "sans-serif",
+                  "fontSize": 16,
+                  "fontWeight": "400",
+                },
+                Object {},
+              ]
+            }
+            testID={undefined}
+          >
+            bar
+          </Text>
+        </View>
+      </View>
+    </RCTScrollView>
+  </View>
+</Modal>
+`;
