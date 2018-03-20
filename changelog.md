@@ -6,6 +6,7 @@
 
 - react-native-bpk-component-navigation-bar:
   - `navigationBarStatusBarStyle` is now not supported on iOS.
+  - New chevron style for `BpkNavigationBarBackButtonIOS` that better alings with iOS.
 
 ## 2018-03-19 - Native Navigation Bars
 
