@@ -73,6 +73,25 @@ describe('android', () => {
       expect(tree).toMatchSnapshot();
     });
 
+    it('should render correctly with custom style', () => {
+      const tree = renderer
+        .create(
+          <BpkNavigationBar
+            title="Backpack"
+            leadingButton={
+              <BpkNavigationBarButtonAndroid
+                title="Back"
+                icon="long-arrow-left"
+                onPress={jest.fn()}
+              />
+            }
+            style={{ zIndex: 5 }}
+          />,
+        )
+        .toJSON();
+      expect(tree).toMatchSnapshot();
+    });
+
     it('should render correctly with trailing button', () => {
       const tree = renderer
         .create(

@@ -19,7 +19,7 @@
 
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { type Element, StyleSheet, View } from 'react-native';
+import { type Element, StyleSheet, View, ViewPropTypes } from 'react-native';
 import BpkText from 'react-native-bpk-component-text';
 import { withTheme } from 'react-native-bpk-theming';
 import {
@@ -106,6 +106,8 @@ export type Props = {
   leadingButton: ?Element<ButtonType>,
   trailingButton: ?Element<ButtonType>,
   subtitleView: ?Element<any>,
+  // FIXME: We need a better flow type for style
+  style: any,
 };
 
 class BpkNavigationBar extends Component<Props, {}> {
@@ -118,6 +120,8 @@ class BpkNavigationBar extends Component<Props, {}> {
     leadingButton: PropTypes.element,
     trailingButton: PropTypes.element,
     subtitleView: PropTypes.element,
+
+    style: ViewPropTypes.style,
   };
 
   static defaultProps = {
@@ -125,6 +129,7 @@ class BpkNavigationBar extends Component<Props, {}> {
     leadingButton: null,
     trailingButton: null,
     subtitleView: null,
+    style: null,
   };
 
   constructor(props) {
@@ -133,7 +138,13 @@ class BpkNavigationBar extends Component<Props, {}> {
   }
 
   render() {
-    const { title, leadingButton, trailingButton, subtitleView } = this.props;
+    const {
+      title,
+      leadingButton,
+      trailingButton,
+      subtitleView,
+      style,
+    } = this.props;
     const hasSubtitleView = subtitleView !== null;
     const titleStyle = [styles.title];
     const outerBarStyle = [styles.barOuter];
@@ -160,6 +171,10 @@ class BpkNavigationBar extends Component<Props, {}> {
 
     if (!leadingButton && trailingButton) {
       innerBarStyle.push(styles.barOnlyTrailingButton);
+    }
+
+    if (style) {
+      outerBarStyle.push(style);
     }
 
     return (
