@@ -91,12 +91,12 @@ import BpkNavigationBar from 'react-native-bpk-component-navigation-bar'
 
 **Common:**
 
-+ `navigationBarStatusBarStyle`
 + `navigationBarBackgroundColor`
 + `navigationBarTintColor`
 
 **Android:**
 
++ `navigationBarStatusBarStyle`
 + `navigationBarStatusBarColor`
 
 **iOS:**

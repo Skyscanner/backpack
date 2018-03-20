@@ -19,7 +19,7 @@
 
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { type Element, StatusBar, StyleSheet, View } from 'react-native';
+import { type Element, StyleSheet, View } from 'react-native';
 import BpkText from 'react-native-bpk-component-text';
 import { withTheme } from 'react-native-bpk-theming';
 import {
@@ -130,26 +130,6 @@ class BpkNavigationBar extends Component<Props, {}> {
   constructor(props) {
     super(props);
     this.theme = getThemeStyle(IOS_THEME_ATTRIBUTES, this.props.theme || {});
-  }
-
-  componentDidMount() {
-    this.updateStatusBar();
-  }
-
-  componentDidUpdate() {
-    this.theme = getThemeStyle(IOS_THEME_ATTRIBUTES, this.props.theme || {});
-
-    this.updateStatusBar();
-  }
-
-  updateStatusBar() {
-    if (this.theme) {
-      const { navigationBarStatusBarStyle } = this.theme;
-
-      StatusBar.setBarStyle(navigationBarStatusBarStyle);
-    } else {
-      StatusBar.setBarStyle('dark-content');
-    }
   }
 
   render() {

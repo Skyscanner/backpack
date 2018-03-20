@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+**Fixed:**
+
+- react-native-bpk-component-navigation-bar:
+  - `navigationBarStatusBarStyle` is now not supported on iOS.
+
 ## 2018-03-19 - Native Navigation Bars
 
 **Breaking:**
