@@ -26,7 +26,6 @@ export type CommonTheme = {
   navigationBarTintColor: string,
 };
 export const THEME_ATTRIBUTES = [
-  'navigationBarStatusBarStyle',
   'navigationBarBackgroundColor',
   'navigationBarTintColor',
 ];
