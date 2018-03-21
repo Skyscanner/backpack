@@ -16,12 +16,15 @@
  * limitations under the License.
  */
 
+/* @flow */
+
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
 import PropTypes from 'prop-types';
 import BpkText from 'react-native-bpk-component-text';
 import BpkTouchableNativeFeedback from 'react-native-bpk-component-touchable-native-feedback';
 import { colorBlue500, spacingBase } from 'bpk-tokens/tokens/base.react.native';
+import { PICKER_VALUE_PROP_TYPE, type PickerValue } from './common-types';
 
 const styles = StyleSheet.create({
   pickerItem: {
@@ -32,7 +35,14 @@ const styles = StyleSheet.create({
   },
 });
 
-const BpkPickerItem = props => {
+type Props = {
+  label: string,
+  value: ?PickerValue,
+  onPress: ?(?PickerValue) => mixed,
+  selected: boolean,
+};
+
+const BpkPickerItem = (props: Props) => {
   const { value, label, onPress, selected } = props;
 
   const accessibilityTraits = ['button'];
@@ -57,7 +67,7 @@ const BpkPickerItem = props => {
 
 BpkPickerItem.propTypes = {
   label: PropTypes.string.isRequired,
-  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  value: PICKER_VALUE_PROP_TYPE,
   onPress: PropTypes.func,
   selected: PropTypes.bool,
 };
