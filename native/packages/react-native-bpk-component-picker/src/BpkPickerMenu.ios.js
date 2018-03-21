@@ -56,7 +56,7 @@ const styles = StyleSheet.create({
   },
 });
 
-const PickerMenu = props => {
+const BpkPickerMenu = props => {
   const {
     visible,
     selectedValue,
@@ -69,7 +69,12 @@ const PickerMenu = props => {
     React.cloneElement(child, { key: child.props.value }),
   );
   return (
-    <Modal transparent visible={visible} animationType="slide">
+    <Modal
+      supportedOrientations={['portrait', 'landscape']}
+      transparent
+      visible={visible}
+      animationType="slide"
+    >
       <TouchableWithoutFeedback onPress={onClose}>
         <View style={styles.dismissOverlay} />
       </TouchableWithoutFeedback>
@@ -85,7 +90,7 @@ const PickerMenu = props => {
   );
 };
 
-PickerMenu.propTypes = {
+BpkPickerMenu.propTypes = {
   children: PropTypes.node.isRequired,
   doneLabel: PropTypes.string.isRequired,
   onClose: PropTypes.func.isRequired,
@@ -94,9 +99,9 @@ PickerMenu.propTypes = {
   visible: PropTypes.bool,
 };
 
-PickerMenu.defaultProps = {
+BpkPickerMenu.defaultProps = {
   visible: false,
   selectedValue: null,
 };
 
-export default PickerMenu;
+export default BpkPickerMenu;

@@ -34,15 +34,24 @@ const styles = StyleSheet.create({
 
 const BpkPickerItem = props => {
   const { value, label, onPress, selected } = props;
+
+  const accessibilityTraits = ['button'];
+  if (selected) {
+    accessibilityTraits.push('selected');
+  }
+
   return (
-    <View style={styles.pickerItem}>
-      <BpkTouchableNativeFeedback
-        onPress={() => onPress && onPress(value)}
-        accessibilityLabel={label}
-      >
+    <BpkTouchableNativeFeedback
+      onPress={() => onPress && onPress(value)}
+      accessibilityComponentType="button"
+      accessibilityLabel={label}
+      accessibilityTraits={accessibilityTraits}
+      borderlessBackground={false}
+    >
+      <View style={styles.pickerItem}>
         <BpkText style={selected ? styles.selected : {}}>{label}</BpkText>
-      </BpkTouchableNativeFeedback>
-    </View>
+      </View>
+    </BpkTouchableNativeFeedback>
   );
 };
 
