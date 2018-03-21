@@ -93,7 +93,9 @@ Promise.all([readdir('packages/'), readdir('native/packages/')])
   .then(maintainers => maintainers.forEach(verifyMaintainers))
   .then(() => {
     if (failures) {
-      console.log('\nPlease fix your maintainer list before publishing.');
+      console.log(
+        '\nPlease fix your maintainer list before publishing. Link: https://www.npmjs.com/org/skyscanner/team/backpack/add-package',
+      );
     } else {
       console.log('\nAll good 👍');
     }
