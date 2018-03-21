@@ -52,12 +52,17 @@ const styles = StyleSheet.create({
     width: '100%',
     backgroundColor: setOpacity(colorGray900, 0.8),
   },
+  listWrapper: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: spacingBase,
+    width: '100%',
+    height: '100%',
+  },
   list: {
     backgroundColor: colorWhite,
     borderRadius: borderRadiusSm,
-    alignSelf: 'center',
-    top: '50%',
-    width: '90%',
     elevation: 5,
   },
 });
@@ -75,10 +80,9 @@ const BpkPickerMenu = (props: PickerMenuProps) => {
     if (selectedValue && selectedValue === value) {
       selected = true;
 
-      // If selected item will be off-screen, set initialScrollIndex. -2 is so it
-      // appears nearer to the middle of the list.
+      // If selected item will be off-screen, set initialScrollIndex.
       if (index >= MAX_ROWS_TO_DISPLAY) {
-        initialScrollIndex = index - 2;
+        initialScrollIndex = index;
       }
     }
     return { index, label, value, selected };
@@ -92,11 +96,8 @@ const BpkPickerMenu = (props: PickerMenuProps) => {
   const maxListHeight = heightOfOneItem * rowsToDisplay;
 
   const listStyle = [styles.list];
-
-  // To vertically centre the list, as we can't currently do this with Flexbox.
   listStyle.push({
     maxHeight: maxListHeight,
-    marginTop: -(maxListHeight / 2),
   });
 
   return (
@@ -109,30 +110,32 @@ const BpkPickerMenu = (props: PickerMenuProps) => {
       <TouchableWithoutFeedback onPress={onClose}>
         <View style={styles.overlay} />
       </TouchableWithoutFeedback>
-      <FlatList
-        data={pickerItems}
-        getItemLayout={(data, index) => ({
-          offset: heightOfOneItem * index,
-          length: heightOfOneItem,
-          index,
-        })}
-        initialScrollIndex={initialScrollIndex}
-        initialNumToRender={MAX_ROWS_TO_DISPLAY}
-        keyExtractor={item => item.index}
-        renderItem={({ item }) => {
-          const { index } = item;
-          return (
-            <BpkPickerItem
-              {...item}
-              onPress={value => {
-                onValueChange(value, index);
-                onClose();
-              }}
-            />
-          );
-        }}
-        style={listStyle}
-      />
+      <View style={styles.listWrapper}>
+        <FlatList
+          data={pickerItems}
+          getItemLayout={(data, index) => ({
+            offset: heightOfOneItem * index,
+            length: heightOfOneItem,
+            index,
+          })}
+          initialScrollIndex={initialScrollIndex}
+          initialNumToRender={MAX_ROWS_TO_DISPLAY}
+          keyExtractor={item => item.index}
+          renderItem={({ item }) => {
+            const { index } = item;
+            return (
+              <BpkPickerItem
+                {...item}
+                onPress={value => {
+                  onValueChange(value, index);
+                  onClose();
+                }}
+              />
+            );
+          }}
+          style={listStyle}
+        />
+      </View>
     </Modal>
   );
 };
