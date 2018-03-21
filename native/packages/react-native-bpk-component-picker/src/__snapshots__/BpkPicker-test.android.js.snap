@@ -9,54 +9,127 @@ exports[`Android BpkPicker should render correctly 1`] = `
   visible={false}
 >
   <View
+    accessibilityComponentType={undefined}
+    accessibilityLabel={undefined}
+    accessibilityTraits={undefined}
+    accessible={true}
+    hitSlop={undefined}
+    nativeID={undefined}
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
     style={
       Object {
         "backgroundColor": "rgba(37, 32, 51, 0.8)",
-        "flex": 1,
-        "justifyContent": "center",
+        "height": "100%",
+        "left": 0,
+        "position": "absolute",
+        "top": 0,
+        "width": "100%",
       }
     }
-  >
-    <RCTScrollView
-      style={
+    testID={undefined}
+  />
+  <RCTScrollView
+    data={
+      Array [
         Object {
+          "index": 0,
+          "label": "foo",
+          "selected": false,
+          "value": "foo",
+        },
+        Object {
+          "index": 1,
+          "label": "bar",
+          "selected": false,
+          "value": "bar",
+        },
+      ]
+    }
+    disableVirtualization={false}
+    getItem={[Function]}
+    getItemCount={[Function]}
+    getItemLayout={[Function]}
+    horizontal={false}
+    initialNumToRender={6}
+    initialScrollIndex={0}
+    keyExtractor={[Function]}
+    maxToRenderPerBatch={10}
+    numColumns={1}
+    onContentSizeChange={[Function]}
+    onEndReachedThreshold={2}
+    onLayout={[Function]}
+    onMomentumScrollEnd={[Function]}
+    onScroll={[Function]}
+    onScrollBeginDrag={[Function]}
+    onScrollEndDrag={[Function]}
+    renderItem={[Function]}
+    scrollEventThrottle={50}
+    stickyHeaderIndices={Array []}
+    style={
+      Array [
+        Object {
+          "alignSelf": "center",
           "backgroundColor": "rgb(255, 255, 255)",
           "borderRadius": 2,
-          "flex": 0,
-          "margin": 16,
-          "maxHeight": 336,
-        }
-      }
-    >
-      <View>
+          "elevation": 5,
+          "top": "50%",
+          "width": "90%",
+        },
+        Object {
+          "marginTop": -56,
+          "maxHeight": 112,
+        },
+      ]
+    }
+    updateCellsBatchingPeriod={50}
+    viewabilityConfigCallbackPairs={Array []}
+    windowSize={21}
+  >
+    <View>
+      <View
+        onLayout={undefined}
+        style={null}
+      >
         <View
+          accessibilityComponentType="button"
+          accessibilityLabel="foo"
+          accessibilityTraits={
+            Array [
+              "button",
+            ]
+          }
+          accessible={true}
+          hitSlop={undefined}
+          nativeBackgroundAndroid={
+            Object {
+              "attribute": "selectableItemBackground",
+              "type": "ThemeAttrAndroid",
+            }
+          }
+          onLayout={undefined}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
           style={
             Object {
               "padding": 16,
             }
           }
+          testID={undefined}
         >
           <Text
-            accessibilityComponentType={undefined}
-            accessibilityLabel="foo"
-            accessibilityTraits={undefined}
             accessible={true}
             allowFontScaling={true}
             ellipsizeMode="tail"
-            hitSlop={undefined}
-            nativeBackgroundAndroid={
-              Object {
-                "attribute": "selectableItemBackgroundBorderless",
-                "type": "ThemeAttrAndroid",
-              }
-            }
-            onLayout={undefined}
-            onResponderGrant={[Function]}
-            onResponderMove={[Function]}
-            onResponderRelease={[Function]}
-            onResponderTerminate={[Function]}
-            onResponderTerminationRequest={[Function]}
-            onStartShouldSetResponder={[Function]}
             style={
               Array [
                 Object {
@@ -68,39 +141,49 @@ exports[`Android BpkPicker should render correctly 1`] = `
                 Object {},
               ]
             }
-            testID={undefined}
           >
             foo
           </Text>
         </View>
+      </View>
+      <View
+        onLayout={undefined}
+        style={null}
+      >
         <View
+          accessibilityComponentType="button"
+          accessibilityLabel="bar"
+          accessibilityTraits={
+            Array [
+              "button",
+            ]
+          }
+          accessible={true}
+          hitSlop={undefined}
+          nativeBackgroundAndroid={
+            Object {
+              "attribute": "selectableItemBackground",
+              "type": "ThemeAttrAndroid",
+            }
+          }
+          onLayout={undefined}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
           style={
             Object {
               "padding": 16,
             }
           }
+          testID={undefined}
         >
           <Text
-            accessibilityComponentType={undefined}
-            accessibilityLabel="bar"
-            accessibilityTraits={undefined}
             accessible={true}
             allowFontScaling={true}
             ellipsizeMode="tail"
-            hitSlop={undefined}
-            nativeBackgroundAndroid={
-              Object {
-                "attribute": "selectableItemBackgroundBorderless",
-                "type": "ThemeAttrAndroid",
-              }
-            }
-            onLayout={undefined}
-            onResponderGrant={[Function]}
-            onResponderMove={[Function]}
-            onResponderRelease={[Function]}
-            onResponderTerminate={[Function]}
-            onResponderTerminationRequest={[Function]}
-            onStartShouldSetResponder={[Function]}
             style={
               Array [
                 Object {
@@ -112,14 +195,13 @@ exports[`Android BpkPicker should render correctly 1`] = `
                 Object {},
               ]
             }
-            testID={undefined}
           >
             bar
           </Text>
         </View>
       </View>
-    </RCTScrollView>
-  </View>
+    </View>
+  </RCTScrollView>
 </Modal>
 `;
 
@@ -132,54 +214,128 @@ exports[`Android BpkPicker should render correctly with a selected value 1`] = `
   visible={false}
 >
   <View
+    accessibilityComponentType={undefined}
+    accessibilityLabel={undefined}
+    accessibilityTraits={undefined}
+    accessible={true}
+    hitSlop={undefined}
+    nativeID={undefined}
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
     style={
       Object {
         "backgroundColor": "rgba(37, 32, 51, 0.8)",
-        "flex": 1,
-        "justifyContent": "center",
+        "height": "100%",
+        "left": 0,
+        "position": "absolute",
+        "top": 0,
+        "width": "100%",
       }
     }
-  >
-    <RCTScrollView
-      style={
+    testID={undefined}
+  />
+  <RCTScrollView
+    data={
+      Array [
         Object {
+          "index": 0,
+          "label": "foo",
+          "selected": true,
+          "value": "foo",
+        },
+        Object {
+          "index": 1,
+          "label": "bar",
+          "selected": false,
+          "value": "bar",
+        },
+      ]
+    }
+    disableVirtualization={false}
+    getItem={[Function]}
+    getItemCount={[Function]}
+    getItemLayout={[Function]}
+    horizontal={false}
+    initialNumToRender={6}
+    initialScrollIndex={0}
+    keyExtractor={[Function]}
+    maxToRenderPerBatch={10}
+    numColumns={1}
+    onContentSizeChange={[Function]}
+    onEndReachedThreshold={2}
+    onLayout={[Function]}
+    onMomentumScrollEnd={[Function]}
+    onScroll={[Function]}
+    onScrollBeginDrag={[Function]}
+    onScrollEndDrag={[Function]}
+    renderItem={[Function]}
+    scrollEventThrottle={50}
+    stickyHeaderIndices={Array []}
+    style={
+      Array [
+        Object {
+          "alignSelf": "center",
           "backgroundColor": "rgb(255, 255, 255)",
           "borderRadius": 2,
-          "flex": 0,
-          "margin": 16,
-          "maxHeight": 336,
-        }
-      }
-    >
-      <View>
+          "elevation": 5,
+          "top": "50%",
+          "width": "90%",
+        },
+        Object {
+          "marginTop": -56,
+          "maxHeight": 112,
+        },
+      ]
+    }
+    updateCellsBatchingPeriod={50}
+    viewabilityConfigCallbackPairs={Array []}
+    windowSize={21}
+  >
+    <View>
+      <View
+        onLayout={undefined}
+        style={null}
+      >
         <View
+          accessibilityComponentType="button"
+          accessibilityLabel="foo"
+          accessibilityTraits={
+            Array [
+              "button",
+              "selected",
+            ]
+          }
+          accessible={true}
+          hitSlop={undefined}
+          nativeBackgroundAndroid={
+            Object {
+              "attribute": "selectableItemBackground",
+              "type": "ThemeAttrAndroid",
+            }
+          }
+          onLayout={undefined}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
           style={
             Object {
               "padding": 16,
             }
           }
+          testID={undefined}
         >
           <Text
-            accessibilityComponentType={undefined}
-            accessibilityLabel="foo"
-            accessibilityTraits={undefined}
             accessible={true}
             allowFontScaling={true}
             ellipsizeMode="tail"
-            hitSlop={undefined}
-            nativeBackgroundAndroid={
-              Object {
-                "attribute": "selectableItemBackgroundBorderless",
-                "type": "ThemeAttrAndroid",
-              }
-            }
-            onLayout={undefined}
-            onResponderGrant={[Function]}
-            onResponderMove={[Function]}
-            onResponderRelease={[Function]}
-            onResponderTerminate={[Function]}
-            onResponderTerminationRequest={[Function]}
-            onStartShouldSetResponder={[Function]}
             style={
               Array [
                 Object {
@@ -193,39 +349,49 @@ exports[`Android BpkPicker should render correctly with a selected value 1`] = `
                 },
               ]
             }
-            testID={undefined}
           >
             foo
           </Text>
         </View>
+      </View>
+      <View
+        onLayout={undefined}
+        style={null}
+      >
         <View
+          accessibilityComponentType="button"
+          accessibilityLabel="bar"
+          accessibilityTraits={
+            Array [
+              "button",
+            ]
+          }
+          accessible={true}
+          hitSlop={undefined}
+          nativeBackgroundAndroid={
+            Object {
+              "attribute": "selectableItemBackground",
+              "type": "ThemeAttrAndroid",
+            }
+          }
+          onLayout={undefined}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
           style={
             Object {
               "padding": 16,
             }
           }
+          testID={undefined}
         >
           <Text
-            accessibilityComponentType={undefined}
-            accessibilityLabel="bar"
-            accessibilityTraits={undefined}
             accessible={true}
             allowFontScaling={true}
             ellipsizeMode="tail"
-            hitSlop={undefined}
-            nativeBackgroundAndroid={
-              Object {
-                "attribute": "selectableItemBackgroundBorderless",
-                "type": "ThemeAttrAndroid",
-              }
-            }
-            onLayout={undefined}
-            onResponderGrant={[Function]}
-            onResponderMove={[Function]}
-            onResponderRelease={[Function]}
-            onResponderTerminate={[Function]}
-            onResponderTerminationRequest={[Function]}
-            onStartShouldSetResponder={[Function]}
             style={
               Array [
                 Object {
@@ -237,13 +403,12 @@ exports[`Android BpkPicker should render correctly with a selected value 1`] = `
                 Object {},
               ]
             }
-            testID={undefined}
           >
             bar
           </Text>
         </View>
       </View>
-    </RCTScrollView>
-  </View>
+    </View>
+  </RCTScrollView>
 </Modal>
 `;

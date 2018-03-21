@@ -2,33 +2,39 @@
 
 exports[`Android BpkPickerItem should render correctly 1`] = `
 <View
+  accessibilityComponentType="button"
+  accessibilityLabel="label"
+  accessibilityTraits={
+    Array [
+      "button",
+    ]
+  }
+  accessible={true}
+  hitSlop={undefined}
+  nativeBackgroundAndroid={
+    Object {
+      "attribute": "selectableItemBackground",
+      "type": "ThemeAttrAndroid",
+    }
+  }
+  onLayout={undefined}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
   style={
     Object {
       "padding": 16,
     }
   }
+  testID={undefined}
 >
   <Text
-    accessibilityComponentType={undefined}
-    accessibilityLabel="label"
-    accessibilityTraits={undefined}
     accessible={true}
     allowFontScaling={true}
     ellipsizeMode="tail"
-    hitSlop={undefined}
-    nativeBackgroundAndroid={
-      Object {
-        "attribute": "selectableItemBackgroundBorderless",
-        "type": "ThemeAttrAndroid",
-      }
-    }
-    onLayout={undefined}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
     style={
       Array [
         Object {
@@ -40,7 +46,6 @@ exports[`Android BpkPickerItem should render correctly 1`] = `
         Object {},
       ]
     }
-    testID={undefined}
   >
     label
   </Text>
@@ -49,33 +54,39 @@ exports[`Android BpkPickerItem should render correctly 1`] = `
 
 exports[`Android BpkPickerItem should render correctly with an onPress function 1`] = `
 <View
+  accessibilityComponentType="button"
+  accessibilityLabel="label"
+  accessibilityTraits={
+    Array [
+      "button",
+    ]
+  }
+  accessible={true}
+  hitSlop={undefined}
+  nativeBackgroundAndroid={
+    Object {
+      "attribute": "selectableItemBackground",
+      "type": "ThemeAttrAndroid",
+    }
+  }
+  onLayout={undefined}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
   style={
     Object {
       "padding": 16,
     }
   }
+  testID={undefined}
 >
   <Text
-    accessibilityComponentType={undefined}
-    accessibilityLabel="label"
-    accessibilityTraits={undefined}
     accessible={true}
     allowFontScaling={true}
     ellipsizeMode="tail"
-    hitSlop={undefined}
-    nativeBackgroundAndroid={
-      Object {
-        "attribute": "selectableItemBackgroundBorderless",
-        "type": "ThemeAttrAndroid",
-      }
-    }
-    onLayout={undefined}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
     style={
       Array [
         Object {
@@ -87,7 +98,6 @@ exports[`Android BpkPickerItem should render correctly with an onPress function 
         Object {},
       ]
     }
-    testID={undefined}
   >
     label
   </Text>
@@ -96,33 +106,40 @@ exports[`Android BpkPickerItem should render correctly with an onPress function 
 
 exports[`Android BpkPickerItem should render correctly with the selected prop 1`] = `
 <View
+  accessibilityComponentType="button"
+  accessibilityLabel="label"
+  accessibilityTraits={
+    Array [
+      "button",
+      "selected",
+    ]
+  }
+  accessible={true}
+  hitSlop={undefined}
+  nativeBackgroundAndroid={
+    Object {
+      "attribute": "selectableItemBackground",
+      "type": "ThemeAttrAndroid",
+    }
+  }
+  onLayout={undefined}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
   style={
     Object {
       "padding": 16,
     }
   }
+  testID={undefined}
 >
   <Text
-    accessibilityComponentType={undefined}
-    accessibilityLabel="label"
-    accessibilityTraits={undefined}
     accessible={true}
     allowFontScaling={true}
     ellipsizeMode="tail"
-    hitSlop={undefined}
-    nativeBackgroundAndroid={
-      Object {
-        "attribute": "selectableItemBackgroundBorderless",
-        "type": "ThemeAttrAndroid",
-      }
-    }
-    onLayout={undefined}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
     style={
       Array [
         Object {
@@ -136,7 +153,6 @@ exports[`Android BpkPickerItem should render correctly with the selected prop 1`
         },
       ]
     }
-    testID={undefined}
   >
     label
   </Text>

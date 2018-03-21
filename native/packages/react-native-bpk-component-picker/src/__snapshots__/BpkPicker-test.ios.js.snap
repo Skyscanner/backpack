@@ -4,6 +4,12 @@ exports[`iOS BpkPicker should render correctly 1`] = `
 <Modal
   animationType="slide"
   hardwareAccelerated={false}
+  supportedOrientations={
+    Array [
+      "portrait",
+      "landscape",
+    ]
+  }
   transparent={true}
   visible={false}
 >
@@ -172,6 +178,12 @@ exports[`iOS BpkPicker should render correctly with a selected value 1`] = `
 <Modal
   animationType="slide"
   hardwareAccelerated={false}
+  supportedOrientations={
+    Array [
+      "portrait",
+      "landscape",
+    ]
+  }
   transparent={true}
   visible={false}
 >

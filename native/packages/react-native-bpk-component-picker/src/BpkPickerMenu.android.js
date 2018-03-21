@@ -17,7 +17,13 @@
  */
 
 import React from 'react';
-import { Modal, View, StyleSheet, ScrollView } from 'react-native';
+import {
+  FlatList,
+  Modal,
+  StyleSheet,
+  TouchableWithoutFeedback,
+  View,
+} from 'react-native';
 import PropTypes from 'prop-types';
 import { setOpacity } from 'bpk-tokens';
 import {
@@ -27,39 +33,66 @@ import {
   lineHeightBase,
   spacingBase,
 } from 'bpk-tokens/tokens/base.react.native';
+import BpkPickerItem from './BpkPickerItem';
 
-const rowsToDisplay = 6;
-
-const maxListHeight =
-  // eslint-disable-next-line no-mixed-operators
-  (2 * spacingBase + lineHeightBase) * rowsToDisplay;
+const MAX_ROWS_TO_DISPLAY = 6;
 
 const styles = StyleSheet.create({
   overlay: {
-    flex: 1,
+    left: 0,
+    height: '100%',
+    position: 'absolute',
+    top: 0,
+    width: '100%',
     backgroundColor: setOpacity(colorGray900, 0.8),
-    justifyContent: 'center',
   },
   list: {
     backgroundColor: colorWhite,
     borderRadius: borderRadiusSm,
-    maxHeight: maxListHeight,
-    margin: spacingBase,
-    flex: 0,
+    alignSelf: 'center',
+    top: '50%',
+    width: '90%',
+    elevation: 5,
   },
 });
 
-const PickerMenu = props => {
+const BpkPickerMenu = props => {
   const { visible, children, onValueChange, onClose, selectedValue } = props;
-  const pickerItems = React.Children.map(children, (child, index) =>
-    React.cloneElement(child, {
-      selected: selectedValue && selectedValue === child.props.value,
-      onPress: value => {
-        onValueChange(value, index);
-        onClose();
-      },
-    }),
-  );
+
+  // Instead of passing children through, we have to turn them into a data structure
+  // in order to pass them to FlatList.
+  let initialScrollIndex = 0;
+  const pickerItems = React.Children.map(children, (child, index) => {
+    const { label, value } = child.props;
+
+    let selected = false;
+    if (selectedValue && selectedValue === value) {
+      selected = true;
+
+      // If selected item will be off-screen, set initialScrollIndex. -2 is so it
+      // appears nearer to the middle of the list.
+      if (index >= MAX_ROWS_TO_DISPLAY) {
+        initialScrollIndex = index - 2;
+      }
+    }
+    return { index, label, value, selected };
+  });
+
+  const rowsToDisplay =
+    pickerItems.length > MAX_ROWS_TO_DISPLAY
+      ? MAX_ROWS_TO_DISPLAY
+      : pickerItems.length;
+  const heightOfOneItem = spacingBase * 2 + lineHeightBase;
+  const maxListHeight = heightOfOneItem * rowsToDisplay;
+
+  const listStyle = [styles.list];
+
+  // To vertically centre the list, as we can't currently do this with Flexbox.
+  listStyle.push({
+    maxHeight: maxListHeight,
+    marginTop: -(maxListHeight / 2),
+  });
+
   return (
     <Modal
       transparent
@@ -67,14 +100,38 @@ const PickerMenu = props => {
       animationType="fade"
       onRequestClose={onClose}
     >
-      <View style={styles.overlay}>
-        <ScrollView style={styles.list}>{pickerItems}</ScrollView>
-      </View>
+      <TouchableWithoutFeedback onPress={onClose}>
+        <View style={styles.overlay} />
+      </TouchableWithoutFeedback>
+      <FlatList
+        data={pickerItems}
+        getItemLayout={(data, index) => ({
+          offset: heightOfOneItem * index,
+          length: heightOfOneItem,
+          index,
+        })}
+        initialScrollIndex={initialScrollIndex}
+        initialNumToRender={MAX_ROWS_TO_DISPLAY}
+        keyExtractor={item => item.index}
+        renderItem={({ item }) => {
+          const { index } = item;
+          return (
+            <BpkPickerItem
+              {...item}
+              onPress={value => {
+                onValueChange(value, index);
+                onClose();
+              }}
+            />
+          );
+        }}
+        style={listStyle}
+      />
     </Modal>
   );
 };
 
-PickerMenu.propTypes = {
+BpkPickerMenu.propTypes = {
   visible: PropTypes.bool,
   selectedValue: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   children: PropTypes.node.isRequired,
@@ -82,9 +139,9 @@ PickerMenu.propTypes = {
   onClose: PropTypes.func.isRequired,
 };
 
-PickerMenu.defaultProps = {
+BpkPickerMenu.defaultProps = {
   visible: false,
   selectedValue: null,
 };
 
-export default PickerMenu;
+export default BpkPickerMenu;

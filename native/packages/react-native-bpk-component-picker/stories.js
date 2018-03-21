@@ -125,7 +125,7 @@ storiesOf('react-native-bpk-component-picker', module)
       <StatefulBpkPicker style={styles.picker} />
 
       <StorySubheading>With a selected value</StorySubheading>
-      <StatefulBpkPicker selectedValue="3" style={styles.picker} />
+      <StatefulBpkPicker selectedValue="1" style={styles.picker} />
 
       <StorySubheading>Disabled</StorySubheading>
       <StatefulBpkPicker disabled style={styles.picker} />
