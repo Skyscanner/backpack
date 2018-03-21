@@ -16,8 +16,16 @@
  * limitations under the License.
  */
 
+/* @flow */
+
 import React from 'react';
-import { Platform, StyleSheet, View, ViewPropTypes } from 'react-native';
+import {
+  Platform,
+  StyleSheet,
+  View,
+  ViewPropTypes,
+  type Element,
+} from 'react-native';
 import PropTypes from 'prop-types';
 import BpkTouchableOverlay from 'react-native-bpk-component-touchable-overlay';
 import BpkTouchableNativeFeedback from 'react-native-bpk-component-touchable-native-feedback';
@@ -47,7 +55,14 @@ const TouchablePlatformComponent = Platform.select({
   android: BpkTouchableNativeFeedback,
 });
 
-const BpkPickerTrigger = props => {
+type Props = {
+  onPress: () => mixed,
+  disabled: boolean,
+  label: ?(string | Element),
+  style: ?any,
+};
+
+const BpkPickerTrigger = (props: Props) => {
   const { disabled, label, onPress, style, ...rest } = props;
 
   let content = label;

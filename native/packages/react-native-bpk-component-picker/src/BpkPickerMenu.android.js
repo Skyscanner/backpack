@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+/* @flow */
+
 import React from 'react';
 import {
   FlatList,
@@ -24,7 +26,6 @@ import {
   TouchableWithoutFeedback,
   View,
 } from 'react-native';
-import PropTypes from 'prop-types';
 import { setOpacity } from 'bpk-tokens';
 import {
   borderRadiusSm,
@@ -34,6 +35,11 @@ import {
   spacingBase,
 } from 'bpk-tokens/tokens/base.react.native';
 import BpkPickerItem from './BpkPickerItem';
+import {
+  PICKER_MENU_PROP_TYPE,
+  PICKER_MENU_DEFAULT_PROPS,
+  type PickerMenuProps,
+} from './common-types';
 
 const MAX_ROWS_TO_DISPLAY = 6;
 
@@ -56,7 +62,7 @@ const styles = StyleSheet.create({
   },
 });
 
-const BpkPickerMenu = props => {
+const BpkPickerMenu = (props: PickerMenuProps) => {
   const { visible, children, onValueChange, onClose, selectedValue } = props;
 
   // Instead of passing children through, we have to turn them into a data structure
@@ -131,17 +137,7 @@ const BpkPickerMenu = props => {
   );
 };
 
-BpkPickerMenu.propTypes = {
-  visible: PropTypes.bool,
-  selectedValue: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  children: PropTypes.node.isRequired,
-  onValueChange: PropTypes.func.isRequired,
-  onClose: PropTypes.func.isRequired,
-};
-
-BpkPickerMenu.defaultProps = {
-  visible: false,
-  selectedValue: null,
-};
+BpkPickerMenu.propTypes = PICKER_MENU_PROP_TYPE;
+BpkPickerMenu.defaultProps = PICKER_MENU_DEFAULT_PROPS;
 
 export default BpkPickerMenu;

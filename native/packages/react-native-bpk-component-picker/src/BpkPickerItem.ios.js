@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+/* @flow */
+
 import { Picker } from 'react-native';
 
 const BpkPickerItem = Picker.Item;

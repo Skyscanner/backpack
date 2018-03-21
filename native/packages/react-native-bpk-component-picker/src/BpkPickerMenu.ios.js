@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+/* @flow */
+
 import React from 'react';
 import {
   Modal,
@@ -32,6 +34,11 @@ import {
   spacingSm,
   spacingMd,
 } from 'bpk-tokens/tokens/base.react.native';
+import {
+  PICKER_MENU_PROP_TYPE,
+  PICKER_MENU_DEFAULT_PROPS,
+  type PickerMenuProps,
+} from './common-types';
 
 const styles = StyleSheet.create({
   dismissOverlay: {
@@ -56,7 +63,12 @@ const styles = StyleSheet.create({
   },
 });
 
-const BpkPickerMenu = props => {
+type Props = {
+  ...$Exact<PickerMenuProps>,
+  doneLabel: string,
+};
+
+const BpkPickerMenu = (props: Props) => {
   const {
     visible,
     selectedValue,
@@ -91,17 +103,10 @@ const BpkPickerMenu = props => {
 };
 
 BpkPickerMenu.propTypes = {
-  children: PropTypes.node.isRequired,
+  ...PICKER_MENU_PROP_TYPE,
   doneLabel: PropTypes.string.isRequired,
-  onClose: PropTypes.func.isRequired,
-  onValueChange: PropTypes.func.isRequired,
-  selectedValue: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  visible: PropTypes.bool,
 };
 
-BpkPickerMenu.defaultProps = {
-  visible: false,
-  selectedValue: null,
-};
+BpkPickerMenu.defaultProps = PICKER_MENU_DEFAULT_PROPS;
 
 export default BpkPickerMenu;

@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+/* @flow */
+
 import React, { Component } from 'react';
 import { StyleSheet, View, ViewPropTypes } from 'react-native';
 import PropTypes from 'prop-types';
@@ -31,6 +33,7 @@ import CenterDecorator from '../../storybook/CenterDecorator';
 import { StorySubheading } from '../../storybook/TextStyles';
 
 import BpkPicker, { BpkPickerItem, BpkPickerTrigger } from './index';
+import { type PickerValue } from './src/common-types';
 
 const styles = StyleSheet.create({
   picker: {
@@ -47,7 +50,18 @@ const styles = StyleSheet.create({
   },
 });
 
-class StatefulBpkPicker extends Component {
+type Props = {
+  disabled: boolean,
+  selectedValue: ?PickerValue,
+  style: ?any,
+};
+
+type State = {
+  isOpen: boolean,
+  value: PickerValue,
+};
+
+class StatefulBpkPicker extends Component<Props, State> {
   static propTypes = {
     disabled: PropTypes.bool,
     selectedValue: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
@@ -83,14 +97,14 @@ class StatefulBpkPicker extends Component {
   render() {
     const { disabled, selectedValue, style, ...rest } = this.props;
     const data = {
-      1: 'Option 1',
-      2: 'Option 2',
-      3: 'Option 3',
-      4: 'Option 4',
-      5: 'Option 5',
-      6: 'Option 6',
-      7: 'Option 7',
-      8: 'Option 8',
+      '1': 'Option 1',
+      '2': 'Option 2',
+      '3': 'Option 3',
+      '4': 'Option 4',
+      '5': 'Option 5',
+      '6': 'Option 6',
+      '7': 'Option 7',
+      '8': 'Option 8',
     };
     return (
       <View style={style}>

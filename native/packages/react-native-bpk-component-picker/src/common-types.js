@@ -18,55 +18,33 @@
 
 /* @flow */
 
-import React, { type Node } from 'react';
+import { type Node } from 'react';
 import PropTypes from 'prop-types';
-import BpkPickerMenu from './BpkPickerMenu';
-import { PICKER_VALUE_PROP_TYPE, type PickerValue } from './common-types';
 
-type Props = {
+export type PickerValue = string | number;
+
+export type PickerMenuProps = {
   children: Node,
-  doneLabel: string,
   onClose: () => mixed,
   onValueChange: (PickerValue, number) => mixed,
-  isOpen: boolean,
   selectedValue: ?PickerValue,
+  visible: boolean,
 };
 
-const BpkPicker = (props: Props) => {
-  const {
-    children,
-    doneLabel,
-    isOpen,
-    onValueChange,
-    selectedValue,
-    ...rest
-  } = props;
+export const PICKER_VALUE_PROP_TYPE = PropTypes.oneOfType([
+  PropTypes.string,
+  PropTypes.number,
+]);
 
-  return (
-    <BpkPickerMenu
-      {...rest}
-      doneLabel={doneLabel}
-      onValueChange={onValueChange}
-      selectedValue={selectedValue}
-      visible={isOpen}
-    >
-      {children}
-    </BpkPickerMenu>
-  );
-};
-
-BpkPicker.propTypes = {
+export const PICKER_MENU_PROP_TYPE = {
   children: PropTypes.node.isRequired,
-  doneLabel: PropTypes.string.isRequired,
   onClose: PropTypes.func.isRequired,
   onValueChange: PropTypes.func.isRequired,
-  isOpen: PropTypes.bool,
   selectedValue: PICKER_VALUE_PROP_TYPE,
+  visible: PropTypes.bool,
 };
 
-BpkPicker.defaultProps = {
-  isOpen: false,
+export const PICKER_MENU_DEFAULT_PROPS = {
+  visible: false,
   selectedValue: null,
 };
-
-export default BpkPicker;
