@@ -192,13 +192,18 @@ const ModalsPage = () => (
     readme={modalReadme}
     usageTable={{
       dos: [
-        'Use when users need to regain context of where they are in the UI.',
-        'Use when users need to focus on a separate task/information in relation to their current goal.',
+        'Use for rich or complex content related to the current page.',
+        "Make sure it's very easy for users to dismiss them.",
+        `Consider how the "Back" action is used. Users should normally be able
+        to use this to close a modal and return to the underlying page.`,
       ],
       donts: [
-        "Don't use for alerts, errors and confirmations - use a dialog instead.",
+        "Don't use for alerts, errors and confirmations. Use a dialog instead.",
+        `Avoid opening dialogs, other modals or popovers from non-full screen modals.
+        (It's ok on full-screen modals because in this case they won't be perceived as
+        adding too many extra layers or visual noise`,
         `Don't overuse modals as interruptions, as they will get in the way of the
-      user's main tasks, and may disrupt context.`,
+        user's main tasks, and may disrupt context. Never use a full screen modal as an interrupt.`,
       ],
     }}
     sassdocId="modals"

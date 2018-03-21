@@ -159,11 +159,13 @@ const PopoversPage = () => (
         'Use to provide additional information related to an element on the page.',
         'Use when content is too long for a tooltip.',
         'Use when the user needs to access additional functionality, without losing their current place in the UI.',
-        'Use when you want a contextual relationship with an element on screen that a modal or dialog can’t provide.',
+        "Use when you want a contextual relationship with an element on screen that a modal or dialog can't provide.",
         'Use for feature prompts / onboarding.',
+        'Popovers can be modal and shown on top of a scrim, especially for prompts.',
+        'When an element is pressed to open the popover, pressing on the same element should close it again (especially on desktop).',
       ],
       donts: [
-        "Don't use for complex content on a mobile - in this case a modal may be a better bet.",
+        "Don't use for complex content on mobile. In this case, a modal may be a better bet.",
         "Don't use when you want content to be accessed on hover.",
       ],
     }}

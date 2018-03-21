@@ -154,7 +154,6 @@ const DocsPageBuilder = props => (
       </BpkList>
     )}
     {props.tokenMap ? <TokenSwitcher tokens={props.tokenMap} /> : null}
-    {flatten(props.components.map(ComponentExample))}
     {props.usageTable
       ? flatten([
           <Heading id="usage" level="h2">
@@ -163,6 +162,7 @@ const DocsPageBuilder = props => (
           <UsageTable data={props.usageTable} />,
         ])
       : null}
+    {flatten(props.components.map(ComponentExample))}
     {props.readme
       ? flatten([
           <Heading id="readme" level="h2">

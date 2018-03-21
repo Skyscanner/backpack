@@ -90,11 +90,15 @@ const DialogsPage = () => (
     readme={dialogReadme}
     usageTable={{
       dos: [
-        'Use when users are in a certain situation which needs acknowledgement.',
-        'Use when users need to confirm or make a choice.',
+        'Use to show an alert, error or decision message.',
+        'Use when the user needs to acknowledge the message or make a choice / take an action in order to proceed.',
+        "Use when it's important to keep the background content visible in order to maintain context.",
+        'Use when the content is small and interactions simple.',
+        'Use dialogs sparingly because they are interruptive.',
       ],
       donts: [
-        "Don't use when users need to focus on a separate task or gain context of where they are in the UI - use a modal instead.",
+        "Don't use for showing larger amounts of content or more complex interactions (use a modal).",
+        "Don't use if the content is for information only (use a tooltip or popover).",
       ],
     }}
     sassdocId="dialogs"
