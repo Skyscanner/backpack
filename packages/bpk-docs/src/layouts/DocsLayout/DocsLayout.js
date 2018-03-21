@@ -148,6 +148,12 @@ const links = [
         route: routes.NATIVE_PHONE_INPUT,
         children: 'Phone number input',
       },
+      // TODO: Uncomment later
+      // {
+      //   id: 'NATIVE_PICKER',
+      //   route: routes.NATIVE_PICKER,
+      //   children: 'Pickers',
+      // },
       {
         id: 'NATIVE_SPINNER',
         route: routes.NATIVE_SPINNER,

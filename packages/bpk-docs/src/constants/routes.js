@@ -95,6 +95,7 @@ export const NATIVE_NUDGER = '/components/native/nudger';
 export const NATIVE_NAVIGATION_BAR = '/components/native/navigation-bar';
 export const NATIVE_PANELS = '/components/native/panels';
 export const NATIVE_PHONE_INPUT = '/components/native/phone-input';
+export const NATIVE_PICKER = '/components/native/picker';
 export const NATIVE_SPINNER = '/components/native/spinners';
 export const NATIVE_STAR_RATING = '/components/native/star-rating';
 export const NATIVE_SWITCH = '/components/native/switches';
