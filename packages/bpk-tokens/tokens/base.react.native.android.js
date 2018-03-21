@@ -96,6 +96,9 @@ export const elevationSm = 4;
 export const elevationBase = 6;
 export const elevationLg = 16;
 export const elevationXl = 24;
+export const paginationDotSizeSm = 2;
+export const paginationDotSizeMd = 3;
+export const paginationDotSizeBase = 6;
 export const spacingSm = 4;
 export const spacingMd = 8;
 export const spacingBase = 16;
@@ -231,6 +234,11 @@ elevationSm,
 elevationBase,
 elevationLg,
 elevationXl,
+};
+export const paginationDots = {
+paginationDotSizeSm,
+paginationDotSizeMd,
+paginationDotSizeBase,
 };
 export const typesettings = {
 fontFamily,

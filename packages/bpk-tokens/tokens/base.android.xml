@@ -99,6 +99,9 @@
   <property name="ELEVATION_BASE" category="elevation">6dp</property>
   <property name="ELEVATION_LG" category="elevation">16dp</property>
   <property name="ELEVATION_XL" category="elevation">24dp</property>
+  <property name="PAGINATION_DOT_SIZE_SM" category="pagination-dots">2dp</property>
+  <property name="PAGINATION_DOT_SIZE_MD" category="pagination-dots">3dp</property>
+  <property name="PAGINATION_DOT_SIZE_BASE" category="pagination-dots">6dp</property>
   <property name="SPACING_SM" category="spacings">4dp</property>
   <property name="SPACING_MD" category="spacings">8dp</property>
   <property name="SPACING_BASE" category="spacings">16dp</property>

@@ -767,6 +767,33 @@
     },
     {
       "type": "size",
+      "value": "2",
+      "category": "pagination-dots",
+      ".alias": {
+        "value": 2
+      },
+      "name": "paginationDotSizeSm"
+    },
+    {
+      "type": "size",
+      "value": "3",
+      "category": "pagination-dots",
+      ".alias": {
+        "value": 3
+      },
+      "name": "paginationDotSizeMd"
+    },
+    {
+      "type": "size",
+      "value": "6",
+      "category": "pagination-dots",
+      ".alias": {
+        "value": 6
+      },
+      "name": "paginationDotSizeBase"
+    },
+    {
+      "type": "size",
       "category": "spacings",
       "value": "4",
       ".alias": {

@@ -1,0 +1,8056 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`iOS BpkPaginationDots should render correctly when accessibilityLabel is a function 1`] = `
+<View
+  accessibilityLabel="Page 5 of 0"
+  accessible={true}
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "rgba(37, 32, 51, 0.3)",
+        "borderRadius": 4,
+        "flexDirection": "row",
+        "height": 24,
+        "justifyContent": "center",
+        "paddingHorizontal": 12,
+        "paddingVertical": 8,
+        "width": 72,
+      },
+      null,
+    ]
+  }
+>
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(255, 255, 255)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`iOS BpkPaginationDots should render correctly when pageCount is 1 and selectedIndex is 0 1`] = `
+<View
+  accessibilityLabel="0 of 1"
+  accessible={true}
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "rgba(37, 32, 51, 0.3)",
+        "borderRadius": 4,
+        "flexDirection": "row",
+        "height": 24,
+        "justifyContent": "center",
+        "paddingHorizontal": 12,
+        "paddingVertical": 8,
+        "width": 72,
+      },
+      null,
+    ]
+  }
+>
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(255, 255, 255)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`iOS BpkPaginationDots should render correctly when pageCount is 1 and selectedIndex is 1 1`] = `
+<View
+  accessibilityLabel="1 of 1"
+  accessible={true}
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "rgba(37, 32, 51, 0.3)",
+        "borderRadius": 4,
+        "flexDirection": "row",
+        "height": 24,
+        "justifyContent": "center",
+        "paddingHorizontal": 12,
+        "paddingVertical": 8,
+        "width": 72,
+      },
+      null,
+    ]
+  }
+>
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`iOS BpkPaginationDots should render correctly when pageCount is 1 and selectedIndex is 2 1`] = `
+<View
+  accessibilityLabel="2 of 1"
+  accessible={true}
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "rgba(37, 32, 51, 0.3)",
+        "borderRadius": 4,
+        "flexDirection": "row",
+        "height": 24,
+        "justifyContent": "center",
+        "paddingHorizontal": 12,
+        "paddingVertical": 8,
+        "width": 72,
+      },
+      null,
+    ]
+  }
+>
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`iOS BpkPaginationDots should render correctly when pageCount is 1 and selectedIndex is 3 1`] = `
+<View
+  accessibilityLabel="3 of 1"
+  accessible={true}
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "rgba(37, 32, 51, 0.3)",
+        "borderRadius": 4,
+        "flexDirection": "row",
+        "height": 24,
+        "justifyContent": "center",
+        "paddingHorizontal": 12,
+        "paddingVertical": 8,
+        "width": 72,
+      },
+      null,
+    ]
+  }
+>
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`iOS BpkPaginationDots should render correctly when pageCount is 1 and selectedIndex is 4 1`] = `
+<View
+  accessibilityLabel="4 of 1"
+  accessible={true}
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "rgba(37, 32, 51, 0.3)",
+        "borderRadius": 4,
+        "flexDirection": "row",
+        "height": 24,
+        "justifyContent": "center",
+        "paddingHorizontal": 12,
+        "paddingVertical": 8,
+        "width": 72,
+      },
+      null,
+    ]
+  }
+>
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`iOS BpkPaginationDots should render correctly when pageCount is 1 and selectedIndex is 5 1`] = `
+<View
+  accessibilityLabel="5 of 1"
+  accessible={true}
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "rgba(37, 32, 51, 0.3)",
+        "borderRadius": 4,
+        "flexDirection": "row",
+        "height": 24,
+        "justifyContent": "center",
+        "paddingHorizontal": 12,
+        "paddingVertical": 8,
+        "width": 72,
+      },
+      null,
+    ]
+  }
+>
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`iOS BpkPaginationDots should render correctly when pageCount is 1 and selectedIndex is 6 1`] = `
+<View
+  accessibilityLabel="6 of 1"
+  accessible={true}
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "rgba(37, 32, 51, 0.3)",
+        "borderRadius": 4,
+        "flexDirection": "row",
+        "height": 24,
+        "justifyContent": "center",
+        "paddingHorizontal": 12,
+        "paddingVertical": 8,
+        "width": 72,
+      },
+      null,
+    ]
+  }
+>
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`iOS BpkPaginationDots should render correctly when pageCount is 1 and selectedIndex is 7 1`] = `
+<View
+  accessibilityLabel="7 of 1"
+  accessible={true}
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "rgba(37, 32, 51, 0.3)",
+        "borderRadius": 4,
+        "flexDirection": "row",
+        "height": 24,
+        "justifyContent": "center",
+        "paddingHorizontal": 12,
+        "paddingVertical": 8,
+        "width": 72,
+      },
+      null,
+    ]
+  }
+>
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`iOS BpkPaginationDots should render correctly when pageCount is 1 and selectedIndex is 8 1`] = `
+<View
+  accessibilityLabel="8 of 1"
+  accessible={true}
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "rgba(37, 32, 51, 0.3)",
+        "borderRadius": 4,
+        "flexDirection": "row",
+        "height": 24,
+        "justifyContent": "center",
+        "paddingHorizontal": 12,
+        "paddingVertical": 8,
+        "width": 72,
+      },
+      null,
+    ]
+  }
+>
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`iOS BpkPaginationDots should render correctly when pageCount is 1 and selectedIndex is 9 1`] = `
+<View
+  accessibilityLabel="9 of 1"
+  accessible={true}
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "rgba(37, 32, 51, 0.3)",
+        "borderRadius": 4,
+        "flexDirection": "row",
+        "height": 24,
+        "justifyContent": "center",
+        "paddingHorizontal": 12,
+        "paddingVertical": 8,
+        "width": 72,
+      },
+      null,
+    ]
+  }
+>
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`iOS BpkPaginationDots should render correctly when pageCount is 2 and selectedIndex is 0 1`] = `
+<View
+  accessibilityLabel="0 of 2"
+  accessible={true}
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "rgba(37, 32, 51, 0.3)",
+        "borderRadius": 4,
+        "flexDirection": "row",
+        "height": 24,
+        "justifyContent": "center",
+        "paddingHorizontal": 12,
+        "paddingVertical": 8,
+        "width": 72,
+      },
+      null,
+    ]
+  }
+>
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(255, 255, 255)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`iOS BpkPaginationDots should render correctly when pageCount is 2 and selectedIndex is 1 1`] = `
+<View
+  accessibilityLabel="1 of 2"
+  accessible={true}
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "rgba(37, 32, 51, 0.3)",
+        "borderRadius": 4,
+        "flexDirection": "row",
+        "height": 24,
+        "justifyContent": "center",
+        "paddingHorizontal": 12,
+        "paddingVertical": 8,
+        "width": 72,
+      },
+      null,
+    ]
+  }
+>
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(255, 255, 255)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`iOS BpkPaginationDots should render correctly when pageCount is 2 and selectedIndex is 2 1`] = `
+<View
+  accessibilityLabel="2 of 2"
+  accessible={true}
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "rgba(37, 32, 51, 0.3)",
+        "borderRadius": 4,
+        "flexDirection": "row",
+        "height": 24,
+        "justifyContent": "center",
+        "paddingHorizontal": 12,
+        "paddingVertical": 8,
+        "width": 72,
+      },
+      null,
+    ]
+  }
+>
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`iOS BpkPaginationDots should render correctly when pageCount is 2 and selectedIndex is 3 1`] = `
+<View
+  accessibilityLabel="3 of 2"
+  accessible={true}
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "rgba(37, 32, 51, 0.3)",
+        "borderRadius": 4,
+        "flexDirection": "row",
+        "height": 24,
+        "justifyContent": "center",
+        "paddingHorizontal": 12,
+        "paddingVertical": 8,
+        "width": 72,
+      },
+      null,
+    ]
+  }
+>
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`iOS BpkPaginationDots should render correctly when pageCount is 2 and selectedIndex is 4 1`] = `
+<View
+  accessibilityLabel="4 of 2"
+  accessible={true}
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "rgba(37, 32, 51, 0.3)",
+        "borderRadius": 4,
+        "flexDirection": "row",
+        "height": 24,
+        "justifyContent": "center",
+        "paddingHorizontal": 12,
+        "paddingVertical": 8,
+        "width": 72,
+      },
+      null,
+    ]
+  }
+>
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`iOS BpkPaginationDots should render correctly when pageCount is 2 and selectedIndex is 5 1`] = `
+<View
+  accessibilityLabel="5 of 2"
+  accessible={true}
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "rgba(37, 32, 51, 0.3)",
+        "borderRadius": 4,
+        "flexDirection": "row",
+        "height": 24,
+        "justifyContent": "center",
+        "paddingHorizontal": 12,
+        "paddingVertical": 8,
+        "width": 72,
+      },
+      null,
+    ]
+  }
+>
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`iOS BpkPaginationDots should render correctly when pageCount is 2 and selectedIndex is 6 1`] = `
+<View
+  accessibilityLabel="6 of 2"
+  accessible={true}
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "rgba(37, 32, 51, 0.3)",
+        "borderRadius": 4,
+        "flexDirection": "row",
+        "height": 24,
+        "justifyContent": "center",
+        "paddingHorizontal": 12,
+        "paddingVertical": 8,
+        "width": 72,
+      },
+      null,
+    ]
+  }
+>
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`iOS BpkPaginationDots should render correctly when pageCount is 2 and selectedIndex is 7 1`] = `
+<View
+  accessibilityLabel="7 of 2"
+  accessible={true}
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "rgba(37, 32, 51, 0.3)",
+        "borderRadius": 4,
+        "flexDirection": "row",
+        "height": 24,
+        "justifyContent": "center",
+        "paddingHorizontal": 12,
+        "paddingVertical": 8,
+        "width": 72,
+      },
+      null,
+    ]
+  }
+>
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`iOS BpkPaginationDots should render correctly when pageCount is 2 and selectedIndex is 8 1`] = `
+<View
+  accessibilityLabel="8 of 2"
+  accessible={true}
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "rgba(37, 32, 51, 0.3)",
+        "borderRadius": 4,
+        "flexDirection": "row",
+        "height": 24,
+        "justifyContent": "center",
+        "paddingHorizontal": 12,
+        "paddingVertical": 8,
+        "width": 72,
+      },
+      null,
+    ]
+  }
+>
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`iOS BpkPaginationDots should render correctly when pageCount is 2 and selectedIndex is 9 1`] = `
+<View
+  accessibilityLabel="9 of 2"
+  accessible={true}
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "rgba(37, 32, 51, 0.3)",
+        "borderRadius": 4,
+        "flexDirection": "row",
+        "height": 24,
+        "justifyContent": "center",
+        "paddingHorizontal": 12,
+        "paddingVertical": 8,
+        "width": 72,
+      },
+      null,
+    ]
+  }
+>
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`iOS BpkPaginationDots should render correctly when pageCount is 3 and selectedIndex is 0 1`] = `
+<View
+  accessibilityLabel="0 of 3"
+  accessible={true}
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "rgba(37, 32, 51, 0.3)",
+        "borderRadius": 4,
+        "flexDirection": "row",
+        "height": 24,
+        "justifyContent": "center",
+        "paddingHorizontal": 12,
+        "paddingVertical": 8,
+        "width": 72,
+      },
+      null,
+    ]
+  }
+>
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(255, 255, 255)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`iOS BpkPaginationDots should render correctly when pageCount is 3 and selectedIndex is 1 1`] = `
+<View
+  accessibilityLabel="1 of 3"
+  accessible={true}
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "rgba(37, 32, 51, 0.3)",
+        "borderRadius": 4,
+        "flexDirection": "row",
+        "height": 24,
+        "justifyContent": "center",
+        "paddingHorizontal": 12,
+        "paddingVertical": 8,
+        "width": 72,
+      },
+      null,
+    ]
+  }
+>
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(255, 255, 255)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`iOS BpkPaginationDots should render correctly when pageCount is 3 and selectedIndex is 2 1`] = `
+<View
+  accessibilityLabel="2 of 3"
+  accessible={true}
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "rgba(37, 32, 51, 0.3)",
+        "borderRadius": 4,
+        "flexDirection": "row",
+        "height": 24,
+        "justifyContent": "center",
+        "paddingHorizontal": 12,
+        "paddingVertical": 8,
+        "width": 72,
+      },
+      null,
+    ]
+  }
+>
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(255, 255, 255)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`iOS BpkPaginationDots should render correctly when pageCount is 3 and selectedIndex is 3 1`] = `
+<View
+  accessibilityLabel="3 of 3"
+  accessible={true}
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "rgba(37, 32, 51, 0.3)",
+        "borderRadius": 4,
+        "flexDirection": "row",
+        "height": 24,
+        "justifyContent": "center",
+        "paddingHorizontal": 12,
+        "paddingVertical": 8,
+        "width": 72,
+      },
+      null,
+    ]
+  }
+>
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`iOS BpkPaginationDots should render correctly when pageCount is 3 and selectedIndex is 4 1`] = `
+<View
+  accessibilityLabel="4 of 3"
+  accessible={true}
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "rgba(37, 32, 51, 0.3)",
+        "borderRadius": 4,
+        "flexDirection": "row",
+        "height": 24,
+        "justifyContent": "center",
+        "paddingHorizontal": 12,
+        "paddingVertical": 8,
+        "width": 72,
+      },
+      null,
+    ]
+  }
+>
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`iOS BpkPaginationDots should render correctly when pageCount is 3 and selectedIndex is 5 1`] = `
+<View
+  accessibilityLabel="5 of 3"
+  accessible={true}
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "rgba(37, 32, 51, 0.3)",
+        "borderRadius": 4,
+        "flexDirection": "row",
+        "height": 24,
+        "justifyContent": "center",
+        "paddingHorizontal": 12,
+        "paddingVertical": 8,
+        "width": 72,
+      },
+      null,
+    ]
+  }
+>
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`iOS BpkPaginationDots should render correctly when pageCount is 3 and selectedIndex is 6 1`] = `
+<View
+  accessibilityLabel="6 of 3"
+  accessible={true}
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "rgba(37, 32, 51, 0.3)",
+        "borderRadius": 4,
+        "flexDirection": "row",
+        "height": 24,
+        "justifyContent": "center",
+        "paddingHorizontal": 12,
+        "paddingVertical": 8,
+        "width": 72,
+      },
+      null,
+    ]
+  }
+>
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`iOS BpkPaginationDots should render correctly when pageCount is 3 and selectedIndex is 7 1`] = `
+<View
+  accessibilityLabel="7 of 3"
+  accessible={true}
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "rgba(37, 32, 51, 0.3)",
+        "borderRadius": 4,
+        "flexDirection": "row",
+        "height": 24,
+        "justifyContent": "center",
+        "paddingHorizontal": 12,
+        "paddingVertical": 8,
+        "width": 72,
+      },
+      null,
+    ]
+  }
+>
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`iOS BpkPaginationDots should render correctly when pageCount is 3 and selectedIndex is 8 1`] = `
+<View
+  accessibilityLabel="8 of 3"
+  accessible={true}
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "rgba(37, 32, 51, 0.3)",
+        "borderRadius": 4,
+        "flexDirection": "row",
+        "height": 24,
+        "justifyContent": "center",
+        "paddingHorizontal": 12,
+        "paddingVertical": 8,
+        "width": 72,
+      },
+      null,
+    ]
+  }
+>
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`iOS BpkPaginationDots should render correctly when pageCount is 3 and selectedIndex is 9 1`] = `
+<View
+  accessibilityLabel="9 of 3"
+  accessible={true}
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "rgba(37, 32, 51, 0.3)",
+        "borderRadius": 4,
+        "flexDirection": "row",
+        "height": 24,
+        "justifyContent": "center",
+        "paddingHorizontal": 12,
+        "paddingVertical": 8,
+        "width": 72,
+      },
+      null,
+    ]
+  }
+>
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`iOS BpkPaginationDots should render correctly when pageCount is 4 and selectedIndex is 0 1`] = `
+<View
+  accessibilityLabel="0 of 4"
+  accessible={true}
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "rgba(37, 32, 51, 0.3)",
+        "borderRadius": 4,
+        "flexDirection": "row",
+        "height": 24,
+        "justifyContent": "center",
+        "paddingHorizontal": 12,
+        "paddingVertical": 8,
+        "width": 72,
+      },
+      null,
+    ]
+  }
+>
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(255, 255, 255)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`iOS BpkPaginationDots should render correctly when pageCount is 4 and selectedIndex is 1 1`] = `
+<View
+  accessibilityLabel="1 of 4"
+  accessible={true}
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "rgba(37, 32, 51, 0.3)",
+        "borderRadius": 4,
+        "flexDirection": "row",
+        "height": 24,
+        "justifyContent": "center",
+        "paddingHorizontal": 12,
+        "paddingVertical": 8,
+        "width": 72,
+      },
+      null,
+    ]
+  }
+>
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(255, 255, 255)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`iOS BpkPaginationDots should render correctly when pageCount is 4 and selectedIndex is 2 1`] = `
+<View
+  accessibilityLabel="2 of 4"
+  accessible={true}
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "rgba(37, 32, 51, 0.3)",
+        "borderRadius": 4,
+        "flexDirection": "row",
+        "height": 24,
+        "justifyContent": "center",
+        "paddingHorizontal": 12,
+        "paddingVertical": 8,
+        "width": 72,
+      },
+      null,
+    ]
+  }
+>
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(255, 255, 255)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`iOS BpkPaginationDots should render correctly when pageCount is 4 and selectedIndex is 3 1`] = `
+<View
+  accessibilityLabel="3 of 4"
+  accessible={true}
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "rgba(37, 32, 51, 0.3)",
+        "borderRadius": 4,
+        "flexDirection": "row",
+        "height": 24,
+        "justifyContent": "center",
+        "paddingHorizontal": 12,
+        "paddingVertical": 8,
+        "width": 72,
+      },
+      null,
+    ]
+  }
+>
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(255, 255, 255)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`iOS BpkPaginationDots should render correctly when pageCount is 4 and selectedIndex is 4 1`] = `
+<View
+  accessibilityLabel="4 of 4"
+  accessible={true}
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "rgba(37, 32, 51, 0.3)",
+        "borderRadius": 4,
+        "flexDirection": "row",
+        "height": 24,
+        "justifyContent": "center",
+        "paddingHorizontal": 12,
+        "paddingVertical": 8,
+        "width": 72,
+      },
+      null,
+    ]
+  }
+>
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`iOS BpkPaginationDots should render correctly when pageCount is 4 and selectedIndex is 5 1`] = `
+<View
+  accessibilityLabel="5 of 4"
+  accessible={true}
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "rgba(37, 32, 51, 0.3)",
+        "borderRadius": 4,
+        "flexDirection": "row",
+        "height": 24,
+        "justifyContent": "center",
+        "paddingHorizontal": 12,
+        "paddingVertical": 8,
+        "width": 72,
+      },
+      null,
+    ]
+  }
+>
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`iOS BpkPaginationDots should render correctly when pageCount is 4 and selectedIndex is 6 1`] = `
+<View
+  accessibilityLabel="6 of 4"
+  accessible={true}
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "rgba(37, 32, 51, 0.3)",
+        "borderRadius": 4,
+        "flexDirection": "row",
+        "height": 24,
+        "justifyContent": "center",
+        "paddingHorizontal": 12,
+        "paddingVertical": 8,
+        "width": 72,
+      },
+      null,
+    ]
+  }
+>
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`iOS BpkPaginationDots should render correctly when pageCount is 4 and selectedIndex is 7 1`] = `
+<View
+  accessibilityLabel="7 of 4"
+  accessible={true}
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "rgba(37, 32, 51, 0.3)",
+        "borderRadius": 4,
+        "flexDirection": "row",
+        "height": 24,
+        "justifyContent": "center",
+        "paddingHorizontal": 12,
+        "paddingVertical": 8,
+        "width": 72,
+      },
+      null,
+    ]
+  }
+>
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`iOS BpkPaginationDots should render correctly when pageCount is 4 and selectedIndex is 8 1`] = `
+<View
+  accessibilityLabel="8 of 4"
+  accessible={true}
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "rgba(37, 32, 51, 0.3)",
+        "borderRadius": 4,
+        "flexDirection": "row",
+        "height": 24,
+        "justifyContent": "center",
+        "paddingHorizontal": 12,
+        "paddingVertical": 8,
+        "width": 72,
+      },
+      null,
+    ]
+  }
+>
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`iOS BpkPaginationDots should render correctly when pageCount is 4 and selectedIndex is 9 1`] = `
+<View
+  accessibilityLabel="9 of 4"
+  accessible={true}
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "rgba(37, 32, 51, 0.3)",
+        "borderRadius": 4,
+        "flexDirection": "row",
+        "height": 24,
+        "justifyContent": "center",
+        "paddingHorizontal": 12,
+        "paddingVertical": 8,
+        "width": 72,
+      },
+      null,
+    ]
+  }
+>
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`iOS BpkPaginationDots should render correctly when pageCount is 5 and selectedIndex is 0 1`] = `
+<View
+  accessibilityLabel="0 of 5"
+  accessible={true}
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "rgba(37, 32, 51, 0.3)",
+        "borderRadius": 4,
+        "flexDirection": "row",
+        "height": 24,
+        "justifyContent": "center",
+        "paddingHorizontal": 12,
+        "paddingVertical": 8,
+        "width": 72,
+      },
+      null,
+    ]
+  }
+>
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(255, 255, 255)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`iOS BpkPaginationDots should render correctly when pageCount is 5 and selectedIndex is 1 1`] = `
+<View
+  accessibilityLabel="1 of 5"
+  accessible={true}
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "rgba(37, 32, 51, 0.3)",
+        "borderRadius": 4,
+        "flexDirection": "row",
+        "height": 24,
+        "justifyContent": "center",
+        "paddingHorizontal": 12,
+        "paddingVertical": 8,
+        "width": 72,
+      },
+      null,
+    ]
+  }
+>
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(255, 255, 255)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`iOS BpkPaginationDots should render correctly when pageCount is 5 and selectedIndex is 2 1`] = `
+<View
+  accessibilityLabel="2 of 5"
+  accessible={true}
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "rgba(37, 32, 51, 0.3)",
+        "borderRadius": 4,
+        "flexDirection": "row",
+        "height": 24,
+        "justifyContent": "center",
+        "paddingHorizontal": 12,
+        "paddingVertical": 8,
+        "width": 72,
+      },
+      null,
+    ]
+  }
+>
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(255, 255, 255)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`iOS BpkPaginationDots should render correctly when pageCount is 5 and selectedIndex is 3 1`] = `
+<View
+  accessibilityLabel="3 of 5"
+  accessible={true}
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "rgba(37, 32, 51, 0.3)",
+        "borderRadius": 4,
+        "flexDirection": "row",
+        "height": 24,
+        "justifyContent": "center",
+        "paddingHorizontal": 12,
+        "paddingVertical": 8,
+        "width": 72,
+      },
+      null,
+    ]
+  }
+>
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(255, 255, 255)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`iOS BpkPaginationDots should render correctly when pageCount is 5 and selectedIndex is 4 1`] = `
+<View
+  accessibilityLabel="4 of 5"
+  accessible={true}
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "rgba(37, 32, 51, 0.3)",
+        "borderRadius": 4,
+        "flexDirection": "row",
+        "height": 24,
+        "justifyContent": "center",
+        "paddingHorizontal": 12,
+        "paddingVertical": 8,
+        "width": 72,
+      },
+      null,
+    ]
+  }
+>
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(255, 255, 255)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`iOS BpkPaginationDots should render correctly when pageCount is 5 and selectedIndex is 5 1`] = `
+<View
+  accessibilityLabel="5 of 5"
+  accessible={true}
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "rgba(37, 32, 51, 0.3)",
+        "borderRadius": 4,
+        "flexDirection": "row",
+        "height": 24,
+        "justifyContent": "center",
+        "paddingHorizontal": 12,
+        "paddingVertical": 8,
+        "width": 72,
+      },
+      null,
+    ]
+  }
+>
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`iOS BpkPaginationDots should render correctly when pageCount is 5 and selectedIndex is 6 1`] = `
+<View
+  accessibilityLabel="6 of 5"
+  accessible={true}
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "rgba(37, 32, 51, 0.3)",
+        "borderRadius": 4,
+        "flexDirection": "row",
+        "height": 24,
+        "justifyContent": "center",
+        "paddingHorizontal": 12,
+        "paddingVertical": 8,
+        "width": 72,
+      },
+      null,
+    ]
+  }
+>
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`iOS BpkPaginationDots should render correctly when pageCount is 5 and selectedIndex is 7 1`] = `
+<View
+  accessibilityLabel="7 of 5"
+  accessible={true}
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "rgba(37, 32, 51, 0.3)",
+        "borderRadius": 4,
+        "flexDirection": "row",
+        "height": 24,
+        "justifyContent": "center",
+        "paddingHorizontal": 12,
+        "paddingVertical": 8,
+        "width": 72,
+      },
+      null,
+    ]
+  }
+>
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`iOS BpkPaginationDots should render correctly when pageCount is 5 and selectedIndex is 8 1`] = `
+<View
+  accessibilityLabel="8 of 5"
+  accessible={true}
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "rgba(37, 32, 51, 0.3)",
+        "borderRadius": 4,
+        "flexDirection": "row",
+        "height": 24,
+        "justifyContent": "center",
+        "paddingHorizontal": 12,
+        "paddingVertical": 8,
+        "width": 72,
+      },
+      null,
+    ]
+  }
+>
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`iOS BpkPaginationDots should render correctly when pageCount is 5 and selectedIndex is 9 1`] = `
+<View
+  accessibilityLabel="9 of 5"
+  accessible={true}
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "rgba(37, 32, 51, 0.3)",
+        "borderRadius": 4,
+        "flexDirection": "row",
+        "height": 24,
+        "justifyContent": "center",
+        "paddingHorizontal": 12,
+        "paddingVertical": 8,
+        "width": 72,
+      },
+      null,
+    ]
+  }
+>
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`iOS BpkPaginationDots should render correctly when pageCount is 6 and selectedIndex is 0 1`] = `
+<View
+  accessibilityLabel="0 of 6"
+  accessible={true}
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "rgba(37, 32, 51, 0.3)",
+        "borderRadius": 4,
+        "flexDirection": "row",
+        "height": 24,
+        "justifyContent": "center",
+        "paddingHorizontal": 12,
+        "paddingVertical": 8,
+        "width": 72,
+      },
+      null,
+    ]
+  }
+>
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(255, 255, 255)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 3,
+        "marginHorizontal": 2,
+        "width": 3,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 2,
+        "marginHorizontal": 2,
+        "width": 2,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 0,
+        "marginHorizontal": 2,
+        "width": 0,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`iOS BpkPaginationDots should render correctly when pageCount is 6 and selectedIndex is 1 1`] = `
+<View
+  accessibilityLabel="1 of 6"
+  accessible={true}
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "rgba(37, 32, 51, 0.3)",
+        "borderRadius": 4,
+        "flexDirection": "row",
+        "height": 24,
+        "justifyContent": "center",
+        "paddingHorizontal": 12,
+        "paddingVertical": 8,
+        "width": 72,
+      },
+      null,
+    ]
+  }
+>
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(255, 255, 255)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 3,
+        "marginHorizontal": 2,
+        "width": 3,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 2,
+        "marginHorizontal": 2,
+        "width": 2,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 0,
+        "marginHorizontal": 2,
+        "width": 0,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`iOS BpkPaginationDots should render correctly when pageCount is 6 and selectedIndex is 2 1`] = `
+<View
+  accessibilityLabel="2 of 6"
+  accessible={true}
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "rgba(37, 32, 51, 0.3)",
+        "borderRadius": 4,
+        "flexDirection": "row",
+        "height": 24,
+        "justifyContent": "center",
+        "paddingHorizontal": 12,
+        "paddingVertical": 8,
+        "width": 72,
+      },
+      null,
+    ]
+  }
+>
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(255, 255, 255)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 3,
+        "marginHorizontal": 2,
+        "width": 3,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 2,
+        "marginHorizontal": 2,
+        "width": 2,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 0,
+        "marginHorizontal": 2,
+        "width": 0,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`iOS BpkPaginationDots should render correctly when pageCount is 6 and selectedIndex is 3 1`] = `
+<View
+  accessibilityLabel="3 of 6"
+  accessible={true}
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "rgba(37, 32, 51, 0.3)",
+        "borderRadius": 4,
+        "flexDirection": "row",
+        "height": 24,
+        "justifyContent": "center",
+        "paddingHorizontal": 12,
+        "paddingVertical": 8,
+        "width": 72,
+      },
+      null,
+    ]
+  }
+>
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 3,
+        "marginHorizontal": 2,
+        "width": 3,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(255, 255, 255)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 3,
+        "marginHorizontal": 2,
+        "width": 3,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 2,
+        "marginHorizontal": 2,
+        "width": 2,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`iOS BpkPaginationDots should render correctly when pageCount is 6 and selectedIndex is 4 1`] = `
+<View
+  accessibilityLabel="4 of 6"
+  accessible={true}
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "rgba(37, 32, 51, 0.3)",
+        "borderRadius": 4,
+        "flexDirection": "row",
+        "height": 24,
+        "justifyContent": "center",
+        "paddingHorizontal": 12,
+        "paddingVertical": 8,
+        "width": 72,
+      },
+      null,
+    ]
+  }
+>
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 0,
+        "marginHorizontal": 2,
+        "width": 0,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 2,
+        "marginHorizontal": 2,
+        "width": 2,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 3,
+        "marginHorizontal": 2,
+        "width": 3,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(255, 255, 255)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 3,
+        "marginHorizontal": 2,
+        "width": 3,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`iOS BpkPaginationDots should render correctly when pageCount is 6 and selectedIndex is 5 1`] = `
+<View
+  accessibilityLabel="5 of 6"
+  accessible={true}
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "rgba(37, 32, 51, 0.3)",
+        "borderRadius": 4,
+        "flexDirection": "row",
+        "height": 24,
+        "justifyContent": "center",
+        "paddingHorizontal": 12,
+        "paddingVertical": 8,
+        "width": 72,
+      },
+      null,
+    ]
+  }
+>
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 0,
+        "marginHorizontal": 2,
+        "width": 0,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 2,
+        "marginHorizontal": 2,
+        "width": 2,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 3,
+        "marginHorizontal": 2,
+        "width": 3,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(255, 255, 255)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`iOS BpkPaginationDots should render correctly when pageCount is 6 and selectedIndex is 6 1`] = `
+<View
+  accessibilityLabel="6 of 6"
+  accessible={true}
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "rgba(37, 32, 51, 0.3)",
+        "borderRadius": 4,
+        "flexDirection": "row",
+        "height": 24,
+        "justifyContent": "center",
+        "paddingHorizontal": 12,
+        "paddingVertical": 8,
+        "width": 72,
+      },
+      null,
+    ]
+  }
+>
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 2,
+        "marginHorizontal": 2,
+        "width": 2,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 3,
+        "marginHorizontal": 2,
+        "width": 3,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(255, 255, 255)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 3,
+        "marginHorizontal": 2,
+        "width": 3,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 2,
+        "marginHorizontal": 2,
+        "width": 2,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`iOS BpkPaginationDots should render correctly when pageCount is 6 and selectedIndex is 7 1`] = `
+<View
+  accessibilityLabel="7 of 6"
+  accessible={true}
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "rgba(37, 32, 51, 0.3)",
+        "borderRadius": 4,
+        "flexDirection": "row",
+        "height": 24,
+        "justifyContent": "center",
+        "paddingHorizontal": 12,
+        "paddingVertical": 8,
+        "width": 72,
+      },
+      null,
+    ]
+  }
+>
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 2,
+        "marginHorizontal": 2,
+        "width": 2,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 3,
+        "marginHorizontal": 2,
+        "width": 3,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(255, 255, 255)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 3,
+        "marginHorizontal": 2,
+        "width": 3,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 2,
+        "marginHorizontal": 2,
+        "width": 2,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`iOS BpkPaginationDots should render correctly when pageCount is 6 and selectedIndex is 8 1`] = `
+<View
+  accessibilityLabel="8 of 6"
+  accessible={true}
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "rgba(37, 32, 51, 0.3)",
+        "borderRadius": 4,
+        "flexDirection": "row",
+        "height": 24,
+        "justifyContent": "center",
+        "paddingHorizontal": 12,
+        "paddingVertical": 8,
+        "width": 72,
+      },
+      null,
+    ]
+  }
+>
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 2,
+        "marginHorizontal": 2,
+        "width": 2,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 3,
+        "marginHorizontal": 2,
+        "width": 3,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(255, 255, 255)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 3,
+        "marginHorizontal": 2,
+        "width": 3,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 2,
+        "marginHorizontal": 2,
+        "width": 2,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`iOS BpkPaginationDots should render correctly when pageCount is 6 and selectedIndex is 9 1`] = `
+<View
+  accessibilityLabel="9 of 6"
+  accessible={true}
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "rgba(37, 32, 51, 0.3)",
+        "borderRadius": 4,
+        "flexDirection": "row",
+        "height": 24,
+        "justifyContent": "center",
+        "paddingHorizontal": 12,
+        "paddingVertical": 8,
+        "width": 72,
+      },
+      null,
+    ]
+  }
+>
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 2,
+        "marginHorizontal": 2,
+        "width": 2,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 3,
+        "marginHorizontal": 2,
+        "width": 3,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(255, 255, 255)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 3,
+        "marginHorizontal": 2,
+        "width": 3,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 2,
+        "marginHorizontal": 2,
+        "width": 2,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`iOS BpkPaginationDots should render correctly when pageCount is 7 and selectedIndex is 0 1`] = `
+<View
+  accessibilityLabel="0 of 7"
+  accessible={true}
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "rgba(37, 32, 51, 0.3)",
+        "borderRadius": 4,
+        "flexDirection": "row",
+        "height": 24,
+        "justifyContent": "center",
+        "paddingHorizontal": 12,
+        "paddingVertical": 8,
+        "width": 72,
+      },
+      null,
+    ]
+  }
+>
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(255, 255, 255)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 3,
+        "marginHorizontal": 2,
+        "width": 3,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 2,
+        "marginHorizontal": 2,
+        "width": 2,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 0,
+        "marginHorizontal": 2,
+        "width": 0,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`iOS BpkPaginationDots should render correctly when pageCount is 7 and selectedIndex is 1 1`] = `
+<View
+  accessibilityLabel="1 of 7"
+  accessible={true}
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "rgba(37, 32, 51, 0.3)",
+        "borderRadius": 4,
+        "flexDirection": "row",
+        "height": 24,
+        "justifyContent": "center",
+        "paddingHorizontal": 12,
+        "paddingVertical": 8,
+        "width": 72,
+      },
+      null,
+    ]
+  }
+>
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(255, 255, 255)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 3,
+        "marginHorizontal": 2,
+        "width": 3,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 2,
+        "marginHorizontal": 2,
+        "width": 2,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 0,
+        "marginHorizontal": 2,
+        "width": 0,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`iOS BpkPaginationDots should render correctly when pageCount is 7 and selectedIndex is 2 1`] = `
+<View
+  accessibilityLabel="2 of 7"
+  accessible={true}
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "rgba(37, 32, 51, 0.3)",
+        "borderRadius": 4,
+        "flexDirection": "row",
+        "height": 24,
+        "justifyContent": "center",
+        "paddingHorizontal": 12,
+        "paddingVertical": 8,
+        "width": 72,
+      },
+      null,
+    ]
+  }
+>
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(255, 255, 255)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 3,
+        "marginHorizontal": 2,
+        "width": 3,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 2,
+        "marginHorizontal": 2,
+        "width": 2,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 0,
+        "marginHorizontal": 2,
+        "width": 0,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`iOS BpkPaginationDots should render correctly when pageCount is 7 and selectedIndex is 3 1`] = `
+<View
+  accessibilityLabel="3 of 7"
+  accessible={true}
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "rgba(37, 32, 51, 0.3)",
+        "borderRadius": 4,
+        "flexDirection": "row",
+        "height": 24,
+        "justifyContent": "center",
+        "paddingHorizontal": 12,
+        "paddingVertical": 8,
+        "width": 72,
+      },
+      null,
+    ]
+  }
+>
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 3,
+        "marginHorizontal": 2,
+        "width": 3,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(255, 255, 255)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 3,
+        "marginHorizontal": 2,
+        "width": 3,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 2,
+        "marginHorizontal": 2,
+        "width": 2,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`iOS BpkPaginationDots should render correctly when pageCount is 7 and selectedIndex is 4 1`] = `
+<View
+  accessibilityLabel="4 of 7"
+  accessible={true}
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "rgba(37, 32, 51, 0.3)",
+        "borderRadius": 4,
+        "flexDirection": "row",
+        "height": 24,
+        "justifyContent": "center",
+        "paddingHorizontal": 12,
+        "paddingVertical": 8,
+        "width": 72,
+      },
+      null,
+    ]
+  }
+>
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 2,
+        "marginHorizontal": 2,
+        "width": 2,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 3,
+        "marginHorizontal": 2,
+        "width": 3,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(255, 255, 255)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 3,
+        "marginHorizontal": 2,
+        "width": 3,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 2,
+        "marginHorizontal": 2,
+        "width": 2,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`iOS BpkPaginationDots should render correctly when pageCount is 7 and selectedIndex is 5 1`] = `
+<View
+  accessibilityLabel="5 of 7"
+  accessible={true}
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "rgba(37, 32, 51, 0.3)",
+        "borderRadius": 4,
+        "flexDirection": "row",
+        "height": 24,
+        "justifyContent": "center",
+        "paddingHorizontal": 12,
+        "paddingVertical": 8,
+        "width": 72,
+      },
+      null,
+    ]
+  }
+>
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 0,
+        "marginHorizontal": 2,
+        "width": 0,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 2,
+        "marginHorizontal": 2,
+        "width": 2,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 3,
+        "marginHorizontal": 2,
+        "width": 3,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(255, 255, 255)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 3,
+        "marginHorizontal": 2,
+        "width": 3,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`iOS BpkPaginationDots should render correctly when pageCount is 7 and selectedIndex is 6 1`] = `
+<View
+  accessibilityLabel="6 of 7"
+  accessible={true}
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "rgba(37, 32, 51, 0.3)",
+        "borderRadius": 4,
+        "flexDirection": "row",
+        "height": 24,
+        "justifyContent": "center",
+        "paddingHorizontal": 12,
+        "paddingVertical": 8,
+        "width": 72,
+      },
+      null,
+    ]
+  }
+>
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 0,
+        "marginHorizontal": 2,
+        "width": 0,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 2,
+        "marginHorizontal": 2,
+        "width": 2,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 3,
+        "marginHorizontal": 2,
+        "width": 3,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(255, 255, 255)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`iOS BpkPaginationDots should render correctly when pageCount is 7 and selectedIndex is 7 1`] = `
+<View
+  accessibilityLabel="7 of 7"
+  accessible={true}
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "rgba(37, 32, 51, 0.3)",
+        "borderRadius": 4,
+        "flexDirection": "row",
+        "height": 24,
+        "justifyContent": "center",
+        "paddingHorizontal": 12,
+        "paddingVertical": 8,
+        "width": 72,
+      },
+      null,
+    ]
+  }
+>
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 2,
+        "marginHorizontal": 2,
+        "width": 2,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 3,
+        "marginHorizontal": 2,
+        "width": 3,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(255, 255, 255)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 3,
+        "marginHorizontal": 2,
+        "width": 3,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 2,
+        "marginHorizontal": 2,
+        "width": 2,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`iOS BpkPaginationDots should render correctly when pageCount is 7 and selectedIndex is 8 1`] = `
+<View
+  accessibilityLabel="8 of 7"
+  accessible={true}
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "rgba(37, 32, 51, 0.3)",
+        "borderRadius": 4,
+        "flexDirection": "row",
+        "height": 24,
+        "justifyContent": "center",
+        "paddingHorizontal": 12,
+        "paddingVertical": 8,
+        "width": 72,
+      },
+      null,
+    ]
+  }
+>
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 2,
+        "marginHorizontal": 2,
+        "width": 2,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 3,
+        "marginHorizontal": 2,
+        "width": 3,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(255, 255, 255)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 3,
+        "marginHorizontal": 2,
+        "width": 3,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 2,
+        "marginHorizontal": 2,
+        "width": 2,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`iOS BpkPaginationDots should render correctly when pageCount is 7 and selectedIndex is 9 1`] = `
+<View
+  accessibilityLabel="9 of 7"
+  accessible={true}
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "rgba(37, 32, 51, 0.3)",
+        "borderRadius": 4,
+        "flexDirection": "row",
+        "height": 24,
+        "justifyContent": "center",
+        "paddingHorizontal": 12,
+        "paddingVertical": 8,
+        "width": 72,
+      },
+      null,
+    ]
+  }
+>
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 2,
+        "marginHorizontal": 2,
+        "width": 2,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 3,
+        "marginHorizontal": 2,
+        "width": 3,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(255, 255, 255)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 3,
+        "marginHorizontal": 2,
+        "width": 3,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 2,
+        "marginHorizontal": 2,
+        "width": 2,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`iOS BpkPaginationDots should render correctly when pageCount is 8 and selectedIndex is 0 1`] = `
+<View
+  accessibilityLabel="0 of 8"
+  accessible={true}
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "rgba(37, 32, 51, 0.3)",
+        "borderRadius": 4,
+        "flexDirection": "row",
+        "height": 24,
+        "justifyContent": "center",
+        "paddingHorizontal": 12,
+        "paddingVertical": 8,
+        "width": 72,
+      },
+      null,
+    ]
+  }
+>
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(255, 255, 255)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 3,
+        "marginHorizontal": 2,
+        "width": 3,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 2,
+        "marginHorizontal": 2,
+        "width": 2,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 0,
+        "marginHorizontal": 2,
+        "width": 0,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`iOS BpkPaginationDots should render correctly when pageCount is 8 and selectedIndex is 1 1`] = `
+<View
+  accessibilityLabel="1 of 8"
+  accessible={true}
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "rgba(37, 32, 51, 0.3)",
+        "borderRadius": 4,
+        "flexDirection": "row",
+        "height": 24,
+        "justifyContent": "center",
+        "paddingHorizontal": 12,
+        "paddingVertical": 8,
+        "width": 72,
+      },
+      null,
+    ]
+  }
+>
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(255, 255, 255)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 3,
+        "marginHorizontal": 2,
+        "width": 3,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 2,
+        "marginHorizontal": 2,
+        "width": 2,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 0,
+        "marginHorizontal": 2,
+        "width": 0,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`iOS BpkPaginationDots should render correctly when pageCount is 8 and selectedIndex is 2 1`] = `
+<View
+  accessibilityLabel="2 of 8"
+  accessible={true}
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "rgba(37, 32, 51, 0.3)",
+        "borderRadius": 4,
+        "flexDirection": "row",
+        "height": 24,
+        "justifyContent": "center",
+        "paddingHorizontal": 12,
+        "paddingVertical": 8,
+        "width": 72,
+      },
+      null,
+    ]
+  }
+>
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(255, 255, 255)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 3,
+        "marginHorizontal": 2,
+        "width": 3,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 2,
+        "marginHorizontal": 2,
+        "width": 2,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 0,
+        "marginHorizontal": 2,
+        "width": 0,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`iOS BpkPaginationDots should render correctly when pageCount is 8 and selectedIndex is 3 1`] = `
+<View
+  accessibilityLabel="3 of 8"
+  accessible={true}
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "rgba(37, 32, 51, 0.3)",
+        "borderRadius": 4,
+        "flexDirection": "row",
+        "height": 24,
+        "justifyContent": "center",
+        "paddingHorizontal": 12,
+        "paddingVertical": 8,
+        "width": 72,
+      },
+      null,
+    ]
+  }
+>
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 3,
+        "marginHorizontal": 2,
+        "width": 3,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(255, 255, 255)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 3,
+        "marginHorizontal": 2,
+        "width": 3,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 2,
+        "marginHorizontal": 2,
+        "width": 2,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`iOS BpkPaginationDots should render correctly when pageCount is 8 and selectedIndex is 4 1`] = `
+<View
+  accessibilityLabel="4 of 8"
+  accessible={true}
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "rgba(37, 32, 51, 0.3)",
+        "borderRadius": 4,
+        "flexDirection": "row",
+        "height": 24,
+        "justifyContent": "center",
+        "paddingHorizontal": 12,
+        "paddingVertical": 8,
+        "width": 72,
+      },
+      null,
+    ]
+  }
+>
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 2,
+        "marginHorizontal": 2,
+        "width": 2,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 3,
+        "marginHorizontal": 2,
+        "width": 3,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(255, 255, 255)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 3,
+        "marginHorizontal": 2,
+        "width": 3,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 2,
+        "marginHorizontal": 2,
+        "width": 2,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`iOS BpkPaginationDots should render correctly when pageCount is 8 and selectedIndex is 5 1`] = `
+<View
+  accessibilityLabel="5 of 8"
+  accessible={true}
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "rgba(37, 32, 51, 0.3)",
+        "borderRadius": 4,
+        "flexDirection": "row",
+        "height": 24,
+        "justifyContent": "center",
+        "paddingHorizontal": 12,
+        "paddingVertical": 8,
+        "width": 72,
+      },
+      null,
+    ]
+  }
+>
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 2,
+        "marginHorizontal": 2,
+        "width": 2,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 3,
+        "marginHorizontal": 2,
+        "width": 3,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(255, 255, 255)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 3,
+        "marginHorizontal": 2,
+        "width": 3,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 2,
+        "marginHorizontal": 2,
+        "width": 2,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`iOS BpkPaginationDots should render correctly when pageCount is 8 and selectedIndex is 6 1`] = `
+<View
+  accessibilityLabel="6 of 8"
+  accessible={true}
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "rgba(37, 32, 51, 0.3)",
+        "borderRadius": 4,
+        "flexDirection": "row",
+        "height": 24,
+        "justifyContent": "center",
+        "paddingHorizontal": 12,
+        "paddingVertical": 8,
+        "width": 72,
+      },
+      null,
+    ]
+  }
+>
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 0,
+        "marginHorizontal": 2,
+        "width": 0,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 2,
+        "marginHorizontal": 2,
+        "width": 2,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 3,
+        "marginHorizontal": 2,
+        "width": 3,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(255, 255, 255)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 3,
+        "marginHorizontal": 2,
+        "width": 3,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`iOS BpkPaginationDots should render correctly when pageCount is 8 and selectedIndex is 7 1`] = `
+<View
+  accessibilityLabel="7 of 8"
+  accessible={true}
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "rgba(37, 32, 51, 0.3)",
+        "borderRadius": 4,
+        "flexDirection": "row",
+        "height": 24,
+        "justifyContent": "center",
+        "paddingHorizontal": 12,
+        "paddingVertical": 8,
+        "width": 72,
+      },
+      null,
+    ]
+  }
+>
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 0,
+        "marginHorizontal": 2,
+        "width": 0,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 2,
+        "marginHorizontal": 2,
+        "width": 2,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 3,
+        "marginHorizontal": 2,
+        "width": 3,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(255, 255, 255)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`iOS BpkPaginationDots should render correctly when pageCount is 8 and selectedIndex is 8 1`] = `
+<View
+  accessibilityLabel="8 of 8"
+  accessible={true}
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "rgba(37, 32, 51, 0.3)",
+        "borderRadius": 4,
+        "flexDirection": "row",
+        "height": 24,
+        "justifyContent": "center",
+        "paddingHorizontal": 12,
+        "paddingVertical": 8,
+        "width": 72,
+      },
+      null,
+    ]
+  }
+>
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 2,
+        "marginHorizontal": 2,
+        "width": 2,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 3,
+        "marginHorizontal": 2,
+        "width": 3,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(255, 255, 255)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 3,
+        "marginHorizontal": 2,
+        "width": 3,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 2,
+        "marginHorizontal": 2,
+        "width": 2,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`iOS BpkPaginationDots should render correctly when pageCount is 8 and selectedIndex is 9 1`] = `
+<View
+  accessibilityLabel="9 of 8"
+  accessible={true}
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "rgba(37, 32, 51, 0.3)",
+        "borderRadius": 4,
+        "flexDirection": "row",
+        "height": 24,
+        "justifyContent": "center",
+        "paddingHorizontal": 12,
+        "paddingVertical": 8,
+        "width": 72,
+      },
+      null,
+    ]
+  }
+>
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 2,
+        "marginHorizontal": 2,
+        "width": 2,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 3,
+        "marginHorizontal": 2,
+        "width": 3,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(255, 255, 255)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 3,
+        "marginHorizontal": 2,
+        "width": 3,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 2,
+        "marginHorizontal": 2,
+        "width": 2,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`iOS BpkPaginationDots should render correctly when pageCount is 9 and selectedIndex is 0 1`] = `
+<View
+  accessibilityLabel="0 of 9"
+  accessible={true}
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "rgba(37, 32, 51, 0.3)",
+        "borderRadius": 4,
+        "flexDirection": "row",
+        "height": 24,
+        "justifyContent": "center",
+        "paddingHorizontal": 12,
+        "paddingVertical": 8,
+        "width": 72,
+      },
+      null,
+    ]
+  }
+>
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(255, 255, 255)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 3,
+        "marginHorizontal": 2,
+        "width": 3,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 2,
+        "marginHorizontal": 2,
+        "width": 2,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 0,
+        "marginHorizontal": 2,
+        "width": 0,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`iOS BpkPaginationDots should render correctly when pageCount is 9 and selectedIndex is 1 1`] = `
+<View
+  accessibilityLabel="1 of 9"
+  accessible={true}
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "rgba(37, 32, 51, 0.3)",
+        "borderRadius": 4,
+        "flexDirection": "row",
+        "height": 24,
+        "justifyContent": "center",
+        "paddingHorizontal": 12,
+        "paddingVertical": 8,
+        "width": 72,
+      },
+      null,
+    ]
+  }
+>
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(255, 255, 255)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 3,
+        "marginHorizontal": 2,
+        "width": 3,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 2,
+        "marginHorizontal": 2,
+        "width": 2,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 0,
+        "marginHorizontal": 2,
+        "width": 0,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`iOS BpkPaginationDots should render correctly when pageCount is 9 and selectedIndex is 2 1`] = `
+<View
+  accessibilityLabel="2 of 9"
+  accessible={true}
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "rgba(37, 32, 51, 0.3)",
+        "borderRadius": 4,
+        "flexDirection": "row",
+        "height": 24,
+        "justifyContent": "center",
+        "paddingHorizontal": 12,
+        "paddingVertical": 8,
+        "width": 72,
+      },
+      null,
+    ]
+  }
+>
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(255, 255, 255)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 3,
+        "marginHorizontal": 2,
+        "width": 3,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 2,
+        "marginHorizontal": 2,
+        "width": 2,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 0,
+        "marginHorizontal": 2,
+        "width": 0,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`iOS BpkPaginationDots should render correctly when pageCount is 9 and selectedIndex is 3 1`] = `
+<View
+  accessibilityLabel="3 of 9"
+  accessible={true}
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "rgba(37, 32, 51, 0.3)",
+        "borderRadius": 4,
+        "flexDirection": "row",
+        "height": 24,
+        "justifyContent": "center",
+        "paddingHorizontal": 12,
+        "paddingVertical": 8,
+        "width": 72,
+      },
+      null,
+    ]
+  }
+>
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 3,
+        "marginHorizontal": 2,
+        "width": 3,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(255, 255, 255)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 3,
+        "marginHorizontal": 2,
+        "width": 3,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 2,
+        "marginHorizontal": 2,
+        "width": 2,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`iOS BpkPaginationDots should render correctly when pageCount is 9 and selectedIndex is 4 1`] = `
+<View
+  accessibilityLabel="4 of 9"
+  accessible={true}
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "rgba(37, 32, 51, 0.3)",
+        "borderRadius": 4,
+        "flexDirection": "row",
+        "height": 24,
+        "justifyContent": "center",
+        "paddingHorizontal": 12,
+        "paddingVertical": 8,
+        "width": 72,
+      },
+      null,
+    ]
+  }
+>
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 2,
+        "marginHorizontal": 2,
+        "width": 2,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 3,
+        "marginHorizontal": 2,
+        "width": 3,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(255, 255, 255)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 3,
+        "marginHorizontal": 2,
+        "width": 3,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 2,
+        "marginHorizontal": 2,
+        "width": 2,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`iOS BpkPaginationDots should render correctly when pageCount is 9 and selectedIndex is 5 1`] = `
+<View
+  accessibilityLabel="5 of 9"
+  accessible={true}
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "rgba(37, 32, 51, 0.3)",
+        "borderRadius": 4,
+        "flexDirection": "row",
+        "height": 24,
+        "justifyContent": "center",
+        "paddingHorizontal": 12,
+        "paddingVertical": 8,
+        "width": 72,
+      },
+      null,
+    ]
+  }
+>
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 2,
+        "marginHorizontal": 2,
+        "width": 2,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 3,
+        "marginHorizontal": 2,
+        "width": 3,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(255, 255, 255)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 3,
+        "marginHorizontal": 2,
+        "width": 3,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 2,
+        "marginHorizontal": 2,
+        "width": 2,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`iOS BpkPaginationDots should render correctly when pageCount is 9 and selectedIndex is 6 1`] = `
+<View
+  accessibilityLabel="6 of 9"
+  accessible={true}
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "rgba(37, 32, 51, 0.3)",
+        "borderRadius": 4,
+        "flexDirection": "row",
+        "height": 24,
+        "justifyContent": "center",
+        "paddingHorizontal": 12,
+        "paddingVertical": 8,
+        "width": 72,
+      },
+      null,
+    ]
+  }
+>
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 2,
+        "marginHorizontal": 2,
+        "width": 2,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 3,
+        "marginHorizontal": 2,
+        "width": 3,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(255, 255, 255)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 3,
+        "marginHorizontal": 2,
+        "width": 3,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 2,
+        "marginHorizontal": 2,
+        "width": 2,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`iOS BpkPaginationDots should render correctly when pageCount is 9 and selectedIndex is 7 1`] = `
+<View
+  accessibilityLabel="7 of 9"
+  accessible={true}
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "rgba(37, 32, 51, 0.3)",
+        "borderRadius": 4,
+        "flexDirection": "row",
+        "height": 24,
+        "justifyContent": "center",
+        "paddingHorizontal": 12,
+        "paddingVertical": 8,
+        "width": 72,
+      },
+      null,
+    ]
+  }
+>
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 0,
+        "marginHorizontal": 2,
+        "width": 0,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 2,
+        "marginHorizontal": 2,
+        "width": 2,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 3,
+        "marginHorizontal": 2,
+        "width": 3,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(255, 255, 255)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 3,
+        "marginHorizontal": 2,
+        "width": 3,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`iOS BpkPaginationDots should render correctly when pageCount is 9 and selectedIndex is 8 1`] = `
+<View
+  accessibilityLabel="8 of 9"
+  accessible={true}
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "rgba(37, 32, 51, 0.3)",
+        "borderRadius": 4,
+        "flexDirection": "row",
+        "height": 24,
+        "justifyContent": "center",
+        "paddingHorizontal": 12,
+        "paddingVertical": 8,
+        "width": 72,
+      },
+      null,
+    ]
+  }
+>
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 0,
+        "marginHorizontal": 2,
+        "width": 0,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 2,
+        "marginHorizontal": 2,
+        "width": 2,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 3,
+        "marginHorizontal": 2,
+        "width": 3,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(255, 255, 255)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`iOS BpkPaginationDots should render correctly when pageCount is 9 and selectedIndex is 9 1`] = `
+<View
+  accessibilityLabel="9 of 9"
+  accessible={true}
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "rgba(37, 32, 51, 0.3)",
+        "borderRadius": 4,
+        "flexDirection": "row",
+        "height": 24,
+        "justifyContent": "center",
+        "paddingHorizontal": 12,
+        "paddingVertical": 8,
+        "width": 72,
+      },
+      null,
+    ]
+  }
+>
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 2,
+        "marginHorizontal": 2,
+        "width": 2,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 3,
+        "marginHorizontal": 2,
+        "width": 3,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(255, 255, 255)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 3,
+        "marginHorizontal": 2,
+        "width": 3,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 2,
+        "marginHorizontal": 2,
+        "width": 2,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`iOS BpkPaginationDots should render correctly when pageCount is 10 and selectedIndex is 0 1`] = `
+<View
+  accessibilityLabel="0 of 10"
+  accessible={true}
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "rgba(37, 32, 51, 0.3)",
+        "borderRadius": 4,
+        "flexDirection": "row",
+        "height": 24,
+        "justifyContent": "center",
+        "paddingHorizontal": 12,
+        "paddingVertical": 8,
+        "width": 72,
+      },
+      null,
+    ]
+  }
+>
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(255, 255, 255)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 3,
+        "marginHorizontal": 2,
+        "width": 3,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 2,
+        "marginHorizontal": 2,
+        "width": 2,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 0,
+        "marginHorizontal": 2,
+        "width": 0,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`iOS BpkPaginationDots should render correctly when pageCount is 10 and selectedIndex is 1 1`] = `
+<View
+  accessibilityLabel="1 of 10"
+  accessible={true}
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "rgba(37, 32, 51, 0.3)",
+        "borderRadius": 4,
+        "flexDirection": "row",
+        "height": 24,
+        "justifyContent": "center",
+        "paddingHorizontal": 12,
+        "paddingVertical": 8,
+        "width": 72,
+      },
+      null,
+    ]
+  }
+>
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(255, 255, 255)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 3,
+        "marginHorizontal": 2,
+        "width": 3,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 2,
+        "marginHorizontal": 2,
+        "width": 2,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 0,
+        "marginHorizontal": 2,
+        "width": 0,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`iOS BpkPaginationDots should render correctly when pageCount is 10 and selectedIndex is 2 1`] = `
+<View
+  accessibilityLabel="2 of 10"
+  accessible={true}
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "rgba(37, 32, 51, 0.3)",
+        "borderRadius": 4,
+        "flexDirection": "row",
+        "height": 24,
+        "justifyContent": "center",
+        "paddingHorizontal": 12,
+        "paddingVertical": 8,
+        "width": 72,
+      },
+      null,
+    ]
+  }
+>
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(255, 255, 255)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 3,
+        "marginHorizontal": 2,
+        "width": 3,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 2,
+        "marginHorizontal": 2,
+        "width": 2,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 0,
+        "marginHorizontal": 2,
+        "width": 0,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`iOS BpkPaginationDots should render correctly when pageCount is 10 and selectedIndex is 3 1`] = `
+<View
+  accessibilityLabel="3 of 10"
+  accessible={true}
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "rgba(37, 32, 51, 0.3)",
+        "borderRadius": 4,
+        "flexDirection": "row",
+        "height": 24,
+        "justifyContent": "center",
+        "paddingHorizontal": 12,
+        "paddingVertical": 8,
+        "width": 72,
+      },
+      null,
+    ]
+  }
+>
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 3,
+        "marginHorizontal": 2,
+        "width": 3,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(255, 255, 255)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 3,
+        "marginHorizontal": 2,
+        "width": 3,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 2,
+        "marginHorizontal": 2,
+        "width": 2,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`iOS BpkPaginationDots should render correctly when pageCount is 10 and selectedIndex is 4 1`] = `
+<View
+  accessibilityLabel="4 of 10"
+  accessible={true}
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "rgba(37, 32, 51, 0.3)",
+        "borderRadius": 4,
+        "flexDirection": "row",
+        "height": 24,
+        "justifyContent": "center",
+        "paddingHorizontal": 12,
+        "paddingVertical": 8,
+        "width": 72,
+      },
+      null,
+    ]
+  }
+>
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 2,
+        "marginHorizontal": 2,
+        "width": 2,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 3,
+        "marginHorizontal": 2,
+        "width": 3,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(255, 255, 255)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 3,
+        "marginHorizontal": 2,
+        "width": 3,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 2,
+        "marginHorizontal": 2,
+        "width": 2,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`iOS BpkPaginationDots should render correctly when pageCount is 10 and selectedIndex is 5 1`] = `
+<View
+  accessibilityLabel="5 of 10"
+  accessible={true}
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "rgba(37, 32, 51, 0.3)",
+        "borderRadius": 4,
+        "flexDirection": "row",
+        "height": 24,
+        "justifyContent": "center",
+        "paddingHorizontal": 12,
+        "paddingVertical": 8,
+        "width": 72,
+      },
+      null,
+    ]
+  }
+>
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 2,
+        "marginHorizontal": 2,
+        "width": 2,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 3,
+        "marginHorizontal": 2,
+        "width": 3,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(255, 255, 255)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 3,
+        "marginHorizontal": 2,
+        "width": 3,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 2,
+        "marginHorizontal": 2,
+        "width": 2,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`iOS BpkPaginationDots should render correctly when pageCount is 10 and selectedIndex is 6 1`] = `
+<View
+  accessibilityLabel="6 of 10"
+  accessible={true}
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "rgba(37, 32, 51, 0.3)",
+        "borderRadius": 4,
+        "flexDirection": "row",
+        "height": 24,
+        "justifyContent": "center",
+        "paddingHorizontal": 12,
+        "paddingVertical": 8,
+        "width": 72,
+      },
+      null,
+    ]
+  }
+>
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 2,
+        "marginHorizontal": 2,
+        "width": 2,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 3,
+        "marginHorizontal": 2,
+        "width": 3,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(255, 255, 255)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 3,
+        "marginHorizontal": 2,
+        "width": 3,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 2,
+        "marginHorizontal": 2,
+        "width": 2,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`iOS BpkPaginationDots should render correctly when pageCount is 10 and selectedIndex is 7 1`] = `
+<View
+  accessibilityLabel="7 of 10"
+  accessible={true}
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "rgba(37, 32, 51, 0.3)",
+        "borderRadius": 4,
+        "flexDirection": "row",
+        "height": 24,
+        "justifyContent": "center",
+        "paddingHorizontal": 12,
+        "paddingVertical": 8,
+        "width": 72,
+      },
+      null,
+    ]
+  }
+>
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 2,
+        "marginHorizontal": 2,
+        "width": 2,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 3,
+        "marginHorizontal": 2,
+        "width": 3,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(255, 255, 255)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 3,
+        "marginHorizontal": 2,
+        "width": 3,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 2,
+        "marginHorizontal": 2,
+        "width": 2,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`iOS BpkPaginationDots should render correctly when pageCount is 10 and selectedIndex is 8 1`] = `
+<View
+  accessibilityLabel="8 of 10"
+  accessible={true}
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "rgba(37, 32, 51, 0.3)",
+        "borderRadius": 4,
+        "flexDirection": "row",
+        "height": 24,
+        "justifyContent": "center",
+        "paddingHorizontal": 12,
+        "paddingVertical": 8,
+        "width": 72,
+      },
+      null,
+    ]
+  }
+>
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 0,
+        "marginHorizontal": 2,
+        "width": 0,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 2,
+        "marginHorizontal": 2,
+        "width": 2,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 3,
+        "marginHorizontal": 2,
+        "width": 3,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(255, 255, 255)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 3,
+        "marginHorizontal": 2,
+        "width": 3,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`iOS BpkPaginationDots should render correctly when pageCount is 10 and selectedIndex is 9 1`] = `
+<View
+  accessibilityLabel="9 of 10"
+  accessible={true}
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "rgba(37, 32, 51, 0.3)",
+        "borderRadius": 4,
+        "flexDirection": "row",
+        "height": 24,
+        "justifyContent": "center",
+        "paddingHorizontal": 12,
+        "paddingVertical": 8,
+        "width": 72,
+      },
+      null,
+    ]
+  }
+>
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 0,
+        "marginHorizontal": 2,
+        "width": 0,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 2,
+        "marginHorizontal": 2,
+        "width": 2,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 3,
+        "marginHorizontal": 2,
+        "width": 3,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(255, 255, 255)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`iOS BpkPaginationDots should render correctly with arbitrary props 1`] = `
+<View
+  accessibilityLabel="0 of 5"
+  accessible={true}
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "rgba(37, 32, 51, 0.3)",
+        "borderRadius": 4,
+        "flexDirection": "row",
+        "height": 24,
+        "justifyContent": "center",
+        "paddingHorizontal": 12,
+        "paddingVertical": 8,
+        "width": 72,
+      },
+      null,
+    ]
+  }
+  testID="123"
+>
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(255, 255, 255)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`iOS BpkPaginationDots should render correctly with custom styles 1`] = `
+<View
+  accessibilityLabel="0 of 5"
+  accessible={true}
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "rgba(37, 32, 51, 0.3)",
+        "borderRadius": 4,
+        "flexDirection": "row",
+        "height": 24,
+        "justifyContent": "center",
+        "paddingHorizontal": 12,
+        "paddingVertical": 8,
+        "width": 72,
+      },
+      Object {
+        "marginTop": 10,
+      },
+    ]
+  }
+>
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(255, 255, 255)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 40,
+        "height": 6,
+        "marginHorizontal": 2,
+        "width": 6,
+      }
+    }
+  />
+</View>
+`;

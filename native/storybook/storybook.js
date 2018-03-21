@@ -54,6 +54,7 @@ configure(() => {
   require('../packages/react-native-bpk-component-icon/stories');
   require('../packages/react-native-bpk-component-navigation-bar/stories');
   require('../packages/react-native-bpk-component-nudger/stories');
+  require('../packages/react-native-bpk-component-pagination-dots/stories');
   require('../packages/react-native-bpk-component-panel/stories');
   require('../packages/react-native-bpk-component-phone-input/stories');
   require('../packages/react-native-bpk-component-picker/stories');

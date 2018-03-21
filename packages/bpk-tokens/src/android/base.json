@@ -5,6 +5,7 @@
     "./base/buttons.json",
     "./base/colors.json",
     "./base/elevation.json",
+    "./base/pagination-dots.json",
     "./base/spacing.json",
     "./base/typography.json"
   ]
