@@ -1,6 +1,6 @@
 {
   "name": "react-native-bpk-component-picker",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "private": true,
   "main": "index.js",
   "description": "Backpack React Native picker component.",
