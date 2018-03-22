@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+**Added:**
+- react-native-bpk-component-picker:
+  - Introducing the React Native picker component.
+
 **Fixed:**
 - react-native-bpk-component-navigation-bar:
   - When providing an image for the title we no longer override the style. Instead, we append to it.
