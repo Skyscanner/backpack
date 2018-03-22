@@ -70,6 +70,26 @@ export const restoreScroll = () => {
   }
 };
 
+export const fixBody = () => {
+  const body = getBodyElement();
+
+  if (!body) {
+    return;
+  }
+
+  body.style.position = 'fixed';
+};
+
+export const unfixBody = () => {
+  const body = getBodyElement();
+
+  if (!body) {
+    return;
+  }
+
+  body.style.position = '';
+};
+
 export const lockScroll = () => {
   const body = getBodyElement();
 
