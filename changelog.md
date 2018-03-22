@@ -2,12 +2,16 @@
 
 ## Unreleased
 
+_Nothing yet.._
+
+## 2018-03-22 - Native Picker Component
+
 **Added:**
-- react-native-bpk-component-picker:
+- react-native-bpk-component-picker: 0.0.1 => 1.0.0
   - Introducing the React Native picker component.
 
 **Fixed:**
-- react-native-bpk-component-navigation-bar:
+- react-native-bpk-component-navigation-bar: 1.0.2 => 1.0.3
   - When providing an image for the title we no longer override the style. Instead, we append to it.
 
 ## 2018-03-21 - Native Navigation Bar Improvements
