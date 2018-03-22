@@ -34,174 +34,183 @@ exports[`Android BpkPicker should render correctly 1`] = `
     }
     testID={undefined}
   />
-  <RCTScrollView
-    data={
-      Array [
-        Object {
-          "index": 0,
-          "label": "foo",
-          "selected": false,
-          "value": "foo",
-        },
-        Object {
-          "index": 1,
-          "label": "bar",
-          "selected": false,
-          "value": "bar",
-        },
-      ]
-    }
-    disableVirtualization={false}
-    getItem={[Function]}
-    getItemCount={[Function]}
-    getItemLayout={[Function]}
-    horizontal={false}
-    initialNumToRender={6}
-    initialScrollIndex={0}
-    keyExtractor={[Function]}
-    maxToRenderPerBatch={10}
-    numColumns={1}
-    onContentSizeChange={[Function]}
-    onEndReachedThreshold={2}
-    onLayout={[Function]}
-    onMomentumScrollEnd={[Function]}
-    onScroll={[Function]}
-    onScrollBeginDrag={[Function]}
-    onScrollEndDrag={[Function]}
-    renderItem={[Function]}
-    scrollEventThrottle={50}
-    stickyHeaderIndices={Array []}
+  <View
     style={
-      Array [
-        Object {
-          "alignSelf": "center",
-          "backgroundColor": "rgb(255, 255, 255)",
-          "borderRadius": 2,
-          "elevation": 5,
-          "top": "50%",
-          "width": "90%",
-        },
-        Object {
-          "marginTop": -56,
-          "maxHeight": 112,
-        },
-      ]
+      Object {
+        "alignItems": "center",
+        "flexDirection": "row",
+        "height": "100%",
+        "justifyContent": "center",
+        "padding": 16,
+        "width": "100%",
+      }
     }
-    updateCellsBatchingPeriod={50}
-    viewabilityConfigCallbackPairs={Array []}
-    windowSize={21}
   >
-    <View>
-      <View
-        onLayout={undefined}
-        style={null}
-      >
+    <RCTScrollView
+      data={
+        Array [
+          Object {
+            "index": 0,
+            "label": "foo",
+            "selected": false,
+            "value": "foo",
+          },
+          Object {
+            "index": 1,
+            "label": "bar",
+            "selected": false,
+            "value": "bar",
+          },
+        ]
+      }
+      disableVirtualization={false}
+      getItem={[Function]}
+      getItemCount={[Function]}
+      getItemLayout={[Function]}
+      horizontal={false}
+      initialNumToRender={6}
+      initialScrollIndex={0}
+      keyExtractor={[Function]}
+      maxToRenderPerBatch={10}
+      numColumns={1}
+      onContentSizeChange={[Function]}
+      onEndReachedThreshold={2}
+      onLayout={[Function]}
+      onMomentumScrollEnd={[Function]}
+      onScroll={[Function]}
+      onScrollBeginDrag={[Function]}
+      onScrollEndDrag={[Function]}
+      renderItem={[Function]}
+      scrollEventThrottle={50}
+      stickyHeaderIndices={Array []}
+      style={
+        Array [
+          Object {
+            "backgroundColor": "rgb(255, 255, 255)",
+            "borderRadius": 2,
+            "elevation": 5,
+          },
+          Object {
+            "maxHeight": 112,
+          },
+        ]
+      }
+      updateCellsBatchingPeriod={50}
+      viewabilityConfigCallbackPairs={Array []}
+      windowSize={21}
+    >
+      <View>
         <View
-          accessibilityComponentType="button"
-          accessibilityLabel="foo"
-          accessibilityTraits={
-            Array [
-              "button",
-            ]
-          }
-          accessible={true}
-          hitSlop={undefined}
-          nativeBackgroundAndroid={
-            Object {
-              "attribute": "selectableItemBackground",
-              "type": "ThemeAttrAndroid",
-            }
-          }
           onLayout={undefined}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
-          style={
-            Object {
-              "padding": 16,
-            }
-          }
-          testID={undefined}
+          style={null}
         >
-          <Text
-            accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
-            style={
+          <View
+            accessibilityComponentType="button"
+            accessibilityLabel="foo"
+            accessibilityTraits={
               Array [
-                Object {
-                  "color": "rgb(82, 76, 97)",
-                  "fontFamily": "sans-serif",
-                  "fontSize": 16,
-                  "fontWeight": "400",
-                },
-                Object {},
+                "button",
               ]
             }
-          >
-            foo
-          </Text>
-        </View>
-      </View>
-      <View
-        onLayout={undefined}
-        style={null}
-      >
-        <View
-          accessibilityComponentType="button"
-          accessibilityLabel="bar"
-          accessibilityTraits={
-            Array [
-              "button",
-            ]
-          }
-          accessible={true}
-          hitSlop={undefined}
-          nativeBackgroundAndroid={
-            Object {
-              "attribute": "selectableItemBackground",
-              "type": "ThemeAttrAndroid",
-            }
-          }
-          onLayout={undefined}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
-          style={
-            Object {
-              "padding": 16,
-            }
-          }
-          testID={undefined}
-        >
-          <Text
             accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
+            hitSlop={undefined}
+            nativeBackgroundAndroid={
+              Object {
+                "attribute": "selectableItemBackground",
+                "type": "ThemeAttrAndroid",
+              }
+            }
+            onLayout={undefined}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
             style={
+              Object {
+                "padding": 16,
+              }
+            }
+            testID={undefined}
+          >
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Array [
+                  Object {
+                    "color": "rgb(82, 76, 97)",
+                    "fontFamily": "sans-serif",
+                    "fontSize": 16,
+                    "fontWeight": "400",
+                  },
+                  Object {},
+                ]
+              }
+            >
+              foo
+            </Text>
+          </View>
+        </View>
+        <View
+          onLayout={undefined}
+          style={null}
+        >
+          <View
+            accessibilityComponentType="button"
+            accessibilityLabel="bar"
+            accessibilityTraits={
               Array [
-                Object {
-                  "color": "rgb(82, 76, 97)",
-                  "fontFamily": "sans-serif",
-                  "fontSize": 16,
-                  "fontWeight": "400",
-                },
-                Object {},
+                "button",
               ]
             }
+            accessible={true}
+            hitSlop={undefined}
+            nativeBackgroundAndroid={
+              Object {
+                "attribute": "selectableItemBackground",
+                "type": "ThemeAttrAndroid",
+              }
+            }
+            onLayout={undefined}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "padding": 16,
+              }
+            }
+            testID={undefined}
           >
-            bar
-          </Text>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Array [
+                  Object {
+                    "color": "rgb(82, 76, 97)",
+                    "fontFamily": "sans-serif",
+                    "fontSize": 16,
+                    "fontWeight": "400",
+                  },
+                  Object {},
+                ]
+              }
+            >
+              bar
+            </Text>
+          </View>
         </View>
       </View>
-    </View>
-  </RCTScrollView>
+    </RCTScrollView>
+  </View>
 </Modal>
 `;
 
@@ -239,176 +248,185 @@ exports[`Android BpkPicker should render correctly with a selected value 1`] = `
     }
     testID={undefined}
   />
-  <RCTScrollView
-    data={
-      Array [
-        Object {
-          "index": 0,
-          "label": "foo",
-          "selected": true,
-          "value": "foo",
-        },
-        Object {
-          "index": 1,
-          "label": "bar",
-          "selected": false,
-          "value": "bar",
-        },
-      ]
-    }
-    disableVirtualization={false}
-    getItem={[Function]}
-    getItemCount={[Function]}
-    getItemLayout={[Function]}
-    horizontal={false}
-    initialNumToRender={6}
-    initialScrollIndex={0}
-    keyExtractor={[Function]}
-    maxToRenderPerBatch={10}
-    numColumns={1}
-    onContentSizeChange={[Function]}
-    onEndReachedThreshold={2}
-    onLayout={[Function]}
-    onMomentumScrollEnd={[Function]}
-    onScroll={[Function]}
-    onScrollBeginDrag={[Function]}
-    onScrollEndDrag={[Function]}
-    renderItem={[Function]}
-    scrollEventThrottle={50}
-    stickyHeaderIndices={Array []}
+  <View
     style={
-      Array [
-        Object {
-          "alignSelf": "center",
-          "backgroundColor": "rgb(255, 255, 255)",
-          "borderRadius": 2,
-          "elevation": 5,
-          "top": "50%",
-          "width": "90%",
-        },
-        Object {
-          "marginTop": -56,
-          "maxHeight": 112,
-        },
-      ]
+      Object {
+        "alignItems": "center",
+        "flexDirection": "row",
+        "height": "100%",
+        "justifyContent": "center",
+        "padding": 16,
+        "width": "100%",
+      }
     }
-    updateCellsBatchingPeriod={50}
-    viewabilityConfigCallbackPairs={Array []}
-    windowSize={21}
   >
-    <View>
-      <View
-        onLayout={undefined}
-        style={null}
-      >
+    <RCTScrollView
+      data={
+        Array [
+          Object {
+            "index": 0,
+            "label": "foo",
+            "selected": true,
+            "value": "foo",
+          },
+          Object {
+            "index": 1,
+            "label": "bar",
+            "selected": false,
+            "value": "bar",
+          },
+        ]
+      }
+      disableVirtualization={false}
+      getItem={[Function]}
+      getItemCount={[Function]}
+      getItemLayout={[Function]}
+      horizontal={false}
+      initialNumToRender={6}
+      initialScrollIndex={0}
+      keyExtractor={[Function]}
+      maxToRenderPerBatch={10}
+      numColumns={1}
+      onContentSizeChange={[Function]}
+      onEndReachedThreshold={2}
+      onLayout={[Function]}
+      onMomentumScrollEnd={[Function]}
+      onScroll={[Function]}
+      onScrollBeginDrag={[Function]}
+      onScrollEndDrag={[Function]}
+      renderItem={[Function]}
+      scrollEventThrottle={50}
+      stickyHeaderIndices={Array []}
+      style={
+        Array [
+          Object {
+            "backgroundColor": "rgb(255, 255, 255)",
+            "borderRadius": 2,
+            "elevation": 5,
+          },
+          Object {
+            "maxHeight": 112,
+          },
+        ]
+      }
+      updateCellsBatchingPeriod={50}
+      viewabilityConfigCallbackPairs={Array []}
+      windowSize={21}
+    >
+      <View>
         <View
-          accessibilityComponentType="button"
-          accessibilityLabel="foo"
-          accessibilityTraits={
-            Array [
-              "button",
-              "selected",
-            ]
-          }
-          accessible={true}
-          hitSlop={undefined}
-          nativeBackgroundAndroid={
-            Object {
-              "attribute": "selectableItemBackground",
-              "type": "ThemeAttrAndroid",
-            }
-          }
           onLayout={undefined}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
-          style={
-            Object {
-              "padding": 16,
-            }
-          }
-          testID={undefined}
+          style={null}
         >
-          <Text
-            accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
-            style={
+          <View
+            accessibilityComponentType="button"
+            accessibilityLabel="foo"
+            accessibilityTraits={
               Array [
-                Object {
-                  "color": "rgb(82, 76, 97)",
-                  "fontFamily": "sans-serif",
-                  "fontSize": 16,
-                  "fontWeight": "400",
-                },
-                Object {
-                  "color": "rgb(0, 178, 214)",
-                },
+                "button",
+                "selected",
               ]
             }
-          >
-            foo
-          </Text>
-        </View>
-      </View>
-      <View
-        onLayout={undefined}
-        style={null}
-      >
-        <View
-          accessibilityComponentType="button"
-          accessibilityLabel="bar"
-          accessibilityTraits={
-            Array [
-              "button",
-            ]
-          }
-          accessible={true}
-          hitSlop={undefined}
-          nativeBackgroundAndroid={
-            Object {
-              "attribute": "selectableItemBackground",
-              "type": "ThemeAttrAndroid",
-            }
-          }
-          onLayout={undefined}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
-          style={
-            Object {
-              "padding": 16,
-            }
-          }
-          testID={undefined}
-        >
-          <Text
             accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
+            hitSlop={undefined}
+            nativeBackgroundAndroid={
+              Object {
+                "attribute": "selectableItemBackground",
+                "type": "ThemeAttrAndroid",
+              }
+            }
+            onLayout={undefined}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
             style={
+              Object {
+                "padding": 16,
+              }
+            }
+            testID={undefined}
+          >
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Array [
+                  Object {
+                    "color": "rgb(82, 76, 97)",
+                    "fontFamily": "sans-serif",
+                    "fontSize": 16,
+                    "fontWeight": "400",
+                  },
+                  Object {
+                    "color": "rgb(0, 178, 214)",
+                  },
+                ]
+              }
+            >
+              foo
+            </Text>
+          </View>
+        </View>
+        <View
+          onLayout={undefined}
+          style={null}
+        >
+          <View
+            accessibilityComponentType="button"
+            accessibilityLabel="bar"
+            accessibilityTraits={
               Array [
-                Object {
-                  "color": "rgb(82, 76, 97)",
-                  "fontFamily": "sans-serif",
-                  "fontSize": 16,
-                  "fontWeight": "400",
-                },
-                Object {},
+                "button",
               ]
             }
+            accessible={true}
+            hitSlop={undefined}
+            nativeBackgroundAndroid={
+              Object {
+                "attribute": "selectableItemBackground",
+                "type": "ThemeAttrAndroid",
+              }
+            }
+            onLayout={undefined}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "padding": 16,
+              }
+            }
+            testID={undefined}
           >
-            bar
-          </Text>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Array [
+                  Object {
+                    "color": "rgb(82, 76, 97)",
+                    "fontFamily": "sans-serif",
+                    "fontSize": 16,
+                    "fontWeight": "400",
+                  },
+                  Object {},
+                ]
+              }
+            >
+              bar
+            </Text>
+          </View>
         </View>
       </View>
-    </View>
-  </RCTScrollView>
+    </RCTScrollView>
+  </View>
 </Modal>
 `;
