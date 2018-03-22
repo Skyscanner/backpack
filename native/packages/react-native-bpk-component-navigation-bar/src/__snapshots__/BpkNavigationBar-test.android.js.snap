@@ -351,9 +351,12 @@ exports[`android BpkNavigationBar should render correctly with a title view 1`] 
     >
       <View
         style={
-          Object {
-            "maxHeight": 32,
-          }
+          Array [
+            null,
+            Object {
+              "maxHeight": 32,
+            },
+          ]
         }
         testID="title-view"
       />
