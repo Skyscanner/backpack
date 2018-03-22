@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+**Fixed:**
+- react-native-bpk-component-navigation-bar:
+  - When providing an image for the title we no longer override the style. Instead, we append to it.
+
 ## 2018-03-21 - Native Navigation Bar Improvements
 
 **Fixed:**
