@@ -33,17 +33,22 @@ const AnimatedIndicator = withAnimatedProps(BpkHorizontalNavSelectedIndicator, [
 ]);
 
 const styles = StyleSheet.create({
-  horizontalNav: {
+  nav: {
     borderColor: 'transparent',
     borderBottomColor: colorGray100,
+    flexDirection: 'column',
     borderWidth: borderSizeSm,
   },
-  horizontalNavInner: {
+  // to allow ScrollView item to be properly positioned in the spaceAround config
+  // the contentContainerStyle needs flexGrow to have the children define the end
+  // width and allow overflow from the view
+  navSpaceAround: {
+    flexGrow: 1,
+  },
+  inner: {
     flexDirection: 'row',
   },
-  spaceAround: {
-    flex: 0,
-    flexGrow: 1,
+  innerSpaceAround: {
     justifyContent: 'space-around',
   },
 });
@@ -86,9 +91,16 @@ class BpkHorizontalNav extends React.Component {
   render() {
     const { children, selectedId, spaceAround, style, ...rest } = this.props;
 
-    const navStyle = [styles.horizontalNav];
+    const navStyle = [styles.nav];
+    const innerViewStyle = [styles.inner];
+
     if (spaceAround) {
-      navStyle.push(styles.spaceAround);
+      navStyle.push(styles.navSpaceAround);
+      innerViewStyle.push(styles.innerSpaceAround);
+    }
+
+    if (style) {
+      navStyle.push(style);
     }
 
     const enhancedChildren = React.Children.map(
@@ -120,15 +132,13 @@ class BpkHorizontalNav extends React.Component {
     return (
       <ScrollView
         alwaysBounceHorizontal={false}
-        contentContainerStyle={[navStyle, style]}
+        contentContainerStyle={navStyle}
         horizontal
         showsHorizontalScrollIndicator={false}
         {...rest}
       >
-        <View>
-          <View style={styles.horizontalNavInner}>{enhancedChildren}</View>
-          {renderIndicator()}
-        </View>
+        <View style={innerViewStyle}>{enhancedChildren}</View>
+        {renderIndicator()}
       </ScrollView>
     );
   }
