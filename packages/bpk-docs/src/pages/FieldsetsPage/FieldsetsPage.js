@@ -26,6 +26,9 @@ import readme from 'bpk-component-fieldset/readme.md';
 import PropTypes from 'prop-types';
 import React, { cloneElement, Component } from 'react';
 import { cssModules } from 'bpk-react-utils';
+import BpkAutosuggest, {
+  BpkAutosuggestSuggestion,
+} from 'bpk-component-autosuggest';
 
 import STYLES from './fieldsets-page.scss';
 import * as ROUTES from './../../constants/routes';
@@ -34,6 +37,151 @@ import Paragraph from './../../components/Paragraph';
 
 const getClassName = cssModules(STYLES);
 
+const offices = [
+  {
+    name: 'Barcelona',
+    code: 'BCN',
+    country: 'Spain',
+  },
+  {
+    name: 'Beijing',
+    code: 'Any',
+    country: 'China',
+  },
+  {
+    name: 'Budapest',
+    code: 'BUD',
+    country: 'Hungary',
+  },
+  {
+    name: 'Edinburgh',
+    code: 'EDI',
+    country: 'United Kingdom',
+  },
+  {
+    name: 'Glasgow',
+    code: 'Any',
+    country: 'United Kingdom',
+    indent: true,
+  },
+  {
+    name: 'London',
+    code: 'Any',
+    country: 'United Kingdom',
+  },
+  {
+    name: 'Miami, FL',
+    code: 'Any',
+    country: 'United States',
+  },
+  {
+    name: "Shenzhen Bao'an International",
+    code: 'SZX',
+    country: 'China',
+  },
+  {
+    name: 'Singapore Changi',
+    code: 'SIN',
+    country: 'Singapore',
+  },
+  {
+    name: 'Sofia',
+    code: 'SOF',
+    country: 'Bulgaria',
+  },
+];
+
+const getSuggestions = value => {
+  const inputValue = value.trim().toLowerCase();
+  const inputLength = inputValue.length;
+
+  return inputLength === 0
+    ? []
+    : offices.filter(
+        office => office.name.toLowerCase().indexOf(inputValue) !== -1,
+      );
+};
+
+const getSuggestionValue = suggestion =>
+  `${suggestion.name} (${suggestion.code})`;
+
+let instances = 0;
+
+class AutosuggestExample extends Component {
+  constructor() {
+    super();
+
+    instances += instances;
+
+    this.state = {
+      value: '',
+      suggestions: [],
+    };
+
+    this.onChange = this.onChange.bind(this);
+    this.onSuggestionsFetchRequested = this.onSuggestionsFetchRequested.bind(
+      this,
+    );
+    this.onSuggestionsClearRequested = this.onSuggestionsClearRequested.bind(
+      this,
+    );
+  }
+
+  onChange(e, { newValue }) {
+    this.setState({
+      value: newValue,
+    });
+  }
+
+  onSuggestionsFetchRequested({ value }) {
+    this.setState({
+      suggestions: getSuggestions(value),
+    });
+  }
+
+  onSuggestionsClearRequested() {
+    this.setState({
+      suggestions: [],
+    });
+  }
+
+  render() {
+    const { value, suggestions } = this.state;
+
+    const inputProps = {
+      id: 'carhire-search-controls-location-pick-up',
+      name: 'my_autosuggest',
+      value,
+      placeholder: 'Enter a destination name',
+      onChange: this.onChange,
+    };
+
+    return (
+      <FieldsetContainer
+        label="Destination"
+        validationMessage="Please select a destination."
+        validStates={[true, false]}
+        description="The final price will be adjusted based on your selection"
+      >
+        <BpkAutosuggest
+          suggestions={suggestions}
+          onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
+          onSuggestionsClearRequested={this.onSuggestionsClearRequested}
+          getSuggestionValue={getSuggestionValue}
+          renderSuggestion={suggestion => (
+            <BpkAutosuggestSuggestion
+              value={getSuggestionValue(suggestion)}
+              indent={suggestion.indent}
+            />
+          )}
+          inputProps={inputProps}
+        />
+      </FieldsetContainer>
+    );
+  }
+}
+
+// eslint-disable-next-line react/no-multi-comp
 class FieldsetContainer extends Component {
   constructor() {
     super();
@@ -150,6 +298,11 @@ const components = [
         </BpkSelect>
       </FieldsetContainer>,
     ],
+  },
+  {
+    id: 'autosuggest',
+    title: 'Autosuggests',
+    examples: [<AutosuggestExample />],
   },
   {
     id: 'checkboxes',

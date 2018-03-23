@@ -5,6 +5,8 @@
 **Fixed:**
 - bpk-component-modal:
   - Fix bug on iPad when virtual keyboards is used in a modal.
+- bpk-component-fieldset:
+  - When wrapping a BpkAutosuggest in a BpkFieldset, the label's `for` attribute will now be correctly set from the Autosuggest's `inputProps` prop.
 
 ## 2018-03-22 - Native Picker Component
 
