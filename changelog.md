@@ -2,7 +2,9 @@
 
 ## Unreleased
 
-_Nothing yet.._
+**Fixed:**
+- bpk-component-modal:
+  - Fix bug on iPad when virtual keyboards is used in a modal.
 
 ## 2018-03-22 - Native Picker Component
 
