@@ -23,9 +23,11 @@ import { cssModules, wrapDisplayName } from 'bpk-react-utils';
 
 import BpkScrim from './BpkScrim';
 import {
+  fixBody,
   lockScroll,
   restoreScroll,
   storeScroll,
+  unfixBody,
   unlockScroll,
 } from './scroll-utils';
 
@@ -37,7 +39,7 @@ const getClassName = cssModules(STYLES);
 const withScrim = WrappedComponent => {
   class WithScrim extends Component {
     componentDidMount() {
-      const { isIphone, getApplicationElement } = this.props;
+      const { isIphone, isIpad, getApplicationElement } = this.props;
       const applicationElement = getApplicationElement();
 
       // iPhones need to have the application element hidden
@@ -47,7 +49,15 @@ const withScrim = WrappedComponent => {
         storeScroll();
         applicationElement.style.display = 'none';
       } else {
-        lockScroll();
+        // The method used for `lockScroll` does not prevent scrolling on iPad.
+        // On iPad we instead set `position: fixed` on `body` to prevent scrolling
+        // and resolve virtual keyboard issues.
+        if (isIpad) {
+          storeScroll();
+          fixBody();
+        } else {
+          lockScroll();
+        }
         if (applicationElement) {
           applicationElement.setAttribute('aria-hidden', 'true');
         }
@@ -60,14 +70,19 @@ const withScrim = WrappedComponent => {
     }
 
     componentWillUnmount() {
-      const { isIphone, getApplicationElement } = this.props;
+      const { isIpad, isIphone, getApplicationElement } = this.props;
       const applicationElement = getApplicationElement();
 
       if (isIphone && applicationElement) {
         applicationElement.style.display = '';
         restoreScroll();
       } else {
-        unlockScroll();
+        if (isIpad) {
+          unfixBody();
+          restoreScroll();
+        } else {
+          unlockScroll();
+        }
         if (applicationElement) {
           applicationElement.removeAttribute('aria-hidden');
         }
@@ -121,6 +136,7 @@ const withScrim = WrappedComponent => {
     getApplicationElement: PropTypes.func.isRequired,
     onClose: onClosePropType,
     isIphone: PropTypes.bool,
+    isIpad: PropTypes.bool,
     containerClassName: PropTypes.string,
     closeOnScrimClick: PropTypes.bool,
   };
@@ -128,6 +144,9 @@ const withScrim = WrappedComponent => {
   WithScrim.defaultProps = {
     onClose: null,
     isIphone: /iPhone/i.test(
+      typeof window !== 'undefined' ? window.navigator.platform : '',
+    ),
+    isIpad: /iPad/i.test(
       typeof window !== 'undefined' ? window.navigator.platform : '',
     ),
     containerClassName: null,
