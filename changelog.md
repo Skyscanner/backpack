@@ -3,8 +3,14 @@
 ## Unreleased
 
 **Fixed:**
+
+- bpk-component-datepicker
+- bpk-component-dialog
+- bpk-component-drawer
 - bpk-component-modal:
+- bpk-scrim-utils:
   - Fix bug on iPad when virtual keyboards is used in a modal.
+
 - bpk-component-fieldset:
   - When wrapping a BpkAutosuggest in a BpkFieldset, the label's `for` attribute will now be correctly set from the Autosuggest's `inputProps` prop.
 
