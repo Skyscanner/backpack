@@ -60,9 +60,14 @@ const BpkFieldset = (props: Props) => {
     return null;
   }
 
+  let childId = children.props.id;
+  if (children.props.inputProps && children.props.inputProps.id) {
+    childId = children.props.inputProps.id;
+  }
+
   const classNames = [getClassName('bpk-fieldset')];
-  const validationMessageId = `${children.props.id}_validation_message`;
-  const descriptionId = `${children.props.id}_description`;
+  const validationMessageId = `${childId}_validation_message`;
+  const descriptionId = `${childId}_description`;
 
   // Explicit check for false primitive value as undefined is
   // treated as neither valid nor invalid
@@ -99,11 +104,7 @@ const BpkFieldset = (props: Props) => {
   return (
     <fieldset className={classNames.join(' ')} {...rest}>
       {!isCheckbox && (
-        <BpkLabel
-          htmlFor={children.props.id}
-          required={required}
-          disabled={disabled}
-        >
+        <BpkLabel htmlFor={childId} required={required} disabled={disabled}>
           {label}
         </BpkLabel>
       )}
