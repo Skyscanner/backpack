@@ -1,17 +1,17 @@
 # Backpack changelog
 
-## Unreleased
+## 2018-03-26 - iPad modal keyboards fixes and fieldset improvements
 
 **Fixed:**
 
-- bpk-component-datepicker
-- bpk-component-dialog
-- bpk-component-drawer
-- bpk-component-modal:
-- bpk-scrim-utils:
+- bpk-component-datepicker: 8.0.18 => 8.0.19
+- bpk-component-dialog: 1.0.12 => 1.0.13
+- bpk-component-drawer: 1.2.4 => 1.2.5
+- bpk-component-modal: 1.6.12 => 1.6.13
+- bpk-scrim-utils: 3.1.19 => 3.1.20
   - Fix bug on iPad when virtual keyboards is used in a modal.
 
-- bpk-component-fieldset:
+- bpk-component-fieldset: 1.1.11 => 1.1.12
   - When wrapping a BpkAutosuggest in a BpkFieldset, the label's `for` attribute will now be correctly set from the Autosuggest's `inputProps` prop.
 
 ## 2018-03-22 - Native Picker Component
