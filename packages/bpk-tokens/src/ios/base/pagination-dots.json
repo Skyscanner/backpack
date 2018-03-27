@@ -1,0 +1,22 @@
+{
+  "imports": [
+    "./aliases.json"
+  ],
+  "global": {
+    "type": "size"
+  },
+  "props": {
+    "PAGINATION_DOT_SIZE_SM": {
+      "value": "{!PAGINATION_DOT_SIZE_SM}",
+      "category": "pagination-dots"
+    },
+    "PAGINATION_DOT_SIZE_MD": {
+      "value": "{!PAGINATION_DOT_SIZE_MD}",
+      "category": "pagination-dots"
+    },
+    "PAGINATION_DOT_SIZE_BASE": {
+      "value": "{!PAGINATION_DOT_SIZE_BASE}",
+      "category": "pagination-dots"
+    }
+  }
+}

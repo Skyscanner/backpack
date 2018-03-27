@@ -293,6 +293,15 @@
     },
     "ELEVATION_XL": {
       "value": 24
+    },
+    "PAGINATION_DOT_SIZE_SM": {
+      "value": 2
+    },
+    "PAGINATION_DOT_SIZE_MD": {
+      "value": 3
+    },
+    "PAGINATION_DOT_SIZE_BASE": {
+      "value": 6
     }
   },
   "props": {
@@ -1007,6 +1016,33 @@
       },
       "name": "ELEVATION_XL"
     },
+    "PAGINATION_DOT_SIZE_SM": {
+      "type": "size",
+      "value": "2",
+      "category": "pagination-dots",
+      ".alias": {
+        "value": 2
+      },
+      "name": "PAGINATION_DOT_SIZE_SM"
+    },
+    "PAGINATION_DOT_SIZE_MD": {
+      "type": "size",
+      "value": "3",
+      "category": "pagination-dots",
+      ".alias": {
+        "value": 3
+      },
+      "name": "PAGINATION_DOT_SIZE_MD"
+    },
+    "PAGINATION_DOT_SIZE_BASE": {
+      "type": "size",
+      "value": "6",
+      "category": "pagination-dots",
+      ".alias": {
+        "value": 6
+      },
+      "name": "PAGINATION_DOT_SIZE_BASE"
+    },
     "SPACING_SM": {
       "type": "size",
       "category": "spacings",
@@ -1457,6 +1493,9 @@
     "ELEVATION_BASE",
     "ELEVATION_LG",
     "ELEVATION_XL",
+    "PAGINATION_DOT_SIZE_SM",
+    "PAGINATION_DOT_SIZE_MD",
+    "PAGINATION_DOT_SIZE_BASE",
     "SPACING_SM",
     "SPACING_MD",
     "SPACING_BASE",

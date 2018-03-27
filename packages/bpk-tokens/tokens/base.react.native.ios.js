@@ -106,6 +106,9 @@ export const colorPink600 = "rgb(217, 43, 107)";
 export const colorPink700 = "rgb(197, 15, 82)";
 export const colorPink800 = "rgb(176, 12, 72)";
 export const colorPink900 = "rgb(148, 5, 58)";
+export const paginationDotSizeSm = 2;
+export const paginationDotSizeMd = 3;
+export const paginationDotSizeBase = 6;
 export const spacingSm = 4;
 export const spacingMd = 8;
 export const spacingBase = 16;
@@ -254,6 +257,11 @@ colorPink600,
 colorPink700,
 colorPink800,
 colorPink900,
+};
+export const paginationDots = {
+paginationDotSizeSm,
+paginationDotSizeMd,
+paginationDotSizeBase,
 };
 export const touchables = {
 underlayColor,

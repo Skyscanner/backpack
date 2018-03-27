@@ -1,5 +1,11 @@
 # Backpack changelog
 
+## Unreleased
+
+**Added:**
+- react-native-bpk-component-pagination-dots:
+  - Introducing the React Native pagination dots component.
+
 ## 2018-03-27 - React Native horizontal nav visual breaking change
 
 **Breaking:**
@@ -10,7 +16,6 @@
 ## 2018-03-26 - iPad modal keyboards fixes and fieldset improvements
 
 **Fixed:**
-
 - bpk-component-datepicker: 8.0.18 => 8.0.19
 - bpk-component-dialog: 1.0.12 => 1.0.13
 - bpk-component-drawer: 1.2.4 => 1.2.5
