@@ -1,5 +1,12 @@
 # Backpack changelog
 
+## 2018-03-27 - React Native horizontal nav visual breaking change
+
+**Breaking:**
+
+- react-native-bpk-component-horizontal-nav: 3.0.0
+  - fix spaceAround config resulting in a visual breaking change
+
 ## 2018-03-26 - iPad modal keyboards fixes and fieldset improvements
 
 **Fixed:**
