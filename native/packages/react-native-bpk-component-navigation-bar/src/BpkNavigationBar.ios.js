@@ -21,19 +21,18 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { type Element, StyleSheet, View, ViewPropTypes } from 'react-native';
 import BpkText from 'react-native-bpk-component-text';
-import { withTheme } from 'react-native-bpk-theming';
+import {
+  withTheme,
+  getThemeAttributes,
+  makeThemePropType,
+} from 'react-native-bpk-theming';
 import {
   colorGray50,
   colorGray100,
   colorGray700,
 } from 'bpk-tokens/tokens/base.react.native';
 
-import {
-  type CommonTheme,
-  getThemeStyle,
-  makeThemePropType,
-  THEME_ATTRIBUTES,
-} from './common-types';
+import { type CommonTheme, THEME_ATTRIBUTES } from './common-types';
 import BpkNavigationBarBackButtonIOS from './BpkNavigationBarBackButtonIOS';
 import BpkNavigationBarTextButtonIOS from './BpkNavigationBarTextButtonIOS';
 import BpkNavigationBarIconButtonIOS from './BpkNavigationBarIconButtonIOS';
@@ -134,7 +133,10 @@ class BpkNavigationBar extends Component<Props, {}> {
 
   constructor(props) {
     super(props);
-    this.theme = getThemeStyle(IOS_THEME_ATTRIBUTES, this.props.theme || {});
+    this.theme = getThemeAttributes(
+      IOS_THEME_ATTRIBUTES,
+      this.props.theme || {},
+    );
   }
 
   render() {

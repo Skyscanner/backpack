@@ -27,7 +27,11 @@ import {
   ViewPropTypes,
 } from 'react-native';
 import BpkText from 'react-native-bpk-component-text';
-import { withTheme } from 'react-native-bpk-theming';
+import {
+  withTheme,
+  getThemeAttributes,
+  makeThemePropType,
+} from 'react-native-bpk-theming';
 import {
   colorBlue700,
   colorBlue500,
@@ -35,12 +39,7 @@ import {
 } from 'bpk-tokens/tokens/base.react.native';
 
 import BpkNavigationBarButtonAndroid from './BpkNavigationBarButtonAndroid.android';
-import {
-  type CommonTheme,
-  getThemeStyle,
-  makeThemePropType,
-  THEME_ATTRIBUTES,
-} from './common-types';
+import { type CommonTheme, THEME_ATTRIBUTES } from './common-types';
 
 const ANDROID_THEME_ATTRIBUTES = [
   ...THEME_ATTRIBUTES,
@@ -132,7 +131,7 @@ class BpkNavigationBar extends Component<Props, {}> {
 
   constructor(props) {
     super(props);
-    this.theme = getThemeStyle(
+    this.theme = getThemeAttributes(
       ANDROID_THEME_ATTRIBUTES,
       this.props.theme || {},
     );
@@ -143,7 +142,7 @@ class BpkNavigationBar extends Component<Props, {}> {
   }
 
   componentDidUpdate() {
-    this.theme = getThemeStyle(
+    this.theme = getThemeAttributes(
       ANDROID_THEME_ATTRIBUTES,
       this.props.theme || {},
     );

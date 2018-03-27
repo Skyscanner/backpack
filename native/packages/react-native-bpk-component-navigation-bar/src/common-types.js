@@ -16,8 +16,6 @@
  * limitations under the License.
  */
 /* @flow */
-import _ from 'lodash';
-
 type StatusBarStyle = 'light-content' | 'dark-content';
 
 export type CommonTheme = {
@@ -25,57 +23,9 @@ export type CommonTheme = {
   navigationBarBackgroundColor: string,
   navigationBarTintColor: string,
 };
+
+// eslint-disable-next-line import/prefer-default-export
 export const THEME_ATTRIBUTES = [
   'navigationBarBackgroundColor',
   'navigationBarTintColor',
 ];
-
-const isValidTheme = (
-  requiredAttributes: Array<string>,
-  theme: Object,
-): boolean =>
-  requiredAttributes.reduce(
-    (valid, attribute) =>
-      _.has(theme, attribute) &&
-      (_.isBoolean(theme[attribute]) ||
-        _.isNumber(theme[attribute]) ||
-        !_.isEmpty(theme[attribute])) &&
-      valid,
-    true,
-  );
-
-export const makeThemePropType = (requiredAttributes: Array<string>) => (
-  props: Object,
-  propName: string,
-  componentName: string,
-) => {
-  const { theme } = props;
-  if (!theme) {
-    return false;
-  }
-
-  const validTheme = isValidTheme(requiredAttributes, theme);
-
-  if (!validTheme) {
-    return new Error(
-      `Invalid prop \`${propName}\` supplied to \`${componentName}\`. When supplying \`theme\` all the required theming attributes(\`${requiredAttributes.join(
-        ', ',
-      )}\`) must be supplied.`,
-    ); // eslint-disable-line max-len
-  }
-  return false;
-};
-
-export const getThemeStyle = (
-  requiredAttributes: Array<string>,
-  theme: Object,
-): ?Object => {
-  if (!isValidTheme(requiredAttributes, theme)) {
-    return null;
-  }
-
-  return requiredAttributes.reduce((result, attribute) => {
-    result[attribute] = theme[attribute]; // eslint-disable-line no-param-reassign
-    return result;
-  }, {});
-};
