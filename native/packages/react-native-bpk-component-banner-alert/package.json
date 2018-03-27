@@ -16,13 +16,13 @@
   "dependencies": {
     "bpk-tokens": "^26.7.5",
     "prop-types": "^15.5.8",
+    "react-native-bpk-component-animate-height": "^1.0.36",
+    "react-native-bpk-component-icon": "^1.5.0",
+    "react-native-bpk-component-text": "^2.1.32",
     "react-native-bpk-component-touchable-native-feedback": "^1.1.4",
     "react-native-bpk-component-touchable-overlay": "^1.0.14"
   },
   "devDependencies": {
-    "react-native-bpk-component-animate-height": "^1.0.36",
-    "react-native-bpk-component-button": "^6.0.0",
-    "react-native-bpk-component-icon": "^1.5.0",
-    "react-native-bpk-component-text": "^2.1.32"
+    "react-native-bpk-component-button": "^6.0.0"
   }
 }

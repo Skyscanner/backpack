@@ -1,11 +1,5 @@
 # Backpack changelog
 
-## Unreleased
-
-**Added:**
-- react-native-bpk-component-pagination-dots:
-  - Introducing the React Native pagination dots component.
-
 ## 2018-03-27 - React Native horizontal nav visual breaking change
 
 **Breaking:**

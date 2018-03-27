@@ -18,31 +18,26 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import { StyleSheet, View, ViewPropTypes } from 'react-native';
-
 import {
-  borderRadiusSm,
-  borderSizeSm,
+  spacingSm,
+  spacingMd,
+  spacingXl,
+  colorRed500,
   colorGray300,
   colorGray500,
-  colorGray700,
   colorGreen500,
-  colorRed500,
   colorYellow500,
-  lineHeightSm,
-  spacingBase,
-  spacingMd,
-  spacingSm,
-  spacingXl,
+  borderSizeSm,
+  borderRadiusSm,
 } from 'bpk-tokens/tokens/base.react.native';
-
-import BpkAnimateHeight from 'react-native-bpk-component-animate-height';
-import BpkIcon, { icons } from 'react-native-bpk-component-icon';
 import BpkText from 'react-native-bpk-component-text';
+import { StyleSheet, View, ViewPropTypes } from 'react-native';
+import BpkIcon, { icons } from 'react-native-bpk-component-icon';
+import BpkAnimateHeight from 'react-native-bpk-component-animate-height';
 import BpkTouchableOverlay from 'react-native-bpk-component-touchable-overlay';
 
-import AnimateAndFade from './AnimateAndFade';
 import ALERT_TYPES from './AlertTypes';
+import AnimateAndFade from './AnimateAndFade';
 
 import {
   dismissablePropType,
@@ -50,64 +45,34 @@ import {
   dismissableLabelPropType,
 } from './customPropTypes';
 
-const styles = StyleSheet.create({
-  outerContainer: {
+const STYLES = StyleSheet.create({
+  border: {
+    minHeight: spacingXl, // animate height is janky if we don't provide this ¯\_(ツ)_/¯
     borderWidth: borderSizeSm,
     borderRadius: borderRadiusSm,
-    overflow: 'hidden',
   },
-  bannerContainer: {
-    flexGrow: 1,
-    display: 'flex',
-    flexDirection: 'row',
-    minHeight: spacingXl - borderSizeSm * 2,
-  },
-  bannerContainerPadded: {
-    flexGrow: 1,
-    display: 'flex',
-    flexDirection: 'row',
-    paddingBottom: spacingSm,
-    paddingLeft: spacingMd,
-    paddingRight: spacingMd,
-  },
-  bannerContainerPaddedDismissable: {
-    paddingRight: 0,
-  },
-  closeButtonContainer: {
-    height: '100%',
-    width: 2 * spacingMd + spacingBase,
-    display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'center',
-  },
-  expandedChildContainer: {
-    paddingBottom: spacingSm,
-    paddingLeft: spacingMd,
-    paddingRight: spacingMd,
-  },
-  outerContainerSuccess: {
+  borderSuccess: {
     borderColor: colorGreen500,
   },
-  outerContainerWarn: {
+  borderWarn: {
     borderColor: colorYellow500,
   },
-  outerContainerError: {
+  borderError: {
     borderColor: colorRed500,
   },
-  outerContainerNeutral: {
+  borderNeutral: {
     borderColor: colorGray300,
   },
-  text: {
-    flex: 1,
-    flexGrow: 1,
-    paddingLeft: spacingSm,
-    color: colorGray700,
-    // Calculate the padding required to align the text within the banner
-    paddingTop: (spacingXl - 2 * borderSizeSm - lineHeightSm) / 2,
+  row: {
+    flexDirection: 'row',
+    paddingVertical: spacingMd - borderSizeSm,
+    paddingHorizontal: spacingMd,
+  },
+  rowCloseButtonTapAreaOffset: {
+    paddingEnd: spacingXl,
   },
   icon: {
-    // Calculate the padding required to align the icon within the banner
-    paddingTop: (spacingXl - 2 * borderSizeSm - spacingBase) / 2,
+    marginEnd: spacingSm,
   },
   iconSuccess: {
     color: colorGreen500,
@@ -121,39 +86,43 @@ const styles = StyleSheet.create({
   iconNeutral: {
     color: colorGray500,
   },
-  button: {
-    // Calculate the padding required to align the button within the banner
-    paddingTop: (spacingXl - 2 * borderSizeSm - spacingBase) / 2,
+  message: {
+    flex: 1,
   },
-  buttonExpand: {
-    paddingLeft: spacingMd,
-    color: colorGray700,
+  closeButton: {
+    position: 'absolute',
+    right: 0,
+    padding: spacingMd,
   },
-  buttonClose: {
-    color: colorGray700,
+  expandIcon: {
+    paddingStart: spacingMd,
+  },
+  expandableContent: {
+    padding: spacingMd,
+    paddingTop: 0,
   },
 });
 
 const ALERT_TYPE_STYLES = {
   [ALERT_TYPES.SUCCESS]: {
-    iconSource: icons['tick-circle'],
-    outerStyle: styles.outerContainerSuccess,
-    iconStyle: styles.iconSuccess,
+    icon: icons['tick-circle'],
+    borderStyle: STYLES.borderSuccess,
+    iconStyle: STYLES.iconSuccess,
   },
   [ALERT_TYPES.WARN]: {
-    iconSource: icons['information-circle'],
-    outerStyle: styles.outerContainerWarn,
-    iconStyle: styles.iconWarn,
+    icon: icons['information-circle'],
+    borderStyle: STYLES.borderWarn,
+    iconStyle: STYLES.iconWarn,
   },
   [ALERT_TYPES.ERROR]: {
-    iconSource: icons['information-circle'],
-    outerStyle: styles.outerContainerError,
-    iconStyle: styles.iconError,
+    icon: icons['information-circle'],
+    borderStyle: STYLES.borderError,
+    iconStyle: STYLES.iconError,
   },
   [ALERT_TYPES.NEUTRAL]: {
-    iconSource: icons['information-circle'],
-    outerStyle: styles.outerContainerNeutral,
-    iconStyle: styles.iconNeutral,
+    icon: icons['information-circle'],
+    borderStyle: STYLES.borderNeutral,
+    iconStyle: STYLES.iconNeutral,
   },
 };
 
@@ -176,36 +145,27 @@ const BpkBannerAlert = props => {
   } = props;
 
   const expandable = children !== null;
+  const alertTypeStyles = ALERT_TYPE_STYLES[type] || {};
+  const { icon, borderStyle, iconStyle } = alertTypeStyles;
 
-  const outerStyle = [styles.outerContainer];
-  const contentPaddedStyle = [styles.bannerContainerPadded];
-  const expandedChildContainer = [styles.expandedChildContainer];
-  const { iconSource, outerStyle: outerStyleForType, iconStyle } =
-    ALERT_TYPE_STYLES[type] || {};
+  const rowStyle = [STYLES.row];
 
-  outerStyle.push(outerStyleForType);
   if (dismissable) {
-    contentPaddedStyle.push(styles.bannerContainerPaddedDismissable);
-  }
-  if (bannerStyle) {
-    outerStyle.push(bannerStyle);
+    rowStyle.push(STYLES.rowCloseButtonTapAreaOffset);
   }
 
-  const banner = (
-    <View style={[contentPaddedStyle]}>
-      <BpkIcon style={[styles.icon, iconStyle]} icon={iconSource} small />
-      <BpkText textStyle="sm" style={styles.text}>
-        {message}
-      </BpkText>
-      {expandable && (
-        <BpkIcon
-          style={[styles.button, styles.buttonExpand]}
-          icon={expanded ? icons['chevron-up'] : icons['chevron-down']}
-          small
-        />
-      )}
-    </View>
+  const ExpandToggleView = expandToggleViewProps => (
+    <BpkTouchableOverlay
+      {...expandToggleViewProps}
+      onPress={onToggleExpanded}
+      accessibilityComponentType="button"
+      accessibilityLabel={toggleExpandedButtonLabel}
+    />
   );
+
+  const RowView = expandable
+    ? ExpandToggleView
+    : viewProps => <View {...viewProps} />;
 
   return (
     <AnimateAndFade
@@ -214,40 +174,38 @@ const BpkBannerAlert = props => {
       show={show}
       {...rest}
     >
-      <View style={outerStyle}>
-        <View style={styles.bannerContainer}>
-          {expandable ? (
-            <BpkTouchableOverlay
-              accessibilityComponentType="button"
-              onPress={onToggleExpanded}
-              accessibilityLabel={toggleExpandedButtonLabel}
-              style={styles.bannerContainer}
-            >
-              {banner}
-            </BpkTouchableOverlay>
-          ) : (
-            banner
+      <View style={[STYLES.border, borderStyle, bannerStyle]}>
+        <RowView style={rowStyle}>
+          <BpkIcon style={[STYLES.icon, iconStyle]} icon={icon} small />
+          <BpkText textStyle="sm" style={STYLES.message}>
+            {message}
+          </BpkText>
+          {expandable && (
+            <BpkIcon
+              style={STYLES.expandIcon}
+              icon={expanded ? icons['chevron-up'] : icons['chevron-down']}
+              small
+            />
           )}
-          {dismissable && (
-            <BpkTouchableOverlay
-              accessibilityComponentType="button"
-              onPress={onDismiss}
-              accessibilityLabel={dismissButtonLabel}
-              style={styles.closeButtonContainer}
-            >
-              <View>
-                <BpkIcon
-                  style={[styles.button, styles.buttonClose]}
-                  icon="close"
-                  small
-                />
-              </View>
-            </BpkTouchableOverlay>
-          )}
-        </View>
-        <BpkAnimateHeight expanded={expanded}>
-          <View style={expandedChildContainer}>{props.children}</View>
-        </BpkAnimateHeight>
+        </RowView>
+        {dismissable && (
+          <BpkTouchableOverlay
+            accessibilityComponentType="button"
+            accessibilityLabel={dismissButtonLabel}
+            onPress={onDismiss}
+            style={STYLES.closeButton}
+          >
+            <BpkIcon icon="close" small />
+          </BpkTouchableOverlay>
+        )}
+        {props.children && (
+          <BpkAnimateHeight
+            expanded={expanded}
+            style={STYLES.expandableContent}
+          >
+            {props.children}
+          </BpkAnimateHeight>
+        )}
       </View>
     </AnimateAndFade>
   );
@@ -270,15 +228,14 @@ BpkBannerAlert.propTypes = {
   onDismiss: PropTypes.func,
   onToggleExpanded: PropTypes.func,
   show: PropTypes.bool,
-  bannerStyle: ViewPropTypes.style,
   toggleExpandedButtonLabel: toggleExpandedButtonLabelPropType,
+  bannerStyle: ViewPropTypes.style,
 };
 
 BpkBannerAlert.defaultProps = {
   animateOnEnter: false,
   animateOnLeave: false,
   children: null,
-  bannerStyle: null,
   dismissable: false,
   dismissButtonLabel: null,
   expanded: false,
@@ -286,6 +243,7 @@ BpkBannerAlert.defaultProps = {
   onToggleExpanded: null,
   show: true,
   toggleExpandedButtonLabel: null,
+  bannerStyle: null,
 };
 
 export default BpkBannerAlert;
