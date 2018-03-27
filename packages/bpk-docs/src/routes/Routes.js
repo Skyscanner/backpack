@@ -103,6 +103,7 @@ import NativeIconsPage from './../pages/NativeIconsPage';
 import NativeInputPage from './../pages/NativeTextInputPage';
 import NativeNavigationBarPage from './../pages/NativeNavigationBarPage';
 import NativeNudgerPage from './../pages/NativeNudgerPage';
+import NativePaginationDotsPage from './../pages/NativePaginationDotsPage';
 import NativePanelsPage from './../pages/NativePanelsPage';
 import NativePhoneInputPage from './../pages/NativePhoneInputPage';
 import NativePickerPage from './../pages/NativePickerPage';
@@ -224,6 +225,10 @@ const Routes = (
           component={NativeNavigationBarPage}
         />
         <Route path={ROUTES.NATIVE_NUDGER} component={NativeNudgerPage} />
+        <Route
+          path={ROUTES.NATIVE_PAGINATION_DOTS}
+          component={NativePaginationDotsPage}
+        />
         <Route path={ROUTES.NATIVE_PANELS} component={NativePanelsPage} />
         <Route
           path={ROUTES.NATIVE_PHONE_INPUT}

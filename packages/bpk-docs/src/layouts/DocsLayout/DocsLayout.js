@@ -138,6 +138,12 @@ const links = [
         children: 'Navigation Bar',
       },
       { id: 'NATIVE_NUDGER', route: routes.NATIVE_NUDGER, children: 'Nudger' },
+      // TODO: Uncomment later.
+      // {
+      //   id: 'NATIVE_PAGINATION_DOTS',
+      //   route: routes.NATIVE_PAGINATION_DOTS,
+      //   children: 'Pagination Dots',
+      // },
       {
         id: 'NATIVE_PANELS',
         route: routes.NATIVE_PANELS,

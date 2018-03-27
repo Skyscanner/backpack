@@ -60,6 +60,14 @@ const styles = StyleSheet.create({
     position: 'absolute',
     bottom: spacingMd,
   },
+  colorBlock: {
+    alignItems: 'center',
+    borderRadius: borderRadiusSm,
+    height: spacingXl * 2,
+    justifyContent: 'flex-end',
+    marginBottom: spacingMd,
+    paddingBottom: spacingMd,
+  },
 });
 
 const pageColors = [
@@ -170,7 +178,7 @@ class StatefulBpkPaginationExample extends React.Component<
   }
 }
 
-storiesOf('react-native-bpk-component-pagination', module)
+storiesOf('react-native-bpk-component-pagination-dots', module)
   .addDecorator(CenterDecorator)
   .add('docs:default', () => (
     <View>
@@ -187,19 +195,37 @@ storiesOf('react-native-bpk-component-pagination', module)
         </View>
       ))}
       <View style={styles.storyInstance}>
-        <StorySubheading>More than 5 pages</StorySubheading>
-        {new Array(6)
+        <StorySubheading>
+          More than 5 pages (shown with different selected indexes)
+        </StorySubheading>
+        {new Array(7)
           .fill()
           .map((_, index) => (
             <BpkPaginationDots
               accessibilityLabel={`${index + 1} of 6`}
               key={index.toString()}
-              pageCount={6}
+              pageCount={7}
               selectedIndex={index}
               style={styles.storyInstance}
             />
           ))}
       </View>
+    </View>
+  ))
+  .add('docs:with-overlay', () => (
+    <View>
+      {new Array(6).fill().map((_, index) => (
+        <View
+          key={index.toString()}
+          style={[styles.colorBlock, { backgroundColor: pageColors[index] }]}
+        >
+          <BpkPaginationDots
+            pageCount={6}
+            selectedIndex={0}
+            accessibilityLabel={`${index + 1} of 6`}
+          />
+        </View>
+      ))}
     </View>
   ))
   .add('Stateful example', () => (
