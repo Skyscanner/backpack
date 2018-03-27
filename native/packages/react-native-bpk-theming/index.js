@@ -19,7 +19,12 @@
 /* @flow */
 
 import BpkThemeProvider, { withTheme } from './src/BpkThemeProvider';
+import {
+  makeThemePropType,
+  getThemeAttributes,
+  isValidTheme,
+} from './src/util';
 
 export type { Theme } from './src/types';
 export default BpkThemeProvider;
-export { withTheme };
+export { withTheme, makeThemePropType, getThemeAttributes, isValidTheme };
