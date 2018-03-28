@@ -123,5 +123,23 @@ describe('ios', () => {
         .toJSON();
       expect(tree).toMatchSnapshot();
     });
+
+    it('should render correctly with an icon in the title', () => {
+      const tree = renderer
+        .create(
+          <BpkNavigationBar
+            title={{ value: 'Checkout', icon: 'lock', iconPosition: 'leading' }}
+            leadingButton={
+              <BpkNavigationBarBackButtonIOS
+                title="Back"
+                showTitle
+                onPress={jest.fn()}
+              />
+            }
+          />,
+        )
+        .toJSON();
+      expect(tree).toMatchSnapshot();
+    });
   });
 });

@@ -120,7 +120,13 @@ storiesOf('react-native-bpk-component-navigation-bar', module)
       }
     />
   ))
-  .add('docs:themed', () => (
+  .add('docs:icon-in-title', () => (
+    <BpkNavigationBar
+      leadingButton={backButton()}
+      title={{ value: 'Checkout', icon: 'lock', iconPosition: 'leading' }}
+    />
+  ))
+  .add('themed', () => (
     <BpkThemeProvider theme={themeAttributes}>
       <BpkNavigationBar
         leadingButton={backButton()}

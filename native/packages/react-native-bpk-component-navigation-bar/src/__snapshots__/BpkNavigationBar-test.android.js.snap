@@ -86,34 +86,49 @@ exports[`android BpkNavigationBar should render correctly 1`] = `
         </Text>
       </View>
     </View>
-    <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
+    <View
       style={
         Array [
           Object {
-            "color": "rgb(82, 76, 97)",
-            "fontFamily": "sans-serif",
-            "fontSize": 20,
-            "fontWeight": "400",
+            "alignItems": "center",
+            "flexDirection": "row",
           },
           Object {
-            "fontFamily": "sans-serif-medium",
+            "bottom": 15,
+            "position": "absolute",
+            "start": 72,
           },
-          Array [
-            Object {
-              "bottom": 15,
-              "color": "rgb(255, 255, 255)",
-              "position": "absolute",
-              "start": 72,
-            },
-          ],
         ]
       }
     >
-      Backpack
-    </Text>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        numberOfLines={1}
+        style={
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+              "fontFamily": "sans-serif",
+              "fontSize": 20,
+              "fontWeight": "400",
+            },
+            Object {
+              "fontFamily": "sans-serif-medium",
+            },
+            Array [
+              Object {
+                "color": "rgb(255, 255, 255)",
+              },
+              null,
+            ],
+          ]
+        }
+      >
+        Backpack
+      </Text>
+    </View>
   </View>
 </View>
 `;
@@ -207,34 +222,49 @@ exports[`android BpkNavigationBar should render correctly with a subtitle view 1
         </Text>
       </View>
     </View>
-    <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
+    <View
       style={
         Array [
           Object {
-            "color": "rgb(82, 76, 97)",
-            "fontFamily": "sans-serif",
-            "fontSize": 20,
-            "fontWeight": "400",
+            "alignItems": "center",
+            "flexDirection": "row",
           },
           Object {
-            "fontFamily": "sans-serif-medium",
+            "bottom": 15,
+            "position": "absolute",
+            "start": 72,
           },
-          Array [
-            Object {
-              "bottom": 15,
-              "color": "rgb(255, 255, 255)",
-              "position": "absolute",
-              "start": 72,
-            },
-          ],
         ]
       }
     >
-      Backpack
-    </Text>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        numberOfLines={1}
+        style={
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+              "fontFamily": "sans-serif",
+              "fontSize": 20,
+              "fontWeight": "400",
+            },
+            Object {
+              "fontFamily": "sans-serif-medium",
+            },
+            Array [
+              Object {
+                "color": "rgb(255, 255, 255)",
+              },
+              null,
+            ],
+          ]
+        }
+      >
+        Backpack
+      </Text>
+    </View>
   </View>
   <View
     style={
@@ -365,6 +395,170 @@ exports[`android BpkNavigationBar should render correctly with a title view 1`] 
 </View>
 `;
 
+exports[`android BpkNavigationBar should render correctly with an icon in the title 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "backgroundColor": "rgb(0, 178, 214)",
+        "elevation": 3,
+        "flexDirection": "column",
+        "paddingHorizontal": 8,
+        "width": "100%",
+      },
+    ]
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "height": 56,
+          "justifyContent": "space-between",
+        },
+      ]
+    }
+  >
+    <View
+      style={
+        Object {
+          "borderRadius": 40,
+        }
+      }
+    >
+      <View
+        accessibilityComponentType="button"
+        accessibilityLabel="Back"
+        accessibilityTraits={
+          Array [
+            "button",
+          ]
+        }
+        accessible={true}
+        hitSlop={undefined}
+        nativeBackgroundAndroid={
+          Object {
+            "borderless": true,
+            "color": 872415231,
+            "type": "RippleAndroid",
+          }
+        }
+        onLayout={undefined}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        testID={undefined}
+      >
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Array [
+              Object {
+                "color": "rgb(82, 76, 97)",
+                "fontFamily": "BpkIcon",
+                "fontSize": 24,
+                "lineHeight": 24,
+              },
+              Array [
+                Object {
+                  "padding": 8,
+                },
+                Object {
+                  "color": "rgb(255, 255, 255)",
+                },
+              ],
+            ]
+          }
+        >
+          
+        </Text>
+      </View>
+    </View>
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+          },
+          Object {
+            "bottom": 15,
+            "position": "absolute",
+            "start": 72,
+          },
+        ]
+      }
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+              "fontFamily": "BpkIcon",
+              "fontSize": 24,
+              "lineHeight": 24,
+            },
+            Object {
+              "fontSize": 16,
+              "lineHeight": 16,
+            },
+            Array [
+              Object {
+                "marginEnd": 4,
+              },
+              Object {
+                "color": "rgb(255, 255, 255)",
+              },
+            ],
+          ]
+        }
+      >
+        
+      </Text>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        numberOfLines={1}
+        style={
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+              "fontFamily": "sans-serif",
+              "fontSize": 20,
+              "fontWeight": "400",
+            },
+            Object {
+              "fontFamily": "sans-serif-medium",
+            },
+            Array [
+              Object {
+                "color": "rgb(255, 255, 255)",
+              },
+              Object {
+                "lineHeight": 24,
+              },
+            ],
+          ]
+        }
+      >
+        Checkout
+      </Text>
+    </View>
+  </View>
+</View>
+`;
+
 exports[`android BpkNavigationBar should render correctly with custom style 1`] = `
 <View
   style={
@@ -454,34 +648,49 @@ exports[`android BpkNavigationBar should render correctly with custom style 1`] 
         </Text>
       </View>
     </View>
-    <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
+    <View
       style={
         Array [
           Object {
-            "color": "rgb(82, 76, 97)",
-            "fontFamily": "sans-serif",
-            "fontSize": 20,
-            "fontWeight": "400",
+            "alignItems": "center",
+            "flexDirection": "row",
           },
           Object {
-            "fontFamily": "sans-serif-medium",
+            "bottom": 15,
+            "position": "absolute",
+            "start": 72,
           },
-          Array [
-            Object {
-              "bottom": 15,
-              "color": "rgb(255, 255, 255)",
-              "position": "absolute",
-              "start": 72,
-            },
-          ],
         ]
       }
     >
-      Backpack
-    </Text>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        numberOfLines={1}
+        style={
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+              "fontFamily": "sans-serif",
+              "fontSize": 20,
+              "fontWeight": "400",
+            },
+            Object {
+              "fontFamily": "sans-serif-medium",
+            },
+            Array [
+              Object {
+                "color": "rgb(255, 255, 255)",
+              },
+              null,
+            ],
+          ]
+        }
+      >
+        Backpack
+      </Text>
+    </View>
   </View>
 </View>
 `;
@@ -572,34 +781,49 @@ exports[`android BpkNavigationBar should render correctly with trailing button 1
         </Text>
       </View>
     </View>
-    <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
+    <View
       style={
         Array [
           Object {
-            "color": "rgb(82, 76, 97)",
-            "fontFamily": "sans-serif",
-            "fontSize": 20,
-            "fontWeight": "400",
+            "alignItems": "center",
+            "flexDirection": "row",
           },
           Object {
-            "fontFamily": "sans-serif-medium",
+            "bottom": 15,
+            "position": "absolute",
+            "start": 72,
           },
-          Array [
-            Object {
-              "bottom": 15,
-              "color": "rgb(255, 255, 255)",
-              "position": "absolute",
-              "start": 72,
-            },
-          ],
         ]
       }
     >
-      Backpack
-    </Text>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        numberOfLines={1}
+        style={
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+              "fontFamily": "sans-serif",
+              "fontSize": 20,
+              "fontWeight": "400",
+            },
+            Object {
+              "fontFamily": "sans-serif-medium",
+            },
+            Array [
+              Object {
+                "color": "rgb(255, 255, 255)",
+              },
+              null,
+            ],
+          ]
+        }
+      >
+        Backpack
+      </Text>
+    </View>
     <View
       style={
         Object {

@@ -26,6 +26,8 @@ import iosScreenshotSubtitleView from 'react-native-bpk-component-navigation-bar
 import androidScreenshotSubtitleView from 'react-native-bpk-component-navigation-bar/screenshots/android/subtitle-view.png';
 import iosScreenshotModal from 'react-native-bpk-component-navigation-bar/screenshots/ios/modal.png';
 import androidScreenshotModal from 'react-native-bpk-component-navigation-bar/screenshots/android/modal.png';
+import iosScreenshotTitleIcon from 'react-native-bpk-component-navigation-bar/screenshots/ios/title-icon.png';
+import androidScreenshotTitleIcon from 'react-native-bpk-component-navigation-bar/screenshots/android/title-icon.png';
 
 import Paragraph from './../../components/Paragraph';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
@@ -42,7 +44,7 @@ const components = [
         width: 750,
         height: 1334,
         src: `/${iosScreenshotDefault}`,
-        altText: 'iOS Default Nudger Component',
+        altText: 'iOS Default Navigation Bar',
         subText: '(iPhone 8 Simulator)',
       },
       {
@@ -50,7 +52,7 @@ const components = [
         width: 1080,
         height: 1920,
         src: `/${androidScreenshotDefault}`,
-        altText: 'Android Default Nudger Component',
+        altText: 'Android Default Navigation Bar',
         subText: '(Google Pixel Emulator)',
       },
     ],
@@ -65,7 +67,7 @@ const components = [
         width: 750,
         height: 1334,
         src: `/${iosScreenshotModal}`,
-        altText: 'iOS Default Nudger Component',
+        altText: 'iOS Modal Navigation Bar',
         subText: '(iPhone 8 Simulator)',
       },
       {
@@ -73,7 +75,7 @@ const components = [
         width: 1080,
         height: 1920,
         src: `/${androidScreenshotModal}`,
-        altText: 'Android Default Nudger Component',
+        altText: 'Android Modal Navigation Bar',
         subText: '(Google Pixel Emulator)',
       },
     ],
@@ -82,14 +84,14 @@ const components = [
     id: 'subtitle-view',
     title: 'Subtitle View',
     blurb:
-      'Optionally a subitle view can be rendered below the main bar content.',
+      'Optionally a subtitle view can be rendered below the main bar content.',
     screenshots: [
       {
         title: 'iOS',
         width: 750,
         height: 1334,
         src: `/${iosScreenshotSubtitleView}`,
-        altText: 'iOS Default Nudger Component',
+        altText: 'iOS Subtitle  Navigation Bar',
         subText: '(iPhone 8 Simulator)',
       },
       {
@@ -97,7 +99,30 @@ const components = [
         width: 1080,
         height: 1920,
         src: `/${androidScreenshotSubtitleView}`,
-        altText: 'Android Default Nudger Component',
+        altText: 'Android Subtitle Navigation Bar',
+        subText: '(Google Pixel Emulator)',
+      },
+    ],
+  },
+  {
+    id: 'title-icon',
+    title: 'Icon',
+    blurb: 'Optionally an icon can be rendered next to the title.',
+    screenshots: [
+      {
+        title: 'iOS',
+        width: 750,
+        height: 1334,
+        src: `/${iosScreenshotTitleIcon}`,
+        altText: 'iOS Icon Navigation Bar',
+        subText: '(iPhone 8 Simulator)',
+      },
+      {
+        title: 'Android',
+        width: 1080,
+        height: 1920,
+        src: `/${androidScreenshotTitleIcon}`,
+        altText: 'Android Icon Navigation Bar',
         subText: '(Google Pixel Emulator)',
       },
     ],
