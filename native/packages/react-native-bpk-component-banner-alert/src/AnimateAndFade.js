@@ -16,15 +16,60 @@
  * limitations under the License.
  */
 
+/* @flow */
+
 import PropTypes from 'prop-types';
-import React, { Component } from 'react';
+import React, { Component, type Node } from 'react';
 import { View, Animated, ViewPropTypes } from 'react-native';
 import { animationDurationSm } from 'bpk-tokens/tokens/base.react.native';
 
 const COLLAPSED_HEIGHT = 0.01;
 
-class AnimateAndFade extends Component {
-  constructor(props) {
+type MeasureCallback = (
+  x: number,
+  y: number,
+  width: number,
+  height: number,
+  pageX: number,
+  pageY: number,
+) => mixed;
+
+type ReactNativeView = {
+  measure(callback: ?MeasureCallback): mixed,
+};
+
+type Props = {
+  children: Node,
+  show: boolean,
+  animateOnEnter: boolean,
+  animateOnLeave: boolean,
+  style: ?any,
+  innerStyle: ?any,
+};
+
+class AnimateAndFade extends Component<Props> {
+  height: ?Animated.Value;
+  opacity: Animated.Value;
+  innerViewRef: ?ReactNativeView;
+  shouldRenderHeight: boolean;
+
+  static propTypes = {
+    children: PropTypes.node.isRequired,
+    show: PropTypes.bool.isRequired,
+    animateOnEnter: PropTypes.bool,
+    animateOnLeave: PropTypes.bool,
+    style: ViewPropTypes.style,
+    innerStyle: ViewPropTypes.style,
+  };
+
+  static defaultProps = {
+    animateOnEnter: false,
+    animateOnLeave: false,
+    style: null,
+    innerStyle: null,
+  };
+
+  constructor(props: Props) {
     super(props);
 
     const isCollapsed = this.props.animateOnEnter || !this.props.show;
@@ -48,7 +93,7 @@ class AnimateAndFade extends Component {
     this.measure(captureHeightAndAnimate);
   }
 
-  componentWillReceiveProps(nextProps) {
+  componentWillReceiveProps(nextProps: Props) {
     this.shouldRenderHeight = true;
 
     if (nextProps.show === this.props.show && this.props.show) {
@@ -60,10 +105,14 @@ class AnimateAndFade extends Component {
     this.measure(this.animate);
   }
 
-  measure = callback =>
-    requestAnimationFrame(() => this.innerViewRef.measure(callback));
+  measure = (callback: ?MeasureCallback) =>
+    requestAnimationFrame(() => {
+      if (this.innerViewRef) {
+        this.innerViewRef.measure(callback);
+      }
+    });
 
-  animate = (x, y, width, height) => {
+  animate = (x: number, y: number, width: number, height: number) => {
     const { show, animateOnEnter, animateOnLeave } = this.props;
 
     const animatingOnEnter = show && animateOnEnter;
@@ -128,21 +177,5 @@ class AnimateAndFade extends Component {
     );
   }
 }
-
-AnimateAndFade.propTypes = {
-  children: PropTypes.node.isRequired,
-  show: PropTypes.bool.isRequired,
-  animateOnEnter: PropTypes.bool,
-  animateOnLeave: PropTypes.bool,
-  style: ViewPropTypes.style,
-  innerStyle: ViewPropTypes.style,
-};
-
-AnimateAndFade.defaultProps = {
-  animateOnEnter: false,
-  animateOnLeave: false,
-  style: null,
-  innerStyle: null,
-};
 
 export default AnimateAndFade;

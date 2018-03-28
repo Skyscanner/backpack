@@ -910,7 +910,7 @@ exports[`iOS BpkBannerAlert should render correctly with expanded 1`] = `
 </View>
 `;
 
-exports[`iOS BpkBannerAlert should render correctly with type equal to ERROR 1`] = `
+exports[`iOS BpkBannerAlert should render correctly with type equal to error 1`] = `
 <View
   collapsable={undefined}
   style={
@@ -996,7 +996,7 @@ exports[`iOS BpkBannerAlert should render correctly with type equal to ERROR 1`]
             ]
           }
         >
-          ERROR alert.
+          error alert.
         </Text>
       </View>
     </View>
@@ -1004,7 +1004,7 @@ exports[`iOS BpkBannerAlert should render correctly with type equal to ERROR 1`]
 </View>
 `;
 
-exports[`iOS BpkBannerAlert should render correctly with type equal to NEUTRAL 1`] = `
+exports[`iOS BpkBannerAlert should render correctly with type equal to neutral 1`] = `
 <View
   collapsable={undefined}
   style={
@@ -1090,7 +1090,7 @@ exports[`iOS BpkBannerAlert should render correctly with type equal to NEUTRAL 1
             ]
           }
         >
-          NEUTRAL alert.
+          neutral alert.
         </Text>
       </View>
     </View>
@@ -1098,7 +1098,7 @@ exports[`iOS BpkBannerAlert should render correctly with type equal to NEUTRAL 1
 </View>
 `;
 
-exports[`iOS BpkBannerAlert should render correctly with type equal to SUCCESS 1`] = `
+exports[`iOS BpkBannerAlert should render correctly with type equal to success 1`] = `
 <View
   collapsable={undefined}
   style={
@@ -1184,7 +1184,7 @@ exports[`iOS BpkBannerAlert should render correctly with type equal to SUCCESS 1
             ]
           }
         >
-          SUCCESS alert.
+          success alert.
         </Text>
       </View>
     </View>
@@ -1192,7 +1192,7 @@ exports[`iOS BpkBannerAlert should render correctly with type equal to SUCCESS 1
 </View>
 `;
 
-exports[`iOS BpkBannerAlert should render correctly with type equal to WARN 1`] = `
+exports[`iOS BpkBannerAlert should render correctly with type equal to warn 1`] = `
 <View
   collapsable={undefined}
   style={
@@ -1278,7 +1278,7 @@ exports[`iOS BpkBannerAlert should render correctly with type equal to WARN 1`] 
             ]
           }
         >
-          WARN alert.
+          warn alert.
         </Text>
       </View>
     </View>

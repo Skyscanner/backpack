@@ -41,6 +41,11 @@ jest.mock('./BpkBannerAlert', () =>
 );
 
 jest.mock(
+  './../node_modules/react-native-bpk-component-button-link/node_modules/react-native-bpk-component-text/node_modules/bpk-tokens/tokens/base.react.native',
+  () => jest.requireActual('bpk-tokens/tokens/base.react.native.android.js'),
+);
+
+jest.mock(
   './../node_modules/react-native-bpk-component-text/node_modules/bpk-tokens/tokens/base.react.native',
   () => jest.requireActual('bpk-tokens/tokens/base.react.native.android.js'),
 );

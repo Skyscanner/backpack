@@ -18,6 +18,8 @@ import { isString } from 'util';
 * limitations under the License.
 */
 
+/* @flow */
+
 export const dismissablePropType = (props, propName, componentName) => {
   if (props[propName] && props.children !== null) {
     return new Error(
