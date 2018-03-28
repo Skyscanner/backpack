@@ -4,38 +4,34 @@ exports[`iOS AnimateAndFade should render correctly 1`] = `
 <View
   animateOnEnter={false}
   animateOnLeave={false}
+  collapsable={undefined}
   duration={200}
   show={true}
-  style={null}
+  style={
+    Object {
+      "height": 0.01,
+      "overflow": "hidden",
+    }
+  }
 >
   <View
-    collapsable={undefined}
-    style={
-      Object {
-        "height": 0.01,
-        "overflow": "hidden",
-      }
-    }
+    onLayout={[Function]}
   >
     <View
-      onLayout={[Function]}
-    >
-      <View
-        collapsable={undefined}
-        style={
-          Object {
-            "opacity": 0.01,
-          }
+      collapsable={undefined}
+      style={
+        Object {
+          "opacity": 0.01,
         }
+      }
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
       >
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
-        >
-          Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-        </Text>
-      </View>
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+      </Text>
     </View>
   </View>
 </View>
@@ -45,38 +41,34 @@ exports[`iOS AnimateAndFade should render correctly when show is false 1`] = `
 <View
   animateOnEnter={false}
   animateOnLeave={false}
+  collapsable={undefined}
   duration={200}
   show={false}
-  style={null}
+  style={
+    Object {
+      "height": 0.01,
+      "overflow": "hidden",
+    }
+  }
 >
   <View
-    collapsable={undefined}
-    style={
-      Object {
-        "height": 0.01,
-        "overflow": "hidden",
-      }
-    }
+    onLayout={[Function]}
   >
     <View
-      onLayout={[Function]}
-    >
-      <View
-        collapsable={undefined}
-        style={
-          Object {
-            "opacity": 0.01,
-          }
+      collapsable={undefined}
+      style={
+        Object {
+          "opacity": 0.01,
         }
+      }
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
       >
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
-        >
-          Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-        </Text>
-      </View>
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+      </Text>
     </View>
   </View>
 </View>
@@ -88,39 +80,35 @@ exports[`iOS AnimateAndFade should render correctly with animateOnLeave 1`] = `
 <View
   animateOnEnter={false}
   animateOnLeave={true}
+  collapsable={undefined}
   duration={200}
   show={true}
   shown={true}
-  style={null}
+  style={
+    Object {
+      "height": 0.01,
+      "overflow": "hidden",
+    }
+  }
 >
   <View
-    collapsable={undefined}
-    style={
-      Object {
-        "height": 0.01,
-        "overflow": "hidden",
-      }
-    }
+    onLayout={[Function]}
   >
     <View
-      onLayout={[Function]}
-    >
-      <View
-        collapsable={undefined}
-        style={
-          Object {
-            "opacity": 0.01,
-          }
+      collapsable={undefined}
+      style={
+        Object {
+          "opacity": 0.01,
         }
+      }
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
       >
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
-        >
-          Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-        </Text>
-      </View>
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+      </Text>
     </View>
   </View>
 </View>
