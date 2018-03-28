@@ -108,7 +108,7 @@ storiesOf('react-native-bpk-component-animate-height', module)
     <AnimateHeightDemo>{animateHeightContent}</AnimateHeightDemo>
   ))
   .add('Custom animation duration', () => (
-    <AnimateHeightDemo animationDuration={5000}>
+    <AnimateHeightDemo animationDuration={1000}>
       {animateHeightContent}
     </AnimateHeightDemo>
   ))

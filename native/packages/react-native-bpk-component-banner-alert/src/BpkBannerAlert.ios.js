@@ -47,7 +47,6 @@ import {
 
 const STYLES = StyleSheet.create({
   border: {
-    minHeight: spacingXl, // animate height is janky if we don't provide this ¯\_(ツ)_/¯
     borderWidth: borderSizeSm,
     borderRadius: borderRadiusSm,
   },
@@ -92,7 +91,8 @@ const STYLES = StyleSheet.create({
   closeButton: {
     position: 'absolute',
     right: 0,
-    padding: spacingMd,
+    paddingVertical: spacingMd - borderSizeSm,
+    paddingHorizontal: spacingMd,
   },
   expandIcon: {
     paddingStart: spacingMd,
@@ -169,10 +169,10 @@ const BpkBannerAlert = props => {
 
   return (
     <AnimateAndFade
+      {...rest}
       animateOnEnter={animateOnEnter}
       animateOnLeave={dismissable || animateOnLeave}
       show={show}
-      {...rest}
     >
       <View style={[STYLES.border, borderStyle, bannerStyle]}>
         <RowView style={rowStyle}>
@@ -201,7 +201,7 @@ const BpkBannerAlert = props => {
         {props.children && (
           <BpkAnimateHeight
             expanded={expanded}
-            style={STYLES.expandableContent}
+            innerStyle={STYLES.expandableContent}
           >
             {props.children}
           </BpkAnimateHeight>
