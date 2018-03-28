@@ -70,16 +70,18 @@ if (nativeComponentIntroduced) {
   );
 }
 
-// If any of the packages have changed, the changelog should have been updated.
-const changelogModified = includes(modifiedFiles, 'changelog.md');
+// If any of the packages have changed, the unreleased log should have been updated.
+const unreleasedModified = includes(modifiedFiles, 'unreleased.md');
 const packagesModified = fileChanges.some(
   filePath =>
     (filePath.startsWith('packages/') ||
       filePath.startsWith('native/packages/')) &&
     !filePath.startsWith('packages/bpk-docs/'),
 );
-if (packagesModified && !changelogModified && !declaredTrivial) {
-  warn("One or more packages have changed, but `changelog.md` wasn't updated.");
+if (packagesModified && !unreleasedModified && !declaredTrivial) {
+  warn(
+    "One or more packages have changed, but `unreleased.md` wasn't updated.",
+  );
 }
 
 // If source files have changed, the snapshots should have been updated.
