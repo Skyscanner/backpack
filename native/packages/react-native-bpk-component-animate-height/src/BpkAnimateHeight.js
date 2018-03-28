@@ -16,9 +16,9 @@
  * limitations under the License.
  */
 
+import { View, Platform, Animated } from 'react-native';
 import React from 'react';
 import PropTypes from 'prop-types';
-import { View, Platform, Animated, ViewPropTypes } from 'react-native';
 import { animationDurationSm } from 'bpk-tokens/tokens/base.react.native';
 
 const COLLAPSED_HEIGHT = 0.01;
@@ -28,110 +28,107 @@ class BpkAnimateHeight extends React.Component {
     super(props);
 
     this.state = {
+      expanded: this.props.expanded,
       height: new Animated.Value(COLLAPSED_HEIGHT),
+      inTree: this.props.expanded,
+      expandAnimationInProgress: false,
     };
-
-    this.inTree = this.props.expanded;
-    this.expandAnimationInProgress = false;
 
     // overflow: hidden is not properly supported on Android,
     // which causes animation to look shoddy.
     // See https://facebook.github.io/react-native/releases/0.49/docs/layout-props.html#overflow
     this.animationDuration =
       Platform.OS === 'ios' ? props.animationDuration : 0;
+
+    this.componentWillReceiveProps = this.componentWillReceiveProps.bind(this);
+    this.setExpandedHeight = this.setExpandedHeight.bind(this);
+    this.onHeightAnimationComplete = this.onHeightAnimationComplete.bind(this);
+    this.performAnimation = this.performAnimation.bind(this);
   }
 
   componentWillReceiveProps(nextProps) {
-    if (nextProps.expanded === this.props.expanded) {
-      return;
-    }
-
-    if (nextProps.expanded) {
-      this.inTree = true;
-      this.expandAnimationInProgress = true;
-    } else {
-      this.animate(COLLAPSED_HEIGHT, this.props.collapseDelay);
+    if (nextProps.expanded !== this.state.expanded) {
+      if (this.state.expanded) {
+        this.setState({ expanded: false });
+        this.performAnimation(COLLAPSED_HEIGHT, this.props.collapseDelay);
+      } else {
+        this.setState({ inTree: true, expandAnimationInProgress: true });
+      }
     }
   }
 
-  onHeightAnimationComplete = () => {
+  onHeightAnimationComplete() {
     if (typeof this.props.onAnimationComplete === 'function') {
       this.props.onAnimationComplete();
     }
-
     // eslint-disable-next-line no-underscore-dangle
     if (this.state.height._value - 0.01 < 0.00001) {
-      this.inTree = false;
-      this.forceUpdate();
+      this.setState({ inTree: false });
     }
-  };
+  }
 
-  setExpandedHeight = event => {
+  setExpandedHeight(event) {
     const { height } = event.nativeEvent.layout;
-
     if (height === 0) {
       return;
     }
-
-    if (this.expandAnimationInProgress) {
-      this.expandAnimationInProgress = false;
-      this.animate(height, this.props.expandDelay);
-    } else {
+    if (!this.state.expandAnimationInProgress) {
       this.setState({
         height: new Animated.Value(
-          this.props.expanded ? height : COLLAPSED_HEIGHT,
+          this.state.expanded ? height : COLLAPSED_HEIGHT,
         ),
       });
+    } else {
+      this.setState({ expanded: true, expandAnimationInProgress: false });
+      this.performAnimation(height, this.props.expandDelay);
     }
-  };
+  }
 
-  animate = (height, delay) => {
+  performAnimation(height, delay) {
     Animated.timing(this.state.height, {
       toValue: height,
       duration: this.animationDuration,
       delay,
     }).start(this.onHeightAnimationComplete);
-  };
+  }
 
   render() {
     const {
-      children,
-      expanded, // not used in render
       animationDuration,
+      expanded,
+      children,
       expandDelay,
       collapseDelay,
       onAnimationComplete,
-      style,
       ...rest
     } = this.props;
 
     const { height } = this.state;
 
-    return this.inTree ? (
-      <Animated.View
-        {...rest}
-        style={{
-          ...style,
-          overflow: 'hidden',
-          height,
-        }}
-      >
-        <View onLayout={event => this.setExpandedHeight(event)}>
-          {this.props.children}
-        </View>
-      </Animated.View>
+    return this.state.inTree ? (
+      <View {...rest}>
+        <Animated.View
+          style={{
+            overflow: 'hidden',
+            height,
+          }}
+        >
+          <View onLayout={event => this.setExpandedHeight(event)}>
+            {this.props.children}
+          </View>
+        </Animated.View>
+      </View>
     ) : null;
   }
 }
 
 BpkAnimateHeight.propTypes = {
-  children: PropTypes.node.isRequired,
-  expanded: PropTypes.bool.isRequired,
   animationDuration: PropTypes.number,
+  expanded: PropTypes.bool.isRequired,
+  children: PropTypes.node.isRequired,
   expandDelay: PropTypes.number,
   collapseDelay: PropTypes.number,
   onAnimationComplete: PropTypes.func,
-  style: ViewPropTypes.style,
 };
 
 BpkAnimateHeight.defaultProps = {
@@ -139,7 +136,6 @@ BpkAnimateHeight.defaultProps = {
   expandDelay: 0,
   collapseDelay: 0,
   onAnimationComplete: null,
-  style: null,
 };
 
 export default BpkAnimateHeight;
