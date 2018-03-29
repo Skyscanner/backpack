@@ -19,7 +19,10 @@
 @import '~bpk-mixins/index';
 
 @mixin fullscreen() {
+  display: flex;
+  max-height: 100vh;
   margin: 0;
+  flex-direction: column;
   border-radius: 0;
   box-shadow: none;
 }
@@ -66,17 +69,9 @@
     opacity: $bpk-modal-opacity;
   }
 
-  &--iphone-fix {
-    display: block;
-    max-width: none;
-    margin: 0;
-    padding: 0;
-    border-radius: 0;
-    box-shadow: none;
-  }
-
   &__header {
     display: flex;
+    min-height: 2 * $bpk-modal-header-padding + $bpk-line-height-base;
     padding: $bpk-modal-header-padding;
     justify-content: space-between;
 
@@ -99,5 +94,7 @@
 
   &__content {
     padding: $bpk-modal-content-padding;
+    flex-grow: 1;
+    overflow-y: scroll;
   }
 }
