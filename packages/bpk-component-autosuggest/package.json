@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-autosuggest",
-  "version": "3.0.76",
+  "version": "3.0.77",
   "description": "Backpack autosuggest component.",
   "main": "index.js",
   "repository": {
@@ -13,13 +13,13 @@
     "react": "^15.0.0 || ^16.0.0"
   },
   "dependencies": {
-    "bpk-component-input": "^3.3.9",
-    "bpk-mixins": "^17.5.0",
+    "bpk-component-input": "^3.3.10",
+    "bpk-mixins": "^17.5.1",
     "bpk-react-utils": "^2.5.0",
     "prop-types": "^15.5.8",
     "react-autosuggest": "^9.0.1"
   },
   "devDependencies": {
-    "bpk-component-icon": "^3.18.0"
+    "bpk-component-icon": "^3.18.1"
   }
 }
