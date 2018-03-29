@@ -108,10 +108,6 @@ const withScrim = WrappedComponent => {
 
       const classNames = [getClassName('bpk-scrim-content')];
 
-      if (isIphone) {
-        classNames.push(getClassName('bpk-scrim-content--iphone-fix'));
-      }
-
       if (containerClassName) {
         classNames.push(containerClassName);
       }
