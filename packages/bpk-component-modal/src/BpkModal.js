@@ -101,7 +101,7 @@ const { dialogRef, ...modalDialogPropTypes } = BpkModalDialog.propTypes;
 BpkModal.propTypes = {
   ...modalDialogPropTypes,
   onClose: modalOnClosePropType,
-  isIphone: modalOnClosePropType,
+  isIphone: PropTypes.bool,
   isOpen: PropTypes.bool.isRequired,
   renderTarget: PropTypes.func,
   target: PropTypes.oneOfType([PropTypes.func, PropTypes.element]),
