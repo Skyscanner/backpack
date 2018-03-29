@@ -26,7 +26,8 @@
   }
 
   &__main {
-    flex: 1;
+    display: flex;
+    flex: 1 0 auto;
   }
 
   &__container {

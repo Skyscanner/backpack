@@ -15,28 +15,27 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+/* @flow */
+import { type Node } from 'react';
 
-@import '~bpk-mixins/index';
+export type Link = {
+  id: string,
+  children: Node,
+  route: ?string,
+};
 
-.bpkdocs-side-nav-layout {
-  &__container {
-    width: 100%;
-  }
+export type Category = {
+  id: string,
+  category: string,
+  links: Array<Link>,
+  sort: ?boolean,
+};
 
-  &__nav-select-container {
-    display: none;
-    padding-top: $bpk-spacing-sm;
+export type LinkPropType = Link;
+export type CategoryPropType = Category;
 
-    @include bpk-breakpoint-tablet {
-      display: block;
-    }
-  }
+export type Links = Array<Link | Category>;
 
-  &__nav-list-container {
-    display: block;
-
-    @include bpk-breakpoint-tablet {
-      display: none;
-    }
-  }
-}
+export type LinksPropType = {
+  links: Links,
+};

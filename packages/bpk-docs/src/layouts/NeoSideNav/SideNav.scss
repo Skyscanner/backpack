@@ -19,24 +19,44 @@
 @import '~bpk-mixins/index';
 
 .bpkdocs-side-nav-layout {
-  &__container {
-    width: 100%;
+  &__wrapper {
+    display: flex;
+    flex-direction: row;
   }
 
-  &__nav-select-container {
-    display: none;
-    padding-top: $bpk-spacing-sm;
+  &__logo {
+    height: $bpk-spacing-xs * 8;
 
-    @include bpk-breakpoint-tablet {
-      display: block;
+    // HACK: This is to align the 'B' of 'Backpack' with the left edge
+    // of the content.
+    margin-left: $bpk-one-pixel-rem * 2;
+
+    @include bpk-rtl {
+      margin-left: 0;
     }
   }
 
-  &__nav-list-container {
-    display: block;
+  &__sidebar {
+    display: flex;
+    min-width: $bpk-spacing-base * 20;
+    padding: $bpk-spacing-lg * 2;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: $bpk-color-gray-900;
+    color: $bpk-color-white;
 
-    @include bpk-breakpoint-tablet {
-      display: none;
+    &-content {
+      width: 100%;
+      margin-top: $bpk-spacing-lg * 3;
     }
+  }
+
+  &__content {
+    display: flex;
+    padding: $bpk-spacing-sm;
+  }
+
+  &__section-list {
+    margin-bottom: $bpk-spacing-md;
   }
 }

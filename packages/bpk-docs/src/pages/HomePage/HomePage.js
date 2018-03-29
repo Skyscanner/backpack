@@ -57,7 +57,7 @@ class HomePage extends React.Component {
 
   render() {
     return (
-      <section>
+      <section className={getClassName('bpkdocs-home-page__container')}>
         <Helmet title="Backpack" />
         <div className={getClassName('bpkdocs-home-page__hero')}>
           <BpkGridContainer>

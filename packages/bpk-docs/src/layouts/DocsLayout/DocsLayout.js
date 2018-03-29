@@ -20,6 +20,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 
 import SideNavLayout from './../SideNavLayout';
+import NeoSideNav from './../NeoSideNav';
 import * as routes from './../../constants/routes';
 
 const links = [
@@ -198,11 +199,16 @@ const links = [
   },
 ];
 
-const DocsLayout = ({ children, ...rest }) => (
-  <SideNavLayout links={links} {...rest}>
-    {children}
-  </SideNavLayout>
-);
+const DocsLayout = ({ children, ...rest }) =>
+  process.env.BPK_NEO ? (
+    <NeoSideNav activeSection="components" links={links} {...rest}>
+      {children}
+    </NeoSideNav>
+  ) : (
+    <SideNavLayout links={links} {...rest}>
+      {children}
+    </SideNavLayout>
+  );
 
 DocsLayout.propTypes = {
   children: PropTypes.oneOfType([
