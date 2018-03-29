@@ -79,7 +79,6 @@ class ModalContainer extends Component<Props, State> {
       <div>
         <BpkButton onClick={this.onOpen}>{buttonText}</BpkButton>
         <BpkModal
-          fullScreen
           id="my-modal"
           isOpen={this.state.isOpen}
           onClose={this.onClose}
