@@ -21,7 +21,6 @@
 @mixin fullscreen() {
   display: flex;
   padding: 0;
-  background-color: $bpk-modal-background-color;
 }
 
 .bpk-modal__container {

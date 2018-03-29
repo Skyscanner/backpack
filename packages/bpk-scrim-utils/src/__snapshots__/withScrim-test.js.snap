@@ -20,7 +20,7 @@ exports[`BpkScrim render should render correctly 1`] = `
 
 exports[`BpkScrim render should render correctly when is iPhone 1`] = `
 <div
-  className="bpk-scrim-content bpk-scrim-content--iphone-fix"
+  className="bpk-scrim-content"
 >
   <div
     className="bpk-scrim"
