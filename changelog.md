@@ -1,5 +1,15 @@
 # Backpack changelog
 
+## 2018-03-29 - Add support for leading and trailing icons in React Native navigation bar title
+
+**Added:**
+- react-native-bpk-component-navigation-bar: 1.1.0
+  - Add support for leading and trailing icons in navigation bar title.
+
+**Fixed:**
+- react-native-bpk-component-banner-alert: 2.1.14
+  - Fixed devDependencies that should be dependencies.
+
 ## 2018-03-27 - React Native horizontal nav visual breaking change
 
 **Breaking:**
