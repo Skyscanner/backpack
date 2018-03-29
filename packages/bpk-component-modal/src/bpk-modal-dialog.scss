@@ -95,6 +95,6 @@
   &__content {
     padding: $bpk-modal-content-padding;
     flex-grow: 1;
-    overflow-y: scroll;
+    overflow-y: auto;
   }
 }
