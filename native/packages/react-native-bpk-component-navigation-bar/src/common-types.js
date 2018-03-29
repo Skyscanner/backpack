@@ -16,7 +16,28 @@
  * limitations under the License.
  */
 /* @flow */
+import PropTypes from 'prop-types';
+import { type Element } from 'react-native';
+
 type StatusBarStyle = 'light-content' | 'dark-content';
+
+export type TitleWithIcon = {|
+  value: string,
+  icon: string,
+  iconPosition: 'leading' | 'trailing',
+|};
+
+export type TitleProp = 'string' | TitleWithIcon | Element<any>;
+
+export const TITLE_PROPTYPE = PropTypes.oneOfType([
+  PropTypes.string,
+  PropTypes.shape({
+    value: PropTypes.string.isRequired,
+    icon: PropTypes.string.isRequired,
+    iconPosition: PropTypes.oneOf(['leading', 'trailing']),
+  }),
+  PropTypes.element,
+]);
 
 export type CommonTheme = {
   navigationBarStatusBarStyle: StatusBarStyle,

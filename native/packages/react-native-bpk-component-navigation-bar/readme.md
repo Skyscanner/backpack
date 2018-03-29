@@ -79,13 +79,23 @@ import BpkNavigationBar from 'react-native-bpk-component-navigation-bar'
 
 #### Props
 
-| Property       | PropType               | Required | Default Value |
-| -------------- | ---------------------- | -------- | ------------- |
-| title          | oneOf(string, element) | true     | -             |
-| theme          | object                 | false    | null          |
-| leadingButton  | button element         | false    | null          |
-| trailingButton | button element         | false    | null          |
-| subtitleView   | element                | false    | null          |
+| Property       | PropType                             | Required | Default Value |
+| -------------- | ------------------------------------ | -------- | ------------- |
+| title          | oneOf(string, titleWithIcon shape)   | true     | -             |
+| theme          | object                               | false    | null          |
+| leadingButton  | button element                       | false    | null          |
+| trailingButton | button element                       | false    | null          |
+| subtitleView   | element                              | false    | null          |
+
+`titleWithIcon` is an object with the shape
+
+```js
+PropTypes.shape({
+  value: PropTypes.string.isRequired, // The title to use
+  icon: PropTypes.string.isRequired, // The name of a Backpack icon e.g "lock"
+  iconPosition: PropTypes.oneOf(['leading', 'trailing']),
+});
+```
 
 #### Theme Props
 

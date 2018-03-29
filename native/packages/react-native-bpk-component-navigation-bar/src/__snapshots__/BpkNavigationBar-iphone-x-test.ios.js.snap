@@ -124,21 +124,12 @@ exports[`ios - iPhone X  BpkNavigationBar should render correctly 1`] = `
         }
       }
     >
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
-        numberOfLines={1}
+      <View
         style={
           Array [
             Object {
-              "color": "rgb(82, 76, 97)",
-              "fontFamily": "sans-serif",
-              "fontSize": 20,
-              "fontWeight": "400",
-            },
-            Object {
-              "fontWeight": "500",
+              "alignItems": "center",
+              "flexDirection": "row",
             },
             Object {
               "maxWidth": "60%",
@@ -146,8 +137,34 @@ exports[`ios - iPhone X  BpkNavigationBar should render correctly 1`] = `
           ]
         }
       >
-        Backpack
-      </Text>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          numberOfLines={1}
+          style={
+            Array [
+              Object {
+                "color": "rgb(82, 76, 97)",
+                "fontFamily": "sans-serif",
+                "fontSize": 20,
+                "fontWeight": "400",
+              },
+              Object {
+                "fontWeight": "500",
+              },
+              Array [
+                Object {
+                  "color": "rgb(82, 76, 97)",
+                },
+                null,
+              ],
+            ]
+          }
+        >
+          Backpack
+        </Text>
+      </View>
     </View>
   </View>
 </View>
@@ -259,21 +276,12 @@ exports[`ios - iPhone X  BpkNavigationBar should render correctly with trailing 
         }
       }
     >
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
-        numberOfLines={1}
+      <View
         style={
           Array [
             Object {
-              "color": "rgb(82, 76, 97)",
-              "fontFamily": "sans-serif",
-              "fontSize": 20,
-              "fontWeight": "400",
-            },
-            Object {
-              "fontWeight": "500",
+              "alignItems": "center",
+              "flexDirection": "row",
             },
             Object {
               "maxWidth": "60%",
@@ -281,8 +289,34 @@ exports[`ios - iPhone X  BpkNavigationBar should render correctly with trailing 
           ]
         }
       >
-        Backpack
-      </Text>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          numberOfLines={1}
+          style={
+            Array [
+              Object {
+                "color": "rgb(82, 76, 97)",
+                "fontFamily": "sans-serif",
+                "fontSize": 20,
+                "fontWeight": "400",
+              },
+              Object {
+                "fontWeight": "500",
+              },
+              Array [
+                Object {
+                  "color": "rgb(82, 76, 97)",
+                },
+                null,
+              ],
+            ]
+          }
+        >
+          Backpack
+        </Text>
+      </View>
     </View>
     <View
       accessibilityComponentType="button"

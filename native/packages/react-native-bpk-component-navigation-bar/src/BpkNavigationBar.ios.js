@@ -17,10 +17,9 @@
  */
 /* @flow */
 
-import React, { Component } from 'react';
+import React, { Component, isValidElement } from 'react';
 import PropTypes from 'prop-types';
 import { type Element, StyleSheet, View, ViewPropTypes } from 'react-native';
-import BpkText from 'react-native-bpk-component-text';
 import {
   withTheme,
   getThemeAttributes,
@@ -32,10 +31,17 @@ import {
   colorGray700,
 } from 'bpk-tokens/tokens/base.react.native';
 
-import { type CommonTheme, THEME_ATTRIBUTES } from './common-types';
+import {
+  type CommonTheme,
+  type TitleProp,
+  THEME_ATTRIBUTES,
+  TITLE_PROPTYPE,
+} from './common-types';
+
 import BpkNavigationBarBackButtonIOS from './BpkNavigationBarBackButtonIOS';
 import BpkNavigationBarTextButtonIOS from './BpkNavigationBarTextButtonIOS';
 import BpkNavigationBarIconButtonIOS from './BpkNavigationBarIconButtonIOS';
+import TitleView from './TitleView';
 import isIphoneX from './isIphoneX';
 
 const IOS_THEME_ATTRIBUTES = [...THEME_ATTRIBUTES, 'navigationBarShadowColor'];
@@ -100,7 +106,7 @@ type ButtonType =
   | BpkNavigationBarIconButtonIOS;
 
 export type Props = {
-  title: string,
+  title: TitleProp,
   theme: ?IOSTheme,
   leadingButton: ?Element<ButtonType>,
   trailingButton: ?Element<ButtonType>,
@@ -113,8 +119,7 @@ class BpkNavigationBar extends Component<Props, {}> {
   theme: ?IOSTheme;
 
   static propTypes = {
-    title: PropTypes.oneOfType([PropTypes.string, PropTypes.element])
-      .isRequired,
+    title: TITLE_PROPTYPE.isRequired,
     theme: makeThemePropType(IOS_THEME_ATTRIBUTES),
     leadingButton: PropTypes.element,
     trailingButton: PropTypes.element,
@@ -151,8 +156,8 @@ class BpkNavigationBar extends Component<Props, {}> {
     const titleStyle = [styles.title];
     const outerBarStyle = [styles.barOuter];
     const innerBarStyle = [styles.barInner, isIphoneX && styles.iPhoneXBar];
-    let tintColor = colorGray700;
 
+    let tintColor = colorGray700;
     if (this.theme) {
       const {
         navigationBarTintColor,
@@ -165,6 +170,32 @@ class BpkNavigationBar extends Component<Props, {}> {
       });
       titleStyle.push({ color: navigationBarTintColor });
       tintColor = navigationBarTintColor;
+    }
+
+    let titleView = null;
+
+    // This if ensures Flow correctly refines the type of
+    // title in the body of the if to `'string' | TitleWithIcon
+    if (
+      typeof title === 'string' ||
+      (typeof title === 'object' && title.icon)
+    ) {
+      titleView = (
+        <TitleView title={title} tintColor={tintColor} style={styles.title} />
+      );
+    }
+
+    // This if ensures Flow correctly refines the type of
+    // title in the body of the if to `Element`.
+    // While this if is mutually exclusive to the above it
+    // cannot be an else if as Flow seems unable to handle this.
+    if (typeof title === 'object' && title.type && isValidElement(title)) {
+      titleView = React.cloneElement(title, {
+        style: [
+          title.props.style ? title.props.style : null,
+          { maxHeight: 28 },
+        ],
+      });
     }
 
     if (hasSubtitleView) {
@@ -187,26 +218,7 @@ class BpkNavigationBar extends Component<Props, {}> {
               tintColor,
               leading: true,
             })}
-          <View style={styles.titleContainer}>
-            {typeof title !== 'string' ? (
-              React.cloneElement(title, {
-                style: [
-                  title.props.style ? title.props.style : null,
-                  { maxHeight: 28 },
-                ],
-              })
-            ) : (
-              <BpkText
-                textStyle="lg"
-                emphasize
-                style={styles.title}
-                numberOfLines={1}
-                ellipsizeMode="tail"
-              >
-                {title}
-              </BpkText>
-            )}
-          </View>
+          <View style={styles.titleContainer}>{titleView}</View>
           {trailingButton &&
             React.cloneElement(trailingButton, {
               tintColor,

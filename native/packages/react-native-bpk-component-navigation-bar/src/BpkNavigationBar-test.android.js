@@ -153,5 +153,23 @@ describe('android', () => {
         .toJSON();
       expect(tree).toMatchSnapshot();
     });
+
+    it('should render correctly with an icon in the title', () => {
+      const tree = renderer
+        .create(
+          <BpkNavigationBar
+            title={{ value: 'Checkout', icon: 'lock', iconPosition: 'leading' }}
+            leadingButton={
+              <BpkNavigationBarButtonAndroid
+                title="Back"
+                icon="long-arrow-left"
+                onPress={jest.fn()}
+              />
+            }
+          />,
+        )
+        .toJSON();
+      expect(tree).toMatchSnapshot();
+    });
   });
 });
