@@ -20,19 +20,19 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import { withTheme } from 'react-native-bpk-theming';
+import { getThemeAttributes, withTheme } from 'react-native-bpk-theming';
 import { View, TouchableOpacity } from 'react-native';
 import BpkIcon from 'react-native-bpk-component-icon';
 import BpkText from 'react-native-bpk-component-text';
 
 import styles from './styles';
-import { themeAttributesSupplied } from './utils';
 
 import {
   type CommonProps,
   commonPropTypes,
   commonDefaultProps,
   ICON_ALIGNMENTS,
+  REQUIRED_THEME_ATTRIBUTES,
 } from './common-types';
 
 export type Props = {
@@ -54,10 +54,10 @@ const BpkButtonLink = (props: Props) => {
     ...rest
   } = props;
 
-  const themeStyle =
-    theme && themeAttributesSupplied(theme)
-      ? { color: theme.buttonLinkTextColor }
-      : null;
+  const themeAttributes = getThemeAttributes(REQUIRED_THEME_ATTRIBUTES, theme);
+  const themeStyle = themeAttributes
+    ? { color: themeAttributes.buttonLinkTextColor }
+    : null;
 
   const containerStyle = [styles.container];
   const viewStyle = [styles.view];

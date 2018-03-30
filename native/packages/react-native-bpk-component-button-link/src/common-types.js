@@ -22,7 +22,11 @@ import { type Node } from 'react';
 import PropTypes from 'prop-types';
 import { ViewPropTypes } from 'react-native';
 
-import { themePropType } from './utils';
+import { makeThemePropType } from 'react-native-bpk-theming';
+
+export const REQUIRED_THEME_ATTRIBUTES: Array<string> = ['buttonLinkTextColor'];
+
+const themePropType = makeThemePropType(REQUIRED_THEME_ATTRIBUTES);
 
 export const ICON_ALIGNMENTS = {
   leading: 'leading',

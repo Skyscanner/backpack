@@ -100,4 +100,8 @@ describe('getThemeAttributes', () => {
   it('should return `null` if the theme is invalid', () => {
     expect(getThemeAttributes(REQUIRED_ATTRIBUTES, INVALID_THEME)).toBeNull();
   });
+
+  it('should return `null` if the theme is null', () => {
+    expect(getThemeAttributes(REQUIRED_ATTRIBUTES, null)).toBeNull();
+  });
 });

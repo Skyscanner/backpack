@@ -19,7 +19,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import BpkThemeProvider from 'react-native-bpk-theming';
-import BpkHorizontalNavItem, { propTypes } from './BpkHorizontalNavItem';
+import BpkHorizontalNavItem from './BpkHorizontalNavItem';
 
 const commonTests = () => {
   const onPressFn = jest.fn();
@@ -124,23 +124,6 @@ const commonTests = () => {
         )
         .toJSON();
       expect(tree).toMatchSnapshot();
-    });
-
-    it('should reject theme property when required theme attributes are omitted', () => {
-      // eslint-disable-line max-len
-      expect(
-        propTypes
-          .theme(
-            {
-              theme: {},
-            },
-            'theme',
-            'BpkHorizontalNavItem',
-          )
-          .toString(),
-      ).toEqual(
-        'Error: Invalid prop `theme` supplied to `BpkHorizontalNavItem`. To theme a `BpkHorizontalNavItem`, the `theme` prop must include `horizontalNavSelectedTextColor`',
-      ); // eslint-disable-line max-len
     });
   });
 };

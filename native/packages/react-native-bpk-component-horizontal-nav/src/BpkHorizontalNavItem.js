@@ -27,12 +27,12 @@ import {
   spacingMd,
   spacingBase,
 } from 'bpk-tokens/tokens/base.react.native';
-import { withTheme } from 'react-native-bpk-theming';
+import { getThemeAttributes, withTheme } from 'react-native-bpk-theming';
 import BpkText from 'react-native-bpk-component-text';
 import BpkTouchableOverlay from 'react-native-bpk-component-touchable-overlay';
 import BpkTouchableNativeFeedback from 'react-native-bpk-component-touchable-native-feedback';
 
-import { THEMING_ATTRIBUTE, themePropType } from './theming';
+import { REQUIRED_THEME_ATTRIBUTES, themePropType } from './theming';
 
 const styles = StyleSheet.create({
   text: {
@@ -72,13 +72,15 @@ const BpkHorizontalNavItem = props => {
     textStyles.push(styles.disabledText);
   } else if (selected) {
     textStyles.push(styles.selectedText);
-    if (theme && theme[THEMING_ATTRIBUTE]) {
-      const themeStyles = {
-        selectedText: {
-          color: theme[THEMING_ATTRIBUTE],
-        },
-      };
-      textStyles.push(themeStyles.selectedText);
+    const themeAttributes = getThemeAttributes(
+      REQUIRED_THEME_ATTRIBUTES,
+      theme,
+    );
+
+    if (themeAttributes) {
+      textStyles.push({
+        color: themeAttributes.horizontalNavSelectedTextColor,
+      });
     }
   }
   if (small) {

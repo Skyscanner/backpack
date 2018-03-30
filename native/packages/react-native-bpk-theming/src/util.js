@@ -58,14 +58,20 @@ export const makeThemePropType = (requiredAttributes: Array<string>) => (
 
 export const getThemeAttributes = (
   requiredAttributes: Array<string>,
-  theme: Object,
+  theme: ?Object,
 ): ?Object => {
-  if (!isValidTheme(requiredAttributes, theme)) {
+  if (!theme) {
+    return null;
+  }
+
+  if (theme && !isValidTheme(requiredAttributes, theme)) {
     return null;
   }
 
   return requiredAttributes.reduce((result, attribute) => {
-    result[attribute] = theme[attribute]; // eslint-disable-line no-param-reassign
+    if (theme) {
+      result[attribute] = theme[attribute]; // eslint-disable-line no-param-reassign
+    }
     return result;
   }, {});
 };
