@@ -1,5 +1,15 @@
 # Backpack changelog
 
+[Click here for unreleased changes.](./unreleased.md)
+
+## 2018-03-30 - Fix for full-screen modals with lots of content
+
+**Fixed:**
+- bpk-component-datepicker: 8.0.20 => 8.0.21
+- bpk-component-modal: 1.6.14 => 1.6.15
+- bpk-scrim-utils: 3.1.21 => 3.1.22
+  - Fixed issue with full-screen modals that have too much content to display within the viewport.
+
 ## 2018-03-29 - Add support for leading and trailing icons in React Native navigation bar title
 
 **Added:**
