@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-modal",
-  "version": "1.6.14",
+  "version": "1.6.15",
   "description": "Backpack modal component.",
   "main": "index.js",
   "repository": {
@@ -18,7 +18,7 @@
     "bpk-component-link": "^1.1.10",
     "bpk-mixins": "^17.5.1",
     "bpk-react-utils": "^2.5.0",
-    "bpk-scrim-utils": "^3.1.21",
+    "bpk-scrim-utils": "^3.1.22",
     "prop-types": "^15.5.8"
   },
   "devDependencies": {
