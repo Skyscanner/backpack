@@ -13,6 +13,7 @@ install:
   - npm install
   - npm run build
 script:
+  - set -e
   - npm run danger
   - npm test
   - npm run docs:dist
