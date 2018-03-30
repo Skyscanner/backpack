@@ -1,6 +1,6 @@
 # Backpack changelog
 
-[Click here for unreleased changes.](./unreleased.md)
+[Unreleased changes](./unreleased.md).
 
 ## 2018-03-30 - Fix for full-screen modals with lots of content
 
