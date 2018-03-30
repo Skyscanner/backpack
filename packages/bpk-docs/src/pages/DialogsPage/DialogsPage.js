@@ -19,6 +19,7 @@
 /* @flow */
 
 import React from 'react';
+import { BpkList, BpkListItem } from 'bpk-component-list';
 import dialogReadme from 'bpk-component-dialog/readme.md';
 
 import Paragraph from './../../components/Paragraph';
@@ -67,16 +68,15 @@ const DialogsPage = () => (
         Dialogs inform users about a specific task and may contain critical
         information, or require decisions or acknowledgement. For example:
       </Paragraph>,
-      <ul>
-        <li>
+      <BpkList>
+        <BpkListItem>
           Alert dialogs: urgent interruptions which tell users about a situation
           and require acknowledgement.
-        </li>
-        <li>
+        </BpkListItem>
+        <BpkListItem>
           Decision dialogs: which require users to confirm or make a choice.
-        </li>
-      </ul>,
-      <br />,
+        </BpkListItem>
+      </BpkList>,
       <Paragraph>
         Like modals, when triggered, dialogs will emerge from the centre of the
         viewport with a backdrop to indicate their separation from everything

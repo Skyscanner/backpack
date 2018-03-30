@@ -20,7 +20,6 @@
 
 @mixin fullscreen() {
   display: flex;
-  max-height: 100vh;
   margin: 0;
   flex-direction: column;
   border-radius: 0;
@@ -71,7 +70,6 @@
 
   &__header {
     display: flex;
-    min-height: 2 * $bpk-modal-header-padding + $bpk-line-height-base;
     padding: $bpk-modal-header-padding;
     justify-content: space-between;
 
@@ -94,7 +92,7 @@
 
   &__content {
     padding: $bpk-modal-content-padding;
-    flex-grow: 1;
+    flex: 1;
     overflow-y: auto;
   }
 }

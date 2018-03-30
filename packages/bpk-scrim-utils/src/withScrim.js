@@ -101,6 +101,7 @@ const withScrim = WrappedComponent => {
         getApplicationElement,
         onClose,
         isIphone,
+        isIpad,
         containerClassName,
         closeOnScrimClick,
         ...rest
@@ -118,6 +119,7 @@ const withScrim = WrappedComponent => {
           <WrappedComponent
             {...rest}
             isIphone={isIphone}
+            isIpad={isIpad}
             dialogRef={this.dialogRef}
             onClose={onClose}
           />

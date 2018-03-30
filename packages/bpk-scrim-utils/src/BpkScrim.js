@@ -25,20 +25,18 @@ import STYLES from './bpk-scrim.scss';
 const getClassName = cssModules(STYLES);
 
 const BpkScrim = props => (
-  /* eslint-disable jsx-a11y/no-static-element-interactions */
-  /* eslint-disable jsx-a11y/click-events-have-key-events */
   <TransitionInitialMount
     appearClassName={getClassName('bpk-scrim--appear')}
     appearActiveClassName={getClassName('bpk-scrim--appear-active')}
     transitionTimeout={200}
   >
     <div
+      role="presentation"
       className={getClassName('bpk-scrim')}
       onMouseDown={props.onClose}
       onTouchStart={props.onClose}
     />
   </TransitionInitialMount>
-  /* eslint-enable */
 );
 
 BpkScrim.propTypes = {
