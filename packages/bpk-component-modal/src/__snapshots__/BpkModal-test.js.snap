@@ -11,6 +11,7 @@ exports[`BpkModal should render correctly in the given target if renderTarget is
     >
       <div
         class="bpk-scrim"
+        role="presentation"
       />
       <section
         aria-labelledby="bpk-modal-heading-my-modal"

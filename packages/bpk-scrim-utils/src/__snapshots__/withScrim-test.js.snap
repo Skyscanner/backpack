@@ -8,6 +8,7 @@ exports[`BpkScrim render should render correctly 1`] = `
     className="bpk-scrim"
     onMouseDown={[Function]}
     onTouchStart={[Function]}
+    role="presentation"
   />
   <TestComponent
     dialogRef={[Function]}
@@ -26,6 +27,7 @@ exports[`BpkScrim render should render correctly when is iPhone 1`] = `
     className="bpk-scrim"
     onMouseDown={[Function]}
     onTouchStart={[Function]}
+    role="presentation"
   />
   <TestComponent
     dialogRef={[Function]}
@@ -44,6 +46,7 @@ exports[`BpkScrim render should render correctly with closeOnScrimClick as false
     className="bpk-scrim"
     onMouseDown={null}
     onTouchStart={null}
+    role="presentation"
   />
   <TestComponent
     dialogRef={[Function]}
@@ -62,6 +65,7 @@ exports[`BpkScrim render should render correctly with containerClassName 1`] = `
     className="bpk-scrim"
     onMouseDown={[Function]}
     onTouchStart={[Function]}
+    role="presentation"
   />
   <TestComponent
     dialogRef={[Function]}

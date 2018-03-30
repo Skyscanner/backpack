@@ -11,6 +11,7 @@ exports[`BpkDialog should render correctly in the given target if renderTarget i
     >
       <div
         class="bpk-scrim"
+        role="presentation"
       />
       <section
         aria-labelledby="bpk-modal-heading-my-modal"
@@ -61,6 +62,7 @@ exports[`BpkDialog should render correctly when it is not dismissible 2`] = `
     >
       <div
         class="bpk-scrim"
+        role="presentation"
       />
       <section
         aria-labelledby="bpk-modal-heading-my-modal"
