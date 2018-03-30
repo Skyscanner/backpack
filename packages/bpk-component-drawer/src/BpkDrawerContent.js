@@ -44,6 +44,7 @@ const BpkDrawerContent = props => {
     children,
     closeOnScrimClick, // unusued from withScrim scrim HOC
     isIphone, // unusued from withScrim scrim HOC
+    isIpad, // unusued from withScrim scrim HOC
     ...rest
   } = props;
 
@@ -128,6 +129,7 @@ BpkDrawerContent.propTypes = {
   hideTitle: PropTypes.bool,
   closeOnScrimClick: PropTypes.bool,
   isIphone: PropTypes.bool,
+  isIpad: PropTypes.bool,
 };
 
 BpkDrawerContent.defaultProps = {
@@ -139,6 +141,7 @@ BpkDrawerContent.defaultProps = {
   hideTitle: false,
   closeOnScrimClick: true,
   isIphone: false,
+  isIpad: false,
 };
 
 export default BpkDrawerContent;

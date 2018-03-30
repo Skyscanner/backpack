@@ -19,7 +19,9 @@
 @import '~bpk-mixins/index';
 
 @mixin fullscreen() {
+  display: flex;
   margin: 0;
+  flex-direction: column;
   border-radius: 0;
   box-shadow: none;
 }
@@ -66,15 +68,6 @@
     opacity: $bpk-modal-opacity;
   }
 
-  &--iphone-fix {
-    display: block;
-    max-width: none;
-    margin: 0;
-    padding: 0;
-    border-radius: 0;
-    box-shadow: none;
-  }
-
   &__header {
     display: flex;
     padding: $bpk-modal-header-padding;
@@ -99,5 +92,7 @@
 
   &__content {
     padding: $bpk-modal-content-padding;
+    flex: 1;
+    overflow-y: auto;
   }
 }

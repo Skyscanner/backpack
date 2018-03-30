@@ -44,6 +44,7 @@ export type Props = {
   // diff will suffice for now.
   ...$Exact<$Diff<ModalDialogProps, ScrimProps>>,
   isOpen: boolean,
+  isIphone: boolean,
   closeOnScrimClick: boolean,
   closeOnEscPressed: boolean,
   renderTarget: ?() => ?HTMLElement,
@@ -54,6 +55,7 @@ const BpkModal = (props: Props) => {
   const {
     isOpen,
     onClose,
+    isIphone,
     target,
     renderTarget,
     fullScreenOnMobile,
@@ -65,7 +67,7 @@ const BpkModal = (props: Props) => {
 
   const containerClass = [getClassName('bpk-modal__container')];
 
-  if (fullScreen) {
+  if (fullScreen || isIphone) {
     containerClass.push(getClassName('bpk-modal__container--full-screen'));
   } else if (fullScreenOnMobile) {
     containerClass.push(
@@ -87,21 +89,19 @@ const BpkModal = (props: Props) => {
         fullScreen={fullScreen}
         closeOnScrimClick={closeOnScrimClick}
         containerClassName={containerClass.join(' ')}
+        isIphone={isIphone}
         {...rest}
       />
     </Portal>
   );
 };
 
-const {
-  isIphone,
-  dialogRef,
-  ...modalDialogPropTypes
-} = BpkModalDialog.propTypes;
+const { dialogRef, ...modalDialogPropTypes } = BpkModalDialog.propTypes;
 
 BpkModal.propTypes = {
   ...modalDialogPropTypes,
   onClose: modalOnClosePropType,
+  isIphone: PropTypes.bool,
   isOpen: PropTypes.bool.isRequired,
   renderTarget: PropTypes.func,
   target: PropTypes.oneOfType([PropTypes.func, PropTypes.element]),
@@ -113,6 +113,9 @@ BpkModal.defaultProps = {
   ...BpkModalDialog.defaultProps,
   renderTarget: null,
   target: null,
+  isIphone: /iPhone/i.test(
+    typeof window !== 'undefined' ? window.navigator.platform : '',
+  ),
   closeOnScrimClick: true,
   closeOnEscPressed: true,
 };

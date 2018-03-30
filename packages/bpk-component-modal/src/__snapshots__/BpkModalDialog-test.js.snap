@@ -55,7 +55,7 @@ exports[`BpkModalDialog should render correctly 1`] = `
 exports[`BpkModalDialog should render correctly when is iPhone 1`] = `
 <section
   aria-labelledby="bpk-modal-heading-my-modal"
-  className="bpk-modal bpk-modal--iphone-fix bpk-modal--full-screen-mobile"
+  className="bpk-modal bpk-modal--full-screen"
   id="my-modal"
   role="dialog"
   tabIndex="-1"

@@ -29,10 +29,4 @@
   overflow-x: hidden;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
-
-  &--iphone-fix {
-    position: absolute;
-    display: block;
-    padding: 0;
-  }
 }

@@ -55,11 +55,8 @@ const BpkModalDialog = (props: Props) => {
   if (props.className) {
     classNames.push(props.className);
   }
-  if (props.isIphone) {
-    classNames.push(getClassName('bpk-modal--iphone-fix'));
-  }
 
-  if (props.fullScreen) {
+  if (props.fullScreen || props.isIphone) {
     classNames.push(getClassName('bpk-modal--full-screen'));
   } else if (props.fullScreenOnMobile) {
     classNames.push(getClassName('bpk-modal--full-screen-mobile'));

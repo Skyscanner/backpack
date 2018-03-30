@@ -101,16 +101,13 @@ const withScrim = WrappedComponent => {
         getApplicationElement,
         onClose,
         isIphone,
+        isIpad,
         containerClassName,
         closeOnScrimClick,
         ...rest
       } = this.props;
 
       const classNames = [getClassName('bpk-scrim-content')];
-
-      if (isIphone) {
-        classNames.push(getClassName('bpk-scrim-content--iphone-fix'));
-      }
 
       if (containerClassName) {
         classNames.push(containerClassName);
@@ -122,6 +119,7 @@ const withScrim = WrappedComponent => {
           <WrappedComponent
             {...rest}
             isIphone={isIphone}
+            isIpad={isIpad}
             dialogRef={this.dialogRef}
             onClose={onClose}
           />
