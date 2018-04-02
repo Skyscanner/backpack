@@ -2,117 +2,98 @@
 
 exports[`Android BpkBannerAlert should accept userland styling 1`] = `
 <View
-  animateOnEnter={false}
-  animateOnLeave={false}
-  duration={200}
-  show={true}
+  collapsable={undefined}
   style={
     Object {
+      "height": null,
+      "opacity": 1,
       "width": 50,
     }
   }
 >
   <View
-    collapsable={undefined}
-    style={
-      Object {
-        "height": 0.01,
-        "overflow": "hidden",
-      }
-    }
+    collapsable={false}
+    style={null}
   >
     <View
-      onLayout={[Function]}
+      style={
+        Array [
+          Object {
+            "display": "flex",
+            "flexDirection": "row",
+          },
+        ]
+      }
     >
       <View
-        collapsable={undefined}
         style={
           Object {
-            "opacity": 0.01,
+            "backgroundColor": "rgb(243, 242, 245)",
+            "flex": 1,
+            "minHeight": 56,
+            "paddingHorizontal": 24,
+            "paddingVertical": 16,
           }
         }
       >
         <View
           style={
-            Array [
-              Object {
-                "display": "flex",
-                "flexDirection": "row",
-              },
-            ]
+            Object {
+              "display": "flex",
+              "flexDirection": "row",
+            }
           }
         >
-          <View
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
             style={
-              Object {
-                "backgroundColor": "rgb(243, 242, 245)",
-                "flex": 1,
-                "minHeight": 56,
-                "paddingHorizontal": 24,
-                "paddingVertical": 16,
-              }
+              Array [
+                Object {
+                  "color": "rgb(82, 76, 97)",
+                  "fontFamily": "BpkIcon",
+                  "fontSize": 24,
+                  "lineHeight": 24,
+                },
+                Object {
+                  "fontSize": 16,
+                  "lineHeight": 16,
+                },
+                Array [
+                  Object {
+                    "paddingRight": 4,
+                    "paddingTop": 3,
+                  },
+                  Object {
+                    "color": "rgb(129, 123, 143)",
+                  },
+                ],
+              ]
             }
           >
-            <View
-              style={
+            
+          </Text>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Array [
                 Object {
-                  "display": "flex",
-                  "flexDirection": "row",
-                }
-              }
-            >
-              <Text
-                accessible={true}
-                allowFontScaling={true}
-                ellipsizeMode="tail"
-                style={
-                  Array [
-                    Object {
-                      "color": "rgb(82, 76, 97)",
-                      "fontFamily": "BpkIcon",
-                      "fontSize": 24,
-                      "lineHeight": 24,
-                    },
-                    Object {
-                      "fontSize": 16,
-                      "lineHeight": 16,
-                    },
-                    Array [
-                      Object {
-                        "paddingRight": 4,
-                        "paddingTop": 3,
-                      },
-                      Object {
-                        "color": "rgb(129, 123, 143)",
-                      },
-                    ],
-                  ]
-                }
-              >
-                
-              </Text>
-              <Text
-                accessible={true}
-                allowFontScaling={true}
-                ellipsizeMode="tail"
-                style={
-                  Array [
-                    Object {
-                      "color": "rgb(82, 76, 97)",
-                      "fontFamily": "sans-serif",
-                      "fontSize": 14,
-                      "fontWeight": "400",
-                    },
-                    Object {
-                      "flex": 1,
-                    },
-                  ]
-                }
-              >
-                Neutral alert.
-              </Text>
-            </View>
-          </View>
+                  "color": "rgb(82, 76, 97)",
+                  "fontFamily": "sans-serif",
+                  "fontSize": 14,
+                  "fontWeight": "400",
+                },
+                Object {
+                  "flex": 1,
+                },
+              ]
+            }
+          >
+            Neutral alert.
+          </Text>
         </View>
       </View>
     </View>
@@ -122,113 +103,97 @@ exports[`Android BpkBannerAlert should accept userland styling 1`] = `
 
 exports[`Android BpkBannerAlert should render correctly when not shown 1`] = `
 <View
-  animateOnEnter={false}
-  animateOnLeave={false}
-  duration={200}
-  show={false}
-  style={null}
+  collapsable={undefined}
+  style={
+    Object {
+      "height": 0.01,
+      "opacity": 0,
+    }
+  }
 >
   <View
-    collapsable={undefined}
-    style={
-      Object {
-        "height": 0.01,
-        "overflow": "hidden",
-      }
-    }
+    collapsable={false}
+    style={null}
   >
     <View
-      onLayout={[Function]}
+      style={
+        Array [
+          Object {
+            "display": "flex",
+            "flexDirection": "row",
+          },
+        ]
+      }
     >
       <View
-        collapsable={undefined}
         style={
           Object {
-            "opacity": 0.01,
+            "backgroundColor": "rgb(243, 242, 245)",
+            "flex": 1,
+            "minHeight": 56,
+            "paddingHorizontal": 24,
+            "paddingVertical": 16,
           }
         }
       >
         <View
           style={
-            Array [
-              Object {
-                "display": "flex",
-                "flexDirection": "row",
-              },
-            ]
+            Object {
+              "display": "flex",
+              "flexDirection": "row",
+            }
           }
         >
-          <View
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
             style={
-              Object {
-                "backgroundColor": "rgb(243, 242, 245)",
-                "flex": 1,
-                "minHeight": 56,
-                "paddingHorizontal": 24,
-                "paddingVertical": 16,
-              }
+              Array [
+                Object {
+                  "color": "rgb(82, 76, 97)",
+                  "fontFamily": "BpkIcon",
+                  "fontSize": 24,
+                  "lineHeight": 24,
+                },
+                Object {
+                  "fontSize": 16,
+                  "lineHeight": 16,
+                },
+                Array [
+                  Object {
+                    "paddingRight": 4,
+                    "paddingTop": 3,
+                  },
+                  Object {
+                    "color": "rgb(129, 123, 143)",
+                  },
+                ],
+              ]
             }
           >
-            <View
-              style={
+            
+          </Text>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Array [
                 Object {
-                  "display": "flex",
-                  "flexDirection": "row",
-                }
-              }
-            >
-              <Text
-                accessible={true}
-                allowFontScaling={true}
-                ellipsizeMode="tail"
-                style={
-                  Array [
-                    Object {
-                      "color": "rgb(82, 76, 97)",
-                      "fontFamily": "BpkIcon",
-                      "fontSize": 24,
-                      "lineHeight": 24,
-                    },
-                    Object {
-                      "fontSize": 16,
-                      "lineHeight": 16,
-                    },
-                    Array [
-                      Object {
-                        "paddingRight": 4,
-                        "paddingTop": 3,
-                      },
-                      Object {
-                        "color": "rgb(129, 123, 143)",
-                      },
-                    ],
-                  ]
-                }
-              >
-                
-              </Text>
-              <Text
-                accessible={true}
-                allowFontScaling={true}
-                ellipsizeMode="tail"
-                style={
-                  Array [
-                    Object {
-                      "color": "rgb(82, 76, 97)",
-                      "fontFamily": "sans-serif",
-                      "fontSize": 14,
-                      "fontWeight": "400",
-                    },
-                    Object {
-                      "flex": 1,
-                    },
-                  ]
-                }
-              >
-                Neutral alert.
-              </Text>
-            </View>
-          </View>
+                  "color": "rgb(82, 76, 97)",
+                  "fontFamily": "sans-serif",
+                  "fontSize": 14,
+                  "fontWeight": "400",
+                },
+                Object {
+                  "flex": 1,
+                },
+              ]
+            }
+          >
+            Neutral alert.
+          </Text>
         </View>
       </View>
     </View>
@@ -236,117 +201,199 @@ exports[`Android BpkBannerAlert should render correctly when not shown 1`] = `
 </View>
 `;
 
-exports[`Android BpkBannerAlert should render correctly with animateOnEnter 1`] = `null`;
-
-exports[`Android BpkBannerAlert should render correctly with animateOnLeave 1`] = `
+exports[`Android BpkBannerAlert should render correctly with animateOnEnter 1`] = `
 <View
-  animateOnEnter={false}
-  animateOnLeave={true}
-  duration={200}
-  show={true}
-  style={null}
+  collapsable={undefined}
+  style={
+    Object {
+      "height": 0.01,
+      "opacity": 0,
+    }
+  }
 >
   <View
-    collapsable={undefined}
-    style={
-      Object {
-        "height": 0.01,
-        "overflow": "hidden",
-      }
-    }
+    collapsable={false}
+    style={null}
   >
     <View
-      onLayout={[Function]}
+      style={
+        Array [
+          Object {
+            "display": "flex",
+            "flexDirection": "row",
+          },
+        ]
+      }
     >
       <View
-        collapsable={undefined}
         style={
           Object {
-            "opacity": 0.01,
+            "backgroundColor": "rgb(243, 242, 245)",
+            "flex": 1,
+            "minHeight": 56,
+            "paddingHorizontal": 24,
+            "paddingVertical": 16,
           }
         }
       >
         <View
           style={
-            Array [
-              Object {
-                "display": "flex",
-                "flexDirection": "row",
-              },
-            ]
+            Object {
+              "display": "flex",
+              "flexDirection": "row",
+            }
           }
         >
-          <View
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
             style={
-              Object {
-                "backgroundColor": "rgb(243, 242, 245)",
-                "flex": 1,
-                "minHeight": 56,
-                "paddingHorizontal": 24,
-                "paddingVertical": 16,
-              }
+              Array [
+                Object {
+                  "color": "rgb(82, 76, 97)",
+                  "fontFamily": "BpkIcon",
+                  "fontSize": 24,
+                  "lineHeight": 24,
+                },
+                Object {
+                  "fontSize": 16,
+                  "lineHeight": 16,
+                },
+                Array [
+                  Object {
+                    "paddingRight": 4,
+                    "paddingTop": 3,
+                  },
+                  Object {
+                    "color": "rgb(129, 123, 143)",
+                  },
+                ],
+              ]
             }
           >
-            <View
-              style={
+            
+          </Text>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Array [
                 Object {
-                  "display": "flex",
-                  "flexDirection": "row",
-                }
-              }
-            >
-              <Text
-                accessible={true}
-                allowFontScaling={true}
-                ellipsizeMode="tail"
-                style={
-                  Array [
-                    Object {
-                      "color": "rgb(82, 76, 97)",
-                      "fontFamily": "BpkIcon",
-                      "fontSize": 24,
-                      "lineHeight": 24,
-                    },
-                    Object {
-                      "fontSize": 16,
-                      "lineHeight": 16,
-                    },
-                    Array [
-                      Object {
-                        "paddingRight": 4,
-                        "paddingTop": 3,
-                      },
-                      Object {
-                        "color": "rgb(129, 123, 143)",
-                      },
-                    ],
-                  ]
-                }
-              >
-                
-              </Text>
-              <Text
-                accessible={true}
-                allowFontScaling={true}
-                ellipsizeMode="tail"
-                style={
-                  Array [
-                    Object {
-                      "color": "rgb(82, 76, 97)",
-                      "fontFamily": "sans-serif",
-                      "fontSize": 14,
-                      "fontWeight": "400",
-                    },
-                    Object {
-                      "flex": 1,
-                    },
-                  ]
-                }
-              >
-                Neutral alert.
-              </Text>
-            </View>
-          </View>
+                  "color": "rgb(82, 76, 97)",
+                  "fontFamily": "sans-serif",
+                  "fontSize": 14,
+                  "fontWeight": "400",
+                },
+                Object {
+                  "flex": 1,
+                },
+              ]
+            }
+          >
+            Neutral alert.
+          </Text>
+        </View>
+      </View>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`Android BpkBannerAlert should render correctly with animateOnLeave 1`] = `
+<View
+  collapsable={undefined}
+  style={
+    Object {
+      "height": null,
+      "opacity": 1,
+    }
+  }
+>
+  <View
+    collapsable={false}
+    style={null}
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "display": "flex",
+            "flexDirection": "row",
+          },
+        ]
+      }
+    >
+      <View
+        style={
+          Object {
+            "backgroundColor": "rgb(243, 242, 245)",
+            "flex": 1,
+            "minHeight": 56,
+            "paddingHorizontal": 24,
+            "paddingVertical": 16,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "display": "flex",
+              "flexDirection": "row",
+            }
+          }
+        >
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Array [
+                Object {
+                  "color": "rgb(82, 76, 97)",
+                  "fontFamily": "BpkIcon",
+                  "fontSize": 24,
+                  "lineHeight": 24,
+                },
+                Object {
+                  "fontSize": 16,
+                  "lineHeight": 16,
+                },
+                Array [
+                  Object {
+                    "paddingRight": 4,
+                    "paddingTop": 3,
+                  },
+                  Object {
+                    "color": "rgb(129, 123, 143)",
+                  },
+                ],
+              ]
+            }
+          >
+            
+          </Text>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Array [
+                Object {
+                  "color": "rgb(82, 76, 97)",
+                  "fontFamily": "sans-serif",
+                  "fontSize": 14,
+                  "fontWeight": "400",
+                },
+                Object {
+                  "flex": 1,
+                },
+              ]
+            }
+          >
+            Neutral alert.
+          </Text>
         </View>
       </View>
     </View>
@@ -356,105 +403,133 @@ exports[`Android BpkBannerAlert should render correctly with animateOnLeave 1`] 
 
 exports[`Android BpkBannerAlert should render correctly with children provided (expandable) 1`] = `
 <View
-  animateOnEnter={false}
-  animateOnLeave={false}
-  duration={200}
-  show={true}
-  style={null}
+  collapsable={undefined}
+  style={
+    Object {
+      "height": null,
+      "opacity": 1,
+    }
+  }
 >
   <View
-    collapsable={undefined}
-    style={
-      Object {
-        "height": 0.01,
-        "overflow": "hidden",
-      }
-    }
+    collapsable={false}
+    style={null}
   >
     <View
-      onLayout={[Function]}
+      accessibilityComponentType="button"
+      accessibilityLabel="Expand"
+      accessibilityTraits={undefined}
+      accessible={true}
+      hitSlop={undefined}
+      nativeID={undefined}
+      onLayout={undefined}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Array [
+          Object {
+            "display": "flex",
+            "flexDirection": "row",
+          },
+        ]
+      }
+      testID={undefined}
     >
       <View
-        collapsable={undefined}
         style={
           Object {
-            "opacity": 0.01,
+            "backgroundColor": "rgb(243, 242, 245)",
+            "flex": 1,
+            "minHeight": 56,
+            "paddingHorizontal": 24,
+            "paddingVertical": 16,
           }
         }
       >
         <View
-          accessibilityComponentType="button"
-          accessibilityLabel="Expand"
-          accessibilityTraits={undefined}
-          accessible={true}
-          hitSlop={undefined}
-          nativeID={undefined}
-          onLayout={undefined}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
           style={
-            Array [
-              Object {
-                "display": "flex",
-                "flexDirection": "row",
-              },
-            ]
+            Object {
+              "display": "flex",
+              "flexDirection": "row",
+            }
           }
-          testID={undefined}
+        >
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Array [
+                Object {
+                  "color": "rgb(82, 76, 97)",
+                  "fontFamily": "BpkIcon",
+                  "fontSize": 24,
+                  "lineHeight": 24,
+                },
+                Object {
+                  "fontSize": 16,
+                  "lineHeight": 16,
+                },
+                Array [
+                  Object {
+                    "paddingRight": 4,
+                    "paddingTop": 3,
+                  },
+                  Object {
+                    "color": "rgb(129, 123, 143)",
+                  },
+                ],
+              ]
+            }
+          >
+            
+          </Text>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Array [
+                Object {
+                  "color": "rgb(82, 76, 97)",
+                  "fontFamily": "sans-serif",
+                  "fontSize": 14,
+                  "fontWeight": "400",
+                },
+                Object {
+                  "flex": 1,
+                },
+              ]
+            }
+          >
+            Neutral alert.
+          </Text>
+        </View>
+        <View
+          collapsable={undefined}
+          style={
+            Object {
+              "borderRadius": 0,
+              "height": 0.01,
+              "overflow": "hidden",
+            }
+          }
         >
           <View
-            style={
-              Object {
-                "backgroundColor": "rgb(243, 242, 245)",
-                "flex": 1,
-                "minHeight": 56,
-                "paddingHorizontal": 24,
-                "paddingVertical": 16,
-              }
-            }
+            collapsable={false}
+            style={null}
           >
             <View
               style={
                 Object {
-                  "display": "flex",
-                  "flexDirection": "row",
+                  "paddingVertical": 4,
                 }
               }
             >
-              <Text
-                accessible={true}
-                allowFontScaling={true}
-                ellipsizeMode="tail"
-                style={
-                  Array [
-                    Object {
-                      "color": "rgb(82, 76, 97)",
-                      "fontFamily": "BpkIcon",
-                      "fontSize": 24,
-                      "lineHeight": 24,
-                    },
-                    Object {
-                      "fontSize": 16,
-                      "lineHeight": 16,
-                    },
-                    Array [
-                      Object {
-                        "paddingRight": 4,
-                        "paddingTop": 3,
-                      },
-                      Object {
-                        "color": "rgb(129, 123, 143)",
-                      },
-                    ],
-                  ]
-                }
-              >
-                
-              </Text>
               <Text
                 accessible={true}
                 allowFontScaling={true}
@@ -467,51 +542,49 @@ exports[`Android BpkBannerAlert should render correctly with children provided (
                       "fontSize": 14,
                       "fontWeight": "400",
                     },
-                    Object {
-                      "flex": 1,
-                    },
+                    Object {},
                   ]
                 }
               >
-                Neutral alert.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sagittis sagittis purus, id blandit ipsum. Pellentesque nec diam nec erat condimentum dapibus. Nunc diam augue, egestas id egestas ut, facilisis nec mi. Donec et congue odio, nec laoreet est. Integer rhoncus varius arcu, a fringilla libero laoreet at.
               </Text>
             </View>
           </View>
-          <View
-            style={
-              Object {
-                "backgroundColor": "rgb(243, 242, 245)",
-                "justifyContent": "center",
-                "paddingRight": 24,
-              }
-            }
-          >
-            <Text
-              accessible={true}
-              allowFontScaling={true}
-              ellipsizeMode="tail"
-              style={
-                Array [
-                  Object {
-                    "color": "rgb(82, 76, 97)",
-                    "fontFamily": "BpkIcon",
-                    "fontSize": 24,
-                    "lineHeight": 24,
-                  },
-                  Object {
-                    "fontSize": 16,
-                    "lineHeight": 16,
-                  },
-                  Object {
-                    "paddingTop": 3,
-                  },
-                ]
-              }
-            >
-              
-            </Text>
-          </View>
         </View>
+      </View>
+      <View
+        style={
+          Object {
+            "backgroundColor": "rgb(243, 242, 245)",
+            "justifyContent": "center",
+            "paddingRight": 24,
+          }
+        }
+      >
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Array [
+              Object {
+                "color": "rgb(82, 76, 97)",
+                "fontFamily": "BpkIcon",
+                "fontSize": 24,
+                "lineHeight": 24,
+              },
+              Object {
+                "fontSize": 16,
+                "lineHeight": 16,
+              },
+              Object {
+                "paddingTop": 3,
+              },
+            ]
+          }
+        >
+          
+        </Text>
       </View>
     </View>
   </View>
@@ -520,211 +593,127 @@ exports[`Android BpkBannerAlert should render correctly with children provided (
 
 exports[`Android BpkBannerAlert should render correctly with dismissable 1`] = `
 <View
-  animateOnEnter={false}
-  animateOnLeave={true}
-  duration={200}
-  show={true}
-  style={null}
+  collapsable={undefined}
+  style={
+    Object {
+      "height": null,
+      "opacity": 1,
+    }
+  }
 >
   <View
-    collapsable={undefined}
-    style={
-      Object {
-        "height": 0.01,
-        "overflow": "hidden",
-      }
-    }
+    collapsable={false}
+    style={null}
   >
     <View
-      onLayout={[Function]}
+      style={
+        Array [
+          Object {
+            "display": "flex",
+            "flexDirection": "row",
+          },
+        ]
+      }
     >
       <View
-        collapsable={undefined}
         style={
           Object {
-            "opacity": 0.01,
+            "backgroundColor": "rgb(243, 242, 245)",
+            "flex": 1,
+            "minHeight": 56,
+            "paddingHorizontal": 24,
+            "paddingVertical": 16,
           }
         }
       >
         <View
           style={
-            Array [
-              Object {
-                "display": "flex",
-                "flexDirection": "row",
-              },
-            ]
+            Object {
+              "display": "flex",
+              "flexDirection": "row",
+            }
           }
         >
-          <View
-            style={
-              Object {
-                "backgroundColor": "rgb(243, 242, 245)",
-                "flex": 1,
-                "minHeight": 56,
-                "paddingHorizontal": 24,
-                "paddingVertical": 16,
-              }
-            }
-          >
-            <View
-              style={
-                Object {
-                  "display": "flex",
-                  "flexDirection": "row",
-                }
-              }
-            >
-              <Text
-                accessible={true}
-                allowFontScaling={true}
-                ellipsizeMode="tail"
-                style={
-                  Array [
-                    Object {
-                      "color": "rgb(82, 76, 97)",
-                      "fontFamily": "BpkIcon",
-                      "fontSize": 24,
-                      "lineHeight": 24,
-                    },
-                    Object {
-                      "fontSize": 16,
-                      "lineHeight": 16,
-                    },
-                    Array [
-                      Object {
-                        "paddingRight": 4,
-                        "paddingTop": 3,
-                      },
-                      Object {
-                        "color": "rgb(129, 123, 143)",
-                      },
-                    ],
-                  ]
-                }
-              >
-                
-              </Text>
-              <Text
-                accessible={true}
-                allowFontScaling={true}
-                ellipsizeMode="tail"
-                style={
-                  Array [
-                    Object {
-                      "color": "rgb(82, 76, 97)",
-                      "fontFamily": "sans-serif",
-                      "fontSize": 14,
-                      "fontWeight": "400",
-                    },
-                    Object {
-                      "flex": 1,
-                    },
-                  ]
-                }
-              >
-                Neutral alert.
-              </Text>
-            </View>
-          </View>
-          <View
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
             style={
               Array [
                 Object {
-                  "backgroundColor": "rgb(243, 242, 245)",
-                  "justifyContent": "center",
-                  "paddingRight": 24,
+                  "color": "rgb(82, 76, 97)",
+                  "fontFamily": "BpkIcon",
+                  "fontSize": 24,
+                  "lineHeight": 24,
                 },
                 Object {
-                  "borderRadius": 2,
+                  "fontSize": 16,
+                  "lineHeight": 16,
+                },
+                Array [
+                  Object {
+                    "paddingRight": 4,
+                    "paddingTop": 3,
+                  },
+                  Object {
+                    "color": "rgb(129, 123, 143)",
+                  },
+                ],
+              ]
+            }
+          >
+            
+          </Text>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Array [
+                Object {
+                  "color": "rgb(82, 76, 97)",
+                  "fontFamily": "sans-serif",
+                  "fontSize": 14,
+                  "fontWeight": "400",
+                },
+                Object {
+                  "flex": 1,
                 },
               ]
             }
           >
-            <Text
-              accessibilityComponentType="button"
-              accessibilityLabel="Dismiss"
-              accessibilityTraits={undefined}
-              accessible={true}
-              allowFontScaling={true}
-              ellipsizeMode="tail"
-              hitSlop={undefined}
-              nativeBackgroundAndroid={
-                Object {
-                  "attribute": "selectableItemBackgroundBorderless",
-                  "type": "ThemeAttrAndroid",
-                }
-              }
-              onLayout={undefined}
-              onResponderGrant={[Function]}
-              onResponderMove={[Function]}
-              onResponderRelease={[Function]}
-              onResponderTerminate={[Function]}
-              onResponderTerminationRequest={[Function]}
-              onStartShouldSetResponder={[Function]}
-              style={
-                Array [
-                  Object {
-                    "color": "rgb(82, 76, 97)",
-                    "fontFamily": "sans-serif",
-                    "fontSize": 14,
-                    "fontWeight": "400",
-                  },
-                  Object {
-                    "fontFamily": "sans-serif-medium",
-                  },
-                  Object {
-                    "color": "rgb(0, 178, 214)",
-                  },
-                ]
-              }
-              testID={undefined}
-            >
-              DISMISS
-            </Text>
-          </View>
+            Neutral alert.
+          </Text>
         </View>
       </View>
-    </View>
-  </View>
-</View>
-`;
-
-exports[`Android BpkBannerAlert should render correctly with expanded 1`] = `
-<View
-  animateOnEnter={false}
-  animateOnLeave={false}
-  duration={200}
-  show={true}
-  style={null}
->
-  <View
-    collapsable={undefined}
-    style={
-      Object {
-        "height": 0.01,
-        "overflow": "hidden",
-      }
-    }
-  >
-    <View
-      onLayout={[Function]}
-    >
       <View
-        collapsable={undefined}
         style={
-          Object {
-            "opacity": 0.01,
-          }
+          Array [
+            Object {
+              "backgroundColor": "rgb(243, 242, 245)",
+              "justifyContent": "center",
+              "paddingRight": 24,
+            },
+            Object {
+              "borderRadius": 2,
+            },
+          ]
         }
       >
-        <View
+        <Text
           accessibilityComponentType="button"
-          accessibilityLabel="Expand"
+          accessibilityLabel="Dismiss"
           accessibilityTraits={undefined}
           accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
           hitSlop={undefined}
-          nativeID={undefined}
+          nativeBackgroundAndroid={
+            Object {
+              "attribute": "selectableItemBackgroundBorderless",
+              "type": "ThemeAttrAndroid",
+            }
+          }
           onLayout={undefined}
           onResponderGrant={[Function]}
           onResponderMove={[Function]}
@@ -735,62 +724,158 @@ exports[`Android BpkBannerAlert should render correctly with expanded 1`] = `
           style={
             Array [
               Object {
-                "display": "flex",
-                "flexDirection": "row",
+                "color": "rgb(82, 76, 97)",
+                "fontFamily": "sans-serif",
+                "fontSize": 14,
+                "fontWeight": "400",
+              },
+              Object {
+                "fontFamily": "sans-serif-medium",
+              },
+              Object {
+                "color": "rgb(0, 178, 214)",
               },
             ]
           }
           testID={undefined}
         >
-          <View
-            style={
-              Object {
-                "backgroundColor": "rgb(243, 242, 245)",
-                "flex": 1,
-                "minHeight": 56,
-                "paddingHorizontal": 24,
-                "paddingVertical": 16,
-              }
+          DISMISS
+        </Text>
+      </View>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`Android BpkBannerAlert should render correctly with expanded 1`] = `
+<View
+  collapsable={undefined}
+  style={
+    Object {
+      "height": null,
+      "opacity": 1,
+    }
+  }
+>
+  <View
+    collapsable={false}
+    style={null}
+  >
+    <View
+      accessibilityComponentType="button"
+      accessibilityLabel="Expand"
+      accessibilityTraits={undefined}
+      accessible={true}
+      hitSlop={undefined}
+      nativeID={undefined}
+      onLayout={undefined}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Array [
+          Object {
+            "display": "flex",
+            "flexDirection": "row",
+          },
+        ]
+      }
+      testID={undefined}
+    >
+      <View
+        style={
+          Object {
+            "backgroundColor": "rgb(243, 242, 245)",
+            "flex": 1,
+            "minHeight": 56,
+            "paddingHorizontal": 24,
+            "paddingVertical": 16,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "display": "flex",
+              "flexDirection": "row",
             }
+          }
+        >
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Array [
+                Object {
+                  "color": "rgb(82, 76, 97)",
+                  "fontFamily": "BpkIcon",
+                  "fontSize": 24,
+                  "lineHeight": 24,
+                },
+                Object {
+                  "fontSize": 16,
+                  "lineHeight": 16,
+                },
+                Array [
+                  Object {
+                    "paddingRight": 4,
+                    "paddingTop": 3,
+                  },
+                  Object {
+                    "color": "rgb(129, 123, 143)",
+                  },
+                ],
+              ]
+            }
+          >
+            
+          </Text>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Array [
+                Object {
+                  "color": "rgb(82, 76, 97)",
+                  "fontFamily": "sans-serif",
+                  "fontSize": 14,
+                  "fontWeight": "400",
+                },
+                Object {
+                  "flex": 1,
+                },
+              ]
+            }
+          >
+            Neutral alert.
+          </Text>
+        </View>
+        <View
+          collapsable={undefined}
+          style={
+            Object {
+              "borderRadius": 0,
+              "height": null,
+              "overflow": "hidden",
+            }
+          }
+        >
+          <View
+            collapsable={false}
+            style={null}
           >
             <View
               style={
                 Object {
-                  "display": "flex",
-                  "flexDirection": "row",
+                  "paddingVertical": 4,
                 }
               }
             >
-              <Text
-                accessible={true}
-                allowFontScaling={true}
-                ellipsizeMode="tail"
-                style={
-                  Array [
-                    Object {
-                      "color": "rgb(82, 76, 97)",
-                      "fontFamily": "BpkIcon",
-                      "fontSize": 24,
-                      "lineHeight": 24,
-                    },
-                    Object {
-                      "fontSize": 16,
-                      "lineHeight": 16,
-                    },
-                    Array [
-                      Object {
-                        "paddingRight": 4,
-                        "paddingTop": 3,
-                      },
-                      Object {
-                        "color": "rgb(129, 123, 143)",
-                      },
-                    ],
-                  ]
-                }
-              >
-                
-              </Text>
               <Text
                 accessible={true}
                 allowFontScaling={true}
@@ -803,93 +888,49 @@ exports[`Android BpkBannerAlert should render correctly with expanded 1`] = `
                       "fontSize": 14,
                       "fontWeight": "400",
                     },
-                    Object {
-                      "flex": 1,
-                    },
+                    Object {},
                   ]
                 }
               >
-                Neutral alert.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sagittis sagittis purus, id blandit ipsum. Pellentesque nec diam nec erat condimentum dapibus. Nunc diam augue, egestas id egestas ut, facilisis nec mi. Donec et congue odio, nec laoreet est. Integer rhoncus varius arcu, a fringilla libero laoreet at.
               </Text>
             </View>
-            <View>
-              <View
-                collapsable={undefined}
-                style={
-                  Object {
-                    "height": 0.01,
-                    "overflow": "hidden",
-                  }
-                }
-              >
-                <View
-                  onLayout={[Function]}
-                >
-                  <View
-                    style={
-                      Object {
-                        "paddingVertical": 4,
-                      }
-                    }
-                  >
-                    <Text
-                      accessible={true}
-                      allowFontScaling={true}
-                      ellipsizeMode="tail"
-                      style={
-                        Array [
-                          Object {
-                            "color": "rgb(82, 76, 97)",
-                            "fontFamily": "sans-serif",
-                            "fontSize": 14,
-                            "fontWeight": "400",
-                          },
-                          Object {},
-                        ]
-                      }
-                    >
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sagittis sagittis purus, id blandit ipsum. Pellentesque nec diam nec erat condimentum dapibus. Nunc diam augue, egestas id egestas ut, facilisis nec mi. Donec et congue odio, nec laoreet est. Integer rhoncus varius arcu, a fringilla libero laoreet at.
-                    </Text>
-                  </View>
-                </View>
-              </View>
-            </View>
-          </View>
-          <View
-            style={
-              Object {
-                "backgroundColor": "rgb(243, 242, 245)",
-                "justifyContent": "center",
-                "paddingRight": 24,
-              }
-            }
-          >
-            <Text
-              accessible={true}
-              allowFontScaling={true}
-              ellipsizeMode="tail"
-              style={
-                Array [
-                  Object {
-                    "color": "rgb(82, 76, 97)",
-                    "fontFamily": "BpkIcon",
-                    "fontSize": 24,
-                    "lineHeight": 24,
-                  },
-                  Object {
-                    "fontSize": 16,
-                    "lineHeight": 16,
-                  },
-                  Object {
-                    "paddingTop": 3,
-                  },
-                ]
-              }
-            >
-              
-            </Text>
           </View>
         </View>
+      </View>
+      <View
+        style={
+          Object {
+            "backgroundColor": "rgb(243, 242, 245)",
+            "justifyContent": "center",
+            "paddingRight": 24,
+          }
+        }
+      >
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Array [
+              Object {
+                "color": "rgb(82, 76, 97)",
+                "fontFamily": "BpkIcon",
+                "fontSize": 24,
+                "lineHeight": 24,
+              },
+              Object {
+                "fontSize": 16,
+                "lineHeight": 16,
+              },
+              Object {
+                "paddingTop": 3,
+              },
+            ]
+          }
+        >
+          
+        </Text>
       </View>
     </View>
   </View>
@@ -898,113 +939,97 @@ exports[`Android BpkBannerAlert should render correctly with expanded 1`] = `
 
 exports[`Android BpkBannerAlert should render correctly with type equal to ERROR 1`] = `
 <View
-  animateOnEnter={false}
-  animateOnLeave={false}
-  duration={200}
-  show={true}
-  style={null}
+  collapsable={undefined}
+  style={
+    Object {
+      "height": null,
+      "opacity": 1,
+    }
+  }
 >
   <View
-    collapsable={undefined}
-    style={
-      Object {
-        "height": 0.01,
-        "overflow": "hidden",
-      }
-    }
+    collapsable={false}
+    style={null}
   >
     <View
-      onLayout={[Function]}
+      style={
+        Array [
+          Object {
+            "display": "flex",
+            "flexDirection": "row",
+          },
+        ]
+      }
     >
       <View
-        collapsable={undefined}
         style={
           Object {
-            "opacity": 0.01,
+            "backgroundColor": "rgb(243, 242, 245)",
+            "flex": 1,
+            "minHeight": 56,
+            "paddingHorizontal": 24,
+            "paddingVertical": 16,
           }
         }
       >
         <View
           style={
-            Array [
-              Object {
-                "display": "flex",
-                "flexDirection": "row",
-              },
-            ]
+            Object {
+              "display": "flex",
+              "flexDirection": "row",
+            }
           }
         >
-          <View
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
             style={
-              Object {
-                "backgroundColor": "rgb(243, 242, 245)",
-                "flex": 1,
-                "minHeight": 56,
-                "paddingHorizontal": 24,
-                "paddingVertical": 16,
-              }
+              Array [
+                Object {
+                  "color": "rgb(82, 76, 97)",
+                  "fontFamily": "BpkIcon",
+                  "fontSize": 24,
+                  "lineHeight": 24,
+                },
+                Object {
+                  "fontSize": 16,
+                  "lineHeight": 16,
+                },
+                Array [
+                  Object {
+                    "paddingRight": 4,
+                    "paddingTop": 3,
+                  },
+                  Object {
+                    "color": "rgb(255, 84, 82)",
+                  },
+                ],
+              ]
             }
           >
-            <View
-              style={
+            
+          </Text>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Array [
                 Object {
-                  "display": "flex",
-                  "flexDirection": "row",
-                }
-              }
-            >
-              <Text
-                accessible={true}
-                allowFontScaling={true}
-                ellipsizeMode="tail"
-                style={
-                  Array [
-                    Object {
-                      "color": "rgb(82, 76, 97)",
-                      "fontFamily": "BpkIcon",
-                      "fontSize": 24,
-                      "lineHeight": 24,
-                    },
-                    Object {
-                      "fontSize": 16,
-                      "lineHeight": 16,
-                    },
-                    Array [
-                      Object {
-                        "paddingRight": 4,
-                        "paddingTop": 3,
-                      },
-                      Object {
-                        "color": "rgb(255, 84, 82)",
-                      },
-                    ],
-                  ]
-                }
-              >
-                
-              </Text>
-              <Text
-                accessible={true}
-                allowFontScaling={true}
-                ellipsizeMode="tail"
-                style={
-                  Array [
-                    Object {
-                      "color": "rgb(82, 76, 97)",
-                      "fontFamily": "sans-serif",
-                      "fontSize": 14,
-                      "fontWeight": "400",
-                    },
-                    Object {
-                      "flex": 1,
-                    },
-                  ]
-                }
-              >
-                ERROR alert.
-              </Text>
-            </View>
-          </View>
+                  "color": "rgb(82, 76, 97)",
+                  "fontFamily": "sans-serif",
+                  "fontSize": 14,
+                  "fontWeight": "400",
+                },
+                Object {
+                  "flex": 1,
+                },
+              ]
+            }
+          >
+            ERROR alert.
+          </Text>
         </View>
       </View>
     </View>
@@ -1014,113 +1039,97 @@ exports[`Android BpkBannerAlert should render correctly with type equal to ERROR
 
 exports[`Android BpkBannerAlert should render correctly with type equal to NEUTRAL 1`] = `
 <View
-  animateOnEnter={false}
-  animateOnLeave={false}
-  duration={200}
-  show={true}
-  style={null}
+  collapsable={undefined}
+  style={
+    Object {
+      "height": null,
+      "opacity": 1,
+    }
+  }
 >
   <View
-    collapsable={undefined}
-    style={
-      Object {
-        "height": 0.01,
-        "overflow": "hidden",
-      }
-    }
+    collapsable={false}
+    style={null}
   >
     <View
-      onLayout={[Function]}
+      style={
+        Array [
+          Object {
+            "display": "flex",
+            "flexDirection": "row",
+          },
+        ]
+      }
     >
       <View
-        collapsable={undefined}
         style={
           Object {
-            "opacity": 0.01,
+            "backgroundColor": "rgb(243, 242, 245)",
+            "flex": 1,
+            "minHeight": 56,
+            "paddingHorizontal": 24,
+            "paddingVertical": 16,
           }
         }
       >
         <View
           style={
-            Array [
-              Object {
-                "display": "flex",
-                "flexDirection": "row",
-              },
-            ]
+            Object {
+              "display": "flex",
+              "flexDirection": "row",
+            }
           }
         >
-          <View
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
             style={
-              Object {
-                "backgroundColor": "rgb(243, 242, 245)",
-                "flex": 1,
-                "minHeight": 56,
-                "paddingHorizontal": 24,
-                "paddingVertical": 16,
-              }
+              Array [
+                Object {
+                  "color": "rgb(82, 76, 97)",
+                  "fontFamily": "BpkIcon",
+                  "fontSize": 24,
+                  "lineHeight": 24,
+                },
+                Object {
+                  "fontSize": 16,
+                  "lineHeight": 16,
+                },
+                Array [
+                  Object {
+                    "paddingRight": 4,
+                    "paddingTop": 3,
+                  },
+                  Object {
+                    "color": "rgb(129, 123, 143)",
+                  },
+                ],
+              ]
             }
           >
-            <View
-              style={
+            
+          </Text>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Array [
                 Object {
-                  "display": "flex",
-                  "flexDirection": "row",
-                }
-              }
-            >
-              <Text
-                accessible={true}
-                allowFontScaling={true}
-                ellipsizeMode="tail"
-                style={
-                  Array [
-                    Object {
-                      "color": "rgb(82, 76, 97)",
-                      "fontFamily": "BpkIcon",
-                      "fontSize": 24,
-                      "lineHeight": 24,
-                    },
-                    Object {
-                      "fontSize": 16,
-                      "lineHeight": 16,
-                    },
-                    Array [
-                      Object {
-                        "paddingRight": 4,
-                        "paddingTop": 3,
-                      },
-                      Object {
-                        "color": "rgb(129, 123, 143)",
-                      },
-                    ],
-                  ]
-                }
-              >
-                
-              </Text>
-              <Text
-                accessible={true}
-                allowFontScaling={true}
-                ellipsizeMode="tail"
-                style={
-                  Array [
-                    Object {
-                      "color": "rgb(82, 76, 97)",
-                      "fontFamily": "sans-serif",
-                      "fontSize": 14,
-                      "fontWeight": "400",
-                    },
-                    Object {
-                      "flex": 1,
-                    },
-                  ]
-                }
-              >
-                NEUTRAL alert.
-              </Text>
-            </View>
-          </View>
+                  "color": "rgb(82, 76, 97)",
+                  "fontFamily": "sans-serif",
+                  "fontSize": 14,
+                  "fontWeight": "400",
+                },
+                Object {
+                  "flex": 1,
+                },
+              ]
+            }
+          >
+            NEUTRAL alert.
+          </Text>
         </View>
       </View>
     </View>
@@ -1130,113 +1139,97 @@ exports[`Android BpkBannerAlert should render correctly with type equal to NEUTR
 
 exports[`Android BpkBannerAlert should render correctly with type equal to SUCCESS 1`] = `
 <View
-  animateOnEnter={false}
-  animateOnLeave={false}
-  duration={200}
-  show={true}
-  style={null}
+  collapsable={undefined}
+  style={
+    Object {
+      "height": null,
+      "opacity": 1,
+    }
+  }
 >
   <View
-    collapsable={undefined}
-    style={
-      Object {
-        "height": 0.01,
-        "overflow": "hidden",
-      }
-    }
+    collapsable={false}
+    style={null}
   >
     <View
-      onLayout={[Function]}
+      style={
+        Array [
+          Object {
+            "display": "flex",
+            "flexDirection": "row",
+          },
+        ]
+      }
     >
       <View
-        collapsable={undefined}
         style={
           Object {
-            "opacity": 0.01,
+            "backgroundColor": "rgb(243, 242, 245)",
+            "flex": 1,
+            "minHeight": 56,
+            "paddingHorizontal": 24,
+            "paddingVertical": 16,
           }
         }
       >
         <View
           style={
-            Array [
-              Object {
-                "display": "flex",
-                "flexDirection": "row",
-              },
-            ]
+            Object {
+              "display": "flex",
+              "flexDirection": "row",
+            }
           }
         >
-          <View
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
             style={
-              Object {
-                "backgroundColor": "rgb(243, 242, 245)",
-                "flex": 1,
-                "minHeight": 56,
-                "paddingHorizontal": 24,
-                "paddingVertical": 16,
-              }
+              Array [
+                Object {
+                  "color": "rgb(82, 76, 97)",
+                  "fontFamily": "BpkIcon",
+                  "fontSize": 24,
+                  "lineHeight": 24,
+                },
+                Object {
+                  "fontSize": 16,
+                  "lineHeight": 16,
+                },
+                Array [
+                  Object {
+                    "paddingRight": 4,
+                    "paddingTop": 3,
+                  },
+                  Object {
+                    "color": "rgb(0, 215, 117)",
+                  },
+                ],
+              ]
             }
           >
-            <View
-              style={
+            
+          </Text>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Array [
                 Object {
-                  "display": "flex",
-                  "flexDirection": "row",
-                }
-              }
-            >
-              <Text
-                accessible={true}
-                allowFontScaling={true}
-                ellipsizeMode="tail"
-                style={
-                  Array [
-                    Object {
-                      "color": "rgb(82, 76, 97)",
-                      "fontFamily": "BpkIcon",
-                      "fontSize": 24,
-                      "lineHeight": 24,
-                    },
-                    Object {
-                      "fontSize": 16,
-                      "lineHeight": 16,
-                    },
-                    Array [
-                      Object {
-                        "paddingRight": 4,
-                        "paddingTop": 3,
-                      },
-                      Object {
-                        "color": "rgb(0, 215, 117)",
-                      },
-                    ],
-                  ]
-                }
-              >
-                
-              </Text>
-              <Text
-                accessible={true}
-                allowFontScaling={true}
-                ellipsizeMode="tail"
-                style={
-                  Array [
-                    Object {
-                      "color": "rgb(82, 76, 97)",
-                      "fontFamily": "sans-serif",
-                      "fontSize": 14,
-                      "fontWeight": "400",
-                    },
-                    Object {
-                      "flex": 1,
-                    },
-                  ]
-                }
-              >
-                SUCCESS alert.
-              </Text>
-            </View>
-          </View>
+                  "color": "rgb(82, 76, 97)",
+                  "fontFamily": "sans-serif",
+                  "fontSize": 14,
+                  "fontWeight": "400",
+                },
+                Object {
+                  "flex": 1,
+                },
+              ]
+            }
+          >
+            SUCCESS alert.
+          </Text>
         </View>
       </View>
     </View>
@@ -1246,113 +1239,97 @@ exports[`Android BpkBannerAlert should render correctly with type equal to SUCCE
 
 exports[`Android BpkBannerAlert should render correctly with type equal to WARN 1`] = `
 <View
-  animateOnEnter={false}
-  animateOnLeave={false}
-  duration={200}
-  show={true}
-  style={null}
+  collapsable={undefined}
+  style={
+    Object {
+      "height": null,
+      "opacity": 1,
+    }
+  }
 >
   <View
-    collapsable={undefined}
-    style={
-      Object {
-        "height": 0.01,
-        "overflow": "hidden",
-      }
-    }
+    collapsable={false}
+    style={null}
   >
     <View
-      onLayout={[Function]}
+      style={
+        Array [
+          Object {
+            "display": "flex",
+            "flexDirection": "row",
+          },
+        ]
+      }
     >
       <View
-        collapsable={undefined}
         style={
           Object {
-            "opacity": 0.01,
+            "backgroundColor": "rgb(243, 242, 245)",
+            "flex": 1,
+            "minHeight": 56,
+            "paddingHorizontal": 24,
+            "paddingVertical": 16,
           }
         }
       >
         <View
           style={
-            Array [
-              Object {
-                "display": "flex",
-                "flexDirection": "row",
-              },
-            ]
+            Object {
+              "display": "flex",
+              "flexDirection": "row",
+            }
           }
         >
-          <View
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
             style={
-              Object {
-                "backgroundColor": "rgb(243, 242, 245)",
-                "flex": 1,
-                "minHeight": 56,
-                "paddingHorizontal": 24,
-                "paddingVertical": 16,
-              }
+              Array [
+                Object {
+                  "color": "rgb(82, 76, 97)",
+                  "fontFamily": "BpkIcon",
+                  "fontSize": 24,
+                  "lineHeight": 24,
+                },
+                Object {
+                  "fontSize": 16,
+                  "lineHeight": 16,
+                },
+                Array [
+                  Object {
+                    "paddingRight": 4,
+                    "paddingTop": 3,
+                  },
+                  Object {
+                    "color": "rgb(255, 187, 0)",
+                  },
+                ],
+              ]
             }
           >
-            <View
-              style={
+            
+          </Text>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Array [
                 Object {
-                  "display": "flex",
-                  "flexDirection": "row",
-                }
-              }
-            >
-              <Text
-                accessible={true}
-                allowFontScaling={true}
-                ellipsizeMode="tail"
-                style={
-                  Array [
-                    Object {
-                      "color": "rgb(82, 76, 97)",
-                      "fontFamily": "BpkIcon",
-                      "fontSize": 24,
-                      "lineHeight": 24,
-                    },
-                    Object {
-                      "fontSize": 16,
-                      "lineHeight": 16,
-                    },
-                    Array [
-                      Object {
-                        "paddingRight": 4,
-                        "paddingTop": 3,
-                      },
-                      Object {
-                        "color": "rgb(255, 187, 0)",
-                      },
-                    ],
-                  ]
-                }
-              >
-                
-              </Text>
-              <Text
-                accessible={true}
-                allowFontScaling={true}
-                ellipsizeMode="tail"
-                style={
-                  Array [
-                    Object {
-                      "color": "rgb(82, 76, 97)",
-                      "fontFamily": "sans-serif",
-                      "fontSize": 14,
-                      "fontWeight": "400",
-                    },
-                    Object {
-                      "flex": 1,
-                    },
-                  ]
-                }
-              >
-                WARN alert.
-              </Text>
-            </View>
-          </View>
+                  "color": "rgb(82, 76, 97)",
+                  "fontFamily": "sans-serif",
+                  "fontSize": 14,
+                  "fontWeight": "400",
+                },
+                Object {
+                  "flex": 1,
+                },
+              ]
+            }
+          >
+            WARN alert.
+          </Text>
         </View>
       </View>
     </View>

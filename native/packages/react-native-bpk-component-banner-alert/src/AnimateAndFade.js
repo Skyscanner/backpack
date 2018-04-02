@@ -16,85 +16,133 @@
  * limitations under the License.
  */
 
-import { Animated, ViewPropTypes } from 'react-native';
-import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import BpkAnimateHeight from 'react-native-bpk-component-animate-height';
+import React, { Component } from 'react';
+import { View, Animated, ViewPropTypes } from 'react-native';
 import { animationDurationSm } from 'bpk-tokens/tokens/base.react.native';
 
-const FADE_DURATION = animationDurationSm;
-const ANIMATE_HEIGHT_DURATION = animationDurationSm;
+const COLLAPSED_HEIGHT = 0.01;
 
 class AnimateAndFade extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      visible: !this.props.animateOnEnter,
-      opacity: new Animated.Value(0.01),
-    };
+    const isCollapsed = this.props.animateOnEnter || !this.props.show;
 
-    this.animate = this.animate.bind(this);
+    this.shouldRenderHeight = true;
+    this.innerViewRef = null;
+
+    this.height = isCollapsed ? new Animated.Value(COLLAPSED_HEIGHT) : null;
+    this.opacity = new Animated.Value(isCollapsed ? 0 : 1);
   }
 
   componentDidMount() {
-    requestAnimationFrame(() => {
-      this.animate(true);
-    });
+    const captureHeightAndAnimate = (x, y, width, height) => {
+      if (!this.height) {
+        this.height = new Animated.Value(height);
+      }
+
+      this.animate(x, y, width, height);
+    };
+
+    this.measure(captureHeightAndAnimate);
   }
 
   componentWillReceiveProps(nextProps) {
-    if (nextProps.show !== this.state.visible) {
-      this.animate(!this.state.visible);
+    this.shouldRenderHeight = true;
+
+    if (nextProps.show === this.props.show && this.props.show) {
+      this.shouldRenderHeight = false;
     }
   }
 
-  animate(show) {
-    Animated.timing(this.state.opacity, {
-      toValue: show ? 1 : 0,
-      duration:
-        (show && this.props.animateOnEnter) ||
-        (!show && this.props.animateOnLeave)
-          ? FADE_DURATION
-          : 0,
-      delay: show ? ANIMATE_HEIGHT_DURATION : 0,
-    }).start();
-    this.setState({ visible: show });
+  componentDidUpdate() {
+    this.measure(this.animate);
   }
 
+  measure = callback =>
+    requestAnimationFrame(() => this.innerViewRef.measure(callback));
+
+  animate = (x, y, width, height) => {
+    const { show, animateOnEnter, animateOnLeave } = this.props;
+
+    const animatingOnEnter = show && animateOnEnter;
+    const animatingOnLeave = !show && animateOnLeave;
+    const duration =
+      animatingOnEnter || animatingOnLeave ? animationDurationSm : 0;
+
+    const heightAnimation = Animated.timing(this.height, {
+      toValue: show ? height : COLLAPSED_HEIGHT,
+      duration,
+    });
+
+    const opacityAnimation = Animated.timing(this.opacity, {
+      toValue: show ? 1 : 0,
+      duration,
+    });
+
+    Animated.sequence(
+      show
+        ? [heightAnimation, opacityAnimation]
+        : [opacityAnimation, heightAnimation],
+    ).start();
+  };
+
   render() {
-    const { children, ...rest } = this.props;
+    const {
+      children,
+      show,
+      animateOnEnter,
+      animateOnLeave,
+      style: userStyle,
+      innerStyle,
+      ...rest
+    } = this.props;
+
+    const style = [{ opacity: this.opacity }];
+
+    if (this.shouldRenderHeight) {
+      style.push({
+        height: this.height,
+      });
+    }
+
+    if (userStyle) {
+      style.push(userStyle);
+    }
 
     return (
-      <BpkAnimateHeight
-        duration={ANIMATE_HEIGHT_DURATION}
-        expanded={this.state.visible}
-        collapseDelay={FADE_DURATION}
-        onAnimationComplete={this.onHeightAnimationComplete}
-        {...rest}
-      >
-        <Animated.View style={{ opacity: this.state.opacity }}>
-          {this.props.children}
-        </Animated.View>
-      </BpkAnimateHeight>
+      <Animated.View {...rest} style={style}>
+        <View
+          ref={ref => {
+            this.innerViewRef = ref;
+          }}
+          style={innerStyle}
+          // `measure` api doesn;t work on Android unless `collapsable={false}`.
+          // See https://github.com/facebook/react-native/issues/3282.
+          collapsable={false}
+        >
+          {children}
+        </View>
+      </Animated.View>
     );
   }
 }
 
 AnimateAndFade.propTypes = {
+  children: PropTypes.node.isRequired,
+  show: PropTypes.bool.isRequired,
   animateOnEnter: PropTypes.bool,
   animateOnLeave: PropTypes.bool,
-  children: PropTypes.node,
-  show: PropTypes.bool,
   style: ViewPropTypes.style,
+  innerStyle: ViewPropTypes.style,
 };
 
 AnimateAndFade.defaultProps = {
   animateOnEnter: false,
   animateOnLeave: false,
-  show: true,
-  children: null,
   style: null,
+  innerStyle: null,
 };
 
 export default AnimateAndFade;

@@ -28,18 +28,12 @@ import CenterDecorator from '../../storybook/CenterDecorator';
 import BpkBannerAlert, { ALERT_TYPES } from './index';
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    padding: spacingBase,
-  },
   bannerAlert: {
     marginBottom: spacingBase,
   },
   button: {
     marginBottom: spacingBase,
   },
-  child: {},
 });
 
 class ExpandableBannerAlert extends React.Component {

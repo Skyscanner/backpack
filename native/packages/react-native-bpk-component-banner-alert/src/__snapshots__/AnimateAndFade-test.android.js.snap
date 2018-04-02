@@ -2,126 +2,102 @@
 
 exports[`Android AnimateAndFade should render correctly 1`] = `
 <View
-  animateOnEnter={false}
-  animateOnLeave={false}
-  duration={200}
-  show={true}
-  style={null}
+  collapsable={undefined}
+  style={
+    Object {
+      "height": null,
+      "opacity": 1,
+    }
+  }
 >
   <View
-    collapsable={undefined}
-    style={
-      Object {
-        "height": 0.01,
-        "overflow": "hidden",
-      }
-    }
+    collapsable={false}
+    style={null}
   >
-    <View
-      onLayout={[Function]}
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
     >
-      <View
-        collapsable={undefined}
-        style={
-          Object {
-            "opacity": 0.01,
-          }
-        }
-      >
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
-        >
-          Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-        </Text>
-      </View>
-    </View>
+      Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+    </Text>
   </View>
 </View>
 `;
 
 exports[`Android AnimateAndFade should render correctly when show is false 1`] = `
 <View
-  animateOnEnter={false}
-  animateOnLeave={false}
-  duration={200}
-  show={false}
-  style={null}
+  collapsable={undefined}
+  style={
+    Object {
+      "height": 0.01,
+      "opacity": 0,
+    }
+  }
 >
   <View
-    collapsable={undefined}
-    style={
-      Object {
-        "height": 0.01,
-        "overflow": "hidden",
-      }
-    }
+    collapsable={false}
+    style={null}
   >
-    <View
-      onLayout={[Function]}
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
     >
-      <View
-        collapsable={undefined}
-        style={
-          Object {
-            "opacity": 0.01,
-          }
-        }
-      >
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
-        >
-          Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-        </Text>
-      </View>
-    </View>
+      Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+    </Text>
   </View>
 </View>
 `;
 
-exports[`Android AnimateAndFade should render correctly with animateOnEnter 1`] = `null`;
+exports[`Android AnimateAndFade should render correctly with animateOnEnter 1`] = `
+<View
+  collapsable={undefined}
+  shown={true}
+  style={
+    Object {
+      "height": 0.01,
+      "opacity": 0,
+    }
+  }
+>
+  <View
+    collapsable={false}
+    style={null}
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+    >
+      Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+    </Text>
+  </View>
+</View>
+`;
 
 exports[`Android AnimateAndFade should render correctly with animateOnLeave 1`] = `
 <View
-  animateOnEnter={false}
-  animateOnLeave={true}
-  duration={200}
-  show={true}
+  collapsable={undefined}
   shown={true}
-  style={null}
+  style={
+    Object {
+      "height": 0.01,
+      "opacity": 0,
+    }
+  }
 >
   <View
-    collapsable={undefined}
-    style={
-      Object {
-        "height": 0.01,
-        "overflow": "hidden",
-      }
-    }
+    collapsable={false}
+    style={null}
   >
-    <View
-      onLayout={[Function]}
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
     >
-      <View
-        collapsable={undefined}
-        style={
-          Object {
-            "opacity": 0.01,
-          }
-        }
-      >
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
-        >
-          Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-        </Text>
-      </View>
-    </View>
+      Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+    </Text>
   </View>
 </View>
 `;
