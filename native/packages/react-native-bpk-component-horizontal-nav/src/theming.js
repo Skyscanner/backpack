@@ -18,19 +18,12 @@
 
 // If theming is ever expanded to support other types, this should be changed
 // to something akin to BpkButton's theming functions.
-const THEMING_ATTRIBUTE = 'horizontalNavSelectedTextColor';
+/* @flow */
+import { makeThemePropType } from 'react-native-bpk-theming';
 
-const themePropType = (props, propName, componentName) => {
-  const { theme } = props;
-  if (!theme) {
-    return false;
-  }
-  if (!theme[THEMING_ATTRIBUTE]) {
-    return new Error(
-      `Invalid prop \`${propName}\` supplied to \`${componentName}\`. To theme a \`${componentName}\`, the \`theme\` prop must include \`${THEMING_ATTRIBUTE}\``,
-    ); // eslint-disable-line max-len
-  }
-  return false;
-};
+const REQUIRED_THEME_ATTRIBUTES: Array<string> = [
+  'horizontalNavSelectedTextColor',
+];
+const themePropType = makeThemePropType(REQUIRED_THEME_ATTRIBUTES);
 
-export { THEMING_ATTRIBUTE, themePropType };
+export { REQUIRED_THEME_ATTRIBUTES, themePropType };

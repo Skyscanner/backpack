@@ -15,70 +15,69 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+/* @flow */
 
 import React from 'react';
 import PropTypes from 'prop-types';
 import { ActivityIndicator } from 'react-native';
-import { withTheme } from 'react-native-bpk-theming';
+import {
+  getThemeAttributes,
+  makeThemePropType,
+  withTheme,
+} from 'react-native-bpk-theming';
 import {
   colorBlue500,
   colorWhite,
   colorGray700,
 } from 'bpk-tokens/tokens/base.react.native';
 
-const SPINNER_TYPES = ['primary', 'light', 'dark'];
-
-// If theming is ever expanded to support other types, this should be changed
-// to something akin to BpkButton's theming functions.
-const THEMING_ATTRIBUTE = 'spinnerPrimaryColor';
-
-const themePropType = (props, propName, componentName) => {
-  const { type, theme } = props;
-  if (!theme) {
-    return false;
-  }
-  if (type === 'primary' && !theme[THEMING_ATTRIBUTE]) {
-    return new Error(
-      `Invalid prop \`${propName}\` supplied to \`${componentName}\`. For spinners of type \`${type}\`, the \`theme\` prop must include \`${THEMING_ATTRIBUTE}\``,
-    ); // eslint-disable-line max-len
-  }
-  return false;
+const SPINNER_TYPES = {
+  primary: 'primary',
+  light: 'light',
+  dark: 'dark',
 };
 
-const getSpinnerColor = (theme, type) => {
+type SpinnerType = $Keys<typeof SPINNER_TYPES>;
+
+const REQUIRED_THEME_ATTRIBUTES: Array<string> = ['spinnerPrimaryColor'];
+
+const getSpinnerColor = (themeAttributes: ?Object, type: SpinnerType) => {
   const colorMappings = {
-    primary: colorBlue500,
-    light: colorWhite,
-    dark: colorGray700,
+    [SPINNER_TYPES.primary]: colorBlue500,
+    [SPINNER_TYPES.light]: colorWhite,
+    [SPINNER_TYPES.dark]: colorGray700,
   };
-  if (theme && type === 'primary') {
-    return theme[THEMING_ATTRIBUTE];
+
+  if (themeAttributes && type === 'primary') {
+    return themeAttributes.spinnerPrimaryColor;
   }
+
   return colorMappings[type];
 };
 
 const BpkSpinner = props => {
   const { small, type, ...rest } = props;
-  let { theme } = props;
+  const { theme } = props;
+  let themeAttributes = getThemeAttributes(REQUIRED_THEME_ATTRIBUTES, theme);
 
   // Validate type.
-  if (!SPINNER_TYPES.includes(type)) {
+  if (!Object.keys(SPINNER_TYPES).includes(type)) {
     throw new Error(
-      `"${type}" is not a valid spinner type. Valid types are ${SPINNER_TYPES.join(
-        ', ',
-      )}`,
+      `"${type}" is not a valid spinner type. Valid types are ${Object.keys(
+        SPINNER_TYPES,
+      ).join(', ')}`,
     );
   }
 
   // Validate that spinner is themeable and correct theming attribute has been
   // supplied. If not, disable theming.
-  if (theme && (type !== 'primary' || !theme[THEMING_ATTRIBUTE])) {
-    theme = null;
+  if (themeAttributes && type !== 'primary') {
+    themeAttributes = null;
   }
 
   return (
     <ActivityIndicator
-      color={getSpinnerColor(theme, type)}
+      color={getSpinnerColor(themeAttributes, type)}
       size={small ? 'small' : 'large'}
       {...rest}
     />
@@ -87,8 +86,8 @@ const BpkSpinner = props => {
 
 const propTypes = {
   small: PropTypes.bool,
-  theme: themePropType,
-  type: PropTypes.oneOf(SPINNER_TYPES),
+  theme: makeThemePropType(REQUIRED_THEME_ATTRIBUTES),
+  type: PropTypes.oneOf(Object.keys(SPINNER_TYPES)),
 };
 
 BpkSpinner.propTypes = propTypes;

@@ -20,7 +20,7 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import BpkThemeProvider from 'react-native-bpk-theming';
 
-import BpkSpinner, { propTypes, SPINNER_TYPES } from './BpkSpinner';
+import BpkSpinner, { SPINNER_TYPES } from './BpkSpinner';
 
 const commonTests = () => {
   describe('BpkSpinner', () => {
@@ -34,7 +34,7 @@ const commonTests = () => {
       expect(tree).toMatchSnapshot();
     });
 
-    SPINNER_TYPES.forEach(spinnerType => {
+    Object.keys(SPINNER_TYPES).forEach(spinnerType => {
       it(`should support type="${spinnerType}"`, () => {
         const tree = renderer
           .create(<BpkSpinner type={spinnerType} />)
@@ -62,24 +62,6 @@ const commonTests = () => {
         )
         .toJSON();
       expect(tree).toMatchSnapshot();
-    });
-
-    it('should reject theme property when required theme attributes are omitted', () => {
-      // eslint-disable-line max-len
-      expect(
-        propTypes
-          .theme(
-            {
-              type: 'primary',
-              theme: {},
-            },
-            'theme',
-            'BpkSpinner',
-          )
-          .toString(),
-      ).toEqual(
-        'Error: Invalid prop `theme` supplied to `BpkSpinner`. For spinners of type `primary`, the `theme` prop must include `spinnerPrimaryColor`',
-      ); // eslint-disable-line max-len
     });
 
     it('should disable theming if the required attribute is omitted', () => {

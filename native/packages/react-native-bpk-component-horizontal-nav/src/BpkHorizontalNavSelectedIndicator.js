@@ -19,13 +19,13 @@
 import React from 'react';
 import { Animated, StyleSheet } from 'react-native';
 import PropTypes from 'prop-types';
-import { withTheme } from 'react-native-bpk-theming';
+import { getThemeAttributes, withTheme } from 'react-native-bpk-theming';
 import {
   colorBlue700,
   borderSizeLg,
 } from 'bpk-tokens/tokens/base.react.native';
 
-import { THEMING_ATTRIBUTE, themePropType } from './theming';
+import { REQUIRED_THEME_ATTRIBUTES, themePropType } from './theming';
 
 const styles = StyleSheet.create({
   selectedIndicator: {
@@ -37,9 +37,14 @@ const styles = StyleSheet.create({
 const BpkHorizontalNavSelectedIndicator = props => {
   const { theme, xOffset, width } = props;
   const style = [styles.selectedIndicator];
-  if (theme && theme[THEMING_ATTRIBUTE]) {
-    style.push({ backgroundColor: theme[THEMING_ATTRIBUTE] });
+
+  const themeAttributes = getThemeAttributes(REQUIRED_THEME_ATTRIBUTES, theme);
+  if (themeAttributes) {
+    style.push({
+      backgroundColor: themeAttributes.horizontalNavSelectedTextColor,
+    });
   }
+
   const animationStyles = {
     transform: [
       {

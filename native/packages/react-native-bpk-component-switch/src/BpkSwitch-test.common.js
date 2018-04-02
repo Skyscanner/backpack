@@ -20,7 +20,7 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import BpkThemeProvider from 'react-native-bpk-theming';
 
-import BpkSwitch, { propTypes } from './BpkSwitch';
+import BpkSwitch from './BpkSwitch';
 
 const commonTests = () => {
   describe('BpkSwitch', () => {
@@ -43,29 +43,11 @@ const commonTests = () => {
       const tree = renderer
         .create(
           <BpkThemeProvider theme={theme}>
-            <BpkSwitch />
+            <BpkSwitch value />
           </BpkThemeProvider>,
         )
         .toJSON();
       expect(tree).toMatchSnapshot();
-    });
-
-    it('should reject theme property when required theme attributes are omitted', () => {
-      // eslint-disable-line max-len
-      expect(
-        propTypes
-          .theme(
-            {
-              type: 'primary',
-              theme: {},
-            },
-            'theme',
-            'BpkSwitch',
-          )
-          .toString(),
-      ).toEqual(
-        'Error: Invalid prop `theme` supplied to `BpkSwitch`. For themed switches, `theme` prop must include `switchPrimaryColor`',
-      ); // eslint-disable-line max-len
     });
 
     it('should disable theming if the required attribute is omitted', () => {
@@ -73,7 +55,7 @@ const commonTests = () => {
       const tree = renderer
         .create(
           <BpkThemeProvider theme={theme}>
-            <BpkSwitch />
+            <BpkSwitch value />
           </BpkThemeProvider>,
         )
         .toJSON();
