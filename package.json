@@ -110,7 +110,7 @@
     "jest": "^21.2.1",
     "json-loader": "^0.5.4",
     "lerna": "^2.7.1",
-    "lint-staged": "^6.0.0",
+    "lint-staged": "^7.0.2",
     "lodash": "^4.17.4",
     "marked": "^0.3.12",
     "merge-stream": "^1.0.1",
