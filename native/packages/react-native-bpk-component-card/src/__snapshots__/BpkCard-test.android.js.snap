@@ -10,7 +10,7 @@ exports[`Android BpkCard should render correctly 1`] = `
     accessibilityTraits={undefined}
     accessible={true}
     hitSlop={undefined}
-    nativeBackgroundAndroid={
+    nativeForegroundAndroid={
       Object {
         "attribute": "selectableItemBackgroundBorderless",
         "type": "ThemeAttrAndroid",
@@ -73,7 +73,7 @@ exports[`Android BpkCard should render correctly with arbitrary props 1`] = `
     accessibilityTraits={undefined}
     accessible={true}
     hitSlop={undefined}
-    nativeBackgroundAndroid={
+    nativeForegroundAndroid={
       Object {
         "attribute": "selectableItemBackgroundBorderless",
         "type": "ThemeAttrAndroid",
@@ -136,7 +136,7 @@ exports[`Android BpkCard should render correctly with custom inner style 1`] = `
     accessibilityTraits={undefined}
     accessible={true}
     hitSlop={undefined}
-    nativeBackgroundAndroid={
+    nativeForegroundAndroid={
       Object {
         "attribute": "selectableItemBackgroundBorderless",
         "type": "ThemeAttrAndroid",
@@ -207,7 +207,7 @@ exports[`Android BpkCard should render correctly with custom style 1`] = `
     accessibilityTraits={undefined}
     accessible={true}
     hitSlop={undefined}
-    nativeBackgroundAndroid={
+    nativeForegroundAndroid={
       Object {
         "attribute": "selectableItemBackgroundBorderless",
         "type": "ThemeAttrAndroid",
@@ -273,7 +273,7 @@ exports[`Android BpkCard should render correctly with the "focused" state 1`] = 
     accessibilityTraits={undefined}
     accessible={true}
     hitSlop={undefined}
-    nativeBackgroundAndroid={
+    nativeForegroundAndroid={
       Object {
         "attribute": "selectableItemBackgroundBorderless",
         "type": "ThemeAttrAndroid",
@@ -339,7 +339,7 @@ exports[`Android BpkCard should render correctly without padding 1`] = `
     accessibilityTraits={undefined}
     accessible={true}
     hitSlop={undefined}
-    nativeBackgroundAndroid={
+    nativeForegroundAndroid={
       Object {
         "attribute": "selectableItemBackgroundBorderless",
         "type": "ThemeAttrAndroid",

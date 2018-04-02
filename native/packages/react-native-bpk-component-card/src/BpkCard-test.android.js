@@ -21,11 +21,19 @@
 import commonTests from './BpkCard-test.common';
 
 jest.mock('react-native', () => {
+  const MARSHMALLOW = 23;
   const reactNative = jest.requireActual('react-native');
   jest
     .spyOn(reactNative.Platform, 'select')
     .mockImplementation(obj => obj.android || obj.default);
   reactNative.Platform.OS = 'android';
+
+  // We rely on BpkTouchableNativeFeedback to handle the ripple effect on older devices
+  // so in this test suite we're assuming API > 23 where the ripple is supported
+  Object.defineProperty(reactNative.Platform, 'Version', {
+    value: MARSHMALLOW,
+  });
+
   return reactNative;
 });
 

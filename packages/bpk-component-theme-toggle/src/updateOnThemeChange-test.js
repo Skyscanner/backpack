@@ -17,21 +17,34 @@
  */
 
 import React from 'react';
+import PropTypes from 'prop-types';
 import renderer from 'react-test-renderer';
 import { mount } from 'enzyme';
 import updateOnThemeChange from './updateOnThemeChange';
 import { THEME_CHANGE_EVENT, getHtmlElement } from './utils';
 
-const EnhancedComponent = updateOnThemeChange('div');
+const Dummy = ({ children }) => <div>{children}</div>;
+
+const EnhancedComponent = updateOnThemeChange(Dummy);
 
 describe('EnhancedComponent', () => {
   it('should render correctly', () => {
-    const tree = renderer.create(<EnhancedComponent />).toJSON();
+    const tree = renderer
+      .create(
+        <EnhancedComponent>
+          <p>Children</p>
+        </EnhancedComponent>,
+      )
+      .toJSON();
     expect(tree).toMatchSnapshot();
   });
 
   it('should force an update when receiving a theme change event', () => {
-    const component = mount(<EnhancedComponent />);
+    const component = mount(
+      <EnhancedComponent>
+        <p />
+      </EnhancedComponent>,
+    );
     const forceUpdateSpy = jest.fn();
 
     component.instance().forceUpdate = forceUpdateSpy;
@@ -44,3 +57,7 @@ describe('EnhancedComponent', () => {
     expect(forceUpdateSpy).toHaveBeenCalled();
   });
 });
+
+Dummy.propTypes = {
+  children: PropTypes.node.isRequired,
+};
