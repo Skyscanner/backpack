@@ -66,7 +66,7 @@ class BpkTextInput extends Component<Props, State> {
     onFocus: PropTypes.func,
     placeholder: PropTypes.string,
     style: ViewPropTypes.style,
-    valid: PropTypes.oneOf(true, false, null),
+    valid: PropTypes.oneOf([true, false, null]),
     validationMessage: PropTypes.string,
     accessoryView: PropTypes.node,
   };

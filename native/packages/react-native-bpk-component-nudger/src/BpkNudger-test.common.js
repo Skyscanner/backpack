@@ -117,7 +117,8 @@ const commonTests = () => {
     });
 
     it('should disable theming if the required attribute is omitted', () => {
-      const onPressFn = jest.fn();
+      const consoleErrorFn = jest.fn();
+      jest.spyOn(console, 'error').mockImplementation(consoleErrorFn);
       const theme = {};
       const tree = renderer
         .create(
@@ -128,12 +129,13 @@ const commonTests = () => {
               value={3}
               decreaseButtonLabel="Decrease"
               increaseButtonLabel="Increase"
-              onChange={onPressFn}
+              onChange={() => null}
             />
           </BpkThemeProvider>,
         )
         .toJSON();
       expect(tree).toMatchSnapshot();
+      expect(consoleErrorFn.mock.calls.length).toBe(1);
     });
   });
 };
