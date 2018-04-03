@@ -1,6 +1,6 @@
 {
   "name": "bpk-docs",
-  "version": "0.0.247",
+  "version": "0.0.248",
   "main": "index.js",
   "description": "Backpack documentation site.",
   "repository": {
@@ -15,7 +15,7 @@
   "devDependencies": {
     "bpk-animate-height": "^1.1.25",
     "bpk-component-accordion": "^1.2.10",
-    "bpk-component-autosuggest": "^3.0.77",
+    "bpk-component-autosuggest": "^3.0.78",
     "bpk-component-badge": "^1.1.5",
     "bpk-component-banner-alert": "^2.0.15",
     "bpk-component-barchart": "^2.2.19",
