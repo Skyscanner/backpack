@@ -13,6 +13,8 @@ exports[`BpkAutosuggest should render correctly 1`] = `
     aria-owns="react-autowhatever-1"
     autoComplete="off"
     className="bpk-input"
+    id="origin"
+    name="Origin"
     onBlur={[Function]}
     onChange={[Function]}
     onFocus={[Function]}
@@ -42,6 +44,8 @@ exports[`BpkAutosuggest should render correctly with an "alwaysRenderSuggestions
     aria-owns="react-autowhatever-1"
     autoComplete="off"
     className="bpk-input"
+    id="origin"
+    name="Origin"
     onBlur={[Function]}
     onChange={[Function]}
     onFocus={[Function]}

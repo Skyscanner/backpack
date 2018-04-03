@@ -16,9 +16,10 @@
  * limitations under the License.
  */
 
+import React from 'react';
+import BpkInput from 'bpk-component-input';
 import Autosuggest from 'react-autosuggest';
 import { cssModules } from 'bpk-react-utils';
-import BpkInput from 'bpk-component-input';
 
 import STYLES from './bpk-autosuggest.scss';
 
@@ -48,6 +49,21 @@ Autosuggest.defaultProps.theme = {
   sectionTitle: getClassName('bpk-autosuggest__section-title'),
 };
 
-Autosuggest.defaultProps.renderInputComponent = BpkInput;
+Autosuggest.defaultProps.renderInputComponent = inputProps => {
+  const { ref, inputRef, ...rest } = inputProps;
+
+  return (
+    <BpkInput
+      inputRef={element => {
+        ref(element);
+
+        if (typeof inputRef === 'function') {
+          inputRef(element);
+        }
+      }}
+      {...rest}
+    />
+  );
+};
 
 export default Autosuggest;
