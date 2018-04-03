@@ -23,6 +23,9 @@ import BpkText from 'react-native-bpk-component-text';
 import BpkAnimateHeight from './BpkAnimateHeight';
 
 const commonTests = () => {
+  // Fake timer is needed to prevent Animation warning during the tests
+  jest.useFakeTimers();
+
   describe('BpkAnimateHeight', () => {
     const animateHeightContent = (
       <BpkText>
