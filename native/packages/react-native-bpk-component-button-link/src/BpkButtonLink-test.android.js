@@ -17,8 +17,11 @@
  */
 
 /* @flow */
-
+import React from 'react';
+import renderer from 'react-test-renderer';
 import commonTests from './BpkButtonLink-test.common';
+
+import BpkButtonLink from './BpkButtonLink';
 
 jest.mock('react-native', () => {
   const reactNative = jest.requireActual('react-native');
@@ -50,4 +53,20 @@ jest.mock('./BpkButtonLink', () =>
 
 describe('Android', () => {
   commonTests();
+
+  it('should support "borderlessBackground" equal to false', () => {
+    const onPressFn = jest.fn();
+
+    const tree = renderer
+      .create(
+        <BpkButtonLink
+          title="Lorem ipsum"
+          onPress={onPressFn}
+          borderlessBackground={false}
+        />,
+      )
+      .toJSON();
+
+    expect(tree).toMatchSnapshot();
+  });
 });

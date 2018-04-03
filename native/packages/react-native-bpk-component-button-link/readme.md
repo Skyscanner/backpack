@@ -59,16 +59,17 @@ export default class App extends Component {
 
 ## Props
 
-| Property              | PropType                                                                  | Required | Default Value |
-| --------------------- | ------------------------------------------------------------------------- | -------- | ------------- |
-| onPress               | func                                                                      | true     | -             |
-| title                 | string                                                                    | true     | -             |
-| disabled              | bool                                                                      | false    | false         |
-| accessibilityLabel    | string                                                                    | false    | props.title   |
-| icon                  | oneOf(string, element) Strings must be a [BpkIcon](/components/web/icons) | false    | null          |
-| iconAlignment         | oneOf('leading', 'trailing')                                              | false    | trailing      |
-| large (iOS only)      | bool                                                                      | false    | false         |
-| theme                 | See [Theme Props](#theme-props) below                                     | false    | null          |
+| Property                            | PropType                                                                  | Required | Default Value |
+| ----------------------------------- | ------------------------------------------------------------------------- | -------- | ------------- |
+| onPress                             | func                                                                      | true     | -             |
+| title                               | string                                                                    | true     | -             |
+| disabled                            | bool                                                                      | false    | false         |
+| accessibilityLabel                  | string                                                                    | false    | props.title   |
+| icon                                | oneOf(string, element) Strings must be a [BpkIcon](/components/web/icons) | false    | null          |
+| iconAlignment                       | oneOf('leading', 'trailing')                                              | false    | trailing      |
+| large (iOS only)                    | bool                                                                      | false    | false         |
+| borderlessBackground (Android only) | bool                                                                      | false    | true          |
+| theme                               | See [Theme Props](#theme-props) below                                     | false    | null          |
 
 ## Theme Props
 

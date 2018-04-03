@@ -1,26 +1,28 @@
 /*
-* Backpack - Skyscanner's Design System
-*
-* Copyright 2018 Skyscanner Ltd
-*
-* Licensed under the Apache License, Version 2.0 (the "License");
-* you may not use this file except in compliance with the License.
-* You may obtain a copy of the License at
-*
-*   http://www.apache.org/licenses/LICENSE-2.0
-*
-* Unless required by applicable law or agreed to in writing, software
-* distributed under the License is distributed on an "AS IS" BASIS,
-* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-* See the License for the specific language governing permissions and
-* limitations under the License.
-*/
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2018 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+/* @flow */
 
 import React from 'react';
 import renderer from 'react-test-renderer';
 import BpkText from 'react-native-bpk-component-text';
 
-import ALERT_TYPES from './AlertTypes';
+import { ALERT_TYPES } from './common-types';
 import BpkBannerAlert from './BpkBannerAlert';
 
 const commonTests = () => {
@@ -45,7 +47,7 @@ const commonTests = () => {
       const tree = renderer
         .create(
           <BpkBannerAlert
-            type={ALERT_TYPES.NEUTRAL}
+            type={ALERT_TYPES.neutral}
             message="Neutral alert."
             dismissable
             dismissButtonLabel="Dismiss"
@@ -60,7 +62,7 @@ const commonTests = () => {
       const tree = renderer
         .create(
           <BpkBannerAlert
-            type={ALERT_TYPES.NEUTRAL}
+            type={ALERT_TYPES.neutral}
             message="Neutral alert."
             toggleExpandedButtonLabel="Expand"
           >
@@ -81,7 +83,7 @@ const commonTests = () => {
       const tree = renderer
         .create(
           <BpkBannerAlert
-            type={ALERT_TYPES.NEUTRAL}
+            type={ALERT_TYPES.neutral}
             message="Neutral alert."
             toggleExpandedButtonLabel="Expand"
             expanded
@@ -104,7 +106,7 @@ const commonTests = () => {
         .create(
           <BpkBannerAlert
             style={{ width: 50 }}
-            type={ALERT_TYPES.NEUTRAL}
+            type={ALERT_TYPES.neutral}
             message="Neutral alert."
           />,
         )
@@ -117,7 +119,7 @@ const commonTests = () => {
         .create(
           <BpkBannerAlert
             show={false}
-            type={ALERT_TYPES.NEUTRAL}
+            type={ALERT_TYPES.neutral}
             message="Neutral alert."
           />,
         )
@@ -130,7 +132,7 @@ const commonTests = () => {
         .create(
           <BpkBannerAlert
             animateOnEnter
-            type={ALERT_TYPES.NEUTRAL}
+            type={ALERT_TYPES.neutral}
             message="Neutral alert."
           />,
         )
@@ -143,7 +145,7 @@ const commonTests = () => {
         .create(
           <BpkBannerAlert
             animateOnLeave
-            type={ALERT_TYPES.NEUTRAL}
+            type={ALERT_TYPES.neutral}
             message="Neutral alert."
           />,
         )
@@ -197,6 +199,7 @@ const commonTests = () => {
       jest.spyOn(console, 'error').mockImplementation(() => null);
 
       const willThrow = () =>
+        // $FlowFixMe
         renderer.create(<BpkBannerAlert message="Neutral alert." />);
 
       expect(willThrow).not.toThrow();

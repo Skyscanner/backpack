@@ -16,16 +16,19 @@
  * limitations under the License.
  */
 
-import React from 'react';
-import { StyleSheet, View, ViewPropTypes } from 'react-native';
+/* @flow */
+
 import PropTypes from 'prop-types';
+import React, { Component } from 'react';
+import { StyleSheet, View } from 'react-native';
 import { storiesOf } from '@storybook/react-native';
 import BpkText from 'react-native-bpk-component-text';
 import BpkButton from 'react-native-bpk-component-button';
 import { spacingBase } from 'bpk-tokens/tokens/base.react.native';
+
 import CenterDecorator from '../../storybook/CenterDecorator';
 
-import BpkBannerAlert, { ALERT_TYPES } from './index';
+import BpkBannerAlert, { ALERT_TYPES, type BpkBannerAlertProps } from './index';
 
 const styles = StyleSheet.create({
   bannerAlert: {
@@ -36,20 +39,30 @@ const styles = StyleSheet.create({
   },
 });
 
-class ExpandableBannerAlert extends React.Component {
+class ExpandableBannerAlert extends Component<
+  BpkBannerAlertProps,
+  { expanded: boolean },
+> {
+  static propTypes = {
+    ...BpkBannerAlert.propTypes,
+    toggleExpandedButtonLabel: PropTypes.string,
+  };
+  static defaultProps = {
+    ...BpkBannerAlert.defaultProps,
+    toggleExpandedButtonLabel: null,
+  };
+
   constructor() {
     super();
 
     this.state = {
       expanded: false,
     };
-
-    this.onToggleExpanded = this.onToggleExpanded.bind(this);
   }
 
-  onToggleExpanded() {
+  onToggleExpanded = () => {
     this.setState({ expanded: !this.state.expanded });
-  }
+  };
 
   render() {
     return (
@@ -64,20 +77,24 @@ class ExpandableBannerAlert extends React.Component {
 }
 
 // eslint-disable-next-line react/no-multi-comp
-class DismissableBannerAlert extends React.Component {
+class DismissableBannerAlert extends Component<
+  BpkBannerAlertProps,
+  { show: boolean },
+> {
+  static propTypes = BpkBannerAlert.propTypes;
+  static defaultProps = BpkBannerAlert.defaultProps;
+
   constructor() {
     super();
 
     this.state = {
       show: true,
     };
-
-    this.onDismiss = this.onDismiss.bind(this);
   }
 
-  onDismiss() {
+  onDismiss = () => {
     this.setState({ show: false });
-  }
+  };
 
   render() {
     return (
@@ -92,22 +109,26 @@ class DismissableBannerAlert extends React.Component {
 }
 
 // eslint-disable-next-line react/no-multi-comp
-class BpkBannerAlertFadeDemo extends React.Component {
+class BpkBannerAlertFadeDemo extends Component<
+  BpkBannerAlertProps,
+  { bannerAlertCount: number },
+> {
+  static propTypes = BpkBannerAlert.propTypes;
+  static defaultProps = BpkBannerAlert.defaultProps;
+
   constructor() {
     super();
 
     this.state = {
       bannerAlertCount: 0,
     };
-
-    this.addBannerAlert = this.addBannerAlert.bind(this);
   }
 
-  addBannerAlert() {
+  addBannerAlert = () => {
     this.setState({
       bannerAlertCount: this.state.bannerAlertCount + 1,
     });
-  }
+  };
 
   render() {
     return (
@@ -135,40 +156,29 @@ class BpkBannerAlertFadeDemo extends React.Component {
   }
 }
 
-BpkBannerAlertFadeDemo.propTypes = {
-  dismissButtonLabel: PropTypes.string.isRequired,
-  message: PropTypes.string.isRequired,
-  bannerStyle: ViewPropTypes.style,
-  type: PropTypes.string.isRequired,
-};
-
-BpkBannerAlertFadeDemo.defaultProps = {
-  bannerStyle: null,
-};
-
 storiesOf('react-native-bpk-component-banner-alert', module)
   .addDecorator(CenterDecorator)
   .add('docs:banner-alerts', () => (
     <View>
       <BpkBannerAlert
         style={styles.bannerAlert}
-        type={ALERT_TYPES.NEUTRAL}
+        type={ALERT_TYPES.neutral}
         message="Neutral alert."
       />
       <BpkBannerAlert
         style={styles.bannerAlert}
-        type={ALERT_TYPES.SUCCESS}
+        type={ALERT_TYPES.success}
         message="Successful alert."
       />
       <DismissableBannerAlert
         bannerStyle={styles.bannerAlert}
-        type={ALERT_TYPES.WARN}
+        type={ALERT_TYPES.warn}
         message="Warn alert with dismiss option."
         dismissButtonLabel="Dismiss"
       />
       <ExpandableBannerAlert
         style={styles.bannerAlert}
-        type={ALERT_TYPES.ERROR}
+        type={ALERT_TYPES.error}
         message="Error alert with more information."
       >
         <BpkText textStyle="sm" style={styles.child}>
@@ -185,22 +195,22 @@ storiesOf('react-native-bpk-component-banner-alert', module)
     <View>
       <BpkBannerAlert
         style={styles.bannerAlert}
-        type={ALERT_TYPES.NEUTRAL}
+        type={ALERT_TYPES.neutral}
         message="Neutral alert."
       />
       <BpkBannerAlert
         style={styles.bannerAlert}
-        type={ALERT_TYPES.SUCCESS}
+        type={ALERT_TYPES.success}
         message="Successful alert."
       />
       <BpkBannerAlert
         style={styles.bannerAlert}
-        type={ALERT_TYPES.WARN}
+        type={ALERT_TYPES.warn}
         message="Warn alert."
       />
       <BpkBannerAlert
         style={styles.bannerAlert}
-        type={ALERT_TYPES.ERROR}
+        type={ALERT_TYPES.error}
         message="Error alert."
       />
     </View>
@@ -209,31 +219,31 @@ storiesOf('react-native-bpk-component-banner-alert', module)
     <View>
       <DismissableBannerAlert
         bannerStyle={styles.bannerAlert}
-        type={ALERT_TYPES.NEUTRAL}
+        type={ALERT_TYPES.neutral}
         message="Neutral alert with dismiss option."
         dismissButtonLabel="Dismiss"
       />
       <DismissableBannerAlert
         bannerStyle={styles.bannerAlert}
-        type={ALERT_TYPES.NEUTRAL}
+        type={ALERT_TYPES.neutral}
         message="Neutral alert with dismiss option and long description with emoji 😀."
         dismissButtonLabel="Dismiss"
       />
       <DismissableBannerAlert
         bannerStyle={styles.bannerAlert}
-        type={ALERT_TYPES.SUCCESS}
+        type={ALERT_TYPES.success}
         message="Successful alert with dismiss option."
         dismissButtonLabel="Dismiss"
       />
       <DismissableBannerAlert
         bannerStyle={styles.bannerAlert}
-        type={ALERT_TYPES.WARN}
+        type={ALERT_TYPES.warn}
         message="Warn alert with dismiss option."
         dismissButtonLabel="Dismiss"
       />
       <DismissableBannerAlert
         bannerStyle={styles.bannerAlert}
-        type={ALERT_TYPES.ERROR}
+        type={ALERT_TYPES.error}
         message="Error alert with dismiss option."
         dismissButtonLabel="Dismiss"
       />
@@ -243,7 +253,7 @@ storiesOf('react-native-bpk-component-banner-alert', module)
     <View>
       <ExpandableBannerAlert
         style={styles.bannerAlert}
-        type={ALERT_TYPES.NEUTRAL}
+        type={ALERT_TYPES.neutral}
         message="Neutral alert with more information."
       >
         <BpkText textStyle="sm" style={styles.child}>
@@ -256,7 +266,7 @@ storiesOf('react-native-bpk-component-banner-alert', module)
       </ExpandableBannerAlert>
       <ExpandableBannerAlert
         style={styles.bannerAlert}
-        type={ALERT_TYPES.NEUTRAL}
+        type={ALERT_TYPES.neutral}
         message="Neutral alert with more information and long message with emoji 😀."
       >
         <BpkText textStyle="sm" style={styles.child}>
@@ -269,7 +279,7 @@ storiesOf('react-native-bpk-component-banner-alert', module)
       </ExpandableBannerAlert>
       <ExpandableBannerAlert
         style={styles.bannerAlert}
-        type={ALERT_TYPES.SUCCESS}
+        type={ALERT_TYPES.success}
         message="Successful alert with more information."
       >
         <BpkText textStyle="sm" style={styles.child}>
@@ -282,7 +292,7 @@ storiesOf('react-native-bpk-component-banner-alert', module)
       </ExpandableBannerAlert>
       <ExpandableBannerAlert
         style={styles.bannerAlert}
-        type={ALERT_TYPES.WARN}
+        type={ALERT_TYPES.warn}
         message="Warn alert with more information."
       >
         <BpkText textStyle="sm" style={styles.child}>
@@ -295,7 +305,7 @@ storiesOf('react-native-bpk-component-banner-alert', module)
       </ExpandableBannerAlert>
       <ExpandableBannerAlert
         style={styles.bannerAlert}
-        type={ALERT_TYPES.ERROR}
+        type={ALERT_TYPES.error}
         message="Error alert with more information."
       >
         <BpkText textStyle="sm" style={styles.child}>
@@ -313,7 +323,7 @@ storiesOf('react-native-bpk-component-banner-alert', module)
       bannerStyle={styles.bannerAlert}
       message="Banner alert with dismiss option"
       dismissButtonLabel="Dismiss"
-      type={ALERT_TYPES.SUCCESS}
+      type={ALERT_TYPES.success}
     />
   ))
   .add('docs:edge-cases', () => {
@@ -325,27 +335,29 @@ storiesOf('react-native-bpk-component-banner-alert', module)
       <View>
         <BpkBannerAlert
           style={styles.bannerAlert}
-          type={ALERT_TYPES.NEUTRAL}
+          type={ALERT_TYPES.neutral}
           message={message}
         />
         <BpkBannerAlert
           style={styles.bannerAlert}
-          type={ALERT_TYPES.SUCCESS}
+          type={ALERT_TYPES.success}
           message={message}
         />
         <BpkBannerAlert
           style={styles.bannerAlert}
-          type={ALERT_TYPES.WARN}
+          type={ALERT_TYPES.warn}
           message={message}
           dismissButtonLabel="Dismiss"
           dismissable
+          onDismiss={() => null}
         />
         <BpkBannerAlert
           style={styles.bannerAlert}
-          type={ALERT_TYPES.ERROR}
+          type={ALERT_TYPES.error}
           message={message}
           toggleExpandedButtonLabel="Collapse"
           expanded
+          onToggleExpanded={() => null}
         >
           <BpkText textStyle="sm" style={styles.child}>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque

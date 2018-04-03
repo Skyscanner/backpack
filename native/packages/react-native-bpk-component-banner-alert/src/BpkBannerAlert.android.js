@@ -16,139 +16,111 @@
  * limitations under the License.
  */
 
-import React from 'react';
-import PropTypes from 'prop-types';
+/* @flow */
 
+import React, { Fragment } from 'react';
 import {
-  StyleSheet,
-  TouchableWithoutFeedback,
-  View,
-  ViewPropTypes,
-} from 'react-native';
-
-import {
-  borderRadiusSm,
-  colorBlue500,
+  spacingMd,
+  spacingBase,
+  spacingLg,
+  colorRed500,
   colorGray50,
   colorGray500,
   colorGreen500,
-  colorRed500,
   colorYellow500,
-  spacingBase,
-  spacingLg,
-  spacingSm,
-  spacingXxl,
+  borderRadiusSm,
 } from 'bpk-tokens/tokens/base.react.native';
-
-import BpkAnimateHeight from 'react-native-bpk-component-animate-height';
-import BpkIcon, { icons } from 'react-native-bpk-component-icon';
+import { StyleSheet, View } from 'react-native';
 import BpkText from 'react-native-bpk-component-text';
+import BpkIcon, { icons } from 'react-native-bpk-component-icon';
+import BpkButtonLink from 'react-native-bpk-component-button-link';
+import BpkAnimateHeight from 'react-native-bpk-component-animate-height';
 import BpkTouchableNativeFeedback from 'react-native-bpk-component-touchable-native-feedback';
 
-import AnimateAndFade from './AnimateAndFade';
-import ALERT_TYPES from './AlertTypes';
 import {
-  dismissablePropType,
-  toggleExpandedButtonLabelPropType,
-  dismissableLabelPropType,
-} from './customPropTypes';
+  type Props,
+  ALERT_TYPES,
+  commonPropTypes,
+  commonDefaultProps,
+} from './common-types';
 
-const styles = StyleSheet.create({
-  mainContainer: {
-    paddingVertical: spacingBase,
-    paddingHorizontal: spacingLg,
+import AnimateAndFade from './AnimateAndFade';
+
+const iconAlignmentPadding = {
+  // Current android "sm" text calculated line height is 19.4.
+  // Current android "small" icon calculated line height is 15.6.
+  // 19.4 - 15.6 = 3.8
+  // We spread 3.8 across the vertical padding to align the icon accordingly.
+  paddingTop: 3,
+  paddingBottom: 0.8,
+};
+
+const STYLES = StyleSheet.create({
+  background: {
+    minHeight: 1, // required for AnimateAndFade to work correctly :/
+    borderRadius: borderRadiusSm,
     backgroundColor: colorGray50,
-    minHeight: spacingXxl + spacingBase,
-    flex: 1,
   },
-  dismissableContainer: {
-    paddingRight: spacingLg,
-    backgroundColor: colorGray50,
-    justifyContent: 'center',
-  },
-  childrenContainer: {
-    paddingVertical: spacingSm,
-  },
-  flexRow: {
-    display: 'flex',
+  row: {
     flexDirection: 'row',
-  },
-  text: {
-    flex: 1,
+    paddingHorizontal: spacingLg,
   },
   icon: {
-    paddingRight: spacingSm,
-    paddingTop: spacingSm - 1,
+    ...iconAlignmentPadding,
+    marginVertical: spacingBase,
+    marginEnd: spacingMd,
   },
-  expandableIcon: {
-    paddingTop: spacingSm - 1,
+  iconSuccess: {
+    color: colorGreen500,
   },
-  dismissLabel: {
-    color: colorBlue500,
+  iconWarn: {
+    color: colorYellow500,
   },
-  dismissButtonContainerRadius: {
-    borderRadius: borderRadiusSm,
+  iconError: {
+    color: colorRed500,
+  },
+  iconNeutral: {
+    color: colorGray500,
+  },
+  message: {
+    flex: 1,
+    marginVertical: spacingBase,
+  },
+  closeButton: {
+    marginVertical: spacingMd,
+    marginStart: spacingMd,
+  },
+  expandIcon: {
+    ...iconAlignmentPadding,
+    marginVertical: spacingBase,
+    marginStart: spacingMd,
+  },
+  expandableContent: {
+    paddingBottom: spacingBase,
+    paddingHorizontal: spacingLg,
   },
 });
 
 const ALERT_TYPE_STYLES = {
-  [ALERT_TYPES.SUCCESS]: {
-    iconSource: icons['tick-circle'],
-    iconStyle: {
-      color: colorGreen500,
-    },
+  [ALERT_TYPES.success]: {
+    icon: icons['tick-circle'],
+    iconStyle: STYLES.iconSuccess,
   },
-  [ALERT_TYPES.WARN]: {
-    iconSource: icons['information-circle'],
-    iconStyle: {
-      color: colorYellow500,
-    },
+  [ALERT_TYPES.warn]: {
+    icon: icons['information-circle'],
+    iconStyle: STYLES.iconWarn,
   },
-  [ALERT_TYPES.ERROR]: {
-    iconSource: icons['information-circle'],
-    iconStyle: {
-      color: colorRed500,
-    },
+  [ALERT_TYPES.error]: {
+    icon: icons['information-circle'],
+    iconStyle: STYLES.iconError,
   },
-  [ALERT_TYPES.NEUTRAL]: {
-    iconSource: icons['information-circle'],
-    iconStyle: {
-      color: colorGray500,
-    },
+  [ALERT_TYPES.neutral]: {
+    icon: icons['information-circle'],
+    iconStyle: STYLES.iconNeutral,
   },
 };
 
-const DismissableButton = ({ dismissButtonLabel, onDismiss }) => (
-  <View
-    style={[styles.dismissableContainer, styles.dismissButtonContainerRadius]}
-  >
-    <BpkTouchableNativeFeedback
-      accessibilityComponentType="button"
-      accessibilityLabel={dismissButtonLabel}
-      onPress={onDismiss}
-    >
-      <BpkText textStyle="sm" emphasize style={styles.dismissLabel}>
-        {dismissButtonLabel.toUpperCase()}
-      </BpkText>
-    </BpkTouchableNativeFeedback>
-  </View>
-);
-const ExpandableContent = ({ expanded, children }) => (
-  <BpkAnimateHeight expanded={expanded}>
-    <View style={styles.childrenContainer}>{children}</View>
-  </BpkAnimateHeight>
-);
-const ExpandableIcon = ({ expanded }) => (
-  <View style={styles.dismissableContainer}>
-    <BpkIcon
-      style={styles.expandableIcon}
-      icon={expanded ? icons['chevron-up'] : icons['chevron-down']}
-      small
-    />
-  </View>
-);
-
-const BpkBannerAlert = props => {
+const BpkBannerAlert = (props: Props) => {
   const {
     type,
     message,
@@ -159,7 +131,6 @@ const BpkBannerAlert = props => {
     dismissButtonLabel,
     toggleExpandedButtonLabel,
     show,
-    style: userStyle,
     bannerStyle,
     animateOnEnter,
     animateOnLeave,
@@ -168,34 +139,29 @@ const BpkBannerAlert = props => {
   } = props;
 
   const expandable = children !== null;
-  const { iconSource, iconStyle } = ALERT_TYPE_STYLES[type] || {};
+  const { icon, iconStyle } = ALERT_TYPE_STYLES[type] || {};
 
-  const outerStyle = [styles.flexRow];
-  if (bannerStyle) {
-    outerStyle.push(bannerStyle);
-  }
-
-  const mainContent = (
-    <View style={outerStyle}>
-      <View style={styles.mainContainer}>
-        <View style={styles.flexRow}>
-          <BpkIcon style={[styles.icon, iconStyle]} icon={iconSource} small />
-          <BpkText style={styles.text} textStyle="sm">
-            {message}
-          </BpkText>
-        </View>
-        {expandable && (
-          <ExpandableContent expanded={expanded}>{children}</ExpandableContent>
-        )}
-      </View>
-      {dismissable && (
-        <DismissableButton
-          dismissButtonLabel={dismissButtonLabel}
-          onDismiss={onDismiss}
+  const rowContent = (
+    <Fragment>
+      <BpkIcon style={[STYLES.icon, iconStyle]} icon={icon} small />
+      <BpkText style={STYLES.message} textStyle="sm">
+        {message}
+      </BpkText>
+      {expandable && (
+        <BpkIcon
+          style={STYLES.expandIcon}
+          icon={expanded ? icons['chevron-up'] : icons['chevron-down']}
+          small
         />
       )}
-      {expandable && <ExpandableIcon expanded={expanded} />}
-    </View>
+      {dismissable && (
+        <BpkButtonLink
+          style={STYLES.closeButton}
+          title={dismissButtonLabel}
+          onPress={onDismiss}
+        />
+      )}
+    </Fragment>
   );
 
   return (
@@ -203,73 +169,35 @@ const BpkBannerAlert = props => {
       animateOnEnter={animateOnEnter}
       animateOnLeave={dismissable || animateOnLeave}
       show={show}
-      style={userStyle}
       {...rest}
     >
-      {expandable ? (
-        <TouchableWithoutFeedback
-          accessibilityComponentType="button"
-          accessibilityLabel={toggleExpandedButtonLabel}
-          onPress={onToggleExpanded}
-        >
-          {mainContent}
-        </TouchableWithoutFeedback>
-      ) : (
-        mainContent
-      )}
+      <View style={[STYLES.background, bannerStyle]}>
+        {expandable ? (
+          <BpkTouchableNativeFeedback
+            onPress={onToggleExpanded}
+            accessibilityComponentType="button"
+            accessibilityLabel={toggleExpandedButtonLabel}
+          >
+            <View style={STYLES.row}>{rowContent}</View>
+          </BpkTouchableNativeFeedback>
+        ) : (
+          <View style={STYLES.row}>{rowContent}</View>
+        )}
+        {expandable && (
+          <BpkAnimateHeight
+            expanded={expanded}
+            innerStyle={STYLES.expandableContent}
+          >
+            {children}
+          </BpkAnimateHeight>
+        )}
+      </View>
     </AnimateAndFade>
   );
 };
 
-BpkBannerAlert.propTypes = {
-  message: PropTypes.string.isRequired,
-  type: PropTypes.oneOf([
-    ALERT_TYPES.SUCCESS,
-    ALERT_TYPES.WARN,
-    ALERT_TYPES.ERROR,
-    ALERT_TYPES.NEUTRAL,
-  ]).isRequired,
-  animateOnEnter: PropTypes.bool,
-  animateOnLeave: PropTypes.bool,
-  children: PropTypes.node,
-  dismissable: dismissablePropType,
-  dismissButtonLabel: dismissableLabelPropType,
-  expanded: PropTypes.bool,
-  onDismiss: PropTypes.func,
-  onToggleExpanded: PropTypes.func,
-  show: PropTypes.bool,
-  style: ViewPropTypes.style,
-  bannerStyle: ViewPropTypes.style,
-  toggleExpandedButtonLabel: toggleExpandedButtonLabelPropType,
-};
+BpkBannerAlert.propTypes = commonPropTypes;
 
-DismissableButton.propTypes = {
-  dismissButtonLabel: PropTypes.string.isRequired,
-  onDismiss: PropTypes.func.isRequired,
-};
-
-ExpandableContent.propTypes = {
-  expanded: PropTypes.bool.isRequired,
-  children: PropTypes.node.isRequired,
-};
-
-ExpandableIcon.propTypes = {
-  expanded: PropTypes.bool.isRequired,
-};
-
-BpkBannerAlert.defaultProps = {
-  animateOnEnter: false,
-  animateOnLeave: false,
-  children: null,
-  dismissable: false,
-  dismissButtonLabel: null,
-  expanded: false,
-  onDismiss: null,
-  onToggleExpanded: null,
-  show: true,
-  style: null,
-  bannerStyle: null,
-  toggleExpandedButtonLabel: null,
-};
+BpkBannerAlert.defaultProps = commonDefaultProps;
 
 export default BpkBannerAlert;

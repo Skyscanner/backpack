@@ -47,6 +47,8 @@ export default class App extends Component {
 
 ## Props
 
-| Property     | PropType            | Required | Default Value |
-| ------------ | ------------------- | -------- | ------------- |
-| children     | element             | true     | -             |
+| Property             | PropType | Required | Default Value |
+| -------------------- | -------- | -------- | ------------- |
+| children             | element  | true     | -             |
+| borderlessBackground | bool     | false    | true          |
+| color                | string   | false    | null          |

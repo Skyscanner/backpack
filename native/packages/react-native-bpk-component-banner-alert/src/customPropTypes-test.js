@@ -16,6 +16,8 @@
 * limitations under the License.
 */
 
+/* @flow */
+
 import React from 'react';
 import BpkText from 'react-native-bpk-component-text';
 import { dismissablePropType } from './customPropTypes';

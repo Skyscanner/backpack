@@ -19,11 +19,12 @@
 /* @flow */
 
 import React from 'react';
-import { getThemeAttributes, withTheme } from 'react-native-bpk-theming';
+import PropTypes from 'prop-types';
+import { View } from 'react-native';
 import BpkIcon from 'react-native-bpk-component-icon';
 import BpkText from 'react-native-bpk-component-text';
+import { getThemeAttributes, withTheme } from 'react-native-bpk-theming';
 import BpkTouchableNativeFeedback from 'react-native-bpk-component-touchable-native-feedback';
-import { View } from 'react-native';
 
 import styles from './styles';
 
@@ -37,6 +38,7 @@ import {
 
 export type Props = {
   ...$Exact<CommonProps>,
+  borderlessBackground: boolean,
 };
 
 const BpkButtonLink = (props: Props) => {
@@ -48,6 +50,7 @@ const BpkButtonLink = (props: Props) => {
     onPress,
     style,
     title,
+    borderlessBackground,
     theme,
     ...rest
   } = props;
@@ -57,7 +60,6 @@ const BpkButtonLink = (props: Props) => {
     ? { color: themeAttributes.buttonLinkTextColor }
     : null;
 
-  const containerStyle = [styles.container];
   const textStyle = [styles.text];
   const viewStyle = [styles.view];
   const iconStyle = [styles.icon];
@@ -79,12 +81,8 @@ const BpkButtonLink = (props: Props) => {
     accessibilityTraits.push('disabled');
   }
 
-  if (style) {
-    containerStyle.push(style);
-  }
-
   return (
-    <View style={containerStyle}>
+    <View style={style}>
       <BpkTouchableNativeFeedback
         accessibilityComponentType="button"
         accessibilityLabel={accessibilityLabel || title}
@@ -92,7 +90,7 @@ const BpkButtonLink = (props: Props) => {
         onPress={onPress}
         disabled={disabled}
         style={styles.button}
-        icon={icon}
+        borderlessBackground={borderlessBackground}
         {...rest}
       >
         <View style={viewStyle}>
@@ -112,12 +110,14 @@ const BpkButtonLink = (props: Props) => {
 
 const propTypes = {
   ...commonPropTypes,
+  borderlessBackground: PropTypes.bool,
 };
 
 BpkButtonLink.propTypes = propTypes;
 
 BpkButtonLink.defaultProps = {
   ...commonDefaultProps,
+  borderlessBackground: true,
 };
 
 export default withTheme(BpkButtonLink);

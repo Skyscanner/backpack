@@ -16,8 +16,11 @@
  * limitations under the License.
  */
 
-import BpkBannerAlert from './src/BpkBannerAlert';
-import ALERT_TYPES from './src/AlertTypes';
+/* @flow */
 
-export default BpkBannerAlert;
+import { type Props, ALERT_TYPES } from './src/common-types';
+import BpkBannerAlert from './src/BpkBannerAlert';
+
+export type BpkBannerAlertProps = Props;
 export { ALERT_TYPES };
+export default BpkBannerAlert;

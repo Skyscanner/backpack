@@ -15,7 +15,7 @@ import React, { Component } from 'react';
 import { View, StyleSheet } from 'react-native';
 import BpkText from 'react-native-bpk-component-text';
 import { spacingBase } from 'bpk-tokens/tokens/base.react.native';
-import BpkBannerAlert, {ALERT_TYPES} from 'react-native-bpk-component-banner-alert';
+import BpkBannerAlert, { ALERT_TYPES } from 'react-native-bpk-component-banner-alert';
 
 const styles = StyleSheet.create({
   container: {
@@ -54,12 +54,12 @@ export default class App extends Component {
       <View style={styles.container}>
         <BpkBannerAlert
           style={styles.bannerAlert}
-          type={ALERT_TYPES.SUCCESS}
+          type={ALERT_TYPES.success}
           message="Success message!"
         />
         <BpkBannerAlert
           style={styles.bannerAlert}
-          type={ALERT_TYPES.WARN}
+          type={ALERT_TYPES.warn}
           message="Warn message!"
           dismissButtonLabel="Dismiss"
           onDismiss={this.onDismiss}
@@ -68,7 +68,7 @@ export default class App extends Component {
         />
         <BpkBannerAlert
           style={styles.bannerAlert}
-          type={ALERT_TYPES.ERROR}
+          type={ALERT_TYPES.error}
           message="Error message!"
           toggleExpandedButtonLabel="Expand"
           onToggleExpanded={this.onExpandablePress}

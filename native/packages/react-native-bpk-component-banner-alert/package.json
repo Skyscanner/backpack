@@ -17,6 +17,7 @@
     "bpk-tokens": "^26.8.0",
     "prop-types": "^15.5.8",
     "react-native-bpk-component-animate-height": "^1.0.37",
+    "react-native-bpk-component-button-link": "^1.1.7",
     "react-native-bpk-component-icon": "^1.5.1",
     "react-native-bpk-component-text": "^2.1.33",
     "react-native-bpk-component-touchable-native-feedback": "^1.1.5",
