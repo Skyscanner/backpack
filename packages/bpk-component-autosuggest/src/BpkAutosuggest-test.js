@@ -26,7 +26,12 @@ const onSuggestionsFetchRequested = () => null;
 const onSuggestionsClearRequested = () => null;
 const getSuggestionValue = suggestion => suggestion;
 const renderSuggestion = suggestion => <span>{suggestion}</span>;
-const inputProps = { value: 'Edinburgh', onChange: () => null };
+const inputProps = {
+  id: 'origin',
+  name: 'Origin',
+  value: 'Edinburgh',
+  onChange: () => null,
+};
 
 describe('BpkAutosuggest', () => {
   it('should render correctly', () => {
@@ -64,11 +69,11 @@ describe('BpkAutosuggest', () => {
 
   it('should set the input reference', () => {
     let inputRef;
-    const storeAutosuggestReference = autosuggest => {
-      if (autosuggest !== null) {
-        inputRef = autosuggest.input;
-      }
+
+    const storeAutosuggestReference = ref => {
+      inputRef = ref;
     };
+
     const tree = ReactTestUtils.renderIntoDocument(
       <BpkAutosuggest
         suggestions={suggestions}
@@ -76,11 +81,12 @@ describe('BpkAutosuggest', () => {
         onSuggestionsClearRequested={onSuggestionsClearRequested}
         getSuggestionValue={getSuggestionValue}
         renderSuggestion={renderSuggestion}
-        inputProps={inputProps}
-        ref={storeAutosuggestReference}
+        inputProps={{ inputRef: storeAutosuggestReference, ...inputProps }}
       />,
     );
+
     const input = ReactTestUtils.findRenderedDOMComponentWithTag(tree, 'input');
+
     expect(input).toEqual(inputRef);
   });
 });
