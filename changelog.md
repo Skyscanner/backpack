@@ -2,6 +2,12 @@
 
 [Unreleased changes](./unreleased.md).
 
+## 2018-04-03 - Autosuggest default `renderInputComponent` fix
+
+**Fixed:**
+- bpk-component-autosuggest: 3.0.77 => 3.0.78
+  - The default `renderInputComponent` prop now renders a `BpkInput` correctly
+
 ## 2018-04-03 - Native banner alert refactor
 
 **Breaking:**
