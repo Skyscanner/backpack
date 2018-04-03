@@ -2,6 +2,17 @@
 
 [Unreleased changes](./unreleased.md).
 
+## 2018-04-03 - Native banner alert refactor
+
+**Breaking:**
+- react-native-bpk-component-animate-height: 1.0.37 => 2.0.0
+- react-native-bpk-component-banner-alert: 2.1.14 => 3.0.0
+  - Major refactor
+  - `ALERT_TYPES` keys are now all lowercase i.e: `ALERT_TYPES.success` instead of `ALERT_TYPES.SUCCESS`
+
+- react-native-bpk-component-button-link: 1.1.7 => 2.0.0
+  - Android ripple is no longer constrained to the boundaries of the button link, please use the `borderlessBackground` prop for this
+
 ## 2018-03-30 - Fix for full-screen modals with lots of content
 
 **Fixed:**
