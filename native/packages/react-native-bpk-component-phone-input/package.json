@@ -1,6 +1,6 @@
 {
   "name": "react-native-bpk-component-phone-input",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "main": "index.js",
   "description": "Backpack React Native phone input component.",
   "repository": {
@@ -18,8 +18,8 @@
     "prop-types": "^15.5.8",
     "react-native-bpk-component-icon": "^1.5.1",
     "react-native-bpk-component-text": "^2.1.33",
-    "react-native-bpk-component-text-input": "^2.2.5",
-    "react-native-bpk-component-touchable-native-feedback": "^1.1.5",
+    "react-native-bpk-component-text-input": "^2.2.6",
+    "react-native-bpk-component-touchable-native-feedback": "^1.1.6",
     "react-native-bpk-component-touchable-overlay": "^1.0.15"
   }
 }

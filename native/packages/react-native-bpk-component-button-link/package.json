@@ -1,6 +1,6 @@
 {
   "name": "react-native-bpk-component-button-link",
-  "version": "1.1.7",
+  "version": "2.0.0",
   "main": "index.js",
   "description": "Backpack React Native button link component.",
   "repository": {
@@ -19,7 +19,7 @@
     "prop-types": "^15.5.8",
     "react-native-bpk-component-icon": "^1.5.1",
     "react-native-bpk-component-text": "^2.1.33",
-    "react-native-bpk-component-touchable-native-feedback": "^1.1.5",
-    "react-native-bpk-theming": "^1.0.44"
+    "react-native-bpk-component-touchable-native-feedback": "^1.1.6",
+    "react-native-bpk-theming": "^1.0.45"
   }
 }

@@ -1,6 +1,6 @@
 {
   "name": "react-native-bpk-component-text-input",
-  "version": "2.2.5",
+  "version": "2.2.6",
   "main": "index.js",
   "description": "Backpack React Native text input component.",
   "repository": {
