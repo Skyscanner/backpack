@@ -18,6 +18,7 @@
 
 import React from 'react';
 import Helmet from 'react-helmet';
+import { browserHistory } from 'react-router';
 
 import BpkText from 'bpk-component-text';
 
@@ -125,9 +126,11 @@ const HomePage = () => (
       </div>
     </div>
     <div className={getClassName('bpkdocs-home-page__cards-container')}>
-      {CARD_CONTENTS.map(props => (
+      {CARD_CONTENTS.map(({ href, ...rest }) => (
         <HomePageCard
-          {...props}
+          {...rest}
+          href={rest.blank ? href : null}
+          onClick={rest.blank ? null : () => browserHistory.push(href)}
           className={getClassName('bpkdocs-home-page__card')}
         />
       ))}
