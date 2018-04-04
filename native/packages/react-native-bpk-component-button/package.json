@@ -1,6 +1,6 @@
 {
   "name": "react-native-bpk-component-button",
-  "version": "6.0.2",
+  "version": "6.0.3",
   "main": "index.js",
   "description": "Backpack React Native button component.",
   "repository": {
@@ -17,11 +17,11 @@
     "bpk-tokens": "^26.8.0",
     "lodash": "^4.17.4",
     "prop-types": "^15.5.8",
-    "react-native-bpk-component-icon": "^1.5.1",
+    "react-native-bpk-component-icon": "^1.6.0",
     "react-native-bpk-component-text": "^2.1.33",
     "react-native-bpk-component-touchable-native-feedback": "^1.1.6",
     "react-native-bpk-component-touchable-overlay": "^1.0.15",
-    "react-native-bpk-theming": "^1.0.45",
+    "react-native-bpk-theming": "^1.0.46",
     "react-native-linear-gradient": "^2.3.0"
   }
 }

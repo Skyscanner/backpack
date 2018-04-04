@@ -1,6 +1,6 @@
 {
   "name": "react-native-bpk-component-icon",
-  "version": "1.5.1",
+  "version": "1.6.0",
   "main": "index.js",
   "description": "Backpack React Native icon component.",
   "repository": {
@@ -14,7 +14,7 @@
     "react-native": ">= 0.47.0"
   },
   "dependencies": {
-    "bpk-svgs": "^5.14.1",
+    "bpk-svgs": "^5.15.0",
     "bpk-tokens": "^26.8.0",
     "prop-types": "^15.5.8"
   },
