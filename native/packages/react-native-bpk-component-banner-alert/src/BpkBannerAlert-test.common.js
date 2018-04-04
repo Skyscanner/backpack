@@ -26,9 +26,10 @@ import { ALERT_TYPES } from './common-types';
 import BpkBannerAlert from './BpkBannerAlert';
 
 const commonTests = () => {
-  describe('BpkBannerAlert', () => {
-    jest.spyOn(Date, 'now').mockImplementation(() => 1503187200000);
+  // Fake timer is needed to prevent Animation warning during the tests
+  jest.useFakeTimers();
 
+  describe('BpkBannerAlert', () => {
     Object.keys(ALERT_TYPES).forEach(alertType => {
       it(`should render correctly with type equal to ${alertType}`, () => {
         const tree = renderer

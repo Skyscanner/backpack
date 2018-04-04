@@ -28,7 +28,8 @@ const child = (
 );
 
 const commonTests = () => {
-  jest.spyOn(Date, 'now').mockImplementation(() => 1503187200000);
+  // Fake timer is needed to prevent Animation warning during the tests
+  jest.useFakeTimers();
 
   describe('AnimateAndFade', () => {
     it('should render correctly', () => {
