@@ -32,6 +32,7 @@ import punycode from 'punycode';
 import fs from 'fs';
 import svg2react from './tasks/svg2react';
 import svg2datauri, { sassMap, svg2sassvar } from './tasks/svg2datauri';
+import getIconFontMetadataProvider from './tasks/getIconFontMetadataProvider';
 
 const remToPx = value => {
   let parsed = null;
@@ -299,9 +300,9 @@ gulp.task('icons-font', ['icons-common'], () => {
     .pipe(chmod(0o644))
     .pipe(
       iconfont({
-        fontName: 'BpkIcon', // required
-        prependUnicode: false,
-        formats: ['ttf', 'eot', 'woff'], // default, 'woff2' and 'svg' are available
+        metadataProvider: getIconFontMetadataProvider('tasks/codepoints.json'),
+        fontName: 'BpkIcon',
+        formats: ['ttf', 'eot', 'woff'],
         /**
          * Normalize and fontHeight(>1000) are needed in order to have all the glyphs rendered
          * correctly, for more info go to the npm package docs
@@ -317,7 +318,6 @@ gulp.task('icons-font', ['icons-common'], () => {
 
   const saveMapping = generateFont.on('glyphs', glyphs => {
     const baseDir = 'dist/font';
-    // Og all the glyphs generate a key value pair with name and code
     const mapping = glyphs.reduce((acc, glyph) => {
       // use punycode to get the text representation of the unicode
       acc[glyph.name] = punycode.ucs2
@@ -326,18 +326,15 @@ gulp.task('icons-font', ['icons-common'], () => {
         .join('');
       return acc;
     }, {});
-    /**
-     * Create font base folder folder
-     * This is a SYNC operation, it'll block the event loop
-     * being this a cli tool, we can safely have sync operations
-     */
+
     if (!fs.existsSync(baseDir)) {
       fs.mkdirSync(baseDir);
     }
-    // Create a wirable stream to a json file
+
     const mappingStream = fs.createWriteStream(`${baseDir}/iconMapping.json`, {
       flags: 'w',
     });
+
     mappingStream.write(JSON.stringify(mapping, null, 4));
     mappingStream.end();
   });
