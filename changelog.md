@@ -2,6 +2,15 @@
 
 [Unreleased changes](./unreleased.md).
 
+## 2018-04-04 - New flask icon
+
+**Added:**
+- bpk-component-icon: 3.18.1 => 3.19.0
+- bpk-mixins: 17.5.1 => 17.6.0
+- bpk-svgs: 5.14.1 => 5.15.0
+- react-native-bpk-component-icon: 1.5.1 => 1.6.0
+  - New flask icon.
+
 ## 2018-04-03 - Autosuggest default `renderInputComponent` fix
 
 **Fixed:**
