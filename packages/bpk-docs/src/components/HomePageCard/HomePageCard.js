@@ -30,7 +30,7 @@ const getClassName = cssModules(STYLES);
 
 export type Props = {
   title: string,
-  href: string,
+  href: ?string,
   image: string,
   icon: string,
   blank: boolean,
@@ -101,7 +101,7 @@ const HomePageCard = (props: Props) => {
 
 HomePageCard.propTypes = {
   title: PropTypes.string.isRequired,
-  href: PropTypes.string.isRequired,
+  href: PropTypes.string,
   image: PropTypes.string.isRequired,
   icon: PropTypes.string.isRequired,
   blank: PropTypes.bool,
@@ -113,6 +113,7 @@ HomePageCard.propTypes = {
 HomePageCard.defaultProps = {
   centerIcon: false,
   blank: false,
+  href: null,
   iconWidth: null,
   className: null,
 };
