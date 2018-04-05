@@ -76,19 +76,14 @@ class DefaultLayout extends Component {
     return (
       <EnhancedThemeProvider
         themeAttributes={themeAttributes}
-        id="portal-taget"
+        id="portal-target"
         className={
           process.env.BPK_NEO
             ? getClassName('bpkdocs-default-layout__container')
             : null
         }
       >
-        <div
-          id="application-container"
-          className={getClassName(
-            'bpkdocs-default-layout__application-container',
-          )}
-        >
+        <div id="application-container">
           <Helmet titleTemplate="%s | Backpack" />
           {!process.env.BPK_NEO && (
             <Header
@@ -97,9 +92,7 @@ class DefaultLayout extends Component {
             />
           )}
 
-          <main className={getClassName('bpkdocs-default-layout__main')}>
-            {children}
-          </main>
+          <main>{children}</main>
 
           {process.env.BPK_NEO ? (
             <Footer />

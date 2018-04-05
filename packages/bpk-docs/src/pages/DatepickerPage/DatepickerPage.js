@@ -77,7 +77,7 @@ const components = [
         getApplicationElement={() =>
           document.getElementById('application-container')
         }
-        renderTarget={() => document.getElementById('portal-taget')}
+        renderTarget={() => document.getElementById('portal-target')}
         inputProps={{ placeholder: 'Select date' }}
       />,
     ],

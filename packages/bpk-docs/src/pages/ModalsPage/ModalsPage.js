@@ -86,7 +86,7 @@ class ModalContainer extends Component<Props, State> {
           getApplicationElement={() =>
             document.getElementById('application-container')
           }
-          renderTarget={() => document.getElementById('portal-taget')}
+          renderTarget={() => document.getElementById('portal-target')}
           {...rest}
         >
           <div>{children}</div>
