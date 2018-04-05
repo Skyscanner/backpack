@@ -31,8 +31,8 @@ export const categoryTemplate = (
 ${_.map(props, prop => `${_.camelCase(prop.name)},`).join('\n')}
 };`;
 
-export default tokens => {
-  const { props } = sortTokens(tokens);
+export default result => {
+  const { props } = sortTokens(result.toJS());
 
   const categories = _(props)
     .map(prop => prop.category)

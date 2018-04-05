@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+import sortBy from 'lodash/sortBy';
+
 const sortObjByKey = obj =>
   Object.keys(obj)
     .sort()
@@ -27,8 +29,7 @@ const sortObjByKey = obj =>
 
 export default json => {
   const aliases = sortObjByKey(json.aliases);
-  const props = sortObjByKey(json.props);
-  const propKeys = json.propKeys.sort();
+  const props = sortBy(json.props, 'name');
 
-  return { aliases, props, propKeys };
+  return { aliases, props };
 };

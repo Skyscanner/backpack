@@ -25,8 +25,8 @@ import valueTemplate from './react-native-value-template';
 export const tokenTemplate = ({ name, value, type }) =>
   `${_.camelCase(name)}: ${valueTemplate(value, type)}`;
 
-export default tokens => {
-  const { props } = sortTokens(tokens);
+export default result => {
+  const { props } = sortTokens(result.toJS());
 
   const source = `
 module.exports = {

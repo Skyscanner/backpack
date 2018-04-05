@@ -16,6 +16,14 @@
  * limitations under the License.
  */
 
+import _ from 'lodash';
+
 import sortTokens from './sort-tokens';
 
-export default json => JSON.stringify(sortTokens(json), null, 2);
+export default result => {
+  const { aliases, props } = sortTokens(result.toJS());
+  const propsObj = _.keyBy(props, 'name');
+  const propKeys = Object.keys(propsObj);
+
+  return JSON.stringify({ aliases, props: propsObj, propKeys }, null, 2);
+};

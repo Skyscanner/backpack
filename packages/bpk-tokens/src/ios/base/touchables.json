@@ -1,4 +1,7 @@
 {
+  "imports": [
+    "./aliases.json"
+  ],
   "global": {
     "category": "touchables"
   },

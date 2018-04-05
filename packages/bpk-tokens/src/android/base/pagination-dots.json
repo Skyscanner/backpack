@@ -3,20 +3,18 @@
     "./aliases.json"
   ],
   "global": {
-    "type": "size"
+    "type": "size",
+    "category": "pagination-dots"
   },
   "props": {
     "PAGINATION_DOT_SIZE_SM": {
-      "value": "{!PAGINATION_DOT_SIZE_SM}",
-      "category": "pagination-dots"
+      "value": "{!PAGINATION_DOT_SIZE_SM}"
     },
     "PAGINATION_DOT_SIZE_MD": {
-      "value": "{!PAGINATION_DOT_SIZE_MD}",
-      "category": "pagination-dots"
+      "value": "{!PAGINATION_DOT_SIZE_MD}"
     },
     "PAGINATION_DOT_SIZE_BASE": {
-      "value": "{!PAGINATION_DOT_SIZE_BASE}",
-      "category": "pagination-dots"
+      "value": "{!PAGINATION_DOT_SIZE_BASE}"
     }
   }
 }

@@ -32,8 +32,8 @@ export const template = ({ category, name, value, type }) =>
     type,
   })}`;
 
-export default tokens => {
-  const { props } = sortTokens(tokens);
+export default result => {
+  const { props } = sortTokens(result.toJS());
 
   return [blockComment, _.map(props, prop => template(prop)).join('\n')].join(
     '\n',
