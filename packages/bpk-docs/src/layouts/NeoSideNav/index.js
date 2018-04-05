@@ -16,27 +16,6 @@
  * limitations under the License.
  */
 
-@import '~bpk-mixins/index';
+import SideNav from './SideNav';
 
-.bpkdocs-side-nav-layout {
-  &__container {
-    width: 100%;
-  }
-
-  &__nav-select-container {
-    display: none;
-    padding-top: $bpk-spacing-sm;
-
-    @include bpk-breakpoint-tablet {
-      display: block;
-    }
-  }
-
-  &__nav-list-container {
-    display: block;
-
-    @include bpk-breakpoint-tablet {
-      display: none;
-    }
-  }
-}
+export default SideNav;

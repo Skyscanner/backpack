@@ -16,27 +16,21 @@
  * limitations under the License.
  */
 
-@import '~bpk-mixins/index';
+import PropTypes from 'prop-types';
 
-.bpkdocs-side-nav-layout {
-  &__container {
-    width: 100%;
-  }
+export const linkPropType = PropTypes.shape({
+  id: PropTypes.string.isRequired,
+  route: PropTypes.string,
+  children: PropTypes.node.isRequired,
+});
 
-  &__nav-select-container {
-    display: none;
-    padding-top: $bpk-spacing-sm;
+export const categoryPropType = PropTypes.shape({
+  id: PropTypes.string.isRequired,
+  category: PropTypes.string.isRequired,
+  links: PropTypes.arrayOf(linkPropType).isRequired,
+  sort: PropTypes.bool,
+});
 
-    @include bpk-breakpoint-tablet {
-      display: block;
-    }
-  }
-
-  &__nav-list-container {
-    display: block;
-
-    @include bpk-breakpoint-tablet {
-      display: none;
-    }
-  }
-}
+export const linksPropType = PropTypes.arrayOf(
+  PropTypes.oneOfType([linkPropType, categoryPropType]),
+);

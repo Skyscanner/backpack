@@ -34,7 +34,9 @@ import { linksPropType } from './sideNavPropTypes';
 const getClassName = cssModules(STYLES);
 
 const SideNavLayout = ({ children, links, location }) => (
-  <BpkGridContainer>
+  <BpkGridContainer
+    className={getClassName('bpkdocs-side-nav-layout__container')}
+  >
     <BpkGridRow>
       <BpkGridColumn
         width={12}

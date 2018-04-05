@@ -20,12 +20,16 @@
 @import '../../constants/neo-home-page-variables';
 
 .bpkdocs-home-page {
+  &__container {
+    flex: 1;
+  }
+
   &__hero {
     display: flex;
     padding: ($bpk-spacing-xl * 2) $bpk-spacing-xl ($bpk-spacing-xl * 4);
     flex-direction: column;
     justify-content: center;
-    background-color: $bpk-color-blue-500;
+    background-color: $bpk-color-gray-900;
     background-size: cover;
     color: $bpk-color-white;
 

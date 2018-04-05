@@ -18,22 +18,49 @@
 
 @import '~bpk-mixins/index';
 
-.bpkdocs-home-page {
-  &__container {
-    flex: 1;
-  }
+$bpk-first-column-size: $bpk-spacing-xs * 10;
 
-  &__hero {
-    padding-top: $bpk-spacing-xl;
-    padding-bottom: $bpk-spacing-xl;
-    background-color: $bpk-color-blue-500;
-    background-image: url('./hero.jpg');
-    background-size: cover;
+@mixin nav-link {
+  color: $bpk-color-gray-500;
+  text-decoration: $bpk-link-text-decoration;
+
+  @include bpk-text;
+  @include bpk-text-base;
+}
+
+@mixin nav-link--enabled {
+  cursor: pointer;
+
+  @include bpk-hover {
     color: $bpk-color-white;
-
-    @include bpk-breakpoint-above-tablet {
-      padding-top: $bpk-spacing-xl * 2;
-      padding-bottom: $bpk-spacing-xl * 2;
-    }
   }
+
+  &:active {
+    color: $bpk-color-white;
+  }
+}
+
+@mixin nav-link--active {
+  color: $bpk-color-white;
+  text-decoration: none;
+
+  @include bpk-hover {
+    color: $bpk-color-white;
+    text-decoration: none;
+  }
+
+  &:active {
+    color: $bpk-color-white;
+    text-decoration: none;
+  }
+}
+
+@mixin nav-link--lg {
+  @include bpk-text;
+  @include bpk-text-lg;
+}
+
+@mixin nav-link--pending {
+  color: $bpk-color-gray-700;
+  font-style: italic;
 }

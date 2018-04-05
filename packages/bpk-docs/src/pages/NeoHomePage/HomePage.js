@@ -34,11 +34,11 @@ import DesignTokensImage from './design_tokens.jpg';
 import GitHubImage from './github.jpg';
 import UsingBackpackImage from './using_bpk.jpg';
 
-import ComponentsIcon from './components_icon.svg';
-import DesignTokensIcon from './design_tokens_icon.svg';
-import GitHubIcon from './github_icon.svg';
-import UsingBackpackIcon from './using_bpk_icon.svg';
-import BackpackLogoWhite from './backpack-logo-white.svg';
+import ComponentsIcon from '../../static/components_icon.svg';
+import DesignTokensIcon from '../../static/design_tokens_icon.svg';
+import GitHubIcon from '../../static/github_icon.svg';
+import UsingBackpackIcon from '../../static/using_bpk_icon.svg';
+import BackpackLogoWhite from '../../static/backpack-logo-white.svg';
 import HeroImage from './hero.jpg';
 
 const getClassName = cssModules(STYLES);
@@ -84,7 +84,7 @@ const HERO_IMAGE = {
 };
 
 const HomePage = () => (
-  <section>
+  <section className={getClassName('bpkdocs-home-page__container')}>
     <Helmet title="Backpack" />
     <div
       style={{ backgroundImage: `url(${HERO_IMAGE.image})` }}

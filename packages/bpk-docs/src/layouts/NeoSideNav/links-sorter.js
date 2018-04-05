@@ -16,27 +16,29 @@
  * limitations under the License.
  */
 
-@import '~bpk-mixins/index';
+export default links =>
+  links.sort((a, b) => {
+    const aHasRoute = !!a.route;
+    const bHasRoute = !!b.route;
 
-.bpkdocs-side-nav-layout {
-  &__container {
-    width: 100%;
-  }
+    if (aHasRoute === bHasRoute) {
+      const aId = a.id.toLowerCase();
+      const bId = b.id.toLowerCase();
 
-  &__nav-select-container {
-    display: none;
-    padding-top: $bpk-spacing-sm;
+      if (aId < bId) {
+        return -1;
+      }
 
-    @include bpk-breakpoint-tablet {
-      display: block;
+      if (aId > bId) {
+        return 1;
+      }
+
+      return 0;
     }
-  }
 
-  &__nav-list-container {
-    display: block;
-
-    @include bpk-breakpoint-tablet {
-      display: none;
+    if (aHasRoute && !bHasRoute) {
+      return -1;
     }
-  }
-}
+
+    return 1;
+  });
