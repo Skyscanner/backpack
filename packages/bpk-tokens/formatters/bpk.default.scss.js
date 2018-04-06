@@ -17,8 +17,10 @@
  */
 
 import _ from 'lodash';
-import { sassDocTemplate, nameTemplate, valueTemplate } from './bpk.scss';
+
+import sortTokens from './sort-tokens';
 import { blockComment } from './license-header';
+import { sassDocTemplate, nameTemplate, valueTemplate } from './bpk.scss';
 
 export const variableTemplate = ({ name, value, type }) =>
   `${nameTemplate({ name })}: ${valueTemplate({ value, type })} !default;`;
@@ -30,7 +32,10 @@ export const template = ({ category, name, value, type }) =>
     type,
   })}`;
 
-export default json =>
-  [blockComment, _.map(json.props, prop => template(prop)).join('\n')].join(
+export default tokens => {
+  const { props } = sortTokens(tokens);
+
+  return [blockComment, _.map(props, prop => template(prop)).join('\n')].join(
     '\n',
   );
+};

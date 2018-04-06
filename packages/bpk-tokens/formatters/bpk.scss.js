@@ -17,6 +17,8 @@
  */
 
 import _ from 'lodash';
+
+import sortTokens from './sort-tokens';
 import { blockComment } from './license-header';
 
 export const nameTemplate = ({ name }) => `$bpk-${_.kebabCase(name)}`;
@@ -36,7 +38,10 @@ export const template = ({ category, name, value, type }) =>
     type,
   })}`;
 
-export default json =>
-  [blockComment, _.map(json.props, prop => template(prop)).join('\n')].join(
+export default tokens => {
+  const { props } = sortTokens(tokens);
+
+  return [blockComment, _.map(props, prop => template(prop)).join('\n')].join(
     '\n',
   );
+};

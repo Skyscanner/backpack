@@ -1,19 +1,13 @@
 {
   "aliases": {
-    "ANIMATION_DURATION_XS": {
-      "value": "50ms"
+    "ANIMATION_DURATION_BASE": {
+      "value": "400ms"
     },
     "ANIMATION_DURATION_SM": {
       "value": "200ms"
     },
-    "ANIMATION_DURATION_BASE": {
-      "value": "400ms"
-    },
-    "WHITE": {
-      "value": "#ffffff"
-    },
-    "BLUE_50": {
-      "value": "#e1f4f8"
+    "ANIMATION_DURATION_XS": {
+      "value": "50ms"
     },
     "BLUE_100": {
       "value": "#cbeef5"
@@ -26,6 +20,9 @@
     },
     "BLUE_400": {
       "value": "#40c4df"
+    },
+    "BLUE_50": {
+      "value": "#e1f4f8"
     },
     "BLUE_500": {
       "value": "#00b2d6"
@@ -42,8 +39,59 @@
     "BLUE_900": {
       "value": "#005567"
     },
-    "GRAY_50": {
-      "value": "#F3F2F5"
+    "BORDER_RADIUS_PILL": {
+      "value": "1.125rem"
+    },
+    "BORDER_RADIUS_PILL_LG": {
+      "value": "1.3125rem"
+    },
+    "BORDER_RADIUS_SM": {
+      "value": ".375rem"
+    },
+    "BORDER_RADIUS_XS": {
+      "value": ".1875rem"
+    },
+    "BORDER_SIZE_LG": {
+      "value": "2px"
+    },
+    "BORDER_SIZE_SM": {
+      "value": "1px"
+    },
+    "BORDER_SIZE_XL": {
+      "value": "3px"
+    },
+    "BREAKPOINT_ABOVE_MOBILE": {
+      "value": "32.3125rem"
+    },
+    "BREAKPOINT_ABOVE_TABLET": {
+      "value": "50.3125rem"
+    },
+    "BREAKPOINT_DESKTOP": {
+      "value": "71.25rem"
+    },
+    "BREAKPOINT_MOBILE": {
+      "value": "32.25rem"
+    },
+    "BREAKPOINT_TABLET": {
+      "value": "50.25rem"
+    },
+    "FONT_SIZE_BASE": {
+      "value": "1rem"
+    },
+    "FONT_SIZE_LG": {
+      "value": "1.5rem"
+    },
+    "FONT_SIZE_SM": {
+      "value": ".75rem"
+    },
+    "FONT_SIZE_XL": {
+      "value": "1.75rem"
+    },
+    "FONT_SIZE_XXL": {
+      "value": "2.625rem"
+    },
+    "FONT_WEIGHT_BOLD": {
+      "value": "700"
     },
     "GRAY_100": {
       "value": "#E6E4EB"
@@ -56,6 +104,9 @@
     },
     "GRAY_400": {
       "value": "#9A95A7"
+    },
+    "GRAY_50": {
+      "value": "#F3F2F5"
     },
     "GRAY_500": {
       "value": "#817B8F"
@@ -72,9 +123,6 @@
     "GRAY_900": {
       "value": "#252033"
     },
-    "GREEN_50": {
-      "value": "#dff7ec"
-    },
     "GREEN_100": {
       "value": "#cbf5e2"
     },
@@ -86,6 +134,9 @@
     },
     "GREEN_400": {
       "value": "#40de97"
+    },
+    "GREEN_50": {
+      "value": "#dff7ec"
     },
     "GREEN_500": {
       "value": "#00d775"
@@ -102,68 +153,8 @@
     "GREEN_900": {
       "value": "#006638"
     },
-    "RED_50": {
-      "value": "#fcf2f2"
-    },
-    "RED_100": {
-      "value": "#ffd6d5"
-    },
-    "RED_200": {
-      "value": "#ffbbba"
-    },
-    "RED_300": {
-      "value": "#ff9694"
-    },
-    "RED_400": {
-      "value": "#fe7471"
-    },
-    "RED_500": {
-      "value": "#ff5452"
-    },
-    "RED_600": {
-      "value": "#eb423f"
-    },
-    "RED_700": {
-      "value": "#de322f"
-    },
-    "RED_800": {
-      "value": "#cc1f1d"
-    },
-    "RED_900": {
-      "value": "#a80300"
-    },
-    "YELLOW_50": {
-      "value": "#FFF9E6"
-    },
-    "YELLOW_100": {
-      "value": "#FFF3CF"
-    },
-    "YELLOW_200": {
-      "value": "#FFECB8"
-    },
-    "YELLOW_300": {
-      "value": "#FFE18C"
-    },
-    "YELLOW_400": {
-      "value": "#FFCF4A"
-    },
-    "YELLOW_500": {
-      "value": "#FFBB00"
-    },
-    "YELLOW_600": {
-      "value": "#F0B000"
-    },
-    "YELLOW_700": {
-      "value": "#E1A500"
-    },
-    "YELLOW_800": {
-      "value": "#C28E00"
-    },
-    "YELLOW_900": {
-      "value": "#9C7200"
-    },
-    "PINK_50": {
-      "value": "#FDE4ED"
+    "ONE_PIXEL_REM": {
+      "value": ".0625rem"
     },
     "PINK_100": {
       "value": "#FFBFD7"
@@ -176,6 +167,9 @@
     },
     "PINK_400": {
       "value": "#FF619B"
+    },
+    "PINK_50": {
+      "value": "#FDE4ED"
     },
     "PINK_500": {
       "value": "#FA488A"
@@ -192,32 +186,35 @@
     "PINK_900": {
       "value": "#94053A"
     },
-    "FONT_SIZE_SM": {
-      "value": ".75rem"
+    "RED_100": {
+      "value": "#ffd6d5"
     },
-    "FONT_SIZE_BASE": {
-      "value": "1rem"
+    "RED_200": {
+      "value": "#ffbbba"
     },
-    "FONT_SIZE_LG": {
-      "value": "1.5rem"
+    "RED_300": {
+      "value": "#ff9694"
     },
-    "FONT_SIZE_XL": {
-      "value": "1.75rem"
+    "RED_400": {
+      "value": "#fe7471"
     },
-    "FONT_SIZE_XXL": {
-      "value": "2.625rem"
+    "RED_50": {
+      "value": "#fcf2f2"
     },
-    "FONT_WEIGHT_BOLD": {
-      "value": "700"
+    "RED_500": {
+      "value": "#ff5452"
     },
-    "SPACING_XS": {
-      "value": ".375rem"
+    "RED_600": {
+      "value": "#eb423f"
     },
-    "SPACING_SM": {
-      "value": ".75rem"
+    "RED_700": {
+      "value": "#de322f"
     },
-    "SPACING_MD": {
-      "value": "1.125rem"
+    "RED_800": {
+      "value": "#cc1f1d"
+    },
+    "RED_900": {
+      "value": "#a80300"
     },
     "SPACING_BASE": {
       "value": "1.5rem"
@@ -225,71 +222,83 @@
     "SPACING_LG": {
       "value": "1.875rem"
     },
+    "SPACING_MD": {
+      "value": "1.125rem"
+    },
+    "SPACING_SM": {
+      "value": ".75rem"
+    },
     "SPACING_XL": {
       "value": "2.250rem"
+    },
+    "SPACING_XS": {
+      "value": ".375rem"
     },
     "SPACING_XXL": {
       "value": "2.625rem"
     },
-    "BORDER_RADIUS_XS": {
-      "value": ".1875rem"
+    "WHITE": {
+      "value": "#ffffff"
     },
-    "BORDER_RADIUS_SM": {
-      "value": ".375rem"
+    "YELLOW_100": {
+      "value": "#FFF3CF"
     },
-    "BORDER_RADIUS_PILL": {
-      "value": "1.125rem"
+    "YELLOW_200": {
+      "value": "#FFECB8"
     },
-    "BORDER_RADIUS_PILL_LG": {
-      "value": "1.3125rem"
+    "YELLOW_300": {
+      "value": "#FFE18C"
     },
-    "BORDER_SIZE_SM": {
-      "value": "1px"
+    "YELLOW_400": {
+      "value": "#FFCF4A"
     },
-    "BORDER_SIZE_LG": {
-      "value": "2px"
+    "YELLOW_50": {
+      "value": "#FFF9E6"
     },
-    "BORDER_SIZE_XL": {
-      "value": "3px"
+    "YELLOW_500": {
+      "value": "#FFBB00"
     },
-    "BREAKPOINT_MOBILE": {
-      "value": "32.25rem"
+    "YELLOW_600": {
+      "value": "#F0B000"
     },
-    "BREAKPOINT_ABOVE_MOBILE": {
-      "value": "32.3125rem"
+    "YELLOW_700": {
+      "value": "#E1A500"
     },
-    "BREAKPOINT_TABLET": {
-      "value": "50.25rem"
+    "YELLOW_800": {
+      "value": "#C28E00"
     },
-    "BREAKPOINT_ABOVE_TABLET": {
-      "value": "50.3125rem"
-    },
-    "BREAKPOINT_DESKTOP": {
-      "value": "71.25rem"
-    },
-    "ONE_PIXEL_REM": {
-      "value": ".0625rem"
+    "YELLOW_900": {
+      "value": "#9C7200"
     },
     "ZINDEX_AUTOSUGGEST": {
       "value": "900"
     },
-    "ZINDEX_POPOVER": {
-      "value": "900"
+    "ZINDEX_DRAWER": {
+      "value": "1100"
     },
-    "ZINDEX_TOOLTIP": {
+    "ZINDEX_MODAL": {
+      "value": "1100"
+    },
+    "ZINDEX_POPOVER": {
       "value": "900"
     },
     "ZINDEX_SCRIM": {
       "value": "1000"
     },
-    "ZINDEX_MODAL": {
-      "value": "1100"
-    },
-    "ZINDEX_DRAWER": {
-      "value": "1100"
+    "ZINDEX_TOOLTIP": {
+      "value": "900"
     }
   },
   "props": {
+    "BREAKPOINT_DESKTOP": {
+      "category": "breakpoints",
+      "value": "71.25rem",
+      "type": "size",
+      ".alias": {
+        "value": "71.25rem"
+      },
+      "name": "BREAKPOINT_DESKTOP"
+    },
     "BREAKPOINT_MOBILE": {
       "category": "breakpoints",
       "value": "32.25rem",
@@ -299,23 +308,23 @@
       },
       "name": "BREAKPOINT_MOBILE"
     },
-    "BREAKPOINT_TABLET": {
+    "BREAKPOINT_QUERY_ABOVE_MOBILE": {
       "category": "breakpoints",
-      "value": "50.25rem",
-      "type": "size",
+      "value": "(min-width: 32.3125rem)",
+      "type": "media-query",
       ".alias": {
-        "value": "50.25rem"
+        "value": "32.3125rem"
       },
-      "name": "BREAKPOINT_TABLET"
+      "name": "BREAKPOINT_QUERY_ABOVE_MOBILE"
     },
-    "BREAKPOINT_DESKTOP": {
+    "BREAKPOINT_QUERY_ABOVE_TABLET": {
       "category": "breakpoints",
-      "value": "71.25rem",
-      "type": "size",
+      "value": "(min-width: 50.3125rem)",
+      "type": "media-query",
       ".alias": {
-        "value": "71.25rem"
+        "value": "50.3125rem"
       },
-      "name": "BREAKPOINT_DESKTOP"
+      "name": "BREAKPOINT_QUERY_ABOVE_TABLET"
     },
     "BREAKPOINT_QUERY_MOBILE": {
       "category": "breakpoints",
@@ -344,33 +353,24 @@
       },
       "name": "BREAKPOINT_QUERY_TABLET_ONLY"
     },
-    "BREAKPOINT_QUERY_ABOVE_MOBILE": {
+    "BREAKPOINT_TABLET": {
       "category": "breakpoints",
-      "value": "(min-width: 32.3125rem)",
-      "type": "media-query",
+      "value": "50.25rem",
+      "type": "size",
       ".alias": {
-        "value": "32.3125rem"
+        "value": "50.25rem"
       },
-      "name": "BREAKPOINT_QUERY_ABOVE_MOBILE"
-    },
-    "BREAKPOINT_QUERY_ABOVE_TABLET": {
-      "category": "breakpoints",
-      "value": "(min-width: 50.3125rem)",
-      "type": "media-query",
-      ".alias": {
-        "value": "50.3125rem"
-      },
-      "name": "BREAKPOINT_QUERY_ABOVE_TABLET"
+      "name": "BREAKPOINT_TABLET"
     }
   },
   "propKeys": [
-    "BREAKPOINT_MOBILE",
-    "BREAKPOINT_TABLET",
     "BREAKPOINT_DESKTOP",
+    "BREAKPOINT_MOBILE",
+    "BREAKPOINT_QUERY_ABOVE_MOBILE",
+    "BREAKPOINT_QUERY_ABOVE_TABLET",
     "BREAKPOINT_QUERY_MOBILE",
     "BREAKPOINT_QUERY_TABLET",
     "BREAKPOINT_QUERY_TABLET_ONLY",
-    "BREAKPOINT_QUERY_ABOVE_MOBILE",
-    "BREAKPOINT_QUERY_ABOVE_TABLET"
+    "BREAKPOINT_TABLET"
   ]
 }

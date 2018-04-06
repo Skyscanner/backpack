@@ -17,137 +17,137 @@
  * limitations under the License.
  * 
  */
-export const buttonPaddingY = "8px";
-export const buttonPaddingX = "24px";
-export const buttonPaddingXIconOnly = "1rem";
-export const buttonBorderRadius = "3px";
-export const buttonBackgroundColor = "rgb(52, 54, 61)";
-export const buttonBackgroundImage = "none";
-export const buttonHoverBackgroundColor = "rgb(77, 80, 89)";
-export const buttonHoverBackgroundImage = "none";
 export const buttonActiveBackgroundColor = "rgb(77, 80, 89)";
 export const buttonActiveBackgroundImage = "none";
+export const buttonBackgroundColor = "rgb(52, 54, 61)";
+export const buttonBackgroundImage = "none";
+export const buttonBorderRadius = "3px";
+export const buttonColor = "rgb(0, 221, 238)";
+export const buttonDestructiveActiveBoxShadow = "0 0 0 3px #ff5452 inset";
+export const buttonDestructiveActiveColor = "rgb(255, 84, 82)";
+export const buttonDestructiveBoxShadow = "none";
+export const buttonDestructiveColor = "rgb(197, 0, 14)";
+export const buttonDestructiveDisabledBackgroundColor = "rgb(230, 228, 235)";
+export const buttonDestructiveDisabledBackgroundImage = "none";
+export const buttonDestructiveDisabledBoxShadow = "none";
+export const buttonDestructiveDisabledColor = "rgb(178, 174, 189)";
+export const buttonDestructiveFontSize = ".875rem";
+export const buttonDestructiveHoverBoxShadow = "none";
+export const buttonDestructiveHoverColor = "rgb(197, 0, 14)";
+export const buttonDestructiveLineHeight = "1.25rem";
 export const buttonDisabledBackgroundColor = "rgba(0, 0, 0, 0.5)";
 export const buttonDisabledBackgroundImage = "none";
-export const buttonColor = "rgb(0, 221, 238)";
-export const buttonFontWeight = "normal";
+export const buttonDisabledBoxShadow = "none";
 export const buttonDisabledColor = "rgb(178, 174, 189)";
 export const buttonFontSize = ".875rem";
-export const buttonLineHeight = "1.125em";
-export const buttonTextAlign = "center";
-export const buttonLargePaddingX = "2rem";
-export const buttonLargePaddingY = "0.375rem";
-export const buttonLargePaddingXIconOnly = ".5625rem";
+export const buttonFontWeight = "normal";
+export const buttonHoverBackgroundColor = "rgb(77, 80, 89)";
+export const buttonHoverBackgroundImage = "none";
 export const buttonLargeFontSize = "1rem";
 export const buttonLargeLineHeight = "1.875rem";
-export const buttonDisabledBoxShadow = "none";
-export const buttonSecondaryBackgroundColor = "rgba(0, 0, 0, 0.5)";
-export const buttonSecondaryBackgroundImage = "none";
-export const buttonSecondaryHoverBackgroundColor = "rgba(0, 187, 204, 0.2)";
-export const buttonSecondaryHoverBackgroundImage = "none";
+export const buttonLargePaddingX = "2rem";
+export const buttonLargePaddingXIconOnly = ".5625rem";
+export const buttonLargePaddingY = "0.375rem";
+export const buttonLineHeight = "1.125em";
+export const buttonPaddingX = "24px";
+export const buttonPaddingXIconOnly = "1rem";
+export const buttonPaddingY = "8px";
 export const buttonSecondaryActiveBackgroundColor = "rgba(0, 187, 204, 0.2)";
 export const buttonSecondaryActiveBackgroundImage = "none";
+export const buttonSecondaryActiveBoxShadow = "none";
+export const buttonSecondaryActiveColor = "rgb(52, 54, 61)";
+export const buttonSecondaryBackgroundColor = "rgba(0, 0, 0, 0.5)";
+export const buttonSecondaryBackgroundImage = "none";
+export const buttonSecondaryBoxShadow = "none";
+export const buttonSecondaryColor = "rgb(52, 54, 61)";
 export const buttonSecondaryDisabledBackgroundColor = "rgb(230, 228, 235)";
 export const buttonSecondaryDisabledBackgroundImage = "none";
-export const buttonSecondaryColor = "rgb(52, 54, 61)";
-export const buttonSecondaryHoverColor = "rgb(52, 54, 61)";
-export const buttonSecondaryActiveColor = "rgb(52, 54, 61)";
-export const buttonSecondaryBoxShadow = "none";
-export const buttonSecondaryHoverBoxShadow = "none";
-export const buttonSecondaryActiveBoxShadow = "none";
 export const buttonSecondaryDisabledBoxShadow = "none";
 export const buttonSecondaryFontSize = ".875rem";
 export const buttonSecondaryFontWeight = "400";
+export const buttonSecondaryHoverBackgroundColor = "rgba(0, 187, 204, 0.2)";
+export const buttonSecondaryHoverBackgroundImage = "none";
+export const buttonSecondaryHoverBoxShadow = "none";
+export const buttonSecondaryHoverColor = "rgb(52, 54, 61)";
 export const buttonSecondaryLineHeight = "1.25rem";
-export const buttonDestructiveFontSize = ".875rem";
-export const buttonDestructiveLineHeight = "1.25rem";
-export const buttonDestructiveColor = "rgb(197, 0, 14)";
-export const buttonDestructiveBoxShadow = "none";
-export const buttonDestructiveHoverColor = "rgb(197, 0, 14)";
-export const buttonDestructiveHoverBoxShadow = "none";
-export const buttonDestructiveActiveColor = "rgb(255, 84, 82)";
-export const buttonDestructiveActiveBoxShadow = "0 0 0 3px #ff5452 inset";
-export const buttonDestructiveDisabledBackgroundColor = "rgb(230, 228, 235)";
-export const buttonDestructiveDisabledBackgroundImage = "none";
-export const buttonDestructiveDisabledColor = "rgb(178, 174, 189)";
-export const buttonDestructiveDisabledBoxShadow = "none";
+export const buttonTextAlign = "center";
 export const fontFamilyBase = "'markweb', Helvetica, Arial, sans-serif";
+export const linkActiveColor = "rgb(77, 80, 89)";
 export const linkColor = "rgb(0, 187, 204)";
-export const linkTextDecoration = "none";
 export const linkHoverColor = "rgb(52, 54, 61)";
 export const linkHoverTextDecoration = "underline";
-export const linkActiveColor = "rgb(77, 80, 89)";
+export const linkTextDecoration = "none";
+export const linkWhiteActiveColor = "rgb(247, 247, 247)";
 export const linkWhiteColor = "rgb(255, 255, 255)";
 export const linkWhiteHoverColor = "rgb(255, 255, 255)";
-export const linkWhiteActiveColor = "rgb(247, 247, 247)";
 export const buttons = {
-buttonPaddingY,
-buttonPaddingX,
-buttonPaddingXIconOnly,
-buttonBorderRadius,
-buttonBackgroundColor,
-buttonBackgroundImage,
-buttonHoverBackgroundColor,
-buttonHoverBackgroundImage,
 buttonActiveBackgroundColor,
 buttonActiveBackgroundImage,
+buttonBackgroundColor,
+buttonBackgroundImage,
+buttonBorderRadius,
+buttonColor,
+buttonDestructiveActiveBoxShadow,
+buttonDestructiveActiveColor,
+buttonDestructiveBoxShadow,
+buttonDestructiveColor,
+buttonDestructiveDisabledBackgroundColor,
+buttonDestructiveDisabledBackgroundImage,
+buttonDestructiveDisabledBoxShadow,
+buttonDestructiveDisabledColor,
+buttonDestructiveFontSize,
+buttonDestructiveHoverBoxShadow,
+buttonDestructiveHoverColor,
+buttonDestructiveLineHeight,
 buttonDisabledBackgroundColor,
 buttonDisabledBackgroundImage,
-buttonColor,
-buttonFontWeight,
+buttonDisabledBoxShadow,
 buttonDisabledColor,
 buttonFontSize,
-buttonLineHeight,
-buttonTextAlign,
-buttonLargePaddingX,
-buttonLargePaddingY,
-buttonLargePaddingXIconOnly,
+buttonFontWeight,
+buttonHoverBackgroundColor,
+buttonHoverBackgroundImage,
 buttonLargeFontSize,
 buttonLargeLineHeight,
-buttonDisabledBoxShadow,
-buttonSecondaryBackgroundColor,
-buttonSecondaryBackgroundImage,
-buttonSecondaryHoverBackgroundColor,
-buttonSecondaryHoverBackgroundImage,
+buttonLargePaddingX,
+buttonLargePaddingXIconOnly,
+buttonLargePaddingY,
+buttonLineHeight,
+buttonPaddingX,
+buttonPaddingXIconOnly,
+buttonPaddingY,
 buttonSecondaryActiveBackgroundColor,
 buttonSecondaryActiveBackgroundImage,
+buttonSecondaryActiveBoxShadow,
+buttonSecondaryActiveColor,
+buttonSecondaryBackgroundColor,
+buttonSecondaryBackgroundImage,
+buttonSecondaryBoxShadow,
+buttonSecondaryColor,
 buttonSecondaryDisabledBackgroundColor,
 buttonSecondaryDisabledBackgroundImage,
-buttonSecondaryColor,
-buttonSecondaryHoverColor,
-buttonSecondaryActiveColor,
-buttonSecondaryBoxShadow,
-buttonSecondaryHoverBoxShadow,
-buttonSecondaryActiveBoxShadow,
 buttonSecondaryDisabledBoxShadow,
 buttonSecondaryFontSize,
 buttonSecondaryFontWeight,
+buttonSecondaryHoverBackgroundColor,
+buttonSecondaryHoverBackgroundImage,
+buttonSecondaryHoverBoxShadow,
+buttonSecondaryHoverColor,
 buttonSecondaryLineHeight,
-buttonDestructiveFontSize,
-buttonDestructiveLineHeight,
-buttonDestructiveColor,
-buttonDestructiveBoxShadow,
-buttonDestructiveHoverColor,
-buttonDestructiveHoverBoxShadow,
-buttonDestructiveActiveColor,
-buttonDestructiveActiveBoxShadow,
-buttonDestructiveDisabledBackgroundColor,
-buttonDestructiveDisabledBackgroundImage,
-buttonDestructiveDisabledColor,
-buttonDestructiveDisabledBoxShadow,
+buttonTextAlign,
+};
+export const textColors = {
+linkActiveColor,
+linkColor,
+linkHoverColor,
+linkWhiteActiveColor,
+linkWhiteColor,
+linkWhiteHoverColor,
+};
+export const textDecorations = {
+linkHoverTextDecoration,
+linkTextDecoration,
 };
 export const typesettings = {
 fontFamilyBase,
-};
-export const textColors = {
-linkColor,
-linkHoverColor,
-linkActiveColor,
-linkWhiteColor,
-linkWhiteHoverColor,
-linkWhiteActiveColor,
-};
-export const textDecorations = {
-linkTextDecoration,
-linkHoverTextDecoration,
 };

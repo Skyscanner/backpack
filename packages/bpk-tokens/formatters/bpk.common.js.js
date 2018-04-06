@@ -17,22 +17,19 @@
  */
 
 import _ from 'lodash';
+
+import sortTokens from './sort-tokens';
 import { blockComment } from './license-header';
 
 export const tokenTemplate = ({ name, value }) =>
-  `  ${_.camelCase(name)}: "${value.replace(/"/g, '\\"')}"`;
+  `${_.camelCase(name)}: "${value.replace(/"/g, '\\"')}"`;
 
-export default json => {
-  const props = _.map(_.toPairs(json.props), x => x[1]);
+export default tokens => {
+  const { props } = sortTokens(tokens);
 
-  const lastLine = `${tokenTemplate(_.last(props))}`;
-  const singleTokens = _.map(_.take(props, props.length - 1), prop =>
-    tokenTemplate(prop),
-  ).join(',\n');
   const source = `
 module.exports = {
-${singleTokens},
-${lastLine}
+  ${_.map(props, prop => tokenTemplate(prop)).join(',\n  ')}
 };`;
 
   return [blockComment, source].join('\n');

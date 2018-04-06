@@ -17,6 +17,8 @@
  */
 
 import _ from 'lodash';
+
+import sortTokens from './sort-tokens';
 import { blockComment } from './license-header';
 import valueTemplate from './react-native-value-template';
 
@@ -30,20 +32,22 @@ export const categoryTemplate = (
 ${_.map(props, prop => `${_.camelCase(prop.name)},`).join('\n')}
 };`;
 
-export default json => {
-  const categories = _(json.props)
+export default tokens => {
+  const { props } = sortTokens(tokens);
+
+  const categories = _(props)
     .map(prop => prop.category)
     .uniq()
     .value();
 
-  const singleTokens = _.map(json.props, prop => tokenTemplate(prop)).join(
-    '\n',
-  );
+  const singleTokens = _.map(props, prop => tokenTemplate(prop)).join('\n');
+
   const groupedTokens = categories
+    .sort()
     .map(category =>
       categoryTemplate(
         category,
-        _(json.props)
+        _(props)
           .filter({ category })
           .value(),
       ),

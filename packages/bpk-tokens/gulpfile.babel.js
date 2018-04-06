@@ -25,12 +25,13 @@ import gulpMerge from 'gulp-merge';
 import jsonLint from 'gulp-jsonlint';
 
 import bpkScss from './formatters/bpk.scss';
-import bpkDefaultScss from './formatters/bpk.default.scss';
 import bpkEs6Js from './formatters/bpk.es6.js';
-import bpkReactNativeEs6Js from './formatters/bpk.react.native.es6.js';
-import bpkReactNativeCommonJs from './formatters/bpk.react.native.common.js';
+import bpkRawJson from './formatters/bpk.raw.json';
 import bpkCommonJs from './formatters/bpk.common.js';
 import bpkAndroid from './formatters/bpk.android.xml';
+import bpkDefaultScss from './formatters/bpk.default.scss';
+import bpkReactNativeEs6Js from './formatters/bpk.react.native.es6.js';
+import bpkReactNativeCommonJs from './formatters/bpk.react.native.common.js';
 
 const PLATFORM_FORMATS = {
   web: ['scss', 'default.scss', 'raw.json', 'common.js', 'es6.js'],
@@ -64,8 +65,9 @@ const tokenSets = flatten(
 theo.registerFormat('scss', bpkScss);
 theo.registerFormat('default.scss', bpkDefaultScss);
 theo.registerFormat('es6.js', bpkEs6Js);
-theo.registerFormat('raw.ios.json', json => JSON.stringify(json, null, 2));
-theo.registerFormat('raw.android.json', json => JSON.stringify(json, null, 2));
+theo.registerFormat('raw.json', bpkRawJson);
+theo.registerFormat('raw.ios.json', bpkRawJson);
+theo.registerFormat('raw.android.json', bpkRawJson);
 theo.registerFormat('react.native.ios.js', bpkReactNativeEs6Js);
 theo.registerFormat('react.native.android.js', bpkReactNativeEs6Js);
 theo.registerFormat('react.native.es6.js', bpkReactNativeEs6Js);

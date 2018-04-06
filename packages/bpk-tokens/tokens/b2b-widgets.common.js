@@ -19,23 +19,23 @@
  */
 
 module.exports = {
-  buttonPaddingY: "18px",
-  buttonPaddingX: "20px",
+  buttonActiveBackgroundColor: "rgb(0, 105, 130)",
   buttonBackgroundColor: "rgb(255, 255, 255)",
   buttonBackgroundImage: "none",
-  buttonColor: "rgb(0, 105, 130)",
   buttonBorderRadius: "none",
   buttonBoxShadow: "inset 0px 0px 0px 1px #006982",
-  buttonHoverBackgroundColor: "rgb(0, 105, 130)",
-  buttonHoverColor: "rgb(255, 255, 255)",
-  buttonHoverBoxShadow: "inset 0px 0px 0px 1px rgba(0, 105, 130, 0.33)",
+  buttonColor: "rgb(0, 105, 130)",
   buttonDisabledBackgroundColor: "rgb(255, 255, 255)",
-  buttonDisabledColor: "rgba(0, 105, 130, 0.33)",
   buttonDisabledBoxShadow: "inset 0px 0px 0px 1px rgba(0, 105, 130, 0.33)",
-  buttonSelectedColor: "rgb(255, 255, 255)",
+  buttonDisabledColor: "rgba(0, 105, 130, 0.33)",
+  buttonHoverBackgroundColor: "rgb(0, 105, 130)",
+  buttonHoverBoxShadow: "inset 0px 0px 0px 1px rgba(0, 105, 130, 0.33)",
+  buttonHoverColor: "rgb(255, 255, 255)",
+  buttonPaddingX: "20px",
+  buttonPaddingY: "18px",
   buttonSelectedBackgroundColor: "rgb(0, 105, 130)",
   buttonSelectedBackgroundImage: "none",
-  buttonSelectedHoverColor: "rgb(255, 255, 255)",
+  buttonSelectedColor: "rgb(255, 255, 255)",
   buttonSelectedHoverBackgroundColor: "rgb(0, 105, 130)",
-  buttonActiveBackgroundColor: "rgb(0, 105, 130)"
+  buttonSelectedHoverColor: "rgb(255, 255, 255)"
 };
