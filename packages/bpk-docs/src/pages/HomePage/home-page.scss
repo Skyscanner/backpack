@@ -19,10 +19,6 @@
 @import '~bpk-mixins/index';
 
 .bpkdocs-home-page {
-  &__container {
-    flex: 1;
-  }
-
   &__hero {
     padding-top: $bpk-spacing-xl;
     padding-bottom: $bpk-spacing-xl;

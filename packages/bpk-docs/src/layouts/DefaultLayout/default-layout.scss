@@ -19,24 +19,11 @@
 @import '~bpk-mixins/index';
 
 .bpkdocs-default-layout {
-  &__application-container {
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
-  }
-
-  &__main {
-    display: flex;
-    flex: 1 0 auto;
-  }
-
   &__container {
     background-color: $bpk-color-gray-100;
   }
 
   &__footer-container {
-    width: 100%;
-
     @include bpk-border-top-sm($bpk-color-gray-100);
   }
 
@@ -56,14 +43,6 @@
 
       @include bpk-rtl {
         text-align: left;
-      }
-
-      @include bpk-breakpoint-mobile {
-        text-align: left;
-
-        @include bpk-rtl {
-          text-align: right;
-        }
       }
     }
   }

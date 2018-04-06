@@ -74,7 +74,7 @@ class DrawerContainer extends Component {
             document.getElementById('application-container')
           }
           hideTitle={this.state.hideTitle}
-          renderTarget={() => document.getElementById('portal-taget')}
+          renderTarget={() => document.getElementById('portal-target')}
           {...rest}
         >
           <div>{children}</div>

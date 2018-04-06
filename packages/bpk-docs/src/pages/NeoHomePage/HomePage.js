@@ -84,7 +84,7 @@ const HERO_IMAGE = {
 };
 
 const HomePage = () => (
-  <section className={getClassName('bpkdocs-home-page__container')}>
+  <section>
     <Helmet title="Backpack" />
     <div
       style={{ backgroundImage: `url(${HERO_IMAGE.image})` }}

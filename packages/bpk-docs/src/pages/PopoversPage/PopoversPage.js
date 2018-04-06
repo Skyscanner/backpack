@@ -82,7 +82,7 @@ class PopoverContainer extends Component {
         isOpen={this.state.isOpen}
         label="My popover"
         closeButtonText="Close"
-        renderTarget={() => document.getElementById('portal-taget')}
+        renderTarget={() => document.getElementById('portal-target')}
         {...rest}
       />
     );
