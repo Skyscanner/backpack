@@ -19,7 +19,7 @@
 
 import React, { Component, type Node } from 'react';
 import { cssModules } from 'bpk-react-utils';
-import BpkLink from 'bpk-component-link';
+import { Link } from 'react-router';
 
 import SectionsList from './SectionsList';
 import NavList from './NavList';
@@ -61,13 +61,13 @@ export default class SideNav extends Component<Props, State> {
     return (
       <section className={getClassName('bpkdocs-side-nav-layout__wrapper')}>
         <section className={getClassName('bpkdocs-side-nav-layout__sidebar')}>
-          <BpkLink href="/">
+          <Link to="/">
             <img
               src={`/${BackpackLogoWhite}`}
               className={getClassName('bpkdocs-side-nav-layout__logo')}
               alt="Backpack Logo"
             />
-          </BpkLink>
+          </Link>
           <div
             className={getClassName('bpkdocs-side-nav-layout__sidebar-content')}
           >

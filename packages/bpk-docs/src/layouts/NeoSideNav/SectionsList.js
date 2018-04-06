@@ -18,6 +18,7 @@
 /* @flow */
 
 import React from 'react';
+import { Link } from 'react-router';
 import { cssModules } from 'bpk-react-utils';
 import omit from 'lodash/omit';
 import BpkAnimateHeight from 'bpk-animate-height';
@@ -76,17 +77,31 @@ type SectionListItemProps = {
   external: boolean,
   title: string,
 };
-const SectionListItem = (props: SectionListItemProps) => (
-  <li>
-    <a
-      href={props.link}
-      target={props.external ? '_blank' : '_self'}
-      className={getClassName('bpkdocs-sections-list__list-item')}
-    >
-      {props.title}
-    </a>
-  </li>
-);
+const SectionListItem = (props: SectionListItemProps) => {
+  if (props.external) {
+    return (
+      <li>
+        <a
+          href={props.link}
+          target="_blank"
+          className={getClassName('bpkdocs-sections-list__list-item')}
+        >
+          {props.title}
+        </a>
+      </li>
+    );
+  }
+  return (
+    <li>
+      <Link
+        to={props.link}
+        className={getClassName('bpkdocs-sections-list__list-item')}
+      >
+        {props.title}
+      </Link>
+    </li>
+  );
+};
 
 type Props = {
   activeSection: string,
