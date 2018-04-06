@@ -18,6 +18,8 @@
 
 import _ from 'lodash';
 import tinycolor from 'tinycolor2';
+
+import sortTokens from './sort-tokens';
 import { xmlComment } from './license-header';
 
 const tagName = type => (type === 'color' ? 'color' : 'property');
@@ -57,8 +59,11 @@ export const tokenTemplate = ({ name, value, type, category }) =>
     type,
   )}</${tagName(type)}>`; // eslint-disable-line max-len
 
-export default json => {
-  const singleTokens = _.map(json.props, tokenTemplate).join('\n');
+export default tokens => {
+  const { props } = sortTokens(tokens);
+
+  const singleTokens = _.map(props, tokenTemplate).join('\n');
+
   const source = `<?xml version="1.0" encoding="utf-8"?>
 ${xmlComment}
 <resources>

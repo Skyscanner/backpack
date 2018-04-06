@@ -17,23 +17,20 @@
  */
 
 import _ from 'lodash';
+
+import sortTokens from './sort-tokens';
 import { blockComment } from './license-header';
 import valueTemplate from './react-native-value-template';
 
 export const tokenTemplate = ({ name, value, type }) =>
-  `  ${_.camelCase(name)}: ${valueTemplate(value, type)}`;
+  `${_.camelCase(name)}: ${valueTemplate(value, type)}`;
 
-export default json => {
-  const props = _.map(_.toPairs(json.props), x => x[1]);
+export default tokens => {
+  const { props } = sortTokens(tokens);
 
-  const lastLine = `${tokenTemplate(_.last(props))}`;
-  const singleTokens = _.map(_.take(props, props.length - 1), prop =>
-    tokenTemplate(prop),
-  ).join(',\n');
   const source = `
 module.exports = {
-${singleTokens},
-${lastLine}
+  ${_.map(props, prop => tokenTemplate(prop)).join(',\n  ')}
 };`;
 
   return [blockComment, source].join('\n');

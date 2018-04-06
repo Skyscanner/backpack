@@ -20,125 +20,125 @@
   
 -->
 <resources>
-  <property name="ANIMATION_DURATION_XS" category="animations">50ms</property>
-  <property name="ANIMATION_DURATION_SM" category="animations">200ms</property>
   <property name="ANIMATION_DURATION_BASE" category="animations">400ms</property>
-  <property name="BORDER_SIZE_SM" category="borders">1dp</property>
-  <property name="BORDER_SIZE_LG" category="borders">2dp</property>
-  <property name="BORDER_SIZE_XL" category="borders">3dp</property>
-  <property name="BORDER_RADIUS_SM" category="radii">2dp</property>
+  <property name="ANIMATION_DURATION_SM" category="animations">200ms</property>
+  <property name="ANIMATION_DURATION_XS" category="animations">50ms</property>
   <property name="BORDER_RADIUS_PILL" category="radii">40dp</property>
+  <property name="BORDER_RADIUS_SM" category="radii">2dp</property>
+  <property name="BORDER_SIZE_LG" category="borders">2dp</property>
+  <property name="BORDER_SIZE_SM" category="borders">1dp</property>
+  <property name="BORDER_SIZE_XL" category="borders">3dp</property>
   <property name="BUTTON_BORDER_WIDTH" category="spacings">2dp</property>
   <property name="BUTTON_HEIGHT" category="spacings">32 + 4dp</property>
-  <property name="BUTTON_PADDING_HORIZONTAL" category="spacings">4 * 3dp</property>
   <property name="BUTTON_LINE_HEIGHT_LARGE" category="spacings">4 * 12dp</property>
+  <property name="BUTTON_PADDING_HORIZONTAL" category="spacings">4 * 3dp</property>
   <property name="BUTTON_PADDING_VERTICAL" category="spacings">8dp</property>
-  <color name="COLOR_WHITE" category="colors">#ffffffff</color>
-  <color name="COLOR_BLUE_50" category="colors">#ffe1f4f8</color>
   <color name="COLOR_BLUE_100" category="colors">#ffcbeef5</color>
   <color name="COLOR_BLUE_200" category="colors">#ffb0e4ee</color>
   <color name="COLOR_BLUE_300" category="colors">#ff7fd7e8</color>
   <color name="COLOR_BLUE_400" category="colors">#ff40c4df</color>
+  <color name="COLOR_BLUE_50" category="colors">#ffe1f4f8</color>
   <color name="COLOR_BLUE_500" category="colors">#ff00b2d6</color>
   <color name="COLOR_BLUE_600" category="colors">#ff009dbd</color>
   <color name="COLOR_BLUE_700" category="colors">#ff008ca8</color>
   <color name="COLOR_BLUE_800" category="colors">#ff00758c</color>
   <color name="COLOR_BLUE_900" category="colors">#ff005567</color>
-  <color name="COLOR_GRAY_50" category="colors">#fff3f2f5</color>
   <color name="COLOR_GRAY_100" category="colors">#ffe6e4eb</color>
   <color name="COLOR_GRAY_200" category="colors">#ffccc9d4</color>
   <color name="COLOR_GRAY_300" category="colors">#ffb2aebd</color>
   <color name="COLOR_GRAY_400" category="colors">#ff9a95a7</color>
+  <color name="COLOR_GRAY_50" category="colors">#fff3f2f5</color>
   <color name="COLOR_GRAY_500" category="colors">#ff817b8f</color>
   <color name="COLOR_GRAY_600" category="colors">#ff696179</color>
   <color name="COLOR_GRAY_700" category="colors">#ff524c61</color>
   <color name="COLOR_GRAY_800" category="colors">#ff3b344b</color>
   <color name="COLOR_GRAY_900" category="colors">#ff252033</color>
-  <color name="COLOR_GREEN_50" category="colors">#ffdff7ec</color>
   <color name="COLOR_GREEN_100" category="colors">#ffcbf5e2</color>
   <color name="COLOR_GREEN_200" category="colors">#ffafedd1</color>
   <color name="COLOR_GREEN_300" category="colors">#ff80e8b9</color>
   <color name="COLOR_GREEN_400" category="colors">#ff40de97</color>
+  <color name="COLOR_GREEN_50" category="colors">#ffdff7ec</color>
   <color name="COLOR_GREEN_500" category="colors">#ff00d775</color>
   <color name="COLOR_GREEN_600" category="colors">#ff00bd68</color>
   <color name="COLOR_GREEN_700" category="colors">#ff00a85d</color>
   <color name="COLOR_GREEN_800" category="colors">#ff008c4d</color>
   <color name="COLOR_GREEN_900" category="colors">#ff006638</color>
-  <color name="COLOR_RED_50" category="colors">#fffcf2f2</color>
-  <color name="COLOR_RED_100" category="colors">#ffffd6d5</color>
-  <color name="COLOR_RED_200" category="colors">#ffffbbba</color>
-  <color name="COLOR_RED_300" category="colors">#ffff9694</color>
-  <color name="COLOR_RED_400" category="colors">#fffe7471</color>
-  <color name="COLOR_RED_500" category="colors">#ffff5452</color>
-  <color name="COLOR_RED_600" category="colors">#ffeb423f</color>
-  <color name="COLOR_RED_700" category="colors">#ffde322f</color>
-  <color name="COLOR_RED_800" category="colors">#ffcc1f1d</color>
-  <color name="COLOR_RED_900" category="colors">#ffa80300</color>
-  <color name="COLOR_YELLOW_50" category="colors">#fffff9e6</color>
-  <color name="COLOR_YELLOW_100" category="colors">#fffff3cf</color>
-  <color name="COLOR_YELLOW_200" category="colors">#ffffecb8</color>
-  <color name="COLOR_YELLOW_300" category="colors">#ffffe18c</color>
-  <color name="COLOR_YELLOW_400" category="colors">#ffffcf4a</color>
-  <color name="COLOR_YELLOW_500" category="colors">#ffffbb00</color>
-  <color name="COLOR_YELLOW_600" category="colors">#fff0b000</color>
-  <color name="COLOR_YELLOW_700" category="colors">#ffe1a500</color>
-  <color name="COLOR_YELLOW_800" category="colors">#ffc28e00</color>
-  <color name="COLOR_YELLOW_900" category="colors">#ff9c7200</color>
-  <color name="COLOR_PINK_50" category="colors">#fffde4ed</color>
   <color name="COLOR_PINK_100" category="colors">#ffffbfd7</color>
   <color name="COLOR_PINK_200" category="colors">#ffff94bb</color>
   <color name="COLOR_PINK_300" category="colors">#ffff73a6</color>
   <color name="COLOR_PINK_400" category="colors">#ffff619b</color>
+  <color name="COLOR_PINK_50" category="colors">#fffde4ed</color>
   <color name="COLOR_PINK_500" category="colors">#fffa488a</color>
   <color name="COLOR_PINK_600" category="colors">#ffd92b6b</color>
   <color name="COLOR_PINK_700" category="colors">#ffc50f52</color>
   <color name="COLOR_PINK_800" category="colors">#ffb00c48</color>
   <color name="COLOR_PINK_900" category="colors">#ff94053a</color>
-  <property name="ELEVATION_XS" category="elevation">2dp</property>
-  <property name="ELEVATION_SM" category="elevation">4dp</property>
+  <color name="COLOR_RED_100" category="colors">#ffffd6d5</color>
+  <color name="COLOR_RED_200" category="colors">#ffffbbba</color>
+  <color name="COLOR_RED_300" category="colors">#ffff9694</color>
+  <color name="COLOR_RED_400" category="colors">#fffe7471</color>
+  <color name="COLOR_RED_50" category="colors">#fffcf2f2</color>
+  <color name="COLOR_RED_500" category="colors">#ffff5452</color>
+  <color name="COLOR_RED_600" category="colors">#ffeb423f</color>
+  <color name="COLOR_RED_700" category="colors">#ffde322f</color>
+  <color name="COLOR_RED_800" category="colors">#ffcc1f1d</color>
+  <color name="COLOR_RED_900" category="colors">#ffa80300</color>
+  <color name="COLOR_WHITE" category="colors">#ffffffff</color>
+  <color name="COLOR_YELLOW_100" category="colors">#fffff3cf</color>
+  <color name="COLOR_YELLOW_200" category="colors">#ffffecb8</color>
+  <color name="COLOR_YELLOW_300" category="colors">#ffffe18c</color>
+  <color name="COLOR_YELLOW_400" category="colors">#ffffcf4a</color>
+  <color name="COLOR_YELLOW_50" category="colors">#fffff9e6</color>
+  <color name="COLOR_YELLOW_500" category="colors">#ffffbb00</color>
+  <color name="COLOR_YELLOW_600" category="colors">#fff0b000</color>
+  <color name="COLOR_YELLOW_700" category="colors">#ffe1a500</color>
+  <color name="COLOR_YELLOW_800" category="colors">#ffc28e00</color>
+  <color name="COLOR_YELLOW_900" category="colors">#ff9c7200</color>
   <property name="ELEVATION_BASE" category="elevation">6dp</property>
   <property name="ELEVATION_LG" category="elevation">16dp</property>
+  <property name="ELEVATION_SM" category="elevation">4dp</property>
   <property name="ELEVATION_XL" category="elevation">24dp</property>
-  <property name="PAGINATION_DOT_SIZE_SM" category="pagination-dots">2dp</property>
-  <property name="PAGINATION_DOT_SIZE_MD" category="pagination-dots">3dp</property>
-  <property name="PAGINATION_DOT_SIZE_BASE" category="pagination-dots">6dp</property>
-  <property name="SPACING_SM" category="spacings">4dp</property>
-  <property name="SPACING_MD" category="spacings">8dp</property>
-  <property name="SPACING_BASE" category="spacings">16dp</property>
-  <property name="SPACING_LG" category="spacings">24dp</property>
-  <property name="SPACING_XL" category="spacings">32dp</property>
-  <property name="SPACING_XXL" category="spacings">40dp</property>
+  <property name="ELEVATION_XS" category="elevation">2dp</property>
   <property name="FONT_FAMILY" category="typesettings">"sans-serif"</property>
   <property name="FONT_FAMILY_EMPHASIZE" category="typesettings">"sans-serif-medium"</property>
-  <property name="FONT_SIZE_XS" category="typesettings">12sp</property>
-  <property name="FONT_SIZE_SM" category="typesettings">14sp</property>
   <property name="FONT_SIZE_BASE" category="typesettings">16sp</property>
   <property name="FONT_SIZE_LG" category="typesettings">20sp</property>
+  <property name="FONT_SIZE_SM" category="typesettings">14sp</property>
   <property name="FONT_SIZE_XL" category="typesettings">24sp</property>
+  <property name="FONT_SIZE_XS" category="typesettings">12sp</property>
   <property name="FONT_SIZE_XXL" category="typesettings">34sp</property>
-  <property name="LINE_HEIGHT_XS" category="typesettings">18dp</property>
-  <property name="LINE_HEIGHT_SM" category="typesettings">20dp</property>
   <property name="LINE_HEIGHT_BASE" category="typesettings">24dp</property>
   <property name="LINE_HEIGHT_LG" category="typesettings">28dp</property>
+  <property name="LINE_HEIGHT_SM" category="typesettings">20dp</property>
   <property name="LINE_HEIGHT_XL" category="typesettings">32dp</property>
+  <property name="LINE_HEIGHT_XS" category="typesettings">18dp</property>
   <property name="LINE_HEIGHT_XXL" category="typesettings">40dp</property>
-  <property name="TEXT_XS_FONT_SIZE" category="font-sizes">12sp</property>
-  <property name="TEXT_XS_FONT_WEIGHT" category="font-weights">400</property>
-  <property name="TEXT_XS_LINE_HEIGHT" category="line-heights">18dp</property>
-  <property name="TEXT_SM_FONT_SIZE" category="font-sizes">14sp</property>
-  <property name="TEXT_SM_FONT_WEIGHT" category="font-weights">400</property>
-  <property name="TEXT_SM_LINE_HEIGHT" category="line-heights">20dp</property>
+  <property name="PAGINATION_DOT_SIZE_BASE" category="pagination-dots">6dp</property>
+  <property name="PAGINATION_DOT_SIZE_MD" category="pagination-dots">3dp</property>
+  <property name="PAGINATION_DOT_SIZE_SM" category="pagination-dots">2dp</property>
+  <property name="SPACING_BASE" category="spacings">16dp</property>
+  <property name="SPACING_LG" category="spacings">24dp</property>
+  <property name="SPACING_MD" category="spacings">8dp</property>
+  <property name="SPACING_SM" category="spacings">4dp</property>
+  <property name="SPACING_XL" category="spacings">32dp</property>
+  <property name="SPACING_XXL" category="spacings">40dp</property>
   <property name="TEXT_BASE_FONT_SIZE" category="font-sizes">16sp</property>
   <property name="TEXT_BASE_FONT_WEIGHT" category="font-weights">400</property>
   <property name="TEXT_BASE_LINE_HEIGHT" category="line-heights">24dp</property>
+  <property name="TEXT_EMPHASIZED_FONT_WEIGHT" category="font-weights">500</property>
   <property name="TEXT_LG_FONT_SIZE" category="font-sizes">20sp</property>
   <property name="TEXT_LG_FONT_WEIGHT" category="font-weights">400</property>
   <property name="TEXT_LG_LINE_HEIGHT" category="line-heights">28dp</property>
+  <property name="TEXT_SM_FONT_SIZE" category="font-sizes">14sp</property>
+  <property name="TEXT_SM_FONT_WEIGHT" category="font-weights">400</property>
+  <property name="TEXT_SM_LINE_HEIGHT" category="line-heights">20dp</property>
   <property name="TEXT_XL_FONT_SIZE" category="font-sizes">24sp</property>
   <property name="TEXT_XL_FONT_WEIGHT" category="font-weights">400</property>
   <property name="TEXT_XL_LINE_HEIGHT" category="line-heights">32dp</property>
+  <property name="TEXT_XS_FONT_SIZE" category="font-sizes">12sp</property>
+  <property name="TEXT_XS_FONT_WEIGHT" category="font-weights">400</property>
+  <property name="TEXT_XS_LINE_HEIGHT" category="line-heights">18dp</property>
   <property name="TEXT_XXL_FONT_SIZE" category="font-sizes">34sp</property>
   <property name="TEXT_XXL_FONT_WEIGHT" category="font-weights">400</property>
   <property name="TEXT_XXL_LINE_HEIGHT" category="line-heights">40dp</property>
-  <property name="TEXT_EMPHASIZED_FONT_WEIGHT" category="font-weights">500</property>
 </resources>

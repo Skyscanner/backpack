@@ -1,17 +1,11 @@
 {
   "aliases": {},
   "props": {
-    "BUTTON_PADDING_Y": {
+    "BUTTON_ACTIVE_BACKGROUND_COLOR": {
       "category": "buttons",
-      "value": "18px",
-      "type": "size",
-      "name": "BUTTON_PADDING_Y"
-    },
-    "BUTTON_PADDING_X": {
-      "category": "buttons",
-      "value": "20px",
-      "type": "size",
-      "name": "BUTTON_PADDING_X"
+      "value": "rgb(0, 105, 130)",
+      "type": "color",
+      "name": "BUTTON_ACTIVE_BACKGROUND_COLOR"
     },
     "BUTTON_BACKGROUND_COLOR": {
       "category": "buttons",
@@ -25,12 +19,6 @@
       "type": "background-image",
       "name": "BUTTON_BACKGROUND_IMAGE"
     },
-    "BUTTON_COLOR": {
-      "category": "buttons",
-      "value": "rgb(0, 105, 130)",
-      "type": "color",
-      "name": "BUTTON_COLOR"
-    },
     "BUTTON_BORDER_RADIUS": {
       "category": "buttons",
       "value": "none",
@@ -43,23 +31,11 @@
       "type": "size",
       "name": "BUTTON_BOX_SHADOW"
     },
-    "BUTTON_HOVER_BACKGROUND_COLOR": {
+    "BUTTON_COLOR": {
       "category": "buttons",
       "value": "rgb(0, 105, 130)",
       "type": "color",
-      "name": "BUTTON_HOVER_BACKGROUND_COLOR"
-    },
-    "BUTTON_HOVER_COLOR": {
-      "category": "buttons",
-      "value": "rgb(255, 255, 255)",
-      "type": "color",
-      "name": "BUTTON_HOVER_COLOR"
-    },
-    "BUTTON_HOVER_BOX_SHADOW": {
-      "category": "buttons",
-      "value": "inset 0px 0px 0px 1px rgba(0, 105, 130, 0.33)",
-      "type": "size",
-      "name": "BUTTON_HOVER_BOX_SHADOW"
+      "name": "BUTTON_COLOR"
     },
     "BUTTON_DISABLED_BACKGROUND_COLOR": {
       "category": "buttons",
@@ -67,23 +43,47 @@
       "type": "color",
       "name": "BUTTON_DISABLED_BACKGROUND_COLOR"
     },
-    "BUTTON_DISABLED_COLOR": {
-      "category": "buttons",
-      "value": "rgba(0, 105, 130, 0.33)",
-      "type": "color",
-      "name": "BUTTON_DISABLED_COLOR"
-    },
     "BUTTON_DISABLED_BOX_SHADOW": {
       "category": "buttons",
       "value": "inset 0px 0px 0px 1px rgba(0, 105, 130, 0.33)",
       "type": "size",
       "name": "BUTTON_DISABLED_BOX_SHADOW"
     },
-    "BUTTON_SELECTED_COLOR": {
+    "BUTTON_DISABLED_COLOR": {
+      "category": "buttons",
+      "value": "rgba(0, 105, 130, 0.33)",
+      "type": "color",
+      "name": "BUTTON_DISABLED_COLOR"
+    },
+    "BUTTON_HOVER_BACKGROUND_COLOR": {
+      "category": "buttons",
+      "value": "rgb(0, 105, 130)",
+      "type": "color",
+      "name": "BUTTON_HOVER_BACKGROUND_COLOR"
+    },
+    "BUTTON_HOVER_BOX_SHADOW": {
+      "category": "buttons",
+      "value": "inset 0px 0px 0px 1px rgba(0, 105, 130, 0.33)",
+      "type": "size",
+      "name": "BUTTON_HOVER_BOX_SHADOW"
+    },
+    "BUTTON_HOVER_COLOR": {
       "category": "buttons",
       "value": "rgb(255, 255, 255)",
       "type": "color",
-      "name": "BUTTON_SELECTED_COLOR"
+      "name": "BUTTON_HOVER_COLOR"
+    },
+    "BUTTON_PADDING_X": {
+      "category": "buttons",
+      "value": "20px",
+      "type": "size",
+      "name": "BUTTON_PADDING_X"
+    },
+    "BUTTON_PADDING_Y": {
+      "category": "buttons",
+      "value": "18px",
+      "type": "size",
+      "name": "BUTTON_PADDING_Y"
     },
     "BUTTON_SELECTED_BACKGROUND_COLOR": {
       "category": "buttons",
@@ -97,11 +97,11 @@
       "type": "background-image",
       "name": "BUTTON_SELECTED_BACKGROUND_IMAGE"
     },
-    "BUTTON_SELECTED_HOVER_COLOR": {
+    "BUTTON_SELECTED_COLOR": {
       "category": "buttons",
       "value": "rgb(255, 255, 255)",
       "type": "color",
-      "name": "BUTTON_SELECTED_HOVER_COLOR"
+      "name": "BUTTON_SELECTED_COLOR"
     },
     "BUTTON_SELECTED_HOVER_BACKGROUND_COLOR": {
       "category": "buttons",
@@ -109,32 +109,32 @@
       "type": "color",
       "name": "BUTTON_SELECTED_HOVER_BACKGROUND_COLOR"
     },
-    "BUTTON_ACTIVE_BACKGROUND_COLOR": {
+    "BUTTON_SELECTED_HOVER_COLOR": {
       "category": "buttons",
-      "value": "rgb(0, 105, 130)",
+      "value": "rgb(255, 255, 255)",
       "type": "color",
-      "name": "BUTTON_ACTIVE_BACKGROUND_COLOR"
+      "name": "BUTTON_SELECTED_HOVER_COLOR"
     }
   },
   "propKeys": [
-    "BUTTON_PADDING_Y",
-    "BUTTON_PADDING_X",
+    "BUTTON_ACTIVE_BACKGROUND_COLOR",
     "BUTTON_BACKGROUND_COLOR",
     "BUTTON_BACKGROUND_IMAGE",
-    "BUTTON_COLOR",
     "BUTTON_BORDER_RADIUS",
     "BUTTON_BOX_SHADOW",
-    "BUTTON_HOVER_BACKGROUND_COLOR",
-    "BUTTON_HOVER_COLOR",
-    "BUTTON_HOVER_BOX_SHADOW",
+    "BUTTON_COLOR",
     "BUTTON_DISABLED_BACKGROUND_COLOR",
-    "BUTTON_DISABLED_COLOR",
     "BUTTON_DISABLED_BOX_SHADOW",
-    "BUTTON_SELECTED_COLOR",
+    "BUTTON_DISABLED_COLOR",
+    "BUTTON_HOVER_BACKGROUND_COLOR",
+    "BUTTON_HOVER_BOX_SHADOW",
+    "BUTTON_HOVER_COLOR",
+    "BUTTON_PADDING_X",
+    "BUTTON_PADDING_Y",
     "BUTTON_SELECTED_BACKGROUND_COLOR",
     "BUTTON_SELECTED_BACKGROUND_IMAGE",
-    "BUTTON_SELECTED_HOVER_COLOR",
+    "BUTTON_SELECTED_COLOR",
     "BUTTON_SELECTED_HOVER_BACKGROUND_COLOR",
-    "BUTTON_ACTIVE_BACKGROUND_COLOR"
+    "BUTTON_SELECTED_HOVER_COLOR"
   ]
 }

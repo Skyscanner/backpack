@@ -1,91 +1,22 @@
 {
   "aliases": {
-    "WHITE": {
-      "value": "#FFFFFF"
-    },
-    "CLEAR": {
-      "value": "#F0F0F0"
-    },
-    "FOG": {
-      "value": "#F7F7F7"
-    },
-    "SPRINKLE": {
-      "value": "#E7E7E8"
-    },
-    "MIST": {
-      "value": "#C5CDCD"
-    },
-    "DRIZZLE": {
-      "value": "A0A2A8"
-    },
-    "RAINY": {
-      "value": "#878A95"
-    },
-    "DUSK": {
-      "value": "#686B75"
-    },
-    "TURBULENCE": {
-      "value": "#4D5059"
-    },
-    "THUNDER": {
-      "value": "#3E4048"
-    },
-    "STORM": {
-      "value": "#34363D"
-    },
-    "MIDNIGHT": {
-      "value": "#232429"
-    },
-    "BLACK": {
-      "value": "#000000"
-    },
-    "OVERCAST": {
-      "value": "#00BBCC"
-    },
-    "SKY": {
-      "value": "#00DDEE"
-    },
-    "WEED": {
-      "value": "#22AA00"
-    },
-    "GRASS": {
-      "value": "#66CC00"
-    },
-    "SUN": {
-      "value": "#FFDE02"
-    },
-    "SUNSET": {
-      "value": "#EE9900"
-    },
-    "FIRE": {
-      "value": "#CC4400"
-    },
-    "RED": {
-      "value": "#D0021B"
-    },
-    "BLOOD": {
-      "value": "#C5000E"
-    },
-    "OVERCAST_TWENTY_PERCENT": {
-      "value": "rgba(0,187,204,0.2)"
-    },
-    "OVERCAST_FIFTY_PERCENT": {
-      "value": "rgba(0,187,204,0.5)"
-    },
-    "BLACK_FIFTY_PERCENT": {
-      "value": "rgba(0,0,0,0.5)"
-    },
-    "ANIMATION_DURATION_XS": {
-      "value": "50ms"
+    "ANIMATION_DURATION_BASE": {
+      "value": "400ms"
     },
     "ANIMATION_DURATION_SM": {
       "value": "200ms"
     },
-    "ANIMATION_DURATION_BASE": {
-      "value": "400ms"
+    "ANIMATION_DURATION_XS": {
+      "value": "50ms"
     },
-    "BLUE_50": {
-      "value": "#e1f4f8"
+    "BLACK": {
+      "value": "#000000"
+    },
+    "BLACK_FIFTY_PERCENT": {
+      "value": "rgba(0,0,0,0.5)"
+    },
+    "BLOOD": {
+      "value": "#C5000E"
     },
     "BLUE_100": {
       "value": "#cbeef5"
@@ -98,6 +29,9 @@
     },
     "BLUE_400": {
       "value": "#40c4df"
+    },
+    "BLUE_50": {
+      "value": "#e1f4f8"
     },
     "BLUE_500": {
       "value": "#00b2d6"
@@ -114,8 +48,77 @@
     "BLUE_900": {
       "value": "#005567"
     },
-    "GRAY_50": {
-      "value": "#F3F2F5"
+    "BORDER_RADIUS_PILL": {
+      "value": "1.125rem"
+    },
+    "BORDER_RADIUS_PILL_LG": {
+      "value": "1.3125rem"
+    },
+    "BORDER_RADIUS_SM": {
+      "value": ".375rem"
+    },
+    "BORDER_RADIUS_XS": {
+      "value": ".1875rem"
+    },
+    "BORDER_SIZE_LG": {
+      "value": "2px"
+    },
+    "BORDER_SIZE_SM": {
+      "value": "1px"
+    },
+    "BORDER_SIZE_XL": {
+      "value": "3px"
+    },
+    "BREAKPOINT_ABOVE_MOBILE": {
+      "value": "32.3125rem"
+    },
+    "BREAKPOINT_ABOVE_TABLET": {
+      "value": "50.3125rem"
+    },
+    "BREAKPOINT_DESKTOP": {
+      "value": "71.25rem"
+    },
+    "BREAKPOINT_MOBILE": {
+      "value": "32.25rem"
+    },
+    "BREAKPOINT_TABLET": {
+      "value": "50.25rem"
+    },
+    "CLEAR": {
+      "value": "#F0F0F0"
+    },
+    "DRIZZLE": {
+      "value": "A0A2A8"
+    },
+    "DUSK": {
+      "value": "#686B75"
+    },
+    "FIRE": {
+      "value": "#CC4400"
+    },
+    "FOG": {
+      "value": "#F7F7F7"
+    },
+    "FONT_SIZE_BASE": {
+      "value": "1rem"
+    },
+    "FONT_SIZE_LG": {
+      "value": "1.5rem"
+    },
+    "FONT_SIZE_SM": {
+      "value": ".75rem"
+    },
+    "FONT_SIZE_XL": {
+      "value": "1.75rem"
+    },
+    "FONT_SIZE_XXL": {
+      "value": "2.625rem"
+    },
+    "FONT_WEIGHT_BOLD": {
+      "value": "700"
+    },
+    "GRASS": {
+      "value": "#66CC00"
     },
     "GRAY_100": {
       "value": "#E6E4EB"
@@ -128,6 +131,9 @@
     },
     "GRAY_400": {
       "value": "#9A95A7"
+    },
+    "GRAY_50": {
+      "value": "#F3F2F5"
     },
     "GRAY_500": {
       "value": "#817B8F"
@@ -144,9 +150,6 @@
     "GRAY_900": {
       "value": "#252033"
     },
-    "GREEN_50": {
-      "value": "#dff7ec"
-    },
     "GREEN_100": {
       "value": "#cbf5e2"
     },
@@ -158,6 +161,9 @@
     },
     "GREEN_400": {
       "value": "#40de97"
+    },
+    "GREEN_50": {
+      "value": "#dff7ec"
     },
     "GREEN_500": {
       "value": "#00d775"
@@ -174,68 +180,23 @@
     "GREEN_900": {
       "value": "#006638"
     },
-    "RED_50": {
-      "value": "#fcf2f2"
+    "MIDNIGHT": {
+      "value": "#232429"
     },
-    "RED_100": {
-      "value": "#ffd6d5"
+    "MIST": {
+      "value": "#C5CDCD"
     },
-    "RED_200": {
-      "value": "#ffbbba"
+    "ONE_PIXEL_REM": {
+      "value": ".0625rem"
     },
-    "RED_300": {
-      "value": "#ff9694"
+    "OVERCAST": {
+      "value": "#00BBCC"
     },
-    "RED_400": {
-      "value": "#fe7471"
+    "OVERCAST_FIFTY_PERCENT": {
+      "value": "rgba(0,187,204,0.5)"
     },
-    "RED_500": {
-      "value": "#ff5452"
-    },
-    "RED_600": {
-      "value": "#eb423f"
-    },
-    "RED_700": {
-      "value": "#de322f"
-    },
-    "RED_800": {
-      "value": "#cc1f1d"
-    },
-    "RED_900": {
-      "value": "#a80300"
-    },
-    "YELLOW_50": {
-      "value": "#FFF9E6"
-    },
-    "YELLOW_100": {
-      "value": "#FFF3CF"
-    },
-    "YELLOW_200": {
-      "value": "#FFECB8"
-    },
-    "YELLOW_300": {
-      "value": "#FFE18C"
-    },
-    "YELLOW_400": {
-      "value": "#FFCF4A"
-    },
-    "YELLOW_500": {
-      "value": "#FFBB00"
-    },
-    "YELLOW_600": {
-      "value": "#F0B000"
-    },
-    "YELLOW_700": {
-      "value": "#E1A500"
-    },
-    "YELLOW_800": {
-      "value": "#C28E00"
-    },
-    "YELLOW_900": {
-      "value": "#9C7200"
-    },
-    "PINK_50": {
-      "value": "#FDE4ED"
+    "OVERCAST_TWENTY_PERCENT": {
+      "value": "rgba(0,187,204,0.2)"
     },
     "PINK_100": {
       "value": "#FFBFD7"
@@ -248,6 +209,9 @@
     },
     "PINK_400": {
       "value": "#FF619B"
+    },
+    "PINK_50": {
+      "value": "#FDE4ED"
     },
     "PINK_500": {
       "value": "#FA488A"
@@ -264,32 +228,44 @@
     "PINK_900": {
       "value": "#94053A"
     },
-    "FONT_SIZE_SM": {
-      "value": ".75rem"
+    "RAINY": {
+      "value": "#878A95"
     },
-    "FONT_SIZE_BASE": {
-      "value": "1rem"
+    "RED": {
+      "value": "#D0021B"
     },
-    "FONT_SIZE_LG": {
-      "value": "1.5rem"
+    "RED_100": {
+      "value": "#ffd6d5"
     },
-    "FONT_SIZE_XL": {
-      "value": "1.75rem"
+    "RED_200": {
+      "value": "#ffbbba"
     },
-    "FONT_SIZE_XXL": {
-      "value": "2.625rem"
+    "RED_300": {
+      "value": "#ff9694"
     },
-    "FONT_WEIGHT_BOLD": {
-      "value": "700"
+    "RED_400": {
+      "value": "#fe7471"
     },
-    "SPACING_XS": {
-      "value": ".375rem"
+    "RED_50": {
+      "value": "#fcf2f2"
     },
-    "SPACING_SM": {
-      "value": ".75rem"
+    "RED_500": {
+      "value": "#ff5452"
     },
-    "SPACING_MD": {
-      "value": "1.125rem"
+    "RED_600": {
+      "value": "#eb423f"
+    },
+    "RED_700": {
+      "value": "#de322f"
+    },
+    "RED_800": {
+      "value": "#cc1f1d"
+    },
+    "RED_900": {
+      "value": "#a80300"
+    },
+    "SKY": {
+      "value": "#00DDEE"
     },
     "SPACING_BASE": {
       "value": "1.5rem"
@@ -297,94 +273,109 @@
     "SPACING_LG": {
       "value": "1.875rem"
     },
+    "SPACING_MD": {
+      "value": "1.125rem"
+    },
+    "SPACING_SM": {
+      "value": ".75rem"
+    },
     "SPACING_XL": {
       "value": "2.250rem"
+    },
+    "SPACING_XS": {
+      "value": ".375rem"
     },
     "SPACING_XXL": {
       "value": "2.625rem"
     },
-    "BORDER_RADIUS_XS": {
-      "value": ".1875rem"
+    "SPRINKLE": {
+      "value": "#E7E7E8"
     },
-    "BORDER_RADIUS_SM": {
-      "value": ".375rem"
+    "STORM": {
+      "value": "#34363D"
     },
-    "BORDER_RADIUS_PILL": {
-      "value": "1.125rem"
+    "SUN": {
+      "value": "#FFDE02"
     },
-    "BORDER_RADIUS_PILL_LG": {
-      "value": "1.3125rem"
+    "SUNSET": {
+      "value": "#EE9900"
     },
-    "BORDER_SIZE_SM": {
-      "value": "1px"
+    "THUNDER": {
+      "value": "#3E4048"
     },
-    "BORDER_SIZE_LG": {
-      "value": "2px"
+    "TURBULENCE": {
+      "value": "#4D5059"
     },
-    "BORDER_SIZE_XL": {
-      "value": "3px"
+    "WEED": {
+      "value": "#22AA00"
     },
-    "BREAKPOINT_MOBILE": {
-      "value": "32.25rem"
+    "WHITE": {
+      "value": "#FFFFFF"
     },
-    "BREAKPOINT_ABOVE_MOBILE": {
-      "value": "32.3125rem"
+    "YELLOW_100": {
+      "value": "#FFF3CF"
     },
-    "BREAKPOINT_TABLET": {
-      "value": "50.25rem"
+    "YELLOW_200": {
+      "value": "#FFECB8"
     },
-    "BREAKPOINT_ABOVE_TABLET": {
-      "value": "50.3125rem"
+    "YELLOW_300": {
+      "value": "#FFE18C"
     },
-    "BREAKPOINT_DESKTOP": {
-      "value": "71.25rem"
+    "YELLOW_400": {
+      "value": "#FFCF4A"
     },
-    "ONE_PIXEL_REM": {
-      "value": ".0625rem"
+    "YELLOW_50": {
+      "value": "#FFF9E6"
+    },
+    "YELLOW_500": {
+      "value": "#FFBB00"
+    },
+    "YELLOW_600": {
+      "value": "#F0B000"
+    },
+    "YELLOW_700": {
+      "value": "#E1A500"
+    },
+    "YELLOW_800": {
+      "value": "#C28E00"
+    },
+    "YELLOW_900": {
+      "value": "#9C7200"
     },
     "ZINDEX_AUTOSUGGEST": {
       "value": "900"
     },
-    "ZINDEX_POPOVER": {
-      "value": "900"
+    "ZINDEX_DRAWER": {
+      "value": "1100"
     },
-    "ZINDEX_TOOLTIP": {
+    "ZINDEX_MODAL": {
+      "value": "1100"
+    },
+    "ZINDEX_POPOVER": {
       "value": "900"
     },
     "ZINDEX_SCRIM": {
       "value": "1000"
     },
-    "ZINDEX_MODAL": {
-      "value": "1100"
-    },
-    "ZINDEX_DRAWER": {
-      "value": "1100"
+    "ZINDEX_TOOLTIP": {
+      "value": "900"
     }
   },
   "props": {
-    "BUTTON_PADDING_Y": {
+    "BUTTON_ACTIVE_BACKGROUND_COLOR": {
       "category": "buttons",
-      "value": "8px",
-      "type": "size",
-      "name": "BUTTON_PADDING_Y"
+      "value": "rgb(77, 80, 89)",
+      "type": "color",
+      ".alias": {
+        "value": "#4D5059"
+      },
+      "name": "BUTTON_ACTIVE_BACKGROUND_COLOR"
     },
-    "BUTTON_PADDING_X": {
+    "BUTTON_ACTIVE_BACKGROUND_IMAGE": {
       "category": "buttons",
-      "value": "24px",
-      "type": "size",
-      "name": "BUTTON_PADDING_X"
-    },
-    "BUTTON_PADDING_X_ICON_ONLY": {
-      "category": "buttons",
-      "value": "1rem",
-      "type": "size",
-      "name": "BUTTON_PADDING_X_ICON_ONLY"
-    },
-    "BUTTON_BORDER_RADIUS": {
-      "category": "buttons",
-      "value": "3px",
-      "type": "size",
-      "name": "BUTTON_BORDER_RADIUS"
+      "value": "none",
+      "type": "background-image",
+      "name": "BUTTON_ACTIVE_BACKGROUND_IMAGE"
     },
     "BUTTON_BACKGROUND_COLOR": {
       "category": "buttons",
@@ -401,35 +392,110 @@
       "type": "background-image",
       "name": "BUTTON_BACKGROUND_IMAGE"
     },
-    "BUTTON_HOVER_BACKGROUND_COLOR": {
+    "BUTTON_BORDER_RADIUS": {
       "category": "buttons",
-      "value": "rgb(77, 80, 89)",
+      "value": "3px",
+      "type": "size",
+      "name": "BUTTON_BORDER_RADIUS"
+    },
+    "BUTTON_COLOR": {
+      "category": "buttons",
+      "value": "rgb(0, 221, 238)",
       "type": "color",
       ".alias": {
-        "value": "#4D5059"
+        "value": "#00DDEE"
       },
-      "name": "BUTTON_HOVER_BACKGROUND_COLOR"
+      "name": "BUTTON_COLOR"
     },
-    "BUTTON_HOVER_BACKGROUND_IMAGE": {
+    "BUTTON_DESTRUCTIVE_ACTIVE_BOX_SHADOW": {
+      "category": "buttons",
+      "value": "0 0 0 3px #ff5452 inset",
+      "type": "box-shadow",
+      ".alias": {
+        "value": "#ff5452"
+      },
+      "name": "BUTTON_DESTRUCTIVE_ACTIVE_BOX_SHADOW"
+    },
+    "BUTTON_DESTRUCTIVE_ACTIVE_COLOR": {
+      "category": "buttons",
+      "value": "rgb(255, 84, 82)",
+      "type": "color",
+      ".alias": {
+        "value": "#ff5452"
+      },
+      "name": "BUTTON_DESTRUCTIVE_ACTIVE_COLOR"
+    },
+    "BUTTON_DESTRUCTIVE_BOX_SHADOW": {
+      "category": "buttons",
+      "value": "none",
+      "type": "box-shadow",
+      "name": "BUTTON_DESTRUCTIVE_BOX_SHADOW"
+    },
+    "BUTTON_DESTRUCTIVE_COLOR": {
+      "category": "buttons",
+      "value": "rgb(197, 0, 14)",
+      "type": "color",
+      ".alias": {
+        "value": "#C5000E"
+      },
+      "name": "BUTTON_DESTRUCTIVE_COLOR"
+    },
+    "BUTTON_DESTRUCTIVE_DISABLED_BACKGROUND_COLOR": {
+      "category": "buttons",
+      "value": "rgb(230, 228, 235)",
+      "type": "color",
+      ".alias": {
+        "value": "#E6E4EB"
+      },
+      "name": "BUTTON_DESTRUCTIVE_DISABLED_BACKGROUND_COLOR"
+    },
+    "BUTTON_DESTRUCTIVE_DISABLED_BACKGROUND_IMAGE": {
       "category": "buttons",
       "value": "none",
       "type": "background-image",
-      "name": "BUTTON_HOVER_BACKGROUND_IMAGE"
+      "name": "BUTTON_DESTRUCTIVE_DISABLED_BACKGROUND_IMAGE"
     },
-    "BUTTON_ACTIVE_BACKGROUND_COLOR": {
-      "category": "buttons",
-      "value": "rgb(77, 80, 89)",
-      "type": "color",
-      ".alias": {
-        "value": "#4D5059"
-      },
-      "name": "BUTTON_ACTIVE_BACKGROUND_COLOR"
-    },
-    "BUTTON_ACTIVE_BACKGROUND_IMAGE": {
+    "BUTTON_DESTRUCTIVE_DISABLED_BOX_SHADOW": {
       "category": "buttons",
       "value": "none",
-      "type": "background-image",
-      "name": "BUTTON_ACTIVE_BACKGROUND_IMAGE"
+      "type": "box-shadow",
+      "name": "BUTTON_DESTRUCTIVE_DISABLED_BOX_SHADOW"
+    },
+    "BUTTON_DESTRUCTIVE_DISABLED_COLOR": {
+      "category": "buttons",
+      "value": "rgb(178, 174, 189)",
+      "type": "color",
+      ".alias": {
+        "value": "#B2AEBD"
+      },
+      "name": "BUTTON_DESTRUCTIVE_DISABLED_COLOR"
+    },
+    "BUTTON_DESTRUCTIVE_FONT_SIZE": {
+      "category": "buttons",
+      "value": ".875rem",
+      "type": "size",
+      "name": "BUTTON_DESTRUCTIVE_FONT_SIZE"
+    },
+    "BUTTON_DESTRUCTIVE_HOVER_BOX_SHADOW": {
+      "category": "buttons",
+      "value": "none",
+      "type": "box-shadow",
+      "name": "BUTTON_DESTRUCTIVE_HOVER_BOX_SHADOW"
+    },
+    "BUTTON_DESTRUCTIVE_HOVER_COLOR": {
+      "category": "buttons",
+      "value": "rgb(197, 0, 14)",
+      "type": "color",
+      ".alias": {
+        "value": "#C5000E"
+      },
+      "name": "BUTTON_DESTRUCTIVE_HOVER_COLOR"
+    },
+    "BUTTON_DESTRUCTIVE_LINE_HEIGHT": {
+      "category": "buttons",
+      "value": "1.25rem",
+      "type": "number",
+      "name": "BUTTON_DESTRUCTIVE_LINE_HEIGHT"
     },
     "BUTTON_DISABLED_BACKGROUND_COLOR": {
       "category": "buttons",
@@ -446,20 +512,11 @@
       "type": "background-image",
       "name": "BUTTON_DISABLED_BACKGROUND_IMAGE"
     },
-    "BUTTON_COLOR": {
+    "BUTTON_DISABLED_BOX_SHADOW": {
       "category": "buttons",
-      "value": "rgb(0, 221, 238)",
-      "type": "color",
-      ".alias": {
-        "value": "#00DDEE"
-      },
-      "name": "BUTTON_COLOR"
-    },
-    "BUTTON_FONT_WEIGHT": {
-      "category": "buttons",
-      "value": "normal",
-      "type": "number",
-      "name": "BUTTON_FONT_WEIGHT"
+      "value": "none",
+      "type": "box-shadow",
+      "name": "BUTTON_DISABLED_BOX_SHADOW"
     },
     "BUTTON_DISABLED_COLOR": {
       "category": "buttons",
@@ -476,35 +533,26 @@
       "type": "size",
       "name": "BUTTON_FONT_SIZE"
     },
-    "BUTTON_LINE_HEIGHT": {
+    "BUTTON_FONT_WEIGHT": {
       "category": "buttons",
-      "value": "1.125em",
+      "value": "normal",
       "type": "number",
-      "name": "BUTTON_LINE_HEIGHT"
+      "name": "BUTTON_FONT_WEIGHT"
     },
-    "BUTTON_TEXT_ALIGN": {
+    "BUTTON_HOVER_BACKGROUND_COLOR": {
       "category": "buttons",
-      "value": "center",
-      "type": "text-align",
-      "name": "BUTTON_TEXT_ALIGN"
+      "value": "rgb(77, 80, 89)",
+      "type": "color",
+      ".alias": {
+        "value": "#4D5059"
+      },
+      "name": "BUTTON_HOVER_BACKGROUND_COLOR"
     },
-    "BUTTON_LARGE_PADDING_X": {
+    "BUTTON_HOVER_BACKGROUND_IMAGE": {
       "category": "buttons",
-      "value": "2rem",
-      "type": "size",
-      "name": "BUTTON_LARGE_PADDING_X"
-    },
-    "BUTTON_LARGE_PADDING_Y": {
-      "category": "buttons",
-      "value": "0.375rem",
-      "type": "size",
-      "name": "BUTTON_LARGE_PADDING_Y"
-    },
-    "BUTTON_LARGE_PADDING_X_ICON_ONLY": {
-      "category": "buttons",
-      "value": ".5625rem",
-      "type": "size",
-      "name": "BUTTON_LARGE_PADDING_X_ICON_ONLY"
+      "value": "none",
+      "type": "background-image",
+      "name": "BUTTON_HOVER_BACKGROUND_IMAGE"
     },
     "BUTTON_LARGE_FONT_SIZE": {
       "category": "buttons",
@@ -518,41 +566,47 @@
       "type": "number",
       "name": "BUTTON_LARGE_LINE_HEIGHT"
     },
-    "BUTTON_DISABLED_BOX_SHADOW": {
+    "BUTTON_LARGE_PADDING_X": {
       "category": "buttons",
-      "value": "none",
-      "type": "box-shadow",
-      "name": "BUTTON_DISABLED_BOX_SHADOW"
+      "value": "2rem",
+      "type": "size",
+      "name": "BUTTON_LARGE_PADDING_X"
     },
-    "BUTTON_SECONDARY_BACKGROUND_COLOR": {
+    "BUTTON_LARGE_PADDING_X_ICON_ONLY": {
       "category": "buttons",
-      "value": "rgba(0, 0, 0, 0.5)",
-      "type": "color",
-      ".alias": {
-        "value": "rgba(0,0,0,0.5)"
-      },
-      "name": "BUTTON_SECONDARY_BACKGROUND_COLOR"
+      "value": ".5625rem",
+      "type": "size",
+      "name": "BUTTON_LARGE_PADDING_X_ICON_ONLY"
     },
-    "BUTTON_SECONDARY_BACKGROUND_IMAGE": {
+    "BUTTON_LARGE_PADDING_Y": {
       "category": "buttons",
-      "value": "none",
-      "type": "background-image",
-      "name": "BUTTON_SECONDARY_BACKGROUND_IMAGE"
+      "value": "0.375rem",
+      "type": "size",
+      "name": "BUTTON_LARGE_PADDING_Y"
     },
-    "BUTTON_SECONDARY_HOVER_BACKGROUND_COLOR": {
+    "BUTTON_LINE_HEIGHT": {
       "category": "buttons",
-      "value": "rgba(0, 187, 204, 0.2)",
-      "type": "color",
-      ".alias": {
-        "value": "rgba(0,187,204,0.2)"
-      },
-      "name": "BUTTON_SECONDARY_HOVER_BACKGROUND_COLOR"
+      "value": "1.125em",
+      "type": "number",
+      "name": "BUTTON_LINE_HEIGHT"
     },
-    "BUTTON_SECONDARY_HOVER_BACKGROUND_IMAGE": {
+    "BUTTON_PADDING_X": {
       "category": "buttons",
-      "value": "none",
-      "type": "background-image",
-      "name": "BUTTON_SECONDARY_HOVER_BACKGROUND_IMAGE"
+      "value": "24px",
+      "type": "size",
+      "name": "BUTTON_PADDING_X"
+    },
+    "BUTTON_PADDING_X_ICON_ONLY": {
+      "category": "buttons",
+      "value": "1rem",
+      "type": "size",
+      "name": "BUTTON_PADDING_X_ICON_ONLY"
+    },
+    "BUTTON_PADDING_Y": {
+      "category": "buttons",
+      "value": "8px",
+      "type": "size",
+      "name": "BUTTON_PADDING_Y"
     },
     "BUTTON_SECONDARY_ACTIVE_BACKGROUND_COLOR": {
       "category": "buttons",
@@ -569,6 +623,51 @@
       "type": "background-image",
       "name": "BUTTON_SECONDARY_ACTIVE_BACKGROUND_IMAGE"
     },
+    "BUTTON_SECONDARY_ACTIVE_BOX_SHADOW": {
+      "category": "buttons",
+      "value": "none",
+      "type": "box-shadow",
+      "name": "BUTTON_SECONDARY_ACTIVE_BOX_SHADOW"
+    },
+    "BUTTON_SECONDARY_ACTIVE_COLOR": {
+      "category": "buttons",
+      "value": "rgb(52, 54, 61)",
+      "type": "color",
+      ".alias": {
+        "value": "#34363D"
+      },
+      "name": "BUTTON_SECONDARY_ACTIVE_COLOR"
+    },
+    "BUTTON_SECONDARY_BACKGROUND_COLOR": {
+      "category": "buttons",
+      "value": "rgba(0, 0, 0, 0.5)",
+      "type": "color",
+      ".alias": {
+        "value": "rgba(0,0,0,0.5)"
+      },
+      "name": "BUTTON_SECONDARY_BACKGROUND_COLOR"
+    },
+    "BUTTON_SECONDARY_BACKGROUND_IMAGE": {
+      "category": "buttons",
+      "value": "none",
+      "type": "background-image",
+      "name": "BUTTON_SECONDARY_BACKGROUND_IMAGE"
+    },
+    "BUTTON_SECONDARY_BOX_SHADOW": {
+      "category": "buttons",
+      "value": "none",
+      "type": "box-shadow",
+      "name": "BUTTON_SECONDARY_BOX_SHADOW"
+    },
+    "BUTTON_SECONDARY_COLOR": {
+      "category": "buttons",
+      "value": "rgb(52, 54, 61)",
+      "type": "color",
+      ".alias": {
+        "value": "#34363D"
+      },
+      "name": "BUTTON_SECONDARY_COLOR"
+    },
     "BUTTON_SECONDARY_DISABLED_BACKGROUND_COLOR": {
       "category": "buttons",
       "value": "rgb(230, 228, 235)",
@@ -583,51 +682,6 @@
       "value": "none",
       "type": "background-image",
       "name": "BUTTON_SECONDARY_DISABLED_BACKGROUND_IMAGE"
-    },
-    "BUTTON_SECONDARY_COLOR": {
-      "category": "buttons",
-      "value": "rgb(52, 54, 61)",
-      "type": "color",
-      ".alias": {
-        "value": "#34363D"
-      },
-      "name": "BUTTON_SECONDARY_COLOR"
-    },
-    "BUTTON_SECONDARY_HOVER_COLOR": {
-      "category": "buttons",
-      "value": "rgb(52, 54, 61)",
-      "type": "color",
-      ".alias": {
-        "value": "#34363D"
-      },
-      "name": "BUTTON_SECONDARY_HOVER_COLOR"
-    },
-    "BUTTON_SECONDARY_ACTIVE_COLOR": {
-      "category": "buttons",
-      "value": "rgb(52, 54, 61)",
-      "type": "color",
-      ".alias": {
-        "value": "#34363D"
-      },
-      "name": "BUTTON_SECONDARY_ACTIVE_COLOR"
-    },
-    "BUTTON_SECONDARY_BOX_SHADOW": {
-      "category": "buttons",
-      "value": "none",
-      "type": "box-shadow",
-      "name": "BUTTON_SECONDARY_BOX_SHADOW"
-    },
-    "BUTTON_SECONDARY_HOVER_BOX_SHADOW": {
-      "category": "buttons",
-      "value": "none",
-      "type": "box-shadow",
-      "name": "BUTTON_SECONDARY_HOVER_BOX_SHADOW"
-    },
-    "BUTTON_SECONDARY_ACTIVE_BOX_SHADOW": {
-      "category": "buttons",
-      "value": "none",
-      "type": "box-shadow",
-      "name": "BUTTON_SECONDARY_ACTIVE_BOX_SHADOW"
     },
     "BUTTON_SECONDARY_DISABLED_BOX_SHADOW": {
       "category": "buttons",
@@ -647,107 +701,62 @@
       "type": "number",
       "name": "BUTTON_SECONDARY_FONT_WEIGHT"
     },
+    "BUTTON_SECONDARY_HOVER_BACKGROUND_COLOR": {
+      "category": "buttons",
+      "value": "rgba(0, 187, 204, 0.2)",
+      "type": "color",
+      ".alias": {
+        "value": "rgba(0,187,204,0.2)"
+      },
+      "name": "BUTTON_SECONDARY_HOVER_BACKGROUND_COLOR"
+    },
+    "BUTTON_SECONDARY_HOVER_BACKGROUND_IMAGE": {
+      "category": "buttons",
+      "value": "none",
+      "type": "background-image",
+      "name": "BUTTON_SECONDARY_HOVER_BACKGROUND_IMAGE"
+    },
+    "BUTTON_SECONDARY_HOVER_BOX_SHADOW": {
+      "category": "buttons",
+      "value": "none",
+      "type": "box-shadow",
+      "name": "BUTTON_SECONDARY_HOVER_BOX_SHADOW"
+    },
+    "BUTTON_SECONDARY_HOVER_COLOR": {
+      "category": "buttons",
+      "value": "rgb(52, 54, 61)",
+      "type": "color",
+      ".alias": {
+        "value": "#34363D"
+      },
+      "name": "BUTTON_SECONDARY_HOVER_COLOR"
+    },
     "BUTTON_SECONDARY_LINE_HEIGHT": {
       "category": "buttons",
       "value": "1.25rem",
       "type": "number",
       "name": "BUTTON_SECONDARY_LINE_HEIGHT"
     },
-    "BUTTON_DESTRUCTIVE_FONT_SIZE": {
+    "BUTTON_TEXT_ALIGN": {
       "category": "buttons",
-      "value": ".875rem",
-      "type": "size",
-      "name": "BUTTON_DESTRUCTIVE_FONT_SIZE"
-    },
-    "BUTTON_DESTRUCTIVE_LINE_HEIGHT": {
-      "category": "buttons",
-      "value": "1.25rem",
-      "type": "number",
-      "name": "BUTTON_DESTRUCTIVE_LINE_HEIGHT"
-    },
-    "BUTTON_DESTRUCTIVE_COLOR": {
-      "category": "buttons",
-      "value": "rgb(197, 0, 14)",
-      "type": "color",
-      ".alias": {
-        "value": "#C5000E"
-      },
-      "name": "BUTTON_DESTRUCTIVE_COLOR"
-    },
-    "BUTTON_DESTRUCTIVE_BOX_SHADOW": {
-      "category": "buttons",
-      "value": "none",
-      "type": "box-shadow",
-      "name": "BUTTON_DESTRUCTIVE_BOX_SHADOW"
-    },
-    "BUTTON_DESTRUCTIVE_HOVER_COLOR": {
-      "category": "buttons",
-      "value": "rgb(197, 0, 14)",
-      "type": "color",
-      ".alias": {
-        "value": "#C5000E"
-      },
-      "name": "BUTTON_DESTRUCTIVE_HOVER_COLOR"
-    },
-    "BUTTON_DESTRUCTIVE_HOVER_BOX_SHADOW": {
-      "category": "buttons",
-      "value": "none",
-      "type": "box-shadow",
-      "name": "BUTTON_DESTRUCTIVE_HOVER_BOX_SHADOW"
-    },
-    "BUTTON_DESTRUCTIVE_ACTIVE_COLOR": {
-      "category": "buttons",
-      "value": "rgb(255, 84, 82)",
-      "type": "color",
-      ".alias": {
-        "value": "#ff5452"
-      },
-      "name": "BUTTON_DESTRUCTIVE_ACTIVE_COLOR"
-    },
-    "BUTTON_DESTRUCTIVE_ACTIVE_BOX_SHADOW": {
-      "category": "buttons",
-      "value": "0 0 0 3px #ff5452 inset",
-      "type": "box-shadow",
-      ".alias": {
-        "value": "#ff5452"
-      },
-      "name": "BUTTON_DESTRUCTIVE_ACTIVE_BOX_SHADOW"
-    },
-    "BUTTON_DESTRUCTIVE_DISABLED_BACKGROUND_COLOR": {
-      "category": "buttons",
-      "value": "rgb(230, 228, 235)",
-      "type": "color",
-      ".alias": {
-        "value": "#E6E4EB"
-      },
-      "name": "BUTTON_DESTRUCTIVE_DISABLED_BACKGROUND_COLOR"
-    },
-    "BUTTON_DESTRUCTIVE_DISABLED_BACKGROUND_IMAGE": {
-      "category": "buttons",
-      "value": "none",
-      "type": "background-image",
-      "name": "BUTTON_DESTRUCTIVE_DISABLED_BACKGROUND_IMAGE"
-    },
-    "BUTTON_DESTRUCTIVE_DISABLED_COLOR": {
-      "category": "buttons",
-      "value": "rgb(178, 174, 189)",
-      "type": "color",
-      ".alias": {
-        "value": "#B2AEBD"
-      },
-      "name": "BUTTON_DESTRUCTIVE_DISABLED_COLOR"
-    },
-    "BUTTON_DESTRUCTIVE_DISABLED_BOX_SHADOW": {
-      "category": "buttons",
-      "value": "none",
-      "type": "box-shadow",
-      "name": "BUTTON_DESTRUCTIVE_DISABLED_BOX_SHADOW"
+      "value": "center",
+      "type": "text-align",
+      "name": "BUTTON_TEXT_ALIGN"
     },
     "FONT_FAMILY_BASE": {
       "category": "typesettings",
       "value": "'markweb', Helvetica, Arial, sans-serif",
       "type": "font",
       "name": "FONT_FAMILY_BASE"
+    },
+    "LINK_ACTIVE_COLOR": {
+      "category": "text-colors",
+      "value": "rgb(77, 80, 89)",
+      "type": "color",
+      ".alias": {
+        "value": "#4D5059"
+      },
+      "name": "LINK_ACTIVE_COLOR"
     },
     "LINK_COLOR": {
       "category": "text-colors",
@@ -757,12 +766,6 @@
         "value": "#00BBCC"
       },
       "name": "LINK_COLOR"
-    },
-    "LINK_TEXT_DECORATION": {
-      "category": "text-decorations",
-      "value": "none",
-      "type": "text-decoration",
-      "name": "LINK_TEXT_DECORATION"
     },
     "LINK_HOVER_COLOR": {
       "category": "text-colors",
@@ -779,14 +782,20 @@
       "type": "text-decoration",
       "name": "LINK_HOVER_TEXT_DECORATION"
     },
-    "LINK_ACTIVE_COLOR": {
+    "LINK_TEXT_DECORATION": {
+      "category": "text-decorations",
+      "value": "none",
+      "type": "text-decoration",
+      "name": "LINK_TEXT_DECORATION"
+    },
+    "LINK_WHITE_ACTIVE_COLOR": {
       "category": "text-colors",
-      "value": "rgb(77, 80, 89)",
+      "value": "rgb(247, 247, 247)",
       "type": "color",
       ".alias": {
-        "value": "#4D5059"
+        "value": "#F7F7F7"
       },
-      "name": "LINK_ACTIVE_COLOR"
+      "name": "LINK_WHITE_ACTIVE_COLOR"
     },
     "LINK_WHITE_COLOR": {
       "category": "text-colors",
@@ -805,80 +814,71 @@
         "value": "#FFFFFF"
       },
       "name": "LINK_WHITE_HOVER_COLOR"
-    },
-    "LINK_WHITE_ACTIVE_COLOR": {
-      "category": "text-colors",
-      "value": "rgb(247, 247, 247)",
-      "type": "color",
-      ".alias": {
-        "value": "#F7F7F7"
-      },
-      "name": "LINK_WHITE_ACTIVE_COLOR"
     }
   },
   "propKeys": [
-    "BUTTON_PADDING_Y",
-    "BUTTON_PADDING_X",
-    "BUTTON_PADDING_X_ICON_ONLY",
-    "BUTTON_BORDER_RADIUS",
-    "BUTTON_BACKGROUND_COLOR",
-    "BUTTON_BACKGROUND_IMAGE",
-    "BUTTON_HOVER_BACKGROUND_COLOR",
-    "BUTTON_HOVER_BACKGROUND_IMAGE",
     "BUTTON_ACTIVE_BACKGROUND_COLOR",
     "BUTTON_ACTIVE_BACKGROUND_IMAGE",
+    "BUTTON_BACKGROUND_COLOR",
+    "BUTTON_BACKGROUND_IMAGE",
+    "BUTTON_BORDER_RADIUS",
+    "BUTTON_COLOR",
+    "BUTTON_DESTRUCTIVE_ACTIVE_BOX_SHADOW",
+    "BUTTON_DESTRUCTIVE_ACTIVE_COLOR",
+    "BUTTON_DESTRUCTIVE_BOX_SHADOW",
+    "BUTTON_DESTRUCTIVE_COLOR",
+    "BUTTON_DESTRUCTIVE_DISABLED_BACKGROUND_COLOR",
+    "BUTTON_DESTRUCTIVE_DISABLED_BACKGROUND_IMAGE",
+    "BUTTON_DESTRUCTIVE_DISABLED_BOX_SHADOW",
+    "BUTTON_DESTRUCTIVE_DISABLED_COLOR",
+    "BUTTON_DESTRUCTIVE_FONT_SIZE",
+    "BUTTON_DESTRUCTIVE_HOVER_BOX_SHADOW",
+    "BUTTON_DESTRUCTIVE_HOVER_COLOR",
+    "BUTTON_DESTRUCTIVE_LINE_HEIGHT",
     "BUTTON_DISABLED_BACKGROUND_COLOR",
     "BUTTON_DISABLED_BACKGROUND_IMAGE",
-    "BUTTON_COLOR",
-    "BUTTON_FONT_WEIGHT",
+    "BUTTON_DISABLED_BOX_SHADOW",
     "BUTTON_DISABLED_COLOR",
     "BUTTON_FONT_SIZE",
-    "BUTTON_LINE_HEIGHT",
-    "BUTTON_TEXT_ALIGN",
-    "BUTTON_LARGE_PADDING_X",
-    "BUTTON_LARGE_PADDING_Y",
-    "BUTTON_LARGE_PADDING_X_ICON_ONLY",
+    "BUTTON_FONT_WEIGHT",
+    "BUTTON_HOVER_BACKGROUND_COLOR",
+    "BUTTON_HOVER_BACKGROUND_IMAGE",
     "BUTTON_LARGE_FONT_SIZE",
     "BUTTON_LARGE_LINE_HEIGHT",
-    "BUTTON_DISABLED_BOX_SHADOW",
-    "BUTTON_SECONDARY_BACKGROUND_COLOR",
-    "BUTTON_SECONDARY_BACKGROUND_IMAGE",
-    "BUTTON_SECONDARY_HOVER_BACKGROUND_COLOR",
-    "BUTTON_SECONDARY_HOVER_BACKGROUND_IMAGE",
+    "BUTTON_LARGE_PADDING_X",
+    "BUTTON_LARGE_PADDING_X_ICON_ONLY",
+    "BUTTON_LARGE_PADDING_Y",
+    "BUTTON_LINE_HEIGHT",
+    "BUTTON_PADDING_X",
+    "BUTTON_PADDING_X_ICON_ONLY",
+    "BUTTON_PADDING_Y",
     "BUTTON_SECONDARY_ACTIVE_BACKGROUND_COLOR",
     "BUTTON_SECONDARY_ACTIVE_BACKGROUND_IMAGE",
+    "BUTTON_SECONDARY_ACTIVE_BOX_SHADOW",
+    "BUTTON_SECONDARY_ACTIVE_COLOR",
+    "BUTTON_SECONDARY_BACKGROUND_COLOR",
+    "BUTTON_SECONDARY_BACKGROUND_IMAGE",
+    "BUTTON_SECONDARY_BOX_SHADOW",
+    "BUTTON_SECONDARY_COLOR",
     "BUTTON_SECONDARY_DISABLED_BACKGROUND_COLOR",
     "BUTTON_SECONDARY_DISABLED_BACKGROUND_IMAGE",
-    "BUTTON_SECONDARY_COLOR",
-    "BUTTON_SECONDARY_HOVER_COLOR",
-    "BUTTON_SECONDARY_ACTIVE_COLOR",
-    "BUTTON_SECONDARY_BOX_SHADOW",
-    "BUTTON_SECONDARY_HOVER_BOX_SHADOW",
-    "BUTTON_SECONDARY_ACTIVE_BOX_SHADOW",
     "BUTTON_SECONDARY_DISABLED_BOX_SHADOW",
     "BUTTON_SECONDARY_FONT_SIZE",
     "BUTTON_SECONDARY_FONT_WEIGHT",
+    "BUTTON_SECONDARY_HOVER_BACKGROUND_COLOR",
+    "BUTTON_SECONDARY_HOVER_BACKGROUND_IMAGE",
+    "BUTTON_SECONDARY_HOVER_BOX_SHADOW",
+    "BUTTON_SECONDARY_HOVER_COLOR",
     "BUTTON_SECONDARY_LINE_HEIGHT",
-    "BUTTON_DESTRUCTIVE_FONT_SIZE",
-    "BUTTON_DESTRUCTIVE_LINE_HEIGHT",
-    "BUTTON_DESTRUCTIVE_COLOR",
-    "BUTTON_DESTRUCTIVE_BOX_SHADOW",
-    "BUTTON_DESTRUCTIVE_HOVER_COLOR",
-    "BUTTON_DESTRUCTIVE_HOVER_BOX_SHADOW",
-    "BUTTON_DESTRUCTIVE_ACTIVE_COLOR",
-    "BUTTON_DESTRUCTIVE_ACTIVE_BOX_SHADOW",
-    "BUTTON_DESTRUCTIVE_DISABLED_BACKGROUND_COLOR",
-    "BUTTON_DESTRUCTIVE_DISABLED_BACKGROUND_IMAGE",
-    "BUTTON_DESTRUCTIVE_DISABLED_COLOR",
-    "BUTTON_DESTRUCTIVE_DISABLED_BOX_SHADOW",
+    "BUTTON_TEXT_ALIGN",
     "FONT_FAMILY_BASE",
+    "LINK_ACTIVE_COLOR",
     "LINK_COLOR",
-    "LINK_TEXT_DECORATION",
     "LINK_HOVER_COLOR",
     "LINK_HOVER_TEXT_DECORATION",
-    "LINK_ACTIVE_COLOR",
+    "LINK_TEXT_DECORATION",
+    "LINK_WHITE_ACTIVE_COLOR",
     "LINK_WHITE_COLOR",
-    "LINK_WHITE_HOVER_COLOR",
-    "LINK_WHITE_ACTIVE_COLOR"
+    "LINK_WHITE_HOVER_COLOR"
   ]
 }
