@@ -23,8 +23,9 @@ import { Link } from 'react-router';
 
 import SectionsList from './SectionsList';
 import NavList from './NavList';
+import NavBurgerMenu from './NavBurgerMenu';
 import BackpackLogoWhite from '../../static/backpack-logo-white.svg';
-import STYLES from './SideNav.scss';
+import STYLES from './SideNavLayout.scss';
 import { type Links } from './common-types';
 
 const getClassName = cssModules(STYLES);
@@ -37,13 +38,15 @@ type Props = {
 
 type State = {
   menuExpanded: boolean,
+  burgerExpanded: boolean,
 };
 
-export default class SideNav extends Component<Props, State> {
+export default class SideNavLayout extends Component<Props, State> {
   constructor(props: Props) {
     super(props);
 
     this.state = {
+      burgerExpanded: false,
       menuExpanded: false,
     };
   }
@@ -54,9 +57,15 @@ export default class SideNav extends Component<Props, State> {
     }));
   };
 
+  onBurgerToggle = () => {
+    this.setState(prevState => ({
+      burgerExpanded: !prevState.burgerExpanded,
+    }));
+  };
+
   render() {
     const { activeSection, children, links } = this.props;
-    const { menuExpanded } = this.state;
+    const { menuExpanded, burgerExpanded } = this.state;
 
     return (
       <section className={getClassName('bpkdocs-side-nav-layout__wrapper')}>
@@ -82,6 +91,19 @@ export default class SideNav extends Component<Props, State> {
         </section>
         <section className={getClassName('bpkdocs-side-nav-layout__content')}>
           {children}
+        </section>
+
+        <section
+          className={getClassName('bpkdocs-side-nav-layout__mobile-nav')}
+        >
+          <NavBurgerMenu
+            links={links}
+            activeSection={activeSection}
+            menuExpanded={menuExpanded}
+            burgerExpanded={burgerExpanded}
+            onBurgerToggle={this.onBurgerToggle}
+            onMenuToggle={this.onMenuToggle}
+          />
         </section>
       </section>
     );

@@ -22,6 +22,7 @@ export type Link = {
   id: string,
   children: Node,
   route: ?string,
+  onSelect: ?() => mixed,
 };
 
 export type Category = {

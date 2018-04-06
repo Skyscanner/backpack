@@ -32,9 +32,18 @@ import {
 const getClassName = cssModules(STYLES);
 
 const NavLink = (props: LinkPropType) => {
+  const handleClick = () => {
+    console.log('Closing!');
+    console.log(props.onSelect);
+    if (props.onSelect) {
+      props.onSelect();
+    }
+  };
+
   if (props.route) {
     return (
       <Link
+        onClick={handleClick}
         className={getClassName('bpkdocs-side-nav-list__link')}
         activeClassName={getClassName('bpkdocs-side-nav-list__link--active')}
         to={props.route}
@@ -51,11 +60,20 @@ const NavLink = (props: LinkPropType) => {
   );
 };
 
-const NavListItem = (props: LinkPropType) => (
-  <li className={getClassName('bpkdocs-side-nav-list__category-list-item')}>
-    <NavLink {...props} />
-  </li>
-);
+const NavListItem = (props: LinkPropType) => {
+  const handleClick = () => {
+    console.log('Closing!');
+    console.log(props.onSelect);
+    if (props.onSelect) {
+      props.onSelect();
+    }
+  };
+  return (
+    <li className={getClassName('bpkdocs-side-nav-list__category-list-item')}>
+      <NavLink onClick={handleClick} {...props} />
+    </li>
+  );
+};
 
 const NavListCategory = (props: CategoryPropType) => (
   <li className={getClassName('bpkdocs-side-nav-list__list-item')}>
