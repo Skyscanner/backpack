@@ -50,7 +50,7 @@ export default class App extends Component {
       <div>
         <BpkInput
           id='dateInput'
-          type={INPUT_TYPES.TEXT}
+          type={INPUT_TYPES.text}
           name='date'
           value={(this.state.selectedDate || '').toString()}
           placeholder='Departure date'

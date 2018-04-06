@@ -76,7 +76,7 @@ class LoginFormExample extends Component<{}, State> {
             id="password"
             name="password"
             value={this.state.password}
-            type={INPUT_TYPES.PASSWORD}
+            type={INPUT_TYPES.password}
             onChange={this.onPasswordChange}
             placeholder="Enter your password"
           />

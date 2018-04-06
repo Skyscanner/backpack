@@ -15,6 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+/* @flow */
 
 import PropTypes from 'prop-types';
 import React from 'react';
@@ -28,7 +29,13 @@ const getClassName = cssModules(STYLES);
 
 const ClearButtonIcon = withButtonAlignment(ClearIcon);
 
-const BpkClearButton = props => {
+type Props = {
+  label: string,
+  onClick: (SyntheticEvent<HTMLButtonElement>) => mixed,
+  className: ?string,
+};
+
+const BpkClearButton = (props: Props) => {
   const classNames = [getClassName('bpk-clear-button')];
   const { label, onClick, className, ...rest } = props;
 

@@ -108,7 +108,7 @@ storiesOf('bpk-component-fieldset', module)
       <BpkInput
         id="name_input"
         name="name"
-        type={INPUT_TYPES.TEXT}
+        type={INPUT_TYPES.text}
         placeholder="e.g. Joe Bloggs"
         value=""
       />
@@ -124,7 +124,7 @@ storiesOf('bpk-component-fieldset', module)
       <BpkInput
         id="name_input"
         name="name"
-        type={INPUT_TYPES.TEXT}
+        type={INPUT_TYPES.text}
         placeholder="e.g. Joe Bloggs"
         value=""
       />
@@ -171,7 +171,7 @@ storiesOf('bpk-component-fieldset', module)
       <BpkInput
         id="required_name_input"
         name="name"
-        type={INPUT_TYPES.TEXT}
+        type={INPUT_TYPES.text}
         placeholder="e.g. Joe Bloggs"
         value=""
       />
@@ -219,7 +219,7 @@ storiesOf('bpk-component-fieldset', module)
       <BpkInput
         id="name_input"
         name="name"
-        type={INPUT_TYPES.TEXT}
+        type={INPUT_TYPES.text}
         placeholder="e.g. Joe Bloggs"
         value=""
       />

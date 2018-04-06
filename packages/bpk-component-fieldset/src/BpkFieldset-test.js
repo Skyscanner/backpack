@@ -33,7 +33,7 @@ describe('BpkFieldset', () => {
           <BpkInput
             id="name_input"
             name="name"
-            type={INPUT_TYPES.TEXT}
+            type={INPUT_TYPES.text}
             placeholder="e.g. Joe Bloggs"
             value=""
           />
@@ -54,7 +54,7 @@ describe('BpkFieldset', () => {
           <BpkInput
             id="name_input"
             name="name"
-            type={INPUT_TYPES.TEXT}
+            type={INPUT_TYPES.text}
             placeholder="e.g. Joe Bloggs"
             value=""
             valid
@@ -72,7 +72,7 @@ describe('BpkFieldset', () => {
           <BpkInput
             id="name_input"
             name="name"
-            type={INPUT_TYPES.TEXT}
+            type={INPUT_TYPES.text}
             placeholder="e.g. Joe Bloggs"
             value=""
             valid
@@ -90,7 +90,7 @@ describe('BpkFieldset', () => {
           <BpkInput
             id="name_input"
             name="name"
-            type={INPUT_TYPES.TEXT}
+            type={INPUT_TYPES.text}
             placeholder="e.g. Joe Bloggs"
             value=""
             valid={false}
@@ -108,7 +108,7 @@ describe('BpkFieldset', () => {
           <BpkInput
             id="name_input"
             name="name"
-            type={INPUT_TYPES.TEXT}
+            type={INPUT_TYPES.text}
             placeholder="e.g. Joe Bloggs"
             value=""
             disabled
@@ -130,7 +130,7 @@ describe('BpkFieldset', () => {
           <BpkInput
             id="name_input"
             name="name"
-            type={INPUT_TYPES.TEXT}
+            type={INPUT_TYPES.text}
             placeholder="e.g. Joe Bloggs"
             value=""
           />

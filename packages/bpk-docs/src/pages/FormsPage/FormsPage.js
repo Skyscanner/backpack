@@ -173,7 +173,7 @@ const components = [
         <BpkLabel htmlFor="input_email">Email input</BpkLabel>
         <InputContainer
           FormComponent={BpkInput}
-          type={INPUT_TYPES.EMAIL}
+          type={INPUT_TYPES.email}
           id="input_email"
           name="input_email"
           value="example@example.com"
@@ -185,7 +185,7 @@ const components = [
         <BpkLabel htmlFor="input_number">Number input</BpkLabel>
         <InputContainer
           FormComponent={BpkInput}
-          type={INPUT_TYPES.NUMBER}
+          type={INPUT_TYPES.number}
           id="input_number"
           name="input_number"
           value="0"
@@ -197,7 +197,7 @@ const components = [
         <BpkLabel htmlFor="input_password">Password input</BpkLabel>
         <InputContainer
           FormComponent={BpkInput}
-          type={INPUT_TYPES.PASSWORD}
+          type={INPUT_TYPES.password}
           id="input_password"
           name="input_password"
           value="letmein"
@@ -209,7 +209,7 @@ const components = [
         <BpkLabel htmlFor="input_telephone">Telephone input</BpkLabel>
         <InputContainer
           FormComponent={BpkInput}
-          type={INPUT_TYPES.TEL}
+          type={INPUT_TYPES.tel}
           id="input_telephone"
           name="input_telephone"
           value="+441234567890"

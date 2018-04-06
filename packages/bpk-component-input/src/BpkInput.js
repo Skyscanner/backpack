@@ -15,6 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+/* @flow */
 
 import PropTypes from 'prop-types';
 import React from 'react';
@@ -29,14 +30,32 @@ import STYLES from './bpk-input.scss';
 const getClassName = cssModules(STYLES);
 
 export const INPUT_TYPES = {
-  TEXT: 'text',
-  EMAIL: 'email',
-  NUMBER: 'number',
-  PASSWORD: 'password',
-  TEL: 'tel',
+  text: 'text',
+  email: 'email',
+  number: 'number',
+  password: 'password',
+  tel: 'tel',
 };
 
-const BpkInput = props => {
+export type Props = {
+  id: string,
+  name: string,
+  value: string,
+  type: $Keys<typeof INPUT_TYPES>,
+  className: ?string,
+  valid: ?boolean,
+  large: boolean,
+  docked: boolean,
+  dockedFirst: boolean,
+  dockedMiddle: boolean,
+  dockedLast: boolean,
+  inputRef: ?(?HTMLInputElement) => mixed,
+  clearButtonMode: $Keys<typeof CLEAR_BUTTON_MODES>,
+  clearButtonLabel: ?string,
+  onClear: ?(event: SyntheticEvent<HTMLButtonElement>) => mixed,
+};
+
+const BpkInput = (props: Props) => {
   const classNames = [getClassName('bpk-input')];
   const containerClassNames = [getClassName('bpk-input__container')];
   const clearButtonClassNames = [getClassName('bpk-input__clear-button')];
@@ -127,9 +146,11 @@ const BpkInput = props => {
       {value.length > 0 && (
         <BpkClearButton
           tabIndex="-1"
-          label={clearButtonLabel}
+          label={clearButtonLabel || ''}
           onClick={e => {
-            ref.focus();
+            if (ref) {
+              ref.focus();
+            }
             if (onClear) {
               onClear(e);
             }
@@ -148,11 +169,11 @@ BpkInput.propTypes = {
   name: PropTypes.string.isRequired,
   value: PropTypes.string.isRequired,
   type: PropTypes.oneOf([
-    INPUT_TYPES.TEXT,
-    INPUT_TYPES.EMAIL,
-    INPUT_TYPES.NUMBER,
-    INPUT_TYPES.PASSWORD,
-    INPUT_TYPES.TEL,
+    INPUT_TYPES.text,
+    INPUT_TYPES.email,
+    INPUT_TYPES.number,
+    INPUT_TYPES.password,
+    INPUT_TYPES.tel,
   ]),
   className: PropTypes.string,
   valid: PropTypes.bool,
@@ -168,7 +189,7 @@ BpkInput.propTypes = {
 };
 
 BpkInput.defaultProps = {
-  type: INPUT_TYPES.TEXT,
+  type: INPUT_TYPES.text,
   className: null,
   valid: null,
   large: false,

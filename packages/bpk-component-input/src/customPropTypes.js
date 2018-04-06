@@ -15,10 +15,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+/* @flow */
 
 import CLEAR_BUTTON_MODES from './clearButtonModes';
+import { type Props } from './BpkInput';
 
-const clearablePropType = (props, propName, componentName) => {
+const clearablePropType = (
+  props: Props,
+  propName: string,
+  componentName: string,
+): ?Error => {
   const createError = message =>
     new Error(
       `Invalid prop \`${propName}\` supplied to \`${componentName}\`. ${message}.`,
