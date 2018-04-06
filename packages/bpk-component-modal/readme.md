@@ -46,6 +46,7 @@ class App extends Component {
           <BpkButton onClick={this.onOpen}>Open modal</BpkButton>
         </div>
         <BpkModal
+          id="my-modal"
           isOpen={this.state.isOpen}
           onClose={this.onClose}
           title="Modal title"
