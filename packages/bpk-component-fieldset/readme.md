@@ -43,7 +43,7 @@ class FieldsetContainer extends Component {
         <BpkInput
           id="name_input"
           name="name"
-          type={INPUT_TYPES.TEXT}
+          type={INPUT_TYPES.text}
           placeholder="e.g. Joe Bloggs"
           value={this.state.value}
           valid={isValid}

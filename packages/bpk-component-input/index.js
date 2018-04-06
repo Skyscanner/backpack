@@ -15,11 +15,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+/* @flow */
 
 import BpkInput, { INPUT_TYPES as TYPES } from './src/BpkInput';
 import CLEAR_BUTTON_MODES from './src/clearButtonModes';
 import withOpenEvents from './src/withOpenEvents';
 
 export default BpkInput;
-export const INPUT_TYPES = TYPES;
+
+// TODO: Remove these in the next major
+const DEPRECATED_INPUT_TYPES = {
+  TEXT: 'text',
+  EMAIL: 'email',
+  NUMBER: 'number',
+  PASSWORD: 'password',
+  TEL: 'tel',
+};
+export const INPUT_TYPES = { ...DEPRECATED_INPUT_TYPES, ...TYPES };
 export { withOpenEvents, CLEAR_BUTTON_MODES };

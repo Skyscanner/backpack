@@ -17,7 +17,7 @@ import BpkInput, { INPUT_TYPES, CLEAR_BUTTON_MODES } from 'bpk-component-input';
 export default () => (
   <BpkInput
     id="origin"
-    type={INPUT_TYPES.TEXT}
+    type={INPUT_TYPES.text}
     name="origin"
     value="Edinburgh"
     onChange={() => console.log('input changed!')}
@@ -35,7 +35,7 @@ export default () => (
 | ---------------- | -------------------------- | ------------------- | ------------------------ |
 | id               | string                     | true                | -                        |
 | name             | string                     | true                | -                        |
-| type             | INPUT_TYPES (one of)       | false               | INPUT_TYPES.TEXT         |
+| type             | INPUT_TYPES (one of)       | false               | INPUT_TYPES.text         |
 | value            | string                     | true                | -                        |
 | clearButtonMode  | CLEAR_BUTTON_MODES (one of)| false               | CLEAR_BUTTON_MODES.never |
 | clearButtonLabel | string                     | if clearable={true} | null                     |

@@ -15,6 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+/* @flow */
 
 import React from 'react';
 import { mount } from 'enzyme';
@@ -134,7 +135,7 @@ describe('BpkInput', () => {
   it('should render correctly with type attribute', () => {
     const tree = renderer
       .create(
-        <BpkInput type={INPUT_TYPES.PASSWORD} id="test" name="test" value="" />,
+        <BpkInput type={INPUT_TYPES.password} id="test" name="test" value="" />,
       )
       .toJSON();
     expect(tree).toMatchSnapshot();

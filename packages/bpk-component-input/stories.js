@@ -15,6 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+/* @flow */
 
 import React from 'react';
 import { storiesOf } from '@storybook/react';
@@ -118,7 +119,7 @@ storiesOf('bpk-component-input', module)
   ))
   .add('Email', () => (
     <BpkInput
-      type={INPUT_TYPES.EMAIL}
+      type={INPUT_TYPES.email}
       id="email"
       name="email"
       value=""
@@ -128,7 +129,7 @@ storiesOf('bpk-component-input', module)
   ))
   .add('Number', () => (
     <BpkInput
-      type={INPUT_TYPES.NUMBER}
+      type={INPUT_TYPES.number}
       id="number"
       name="number"
       value="0"
@@ -138,7 +139,7 @@ storiesOf('bpk-component-input', module)
   ))
   .add('Password', () => (
     <BpkInput
-      type={INPUT_TYPES.PASSWORD}
+      type={INPUT_TYPES.password}
       id="password"
       name="password"
       value="letmein"
@@ -148,7 +149,7 @@ storiesOf('bpk-component-input', module)
   ))
   .add('Telephone', () => (
     <BpkInput
-      type={INPUT_TYPES.TEL}
+      type={INPUT_TYPES.tel}
       id="telephone"
       name="telephone"
       value="+441234567890"

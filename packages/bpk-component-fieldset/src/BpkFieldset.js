@@ -60,8 +60,13 @@ const BpkFieldset = (props: Props) => {
     return null;
   }
 
-  let childId = children.props.id;
-  if (children.props.inputProps && children.props.inputProps.id) {
+  let childId: string = children.props.id;
+  if (
+    // $FlowFixMe
+    children.props.inputProps &&
+    children.props.inputProps.id &&
+    typeof children.props.inputProps.id === 'string'
+  ) {
     childId = children.props.inputProps.id;
   }
 
