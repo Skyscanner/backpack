@@ -35,7 +35,7 @@ const NavLink = (props: LinkPropType) => {
   if (props.route) {
     return (
       <Link
-        className={[getClassName('bpkdocs-side-nav-list__link')].join(' ')}
+        className={getClassName('bpkdocs-side-nav-list__link')}
         activeClassName={getClassName('bpkdocs-side-nav-list__link--active')}
         to={props.route}
       >
