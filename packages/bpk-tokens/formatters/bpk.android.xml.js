@@ -59,8 +59,8 @@ export const tokenTemplate = ({ name, value, type, category }) =>
     type,
   )}</${tagName(type)}>`; // eslint-disable-line max-len
 
-export default tokens => {
-  const { props } = sortTokens(tokens);
+export default result => {
+  const { props } = sortTokens(result.toJS());
 
   const singleTokens = _.map(props, tokenTemplate).join('\n');
 

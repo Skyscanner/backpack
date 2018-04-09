@@ -294,72 +294,56 @@
       "category": "breakpoints",
       "value": "71.25rem",
       "type": "size",
-      ".alias": {
-        "value": "71.25rem"
-      },
+      "originalValue": "{!BREAKPOINT_DESKTOP}",
       "name": "BREAKPOINT_DESKTOP"
     },
     "BREAKPOINT_MOBILE": {
       "category": "breakpoints",
       "value": "32.25rem",
       "type": "size",
-      ".alias": {
-        "value": "32.25rem"
-      },
+      "originalValue": "{!BREAKPOINT_MOBILE}",
       "name": "BREAKPOINT_MOBILE"
     },
     "BREAKPOINT_QUERY_ABOVE_MOBILE": {
       "category": "breakpoints",
       "value": "(min-width: 32.3125rem)",
       "type": "media-query",
-      ".alias": {
-        "value": "32.3125rem"
-      },
+      "originalValue": "(min-width: {!BREAKPOINT_ABOVE_MOBILE})",
       "name": "BREAKPOINT_QUERY_ABOVE_MOBILE"
     },
     "BREAKPOINT_QUERY_ABOVE_TABLET": {
       "category": "breakpoints",
       "value": "(min-width: 50.3125rem)",
       "type": "media-query",
-      ".alias": {
-        "value": "50.3125rem"
-      },
+      "originalValue": "(min-width: {!BREAKPOINT_ABOVE_TABLET})",
       "name": "BREAKPOINT_QUERY_ABOVE_TABLET"
     },
     "BREAKPOINT_QUERY_MOBILE": {
       "category": "breakpoints",
       "value": "(max-width: 32.25rem)",
       "type": "media-query",
-      ".alias": {
-        "value": "32.25rem"
-      },
+      "originalValue": "(max-width: {!BREAKPOINT_MOBILE})",
       "name": "BREAKPOINT_QUERY_MOBILE"
     },
     "BREAKPOINT_QUERY_TABLET": {
       "category": "breakpoints",
       "value": "(max-width: 50.25rem)",
       "type": "media-query",
-      ".alias": {
-        "value": "50.25rem"
-      },
+      "originalValue": "(max-width: {!BREAKPOINT_TABLET})",
       "name": "BREAKPOINT_QUERY_TABLET"
     },
     "BREAKPOINT_QUERY_TABLET_ONLY": {
       "category": "breakpoints",
       "value": "(min-width: 32.3125rem) and (max-width: 50.25rem)",
       "type": "media-query",
-      ".alias": {
-        "value": "50.25rem"
-      },
+      "originalValue": "(min-width: {!BREAKPOINT_ABOVE_MOBILE}) and (max-width: {!BREAKPOINT_TABLET})",
       "name": "BREAKPOINT_QUERY_TABLET_ONLY"
     },
     "BREAKPOINT_TABLET": {
       "category": "breakpoints",
       "value": "50.25rem",
       "type": "size",
-      ".alias": {
-        "value": "50.25rem"
-      },
+      "originalValue": "{!BREAKPOINT_TABLET}",
       "name": "BREAKPOINT_TABLET"
     }
   },

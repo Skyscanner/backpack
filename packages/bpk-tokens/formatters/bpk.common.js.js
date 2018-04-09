@@ -24,8 +24,8 @@ import { blockComment } from './license-header';
 export const tokenTemplate = ({ name, value }) =>
   `${_.camelCase(name)}: "${value.replace(/"/g, '\\"')}"`;
 
-export default tokens => {
-  const { props } = sortTokens(tokens);
+export default result => {
+  const { props } = sortTokens(result.toJS());
 
   const source = `
 module.exports = {

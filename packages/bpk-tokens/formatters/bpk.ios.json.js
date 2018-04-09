@@ -20,13 +20,10 @@ import camelCase from 'lodash/camelCase';
 
 import sortTokens from './sort-tokens';
 
-export default json => {
-  const { props } = sortTokens(json);
+export default result => {
+  const { props } = sortTokens(result.toJS());
 
-  const properties = Object.keys(props).reduce((array, key) => {
-    array.push({ ...props[key], name: camelCase(key) });
-    return array;
-  }, []);
+  const properties = props.map(obj => ({ ...obj, name: camelCase(obj.name) }));
 
   return JSON.stringify({ properties }, null, 2);
 };

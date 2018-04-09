@@ -5,114 +5,133 @@
       "category": "buttons",
       "value": "rgb(0, 105, 130)",
       "type": "color",
+      "originalValue": "#006982",
       "name": "BUTTON_ACTIVE_BACKGROUND_COLOR"
     },
     "BUTTON_BACKGROUND_COLOR": {
       "category": "buttons",
       "value": "rgb(255, 255, 255)",
       "type": "color",
+      "originalValue": "#FFFFFF",
       "name": "BUTTON_BACKGROUND_COLOR"
     },
     "BUTTON_BACKGROUND_IMAGE": {
       "category": "buttons",
       "value": "none",
       "type": "background-image",
+      "originalValue": "none",
       "name": "BUTTON_BACKGROUND_IMAGE"
     },
     "BUTTON_BORDER_RADIUS": {
       "category": "buttons",
       "value": "none",
       "type": "size",
+      "originalValue": "none",
       "name": "BUTTON_BORDER_RADIUS"
     },
     "BUTTON_BOX_SHADOW": {
       "category": "buttons",
       "value": "inset 0px 0px 0px 1px #006982",
       "type": "size",
+      "originalValue": "inset 0px 0px 0px 1px #006982",
       "name": "BUTTON_BOX_SHADOW"
     },
     "BUTTON_COLOR": {
       "category": "buttons",
       "value": "rgb(0, 105, 130)",
       "type": "color",
+      "originalValue": "#006982",
       "name": "BUTTON_COLOR"
     },
     "BUTTON_DISABLED_BACKGROUND_COLOR": {
       "category": "buttons",
       "value": "rgb(255, 255, 255)",
       "type": "color",
+      "originalValue": "#FFFFFF",
       "name": "BUTTON_DISABLED_BACKGROUND_COLOR"
     },
     "BUTTON_DISABLED_BOX_SHADOW": {
       "category": "buttons",
       "value": "inset 0px 0px 0px 1px rgba(0, 105, 130, 0.33)",
       "type": "size",
+      "originalValue": "inset 0px 0px 0px 1px rgba(0, 105, 130, 0.33)",
       "name": "BUTTON_DISABLED_BOX_SHADOW"
     },
     "BUTTON_DISABLED_COLOR": {
       "category": "buttons",
       "value": "rgba(0, 105, 130, 0.33)",
       "type": "color",
+      "originalValue": "#00698255",
       "name": "BUTTON_DISABLED_COLOR"
     },
     "BUTTON_HOVER_BACKGROUND_COLOR": {
       "category": "buttons",
       "value": "rgb(0, 105, 130)",
       "type": "color",
+      "originalValue": "#006982",
       "name": "BUTTON_HOVER_BACKGROUND_COLOR"
     },
     "BUTTON_HOVER_BOX_SHADOW": {
       "category": "buttons",
       "value": "inset 0px 0px 0px 1px rgba(0, 105, 130, 0.33)",
       "type": "size",
+      "originalValue": "inset 0px 0px 0px 1px rgba(0, 105, 130, 0.33)",
       "name": "BUTTON_HOVER_BOX_SHADOW"
     },
     "BUTTON_HOVER_COLOR": {
       "category": "buttons",
       "value": "rgb(255, 255, 255)",
       "type": "color",
+      "originalValue": "#FFFFFF",
       "name": "BUTTON_HOVER_COLOR"
     },
     "BUTTON_PADDING_X": {
       "category": "buttons",
       "value": "20px",
       "type": "size",
+      "originalValue": "20px",
       "name": "BUTTON_PADDING_X"
     },
     "BUTTON_PADDING_Y": {
       "category": "buttons",
       "value": "18px",
       "type": "size",
+      "originalValue": "18px",
       "name": "BUTTON_PADDING_Y"
     },
     "BUTTON_SELECTED_BACKGROUND_COLOR": {
       "category": "buttons",
       "value": "rgb(0, 105, 130)",
       "type": "color",
+      "originalValue": "#006982",
       "name": "BUTTON_SELECTED_BACKGROUND_COLOR"
     },
     "BUTTON_SELECTED_BACKGROUND_IMAGE": {
       "category": "buttons",
       "value": "none",
       "type": "background-image",
+      "originalValue": "none",
       "name": "BUTTON_SELECTED_BACKGROUND_IMAGE"
     },
     "BUTTON_SELECTED_COLOR": {
       "category": "buttons",
       "value": "rgb(255, 255, 255)",
       "type": "color",
+      "originalValue": "#FFFFFF",
       "name": "BUTTON_SELECTED_COLOR"
     },
     "BUTTON_SELECTED_HOVER_BACKGROUND_COLOR": {
       "category": "buttons",
       "value": "rgb(0, 105, 130)",
       "type": "color",
+      "originalValue": "#006982",
       "name": "BUTTON_SELECTED_HOVER_BACKGROUND_COLOR"
     },
     "BUTTON_SELECTED_HOVER_COLOR": {
       "category": "buttons",
       "value": "rgb(255, 255, 255)",
       "type": "color",
+      "originalValue": "#FFFFFF",
       "name": "BUTTON_SELECTED_HOVER_COLOR"
     }
   },

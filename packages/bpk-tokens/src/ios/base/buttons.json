@@ -1,7 +1,6 @@
 {
   "imports": [
-    "./aliases.json",
-    "./borders.json"
+    "./aliases.json"
   ],
   "global": {
     "type": "size",

@@ -20,6 +20,7 @@ import del from 'del';
 import path from 'path';
 import gulp from 'gulp';
 import theo from 'theo';
+import gulpTheo from 'gulp-theo';
 import { flatten } from 'lodash';
 import gulpMerge from 'gulp-merge';
 import jsonLint from 'gulp-jsonlint';
@@ -77,8 +78,8 @@ theo.registerFormat('react.native.common.js', bpkReactNativeCommonJs);
 theo.registerFormat('common.js', bpkCommonJs);
 theo.registerFormat('android.xml', bpkAndroid);
 
-theo.registerTransform('ios', [['color/hex8rgba']]);
-theo.registerTransform('android', [['color/hex8rgba']]);
+theo.registerTransform('ios', ['color/hex8rgba']);
+theo.registerTransform('android', ['color/hex8rgba']);
 
 gulp.task('clean', () => del(['tokens']));
 
@@ -100,9 +101,12 @@ gulp.task('tokens', ['clean', 'lint'], done => {
 
     return gulp
       .src([`./src/${platform}/*.json`])
-      .pipe(theo.plugins.transform(platform))
-      .on('error', done)
-      .pipe(theo.plugins.format(format))
+      .pipe(
+        gulpTheo({
+          transform: { type: platform },
+          format: { type: format },
+        }),
+      )
       .on('error', done)
       .pipe(gulp.dest(path.resolve(__dirname, outputPath)))
       .on('error', done);
