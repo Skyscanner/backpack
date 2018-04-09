@@ -17,12 +17,69 @@
  */
 /* @flow */
 
-import React from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 
 import BpkText from 'bpk-component-text';
-import BpkInput, { INPUT_TYPES, CLEAR_BUTTON_MODES } from './index';
+import BpkInput, {
+  type BpkInputProps,
+  INPUT_TYPES,
+  CLEAR_BUTTON_MODES,
+} from './index';
+
+type Props = {
+  ...$Exact<$Diff<BpkInputProps, { value: string }>>,
+  initialValue: string,
+};
+
+type State = {
+  value: string,
+};
+
+const { value: valueProp, ...propTypes } = BpkInput.propTypes;
+
+class ClearableInput extends Component<Props, State> {
+  static propTypes = {
+    ...propTypes,
+    initialValue: PropTypes.string.isRequired,
+  };
+
+  static defaultProps = {
+    ...BpkInput.defaultProps,
+  };
+
+  constructor(props: Props) {
+    super(props);
+
+    this.state = {
+      value: props.initialValue,
+    };
+  }
+
+  onChange = e => {
+    this.setState({ value: e.target.value });
+  };
+
+  onClear = () => {
+    this.setState({ value: '' });
+  };
+
+  render() {
+    const { value } = this.state;
+    const { initialValue, ...rest } = this.props;
+
+    return (
+      <BpkInput
+        {...rest}
+        onChange={this.onChange}
+        onClear={this.onClear}
+        value={value}
+      />
+    );
+  }
+}
 
 storiesOf('bpk-component-input', module)
   .add('Text value', () => (
@@ -76,44 +133,38 @@ storiesOf('bpk-component-input', module)
   .add('Clearable', () => (
     <div>
       <BpkText tagName="p">clearButtonMode=whileEditing</BpkText>
-      <BpkInput
+      <ClearableInput
         id="clearable"
         name="clearable"
-        value="Edinburgh"
-        onChange={action('input changed')}
+        initialValue="Edinburgh"
         placeholder="Enter a country, city or airport"
         clearButtonMode={CLEAR_BUTTON_MODES.whileEditing}
         clearButtonLabel="Clear field"
-        onClear={action('input cleared')}
       />
 
       <BpkText tagName="p">clearButtonMode=always</BpkText>
-      <BpkInput
+      <ClearableInput
         id="clearable"
         name="clearable"
-        value="Edinburgh"
-        onChange={action('input changed')}
+        initialValue="Edinburgh"
         placeholder="Enter a country, city or airport"
         valid
         clearButtonMode={CLEAR_BUTTON_MODES.always}
         clearButtonLabel="Clear field"
-        onClear={action('input cleared')}
       />
 
       <BpkText tagName="p">
         clearButtonMode=whileEditing, large=true, valid=true
       </BpkText>
-      <BpkInput
+      <ClearableInput
         id="clearable"
         name="clearable"
-        value="Edinburgh"
-        onChange={action('input changed')}
+        initialValue="Edinburgh"
         placeholder="Enter a country, city or airport"
         large
         valid
         clearButtonMode={CLEAR_BUTTON_MODES.whileEditing}
         clearButtonLabel="Clear field"
-        onClear={action('input cleared')}
       />
     </div>
   ))

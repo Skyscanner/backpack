@@ -25,7 +25,7 @@ import BpkClearButton from './BpkClearButton';
 import CLEAR_BUTTON_MODES from './clearButtonModes';
 
 import clearablePropType from './customPropTypes';
-import STYLES from './bpk-input.scss';
+import STYLES from './BpkInput.scss';
 
 const getClassName = cssModules(STYLES);
 
