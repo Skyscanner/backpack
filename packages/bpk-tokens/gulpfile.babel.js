@@ -26,6 +26,7 @@ import jsonLint from 'gulp-jsonlint';
 
 import bpkScss from './formatters/bpk.scss';
 import bpkEs6Js from './formatters/bpk.es6.js';
+import bpkIosJson from './formatters/bpk.ios.json';
 import bpkRawJson from './formatters/bpk.raw.json';
 import bpkCommonJs from './formatters/bpk.common.js';
 import bpkAndroid from './formatters/bpk.android.xml';
@@ -66,6 +67,7 @@ theo.registerFormat('scss', bpkScss);
 theo.registerFormat('default.scss', bpkDefaultScss);
 theo.registerFormat('es6.js', bpkEs6Js);
 theo.registerFormat('raw.json', bpkRawJson);
+theo.registerFormat('ios.json', bpkIosJson);
 theo.registerFormat('raw.ios.json', bpkRawJson);
 theo.registerFormat('raw.android.json', bpkRawJson);
 theo.registerFormat('react.native.ios.js', bpkReactNativeEs6Js);
