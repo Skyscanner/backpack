@@ -1,6 +1,6 @@
 {
   "name": "react-native-bpk-theming",
-  "version": "1.0.46",
+  "version": "1.0.47",
   "main": "index.js",
   "description": "Backpack React Native theming utlities.",
   "repository": {
@@ -18,7 +18,7 @@
     "theming": "^1.1.0"
   },
   "devDependencies": {
-    "bpk-tokens": "^26.8.0",
-    "react-native-bpk-component-button": "^6.0.3"
+    "bpk-tokens": "^27.0.0",
+    "react-native-bpk-component-button": "^6.0.4"
   }
 }

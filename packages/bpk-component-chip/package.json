@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-chip",
-  "version": "2.0.10",
+  "version": "2.0.11",
   "description": "Backpack chip component.",
   "main": "index.js",
   "repository": {
@@ -13,8 +13,8 @@
     "react": "^15.0.0 || ^16.0.0"
   },
   "dependencies": {
-    "bpk-component-close-button": "^1.0.57",
-    "bpk-mixins": "^17.6.0",
+    "bpk-component-close-button": "^1.0.58",
+    "bpk-mixins": "^17.6.1",
     "bpk-react-utils": "^2.5.0",
     "prop-types": "^15.5.8"
   }
