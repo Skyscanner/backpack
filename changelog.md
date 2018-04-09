@@ -2,6 +2,18 @@
 
 [Unreleased changes](./unreleased.md).
 
+## 2018-04-09 - Token output now sorted alphabetically
+
+**Breaking:**
+- bpk-tokens: 26.8.0 => 27.0.0
+  - Major upgrade in underlying token library, including:
+    - Token output is now sorted alphabetically
+    - `".alias"` property has been replaced with an `"originalValue"` property in `*.ios.json`, `*.raw.ios.json` and `*.raw.android.json`.
+
+**Fixed:**
+- bpk-component-input: 3.3.11 => 3.3.12
+  - The uppercase keys in `INPUT_TYPES` are now deprecated use lowercase instead. e.g `INPUT_TYPES.EMAIL` -> `INPUT_TYPES.email`.
+
 ## 2018-04-04 - New flask icon
 
 **Added:**
