@@ -306,851 +306,730 @@
   },
   "props": {
     "ANIMATION_DURATION_BASE": {
-      "type": "duration",
+      "name": "ANIMATION_DURATION_BASE",
       "value": "400ms",
-      "category": "animations",
-      "originalValue": "{!ANIMATION_DURATION_BASE}",
-      "name": "ANIMATION_DURATION_BASE"
+      "type": "duration",
+      "category": "animations"
     },
     "ANIMATION_DURATION_SM": {
-      "type": "duration",
+      "name": "ANIMATION_DURATION_SM",
       "value": "200ms",
-      "category": "animations",
-      "originalValue": "{!ANIMATION_DURATION_SM}",
-      "name": "ANIMATION_DURATION_SM"
+      "type": "duration",
+      "category": "animations"
     },
     "ANIMATION_DURATION_XS": {
-      "type": "duration",
+      "name": "ANIMATION_DURATION_XS",
       "value": "50ms",
-      "category": "animations",
-      "originalValue": "{!ANIMATION_DURATION_XS}",
-      "name": "ANIMATION_DURATION_XS"
+      "type": "duration",
+      "category": "animations"
     },
     "BORDER_RADIUS_PILL": {
+      "name": "BORDER_RADIUS_PILL",
+      "value": "40dp",
       "type": "size",
-      "value": "40",
-      "category": "radii",
-      "originalValue": "{!BORDER_RADIUS_PILL}",
-      "name": "BORDER_RADIUS_PILL"
+      "category": "radii"
     },
     "BORDER_RADIUS_SM": {
+      "name": "BORDER_RADIUS_SM",
+      "value": "2dp",
       "type": "size",
-      "value": "2",
-      "category": "radii",
-      "originalValue": "{!BORDER_RADIUS_SM}",
-      "name": "BORDER_RADIUS_SM"
+      "category": "radii"
     },
     "BORDER_SIZE_LG": {
+      "name": "BORDER_SIZE_LG",
+      "value": "2dp",
       "type": "size",
-      "value": "2",
-      "category": "borders",
-      "originalValue": "{!BORDER_SIZE_LG}",
-      "name": "BORDER_SIZE_LG"
+      "category": "borders"
     },
     "BORDER_SIZE_SM": {
+      "name": "BORDER_SIZE_SM",
+      "value": "1dp",
       "type": "size",
-      "value": "1",
-      "category": "borders",
-      "originalValue": "{!BORDER_SIZE_SM}",
-      "name": "BORDER_SIZE_SM"
+      "category": "borders"
     },
     "BORDER_SIZE_XL": {
+      "name": "BORDER_SIZE_XL",
+      "value": "3dp",
       "type": "size",
-      "value": "3",
-      "category": "borders",
-      "originalValue": "{!BORDER_SIZE_XL}",
-      "name": "BORDER_SIZE_XL"
+      "category": "borders"
     },
     "BUTTON_BORDER_WIDTH": {
+      "name": "BUTTON_BORDER_WIDTH",
+      "value": "2dp",
       "type": "size",
-      "category": "spacings",
-      "value": "2",
-      "originalValue": "{!BORDER_SIZE_LG}",
-      "name": "BUTTON_BORDER_WIDTH"
+      "category": "spacings"
     },
     "BUTTON_HEIGHT": {
+      "name": "BUTTON_HEIGHT",
+      "value": "32 + 4dp",
       "type": "size",
-      "category": "spacings",
-      "value": "32 + 4",
-      "originalValue": "{!SPACING_XL} + {!SPACING_SM}",
-      "name": "BUTTON_HEIGHT"
+      "category": "spacings"
     },
     "BUTTON_LINE_HEIGHT_LARGE": {
+      "name": "BUTTON_LINE_HEIGHT_LARGE",
+      "value": "4 * 12dp",
       "type": "size",
-      "category": "spacings",
-      "value": "4 * 12",
-      "originalValue": "{!SPACING_SM} * 12",
-      "name": "BUTTON_LINE_HEIGHT_LARGE"
+      "category": "spacings"
     },
     "BUTTON_PADDING_HORIZONTAL": {
+      "name": "BUTTON_PADDING_HORIZONTAL",
+      "value": "4 * 3dp",
       "type": "size",
-      "category": "spacings",
-      "value": "4 * 3",
-      "originalValue": "{!SPACING_SM} * 3",
-      "name": "BUTTON_PADDING_HORIZONTAL"
+      "category": "spacings"
     },
     "BUTTON_PADDING_VERTICAL": {
+      "name": "BUTTON_PADDING_VERTICAL",
+      "value": "8dp",
       "type": "size",
-      "category": "spacings",
-      "value": "8",
-      "originalValue": "{!SPACING_MD}",
-      "name": "BUTTON_PADDING_VERTICAL"
+      "category": "spacings"
     },
     "COLOR_BLUE_100": {
+      "name": "COLOR_BLUE_100",
+      "value": "#ffcbeef5",
       "type": "color",
-      "category": "colors",
-      "value": "#cbeef5ff",
-      "originalValue": "{!BLUE_100}",
-      "name": "COLOR_BLUE_100"
+      "category": "colors"
     },
     "COLOR_BLUE_200": {
+      "name": "COLOR_BLUE_200",
+      "value": "#ffb0e4ee",
       "type": "color",
-      "category": "colors",
-      "value": "#b0e4eeff",
-      "originalValue": "{!BLUE_200}",
-      "name": "COLOR_BLUE_200"
+      "category": "colors"
     },
     "COLOR_BLUE_300": {
+      "name": "COLOR_BLUE_300",
+      "value": "#ff7fd7e8",
       "type": "color",
-      "category": "colors",
-      "value": "#7fd7e8ff",
-      "originalValue": "{!BLUE_300}",
-      "name": "COLOR_BLUE_300"
+      "category": "colors"
     },
     "COLOR_BLUE_400": {
+      "name": "COLOR_BLUE_400",
+      "value": "#ff40c4df",
       "type": "color",
-      "category": "colors",
-      "value": "#40c4dfff",
-      "originalValue": "{!BLUE_400}",
-      "name": "COLOR_BLUE_400"
+      "category": "colors"
     },
     "COLOR_BLUE_50": {
+      "name": "COLOR_BLUE_50",
+      "value": "#ffe1f4f8",
       "type": "color",
-      "category": "colors",
-      "value": "#e1f4f8ff",
-      "originalValue": "{!BLUE_50}",
-      "name": "COLOR_BLUE_50"
+      "category": "colors"
     },
     "COLOR_BLUE_500": {
+      "name": "COLOR_BLUE_500",
+      "value": "#ff00b2d6",
       "type": "color",
-      "category": "colors",
-      "value": "#00b2d6ff",
-      "originalValue": "{!BLUE_500}",
-      "name": "COLOR_BLUE_500"
+      "category": "colors"
     },
     "COLOR_BLUE_600": {
+      "name": "COLOR_BLUE_600",
+      "value": "#ff009dbd",
       "type": "color",
-      "category": "colors",
-      "value": "#009dbdff",
-      "originalValue": "{!BLUE_600}",
-      "name": "COLOR_BLUE_600"
+      "category": "colors"
     },
     "COLOR_BLUE_700": {
+      "name": "COLOR_BLUE_700",
+      "value": "#ff008ca8",
       "type": "color",
-      "category": "colors",
-      "value": "#008ca8ff",
-      "originalValue": "{!BLUE_700}",
-      "name": "COLOR_BLUE_700"
+      "category": "colors"
     },
     "COLOR_BLUE_800": {
+      "name": "COLOR_BLUE_800",
+      "value": "#ff00758c",
       "type": "color",
-      "category": "colors",
-      "value": "#00758cff",
-      "originalValue": "{!BLUE_800}",
-      "name": "COLOR_BLUE_800"
+      "category": "colors"
     },
     "COLOR_BLUE_900": {
+      "name": "COLOR_BLUE_900",
+      "value": "#ff005567",
       "type": "color",
-      "category": "colors",
-      "value": "#005567ff",
-      "originalValue": "{!BLUE_900}",
-      "name": "COLOR_BLUE_900"
+      "category": "colors"
     },
     "COLOR_GRAY_100": {
+      "name": "COLOR_GRAY_100",
+      "value": "#ffe6e4eb",
       "type": "color",
-      "category": "colors",
-      "value": "#e6e4ebff",
-      "originalValue": "{!GRAY_100}",
-      "name": "COLOR_GRAY_100"
+      "category": "colors"
     },
     "COLOR_GRAY_200": {
+      "name": "COLOR_GRAY_200",
+      "value": "#ffccc9d4",
       "type": "color",
-      "category": "colors",
-      "value": "#ccc9d4ff",
-      "originalValue": "{!GRAY_200}",
-      "name": "COLOR_GRAY_200"
+      "category": "colors"
     },
     "COLOR_GRAY_300": {
+      "name": "COLOR_GRAY_300",
+      "value": "#ffb2aebd",
       "type": "color",
-      "category": "colors",
-      "value": "#b2aebdff",
-      "originalValue": "{!GRAY_300}",
-      "name": "COLOR_GRAY_300"
+      "category": "colors"
     },
     "COLOR_GRAY_400": {
+      "name": "COLOR_GRAY_400",
+      "value": "#ff9a95a7",
       "type": "color",
-      "category": "colors",
-      "value": "#9a95a7ff",
-      "originalValue": "{!GRAY_400}",
-      "name": "COLOR_GRAY_400"
+      "category": "colors"
     },
     "COLOR_GRAY_50": {
+      "name": "COLOR_GRAY_50",
+      "value": "#fff3f2f5",
       "type": "color",
-      "category": "colors",
-      "value": "#f3f2f5ff",
-      "originalValue": "{!GRAY_50}",
-      "name": "COLOR_GRAY_50"
+      "category": "colors"
     },
     "COLOR_GRAY_500": {
+      "name": "COLOR_GRAY_500",
+      "value": "#ff817b8f",
       "type": "color",
-      "category": "colors",
-      "value": "#817b8fff",
-      "originalValue": "{!GRAY_500}",
-      "name": "COLOR_GRAY_500"
+      "category": "colors"
     },
     "COLOR_GRAY_600": {
+      "name": "COLOR_GRAY_600",
+      "value": "#ff696179",
       "type": "color",
-      "category": "colors",
-      "value": "#696179ff",
-      "originalValue": "{!GRAY_600}",
-      "name": "COLOR_GRAY_600"
+      "category": "colors"
     },
     "COLOR_GRAY_700": {
+      "name": "COLOR_GRAY_700",
+      "value": "#ff524c61",
       "type": "color",
-      "category": "colors",
-      "value": "#524c61ff",
-      "originalValue": "{!GRAY_700}",
-      "name": "COLOR_GRAY_700"
+      "category": "colors"
     },
     "COLOR_GRAY_800": {
+      "name": "COLOR_GRAY_800",
+      "value": "#ff3b344b",
       "type": "color",
-      "category": "colors",
-      "value": "#3b344bff",
-      "originalValue": "{!GRAY_800}",
-      "name": "COLOR_GRAY_800"
+      "category": "colors"
     },
     "COLOR_GRAY_900": {
+      "name": "COLOR_GRAY_900",
+      "value": "#ff252033",
       "type": "color",
-      "category": "colors",
-      "value": "#252033ff",
-      "originalValue": "{!GRAY_900}",
-      "name": "COLOR_GRAY_900"
+      "category": "colors"
     },
     "COLOR_GREEN_100": {
+      "name": "COLOR_GREEN_100",
+      "value": "#ffcbf5e2",
       "type": "color",
-      "category": "colors",
-      "value": "#cbf5e2ff",
-      "originalValue": "{!GREEN_100}",
-      "name": "COLOR_GREEN_100"
+      "category": "colors"
     },
     "COLOR_GREEN_200": {
+      "name": "COLOR_GREEN_200",
+      "value": "#ffafedd1",
       "type": "color",
-      "category": "colors",
-      "value": "#afedd1ff",
-      "originalValue": "{!GREEN_200}",
-      "name": "COLOR_GREEN_200"
+      "category": "colors"
     },
     "COLOR_GREEN_300": {
+      "name": "COLOR_GREEN_300",
+      "value": "#ff80e8b9",
       "type": "color",
-      "category": "colors",
-      "value": "#80e8b9ff",
-      "originalValue": "{!GREEN_300}",
-      "name": "COLOR_GREEN_300"
+      "category": "colors"
     },
     "COLOR_GREEN_400": {
+      "name": "COLOR_GREEN_400",
+      "value": "#ff40de97",
       "type": "color",
-      "category": "colors",
-      "value": "#40de97ff",
-      "originalValue": "{!GREEN_400}",
-      "name": "COLOR_GREEN_400"
+      "category": "colors"
     },
     "COLOR_GREEN_50": {
+      "name": "COLOR_GREEN_50",
+      "value": "#ffdff7ec",
       "type": "color",
-      "category": "colors",
-      "value": "#dff7ecff",
-      "originalValue": "{!GREEN_50}",
-      "name": "COLOR_GREEN_50"
+      "category": "colors"
     },
     "COLOR_GREEN_500": {
+      "name": "COLOR_GREEN_500",
+      "value": "#ff00d775",
       "type": "color",
-      "category": "colors",
-      "value": "#00d775ff",
-      "originalValue": "{!GREEN_500}",
-      "name": "COLOR_GREEN_500"
+      "category": "colors"
     },
     "COLOR_GREEN_600": {
+      "name": "COLOR_GREEN_600",
+      "value": "#ff00bd68",
       "type": "color",
-      "category": "colors",
-      "value": "#00bd68ff",
-      "originalValue": "{!GREEN_600}",
-      "name": "COLOR_GREEN_600"
+      "category": "colors"
     },
     "COLOR_GREEN_700": {
+      "name": "COLOR_GREEN_700",
+      "value": "#ff00a85d",
       "type": "color",
-      "category": "colors",
-      "value": "#00a85dff",
-      "originalValue": "{!GREEN_700}",
-      "name": "COLOR_GREEN_700"
+      "category": "colors"
     },
     "COLOR_GREEN_800": {
+      "name": "COLOR_GREEN_800",
+      "value": "#ff008c4d",
       "type": "color",
-      "category": "colors",
-      "value": "#008c4dff",
-      "originalValue": "{!GREEN_800}",
-      "name": "COLOR_GREEN_800"
+      "category": "colors"
     },
     "COLOR_GREEN_900": {
+      "name": "COLOR_GREEN_900",
+      "value": "#ff006638",
       "type": "color",
-      "category": "colors",
-      "value": "#006638ff",
-      "originalValue": "{!GREEN_900}",
-      "name": "COLOR_GREEN_900"
+      "category": "colors"
     },
     "COLOR_PINK_100": {
+      "name": "COLOR_PINK_100",
+      "value": "#ffffbfd7",
       "type": "color",
-      "category": "colors",
-      "value": "#ffbfd7ff",
-      "originalValue": "{!PINK_100}",
-      "name": "COLOR_PINK_100"
+      "category": "colors"
     },
     "COLOR_PINK_200": {
+      "name": "COLOR_PINK_200",
+      "value": "#ffff94bb",
       "type": "color",
-      "category": "colors",
-      "value": "#ff94bbff",
-      "originalValue": "{!PINK_200}",
-      "name": "COLOR_PINK_200"
+      "category": "colors"
     },
     "COLOR_PINK_300": {
+      "name": "COLOR_PINK_300",
+      "value": "#ffff73a6",
       "type": "color",
-      "category": "colors",
-      "value": "#ff73a6ff",
-      "originalValue": "{!PINK_300}",
-      "name": "COLOR_PINK_300"
+      "category": "colors"
     },
     "COLOR_PINK_400": {
+      "name": "COLOR_PINK_400",
+      "value": "#ffff619b",
       "type": "color",
-      "category": "colors",
-      "value": "#ff619bff",
-      "originalValue": "{!PINK_400}",
-      "name": "COLOR_PINK_400"
+      "category": "colors"
     },
     "COLOR_PINK_50": {
+      "name": "COLOR_PINK_50",
+      "value": "#fffde4ed",
       "type": "color",
-      "category": "colors",
-      "value": "#fde4edff",
-      "originalValue": "{!PINK_50}",
-      "name": "COLOR_PINK_50"
+      "category": "colors"
     },
     "COLOR_PINK_500": {
+      "name": "COLOR_PINK_500",
+      "value": "#fffa488a",
       "type": "color",
-      "category": "colors",
-      "value": "#fa488aff",
-      "originalValue": "{!PINK_500}",
-      "name": "COLOR_PINK_500"
+      "category": "colors"
     },
     "COLOR_PINK_600": {
+      "name": "COLOR_PINK_600",
+      "value": "#ffd92b6b",
       "type": "color",
-      "category": "colors",
-      "value": "#d92b6bff",
-      "originalValue": "{!PINK_600}",
-      "name": "COLOR_PINK_600"
+      "category": "colors"
     },
     "COLOR_PINK_700": {
+      "name": "COLOR_PINK_700",
+      "value": "#ffc50f52",
       "type": "color",
-      "category": "colors",
-      "value": "#c50f52ff",
-      "originalValue": "{!PINK_700}",
-      "name": "COLOR_PINK_700"
+      "category": "colors"
     },
     "COLOR_PINK_800": {
+      "name": "COLOR_PINK_800",
+      "value": "#ffb00c48",
       "type": "color",
-      "category": "colors",
-      "value": "#b00c48ff",
-      "originalValue": "{!PINK_800}",
-      "name": "COLOR_PINK_800"
+      "category": "colors"
     },
     "COLOR_PINK_900": {
+      "name": "COLOR_PINK_900",
+      "value": "#ff94053a",
       "type": "color",
-      "category": "colors",
-      "value": "#94053aff",
-      "originalValue": "{!PINK_900}",
-      "name": "COLOR_PINK_900"
+      "category": "colors"
     },
     "COLOR_RED_100": {
+      "name": "COLOR_RED_100",
+      "value": "#ffffd6d5",
       "type": "color",
-      "category": "colors",
-      "value": "#ffd6d5ff",
-      "originalValue": "{!RED_100}",
-      "name": "COLOR_RED_100"
+      "category": "colors"
     },
     "COLOR_RED_200": {
+      "name": "COLOR_RED_200",
+      "value": "#ffffbbba",
       "type": "color",
-      "category": "colors",
-      "value": "#ffbbbaff",
-      "originalValue": "{!RED_200}",
-      "name": "COLOR_RED_200"
+      "category": "colors"
     },
     "COLOR_RED_300": {
+      "name": "COLOR_RED_300",
+      "value": "#ffff9694",
       "type": "color",
-      "category": "colors",
-      "value": "#ff9694ff",
-      "originalValue": "{!RED_300}",
-      "name": "COLOR_RED_300"
+      "category": "colors"
     },
     "COLOR_RED_400": {
+      "name": "COLOR_RED_400",
+      "value": "#fffe7471",
       "type": "color",
-      "category": "colors",
-      "value": "#fe7471ff",
-      "originalValue": "{!RED_400}",
-      "name": "COLOR_RED_400"
+      "category": "colors"
     },
     "COLOR_RED_50": {
+      "name": "COLOR_RED_50",
+      "value": "#fffcf2f2",
       "type": "color",
-      "category": "colors",
-      "value": "#fcf2f2ff",
-      "originalValue": "{!RED_50}",
-      "name": "COLOR_RED_50"
+      "category": "colors"
     },
     "COLOR_RED_500": {
+      "name": "COLOR_RED_500",
+      "value": "#ffff5452",
       "type": "color",
-      "category": "colors",
-      "value": "#ff5452ff",
-      "originalValue": "{!RED_500}",
-      "name": "COLOR_RED_500"
+      "category": "colors"
     },
     "COLOR_RED_600": {
+      "name": "COLOR_RED_600",
+      "value": "#ffeb423f",
       "type": "color",
-      "category": "colors",
-      "value": "#eb423fff",
-      "originalValue": "{!RED_600}",
-      "name": "COLOR_RED_600"
+      "category": "colors"
     },
     "COLOR_RED_700": {
+      "name": "COLOR_RED_700",
+      "value": "#ffde322f",
       "type": "color",
-      "category": "colors",
-      "value": "#de322fff",
-      "originalValue": "{!RED_700}",
-      "name": "COLOR_RED_700"
+      "category": "colors"
     },
     "COLOR_RED_800": {
+      "name": "COLOR_RED_800",
+      "value": "#ffcc1f1d",
       "type": "color",
-      "category": "colors",
-      "value": "#cc1f1dff",
-      "originalValue": "{!RED_800}",
-      "name": "COLOR_RED_800"
+      "category": "colors"
     },
     "COLOR_RED_900": {
+      "name": "COLOR_RED_900",
+      "value": "#ffa80300",
       "type": "color",
-      "category": "colors",
-      "value": "#a80300ff",
-      "originalValue": "{!RED_900}",
-      "name": "COLOR_RED_900"
+      "category": "colors"
     },
     "COLOR_WHITE": {
-      "type": "color",
-      "category": "colors",
+      "name": "COLOR_WHITE",
       "value": "#ffffffff",
-      "originalValue": "{!WHITE}",
-      "name": "COLOR_WHITE"
+      "type": "color",
+      "category": "colors"
     },
     "COLOR_YELLOW_100": {
+      "name": "COLOR_YELLOW_100",
+      "value": "#fffff3cf",
       "type": "color",
-      "category": "colors",
-      "value": "#fff3cfff",
-      "originalValue": "{!YELLOW_100}",
-      "name": "COLOR_YELLOW_100"
+      "category": "colors"
     },
     "COLOR_YELLOW_200": {
+      "name": "COLOR_YELLOW_200",
+      "value": "#ffffecb8",
       "type": "color",
-      "category": "colors",
-      "value": "#ffecb8ff",
-      "originalValue": "{!YELLOW_200}",
-      "name": "COLOR_YELLOW_200"
+      "category": "colors"
     },
     "COLOR_YELLOW_300": {
+      "name": "COLOR_YELLOW_300",
+      "value": "#ffffe18c",
       "type": "color",
-      "category": "colors",
-      "value": "#ffe18cff",
-      "originalValue": "{!YELLOW_300}",
-      "name": "COLOR_YELLOW_300"
+      "category": "colors"
     },
     "COLOR_YELLOW_400": {
+      "name": "COLOR_YELLOW_400",
+      "value": "#ffffcf4a",
       "type": "color",
-      "category": "colors",
-      "value": "#ffcf4aff",
-      "originalValue": "{!YELLOW_400}",
-      "name": "COLOR_YELLOW_400"
+      "category": "colors"
     },
     "COLOR_YELLOW_50": {
+      "name": "COLOR_YELLOW_50",
+      "value": "#fffff9e6",
       "type": "color",
-      "category": "colors",
-      "value": "#fff9e6ff",
-      "originalValue": "{!YELLOW_50}",
-      "name": "COLOR_YELLOW_50"
+      "category": "colors"
     },
     "COLOR_YELLOW_500": {
+      "name": "COLOR_YELLOW_500",
+      "value": "#ffffbb00",
       "type": "color",
-      "category": "colors",
-      "value": "#ffbb00ff",
-      "originalValue": "{!YELLOW_500}",
-      "name": "COLOR_YELLOW_500"
+      "category": "colors"
     },
     "COLOR_YELLOW_600": {
+      "name": "COLOR_YELLOW_600",
+      "value": "#fff0b000",
       "type": "color",
-      "category": "colors",
-      "value": "#f0b000ff",
-      "originalValue": "{!YELLOW_600}",
-      "name": "COLOR_YELLOW_600"
+      "category": "colors"
     },
     "COLOR_YELLOW_700": {
+      "name": "COLOR_YELLOW_700",
+      "value": "#ffe1a500",
       "type": "color",
-      "category": "colors",
-      "value": "#e1a500ff",
-      "originalValue": "{!YELLOW_700}",
-      "name": "COLOR_YELLOW_700"
+      "category": "colors"
     },
     "COLOR_YELLOW_800": {
+      "name": "COLOR_YELLOW_800",
+      "value": "#ffc28e00",
       "type": "color",
-      "category": "colors",
-      "value": "#c28e00ff",
-      "originalValue": "{!YELLOW_800}",
-      "name": "COLOR_YELLOW_800"
+      "category": "colors"
     },
     "COLOR_YELLOW_900": {
+      "name": "COLOR_YELLOW_900",
+      "value": "#ff9c7200",
       "type": "color",
-      "category": "colors",
-      "value": "#9c7200ff",
-      "originalValue": "{!YELLOW_900}",
-      "name": "COLOR_YELLOW_900"
+      "category": "colors"
     },
     "ELEVATION_BASE": {
+      "name": "ELEVATION_BASE",
+      "value": "6dp",
       "type": "size",
-      "category": "elevation",
-      "value": "6",
-      "originalValue": "{!ELEVATION_BASE}",
-      "name": "ELEVATION_BASE"
+      "category": "elevation"
     },
     "ELEVATION_LG": {
+      "name": "ELEVATION_LG",
+      "value": "16dp",
       "type": "size",
-      "category": "elevation",
-      "value": "16",
-      "originalValue": "{!ELEVATION_LG}",
-      "name": "ELEVATION_LG"
+      "category": "elevation"
     },
     "ELEVATION_SM": {
+      "name": "ELEVATION_SM",
+      "value": "4dp",
       "type": "size",
-      "category": "elevation",
-      "value": "4",
-      "originalValue": "{!ELEVATION_SM}",
-      "name": "ELEVATION_SM"
+      "category": "elevation"
     },
     "ELEVATION_XL": {
+      "name": "ELEVATION_XL",
+      "value": "24dp",
       "type": "size",
-      "category": "elevation",
-      "value": "24",
-      "originalValue": "{!ELEVATION_XL}",
-      "name": "ELEVATION_XL"
+      "category": "elevation"
     },
     "ELEVATION_XS": {
+      "name": "ELEVATION_XS",
+      "value": "2dp",
       "type": "size",
-      "category": "elevation",
-      "value": "2",
-      "originalValue": "{!ELEVATION_XS}",
-      "name": "ELEVATION_XS"
+      "category": "elevation"
     },
     "FONT_FAMILY": {
+      "name": "FONT_FAMILY",
       "value": "\"sans-serif\"",
       "type": "font",
-      "category": "typesettings",
-      "originalValue": "{!FONT_FAMILY}",
-      "name": "FONT_FAMILY"
+      "category": "typesettings"
     },
     "FONT_FAMILY_EMPHASIZE": {
+      "name": "FONT_FAMILY_EMPHASIZE",
       "value": "\"sans-serif-medium\"",
       "type": "font",
-      "category": "typesettings",
-      "originalValue": "{!FONT_FAMILY_EMPHASIZE}",
-      "name": "FONT_FAMILY_EMPHASIZE"
+      "category": "typesettings"
     },
     "FONT_SIZE_BASE": {
-      "value": "16",
+      "name": "FONT_SIZE_BASE",
+      "value": "16sp",
       "type": "font-size",
-      "category": "typesettings",
-      "originalValue": "{!FONT_SIZE_BASE}",
-      "name": "FONT_SIZE_BASE"
+      "category": "typesettings"
     },
     "FONT_SIZE_LG": {
-      "value": "20",
+      "name": "FONT_SIZE_LG",
+      "value": "20sp",
       "type": "font-size",
-      "category": "typesettings",
-      "originalValue": "{!FONT_SIZE_LG}",
-      "name": "FONT_SIZE_LG"
+      "category": "typesettings"
     },
     "FONT_SIZE_SM": {
-      "value": "14",
+      "name": "FONT_SIZE_SM",
+      "value": "14sp",
       "type": "font-size",
-      "category": "typesettings",
-      "originalValue": "{!FONT_SIZE_SM}",
-      "name": "FONT_SIZE_SM"
+      "category": "typesettings"
     },
     "FONT_SIZE_XL": {
-      "value": "24",
+      "name": "FONT_SIZE_XL",
+      "value": "24sp",
       "type": "font-size",
-      "category": "typesettings",
-      "originalValue": "{!FONT_SIZE_XL}",
-      "name": "FONT_SIZE_XL"
+      "category": "typesettings"
     },
     "FONT_SIZE_XS": {
-      "value": "12",
+      "name": "FONT_SIZE_XS",
+      "value": "12sp",
       "type": "font-size",
-      "category": "typesettings",
-      "originalValue": "{!FONT_SIZE_XS}",
-      "name": "FONT_SIZE_XS"
+      "category": "typesettings"
     },
     "FONT_SIZE_XXL": {
-      "value": "34",
+      "name": "FONT_SIZE_XXL",
+      "value": "34sp",
       "type": "font-size",
-      "category": "typesettings",
-      "originalValue": "{!FONT_SIZE_XXL}",
-      "name": "FONT_SIZE_XXL"
+      "category": "typesettings"
     },
     "LINE_HEIGHT_BASE": {
-      "value": "24",
+      "name": "LINE_HEIGHT_BASE",
+      "value": "24dp",
       "type": "size",
-      "category": "typesettings",
-      "originalValue": "{!LINE_HEIGHT_BASE}",
-      "name": "LINE_HEIGHT_BASE"
+      "category": "typesettings"
     },
     "LINE_HEIGHT_LG": {
-      "value": "28",
+      "name": "LINE_HEIGHT_LG",
+      "value": "28dp",
       "type": "size",
-      "category": "typesettings",
-      "originalValue": "{!LINE_HEIGHT_LG}",
-      "name": "LINE_HEIGHT_LG"
+      "category": "typesettings"
     },
     "LINE_HEIGHT_SM": {
-      "value": "20",
+      "name": "LINE_HEIGHT_SM",
+      "value": "20dp",
       "type": "size",
-      "category": "typesettings",
-      "originalValue": "{!LINE_HEIGHT_SM}",
-      "name": "LINE_HEIGHT_SM"
+      "category": "typesettings"
     },
     "LINE_HEIGHT_XL": {
-      "value": "32",
+      "name": "LINE_HEIGHT_XL",
+      "value": "32dp",
       "type": "size",
-      "category": "typesettings",
-      "originalValue": "{!LINE_HEIGHT_XL}",
-      "name": "LINE_HEIGHT_XL"
+      "category": "typesettings"
     },
     "LINE_HEIGHT_XS": {
-      "value": "18",
+      "name": "LINE_HEIGHT_XS",
+      "value": "18dp",
       "type": "size",
-      "category": "typesettings",
-      "originalValue": "{!LINE_HEIGHT_XS}",
-      "name": "LINE_HEIGHT_XS"
+      "category": "typesettings"
     },
     "LINE_HEIGHT_XXL": {
-      "value": "40",
+      "name": "LINE_HEIGHT_XXL",
+      "value": "40dp",
       "type": "size",
-      "category": "typesettings",
-      "originalValue": "{!LINE_HEIGHT_XXL}",
-      "name": "LINE_HEIGHT_XXL"
+      "category": "typesettings"
     },
     "PAGINATION_DOT_SIZE_BASE": {
+      "name": "PAGINATION_DOT_SIZE_BASE",
+      "value": "6dp",
       "type": "size",
-      "category": "pagination-dots",
-      "value": "6",
-      "originalValue": "{!PAGINATION_DOT_SIZE_BASE}",
-      "name": "PAGINATION_DOT_SIZE_BASE"
+      "category": "pagination-dots"
     },
     "PAGINATION_DOT_SIZE_MD": {
+      "name": "PAGINATION_DOT_SIZE_MD",
+      "value": "3dp",
       "type": "size",
-      "category": "pagination-dots",
-      "value": "3",
-      "originalValue": "{!PAGINATION_DOT_SIZE_MD}",
-      "name": "PAGINATION_DOT_SIZE_MD"
+      "category": "pagination-dots"
     },
     "PAGINATION_DOT_SIZE_SM": {
+      "name": "PAGINATION_DOT_SIZE_SM",
+      "value": "2dp",
       "type": "size",
-      "category": "pagination-dots",
-      "value": "2",
-      "originalValue": "{!PAGINATION_DOT_SIZE_SM}",
-      "name": "PAGINATION_DOT_SIZE_SM"
+      "category": "pagination-dots"
     },
     "SPACING_BASE": {
+      "name": "SPACING_BASE",
+      "value": "16dp",
       "type": "size",
-      "category": "spacings",
-      "value": "16",
-      "originalValue": "{!SPACING_BASE}",
-      "name": "SPACING_BASE"
+      "category": "spacings"
     },
     "SPACING_LG": {
+      "name": "SPACING_LG",
+      "value": "24dp",
       "type": "size",
-      "category": "spacings",
-      "value": "24",
-      "originalValue": "{!SPACING_LG}",
-      "name": "SPACING_LG"
+      "category": "spacings"
     },
     "SPACING_MD": {
+      "name": "SPACING_MD",
+      "value": "8dp",
       "type": "size",
-      "category": "spacings",
-      "value": "8",
-      "originalValue": "{!SPACING_MD}",
-      "name": "SPACING_MD"
+      "category": "spacings"
     },
     "SPACING_SM": {
+      "name": "SPACING_SM",
+      "value": "4dp",
       "type": "size",
-      "category": "spacings",
-      "value": "4",
-      "originalValue": "{!SPACING_SM}",
-      "name": "SPACING_SM"
+      "category": "spacings"
     },
     "SPACING_XL": {
+      "name": "SPACING_XL",
+      "value": "32dp",
       "type": "size",
-      "category": "spacings",
-      "value": "32",
-      "originalValue": "{!SPACING_XL}",
-      "name": "SPACING_XL"
+      "category": "spacings"
     },
     "SPACING_XXL": {
+      "name": "SPACING_XXL",
+      "value": "40dp",
       "type": "size",
-      "category": "spacings",
-      "value": "40",
-      "originalValue": "{!SPACING_XXL}",
-      "name": "SPACING_XXL"
+      "category": "spacings"
     },
     "TEXT_BASE_FONT_SIZE": {
-      "value": "16",
+      "name": "TEXT_BASE_FONT_SIZE",
+      "value": "16sp",
       "type": "font-size",
-      "category": "font-sizes",
-      "originalValue": "{!FONT_SIZE_BASE}",
-      "name": "TEXT_BASE_FONT_SIZE"
+      "category": "font-sizes"
     },
     "TEXT_BASE_FONT_WEIGHT": {
+      "name": "TEXT_BASE_FONT_WEIGHT",
       "value": "400",
       "type": "string",
-      "category": "font-weights",
-      "originalValue": "{!FONT_WEIGHT_REGULAR}",
-      "name": "TEXT_BASE_FONT_WEIGHT"
+      "category": "font-weights"
     },
     "TEXT_BASE_LINE_HEIGHT": {
-      "value": "24",
-      "type": "size",
-      "category": "line-heights",
       "name": "TEXT_BASE_LINE_HEIGHT",
-      "originalValue": "{!LINE_HEIGHT_BASE}"
+      "value": "24dp",
+      "type": "size",
+      "category": "line-heights"
     },
     "TEXT_EMPHASIZED_FONT_WEIGHT": {
+      "name": "TEXT_EMPHASIZED_FONT_WEIGHT",
       "value": "500",
       "type": "string",
-      "category": "font-weights",
-      "originalValue": "{!FONT_WEIGHT_MEDIUM}",
-      "name": "TEXT_EMPHASIZED_FONT_WEIGHT"
+      "category": "font-weights"
     },
     "TEXT_LG_FONT_SIZE": {
-      "value": "20",
+      "name": "TEXT_LG_FONT_SIZE",
+      "value": "20sp",
       "type": "font-size",
-      "category": "font-sizes",
-      "originalValue": "{!FONT_SIZE_LG}",
-      "name": "TEXT_LG_FONT_SIZE"
+      "category": "font-sizes"
     },
     "TEXT_LG_FONT_WEIGHT": {
+      "name": "TEXT_LG_FONT_WEIGHT",
       "value": "400",
       "type": "string",
-      "category": "font-weights",
-      "originalValue": "{!FONT_WEIGHT_REGULAR}",
-      "name": "TEXT_LG_FONT_WEIGHT"
+      "category": "font-weights"
     },
     "TEXT_LG_LINE_HEIGHT": {
-      "value": "28",
-      "type": "size",
-      "category": "line-heights",
       "name": "TEXT_LG_LINE_HEIGHT",
-      "originalValue": "{!LINE_HEIGHT_LG}"
+      "value": "28dp",
+      "type": "size",
+      "category": "line-heights"
     },
     "TEXT_SM_FONT_SIZE": {
-      "value": "14",
+      "name": "TEXT_SM_FONT_SIZE",
+      "value": "14sp",
       "type": "font-size",
-      "category": "font-sizes",
-      "originalValue": "{!FONT_SIZE_SM}",
-      "name": "TEXT_SM_FONT_SIZE"
+      "category": "font-sizes"
     },
     "TEXT_SM_FONT_WEIGHT": {
+      "name": "TEXT_SM_FONT_WEIGHT",
       "value": "400",
       "type": "string",
-      "category": "font-weights",
-      "originalValue": "{!FONT_WEIGHT_REGULAR}",
-      "name": "TEXT_SM_FONT_WEIGHT"
+      "category": "font-weights"
     },
     "TEXT_SM_LINE_HEIGHT": {
-      "value": "20",
-      "type": "size",
-      "category": "line-heights",
       "name": "TEXT_SM_LINE_HEIGHT",
-      "originalValue": "{!LINE_HEIGHT_SM}"
+      "value": "20dp",
+      "type": "size",
+      "category": "line-heights"
     },
     "TEXT_XL_FONT_SIZE": {
-      "value": "24",
+      "name": "TEXT_XL_FONT_SIZE",
+      "value": "24sp",
       "type": "font-size",
-      "category": "font-sizes",
-      "originalValue": "{!FONT_SIZE_XL}",
-      "name": "TEXT_XL_FONT_SIZE"
+      "category": "font-sizes"
     },
     "TEXT_XL_FONT_WEIGHT": {
+      "name": "TEXT_XL_FONT_WEIGHT",
       "value": "400",
       "type": "string",
-      "category": "font-weights",
-      "originalValue": "{!FONT_WEIGHT_REGULAR}",
-      "name": "TEXT_XL_FONT_WEIGHT"
+      "category": "font-weights"
     },
     "TEXT_XL_LINE_HEIGHT": {
-      "value": "32",
-      "type": "size",
-      "category": "line-heights",
       "name": "TEXT_XL_LINE_HEIGHT",
-      "originalValue": "{!LINE_HEIGHT_XL}"
+      "value": "32dp",
+      "type": "size",
+      "category": "line-heights"
     },
     "TEXT_XS_FONT_SIZE": {
-      "value": "12",
+      "name": "TEXT_XS_FONT_SIZE",
+      "value": "12sp",
       "type": "font-size",
-      "category": "font-sizes",
-      "originalValue": "{!FONT_SIZE_XS}",
-      "name": "TEXT_XS_FONT_SIZE"
+      "category": "font-sizes"
     },
     "TEXT_XS_FONT_WEIGHT": {
+      "name": "TEXT_XS_FONT_WEIGHT",
       "value": "400",
       "type": "string",
-      "category": "font-weights",
-      "originalValue": "{!FONT_WEIGHT_REGULAR}",
-      "name": "TEXT_XS_FONT_WEIGHT"
+      "category": "font-weights"
     },
     "TEXT_XS_LINE_HEIGHT": {
-      "value": "18",
-      "type": "size",
-      "category": "line-heights",
       "name": "TEXT_XS_LINE_HEIGHT",
-      "originalValue": "{!LINE_HEIGHT_XS}"
+      "value": "18dp",
+      "type": "size",
+      "category": "line-heights"
     },
     "TEXT_XXL_FONT_SIZE": {
-      "value": "34",
+      "name": "TEXT_XXL_FONT_SIZE",
+      "value": "34sp",
       "type": "font-size",
-      "category": "font-sizes",
-      "originalValue": "{!FONT_SIZE_XXL}",
-      "name": "TEXT_XXL_FONT_SIZE"
+      "category": "font-sizes"
     },
     "TEXT_XXL_FONT_WEIGHT": {
+      "name": "TEXT_XXL_FONT_WEIGHT",
       "value": "400",
       "type": "string",
-      "category": "font-weights",
-      "originalValue": "{!FONT_WEIGHT_REGULAR}",
-      "name": "TEXT_XXL_FONT_WEIGHT"
+      "category": "font-weights"
     },
     "TEXT_XXL_LINE_HEIGHT": {
-      "value": "40",
-      "type": "size",
-      "category": "line-heights",
       "name": "TEXT_XXL_LINE_HEIGHT",
-      "originalValue": "{!LINE_HEIGHT_XXL}"
+      "value": "40dp",
+      "type": "size",
+      "category": "line-heights"
     }
   },
   "propKeys": [
