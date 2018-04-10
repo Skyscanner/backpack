@@ -1,0 +1,55 @@
+# upcoming:
+#   changes:
+#     minor: We are doing new things here
+
+releases:
+  - version: 2.3.0
+    date: 2017-11-27
+    changes:
+      minor:
+        - Added theming support.
+
+  - version: 2.2.0
+    date: 2017-11-23
+    changes:
+      minor:
+        - New `type` prop. Options are `primary`, `light` or `dark`.
+
+  - version: 2.1.20
+    date: 2017-09-12
+    changes:
+      patch:
+        - Prepared for React 16 by supporting it as a peer dependency.
+
+  - version: 2.1.0
+    date: 2017-06-20
+    changes:
+      minor:
+        - Added suppport for CSS Modules.
+
+  - version: 2.0.0
+    date: 2017-05-03
+    changes:
+      major:
+        - Removed `bpk-tokens` dependency which dramatically reduces component bloat.
+        - Removed explicit `fill` attribute, this is now applied via CSS class.
+        - Arbitrary props are now passed through to the svg.
+
+  - version: 1.0.43
+    date: 2017-03-13
+    changes:
+      patch:
+        - Fixed icon alignment on large buttons.
+
+  - version: 1.0.28
+    date: 2017-01-23
+    changes:
+      patch:
+        - React components will now scale with user font size preference.
+
+  - version: 1.0.0
+    date: 2016-09-20
+    changes:
+      major:
+        - We now expose three components `BpkSpinner`, `BpkLargeSpinner`, `BpkExtraLargeSpinner`.
+        - No need for raw-loader-anymore.
