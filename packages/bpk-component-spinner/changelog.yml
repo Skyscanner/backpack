@@ -1,6 +1,6 @@
-upcoming:
-  changes:
-    minor: We are doing new things here
+# upcoming:
+#   changes:
+#     minor: We are doing new things here
 
 releases:
   - version: 2.3.0

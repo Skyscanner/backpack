@@ -23,7 +23,12 @@ const path = require('path');
 const process = require('process');
 
 const template = require('./package-changelog-template.js');
-const { allChangelogPaths, readChangelog } = require('./util');
+const {
+  allChangelogPaths,
+  determinePackageJsonPath,
+  readPackageJson,
+  readChangelog,
+} = require('./util');
 
 const writeFileAsync = promisify(fs.writeFile);
 
@@ -34,8 +39,8 @@ const determineOutputPath = changelogPath => {
   return path.join(path.dirname(changelogPath), markdownBasename);
 };
 
-const generateHumanReadableChangelog = parsedChangelog =>
-  template(parsedChangelog, 'bpk-component-spinner');
+const generateHumanReadableChangelog = (parsedChangelog, packageName) =>
+  template(parsedChangelog, packageName);
 
 const writeChangelog = async ([outputPath, contents]) =>
   writeFileAsync(outputPath, contents, { encoding: 'utf8' });
@@ -45,8 +50,18 @@ const writeChangelog = async ([outputPath, contents]) =>
   const outputPaths = changelogs.map(determineOutputPath);
   const parsedChangelogs = await Promise.all(changelogs.map(readChangelog));
 
-  const markdownChangelogs = parsedChangelogs.map(
-    generateHumanReadableChangelog,
+  const markdownChangelogs = await Promise.all(
+    zip(changelogs, parsedChangelogs).map(
+      async ([changelogPath, parsedChangelog]) => {
+        const packageJsonPath = determinePackageJsonPath(changelogPath);
+        const packageJson = await readPackageJson(packageJsonPath);
+
+        return generateHumanReadableChangelog(
+          parsedChangelog,
+          packageJson.name,
+        );
+      },
+    ),
   );
 
   const output = zip(outputPaths, markdownChangelogs);
