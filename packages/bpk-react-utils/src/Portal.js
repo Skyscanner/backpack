@@ -16,10 +16,14 @@
  * limitations under the License.
  */
 
+import {
+  unstable_renderSubtreeIntoContainer, // eslint-disable-line camelcase
+  unmountComponentAtNode,
+  findDOMNode,
+} from 'react-dom';
+import { Component } from 'react';
 import assign from 'object-assign';
 import PropTypes from 'prop-types';
-import { Component } from 'react';
-import { render, unmountComponentAtNode, findDOMNode } from 'react-dom';
 
 const KEYCODES = {
   ESCAPE: 27,
@@ -243,11 +247,16 @@ class Portal extends Component {
     const missesExpectedTarget = this.props.target && !this.getTargetElement();
 
     if (this.portalElement && !missesExpectedTarget) {
-      render(this.props.children, this.portalElement, () => {
-        if (this.props.isOpen) {
-          this.props.onRender(this.portalElement, this.getTargetElement());
-        }
-      });
+      unstable_renderSubtreeIntoContainer(
+        this,
+        this.props.children,
+        this.portalElement,
+        () => {
+          if (this.props.isOpen) {
+            this.props.onRender(this.portalElement, this.getTargetElement());
+          }
+        },
+      );
     }
   }
 
