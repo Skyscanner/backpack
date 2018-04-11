@@ -37,6 +37,7 @@
     "docs": "webpack-dev-server --open",
     "docs:neo": "BPK_BUILT_AT=$( date -u +%s ) BPK_NEO=1 npm run docs",
     "docs:dist": "npm run clean:dist && NODE_ENV=production webpack --progress --display=minimal --bail && npm run sassdoc",
+    "docs:neo:dist": "npm run clean:dist && NODE_ENV=production BPK_BUILT_AT=$( date -u +%s ) BPK_NEO=1 webpack --progress --display=minimal --bail && npm run sassdoc",
     "start": "npm run build && npm run storybook",
     "native": "./subshell ./native npm run storybook",
     "generate-changelogs": "node scripts/release-process/generate-changelogs.js",

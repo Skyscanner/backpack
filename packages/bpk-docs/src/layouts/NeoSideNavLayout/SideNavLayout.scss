@@ -1,0 +1,109 @@
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2018 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+@import '~bpk-mixins/index';
+
+.bpkdocs-side-nav-layout {
+  display: flex;
+
+  &__sidebar-destop-wrapper {
+    display: flex;
+
+    @include bpk-breakpoint-tablet {
+      display: none;
+    }
+  }
+
+  &__sidebar {
+    padding: $bpk-spacing-base;
+    background-color: $bpk-color-gray-900;
+    color: $bpk-color-white;
+
+    @include bpk-breakpoint-tablet {
+      flex: 1;
+    }
+
+    @include bpk-breakpoint-above-tablet {
+      min-width: $bpk-spacing-xxl * 10;
+      padding: $bpk-spacing-lg * 2;
+    }
+  }
+
+  &__sidebar-header {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+
+    @include bpk-breakpoint-above-tablet {
+      flex-direction: row;
+    }
+  }
+
+  &__logo-link {
+    display: block;
+  }
+
+  &__logo {
+    height: $bpk-spacing-xs * 8;
+  }
+
+  &__close-button > svg {
+    fill: $bpk-color-white;
+  }
+
+  &__sidebar-content {
+    width: 100%;
+    margin-top: $bpk-spacing-lg * 3;
+  }
+
+  &__section-list {
+    margin-bottom: $bpk-spacing-md;
+  }
+
+  // HACK: this should be exposed as a modal prop
+  &__modal > div {
+    display: flex;
+    padding: 0;
+    flex-direction: column;
+  }
+
+  &__main {
+    min-width: 0;
+  }
+
+  &__hero {
+    display: flex;
+    height: $bpk-spacing-xxl * 3;
+    padding: $bpk-spacing-base;
+    justify-content: flex-end;
+    background-color: $bpk-color-blue-500;
+
+    @include bpk-breakpoint-above-tablet {
+      height: $bpk-spacing-xxl * 6;
+    }
+  }
+
+  &__hamburger > svg {
+    fill: $bpk-color-white;
+
+    @include bpk-breakpoint-above-tablet {
+      display: none;
+    }
+  }
+}

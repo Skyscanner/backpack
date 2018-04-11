@@ -26,6 +26,7 @@
     "bpk-component-card": "^1.1.7",
     "bpk-component-checkbox": "^1.4.21",
     "bpk-component-chip": "^2.0.11",
+    "bpk-component-close-button": "^1.0.58",
     "bpk-component-code": "^1.0.56",
     "bpk-component-content-container": "^1.1.62",
     "bpk-component-datepicker": "^8.0.23",

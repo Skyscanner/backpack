@@ -32,23 +32,17 @@ import {
 const getClassName = cssModules(STYLES);
 
 const NavLink = (props: LinkPropType) => {
-  const handleClick = () => {
-    console.log('Closing!');
-    console.log(props.onSelect);
-    if (props.onSelect) {
-      props.onSelect();
-    }
-  };
+  const { children, route, ...rest } = props;
 
-  if (props.route) {
+  if (route) {
     return (
       <Link
-        onClick={handleClick}
         className={getClassName('bpkdocs-side-nav-list__link')}
         activeClassName={getClassName('bpkdocs-side-nav-list__link--active')}
-        to={props.route}
+        to={route}
+        {...rest}
       >
-        {props.children}
+        {children}
       </Link>
     );
   }
@@ -60,29 +54,25 @@ const NavLink = (props: LinkPropType) => {
   );
 };
 
-const NavListItem = (props: LinkPropType) => {
-  const handleClick = () => {
-    console.log('Closing!');
-    console.log(props.onSelect);
-    if (props.onSelect) {
-      props.onSelect();
-    }
-  };
-  return (
-    <li className={getClassName('bpkdocs-side-nav-list__category-list-item')}>
-      <NavLink onClick={handleClick} {...props} />
-    </li>
-  );
+const NavListItem = (props: LinkPropType) => (
+  <li className={getClassName('bpkdocs-side-nav-list__category-list-item')}>
+    <NavLink {...props} />
+  </li>
+);
+
+type NavListCategoryPropType = {
+  ...$Exact<CategoryPropType>,
+  onClick: ?() => mixed,
 };
 
-const NavListCategory = (props: CategoryPropType) => (
+const NavListCategory = (props: NavListCategoryPropType) => (
   <li className={getClassName('bpkdocs-side-nav-list__list-item')}>
     <span className={getClassName('bpkdocs-side-nav-list__category-name')}>
       {props.category}
     </span>
     <ul className={getClassName('bpkdocs-side-nav-list__category-list')}>
       {(props.sort ? sortLinks(props.links) : props.links).map(link => (
-        <NavListItem key={link.id} {...link} />
+        <NavListItem key={link.id} {...link} onClick={props.onClick} />
       ))}
     </ul>
   </li>
@@ -91,7 +81,9 @@ const NavListCategory = (props: CategoryPropType) => (
 type NavListPropTypes = {
   ...$Exact<LinksPropType>,
   dimmed: boolean,
+  onClick: ?() => mixed,
 };
+
 const NavList = (props: NavListPropTypes) => {
   const classNames = [getClassName('bpkdocs-side-nav-list__list')];
 
@@ -107,9 +99,9 @@ const NavList = (props: NavListPropTypes) => {
       {props.links.map(
         link =>
           link.category ? (
-            <NavListCategory key={link.id} {...link} />
+            <NavListCategory key={link.id} {...link} onClick={props.onClick} />
           ) : (
-            <NavLink key={link.id} {...link} />
+            <NavLink key={link.id} {...link} onClick={props.onClick} />
           ),
       )}
     </ul>
