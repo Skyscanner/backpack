@@ -1,0 +1,80 @@
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2018 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+@import '~bpk-mixins/index';
+@import 'variables';
+
+.bpk-calendar-nav {
+  display: table;
+
+  &__month {
+    display: table-cell;
+    width: ($bpk-calendar-day-size * 5) + ($bpk-calendar-day-spacing * 5);
+    text-align: center;
+  }
+
+  &__nudger {
+    display: table-cell;
+    width: $bpk-calendar-day-size + $bpk-calendar-day-spacing;
+    padding: 0 ($bpk-calendar-day-spacing / 2);
+    text-align: center;
+    vertical-align: middle;
+    box-sizing: border-box;
+  }
+
+  &__button {
+    width: 100%;
+    height: $bpk-select-height;
+    padding: $bpk-select-padding-top 0 $bpk-select-padding-bottom 0;
+    border: none;
+    background: none;
+    line-height: 100%; /* stylelint-disable-line scale-unlimited/declaration-strict-value */
+    cursor: pointer;
+    appearance: none;
+
+    @include bpk-themeable-property(color, --bpk-calendar-nudger-icon-color, $bpk-calendar-nav-icon-fill);
+
+    @include bpk-hover {
+      @include bpk-themeable-property(color, --bpk-calendar-nudger-icon-hover-color, $bpk-calendar-nav-icon-hover-fill);
+    }
+
+    &:active {
+      @include bpk-themeable-property(color, --bpk-calendar-nudger-icon-active-color, $bpk-calendar-nav-icon-active-fill);
+    }
+
+    .bpk-calendar-nav__icon {
+      fill: currentColor;
+
+      @include bpk-icon--rtl-support;
+    }
+
+    &:disabled {
+      cursor: not-allowed;
+
+      .bpk-calendar-nav__icon {
+        fill: $bpk-calendar-nav-icon-disabled-fill;
+      }
+    }
+  }
+
+  &__text {
+    &--hidden {
+      @include bpk-visually-hidden;
+    }
+  }
+}

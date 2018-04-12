@@ -1,0 +1,89 @@
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2018 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+@import '~bpk-mixins/index';
+
+.bpk-calendar-date {
+  width: $bpk-calendar-day-size;
+  height: $bpk-calendar-day-size;
+  padding: 0;
+  border: none;
+  border-radius: $bpk-border-radius-pill;
+  background-color: $bpk-calendar-day-background-color;
+  font-size: $bpk-font-size-base;
+  text-align: center;
+  cursor: pointer;
+  appearance: none;
+  box-sizing: border-box;
+
+  @include bpk-themeable-property(color, --bpk-calendar-date-text-color, $bpk-calendar-day-color);
+
+  @include bpk-hover {
+    &:not(.bpk-calendar-date--selected) {
+      background-color: $bpk-calendar-day-hover-background-color;
+
+      @include bpk-themeable-property(color, --bpk-calendar-date-text-hover-color, $bpk-calendar-day-hover-color);
+    }
+  }
+
+  &:not(.bpk-calendar-date--selected):active {
+    background-color: $bpk-calendar-day-active-background-color;
+
+    @include bpk-themeable-property(color, --bpk-calendar-date-text-active-color, $bpk-calendar-day-active-color);
+  }
+
+  &--outside {
+    background-color: $bpk-calendar-day-outside-background-color;
+    color: $bpk-calendar-day-outside-color;
+  }
+
+  &--today {
+    font-weight: bold;
+  }
+
+  &--selected {
+    font-weight: bold;
+    cursor: default;
+
+    @include bpk-themeable-property(background-color, --bpk-calendar-date-selected-background-color, $bpk-state-selected-background-color);
+    @include bpk-themeable-property(color, --bpk-calendar-date-text-selected-color, $bpk-calendar-day-selected-color);
+  }
+
+  &--focused:not(:disabled):not(.bpk-calendar-date--selected) {
+    box-shadow: 0 0 0 2px $bpk-state-selected-background-color inset;
+    box-shadow: 0 0 0 2px var(--bpk-calendar-date-focused-border-color, $bpk-state-selected-background-color) inset;
+
+    @include bpk-themeable-property(color, --bpk-calendar-date-text-focus-color, $bpk-state-selected-background-color);
+  }
+
+  &:disabled {
+    background-color: $bpk-calendar-day-disabled-background-color;
+    color: $bpk-calendar-day-disabled-color;
+    cursor: not-allowed;
+
+    @include bpk-hover {
+      background-color: $bpk-calendar-day-disabled-background-color;
+      color: $bpk-calendar-day-disabled-color;
+    }
+
+    &:active {
+      background-color: $bpk-calendar-day-disabled-background-color;
+      color: $bpk-calendar-day-disabled-color;
+    }
+  }
+}
