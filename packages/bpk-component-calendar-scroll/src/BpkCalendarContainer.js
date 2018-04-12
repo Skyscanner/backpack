@@ -224,7 +224,9 @@ const withCalendarState = Calendar => {
 
     allMonths = (minDate, maxDate) => [
       minDate,
-      ...Array.from(Array(differenceInCalendarMonths(maxDate, minDate) - 1).keys()).map(i => addMonths(minDate, i + 1)),
+      ...Array.from(
+        Array(differenceInCalendarMonths(maxDate, minDate)).keys(),
+      ).map(i => addMonths(minDate, i + 1)),
     ];
 
     render() {

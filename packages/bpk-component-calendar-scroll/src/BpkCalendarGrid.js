@@ -19,6 +19,8 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { cssModules } from 'bpk-react-utils';
+import BpkText from 'bpk-component-text';
+import format from 'date-fns/format';
 
 import BpkCalendarGridHeader from './BpkCalendarGridHeader';
 import Week from './Week';
@@ -101,45 +103,53 @@ class BpkCalendarGrid extends Component {
     }
 
     return (
-      <table
-        className={classNames.join(' ')}
-        aria-hidden={!isKeyboardFocusable}
-      >
-        <caption className={getClassName('bpk-calendar-grid__caption')} hidden>
-          {formatMonth(month)}
-        </caption>
-        <BpkCalendarGridHeader
-          isTableHead
-          daysOfWeek={daysOfWeek}
-          showWeekendSeparator={showWeekendSeparator}
-          weekStartsOn={weekStartsOn}
-        />
-        <tbody>
-          {calendarMonthWeeks.map(dates => (
-            <Week
-              key={formatIsoDate(dates[0])}
-              month={month}
-              dates={dates}
-              onDateClick={onDateClick}
-              onDateKeyDown={onDateKeyDown}
-              showWeekendSeparator={showWeekendSeparator}
-              formatDateFull={formatDateFull}
-              DateComponent={DateComponent}
-              dateModifiers={dateModifiers}
-              daysOfWeek={daysOfWeek}
-              preventKeyboardFocus={preventKeyboardFocus}
-              isKeyboardFocusable={isKeyboardFocusable}
-              weekStartsOn={weekStartsOn}
-              markToday={markToday}
-              markOutsideDays={markOutsideDays}
-              selectedDate={selectedDate}
-              focusedDate={focusedDate}
-              minDate={minDate}
-              maxDate={maxDate}
-            />
-          ))}
-        </tbody>
-      </table>
+      <div>
+        <BpkText tagName="h1" textStyle="lg">
+          {format(month, 'MMMM')}
+        </BpkText>
+        <table
+          className={classNames.join(' ')}
+          aria-hidden={!isKeyboardFocusable}
+        >
+          <caption
+            className={getClassName('bpk-calendar-grid__caption')}
+            hidden
+          >
+            {formatMonth(month)}
+          </caption>
+          <BpkCalendarGridHeader
+            isTableHead
+            daysOfWeek={daysOfWeek}
+            showWeekendSeparator={showWeekendSeparator}
+            weekStartsOn={weekStartsOn}
+          />
+          <tbody>
+            {calendarMonthWeeks.map(dates => (
+              <Week
+                key={formatIsoDate(dates[0])}
+                month={month}
+                dates={dates}
+                onDateClick={onDateClick}
+                onDateKeyDown={onDateKeyDown}
+                showWeekendSeparator={showWeekendSeparator}
+                formatDateFull={formatDateFull}
+                DateComponent={DateComponent}
+                dateModifiers={dateModifiers}
+                daysOfWeek={daysOfWeek}
+                preventKeyboardFocus={preventKeyboardFocus}
+                isKeyboardFocusable={isKeyboardFocusable}
+                weekStartsOn={weekStartsOn}
+                markToday={markToday}
+                markOutsideDays={markOutsideDays}
+                selectedDate={selectedDate}
+                focusedDate={focusedDate}
+                minDate={minDate}
+                maxDate={maxDate}
+              />
+            ))}
+          </tbody>
+        </table>
+      </div>
     );
   }
 }
