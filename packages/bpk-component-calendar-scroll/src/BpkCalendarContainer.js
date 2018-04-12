@@ -19,7 +19,7 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import BpkCalendarGrid from './BpkCalendarGrid';
-import { addCalendarGridTransition } from './BpkCalendarGridTransition';
+import { addCalendarGridScroll } from './BpkCalendarGridScroll';
 import BpkCalendarGridHeader from './BpkCalendarGridHeader';
 import BpkCalendarDate from './BpkCalendarDate';
 import composeCalendar from './composeCalendar';
@@ -33,10 +33,11 @@ import {
   setMonthYear,
   startOfDay,
   startOfMonth,
+  differenceInCalendarMonths,
 } from './date-utils';
 import { getScriptDirection } from './utils';
 
-const TransitioningBpkCalendarGrid = addCalendarGridTransition(BpkCalendarGrid);
+const ScrollingBpkCalendarGrid = addCalendarGridScroll(BpkCalendarGrid);
 
 const focusedDateHasChanged = (currentProps, nextProps) => {
   const rawNextSelectedDate = nextProps.selectedDate || nextProps.date;
@@ -221,6 +222,11 @@ const withCalendarState = Calendar => {
       }
     }
 
+    allMonths = (minDate, maxDate) => [
+      minDate,
+      ...Array.from(Array(differenceInCalendarMonths(maxDate, minDate) - 1).keys()).map(i => addMonths(minDate, i + 1)),
+    ];
+
     render() {
       const {
         minDate,
@@ -247,14 +253,13 @@ const withCalendarState = Calendar => {
         sanitisedMinDate,
         sanitisedMaxDate,
       );
-      const month = startOfMonth(sanitisedFocusedDate);
 
       return (
         <Calendar
           onDateClick={this.handleDateSelect}
           onDateKeyDown={this.handleDateKeyDown}
           onMonthChange={this.handleMonthChange}
-          month={month}
+          months={this.allMonths(minDate, maxDate)}
           preventKeyboardFocus={this.state.preventKeyboardFocus}
           selectedDate={sanitisedSelectedDate}
           focusedDate={sanitisedFocusedDate}
@@ -295,7 +300,7 @@ const withCalendarState = Calendar => {
 export default withCalendarState(
   composeCalendar(
     BpkCalendarGridHeader,
-    TransitioningBpkCalendarGrid,
+    ScrollingBpkCalendarGrid,
     BpkCalendarDate,
   ),
 );

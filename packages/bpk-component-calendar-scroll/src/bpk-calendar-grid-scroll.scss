@@ -19,11 +19,12 @@
 @import '~bpk-mixins/index';
 @import 'variables';
 
-.bpk-calendar-grid-transition {
+.bpk-calendar-grid-scroll {
   position: relative;
-  width: $calendar-width;
+  width: $calendar-width + 1rem;
   height: $calendar-height;
-  overflow: hidden;
+  overflow-y: scroll;
+  overflow-x: hidden;
   box-sizing: border-box;
 
   &__dummy {
@@ -32,16 +33,10 @@
   }
 
   &__strip {
-    position: absolute;
-    left: 0;
-    display: block;
+    display: flex;
+    flex-direction: column;
     z-index: 0;
-    width: 3 * $calendar-width;
-
-    &--transitioning {
-      z-index: 1;
-      transition: transform $bpk-duration-sm ease-in-out;
-    }
+    height: $calendar-height ;
   }
 
   &__grid {

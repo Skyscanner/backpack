@@ -48,6 +48,3 @@ export const getScriptDirection = () => {
   const html = document.querySelector('html');
   return window.getComputedStyle(html, null).getPropertyValue('direction');
 };
-
-export const isTransitionEndSupported = () =>
-  !!(typeof window !== 'undefined' && 'TransitionEvent' in window);

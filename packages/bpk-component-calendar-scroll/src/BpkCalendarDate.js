@@ -113,27 +113,24 @@ class BpkCalendarDate extends PureComponent {
     if (isBlocked) {
       classNames.push(getClassName('bpk-calendar-date--blocked'));
     }
-    if (isOutside) {
-      classNames.push(getClassName('bpk-calendar-date--outside'));
-    }
     if (isToday) {
       classNames.push(getClassName('bpk-calendar-date--today'));
     }
 
     delete buttonProps.preventKeyboardFocus;
 
-    return (
+    return !isOutside ? (
       <button
         type="button"
         className={classNames.join(' ')}
         aria-label={date.getDate()}
-        disabled={isBlocked}
         tabIndex={isKeyboardFocusable && isFocused ? '0' : '-1'}
         onClick={() => {
           if (onClick) {
             onClick(date);
           }
         }}
+        disabled={isBlocked}
         onKeyDown={onDateKeyDown}
         aria-pressed={isSelected}
         ref={this.getButtonRef}
@@ -141,6 +138,8 @@ class BpkCalendarDate extends PureComponent {
       >
         <span aria-hidden="true">{date.getDate()}</span>
       </button>
+    ) : (
+      <span className={classNames.join(' ')} />
     );
   }
 }

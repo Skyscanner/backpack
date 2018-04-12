@@ -25,7 +25,7 @@ import STYLES from './bpk-calendar.scss';
 
 const getClassName = cssModules(STYLES);
 
-const composeCalendar = (GridHeader, Grid, CalendarDate) => {
+const composeCalendar = (GridHeader, ScrollingGrid, CalendarDate) => {
   const BpkCalendar = props => {
     const classNames = [getClassName('bpk-calendar')];
 
@@ -40,7 +40,7 @@ const composeCalendar = (GridHeader, Grid, CalendarDate) => {
       markToday,
       maxDate,
       minDate,
-      month,
+      months,
       onDateClick,
       onDateKeyDown,
       preventKeyboardFocus,
@@ -70,13 +70,13 @@ const composeCalendar = (GridHeader, Grid, CalendarDate) => {
             className={headerClasses.join(' ')}
           />
         )}
-        <Grid
+        <ScrollingGrid
           DateComponent={CalendarDate}
           dateModifiers={dateModifiers}
           daysOfWeek={daysOfWeek}
           formatDateFull={formatDateFull}
           formatMonth={formatMonth}
-          month={month}
+          months={months}
           onDateClick={onDateClick}
           onDateKeyDown={onDateKeyDown}
           preventKeyboardFocus={preventKeyboardFocus}
@@ -101,7 +101,7 @@ const composeCalendar = (GridHeader, Grid, CalendarDate) => {
     formatMonth: PropTypes.func.isRequired,
     maxDate: PropTypes.instanceOf(Date).isRequired,
     minDate: PropTypes.instanceOf(Date).isRequired,
-    month: PropTypes.instanceOf(Date).isRequired,
+    months: PropTypes.arrayOf(Date).isRequired,
     // Optional
     className: PropTypes.string,
     dateModifiers: CustomPropTypes.DateModifiers,
