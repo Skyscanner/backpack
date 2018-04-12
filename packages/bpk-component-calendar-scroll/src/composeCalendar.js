@@ -59,11 +59,6 @@ const composeCalendar = (GridHeader, Grid, CalendarDate) => {
 
     const headerClasses = [];
     const gridClasses = [];
-    // If the GridHeader is not present add `bpk-calendar__grid` which
-    // adds spacing between the nav and grid.
-    if (!GridHeader && Nav) {
-      gridClasses.push(getClassName('bpk-calendar__grid'));
-    }
 
     return (
       <div className={classNames.join(' ')}>
