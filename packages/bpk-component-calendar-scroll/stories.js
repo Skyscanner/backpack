@@ -76,7 +76,7 @@ CalendarContainer.defaultProps = {
   selectTodaysDate: true,
 };
 
-storiesOf('bpk-component-calendar', module)
+storiesOf('bpk-component-calendar-scroll', module)
   .add('BpkCalendarNav', () => (
     <BpkCalendarNav
       month={new Date()}
