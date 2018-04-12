@@ -18,7 +18,6 @@
 
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import BpkCalendarNav from './BpkCalendarNav';
 import BpkCalendarGrid from './BpkCalendarGrid';
 import { addCalendarGridTransition } from './BpkCalendarGridTransition';
 import BpkCalendarGridHeader from './BpkCalendarGridHeader';
@@ -295,7 +294,6 @@ const withCalendarState = Calendar => {
 
 export default withCalendarState(
   composeCalendar(
-    BpkCalendarNav,
     BpkCalendarGridHeader,
     TransitioningBpkCalendarGrid,
     BpkCalendarDate,

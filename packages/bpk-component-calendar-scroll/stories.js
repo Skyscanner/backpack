@@ -19,7 +19,6 @@ import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import addMonths from 'date-fns/add_months';
 import {
   formatMonth,
   formatDateFull,
@@ -37,7 +36,6 @@ import BpkCalendar, {
 // BpkCalendarView,
   BpkCalendarGrid,
   BpkCalendarGridHeader,
-  BpkCalendarNav,
   BpkCalendarDate,
 } from './index';
 
@@ -77,17 +75,6 @@ CalendarContainer.defaultProps = {
 };
 
 storiesOf('bpk-component-calendar-scroll', module)
-  .add('BpkCalendarNav', () => (
-    <BpkCalendarNav
-      month={new Date()}
-      changeMonthLabel="Change month"
-      onMonthChange={action('Changed month')}
-      minDate={new Date()}
-      maxDate={addMonths(new Date(), 12)}
-      formatMonth={formatMonth}
-      id="myCalendarNav"
-    />
-  ))
   .add('BpkCalendarGridHeader', () => (
     <BpkCalendarGridHeader
       weekStartsOn={1}

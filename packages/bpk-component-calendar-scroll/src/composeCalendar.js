@@ -25,19 +25,17 @@ import STYLES from './bpk-calendar.scss';
 
 const getClassName = cssModules(STYLES);
 
-const composeCalendar = (Nav, GridHeader, Grid, CalendarDate) => {
+const composeCalendar = (GridHeader, Grid, CalendarDate) => {
   const BpkCalendar = props => {
     const classNames = [getClassName('bpk-calendar')];
 
     const {
-      changeMonthLabel,
       className,
       dateModifiers,
       daysOfWeek,
       focusedDate,
       formatDateFull,
       formatMonth,
-      id,
       markOutsideDays,
       markToday,
       maxDate,
@@ -45,7 +43,6 @@ const composeCalendar = (Nav, GridHeader, Grid, CalendarDate) => {
       month,
       onDateClick,
       onDateKeyDown,
-      onMonthChange,
       preventKeyboardFocus,
       selectedDate,
       showWeekendSeparator,
@@ -61,12 +58,6 @@ const composeCalendar = (Nav, GridHeader, Grid, CalendarDate) => {
     }
 
     const headerClasses = [];
-    // If the Nav is present add `bpk-calendar__header` which
-    // adds spacing between the nav and header.
-    if (Nav) {
-      headerClasses.push(getClassName('bpk-calendar__header'));
-    }
-
     const gridClasses = [];
     // If the GridHeader is not present add `bpk-calendar__grid` which
     // adds spacing between the nav and grid.
@@ -76,17 +67,6 @@ const composeCalendar = (Nav, GridHeader, Grid, CalendarDate) => {
 
     return (
       <div className={classNames.join(' ')}>
-        {Nav && (
-          <Nav
-            changeMonthLabel={changeMonthLabel}
-            formatMonth={formatMonth}
-            id={`${id}__bpk_calendar_nav`}
-            maxDate={maxDate}
-            minDate={minDate}
-            month={month}
-            onMonthChange={onMonthChange}
-          />
-        )}
         {GridHeader && (
           <GridHeader
             daysOfWeek={daysOfWeek}
@@ -121,11 +101,9 @@ const composeCalendar = (Nav, GridHeader, Grid, CalendarDate) => {
 
   BpkCalendar.propTypes = {
     // Required
-    changeMonthLabel: PropTypes.string.isRequired,
     daysOfWeek: CustomPropTypes.DaysOfWeek.isRequired,
     formatDateFull: PropTypes.func.isRequired,
     formatMonth: PropTypes.func.isRequired,
-    id: PropTypes.string.isRequired,
     maxDate: PropTypes.instanceOf(Date).isRequired,
     minDate: PropTypes.instanceOf(Date).isRequired,
     month: PropTypes.instanceOf(Date).isRequired,
@@ -136,7 +114,6 @@ const composeCalendar = (Nav, GridHeader, Grid, CalendarDate) => {
     focusedDate: PropTypes.instanceOf(Date),
     markOutsideDays: PropTypes.bool,
     markToday: PropTypes.bool,
-    onMonthChange: PropTypes.func,
     onDateClick: PropTypes.func,
     onDateKeyDown: PropTypes.func,
     preventKeyboardFocus: PropTypes.bool,
@@ -152,7 +129,6 @@ const composeCalendar = (Nav, GridHeader, Grid, CalendarDate) => {
     focusedDate: null,
     markOutsideDays: true,
     markToday: true,
-    onMonthChange: () => null,
     onDateClick: () => null,
     onDateKeyDown: () => null,
     preventKeyboardFocus: false,

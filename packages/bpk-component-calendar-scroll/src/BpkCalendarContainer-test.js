@@ -81,12 +81,9 @@ describe('BpkCalendarContainer', () => {
     );
 
     let grid = calendar.find('BpkCalendarGridTransition');
-    const nav = calendar.find('BpkCalendarNav');
-    const eventStub = { persist: jest.fn() };
 
     expect(grid.prop('month')).toEqual(new Date(2010, 1, 1));
 
-    nav.prop('onMonthChange')(eventStub, { month: new Date(2010, 2, 1) });
     calendar.update();
     grid = calendar.find('BpkCalendarGridTransition');
     expect(grid.prop('month')).toEqual(new Date(2010, 2, 1));
