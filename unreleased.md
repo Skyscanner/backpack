@@ -14,3 +14,6 @@
 
 - bpk-react-utils:
   - The `Portal` component now preserves context in it's `children` prop
+
+- bpk-stylesheets:
+  - Prevent globals (`.hidden`, `.clearfix`) from being scoped by css modules
