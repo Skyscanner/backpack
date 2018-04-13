@@ -19,11 +19,7 @@
 /* eslint-disable react/prop-types */
 
 import React, { Component } from 'react';
-import BpkButton from 'bpk-component-button';
 import addMonths from 'date-fns/add_months';
-import { withButtonAlignment, withRtlSupport } from '../bpk-component-icon';
-import SmallLongArrowRightIcon from '../bpk-component-icon/sm/long-arrow-right';
-import SmallLongArrowLeftIcon from '../bpk-component-icon/sm/long-arrow-left';
 import { dateToBoundaries, startOfDay, addDays } from './src/date-utils';
 import { formatMonth, formatDateFull, weekDays } from './test-utils';
 import {
@@ -33,11 +29,6 @@ import {
   composeCalendar,
 } from './index';
 
-const LeftIcon = withButtonAlignment(withRtlSupport(SmallLongArrowLeftIcon));
-const RightIcon = withButtonAlignment(withRtlSupport(SmallLongArrowRightIcon));
-const withDirection = (Nav, direction) => props => (
-  <Nav {...props} direction={direction} />
-);
 const withPrices = (DateComponent, prices) => props => (
   <DateComponent {...props} prices={prices} />
 );
@@ -76,36 +67,6 @@ const prices = [
   118,
 ];
 
-const MyCalendarNav = ({ month, onMonthChange, direction }) => (
-  <div
-    style={{
-      display: 'flex',
-      justifyContent: 'space-between',
-      alignItems: 'center',
-    }}
-  >
-    <strong>{direction}</strong>
-    <div>
-      <BpkButton
-        iconOnly
-        onClick={event =>
-          onMonthChange(event, { month: addMonths(month, -1), source: 'PREV' })
-        }
-      >
-        <LeftIcon fill="white" />
-      </BpkButton>&nbsp;
-      <BpkButton
-        iconOnly
-        onClick={event =>
-          onMonthChange(event, { month: addMonths(month, 1), source: 'NEXT' })
-        }
-      >
-        <RightIcon fill="white" />
-      </BpkButton>
-    </div>
-  </div>
-);
-
 const MyCalendarDate = props => {
   const cx = {
     textAlign: 'center',
@@ -133,7 +94,6 @@ const MyCalendarDate = props => {
 
 const MyDepartCalendar = withCalendarState(
   composeCalendar(
-    withDirection(MyCalendarNav, 'Depart'),
     BpkCalendarGridHeader,
     BpkCalendarGrid,
     withPrices(MyCalendarDate, prices),
@@ -142,7 +102,6 @@ const MyDepartCalendar = withCalendarState(
 
 const MyReturnCalendar = withCalendarState(
   composeCalendar(
-    withDirection(MyCalendarNav, 'Return'),
     BpkCalendarGridHeader,
     BpkCalendarGrid,
     withPrices(MyCalendarDate, prices),

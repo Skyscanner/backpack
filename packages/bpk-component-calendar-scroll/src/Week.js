@@ -108,7 +108,6 @@ class Week extends Component {
       daysOfWeek,
       focusedDate,
       formatDateFull,
-      isKeyboardFocusable,
       markOutsideDays,
       markToday,
       maxDate,
@@ -143,7 +142,6 @@ class Week extends Component {
               onClick={onDateClick}
               onDateKeyDown={onDateKeyDown}
               preventKeyboardFocus={preventKeyboardFocus}
-              isKeyboardFocusable={isKeyboardFocusable}
               isFocused={isSameDay(date, focusedDate)}
               isSelected={isSameDay(date, selectedDate)}
               isBlocked={
@@ -171,7 +169,6 @@ Week.propTypes = {
   showWeekendSeparator: PropTypes.bool.isRequired,
   markToday: PropTypes.bool.isRequired,
   markOutsideDays: PropTypes.bool.isRequired,
-  isKeyboardFocusable: PropTypes.bool.isRequired,
   month: PropTypes.instanceOf(Date).isRequired,
   weekStartsOn: PropTypes.number.isRequired,
   focusedDate: PropTypes.instanceOf(Date),

@@ -26,10 +26,6 @@ import STYLES from './bpk-calendar-date.scss';
 
 const getClassName = cssModules(STYLES);
 
-const navigatedByMonthNudger = () =>
-  document.activeElement.id &&
-  document.activeElement.id.indexOf('month_nudger') !== -1;
-
 class BpkCalendarDate extends PureComponent {
   constructor() {
     super();
@@ -39,39 +35,13 @@ class BpkCalendarDate extends PureComponent {
 
   componentDidMount() {
     if (!this.props.preventKeyboardFocus && this.props.isFocused) {
-      // If we got here by clicking the nudger, don't focus this date
-      if (!navigatedByMonthNudger()) {
-        // Giving focus after instantiation
-        this.button.focus();
-      }
+      this.button.focus();
     }
   }
 
   componentDidUpdate(prevProps) {
-    if (
-      !this.props.isKeyboardFocusable ||
-      this.props.preventKeyboardFocus ||
-      navigatedByMonthNudger()
-    ) {
-      return;
-    }
-
     // Giving focus after keyboard navigation
-    if (
-      !prevProps.isFocused &&
-      this.props.isFocused &&
-      this.props.isKeyboardFocusable
-    ) {
-      this.button.focus();
-      return;
-    }
-
-    // Giving focus after changing months with transition
-    if (
-      this.props.isFocused &&
-      !prevProps.isKeyboardFocusable &&
-      this.props.isKeyboardFocusable
-    ) {
+    if (!prevProps.isFocused && this.props.isFocused && this.button) {
       this.button.focus();
     }
   }
@@ -91,7 +61,6 @@ class BpkCalendarDate extends PureComponent {
       isBlocked,
       isOutside,
       isToday,
-      isKeyboardFocusable,
       ...buttonProps
     } = this.props;
     const classNames = [getClassName('bpk-calendar-date')];
@@ -124,7 +93,7 @@ class BpkCalendarDate extends PureComponent {
         type="button"
         className={classNames.join(' ')}
         aria-label={date.getDate()}
-        tabIndex={isKeyboardFocusable && isFocused ? '0' : '-1'}
+        tabIndex={isFocused ? '0' : '-1'}
         onClick={() => {
           if (onClick) {
             onClick(date);
@@ -150,7 +119,6 @@ BpkCalendarDate.propTypes = {
   // Optional
   isBlocked: PropTypes.bool,
   isFocused: PropTypes.bool,
-  isKeyboardFocusable: PropTypes.bool,
   isOutside: PropTypes.bool,
   isSelected: PropTypes.bool,
   isToday: PropTypes.bool,
@@ -163,7 +131,6 @@ BpkCalendarDate.propTypes = {
 BpkCalendarDate.defaultProps = {
   isBlocked: false,
   isFocused: false,
-  isKeyboardFocusable: true,
   isOutside: false,
   isSelected: false,
   isToday: false,

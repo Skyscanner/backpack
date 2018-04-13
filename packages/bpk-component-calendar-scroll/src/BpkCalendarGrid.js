@@ -86,7 +86,6 @@ class BpkCalendarGrid extends Component {
       showWeekendSeparator,
       weekStartsOn,
       preventKeyboardFocus,
-      isKeyboardFocusable,
       markToday,
       markOutsideDays,
       selectedDate,
@@ -104,13 +103,14 @@ class BpkCalendarGrid extends Component {
 
     return (
       <div>
-        <BpkText tagName="h1" textStyle="lg">
+        <BpkText
+          className={getClassName('bpk-calendar-grid__title')}
+          tagName="h1"
+          textStyle="lg"
+        >
           {format(month, 'MMMM')}
         </BpkText>
-        <table
-          className={classNames.join(' ')}
-          aria-hidden={!isKeyboardFocusable}
-        >
+        <table className={classNames.join(' ')}>
           <caption
             className={getClassName('bpk-calendar-grid__caption')}
             hidden
@@ -137,7 +137,6 @@ class BpkCalendarGrid extends Component {
                 dateModifiers={dateModifiers}
                 daysOfWeek={daysOfWeek}
                 preventKeyboardFocus={preventKeyboardFocus}
-                isKeyboardFocusable={isKeyboardFocusable}
                 weekStartsOn={weekStartsOn}
                 markToday={markToday}
                 markOutsideDays={markOutsideDays}
@@ -165,7 +164,6 @@ BpkCalendarGrid.propTypes = {
   className: PropTypes.string,
   dateModifiers: CustomPropTypes.DateModifiers,
   focusedDate: PropTypes.instanceOf(Date),
-  isKeyboardFocusable: PropTypes.bool,
   markOutsideDays: PropTypes.bool,
   markToday: PropTypes.bool,
   maxDate: PropTypes.instanceOf(Date),
@@ -182,7 +180,6 @@ BpkCalendarGrid.defaultProps = {
   className: null,
   dateModifiers: {},
   focusedDate: null,
-  isKeyboardFocusable: true,
   markOutsideDays: true,
   markToday: true,
   maxDate: null,

@@ -29,6 +29,11 @@
     transition: transform .2s ease-in-out;
   }
 
+  &__title {
+    margin-top: $bpk-spacing-md;
+    margin-bottom: $bpk-spacing-sm;
+  }
+
   &__caption {
     @include bpk-visually-hidden;
   }

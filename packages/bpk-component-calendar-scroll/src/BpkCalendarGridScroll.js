@@ -20,25 +20,11 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { cssModules } from 'bpk-react-utils';
 
-import {
-  formatIsoMonth,
-  dateToBoundaries,
-  startOfDay,
-  setMonthYear,
-  isWithinRange,
-  getMonthRange,
-} from './date-utils';
+import { formatIsoMonth, isWithinRange, getMonthRange } from './date-utils';
 
 import STYLES from './bpk-calendar-grid-scroll.scss';
 
 const getClassName = cssModules(STYLES);
-
-const getFocusedDateForMonth = (month, currentFocusedDate, minDate, maxDate) =>
-  dateToBoundaries(
-    setMonthYear(currentFocusedDate, month.getMonth(), month.getFullYear()),
-    startOfDay(minDate),
-    startOfDay(maxDate),
-  );
 
 const BpkCalendarGridScroll = props => {
   const { ScrollComponent, className, focusedDate, ...rest } = props;
@@ -60,18 +46,8 @@ const BpkCalendarGridScroll = props => {
                 {...rest}
                 key={formatIsoMonth(m)}
                 month={m}
-                preventKeyboardFocus={index !== 1 || rest.preventKeyboardFocus}
-                isKeyboardFocusable={index === 1}
-                focusedDate={
-                  index === 1
-                    ? focusedDate
-                    : getFocusedDateForMonth(
-                        m,
-                        focusedDate,
-                        rest.minDate,
-                        rest.maxDate,
-                      )
-                }
+                focusedDate={focusedDate}
+                preventKeyboardFocus={rest.preventKeyboardFocus}
                 aria-hidden={index !== 1}
                 className={getClassName('bpk-calendar-grid-scroll__grid')}
               />
