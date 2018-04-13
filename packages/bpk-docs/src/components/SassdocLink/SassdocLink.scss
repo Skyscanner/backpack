@@ -40,4 +40,9 @@
       height: 100%;
     }
   }
+
+  &--transparent-background {
+    border-radius: 0;
+    background-color: transparent;
+  }
 }
