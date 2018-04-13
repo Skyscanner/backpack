@@ -312,7 +312,7 @@ const components = [
     ],
     examples: [
       <BannerAlertExpandable
-        message="neutral alert with more information."
+        message="Neutral alert with more information."
         type={ALERT_TYPES.NEUTRAL}
       >
         {longMessage}
