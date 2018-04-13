@@ -3,6 +3,8 @@
 **Added:**
 - react-native-bpk-component-pagination-dots:
   - Introducing the React Native pagination dots component.
+- bpk-component-content-container:
+  - `BpkContentContainer` now accepts a `className`.
 
 **Fixed:**
 - bpk-component-dialog:
