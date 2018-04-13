@@ -24,8 +24,12 @@
 
   @include bpk-border-radius-sm;
 
-  &--fixed {
+  &--fixed-width {
     width: $calendar-width;
+  }
+
+  &--flexible-height {
+    height: 100%;
   }
 
   &__header {

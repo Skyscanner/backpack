@@ -23,6 +23,7 @@
   display: table;
   width: 100%;
   table-layout: fixed;
+  padding-bottom: $shadow-width;
 
   &--table-head {
     display: none;

@@ -21,11 +21,11 @@
 
 .bpk-calendar-scroll-grid-list {
   position: relative;
-  width: $calendar-width + 1rem;
-  height: $calendar-height;
   overflow-y: scroll;
   overflow-x: hidden;
   box-sizing: border-box;
+  width: 100%;
+  height: 100%;
 
   &__dummy {
     display: inline-block;
@@ -36,11 +36,10 @@
     display: flex;
     flex-direction: column;
     z-index: 0;
-    height: $calendar-height ;
+    height: $calendar-height;
   }
 
   &__grid {
     display: inline-table;
-    width: $calendar-width;
   }
 }

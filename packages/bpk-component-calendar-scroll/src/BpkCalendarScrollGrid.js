@@ -39,7 +39,7 @@ const getClassName = cssModules(STYLES);
 /*
   BpkCalendarGrid - the grid representing a whole month
 */
-class BpkCalendarScrollrid extends Component {
+class BpkCalendarScrollGrid extends Component {
   constructor(props) {
     super(props);
 
@@ -153,7 +153,7 @@ class BpkCalendarScrollrid extends Component {
   }
 }
 
-BpkCalendarScrollrid.propTypes = {
+BpkCalendarScrollGrid.propTypes = {
   // Required
   DateComponent: PropTypes.func.isRequired,
   daysOfWeek: CustomPropTypes.DaysOfWeek.isRequired,
@@ -176,7 +176,7 @@ BpkCalendarScrollrid.propTypes = {
   weekStartsOn: PropTypes.number,
 };
 
-BpkCalendarScrollrid.defaultProps = {
+BpkCalendarScrollGrid.defaultProps = {
   className: null,
   dateModifiers: {},
   focusedDate: null,
@@ -192,4 +192,4 @@ BpkCalendarScrollrid.defaultProps = {
   weekStartsOn: 1,
 };
 
-export default BpkCalendarScrollrid;
+export default BpkCalendarScrollGrid;

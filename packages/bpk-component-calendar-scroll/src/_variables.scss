@@ -18,8 +18,9 @@
 
 @import '~bpk-mixins/index';
 
-$shadow-bottom: 0 1px 0 0 $bpk-color-gray-100; /* stylelint-disable-line unit-blacklist */
-$shadow-left: -1px 0 0 0 $bpk-color-gray-100; /* stylelint-disable-line unit-blacklist */
-$shadow-right: 1px 0 0 0 $bpk-color-gray-100; /* stylelint-disable-line unit-blacklist */
+$shadow-width: 1px;
+$shadow-bottom: 0 $shadow-width 0 0 $bpk-color-gray-100; /* stylelint-disable-line unit-blacklist */
+$shadow-left: -$shadow-width 0 0 0 $bpk-color-gray-100; /* stylelint-disable-line unit-blacklist */
+$shadow-right: $shadow-width 0 0 0 $bpk-color-gray-100; /* stylelint-disable-line unit-blacklist */
 $calendar-width: 7 * ($bpk-calendar-day-size + $bpk-calendar-day-spacing);
 $calendar-height: 6 * ($bpk-calendar-day-size + $bpk-calendar-day-spacing);

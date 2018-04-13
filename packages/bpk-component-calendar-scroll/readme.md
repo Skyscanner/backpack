@@ -159,6 +159,7 @@ withCalendarState(composeCalendar(
 | id                    | string               | true     | -                |
 | className             | string               | false    | null             |
 | fixedWidth            | bool                 | false    | true             |
+| fixedHeight           | bool                 | false    | true             |
 | markOutsideDays       | bool                 | false    | true             |
 | markToday             | bool                 | false    | true             |
 | maxDate               | Date                 | false    | new Date() + 1yr |
@@ -171,22 +172,6 @@ withCalendarState(composeCalendar(
 | initiallyFocusedDate  | Date                 | false    | null             |
 
 Some of the more complex props and props for sub-components are detailed below.
-
-### BpkCalendarNav
-
-The BpkCalendarNav component is used to change the month that is being displayed by using
-buttons and a select box.
-
-| Property              | PropType             | Required | Default Value    |
-| --------------------- | -------------------- | -------- | ---------------- |
-| changeMonthLabel      | string               | true     | -                |
-| formatMonth           | func                 | true     | -                |
-| id                    | string               | true     | -                |
-| maxDate               | Date                 | true     | -                |
-| minDate               | Date                 | true     | -                |
-| month                 | Date                 | true     | -                |
-| onMonthChange         | func                 | false    | null             |
-| disabled              | bool                 | false    | false            |
 
 ### BpkCalendarGridHeader
 
@@ -236,7 +221,6 @@ The BpkCalendarDate component is used to render the content of a cell
 | date                  | Date                 | true     | -                |
 | isBlocked             | bool                 | false    | false            |
 | isFocused             | bool                 | false    | false            |
-| isKeyboardFocusable   | bool                 | false    | true             |
 | isOutside             | bool                 | false    | false            |
 | isSelected            | bool                 | false    | false            |
 | isToday               | bool                 | false    | false            |

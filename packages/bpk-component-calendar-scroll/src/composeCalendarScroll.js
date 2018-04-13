@@ -48,13 +48,17 @@ const composeCalendar = (GridHeader, ScrollingGrid, CalendarDate) => {
       showWeekendSeparator,
       weekStartsOn,
       fixedWidth,
+      fixedHeight,
     } = props;
 
     if (className) {
       classNames.push(className);
     }
     if (fixedWidth) {
-      classNames.push(getClassName('bpk-calendar-scroll--fixed'));
+      classNames.push(getClassName('bpk-calendar-scroll--fixed-width'));
+    }
+    if (!fixedHeight) {
+      classNames.push(getClassName('bpk-calendar-scroll--flexible-height'));
     }
 
     const headerClasses = [];
@@ -106,6 +110,7 @@ const composeCalendar = (GridHeader, ScrollingGrid, CalendarDate) => {
     className: PropTypes.string,
     dateModifiers: CustomPropTypes.DateModifiers,
     fixedWidth: PropTypes.bool,
+    fixedHeight: PropTypes.bool,
     focusedDate: PropTypes.instanceOf(Date),
     markOutsideDays: PropTypes.bool,
     markToday: PropTypes.bool,
@@ -121,6 +126,7 @@ const composeCalendar = (GridHeader, ScrollingGrid, CalendarDate) => {
     className: null,
     dateModifiers: {},
     fixedWidth: true,
+    fixedHeight: true,
     focusedDate: null,
     markOutsideDays: true,
     markToday: true,
