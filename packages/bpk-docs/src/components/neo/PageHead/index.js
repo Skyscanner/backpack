@@ -15,18 +15,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+import PageHead from './PageHead';
 
-import ParagraphOld, {
-  ParagraphNoMargin as ParagraphNoMarginOld,
-} from './Paragraph';
-import ParagraphNeo, {
-  ParagraphNoMargin as ParagraphNoMarginNeo,
-} from '../neo/Paragraph';
-
-const ParagraphNoMargin = process.env.BPK_NEO
-  ? ParagraphNoMarginNeo
-  : ParagraphNoMarginOld;
-const Paragraph = process.env.BPK_NEO ? ParagraphNeo : ParagraphOld;
-
-export { ParagraphNoMargin };
-export default Paragraph;
+export default PageHead;

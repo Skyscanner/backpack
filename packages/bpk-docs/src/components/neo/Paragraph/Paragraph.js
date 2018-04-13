@@ -16,28 +16,24 @@
  * limitations under the License.
  */
 
-@import '~bpk-mixins/index';
+import BpkText from 'bpk-component-text';
 
-.bpkdocs-sassdoc-link {
-  padding: $bpk-spacing-sm;
-  background-color: $bpk-color-gray-50;
+import { cssModules, withDefaultProps } from 'bpk-react-utils';
 
-  @include bpk-border-radius-xs;
+import STYLES from './Paragraph.scss';
 
-  &__logo {
-    display: inline-block;
-    height: $bpk-spacing-base;
-    margin-right: $bpk-spacing-sm;
-    vertical-align: top;
+const getClassName = cssModules(STYLES);
 
-    @include bpk-rtl {
-      margin-right: 0;
-      margin-left: $bpk-spacing-sm;
-    }
+export const ParagraphNoMargin = withDefaultProps(BpkText, {
+  textStyle: 'base',
+  tagName: 'p',
+  className: ['bpk-docs-paragraph', 'bpk-docs-paragraph--no-margin']
+    .map(getClassName)
+    .join(' '),
+});
 
-    > svg {
-      display: block;
-      height: 100%;
-    }
-  }
-}
+export default withDefaultProps(BpkText, {
+  textStyle: 'base',
+  tagName: 'p',
+  className: getClassName('bpk-docs-paragraph'),
+});

@@ -15,18 +15,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+@import '~bpk-mixins';
 
-import ParagraphOld, {
-  ParagraphNoMargin as ParagraphNoMarginOld,
-} from './Paragraph';
-import ParagraphNeo, {
-  ParagraphNoMargin as ParagraphNoMarginNeo,
-} from '../neo/Paragraph';
+.bpkdocs-alternating-content {
+  &__section {
+    padding: $bpk-spacing-lg * 2;
 
-const ParagraphNoMargin = process.env.BPK_NEO
-  ? ParagraphNoMarginNeo
-  : ParagraphNoMarginOld;
-const Paragraph = process.env.BPK_NEO ? ParagraphNeo : ParagraphOld;
+    &--even {
+      background-color: $bpk-color-gray-50;
+    }
 
-export { ParagraphNoMargin };
-export default Paragraph;
+    &--odd {
+      background-color: $bpk-color-gray-100;
+    }
+  }
+}
+

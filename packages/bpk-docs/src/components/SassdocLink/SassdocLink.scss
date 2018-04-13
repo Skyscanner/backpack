@@ -16,17 +16,33 @@
  * limitations under the License.
  */
 
-import ParagraphOld, {
-  ParagraphNoMargin as ParagraphNoMarginOld,
-} from './Paragraph';
-import ParagraphNeo, {
-  ParagraphNoMargin as ParagraphNoMarginNeo,
-} from '../neo/Paragraph';
+@import '~bpk-mixins/index';
 
-const ParagraphNoMargin = process.env.BPK_NEO
-  ? ParagraphNoMarginNeo
-  : ParagraphNoMarginOld;
-const Paragraph = process.env.BPK_NEO ? ParagraphNeo : ParagraphOld;
+.bpkdocs-sassdoc-link {
+  padding: $bpk-spacing-sm;
+  background-color: $bpk-color-gray-50;
 
-export { ParagraphNoMargin };
-export default Paragraph;
+  @include bpk-border-radius-xs;
+
+  &__logo {
+    display: inline-block;
+    height: $bpk-spacing-base;
+    margin-right: $bpk-spacing-sm;
+    vertical-align: top;
+
+    @include bpk-rtl {
+      margin-right: 0;
+      margin-left: $bpk-spacing-sm;
+    }
+
+    > svg {
+      display: block;
+      height: 100%;
+    }
+  }
+
+  &--transparent-background {
+    border-radius: 0;
+    background-color: transparent;
+  }
+}
