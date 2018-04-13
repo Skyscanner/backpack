@@ -31,33 +31,29 @@ class DrawerContainer extends Component {
   constructor() {
     super();
 
-    this.onOpen = this.onOpen.bind(this);
-    this.onClose = this.onClose.bind(this);
-    this.toggleTitle = this.toggleTitle.bind(this);
-
     this.state = {
       isOpen: false,
       hideTitle: false,
     };
   }
 
-  onOpen() {
+  onOpen = () => {
     this.setState({
       isOpen: true,
     });
-  }
+  };
 
-  onClose() {
+  onClose = () => {
     this.setState({
       isOpen: false,
     });
-  }
+  };
 
-  toggleTitle() {
+  toggleTitle = () => {
     this.setState(state => ({
       hideTitle: !state.hideTitle,
     }));
-  }
+  };
 
   render() {
     const { children, ...rest } = this.props;

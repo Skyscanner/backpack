@@ -29,15 +29,13 @@ class FormValidationContainer extends Component {
     this.state = {
       expanded: true,
     };
-
-    this.toggleExpanded = this.toggleExpanded.bind(this);
   }
 
-  toggleExpanded() {
+  toggleExpanded = () => {
     this.setState(prevState => ({
       expanded: !prevState.expanded,
     }));
-  }
+  };
 
   render() {
     return (

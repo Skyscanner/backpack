@@ -86,11 +86,6 @@ const withCalendarState = Calendar => {
           maxDate,
         ),
       };
-
-      this.handleDateSelect = this.handleDateSelect.bind(this);
-      this.handleDateFocus = this.handleDateFocus.bind(this);
-      this.handleDateKeyDown = this.handleDateKeyDown.bind(this);
-      this.handleMonthChange = this.handleMonthChange.bind(this);
     }
 
     componentWillReceiveProps(nextProps) {
@@ -106,7 +101,7 @@ const withCalendarState = Calendar => {
       }
     }
 
-    handleDateFocus(event, { date, source }) {
+    handleDateFocus = (event, { date, source }) => {
       const { onMonthChange } = this.props;
       const focusedDate = dateToBoundaries(
         date,
@@ -126,9 +121,9 @@ const withCalendarState = Calendar => {
           }
         },
       );
-    }
+    };
 
-    handleDateSelect(date) {
+    handleDateSelect = date => {
       const { onDateSelect } = this.props;
       const keyboardFocusState = { preventKeyboardFocus: false };
 
@@ -143,9 +138,9 @@ const withCalendarState = Calendar => {
       } else {
         this.setState(keyboardFocusState);
       }
-    }
+    };
 
-    handleMonthChange(event, { month, source }) {
+    handleMonthChange = (event, { month, source }) => {
       this.handleDateFocus(event, {
         date: setMonthYear(
           this.state.focusedDate,
@@ -154,9 +149,9 @@ const withCalendarState = Calendar => {
         ),
         source,
       });
-    }
+    };
 
-    handleDateKeyDown(event) {
+    handleDateKeyDown = event => {
       event.persist();
       const reverse = getScriptDirection() === 'rtl' ? -1 : 1;
       const { focusedDate } = this.state;
@@ -220,7 +215,7 @@ const withCalendarState = Calendar => {
       if (preventDefault) {
         event.preventDefault();
       }
-    }
+    };
 
     render() {
       const {

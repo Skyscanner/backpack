@@ -27,14 +27,13 @@ class NudgerContainer extends Component {
   constructor() {
     super();
 
-    this.handleChange = this.handleChange.bind(this);
     this.state = {
       value: 2,
     };
   }
-  handleChange(value) {
+  handleChange = value => {
     this.setState({ value });
-  }
+  };
 
   render() {
     return (

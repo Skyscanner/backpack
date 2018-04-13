@@ -52,11 +52,6 @@ export default function withLazyLoading(
     constructor(): void {
       super();
 
-      this.setInView = this.setInView.bind(this);
-      this.removeEventListeners = this.removeEventListeners.bind(this);
-      this.checkInView = this.checkInView.bind(this);
-      this.isInViewPort = this.isInViewPort.bind(this);
-      this.supportsPassiveEvents = this.supportsPassiveEvents.bind(this);
       this.state = {
         inView: false,
       };
@@ -75,22 +70,21 @@ export default function withLazyLoading(
       this.checkInView();
     }
 
-    componentWillUnmount(): void {
+    componentWillUnmount = (): void => {
       this.removeEventListeners();
-    }
+    };
 
-    setInView(): void {
+    setInView = (): void => {
       this.setState((): {} => ({
         inView: true,
       }));
       this.removeEventListeners();
-    }
+    };
 
-    getPassiveArgs(): {} {
-      return this.supportsPassiveEvents() ? { passive: true } : {};
-    }
+    getPassiveArgs = (): {} =>
+      this.supportsPassiveEvents() ? { passive: true } : {};
 
-    removeEventListeners(): void {
+    removeEventListeners = (): void => {
       documentRef.removeEventListener('scroll', this.checkInView, {
         capture: true,
         ...this.getPassiveArgs(),
@@ -98,18 +92,18 @@ export default function withLazyLoading(
       documentRef.removeEventListener('resize', this.checkInView);
       documentRef.removeEventListener('orientationchange', this.checkInView);
       documentRef.removeEventListener('fullscreenchange', this.checkInView);
-    }
+    };
 
-    checkInView(): void {
+    checkInView = (): void => {
       if (this.isInViewPort()) {
         this.setInView();
       }
-    }
+    };
 
     // This function is taken from modernizr
     // See https://github.com/modernizr/modernizr
     // eslint-disable-next-line
-    supportsPassiveEvents(): boolean {
+    supportsPassiveEvents = (): boolean => {
       let supportsPassiveOption = false;
       try {
         // $FlowFixMe
@@ -126,9 +120,9 @@ export default function withLazyLoading(
         return false;
       }
       return supportsPassiveOption;
-    }
+    };
 
-    isInViewPort(): boolean {
+    isInViewPort = (): boolean => {
       if (!this.element) return false;
       const rect = this.element.getBoundingClientRect();
 
@@ -147,7 +141,7 @@ export default function withLazyLoading(
         rect.top < viewPortHeight &&
         rect.left < viewPortWidth
       );
-    }
+    };
 
     render(): Node {
       const { style, className, ...rest } = this.props;

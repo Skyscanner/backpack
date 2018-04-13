@@ -34,14 +34,13 @@ class DismissableBpkBannerAlert extends Component {
   constructor() {
     super();
 
-    this.setDismissed = this.setDismissed.bind(this);
 
     this.state = {
       show: true,
     };
   }
 
-  setDismissed() {
+  setDismissed = () => {
     this.setState({
       show: false,
     });

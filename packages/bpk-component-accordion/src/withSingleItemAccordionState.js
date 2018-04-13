@@ -38,21 +38,18 @@ const withSingleItemAccordionState = ComposedComponent => {
       this.state = {
         expanded: getInitiallyExpanded(this.props.children),
       };
-
-      this.openAccordionItem = this.openAccordionItem.bind(this);
-      this.renderAccordionItem = this.renderAccordionItem.bind(this);
     }
 
-    openAccordionItem(key) {
+    openAccordionItem = key => {
       this.setState({ expanded: key });
-    }
+    };
 
-    renderAccordionItem(accordionItem) {
+    renderAccordionItem = accordionItem => {
       const expanded = this.state.expanded === accordionItem.key;
       const onClick = () => this.openAccordionItem(accordionItem.key);
 
       return cloneElement(accordionItem, { expanded, onClick });
-    }
+    };
 
     render() {
       const { children, ...rest } = this.props;

@@ -171,16 +171,13 @@ class BpkBannerAlertDismissDemo extends Component<any, DismissDemoState> {
       },
     ];
 
-    this.reset = this.reset.bind(this);
-    this.setDismissed = this.setDismissed.bind(this);
-
     this.state = {
       bannerAlerts: JSON.parse(JSON.stringify(this.bannerAlerts)),
       dirty: false,
     };
   }
 
-  setDismissed(index) {
+  setDismissed = index => {
     const updatedBannerAlerts = JSON.parse(
       JSON.stringify(this.state.bannerAlerts),
     );
@@ -189,14 +186,14 @@ class BpkBannerAlertDismissDemo extends Component<any, DismissDemoState> {
       bannerAlerts: updatedBannerAlerts,
       dirty: true,
     });
-  }
+  };
 
-  reset() {
+  reset = () => {
     this.setState({
       bannerAlerts: JSON.parse(JSON.stringify(this.bannerAlerts)),
       dirty: false,
     });
-  }
+  };
 
   render() {
     return (
@@ -251,18 +248,16 @@ class BpkBannerAlertFadeDemo extends Component<FadeDemoProps, FadeDemoState> {
   constructor() {
     super();
 
-    this.addBannerAlert = this.addBannerAlert.bind(this);
-
     this.state = {
       bannerAlertCount: 0,
     };
   }
 
-  addBannerAlert() {
+  addBannerAlert = () => {
     this.setState({
       bannerAlertCount: (this.state.bannerAlertCount += 1),
     });
-  }
+  };
 
   render() {
     return (

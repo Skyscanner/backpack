@@ -39,9 +39,6 @@ const setTheme = theme => {
 class BpkThemeToggle extends React.Component {
   constructor(props) {
     super(props);
-    this.cycleTheme = this.cycleTheme.bind(this);
-    this.handleKeyDown = this.handleKeyDown.bind(this);
-    this.handleChange = this.handleChange.bind(this);
     this.state = {
       selectedTheme: '',
     };
@@ -55,19 +52,19 @@ class BpkThemeToggle extends React.Component {
     document.removeEventListener('keydown', this.handleKeyDown);
   }
 
-  handleKeyDown(e) {
+  handleKeyDown = e => {
     if (e.ctrlKey && e.metaKey && e.key.toLowerCase() === 't') {
       this.cycleTheme();
     }
-  }
+  };
 
-  handleChange(e) {
+  handleChange = e => {
     const selectedTheme = e.target.value;
     this.setState({ selectedTheme });
     setTheme(bpkCustomThemes[selectedTheme]);
-  }
+  };
 
-  cycleTheme() {
+  cycleTheme = () => {
     let { selectedTheme } = this.state;
     let selectedIndex = selectedTheme
       ? availableThemes.indexOf(selectedTheme) + 1
@@ -78,7 +75,7 @@ class BpkThemeToggle extends React.Component {
     selectedTheme = availableThemes[selectedIndex];
     this.setState({ selectedTheme });
     setTheme(bpkCustomThemes[selectedTheme]);
-  }
+  };
 
   render() {
     const { ...rest } = this.props;

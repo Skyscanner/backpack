@@ -60,7 +60,6 @@ class BpkHorizontalNav extends React.Component {
       indicatorOffsetX: null,
       indicatorWidth: null,
     };
-    this.onChildLayout = this.onChildLayout.bind(this);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -73,7 +72,7 @@ class BpkHorizontalNav extends React.Component {
     }
   }
 
-  onChildLayout(event, id) {
+  onChildLayout = (event, id) => {
     const { width, x } = event.nativeEvent.layout;
     this.childrenPositions[id] = { width, x };
 
@@ -84,7 +83,7 @@ class BpkHorizontalNav extends React.Component {
         indicatorWidth: width,
       });
     }
-  }
+  };
 
   childrenPositions = {};
 

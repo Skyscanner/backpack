@@ -46,13 +46,11 @@ class CalendarNavContainer extends Component {
     this.state = {
       month: new Date(),
     };
-
-    this.onChange = this.onChange.bind(this);
   }
 
-  onChange(event, { month }) {
+  onChange = (event, { month }) => {
     this.setState(() => ({ month }));
-  }
+  };
 
   render() {
     return (

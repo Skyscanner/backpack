@@ -116,33 +116,25 @@ class AutosuggestExample extends Component {
       autosuggestId: `autosuggest-example-${instances}`,
       suggestions: [],
     };
-
-    this.onChange = this.onChange.bind(this);
-    this.onSuggestionsFetchRequested = this.onSuggestionsFetchRequested.bind(
-      this,
-    );
-    this.onSuggestionsClearRequested = this.onSuggestionsClearRequested.bind(
-      this,
-    );
   }
 
-  onChange(e, { newValue }) {
+  onChange = (e, { newValue }) => {
     this.setState({
       value: newValue,
     });
-  }
+  };
 
-  onSuggestionsFetchRequested({ value }) {
+  onSuggestionsFetchRequested = ({ value }) => {
     this.setState({
       suggestions: getSuggestions(value),
     });
-  }
+  };
 
-  onSuggestionsClearRequested() {
+  onSuggestionsClearRequested = () => {
     this.setState({
       suggestions: [],
     });
-  }
+  };
 
   render() {
     const { autosuggestId, value, suggestions } = this.state;

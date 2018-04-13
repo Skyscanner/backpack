@@ -31,12 +31,6 @@ const navigatedByMonthNudger = () =>
   document.activeElement.id.indexOf('month_nudger') !== -1;
 
 class BpkCalendarDate extends PureComponent {
-  constructor() {
-    super();
-
-    this.getButtonRef = this.getButtonRef.bind(this);
-  }
-
   componentDidMount() {
     if (!this.props.preventKeyboardFocus && this.props.isFocused) {
       // If we got here by clicking the nudger, don't focus this date
@@ -76,9 +70,9 @@ class BpkCalendarDate extends PureComponent {
     }
   }
 
-  getButtonRef(button) {
+  getButtonRef = button => {
     this.button = button;
-  }
+  };
 
   render() {
     const {

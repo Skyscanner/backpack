@@ -117,33 +117,25 @@ class AutosuggestExample extends Component {
       value: '',
       suggestions: [],
     };
-
-    this.onChange = this.onChange.bind(this);
-    this.onSuggestionsFetchRequested = this.onSuggestionsFetchRequested.bind(
-      this,
-    );
-    this.onSuggestionsClearRequested = this.onSuggestionsClearRequested.bind(
-      this,
-    );
   }
 
-  onChange(e, { newValue }) {
+  onChange = (e, { newValue }) => {
     this.setState({
       value: newValue,
     });
-  }
+  };
 
-  onSuggestionsFetchRequested({ value }) {
+  onSuggestionsFetchRequested = ({ value }) => {
     this.setState({
       suggestions: getSuggestions(value),
     });
-  }
+  };
 
-  onSuggestionsClearRequested() {
+  onSuggestionsClearRequested = () => {
     this.setState({
       suggestions: [],
     });
-  }
+  };
 
   render() {
     const { value, suggestions } = this.state;
@@ -191,19 +183,16 @@ class FieldsetContainer extends Component {
       checked: false,
       validState: 0,
     };
-
-    this.onChange = this.onChange.bind(this);
-    this.toggleStates = this.toggleStates.bind(this);
   }
 
-  onChange(e) {
+  onChange = e => {
     this.setState({
       value: e.target.value,
       checked: e.target.checked,
     });
-  }
+  };
 
-  toggleStates() {
+  toggleStates = () => {
     this.setState(prevState => {
       let nextValidState = prevState.validState + 1;
 
@@ -215,7 +204,7 @@ class FieldsetContainer extends Component {
         validState: nextValidState,
       };
     });
-  }
+  };
 
   render() {
     const { children, isCheckbox, validStates, ...rest } = this.props;

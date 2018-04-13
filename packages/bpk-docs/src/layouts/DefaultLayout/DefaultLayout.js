@@ -51,8 +51,6 @@ class DefaultLayout extends Component {
       headerExpanded: false,
       locationKey: this.props.location.key,
     };
-
-    this.onHamburgerClick = this.onHamburgerClick.bind(this);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -64,11 +62,11 @@ class DefaultLayout extends Component {
     }
   }
 
-  onHamburgerClick() {
+  onHamburgerClick = () => {
     this.setState(prevState => ({
       headerExpanded: !prevState.headerExpanded,
     }));
-  }
+  };
 
   render() {
     const { children } = this.props;

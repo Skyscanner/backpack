@@ -66,7 +66,6 @@ class BpkBarchart extends Component {
     this.xScale = scaleBand();
     this.yScale = scaleLinear();
 
-    this.updateDimensions = this.updateDimensions.bind(this);
     this.onWindowResize = debounce(this.updateDimensions, 100);
   }
 
@@ -79,7 +78,7 @@ class BpkBarchart extends Component {
     window.removeEventListener('resize', this.onWindowResize);
   }
 
-  updateDimensions() {
+  updateDimensions = () => {
     if (!this.svgEl) {
       return;
     }
@@ -87,7 +86,7 @@ class BpkBarchart extends Component {
     const { width, height } = this.svgEl.getBoundingClientRect();
 
     this.setState({ width, height });
-  }
+  };
 
   render() {
     const {

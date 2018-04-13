@@ -24,11 +24,6 @@ import { getHtmlElement, DIRECTION_CHANGE_EVENT } from './utils';
 
 const updateOnDirectionChange = EnhancedComponent => {
   class UpdateOnDirectionChange extends Component {
-    constructor() {
-      super();
-      this.onDirectionChange = this.onDirectionChange.bind(this);
-    }
-
     componentDidMount() {
       getHtmlElement().addEventListener(
         DIRECTION_CHANGE_EVENT,
@@ -45,9 +40,9 @@ const updateOnDirectionChange = EnhancedComponent => {
       );
     }
 
-    onDirectionChange() {
+    onDirectionChange = () => {
       this.forceUpdate();
-    }
+    };
 
     render() {
       return <EnhancedComponent {...this.props} />;

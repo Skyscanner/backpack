@@ -64,16 +64,14 @@ class BpkThemePicker extends Component {
       themeId: 'blue',
       theme: this.themes.blue,
     };
-
-    this.switchTheme = this.switchTheme.bind(this);
   }
 
-  switchTheme(value) {
+  switchTheme = value => {
     this.setState({
       themeId: value,
       theme: this.themes[value],
     });
-  }
+  };
 
   render() {
     return (

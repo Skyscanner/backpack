@@ -54,15 +54,13 @@ class TokenSwitcher extends Component {
     this.state = {
       selectedPlatform: platforms.web.id,
     };
-
-    this.onChange = this.onChange.bind(this);
   }
 
-  onChange(id) {
+  onChange = id => {
     this.setState(() => ({
       selectedPlatform: id,
     }));
-  }
+  };
 
   render() {
     const { tokens } = this.props;
