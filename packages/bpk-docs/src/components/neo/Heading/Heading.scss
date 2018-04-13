@@ -24,6 +24,7 @@
 
   &--h1 {
     margin-bottom: $bpk-spacing-xxl;
+
     @include bpk-text-xxl;
 
     @include bpk-breakpoint-mobile {
@@ -33,6 +34,7 @@
 
   &--h2 {
     margin-bottom: $bpk-spacing-xxl;
+
     @include bpk-text-xxl;
 
     @include bpk-breakpoint-mobile {
