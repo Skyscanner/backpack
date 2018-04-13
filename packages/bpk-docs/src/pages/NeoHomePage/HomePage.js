@@ -29,17 +29,17 @@ import * as ROUTES from './../../constants/routes';
 
 import HomePageCard from '../../components/HomePageCard';
 import UpdatedAt from './UpdatedAt';
-import ComponentsImage from './components.jpg';
-import DesignTokensImage from './design_tokens.jpg';
-import GitHubImage from './github.jpg';
-import UsingBackpackImage from './using_bpk.jpg';
+import ComponentsImage from '../../static/components.jpg';
+import DesignTokensImage from '../../static/design_tokens.jpg';
+import GitHubImage from '../../static/github.jpg';
+import UsingBackpackImage from '../../static/using_bpk.jpg';
 
 import ComponentsIcon from '../../static/components_icon.svg';
 import DesignTokensIcon from '../../static/design_tokens_icon.svg';
 import GitHubIcon from '../../static/github_icon.svg';
 import UsingBackpackIcon from '../../static/using_bpk_icon.svg';
 import BackpackLogoWhite from '../../static/backpack-logo-white.svg';
-import HeroImage from './hero.jpg';
+import HeroImage from '../../static/hero.jpg';
 
 const getClassName = cssModules(STYLES);
 
