@@ -22,7 +22,7 @@ import { cssModules } from 'bpk-react-utils';
 import BpkText from 'bpk-component-text';
 import format from 'date-fns/format';
 
-import BpkCalendarGridHeader from './BpkCalendarGridHeader';
+import BpkCalendarGridHeader from './BpkCalendarScrollGridHeader';
 import Week from './Week';
 import {
   formatIsoDate,
@@ -32,14 +32,14 @@ import {
 } from './date-utils';
 import CustomPropTypes from './custom-proptypes';
 
-import STYLES from './bpk-calendar-grid.scss';
+import STYLES from './bpk-calendar-scroll-grid.scss';
 
 const getClassName = cssModules(STYLES);
 
 /*
   BpkCalendarGrid - the grid representing a whole month
 */
-class BpkCalendarGrid extends Component {
+class BpkCalendarScrollrid extends Component {
   constructor(props) {
     super(props);
 
@@ -96,7 +96,7 @@ class BpkCalendarGrid extends Component {
 
     const { calendarMonthWeeks, daysOfWeek } = this.state;
 
-    const classNames = [getClassName('bpk-calendar-grid')];
+    const classNames = [getClassName('bpk-calendar-scroll-grid')];
     if (className) {
       classNames.push(className);
     }
@@ -104,7 +104,7 @@ class BpkCalendarGrid extends Component {
     return (
       <div>
         <BpkText
-          className={getClassName('bpk-calendar-grid__title')}
+          className={getClassName('bpk-calendar-scroll-grid__title')}
           tagName="h1"
           textStyle="lg"
         >
@@ -112,7 +112,7 @@ class BpkCalendarGrid extends Component {
         </BpkText>
         <table className={classNames.join(' ')}>
           <caption
-            className={getClassName('bpk-calendar-grid__caption')}
+            className={getClassName('bpk-calendar-scroll-grid__caption')}
             hidden
           >
             {formatMonth(month)}
@@ -153,7 +153,7 @@ class BpkCalendarGrid extends Component {
   }
 }
 
-BpkCalendarGrid.propTypes = {
+BpkCalendarScrollrid.propTypes = {
   // Required
   DateComponent: PropTypes.func.isRequired,
   daysOfWeek: CustomPropTypes.DaysOfWeek.isRequired,
@@ -176,7 +176,7 @@ BpkCalendarGrid.propTypes = {
   weekStartsOn: PropTypes.number,
 };
 
-BpkCalendarGrid.defaultProps = {
+BpkCalendarScrollrid.defaultProps = {
   className: null,
   dateModifiers: {},
   focusedDate: null,
@@ -192,4 +192,4 @@ BpkCalendarGrid.defaultProps = {
   weekStartsOn: 1,
 };
 
-export default BpkCalendarGrid;
+export default BpkCalendarScrollrid;

@@ -21,7 +21,7 @@ import React from 'react';
 import { cssModules } from 'bpk-react-utils';
 
 import CustomPropTypes from './custom-proptypes';
-import STYLES from './bpk-calendar.scss';
+import STYLES from './bpk-calendar-scroll.scss';
 
 const getClassName = cssModules(STYLES);
 
@@ -54,7 +54,7 @@ const composeCalendar = (GridHeader, ScrollingGrid, CalendarDate) => {
       classNames.push(className);
     }
     if (fixedWidth) {
-      classNames.push(getClassName('bpk-calendar--fixed'));
+      classNames.push(getClassName('bpk-calendar-scroll--fixed'));
     }
 
     const headerClasses = [];

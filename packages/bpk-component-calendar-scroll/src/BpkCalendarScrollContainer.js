@@ -18,11 +18,11 @@
 
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import BpkCalendarGrid from './BpkCalendarGrid';
-import { addCalendarGridScroll } from './BpkCalendarGridScroll';
-import BpkCalendarGridHeader from './BpkCalendarGridHeader';
-import BpkCalendarDate from './BpkCalendarDate';
-import composeCalendar from './composeCalendar';
+import BpkCalendarScrollGrid from './BpkCalendarScrollGrid';
+import { addCalendarScrollGridList } from './BpkCalendarScrollGridList';
+import BpkCalendarScrollGridHeader from './BpkCalendarScrollGridHeader';
+import BpkCalendarScrollDate from './BpkCalendarScrollDate';
+import composeCalendarScroll from './composeCalendarScroll';
 import {
   addDays,
   addMonths,
@@ -37,7 +37,9 @@ import {
 } from './date-utils';
 import { getScriptDirection } from './utils';
 
-const ScrollingBpkCalendarGrid = addCalendarGridScroll(BpkCalendarGrid);
+const ScrollingBpkCalendarScrollGrid = addCalendarScrollGridList(
+  BpkCalendarScrollGrid,
+);
 
 const focusedDateHasChanged = (currentProps, nextProps) => {
   const rawNextSelectedDate = nextProps.selectedDate || nextProps.date;
@@ -65,8 +67,8 @@ const determineFocusedDate = (
   return minDate;
 };
 
-const withCalendarState = Calendar => {
-  class BpkCalendarContainer extends Component {
+const withCalendarScrollState = Calendar => {
+  class BpkCalendarScrollContainer extends Component {
     constructor(props) {
       super(props);
 
@@ -273,7 +275,7 @@ const withCalendarState = Calendar => {
     }
   }
 
-  BpkCalendarContainer.propTypes = {
+  BpkCalendarScrollContainer.propTypes = {
     // `date` is to be DEPRECATED in favour of `selectedDate`
     date: PropTypes.instanceOf(Date),
     fixedWidth: PropTypes.bool,
@@ -285,7 +287,7 @@ const withCalendarState = Calendar => {
     initiallyFocusedDate: PropTypes.instanceOf(Date),
   };
 
-  BpkCalendarContainer.defaultProps = {
+  BpkCalendarScrollContainer.defaultProps = {
     date: null,
     fixedWidth: true,
     maxDate: addMonths(new Date(), 12),
@@ -296,14 +298,14 @@ const withCalendarState = Calendar => {
     initiallyFocusedDate: null,
   };
 
-  return BpkCalendarContainer;
+  return BpkCalendarScrollContainer;
 };
 
-export default withCalendarState(
-  composeCalendar(
-    BpkCalendarGridHeader,
-    ScrollingBpkCalendarGrid,
-    BpkCalendarDate,
+export default withCalendarScrollState(
+  composeCalendarScroll(
+    BpkCalendarScrollGridHeader,
+    ScrollingBpkCalendarScrollGrid,
+    BpkCalendarScrollDate,
   ),
 );
-export { withCalendarState };
+export { withCalendarScrollState };

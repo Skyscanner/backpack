@@ -19,7 +19,7 @@
 @import '~bpk-mixins/index';
 @import 'variables';
 
-.bpk-calendar {
+.bpk-calendar-scroll {
   width: 100%;
 
   @include bpk-border-radius-sm;

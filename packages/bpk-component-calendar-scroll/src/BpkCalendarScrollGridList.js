@@ -22,15 +22,17 @@ import { cssModules } from 'bpk-react-utils';
 
 import { formatIsoMonth, isWithinRange, getMonthRange } from './date-utils';
 
-import STYLES from './bpk-calendar-grid-scroll.scss';
+import STYLES from './bpk-calendar-scroll-grid-list.scss';
 
 const getClassName = cssModules(STYLES);
 
-const BpkCalendarGridScroll = props => {
+const BpkCalendarScrollGridList = props => {
   const { ScrollComponent, className, focusedDate, ...rest } = props;
 
-  const stripClassNames = [getClassName('bpk-calendar-grid-scroll__strip')];
-  const classNames = [getClassName('bpk-calendar-grid-scroll')];
+  const stripClassNames = [
+    getClassName('bpk-calendar-scroll-grid-list__strip'),
+  ];
+  const classNames = [getClassName('bpk-calendar-scroll-grid-list')];
   if (className) {
     classNames.push(className);
   }
@@ -49,11 +51,11 @@ const BpkCalendarGridScroll = props => {
                 focusedDate={focusedDate}
                 preventKeyboardFocus={rest.preventKeyboardFocus}
                 aria-hidden={index !== 1}
-                className={getClassName('bpk-calendar-grid-scroll__grid')}
+                className={getClassName('bpk-calendar-scroll-grid-list__grid')}
               />
             ) : (
               <div
-                className={getClassName('bpk-calendar-grid-scroll__dummy')}
+                className={getClassName('bpk-calendar-scroll-grid-list__dummy')}
                 key={formatIsoMonth(m)}
               />
             ),
@@ -63,22 +65,22 @@ const BpkCalendarGridScroll = props => {
   );
 };
 
-BpkCalendarGridScroll.propTypes = {
+BpkCalendarScrollGridList.propTypes = {
   ScrollComponent: PropTypes.func.isRequired,
   className: PropTypes.string,
   months: PropTypes.arrayOf(Date),
   focusedDate: PropTypes.instanceOf(Date),
 };
 
-BpkCalendarGridScroll.defaultProps = {
+BpkCalendarScrollGridList.defaultProps = {
   className: null,
   months: [],
   focusedDate: null,
 };
 
-const addCalendarGridScroll = ScrollComponent => props => (
-  <BpkCalendarGridScroll ScrollComponent={ScrollComponent} {...props} />
+const addCalendarScrollGridList = ScrollComponent => props => (
+  <BpkCalendarScrollGridList ScrollComponent={ScrollComponent} {...props} />
 );
 
-export default BpkCalendarGridScroll;
-export { addCalendarGridScroll };
+export default BpkCalendarScrollGridList;
+export { addCalendarScrollGridList };

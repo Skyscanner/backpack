@@ -22,11 +22,11 @@ import { cssModules } from 'bpk-react-utils';
 
 import CustomPropTypes from './custom-proptypes';
 
-import STYLES from './bpk-calendar-date.scss';
+import STYLES from './bpk-calendar-scroll-date.scss';
 
 const getClassName = cssModules(STYLES);
 
-class BpkCalendarDate extends PureComponent {
+class BpkCalendarScrollDate extends PureComponent {
   constructor() {
     super();
 
@@ -63,27 +63,27 @@ class BpkCalendarDate extends PureComponent {
       isToday,
       ...buttonProps
     } = this.props;
-    const classNames = [getClassName('bpk-calendar-date')];
+    const classNames = [getClassName('bpk-calendar-scroll-date')];
 
     Object.keys(modifiers).forEach(modifier => {
       if (modifiers[modifier](this.props)) {
         classNames.push(
-          getClassName(`bpk-calendar-date--modifier-${modifier}`),
+          getClassName(`bpk-calendar-scroll-date--modifier-${modifier}`),
         );
       }
     });
 
     if (isFocused) {
-      classNames.push(getClassName('bpk-calendar-date--focused'));
+      classNames.push(getClassName('bpk-calendar-scroll-date--focused'));
     }
     if (isSelected) {
-      classNames.push(getClassName('bpk-calendar-date--selected'));
+      classNames.push(getClassName('bpk-calendar-scroll-date--selected'));
     }
     if (isBlocked) {
-      classNames.push(getClassName('bpk-calendar-date--blocked'));
+      classNames.push(getClassName('bpk-calendar-scroll-date--blocked'));
     }
     if (isToday) {
-      classNames.push(getClassName('bpk-calendar-date--today'));
+      classNames.push(getClassName('bpk-calendar-scroll-date--today'));
     }
 
     delete buttonProps.preventKeyboardFocus;
@@ -113,7 +113,7 @@ class BpkCalendarDate extends PureComponent {
   }
 }
 
-BpkCalendarDate.propTypes = {
+BpkCalendarScrollDate.propTypes = {
   // Required
   date: PropTypes.instanceOf(Date).isRequired,
   // Optional
@@ -128,7 +128,7 @@ BpkCalendarDate.propTypes = {
   preventKeyboardFocus: PropTypes.bool,
 };
 
-BpkCalendarDate.defaultProps = {
+BpkCalendarScrollDate.defaultProps = {
   isBlocked: false,
   isFocused: false,
   isOutside: false,
@@ -140,4 +140,4 @@ BpkCalendarDate.defaultProps = {
   preventKeyboardFocus: true,
 };
 
-export default BpkCalendarDate;
+export default BpkCalendarScrollDate;

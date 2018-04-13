@@ -2,7 +2,7 @@
 
 exports[`composeCalendar should compose a nav, header, grid and date component correctly 1`] = `
 <div
-  className="bpk-calendar bpk-calendar--fixed"
+  className="bpk-calendar bpk-calendar-scroll-fixed"
 >
   <Nav
     changeMonthLabel="Change month"
@@ -266,7 +266,7 @@ exports[`composeCalendar should render with "fixedWidth" set to false 1`] = `
 
 exports[`composeCalendar should render with custom className prop correctly 1`] = `
 <div
-  className="bpk-calendar my-custom-class bpk-calendar--fixed"
+  className="bpk-calendar my-custom-class bpk-calendar-scroll-fixed"
 >
   <Nav
     changeMonthLabel="Change month"
@@ -398,7 +398,7 @@ exports[`composeCalendar should render with custom className prop correctly 1`] 
 
 exports[`composeCalendar should render without a header element 1`] = `
 <div
-  className="bpk-calendar bpk-calendar--fixed"
+  className="bpk-calendar bpk-calendar-scroll-fixed"
 >
   <Nav
     changeMonthLabel="Change month"
@@ -479,7 +479,7 @@ exports[`composeCalendar should render without a header element 1`] = `
 
 exports[`composeCalendar should render without a nav or header element 1`] = `
 <div
-  className="bpk-calendar bpk-calendar--fixed"
+  className="bpk-calendar bpk-calendar-scroll-fixed"
 >
   <Grid
     DateComponent="Date"

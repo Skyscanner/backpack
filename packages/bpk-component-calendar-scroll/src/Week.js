@@ -31,7 +31,7 @@ import {
   isWithinRange,
 } from './date-utils';
 import CustomPropTypes from './custom-proptypes';
-import STYLES from './bpk-calendar-grid.scss';
+import STYLES from './bpk-calendar-scroll-grid.scss';
 
 const getClassName = cssModules(STYLES);
 
@@ -124,7 +124,7 @@ class Week extends Component {
     const lastDayOfWeekendIndex = getLastDayOfWeekend(daysOfWeek);
 
     return (
-      <tr className={getClassName('bpk-calendar-grid__week')}>
+      <tr className={getClassName('bpk-calendar-scroll-grid__week')}>
         {this.props.dates.map(date => (
           <DateContainer
             key={date.getDate()}
@@ -192,13 +192,17 @@ Week.defaultProps = {
   DateContainer - one for each date in the grid; wraps the actual BpkCalendarDate (or custom) component
 */
 const DateContainer = props => {
-  const classNames = [getClassName('bpk-calendar-grid__date')];
+  const classNames = [getClassName('bpk-calendar-scroll-grid__date')];
 
   if (props.weekendStart) {
-    classNames.push(getClassName('bpk-calendar-grid__date--weekend-start'));
+    classNames.push(
+      getClassName('bpk-calendar-scroll-grid__date--weekend-start'),
+    );
   }
   if (props.weekendEnd) {
-    classNames.push(getClassName('bpk-calendar-grid__date--weekend-end'));
+    classNames.push(
+      getClassName('bpk-calendar-scroll-grid__date--weekend-end'),
+    );
   }
 
   return <td className={classNames.join(' ')}>{props.children}</td>;

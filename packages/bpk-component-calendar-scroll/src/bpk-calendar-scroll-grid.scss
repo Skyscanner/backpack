@@ -19,49 +19,43 @@
 @import '~bpk-mixins/index';
 @import 'variables';
 
-.bpk-calendar-header {
-  display: table;
+.bpk-calendar-scroll-grid {
   width: 100%;
-  table-layout: fixed;
+  border-collapse: separate;
+  border-spacing: 0;
 
-  &--table-head {
-    display: none;
+  &--animating {
+    z-index: 1;
+    transition: transform .2s ease-in-out;
   }
 
-  &__week {
-    display: table-row;
-    font-size: $bpk-font-size-sm;
-    line-height: $bpk-line-height-sm;
-    list-style: none;
+  &__title {
+    margin-top: $bpk-spacing-md;
+    margin-bottom: $bpk-spacing-sm;
+  }
+
+  &__caption {
+    @include bpk-visually-hidden;
+  }
+
+  &__date {
+    padding: $bpk-calendar-day-spacing ($bpk-calendar-day-spacing / 2) 0 ($bpk-calendar-day-spacing / 2);
     text-align: center;
-  }
-
-  &__weekday {
-    display: table-cell;
-    height: $bpk-calendar-day-size;
-    padding: 0 ($bpk-calendar-day-spacing / 2) 0 ($bpk-calendar-day-spacing / 2);
-    font-weight: normal;
-    box-shadow: $shadow-bottom;
     vertical-align: middle;
-    box-sizing: content-box;
-
-    &--weekend {
-      font-weight: bold;
-    }
 
     &--weekend-start {
-      box-shadow: $shadow-bottom, $shadow-left;
+      box-shadow: $shadow-left;
 
       @include bpk-rtl {
-        box-shadow: $shadow-bottom, $shadow-right;
+        box-shadow: $shadow-right;
       }
     }
 
     &--weekend-end:not(:last-child) {
-      box-shadow: $shadow-bottom, $shadow-right;
+      box-shadow: $shadow-right;
 
       @include bpk-rtl {
-        box-shadow: $shadow-bottom, $shadow-left;
+        box-shadow: $shadow-left;
       }
     }
   }

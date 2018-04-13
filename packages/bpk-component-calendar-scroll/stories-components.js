@@ -23,10 +23,10 @@ import addMonths from 'date-fns/add_months';
 import { dateToBoundaries, startOfDay, addDays } from './src/date-utils';
 import { formatMonth, formatDateFull, weekDays } from './test-utils';
 import {
-  BpkCalendarGrid,
-  BpkCalendarGridHeader,
-  withCalendarState,
-  composeCalendar,
+  BpkCalendarScrollGrid,
+  BpkCalendarScrollGridHeader,
+  withCalendarScrollState,
+  composeCalendarScroll,
 } from './index';
 
 const withPrices = (DateComponent, prices) => props => (
@@ -92,18 +92,18 @@ const MyCalendarDate = props => {
   );
 };
 
-const MyDepartCalendar = withCalendarState(
-  composeCalendar(
-    BpkCalendarGridHeader,
-    BpkCalendarGrid,
+const MyDepartCalendar = withCalendarScrollState(
+  composeCalendarScroll(
+    BpkCalendarScrollGridHeader,
+    BpkCalendarScrollGrid,
     withPrices(MyCalendarDate, prices),
   ),
 );
 
-const MyReturnCalendar = withCalendarState(
-  composeCalendar(
-    BpkCalendarGridHeader,
-    BpkCalendarGrid,
+const MyReturnCalendar = withCalendarScrollState(
+  composeCalendarScroll(
+    BpkCalendarScrollGridHeader,
+    BpkCalendarScrollGrid,
     withPrices(MyCalendarDate, prices),
   ),
 );

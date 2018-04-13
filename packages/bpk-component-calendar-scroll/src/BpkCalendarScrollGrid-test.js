@@ -23,18 +23,18 @@ import { mount } from 'enzyme';
 import isWeekend from 'date-fns/is_weekend';
 
 import { weekDays, formatDateFull, formatMonth } from '../test-utils';
-import BpkCalendarGrid from './BpkCalendarGrid';
-import BpkCalendarDate from './BpkCalendarDate';
+import BpkCalendarScrollGrid from './BpkCalendarScrollGrid';
+import BpkCalendarScrollDate from './BpkCalendarScrollDate';
 
 describe('BpkCalendarGrid', () => {
   it('should render correctly with "showWeekendSeparator" attribute set to false', () => {
     const tree = renderer
       .create(
-        <BpkCalendarGrid
+        <BpkCalendarScrollGrid
           month={new Date('2016-10')}
           formatMonth={formatMonth}
           formatDateFull={formatDateFull}
-          DateComponent={BpkCalendarDate}
+          DateComponent={BpkCalendarScrollDate}
           daysOfWeek={weekDays}
           weekStartsOn={0}
           showWeekendSeparator={false}
@@ -47,11 +47,11 @@ describe('BpkCalendarGrid', () => {
   it('should render correctly with a different "weekStartsOn" attribute', () => {
     const tree = renderer
       .create(
-        <BpkCalendarGrid
+        <BpkCalendarScrollGrid
           month={new Date('2016-10')}
           formatMonth={formatMonth}
           formatDateFull={formatDateFull}
-          DateComponent={BpkCalendarDate}
+          DateComponent={BpkCalendarScrollDate}
           daysOfWeek={weekDays}
           weekStartsOn={3}
           showWeekendSeparator
@@ -67,11 +67,11 @@ describe('BpkCalendarGrid', () => {
     };
     const tree = renderer
       .create(
-        <BpkCalendarGrid
+        <BpkCalendarScrollGrid
           month={new Date('2016-10')}
           formatMonth={formatMonth}
           formatDateFull={formatDateFull}
-          DateComponent={BpkCalendarDate}
+          DateComponent={BpkCalendarScrollDate}
           daysOfWeek={weekDays}
           weekStartsOn={1}
           dateModifiers={modifiers}
@@ -101,7 +101,7 @@ describe('BpkCalendarGrid', () => {
     };
     const tree = renderer
       .create(
-        <BpkCalendarGrid
+        <BpkCalendarScrollGrid
           month={new Date('2016-10')}
           formatMonth={formatMonth}
           formatDateFull={formatDateFull}
@@ -119,11 +119,11 @@ describe('BpkCalendarGrid', () => {
     const onDateClick = jest.fn();
 
     const grid = mount(
-      <BpkCalendarGrid
+      <BpkCalendarScrollGrid
         month={new Date('2016-10')}
         formatMonth={formatMonth}
         formatDateFull={formatDateFull}
-        DateComponent={BpkCalendarDate}
+        DateComponent={BpkCalendarScrollDate}
         daysOfWeek={weekDays}
         weekStartsOn={0}
         showWeekendSeparator

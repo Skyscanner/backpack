@@ -19,10 +19,10 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 // import { shallow } from 'enzyme';
-import { addCalendarGridScroll } from './BpkCalendarGridScroll';
+import { addCalendarScrollGridList } from './BpkCalendarScrollGridList';
 
 const MyComponent = props => <div>{JSON.stringify(props)}</div>;
-const ScrollMyComponent = addCalendarGridScroll(MyComponent);
+const ScrollMyComponent = addCalendarScrollGridList(MyComponent);
 
 describe('BpkCalendar', () => {
   it('should render correctly', () => {

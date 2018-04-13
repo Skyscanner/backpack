@@ -18,7 +18,7 @@
 
 @import '~bpk-mixins/index';
 
-.bpk-calendar-date {
+.bpk-calendar-scroll-date {
   width: $bpk-calendar-day-size;
   height: $bpk-calendar-day-size;
   padding: 0;
@@ -31,20 +31,20 @@
   appearance: none;
   box-sizing: border-box;
 
-  @include bpk-themeable-property(color, --bpk-calendar-date-text-color, $bpk-calendar-day-color);
+  @include bpk-themeable-property(color, --bpk-calendar-scroll-date-text-color, $bpk-calendar-day-color);
 
   @include bpk-hover {
-    &:not(.bpk-calendar-date--selected) {
+    &:not(.bpk-calendar-scroll-date--selected) {
       background-color: $bpk-calendar-day-hover-background-color;
 
-      @include bpk-themeable-property(color, --bpk-calendar-date-text-hover-color, $bpk-calendar-day-hover-color);
+      @include bpk-themeable-property(color, --bpk-calendar-scroll-date-text-hover-color, $bpk-calendar-day-hover-color);
     }
   }
 
-  &:not(.bpk-calendar-date--selected):active {
+  &:not(.bpk-calendar-scroll-date--selected):active {
     background-color: $bpk-calendar-day-active-background-color;
 
-    @include bpk-themeable-property(color, --bpk-calendar-date-text-active-color, $bpk-calendar-day-active-color);
+    @include bpk-themeable-property(color, --bpk-calendar-scroll-date-text-active-color, $bpk-calendar-day-active-color);
   }
 
   &--blocked {
@@ -60,15 +60,15 @@
     font-weight: bold;
     cursor: default;
 
-    @include bpk-themeable-property(background-color, --bpk-calendar-date-selected-background-color, $bpk-state-selected-background-color);
-    @include bpk-themeable-property(color, --bpk-calendar-date-text-selected-color, $bpk-calendar-day-selected-color);
+    @include bpk-themeable-property(background-color, --bpk-calendar-scroll-date-selected-background-color, $bpk-state-selected-background-color);
+    @include bpk-themeable-property(color, --bpk-calendar-scroll-date-text-selected-color, $bpk-calendar-day-selected-color);
   }
   
-  &--focused:not(:disabled):not(.bpk-calendar-date--selected) {
+  &--focused:not(:disabled):not(.bpk-calendar-scroll-date--selected) {
     box-shadow: 0 0 0 2px $bpk-state-selected-background-color inset;
-    box-shadow: 0 0 0 2px var(--bpk-calendar-date-focused-border-color, $bpk-state-selected-background-color) inset;
+    box-shadow: 0 0 0 2px var(--bpk-calendar-scroll-date-focused-border-color, $bpk-state-selected-background-color) inset;
 
-    @include bpk-themeable-property(color, --bpk-calendar-date-text-focus-color, $bpk-state-selected-background-color);
+    @include bpk-themeable-property(color, --bpk-calendar-scroll-date-text-focus-color, $bpk-state-selected-background-color);
   }
 
   &:disabled {

@@ -32,11 +32,10 @@ import {
   weekDays,
 } from './test-utils';
 
-import BpkCalendar, {
-// BpkCalendarView,
-  BpkCalendarGrid,
-  BpkCalendarGridHeader,
-  BpkCalendarDate,
+import BpkCalendarScroll, {
+  BpkCalendarScrollGrid,
+  BpkCalendarScrollGridHeader,
+  BpkCalendarScrollDate,
 } from './index';
 
 import MonthViewCalendar from './stories-components';
@@ -53,7 +52,7 @@ class CalendarContainer extends Component {
   }
   render() {
     return (
-      <BpkCalendar
+      <BpkCalendarScroll
         {...this.props}
         selectedDate={this.state.date}
         onDateSelect={date => {
@@ -75,22 +74,22 @@ CalendarContainer.defaultProps = {
 };
 
 storiesOf('bpk-component-calendar-scroll', module)
-  .add('BpkCalendarGridHeader', () => (
-    <BpkCalendarGridHeader
+  .add('BpkCalendarScrollGridHeader', () => (
+    <BpkCalendarScrollGridHeader
       weekStartsOn={1}
       daysOfWeek={weekDays}
       showWeekendSeparator
     />
   ))
-  .add('BpkCalendarGrid', () => (
-    <BpkCalendarGrid
+  .add('BpkCalendarScrollGrid', () => (
+    <BpkCalendarScrollGrid
       month={new Date()}
       weekStartsOn={1}
       daysOfWeek={weekDays}
       onDateClick={action('Clicked day')}
       formatMonth={formatMonth}
       formatDateFull={formatDateFull}
-      DateComponent={BpkCalendarDate}
+      DateComponent={BpkCalendarScrollDate}
       showWeekendSeparator
       preventKeyboardFocus
     />

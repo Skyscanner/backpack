@@ -16,26 +16,26 @@
  * limitations under the License.
  */
 
-import BpkCalendarContainer, {
-  withCalendarState,
-} from './src/BpkCalendarContainer';
-import BpkCalendarGrid from './src/BpkCalendarGrid';
-import BpkCalendarGridHeader from './src/BpkCalendarGridHeader';
-import BpkCalendarDate from './src/BpkCalendarDate';
-import composeCalendar from './src/composeCalendar';
+import BpkCalendarScrollContainer, {
+  withCalendarScrollState,
+} from './src/BpkCalendarScrollContainer';
+import BpkCalendarScrollGrid from './src/BpkCalendarScrollGrid';
+import BpkCalendarScrollGridHeader from './src/BpkCalendarScrollGridHeader';
+import BpkCalendarScrollDate from './src/BpkCalendarScrollDate';
+import composeCalendarScroll from './src/composeCalendarScroll';
 import CustomPropTypes from './src/custom-proptypes';
 import * as DateUtils from './src/date-utils';
 import themeAttributes from './src/themeAttributes';
 
-export default BpkCalendarContainer;
+export default BpkCalendarScrollContainer;
 
 export {
-  BpkCalendarGrid,
-  BpkCalendarGridHeader,
-  BpkCalendarDate,
+  BpkCalendarScrollGrid,
+  BpkCalendarScrollGridHeader,
+  BpkCalendarScrollDate,
   CustomPropTypes,
   DateUtils,
-  composeCalendar,
-  withCalendarState,
+  composeCalendarScroll,
+  withCalendarScrollState,
   themeAttributes,
 };

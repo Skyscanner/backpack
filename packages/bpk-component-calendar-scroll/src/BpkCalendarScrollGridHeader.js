@@ -27,7 +27,7 @@ import {
   orderDaysOfWeek,
 } from './date-utils';
 
-import STYLES from './bpk-calendar-grid-header.scss';
+import STYLES from './bpk-calendar-scroll-grid-header.scss';
 
 const getClassName = cssModules(STYLES);
 
@@ -36,19 +36,21 @@ const getClassName = cssModules(STYLES);
 */
 const WeekDay = props => {
   const { weekDay, isFirstDayOfWeekend, isLastDayOfWeekend, Element } = props;
-  const classNames = [getClassName('bpk-calendar-header__weekday')];
+  const classNames = [getClassName('bpk-calendar-scroll-header__weekday')];
 
   if (weekDay.isWeekend) {
-    classNames.push(getClassName('bpk-calendar-header__weekday--weekend'));
+    classNames.push(
+      getClassName('bpk-calendar-scroll-header__weekday--weekend'),
+    );
 
     if (isFirstDayOfWeekend) {
       classNames.push(
-        getClassName('bpk-calendar-header__weekday--weekend-start'),
+        getClassName('bpk-calendar-scroll-header__weekday--weekend-start'),
       );
     }
     if (isLastDayOfWeekend) {
       classNames.push(
-        getClassName('bpk-calendar-header__weekday--weekend-end'),
+        getClassName('bpk-calendar-scroll-header__weekday--weekend-end'),
       );
     }
   }
@@ -85,9 +87,9 @@ class BpkCalendarGridHeader extends PureComponent {
     const firstDayOfWeekendIndex = getFirstDayOfWeekend(daysOfWeek);
     const lastDayOfWeekendIndex = getLastDayOfWeekend(daysOfWeek);
 
-    const classNames = [getClassName('bpk-calendar-header')];
+    const classNames = [getClassName('bpk-calendar-scroll-header')];
     if (isTableHead) {
-      classNames.push(getClassName('bpk-calendar-header--table-head'));
+      classNames.push(getClassName('bpk-calendar-scroll-header--table-head'));
     }
     if (className) {
       classNames.push(className);
@@ -95,7 +97,7 @@ class BpkCalendarGridHeader extends PureComponent {
 
     return (
       <Header className={classNames.join(' ')}>
-        <List className={getClassName('bpk-calendar-header__week')}>
+        <List className={getClassName('bpk-calendar-scroll-header__week')}>
           {daysOfWeek.map(weekDay => (
             <WeekDay
               Element={Item}

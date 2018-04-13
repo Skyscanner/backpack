@@ -19,7 +19,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import { mount } from 'enzyme';
-import BpkCalendarContainer from './BpkCalendarContainer';
+import BpkCalendarScrollContainer from './BpkCalendarScrollContainer';
 import { weekDays, formatDateFull, formatMonth } from '../test-utils';
 import { addDays } from './date-utils';
 
@@ -31,7 +31,7 @@ describe('BpkCalendarContainer', () => {
   it('should render correctly', () => {
     const tree = renderer
       .create(
-        <BpkCalendarContainer
+        <BpkCalendarScrollContainer
           formatMonth={formatMonth}
           formatDateFull={formatDateFull}
           daysOfWeek={weekDays}
@@ -50,7 +50,7 @@ describe('BpkCalendarContainer', () => {
   it('should focus the correct date when `initiallyFocusedDate` is set and selected date is not', () => {
     const tree = renderer
       .create(
-        <BpkCalendarContainer
+        <BpkCalendarScrollContainer
           formatMonth={formatMonth}
           formatDateFull={formatDateFull}
           daysOfWeek={weekDays}
@@ -68,7 +68,7 @@ describe('BpkCalendarContainer', () => {
 
   it('should change the month', () => {
     const calendar = mount(
-      <BpkCalendarContainer
+      <BpkCalendarScrollContainer
         formatMonth={formatMonth}
         formatDateFull={formatDateFull}
         daysOfWeek={weekDays}
@@ -93,7 +93,7 @@ describe('BpkCalendarContainer', () => {
     const onDateSelect = jest.fn();
 
     const calendar = mount(
-      <BpkCalendarContainer
+      <BpkCalendarScrollContainer
         formatMonth={formatMonth}
         formatDateFull={formatDateFull}
         daysOfWeek={weekDays}
@@ -118,11 +118,11 @@ describe('BpkCalendarContainer', () => {
 
   it('should set state only once on date selection', () => {
     const setStateSpy = jest.fn();
-    const oldSetState = BpkCalendarContainer.prototype.setState;
-    BpkCalendarContainer.prototype.setState = setStateSpy;
+    const oldSetState = BpkCalendarScrollContainer.prototype.setState;
+    BpkCalendarScrollContainer.prototype.setState = setStateSpy;
 
     const calendar = mount(
-      <BpkCalendarContainer
+      <BpkCalendarScrollContainer
         formatMonth={formatMonth}
         formatDateFull={formatDateFull}
         daysOfWeek={weekDays}
@@ -142,7 +142,7 @@ describe('BpkCalendarContainer', () => {
     grid.prop('onDateClick')(new Date(2010, 1, 20));
     expect(setStateSpy.mock.calls.length).toBe(1);
 
-    BpkCalendarContainer.prototype.setState = oldSetState;
+    BpkCalendarScrollContainer.prototype.setState = oldSetState;
   });
 
   it('should move focus on keyboard input', () => {
@@ -151,7 +151,7 @@ describe('BpkCalendarContainer', () => {
     const origin = new Date(2010, 2, 1);
 
     const calendar = mount(
-      <BpkCalendarContainer
+      <BpkCalendarScrollContainer
         formatMonth={formatMonth}
         formatDateFull={formatDateFull}
         daysOfWeek={weekDays}
@@ -227,7 +227,7 @@ describe('BpkCalendarContainer', () => {
     const origin = new Date(2010, 1, 27);
 
     const calendar = mount(
-      <BpkCalendarContainer
+      <BpkCalendarScrollContainer
         formatMonth={formatMonth}
         formatDateFull={formatDateFull}
         daysOfWeek={weekDays}
