@@ -16,17 +16,24 @@
  * limitations under the License.
  */
 
-import ParagraphOld, {
-  ParagraphNoMargin as ParagraphNoMarginOld,
-} from './Paragraph';
-import ParagraphNeo, {
-  ParagraphNoMargin as ParagraphNoMarginNeo,
-} from '../neo/Paragraph';
+import BpkText from 'bpk-component-text';
 
-const ParagraphNoMargin = process.env.BPK_NEO
-  ? ParagraphNoMarginNeo
-  : ParagraphNoMarginOld;
-const Paragraph = process.env.BPK_NEO ? ParagraphNeo : ParagraphOld;
+import { cssModules, withDefaultProps } from 'bpk-react-utils';
 
-export { ParagraphNoMargin };
-export default Paragraph;
+import STYLES from './Paragraph.scss';
+
+const getClassName = cssModules(STYLES);
+
+export const ParagraphNoMargin = withDefaultProps(BpkText, {
+  textStyle: 'base',
+  tagName: 'p',
+  className: ['bpk-docs-paragraph', 'bpk-docs-paragraph--no-margin']
+    .map(getClassName)
+    .join(' '),
+});
+
+export default withDefaultProps(BpkText, {
+  textStyle: 'base',
+  tagName: 'p',
+  className: getClassName('bpk-docs-paragraph'),
+});

@@ -16,17 +16,22 @@
  * limitations under the License.
  */
 
-import ParagraphOld, {
-  ParagraphNoMargin as ParagraphNoMarginOld,
-} from './Paragraph';
-import ParagraphNeo, {
-  ParagraphNoMargin as ParagraphNoMarginNeo,
-} from '../neo/Paragraph';
+@import '~bpk-mixins/index';
 
-const ParagraphNoMargin = process.env.BPK_NEO
-  ? ParagraphNoMarginNeo
-  : ParagraphNoMarginOld;
-const Paragraph = process.env.BPK_NEO ? ParagraphNeo : ParagraphOld;
+.bpkdocs-presentation-block {
+  min-width: 0;
+  margin-top: 0;
+  margin-bottom: $bpk-spacing-xxl;
+  padding: $bpk-spacing-base;
 
-export { ParagraphNoMargin };
-export default Paragraph;
+  @include bpk-border-radius-sm;
+  @include bpk-border-sm($bpk-color-gray-100);
+
+  > *:last-child {
+    margin-bottom: 0;
+  }
+
+  &--white-background {
+    background-color: $bpk-color-white;
+  }
+}

@@ -27,7 +27,7 @@ import { cssModules } from 'bpk-react-utils';
 import STYLES from './home-page.scss';
 import * as ROUTES from './../../constants/routes';
 
-import HomePageCard from '../../components/HomePageCard';
+import HomePageCard from '../../components/neo/HomePageCard';
 import UpdatedAt from './UpdatedAt';
 import ComponentsImage from '../../static/components.jpg';
 import DesignTokensImage from '../../static/design_tokens.jpg';
