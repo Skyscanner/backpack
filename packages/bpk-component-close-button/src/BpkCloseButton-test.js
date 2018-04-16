@@ -28,4 +28,30 @@ describe('BpkCloseButton', () => {
       .toJSON();
     expect(tree).toMatchSnapshot();
   });
+
+  it('should render correctly with a custom icon', () => {
+    const tree = renderer
+      .create(
+        <BpkCloseButton
+          label="Close"
+          onClick={() => null}
+          customIcon="BpkIcon"
+        />,
+      )
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('should render correctly with a custom className', () => {
+    const tree = renderer
+      .create(
+        <BpkCloseButton
+          label="Close"
+          onClick={() => null}
+          className="my-custom-classname"
+        />,
+      )
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 });
