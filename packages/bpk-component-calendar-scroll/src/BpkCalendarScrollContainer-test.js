@@ -27,7 +27,7 @@ const createNodeMock = () => ({
   focus: () => null,
 });
 
-describe('BpkCalendarContainer', () => {
+describe('BpkCalendarScrollContainer', () => {
   it('should render correctly', () => {
     const tree = renderer
       .create(
@@ -66,29 +66,6 @@ describe('BpkCalendarContainer', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  it('should change the month', () => {
-    const calendar = mount(
-      <BpkCalendarScrollContainer
-        formatMonth={formatMonth}
-        formatDateFull={formatDateFull}
-        daysOfWeek={weekDays}
-        changeMonthLabel="Change month"
-        id="myCalendar"
-        minDate={new Date(2010, 1, 15)}
-        maxDate={new Date(2010, 2, 15)}
-        selectedDate={new Date(2010, 1, 15)}
-      />,
-    );
-
-    let grid = calendar.find('BpkCalendarGridTransition');
-
-    expect(grid.prop('month')).toEqual(new Date(2010, 1, 1));
-
-    calendar.update();
-    grid = calendar.find('BpkCalendarGridTransition');
-    expect(grid.prop('month')).toEqual(new Date(2010, 2, 1));
-  });
-
   it('should call the onDateSelect callback', () => {
     const onDateSelect = jest.fn();
 
@@ -106,12 +83,11 @@ describe('BpkCalendarContainer', () => {
       />,
     );
 
-    const grid = calendar.find('BpkCalendarGridTransition');
+    const grid = calendar.find('BpkCalendarScrollGrid').get(0);
 
     expect(onDateSelect.mock.calls.length).toBe(0);
-    expect(grid.prop('month')).toEqual(new Date(2010, 1, 1));
 
-    grid.prop('onDateClick')(new Date(2010, 1, 20));
+    grid.props.onDateClick(new Date(2010, 1, 20));
     expect(onDateSelect.mock.calls.length).toBe(1);
     expect(onDateSelect.mock.calls[0][0]).toEqual(new Date(2010, 1, 20));
   });
@@ -135,7 +111,7 @@ describe('BpkCalendarContainer', () => {
       />,
     );
 
-    const grid = calendar.find('BpkCalendarGridTransition');
+    const grid = calendar.find('BpkCalendarScrollGridList');
 
     expect(setStateSpy.mock.calls.length).toBe(0);
 

@@ -18,7 +18,7 @@
 
 @import '~bpk-mixins/index';
 
-$shadow-width: 1px;
+$shadow-width: 1px; /* stylelint-disable-line unit-blacklist */
 $shadow-bottom: 0 $shadow-width 0 0 $bpk-color-gray-100; /* stylelint-disable-line unit-blacklist */
 $shadow-left: -$shadow-width 0 0 0 $bpk-color-gray-100; /* stylelint-disable-line unit-blacklist */
 $shadow-right: $shadow-width 0 0 0 $bpk-color-gray-100; /* stylelint-disable-line unit-blacklist */

@@ -26,7 +26,7 @@ import { weekDays, formatDateFull, formatMonth } from '../test-utils';
 import BpkCalendarScrollGrid from './BpkCalendarScrollGrid';
 import BpkCalendarScrollDate from './BpkCalendarScrollDate';
 
-describe('BpkCalendarGrid', () => {
+describe('BpkCalendarScrollGrid', () => {
   it('should render correctly with "showWeekendSeparator" attribute set to false', () => {
     const tree = renderer
       .create(
@@ -138,13 +138,13 @@ describe('BpkCalendarGrid', () => {
       .at(10)
       .simulate('click');
     expect(onDateClick.mock.calls.length).toBe(1);
-    expect(onDateClick.mock.calls[0][0]).toEqual(new Date(2016, 9, 5));
+    expect(onDateClick.mock.calls[0][0]).toEqual(new Date(2016, 9, 11));
 
     grid
       .find('button')
       .at(11)
       .simulate('click');
     expect(onDateClick.mock.calls.length).toBe(2);
-    expect(onDateClick.mock.calls[1][0]).toEqual(new Date(2016, 9, 6));
+    expect(onDateClick.mock.calls[1][0]).toEqual(new Date(2016, 9, 12));
   });
 });

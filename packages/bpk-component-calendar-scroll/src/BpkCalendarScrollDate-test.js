@@ -24,7 +24,7 @@ const createNodeMock = () => ({
   focus: () => null,
 });
 
-describe('BpkCalendarDate', () => {
+describe('BpkCalendarScrollDate', () => {
   it('should render correctly', () => {
     const tree = renderer
       .create(<BpkCalendarScrollDate date={new Date(2010, 1, 15)} />)

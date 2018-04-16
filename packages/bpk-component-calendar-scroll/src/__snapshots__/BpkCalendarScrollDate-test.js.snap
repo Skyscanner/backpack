@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`BpkCalendarDate should pass props through to button 1`] = `
+exports[`BpkCalendarScrollDate should pass props through to button 1`] = `
 <button
   aria-label="Nothing happened on this day in 2010"
   aria-pressed={false}
@@ -19,7 +19,7 @@ exports[`BpkCalendarDate should pass props through to button 1`] = `
 </button>
 `;
 
-exports[`BpkCalendarDate should render a disabled button 1`] = `
+exports[`BpkCalendarScrollDate should render a disabled button 1`] = `
 <button
   aria-label={15}
   aria-pressed={false}
@@ -38,7 +38,7 @@ exports[`BpkCalendarDate should render a disabled button 1`] = `
 </button>
 `;
 
-exports[`BpkCalendarDate should render a focused button with tabIndex 1`] = `
+exports[`BpkCalendarScrollDate should render a focused button with tabIndex 1`] = `
 <button
   aria-label={15}
   aria-pressed={false}
@@ -58,7 +58,7 @@ exports[`BpkCalendarDate should render a focused button with tabIndex 1`] = `
 </button>
 `;
 
-exports[`BpkCalendarDate should render correctly 1`] = `
+exports[`BpkCalendarScrollDate should render correctly 1`] = `
 <button
   aria-label={15}
   aria-pressed={false}
@@ -77,7 +77,7 @@ exports[`BpkCalendarDate should render correctly 1`] = `
 </button>
 `;
 
-exports[`BpkCalendarDate should render with a click and keyDown handler 1`] = `
+exports[`BpkCalendarScrollDate should render with a click and keyDown handler 1`] = `
 <button
   aria-label={15}
   aria-pressed={false}

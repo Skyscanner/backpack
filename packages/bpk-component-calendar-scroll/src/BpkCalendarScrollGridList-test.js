@@ -24,7 +24,7 @@ import { addCalendarScrollGridList } from './BpkCalendarScrollGridList';
 const MyComponent = props => <div>{JSON.stringify(props)}</div>;
 const ScrollMyComponent = addCalendarScrollGridList(MyComponent);
 
-describe('BpkCalendar', () => {
+describe('BpkCalendarScroll', () => {
   it('should render correctly', () => {
     const tree = renderer
       .create(
@@ -38,61 +38,4 @@ describe('BpkCalendar', () => {
       .toJSON();
     expect(tree).toMatchSnapshot();
   });
-
-  // it('should transition to the next month', () => {
-  //   const calendar = shallow(
-  //     <BpkCalendarGridTransition
-  //       TransitionComponent={MyComponent}
-  //       month={new Date(Date.UTC(2010, 1))}
-  //     />,
-  //   );
-
-  //   expect(calendar.state('currentMonth')).toEqual(new Date(Date.UTC(2010, 1)));
-  //   expect(calendar.state('isTransitioning')).toBe(false);
-  //   expect(calendar.state('transitionValue')).toBe(-294);
-
-  //   // Next month
-  //   calendar.setProps({ month: new Date(Date.UTC(2010, 2)) });
-  //   expect(calendar.state('currentMonth')).toEqual(new Date(Date.UTC(2010, 2)));
-  //   expect(calendar.state('isTransitioning')).toBe(false);
-  //   expect(calendar.state('transitionValue')).toBe(-294);
-  // });
-
-  // it('should transition to the previous month', () => {
-  //   const calendar = shallow(
-  //     <BpkCalendarGridTransition
-  //       TransitionComponent={MyComponent}
-  //       month={new Date(Date.UTC(2010, 1))}
-  //     />,
-  //   );
-
-  //   expect(calendar.state('currentMonth')).toEqual(new Date(Date.UTC(2010, 1)));
-  //   expect(calendar.state('isTransitioning')).toBe(false);
-  //   expect(calendar.state('transitionValue')).toBe(-294);
-
-  //   // Previous month
-  //   calendar.setProps({ month: new Date(Date.UTC(2010, 0)) });
-  //   expect(calendar.state('currentMonth')).toEqual(new Date(Date.UTC(2010, 0)));
-  //   expect(calendar.state('isTransitioning')).toBe(false);
-  //   expect(calendar.state('transitionValue')).toBe(-294);
-  // });
-
-  // it('should jump (without transition) to any other month', () => {
-  //   const calendar = shallow(
-  //     <BpkCalendarGridTransition
-  //       TransitionComponent={MyComponent}
-  //       month={new Date(Date.UTC(2010, 1))}
-  //     />,
-  //   );
-
-  //   expect(calendar.state('currentMonth')).toEqual(new Date(Date.UTC(2010, 1)));
-  //   expect(calendar.state('isTransitioning')).toBe(false);
-  //   expect(calendar.state('transitionValue')).toBe(-294);
-
-  //   // 2 months ahead
-  //   calendar.setProps({ month: new Date(Date.UTC(2010, 3)) });
-  //   expect(calendar.state('currentMonth')).toEqual(new Date(Date.UTC(2010, 3)));
-  //   expect(calendar.state('isTransitioning')).toBe(false);
-  //   expect(calendar.state('transitionValue')).toBe(-294);
-  // });
 });

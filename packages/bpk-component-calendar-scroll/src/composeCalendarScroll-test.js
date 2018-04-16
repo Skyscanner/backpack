@@ -25,13 +25,11 @@ const createNodeMock = () => ({
   focus: () => null,
 });
 
-const CalendarComponent = composeCalendar('Nav', 'Header', 'Grid', 'Date');
+const CalendarComponent = composeCalendar('Header', 'Grid', 'Date');
 
-const CustomCalendarComponent = composeCalendar(null, null, 'Grid', 'Date');
+const CustomCalendarComponent = composeCalendar(null, 'Grid', 'Date');
 
-const HeaderAndGridCalendar = composeCalendar('Nav', null, 'Grid', 'Date');
-
-describe('composeCalendar', () => {
+describe('composeCalendarScroll', () => {
   it('should compose a nav, header, grid and date component correctly', () => {
     const tree = renderer
       .create(
@@ -91,29 +89,10 @@ describe('composeCalendar', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  it('should render without a nav or header element', () => {
+  it('should render without header element', () => {
     const tree = renderer
       .create(
         <CustomCalendarComponent
-          id="myCalendar"
-          formatMonth={formatMonth}
-          formatDateFull={formatDateFull}
-          daysOfWeek={weekDays}
-          changeMonthLabel="Change month"
-          minDate={new Date(Date.UTC(2010, 1, 15))}
-          maxDate={new Date(Date.UTC(2010, 2, 15))}
-          month={new Date(Date.UTC(2010, 1, 15))}
-        />,
-        { createNodeMock },
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
-  });
-
-  it('should render without a header element', () => {
-    const tree = renderer
-      .create(
-        <HeaderAndGridCalendar
           id="myCalendar"
           formatMonth={formatMonth}
           formatDateFull={formatDateFull}
