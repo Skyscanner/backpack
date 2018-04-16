@@ -15,9 +15,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 /* @flow */
 
-import { Link } from 'react-router';
 import BpkModal from 'bpk-component-modal';
 import { cssModules } from 'bpk-react-utils';
 import MenuIcon from 'bpk-component-icon/lg/menu';
@@ -25,11 +25,9 @@ import React, { Component, type Node } from 'react';
 import BpkCloseButton from 'bpk-component-close-button';
 import BpkBreakpoint, { BREAKPOINTS } from 'bpk-component-breakpoint';
 
-import NavList from './NavList';
-import SectionsList from './SectionsList';
+import Sidebar from './Sidebar';
 import STYLES from './SideNavLayout.scss';
 import { type Links } from './common-types';
-import BackpackLogoWhite from '../../static/backpack-logo-white.svg';
 
 const getClassName = cssModules(STYLES);
 
@@ -82,58 +80,14 @@ export default class SideNavLayout extends Component<Props, State> {
     const { modalOpen, sectionListExpanded, activeSection } = this.state;
 
     const sidebar = (
-      <nav className={getClassName('bpkdocs-side-nav-layout__sidebar')}>
-        <div
-          className={getClassName('bpkdocs-side-nav-layout__sidebar-header')}
-        >
-          <BpkBreakpoint query={BREAKPOINTS.TABLET}>
-            {isTablet =>
-              isTablet && (
-                <BpkCloseButton
-                  label="Close menu"
-                  onClick={this.onMobileModalClose}
-                  className={getClassName(
-                    'bpkdocs-side-nav-layout__close-button',
-                  )}
-                />
-              )
-            }
-          </BpkBreakpoint>
-          <Link
-            to="/"
-            className={getClassName('bpkdocs-side-nav-layout__logo-link')}
-          >
-            <img
-              src={`/${BackpackLogoWhite}`}
-              className={getClassName('bpkdocs-side-nav-layout__logo')}
-              alt="Backpack Logo"
-            />
-          </Link>
-        </div>
-        <div
-          className={getClassName('bpkdocs-side-nav-layout__sidebar-content')}
-        >
-          <SectionsList
-            activeSection={activeSection}
-            expanded={sectionListExpanded}
-            onMenuToggle={this.onMenuToggle}
-            onSectionChange={this.onSectionChange}
-            className={getClassName('bpkdocs-side-nav-layout__section-list')}
-          />
-          <NavList
-            links={links.filter(link =>
-              [
-                activeSection,
-                ...(activeSection === 'COMPONENTS'
-                  ? ['NATIVE', 'UTILITIES']
-                  : []),
-              ].includes(link.id),
-            )}
-            dimmed={sectionListExpanded}
-            onClick={this.onMobileModalClose}
-          />
-        </div>
-      </nav>
+      <Sidebar
+        activeSection={activeSection}
+        links={links}
+        sectionListExpanded={sectionListExpanded}
+        onMobileModalClose={this.onMobileModalClose}
+        onMenuToggle={this.onMenuToggle}
+        onSectionChange={this.onSectionChange}
+      />
     );
 
     return (
