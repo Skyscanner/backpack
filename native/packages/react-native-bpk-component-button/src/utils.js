@@ -38,7 +38,9 @@ const REQUIRED_THEME_ATTRIBUTES: Object = {
   ],
 };
 
-export const THEMEABLE_TYPES = Object.keys(REQUIRED_THEME_ATTRIBUTES);
+export const THEMEABLE_TYPES: Array<string> = Object.keys(
+  REQUIRED_THEME_ATTRIBUTES,
+);
 
 export const getStyleForElement = (
   elementType: string,
