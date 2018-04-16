@@ -14,6 +14,9 @@
 - bpk-component-tooltip:
   - Context is now preserved in components passed to `children`.
 
+- react-native-bpk-component-horizontal-navs
+  - Fixed measurements of native horizontal nav component
+
 - bpk-react-utils:
   - The `Portal` component now preserves context in it's `children` prop
 

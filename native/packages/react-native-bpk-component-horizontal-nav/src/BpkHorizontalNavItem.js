@@ -24,7 +24,9 @@ import {
   colorGray700,
   colorBlue700,
   spacingSm,
-  spacingMd,
+  spacingXl,
+  borderSizeSm,
+  borderSizeLg,
   spacingBase,
 } from 'bpk-tokens/tokens/base.react.native';
 import { getThemeAttributes, withTheme } from 'react-native-bpk-theming';
@@ -35,19 +37,22 @@ import BpkTouchableNativeFeedback from 'react-native-bpk-component-touchable-nat
 import { REQUIRED_THEME_ATTRIBUTES, themePropType } from './theming';
 
 const styles = StyleSheet.create({
+  view: {
+    height: spacingXl + spacingSm - borderSizeSm - borderSizeLg,
+    justifyContent: 'center',
+  },
+  viewSmall: {
+    height: spacingXl - borderSizeSm - borderSizeLg,
+  },
   text: {
     color: colorGray700,
-    paddingVertical: spacingMd,
     paddingHorizontal: spacingBase,
   },
-  disabledText: {
+  textDisabled: {
     color: colorGray300,
   },
-  selectedText: {
+  textSelected: {
     color: colorBlue700,
-  },
-  smallText: {
-    paddingVertical: spacingSm,
   },
 });
 
@@ -65,13 +70,14 @@ const BpkHorizontalNavItem = props => {
 
   const accessibilityTraits = ['button'];
   const textSize = small ? 'sm' : 'base';
+  const viewStyles = [styles.view];
   const textStyles = [styles.text];
 
   if (disabled) {
     accessibilityTraits.push('disabled');
-    textStyles.push(styles.disabledText);
+    textStyles.push(styles.textDisabled);
   } else if (selected) {
-    textStyles.push(styles.selectedText);
+    textStyles.push(styles.textSelected);
     const themeAttributes = getThemeAttributes(
       REQUIRED_THEME_ATTRIBUTES,
       theme,
@@ -83,8 +89,13 @@ const BpkHorizontalNavItem = props => {
       });
     }
   }
+
   if (small) {
-    textStyles.push(styles.smallText);
+    viewStyles.push(styles.viewSmall);
+  }
+
+  if (style) {
+    viewStyles.push(style);
   }
 
   const isAndroid = Platform.OS === 'android';
@@ -102,7 +113,7 @@ const BpkHorizontalNavItem = props => {
       {...platformProps}
       {...rest}
     >
-      <View style={style}>
+      <View style={viewStyles}>
         <BpkText style={textStyles} textStyle={textSize}>
           {formattedTitle}
         </BpkText>

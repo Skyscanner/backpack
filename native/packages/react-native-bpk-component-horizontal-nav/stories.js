@@ -124,7 +124,7 @@ storiesOf('react-native-bpk-component-horizontal-nav', module)
       </BpkHorizontalNav>
     </View>
   ))
-  .add('docs:small-font', () => (
+  .add('docs:small', () => (
     <View style={styles.bottomMargin}>
       <BpkHorizontalNav selectedId="1">
         <BpkHorizontalNavItem
@@ -188,7 +188,7 @@ storiesOf('react-native-bpk-component-horizontal-nav', module)
         <StoryNav items={5} spaceAround />
       </View>
       <View style={styles.bottomMargin}>
-        <StorySubheading>Small font size</StorySubheading>
+        <StorySubheading>Small</StorySubheading>
         <StoryNav items={5} small />
       </View>
       <View style={styles.bottomMargin}>
