@@ -29,17 +29,15 @@ class MyComponent extends Component {
       isOpen: false,
     };
 
-    this.onOpen = this.onOpen.bind(this);
-    this.onClose = this.beforeClose.bind(this);
   }
 
-  onOpen() {
+  onOpen = () => {
     this.setState({
       isOpen: true,
     });
   }
 
-  onClose() {
+  onClose = () => {
     this.setState({
       isOpen: false,
     });

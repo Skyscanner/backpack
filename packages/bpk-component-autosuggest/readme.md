@@ -58,24 +58,21 @@ class MyComponent extends Component {
       suggestions: [],
     };
 
-    this.onChange = this.onChange.bind(this);
-    this.onSuggestionsFetchRequested = this.onSuggestionsFetchRequested.bind(this);
-    this.onSuggestionsClearRequested = this.onSuggestionsClearRequested.bind(this);
   }
 
-  onChange(e, { newValue }) {
+  onChange = (e, { newValue }) => {
     this.setState({
       value: newValue,
     });
   }
 
-  onSuggestionsFetchRequested({ value }) {
+  onSuggestionsFetchRequested = ({ value }) => {
     this.setState({
       suggestions: getSuggestions(value),
     });
   }
 
-  onSuggestionsClearRequested() {
+  onSuggestionsClearRequested = () => {
     this.setState({
       suggestions: [],
     });

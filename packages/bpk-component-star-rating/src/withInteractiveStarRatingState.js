@@ -30,13 +30,9 @@ const withInteractiveStarRatingState = InteractiveStarRating => {
         rating: 0,
         hoverRating: 0,
       };
-
-      this.onRatingHover = this.onRatingHover.bind(this);
-      this.onMouseLeave = this.onMouseLeave.bind(this);
-      this.onRatingSelect = this.onRatingSelect.bind(this);
     }
 
-    onRatingSelect(rating, event) {
+    onRatingSelect = (rating, event) => {
       if (event) {
         event.persist();
       }
@@ -48,15 +44,15 @@ const withInteractiveStarRatingState = InteractiveStarRating => {
       };
 
       this.setState(() => ({ rating }), callback);
-    }
+    };
 
-    onMouseLeave() {
+    onMouseLeave = () => {
       this.setState(() => ({ hoverRating: 0 }));
-    }
+    };
 
-    onRatingHover(hoverRating) {
+    onRatingHover = hoverRating => {
       this.setState(() => ({ hoverRating }));
-    }
+    };
 
     render() {
       return (

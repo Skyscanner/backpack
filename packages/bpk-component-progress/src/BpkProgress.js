@@ -46,14 +46,6 @@ const renderSteps = (numberOfSteps, stepColor) => {
 };
 
 class BpkProgress extends Component {
-  constructor() {
-    super();
-
-    this.handleCompleteTransitionEnd = this.handleCompleteTransitionEnd.bind(
-      this,
-    );
-  }
-
   componentDidUpdate(previousProps) {
     const { value, max } = this.props;
     if (value >= max && value !== previousProps.value) {
@@ -65,12 +57,12 @@ class BpkProgress extends Component {
     }
   }
 
-  handleCompleteTransitionEnd() {
+  handleCompleteTransitionEnd = () => {
     const { onCompleteTransitionEnd, value, max } = this.props;
     if (value >= max && onCompleteTransitionEnd) {
       onCompleteTransitionEnd();
     }
-  }
+  };
 
   render() {
     const {

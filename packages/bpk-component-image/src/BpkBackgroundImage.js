@@ -29,9 +29,6 @@ class BpkBackgroundImage extends React.Component {
   constructor(props) {
     super(props);
 
-    this.onBackgroundImageLoad = this.onBackgroundImageLoad.bind(this);
-    this.startImageLoad = this.startImageLoad.bind(this);
-
     this.trackImage = null;
   }
 
@@ -47,18 +44,18 @@ class BpkBackgroundImage extends React.Component {
     }
   }
 
-  onBackgroundImageLoad() {
+  onBackgroundImageLoad = () => {
     if (this.props.onLoad) {
       this.props.onLoad();
     }
     delete this.trackImage;
-  }
+  };
 
-  startImageLoad() {
+  startImageLoad = () => {
     this.trackImage = new Image();
     this.trackImage.src = this.props.src;
     this.trackImage.onload = this.onBackgroundImageLoad;
-  }
+  };
 
   render() {
     const {

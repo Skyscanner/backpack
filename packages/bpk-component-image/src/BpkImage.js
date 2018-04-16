@@ -80,16 +80,11 @@ class BpkImage extends Component<BpkImageProps> {
   placeholder: ?HTMLElement;
   static defaultProps: {};
 
-  constructor(props: BpkImageProps): void {
-    super(props);
-    this.onImageLoad = this.onImageLoad.bind(this);
-  }
-
-  onImageLoad(): void {
+  onImageLoad = (): void => {
     if (this.props.onLoad) {
       this.props.onLoad();
     }
-  }
+  };
 
   render(): Node {
     const {

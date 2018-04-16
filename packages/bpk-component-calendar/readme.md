@@ -32,14 +32,13 @@ export default class App extends Component {
   constructor () {
     super();
 
-    this.handleDateSelect = this.handleDateSelect.bind(this);
 
     this.state = {
       selectedDate: null
     }
   }
 
-  handleDateSelect(date) {
+  handleDateSelect = (date) => {
     this.setState({
       selectedDate: date
     });

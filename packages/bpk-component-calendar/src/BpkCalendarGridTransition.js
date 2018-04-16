@@ -73,7 +73,6 @@ class BpkCalendarGridTransition extends Component {
     };
 
     this.isTransitionEndSupported = isTransitionEndSupported();
-    this.onMonthTransitionEnd = this.onMonthTransitionEnd.bind(this);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -128,7 +127,7 @@ class BpkCalendarGridTransition extends Component {
     }
   }
 
-  onMonthTransitionEnd() {
+  onMonthTransitionEnd = () => {
     const { month } = this.props;
 
     this.setState({
@@ -139,7 +138,7 @@ class BpkCalendarGridTransition extends Component {
       currentMonth: month,
       months: [addMonths(month, -1), month, addMonths(month, 1)],
     });
-  }
+  };
 
   render() {
     const { TransitionComponent, className, focusedDate, ...rest } = this.props;

@@ -17,11 +17,10 @@ import BpkNudger from 'react-native-bpk-component-nudger';
 export default class App extends Component {
  constructor() {
     super();
-    this.handleChange = this.handleChange.bind(this);
     this.state = { value: 1 };
   }
 
-  handleChange(value) {
+  handleChange = (value) => {
     this.setState({ value });
   }
 

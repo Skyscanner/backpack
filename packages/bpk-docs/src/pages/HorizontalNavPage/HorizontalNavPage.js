@@ -33,15 +33,13 @@ class HorizontalNavContainer extends Component {
     this.state = {
       selected: 'flights',
     };
-
-    this.onClick = this.onClick.bind(this);
   }
 
-  onClick(e) {
+  onClick = e => {
     this.setState({
       selected: e.target.name,
     });
-  }
+  };
 
   render() {
     const { spaceAround, ...rest } = this.props;
