@@ -18,25 +18,22 @@
 
 @import '~bpk-mixins/index';
 
-.bpkdocs-side-nav-layout {
+.bpkdocs-main-hero-image {
   display: flex;
+  height: $bpk-spacing-xxl * 3;
+  padding: $bpk-spacing-base;
+  justify-content: flex-end;
+  background-color: $bpk-color-blue-500;
 
-  &__sidebar-destop-wrapper {
-    display: flex;
+  @include bpk-breakpoint-above-tablet {
+    height: $bpk-spacing-xxl * 6;
+  }
 
-    @include bpk-breakpoint-tablet {
+  &__hamburger > svg {
+    fill: $bpk-color-white;
+
+    @include bpk-breakpoint-above-tablet {
       display: none;
     }
-  }
-
-  // HACK: this should be exposed as a modal prop
-  &__modal > div {
-    display: flex;
-    padding: 0;
-    flex-direction: column;
-  }
-
-  &__main {
-    min-width: 0;
   }
 }

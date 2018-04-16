@@ -20,13 +20,12 @@
 
 import BpkModal from 'bpk-component-modal';
 import { cssModules } from 'bpk-react-utils';
-import MenuIcon from 'bpk-component-icon/lg/menu';
 import React, { Component, type Node } from 'react';
-import BpkCloseButton from 'bpk-component-close-button';
 import BpkBreakpoint, { BREAKPOINTS } from 'bpk-component-breakpoint';
 
 import Sidebar from './Sidebar';
 import STYLES from './SideNavLayout.scss';
+import MainHeroImage from './MainHeroImage';
 import { type Links } from './common-types';
 
 const getClassName = cssModules(STYLES);
@@ -121,22 +120,7 @@ export default class SideNavLayout extends Component<Props, State> {
           }
         </BpkBreakpoint>
         <section className={getClassName('bpkdocs-side-nav-layout__main')}>
-          <div className={getClassName('bpkdocs-side-nav-layout__hero')}>
-            <BpkBreakpoint query={BREAKPOINTS.ABOVE_TABLET}>
-              {aboveTablet =>
-                !aboveTablet && (
-                  <BpkCloseButton
-                    label="Open menu"
-                    onClick={this.onHamburgerClick}
-                    customIcon={MenuIcon}
-                    className={getClassName(
-                      'bpkdocs-side-nav-layout__hamburger',
-                    )}
-                  />
-                )
-              }
-            </BpkBreakpoint>
-          </div>
+          <MainHeroImage onHamburgerClick={this.onHamburgerClick} />
           {children}
         </section>
       </section>
