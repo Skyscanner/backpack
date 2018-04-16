@@ -82,7 +82,7 @@ export default class SideNavLayout extends Component<Props, State> {
     const { modalOpen, sectionListExpanded, activeSection } = this.state;
 
     const sidebar = (
-      <section className={getClassName('bpkdocs-side-nav-layout__sidebar')}>
+      <nav className={getClassName('bpkdocs-side-nav-layout__sidebar')}>
         <div
           className={getClassName('bpkdocs-side-nav-layout__sidebar-header')}
         >
@@ -133,7 +133,7 @@ export default class SideNavLayout extends Component<Props, State> {
             onClick={this.onMobileModalClose}
           />
         </div>
-      </section>
+      </nav>
     );
 
     return (

@@ -70,6 +70,7 @@ $bpk-heading-button-padding: $bpk-spacing-md;
 
   &__list {
     margin: 0;
+    margin-left: $bpk-first-column-size;
     padding: 0;
     list-style: none;
   }
@@ -86,8 +87,6 @@ $bpk-heading-button-padding: $bpk-spacing-md;
     @include nav-link;
     @include nav-link--enabled;
     @include nav-link--lg;
-
-    margin-left: $bpk-first-column-size; /* stylelint-disable-line */
 
     @include bpk-rtl {
       margin-right: $bpk-first-column-size;
