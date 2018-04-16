@@ -50,6 +50,11 @@ $bpk-heading-button-padding: $bpk-spacing-md;
   &__heading-button-arrow {
     margin-left: $bpk-spacing-sm;
     fill: currentColor;
+
+    @include bpk-rtl {
+      margin-right: $bpk-spacing-sm;
+      margin-left: 0;
+    }
   }
 
   &__heading {
@@ -73,6 +78,11 @@ $bpk-heading-button-padding: $bpk-spacing-md;
     margin-left: $bpk-first-column-size;
     padding: 0;
     list-style: none;
+
+    @include bpk-rtl {
+      margin-right: $bpk-first-column-size;
+      margin-left: 0;
+    }
   }
 
   &__list-item {
@@ -89,8 +99,6 @@ $bpk-heading-button-padding: $bpk-spacing-md;
     @include nav-link--lg;
 
     @include bpk-rtl {
-      margin-right: $bpk-first-column-size;
-      margin-left: 0;
       text-align: right;
     }
   }
