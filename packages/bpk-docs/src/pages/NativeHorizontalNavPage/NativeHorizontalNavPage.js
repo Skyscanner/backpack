@@ -21,8 +21,10 @@ import BpkLink from 'bpk-component-link';
 import readme from 'react-native-bpk-component-horizontal-nav/readme.md';
 
 import iosScreenshotDefault from 'react-native-bpk-component-horizontal-nav/screenshots/ios/default.png';
+import iosScreenshotSmall from 'react-native-bpk-component-horizontal-nav/screenshots/ios/small.png';
 import iosScreenshotSpaceAround from 'react-native-bpk-component-horizontal-nav/screenshots/ios/space-around.png';
 import androidScreenshotDefault from 'react-native-bpk-component-horizontal-nav/screenshots/android/default.png';
+import androidScreenshotSmall from 'react-native-bpk-component-horizontal-nav/screenshots/android/small.png';
 import androidScreenshotSpaceAround from 'react-native-bpk-component-horizontal-nav/screenshots/android/space-around.png'; // eslint-disable-line max-len
 
 import Paragraph from './../../components/Paragraph';
@@ -49,6 +51,29 @@ const components = [
         width: 1080,
         height: 1920,
         src: `/${androidScreenshotDefault}`,
+        altText: 'Android Default Horizontal Navigation Component',
+        subText: '(Google Pixel Emulator)',
+      },
+    ],
+  },
+  {
+    id: 'small',
+    title: 'Small',
+    blurb: 'Like the default, only a little bit smaller.',
+    screenshots: [
+      {
+        title: 'iOS',
+        width: 750,
+        height: 1334,
+        src: `/${iosScreenshotSmall}`,
+        altText: 'iOS Default Horizontal Navigation Component',
+        subText: '(iPhone 8 Simulator)',
+      },
+      {
+        title: 'Android',
+        width: 1080,
+        height: 1920,
+        src: `/${androidScreenshotSmall}`,
         altText: 'Android Default Horizontal Navigation Component',
         subText: '(Google Pixel Emulator)',
       },

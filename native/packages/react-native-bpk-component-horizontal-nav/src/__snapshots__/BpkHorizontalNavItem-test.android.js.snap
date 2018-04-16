@@ -24,7 +24,14 @@ exports[`Android BpkHorizontalNavItem should render correctly 1`] = `
   onResponderTerminate={[Function]}
   onResponderTerminationRequest={[Function]}
   onStartShouldSetResponder={[Function]}
-  style={null}
+  style={
+    Array [
+      Object {
+        "height": 33,
+        "justifyContent": "center",
+      },
+    ]
+  }
   testID={undefined}
 >
   <Text
@@ -43,7 +50,6 @@ exports[`Android BpkHorizontalNavItem should render correctly 1`] = `
           Object {
             "color": "rgb(82, 76, 97)",
             "paddingHorizontal": 16,
-            "paddingVertical": 8,
           },
         ],
       ]
@@ -78,7 +84,14 @@ exports[`Android BpkHorizontalNavItem should render correctly with "selected" pr
   onResponderTerminate={[Function]}
   onResponderTerminationRequest={[Function]}
   onStartShouldSetResponder={[Function]}
-  style={null}
+  style={
+    Array [
+      Object {
+        "height": 33,
+        "justifyContent": "center",
+      },
+    ]
+  }
   testID={undefined}
 >
   <Text
@@ -97,7 +110,6 @@ exports[`Android BpkHorizontalNavItem should render correctly with "selected" pr
           Object {
             "color": "rgb(82, 76, 97)",
             "paddingHorizontal": 16,
-            "paddingVertical": 8,
           },
           Object {
             "color": "rgb(0, 140, 168)",
@@ -135,7 +147,17 @@ exports[`Android BpkHorizontalNavItem should render correctly with "small" prop 
   onResponderTerminate={[Function]}
   onResponderTerminationRequest={[Function]}
   onStartShouldSetResponder={[Function]}
-  style={null}
+  style={
+    Array [
+      Object {
+        "height": 33,
+        "justifyContent": "center",
+      },
+      Object {
+        "height": 29,
+      },
+    ]
+  }
   testID={undefined}
 >
   <Text
@@ -154,10 +176,6 @@ exports[`Android BpkHorizontalNavItem should render correctly with "small" prop 
           Object {
             "color": "rgb(82, 76, 97)",
             "paddingHorizontal": 16,
-            "paddingVertical": 8,
-          },
-          Object {
-            "paddingVertical": 4,
           },
         ],
       ]
@@ -192,7 +210,14 @@ exports[`Android BpkHorizontalNavItem should render correctly with "spaceAround"
   onResponderTerminate={[Function]}
   onResponderTerminationRequest={[Function]}
   onStartShouldSetResponder={[Function]}
-  style={null}
+  style={
+    Array [
+      Object {
+        "height": 33,
+        "justifyContent": "center",
+      },
+    ]
+  }
   testID={undefined}
 >
   <Text
@@ -211,7 +236,6 @@ exports[`Android BpkHorizontalNavItem should render correctly with "spaceAround"
           Object {
             "color": "rgb(82, 76, 97)",
             "paddingHorizontal": 16,
-            "paddingVertical": 8,
           },
         ],
       ]
@@ -246,7 +270,14 @@ exports[`Android BpkHorizontalNavItem should render correctly with arbitrary pro
   onResponderTerminate={[Function]}
   onResponderTerminationRequest={[Function]}
   onStartShouldSetResponder={[Function]}
-  style={null}
+  style={
+    Array [
+      Object {
+        "height": 33,
+        "justifyContent": "center",
+      },
+    ]
+  }
   testID={undefined}
 >
   <Text
@@ -265,7 +296,6 @@ exports[`Android BpkHorizontalNavItem should render correctly with arbitrary pro
           Object {
             "color": "rgb(82, 76, 97)",
             "paddingHorizontal": 16,
-            "paddingVertical": 8,
           },
         ],
       ]
@@ -301,9 +331,15 @@ exports[`Android BpkHorizontalNavItem should render correctly with custom "style
   onResponderTerminationRequest={[Function]}
   onStartShouldSetResponder={[Function]}
   style={
-    Object {
-      "marginBottom": 10,
-    }
+    Array [
+      Object {
+        "height": 33,
+        "justifyContent": "center",
+      },
+      Object {
+        "marginBottom": 10,
+      },
+    ]
   }
   testID={undefined}
 >
@@ -323,7 +359,6 @@ exports[`Android BpkHorizontalNavItem should render correctly with custom "style
           Object {
             "color": "rgb(82, 76, 97)",
             "paddingHorizontal": 16,
-            "paddingVertical": 8,
           },
         ],
       ]
@@ -358,7 +393,14 @@ exports[`Android BpkHorizontalNavItem should support theming 1`] = `
   onResponderTerminate={[Function]}
   onResponderTerminationRequest={[Function]}
   onStartShouldSetResponder={[Function]}
-  style={null}
+  style={
+    Array [
+      Object {
+        "height": 33,
+        "justifyContent": "center",
+      },
+    ]
+  }
   testID={undefined}
 >
   <Text
@@ -377,7 +419,6 @@ exports[`Android BpkHorizontalNavItem should support theming 1`] = `
           Object {
             "color": "rgb(82, 76, 97)",
             "paddingHorizontal": 16,
-            "paddingVertical": 8,
           },
         ],
       ]
