@@ -30,8 +30,7 @@
   }
 
   &__title {
-    margin-top: $bpk-spacing-md;
-    margin-bottom: $bpk-spacing-sm;
+    margin: $bpk-spacing-md 0 $bpk-spacing-sm $bpk-spacing-sm;
   }
 
   &__caption {
