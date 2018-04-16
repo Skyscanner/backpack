@@ -77,7 +77,7 @@ const omitActiveSection = activeSection => omit(sections, activeSection);
 type SectionListItemProps = {
   link: string,
   external: boolean,
-  navigate: boolean,
+  navigateOnClick: boolean,
   title: string,
   onClick: () => mixed,
 };
@@ -97,7 +97,7 @@ const SectionListItem = (props: SectionListItemProps) => {
     );
   }
 
-  if (props.navigate) {
+  if (props.navigateOnClick) {
     return (
       <li>
         <Link
@@ -185,7 +185,7 @@ const SectionsList = (props: Props) => {
                 <SectionListItem
                   link={sections[section].link}
                   external={sections[section].external}
-                  navigate={!isTablet}
+                  navigateOnClick={!isTablet}
                   title={sections[section].title}
                   onClick={() => onSectionChange(section)}
                 />
