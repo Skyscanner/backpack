@@ -30,10 +30,7 @@ const TokensLayout = ({ children, ...rest }) =>
       {children}
     </NeoSideNavLayout>
   ) : (
-    <SideNavLayout
-      links={links.filter(link => ['TOKENS'].includes(link.id))}
-      {...rest}
-    >
+    <SideNavLayout links={links.filter(link => link.id === 'TOKENS')} {...rest}>
       {children}
     </SideNavLayout>
   );

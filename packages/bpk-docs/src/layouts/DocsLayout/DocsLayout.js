@@ -31,8 +31,8 @@ const DocsLayout = ({ children, ...rest }) =>
     </NeoSideNavLayout>
   ) : (
     <SideNavLayout
-      links={links.filter(link =>
-        ['COMPONENTS', 'NATIVE', 'UTILITIES'].includes(link.id),
+      links={links.filter(
+        link => ['COMPONENTS', 'NATIVE', 'UTILITIES'].indexOf(link.id) !== -1,
       )}
       {...rest}
     >

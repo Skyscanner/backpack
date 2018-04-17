@@ -31,7 +31,7 @@ const UsingLayout = ({ children, ...rest }) =>
     </NeoSideNavLayout>
   ) : (
     <SideNavLayout
-      links={links.filter(link => ['USING_BACKPACK'].includes(link.id))}
+      links={links.filter(link => link.id === 'USING_BACKPACK')}
       {...rest}
     >
       {children}
