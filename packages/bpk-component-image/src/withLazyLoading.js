@@ -70,9 +70,9 @@ export default function withLazyLoading(
       this.checkInView();
     }
 
-    componentWillUnmount = (): void => {
+    componentWillUnmount(): void {
       this.removeEventListeners();
-    };
+    }
 
     setInView = (): void => {
       this.setState((): {} => ({
@@ -81,8 +81,9 @@ export default function withLazyLoading(
       this.removeEventListeners();
     };
 
-    getPassiveArgs = (): {} =>
-      this.supportsPassiveEvents() ? { passive: true } : {};
+    getPassiveArgs(): {} {
+      return this.supportsPassiveEvents() ? { passive: true } : {};
+    }
 
     removeEventListeners = (): void => {
       documentRef.removeEventListener('scroll', this.checkInView, {
