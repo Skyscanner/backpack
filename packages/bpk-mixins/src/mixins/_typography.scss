@@ -652,6 +652,7 @@
 ///     @include bpk-code();
 ///     @include bpk-code--alternate();
 ///   }
+
 @mixin bpk-code--alternate {
   background-color: $bpk-color-blue-100;
   text-shadow: none;
@@ -916,6 +917,7 @@
 ///     @include bpk-content-container--bare-html();
 ///     @include bpk-content-container--bare-html-alternate();
 ///   }
+
 @mixin bpk-content-container--bare-html-alternate {
   code {
     @include bpk-code--alternate;
