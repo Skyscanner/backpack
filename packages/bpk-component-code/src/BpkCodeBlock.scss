@@ -25,5 +25,9 @@
 
   &__pre {
     @include bpk-code__pre;
+
+    &--alternate {
+      @include bpk-code__pre--alternate;
+    }
   }
 }

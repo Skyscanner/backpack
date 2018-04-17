@@ -624,6 +624,18 @@
   }
 }
 
+/// Alternate code style suited for display on non-white backgrounds.
+///
+/// @example scss
+///   .selector {
+///     @include bpk-code();
+///     @include bpk-code--alternate();
+///   }
+@mixin bpk-code--alternate {
+  background-color: $bpk-color-blue-100;
+  text-shadow: none;
+}
+
 /// Code block. Modifies the bpk-code mixin.
 ///
 /// @require {mixin} bpk-code
@@ -660,6 +672,20 @@
   background-color: $bpk-color-gray-50;
 
   @include bpk-border-radius-xs;
+}
+
+/// Pre (code block wrapper) alternate style.
+///
+/// @example scss
+///   .selector {
+///     @include bpk-code__pre();
+///     @include bpk-code__pre--alternate();
+///   }
+
+@mixin bpk-code__pre--alternate {
+  background-color: transparent;
+
+  @include bpk-border-sm($bpk-color-gray-300);
 }
 
 /// Blockquote.

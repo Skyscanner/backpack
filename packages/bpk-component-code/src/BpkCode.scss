@@ -20,4 +20,8 @@
 
 .bpk-code {
   @include bpk-code;
+
+  &--alternate {
+    @include bpk-code--alternate;
+  }
 }

@@ -15,6 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+/* @flow */
 
 import React from 'react';
 import renderer from 'react-test-renderer';
@@ -24,6 +25,26 @@ describe('BpkCodeBlock', () => {
   it('should render correctly', () => {
     const tree = renderer
       .create(<BpkCodeBlock>npm install react --save-dev</BpkCodeBlock>)
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('should render correctly with "alternate"', () => {
+    const tree = renderer
+      .create(
+        <BpkCodeBlock alternate>npm install react --save-dev</BpkCodeBlock>,
+      )
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('should render correctly with custom "className"', () => {
+    const tree = renderer
+      .create(
+        <BpkCodeBlock className="my-custom-class">
+          npm install react --save-dev
+        </BpkCodeBlock>,
+      )
       .toJSON();
     expect(tree).toMatchSnapshot();
   });
