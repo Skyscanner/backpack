@@ -27,5 +27,9 @@
     &--head {
       @include bpk-table__cell--head;
     }
+
+    &--head-alternate {
+      @include bpk-table__cell--head-alternate;
+    }
   }
 }

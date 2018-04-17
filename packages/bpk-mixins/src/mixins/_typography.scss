@@ -600,6 +600,27 @@
   }
 }
 
+/// Alternate table head cell. Modifies the bpk-table__cell mixin.
+///
+/// @require {mixin} bpk-table__cell
+///
+/// @example scss
+///   .selector {
+///     @include bpk-table__cell();
+///     @include bpk-table__cell--head-alternate();
+///   }
+
+@mixin bpk-table__cell--head-alternate {
+  background-color: $bpk-color-white;
+  text-align: left;
+
+  @include bpk-text--bold;
+
+  @include bpk-rtl {
+    text-align: right;
+  }
+}
+
 /// Code.
 ///
 /// @example scss
