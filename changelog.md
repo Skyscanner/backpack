@@ -2,6 +2,29 @@
 
 [Unreleased changes](./unreleased.md).
 
+## 2018-04-17 - Context fixes and stylesheet improvements
+
+**Added:**
+- bpk-component-content-container:
+  - `BpkContentContainer` now accepts a `className`.
+
+**Fixed:**
+- bpk-component-dialog:
+- bpk-component-drawer:
+- bpk-component-modal:
+- bpk-component-popover:
+- bpk-component-tooltip:
+  - Context is now preserved in components passed to `children`.
+
+- react-native-bpk-component-horizontal-nav
+  - Fixed measurements of native horizontal nav component.
+
+- bpk-react-utils:
+  - The `Portal` component now preserves context in it's `children` prop.
+
+- bpk-stylesheets:
+  - Prevent globals (`.hidden`, `.clearfix`) from being scoped by css modules.
+
 ## 2018-04-09 - Token output now sorted alphabetically
 
 **Breaking:**
