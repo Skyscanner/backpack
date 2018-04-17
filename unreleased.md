@@ -9,3 +9,6 @@
   - `BpkCode` and `BpkCodeBlock` now spreads additional props down.
 - bpk-component-table:
   - `BpkTableHeadCell` now supports an alternate style more suitable for non-white backgrounds with the `alternate` prop.
+- bpk-component-content-container:
+  - `BpkConentContainer` now supports an alternate style more suitable for non-white backgrounds with the `alternate` prop.
+

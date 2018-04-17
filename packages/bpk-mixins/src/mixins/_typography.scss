@@ -671,6 +671,7 @@
   display: block;
   margin: 0;
   padding: 0;
+  background-color: transparent;
   white-space: inherit;
   overflow: auto;
   -ms-overflow-style: none;
@@ -901,5 +902,36 @@
 
   blockquote {
     @include bpk-blockquote;
+  }
+}
+
+/// Content container for bare html with alternate style
+///
+/// @require {mixin} bpk-content-container
+/// @require {mixin} bpk-content-container--bare-html
+///
+/// @example scss
+///   .selector {
+///     @include bpk-content-container();
+///     @include bpk-content-container--bare-html();
+///     @include bpk-content-container--bare-html-alternate();
+///   }
+@mixin bpk-content-container--bare-html-alternate {
+  code {
+    @include bpk-code--alternate;
+  }
+
+  pre {
+    @include bpk-code__pre--alternate;
+
+    > code {
+      @include bpk-code--block;
+    }
+  }
+
+  table {
+    th {
+      @include bpk-table__cell--head-alternate;
+    }
   }
 }

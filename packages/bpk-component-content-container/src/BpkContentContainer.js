@@ -29,6 +29,7 @@ const BpkContentContainer = props => {
     tagName: TagName,
     className,
     bareHtml,
+    alternate,
     dangerouslySetInnerHTML,
     children,
     ...rest
@@ -37,6 +38,12 @@ const BpkContentContainer = props => {
 
   if (bareHtml) {
     classNames.push(getClassName('bpk-content-container--bare-html'));
+
+    if (alternate) {
+      classNames.push(
+        getClassName('bpk-content-container--bare-html-alternate'),
+      );
+    }
   }
 
   if (className) {
@@ -63,6 +70,7 @@ BpkContentContainer.propTypes = {
   }),
   tagName: PropTypes.oneOf(['article', 'aside', 'div', 'main', 'section']),
   bareHtml: PropTypes.bool,
+  alternate: PropTypes.bool,
   className: PropTypes.string,
 };
 
@@ -71,6 +79,7 @@ BpkContentContainer.defaultProps = {
   dangerouslySetInnerHTML: null,
   tagName: 'div',
   bareHtml: false,
+  alternate: false,
   className: null,
 };
 
