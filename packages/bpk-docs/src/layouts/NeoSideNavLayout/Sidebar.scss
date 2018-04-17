@@ -18,42 +18,46 @@
 
 @import '~bpk-mixins/index';
 
-.bpkdocs-side-nav-layout {
-  &__wrapper {
+.bpkdocs-sidebar {
+  padding: $bpk-spacing-base;
+  background-color: $bpk-color-gray-900;
+  color: $bpk-color-white;
+
+  @include bpk-breakpoint-tablet {
+    flex: 1;
+  }
+
+  @include bpk-breakpoint-above-tablet {
+    min-width: $bpk-spacing-xxl * 10;
+    padding: $bpk-spacing-lg * 2;
+  }
+
+  &__header {
     display: flex;
-    flex-direction: row;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+
+    @include bpk-breakpoint-above-tablet {
+      flex-direction: row;
+    }
+  }
+
+  &__logo-link {
+    display: block;
   }
 
   &__logo {
     height: $bpk-spacing-xs * 8;
-
-    // HACK: This is to align the 'B' of 'Backpack' with the left edge
-    // of the content.
-    margin-left: $bpk-one-pixel-rem * 2;
-
-    @include bpk-rtl {
-      margin-left: 0;
-    }
   }
 
-  &__sidebar {
-    display: flex;
-    min-width: $bpk-spacing-base * 20;
-    padding: $bpk-spacing-lg * 2;
-    flex-direction: column;
-    align-items: flex-start;
-    background-color: $bpk-color-gray-900;
-    color: $bpk-color-white;
-
-    &-content {
-      width: 100%;
-      margin-top: $bpk-spacing-lg * 3;
-    }
+  &__close-button > svg {
+    fill: $bpk-color-white;
   }
 
   &__content {
-    display: flex;
-    padding: $bpk-spacing-sm;
+    width: 100%;
+    margin-top: $bpk-spacing-lg * 3;
   }
 
   &__section-list {

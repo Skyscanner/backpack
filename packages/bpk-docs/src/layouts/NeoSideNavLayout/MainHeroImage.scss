@@ -15,27 +15,25 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* @flow */
-import { type Node } from 'react';
 
-export type Link = {
-  id: string,
-  children: Node,
-  route: ?string,
-};
+@import '~bpk-mixins/index';
 
-export type Category = {
-  id: string,
-  category: string,
-  links: Array<Link>,
-  sort: ?boolean,
-};
+.bpkdocs-main-hero-image {
+  display: flex;
+  height: $bpk-spacing-xxl * 3;
+  padding: $bpk-spacing-base;
+  justify-content: flex-end;
+  background-color: $bpk-color-blue-500;
 
-export type LinkPropType = Link;
-export type CategoryPropType = Category;
+  @include bpk-breakpoint-above-tablet {
+    height: $bpk-spacing-xxl * 6;
+  }
 
-export type Links = Array<Link | Category>;
+  &__hamburger > svg {
+    fill: $bpk-color-white;
 
-export type LinksPropType = {
-  links: Links,
-};
+    @include bpk-breakpoint-above-tablet {
+      display: none;
+    }
+  }
+}

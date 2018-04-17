@@ -27,7 +27,8 @@ const getClassName = cssModules(STYLES);
 
 const BpkCloseButton = props => {
   const classNames = [getClassName('bpk-close-button')];
-  const { label, onClick, className, ...rest } = props;
+  const { label, onClick, className, customIcon, ...rest } = props;
+  const Icon = customIcon || CloseIcon;
 
   if (className) {
     classNames.push(className);
@@ -42,7 +43,7 @@ const BpkCloseButton = props => {
       className={classNames.join(' ')}
       {...rest}
     >
-      <CloseIcon className={getClassName('bpk-close-button__icon')} />
+      <Icon className={getClassName('bpk-close-button__icon')} />
     </button>
   );
 };
@@ -51,10 +52,12 @@ BpkCloseButton.propTypes = {
   label: PropTypes.string.isRequired,
   onClick: PropTypes.func.isRequired,
   className: PropTypes.string,
+  customIcon: PropTypes.func,
 };
 
 BpkCloseButton.defaultProps = {
   className: null,
+  customIcon: null,
 };
 
 export default BpkCloseButton;

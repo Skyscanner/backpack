@@ -32,14 +32,17 @@ import {
 const getClassName = cssModules(STYLES);
 
 const NavLink = (props: LinkPropType) => {
-  if (props.route) {
+  const { children, route, ...rest } = props;
+
+  if (route) {
     return (
       <Link
         className={getClassName('bpkdocs-side-nav-list__link')}
         activeClassName={getClassName('bpkdocs-side-nav-list__link--active')}
-        to={props.route}
+        to={route}
+        {...rest}
       >
-        {props.children}
+        {children}
       </Link>
     );
   }
@@ -57,14 +60,19 @@ const NavListItem = (props: LinkPropType) => (
   </li>
 );
 
-const NavListCategory = (props: CategoryPropType) => (
+type NavListCategoryPropType = {
+  ...$Exact<CategoryPropType>,
+  onClick: ?() => mixed,
+};
+
+const NavListCategory = (props: NavListCategoryPropType) => (
   <li className={getClassName('bpkdocs-side-nav-list__list-item')}>
     <span className={getClassName('bpkdocs-side-nav-list__category-name')}>
       {props.category}
     </span>
     <ul className={getClassName('bpkdocs-side-nav-list__category-list')}>
       {(props.sort ? sortLinks(props.links) : props.links).map(link => (
-        <NavListItem key={link.id} {...link} />
+        <NavListItem key={link.id} {...link} onClick={props.onClick} />
       ))}
     </ul>
   </li>
@@ -73,7 +81,9 @@ const NavListCategory = (props: CategoryPropType) => (
 type NavListPropTypes = {
   ...$Exact<LinksPropType>,
   dimmed: boolean,
+  onClick: ?() => mixed,
 };
+
 const NavList = (props: NavListPropTypes) => {
   const classNames = [getClassName('bpkdocs-side-nav-list__list')];
 
@@ -89,9 +99,9 @@ const NavList = (props: NavListPropTypes) => {
       {props.links.map(
         link =>
           link.category ? (
-            <NavListCategory key={link.id} {...link} />
+            <NavListCategory key={link.id} {...link} onClick={props.onClick} />
           ) : (
-            <NavLink key={link.id} {...link} />
+            <NavLink key={link.id} {...link} onClick={props.onClick} />
           ),
       )}
     </ul>

@@ -35,6 +35,7 @@ $bpk-heading-button-padding: $bpk-spacing-md;
     background-color: transparent;
     color: $bpk-color-white;
     text-align: left;
+    white-space: nowrap;
     cursor: pointer;
 
     @include bpk-text;
@@ -47,7 +48,13 @@ $bpk-heading-button-padding: $bpk-spacing-md;
   }
 
   &__heading-button-arrow {
+    margin-left: $bpk-spacing-sm;
     fill: currentColor;
+
+    @include bpk-rtl {
+      margin-right: $bpk-spacing-sm;
+      margin-left: 0;
+    }
   }
 
   &__heading {
@@ -68,24 +75,31 @@ $bpk-heading-button-padding: $bpk-spacing-md;
 
   &__list {
     margin: 0;
+    margin-left: $bpk-first-column-size;
     padding: 0;
     list-style: none;
+
+    @include bpk-rtl {
+      margin-right: $bpk-first-column-size;
+      margin-left: 0;
+    }
   }
 
   &__list-item {
     display: block;
+    width: 100%;
     padding: $bpk-spacing-md 0;
+    border: none;
+    background: none;
+    text-align: left;
 
     @include bpk-border-bottom-sm($bpk-color-gray-700);
     @include nav-link;
     @include nav-link--enabled;
     @include nav-link--lg;
 
-    margin-left: $bpk-first-column-size; /* stylelint-disable-line */
-
     @include bpk-rtl {
-      margin-right: $bpk-first-column-size;
-      margin-left: 0;
+      text-align: right;
     }
   }
 }

@@ -26,6 +26,7 @@ import { withAlignment } from 'bpk-component-icon';
 import BpkLargeArrowDown from 'bpk-component-icon/lg/arrow-down';
 import BpkLargeArrowUp from 'bpk-component-icon/lg/arrow-up';
 import { lineHeightLg, iconSizeLg } from 'bpk-tokens/tokens/base.es6';
+import BpkBreakpoint, { BREAKPOINTS } from 'bpk-component-breakpoint';
 
 import ComponentsIcon from '../../static/components_icon.svg';
 import DesignTokensIcon from '../../static/design_tokens_icon.svg';
@@ -37,22 +38,22 @@ import STYLES from './SectionsList.scss';
 const getClassName = cssModules(STYLES);
 
 const sections = {
-  usingBackpack: {
+  USING_BACKPACK: {
     title: 'Using Backpack',
     link: ROUTES.USING_BACKPACK,
     icon: UsingBackpackIcon,
   },
-  tokens: {
+  TOKENS: {
     title: 'Design Tokens',
     link: ROUTES.TOKENS,
     icon: DesignTokensIcon,
   },
-  components: {
+  COMPONENTS: {
     title: 'Components',
     link: ROUTES.COMPONENTS,
     icon: ComponentsIcon,
   },
-  github: {
+  GITHUB: {
     title: 'GitHub',
     link: 'https://github.com/Skyscanner/backpack',
     external: true,
@@ -64,6 +65,7 @@ const BpkAlignedArrowDown = withAlignment(
   lineHeightLg,
   iconSizeLg,
 );
+
 const BpkAlignedArrowUp = withAlignment(
   BpkLargeArrowUp,
   lineHeightLg,
@@ -75,8 +77,11 @@ const omitActiveSection = activeSection => omit(sections, activeSection);
 type SectionListItemProps = {
   link: string,
   external: boolean,
+  navigateOnClick: boolean,
   title: string,
+  onClick: () => mixed,
 };
+
 const SectionListItem = (props: SectionListItemProps) => {
   if (props.external) {
     return (
@@ -91,14 +96,29 @@ const SectionListItem = (props: SectionListItemProps) => {
       </li>
     );
   }
+
+  if (props.navigateOnClick) {
+    return (
+      <li>
+        <Link
+          to={props.link}
+          className={getClassName('bpkdocs-sections-list__list-item')}
+        >
+          {props.title}
+        </Link>
+      </li>
+    );
+  }
+
   return (
     <li>
-      <Link
-        to={props.link}
+      <button
+        type="button"
         className={getClassName('bpkdocs-sections-list__list-item')}
+        onClick={props.onClick}
       >
         {props.title}
-      </Link>
+      </button>
     </li>
   );
 };
@@ -106,11 +126,19 @@ const SectionListItem = (props: SectionListItemProps) => {
 type Props = {
   activeSection: string,
   onMenuToggle: () => mixed,
+  onSectionChange: (activeSection: string) => mixed,
   expanded?: boolean,
   className?: string,
 };
+
 const SectionsList = (props: Props) => {
-  const { activeSection, expanded, onMenuToggle, className } = props;
+  const {
+    activeSection,
+    expanded,
+    onMenuToggle,
+    onSectionChange,
+    className,
+  } = props;
   const outerClassnames = [getClassName('bpkdocs-sections-list')];
   const listClassNames = [getClassName('bpkdocs-sections-list__list')];
   const Arrow = expanded ? BpkAlignedArrowUp : BpkAlignedArrowDown;
@@ -149,12 +177,20 @@ const SectionsList = (props: Props) => {
       <BpkAnimateHeight height={expanded ? 'auto' : 0} duration={200}>
         <ul className={getClassName('bpkdocs-sections-list__list')}>
           {Object.keys(omitActiveSection(activeSection)).map(section => (
-            <SectionListItem
+            <BpkBreakpoint
               key={`${section}-${sections[section].title}`}
-              link={sections[section].link}
-              external={sections[section].external}
-              title={sections[section].title}
-            />
+              query={BREAKPOINTS.TABLET}
+            >
+              {isTablet => (
+                <SectionListItem
+                  link={sections[section].link}
+                  external={sections[section].external}
+                  navigateOnClick={!isTablet}
+                  title={sections[section].title}
+                  onClick={() => onSectionChange(section)}
+                />
+              )}
+            </BpkBreakpoint>
           ))}
         </ul>
       </BpkAnimateHeight>

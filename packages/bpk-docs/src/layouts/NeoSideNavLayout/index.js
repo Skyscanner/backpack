@@ -16,6 +16,6 @@
  * limitations under the License.
  */
 
-import SideNav from './SideNav';
+import SideNavLayout from './SideNavLayout';
 
-export default SideNav;
+export default SideNavLayout;

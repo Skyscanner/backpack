@@ -39,7 +39,7 @@ if (typeof window !== 'undefined' && typeof document !== 'undefined') {
     React.createElement(Router, {
       history: browserHistory,
       onUpdate: () => {
-        if (!`${window.location}`.includes('#')) {
+        if (!`${window.location}`.indexOf('#') !== -1) {
           window.scrollTo(0, 0);
         }
       },
