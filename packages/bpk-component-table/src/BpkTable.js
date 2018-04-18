@@ -26,9 +26,13 @@ const getClassName = cssModules(STYLES);
 
 const BpkTable = props => {
   const classNames = [getClassName('bpk-table')];
-  const { children, className, ...rest } = props;
+  const { children, className, alternate, ...rest } = props;
   if (className) {
     classNames.push(className);
+  }
+
+  if (alternate) {
+    classNames.push(getClassName('bpk-table--alternate'));
   }
 
   return (
@@ -41,10 +45,12 @@ const BpkTable = props => {
 BpkTable.propTypes = {
   children: PropTypes.node.isRequired,
   className: PropTypes.string,
+  alternate: PropTypes.bool,
 };
 
 BpkTable.defaultProps = {
   className: null,
+  alternate: false,
 };
 
 export default BpkTable;

@@ -15,25 +15,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+import { withDefaultProps } from 'bpk-react-utils';
+import { BpkCodeBlock } from 'bpk-component-code';
 
-@import '~bpk-mixins/index';
-
-.bpk-table {
-  @include bpk-table;
-
-  &--alternate {
-    @include bpk-table--alternate;
-  }
-
-  &__cell {
-    @include bpk-table__cell;
-
-    &--head {
-      @include bpk-table__cell--head;
-    }
-
-    &--head-alternate {
-      @include bpk-table__cell--head-alternate;
-    }
-  }
-}
+export default withDefaultProps(BpkCodeBlock, {
+  alternate: !!process.env.BPK_NEO,
+});

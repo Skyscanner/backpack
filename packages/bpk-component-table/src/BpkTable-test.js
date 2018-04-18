@@ -32,6 +32,17 @@ describe('BpkTable', () => {
     expect(tree).toMatchSnapshot();
   });
 
+  it('should render correctly with "alternate" attribute', () => {
+    const tree = renderer
+      .create(
+        <BpkTable alternate>
+          <tbody />
+        </BpkTable>,
+      )
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
   it('should render correctly with custom class', () => {
     const tree = renderer
       .create(

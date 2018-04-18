@@ -21,12 +21,12 @@ import BpkButton from 'bpk-component-button';
 import BpkPopover from 'bpk-component-popover';
 import BpkInput, { withOpenEvents } from 'bpk-component-input';
 import BpkRouterLink from 'bpk-component-router-link';
-import { BpkCode } from 'bpk-component-code';
 import popoverReadme from 'bpk-component-popover/readme.md';
 
 import * as ROUTES from './../../constants/routes';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
 import Paragraph from './../../components/Paragraph';
+import Code from '../../components/Code';
 
 const loremIpsum = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer pulvinar leo in gravida varius.
 Mauris eget euismod mi. Ut vulputate ex nec consequat sollicitudin. Pellentesque pulvinar ac dolor vel hendrerit.
@@ -130,8 +130,8 @@ const components = [
     blurb: [
       <Paragraph>
         You can use a <BpkRouterLink to={ROUTES.FORMS}>BpkInput</BpkRouterLink>{' '}
-        enhanced with the <BpkCode>withOpenEvents</BpkCode> higher-order
-        component to open popovers.
+        enhanced with the <Code>withOpenEvents</Code> higher-order component to
+        open popovers.
       </Paragraph>,
     ],
     examples: [<PopoverContainer input>{loremIpsum}</PopoverContainer>],

@@ -102,6 +102,7 @@ const ComponentExample = component => {
             __html: markdownToHTML(component.readme, `${component.id}-`),
           }}
           bareHtml
+          alternate
         />,
       ])
     : null;
@@ -150,6 +151,7 @@ const CustomSection = section => [
             __html: markdownToHTML(section.readme, `${section.id}-`),
           }}
           bareHtml
+          alternate
         />,
       ])
     : null,
@@ -177,6 +179,7 @@ const NeoDocsPageBuilder = props => {
               __html: markdownToHTML(props.readme),
             }}
             bareHtml
+            alternate
           />,
         ])
       : null,
