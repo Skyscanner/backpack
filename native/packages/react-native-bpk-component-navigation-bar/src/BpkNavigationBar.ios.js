@@ -28,6 +28,7 @@ import {
 import {
   colorGray50,
   colorGray100,
+  colorGray300,
   colorGray700,
 } from 'bpk-tokens/tokens/base.react.native';
 
@@ -158,9 +159,11 @@ class BpkNavigationBar extends Component<Props, {}> {
     const innerBarStyle = [styles.barInner, isIphoneX && styles.iPhoneXBar];
 
     let tintColor = colorGray700;
+    let disabledTintColor = colorGray300;
     if (this.theme) {
       const {
         navigationBarTintColor,
+        navigationBarDisabledTintColor,
         navigationBarShadowColor,
         navigationBarBackgroundColor,
       } = this.theme;
@@ -170,6 +173,7 @@ class BpkNavigationBar extends Component<Props, {}> {
       });
       titleStyle.push({ color: navigationBarTintColor });
       tintColor = navigationBarTintColor;
+      disabledTintColor = navigationBarDisabledTintColor;
     }
 
     let titleView = null;
@@ -215,12 +219,14 @@ class BpkNavigationBar extends Component<Props, {}> {
         <View style={innerBarStyle}>
           {leadingButton &&
             React.cloneElement(leadingButton, {
+              disabledTintColor,
               tintColor,
               leading: true,
             })}
           <View style={styles.titleContainer}>{titleView}</View>
           {trailingButton &&
             React.cloneElement(trailingButton, {
+              disabledTintColor,
               tintColor,
               leading: false,
             })}

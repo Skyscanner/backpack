@@ -1,5 +1,11 @@
 # Unreleased
 
+**Breaking:**
+
+- react-native-bpk-component-navigation-bar:
+  - `BpkNavigationBarTextButtonIOS`, `BpkNavigationBarIconButtonIOS`, and `BpkNavigationBarButtonAndroid` can now be disabled with the `disabled` prop.
+  - Introduces a new theme attribute `disabledTintColor`. This new attribute has to be supplied to define a valid theme, without it theming is disabled.
+
 **Added:**
 - react-native-bpk-component-pagination-dots:
   - Introducing the React Native pagination dots component.

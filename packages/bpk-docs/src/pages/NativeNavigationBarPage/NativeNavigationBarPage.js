@@ -76,7 +76,7 @@ const components = [
         height: 1920,
         src: `/${androidScreenshotModal}`,
         altText: 'Android Modal Navigation Bar',
-        subText: '(Google Pixel Emulator)',
+        subText: '(Nexus 5 Emulator)',
       },
     ],
   },
