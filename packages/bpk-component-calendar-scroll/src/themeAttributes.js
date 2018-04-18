@@ -24,7 +24,4 @@ export default [
   'calendarDateTextSelectedColor',
   'calendarDateSelectedBackgroundColor',
   'calendarDateFocusedBorderColor',
-  'calendarNudgerIconColor',
-  'calendarNudgerIconHoverColor',
-  'calendarNudgerIconActiveColor',
 ];

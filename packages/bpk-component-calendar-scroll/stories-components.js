@@ -128,7 +128,6 @@ class MonthViewCalendar extends Component {
           formatMonth={formatMonth}
           formatDateFull={formatDateFull}
           daysOfWeek={weekDays}
-          changeMonthLabel="Change month"
           date={this.state.departDate}
           fixedWidth={false}
           onDateSelect={departDate => {
@@ -154,7 +153,6 @@ class MonthViewCalendar extends Component {
           formatMonth={formatMonth}
           formatDateFull={formatDateFull}
           daysOfWeek={weekDays}
-          changeMonthLabel="Change month"
           date={this.state.returnDate}
           fixedWidth={false}
           onDateSelect={returnDate => {

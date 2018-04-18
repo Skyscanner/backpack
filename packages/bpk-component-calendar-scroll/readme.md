@@ -61,7 +61,6 @@ export default class App extends Component {
           formatMonth={formatMonth}
           formatDateFull={formatDateFull}
           daysOfWeek={daysOfWeek}
-          changeMonthLabel="Change month"
           date={this.state.selectedDate}
         />
       </div>
@@ -82,7 +81,6 @@ The default export of this package uses the following set of components:
 
 | Calendar component | Default                      |
 | ------------------ | ---------------------------- |
-| Month navigation   | BpkCalendarNav               |
 | Grid header        | BpkCalendarGridHeader        |
 | Grid               | TransitioningBpkCalendarGrid |
 | Date               | BpkCalendarDate              |
@@ -91,7 +89,6 @@ Composition and state are implemented using the aforementioned higher-order comp
 
 ```js
 withCalendarState(composeCalendar(
-  BpkCalendarNav,
   BpkCalendarGridHeader,
   TransitioningBpkCalendarGrid,
   BpkCalendarDate,
@@ -104,7 +101,6 @@ A custom calendar can be created by swapping out any default component for an al
 
 ```js
 composeCalendar(
-  MyNavigation,
   MyHeader,
   MyGrid,
   MyDate,
@@ -116,7 +112,6 @@ The navigation and header components are optional. If they are not needed, the a
 ```js
 composeCalendar(
   null,
-  null,
   MyGrid,
   MyDate,
 )
@@ -126,7 +121,6 @@ In many cases, you might want to keep most of the components and replace only on
 
 ```js
 composeCalendar(
-  BpkCalendarNav,
   BpkCalendarGridHeader,
   BpkCalendarGrid,
   MyDate,
@@ -137,7 +131,6 @@ Finally, focus management and support for keyboard input can be added using `wit
 
 ```js
 withCalendarState(composeCalendar(
-  BpkCalendarNav,
   BpkCalendarGridHeader,
   BpkCalendarGrid,
   MyDate,
@@ -152,7 +145,6 @@ withCalendarState(composeCalendar(
 
 | Property              | PropType             | Required | Default Value    |
 | --------------------- | -------------------- | -------- | ---------------- |
-| changeMonthLabel      | string               | true     | -                |
 | daysOfWeek            | object               | true     | -                |
 | formatDateFull        | func                 | true     | -                |
 | formatMonth           | func                 | true     | -                |
@@ -315,7 +307,3 @@ Sets the date that is focused initially, this prop has no effect if `selectedDat
 * `calendarDateTextSelectedColor`
 * `calendarDateSelectedBackgroundColor`
 * `calendarDateFocusedBorderColor`
-* `calendarNudgerIconColor`
-* `calendarNudgerIconHoverColor`
-* `calendarNudgerIconActiveColor`
-

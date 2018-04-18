@@ -28,9 +28,6 @@ describe('themeAttributes', () => {
       'calendarDateTextSelectedColor',
       'calendarDateSelectedBackgroundColor',
       'calendarDateFocusedBorderColor',
-      'calendarNudgerIconColor',
-      'calendarNudgerIconHoverColor',
-      'calendarNudgerIconActiveColor',
     ]);
   });
 });

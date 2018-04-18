@@ -18,7 +18,6 @@
 
 import React from 'react';
 import renderer from 'react-test-renderer';
-// import { shallow } from 'enzyme';
 import { addCalendarScrollGridList } from './BpkCalendarScrollGridList';
 
 const MyComponent = props => <div>{JSON.stringify(props)}</div>;
@@ -29,7 +28,7 @@ describe('BpkCalendarScroll', () => {
     const tree = renderer
       .create(
         <ScrollMyComponent
-          TransitionComponent={MyComponent}
+          ScrollingComponent={MyComponent}
           minDate={new Date(Date.UTC(2009, 1))}
           maxDate={new Date(Date.UTC(2011, 1))}
           month={new Date(Date.UTC(2010, 1))}
