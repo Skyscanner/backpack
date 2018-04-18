@@ -50,5 +50,51 @@ describe('iOS', () => {
         .toJSON();
       expect(tree).toMatchSnapshot();
     });
+
+    it('should render correctly disabled', () => {
+      const tree = renderer
+        .create(
+          <BpkNavigationBarIconButtonIOS
+            title="Close"
+            icon="close"
+            leading
+            onPress={jest.fn()}
+            disabled
+          />,
+        )
+        .toJSON();
+      expect(tree).toMatchSnapshot();
+    });
+
+    it('should resepect "tintColor"', () => {
+      const tree = renderer
+        .create(
+          <BpkNavigationBarIconButtonIOS
+            title="Done"
+            icon="close"
+            leading={false}
+            onPress={jest.fn()}
+            tintColor="red"
+          />,
+        )
+        .toJSON();
+      expect(tree).toMatchSnapshot();
+    });
+
+    it('should resepect "disabledTintColor"', () => {
+      const tree = renderer
+        .create(
+          <BpkNavigationBarIconButtonIOS
+            title="Done"
+            icon="close"
+            leading={false}
+            onPress={jest.fn()}
+            disabledTintColor="red"
+            disabled
+          />,
+        )
+        .toJSON();
+      expect(tree).toMatchSnapshot();
+    });
   });
 });

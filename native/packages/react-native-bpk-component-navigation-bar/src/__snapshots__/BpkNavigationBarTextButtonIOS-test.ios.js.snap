@@ -57,6 +57,64 @@ exports[`iOS BpkNavigationBarTextButtonIOS should render correctly 1`] = `
 </View>
 `;
 
+exports[`iOS BpkNavigationBarTextButtonIOS should render correctly disabled 1`] = `
+<View
+  accessibilityComponentType="button"
+  accessibilityLabel="Done"
+  accessibilityTraits={
+    Array [
+      "button",
+      "disabled",
+    ]
+  }
+  accessible={true}
+  collapsable={undefined}
+  hasTVPreferredFocus={undefined}
+  hitSlop={undefined}
+  isTVSelectable={true}
+  nativeID={undefined}
+  onLayout={undefined}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "marginEnd": 8,
+      "opacity": 1,
+      "zIndex": 2,
+    }
+  }
+  testID={undefined}
+  tvParallaxProperties={undefined}
+>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    style={
+      Array [
+        Object {
+          "color": "rgb(82, 76, 97)",
+          "fontFamily": "System",
+          "fontSize": 17,
+          "fontWeight": "400",
+        },
+        Array [
+          Object {
+            "color": "rgb(178, 174, 189)",
+          },
+        ],
+      ]
+    }
+  >
+    Done
+  </Text>
+</View>
+`;
+
 exports[`iOS BpkNavigationBarTextButtonIOS should render correctly emphasize 1`] = `
 <View
   accessibilityComponentType="button"
@@ -170,6 +228,121 @@ exports[`iOS BpkNavigationBarTextButtonIOS should render correctly leading confi
     }
   >
     Cancel
+  </Text>
+</View>
+`;
+
+exports[`iOS BpkNavigationBarTextButtonIOS should resepect "disabledTintColor" 1`] = `
+<View
+  accessibilityComponentType="button"
+  accessibilityLabel="Done"
+  accessibilityTraits={
+    Array [
+      "button",
+      "disabled",
+    ]
+  }
+  accessible={true}
+  collapsable={undefined}
+  hasTVPreferredFocus={undefined}
+  hitSlop={undefined}
+  isTVSelectable={true}
+  nativeID={undefined}
+  onLayout={undefined}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "marginEnd": 8,
+      "opacity": 1,
+      "zIndex": 2,
+    }
+  }
+  testID={undefined}
+  tvParallaxProperties={undefined}
+>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    style={
+      Array [
+        Object {
+          "color": "rgb(82, 76, 97)",
+          "fontFamily": "System",
+          "fontSize": 17,
+          "fontWeight": "400",
+        },
+        Array [
+          Object {
+            "color": "red",
+          },
+        ],
+      ]
+    }
+  >
+    Done
+  </Text>
+</View>
+`;
+
+exports[`iOS BpkNavigationBarTextButtonIOS should resepect "tintColor" 1`] = `
+<View
+  accessibilityComponentType="button"
+  accessibilityLabel="Done"
+  accessibilityTraits={
+    Array [
+      "button",
+    ]
+  }
+  accessible={true}
+  collapsable={undefined}
+  hasTVPreferredFocus={undefined}
+  hitSlop={undefined}
+  isTVSelectable={true}
+  nativeID={undefined}
+  onLayout={undefined}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "marginEnd": 8,
+      "opacity": 1,
+      "zIndex": 2,
+    }
+  }
+  testID={undefined}
+  tvParallaxProperties={undefined}
+>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    style={
+      Array [
+        Object {
+          "color": "rgb(82, 76, 97)",
+          "fontFamily": "System",
+          "fontSize": 17,
+          "fontWeight": "400",
+        },
+        Array [
+          Object {
+            "color": "red",
+          },
+        ],
+      ]
+    }
+  >
+    Done
   </Text>
 </View>
 `;

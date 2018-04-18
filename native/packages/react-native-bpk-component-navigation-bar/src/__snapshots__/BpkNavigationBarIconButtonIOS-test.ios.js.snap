@@ -61,6 +61,68 @@ exports[`iOS BpkNavigationBarIconButtonIOS should render correctly 1`] = `
 </View>
 `;
 
+exports[`iOS BpkNavigationBarIconButtonIOS should render correctly disabled 1`] = `
+<View
+  accessibilityComponentType="button"
+  accessibilityLabel="Close"
+  accessibilityTraits={
+    Array [
+      "button",
+      "disabled",
+    ]
+  }
+  accessible={true}
+  collapsable={undefined}
+  hasTVPreferredFocus={undefined}
+  hitSlop={undefined}
+  isTVSelectable={true}
+  nativeID={undefined}
+  onLayout={undefined}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "marginStart": 3,
+      "opacity": 1,
+      "zIndex": 2,
+    }
+  }
+  testID={undefined}
+  tvParallaxProperties={undefined}
+>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    style={
+      Array [
+        Object {
+          "color": "rgb(82, 76, 97)",
+          "fontFamily": "BpkIcon",
+          "fontSize": 24,
+          "lineHeight": 24,
+        },
+        Array [
+          Object {
+            "fontSize": 28,
+            "lineHeight": 28,
+          },
+          Object {
+            "color": "rgb(178, 174, 189)",
+          },
+        ],
+      ]
+    }
+  >
+    
+  </Text>
+</View>
+`;
+
 exports[`iOS BpkNavigationBarIconButtonIOS should render correctly leading configuration 1`] = `
 <View
   accessibilityComponentType="button"
@@ -112,6 +174,129 @@ exports[`iOS BpkNavigationBarIconButtonIOS should render correctly leading confi
           },
           Object {
             "color": "rgb(82, 76, 97)",
+          },
+        ],
+      ]
+    }
+  >
+    
+  </Text>
+</View>
+`;
+
+exports[`iOS BpkNavigationBarIconButtonIOS should resepect "disabledTintColor" 1`] = `
+<View
+  accessibilityComponentType="button"
+  accessibilityLabel="Done"
+  accessibilityTraits={
+    Array [
+      "button",
+      "disabled",
+    ]
+  }
+  accessible={true}
+  collapsable={undefined}
+  hasTVPreferredFocus={undefined}
+  hitSlop={undefined}
+  isTVSelectable={true}
+  nativeID={undefined}
+  onLayout={undefined}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "marginEnd": 3,
+      "opacity": 1,
+      "zIndex": 2,
+    }
+  }
+  testID={undefined}
+  tvParallaxProperties={undefined}
+>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    style={
+      Array [
+        Object {
+          "color": "rgb(82, 76, 97)",
+          "fontFamily": "BpkIcon",
+          "fontSize": 24,
+          "lineHeight": 24,
+        },
+        Array [
+          Object {
+            "fontSize": 28,
+            "lineHeight": 28,
+          },
+          Object {
+            "color": "red",
+          },
+        ],
+      ]
+    }
+  >
+    
+  </Text>
+</View>
+`;
+
+exports[`iOS BpkNavigationBarIconButtonIOS should resepect "tintColor" 1`] = `
+<View
+  accessibilityComponentType="button"
+  accessibilityLabel="Done"
+  accessibilityTraits={
+    Array [
+      "button",
+    ]
+  }
+  accessible={true}
+  collapsable={undefined}
+  hasTVPreferredFocus={undefined}
+  hitSlop={undefined}
+  isTVSelectable={true}
+  nativeID={undefined}
+  onLayout={undefined}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "marginEnd": 3,
+      "opacity": 1,
+      "zIndex": 2,
+    }
+  }
+  testID={undefined}
+  tvParallaxProperties={undefined}
+>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    style={
+      Array [
+        Object {
+          "color": "rgb(82, 76, 97)",
+          "fontFamily": "BpkIcon",
+          "fontSize": 24,
+          "lineHeight": 24,
+        },
+        Array [
+          Object {
+            "fontSize": 28,
+            "lineHeight": 28,
+          },
+          Object {
+            "color": "red",
           },
         ],
       ]

@@ -103,6 +103,7 @@ PropTypes.shape({
 
 + `navigationBarBackgroundColor`
 + `navigationBarTintColor`
++ `navigationBarDisabledTintColor`
 
 **Android:**
 
@@ -128,6 +129,7 @@ import { BpkNavigationBarButtonAndroid } from 'react-native-bpk-component-naviga
 | title    | string                            | true     | -             |
 | icon     | oneOf(Object.keys(BpkIcons.icon)) | true     | -             |
 | onPress  | func                              | false    | null          |
+| disabled | bool                              | false    | false         |
 
 
 
@@ -162,6 +164,7 @@ import { BpkNavigationBarTextButtonIOS } from 'react-native-bpk-component-naviga
 | title     | string   | true     | -             |
 | emphasize | bool     | false    | false         |
 | onPress   | func     | false    | null          |
+| disabled  | bool     | false    | false         |
 
 ### `BpkNavigationBarIconButtonIOS`
 
@@ -178,4 +181,5 @@ import { BpkNavigationBarIconButtonIOS } from 'react-native-bpk-component-naviga
 | title    | string                            | true     | -             |
 | icon     | oneOf(Object.keys(BpkIcons.icon)) | true     | -             |
 | onPress  | func                              | false    | null          |
+| disabled | bool                              | false    | false         |
 
