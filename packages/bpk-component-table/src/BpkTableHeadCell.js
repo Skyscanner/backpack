@@ -25,11 +25,12 @@ import STYLES from './bpk-table.scss';
 const getClassName = cssModules(STYLES);
 
 const BpkTableHeadCell = props => {
-  const { className, ...rest } = props;
+  const { className, alternate, ...rest } = props;
 
-  const classNames = ['bpk-table__cell', 'bpk-table__cell--head'].map(
-    getClassName,
-  );
+  const classNames = [
+    'bpk-table__cell',
+    alternate ? 'bpk-table__cell--head-alternate' : 'bpk-table__cell--head',
+  ].map(getClassName);
 
   if (className) {
     classNames.push(className);
@@ -40,10 +41,12 @@ const BpkTableHeadCell = props => {
 
 BpkTableHeadCell.propTypes = {
   children: PropTypes.node.isRequired,
+  alternate: PropTypes.bool,
   className: PropTypes.string,
 };
 
 BpkTableHeadCell.defaultProps = {
+  alternate: false,
   className: null,
 };
 

@@ -15,6 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+/* @flow */
 
 import React from 'react';
 import { storiesOf } from '@storybook/react';
@@ -23,4 +24,10 @@ import { BpkCode, BpkCodeBlock } from './index';
 
 storiesOf('bpk-component-code', module)
   .add('Inline', () => <BpkCode>npm install react --save</BpkCode>)
-  .add('Block', () => <BpkCodeBlock>npm install react --save</BpkCodeBlock>);
+  .add('Inline - Alternate', () => (
+    <BpkCode alternate>npm install react --save</BpkCode>
+  ))
+  .add('Block', () => <BpkCodeBlock>npm install react --save</BpkCodeBlock>)
+  .add('Block - Alternate', () => (
+    <BpkCodeBlock alternate>npm install react --save</BpkCodeBlock>
+  ));

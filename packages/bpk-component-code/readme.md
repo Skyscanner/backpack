@@ -38,4 +38,6 @@ export default () => (
 
 | Property  | PropType | Required | Default Value |
 | --------- | -------- | -------- | ------------- |
-| children  | -        | true     | -             |
+| children  | Node     | true     | -             |
+| alternate | bool     | false    | false         |
+| className | string   | false    | null          |

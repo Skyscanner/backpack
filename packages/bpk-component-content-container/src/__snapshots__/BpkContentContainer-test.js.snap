@@ -25,6 +25,31 @@ exports[`BpkContentContainer should render correctly 1`] = `
 </div>
 `;
 
+exports[`BpkContentContainer should render correctly with a "bareHtml" and "alternate" attributes 1`] = `
+<div
+  className="bpk-content-container bpk-content-container--bare-html bpk-content-container--bare-html-alternate"
+  dangerouslySetInnerHTML={null}
+>
+  <h1>
+    Heading
+  </h1>
+  <p>
+    My paragraph.
+  </p>
+  <ul>
+    <li>
+      Item 1
+    </li>
+    <li>
+      Item 2
+    </li>
+    <li>
+      Item 3
+    </li>
+  </ul>
+</div>
+`;
+
 exports[`BpkContentContainer should render correctly with a "bareHtml" attribute  1`] = `
 <div
   className="bpk-content-container bpk-content-container--bare-html"
