@@ -2,6 +2,27 @@
 
 [Unreleased changes](./unreleased.md).
 
+# 2018-04-18
+
+**Breaking:**
+- react-native-bpk-component-navigation-bar: 1.1.4 => 2.0.0
+  - `BpkNavigationBarTextButtonIOS`, `BpkNavigationBarIconButtonIOS`, and `BpkNavigationBarButtonAndroid` can now be disabled with the `disabled` prop.
+  - Introduces a new theme attribute `disabledTintColor`. This new attribute has to be supplied to define a valid theme, without it theming is disabled.
+
+**Added:**
+
+- bpk-component-code: 1.0.57 => 1.1.0
+  - `BpkCode` and `BpkCodeBlock` now supports an alternate style more suitable for non-white backgrounds with the `alternate` prop.
+  - `BpkCode` and `BpkCodeBlock` can now take a custom `className`.
+  - `BpkCode` and `BpkCodeBlock` now spreads additional props down.
+- bpk-component-table: 1.0.57 => 1.1.0
+  - `BpkTableHeadCell` and `BpkTable` now supports an alternate style more suitable for non-white backgrounds with the `alternate` prop.
+- bpk-component-content-container: 1.2.0 => 1.3.0
+  - `BpkConentContainer` now supports an alternate style more suitable for non-white backgrounds with the `alternate` prop.
+- bpk-mixins: 17.6.2 => 17.7.0
+  - Added new mixins to support the above alternate styles. Also includes two new mixins for RTL aware margins. `bpk-margin-leading` and `bpk-margin-trailing`.
+
+
 ## 2018-04-17 - Context fixes and stylesheet improvements
 
 **Added:**
