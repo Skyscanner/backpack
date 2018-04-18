@@ -65,6 +65,7 @@ class TokenSwitcher extends Component {
   render() {
     const { tokens } = this.props;
     const { selectedPlatform } = this.state;
+    const isNeo = !!process.env.BPK_NEO;
 
     const selectedTokens = tokens[selectedPlatform] || {};
 
@@ -86,11 +87,11 @@ class TokenSwitcher extends Component {
           })}
         </BpkHorizontalNav>
         <br />
-        <BpkTable>
+        <BpkTable alternate={isNeo}>
           <BpkTableHead>
             <BpkTableRow>
-              <BpkTableHeadCell>Name</BpkTableHeadCell>
-              <BpkTableHeadCell>Value</BpkTableHeadCell>
+              <BpkTableHeadCell alternate={isNeo}>Name</BpkTableHeadCell>
+              <BpkTableHeadCell alternate={isNeo}>Value</BpkTableHeadCell>
             </BpkTableRow>
           </BpkTableHead>
           <BpkTableBody>

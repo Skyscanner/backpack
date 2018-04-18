@@ -17,7 +17,6 @@
  */
 
 import React from 'react';
-import { BpkCode } from 'bpk-component-code';
 import BpkBlockquote from 'bpk-component-blockquote';
 import BpkRouterLink from 'bpk-component-router-link';
 
@@ -26,6 +25,7 @@ import gridReadme from 'bpk-component-grid/readme.md';
 import * as routes from './../../constants/routes';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
 import Paragraph from './../../components/Paragraph';
+import Code from '../../components/Code';
 
 const HorizontalGridPage = () => (
   <DocsPageBuilder
@@ -42,7 +42,7 @@ const HorizontalGridPage = () => (
         <strong>Note:</strong> The Backpack grid is intended to be used for
         overall page layout as opposed to spacing out atom or molecule level
         components. Please stick to flexbox based techniques for more intricate
-        layouts (or <BpkCode>display: table;</BpkCode> for browsers which lack
+        layouts (or <Code>display: table;</Code> for browsers which lack
         support), just be sure to use the spacing values above in order to
         achieve consistency.
       </BpkBlockquote>,

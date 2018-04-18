@@ -17,7 +17,6 @@
  */
 
 import React from 'react';
-import { BpkCode, BpkCodeBlock } from 'bpk-component-code';
 import {
   colors,
   lineHeightBase,
@@ -39,6 +38,8 @@ import AwardIcon from 'bpk-component-icon/lg/award';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
 import Heading from './../../components/Heading';
 import Paragraph from './../../components/Paragraph';
+import Code from '../../components/Code';
+import CodeBlock from '../../components/CodeBlock';
 import * as ROUTES from './../../constants/routes';
 
 const AlignedBaseArrow = withAlignment(
@@ -63,11 +64,11 @@ const components = [
       <Paragraph>
         Aligning an icon within text with textStyle &quot;base&quot; can be done
         using
-        <BpkCode>withAlignment</BpkCode>, providing suitable spacings (see the{' '}
+        <Code>withAlignment</Code>, providing suitable spacings (see the{' '}
         <BpkLink href={ROUTES.TYPESETTING}>Typesetting section</BpkLink>).
       </Paragraph>,
       <Paragraph>Using the HOC is done as follows:</Paragraph>,
-      <BpkCodeBlock>
+      <CodeBlock>
         {`import LongArrowRightIconSm from 'bpk-component-icon/sm/long-arrow-right';
 import { withAlignment } from 'bpk-component-icon';
 import { lineHeightBase, iconSizeSm } from 'bpk-tokens/tokens/base.es6';
@@ -83,7 +84,7 @@ const AlignedArrow = withAlignment(
   <AlignedArrow fill={colors.colorGray700}/>
 </BpkText>
 `}
-      </BpkCodeBlock>,
+      </CodeBlock>,
     ],
     examples: [
       <BpkText textStyle="base">
@@ -100,7 +101,7 @@ const AlignedArrow = withAlignment(
         Similarly, within text with textStyle large, alignment can be achieved
         as follows:
       </Paragraph>,
-      <BpkCodeBlock>
+      <CodeBlock>
         {`import LongArrowRightIcon from 'bpk-component-icon/lg/long-arrow-right';
 import { withAlignment } from 'bpk-component-icon';
 import { lineHeightLg, iconSizeLg } from 'bpk-tokens/tokens/base.es6';
@@ -116,7 +117,7 @@ const AlignedArrow = withAlignment(
   <AlignedArrow fill={colors.colorGray700}/>
 </BpkText>
 `}
-      </BpkCodeBlock>,
+      </CodeBlock>,
     ],
     examples: [
       <BpkText textStyle="lg">
@@ -133,7 +134,7 @@ const AlignedArrow = withAlignment(
         If wishing to use an icon taller than the text, alignment must be
         performed on the text as follows:
       </Paragraph>,
-      <BpkCodeBlock>
+      <CodeBlock>
         {`import AwardIcon from 'bpk-component-icon/lg/award';
 import { withAlignment } from 'bpk-component-icon';
 import { iconSizeLg, lineHeightBase } from 'bpk-tokens/tokens/base.es6';
@@ -151,7 +152,7 @@ const AlignedSpan = withAlignment(
   </AlignedSpan>
 </BpkText>
 `}
-      </BpkCodeBlock>,
+      </CodeBlock>,
     ],
     examples: [
       <BpkText textStyle="base">
@@ -169,7 +170,7 @@ const AlignedSpan = withAlignment(
         within a button. Other examples can be seen in the{' '}
         <BpkLink href={ROUTES.BUTTONS}>Buttons page</BpkLink>.
       </Paragraph>,
-      <BpkCodeBlock>
+      <CodeBlock>
         {`import LongArrowRightIconSm from 'bpk-component-icon/sm/long-arrow-right';
 import { withButtonAlignment } from 'bpk-component-icon';
 
@@ -181,7 +182,7 @@ const AlignedArrow = withButtonAlignment(LongArrowRightIconSm);
   <AlignedArrow fill={colors.colorWhite} />
 </BpkButton>
 `}
-      </BpkCodeBlock>,
+      </CodeBlock>,
     ],
     examples: [
       <BpkButton>
@@ -199,7 +200,7 @@ const AlignedArrow = withButtonAlignment(LongArrowRightIconSm);
         examples can be seen in the{' '}
         <BpkLink href={ROUTES.BUTTONS}>Buttons page</BpkLink>.
       </Paragraph>,
-      <BpkCodeBlock>
+      <CodeBlock>
         {`import LongArrowRightIcon from 'bpk-component-icon/lg/long-arrow-right';
 import { withLargeButtonAlignment } from 'bpk-component-icon';
 
@@ -211,7 +212,7 @@ const AlignedArrow = withLargeButtonAlignment(LongArrowRightIcon);
   <AlignedArrow />
 </BpkButton>
 `}
-      </BpkCodeBlock>,
+      </CodeBlock>,
     ],
     examples: [
       <BpkButton large>
@@ -232,10 +233,9 @@ const AlignmentPage = () => (
       </Paragraph>,
       <Heading level="h2">Installation</Heading>,
       <Paragraph>
-        The alignment HOCs are provided in the{' '}
-        <BpkCode>bpk-component-icon</BpkCode> package. See{' '}
-        <BpkLink href={ROUTES.ICONS}>Icons</BpkLink> for installation
-        instructions.
+        The alignment HOCs are provided in the <Code>bpk-component-icon</Code>{' '}
+        package. See <BpkLink href={ROUTES.ICONS}>Icons</BpkLink> for
+        installation instructions.
       </Paragraph>,
     ]}
     components={components}

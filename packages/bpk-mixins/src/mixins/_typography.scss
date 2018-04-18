@@ -569,6 +569,19 @@
   @include bpk-border-sm($bpk-color-gray-100, '');
 }
 
+/// Alternate table style.
+/// @require {mixin} bpk-table
+///
+/// @example scss
+///   .selector {
+///     @include bpk-table();
+///     @include bpk-table--alternate();
+///   }
+
+@mixin bpk-table--alternate {
+  @include bpk-border-sm($bpk-color-gray-300, '');
+}
+
 /// Table cell.
 ///
 /// @example scss
@@ -932,6 +945,8 @@
   }
 
   table {
+    @include bpk-table--alternate;
+
     th {
       @include bpk-table__cell--head-alternate;
     }

@@ -146,7 +146,7 @@ storiesOf('bpk-component-content-container', module)
             </tr>
           </tbody>
         </table>
-        <code>npm instal --save-dev bpk-component-content-container</code>
+        <code>npm install --save-dev bpk-component-content-container</code>
         <br />
         <pre>
           <code>
@@ -287,7 +287,7 @@ export default () => (
             </tr>
           </tbody>
         </table>
-        <code>npm instal --save-dev bpk-component-content-container</code>
+        <code>npm install --save-dev bpk-component-content-container</code>
         <br />
         <pre>
           <code>

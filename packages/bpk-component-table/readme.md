@@ -51,10 +51,16 @@ export default () => (
 
 ## Props
 
-> For `BpkTable`, `BpkTableHead`, `BpkTableBody`, `BpkTableRow`, `BpkTableCell` & `BpkTableHeadCell`.
+> For `BpkTableHead`, `BpkTableBody`, `BpkTableRow` & `BpkTableCell` .
 
 | Property | PropType | Required | Default Value |
 | -------- | -------- | -------- | ------------- |
 | children | node     | true     | -             |
 
-Additionally `BpkTableHeadCell` has a boolean `alternate` prop which is inteded to be use when a table sits on a non-white background.
+> For `BpkTable` & `BpkTableHeadCell`.
+
+| Property  | PropType | Required | Default Value |
+| --------- | -------- | -------- | ------------- |
+| children  | node     | true     | -             |
+| alternate | bool     | false    | false         |
+

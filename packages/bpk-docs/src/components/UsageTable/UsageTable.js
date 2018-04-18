@@ -53,13 +53,14 @@ const UsageTable = props => {
       />
     );
   };
+  const isNeo = !!process.env.BPK_NEO;
 
   return (
-    <BpkTable {...rest}>
+    <BpkTable alternate={isNeo} {...rest}>
       <BpkTableHead>
         <BpkTableRow>
-          <BpkTableHeadCell>Do&apos;s</BpkTableHeadCell>
-          <BpkTableHeadCell>Dont&apos;s</BpkTableHeadCell>
+          <BpkTableHeadCell alternate={isNeo}>Do&apos;s</BpkTableHeadCell>
+          <BpkTableHeadCell alternate={isNeo}>Dont&apos;s</BpkTableHeadCell>
         </BpkTableRow>
       </BpkTableHead>
       <BpkTableBody>

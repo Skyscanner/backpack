@@ -20,8 +20,10 @@ import React from 'react';
 import BpkLink from 'bpk-component-link';
 import BpkBlockquote from 'bpk-component-blockquote';
 import { BpkList, BpkListItem } from 'bpk-component-list';
-import { BpkCode, BpkCodeBlock } from 'bpk-component-code';
+
 import DocsPageBuilder from './../../components/DocsPageBuilder';
+import Code from '../../components/Code';
+import CodeBlock from '../../components/CodeBlock';
 
 import Paragraph from './../../components/Paragraph';
 
@@ -42,27 +44,27 @@ const components = [
           to correct small inconsistencies across browsers and devices.
         </BpkListItem>
         <BpkListItem>
-          The <BpkCode>box-sizing</BpkCode> is globally set on every element,
-          including <BpkCode>*:before</BpkCode> and <BpkCode>*:after</BpkCode>,
-          to <BpkCode>border-box</BpkCode>. This ensures that the declared width
-          of an element is never exceeded due to padding or border.
+          The <Code>box-sizing</Code> is globally set on every element,
+          including <Code>*:before</Code> and <Code>*:after</Code>, to{' '}
+          <Code>border-box</Code>. This ensures that the declared width of an
+          element is never exceeded due to padding or border.
         </BpkListItem>
         <BpkListItem>
-          The default <BpkCode>color</BpkCode>, <BpkCode>font-family</BpkCode>,
-          &nbsp;<BpkCode>font-size</BpkCode> & <BpkCode>line-height</BpkCode>.
+          The default <Code>color</Code>, <Code>font-family</Code>, &nbsp;<Code>
+            font-size
+          </Code>{' '}
+          & <Code>line-height</Code>.
         </BpkListItem>
         <BpkListItem>
           Utility classes based on the{' '}
           <BpkLink href={h5bpLink} blank>
             HTML5 Boilerplate common helpers
-          </BpkLink>, including: &nbsp;<BpkCode>.hidden</BpkCode>, &nbsp;<BpkCode
-          >
+          </BpkLink>, including: &nbsp;<Code>.hidden</Code>, &nbsp;<Code>
             .visuallyhidden
-          </BpkCode>, &nbsp;<BpkCode>.visuallyhidden.focusable</BpkCode>, &nbsp;<BpkCode
-          >
+          </Code>, &nbsp;<Code>.visuallyhidden.focusable</Code>, &nbsp;<Code>
             .invisible
-          </BpkCode>{' '}
-          and <BpkCode>.clearfix</BpkCode>.
+          </Code>{' '}
+          and <Code>.clearfix</Code>.
         </BpkListItem>
         <BpkListItem>That&apos;s it!</BpkListItem>
       </BpkList>,
@@ -81,9 +83,9 @@ const components = [
     id: 'usage',
     title: 'Usage',
     blurb: [
-      <BpkCodeBlock>npm install bpk-stylesheets --save-dev</BpkCodeBlock>,
+      <CodeBlock>npm install bpk-stylesheets --save-dev</CodeBlock>,
       <Paragraph>Include in your HTML like so:</Paragraph>,
-      <BpkCodeBlock>
+      <CodeBlock>
         {`<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -94,12 +96,12 @@ const components = [
 <body>...</body>
 </html>
 `}
-      </BpkCodeBlock>,
+      </CodeBlock>,
       <Paragraph>
         Alternatively you could import the uncompiled JavaScript/Sass directly
         and let Webpack split them out:
       </Paragraph>,
-      <BpkCodeBlock>import &apos;bpk-stylesheets&apos;&#59;</BpkCodeBlock>,
+      <CodeBlock>import &apos;bpk-stylesheets&apos;&#59;</CodeBlock>,
     ],
   },
 ];

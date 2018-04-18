@@ -18,7 +18,6 @@
 
 import React from 'react';
 import BpkLink from 'bpk-component-link';
-import { BpkCode } from 'bpk-component-code';
 import BpkBarchart from 'bpk-component-barchart';
 import { onePixelRem } from 'bpk-tokens/tokens/base.es6';
 import { withSelectedState } from 'bpk-component-barchart/hocs';
@@ -29,6 +28,7 @@ import data from 'bpk-component-barchart/data.json';
 
 import DocsPageBuilder from './../../components/DocsPageBuilder';
 import Paragraph from './../../components/Paragraph';
+import Code from '../../components/Code';
 
 const EnhancedBarchart = updateOnDirectionChange(BpkBarchart);
 const InteractiveBarchart = withSelectedState(EnhancedBarchart);
@@ -82,8 +82,8 @@ const components = [
     title: 'Interactive',
     blurb: [
       <Paragraph>
-        The bars can be made interactive using the <BpkCode>onBarClick</BpkCode>{' '}
-        &amp; <BpkCode>getBarSelection</BpkCode> props.
+        The bars can be made interactive using the <Code>onBarClick</Code> &amp;{' '}
+        <Code>getBarSelection</Code> props.
       </Paragraph>,
     ],
     examples: [
@@ -108,7 +108,7 @@ const components = [
         Outliers can be capped to indicate they are far off the scale. In this
         case using{' '}
         <BpkLink href="#outlierpercentage">
-          <BpkCode>outlierPercentage</BpkCode>
+          <Code>outlierPercentage</Code>
         </BpkLink>{' '}
         of 15.
       </Paragraph>,

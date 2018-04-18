@@ -18,7 +18,6 @@
 
 import _ from 'lodash';
 import React from 'react';
-import { BpkCode } from 'bpk-component-code';
 import BpkLink from 'bpk-component-link';
 import BpkButton from 'bpk-component-button';
 import { withButtonAlignment } from 'bpk-component-icon';
@@ -32,6 +31,7 @@ import IconSearchApp from './../../components/IconSearchApp';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
 import Heading from './../../components/Heading';
 import Paragraph from './../../components/Paragraph';
+import Code from '../../components/Code';
 
 const AlignedBpkSmallDownloadIcon = withButtonAlignment(BpkSmallDownloadIcon);
 
@@ -80,8 +80,8 @@ const blurb = [
   <Heading level="h2">Aligning icons within components</Heading>,
   <Paragraph>
     The <BpkLink href={ROUTES.ALIGNMENT}>Alignment</BpkLink> page gives examples
-    of icon alignment using HOCs provided in the{' '}
-    <BpkCode>bpk-component-icon</BpkCode> package.
+    of icon alignment using HOCs provided in the <Code>bpk-component-icon</Code>{' '}
+    package.
   </Paragraph>,
 ];
 
