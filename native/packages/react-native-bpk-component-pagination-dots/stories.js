@@ -89,7 +89,7 @@ class StatefulBpkPaginationExample extends React.Component<
   constructor(props) {
     super(props);
     this.state = {
-      pageCount: 5,
+      pageCount: 22,
       selectedIndex: 0,
     };
   }

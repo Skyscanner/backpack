@@ -74,6 +74,7 @@ const indicatorMappings = {
     INDICATOR_SIZES.md,
     INDICATOR_SIZES.base,
     INDICATOR_SIZES.base,
+    INDICATOR_SIZES.base,
     INDICATOR_SIZES.md,
     INDICATOR_SIZES.sm,
   ],
@@ -84,6 +85,7 @@ const indicatorMappings = {
     INDICATOR_SIZES.base,
     INDICATOR_SIZES.base,
     INDICATOR_SIZES.md,
+    INDICATOR_SIZES.invisible,
   ],
   end: [
     INDICATOR_SIZES.invisible,
@@ -92,6 +94,7 @@ const indicatorMappings = {
     INDICATOR_SIZES.base,
     INDICATOR_SIZES.base,
     INDICATOR_SIZES.base,
+    INDICATOR_SIZES.invisible,
   ],
 };
 
