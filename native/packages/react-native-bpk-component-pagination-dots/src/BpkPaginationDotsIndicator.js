@@ -74,10 +74,22 @@ class BpkPaginationDotsIndicator extends React.Component<Props, {}> {
   };
 
   componentDidUpdate() {
-    Animated.timing(this.size, {
+    const baseAnimation = Animated.timing(this.size, {
       duration: animationDurationSm,
       toValue: indicatorDimensions[this.props.size],
-    }).start();
+    });
+    if (this.props.selected) {
+      Animated.sequence([
+        Animated.timing(this.size, {
+          duration: animationDurationSm,
+          toValue: indicatorDimensions[this.props.size] * 1.2,
+        }),
+
+        baseAnimation,
+      ]).start();
+    } else {
+      baseAnimation.start();
+    }
   }
 
   size: AnimatedValue = new Animated.Value(
