@@ -128,7 +128,7 @@ const components = [
   },
 ];
 
-const NativeTextPage = () => (
+const NativeTextPage = ({ ...rest }) => (
   <DocsPageBuilder
     title="Buttons"
     blurb={[
@@ -153,6 +153,7 @@ const NativeTextPage = () => (
     components={components}
     readme={readme}
     showMenu
+    {...rest}
   />
 );
 

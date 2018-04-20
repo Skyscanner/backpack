@@ -64,7 +64,7 @@ const components = [
   },
 ];
 
-const NudgersPage = () => (
+const NudgersPage = ({ ...rest }) => (
   <DocsPageBuilder
     title="Nudgers"
     blurb={[
@@ -79,6 +79,7 @@ const NudgersPage = () => (
     ]}
     components={components}
     readme={nudgersReadme}
+    {...rest}
   />
 );
 

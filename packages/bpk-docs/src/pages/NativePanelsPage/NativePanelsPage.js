@@ -130,7 +130,7 @@ const components = [
   },
 ];
 
-const NativePanelsPage = () => (
+const NativePanelsPage = ({ ...rest }) => (
   <DocsPageBuilder
     title="Panels"
     blurb={[
@@ -143,6 +143,7 @@ const NativePanelsPage = () => (
     components={components}
     readme={readme}
     showMenu
+    {...rest}
   />
 );
 

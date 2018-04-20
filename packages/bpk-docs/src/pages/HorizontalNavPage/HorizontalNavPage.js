@@ -98,7 +98,7 @@ const components = [
   },
 ];
 
-const HorizontalNavPage = () => (
+const HorizontalNavPage = ({ ...rest }) => (
   <DocsPageBuilder
     title="Horizontal navigation"
     blurb={[
@@ -109,6 +109,7 @@ const HorizontalNavPage = () => (
     ]}
     components={components}
     readme={readme}
+    {...rest}
   />
 );
 

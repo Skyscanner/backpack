@@ -155,7 +155,7 @@ const components = [
   },
 ];
 
-const NativeCardsPage = () => (
+const NativeCardsPage = ({ ...rest }) => (
   <DocsPageBuilder
     title="Cards"
     blurb={[
@@ -169,6 +169,7 @@ const NativeCardsPage = () => (
     components={components}
     readme={readme}
     showMenu
+    {...rest}
   />
 );
 

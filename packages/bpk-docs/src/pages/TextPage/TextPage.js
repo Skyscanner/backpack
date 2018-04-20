@@ -58,12 +58,13 @@ const blurb = [
   </PresentationBlock>,
 ];
 
-const TextPage = () => (
+const TextPage = ({ ...rest }) => (
   <DocsPageBuilder
     title="Text"
     showMenu={false}
     readme={textReadme}
     blurb={blurb}
+    {...rest}
   />
 );
 
