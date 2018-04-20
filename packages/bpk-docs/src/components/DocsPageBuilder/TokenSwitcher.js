@@ -68,7 +68,7 @@ class TokenSwitcher extends Component {
     const isNeo = !!process.env.BPK_NEO;
 
     const selectedTokens = tokens[selectedPlatform] || {};
-
+    const keys = Object.keys(selectedTokens);
     return (
       <div>
         <BpkHorizontalNav>
@@ -95,18 +95,23 @@ class TokenSwitcher extends Component {
             </BpkTableRow>
           </BpkTableHead>
           <BpkTableBody>
-            {Object.keys(selectedTokens).map(tokenName => {
-              const token = selectedTokens[tokenName];
-
-              return (
-                <BpkTableRow key={tokenName}>
-                  <BpkTableCell>{formatTokenName(tokenName)}</BpkTableCell>
-                  <BpkTableCell>
-                    {getTokenValue(token, selectedPlatform)}
-                  </BpkTableCell>
-                </BpkTableRow>
-              );
-            })}
+            {!keys.length && (
+              <BpkTableRow key="notAvailable">
+                <BpkTableCell>Unvailable</BpkTableCell>
+              </BpkTableRow>
+            )}
+            {!!keys.length &&
+              keys.map(tokenName => {
+                const token = selectedTokens[tokenName];
+                return (
+                  <BpkTableRow key={tokenName}>
+                    <BpkTableCell>{formatTokenName(tokenName)}</BpkTableCell>
+                    <BpkTableCell>
+                      {getTokenValue(token, selectedPlatform)}
+                    </BpkTableCell>
+                  </BpkTableRow>
+                );
+              })}
           </BpkTableBody>
         </BpkTable>
       </div>

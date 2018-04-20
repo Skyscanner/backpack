@@ -16,14 +16,12 @@
  * limitations under the License.
  */
 
-import union from 'lodash/union';
-import kebabCase from 'lodash/kebabCase';
-
+import _ from 'lodash';
 // We don't set the root font size in the backpack base stylesheet, which means that the root font size falls back to
 // the browser default - typically 16px;
 const ROOT_FONT_SIZE = 16;
 
-export const formatTokenName = name => kebabCase(name);
+export const formatTokenName = name => _.kebabCase(name);
 
 export const toPx = value => {
   const parsed = parseFloat(value) * ROOT_FONT_SIZE;
@@ -69,13 +67,22 @@ export const getTokenValue = (token, platform) => {
   return value || '-';
 };
 
-export const getTokens = (tokens, keys = null) => {
-  const outTokens = {};
-  (keys || Object.keys(tokens)).forEach(key => {
-    outTokens[key] = tokens[key] || null;
-  });
-  return outTokens;
-};
+export const getTokens = (tokens, keys = null) =>
+  _.chain(keys || Object.keys(tokens))
+    .reduce((acc, key) => {
+      if (!tokens[key]) return acc;
+      acc[key] = tokens[key];
+      return acc;
+    }, {})
+    .sortBy(token => {
+      const numericMatch = `${token.value}`.match(/([0-9]*[.]?[0-9]+)/g);
+      if (!numericMatch) {
+        return -1;
+      }
+      return parseFloat(numericMatch[0]);
+    })
+    .keyBy('name')
+    .value();
 
 export const getPlatformTokens = (
   webTokens,
@@ -83,7 +90,7 @@ export const getPlatformTokens = (
   androidTokens,
   predicate,
 ) => {
-  const keys = union([
+  const keys = _.union([
     ...webTokens.propKeys.filter(key => predicate(webTokens.props[key])),
     ...iosTokens.propKeys.filter(key => predicate(iosTokens.props[key])),
     ...androidTokens.propKeys.filter(key =>
