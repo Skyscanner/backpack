@@ -27,14 +27,14 @@ import BpkBreakpoint, { BREAKPOINTS } from 'bpk-component-breakpoint';
 import NavList from './NavList';
 import STYLES from './Sidebar.scss';
 import SectionsList from './SectionsList';
-import { type Links } from './common-types';
+import { type Category } from './common-types';
 import BackpackLogoWhite from '../../static/backpack-logo-white.svg';
 
 const getClassName = cssModules(STYLES);
 
 type Props = {
   activeSection: string,
-  links: Links,
+  links: Array<Category>,
   sectionListExpanded: boolean,
   onMobileModalClose: () => mixed,
   onMenuToggle: () => mixed,
