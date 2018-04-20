@@ -46,24 +46,31 @@ type MenuItem = {
 type Props = {
   title: string,
   blurb: string | Node,
+  wrapped: boolean,
   menu: ?Array<MenuItem>,
 };
-const PageHead = (props: Props) => (
-  <section className={getClassName('bpkdocs-page-head')}>
-    <div className={getClassName('bpkdocs-page-head__content')}>
-      <Heading level="h1">{props.title}</Heading>
-      {toNodes(props.blurb)}
-      {props.menu && (
-        <BpkList>
-          {props.menu.map(({ title, href }) => (
-            <BpkListItem key={`menu-item-${href.substr(1)}`}>
-              <BpkLink href={href}>{title}</BpkLink>
-            </BpkListItem>
-          ))}
-        </BpkList>
-      )}
-    </div>
-  </section>
-);
+const PageHead = (props: Props) => {
+  const contentClassNames = [getClassName('bpkdocs-page-head__content')];
+  if (props.wrapped) {
+    contentClassNames.push(getClassName('bpkdocs-page-head__content--wrapped'));
+  }
+  return (
+    <section className={getClassName('bpkdocs-page-head')}>
+      <div className={contentClassNames.join(' ')}>
+        {props.title && <Heading level="h1">{props.title}</Heading>}
+        {props.blurb && toNodes(props.blurb)}
+        {props.menu && (
+          <BpkList>
+            {props.menu.map(({ title, href }) => (
+              <BpkListItem key={`menu-item-${href.substr(1)}`}>
+                <BpkLink href={href}>{title}</BpkLink>
+              </BpkListItem>
+            ))}
+          </BpkList>
+        )}
+      </div>
+    </section>
+  );
+};
 
 export default PageHead;

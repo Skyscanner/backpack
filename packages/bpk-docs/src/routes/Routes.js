@@ -114,6 +114,19 @@ import NativeTextPage from './../pages/NativeTextPage';
 import NativeTouchableOverlayPage from './../pages/NativeTouchableOverlayPage';
 import NativeTouchableNativeFeedbackPage from './../pages/NativeTouchableNativeFeedbackPage';
 
+import NeoBadgePage from './../pages/NeoBadgePage';
+import NeoBannerAlertPage from './../pages/NeoBannerAlertPage';
+import NeoButtonPage from './../pages/NeoButtonPage';
+import NeoCardPage from './../pages/NeoCardPage';
+import NeoHorizontalNavPage from './../pages/NeoHorizontalNavPage';
+import NeoIconPage from './../pages/NeoIconPage';
+import NeoLinkPage from './../pages/NeoLinkPage';
+import NeoNudgerPage from './../pages/NeoNudgerPage';
+import NeoPanelPage from './../pages/NeoPanelPage';
+import NeoSpinnerPage from './../pages/NeoSpinnerPage';
+import NeoStarRatingPage from './../pages/NeoStarRatingPage';
+import NeoTextPage from './../pages/NeoTextPage';
+
 import {
   GridColumnDemoPage,
   GridOffsetDemoPage,
@@ -122,11 +135,11 @@ import {
 // eslint-disable-next-line import/no-webpack-loader-syntax
 const iconsSvgs = require('!!file-loader?name=[name].[hash].zip!zip-it-loader!./../../../bpk-svgs/src/icons/icons');
 
+const isNeo = !!process.env.BPK_NEO;
+
 const Routes = (
   <Route path={ROUTES.HOME} component={DefaultLayout}>
-    <IndexRoute
-      component={withRouter(process.env.BPK_NEO ? NeoHomePage : HomePage)}
-    />
+    <IndexRoute component={withRouter(isNeo ? NeoHomePage : HomePage)} />
 
     <Route path={ROUTES.USING_BACKPACK} component={UsingLayout}>
       <IndexRedirect to={ROUTES.GETTING_STARTED} />
@@ -156,8 +169,11 @@ const Routes = (
       <IndexRedirect to={ROUTES.WEB_COMPONENTS} />
       <Route path={ROUTES.WEB_COMPONENTS}>
         <IndexRedirect to={ROUTES.ACCORDIONS} />
-        <Route path={ROUTES.TEXT} component={TextPage} />
-        <Route path={ROUTES.LINKS} component={LinksPage} />
+        <Route path={ROUTES.TEXT} component={isNeo ? NeoTextPage : TextPage} />
+        <Route
+          path={ROUTES.LINKS}
+          component={isNeo ? NeoLinkPage : LinksPage}
+        />
         <Route path={ROUTES.LISTS} component={ListsPage} />
         <Route
           path={ROUTES.DESCRIPTION_LISTS}
@@ -166,16 +182,37 @@ const Routes = (
         <Route path={ROUTES.TABLES} component={TablesPage} />
         <Route path={ROUTES.BLOCKQUOTES} component={BlockquotesPage} />
         <Route path={ROUTES.CODE} component={CodePage} />
-        <Route path={ROUTES.BUTTONS} component={ButtonsPage} />
-        <Route path={ROUTES.ICONS} component={IconsPage} />
-        <Route path={ROUTES.SPINNERS} component={SpinnersPage} />
+        <Route
+          path={ROUTES.BUTTONS}
+          component={isNeo ? NeoButtonPage : ButtonsPage}
+        />
+        <Route
+          path={ROUTES.ICONS}
+          component={isNeo ? NeoIconPage : IconsPage}
+        />
+        <Route
+          path={ROUTES.SPINNERS}
+          component={isNeo ? NeoSpinnerPage : SpinnersPage}
+        />
         <Route path={ROUTES.FORMS} component={FormsPage} />
-        <Route path={ROUTES.CARDS} component={CardsPage} />
+        <Route
+          path={ROUTES.CARDS}
+          component={isNeo ? NeoCardPage : CardsPage}
+        />
         <Route path={ROUTES.CHIPS} component={ChipsPage} />
-        <Route path={ROUTES.BADGE} component={BadgePage} />
-        <Route path={ROUTES.PANELS} component={PanelsPage} />
+        <Route
+          path={ROUTES.BADGE}
+          component={isNeo ? NeoBadgePage : BadgePage}
+        />
+        <Route
+          path={ROUTES.PANELS}
+          component={isNeo ? NeoPanelPage : PanelsPage}
+        />
         <Route path={ROUTES.IMAGES} component={ImagesPage} />
-        <Route path={ROUTES.BANNER_ALERTS} component={BannerAlertsPage} />
+        <Route
+          path={ROUTES.BANNER_ALERTS}
+          component={isNeo ? NeoBannerAlertPage : BannerAlertsPage}
+        />
         <Route
           path={ROUTES.MOBILE_SCROLL_CONTAINER}
           component={MobileScrollContainerPage}
@@ -187,14 +224,23 @@ const Routes = (
         <Route path={ROUTES.DATEPICKER} component={DatepickerPage} />
         <Route path={ROUTES.TOOLTIPS} component={TooltipsPage} />
         <Route path={ROUTES.ACCORDIONS} component={AccordionsPage} />
-        <Route path={ROUTES.NUDGERS} component={NudgersPage} />
+        <Route
+          path={ROUTES.NUDGERS}
+          component={isNeo ? NeoNudgerPage : NudgersPage}
+        />
         <Route path={ROUTES.PROGRESS} component={ProgressPage} />
         <Route path={ROUTES.PAGINATION} component={PaginationPage} />
         <Route path={ROUTES.TICKETS} component={TicketsPage} />
-        <Route path={ROUTES.HORIZONTAL_NAV} component={HorizontalNavPage} />
+        <Route
+          path={ROUTES.HORIZONTAL_NAV}
+          component={isNeo ? NeoHorizontalNavPage : HorizontalNavPage}
+        />
         <Route path={ROUTES.FIELDSETS} component={FieldsetsPage} />
         <Route path={ROUTES.BARCHARTS} component={BarchartsPage} />
-        <Route path={ROUTES.STAR_RATING} component={StarRatingPage} />
+        <Route
+          path={ROUTES.STAR_RATING}
+          component={isNeo ? NeoStarRatingPage : StarRatingPage}
+        />
         <Route path={ROUTES.BREAKPOINTS} component={BreakpointsPage} />
         <Route path={ROUTES.HORIZONTAL_GRID} component={HorizontalGridPage} />
         <Route path={ROUTES.SLIDERS} component={SlidersPage} />

@@ -98,7 +98,7 @@ const components = [
   },
 ];
 
-const NativeTextPage = ({ ...rest }) => (
+const NativeBadgePage = ({ ...rest }) => (
   <DocsPageBuilder
     title="Badges"
     blurb={[
@@ -115,4 +115,4 @@ const NativeTextPage = ({ ...rest }) => (
   />
 );
 
-export default NativeTextPage;
+export default NativeBadgePage;
