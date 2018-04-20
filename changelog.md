@@ -2,6 +2,13 @@
 
 [Unreleased changes](./unreleased.md).
 
+
+# 2018-04-20 - Fix icon colour in Horizontal Nav Items
+
+**Fixed:**
+- bpk-component-horizontal-nav: 3.0.5 => 3.0.6
+  - Fixed issue where icon colour would not be set inside horizontal nav items.
+
 # 2018-04-18
 
 **Breaking:**
