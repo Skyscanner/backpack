@@ -15,5 +15,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 export const RTL_EVENT = 'rtl-toggle';
 export const CHANNEL_POLL_INTERVAL = 500;
