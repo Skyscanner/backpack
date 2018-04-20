@@ -284,7 +284,7 @@ $ANDROID_HOME/tools/bin/sdkmanager "system-images;android-24;google_apis;x86"
 Create an Android Virtual Device (AVD):
 
 ```
-$ANDROID_HOME/tools/bin/avdmanager create avd --name "bpk-avd" --package "system-images;android-24;google_apis;x86" --device "Nexus 5"
+$ANDROID_HOME/tools/bin/avdmanager create avd --name "bpk-avd" --package "system-images;android-24;google_apis;x86" --device "pixel"
 ```
 
 You should now have a functioning Android development environment, including a
