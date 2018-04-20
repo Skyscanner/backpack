@@ -200,7 +200,7 @@ const components = [
   },
 ];
 
-const BadgePage = () => (
+const BadgePage = ({ ...rest }) => (
   <DocsPageBuilder
     title="Badge"
     blurb={[
@@ -214,6 +214,7 @@ const BadgePage = () => (
     components={components}
     readme={badgeReadme}
     sassdocId="badges"
+    {...rest}
   />
 );
 

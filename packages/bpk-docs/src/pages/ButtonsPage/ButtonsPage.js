@@ -300,7 +300,7 @@ const customSections = [
   },
 ];
 
-const ButtonsPage = () => (
+const ButtonsPage = ({ ...rest }: { [string]: any[] }) => (
   <DocsPageBuilder
     title="Buttons"
     blurb={[
@@ -314,6 +314,7 @@ const ButtonsPage = () => (
     sassdocId="buttons"
     readme={buttonReadme}
     customSections={customSections}
+    {...rest}
   />
 );
 

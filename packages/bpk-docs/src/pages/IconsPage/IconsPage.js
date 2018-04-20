@@ -85,7 +85,7 @@ const blurb = [
   </Paragraph>,
 ];
 
-const IconsPage = () => (
+const IconsPage = ({ ...rest }) => (
   <DocsPageBuilder
     title="Icons"
     blurb={blurb}
@@ -93,6 +93,7 @@ const IconsPage = () => (
     showMenu={false}
     readme={iconReadme}
     sassdocId="svgs-mixin-bpk-icon"
+    {...rest}
   />
 );
 

@@ -70,7 +70,7 @@ const components = [
   },
 ];
 
-const PanelsPage = () => (
+const PanelsPage = ({ ...rest }) => (
   <DocsPageBuilder
     title="Panel"
     blurb={[
@@ -83,6 +83,7 @@ const PanelsPage = () => (
     components={components}
     readme={panelReadme}
     sassdocId="panels"
+    {...rest}
   />
 );
 

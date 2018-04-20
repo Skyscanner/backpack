@@ -72,7 +72,7 @@ const components = [
   },
 ];
 
-const StarRatingPage = () => (
+const StarRatingPage = ({ ...rest }) => (
   <DocsPageBuilder
     title="Star Ratings"
     blurb={[
@@ -84,6 +84,7 @@ const StarRatingPage = () => (
     ]}
     components={components}
     readme={starRatingReadme}
+    {...rest}
   />
 );
 

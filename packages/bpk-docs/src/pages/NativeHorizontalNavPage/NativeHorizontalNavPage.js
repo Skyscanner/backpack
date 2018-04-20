@@ -105,7 +105,7 @@ const components = [
   },
 ];
 
-const NativeHorizontalNavPage = () => (
+const NativeHorizontalNavPage = ({ ...rest }) => (
   <DocsPageBuilder
     title="Horizontal Navigation"
     blurb={[
@@ -124,6 +124,7 @@ const NativeHorizontalNavPage = () => (
     components={components}
     readme={readme}
     showMenu
+    {...rest}
   />
 );
 

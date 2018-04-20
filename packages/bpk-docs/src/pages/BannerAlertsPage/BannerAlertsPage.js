@@ -390,7 +390,7 @@ const components = [
   },
 ];
 
-const BannerAlertsPage = () => (
+const BannerAlertsPage = ({ ...rest }: { [string]: any[] }) => (
   <DocsPageBuilder
     title="Banner alerts"
     blurb={[
@@ -402,6 +402,7 @@ const BannerAlertsPage = () => (
     components={components}
     sassdocId="notifications"
     readme={bannerAlertReadme}
+    {...rest}
   />
 );
 
