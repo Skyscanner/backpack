@@ -21,6 +21,10 @@
   &__section {
     padding: $bpk-spacing-lg * 2;
 
+    @include bpk-breakpoint-mobile {
+      padding: $bpk-spacing-lg;
+    }
+
     &--even {
       background-color: $bpk-color-gray-50;
     }

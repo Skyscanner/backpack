@@ -30,6 +30,10 @@ export type Category = {
   category: string,
   links: Array<Link>,
   sort: ?boolean,
+  hero: {
+    url: string,
+    horizontalPosition: ?number,
+  },
 };
 
 export type LinkPropType = Link;

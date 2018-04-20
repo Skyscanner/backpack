@@ -58,6 +58,10 @@
   &__content {
     width: 100%;
     margin-top: $bpk-spacing-lg * 3;
+
+    @include bpk-breakpoint-mobile {
+      margin-top: $bpk-spacing-xl;
+    }
   }
 
   &__section-list {

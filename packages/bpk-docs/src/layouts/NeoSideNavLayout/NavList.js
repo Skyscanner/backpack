@@ -26,7 +26,7 @@ import sortLinks from './links-sorter';
 import {
   type LinkPropType,
   type CategoryPropType,
-  type LinksPropType,
+  type Category,
 } from './common-types';
 
 const getClassName = cssModules(STYLES);
@@ -79,7 +79,7 @@ const NavListCategory = (props: NavListCategoryPropType) => (
 );
 
 type NavListPropTypes = {
-  ...$Exact<LinksPropType>,
+  links: Array<Category>,
   dimmed: boolean,
   onClick: ?() => mixed,
 };
@@ -96,14 +96,9 @@ const NavList = (props: NavListPropTypes) => {
       {props.dimmed && (
         <div className={getClassName('bpkdocs-side-nav-list__list-overlay')} />
       )}
-      {props.links.map(
-        link =>
-          link.category ? (
-            <NavListCategory key={link.id} {...link} onClick={props.onClick} />
-          ) : (
-            <NavLink key={link.id} {...link} onClick={props.onClick} />
-          ),
-      )}
+      {props.links.map(link => (
+        <NavListCategory key={link.id} {...link} onClick={props.onClick} />
+      ))}
     </ul>
   );
 };

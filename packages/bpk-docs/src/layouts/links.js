@@ -20,11 +20,18 @@
 
 import * as routes from './../constants/routes';
 
+import ComponentsImage from '../static/components_hero.jpg';
+import UsingBackpackImage from '../static/using_backpack_hero.jpg';
+import DesignTokensImage from '../static/design_hero.jpg';
+
 export default [
   {
     id: 'COMPONENTS',
     category: 'Web components',
     sort: true,
+    hero: {
+      url: `/${ComponentsImage}`,
+    },
     links: [
       { id: 'TEXT', route: routes.TEXT, children: 'Text' },
       { id: 'LINKS', route: routes.LINKS, children: 'Links' },
@@ -105,6 +112,9 @@ export default [
     id: 'NATIVE',
     category: 'Native components',
     sort: true,
+    hero: {
+      url: `/${ComponentsImage}`,
+    },
     links: [
       {
         id: 'NATIVE_BANNER_ALERT',
@@ -189,6 +199,9 @@ export default [
     id: 'UTILITIES',
     category: 'Utilities',
     sort: true,
+    hero: {
+      url: `/${ComponentsImage}`,
+    },
     links: [
       { id: 'ALIGNMENT', route: routes.ALIGNMENT, children: 'Alignment' },
       { id: 'THEMING', route: routes.THEMING, children: 'Theming' },
@@ -198,6 +211,9 @@ export default [
     id: 'TOKENS',
     category: 'Tokens',
     sort: true,
+    hero: {
+      url: `/${DesignTokensImage}`,
+    },
     links: [
       { id: 'COLORS', route: routes.COLORS, children: 'Colors' },
       { id: 'TYPESETTING', route: routes.TYPESETTING, children: 'Typesetting' },
@@ -212,6 +228,10 @@ export default [
   {
     id: 'USING_BACKPACK',
     category: 'Using Backpack',
+    hero: {
+      url: `/${UsingBackpackImage}`,
+      horizontalPosition: 60,
+    },
     links: [
       {
         id: 'GETTING_STARTED',

@@ -30,13 +30,29 @@ const getClassName = cssModules(STYLES);
 
 type Props = {
   onHamburgerClick: (event: SyntheticEvent<>) => mixed,
+  heroImage: ?{
+    url: string,
+    // The horizontal background position in percentage
+    horizontalPosition: ?number,
+  },
 };
 
 export default (props: Props) => {
-  const { onHamburgerClick } = props;
+  const { onHamburgerClick, heroImage } = props;
+  const heroStyle = {};
+
+  if (heroImage) {
+    const { url, horizontalPosition } = heroImage;
+
+    heroStyle.backgroundImage = `url(${url})`;
+
+    if (horizontalPosition) {
+      heroStyle.backgroundPosition = `0% ${horizontalPosition}%`;
+    }
+  }
 
   return (
-    <div className={getClassName('bpkdocs-main-hero-image')}>
+    <div className={getClassName('bpkdocs-main-hero-image')} style={heroStyle}>
       <BpkBreakpoint query={BREAKPOINTS.ABOVE_TABLET}>
         {aboveTablet =>
           !aboveTablet && (

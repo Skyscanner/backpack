@@ -22,5 +22,9 @@
   &__content {
     padding: $bpk-spacing-xs * 10;
     background-color: $bpk-color-white;
+
+    @include bpk-breakpoint-mobile {
+      padding: $bpk-spacing-lg;
+    }
   }
 }
