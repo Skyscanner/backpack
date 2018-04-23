@@ -14,21 +14,18 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- */
-@import '~bpk-mixins';
+*/
 
-.bpkdocs-alternating-content {
-  &__section {
-    padding: $bpk-spacing-lg * 2;
-    background-color: $bpk-color-gray-100;
+import PropTypes from 'prop-types';
+import React from 'react';
+import isString from 'lodash/isString';
+import Paragraph from '../Paragraph';
 
-    @include bpk-breakpoint-mobile {
-      padding: $bpk-spacing-lg;
-    }
+const Blurb = ({ content }) =>
+  isString(content) ? <Paragraph>{content}</Paragraph> : <div>{content}</div>;
 
-    &--alternate {
-      background-color: $bpk-color-gray-50;
-    }
-  }
-}
+Blurb.propTypes = {
+  content: PropTypes.oneOfType([PropTypes.string, PropTypes.node]).isRequired,
+};
 
+export default Blurb;

@@ -14,21 +14,22 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- */
+*/
 @import '~bpk-mixins';
 
-.bpkdocs-alternating-content {
-  &__section {
-    padding: $bpk-spacing-lg * 2;
-    background-color: $bpk-color-gray-100;
+.bpkdocs-page-wrapper {
+  background-color: $bpk-color-white;
 
-    @include bpk-breakpoint-mobile {
-      padding: $bpk-spacing-lg;
-    }
+  &__inner {
+    padding: $bpk-spacing-xs * 10;
+    padding-bottom: 0;
+  }
 
-    &--alternate {
-      background-color: $bpk-color-gray-50;
-    }
+  &__platform-switcher {
+    padding: 0 $bpk-spacing-xs * 10;
+  }
+
+  &__platform-icon {
+    margin-right: $bpk-spacing-sm;
   }
 }
-

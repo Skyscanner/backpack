@@ -300,7 +300,7 @@ const customSections = [
   },
 ];
 
-const ButtonsPage = ({ ...rest }: { [string]: any[] }) => (
+const ButtonsPage = ({ ...rest }: { [string]: any }) => (
   <DocsPageBuilder
     title="Buttons"
     blurb={[

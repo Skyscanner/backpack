@@ -390,7 +390,7 @@ const components = [
   },
 ];
 
-const BannerAlertsPage = ({ ...rest }: { [string]: any[] }) => (
+const BannerAlertsPage = ({ ...rest }: { [string]: any }) => (
   <DocsPageBuilder
     title="Banner alerts"
     blurb={[
