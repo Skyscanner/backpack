@@ -98,11 +98,10 @@ exports[`Android BpkNudger should disable theming if the required attribute is o
               "color": "rgb(82, 76, 97)",
               "fontFamily": "BpkIcon",
               "fontSize": 24,
-              "lineHeight": 24,
+              "includeFontPadding": false,
             },
             Object {
               "fontSize": 16,
-              "lineHeight": 16,
             },
             Array [
               Array [
@@ -241,11 +240,10 @@ exports[`Android BpkNudger should disable theming if the required attribute is o
               "color": "rgb(82, 76, 97)",
               "fontFamily": "BpkIcon",
               "fontSize": 24,
-              "lineHeight": 24,
+              "includeFontPadding": false,
             },
             Object {
               "fontSize": 16,
-              "lineHeight": 16,
             },
             Array [
               Array [
@@ -375,11 +373,10 @@ exports[`Android BpkNudger should render correctly 1`] = `
               "color": "rgb(82, 76, 97)",
               "fontFamily": "BpkIcon",
               "fontSize": 24,
-              "lineHeight": 24,
+              "includeFontPadding": false,
             },
             Object {
               "fontSize": 16,
-              "lineHeight": 16,
             },
             Array [
               Array [
@@ -518,11 +515,10 @@ exports[`Android BpkNudger should render correctly 1`] = `
               "color": "rgb(82, 76, 97)",
               "fontFamily": "BpkIcon",
               "fontSize": 24,
-              "lineHeight": 24,
+              "includeFontPadding": false,
             },
             Object {
               "fontSize": 16,
-              "lineHeight": 16,
             },
             Array [
               Array [
@@ -658,11 +654,10 @@ exports[`Android BpkNudger should render correctly when value is a not an intege
               "color": "rgb(82, 76, 97)",
               "fontFamily": "BpkIcon",
               "fontSize": 24,
-              "lineHeight": 24,
+              "includeFontPadding": false,
             },
             Object {
               "fontSize": 16,
-              "lineHeight": 16,
             },
             Array [
               Array [
@@ -805,11 +800,10 @@ exports[`Android BpkNudger should render correctly when value is a not an intege
               "color": "rgb(82, 76, 97)",
               "fontFamily": "BpkIcon",
               "fontSize": 24,
-              "lineHeight": 24,
+              "includeFontPadding": false,
             },
             Object {
               "fontSize": 16,
-              "lineHeight": 16,
             },
             Array [
               Array [
@@ -939,11 +933,10 @@ exports[`Android BpkNudger should render correctly when value is greater than ma
               "color": "rgb(82, 76, 97)",
               "fontFamily": "BpkIcon",
               "fontSize": 24,
-              "lineHeight": 24,
+              "includeFontPadding": false,
             },
             Object {
               "fontSize": 16,
-              "lineHeight": 16,
             },
             Array [
               Array [
@@ -1088,11 +1081,10 @@ exports[`Android BpkNudger should render correctly when value is greater than ma
               "color": "rgb(82, 76, 97)",
               "fontFamily": "BpkIcon",
               "fontSize": 24,
-              "lineHeight": 24,
+              "includeFontPadding": false,
             },
             Object {
               "fontSize": 16,
-              "lineHeight": 16,
             },
             Array [
               Array [
@@ -1232,11 +1224,10 @@ exports[`Android BpkNudger should render correctly when value is less than min 1
               "color": "rgb(82, 76, 97)",
               "fontFamily": "BpkIcon",
               "fontSize": 24,
-              "lineHeight": 24,
+              "includeFontPadding": false,
             },
             Object {
               "fontSize": 16,
-              "lineHeight": 16,
             },
             Array [
               Array [
@@ -1379,11 +1370,10 @@ exports[`Android BpkNudger should render correctly when value is less than min 1
               "color": "rgb(82, 76, 97)",
               "fontFamily": "BpkIcon",
               "fontSize": 24,
-              "lineHeight": 24,
+              "includeFontPadding": false,
             },
             Object {
               "fontSize": 16,
-              "lineHeight": 16,
             },
             Array [
               Array [
@@ -1513,11 +1503,10 @@ exports[`Android BpkNudger should support theming 1`] = `
               "color": "rgb(82, 76, 97)",
               "fontFamily": "BpkIcon",
               "fontSize": 24,
-              "lineHeight": 24,
+              "includeFontPadding": false,
             },
             Object {
               "fontSize": 16,
-              "lineHeight": 16,
             },
             Array [
               Array [
@@ -1658,11 +1647,10 @@ exports[`Android BpkNudger should support theming 1`] = `
               "color": "rgb(82, 76, 97)",
               "fontFamily": "BpkIcon",
               "fontSize": 24,
-              "lineHeight": 24,
+              "includeFontPadding": false,
             },
             Object {
               "fontSize": 16,
-              "lineHeight": 16,
             },
             Array [
               Array [

@@ -42,7 +42,7 @@ exports[`iOS BpkNavigationBarIconButtonIOS should render correctly 1`] = `
           "color": "rgb(82, 76, 97)",
           "fontFamily": "BpkIcon",
           "fontSize": 24,
-          "lineHeight": 24,
+          "includeFontPadding": false,
         },
         Array [
           Object {
@@ -104,7 +104,7 @@ exports[`iOS BpkNavigationBarIconButtonIOS should render correctly disabled 1`] 
           "color": "rgb(82, 76, 97)",
           "fontFamily": "BpkIcon",
           "fontSize": 24,
-          "lineHeight": 24,
+          "includeFontPadding": false,
         },
         Array [
           Object {
@@ -165,7 +165,7 @@ exports[`iOS BpkNavigationBarIconButtonIOS should render correctly leading confi
           "color": "rgb(82, 76, 97)",
           "fontFamily": "BpkIcon",
           "fontSize": 24,
-          "lineHeight": 24,
+          "includeFontPadding": false,
         },
         Array [
           Object {
@@ -227,7 +227,7 @@ exports[`iOS BpkNavigationBarIconButtonIOS should resepect "disabledTintColor" 1
           "color": "rgb(82, 76, 97)",
           "fontFamily": "BpkIcon",
           "fontSize": 24,
-          "lineHeight": 24,
+          "includeFontPadding": false,
         },
         Array [
           Object {
@@ -288,7 +288,7 @@ exports[`iOS BpkNavigationBarIconButtonIOS should resepect "tintColor" 1`] = `
           "color": "rgb(82, 76, 97)",
           "fontFamily": "BpkIcon",
           "fontSize": 24,
-          "lineHeight": 24,
+          "includeFontPadding": false,
         },
         Array [
           Object {

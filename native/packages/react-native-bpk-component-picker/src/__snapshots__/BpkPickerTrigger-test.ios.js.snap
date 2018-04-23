@@ -43,11 +43,10 @@ exports[`iOS BpkPickerTrigger should render correctly 1`] = `
             "color": "rgb(82, 76, 97)",
             "fontFamily": "BpkIcon",
             "fontSize": 24,
-            "lineHeight": 24,
+            "includeFontPadding": false,
           },
           Object {
             "fontSize": 16,
-            "lineHeight": 16,
           },
         ]
       }
@@ -135,11 +134,10 @@ exports[`iOS BpkPickerTrigger should render correctly with a text label 1`] = `
             "color": "rgb(82, 76, 97)",
             "fontFamily": "BpkIcon",
             "fontSize": 24,
-            "lineHeight": 24,
+            "includeFontPadding": false,
           },
           Object {
             "fontSize": 16,
-            "lineHeight": 16,
           },
         ]
       }
@@ -210,11 +208,10 @@ exports[`iOS BpkPickerTrigger should render correctly with an element label 1`] 
             "color": "rgb(82, 76, 97)",
             "fontFamily": "BpkIcon",
             "fontSize": 24,
-            "lineHeight": 24,
+            "includeFontPadding": false,
           },
           Object {
             "fontSize": 16,
-            "lineHeight": 16,
           },
         ]
       }
@@ -306,11 +303,10 @@ exports[`iOS BpkPickerTrigger should render correctly with custom styles 1`] = `
             "color": "rgb(82, 76, 97)",
             "fontFamily": "BpkIcon",
             "fontSize": 24,
-            "lineHeight": 24,
+            "includeFontPadding": false,
           },
           Object {
             "fontSize": 16,
-            "lineHeight": 16,
           },
         ]
       }
@@ -401,11 +397,10 @@ exports[`iOS BpkPickerTrigger should render correctly with the disabled prop 1`]
             "color": "rgb(82, 76, 97)",
             "fontFamily": "BpkIcon",
             "fontSize": 24,
-            "lineHeight": 24,
+            "includeFontPadding": false,
           },
           Object {
             "fontSize": 16,
-            "lineHeight": 16,
           },
         ]
       }
