@@ -168,6 +168,11 @@ export default [
         children: 'Pickers',
       },
       {
+        id: 'NATIVE_PROGRESS',
+        route: routes.NATIVE_PROGRESS,
+        children: 'Progress',
+      },
+      {
         id: 'NATIVE_SPINNER',
         route: routes.NATIVE_SPINNER,
         children: 'Spinners',

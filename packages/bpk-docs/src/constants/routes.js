@@ -97,6 +97,7 @@ export const NATIVE_PANELS = '/components/native/panels';
 export const NATIVE_PAGINATION_DOTS = '/components/native/pagination-dots';
 export const NATIVE_PHONE_INPUT = '/components/native/phone-input';
 export const NATIVE_PICKER = '/components/native/picker';
+export const NATIVE_PROGRESS = '/components/native/progress';
 export const NATIVE_SPINNER = '/components/native/spinners';
 export const NATIVE_STAR_RATING = '/components/native/star-rating';
 export const NATIVE_SWITCH = '/components/native/switches';

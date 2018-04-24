@@ -107,6 +107,7 @@ import NativePaginationDotsPage from './../pages/NativePaginationDotsPage';
 import NativePanelsPage from './../pages/NativePanelsPage';
 import NativePhoneInputPage from './../pages/NativePhoneInputPage';
 import NativePickerPage from './../pages/NativePickerPage';
+import NativeProgressPage from './../pages/NativeProgressPage';
 import NativeSpinnerPage from './../pages/NativeSpinnerPage';
 import NativeStarRatingPage from './../pages/NativeStarRatingPage';
 import NativeSwitchPage from './../pages/NativeSwitchPage';
@@ -281,6 +282,7 @@ const Routes = (
           component={NativePhoneInputPage}
         />
         <Route path={ROUTES.NATIVE_PICKER} component={NativePickerPage} />
+        <Route path={ROUTES.NATIVE_PROGRESS} component={NativeProgressPage} />
         <Route path={ROUTES.NATIVE_SPINNER} component={NativeSpinnerPage} />
         <Route
           path={ROUTES.NATIVE_STAR_RATING}
