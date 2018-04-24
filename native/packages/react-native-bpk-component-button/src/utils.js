@@ -33,7 +33,7 @@ const REQUIRED_THEME_ATTRIBUTES: Object = {
   ],
   secondary: [
     styles.themeMappings.text.color.secondary,
-    styles.themeMappings.button.borderColor.secondary,
+    styles.themeMappings.container.borderColor.secondary,
     styles.themeMappings.gradient.secondary.startColor,
   ],
 };

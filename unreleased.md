@@ -16,3 +16,8 @@
 - react-native-bpk-component-star-rating:
 - react-native-bpk-component-text-input:
   - Android icons are now vertically centered within bounding box (large at 24dp and small at 16dp)
+
+- react-native-bpk-component-button:
+- react-native-bpk-component-nudger:
+  - Fixed an issue where the outline of secondary and destructive buttons wouldn't render on Android devices with an API Level < 23.
+
