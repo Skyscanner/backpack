@@ -38,6 +38,14 @@ import {
   spacingXxl,
 } from 'bpk-tokens/tokens/base.react.native';
 
+import {
+  getThemeAttributes,
+  withTheme,
+  type Theme,
+} from 'react-native-bpk-theming';
+
+import { REQUIRED_THEME_ATTRIBUTES, themePropType } from './theming';
+
 const styles = StyleSheet.create({
   track: {
     backgroundColor: Platform.select({
@@ -77,6 +85,7 @@ type Props = {
   type: $Keys<typeof BAR_TYPES>,
   style: ?any,
   fillStyle: ?any,
+  theme: ?Theme,
 };
 
 type State = {
@@ -93,12 +102,14 @@ class ProgressBar extends React.Component<Props, State> {
     type: PropTypes.oneOf(Object.keys(BAR_TYPES)),
     style: ViewPropTypes.style,
     fillStyle: ViewPropTypes.style,
+    theme: themePropType,
   };
 
   static defaultProps = {
     type: BAR_TYPES.default,
     style: null,
     fillStyle: null,
+    theme: null,
   };
 
   constructor(props: Props) {
@@ -128,7 +139,7 @@ class ProgressBar extends React.Component<Props, State> {
   }
 
   render() {
-    const { min, max, type, style, fillStyle } = this.props;
+    const { min, max, type, style, fillStyle, theme } = this.props;
     const { width } = this.state;
     const [baseTrackStyle, baseFillStyle] = ['TrackStyle', 'FillStyle'].map(
       stylePart => styles[`${type}${stylePart}`],
@@ -139,17 +150,37 @@ class ProgressBar extends React.Component<Props, State> {
       outputRange: [0, width],
     });
 
+    const themeAttributes = getThemeAttributes(
+      REQUIRED_THEME_ATTRIBUTES,
+      theme,
+    );
+
+    const themeStyle = {
+      track: themeAttributes && {
+        backgroundColor: themeAttributes.progressTrackBackgroundColor,
+      },
+      fill: themeAttributes && {
+        backgroundColor: themeAttributes.progressFillBackgroundColor,
+      },
+    };
+
     return (
       <View
-        style={[styles.track, baseTrackStyle, style]}
+        style={[styles.track, baseTrackStyle, themeStyle.track, style]}
         onLayout={this.onLayout}
       >
         <Animated.View
-          style={[styles.fill, baseFillStyle, fillStyle, { width: fillWidth }]}
+          style={[
+            styles.fill,
+            baseFillStyle,
+            { width: fillWidth },
+            themeStyle.fill,
+            fillStyle,
+          ]}
         />
       </View>
     );
   }
 }
 
-export default ProgressBar;
+export default withTheme(ProgressBar);

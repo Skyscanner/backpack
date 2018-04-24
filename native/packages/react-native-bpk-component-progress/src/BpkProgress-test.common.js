@@ -21,6 +21,7 @@
 import React from 'react';
 import { StyleSheet } from 'react-native';
 import renderer from 'react-test-renderer';
+import BpkThemeProvider from 'react-native-bpk-theming';
 import BpkProgress from './BpkProgress';
 
 // Manually triggers the onLayout callback with the value provided
@@ -98,6 +99,21 @@ const commonTests = () => {
           width: 1,
         },
       ).toJSON();
+      expect(tree).toMatchSnapshot();
+    });
+
+    it('should support theming', () => {
+      const theme = {
+        progressFillBackgroundColor: 'blue',
+        progressTrackBackgroundColor: 'black',
+      };
+      const tree = renderer
+        .create(
+          <BpkThemeProvider theme={theme}>
+            <BpkProgress min={0} max={100} value={10} />
+          </BpkThemeProvider>,
+        )
+        .toJSON();
       expect(tree).toMatchSnapshot();
     });
   });
