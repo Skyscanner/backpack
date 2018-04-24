@@ -36,11 +36,18 @@ const renderWithLayout = (component: any, layout: { width?: number }) => {
   return rendered;
 };
 
+const accessibilityLabel = (min, max, value) => `${min} - ${value}% - ${max}`;
+
 const commonTests = () => {
   describe('BpkProgress', () => {
     it('should render correctly', () => {
       const tree = renderWithLayout(
-        <BpkProgress min={0} max={100} value={10} />,
+        <BpkProgress
+          min={0}
+          max={100}
+          value={10}
+          accessibilityLabel={accessibilityLabel}
+        />,
         {
           width: 200,
         },
@@ -50,7 +57,12 @@ const commonTests = () => {
 
     it('should render correctly with "min" and "max" attributes', () => {
       const tree = renderWithLayout(
-        <BpkProgress min={0} max={1} value={0.2} />,
+        <BpkProgress
+          min={0}
+          max={1}
+          value={0.2}
+          accessibilityLabel={accessibilityLabel}
+        />,
         { width: 100 },
       ).toJSON();
       expect(tree).toMatchSnapshot();
@@ -58,7 +70,15 @@ const commonTests = () => {
 
     it('should render correctly with a "type" attribute', () => {
       const tree = renderer
-        .create(<BpkProgress min={0} max={100} value={10} type="bar" />)
+        .create(
+          <BpkProgress
+            min={0}
+            max={100}
+            value={10}
+            type="bar"
+            accessibilityLabel={accessibilityLabel}
+          />,
+        )
         .toJSON();
       expect(tree).toMatchSnapshot();
     });
@@ -67,7 +87,13 @@ const commonTests = () => {
       const styles = StyleSheet.create({ container: { width: '80%' } });
       const tree = renderer
         .create(
-          <BpkProgress min={0} max={100} value={10} style={styles.container} />,
+          <BpkProgress
+            min={0}
+            max={100}
+            value={10}
+            style={styles.container}
+            accessibilityLabel={accessibilityLabel}
+          />,
         )
         .toJSON();
       expect(tree).toMatchSnapshot();
@@ -79,22 +105,41 @@ const commonTests = () => {
       });
       const tree = renderer
         .create(
-          <BpkProgress min={0} max={100} value={10} fillStyle={styles.fill} />,
+          <BpkProgress
+            min={0}
+            max={100}
+            value={10}
+            fillStyle={styles.fill}
+            accessibilityLabel={accessibilityLabel}
+          />,
         )
         .toJSON();
       expect(tree).toMatchSnapshot();
     });
 
     it('should not go over the max bound', () => {
-      const tree = renderWithLayout(<BpkProgress min={0} max={1} value={2} />, {
-        width: 1,
-      }).toJSON();
+      const tree = renderWithLayout(
+        <BpkProgress
+          min={0}
+          max={1}
+          value={2}
+          accessibilityLabel={accessibilityLabel}
+        />,
+        {
+          width: 1,
+        },
+      ).toJSON();
       expect(tree).toMatchSnapshot();
     });
 
     it('should not go bellow the min bound', () => {
       const tree = renderWithLayout(
-        <BpkProgress min={1} max={2} value={-1} />,
+        <BpkProgress
+          min={1}
+          max={2}
+          value={-1}
+          accessibilityLabel={accessibilityLabel}
+        />,
         {
           width: 1,
         },
@@ -110,8 +155,27 @@ const commonTests = () => {
       const tree = renderer
         .create(
           <BpkThemeProvider theme={theme}>
-            <BpkProgress min={0} max={100} value={10} />
+            <BpkProgress
+              min={0}
+              max={100}
+              value={10}
+              accessibilityLabel={accessibilityLabel}
+            />
           </BpkThemeProvider>,
+        )
+        .toJSON();
+      expect(tree).toMatchSnapshot();
+    });
+
+    it('should render correctly with accessibilityLabel passed as a string', () => {
+      const tree = renderer
+        .create(
+          <BpkProgress
+            min={0}
+            max={100}
+            value={10}
+            accessibilityLabel="Progress bar"
+          />,
         )
         .toJSON();
       expect(tree).toMatchSnapshot();

@@ -2,6 +2,7 @@
 
 exports[`Android BpkProgress should not go bellow the min bound 1`] = `
 <View
+  accessibilityLabel="1 - 1% - 2"
   onLayout={[Function]}
   style={
     Array [
@@ -34,6 +35,7 @@ exports[`Android BpkProgress should not go bellow the min bound 1`] = `
 
 exports[`Android BpkProgress should not go over the max bound 1`] = `
 <View
+  accessibilityLabel="0 - 1% - 1"
   onLayout={[Function]}
   style={
     Array [
@@ -66,6 +68,7 @@ exports[`Android BpkProgress should not go over the max bound 1`] = `
 
 exports[`Android BpkProgress should render correctly 1`] = `
 <View
+  accessibilityLabel="0 - 10% - 100"
   onLayout={[Function]}
   style={
     Array [
@@ -98,6 +101,7 @@ exports[`Android BpkProgress should render correctly 1`] = `
 
 exports[`Android BpkProgress should render correctly with "min" and "max" attributes 1`] = `
 <View
+  accessibilityLabel="0 - 0.2% - 1"
   onLayout={[Function]}
   style={
     Array [
@@ -130,6 +134,7 @@ exports[`Android BpkProgress should render correctly with "min" and "max" attrib
 
 exports[`Android BpkProgress should render correctly with a "fillStyle" attribute 1`] = `
 <View
+  accessibilityLabel="0 - 10% - 100"
   onLayout={[Function]}
   style={
     Array [
@@ -162,6 +167,7 @@ exports[`Android BpkProgress should render correctly with a "fillStyle" attribut
 
 exports[`Android BpkProgress should render correctly with a "style" attribute 1`] = `
 <View
+  accessibilityLabel="0 - 10% - 100"
   onLayout={[Function]}
   style={
     Array [
@@ -196,6 +202,7 @@ exports[`Android BpkProgress should render correctly with a "style" attribute 1`
 
 exports[`Android BpkProgress should render correctly with a "type" attribute 1`] = `
 <View
+  accessibilityLabel="0 - 10% - 100"
   onLayout={[Function]}
   style={
     Array [
@@ -224,8 +231,42 @@ exports[`Android BpkProgress should render correctly with a "type" attribute 1`]
 </View>
 `;
 
+exports[`Android BpkProgress should render correctly with accessibilityLabel passed as a string 1`] = `
+<View
+  accessibilityLabel="Progress bar"
+  onLayout={[Function]}
+  style={
+    Array [
+      Object {
+        "backgroundColor": "rgb(223, 247, 236)",
+        "height": 8,
+      },
+      Object {
+        "borderRadius": 40,
+        "width": 120,
+      },
+      null,
+      null,
+    ]
+  }
+>
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(0, 215, 117)",
+        "borderRadius": 40,
+        "height": 8,
+        "width": 0,
+      }
+    }
+  />
+</View>
+`;
+
 exports[`Android BpkProgress should support theming 1`] = `
 <View
+  accessibilityLabel="0 - 10% - 100"
   onLayout={[Function]}
   style={
     Array [

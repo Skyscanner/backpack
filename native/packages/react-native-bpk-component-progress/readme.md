@@ -38,11 +38,19 @@ export default class App extends Component {
 
 ## Props
 
-| Property   | PropType                | Required | Default Value |
-| ---------- | ----------------------- | -------- | ------------- |
-| max        | number                  | true     | -             |
-| min        | number                  | true     | -             |
-| value      | number                  | true     | -             |
-| fillStyle  | object                  | false    | -             |
-| style      | object                  | false    | -             |
-| type       | oneOf('default', 'bar') | false    | default       |
+| Property           | PropType                              | Required | Default Value |
+| ------------------ | ------------------------------------- | -------- | ------------- |
+| accessibilityLabel | oneOfType(string, func)               | true     | -             |
+| max                | number                                | true     | -             |
+| min                | number                                | true     | -             |
+| value              | number                                | true     | -             |
+| fillStyle          | object                                | false    | -             |
+| style              | object                                | false    | -             |
+| theme              | See [Theme Props](#theme-props) below | false    | -             | 
+| type               | oneOf('default', 'bar')               | false    | default       |
+
+
+## Theme Props
+
+* `progressFillBackgroundColor`,
+* `progressTrackBackgroundColor`

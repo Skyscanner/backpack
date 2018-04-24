@@ -86,6 +86,7 @@ type Props = {
   style: ?any,
   fillStyle: ?any,
   theme: ?Theme,
+  accessibilityLabel: string | ((number, number, number) => string),
 };
 
 type State = {
@@ -103,6 +104,8 @@ class ProgressBar extends React.Component<Props, State> {
     style: ViewPropTypes.style,
     fillStyle: ViewPropTypes.style,
     theme: themePropType,
+    accessibilityLabel: PropTypes.oneOfType([PropTypes.string, PropTypes.func])
+      .isRequired,
   };
 
   static defaultProps = {
@@ -139,7 +142,15 @@ class ProgressBar extends React.Component<Props, State> {
   }
 
   render() {
-    const { min, max, type, style, fillStyle, theme } = this.props;
+    const {
+      min,
+      max,
+      type,
+      style,
+      fillStyle,
+      theme,
+      accessibilityLabel,
+    } = this.props;
     const { width } = this.state;
     const [baseTrackStyle, baseFillStyle] = ['TrackStyle', 'FillStyle'].map(
       stylePart => styles[`${type}${stylePart}`],
@@ -164,10 +175,16 @@ class ProgressBar extends React.Component<Props, State> {
       },
     };
 
+    const label =
+      typeof accessibilityLabel === 'string'
+        ? accessibilityLabel
+        : accessibilityLabel(min, max, this.getWithinBoundsProgress());
+
     return (
       <View
         style={[styles.track, baseTrackStyle, themeStyle.track, style]}
         onLayout={this.onLayout}
+        accessibilityLabel={label}
       >
         <Animated.View
           style={[

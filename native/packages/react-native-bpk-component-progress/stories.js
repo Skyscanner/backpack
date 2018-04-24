@@ -61,7 +61,14 @@ class ProgressContainer extends Component {
       <View>
         <View style={styles.barContainer}>
           <BpkText>Default</BpkText>
-          <BpkProgress min={0} max={100} value={this.state.progress} />
+          <BpkProgress
+            min={0}
+            max={100}
+            value={this.state.progress}
+            accessibilityLabel={(min, max, value) =>
+              `${value} percent of ${max}`
+            }
+          />
         </View>
         <View style={styles.barContainer}>
           <BpkText>Bar</BpkText>
@@ -70,6 +77,9 @@ class ProgressContainer extends Component {
             max={100}
             value={this.state.progress}
             type="bar"
+            accessibilityLabel={(min, max, value) =>
+              `${value} percent of ${max}`
+            }
           />
         </View>
         <View style={styles.steps}>
