@@ -61,6 +61,7 @@ configure(() => {
   require('../packages/react-native-bpk-component-panel/stories');
   require('../packages/react-native-bpk-component-phone-input/stories');
   require('../packages/react-native-bpk-component-picker/stories');
+  require('../packages/react-native-bpk-component-progress/stories');
   require('../packages/react-native-bpk-component-spinner/stories');
   require('../packages/react-native-bpk-component-star-rating/stories');
   require('../packages/react-native-bpk-component-switch/stories');
