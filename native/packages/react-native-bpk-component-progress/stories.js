@@ -21,10 +21,12 @@ import PropTypes from 'prop-types';
 import { View, StyleSheet } from 'react-native';
 import { storiesOf } from '@storybook/react-native';
 import { spacingMd } from 'bpk-tokens/tokens/base.react.native';
+import BpkThemeProvider from 'react-native-bpk-theming';
 import CenterDecorator from '../../storybook/CenterDecorator';
 import BpkButton from '../react-native-bpk-component-button';
 import BpkText from '../react-native-bpk-component-text';
 import BpkProgress from './index';
+import themeAttributes from '../../storybook/themeAttributes';
 
 const styles = StyleSheet.create({
   barContainer: {
@@ -59,7 +61,14 @@ class ProgressContainer extends Component {
       <View>
         <View style={styles.barContainer}>
           <BpkText>Default</BpkText>
-          <BpkProgress min={0} max={100} value={this.state.progress} />
+          <BpkProgress
+            min={0}
+            max={100}
+            value={this.state.progress}
+            accessibilityLabel={(min, max, value) =>
+              `${value} percent of ${max}`
+            }
+          />
         </View>
         <View style={styles.barContainer}>
           <BpkText>Bar</BpkText>
@@ -68,6 +77,9 @@ class ProgressContainer extends Component {
             max={100}
             value={this.state.progress}
             type="bar"
+            accessibilityLabel={(min, max, value) =>
+              `${value} percent of ${max}`
+            }
           />
         </View>
         <View style={styles.steps}>
@@ -96,6 +108,9 @@ storiesOf('react-native-bpk-component-progress', module)
   .add('default', () => (
     <ProgressContainer initialValue={40} steps={[0, 25, 50, 75, 100]} />
   ))
-  .add('docs:default', () => (
-    <ProgressContainer initialValue={40} steps={[]} />
+  .add('docs:default', () => <ProgressContainer initialValue={40} steps={[]} />)
+  .add('theme:default', () => (
+    <BpkThemeProvider theme={themeAttributes}>
+      <ProgressContainer initialValue={40} steps={[0, 25, 50, 75, 100]} />
+    </BpkThemeProvider>
   ));
