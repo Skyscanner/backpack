@@ -225,11 +225,10 @@ exports[`iOS BpkButton should render correctly with iconAlignment="leading" 1`] 
             "color": "rgb(82, 76, 97)",
             "fontFamily": "BpkIcon",
             "fontSize": 24,
-            "lineHeight": 24,
+            "includeFontPadding": false,
           },
           Object {
             "fontSize": 16,
-            "lineHeight": 16,
           },
           Array [
             Array [
@@ -386,11 +385,10 @@ exports[`iOS BpkButton should render correctly with iconAlignment="trailing" 1`]
             "color": "rgb(82, 76, 97)",
             "fontFamily": "BpkIcon",
             "fontSize": 24,
-            "lineHeight": 24,
+            "includeFontPadding": false,
           },
           Object {
             "fontSize": 16,
-            "lineHeight": 16,
           },
           Array [
             Array [
@@ -1616,11 +1614,10 @@ exports[`iOS BpkButton should support having an icon as well as a title 1`] = `
             "color": "rgb(82, 76, 97)",
             "fontFamily": "BpkIcon",
             "fontSize": 24,
-            "lineHeight": 24,
+            "includeFontPadding": false,
           },
           Object {
             "fontSize": 16,
-            "lineHeight": 16,
           },
           Array [
             Array [
@@ -2009,11 +2006,10 @@ exports[`iOS BpkButton should support the "icon" property 1`] = `
             "color": "rgb(82, 76, 97)",
             "fontFamily": "BpkIcon",
             "fontSize": 24,
-            "lineHeight": 24,
+            "includeFontPadding": false,
           },
           Object {
             "fontSize": 16,
-            "lineHeight": 16,
           },
           Array [
             Array [
@@ -2137,11 +2133,10 @@ exports[`iOS BpkButton should support the "iconOnly" property 1`] = `
             "color": "rgb(82, 76, 97)",
             "fontFamily": "BpkIcon",
             "fontSize": 24,
-            "lineHeight": 24,
+            "includeFontPadding": false,
           },
           Object {
             "fontSize": 16,
-            "lineHeight": 16,
           },
           Array [
             Array [
@@ -2537,7 +2532,7 @@ exports[`iOS should support the "icon" and "large" property 1`] = `
             "color": "rgb(82, 76, 97)",
             "fontFamily": "BpkIcon",
             "fontSize": 24,
-            "lineHeight": 24,
+            "includeFontPadding": false,
           },
           Array [
             Array [
@@ -2671,7 +2666,7 @@ exports[`iOS should support the "iconOnly" and "large" property 1`] = `
             "color": "rgb(82, 76, 97)",
             "fontFamily": "BpkIcon",
             "fontSize": 24,
-            "lineHeight": 24,
+            "includeFontPadding": false,
           },
           Array [
             Array [

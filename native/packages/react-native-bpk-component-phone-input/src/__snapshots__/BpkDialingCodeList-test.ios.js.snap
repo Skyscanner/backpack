@@ -225,11 +225,10 @@ exports[`iOS BpkDialingCodeList should render correctly 1`] = `
                 "color": "rgb(82, 76, 97)",
                 "fontFamily": "BpkIcon",
                 "fontSize": 24,
-                "lineHeight": 24,
+                "includeFontPadding": false,
               },
               Object {
                 "fontSize": 16,
-                "lineHeight": 16,
               },
               Array [
                 Object {
@@ -388,11 +387,10 @@ exports[`iOS BpkDialingCodeList should render correctly 1`] = `
                 "color": "rgb(82, 76, 97)",
                 "fontFamily": "BpkIcon",
                 "fontSize": 24,
-                "lineHeight": 24,
+                "includeFontPadding": false,
               },
               Object {
                 "fontSize": 16,
-                "lineHeight": 16,
               },
               Array [
                 Object {
@@ -551,11 +549,10 @@ exports[`iOS BpkDialingCodeList should render correctly 1`] = `
                 "color": "rgb(82, 76, 97)",
                 "fontFamily": "BpkIcon",
                 "fontSize": 24,
-                "lineHeight": 24,
+                "includeFontPadding": false,
               },
               Object {
                 "fontSize": 16,
-                "lineHeight": 16,
               },
               Array [
                 Object {
@@ -821,11 +818,10 @@ exports[`iOS BpkDialingCodeList should render correctly with "selectedId" set 1`
                 "color": "rgb(82, 76, 97)",
                 "fontFamily": "BpkIcon",
                 "fontSize": 24,
-                "lineHeight": 24,
+                "includeFontPadding": false,
               },
               Object {
                 "fontSize": 16,
-                "lineHeight": 16,
               },
               Array [
                 Object {
@@ -987,11 +983,10 @@ exports[`iOS BpkDialingCodeList should render correctly with "selectedId" set 1`
                 "color": "rgb(82, 76, 97)",
                 "fontFamily": "BpkIcon",
                 "fontSize": 24,
-                "lineHeight": 24,
+                "includeFontPadding": false,
               },
               Object {
                 "fontSize": 16,
-                "lineHeight": 16,
               },
               Array [
                 Object {
@@ -1150,11 +1145,10 @@ exports[`iOS BpkDialingCodeList should render correctly with "selectedId" set 1`
                 "color": "rgb(82, 76, 97)",
                 "fontFamily": "BpkIcon",
                 "fontSize": 24,
-                "lineHeight": 24,
+                "includeFontPadding": false,
               },
               Object {
                 "fontSize": 16,
-                "lineHeight": 16,
               },
               Array [
                 Object {

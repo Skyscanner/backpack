@@ -145,11 +145,10 @@ exports[`Android BpkButtonLink should render correctly with iconAlignment="leadi
             "color": "rgb(82, 76, 97)",
             "fontFamily": "BpkIcon",
             "fontSize": 24,
-            "lineHeight": 24,
+            "includeFontPadding": false,
           },
           Object {
             "fontSize": 16,
-            "lineHeight": 16,
           },
           Array [
             Object {
@@ -244,11 +243,10 @@ exports[`Android BpkButtonLink should render correctly with iconAlignment="trail
             "color": "rgb(82, 76, 97)",
             "fontFamily": "BpkIcon",
             "fontSize": 24,
-            "lineHeight": 24,
+            "includeFontPadding": false,
           },
           Object {
             "fontSize": 16,
-            "lineHeight": 16,
           },
           Array [
             Object {
@@ -640,11 +638,10 @@ exports[`Android BpkButtonLink should support the "icon" property 1`] = `
             "color": "rgb(82, 76, 97)",
             "fontFamily": "BpkIcon",
             "fontSize": 24,
-            "lineHeight": 24,
+            "includeFontPadding": false,
           },
           Object {
             "fontSize": 16,
-            "lineHeight": 16,
           },
           Array [
             Object {

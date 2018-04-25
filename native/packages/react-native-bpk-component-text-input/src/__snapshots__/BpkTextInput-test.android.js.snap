@@ -570,11 +570,10 @@ exports[`Android BpkTextInput should render correctly with description, valid=fa
               "color": "rgb(82, 76, 97)",
               "fontFamily": "BpkIcon",
               "fontSize": 24,
-              "lineHeight": 24,
+              "includeFontPadding": false,
             },
             Object {
               "fontSize": 16,
-              "lineHeight": 16,
             },
             Array [
               Object {
@@ -852,11 +851,10 @@ exports[`Android BpkTextInput should render correctly with valid 1`] = `
               "color": "rgb(82, 76, 97)",
               "fontFamily": "BpkIcon",
               "fontSize": 24,
-              "lineHeight": 24,
+              "includeFontPadding": false,
             },
             Object {
               "fontSize": 16,
-              "lineHeight": 16,
             },
             Array [
               Object {
@@ -959,11 +957,10 @@ exports[`Android BpkTextInput should render correctly with valid false 1`] = `
               "color": "rgb(82, 76, 97)",
               "fontFamily": "BpkIcon",
               "fontSize": 24,
-              "lineHeight": 24,
+              "includeFontPadding": false,
             },
             Object {
               "fontSize": 16,
-              "lineHeight": 16,
             },
             Array [
               Object {
@@ -1066,11 +1063,10 @@ exports[`Android BpkTextInput should render correctly with valid false and a val
               "color": "rgb(82, 76, 97)",
               "fontFamily": "BpkIcon",
               "fontSize": 24,
-              "lineHeight": 24,
+              "includeFontPadding": false,
             },
             Object {
               "fontSize": 16,
-              "lineHeight": 16,
             },
             Array [
               Object {

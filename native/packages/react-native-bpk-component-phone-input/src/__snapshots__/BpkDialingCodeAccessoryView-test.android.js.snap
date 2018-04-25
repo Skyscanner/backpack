@@ -86,11 +86,10 @@ exports[`Android BpkDialingCodeAccessoryView should render correctly 1`] = `
           "color": "rgb(82, 76, 97)",
           "fontFamily": "BpkIcon",
           "fontSize": 24,
-          "lineHeight": 24,
+          "includeFontPadding": false,
         },
         Object {
           "fontSize": 16,
-          "lineHeight": 16,
         },
         Array [],
       ]
@@ -191,11 +190,10 @@ exports[`Android BpkDialingCodeAccessoryView should render correctly when \`edit
           "color": "rgb(82, 76, 97)",
           "fontFamily": "BpkIcon",
           "fontSize": 24,
-          "lineHeight": 24,
+          "includeFontPadding": false,
         },
         Object {
           "fontSize": 16,
-          "lineHeight": 16,
         },
         Array [
           Object {

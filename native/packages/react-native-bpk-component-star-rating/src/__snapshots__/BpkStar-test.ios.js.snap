@@ -20,7 +20,7 @@ exports[`iOS BpkStar should render correctly when empty 1`] = `
           "color": "rgb(82, 76, 97)",
           "fontFamily": "BpkIcon",
           "fontSize": 24,
-          "lineHeight": 24,
+          "includeFontPadding": false,
         },
         Array [
           Object {
@@ -63,7 +63,7 @@ exports[`iOS BpkStar should render correctly when full 1`] = `
           "color": "rgb(82, 76, 97)",
           "fontFamily": "BpkIcon",
           "fontSize": 24,
-          "lineHeight": 24,
+          "includeFontPadding": false,
         },
         Array [
           Object {
@@ -93,7 +93,7 @@ exports[`iOS BpkStar should render correctly when full 1`] = `
           "color": "rgb(82, 76, 97)",
           "fontFamily": "BpkIcon",
           "fontSize": 24,
-          "lineHeight": 24,
+          "includeFontPadding": false,
         },
         Array [
           Object {
@@ -142,7 +142,7 @@ exports[`iOS BpkStar should render correctly when half 1`] = `
           "color": "rgb(82, 76, 97)",
           "fontFamily": "BpkIcon",
           "fontSize": 24,
-          "lineHeight": 24,
+          "includeFontPadding": false,
         },
         Array [
           Object {
@@ -172,7 +172,7 @@ exports[`iOS BpkStar should render correctly when half 1`] = `
           "color": "rgb(82, 76, 97)",
           "fontFamily": "BpkIcon",
           "fontSize": 24,
-          "lineHeight": 24,
+          "includeFontPadding": false,
         },
         Array [
           Object {

@@ -170,11 +170,10 @@ exports[`iOS BpkButtonLink should render correctly with iconAlignment="leading" 
               "color": "rgb(82, 76, 97)",
               "fontFamily": "BpkIcon",
               "fontSize": 24,
-              "lineHeight": 24,
+              "includeFontPadding": false,
             },
             Object {
               "fontSize": 16,
-              "lineHeight": 16,
             },
             Array [
               Object {
@@ -282,11 +281,10 @@ exports[`iOS BpkButtonLink should render correctly with iconAlignment="trailing"
               "color": "rgb(82, 76, 97)",
               "fontFamily": "BpkIcon",
               "fontSize": 24,
-              "lineHeight": 24,
+              "includeFontPadding": false,
             },
             Object {
               "fontSize": 16,
-              "lineHeight": 16,
             },
             Array [
               Object {
@@ -742,11 +740,10 @@ exports[`iOS BpkButtonLink should support the "icon" property 1`] = `
               "color": "rgb(82, 76, 97)",
               "fontFamily": "BpkIcon",
               "fontSize": 24,
-              "lineHeight": 24,
+              "includeFontPadding": false,
             },
             Object {
               "fontSize": 16,
-              "lineHeight": 16,
             },
             Array [
               Object {
@@ -850,7 +847,7 @@ exports[`iOS should support the "icon" and "large" property 1`] = `
               "color": "rgb(82, 76, 97)",
               "fontFamily": "BpkIcon",
               "fontSize": 24,
-              "lineHeight": 24,
+              "includeFontPadding": false,
             },
             Array [
               Object {
