@@ -16,11 +16,26 @@
  * limitations under the License.
  */
 
-export default (styles = {}) => (...classNames) =>
-  classNames.reduce((className, currentClass) => {
-    if (currentClass && typeof currentClass === 'string') {
-      const realName = styles[currentClass] || currentClass;
-      return className ? `${className} ${realName}` : realName;
-    }
-    return className;
-  }, '');
+/* @flow */
+
+import React from 'react';
+import renderer from 'react-test-renderer';
+import BpkNavigationIconButton from './BpkNavigationBarIconButton';
+
+describe('BpkNavigationIconButton', () => {
+  const Icon = props => <span {...props} />;
+
+  it('should render correctly', () => {
+    const tree = renderer
+      .create(
+        <BpkNavigationIconButton
+          icon={Icon}
+          label="test"
+          onClick={() => {}}
+          className="some-class"
+        />,
+      )
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+});

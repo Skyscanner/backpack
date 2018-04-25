@@ -16,11 +16,15 @@
  * limitations under the License.
  */
 
-export default (styles = {}) => (...classNames) =>
-  classNames.reduce((className, currentClass) => {
-    if (currentClass && typeof currentClass === 'string') {
-      const realName = styles[currentClass] || currentClass;
-      return className ? `${className} ${realName}` : realName;
-    }
-    return className;
-  }, '');
+@import '~bpk-mixins/index';
+
+.bpk-navigation-bar-story {
+  padding: $bpk-one-pixel-rem $bpk-one-pixel-rem $bpk-spacing-xxl * 2;
+  background-color: $bpk-color-gray-50;
+
+  @include bpk-border-sm($bpk-color-gray-50);
+
+  > * {
+    margin-bottom: $bpk-spacing-md;
+  }
+}
