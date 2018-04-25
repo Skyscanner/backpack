@@ -1,6 +1,6 @@
 {
   "name": "bpk-docs",
-  "version": "0.0.253",
+  "version": "0.0.254",
   "main": "index.js",
   "description": "Backpack documentation site.",
   "repository": {
@@ -88,7 +88,7 @@
     "react-native-bpk-component-panel": "^1.0.4",
     "react-native-bpk-component-phone-input": "^1.0.10",
     "react-native-bpk-component-picker": "^1.0.7",
-    "react-native-bpk-component-progress": "^0.0.0",
+    "react-native-bpk-component-progress": "^1.0.0",
     "react-native-bpk-component-spinner": "^1.0.37",
     "react-native-bpk-component-star-rating": "^1.0.19",
     "react-native-bpk-component-switch": "^1.0.36",
