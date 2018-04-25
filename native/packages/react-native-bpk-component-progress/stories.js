@@ -22,6 +22,7 @@ import { View, StyleSheet } from 'react-native';
 import { storiesOf } from '@storybook/react-native';
 import { spacingMd } from 'bpk-tokens/tokens/base.react.native';
 import BpkThemeProvider from 'react-native-bpk-theming';
+import capitalize from 'lodash/capitalize';
 import CenterDecorator from '../../storybook/CenterDecorator';
 import BpkButton from '../react-native-bpk-component-button';
 import BpkText from '../react-native-bpk-component-text';
@@ -53,35 +54,26 @@ class ProgressContainer extends Component {
   };
 
   render() {
-    const { steps, ...rest } = this.props;
+    const { steps, types, ...rest } = this.props;
 
     delete rest.initialValue;
 
     return (
       <View>
-        <View style={styles.barContainer}>
-          <BpkText>Default</BpkText>
-          <BpkProgress
-            min={0}
-            max={100}
-            value={this.state.progress}
-            accessibilityLabel={(min, max, value) =>
-              `${value} percent of ${max}`
-            }
-          />
-        </View>
-        <View style={styles.barContainer}>
-          <BpkText>Bar</BpkText>
-          <BpkProgress
-            min={0}
-            max={100}
-            value={this.state.progress}
-            type="bar"
-            accessibilityLabel={(min, max, value) =>
-              `${value} percent of ${max}`
-            }
-          />
-        </View>
+        {types.map(type => (
+          <View key={type} style={styles.barContainer}>
+            <BpkText>{capitalize(type)}</BpkText>
+            <BpkProgress
+              min={0}
+              max={100}
+              type={type}
+              value={this.state.progress}
+              accessibilityLabel={(min, max, value) =>
+                `${value} percent of ${max}`
+              }
+            />
+          </View>
+        ))}
         <View style={styles.steps}>
           {steps.map(step => (
             <BpkButton
@@ -101,16 +93,30 @@ class ProgressContainer extends Component {
 ProgressContainer.propTypes = {
   steps: PropTypes.arrayOf(PropTypes.number).isRequired,
   initialValue: PropTypes.number.isRequired,
+  types: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
 storiesOf('react-native-bpk-component-progress', module)
   .addDecorator(CenterDecorator)
   .add('default', () => (
-    <ProgressContainer initialValue={40} steps={[0, 25, 50, 75, 100]} />
+    <ProgressContainer
+      initialValue={40}
+      steps={[0, 25, 50, 75, 100]}
+      types={['default', 'bar']}
+    />
   ))
-  .add('docs:default', () => <ProgressContainer initialValue={40} steps={[]} />)
   .add('theme:default', () => (
     <BpkThemeProvider theme={themeAttributes}>
-      <ProgressContainer initialValue={40} steps={[0, 25, 50, 75, 100]} />
+      <ProgressContainer
+        initialValue={40}
+        steps={[0, 25, 50, 75, 100]}
+        types={['default', 'bar']}
+      />
     </BpkThemeProvider>
+  ))
+  .add('docs:default', () => (
+    <ProgressContainer initialValue={40} steps={[]} types={['default']} />
+  ))
+  .add('docs:bar', () => (
+    <ProgressContainer initialValue={40} steps={[]} types={['bar']} />
   ));
