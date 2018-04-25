@@ -3,6 +3,19 @@
 [Unreleased changes](./unreleased.md).
 
 
+# 2018-04-25 - Added icons for identity and profile settings
+
+**Added:**
+- bpk-component-icon: 3.19.3 => 3.20.0
+- bpk-mixins: 17.7.0 => 17.8.0
+- bpk-svgs: 5.15.1 => 5.16.0
+- react-native-bpk-component-icon:
+- react-native-bpk-component-button-link: 2.0.5 => 2.0.6
+- react-native-bpk-component-button: 6.0.7 => 6.0.8
+- react-native-bpk-component-navigation-bar: 2.0.2 => 2.0.3
+  - New profile icons: `account--id-card`, `account--permit`, `add-circle`, `content--event` and `content--guides`.
+
+
 # 2018-04-25 - Visual fixes for Android
 
 **Fixed:**
