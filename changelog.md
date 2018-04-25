@@ -6,20 +6,20 @@
 # 2018-04-25 - Visual fixes for Android
 
 **Fixed:**
-- react-native-bpk-component-banner-alert:
-- react-native-bpk-component-button-link:
-- react-native-bpk-component-button:
-- react-native-bpk-component-icon:
-- react-native-bpk-component-navigation-bar:
-- react-native-bpk-component-nudger:
-- react-native-bpk-component-phone-input:
-- react-native-bpk-component-picker:
-- react-native-bpk-component-star-rating:
-- react-native-bpk-component-text-input:
+- react-native-bpk-component-banner-alert: 3.0.4 => 3.0.5
+- react-native-bpk-component-button-link: 2.0.4 => 2.0.5
+- react-native-bpk-component-button: 6.0.6 => 6.0.7
+- react-native-bpk-component-icon: 1.6.2 => 1.6.3
+- react-native-bpk-component-navigation-bar: 2.0.1 => 2.0.2
+- react-native-bpk-component-nudger: 1.0.11 => 1.0.12
+- react-native-bpk-component-phone-input: 1.0.10 => 1.0.11
+- react-native-bpk-component-picker: 1.0.7 => 1.0.8
+- react-native-bpk-component-star-rating: 1.0.19 => 1.0.20
+- react-native-bpk-component-text-input: 2.2.9 => 2.2.10
   - Android icons are now vertically centered within bounding box (large at 24dp and small at 16dp)
 
-- react-native-bpk-component-button:
-- react-native-bpk-component-nudger:
+- react-native-bpk-component-button: 6.0.6 => 6.0.7
+- react-native-bpk-component-nudger: 1.0.11 => 1.0.12
   - Fixed an issue where the outline of secondary and destructive buttons wouldn't render on Android devices with an API Level lower than 23.
 
 
