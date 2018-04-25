@@ -170,5 +170,10 @@
     "weather": "EAA8",
     "wifi": "EAA9",
     "window--reduce": "EAAA",
-    "window": "EAAB"
+    "window": "EAAB",
+    "account--id-card": "EAAD",
+    "account--permit": "EAAE",
+    "add-circle": "EAAF",
+    "content--event": "EAB0",
+    "content--guides": "EAB1"
 }
