@@ -573,6 +573,10 @@ exports[`Android BpkButton should render correctly with type="destructive" 1`] =
           "borderRadius": 40,
           "height": 36,
         },
+        Object {
+          "borderColor": "rgb(230, 228, 235)",
+          "borderWidth": 2,
+        },
       ],
       null,
     ]
@@ -611,8 +615,6 @@ exports[`Android BpkButton should render correctly with type="destructive" 1`] =
             "paddingVertical": 8,
           },
           Object {
-            "borderColor": "rgb(230, 228, 235)",
-            "borderWidth": 2,
             "paddingHorizontal": 10,
             "paddingVertical": 6,
           },
@@ -677,7 +679,13 @@ exports[`Android BpkButton should render correctly with type="destructive" and d
           "borderRadius": 40,
           "height": 36,
         },
-        undefined,
+        Object {
+          "borderColor": "rgb(230, 228, 235)",
+          "borderWidth": 2,
+        },
+        Object {
+          "borderColor": "transparent",
+        },
       ],
       null,
     ]
@@ -717,14 +725,10 @@ exports[`Android BpkButton should render correctly with type="destructive" and d
             "paddingVertical": 8,
           },
           Object {
-            "borderColor": "rgb(230, 228, 235)",
-            "borderWidth": 2,
             "paddingHorizontal": 10,
             "paddingVertical": 6,
           },
-          Object {
-            "borderColor": "transparent",
-          },
+          undefined,
         ],
         Object {
           "backgroundColor": "rgb(230, 228, 235)",
@@ -885,7 +889,9 @@ exports[`Android BpkButton should render correctly with type="featured" and disa
           "borderRadius": 40,
           "height": 36,
         },
-        undefined,
+        Object {
+          "borderColor": "transparent",
+        },
       ],
       null,
     ]
@@ -924,9 +930,7 @@ exports[`Android BpkButton should render correctly with type="featured" and disa
             "paddingHorizontal": 12,
             "paddingVertical": 8,
           },
-          Object {
-            "borderColor": "transparent",
-          },
+          undefined,
         ],
         Object {
           "backgroundColor": "rgb(230, 228, 235)",
@@ -1084,7 +1088,9 @@ exports[`Android BpkButton should render correctly with type="primary" and disab
           "borderRadius": 40,
           "height": 36,
         },
-        undefined,
+        Object {
+          "borderColor": "transparent",
+        },
       ],
       null,
     ]
@@ -1123,9 +1129,7 @@ exports[`Android BpkButton should render correctly with type="primary" and disab
             "paddingHorizontal": 12,
             "paddingVertical": 8,
           },
-          Object {
-            "borderColor": "transparent",
-          },
+          undefined,
         ],
         Object {
           "backgroundColor": "rgb(230, 228, 235)",
@@ -1188,6 +1192,10 @@ exports[`Android BpkButton should render correctly with type="secondary" 1`] = `
           "borderRadius": 40,
           "height": 36,
         },
+        Object {
+          "borderColor": "rgb(230, 228, 235)",
+          "borderWidth": 2,
+        },
       ],
       null,
     ]
@@ -1226,8 +1234,6 @@ exports[`Android BpkButton should render correctly with type="secondary" 1`] = `
             "paddingVertical": 8,
           },
           Object {
-            "borderColor": "rgb(230, 228, 235)",
-            "borderWidth": 2,
             "paddingHorizontal": 10,
             "paddingVertical": 6,
           },
@@ -1292,7 +1298,13 @@ exports[`Android BpkButton should render correctly with type="secondary" and dis
           "borderRadius": 40,
           "height": 36,
         },
-        undefined,
+        Object {
+          "borderColor": "rgb(230, 228, 235)",
+          "borderWidth": 2,
+        },
+        Object {
+          "borderColor": "transparent",
+        },
       ],
       null,
     ]
@@ -1332,14 +1344,10 @@ exports[`Android BpkButton should render correctly with type="secondary" and dis
             "paddingVertical": 8,
           },
           Object {
-            "borderColor": "rgb(230, 228, 235)",
-            "borderWidth": 2,
             "paddingHorizontal": 10,
             "paddingVertical": 6,
           },
-          Object {
-            "borderColor": "transparent",
-          },
+          undefined,
         ],
         Object {
           "backgroundColor": "rgb(230, 228, 235)",
@@ -1719,7 +1727,9 @@ exports[`Android BpkButton should support the "disabled" property 1`] = `
           "borderRadius": 40,
           "height": 36,
         },
-        undefined,
+        Object {
+          "borderColor": "transparent",
+        },
       ],
       null,
     ]
@@ -1758,9 +1768,7 @@ exports[`Android BpkButton should support the "disabled" property 1`] = `
             "paddingHorizontal": 12,
             "paddingVertical": 8,
           },
-          Object {
-            "borderColor": "transparent",
-          },
+          undefined,
         ],
         Object {
           "backgroundColor": "rgb(230, 228, 235)",
@@ -2067,6 +2075,10 @@ exports[`Android BpkButton should support the "secondary" property 1`] = `
           "borderRadius": 40,
           "height": 36,
         },
+        Object {
+          "borderColor": "rgb(230, 228, 235)",
+          "borderWidth": 2,
+        },
       ],
       null,
     ]
@@ -2105,8 +2117,6 @@ exports[`Android BpkButton should support the "secondary" property 1`] = `
             "paddingVertical": 8,
           },
           Object {
-            "borderColor": "rgb(230, 228, 235)",
-            "borderWidth": 2,
             "paddingHorizontal": 10,
             "paddingVertical": 6,
           },

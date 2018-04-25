@@ -13,3 +13,4 @@ sassdoc-data.json
 backpack.iml
 yarn.lock
 /packages/*/changelog.md
+native/android/captures
