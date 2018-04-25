@@ -53,6 +53,7 @@ configure(() => {
   require('../packages/react-native-bpk-component-button-link/stories');
   require('../packages/react-native-bpk-component-button/stories');
   require('../packages/react-native-bpk-component-card/stories');
+  require('../packages/react-native-bpk-component-flat-list/stories');
   require('../packages/react-native-bpk-component-horizontal-nav/stories');
   require('../packages/react-native-bpk-component-icon/stories');
   require('../packages/react-native-bpk-component-navigation-bar/stories');
@@ -62,6 +63,7 @@ configure(() => {
   require('../packages/react-native-bpk-component-phone-input/stories');
   require('../packages/react-native-bpk-component-picker/stories');
   require('../packages/react-native-bpk-component-progress/stories');
+  require('../packages/react-native-bpk-component-section-list/stories');
   require('../packages/react-native-bpk-component-spinner/stories');
   require('../packages/react-native-bpk-component-star-rating/stories');
   require('../packages/react-native-bpk-component-switch/stories');
