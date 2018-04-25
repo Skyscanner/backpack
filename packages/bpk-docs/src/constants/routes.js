@@ -114,3 +114,59 @@ export const THEMING = '/components/utilities/theming';
 // MISC
 export const GRID_COLUMN_DEMO = '/grid-column-demo';
 export const GRID_OFFSET_DEMO = '/grid-offset-demo';
+
+// Neo components.
+// components/
+export const NEO_TEXT = '/components/text';
+export const NEO_LINK = '/components/link';
+export const NEO_LIST = '/components/list';
+export const NEO_DESCRIPTION_LIST = '/components/description-list';
+export const NEO_TABLE = '/components/table';
+export const NEO_BLOCKQUOTE = '/components/blockquote';
+export const NEO_CODE = '/components/code';
+export const NEO_BUTTON = '/components/button';
+export const NEO_ICON = '/components/icon';
+export const NEO_SPINNER = '/components/spinner';
+export const NEO_FORM = '/components/form';
+export const NEO_CARD = '/components/card';
+export const NEO_CHIP = '/components/chip';
+export const NEO_BADGE = '/components/badge';
+export const NEO_PANEL = '/components/panel';
+export const NEO_IMAGE = '/components/image';
+export const NEO_BANNER_ALERT = '/components/banner-alert';
+export const NEO_MOBILE_SCROLL_CONTAINER =
+  '/components/mobile-scroll-container';
+export const NEO_MODAL = '/components/modal';
+export const NEO_AUTOSUGGEST = '/components/autosuggest';
+export const NEO_POPOVER = '/components/popover';
+export const NEO_CALENDAR = '/components/calendar';
+export const NEO_DATEPICKER = '/components/datepicker';
+export const NEO_TOOLTIP = '/components/tooltip';
+export const NEO_ACCORDION = '/components/accordion';
+export const NEO_NUDGER = '/components/nudger';
+export const NEO_PROGRESS = '/components/progress';
+export const NEO_TICKET = '/components/ticket';
+export const NEO_HORIZONTAL_NAV = '/components/horizontal-nav';
+export const NEO_FIELDSET = '/components/fieldset';
+export const NEO_BARCHART = '/components/barchart';
+export const NEO_PAGINATION = '/components/pagination';
+export const NEO_STAR_RATING = '/components/star-rating';
+export const NEO_BREAKPOINT = '/components/breakpoint';
+export const NEO_HORIZONTAL_GRID = '/components/horizontal-grid';
+export const NEO_SLIDER = '/components/slider';
+export const NEO_DRAWER = '/components/drawer';
+export const NEO_DIALOG = '/components/dialog';
+
+// components/native/
+export const NEO_NATIVE_INPUT = '/components/text-input';
+export const NEO_NATIVE_NAVIGATION_BAR = '/components/navigation-bar';
+export const NEO_NATIVE_PAGINATION_DOT = '/components/pagination-dot';
+export const NEO_NATIVE_PHONE_INPUT = '/components/phone-input';
+export const NEO_NATIVE_PICKER = '/components/picker';
+export const NEO_NATIVE_SWITCH = '/components/switch';
+export const NEO_NATIVE_TOUCHABLE_OVERLAY = '/components/touchable-overlay';
+export const NEO_NATIVE_TOUCHABLE_NATIVE_FEEDBACK =
+  '/components/touchable-native-feedback';
+
+export const NEO_ALIGNMENT = '/components/alignment';
+export const NEO_THEMING = '/components/theming';

@@ -20,28 +20,32 @@ import sortLinks from './links-sorter';
 
 describe('links-sorter', () => {
   it('should sort alphabetically', () => {
-    const links = [{ id: 'c' }, { id: 'a' }, { id: 'b' }];
+    const links = [{ children: 'c' }, { children: 'a' }, { children: 'b' }];
 
-    expect(sortLinks(links)).toEqual([{ id: 'a' }, { id: 'b' }, { id: 'c' }]);
+    expect(sortLinks(links)).toEqual([
+      { children: 'a' },
+      { children: 'b' },
+      { children: 'c' },
+    ]);
   });
 
   it('should secondary sort by route existence', () => {
     const links = [
-      { id: 'c' },
-      { id: 'a' },
-      { id: 'b' },
-      { id: 'd', route: '/path/to/d' },
-      { id: 'f', route: '/path/to/f' },
-      { id: 'e', route: '/path/to/e' },
+      { children: 'c' },
+      { children: 'a' },
+      { children: 'b' },
+      { children: 'd', route: '/path/to/d' },
+      { children: 'f', route: '/path/to/f' },
+      { children: 'e', route: '/path/to/e' },
     ];
 
     expect(sortLinks(links)).toEqual([
-      { id: 'd', route: '/path/to/d' },
-      { id: 'e', route: '/path/to/e' },
-      { id: 'f', route: '/path/to/f' },
-      { id: 'a' },
-      { id: 'b' },
-      { id: 'c' },
+      { children: 'd', route: '/path/to/d' },
+      { children: 'e', route: '/path/to/e' },
+      { children: 'f', route: '/path/to/f' },
+      { children: 'a' },
+      { children: 'b' },
+      { children: 'c' },
     ]);
   });
 });

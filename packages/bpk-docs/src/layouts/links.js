@@ -24,7 +24,7 @@ import ComponentsImage from '../static/components_hero.jpg';
 import UsingBackpackImage from '../static/using_backpack_hero.jpg';
 import DesignTokensImage from '../static/design_hero.jpg';
 
-export default [
+const componentsLinks = [
   {
     id: 'COMPONENTS',
     category: 'Web components',
@@ -212,6 +212,163 @@ export default [
       { id: 'THEMING', route: routes.THEMING, children: 'Theming' },
     ],
   },
+];
+
+const neoComponentsLinks = [
+  {
+    id: 'COMPONENTS',
+    category: 'Components',
+    sort: true,
+    hero: {
+      url: `/${ComponentsImage}`,
+    },
+    links: [
+      { id: 'TEXT', route: routes.NEO_TEXT, children: 'Text' },
+      { id: 'LINK', route: routes.NEO_LINK, children: 'Link' },
+      { id: 'LIST', route: routes.NEO_LIST, children: 'List' },
+      {
+        id: 'DESCRIPTION_LIST',
+        route: routes.NEO_DESCRIPTION_LIST,
+        children: 'Description List',
+      },
+      { id: 'TABLE', route: routes.NEO_TABLE, children: 'Table' },
+      {
+        id: 'BLOCKQUOTE',
+        route: routes.NEO_BLOCKQUOTE,
+        children: 'Blockquote',
+      },
+      { id: 'CODE', route: routes.NEO_CODE, children: 'Code' },
+      { id: 'BUTTON', route: routes.NEO_BUTTON, children: 'Button' },
+      { id: 'ICON', route: routes.NEO_ICON, children: 'Icon' },
+      { id: 'SPINNER', route: routes.NEO_SPINNER, children: 'Spinner' },
+      { id: 'FORM', route: routes.NEO_FORM, children: 'Form' },
+      { id: 'CARD', route: routes.NEO_CARD, children: 'Card' },
+      { id: 'CHIP', route: routes.NEO_CHIP, children: 'Chip' },
+      { id: 'BADGE', route: routes.NEO_BADGE, children: 'Badge' },
+      { id: 'PANEL', route: routes.NEO_PANEL, children: 'Panel' },
+      { id: 'IMAGE', route: routes.NEO_IMAGE, children: 'Image' },
+      {
+        id: 'BANNER_ALERT',
+        route: routes.NEO_BANNER_ALERT,
+        children: 'Banner alert',
+      },
+      {
+        id: 'MOBILE_SCROLL_CONTAINER',
+        route: routes.NEO_MOBILE_SCROLL_CONTAINER,
+        children: 'Mobile scroll container',
+      },
+      { id: 'MODALS', route: routes.NEO_MODAL, children: 'Modal' },
+      {
+        id: 'AUTOSUGGEST',
+        route: routes.NEO_AUTOSUGGEST,
+        children: 'Autosuggest',
+      },
+      { id: 'POPOVER', route: routes.NEO_POPOVER, children: 'Popover' },
+      { id: 'CALENDAR', route: routes.NEO_CALENDAR, children: 'Calendar' },
+      {
+        id: 'DATEPICKER',
+        route: routes.NEO_DATEPICKER,
+        children: 'Datepicker',
+      },
+      { id: 'TOOLTIP', route: routes.NEO_TOOLTIP, children: 'Tooltip' },
+      {
+        id: 'ACCORDION',
+        route: routes.NEO_ACCORDION,
+        children: 'Accordion',
+      },
+      { id: 'NUDGER', route: routes.NEO_NUDGER, children: 'Nudger' },
+      { id: 'PROGRESS', route: routes.NEO_PROGRESS, children: 'Progress bar' },
+      { id: 'TICKET', route: routes.NEO_TICKET, children: 'Ticket' },
+      {
+        id: 'HORIZONTAL_NAV',
+        route: routes.NEO_HORIZONTAL_NAV,
+        children: 'Horizontal navigation',
+      },
+      { id: 'FIELDSET', route: routes.NEO_FIELDSET, children: 'Fieldset' },
+      {
+        id: 'STAR_RATING',
+        route: routes.NEO_STAR_RATING,
+        children: 'Star rating',
+      },
+      { id: 'BAR_CHART', route: routes.NEO_BARCHART, children: 'Bar chart' },
+      { id: 'SLIDER', route: routes.NEO_SLIDER, children: 'Slider' },
+      { id: 'DRAWER', route: routes.NEO_DRAWER, children: 'Drawer' },
+      {
+        id: 'PAGINATION',
+        route: routes.NEO_PAGINATION,
+        children: 'Pagination',
+      },
+      { id: 'DIALOG', route: routes.NEO_DIALOG, children: 'Dialog' },
+      { id: 'CAROUSEL', route: null, children: 'Carousel' },
+      { id: 'TOAST', route: null, children: 'Toast' },
+      { id: 'VERTICAL_NAV', route: null, children: 'Vertical navigation' },
+      { id: 'OVERFLOW_NAV', route: null, children: 'Overflow navigation' },
+      { id: 'BREADCRUMB', route: null, children: 'Breadcrumb' },
+      { id: 'NUMERICAL_RATING', route: null, children: 'Numerical rating' },
+      { id: 'FLIGHT_ITINERARIES', route: null, children: 'Flight itinerary' },
+      {
+        id: 'BREAKPOINT',
+        route: routes.NEO_BREAKPOINT,
+        children: 'Breakpoint',
+      },
+      {
+        id: 'HORIZONTAL_GRID',
+        route: routes.NEO_HORIZONTAL_GRID,
+        children: 'Horizontal grid',
+      },
+
+      // Native components.
+      {
+        id: 'NATIVE_INPUT',
+        route: routes.NEO_NATIVE_INPUT,
+        children: 'Text input',
+      },
+      {
+        id: 'NATIVE_NAVIGATION_BAR',
+        route: routes.NEO_NATIVE_NAVIGATION_BAR,
+        children: 'Navigation Bar',
+      },
+      // TODO: Uncomment later.
+      // {
+      //   id: 'NATIVE_PAGINATION_DOT',
+      //   route: routes.NEO_NATIVE_PAGINATION_DOT,
+      //   children: 'Pagination Dot',
+      // },
+      {
+        id: 'NATIVE_PHONE_INPUT',
+        route: routes.NEO_NATIVE_PHONE_INPUT,
+        children: 'Phone number input',
+      },
+      {
+        id: 'NATIVE_PICKER',
+        route: routes.NEO_NATIVE_PICKER,
+        children: 'Picker',
+      },
+      {
+        id: 'NATIVE_SWITCH',
+        route: routes.NEO_NATIVE_SWITCH,
+        children: 'Switche',
+      },
+      {
+        id: 'NATIVE_TOUCHABLE_OVERLAY',
+        route: routes.NEO_NATIVE_TOUCHABLE_OVERLAY,
+        children: 'Touchable Overlay',
+      },
+      {
+        id: 'NATIVE_TOUCHABLE_NATIVE_FEEDBACK',
+        route: routes.NEO_NATIVE_TOUCHABLE_NATIVE_FEEDBACK,
+        children: 'Touchable Native Feedback',
+      },
+
+      // Utilities.
+      { id: 'ALIGNMENT', route: routes.NEO_ALIGNMENT, children: 'Alignment' },
+      { id: 'THEMING', route: routes.NEO_THEMING, children: 'Theming' },
+    ],
+  },
+];
+
+export default [
+  ...(process.env.BPK_NEO ? neoComponentsLinks : componentsLinks),
   {
     id: 'TOKENS',
     category: 'Tokens',

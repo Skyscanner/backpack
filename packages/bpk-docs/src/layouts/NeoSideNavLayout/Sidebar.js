@@ -82,15 +82,7 @@ export default (props: Props) => {
           className={getClassName('bpkdocs-sidebar__section-list')}
         />
         <NavList
-          links={links.filter(
-            link =>
-              [
-                activeSection,
-                ...(activeSection === 'COMPONENTS'
-                  ? ['NATIVE', 'UTILITIES']
-                  : []),
-              ].indexOf(link.id) !== -1,
-          )}
+          links={links.filter(link => [activeSection].indexOf(link.id) !== -1)}
           dimmed={sectionListExpanded}
           onClick={onMobileModalClose}
         />

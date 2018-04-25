@@ -67,9 +67,6 @@ type NavListCategoryPropType = {
 
 const NavListCategory = (props: NavListCategoryPropType) => (
   <li className={getClassName('bpkdocs-side-nav-list__list-item')}>
-    <span className={getClassName('bpkdocs-side-nav-list__category-name')}>
-      {props.category}
-    </span>
     <ul className={getClassName('bpkdocs-side-nav-list__category-list')}>
       {(props.sort ? sortLinks(props.links) : props.links).map(link => (
         <NavListItem key={link.id} {...link} onClick={props.onClick} />
