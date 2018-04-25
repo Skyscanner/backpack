@@ -623,84 +623,73 @@ exports[`Android BpkBannerAlert should render correctly with dismissable 1`] = `
           Neutral alert.
         </Text>
         <View
-          style={
+          accessibilityComponentType="button"
+          accessibilityLabel="Dismiss"
+          accessibilityTraits={
             Array [
-              Object {
-                "borderRadius": 4,
-              },
-              Object {
-                "marginStart": 8,
-              },
+              "button",
             ]
           }
+          accessible={true}
+          collapsable={undefined}
+          hasTVPreferredFocus={undefined}
+          hitSlop={undefined}
+          isTVSelectable={true}
+          nativeID={undefined}
+          onLayout={undefined}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "marginStart": 8,
+              "opacity": 1,
+            }
+          }
+          testID={undefined}
+          tvParallaxProperties={undefined}
         >
           <View
-            accessibilityComponentType="button"
-            accessibilityLabel="Dismiss"
-            accessibilityTraits={
+            style={
               Array [
-                "button",
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                  "height": 32,
+                  "justifyContent": "center",
+                },
               ]
             }
-            accessible={true}
-            collapsable={undefined}
-            hasTVPreferredFocus={undefined}
-            hitSlop={undefined}
-            isTVSelectable={true}
-            nativeID={undefined}
-            onLayout={undefined}
-            onResponderGrant={[Function]}
-            onResponderMove={[Function]}
-            onResponderRelease={[Function]}
-            onResponderTerminate={[Function]}
-            onResponderTerminationRequest={[Function]}
-            onStartShouldSetResponder={[Function]}
-            style={
-              Object {
-                "opacity": 1,
-              }
-            }
-            testID={undefined}
-            tvParallaxProperties={undefined}
           >
-            <View
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              numberOfLines={1}
               style={
                 Array [
                   Object {
-                    "alignItems": "center",
-                    "flexDirection": "row",
-                    "justifyContent": "center",
-                    "paddingVertical": 8,
+                    "color": "rgb(82, 76, 97)",
+                    "fontFamily": "sans-serif",
+                    "fontSize": 14,
+                    "fontWeight": "400",
                   },
+                  Object {
+                    "fontFamily": "sans-serif-medium",
+                  },
+                  Array [
+                    Object {
+                      "color": "rgb(0, 178, 214)",
+                    },
+                  ],
                 ]
               }
             >
-              <Text
-                accessible={true}
-                allowFontScaling={true}
-                ellipsizeMode="tail"
-                style={
-                  Array [
-                    Object {
-                      "color": "rgb(82, 76, 97)",
-                      "fontFamily": "sans-serif",
-                      "fontSize": 14,
-                      "fontWeight": "400",
-                    },
-                    Object {
-                      "fontFamily": "sans-serif-medium",
-                    },
-                    Array [
-                      Object {
-                        "color": "rgb(0, 178, 214)",
-                      },
-                    ],
-                  ]
-                }
-              >
-                Dismiss
-              </Text>
-            </View>
+              Dismiss
+            </Text>
           </View>
         </View>
       </View>

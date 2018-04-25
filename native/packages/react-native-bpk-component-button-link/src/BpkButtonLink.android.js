@@ -20,7 +20,7 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import { View } from 'react-native';
+import { View, ViewPropTypes } from 'react-native';
 import BpkIcon from 'react-native-bpk-component-icon';
 import BpkText from 'react-native-bpk-component-text';
 import { getThemeAttributes, withTheme } from 'react-native-bpk-theming';
@@ -39,6 +39,7 @@ import {
 export type Props = {
   ...$Exact<CommonProps>,
   borderlessBackground: boolean,
+  style: ?any,
 };
 
 const BpkButtonLink = (props: Props) => {
@@ -77,7 +78,7 @@ const BpkButtonLink = (props: Props) => {
   }
 
   if (disabled) {
-    textStyle.push(styles.disabled);
+    textStyle.push(styles.textDisabled);
     accessibilityTraits.push('disabled');
   }
 
@@ -94,7 +95,7 @@ const BpkButtonLink = (props: Props) => {
         {...rest}
       >
         <View style={viewStyle}>
-          <BpkText textStyle="sm" emphasize style={textStyle}>
+          <BpkText textStyle="sm" emphasize numberOfLines={1} style={textStyle}>
             {title.toUpperCase()}
           </BpkText>
           {typeof icon === 'string' ? (
@@ -111,6 +112,7 @@ const BpkButtonLink = (props: Props) => {
 const propTypes = {
   ...commonPropTypes,
   borderlessBackground: PropTypes.bool,
+  style: ViewPropTypes.style,
 };
 
 BpkButtonLink.propTypes = propTypes;
@@ -118,6 +120,7 @@ BpkButtonLink.propTypes = propTypes;
 BpkButtonLink.defaultProps = {
   ...commonDefaultProps,
   borderlessBackground: true,
+  style: null,
 };
 
 export default withTheme(BpkButtonLink);

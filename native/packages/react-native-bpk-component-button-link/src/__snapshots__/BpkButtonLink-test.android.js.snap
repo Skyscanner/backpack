@@ -32,8 +32,8 @@ exports[`Android BpkButtonLink should render correctly 1`] = `
         Object {
           "alignItems": "center",
           "flexDirection": "row",
+          "height": 32,
           "justifyContent": "center",
-          "paddingVertical": 8,
         },
       ]
     }
@@ -43,6 +43,7 @@ exports[`Android BpkButtonLink should render correctly 1`] = `
       accessible={true}
       allowFontScaling={true}
       ellipsizeMode="tail"
+      numberOfLines={1}
       style={
         Array [
           Object {
@@ -100,8 +101,8 @@ exports[`Android BpkButtonLink should render correctly with iconAlignment="leadi
         Object {
           "alignItems": "center",
           "flexDirection": "row",
+          "height": 32,
           "justifyContent": "center",
-          "paddingVertical": 8,
         },
         Object {
           "flexDirection": "row-reverse",
@@ -114,6 +115,7 @@ exports[`Android BpkButtonLink should render correctly with iconAlignment="leadi
       accessible={true}
       allowFontScaling={true}
       ellipsizeMode="tail"
+      numberOfLines={1}
       style={
         Array [
           Object {
@@ -201,8 +203,8 @@ exports[`Android BpkButtonLink should render correctly with iconAlignment="trail
         Object {
           "alignItems": "center",
           "flexDirection": "row",
+          "height": 32,
           "justifyContent": "center",
-          "paddingVertical": 8,
         },
       ]
     }
@@ -212,6 +214,7 @@ exports[`Android BpkButtonLink should render correctly with iconAlignment="trail
       accessible={true}
       allowFontScaling={true}
       ellipsizeMode="tail"
+      numberOfLines={1}
       style={
         Array [
           Object {
@@ -295,8 +298,8 @@ exports[`Android BpkButtonLink should render correctly with theme prop 1`] = `
         Object {
           "alignItems": "center",
           "flexDirection": "row",
+          "height": 32,
           "justifyContent": "center",
-          "paddingVertical": 8,
         },
       ]
     }
@@ -306,6 +309,7 @@ exports[`Android BpkButtonLink should render correctly with theme prop 1`] = `
       accessible={true}
       allowFontScaling={true}
       ellipsizeMode="tail"
+      numberOfLines={1}
       style={
         Array [
           Object {
@@ -366,8 +370,8 @@ exports[`Android BpkButtonLink should support elements as icons 1`] = `
         Object {
           "alignItems": "center",
           "flexDirection": "row",
+          "height": 32,
           "justifyContent": "center",
-          "paddingVertical": 8,
         },
       ]
     }
@@ -377,6 +381,7 @@ exports[`Android BpkButtonLink should support elements as icons 1`] = `
       accessible={true}
       allowFontScaling={true}
       ellipsizeMode="tail"
+      numberOfLines={1}
       style={
         Array [
           Object {
@@ -456,8 +461,8 @@ exports[`Android BpkButtonLink should support overwriting styles 1`] = `
         Object {
           "alignItems": "center",
           "flexDirection": "row",
+          "height": 32,
           "justifyContent": "center",
-          "paddingVertical": 8,
         },
       ]
     }
@@ -467,6 +472,7 @@ exports[`Android BpkButtonLink should support overwriting styles 1`] = `
       accessible={true}
       allowFontScaling={true}
       ellipsizeMode="tail"
+      numberOfLines={1}
       style={
         Array [
           Object {
@@ -525,8 +531,8 @@ exports[`Android BpkButtonLink should support the "disabled" property 1`] = `
         Object {
           "alignItems": "center",
           "flexDirection": "row",
+          "height": 32,
           "justifyContent": "center",
-          "paddingVertical": 8,
         },
       ]
     }
@@ -536,6 +542,7 @@ exports[`Android BpkButtonLink should support the "disabled" property 1`] = `
       accessible={true}
       allowFontScaling={true}
       ellipsizeMode="tail"
+      numberOfLines={1}
       style={
         Array [
           Object {
@@ -596,8 +603,8 @@ exports[`Android BpkButtonLink should support the "icon" property 1`] = `
         Object {
           "alignItems": "center",
           "flexDirection": "row",
+          "height": 32,
           "justifyContent": "center",
-          "paddingVertical": 8,
         },
       ]
     }
@@ -607,6 +614,7 @@ exports[`Android BpkButtonLink should support the "icon" property 1`] = `
       accessible={true}
       allowFontScaling={true}
       ellipsizeMode="tail"
+      numberOfLines={1}
       style={
         Array [
           Object {
@@ -690,8 +698,8 @@ exports[`Android should support "borderlessBackground" equal to false 1`] = `
         Object {
           "alignItems": "center",
           "flexDirection": "row",
+          "height": 32,
           "justifyContent": "center",
-          "paddingVertical": 8,
         },
       ]
     }
@@ -701,6 +709,7 @@ exports[`Android should support "borderlessBackground" equal to false 1`] = `
       accessible={true}
       allowFontScaling={true}
       ellipsizeMode="tail"
+      numberOfLines={1}
       style={
         Array [
           Object {
