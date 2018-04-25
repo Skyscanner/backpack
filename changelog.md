@@ -2,6 +2,12 @@
 
 [Unreleased changes](./unreleased.md).
 
+# 2018-04-25 - Add native progress component
+
+**Added:**
+- react-native-bpk-component-progress: 1.0.0
+  - Introducing the native progress component, see: https://backpack.github.io/components/native/progress.
+
 
 # 2018-04-20 - Fix icon colour in Horizontal Nav Items
 
