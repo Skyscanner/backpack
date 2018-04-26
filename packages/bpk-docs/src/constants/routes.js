@@ -118,6 +118,7 @@ export const GRID_OFFSET_DEMO = '/grid-offset-demo';
 // Neo components.
 // components/
 export const NEO_TEXT = '/components/text';
+export const NEO_TEXT_INPUT = '/components/text-input';
 export const NEO_LINK = '/components/link';
 export const NEO_LIST = '/components/list';
 export const NEO_DESCRIPTION_LIST = '/components/description-list';
@@ -125,6 +126,7 @@ export const NEO_TABLE = '/components/table';
 export const NEO_BLOCKQUOTE = '/components/blockquote';
 export const NEO_CODE = '/components/code';
 export const NEO_BUTTON = '/components/button';
+export const NEO_BUTTON_LINK = '/components/button-link';
 export const NEO_ICON = '/components/icon';
 export const NEO_SPINNER = '/components/spinner';
 export const NEO_FORM = '/components/form';
@@ -156,16 +158,13 @@ export const NEO_HORIZONTAL_GRID = '/components/horizontal-grid';
 export const NEO_SLIDER = '/components/slider';
 export const NEO_DRAWER = '/components/drawer';
 export const NEO_DIALOG = '/components/dialog';
-
-// components/native/
-export const NEO_NATIVE_INPUT = '/components/text-input';
-export const NEO_NATIVE_NAVIGATION_BAR = '/components/navigation-bar';
-export const NEO_NATIVE_PAGINATION_DOT = '/components/pagination-dot';
-export const NEO_NATIVE_PHONE_INPUT = '/components/phone-input';
-export const NEO_NATIVE_PICKER = '/components/picker';
-export const NEO_NATIVE_SWITCH = '/components/switch';
-export const NEO_NATIVE_TOUCHABLE_OVERLAY = '/components/touchable-overlay';
-export const NEO_NATIVE_TOUCHABLE_NATIVE_FEEDBACK =
+export const NEO_NAVIGATION_BAR = '/components/navigation-bar';
+export const NEO_PAGINATION_DOT = '/components/pagination-dot';
+export const NEO_PHONE_INPUT = '/components/phone-input';
+export const NEO_PICKER = '/components/picker';
+export const NEO_SWITCH = '/components/switch';
+export const NEO_TOUCHABLE_OVERLAY = '/components/touchable-overlay';
+export const NEO_TOUCHABLE_NATIVE_FEEDBACK =
   '/components/touchable-native-feedback';
 
 export const NEO_ALIGNMENT = '/components/alignment';

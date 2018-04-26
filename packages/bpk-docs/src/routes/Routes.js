@@ -136,6 +136,8 @@ import {
 // eslint-disable-next-line import/no-webpack-loader-syntax
 const iconsSvgs = require('!!file-loader?name=[name].[hash].zip!zip-it-loader!./../../../bpk-svgs/src/icons/icons');
 
+const isOldSite = !process.env.BPK_NEO;
+
 const Routes = (
   <Route path={ROUTES.HOME} component={DefaultLayout}>
     <IndexRoute
@@ -170,51 +172,78 @@ const Routes = (
       <IndexRedirect to={ROUTES.WEB_COMPONENTS} />
       <Route path={ROUTES.WEB_COMPONENTS}>
         <IndexRedirect to={ROUTES.ACCORDIONS} />
-        <Route path={ROUTES.TEXT} component={TextPage} />
-        <Route path={ROUTES.LINKS} component={LinksPage} />
-        <Route path={ROUTES.LISTS} component={ListsPage} />
-        <Route
-          path={ROUTES.DESCRIPTION_LISTS}
-          component={DescriptionListsPage}
-        />
-        <Route path={ROUTES.TABLES} component={TablesPage} />
-        <Route path={ROUTES.BLOCKQUOTES} component={BlockquotesPage} />
-        <Route path={ROUTES.CODE} component={CodePage} />
-        <Route path={ROUTES.BUTTONS} component={ButtonsPage} />
-        <Route path={ROUTES.ICONS} component={IconsPage} />
-        <Route path={ROUTES.SPINNERS} component={SpinnersPage} />
-        <Route path={ROUTES.FORMS} component={FormsPage} />
-        <Route path={ROUTES.CARDS} component={CardsPage} />
-        <Route path={ROUTES.CHIPS} component={ChipsPage} />
-        <Route path={ROUTES.BADGE} component={BadgePage} />
-        <Route path={ROUTES.PANELS} component={PanelsPage} />
-        <Route path={ROUTES.IMAGES} component={ImagesPage} />
-        <Route path={ROUTES.BANNER_ALERTS} component={BannerAlertsPage} />
-        <Route
-          path={ROUTES.MOBILE_SCROLL_CONTAINER}
-          component={MobileScrollContainerPage}
-        />
-        <Route path={ROUTES.MODALS} component={ModalsPage} />
-        <Route path={ROUTES.AUTOSUGGEST} component={AutosuggestPage} />
-        <Route path={ROUTES.POPOVERS} component={PopoversPage} />
-        <Route path={ROUTES.CALENDAR} component={CalendarPage} />
-        <Route path={ROUTES.DATEPICKER} component={DatepickerPage} />
-        <Route path={ROUTES.TOOLTIPS} component={TooltipsPage} />
-        <Route path={ROUTES.ACCORDIONS} component={AccordionsPage} />
-        <Route path={ROUTES.NUDGERS} component={NudgersPage} />
-        <Route path={ROUTES.PROGRESS} component={ProgressPage} />
-        <Route path={ROUTES.PAGINATION} component={PaginationPage} />
-        <Route path={ROUTES.TICKETS} component={TicketsPage} />
-        <Route path={ROUTES.HORIZONTAL_NAV} component={HorizontalNavPage} />
-        <Route path={ROUTES.FIELDSETS} component={FieldsetsPage} />
-        <Route path={ROUTES.BARCHARTS} component={BarchartsPage} />
-        <Route path={ROUTES.STAR_RATING} component={StarRatingPage} />
-        <Route path={ROUTES.BREAKPOINTS} component={BreakpointsPage} />
-        <Route path={ROUTES.HORIZONTAL_GRID} component={HorizontalGridPage} />
-        <Route path={ROUTES.SLIDERS} component={SlidersPage} />
-        <Route path={ROUTES.DRAWER} component={DrawerPage} />
-        <Route path={ROUTES.DIALOGS} component={DialogsPage} />
-
+        {isOldSite && <Route path={ROUTES.TEXT} component={TextPage} />}
+        {isOldSite && <Route path={ROUTES.LINKS} component={LinksPage} />}
+        {isOldSite && <Route path={ROUTES.LISTS} component={ListsPage} />}
+        {isOldSite && (
+          <Route
+            path={ROUTES.DESCRIPTION_LISTS}
+            component={DescriptionListsPage}
+          />
+        )}
+        {isOldSite && <Route path={ROUTES.TABLES} component={TablesPage} />}
+        {isOldSite && (
+          <Route path={ROUTES.BLOCKQUOTES} component={BlockquotesPage} />
+        )}
+        {isOldSite && <Route path={ROUTES.CODE} component={CodePage} />}
+        {isOldSite && <Route path={ROUTES.BUTTONS} component={ButtonsPage} />}
+        {isOldSite && <Route path={ROUTES.ICONS} component={IconsPage} />}
+        {isOldSite && <Route path={ROUTES.SPINNERS} component={SpinnersPage} />}
+        {isOldSite && <Route path={ROUTES.FORMS} component={FormsPage} />}
+        {isOldSite && <Route path={ROUTES.CARDS} component={CardsPage} />}
+        {isOldSite && <Route path={ROUTES.CHIPS} component={ChipsPage} />}
+        {isOldSite && <Route path={ROUTES.BADGE} component={BadgePage} />}
+        {isOldSite && <Route path={ROUTES.PANELS} component={PanelsPage} />}
+        {isOldSite && <Route path={ROUTES.IMAGES} component={ImagesPage} />}
+        {isOldSite && (
+          <Route path={ROUTES.BANNER_ALERTS} component={BannerAlertsPage} />
+        )}
+        {isOldSite && (
+          <Route
+            path={ROUTES.MOBILE_SCROLL_CONTAINER}
+            component={MobileScrollContainerPage}
+          />
+        )}
+        {isOldSite && <Route path={ROUTES.MODALS} component={ModalsPage} />}
+        {isOldSite && (
+          <Route path={ROUTES.AUTOSUGGEST} component={AutosuggestPage} />
+        )}
+        {isOldSite && <Route path={ROUTES.POPOVERS} component={PopoversPage} />}
+        {isOldSite && <Route path={ROUTES.CALENDAR} component={CalendarPage} />}
+        {isOldSite && (
+          <Route path={ROUTES.DATEPICKER} component={DatepickerPage} />
+        )}
+        {isOldSite && <Route path={ROUTES.TOOLTIPS} component={TooltipsPage} />}
+        {isOldSite && (
+          <Route path={ROUTES.ACCORDIONS} component={AccordionsPage} />
+        )}
+        {isOldSite && <Route path={ROUTES.NUDGERS} component={NudgersPage} />}
+        {isOldSite && <Route path={ROUTES.PROGRESS} component={ProgressPage} />}
+        {isOldSite && (
+          <Route path={ROUTES.PAGINATION} component={PaginationPage} />
+        )}
+        {isOldSite && <Route path={ROUTES.TICKETS} component={TicketsPage} />}
+        {isOldSite && (
+          <Route path={ROUTES.HORIZONTAL_NAV} component={HorizontalNavPage} />
+        )}
+        {isOldSite && (
+          <Route path={ROUTES.FIELDSETS} component={FieldsetsPage} />
+        )}
+        {isOldSite && (
+          <Route path={ROUTES.BARCHARTS} component={BarchartsPage} />
+        )}
+        {isOldSite && (
+          <Route path={ROUTES.STAR_RATING} component={StarRatingPage} />
+        )}
+        {isOldSite && (
+          <Route path={ROUTES.BREAKPOINTS} component={BreakpointsPage} />
+        )}
+        {isOldSite && (
+          <Route path={ROUTES.HORIZONTAL_GRID} component={HorizontalGridPage} />
+        )}
+        {isOldSite && <Route path={ROUTES.SLIDERS} component={SlidersPage} />}
+        {isOldSite && <Route path={ROUTES.DRAWER} component={DrawerPage} />}
+        {isOldSite && <Route path={ROUTES.DIALOGS} component={DialogsPage} />}
         {/* Neo routes. */}
         <Route path={ROUTES.NEO_TEXT} component={NeoTextPage} />
         <Route path={ROUTES.NEO_LINK} component={NeoLinkPage} />
@@ -227,6 +256,7 @@ const Routes = (
         <Route path={ROUTES.NEO_BLOCKQUOTE} component={BlockquotesPage} />
         <Route path={ROUTES.NEO_CODE} component={CodePage} />
         <Route path={ROUTES.NEO_BUTTON} component={NeoButtonPage} />
+        <Route path={ROUTES.NEO_BUTTON_LINK} component={NativeButtonLinkPage} />
         <Route path={ROUTES.NEO_ICON} component={NeoIconPage} />
         <Route path={ROUTES.NEO_SPINNER} component={NeoSpinnerPage} />
         <Route path={ROUTES.NEO_FORM} component={FormsPage} />
@@ -266,88 +296,92 @@ const Routes = (
         <Route path={ROUTES.NEO_SLIDER} component={SlidersPage} />
         <Route path={ROUTES.NEO_DRAWER} component={DrawerPage} />
         <Route path={ROUTES.NEO_DIALOG} component={DialogsPage} />
-        <Route path={ROUTES.NEO_NATIVE_INPUT} component={NativeInputPage} />
+        <Route path={ROUTES.NEO_INPUT} component={NativeInputPage} />
         <Route
-          path={ROUTES.NEO_NATIVE_NAVIGATION_BAR}
+          path={ROUTES.NEO_NAVIGATION_BAR}
           component={NativeNavigationBarPage}
         />
         <Route
-          path={ROUTES.NEO_NATIVE_PAGINATION_DOT}
+          path={ROUTES.NEO_PAGINATION_DOT}
           component={NativePaginationDotsPage}
         />
+        <Route path={ROUTES.NEO_TEXT_INPUT} component={NativeInputPage} />
+        <Route path={ROUTES.NEO_PHONE_INPUT} component={NativePhoneInputPage} />
+        <Route path={ROUTES.NEO_PICKER} component={NativePickerPage} />
+        <Route path={ROUTES.NEO_SWITCH} component={NativeSwitchPage} />
         <Route
-          path={ROUTES.NEO_NATIVE_PHONE_INPUT}
-          component={NativePhoneInputPage}
-        />
-        <Route path={ROUTES.NEO_NATIVE_PICKER} component={NativePickerPage} />
-        <Route path={ROUTES.NEO_NATIVE_SWITCH} component={NativeSwitchPage} />
-        <Route
-          path={ROUTES.NEO_NATIVE_TOUCHABLE_OVERLAY}
+          path={ROUTES.NEO_TOUCHABLE_OVERLAY}
           component={NativeTouchableOverlayPage}
         />
         <Route
-          path={ROUTES.NEO_NATIVE_TOUCHABLE_NATIVE_FEEDBACK}
+          path={ROUTES.NEO_TOUCHABLE_NATIVE_FEEDBACK}
           component={NativeTouchableNativeFeedbackPage}
         />
         <Route path={ROUTES.NEO_ALIGNMENT} component={AlignmentPage} />
         <Route path={ROUTES.NEO_THEMING} component={ThemingPage} />
       </Route>
 
-      <Route path={ROUTES.NATIVE_COMPONENTS}>
-        <IndexRedirect to={ROUTES.NATIVE_TEXT} />
-        <Route
-          path={ROUTES.NATIVE_BANNER_ALERT}
-          component={NativeBannerAlertPage}
-        />
-        <Route path={ROUTES.NATIVE_BADGE} component={NativeBadgePage} />
-        <Route path={ROUTES.NATIVE_BUTTON} component={NativeButtonPage} />
-        <Route
-          path={ROUTES.NATIVE_BUTTON_LINK}
-          component={NativeButtonLinkPage}
-        />
-        <Route path={ROUTES.NATIVE_CARDS} component={NativeCardsPage} />
-        <Route
-          path={ROUTES.NATIVE_HORIZONTAL_NAV}
-          component={NativeHorizontalNavPage}
-        />
-        <Route path={ROUTES.NATIVE_ICONS} component={NativeIconsPage} />
-        <Route path={ROUTES.NATIVE_INPUT} component={NativeInputPage} />
-        <Route
-          path={ROUTES.NATIVE_NAVIGATION_BAR}
-          component={NativeNavigationBarPage}
-        />
-        <Route path={ROUTES.NATIVE_NUDGER} component={NativeNudgerPage} />
-        <Route
-          path={ROUTES.NATIVE_PAGINATION_DOTS}
-          component={NativePaginationDotsPage}
-        />
-        <Route path={ROUTES.NATIVE_PANELS} component={NativePanelsPage} />
-        <Route
-          path={ROUTES.NATIVE_PHONE_INPUT}
-          component={NativePhoneInputPage}
-        />
-        <Route path={ROUTES.NATIVE_PICKER} component={NativePickerPage} />
-        <Route path={ROUTES.NATIVE_PROGRESS} component={NativeProgressPage} />
-        <Route path={ROUTES.NATIVE_SPINNER} component={NativeSpinnerPage} />
-        <Route
-          path={ROUTES.NATIVE_STAR_RATING}
-          component={NativeStarRatingPage}
-        />
-        <Route path={ROUTES.NATIVE_SWITCH} component={NativeSwitchPage} />
-        <Route path={ROUTES.NATIVE_TEXT} component={NativeTextPage} />
-        <Route
-          path={ROUTES.NATIVE_TOUCHABLE_OVERLAY}
-          component={NativeTouchableOverlayPage}
-        />
-        <Route
-          path={ROUTES.NATIVE_TOUCHABLE_NATIVE_FEEDBACK}
-          component={NativeTouchableNativeFeedbackPage}
-        />
-      </Route>
+      {isOldSite && (
+        <Route path={ROUTES.NATIVE_COMPONENTS}>
+          <IndexRedirect to={ROUTES.NATIVE_TEXT} />
+
+          <Route
+            path={ROUTES.NATIVE_BANNER_ALERT}
+            component={NativeBannerAlertPage}
+          />
+
+          <Route path={ROUTES.NATIVE_BADGE} component={NativeBadgePage} />
+          <Route path={ROUTES.NATIVE_BUTTON} component={NativeButtonPage} />
+          <Route
+            path={ROUTES.NATIVE_BUTTON_LINK}
+            component={NativeButtonLinkPage}
+          />
+          <Route path={ROUTES.NATIVE_CARDS} component={NativeCardsPage} />
+          <Route
+            path={ROUTES.NATIVE_HORIZONTAL_NAV}
+            component={NativeHorizontalNavPage}
+          />
+          <Route path={ROUTES.NATIVE_ICONS} component={NativeIconsPage} />
+          <Route path={ROUTES.NATIVE_INPUT} component={NativeInputPage} />
+          <Route
+            path={ROUTES.NATIVE_NAVIGATION_BAR}
+            component={NativeNavigationBarPage}
+          />
+          <Route path={ROUTES.NATIVE_NUDGER} component={NativeNudgerPage} />
+          <Route
+            path={ROUTES.NATIVE_PAGINATION_DOTS}
+            component={NativePaginationDotsPage}
+          />
+          <Route path={ROUTES.NATIVE_PANELS} component={NativePanelsPage} />
+          <Route
+            path={ROUTES.NATIVE_PHONE_INPUT}
+            component={NativePhoneInputPage}
+          />
+          <Route path={ROUTES.NATIVE_PICKER} component={NativePickerPage} />
+          <Route path={ROUTES.NATIVE_PROGRESS} component={NativeProgressPage} />
+          <Route path={ROUTES.NATIVE_SPINNER} component={NativeSpinnerPage} />
+          <Route
+            path={ROUTES.NATIVE_STAR_RATING}
+            component={NativeStarRatingPage}
+          />
+          <Route path={ROUTES.NATIVE_SWITCH} component={NativeSwitchPage} />
+          <Route path={ROUTES.NATIVE_TEXT} component={NativeTextPage} />
+          <Route
+            path={ROUTES.NATIVE_TOUCHABLE_OVERLAY}
+            component={NativeTouchableOverlayPage}
+          />
+          <Route
+            path={ROUTES.NATIVE_TOUCHABLE_NATIVE_FEEDBACK}
+            component={NativeTouchableNativeFeedbackPage}
+          />
+        </Route>
+      )}
       <Route path={ROUTES.UTILITIES}>
         <IndexRedirect to={ROUTES.ALIGNMENT} />
-        <Route path={ROUTES.ALIGNMENT} component={AlignmentPage} />
-        <Route path={ROUTES.THEMING} component={ThemingPage} />
+        {isOldSite && (
+          <Route path={ROUTES.ALIGNMENT} component={AlignmentPage} />
+        )}
+        {isOldSite && <Route path={ROUTES.THEMING} component={ThemingPage} />}
       </Route>
     </Route>
 

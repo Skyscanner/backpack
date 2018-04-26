@@ -320,43 +320,43 @@ const neoComponentsLinks = [
       // Native components.
       {
         id: 'NATIVE_INPUT',
-        route: routes.NEO_NATIVE_INPUT,
+        route: routes.NEO_TEXT_INPUT,
         children: 'Text input',
       },
       {
         id: 'NATIVE_NAVIGATION_BAR',
-        route: routes.NEO_NATIVE_NAVIGATION_BAR,
+        route: routes.NEO_NAVIGATION_BAR,
         children: 'Navigation Bar',
       },
       // TODO: Uncomment later.
       // {
       //   id: 'NATIVE_PAGINATION_DOT',
-      //   route: routes.NEO_NATIVE_PAGINATION_DOT,
+      //   route: routes.NEO_PAGINATION_DOT,
       //   children: 'Pagination Dot',
       // },
       {
         id: 'NATIVE_PHONE_INPUT',
-        route: routes.NEO_NATIVE_PHONE_INPUT,
+        route: routes.NEO_PHONE_INPUT,
         children: 'Phone number input',
       },
       {
         id: 'NATIVE_PICKER',
-        route: routes.NEO_NATIVE_PICKER,
+        route: routes.NEO_PICKER,
         children: 'Picker',
       },
       {
         id: 'NATIVE_SWITCH',
-        route: routes.NEO_NATIVE_SWITCH,
+        route: routes.NEO_SWITCH,
         children: 'Switche',
       },
       {
         id: 'NATIVE_TOUCHABLE_OVERLAY',
-        route: routes.NEO_NATIVE_TOUCHABLE_OVERLAY,
+        route: routes.NEO_TOUCHABLE_OVERLAY,
         children: 'Touchable Overlay',
       },
       {
         id: 'NATIVE_TOUCHABLE_NATIVE_FEEDBACK',
-        route: routes.NEO_NATIVE_TOUCHABLE_NATIVE_FEEDBACK,
+        route: routes.NEO_TOUCHABLE_NATIVE_FEEDBACK,
         children: 'Touchable Native Feedback',
       },
 
