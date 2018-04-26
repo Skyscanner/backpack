@@ -52,7 +52,7 @@ exports[`BpkModal should render correctly in the given target if renderTarget is
           </button>
         </header>
         <div
-          class="bpk-modal__content"
+          class="bpk-modal__content bpk-modal__content--padded"
         >
           Modal content inside a custom target
         </div>

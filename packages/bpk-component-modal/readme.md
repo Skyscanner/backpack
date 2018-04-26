@@ -82,6 +82,7 @@ class App extends Component {
 | getApplicationElement | func     | true     | -                |
 | title                 | string   | true     | -                |
 | className             | string   | false    | null             |
+| contentClassName      | string   | false    | null             |
 | closeLabel            | string   | false    | null             |
 | closeText             | string   | false    | null             |
 | renderTarget          | func     | false    | null             |
@@ -91,6 +92,7 @@ class App extends Component {
 | closeOnScrimClick     | bool     | false    | true             |
 | showHeader            | bool     | false    | true             |
 | closeOnEscPressed     | bool     | false    | true             |
+| padded                | bool     | false    | true             |
 
 ## Theme Props
 
