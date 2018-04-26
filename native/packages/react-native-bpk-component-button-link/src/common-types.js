@@ -20,8 +20,6 @@
 
 import { type Node } from 'react';
 import PropTypes from 'prop-types';
-import { ViewPropTypes } from 'react-native';
-
 import { makeThemePropType } from 'react-native-bpk-theming';
 
 export const REQUIRED_THEME_ATTRIBUTES: Array<string> = ['buttonLinkTextColor'];
@@ -40,7 +38,6 @@ export type CommonProps = {
   accessibilityLabel: ?string,
   icon: ?Node,
   iconAlignment: $Keys<typeof ICON_ALIGNMENTS>,
-  style: ?(Object | Array<Object>),
   theme: ?{
     buttonLinkTextColor: string,
   },
@@ -53,7 +50,6 @@ export const commonPropTypes = {
   accessibilityLabel: PropTypes.string,
   icon: PropTypes.node,
   iconAlignment: PropTypes.oneOf(Object.keys(ICON_ALIGNMENTS)),
-  style: ViewPropTypes.style,
   theme: themePropType,
 };
 
@@ -62,6 +58,5 @@ export const commonDefaultProps = {
   disabled: false,
   icon: null,
   iconAlignment: ICON_ALIGNMENTS.trailing,
-  style: null,
   theme: null,
 };

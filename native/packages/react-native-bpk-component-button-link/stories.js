@@ -18,7 +18,7 @@
 
 /* @flow */
 
-import React from 'react';
+import React, { Fragment } from 'react';
 import { action } from '@storybook/addon-actions';
 import { storiesOf } from '@storybook/react-native';
 import BpkThemeProvider from 'react-native-bpk-theming';
@@ -37,84 +37,86 @@ const styles = StyleSheet.create({
   },
 });
 
-const ButtonStory = props => <View style={styles.buttonStory} {...props} />;
+const ButtonStorySection = props => (
+  <View style={styles.buttonStory} {...props} />
+);
 
-const createButtonStory = () => {
-  const getLargeVersion = () => (
-    <ButtonStory key="large">
-      <StorySubheading>Large</StorySubheading>
-      <BpkButtonLink
-        large
-        title="Button"
-        onPress={action(`Button pressed`)}
-        style={styles.buttonLinkStyles}
-      />
-      <BpkButtonLink
-        large
-        disabled
-        title="Disabled"
-        onPress={action(`This should not be possible`)}
-        style={styles.buttonLinkStyles}
-      />
-      <BpkButtonLink
-        large
-        title="With Leading icon"
-        icon="alert--active"
-        iconAlignment="leading"
-        onPress={action(`Button  with icon clicked`)}
-        style={styles.buttonLinkStyles}
-      />
-      <BpkButtonLink
-        large
-        title="With trailing icon"
-        icon="alert--active"
-        iconAlignment="trailing"
-        onPress={action(`Button  with trailing icon clicked`)}
-        style={styles.buttonLinkStyles}
-      />
-    </ButtonStory>
-  );
-
-  return [
-    <ButtonStory key="default">
+const ButtonStory = () => (
+  <Fragment>
+    <ButtonStorySection>
       <StorySubheading>Default</StorySubheading>
-      <BpkButtonLink
-        title="Button"
-        onPress={action(`Button pressed`)}
-        style={styles.buttonLinkStyles}
-      />
+      <BpkButtonLink title="Button" onPress={action(`Button pressed`)} />
       <BpkButtonLink
         disabled
         title="Disabled"
         onPress={action('This should not be possible')}
-        style={styles.buttonLinkStyles}
       />
       <BpkButtonLink
         title="With Leading icon"
         iconAlignment="leading"
         icon="alert--active"
         onPress={action(`Button button-link with icon clicked`)}
-        style={styles.buttonLinkStyles}
       />
       <BpkButtonLink
         title="With Trailing icon"
         iconAlignment="trailing"
         icon="alert--active"
         onPress={action(`Button button-link with icon clicked`)}
-        style={styles.buttonLinkStyles}
       />
-    </ButtonStory>,
-    Platform.OS === 'ios' ? getLargeVersion() : null,
-  ];
-};
-
-const allThemedButtons = (
-  <BpkThemeProvider theme={themeAttributes}>
-    <View>{createButtonStory()}</View>
-  </BpkThemeProvider>
+    </ButtonStorySection>
+    {Platform.OS === 'ios' && (
+      <ButtonStorySection>
+        <StorySubheading>Large</StorySubheading>
+        <BpkButtonLink
+          large
+          title="Button"
+          onPress={action(`Button pressed`)}
+        />
+        <BpkButtonLink
+          large
+          disabled
+          title="Disabled"
+          onPress={action(`This should not be possible`)}
+        />
+        <BpkButtonLink
+          large
+          title="With Leading icon"
+          icon="alert--active"
+          iconAlignment="leading"
+          onPress={action(`Button  with icon clicked`)}
+        />
+        <BpkButtonLink
+          large
+          title="With trailing icon"
+          icon="alert--active"
+          iconAlignment="trailing"
+          onPress={action(`Button  with trailing icon clicked`)}
+        />
+      </ButtonStorySection>
+    )}
+  </Fragment>
 );
 
 storiesOf('react-native-bpk-component-button-link', module)
   .addDecorator(CenterDecorator)
-  .add('docs:default', () => createButtonStory())
-  .add('docs:withTheme', () => allThemedButtons);
+  .add('docs:default', () => <ButtonStory />)
+  .add('Themed', () => (
+    <BpkThemeProvider theme={themeAttributes}>
+      <ButtonStory />
+    </BpkThemeProvider>
+  ))
+  .add('Edge cases', () => (
+    <Fragment>
+      <BpkButtonLink
+        title="Lorem ipsum dolor sit amet, consectetuer adipiscing elit."
+        onPress={action(`Button pressed`)}
+      />
+      {Platform.OS === 'ios' && (
+        <BpkButtonLink
+          large
+          title="Lorem ipsum dolor sit amet, consectetuer adipiscing elit."
+          onPress={action(`Button pressed`)}
+        />
+      )}
+    </Fragment>
+  ));

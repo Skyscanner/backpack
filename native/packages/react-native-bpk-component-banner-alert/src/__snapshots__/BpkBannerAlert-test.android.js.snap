@@ -30,8 +30,11 @@ exports[`Android BpkBannerAlert should accept userland styling 1`] = `
       <View
         style={
           Object {
+            "alignItems": "center",
             "flexDirection": "row",
+            "minHeight": 48,
             "paddingHorizontal": 24,
+            "paddingVertical": 8,
           }
         }
       >
@@ -53,9 +56,6 @@ exports[`Android BpkBannerAlert should accept userland styling 1`] = `
               Array [
                 Object {
                   "marginEnd": 8,
-                  "marginVertical": 16,
-                  "paddingBottom": 0.8,
-                  "paddingTop": 3,
                 },
                 Object {
                   "color": "rgb(129, 123, 143)",
@@ -80,7 +80,6 @@ exports[`Android BpkBannerAlert should accept userland styling 1`] = `
               },
               Object {
                 "flex": 1,
-                "marginVertical": 16,
               },
             ]
           }
@@ -122,8 +121,11 @@ exports[`Android BpkBannerAlert should render correctly when not shown 1`] = `
       <View
         style={
           Object {
+            "alignItems": "center",
             "flexDirection": "row",
+            "minHeight": 48,
             "paddingHorizontal": 24,
+            "paddingVertical": 8,
           }
         }
       >
@@ -145,9 +147,6 @@ exports[`Android BpkBannerAlert should render correctly when not shown 1`] = `
               Array [
                 Object {
                   "marginEnd": 8,
-                  "marginVertical": 16,
-                  "paddingBottom": 0.8,
-                  "paddingTop": 3,
                 },
                 Object {
                   "color": "rgb(129, 123, 143)",
@@ -172,7 +171,6 @@ exports[`Android BpkBannerAlert should render correctly when not shown 1`] = `
               },
               Object {
                 "flex": 1,
-                "marginVertical": 16,
               },
             ]
           }
@@ -214,8 +212,11 @@ exports[`Android BpkBannerAlert should render correctly with animateOnEnter 1`] 
       <View
         style={
           Object {
+            "alignItems": "center",
             "flexDirection": "row",
+            "minHeight": 48,
             "paddingHorizontal": 24,
+            "paddingVertical": 8,
           }
         }
       >
@@ -237,9 +238,6 @@ exports[`Android BpkBannerAlert should render correctly with animateOnEnter 1`] 
               Array [
                 Object {
                   "marginEnd": 8,
-                  "marginVertical": 16,
-                  "paddingBottom": 0.8,
-                  "paddingTop": 3,
                 },
                 Object {
                   "color": "rgb(129, 123, 143)",
@@ -264,7 +262,6 @@ exports[`Android BpkBannerAlert should render correctly with animateOnEnter 1`] 
               },
               Object {
                 "flex": 1,
-                "marginVertical": 16,
               },
             ]
           }
@@ -306,8 +303,11 @@ exports[`Android BpkBannerAlert should render correctly with animateOnLeave 1`] 
       <View
         style={
           Object {
+            "alignItems": "center",
             "flexDirection": "row",
+            "minHeight": 48,
             "paddingHorizontal": 24,
+            "paddingVertical": 8,
           }
         }
       >
@@ -329,9 +329,6 @@ exports[`Android BpkBannerAlert should render correctly with animateOnLeave 1`] 
               Array [
                 Object {
                   "marginEnd": 8,
-                  "marginVertical": 16,
-                  "paddingBottom": 0.8,
-                  "paddingTop": 3,
                 },
                 Object {
                   "color": "rgb(129, 123, 143)",
@@ -356,7 +353,6 @@ exports[`Android BpkBannerAlert should render correctly with animateOnLeave 1`] 
               },
               Object {
                 "flex": 1,
-                "marginVertical": 16,
               },
             ]
           }
@@ -416,8 +412,11 @@ exports[`Android BpkBannerAlert should render correctly with children provided (
         onStartShouldSetResponder={[Function]}
         style={
           Object {
+            "alignItems": "center",
             "flexDirection": "row",
+            "minHeight": 48,
             "paddingHorizontal": 24,
+            "paddingVertical": 8,
           }
         }
         testID={undefined}
@@ -440,9 +439,6 @@ exports[`Android BpkBannerAlert should render correctly with children provided (
               Array [
                 Object {
                   "marginEnd": 8,
-                  "marginVertical": 16,
-                  "paddingBottom": 0.8,
-                  "paddingTop": 3,
                 },
                 Object {
                   "color": "rgb(129, 123, 143)",
@@ -467,7 +463,6 @@ exports[`Android BpkBannerAlert should render correctly with children provided (
               },
               Object {
                 "flex": 1,
-                "marginVertical": 16,
               },
             ]
           }
@@ -491,9 +486,6 @@ exports[`Android BpkBannerAlert should render correctly with children provided (
               },
               Object {
                 "marginStart": 8,
-                "marginVertical": 16,
-                "paddingBottom": 0.8,
-                "paddingTop": 3,
               },
             ]
           }
@@ -574,8 +566,11 @@ exports[`Android BpkBannerAlert should render correctly with dismissable 1`] = `
       <View
         style={
           Object {
+            "alignItems": "center",
             "flexDirection": "row",
+            "minHeight": 48,
             "paddingHorizontal": 24,
+            "paddingVertical": 8,
           }
         }
       >
@@ -597,9 +592,6 @@ exports[`Android BpkBannerAlert should render correctly with dismissable 1`] = `
               Array [
                 Object {
                   "marginEnd": 8,
-                  "marginVertical": 16,
-                  "paddingBottom": 0.8,
-                  "paddingTop": 3,
                 },
                 Object {
                   "color": "rgb(129, 123, 143)",
@@ -624,7 +616,6 @@ exports[`Android BpkBannerAlert should render correctly with dismissable 1`] = `
               },
               Object {
                 "flex": 1,
-                "marginVertical": 16,
               },
             ]
           }
@@ -632,85 +623,73 @@ exports[`Android BpkBannerAlert should render correctly with dismissable 1`] = `
           Neutral alert.
         </Text>
         <View
-          style={
+          accessibilityComponentType="button"
+          accessibilityLabel="Dismiss"
+          accessibilityTraits={
             Array [
-              Object {
-                "borderRadius": 4,
-              },
-              Object {
-                "marginStart": 8,
-                "marginVertical": 8,
-              },
+              "button",
             ]
           }
+          accessible={true}
+          collapsable={undefined}
+          hasTVPreferredFocus={undefined}
+          hitSlop={undefined}
+          isTVSelectable={true}
+          nativeID={undefined}
+          onLayout={undefined}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "marginStart": 8,
+              "opacity": 1,
+            }
+          }
+          testID={undefined}
+          tvParallaxProperties={undefined}
         >
           <View
-            accessibilityComponentType="button"
-            accessibilityLabel="Dismiss"
-            accessibilityTraits={
+            style={
               Array [
-                "button",
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                  "height": 32,
+                  "justifyContent": "center",
+                },
               ]
             }
-            accessible={true}
-            collapsable={undefined}
-            hasTVPreferredFocus={undefined}
-            hitSlop={undefined}
-            isTVSelectable={true}
-            nativeID={undefined}
-            onLayout={undefined}
-            onResponderGrant={[Function]}
-            onResponderMove={[Function]}
-            onResponderRelease={[Function]}
-            onResponderTerminate={[Function]}
-            onResponderTerminationRequest={[Function]}
-            onStartShouldSetResponder={[Function]}
-            style={
-              Object {
-                "opacity": 1,
-              }
-            }
-            testID={undefined}
-            tvParallaxProperties={undefined}
           >
-            <View
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              numberOfLines={1}
               style={
                 Array [
                   Object {
-                    "alignItems": "center",
-                    "flexDirection": "row",
-                    "justifyContent": "center",
-                    "paddingVertical": 8,
+                    "color": "rgb(82, 76, 97)",
+                    "fontFamily": "sans-serif",
+                    "fontSize": 14,
+                    "fontWeight": "400",
                   },
+                  Object {
+                    "fontFamily": "sans-serif-medium",
+                  },
+                  Array [
+                    Object {
+                      "color": "rgb(0, 178, 214)",
+                    },
+                  ],
                 ]
               }
             >
-              <Text
-                accessible={true}
-                allowFontScaling={true}
-                ellipsizeMode="tail"
-                style={
-                  Array [
-                    Object {
-                      "color": "rgb(82, 76, 97)",
-                      "fontFamily": "sans-serif",
-                      "fontSize": 14,
-                      "fontWeight": "400",
-                    },
-                    Object {
-                      "fontFamily": "sans-serif-medium",
-                    },
-                    Array [
-                      Object {
-                        "color": "rgb(0, 178, 214)",
-                      },
-                    ],
-                  ]
-                }
-              >
-                Dismiss
-              </Text>
-            </View>
+              Dismiss
+            </Text>
           </View>
         </View>
       </View>
@@ -766,8 +745,11 @@ exports[`Android BpkBannerAlert should render correctly with expanded 1`] = `
         onStartShouldSetResponder={[Function]}
         style={
           Object {
+            "alignItems": "center",
             "flexDirection": "row",
+            "minHeight": 48,
             "paddingHorizontal": 24,
+            "paddingVertical": 8,
           }
         }
         testID={undefined}
@@ -790,9 +772,6 @@ exports[`Android BpkBannerAlert should render correctly with expanded 1`] = `
               Array [
                 Object {
                   "marginEnd": 8,
-                  "marginVertical": 16,
-                  "paddingBottom": 0.8,
-                  "paddingTop": 3,
                 },
                 Object {
                   "color": "rgb(129, 123, 143)",
@@ -817,7 +796,6 @@ exports[`Android BpkBannerAlert should render correctly with expanded 1`] = `
               },
               Object {
                 "flex": 1,
-                "marginVertical": 16,
               },
             ]
           }
@@ -841,9 +819,6 @@ exports[`Android BpkBannerAlert should render correctly with expanded 1`] = `
               },
               Object {
                 "marginStart": 8,
-                "marginVertical": 16,
-                "paddingBottom": 0.8,
-                "paddingTop": 3,
               },
             ]
           }
@@ -924,8 +899,11 @@ exports[`Android BpkBannerAlert should render correctly with type equal to error
       <View
         style={
           Object {
+            "alignItems": "center",
             "flexDirection": "row",
+            "minHeight": 48,
             "paddingHorizontal": 24,
+            "paddingVertical": 8,
           }
         }
       >
@@ -947,9 +925,6 @@ exports[`Android BpkBannerAlert should render correctly with type equal to error
               Array [
                 Object {
                   "marginEnd": 8,
-                  "marginVertical": 16,
-                  "paddingBottom": 0.8,
-                  "paddingTop": 3,
                 },
                 Object {
                   "color": "rgb(255, 84, 82)",
@@ -974,7 +949,6 @@ exports[`Android BpkBannerAlert should render correctly with type equal to error
               },
               Object {
                 "flex": 1,
-                "marginVertical": 16,
               },
             ]
           }
@@ -1016,8 +990,11 @@ exports[`Android BpkBannerAlert should render correctly with type equal to neutr
       <View
         style={
           Object {
+            "alignItems": "center",
             "flexDirection": "row",
+            "minHeight": 48,
             "paddingHorizontal": 24,
+            "paddingVertical": 8,
           }
         }
       >
@@ -1039,9 +1016,6 @@ exports[`Android BpkBannerAlert should render correctly with type equal to neutr
               Array [
                 Object {
                   "marginEnd": 8,
-                  "marginVertical": 16,
-                  "paddingBottom": 0.8,
-                  "paddingTop": 3,
                 },
                 Object {
                   "color": "rgb(129, 123, 143)",
@@ -1066,7 +1040,6 @@ exports[`Android BpkBannerAlert should render correctly with type equal to neutr
               },
               Object {
                 "flex": 1,
-                "marginVertical": 16,
               },
             ]
           }
@@ -1108,8 +1081,11 @@ exports[`Android BpkBannerAlert should render correctly with type equal to succe
       <View
         style={
           Object {
+            "alignItems": "center",
             "flexDirection": "row",
+            "minHeight": 48,
             "paddingHorizontal": 24,
+            "paddingVertical": 8,
           }
         }
       >
@@ -1131,9 +1107,6 @@ exports[`Android BpkBannerAlert should render correctly with type equal to succe
               Array [
                 Object {
                   "marginEnd": 8,
-                  "marginVertical": 16,
-                  "paddingBottom": 0.8,
-                  "paddingTop": 3,
                 },
                 Object {
                   "color": "rgb(0, 215, 117)",
@@ -1158,7 +1131,6 @@ exports[`Android BpkBannerAlert should render correctly with type equal to succe
               },
               Object {
                 "flex": 1,
-                "marginVertical": 16,
               },
             ]
           }
@@ -1200,8 +1172,11 @@ exports[`Android BpkBannerAlert should render correctly with type equal to warn 
       <View
         style={
           Object {
+            "alignItems": "center",
             "flexDirection": "row",
+            "minHeight": 48,
             "paddingHorizontal": 24,
+            "paddingVertical": 8,
           }
         }
       >
@@ -1223,9 +1198,6 @@ exports[`Android BpkBannerAlert should render correctly with type equal to warn 
               Array [
                 Object {
                   "marginEnd": 8,
-                  "marginVertical": 16,
-                  "paddingBottom": 0.8,
-                  "paddingTop": 3,
                 },
                 Object {
                   "color": "rgb(255, 187, 0)",
@@ -1250,7 +1222,6 @@ exports[`Android BpkBannerAlert should render correctly with type equal to warn 
               },
               Object {
                 "flex": 1,
-                "marginVertical": 16,
               },
             ]
           }
