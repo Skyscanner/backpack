@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import commonTests from './BpkSectionListItem-test.common';
+import commonTests from './BpkFlatListItemSeparator-test.common';
 
 jest.mock('react-native', () => {
   const reactNative = jest.requireActual('react-native');
@@ -40,14 +40,6 @@ jest.mock(
 
 jest.mock('bpk-tokens/tokens/base.react.native', () =>
   jest.requireActual('bpk-tokens/tokens/base.react.native.android.js'),
-);
-
-jest.mock('./BpkRadioIcon.android', () =>
-  jest.requireActual('./BpkRadioIcon.android.js'),
-);
-
-jest.mock('./BpkSectionListItem', () =>
-  jest.requireActual('./BpkSectionListItem.android.js'),
 );
 
 describe('Android', () => {

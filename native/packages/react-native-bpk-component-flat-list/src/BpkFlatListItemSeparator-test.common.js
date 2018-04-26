@@ -17,34 +17,14 @@
  */
 
 import React from 'react';
-import { Image } from 'react-native';
 import renderer from 'react-test-renderer';
-import BpkListItemImage from './BpkListItemImage';
+import BpkFlatListItemSeparator from './BpkFlatListItemSeparator';
 
 const commonTests = () => {
   jest.mock('Image', () => 'Image');
-  describe('BpkListItemImage', () => {
+  describe('BpkFlatListItemSeparator', () => {
     it('should render correctly', () => {
-      const tree = renderer.create(<BpkListItemImage />).toJSON();
-      expect(tree).toMatchSnapshot();
-    });
-
-    it('should render correctly with an image', () => {
-      const tree = renderer
-        .create(<BpkListItemImage image={<Image />} />)
-        .toJSON();
-      expect(tree).toMatchSnapshot();
-    });
-
-    it('should render correctly with a custom width', () => {
-      const tree = renderer.create(<BpkListItemImage width={42} />).toJSON();
-      expect(tree).toMatchSnapshot();
-    });
-
-    it('should render correctly with a custom style', () => {
-      const tree = renderer
-        .create(<BpkListItemImage style={{ borderRadius: 10 }} />)
-        .toJSON();
+      const tree = renderer.create(<BpkFlatListItemSeparator />).toJSON();
       expect(tree).toMatchSnapshot();
     });
   });

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`iOS BpkListItem should render correctly 1`] = `
+exports[`iOS BpkFlatListItem should render correctly 1`] = `
 <View
   accessibilityComponentType="button"
   accessibilityLabel="List item"
@@ -110,7 +110,7 @@ exports[`iOS BpkListItem should render correctly 1`] = `
 </View>
 `;
 
-exports[`iOS BpkListItem should support the "image" property 1`] = `
+exports[`iOS BpkFlatListItem should support the "image" property 1`] = `
 <View
   accessibilityComponentType="button"
   accessibilityLabel="List item"
@@ -152,14 +152,9 @@ exports[`iOS BpkListItem should support the "image" property 1`] = `
     }
   >
     <Image
-      resizeMode="contain"
       style={
         Array [
           undefined,
-          Object {
-            "height": 16,
-            "width": 24,
-          },
           Object {
             "marginRight": 24,
           },
@@ -235,7 +230,7 @@ exports[`iOS BpkListItem should support the "image" property 1`] = `
 </View>
 `;
 
-exports[`iOS BpkListItem should support the "selected" property 1`] = `
+exports[`iOS BpkFlatListItem should support the "selected" property 1`] = `
 <View
   accessibilityComponentType="button"
   accessibilityLabel="List item"

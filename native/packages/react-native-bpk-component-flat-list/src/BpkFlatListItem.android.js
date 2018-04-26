@@ -25,11 +25,9 @@ import BpkTouchableNativeFeedback from 'react-native-bpk-component-touchable-nat
 import {
   spacingBase,
   colorBlue500,
-  colorGray100,
   colorGray700,
 } from 'bpk-tokens/tokens/base.react.native';
 import BpkRadioIcon from './BpkRadioIcon.android';
-import BpkListItemImage from './BpkListItemImage';
 import {
   type ListItemProps,
   LIST_ITEM_PROP_TYPES,
@@ -40,7 +38,7 @@ const ANDROID_LIST_ITEM_HEIGHT = 48;
 const ANDROID_LIST_ITEM_IMAGE_MARGIN = 32;
 
 const styles = StyleSheet.create({
-  listItem: {
+  outer: {
     flex: 1,
     flexDirection: 'row',
     padding: spacingBase,
@@ -57,27 +55,22 @@ const styles = StyleSheet.create({
     color: colorGray700,
     flex: 1,
   },
+  textSelected: {
+    color: colorBlue500,
+  },
   image: {
     marginRight: ANDROID_LIST_ITEM_IMAGE_MARGIN,
-  },
-  selected: {
-    color: colorBlue500,
-  },
-  tick: {
-    color: colorGray100,
-  },
-  tickSelected: {
-    color: colorBlue500,
   },
 });
 
 const BpkFlatListItem = (props: ListItemProps) => {
   const { image, title, selected, ...rest } = props;
 
-  const iconStyles = [styles.tick];
-  if (selected) {
-    iconStyles.push(styles.tickSelected);
-  }
+  const styledImage = image
+    ? React.cloneElement(image, {
+        style: [image.props.style, styles.image],
+      })
+    : null;
 
   return (
     <BpkTouchableNativeFeedback
@@ -87,12 +80,12 @@ const BpkFlatListItem = (props: ListItemProps) => {
       accessibilityTraits={['button']}
       {...rest}
     >
-      <View style={styles.listItem}>
+      <View style={styles.outer}>
         <View style={styles.content}>
-          {image && <BpkListItemImage image={image} style={styles.image} />}
+          {styledImage}
           <BpkText
             textStyle="base"
-            style={[styles.text, selected ? styles.selected : null]}
+            style={[styles.text, selected ? styles.textSelected : null]}
           >
             {title}
           </BpkText>

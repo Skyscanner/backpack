@@ -25,7 +25,7 @@ const onPressFn = jest.fn();
 
 const commonTests = () => {
   jest.mock('Image', () => 'Image');
-  describe('BpkListItem', () => {
+  describe('BpkFlatListItem', () => {
     it('should render correctly', () => {
       const tree = renderer
         .create(<BpkFlatListItem title="List item" onPress={onPressFn} />)

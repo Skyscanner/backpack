@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import commonTests from './BpkSectionListHeader-test.common';
+import commonTests from './BpkFlatListItemSeparator-test.common';
 
 describe('iOS', () => {
   commonTests();

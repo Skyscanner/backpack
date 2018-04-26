@@ -29,7 +29,6 @@ import {
   spacingLg,
   colorBlue600,
 } from 'bpk-tokens/tokens/base.react.native';
-import BpkListItemImage from './BpkListItemImage';
 import {
   type ListItemProps,
   LIST_ITEM_PROP_TYPES,
@@ -39,7 +38,7 @@ import {
 const IOS_CELL_HEIGHT = 44;
 
 const styles = StyleSheet.create({
-  listItem: {
+  outer: {
     flex: 1,
     flexDirection: 'row',
     paddingHorizontal: spacingBase,
@@ -56,11 +55,11 @@ const styles = StyleSheet.create({
   text: {
     flex: 1,
   },
+  textSelected: {
+    color: colorBlue600,
+  },
   image: {
     marginRight: spacingLg,
-  },
-  selected: {
-    color: colorBlue600,
   },
   tick: {
     color: colorBlue600,
@@ -78,19 +77,25 @@ const BpkFlatListItem = (props: ListItemProps) => {
     iconStyles.push(styles.tickVisible);
   }
 
+  const styledImage = image
+    ? React.cloneElement(image, {
+        style: [image.props.style, styles.image],
+      })
+    : null;
+
   return (
     <BpkTouchableOverlay
       accessibilityComponentType="button"
       accessibilityLabel={title}
       accessibilityTraits={['button']}
-      style={styles.listItem}
+      style={styles.outer}
       {...rest}
     >
       <View style={styles.content}>
-        {image && <BpkListItemImage image={image} style={styles.image} />}
+        {styledImage}
         <BpkText
           textStyle="lg"
-          style={[styles.text, selected ? styles.selected : null]}
+          style={[styles.text, selected ? styles.textSelected : null]}
         >
           {title}
         </BpkText>

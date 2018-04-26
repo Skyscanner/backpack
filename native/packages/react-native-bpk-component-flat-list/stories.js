@@ -30,6 +30,10 @@ const styles = StyleSheet.create({
   topMargin: {
     marginTop: spacingBase,
   },
+  image: {
+    height: 16,
+    width: 24,
+  },
 });
 
 const getFlagUriFromCountryCode = countryCode =>
@@ -72,7 +76,10 @@ class StatefulBpkFlatList extends React.Component<{
             selected={this.state.selectedCountry === item.id}
             image={
               this.props.showImages ? (
-                <Image source={{ uri: getFlagUriFromCountryCode(item.id) }} />
+                <Image
+                  source={{ uri: getFlagUriFromCountryCode(item.id) }}
+                  style={styles.image}
+                />
               ) : null
             }
             onPress={() => {
@@ -93,4 +100,4 @@ class StatefulBpkFlatList extends React.Component<{
 storiesOf('react-native-bpk-component-flat-list', module)
   .addDecorator(getStory => <View style={styles.topMargin}>{getStory()}</View>)
   .add('docs:default', () => <StatefulBpkFlatList />)
-  .add('docs:with-images', () => <StatefulBpkFlatList showImages />);
+  .add('With images', () => <StatefulBpkFlatList showImages />);
