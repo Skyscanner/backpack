@@ -1,6 +1,6 @@
 {
   "name": "react-native-bpk-component-button-link",
-  "version": "2.0.6",
+  "version": "3.0.0",
   "main": "index.js",
   "description": "Backpack React Native button link component.",
   "repository": {
