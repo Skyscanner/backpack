@@ -2,6 +2,15 @@
 
 [Unreleased changes](./unreleased.md).
 
+# 2018-04-26 - Native banner alerts and button links have a new default height
+
+**Breaking:**
+- react-native-bpk-component-banner-alert: 3.0.6 => 4.0.0
+  - Default height of Android banner alert has changed from 52dp to 48dp
+
+- react-native-bpk-component-button-link: 2.0.6 => 3.0.0
+  - Default height of button links on both iOS and Android is now 32pt/dp. Default height of large button links on iOS is now 36pt.
+  - Overflowing text will not wrap and instead result in ellipses.
 
 # 2018-04-25 - Added icons for identity and profile settings
 
