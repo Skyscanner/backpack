@@ -30,12 +30,10 @@ describe('BpkModalDialog', () => {
         <BpkModalDialog
           id="my-modal"
           title="Modal title"
-          onClose={jest.fn()}
           closeLabel="Close"
           dialogRef={jest.fn()}
+          onClose={jest.fn()}
           isIphone={false}
-          fullScreenOnMobile
-          fullScreen={false}
         >
           Modal content
         </BpkModalDialog>,
@@ -49,14 +47,12 @@ describe('BpkModalDialog', () => {
       .create(
         <BpkModalDialog
           id="my-modal"
-          className="my-classname"
           title="Modal title"
-          onClose={jest.fn()}
           closeLabel="Close"
           dialogRef={jest.fn()}
+          onClose={jest.fn()}
           isIphone={false}
-          fullScreenOnMobile
-          fullScreen={false}
+          className="my-classname"
         >
           Modal content
         </BpkModalDialog>,
@@ -70,15 +66,12 @@ describe('BpkModalDialog', () => {
       .create(
         <BpkModalDialog
           id="my-modal"
-          className="my-classname"
-          wide
           title="Modal title"
-          onClose={jest.fn()}
           closeLabel="Close"
           dialogRef={jest.fn()}
+          onClose={jest.fn()}
           isIphone={false}
-          fullScreenOnMobile
-          fullScreen={false}
+          wide
         >
           Modal content
         </BpkModalDialog>,
@@ -92,15 +85,11 @@ describe('BpkModalDialog', () => {
       .create(
         <BpkModalDialog
           id="my-modal"
-          className="my-classname"
-          closeText="Dismiss"
           title="Modal title"
-          onClose={jest.fn()}
-          closeLabel="Close"
           dialogRef={jest.fn()}
+          onClose={jest.fn()}
           isIphone={false}
-          fullScreenOnMobile
-          fullScreen={false}
+          closeText="Dismiss"
         >
           Modal content
         </BpkModalDialog>,
@@ -115,12 +104,10 @@ describe('BpkModalDialog', () => {
         <BpkModalDialog
           id="my-modal"
           title="Modal title"
-          onClose={jest.fn()}
           closeLabel="Close"
           dialogRef={jest.fn()}
+          onClose={jest.fn()}
           isIphone
-          fullScreenOnMobile
-          fullScreen={false}
         >
           Modal content
         </BpkModalDialog>,
@@ -135,12 +122,11 @@ describe('BpkModalDialog', () => {
         <BpkModalDialog
           id="my-modal"
           title="Modal title"
-          onClose={jest.fn()}
           closeLabel="Close"
           dialogRef={jest.fn()}
-          fullScreenOnMobile={false}
-          fullScreen={false}
+          onClose={jest.fn()}
           isIphone={false}
+          fullScreenOnMobile={false}
         >
           Modal content
         </BpkModalDialog>,
@@ -155,12 +141,49 @@ describe('BpkModalDialog', () => {
         <BpkModalDialog
           id="my-modal"
           title="Modal title"
-          onClose={jest.fn()}
           closeLabel="Close"
           dialogRef={jest.fn()}
-          fullScreenOnMobile={false}
-          fullScreen
+          onClose={jest.fn()}
           isIphone={false}
+          fullScreen
+        >
+          Modal content
+        </BpkModalDialog>,
+      )
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('should render correctly with no padding', () => {
+    const tree = renderer
+      .create(
+        <BpkModalDialog
+          id="my-modal"
+          title="Modal title"
+          closeLabel="Close"
+          dialogRef={jest.fn()}
+          onClose={jest.fn()}
+          isIphone={false}
+          padded={false}
+        >
+          Modal content
+        </BpkModalDialog>,
+      )
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('should render correctly with a custom content classname', () => {
+    const tree = renderer
+      .create(
+        <BpkModalDialog
+          id="my-modal"
+          title="Modal title"
+          closeLabel="Close"
+          dialogRef={jest.fn()}
+          onClose={jest.fn()}
+          isIphone={false}
+          contentClassName="my-classname"
         >
           Modal content
         </BpkModalDialog>,

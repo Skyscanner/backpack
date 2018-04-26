@@ -29,10 +29,8 @@
     }
   }
 
-  // HACK: this should be exposed as a modal prop
-  &__modal > div {
+  &__modal-content {
     display: flex;
-    padding: 0;
     flex-direction: column;
   }
 

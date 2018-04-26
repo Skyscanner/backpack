@@ -38,9 +38,11 @@ export type Props = {
   showHeader: boolean,
   fullScreenOnMobile: boolean,
   fullScreen: boolean,
+  padded: boolean,
   dialogRef: (ref: ?HTMLElement) => void,
   onClose: ?(event: SyntheticEvent<>) => void,
   className: ?string,
+  contentClassName: ?string,
   title: ?string,
   closeLabel: ?string,
   closeText: ?string,
@@ -48,6 +50,7 @@ export type Props = {
 
 const BpkModalDialog = (props: Props) => {
   const classNames = [getClassName('bpk-modal')];
+  const contentClassNames = [getClassName('bpk-modal__content')];
 
   if (props.wide) {
     classNames.push(getClassName('bpk-modal--wide'));
@@ -60,6 +63,14 @@ const BpkModalDialog = (props: Props) => {
     classNames.push(getClassName('bpk-modal--full-screen'));
   } else if (props.fullScreenOnMobile) {
     classNames.push(getClassName('bpk-modal--full-screen-mobile'));
+  }
+
+  if (props.padded) {
+    contentClassNames.push(getClassName('bpk-modal__content--padded'));
+  }
+
+  if (props.contentClassName) {
+    contentClassNames.push(props.contentClassName);
   }
 
   const headingId = `bpk-modal-heading-${props.id}`;
@@ -98,9 +109,7 @@ const BpkModalDialog = (props: Props) => {
             )}
           </header>
         )}
-        <div className={getClassName('bpk-modal__content')}>
-          {props.children}
-        </div>
+        <div className={contentClassNames.join(' ')}>{props.children}</div>
       </section>
     </TransitionInitialMount>
   );
@@ -115,24 +124,28 @@ BpkModalDialog.propTypes = {
   title: titlePropType,
   onClose: onClosePropType,
   className: PropTypes.string,
+  contentClassName: PropTypes.string,
   closeLabel: PropTypes.string,
   closeText: PropTypes.string,
   wide: PropTypes.bool,
   showHeader: PropTypes.bool,
   fullScreenOnMobile: PropTypes.bool,
   fullScreen: PropTypes.bool,
+  padded: PropTypes.bool,
 };
 
 BpkModalDialog.defaultProps = {
   title: null,
   onClose: null,
   className: null,
+  contentClassName: null,
   closeLabel: null,
   closeText: null,
   wide: false,
   showHeader: true,
   fullScreenOnMobile: true,
   fullScreen: false,
+  padded: true,
 };
 
 export default BpkModalDialog;

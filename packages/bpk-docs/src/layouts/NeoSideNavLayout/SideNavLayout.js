@@ -106,6 +106,10 @@ export default class SideNavLayout extends Component<Props, State> {
                 }
                 renderTarget={() => document.getElementById('portal-target')}
                 className={getClassName('bpkdocs-side-nav-layout__modal')}
+                contentClassName={getClassName(
+                  'bpkdocs-side-nav-layout__modal-content',
+                )}
+                padded={false}
               >
                 {sidebar}
               </BpkModal>

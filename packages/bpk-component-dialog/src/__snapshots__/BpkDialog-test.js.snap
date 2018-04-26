@@ -21,7 +21,7 @@ exports[`BpkDialog should render correctly in the given target if renderTarget i
         tabindex="-1"
       >
         <div
-          class="bpk-modal__content"
+          class="bpk-modal__content bpk-modal__content--padded"
         >
           <button
             aria-label="Close"
@@ -72,7 +72,7 @@ exports[`BpkDialog should render correctly when it is not dismissible 2`] = `
         tabindex="-1"
       >
         <div
-          class="bpk-modal__content"
+          class="bpk-modal__content bpk-modal__content--padded"
         >
           <!-- react-text: 5 -->
           Dialog content inside a custom target
