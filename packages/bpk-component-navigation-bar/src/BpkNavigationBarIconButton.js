@@ -31,7 +31,7 @@ const getClassName = cssModules(STYLES);
 export type Props = {
   icon: ComponentType<any>,
   label: string,
-  onClick: (event: SyntheticEvent<>) => void,
+  onClick: (event: SyntheticEvent<>) => mixed,
   className: ?string,
 };
 
