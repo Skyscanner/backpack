@@ -24,31 +24,16 @@ import ANDROID_TOKENS from 'bpk-tokens/tokens/base.raw.android.json';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
 import { getPlatformTokens } from './../../helpers/tokens-helper';
 
-const components = [
-  {
-    id: 'Box-Shadows',
-    title: 'Box Shadows',
-    tokenMap: getPlatformTokens(
+const ShadowsPage = () => (
+  <DocsPageBuilder
+    title="Shadows"
+    tokenMap={getPlatformTokens(
       TOKENS,
       IOS_TOKENS,
       ANDROID_TOKENS,
-      ({ category }) => category === 'box-shadows',
-    ),
-  },
-  {
-    id: 'Elevation',
-    title: 'Elevation',
-    tokenMap: getPlatformTokens(
-      TOKENS,
-      IOS_TOKENS,
-      ANDROID_TOKENS,
-      ({ category }) => category === 'elevation',
-    ),
-  },
-];
-
-const ShaddowsPage = () => (
-  <DocsPageBuilder title="Shaddows" components={components} />
+      ({ category }) => ['box-shadows', 'elevation'].indexOf(category) !== -1,
+    )}
+  />
 );
 
-export default ShaddowsPage;
+export default ShadowsPage;

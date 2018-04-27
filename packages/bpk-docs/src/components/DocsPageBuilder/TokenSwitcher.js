@@ -97,7 +97,7 @@ class TokenSwitcher extends Component {
           <BpkTableBody>
             {!keys.length && (
               <BpkTableRow key="notAvailable">
-                <BpkTableCell>Unvailable</BpkTableCell>
+                <BpkTableCell colSpan="2">N/A</BpkTableCell>
               </BpkTableRow>
             )}
             {!!keys.length &&
