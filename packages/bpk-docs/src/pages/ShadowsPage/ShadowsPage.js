@@ -24,16 +24,66 @@ import ANDROID_TOKENS from 'bpk-tokens/tokens/base.raw.android.json';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
 import { getPlatformTokens } from './../../helpers/tokens-helper';
 
-const ShadowsPage = () => (
-  <DocsPageBuilder
-    title="Shadows"
-    tokenMap={getPlatformTokens(
+// const ShadowsPage = () => (
+//   <DocsPageBuilder
+//     title="Shadows"
+//     tokenMap={getPlatformTokens(
+//       TOKENS,
+//       IOS_TOKENS,
+//       ANDROID_TOKENS,
+//       ({ category }) => ['box-shadows', 'elevation'].indexOf(category) !== -1,
+//     )}
+//   />
+// );
+//
+// export default ShadowsPage;
+
+const components = [
+  // {
+  //   id: 'font-families',
+  //   title: 'Font families',
+  //   tokenMap: getPlatformTokens(
+  //     TOKENS,
+  //     IOS_TOKENS,
+  //     ANDROID_TOKENS,
+  //     ({ name }) => name === 'FONT_FAMILY_BASE',
+  //   ),
+  // },
+  // {
+  //   id: 'font-sizes',
+  //   title: 'Font sizes',
+  //   tokenMap: getPlatformTokens(
+  //     TOKENS,
+  //     IOS_TOKENS,
+  //     ANDROID_TOKENS,
+  //     ({ name, category }) =>
+  //       category === 'typesettings' && name.indexOf('FONT_SIZE') === 0,
+  //   ),
+  // },
+  {
+    id: 'Box-Shadows',
+    title: 'Box Shadows',
+    tokenMap: getPlatformTokens(
       TOKENS,
       IOS_TOKENS,
       ANDROID_TOKENS,
-      ({ category }) => ['box-shadows', 'elevation'].indexOf(category) !== -1,
-    )}
-  />
+      ({ category }) => category === 'box-shadows',
+    ),
+  },
+  {
+    id: 'Elevation',
+    title: 'Elevation',
+    tokenMap: getPlatformTokens(
+      TOKENS,
+      IOS_TOKENS,
+      ANDROID_TOKENS,
+      ({ category }) => category === 'elevation',
+    ),
+  },
+];
+
+const ShaddowsPage = () => (
+  <DocsPageBuilder title="Shaddows" components={components} />
 );
 
-export default ShadowsPage;
+export default ShaddowsPage;

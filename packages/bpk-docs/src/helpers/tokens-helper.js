@@ -67,13 +67,46 @@ export const getTokenValue = (token, platform) => {
   return value || '-';
 };
 
-export const getTokens = (tokens, keys = null) =>
-  _.chain(keys || Object.keys(tokens))
-    .reduce((acc, key) => {
-      if (!tokens[key]) return acc;
-      acc[key] = tokens[key];
-      return acc;
-    }, {})
+export const getTokens = (tokens, keys = null) => {
+  const reducedTokens = (keys || Object.keys(tokens)).reduce((acc, key) => {
+    if (!tokens[key]) return acc;
+    acc[key] = tokens[key];
+    return acc;
+  }, {});
+
+  // If all the tokens match our size naming convention then we can
+  // order based on their name. Otherwise we should order on value
+  if (
+    Object.keys(reducedTokens).length > 0 &&
+    Object.keys(reducedTokens).every(x =>
+      Boolean(x.match(/.*_(XXS|XS|SM|BASE|LG|XL|XXL).*/i)),
+    )
+  ) {
+    return _.chain(reducedTokens)
+      .sortBy(token => {
+        if (`${token.name}`.includes('_XXS')) {
+          return 0;
+        } else if (`${token.name}`.includes('_XS')) {
+          return 1;
+        } else if (`${token.name}`.includes('_SM')) {
+          return 2;
+        } else if (`${token.name}`.includes('_MD')) {
+          return 3;
+        } else if (`${token.name}`.includes('_BASE')) {
+          return 4;
+        } else if (`${token.name}`.includes('_LG')) {
+          return 5;
+        } else if (`${token.name}`.includes('_XL')) {
+          return 6;
+        } else if (`${token.name}`.includes('_XXL')) {
+          return 7;
+        }
+        return 0;
+      })
+      .keyBy('name')
+      .value();
+  }
+  return _.chain(reducedTokens)
     .sortBy(token => {
       const numericMatch = `${token.value}`.match(/([0-9]*[.]?[0-9]+)/g);
       if (!numericMatch) {
@@ -83,6 +116,7 @@ export const getTokens = (tokens, keys = null) =>
     })
     .keyBy('name')
     .value();
+};
 
 export const getPlatformTokens = (
   webTokens,
