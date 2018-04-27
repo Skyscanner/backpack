@@ -93,6 +93,11 @@ const componentsLinks = [
       { id: 'DRAWER', route: routes.DRAWER, children: 'Drawer' },
       { id: 'PAGINATION', route: routes.PAGINATION, children: 'Pagination' },
       { id: 'DIALOGS', route: routes.DIALOGS, children: 'Dialogs' },
+      {
+        id: 'NAVIGATION_BAR',
+        route: routes.NAVIGATION_BAR,
+        children: 'Navigation Bar',
+      },
       { id: 'CAROUSELS', route: null, children: 'Carousel' },
       { id: 'TOASTS', route: null, children: 'Toast' },
       { id: 'VERTICAL_NAV', route: null, children: 'Vertical navigation' },
