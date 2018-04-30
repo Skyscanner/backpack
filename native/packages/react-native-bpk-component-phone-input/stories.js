@@ -28,7 +28,6 @@ import CenterDecorator from '../../storybook/CenterDecorator';
 
 import { BpkDialingCodeList } from './index';
 import { type Id, type Code } from './src/common-types';
-import BpkDialingCodeListItem from './src/BpkDialingCodeListItem';
 import BpkPhoneNumberInput, { type Props } from './src/BpkPhoneNumberInput';
 
 const styles = StyleSheet.create({
@@ -109,32 +108,8 @@ const codes = [
   { id: 'WK', dialingCode: '+99', name: 'Wakanda' },
 ];
 
-const flags = {
-  AU:
-    'https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Flag_of_Australia_%28converted%29.svg/1280px-Flag_of_Australia_%28converted%29.svg.png',
-  CA:
-    'https://upload.wikimedia.org/wikipedia/en/thumb/c/cf/Flag_of_Canada.svg/1000px-Flag_of_Canada.svg.png',
-  EG:
-    'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Flag_of_Egypt.svg/900px-Flag_of_Egypt.svg.png',
-  BE:
-    'https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Flag_of_Belgium_%28civil%29.svg/450px-Flag_of_Belgium_%28civil%29.svg.png',
-  DZ:
-    'https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Flag_of_Algeria.svg/900px-Flag_of_Algeria.svg.png',
-  CD:
-    'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Flag_of_the_Democratic_Republic_of_the_Congo.svg/800px-Flag_of_the_Democratic_Republic_of_the_Congo.svg.png',
-  IS:
-    'https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Flag_of_Iceland.svg/800px-Flag_of_Iceland.svg.png',
-  IT:
-    'https://upload.wikimedia.org/wikipedia/en/thumb/0/03/Flag_of_Italy.svg/800px-Flag_of_Italy.svg.png',
-  AD:
-    'https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Flag_of_Andorra.svg/800px-Flag_of_Andorra.svg.png',
-  JP:
-    'https://upload.wikimedia.org/wikipedia/en/thumb/9/9e/Flag_of_Japan.svg/900px-Flag_of_Japan.svg.png',
-  SE:
-    'https://upload.wikimedia.org/wikipedia/en/thumb/4/4c/Flag_of_Sweden.svg/800px-Flag_of_Sweden.svg.png',
-  GB:
-    'https://upload.wikimedia.org/wikipedia/en/thumb/a/ae/Flag_of_the_United_Kingdom.svg/800px-Flag_of_the_United_Kingdom.svg.png',
-};
+const getFlagUriFromCountryCode = countryCode =>
+  `https://images.skyscnr.com/images/country/flag/header/${countryCode.toLowerCase()}.png`;
 
 // eslint-disable-next-line react/no-multi-comp
 class StatefulBpkDialingCodeList extends React.Component<
@@ -157,9 +132,9 @@ class StatefulBpkDialingCodeList extends React.Component<
           action(`${item.name} selected`);
           this.setState({ selectedId: item.id });
         }}
-        renderFlag={item =>
-          flags[item.id] ? <Image source={{ uri: flags[item.id] }} /> : null
-        }
+        renderFlag={item => (
+          <Image source={{ uri: getFlagUriFromCountryCode(item.id) }} />
+        )}
       />
     );
   }
@@ -202,8 +177,9 @@ class FullyIntegrated extends React.Component<
     }));
   };
 
-  renderFlag = item =>
-    flags[item.id] ? <Image source={{ uri: flags[item.id] }} /> : null;
+  renderFlag = item => (
+    <Image source={{ uri: getFlagUriFromCountryCode(item.id) }} />
+  );
 
   render() {
     return (
@@ -249,57 +225,7 @@ storiesOf(
 storiesOf(
   'react-native-bpk-component-phone-input/BpkDialingCodeListItem',
   module,
-)
-  .add('Standard', () => (
-    <BpkDialingCodeListItem
-      id="44"
-      dialingCode="44"
-      name="United Kingdom"
-      onPress={action('Standard BpkDialingCodeListItem pressed.')}
-    />
-  ))
-  .add('Selected', () => (
-    <BpkDialingCodeListItem
-      id="44"
-      dialingCode="44"
-      name="United Kingdom"
-      onPress={action('Standard BpkDialingCodeListItem pressed.')}
-      selected
-    />
-  ))
-  .add('With flag', () => (
-    <BpkDialingCodeListItem
-      id="44"
-      dialingCode="44"
-      name="United Kingdom"
-      onPress={action('Standard BpkDialingCodeListItem pressed.')}
-      flag={
-        <Image
-          source={{
-            uri:
-              'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Flag_of_the_Democratic_Republic_of_the_Congo.svg/800px-Flag_of_the_Democratic_Republic_of_the_Congo.svg.png',
-          }}
-        />
-      }
-    />
-  ))
-  .add('Selected with flag', () => (
-    <BpkDialingCodeListItem
-      id="44"
-      dialingCode="44"
-      name="United Kingdom"
-      onPress={action('Standard BpkDialingCodeListItem pressed.')}
-      selected
-      flag={
-        <Image
-          source={{
-            uri:
-              'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Flag_of_the_Democratic_Republic_of_the_Congo.svg/800px-Flag_of_the_Democratic_Republic_of_the_Congo.svg.png',
-          }}
-        />
-      }
-    />
-  ));
+);
 
 storiesOf('react-native-bpk-component-phone-input/BpkPhoneNumberInput', module)
   .addDecorator(CenterDecorator)
@@ -310,7 +236,9 @@ storiesOf('react-native-bpk-component-phone-input/BpkPhoneNumberInput', module)
       initialValue=""
       keyboardType="phone-pad"
       dialingCode={{ dialingCode: '+44', id: 'uk', name: 'United Kingdom' }}
-      renderFlag={() => <Image source={{ uri: flags.AU }} />}
+      renderFlag={() => (
+        <Image source={{ uri: getFlagUriFromCountryCode('AU') }} />
+      )}
       onDialingCodePress={action('Dialing code pressed')}
     />
   ))
@@ -320,7 +248,9 @@ storiesOf('react-native-bpk-component-phone-input/BpkPhoneNumberInput', module)
       initialValue=""
       keyboardType="phone-pad"
       dialingCode={{ dialingCode: '+44', id: 'uk', name: 'United Kingdom' }}
-      renderFlag={() => <Image source={{ uri: flags.AU }} />}
+      renderFlag={() => (
+        <Image source={{ uri: getFlagUriFromCountryCode('AU') }} />
+      )}
       editable={false}
       onDialingCodePress={action('Dialing code pressed')}
     />
