@@ -20,7 +20,6 @@ import React from 'react';
 import { Image, Platform, StyleSheet, View } from 'react-native';
 import PropTypes from 'prop-types';
 import { storiesOf } from '@storybook/react-native';
-import { spacingBase } from 'bpk-tokens/tokens/base.react.native';
 import BpkFlatList, {
   BpkFlatListItem,
   BpkFlatListItemSeparator,
@@ -28,7 +27,7 @@ import BpkFlatList, {
 
 const styles = StyleSheet.create({
   topMargin: {
-    marginTop: spacingBase,
+    marginTop: 20,
   },
   image: {
     height: 16,
@@ -100,4 +99,4 @@ class StatefulBpkFlatList extends React.Component<{
 storiesOf('react-native-bpk-component-flat-list', module)
   .addDecorator(getStory => <View style={styles.topMargin}>{getStory()}</View>)
   .add('docs:default', () => <StatefulBpkFlatList />)
-  .add('With images', () => <StatefulBpkFlatList showImages />);
+  .add('docs:with-images', () => <StatefulBpkFlatList showImages />);

@@ -98,6 +98,7 @@ import NativeBadgePage from './../pages/NativeBadgePage';
 import NativeButtonPage from './../pages/NativeButtonPage';
 import NativeButtonLinkPage from './../pages/NativeButtonLinkPage';
 import NativeCardsPage from './../pages/NativeCardsPage';
+import NativeFlatListPage from './../pages/NativeFlatListPage';
 import NativeHorizontalNavPage from './../pages/NativeHorizontalNavPage';
 import NativeIconsPage from './../pages/NativeIconsPage';
 import NativeInputPage from './../pages/NativeTextInputPage';
@@ -108,6 +109,7 @@ import NativePanelsPage from './../pages/NativePanelsPage';
 import NativePhoneInputPage from './../pages/NativePhoneInputPage';
 import NativePickerPage from './../pages/NativePickerPage';
 import NativeProgressPage from './../pages/NativeProgressPage';
+import NativeSectionListPage from './../pages/NativeSectionListPage';
 import NativeSpinnerPage from './../pages/NativeSpinnerPage';
 import NativeStarRatingPage from './../pages/NativeStarRatingPage';
 import NativeSwitchPage from './../pages/NativeSwitchPage';
@@ -297,6 +299,7 @@ const Routes = (
         <Route path={ROUTES.NEO_DRAWER} component={DrawerPage} />
         <Route path={ROUTES.NEO_DIALOG} component={DialogsPage} />
         <Route path={ROUTES.NEO_INPUT} component={NativeInputPage} />
+        <Route path={ROUTES.NEO_FLAT_LIST} component={NativeFlatListPage} />
         <Route
           path={ROUTES.NEO_NAVIGATION_BAR}
           component={NativeNavigationBarPage}
@@ -309,6 +312,10 @@ const Routes = (
         <Route path={ROUTES.NEO_PHONE_INPUT} component={NativePhoneInputPage} />
         <Route path={ROUTES.NEO_PICKER} component={NativePickerPage} />
         <Route path={ROUTES.NEO_SWITCH} component={NativeSwitchPage} />
+        <Route
+          path={ROUTES.NEO_SECTION_LIST}
+          component={NativeSectionListPage}
+        />
         <Route
           path={ROUTES.NEO_TOUCHABLE_OVERLAY}
           component={NativeTouchableOverlayPage}
@@ -338,6 +345,10 @@ const Routes = (
           />
           <Route path={ROUTES.NATIVE_CARDS} component={NativeCardsPage} />
           <Route
+            path={ROUTES.NATIVE_FLAT_LIST}
+            component={NativeFlatListPage}
+          />
+          <Route
             path={ROUTES.NATIVE_HORIZONTAL_NAV}
             component={NativeHorizontalNavPage}
           />
@@ -359,6 +370,10 @@ const Routes = (
           />
           <Route path={ROUTES.NATIVE_PICKER} component={NativePickerPage} />
           <Route path={ROUTES.NATIVE_PROGRESS} component={NativeProgressPage} />
+          <Route
+            path={ROUTES.NATIVE_SECTION_LIST}
+            component={NativeSectionListPage}
+          />
           <Route path={ROUTES.NATIVE_SPINNER} component={NativeSpinnerPage} />
           <Route
             path={ROUTES.NATIVE_STAR_RATING}
