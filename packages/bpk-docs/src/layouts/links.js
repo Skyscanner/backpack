@@ -130,6 +130,11 @@ const componentsLinks = [
       },
       { id: 'NATIVE_CARDS', route: routes.NATIVE_CARDS, children: 'Cards' },
       {
+        id: 'NATIVE_FLAT_LIST',
+        route: routes.NATIVE_FLAT_LIST,
+        children: 'FlatList',
+      },
+      {
         id: 'NATIVE_HORIZONTAL_NAV',
         route: routes.NATIVE_HORIZONTAL_NAV,
         children: 'Horizontal navigation',
@@ -171,6 +176,11 @@ const componentsLinks = [
         id: 'NATIVE_PROGRESS',
         route: routes.NATIVE_PROGRESS,
         children: 'Progress',
+      },
+      {
+        id: 'NATIVE_SECTION_LIST',
+        route: routes.NATIVE_SECTION_LIST,
+        children: 'SectionList',
       },
       {
         id: 'NATIVE_SPINNER',
@@ -319,6 +329,11 @@ const neoComponentsLinks = [
 
       // Native components.
       {
+        id: 'NATIVE_FLAT_LIST',
+        route: routes.NEO_FLAT_LIST,
+        children: 'FlatList',
+      },
+      {
         id: 'NATIVE_INPUT',
         route: routes.NEO_TEXT_INPUT,
         children: 'Text input',
@@ -343,6 +358,11 @@ const neoComponentsLinks = [
         id: 'NATIVE_PICKER',
         route: routes.NEO_PICKER,
         children: 'Picker',
+      },
+      {
+        id: 'NATIVE_SECTION_LIST',
+        route: routes.NEO_SECTION_LIST,
+        children: 'SectionList',
       },
       {
         id: 'NATIVE_SWITCH',
