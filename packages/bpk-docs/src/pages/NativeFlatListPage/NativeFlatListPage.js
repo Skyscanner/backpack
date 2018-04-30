@@ -41,7 +41,7 @@ const components = [
         width: 750,
         height: 1334,
         src: `/${iosScreenshotDefault}`,
-        altText: 'iOS Default FlatList Component',
+        altText: 'iOS Default Flat List Component',
         subText: '(iPhone 8 Simulator)',
       },
       {
@@ -49,7 +49,7 @@ const components = [
         width: 1080,
         height: 1920,
         src: `/${androidScreenshotDefault}`,
-        altText: 'Android Default FlatList Component',
+        altText: 'Android Default Flat List Component',
         subText: '(Google Pixel Emulator)',
       },
     ],
@@ -64,7 +64,7 @@ const components = [
         width: 750,
         height: 1334,
         src: `/${iosScreenshotWithImages}`,
-        altText: 'iOS FlatList Component With Images',
+        altText: 'iOS Flat List Component With Images',
         subText: '(iPhone 8 Simulator)',
       },
       {
@@ -72,7 +72,7 @@ const components = [
         width: 1080,
         height: 1920,
         src: `/${androidScreenshotWithImages}`,
-        altText: 'Android FlatList Component With Images',
+        altText: 'Android Flat List Component With Images',
         subText: '(Google Pixel Emulator)',
       },
     ],
@@ -81,10 +81,10 @@ const components = [
 
 const NativeFlatListPage = ({ ...rest }) => (
   <DocsPageBuilder
-    title="FlatList"
+    title="Flat List"
     blurb={[
       <Paragraph>
-        FlatList can be used for lists. It&#39;s a wrapper around React
+        Flat List can be used for lists. It&#39;s a wrapper around React
         Native&#39;s{' '}
         <BpkLink href={REACT_NATIVE_FLAT_LIST_URI}>FlatList component</BpkLink>,
         therefore it supports all the same behaviours and properties.

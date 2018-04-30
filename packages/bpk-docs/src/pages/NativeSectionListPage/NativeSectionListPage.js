@@ -41,7 +41,7 @@ const components = [
         width: 750,
         height: 1334,
         src: `/${iosScreenshotDefault}`,
-        altText: 'iOS Default SectionList Component',
+        altText: 'iOS Default Section List Component',
         subText: '(iPhone 8 Simulator)',
       },
       {
@@ -49,7 +49,7 @@ const components = [
         width: 1080,
         height: 1920,
         src: `/${androidScreenshotDefault}`,
-        altText: 'Android Default SectionList Component',
+        altText: 'Android Default Section List Component',
         subText: '(Google Pixel Emulator)',
       },
     ],
@@ -64,7 +64,7 @@ const components = [
         width: 750,
         height: 1334,
         src: `/${iosScreenshotWithImages}`,
-        altText: 'iOS SectionList Component With Images',
+        altText: 'iOS Section List Component With Images',
         subText: '(iPhone 8 Simulator)',
       },
       {
@@ -72,7 +72,7 @@ const components = [
         width: 1080,
         height: 1920,
         src: `/${androidScreenshotWithImages}`,
-        altText: 'Android SectionList Component With Images',
+        altText: 'Android Section List Component With Images',
         subText: '(Google Pixel Emulator)',
       },
     ],
@@ -81,10 +81,10 @@ const components = [
 
 const NativeSectionListPage = ({ ...rest }) => (
   <DocsPageBuilder
-    title="SectionList"
+    title="Section List"
     blurb={[
       <Paragraph>
-        SectionList can be used for rendering sectioned lists. It&#39;s a
+        Section List can be used for rendering sectioned lists. It&#39;s a
         wrapper around React Native&#39;s{' '}
         <BpkLink href={REACT_NATIVE_SECTION_LIST_URI}>
           SectionList component
