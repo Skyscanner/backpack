@@ -16,11 +16,15 @@
  * limitations under the License.
  */
 
-export default (styles = {}) => (...classNames) =>
-  classNames.reduce((className, currentClass) => {
-    if (currentClass && typeof currentClass === 'string') {
-      const realName = styles[currentClass] || currentClass;
-      return className ? `${className} ${realName}` : realName;
-    }
-    return className;
-  }, '');
+/* @flow */
+
+import BpkNavigationBar, {
+  type Props as BpkNavigationBarProps,
+} from './src/BpkNavigationBar';
+import BpkNavigationBarIconButton, {
+  type Props as BpkNavigationBarIconButtonProps,
+} from './src/BpkNavigationBarIconButton';
+
+export type { BpkNavigationBarProps, BpkNavigationBarIconButtonProps };
+export { BpkNavigationBarIconButton };
+export default BpkNavigationBar;

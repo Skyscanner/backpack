@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BpkNavigationIconButton should render correctly 1`] = `
+<button
+  aria-label="test"
+  className="bpk-close-button some-class"
+  onClick={[Function]}
+  title="test"
+  type="button"
+>
+  <span
+    className="bpk-close-button__icon"
+  />
+</button>
+`;
