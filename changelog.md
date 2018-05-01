@@ -2,6 +2,21 @@
 
 [Unreleased changes](./unreleased.md).
 
+# 2018-05-01
+
+**Added:**
+- react-native-bpk-component-flat-list: 1.0.0
+  - Introducing the React Native FlatList component, see: https://backpack.github.io/components/native/flat-list
+- react-native-bpk-component-section-list: 1.0.0
+  - Introducing the React Native SectionList component, see: https://backpack.github.io/components/native/section-list
+
+- bpk-component-navigation-bar: 1.0.0
+  - Introducing the web navigation bar, see: https://backpack.github.io/components/web/navigation-bar
+
+- bpk-component-modal: 1.6.20 => 1.7.0
+  - Ability to remove padding from inner content e.g. `padded={false}`.
+  - Ability to add a custom class name to inner content e.g. `contentClassName="my-custom-class"`.
+
 # 2018-04-26 - Native banner alerts and button links have a new default height
 
 **Breaking:**
