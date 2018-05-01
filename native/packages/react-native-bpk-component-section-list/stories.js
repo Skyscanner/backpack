@@ -93,11 +93,15 @@ class StatefulBpkSectionList extends React.Component<{
 
   constructor() {
     super();
+    this.itemPressCallbacks = {};
     this.state = { selectedAirport: 'GLA' };
   }
 
-  onItemPress = item => {
-    this.setState({ selectedAirport: item.id });
+  getOnItemPressCallback = id => {
+    this.itemPressCallbacks[id] =
+      this.itemPressCallbacks[id] ||
+      (() => this.setState({ selectedAirport: id }));
+    return this.itemPressCallbacks[id];
   };
 
   getData = () => {
@@ -126,7 +130,7 @@ class StatefulBpkSectionList extends React.Component<{
           />
         ) : null
       }
-      onPress={() => this.onItemPress(item)}
+      onPress={this.getOnItemPressCallback(item.id)}
     />
   );
 

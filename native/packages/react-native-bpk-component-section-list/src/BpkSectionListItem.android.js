@@ -63,18 +63,9 @@ const styles = StyleSheet.create({
   },
 });
 
-class BpkSectionListItem extends React.Component<ListItemProps> {
+class BpkSectionListItem extends React.PureComponent<ListItemProps> {
   static propTypes = LIST_ITEM_PROP_TYPES;
   static defaultProps = LIST_ITEM_DEFAULT_PROPS;
-
-  // Compare only primitive props (not onPress) to help performance.
-  shouldComponentUpdate(nextProps: ListItemProps) {
-    return (
-      nextProps.selected !== this.props.selected ||
-      nextProps.title !== this.props.title ||
-      nextProps.image !== this.props.image
-    );
-  }
 
   render() {
     const { image, title, selected, ...rest } = this.props;
