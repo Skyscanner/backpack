@@ -63,38 +63,49 @@ const styles = StyleSheet.create({
   },
 });
 
-const BpkSectionListItem = (props: ListItemProps) => {
-  const { image, title, selected, ...rest } = props;
+class BpkSectionListItem extends React.Component<ListItemProps> {
+  static propTypes = LIST_ITEM_PROP_TYPES;
+  static defaultProps = LIST_ITEM_DEFAULT_PROPS;
 
-  const styledImage = image
-    ? React.cloneElement(image, { style: [image.props.style, styles.image] })
-    : null;
+  // Compare only primitive props (not onPress) to help performance.
+  shouldComponentUpdate(nextProps: ListItemProps) {
+    return (
+      nextProps.selected !== this.props.selected ||
+      nextProps.title !== this.props.title ||
+      nextProps.image !== this.props.image
+    );
+  }
 
-  return (
-    <BpkTouchableNativeFeedback
-      borderlessBackground={false}
-      accessibilityComponentType="button"
-      accessibilityLabel={title}
-      accessibilityTraits={['button']}
-      {...rest}
-    >
-      <View style={styles.outer}>
-        <View style={styles.content}>
-          {styledImage}
-          <BpkText
-            textStyle="base"
-            style={[styles.text, selected ? styles.textSelected : null]}
-          >
-            {title}
-          </BpkText>
+  render() {
+    const { image, title, selected, ...rest } = this.props;
+
+    const styledImage = image
+      ? React.cloneElement(image, { style: [image.props.style, styles.image] })
+      : null;
+
+    return (
+      <BpkTouchableNativeFeedback
+        borderlessBackground={false}
+        accessibilityComponentType="button"
+        accessibilityLabel={title}
+        accessibilityTraits={['button']}
+        {...rest}
+      >
+        <View style={styles.outer}>
+          <View style={styles.content}>
+            {styledImage}
+            <BpkText
+              textStyle="base"
+              style={[styles.text, selected ? styles.textSelected : null]}
+            >
+              {title}
+            </BpkText>
+          </View>
+          <BpkRadioIcon selected={selected} />
         </View>
-        <BpkRadioIcon selected={selected} />
-      </View>
-    </BpkTouchableNativeFeedback>
-  );
-};
-
-BpkSectionListItem.propTypes = LIST_ITEM_PROP_TYPES;
-BpkSectionListItem.defaultProps = LIST_ITEM_DEFAULT_PROPS;
+      </BpkTouchableNativeFeedback>
+    );
+  }
+}
 
 export default BpkSectionListItem;

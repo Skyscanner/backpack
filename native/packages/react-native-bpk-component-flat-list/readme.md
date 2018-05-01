@@ -71,6 +71,8 @@ Inherits all props from React Native's [FlatList](https://facebook.github.io/rea
 | image              | instanceOf(Image)                     | false    | null          |
 | selected           | bool                                  | false    | false         |
 
+**Note:** To assist with performance, `BpkFlatListItem` overrides `shouldComponentUpdate` and will only update if `title`, `image` or `selected` changes. Therefore, changes to `onPress` will have no effect unless a re-render is forced.
+
 ### BpkFlatListItemSeparator
 
 None.

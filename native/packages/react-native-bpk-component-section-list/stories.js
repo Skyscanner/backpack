@@ -78,13 +78,16 @@ const getFlagUriFromCountryCode = countryCode =>
 
 // eslint-disable-next-line react/no-multi-comp
 class StatefulBpkSectionList extends React.Component<{
+  extraEntries: number,
   showImages: boolean,
 }> {
   static propTypes = {
+    extraEntries: PropTypes.number,
     showImages: PropTypes.bool,
   };
 
   static defaultProps = {
+    extraEntries: 0,
     showImages: false,
   };
 
@@ -92,27 +95,46 @@ class StatefulBpkSectionList extends React.Component<{
     super();
     this.state = { selectedAirport: 'GLA' };
   }
+
+  onItemPress = item => {
+    this.setState({ selectedAirport: item.id });
+  };
+
+  getData = () => {
+    const data = airportCities.slice();
+    if (this.props.extraEntries > 0) {
+      data.push({
+        title: 'Unassigned',
+        country: 'None',
+        data: new Array(this.props.extraEntries)
+          .fill()
+          .map((_, i) => ({ id: i.toString(), name: `Airport ${i}` })),
+      });
+    }
+    return data;
+  };
+
+  renderItem = ({ item, section }) => (
+    <BpkSectionListItem
+      title={item.name}
+      selected={this.state.selectedAirport === item.id}
+      image={
+        this.props.showImages ? (
+          <Image
+            source={{ uri: getFlagUriFromCountryCode(section.country) }}
+            style={styles.image}
+          />
+        ) : null
+      }
+      onPress={() => this.onItemPress(item)}
+    />
+  );
+
   render() {
     return (
       <BpkSectionList
-        sections={airportCities}
-        renderItem={({ item, section }) => (
-          <BpkSectionListItem
-            title={item.name}
-            selected={this.state.selectedAirport === item.id}
-            image={
-              this.props.showImages ? (
-                <Image
-                  source={{ uri: getFlagUriFromCountryCode(section.country) }}
-                  style={styles.image}
-                />
-              ) : null
-            }
-            onPress={() => {
-              this.setState({ selectedAirport: item.id });
-            }}
-          />
-        )}
+        sections={this.getData()}
+        renderItem={this.renderItem}
         renderSectionHeader={({ section: { title } }) => (
           <BpkSectionListHeader title={title} />
         )}
@@ -120,6 +142,7 @@ class StatefulBpkSectionList extends React.Component<{
           Platform.OS === 'ios' ? BpkSectionListItemSeparator : null
         }
         keyExtractor={item => item.id}
+        removeClippedSubviews
       />
     );
   }
@@ -128,4 +151,5 @@ class StatefulBpkSectionList extends React.Component<{
 storiesOf('react-native-bpk-component-section-list', module)
   .addDecorator(getStory => <View style={styles.topMargin}>{getStory()}</View>)
   .add('docs:default', () => <StatefulBpkSectionList />)
-  .add('docs:with-images', () => <StatefulBpkSectionList showImages />);
+  .add('docs:with-images', () => <StatefulBpkSectionList showImages />)
+  .add('Perf (Long list)', () => <StatefulBpkSectionList extraEntries={200} />);
