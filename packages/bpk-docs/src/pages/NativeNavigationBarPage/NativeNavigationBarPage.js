@@ -129,7 +129,7 @@ const components = [
   },
 ];
 
-const NativeNavigationBarPage = () => (
+const NativeNavigationBarPage = (props: Object) => (
   <DocsPageBuilder
     title="Navigation Bars"
     blurb={[
@@ -142,6 +142,7 @@ const NativeNavigationBarPage = () => (
     components={components}
     readme={readme}
     showMenu
+    {...props}
   />
 );
 
