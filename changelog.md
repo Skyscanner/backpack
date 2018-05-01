@@ -17,6 +17,9 @@
   - Ability to remove padding from inner content e.g. `padded={false}`.
   - Ability to add a custom class name to inner content e.g. `contentClassName="my-custom-class"`.
 
+- bpk-react-utils: 2.5.1 => 2.6.0
+  - the function returned by cssModules now accepts multiple class names and ignores values other than strings. see: https://github.com/Skyscanner/backpack/tree/master/packages/bpk-react-utils#cssmodulesjs
+
 # 2018-04-26 - Native banner alerts and button links have a new default height
 
 **Breaking:**

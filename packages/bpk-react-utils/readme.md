@@ -116,6 +116,24 @@ Without css modules:
 </div>
 ```
 
+The returned function accepts multiple class names and ignores values other than strings. e.g:
+
+```js
+import { cssModules } from 'bpk-react-utils';
+
+import STYLES from './MyComponent.scss';
+
+const getClassNames = cssModules(STYLES);
+
+const MyComponent = (props) => (
+  <div className={getClassName('MyComponent', props.disabled && 'MyComponent--disabled')}>
+   {props.children}
+  </div>
+);
+```
+
+Will result in `MyComponent MyComponent--disabled` if `props.disabled` is true or `MyComponent` otherwise.
+
 ## TransitionInitialMount.js
 
 A wrapper around `react-transition-group` which makes it easy to transition a
