@@ -64,18 +64,32 @@ const FLAG_IMAGES = {
 };
 
 export default class App extends Component {
+  constructor() {
+    super();
+    this.itemOnPressCallbacks = {};
+  }
+
+  getItemOnPressCallback = airportId => {
+    this.itemOnPressCallbacks[airportId] =
+      this.itemOnPressCallbacks[airportId] ||
+      (() => console.log(airportId));
+    return this.itemOnPressCallbacks[airportId];
+  };
+
+  renderItem = ({ airport, section }) => (
+    <BpkSectionListItem
+      key={airport.id}
+      title={airport.name}
+      image={<Image source={require(FLAG_IMAGES[section.country])} />}
+      onPress={this.getItemOnPressCallback(airportId)}
+    />
+  );
+
   render() {
     return (
       <BpkSectionList
         sections={AIRPORTS}
-        renderItem={({ airport, section }) => (
-          <BpkSectionListItem
-            key={airport.id}
-            title={airport.name}
-            image={<Image source={require(FLAG_IMAGES[section.country])} />}
-            onPress={() => console.log(airport.id)}
-          />
-        )}
+        renderItem={this.renderItem}
         renderSectionHeader={(section) => (
           <BpkSectionListHeader title={section.title} />
         )}
@@ -100,8 +114,6 @@ Inherits all props from React Native's [SectionList](https://facebook.github.io/
 | title              | string                                | true     | -             |
 | image              | instanceOf(Image)                     | false    | null          |
 | selected           | bool                                  | false    | false         |
-
-**Note:** To assist with performance, `BpkSectionListItem` overrides `shouldComponentUpdate` and will only update if `title`, `image` or `selected` changes. Therefore, changes to `onPress` will have no effect unless a re-render is forced.
 
 ### BpkSectionListHeader
 

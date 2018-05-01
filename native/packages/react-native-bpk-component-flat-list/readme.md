@@ -37,18 +37,32 @@ const FLAG_IMAGES = {
 };
 
 export default class App extends Component {
+  constructor() {
+    super();
+    this.itemOnPressCallbacks = {};
+  }
+
+  getItemOnPressCallback = countryId => {
+    this.itemOnPressCallbacks[countryId] =
+      this.itemOnPressCallbacks[countryId] ||
+      (() => console.log(countryId));
+    return this.itemOnPressCallbacks[countryId];
+  };
+
+  renderItem = ({ country }) => (
+    <BpkFlatListItem
+      key={country.id}
+      title={country.name}
+      image={<Image source={require(FLAG_IMAGES[country.id])} />}
+      onPress={this.getItemOnPressCallback(country.id)}
+    />
+  );
+
   render() {
     return (
       <BpkFlatList
         data={COUNTRIES}
-        renderItem={({ country }) => (
-          <BpkFlatListItem
-            key={country.id}
-            title={country.name}
-            image={<Image source={require(FLAG_IMAGES[country.id])} />}
-            onPress={() => console.log(country.id)}
-          />
-        )}
+        renderItem={this.renderItem}
         ItemSeparatorComponent={BpkFlatListItemSeparator}
       />
     );
@@ -70,8 +84,6 @@ Inherits all props from React Native's [FlatList](https://facebook.github.io/rea
 | title              | string                                | true     | -             |
 | image              | instanceOf(Image)                     | false    | null          |
 | selected           | bool                                  | false    | false         |
-
-**Note:** To assist with performance, `BpkFlatListItem` overrides `shouldComponentUpdate` and will only update if `title`, `image` or `selected` changes. Therefore, changes to `onPress` will have no effect unless a re-render is forced.
 
 ### BpkFlatListItemSeparator
 

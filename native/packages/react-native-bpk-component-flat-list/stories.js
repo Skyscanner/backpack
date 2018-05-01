@@ -66,8 +66,16 @@ class StatefulBpkFlatList extends React.Component<{
 
   constructor() {
     super();
+    this.itemPressCallbacks = {};
     this.state = { selectedCountry: 'DJ' };
   }
+
+  getOnItemPressCallback = id => {
+    this.itemPressCallbacks[id] =
+      this.itemPressCallbacks[id] ||
+      (() => this.setState({ selectedCountry: id }));
+    return this.itemPressCallbacks[id];
+  };
 
   getData = () => {
     const data = countries.slice();
@@ -93,9 +101,7 @@ class StatefulBpkFlatList extends React.Component<{
           />
         ) : null
       }
-      onPress={() => {
-        this.setState({ selectedCountry: item.id });
-      }}
+      onPress={this.getOnItemPressCallback(item.id)}
     />
   );
 
