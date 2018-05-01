@@ -70,42 +70,55 @@ const styles = StyleSheet.create({
   },
 });
 
-const BpkFlatListItem = (props: ListItemProps) => {
-  const { image, title, selected, ...rest } = props;
-  const iconStyles = [styles.tick];
-  if (selected) {
-    iconStyles.push(styles.tickVisible);
+class BpkFlatListItem extends React.Component<ListItemProps> {
+  static propTypes = LIST_ITEM_PROP_TYPES;
+  static defaultProps = LIST_ITEM_DEFAULT_PROPS;
+
+  // Compare only primitive props (not onPress) to help performance.
+  shouldComponentUpdate(nextProps: ListItemProps) {
+    return (
+      nextProps.selected !== this.props.selected ||
+      nextProps.title !== this.props.title ||
+      nextProps.image !== this.props.image
+    );
   }
 
-  const styledImage = image
-    ? React.cloneElement(image, {
-        style: [image.props.style, styles.image],
-      })
-    : null;
+  render() {
+    const { image, title, selected, ...rest } = this.props;
+    const iconStyles = [styles.tick];
+    if (selected) {
+      iconStyles.push(styles.tickVisible);
+    }
 
-  return (
-    <BpkTouchableOverlay
-      accessibilityComponentType="button"
-      accessibilityLabel={title}
-      accessibilityTraits={['button']}
-      style={styles.outer}
-      {...rest}
-    >
-      <View style={styles.content}>
-        {styledImage}
-        <BpkText
-          textStyle="lg"
-          style={[styles.text, selected ? styles.textSelected : null]}
-        >
-          {title}
-        </BpkText>
-      </View>
-      <BpkIcon small icon={icons.tick} style={iconStyles} />
-    </BpkTouchableOverlay>
-  );
-};
+    const styledImage = image
+      ? React.cloneElement(image, {
+          style: [image.props.style, styles.image],
+        })
+      : null;
 
-BpkFlatListItem.propTypes = LIST_ITEM_PROP_TYPES;
+    return (
+      <BpkTouchableOverlay
+        accessibilityComponentType="button"
+        accessibilityLabel={title}
+        accessibilityTraits={['button']}
+        style={styles.outer}
+        {...rest}
+      >
+        <View style={styles.content}>
+          {styledImage}
+          <BpkText
+            textStyle="lg"
+            style={[styles.text, selected ? styles.textSelected : null]}
+          >
+            {title}
+          </BpkText>
+        </View>
+        <BpkIcon small icon={icons.tick} style={iconStyles} />
+      </BpkTouchableOverlay>
+    );
+  }
+}
+
 BpkFlatListItem.defaultProps = LIST_ITEM_DEFAULT_PROPS;
 
 export default BpkFlatListItem;

@@ -101,6 +101,8 @@ Inherits all props from React Native's [SectionList](https://facebook.github.io/
 | image              | instanceOf(Image)                     | false    | null          |
 | selected           | bool                                  | false    | false         |
 
+**Note:** To assist with performance, `BpkSectionListItem` overrides `shouldComponentUpdate` and will only update if `title`, `image` or `selected` changes. Therefore, changes to `onPress` will have no effect unless a re-render is forced.
+
 ### BpkSectionListHeader
 
 | Property           | PropType                              | Required | Default Value |
