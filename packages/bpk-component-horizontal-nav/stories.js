@@ -18,6 +18,7 @@
 
 import React from 'react';
 import { storiesOf } from '@storybook/react';
+import { cssModules } from 'bpk-react-utils';
 import {
   spacingXs,
   spacingSm,
@@ -25,7 +26,10 @@ import {
   colorGray100,
 } from 'bpk-tokens/tokens/base.es6';
 
+import STYLES from './stories.scss';
 import BpkHorizontalNav, { BpkHorizontalNavItem } from './index';
+
+const getClassName = cssModules(STYLES);
 
 const Separator = () => (
   <span
@@ -47,6 +51,21 @@ const Separator = () => (
 storiesOf('bpk-component-horizontal-nav', module)
   .add('Example', () => (
     <BpkHorizontalNav>
+      <BpkHorizontalNavItem>Flights</BpkHorizontalNavItem>
+      <BpkHorizontalNavItem selected>Hotels</BpkHorizontalNavItem>
+      <BpkHorizontalNavItem>Car hire</BpkHorizontalNavItem>
+    </BpkHorizontalNav>
+  ))
+  .add('Using custom scroll colors', () => (
+    <BpkHorizontalNav
+      className={getClassName('bpk-horizontal-nav-custom-scrollers')}
+      leadingScrollIndicatorClassName={getClassName(
+        'bpk-horizontal-nav-custom-scrollers--leading',
+      )}
+      trailingScrollIndicatorClassName={getClassName(
+        'bpk-horizontal-nav-custom-scrollers--trailing',
+      )}
+    >
       <BpkHorizontalNavItem>Flights</BpkHorizontalNavItem>
       <BpkHorizontalNavItem selected>Hotels</BpkHorizontalNavItem>
       <BpkHorizontalNavItem>Car hire</BpkHorizontalNavItem>

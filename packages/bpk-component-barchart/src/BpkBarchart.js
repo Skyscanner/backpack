@@ -91,6 +91,8 @@ class BpkBarchart extends Component {
   render() {
     const {
       className,
+      leadingScrollIndicatorClassName,
+      trailingScrollIndicatorClassName,
       data,
       initialWidth,
       initialHeight,
@@ -145,7 +147,10 @@ class BpkBarchart extends Component {
     this.yScale.domain([0, maxYValue]);
 
     return (
-      <BpkMobileScrollContainer>
+      <BpkMobileScrollContainer
+        leadingIndicatorClassName={leadingScrollIndicatorClassName}
+        trailingIndicatorClassName={trailingScrollIndicatorClassName}
+      >
         {!disableDataTable && (
           <BpkChartDataTable
             data={data}
@@ -232,6 +237,8 @@ BpkBarchart.propTypes = {
   initialHeight: PropTypes.number.isRequired,
 
   className: PropTypes.string,
+  leadingScrollIndicatorClassName: PropTypes.string,
+  trailingScrollIndicatorClassName: PropTypes.string,
   outlierPercentage: PropTypes.number,
   showGridlines: PropTypes.bool,
   xAxisMargin: PropTypes.number,
@@ -254,6 +261,8 @@ BpkBarchart.propTypes = {
 BpkBarchart.defaultProps = {
   data: null,
   className: null,
+  leadingScrollIndicatorClassName: null,
+  trailingScrollIndicatorClassName: null,
   outlierPercentage: null,
   showGridlines: false,
   xAxisMargin: 2 * (lineHeight + spacing),

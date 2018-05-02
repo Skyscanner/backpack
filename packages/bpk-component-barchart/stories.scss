@@ -3,3 +3,17 @@
 .bpk-heading {
   margin-bottom: $bpk-spacing-sm;
 }
+
+$custom-color: $bpk-color-green-100;
+
+.bpk-barchart-custom-scrollers {
+  background: $custom-color;
+
+  &--leading {
+    @include bpk-scroll-indicator-left($custom-color);
+  }
+
+  &--trailing {
+    @include bpk-scroll-indicator-right($custom-color);
+  }
+}
