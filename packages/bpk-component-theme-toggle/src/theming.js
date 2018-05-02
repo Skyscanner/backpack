@@ -22,6 +22,9 @@ import {
   calendarDayHoverColor,
   calendarDayActiveColor,
   colorGray100,
+  colorGray500,
+  colorGray700,
+  colorGray900,
   colorWhite,
 } from 'bpk-tokens/tokens/base.es6';
 
@@ -171,5 +174,22 @@ const bpkCustomThemes = {
   'Hong Kong': generateTheme(hongKongTheme),
   Doha: generateTheme(dohaTheme),
 };
+if (process.env.BPK_NEO) {
+  const londonTheme = {
+    primaryColor300: '#F28494',
+    primaryColor500: '#ED1B28',
+    primaryColor600: '#D11622',
+    primaryColor700: '#B1121C',
+    secondaryColor300: '#6889AB',
+    secondaryColor500: '#013A76',
+    secondaryColor600: '#002F61',
+    secondaryColor700: '#00254B',
+  };
 
+  bpkCustomThemes.London = generateTheme(londonTheme);
+
+  bpkCustomThemes.London.docsSidebarBackground = londonTheme.secondaryColor500;
+  bpkCustomThemes.London.docsSidebarLink = londonTheme.secondaryColor300;
+  bpkCustomThemes.London.docsSidebarLinkBorder = londonTheme.secondaryColor300;
+}
 export default bpkCustomThemes;
