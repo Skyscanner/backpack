@@ -16,21 +16,18 @@
  * limitations under the License.
  */
 
-@import 'src/bonds';
-@import 'src/mixins/badges';
-@import 'src/mixins/borders';
-@import 'src/mixins/breakpoints';
-@import 'src/mixins/buttons';
-@import 'src/mixins/cards';
-@import 'src/mixins/chips';
-@import 'src/mixins/forms';
-@import 'src/mixins/grids';
-@import 'src/mixins/layers';
-@import 'src/mixins/margins';
-@import 'src/mixins/panels';
-@import 'src/mixins/radii';
-@import 'src/mixins/scroll-indicators';
-@import 'src/mixins/shadows';
-@import 'src/mixins/svgs';
-@import 'src/mixins/typography';
-@import 'src/mixins/utils';
+@import '~bpk-mixins';
+
+$custom-color: $bpk-color-green-100;
+
+.bpk-horizontal-nav-custom-scrollers {
+  background: $custom-color;
+
+  &--leading {
+    @include bpk-scroll-indicator-left($custom-color);
+  }
+
+  &--trailing {
+    @include bpk-scroll-indicator-right($custom-color);
+  }
+}

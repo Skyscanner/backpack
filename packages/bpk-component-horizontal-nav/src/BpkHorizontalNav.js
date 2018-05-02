@@ -27,7 +27,13 @@ const getClassName = cssModules(STYLES);
 
 const BpkHorizontalNav = props => {
   const classNames = [getClassName('bpk-horizontal-nav')];
-  const { children, className, ...rest } = props;
+  const {
+    children,
+    className,
+    leadingScrollIndicatorClassName,
+    trailingScrollIndicatorClassName,
+    ...rest
+  } = props;
 
   // Outer classNames
   if (className) {
@@ -38,6 +44,8 @@ const BpkHorizontalNav = props => {
     <BpkMobileScrollContainer
       innerContainerTagName="nav"
       className={classNames.join(' ')}
+      leadingIndicatorClassName={leadingScrollIndicatorClassName}
+      trailingIndicatorClassName={trailingScrollIndicatorClassName}
       {...rest}
     >
       <ul className={getClassName('bpk-horizontal-nav__list')}>{children}</ul>
@@ -48,10 +56,14 @@ const BpkHorizontalNav = props => {
 BpkHorizontalNav.propTypes = {
   children: PropTypes.node.isRequired,
   className: PropTypes.string,
+  leadingScrollIndicatorClassName: PropTypes.string,
+  trailingScrollIndicatorClassName: PropTypes.string,
 };
 
 BpkHorizontalNav.defaultProps = {
   className: null,
+  leadingScrollIndicatorClassName: null,
+  trailingScrollIndicatorClassName: null,
 };
 
 export default BpkHorizontalNav;

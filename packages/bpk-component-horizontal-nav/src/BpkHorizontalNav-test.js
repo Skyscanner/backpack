@@ -39,6 +39,28 @@ describe('BpkHorizontalNav', () => {
     expect(tree).toMatchSnapshot();
   });
 
+  it('should render correctly with custom "leadingScrollIndicatorClassName" prop', () => {
+    const tree = renderer
+      .create(
+        <BpkHorizontalNav leadingScrollIndicatorClassName="my-custom-class-name">
+          My nav content.
+        </BpkHorizontalNav>,
+      )
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('should render correctly with custom "trailingScrollIndicatorClassName" prop', () => {
+    const tree = renderer
+      .create(
+        <BpkHorizontalNav trailingScrollIndicatorClassName="my-custom-class-name">
+          My nav content.
+        </BpkHorizontalNav>,
+      )
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
   it('should render correctly with arbitrary props', () => {
     const tree = renderer
       .create(

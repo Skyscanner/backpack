@@ -41,6 +41,54 @@ describe('BpkBarchart', () => {
     expect(toJson(tree)).toMatchSnapshot();
   });
 
+  it('should render correctly with "className" prop', () => {
+    const tree = shallow(
+      <BpkBarchart
+        xScaleDataKey="month"
+        yScaleDataKey="price"
+        xAxisLabel="Month"
+        yAxisLabel="Average price (£)"
+        initialWidth={size}
+        initialHeight={size}
+        data={prices}
+        className="my-custom-class-name"
+      />,
+    );
+    expect(toJson(tree)).toMatchSnapshot();
+  });
+
+  it('should render correctly with "leadingScrollIndicatorClassName" prop', () => {
+    const tree = shallow(
+      <BpkBarchart
+        xScaleDataKey="month"
+        yScaleDataKey="price"
+        xAxisLabel="Month"
+        yAxisLabel="Average price (£)"
+        initialWidth={size}
+        initialHeight={size}
+        data={prices}
+        leadingScrollIndicatorClassName="my-custom-class-name"
+      />,
+    );
+    expect(toJson(tree)).toMatchSnapshot();
+  });
+
+  it('should render correctly with "trailingScrollIndicatorClassName" prop', () => {
+    const tree = shallow(
+      <BpkBarchart
+        xScaleDataKey="month"
+        yScaleDataKey="price"
+        xAxisLabel="Month"
+        yAxisLabel="Average price (£)"
+        initialWidth={size}
+        initialHeight={size}
+        data={prices}
+        trailingScrollIndicatorClassName="my-custom-class-name"
+      />,
+    );
+    expect(toJson(tree)).toMatchSnapshot();
+  });
+
   it('should render with "showGridlines" prop', () => {
     const tree = shallow(
       <BpkBarchart

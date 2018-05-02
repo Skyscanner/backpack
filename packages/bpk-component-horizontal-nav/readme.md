@@ -62,10 +62,12 @@ export default class App extends Component {
 
 ### BpkHorizontalNav
 
-| Property    | PropType | Required | Default Value |
-| ----------- | -------- | -------- | ------------- |
-| children    | node     | true     | -             |
-| className   | string   | false    | null          |
+| Property                          | PropType | Required | Default Value |
+| --------------------------------- | -------- | -------- | ------------- |
+| children                          | node     | true     | -             |
+| className                         | string   | false    | null          |
+| leadingScrollIndicatorClassName   | string   | false    | null          |
+| trailingScrollIndicatorClassName  | string   | false    | null          |
 
 ### BpkHorizontalNavItem
 
