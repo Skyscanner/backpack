@@ -43,7 +43,9 @@ exports[`Android BpkNudger should disable theming if the required attribute is o
         ]
       }
       accessible={true}
+      hasTVPreferredFocus={undefined}
       hitSlop={undefined}
+      isTVSelectable={true}
       nativeBackgroundAndroid={
         Object {
           "attribute": "selectableItemBackgroundBorderless",
@@ -187,7 +189,9 @@ exports[`Android BpkNudger should disable theming if the required attribute is o
         ]
       }
       accessible={true}
+      hasTVPreferredFocus={undefined}
       hitSlop={undefined}
+      isTVSelectable={true}
       nativeBackgroundAndroid={
         Object {
           "attribute": "selectableItemBackgroundBorderless",
@@ -322,7 +326,9 @@ exports[`Android BpkNudger should render correctly 1`] = `
         ]
       }
       accessible={true}
+      hasTVPreferredFocus={undefined}
       hitSlop={undefined}
+      isTVSelectable={true}
       nativeBackgroundAndroid={
         Object {
           "attribute": "selectableItemBackgroundBorderless",
@@ -466,7 +472,9 @@ exports[`Android BpkNudger should render correctly 1`] = `
         ]
       }
       accessible={true}
+      hasTVPreferredFocus={undefined}
       hitSlop={undefined}
+      isTVSelectable={true}
       nativeBackgroundAndroid={
         Object {
           "attribute": "selectableItemBackgroundBorderless",
@@ -605,7 +613,9 @@ exports[`Android BpkNudger should render correctly when value is a not an intege
         ]
       }
       accessible={true}
+      hasTVPreferredFocus={undefined}
       hitSlop={undefined}
+      isTVSelectable={true}
       nativeBackgroundAndroid={
         Object {
           "attribute": "selectableItemBackgroundBorderless",
@@ -755,7 +765,9 @@ exports[`Android BpkNudger should render correctly when value is a not an intege
         ]
       }
       accessible={true}
+      hasTVPreferredFocus={undefined}
       hitSlop={undefined}
+      isTVSelectable={true}
       nativeBackgroundAndroid={
         Object {
           "attribute": "selectableItemBackgroundBorderless",
@@ -890,7 +902,9 @@ exports[`Android BpkNudger should render correctly when value is greater than ma
         ]
       }
       accessible={true}
+      hasTVPreferredFocus={undefined}
       hitSlop={undefined}
+      isTVSelectable={true}
       nativeBackgroundAndroid={
         Object {
           "attribute": "selectableItemBackgroundBorderless",
@@ -1038,7 +1052,9 @@ exports[`Android BpkNudger should render correctly when value is greater than ma
         ]
       }
       accessible={true}
+      hasTVPreferredFocus={undefined}
       hitSlop={undefined}
+      isTVSelectable={true}
       nativeBackgroundAndroid={
         Object {
           "attribute": "selectableItemBackgroundBorderless",
@@ -1183,7 +1199,9 @@ exports[`Android BpkNudger should render correctly when value is less than min 1
         ]
       }
       accessible={true}
+      hasTVPreferredFocus={undefined}
       hitSlop={undefined}
+      isTVSelectable={true}
       nativeBackgroundAndroid={
         Object {
           "attribute": "selectableItemBackgroundBorderless",
@@ -1333,7 +1351,9 @@ exports[`Android BpkNudger should render correctly when value is less than min 1
         ]
       }
       accessible={true}
+      hasTVPreferredFocus={undefined}
       hitSlop={undefined}
+      isTVSelectable={true}
       nativeBackgroundAndroid={
         Object {
           "attribute": "selectableItemBackgroundBorderless",
@@ -1468,7 +1488,9 @@ exports[`Android BpkNudger should support theming 1`] = `
         ]
       }
       accessible={true}
+      hasTVPreferredFocus={undefined}
       hitSlop={undefined}
+      isTVSelectable={true}
       nativeBackgroundAndroid={
         Object {
           "attribute": "selectableItemBackgroundBorderless",
@@ -1614,7 +1636,9 @@ exports[`Android BpkNudger should support theming 1`] = `
         ]
       }
       accessible={true}
+      hasTVPreferredFocus={undefined}
       hitSlop={undefined}
+      isTVSelectable={true}
       nativeBackgroundAndroid={
         Object {
           "attribute": "selectableItemBackgroundBorderless",

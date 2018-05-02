@@ -13,7 +13,9 @@ exports[`Android BpkButtonLink should render correctly 1`] = `
       ]
     }
     accessible={true}
+    hasTVPreferredFocus={undefined}
     hitSlop={undefined}
+    isTVSelectable={true}
     nativeBackgroundAndroid={
       Object {
         "attribute": "selectableItemBackgroundBorderless",
@@ -82,7 +84,9 @@ exports[`Android BpkButtonLink should render correctly with iconAlignment="leadi
       ]
     }
     accessible={true}
+    hasTVPreferredFocus={undefined}
     hitSlop={undefined}
+    isTVSelectable={true}
     nativeBackgroundAndroid={
       Object {
         "attribute": "selectableItemBackgroundBorderless",
@@ -184,7 +188,9 @@ exports[`Android BpkButtonLink should render correctly with iconAlignment="trail
       ]
     }
     accessible={true}
+    hasTVPreferredFocus={undefined}
     hitSlop={undefined}
+    isTVSelectable={true}
     nativeBackgroundAndroid={
       Object {
         "attribute": "selectableItemBackgroundBorderless",
@@ -279,7 +285,9 @@ exports[`Android BpkButtonLink should render correctly with theme prop 1`] = `
       ]
     }
     accessible={true}
+    hasTVPreferredFocus={undefined}
     hitSlop={undefined}
+    isTVSelectable={true}
     nativeBackgroundAndroid={
       Object {
         "attribute": "selectableItemBackgroundBorderless",
@@ -351,7 +359,9 @@ exports[`Android BpkButtonLink should support elements as icons 1`] = `
       ]
     }
     accessible={true}
+    hasTVPreferredFocus={undefined}
     hitSlop={undefined}
+    isTVSelectable={true}
     nativeBackgroundAndroid={
       Object {
         "attribute": "selectableItemBackgroundBorderless",
@@ -442,7 +452,9 @@ exports[`Android BpkButtonLink should support overwriting styles 1`] = `
       ]
     }
     accessible={true}
+    hasTVPreferredFocus={undefined}
     hitSlop={undefined}
+    isTVSelectable={true}
     nativeBackgroundAndroid={
       Object {
         "attribute": "selectableItemBackgroundBorderless",
@@ -512,7 +524,9 @@ exports[`Android BpkButtonLink should support the "disabled" property 1`] = `
       ]
     }
     accessible={true}
+    hasTVPreferredFocus={undefined}
     hitSlop={undefined}
+    isTVSelectable={true}
     nativeBackgroundAndroid={
       Object {
         "attribute": "selectableItemBackgroundBorderless",
@@ -584,7 +598,9 @@ exports[`Android BpkButtonLink should support the "icon" property 1`] = `
       ]
     }
     accessible={true}
+    hasTVPreferredFocus={undefined}
     hitSlop={undefined}
+    isTVSelectable={true}
     nativeBackgroundAndroid={
       Object {
         "attribute": "selectableItemBackgroundBorderless",
@@ -679,7 +695,9 @@ exports[`Android should support "borderlessBackground" equal to false 1`] = `
       ]
     }
     accessible={true}
+    hasTVPreferredFocus={undefined}
     hitSlop={undefined}
+    isTVSelectable={true}
     nativeBackgroundAndroid={
       Object {
         "attribute": "selectableItemBackground",

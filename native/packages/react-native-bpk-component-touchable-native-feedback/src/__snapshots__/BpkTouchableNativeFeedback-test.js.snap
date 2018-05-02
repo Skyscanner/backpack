@@ -6,7 +6,9 @@ exports[`BpkTouchableNativeFeedback should render correctly on API < 21 1`] = `
   accessibilityLabel={undefined}
   accessibilityTraits={undefined}
   accessible={true}
+  hasTVPreferredFocus={undefined}
   hitSlop={undefined}
+  isTVSelectable={true}
   nativeBackgroundAndroid={
     Object {
       "attribute": "selectableItemBackground",
@@ -30,7 +32,9 @@ exports[`BpkTouchableNativeFeedback should render correctly on API >= 21 1`] = `
   accessibilityLabel={undefined}
   accessibilityTraits={undefined}
   accessible={true}
+  hasTVPreferredFocus={undefined}
   hitSlop={undefined}
+  isTVSelectable={true}
   nativeBackgroundAndroid={
     Object {
       "attribute": "selectableItemBackgroundBorderless",
@@ -54,7 +58,9 @@ exports[`BpkTouchableNativeFeedback should render correctly with arbitrary props
   accessibilityLabel={undefined}
   accessibilityTraits={undefined}
   accessible={true}
+  hasTVPreferredFocus={undefined}
   hitSlop={undefined}
+  isTVSelectable={true}
   nativeBackgroundAndroid={
     Object {
       "attribute": "selectableItemBackgroundBorderless",
@@ -78,7 +84,9 @@ exports[`BpkTouchableNativeFeedback should render correctly with custom style pr
   accessibilityLabel={undefined}
   accessibilityTraits={undefined}
   accessible={true}
+  hasTVPreferredFocus={undefined}
   hitSlop={undefined}
+  isTVSelectable={true}
   nativeBackgroundAndroid={
     Object {
       "attribute": "selectableItemBackgroundBorderless",

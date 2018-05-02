@@ -20,10 +20,22 @@
 
 import PropTypes from 'prop-types';
 import React, { Component, type Node } from 'react';
-import { View, Animated, ViewPropTypes } from 'react-native';
+import { View, Animated, ViewPropTypes, StyleSheet } from 'react-native';
 import { animationDurationSm } from 'bpk-tokens/tokens/base.react.native';
 
 const COLLAPSED_HEIGHT = 0.01;
+
+const STYLES = StyleSheet.create({
+  view: {
+    overflow: 'hidden',
+    borderRadius: 0, // overflow hidden hack for Android
+  },
+  measureView: {
+    position: 'absolute',
+    left: 0,
+    opacity: 0,
+  },
+});
 
 type MeasureCallback = (
   x: number,
@@ -148,7 +160,7 @@ class AnimateAndFade extends Component<Props> {
       ...rest
     } = this.props;
 
-    const style = [{ opacity: this.opacity }];
+    const style = [STYLES.view, { opacity: this.opacity }];
 
     if (this.shouldRenderHeight) {
       style.push({
@@ -162,17 +174,22 @@ class AnimateAndFade extends Component<Props> {
 
     return (
       <Animated.View {...rest} style={style}>
+        {/* This extra view is here only to measure the "natural" height in order to do the correct annimation.
+        Since the upgrade to react-native 0.55.3 the inner view does not render outside its parent height on IOS, 
+        unless position is absolute. To avoid changing the children's style we use this hidden view with position 
+        absolute for measurment and render the children again bellow with its normal style */}
         <View
           ref={ref => {
             this.innerViewRef = ref;
           }}
-          style={innerStyle}
+          style={[innerStyle, STYLES.measureView]}
           // `measure` api doesn;t work on Android unless `collapsable={false}`.
           // See https://github.com/facebook/react-native/issues/3282.
           collapsable={false}
         >
           {children}
         </View>
+        <View style={[innerStyle]}>{children}</View>
       </Animated.View>
     );
   }

@@ -70,6 +70,7 @@ exports[`Android BpkPicker should render correctly 1`] = `
       horizontal={false}
       initialNumToRender={6}
       initialScrollIndex={0}
+      invertStickyHeaders={undefined}
       keyExtractor={[Function]}
       maxToRenderPerBatch={10}
       numColumns={1}
@@ -113,7 +114,9 @@ exports[`Android BpkPicker should render correctly 1`] = `
               ]
             }
             accessible={true}
+            hasTVPreferredFocus={undefined}
             hitSlop={undefined}
+            isTVSelectable={true}
             nativeBackgroundAndroid={
               Object {
                 "attribute": "selectableItemBackground",
@@ -167,7 +170,9 @@ exports[`Android BpkPicker should render correctly 1`] = `
               ]
             }
             accessible={true}
+            hasTVPreferredFocus={undefined}
             hitSlop={undefined}
+            isTVSelectable={true}
             nativeBackgroundAndroid={
               Object {
                 "attribute": "selectableItemBackground",
@@ -284,6 +289,7 @@ exports[`Android BpkPicker should render correctly with a selected value 1`] = `
       horizontal={false}
       initialNumToRender={6}
       initialScrollIndex={0}
+      invertStickyHeaders={undefined}
       keyExtractor={[Function]}
       maxToRenderPerBatch={10}
       numColumns={1}
@@ -328,7 +334,9 @@ exports[`Android BpkPicker should render correctly with a selected value 1`] = `
               ]
             }
             accessible={true}
+            hasTVPreferredFocus={undefined}
             hitSlop={undefined}
+            isTVSelectable={true}
             nativeBackgroundAndroid={
               Object {
                 "attribute": "selectableItemBackground",
@@ -384,7 +392,9 @@ exports[`Android BpkPicker should render correctly with a selected value 1`] = `
               ]
             }
             accessible={true}
+            hasTVPreferredFocus={undefined}
             hitSlop={undefined}
+            isTVSelectable={true}
             nativeBackgroundAndroid={
               Object {
                 "attribute": "selectableItemBackground",

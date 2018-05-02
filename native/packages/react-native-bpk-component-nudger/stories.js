@@ -24,6 +24,7 @@ import { storiesOf } from '@storybook/react-native';
 import { action } from '@storybook/addon-actions';
 import BpkThemeProvider from 'react-native-bpk-theming';
 import { spacingBase } from 'bpk-tokens/tokens/base.react.native';
+import CenterDecorator from '../../storybook/CenterDecorator';
 import themeAttributes from '../../storybook/themeAttributes';
 import { StorySubheading } from '../../storybook/TextStyles';
 import BpkNudger from './index';
@@ -100,6 +101,7 @@ const generateStoryNudgers = () => (
 );
 
 storiesOf('react-native-bpk-component-nudger', module)
+  .addDecorator(CenterDecorator)
   .add('docs:default', () => generateStoryNudgers())
   .add('Themed', () => (
     <BpkThemeProvider theme={themeAttributes}>

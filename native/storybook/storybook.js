@@ -18,7 +18,7 @@
 
 import addon from '@storybook/addons';
 import RNRestart from 'react-native-restart';
-import { I18nManager, AppRegistry } from 'react-native';
+import { I18nManager, AppRegistry, YellowBox } from 'react-native';
 import { getStorybookUI, configure } from '@storybook/react-native';
 
 import { RTL_EVENT, CHANNEL_POLL_INTERVAL } from './constants';
@@ -43,6 +43,12 @@ const onChannelAvailable = (...fns) => {
 
 const enableRtlFromUi = channel => {
   channel.on(RTL_EVENT, toggleRTL);
+};
+
+const hideWarnings = () => {
+  // TODO: this warning is being trigger by an internal react code, we can remove it when it gets fixed
+  // see: https://github.com/facebook/react-native/issues/18868#issuecomment-382671739
+  YellowBox.ignoreWarnings(['Warning: isMounted(...) is deprecated']);
 };
 
 /* eslint-disable global-require */
@@ -79,6 +85,6 @@ const StorybookUI = getStorybookUI({ onDeviceUI: false });
 
 AppRegistry.registerComponent('native', () => StorybookUI);
 
-onChannelAvailable(enableRtlFromUi);
+onChannelAvailable(enableRtlFromUi, hideWarnings);
 
 export default StorybookUI;

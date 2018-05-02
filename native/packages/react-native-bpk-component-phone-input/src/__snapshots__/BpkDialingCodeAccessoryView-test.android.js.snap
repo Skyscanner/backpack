@@ -10,7 +10,9 @@ exports[`Android BpkDialingCodeAccessoryView should render correctly 1`] = `
     ]
   }
   accessible={true}
+  hasTVPreferredFocus={undefined}
   hitSlop={undefined}
+  isTVSelectable={true}
   nativeBackgroundAndroid={
     Object {
       "attribute": "selectableItemBackground",
@@ -111,7 +113,9 @@ exports[`Android BpkDialingCodeAccessoryView should render correctly when \`edit
     ]
   }
   accessible={true}
+  hasTVPreferredFocus={undefined}
   hitSlop={undefined}
+  isTVSelectable={true}
   nativeBackgroundAndroid={
     Object {
       "attribute": "selectableItemBackground",

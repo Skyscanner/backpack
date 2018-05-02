@@ -23,10 +23,29 @@ import { animationDurationSm } from 'bpk-tokens/tokens/base.react.native';
 
 const COLLAPSED_HEIGHT = 0.01;
 
+const callOnce = fn => {
+  let called = false;
+  const internalCallOnce = (...args) => {
+    if (!called) {
+      called = true;
+      fn(...args);
+    }
+  };
+  internalCallOnce.reset = () => {
+    called = false;
+  };
+  return internalCallOnce;
+};
+
 const STYLES = StyleSheet.create({
   view: {
     overflow: 'hidden',
     borderRadius: 0, // overflow hidden hack for Android
+  },
+  measure: {
+    position: 'absolute',
+    opacity: 0,
+    left: 0,
   },
 });
 
@@ -35,10 +54,14 @@ class BpkAnimateHeight extends React.Component {
     super(props);
 
     this.innerViewRef = null;
-
+    this.state = { computedHeight: null };
     this.height = this.props.expanded
       ? null
       : new Animated.Value(COLLAPSED_HEIGHT);
+
+    this.adjustChildHeight = callOnce((height, onDone) =>
+      this.setState({ computedHeight: height }, onDone),
+    );
   }
 
   componentDidMount() {
@@ -72,9 +95,14 @@ class BpkAnimateHeight extends React.Component {
     const toValue = expanded ? height : COLLAPSED_HEIGHT;
     const delay = expanded ? expandDelay : collapseDelay;
 
-    Animated.timing(this.height, { toValue, duration, delay }).start(
-      onAnimationComplete,
-    );
+    this.adjustChildHeight(height, () => {
+      Animated.timing(this.height, { toValue, duration, delay }).start(() => {
+        this.adjustChildHeight.reset();
+        if (onAnimationComplete) {
+          onAnimationComplete();
+        }
+      });
+    });
   };
 
   render() {
@@ -98,15 +126,22 @@ class BpkAnimateHeight extends React.Component {
 
     return (
       <Animated.View {...rest} style={style}>
+        {/* This extra view is here only to measure the "natural" height in order to do the correct annimation.
+        Since the upgrade to react-native 0.55.3 the inner view does not render outside its parent height on IOS, 
+        unless position is absolute. To avoid changing the children's style we use this hidden view with position 
+        absolute for measurment and render the children again bellow with its normal style */}
         <View
           ref={ref => {
             this.innerViewRef = ref;
           }}
-          style={innerStyle}
+          style={[innerStyle, STYLES.measure]}
           // `measure` api doesn;t work on Android unless `collapsable={false}`.
           // See https://github.com/facebook/react-native/issues/3282.
           collapsable={false}
         >
+          {children}
+        </View>
+        <View style={[innerStyle, { height: this.state.computedHeight }]}>
           {children}
         </View>
       </Animated.View>

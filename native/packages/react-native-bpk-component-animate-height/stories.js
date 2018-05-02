@@ -53,11 +53,11 @@ const animateHeightContent = (
 );
 
 class AnimateHeightDemo extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
     this.state = {
-      expanded: false,
+      expanded: !!props.startExpanded,
     };
   }
 
@@ -91,6 +91,7 @@ AnimateHeightDemo.propTypes = {
   expandDelay: PropTypes.number,
   collapseDelay: PropTypes.number,
   animationDuration: PropTypes.number,
+  startExpanded: PropTypes.bool,
 };
 
 AnimateHeightDemo.defaultProps = {
@@ -98,6 +99,7 @@ AnimateHeightDemo.defaultProps = {
   expandDelay: 0,
   collapseDelay: 0,
   animationDuration: animationDurationBase,
+  startExpanded: false,
 };
 
 storiesOf('react-native-bpk-component-animate-height', module)
@@ -119,4 +121,7 @@ storiesOf('react-native-bpk-component-animate-height', module)
     <AnimateHeightDemo collapseDelay={1000}>
       {animateHeightContent}
     </AnimateHeightDemo>
+  ))
+  .add('Start expanded', () => (
+    <AnimateHeightDemo startExpanded>{animateHeightContent}</AnimateHeightDemo>
   ));

@@ -14,7 +14,7 @@ exports[`Android BpkPickerTrigger should render correctly 1`] = `
   onPress={[Function]}
   style={null}
 >
-  <View
+  <Component
     style={
       Object {
         "borderBottomWidth": 1,
@@ -30,7 +30,7 @@ exports[`Android BpkPickerTrigger should render correctly 1`] = `
       small={true}
       style={null}
     />
-  </View>
+  </Component>
 </BpkTouchableNativeFeedback>
 `;
 
@@ -48,7 +48,7 @@ exports[`Android BpkPickerTrigger should render correctly with a text label 1`] 
   onPress={[Function]}
   style={null}
 >
-  <View
+  <Component
     style={
       Object {
         "borderBottomWidth": 1,
@@ -71,7 +71,7 @@ exports[`Android BpkPickerTrigger should render correctly with a text label 1`] 
       small={true}
       style={null}
     />
-  </View>
+  </Component>
 </BpkTouchableNativeFeedback>
 `;
 
@@ -89,7 +89,7 @@ exports[`Android BpkPickerTrigger should render correctly with an element label 
   onPress={[Function]}
   style={null}
 >
-  <View
+  <Component
     style={
       Object {
         "borderBottomWidth": 1,
@@ -100,13 +100,13 @@ exports[`Android BpkPickerTrigger should render correctly with an element label 
       }
     }
   >
-    <View />
+    <Component />
     <BpkIcon
       icon="arrow-down"
       small={true}
       style={null}
     />
-  </View>
+  </Component>
 </BpkTouchableNativeFeedback>
 `;
 
@@ -128,7 +128,7 @@ exports[`Android BpkPickerTrigger should render correctly with custom styles 1`]
     }
   }
 >
-  <View
+  <Component
     style={
       Object {
         "borderBottomWidth": 1,
@@ -151,7 +151,7 @@ exports[`Android BpkPickerTrigger should render correctly with custom styles 1`]
       small={true}
       style={null}
     />
-  </View>
+  </Component>
 </BpkTouchableNativeFeedback>
 `;
 
@@ -170,7 +170,7 @@ exports[`Android BpkPickerTrigger should render correctly with the disabled prop
   onPress={[Function]}
   style={null}
 >
-  <View
+  <Component
     style={
       Object {
         "borderBottomWidth": 1,
@@ -197,6 +197,6 @@ exports[`Android BpkPickerTrigger should render correctly with the disabled prop
       small={true}
       style={null}
     />
-  </View>
+  </Component>
 </BpkTouchableNativeFeedback>
 `;

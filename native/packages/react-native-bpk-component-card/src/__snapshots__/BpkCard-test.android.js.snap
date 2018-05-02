@@ -9,7 +9,9 @@ exports[`Android BpkCard should render correctly 1`] = `
     accessibilityLabel="Example Card"
     accessibilityTraits={undefined}
     accessible={true}
+    hasTVPreferredFocus={undefined}
     hitSlop={undefined}
+    isTVSelectable={true}
     nativeForegroundAndroid={
       Object {
         "attribute": "selectableItemBackgroundBorderless",
@@ -72,7 +74,9 @@ exports[`Android BpkCard should render correctly with arbitrary props 1`] = `
     accessibilityLabel="Example Card"
     accessibilityTraits={undefined}
     accessible={true}
+    hasTVPreferredFocus={undefined}
     hitSlop={undefined}
+    isTVSelectable={true}
     nativeForegroundAndroid={
       Object {
         "attribute": "selectableItemBackgroundBorderless",
@@ -135,7 +139,9 @@ exports[`Android BpkCard should render correctly with custom inner style 1`] = `
     accessibilityLabel="Example Card"
     accessibilityTraits={undefined}
     accessible={true}
+    hasTVPreferredFocus={undefined}
     hitSlop={undefined}
+    isTVSelectable={true}
     nativeForegroundAndroid={
       Object {
         "attribute": "selectableItemBackgroundBorderless",
@@ -206,7 +212,9 @@ exports[`Android BpkCard should render correctly with custom style 1`] = `
     accessibilityLabel="Example Card"
     accessibilityTraits={undefined}
     accessible={true}
+    hasTVPreferredFocus={undefined}
     hitSlop={undefined}
+    isTVSelectable={true}
     nativeForegroundAndroid={
       Object {
         "attribute": "selectableItemBackgroundBorderless",
@@ -272,7 +280,9 @@ exports[`Android BpkCard should render correctly with the "focused" state 1`] = 
     accessibilityLabel="Example Card"
     accessibilityTraits={undefined}
     accessible={true}
+    hasTVPreferredFocus={undefined}
     hitSlop={undefined}
+    isTVSelectable={true}
     nativeForegroundAndroid={
       Object {
         "attribute": "selectableItemBackgroundBorderless",
@@ -338,7 +348,9 @@ exports[`Android BpkCard should render correctly without padding 1`] = `
     accessibilityLabel="Example Card"
     accessibilityTraits={undefined}
     accessible={true}
+    hasTVPreferredFocus={undefined}
     hitSlop={undefined}
+    isTVSelectable={true}
     nativeForegroundAndroid={
       Object {
         "attribute": "selectableItemBackgroundBorderless",
