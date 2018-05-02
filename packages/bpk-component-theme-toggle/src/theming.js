@@ -33,6 +33,9 @@ const generateTheme = ({
   secondaryColor500,
   secondaryColor600,
   secondaryColor700,
+  docsSidebarBackground,
+  docsSidebarLink,
+  docsSidebarLinkBorder,
 }) => ({
   accordionActiveColor: primaryColor700,
   accordionColor: primaryColor500,
@@ -116,39 +119,57 @@ const generateTheme = ({
   navigationBarButtonLinkVisitedColor: colorWhite,
   navigationBarTitleColor: colorWhite,
   navigationBarBackgroundColor: primaryColor500,
+  docsSidebarBackground,
+  docsSidebarLink,
+  docsSidebarLinkBorder,
 });
 
+const londonTheme = {
+  primaryColor300: '#F28494',
+  primaryColor500: '#ED1B28',
+  primaryColor600: '#D11622',
+  primaryColor700: '#B1121C',
+  secondaryColor300: '#6889AB',
+  secondaryColor500: '#013A76',
+  secondaryColor600: '#002F61',
+  secondaryColor700: '#00254B',
+  docsSidebarBackground: '#013A76',
+  docsSidebarLink: '#6889AB',
+  docsSidebarLinkBorder: '#6889AB',
+};
+
+const hongKongTheme = {
+  primaryColor300: '#108685',
+  primaryColor500: '#006463',
+  primaryColor600: '#024D4D',
+  primaryColor700: '#013838',
+  secondaryColor300: '#686868',
+  secondaryColor500: '#4C4C4C',
+  secondaryColor600: '#3C3C3C',
+  secondaryColor700: '#2A2A2A',
+  docsSidebarBackground: '#4C4C4C',
+  docsSidebarLink: '#686868',
+  docsSidebarLinkBorder: '#686868',
+};
+
+const dohaTheme = {
+  primaryColor300: '#BF3671',
+  primaryColor500: '#9B104C',
+  primaryColor600: '#7F083B',
+  primaryColor700: '#5E072C',
+  secondaryColor300: '#ffd54f',
+  secondaryColor500: '#ffc107',
+  secondaryColor600: '#ffb300',
+  secondaryColor700: '#ffa000',
+  docsSidebarBackground: '#5E072C',
+  docsSidebarLink: '#BF3671',
+  docsSidebarLinkBorder: '#BF3671',
+};
+
 const bpkCustomThemes = {
-  London: generateTheme({
-    primaryColor300: '#E57373',
-    primaryColor500: '#F44336',
-    primaryColor600: '#E53935',
-    primaryColor700: '#D32F2F',
-    secondaryColor300: '#7986CB',
-    secondaryColor500: '#3F51B5',
-    secondaryColor600: '#303F9F',
-    secondaryColor700: '#263490',
-  }),
-  'Hong Kong': generateTheme({
-    primaryColor300: '#108685',
-    primaryColor500: '#006463',
-    primaryColor600: '#024D4D',
-    primaryColor700: '#013838',
-    secondaryColor300: '#686868',
-    secondaryColor500: '#4C4C4C',
-    secondaryColor600: '#3C3C3C',
-    secondaryColor700: '#2A2A2A',
-  }),
-  Doha: generateTheme({
-    primaryColor300: '#BF3671',
-    primaryColor500: '#9B104C',
-    primaryColor600: '#7F083B',
-    primaryColor700: '#5E072C',
-    secondaryColor300: '#ffd54f',
-    secondaryColor500: '#ffc107',
-    secondaryColor600: '#ffb300',
-    secondaryColor700: '#ffa000',
-  }),
+  London: generateTheme(londonTheme),
+  'Hong Kong': generateTheme(hongKongTheme),
+  Doha: generateTheme(dohaTheme),
 };
 
 export default bpkCustomThemes;

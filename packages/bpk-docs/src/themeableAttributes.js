@@ -42,6 +42,12 @@ import { themeAttributes as sliderThemeAttributes } from 'bpk-component-slider';
 import { themeAttributes as spinnerThemeAttributes } from 'bpk-component-spinner';
 import { themeAttributes as navigationBarThemeAttributes } from 'bpk-component-navigation-bar';
 
+const docsThemeAttributes = [
+  'docsSidebarBackground',
+  'docsSidebarLink',
+  'docsSidebarLinkBorder',
+];
+
 export default [
   ...accordionThemeAttributes,
   ...barchartThemeAttributes,
@@ -64,4 +70,5 @@ export default [
   ...sliderThemeAttributes,
   ...spinnerThemeAttributes,
   ...navigationBarThemeAttributes,
+  ...docsThemeAttributes,
 ];
