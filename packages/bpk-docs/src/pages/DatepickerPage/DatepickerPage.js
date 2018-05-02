@@ -53,7 +53,7 @@ class DatepickerContainer extends Component {
 const components = [
   {
     id: 'datepicker',
-    title: 'Default datepicker',
+    title: 'Default',
     blurb: [
       <Paragraph>Default calendar, input and popover configuration.</Paragraph>,
       <Paragraph>

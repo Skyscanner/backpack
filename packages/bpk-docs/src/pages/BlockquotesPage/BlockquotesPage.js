@@ -23,28 +23,32 @@ import blockquotesReadme from 'bpk-component-blockquote/readme.md';
 
 import DocsPageBuilder from './../../components/DocsPageBuilder';
 import Paragraph from './../../components/Paragraph';
-import PresentationBlock from './../../components/PresentationBlock';
 
-const blurb = [
-  <Paragraph>
-    The blockquote component allows the creation of a section that is quoted
-    from another source.
-  </Paragraph>,
-  <PresentationBlock>
-    <BpkBlockquote>
-      Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
-      ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis
-      dis parturient montes, nascetur ridiculus mus.
-    </BpkBlockquote>
-  </PresentationBlock>,
+const components = [
+  {
+    id: 'default',
+    title: 'Default',
+    examples: [
+      <BpkBlockquote>
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
+        ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis
+        dis parturient montes, nascetur ridiculus mus.
+      </BpkBlockquote>,
+    ],
+  },
 ];
 
 const BlockquotesPage = () => (
   <DocsPageBuilder
-    title="Blockquotes"
-    showMenu={false}
+    title="Blockquote"
+    blurb={[
+      <Paragraph>
+        The blockquote component allows the creation of a section that is quoted
+        from another source.
+      </Paragraph>,
+    ]}
+    components={components}
     readme={blockquotesReadme}
-    blurb={blurb}
   />
 );
 

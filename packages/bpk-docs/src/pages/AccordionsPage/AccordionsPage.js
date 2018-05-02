@@ -197,14 +197,10 @@ const components = [
 
 const AccordionsPage = () => (
   <DocsPageBuilder
-    title="Accordions"
+    title="Accordion"
     blurb={[
       <Paragraph>
-        An accordion is a vertically stacked set of elements, such as content or
-        forms, that allow the user to toggle the display of sections of content.
-        Each labeling element can be expanded or collapsed to reveal or hide its
-        associated content. Accordions are commonly used to reduce the need to
-        scroll when presenting multiple sections of content on a single page.
+        An accordion allows users to expand and collapse sections of content.
       </Paragraph>,
     ]}
     components={components}

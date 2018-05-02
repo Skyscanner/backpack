@@ -183,9 +183,7 @@ const CalendarPage = () => (
     title="Calendar"
     blurb={[
       <Paragraph>
-        Calendars are used for date selection. They can be configured in
-        different ways depending on the context, e.g. constrained to a date
-        range, or with dates blocked out.
+        Calendars are used for date selection within a defined time period.
       </Paragraph>,
     ]}
     components={components}

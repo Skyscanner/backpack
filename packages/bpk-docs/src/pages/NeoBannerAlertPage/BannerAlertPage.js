@@ -27,8 +27,12 @@ import Native from '../NativeBannerAlertPage';
 
 const Page = () => (
   <DocsPageWrapper
-    title="Neo Banner Alert"
-    blurb={[<Paragraph>Blurb for the neo banner alert page.</Paragraph>]}
+    title="Banner alert"
+    blurb={[
+      <Paragraph>
+        Banner alerts provide inline feedback about an operation or task.
+      </Paragraph>,
+    ]}
     webSubpage={<Web wrapped />}
     nativeSubpage={<Native wrapped />}
   />

@@ -30,7 +30,6 @@ import androidScreenshotWithDivider from 'react-native-bpk-component-card/screen
 import iosScreenshotWithDividerArrangedVertically from 'react-native-bpk-component-card/screenshots/ios/with-divider-arranged-vertically.png';
 import androidScreenshotWithDividerArrangedVertically from 'react-native-bpk-component-card/screenshots/android/with-divider-arranged-vertically.png';
 
-import Paragraph from './../../components/Paragraph';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
 
 const components = [
@@ -158,14 +157,7 @@ const components = [
 const NativeCardsPage = ({ ...rest }) => (
   <DocsPageBuilder
     title="Cards"
-    blurb={[
-      <Paragraph>
-        Cards are used to group related items within the UI. They allow complex
-        datasets to be broken down into individual, distinct areas for easy
-        consumption. Cards are used as a signifier to give affordance to a
-        clickable set of elements.
-      </Paragraph>,
-    ]}
+    blurb={[]}
     components={components}
     readme={readme}
     showMenu

@@ -139,11 +139,6 @@ const BarchartsPage = () => (
         data. At Skyscanner, bar charts are commonly used for displaying fare
         prices within a given time period e.g. a year, month or week.
       </Paragraph>,
-      <Paragraph>
-        Depending on your need these can be configured to show a variety of
-        details such as gridlines, labels, and axis. They can also be configured
-        to trigger actions on click such as opening a link.
-      </Paragraph>,
     ]}
     components={components}
     readme={barchartReadme}
