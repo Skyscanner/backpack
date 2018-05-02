@@ -49,6 +49,11 @@ export default () => (
 | leadingButton         | element  | false    | null             |
 | trailingButton        | element  | false    | null             |
 
+#### Theme props
+
+* `navigationBarBackgroundColor`
+* `navigationBarTitleColor`
+
 ### BpkNavigationBarIconButton
 
 ```js
@@ -73,3 +78,37 @@ export default () => (
 | onClick               | func     | true     | -                |
 | label                 | string     | true     | -              |
 | className             | string   | false    | null             |
+
+#### Theme props
+
+* `navigationBarIconButtonColor`
+* `navigationBarIconButtonActiveColor`
+* `navigationBarIconButtonHoverColor`
+
+### BpkNavigationBarButtonLink
+
+```js
+import React from 'react';
+import { BpkNavigationBarButtonLink } from 'bpk-component-navigation-bar';
+
+export default () => (
+  <BpkNavigationBarButtonLink onClick={() => {}}>
+    Done
+  </BpkNavigationBarButtonLink>
+)
+```
+
+#### Props
+
+| Property              | PropType | Required | Default Value    |
+| --------------------- | -------- | -------- | ---------------- |
+| children              | node     | true     | -                |
+| onClick               | func     | true     | -                |
+| className             | string   | false    | null             |
+
+#### Theme props
+
+* `navigationBarButtonLinkColor`
+* `navigationBarButtonLinkActiveColor`
+* `navigationBarButtonLinkHoverColor`
+* `navigationBarButtonLinkVisitedColor`

@@ -18,40 +18,37 @@
 
 /* @flow */
 
-import React, { type ComponentType } from 'react';
+import React, { type Node } from 'react';
 import PropTypes from 'prop-types';
 // TODO: close button is not really only a close button, we should rename and update the import here
-import BpkIconButton from 'bpk-component-close-button';
+import { BpkButtonLink } from 'bpk-component-link';
 import { cssModules } from 'bpk-react-utils';
 
-import STYLES from './BpkNavigationBarIconButton.scss';
+import STYLES from './BpkNavigationBarButtonLink.scss';
 
 const getClassName = cssModules(STYLES);
 
 export type Props = {
-  icon: ComponentType<any>,
-  label: string,
+  children: Node,
   onClick: (event: SyntheticEvent<>) => void,
   className: ?string,
 };
 
-const BpkNavigationBarIconButton = ({ icon, className, ...rest }: Props) => (
-  <BpkIconButton
-    customIcon={icon}
-    className={getClassName('bpk-navigation-bar-icon-button', className)}
+const BpkNavigationBarButtonLink = ({ className, ...rest }: Props) => (
+  <BpkButtonLink
+    className={getClassName('bpk-navigation-bar-button-link', className)}
     {...rest}
   />
 );
 
-BpkNavigationBarIconButton.propTypes = {
-  icon: PropTypes.func.isRequired,
-  label: PropTypes.string.isRequired,
+BpkNavigationBarButtonLink.propTypes = {
+  children: PropTypes.node.isRequired,
   onClick: PropTypes.func.isRequired,
   className: PropTypes.string,
 };
 
-BpkNavigationBarIconButton.defaultProps = {
+BpkNavigationBarButtonLink.defaultProps = {
   className: null,
 };
 
-export default BpkNavigationBarIconButton;
+export default BpkNavigationBarButtonLink;

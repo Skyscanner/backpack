@@ -18,14 +18,16 @@
 
 /* @flow */
 
-import BpkNavigationBar, {
-  type Props as BpkNavigationBarProps,
-} from './src/BpkNavigationBar';
-import BpkNavigationBarIconButton, {
-  type Props as BpkNavigationBarIconButtonProps,
-} from './src/BpkNavigationBarIconButton';
-import themeAttributes from './src/themeAttributes';
+export default [
+  'navigationBarBackgroundColor',
+  'navigationBarTitleColor',
 
-export type { BpkNavigationBarProps, BpkNavigationBarIconButtonProps };
-export { BpkNavigationBarIconButton, themeAttributes };
-export default BpkNavigationBar;
+  'navigationBarButtonLinkColor',
+  'navigationBarButtonLinkActiveColor',
+  'navigationBarButtonLinkHoverColor',
+  'navigationBarButtonLinkVisitedColor',
+
+  'navigationBarIconButtonColor',
+  'navigationBarIconButtonActiveColor',
+  'navigationBarIconButtonHoverColor',
+];
