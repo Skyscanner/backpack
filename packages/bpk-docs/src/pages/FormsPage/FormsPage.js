@@ -81,7 +81,7 @@ const components = [
   {
     id: 'inputs',
     title: 'Inputs',
-    blurb: { blurb },
+    blurb,
     examples: [
       <form className={formClassName}>
         <BpkLabel htmlFor="input">Input</BpkLabel>
