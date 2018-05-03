@@ -24,10 +24,10 @@ import { action } from '@storybook/addon-actions';
 import { withRtlSupport } from 'bpk-component-icon';
 import ArrowIcon from 'bpk-component-icon/sm/long-arrow-left';
 import CloseIcon from 'bpk-component-icon/sm/close';
-import { BpkButtonLink } from 'bpk-component-link';
 import { cssModules } from 'bpk-react-utils';
 
-import BpkNavigationIconButton from './src/BpkNavigationBarIconButton';
+import BpkNavigationBarIconButton from './src/BpkNavigationBarIconButton';
+import BpkNavigationBarButtonLink from './src/BpkNavigationBarButtonLink';
 import BpkNavigationBar from './index';
 import STYLES from './stories.scss';
 
@@ -41,14 +41,14 @@ storiesOf('bpk-component-navigation-bar', module)
         id="test"
         title="Backpack"
         leadingButton={
-          <BpkNavigationIconButton
+          <BpkNavigationBarIconButton
             onClick={action('back clicked')}
             icon={ArrowIconWithRtl}
             label="back"
           />
         }
         trailingButton={
-          <BpkNavigationIconButton
+          <BpkNavigationBarIconButton
             onClick={action('close clicked')}
             icon={CloseIcon}
             label="close"
@@ -63,7 +63,7 @@ storiesOf('bpk-component-navigation-bar', module)
         id="test"
         title="Backpack"
         leadingButton={
-          <BpkNavigationIconButton
+          <BpkNavigationBarIconButton
             onClick={action('back clicked')}
             icon={ArrowIconWithRtl}
             label="back"
@@ -78,7 +78,7 @@ storiesOf('bpk-component-navigation-bar', module)
         id="test"
         title="Backpack"
         trailingButton={
-          <BpkNavigationIconButton
+          <BpkNavigationBarIconButton
             onClick={action('close clicked')}
             icon={CloseIcon}
             label="close"
@@ -93,14 +93,16 @@ storiesOf('bpk-component-navigation-bar', module)
         id="test"
         title="Backpack"
         leadingButton={
-          <BpkNavigationIconButton
+          <BpkNavigationBarIconButton
             onClick={action('back clicked')}
             icon={ArrowIconWithRtl}
             label="back"
           />
         }
         trailingButton={
-          <BpkButtonLink onClick={action('done clicked')}>Done</BpkButtonLink>
+          <BpkNavigationBarButtonLink onClick={action('done clicked')}>
+            Done
+          </BpkNavigationBarButtonLink>
         }
       />
     </div>

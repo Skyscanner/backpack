@@ -22,7 +22,7 @@ exports[`BpkNavigationBar should render correctly with a "leadingButton" attribu
 >
   <button
     aria-label="test"
-    className="bpk-close-button bpk-navigation-bar__leading-item"
+    className="bpk-close-button bpk-navigation-bar-icon-button bpk-navigation-bar__leading-item"
     onClick={[Function]}
     title="test"
     type="button"
@@ -51,7 +51,7 @@ exports[`BpkNavigationBar should render correctly with a "traillingButton" attri
   </span>
   <button
     aria-label="test"
-    className="bpk-close-button bpk-navigation-bar__trailing-item"
+    className="bpk-close-button bpk-navigation-bar-icon-button bpk-navigation-bar__trailing-item"
     onClick={[Function]}
     title="test"
     type="button"

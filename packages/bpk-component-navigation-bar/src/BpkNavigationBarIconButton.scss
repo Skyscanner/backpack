@@ -16,16 +16,16 @@
  * limitations under the License.
  */
 
-/* @flow */
+@import '~bpk-mixins/index';
 
-import BpkNavigationBar, {
-  type Props as BpkNavigationBarProps,
-} from './src/BpkNavigationBar';
-import BpkNavigationBarIconButton, {
-  type Props as BpkNavigationBarIconButtonProps,
-} from './src/BpkNavigationBarIconButton';
-import themeAttributes from './src/themeAttributes';
+.bpk-navigation-bar-icon-button {
+  @include bpk-themeable-property(color, --bpk-navigation-bar-icon-button-color, $bpk-color-gray-500);
 
-export type { BpkNavigationBarProps, BpkNavigationBarIconButtonProps };
-export { BpkNavigationBarIconButton, themeAttributes };
-export default BpkNavigationBar;
+  @include bpk-hover {
+    @include bpk-themeable-property(color, --bpk-navigation-bar-icon-button-hover-color, $bpk-color-gray-700);
+  }
+
+  &:active {
+    @include bpk-themeable-property(color, --bpk-navigation-bar-icon-button-active-color, $bpk-color-gray-900);
+  }
+}

@@ -3,7 +3,7 @@
 exports[`BpkNavigationIconButton should render correctly 1`] = `
 <button
   aria-label="test"
-  className="bpk-close-button some-class"
+  className="bpk-close-button bpk-navigation-bar-icon-button some-class"
   onClick={[Function]}
   title="test"
   type="button"

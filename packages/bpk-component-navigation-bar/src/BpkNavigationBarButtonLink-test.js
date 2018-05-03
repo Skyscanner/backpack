@@ -18,14 +18,19 @@
 
 /* @flow */
 
-import BpkNavigationBar, {
-  type Props as BpkNavigationBarProps,
-} from './src/BpkNavigationBar';
-import BpkNavigationBarIconButton, {
-  type Props as BpkNavigationBarIconButtonProps,
-} from './src/BpkNavigationBarIconButton';
-import themeAttributes from './src/themeAttributes';
+import React from 'react';
+import renderer from 'react-test-renderer';
+import BpkNavigationBarButtonLink from './BpkNavigationBarButtonLink';
 
-export type { BpkNavigationBarProps, BpkNavigationBarIconButtonProps };
-export { BpkNavigationBarIconButton, themeAttributes };
-export default BpkNavigationBar;
+describe('BpkNavigationButtonLink', () => {
+  it('should render correctly', () => {
+    const tree = renderer
+      .create(
+        <BpkNavigationBarButtonLink onClick={() => {}} className="some-class">
+          Test
+        </BpkNavigationBarButtonLink>,
+      )
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+});
