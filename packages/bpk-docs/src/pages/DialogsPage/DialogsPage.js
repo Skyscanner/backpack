@@ -19,7 +19,6 @@
 /* @flow */
 
 import React from 'react';
-import { BpkList, BpkListItem } from 'bpk-component-list';
 import dialogReadme from 'bpk-component-dialog/readme.md';
 
 import Paragraph from './../../components/Paragraph';
@@ -32,7 +31,7 @@ import {
 const components = [
   {
     id: 'default',
-    title: 'Default dialog',
+    title: 'Default',
     blurb: [
       <Paragraph>
         The default dialog gives you a blank canvas with a close icon. Tapping
@@ -60,32 +59,17 @@ const components = [
   },
 ];
 
+const blurb = [
+  <Paragraph>
+    Dialogs inform users about a specific task and may contain critical
+    information, or require decisions or acknowledgement.
+  </Paragraph>,
+];
+
 const DialogsPage = () => (
   <DocsPageBuilder
-    title="Dialogs"
-    blurb={[
-      <Paragraph>
-        Dialogs inform users about a specific task and may contain critical
-        information, or require decisions or acknowledgement. For example:
-      </Paragraph>,
-      <BpkList>
-        <BpkListItem>
-          Alert dialogs: urgent interruptions which tell users about a situation
-          and require acknowledgement.
-        </BpkListItem>
-        <BpkListItem>
-          Decision dialogs: which require users to confirm or make a choice.
-        </BpkListItem>
-      </BpkList>,
-      <Paragraph>
-        Like modals, when triggered, dialogs will emerge from the centre of the
-        viewport with a backdrop to indicate their separation from everything
-        else. They retain focus until dismissed or a required action has been
-        taken. Unlike modals, they are not full screen at mobile size and are
-        generally much smaller, containing only concise content. Use dialogs
-        sparingly because they are interruptive.
-      </Paragraph>,
-    ]}
+    title="Dialog"
+    blurb={blurb}
     components={components}
     readme={dialogReadme}
     usageTable={{

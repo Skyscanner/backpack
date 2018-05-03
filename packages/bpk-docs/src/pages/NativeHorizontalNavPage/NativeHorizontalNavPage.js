@@ -17,7 +17,6 @@
  */
 
 import React from 'react';
-import BpkLink from 'bpk-component-link';
 import readme from 'react-native-bpk-component-horizontal-nav/readme.md';
 
 import iosScreenshotDefault from 'react-native-bpk-component-horizontal-nav/screenshots/ios/default.png';
@@ -29,8 +28,6 @@ import androidScreenshotSpaceAround from 'react-native-bpk-component-horizontal-
 
 import Paragraph from './../../components/Paragraph';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
-
-import { THEMING } from './../../constants/routes';
 
 const components = [
   {
@@ -105,22 +102,19 @@ const components = [
   },
 ];
 
+const isNeo = process.env.BPK_NEO;
+
+const blurb = [
+  <Paragraph>
+    A simple navigation component, ideal for representing a section of a page
+    that links to other pages or views within the page.
+  </Paragraph>,
+];
+
 const NativeHorizontalNavPage = ({ ...rest }) => (
   <DocsPageBuilder
     title="Horizontal Navigation"
-    blurb={[
-      <Paragraph>
-        A simple navigation component, ideal for representing a section of a
-        page that links to other pages or views within the page.
-      </Paragraph>,
-      <Paragraph>
-        It features an indicator line that animates automatically when the
-        selected item changes.
-      </Paragraph>,
-      <Paragraph>
-        The selected item can be <BpkLink href={THEMING}>themed</BpkLink>.
-      </Paragraph>,
-    ]}
+    blurb={isNeo ? null : blurb}
     components={components}
     readme={readme}
     showMenu

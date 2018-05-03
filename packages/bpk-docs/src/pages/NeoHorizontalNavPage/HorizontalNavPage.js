@@ -25,10 +25,17 @@ import Paragraph from './../../components/Paragraph';
 import Web from '../HorizontalNavPage';
 import Native from '../NativeHorizontalNavPage';
 
+const blurb = [
+  <Paragraph>
+    A simple navigation component, ideal for representing a section of a page
+    that links to other pages or views within the page.
+  </Paragraph>,
+];
+
 const Page = () => (
   <DocsPageWrapper
-    title="Neo Horizontal Nav"
-    blurb={[<Paragraph>Blurb for the neo horizontal nav page.</Paragraph>]}
+    title="Horizontal navigation"
+    blurb={blurb}
     webSubpage={<Web wrapped />}
     nativeSubpage={<Native wrapped />}
   />
