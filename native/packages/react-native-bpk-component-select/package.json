@@ -1,8 +1,8 @@
 {
-  "name": "react-native-bpk-component-picker",
-  "version": "1.0.10",
+  "name": "react-native-bpk-component-select",
+  "version": "0.0.0",
   "main": "index.js",
-  "description": "Backpack React Native picker component.",
+  "description": "Backpack React Native select component.",
   "repository": {
     "type": "git",
     "url": "git@github.com:Skyscanner/backpack.git"
@@ -16,9 +16,7 @@
   "dependencies": {
     "bpk-tokens": "^27.0.0",
     "prop-types": "^15.5.8",
-    "react-native-bpk-component-button-link": "^3.0.0",
     "react-native-bpk-component-icon": "^1.7.0",
-    "react-native-bpk-component-select": "^0.0.0",
     "react-native-bpk-component-text": "^2.1.35",
     "react-native-bpk-component-touchable-native-feedback": "^1.1.8",
     "react-native-bpk-component-touchable-overlay": "^1.0.17"

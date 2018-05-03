@@ -17,6 +17,6 @@
  */
 
 /* @flow */
-import BpkSelect from 'react-native-bpk-component-select';
+import BpkSelect from './src/BpkSelect';
 
 export default BpkSelect;

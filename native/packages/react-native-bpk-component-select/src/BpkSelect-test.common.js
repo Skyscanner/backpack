@@ -18,59 +18,43 @@
 
 import React from 'react';
 import { View } from 'react-native';
-import ShallowRenderer from 'react-test-renderer/shallow';
-import BpkPickerTrigger from './BpkPickerTrigger';
+import TestRenderer from 'react-test-renderer';
+import BpkSelect from './BpkSelect';
 
 const commonTests = () => {
-  describe('BpkPickerTrigger', () => {
-    let renderer;
+  describe('BpkSelect', () => {
     const emptyFn = () => null;
-
-    beforeEach(() => {
-      renderer = new ShallowRenderer();
-    });
-
     it('should render correctly', () => {
-      renderer.render(<BpkPickerTrigger onPress={emptyFn} />);
-
-      const tree = renderer.getRenderOutput();
-      expect(tree).toMatchSnapshot();
+      const testRenderer = TestRenderer.create(<BpkSelect onPress={emptyFn} />);
+      expect(testRenderer.toJSON()).toMatchSnapshot();
     });
 
     it('should render correctly with a text label', () => {
-      renderer.render(<BpkPickerTrigger label="label" onPress={emptyFn} />);
-
-      const tree = renderer.getRenderOutput();
-      expect(tree).toMatchSnapshot();
+      const testRenderer = TestRenderer.create(
+        <BpkSelect label="label" onPress={emptyFn} />,
+      );
+      expect(testRenderer.toJSON()).toMatchSnapshot();
     });
 
     it('should render correctly with an element label', () => {
-      renderer.render(<BpkPickerTrigger label={<View />} onPress={emptyFn} />);
-
-      const tree = renderer.getRenderOutput();
-      expect(tree).toMatchSnapshot();
+      const testRenderer = TestRenderer.create(
+        <BpkSelect label={<View />} onPress={emptyFn} />,
+      );
+      expect(testRenderer.toJSON()).toMatchSnapshot();
     });
 
     it('should render correctly with the disabled prop', () => {
-      renderer.render(
-        <BpkPickerTrigger disabled label="label" onPress={emptyFn} />,
+      const testRenderer = TestRenderer.create(
+        <BpkSelect disabled label="label" onPress={emptyFn} />,
       );
-
-      const tree = renderer.getRenderOutput();
-      expect(tree).toMatchSnapshot();
+      expect(testRenderer.toJSON()).toMatchSnapshot();
     });
 
     it('should render correctly with custom styles', () => {
-      renderer.render(
-        <BpkPickerTrigger
-          label="label"
-          onPress={emptyFn}
-          style={{ marginTop: 10 }}
-        />,
+      const testRenderer = TestRenderer.create(
+        <BpkSelect label="label" onPress={emptyFn} style={{ marginTop: 10 }} />,
       );
-
-      const tree = renderer.getRenderOutput();
-      expect(tree).toMatchSnapshot();
+      expect(testRenderer.toJSON()).toMatchSnapshot();
     });
   });
 };

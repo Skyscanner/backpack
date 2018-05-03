@@ -16,7 +16,8 @@
  * limitations under the License.
  */
 
-/* @flow */
-import BpkSelect from 'react-native-bpk-component-select';
+import commonTests from './BpkSelect-test.common';
 
-export default BpkSelect;
+describe('iOS', () => {
+  commonTests();
+});
