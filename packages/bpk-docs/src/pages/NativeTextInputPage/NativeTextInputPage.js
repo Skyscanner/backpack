@@ -26,6 +26,7 @@ import androidScreenshotWithAccessoryView from 'react-native-bpk-component-text-
 
 import Paragraph from './../../components/Paragraph';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
+import DocsPageWrapper from './../../components/neo/DocsPageWrapper';
 
 const reactNativeUrl =
   'https://facebook.github.io/react-native/docs/textinput.html';
@@ -77,23 +78,36 @@ const components = [
   },
 ];
 
-const NativeInputPage = () => (
+const isNeo = process.env.BPK_NEO;
+
+const blurb = [
+  <Paragraph>
+    The Backpack input is a wrapper around the React Native{' '}
+    <BpkLink href={reactNativeUrl}>TextInput component</BpkLink>, therefore it
+    supports all the same behaviours and properties. Optionally an accessory
+    view can be provided which will be rendered on the leading side of the text
+    input. Providing an accessory view changes the behaviour of the floating
+    label.
+  </Paragraph>,
+];
+
+const NativeInputPage = ({ ...rest }) => (
   <DocsPageBuilder
     title="Text input"
-    blurb={[
-      <Paragraph>
-        The Backpack input is a wrapper around the React Native{' '}
-        <BpkLink href={reactNativeUrl}>TextInput component</BpkLink>, therefore
-        it supports all the same behaviours and properties. Optionally an
-        accessory view can be provided which will be rendered on the leading
-        side of the text input. Providing an accessory view changes the
-        behaviour of the floating label.
-      </Paragraph>,
-    ]}
+    blurb={isNeo ? null : blurb}
     components={components}
     readme={readme}
     showMenu={false}
+    {...rest}
   />
 );
 
-export default NativeInputPage;
+const NeoNativeInputPage = () => (
+  <DocsPageWrapper
+    title="Text input"
+    blurb={blurb}
+    nativeSubpage={<NativeInputPage wrapped />}
+  />
+);
+
+export default (isNeo ? NeoNativeInputPage : NativeInputPage);

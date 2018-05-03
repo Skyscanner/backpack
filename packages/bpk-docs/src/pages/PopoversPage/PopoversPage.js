@@ -25,6 +25,7 @@ import popoverReadme from 'bpk-component-popover/readme.md';
 
 import * as ROUTES from './../../constants/routes';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
+import DocsPageWrapper from './../../components/neo/DocsPageWrapper';
 import Paragraph from './../../components/Paragraph';
 import Code from '../../components/Code';
 
@@ -138,17 +139,21 @@ const components = [
   },
 ];
 
-const PopoversPage = () => (
+const isNeo = process.env.BPK_NEO;
+
+const blurb = [
+  <Paragraph>
+    Use popovers to display content or functionality that is related to a
+    particular element in your app or page. When opened, popovers will position
+    themselves below the target element and attempt to stay in the viewport at
+    all times.
+  </Paragraph>,
+];
+
+const PopoversPage = ({ ...rest }) => (
   <DocsPageBuilder
     title="Popovers"
-    blurb={[
-      <Paragraph>
-        Use popovers to display content or functionality that is related to a
-        particular element in your app or page. When opened, popovers will
-        position themselves below the target element and attempt to stay in the
-        viewport at all times.
-      </Paragraph>,
-    ]}
+    blurb={isNeo ? null : blurb}
     components={components}
     readme={popoverReadme}
     usageTable={{
@@ -166,7 +171,16 @@ const PopoversPage = () => (
         "Don't use when you want content to be accessed on hover.",
       ],
     }}
+    {...rest}
   />
 );
 
-export default PopoversPage;
+const NeoPopoverPage = () => (
+  <DocsPageWrapper
+    title="Popover"
+    blurb={blurb}
+    webSubpage={<PopoversPage wrapped />}
+  />
+);
+
+export default (isNeo ? NeoPopoverPage : PopoversPage);

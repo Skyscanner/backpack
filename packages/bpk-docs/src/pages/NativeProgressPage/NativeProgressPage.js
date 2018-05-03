@@ -79,7 +79,7 @@ const components = [
   },
 ];
 
-const NativeProgressPage = () => (
+const NativeProgressPage = ({ ...rest }: { [string]: any }) => (
   <DocsPageBuilder
     title="Progress Bar"
     blurb={[
@@ -92,6 +92,7 @@ const NativeProgressPage = () => (
     components={components}
     readme={readme}
     showMenu
+    {...rest}
   />
 );
 

@@ -17,7 +17,6 @@
 */
 
 import marked from 'marked';
-import Helmet from 'react-helmet';
 import isString from 'lodash/isString';
 import PropTypes from 'prop-types';
 import React, { Children } from 'react';
@@ -197,26 +196,21 @@ const NeoDocsPageBuilder = props => {
     <BpkContentContainer
       className={getClassName(
         `bpkdocs-content-page--${
-          sections.length % 2 === (props.wrapped ? 1 : 0) ? 'even' : 'odd'
+          sections.length % 2 === 0 ? 'even' : 'odd'
         }-sections`,
       )}
     >
-      <Helmet title={props.title} />
       <PageHead
-        title={props.wrapped ? null : props.title}
         blurb={props.blurb}
-        menu={
-          props.showMenu &&
-          [...props.components, ...(props.customSections || [])].map(
-            ({ id, title }) => ({
-              href: `#${id}`,
-              title,
-            }),
-          )
-        }
+        menu={[...props.components, ...(props.customSections || [])].map(
+          ({ id, title }) => ({
+            href: `#${id}`,
+            title,
+          }),
+        )}
         wrapped={props.wrapped}
       />
-      <AlternatingPageContent sections={sections} invert={props.wrapped} />
+      <AlternatingPageContent sections={sections} />
     </BpkContentContainer>
   );
 };
@@ -256,7 +250,6 @@ NeoDocsPageBuilder.propTypes = {
       sassdocId: PropTypes.string,
     }),
   ),
-  showMenu: PropTypes.bool,
   readme: PropTypes.string,
   tokenMap: PropTypes.shape({
     web: PropTypes.object,
@@ -284,7 +277,6 @@ NeoDocsPageBuilder.defaultProps = {
   blurb: null,
   components: [],
   screenshots: [],
-  showMenu: true,
   readme: null,
   tokenMap: null,
   customSections: null,

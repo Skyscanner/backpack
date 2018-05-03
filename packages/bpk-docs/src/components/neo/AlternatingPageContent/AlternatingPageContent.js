@@ -25,7 +25,6 @@ import STYLES from './AlternatingPageContent.scss';
 const getClassName = cssModules(STYLES);
 
 type Props = {
-  invert: boolean,
   sections: Array<?Node>,
 };
 
@@ -33,7 +32,7 @@ const AlternatingPageContent = (props: Props) => (
   <section className={getClassName('bpkdocs-alternating-content')}>
     {React.Children.toArray(
       props.sections.filter(x => x).map((section, i) => {
-        const useAlternateStyle = i % 2 === (props.invert ? 1 : 0);
+        const useAlternateStyle = i % 2 !== 0;
         const classNames = [
           getClassName('bpkdocs-alternating-content__section'),
         ];

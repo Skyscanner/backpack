@@ -23,7 +23,6 @@ import BpkLink from 'bpk-component-link';
 import { BpkList, BpkListItem } from 'bpk-component-list';
 import isString from 'lodash/isString';
 
-import Heading from '../Heading';
 import Paragraph from '../Paragraph';
 
 import STYLES from './PageHead.scss';
@@ -44,20 +43,14 @@ type MenuItem = {
 };
 
 type Props = {
-  title: string,
   blurb: string | Node,
-  wrapped: boolean,
   menu: ?Array<MenuItem>,
 };
 const PageHead = (props: Props) => {
   const contentClassNames = [getClassName('bpkdocs-page-head__content')];
-  if (props.wrapped) {
-    contentClassNames.push(getClassName('bpkdocs-page-head__content--wrapped'));
-  }
   return (
     <section className={getClassName('bpkdocs-page-head')}>
       <div className={contentClassNames.join(' ')}>
-        {props.title && <Heading level="h1">{props.title}</Heading>}
         {props.blurb && toNodes(props.blurb)}
         {props.menu && (
           <BpkList>

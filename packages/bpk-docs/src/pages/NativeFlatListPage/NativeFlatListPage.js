@@ -26,6 +26,7 @@ import androidScreenshotWithImages from 'react-native-bpk-component-flat-list/sc
 
 import Paragraph from './../../components/Paragraph';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
+import DocsPageWrapper from './../../components/neo/DocsPageWrapper';
 
 const components = [
   {
@@ -75,6 +76,8 @@ const components = [
   },
 ];
 
+const isNeo = process.env.BPK_NEO;
+
 const blurb = [
   <Paragraph>
     The flat list component can be used to display content in the form of a
@@ -85,7 +88,7 @@ const blurb = [
 const NativeFlatListPage = ({ ...rest }) => (
   <DocsPageBuilder
     title="Flat list"
-    blurb={blurb}
+    blurb={isNeo ? null : blurb}
     components={components}
     readme={readme}
     showMenu
@@ -93,4 +96,12 @@ const NativeFlatListPage = ({ ...rest }) => (
   />
 );
 
-export default NativeFlatListPage;
+const NeoFlatListPage = () => (
+  <DocsPageWrapper
+    title="Flat List"
+    blurb={blurb}
+    nativeSubpage={<NativeFlatListPage wrapped />}
+  />
+);
+
+export default (isNeo ? NeoFlatListPage : NativeFlatListPage);

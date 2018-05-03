@@ -25,15 +25,10 @@ import gridReadme from 'bpk-component-grid/readme.md';
 
 import * as routes from './../../constants/routes';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
+import DocsPageWrapper from './../../components/neo/DocsPageWrapper';
+
 import BpkParagraph from './../../components/Paragraph';
-
 import Code from '../../components/Code';
-
-const blurb = [
-  <BpkParagraph>
-    A 12 column responsive grid to compose and layout pages.
-  </BpkParagraph>,
-];
 
 const components = [
   {
@@ -86,14 +81,31 @@ const components = [
   },
 ];
 
-const HorizontalGridPage = () => (
+const isNeo = process.env.BPK_NEO;
+
+const blurb = [
+  <BpkParagraph>
+    A 12 column responsive grid to compose and layout pages.
+  </BpkParagraph>,
+];
+
+const HorizontalGridPage = ({ ...rest }) => (
   <DocsPageBuilder
     title="Horizontal grid"
-    blurb={blurb}
+    blurb={isNeo ? null : blurb}
     components={components}
     readme={gridReadme}
     sassdocId="grids"
+    {...rest}
   />
 );
 
-export default HorizontalGridPage;
+const NeoHorizontalGridPage = () => (
+  <DocsPageWrapper
+    title="Horizontal grid"
+    blurb={blurb}
+    webSubpage={<HorizontalGridPage wrapped />}
+  />
+);
+
+export default (isNeo ? NeoHorizontalGridPage : HorizontalGridPage);

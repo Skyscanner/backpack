@@ -27,6 +27,7 @@ import chipReadme from 'bpk-component-chip/readme.md';
 import STYLES from './ChipsPage.scss';
 import Paragraph from './../../components/Paragraph';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
+import DocsPageWrapper from './../../components/neo/DocsPageWrapper';
 
 const getClassName = cssModules(STYLES);
 
@@ -101,18 +102,31 @@ const components = [
   },
 ];
 
-const ChipsPage = () => (
+const isNeo = process.env.BPK_NEO;
+
+const blurb = [
+  <Paragraph>
+    Chips, sometimes called tags, are useful for displaying keywords or
+    categories from common sets of data.
+  </Paragraph>,
+];
+
+const ChipsPage = ({ ...rest }: { [string]: any }) => (
   <DocsPageBuilder
     title="Chips"
-    blurb={[
-      <Paragraph>
-        Chips, sometimes called tags, are useful for displaying keywords or
-        categories from common sets of data.
-      </Paragraph>,
-    ]}
+    blurb={isNeo ? null : blurb}
     components={components}
     readme={chipReadme}
+    {...rest}
   />
 );
 
-export default ChipsPage;
+const NeoChipPage = () => (
+  <DocsPageWrapper
+    title="Chip"
+    blurb={blurb}
+    webSubpage={<ChipsPage wrapped />}
+  />
+);
+
+export default (isNeo ? NeoChipPage : ChipsPage);

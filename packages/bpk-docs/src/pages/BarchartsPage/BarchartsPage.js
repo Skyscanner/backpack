@@ -27,6 +27,7 @@ import { updateOnDirectionChange } from 'bpk-component-rtl-toggle';
 import data from 'bpk-component-barchart/data.json';
 
 import DocsPageBuilder from './../../components/DocsPageBuilder';
+import DocsPageWrapper from './../../components/neo/DocsPageWrapper';
 import Paragraph from './../../components/Paragraph';
 import Code from '../../components/Code';
 
@@ -130,19 +131,32 @@ const components = [
   },
 ];
 
-const BarchartsPage = () => (
+const isNeo = process.env.BPK_NEO;
+
+const blurb = [
+  <Paragraph>
+    Bar charts are useful for displaying comparisons between categories of data.
+    At Skyscanner, bar charts are commonly used for displaying fare prices
+    within a given time period e.g. a year, month or week.
+  </Paragraph>,
+];
+
+const BarchartsPage = ({ ...rest }) => (
   <DocsPageBuilder
     title="Bar chart"
-    blurb={[
-      <Paragraph>
-        Bar charts are useful for displaying comparisons between categories of
-        data. At Skyscanner, bar charts are commonly used for displaying fare
-        prices within a given time period e.g. a year, month or week.
-      </Paragraph>,
-    ]}
+    blurb={isNeo ? null : blurb}
     components={components}
     readme={barchartReadme}
+    {...rest}
   />
 );
 
-export default BarchartsPage;
+const NeoBarchartPage = () => (
+  <DocsPageWrapper
+    title="Bar chart"
+    blurb={blurb}
+    webSubpage={<BarchartsPage wrapped />}
+  />
+);
+
+export default (isNeo ? NeoBarchartPage : BarchartsPage);

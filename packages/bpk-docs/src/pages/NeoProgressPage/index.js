@@ -14,29 +14,10 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
-*/
-@import '~bpk-mixins';
+ */
 
-.bpkdocs-page-wrapper {
-  background-color: $bpk-color-white;
+/* @flow */
 
-  &__inner {
-    padding: $bpk-spacing-xs * 10;
-    padding-bottom: 0;
-  }
+import page from './ProgressPage';
 
-  &__platform-switcher {
-    padding: 0 $bpk-spacing-xs * 10;
-  }
-
-  &__platform-icon {
-    margin-right: $bpk-spacing-sm;
-  }
-
-  &__platform-switcher-item {
-    &--disabled {
-      color: $bpk-color-gray-100;
-      cursor: default;
-    }
-  }
-}
+export default page;

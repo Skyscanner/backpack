@@ -22,6 +22,7 @@ import BpkBlockquote from 'bpk-component-blockquote';
 import blockquotesReadme from 'bpk-component-blockquote/readme.md';
 
 import DocsPageBuilder from './../../components/DocsPageBuilder';
+import DocsPageWrapper from './../../components/neo/DocsPageWrapper';
 import Paragraph from './../../components/Paragraph';
 
 const components = [
@@ -38,18 +39,31 @@ const components = [
   },
 ];
 
-const BlockquotesPage = () => (
+const isNeo = process.env.BPK_NEO;
+
+const blurb = [
+  <Paragraph>
+    The blockquote component allows the creation of a section that is quoted
+    from another source.
+  </Paragraph>,
+];
+
+const BlockquotesPage = ({ ...rest }) => (
   <DocsPageBuilder
     title="Blockquote"
-    blurb={[
-      <Paragraph>
-        The blockquote component allows the creation of a section that is quoted
-        from another source.
-      </Paragraph>,
-    ]}
     components={components}
     readme={blockquotesReadme}
+    blurb={isNeo ? null : blurb}
+    {...rest}
   />
 );
 
-export default BlockquotesPage;
+const NeoBlockquotePage = () => (
+  <DocsPageWrapper
+    title="Blockquote"
+    blurb={blurb}
+    webSubpage={<BlockquotesPage wrapped />}
+  />
+);
+
+export default (isNeo ? NeoBlockquotePage : BlockquotesPage);
