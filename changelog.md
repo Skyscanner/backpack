@@ -2,7 +2,22 @@
 
 [Unreleased changes](./unreleased.md).
 
-# 2018-05-01
+# 2018-05-03 - Navigation bar theming and new props for scrollable components
+
+**Added:**
+- bpk-component-barchart:
+- bpk-component-horizontal-nav:
+  - Added `leadingScrollIndicatorClassName` and `trailingScrollIndicatorClassName` props for styling the scroll indicators.
+
+- bpk-component-mobile-scroll-container:
+  - Added `leadingIndicatorClassName` and `trailingIndicatorClassName` props for styling the scroll indicators.
+
+- bpk-component-navigation-bar:
+  - New `BpkNavigationBarButtonLink` component.
+  - Added theming support.
+
+
+# 2018-05-01 - Native flat list and section list components, plus web navigation bar component
 
 **Added:**
 - react-native-bpk-component-flat-list: 1.0.0
