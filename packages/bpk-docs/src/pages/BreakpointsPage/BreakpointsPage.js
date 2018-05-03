@@ -85,7 +85,7 @@ const components = [
 
 const BreakpointsPage = () => (
   <DocsPageBuilder
-    title="Breakpoints"
+    title="Breakpoint"
     blurb={[
       <Paragraph>
         The breakpoint component allows information to be displayed in different
