@@ -31,7 +31,7 @@ const NeoBadgePage = () => (
     blurb={[
       <Paragraph>
         Badges are labels which hold small amounts of information used to
-        describe/highlight part of a ui.
+        describe or highlight areas.
       </Paragraph>,
     ]}
     webSubpage={<WebBadge wrapped />}

@@ -30,8 +30,7 @@ import Paragraph from './../../components/Paragraph';
 
 const blurb = [
   <Paragraph>
-    The description list component allows can be used to create a definition
-    term an relative description.
+    The description list component allows can be used to create a definition.
   </Paragraph>,
 ];
 

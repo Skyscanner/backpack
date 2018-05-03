@@ -390,15 +390,21 @@ const components = [
   },
 ];
 
+const isNeo = process.env.BPK_NEO;
+
 const BannerAlertsPage = ({ ...rest }: { [string]: any }) => (
   <DocsPageBuilder
     title="Banner alerts"
-    blurb={[
-      <Paragraph>
-        Banner alerts provide feedback to the user when an action has been
-        performed.
-      </Paragraph>,
-    ]}
+    blurb={
+      isNeo
+        ? []
+        : [
+            <Paragraph>
+              Banner alerts provide feedback to the user when an action has been
+              performed.
+            </Paragraph>,
+          ]
+    }
     components={components}
     sassdocId="notifications"
     readme={bannerAlertReadme}

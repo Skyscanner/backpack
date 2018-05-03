@@ -31,6 +31,7 @@ import iosScreenshotWithDividerArrangedVertically from 'react-native-bpk-compone
 import androidScreenshotWithDividerArrangedVertically from 'react-native-bpk-component-card/screenshots/android/with-divider-arranged-vertically.png';
 
 import DocsPageBuilder from './../../components/DocsPageBuilder';
+import Paragraph from './../../components/Paragraph';
 
 const components = [
   {
@@ -154,10 +155,23 @@ const components = [
   },
 ];
 
+const isNeo = process.env.BPK_NEO;
+
 const NativeCardsPage = ({ ...rest }) => (
   <DocsPageBuilder
     title="Cards"
-    blurb={[]}
+    blurb={
+      isNeo
+        ? []
+        : [
+            <Paragraph>
+              - Cards are used to group related items within the UI. They allow
+              complex - datasets to be broken down into individual, distinct
+              areas for easy - consumption. Cards are used as a signifier to
+              give affordance to a - clickable set of elements. -{' '}
+            </Paragraph>,
+          ]
+    }
     components={components}
     readme={readme}
     showMenu

@@ -88,7 +88,7 @@ const BreakpointsPage = () => (
     title="Breakpoints"
     blurb={[
       <Paragraph>
-        The Breakpoint component allows information to be displayed in different
+        The breakpoint component allows information to be displayed in different
         ways depending on the screen size. To simplify things, Backpack uses
         only three breakpoints optimised for mobile, tablet and desktop
         viewports.

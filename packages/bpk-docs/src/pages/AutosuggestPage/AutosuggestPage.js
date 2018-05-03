@@ -271,7 +271,7 @@ const AutosuggestPage = () => (
     title="Autosuggest"
     blurb={[
       <Paragraph>
-        The autosuggest component assist users in query creation and completion
+        The autosuggest component assists users in query creation and completion
         by searching a dynamic list for related keywords, phrases and items.
       </Paragraph>,
     ]}

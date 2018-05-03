@@ -132,7 +132,7 @@ const components = [
 
 const BarchartsPage = () => (
   <DocsPageBuilder
-    title="Bar charts"
+    title="Bar chart"
     blurb={[
       <Paragraph>
         Bar charts are useful for displaying comparisons between categories of
