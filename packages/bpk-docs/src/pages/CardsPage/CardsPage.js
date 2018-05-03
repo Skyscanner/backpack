@@ -67,10 +67,10 @@ const CardsPage = ({ ...rest }) => (
         ? []
         : [
             <Paragraph>
-              - Cards are used to group related items within the UI. They allow
+              Cards are used to group related items within the UI. They allow
               complex - datasets to be broken down into individual, distinct
               areas for easy - consumption. Cards are used as a signifier to
-              give affordance to a - clickable set of elements. -{' '}
+              give affordance to a - clickable set of elements.
             </Paragraph>,
           ]
     }

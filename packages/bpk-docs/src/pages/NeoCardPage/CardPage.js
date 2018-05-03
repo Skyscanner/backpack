@@ -27,7 +27,7 @@ import Native from '../NativeCardsPage';
 
 const Page = () => (
   <DocsPageWrapper
-    title="Neo Card"
+    title="Card"
     blurb={[
       <Paragraph>
         Cards are used to group related items. They allow complex datasets to be
