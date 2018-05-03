@@ -40,7 +40,7 @@ import STYLES from './forms-page.scss';
 import * as ROUTES from './../../constants/routes';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
 import InputContainer from './InputContainer';
-import Paragraph from './../../components/Paragraph';
+import BpkParagraph from './../../components/Paragraph';
 import RadioContainer from './RadioContainer';
 
 const getClassName = cssModules(STYLES);
@@ -68,18 +68,20 @@ const containerClassName = [
   .map(getClassName)
   .join(' ');
 
+const blurb = [
+  <BpkParagraph>
+    When asking a user to input text, please be sure to use the appropriate type
+    of input. Specifying email or number will ensure the correct keyboard is
+    displayed (on supported devices) and also adds semantic meaning to the
+    input.
+  </BpkParagraph>,
+];
+
 const components = [
   {
     id: 'inputs',
     title: 'Inputs',
-    blurb: [
-      <Paragraph>
-        When asking a user to input text, please be sure to use the appropriate
-        type of input. Specifying email or number will ensure the correct
-        keyboard is displayed (on supported devices) and also adds semantic
-        meaning to the input.
-      </Paragraph>,
-    ],
+    blurb: { blurb },
     examples: [
       <form className={formClassName}>
         <BpkLabel htmlFor="input">Input</BpkLabel>
@@ -224,10 +226,10 @@ const components = [
     id: 'selects',
     title: 'Selects (aka dropdowns)',
     blurb: [
-      <Paragraph>
+      <BpkParagraph>
         Backpack selects override the default styles in most modern browsers. In
         some older browsers they simply fall back to the browser default.
-      </Paragraph>,
+      </BpkParagraph>,
     ],
     examples: [
       <form className={formClassName}>
@@ -543,11 +545,11 @@ const components = [
     id: 'textareas',
     title: 'Textareas',
     blurb: [
-      <Paragraph>
+      <BpkParagraph>
         Textareas look almost identical to{' '}
         <BpkLink href="#inputs">inputs</BpkLink> except they allow long text to
         wrap across multiple lines.
-      </Paragraph>,
+      </BpkParagraph>,
     ],
     examples: [
       <form className={formClassName}>
@@ -595,11 +597,11 @@ const components = [
     id: 'checkboxes',
     title: 'Checkboxes',
     blurb: [
-      <Paragraph>
+      <BpkParagraph>
         Similar to selects, checkboxes override the default styles in most
         modern browsers. In some older browsers they simply fall back to the
         browser default.
-      </Paragraph>,
+      </BpkParagraph>,
     ],
     examples: [
       <form className={formClassName}>
@@ -650,10 +652,10 @@ const components = [
     id: 'radios',
     title: 'Radio buttons',
     blurb: [
-      <Paragraph>
+      <BpkParagraph>
         Again, Backpack overrides the browser default styles for radio buttons.
         In some older browsers they simply fall back to the browser default.
-      </Paragraph>,
+      </BpkParagraph>,
     ],
     examples: [
       <RadioContainer value="apples" />,
@@ -666,13 +668,13 @@ const components = [
     id: 'labels',
     title: 'Labels',
     blurb: [
-      <Paragraph>
+      <BpkParagraph>
         Labels should always be used with form elements to provide context to
         the user. Relying on placeholders alone is not good practise. Have a
         look at the{' '}
         <BpkRouterLink to={ROUTES.FIELDSETS}>fieldset</BpkRouterLink> component
         which composes labels, fields and validation messages accordingly.
-      </Paragraph>,
+      </BpkParagraph>,
     ],
     examples: [
       <BpkLabel>This is a label</BpkLabel>,
@@ -685,7 +687,7 @@ const components = [
     id: 'validation',
     title: 'Validation',
     blurb: [
-      <Paragraph>
+      <BpkParagraph>
         Validation messages should be used to provide the user with specific
         feedback about an error with a particular form input field. They can be
         attached to <BpkLink href="#inputs">inputs</BpkLink>
@@ -694,7 +696,7 @@ const components = [
         displayed on form submit or on field blur. Have a look at the{' '}
         <BpkRouterLink to={ROUTES.FIELDSETS}>fieldset</BpkRouterLink> component
         which composes labels, fields and validation messages accordingly.
-      </Paragraph>,
+      </BpkParagraph>,
     ],
     examples: [
       <BpkFormValidation id="form_validation" expanded>
@@ -709,10 +711,16 @@ const components = [
   },
 ];
 
+const pageBlurb = [
+  <BpkParagraph>
+    A range of common inputs for capturing user data.
+  </BpkParagraph>,
+];
+
 const FormsPage = () => (
   <DocsPageBuilder
     title="Form elements"
-    blurb="Here you’ll find a range of common inputs for capturing user data."
+    blurb={pageBlurb}
     components={components}
     sassdocId="forms"
   />

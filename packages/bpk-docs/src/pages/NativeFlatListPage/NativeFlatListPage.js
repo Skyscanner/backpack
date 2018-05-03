@@ -17,7 +17,6 @@
  */
 
 import React from 'react';
-import BpkLink from 'bpk-component-link';
 import readme from 'react-native-bpk-component-flat-list/readme.md';
 
 import iosScreenshotDefault from 'react-native-bpk-component-flat-list/screenshots/ios/default.png';
@@ -27,9 +26,6 @@ import androidScreenshotWithImages from 'react-native-bpk-component-flat-list/sc
 
 import Paragraph from './../../components/Paragraph';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
-
-const REACT_NATIVE_FLAT_LIST_URI =
-  'https://facebook.github.io/react-native/docs/flatlist.html';
 
 const components = [
   {
@@ -56,7 +52,7 @@ const components = [
   },
   {
     id: 'with-images',
-    title: 'With Images',
+    title: 'With image',
     blurb: 'List items can also contain images.',
     screenshots: [
       {
@@ -79,17 +75,17 @@ const components = [
   },
 ];
 
+const blurb = [
+  <Paragraph>
+    The flat list component can be used to display content in the form of a
+    tappable list.
+  </Paragraph>,
+];
+
 const NativeFlatListPage = ({ ...rest }) => (
   <DocsPageBuilder
-    title="Flat List"
-    blurb={[
-      <Paragraph>
-        Flat List can be used for lists. It&#39;s a wrapper around React
-        Native&#39;s{' '}
-        <BpkLink href={REACT_NATIVE_FLAT_LIST_URI}>FlatList component</BpkLink>,
-        therefore it supports all the same behaviours and properties.
-      </Paragraph>,
-    ]}
+    title="Flat list"
+    blurb={blurb}
     components={components}
     readme={readme}
     showMenu

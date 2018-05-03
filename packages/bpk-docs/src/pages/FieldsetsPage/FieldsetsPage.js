@@ -313,22 +313,24 @@ const components = [
   },
 ];
 
+const blurb = [
+  <Paragraph>
+    Fieldsets encapsulate the composition of{' '}
+    <BpkRouterLink to={`${ROUTES.FORMS}`}>form controls</BpkRouterLink>
+    , <BpkRouterLink to={`${ROUTES.FORMS}#labels`}>labels</BpkRouterLink>
+    &nbsp;&amp;{' '}
+    <BpkRouterLink to={`${ROUTES.FORMS}#validation`}>
+      validation messages
+    </BpkRouterLink>{' '}
+    with the necessary attributes to ensure good accessibility for screen
+    readers.
+  </Paragraph>,
+];
+
 const FieldsetPage = () => (
   <DocsPageBuilder
-    title="Fieldsets"
-    blurb={[
-      <Paragraph>
-        Fieldsets encapsulate the composition of{' '}
-        <BpkRouterLink to={`${ROUTES.FORMS}`}>form controls</BpkRouterLink>
-        , <BpkRouterLink to={`${ROUTES.FORMS}#labels`}>labels</BpkRouterLink>
-        &nbsp;&amp;{' '}
-        <BpkRouterLink to={`${ROUTES.FORMS}#validation`}>
-          validation messages
-        </BpkRouterLink>{' '}
-        with the necessary attributes to ensure good accessibility for screen
-        readers.
-      </Paragraph>,
-    ]}
+    title="Fieldset"
+    blurb={blurb}
     components={components}
     readme={readme}
   />

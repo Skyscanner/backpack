@@ -19,26 +19,62 @@
 import React from 'react';
 import BpkBlockquote from 'bpk-component-blockquote';
 import BpkRouterLink from 'bpk-component-router-link';
+import BpkText from 'bpk-component-text';
 
 import gridReadme from 'bpk-component-grid/readme.md';
 
 import * as routes from './../../constants/routes';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
-import Paragraph from './../../components/Paragraph';
+import BpkParagraph from './../../components/Paragraph';
+
 import Code from '../../components/Code';
 
-const HorizontalGridPage = () => (
-  <DocsPageBuilder
-    title="Horizontal grid"
-    blurb={[
-      <Paragraph>
-        Backpack uses a 12 column responsive grid to compose and layout pages.
-        Grids are composed using three basic building blocks: containers, rows
-        and columns. Containers are used to encapsulate the entire layout (all
-        rows). Rows are used to act as container to columns and columns are used
-        to horizontally layout content.
-      </Paragraph>,
-      <BpkBlockquote extraSpace>
+const blurb = [
+  <BpkParagraph>
+    A 12 column responsive grid to compose and layout pages.
+  </BpkParagraph>,
+];
+
+const components = [
+  {
+    id: 'default',
+    title: 'Default',
+    examples: [
+      <BpkText tagName="h3" textStyle="base" bold>
+        Columns
+      </BpkText>,
+      <BpkParagraph>
+        The grid makes use of 12 percentage based columns, which means your
+        layouts will scale no matter the browser size. Columns are separated by
+        fixed width gutters and margins.
+      </BpkParagraph>,
+      <BpkParagraph>
+        <BpkRouterLink to={routes.GRID_COLUMN_DEMO}>View demo.</BpkRouterLink>
+      </BpkParagraph>,
+      <BpkText tagName="h3" textStyle="base" bold>
+        Offsets
+      </BpkText>,
+      <BpkParagraph>
+        Offsets allow you to shift columns to the right. Depending on their
+        size, columns can be offset by 1 through 11.
+      </BpkParagraph>,
+      <BpkParagraph>
+        <BpkRouterLink to={routes.GRID_OFFSET_DEMO}>View demo.</BpkRouterLink>
+      </BpkParagraph>,
+      <BpkText tagName="h3" textStyle="base" bold>
+        Responsive behaviour
+      </BpkText>,
+      <BpkParagraph>
+        The grid works in conjunction with the{' '}
+        {
+          <BpkRouterLink to={routes.BREAKPOINTS}>
+            Breakpoint component
+          </BpkRouterLink>
+        }{' '}
+        and can be used to position content differently based on these viewports
+        by specifying different widths and offsets.
+      </BpkParagraph>,
+      <BpkBlockquote>
         <strong>Note:</strong> The Backpack grid is intended to be used for
         overall page layout as opposed to spacing out atom or molecule level
         components. Please stick to flexbox based techniques for more intricate
@@ -46,36 +82,15 @@ const HorizontalGridPage = () => (
         support), just be sure to use the spacing values above in order to
         achieve consistency.
       </BpkBlockquote>,
-      <Paragraph>
-        <strong>Columns</strong>
-      </Paragraph>,
-      <Paragraph>
-        The grid makes use of 12 percentage based columns, which means your
-        layouts will scale no matter the browser size. Columns are separated by
-        fixed width gutters and margins.
-      </Paragraph>,
-      <Paragraph>
-        <BpkRouterLink to={routes.GRID_COLUMN_DEMO}>View demo.</BpkRouterLink>
-      </Paragraph>,
-      <Paragraph>
-        <strong>Offsets</strong>
-      </Paragraph>,
-      <Paragraph>
-        Offsets allow you to shift columns to the right. Depending on their
-        size, columns can be offset by 1 through 11.
-      </Paragraph>,
-      <Paragraph>
-        <BpkRouterLink to={routes.GRID_OFFSET_DEMO}>View demo.</BpkRouterLink>
-      </Paragraph>,
-      <Paragraph>
-        <strong>Responsive behaviour</strong>
-      </Paragraph>,
-      <Paragraph>
-        The grid works in conjunction with the breakpoints listed above and can
-        be used to position content differently based on these viewports by
-        specifying different widths and offsets.
-      </Paragraph>,
-    ]}
+    ],
+  },
+];
+
+const HorizontalGridPage = () => (
+  <DocsPageBuilder
+    title="Horizontal grid"
+    blurb={blurb}
+    components={components}
     readme={gridReadme}
     sassdocId="grids"
   />

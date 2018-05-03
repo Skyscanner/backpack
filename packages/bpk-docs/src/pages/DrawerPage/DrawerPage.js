@@ -90,7 +90,7 @@ DrawerContainer.propTypes = {
 const components = [
   {
     id: 'default',
-    title: 'Default drawer',
+    title: 'Default',
     blurb: 'The default drawer has a title and a close button',
     examples: [
       <DrawerContainer closeLabel="Close drawer">
@@ -115,18 +115,17 @@ const components = [
   },
 ];
 
+const blurb = [
+  <Paragraph>
+    Drawers slide in from the edge of the screen and are used to display content
+    on top of the current view.
+  </Paragraph>,
+];
+
 const DrawerPage = () => (
   <DocsPageBuilder
     title="Drawer"
-    blurb={[
-      <Paragraph>
-        Drawers are used to display content or views that are separate from the
-        rest of the app or page. When triggered, drawers will slide in from the
-        side of the viewport with a backdrop to indicate their separation from
-        everything else. On mobile viewports, they leave a sliver of the
-        backdrop visible to allow for easier closing.
-      </Paragraph>,
-    ]}
+    blurb={blurb}
     components={components}
     readme={drawerReadme}
   />
