@@ -27,42 +27,47 @@ import descriptionlistsReadme from 'bpk-component-description-list/readme.md';
 
 import DocsPageBuilder from './../../components/DocsPageBuilder';
 import Paragraph from './../../components/Paragraph';
-import PresentationBlock from './../../components/PresentationBlock';
 
 const blurb = [
   <Paragraph>
-    The description list component allows you to create a definition term an
-    relative description.
+    The description list component allows can be used to create a definition.
   </Paragraph>,
-  <PresentationBlock>
-    <BpkDescriptionList>
-      <BpkDescriptionTerm>Airport code</BpkDescriptionTerm>
-      <BpkDescriptionDetails>
-        The three digit code which is unique to a specific airport. eg. LHR for
-        Heathrow or LGW for Gatwick.
-      </BpkDescriptionDetails>
-      <BpkDescriptionTerm>Boarding pass</BpkDescriptionTerm>
-      <BpkDescriptionDetails>
-        A card given to the passenger after check-in which allocates a seat
-        number or indicates a boarding pattern. The stub of the card should be
-        retained after going through the boarding gate to show to the flight
-        crew once reaching the aircraft.
-      </BpkDescriptionDetails>
-      <BpkDescriptionTerm>Charter</BpkDescriptionTerm>
-      <BpkDescriptionDetails>
-        An aircraft which is used by a specific group be it customers of a
-        particular holiday company or an individual party.
-      </BpkDescriptionDetails>
-    </BpkDescriptionList>
-  </PresentationBlock>,
+];
+
+const components = [
+  {
+    id: 'default',
+    title: 'Default',
+    examples: [
+      <BpkDescriptionList>
+        <BpkDescriptionTerm>Airport code</BpkDescriptionTerm>
+        <BpkDescriptionDetails>
+          The three digit code which is unique to a specific airport. eg. LHR
+          for Heathrow or LGW for Gatwick.
+        </BpkDescriptionDetails>
+        <BpkDescriptionTerm>Boarding pass</BpkDescriptionTerm>
+        <BpkDescriptionDetails>
+          A card given to the passenger after check-in which allocates a seat
+          number or indicates a boarding pattern. The stub of the card should be
+          retained after going through the boarding gate to show to the flight
+          crew once reaching the aircraft.
+        </BpkDescriptionDetails>
+        <BpkDescriptionTerm>Charter</BpkDescriptionTerm>
+        <BpkDescriptionDetails>
+          An aircraft which is used by a specific group be it customers of a
+          particular holiday company or an individual party.
+        </BpkDescriptionDetails>
+      </BpkDescriptionList>,
+    ],
+  },
 ];
 
 const DescriptionListsPage = () => (
   <DocsPageBuilder
     title="Description Lists"
-    showMenu={false}
     readme={descriptionlistsReadme}
     blurb={blurb}
+    components={components}
   />
 );
 

@@ -27,8 +27,12 @@ import NativeButtons from '../NativeButtonPage';
 
 const NeoButtonPage = () => (
   <DocsPageWrapper
-    title="Neo Button"
-    blurb={[<Paragraph>Blurb for the neo button page.</Paragraph>]}
+    title="Button"
+    blurb={[
+      <Paragraph>
+        Buttons make common actions and navigation easy to perform.
+      </Paragraph>,
+    ]}
     webSubpage={<WebButtons wrapped />}
     nativeSubpage={<NativeButtons wrapped />}
   />

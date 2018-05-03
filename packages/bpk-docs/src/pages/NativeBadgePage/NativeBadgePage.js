@@ -98,16 +98,22 @@ const components = [
   },
 ];
 
+const isNeo = process.env.BPK_NEO;
+
 const NativeBadgePage = ({ ...rest }) => (
   <DocsPageBuilder
     title="Badges"
-    blurb={[
-      <Paragraph>
-        Badges are labels which hold small amounts of information. Badges are
-        most often used as counters, such as an indication of unread
-        notifications.
-      </Paragraph>,
-    ]}
+    blurb={
+      isNeo
+        ? []
+        : [
+            <Paragraph>
+              Badges are labels which hold small amounts of information. Badges
+              are most often used as counters, such as an indication of unread
+              notifications.
+            </Paragraph>,
+          ]
+    }
     components={components}
     readme={readme}
     showMenu

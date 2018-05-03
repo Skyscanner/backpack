@@ -200,17 +200,23 @@ const components = [
   },
 ];
 
+const isNeo = process.env.BPK_NEO;
+
 const BadgePage = ({ ...rest }) => (
   <DocsPageBuilder
     title="Badge"
-    blurb={[
-      <Paragraph>
-        Badges are labels which hold small amounts of information. They are
-        available in a number of colors to signify different meanings. Badges
-        are most often used as counters, such as an indication of unread
-        notifications.
-      </Paragraph>,
-    ]}
+    blurb={
+      isNeo
+        ? []
+        : [
+            <Paragraph>
+              Badges are labels which hold small amounts of information. They
+              are available in a number of colors to signify different meanings.
+              Badges are most often used as counters, such as an indication of
+              unread notifications.
+            </Paragraph>,
+          ]
+    }
     components={components}
     readme={badgeReadme}
     sassdocId="badges"

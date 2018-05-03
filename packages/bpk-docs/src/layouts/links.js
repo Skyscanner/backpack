@@ -244,7 +244,7 @@ const neoComponentsLinks = [
       {
         id: 'DESCRIPTION_LIST',
         route: routes.NEO_DESCRIPTION_LIST,
-        children: 'Description List',
+        children: 'Description list',
       },
       { id: 'TABLE', route: routes.NEO_TABLE, children: 'Table' },
       {
@@ -256,7 +256,7 @@ const neoComponentsLinks = [
       { id: 'BUTTON', route: routes.NEO_BUTTON, children: 'Button' },
       { id: 'ICON', route: routes.NEO_ICON, children: 'Icon' },
       { id: 'SPINNER', route: routes.NEO_SPINNER, children: 'Spinner' },
-      { id: 'FORM', route: routes.NEO_FORM, children: 'Form' },
+      { id: 'FORM', route: routes.NEO_FORM, children: 'Form elements' },
       { id: 'CARD', route: routes.NEO_CARD, children: 'Card' },
       { id: 'CHIP', route: routes.NEO_CHIP, children: 'Chip' },
       { id: 'BADGE', route: routes.NEO_BADGE, children: 'Badge' },
@@ -336,7 +336,7 @@ const neoComponentsLinks = [
       {
         id: 'NATIVE_FLAT_LIST',
         route: routes.NEO_FLAT_LIST,
-        children: 'FlatList',
+        children: 'Flat list',
       },
       {
         id: 'NATIVE_INPUT',
@@ -346,7 +346,7 @@ const neoComponentsLinks = [
       {
         id: 'NATIVE_NAVIGATION_BAR',
         route: routes.NEO_NAVIGATION_BAR,
-        children: 'Navigation Bar',
+        children: 'Navigation bar',
       },
       // TODO: Uncomment later.
       // {
@@ -367,22 +367,22 @@ const neoComponentsLinks = [
       {
         id: 'NATIVE_SECTION_LIST',
         route: routes.NEO_SECTION_LIST,
-        children: 'SectionList',
+        children: 'Section list',
       },
       {
         id: 'NATIVE_SWITCH',
         route: routes.NEO_SWITCH,
-        children: 'Switche',
+        children: 'Switch',
       },
       {
         id: 'NATIVE_TOUCHABLE_OVERLAY',
         route: routes.NEO_TOUCHABLE_OVERLAY,
-        children: 'Touchable Overlay',
+        children: 'Touchable overlay',
       },
       {
         id: 'NATIVE_TOUCHABLE_NATIVE_FEEDBACK',
         route: routes.NEO_TOUCHABLE_NATIVE_FEEDBACK,
-        children: 'Touchable Native Feedback',
+        children: 'Touchable native feedback',
       },
 
       // Utilities.

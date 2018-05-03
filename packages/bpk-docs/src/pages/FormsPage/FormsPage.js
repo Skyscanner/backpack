@@ -711,7 +711,7 @@ const components = [
 
 const FormsPage = () => (
   <DocsPageBuilder
-    title="Forms"
+    title="Form elements"
     blurb="Here you’ll find a range of common inputs for capturing user data."
     components={components}
     sassdocId="forms"

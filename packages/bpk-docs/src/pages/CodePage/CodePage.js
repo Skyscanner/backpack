@@ -23,35 +23,41 @@ import codeReadme from 'bpk-component-code/readme.md';
 
 import DocsPageBuilder from './../../components/DocsPageBuilder';
 import Paragraph from './../../components/Paragraph';
-import PresentationBlock from './../../components/PresentationBlock';
 
 const blurb = [
   <Paragraph>
-    The code component enables to highlight code inside a block of text or
-    create a whole code block.
+    The code component can be used to format a piece of text or entire text
+    block as code.
   </Paragraph>,
-  <PresentationBlock>
-    <Paragraph>
-      We recommend using React from npm with a bundler like webpack. You can use
-      the <BpkCode>react</BpkCode> and <BpkCode>react-dom</BpkCode> packages.
-      After installing it using{' '}
-      <BpkCode>npm install --save react react-dom</BpkCode>, you can use:
-    </Paragraph>
-    <BpkCodeBlock>
-      {`import React from 'react';
-import ReactDOM from 'react-dom';
+];
 
-ReactDOM.render(<App />, ...);`}
-    </BpkCodeBlock>
-  </PresentationBlock>,
+const components = [
+  {
+    id: 'default',
+    title: 'Default',
+    examples: [
+      <Paragraph>
+        We recommend using React from npm with a bundler like webpack. You can
+        use the <BpkCode>react</BpkCode> and <BpkCode>react-dom</BpkCode>{' '}
+        packages. After installing it using{' '}
+        <BpkCode>npm install --save react react-dom</BpkCode>, you can use:
+      </Paragraph>,
+      <BpkCodeBlock>
+        {`import React from 'react';
+  import ReactDOM from 'react-dom';
+
+  ReactDOM.render(<App />, ...);`}
+      </BpkCodeBlock>,
+    ],
+  },
 ];
 
 const CodePage = () => (
   <DocsPageBuilder
     title="Code"
-    showMenu={false}
     readme={codeReadme}
     blurb={blurb}
+    components={components}
   />
 );
 

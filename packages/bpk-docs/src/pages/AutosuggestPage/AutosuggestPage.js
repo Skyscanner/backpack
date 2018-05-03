@@ -18,7 +18,6 @@
 
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import BpkLink from 'bpk-component-link';
 import BpkLabel from 'bpk-component-label';
 import { withRtlSupport } from 'bpk-component-icon';
 import BpkRouterLink from 'bpk-component-router-link';
@@ -272,14 +271,8 @@ const AutosuggestPage = () => (
     title="Autosuggest"
     blurb={[
       <Paragraph>
-        The Backpack autosuggest component is a lightweight wrapper around{' '}
-        <BpkLink href="http://react-autosuggest.js.org/" blank>
-          React Autosuggest
-        </BpkLink>. It can be used to display suggestions for travel
-        destinations, hotels, car hire and more - any data source can be used.
-        Whilst you have full control over suggestion rendering, Backpack
-        provides a built-in suggestion component allowing you to display icons,
-        sub-headings and more.
+        The autosuggest component assists users in query creation and completion
+        by searching a dynamic list for related keywords, phrases and items.
       </Paragraph>,
     ]}
     components={components}

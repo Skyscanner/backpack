@@ -300,16 +300,22 @@ const customSections = [
   },
 ];
 
+const isNeo = process.env.BPK_NEO;
+
 const ButtonsPage = ({ ...rest }: { [string]: any }) => (
   <DocsPageBuilder
     title="Buttons"
-    blurb={[
-      <Paragraph>
-        On this page, you’ll find examples and information on how to use the
-        button component. If you provide an href, an anchor tag is rendered
-        instead.
-      </Paragraph>,
-    ]}
+    blurb={
+      isNeo
+        ? []
+        : [
+            <Paragraph>
+              On this page, you’ll find examples and information on how to use
+              the button component. If you provide an href, an anchor tag is
+              rendered instead.
+            </Paragraph>,
+          ]
+    }
     components={components}
     sassdocId="buttons"
     readme={buttonReadme}

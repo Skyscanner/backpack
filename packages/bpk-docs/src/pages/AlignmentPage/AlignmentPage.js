@@ -231,7 +231,7 @@ const AlignmentPage = () => (
         Alignment higher-order-components (HOCs) allow components to be aligned
         vertically within a given space.
       </Paragraph>,
-      <Heading level="h2">Installation</Heading>,
+      <Heading level="h3">Installation</Heading>,
       <Paragraph>
         The alignment HOCs are provided in the <Code>bpk-component-icon</Code>{' '}
         package. See <BpkLink href={ROUTES.ICONS}>Icons</BpkLink> for

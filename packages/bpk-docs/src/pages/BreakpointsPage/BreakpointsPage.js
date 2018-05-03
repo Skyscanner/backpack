@@ -85,11 +85,13 @@ const components = [
 
 const BreakpointsPage = () => (
   <DocsPageBuilder
-    title="Breakpoints"
+    title="Breakpoint"
     blurb={[
       <Paragraph>
-        To simplify things, Backpack uses only three breakpoints optimised for
-        mobile, tablet and desktop viewports.
+        The breakpoint component allows information to be displayed in different
+        ways depending on the screen size. To simplify things, Backpack uses
+        only three breakpoints optimised for mobile, tablet and desktop
+        viewports.
       </Paragraph>,
     ]}
     components={components}
