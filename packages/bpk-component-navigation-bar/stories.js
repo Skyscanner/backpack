@@ -26,9 +26,10 @@ import ArrowIcon from 'bpk-component-icon/sm/long-arrow-left';
 import CloseIcon from 'bpk-component-icon/sm/close';
 import { cssModules } from 'bpk-react-utils';
 
-import BpkNavigationBarIconButton from './src/BpkNavigationBarIconButton';
-import BpkNavigationBarButtonLink from './src/BpkNavigationBarButtonLink';
-import BpkNavigationBar from './index';
+import BpkNavigationBar, {
+  BpkNavigationBarButtonLink,
+  BpkNavigationBarIconButton,
+} from './index';
 import STYLES from './stories.scss';
 
 const getClassNames = cssModules(STYLES);

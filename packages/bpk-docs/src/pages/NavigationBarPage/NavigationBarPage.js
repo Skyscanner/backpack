@@ -24,8 +24,8 @@ import CloseIcon from 'bpk-component-icon/sm/close';
 import { withRtlSupport } from 'bpk-component-icon';
 import BpkNavigationBar, {
   BpkNavigationBarIconButton,
+  BpkNavigationBarButtonLink,
 } from 'bpk-component-navigation-bar';
-import { BpkButtonLink } from 'bpk-component-link';
 import navigationBarReadme from 'bpk-component-navigation-bar/readme.md';
 import { cssModules } from 'bpk-react-utils';
 
@@ -78,7 +78,9 @@ const components = [
             />
           }
           trailingButton={
-            <BpkButtonLink onClick={() => {}}>Done</BpkButtonLink>
+            <BpkNavigationBarButtonLink onClick={() => {}}>
+              Done
+            </BpkNavigationBarButtonLink>
           }
         />
       </div>,

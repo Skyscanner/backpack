@@ -24,8 +24,19 @@ import BpkNavigationBar, {
 import BpkNavigationBarIconButton, {
   type Props as BpkNavigationBarIconButtonProps,
 } from './src/BpkNavigationBarIconButton';
+import BpkNavigationBarButtonLink, {
+  type Props as BpkNavigationBarButtonLinkProps,
+} from './src/BpkNavigationBarButtonLink';
 import themeAttributes from './src/themeAttributes';
 
-export type { BpkNavigationBarProps, BpkNavigationBarIconButtonProps };
-export { BpkNavigationBarIconButton, themeAttributes };
+export type {
+  BpkNavigationBarProps,
+  BpkNavigationBarIconButtonProps,
+  BpkNavigationBarButtonLinkProps,
+};
+export {
+  BpkNavigationBarIconButton,
+  BpkNavigationBarButtonLink,
+  themeAttributes,
+};
 export default BpkNavigationBar;
