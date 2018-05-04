@@ -29,6 +29,7 @@ import {
 import tablesReadme from 'bpk-component-table/readme.md';
 
 import DocsPageBuilder from './../../components/DocsPageBuilder';
+import DocsPageWrapper from './../../components/neo/DocsPageWrapper';
 import Paragraph from './../../components/Paragraph';
 import PresentationBlock from './../../components/PresentationBlock';
 
@@ -65,13 +66,24 @@ const blurb = [
   </PresentationBlock>,
 ];
 
-const TablesPage = () => (
+const isNeo = process.env.BPK_NEO;
+
+const TablesPage = ({ ...rest }) => (
   <DocsPageBuilder
     title="Tables"
     showMenu={false}
     readme={tablesReadme}
-    blurb={blurb}
+    blurb={isNeo ? null : blurb}
+    {...rest}
   />
 );
 
-export default TablesPage;
+const NeoTablePage = () => (
+  <DocsPageWrapper
+    title="Table"
+    blurb={blurb}
+    webSubpage={<TablesPage wrapped />}
+  />
+);
+
+export default (isNeo ? NeoTablePage : TablesPage);

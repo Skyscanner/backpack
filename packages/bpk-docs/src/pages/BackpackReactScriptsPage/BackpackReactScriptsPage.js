@@ -18,9 +18,10 @@
 
 import React from 'react';
 import BpkLink from 'bpk-component-link';
-import { BpkCode, BpkCodeBlock } from 'bpk-component-code';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
 import Paragraph from './../../components/Paragraph';
+import Code from '../../components/Code';
+import CodeBlock from '../../components/CodeBlock';
 
 const createReactAppHref =
   'https://github.com/facebookincubator/create-react-app';
@@ -32,13 +33,13 @@ const components = [
     id: 'tldr',
     title: 'TL;DR',
     blurb: [
-      <BpkCodeBlock>
+      <CodeBlock>
         {`npm install -g create-react-app
 
 create-react-app my-app --scripts-version=backpack-react-scripts
 cd my-app
 npm start`}
-      </BpkCodeBlock>,
+      </CodeBlock>,
       <Paragraph>
         Then open{' '}
         <BpkLink href="http://localhost:3000/" blank>
@@ -48,7 +49,7 @@ npm start`}
       </Paragraph>,
       <Paragraph>
         When you’re ready to deploy to production, create a minified bundle with{' '}
-        <BpkCode>npm run build</BpkCode>.
+        <Code>npm run build</Code>.
       </Paragraph>,
     ],
     examples: [],
@@ -58,7 +59,7 @@ npm start`}
     title: 'How does this work?',
     blurb: [
       <Paragraph>
-        <BpkCode>backpack-react-scripts</BpkCode> is designed to be used in
+        <Code>backpack-react-scripts</Code> is designed to be used in
         conjunction with Facebook&apos;s{' '}
         <BpkLink href={createReactAppHref} blank>
           Create React App
@@ -77,7 +78,7 @@ npm start`}
         <BpkLink href={createReactAppHref} blank>
           readme
         </BpkLink>, as the majority of it&apos;s content still applies to{' '}
-        <BpkCode>backpack-react-scripts</BpkCode>.
+        <Code>backpack-react-scripts</Code>.
       </Paragraph>,
     ],
     examples: [],
@@ -98,17 +99,17 @@ npm start`}
         are you supposed to upgrade?
       </Paragraph>,
       <Paragraph>
-        <BpkCode>backpack-react-scripts</BpkCode> is aimed at providing teams
-        and codebases with a standardised way of building production web apps
-        with Backpack + React at Skyscanner. When you create an app using{' '}
-        <BpkCode>
+        <Code>backpack-react-scripts</Code> is aimed at providing teams and
+        codebases with a standardised way of building production web apps with
+        Backpack + React at Skyscanner. When you create an app using{' '}
+        <Code>
           create-react-app my-app --scripts-version=backpack-react-scripts
-        </BpkCode>, you&apos;ll notice that your project&apos;s{' '}
-        <BpkCode>package.json</BpkCode> has a dependency on{' '}
-        <BpkCode>backpack-react-scripts</BpkCode>. When we release new versions
-        going forward (i.e. support for server-side rendering etc), all you need
-        to do is bump the version number and run <BpkCode>npm install</BpkCode>{' '}
-        to reap the rewards.
+        </Code>, you&apos;ll notice that your project&apos;s{' '}
+        <Code>package.json</Code> has a dependency on{' '}
+        <Code>backpack-react-scripts</Code>. When we release new versions going
+        forward (i.e. support for server-side rendering etc), all you need to do
+        is bump the version number and run <Code>npm install</Code> to reap the
+        rewards.
       </Paragraph>,
     ],
     examples: [],
@@ -122,8 +123,8 @@ npm start`}
         <BpkLink href={backpackReactScriptsChangelogHref} blank>
           changelog
         </BpkLink>{' '}
-        when performing updates to your{' '}
-        <BpkCode>backpack-react-scripts</BpkCode> dependency.
+        when performing updates to your <Code>backpack-react-scripts</Code>{' '}
+        dependency.
       </Paragraph>,
     ],
     examples: [],

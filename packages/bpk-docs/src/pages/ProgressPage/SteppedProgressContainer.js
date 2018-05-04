@@ -32,15 +32,13 @@ export default class SteppedProgressContainer extends Component {
     this.state = {
       progress: 1,
     };
-
-    this.setProgress = this.setProgress.bind(this);
   }
 
-  setProgress(progress) {
+  setProgress = progress => {
     if (progress >= 1 && progress <= 5) {
       this.setState({ progress });
     }
-  }
+  };
 
   render() {
     return (

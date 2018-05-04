@@ -2,6 +2,145 @@
 
 [Unreleased changes](./unreleased.md).
 
+# 2018-05-04 - Fixed BpkNavigationBarButtonLink export
+
+**Fixed:**
+- bpk-navigation-bar: 1.1.0 => 1.1.1
+  - fixed BpkNavigationBarButtonLink export in the index file.
+
+# 2018-05-03 - Navigation bar theming and new props for scrollable components
+
+**Added:**
+- bpk-component-barchart:
+- bpk-component-horizontal-nav:
+  - Added `leadingScrollIndicatorClassName` and `trailingScrollIndicatorClassName` props for styling the scroll indicators.
+
+- bpk-component-mobile-scroll-container:
+  - Added `leadingIndicatorClassName` and `trailingIndicatorClassName` props for styling the scroll indicators.
+
+- bpk-component-navigation-bar:
+  - New `BpkNavigationBarButtonLink` component.
+  - Added theming support.
+
+
+# 2018-05-01 - Native flat list and section list components, plus web navigation bar component
+
+**Added:**
+- react-native-bpk-component-flat-list: 1.0.0
+  - Introducing the React Native FlatList component, see: https://backpack.github.io/components/native/flat-list
+- react-native-bpk-component-section-list: 1.0.0
+  - Introducing the React Native SectionList component, see: https://backpack.github.io/components/native/section-list
+
+- bpk-component-navigation-bar: 1.0.0
+  - Introducing the web navigation bar, see: https://backpack.github.io/components/web/navigation-bar
+
+- bpk-component-modal: 1.6.20 => 1.7.0
+  - Ability to remove padding from inner content e.g. `padded={false}`.
+  - Ability to add a custom class name to inner content e.g. `contentClassName="my-custom-class"`.
+
+- bpk-react-utils: 2.5.1 => 2.6.0
+  - the function returned by cssModules now accepts multiple class names and ignores values other than strings. see: https://github.com/Skyscanner/backpack/tree/master/packages/bpk-react-utils#cssmodulesjs
+
+# 2018-04-26 - Native banner alerts and button links have a new default height
+
+**Breaking:**
+- react-native-bpk-component-banner-alert: 3.0.6 => 4.0.0
+  - Default height of Android banner alert has changed from 52dp to 48dp
+
+- react-native-bpk-component-button-link: 2.0.6 => 3.0.0
+  - Default height of button links on both iOS and Android is now 32pt/dp. Default height of large button links on iOS is now 36pt.
+  - Overflowing text will not wrap and instead result in ellipses.
+
+# 2018-04-25 - Added icons for identity and profile settings
+
+**Added:**
+- bpk-component-icon: 3.19.3 => 3.20.0
+- bpk-mixins: 17.7.0 => 17.8.0
+- bpk-svgs: 5.15.1 => 5.16.0
+- react-native-bpk-component-icon:
+- react-native-bpk-component-button-link: 2.0.5 => 2.0.6
+- react-native-bpk-component-button: 6.0.7 => 6.0.8
+- react-native-bpk-component-navigation-bar: 2.0.2 => 2.0.3
+  - New profile icons: `account--id-card`, `account--permit`, `add-circle`, `content--event` and `content--guides`.
+
+
+# 2018-04-25 - Visual fixes for Android
+
+**Fixed:**
+- react-native-bpk-component-banner-alert: 3.0.4 => 3.0.5
+- react-native-bpk-component-button-link: 2.0.4 => 2.0.5
+- react-native-bpk-component-button: 6.0.6 => 6.0.7
+- react-native-bpk-component-icon: 1.6.2 => 1.6.3
+- react-native-bpk-component-navigation-bar: 2.0.1 => 2.0.2
+- react-native-bpk-component-nudger: 1.0.11 => 1.0.12
+- react-native-bpk-component-phone-input: 1.0.10 => 1.0.11
+- react-native-bpk-component-picker: 1.0.7 => 1.0.8
+- react-native-bpk-component-star-rating: 1.0.19 => 1.0.20
+- react-native-bpk-component-text-input: 2.2.9 => 2.2.10
+  - Android icons are now vertically centered within bounding box (large at 24dp and small at 16dp)
+
+- react-native-bpk-component-button: 6.0.6 => 6.0.7
+- react-native-bpk-component-nudger: 1.0.11 => 1.0.12
+  - Fixed an issue where the outline of secondary and destructive buttons wouldn't render on Android devices with an API Level lower than 23.
+
+
+# 2018-04-25 - Add native progress component
+
+**Added:**
+- react-native-bpk-component-progress: 1.0.0
+  - Introducing the native progress component, see: https://backpack.github.io/components/native/progress.
+
+
+# 2018-04-20 - Fix icon colour in Horizontal Nav Items
+
+**Fixed:**
+- bpk-component-horizontal-nav: 3.0.5 => 3.0.6
+  - Fixed issue where icon colour would not be set inside horizontal nav items.
+
+# 2018-04-18
+
+**Breaking:**
+- react-native-bpk-component-navigation-bar: 1.1.4 => 2.0.0
+  - `BpkNavigationBarTextButtonIOS`, `BpkNavigationBarIconButtonIOS`, and `BpkNavigationBarButtonAndroid` can now be disabled with the `disabled` prop.
+  - Introduces a new theme attribute `disabledTintColor`. This new attribute has to be supplied to define a valid theme, without it theming is disabled.
+
+**Added:**
+
+- bpk-component-code: 1.0.57 => 1.1.0
+  - `BpkCode` and `BpkCodeBlock` now supports an alternate style more suitable for non-white backgrounds with the `alternate` prop.
+  - `BpkCode` and `BpkCodeBlock` can now take a custom `className`.
+  - `BpkCode` and `BpkCodeBlock` now spreads additional props down.
+- bpk-component-table: 1.0.57 => 1.1.0
+  - `BpkTableHeadCell` and `BpkTable` now supports an alternate style more suitable for non-white backgrounds with the `alternate` prop.
+- bpk-component-content-container: 1.2.0 => 1.3.0
+  - `BpkConentContainer` now supports an alternate style more suitable for non-white backgrounds with the `alternate` prop.
+- bpk-mixins: 17.6.2 => 17.7.0
+  - Added new mixins to support the above alternate styles. Also includes two new mixins for RTL aware margins. `bpk-margin-leading` and `bpk-margin-trailing`.
+
+
+## 2018-04-17 - Context fixes and stylesheet improvements
+
+**Added:**
+- bpk-component-content-container: 1.1.62 => 1.2.0
+  - `BpkContentContainer` now accepts a `className`.
+
+**Fixed:**
+- bpk-component-dialog: 1.0.17 => 1.0.18
+- bpk-component-drawer: 1.2.9 => 1.2.10
+- bpk-component-modal: 1.6.17 => 1.6.18
+- bpk-component-popover: 2.1.8 => 2.1.9
+- bpk-component-tooltip: 3.1.8 => 3.1.9
+  - Context is now preserved in components passed to `children`.
+
+- react-native-bpk-component-horizontal-nav: 3.0.4 => 3.0.5
+  - Fixed measurements of native horizontal nav component.
+
+- bpk-react-utils: 2.5.0 => 2.5.1
+  - The `Portal` component now preserves context in it's `children` prop.
+
+- bpk-stylesheets: 3.2.100 => 3.2.101
+  - Prevent globals (`.hidden`, `.clearfix`) from being scoped by css modules.
+
 ## 2018-04-09 - Token output now sorted alphabetically
 
 **Breaking:**

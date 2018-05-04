@@ -27,14 +27,13 @@ class NudgerContainer extends Component {
   constructor() {
     super();
 
-    this.handleChange = this.handleChange.bind(this);
     this.state = {
       value: 2,
     };
   }
-  handleChange(value) {
+  handleChange = value => {
     this.setState({ value });
-  }
+  };
 
   render() {
     return (
@@ -65,7 +64,7 @@ const components = [
   },
 ];
 
-const NudgersPage = () => (
+const NudgersPage = ({ ...rest }) => (
   <DocsPageBuilder
     title="Nudgers"
     blurb={[
@@ -80,6 +79,7 @@ const NudgersPage = () => (
     ]}
     components={components}
     readme={nudgersReadme}
+    {...rest}
   />
 );
 

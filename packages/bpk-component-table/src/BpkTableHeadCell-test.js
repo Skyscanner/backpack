@@ -28,6 +28,17 @@ describe('BpkTableHeadCell', () => {
     expect(tree).toMatchSnapshot();
   });
 
+  it('should render correctly with "alternate"', () => {
+    const tree = renderer
+      .create(
+        <BpkTableHeadCell alternate>
+          <th />
+        </BpkTableHeadCell>,
+      )
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
   it('should render correctly with custom class', () => {
     const tree = renderer
       .create(

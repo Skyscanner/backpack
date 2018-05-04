@@ -2,949 +2,860 @@
 
 exports[`iOS BpkButtonLink should render correctly 1`] = `
 <View
-  style={
+  accessibilityComponentType="button"
+  accessibilityLabel="Lorem ipsum"
+  accessibilityTraits={
     Array [
-      Object {
-        "borderRadius": 4,
-      },
+      "button",
     ]
   }
+  accessible={true}
+  collapsable={undefined}
+  hasTVPreferredFocus={undefined}
+  hitSlop={undefined}
+  isTVSelectable={true}
+  nativeID={undefined}
+  onLayout={undefined}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "opacity": 1,
+    }
+  }
+  testID={undefined}
+  tvParallaxProperties={undefined}
 >
   <View
-    accessibilityComponentType="button"
-    accessibilityLabel="Lorem ipsum"
-    accessibilityTraits={
+    style={
       Array [
-        "button",
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "height": 32,
+          "justifyContent": "center",
+        },
       ]
     }
-    accessible={true}
-    collapsable={undefined}
-    hasTVPreferredFocus={undefined}
-    hitSlop={undefined}
-    isTVSelectable={true}
-    nativeID={undefined}
-    onLayout={undefined}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
-    style={
-      Object {
-        "opacity": 1,
-      }
-    }
-    testID={undefined}
-    tvParallaxProperties={undefined}
   >
-    <View
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      numberOfLines={1}
       style={
         Array [
           Object {
-            "alignItems": "center",
-            "flexDirection": "row",
-            "justifyContent": "center",
-            "paddingVertical": 8,
+            "color": "rgb(82, 76, 97)",
+            "fontFamily": "System",
+            "fontSize": 13,
+            "fontWeight": "400",
           },
+          Object {
+            "fontWeight": "600",
+          },
+          Array [
+            Object {
+              "color": "rgb(0, 178, 214)",
+            },
+          ],
         ]
       }
     >
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
-        style={
-          Array [
-            Object {
-              "color": "rgb(82, 76, 97)",
-              "fontFamily": "System",
-              "fontSize": 13,
-              "fontWeight": "400",
-            },
-            Object {
-              "fontWeight": "600",
-            },
-            Array [
-              Object {
-                "color": "rgb(0, 178, 214)",
-              },
-            ],
-          ]
-        }
-      >
-        Lorem ipsum
-      </Text>
-    </View>
+      Lorem ipsum
+    </Text>
   </View>
 </View>
 `;
 
 exports[`iOS BpkButtonLink should render correctly with iconAlignment="leading" 1`] = `
 <View
-  style={
+  accessibilityComponentType="button"
+  accessibilityLabel="Lorem ipsum"
+  accessibilityTraits={
     Array [
-      Object {
-        "borderRadius": 4,
-      },
+      "button",
     ]
   }
+  accessible={true}
+  collapsable={undefined}
+  hasTVPreferredFocus={undefined}
+  hitSlop={undefined}
+  isTVSelectable={true}
+  nativeID={undefined}
+  onLayout={undefined}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "opacity": 1,
+    }
+  }
+  testID={undefined}
+  tvParallaxProperties={undefined}
 >
   <View
-    accessibilityComponentType="button"
-    accessibilityLabel="Lorem ipsum"
-    accessibilityTraits={
+    style={
       Array [
-        "button",
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "height": 32,
+          "justifyContent": "center",
+        },
+        Object {
+          "flexDirection": "row-reverse",
+        },
       ]
     }
-    accessible={true}
-    collapsable={undefined}
-    hasTVPreferredFocus={undefined}
-    hitSlop={undefined}
-    isTVSelectable={true}
-    nativeID={undefined}
-    onLayout={undefined}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
-    style={
-      Object {
-        "opacity": 1,
-      }
-    }
-    testID={undefined}
-    tvParallaxProperties={undefined}
   >
-    <View
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      numberOfLines={1}
       style={
         Array [
           Object {
-            "alignItems": "center",
-            "flexDirection": "row",
-            "justifyContent": "center",
-            "paddingVertical": 8,
+            "color": "rgb(82, 76, 97)",
+            "fontFamily": "System",
+            "fontSize": 13,
+            "fontWeight": "400",
           },
           Object {
-            "flexDirection": "row-reverse",
+            "fontWeight": "600",
           },
+          Array [
+            Object {
+              "color": "rgb(0, 178, 214)",
+            },
+          ],
         ]
       }
     >
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
-        style={
+      Lorem ipsum
+    </Text>
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "rgb(82, 76, 97)",
+            "fontFamily": "BpkIcon",
+            "fontSize": 24,
+            "includeFontPadding": false,
+          },
+          Object {
+            "fontSize": 16,
+          },
           Array [
             Object {
-              "color": "rgb(82, 76, 97)",
-              "fontFamily": "System",
-              "fontSize": 13,
-              "fontWeight": "400",
+              "color": "rgb(0, 178, 214)",
+              "marginLeft": 4,
             },
             Object {
-              "fontWeight": "600",
+              "marginLeft": 0,
+              "marginRight": 4,
             },
-            Array [
-              Object {
-                "color": "rgb(0, 178, 214)",
-              },
-            ],
-          ]
-        }
-      >
-        Lorem ipsum
-      </Text>
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
-        style={
-          Array [
-            Object {
-              "color": "rgb(82, 76, 97)",
-              "fontFamily": "BpkIcon",
-              "fontSize": 24,
-              "lineHeight": 24,
-            },
-            Object {
-              "fontSize": 16,
-              "lineHeight": 16,
-            },
-            Array [
-              Object {
-                "color": "rgb(0, 178, 214)",
-                "marginLeft": 4,
-              },
-              Object {
-                "marginLeft": 0,
-                "marginRight": 4,
-              },
-            ],
-          ]
-        }
-      >
-        
-      </Text>
-    </View>
+          ],
+        ]
+      }
+    >
+      
+    </Text>
   </View>
 </View>
 `;
 
 exports[`iOS BpkButtonLink should render correctly with iconAlignment="trailing" 1`] = `
 <View
-  style={
+  accessibilityComponentType="button"
+  accessibilityLabel="Lorem ipsum"
+  accessibilityTraits={
     Array [
-      Object {
-        "borderRadius": 4,
-      },
+      "button",
     ]
   }
+  accessible={true}
+  collapsable={undefined}
+  hasTVPreferredFocus={undefined}
+  hitSlop={undefined}
+  isTVSelectable={true}
+  nativeID={undefined}
+  onLayout={undefined}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "opacity": 1,
+    }
+  }
+  testID={undefined}
+  tvParallaxProperties={undefined}
 >
   <View
-    accessibilityComponentType="button"
-    accessibilityLabel="Lorem ipsum"
-    accessibilityTraits={
+    style={
       Array [
-        "button",
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "height": 32,
+          "justifyContent": "center",
+        },
       ]
     }
-    accessible={true}
-    collapsable={undefined}
-    hasTVPreferredFocus={undefined}
-    hitSlop={undefined}
-    isTVSelectable={true}
-    nativeID={undefined}
-    onLayout={undefined}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
-    style={
-      Object {
-        "opacity": 1,
-      }
-    }
-    testID={undefined}
-    tvParallaxProperties={undefined}
   >
-    <View
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      numberOfLines={1}
       style={
         Array [
           Object {
-            "alignItems": "center",
-            "flexDirection": "row",
-            "justifyContent": "center",
-            "paddingVertical": 8,
+            "color": "rgb(82, 76, 97)",
+            "fontFamily": "System",
+            "fontSize": 13,
+            "fontWeight": "400",
           },
+          Object {
+            "fontWeight": "600",
+          },
+          Array [
+            Object {
+              "color": "rgb(0, 178, 214)",
+            },
+          ],
         ]
       }
     >
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
-        style={
+      Lorem ipsum
+    </Text>
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "rgb(82, 76, 97)",
+            "fontFamily": "BpkIcon",
+            "fontSize": 24,
+            "includeFontPadding": false,
+          },
+          Object {
+            "fontSize": 16,
+          },
           Array [
             Object {
-              "color": "rgb(82, 76, 97)",
-              "fontFamily": "System",
-              "fontSize": 13,
-              "fontWeight": "400",
+              "color": "rgb(0, 178, 214)",
+              "marginLeft": 4,
             },
-            Object {
-              "fontWeight": "600",
-            },
-            Array [
-              Object {
-                "color": "rgb(0, 178, 214)",
-              },
-            ],
-          ]
-        }
-      >
-        Lorem ipsum
-      </Text>
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
-        style={
-          Array [
-            Object {
-              "color": "rgb(82, 76, 97)",
-              "fontFamily": "BpkIcon",
-              "fontSize": 24,
-              "lineHeight": 24,
-            },
-            Object {
-              "fontSize": 16,
-              "lineHeight": 16,
-            },
-            Array [
-              Object {
-                "color": "rgb(0, 178, 214)",
-                "marginLeft": 4,
-              },
-            ],
-          ]
-        }
-      >
-        
-      </Text>
-    </View>
+          ],
+        ]
+      }
+    >
+      
+    </Text>
   </View>
 </View>
 `;
 
 exports[`iOS BpkButtonLink should render correctly with theme prop 1`] = `
 <View
-  style={
+  accessibilityComponentType="button"
+  accessibilityLabel="Lorem ipsum"
+  accessibilityTraits={
     Array [
-      Object {
-        "borderRadius": 4,
-      },
+      "button",
     ]
   }
+  accessible={true}
+  collapsable={undefined}
+  hasTVPreferredFocus={undefined}
+  hitSlop={undefined}
+  isTVSelectable={true}
+  nativeID={undefined}
+  onLayout={undefined}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "opacity": 1,
+    }
+  }
+  testID={undefined}
+  tvParallaxProperties={undefined}
 >
   <View
-    accessibilityComponentType="button"
-    accessibilityLabel="Lorem ipsum"
-    accessibilityTraits={
+    style={
       Array [
-        "button",
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "height": 32,
+          "justifyContent": "center",
+        },
       ]
     }
-    accessible={true}
-    collapsable={undefined}
-    hasTVPreferredFocus={undefined}
-    hitSlop={undefined}
-    isTVSelectable={true}
-    nativeID={undefined}
-    onLayout={undefined}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
-    style={
-      Object {
-        "opacity": 1,
-      }
-    }
-    testID={undefined}
-    tvParallaxProperties={undefined}
   >
-    <View
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      numberOfLines={1}
       style={
         Array [
           Object {
-            "alignItems": "center",
-            "flexDirection": "row",
-            "justifyContent": "center",
-            "paddingVertical": 8,
+            "color": "rgb(82, 76, 97)",
+            "fontFamily": "System",
+            "fontSize": 13,
+            "fontWeight": "400",
           },
+          Object {
+            "fontWeight": "600",
+          },
+          Array [
+            Object {
+              "color": "rgb(0, 178, 214)",
+            },
+            Object {
+              "color": "red",
+            },
+          ],
         ]
       }
     >
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
-        style={
-          Array [
-            Object {
-              "color": "rgb(82, 76, 97)",
-              "fontFamily": "System",
-              "fontSize": 13,
-              "fontWeight": "400",
-            },
-            Object {
-              "fontWeight": "600",
-            },
-            Array [
-              Object {
-                "color": "rgb(0, 178, 214)",
-              },
-              Object {
-                "color": "red",
-              },
-            ],
-          ]
-        }
-      >
-        Lorem ipsum
-      </Text>
-    </View>
+      Lorem ipsum
+    </Text>
   </View>
 </View>
 `;
 
 exports[`iOS BpkButtonLink should support elements as icons 1`] = `
 <View
-  style={
+  accessibilityComponentType="button"
+  accessibilityLabel="Lorem ipsum"
+  accessibilityTraits={
     Array [
-      Object {
-        "borderRadius": 4,
-      },
+      "button",
     ]
   }
+  accessible={true}
+  collapsable={undefined}
+  hasTVPreferredFocus={undefined}
+  hitSlop={undefined}
+  isTVSelectable={true}
+  nativeID={undefined}
+  onLayout={undefined}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "opacity": 1,
+    }
+  }
+  testID={undefined}
+  tvParallaxProperties={undefined}
 >
   <View
-    accessibilityComponentType="button"
-    accessibilityLabel="Lorem ipsum"
-    accessibilityTraits={
+    style={
       Array [
-        "button",
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "height": 32,
+          "justifyContent": "center",
+        },
       ]
     }
-    accessible={true}
-    collapsable={undefined}
-    hasTVPreferredFocus={undefined}
-    hitSlop={undefined}
-    isTVSelectable={true}
-    nativeID={undefined}
-    onLayout={undefined}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
-    style={
-      Object {
-        "opacity": 1,
-      }
-    }
-    testID={undefined}
-    tvParallaxProperties={undefined}
   >
-    <View
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      numberOfLines={1}
       style={
         Array [
           Object {
-            "alignItems": "center",
-            "flexDirection": "row",
-            "justifyContent": "center",
-            "paddingVertical": 8,
+            "color": "rgb(82, 76, 97)",
+            "fontFamily": "System",
+            "fontSize": 13,
+            "fontWeight": "400",
           },
+          Object {
+            "fontWeight": "600",
+          },
+          Array [
+            Object {
+              "color": "rgb(0, 178, 214)",
+            },
+          ],
         ]
       }
     >
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
-        style={
-          Array [
-            Object {
-              "color": "rgb(82, 76, 97)",
-              "fontFamily": "System",
-              "fontSize": 13,
-              "fontWeight": "400",
-            },
-            Object {
-              "fontWeight": "600",
-            },
-            Array [
-              Object {
-                "color": "rgb(0, 178, 214)",
-              },
-            ],
-          ]
-        }
-      >
-        Lorem ipsum
-      </Text>
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
-        style={
-          Array [
-            Object {
-              "color": "rgb(82, 76, 97)",
-              "fontFamily": "System",
-              "fontSize": 15,
-              "fontWeight": "400",
-            },
-            Object {},
-          ]
-        }
-      >
-        foo
-      </Text>
-    </View>
+      Lorem ipsum
+    </Text>
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "rgb(82, 76, 97)",
+            "fontFamily": "System",
+            "fontSize": 15,
+            "fontWeight": "400",
+          },
+          Object {},
+        ]
+      }
+    >
+      foo
+    </Text>
   </View>
 </View>
 `;
 
 exports[`iOS BpkButtonLink should support overwriting styles 1`] = `
 <View
-  style={
+  accessibilityComponentType="button"
+  accessibilityLabel="Lorem ipsum"
+  accessibilityTraits={
     Array [
-      Object {
-        "borderRadius": 4,
-      },
-      Object {
-        "width": 100,
-      },
+      "button",
     ]
   }
+  accessible={true}
+  collapsable={undefined}
+  hasTVPreferredFocus={undefined}
+  hitSlop={undefined}
+  isTVSelectable={true}
+  nativeID={undefined}
+  onLayout={undefined}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "opacity": 1,
+      "width": 100,
+    }
+  }
+  testID={undefined}
+  tvParallaxProperties={undefined}
 >
   <View
-    accessibilityComponentType="button"
-    accessibilityLabel="Lorem ipsum"
-    accessibilityTraits={
+    style={
       Array [
-        "button",
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "height": 32,
+          "justifyContent": "center",
+        },
       ]
     }
-    accessible={true}
-    collapsable={undefined}
-    hasTVPreferredFocus={undefined}
-    hitSlop={undefined}
-    isTVSelectable={true}
-    nativeID={undefined}
-    onLayout={undefined}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
-    style={
-      Object {
-        "opacity": 1,
-      }
-    }
-    testID={undefined}
-    tvParallaxProperties={undefined}
   >
-    <View
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      numberOfLines={1}
       style={
         Array [
           Object {
-            "alignItems": "center",
-            "flexDirection": "row",
-            "justifyContent": "center",
-            "paddingVertical": 8,
+            "color": "rgb(82, 76, 97)",
+            "fontFamily": "System",
+            "fontSize": 13,
+            "fontWeight": "400",
           },
+          Object {
+            "fontWeight": "600",
+          },
+          Array [
+            Object {
+              "color": "rgb(0, 178, 214)",
+            },
+          ],
         ]
       }
     >
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
-        style={
-          Array [
-            Object {
-              "color": "rgb(82, 76, 97)",
-              "fontFamily": "System",
-              "fontSize": 13,
-              "fontWeight": "400",
-            },
-            Object {
-              "fontWeight": "600",
-            },
-            Array [
-              Object {
-                "color": "rgb(0, 178, 214)",
-              },
-            ],
-          ]
-        }
-      >
-        Lorem ipsum
-      </Text>
-    </View>
+      Lorem ipsum
+    </Text>
   </View>
 </View>
 `;
 
 exports[`iOS BpkButtonLink should support the "disabled" property 1`] = `
 <View
-  style={
+  accessibilityComponentType="button"
+  accessibilityLabel="Lorem ipsum"
+  accessibilityTraits={
     Array [
-      Object {
-        "borderRadius": 4,
-      },
+      "button",
+      "disabled",
     ]
   }
+  accessible={true}
+  collapsable={undefined}
+  hasTVPreferredFocus={undefined}
+  hitSlop={undefined}
+  isTVSelectable={true}
+  nativeID={undefined}
+  onLayout={undefined}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "opacity": 1,
+    }
+  }
+  testID={undefined}
+  tvParallaxProperties={undefined}
 >
   <View
-    accessibilityComponentType="button"
-    accessibilityLabel="Lorem ipsum"
-    accessibilityTraits={
+    style={
       Array [
-        "button",
-        "disabled",
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "height": 32,
+          "justifyContent": "center",
+        },
       ]
     }
-    accessible={true}
-    collapsable={undefined}
-    hasTVPreferredFocus={undefined}
-    hitSlop={undefined}
-    isTVSelectable={true}
-    nativeID={undefined}
-    onLayout={undefined}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
-    style={
-      Object {
-        "opacity": 1,
-      }
-    }
-    testID={undefined}
-    tvParallaxProperties={undefined}
   >
-    <View
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      numberOfLines={1}
       style={
         Array [
           Object {
-            "alignItems": "center",
-            "flexDirection": "row",
-            "justifyContent": "center",
-            "paddingVertical": 8,
+            "color": "rgb(82, 76, 97)",
+            "fontFamily": "System",
+            "fontSize": 13,
+            "fontWeight": "400",
           },
+          Object {
+            "fontWeight": "600",
+          },
+          Array [
+            Object {
+              "color": "rgb(0, 178, 214)",
+            },
+            Object {
+              "color": "rgb(178, 174, 189)",
+            },
+          ],
         ]
       }
     >
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
-        style={
-          Array [
-            Object {
-              "color": "rgb(82, 76, 97)",
-              "fontFamily": "System",
-              "fontSize": 13,
-              "fontWeight": "400",
-            },
-            Object {
-              "fontWeight": "600",
-            },
-            Array [
-              Object {
-                "color": "rgb(0, 178, 214)",
-              },
-              Object {
-                "color": "rgb(178, 174, 189)",
-              },
-            ],
-          ]
-        }
-      >
-        Lorem ipsum
-      </Text>
-    </View>
+      Lorem ipsum
+    </Text>
   </View>
 </View>
 `;
 
 exports[`iOS BpkButtonLink should support the "icon" property 1`] = `
 <View
-  style={
+  accessibilityComponentType="button"
+  accessibilityLabel="Lorem ipsum"
+  accessibilityTraits={
     Array [
-      Object {
-        "borderRadius": 4,
-      },
+      "button",
     ]
   }
+  accessible={true}
+  collapsable={undefined}
+  hasTVPreferredFocus={undefined}
+  hitSlop={undefined}
+  isTVSelectable={true}
+  nativeID={undefined}
+  onLayout={undefined}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "opacity": 1,
+    }
+  }
+  testID={undefined}
+  tvParallaxProperties={undefined}
 >
   <View
-    accessibilityComponentType="button"
-    accessibilityLabel="Lorem ipsum"
-    accessibilityTraits={
+    style={
       Array [
-        "button",
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "height": 32,
+          "justifyContent": "center",
+        },
       ]
     }
-    accessible={true}
-    collapsable={undefined}
-    hasTVPreferredFocus={undefined}
-    hitSlop={undefined}
-    isTVSelectable={true}
-    nativeID={undefined}
-    onLayout={undefined}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
-    style={
-      Object {
-        "opacity": 1,
-      }
-    }
-    testID={undefined}
-    tvParallaxProperties={undefined}
   >
-    <View
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      numberOfLines={1}
       style={
         Array [
           Object {
-            "alignItems": "center",
-            "flexDirection": "row",
-            "justifyContent": "center",
-            "paddingVertical": 8,
+            "color": "rgb(82, 76, 97)",
+            "fontFamily": "System",
+            "fontSize": 13,
+            "fontWeight": "400",
           },
+          Object {
+            "fontWeight": "600",
+          },
+          Array [
+            Object {
+              "color": "rgb(0, 178, 214)",
+            },
+          ],
         ]
       }
     >
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
-        style={
+      Lorem ipsum
+    </Text>
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "rgb(82, 76, 97)",
+            "fontFamily": "BpkIcon",
+            "fontSize": 24,
+            "includeFontPadding": false,
+          },
+          Object {
+            "fontSize": 16,
+          },
           Array [
             Object {
-              "color": "rgb(82, 76, 97)",
-              "fontFamily": "System",
-              "fontSize": 13,
-              "fontWeight": "400",
+              "color": "rgb(0, 178, 214)",
+              "marginLeft": 4,
             },
-            Object {
-              "fontWeight": "600",
-            },
-            Array [
-              Object {
-                "color": "rgb(0, 178, 214)",
-              },
-            ],
-          ]
-        }
-      >
-        Lorem ipsum
-      </Text>
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
-        style={
-          Array [
-            Object {
-              "color": "rgb(82, 76, 97)",
-              "fontFamily": "BpkIcon",
-              "fontSize": 24,
-              "lineHeight": 24,
-            },
-            Object {
-              "fontSize": 16,
-              "lineHeight": 16,
-            },
-            Array [
-              Object {
-                "color": "rgb(0, 178, 214)",
-                "marginLeft": 4,
-              },
-            ],
-          ]
-        }
-      >
-        
-      </Text>
-    </View>
+          ],
+        ]
+      }
+    >
+      
+    </Text>
   </View>
 </View>
 `;
 
 exports[`iOS should support the "icon" and "large" property 1`] = `
 <View
-  style={
+  accessibilityComponentType="button"
+  accessibilityLabel="Lorem ipsum"
+  accessibilityTraits={
     Array [
-      Object {
-        "borderRadius": 4,
-      },
+      "button",
     ]
   }
+  accessible={true}
+  collapsable={undefined}
+  hasTVPreferredFocus={undefined}
+  hitSlop={undefined}
+  isTVSelectable={true}
+  nativeID={undefined}
+  onLayout={undefined}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "opacity": 1,
+    }
+  }
+  testID={undefined}
+  tvParallaxProperties={undefined}
 >
   <View
-    accessibilityComponentType="button"
-    accessibilityLabel="Lorem ipsum"
-    accessibilityTraits={
+    style={
       Array [
-        "button",
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "height": 32,
+          "justifyContent": "center",
+        },
+        Object {
+          "height": 36,
+        },
       ]
     }
-    accessible={true}
-    collapsable={undefined}
-    hasTVPreferredFocus={undefined}
-    hitSlop={undefined}
-    isTVSelectable={true}
-    nativeID={undefined}
-    onLayout={undefined}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
-    style={
-      Object {
-        "opacity": 1,
-      }
-    }
-    testID={undefined}
-    tvParallaxProperties={undefined}
   >
-    <View
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      numberOfLines={1}
       style={
         Array [
           Object {
-            "alignItems": "center",
-            "flexDirection": "row",
-            "justifyContent": "center",
-            "paddingVertical": 8,
+            "color": "rgb(82, 76, 97)",
+            "fontFamily": "System",
+            "fontSize": 17,
+            "fontWeight": "400",
           },
+          Object {
+            "fontWeight": "600",
+          },
+          Array [
+            Object {
+              "color": "rgb(0, 178, 214)",
+            },
+          ],
         ]
       }
     >
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
-        style={
+      Lorem ipsum
+    </Text>
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "rgb(82, 76, 97)",
+            "fontFamily": "BpkIcon",
+            "fontSize": 24,
+            "includeFontPadding": false,
+          },
           Array [
             Object {
-              "color": "rgb(82, 76, 97)",
-              "fontFamily": "System",
-              "fontSize": 17,
-              "fontWeight": "400",
+              "color": "rgb(0, 178, 214)",
+              "marginLeft": 4,
             },
-            Object {
-              "fontWeight": "600",
-            },
-            Array [
-              Object {
-                "color": "rgb(0, 178, 214)",
-              },
-            ],
-          ]
-        }
-      >
-        Lorem ipsum
-      </Text>
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
-        style={
-          Array [
-            Object {
-              "color": "rgb(82, 76, 97)",
-              "fontFamily": "BpkIcon",
-              "fontSize": 24,
-              "lineHeight": 24,
-            },
-            Array [
-              Object {
-                "color": "rgb(0, 178, 214)",
-                "marginLeft": 4,
-              },
-            ],
-          ]
-        }
-      >
-        
-      </Text>
-    </View>
+          ],
+        ]
+      }
+    >
+      
+    </Text>
   </View>
 </View>
 `;
 
 exports[`iOS should support the "large" property 1`] = `
 <View
-  style={
+  accessibilityComponentType="button"
+  accessibilityLabel="Lorem ipsum"
+  accessibilityTraits={
     Array [
-      Object {
-        "borderRadius": 4,
-      },
+      "button",
     ]
   }
+  accessible={true}
+  collapsable={undefined}
+  hasTVPreferredFocus={undefined}
+  hitSlop={undefined}
+  isTVSelectable={true}
+  nativeID={undefined}
+  onLayout={undefined}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "opacity": 1,
+    }
+  }
+  testID={undefined}
+  tvParallaxProperties={undefined}
 >
   <View
-    accessibilityComponentType="button"
-    accessibilityLabel="Lorem ipsum"
-    accessibilityTraits={
+    style={
       Array [
-        "button",
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "height": 32,
+          "justifyContent": "center",
+        },
+        Object {
+          "height": 36,
+        },
       ]
     }
-    accessible={true}
-    collapsable={undefined}
-    hasTVPreferredFocus={undefined}
-    hitSlop={undefined}
-    isTVSelectable={true}
-    nativeID={undefined}
-    onLayout={undefined}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
-    style={
-      Object {
-        "opacity": 1,
-      }
-    }
-    testID={undefined}
-    tvParallaxProperties={undefined}
   >
-    <View
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      numberOfLines={1}
       style={
         Array [
           Object {
-            "alignItems": "center",
-            "flexDirection": "row",
-            "justifyContent": "center",
-            "paddingVertical": 8,
+            "color": "rgb(82, 76, 97)",
+            "fontFamily": "System",
+            "fontSize": 17,
+            "fontWeight": "400",
           },
+          Object {
+            "fontWeight": "600",
+          },
+          Array [
+            Object {
+              "color": "rgb(0, 178, 214)",
+            },
+          ],
         ]
       }
     >
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
-        style={
-          Array [
-            Object {
-              "color": "rgb(82, 76, 97)",
-              "fontFamily": "System",
-              "fontSize": 17,
-              "fontWeight": "400",
-            },
-            Object {
-              "fontWeight": "600",
-            },
-            Array [
-              Object {
-                "color": "rgb(0, 178, 214)",
-              },
-            ],
-          ]
-        }
-      >
-        Lorem ipsum
-      </Text>
-    </View>
+      Lorem ipsum
+    </Text>
   </View>
 </View>
 `;

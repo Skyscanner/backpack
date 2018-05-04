@@ -23,6 +23,7 @@ import { cssModules } from 'bpk-react-utils';
 import breakpointReadme from 'bpk-component-breakpoint/readme.md';
 
 import DocsPageBuilder from './../../components/DocsPageBuilder';
+import DocsPageWrapper from './../../components/neo/DocsPageWrapper';
 import Paragraph from './../../components/Paragraph';
 import STYLES from './breakpoints-page.scss';
 
@@ -83,19 +84,33 @@ const components = [
   },
 ];
 
-const BreakpointsPage = () => (
+const isNeo = process.env.BPK_NEO;
+
+const blurb = [
+  <Paragraph>
+    The breakpoint component allows information to be displayed in different
+    ways depending on the screen size. To simplify things, Backpack uses only
+    three breakpoints optimised for mobile, tablet and desktop viewports.
+  </Paragraph>,
+];
+
+const BreakpointsPage = ({ ...rest }) => (
   <DocsPageBuilder
-    title="Breakpoints"
-    blurb={[
-      <Paragraph>
-        To simplify things, Backpack uses only three breakpoints optimised for
-        mobile, tablet and desktop viewports.
-      </Paragraph>,
-    ]}
+    title="Breakpoint"
+    blurb={isNeo ? null : blurb}
     components={components}
     readme={breakpointReadme}
     sassdocId="breakpoints"
+    {...rest}
   />
 );
 
-export default BreakpointsPage;
+const NeoBreakpointPage = () => (
+  <DocsPageWrapper
+    title="Breakpoint"
+    blurb={blurb}
+    webSubpage={<BreakpointsPage wrapped />}
+  />
+);
+
+export default (isNeo ? NeoBreakpointPage : BreakpointsPage);

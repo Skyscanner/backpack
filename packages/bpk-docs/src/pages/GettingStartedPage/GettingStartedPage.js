@@ -21,12 +21,13 @@ import BpkLink from 'bpk-component-link';
 import BpkBlockquote from 'bpk-component-blockquote';
 import BpkRouterLink from 'bpk-component-router-link';
 import { BpkList, BpkListItem } from 'bpk-component-list';
-import { BpkCodeBlock, BpkCode } from 'bpk-component-code';
 
 import * as ROUTES from './../../constants/routes';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
 import Heading from './../../components/Heading';
 import Paragraph from './../../components/Paragraph';
+import Code from '../../components/Code';
+import CodeBlock from '../../components/CodeBlock';
 
 /* eslint-disable import/no-webpack-loader-syntax */
 const iconTemplate = require('!!file-loader?name=[name].[hash].sketch!./../../static/icon-template.sketch');
@@ -114,20 +115,20 @@ const components = [
         available as mixins. Again, the library is exposed as a module on the
         npm registry which can be installed like so:
       </Paragraph>,
-      <BpkCodeBlock>npm install bpk-mixins --save-dev</BpkCodeBlock>,
+      <CodeBlock>npm install bpk-mixins --save-dev</CodeBlock>,
       <Paragraph>
         The following example demonstrates how to import the module and consume
         the primary button mixin:
       </Paragraph>,
-      <BpkCodeBlock>
+      <CodeBlock>
         {`@import '~bpk-mixins/index';
 
 .my-button {
   @include bpk-button;
 }`}
-      </BpkCodeBlock>,
+      </CodeBlock>,
       <BpkBlockquote extraSpace>
-        <strong>Note</strong>: <BpkCode>bpk-mixins</BpkCode> only supports{' '}
+        <strong>Note</strong>: <Code>bpk-mixins</Code> only supports{' '}
         <BpkLink href={nodeSassUrl} blank>
           node-sass
         </BpkLink>{' '}
@@ -141,7 +142,7 @@ const components = [
         </BpkLink>, you can use{' '}
         <BpkLink href={nodeSassTildeImporterUrl}>
           node-sass-tilde-importer
-        </BpkLink>. The <BpkCode>indentedSyntax</BpkCode> option is unsupported.
+        </BpkLink>. The <Code>indentedSyntax</Code> option is unsupported.
       </BpkBlockquote>,
       <Paragraph>
         To get an idea of all the variables and mixins available, head on over

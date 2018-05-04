@@ -44,16 +44,10 @@ const AlignedLongArrowRightAltIcon = withRtlSupport(
 );
 
 class HomePage extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.onGettingStartedClick = this.onGettingStartedClick.bind(this);
-  }
-
-  onGettingStartedClick(e) {
+  onGettingStartedClick = e => {
     e.preventDefault();
     this.props.router.push(e.currentTarget.getAttribute('href'));
-  }
+  };
 
   render() {
     return (

@@ -16,6 +16,9 @@
  * limitations under the License.
  */
 
-import component from './Heading';
+import HeadingOld from './Heading';
+import HeadingNeo from '../neo/Heading';
 
-export default component;
+const Heading = process.env.BPK_NEO ? HeadingNeo : HeadingOld;
+
+export default Heading;

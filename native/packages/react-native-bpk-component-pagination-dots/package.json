@@ -1,6 +1,6 @@
 {
   "name": "react-native-bpk-component-pagination-dots",
-  "version": "0.0.4",
+  "version": "0.0.8",
   "private": true,
   "main": "index.js",
   "description": "Backpack React Native pagination dots component.",
@@ -19,6 +19,6 @@
     "prop-types": "^15.5.8"
   },
   "devDependencies": {
-    "react-native-bpk-component-nudger": "^1.0.9"
+    "react-native-bpk-component-nudger": "^1.0.13"
   }
 }

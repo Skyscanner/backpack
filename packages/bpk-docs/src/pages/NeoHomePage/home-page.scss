@@ -122,7 +122,7 @@
   }
 
   &__hero-updated {
-    margin-left: $bpk-spacing-xxl;
+    @include bpk-margin-leading($bpk-spacing-xxl);
 
     @media (max-width: $bpk-breakpoint-desktop) {
       display: none;

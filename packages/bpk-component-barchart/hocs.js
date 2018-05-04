@@ -30,20 +30,15 @@ export const withSelectedState = ComposedComponent => {
       this.state = {
         selectedPoint: null,
       };
-
-      this.onBarClick = this.onBarClick.bind(this);
-      this.getBarSelection = this.getBarSelection.bind(this);
     }
 
-    onBarClick(e, { point }) {
+    onBarClick = (e, { point }) => {
       this.setState({
         selectedPoint: point,
       });
-    }
+    };
 
-    getBarSelection(point) {
-      return isEqual(this.state.selectedPoint, point);
-    }
+    getBarSelection = point => isEqual(this.state.selectedPoint, point);
 
     render() {
       const { ...rest } = this.props;

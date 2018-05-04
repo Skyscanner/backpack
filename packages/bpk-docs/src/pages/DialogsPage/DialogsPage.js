@@ -19,11 +19,11 @@
 /* @flow */
 
 import React from 'react';
-import { BpkList, BpkListItem } from 'bpk-component-list';
 import dialogReadme from 'bpk-component-dialog/readme.md';
 
 import Paragraph from './../../components/Paragraph';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
+import DocsPageWrapper from './../../components/neo/DocsPageWrapper';
 import {
   DialogContainer,
   NonDismissibleDialogContainer,
@@ -32,7 +32,7 @@ import {
 const components = [
   {
     id: 'default',
-    title: 'Default dialog',
+    title: 'Default',
     blurb: [
       <Paragraph>
         The default dialog gives you a blank canvas with a close icon. Tapping
@@ -60,32 +60,19 @@ const components = [
   },
 ];
 
-const DialogsPage = () => (
+const blurb = [
+  <Paragraph>
+    Dialogs inform users about a specific task and may contain critical
+    information, or require decisions or acknowledgement.
+  </Paragraph>,
+];
+
+const isNeo = process.env.BPK_NEO;
+
+const DialogsPage = ({ ...rest }: { [string]: any }) => (
   <DocsPageBuilder
     title="Dialogs"
-    blurb={[
-      <Paragraph>
-        Dialogs inform users about a specific task and may contain critical
-        information, or require decisions or acknowledgement. For example:
-      </Paragraph>,
-      <BpkList>
-        <BpkListItem>
-          Alert dialogs: urgent interruptions which tell users about a situation
-          and require acknowledgement.
-        </BpkListItem>
-        <BpkListItem>
-          Decision dialogs: which require users to confirm or make a choice.
-        </BpkListItem>
-      </BpkList>,
-      <Paragraph>
-        Like modals, when triggered, dialogs will emerge from the centre of the
-        viewport with a backdrop to indicate their separation from everything
-        else. They retain focus until dismissed or a required action has been
-        taken. Unlike modals, they are not full screen at mobile size and are
-        generally much smaller, containing only concise content. Use dialogs
-        sparingly because they are interruptive.
-      </Paragraph>,
-    ]}
+    blurb={isNeo ? null : blurb}
     components={components}
     readme={dialogReadme}
     usageTable={{
@@ -102,7 +89,16 @@ const DialogsPage = () => (
       ],
     }}
     sassdocId="dialogs"
+    {...rest}
   />
 );
 
-export default DialogsPage;
+const NeoDialogsPage = () => (
+  <DocsPageWrapper
+    title="Dialog"
+    blurb={blurb}
+    webSubpage={<DialogsPage wrapped />}
+  />
+);
+
+export default (isNeo ? NeoDialogsPage : DialogsPage);

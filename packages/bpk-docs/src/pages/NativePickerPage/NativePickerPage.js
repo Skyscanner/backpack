@@ -27,6 +27,7 @@ import androidScreenshotDefaultPickerOpen from 'react-native-bpk-component-picke
 
 import Paragraph from './../../components/Paragraph';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
+import DocsPageWrapper from './../../components/neo/DocsPageWrapper';
 
 const components = [
   {
@@ -78,21 +79,34 @@ const components = [
   },
 ];
 
-const NativeNudgerPage = () => (
+const isNeo = process.env.BPK_NEO;
+
+const blurb = [
+  <Paragraph>
+    Pickers let the user pick a single option from a limited list of possible
+    options in a modal context. The list item ordering should be logical and aid
+    the user in finding the item they want. For large lists consider another
+    option such as a fullscreen modal with search.
+  </Paragraph>,
+];
+
+const NativePickerPage = ({ ...rest }) => (
   <DocsPageBuilder
     title="Pickers"
-    blurb={[
-      <Paragraph>
-        Pickers let the user pick a single option from a limited list of
-        possible options in a modal context. The list item ordering should be
-        logical and aid the user in finding the item they want. For large lists
-        consider another option such as a fullscreen modal with search.
-      </Paragraph>,
-    ]}
+    blurb={isNeo ? null : blurb}
     components={components}
     readme={readme}
     showMenu
+    {...rest}
   />
 );
 
-export default NativeNudgerPage;
+const NeoNativePickerPage = () => (
+  <DocsPageWrapper
+    title="Picker"
+    blurb={blurb}
+    nativeSubpage={<NativePickerPage wrapped />}
+  />
+);
+
+export default (isNeo ? NeoNativePickerPage : NativePickerPage);

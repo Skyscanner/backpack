@@ -11,6 +11,7 @@ exports[`BpkChip should render correctly 1`] = `
   </span>
   <BpkCloseButton
     className={null}
+    customIcon={null}
     label="Close"
     onClick={[Function]}
   />
@@ -28,6 +29,7 @@ exports[`BpkChip should render correctly with a "className" attribute 1`] = `
   </span>
   <BpkCloseButton
     className={null}
+    customIcon={null}
     label="Close"
     onClick={[Function]}
   />
@@ -45,6 +47,7 @@ exports[`BpkChip should render correctly with a "closeLabel" function attribute 
   </span>
   <BpkCloseButton
     className={null}
+    customIcon={null}
     label="Custom close (this is a chip!)"
     onClick={[Function]}
   />
@@ -62,6 +65,7 @@ exports[`BpkChip should render correctly with a "closeLabel" string attribute 1`
   </span>
   <BpkCloseButton
     className={null}
+    customIcon={null}
     label="close it"
     onClick={[Function]}
   />

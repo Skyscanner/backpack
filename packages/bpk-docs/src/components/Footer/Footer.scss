@@ -67,6 +67,7 @@
 
   &__theme-switcher {
     display: inline-block;
-    margin-left: $bpk-spacing-xs;
+
+    @include bpk-margin-leading($bpk-spacing-xs);
   }
 }

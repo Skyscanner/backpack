@@ -26,6 +26,7 @@ import imagesReadme from 'bpk-component-image/readme.md';
 import * as BREAKPOINTS from 'bpk-tokens/tokens/breakpoints.es6';
 
 import DocsPageBuilder from './../../components/DocsPageBuilder';
+import DocsPageWrapper from './../../components/neo/DocsPageWrapper';
 import Paragraph from './../../components/Paragraph';
 
 const documentIfExists = typeof window !== 'undefined' ? document : null;
@@ -167,22 +168,35 @@ const components = [
   },
 ];
 
-const ImagesPage = () => (
+const isNeo = process.env.BPK_NEO;
+
+const blurb = [
+  <Paragraph>
+    Images can be used to improve the visual appeal of an article or webpage. To
+    give a more responsive user experience, images can be lazy-loaded to save
+    time and data. A spinner can be shown before an image is loaded, at which
+    point the image can gently fade in. To improve user-experience further,
+    different sized images can be loaded depending on the user`s display and
+    browser size.
+  </Paragraph>,
+];
+
+const ImagesPage = ({ ...rest }) => (
   <DocsPageBuilder
     title="Images"
-    blurb={[
-      <Paragraph>
-        Images can be used to improve the visual appeal of an article or
-        webpage. To give a more responsive user experience, images can be
-        lazy-loaded to save time and data. A spinner can be shown before an
-        image is loaded, at which point the image can gently fade in. To improve
-        user-experience further, different sized images can be loaded depending
-        on the user`s display and browser size.
-      </Paragraph>,
-    ]}
+    blurb={isNeo ? null : blurb}
     components={components}
     readme={imagesReadme}
+    {...rest}
   />
 );
 
-export default ImagesPage;
+const NeoImagePage = () => (
+  <DocsPageWrapper
+    title="Image"
+    blurb={blurb}
+    webSubpage={<ImagesPage wrapped />}
+  />
+);
+
+export default (isNeo ? NeoImagePage : ImagesPage);

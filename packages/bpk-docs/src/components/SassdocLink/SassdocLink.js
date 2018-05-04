@@ -23,12 +23,18 @@ import { cssModules } from 'bpk-react-utils';
 
 import sassdocLogoSvg from './../../static/sassdoc-logo.svg';
 
-import STYLES from './sassdoc-link.scss';
+import STYLES from './SassdocLink.scss';
 
 const getClassName = cssModules(STYLES);
 
 const SassdocLink = props => (
-  <aside className={getClassName('bpkdocs-sassdoc-link')}>
+  <aside
+    className={[
+      getClassName('bpkdocs-sassdoc-link'),
+      props.transparentBackground &&
+        getClassName('bpkdocs-sassdoc-link--transparent-background'),
+    ].join(' ')}
+  >
     <img
       className={getClassName('bpkdocs-sassdoc-link__logo')}
       src={`/${sassdocLogoSvg}`}
@@ -45,6 +51,11 @@ const SassdocLink = props => (
 SassdocLink.propTypes = {
   sassdocId: PropTypes.string.isRequired,
   category: PropTypes.string.isRequired,
+  transparentBackground: PropTypes.bool,
+};
+
+SassdocLink.defaultProps = {
+  transparentBackground: false,
 };
 
 export default SassdocLink;

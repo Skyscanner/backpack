@@ -34,9 +34,6 @@ class BpkRtlToggle extends React.Component {
   constructor(props) {
     super(props);
 
-    this.toggleRtl = this.toggleRtl.bind(this);
-    this.handleKeyDown = this.handleKeyDown.bind(this);
-
     this.state = {
       direction: getDirection(),
     };
@@ -50,13 +47,13 @@ class BpkRtlToggle extends React.Component {
     document.removeEventListener('keydown', this.handleKeyDown);
   }
 
-  handleKeyDown(e) {
+  handleKeyDown = e => {
     if (e.ctrlKey && e.metaKey && e.key.toLowerCase() === 'r') {
       this.toggleRtl(e);
     }
-  }
+  };
 
-  toggleRtl(e) {
+  toggleRtl = e => {
     e.preventDefault();
 
     const direction =
@@ -65,7 +62,7 @@ class BpkRtlToggle extends React.Component {
     setDirection(direction);
 
     this.setState({ direction });
-  }
+  };
 
   render() {
     const { className } = this.props;

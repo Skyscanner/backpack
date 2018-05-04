@@ -71,12 +71,20 @@ const cancelButton = Platform.select({
 });
 
 const doneButton = Platform.select({
-  android: () => null,
-  ios: () => (
+  android: (disabled = false) => (
+    <BpkNavigationBarButtonAndroid
+      title="Done"
+      icon="tick"
+      onPress={action('Tapped trailing button')}
+      disabled={disabled}
+    />
+  ),
+  ios: (disabled = false) => (
     <BpkNavigationBarTextButtonIOS
       title="Done"
       emphasize
       onPress={action('Tapped trailing button')}
+      disabled={disabled}
     />
   ),
 });
@@ -138,6 +146,13 @@ storiesOf('react-native-bpk-component-navigation-bar', module)
     <BpkNavigationBar
       leadingButton={backButton()}
       title="This is a very long title with a lot of content"
+    />
+  ))
+  .add('disabled button', () => (
+    <BpkNavigationBar
+      leadingButton={cancelButton()}
+      trailingButton={doneButton(true)}
+      title="Backpack"
     />
   ))
   .add('iOS icon button', () => (

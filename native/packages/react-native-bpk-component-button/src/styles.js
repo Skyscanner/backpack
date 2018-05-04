@@ -77,20 +77,26 @@ const base = StyleSheet.create({
 });
 
 const outlineButtonStyle = {
-  borderColor: colorGray100,
-  borderWidth: buttonBorderWidth,
   paddingVertical: buttonPaddingVertical - buttonBorderWidth,
   paddingHorizontal: buttonPaddingHorizontal - buttonBorderWidth,
 };
 
 const types = {
   secondary: StyleSheet.create({
+    container: {
+      borderColor: colorGray100,
+      borderWidth: buttonBorderWidth,
+    },
     button: outlineButtonStyle,
     text: {
       color: colorBlue500,
     },
   }),
   destructive: StyleSheet.create({
+    container: {
+      borderColor: colorGray100,
+      borderWidth: buttonBorderWidth,
+    },
     button: outlineButtonStyle,
     text: {
       color: colorRed500,
@@ -113,12 +119,12 @@ const modifiers = {
       minHeight: buttonLineHeightLarge,
     },
     button: {
-      minHeight: buttonLineHeightLarge,
+      height: '100%',
       paddingHorizontal: spacingBase - buttonBorderWidth,
     },
   }),
   disabled: StyleSheet.create({
-    button: {
+    container: {
       borderColor: 'transparent',
     },
     text: {
@@ -183,7 +189,7 @@ const themeMappings = {
       secondary: 'buttonSecondaryTextColor',
     },
   },
-  button: {
+  container: {
     borderColor: {
       secondary: 'buttonSecondaryBorderColor',
     },

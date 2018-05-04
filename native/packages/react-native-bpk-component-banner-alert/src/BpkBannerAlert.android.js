@@ -46,15 +46,6 @@ import {
 
 import AnimateAndFade from './AnimateAndFade';
 
-const iconAlignmentPadding = {
-  // Current android "sm" text calculated line height is 19.4.
-  // Current android "small" icon calculated line height is 15.6.
-  // 19.4 - 15.6 = 3.8
-  // We spread 3.8 across the vertical padding to align the icon accordingly.
-  paddingTop: 3,
-  paddingBottom: 0.8,
-};
-
 const STYLES = StyleSheet.create({
   background: {
     minHeight: 1, // required for AnimateAndFade to work correctly :/
@@ -62,12 +53,13 @@ const STYLES = StyleSheet.create({
     backgroundColor: colorGray50,
   },
   row: {
+    minHeight: spacingBase * 3,
     flexDirection: 'row',
+    alignItems: 'center',
     paddingHorizontal: spacingLg,
+    paddingVertical: spacingMd,
   },
   icon: {
-    ...iconAlignmentPadding,
-    marginVertical: spacingBase,
     marginEnd: spacingMd,
   },
   iconSuccess: {
@@ -84,15 +76,11 @@ const STYLES = StyleSheet.create({
   },
   message: {
     flex: 1,
-    marginVertical: spacingBase,
   },
   closeButton: {
-    marginVertical: spacingMd,
     marginStart: spacingMd,
   },
   expandIcon: {
-    ...iconAlignmentPadding,
-    marginVertical: spacingBase,
     marginStart: spacingMd,
   },
   expandableContent: {

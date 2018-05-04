@@ -105,31 +105,39 @@ exports[`iOS BpkDialingCodeList should render correctly 1`] = `
       onLayout={[Function]}
       style={null}
     >
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
+      <View
         style={
-          Array [
-            Object {
-              "color": "rgb(82, 76, 97)",
-              "fontFamily": "System",
-              "fontSize": 17,
-              "fontWeight": "400",
-            },
-            Object {
-              "fontWeight": "600",
-            },
-            Object {
-              "backgroundColor": "rgb(243, 242, 245)",
-              "paddingHorizontal": 16,
-              "paddingVertical": 4,
-            },
-          ]
+          Object {
+            "backgroundColor": "rgb(243, 242, 245)",
+            "paddingHorizontal": 16,
+            "paddingVertical": 4,
+          }
         }
       >
-        Z
-      </Text>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Array [
+              Object {
+                "color": "rgb(82, 76, 97)",
+                "fontFamily": "System",
+                "fontSize": 17,
+                "fontWeight": "400",
+              },
+              Object {
+                "fontWeight": "600",
+              },
+              Object {
+                "color": "rgb(82, 76, 97)",
+              },
+            ]
+          }
+        >
+          Z
+        </Text>
+      </View>
     </View>
     <View
       onLayout={[Function]}
@@ -159,7 +167,9 @@ exports[`iOS BpkDialingCodeList should render correctly 1`] = `
             "flex": 1,
             "flexDirection": "row",
             "justifyContent": "space-between",
-            "padding": 16,
+            "minHeight": 44,
+            "paddingHorizontal": 16,
+            "paddingVertical": 8,
           }
         }
         testID={undefined}
@@ -185,6 +195,12 @@ exports[`iOS BpkDialingCodeList should render correctly 1`] = `
                   "height": 16,
                   "width": 24,
                 },
+                Array [
+                  null,
+                  Object {
+                    "marginRight": 24,
+                  },
+                ],
               ]
             }
           />
@@ -203,16 +219,13 @@ exports[`iOS BpkDialingCodeList should render correctly 1`] = `
                 Array [
                   Object {
                     "flex": 1,
-                    "marginLeft": 24,
                   },
                   null,
                 ],
               ]
             }
           >
-            0
-             
-            Zero
+            0 Zero
           </Text>
         </View>
         <Text
@@ -225,11 +238,10 @@ exports[`iOS BpkDialingCodeList should render correctly 1`] = `
                 "color": "rgb(82, 76, 97)",
                 "fontFamily": "BpkIcon",
                 "fontSize": 24,
-                "lineHeight": 24,
+                "includeFontPadding": false,
               },
               Object {
                 "fontSize": 16,
-                "lineHeight": 16,
               },
               Array [
                 Object {
@@ -268,31 +280,39 @@ exports[`iOS BpkDialingCodeList should render correctly 1`] = `
       onLayout={[Function]}
       style={null}
     >
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
+      <View
         style={
-          Array [
-            Object {
-              "color": "rgb(82, 76, 97)",
-              "fontFamily": "System",
-              "fontSize": 17,
-              "fontWeight": "400",
-            },
-            Object {
-              "fontWeight": "600",
-            },
-            Object {
-              "backgroundColor": "rgb(243, 242, 245)",
-              "paddingHorizontal": 16,
-              "paddingVertical": 4,
-            },
-          ]
+          Object {
+            "backgroundColor": "rgb(243, 242, 245)",
+            "paddingHorizontal": 16,
+            "paddingVertical": 4,
+          }
         }
       >
-        O
-      </Text>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Array [
+              Object {
+                "color": "rgb(82, 76, 97)",
+                "fontFamily": "System",
+                "fontSize": 17,
+                "fontWeight": "400",
+              },
+              Object {
+                "fontWeight": "600",
+              },
+              Object {
+                "color": "rgb(82, 76, 97)",
+              },
+            ]
+          }
+        >
+          O
+        </Text>
+      </View>
     </View>
     <View
       onLayout={[Function]}
@@ -322,7 +342,9 @@ exports[`iOS BpkDialingCodeList should render correctly 1`] = `
             "flex": 1,
             "flexDirection": "row",
             "justifyContent": "space-between",
-            "padding": 16,
+            "minHeight": 44,
+            "paddingHorizontal": 16,
+            "paddingVertical": 8,
           }
         }
         testID={undefined}
@@ -348,6 +370,12 @@ exports[`iOS BpkDialingCodeList should render correctly 1`] = `
                   "height": 16,
                   "width": 24,
                 },
+                Array [
+                  null,
+                  Object {
+                    "marginRight": 24,
+                  },
+                ],
               ]
             }
           />
@@ -366,16 +394,13 @@ exports[`iOS BpkDialingCodeList should render correctly 1`] = `
                 Array [
                   Object {
                     "flex": 1,
-                    "marginLeft": 24,
                   },
                   null,
                 ],
               ]
             }
           >
-            1
-             
-            One
+            1 One
           </Text>
         </View>
         <Text
@@ -388,11 +413,10 @@ exports[`iOS BpkDialingCodeList should render correctly 1`] = `
                 "color": "rgb(82, 76, 97)",
                 "fontFamily": "BpkIcon",
                 "fontSize": 24,
-                "lineHeight": 24,
+                "includeFontPadding": false,
               },
               Object {
                 "fontSize": 16,
-                "lineHeight": 16,
               },
               Array [
                 Object {
@@ -431,31 +455,39 @@ exports[`iOS BpkDialingCodeList should render correctly 1`] = `
       onLayout={[Function]}
       style={null}
     >
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
+      <View
         style={
-          Array [
-            Object {
-              "color": "rgb(82, 76, 97)",
-              "fontFamily": "System",
-              "fontSize": 17,
-              "fontWeight": "400",
-            },
-            Object {
-              "fontWeight": "600",
-            },
-            Object {
-              "backgroundColor": "rgb(243, 242, 245)",
-              "paddingHorizontal": 16,
-              "paddingVertical": 4,
-            },
-          ]
+          Object {
+            "backgroundColor": "rgb(243, 242, 245)",
+            "paddingHorizontal": 16,
+            "paddingVertical": 4,
+          }
         }
       >
-        T
-      </Text>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Array [
+              Object {
+                "color": "rgb(82, 76, 97)",
+                "fontFamily": "System",
+                "fontSize": 17,
+                "fontWeight": "400",
+              },
+              Object {
+                "fontWeight": "600",
+              },
+              Object {
+                "color": "rgb(82, 76, 97)",
+              },
+            ]
+          }
+        >
+          T
+        </Text>
+      </View>
     </View>
     <View
       onLayout={[Function]}
@@ -485,7 +517,9 @@ exports[`iOS BpkDialingCodeList should render correctly 1`] = `
             "flex": 1,
             "flexDirection": "row",
             "justifyContent": "space-between",
-            "padding": 16,
+            "minHeight": 44,
+            "paddingHorizontal": 16,
+            "paddingVertical": 8,
           }
         }
         testID={undefined}
@@ -511,6 +545,12 @@ exports[`iOS BpkDialingCodeList should render correctly 1`] = `
                   "height": 16,
                   "width": 24,
                 },
+                Array [
+                  null,
+                  Object {
+                    "marginRight": 24,
+                  },
+                ],
               ]
             }
           />
@@ -529,16 +569,13 @@ exports[`iOS BpkDialingCodeList should render correctly 1`] = `
                 Array [
                   Object {
                     "flex": 1,
-                    "marginLeft": 24,
                   },
                   null,
                 ],
               ]
             }
           >
-            2
-             
-            Two
+            2 Two
           </Text>
         </View>
         <Text
@@ -551,11 +588,10 @@ exports[`iOS BpkDialingCodeList should render correctly 1`] = `
                 "color": "rgb(82, 76, 97)",
                 "fontFamily": "BpkIcon",
                 "fontSize": 24,
-                "lineHeight": 24,
+                "includeFontPadding": false,
               },
               Object {
                 "fontSize": 16,
-                "lineHeight": 16,
               },
               Array [
                 Object {
@@ -699,31 +735,39 @@ exports[`iOS BpkDialingCodeList should render correctly with "selectedId" set 1`
       onLayout={[Function]}
       style={null}
     >
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
+      <View
         style={
-          Array [
-            Object {
-              "color": "rgb(82, 76, 97)",
-              "fontFamily": "System",
-              "fontSize": 17,
-              "fontWeight": "400",
-            },
-            Object {
-              "fontWeight": "600",
-            },
-            Object {
-              "backgroundColor": "rgb(243, 242, 245)",
-              "paddingHorizontal": 16,
-              "paddingVertical": 4,
-            },
-          ]
+          Object {
+            "backgroundColor": "rgb(243, 242, 245)",
+            "paddingHorizontal": 16,
+            "paddingVertical": 4,
+          }
         }
       >
-        Z
-      </Text>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Array [
+              Object {
+                "color": "rgb(82, 76, 97)",
+                "fontFamily": "System",
+                "fontSize": 17,
+                "fontWeight": "400",
+              },
+              Object {
+                "fontWeight": "600",
+              },
+              Object {
+                "color": "rgb(82, 76, 97)",
+              },
+            ]
+          }
+        >
+          Z
+        </Text>
+      </View>
     </View>
     <View
       onLayout={[Function]}
@@ -753,7 +797,9 @@ exports[`iOS BpkDialingCodeList should render correctly with "selectedId" set 1`
             "flex": 1,
             "flexDirection": "row",
             "justifyContent": "space-between",
-            "padding": 16,
+            "minHeight": 44,
+            "paddingHorizontal": 16,
+            "paddingVertical": 8,
           }
         }
         testID={undefined}
@@ -779,6 +825,12 @@ exports[`iOS BpkDialingCodeList should render correctly with "selectedId" set 1`
                   "height": 16,
                   "width": 24,
                 },
+                Array [
+                  null,
+                  Object {
+                    "marginRight": 24,
+                  },
+                ],
               ]
             }
           />
@@ -797,7 +849,6 @@ exports[`iOS BpkDialingCodeList should render correctly with "selectedId" set 1`
                 Array [
                   Object {
                     "flex": 1,
-                    "marginLeft": 24,
                   },
                   Object {
                     "color": "rgb(0, 157, 189)",
@@ -806,9 +857,7 @@ exports[`iOS BpkDialingCodeList should render correctly with "selectedId" set 1`
               ]
             }
           >
-            0
-             
-            Zero
+            0 Zero
           </Text>
         </View>
         <Text
@@ -821,11 +870,10 @@ exports[`iOS BpkDialingCodeList should render correctly with "selectedId" set 1`
                 "color": "rgb(82, 76, 97)",
                 "fontFamily": "BpkIcon",
                 "fontSize": 24,
-                "lineHeight": 24,
+                "includeFontPadding": false,
               },
               Object {
                 "fontSize": 16,
-                "lineHeight": 16,
               },
               Array [
                 Object {
@@ -867,31 +915,39 @@ exports[`iOS BpkDialingCodeList should render correctly with "selectedId" set 1`
       onLayout={[Function]}
       style={null}
     >
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
+      <View
         style={
-          Array [
-            Object {
-              "color": "rgb(82, 76, 97)",
-              "fontFamily": "System",
-              "fontSize": 17,
-              "fontWeight": "400",
-            },
-            Object {
-              "fontWeight": "600",
-            },
-            Object {
-              "backgroundColor": "rgb(243, 242, 245)",
-              "paddingHorizontal": 16,
-              "paddingVertical": 4,
-            },
-          ]
+          Object {
+            "backgroundColor": "rgb(243, 242, 245)",
+            "paddingHorizontal": 16,
+            "paddingVertical": 4,
+          }
         }
       >
-        O
-      </Text>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Array [
+              Object {
+                "color": "rgb(82, 76, 97)",
+                "fontFamily": "System",
+                "fontSize": 17,
+                "fontWeight": "400",
+              },
+              Object {
+                "fontWeight": "600",
+              },
+              Object {
+                "color": "rgb(82, 76, 97)",
+              },
+            ]
+          }
+        >
+          O
+        </Text>
+      </View>
     </View>
     <View
       onLayout={[Function]}
@@ -921,7 +977,9 @@ exports[`iOS BpkDialingCodeList should render correctly with "selectedId" set 1`
             "flex": 1,
             "flexDirection": "row",
             "justifyContent": "space-between",
-            "padding": 16,
+            "minHeight": 44,
+            "paddingHorizontal": 16,
+            "paddingVertical": 8,
           }
         }
         testID={undefined}
@@ -947,6 +1005,12 @@ exports[`iOS BpkDialingCodeList should render correctly with "selectedId" set 1`
                   "height": 16,
                   "width": 24,
                 },
+                Array [
+                  null,
+                  Object {
+                    "marginRight": 24,
+                  },
+                ],
               ]
             }
           />
@@ -965,16 +1029,13 @@ exports[`iOS BpkDialingCodeList should render correctly with "selectedId" set 1`
                 Array [
                   Object {
                     "flex": 1,
-                    "marginLeft": 24,
                   },
                   null,
                 ],
               ]
             }
           >
-            1
-             
-            One
+            1 One
           </Text>
         </View>
         <Text
@@ -987,11 +1048,10 @@ exports[`iOS BpkDialingCodeList should render correctly with "selectedId" set 1`
                 "color": "rgb(82, 76, 97)",
                 "fontFamily": "BpkIcon",
                 "fontSize": 24,
-                "lineHeight": 24,
+                "includeFontPadding": false,
               },
               Object {
                 "fontSize": 16,
-                "lineHeight": 16,
               },
               Array [
                 Object {
@@ -1030,31 +1090,39 @@ exports[`iOS BpkDialingCodeList should render correctly with "selectedId" set 1`
       onLayout={[Function]}
       style={null}
     >
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
+      <View
         style={
-          Array [
-            Object {
-              "color": "rgb(82, 76, 97)",
-              "fontFamily": "System",
-              "fontSize": 17,
-              "fontWeight": "400",
-            },
-            Object {
-              "fontWeight": "600",
-            },
-            Object {
-              "backgroundColor": "rgb(243, 242, 245)",
-              "paddingHorizontal": 16,
-              "paddingVertical": 4,
-            },
-          ]
+          Object {
+            "backgroundColor": "rgb(243, 242, 245)",
+            "paddingHorizontal": 16,
+            "paddingVertical": 4,
+          }
         }
       >
-        T
-      </Text>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Array [
+              Object {
+                "color": "rgb(82, 76, 97)",
+                "fontFamily": "System",
+                "fontSize": 17,
+                "fontWeight": "400",
+              },
+              Object {
+                "fontWeight": "600",
+              },
+              Object {
+                "color": "rgb(82, 76, 97)",
+              },
+            ]
+          }
+        >
+          T
+        </Text>
+      </View>
     </View>
     <View
       onLayout={[Function]}
@@ -1084,7 +1152,9 @@ exports[`iOS BpkDialingCodeList should render correctly with "selectedId" set 1`
             "flex": 1,
             "flexDirection": "row",
             "justifyContent": "space-between",
-            "padding": 16,
+            "minHeight": 44,
+            "paddingHorizontal": 16,
+            "paddingVertical": 8,
           }
         }
         testID={undefined}
@@ -1110,6 +1180,12 @@ exports[`iOS BpkDialingCodeList should render correctly with "selectedId" set 1`
                   "height": 16,
                   "width": 24,
                 },
+                Array [
+                  null,
+                  Object {
+                    "marginRight": 24,
+                  },
+                ],
               ]
             }
           />
@@ -1128,16 +1204,13 @@ exports[`iOS BpkDialingCodeList should render correctly with "selectedId" set 1`
                 Array [
                   Object {
                     "flex": 1,
-                    "marginLeft": 24,
                   },
                   null,
                 ],
               ]
             }
           >
-            2
-             
-            Two
+            2 Two
           </Text>
         </View>
         <Text
@@ -1150,11 +1223,10 @@ exports[`iOS BpkDialingCodeList should render correctly with "selectedId" set 1`
                 "color": "rgb(82, 76, 97)",
                 "fontFamily": "BpkIcon",
                 "fontSize": 24,
-                "lineHeight": 24,
+                "includeFontPadding": false,
               },
               Object {
                 "fontSize": 16,
-                "lineHeight": 16,
               },
               Array [
                 Object {

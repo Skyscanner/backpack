@@ -60,81 +60,72 @@ exports[`iOS BpkPicker should render correctly 1`] = `
       }
     >
       <View
-        style={
+        accessibilityComponentType="button"
+        accessibilityLabel="Done"
+        accessibilityTraits={
           Array [
-            Object {
-              "borderRadius": 4,
-            },
+            "button",
           ]
         }
+        accessible={true}
+        collapsable={undefined}
+        hasTVPreferredFocus={undefined}
+        hitSlop={undefined}
+        isTVSelectable={true}
+        nativeID={undefined}
+        onLayout={undefined}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "opacity": 1,
+          }
+        }
+        testID={undefined}
+        tvParallaxProperties={undefined}
       >
         <View
-          accessibilityComponentType="button"
-          accessibilityLabel="Done"
-          accessibilityTraits={
+          style={
             Array [
-              "button",
+              Object {
+                "alignItems": "center",
+                "flexDirection": "row",
+                "height": 32,
+                "justifyContent": "center",
+              },
             ]
           }
-          accessible={true}
-          collapsable={undefined}
-          hasTVPreferredFocus={undefined}
-          hitSlop={undefined}
-          isTVSelectable={true}
-          nativeID={undefined}
-          onLayout={undefined}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
-          style={
-            Object {
-              "opacity": 1,
-            }
-          }
-          testID={undefined}
-          tvParallaxProperties={undefined}
         >
-          <View
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            numberOfLines={1}
             style={
               Array [
                 Object {
-                  "alignItems": "center",
-                  "flexDirection": "row",
-                  "justifyContent": "center",
-                  "paddingVertical": 8,
+                  "color": "rgb(82, 76, 97)",
+                  "fontFamily": "System",
+                  "fontSize": 13,
+                  "fontWeight": "400",
                 },
+                Object {
+                  "fontWeight": "600",
+                },
+                Array [
+                  Object {
+                    "color": "rgb(0, 178, 214)",
+                  },
+                ],
               ]
             }
           >
-            <Text
-              accessible={true}
-              allowFontScaling={true}
-              ellipsizeMode="tail"
-              style={
-                Array [
-                  Object {
-                    "color": "rgb(82, 76, 97)",
-                    "fontFamily": "System",
-                    "fontSize": 13,
-                    "fontWeight": "400",
-                  },
-                  Object {
-                    "fontWeight": "600",
-                  },
-                  Array [
-                    Object {
-                      "color": "rgb(0, 178, 214)",
-                    },
-                  ],
-                ]
-              }
-            >
-              Done
-            </Text>
-          </View>
+            Done
+          </Text>
         </View>
       </View>
     </View>
@@ -234,81 +225,72 @@ exports[`iOS BpkPicker should render correctly with a selected value 1`] = `
       }
     >
       <View
-        style={
+        accessibilityComponentType="button"
+        accessibilityLabel="Done"
+        accessibilityTraits={
           Array [
-            Object {
-              "borderRadius": 4,
-            },
+            "button",
           ]
         }
+        accessible={true}
+        collapsable={undefined}
+        hasTVPreferredFocus={undefined}
+        hitSlop={undefined}
+        isTVSelectable={true}
+        nativeID={undefined}
+        onLayout={undefined}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "opacity": 1,
+          }
+        }
+        testID={undefined}
+        tvParallaxProperties={undefined}
       >
         <View
-          accessibilityComponentType="button"
-          accessibilityLabel="Done"
-          accessibilityTraits={
+          style={
             Array [
-              "button",
+              Object {
+                "alignItems": "center",
+                "flexDirection": "row",
+                "height": 32,
+                "justifyContent": "center",
+              },
             ]
           }
-          accessible={true}
-          collapsable={undefined}
-          hasTVPreferredFocus={undefined}
-          hitSlop={undefined}
-          isTVSelectable={true}
-          nativeID={undefined}
-          onLayout={undefined}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
-          style={
-            Object {
-              "opacity": 1,
-            }
-          }
-          testID={undefined}
-          tvParallaxProperties={undefined}
         >
-          <View
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            numberOfLines={1}
             style={
               Array [
                 Object {
-                  "alignItems": "center",
-                  "flexDirection": "row",
-                  "justifyContent": "center",
-                  "paddingVertical": 8,
+                  "color": "rgb(82, 76, 97)",
+                  "fontFamily": "System",
+                  "fontSize": 13,
+                  "fontWeight": "400",
                 },
+                Object {
+                  "fontWeight": "600",
+                },
+                Array [
+                  Object {
+                    "color": "rgb(0, 178, 214)",
+                  },
+                ],
               ]
             }
           >
-            <Text
-              accessible={true}
-              allowFontScaling={true}
-              ellipsizeMode="tail"
-              style={
-                Array [
-                  Object {
-                    "color": "rgb(82, 76, 97)",
-                    "fontFamily": "System",
-                    "fontSize": 13,
-                    "fontWeight": "400",
-                  },
-                  Object {
-                    "fontWeight": "600",
-                  },
-                  Array [
-                    Object {
-                      "color": "rgb(0, 178, 214)",
-                    },
-                  ],
-                ]
-              }
-            >
-              Done
-            </Text>
-          </View>
+            Done
+          </Text>
         </View>
       </View>
     </View>

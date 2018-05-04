@@ -21,12 +21,13 @@ import BpkButton from 'bpk-component-button';
 import BpkPopover from 'bpk-component-popover';
 import BpkInput, { withOpenEvents } from 'bpk-component-input';
 import BpkRouterLink from 'bpk-component-router-link';
-import { BpkCode } from 'bpk-component-code';
 import popoverReadme from 'bpk-component-popover/readme.md';
 
 import * as ROUTES from './../../constants/routes';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
+import DocsPageWrapper from './../../components/neo/DocsPageWrapper';
 import Paragraph from './../../components/Paragraph';
+import Code from '../../components/Code';
 
 const loremIpsum = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer pulvinar leo in gravida varius.
 Mauris eget euismod mi. Ut vulputate ex nec consequat sollicitudin. Pellentesque pulvinar ac dolor vel hendrerit.
@@ -41,22 +42,19 @@ class PopoverContainer extends Component {
     this.state = {
       isOpen: false,
     };
-
-    this.openPopover = this.openPopover.bind(this);
-    this.closePopover = this.closePopover.bind(this);
   }
 
-  openPopover() {
+  openPopover = () => {
     this.setState({
       isOpen: true,
     });
-  }
+  };
 
-  closePopover() {
+  closePopover = () => {
     this.setState({
       isOpen: false,
     });
-  }
+  };
 
   render() {
     /* eslint-disable react/prop-types */
@@ -133,25 +131,29 @@ const components = [
     blurb: [
       <Paragraph>
         You can use a <BpkRouterLink to={ROUTES.FORMS}>BpkInput</BpkRouterLink>{' '}
-        enhanced with the <BpkCode>withOpenEvents</BpkCode> higher-order
-        component to open popovers.
+        enhanced with the <Code>withOpenEvents</Code> higher-order component to
+        open popovers.
       </Paragraph>,
     ],
     examples: [<PopoverContainer input>{loremIpsum}</PopoverContainer>],
   },
 ];
 
-const PopoversPage = () => (
+const isNeo = process.env.BPK_NEO;
+
+const blurb = [
+  <Paragraph>
+    Use popovers to display content or functionality that is related to a
+    particular element in your app or page. When opened, popovers will position
+    themselves below the target element and attempt to stay in the viewport at
+    all times.
+  </Paragraph>,
+];
+
+const PopoversPage = ({ ...rest }) => (
   <DocsPageBuilder
     title="Popovers"
-    blurb={[
-      <Paragraph>
-        Use popovers to display content or functionality that is related to a
-        particular element in your app or page. When opened, popovers will
-        position themselves below the target element and attempt to stay in the
-        viewport at all times.
-      </Paragraph>,
-    ]}
+    blurb={isNeo ? null : blurb}
     components={components}
     readme={popoverReadme}
     usageTable={{
@@ -169,7 +171,16 @@ const PopoversPage = () => (
         "Don't use when you want content to be accessed on hover.",
       ],
     }}
+    {...rest}
   />
 );
 
-export default PopoversPage;
+const NeoPopoverPage = () => (
+  <DocsPageWrapper
+    title="Popover"
+    blurb={blurb}
+    webSubpage={<PopoversPage wrapped />}
+  />
+);
+
+export default (isNeo ? NeoPopoverPage : PopoversPage);

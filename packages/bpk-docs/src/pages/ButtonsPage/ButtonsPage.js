@@ -22,7 +22,6 @@ import React, { Component } from 'react';
 import BpkButton from 'bpk-component-button';
 import { colors, buttons } from 'bpk-tokens/tokens/base.es6';
 import { alignToButton, alignToLargeButton } from 'bpk-component-icon';
-import { BpkCode } from 'bpk-component-code';
 import BpkLink from 'bpk-component-link';
 import TestBpkSmallArrowIcon from 'bpk-component-icon/sm/long-arrow-right';
 import TestBpkLargeArrowIcon from 'bpk-component-icon/lg/long-arrow-right';
@@ -41,6 +40,7 @@ import loadingButtonReadme from 'bpk-component-loading-button/readme.md';
 import * as ROUTES from './../../constants/routes';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
 import Paragraph from './../../components/Paragraph';
+import Code from '../../components/Code';
 
 const AlignedBpkSmallArrowIcon = alignToButton(TestBpkSmallArrowIcon);
 const AlignedBpkLargeArrowIcon = alignToLargeButton(TestBpkLargeArrowIcon);
@@ -270,7 +270,7 @@ const components = [
       <Paragraph>
         The <BpkLink href={ROUTES.ALIGNMENT}>Alignment</BpkLink> page gives
         examples of icon alignment using HOCs provided in the{' '}
-        <BpkCode>bpk-component-icon</BpkCode> package.
+        <Code>bpk-component-icon</Code> package.
       </Paragraph>,
     ],
     examples: [],
@@ -300,20 +300,27 @@ const customSections = [
   },
 ];
 
-const ButtonsPage = () => (
+const isNeo = process.env.BPK_NEO;
+
+const ButtonsPage = ({ ...rest }: { [string]: any }) => (
   <DocsPageBuilder
     title="Buttons"
-    blurb={[
-      <Paragraph>
-        On this page, you’ll find examples and information on how to use the
-        button component. If you provide an href, an anchor tag is rendered
-        instead.
-      </Paragraph>,
-    ]}
+    blurb={
+      isNeo
+        ? []
+        : [
+            <Paragraph>
+              On this page, you’ll find examples and information on how to use
+              the button component. If you provide an href, an anchor tag is
+              rendered instead.
+            </Paragraph>,
+          ]
+    }
     components={components}
     sassdocId="buttons"
     readme={buttonReadme}
     customSections={customSections}
+    {...rest}
   />
 );
 

@@ -24,18 +24,16 @@ export default function withLoadingBehavior(Component) {
     constructor() {
       super();
 
-      this.onLoad = this.onLoad.bind(this);
-
       this.state = {
         loading: true,
       };
     }
 
-    onLoad() {
+    onLoad = () => {
       this.setState(() => ({
         loading: false,
       }));
-    }
+    };
 
     render() {
       return (

@@ -22,6 +22,7 @@ import { BpkList, BpkListItem } from 'bpk-component-list';
 import listReadme from 'bpk-component-list/readme.md';
 
 import DocsPageBuilder from './../../components/DocsPageBuilder';
+import DocsPageWrapper from './../../components/neo/DocsPageWrapper';
 import Paragraph from './../../components/Paragraph';
 import PresentationBlock from './../../components/PresentationBlock';
 
@@ -50,13 +51,24 @@ const blurb = [
   </PresentationBlock>,
 ];
 
-const ListPage = () => (
+const isNeo = process.env.BPK_NEO;
+
+const ListPage = ({ ...rest }) => (
   <DocsPageBuilder
     title="Lists"
     showMenu={false}
     readme={listReadme}
     blurb={blurb}
+    {...rest}
   />
 );
 
-export default ListPage;
+const NeoListPage = () => (
+  <DocsPageWrapper
+    title="List"
+    blurb={blurb}
+    webSubpage={<ListPage wrapped />}
+  />
+);
+
+export default (isNeo ? NeoListPage : ListPage);

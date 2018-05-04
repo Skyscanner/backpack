@@ -20,40 +20,20 @@ import PropTypes from 'prop-types';
 import React from 'react';
 
 import SideNavLayout from './../SideNavLayout';
-import NeoSideNav from './../NeoSideNav';
-import * as routes from './../../constants/routes';
+import NeoSideNavLayout from './../NeoSideNavLayout';
 
-const links = [
-  {
-    id: 'USING_BACKPACK',
-    category: 'Using Backpack',
-    links: [
-      {
-        id: 'GETTING_STARTED',
-        route: routes.GETTING_STARTED,
-        children: 'Getting started',
-      },
-      {
-        id: 'BACKPACK_REACT_SCRIPTS',
-        route: routes.BACKPACK_REACT_SCRIPTS,
-        children: 'Backpack React Scripts',
-      },
-      {
-        id: 'BASE_STYLESHEET',
-        route: routes.BASE_STYLESHEET,
-        children: 'Base stylesheet',
-      },
-    ],
-  },
-];
+import links from './../links';
 
 const UsingLayout = ({ children, ...rest }) =>
   process.env.BPK_NEO ? (
-    <NeoSideNav activeSection="usingBackpack" links={links} {...rest}>
+    <NeoSideNavLayout activeSection="USING_BACKPACK" links={links} {...rest}>
       {children}
-    </NeoSideNav>
+    </NeoSideNavLayout>
   ) : (
-    <SideNavLayout links={links} {...rest}>
+    <SideNavLayout
+      links={links.filter(link => link.id === 'USING_BACKPACK')}
+      {...rest}
+    >
       {children}
     </SideNavLayout>
   );

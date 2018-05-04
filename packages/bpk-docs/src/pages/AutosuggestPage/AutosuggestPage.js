@@ -18,7 +18,6 @@
 
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import BpkLink from 'bpk-component-link';
 import BpkLabel from 'bpk-component-label';
 import { withRtlSupport } from 'bpk-component-icon';
 import BpkRouterLink from 'bpk-component-router-link';
@@ -31,6 +30,8 @@ import autosuggestReadme from 'bpk-component-autosuggest/readme.md';
 
 import * as ROUTES from './../../constants/routes';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
+import DocsPageWrapper from './../../components/neo/DocsPageWrapper';
+
 import Paragraph from './../../components/Paragraph';
 
 const BpkFlightIcon = withRtlSupport(FlightIcon);
@@ -116,33 +117,25 @@ class AutosuggestExample extends Component {
       autosuggestId: `autosuggest-example-${instances}`,
       suggestions: [],
     };
-
-    this.onChange = this.onChange.bind(this);
-    this.onSuggestionsFetchRequested = this.onSuggestionsFetchRequested.bind(
-      this,
-    );
-    this.onSuggestionsClearRequested = this.onSuggestionsClearRequested.bind(
-      this,
-    );
   }
 
-  onChange(e, { newValue }) {
+  onChange = (e, { newValue }) => {
     this.setState({
       value: newValue,
     });
-  }
+  };
 
-  onSuggestionsFetchRequested({ value }) {
+  onSuggestionsFetchRequested = ({ value }) => {
     this.setState({
       suggestions: getSuggestions(value),
     });
-  }
+  };
 
-  onSuggestionsClearRequested() {
+  onSuggestionsClearRequested = () => {
     this.setState({
       suggestions: [],
     });
-  }
+  };
 
   render() {
     const { autosuggestId, value, suggestions } = this.state;
@@ -275,25 +268,32 @@ const components = [
   },
 ];
 
-const AutosuggestPage = () => (
+const isNeo = process.env.BPK_NEO;
+
+const blurb = [
+  <Paragraph>
+    The autosuggest component assists users in query creation and completion by
+    searching a dynamic list for related keywords, phrases and items.
+  </Paragraph>,
+];
+
+const AutosuggestPage = ({ ...rest }) => (
   <DocsPageBuilder
     title="Autosuggest"
-    blurb={[
-      <Paragraph>
-        The Backpack autosuggest component is a lightweight wrapper around{' '}
-        <BpkLink href="http://react-autosuggest.js.org/" blank>
-          React Autosuggest
-        </BpkLink>. It can be used to display suggestions for travel
-        destinations, hotels, car hire and more - any data source can be used.
-        Whilst you have full control over suggestion rendering, Backpack
-        provides a built-in suggestion component allowing you to display icons,
-        sub-headings and more.
-      </Paragraph>,
-    ]}
+    blurb={isNeo ? null : blurb}
     components={components}
     readme={autosuggestReadme}
     sassdocId="autosuggest"
+    {...rest}
   />
 );
 
-export default AutosuggestPage;
+const NeoAutosuggestPage = () => (
+  <DocsPageWrapper
+    title="Autosuggest"
+    blurb={blurb}
+    webSubpage={<AutosuggestPage wrapped />}
+  />
+);
+
+export default (isNeo ? NeoAutosuggestPage : AutosuggestPage);

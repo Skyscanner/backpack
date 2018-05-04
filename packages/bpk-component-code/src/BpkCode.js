@@ -15,24 +15,49 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+/* @flow */
 
 import PropTypes from 'prop-types';
-import React from 'react';
+import React, { type Node } from 'react';
 import { cssModules } from 'bpk-react-utils';
 
-import STYLES from './bpk-code.scss';
+import STYLES from './BpkCode.scss';
 
 const getClassName = cssModules(STYLES);
 
-const BpkCode = props => (
-  <code className={getClassName('bpk-code')}>{props.children}</code>
-);
+type Props = {
+  children: Node,
+  alternate: boolean,
+  className: ?string,
+};
+const BpkCode = (props: Props) => {
+  const { children, alternate, className, ...rest } = props;
+  const classNames = [getClassName('bpk-code')];
+
+  if (alternate) {
+    classNames.push(getClassName('bpk-code--alternate'));
+  }
+
+  if (className) {
+    classNames.push(className);
+  }
+
+  return (
+    <code className={classNames.join(' ')} {...rest}>
+      {children}
+    </code>
+  );
+};
 
 BpkCode.propTypes = {
-  children: PropTypes.oneOfType([
-    PropTypes.arrayOf(PropTypes.node),
-    PropTypes.node,
-  ]).isRequired,
+  children: PropTypes.node.isRequired,
+  className: PropTypes.string,
+  alternate: PropTypes.bool,
+};
+
+BpkCode.defaultProps = {
+  className: null,
+  alternate: false,
 };
 
 export default BpkCode;

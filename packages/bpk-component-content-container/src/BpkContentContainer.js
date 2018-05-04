@@ -25,20 +25,39 @@ import STYLES from './bpk-content-container.scss';
 const getClassName = cssModules(STYLES);
 
 const BpkContentContainer = props => {
-  const TagName = props.tagName;
+  const {
+    tagName: TagName,
+    className,
+    bareHtml,
+    alternate,
+    dangerouslySetInnerHTML,
+    children,
+    ...rest
+  } = props;
   const classNames = [getClassName('bpk-content-container')];
 
-  if (props.bareHtml) {
+  if (bareHtml) {
     classNames.push(getClassName('bpk-content-container--bare-html'));
+
+    if (alternate) {
+      classNames.push(
+        getClassName('bpk-content-container--bare-html-alternate'),
+      );
+    }
+  }
+
+  if (className) {
+    classNames.push(className);
   }
 
   /* eslint-disable react/no-danger-with-children */
   return (
     <TagName
       className={classNames.join(' ')}
-      dangerouslySetInnerHTML={props.dangerouslySetInnerHTML}
+      dangerouslySetInnerHTML={dangerouslySetInnerHTML}
+      {...rest}
     >
-      {props.children}
+      {children}
     </TagName>
   );
   /* eslint-enable */
@@ -51,6 +70,8 @@ BpkContentContainer.propTypes = {
   }),
   tagName: PropTypes.oneOf(['article', 'aside', 'div', 'main', 'section']),
   bareHtml: PropTypes.bool,
+  alternate: PropTypes.bool,
+  className: PropTypes.string,
 };
 
 BpkContentContainer.defaultProps = {
@@ -58,6 +79,8 @@ BpkContentContainer.defaultProps = {
   dangerouslySetInnerHTML: null,
   tagName: 'div',
   bareHtml: false,
+  alternate: false,
+  className: null,
 };
 
 export default BpkContentContainer;

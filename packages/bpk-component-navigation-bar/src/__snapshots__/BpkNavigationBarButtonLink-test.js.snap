@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BpkNavigationButtonLink should render correctly 1`] = `
+<button
+  className="bpk-link bpk-navigation-bar-button-link some-class"
+  onClick={[Function]}
+  type="button"
+>
+  Test
+</button>
+`;

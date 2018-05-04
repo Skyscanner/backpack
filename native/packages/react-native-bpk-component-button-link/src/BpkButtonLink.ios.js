@@ -48,7 +48,6 @@ const BpkButtonLink = (props: Props) => {
     iconAlignment,
     large,
     onPress,
-    style,
     title,
     theme,
     ...rest
@@ -59,12 +58,15 @@ const BpkButtonLink = (props: Props) => {
     ? { color: themeAttributes.buttonLinkTextColor }
     : null;
 
-  const containerStyle = [styles.container];
   const viewStyle = [styles.view];
   const textStyle = [styles.text];
   const iconStyle = [styles.icon];
 
   const accessibilityTraits = ['button'];
+
+  if (large) {
+    viewStyle.push(styles.viewLarge);
+  }
 
   if (iconAlignment === ICON_ALIGNMENTS.leading) {
     viewStyle.push(styles.viewLeading);
@@ -77,37 +79,36 @@ const BpkButtonLink = (props: Props) => {
   }
 
   if (disabled) {
-    textStyle.push(styles.disabled);
+    textStyle.push(styles.textDisabled);
     accessibilityTraits.push('disabled');
   }
 
-  if (style) {
-    containerStyle.push(style);
-  }
-
   return (
-    <View style={containerStyle}>
-      <TouchableOpacity
-        accessibilityComponentType="button"
-        accessibilityLabel={accessibilityLabel || title}
-        accessibilityTraits={accessibilityTraits}
-        onPress={onPress}
-        disabled={disabled}
-        icon={icon}
-        {...rest}
-      >
-        <View style={viewStyle}>
-          <BpkText textStyle={large ? 'lg' : 'sm'} emphasize style={textStyle}>
-            {title}
-          </BpkText>
-          {typeof icon === 'string' ? (
-            <BpkIcon icon={icon} style={iconStyle} small={!large} />
-          ) : (
-            icon
-          )}
-        </View>
-      </TouchableOpacity>
-    </View>
+    <TouchableOpacity
+      accessibilityComponentType="button"
+      accessibilityLabel={accessibilityLabel || title}
+      accessibilityTraits={accessibilityTraits}
+      onPress={onPress}
+      disabled={disabled}
+      icon={icon}
+      {...rest}
+    >
+      <View style={viewStyle}>
+        <BpkText
+          textStyle={large ? 'lg' : 'sm'}
+          emphasize
+          numberOfLines={1}
+          style={textStyle}
+        >
+          {title}
+        </BpkText>
+        {typeof icon === 'string' ? (
+          <BpkIcon icon={icon} style={iconStyle} small={!large} />
+        ) : (
+          icon
+        )}
+      </View>
+    </TouchableOpacity>
   );
 };
 

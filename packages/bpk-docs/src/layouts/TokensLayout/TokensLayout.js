@@ -20,34 +20,17 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import SideNavLayout from './../SideNavLayout';
-import NeoSideNav from './../NeoSideNav';
-import * as routes from './../../constants/routes';
+import NeoSideNavLayout from './../NeoSideNavLayout';
 
-const links = [
-  {
-    id: 'Tokens',
-    category: 'Tokens',
-    sort: true,
-    links: [
-      { id: 'COLORS', route: routes.COLORS, children: 'Colors' },
-      { id: 'TYPESETTING', route: routes.TYPESETTING, children: 'Typesetting' },
-      { id: 'LAYOUT', route: routes.SPACINGS, children: 'Spacings' },
-      { id: 'RADII', route: routes.RADII, children: 'Radii' },
-      { id: 'SHADOWS', route: routes.SHADOWS, children: 'Shadows' },
-      { id: 'BORDERS', route: routes.BORDERS, children: 'Borders' },
-      { id: 'ANIMATION', route: routes.ANIMATION, children: 'Animation' },
-      { id: 'Z_INDEXES', route: routes.Z_INDEXES, children: 'Z-Indexes' },
-    ],
-  },
-];
+import links from './../links';
 
 const TokensLayout = ({ children, ...rest }) =>
   process.env.BPK_NEO ? (
-    <NeoSideNav activeSection="tokens" links={links} {...rest}>
+    <NeoSideNavLayout activeSection="TOKENS" links={links} {...rest}>
       {children}
-    </NeoSideNav>
+    </NeoSideNavLayout>
   ) : (
-    <SideNavLayout links={links} {...rest}>
+    <SideNavLayout links={links.filter(link => link.id === 'TOKENS')} {...rest}>
       {children}
     </SideNavLayout>
   );

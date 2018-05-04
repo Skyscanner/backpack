@@ -29,13 +29,11 @@ class SliderContainer extends Component {
     this.state = {
       value: props.value || 50,
     };
-
-    this.handleChange = this.handleChange.bind(this);
   }
 
-  handleChange(value) {
+  handleChange = value => {
     this.setState({ value });
-  }
+  };
 
   render() {
     const valueComponent = (min, max) => (

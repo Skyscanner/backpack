@@ -22,20 +22,19 @@ import { StyleSheet } from 'react-native';
 import {
   colorBlue500,
   colorGray300,
-  borderRadiusSm,
   spacingSm,
-  spacingMd,
+  spacingXl,
 } from 'bpk-tokens/tokens/base.react.native';
 
 const styles = StyleSheet.create({
-  container: {
-    borderRadius: borderRadiusSm,
-  },
   view: {
+    height: spacingXl,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
-    paddingVertical: spacingMd,
+  },
+  viewLarge: {
+    height: spacingXl + spacingSm,
   },
   viewLeading: {
     flexDirection: 'row-reverse',
@@ -43,7 +42,7 @@ const styles = StyleSheet.create({
   text: {
     color: colorBlue500,
   },
-  disabled: {
+  textDisabled: {
     color: colorGray300,
   },
   icon: {

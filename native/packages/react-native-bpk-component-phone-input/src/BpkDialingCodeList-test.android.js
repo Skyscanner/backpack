@@ -34,6 +34,11 @@ jest.mock(
   () => jest.requireActual('bpk-tokens/tokens/base.react.native.android.js'),
 );
 
+jest.mock(
+  './../node_modules/react-native-bpk-component-flat-list/node_modules/bpk-tokens/tokens/base.react.native',
+  () => jest.requireActual('bpk-tokens/tokens/base.react.native.android.js'),
+);
+
 jest.mock('bpk-tokens/tokens/base.react.native', () =>
   jest.requireActual('bpk-tokens/tokens/base.react.native.android.js'),
 );

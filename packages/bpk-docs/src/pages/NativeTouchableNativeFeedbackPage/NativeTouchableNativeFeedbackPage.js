@@ -26,6 +26,7 @@ import androidScreenshotDefault from 'react-native-bpk-component-touchable-nativ
 
 import Paragraph from './../../components/Paragraph';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
+import DocsPageWrapper from './../../components/neo/DocsPageWrapper';
 
 const touchableOverlay = '/components/native/touchable-overlay';
 const RNTouchableNativeFeedback =
@@ -48,33 +49,48 @@ const components = [
   },
 ];
 
-const NativeTouchableNativeFeedbackPage = () => (
+const isNeo = process.env.BPK_NEO;
+
+const blurb = [
+  <Paragraph>
+    React Native{"'"}s{' '}
+    <BpkLink href={RNTouchableNativeFeedback} blank>
+      Touchable Native Feedback{' '}
+    </BpkLink>{' '}
+    allows the use of <em>SelectableBackgroundBorderless</em> for the ripple
+    effect. However, this is only supported only on Android API level 21 and
+    higher. BpkTouchableNativeFeedback checks the API level first, to prevent
+    your app from crashing on unsupported devices.
+  </Paragraph>,
+  <BpkBlockquote>
+    <BpkText bold>Note:</BpkText> This component is Android only, for iOS please
+    use the{' '}
+    <BpkLink href={touchableOverlay} blank>
+      BpkTouchableOverlay{' '}
+    </BpkLink>{' '}
+    component.
+  </BpkBlockquote>,
+];
+
+const NativeTouchableNativeFeedbackPage = ({ ...rest }) => (
   <DocsPageBuilder
     title="Touchable Native Feedback"
-    blurb={[
-      <Paragraph>
-        React Native{"'"}s{' '}
-        <BpkLink href={RNTouchableNativeFeedback} blank>
-          Touchable Native Feedback{' '}
-        </BpkLink>{' '}
-        allows the use of <em>SelectableBackgroundBorderless</em> for the ripple
-        effect. However, this is only supported only on Android API level 21 and
-        higher. BpkTouchableNativeFeedback checks the API level first, to
-        prevent your app from crashing on unsupported devices.
-      </Paragraph>,
-      <BpkBlockquote>
-        <BpkText bold>Note:</BpkText> This component is Android only, for iOS
-        please use the{' '}
-        <BpkLink href={touchableOverlay} blank>
-          BpkTouchableOverlay{' '}
-        </BpkLink>{' '}
-        component.
-      </BpkBlockquote>,
-    ]}
+    blurb={isNeo ? null : blurb}
     components={components}
     readme={readme}
     showMenu={false}
+    {...rest}
   />
 );
 
-export default NativeTouchableNativeFeedbackPage;
+const NeoNativeTouchableNativeFeedbackPage = () => (
+  <DocsPageWrapper
+    title="Touchable native feedback"
+    blurb={blurb}
+    nativeSubpage={<NativeTouchableNativeFeedbackPage wrapped />}
+  />
+);
+
+export default (isNeo
+  ? NeoNativeTouchableNativeFeedbackPage
+  : NativeTouchableNativeFeedbackPage);

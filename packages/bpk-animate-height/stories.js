@@ -30,11 +30,9 @@ class AnimateHeightContainer extends Component {
     this.state = {
       height: this.props.fromHeight,
     };
-
-    this.onClick = this.onClick.bind(this);
   }
 
-  onClick() {
+  onClick = () => {
     this.setState(prevState => {
       const height =
         prevState.height !== this.props.fromHeight
@@ -43,7 +41,7 @@ class AnimateHeightContainer extends Component {
 
       return { height };
     });
-  }
+  };
 
   render() {
     const { fromHeight, toHeight, ...rest } = this.props;

@@ -143,6 +143,28 @@ storiesOf('bpk-component-barchart', module)
       yAxisLabel="Average Price (£)"
     />
   ))
+  .add('Using custom scroll colors', () => (
+    <RtlBarchart
+      initialWidth={500}
+      initialHeight={300}
+      data={data.prices}
+      xScaleDataKey="month"
+      yScaleDataKey="price"
+      style={{
+        maxWidth: '580px',
+        minWidth: '400px',
+      }}
+      xAxisLabel="Month"
+      yAxisLabel="Average Price (£)"
+      className={getClassName('bpk-barchart-custom-scrollers')}
+      leadingScrollIndicatorClassName={getClassName(
+        'bpk-barchart-custom-scrollers--leading',
+      )}
+      trailingScrollIndicatorClassName={getClassName(
+        'bpk-barchart-custom-scrollers--trailing',
+      )}
+    />
+  ))
   .add('Default disabled data table', () => (
     <RtlBarchart
       initialWidth={500}

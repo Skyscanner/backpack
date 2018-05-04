@@ -38,6 +38,7 @@
     background: none;
     text-decoration: none;
     cursor: pointer;
+    fill: currentColor;
 
     @include bpk-themeable-property(color, --bpk-horizontal-nav-link-color, $bpk-horizontal-nav-link-color);
 

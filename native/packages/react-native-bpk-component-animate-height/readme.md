@@ -37,10 +37,9 @@ export default class App extends Component {
       expanded: false,
     };
 
-    this.onToggle = this.onToggle.bind(this);
   }
 
-  onToggle() {
+  onToggle = () => {
     this.setState({ expanded: !this.state.expanded });
   }
 

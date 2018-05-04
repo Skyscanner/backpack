@@ -54,4 +54,38 @@ describe('BpkContentContainer', () => {
       .toJSON();
     expect(tree).toMatchSnapshot();
   });
+
+  it('should render correctly with a "bareHtml" and "alternate" attributes', () => {
+    const tree = renderer
+      .create(
+        <BpkContentContainer bareHtml alternate>
+          <h1>Heading</h1>
+          <p>My paragraph.</p>
+          <ul>
+            <li>Item 1</li>
+            <li>Item 2</li>
+            <li>Item 3</li>
+          </ul>
+        </BpkContentContainer>,
+      )
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('should render correctly with a custom "className" attribute ', () => {
+    const tree = renderer
+      .create(
+        <BpkContentContainer className="my-test-class">
+          <h1>Heading</h1>
+          <p>My paragraph.</p>
+          <ul>
+            <li>Item 1</li>
+            <li>Item 2</li>
+            <li>Item 3</li>
+          </ul>
+        </BpkContentContainer>,
+      )
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 });

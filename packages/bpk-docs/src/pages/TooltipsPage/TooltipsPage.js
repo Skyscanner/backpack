@@ -25,6 +25,7 @@ import { cssModules } from 'bpk-react-utils';
 
 import * as ROUTES from './../../constants/routes';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
+import DocsPageWrapper from './../../components/neo/DocsPageWrapper';
 import Heading from './../../components/Heading';
 import Paragraph from './../../components/Paragraph';
 import STYLES from './tooltips-page.scss';
@@ -123,29 +124,31 @@ const components = [
   },
 ];
 
-const TooltipsPage = () => (
+const isNeo = process.env.BPK_NEO;
+
+const blurb = [
+  <Paragraph>
+    Tooltips appear on hover of a particular element and are used to provide
+    additional context/information to the user. They generally are text-only and
+    are triggered on pointer based interfaces.
+  </Paragraph>,
+  <Paragraph>
+    By default, <em>tooltips do not work on touch devices</em>. Using tooltips
+    in touch-based interfaces is generally bad practice due to the lack of hover
+    state. We also don&apos;t recommend using tooltips on interactive elements
+    that can receive focus, such as links, buttons, and inputs.
+  </Paragraph>,
+  <Paragraph>
+    Tooltips do not manage focus. If you need to include interactive elements in
+    a tooltip, a <BpkRouterLink to={ROUTES.POPOVERS}>popover</BpkRouterLink>{' '}
+    might be better suited.
+  </Paragraph>,
+];
+
+const TooltipsPage = ({ ...rest }) => (
   <DocsPageBuilder
     title="Tooltips"
-    blurb={[
-      <Paragraph>
-        Tooltips appear on hover of a particular element and are used to provide
-        additional context/information to the user. They generally are text-only
-        and are triggered on pointer based interfaces.
-      </Paragraph>,
-      <Paragraph>
-        By default, <em>tooltips do not work on touch devices</em>. Using
-        tooltips in touch-based interfaces is generally bad practice due to the
-        lack of hover state. We also don&apos;t recommend using tooltips on
-        interactive elements that can receive focus, such as links, buttons, and
-        inputs.
-      </Paragraph>,
-      <Paragraph>
-        Tooltips do not manage focus. If you need to include interactive
-        elements in a tooltip, a{' '}
-        <BpkRouterLink to={ROUTES.POPOVERS}>popover</BpkRouterLink> might be
-        better suited.
-      </Paragraph>,
-    ]}
+    blurb={isNeo ? null : blurb}
     components={components}
     readme={tooltipReadme}
     usageTable={{
@@ -159,7 +162,16 @@ const TooltipsPage = () => (
         "Don't use on interactive elements that can receive focus such as links, buttons and inputs.",
       ],
     }}
+    {...rest}
   />
 );
 
-export default TooltipsPage;
+const NeoTooltipPage = () => (
+  <DocsPageWrapper
+    title="Tooltip"
+    blurb={blurb}
+    webSubpage={<TooltipsPage wrapped />}
+  />
+);
+
+export default (isNeo ? NeoTooltipPage : TooltipsPage);

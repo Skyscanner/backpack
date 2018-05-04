@@ -30,9 +30,14 @@ exports[`iOS BpkNudger should disable theming if the required attribute is omitt
             "height": 32,
           },
           Object {
+            "borderColor": "rgb(230, 228, 235)",
+            "borderWidth": 2,
+          },
+          Object {
             "width": 32,
           },
         ],
+        Object {},
         Object {
           "marginRight": 4,
         },
@@ -67,8 +72,6 @@ exports[`iOS BpkNudger should disable theming if the required attribute is omitt
               "paddingVertical": 8,
             },
             Object {
-              "borderColor": "rgb(230, 228, 235)",
-              "borderWidth": 2,
               "paddingHorizontal": 10,
               "paddingVertical": 6,
             },
@@ -100,11 +103,10 @@ exports[`iOS BpkNudger should disable theming if the required attribute is omitt
               "color": "rgb(82, 76, 97)",
               "fontFamily": "BpkIcon",
               "fontSize": 24,
-              "lineHeight": 24,
+              "includeFontPadding": false,
             },
             Object {
               "fontSize": 16,
-              "lineHeight": 16,
             },
             Array [
               Array [
@@ -191,9 +193,14 @@ exports[`iOS BpkNudger should disable theming if the required attribute is omitt
             "height": 32,
           },
           Object {
+            "borderColor": "rgb(230, 228, 235)",
+            "borderWidth": 2,
+          },
+          Object {
             "width": 32,
           },
         ],
+        Object {},
         Object {
           "marginLeft": 4,
         },
@@ -228,8 +235,6 @@ exports[`iOS BpkNudger should disable theming if the required attribute is omitt
               "paddingVertical": 8,
             },
             Object {
-              "borderColor": "rgb(230, 228, 235)",
-              "borderWidth": 2,
               "paddingHorizontal": 10,
               "paddingVertical": 6,
             },
@@ -261,11 +266,10 @@ exports[`iOS BpkNudger should disable theming if the required attribute is omitt
               "color": "rgb(82, 76, 97)",
               "fontFamily": "BpkIcon",
               "fontSize": 24,
-              "lineHeight": 24,
+              "includeFontPadding": false,
             },
             Object {
               "fontSize": 16,
-              "lineHeight": 16,
             },
             Array [
               Array [
@@ -343,9 +347,14 @@ exports[`iOS BpkNudger should render correctly 1`] = `
             "height": 32,
           },
           Object {
+            "borderColor": "rgb(230, 228, 235)",
+            "borderWidth": 2,
+          },
+          Object {
             "width": 32,
           },
         ],
+        Object {},
         Object {
           "marginRight": 4,
         },
@@ -380,8 +389,6 @@ exports[`iOS BpkNudger should render correctly 1`] = `
               "paddingVertical": 8,
             },
             Object {
-              "borderColor": "rgb(230, 228, 235)",
-              "borderWidth": 2,
               "paddingHorizontal": 10,
               "paddingVertical": 6,
             },
@@ -413,11 +420,10 @@ exports[`iOS BpkNudger should render correctly 1`] = `
               "color": "rgb(82, 76, 97)",
               "fontFamily": "BpkIcon",
               "fontSize": 24,
-              "lineHeight": 24,
+              "includeFontPadding": false,
             },
             Object {
               "fontSize": 16,
-              "lineHeight": 16,
             },
             Array [
               Array [
@@ -504,9 +510,14 @@ exports[`iOS BpkNudger should render correctly 1`] = `
             "height": 32,
           },
           Object {
+            "borderColor": "rgb(230, 228, 235)",
+            "borderWidth": 2,
+          },
+          Object {
             "width": 32,
           },
         ],
+        Object {},
         Object {
           "marginLeft": 4,
         },
@@ -541,8 +552,6 @@ exports[`iOS BpkNudger should render correctly 1`] = `
               "paddingVertical": 8,
             },
             Object {
-              "borderColor": "rgb(230, 228, 235)",
-              "borderWidth": 2,
               "paddingHorizontal": 10,
               "paddingVertical": 6,
             },
@@ -574,11 +583,10 @@ exports[`iOS BpkNudger should render correctly 1`] = `
               "color": "rgb(82, 76, 97)",
               "fontFamily": "BpkIcon",
               "fontSize": 24,
-              "lineHeight": 24,
+              "includeFontPadding": false,
             },
             Object {
               "fontSize": 16,
-              "lineHeight": 16,
             },
             Array [
               Array [
@@ -655,11 +663,18 @@ exports[`iOS BpkNudger should render correctly when value is a not an integer 1`
             "borderRadius": 40,
             "height": 32,
           },
-          undefined,
+          Object {
+            "borderColor": "rgb(230, 228, 235)",
+            "borderWidth": 2,
+          },
+          Object {
+            "borderColor": "transparent",
+          },
           Object {
             "width": 32,
           },
         ],
+        Object {},
         Object {
           "marginRight": 4,
         },
@@ -695,14 +710,10 @@ exports[`iOS BpkNudger should render correctly when value is a not an integer 1`
               "paddingVertical": 8,
             },
             Object {
-              "borderColor": "rgb(230, 228, 235)",
-              "borderWidth": 2,
               "paddingHorizontal": 10,
               "paddingVertical": 6,
             },
-            Object {
-              "borderColor": "transparent",
-            },
+            undefined,
             Object {
               "paddingHorizontal": 0,
             },
@@ -732,11 +743,10 @@ exports[`iOS BpkNudger should render correctly when value is a not an integer 1`
               "color": "rgb(82, 76, 97)",
               "fontFamily": "BpkIcon",
               "fontSize": 24,
-              "lineHeight": 24,
+              "includeFontPadding": false,
             },
             Object {
               "fontSize": 16,
-              "lineHeight": 16,
             },
             Array [
               Array [
@@ -827,9 +837,14 @@ exports[`iOS BpkNudger should render correctly when value is a not an integer 1`
             "height": 32,
           },
           Object {
+            "borderColor": "rgb(230, 228, 235)",
+            "borderWidth": 2,
+          },
+          Object {
             "width": 32,
           },
         ],
+        Object {},
         Object {
           "marginLeft": 4,
         },
@@ -864,8 +879,6 @@ exports[`iOS BpkNudger should render correctly when value is a not an integer 1`
               "paddingVertical": 8,
             },
             Object {
-              "borderColor": "rgb(230, 228, 235)",
-              "borderWidth": 2,
               "paddingHorizontal": 10,
               "paddingVertical": 6,
             },
@@ -897,11 +910,10 @@ exports[`iOS BpkNudger should render correctly when value is a not an integer 1`
               "color": "rgb(82, 76, 97)",
               "fontFamily": "BpkIcon",
               "fontSize": 24,
-              "lineHeight": 24,
+              "includeFontPadding": false,
             },
             Object {
               "fontSize": 16,
-              "lineHeight": 16,
             },
             Array [
               Array [
@@ -979,9 +991,14 @@ exports[`iOS BpkNudger should render correctly when value is greater than max 1`
             "height": 32,
           },
           Object {
+            "borderColor": "rgb(230, 228, 235)",
+            "borderWidth": 2,
+          },
+          Object {
             "width": 32,
           },
         ],
+        Object {},
         Object {
           "marginRight": 4,
         },
@@ -1016,8 +1033,6 @@ exports[`iOS BpkNudger should render correctly when value is greater than max 1`
               "paddingVertical": 8,
             },
             Object {
-              "borderColor": "rgb(230, 228, 235)",
-              "borderWidth": 2,
               "paddingHorizontal": 10,
               "paddingVertical": 6,
             },
@@ -1049,11 +1064,10 @@ exports[`iOS BpkNudger should render correctly when value is greater than max 1`
               "color": "rgb(82, 76, 97)",
               "fontFamily": "BpkIcon",
               "fontSize": 24,
-              "lineHeight": 24,
+              "includeFontPadding": false,
             },
             Object {
               "fontSize": 16,
-              "lineHeight": 16,
             },
             Array [
               Array [
@@ -1139,11 +1153,18 @@ exports[`iOS BpkNudger should render correctly when value is greater than max 1`
             "borderRadius": 40,
             "height": 32,
           },
-          undefined,
+          Object {
+            "borderColor": "rgb(230, 228, 235)",
+            "borderWidth": 2,
+          },
+          Object {
+            "borderColor": "transparent",
+          },
           Object {
             "width": 32,
           },
         ],
+        Object {},
         Object {
           "marginLeft": 4,
         },
@@ -1179,14 +1200,10 @@ exports[`iOS BpkNudger should render correctly when value is greater than max 1`
               "paddingVertical": 8,
             },
             Object {
-              "borderColor": "rgb(230, 228, 235)",
-              "borderWidth": 2,
               "paddingHorizontal": 10,
               "paddingVertical": 6,
             },
-            Object {
-              "borderColor": "transparent",
-            },
+            undefined,
             Object {
               "paddingHorizontal": 0,
             },
@@ -1216,11 +1233,10 @@ exports[`iOS BpkNudger should render correctly when value is greater than max 1`
               "color": "rgb(82, 76, 97)",
               "fontFamily": "BpkIcon",
               "fontSize": 24,
-              "lineHeight": 24,
+              "includeFontPadding": false,
             },
             Object {
               "fontSize": 16,
-              "lineHeight": 16,
             },
             Array [
               Array [
@@ -1301,11 +1317,18 @@ exports[`iOS BpkNudger should render correctly when value is less than min 1`] =
             "borderRadius": 40,
             "height": 32,
           },
-          undefined,
+          Object {
+            "borderColor": "rgb(230, 228, 235)",
+            "borderWidth": 2,
+          },
+          Object {
+            "borderColor": "transparent",
+          },
           Object {
             "width": 32,
           },
         ],
+        Object {},
         Object {
           "marginRight": 4,
         },
@@ -1341,14 +1364,10 @@ exports[`iOS BpkNudger should render correctly when value is less than min 1`] =
               "paddingVertical": 8,
             },
             Object {
-              "borderColor": "rgb(230, 228, 235)",
-              "borderWidth": 2,
               "paddingHorizontal": 10,
               "paddingVertical": 6,
             },
-            Object {
-              "borderColor": "transparent",
-            },
+            undefined,
             Object {
               "paddingHorizontal": 0,
             },
@@ -1378,11 +1397,10 @@ exports[`iOS BpkNudger should render correctly when value is less than min 1`] =
               "color": "rgb(82, 76, 97)",
               "fontFamily": "BpkIcon",
               "fontSize": 24,
-              "lineHeight": 24,
+              "includeFontPadding": false,
             },
             Object {
               "fontSize": 16,
-              "lineHeight": 16,
             },
             Array [
               Array [
@@ -1473,9 +1491,14 @@ exports[`iOS BpkNudger should render correctly when value is less than min 1`] =
             "height": 32,
           },
           Object {
+            "borderColor": "rgb(230, 228, 235)",
+            "borderWidth": 2,
+          },
+          Object {
             "width": 32,
           },
         ],
+        Object {},
         Object {
           "marginLeft": 4,
         },
@@ -1510,8 +1533,6 @@ exports[`iOS BpkNudger should render correctly when value is less than min 1`] =
               "paddingVertical": 8,
             },
             Object {
-              "borderColor": "rgb(230, 228, 235)",
-              "borderWidth": 2,
               "paddingHorizontal": 10,
               "paddingVertical": 6,
             },
@@ -1543,11 +1564,10 @@ exports[`iOS BpkNudger should render correctly when value is less than min 1`] =
               "color": "rgb(82, 76, 97)",
               "fontFamily": "BpkIcon",
               "fontSize": 24,
-              "lineHeight": 24,
+              "includeFontPadding": false,
             },
             Object {
               "fontSize": 16,
-              "lineHeight": 16,
             },
             Array [
               Array [
@@ -1625,9 +1645,16 @@ exports[`iOS BpkNudger should support theming 1`] = `
             "height": 32,
           },
           Object {
+            "borderColor": "rgb(230, 228, 235)",
+            "borderWidth": 2,
+          },
+          Object {
             "width": 32,
           },
         ],
+        Object {
+          "borderColor": "blue",
+        },
         Object {
           "marginRight": 4,
         },
@@ -1662,8 +1689,6 @@ exports[`iOS BpkNudger should support theming 1`] = `
               "paddingVertical": 8,
             },
             Object {
-              "borderColor": "rgb(230, 228, 235)",
-              "borderWidth": 2,
               "paddingHorizontal": 10,
               "paddingVertical": 6,
             },
@@ -1671,9 +1696,7 @@ exports[`iOS BpkNudger should support theming 1`] = `
               "paddingHorizontal": 0,
             },
           ],
-          Object {
-            "borderColor": "blue",
-          },
+          Object {},
           Array [
             Object {
               "alignItems": "center",
@@ -1697,11 +1720,10 @@ exports[`iOS BpkNudger should support theming 1`] = `
               "color": "rgb(82, 76, 97)",
               "fontFamily": "BpkIcon",
               "fontSize": 24,
-              "lineHeight": 24,
+              "includeFontPadding": false,
             },
             Object {
               "fontSize": 16,
-              "lineHeight": 16,
             },
             Array [
               Array [
@@ -1790,9 +1812,16 @@ exports[`iOS BpkNudger should support theming 1`] = `
             "height": 32,
           },
           Object {
+            "borderColor": "rgb(230, 228, 235)",
+            "borderWidth": 2,
+          },
+          Object {
             "width": 32,
           },
         ],
+        Object {
+          "borderColor": "blue",
+        },
         Object {
           "marginLeft": 4,
         },
@@ -1827,8 +1856,6 @@ exports[`iOS BpkNudger should support theming 1`] = `
               "paddingVertical": 8,
             },
             Object {
-              "borderColor": "rgb(230, 228, 235)",
-              "borderWidth": 2,
               "paddingHorizontal": 10,
               "paddingVertical": 6,
             },
@@ -1836,9 +1863,7 @@ exports[`iOS BpkNudger should support theming 1`] = `
               "paddingHorizontal": 0,
             },
           ],
-          Object {
-            "borderColor": "blue",
-          },
+          Object {},
           Array [
             Object {
               "alignItems": "center",
@@ -1862,11 +1887,10 @@ exports[`iOS BpkNudger should support theming 1`] = `
               "color": "rgb(82, 76, 97)",
               "fontFamily": "BpkIcon",
               "fontSize": 24,
-              "lineHeight": 24,
+              "includeFontPadding": false,
             },
             Object {
               "fontSize": 16,
-              "lineHeight": 16,
             },
             Array [
               Array [

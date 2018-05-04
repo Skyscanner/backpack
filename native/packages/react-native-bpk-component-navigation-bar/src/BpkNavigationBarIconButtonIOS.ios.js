@@ -21,16 +21,21 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { StyleSheet, TouchableOpacity } from 'react-native';
 import BpkIcon, { icons } from 'react-native-bpk-component-icon';
-import { colorGray700 } from 'bpk-tokens/tokens/base.react.native';
+import {
+  colorGray300,
+  colorGray700,
+} from 'bpk-tokens/tokens/base.react.native';
 
 export type Props = {
   title: string,
   icon: $Keys<typeof icons>,
+  disabled: boolean,
   onPress: ?() => mixed,
 
   // Internal only
   leading: boolean,
   tintColor: ?string,
+  disabledTintColor: ?string,
 };
 
 const styles = StyleSheet.create({
@@ -50,10 +55,25 @@ const styles = StyleSheet.create({
 });
 
 const BpkNavigationBarIconButtonIOS = (props: Props) => {
-  const { title, icon, leading, onPress, tintColor } = props;
-  const tintColorFinal = tintColor || colorGray700;
+  const {
+    title,
+    disabled,
+    icon,
+    leading,
+    onPress,
+    disabledTintColor,
+    tintColor,
+  } = props;
+  const tintColorFinal = disabled
+    ? disabledTintColor || colorGray300
+    : tintColor || colorGray700;
   const iconStyle = [styles.icon, { color: tintColorFinal }];
   const buttonStyle = [styles.button];
+  const accessibilityTraits = ['button'];
+
+  if (disabled) {
+    accessibilityTraits.push('disabled');
+  }
 
   if (leading) {
     buttonStyle.push(styles.leading);
@@ -65,10 +85,11 @@ const BpkNavigationBarIconButtonIOS = (props: Props) => {
     <TouchableOpacity
       onPress={onPress}
       accessibilityComponentType="button"
-      accessibilityTraits={['button']}
+      accessibilityTraits={accessibilityTraits}
       accessibilityLabel={title}
       accessible
       style={buttonStyle}
+      disabled={disabled}
     >
       <BpkIcon icon={icons[icon]} style={iconStyle} />
     </TouchableOpacity>
@@ -78,19 +99,23 @@ const BpkNavigationBarIconButtonIOS = (props: Props) => {
 BpkNavigationBarIconButtonIOS.propTypes = {
   title: PropTypes.string.isRequired,
   icon: PropTypes.oneOf(Object.keys(icons)).isRequired,
+  disabled: PropTypes.bool,
   onPress: PropTypes.func,
 
   // Internal only
   leading: PropTypes.bool,
   tintColor: PropTypes.string,
+  disabledTintColor: PropTypes.string,
 };
 
 BpkNavigationBarIconButtonIOS.defaultProps = {
+  disabled: false,
   onPress: null,
 
   // Internal only
   leading: false,
   tintColor: null,
+  disabledTintColor: null,
 };
 
 export default BpkNavigationBarIconButtonIOS;

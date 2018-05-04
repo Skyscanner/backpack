@@ -32,12 +32,11 @@ const styles = StyleSheet.create({
   icon: {
     fontFamily: 'BpkIcon',
     fontSize: spacingLg,
-    lineHeight: spacingLg,
+    includeFontPadding: false,
     color: colorGray700,
   },
   small: {
     fontSize: spacingBase,
-    lineHeight: spacingBase,
   },
 });
 

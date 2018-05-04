@@ -18,40 +18,16 @@
 
 @import '~bpk-mixins/index';
 
-@mixin scroll-indicator ($direction: 'left') {
-  $gradient-direction: if($direction == 'left', 90deg, 270deg);
-
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  content: ' ';
-  display: block;
-  z-index: 1;
-  width: $bpk-spacing-xl;
-  background-image: linear-gradient($gradient-direction, rgba($bpk-color-white, 1), rgba($bpk-color-white, 0));
-  pointer-events: none;
-
-  @if $direction == 'left' {
-    left: 0;
-  } @else {
-    right: 0;
-  }
-}
-
 .bpk-mobile-scroll-container {
   position: relative;
   overflow: hidden;
 
   &--left-indicator {
-    &::before {
-      @include scroll-indicator('left');
-    }
+    @include bpk-scroll-indicator-left($bpk-color-white);
   }
 
   &--right-indicator {
-    &::after {
-      @include scroll-indicator('right');
-    }
+    @include bpk-scroll-indicator-right($bpk-color-white);
   }
 
   &__scroller {

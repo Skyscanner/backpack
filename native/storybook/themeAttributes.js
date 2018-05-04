@@ -18,6 +18,7 @@
 
 const theme = {
   contentColor: '#2d244c',
+  contentGray: '#757380',
   backgroundColor: '#fff',
   brandColors: {
     gradientStart: '#fce134',
@@ -47,9 +48,14 @@ const themeAttributes = {
   // Used in BpkNavigationBar
   navigationBarBackgroundColor: theme.brandColors.gradientStart,
   navigationBarTintColor: theme.contentColor,
+  navigationBarDisabledTintColor: theme.contentGray,
   navigationBarStatusBarColor: theme.brandColors.gradientEnd,
   navigationBarStatusBarStyle: 'dark-content',
   navigationBarShadowColor: theme.brandColors.gradientEnd,
+
+  // Used in BpkProgress
+  progressFillBackgroundColor: theme.contentColor,
+  progressTrackBackgroundColor: theme.contentGray,
 };
 
 export default themeAttributes;

@@ -21,6 +21,10 @@ exports[`Android BpkNudger should disable theming if the required attribute is o
             "height": 32,
           },
           Object {
+            "borderColor": "rgb(230, 228, 235)",
+            "borderWidth": 2,
+          },
+          Object {
             "width": 32,
           },
         ],
@@ -63,8 +67,6 @@ exports[`Android BpkNudger should disable theming if the required attribute is o
               "paddingVertical": 8,
             },
             Object {
-              "borderColor": "rgb(230, 228, 235)",
-              "borderWidth": 2,
               "paddingHorizontal": 10,
               "paddingVertical": 6,
             },
@@ -98,11 +100,10 @@ exports[`Android BpkNudger should disable theming if the required attribute is o
               "color": "rgb(82, 76, 97)",
               "fontFamily": "BpkIcon",
               "fontSize": 24,
-              "lineHeight": 24,
+              "includeFontPadding": false,
             },
             Object {
               "fontSize": 16,
-              "lineHeight": 16,
             },
             Array [
               Array [
@@ -164,6 +165,10 @@ exports[`Android BpkNudger should disable theming if the required attribute is o
             "height": 32,
           },
           Object {
+            "borderColor": "rgb(230, 228, 235)",
+            "borderWidth": 2,
+          },
+          Object {
             "width": 32,
           },
         ],
@@ -206,8 +211,6 @@ exports[`Android BpkNudger should disable theming if the required attribute is o
               "paddingVertical": 8,
             },
             Object {
-              "borderColor": "rgb(230, 228, 235)",
-              "borderWidth": 2,
               "paddingHorizontal": 10,
               "paddingVertical": 6,
             },
@@ -241,11 +244,10 @@ exports[`Android BpkNudger should disable theming if the required attribute is o
               "color": "rgb(82, 76, 97)",
               "fontFamily": "BpkIcon",
               "fontSize": 24,
-              "lineHeight": 24,
+              "includeFontPadding": false,
             },
             Object {
               "fontSize": 16,
-              "lineHeight": 16,
             },
             Array [
               Array [
@@ -298,6 +300,10 @@ exports[`Android BpkNudger should render correctly 1`] = `
             "height": 32,
           },
           Object {
+            "borderColor": "rgb(230, 228, 235)",
+            "borderWidth": 2,
+          },
+          Object {
             "width": 32,
           },
         ],
@@ -340,8 +346,6 @@ exports[`Android BpkNudger should render correctly 1`] = `
               "paddingVertical": 8,
             },
             Object {
-              "borderColor": "rgb(230, 228, 235)",
-              "borderWidth": 2,
               "paddingHorizontal": 10,
               "paddingVertical": 6,
             },
@@ -375,11 +379,10 @@ exports[`Android BpkNudger should render correctly 1`] = `
               "color": "rgb(82, 76, 97)",
               "fontFamily": "BpkIcon",
               "fontSize": 24,
-              "lineHeight": 24,
+              "includeFontPadding": false,
             },
             Object {
               "fontSize": 16,
-              "lineHeight": 16,
             },
             Array [
               Array [
@@ -441,6 +444,10 @@ exports[`Android BpkNudger should render correctly 1`] = `
             "height": 32,
           },
           Object {
+            "borderColor": "rgb(230, 228, 235)",
+            "borderWidth": 2,
+          },
+          Object {
             "width": 32,
           },
         ],
@@ -483,8 +490,6 @@ exports[`Android BpkNudger should render correctly 1`] = `
               "paddingVertical": 8,
             },
             Object {
-              "borderColor": "rgb(230, 228, 235)",
-              "borderWidth": 2,
               "paddingHorizontal": 10,
               "paddingVertical": 6,
             },
@@ -518,11 +523,10 @@ exports[`Android BpkNudger should render correctly 1`] = `
               "color": "rgb(82, 76, 97)",
               "fontFamily": "BpkIcon",
               "fontSize": 24,
-              "lineHeight": 24,
+              "includeFontPadding": false,
             },
             Object {
               "fontSize": 16,
-              "lineHeight": 16,
             },
             Array [
               Array [
@@ -574,7 +578,13 @@ exports[`Android BpkNudger should render correctly when value is a not an intege
             "borderRadius": 40,
             "height": 32,
           },
-          undefined,
+          Object {
+            "borderColor": "rgb(230, 228, 235)",
+            "borderWidth": 2,
+          },
+          Object {
+            "borderColor": "transparent",
+          },
           Object {
             "width": 32,
           },
@@ -619,14 +629,10 @@ exports[`Android BpkNudger should render correctly when value is a not an intege
               "paddingVertical": 8,
             },
             Object {
-              "borderColor": "rgb(230, 228, 235)",
-              "borderWidth": 2,
               "paddingHorizontal": 10,
               "paddingVertical": 6,
             },
-            Object {
-              "borderColor": "transparent",
-            },
+            undefined,
             Object {
               "paddingHorizontal": 0,
             },
@@ -658,11 +664,10 @@ exports[`Android BpkNudger should render correctly when value is a not an intege
               "color": "rgb(82, 76, 97)",
               "fontFamily": "BpkIcon",
               "fontSize": 24,
-              "lineHeight": 24,
+              "includeFontPadding": false,
             },
             Object {
               "fontSize": 16,
-              "lineHeight": 16,
             },
             Array [
               Array [
@@ -728,6 +733,10 @@ exports[`Android BpkNudger should render correctly when value is a not an intege
             "height": 32,
           },
           Object {
+            "borderColor": "rgb(230, 228, 235)",
+            "borderWidth": 2,
+          },
+          Object {
             "width": 32,
           },
         ],
@@ -770,8 +779,6 @@ exports[`Android BpkNudger should render correctly when value is a not an intege
               "paddingVertical": 8,
             },
             Object {
-              "borderColor": "rgb(230, 228, 235)",
-              "borderWidth": 2,
               "paddingHorizontal": 10,
               "paddingVertical": 6,
             },
@@ -805,11 +812,10 @@ exports[`Android BpkNudger should render correctly when value is a not an intege
               "color": "rgb(82, 76, 97)",
               "fontFamily": "BpkIcon",
               "fontSize": 24,
-              "lineHeight": 24,
+              "includeFontPadding": false,
             },
             Object {
               "fontSize": 16,
-              "lineHeight": 16,
             },
             Array [
               Array [
@@ -862,6 +868,10 @@ exports[`Android BpkNudger should render correctly when value is greater than ma
             "height": 32,
           },
           Object {
+            "borderColor": "rgb(230, 228, 235)",
+            "borderWidth": 2,
+          },
+          Object {
             "width": 32,
           },
         ],
@@ -904,8 +914,6 @@ exports[`Android BpkNudger should render correctly when value is greater than ma
               "paddingVertical": 8,
             },
             Object {
-              "borderColor": "rgb(230, 228, 235)",
-              "borderWidth": 2,
               "paddingHorizontal": 10,
               "paddingVertical": 6,
             },
@@ -939,11 +947,10 @@ exports[`Android BpkNudger should render correctly when value is greater than ma
               "color": "rgb(82, 76, 97)",
               "fontFamily": "BpkIcon",
               "fontSize": 24,
-              "lineHeight": 24,
+              "includeFontPadding": false,
             },
             Object {
               "fontSize": 16,
-              "lineHeight": 16,
             },
             Array [
               Array [
@@ -1004,7 +1011,13 @@ exports[`Android BpkNudger should render correctly when value is greater than ma
             "borderRadius": 40,
             "height": 32,
           },
-          undefined,
+          Object {
+            "borderColor": "rgb(230, 228, 235)",
+            "borderWidth": 2,
+          },
+          Object {
+            "borderColor": "transparent",
+          },
           Object {
             "width": 32,
           },
@@ -1049,14 +1062,10 @@ exports[`Android BpkNudger should render correctly when value is greater than ma
               "paddingVertical": 8,
             },
             Object {
-              "borderColor": "rgb(230, 228, 235)",
-              "borderWidth": 2,
               "paddingHorizontal": 10,
               "paddingVertical": 6,
             },
-            Object {
-              "borderColor": "transparent",
-            },
+            undefined,
             Object {
               "paddingHorizontal": 0,
             },
@@ -1088,11 +1097,10 @@ exports[`Android BpkNudger should render correctly when value is greater than ma
               "color": "rgb(82, 76, 97)",
               "fontFamily": "BpkIcon",
               "fontSize": 24,
-              "lineHeight": 24,
+              "includeFontPadding": false,
             },
             Object {
               "fontSize": 16,
-              "lineHeight": 16,
             },
             Array [
               Array [
@@ -1148,7 +1156,13 @@ exports[`Android BpkNudger should render correctly when value is less than min 1
             "borderRadius": 40,
             "height": 32,
           },
-          undefined,
+          Object {
+            "borderColor": "rgb(230, 228, 235)",
+            "borderWidth": 2,
+          },
+          Object {
+            "borderColor": "transparent",
+          },
           Object {
             "width": 32,
           },
@@ -1193,14 +1207,10 @@ exports[`Android BpkNudger should render correctly when value is less than min 1
               "paddingVertical": 8,
             },
             Object {
-              "borderColor": "rgb(230, 228, 235)",
-              "borderWidth": 2,
               "paddingHorizontal": 10,
               "paddingVertical": 6,
             },
-            Object {
-              "borderColor": "transparent",
-            },
+            undefined,
             Object {
               "paddingHorizontal": 0,
             },
@@ -1232,11 +1242,10 @@ exports[`Android BpkNudger should render correctly when value is less than min 1
               "color": "rgb(82, 76, 97)",
               "fontFamily": "BpkIcon",
               "fontSize": 24,
-              "lineHeight": 24,
+              "includeFontPadding": false,
             },
             Object {
               "fontSize": 16,
-              "lineHeight": 16,
             },
             Array [
               Array [
@@ -1302,6 +1311,10 @@ exports[`Android BpkNudger should render correctly when value is less than min 1
             "height": 32,
           },
           Object {
+            "borderColor": "rgb(230, 228, 235)",
+            "borderWidth": 2,
+          },
+          Object {
             "width": 32,
           },
         ],
@@ -1344,8 +1357,6 @@ exports[`Android BpkNudger should render correctly when value is less than min 1
               "paddingVertical": 8,
             },
             Object {
-              "borderColor": "rgb(230, 228, 235)",
-              "borderWidth": 2,
               "paddingHorizontal": 10,
               "paddingVertical": 6,
             },
@@ -1379,11 +1390,10 @@ exports[`Android BpkNudger should render correctly when value is less than min 1
               "color": "rgb(82, 76, 97)",
               "fontFamily": "BpkIcon",
               "fontSize": 24,
-              "lineHeight": 24,
+              "includeFontPadding": false,
             },
             Object {
               "fontSize": 16,
-              "lineHeight": 16,
             },
             Array [
               Array [
@@ -1436,6 +1446,10 @@ exports[`Android BpkNudger should support theming 1`] = `
             "height": 32,
           },
           Object {
+            "borderColor": "rgb(230, 228, 235)",
+            "borderWidth": 2,
+          },
+          Object {
             "width": 32,
           },
         ],
@@ -1478,8 +1492,6 @@ exports[`Android BpkNudger should support theming 1`] = `
               "paddingVertical": 8,
             },
             Object {
-              "borderColor": "rgb(230, 228, 235)",
-              "borderWidth": 2,
               "paddingHorizontal": 10,
               "paddingVertical": 6,
             },
@@ -1513,11 +1525,10 @@ exports[`Android BpkNudger should support theming 1`] = `
               "color": "rgb(82, 76, 97)",
               "fontFamily": "BpkIcon",
               "fontSize": 24,
-              "lineHeight": 24,
+              "includeFontPadding": false,
             },
             Object {
               "fontSize": 16,
-              "lineHeight": 16,
             },
             Array [
               Array [
@@ -1581,6 +1592,10 @@ exports[`Android BpkNudger should support theming 1`] = `
             "height": 32,
           },
           Object {
+            "borderColor": "rgb(230, 228, 235)",
+            "borderWidth": 2,
+          },
+          Object {
             "width": 32,
           },
         ],
@@ -1623,8 +1638,6 @@ exports[`Android BpkNudger should support theming 1`] = `
               "paddingVertical": 8,
             },
             Object {
-              "borderColor": "rgb(230, 228, 235)",
-              "borderWidth": 2,
               "paddingHorizontal": 10,
               "paddingVertical": 6,
             },
@@ -1658,11 +1671,10 @@ exports[`Android BpkNudger should support theming 1`] = `
               "color": "rgb(82, 76, 97)",
               "fontFamily": "BpkIcon",
               "fontSize": 24,
-              "lineHeight": 24,
+              "includeFontPadding": false,
             },
             Object {
               "fontSize": 16,
-              "lineHeight": 16,
             },
             Array [
               Array [

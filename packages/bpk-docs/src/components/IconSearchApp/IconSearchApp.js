@@ -30,13 +30,11 @@ class IconSearchApp extends Component {
     this.state = {
       filterValue: '',
     };
-
-    this.onFilterChange = this.onFilterChange.bind(this);
   }
 
-  onFilterChange(filterValue) {
+  onFilterChange = filterValue => {
     this.setState({ filterValue });
-  }
+  };
 
   getFilteredIcons() {
     const { icons } = this.props;

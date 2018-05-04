@@ -43,5 +43,23 @@ describe('cssModules', () => {
       expect(getClassName('bar')).toEqual('b');
       expect(getClassName('baz')).toEqual('c');
     });
+
+    it('should resolve multiple class names', () => {
+      const getClassName = cssModules({
+        foo: 'a',
+      });
+
+      expect(getClassName('foo', 'bar')).toEqual('a bar');
+    });
+
+    it('should ignore values other than strings', () => {
+      const getClassName = cssModules({
+        foo: 'a',
+      });
+
+      expect(getClassName('foo', false, 1, undefined, {}, true, 'bar')).toEqual(
+        'a bar',
+      );
+    });
   });
 });

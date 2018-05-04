@@ -42,22 +42,22 @@ body {
   font-size: $bpk-font-size-base;
   line-height: $bpk-line-height-base;
 
-  &.scaffold-font-size {
+  :global(&.scaffold-font-size) {
     font-size: 13px; /* stylelint-disable-line unit-blacklist, scale-unlimited/declaration-strict-value */
   }
 
-  &.enable-font-smoothing {
+  :global(&.enable-font-smoothing) {
     -webkit-font-smoothing: antialiased;
   }
 }
 
-.hidden,
-.hide {
+:global(.hidden),
+:global(.hide) {
   @include bpk-hidden;
 }
 
-.visuallyhidden,
-.visually-hidden {
+:global(.visuallyhidden),
+:global(.visually-hidden) {
   @include bpk-visually-hidden;
 
   &.focusable {
@@ -65,11 +65,11 @@ body {
   }
 }
 
-.invisible {
+:global(.invisible) {
   @include bpk-invisible;
 }
 
-.clearfix {
+:global(.clearfix) {
   @include bpk-clearfix;
 }
 

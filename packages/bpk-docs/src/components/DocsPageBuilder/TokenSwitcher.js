@@ -54,22 +54,21 @@ class TokenSwitcher extends Component {
     this.state = {
       selectedPlatform: platforms.web.id,
     };
-
-    this.onChange = this.onChange.bind(this);
   }
 
-  onChange(id) {
+  onChange = id => {
     this.setState(() => ({
       selectedPlatform: id,
     }));
-  }
+  };
 
   render() {
     const { tokens } = this.props;
     const { selectedPlatform } = this.state;
+    const isNeo = !!process.env.BPK_NEO;
 
     const selectedTokens = tokens[selectedPlatform] || {};
-
+    const keys = Object.keys(selectedTokens);
     return (
       <div>
         <BpkHorizontalNav>
@@ -88,26 +87,31 @@ class TokenSwitcher extends Component {
           })}
         </BpkHorizontalNav>
         <br />
-        <BpkTable>
+        <BpkTable alternate={isNeo}>
           <BpkTableHead>
             <BpkTableRow>
-              <BpkTableHeadCell>Name</BpkTableHeadCell>
-              <BpkTableHeadCell>Value</BpkTableHeadCell>
+              <BpkTableHeadCell alternate={isNeo}>Name</BpkTableHeadCell>
+              <BpkTableHeadCell alternate={isNeo}>Value</BpkTableHeadCell>
             </BpkTableRow>
           </BpkTableHead>
           <BpkTableBody>
-            {Object.keys(selectedTokens).map(tokenName => {
-              const token = selectedTokens[tokenName];
-
-              return (
-                <BpkTableRow key={tokenName}>
-                  <BpkTableCell>{formatTokenName(tokenName)}</BpkTableCell>
-                  <BpkTableCell>
-                    {getTokenValue(token, selectedPlatform)}
-                  </BpkTableCell>
-                </BpkTableRow>
-              );
-            })}
+            {!keys.length && (
+              <BpkTableRow key="notAvailable">
+                <BpkTableCell colSpan="2">N/A</BpkTableCell>
+              </BpkTableRow>
+            )}
+            {!!keys.length &&
+              keys.map(tokenName => {
+                const token = selectedTokens[tokenName];
+                return (
+                  <BpkTableRow key={tokenName}>
+                    <BpkTableCell>{formatTokenName(tokenName)}</BpkTableCell>
+                    <BpkTableCell>
+                      {getTokenValue(token, selectedPlatform)}
+                    </BpkTableCell>
+                  </BpkTableRow>
+                );
+              })}
           </BpkTableBody>
         </BpkTable>
       </div>

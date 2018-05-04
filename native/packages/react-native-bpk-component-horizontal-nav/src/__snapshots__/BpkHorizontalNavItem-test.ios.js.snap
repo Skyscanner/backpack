@@ -23,7 +23,14 @@ exports[`iOS BpkHorizontalNavItem should render correctly 1`] = `
   testID={undefined}
 >
   <View
-    style={null}
+    style={
+      Array [
+        Object {
+          "height": 33,
+          "justifyContent": "center",
+        },
+      ]
+    }
   >
     <Text
       accessible={true}
@@ -41,7 +48,6 @@ exports[`iOS BpkHorizontalNavItem should render correctly 1`] = `
             Object {
               "color": "rgb(82, 76, 97)",
               "paddingHorizontal": 16,
-              "paddingVertical": 8,
             },
           ],
         ]
@@ -92,7 +98,14 @@ exports[`iOS BpkHorizontalNavItem should render correctly with "selected" prop 1
   testID={undefined}
 >
   <View
-    style={null}
+    style={
+      Array [
+        Object {
+          "height": 33,
+          "justifyContent": "center",
+        },
+      ]
+    }
   >
     <Text
       accessible={true}
@@ -110,7 +123,6 @@ exports[`iOS BpkHorizontalNavItem should render correctly with "selected" prop 1
             Object {
               "color": "rgb(82, 76, 97)",
               "paddingHorizontal": 16,
-              "paddingVertical": 8,
             },
             Object {
               "color": "rgb(0, 140, 168)",
@@ -164,7 +176,17 @@ exports[`iOS BpkHorizontalNavItem should render correctly with "small" prop 1`] 
   testID={undefined}
 >
   <View
-    style={null}
+    style={
+      Array [
+        Object {
+          "height": 33,
+          "justifyContent": "center",
+        },
+        Object {
+          "height": 29,
+        },
+      ]
+    }
   >
     <Text
       accessible={true}
@@ -182,10 +204,6 @@ exports[`iOS BpkHorizontalNavItem should render correctly with "small" prop 1`] 
             Object {
               "color": "rgb(82, 76, 97)",
               "paddingHorizontal": 16,
-              "paddingVertical": 8,
-            },
-            Object {
-              "paddingVertical": 4,
             },
           ],
         ]
@@ -236,7 +254,14 @@ exports[`iOS BpkHorizontalNavItem should render correctly with "spaceAround" pro
   testID={undefined}
 >
   <View
-    style={null}
+    style={
+      Array [
+        Object {
+          "height": 33,
+          "justifyContent": "center",
+        },
+      ]
+    }
   >
     <Text
       accessible={true}
@@ -254,7 +279,6 @@ exports[`iOS BpkHorizontalNavItem should render correctly with "spaceAround" pro
             Object {
               "color": "rgb(82, 76, 97)",
               "paddingHorizontal": 16,
-              "paddingVertical": 8,
             },
           ],
         ]
@@ -305,7 +329,14 @@ exports[`iOS BpkHorizontalNavItem should render correctly with arbitrary props 1
   testID={undefined}
 >
   <View
-    style={null}
+    style={
+      Array [
+        Object {
+          "height": 33,
+          "justifyContent": "center",
+        },
+      ]
+    }
   >
     <Text
       accessible={true}
@@ -323,7 +354,6 @@ exports[`iOS BpkHorizontalNavItem should render correctly with arbitrary props 1
             Object {
               "color": "rgb(82, 76, 97)",
               "paddingHorizontal": 16,
-              "paddingVertical": 8,
             },
           ],
         ]
@@ -375,9 +405,15 @@ exports[`iOS BpkHorizontalNavItem should render correctly with custom "style" pr
 >
   <View
     style={
-      Object {
-        "marginBottom": 10,
-      }
+      Array [
+        Object {
+          "height": 33,
+          "justifyContent": "center",
+        },
+        Object {
+          "marginBottom": 10,
+        },
+      ]
     }
   >
     <Text
@@ -396,7 +432,6 @@ exports[`iOS BpkHorizontalNavItem should render correctly with custom "style" pr
             Object {
               "color": "rgb(82, 76, 97)",
               "paddingHorizontal": 16,
-              "paddingVertical": 8,
             },
           ],
         ]
@@ -447,7 +482,14 @@ exports[`iOS BpkHorizontalNavItem should support theming 1`] = `
   testID={undefined}
 >
   <View
-    style={null}
+    style={
+      Array [
+        Object {
+          "height": 33,
+          "justifyContent": "center",
+        },
+      ]
+    }
   >
     <Text
       accessible={true}
@@ -465,7 +507,6 @@ exports[`iOS BpkHorizontalNavItem should support theming 1`] = `
             Object {
               "color": "rgb(82, 76, 97)",
               "paddingHorizontal": 16,
-              "paddingVertical": 8,
             },
           ],
         ]

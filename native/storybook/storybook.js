@@ -15,10 +15,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { I18nManager, AppRegistry } from 'react-native';
-import RNRestart from 'react-native-restart';
+
 import addon from '@storybook/addons';
+import RNRestart from 'react-native-restart';
+import { I18nManager, AppRegistry } from 'react-native';
 import { getStorybookUI, configure } from '@storybook/react-native';
+
 import { RTL_EVENT, CHANNEL_POLL_INTERVAL } from './constants';
 
 const toggleRTL = rtlEnabled => {
@@ -38,9 +40,10 @@ const onChannelAvailable = (...fns) => {
     }
   }, CHANNEL_POLL_INTERVAL);
 };
-function enableRtlFromUi(channel) {
+
+const enableRtlFromUi = channel => {
   channel.on(RTL_EVENT, toggleRTL);
-}
+};
 
 /* eslint-disable global-require */
 configure(() => {
@@ -50,6 +53,7 @@ configure(() => {
   require('../packages/react-native-bpk-component-button-link/stories');
   require('../packages/react-native-bpk-component-button/stories');
   require('../packages/react-native-bpk-component-card/stories');
+  require('../packages/react-native-bpk-component-flat-list/stories');
   require('../packages/react-native-bpk-component-horizontal-nav/stories');
   require('../packages/react-native-bpk-component-icon/stories');
   require('../packages/react-native-bpk-component-navigation-bar/stories');
@@ -58,6 +62,8 @@ configure(() => {
   require('../packages/react-native-bpk-component-panel/stories');
   require('../packages/react-native-bpk-component-phone-input/stories');
   require('../packages/react-native-bpk-component-picker/stories');
+  require('../packages/react-native-bpk-component-progress/stories');
+  require('../packages/react-native-bpk-component-section-list/stories');
   require('../packages/react-native-bpk-component-spinner/stories');
   require('../packages/react-native-bpk-component-star-rating/stories');
   require('../packages/react-native-bpk-component-switch/stories');
@@ -74,4 +80,5 @@ const StorybookUI = getStorybookUI({ onDeviceUI: false });
 AppRegistry.registerComponent('native', () => StorybookUI);
 
 onChannelAvailable(enableRtlFromUi);
+
 export default StorybookUI;
