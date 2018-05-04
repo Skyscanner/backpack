@@ -4,6 +4,9 @@
 - react-native-bpk-component-pagination-dots:
   - Introducing the React Native pagination dots component.
 
+- bpk-component-calendar-scroll:
+  - Introducing the Backpack scrollable calendar.
+
 **Fixed:**
 - bpk-component-dialog:
 - bpk-component-drawer:
