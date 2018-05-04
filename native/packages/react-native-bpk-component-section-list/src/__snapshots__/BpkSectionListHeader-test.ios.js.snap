@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`iOS BpkSectionListHeader should render correctly 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "rgb(243, 242, 245)",
+      "paddingHorizontal": 16,
+      "paddingVertical": 4,
+    }
+  }
+>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    style={
+      Array [
+        Object {
+          "color": "rgb(82, 76, 97)",
+          "fontFamily": "System",
+          "fontSize": 17,
+          "fontWeight": "400",
+        },
+        Object {
+          "fontWeight": "600",
+        },
+        Object {
+          "color": "rgb(82, 76, 97)",
+        },
+      ]
+    }
+  >
+    Section header
+  </Text>
+</View>
+`;

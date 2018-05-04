@@ -18,7 +18,6 @@
 
 import React from 'react';
 import BpkLink from 'bpk-component-link';
-import { BpkCode } from 'bpk-component-code';
 import BpkBarchart from 'bpk-component-barchart';
 import { onePixelRem } from 'bpk-tokens/tokens/base.es6';
 import { withSelectedState } from 'bpk-component-barchart/hocs';
@@ -28,7 +27,9 @@ import { updateOnDirectionChange } from 'bpk-component-rtl-toggle';
 import data from 'bpk-component-barchart/data.json';
 
 import DocsPageBuilder from './../../components/DocsPageBuilder';
+import DocsPageWrapper from './../../components/neo/DocsPageWrapper';
 import Paragraph from './../../components/Paragraph';
+import Code from '../../components/Code';
 
 const EnhancedBarchart = updateOnDirectionChange(BpkBarchart);
 const InteractiveBarchart = withSelectedState(EnhancedBarchart);
@@ -82,8 +83,8 @@ const components = [
     title: 'Interactive',
     blurb: [
       <Paragraph>
-        The bars can be made interactive using the <BpkCode>onBarClick</BpkCode>{' '}
-        &amp; <BpkCode>getBarSelection</BpkCode> props.
+        The bars can be made interactive using the <Code>onBarClick</Code> &amp;{' '}
+        <Code>getBarSelection</Code> props.
       </Paragraph>,
     ],
     examples: [
@@ -108,7 +109,7 @@ const components = [
         Outliers can be capped to indicate they are far off the scale. In this
         case using{' '}
         <BpkLink href="#outlierpercentage">
-          <BpkCode>outlierPercentage</BpkCode>
+          <Code>outlierPercentage</Code>
         </BpkLink>{' '}
         of 15.
       </Paragraph>,
@@ -130,24 +131,32 @@ const components = [
   },
 ];
 
-const BarchartsPage = () => (
+const isNeo = process.env.BPK_NEO;
+
+const blurb = [
+  <Paragraph>
+    Bar charts are useful for displaying comparisons between categories of data.
+    At Skyscanner, bar charts are commonly used for displaying fare prices
+    within a given time period e.g. a year, month or week.
+  </Paragraph>,
+];
+
+const BarchartsPage = ({ ...rest }) => (
   <DocsPageBuilder
-    title="Bar charts"
-    blurb={[
-      <Paragraph>
-        Bar charts are useful for displaying comparisons between categories of
-        data. At Skyscanner, bar charts are commonly used for displaying fare
-        prices within a given time period e.g. a year, month or week.
-      </Paragraph>,
-      <Paragraph>
-        Depending on your need these can be configured to show a variety of
-        details such as gridlines, labels, and axis. They can also be configured
-        to trigger actions on click such as opening a link.
-      </Paragraph>,
-    ]}
+    title="Bar chart"
+    blurb={isNeo ? null : blurb}
     components={components}
     readme={barchartReadme}
+    {...rest}
   />
 );
 
-export default BarchartsPage;
+const NeoBarchartPage = () => (
+  <DocsPageWrapper
+    title="Bar chart"
+    blurb={blurb}
+    webSubpage={<BarchartsPage wrapped />}
+  />
+);
+
+export default (isNeo ? NeoBarchartPage : BarchartsPage);

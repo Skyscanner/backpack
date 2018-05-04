@@ -33,6 +33,7 @@ import BpkAutosuggest, {
 import STYLES from './fieldsets-page.scss';
 import * as ROUTES from './../../constants/routes';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
+import DocsPageWrapper from './../../components/neo/DocsPageWrapper';
 import Paragraph from './../../components/Paragraph';
 
 const getClassName = cssModules(STYLES);
@@ -117,33 +118,25 @@ class AutosuggestExample extends Component {
       value: '',
       suggestions: [],
     };
-
-    this.onChange = this.onChange.bind(this);
-    this.onSuggestionsFetchRequested = this.onSuggestionsFetchRequested.bind(
-      this,
-    );
-    this.onSuggestionsClearRequested = this.onSuggestionsClearRequested.bind(
-      this,
-    );
   }
 
-  onChange(e, { newValue }) {
+  onChange = (e, { newValue }) => {
     this.setState({
       value: newValue,
     });
-  }
+  };
 
-  onSuggestionsFetchRequested({ value }) {
+  onSuggestionsFetchRequested = ({ value }) => {
     this.setState({
       suggestions: getSuggestions(value),
     });
-  }
+  };
 
-  onSuggestionsClearRequested() {
+  onSuggestionsClearRequested = () => {
     this.setState({
       suggestions: [],
     });
-  }
+  };
 
   render() {
     const { value, suggestions } = this.state;
@@ -191,19 +184,16 @@ class FieldsetContainer extends Component {
       checked: false,
       validState: 0,
     };
-
-    this.onChange = this.onChange.bind(this);
-    this.toggleStates = this.toggleStates.bind(this);
   }
 
-  onChange(e) {
+  onChange = e => {
     this.setState({
       value: e.target.value,
       checked: e.target.checked,
     });
-  }
+  };
 
-  toggleStates() {
+  toggleStates = () => {
     this.setState(prevState => {
       let nextValidState = prevState.validState + 1;
 
@@ -215,7 +205,7 @@ class FieldsetContainer extends Component {
         validState: nextValidState,
       };
     });
-  }
+  };
 
   render() {
     const { children, isCheckbox, validStates, ...rest } = this.props;
@@ -324,25 +314,38 @@ const components = [
   },
 ];
 
-const FieldsetPage = () => (
+const isNeo = process.env.BPK_NEO;
+
+const blurb = [
+  <Paragraph>
+    Fieldsets encapsulate the composition of{' '}
+    <BpkRouterLink to={`${ROUTES.FORMS}`}>form controls</BpkRouterLink>
+    , <BpkRouterLink to={`${ROUTES.FORMS}#labels`}>labels</BpkRouterLink>
+    &nbsp;&amp;{' '}
+    <BpkRouterLink to={`${ROUTES.FORMS}#validation`}>
+      validation messages
+    </BpkRouterLink>{' '}
+    with the necessary attributes to ensure good accessibility for screen
+    readers.
+  </Paragraph>,
+];
+
+const FieldsetPage = ({ ...rest }) => (
   <DocsPageBuilder
     title="Fieldsets"
-    blurb={[
-      <Paragraph>
-        Fieldsets encapsulate the composition of{' '}
-        <BpkRouterLink to={`${ROUTES.FORMS}`}>form controls</BpkRouterLink>
-        , <BpkRouterLink to={`${ROUTES.FORMS}#labels`}>labels</BpkRouterLink>
-        &nbsp;&amp;{' '}
-        <BpkRouterLink to={`${ROUTES.FORMS}#validation`}>
-          validation messages
-        </BpkRouterLink>{' '}
-        with the necessary attributes to ensure good accessibility for screen
-        readers.
-      </Paragraph>,
-    ]}
+    blurb={isNeo ? null : blurb}
     components={components}
     readme={readme}
+    {...rest}
   />
 );
 
-export default FieldsetPage;
+const NeoFieldsetPage = () => (
+  <DocsPageWrapper
+    title="Fieldset"
+    blurb={blurb}
+    webSubpage={<FieldsetPage wrapped />}
+  />
+);
+
+export default (isNeo ? NeoFieldsetPage : FieldsetPage);

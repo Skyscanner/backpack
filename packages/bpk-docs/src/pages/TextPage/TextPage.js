@@ -19,13 +19,13 @@
 import React from 'react';
 import BpkText from 'bpk-component-text';
 import BpkBlockquote from 'bpk-component-blockquote';
-import { BpkCode } from 'bpk-component-code';
 
 import textReadme from 'bpk-component-text/readme.md';
 
 import DocsPageBuilder from './../../components/DocsPageBuilder';
 import Paragraph from './../../components/Paragraph';
 import PresentationBlock from './../../components/PresentationBlock';
+import Code from '../../components/Code';
 
 const blurb = [
   <Paragraph>
@@ -35,8 +35,8 @@ const blurb = [
     markup while retaining control over how the text looks.
   </Paragraph>,
   <BpkBlockquote extraSpace>
-    <BpkText bold>Note:</BpkText> Whilst <BpkCode>BpkText</BpkCode> allows for
-    any combination of text size and heading levels, we recommend that visual
+    <BpkText bold>Note:</BpkText> Whilst <Code>BpkText</Code> allows for any
+    combination of text size and heading levels, we recommend that visual
     hierarchy is maintained inline with the semantic structure.
   </BpkBlockquote>,
   <PresentationBlock>
@@ -58,12 +58,13 @@ const blurb = [
   </PresentationBlock>,
 ];
 
-const TextPage = () => (
+const TextPage = ({ ...rest }) => (
   <DocsPageBuilder
     title="Text"
     showMenu={false}
     readme={textReadme}
     blurb={blurb}
+    {...rest}
   />
 );
 

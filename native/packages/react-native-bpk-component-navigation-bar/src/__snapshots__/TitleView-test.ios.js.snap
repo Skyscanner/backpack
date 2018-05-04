@@ -22,11 +22,10 @@ exports[`ios TitleView should render correctly with leading icon 1`] = `
           "color": "rgb(82, 76, 97)",
           "fontFamily": "BpkIcon",
           "fontSize": 24,
-          "lineHeight": 24,
+          "includeFontPadding": false,
         },
         Object {
           "fontSize": 16,
-          "lineHeight": 16,
         },
         Array [
           Object {
@@ -166,11 +165,10 @@ exports[`ios TitleView should render correctly with trailing icon 1`] = `
           "color": "rgb(82, 76, 97)",
           "fontFamily": "BpkIcon",
           "fontSize": 24,
-          "lineHeight": 24,
+          "includeFontPadding": false,
         },
         Object {
           "fontSize": 16,
-          "lineHeight": 16,
         },
         Array [
           Object {

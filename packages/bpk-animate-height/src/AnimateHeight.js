@@ -43,8 +43,6 @@ class AnimateHeight extends Component {
       height,
       overflow,
     };
-
-    this.onTransitionEnd = this.onTransitionEnd.bind(this);
   }
 
   componentDidMount() {
@@ -119,14 +117,14 @@ class AnimateHeight extends Component {
     this.timeoutID = null;
   }
 
-  onTransitionEnd() {
+  onTransitionEnd = () => {
     if (this.contentElement && this.props.height === 0) {
       this.contentElement.style.display = 'none';
     }
     if (this.props.onAnimationComplete) {
       this.props.onAnimationComplete();
     }
-  }
+  };
 
   render() {
     const {

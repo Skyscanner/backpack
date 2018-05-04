@@ -24,6 +24,7 @@ import ticketReadme from 'bpk-component-ticket/readme.md';
 
 import * as ROUTES from './../../constants/routes';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
+import DocsPageWrapper from './../../components/neo/DocsPageWrapper';
 import Paragraph from './../../components/Paragraph';
 
 const components = [
@@ -73,20 +74,33 @@ const components = [
   },
 ];
 
-const TicketsPage = () => (
+const isNeo = process.env.BPK_NEO;
+
+const blurb = [
+  <Paragraph>
+    Tickets combine the look and feel of{' '}
+    <BpkRouterLink to={ROUTES.CARDS}>Cards</BpkRouterLink> with an added
+    separation line to divide their content into two distinct areas. They can be
+    configured to display both horizontally and vertically.
+  </Paragraph>,
+];
+
+const TicketsPage = ({ ...rest }) => (
   <DocsPageBuilder
     title="Tickets"
-    blurb={[
-      <Paragraph>
-        Tickets combine the look and feel of{' '}
-        <BpkRouterLink to={ROUTES.CARDS}>Cards</BpkRouterLink> with an added
-        separation line to divide their content into two distinct areas. They
-        can be configured to display both horizontally and vertically.
-      </Paragraph>,
-    ]}
+    blurb={isNeo ? null : blurb}
     components={components}
     readme={ticketReadme}
+    {...rest}
   />
 );
 
-export default TicketsPage;
+const NeoTicketPage = () => (
+  <DocsPageWrapper
+    title="Ticket"
+    blurb={blurb}
+    webSubpage={<TicketsPage wrapped />}
+  />
+);
+
+export default (isNeo ? NeoTicketPage : TicketsPage);

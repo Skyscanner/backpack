@@ -11,7 +11,7 @@ exports[`Android BpkIcon should apply user props 1`] = `
         "color": "rgb(82, 76, 97)",
         "fontFamily": "BpkIcon",
         "fontSize": 24,
-        "lineHeight": 24,
+        "includeFontPadding": false,
       },
       Object {
         "color": "blue",
@@ -34,7 +34,7 @@ exports[`Android BpkIcon should render correctly 1`] = `
         "color": "rgb(82, 76, 97)",
         "fontFamily": "BpkIcon",
         "fontSize": 24,
-        "lineHeight": 24,
+        "includeFontPadding": false,
       },
     ]
   }
@@ -54,11 +54,10 @@ exports[`Android BpkIcon should render small icon correctly 1`] = `
         "color": "rgb(82, 76, 97)",
         "fontFamily": "BpkIcon",
         "fontSize": 24,
-        "lineHeight": 24,
+        "includeFontPadding": false,
       },
       Object {
         "fontSize": 16,
-        "lineHeight": 16,
       },
     ]
   }

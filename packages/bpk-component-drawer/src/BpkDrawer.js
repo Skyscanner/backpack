@@ -36,9 +36,6 @@ class BpkDrawer extends Component {
     this.state = {
       isDrawerShown: true,
     };
-
-    this.onCloseAnimationComplete = this.onCloseAnimationComplete.bind(this);
-    this.hide = this.hide.bind(this);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -47,13 +44,13 @@ class BpkDrawer extends Component {
     }
   }
 
-  onCloseAnimationComplete() {
+  onCloseAnimationComplete = () => {
     this.props.onClose();
-  }
+  };
 
-  hide() {
+  hide = () => {
     this.setState({ isDrawerShown: false });
-  }
+  };
 
   render() {
     const { isOpen, onClose, target, renderTarget, ...rest } = this.props;

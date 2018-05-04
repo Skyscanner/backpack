@@ -40,25 +40,22 @@ class DrawerContainer extends Component {
   constructor() {
     super();
 
-    this.onOpen = this.onOpen.bind(this);
-    this.onClose = this.onClose.bind(this);
-
     this.state = {
       isOpen: false,
     };
   }
 
-  onOpen() {
+  onOpen = () => {
     this.setState({
       isOpen: true,
     });
-  }
+  };
 
-  onClose() {
+  onClose = () => {
     this.setState({
       isOpen: false,
     });
-  }
+  };
 
   render() {
     const { buttonText, ...rest } = this.props;

@@ -21,7 +21,7 @@ import PropTypes from 'prop-types';
 import { StyleSheet, View } from 'react-native';
 import BpkTouchableNativeFeedback from 'react-native-bpk-component-touchable-native-feedback';
 import BpkIcon, { icons } from 'react-native-bpk-component-icon';
-import { colorWhite } from 'bpk-tokens/tokens/base.react.native';
+import { colorWhite, colorBlue300 } from 'bpk-tokens/tokens/base.react.native';
 import { setOpacity } from 'bpk-tokens';
 
 // NOTE: this file explicitly does not use the Backpack tokens because it's based on Material design tokens not Backpack.
@@ -37,25 +37,44 @@ const styles = StyleSheet.create({
 export type Props = {
   title: string,
   icon: $Keys<typeof icons>,
+  disabled: boolean,
   onPress: ?() => mixed,
   touchableColor: ?string,
   tintColor: ?string,
+  disabledTintColor: ?string,
 };
 
 const BpkNavigationBarButton = (props: Props) => {
-  const { icon, onPress, touchableColor, tintColor, title } = props;
+  const {
+    icon,
+    disabled,
+    onPress,
+    touchableColor,
+    disabledTintColor,
+    tintColor,
+    title,
+  } = props;
   const touchableColorFinal = touchableColor || colorWhite;
-  const tintColorFinal = tintColor || colorWhite;
+  const tintColorFinal = disabled
+    ? disabledTintColor || colorBlue300
+    : tintColor || colorWhite;
   const iconStyle = [styles.icon, { color: tintColorFinal }];
+  const accessibilityTraits = ['button'];
+
+  if (disabled) {
+    accessibilityTraits.push('disabled');
+  }
 
   return (
     <View style={styles.clipView}>
       <BpkTouchableNativeFeedback
         onPress={onPress}
         accessibilityComponentType="button"
-        accessibilityTraits={['button']}
+        accessibilityTraits={accessibilityTraits}
         accessibilityLabel={title}
         color={setOpacity(touchableColorFinal, 0.2)}
+        disabled={disabled}
+        accessible
       >
         <View>
           <BpkIcon style={iconStyle} icon={icons[icon]} />
@@ -68,19 +87,23 @@ const BpkNavigationBarButton = (props: Props) => {
 BpkNavigationBarButton.propTypes = {
   title: PropTypes.string.isRequired,
   icon: PropTypes.oneOf(Object.keys(icons)).isRequired,
+  disabled: PropTypes.bool,
   onPress: PropTypes.func,
 
   // Internal only
   touchableColor: PropTypes.string,
   tintColor: PropTypes.string,
+  disabledTintColor: PropTypes.string,
 };
 
 BpkNavigationBarButton.defaultProps = {
+  disabled: false,
   onPress: null,
 
   // Internal only
   touchableColor: null,
   tintColor: null,
+  disabledTintColor: null,
 };
 
 export default BpkNavigationBarButton;

@@ -29,17 +29,15 @@ class MyComponent extends Component {
       isOpen: false,
     };
 
-    this.onOpen = this.onOpen.bind(this);
-    this.onClose = this.beforeClose.bind(this);
   }
 
-  onOpen() {
+  onOpen = () => {
     this.setState({
       isOpen: true,
     });
   }
 
-  onClose() {
+  onClose = () => {
     this.setState({
       isOpen: false,
     });
@@ -117,6 +115,24 @@ Without css modules:
   </div>
 </div>
 ```
+
+The returned function accepts multiple class names and ignores values other than strings. e.g:
+
+```js
+import { cssModules } from 'bpk-react-utils';
+
+import STYLES from './MyComponent.scss';
+
+const getClassNames = cssModules(STYLES);
+
+const MyComponent = (props) => (
+  <div className={getClassName('MyComponent', props.disabled && 'MyComponent--disabled')}>
+   {props.children}
+  </div>
+);
+```
+
+Will result in `MyComponent MyComponent--disabled` if `props.disabled` is true or `MyComponent` otherwise.
 
 ## TransitionInitialMount.js
 

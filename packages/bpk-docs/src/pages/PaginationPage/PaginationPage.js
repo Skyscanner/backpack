@@ -22,6 +22,7 @@ import BpkPagination from 'bpk-component-pagination';
 import paginationReadme from 'bpk-component-pagination/readme.md';
 
 import DocsPageBuilder from './../../components/DocsPageBuilder';
+import DocsPageWrapper from './../../components/neo/DocsPageWrapper';
 import Paragraph from './../../components/Paragraph';
 
 class PaginationContainer extends Component {
@@ -99,18 +100,31 @@ const components = [
   },
 ];
 
-const PaginationPage = () => (
+const isNeo = process.env.BPK_NEO;
+
+const blurb = [
+  <Paragraph>
+    The Backpack pagination component is used to indicate a series of related
+    content exists across multiple pages.
+  </Paragraph>,
+];
+
+const PaginationPage = ({ ...rest }) => (
   <DocsPageBuilder
     title="Pagination"
-    blurb={[
-      <Paragraph>
-        The Backpack pagination component is used to indicate a series of
-        related content exists across multiple pages.
-      </Paragraph>,
-    ]}
+    blurb={isNeo ? null : blurb}
     components={components}
     readme={paginationReadme}
+    {...rest}
   />
 );
 
-export default PaginationPage;
+const NeoPaginationPage = () => (
+  <DocsPageWrapper
+    title="Pagination"
+    blurb={blurb}
+    webSubpage={<PaginationPage wrapped />}
+  />
+);
+
+export default (isNeo ? NeoPaginationPage : PaginationPage);

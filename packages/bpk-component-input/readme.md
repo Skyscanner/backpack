@@ -85,15 +85,13 @@ export default () => {
     super();
 
     this.state = { isOpen: false };
-    this.onOpen = this.onOpen.bind(this);
-    this.onClose = this.onClose.bind(this);
   }
 
-  onOpen() {
+  onOpen = () => {
     this.setState({ isOpen: true });
   }
 
-  onClose() {
+  onClose = () => {
     this.setState({ isOpen: false });
   }
 

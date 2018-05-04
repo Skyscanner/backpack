@@ -37,12 +37,13 @@ const blurb = [
   </PresentationBlock>,
 ];
 
-const LinkPage = () => (
+const LinkPage = ({ ...rest }) => (
   <DocsPageBuilder
     title="Links"
     showMenu={false}
     readme={linkReadme}
     blurb={blurb}
+    {...rest}
   />
 );
 

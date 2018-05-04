@@ -52,7 +52,7 @@ const components = [
   },
 ];
 
-const NativeIconsPage = () => (
+const NativeIconsPage = ({ ...rest }) => (
   <DocsPageBuilder
     title="Icons"
     blurb={[
@@ -68,6 +68,7 @@ const NativeIconsPage = () => (
     components={components}
     readme={readme}
     showMenu={false}
+    {...rest}
   />
 );
 

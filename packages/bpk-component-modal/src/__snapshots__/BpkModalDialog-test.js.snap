@@ -45,7 +45,7 @@ exports[`BpkModalDialog should render correctly 1`] = `
     </button>
   </header>
   <div
-    className="bpk-modal__content"
+    className="bpk-modal__content bpk-modal__content--padded"
   >
     Modal content
   </div>
@@ -97,7 +97,7 @@ exports[`BpkModalDialog should render correctly when is iPhone 1`] = `
     </button>
   </header>
   <div
-    className="bpk-modal__content"
+    className="bpk-modal__content bpk-modal__content--padded"
   >
     Modal content
   </div>
@@ -149,7 +149,7 @@ exports[`BpkModalDialog should render correctly when it does not fills the scree
     </button>
   </header>
   <div
-    className="bpk-modal__content"
+    className="bpk-modal__content bpk-modal__content--padded"
   >
     Modal content
   </div>
@@ -201,7 +201,7 @@ exports[`BpkModalDialog should render correctly when it has a className 1`] = `
     </button>
   </header>
   <div
-    className="bpk-modal__content"
+    className="bpk-modal__content bpk-modal__content--padded"
   >
     Modal content
   </div>
@@ -253,7 +253,59 @@ exports[`BpkModalDialog should render correctly when it is fullscreen 1`] = `
     </button>
   </header>
   <div
-    className="bpk-modal__content"
+    className="bpk-modal__content bpk-modal__content--padded"
+  >
+    Modal content
+  </div>
+</section>
+`;
+
+exports[`BpkModalDialog should render correctly with a custom content classname 1`] = `
+<section
+  aria-labelledby="bpk-modal-heading-my-modal"
+  className="bpk-modal bpk-modal--full-screen-mobile"
+  id="my-modal"
+  role="dialog"
+  tabIndex="-1"
+>
+  <header
+    className="bpk-modal__header"
+  >
+    <h2
+      className="bpk-modal__heading"
+      id="bpk-modal-heading-my-modal"
+    >
+      Modal title
+    </h2>
+     
+    <button
+      aria-label="Close"
+      className="bpk-close-button bpk-modal__close-button"
+      onClick={[Function]}
+      title="Close"
+      type="button"
+    >
+      <svg
+        className="bpk-close-button__icon"
+        height="18"
+        style={
+          Object {
+            "height": "1.125rem",
+            "width": "1.125rem",
+          }
+        }
+        viewBox="0 0 24 24"
+        width="18"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M12 9.172l4.243-4.243a2 2 0 1 1 2.828 2.828L14.828 12l4.243 4.243a2 2 0 1 1-2.828 2.828L12 14.828l-4.243 4.243a2 2 0 1 1-2.828-2.828L9.172 12 4.929 7.757A2 2 0 1 1 7.757 4.93L12 9.172z"
+        />
+      </svg>
+    </button>
+  </header>
+  <div
+    className="bpk-modal__content bpk-modal__content--padded my-classname"
   >
     Modal content
   </div>
@@ -263,7 +315,7 @@ exports[`BpkModalDialog should render correctly when it is fullscreen 1`] = `
 exports[`BpkModalDialog should render correctly with closeText prop 1`] = `
 <section
   aria-labelledby="bpk-modal-heading-my-modal"
-  className="bpk-modal my-classname bpk-modal--full-screen-mobile"
+  className="bpk-modal bpk-modal--full-screen-mobile"
   id="my-modal"
   role="dialog"
   tabIndex="-1"
@@ -287,17 +339,17 @@ exports[`BpkModalDialog should render correctly with closeText prop 1`] = `
     </button>
   </header>
   <div
-    className="bpk-modal__content"
+    className="bpk-modal__content bpk-modal__content--padded"
   >
     Modal content
   </div>
 </section>
 `;
 
-exports[`BpkModalDialog should render correctly with wide prop 1`] = `
+exports[`BpkModalDialog should render correctly with no padding 1`] = `
 <section
   aria-labelledby="bpk-modal-heading-my-modal"
-  className="bpk-modal bpk-modal--wide my-classname bpk-modal--full-screen-mobile"
+  className="bpk-modal bpk-modal--full-screen-mobile"
   id="my-modal"
   role="dialog"
   tabIndex="-1"
@@ -340,6 +392,58 @@ exports[`BpkModalDialog should render correctly with wide prop 1`] = `
   </header>
   <div
     className="bpk-modal__content"
+  >
+    Modal content
+  </div>
+</section>
+`;
+
+exports[`BpkModalDialog should render correctly with wide prop 1`] = `
+<section
+  aria-labelledby="bpk-modal-heading-my-modal"
+  className="bpk-modal bpk-modal--wide bpk-modal--full-screen-mobile"
+  id="my-modal"
+  role="dialog"
+  tabIndex="-1"
+>
+  <header
+    className="bpk-modal__header"
+  >
+    <h2
+      className="bpk-modal__heading"
+      id="bpk-modal-heading-my-modal"
+    >
+      Modal title
+    </h2>
+     
+    <button
+      aria-label="Close"
+      className="bpk-close-button bpk-modal__close-button"
+      onClick={[Function]}
+      title="Close"
+      type="button"
+    >
+      <svg
+        className="bpk-close-button__icon"
+        height="18"
+        style={
+          Object {
+            "height": "1.125rem",
+            "width": "1.125rem",
+          }
+        }
+        viewBox="0 0 24 24"
+        width="18"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M12 9.172l4.243-4.243a2 2 0 1 1 2.828 2.828L14.828 12l4.243 4.243a2 2 0 1 1-2.828 2.828L12 14.828l-4.243 4.243a2 2 0 1 1-2.828-2.828L9.172 12 4.929 7.757A2 2 0 1 1 7.757 4.93L12 9.172z"
+        />
+      </svg>
+    </button>
+  </header>
+  <div
+    className="bpk-modal__content bpk-modal__content--padded"
   >
     Modal content
   </div>

@@ -25,6 +25,7 @@ import androidScreenshotDefault from 'react-native-bpk-component-switch/screensh
 
 import Paragraph from './../../components/Paragraph';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
+import DocsPageWrapper from './../../components/neo/DocsPageWrapper';
 
 import { THEMING } from './../../constants/routes';
 
@@ -56,25 +57,38 @@ const components = [
   },
 ];
 
-const NativeSwitchPage = () => (
+const isNeo = process.env.BPK_NEO;
+
+const blurb = [
+  <Paragraph>
+    Switches allow users to toggle between two states, on or off. These are
+    often used as a replacement for radio buttons. This component is a wrapper
+    around the React Native{' '}
+    <BpkLink href={reactNativeUrl}>Switch component</BpkLink>, therefore it
+    supports all the same behaviours and properties.
+  </Paragraph>,
+  <Paragraph>
+    Switches can be <BpkLink href={THEMING}>themed</BpkLink>.
+  </Paragraph>,
+];
+
+const NativeSwitchPage = ({ ...rest }) => (
   <DocsPageBuilder
     title="Switch"
-    blurb={[
-      <Paragraph>
-        Switches allow users to toggle between two states, on or off. These are
-        often used as a replacement for radio buttons. This component is a
-        wrapper around the React Native{' '}
-        <BpkLink href={reactNativeUrl}>Switch component</BpkLink>, therefore it
-        supports all the same behaviours and properties.
-      </Paragraph>,
-      <Paragraph>
-        Switches can be <BpkLink href={THEMING}>themed</BpkLink>.
-      </Paragraph>,
-    ]}
+    blurb={isNeo ? null : blurb}
     components={components}
     readme={readme}
     showMenu={false}
+    {...rest}
   />
 );
 
-export default NativeSwitchPage;
+const NeoNativeSwitchPage = () => (
+  <DocsPageWrapper
+    title="Switch"
+    blurb={blurb}
+    nativeSubpage={<NativeSwitchPage wrapped />}
+  />
+);
+
+export default (isNeo ? NeoNativeSwitchPage : NativeSwitchPage);

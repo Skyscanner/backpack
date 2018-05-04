@@ -32,8 +32,9 @@ import {
   makeThemePropType,
 } from 'react-native-bpk-theming';
 import {
-  colorBlue700,
+  colorBlue300,
   colorBlue500,
+  colorBlue700,
   colorWhite,
 } from 'bpk-tokens/tokens/base.react.native';
 
@@ -182,6 +183,7 @@ class BpkNavigationBar extends Component<Props, {}> {
     const outerBarStyle = [styles.barOuter];
     const titleStyle = [styles.titleString];
     let tintColor = colorWhite;
+    let disabledTintColor = colorBlue300;
     let touchableColor = colorWhite;
 
     let titleView = null;
@@ -221,6 +223,7 @@ class BpkNavigationBar extends Component<Props, {}> {
     if (this.theme) {
       const {
         navigationBarTintColor,
+        navigationBarDisabledTintColor,
         navigationBarBackgroundColor,
       } = this.theme;
 
@@ -229,6 +232,7 @@ class BpkNavigationBar extends Component<Props, {}> {
         backgroundColor: navigationBarBackgroundColor,
       });
       tintColor = navigationBarTintColor;
+      disabledTintColor = navigationBarDisabledTintColor;
       touchableColor = navigationBarTintColor;
     }
 
@@ -249,12 +253,14 @@ class BpkNavigationBar extends Component<Props, {}> {
         <View style={barStyle}>
           {leadingButton &&
             React.cloneElement(leadingButton, {
+              disabledTintColor,
               touchableColor,
               tintColor,
             })}
           {titleView}
           {trailingButton &&
             React.cloneElement(trailingButton, {
+              disabledTintColor,
               touchableColor,
               tintColor,
             })}

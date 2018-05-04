@@ -16,6 +16,7 @@ exports[`iOS BpkButton should render correctly 1`] = `
           "height": 32,
         },
       ],
+      Object {},
       null,
     ]
   }
@@ -131,6 +132,7 @@ exports[`iOS BpkButton should render correctly with iconAlignment="leading" 1`] 
         undefined,
         undefined,
       ],
+      Object {},
       null,
     ]
   }
@@ -225,11 +227,10 @@ exports[`iOS BpkButton should render correctly with iconAlignment="leading" 1`] 
             "color": "rgb(82, 76, 97)",
             "fontFamily": "BpkIcon",
             "fontSize": 24,
-            "lineHeight": 24,
+            "includeFontPadding": false,
           },
           Object {
             "fontSize": 16,
-            "lineHeight": 16,
           },
           Array [
             Array [
@@ -297,6 +298,7 @@ exports[`iOS BpkButton should render correctly with iconAlignment="trailing" 1`]
         },
         undefined,
       ],
+      Object {},
       null,
     ]
   }
@@ -386,11 +388,10 @@ exports[`iOS BpkButton should render correctly with iconAlignment="trailing" 1`]
             "color": "rgb(82, 76, 97)",
             "fontFamily": "BpkIcon",
             "fontSize": 24,
-            "lineHeight": 24,
+            "includeFontPadding": false,
           },
           Object {
             "fontSize": 16,
-            "lineHeight": 16,
           },
           Array [
             Array [
@@ -451,7 +452,12 @@ exports[`iOS BpkButton should render correctly with type="destructive" 1`] = `
           "borderRadius": 40,
           "height": 32,
         },
+        Object {
+          "borderColor": "rgb(230, 228, 235)",
+          "borderWidth": 2,
+        },
       ],
+      Object {},
       null,
     ]
   }
@@ -484,8 +490,6 @@ exports[`iOS BpkButton should render correctly with type="destructive" 1`] = `
             "paddingVertical": 8,
           },
           Object {
-            "borderColor": "rgb(230, 228, 235)",
-            "borderWidth": 2,
             "paddingHorizontal": 10,
             "paddingVertical": 6,
           },
@@ -573,8 +577,15 @@ exports[`iOS BpkButton should render correctly with type="destructive" and disab
           "borderRadius": 40,
           "height": 32,
         },
-        undefined,
+        Object {
+          "borderColor": "rgb(230, 228, 235)",
+          "borderWidth": 2,
+        },
+        Object {
+          "borderColor": "transparent",
+        },
       ],
+      Object {},
       null,
     ]
   }
@@ -608,14 +619,10 @@ exports[`iOS BpkButton should render correctly with type="destructive" and disab
             "paddingVertical": 8,
           },
           Object {
-            "borderColor": "rgb(230, 228, 235)",
-            "borderWidth": 2,
             "paddingHorizontal": 10,
             "paddingVertical": 6,
           },
-          Object {
-            "borderColor": "transparent",
-          },
+          undefined,
         ],
         Object {},
         Array [
@@ -705,6 +712,7 @@ exports[`iOS BpkButton should render correctly with type="featured" 1`] = `
           "height": 32,
         },
       ],
+      Object {},
       null,
     ]
   }
@@ -817,8 +825,11 @@ exports[`iOS BpkButton should render correctly with type="featured" and disabled
           "borderRadius": 40,
           "height": 32,
         },
-        undefined,
+        Object {
+          "borderColor": "transparent",
+        },
       ],
+      Object {},
       null,
     ]
   }
@@ -851,9 +862,7 @@ exports[`iOS BpkButton should render correctly with type="featured" and disabled
             "paddingHorizontal": 12,
             "paddingVertical": 8,
           },
-          Object {
-            "borderColor": "transparent",
-          },
+          undefined,
         ],
         Object {},
         Array [
@@ -940,6 +949,7 @@ exports[`iOS BpkButton should render correctly with type="primary" 1`] = `
           "height": 32,
         },
       ],
+      Object {},
       null,
     ]
   }
@@ -1052,8 +1062,11 @@ exports[`iOS BpkButton should render correctly with type="primary" and disabled 
           "borderRadius": 40,
           "height": 32,
         },
-        undefined,
+        Object {
+          "borderColor": "transparent",
+        },
       ],
+      Object {},
       null,
     ]
   }
@@ -1086,9 +1099,7 @@ exports[`iOS BpkButton should render correctly with type="primary" and disabled 
             "paddingHorizontal": 12,
             "paddingVertical": 8,
           },
-          Object {
-            "borderColor": "transparent",
-          },
+          undefined,
         ],
         Object {},
         Array [
@@ -1174,7 +1185,12 @@ exports[`iOS BpkButton should render correctly with type="secondary" 1`] = `
           "borderRadius": 40,
           "height": 32,
         },
+        Object {
+          "borderColor": "rgb(230, 228, 235)",
+          "borderWidth": 2,
+        },
       ],
+      Object {},
       null,
     ]
   }
@@ -1207,8 +1223,6 @@ exports[`iOS BpkButton should render correctly with type="secondary" 1`] = `
             "paddingVertical": 8,
           },
           Object {
-            "borderColor": "rgb(230, 228, 235)",
-            "borderWidth": 2,
             "paddingHorizontal": 10,
             "paddingVertical": 6,
           },
@@ -1296,8 +1310,15 @@ exports[`iOS BpkButton should render correctly with type="secondary" and disable
           "borderRadius": 40,
           "height": 32,
         },
-        undefined,
+        Object {
+          "borderColor": "rgb(230, 228, 235)",
+          "borderWidth": 2,
+        },
+        Object {
+          "borderColor": "transparent",
+        },
       ],
+      Object {},
       null,
     ]
   }
@@ -1331,14 +1352,10 @@ exports[`iOS BpkButton should render correctly with type="secondary" and disable
             "paddingVertical": 8,
           },
           Object {
-            "borderColor": "rgb(230, 228, 235)",
-            "borderWidth": 2,
             "paddingHorizontal": 10,
             "paddingVertical": 6,
           },
-          Object {
-            "borderColor": "transparent",
-          },
+          undefined,
         ],
         Object {},
         Array [
@@ -1431,6 +1448,7 @@ exports[`iOS BpkButton should support elements as icons 1`] = `
           "width": 32,
         },
       ],
+      Object {},
       null,
     ]
   }
@@ -1527,6 +1545,7 @@ exports[`iOS BpkButton should support having an icon as well as a title 1`] = `
         },
         undefined,
       ],
+      Object {},
       null,
     ]
   }
@@ -1616,11 +1635,10 @@ exports[`iOS BpkButton should support having an icon as well as a title 1`] = `
             "color": "rgb(82, 76, 97)",
             "fontFamily": "BpkIcon",
             "fontSize": 24,
-            "lineHeight": 24,
+            "includeFontPadding": false,
           },
           Object {
             "fontSize": 16,
-            "lineHeight": 16,
           },
           Array [
             Array [
@@ -1682,6 +1700,7 @@ exports[`iOS BpkButton should support overwriting styles 1`] = `
           "height": 32,
         },
       ],
+      Object {},
       Object {
         "width": 100,
       },
@@ -1796,8 +1815,11 @@ exports[`iOS BpkButton should support the "disabled" property 1`] = `
           "borderRadius": 40,
           "height": 32,
         },
-        undefined,
+        Object {
+          "borderColor": "transparent",
+        },
       ],
+      Object {},
       null,
     ]
   }
@@ -1830,9 +1852,7 @@ exports[`iOS BpkButton should support the "disabled" property 1`] = `
             "paddingHorizontal": 12,
             "paddingVertical": 8,
           },
-          Object {
-            "borderColor": "transparent",
-          },
+          undefined,
         ],
         Object {},
         Array [
@@ -1920,6 +1940,7 @@ exports[`iOS BpkButton should support the "icon" property 1`] = `
         },
         undefined,
       ],
+      Object {},
       null,
     ]
   }
@@ -2009,11 +2030,10 @@ exports[`iOS BpkButton should support the "icon" property 1`] = `
             "color": "rgb(82, 76, 97)",
             "fontFamily": "BpkIcon",
             "fontSize": 24,
-            "lineHeight": 24,
+            "includeFontPadding": false,
           },
           Object {
             "fontSize": 16,
-            "lineHeight": 16,
           },
           Array [
             Array [
@@ -2078,6 +2098,7 @@ exports[`iOS BpkButton should support the "iconOnly" property 1`] = `
           "width": 32,
         },
       ],
+      Object {},
       null,
     ]
   }
@@ -2137,11 +2158,10 @@ exports[`iOS BpkButton should support the "iconOnly" property 1`] = `
             "color": "rgb(82, 76, 97)",
             "fontFamily": "BpkIcon",
             "fontSize": 24,
-            "lineHeight": 24,
+            "includeFontPadding": false,
           },
           Object {
             "fontSize": 16,
-            "lineHeight": 16,
           },
           Array [
             Array [
@@ -2200,7 +2220,12 @@ exports[`iOS BpkButton should support the "secondary" property 1`] = `
           "borderRadius": 40,
           "height": 32,
         },
+        Object {
+          "borderColor": "rgb(230, 228, 235)",
+          "borderWidth": 2,
+        },
       ],
+      Object {},
       null,
     ]
   }
@@ -2233,8 +2258,6 @@ exports[`iOS BpkButton should support the "secondary" property 1`] = `
             "paddingVertical": 8,
           },
           Object {
-            "borderColor": "rgb(230, 228, 235)",
-            "borderWidth": 2,
             "paddingHorizontal": 10,
             "paddingVertical": 6,
           },
@@ -2323,6 +2346,7 @@ exports[`iOS BpkButtonThemed should render correctly 1`] = `
           "height": 32,
         },
       ],
+      Object {},
       null,
     ]
   }
@@ -2442,6 +2466,7 @@ exports[`iOS should support the "icon" and "large" property 1`] = `
         },
         undefined,
       ],
+      Object {},
       null,
     ]
   }
@@ -2537,7 +2562,7 @@ exports[`iOS should support the "icon" and "large" property 1`] = `
             "color": "rgb(82, 76, 97)",
             "fontFamily": "BpkIcon",
             "fontSize": 24,
-            "lineHeight": 24,
+            "includeFontPadding": false,
           },
           Array [
             Array [
@@ -2607,6 +2632,7 @@ exports[`iOS should support the "iconOnly" and "large" property 1`] = `
           "width": 48,
         },
       ],
+      Object {},
       null,
     ]
   }
@@ -2671,7 +2697,7 @@ exports[`iOS should support the "iconOnly" and "large" property 1`] = `
             "color": "rgb(82, 76, 97)",
             "fontFamily": "BpkIcon",
             "fontSize": 24,
-            "lineHeight": 24,
+            "includeFontPadding": false,
           },
           Array [
             Array [
@@ -2733,9 +2759,14 @@ exports[`iOS should support the "large" and secondary property 1`] = `
           "height": 32,
         },
         Object {
+          "borderColor": "rgb(230, 228, 235)",
+          "borderWidth": 2,
+        },
+        Object {
           "minHeight": 48,
         },
       ],
+      Object {},
       null,
     ]
   }
@@ -2768,13 +2799,11 @@ exports[`iOS should support the "large" and secondary property 1`] = `
             "paddingVertical": 8,
           },
           Object {
-            "borderColor": "rgb(230, 228, 235)",
-            "borderWidth": 2,
             "paddingHorizontal": 10,
             "paddingVertical": 6,
           },
           Object {
-            "minHeight": 48,
+            "height": "100%",
             "paddingHorizontal": 14,
           },
         ],
@@ -2867,6 +2896,7 @@ exports[`iOS should support the "large" property 1`] = `
           "minHeight": 48,
         },
       ],
+      Object {},
       null,
     ]
   }

@@ -37,15 +37,13 @@ export default class App extends Component {
       expanded: false,
     };
 
-    this.onDismiss = this.onDismiss.bind(this);
-    this.onExpandablePress = this.onExpandablePress.bind(this);
   }
 
-  onDismiss() {
+  onDismiss = () => {
     this.setState({ showDismissable: false });
   }
 
-  onExpandablePress() {
+  onExpandablePress = () => {
     this.setState({ expanded: !this.state.expanded });
   }
 

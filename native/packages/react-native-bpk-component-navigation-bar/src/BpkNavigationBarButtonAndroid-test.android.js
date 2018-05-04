@@ -18,7 +18,6 @@
 /* @flow */
 import React from 'react';
 import renderer from 'react-test-renderer';
-import { colorWhite } from 'bpk-tokens/tokens/base.react.native.android';
 
 import BpkNavigationBarButtonAndroid from './BpkNavigationBarButtonAndroid.android';
 
@@ -57,8 +56,6 @@ describe('android', () => {
             title="Back"
             icon="native-android--back"
             onPress={jest.fn()}
-            touchableColor={colorWhite}
-            tintColor={colorWhite}
           />,
         )
         .toJSON();
@@ -72,8 +69,6 @@ describe('android', () => {
             title="Close"
             icon="close"
             onPress={jest.fn()}
-            touchableColor={colorWhite}
-            tintColor={colorWhite}
           />,
         )
         .toJSON();
@@ -87,8 +82,63 @@ describe('android', () => {
             title="Done"
             icon="tick"
             onPress={jest.fn()}
-            touchableColor={colorWhite}
-            tintColor={colorWhite}
+          />,
+        )
+        .toJSON();
+      expect(tree).toMatchSnapshot();
+    });
+
+    it('should render correctly disabled', () => {
+      const tree = renderer
+        .create(
+          <BpkNavigationBarButtonAndroid
+            title="Done"
+            icon="tick"
+            onPress={jest.fn()}
+            disabled
+          />,
+        )
+        .toJSON();
+      expect(tree).toMatchSnapshot();
+    });
+
+    it('should respect "tintColor"', () => {
+      const tree = renderer
+        .create(
+          <BpkNavigationBarButtonAndroid
+            title="Done"
+            icon="tick"
+            onPress={jest.fn()}
+            tintColor="red"
+          />,
+        )
+        .toJSON();
+      expect(tree).toMatchSnapshot();
+    });
+
+    it('should respect "disabledTintColor"', () => {
+      const tree = renderer
+        .create(
+          <BpkNavigationBarButtonAndroid
+            title="Done"
+            icon="tick"
+            onPress={jest.fn()}
+            disabledTintColor="red"
+            disabled
+          />,
+        )
+        .toJSON();
+      expect(tree).toMatchSnapshot();
+    });
+
+    it('should respect "touchableColor"', () => {
+      const tree = renderer
+        .create(
+          <BpkNavigationBarButtonAndroid
+            title="Done"
+            icon="tick"
+            onPress={jest.fn()}
+            touchableColor="red"
           />,
         )
         .toJSON();

@@ -84,7 +84,7 @@ const components = [
   },
 ];
 
-const NativeSpinnerPage = () => (
+const NativeSpinnerPage = ({ ...rest }) => (
   <DocsPageBuilder
     title="Spinners"
     blurb={[
@@ -102,6 +102,7 @@ const NativeSpinnerPage = () => (
     components={components}
     readme={readme}
     showMenu
+    {...rest}
   />
 );
 

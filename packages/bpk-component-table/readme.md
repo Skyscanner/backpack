@@ -51,8 +51,16 @@ export default () => (
 
 ## Props
 
-> For `BpkTable`, `BpkTableHead`, `BpkTableBody`, `BpkTableRow`, `BpkTableCell` & `BpkTableHeadCell`.
+> For `BpkTableHead`, `BpkTableBody`, `BpkTableRow` & `BpkTableCell` .
 
 | Property | PropType | Required | Default Value |
 | -------- | -------- | -------- | ------------- |
-| children | -        | true     | -             |
+| children | node     | true     | -             |
+
+> For `BpkTable` & `BpkTableHeadCell`.
+
+| Property  | PropType | Required | Default Value |
+| --------- | -------- | -------- | ------------- |
+| children  | node     | true     | -             |
+| alternate | bool     | false    | false         |
+

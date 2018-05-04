@@ -23,6 +23,7 @@ exports[`Android BpkDialingCodeList should render correctly 1`] = `
     ]
   }
   disableVirtualization={false}
+  extraData={null}
   getItem={[Function]}
   getItemCount={[Function]}
   horizontal={false}
@@ -73,7 +74,9 @@ exports[`Android BpkDialingCodeList should render correctly 1`] = `
             "flex": 1,
             "flexDirection": "row",
             "justifyContent": "space-between",
-            "padding": 16,
+            "minHeight": 44,
+            "paddingHorizontal": 16,
+            "paddingVertical": 8,
           }
         }
         testID={undefined}
@@ -99,6 +102,12 @@ exports[`Android BpkDialingCodeList should render correctly 1`] = `
                   "height": 16,
                   "width": 24,
                 },
+                Array [
+                  null,
+                  Object {
+                    "marginRight": 24,
+                  },
+                ],
               ]
             }
           />
@@ -110,23 +119,20 @@ exports[`Android BpkDialingCodeList should render correctly 1`] = `
               Array [
                 Object {
                   "color": "rgb(82, 76, 97)",
-                  "fontFamily": "sans-serif",
-                  "fontSize": 20,
+                  "fontFamily": "System",
+                  "fontSize": 17,
                   "fontWeight": "400",
                 },
                 Array [
                   Object {
                     "flex": 1,
-                    "marginLeft": 24,
                   },
                   null,
                 ],
               ]
             }
           >
-            0
-             
-            Zero
+            0 Zero
           </Text>
         </View>
         <Text
@@ -139,11 +145,10 @@ exports[`Android BpkDialingCodeList should render correctly 1`] = `
                 "color": "rgb(82, 76, 97)",
                 "fontFamily": "BpkIcon",
                 "fontSize": 24,
-                "lineHeight": 24,
+                "includeFontPadding": false,
               },
               Object {
                 "fontSize": 16,
-                "lineHeight": 16,
               },
               Array [
                 Object {
@@ -212,7 +217,9 @@ exports[`Android BpkDialingCodeList should render correctly 1`] = `
             "flex": 1,
             "flexDirection": "row",
             "justifyContent": "space-between",
-            "padding": 16,
+            "minHeight": 44,
+            "paddingHorizontal": 16,
+            "paddingVertical": 8,
           }
         }
         testID={undefined}
@@ -238,6 +245,12 @@ exports[`Android BpkDialingCodeList should render correctly 1`] = `
                   "height": 16,
                   "width": 24,
                 },
+                Array [
+                  null,
+                  Object {
+                    "marginRight": 24,
+                  },
+                ],
               ]
             }
           />
@@ -249,23 +262,20 @@ exports[`Android BpkDialingCodeList should render correctly 1`] = `
               Array [
                 Object {
                   "color": "rgb(82, 76, 97)",
-                  "fontFamily": "sans-serif",
-                  "fontSize": 20,
+                  "fontFamily": "System",
+                  "fontSize": 17,
                   "fontWeight": "400",
                 },
                 Array [
                   Object {
                     "flex": 1,
-                    "marginLeft": 24,
                   },
                   null,
                 ],
               ]
             }
           >
-            1
-             
-            One
+            1 One
           </Text>
         </View>
         <Text
@@ -278,11 +288,10 @@ exports[`Android BpkDialingCodeList should render correctly 1`] = `
                 "color": "rgb(82, 76, 97)",
                 "fontFamily": "BpkIcon",
                 "fontSize": 24,
-                "lineHeight": 24,
+                "includeFontPadding": false,
               },
               Object {
                 "fontSize": 16,
-                "lineHeight": 16,
               },
               Array [
                 Object {
@@ -351,7 +360,9 @@ exports[`Android BpkDialingCodeList should render correctly 1`] = `
             "flex": 1,
             "flexDirection": "row",
             "justifyContent": "space-between",
-            "padding": 16,
+            "minHeight": 44,
+            "paddingHorizontal": 16,
+            "paddingVertical": 8,
           }
         }
         testID={undefined}
@@ -377,6 +388,12 @@ exports[`Android BpkDialingCodeList should render correctly 1`] = `
                   "height": 16,
                   "width": 24,
                 },
+                Array [
+                  null,
+                  Object {
+                    "marginRight": 24,
+                  },
+                ],
               ]
             }
           />
@@ -388,23 +405,20 @@ exports[`Android BpkDialingCodeList should render correctly 1`] = `
               Array [
                 Object {
                   "color": "rgb(82, 76, 97)",
-                  "fontFamily": "sans-serif",
-                  "fontSize": 20,
+                  "fontFamily": "System",
+                  "fontSize": 17,
                   "fontWeight": "400",
                 },
                 Array [
                   Object {
                     "flex": 1,
-                    "marginLeft": 24,
                   },
                   null,
                 ],
               ]
             }
           >
-            2
-             
-            Two
+            2 Two
           </Text>
         </View>
         <Text
@@ -417,11 +431,10 @@ exports[`Android BpkDialingCodeList should render correctly 1`] = `
                 "color": "rgb(82, 76, 97)",
                 "fontFamily": "BpkIcon",
                 "fontSize": 24,
-                "lineHeight": 24,
+                "includeFontPadding": false,
               },
               Object {
                 "fontSize": 16,
-                "lineHeight": 16,
               },
               Array [
                 Object {
@@ -479,6 +492,7 @@ exports[`Android BpkDialingCodeList should render correctly with "selectedId" se
     ]
   }
   disableVirtualization={false}
+  extraData="0"
   getItem={[Function]}
   getItemCount={[Function]}
   horizontal={false}
@@ -529,7 +543,9 @@ exports[`Android BpkDialingCodeList should render correctly with "selectedId" se
             "flex": 1,
             "flexDirection": "row",
             "justifyContent": "space-between",
-            "padding": 16,
+            "minHeight": 44,
+            "paddingHorizontal": 16,
+            "paddingVertical": 8,
           }
         }
         testID={undefined}
@@ -555,6 +571,12 @@ exports[`Android BpkDialingCodeList should render correctly with "selectedId" se
                   "height": 16,
                   "width": 24,
                 },
+                Array [
+                  null,
+                  Object {
+                    "marginRight": 24,
+                  },
+                ],
               ]
             }
           />
@@ -566,14 +588,13 @@ exports[`Android BpkDialingCodeList should render correctly with "selectedId" se
               Array [
                 Object {
                   "color": "rgb(82, 76, 97)",
-                  "fontFamily": "sans-serif",
-                  "fontSize": 20,
+                  "fontFamily": "System",
+                  "fontSize": 17,
                   "fontWeight": "400",
                 },
                 Array [
                   Object {
                     "flex": 1,
-                    "marginLeft": 24,
                   },
                   Object {
                     "color": "rgb(0, 157, 189)",
@@ -582,9 +603,7 @@ exports[`Android BpkDialingCodeList should render correctly with "selectedId" se
               ]
             }
           >
-            0
-             
-            Zero
+            0 Zero
           </Text>
         </View>
         <Text
@@ -597,11 +616,10 @@ exports[`Android BpkDialingCodeList should render correctly with "selectedId" se
                 "color": "rgb(82, 76, 97)",
                 "fontFamily": "BpkIcon",
                 "fontSize": 24,
-                "lineHeight": 24,
+                "includeFontPadding": false,
               },
               Object {
                 "fontSize": 16,
-                "lineHeight": 16,
               },
               Array [
                 Object {
@@ -673,7 +691,9 @@ exports[`Android BpkDialingCodeList should render correctly with "selectedId" se
             "flex": 1,
             "flexDirection": "row",
             "justifyContent": "space-between",
-            "padding": 16,
+            "minHeight": 44,
+            "paddingHorizontal": 16,
+            "paddingVertical": 8,
           }
         }
         testID={undefined}
@@ -699,6 +719,12 @@ exports[`Android BpkDialingCodeList should render correctly with "selectedId" se
                   "height": 16,
                   "width": 24,
                 },
+                Array [
+                  null,
+                  Object {
+                    "marginRight": 24,
+                  },
+                ],
               ]
             }
           />
@@ -710,23 +736,20 @@ exports[`Android BpkDialingCodeList should render correctly with "selectedId" se
               Array [
                 Object {
                   "color": "rgb(82, 76, 97)",
-                  "fontFamily": "sans-serif",
-                  "fontSize": 20,
+                  "fontFamily": "System",
+                  "fontSize": 17,
                   "fontWeight": "400",
                 },
                 Array [
                   Object {
                     "flex": 1,
-                    "marginLeft": 24,
                   },
                   null,
                 ],
               ]
             }
           >
-            1
-             
-            One
+            1 One
           </Text>
         </View>
         <Text
@@ -739,11 +762,10 @@ exports[`Android BpkDialingCodeList should render correctly with "selectedId" se
                 "color": "rgb(82, 76, 97)",
                 "fontFamily": "BpkIcon",
                 "fontSize": 24,
-                "lineHeight": 24,
+                "includeFontPadding": false,
               },
               Object {
                 "fontSize": 16,
-                "lineHeight": 16,
               },
               Array [
                 Object {
@@ -812,7 +834,9 @@ exports[`Android BpkDialingCodeList should render correctly with "selectedId" se
             "flex": 1,
             "flexDirection": "row",
             "justifyContent": "space-between",
-            "padding": 16,
+            "minHeight": 44,
+            "paddingHorizontal": 16,
+            "paddingVertical": 8,
           }
         }
         testID={undefined}
@@ -838,6 +862,12 @@ exports[`Android BpkDialingCodeList should render correctly with "selectedId" se
                   "height": 16,
                   "width": 24,
                 },
+                Array [
+                  null,
+                  Object {
+                    "marginRight": 24,
+                  },
+                ],
               ]
             }
           />
@@ -849,23 +879,20 @@ exports[`Android BpkDialingCodeList should render correctly with "selectedId" se
               Array [
                 Object {
                   "color": "rgb(82, 76, 97)",
-                  "fontFamily": "sans-serif",
-                  "fontSize": 20,
+                  "fontFamily": "System",
+                  "fontSize": 17,
                   "fontWeight": "400",
                 },
                 Array [
                   Object {
                     "flex": 1,
-                    "marginLeft": 24,
                   },
                   null,
                 ],
               ]
             }
           >
-            2
-             
-            Two
+            2 Two
           </Text>
         </View>
         <Text
@@ -878,11 +905,10 @@ exports[`Android BpkDialingCodeList should render correctly with "selectedId" se
                 "color": "rgb(82, 76, 97)",
                 "fontFamily": "BpkIcon",
                 "fontSize": 24,
-                "lineHeight": 24,
+                "includeFontPadding": false,
               },
               Object {
                 "fontSize": 16,
-                "lineHeight": 16,
               },
               Array [
                 Object {

@@ -43,10 +43,12 @@ export type CommonTheme = {
   navigationBarStatusBarStyle: StatusBarStyle,
   navigationBarBackgroundColor: string,
   navigationBarTintColor: string,
+  navigationBarDisabledTintColor: string,
 };
 
 // eslint-disable-next-line import/prefer-default-export
 export const THEME_ATTRIBUTES = [
   'navigationBarBackgroundColor',
   'navigationBarTintColor',
+  'navigationBarDisabledTintColor',
 ];

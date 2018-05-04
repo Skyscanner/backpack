@@ -19,5 +19,5 @@
 // eslint-disable-next-line import/prefer-default-export
 export const hasClassName = (node, className) => {
   const nodeClassName = node.getAttribute('class');
-  return nodeClassName && nodeClassName.split(' ').includes(className);
+  return nodeClassName && nodeClassName.split(' ').indexOf(className) !== -1;
 };

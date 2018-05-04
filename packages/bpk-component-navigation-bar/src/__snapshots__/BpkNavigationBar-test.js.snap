@@ -1,0 +1,62 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BpkNavigationBar should render correctly 1`] = `
+<nav
+  aria-label="test"
+  aria-labelledby="test-bpk-navigation-bar-title"
+  className="bpk-navigation-bar"
+>
+  <span
+    className="bpk-text bpk-text--base bpk-text--bold bpk-navigation-bar__title"
+    id="test-bpk-navigation-bar-title"
+  >
+    test
+  </span>
+</nav>
+`;
+
+exports[`BpkNavigationBar should render correctly with a "leadingButton" attribute 1`] = `
+<nav
+  aria-labelledby="test-bpk-navigation-bar-title"
+  className="bpk-navigation-bar"
+>
+  <button
+    aria-label="test"
+    className="bpk-close-button bpk-navigation-bar-icon-button bpk-navigation-bar__leading-item"
+    onClick={[Function]}
+    title="test"
+    type="button"
+  >
+    <span />
+  </button>
+  <span
+    className="bpk-text bpk-text--base bpk-text--bold bpk-navigation-bar__title"
+    id="test-bpk-navigation-bar-title"
+  >
+    test
+  </span>
+</nav>
+`;
+
+exports[`BpkNavigationBar should render correctly with a "traillingButton" attribute 1`] = `
+<nav
+  aria-labelledby="test-bpk-navigation-bar-title"
+  className="bpk-navigation-bar"
+>
+  <span
+    className="bpk-text bpk-text--base bpk-text--bold bpk-navigation-bar__title"
+    id="test-bpk-navigation-bar-title"
+  >
+    test
+  </span>
+  <button
+    aria-label="test"
+    className="bpk-close-button bpk-navigation-bar-icon-button bpk-navigation-bar__trailing-item"
+    onClick={[Function]}
+    title="test"
+    type="button"
+  >
+    <span />
+  </button>
+</nav>
+`;

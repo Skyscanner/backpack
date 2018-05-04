@@ -106,6 +106,16 @@ const generateTheme = ({
 
   checkboxCheckedColor: primaryColor700,
   radioCheckedColor: primaryColor700,
+
+  navigationBarIconButtonColor: colorWhite,
+  navigationBarIconButtonHoverColor: colorWhite,
+  navigationBarIconButtonActiveColor: colorWhite,
+  navigationBarButtonLinkColor: colorWhite,
+  navigationBarButtonLinkHoverColor: colorWhite,
+  navigationBarButtonLinkActiveColor: colorWhite,
+  navigationBarButtonLinkVisitedColor: colorWhite,
+  navigationBarTitleColor: colorWhite,
+  navigationBarBackgroundColor: primaryColor500,
 });
 
 const bpkCustomThemes = {

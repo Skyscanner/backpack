@@ -8,6 +8,14 @@ exports[`BpkTable should render correctly 1`] = `
 </table>
 `;
 
+exports[`BpkTable should render correctly with "alternate" attribute 1`] = `
+<table
+  className="bpk-table bpk-table--alternate"
+>
+  <tbody />
+</table>
+`;
+
 exports[`BpkTable should render correctly with custom class 1`] = `
 <table
   className="bpk-table my-table"

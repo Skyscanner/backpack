@@ -49,13 +49,10 @@ const withOpenEvents = InputComponent => {
     constructor(props) {
       super(props);
 
-      this.handleTouchEnd = this.handleTouchEnd.bind(this);
-      this.handleFocus = this.handleFocus.bind(this);
-      this.handleBlur = this.handleBlur.bind(this);
       this.focusCanOpen = true;
     }
 
-    handleTouchEnd(event) {
+    handleTouchEnd = event => {
       // preventDefault fixes an issue on Android and iOS in which the popover closes immediately
       // because a touch event is registered on one of the dates.
       // We can only run preventDefault when the input is already focused - otherwise it would never set
@@ -67,15 +64,15 @@ const withOpenEvents = InputComponent => {
           this.props.onOpen();
         }
       }
-    }
+    };
 
-    handleFocus() {
+    handleFocus = () => {
       if (this.focusCanOpen && this.props.onOpen) {
         this.props.onOpen();
       }
-    }
+    };
 
-    handleBlur() {
+    handleBlur = () => {
       // If the input loses focus when the target is open, it should not open on a subsequent focus.
       // Fixes an issue with IE9.
       if (this.props.isOpen) {
@@ -83,7 +80,7 @@ const withOpenEvents = InputComponent => {
       } else {
         this.focusCanOpen = true;
       }
-    }
+    };
 
     render() {
       const {

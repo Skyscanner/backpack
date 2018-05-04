@@ -48,24 +48,21 @@ export default class App extends Component {
       isOpen: false,
     };
 
-    this.onOpen = this.onOpen.bind(this);
-    this.onClose = this.onClose.bind(this);
-    this.setValue = this.setValue.bind(this);
   }
 
-  onOpen() {
+  onOpen = () => {
     this.setState({
       isOpen: true,
     });
   }
 
-  onClose() {
+  onClose = () => {
     this.setState({
       isOpen: false,
     });
   }
 
-  setValue(value) {
+  setValue = (value) => {
     this.setState({value});
   }
 

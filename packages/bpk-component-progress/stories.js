@@ -31,13 +31,11 @@ class ProgressContainer extends Component {
     this.state = {
       progress: props.initialValue,
     };
-
-    this.handleChange = this.handleChange.bind(this);
   }
 
-  handleChange(progress) {
+  handleChange = progress => {
     this.setState({ progress });
-  }
+  };
 
   render() {
     const { steps, ...rest } = this.props;

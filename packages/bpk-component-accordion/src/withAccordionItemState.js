@@ -29,18 +29,16 @@ const withAccordionItemState = ComposedComponent => {
       this.state = {
         expanded: props.initiallyExpanded,
       };
-
-      this.onClick = this.onClick.bind(this);
     }
 
-    onClick() {
+    onClick = () => {
       this.setState(
         prevState => ({
           expanded: !prevState.expanded,
         }),
         this.props.onClick,
       );
-    }
+    };
 
     render() {
       const { initiallyExpanded, expanded, onClick, ...rest } = this.props;

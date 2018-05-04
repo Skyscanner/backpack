@@ -39,7 +39,11 @@ const computeScrollBarAwareHeight = (
   return scrollBarVisibile ? `${innerEl.offsetHeight / 16}rem` : 'auto';
 };
 
-const computeScrollIndicatorClassName = (scrollerEl: ?HTMLElement) => {
+const computeScrollIndicatorClassName = (
+  scrollerEl: ?HTMLElement,
+  leadingIndicatorClassName: ?string = null,
+  trailingIndicatorClassName: ?string = null,
+) => {
   if (!scrollerEl) {
     return null;
   }
@@ -51,11 +55,17 @@ const computeScrollIndicatorClassName = (scrollerEl: ?HTMLElement) => {
     classNames.push(
       getClassName('bpk-mobile-scroll-container--left-indicator'),
     );
+    if (leadingIndicatorClassName) {
+      classNames.push(leadingIndicatorClassName);
+    }
   }
   if (scrollLeft < scrollWidth - offsetWidth) {
     classNames.push(
       getClassName('bpk-mobile-scroll-container--right-indicator'),
     );
+    if (trailingIndicatorClassName) {
+      classNames.push(trailingIndicatorClassName);
+    }
   }
 
   return classNames;
@@ -65,6 +75,8 @@ type Props = {
   children: Node,
   innerContainerTagName: string,
   className: ?string,
+  leadingIndicatorClassName: ?string,
+  trailingIndicatorClassName: ?string,
   style: ?Object,
 };
 
@@ -81,12 +93,16 @@ class BpkMobileScrollContainer extends Component<Props, State> {
     children: PropTypes.node.isRequired,
     innerContainerTagName: PropTypes.string,
     className: PropTypes.string,
+    leadingIndicatorClassName: PropTypes.string,
+    trailingIndicatorClassName: PropTypes.string,
     style: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   };
 
   static defaultProps = {
     innerContainerTagName: 'div',
     className: null,
+    leadingIndicatorClassName: null,
+    trailingIndicatorClassName: null,
     style: null,
   };
 
@@ -115,7 +131,11 @@ class BpkMobileScrollContainer extends Component<Props, State> {
   }, 100);
 
   setScrollIndicatorClassName = () => {
-    const classNames = computeScrollIndicatorClassName(this.scrollerEl);
+    const classNames = computeScrollIndicatorClassName(
+      this.scrollerEl,
+      this.props.leadingIndicatorClassName,
+      this.props.trailingIndicatorClassName,
+    );
 
     if (!classNames) {
       return;
@@ -145,6 +165,8 @@ class BpkMobileScrollContainer extends Component<Props, State> {
       children,
       innerContainerTagName,
       className,
+      leadingIndicatorClassName,
+      trailingIndicatorClassName,
       style,
       ...rest
     } = this.props;

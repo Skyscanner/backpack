@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+/* @flow */
+
 import { themeAttributes as accordionThemeAttributes } from './../packages/bpk-component-accordion';
 import { themeAttributes as barchartThemeAttributes } from './../packages/bpk-component-barchart';
 import { themeAttributes as blockquoteThemeAttributes } from './../packages/bpk-component-blockquote';
@@ -40,6 +42,7 @@ import { themeAttributes as progressThemeAttributes } from './../packages/bpk-co
 import { themeAttributes as radioThemeAttributes } from './../packages/bpk-component-radio';
 import { themeAttributes as sliderThemeAttributes } from './../packages/bpk-component-slider';
 import { themeAttributes as spinnerThemeAttributes } from './../packages/bpk-component-spinner';
+import { themeAttributes as navigationBarThemeAttributes } from './../packages/bpk-component-navigation-bar';
 
 export default [
   ...accordionThemeAttributes,
@@ -62,4 +65,5 @@ export default [
   ...radioThemeAttributes,
   ...sliderThemeAttributes,
   ...spinnerThemeAttributes,
+  ...navigationBarThemeAttributes,
 ];

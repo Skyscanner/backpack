@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`iOS BpkFlatListItemSeparator should render correctly 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "rgb(230, 228, 235)",
+      "flex": 1,
+      "height": 1,
+      "marginLeft": 16,
+    }
+  }
+/>
+`;

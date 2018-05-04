@@ -15,20 +15,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 /* @flow */
+
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import { format } from 'date-fns';
+
 import BpkText from 'bpk-component-text';
 
-const formatDate = ((): (Date => string) => {
-  if (typeof window === 'object' && window.Intl && window.Intl.DateTimeFormat) {
-    const formatter = new window.Intl.DateTimeFormat();
-    return (date: Date): string => formatter.format(date);
-  }
-
-  return (date: Date): string => date.toLocaleDateString();
-})();
+const formatDate = (date: Date): string => format(date, 'DD/MM/YYYY');
 
 type Props = {
   date: Date,

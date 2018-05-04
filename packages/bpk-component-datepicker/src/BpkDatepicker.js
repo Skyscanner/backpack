@@ -38,32 +38,28 @@ class BpkDatepicker extends Component {
     this.state = {
       isOpen: false,
     };
-
-    this.onOpen = this.onOpen.bind(this);
-    this.onClose = this.onClose.bind(this);
-    this.handleDateSelect = this.handleDateSelect.bind(this);
   }
 
-  onOpen() {
+  onOpen = () => {
     this.setState({
       isOpen: true,
     });
-  }
+  };
 
-  onClose() {
+  onClose = () => {
     this.setState({
       isOpen: false,
     });
-  }
+  };
 
-  handleDateSelect(dateObj) {
+  handleDateSelect = dateObj => {
     this.setState({
       isOpen: false,
     });
     if (this.props.onDateSelect) {
       this.props.onDateSelect(dateObj);
     }
-  }
+  };
 
   render() {
     const {

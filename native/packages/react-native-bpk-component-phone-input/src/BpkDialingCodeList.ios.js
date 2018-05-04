@@ -18,36 +18,19 @@
 
 /* @flow */
 
-import { View, StyleSheet, SectionList } from 'react-native';
 import React from 'react';
 import { groupBy } from 'lodash';
-import BpkText from 'react-native-bpk-component-text';
-import {
-  colorGray50,
-  colorGray100,
-  spacingSm,
-  spacingBase,
-} from 'bpk-tokens/tokens/base.react.native';
-import BpkDialingCodeListItem from './BpkDialingCodeListItem';
+import BpkSectionList, {
+  BpkSectionListHeader,
+  BpkSectionListItem,
+  BpkSectionListItemSeparator,
+} from 'react-native-bpk-component-section-list';
+import BpkFlag from './BpkFlag';
 import {
   type ListCommonProps,
   LIST_COMMON_PROP_TYPES,
   LIST_COMMON_DEFAULT_PROPS,
 } from './common-types';
-
-const styles = StyleSheet.create({
-  sectionHeader: {
-    paddingVertical: spacingSm,
-    paddingHorizontal: spacingBase,
-    backgroundColor: colorGray50,
-  },
-  separator: {
-    flex: 1,
-    height: 1,
-    backgroundColor: colorGray100,
-    marginLeft: spacingBase,
-  },
-});
 
 /*
 Takes data in the format:
@@ -87,25 +70,23 @@ const BpkDialingCodeList = ({
   renderFlag,
   selectedId,
 }: Props) => (
-  <SectionList
+  <BpkSectionList
     sections={convertCodesIntoSections(dialingCodes)}
     renderItem={({ item }) => (
-      <BpkDialingCodeListItem
-        {...item}
+      <BpkSectionListItem
+        title={`${item.dialingCode} ${item.name}`}
         selected={selectedId === item.id}
         onPress={() => {
           onItemPress(item);
         }}
-        flag={renderFlag(item)}
+        image={<BpkFlag flag={renderFlag(item)} />}
       />
     )}
     renderSectionHeader={({ section }) => (
-      <BpkText emphasize textStyle="lg" style={styles.sectionHeader}>
-        {section.title}
-      </BpkText>
+      <BpkSectionListHeader title={section.title} />
     )}
     keyExtractor={item => item.id}
-    ItemSeparatorComponent={() => <View style={styles.separator} />}
+    ItemSeparatorComponent={BpkSectionListItemSeparator}
   />
 );
 

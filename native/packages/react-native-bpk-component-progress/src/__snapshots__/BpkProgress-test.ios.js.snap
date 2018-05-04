@@ -1,0 +1,300 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`IOS BpkProgress should not go bellow the min bound 1`] = `
+<View
+  accessibilityLabel="1 - 1% - 2"
+  onLayout={[Function]}
+  style={
+    Array [
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "height": 8,
+      },
+      Object {
+        "borderRadius": 40,
+        "width": 120,
+      },
+      null,
+      null,
+    ]
+  }
+>
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(0, 215, 117)",
+        "borderRadius": 40,
+        "height": 8,
+        "width": 0,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`IOS BpkProgress should not go over the max bound 1`] = `
+<View
+  accessibilityLabel="0 - 1% - 1"
+  onLayout={[Function]}
+  style={
+    Array [
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "height": 8,
+      },
+      Object {
+        "borderRadius": 40,
+        "width": 120,
+      },
+      null,
+      null,
+    ]
+  }
+>
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(0, 215, 117)",
+        "borderRadius": 40,
+        "height": 8,
+        "width": 1,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`IOS BpkProgress should render correctly 1`] = `
+<View
+  accessibilityLabel="0 - 10% - 100"
+  onLayout={[Function]}
+  style={
+    Array [
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "height": 8,
+      },
+      Object {
+        "borderRadius": 40,
+        "width": 120,
+      },
+      null,
+      null,
+    ]
+  }
+>
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(0, 215, 117)",
+        "borderRadius": 40,
+        "height": 8,
+        "width": 20,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`IOS BpkProgress should render correctly with "min" and "max" attributes 1`] = `
+<View
+  accessibilityLabel="0 - 0.2% - 1"
+  onLayout={[Function]}
+  style={
+    Array [
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "height": 8,
+      },
+      Object {
+        "borderRadius": 40,
+        "width": 120,
+      },
+      null,
+      null,
+    ]
+  }
+>
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(0, 215, 117)",
+        "borderRadius": 40,
+        "height": 8,
+        "width": 20,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`IOS BpkProgress should render correctly with a "fillStyle" attribute 1`] = `
+<View
+  accessibilityLabel="0 - 10% - 100"
+  onLayout={[Function]}
+  style={
+    Array [
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "height": 8,
+      },
+      Object {
+        "borderRadius": 40,
+        "width": 120,
+      },
+      null,
+      null,
+    ]
+  }
+>
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "red",
+        "borderRadius": 40,
+        "height": 8,
+        "width": 0,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`IOS BpkProgress should render correctly with a "style" attribute 1`] = `
+<View
+  accessibilityLabel="0 - 10% - 100"
+  onLayout={[Function]}
+  style={
+    Array [
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "height": 8,
+      },
+      Object {
+        "borderRadius": 40,
+        "width": 120,
+      },
+      null,
+      Object {
+        "width": "80%",
+      },
+    ]
+  }
+>
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(0, 215, 117)",
+        "borderRadius": 40,
+        "height": 8,
+        "width": 0,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`IOS BpkProgress should render correctly with a "type" attribute 1`] = `
+<View
+  accessibilityLabel="0 - 10% - 100"
+  onLayout={[Function]}
+  style={
+    Array [
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "height": 8,
+      },
+      Object {
+        "width": "100%",
+      },
+      null,
+      null,
+    ]
+  }
+>
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(0, 215, 117)",
+        "height": 8,
+        "width": 0,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`IOS BpkProgress should render correctly with accessibilityLabel passed as a string 1`] = `
+<View
+  accessibilityLabel="Progress bar"
+  onLayout={[Function]}
+  style={
+    Array [
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "height": 8,
+      },
+      Object {
+        "borderRadius": 40,
+        "width": 120,
+      },
+      null,
+      null,
+    ]
+  }
+>
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "rgb(0, 215, 117)",
+        "borderRadius": 40,
+        "height": 8,
+        "width": 0,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`IOS BpkProgress should support theming 1`] = `
+<View
+  accessibilityLabel="0 - 10% - 100"
+  onLayout={[Function]}
+  style={
+    Array [
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "height": 8,
+      },
+      Object {
+        "borderRadius": 40,
+        "width": 120,
+      },
+      Object {
+        "backgroundColor": "black",
+      },
+      null,
+    ]
+  }
+>
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "blue",
+        "borderRadius": 40,
+        "height": 8,
+        "width": 0,
+      }
+    }
+  />
+</View>
+`;

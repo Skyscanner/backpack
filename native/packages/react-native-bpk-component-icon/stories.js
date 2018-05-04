@@ -50,8 +50,7 @@ const styles = StyleSheet.create({
     minWidth: 100,
   },
   singleIcon: {
-    paddingLeft: spacingSm,
-    paddingRight: spacingSm,
+    marginHorizontal: spacingSm,
   },
   icon: {
     color: colorBlue500,

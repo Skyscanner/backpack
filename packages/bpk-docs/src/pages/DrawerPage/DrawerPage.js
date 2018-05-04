@@ -25,15 +25,12 @@ import { BpkButtonLink } from 'bpk-component-link';
 import drawerReadme from 'bpk-component-drawer/readme.md';
 
 import DocsPageBuilder from './../../components/DocsPageBuilder';
+import DocsPageWrapper from './../../components/neo/DocsPageWrapper';
 import Paragraph from './../../components/Paragraph';
 
 class DrawerContainer extends Component {
   constructor() {
     super();
-
-    this.onOpen = this.onOpen.bind(this);
-    this.onClose = this.onClose.bind(this);
-    this.toggleTitle = this.toggleTitle.bind(this);
 
     this.state = {
       isOpen: false,
@@ -41,23 +38,23 @@ class DrawerContainer extends Component {
     };
   }
 
-  onOpen() {
+  onOpen = () => {
     this.setState({
       isOpen: true,
     });
-  }
+  };
 
-  onClose() {
+  onClose = () => {
     this.setState({
       isOpen: false,
     });
-  }
+  };
 
-  toggleTitle() {
+  toggleTitle = () => {
     this.setState(state => ({
       hideTitle: !state.hideTitle,
     }));
-  }
+  };
 
   render() {
     const { children, ...rest } = this.props;
@@ -94,7 +91,7 @@ DrawerContainer.propTypes = {
 const components = [
   {
     id: 'default',
-    title: 'Default drawer',
+    title: 'Default',
     blurb: 'The default drawer has a title and a close button',
     examples: [
       <DrawerContainer closeLabel="Close drawer">
@@ -119,21 +116,29 @@ const components = [
   },
 ];
 
+const isNeo = process.env.BPK_NEO;
+
+const blurb = [
+  <Paragraph>
+    Drawers slide in from the edge of the screen and are used to display content
+  </Paragraph>,
+];
+
 const DrawerPage = () => (
   <DocsPageBuilder
     title="Drawer"
-    blurb={[
-      <Paragraph>
-        Drawers are used to display content or views that are separate from the
-        rest of the app or page. When triggered, drawers will slide in from the
-        side of the viewport with a backdrop to indicate their separation from
-        everything else. On mobile viewports, they leave a sliver of the
-        backdrop visible to allow for easier closing.
-      </Paragraph>,
-    ]}
+    blurb={isNeo ? null : blurb}
     components={components}
     readme={drawerReadme}
   />
 );
 
-export default DrawerPage;
+const NeoDrawerPage = () => (
+  <DocsPageWrapper
+    title="Drawer"
+    blurb={blurb}
+    webSubpage={<DrawerPage wrapped />}
+  />
+);
+
+export default (isNeo ? NeoDrawerPage : DrawerPage);

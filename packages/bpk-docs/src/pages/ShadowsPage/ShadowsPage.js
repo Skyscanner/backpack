@@ -31,7 +31,7 @@ const ShadowsPage = () => (
       TOKENS,
       IOS_TOKENS,
       ANDROID_TOKENS,
-      ({ category }) => ['box-shadows', 'elevation'].includes(category),
+      ({ category }) => ['box-shadows', 'elevation'].indexOf(category) !== -1,
     )}
   />
 );

@@ -22,30 +22,48 @@ import BpkBlockquote from 'bpk-component-blockquote';
 import blockquotesReadme from 'bpk-component-blockquote/readme.md';
 
 import DocsPageBuilder from './../../components/DocsPageBuilder';
+import DocsPageWrapper from './../../components/neo/DocsPageWrapper';
 import Paragraph from './../../components/Paragraph';
-import PresentationBlock from './../../components/PresentationBlock';
+
+const components = [
+  {
+    id: 'default',
+    title: 'Default',
+    examples: [
+      <BpkBlockquote>
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
+        ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis
+        dis parturient montes, nascetur ridiculus mus.
+      </BpkBlockquote>,
+    ],
+  },
+];
+
+const isNeo = process.env.BPK_NEO;
 
 const blurb = [
   <Paragraph>
     The blockquote component allows the creation of a section that is quoted
     from another source.
   </Paragraph>,
-  <PresentationBlock>
-    <BpkBlockquote>
-      Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
-      ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis
-      dis parturient montes, nascetur ridiculus mus.
-    </BpkBlockquote>
-  </PresentationBlock>,
 ];
 
-const BlockquotesPage = () => (
+const BlockquotesPage = ({ ...rest }) => (
   <DocsPageBuilder
-    title="Blockquotes"
-    showMenu={false}
+    title="Blockquote"
+    components={components}
     readme={blockquotesReadme}
-    blurb={blurb}
+    blurb={isNeo ? null : blurb}
+    {...rest}
   />
 );
 
-export default BlockquotesPage;
+const NeoBlockquotePage = () => (
+  <DocsPageWrapper
+    title="Blockquote"
+    blurb={blurb}
+    webSubpage={<BlockquotesPage wrapped />}
+  />
+);
+
+export default (isNeo ? NeoBlockquotePage : BlockquotesPage);

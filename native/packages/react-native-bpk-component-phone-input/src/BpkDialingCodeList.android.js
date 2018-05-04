@@ -18,24 +18,17 @@
 
 /* @flow */
 
-import { View, StyleSheet, FlatList } from 'react-native';
 import React from 'react';
-import { spacingMd, colorGray100 } from 'bpk-tokens/tokens/base.react.native';
-import BpkDialingCodeListItem from './BpkDialingCodeListItem';
+import BpkFlatList, {
+  BpkFlatListItem,
+  BpkFlatListItemSeparator,
+} from 'react-native-bpk-component-flat-list';
+import BpkFlag from './BpkFlag';
 import {
   type ListCommonProps,
   LIST_COMMON_PROP_TYPES,
   LIST_COMMON_DEFAULT_PROPS,
 } from './common-types';
-
-const styles = StyleSheet.create({
-  separator: {
-    flex: 1,
-    height: 1,
-    backgroundColor: colorGray100,
-    marginHorizontal: spacingMd,
-  },
-});
 
 export type Props = {
   ...$Exact<ListCommonProps>,
@@ -47,20 +40,21 @@ const BpkDialingCodeList = ({
   renderFlag,
   selectedId,
 }: Props) => (
-  <FlatList
+  <BpkFlatList
     data={dialingCodes}
     renderItem={({ item }) => (
-      <BpkDialingCodeListItem
-        {...item}
+      <BpkFlatListItem
+        title={`${item.dialingCode} ${item.name}`}
         selected={selectedId === item.id}
         onPress={() => {
           onItemPress(item);
         }}
-        flag={renderFlag(item)}
+        image={<BpkFlag flag={renderFlag(item)} />}
       />
     )}
     keyExtractor={item => item.id}
-    ItemSeparatorComponent={() => <View style={styles.separator} />}
+    ItemSeparatorComponent={BpkFlatListItemSeparator}
+    extraData={selectedId}
   />
 );
 

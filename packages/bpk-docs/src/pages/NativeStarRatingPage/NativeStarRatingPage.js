@@ -52,7 +52,7 @@ const components = [
   },
 ];
 
-const NativeStarRatingPage = () => (
+const NativeStarRatingPage = ({ ...rest }) => (
   <DocsPageBuilder
     title="Star Ratings"
     blurb={[
@@ -63,6 +63,7 @@ const NativeStarRatingPage = () => (
     components={components}
     readme={readme}
     showMenu={false}
+    {...rest}
   />
 );
 

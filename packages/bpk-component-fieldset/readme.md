@@ -23,10 +23,9 @@ class FieldsetContainer extends Component {
       value: '',
     };
 
-    this.onChange = this.onChange.bind(this);
   }
 
-  onChange(e) {
+  onChange = (e) => {
     this.setState({
       value: e.target.value,
     });

@@ -33,15 +33,13 @@ class HorizontalNavContainer extends Component {
     this.state = {
       selected: 'flights',
     };
-
-    this.onClick = this.onClick.bind(this);
   }
 
-  onClick(e) {
+  onClick = e => {
     this.setState({
       selected: e.target.name,
     });
-  }
+  };
 
   render() {
     const { spaceAround, ...rest } = this.props;
@@ -100,17 +98,22 @@ const components = [
   },
 ];
 
-const HorizontalNavPage = () => (
+const isNeo = process.env.BPK_NEO;
+
+const blurb = [
+  <Paragraph>
+    A simple navigation component, ideal for representing a section of a page
+    that links to other pages or views within the page.
+  </Paragraph>,
+];
+
+const HorizontalNavPage = ({ ...rest }) => (
   <DocsPageBuilder
     title="Horizontal navigation"
-    blurb={[
-      <Paragraph>
-        A simple navigation component, ideal for representing a section of a
-        page that links to other pages or views within the page.
-      </Paragraph>,
-    ]}
+    blurb={isNeo ? null : blurb}
     components={components}
     readme={readme}
+    {...rest}
   />
 );
 

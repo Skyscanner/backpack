@@ -52,7 +52,7 @@ const components = [
   },
 ];
 
-const NativeNudgerPage = () => (
+const NativeNudgerPage = ({ ...rest }) => (
   <DocsPageBuilder
     title="Nudgers"
     blurb={[
@@ -68,6 +68,7 @@ const NativeNudgerPage = () => (
     components={components}
     readme={readme}
     showMenu
+    {...rest}
   />
 );
 

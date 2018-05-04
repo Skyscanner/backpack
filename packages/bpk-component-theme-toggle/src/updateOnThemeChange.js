@@ -26,7 +26,6 @@ const updateOnThemeChange = EnhancedComponent => {
   class UpdateOnThemeChange extends Component {
     constructor() {
       super();
-      this.onThemeChange = this.onThemeChange.bind(this);
       this.state = {
         theme: null,
       };
@@ -48,11 +47,11 @@ const updateOnThemeChange = EnhancedComponent => {
       );
     }
 
-    onThemeChange(e) {
+    onThemeChange = e => {
       const { theme } = e.detail;
       this.setState({ theme });
       this.forceUpdate();
-    }
+    };
 
     render() {
       return <EnhancedComponent theme={this.state.theme} {...this.props} />;

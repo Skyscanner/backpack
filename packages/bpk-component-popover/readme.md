@@ -24,17 +24,15 @@ class App extends Component {
       isOpen: false,
     };
 
-    this.openPopover = this.openPopover.bind(this);
-    this.closePopover = this.closePopover.bind(this);
   }
 
-  openPopover() {
+  openPopover = () => {
     this.setState({
       isOpen: true,
     });
   }
 
-  closePopover() {
+  closePopover = () => {
     this.setState({
       isOpen: false,
     });

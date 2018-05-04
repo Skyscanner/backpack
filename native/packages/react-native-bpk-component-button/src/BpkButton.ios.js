@@ -81,13 +81,17 @@ const BpkButton = (props: Props) => {
   const containerStyle = getStyleForElement('container', props);
   const buttonStyle = getStyleForElement('button', props);
   const buttonTheme = getThemingForElement('button', theme, props);
+  const containerTheme = getThemingForElement('container', theme, props);
 
   if (disabled) {
     accessibilityTraits.push('disabled');
   }
 
   return (
-    <LinearGradient colors={gradientColors} style={[containerStyle, style]}>
+    <LinearGradient
+      colors={gradientColors}
+      style={[containerStyle, containerTheme, style]}
+    >
       <BpkTouchableOverlay
         accessibilityComponentType="button"
         accessibilityLabel={accessibilityLabel || title}

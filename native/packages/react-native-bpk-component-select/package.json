@@ -1,0 +1,24 @@
+{
+  "name": "react-native-bpk-component-select",
+  "version": "0.0.0",
+  "main": "index.js",
+  "description": "Backpack React Native select component.",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:Skyscanner/backpack.git"
+  },
+  "author": "Backpack Design System <backpack@skyscanner.net>",
+  "license": "Apache-2.0",
+  "peerDependencies": {
+    "react": "^16.0.0-alpha.1",
+    "react-native": ">= 0.47.0"
+  },
+  "dependencies": {
+    "bpk-tokens": "^27.0.0",
+    "prop-types": "^15.5.8",
+    "react-native-bpk-component-icon": "^1.7.0",
+    "react-native-bpk-component-text": "^2.1.35",
+    "react-native-bpk-component-touchable-native-feedback": "^1.1.8",
+    "react-native-bpk-component-touchable-overlay": "^1.0.17"
+  }
+}

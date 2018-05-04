@@ -28,6 +28,7 @@ import {
 import { spacingSm } from 'bpk-tokens/tokens/base.es6';
 
 import DocsPageBuilder from './../../components/DocsPageBuilder';
+import DocsPageWrapper from './../../components/neo/DocsPageWrapper';
 import Paragraph from './../../components/Paragraph';
 
 const SingleItemAccordion = withSingleItemAccordionState(BpkAccordion);
@@ -195,21 +196,30 @@ const components = [
   },
 ];
 
-const AccordionsPage = () => (
+const isNeo = process.env.BPK_NEO;
+
+const blurb = [
+  <Paragraph>
+    An accordion allows users to expand and collapse sections of content.
+  </Paragraph>,
+];
+
+const AccordionsPage = ({ ...rest }) => (
   <DocsPageBuilder
-    title="Accordions"
-    blurb={[
-      <Paragraph>
-        An accordion is a vertically stacked set of elements, such as content or
-        forms, that allow the user to toggle the display of sections of content.
-        Each labeling element can be expanded or collapsed to reveal or hide its
-        associated content. Accordions are commonly used to reduce the need to
-        scroll when presenting multiple sections of content on a single page.
-      </Paragraph>,
-    ]}
+    title="Accordion"
+    blurb={isNeo ? null : blurb}
     components={components}
     readme={accordionsReadme}
+    {...rest}
   />
 );
 
-export default AccordionsPage;
+const NeoAccordionsPage = () => (
+  <DocsPageWrapper
+    title="Accordion"
+    blurb={blurb}
+    webSubpage={<AccordionsPage wrapped />}
+  />
+);
+
+export default (isNeo ? NeoAccordionsPage : AccordionsPage);

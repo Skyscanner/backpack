@@ -21,11 +21,19 @@
 .bpk-table {
   @include bpk-table;
 
+  &--alternate {
+    @include bpk-table--alternate;
+  }
+
   &__cell {
     @include bpk-table__cell;
 
     &--head {
       @include bpk-table__cell--head;
+    }
+
+    &--head-alternate {
+      @include bpk-table__cell--head-alternate;
     }
   }
 }
