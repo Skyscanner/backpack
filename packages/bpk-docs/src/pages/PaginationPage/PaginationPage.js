@@ -104,8 +104,8 @@ const isNeo = process.env.BPK_NEO;
 
 const blurb = [
   <Paragraph>
-    The Backpack pagination component is used to indicate a series of related
-    content exists across multiple pages.
+    The pagination component is used to indicate a series of related content
+    exists across multiple views/pages.
   </Paragraph>,
 ];
 

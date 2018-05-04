@@ -25,6 +25,8 @@ import DocsPageBuilder from './../../components/DocsPageBuilder';
 import Paragraph from './../../components/Paragraph';
 import PresentationBlock from './../../components/PresentationBlock';
 
+const isNeo = process.env.BPK_NEO;
+
 const blurb = [
   <Paragraph>
     This component enables you to link the user to other reosurces or pages.
@@ -37,12 +39,25 @@ const blurb = [
   </PresentationBlock>,
 ];
 
+const components = [
+  {
+    id: 'default',
+    title: 'Default',
+    examples: [
+      <div>
+        Links can be both <BpkLink href="#">anchor tags</BpkLink> as well as{' '}
+        <BpkButtonLink onClick={() => null}>button tags</BpkButtonLink>.
+      </div>,
+    ],
+  },
+];
+
 const LinkPage = ({ ...rest }) => (
   <DocsPageBuilder
     title="Links"
-    showMenu={false}
     readme={linkReadme}
-    blurb={blurb}
+    components={components}
+    blurb={isNeo ? null : blurb}
     {...rest}
   />
 );

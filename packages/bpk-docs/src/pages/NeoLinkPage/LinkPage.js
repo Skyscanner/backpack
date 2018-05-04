@@ -27,8 +27,12 @@ import Native from '../NativeButtonLinkPage';
 
 const Page = () => (
   <DocsPageWrapper
-    title="Neo Link"
-    blurb={[<Paragraph>Blurb for the neo link page.</Paragraph>]}
+    title="Link"
+    blurb={[
+      <Paragraph>
+        This component enables links to other reosurces, pages or views.
+      </Paragraph>,
+    ]}
     webSubpage={<Web wrapped />}
     nativeSubpage={<Native wrapped />}
   />

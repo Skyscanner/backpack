@@ -58,11 +58,6 @@ const iconsFinal = _(icons)
 
 const blurb = [
   <Paragraph>
-    Backpack icons are crafted to display across web and{' '}
-    <BpkLink href="/components/native/icons">native</BpkLink> apps. Their clean,
-    solid shapes effortlessly compliment the rest of Backpack.
-  </Paragraph>,
-  <Paragraph>
     Icons are provided in two sizes: small (18px) and large (24px). Both are
     pixel-snapped for clarity at the intended usage sizes.
   </Paragraph>,
@@ -90,7 +85,6 @@ const IconsPage = ({ ...rest }) => (
     title="Icons"
     blurb={blurb}
     components={[]}
-    showMenu={false}
     readme={iconReadme}
     sassdocId="svgs-mixin-bpk-icon"
     {...rest}

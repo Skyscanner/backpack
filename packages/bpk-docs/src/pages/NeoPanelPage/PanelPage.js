@@ -27,8 +27,13 @@ import Native from '../NativePanelsPage';
 
 const Page = () => (
   <DocsPageWrapper
-    title="Neo panel"
-    blurb={[<Paragraph>Blurb for the neo panel page.</Paragraph>]}
+    title="Panel"
+    blurb={[
+      <Paragraph>
+        Panels are useful for housing distinct areas of related content. Unlike
+        cards these are not clickable.
+      </Paragraph>,
+    ]}
     webSubpage={<Web wrapped />}
     nativeSubpage={<Native wrapped />}
   />

@@ -19,14 +19,12 @@
 /* @flow */
 
 import React from 'react';
-import BpkRouterLink from 'bpk-component-router-link';
 import mobileScrollContainerReadme from 'bpk-component-mobile-scroll-container/readme.md';
 
 import BlockExample from './BlockExample';
 import Paragraph from './../../components/Paragraph';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
 import DocsPageWrapper from './../../components/neo/DocsPageWrapper';
-import { BARCHARTS, HORIZONTAL_NAV } from './../../constants/routes';
 
 const components = [
   {
@@ -40,15 +38,8 @@ const isNeo = process.env.BPK_NEO;
 
 const blurb = [
   <Paragraph>
-    In the majority of cases, components and content should be designed with
-    viewport and container fluidity in mind i.e. horizontal list items should
-    stack on top of each other and overflowing text should wrap on to the next
-    line. There are some cases where it is desireable to maintain a fixed width
-    on certain content (see{' '}
-    <BpkRouterLink to={BARCHARTS}>bar charts</BpkRouterLink> and{' '}
-    <BpkRouterLink to={HORIZONTAL_NAV}>horizontal navigation</BpkRouterLink>).
-    Mobile scroll containers will hide overflowing content and display a fading
-    indicator to let the user know that the content is scrollable.
+    The mobile scroll container component will hide overflowing content in fixed
+    with situations and will enable horizontal scrolling.
   </Paragraph>,
 ];
 
@@ -58,7 +49,6 @@ const MobileScrollContainerPage = ({ ...rest }: { [string]: any }) => (
     blurb={isNeo ? null : blurb}
     components={components}
     readme={mobileScrollContainerReadme}
-    showMenu={false}
     {...rest}
   />
 );

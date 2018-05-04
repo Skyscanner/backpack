@@ -79,16 +79,20 @@ const components = [
   },
 ];
 
+const isNeo = process.env.BPK_NEO;
+
+const blurb = [
+  <Paragraph>
+    Progress bars are a great way of providing feedback when a tasking is
+    running. Unlike spinners, they give the user a clear idea of how long the
+    given task will take.
+  </Paragraph>,
+];
+
 const NativeProgressPage = ({ ...rest }: { [string]: any }) => (
   <DocsPageBuilder
     title="Progress Bar"
-    blurb={[
-      <Paragraph>
-        Progress bars are a great way of providing feedback when a tasking is
-        running. Unlike spinners, they give the user a clear idea of how long
-        the given task will take.
-      </Paragraph>,
-    ]}
+    blurb={isNeo ? null : blurb}
     components={components}
     readme={readme}
     showMenu

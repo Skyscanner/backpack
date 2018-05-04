@@ -28,8 +28,8 @@ import DocsPageBuilder from './../../components/DocsPageBuilder';
 
 const components = [
   {
-    id: 'icons',
-    title: 'Mobile',
+    id: 'default',
+    title: 'Default',
     blurb: '',
     screenshots: [
       {
@@ -52,22 +52,27 @@ const components = [
   },
 ];
 
+const isNeo = process.env.BPK_NEO;
+
+const blurb = [
+  <div>
+    <Paragraph>
+      Backpack icons are crafted to display across web and native apps. Their
+      clean, solid shapes effortlessly compliment the rest of Backpack.
+    </Paragraph>,
+    <Paragraph>
+      View all icons on the{' '}
+      <BpkLink href="/components/web/icons">icons page</BpkLink>.
+    </Paragraph>
+  </div>,
+];
+
 const NativeIconsPage = ({ ...rest }) => (
   <DocsPageBuilder
     title="Icons"
-    blurb={[
-      <Paragraph>
-        Backpack icons are crafted to display across web and native apps. Their
-        clean, solid shapes effortlessly compliment the rest of Backpack.
-      </Paragraph>,
-      <Paragraph>
-        View all icons on the{' '}
-        <BpkLink href="/components/web/icons">icons page</BpkLink>.
-      </Paragraph>,
-    ]}
+    blurb={isNeo ? null : blurb}
     components={components}
     readme={readme}
-    showMenu={false}
     {...rest}
   />
 );

@@ -119,15 +119,19 @@ const components = [
   },
 ];
 
+const isNeo = process.env.BPK_NEO;
+
+const blurb = [
+  <Paragraph>
+    The navigation bar component encapsulates a title and icon/text actions for
+    controlling views.
+  </Paragraph>,
+];
+
 const NavigationBarPage = ({ ...rest }: { [string]: any }) => (
   <DocsPageBuilder
-    title="Navigation Bar"
-    blurb={[
-      <Paragraph>
-        The navigation bar component encapsulates a title and icon/text actions
-        for controlling views.
-      </Paragraph>,
-    ]}
+    title="Navigation bar"
+    blurb={isNeo ? null : blurb}
     components={components}
     sassdocId="navigationbar"
     readme={navigationBarReadme}

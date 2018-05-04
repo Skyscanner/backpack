@@ -129,16 +129,20 @@ const components = [
   },
 ];
 
+const isNeo = process.env.BPK_NEO;
+
+const blurb = [
+  <Paragraph>
+    The Backpack navigation bar emulates Android and iOS navigation bars
+    respectively while still retaining a Backpack look and feel. Additonally
+    navigation bars are completely themeable.
+  </Paragraph>,
+];
+
 const NativeNavigationBarPage = (props: Object) => (
   <DocsPageBuilder
     title="Navigation Bars"
-    blurb={[
-      <Paragraph>
-        The Backpack navigation bar emulates Android and iOS navigation bars
-        respectively while still retaining a Backpack look and feel. Additonally
-        navigation bars are completely themeable.
-      </Paragraph>,
-    ]}
+    blurb={isNeo ? null : blurb}
     components={components}
     readme={readme}
     showMenu

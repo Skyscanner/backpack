@@ -27,11 +27,11 @@ import NativeNavigation from '../NativeNavigationBarPage';
 
 const NeoBadgePage = () => (
   <DocsPageWrapper
-    title="Navigation Bar"
+    title="Navigation bar"
     blurb={[
       <Paragraph>
-        {/* TODO: update description */}
-        Blurb for the neo Navigation Bar page.
+        The navigation bar component encapsulates a title and icon/text actions
+        for controlling views.
       </Paragraph>,
     ]}
     webSubpage={<WebNavigation wrapped />}

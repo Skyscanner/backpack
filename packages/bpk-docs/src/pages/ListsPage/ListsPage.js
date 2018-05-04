@@ -24,31 +24,39 @@ import listReadme from 'bpk-component-list/readme.md';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
 import DocsPageWrapper from './../../components/neo/DocsPageWrapper';
 import Paragraph from './../../components/Paragraph';
-import PresentationBlock from './../../components/PresentationBlock';
 
 const blurb = [
   <Paragraph>
     The list component enables you to easily create ordered or unordered lists.
   </Paragraph>,
-  <PresentationBlock>
-    <BpkList>
-      <BpkListItem>Apples</BpkListItem>
-      <BpkListItem>
-        Oranges
+];
+
+const components = [
+  {
+    id: 'default',
+    title: 'Default',
+    examples: [
+      <div>
         <BpkList>
-          <BpkListItem>Tangerines</BpkListItem>
-          <BpkListItem>Mandarins</BpkListItem>
-          <BpkListItem>Satsumas</BpkListItem>
+          <BpkListItem>Apples</BpkListItem>
+          <BpkListItem>
+            Oranges
+            <BpkList>
+              <BpkListItem>Tangerines</BpkListItem>
+              <BpkListItem>Mandarins</BpkListItem>
+              <BpkListItem>Satsumas</BpkListItem>
+            </BpkList>
+          </BpkListItem>
+          <BpkListItem>Pears</BpkListItem>
         </BpkList>
-      </BpkListItem>
-      <BpkListItem>Pears</BpkListItem>
-    </BpkList>
-    <BpkList ordered>
-      <BpkListItem>First</BpkListItem>
-      <BpkListItem>Second</BpkListItem>
-      <BpkListItem>Third</BpkListItem>
-    </BpkList>
-  </PresentationBlock>,
+        <BpkList ordered>
+          <BpkListItem>First</BpkListItem>
+          <BpkListItem>Second</BpkListItem>
+          <BpkListItem>Third</BpkListItem>
+        </BpkList>
+      </div>,
+    ],
+  },
 ];
 
 const isNeo = process.env.BPK_NEO;
@@ -56,9 +64,9 @@ const isNeo = process.env.BPK_NEO;
 const ListPage = ({ ...rest }) => (
   <DocsPageBuilder
     title="Lists"
-    showMenu={false}
     readme={listReadme}
-    blurb={blurb}
+    components={components}
+    blurb={isNeo ? null : blurb}
     {...rest}
   />
 );
