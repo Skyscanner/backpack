@@ -66,12 +66,11 @@ class BpkThemeToggle extends React.Component {
 
   cycleTheme = () => {
     let { selectedTheme } = this.state;
-    let selectedIndex = selectedTheme
+    const selectedIndex = selectedTheme
       ? availableThemes.indexOf(selectedTheme) + 1
       : 0;
     if (selectedIndex >= availableThemes.length) {
-      selectedIndex = 0;
-      selectedTheme = null;
+      selectedTheme = '';
     } else {
       selectedTheme = availableThemes[selectedIndex];
     }
