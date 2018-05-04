@@ -36,7 +36,9 @@ const generateTheme = ({
   docsSidebarBackground,
   docsSidebarLink,
   docsSidebarLinkBorder,
+  themeName,
 }) => ({
+  themeName,
   accordionActiveColor: primaryColor700,
   accordionColor: primaryColor500,
   accordionHoverColor: primaryColor600,
@@ -136,6 +138,7 @@ const londonTheme = {
   docsSidebarBackground: '#013A76',
   docsSidebarLink: '#6889AB',
   docsSidebarLinkBorder: '#6889AB',
+  themeName: 'London',
 };
 
 const hongKongTheme = {
@@ -150,6 +153,7 @@ const hongKongTheme = {
   docsSidebarBackground: '#4C4C4C',
   docsSidebarLink: '#686868',
   docsSidebarLinkBorder: '#686868',
+  themeName: 'HongKong',
 };
 
 const dohaTheme = {
@@ -164,6 +168,7 @@ const dohaTheme = {
   docsSidebarBackground: '#5E072C',
   docsSidebarLink: '#BF3671',
   docsSidebarLinkBorder: '#BF3671',
+  themeName: 'Doha',
 };
 
 const bpkCustomThemes = {

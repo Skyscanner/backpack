@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 const uniq = (arr = []) => {
@@ -57,17 +57,27 @@ const createStyle = (theme, themeAttributes) => {
   return style;
 };
 
-const BpkThemeProvider = props => {
-  const { children, theme, themeAttributes, ...rest } = props;
+class BpkThemeProvider extends Component {
+  getChildContext() {
+    return { theme: this.props.theme };
+  }
 
-  const dedupedThemeAttributes = uniq(themeAttributes);
-  const style = createStyle(theme, dedupedThemeAttributes);
+  render() {
+    const { children, theme, themeAttributes, ...rest } = this.props;
 
-  return (
-    <div style={style} {...rest}>
-      {children}
-    </div>
-  );
+    const dedupedThemeAttributes = uniq(themeAttributes);
+    const style = createStyle(theme, dedupedThemeAttributes);
+
+    return (
+      <div style={style} {...rest}>
+        {children}
+      </div>
+    );
+  }
+}
+
+BpkThemeProvider.childContextTypes = {
+  theme: PropTypes.object,
 };
 
 const themeAttributesPropType = (props, propName, componentName) => {
