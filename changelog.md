@@ -2,7 +2,7 @@
 
 [Unreleased changes](./unreleased.md).
 
-# 2018-05-04 - Navigation bar theming and new props for scrollable components
+# 2018-05-04 - Fixed BpkNavigationBarButtonLink export
 
 **Fixed:**
 - bpk-navigation-bar: 1.1.0 => 1.1.1
