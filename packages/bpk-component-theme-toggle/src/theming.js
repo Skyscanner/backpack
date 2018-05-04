@@ -187,8 +187,8 @@ if (process.env.BPK_NEO) {
   bpkCustomThemes['Hong Kong'].docsSidebarLinkBorder =
     hongKongTheme.secondaryColor300;
 
-  bpkCustomThemes.Doha.docsSidebarBackground = dohaTheme.secondaryColor500;
-  bpkCustomThemes.Doha.docsSidebarLink = dohaTheme.secondaryColor300;
-  bpkCustomThemes.Doha.docsSidebarLinkBorder = dohaTheme.secondaryColor300;
+  bpkCustomThemes.Doha.docsSidebarBackground = dohaTheme.primaryColor700;
+  bpkCustomThemes.Doha.docsSidebarLink = dohaTheme.primaryColor300;
+  bpkCustomThemes.Doha.docsSidebarLinkBorder = dohaTheme.primaryColor300;
 }
 export default bpkCustomThemes;
