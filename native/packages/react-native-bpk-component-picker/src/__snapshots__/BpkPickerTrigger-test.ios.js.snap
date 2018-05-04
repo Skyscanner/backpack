@@ -1,26 +1,20 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`iOS BpkPickerTrigger should render correctly 1`] = `
-<View
+<BpkTouchableOverlay
   accessibilityComponentType="button"
-  accessibilityLabel={undefined}
   accessibilityTraits={
     Array [
       "button",
     ]
   }
-  accessible={true}
-  hitSlop={undefined}
-  nativeID={undefined}
-  onLayout={undefined}
-  onResponderGrant={[Function]}
-  onResponderMove={[Function]}
-  onResponderRelease={[Function]}
-  onResponderTerminate={[Function]}
-  onResponderTerminationRequest={[Function]}
-  onStartShouldSetResponder={[Function]}
+  borderRadius={null}
+  disabled={false}
+  onPress={[Function]}
+  onPressIn={null}
+  onPressOut={null}
+  overlayStyle={null}
   style={null}
-  testID={undefined}
 >
   <View
     style={
@@ -33,67 +27,30 @@ exports[`iOS BpkPickerTrigger should render correctly 1`] = `
       }
     }
   >
-    <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
-      style={
-        Array [
-          Object {
-            "color": "rgb(82, 76, 97)",
-            "fontFamily": "BpkIcon",
-            "fontSize": 24,
-            "includeFontPadding": false,
-          },
-          Object {
-            "fontSize": 16,
-          },
-        ]
-      }
-    >
-      
-    </Text>
+    <BpkIcon
+      icon="arrow-down"
+      small={true}
+      style={null}
+    />
   </View>
-  <View
-    style={
-      Array [
-        Object {
-          "backgroundColor": "rgb(37, 32, 51)",
-          "bottom": 0,
-          "flex": 1,
-          "left": 0,
-          "opacity": 0,
-          "position": "absolute",
-          "right": 0,
-          "top": 0,
-        },
-      ]
-    }
-  />
-</View>
+</BpkTouchableOverlay>
 `;
 
 exports[`iOS BpkPickerTrigger should render correctly with a text label 1`] = `
-<View
+<BpkTouchableOverlay
   accessibilityComponentType="button"
-  accessibilityLabel={undefined}
   accessibilityTraits={
     Array [
       "button",
     ]
   }
-  accessible={true}
-  hitSlop={undefined}
-  nativeID={undefined}
-  onLayout={undefined}
-  onResponderGrant={[Function]}
-  onResponderMove={[Function]}
-  onResponderRelease={[Function]}
-  onResponderTerminate={[Function]}
-  onResponderTerminationRequest={[Function]}
-  onStartShouldSetResponder={[Function]}
+  borderRadius={null}
+  disabled={false}
+  onPress={[Function]}
+  onPressIn={null}
+  onPressOut={null}
+  overlayStyle={null}
   style={null}
-  testID={undefined}
 >
   <View
     style={
@@ -106,85 +63,37 @@ exports[`iOS BpkPickerTrigger should render correctly with a text label 1`] = `
       }
     }
   >
-    <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
-      style={
-        Array [
-          Object {
-            "color": "rgb(82, 76, 97)",
-            "fontFamily": "System",
-            "fontSize": 15,
-            "fontWeight": "400",
-          },
-          Object {},
-        ]
-      }
+    <BpkText
+      emphasize={false}
+      style={Object {}}
+      textStyle="base"
     >
       label
-    </Text>
-    <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
-      style={
-        Array [
-          Object {
-            "color": "rgb(82, 76, 97)",
-            "fontFamily": "BpkIcon",
-            "fontSize": 24,
-            "includeFontPadding": false,
-          },
-          Object {
-            "fontSize": 16,
-          },
-        ]
-      }
-    >
-      
-    </Text>
+    </BpkText>
+    <BpkIcon
+      icon="arrow-down"
+      small={true}
+      style={null}
+    />
   </View>
-  <View
-    style={
-      Array [
-        Object {
-          "backgroundColor": "rgb(37, 32, 51)",
-          "bottom": 0,
-          "flex": 1,
-          "left": 0,
-          "opacity": 0,
-          "position": "absolute",
-          "right": 0,
-          "top": 0,
-        },
-      ]
-    }
-  />
-</View>
+</BpkTouchableOverlay>
 `;
 
 exports[`iOS BpkPickerTrigger should render correctly with an element label 1`] = `
-<View
+<BpkTouchableOverlay
   accessibilityComponentType="button"
-  accessibilityLabel={undefined}
   accessibilityTraits={
     Array [
       "button",
     ]
   }
-  accessible={true}
-  hitSlop={undefined}
-  nativeID={undefined}
-  onLayout={undefined}
-  onResponderGrant={[Function]}
-  onResponderMove={[Function]}
-  onResponderRelease={[Function]}
-  onResponderTerminate={[Function]}
-  onResponderTerminationRequest={[Function]}
-  onStartShouldSetResponder={[Function]}
+  borderRadius={null}
+  disabled={false}
+  onPress={[Function]}
+  onPressIn={null}
+  onPressOut={null}
+  overlayStyle={null}
   style={null}
-  testID={undefined}
 >
   <View
     style={
@@ -198,71 +107,34 @@ exports[`iOS BpkPickerTrigger should render correctly with an element label 1`] 
     }
   >
     <View />
-    <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
-      style={
-        Array [
-          Object {
-            "color": "rgb(82, 76, 97)",
-            "fontFamily": "BpkIcon",
-            "fontSize": 24,
-            "includeFontPadding": false,
-          },
-          Object {
-            "fontSize": 16,
-          },
-        ]
-      }
-    >
-      
-    </Text>
+    <BpkIcon
+      icon="arrow-down"
+      small={true}
+      style={null}
+    />
   </View>
-  <View
-    style={
-      Array [
-        Object {
-          "backgroundColor": "rgb(37, 32, 51)",
-          "bottom": 0,
-          "flex": 1,
-          "left": 0,
-          "opacity": 0,
-          "position": "absolute",
-          "right": 0,
-          "top": 0,
-        },
-      ]
-    }
-  />
-</View>
+</BpkTouchableOverlay>
 `;
 
 exports[`iOS BpkPickerTrigger should render correctly with custom styles 1`] = `
-<View
+<BpkTouchableOverlay
   accessibilityComponentType="button"
-  accessibilityLabel={undefined}
   accessibilityTraits={
     Array [
       "button",
     ]
   }
-  accessible={true}
-  hitSlop={undefined}
-  nativeID={undefined}
-  onLayout={undefined}
-  onResponderGrant={[Function]}
-  onResponderMove={[Function]}
-  onResponderRelease={[Function]}
-  onResponderTerminate={[Function]}
-  onResponderTerminationRequest={[Function]}
-  onStartShouldSetResponder={[Function]}
+  borderRadius={null}
+  disabled={false}
+  onPress={[Function]}
+  onPressIn={null}
+  onPressOut={null}
+  overlayStyle={null}
   style={
     Object {
       "marginTop": 10,
     }
   }
-  testID={undefined}
 >
   <View
     style={
@@ -275,86 +147,38 @@ exports[`iOS BpkPickerTrigger should render correctly with custom styles 1`] = `
       }
     }
   >
-    <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
-      style={
-        Array [
-          Object {
-            "color": "rgb(82, 76, 97)",
-            "fontFamily": "System",
-            "fontSize": 15,
-            "fontWeight": "400",
-          },
-          Object {},
-        ]
-      }
+    <BpkText
+      emphasize={false}
+      style={Object {}}
+      textStyle="base"
     >
       label
-    </Text>
-    <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
-      style={
-        Array [
-          Object {
-            "color": "rgb(82, 76, 97)",
-            "fontFamily": "BpkIcon",
-            "fontSize": 24,
-            "includeFontPadding": false,
-          },
-          Object {
-            "fontSize": 16,
-          },
-        ]
-      }
-    >
-      
-    </Text>
+    </BpkText>
+    <BpkIcon
+      icon="arrow-down"
+      small={true}
+      style={null}
+    />
   </View>
-  <View
-    style={
-      Array [
-        Object {
-          "backgroundColor": "rgb(37, 32, 51)",
-          "bottom": 0,
-          "flex": 1,
-          "left": 0,
-          "opacity": 0,
-          "position": "absolute",
-          "right": 0,
-          "top": 0,
-        },
-      ]
-    }
-  />
-</View>
+</BpkTouchableOverlay>
 `;
 
 exports[`iOS BpkPickerTrigger should render correctly with the disabled prop 1`] = `
-<View
+<BpkTouchableOverlay
   accessibilityComponentType="button"
-  accessibilityLabel={undefined}
   accessibilityTraits={
     Array [
       "button",
       "disabled",
     ]
   }
-  accessible={true}
-  hitSlop={undefined}
-  nativeID={undefined}
-  onLayout={undefined}
-  onResponderGrant={[Function]}
-  onResponderMove={[Function]}
-  onResponderRelease={[Function]}
-  onResponderTerminate={[Function]}
-  onResponderTerminationRequest={[Function]}
-  onStartShouldSetResponder={[Function]}
+  borderRadius={null}
+  disabled={true}
+  onPress={[Function]}
+  onPressIn={null}
+  onPressOut={null}
+  overlayStyle={null}
   style={null}
-  testID={undefined}
 >
   <View
     style={
@@ -367,62 +191,22 @@ exports[`iOS BpkPickerTrigger should render correctly with the disabled prop 1`]
       }
     }
   >
-    <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
+    <BpkText
+      emphasize={false}
       style={
-        Array [
-          Object {
-            "color": "rgb(82, 76, 97)",
-            "fontFamily": "System",
-            "fontSize": 15,
-            "fontWeight": "400",
-          },
-          Object {
-            "color": "rgb(230, 228, 235)",
-          },
-        ]
+        Object {
+          "color": "rgb(230, 228, 235)",
+        }
       }
+      textStyle="base"
     >
       label
-    </Text>
-    <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
-      style={
-        Array [
-          Object {
-            "color": "rgb(82, 76, 97)",
-            "fontFamily": "BpkIcon",
-            "fontSize": 24,
-            "includeFontPadding": false,
-          },
-          Object {
-            "fontSize": 16,
-          },
-        ]
-      }
-    >
-      
-    </Text>
+    </BpkText>
+    <BpkIcon
+      icon="arrow-down"
+      small={true}
+      style={null}
+    />
   </View>
-  <View
-    style={
-      Array [
-        Object {
-          "backgroundColor": "rgb(37, 32, 51)",
-          "bottom": 0,
-          "flex": 1,
-          "left": 0,
-          "opacity": 0,
-          "position": "absolute",
-          "right": 0,
-          "top": 0,
-        },
-      ]
-    }
-  />
-</View>
+</BpkTouchableOverlay>
 `;
