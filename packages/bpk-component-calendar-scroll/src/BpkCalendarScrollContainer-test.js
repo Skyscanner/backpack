@@ -46,25 +46,6 @@ describe('BpkCalendarScrollContainer', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  it('it should render every month grid', () => {
-    const onDateSelect = jest.fn();
-
-    const calendar = mount(
-      <BpkCalendarScrollContainer
-        formatMonth={formatMonth}
-        formatDateFull={formatDateFull}
-        daysOfWeek={weekDays}
-        id="myCalendar"
-        minDate={new Date(2010, 1, 1)}
-        maxDate={new Date(2010, 12, 31)}
-        selectedDate={new Date(2010, 1, 15)}
-        onDateSelect={onDateSelect}
-      />,
-    );
-
-    expect(calendar.find('BpkCalendarScrollGrid')).to.have.length(12);
-  });
-
   it('should focus the correct date when `initiallyFocusedDate` is set and selected date is not', () => {
     const tree = renderer
       .create(
