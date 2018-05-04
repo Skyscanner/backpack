@@ -71,8 +71,10 @@ class BpkThemeToggle extends React.Component {
       : 0;
     if (selectedIndex >= availableThemes.length) {
       selectedIndex = 0;
+      selectedTheme = null;
+    } else {
+      selectedTheme = availableThemes[selectedIndex];
     }
-    selectedTheme = availableThemes[selectedIndex];
     this.setState({ selectedTheme });
     setTheme(bpkCustomThemes[selectedTheme]);
   };
