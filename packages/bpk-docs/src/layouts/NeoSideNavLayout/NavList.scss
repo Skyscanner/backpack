@@ -38,8 +38,9 @@
     bottom: 0;
     left: 0;
     z-index: 2;
-    background-color: $bpk-color-gray-900;
     opacity: .7;
+
+    @include bpk-themeable-property(background-color, --bpk-docs-sidebar-background, $bpk-color-gray-900);
   }
 
   &__list-item {
@@ -112,7 +113,7 @@
     display: block;
     padding: $bpk-spacing-md 0;
 
-    @include bpk-border-bottom-sm($bpk-color-gray-700);
+    @include bpk-border-bottom-sm(var(--bpk-docs-sidebar-link-border, $bpk-color-gray-700));
 
     *:last-child > & {
       box-shadow: none;

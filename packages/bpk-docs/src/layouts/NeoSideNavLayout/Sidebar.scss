@@ -20,7 +20,7 @@
 
 .bpkdocs-sidebar {
   padding: $bpk-spacing-base;
-  background-color: $bpk-color-gray-900;
+  background-color: var(--bpk-docs-sidebar-background, $bpk-color-gray-900);
   color: $bpk-color-white;
 
   @include bpk-breakpoint-tablet {
