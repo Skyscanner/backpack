@@ -22,6 +22,9 @@ import {
   calendarDayHoverColor,
   calendarDayActiveColor,
   colorGray100,
+  colorGray500,
+  colorGray700,
+  colorGray900,
   colorWhite,
 } from 'bpk-tokens/tokens/base.es6';
 
@@ -172,4 +175,20 @@ const bpkCustomThemes = {
   Doha: generateTheme(dohaTheme),
 };
 
+if (process.env.BPK_NEO) {
+  bpkCustomThemes.London.docsSidebarBackground = londonTheme.secondaryColor500;
+  bpkCustomThemes.London.docsSidebarLink = londonTheme.secondaryColor300;
+  bpkCustomThemes.London.docsSidebarLinkBorder = londonTheme.secondaryColor300;
+
+  bpkCustomThemes['Hong Kong'].docsSidebarBackground =
+    hongKongTheme.secondaryColor500;
+  bpkCustomThemes['Hong Kong'].docsSidebarLink =
+    hongKongTheme.secondaryColor300;
+  bpkCustomThemes['Hong Kong'].docsSidebarLinkBorder =
+    hongKongTheme.secondaryColor300;
+
+  bpkCustomThemes.Doha.docsSidebarBackground = dohaTheme.primaryColor700;
+  bpkCustomThemes.Doha.docsSidebarLink = dohaTheme.primaryColor300;
+  bpkCustomThemes.Doha.docsSidebarLinkBorder = dohaTheme.primaryColor300;
+}
 export default bpkCustomThemes;
