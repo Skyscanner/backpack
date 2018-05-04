@@ -174,22 +174,21 @@ const bpkCustomThemes = {
   'Hong Kong': generateTheme(hongKongTheme),
   Doha: generateTheme(dohaTheme),
 };
+
 if (process.env.BPK_NEO) {
-  const londonTheme = {
-    primaryColor300: '#F28494',
-    primaryColor500: '#ED1B28',
-    primaryColor600: '#D11622',
-    primaryColor700: '#B1121C',
-    secondaryColor300: '#6889AB',
-    secondaryColor500: '#013A76',
-    secondaryColor600: '#002F61',
-    secondaryColor700: '#00254B',
-  };
-
-  bpkCustomThemes.London = generateTheme(londonTheme);
-
   bpkCustomThemes.London.docsSidebarBackground = londonTheme.secondaryColor500;
   bpkCustomThemes.London.docsSidebarLink = londonTheme.secondaryColor300;
   bpkCustomThemes.London.docsSidebarLinkBorder = londonTheme.secondaryColor300;
+
+  bpkCustomThemes['Hong Kong'].docsSidebarBackground =
+    hongKongTheme.secondaryColor500;
+  bpkCustomThemes['Hong Kong'].docsSidebarLink =
+    hongKongTheme.secondaryColor300;
+  bpkCustomThemes['Hong Kong'].docsSidebarLinkBorder =
+    hongKongTheme.secondaryColor300;
+
+  bpkCustomThemes.Doha.docsSidebarBackground = dohaTheme.secondaryColor500;
+  bpkCustomThemes.Doha.docsSidebarLink = dohaTheme.secondaryColor300;
+  bpkCustomThemes.Doha.docsSidebarLinkBorder = dohaTheme.secondaryColor300;
 }
 export default bpkCustomThemes;
