@@ -27,6 +27,7 @@ import androidScreenshotWithImages from 'react-native-bpk-component-section-list
 
 import Paragraph from './../../components/Paragraph';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
+import DocsPageWrapper from './../../components/neo/DocsPageWrapper';
 
 const REACT_NATIVE_SECTION_LIST_URI =
   'https://facebook.github.io/react-native/docs/sectionlist.html';
@@ -79,19 +80,22 @@ const components = [
   },
 ];
 
+const isNeo = process.env.BPK_NEO;
+
+const blurb = [
+  <Paragraph>
+    Section List can be used for rendering sectioned lists. It&#39;s a wrapper
+    around React Native&#39;s{' '}
+    <BpkLink href={REACT_NATIVE_SECTION_LIST_URI}>
+      SectionList component
+    </BpkLink>, therefore it supports all the same behaviours and properties.
+  </Paragraph>,
+];
+
 const NativeSectionListPage = ({ ...rest }) => (
   <DocsPageBuilder
     title="Section List"
-    blurb={[
-      <Paragraph>
-        Section List can be used for rendering sectioned lists. It&#39;s a
-        wrapper around React Native&#39;s{' '}
-        <BpkLink href={REACT_NATIVE_SECTION_LIST_URI}>
-          SectionList component
-        </BpkLink>, therefore it supports all the same behaviours and
-        properties.
-      </Paragraph>,
-    ]}
+    blurb={isNeo ? null : blurb}
     components={components}
     readme={readme}
     showMenu
@@ -99,4 +103,12 @@ const NativeSectionListPage = ({ ...rest }) => (
   />
 );
 
-export default NativeSectionListPage;
+const NeoNativeSectionListPage = () => (
+  <DocsPageWrapper
+    title="Section list"
+    blurb={blurb}
+    nativeSubpage={<NativeSectionListPage wrapped />}
+  />
+);
+
+export default (isNeo ? NeoNativeSectionListPage : NativeSectionListPage);

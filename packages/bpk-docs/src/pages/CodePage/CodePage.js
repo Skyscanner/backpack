@@ -22,6 +22,7 @@ import { BpkCode, BpkCodeBlock } from 'bpk-component-code';
 import codeReadme from 'bpk-component-code/readme.md';
 
 import DocsPageBuilder from './../../components/DocsPageBuilder';
+import DocsPageWrapper from './../../components/neo/DocsPageWrapper';
 import Paragraph from './../../components/Paragraph';
 
 const blurb = [
@@ -52,13 +53,24 @@ const components = [
   },
 ];
 
-const CodePage = () => (
+const isNeo = process.env.BPK_NEO;
+
+const CodePage = ({ ...rest }) => (
   <DocsPageBuilder
     title="Code"
     readme={codeReadme}
-    blurb={blurb}
+    blurb={isNeo ? null : blurb}
     components={components}
+    {...rest}
   />
 );
 
-export default CodePage;
+const NeoCodePage = () => (
+  <DocsPageWrapper
+    title="Code"
+    blurb={blurb}
+    webSubpage={<CodePage wrapped />}
+  />
+);
+
+export default (isNeo ? NeoCodePage : CodePage);

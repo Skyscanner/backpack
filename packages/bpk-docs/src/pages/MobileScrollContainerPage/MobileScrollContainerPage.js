@@ -25,6 +25,7 @@ import mobileScrollContainerReadme from 'bpk-component-mobile-scroll-container/r
 import BlockExample from './BlockExample';
 import Paragraph from './../../components/Paragraph';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
+import DocsPageWrapper from './../../components/neo/DocsPageWrapper';
 import { BARCHARTS, HORIZONTAL_NAV } from './../../constants/routes';
 
 const components = [
@@ -35,26 +36,41 @@ const components = [
   },
 ];
 
-const MobileScrollContainerPage = () => (
+const isNeo = process.env.BPK_NEO;
+
+const blurb = [
+  <Paragraph>
+    In the majority of cases, components and content should be designed with
+    viewport and container fluidity in mind i.e. horizontal list items should
+    stack on top of each other and overflowing text should wrap on to the next
+    line. There are some cases where it is desireable to maintain a fixed width
+    on certain content (see{' '}
+    <BpkRouterLink to={BARCHARTS}>bar charts</BpkRouterLink> and{' '}
+    <BpkRouterLink to={HORIZONTAL_NAV}>horizontal navigation</BpkRouterLink>).
+    Mobile scroll containers will hide overflowing content and display a fading
+    indicator to let the user know that the content is scrollable.
+  </Paragraph>,
+];
+
+const MobileScrollContainerPage = ({ ...rest }: { [string]: any }) => (
   <DocsPageBuilder
     title="Mobile scroll container"
-    blurb={[
-      <Paragraph>
-        In the majority of cases, components and content should be designed with
-        viewport and container fluidity in mind i.e. horizontal list items
-        should stack on top of each other and overflowing text should wrap on to
-        the next line. There are some cases where it is desireable to maintain a
-        fixed width on certain content (see{' '}
-        <BpkRouterLink to={BARCHARTS}>bar charts</BpkRouterLink> and{' '}
-        <BpkRouterLink to={HORIZONTAL_NAV}>horizontal navigation</BpkRouterLink>).
-        Mobile scroll containers will hide overflowing content and display a
-        fading indicator to let the user know that the content is scrollable.
-      </Paragraph>,
-    ]}
+    blurb={isNeo ? null : blurb}
     components={components}
     readme={mobileScrollContainerReadme}
     showMenu={false}
+    {...rest}
   />
 );
 
-export default MobileScrollContainerPage;
+const NeoMobileScrollContainerPage = () => (
+  <DocsPageWrapper
+    title="Mobile scroll container"
+    blurb={blurb}
+    webSubpage={<MobileScrollContainerPage wrapped />}
+  />
+);
+
+export default (isNeo
+  ? NeoMobileScrollContainerPage
+  : MobileScrollContainerPage);

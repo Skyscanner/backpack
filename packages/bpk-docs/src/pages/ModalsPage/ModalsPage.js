@@ -27,6 +27,7 @@ import modalReadme from 'bpk-component-modal/readme.md';
 
 import LoginFormExample from './LoginFormExample';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
+import DocsPageWrapper from './../../components/neo/DocsPageWrapper';
 import Paragraph from './../../components/Paragraph';
 
 type Props = {
@@ -177,17 +178,21 @@ const components = [
   },
 ];
 
-const ModalsPage = () => (
+const isNeo = process.env.BPK_NEO;
+
+const blurb = [
+  <Paragraph>
+    Modals are used to display content or views that are separate from the rest
+    of the app or page. When triggered, modals will emerge from the centre of
+    the viewport with a backdrop to indicate their separation from everything
+    else.
+  </Paragraph>,
+];
+
+const ModalsPage = ({ ...rest }: { [string]: any }) => (
   <DocsPageBuilder
     title="Modals"
-    blurb={[
-      <Paragraph>
-        Modals are used to display content or views that are separate from the
-        rest of the app or page. When triggered, modals will emerge from the
-        centre of the viewport with a backdrop to indicate their separation from
-        everything else.
-      </Paragraph>,
-    ]}
+    blurb={isNeo ? null : blurb}
     components={components}
     readme={modalReadme}
     usageTable={{
@@ -207,7 +212,16 @@ const ModalsPage = () => (
       ],
     }}
     sassdocId="modals"
+    {...rest}
   />
 );
 
-export default ModalsPage;
+const NeoModalPage = () => (
+  <DocsPageWrapper
+    title="Modal"
+    blurb={blurb}
+    webSubpage={<ModalsPage wrapped />}
+  />
+);
+
+export default (isNeo ? NeoModalPage : ModalsPage);

@@ -30,6 +30,8 @@ import autosuggestReadme from 'bpk-component-autosuggest/readme.md';
 
 import * as ROUTES from './../../constants/routes';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
+import DocsPageWrapper from './../../components/neo/DocsPageWrapper';
+
 import Paragraph from './../../components/Paragraph';
 
 const BpkFlightIcon = withRtlSupport(FlightIcon);
@@ -266,19 +268,32 @@ const components = [
   },
 ];
 
-const AutosuggestPage = () => (
+const isNeo = process.env.BPK_NEO;
+
+const blurb = [
+  <Paragraph>
+    The autosuggest component assists users in query creation and completion by
+    searching a dynamic list for related keywords, phrases and items.
+  </Paragraph>,
+];
+
+const AutosuggestPage = ({ ...rest }) => (
   <DocsPageBuilder
     title="Autosuggest"
-    blurb={[
-      <Paragraph>
-        The autosuggest component assists users in query creation and completion
-        by searching a dynamic list for related keywords, phrases and items.
-      </Paragraph>,
-    ]}
+    blurb={isNeo ? null : blurb}
     components={components}
     readme={autosuggestReadme}
     sassdocId="autosuggest"
+    {...rest}
   />
 );
 
-export default AutosuggestPage;
+const NeoAutosuggestPage = () => (
+  <DocsPageWrapper
+    title="Autosuggest"
+    blurb={blurb}
+    webSubpage={<AutosuggestPage wrapped />}
+  />
+);
+
+export default (isNeo ? NeoAutosuggestPage : AutosuggestPage);

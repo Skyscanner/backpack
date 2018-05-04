@@ -128,6 +128,7 @@ import NeoLinkPage from './../pages/NeoLinkPage';
 import NeoNavigationBarPage from './../pages/NeoNavigationBarPage';
 import NeoNudgerPage from './../pages/NeoNudgerPage';
 import NeoPanelPage from './../pages/NeoPanelPage';
+import NeoProgressPage from './../pages/NeoProgressPage';
 import NeoSpinnerPage from './../pages/NeoSpinnerPage';
 import NeoStarRatingPage from './../pages/NeoStarRatingPage';
 import NeoTextPage from './../pages/NeoTextPage';
@@ -285,7 +286,7 @@ const Routes = (
         <Route path={ROUTES.NEO_TOOLTIP} component={TooltipsPage} />
         <Route path={ROUTES.NEO_ACCORDION} component={AccordionsPage} />
         <Route path={ROUTES.NEO_NUDGER} component={NeoNudgerPage} />
-        <Route path={ROUTES.NEO_PROGRESS} component={ProgressPage} />
+        <Route path={ROUTES.NEO_PROGRESS} component={NeoProgressPage} />
         <Route path={ROUTES.NEO_TICKET} component={TicketsPage} />
         <Route
           path={ROUTES.NEO_HORIZONTAL_NAV}

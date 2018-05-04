@@ -23,6 +23,7 @@ import dialogReadme from 'bpk-component-dialog/readme.md';
 
 import Paragraph from './../../components/Paragraph';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
+import DocsPageWrapper from './../../components/neo/DocsPageWrapper';
 import {
   DialogContainer,
   NonDismissibleDialogContainer,
@@ -66,10 +67,12 @@ const blurb = [
   </Paragraph>,
 ];
 
-const DialogsPage = () => (
+const isNeo = process.env.BPK_NEO;
+
+const DialogsPage = ({ ...rest }: { [string]: any }) => (
   <DocsPageBuilder
-    title="Dialog"
-    blurb={blurb}
+    title="Dialogs"
+    blurb={isNeo ? null : blurb}
     components={components}
     readme={dialogReadme}
     usageTable={{
@@ -86,7 +89,16 @@ const DialogsPage = () => (
       ],
     }}
     sassdocId="dialogs"
+    {...rest}
   />
 );
 
-export default DialogsPage;
+const NeoDialogsPage = () => (
+  <DocsPageWrapper
+    title="Dialog"
+    blurb={blurb}
+    webSubpage={<DialogsPage wrapped />}
+  />
+);
+
+export default (isNeo ? NeoDialogsPage : DialogsPage);

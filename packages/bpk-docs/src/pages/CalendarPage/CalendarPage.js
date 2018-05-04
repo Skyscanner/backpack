@@ -27,6 +27,7 @@ import BpkCalendar, {
 
 import calendarReadme from 'bpk-component-calendar/readme.md';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
+import DocsPageWrapper from './../../components/neo/DocsPageWrapper';
 import Paragraph from './../../components/Paragraph';
 import addMonths from '../../../../bpk-component-calendar/node_modules/date-fns/add_months';
 import {
@@ -178,18 +179,31 @@ const components = [
   },
 ];
 
-const CalendarPage = () => (
+const isNeo = process.env.BPK_NEO;
+
+const blurb = [
+  <Paragraph>
+    Calendars are used for date selection within a defined time period.
+  </Paragraph>,
+];
+
+const CalendarPage = ({ ...rest }) => (
   <DocsPageBuilder
     title="Calendar"
-    blurb={[
-      <Paragraph>
-        Calendars are used for date selection within a defined time period.
-      </Paragraph>,
-    ]}
+    blurb={isNeo ? null : blurb}
     components={components}
     readme={calendarReadme}
     sassdocId="calendar"
+    {...rest}
   />
 );
 
-export default CalendarPage;
+const NeoCalendarPage = () => (
+  <DocsPageWrapper
+    title="Calendar"
+    blurb={blurb}
+    webSubpage={<CalendarPage wrapped />}
+  />
+);
+
+export default (isNeo ? NeoCalendarPage : CalendarPage);

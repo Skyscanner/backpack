@@ -18,6 +18,7 @@
 
 import PropTypes from 'prop-types';
 import React from 'react';
+import Helmet from 'react-helmet';
 import BpkContentContainer from 'bpk-component-content-container';
 import BpkHorizontalNav, {
   BpkHorizontalNavItem,
@@ -59,60 +60,65 @@ class DocsPageWrapper extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = { selected: 'native' };
+    this.state = { selected: this.props.nativeSubpage ? 'native' : 'web' };
   }
 
   render() {
     const { blurb, nativeSubpage, title, webSubpage } = this.props;
 
-    const showPlatformSwitcher = webSubpage && nativeSubpage;
-    const selectedSubpage = webSubpage || nativeSubpage;
-
     return (
       <BpkContentContainer className={getClassName('bpkdocs-page-wrapper')}>
+        <Helmet title={title} />
         <div className={getClassName('bpkdocs-page-wrapper__inner')}>
           <Heading level="h1">{title}</Heading>
           {blurb && <Blurb content={blurb} />}
         </div>
-        {showPlatformSwitcher && (
-          <div>
-            <BpkHorizontalNav
-              className={getClassName(
-                'bpkdocs-page-wrapper__platform-switcher',
-              )}
+        <div>
+          <BpkHorizontalNav
+            className={getClassName('bpkdocs-page-wrapper__platform-switcher')}
+          >
+            <BpkHorizontalNavItem
+              name="native"
+              disabled={!nativeSubpage}
+              className={
+                nativeSubpage
+                  ? null
+                  : getClassName(
+                      'bpkdocs-page-wrapper__platform-switcher-item--disabled',
+                    )
+              }
+              selected={this.state.selected === 'native'}
+              onClick={() => this.setState({ selected: 'native' })}
             >
-              <BpkHorizontalNavItem
-                name="native"
-                selected={this.state.selected === 'native'}
-                onClick={() => this.setState({ selected: 'native' })}
-              >
-                <AlignedBpkSmallMobileIcon
-                  className={getClassName(
-                    'bpkdocs-page-wrapper__platform-icon',
-                  )}
-                />
-                Native
-              </BpkHorizontalNavItem>
-              <BpkHorizontalNavItem
-                name="web"
-                selected={this.state.selected === 'web'}
-                onClick={() => this.setState({ selected: 'web' })}
-              >
-                <AlignedBpkSmallWindowIcon
-                  className={getClassName(
-                    'bpkdocs-page-wrapper__platform-icon',
-                  )}
-                />
-                Web
-              </BpkHorizontalNavItem>
-            </BpkHorizontalNav>
-            <div>
-              {this.state.selected === 'native' && nativeSubpage}
-              {this.state.selected === 'web' && webSubpage}
-            </div>
+              <AlignedBpkSmallMobileIcon
+                className={getClassName('bpkdocs-page-wrapper__platform-icon')}
+              />
+              Native
+            </BpkHorizontalNavItem>
+            <BpkHorizontalNavItem
+              name="web"
+              disabled={!webSubpage}
+              className={
+                webSubpage
+                  ? null
+                  : getClassName(
+                      'bpkdocs-page-wrapper__platform-switcher-item--disabled',
+                    )
+              }
+              selected={this.state.selected === 'web'}
+              onClick={() => this.setState({ selected: 'web' })}
+            >
+              <AlignedBpkSmallWindowIcon
+                className={getClassName('bpkdocs-page-wrapper__platform-icon')}
+              />
+              Web
+            </BpkHorizontalNavItem>
+          </BpkHorizontalNav>
+          <div>
+            {this.state.selected === 'native' && nativeSubpage}
+            {this.state.selected === 'web' && webSubpage}
           </div>
-        )}
-        {!showPlatformSwitcher && selectedSubpage}
+        </div>
       </BpkContentContainer>
     );
   }

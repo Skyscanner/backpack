@@ -25,6 +25,7 @@ import { BpkButtonLink } from 'bpk-component-link';
 import drawerReadme from 'bpk-component-drawer/readme.md';
 
 import DocsPageBuilder from './../../components/DocsPageBuilder';
+import DocsPageWrapper from './../../components/neo/DocsPageWrapper';
 import Paragraph from './../../components/Paragraph';
 
 class DrawerContainer extends Component {
@@ -115,20 +116,29 @@ const components = [
   },
 ];
 
+const isNeo = process.env.BPK_NEO;
+
 const blurb = [
   <Paragraph>
     Drawers slide in from the edge of the screen and are used to display content
-    on top of the current view.
   </Paragraph>,
 ];
 
 const DrawerPage = () => (
   <DocsPageBuilder
     title="Drawer"
-    blurb={blurb}
+    blurb={isNeo ? null : blurb}
     components={components}
     readme={drawerReadme}
   />
 );
 
-export default DrawerPage;
+const NeoDrawerPage = () => (
+  <DocsPageWrapper
+    title="Drawer"
+    blurb={blurb}
+    webSubpage={<DrawerPage wrapped />}
+  />
+);
+
+export default (isNeo ? NeoDrawerPage : DrawerPage);

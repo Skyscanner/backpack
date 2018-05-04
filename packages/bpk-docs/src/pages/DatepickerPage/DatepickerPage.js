@@ -23,6 +23,7 @@ import BpkRouterLink from 'bpk-component-router-link';
 import datepickerReadme from 'bpk-component-datepicker/readme.md';
 import * as ROUTES from './../../constants/routes';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
+import DocsPageWrapper from './../../components/neo/DocsPageWrapper';
 import format from '../../../../bpk-component-calendar/node_modules/date-fns/format';
 import Paragraph from './../../components/Paragraph';
 import { weekDays } from '../../../../bpk-component-calendar/test-utils';
@@ -84,20 +85,33 @@ const components = [
   },
 ];
 
-const DatepickerPage = () => (
+const isNeo = process.env.BPK_NEO;
+
+const blurb = [
+  <Paragraph>
+    The datepicker is an input control that allows the user to pick a single
+    date. It embeds a{' '}
+    <BpkRouterLink to={ROUTES.CALENDAR}>calendar component</BpkRouterLink> in a{' '}
+    <BpkRouterLink to={ROUTES.POPOVERS}>popover</BpkRouterLink>.
+  </Paragraph>,
+];
+
+const DatepickerPage = ({ ...rest }) => (
   <DocsPageBuilder
     title="Datepicker"
-    blurb={[
-      <Paragraph>
-        The datepicker is an input control that allows the user to pick a single
-        date. It embeds a{' '}
-        <BpkRouterLink to={ROUTES.CALENDAR}>calendar component</BpkRouterLink>{' '}
-        in a <BpkRouterLink to={ROUTES.POPOVERS}>popover</BpkRouterLink>.
-      </Paragraph>,
-    ]}
+    blurb={isNeo ? null : blurb}
     components={components}
     readme={datepickerReadme}
+    {...rest}
   />
 );
 
-export default DatepickerPage;
+const NeoDatepickerPage = () => (
+  <DocsPageWrapper
+    title="Date picker"
+    blurb={blurb}
+    webSubpage={<DatepickerPage wrapped />}
+  />
+);
+
+export default (isNeo ? NeoDatepickerPage : DatepickerPage);

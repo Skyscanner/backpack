@@ -26,6 +26,7 @@ import {
 import descriptionlistsReadme from 'bpk-component-description-list/readme.md';
 
 import DocsPageBuilder from './../../components/DocsPageBuilder';
+import DocsPageWrapper from './../../components/neo/DocsPageWrapper';
 import Paragraph from './../../components/Paragraph';
 
 const blurb = [
@@ -62,13 +63,24 @@ const components = [
   },
 ];
 
-const DescriptionListsPage = () => (
+const isNeo = process.env.BPK_NEO;
+
+const DescriptionListsPage = ({ ...rest }) => (
   <DocsPageBuilder
     title="Description Lists"
     readme={descriptionlistsReadme}
-    blurb={blurb}
+    blurb={isNeo ? null : blurb}
     components={components}
+    {...rest}
   />
 );
 
-export default DescriptionListsPage;
+const NeoDescriptionListPage = () => (
+  <DocsPageWrapper
+    title="Description list"
+    blurb={blurb}
+    webSubpage={<DescriptionListsPage wrapped />}
+  />
+);
+
+export default (isNeo ? NeoDescriptionListPage : DescriptionListsPage);

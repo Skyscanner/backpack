@@ -22,6 +22,7 @@ import sliderReadme from 'bpk-component-slider/readme.md';
 import { updateOnDirectionChange } from 'bpk-component-rtl-toggle';
 
 import DocsPageBuilder from './../../components/DocsPageBuilder';
+import DocsPageWrapper from './../../components/neo/DocsPageWrapper';
 import Paragraph from './../../components/Paragraph';
 
 const EnhancedSlider = updateOnDirectionChange(BpkSlider);
@@ -76,17 +77,30 @@ const components = [
   },
 ];
 
-const SlidersPage = () => (
+const isNeo = process.env.BPK_NEO;
+
+const blurb = [
+  <Paragraph>
+    Sliders are a great way of getting input from the user.
+  </Paragraph>,
+];
+
+const SlidersPage = ({ ...rest }) => (
   <DocsPageBuilder
     title="Sliders"
-    blurb={[
-      <Paragraph>
-        Sliders are a great way of getting input from the user.
-      </Paragraph>,
-    ]}
+    blurb={isNeo ? null : blurb}
     components={components}
     readme={sliderReadme}
+    {...rest}
   />
 );
 
-export default SlidersPage;
+const NeoSliderPage = () => (
+  <DocsPageWrapper
+    title="Slider"
+    blurb={blurb}
+    webSubpage={<SlidersPage wrapped />}
+  />
+);
+
+export default (isNeo ? NeoSliderPage : SlidersPage);

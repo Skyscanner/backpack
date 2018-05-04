@@ -26,6 +26,7 @@ import androidScreenshotPhoneNumberInput from 'react-native-bpk-component-phone-
 
 import Paragraph from './../../components/Paragraph';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
+import DocsPageWrapper from './../../components/neo/DocsPageWrapper';
 
 const components = [
   {
@@ -74,27 +75,40 @@ const components = [
   },
 ];
 
-const NativeInputPage = () => (
+const isNeo = process.env.BPK_NEO;
+
+const blurb = [
+  <Paragraph>
+    The Backpack phone number input package contains two components that
+    together enable the collection of phone numbers. <br />These are:
+    <BpkList>
+      <BpkListItem>A dialing code list component.</BpkListItem>
+      <BpkListItem>A specialized text input field.</BpkListItem>
+    </BpkList>
+    Consumers are responsible for using these two components together. The
+    accessory view in the text input shall present the dialing code list when
+    tapped and a selection should update the dialing code set in the input
+    component.
+  </Paragraph>,
+];
+
+const NativeInputPage = ({ ...rest }) => (
   <DocsPageBuilder
     title="Phone number input"
-    blurb={[
-      <Paragraph>
-        The Backpack phone number input package contains two components that
-        together enable the collection of phone numbers. <br />These are:
-        <BpkList>
-          <BpkListItem>A dialing code list component.</BpkListItem>
-          <BpkListItem>A specialized text input field.</BpkListItem>
-        </BpkList>
-        Consumers are responsible for using these two components together. The
-        accessory view in the text input shall present the dialing code list
-        when tapped and a selection should update the dialing code set in the
-        input component.
-      </Paragraph>,
-    ]}
+    blurb={isNeo ? null : blurb}
     components={components}
     readme={readme}
     showMenu={false}
+    {...rest}
   />
 );
 
-export default NativeInputPage;
+const NeoNativeInputPage = () => (
+  <DocsPageWrapper
+    title="Phone number input"
+    blurb={blurb}
+    nativeSubpage={<NativeInputPage wrapped />}
+  />
+);
+
+export default (isNeo ? NeoNativeInputPage : NativeInputPage);

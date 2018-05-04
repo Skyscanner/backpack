@@ -39,6 +39,7 @@ import validationReadme from 'bpk-component-form-validation/readme.md';
 import STYLES from './forms-page.scss';
 import * as ROUTES from './../../constants/routes';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
+import DocsPageWrapper from './../../components/neo/DocsPageWrapper';
 import InputContainer from './InputContainer';
 import BpkParagraph from './../../components/Paragraph';
 import RadioContainer from './RadioContainer';
@@ -711,19 +712,30 @@ const components = [
   },
 ];
 
+const isNeo = process.env.BPK_NEO;
+
 const pageBlurb = [
   <BpkParagraph>
     A range of common inputs for capturing user data.
   </BpkParagraph>,
 ];
 
-const FormsPage = () => (
+const FormsPage = ({ ...rest }) => (
   <DocsPageBuilder
     title="Form elements"
-    blurb={pageBlurb}
+    blurb={isNeo ? null : pageBlurb}
     components={components}
     sassdocId="forms"
+    {...rest}
   />
 );
 
-export default FormsPage;
+const NeoFormsPage = () => (
+  <DocsPageWrapper
+    title="Forms"
+    blurb={blurb}
+    webSubpage={<FormsPage wrapped />}
+  />
+);
+
+export default (isNeo ? NeoFormsPage : FormsPage);

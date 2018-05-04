@@ -33,6 +33,7 @@ import BpkAutosuggest, {
 import STYLES from './fieldsets-page.scss';
 import * as ROUTES from './../../constants/routes';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
+import DocsPageWrapper from './../../components/neo/DocsPageWrapper';
 import Paragraph from './../../components/Paragraph';
 
 const getClassName = cssModules(STYLES);
@@ -313,6 +314,8 @@ const components = [
   },
 ];
 
+const isNeo = process.env.BPK_NEO;
+
 const blurb = [
   <Paragraph>
     Fieldsets encapsulate the composition of{' '}
@@ -327,13 +330,22 @@ const blurb = [
   </Paragraph>,
 ];
 
-const FieldsetPage = () => (
+const FieldsetPage = ({ ...rest }) => (
   <DocsPageBuilder
-    title="Fieldset"
-    blurb={blurb}
+    title="Fieldsets"
+    blurb={isNeo ? null : blurb}
     components={components}
     readme={readme}
+    {...rest}
   />
 );
 
-export default FieldsetPage;
+const NeoFieldsetPage = () => (
+  <DocsPageWrapper
+    title="Fieldset"
+    blurb={blurb}
+    webSubpage={<FieldsetPage wrapped />}
+  />
+);
+
+export default (isNeo ? NeoFieldsetPage : FieldsetPage);

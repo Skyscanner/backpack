@@ -36,6 +36,7 @@ import LongArrowRightIcon from 'bpk-component-icon/lg/long-arrow-right';
 import LongArrowRightIconSm from 'bpk-component-icon/sm/long-arrow-right';
 import AwardIcon from 'bpk-component-icon/lg/award';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
+import DocsPageWrapper from './../../components/neo/DocsPageWrapper';
 import Heading from './../../components/Heading';
 import Paragraph from './../../components/Paragraph';
 import Code from '../../components/Code';
@@ -223,7 +224,9 @@ const AlignedArrow = withLargeButtonAlignment(LongArrowRightIcon);
   },
 ];
 
-const AlignmentPage = () => (
+const isNeo = process.env.BPK_NEO;
+
+const AlignmentPage = ({ ...rest }) => (
   <DocsPageBuilder
     title="Alignment"
     blurb={[
@@ -239,7 +242,16 @@ const AlignmentPage = () => (
       </Paragraph>,
     ]}
     components={components}
+    {...rest}
   />
 );
 
-export default AlignmentPage;
+const NeoAlignmentPage = () => (
+  <DocsPageWrapper
+    title="Alignment"
+    blurb={[<Paragraph>TODO</Paragraph>]}
+    webSubpage={<AlignmentPage wrapped />}
+  />
+);
+
+export default (isNeo ? NeoAlignmentPage : AlignmentPage);
