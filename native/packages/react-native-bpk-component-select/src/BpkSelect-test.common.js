@@ -21,6 +21,8 @@ import { View } from 'react-native';
 import TestRenderer from 'react-test-renderer';
 import BpkSelect from './BpkSelect';
 
+const Image = 'Image';
+
 const commonTests = () => {
   describe('BpkSelect', () => {
     const emptyFn = () => null;
@@ -53,6 +55,20 @@ const commonTests = () => {
     it('should render correctly with custom styles', () => {
       const testRenderer = TestRenderer.create(
         <BpkSelect label="label" onPress={emptyFn} style={{ marginTop: 10 }} />,
+      );
+      expect(testRenderer.toJSON()).toMatchSnapshot();
+    });
+
+    it('should render correctly with "showImage" and no image', () => {
+      const testRenderer = TestRenderer.create(
+        <BpkSelect onPress={emptyFn} showImage />,
+      );
+      expect(testRenderer.toJSON()).toMatchSnapshot();
+    });
+
+    it('should render correctly with "showImage" and image', () => {
+      const testRenderer = TestRenderer.create(
+        <BpkSelect onPress={emptyFn} showImage image={<Image />} />,
       );
       expect(testRenderer.toJSON()).toMatchSnapshot();
     });

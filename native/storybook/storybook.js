@@ -70,6 +70,7 @@ configure(() => {
   require('../packages/react-native-bpk-component-picker/stories');
   require('../packages/react-native-bpk-component-progress/stories');
   require('../packages/react-native-bpk-component-section-list/stories');
+  require('../packages/react-native-bpk-component-select/stories');
   require('../packages/react-native-bpk-component-spinner/stories');
   require('../packages/react-native-bpk-component-star-rating/stories');
   require('../packages/react-native-bpk-component-switch/stories');

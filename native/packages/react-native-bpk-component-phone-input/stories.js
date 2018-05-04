@@ -235,7 +235,7 @@ storiesOf('react-native-bpk-component-phone-input/BpkPhoneNumberInput', module)
       label="Phone number"
       initialValue=""
       keyboardType="phone-pad"
-      dialingCode={{ dialingCode: '+44', id: 'uk', name: 'United Kingdom' }}
+      dialingCode={{ dialingCode: '+61', id: 'au', name: 'Australia' }}
       renderFlag={() => (
         <Image source={{ uri: getFlagUriFromCountryCode('AU') }} />
       )}
@@ -247,7 +247,7 @@ storiesOf('react-native-bpk-component-phone-input/BpkPhoneNumberInput', module)
       label="Phone number"
       initialValue=""
       keyboardType="phone-pad"
-      dialingCode={{ dialingCode: '+44', id: 'uk', name: 'United Kingdom' }}
+      dialingCode={{ dialingCode: '+61', id: 'au', name: 'Australia' }}
       renderFlag={() => (
         <Image source={{ uri: getFlagUriFromCountryCode('AU') }} />
       )}

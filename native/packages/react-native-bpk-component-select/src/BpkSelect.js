@@ -18,7 +18,7 @@
 
 /* @flow */
 
-import React from 'react';
+import React, { cloneElement } from 'react';
 import {
   Platform,
   StyleSheet,
@@ -32,8 +32,11 @@ import BpkTouchableNativeFeedback from 'react-native-bpk-component-touchable-nat
 import BpkText from 'react-native-bpk-component-text';
 import BpkIcon, { icons } from 'react-native-bpk-component-icon';
 import {
+  colorGray50,
   colorGray100,
   borderSizeSm,
+  spacingBase,
+  spacingMd,
   spacingSm,
 } from 'bpk-tokens/tokens/base.react.native';
 
@@ -43,10 +46,25 @@ const styles = StyleSheet.create({
     borderColor: colorGray100,
     borderBottomWidth: borderSizeSm,
     justifyContent: 'space-between',
+    alignItems: 'center',
     paddingVertical: spacingSm,
+  },
+  contentWrapper: {
+    flex: 1,
+    flexDirection: 'row',
+    alignItems: 'center',
   },
   disabled: {
     color: colorGray100,
+  },
+  image: {
+    width: spacingBase,
+    height: spacingSm + spacingMd,
+    backgroundColor: colorGray50,
+    marginEnd: spacingMd,
+  },
+  icon: {
+    marginStart: spacingSm,
   },
 });
 
@@ -60,10 +78,14 @@ type Props = {
   disabled: boolean,
   label: ?(string | Element),
   style: ?any,
+
+  // Image
+  image: ?Element<typeof Image>,
+  showImage: boolean,
 };
 
 const BpkSelect = (props: Props) => {
-  const { disabled, label, onPress, style, ...rest } = props;
+  const { disabled, label, onPress, style, image, showImage, ...rest } = props;
 
   let content = label;
   if (label && typeof label === 'string') {
@@ -82,6 +104,13 @@ const BpkSelect = (props: Props) => {
   if (disabled) {
     accessibilityTraits.push('disabled');
   }
+  const styledImage = image ? (
+    cloneElement(image, {
+      style: [image.props.style, styles.image],
+    })
+  ) : (
+    <View style={styles.image} />
+  );
 
   return (
     <TouchablePlatformComponent
@@ -93,8 +122,11 @@ const BpkSelect = (props: Props) => {
       {...platformProps}
     >
       <View style={styles.trigger} {...rest}>
-        {content}
-        <BpkIcon icon={icons['arrow-down']} small />
+        <View style={styles.contentWrapper}>
+          {showImage && styledImage}
+          {content}
+        </View>
+        <BpkIcon style={styles.icon} icon={icons['arrow-down']} small />
       </View>
     </TouchablePlatformComponent>
   );
@@ -105,12 +137,20 @@ BpkSelect.propTypes = {
   disabled: PropTypes.bool,
   label: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
   style: ViewPropTypes.style,
+
+  // Image
+  image: PropTypes.element,
+  showImage: PropTypes.bool,
 };
 
 BpkSelect.defaultProps = {
   disabled: false,
   label: null,
   style: null,
+
+  // Image
+  image: null,
+  showImage: false,
 };
 
 export default BpkSelect;

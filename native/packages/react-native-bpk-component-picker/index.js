@@ -20,7 +20,6 @@
 
 import BpkPicker from './src/BpkPicker';
 import BpkPickerItem from './src/BpkPickerItem';
-import BpkPickerTrigger from './src/BpkPickerTrigger';
 
 export default BpkPicker;
-export { BpkPickerItem, BpkPickerTrigger };
+export { BpkPickerItem };

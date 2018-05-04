@@ -22,8 +22,7 @@ import React, { Component } from 'react';
 import { StyleSheet, View, ViewPropTypes } from 'react-native';
 import PropTypes from 'prop-types';
 import { storiesOf } from '@storybook/react-native';
-import { action } from '@storybook/addon-actions';
-import BpkText from 'react-native-bpk-component-text';
+import BpkSelect from 'react-native-bpk-component-select';
 import {
   colorGreen500,
   spacingBase,
@@ -32,7 +31,7 @@ import {
 import CenterDecorator from '../../storybook/CenterDecorator';
 import { StorySubheading } from '../../storybook/TextStyles';
 
-import BpkPicker, { BpkPickerItem, BpkPickerTrigger } from './index';
+import BpkPicker, { BpkPickerItem } from './index';
 import { type PickerValue } from './src/common-types';
 
 const styles = StyleSheet.create({
@@ -108,7 +107,7 @@ class StatefulBpkPicker extends Component<Props, State> {
     };
     return (
       <View style={style}>
-        <BpkPickerTrigger
+        <BpkSelect
           disabled={disabled}
           label={data[this.state.value] || 'Choose an option'}
           onPress={this.openPicker}
@@ -143,18 +142,5 @@ storiesOf('react-native-bpk-component-picker', module)
 
       <StorySubheading>Disabled</StorySubheading>
       <StatefulBpkPicker disabled style={styles.picker} />
-
-      <StorySubheading>
-        Using components within BpkPickerTrigger
-      </StorySubheading>
-      <BpkPickerTrigger
-        onPress={action('BpkPickerTrigger pressed.')}
-        label={
-          <View style={styles.triggerElementWithPrice}>
-            <BpkText>Flight</BpkText>
-            <BpkText style={styles.priceText}>EUR 100</BpkText>
-          </View>
-        }
-      />
     </View>
   ));
