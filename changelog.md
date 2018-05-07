@@ -2,6 +2,15 @@
 
 [Unreleased changes](./unreleased.md).
 
+# 2018-05-07 - React Native upgrade to version 0.55.3
+
+**Fixed:**
+- react-native-bpk-component-animate-height: 2.0.6 => 2.0.7
+  - fixed to work with react-native 0.55.3.
+
+- react-native-bpk-component-banner-alert: 4.0.0 => 4.0.1
+  - fixed to work with react-native 0.55.3.
+
 # 2018-05-04 - Fixed BpkNavigationBarButtonLink export
 
 **Fixed:**
