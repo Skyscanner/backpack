@@ -14,7 +14,8 @@ npm install react-native-bpk-component-picker --save-dev
 import React, { Component } from 'react';
 import { View, StyleSheet } from 'react-native';
 import { spacingBase } from 'bpk-tokens/tokens/base.react.native';
-import BpkPicker, { BpkPickerItem, BpkPickerTrigger } from 'react-native-bpk-component-picker';
+import BpkPicker, { BpkPickerItem } from 'react-native-bpk-component-picker';
+import BpkSelect from 'react-native-bpk-component-select';
 
 const styles = StyleSheet.create({
   container: {
@@ -69,7 +70,7 @@ export default class App extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <BpkPickerTrigger
+        <BpkSelect
           onPress={this.onOpen}
           label={this.state.value || 'Choose an airport'}
         />
@@ -110,10 +111,3 @@ export default class App extends Component {
 | label                | string                                | true     | -             |
 | value                | oneOfType(string, number)             | false    | null          |
 
-### BpkPickerTrigger
-
-| Property             | PropType                              | Required | Default Value |
-| -----------          | ------------------------------------- | -------- | ------------- |
-| onPress              | func                                  | true     | -             |
-| disabled             | bool                                  | false    | false         |
-| label                | oneOfType(string, element)            | false    | null          |

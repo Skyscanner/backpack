@@ -63,59 +63,58 @@ exports[`iOS BpkPhoneNumberInput should render correctly 1`] = `
     >
       <View
         style={
-          Array [
-            Object {
-              "alignItems": "center",
-              "borderBottomWidth": 1,
-              "borderColor": "rgb(230, 228, 235)",
-              "flexDirection": "row",
-            },
-            Object {
-              "flex": 1,
-            },
-          ]
+          Object {
+            "alignItems": "center",
+            "borderBottomWidth": 1,
+            "borderColor": "rgb(230, 228, 235)",
+            "flexDirection": "row",
+            "justifyContent": "space-between",
+            "paddingVertical": 4,
+          }
         }
       >
-        <Image
-          resizeMode="contain"
+        <View
           style={
-            Array [
-              Object {
-                "borderColor": "rgb(230, 228, 235)",
-                "borderWidth": 1,
-              },
-              Object {
-                "height": 10.666666666666666,
-                "width": 16,
-              },
-              Object {
-                "marginEnd": 4,
-              },
-            ]
-          }
-        />
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
-          style={
-            Array [
-              Object {
-                "color": "rgb(82, 76, 97)",
-                "fontFamily": "System",
-                "fontSize": 15,
-                "fontWeight": "400",
-              },
-              Array [
-                Object {
-                  "marginEnd": 4,
-                },
-              ],
-            ]
+            Object {
+              "alignItems": "center",
+              "flex": 1,
+              "flexDirection": "row",
+            }
           }
         >
-          +44
-        </Text>
+          <Image
+            resizeMode="contain"
+            style={
+              Array [
+                undefined,
+                Object {
+                  "backgroundColor": "rgb(243, 242, 245)",
+                  "height": 12,
+                  "marginEnd": 8,
+                  "width": 16,
+                },
+              ]
+            }
+          />
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Array [
+                Object {
+                  "color": "rgb(82, 76, 97)",
+                  "fontFamily": "System",
+                  "fontSize": 15,
+                  "fontWeight": "400",
+                },
+                Object {},
+              ]
+            }
+          >
+            +44
+          </Text>
+        </View>
         <Text
           accessible={true}
           allowFontScaling={true}
@@ -131,7 +130,9 @@ exports[`iOS BpkPhoneNumberInput should render correctly 1`] = `
               Object {
                 "fontSize": 16,
               },
-              Array [],
+              Object {
+                "marginStart": 4,
+              },
             ]
           }
         >
@@ -262,62 +263,60 @@ exports[`iOS BpkPhoneNumberInput should render correctly with \`editable\` false
     >
       <View
         style={
-          Array [
-            Object {
-              "alignItems": "center",
-              "borderBottomWidth": 1,
-              "borderColor": "rgb(230, 228, 235)",
-              "flexDirection": "row",
-            },
-            Object {
-              "flex": 1,
-            },
-          ]
+          Object {
+            "alignItems": "center",
+            "borderBottomWidth": 1,
+            "borderColor": "rgb(230, 228, 235)",
+            "flexDirection": "row",
+            "justifyContent": "space-between",
+            "paddingVertical": 4,
+          }
         }
       >
-        <Image
-          resizeMode="contain"
+        <View
           style={
-            Array [
-              Object {
-                "borderColor": "rgb(230, 228, 235)",
-                "borderWidth": 1,
-              },
-              Object {
-                "height": 10.666666666666666,
-                "width": 16,
-              },
-              Object {
-                "marginEnd": 4,
-              },
-            ]
+            Object {
+              "alignItems": "center",
+              "flex": 1,
+              "flexDirection": "row",
+            }
           }
-        />
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
-          style={
-            Array [
-              Object {
-                "color": "rgb(82, 76, 97)",
-                "fontFamily": "System",
-                "fontSize": 15,
-                "fontWeight": "400",
-              },
+        >
+          <Image
+            resizeMode="contain"
+            style={
+              Array [
+                undefined,
+                Object {
+                  "backgroundColor": "rgb(243, 242, 245)",
+                  "height": 12,
+                  "marginEnd": 8,
+                  "width": 16,
+                },
+              ]
+            }
+          />
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
               Array [
                 Object {
-                  "marginEnd": 4,
+                  "color": "rgb(82, 76, 97)",
+                  "fontFamily": "System",
+                  "fontSize": 15,
+                  "fontWeight": "400",
                 },
                 Object {
                   "color": "rgb(230, 228, 235)",
                 },
-              ],
-            ]
-          }
-        >
-          +44
-        </Text>
+              ]
+            }
+          >
+            +44
+          </Text>
+        </View>
         <Text
           accessible={true}
           allowFontScaling={true}
@@ -333,11 +332,9 @@ exports[`iOS BpkPhoneNumberInput should render correctly with \`editable\` false
               Object {
                 "fontSize": 16,
               },
-              Array [
-                Object {
-                  "color": "rgb(230, 228, 235)",
-                },
-              ],
+              Object {
+                "marginStart": 4,
+              },
             ]
           }
         >

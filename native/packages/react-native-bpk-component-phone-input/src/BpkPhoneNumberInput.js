@@ -17,14 +17,14 @@
  */
 /* @flow */
 
-import React from 'react';
-import { type Node } from 'react-native';
+import React, { cloneElement } from 'react';
+import { type Node, Platform, StyleSheet } from 'react-native';
 import PropTypes from 'prop-types';
 import BpkTextInput, {
   type BpkTextInputProps,
 } from 'react-native-bpk-component-text-input';
+import BpkSelect from 'react-native-bpk-component-select';
 import { type Code, CODE_PROP_TYPES, type RenderFlag } from './common-types';
-import BpkDialingCodeAccessoryView from './BpkDialingCodeAccessoryView';
 
 export type Props = {
   ...$Exact<$Diff<BpkTextInputProps, { accessoryView: ?Node }>>,
@@ -32,6 +32,12 @@ export type Props = {
   renderFlag: RenderFlag,
   onDialingCodePress: () => mixed,
 };
+
+const styles = StyleSheet.create({
+  accessoryViewiOS: {
+    justifyContent: 'flex-end',
+  },
+});
 
 const BpkPhoneNumberInput = (props: Props) => {
   const {
@@ -41,7 +47,12 @@ const BpkPhoneNumberInput = (props: Props) => {
     onDialingCodePress,
     ...rest
   } = props;
-  const flag = renderFlag(dialingCode);
+  let flag = renderFlag(dialingCode);
+  if (flag) {
+    flag = cloneElement(flag, {
+      resizeMode: flag.props.resizeMode || 'contain',
+    });
+  }
 
   return (
     <BpkTextInput
@@ -49,11 +60,16 @@ const BpkPhoneNumberInput = (props: Props) => {
       keyboardType="phone-pad"
       {...rest}
       accessoryView={
-        <BpkDialingCodeAccessoryView
+        <BpkSelect
           onPress={onDialingCodePress}
-          editable={editable}
-          flag={flag}
-          {...dialingCode}
+          label={dialingCode.dialingCode}
+          disabled={!editable}
+          image={flag}
+          showImage
+          style={Platform.select({
+            android: null,
+            ios: styles.accessoryViewiOS,
+          })}
         />
       }
     />
