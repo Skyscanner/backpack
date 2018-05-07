@@ -10,7 +10,9 @@ exports[`Android BpkPickerItem should render correctly 1`] = `
     ]
   }
   accessible={true}
+  hasTVPreferredFocus={undefined}
   hitSlop={undefined}
+  isTVSelectable={true}
   nativeBackgroundAndroid={
     Object {
       "attribute": "selectableItemBackground",
@@ -62,7 +64,9 @@ exports[`Android BpkPickerItem should render correctly with an onPress function 
     ]
   }
   accessible={true}
+  hasTVPreferredFocus={undefined}
   hitSlop={undefined}
+  isTVSelectable={true}
   nativeBackgroundAndroid={
     Object {
       "attribute": "selectableItemBackground",
@@ -115,7 +119,9 @@ exports[`Android BpkPickerItem should render correctly with the selected prop 1`
     ]
   }
   accessible={true}
+  hasTVPreferredFocus={undefined}
   hitSlop={undefined}
+  isTVSelectable={true}
   nativeBackgroundAndroid={
     Object {
       "attribute": "selectableItemBackground",

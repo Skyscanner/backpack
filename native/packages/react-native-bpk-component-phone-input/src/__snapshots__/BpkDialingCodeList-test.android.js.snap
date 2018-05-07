@@ -28,6 +28,7 @@ exports[`Android BpkDialingCodeList should render correctly 1`] = `
   getItemCount={[Function]}
   horizontal={false}
   initialNumToRender={10}
+  invertStickyHeaders={undefined}
   keyExtractor={[Function]}
   maxToRenderPerBatch={10}
   numColumns={1}
@@ -497,6 +498,7 @@ exports[`Android BpkDialingCodeList should render correctly with "selectedId" se
   getItemCount={[Function]}
   horizontal={false}
   initialNumToRender={10}
+  invertStickyHeaders={undefined}
   keyExtractor={[Function]}
   maxToRenderPerBatch={10}
   numColumns={1}

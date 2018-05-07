@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`iOS BpkStarRating should render correctly 1`] = `
-<View
+<Component
   accessibilityLabel="3 out of 5 stars"
   accessible={true}
   style={
@@ -25,11 +25,11 @@ exports[`iOS BpkStarRating should render correctly 1`] = `
   <BpkStar
     type="empty"
   />
-</View>
+</Component>
 `;
 
 exports[`iOS BpkStarRating should render correctly with custom \`maxRating\` attribute 1`] = `
-<View
+<Component
   accessibilityLabel="3 out of 10 stars"
   accessible={true}
   style={
@@ -68,11 +68,11 @@ exports[`iOS BpkStarRating should render correctly with custom \`maxRating\` att
   <BpkStar
     type="empty"
   />
-</View>
+</Component>
 `;
 
 exports[`iOS BpkStarRating should render correctly with ratingLabel passed as a string 1`] = `
-<View
+<Component
   accessibilityLabel="Star rating"
   accessible={true}
   style={
@@ -111,11 +111,11 @@ exports[`iOS BpkStarRating should render correctly with ratingLabel passed as a 
   <BpkStar
     type="empty"
   />
-</View>
+</Component>
 `;
 
 exports[`iOS BpkStarRating should render correctly with stars rounded down 1`] = `
-<View
+<Component
   accessibilityLabel="3.3 out of 5 stars"
   accessible={true}
   style={
@@ -139,11 +139,11 @@ exports[`iOS BpkStarRating should render correctly with stars rounded down 1`] =
   <BpkStar
     type="empty"
   />
-</View>
+</Component>
 `;
 
 exports[`iOS BpkStarRating should render correctly with stars rounded down to half star 1`] = `
-<View
+<Component
   accessibilityLabel="3.7 out of 5 stars"
   accessible={true}
   style={
@@ -167,5 +167,5 @@ exports[`iOS BpkStarRating should render correctly with stars rounded down to ha
   <BpkStar
     type="empty"
   />
-</View>
+</Component>
 `;

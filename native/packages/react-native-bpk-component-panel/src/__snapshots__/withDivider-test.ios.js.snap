@@ -11,7 +11,7 @@ exports[`iOS withDivider should render correctly 1`] = `
     ]
   }
 >
-  <View
+  <Component
     style={
       Array [
         Object {
@@ -30,8 +30,8 @@ exports[`iOS withDivider should render correctly 1`] = `
     >
       Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
     </BpkText>
-  </View>
-  <View
+  </Component>
+  <Component
     style={
       Array [
         Object {
@@ -42,7 +42,7 @@ exports[`iOS withDivider should render correctly 1`] = `
       ]
     }
   />
-  <View
+  <Component
     style={
       Array [
         Object {
@@ -61,7 +61,7 @@ exports[`iOS withDivider should render correctly 1`] = `
     >
       Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
     </BpkText>
-  </View>
+  </Component>
 </BpkPanel>
 `;
 
@@ -77,7 +77,7 @@ exports[`iOS withDivider should render correctly with arbitrary props 1`] = `
   }
   testID="arbitrary value"
 >
-  <View
+  <Component
     style={
       Array [
         Object {
@@ -96,8 +96,8 @@ exports[`iOS withDivider should render correctly with arbitrary props 1`] = `
     >
       Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
     </BpkText>
-  </View>
-  <View
+  </Component>
+  <Component
     style={
       Array [
         Object {
@@ -108,7 +108,7 @@ exports[`iOS withDivider should render correctly with arbitrary props 1`] = `
       ]
     }
   />
-  <View
+  <Component
     style={
       Array [
         Object {
@@ -127,7 +127,7 @@ exports[`iOS withDivider should render correctly with arbitrary props 1`] = `
     >
       Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
     </BpkText>
-  </View>
+  </Component>
 </BpkPanel>
 `;
 
@@ -142,7 +142,7 @@ exports[`iOS withDivider should render correctly with custom main style 1`] = `
     ]
   }
 >
-  <View
+  <Component
     style={
       Array [
         Object {
@@ -164,8 +164,8 @@ exports[`iOS withDivider should render correctly with custom main style 1`] = `
     >
       Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
     </BpkText>
-  </View>
-  <View
+  </Component>
+  <Component
     style={
       Array [
         Object {
@@ -176,7 +176,7 @@ exports[`iOS withDivider should render correctly with custom main style 1`] = `
       ]
     }
   />
-  <View
+  <Component
     style={
       Array [
         Object {
@@ -195,7 +195,7 @@ exports[`iOS withDivider should render correctly with custom main style 1`] = `
     >
       Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
     </BpkText>
-  </View>
+  </Component>
 </BpkPanel>
 `;
 
@@ -210,7 +210,7 @@ exports[`iOS withDivider should render correctly with custom stub style 1`] = `
     ]
   }
 >
-  <View
+  <Component
     style={
       Array [
         Object {
@@ -229,8 +229,8 @@ exports[`iOS withDivider should render correctly with custom stub style 1`] = `
     >
       Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
     </BpkText>
-  </View>
-  <View
+  </Component>
+  <Component
     style={
       Array [
         Object {
@@ -241,7 +241,7 @@ exports[`iOS withDivider should render correctly with custom stub style 1`] = `
       ]
     }
   />
-  <View
+  <Component
     style={
       Array [
         Object {
@@ -263,7 +263,7 @@ exports[`iOS withDivider should render correctly with custom stub style 1`] = `
     >
       Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
     </BpkText>
-  </View>
+  </Component>
 </BpkPanel>
 `;
 
@@ -278,7 +278,7 @@ exports[`iOS withDivider should render correctly without padding 1`] = `
     ]
   }
 >
-  <View
+  <Component
     style={
       Array [
         Object {
@@ -294,8 +294,8 @@ exports[`iOS withDivider should render correctly without padding 1`] = `
     >
       Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
     </BpkText>
-  </View>
-  <View
+  </Component>
+  <Component
     style={
       Array [
         Object {
@@ -306,7 +306,7 @@ exports[`iOS withDivider should render correctly without padding 1`] = `
       ]
     }
   />
-  <View
+  <Component
     style={
       Array [
         Object {
@@ -322,6 +322,6 @@ exports[`iOS withDivider should render correctly without padding 1`] = `
     >
       Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
     </BpkText>
-  </View>
+  </Component>
 </BpkPanel>
 `;

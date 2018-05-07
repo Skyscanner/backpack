@@ -10,7 +10,9 @@ exports[`Android BpkSelect should render correctly 1`] = `
     ]
   }
   accessible={true}
+  hasTVPreferredFocus={undefined}
   hitSlop={undefined}
+  isTVSelectable={true}
   nativeBackgroundAndroid={
     Object {
       "attribute": "selectableItemBackground",
@@ -68,7 +70,9 @@ exports[`Android BpkSelect should render correctly with a text label 1`] = `
     ]
   }
   accessible={true}
+  hasTVPreferredFocus={undefined}
   hitSlop={undefined}
+  isTVSelectable={true}
   nativeBackgroundAndroid={
     Object {
       "attribute": "selectableItemBackground",
@@ -144,7 +148,9 @@ exports[`Android BpkSelect should render correctly with an element label 1`] = `
     ]
   }
   accessible={true}
+  hasTVPreferredFocus={undefined}
   hitSlop={undefined}
+  isTVSelectable={true}
   nativeBackgroundAndroid={
     Object {
       "attribute": "selectableItemBackground",
@@ -203,7 +209,9 @@ exports[`Android BpkSelect should render correctly with custom styles 1`] = `
     ]
   }
   accessible={true}
+  hasTVPreferredFocus={undefined}
   hitSlop={undefined}
+  isTVSelectable={true}
   nativeBackgroundAndroid={
     Object {
       "attribute": "selectableItemBackground",
@@ -280,7 +288,9 @@ exports[`Android BpkSelect should render correctly with the disabled prop 1`] = 
     ]
   }
   accessible={true}
+  hasTVPreferredFocus={undefined}
   hitSlop={undefined}
+  isTVSelectable={true}
   nativeBackgroundAndroid={
     Object {
       "attribute": "selectableItemBackground",

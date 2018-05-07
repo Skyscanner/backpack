@@ -10,7 +10,9 @@ exports[`Android BpkHorizontalNavItem should render correctly 1`] = `
     ]
   }
   accessible={true}
+  hasTVPreferredFocus={undefined}
   hitSlop={undefined}
+  isTVSelectable={true}
   nativeBackgroundAndroid={
     Object {
       "attribute": "selectableItemBackground",
@@ -70,7 +72,9 @@ exports[`Android BpkHorizontalNavItem should render correctly with "selected" pr
     ]
   }
   accessible={true}
+  hasTVPreferredFocus={undefined}
   hitSlop={undefined}
+  isTVSelectable={true}
   nativeBackgroundAndroid={
     Object {
       "attribute": "selectableItemBackground",
@@ -133,7 +137,9 @@ exports[`Android BpkHorizontalNavItem should render correctly with "small" prop 
     ]
   }
   accessible={true}
+  hasTVPreferredFocus={undefined}
   hitSlop={undefined}
+  isTVSelectable={true}
   nativeBackgroundAndroid={
     Object {
       "attribute": "selectableItemBackground",
@@ -196,7 +202,9 @@ exports[`Android BpkHorizontalNavItem should render correctly with "spaceAround"
     ]
   }
   accessible={true}
+  hasTVPreferredFocus={undefined}
   hitSlop={undefined}
+  isTVSelectable={true}
   nativeBackgroundAndroid={
     Object {
       "attribute": "selectableItemBackground",
@@ -256,7 +264,9 @@ exports[`Android BpkHorizontalNavItem should render correctly with arbitrary pro
     ]
   }
   accessible={true}
+  hasTVPreferredFocus={undefined}
   hitSlop={undefined}
+  isTVSelectable={true}
   nativeBackgroundAndroid={
     Object {
       "attribute": "selectableItemBackground",
@@ -316,7 +326,9 @@ exports[`Android BpkHorizontalNavItem should render correctly with custom "style
     ]
   }
   accessible={true}
+  hasTVPreferredFocus={undefined}
   hitSlop={undefined}
+  isTVSelectable={true}
   nativeBackgroundAndroid={
     Object {
       "attribute": "selectableItemBackground",
@@ -379,7 +391,9 @@ exports[`Android BpkHorizontalNavItem should support theming 1`] = `
     ]
   }
   accessible={true}
+  hasTVPreferredFocus={undefined}
   hitSlop={undefined}
+  isTVSelectable={true}
   nativeBackgroundAndroid={
     Object {
       "attribute": "selectableItemBackground",

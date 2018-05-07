@@ -10,7 +10,9 @@ exports[`Android BpkListItem should render correctly 1`] = `
     ]
   }
   accessible={true}
+  hasTVPreferredFocus={undefined}
   hitSlop={undefined}
+  isTVSelectable={true}
   nativeBackgroundAndroid={
     Object {
       "attribute": "selectableItemBackground",
@@ -111,7 +113,9 @@ exports[`Android BpkListItem should support the "image" property 1`] = `
     ]
   }
   accessible={true}
+  hasTVPreferredFocus={undefined}
   hitSlop={undefined}
+  isTVSelectable={true}
   nativeBackgroundAndroid={
     Object {
       "attribute": "selectableItemBackground",
@@ -222,7 +226,9 @@ exports[`Android BpkListItem should support the "selected" property 1`] = `
     ]
   }
   accessible={true}
+  hasTVPreferredFocus={undefined}
   hitSlop={undefined}
+  isTVSelectable={true}
   nativeBackgroundAndroid={
     Object {
       "attribute": "selectableItemBackground",

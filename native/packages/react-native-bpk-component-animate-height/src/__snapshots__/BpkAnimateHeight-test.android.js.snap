@@ -13,7 +13,45 @@ exports[`Android BpkAnimateHeight should render correctly collapsed 1`] = `
 >
   <View
     collapsable={false}
-    style={null}
+    style={
+      Array [
+        null,
+        Object {
+          "left": 0,
+          "opacity": 0,
+          "position": "absolute",
+        },
+      ]
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "rgb(82, 76, 97)",
+            "fontFamily": "sans-serif",
+            "fontSize": 16,
+            "fontWeight": "400",
+          },
+          Object {},
+        ]
+      }
+    >
+      Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+    </Text>
+  </View>
+  <View
+    style={
+      Array [
+        null,
+        Object {
+          "height": null,
+        },
+      ]
+    }
   >
     <Text
       accessible={true}
@@ -50,7 +88,45 @@ exports[`Android BpkAnimateHeight should render correctly expanded 1`] = `
 >
   <View
     collapsable={false}
-    style={null}
+    style={
+      Array [
+        null,
+        Object {
+          "left": 0,
+          "opacity": 0,
+          "position": "absolute",
+        },
+      ]
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "rgb(82, 76, 97)",
+            "fontFamily": "sans-serif",
+            "fontSize": 16,
+            "fontWeight": "400",
+          },
+          Object {},
+        ]
+      }
+    >
+      Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+    </Text>
+  </View>
+  <View
+    style={
+      Array [
+        null,
+        Object {
+          "height": null,
+        },
+      ]
+    }
   >
     <Text
       accessible={true}
@@ -87,7 +163,63 @@ exports[`Android BpkAnimateHeight should render correctly with n children 1`] = 
 >
   <View
     collapsable={false}
-    style={null}
+    style={
+      Array [
+        null,
+        Object {
+          "left": 0,
+          "opacity": 0,
+          "position": "absolute",
+        },
+      ]
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "rgb(82, 76, 97)",
+            "fontFamily": "sans-serif",
+            "fontSize": 16,
+            "fontWeight": "400",
+          },
+          Object {},
+        ]
+      }
+    >
+      Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+    </Text>
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "rgb(82, 76, 97)",
+            "fontFamily": "sans-serif",
+            "fontSize": 16,
+            "fontWeight": "400",
+          },
+          Object {},
+        ]
+      }
+    >
+      Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+    </Text>
+  </View>
+  <View
+    style={
+      Array [
+        null,
+        Object {
+          "height": null,
+        },
+      ]
+    }
   >
     <Text
       accessible={true}
@@ -143,7 +275,45 @@ exports[`Android BpkAnimateHeight should render correctly with user styling padd
 >
   <View
     collapsable={false}
-    style={null}
+    style={
+      Array [
+        null,
+        Object {
+          "left": 0,
+          "opacity": 0,
+          "position": "absolute",
+        },
+      ]
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "rgb(82, 76, 97)",
+            "fontFamily": "sans-serif",
+            "fontSize": 16,
+            "fontWeight": "400",
+          },
+          Object {},
+        ]
+      }
+    >
+      Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+    </Text>
+  </View>
+  <View
+    style={
+      Array [
+        null,
+        Object {
+          "height": null,
+        },
+      ]
+    }
   >
     <Text
       accessible={true}

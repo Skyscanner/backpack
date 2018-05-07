@@ -16,7 +16,7 @@ exports[`iOS BpkPickerTrigger should render correctly 1`] = `
   overlayStyle={null}
   style={null}
 >
-  <View
+  <Component
     style={
       Object {
         "borderBottomWidth": 1,
@@ -32,7 +32,7 @@ exports[`iOS BpkPickerTrigger should render correctly 1`] = `
       small={true}
       style={null}
     />
-  </View>
+  </Component>
 </BpkTouchableOverlay>
 `;
 
@@ -52,7 +52,7 @@ exports[`iOS BpkPickerTrigger should render correctly with a text label 1`] = `
   overlayStyle={null}
   style={null}
 >
-  <View
+  <Component
     style={
       Object {
         "borderBottomWidth": 1,
@@ -75,7 +75,7 @@ exports[`iOS BpkPickerTrigger should render correctly with a text label 1`] = `
       small={true}
       style={null}
     />
-  </View>
+  </Component>
 </BpkTouchableOverlay>
 `;
 
@@ -95,7 +95,7 @@ exports[`iOS BpkPickerTrigger should render correctly with an element label 1`] 
   overlayStyle={null}
   style={null}
 >
-  <View
+  <Component
     style={
       Object {
         "borderBottomWidth": 1,
@@ -106,13 +106,13 @@ exports[`iOS BpkPickerTrigger should render correctly with an element label 1`] 
       }
     }
   >
-    <View />
+    <Component />
     <BpkIcon
       icon="arrow-down"
       small={true}
       style={null}
     />
-  </View>
+  </Component>
 </BpkTouchableOverlay>
 `;
 
@@ -136,7 +136,7 @@ exports[`iOS BpkPickerTrigger should render correctly with custom styles 1`] = `
     }
   }
 >
-  <View
+  <Component
     style={
       Object {
         "borderBottomWidth": 1,
@@ -159,7 +159,7 @@ exports[`iOS BpkPickerTrigger should render correctly with custom styles 1`] = `
       small={true}
       style={null}
     />
-  </View>
+  </Component>
 </BpkTouchableOverlay>
 `;
 
@@ -180,7 +180,7 @@ exports[`iOS BpkPickerTrigger should render correctly with the disabled prop 1`]
   overlayStyle={null}
   style={null}
 >
-  <View
+  <Component
     style={
       Object {
         "borderBottomWidth": 1,
@@ -207,6 +207,6 @@ exports[`iOS BpkPickerTrigger should render correctly with the disabled prop 1`]
       small={true}
       style={null}
     />
-  </View>
+  </Component>
 </BpkTouchableOverlay>
 `;

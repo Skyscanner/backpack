@@ -5,14 +5,40 @@ exports[`Android AnimateAndFade should render correctly 1`] = `
   collapsable={undefined}
   style={
     Object {
+      "borderRadius": 0,
       "height": null,
       "opacity": 1,
+      "overflow": "hidden",
     }
   }
 >
   <View
     collapsable={false}
-    style={null}
+    style={
+      Array [
+        null,
+        Object {
+          "left": 0,
+          "opacity": 0,
+          "position": "absolute",
+        },
+      ]
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+    >
+      Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+    </Text>
+  </View>
+  <View
+    style={
+      Array [
+        null,
+      ]
+    }
   >
     <Text
       accessible={true}
@@ -30,14 +56,40 @@ exports[`Android AnimateAndFade should render correctly when show is false 1`] =
   collapsable={undefined}
   style={
     Object {
+      "borderRadius": 0,
       "height": 0.01,
       "opacity": 0,
+      "overflow": "hidden",
     }
   }
 >
   <View
     collapsable={false}
-    style={null}
+    style={
+      Array [
+        null,
+        Object {
+          "left": 0,
+          "opacity": 0,
+          "position": "absolute",
+        },
+      ]
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+    >
+      Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+    </Text>
+  </View>
+  <View
+    style={
+      Array [
+        null,
+      ]
+    }
   >
     <Text
       accessible={true}
@@ -55,14 +107,40 @@ exports[`Android AnimateAndFade should render correctly with animateOnEnter 1`] 
   collapsable={undefined}
   style={
     Object {
+      "borderRadius": 0,
       "height": 0.01,
       "opacity": 0,
+      "overflow": "hidden",
     }
   }
 >
   <View
     collapsable={false}
-    style={null}
+    style={
+      Array [
+        null,
+        Object {
+          "left": 0,
+          "opacity": 0,
+          "position": "absolute",
+        },
+      ]
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+    >
+      Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+    </Text>
+  </View>
+  <View
+    style={
+      Array [
+        null,
+      ]
+    }
   >
     <Text
       accessible={true}
@@ -80,14 +158,40 @@ exports[`Android AnimateAndFade should render correctly with animateOnLeave 1`] 
   collapsable={undefined}
   style={
     Object {
+      "borderRadius": 0,
       "height": null,
       "opacity": 1,
+      "overflow": "hidden",
     }
   }
 >
   <View
     collapsable={false}
-    style={null}
+    style={
+      Array [
+        null,
+        Object {
+          "left": 0,
+          "opacity": 0,
+          "position": "absolute",
+        },
+      ]
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+    >
+      Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+    </Text>
+  </View>
+  <View
+    style={
+      Array [
+        null,
+      ]
+    }
   >
     <Text
       accessible={true}
