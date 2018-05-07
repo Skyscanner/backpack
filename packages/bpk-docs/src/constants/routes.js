@@ -101,6 +101,7 @@ export const NATIVE_PHONE_INPUT = '/components/native/phone-input';
 export const NATIVE_PICKER = '/components/native/picker';
 export const NATIVE_PROGRESS = '/components/native/progress';
 export const NATIVE_SECTION_LIST = '/components/native/section-list';
+export const NATIVE_SELECT = '/components/native/select';
 export const NATIVE_SPINNER = '/components/native/spinners';
 export const NATIVE_STAR_RATING = '/components/native/star-rating';
 export const NATIVE_SWITCH = '/components/native/switches';
@@ -168,6 +169,7 @@ export const NEO_PHONE_INPUT = '/components/phone-input';
 export const NEO_PICKER = '/components/picker';
 export const NEO_SECTION_LIST = '/components/section-list';
 export const NEO_SWITCH = '/components/switch';
+export const NEO_SELECT = '/components/select';
 export const NEO_TOUCHABLE_OVERLAY = '/components/touchable-overlay';
 export const NEO_TOUCHABLE_NATIVE_FEEDBACK =
   '/components/touchable-native-feedback';

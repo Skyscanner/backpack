@@ -188,6 +188,11 @@ const componentsLinks = [
         children: 'SectionList',
       },
       {
+        id: 'NATIVE_SELECT',
+        route: routes.NATIVE_SELECT,
+        children: 'Select',
+      },
+      {
         id: 'NATIVE_SPINNER',
         route: routes.NATIVE_SPINNER,
         children: 'Spinners',
@@ -368,6 +373,11 @@ const neoComponentsLinks = [
         id: 'NATIVE_SECTION_LIST',
         route: routes.NEO_SECTION_LIST,
         children: 'Section list',
+      },
+      {
+        id: 'NATIVE_SELECT',
+        route: routes.NEO_SELECT,
+        children: 'Select',
       },
       {
         id: 'NATIVE_SWITCH',
