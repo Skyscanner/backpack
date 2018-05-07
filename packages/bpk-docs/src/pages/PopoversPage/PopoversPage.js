@@ -143,10 +143,8 @@ const isNeo = process.env.BPK_NEO;
 
 const blurb = [
   <Paragraph>
-    Use popovers to display content or functionality that is related to a
-    particular element in your app or page. When opened, popovers will position
-    themselves below the target element and attempt to stay in the viewport at
-    all times.
+    Popovers display related content or functionality that is related to a
+    particular element.
   </Paragraph>,
 ];
 

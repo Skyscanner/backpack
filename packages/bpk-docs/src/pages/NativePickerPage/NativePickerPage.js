@@ -84,9 +84,7 @@ const isNeo = process.env.BPK_NEO;
 const blurb = [
   <Paragraph>
     Pickers let the user pick a single option from a limited list of possible
-    options in a modal context. The list item ordering should be logical and aid
-    the user in finding the item they want. For large lists consider another
-    option such as a fullscreen modal with search.
+    options in a modal context.
   </Paragraph>,
 ];
 

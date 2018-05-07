@@ -170,16 +170,7 @@ const components = [
 
 const isNeo = process.env.BPK_NEO;
 
-const blurb = [
-  <Paragraph>
-    Images can be used to improve the visual appeal of an article or webpage. To
-    give a more responsive user experience, images can be lazy-loaded to save
-    time and data. A spinner can be shown before an image is loaded, at which
-    point the image can gently fade in. To improve user-experience further,
-    different sized images can be loaded depending on the user`s display and
-    browser size.
-  </Paragraph>,
-];
+const blurb = [<Paragraph>A component for including images.</Paragraph>];
 
 const ImagesPage = ({ ...rest }) => (
   <DocsPageBuilder

@@ -130,16 +130,19 @@ const components = [
   },
 ];
 
+const isNeo = process.env.BPK_NEO;
+
+const blurb = [
+  <Paragraph>
+    Panels are useful for housing distinct areas of related content. Unlike
+    cards these are not clickable.
+  </Paragraph>,
+];
+
 const NativePanelsPage = ({ ...rest }) => (
   <DocsPageBuilder
     title="Panels"
-    blurb={[
-      <Paragraph>
-        Panels are useful for housing distinct areas of related content. Unlike
-        cards these are not clickable. Be careful not to over use these, these
-        should be used sparingly to avoid the UI becoming overly boxy.
-      </Paragraph>,
-    ]}
+    blurb={isNeo ? null : blurb}
     components={components}
     readme={readme}
     showMenu

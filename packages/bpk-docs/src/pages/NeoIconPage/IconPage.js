@@ -27,8 +27,12 @@ import Native from '../NativeIconsPage';
 
 const Page = () => (
   <DocsPageWrapper
-    title="Neo Icon"
-    blurb={[<Paragraph>Blurb for the neo icon page.</Paragraph>]}
+    title="Icon"
+    blurb={[
+      <Paragraph>
+        A suite of icons for representing concept, features and actions.
+      </Paragraph>,
+    ]}
     webSubpage={<Web wrapped />}
     nativeSubpage={<Native wrapped />}
   />

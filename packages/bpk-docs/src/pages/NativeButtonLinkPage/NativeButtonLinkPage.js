@@ -54,22 +54,25 @@ const components = [
   },
 ];
 
+const isNeo = process.env.BPK_NEO;
+
+const blurb = [
+  <Paragraph>
+    The Backpack button link component behaves like a button but it has a look
+    and feel of a link.
+  </Paragraph>,
+  <Paragraph>
+    Link buttons can have a leading or trailing icon and can be{' '}
+    <BpkLink href={THEMING}>themed</BpkLink>.
+  </Paragraph>,
+];
+
 const NativeTextPage = ({ ...rest }) => (
   <DocsPageBuilder
     title="Button Links"
-    blurb={[
-      <Paragraph>
-        The Backpack button link component behaves like a button but it has a
-        look and feel of a link.
-      </Paragraph>,
-      <Paragraph>
-        Link buttons can have a leading or trailing icon and can be{' '}
-        <BpkLink href={THEMING}>themed</BpkLink>.
-      </Paragraph>,
-    ]}
+    blurb={isNeo ? null : blurb}
     components={components}
     readme={readme}
-    showMenu={false}
     {...rest}
   />
 );

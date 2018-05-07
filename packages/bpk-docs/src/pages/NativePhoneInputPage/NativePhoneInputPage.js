@@ -17,12 +17,12 @@
  */
 
 import React from 'react';
-import { BpkList, BpkListItem } from 'bpk-component-list';
 import readme from 'react-native-bpk-component-phone-input/readme.md';
 import iosScreenshoDialingCodeList from 'react-native-bpk-component-phone-input/screenshots/ios/dialing-code-list.png';
 import iosScreenshotPhoneNumberInput from 'react-native-bpk-component-phone-input/screenshots/ios/phone-number-input.png';
 import androidScreenshotDialingCodeList from 'react-native-bpk-component-phone-input/screenshots/android/dialing-code-list.png';
 import androidScreenshotPhoneNumberInput from 'react-native-bpk-component-phone-input/screenshots/android/phone-number-input.png';
+import BpkBlockquote from 'bpk-component-blockquote';
 
 import Paragraph from './../../components/Paragraph';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
@@ -79,17 +79,15 @@ const isNeo = process.env.BPK_NEO;
 
 const blurb = [
   <Paragraph>
-    The Backpack phone number input package contains two components that
-    together enable the collection of phone numbers. <br />These are:
-    <BpkList>
-      <BpkListItem>A dialing code list component.</BpkListItem>
-      <BpkListItem>A specialized text input field.</BpkListItem>
-    </BpkList>
+    The phone number input encapsulates two components that together enable the
+    collection of phone numbers.
+  </Paragraph>,
+  <BpkBlockquote>
     Consumers are responsible for using these two components together. The
     accessory view in the text input shall present the dialing code list when
     tapped and a selection should update the dialing code set in the input
     component.
-  </Paragraph>,
+  </BpkBlockquote>,
 ];
 
 const NativeInputPage = ({ ...rest }) => (

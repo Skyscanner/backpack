@@ -183,15 +183,13 @@ const isNeo = process.env.BPK_NEO;
 const blurb = [
   <Paragraph>
     Modals are used to display content or views that are separate from the rest
-    of the app or page. When triggered, modals will emerge from the centre of
-    the viewport with a backdrop to indicate their separation from everything
-    else.
+    of the app or page.
   </Paragraph>,
 ];
 
 const ModalsPage = ({ ...rest }: { [string]: any }) => (
   <DocsPageBuilder
-    title="Modals"
+    title="Modal"
     blurb={isNeo ? null : blurb}
     components={components}
     readme={modalReadme}

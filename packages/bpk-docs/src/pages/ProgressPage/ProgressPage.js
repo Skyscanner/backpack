@@ -61,20 +61,24 @@ const components = [
   },
 ];
 
-const PopoversPage = ({ ...rest }) => (
+const isNeo = process.env.BPK_NEO;
+
+const blurb = [
+  <Paragraph>
+    Progress bars are a great way of providing feedback when a tasking is
+    running. Unlike spinners, they give the user a clear idea of how long the
+    given task will take.
+  </Paragraph>,
+];
+
+const ProgressPage = ({ ...rest }) => (
   <DocsPageBuilder
     title="Progress bars"
-    blurb={[
-      <Paragraph>
-        Progress bars are a great way of providing feedback when a tasking is
-        running. Unlike spinners, they give the user a clear idea of how long
-        the given task will take.
-      </Paragraph>,
-    ]}
+    blurb={isNeo ? null : blurb}
     components={components}
     readme={progressReadme}
     {...rest}
   />
 );
 
-export default PopoversPage;
+export default ProgressPage;

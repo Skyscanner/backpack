@@ -27,8 +27,12 @@ import Native from '../NativeNudgerPage';
 
 const Page = () => (
   <DocsPageWrapper
-    title="Neo nudger"
-    blurb={[<Paragraph>Blurb for the neo nudger page.</Paragraph>]}
+    title="Nudger"
+    blurb={[
+      <Paragraph>
+        Nudgers allow users to quickly specify a value within a given range.
+      </Paragraph>,
+    ]}
     webSubpage={<Web wrapped />}
     nativeSubpage={<Native wrapped />}
   />

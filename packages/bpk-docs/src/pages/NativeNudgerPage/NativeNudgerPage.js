@@ -52,19 +52,18 @@ const components = [
   },
 ];
 
+const isNeo = process.env.BPK_NEO;
+
+const blurb = [
+  <Paragraph>
+    Nudgers allow users to quickly specify a value within a given range.
+  </Paragraph>,
+];
+
 const NativeNudgerPage = ({ ...rest }) => (
   <DocsPageBuilder
     title="Nudgers"
-    blurb={[
-      <Paragraph>
-        Nudgers allow users to quickly specify a value within a given range.
-      </Paragraph>,
-      <Paragraph>
-        They should only be used for small number ranges. If users have to press
-        many times to get to the desired value, a different UI element might be
-        better suited.
-      </Paragraph>,
-    ]}
+    blurb={isNeo ? null : blurb}
     components={components}
     readme={readme}
     showMenu
