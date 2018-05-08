@@ -1,0 +1,81 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BpkSectionListItem should render correctly 1`] = `
+<div
+  className="bpk-section-list-item"
+>
+  Hello world
+</div>
+`;
+
+exports[`BpkSectionListItem should render correctly with a "href" prop 1`] = `
+<a
+  className="bpk-section-list-item bpk-section-list-item--interactive"
+  href="#"
+  onClick={null}
+  target={null}
+>
+  Hello world
+  <svg
+    className="bpk-section-list-item__chevron bpk-icon--rtl-support"
+    height="24"
+    style={
+      Object {
+        "height": "1.5rem",
+        "width": "1.5rem",
+      }
+    }
+    viewBox="0 0 24 24"
+    width="24"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M16.5 12l-6.4 7.2c-.6.6-1.5.7-2.1.1-.6-.5-.7-1.5-.1-2.1l4.6-5.2-4.6-5.2c-.6-.6-.5-1.6.1-2.1s1.6-.5 2.1.1l6.4 7.2z"
+    />
+  </svg>
+</a>
+`;
+
+exports[`BpkSectionListItem should render correctly with a custom className 1`] = `
+<div
+  className="bpk-section-list-item custom-class"
+>
+  Hello world
+</div>
+`;
+
+exports[`BpkSectionListItem should render correctly with an "onClick" prop 1`] = `
+<button
+  className="bpk-section-list-item bpk-section-list-item--interactive"
+  onClick={[Function]}
+  type="button"
+>
+  Hello world
+  <svg
+    className="bpk-section-list-item__chevron bpk-icon--rtl-support"
+    height="24"
+    style={
+      Object {
+        "height": "1.5rem",
+        "width": "1.5rem",
+      }
+    }
+    viewBox="0 0 24 24"
+    width="24"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M16.5 12l-6.4 7.2c-.6.6-1.5.7-2.1.1-.6-.5-.7-1.5-.1-2.1l4.6-5.2-4.6-5.2c-.6-.6-.5-1.6.1-2.1s1.6-.5 2.1.1l6.4 7.2z"
+    />
+  </svg>
+</button>
+`;
+
+exports[`BpkSectionListItem should render correctly with arbitrary props 1`] = `
+<div
+  className="bpk-section-list-item"
+  testId="123"
+>
+  Hello world
+</div>
+`;

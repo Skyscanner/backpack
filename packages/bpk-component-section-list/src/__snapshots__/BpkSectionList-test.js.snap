@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BpkSectionList should render correctly 1`] = `
+<section>
+  Hello world
+</section>
+`;
+
+exports[`BpkSectionList should render correctly with a custom className 1`] = `
+<section
+  className="custom-class"
+>
+  Hello world
+</section>
+`;
+
+exports[`BpkSectionList should render correctly with arbitrary props 1`] = `
+<section
+  testId="123"
+>
+  Hello world
+</section>
+`;
