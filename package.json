@@ -147,7 +147,7 @@
     "tinycolor2": "^1.4.1",
     "webpack": "^3.10.0",
     "webpack-dev-server": "^2.11.0",
-    "wrapper-webpack-plugin": "^1.0.0",
+    "wrapper-webpack-plugin": "^2.0.0",
     "zip-it-loader": "^0.3.0"
   },
   "jest": {
