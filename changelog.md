@@ -2,6 +2,17 @@
 
 [Unreleased changes](./unreleased.md).
 
+# 2018-05-08 - React Native upgrade to version 0.55.3
+
+**Breaking:**
+
+- react-native-bpk-component-picker: 1.0.11 => 2.0.0
+  - `BpkPickerTrigger` has been removed, use `BpkSelect` instead.
+
+**Added:**
+- react-native-bpk-component-select: 0.0.1 => 1.0.0
+  - New component `BpkSelect` for rendering tappable items that trigger a choice for the user.
+
 # 2018-05-07 - React Native upgrade to version 0.55.3
 
 **Fixed:**
