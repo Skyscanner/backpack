@@ -2,7 +2,7 @@
 
 [Unreleased changes](./unreleased.md).
 
-# 2018-05-08 - React Native upgrade to version 0.55.3
+# 2018-05-08 - Introducing native select component
 
 **Breaking:**
 
