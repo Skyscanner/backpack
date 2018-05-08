@@ -37,7 +37,7 @@ const components = [
         width: 750,
         height: 1334,
         src: `/${iosScreenshot}`,
-        altText: 'iOS Text Input Component',
+        altText: 'iOS text input component',
         subText: '(iPhone 8 Simulator)',
       },
       {
@@ -45,14 +45,14 @@ const components = [
         width: 1080,
         height: 1920,
         src: `/${androidScreenshot}`,
-        altText: 'Android Text Input Component',
+        altText: 'Android text input component',
         subText: '(Google Pixel Emulator)',
       },
     ],
   },
   {
     id: 'text-inputs-with-accessory-view',
-    title: 'Text Inputs with Acessory View',
+    title: 'With acessory view',
     screenshots: [
       {
         title: 'iOS',

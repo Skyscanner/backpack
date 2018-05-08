@@ -56,7 +56,7 @@ const components = [
   },
   {
     id: 'picker-open',
-    title: 'Picker Open',
+    title: 'Picker open',
     blurb: 'Picker modal open.',
     screenshots: [
       {
@@ -90,7 +90,7 @@ const blurb = [
 
 const NativePickerPage = ({ ...rest }) => (
   <DocsPageBuilder
-    title="Pickers"
+    title="Picker"
     blurb={isNeo ? null : blurb}
     components={components}
     readme={readme}

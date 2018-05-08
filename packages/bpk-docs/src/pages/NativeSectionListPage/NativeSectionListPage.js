@@ -53,7 +53,7 @@ const components = [
   },
   {
     id: 'with-images',
-    title: 'With Images',
+    title: 'With images',
     blurb: 'List items can also contain images.',
     screenshots: [
       {
@@ -87,7 +87,7 @@ const blurb = [
 
 const NativeSectionListPage = ({ ...rest }) => (
   <DocsPageBuilder
-    title="Section List"
+    title="Section list"
     blurb={isNeo ? null : blurb}
     components={components}
     readme={readme}

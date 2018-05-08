@@ -350,7 +350,7 @@ const components = [
   },
   {
     id: 'animateOnEnter',
-    title: 'With Enter Animation',
+    title: 'With enter animation',
     blurb: [
       <Paragraph>
         Banner alerts can be configured to animate when first added to the DOM.
@@ -376,7 +376,7 @@ const components = [
   },
   {
     id: 'withBannerAlertState',
-    title: 'withBannerAlertState',
+    title: 'With banner alert state',
     blurb: [
       <Paragraph>
         Most common use of &quot;expandable&quot; and &quot;dismissable&quot;

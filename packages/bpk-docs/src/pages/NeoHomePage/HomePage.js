@@ -57,7 +57,7 @@ const CARD_CONTENTS = [
   },
   {
     key: 'design-tokens',
-    title: 'Design Tokens',
+    title: 'Design tokens',
     href: ROUTES.TOKENS,
     image: DesignTokensImage,
     icon: DesignTokensIcon,

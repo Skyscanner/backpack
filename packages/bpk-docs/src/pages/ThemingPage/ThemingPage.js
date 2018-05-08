@@ -61,7 +61,7 @@ const nativeBlurb = [
       <BpkRouterLink to={NATIVE_BUTTON}>Button</BpkRouterLink>
     </BpkListItem>
     <BpkListItem>
-      <BpkRouterLink to={NATIVE_BUTTON_LINK}>Button Link</BpkRouterLink>
+      <BpkRouterLink to={NATIVE_BUTTON_LINK}>Link</BpkRouterLink>
     </BpkListItem>
     <BpkListItem>
       <BpkRouterLink to={NATIVE_HORIZONTAL_NAV}>
@@ -69,7 +69,7 @@ const nativeBlurb = [
       </BpkRouterLink>
     </BpkListItem>
     <BpkListItem>
-      <BpkRouterLink to={NATIVE_NAVIGATION_BAR}>Navigation Bar</BpkRouterLink>
+      <BpkRouterLink to={NATIVE_NAVIGATION_BAR}>Navigation bar</BpkRouterLink>
     </BpkListItem>
     <BpkListItem>
       <BpkRouterLink to={NATIVE_SPINNER}>Spinner</BpkRouterLink>
@@ -84,10 +84,10 @@ const webBlurb = [
   <Paragraph>The following web components are themeable:</Paragraph>,
   <BpkList>
     <BpkListItem>
-      <BpkRouterLink to={ACCORDIONS}>Accordions</BpkRouterLink>
+      <BpkRouterLink to={ACCORDIONS}>Accordion</BpkRouterLink>
     </BpkListItem>
     <BpkListItem>
-      <BpkRouterLink to={BARCHARTS}>Bar charts</BpkRouterLink>
+      <BpkRouterLink to={BARCHARTS}>Bar chart</BpkRouterLink>
     </BpkListItem>
     <BpkListItem>
       <BpkRouterLink to={`${TYPOGRAPHY}#blockquotes`}>
@@ -95,37 +95,37 @@ const webBlurb = [
       </BpkRouterLink>
     </BpkListItem>
     <BpkListItem>
-      <BpkRouterLink to={BUTTONS}>Buttons</BpkRouterLink>
+      <BpkRouterLink to={BUTTONS}>Button</BpkRouterLink>
     </BpkListItem>
     <BpkListItem>
-      <BpkRouterLink to={CALENDAR}>Calendars</BpkRouterLink>
+      <BpkRouterLink to={CALENDAR}>Calendar</BpkRouterLink>
     </BpkListItem>
     <BpkListItem>
-      <BpkRouterLink to={DATEPICKER}>Datepickers</BpkRouterLink>
+      <BpkRouterLink to={DATEPICKER}>Datepicker</BpkRouterLink>
     </BpkListItem>
     <BpkListItem>
-      <BpkRouterLink to={DRAWER}>Drawers</BpkRouterLink>
+      <BpkRouterLink to={DRAWER}>Drawer</BpkRouterLink>
     </BpkListItem>
     <BpkListItem>
       <BpkRouterLink to={HORIZONTAL_NAV}>Horizontal navigation</BpkRouterLink>
     </BpkListItem>
     <BpkListItem>
-      <BpkRouterLink to={MODALS}>Modals</BpkRouterLink>
+      <BpkRouterLink to={MODALS}>Modal</BpkRouterLink>
     </BpkListItem>
     <BpkListItem>
-      <BpkRouterLink to={`${TYPOGRAPHY}#links`}>Links</BpkRouterLink>
+      <BpkRouterLink to={`${TYPOGRAPHY}#links`}>Link</BpkRouterLink>
     </BpkListItem>
     <BpkListItem>
       <BpkRouterLink to={NUDGERS}>Nudgers</BpkRouterLink>
     </BpkListItem>
     <BpkListItem>
-      <BpkRouterLink to={PROGRESS}>Progress bars</BpkRouterLink>
+      <BpkRouterLink to={PROGRESS}>Progress bar</BpkRouterLink>
     </BpkListItem>
     <BpkListItem>
       <BpkRouterLink to={SPINNERS}>Spinner</BpkRouterLink>
     </BpkListItem>
     <BpkListItem>
-      <BpkRouterLink to={SLIDERS}>Sliders</BpkRouterLink>
+      <BpkRouterLink to={SLIDERS}>Slider</BpkRouterLink>
     </BpkListItem>
   </BpkList>,
   <BpkBlockquote>

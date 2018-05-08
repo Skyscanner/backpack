@@ -31,7 +31,7 @@ import DocsPageWrapper from './../../components/neo/DocsPageWrapper';
 const components = [
   {
     id: 'dialing-code-list',
-    title: 'Dialing Code List',
+    title: 'Dialing code list',
     screenshots: [
       {
         title: 'iOS',
@@ -53,7 +53,7 @@ const components = [
   },
   {
     id: 'phone-number-input',
-    title: 'Phone Number Input',
+    title: 'Phone number input',
     screenshots: [
       {
         title: 'iOS',

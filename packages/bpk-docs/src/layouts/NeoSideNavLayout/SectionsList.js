@@ -44,7 +44,7 @@ const sections = {
     icon: UsingBackpackIcon,
   },
   TOKENS: {
-    title: 'Design Tokens',
+    title: 'Design tokens',
     link: ROUTES.TOKENS,
     icon: DesignTokensIcon,
   },

@@ -78,7 +78,7 @@ const components = [
   },
   {
     id: 'space-around',
-    title: 'Space Around',
+    title: 'Space around',
     blurb:
       'Navigation items can be configured to occupy the full width of their container.',
     screenshots: [

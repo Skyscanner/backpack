@@ -65,7 +65,7 @@ const components = [
   },
   {
     id: 'minDistance',
-    title: 'Minimum Distance',
+    title: 'Minimum distance',
     blurb: [
       <Paragraph>
         You can set a minimum distance between the handlers.
@@ -87,7 +87,7 @@ const blurb = [
 
 const SlidersPage = ({ ...rest }) => (
   <DocsPageBuilder
-    title="Sliders"
+    title="Slider"
     blurb={isNeo ? null : blurb}
     components={components}
     readme={sliderReadme}

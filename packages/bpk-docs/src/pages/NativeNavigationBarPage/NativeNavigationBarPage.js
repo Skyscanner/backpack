@@ -82,7 +82,7 @@ const components = [
   },
   {
     id: 'subtitle-view',
-    title: 'Subtitle View',
+    title: 'Subtitle view',
     blurb:
       'Optionally a subtitle view can be rendered below the main bar content.',
     screenshots: [
@@ -141,7 +141,7 @@ const blurb = [
 
 const NativeNavigationBarPage = (props: Object) => (
   <DocsPageBuilder
-    title="Navigation Bars"
+    title="Navigation bar"
     blurb={isNeo ? null : blurb}
     components={components}
     readme={readme}
