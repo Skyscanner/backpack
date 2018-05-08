@@ -78,8 +78,8 @@ const isNeo = process.env.BPK_NEO;
 
 const blurb = [
   <Paragraph>
-    Text inputs are used to capture textual information from the user including
-    straight up text, numbers, and passwords.
+    Text inputs are used to capture textual information as well as numbers and
+    passwords.
   </Paragraph>,
 ];
 
