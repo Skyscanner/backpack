@@ -20,6 +20,12 @@
 .bpkdocs-page-wrapper {
   background-color: $bpk-color-white;
 
+  &__blurb p:first-child {
+    color: $bpk-color-gray-500;
+    font-size: $bpk-font-size-lg;
+    line-height: $bpk-line-height-lg;
+  }
+
   &__inner {
     padding: $bpk-spacing-xs * 10;
     padding-bottom: 0;

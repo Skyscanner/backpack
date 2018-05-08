@@ -19,10 +19,18 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import isString from 'lodash/isString';
+import { cssModules } from 'bpk-react-utils';
 import Paragraph from '../Paragraph';
+import STYLES from './DocsPageWrapper.scss';
+
+const getClassName = cssModules(STYLES);
 
 const Blurb = ({ content }) =>
-  isString(content) ? <Paragraph>{content}</Paragraph> : <div>{content}</div>;
+  isString(content) ? (
+    <Paragraph>{content}</Paragraph>
+  ) : (
+    <div className={getClassName('bpkdocs-page-wrapper__blurb')}>{content}</div>
+  );
 
 Blurb.propTypes = {
   content: PropTypes.oneOfType([PropTypes.string, PropTypes.node]).isRequired,
