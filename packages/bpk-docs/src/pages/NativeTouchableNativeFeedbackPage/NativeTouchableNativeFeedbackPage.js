@@ -43,7 +43,7 @@ const components = [
         height: 1334,
         src: `/${androidScreenshotDefault}`,
         altText: 'Backpack touchable native feedback component',
-        subText: '(Google Pixel Emulator)',
+        subText: '(Google Pixel emulator)',
       },
     ],
   },

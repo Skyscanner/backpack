@@ -40,7 +40,7 @@ const components = [
         height: 1334,
         src: `/${iosScreenshot}`,
         altText: 'iOS Default Button Component',
-        subText: '(iPhone 8 Simulator)',
+        subText: '(iPhone 8 simulator)',
       },
       {
         title: 'Android',
@@ -48,7 +48,7 @@ const components = [
         height: 1920,
         src: `/${androidScreenshot}`,
         altText: 'Android Default Button Component',
-        subText: '(Google Pixel Emulator)',
+        subText: '(Google Pixel emulator)',
       },
     ],
   },

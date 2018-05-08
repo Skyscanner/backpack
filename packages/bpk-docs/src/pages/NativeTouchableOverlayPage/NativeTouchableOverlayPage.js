@@ -43,7 +43,7 @@ const components = [
         height: 1334,
         src: `/${iosScreenshotDefault}`,
         altText: 'Backpack Touchable overlay component',
-        subText: '(iPhone 8 Simulator)',
+        subText: '(iPhone 8 simulator)',
       },
       {
         title: "React Native's touchable highlight",
@@ -51,7 +51,7 @@ const components = [
         height: 1334,
         src: `/${iosScreenshotTouchableHighlight}`,
         altText: "React Native's touchable highlight component",
-        subText: '(iPhone 8 Simulator)',
+        subText: '(iPhone 8 simulator)',
       },
     ],
   },
