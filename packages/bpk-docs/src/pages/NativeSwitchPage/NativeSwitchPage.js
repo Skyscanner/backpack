@@ -56,7 +56,7 @@ const isNeo = process.env.BPK_NEO;
 const blurb = [
   <Paragraph>
     Switches allow users to toggle between two states, on or off. On mobile,
-    these are often used as a replacement for radio buttons.
+    these are often used as a replacement for checkboxes.
   </Paragraph>,
 ];
 
