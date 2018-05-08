@@ -207,6 +207,7 @@ const ModalsPage = ({ ...rest }: { [string]: any }) => (
         adding too many extra layers or visual noise`,
         `Don't overuse modals as interruptions, as they will get in the way of the
         user's main tasks, and may disrupt context. Never use a full screen modal as an interrupt.`,
+        `Don't stack modals. Only one should be open at a time.`,
       ],
     }}
     sassdocId="modals"
