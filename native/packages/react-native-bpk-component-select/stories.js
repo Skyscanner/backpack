@@ -40,18 +40,11 @@ storiesOf('react-native-bpk-component-select', module)
   .add('docs:default', () => (
     <View>
       <StorySubheading>Normal</StorySubheading>
-      <BpkSelect
-        style={styles.select}
-        onPress={action('Select pressed')}
-        label="Value"
-      />
+      <View style={styles.select}>
+        <BpkSelect onPress={action('Select pressed')} label="Value" />
+      </View>
 
       <StorySubheading>With image</StorySubheading>
-      <BpkSelect
-        style={styles.select}
-        onPress={action('Select pressed')}
-        label="Value"
-        showImage
-      />
+      <BpkSelect onPress={action('Select pressed')} label="Value" showImage />
     </View>
   ));
