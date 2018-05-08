@@ -27,8 +27,15 @@ import Native from '../NativeTextPage';
 
 const Page = () => (
   <DocsPageWrapper
-    title="Neo text"
-    blurb={[<Paragraph>Blurb for the neo text page.</Paragraph>]}
+    title="Text"
+    blurb={[
+      <Paragraph>
+        The text component enables you to use Backpack defined text styles. On
+        web, you can combine these with any of the heading tags, a span or a
+        paragraph. You can mix different text styles with the appropriate tag to
+        achieve semantic markup while retaining control over how the text looks.
+      </Paragraph>,
+    ]}
     webSubpage={<Web wrapped />}
     nativeSubpage={<Native wrapped />}
   />

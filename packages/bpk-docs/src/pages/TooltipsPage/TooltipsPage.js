@@ -18,12 +18,10 @@
 
 import React from 'react';
 import BpkTooltip from 'bpk-component-tooltip';
-import BpkRouterLink from 'bpk-component-router-link';
 import tooltipReadme from 'bpk-component-tooltip/readme.md';
 import { spacingSm, colorGreen500 } from 'bpk-tokens/tokens/base.es6';
 import { cssModules } from 'bpk-react-utils';
 
-import * as ROUTES from './../../constants/routes';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
 import DocsPageWrapper from './../../components/neo/DocsPageWrapper';
 import Heading from './../../components/Heading';
@@ -129,19 +127,14 @@ const isNeo = process.env.BPK_NEO;
 const blurb = [
   <Paragraph>
     Tooltips appear on hover of a particular element and are used to provide
-    additional context/information to the user. They generally are text-only and
+    additional context/information to the user. They are generally text-only and
     are triggered on pointer based interfaces.
   </Paragraph>,
   <Paragraph>
-    By default, <em>tooltips do not work on touch devices</em>. Using tooltips
-    in touch-based interfaces is generally bad practice due to the lack of hover
-    state. We also don&apos;t recommend using tooltips on interactive elements
-    that can receive focus, such as links, buttons, and inputs.
-  </Paragraph>,
-  <Paragraph>
-    Tooltips do not manage focus. If you need to include interactive elements in
-    a tooltip, a <BpkRouterLink to={ROUTES.POPOVERS}>popover</BpkRouterLink>{' '}
-    might be better suited.
+    By design, tooltips do not work on touch devices and is bad practice to do
+    so due to the lack of hover state. We also do not recommend using tooltips
+    on interactive elements that can receive focus, such as links, buttons, and
+    inputs.
   </Paragraph>,
 ];
 

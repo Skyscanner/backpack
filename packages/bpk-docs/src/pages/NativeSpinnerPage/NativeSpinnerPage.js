@@ -17,7 +17,6 @@
  */
 
 import React from 'react';
-import BpkLink from 'bpk-component-link';
 import readme from 'react-native-bpk-component-spinner/readme.md';
 
 import iosScreenshotDefault from 'react-native-bpk-component-spinner/screenshots/ios/default.png';
@@ -27,11 +26,6 @@ import androidScreenshotSmall from 'react-native-bpk-component-spinner/screensho
 
 import Paragraph from './../../components/Paragraph';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
-
-import { THEMING } from './../../constants/routes';
-
-const reactNativeUrl =
-  'https://facebook.github.io/react-native/docs/activityindicator.html';
 
 const components = [
   {
@@ -84,24 +78,20 @@ const components = [
   },
 ];
 
+const isNeo = process.env.BPK_NEO;
+
+const blurb = [
+  <Paragraph>
+    Sliders allow users to input a numeric value from a given range.
+  </Paragraph>,
+];
+
 const NativeSpinnerPage = ({ ...rest }) => (
   <DocsPageBuilder
     title="Spinners"
-    blurb={[
-      <Paragraph>
-        Spinners are used to to indicate that a part of the product is loading
-        or performing a task. These are available in two sizes, small and large.
-        It&#39;s a wrapper around the React Native{' '}
-        <BpkLink href={reactNativeUrl}>ActivityIndicator component</BpkLink>,
-        therefore it supports all the same behaviours and properties.
-      </Paragraph>,
-      <Paragraph>
-        Primary spinners can be <BpkLink href={THEMING}>themed</BpkLink>.
-      </Paragraph>,
-    ]}
+    blurb={isNeo ? null : blurb}
     components={components}
     readme={readme}
-    showMenu
     {...rest}
   />
 );

@@ -17,7 +17,6 @@
  */
 
 import React from 'react';
-import BpkLink from 'bpk-component-link';
 import readme from 'react-native-bpk-component-text-input/readme.md';
 import iosScreenshot from 'react-native-bpk-component-text-input/screenshots/ios/text-inputs.png';
 import iosScreenshotWithAccessoryView from 'react-native-bpk-component-text-input/screenshots/ios/text-inputs-with-accessory-view.png';
@@ -27,9 +26,6 @@ import androidScreenshotWithAccessoryView from 'react-native-bpk-component-text-
 import Paragraph from './../../components/Paragraph';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
 import DocsPageWrapper from './../../components/neo/DocsPageWrapper';
-
-const reactNativeUrl =
-  'https://facebook.github.io/react-native/docs/textinput.html';
 
 const components = [
   {
@@ -82,12 +78,8 @@ const isNeo = process.env.BPK_NEO;
 
 const blurb = [
   <Paragraph>
-    The Backpack input is a wrapper around the React Native{' '}
-    <BpkLink href={reactNativeUrl}>TextInput component</BpkLink>, therefore it
-    supports all the same behaviours and properties. Optionally an accessory
-    view can be provided which will be rendered on the leading side of the text
-    input. Providing an accessory view changes the behaviour of the floating
-    label.
+    Text inputs are used to capture textual information as well as numbers and
+    passwords.
   </Paragraph>,
 ];
 

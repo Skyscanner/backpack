@@ -31,49 +31,54 @@ import tablesReadme from 'bpk-component-table/readme.md';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
 import DocsPageWrapper from './../../components/neo/DocsPageWrapper';
 import Paragraph from './../../components/Paragraph';
-import PresentationBlock from './../../components/PresentationBlock';
 
 const blurb = [
   <Paragraph>
-    The table component enables you to easily create tables, responsive by
-    default.
+    A simple table component for displaying data in a tabular form.
   </Paragraph>,
-  <PresentationBlock>
-    <BpkTable>
-      <BpkTableHead>
-        <BpkTableRow>
-          <BpkTableHeadCell>Heading 1</BpkTableHeadCell>
-          <BpkTableHeadCell>Heading 2</BpkTableHeadCell>
-          <BpkTableHeadCell>Heading 3</BpkTableHeadCell>
-          <BpkTableHeadCell>Heading 4</BpkTableHeadCell>
-        </BpkTableRow>
-      </BpkTableHead>
-      <BpkTableBody>
-        <BpkTableRow>
-          <BpkTableCell>Row 1, Data 1</BpkTableCell>
-          <BpkTableCell>Row 1, Data 2</BpkTableCell>
-          <BpkTableCell>Row 1, Data 3</BpkTableCell>
-          <BpkTableCell>Row 1, Data 4</BpkTableCell>
-        </BpkTableRow>
-        <BpkTableRow>
-          <BpkTableCell>Row 2, Data 1</BpkTableCell>
-          <BpkTableCell>Row 2, Data 2</BpkTableCell>
-          <BpkTableCell>Row 2, Data 3</BpkTableCell>
-          <BpkTableCell>Row 2, Data 4</BpkTableCell>
-        </BpkTableRow>
-      </BpkTableBody>
-    </BpkTable>
-  </PresentationBlock>,
+];
+
+const components = [
+  {
+    id: 'default',
+    title: 'Default',
+    examples: [
+      <BpkTable>
+        <BpkTableHead>
+          <BpkTableRow>
+            <BpkTableHeadCell>Heading 1</BpkTableHeadCell>
+            <BpkTableHeadCell>Heading 2</BpkTableHeadCell>
+            <BpkTableHeadCell>Heading 3</BpkTableHeadCell>
+            <BpkTableHeadCell>Heading 4</BpkTableHeadCell>
+          </BpkTableRow>
+        </BpkTableHead>
+        <BpkTableBody>
+          <BpkTableRow>
+            <BpkTableCell>Row 1, Data 1</BpkTableCell>
+            <BpkTableCell>Row 1, Data 2</BpkTableCell>
+            <BpkTableCell>Row 1, Data 3</BpkTableCell>
+            <BpkTableCell>Row 1, Data 4</BpkTableCell>
+          </BpkTableRow>
+          <BpkTableRow>
+            <BpkTableCell>Row 2, Data 1</BpkTableCell>
+            <BpkTableCell>Row 2, Data 2</BpkTableCell>
+            <BpkTableCell>Row 2, Data 3</BpkTableCell>
+            <BpkTableCell>Row 2, Data 4</BpkTableCell>
+          </BpkTableRow>
+        </BpkTableBody>
+      </BpkTable>,
+    ],
+  },
 ];
 
 const isNeo = process.env.BPK_NEO;
 
 const TablesPage = ({ ...rest }) => (
   <DocsPageBuilder
-    title="Tables"
-    showMenu={false}
+    title="Table"
     readme={tablesReadme}
     blurb={isNeo ? null : blurb}
+    components={components}
     {...rest}
   />
 );
@@ -82,6 +87,7 @@ const NeoTablePage = () => (
   <DocsPageWrapper
     title="Table"
     blurb={blurb}
+    components={components}
     webSubpage={<TablesPage wrapped />}
   />
 );

@@ -24,46 +24,56 @@ import textReadme from 'bpk-component-text/readme.md';
 
 import DocsPageBuilder from './../../components/DocsPageBuilder';
 import Paragraph from './../../components/Paragraph';
-import PresentationBlock from './../../components/PresentationBlock';
 import Code from '../../components/Code';
 
 const blurb = [
   <Paragraph>
-    The text component enables you to use the five Backpack defined text styles
-    in combination with any of the heading tags, a span or a paragraph. You can
-    mix different text styles with the appropriate tag to achieve semantic
-    markup while retaining control over how the text looks.
+    The text component enables you to use Backpack defined text styles. On web,
+    you can combine these with any of the heading tags, a span or a paragraph.
+    You can mix different text styles with the appropriate tag to achieve
+    semantic markup while retaining control over how the text looks.
   </Paragraph>,
   <BpkBlockquote extraSpace>
     <BpkText bold>Note:</BpkText> Whilst <Code>BpkText</Code> allows for any
     combination of text size and heading levels, we recommend that visual
     hierarchy is maintained inline with the semantic structure.
   </BpkBlockquote>,
-  <PresentationBlock>
-    <BpkText textStyle="xxl" tagName="p">
-      Flights to Edinburgh
-    </BpkText>
-    <BpkText textStyle="xl" tagName="p">
-      Flights to Edinburgh
-    </BpkText>
-    <BpkText textStyle="lg" tagName="p">
-      Flights to Edinburgh
-    </BpkText>
-    <BpkText textStyle="base" tagName="p">
-      Flights to Edinburgh
-    </BpkText>
-    <BpkText textStyle="sm" tagName="p">
-      Flights to Edinburgh
-    </BpkText>
-  </PresentationBlock>,
 ];
+
+const components = [
+  {
+    id: 'default',
+    title: 'Default',
+    examples: [
+      <div>
+        <BpkText textStyle="xxl" tagName="p">
+          Flights to Edinburgh
+        </BpkText>
+        <BpkText textStyle="xl" tagName="p">
+          Flights to Edinburgh
+        </BpkText>
+        <BpkText textStyle="lg" tagName="p">
+          Flights to Edinburgh
+        </BpkText>
+        <BpkText textStyle="base" tagName="p">
+          Flights to Edinburgh
+        </BpkText>
+        <BpkText textStyle="sm" tagName="p">
+          Flights to Edinburgh
+        </BpkText>
+      </div>,
+    ],
+  },
+];
+
+const isNeo = process.env.BPK_NEO;
 
 const TextPage = ({ ...rest }) => (
   <DocsPageBuilder
     title="Text"
-    showMenu={false}
     readme={textReadme}
-    blurb={blurb}
+    blurb={isNeo ? null : blurb}
+    components={components}
     {...rest}
   />
 );

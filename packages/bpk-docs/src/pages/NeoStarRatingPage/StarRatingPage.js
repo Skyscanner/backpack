@@ -27,8 +27,12 @@ import Native from '../NativeStarRatingPage';
 
 const Page = () => (
   <DocsPageWrapper
-    title="Neo star rating"
-    blurb={[<Paragraph>Blurb for the neo star rating page.</Paragraph>]}
+    title="Star rating"
+    blurb={[
+      <Paragraph>
+        Star ratings are used for displaying a score within a given range.
+      </Paragraph>,
+    ]}
     webSubpage={<Web wrapped />}
     nativeSubpage={<Native wrapped />}
   />

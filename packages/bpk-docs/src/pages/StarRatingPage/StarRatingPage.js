@@ -72,16 +72,18 @@ const components = [
   },
 ];
 
+const isNeo = process.env.BPK_NEO;
+
+const blurb = [
+  <Paragraph>
+    Star ratings are used for displaying a score within a given range.
+  </Paragraph>,
+];
+
 const StarRatingPage = ({ ...rest }) => (
   <DocsPageBuilder
-    title="Star Ratings"
-    blurb={[
-      <Paragraph>
-        Star ratings are used for displaying a score within a given range. They
-        can also be a good way of capturing user feedback on a particular
-        feature.
-      </Paragraph>,
-    ]}
+    title="Star rating"
+    blurb={isNeo ? null : blurb}
     components={components}
     readme={starRatingReadme}
     {...rest}

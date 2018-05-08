@@ -17,7 +17,6 @@
  */
 
 import React from 'react';
-import BpkLink from 'bpk-component-link';
 import readme from 'react-native-bpk-component-switch/readme.md';
 
 import iosScreenshotDefault from 'react-native-bpk-component-switch/screenshots/ios/default.png';
@@ -26,11 +25,6 @@ import androidScreenshotDefault from 'react-native-bpk-component-switch/screensh
 import Paragraph from './../../components/Paragraph';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
 import DocsPageWrapper from './../../components/neo/DocsPageWrapper';
-
-import { THEMING } from './../../constants/routes';
-
-const reactNativeUrl =
-  'https://facebook.github.io/react-native/docs/switch.html';
 
 const components = [
   {
@@ -61,14 +55,8 @@ const isNeo = process.env.BPK_NEO;
 
 const blurb = [
   <Paragraph>
-    Switches allow users to toggle between two states, on or off. These are
-    often used as a replacement for radio buttons. This component is a wrapper
-    around the React Native{' '}
-    <BpkLink href={reactNativeUrl}>Switch component</BpkLink>, therefore it
-    supports all the same behaviours and properties.
-  </Paragraph>,
-  <Paragraph>
-    Switches can be <BpkLink href={THEMING}>themed</BpkLink>.
+    Switches allow users to toggle between two states, on or off. On mobile,
+    these are often used as a replacement for checkboxes.
   </Paragraph>,
 ];
 

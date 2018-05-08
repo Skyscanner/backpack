@@ -29,14 +29,6 @@ import {
 import Paragraph from './../../components/Paragraph';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
 
-const blurb = [
-  <Paragraph>
-    Spinners are used to indicate that a part of the product is loading or
-    performing a task. These are available in 3 sizes, small (18px), large
-    (24px) and extra-large (48px).
-  </Paragraph>,
-];
-
 const components = [
   {
     id: 'small',
@@ -73,10 +65,20 @@ const components = [
   },
 ];
 
+const blurb = [
+  <Paragraph>
+    Spinners are used to indicate that a part of the product is loading or
+    performing a task. These are available in 3 sizes, small (18px), large
+    (24px) and extra-large (48px).
+  </Paragraph>,
+];
+
+const isNeo = process.env.BPK_NEO;
+
 const SpinnersPage = ({ ...rest }) => (
   <DocsPageBuilder
     title="Spinners"
-    blurb={blurb}
+    blurb={isNeo ? null : blurb}
     components={components}
     readme={spinnerReadme}
     sassdocId="svgs-mixin-bpk-spinner"

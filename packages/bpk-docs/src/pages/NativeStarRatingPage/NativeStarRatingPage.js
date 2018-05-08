@@ -52,17 +52,20 @@ const components = [
   },
 ];
 
+const isNeo = process.env.BPK_NEO;
+
+const blurb = [
+  <Paragraph>
+    Star ratings are used for displaying a score within a given range.
+  </Paragraph>,
+];
+
 const NativeStarRatingPage = ({ ...rest }) => (
   <DocsPageBuilder
     title="Star Ratings"
-    blurb={[
-      <Paragraph>
-        Star ratings are used for displaying a score within a given range.
-      </Paragraph>,
-    ]}
+    blurb={isNeo ? null : blurb}
     components={components}
     readme={readme}
-    showMenu={false}
     {...rest}
   />
 );

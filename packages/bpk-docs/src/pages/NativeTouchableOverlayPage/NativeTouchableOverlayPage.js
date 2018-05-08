@@ -29,9 +29,6 @@ import Paragraph from './../../components/Paragraph';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
 import DocsPageWrapper from './../../components/neo/DocsPageWrapper';
 
-const touchableHighlightUrl =
-  'https://facebook.github.io/react-native/docs/0.52/touchablehighlight.html';
-
 const touchableNativeFeedbackUrl =
   '/components/native/touchable-native-feedback';
 
@@ -64,16 +61,12 @@ const isNeo = process.env.BPK_NEO;
 
 const blurb = [
   <Paragraph>
-    The Backpack <em>Touchable Overlay</em> component is to be used instead of
-    the default{' '}
-    <BpkLink href={touchableHighlightUrl} blank>
-      React Native Touchable <em>Highlight</em>
-    </BpkLink>{' '}
-    component. The default <em>Touchable Highlight</em> component works by
+    This component is a replacement for the default React Native Touchable
+    Highlight component. The default Touchable Highlight component works by
     decreasing the opacity of the wrapped view to show an underlay colour. When
-    views are nested within a <em>Touchable Highlight</em> wrapped view, their
-    opacity is unchanged which produces an undesirable result. Have a look at
-    the example below to see them both in action.
+    views are nested within a Touchable Highlight wrapped view, their opacity is
+    unchanged which produces an undesirable result. Have a look at the example
+    below to see them both in action.
   </Paragraph>,
   <BpkBlockquote>
     <BpkText bold>Note:</BpkText> This component is iOS only, for Android please
