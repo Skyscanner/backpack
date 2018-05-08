@@ -46,6 +46,8 @@ const docsThemeAttributes = [
   'docsSidebarBackground',
   'docsSidebarLink',
   'docsSidebarLinkBorder',
+  'themeName',
+  'logoFillColor',
 ];
 
 export default [

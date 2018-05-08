@@ -17,6 +17,7 @@
  */
 
 import React from 'react';
+import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { browserHistory } from 'react-router';
 
@@ -40,6 +41,9 @@ import GitHubIcon from '../../static/github_icon.svg';
 import UsingBackpackIcon from '../../static/using_bpk_icon.svg';
 import BackpackLogoWhite from '../../static/backpack-logo-white.svg';
 import HeroImage from '../../static/hero.jpg';
+import LondonHeroImage from '../../static/london_hero.jpg';
+import HongKongHeroImage from '../../static/hongKong_hero.jpg';
+import DohaHeroImage from '../../static/doha_hero.jpg';
 
 const getClassName = cssModules(STYLES);
 
@@ -77,65 +81,101 @@ const CARD_CONTENTS = [
   },
 ];
 
-const HERO_IMAGE = {
-  image: HeroImage,
-  credit: 'Vincent Guth: Hot Air Balloon',
-  creditHref: 'https://unsplash.com/photos/q99oeAG46BY',
+const HERO_IMAGE_THEMES = {
+  London: {
+    image: LondonHeroImage,
+    credit: null,
+    creditHref: 'https://unsplash.com/photos/q99oeAG46BY',
+  },
+  HongKong: {
+    image: HongKongHeroImage,
+    credit: null,
+    creditHref: 'https://unsplash.com/photos/q99oeAG46BY',
+  },
+  Doha: {
+    image: DohaHeroImage,
+    credit: null,
+    creditHref: 'https://unsplash.com/photos/q99oeAG46BY',
+  },
+  default: {
+    image: HeroImage,
+    credit: 'Vincent Guth: Hot Air Balloon',
+    creditHref: 'https://unsplash.com/photos/q99oeAG46BY',
+  },
 };
+const HomePage = (props, context) => {
+  const getHeroImageForTheme = () => {
+    if (
+      !context.theme ||
+      Object.keys(HERO_IMAGE_THEMES).indexOf(context.theme.themeName) < 0
+    ) {
+      return HERO_IMAGE_THEMES.default;
+    }
+    return HERO_IMAGE_THEMES[context.theme.themeName];
+  };
 
-const HomePage = () => (
-  <section>
-    <Helmet title="Backpack" />
-    <div
-      style={{ backgroundImage: `url(${HERO_IMAGE.image})` }}
-      className={getClassName('bpkdocs-home-page__hero')}
-    >
-      <div className={getClassName('bpkdocs-home-page__hero-logo-container')}>
-        <div style={{ flex: 1 }}>
-          <img
-            src={BackpackLogoWhite}
-            className={getClassName('bpkdocs-home-page__hero-logo')}
-            alt="Backpack Logo"
-          />
-          {process.env.BPK_BUILT_AT && (
-            <UpdatedAt
-              date={new Date(process.env.BPK_BUILT_AT * 1000)}
-              className={getClassName('bpkdocs-home-page__hero-updated')}
+  const heroImage = getHeroImageForTheme();
+
+  return (
+    <section>
+      <Helmet title="Backpack" />
+      <div
+        style={{ backgroundImage: `url(${heroImage.image})` }}
+        className={getClassName('bpkdocs-home-page__hero')}
+      >
+        <div className={getClassName('bpkdocs-home-page__hero-logo-container')}>
+          <div style={{ flex: 1 }}>
+            <img
+              src={BackpackLogoWhite}
+              className={getClassName('bpkdocs-home-page__hero-logo')}
+              alt="Backpack Logo"
             />
+            {process.env.BPK_BUILT_AT && (
+              <UpdatedAt
+                date={new Date(process.env.BPK_BUILT_AT * 1000)}
+                className={getClassName('bpkdocs-home-page__hero-updated')}
+              />
+            )}
+          </div>
+          {heroImage.credit && (
+            <a
+              href={heroImage.creditHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={getClassName('bpkdocs-home-page__hero-credit')}
+            >
+              {heroImage.credit}
+            </a>
           )}
         </div>
-        <a
-          href={HERO_IMAGE.creditHref}
-          target="_blank"
-          rel="noopener noreferrer"
-          className={getClassName('bpkdocs-home-page__hero-credit')}
-        >
-          {HERO_IMAGE.credit}
-        </a>
+        <div className={getClassName('bpkdocs-home-page__hero-inner')}>
+          <BpkText
+            textStyle="xl"
+            tagName="h1"
+            className={getClassName('bpkdocs-home-page__hero-blurb')}
+          >
+            &mdash;<br />
+            Backpack is a collection of design resources, reusable components
+            and guidelines for creating Skyscanner products.
+          </BpkText>
+        </div>
       </div>
-      <div className={getClassName('bpkdocs-home-page__hero-inner')}>
-        <BpkText
-          textStyle="xl"
-          tagName="h1"
-          className={getClassName('bpkdocs-home-page__hero-blurb')}
-        >
-          &mdash;<br />
-          Backpack is a collection of design resources, reusable components and
-          guidelines for creating Skyscanner products.
-        </BpkText>
+      <div className={getClassName('bpkdocs-home-page__cards-container')}>
+        {CARD_CONTENTS.map(({ href, ...rest }) => (
+          <HomePageCard
+            {...rest}
+            href={rest.blank ? href : null}
+            onClick={rest.blank ? null : () => browserHistory.push(href)}
+            className={getClassName('bpkdocs-home-page__card')}
+          />
+        ))}
       </div>
-    </div>
-    <div className={getClassName('bpkdocs-home-page__cards-container')}>
-      {CARD_CONTENTS.map(({ href, ...rest }) => (
-        <HomePageCard
-          {...rest}
-          href={rest.blank ? href : null}
-          onClick={rest.blank ? null : () => browserHistory.push(href)}
-          className={getClassName('bpkdocs-home-page__card')}
-        />
-      ))}
-    </div>
-  </section>
-);
+    </section>
+  );
+};
+
+HomePage.contextTypes = {
+  theme: PropTypes.object,
+};
 
 export default HomePage;
