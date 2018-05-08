@@ -56,6 +56,7 @@
     "bpk-component-radio": "^1.2.26",
     "bpk-component-router-link": "^1.0.61",
     "bpk-component-rtl-toggle": "^1.1.17",
+    "bpk-component-section-list": "^0.0.0",
     "bpk-component-select": "^2.1.67",
     "bpk-component-slider": "^1.1.28",
     "bpk-component-spinner": "^2.2.29",

@@ -26,7 +26,6 @@ import androidScreenshotWithImages from 'react-native-bpk-component-section-list
 
 import Paragraph from './../../components/Paragraph';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
-import DocsPageWrapper from './../../components/neo/DocsPageWrapper';
 
 const components = [
   {
@@ -96,12 +95,4 @@ const NativeSectionListPage = ({ ...rest }) => (
   />
 );
 
-const NeoNativeSectionListPage = () => (
-  <DocsPageWrapper
-    title="Section list"
-    blurb={blurb}
-    nativeSubpage={<NativeSectionListPage wrapped />}
-  />
-);
-
-export default (isNeo ? NeoNativeSectionListPage : NativeSectionListPage);
+export default NativeSectionListPage;

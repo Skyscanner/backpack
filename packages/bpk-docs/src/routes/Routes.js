@@ -90,6 +90,7 @@ import SlidersPage from './../pages/SlidersPage';
 import DrawerPage from './../pages/DrawerPage';
 import DialogsPage from './../pages/DialogsPage';
 import NavigationBarPage from './../pages/NavigationBarPage';
+import SectionListPage from './../pages/SectionListPage';
 
 import AlignmentPage from './../pages/AlignmentPage';
 import ThemingPage from './../pages/ThemingPage';
@@ -130,6 +131,7 @@ import NeoNavigationBarPage from './../pages/NeoNavigationBarPage';
 import NeoNudgerPage from './../pages/NeoNudgerPage';
 import NeoPanelPage from './../pages/NeoPanelPage';
 import NeoProgressPage from './../pages/NeoProgressPage';
+import NeoSectionListPage from './../pages/NeoSectionListPage';
 import NeoSpinnerPage from './../pages/NeoSpinnerPage';
 import NeoStarRatingPage from './../pages/NeoStarRatingPage';
 import NeoTextPage from './../pages/NeoTextPage';
@@ -253,6 +255,9 @@ const Routes = (
         {isOldSite && (
           <Route path={ROUTES.NAVIGATION_BAR} component={NavigationBarPage} />
         )}
+        {isOldSite && (
+          <Route path={ROUTES.SECTION_LIST} component={SectionListPage} />
+        )}
         {/* Neo routes. */}
         <Route path={ROUTES.NEO_TEXT} component={NeoTextPage} />
         <Route path={ROUTES.NEO_LINK} component={NeoLinkPage} />
@@ -320,10 +325,7 @@ const Routes = (
         <Route path={ROUTES.NEO_PICKER} component={NativePickerPage} />
         <Route path={ROUTES.NEO_SELECT} component={NativeSelectPage} />
         <Route path={ROUTES.NEO_SWITCH} component={NativeSwitchPage} />
-        <Route
-          path={ROUTES.NEO_SECTION_LIST}
-          component={NativeSectionListPage}
-        />
+        <Route path={ROUTES.NEO_SECTION_LIST} component={NeoSectionListPage} />
         <Route
           path={ROUTES.NEO_TOUCHABLE_OVERLAY}
           component={NativeTouchableOverlayPage}

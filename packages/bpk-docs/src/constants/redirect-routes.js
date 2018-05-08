@@ -58,6 +58,7 @@ const NEO_WEB_COMPONENT_REDIRECTS = {
   '/components/web/sliders': ROUTES.NEO_SLIDER,
   '/components/web/drawer': ROUTES.NEO_DRAWER,
   '/components/web/dialogs': ROUTES.NEO_DIALOG,
+  '/components/web/section-list': ROUTES.NEO_SECTION_LIST,
 };
 
 const NEO_NATIVE_REDIRECTS = {
