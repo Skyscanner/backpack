@@ -81,7 +81,7 @@ const isNeo = process.env.BPK_NEO;
 
 const blurb = [
   <Paragraph>
-    Sliders are a great way of getting input from the user.
+    Sliders allow users to input a numeric value from a given range.
   </Paragraph>,
 ];
 

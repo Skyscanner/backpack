@@ -159,10 +159,10 @@ const components = [
 
 const blurb = [
   <Paragraph>
-    Backpack has full theming support through its theme provider component. This
-    component provides a theme to all themeable components underneath itself. In
-    the render tree, all themeable components will have access to the provided
-    theme, even when they are multiple levels deep.
+    All Backpack components have full theming support through through the theme
+    provider component. In the render tree, all themeable components will have
+    access to the provided theme, even when they are multiple levels deep.
+    variables are used.
   </Paragraph>,
   <Paragraph>
     In React Native, this is achieved using React&apos;s{' '}
@@ -172,11 +172,8 @@ const blurb = [
     <BpkLink href={CSS_VARIABLES_URL} blank>
       CSS variables
     </BpkLink>{' '}
-    are used.
-  </Paragraph>,
-  <Paragraph>
-    Each themeable component lists the theme attributes it requires in its
-    readme.
+    are used. Each themeable component lists the theme attributes it requires in
+    its readme.
   </Paragraph>,
 ];
 

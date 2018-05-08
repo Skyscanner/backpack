@@ -76,18 +76,21 @@ const components = [
   },
 ];
 
+const blurb = [
+  <Paragraph>
+    The Backpack text component encapsulates six different text styles tailored
+    specifically for both iOS and Android. It&#39;s a wrapper around the React
+    Native <BpkLink href={reactNativeUrl}>Text component</BpkLink>, therefore it
+    supports all the same behaviours and properties.
+  </Paragraph>,
+];
+
+const isNeo = process.env.BPK_NEO;
+
 const NativeTextPage = ({ ...rest }) => (
   <DocsPageBuilder
     title="Text"
-    blurb={[
-      <Paragraph>
-        The Backpack text component encapsulates six different text styles
-        tailored specifically for both iOS and Android. It&#39;s a wrapper
-        around the React Native{' '}
-        <BpkLink href={reactNativeUrl}>Text component</BpkLink>, therefore it
-        supports all the same behaviours and properties.
-      </Paragraph>,
-    ]}
+    blurb={isNeo ? null : blurb}
     components={components}
     readme={readme}
     {...rest}

@@ -25,10 +25,17 @@ import Paragraph from './../../components/Paragraph';
 import Web from '../SpinnersPage';
 import Native from '../NativeSpinnerPage';
 
+const blurb = [
+  <Paragraph>
+    Spinners are used to indicate that a part of the product is loading or
+    performing a task when the amount of time needed is unknown.
+  </Paragraph>,
+];
+
 const Page = () => (
   <DocsPageWrapper
-    title="Neo spinner"
-    blurb={[<Paragraph>Blurb for the neo spinner page.</Paragraph>]}
+    title="Spinner"
+    blurb={blurb}
     webSubpage={<Web wrapped />}
     nativeSubpage={<Native wrapped />}
   />
