@@ -15,9 +15,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+/* @flow */
 
 import PropTypes from 'prop-types';
-import React from 'react';
+import React, { type Node } from 'react';
 import { cssModules } from 'bpk-react-utils';
 import BpkMobileScrollContainer from 'bpk-component-mobile-scroll-container';
 
@@ -25,7 +26,14 @@ import STYLES from './bpk-horizontal-nav.scss';
 
 const getClassName = cssModules(STYLES);
 
-const BpkHorizontalNav = props => {
+export type Props = {
+  children: Node,
+  className: ?string,
+  leadingScrollIndicatorClassName: ?string,
+  trailingScrollIndicatorClassName: ?string,
+};
+
+const BpkHorizontalNav = (props: Props) => {
   const classNames = [getClassName('bpk-horizontal-nav')];
   const {
     children,

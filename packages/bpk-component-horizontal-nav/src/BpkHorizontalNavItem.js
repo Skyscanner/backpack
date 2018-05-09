@@ -15,16 +15,25 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+/* @flow */
 
+import React, { type Node } from 'react';
 import PropTypes from 'prop-types';
-import React from 'react';
 import { cssModules } from 'bpk-react-utils';
 
 import STYLES from './bpk-horizontal-nav-item.scss';
 
 const getClassName = cssModules(STYLES);
 
-const BpkHorizontalNavItem = props => {
+export type Props = {
+  children: Node,
+  selected: boolean,
+  spaceAround: boolean,
+  href: ?string,
+  className: ?string,
+};
+
+const BpkHorizontalNavItem = (props: Props) => {
   const classNames = [getClassName('bpk-horizontal-nav__item')];
   const innerClassNames = [getClassName('bpk-horizontal-nav__link')];
   const { children, className, selected, spaceAround, href, ...rest } = props;
