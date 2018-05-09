@@ -134,12 +134,12 @@ const components = [
         <BpkList>
           <BpkListItem>
             <BpkLink href={`/${coreRgbAse}`} blank>
-              Adobe Swatch Exchange
+              Adobe swatch exchange (.ase)
             </BpkLink>
           </BpkListItem>
           <BpkListItem>
             <BpkLink href={`/${coreRgbClr}`} blank>
-              Mac
+              Mac (.clr)
             </BpkLink>
           </BpkListItem>
         </BpkList>
@@ -149,12 +149,12 @@ const components = [
         <BpkList>
           <BpkListItem>
             <BpkLink href={`/${extendedRgbAse}`} blank>
-              Adobe Swatch Exchange
+              Adobe swatch exchange (.ase)
             </BpkLink>
           </BpkListItem>
           <BpkListItem>
             <BpkLink href={`/${extendedRgbClr}`} blank>
-              Mac
+              Mac (.clr)
             </BpkLink>
           </BpkListItem>
         </BpkList>
@@ -165,7 +165,7 @@ const components = [
 ];
 
 const ColorsPage = () => (
-  <DocsPageBuilder title="Colors" components={components} />
+  <DocsPageBuilder title="Colour" components={components} />
 );
 
 export default ColorsPage;

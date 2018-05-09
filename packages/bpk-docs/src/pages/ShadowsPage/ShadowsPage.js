@@ -26,7 +26,7 @@ import { getPlatformTokens } from './../../helpers/tokens-helper';
 
 const ShadowsPage = () => (
   <DocsPageBuilder
-    title="Shadows"
+    title="Shadow"
     tokenMap={getPlatformTokens(
       TOKENS,
       IOS_TOKENS,

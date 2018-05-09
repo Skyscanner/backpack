@@ -26,7 +26,7 @@ import { getPlatformTokens } from './../../helpers/tokens-helper';
 
 const SpacingsPage = () => (
   <DocsPageBuilder
-    title="Spacings"
+    title="Spacing"
     tokenMap={getPlatformTokens(
       TOKENS,
       IOS_TOKENS,
