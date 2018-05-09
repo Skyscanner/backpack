@@ -111,9 +111,9 @@ const BaseStylesheetPage = () => (
     title="Base stylesheet"
     blurb={[
       <Paragraph>
-        All components are built on top of a super lightweight base stylesheet.
-        Ensure you include this on the page when consuming any backpack
-        components.
+        All web components are built on top of a super lightweight base
+        stylesheet. Ensure you include this on the page when consuming any
+        backpack web components.
       </Paragraph>,
     ]}
     components={components}
