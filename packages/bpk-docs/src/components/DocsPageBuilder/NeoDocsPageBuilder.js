@@ -192,6 +192,9 @@ const NeoDocsPageBuilder = props => {
       : null,
   ];
 
+  const menu = [...props.components, ...(props.customSections || [])];
+  const showPageHead = props.blurb || menu.length > 0;
+
   return (
     <BpkContentContainer
       className={getClassName(
@@ -200,16 +203,16 @@ const NeoDocsPageBuilder = props => {
         }-sections`,
       )}
     >
-      <PageHead
-        blurb={props.blurb}
-        menu={[...props.components, ...(props.customSections || [])].map(
-          ({ id, title }) => ({
+      {showPageHead && (
+        <PageHead
+          blurb={props.blurb}
+          menu={menu.map(({ id, title }) => ({
             href: `#${id}`,
             title,
-          }),
-        )}
-        wrapped={props.wrapped}
-      />
+          }))}
+          wrapped={props.wrapped}
+        />
+      )}
       <AlternatingPageContent sections={sections} />
     </BpkContentContainer>
   );

@@ -49,25 +49,29 @@ type Props = {
 };
 const PageHead = (props: Props) => {
   const contentClassNames = [getClassName('bpkdocs-page-head__content')];
+  const showMenu = props.menu && props.menu.length > 0;
   return (
     <section className={getClassName('bpkdocs-page-head')}>
       <div className={contentClassNames.join(' ')}>
         {props.blurb && toNodes(props.blurb)}
-        <BpkText
-          bold
-          tagName="h2"
-          className={getClassName('bpkdocs-page-head__in-section')}
-        >
-          In this section
-        </BpkText>
-        {props.menu && (
-          <BpkList>
-            {props.menu.map(({ title, href }) => (
-              <BpkListItem key={`menu-item-${href.substr(1)}`}>
-                <BpkLink href={href}>{title}</BpkLink>
-              </BpkListItem>
-            ))}
-          </BpkList>
+        {showMenu && (
+          <div>
+            <BpkText
+              bold
+              tagName="h2"
+              className={getClassName('bpkdocs-page-head__in-section')}
+            >
+              In this section
+            </BpkText>
+            <BpkList>
+              {props.menu &&
+                props.menu.map(({ title, href }) => (
+                  <BpkListItem key={`menu-item-${href.substr(1)}`}>
+                    <BpkLink href={href}>{title}</BpkLink>
+                  </BpkListItem>
+                ))}
+            </BpkList>
+          </div>
         )}
       </div>
     </section>
