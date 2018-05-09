@@ -56,18 +56,18 @@ const CARD_CONTENTS = [
     icon: UsingBackpackIcon,
   },
   {
-    key: 'design-tokens',
-    title: 'Design tokens',
-    href: ROUTES.TOKENS,
-    image: DesignTokensImage,
-    icon: DesignTokensIcon,
-  },
-  {
     key: 'components',
     title: 'Components',
     href: ROUTES.COMPONENTS,
     image: ComponentsImage,
     icon: ComponentsIcon,
+  },
+  {
+    key: 'design-tokens',
+    title: 'Design tokens',
+    href: ROUTES.TOKENS,
+    image: DesignTokensImage,
+    icon: DesignTokensIcon,
   },
   {
     key: 'github',

@@ -20,6 +20,7 @@
 import React, { type Node } from 'react';
 import { cssModules } from 'bpk-react-utils';
 import BpkLink from 'bpk-component-link';
+import BpkText from 'bpk-component-text';
 import { BpkList, BpkListItem } from 'bpk-component-list';
 import isString from 'lodash/isString';
 
@@ -52,6 +53,13 @@ const PageHead = (props: Props) => {
     <section className={getClassName('bpkdocs-page-head')}>
       <div className={contentClassNames.join(' ')}>
         {props.blurb && toNodes(props.blurb)}
+        <BpkText
+          bold
+          tagName="h2"
+          className={getClassName('bpkdocs-page-head__in-section')}
+        >
+          In this section
+        </BpkText>
         {props.menu && (
           <BpkList>
             {props.menu.map(({ title, href }) => (
