@@ -22,10 +22,7 @@ import React from 'react';
 import DocsPageWrapper from './../../components/neo/DocsPageWrapper';
 import Paragraph from './../../components/Paragraph';
 
-import Web from '../TextPage';
-import Native from '../NativeTextPage';
-
-const Page = () => (
+const Page = ({ WebSubpage, NativeSubpage }) => (
   <DocsPageWrapper
     title="Text"
     blurb={[
@@ -36,8 +33,8 @@ const Page = () => (
         achieve semantic markup while retaining control over how the text looks.
       </Paragraph>,
     ]}
-    webSubpage={<Web wrapped />}
-    nativeSubpage={<Native wrapped />}
+    webSubpage={<WebSubpage wrapped />}
+    nativeSubpage={<NativeSubpage wrapped />}
   />
 );
 

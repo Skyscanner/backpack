@@ -19,6 +19,7 @@
 /* @flow */
 
 import * as routes from './../constants/routes';
+import * as pages from './../constants/pages';
 
 import ComponentsImage from '../static/components_hero.jpg';
 import UsingBackpackImage from '../static/using_backpack_hero.jpg';
@@ -243,7 +244,7 @@ const neoComponentsLinks = [
       url: `/${ComponentsImage}`,
     },
     links: [
-      { id: 'TEXT', route: routes.NEO_TEXT, children: 'Text' },
+      pages.NEO_TEXT_PAGE.link(),
       { id: 'LINK', route: routes.NEO_LINK, children: 'Link' },
       { id: 'LIST', route: routes.NEO_LIST, children: 'List' },
       {
