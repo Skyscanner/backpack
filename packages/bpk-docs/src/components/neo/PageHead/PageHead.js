@@ -58,7 +58,7 @@ const PageHead = (props: Props) => {
           tagName="h2"
           className={getClassName('bpkdocs-page-head__in-section')}
         >
-          In this section:
+          In this section
         </BpkText>
         {props.menu && (
           <BpkList>
