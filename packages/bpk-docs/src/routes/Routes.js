@@ -26,6 +26,7 @@ import {
 } from 'react-router';
 
 import * as ROUTES from './../constants/routes';
+import * as PAGES from './../constants/pages';
 import redirects from './../constants/redirect-routes';
 
 import DefaultLayout from './../layouts/DefaultLayout';
@@ -254,7 +255,7 @@ const Routes = (
           <Route path={ROUTES.NAVIGATION_BAR} component={NavigationBarPage} />
         )}
         {/* Neo routes. */}
-        <Route path={ROUTES.NEO_TEXT} component={NeoTextPage} />
+        {PAGES.NEO_TEXT_PAGE.renderRoute()}
         <Route path={ROUTES.NEO_LINK} component={NeoLinkPage} />
         <Route path={ROUTES.NEO_LIST} component={ListsPage} />
         <Route
