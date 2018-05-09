@@ -85,6 +85,7 @@ export default (props: Props) => {
           links={links.filter(link => [activeSection].indexOf(link.id) !== -1)}
           dimmed={sectionListExpanded}
           onClick={onMobileModalClose}
+          supportsFiltering={activeSection === 'COMPONENTS'}
         />
       </div>
     </nav>

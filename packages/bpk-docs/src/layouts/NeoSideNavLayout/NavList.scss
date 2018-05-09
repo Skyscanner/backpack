@@ -27,7 +27,14 @@
     list-style-type: none;
   }
 
-  &__list--dimmed {
+  &__filter {
+    margin-top: $bpk-spacing-xl;
+    margin-bottom: $bpk-spacing-xl;
+
+    @include bpk-margin-leading($bpk-first-column-size);
+  }
+
+  &--dimmed {
     position: relative;
   }
 
