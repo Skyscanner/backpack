@@ -15,33 +15,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* @flow */
-import { type Node } from 'react';
+@import '~bpk-mixins';
 
-export type Link = {
-  id: string,
-  children: Node,
-  route: ?string,
-  tags: ?[string],
-  onSelect: ?() => mixed,
-};
+.bpkdocs-nav-list-filter {
+  &__option {
+    @include bpk-margin-trailing($bpk-spacing-sm);
 
-export type Category = {
-  id: string,
-  category: string,
-  links: Array<Link>,
-  sort: ?boolean,
-  hero: {
-    url: string,
-    horizontalPosition: ?number,
-  },
-};
-
-export type LinkPropType = Link;
-export type CategoryPropType = Category;
-
-export type Links = Array<Link | Category>;
-
-export type LinksPropType = {
-  links: Links,
-};
+    :last-child {
+      @include bpk-margin-trailing(0);
+    }
+  }
+}
