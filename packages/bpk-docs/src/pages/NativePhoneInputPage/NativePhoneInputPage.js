@@ -31,7 +31,7 @@ import DocsPageWrapper from './../../components/neo/DocsPageWrapper';
 const components = [
   {
     id: 'dialing-code-list',
-    title: 'Dialing Code List',
+    title: 'Dialing code list',
     screenshots: [
       {
         title: 'iOS',
@@ -39,7 +39,7 @@ const components = [
         height: 1334,
         src: `/${iosScreenshoDialingCodeList}`,
         altText: 'iOS Dialing Code List Component',
-        subText: '(iPhone 8 Simulator)',
+        subText: '(iPhone 8 simulator)',
       },
       {
         title: 'Android',
@@ -47,13 +47,13 @@ const components = [
         height: 1920,
         src: `/${androidScreenshotDialingCodeList}`,
         altText: 'Android Dialing Code List Component',
-        subText: '(Google Pixel Emulator)',
+        subText: '(Google Pixel emulator)',
       },
     ],
   },
   {
     id: 'phone-number-input',
-    title: 'Phone Number Input',
+    title: 'Phone number input',
     screenshots: [
       {
         title: 'iOS',
@@ -61,7 +61,7 @@ const components = [
         height: 1334,
         src: `/${iosScreenshotPhoneNumberInput}`,
         altText: 'iOS Dialing Code List Component',
-        subText: '(iPhone 8 Simulator)',
+        subText: '(iPhone 8 simulator)',
       },
       {
         title: 'Android',
@@ -69,7 +69,7 @@ const components = [
         height: 1920,
         src: `/${androidScreenshotPhoneNumberInput}`,
         altText: 'Android Dialing Code List Component',
-        subText: '(Google Pixel Emulator)',
+        subText: '(Google Pixel emulator)',
       },
     ],
   },

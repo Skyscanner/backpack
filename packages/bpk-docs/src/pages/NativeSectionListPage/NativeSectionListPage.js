@@ -39,7 +39,7 @@ const components = [
         height: 1334,
         src: `/${iosScreenshotDefault}`,
         altText: 'iOS Default Section List Component',
-        subText: '(iPhone 8 Simulator)',
+        subText: '(iPhone 8 simulator)',
       },
       {
         title: 'Android',
@@ -47,13 +47,13 @@ const components = [
         height: 1920,
         src: `/${androidScreenshotDefault}`,
         altText: 'Android Default Section List Component',
-        subText: '(Google Pixel Emulator)',
+        subText: '(Google Pixel emulator)',
       },
     ],
   },
   {
     id: 'with-images',
-    title: 'With Images',
+    title: 'With images',
     blurb: 'List items can also contain images.',
     screenshots: [
       {
@@ -62,7 +62,7 @@ const components = [
         height: 1334,
         src: `/${iosScreenshotWithImages}`,
         altText: 'iOS Section List Component With Images',
-        subText: '(iPhone 8 Simulator)',
+        subText: '(iPhone 8 simulator)',
       },
       {
         title: 'Android',
@@ -70,7 +70,7 @@ const components = [
         height: 1920,
         src: `/${androidScreenshotWithImages}`,
         altText: 'Android Section List Component With Images',
-        subText: '(Google Pixel Emulator)',
+        subText: '(Google Pixel emulator)',
       },
     ],
   },
@@ -87,7 +87,7 @@ const blurb = [
 
 const NativeSectionListPage = ({ ...rest }) => (
   <DocsPageBuilder
-    title="Section List"
+    title="Section list"
     blurb={isNeo ? null : blurb}
     components={components}
     readme={readme}

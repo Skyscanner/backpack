@@ -42,7 +42,7 @@ const components = [
         height: 1334,
         src: `/${iosScreenshotDefault}`,
         altText: 'iOS Default Nudger Component',
-        subText: '(iPhone 8 Simulator)',
+        subText: '(iPhone 8 simulator)',
       },
       {
         title: 'Android',
@@ -50,13 +50,13 @@ const components = [
         height: 1920,
         src: `/${androidScreenshotDefault}`,
         altText: 'Android Default Nudger Component',
-        subText: '(Google Pixel Emulator)',
+        subText: '(Google Pixel emulator)',
       },
     ],
   },
   {
     id: 'picker-open',
-    title: 'Picker Open',
+    title: 'Picker open',
     blurb: 'Picker modal open.',
     screenshots: [
       {
@@ -65,7 +65,7 @@ const components = [
         height: 1334,
         src: `/${iosScreenshotDefaultPickerOpen}`,
         altText: 'iOS Default Nudger Component',
-        subText: '(iPhone 8 Simulator)',
+        subText: '(iPhone 8 simulator)',
       },
       {
         title: 'Android',
@@ -73,7 +73,7 @@ const components = [
         height: 1920,
         src: `/${androidScreenshotDefaultPickerOpen}`,
         altText: 'Android Default Nudger Component',
-        subText: '(Google Pixel Emulator)',
+        subText: '(Google Pixel emulator)',
       },
     ],
   },
@@ -90,7 +90,7 @@ const blurb = [
 
 const NativePickerPage = ({ ...rest }) => (
   <DocsPageBuilder
-    title="Pickers"
+    title="Picker"
     blurb={isNeo ? null : blurb}
     components={components}
     readme={readme}

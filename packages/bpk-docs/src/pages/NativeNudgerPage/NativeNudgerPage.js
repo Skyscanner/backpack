@@ -38,7 +38,7 @@ const components = [
         height: 1334,
         src: `/${iosScreenshotDefault}`,
         altText: 'iOS Default Nudger Component',
-        subText: '(iPhone 8 Simulator)',
+        subText: '(iPhone 8 simulator)',
       },
       {
         title: 'Android',
@@ -46,7 +46,7 @@ const components = [
         height: 1920,
         src: `/${androidScreenshotDefault}`,
         altText: 'Android Default Nudger Component',
-        subText: '(Google Pixel Emulator)',
+        subText: '(Google Pixel emulator)',
       },
     ],
   },

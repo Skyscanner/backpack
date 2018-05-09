@@ -35,23 +35,23 @@ const touchableNativeFeedbackUrl =
 const components = [
   {
     id: 'touchableoverlay-vs-touchablehighlight',
-    title: "Touchable Overlay vs React Native's Touchable Highlight",
+    title: "Touchable overlay vs React Native's touchable highlight",
     screenshots: [
       {
-        title: 'Touchable Overlay',
+        title: 'Touchable overlay',
         width: 750,
         height: 1334,
         src: `/${iosScreenshotDefault}`,
-        altText: 'Backpack Touchable Overlay Component',
-        subText: '(iPhone 8 Simulator)',
+        altText: 'Backpack Touchable overlay component',
+        subText: '(iPhone 8 simulator)',
       },
       {
-        title: "React Native's Touchable Highlight",
+        title: "React Native's touchable highlight",
         width: 750,
         height: 1334,
         src: `/${iosScreenshotTouchableHighlight}`,
-        altText: "React Native's Touchable Highlight Component",
-        subText: '(iPhone 8 Simulator)',
+        altText: "React Native's touchable highlight component",
+        subText: '(iPhone 8 simulator)',
       },
     ],
   },
@@ -72,7 +72,7 @@ const blurb = [
     <BpkText bold>Note:</BpkText> This component is iOS only, for Android please
     use BpkTouchableNativeFeedback{' '}
     <BpkLink href={touchableNativeFeedbackUrl} blank>
-      Touchable Native <em>Feedback</em>
+      Touchable native <em>feedback</em>
     </BpkLink>{' '}
     component.
   </BpkBlockquote>,
@@ -80,7 +80,7 @@ const blurb = [
 
 const NativeTouchableOverlayPage = ({ ...rest }) => (
   <DocsPageBuilder
-    title="Touchable Overlay"
+    title="Touchable overlay"
     blurb={isNeo ? null : blurb}
     components={components}
     readme={readme}

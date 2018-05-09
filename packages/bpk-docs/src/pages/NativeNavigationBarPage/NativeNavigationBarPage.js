@@ -45,7 +45,7 @@ const components = [
         height: 1334,
         src: `/${iosScreenshotDefault}`,
         altText: 'iOS Default Navigation Bar',
-        subText: '(iPhone 8 Simulator)',
+        subText: '(iPhone 8 simulator)',
       },
       {
         title: 'Android',
@@ -53,7 +53,7 @@ const components = [
         height: 1920,
         src: `/${androidScreenshotDefault}`,
         altText: 'Android Default Navigation Bar',
-        subText: '(Google Pixel Emulator)',
+        subText: '(Google Pixel emulator)',
       },
     ],
   },
@@ -68,7 +68,7 @@ const components = [
         height: 1334,
         src: `/${iosScreenshotModal}`,
         altText: 'iOS Modal Navigation Bar',
-        subText: '(iPhone 8 Simulator)',
+        subText: '(iPhone 8 simulator)',
       },
       {
         title: 'Android',
@@ -82,7 +82,7 @@ const components = [
   },
   {
     id: 'subtitle-view',
-    title: 'Subtitle View',
+    title: 'Subtitle view',
     blurb:
       'Optionally a subtitle view can be rendered below the main bar content.',
     screenshots: [
@@ -92,7 +92,7 @@ const components = [
         height: 1334,
         src: `/${iosScreenshotSubtitleView}`,
         altText: 'iOS Subtitle  Navigation Bar',
-        subText: '(iPhone 8 Simulator)',
+        subText: '(iPhone 8 simulator)',
       },
       {
         title: 'Android',
@@ -100,7 +100,7 @@ const components = [
         height: 1920,
         src: `/${androidScreenshotSubtitleView}`,
         altText: 'Android Subtitle Navigation Bar',
-        subText: '(Google Pixel Emulator)',
+        subText: '(Google Pixel emulator)',
       },
     ],
   },
@@ -115,7 +115,7 @@ const components = [
         height: 1334,
         src: `/${iosScreenshotTitleIcon}`,
         altText: 'iOS Icon Navigation Bar',
-        subText: '(iPhone 8 Simulator)',
+        subText: '(iPhone 8 simulator)',
       },
       {
         title: 'Android',
@@ -123,7 +123,7 @@ const components = [
         height: 1920,
         src: `/${androidScreenshotTitleIcon}`,
         altText: 'Android Icon Navigation Bar',
-        subText: '(Google Pixel Emulator)',
+        subText: '(Google Pixel emulator)',
       },
     ],
   },
@@ -141,7 +141,7 @@ const blurb = [
 
 const NativeNavigationBarPage = (props: Object) => (
   <DocsPageBuilder
-    title="Navigation Bars"
+    title="Navigation bar"
     blurb={isNeo ? null : blurb}
     components={components}
     readme={readme}

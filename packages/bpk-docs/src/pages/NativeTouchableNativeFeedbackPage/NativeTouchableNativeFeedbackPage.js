@@ -35,15 +35,15 @@ const RNTouchableNativeFeedback =
 const components = [
   {
     id: 'touchablenativefeedback',
-    title: 'Touchable Native Feedback',
+    title: 'Touchable native feedback',
     screenshots: [
       {
-        title: 'Touchable Native Feedback',
+        title: 'Touchable native feedback',
         width: 750,
         height: 1334,
         src: `/${androidScreenshotDefault}`,
-        altText: 'Backpack Touchable Native Feedback Component',
-        subText: '(Google Pixel Emulator)',
+        altText: 'Backpack touchable native feedback component',
+        subText: '(Google Pixel emulator)',
       },
     ],
   },
