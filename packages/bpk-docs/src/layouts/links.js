@@ -103,6 +103,11 @@ const componentsLinks = [
         route: routes.SECTION_LIST,
         children: 'Section List',
       },
+      {
+        id: 'NAVIGATION_STACK',
+        route: routes.NAVIGATION_STACK,
+        children: 'Navigation stack',
+      },
       { id: 'BREAKPOINTS', route: routes.BREAKPOINTS, children: 'Breakpoints' },
       {
         id: 'HORIZONTAL_GRID',
@@ -447,6 +452,12 @@ const neoComponentsLinks = [
         route: routes.NEO_NAVIGATION_BAR,
         children: 'Navigation bar',
         tags: ['web', 'native'],
+      },
+      {
+        id: 'NAVIGATION_STACK',
+        route: routes.NEO_NAVIGATION_STACK,
+        children: 'Navigation stack',
+        tags: ['web'],
       },
       {
         id: 'BREAKPOINT',

@@ -48,6 +48,7 @@
     "bpk-component-mobile-scroll-container": "^1.1.0",
     "bpk-component-modal": "^1.7.1",
     "bpk-component-navigation-bar": "^1.1.1",
+    "bpk-component-navigation-stack": "^0.0.0",
     "bpk-component-nudger": "^1.0.64",
     "bpk-component-pagination": "^1.0.27",
     "bpk-component-panel": "^1.0.61",

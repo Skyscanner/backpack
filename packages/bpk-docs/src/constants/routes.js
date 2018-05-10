@@ -82,6 +82,7 @@ export const DRAWER = '/components/web/drawer';
 export const DIALOGS = '/components/web/dialogs';
 export const NAVIGATION_BAR = '/components/web/navigation-bar';
 export const SECTION_LIST = '/components/web/section-list';
+export const NAVIGATION_STACK = '/components/web/navigation-stack';
 
 // components/native/
 export const NATIVE_BANNER_ALERT = '/components/native/banner-alerts';
@@ -165,6 +166,7 @@ export const NEO_DRAWER = '/components/drawer';
 export const NEO_DIALOG = '/components/dialog';
 export const NEO_FLAT_LIST = '/components/flat-list';
 export const NEO_NAVIGATION_BAR = '/components/navigation-bar';
+export const NEO_NAVIGATION_STACK = '/components/navigation-stack';
 export const NEO_PAGINATION_DOT = '/components/pagination-dot';
 export const NEO_PHONE_INPUT = '/components/phone-input';
 export const NEO_PICKER = '/components/picker';
