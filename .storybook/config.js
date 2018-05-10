@@ -94,6 +94,7 @@ configure(() => {
   require('./../packages/bpk-component-radio/stories');
   require('./../packages/bpk-component-router-link/stories');
   require('./../packages/bpk-component-rtl-toggle/stories');
+  require('./../packages/bpk-component-section-list/stories');
   require('./../packages/bpk-component-select/stories');
   require('./../packages/bpk-component-slider/stories');
   require('./../packages/bpk-component-spinner/stories');

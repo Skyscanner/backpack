@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BpkSectionListSection should render correctly 1`] = `
+<section>
+  <ul
+    className="bpk-section-list-section"
+  >
+    <li>
+      Hello world
+    </li>
+  </ul>
+</section>
+`;
+
+exports[`BpkSectionListSection should render correctly with "headerText" prop 1`] = `
+<section>
+  <header
+    className="bpk-section-list-section__header"
+  >
+    <span
+      className="bpk-text bpk-text--base bpk-text--bold"
+    >
+      Heading
+    </span>
+  </header>
+  <ul
+    className="bpk-section-list-section"
+  >
+    <li>
+      Hello world
+    </li>
+  </ul>
+</section>
+`;
+
+exports[`BpkSectionListSection should render correctly with arbitrary props 1`] = `
+<section
+  testId="123"
+>
+  <ul
+    className="bpk-section-list-section"
+  >
+    <li>
+      Hello world
+    </li>
+  </ul>
+</section>
+`;
