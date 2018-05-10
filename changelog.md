@@ -2,6 +2,21 @@
 
 [Unreleased changes](./unreleased.md).
 
+# 2018-05-10 - Introducing navigation stack, section list and new props for horizontal-nav
+
+**Added:**
+- bpk-component-navigation-stack: 1.0.0
+  - Introducing the Navigation Stack component, see: https://backpack.github.io/components/web/navigation-stack
+
+- bpk-component-section-list: 1.0.0
+  - Introducing the web section list component, see: https://backpack.github.io/components/web/section-list
+
+- bpk-component-horizontal-nav: 2.2.0 => 2.3.0
+  - `BpkHorizontalNavItem` can now be disabled with the `disabled` prop.
+
+-bpk-theming: 1.1.0
+  - The `theme` property can now be accessed via `context` in child components.
+
 # 2018-05-08 - Introducing native select component
 
 **Breaking:**
