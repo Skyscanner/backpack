@@ -86,21 +86,23 @@ const components = [
           Backpack for iOS
         </BpkLink>{' '}
         is distributed as a CocoaPod. The pod contains several subspecs for
-        different aspects of Backpack such as color, typography, spacing etc.
+        different token level aspects of Backpack such as colour, typography,
+        spacing etc.
       </Paragraph>,
     ],
     examples: [],
   },
   {
     id: 'backpack-android',
-    title: 'Backpack Gradle Package',
+    title: 'Backpack Gradle package',
     blurb: [
       <Paragraph>
         <BpkLink href={backpackAndroid} blank>
           Backpack for Android
         </BpkLink>{' '}
         is distributed as a Gradle package. It contains a module with different
-        Backpack tokens such as color, typography, spacing etc as resource file.
+        Backpack tokens such as colour, typography, spacing etc as a resource
+        file.
       </Paragraph>,
     ],
     examples: [],
@@ -110,8 +112,8 @@ const components = [
     title: 'Sass variables and mixins',
     blurb: [
       <Paragraph>
-        Backpack&apos;s bonds are primarily available as a library of Sass
-        variables and mixins. Furthermore, most atom level components are also
+        Backpack&apos;s tokens are also available as a library of Sass variables
+        and mixins. Furthermore, most small components such as buttons are also
         available as mixins. Again, the library is exposed as a module on the
         npm registry which can be installed like so:
       </Paragraph>,
@@ -212,8 +214,9 @@ const components = [
           >
             Grab the Sketch template.
           </BpkLink>{' '}
-          This is used to manage color and type styles since Sketch libraries do
-          not currently have support for syncing color palettes or type styles.
+          This is used to manage colour and type styles since Sketch libraries
+          do not currently have support for syncing colour palettes or type
+          styles.
         </BpkListItem>
       </BpkList>,
       <BpkBlockquote>
@@ -244,7 +247,8 @@ const GettingStartedPage = () => (
     title="Getting started"
     blurb={[
       <Paragraph>
-        Depending on the audience, there are a few ways to get started:
+        Depending on the audience, there are a few ways to get started with
+        Backpack.
       </Paragraph>,
     ]}
     components={components}
