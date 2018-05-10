@@ -16,6 +16,22 @@ exports[`BpkHorizontalNavItem should render correctly 1`] = `
 </li>
 `;
 
+exports[`BpkHorizontalNavItem should render correctly with "disabled" prop 1`] = `
+<li
+  aria-selected="false"
+  className="bpk-horizontal-nav__item"
+  role="tab"
+>
+  <button
+    className="bpk-horizontal-nav__link bpk-horizontal-nav__link--disabled"
+    disabled={true}
+    type="button"
+  >
+    My nav item content
+  </button>
+</li>
+`;
+
 exports[`BpkHorizontalNavItem should render correctly with "selected" prop 1`] = `
 <li
   aria-selected="true"
