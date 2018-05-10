@@ -14,22 +14,24 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
-*/
-@import '~bpk-mixins';
+ */
 
-.bpkdocs-page-wrapper {
-  background-color: $bpk-color-white;
+import BpkText from 'bpk-component-text';
 
-  &__inner {
-    padding: $bpk-spacing-xs * 10;
-    padding-bottom: 0;
-  }
+import { cssModules, withDefaultProps } from 'bpk-react-utils';
 
-  &__platform-switcher {
-    padding: 0 $bpk-spacing-xs * 10;
-  }
+import STYLES from './IntroBlurb.scss';
 
-  &__platform-icon {
-    margin-right: $bpk-spacing-sm;
-  }
-}
+const getClassName = cssModules(STYLES);
+
+export const ParagraphNoMargin = withDefaultProps(BpkText, {
+  textStyle: 'lg',
+  tagName: 'p',
+  className: ['bpk-docs-intro-blurb'].map(getClassName).join(' '),
+});
+
+export default withDefaultProps(BpkText, {
+  textStyle: 'lg',
+  tagName: 'p',
+  className: getClassName('bpk-docs-intro-blurb'),
+});
