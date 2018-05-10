@@ -10,7 +10,8 @@ before_install:
 before_script: greenkeeper-lockfile-update
 after_script: greenkeeper-lockfile-upload
 install:
-  - npm install
+  - npm i -g npm@5.7.1
+  - npm ci
   - npm run build
 script:
   - set -e
