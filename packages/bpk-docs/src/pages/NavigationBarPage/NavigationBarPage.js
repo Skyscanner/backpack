@@ -133,7 +133,6 @@ const NavigationBarPage = ({ ...rest }: { [string]: any }) => (
     title="Navigation bar"
     blurb={isNeo ? null : blurb}
     components={components}
-    sassdocId="navigationbar"
     readme={navigationBarReadme}
     {...rest}
   />
