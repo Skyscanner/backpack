@@ -1,6 +1,6 @@
 language: node_js
 node_js:
-  - lts/carbon
+  - node
 env:
   global:
     - NPM_CONFIG_LOGLEVEL=warn
@@ -10,7 +10,7 @@ before_install:
 before_script: greenkeeper-lockfile-update
 after_script: greenkeeper-lockfile-upload
 install:
-  - npm install
+  - npm ci
   - npm run build
 script:
   - set -e
