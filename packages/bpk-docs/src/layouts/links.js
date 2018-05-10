@@ -98,6 +98,11 @@ const componentsLinks = [
         route: routes.NAVIGATION_BAR,
         children: 'Navigation Bar',
       },
+      {
+        id: 'SECTION_LIST',
+        route: routes.SECTION_LIST,
+        children: 'Section List',
+      },
       { id: 'BREAKPOINTS', route: routes.BREAKPOINTS, children: 'Breakpoints' },
       {
         id: 'HORIZONTAL_GRID',
@@ -178,7 +183,7 @@ const componentsLinks = [
       {
         id: 'NATIVE_SECTION_LIST',
         route: routes.NATIVE_SECTION_LIST,
-        children: 'SectionList',
+        children: 'Section List',
       },
       {
         id: 'NATIVE_SELECT',
