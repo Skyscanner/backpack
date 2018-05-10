@@ -15,11 +15,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+/* @flow */
 
-import BpkHorizontalNav from './src/BpkHorizontalNav';
+import BpkHorizontalNav, {
+  type Props as NavProps,
+} from './src/BpkHorizontalNav';
 import BpkHorizontalNavItem, {
+  type Props as ItemProps,
   themeAttributes,
 } from './src/BpkHorizontalNavItem';
 
+export type BpkHorizontalNavProps = NavProps;
+export type BpkHorizontalNavItemProps = ItemProps;
 export { BpkHorizontalNavItem, themeAttributes };
 export default BpkHorizontalNav;
