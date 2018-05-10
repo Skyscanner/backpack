@@ -37,7 +37,7 @@ type Props = {
   href: ?string,
   className: ?string,
   disabled: boolean,
-  onClick: ?(event: SyntheticEvent<>) => void,
+  onClick: ?(event: SyntheticEvent<>) => mixed,
   submit: boolean,
   secondary: boolean,
   destructive: boolean,

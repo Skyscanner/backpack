@@ -1,0 +1,85 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BpkNavigationStack rtl should render correctly 1`] = `
+<div
+  className="bpk-navigation-stack"
+>
+  <div
+    className="bpk-navigation-stack__view-track"
+    style={
+      Object {
+        "transform": "translateX(100%)",
+      }
+    }
+  >
+    <div
+      aria-hidden={true}
+      className="bpk-navigation-stack__view"
+    >
+      <div />
+    </div>
+    <div
+      aria-hidden={false}
+      className="bpk-navigation-stack__view bpk-navigation-stack__view--current"
+    >
+      <div />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`BpkNavigationStack should render correctly 1`] = `
+<div
+  className="bpk-navigation-stack"
+>
+  <div
+    className="bpk-navigation-stack__view-track"
+    style={
+      Object {
+        "transform": "translateX(-100%)",
+      }
+    }
+  >
+    <div
+      aria-hidden={true}
+      className="bpk-navigation-stack__view"
+    >
+      <div />
+    </div>
+    <div
+      aria-hidden={false}
+      className="bpk-navigation-stack__view bpk-navigation-stack__view--current"
+    >
+      <div />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`BpkNavigationStack should render correctly with a "className" attribute 1`] = `
+<div
+  className="bpk-navigation-stack test"
+>
+  <div
+    className="bpk-navigation-stack__view-track"
+    style={
+      Object {
+        "transform": "translateX(-100%)",
+      }
+    }
+  >
+    <div
+      aria-hidden={true}
+      className="bpk-navigation-stack__view"
+    >
+      <div />
+    </div>
+    <div
+      aria-hidden={false}
+      className="bpk-navigation-stack__view bpk-navigation-stack__view--current"
+    >
+      <div />
+    </div>
+  </div>
+</div>
+`;
