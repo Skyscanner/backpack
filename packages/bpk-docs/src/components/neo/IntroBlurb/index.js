@@ -16,7 +16,6 @@
  * limitations under the License.
  */
 
-import IntroBlurb, { IntroBlurbNoMargin } from './IntroBlurb';
+import IntroBlurb from './IntroBlurb';
 
-export { IntroBlurbNoMargin };
 export default IntroBlurb;

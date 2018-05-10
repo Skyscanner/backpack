@@ -17,18 +17,10 @@
  */
 
 import BpkText from 'bpk-component-text';
-
 import { cssModules, withDefaultProps } from 'bpk-react-utils';
-
 import STYLES from './IntroBlurb.scss';
 
 const getClassName = cssModules(STYLES);
-
-export const ParagraphNoMargin = withDefaultProps(BpkText, {
-  textStyle: 'lg',
-  tagName: 'p',
-  className: ['bpk-docs-intro-blurb'].map(getClassName).join(' '),
-});
 
 export default withDefaultProps(BpkText, {
   textStyle: 'lg',
