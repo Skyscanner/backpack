@@ -80,7 +80,7 @@ export default class App extends Component {
 | disabled    | bool     | false    | false         |
 | href        | string   | false    | null          |
 
-*Note:* `disabled` and `selected` are mutually execlusive for true values i.e only one of them can be true for a given nav item.
+**Note:** `disabled` and `selected` are mutually execlusive for true values i.e only one of them can be true for a given nav item.
 
 ## Theme Props
 

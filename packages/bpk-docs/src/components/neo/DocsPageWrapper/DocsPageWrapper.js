@@ -80,13 +80,6 @@ class DocsPageWrapper extends React.Component {
             <BpkHorizontalNavItem
               name="native"
               disabled={!nativeSubpage}
-              className={
-                nativeSubpage
-                  ? null
-                  : getClassName(
-                      'bpkdocs-page-wrapper__platform-switcher-item--disabled',
-                    )
-              }
               selected={this.state.selected === 'native'}
               onClick={() => this.setState({ selected: 'native' })}
             >
@@ -98,13 +91,6 @@ class DocsPageWrapper extends React.Component {
             <BpkHorizontalNavItem
               name="web"
               disabled={!webSubpage}
-              className={
-                webSubpage
-                  ? null
-                  : getClassName(
-                      'bpkdocs-page-wrapper__platform-switcher-item--disabled',
-                    )
-              }
               selected={this.state.selected === 'web'}
               onClick={() => this.setState({ selected: 'web' })}
             >

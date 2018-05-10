@@ -32,11 +32,4 @@
   &__platform-icon {
     margin-right: $bpk-spacing-sm;
   }
-
-  &__platform-switcher-item {
-    &--disabled {
-      color: $bpk-color-gray-100;
-      cursor: default;
-    }
-  }
 }

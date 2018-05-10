@@ -53,11 +53,11 @@
     }
 
     &--disabled {
-      color: $bpk-color-gray-300;
+      color: $bpk-color-gray-100;
       cursor: not-allowed;
 
       &:active {
-        color: $bpk-color-gray-300;
+        color: $bpk-color-gray-100;
         box-shadow: unset;
       }
     }
