@@ -226,21 +226,23 @@ const AlignedArrow = withLargeButtonAlignment(LongArrowRightIcon);
 
 const isNeo = process.env.BPK_NEO;
 
+const blurb = [
+  <Paragraph>
+    Alignment higher-order-components (HOCs) allow components to be aligned
+    vertically within a given space.
+  </Paragraph>,
+  <Heading level="h3">Installation</Heading>,
+  <Paragraph>
+    The alignment HOCs are provided in the <Code>bpk-component-icon</Code>{' '}
+    package. See <BpkLink href={ROUTES.ICONS}>Icons</BpkLink> for installation
+    instructions.
+  </Paragraph>,
+];
+
 const AlignmentPage = ({ ...rest }) => (
   <DocsPageBuilder
     title="Alignment"
-    blurb={[
-      <Paragraph>
-        Alignment higher-order-components (HOCs) allow components to be aligned
-        vertically within a given space.
-      </Paragraph>,
-      <Heading level="h3">Installation</Heading>,
-      <Paragraph>
-        The alignment HOCs are provided in the <Code>bpk-component-icon</Code>{' '}
-        package. See <BpkLink href={ROUTES.ICONS}>Icons</BpkLink> for
-        installation instructions.
-      </Paragraph>,
-    ]}
+    blurb={isNeo ? null : blurb}
     components={components}
     {...rest}
   />
@@ -249,7 +251,7 @@ const AlignmentPage = ({ ...rest }) => (
 const NeoAlignmentPage = () => (
   <DocsPageWrapper
     title="Alignment"
-    blurb={[<Paragraph>TODO</Paragraph>]}
+    blurb={blurb}
     webSubpage={<AlignmentPage wrapped />}
   />
 );
