@@ -228,10 +228,10 @@ const AlignedArrow = withLargeButtonAlignment(LongArrowRightIcon);
 const isNeo = process.env.BPK_NEO;
 
 const blurb = [
-  <Paragraph>
+  <IntroBlurb>
     Alignment higher-order-components (HOCs) allow components to be aligned
     vertically within a given space.
-  </Paragraph>,
+  </IntroBlurb>,
   <Heading level="h3">Installation</Heading>,
   <Paragraph>
     The alignment HOCs are provided in the <Code>bpk-component-icon</Code>{' '}
