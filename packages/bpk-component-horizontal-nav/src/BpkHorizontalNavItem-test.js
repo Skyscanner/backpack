@@ -61,6 +61,17 @@ describe('BpkHorizontalNavItem', () => {
     expect(tree).toMatchSnapshot();
   });
 
+  it('should render correctly with "disabled" prop', () => {
+    const tree = renderer
+      .create(
+        <BpkHorizontalNavItem disabled>
+          My nav item content
+        </BpkHorizontalNavItem>,
+      )
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
   it('should render correctly with "spaceAround" prop', () => {
     const tree = renderer
       .create(
