@@ -113,7 +113,7 @@ const BaseStylesheetPage = () => (
       <Paragraph>
         All web components are built on top of a super lightweight base
         stylesheet. Ensure you include this on the page when consuming any
-        backpack web components.
+        Backpack web components.
       </Paragraph>,
     ]}
     components={components}
