@@ -33,6 +33,7 @@ import BpkButton from 'bpk-component-button';
 import bannerAlertReadme from 'bpk-component-banner-alert/readme.md';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
 import Paragraph from './../../components/Paragraph';
+import IntroBlurb from './../../components/neo/IntroBlurb';
 
 import STYLES from './bpk-banner-alerts-page.scss';
 
@@ -399,10 +400,10 @@ const BannerAlertsPage = ({ ...rest }: { [string]: any }) => (
       isNeo
         ? []
         : [
-            <Paragraph>
+            <IntroBlurb>
               Banner alerts provide feedback to the user when an action has been
               performed.
-            </Paragraph>,
+            </IntroBlurb>,
           ]
     }
     components={components}

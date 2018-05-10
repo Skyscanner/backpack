@@ -29,6 +29,7 @@ import data from 'bpk-component-barchart/data.json';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
 import DocsPageWrapper from './../../components/neo/DocsPageWrapper';
 import Paragraph from './../../components/Paragraph';
+import IntroBlurb from './../../components/neo/IntroBlurb';
 import Code from '../../components/Code';
 
 const EnhancedBarchart = updateOnDirectionChange(BpkBarchart);
@@ -134,11 +135,11 @@ const components = [
 const isNeo = process.env.BPK_NEO;
 
 const blurb = [
-  <Paragraph>
+  <IntroBlurb>
     Bar charts are useful for displaying comparisons between categories of data.
     At Skyscanner, bar charts are commonly used for displaying fare prices
     within a given time period e.g. a year, month or week.
-  </Paragraph>,
+  </IntroBlurb>,
 ];
 
 const BarchartsPage = ({ ...rest }) => (

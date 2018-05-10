@@ -31,6 +31,7 @@ import { cssModules } from 'bpk-react-utils';
 
 import DocsPageBuilder from './../../components/DocsPageBuilder';
 import Paragraph from './../../components/Paragraph';
+import IntroBlurb from './../../components/neo/IntroBlurb';
 import STYLES from './NavigationBarPage.scss';
 
 const getClassNames = cssModules(STYLES);
@@ -122,10 +123,10 @@ const components = [
 const isNeo = process.env.BPK_NEO;
 
 const blurb = [
-  <Paragraph>
+  <IntroBlurb>
     The navigation bar component encapsulates a title and icon/text actions for
     controlling views.
-  </Paragraph>,
+  </IntroBlurb>,
 ];
 
 const NavigationBarPage = ({ ...rest }: { [string]: any }) => (

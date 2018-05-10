@@ -20,7 +20,7 @@
 
 import React from 'react';
 import DocsPageWrapper from './../../components/neo/DocsPageWrapper';
-import Paragraph from './../../components/Paragraph';
+import IntroBlurb from './../../components/neo/IntroBlurb';
 
 import WebButtons from '../ButtonsPage';
 import NativeButtons from '../NativeButtonPage';
@@ -29,9 +29,9 @@ const NeoButtonPage = () => (
   <DocsPageWrapper
     title="Button"
     blurb={[
-      <Paragraph>
+      <IntroBlurb>
         Buttons make common actions and navigation easy to perform.
-      </Paragraph>,
+      </IntroBlurb>,
     ]}
     webSubpage={<WebButtons wrapped />}
     nativeSubpage={<NativeButtons wrapped />}

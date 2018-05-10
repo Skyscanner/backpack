@@ -28,7 +28,7 @@ import androidScreenshotWithDivider from 'react-native-bpk-component-panel/scree
 import iosScreenshotWithDividerArrangedVertically from 'react-native-bpk-component-panel/screenshots/ios/with-divider-arranged-vertically.png';
 import androidScreenshotWithDividerArrangedVertically from 'react-native-bpk-component-panel/screenshots/android/with-divider-arranged-vertically.png';
 
-import Paragraph from './../../components/Paragraph';
+import IntroBlurb from './../../components/neo/IntroBlurb';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
 
 const components = [
@@ -133,10 +133,10 @@ const components = [
 const isNeo = process.env.BPK_NEO;
 
 const blurb = [
-  <Paragraph>
+  <IntroBlurb>
     Panels are useful for housing distinct areas of related content. Unlike
     cards these are not clickable.
-  </Paragraph>,
+  </IntroBlurb>,
 ];
 
 const NativePanelsPage = ({ ...rest }) => (

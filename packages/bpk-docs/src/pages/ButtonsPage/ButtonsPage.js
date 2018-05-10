@@ -40,6 +40,7 @@ import loadingButtonReadme from 'bpk-component-loading-button/readme.md';
 import * as ROUTES from './../../constants/routes';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
 import Paragraph from './../../components/Paragraph';
+import IntroBlurb from './../../components/neo/IntroBlurb';
 import Code from '../../components/Code';
 
 const AlignedBpkSmallArrowIcon = alignToButton(TestBpkSmallArrowIcon);
@@ -309,11 +310,11 @@ const ButtonsPage = ({ ...rest }: { [string]: any }) => (
       isNeo
         ? []
         : [
-            <Paragraph>
+            <IntroBlurb>
               On this page, you’ll find examples and information on how to use
               the button component. If you provide an href, an anchor tag is
               rendered instead.
-            </Paragraph>,
+            </IntroBlurb>,
           ]
     }
     components={components}

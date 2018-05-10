@@ -23,7 +23,7 @@ import blockquotesReadme from 'bpk-component-blockquote/readme.md';
 
 import DocsPageBuilder from './../../components/DocsPageBuilder';
 import DocsPageWrapper from './../../components/neo/DocsPageWrapper';
-import Paragraph from './../../components/Paragraph';
+import IntroBlurb from './../../components/neo/IntroBlurb';
 
 const components = [
   {
@@ -42,10 +42,10 @@ const components = [
 const isNeo = process.env.BPK_NEO;
 
 const blurb = [
-  <Paragraph>
+  <IntroBlurb>
     The blockquote component allows the creation of a section that is quoted
     from another source.
-  </Paragraph>,
+  </IntroBlurb>,
 ];
 
 const BlockquotesPage = ({ ...rest }) => (

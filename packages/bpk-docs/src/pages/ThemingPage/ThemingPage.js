@@ -25,6 +25,7 @@ import nativeReadme from 'react-native-bpk-theming/readme.md';
 import webReadme from 'bpk-theming/readme.md';
 
 import Paragraph from './../../components/Paragraph';
+import IntroBlurb from './../../components/neo/IntroBlurb';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
 import DocsPageWrapper from './../../components/neo/DocsPageWrapper';
 
@@ -158,12 +159,12 @@ const components = [
 ];
 
 const blurb = [
-  <Paragraph>
+  <IntroBlurb>
     All Backpack components have full theming support through through the theme
     provider component. In the render tree, all themeable components will have
     access to the provided theme, even when they are multiple levels deep.
     variables are used.
-  </Paragraph>,
+  </IntroBlurb>,
   <Paragraph>
     In React Native, this is achieved using React&apos;s{' '}
     <BpkLink href={CONTEXT_API_URL} blank>

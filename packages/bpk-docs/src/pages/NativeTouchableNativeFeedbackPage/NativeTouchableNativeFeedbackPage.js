@@ -24,7 +24,7 @@ import readme from 'react-native-bpk-component-touchable-native-feedback/readme.
 
 import androidScreenshotDefault from 'react-native-bpk-component-touchable-native-feedback/screenshots/default.png';
 
-import Paragraph from './../../components/Paragraph';
+import IntroBlurb from './../../components/neo/IntroBlurb';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
 import DocsPageWrapper from './../../components/neo/DocsPageWrapper';
 
@@ -52,7 +52,7 @@ const components = [
 const isNeo = process.env.BPK_NEO;
 
 const blurb = [
-  <Paragraph>
+  <IntroBlurb>
     React Native{"'"}s{' '}
     <BpkLink href={RNTouchableNativeFeedback} blank>
       Touchable Native Feedback{' '}
@@ -61,7 +61,7 @@ const blurb = [
     effect. However, this is only supported only on Android API level 21 and
     higher. BpkTouchableNativeFeedback checks the API level first, to prevent
     your app from crashing on unsupported devices.
-  </Paragraph>,
+  </IntroBlurb>,
   <BpkBlockquote>
     <BpkText bold>Note:</BpkText> This component is Android only, for iOS please
     use the{' '}

@@ -26,6 +26,7 @@ import * as ROUTES from './../../constants/routes';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
 import Heading from './../../components/Heading';
 import Paragraph from './../../components/Paragraph';
+import IntroBlurb from './../../components/neo/IntroBlurb';
 import Code from '../../components/Code';
 import CodeBlock from '../../components/CodeBlock';
 
@@ -242,15 +243,16 @@ const components = [
   },
 ];
 
+const blurb = [
+  <IntroBlurb>
+    Depending on the audience, there are a few ways to get started:
+  </IntroBlurb>,
+];
+
 const GettingStartedPage = () => (
   <DocsPageBuilder
     title="Getting started"
-    blurb={[
-      <Paragraph>
-        Depending on the audience, there are a few ways to get started with
-        Backpack.
-      </Paragraph>,
-    ]}
+    blurb={blurb}
     components={components}
   />
 );

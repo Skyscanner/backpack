@@ -42,6 +42,8 @@ import DocsPageBuilder from './../../components/DocsPageBuilder';
 import DocsPageWrapper from './../../components/neo/DocsPageWrapper';
 import InputContainer from './InputContainer';
 import BpkParagraph from './../../components/Paragraph';
+import IntroBlurb from './../../components/neo/IntroBlurb';
+
 import RadioContainer from './RadioContainer';
 
 const getClassName = cssModules(STYLES);
@@ -70,12 +72,7 @@ const containerClassName = [
   .join(' ');
 
 const blurb = [
-  <BpkParagraph>
-    When asking a user to input text, please be sure to use the appropriate type
-    of input. Specifying email or number will ensure the correct keyboard is
-    displayed (on supported devices) and also adds semantic meaning to the
-    input.
-  </BpkParagraph>,
+  <IntroBlurb>A range of common inputs for capturing user data.</IntroBlurb>,
 ];
 
 const components = [
@@ -714,16 +711,10 @@ const components = [
 
 const isNeo = process.env.BPK_NEO;
 
-const pageBlurb = [
-  <BpkParagraph>
-    A range of common inputs for capturing user data.
-  </BpkParagraph>,
-];
-
 const FormsPage = ({ ...rest }) => (
   <DocsPageBuilder
     title="Form elements"
-    blurb={isNeo ? null : pageBlurb}
+    blurb={isNeo ? null : blurb}
     components={components}
     sassdocId="forms"
     {...rest}

@@ -26,6 +26,7 @@ import Code from '../../components/Code';
 import CodeBlock from '../../components/CodeBlock';
 
 import Paragraph from './../../components/Paragraph';
+import IntroBlurb from './../../components/neo/IntroBlurb';
 
 const h5bpLink =
   'https://github.com/h5bp/html5-boilerplate/blob/5.3.0/dist/doc/css.md#common-helpers';
@@ -106,16 +107,16 @@ const components = [
   },
 ];
 
+const blurb = [
+  <IntroBlurb>
+    All components are built on top of a super lightweight base stylesheet.
+    Ensure you include this on the page when consuming any backpack components.
+  </IntroBlurb>,
+];
 const BaseStylesheetPage = () => (
   <DocsPageBuilder
     title="Base stylesheet"
-    blurb={[
-      <Paragraph>
-        All web components are built on top of a super lightweight base
-        stylesheet. Ensure you include this on the page when consuming any
-        Backpack web components.
-      </Paragraph>,
-    ]}
+    blurb={blurb}
     components={components}
   />
 );

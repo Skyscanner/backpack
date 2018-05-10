@@ -24,7 +24,7 @@ import androidScreenshot from 'react-native-bpk-component-text/screenshots/andro
 import iosScreenshotBold from 'react-native-bpk-component-text/screenshots/ios/text-bold.png';
 import androidScreenshotBold from 'react-native-bpk-component-text/screenshots/android/text-bold.png';
 
-import Paragraph from './../../components/Paragraph';
+import IntroBlurb from './../../components/neo/IntroBlurb';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
 
 const reactNativeUrl = 'https://facebook.github.io/react-native/docs/text.html';
@@ -77,12 +77,12 @@ const components = [
 ];
 
 const blurb = [
-  <Paragraph>
+  <IntroBlurb>
     The Backpack text component encapsulates six different text styles tailored
     specifically for both iOS and Android. It&#39;s a wrapper around the React
     Native <BpkLink href={reactNativeUrl}>Text component</BpkLink>, therefore it
     supports all the same behaviours and properties.
-  </Paragraph>,
+  </IntroBlurb>,
 ];
 
 const isNeo = process.env.BPK_NEO;

@@ -20,7 +20,7 @@
 
 import React from 'react';
 import DocsPageWrapper from './../../components/neo/DocsPageWrapper';
-import Paragraph from './../../components/Paragraph';
+import IntroBlurb from './../../components/neo/IntroBlurb';
 
 import Web from '../IconsPage';
 import Native from '../NativeIconsPage';
@@ -29,9 +29,9 @@ const Page = () => (
   <DocsPageWrapper
     title="Icon"
     blurb={[
-      <Paragraph>
-        A suite of icons for representing concept, features and actions.
-      </Paragraph>,
+      <IntroBlurb>
+        A suite of icons for representing concepts, features and actions.
+      </IntroBlurb>,
     ]}
     webSubpage={<Web wrapped />}
     nativeSubpage={<Native wrapped />}

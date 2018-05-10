@@ -20,7 +20,7 @@
 
 import React from 'react';
 import DocsPageWrapper from './../../components/neo/DocsPageWrapper';
-import Paragraph from './../../components/Paragraph';
+import IntroBlurb from './../../components/neo/IntroBlurb';
 
 import Web from '../StarRatingPage';
 import Native from '../NativeStarRatingPage';
@@ -29,9 +29,9 @@ const Page = () => (
   <DocsPageWrapper
     title="Star rating"
     blurb={[
-      <Paragraph>
+      <IntroBlurb>
         Star ratings are used for displaying a score within a given range.
-      </Paragraph>,
+      </IntroBlurb>,
     ]}
     webSubpage={<Web wrapped />}
     nativeSubpage={<Native wrapped />}

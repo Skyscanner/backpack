@@ -24,7 +24,7 @@ import androidScreenshotDialingCodeList from 'react-native-bpk-component-phone-i
 import androidScreenshotPhoneNumberInput from 'react-native-bpk-component-phone-input/screenshots/android/phone-number-input.png';
 import BpkBlockquote from 'bpk-component-blockquote';
 
-import Paragraph from './../../components/Paragraph';
+import IntroBlurb from './../../components/neo/IntroBlurb';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
 import DocsPageWrapper from './../../components/neo/DocsPageWrapper';
 
@@ -78,10 +78,10 @@ const components = [
 const isNeo = process.env.BPK_NEO;
 
 const blurb = [
-  <Paragraph>
+  <IntroBlurb>
     The phone number input encapsulates two components that together enable the
     collection of phone numbers.
-  </Paragraph>,
+  </IntroBlurb>,
   <BpkBlockquote>
     Consumers are responsible for using these two components together. The
     accessory view in the text input shall present the dialing code list when

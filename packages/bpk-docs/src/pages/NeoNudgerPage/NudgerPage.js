@@ -20,7 +20,7 @@
 
 import React from 'react';
 import DocsPageWrapper from './../../components/neo/DocsPageWrapper';
-import Paragraph from './../../components/Paragraph';
+import IntroBlurb from './../../components/neo/IntroBlurb';
 
 import Web from '../NudgersPage';
 import Native from '../NativeNudgerPage';
@@ -29,9 +29,9 @@ const Page = () => (
   <DocsPageWrapper
     title="Nudger"
     blurb={[
-      <Paragraph>
+      <IntroBlurb>
         Nudgers allow users to quickly specify a value within a given range.
-      </Paragraph>,
+      </IntroBlurb>,
     ]}
     webSubpage={<Web wrapped />}
     nativeSubpage={<Native wrapped />}

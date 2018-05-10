@@ -20,16 +20,16 @@
 
 import React from 'react';
 import DocsPageWrapper from './../../components/neo/DocsPageWrapper';
-import Paragraph from './../../components/Paragraph';
+import IntroBlurb from './../../components/neo/IntroBlurb';
 
 import Web from '../SpinnersPage';
 import Native from '../NativeSpinnerPage';
 
 const blurb = [
-  <Paragraph>
+  <IntroBlurb>
     Spinners are used to indicate that a part of the product is loading or
     performing a task when the amount of time needed is unknown.
-  </Paragraph>,
+  </IntroBlurb>,
 ];
 
 const Page = () => (

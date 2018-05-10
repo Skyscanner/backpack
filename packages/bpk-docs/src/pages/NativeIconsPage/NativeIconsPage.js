@@ -24,6 +24,7 @@ import iosScreenshotDefault from 'react-native-bpk-component-icon/screenshots/io
 import androidScreenshotDefault from 'react-native-bpk-component-icon/screenshots/android/icons.png';
 
 import Paragraph from './../../components/Paragraph';
+import IntroBlurb from './../../components/neo/IntroBlurb';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
 
 const components = [
@@ -56,10 +57,10 @@ const isNeo = process.env.BPK_NEO;
 
 const blurb = [
   <div>
-    <Paragraph>
+    <IntroBlurb>
       Backpack icons are crafted to display across web and native apps. Their
       clean, solid shapes effortlessly compliment the rest of Backpack.
-    </Paragraph>,
+    </IntroBlurb>,
     <Paragraph>
       View all icons on the{' '}
       <BpkLink href="/components/web/icons">icons page</BpkLink>.

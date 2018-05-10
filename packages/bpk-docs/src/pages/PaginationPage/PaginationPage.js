@@ -24,6 +24,7 @@ import paginationReadme from 'bpk-component-pagination/readme.md';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
 import DocsPageWrapper from './../../components/neo/DocsPageWrapper';
 import Paragraph from './../../components/Paragraph';
+import IntroBlurb from './../../components/neo/IntroBlurb';
 
 class PaginationContainer extends Component {
   constructor(props) {
@@ -103,10 +104,10 @@ const components = [
 const isNeo = process.env.BPK_NEO;
 
 const blurb = [
-  <Paragraph>
+  <IntroBlurb>
     The pagination component is used to indicate a series of related content
     exists across multiple views/pages.
-  </Paragraph>,
+  </IntroBlurb>,
 ];
 
 const PaginationPage = ({ ...rest }) => (

@@ -22,7 +22,7 @@ import readme from 'react-native-bpk-component-switch/readme.md';
 import iosScreenshotDefault from 'react-native-bpk-component-switch/screenshots/ios/default.png';
 import androidScreenshotDefault from 'react-native-bpk-component-switch/screenshots/android/default.png';
 
-import Paragraph from './../../components/Paragraph';
+import IntroBlurb from './../../components/neo/IntroBlurb';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
 import DocsPageWrapper from './../../components/neo/DocsPageWrapper';
 
@@ -54,10 +54,10 @@ const components = [
 const isNeo = process.env.BPK_NEO;
 
 const blurb = [
-  <Paragraph>
+  <IntroBlurb>
     Switches allow users to toggle between two states, on or off. On mobile,
     these are often used as a replacement for checkboxes.
-  </Paragraph>,
+  </IntroBlurb>,
 ];
 
 const NativeSwitchPage = ({ ...rest }) => (

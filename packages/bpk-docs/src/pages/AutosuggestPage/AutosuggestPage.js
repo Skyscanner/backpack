@@ -33,6 +33,7 @@ import DocsPageBuilder from './../../components/DocsPageBuilder';
 import DocsPageWrapper from './../../components/neo/DocsPageWrapper';
 
 import Paragraph from './../../components/Paragraph';
+import IntroBlurb from './../../components/neo/IntroBlurb';
 
 const BpkFlightIcon = withRtlSupport(FlightIcon);
 
@@ -271,10 +272,10 @@ const components = [
 const isNeo = process.env.BPK_NEO;
 
 const blurb = [
-  <Paragraph>
+  <IntroBlurb>
     The autosuggest component assists users in query creation and completion by
     searching a dynamic list for related keywords, phrases and items.
-  </Paragraph>,
+  </IntroBlurb>,
 ];
 
 const AutosuggestPage = ({ ...rest }) => (

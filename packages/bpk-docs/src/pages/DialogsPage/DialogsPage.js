@@ -22,6 +22,7 @@ import React from 'react';
 import dialogReadme from 'bpk-component-dialog/readme.md';
 
 import Paragraph from './../../components/Paragraph';
+import IntroBlurb from './../../components/neo/IntroBlurb';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
 import DocsPageWrapper from './../../components/neo/DocsPageWrapper';
 import {
@@ -61,10 +62,10 @@ const components = [
 ];
 
 const blurb = [
-  <Paragraph>
+  <IntroBlurb>
     Dialogs inform users about a specific task and may contain critical
     information, or require decisions or acknowledgement.
-  </Paragraph>,
+  </IntroBlurb>,
 ];
 
 const isNeo = process.env.BPK_NEO;

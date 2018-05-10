@@ -39,6 +39,7 @@ import DocsPageBuilder from './../../components/DocsPageBuilder';
 import DocsPageWrapper from './../../components/neo/DocsPageWrapper';
 import Heading from './../../components/Heading';
 import Paragraph from './../../components/Paragraph';
+import IntroBlurb from './../../components/neo/IntroBlurb';
 import Code from '../../components/Code';
 import CodeBlock from '../../components/CodeBlock';
 import * as ROUTES from './../../constants/routes';

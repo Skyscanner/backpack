@@ -26,6 +26,7 @@ import chipReadme from 'bpk-component-chip/readme.md';
 
 import STYLES from './ChipsPage.scss';
 import Paragraph from './../../components/Paragraph';
+import IntroBlurb from './../../components/neo/IntroBlurb';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
 import DocsPageWrapper from './../../components/neo/DocsPageWrapper';
 
@@ -105,10 +106,10 @@ const components = [
 const isNeo = process.env.BPK_NEO;
 
 const blurb = [
-  <Paragraph>
+  <IntroBlurb>
     Chips, sometimes called tags, are useful for displaying keywords or
     categories from common sets of data.
-  </Paragraph>,
+  </IntroBlurb>,
 ];
 
 const ChipsPage = ({ ...rest }: { [string]: any }) => (

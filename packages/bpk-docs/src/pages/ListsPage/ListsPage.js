@@ -23,12 +23,12 @@ import listReadme from 'bpk-component-list/readme.md';
 
 import DocsPageBuilder from './../../components/DocsPageBuilder';
 import DocsPageWrapper from './../../components/neo/DocsPageWrapper';
-import Paragraph from './../../components/Paragraph';
+import IntroBlurb from './../../components/neo/IntroBlurb';
 
 const blurb = [
-  <Paragraph>
+  <IntroBlurb>
     The list component enables you to easily create ordered or unordered lists.
-  </Paragraph>,
+  </IntroBlurb>,
 ];
 
 const components = [

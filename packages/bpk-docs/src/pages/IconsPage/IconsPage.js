@@ -31,6 +31,7 @@ import IconSearchApp from './../../components/IconSearchApp';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
 import Heading from './../../components/Heading';
 import Paragraph from './../../components/Paragraph';
+import IntroBlurb from './../../components/neo/IntroBlurb';
 import Code from '../../components/Code';
 
 const AlignedBpkSmallDownloadIcon = withButtonAlignment(BpkSmallDownloadIcon);
@@ -57,10 +58,10 @@ const iconsFinal = _(icons)
   .value();
 
 const blurb = [
-  <Paragraph>
+  <IntroBlurb>
     Icons are provided in two sizes: small (18px) and large (24px). Both are
     pixel-snapped for clarity at the intended usage sizes.
-  </Paragraph>,
+  </IntroBlurb>,
   <Paragraph>
     <BpkButton href={`/${iconsSvgs}`}>
       Download SVG files <AlignedBpkSmallDownloadIcon />

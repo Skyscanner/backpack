@@ -27,6 +27,7 @@ import drawerReadme from 'bpk-component-drawer/readme.md';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
 import DocsPageWrapper from './../../components/neo/DocsPageWrapper';
 import Paragraph from './../../components/Paragraph';
+import IntroBlurb from './../../components/neo/IntroBlurb';
 
 class DrawerContainer extends Component {
   constructor() {
@@ -119,9 +120,9 @@ const components = [
 const isNeo = process.env.BPK_NEO;
 
 const blurb = [
-  <Paragraph>
+  <IntroBlurb>
     Drawers slide in from the edge of the screen and are used to display content
-  </Paragraph>,
+  </IntroBlurb>,
 ];
 
 const DrawerPage = () => (

@@ -20,7 +20,7 @@
 
 import React from 'react';
 import DocsPageWrapper from './../../components/neo/DocsPageWrapper';
-import Paragraph from './../../components/Paragraph';
+import IntroBlurb from './../../components/neo/IntroBlurb';
 
 import WebBadge from '../BadgePage';
 import NativeBadge from '../NativeBadgePage';
@@ -29,10 +29,10 @@ const NeoBadgePage = () => (
   <DocsPageWrapper
     title="Badge"
     blurb={[
-      <Paragraph>
+      <IntroBlurb>
         Badges are labels which hold small amounts of information used to
         describe or highlight areas.
-      </Paragraph>,
+      </IntroBlurb>,
     ]}
     webSubpage={<WebBadge wrapped />}
     nativeSubpage={<NativeBadge wrapped />}

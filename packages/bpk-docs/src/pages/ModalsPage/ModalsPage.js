@@ -29,6 +29,7 @@ import LoginFormExample from './LoginFormExample';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
 import DocsPageWrapper from './../../components/neo/DocsPageWrapper';
 import Paragraph from './../../components/Paragraph';
+import IntroBlurb from './../../components/neo/IntroBlurb';
 
 type Props = {
   buttonText: string,
@@ -181,10 +182,10 @@ const components = [
 const isNeo = process.env.BPK_NEO;
 
 const blurb = [
-  <Paragraph>
+  <IntroBlurb>
     Modals are used to display content or views that are separate from the rest
     of the app or page.
-  </Paragraph>,
+  </IntroBlurb>,
 ];
 
 const ModalsPage = ({ ...rest }: { [string]: any }) => (

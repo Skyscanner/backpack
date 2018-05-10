@@ -24,7 +24,7 @@ import breakpointReadme from 'bpk-component-breakpoint/readme.md';
 
 import DocsPageBuilder from './../../components/DocsPageBuilder';
 import DocsPageWrapper from './../../components/neo/DocsPageWrapper';
-import Paragraph from './../../components/Paragraph';
+import IntroBlurb from './../../components/neo/IntroBlurb';
 import STYLES from './breakpoints-page.scss';
 
 const getClassName = cssModules(STYLES);
@@ -87,11 +87,11 @@ const components = [
 const isNeo = process.env.BPK_NEO;
 
 const blurb = [
-  <Paragraph>
+  <IntroBlurb>
     The breakpoint component allows information to be displayed in different
     ways depending on the screen size. To simplify things, Backpack uses only
     three breakpoints optimised for mobile, tablet and desktop viewports.
-  </Paragraph>,
+  </IntroBlurb>,
 ];
 
 const BreakpointsPage = ({ ...rest }) => (

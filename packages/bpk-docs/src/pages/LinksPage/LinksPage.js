@@ -23,20 +23,14 @@ import linkReadme from 'bpk-component-link/readme.md';
 
 import DocsPageBuilder from './../../components/DocsPageBuilder';
 import Paragraph from './../../components/Paragraph';
-import PresentationBlock from './../../components/PresentationBlock';
+import IntroBlurb from './../../components/neo/IntroBlurb';
 
 const isNeo = process.env.BPK_NEO;
 
 const blurb = [
-  <Paragraph>
-    This component enables you to link the user to other reosurces or pages.
-  </Paragraph>,
-  <PresentationBlock>
-    <div>
-      Links can be both <BpkLink href="#">anchor tags</BpkLink> as well as{' '}
-      <BpkButtonLink onClick={() => null}>button tags</BpkButtonLink>.
-    </div>
-  </PresentationBlock>,
+  <IntroBlurb>
+    This component enables you to link the user to other resources or pages.
+  </IntroBlurb>,
 ];
 
 const components = [
@@ -44,10 +38,10 @@ const components = [
     id: 'default',
     title: 'Default',
     examples: [
-      <div>
+      <Paragraph>
         Links can be both <BpkLink href="#">anchor tags</BpkLink> as well as{' '}
         <BpkButtonLink onClick={() => null}>button tags</BpkButtonLink>.
-      </div>,
+      </Paragraph>,
     ],
   },
 ];

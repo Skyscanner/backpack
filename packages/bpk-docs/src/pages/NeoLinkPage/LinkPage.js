@@ -20,7 +20,7 @@
 
 import React from 'react';
 import DocsPageWrapper from './../../components/neo/DocsPageWrapper';
-import Paragraph from './../../components/Paragraph';
+import IntroBlurb from './../../components/neo/IntroBlurb';
 
 import Web from '../LinksPage';
 import Native from '../NativeButtonLinkPage';
@@ -29,9 +29,9 @@ const Page = () => (
   <DocsPageWrapper
     title="Link"
     blurb={[
-      <Paragraph>
-        This component enables links to other reosurces, pages or views.
-      </Paragraph>,
+      <IntroBlurb>
+        This component enables links to other resources, pages or views.
+      </IntroBlurb>,
     ]}
     webSubpage={<Web wrapped />}
     nativeSubpage={<Native wrapped />}
