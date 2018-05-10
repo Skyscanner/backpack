@@ -99,6 +99,13 @@ storiesOf('bpk-component-horizontal-nav', module)
       <BpkHorizontalNavItem selected>Car hire</BpkHorizontalNavItem>
     </BpkHorizontalNav>
   ))
+  .add('Disabled item', () => (
+    <BpkHorizontalNav>
+      <BpkHorizontalNavItem>Flights</BpkHorizontalNavItem>
+      <BpkHorizontalNavItem>Hotels</BpkHorizontalNavItem>
+      <BpkHorizontalNavItem disabled>Car hire</BpkHorizontalNavItem>
+    </BpkHorizontalNav>
+  ))
   .add('Separators', () => (
     <BpkHorizontalNav>
       <BpkHorizontalNavItem selected>Flights</BpkHorizontalNavItem>

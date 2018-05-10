@@ -21,7 +21,7 @@ import React, { type Node } from 'react';
 import PropTypes from 'prop-types';
 import { cssModules } from 'bpk-react-utils';
 
-import STYLES from './bpk-horizontal-nav-item.scss';
+import STYLES from './BpkHorizontalNavItem.scss';
 
 const getClassName = cssModules(STYLES);
 
@@ -29,33 +29,38 @@ export type Props = {
   children: Node,
   selected: boolean,
   spaceAround: boolean,
+  disabled: boolean,
   href: ?string,
   className: ?string,
 };
 
 const BpkHorizontalNavItem = (props: Props) => {
-  const classNames = [getClassName('bpk-horizontal-nav__item')];
-  const innerClassNames = [getClassName('bpk-horizontal-nav__link')];
-  const { children, className, selected, spaceAround, href, ...rest } = props;
+  const {
+    children,
+    className,
+    disabled,
+    href,
+    selected,
+    spaceAround,
+    ...rest
+  } = props;
 
-  // Outer classNames
-  if (spaceAround) {
-    classNames.push(getClassName('bpk-horizontal-nav__item--space-around'));
-  }
-
-  // Inner classNames
-  if (selected) {
-    innerClassNames.push(getClassName('bpk-horizontal-nav__link--selected'));
-  }
-  if (className) {
-    innerClassNames.push(className);
-  }
+  const classNames = getClassName(
+    'bpk-horizontal-nav__item',
+    spaceAround && 'bpk-horizontal-nav__item--space-around',
+  );
+  const innerClassNames = getClassName(
+    'bpk-horizontal-nav__link',
+    selected && 'bpk-horizontal-nav__link--selected',
+    disabled && 'bpk-horizontal-nav__link--disabled',
+    className,
+  );
 
   const clickableElement = href ? (
     <a
       href={href}
-      className={innerClassNames.join(' ')}
-      aria-disabled={selected}
+      className={innerClassNames}
+      aria-disabled={selected || disabled}
       {...rest}
     >
       {children}
@@ -63,8 +68,8 @@ const BpkHorizontalNavItem = (props: Props) => {
   ) : (
     <button
       type="button"
-      className={innerClassNames.join(' ')}
-      disabled={selected}
+      className={innerClassNames}
+      disabled={selected || disabled}
       {...rest}
     >
       {children}
@@ -75,7 +80,7 @@ const BpkHorizontalNavItem = (props: Props) => {
     <li
       role="tab"
       aria-selected={selected ? 'true' : 'false'}
-      className={classNames.join(' ')}
+      className={classNames}
     >
       {clickableElement}
     </li>
@@ -88,6 +93,7 @@ BpkHorizontalNavItem.propTypes = {
   selected: PropTypes.bool,
   spaceAround: PropTypes.bool,
   href: PropTypes.string,
+  disabled: PropTypes.bool,
 };
 
 BpkHorizontalNavItem.defaultProps = {
@@ -95,6 +101,7 @@ BpkHorizontalNavItem.defaultProps = {
   selected: false,
   spaceAround: false,
   href: null,
+  disabled: false,
 };
 
 const themeAttributes = [

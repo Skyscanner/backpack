@@ -1,6 +1,8 @@
 # Unreleased
 
 **Added:**
+- bpk-component-horizontal-nav:
+  - `BpkHorizontalNavItem` can now be disabled with the `disabled` prop.
 - react-native-bpk-component-pagination-dots:
   - Introducing the React Native pagination dots component.
 - bpk-component-navigation-stack:
