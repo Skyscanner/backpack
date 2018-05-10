@@ -91,6 +91,7 @@ import DrawerPage from './../pages/DrawerPage';
 import DialogsPage from './../pages/DialogsPage';
 import NavigationBarPage from './../pages/NavigationBarPage';
 import SectionListPage from './../pages/SectionListPage';
+import NavigationStackPage from './../pages/NavigationStackPage';
 
 import AlignmentPage from './../pages/AlignmentPage';
 import ThemingPage from './../pages/ThemingPage';
@@ -258,6 +259,12 @@ const Routes = (
         {isOldSite && (
           <Route path={ROUTES.SECTION_LIST} component={SectionListPage} />
         )}
+        {isOldSite && (
+          <Route
+            path={ROUTES.NAVIGATION_STACK}
+            component={NavigationStackPage}
+          />
+        )}
         {/* Neo routes. */}
         <Route path={ROUTES.NEO_TEXT} component={NeoTextPage} />
         <Route path={ROUTES.NEO_LINK} component={NeoLinkPage} />
@@ -315,6 +322,10 @@ const Routes = (
         <Route
           path={ROUTES.NEO_NAVIGATION_BAR}
           component={NeoNavigationBarPage}
+        />
+        <Route
+          path={ROUTES.NEO_NAVIGATION_STACK}
+          component={NavigationStackPage}
         />
         <Route
           path={ROUTES.NEO_PAGINATION_DOT}
