@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-section-list",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Backpack section list component.",
   "main": "index.js",
   "repository": {

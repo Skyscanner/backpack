@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-drawer",
-  "version": "1.2.14",
+  "version": "1.2.15",
   "description": "Backpack drawer component.",
   "main": "index.js",
   "repository": {
@@ -24,7 +24,7 @@
     "react-transition-group": "^2.2.1"
   },
   "devDependencies": {
-    "bpk-component-button": "^2.0.19",
+    "bpk-component-button": "^2.0.20",
     "bpk-component-text": "^1.0.59"
   }
 }
