@@ -21,7 +21,7 @@ import React, { type Node } from 'react';
 import PropTypes from 'prop-types';
 import { cssModules } from 'bpk-react-utils';
 
-import STYLES from './bpk-horizontal-nav-item.scss';
+import STYLES from './BpkHorizontalNavItem.scss';
 
 const getClassName = cssModules(STYLES);
 
@@ -88,6 +88,7 @@ BpkHorizontalNavItem.propTypes = {
   selected: PropTypes.bool,
   spaceAround: PropTypes.bool,
   href: PropTypes.string,
+  disabled: PropTypes.bool,
 };
 
 BpkHorizontalNavItem.defaultProps = {
@@ -95,6 +96,7 @@ BpkHorizontalNavItem.defaultProps = {
   selected: false,
   spaceAround: false,
   href: null,
+  disabled: false,
 };
 
 const themeAttributes = [
