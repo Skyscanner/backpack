@@ -2,7 +2,7 @@
 
 So you want to help us enable Skyscanner to create beautiful, coherent products at scale? That's awesome! ♥
 
-This document describes how to go about it. If you have any questions, get in touch on Slack in #backpack or via [backpack@skyscanner.net](mailto:backpack@skyscanner.net).
+This document describes how to go about it.
 
 <!-- TOC depthFrom:2 depthTo:3 withLinks:1 updateOnSave:1 orderedList:0 -->
 
@@ -63,7 +63,7 @@ Awesome! The rest of this file should give you a good picture of the process.
 * * *
 
 Backpack development takes places on Github. If you don't have a Github account, you can create one
-on [github.com](https://github.com). You may want to [get added to the Skyscanner team](https://gojira.skyscanner.net/servicedesk/customer/portal/25/create/395) if you aren't already a member.
+on [github.com](https://github.com).
 
 When you are ready to jump into code, use the following workflow to add new components or change any existing ones:
 
@@ -129,13 +129,11 @@ If you want to add a new component, we will need the following:
 
 Sketch is the preferred format for non-technical folks. We’d appreciate if you could provide an exact match of your component in Sketch format together with folders for each state e.g. disabled, expanded etc.
 
-**If you don’t have access to a designer, get in touch with us or post into #design-general.**
-
 ### Tokens
 
 Any visual CSS parameters of the component, such as *color, margins, paddings* etc. should not live as magic numbers in the component code, but as **tokens** in the `bpk-tokens` package.
 
-Tokens are defined in the `src/base` directory (with the exception of product-specific tokens, which are in other subdirectories). Tokens come in two layers: In `aliases.json`, all base tokens are defined with concrete values, such as colors, numbers and sizes. The other files then map those aliases to tokens for specific elements in our [Atomic Design system](https://confluence.skyscannertools.net/pages/viewpage.action?pageId=14123039).
+Tokens are defined in the `src/base` directory (with the exception of product-specific tokens, which are in other subdirectories). Tokens come in two layers: In `aliases.json`, all base tokens are defined with concrete values, such as colors, numbers and sizes. The other files then map those aliases to tokens for specific elements.
 
 > You should probably not touch `aliases.json`, as our color palette or grid rarely changes.
 
@@ -153,9 +151,7 @@ This will output different formats from the source JSON, for example Sass variab
 
 ### Sass mixins
 
-Every *atom-level component* (buttons, form elements, icons, cf [Atomic Design system](https://confluence.skyscannertools.net/pages/viewpage.action?pageId=14123039)) should not only come as a React component, but also as a set of Sass mixins for easy adoption.
-
-All Sass mixins are defined in the `bpk-mixins` package. The package also exposes the Sass variables from the `bpk-tokens` package via the `_bonds.scss` file.
+All Sass mixins are defined in the `bpk-mixins` package. The package also exposes the Sass variables from the `bpk-tokens` package.
 
 If you add a new file of mixins, for example for a new *atom*, make sure you add the file to the imports in `_index.scss`.
 
@@ -311,7 +307,6 @@ on a device.
 - You’ll be asked at the end to confirm. Note you can still exit without making these changes.
 - Update the [changelog](/changelog.md) with the package versions and update the title with today’s date and a brief summary of what has changed.
 - Commit and push to master.
-- Update the #backpack Slack channel and the [BackpackNeedToKnow](mailto:backpackneedtoknow@skyscanner.net) mailing list if necessary.
 
 ## Publishing new components
 Whenever a new component is added make sure the version is 0.0.1 until it gets published.
