@@ -52,6 +52,16 @@
       @include bpk-themeable-property(color, --bpk-horizontal-nav-link-active-color, $bpk-horizontal-nav-link-active-color);
     }
 
+    &--disabled {
+      color: $bpk-color-gray-300;
+      cursor: not-allowed;
+
+      &:active {
+        color: $bpk-color-gray-300;
+        box-shadow: unset;
+      }
+    }
+
     &--selected {
       @include bpk-border-bottom-xl($bpk-horizontal-nav-bar-selected-color);
       @include bpk-border-bottom-xl(var(--bpk-horizontal-nav-bar-selected-color, $bpk-horizontal-nav-bar-selected-color));
