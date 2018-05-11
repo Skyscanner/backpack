@@ -20,7 +20,7 @@
 
 import React from 'react';
 import DocsPageWrapper from './../../components/neo/DocsPageWrapper';
-import Paragraph from './../../components/Paragraph';
+import IntroBlurb from './../../components/neo/IntroBlurb';
 
 import Web from '../SectionListPage';
 import Native from '../NativeSectionListPage';
@@ -29,12 +29,12 @@ const Page = () => (
   <DocsPageWrapper
     title="Section list"
     blurb={[
-      <Paragraph>
+      <IntroBlurb>
         Section lists present data as a single-column list of rows that can be
         divided into groups. They&apos;re great for displaying lists of options
         containing text and controls, as well as linking to additional views or
         pages.
-      </Paragraph>,
+      </IntroBlurb>,
     ]}
     webSubpage={<Web wrapped />}
     nativeSubpage={<Native wrapped />}
