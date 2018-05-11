@@ -17,6 +17,7 @@
 */
 
 import marked from 'marked';
+import Helmet from 'react-helmet';
 import isString from 'lodash/isString';
 import PropTypes from 'prop-types';
 import React, { Children } from 'react';
@@ -199,12 +200,14 @@ const NeoDocsPageBuilder = props => {
     <BpkContentContainer
       className={getClassName(
         `bpkdocs-content-page--${
-          sections.length % 2 === 0 ? 'even' : 'odd'
+          sections.length % 2 === (props.wrapped ? 1 : 0) ? 'even' : 'odd'
         }-sections`,
       )}
     >
+      <Helmet title={props.title} />
       {showPageHead && (
         <PageHead
+          title={props.wrapped ? null : props.title}
           blurb={props.blurb}
           menu={menu.map(({ id, title }) => ({
             href: `#${id}`,
@@ -213,7 +216,7 @@ const NeoDocsPageBuilder = props => {
           wrapped={props.wrapped}
         />
       )}
-      <AlternatingPageContent sections={sections} />
+      <AlternatingPageContent sections={sections} invert={props.wrapped} />
     </BpkContentContainer>
   );
 };

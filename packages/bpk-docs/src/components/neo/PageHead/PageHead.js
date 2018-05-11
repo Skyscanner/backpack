@@ -24,6 +24,7 @@ import BpkText from 'bpk-component-text';
 import { BpkList, BpkListItem } from 'bpk-component-list';
 import isString from 'lodash/isString';
 
+import Heading from '../Heading';
 import Paragraph from '../Paragraph';
 
 import STYLES from './PageHead.scss';
@@ -44,15 +45,21 @@ type MenuItem = {
 };
 
 type Props = {
+  title: string,
   blurb: string | Node,
+  wrapped: boolean,
   menu: ?Array<MenuItem>,
 };
 const PageHead = (props: Props) => {
-  const contentClassNames = [getClassName('bpkdocs-page-head__content')];
+  const contentClassNames = getClassName(
+    'bpkdocs-page-head__content',
+    props.wrapped && 'bpkdocs-page-head__content--wrapped',
+  );
   const showMenu = props.menu && props.menu.length > 0;
   return (
     <section className={getClassName('bpkdocs-page-head')}>
-      <div className={contentClassNames.join(' ')}>
+      <div className={contentClassNames}>
+        {props.title && <Heading level="h1">{props.title}</Heading>}
         {props.blurb && toNodes(props.blurb)}
         {showMenu && (
           <div>

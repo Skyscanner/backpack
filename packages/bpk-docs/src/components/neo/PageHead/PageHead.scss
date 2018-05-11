@@ -21,10 +21,14 @@
 .bpkdocs-page-head {
   &__content {
     padding: $bpk-spacing-xs * 10;
-    background-color: $bpk-color-gray-50;
+    background-color: $bpk-color-white;
 
     @include bpk-breakpoint-mobile {
       padding: $bpk-spacing-lg;
+    }
+
+    &--wrapped {
+      background-color: $bpk-color-gray-50;
     }
   }
 

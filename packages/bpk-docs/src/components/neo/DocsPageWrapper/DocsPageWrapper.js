@@ -18,7 +18,6 @@
 
 import PropTypes from 'prop-types';
 import React from 'react';
-import Helmet from 'react-helmet';
 import BpkContentContainer from 'bpk-component-content-container';
 import BpkHorizontalNav, {
   BpkHorizontalNavItem,
@@ -68,7 +67,6 @@ class DocsPageWrapper extends React.Component {
 
     return (
       <BpkContentContainer className={getClassName('bpkdocs-page-wrapper')}>
-        <Helmet title={title} />
         <div className={getClassName('bpkdocs-page-wrapper__inner')}>
           <Heading level="h1">{title}</Heading>
           {blurb && <Blurb content={blurb} />}
