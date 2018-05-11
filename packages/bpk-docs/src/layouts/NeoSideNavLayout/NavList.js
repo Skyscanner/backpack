@@ -20,7 +20,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
 import { cssModules } from 'bpk-react-utils';
-
+import ArrowIcon from 'bpk-component-icon/sm/arrow-right';
+import { withRtlSupport } from 'bpk-component-icon';
 import NavListFilter, { type Option as FilterOption } from './NavListFilter';
 import STYLES from './NavList.scss';
 import sortLinks from './links-sorter';
@@ -31,6 +32,8 @@ import {
 } from './common-types';
 
 const getClassName = cssModules(STYLES);
+
+const ArrowIconWithRtl = withRtlSupport(ArrowIcon);
 
 const NavLink = (props: LinkPropType) => {
   const { children, route, tags, ...rest } = props;
@@ -43,6 +46,9 @@ const NavLink = (props: LinkPropType) => {
         to={route}
         {...rest}
       >
+        <ArrowIconWithRtl
+          className={getClassName('bpkdocs-side-nav-list__link-active-icon')}
+        />
         {children}
       </Link>
     );

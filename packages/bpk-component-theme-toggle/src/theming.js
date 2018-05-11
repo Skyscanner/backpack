@@ -36,6 +36,7 @@ const generateTheme = ({
   docsSidebarBackground,
   docsSidebarLink,
   docsSidebarLinkBorder,
+  docsSidebarSelectedArrowColor,
   themeName,
 }) => ({
   themeName,
@@ -124,6 +125,7 @@ const generateTheme = ({
   docsSidebarBackground,
   docsSidebarLink,
   docsSidebarLinkBorder,
+  docsSidebarSelectedArrowColor,
 });
 
 const londonTheme = {
@@ -138,6 +140,7 @@ const londonTheme = {
   docsSidebarBackground: '#013A76',
   docsSidebarLink: '#6889AB',
   docsSidebarLinkBorder: '#6889AB',
+  docsSidebarSelectedArrowColor: '#ED1B28',
   themeName: 'London',
 };
 
@@ -153,6 +156,7 @@ const hongKongTheme = {
   docsSidebarBackground: '#4C4C4C',
   docsSidebarLink: '#686868',
   docsSidebarLinkBorder: '#686868',
+  docsSidebarSelectedArrowColor: '#108685',
   themeName: 'HongKong',
 };
 
@@ -168,6 +172,7 @@ const dohaTheme = {
   docsSidebarBackground: '#5E072C',
   docsSidebarLink: '#BF3671',
   docsSidebarLinkBorder: '#BF3671',
+  docsSidebarSelectedArrowColor: '#BF3671',
   themeName: 'Doha',
 };
 

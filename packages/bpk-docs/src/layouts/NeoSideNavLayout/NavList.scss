@@ -81,34 +81,36 @@
   }
 
   &__link {
+    position: relative;
+
     @include nav-link;
     @include nav-link--enabled;
   }
 
   &__link--active {
-    position: relative;
-
     @include nav-link--active;
+  }
 
-    &::before {
-      position: absolute;
-      top: 50%;
-      // HACK: Move sligthly further to the left to account for icon bounding box so
+  &__link-active-icon {
+    position: absolute;
+    top: calc(50% - (#{$bpk-icon-size-sm} / 2));
+    // HACK: Move sligthly further to the left to account for icon bounding box so
+    // that the actual icon lines up with other content.
+    left: calc(-#{$bpk-first-column-size} - #{$bpk-one-pixel-rem * 5});
+    display: none;
+
+    @include bpk-themeable-property(fill, --bpk-docs-sidebar-selected-arrow-color, $bpk-color-red-500);
+
+    @include bpk-rtl {
+      // HACK: Move sligthly further to the right to account for icon bounding box so
       // that the actual icon lines up with other content.
-      left: calc(-#{$bpk-first-column-size} - #{$bpk-one-pixel-rem * 5});
-      content: ' ';
-      transform: translateY(-50%);
-
-      @include bpk-icon(arrow-right, $bpk-color-red-500, small);
-
-      @include bpk-rtl {
-        // HACK: Move sligthly further to the right to account for icon bounding box so
-        // that the actual icon lines up with other content.
-        right: calc(-#{$bpk-first-column-size} - #{$bpk-one-pixel-rem * 5});
-        left: 0;
-        transform: scaleX(-1);
-      }
+      right: calc(-#{$bpk-first-column-size} - #{$bpk-one-pixel-rem * 5});
+      left: 0;
     }
+  }
+
+  &__link--active &__link-active-icon {
+    display: inline;
   }
 
   &__pending-link {
