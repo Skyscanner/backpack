@@ -21,9 +21,9 @@
 $bpk-first-column-size: $bpk-spacing-xs * 10;
 
 @mixin nav-link {
-  color: var(--bpk-docs-sidebar-link, $bpk-color-gray-500);
   text-decoration: $bpk-link-text-decoration;
 
+  @include bpk-themeable-property(color, --bpk-docs-sidebar-link, $bpk-color-gray-500);
   @include bpk-text;
   @include bpk-text-base;
 }
