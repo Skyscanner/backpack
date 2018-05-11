@@ -77,7 +77,9 @@ export default class SideNavLayout extends Component<Props, State> {
   render() {
     const { children, links } = this.props;
     const { modalOpen, sectionListExpanded, activeSection } = this.state;
-    const { hero } = links.find(x => x.id === activeSection) || {};
+    const { hero } = links.filter(link => link.id === activeSection)[0] || {
+      hero: null,
+    };
 
     const sidebar = (
       <Sidebar
