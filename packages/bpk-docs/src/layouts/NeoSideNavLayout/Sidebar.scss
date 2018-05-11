@@ -20,8 +20,9 @@
 
 .bpkdocs-sidebar {
   padding: $bpk-spacing-base;
-  background-color: var(--bpk-docs-sidebar-background, $bpk-color-gray-900);
   color: $bpk-color-white;
+
+  @include bpk-themeable-property(background-color, --bpk-docs-sidebar-background, $bpk-color-gray-900);
 
   @include bpk-breakpoint-tablet {
     flex: 1;
