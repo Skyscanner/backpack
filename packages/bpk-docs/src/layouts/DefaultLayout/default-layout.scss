@@ -20,7 +20,21 @@
 
 .bpkdocs-default-layout {
   &__container {
-    background-color: $bpk-color-gray-100;
+    position: absolute;
+    display: flex;
+    width: 100%;
+    min-height: 100%;
+    flex-direction: column;
+  }
+
+  &__content-container {
+    display: flex;
+    flex-direction: column;
+    flex: 1 0 auto;
+
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+      min-height: calc(100vh - 5.25rem); /* Hack for Internet Explorer: */
+    }
   }
 
   &__footer-container {
