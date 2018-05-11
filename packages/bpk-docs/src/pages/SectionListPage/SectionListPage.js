@@ -25,15 +25,15 @@ import BpkSectionList, {
 import sectionListReadme from 'bpk-component-section-list/readme.md';
 
 import DocsPageBuilder from './../../components/DocsPageBuilder';
-import Paragraph from './../../components/Paragraph';
+import IntroBlurb from './../../components/neo/IntroBlurb';
 
 const blurb = [
-  <Paragraph>
+  <IntroBlurb>
     Section lists present data as a single-column list of rows that can be
     divided into groups. They&apos;re great for displaying lists of options
     containing text and controls, as well as linking to additional views or
     pages.
-  </Paragraph>,
+  </IntroBlurb>,
 ];
 
 const components = [
