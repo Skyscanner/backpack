@@ -26,7 +26,7 @@ import { getPlatformTokens } from './../../helpers/tokens-helper';
 
 const RadiiPage = () => (
   <DocsPageBuilder
-    title="Radii"
+    title="Radius"
     tokenMap={getPlatformTokens(
       TOKENS,
       IOS_TOKENS,

@@ -26,7 +26,7 @@ import { getPlatformTokens } from './../../helpers/tokens-helper';
 
 const BordersPage = () => (
   <DocsPageBuilder
-    title="Borders"
+    title="Border"
     tokenMap={getPlatformTokens(
       TOKENS,
       IOS_TOKENS,

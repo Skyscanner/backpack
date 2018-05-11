@@ -26,7 +26,7 @@ import { getPlatformTokens } from './../../helpers/tokens-helper';
 
 const ZIndexesPage = () => (
   <DocsPageBuilder
-    title="Z-Indexes"
+    title="Z-index"
     tokenMap={getPlatformTokens(
       TOKENS,
       IOS_TOKENS,
