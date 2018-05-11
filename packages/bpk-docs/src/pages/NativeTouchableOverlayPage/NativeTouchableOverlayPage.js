@@ -25,7 +25,7 @@ import readme from 'react-native-bpk-component-touchable-overlay/readme.md';
 import iosScreenshotDefault from 'react-native-bpk-component-touchable-overlay/screenshots/default.png';
 import iosScreenshotTouchableHighlight from 'react-native-bpk-component-touchable-overlay/screenshots/touchable-highlight.png';
 
-import Paragraph from './../../components/Paragraph';
+import IntroBlurb from './../../components/neo/IntroBlurb';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
 import DocsPageWrapper from './../../components/neo/DocsPageWrapper';
 
@@ -60,14 +60,14 @@ const components = [
 const isNeo = process.env.BPK_NEO;
 
 const blurb = [
-  <Paragraph>
+  <IntroBlurb>
     This component is a replacement for the default React Native Touchable
     Highlight component. The default Touchable Highlight component works by
     decreasing the opacity of the wrapped view to show an underlay colour. When
     views are nested within a Touchable Highlight wrapped view, their opacity is
     unchanged which produces an undesirable result. Have a look at the example
     below to see them both in action.
-  </Paragraph>,
+  </IntroBlurb>,
   <BpkBlockquote>
     <BpkText bold>Note:</BpkText> This component is iOS only, for Android please
     use BpkTouchableNativeFeedback{' '}

@@ -20,7 +20,7 @@
 
 import React from 'react';
 import DocsPageWrapper from './../../components/neo/DocsPageWrapper';
-import Paragraph from './../../components/Paragraph';
+import IntroBlurb from './../../components/neo/IntroBlurb';
 
 import WebProgress from '../ProgressPage';
 import NativeProgress from '../NativeProgressPage';
@@ -29,11 +29,11 @@ const NeoProgressPage = () => (
   <DocsPageWrapper
     title="Progress"
     blurb={[
-      <Paragraph>
+      <IntroBlurb>
         Progress bars are a great way of providing feedback when a tasking is
         running. Unlike spinners, they give the user a clear idea of how long
         the given task will take.
-      </Paragraph>,
+      </IntroBlurb>,
     ]}
     webSubpage={<WebProgress wrapped />}
     nativeSubpage={<NativeProgress wrapped />}

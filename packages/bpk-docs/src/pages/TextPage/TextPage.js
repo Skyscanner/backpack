@@ -23,16 +23,16 @@ import BpkBlockquote from 'bpk-component-blockquote';
 import textReadme from 'bpk-component-text/readme.md';
 
 import DocsPageBuilder from './../../components/DocsPageBuilder';
-import Paragraph from './../../components/Paragraph';
+import IntroBlurb from './../../components/neo/IntroBlurb';
 import Code from '../../components/Code';
 
 const blurb = [
-  <Paragraph>
+  <IntroBlurb>
     The text component enables you to use Backpack defined text styles. On web,
     you can combine these with any of the heading tags, a span or a paragraph.
     You can mix different text styles with the appropriate tag to achieve
     semantic markup while retaining control over how the text looks.
-  </Paragraph>,
+  </IntroBlurb>,
   <BpkBlockquote extraSpace>
     <BpkText bold>Note:</BpkText> Whilst <Code>BpkText</Code> allows for any
     combination of text size and heading levels, we recommend that visual

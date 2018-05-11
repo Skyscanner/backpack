@@ -30,6 +30,7 @@ import androidScreenshotDestructive from 'react-native-bpk-component-button/scre
 import androidScreenshotFeatured from 'react-native-bpk-component-button/screenshots/android/featured.png';
 
 import Paragraph from './../../components/Paragraph';
+import IntroBlurb from './../../components/neo/IntroBlurb';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
 
 import { THEMING } from './../../constants/routes';
@@ -137,14 +138,14 @@ const NativeTextPage = ({ ...rest }) => (
       isNeo
         ? []
         : [
-            <Paragraph>
+            <IntroBlurb>
               The Backpack button component is for all your button pressing
               needs. It&#39;s a wrapper around the React Native{' '}
               <BpkLink href={reactNativeUrl}>
                 TouchableWithoutFeedback component
               </BpkLink>, therefore it supports all the same behaviours and
               properties.
-            </Paragraph>,
+            </IntroBlurb>,
             <Paragraph>
               There are four types of button: primary, secondary, destructive
               and featured. All button types can be large and disabled.

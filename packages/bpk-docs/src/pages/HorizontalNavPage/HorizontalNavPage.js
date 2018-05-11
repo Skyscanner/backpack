@@ -24,7 +24,7 @@ import BpkHorizontalNav, {
 } from 'bpk-component-horizontal-nav';
 
 import DocsPageBuilder from './../../components/DocsPageBuilder';
-import Paragraph from './../../components/Paragraph';
+import IntroBlurb from './../../components/neo/IntroBlurb';
 
 class HorizontalNavContainer extends Component {
   constructor() {
@@ -101,10 +101,10 @@ const components = [
 const isNeo = process.env.BPK_NEO;
 
 const blurb = [
-  <Paragraph>
+  <IntroBlurb>
     A simple navigation component, ideal for representing a section of a page
     that links to other pages or views within the page.
-  </Paragraph>,
+  </IntroBlurb>,
 ];
 
 const HorizontalNavPage = ({ ...rest }) => (

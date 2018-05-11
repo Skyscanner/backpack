@@ -20,7 +20,7 @@
 
 import React from 'react';
 import DocsPageWrapper from './../../components/neo/DocsPageWrapper';
-import Paragraph from './../../components/Paragraph';
+import IntroBlurb from './../../components/neo/IntroBlurb';
 
 import Web from '../TextPage';
 import Native from '../NativeTextPage';
@@ -29,12 +29,12 @@ const Page = () => (
   <DocsPageWrapper
     title="Text"
     blurb={[
-      <Paragraph>
+      <IntroBlurb>
         The text component enables you to use Backpack defined text styles. On
         web, you can combine these with any of the heading tags, a span or a
         paragraph. You can mix different text styles with the appropriate tag to
         achieve semantic markup while retaining control over how the text looks.
-      </Paragraph>,
+      </IntroBlurb>,
     ]}
     webSubpage={<Web wrapped />}
     nativeSubpage={<Native wrapped />}

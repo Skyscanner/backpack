@@ -34,7 +34,7 @@ import STYLES from './fieldsets-page.scss';
 import * as ROUTES from './../../constants/routes';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
 import DocsPageWrapper from './../../components/neo/DocsPageWrapper';
-import Paragraph from './../../components/Paragraph';
+import IntroBlurb from './../../components/neo/IntroBlurb';
 
 const getClassName = cssModules(STYLES);
 
@@ -317,7 +317,7 @@ const components = [
 const isNeo = process.env.BPK_NEO;
 
 const blurb = [
-  <Paragraph>
+  <IntroBlurb>
     Fieldsets encapsulate the composition of{' '}
     <BpkRouterLink to={`${ROUTES.FORMS}`}>form controls</BpkRouterLink>
     , <BpkRouterLink to={`${ROUTES.FORMS}#labels`}>labels</BpkRouterLink>
@@ -327,7 +327,7 @@ const blurb = [
     </BpkRouterLink>{' '}
     with the necessary attributes to ensure good accessibility for screen
     readers.
-  </Paragraph>,
+  </IntroBlurb>,
 ];
 
 const FieldsetPage = ({ ...rest }) => (

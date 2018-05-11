@@ -20,16 +20,16 @@
 
 import React from 'react';
 import DocsPageWrapper from './../../components/neo/DocsPageWrapper';
-import Paragraph from './../../components/Paragraph';
+import IntroBlurb from './../../components/neo/IntroBlurb';
 
 import Web from '../HorizontalNavPage';
 import Native from '../NativeHorizontalNavPage';
 
 const blurb = [
-  <Paragraph>
+  <IntroBlurb>
     A simple navigation component, ideal for representing a section of a page
     that links to other pages or views within the page.
-  </Paragraph>,
+  </IntroBlurb>,
 ];
 
 const Page = () => (

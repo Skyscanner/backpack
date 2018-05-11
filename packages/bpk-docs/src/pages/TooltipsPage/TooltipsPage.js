@@ -26,6 +26,7 @@ import DocsPageBuilder from './../../components/DocsPageBuilder';
 import DocsPageWrapper from './../../components/neo/DocsPageWrapper';
 import Heading from './../../components/Heading';
 import Paragraph from './../../components/Paragraph';
+import IntroBlurb from './../../components/neo/IntroBlurb';
 import STYLES from './tooltips-page.scss';
 
 const getClassName = cssModules(STYLES);
@@ -125,11 +126,11 @@ const components = [
 const isNeo = process.env.BPK_NEO;
 
 const blurb = [
-  <Paragraph>
+  <IntroBlurb>
     Tooltips appear on hover of a particular element and are used to provide
     additional context/information to the user. They are generally text-only and
     are triggered on pointer based interfaces.
-  </Paragraph>,
+  </IntroBlurb>,
   <Paragraph>
     By design, tooltips do not work on touch devices and is bad practice to do
     so due to the lack of hover state. We also do not recommend using tooltips

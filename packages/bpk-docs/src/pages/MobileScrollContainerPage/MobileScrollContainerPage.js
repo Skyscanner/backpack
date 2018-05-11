@@ -22,7 +22,7 @@ import React from 'react';
 import mobileScrollContainerReadme from 'bpk-component-mobile-scroll-container/readme.md';
 
 import BlockExample from './BlockExample';
-import Paragraph from './../../components/Paragraph';
+import IntroBlurb from './../../components/neo/IntroBlurb';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
 import DocsPageWrapper from './../../components/neo/DocsPageWrapper';
 
@@ -37,10 +37,10 @@ const components = [
 const isNeo = process.env.BPK_NEO;
 
 const blurb = [
-  <Paragraph>
+  <IntroBlurb>
     The mobile scroll container component will hide overflowing content in fixed
     with situations and will enable horizontal scrolling.
-  </Paragraph>,
+  </IntroBlurb>,
 ];
 
 const MobileScrollContainerPage = ({ ...rest }: { [string]: any }) => (

@@ -29,6 +29,7 @@ import calendarReadme from 'bpk-component-calendar/readme.md';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
 import DocsPageWrapper from './../../components/neo/DocsPageWrapper';
 import Paragraph from './../../components/Paragraph';
+import IntroBlurb from './../../components/neo/IntroBlurb';
 import addMonths from '../../../../bpk-component-calendar/node_modules/date-fns/add_months';
 import {
   weekDays,
@@ -182,9 +183,9 @@ const components = [
 const isNeo = process.env.BPK_NEO;
 
 const blurb = [
-  <Paragraph>
+  <IntroBlurb>
     Calendars are used for date selection within a defined time period.
-  </Paragraph>,
+  </IntroBlurb>,
 ];
 
 const CalendarPage = ({ ...rest }) => (

@@ -23,7 +23,7 @@ import iosScreenshotWithAccessoryView from 'react-native-bpk-component-text-inpu
 import androidScreenshot from 'react-native-bpk-component-text-input/screenshots/android/text-inputs.png';
 import androidScreenshotWithAccessoryView from 'react-native-bpk-component-text-input/screenshots/android/text-inputs-with-accessory-view.png';
 
-import Paragraph from './../../components/Paragraph';
+import IntroBlurb from './../../components/neo/IntroBlurb';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
 import DocsPageWrapper from './../../components/neo/DocsPageWrapper';
 
@@ -77,10 +77,10 @@ const components = [
 const isNeo = process.env.BPK_NEO;
 
 const blurb = [
-  <Paragraph>
+  <IntroBlurb>
     Text inputs are used to capture textual information as well as numbers and
     passwords.
-  </Paragraph>,
+  </IntroBlurb>,
 ];
 
 const NativeInputPage = ({ ...rest }) => (

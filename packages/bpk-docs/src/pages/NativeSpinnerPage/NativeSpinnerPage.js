@@ -24,7 +24,7 @@ import iosScreenshotSmall from 'react-native-bpk-component-spinner/screenshots/i
 import androidScreenshotDefault from 'react-native-bpk-component-spinner/screenshots/android/default.png';
 import androidScreenshotSmall from 'react-native-bpk-component-spinner/screenshots/android/small.png';
 
-import Paragraph from './../../components/Paragraph';
+import IntroBlurb from './../../components/neo/IntroBlurb';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
 
 const components = [
@@ -81,9 +81,9 @@ const components = [
 const isNeo = process.env.BPK_NEO;
 
 const blurb = [
-  <Paragraph>
+  <IntroBlurb>
     Sliders allow users to input a numeric value from a given range.
-  </Paragraph>,
+  </IntroBlurb>,
 ];
 
 const NativeSpinnerPage = ({ ...rest }) => (

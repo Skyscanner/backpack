@@ -24,6 +24,7 @@ import iosScreenshot from 'react-native-bpk-component-button-link/screenshots/io
 import androidScreenshot from 'react-native-bpk-component-button-link/screenshots/android/default.png';
 
 import Paragraph from './../../components/Paragraph';
+import IntroBlurb from './../../components/neo/IntroBlurb';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
 
 import { THEMING } from './../../constants/routes';
@@ -57,10 +58,10 @@ const components = [
 const isNeo = process.env.BPK_NEO;
 
 const blurb = [
-  <Paragraph>
+  <IntroBlurb>
     The Backpack button link component behaves like a button but it has a look
     and feel of a link.
-  </Paragraph>,
+  </IntroBlurb>,
   <Paragraph>
     Link buttons can have a leading or trailing icon and can be{' '}
     <BpkLink href={THEMING}>themed</BpkLink>.

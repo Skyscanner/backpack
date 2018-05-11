@@ -25,7 +25,7 @@ import androidScreenshotDefault from 'react-native-bpk-component-progress/screen
 import iosScreenshotBar from 'react-native-bpk-component-progress/screenshots/ios/bar.png';
 import androidScreenshotBar from 'react-native-bpk-component-progress/screenshots/android/bar.png';
 
-import Paragraph from './../../components/Paragraph';
+import IntroBlurb from './../../components/neo/IntroBlurb';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
 
 const components = [
@@ -82,11 +82,11 @@ const components = [
 const isNeo = process.env.BPK_NEO;
 
 const blurb = [
-  <Paragraph>
+  <IntroBlurb>
     Progress bars are a great way of providing feedback when a tasking is
     running. Unlike spinners, they give the user a clear idea of how long the
     given task will take.
-  </Paragraph>,
+  </IntroBlurb>,
 ];
 
 const NativeProgressPage = ({ ...rest }: { [string]: any }) => (

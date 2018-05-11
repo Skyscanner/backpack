@@ -30,6 +30,7 @@ import { spacingSm } from 'bpk-tokens/tokens/base.es6';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
 import DocsPageWrapper from './../../components/neo/DocsPageWrapper';
 import Paragraph from './../../components/Paragraph';
+import IntroBlurb from './../../components/neo/IntroBlurb';
 
 const SingleItemAccordion = withSingleItemAccordionState(BpkAccordion);
 const StatefulAccordionItem = withAccordionItemState(BpkAccordionItem);
@@ -199,9 +200,9 @@ const components = [
 const isNeo = process.env.BPK_NEO;
 
 const blurb = [
-  <Paragraph>
+  <IntroBlurb>
     An accordion allows users to expand and collapse sections of content.
-  </Paragraph>,
+  </IntroBlurb>,
 ];
 
 const AccordionsPage = ({ ...rest }) => (

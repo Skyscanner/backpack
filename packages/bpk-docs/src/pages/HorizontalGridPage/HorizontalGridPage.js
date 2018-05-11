@@ -28,6 +28,7 @@ import DocsPageBuilder from './../../components/DocsPageBuilder';
 import DocsPageWrapper from './../../components/neo/DocsPageWrapper';
 
 import BpkParagraph from './../../components/Paragraph';
+import IntroBlurb from './../../components/neo/IntroBlurb';
 import Code from '../../components/Code';
 
 const components = [
@@ -84,9 +85,9 @@ const components = [
 const isNeo = process.env.BPK_NEO;
 
 const blurb = [
-  <BpkParagraph>
+  <IntroBlurb>
     A 12 column responsive grid to compose and layout pages.
-  </BpkParagraph>,
+  </IntroBlurb>,
 ];
 
 const HorizontalGridPage = ({ ...rest }) => (

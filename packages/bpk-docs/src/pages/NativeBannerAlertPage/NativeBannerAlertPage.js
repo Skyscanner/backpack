@@ -28,6 +28,7 @@ import androidScreenshotDismissable from 'react-native-bpk-component-banner-aler
 import androidScreenshotExpandable from 'react-native-bpk-component-banner-alert/screenshots/android/expandable.png';
 
 import Paragraph from './../../components/Paragraph';
+import IntroBlurb from './../../components/neo/IntroBlurb';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
 
 const components = [
@@ -108,10 +109,10 @@ const NativeBannerAlertPage = ({ ...rest }) => (
       isNeo
         ? []
         : [
-            <Paragraph>
+            <IntroBlurb>
               Banner alerts provide feedback to the user when an action has been
               performed.
-            </Paragraph>,
+            </IntroBlurb>,
             <Paragraph>
               Banner alerts come in four styles to indicate success, warning or
               error, or some neutral information. They can be configured to be

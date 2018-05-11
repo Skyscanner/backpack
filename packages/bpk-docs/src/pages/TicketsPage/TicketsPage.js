@@ -26,6 +26,7 @@ import * as ROUTES from './../../constants/routes';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
 import DocsPageWrapper from './../../components/neo/DocsPageWrapper';
 import Paragraph from './../../components/Paragraph';
+import IntroBlurb from './../../components/neo/IntroBlurb';
 
 const components = [
   {
@@ -77,12 +78,12 @@ const components = [
 const isNeo = process.env.BPK_NEO;
 
 const blurb = [
-  <Paragraph>
+  <IntroBlurb>
     Tickets combine the look and feel of{' '}
     <BpkRouterLink to={ROUTES.CARDS}>Cards</BpkRouterLink> with an added
     separation line to divide their content into two distinct areas. They can be
     configured to display both horizontally and vertically.
-  </Paragraph>,
+  </IntroBlurb>,
 ];
 
 const TicketsPage = ({ ...rest }) => (

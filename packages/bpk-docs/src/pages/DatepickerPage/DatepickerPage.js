@@ -26,6 +26,7 @@ import DocsPageBuilder from './../../components/DocsPageBuilder';
 import DocsPageWrapper from './../../components/neo/DocsPageWrapper';
 import format from '../../../../bpk-component-calendar/node_modules/date-fns/format';
 import Paragraph from './../../components/Paragraph';
+import IntroBlurb from './../../components/neo/IntroBlurb';
 import { weekDays } from '../../../../bpk-component-calendar/test-utils';
 
 const formatDate = date => format(date, 'DD/MM/YYYY');
@@ -88,12 +89,12 @@ const components = [
 const isNeo = process.env.BPK_NEO;
 
 const blurb = [
-  <Paragraph>
+  <IntroBlurb>
     The datepicker is an input control that allows the user to pick a single
     date. It embeds a{' '}
     <BpkRouterLink to={ROUTES.CALENDAR}>calendar component</BpkRouterLink> in a{' '}
     <BpkRouterLink to={ROUTES.POPOVERS}>popover</BpkRouterLink>.
-  </Paragraph>,
+  </IntroBlurb>,
 ];
 
 const DatepickerPage = ({ ...rest }) => (

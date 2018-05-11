@@ -24,7 +24,7 @@ import androidScreenshotDefault from 'react-native-bpk-component-flat-list/scree
 import iosScreenshotWithImages from 'react-native-bpk-component-flat-list/screenshots/ios/with-images.png';
 import androidScreenshotWithImages from 'react-native-bpk-component-flat-list/screenshots/android/with-images.png';
 
-import Paragraph from './../../components/Paragraph';
+import IntroBlurb from './../../components/neo/IntroBlurb';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
 import DocsPageWrapper from './../../components/neo/DocsPageWrapper';
 
@@ -79,10 +79,10 @@ const components = [
 const isNeo = process.env.BPK_NEO;
 
 const blurb = [
-  <Paragraph>
+  <IntroBlurb>
     The flat list component can be used to display content in the form of a
     tappable list.
-  </Paragraph>,
+  </IntroBlurb>,
 ];
 
 const NativeFlatListPage = ({ ...rest }) => (
@@ -98,7 +98,7 @@ const NativeFlatListPage = ({ ...rest }) => (
 
 const NeoFlatListPage = () => (
   <DocsPageWrapper
-    title="Flat List"
+    title="Flat list"
     blurb={blurb}
     nativeSubpage={<NativeFlatListPage wrapped />}
   />

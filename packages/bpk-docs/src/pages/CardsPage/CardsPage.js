@@ -23,6 +23,7 @@ import cardReadme from 'bpk-component-card/readme.md';
 
 import DocsPageBuilder from './../../components/DocsPageBuilder';
 import Paragraph from './../../components/Paragraph';
+import IntroBlurb from './../../components/neo/IntroBlurb';
 
 const components = [
   {
@@ -66,11 +67,14 @@ const CardsPage = ({ ...rest }) => (
       isNeo
         ? []
         : [
+            <IntroBlurb>
+              Cards are used to group related items. They allow complex datasets
+              to be broken down into individual, distinct areas for easy
+              consumption.
+            </IntroBlurb>,
             <Paragraph>
-              Cards are used to group related items within the UI. They allow
-              complex datasets to be broken down into individual, distinct areas
-              for easy consumption. Cards are used as a signifier to give
-              affordance to a clickable set of elements.
+              Cards are used as a signifier to give affordance to a clickable
+              set of elements.
             </Paragraph>,
           ]
     }

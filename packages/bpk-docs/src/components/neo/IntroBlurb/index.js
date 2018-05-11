@@ -16,26 +16,6 @@
  * limitations under the License.
  */
 
-/* @flow */
+import IntroBlurb from './IntroBlurb';
 
-import React from 'react';
-import DocsPageWrapper from './../../components/neo/DocsPageWrapper';
-import IntroBlurb from './../../components/neo/IntroBlurb';
-
-import Web from '../LinksPage';
-import Native from '../NativeButtonLinkPage';
-
-const Page = () => (
-  <DocsPageWrapper
-    title="Link"
-    blurb={[
-      <IntroBlurb>
-        This component enables links to other resources, pages or views.
-      </IntroBlurb>,
-    ]}
-    webSubpage={<Web wrapped />}
-    nativeSubpage={<Native wrapped />}
-  />
-);
-
-export default Page;
+export default IntroBlurb;

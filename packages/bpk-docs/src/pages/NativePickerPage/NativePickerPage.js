@@ -25,7 +25,7 @@ import androidScreenshotDefault from 'react-native-bpk-component-picker/screensh
 import iosScreenshotDefaultPickerOpen from 'react-native-bpk-component-picker/screenshots/ios/default-picker-open.png';
 import androidScreenshotDefaultPickerOpen from 'react-native-bpk-component-picker/screenshots/android/default-picker-open.png';
 
-import Paragraph from './../../components/Paragraph';
+import IntroBlurb from './../../components/neo/IntroBlurb';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
 import DocsPageWrapper from './../../components/neo/DocsPageWrapper';
 
@@ -82,10 +82,10 @@ const components = [
 const isNeo = process.env.BPK_NEO;
 
 const blurb = [
-  <Paragraph>
+  <IntroBlurb>
     Pickers let the user pick a single option from a limited list of possible
     options in a modal context.
-  </Paragraph>,
+  </IntroBlurb>,
 ];
 
 const NativePickerPage = ({ ...rest }) => (

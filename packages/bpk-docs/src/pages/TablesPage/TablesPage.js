@@ -30,12 +30,12 @@ import tablesReadme from 'bpk-component-table/readme.md';
 
 import DocsPageBuilder from './../../components/DocsPageBuilder';
 import DocsPageWrapper from './../../components/neo/DocsPageWrapper';
-import Paragraph from './../../components/Paragraph';
+import IntroBlurb from './../../components/neo/IntroBlurb';
 
 const blurb = [
-  <Paragraph>
+  <IntroBlurb>
     A simple table component for displaying data in a tabular form.
-  </Paragraph>,
+  </IntroBlurb>,
 ];
 
 const components = [

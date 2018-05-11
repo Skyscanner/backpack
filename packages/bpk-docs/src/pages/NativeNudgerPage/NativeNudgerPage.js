@@ -22,7 +22,7 @@ import readme from 'react-native-bpk-component-nudger/readme.md';
 import iosScreenshotDefault from 'react-native-bpk-component-nudger/screenshots/ios/default.png';
 import androidScreenshotDefault from 'react-native-bpk-component-nudger/screenshots/android/default.png';
 
-import Paragraph from './../../components/Paragraph';
+import IntroBlurb from './../../components/neo/IntroBlurb';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
 
 const components = [
@@ -55,9 +55,9 @@ const components = [
 const isNeo = process.env.BPK_NEO;
 
 const blurb = [
-  <Paragraph>
+  <IntroBlurb>
     Nudgers allow users to quickly specify a value within a given range.
-  </Paragraph>,
+  </IntroBlurb>,
 ];
 
 const NativeNudgerPage = ({ ...rest }) => (

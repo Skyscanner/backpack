@@ -27,7 +27,7 @@ import * as BREAKPOINTS from 'bpk-tokens/tokens/breakpoints.es6';
 
 import DocsPageBuilder from './../../components/DocsPageBuilder';
 import DocsPageWrapper from './../../components/neo/DocsPageWrapper';
-import Paragraph from './../../components/Paragraph';
+import IntroBlurb from './../../components/neo/IntroBlurb';
 
 const documentIfExists = typeof window !== 'undefined' ? document : null;
 const FadingImage = withLoadingBehavior(BpkImage);
@@ -170,7 +170,7 @@ const components = [
 
 const isNeo = process.env.BPK_NEO;
 
-const blurb = [<Paragraph>A component for including images.</Paragraph>];
+const blurb = [<IntroBlurb>A component for including images.</IntroBlurb>];
 
 const ImagesPage = ({ ...rest }) => (
   <DocsPageBuilder

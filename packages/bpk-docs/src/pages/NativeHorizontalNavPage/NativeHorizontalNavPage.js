@@ -26,7 +26,7 @@ import androidScreenshotDefault from 'react-native-bpk-component-horizontal-nav/
 import androidScreenshotSmall from 'react-native-bpk-component-horizontal-nav/screenshots/android/small.png';
 import androidScreenshotSpaceAround from 'react-native-bpk-component-horizontal-nav/screenshots/android/space-around.png'; // eslint-disable-line max-len
 
-import Paragraph from './../../components/Paragraph';
+import IntroBlurb from './../../components/neo/IntroBlurb';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
 
 const components = [
@@ -105,10 +105,10 @@ const components = [
 const isNeo = process.env.BPK_NEO;
 
 const blurb = [
-  <Paragraph>
+  <IntroBlurb>
     A simple navigation component, ideal for representing a section of a page
     that links to other pages or views within the page.
-  </Paragraph>,
+  </IntroBlurb>,
 ];
 
 const NativeHorizontalNavPage = ({ ...rest }) => (

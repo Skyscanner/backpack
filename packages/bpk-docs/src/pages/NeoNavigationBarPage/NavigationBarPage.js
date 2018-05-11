@@ -20,7 +20,7 @@
 
 import React from 'react';
 import DocsPageWrapper from './../../components/neo/DocsPageWrapper';
-import Paragraph from './../../components/Paragraph';
+import IntroBlurb from './../../components/neo/IntroBlurb';
 
 import WebNavigation from '../NavigationBarPage';
 import NativeNavigation from '../NativeNavigationBarPage';
@@ -29,10 +29,10 @@ const NeoBadgePage = () => (
   <DocsPageWrapper
     title="Navigation bar"
     blurb={[
-      <Paragraph>
+      <IntroBlurb>
         The navigation bar component encapsulates a title and icon/text actions
         for controlling views.
-      </Paragraph>,
+      </IntroBlurb>,
     ]}
     webSubpage={<WebNavigation wrapped />}
     nativeSubpage={<NativeNavigation wrapped />}

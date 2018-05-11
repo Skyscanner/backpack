@@ -20,7 +20,7 @@
 
 import React from 'react';
 import DocsPageWrapper from './../../components/neo/DocsPageWrapper';
-import Paragraph from './../../components/Paragraph';
+import IntroBlurb from './../../components/neo/IntroBlurb';
 
 import Web from '../PanelsPage';
 import Native from '../NativePanelsPage';
@@ -29,10 +29,10 @@ const Page = () => (
   <DocsPageWrapper
     title="Panel"
     blurb={[
-      <Paragraph>
+      <IntroBlurb>
         Panels are useful for housing distinct areas of related content. Unlike
         cards these are not clickable.
-      </Paragraph>,
+      </IntroBlurb>,
     ]}
     webSubpage={<Web wrapped />}
     nativeSubpage={<Native wrapped />}

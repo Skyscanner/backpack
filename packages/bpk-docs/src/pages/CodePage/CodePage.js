@@ -24,12 +24,13 @@ import codeReadme from 'bpk-component-code/readme.md';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
 import DocsPageWrapper from './../../components/neo/DocsPageWrapper';
 import Paragraph from './../../components/Paragraph';
+import IntroBlurb from './../../components/neo/IntroBlurb';
 
 const blurb = [
-  <Paragraph>
+  <IntroBlurb>
     The code component can be used to format a piece of text or entire text
     block as code.
-  </Paragraph>,
+  </IntroBlurb>,
 ];
 
 const components = [

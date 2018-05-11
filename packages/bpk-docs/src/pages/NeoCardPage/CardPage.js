@@ -21,6 +21,7 @@
 import React from 'react';
 import DocsPageWrapper from './../../components/neo/DocsPageWrapper';
 import Paragraph from './../../components/Paragraph';
+import IntroBlurb from './../../components/neo/IntroBlurb';
 
 import Web from '../CardsPage';
 import Native from '../NativeCardsPage';
@@ -29,10 +30,12 @@ const Page = () => (
   <DocsPageWrapper
     title="Card"
     blurb={[
-      <Paragraph>
+      <IntroBlurb>
         Cards are used to group related items. They allow complex datasets to be
-        broken down into individual, distinct areas for easy consumption. Cards
-        are used as a signifier to give affordance to a clickable set of
+        broken down into individual, distinct areas for easy consumption.
+      </IntroBlurb>,
+      <Paragraph>
+        Cards are used as a signifier to give affordance to a clickable set of
         elements.
       </Paragraph>,
     ]}

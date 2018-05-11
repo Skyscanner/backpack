@@ -24,6 +24,7 @@ import { updateOnDirectionChange } from 'bpk-component-rtl-toggle';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
 import DocsPageWrapper from './../../components/neo/DocsPageWrapper';
 import Paragraph from './../../components/Paragraph';
+import IntroBlurb from './../../components/neo/IntroBlurb';
 
 const EnhancedSlider = updateOnDirectionChange(BpkSlider);
 const components = [
@@ -80,9 +81,9 @@ const components = [
 const isNeo = process.env.BPK_NEO;
 
 const blurb = [
-  <Paragraph>
+  <IntroBlurb>
     Sliders allow users to input a numeric value from a given range.
-  </Paragraph>,
+  </IntroBlurb>,
 ];
 
 const SlidersPage = ({ ...rest }) => (

@@ -26,7 +26,7 @@ import androidScreenshotDefault from 'react-native-bpk-component-badge/screensho
 import androidScreenshotDockedStart from 'react-native-bpk-component-badge/screenshots/android/docked-start.png';
 import androidScreenshotDockedEnd from 'react-native-bpk-component-badge/screenshots/android/docked-end.png';
 
-import Paragraph from './../../components/Paragraph';
+import IntroBlurb from './../../components/neo/IntroBlurb';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
 
 const components = [
@@ -107,11 +107,11 @@ const NativeBadgePage = ({ ...rest }) => (
       isNeo
         ? []
         : [
-            <Paragraph>
+            <IntroBlurb>
               Badges are labels which hold small amounts of information. Badges
               are most often used as counters, such as an indication of unread
               notifications.
-            </Paragraph>,
+            </IntroBlurb>,
           ]
     }
     components={components}
