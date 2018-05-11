@@ -22,6 +22,22 @@ script:
 cache:
   directories:
     - node_modules
+script:
+  - npm run docs:dist
+  - test -e dist/index.html
+  - test -e dist/sassdoc/index.html
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $DEPLOY_NEO_TOKEN
+  # on:
+  #   branch: master
+  local_dir: dist/
+  skip_cleanup: true
+  detect_encoding: true
+  repo: backpack-neo/backpack-neo.github.io
+  target-branch: master
+  verbose: true
 branches:
   only:
     - master
@@ -45,3 +61,19 @@ notifications:
     on_pull_requests: false
     on_success: always
     on_failure: change
+script:
+  - npm run docs:dist
+  - test -e dist/index.html
+  - test -e dist/sassdoc/index.html
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $DEPLOY_NEO_TOKEN
+  on:
+    branch: master
+  local_dir: dist/
+  skip_cleanup: true
+  detect_encoding: true
+  repo: backpack-neo/backpack-neo.github.io
+  target-branch: master
+  verbose: true
