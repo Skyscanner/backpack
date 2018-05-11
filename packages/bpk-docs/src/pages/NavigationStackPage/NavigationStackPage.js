@@ -25,6 +25,7 @@ import { cssModules } from 'bpk-react-utils';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
 import DocsPageWrapper from './../../components/neo/DocsPageWrapper';
 import Paragraph from './../../components/Paragraph';
+import IntroBlurb from './../../components/neo/IntroBlurb';
 import {
   View,
   StackWithNavBar,
@@ -67,10 +68,10 @@ const components = [
 const isNeo = process.env.BPK_NEO;
 
 const blurb = [
-  <Paragraph>
+  <IntroBlurb>
     The navigation stack component presents content in full-screen and makes use
     of the navigation bar component to allow pagination between screens.
-  </Paragraph>,
+  </IntroBlurb>,
 ];
 
 const NavigationStackPage = ({ ...rest }: { [string]: any }) => (
