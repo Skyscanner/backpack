@@ -194,7 +194,7 @@ const NeoDocsPageBuilder = props => {
   ];
 
   const menu = [...props.components, ...(props.customSections || [])];
-  const showPageHead = props.blurb || menu.length > 0;
+  const showPageHead = props.tokenMap || props.blurb || menu.length > 0;
 
   return (
     <BpkContentContainer
