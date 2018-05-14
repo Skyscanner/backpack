@@ -20,14 +20,24 @@ import React from 'react';
 import TOKENS from 'bpk-tokens/tokens/base.raw.json';
 import IOS_TOKENS from 'bpk-tokens/tokens/base.raw.ios.json';
 import ANDROID_TOKENS from 'bpk-tokens/tokens/base.raw.android.json';
+import BpkBlockquote from 'bpk-component-blockquote';
 
+import IntroBlurb from './../../components/neo/IntroBlurb';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
 import { getPlatformTokens } from './../../helpers/tokens-helper';
 
+const blurb = [
+  <IntroBlurb>
+    Typography values including font families, sizes, and line heights for use
+    in web, iOS and Android projects.
+  </IntroBlurb>,
+  <BpkBlockquote>Note: These change per platform.</BpkBlockquote>,
+];
+
 const components = [
   {
-    id: 'font-families',
-    title: 'Font families',
+    id: 'font-family',
+    title: 'Font family',
     tokenMap: getPlatformTokens(
       TOKENS,
       IOS_TOKENS,
@@ -36,8 +46,8 @@ const components = [
     ),
   },
   {
-    id: 'font-sizes',
-    title: 'Font sizes',
+    id: 'font-size',
+    title: 'Font size',
     tokenMap: getPlatformTokens(
       TOKENS,
       IOS_TOKENS,
@@ -48,7 +58,7 @@ const components = [
   },
   {
     id: 'line-heights',
-    title: 'Line heights',
+    title: 'Line height',
     tokenMap: getPlatformTokens(
       TOKENS,
       IOS_TOKENS,
@@ -60,7 +70,7 @@ const components = [
 ];
 
 const TypesettingPage = () => (
-  <DocsPageBuilder title="Typesetting" components={components} />
+  <DocsPageBuilder title="Typesetting" blurb={blurb} components={components} />
 );
 
 export default TypesettingPage;

@@ -20,13 +20,23 @@ import React from 'react';
 import TOKENS from 'bpk-tokens/tokens/base.raw.json';
 import IOS_TOKENS from 'bpk-tokens/tokens/base.raw.ios.json';
 import ANDROID_TOKENS from 'bpk-tokens/tokens/base.raw.android.json';
+import BpkBlockquote from 'bpk-component-blockquote';
 
+import IntroBlurb from './../../components/neo/IntroBlurb';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
 import { getPlatformTokens } from './../../helpers/tokens-helper';
+
+const blurb = [
+  <IntroBlurb>
+    Shadow values for use in web, iOS and Android projects.
+  </IntroBlurb>,
+  <BpkBlockquote>Note: These change per platform.</BpkBlockquote>,
+];
 
 const ShadowsPage = () => (
   <DocsPageBuilder
     title="Shadow"
+    blurb={blurb}
     tokenMap={getPlatformTokens(
       TOKENS,
       IOS_TOKENS,
