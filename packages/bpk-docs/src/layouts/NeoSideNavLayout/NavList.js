@@ -82,7 +82,7 @@ const NavListCategory = (props: NavListCategoryPropType) => (
             return true;
           }
 
-          return x.tags && x.tags.includes(props.selectedFilter);
+          return x.tags && x.tags.indexOf(props.selectedFilter) >= 0;
         })
         .map(link => (
           <NavListItem key={link.id} {...link} onClick={props.onClick} />
