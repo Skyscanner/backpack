@@ -20,13 +20,21 @@ import React from 'react';
 import TOKENS from 'bpk-tokens/tokens/base.raw.json';
 import IOS_TOKENS from 'bpk-tokens/tokens/base.raw.ios.json';
 import ANDROID_TOKENS from 'bpk-tokens/tokens/base.raw.android.json';
+import IntroBlurb from './../../components/neo/IntroBlurb';
 
 import DocsPageBuilder from './../../components/DocsPageBuilder';
 import { getPlatformTokens } from './../../helpers/tokens-helper';
 
+const blurb = [
+  <IntroBlurb>
+    Border values for use in web, iOS and Android projects.
+  </IntroBlurb>,
+];
+
 const BordersPage = () => (
   <DocsPageBuilder
     title="Border"
+    blurb={blurb}
     tokenMap={getPlatformTokens(
       TOKENS,
       IOS_TOKENS,

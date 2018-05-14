@@ -21,12 +21,18 @@ import TOKENS from 'bpk-tokens/tokens/base.raw.json';
 import IOS_TOKENS from 'bpk-tokens/tokens/base.raw.ios.json';
 import ANDROID_TOKENS from 'bpk-tokens/tokens/base.raw.android.json';
 
+import IntroBlurb from './../../components/neo/IntroBlurb';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
 import { getPlatformTokens } from './../../helpers/tokens-helper';
+
+const blurb = [
+  <IntroBlurb>Z-index values for use in web projects.</IntroBlurb>,
+];
 
 const ZIndexesPage = () => (
   <DocsPageBuilder
     title="Z-index"
+    blurb={blurb}
     tokenMap={getPlatformTokens(
       TOKENS,
       IOS_TOKENS,
