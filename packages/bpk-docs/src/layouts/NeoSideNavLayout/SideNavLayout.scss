@@ -20,6 +20,7 @@
 
 .bpkdocs-side-nav-layout {
   display: flex;
+  flex: 1 0 auto;
 
   &__sidebar-destop-wrapper {
     display: flex;
@@ -36,6 +37,6 @@
 
   &__main {
     min-width: 0;
-    flex: 1;
+    flex: 1 1 auto;
   }
 }
