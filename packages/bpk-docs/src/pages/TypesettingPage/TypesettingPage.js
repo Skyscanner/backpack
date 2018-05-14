@@ -28,7 +28,7 @@ import { getPlatformTokens } from './../../helpers/tokens-helper';
 
 const blurb = [
   <IntroBlurb>
-    Typography values including font families, sizes, and line-heights for use
+    Typography values including font families, sizes, and line heights for use
     in web, iOS and Android projects.
   </IntroBlurb>,
   <BpkBlockquote>Note: These change per platform.</BpkBlockquote>,
