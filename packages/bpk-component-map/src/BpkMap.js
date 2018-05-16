@@ -40,12 +40,12 @@ class BpkMap extends Component {
       boundEast,
     } = this.props;
     if (boundSouth && boundWest && boundNorth && boundEast) {
-      this.googleMap.fitBounds({
-        south: boundSouth,
-        west: boundWest,
-        north: boundNorth,
-        east: boundEast,
-      });
+      this.googleMap.fitBounds(
+        new google.maps.LatLngBounds(
+          new google.maps.LatLng(boundSouth, boundWest),
+          new google.maps.LatLng(boundNorth, boundEast),
+        ),
+      );
     }
   };
 
