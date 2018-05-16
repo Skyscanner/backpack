@@ -20,7 +20,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { BpkMap } from './index';
+import BpkMap from './index';
 
 const zoom = level => {
   console.info(level);

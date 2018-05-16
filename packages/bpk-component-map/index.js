@@ -19,6 +19,4 @@
 
 import BpkMap from './src/BpkMap';
 
-export {
-  BpkMap,
-};
+export default BpkMap;

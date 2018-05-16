@@ -89,6 +89,7 @@ export default () => (
 | Property	      | PropType	| Required	| Default Value
 | ---------       | --------  | --------  | ------------- |
 | children        | element   | false     | null          |
+| className       | string    | false     | null          |
 | width           | string    | false     | 100%          |
 | height          | string    | false     | 100%          |
 | zoom	          | number	  | false	    | 15            |

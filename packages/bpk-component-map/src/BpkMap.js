@@ -57,6 +57,7 @@ class BpkMap extends Component {
 
   render() {
     const {
+      className,
       centerLatitude,
       centerLongitude,
       children,
@@ -93,6 +94,10 @@ class BpkMap extends Component {
         </GoogleMap>
       )),
     );
+    const classNames = [getClassName('bpk-map')];
+    if (className) {
+      classNames.push(className);
+    }
 
     return (
       <InnerMap
@@ -103,7 +108,7 @@ class BpkMap extends Component {
         loadingElement={<BpkSpinner />}
         mapElement={<div style={{ width, height }} />}
         containerElement={
-          <div className={getClassName('bpk-map__container')} />
+          <div className={classNames.join(' ')} />
         }
       />
     );
@@ -112,6 +117,7 @@ class BpkMap extends Component {
 
 BpkMap.propTypes = {
   children: PropTypes.node,
+  className: PropTypes.string,
   language: PropTypes.string,
   region: PropTypes.string,
   width: PropTypes.string,
@@ -131,6 +137,7 @@ BpkMap.propTypes = {
 
 BpkMap.defaultProps = {
   children: null,
+  className: null,
   language: '',
   region: '',
   width: '100%',
