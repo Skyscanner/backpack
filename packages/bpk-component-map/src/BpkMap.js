@@ -84,7 +84,9 @@ class BpkMap extends Component {
       <GoogleMap
         ref={map => this.handleMapLoad(map)}
         defaultZoom={zoom}
-        defaultCenter={{ lat: centerLatitude, lng: centerLongitude }}
+        defaultCenter={
+          centerLatitude && centerLongitude ? { lat: centerLatitude, lng: centerLongitude } : null
+        }
         options={{
           zoomControl: zoomEnabled,
           draggable: dragEnabled,
