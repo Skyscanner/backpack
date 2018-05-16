@@ -27,36 +27,27 @@ import STYLES from './bpk-map.scss';
 const getClassName = cssModules(STYLES);
 
 class BpkMap extends Component {
-  constructor(props) {
-    super(props);
-  }
-
-  handleMapLoad = (map) => {
+  handleMapLoad = map => {
     this.googleMap = map;
-    const {
-      boundSouth,
-      boundWest,
-      boundNorth,
-      boundEast,
-    } = this.props;
-    if (boundSouth && boundWest && boundNorth && boundEast) {
-      this.googleMap.fitBounds(
-        new google.maps.LatLngBounds(
-          new google.maps.LatLng(boundSouth, boundWest),
-          new google.maps.LatLng(boundNorth, boundEast),
-        ),
-      );
+    const { boundSouth, boundWest, boundNorth, boundEast } = this.props;
+    if (map && boundSouth && boundWest && boundNorth && boundEast) {
+      this.googleMap.fitBounds({
+        south: boundSouth,
+        west: boundWest,
+        north: boundNorth,
+        east: boundEast,
+      });
     }
   };
 
-  handleZoomChanged = (callback) => {
+  handleZoomChanged = callback => {
     if (callback) {
       const zoomLevel = this.googleMap.getZoom();
       callback(zoomLevel);
     }
   };
 
-  handleDragEnd = (callback) => {
+  handleDragEnd = callback => {
     if (callback) {
       const bounds = this.googleMap.getBounds();
       const center = this.googleMap.getCenter();
@@ -80,32 +71,40 @@ class BpkMap extends Component {
       onDrag,
       ...rest
     } = this.props;
-    const InnerMap = withScriptjs(withGoogleMap(() => (
-      <GoogleMap
-        ref={map => this.handleMapLoad(map)}
-        defaultZoom={zoom}
-        defaultCenter={
-          centerLatitude && centerLongitude ? { lat: centerLatitude, lng: centerLongitude } : null
-        }
-        options={{
-          zoomControl: zoomEnabled,
-          draggable: dragEnabled,
-        }}
-        onZoomChanged={() => this.handleZoomChanged(onZoom)}
-        onDragEnd={() => this.handleDragEnd(onDrag)}
-        {...rest}
-      >
-        {children}
-      </GoogleMap>
-    )));
+    const InnerMap = withScriptjs(
+      withGoogleMap(() => (
+        <GoogleMap
+          ref={map => this.handleMapLoad(map)}
+          defaultZoom={zoom}
+          defaultCenter={
+            centerLatitude && centerLongitude
+              ? { lat: centerLatitude, lng: centerLongitude }
+              : null
+          }
+          options={{
+            zoomControl: zoomEnabled,
+            draggable: dragEnabled,
+          }}
+          onZoomChanged={() => this.handleZoomChanged(onZoom)}
+          onDragEnd={() => this.handleDragEnd(onDrag)}
+          {...rest}
+        >
+          {children}
+        </GoogleMap>
+      )),
+    );
 
     return (
       <InnerMap
-        googleMapURL={'https://maps.googleapis.com/maps/api/js?key=AIzaSyBjeijuDttvvujmN_XZB9304o3lPn6WGDM' +
-        `&v=3.exp&libraries=geometry,drawing,places&language=${language}&region=${region}`}
+        googleMapURL={
+          'https://maps.googleapis.com/maps/api/js?key=AIzaSyBjeijuDttvvujmN_XZB9304o3lPn6WGDM' +
+          `&v=3.exp&libraries=geometry,drawing,places&language=${language}&region=${region}`
+        }
         loadingElement={<BpkSpinner />}
         mapElement={<div style={{ width, height }} />}
-        containerElement={<div className={getClassName('bpk-map__container')} />}
+        containerElement={
+          <div className={getClassName('bpk-map__container')} />
+        }
       />
     );
   }

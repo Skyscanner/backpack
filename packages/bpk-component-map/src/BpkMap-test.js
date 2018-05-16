@@ -22,5 +22,33 @@ import renderer from 'react-test-renderer';
 import BpkMap from './BpkMap';
 
 describe('BpkMap', () => {
+  it('should render correctly', () => {
+    const tree = renderer
+      .create(
+        <BpkMap
+          zoom={15}
+          centerLatitude={55.944357}
+          centerLongitude={-3.1967116}
+        />,
+      )
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 
+  it('should render correctly', () => {
+    const tree = renderer
+      .create(
+        <BpkMap
+          zoom={15}
+          zoomControl={false}
+          width="600px"
+          height="600px"
+          language="zh"
+          centerLatitude={55.944357}
+          centerLongitude={-3.1967116}
+        />,
+      )
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 });
