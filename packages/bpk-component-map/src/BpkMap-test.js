@@ -51,4 +51,18 @@ describe('BpkMap', () => {
       .toJSON();
     expect(tree).toMatchSnapshot();
   });
+
+  it('should render correctly', () => {
+    const tree = renderer
+      .create(
+        <BpkMap
+          zoom={15}
+          language="zh"
+          centerLatitude={55.944357}
+          centerLongitude={-3.1967116}
+        />,
+      )
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 });
