@@ -47,11 +47,10 @@ import BpkMap from 'bpk-component-map';
 
 export default () => (
   <BpkMap  
-    zoom={15}
-    centerLatitude={55.944357}
-    centerLongitude={-3.1967116}
-    zoomEnabled={false}
-    dragEnabled={false}
+    boundSouth={55.94129273544452}
+    boundWest={-3.2285547854247625}
+    boundNorth={55.952707392208396}
+    boundEast={-3.159632742578083}
     width="600px"
     height="600px"
     language="zh" />
@@ -93,8 +92,8 @@ export default () => (
 | width           | string    | false     | 100%          |
 | height          | string    | false     | 100%          |
 | zoom	          | number	  | false	    | 15            |
-| centerLatitude	| number	  | false	    | null          |
-| centerLongitude	| number	  | false	    | null          |
+| centerLatitude  | number	  | false	    | null          |
+| centerLongitude | number	  | false	    | null          |
 | boundSouth	    | number	  | false	    | null          |
 | boundWest	      | number	  | false	    | null          |
 | boundNorth	    | number	  | false	    | null          |
@@ -103,8 +102,8 @@ export default () => (
 | region  	      | string	  | false	    | null          |
 | zoomEnabled	    | bool	    | false	    | true          |
 | dragEnabled	    | bool	    | false	    | true          |
-| onZoom	        | func	    | false		  | null          |
-| onDrag	        | func	    | false	    | null          |
+| onZoom          | func	    | false		  | null          |
+| onDrag          | func	    | false	    | null          |
 | onClick         | func      | false     | null          |
 
 Notes:
