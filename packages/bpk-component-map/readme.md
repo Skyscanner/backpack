@@ -66,11 +66,11 @@ export default () => (
 import React from 'react';
 import BpkMap from 'bpk-component-map';
 const zoom = (level) => {
-  alert(level);
+  console.info(level);
 };
 
 const drag = (bounds, center) => {
-  alert(bounds);
+  console.info(bounds);
   console.info(center);
 };
 
