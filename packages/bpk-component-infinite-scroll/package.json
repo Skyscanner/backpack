@@ -1,0 +1,25 @@
+{
+  "name": "bpk-component-infinite-scroll",
+  "version": "0.0.0",
+  "description": "Backpack Infinite Scroll High Order Component.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/Skyscanner/backpack.git"
+  },
+  "author": "Backpack Design System <backpack@skyscanner.net>",
+  "license": "Apache-2.0",
+  "homepage": "https://github.com/Skyscanner/backpack#readme",
+  "peerDependencies": {
+    "react": "^15.0.0 || ^16.0.0"
+  },
+  "dependencies": {
+    "prop-types": "^15.5.8"
+  },
+  "devDependencies": {
+    "bpk-component-spinner": "^2.2.29",
+    "bpk-component-button": "^2.0.20",
+    "bpk-component-card": "^1.1.12",
+    "bpk-tokens": "^27.0.0"
+  }
+}
