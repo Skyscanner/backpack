@@ -107,9 +107,7 @@ class BpkMap extends Component {
         }
         loadingElement={<BpkSpinner />}
         mapElement={<div style={{ width, height }} />}
-        containerElement={
-          <div className={classNames.join(' ')} />
-        }
+        containerElement={<div className={classNames.join(' ')} />}
       />
     );
   }

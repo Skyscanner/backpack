@@ -99,7 +99,7 @@ export default () => (
 | boundWest	      | number	  | false	    | null          |
 | boundNorth	    | number	  | false	    | null          |
 | boundEast	      | number	  | false	    | null          |
-| language	      | string	  | false	    | locale lang   |
+| language	      | string	  | false	    | local lang    |
 | region  	      | string	  | false	    | null          |
 | zoomEnabled	    | bool	    | false	    | true          |
 | dragEnabled	    | bool	    | false	    | true          |
