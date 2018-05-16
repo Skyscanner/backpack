@@ -74,6 +74,8 @@ class BpkMap extends Component {
       zoom,
       language,
       region,
+      zoomEnabled,
+      dragEnabled,
       onZoom,
       onDrag,
       ...rest
@@ -83,6 +85,10 @@ class BpkMap extends Component {
         ref={map => this.handleMapLoad(map)}
         defaultZoom={zoom}
         defaultCenter={{ lat: centerLatitude, lng: centerLongitude }}
+        options={{
+          zoomControl: zoomEnabled,
+          draggable: dragEnabled,
+        }}
         onZoomChanged={() => this.handleZoomChanged(onZoom)}
         onDragEnd={() => this.handleDragEnd(onDrag)}
         {...rest}
@@ -116,6 +122,8 @@ BpkMap.propTypes = {
   boundWest: PropTypes.number,
   boundNorth: PropTypes.number,
   boundEast: PropTypes.number,
+  zoomEnabled: PropTypes.bool,
+  dragEnabled: PropTypes.bool,
   onZoom: PropTypes.func,
   onDrag: PropTypes.func,
 };
@@ -135,6 +143,8 @@ BpkMap.defaultProps = {
   boundEast: null,
   centerLatitude: null,
   centerLongitude: null,
+  zoomEnabled: true,
+  dragEnabled: true,
 };
 
 export default BpkMap;
