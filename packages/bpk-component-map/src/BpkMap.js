@@ -99,7 +99,7 @@ class BpkMap extends Component<Props> {
     this.googleMap = null;
   }
 
-  handleMapLoad = (map: Object) => {
+  handleMapLoad = (map: ?Object) => {
     this.googleMap = map;
     const { boundSouth, boundWest, boundNorth, boundEast } = this.props;
     if (map && boundSouth && boundWest && boundNorth && boundEast) {
