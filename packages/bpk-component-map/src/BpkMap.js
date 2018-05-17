@@ -26,9 +26,9 @@ import STYLES from './bpk-map.scss';
 
 const getClassName = cssModules(STYLES);
 
-type ZoomChangedCallback = (zoom: number) => mixed;
+type ZoomChangedCallback = ?(zoom: number) => mixed;
 
-type DragEndCallback = (bounds: Object, center: Object) => mixed;
+type DragEndCallback = ?(bounds: Object, center: Object) => mixed;
 
 type Props = {
   children: ?Node,
@@ -89,6 +89,8 @@ class BpkMap extends Component<Props> {
     centerLongitude: null,
     zoomEnabled: true,
     dragEnabled: true,
+    onZoom: null,
+    onDrag: null,
   };
 
   constructor(props: Props) {
