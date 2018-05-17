@@ -26,7 +26,84 @@ import STYLES from './bpk-map.scss';
 
 const getClassName = cssModules(STYLES);
 
-class BpkMap extends Component {
+type ZoomChangedCallback = (
+  zoom: number,
+) => mixed;
+
+type DragEndCallback = (
+  bounds: Object,
+  center: Object,
+) => mixed;
+
+type Props = {
+  children: Node,
+  className: ?string,
+  language: ?string,
+  region: ?string,
+  width: ?string,
+  height: ?string,
+  zoom: number,
+  centerLatitude: number,
+  centerLongitude: number,
+  boundSouth: number,
+  boundWest: number,
+  boundNorth: number,
+  boundEast: number,
+  zoomEnabled: boolean,
+  dragEnabled: boolean,
+  onZoom: ZoomChangedCallback,
+  onDrag: DragEndCallback,
+};
+
+class BpkMap extends Component<Props> {
+  googleMap: any;
+
+  static propTypes = {
+    children: PropTypes.node,
+    className: PropTypes.string,
+    language: PropTypes.string,
+    region: PropTypes.string,
+    width: PropTypes.string,
+    height: PropTypes.string,
+    zoom: PropTypes.number,
+    centerLatitude: PropTypes.number,
+    centerLongitude: PropTypes.number,
+    boundSouth: PropTypes.number,
+    boundWest: PropTypes.number,
+    boundNorth: PropTypes.number,
+    boundEast: PropTypes.number,
+    zoomEnabled: PropTypes.bool,
+    dragEnabled: PropTypes.bool,
+    onZoom: PropTypes.func,
+    onDrag: PropTypes.func,
+  };
+
+  static defaultProps = {
+    children: null,
+    className: null,
+    language: '',
+    region: '',
+    width: '100%',
+    height: '100%',
+    zoom: 15,
+    onZoom: null,
+    onDrag: null,
+    boundSouth: null,
+    boundWest: null,
+    boundNorth: null,
+    boundEast: null,
+    centerLatitude: null,
+    centerLongitude: null,
+    zoomEnabled: true,
+    dragEnabled: true,
+  };
+
+  constructor(props: Props) {
+    super(props);
+
+    this.googleMap = null;
+  }
+
   handleMapLoad = map => {
     this.googleMap = map;
     const { boundSouth, boundWest, boundNorth, boundEast } = this.props;
@@ -40,14 +117,14 @@ class BpkMap extends Component {
     }
   };
 
-  handleZoomChanged = callback => {
+  handleZoomChanged = (callback: ZoomChangedCallback) => {
     if (callback) {
       const zoomLevel = this.googleMap.getZoom();
       callback(zoomLevel);
     }
   };
 
-  handleDragEnd = callback => {
+  handleDragEnd = (callback: DragEndCallback) => {
     if (callback) {
       const bounds = this.googleMap.getBounds();
       const center = this.googleMap.getCenter();
@@ -112,45 +189,5 @@ class BpkMap extends Component {
     );
   }
 }
-
-BpkMap.propTypes = {
-  children: PropTypes.node,
-  className: PropTypes.string,
-  language: PropTypes.string,
-  region: PropTypes.string,
-  width: PropTypes.string,
-  height: PropTypes.string,
-  zoom: PropTypes.number,
-  centerLatitude: PropTypes.number,
-  centerLongitude: PropTypes.number,
-  boundSouth: PropTypes.number,
-  boundWest: PropTypes.number,
-  boundNorth: PropTypes.number,
-  boundEast: PropTypes.number,
-  zoomEnabled: PropTypes.bool,
-  dragEnabled: PropTypes.bool,
-  onZoom: PropTypes.func,
-  onDrag: PropTypes.func,
-};
-
-BpkMap.defaultProps = {
-  children: null,
-  className: null,
-  language: '',
-  region: '',
-  width: '100%',
-  height: '100%',
-  zoom: 15,
-  onZoom: null,
-  onDrag: null,
-  boundSouth: null,
-  boundWest: null,
-  boundNorth: null,
-  boundEast: null,
-  centerLatitude: null,
-  centerLongitude: null,
-  zoomEnabled: true,
-  dragEnabled: true,
-};
 
 export default BpkMap;
