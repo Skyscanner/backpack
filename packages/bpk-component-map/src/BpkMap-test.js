@@ -26,6 +26,7 @@ describe('BpkMap', () => {
     const tree = renderer
       .create(
         <BpkMap
+          apiKey=""
           zoom={15}
           centerLatitude={55.944357}
           centerLongitude={-3.1967116}
@@ -39,6 +40,7 @@ describe('BpkMap', () => {
     const tree = renderer
       .create(
         <BpkMap
+          apiKey=""
           zoom={15}
           zoomControl={false}
           width="600px"
@@ -56,6 +58,7 @@ describe('BpkMap', () => {
     const tree = renderer
       .create(
         <BpkMap
+          apiKey=""
           zoom={15}
           language="zh"
           centerLatitude={55.944357}

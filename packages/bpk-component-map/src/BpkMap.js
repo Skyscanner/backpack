@@ -31,6 +31,7 @@ type ZoomChangedCallback = ?(zoom: number) => mixed;
 type DragEndCallback = ?(bounds: Object, center: Object) => mixed;
 
 type Props = {
+  apiKey: string,
   children: ?Node,
   className: ?string,
   language: string,
@@ -54,6 +55,7 @@ class BpkMap extends Component<Props> {
   googleMap: any;
 
   static propTypes = {
+    apiKey: PropTypes.string.isRequired,
     children: PropTypes.node,
     className: PropTypes.string,
     language: PropTypes.string,
@@ -129,6 +131,7 @@ class BpkMap extends Component<Props> {
 
   render() {
     const {
+      apiKey,
       className,
       centerLatitude,
       centerLongitude,
@@ -174,7 +177,7 @@ class BpkMap extends Component<Props> {
     return (
       <InnerMap
         googleMapURL={
-          'https://maps.googleapis.com/maps/api/js?key=AIzaSyBjeijuDttvvujmN_XZB9304o3lPn6WGDM' +
+          `https://maps.googleapis.com/maps/api/js?key=${apiKey}` +
           `&v=3.exp&libraries=geometry,drawing,places&language=${language}&region=${region}`
         }
         loadingElement={<BpkSpinner />}

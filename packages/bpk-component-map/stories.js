@@ -34,6 +34,7 @@ const drag = (bounds, center) => {
 storiesOf('bpk-component-map', module)
   .add('Simple', () => (
     <BpkMap
+      apiKey=""
       zoom={15}
       centerLatitude={55.944357}
       centerLongitude={-3.1967116}
@@ -42,6 +43,7 @@ storiesOf('bpk-component-map', module)
   ))
   .add('Set some props', () => (
     <BpkMap
+      apiKey=""
       zoom={15}
       centerLatitude={55.944357}
       centerLongitude={-3.1967116}
@@ -54,6 +56,7 @@ storiesOf('bpk-component-map', module)
   ))
   .add('With onZoom and onDrag callback', () => (
     <BpkMap
+      apiKey=""
       zoom={15}
       centerLatitude={55.944357}
       centerLongitude={-3.1967116}
@@ -63,6 +66,7 @@ storiesOf('bpk-component-map', module)
   ))
   .add('Load Map with BoundBox', () => (
     <BpkMap
+      apiKey=""
       boundSouth={55.94129273544452}
       boundWest={-3.2285547854247625}
       boundNorth={55.952707392208396}
