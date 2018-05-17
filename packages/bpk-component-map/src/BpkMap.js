@@ -31,19 +31,19 @@ type ZoomChangedCallback = (zoom: number) => mixed;
 type DragEndCallback = (bounds: Object, center: Object) => mixed;
 
 type Props = {
-  children: Node,
+  children: ?Node,
   className: ?string,
-  language: ?string,
-  region: ?string,
-  width: ?string,
-  height: ?string,
+  language: string,
+  region: string,
+  width: string,
+  height: string,
   zoom: number,
-  centerLatitude: number,
-  centerLongitude: number,
-  boundSouth: number,
-  boundWest: number,
-  boundNorth: number,
-  boundEast: number,
+  centerLatitude: ?number,
+  centerLongitude: ?number,
+  boundSouth: ?number,
+  boundWest: ?number,
+  boundNorth: ?number,
+  boundEast: ?number,
   zoomEnabled: boolean,
   dragEnabled: boolean,
   onZoom: ZoomChangedCallback,
@@ -81,8 +81,6 @@ class BpkMap extends Component<Props> {
     width: '100%',
     height: '100%',
     zoom: 15,
-    onZoom: null,
-    onDrag: null,
     boundSouth: null,
     boundWest: null,
     boundNorth: null,
@@ -99,7 +97,7 @@ class BpkMap extends Component<Props> {
     this.googleMap = null;
   }
 
-  handleMapLoad = map => {
+  handleMapLoad = (map: Object) => {
     this.googleMap = map;
     const { boundSouth, boundWest, boundNorth, boundEast } = this.props;
     if (map && boundSouth && boundWest && boundNorth && boundEast) {
