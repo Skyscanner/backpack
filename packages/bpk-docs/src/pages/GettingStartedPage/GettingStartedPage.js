@@ -205,6 +205,14 @@ const components = [
                 Android Sketch library
               </BpkLink>
             </BpkListItem>
+            <BpkListItem>
+              <BpkLink
+                href="https://www.dropbox.com/s/rq8igam034ejrwb/Backpack_Icons_Sketch_Library.sketch?dl=0"
+                blank
+              >
+                Icon Sketch library
+              </BpkLink>
+            </BpkListItem>
           </BpkList>
         </BpkListItem>
         <BpkListItem>Import the library/libraries in Sketch.</BpkListItem>
