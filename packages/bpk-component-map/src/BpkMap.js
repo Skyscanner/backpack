@@ -103,7 +103,7 @@ class BpkMap extends Component<Props> {
     this.googleMap = map;
     const { boundSouth, boundWest, boundNorth, boundEast } = this.props;
     if (map && boundSouth && boundWest && boundNorth && boundEast) {
-      this.googleMap.fitBounds({
+      map.fitBounds({
         south: boundSouth,
         west: boundWest,
         north: boundNorth,
