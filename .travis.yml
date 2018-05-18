@@ -16,7 +16,7 @@ script:
   - set -e
   - npm run danger
   - npm test
-  - npm run docs:dist
+  - npm run docs:neo:dist
   - test -e dist/index.html
   - test -e dist/sassdoc/index.html
 cache:
