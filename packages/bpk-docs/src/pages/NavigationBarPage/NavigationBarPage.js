@@ -32,6 +32,8 @@ import { cssModules } from 'bpk-react-utils';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
 import Paragraph from './../../components/Paragraph';
 import IntroBlurb from './../../components/neo/IntroBlurb';
+import AirlineIcon from './page-components';
+
 import STYLES from './NavigationBarPage.scss';
 
 const getClassNames = cssModules(STYLES);
@@ -113,6 +115,41 @@ const components = [
               icon={CloseIcon}
               label="close"
             />
+          }
+        />
+      </div>,
+    ],
+  },
+  {
+    id: 'with-icon-title',
+    title: 'With icon in title',
+    blurb: [
+      <Paragraph>The title can include elements other than text.</Paragraph>,
+    ],
+    examples: [
+      <div className={getClassNames('bpk-navigation-bar-example')}>
+        <BpkNavigationBar
+          id="default-bpk-nav"
+          title={
+            <span
+              className={getClassNames(
+                'bpk-navigation-bar-example__title-content-wrapper',
+              )}
+            >
+              <AirlineIcon />
+            </span>
+          }
+          leadingButton={
+            <BpkNavigationBarIconButton
+              onClick={() => {}}
+              icon={ArrowIconWithRtl}
+              label="back"
+            />
+          }
+          trailingButton={
+            <BpkNavigationBarButtonLink onClick={() => {}}>
+              Done
+            </BpkNavigationBarButtonLink>
           }
         />
       </div>,

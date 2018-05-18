@@ -60,3 +60,28 @@ exports[`BpkNavigationBar should render correctly with a "traillingButton" attri
   </button>
 </nav>
 `;
+
+exports[`BpkNavigationBar should render correctly with an element for the title attribute 1`] = `
+<nav
+  aria-labelledby="test-bpk-navigation-bar-title"
+  className="bpk-navigation-bar"
+>
+  <span
+    className="bpk-text bpk-text--base bpk-text--bold bpk-navigation-bar__title"
+    id="test-bpk-navigation-bar-title"
+  >
+    <span>
+      test
+    </span>
+  </span>
+  <button
+    aria-label="test"
+    className="bpk-close-button bpk-navigation-bar-icon-button bpk-navigation-bar__trailing-item"
+    onClick={[Function]}
+    title="test"
+    type="button"
+  >
+    <span />
+  </button>
+</nav>
+`;

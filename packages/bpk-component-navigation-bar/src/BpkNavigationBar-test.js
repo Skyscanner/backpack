@@ -73,4 +73,25 @@ describe('BpkNavigationBar', () => {
       .toJSON();
     expect(tree).toMatchSnapshot();
   });
+
+  it('should render correctly with an element for the title attribute', () => {
+    const tree = renderer
+      .create(
+        <BpkNavigationBar
+          id="test"
+          title={<span>test</span>}
+          trailingButton={
+            <BpkNavigationIconButton
+              icon={() => <span />}
+              label="test"
+              onClick={() => {}}
+            >
+              Click Here
+            </BpkNavigationIconButton>
+          }
+        />,
+      )
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 });
