@@ -125,12 +125,13 @@ const blurb = [
   </IntroBlurb>,
 ];
 
-const DrawerPage = () => (
+const DrawerPage = ({ ...rest }) => (
   <DocsPageBuilder
     title="Drawer"
     blurb={isNeo ? null : blurb}
     components={components}
     readme={drawerReadme}
+    {...rest}
   />
 );
 
