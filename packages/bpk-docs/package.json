@@ -9,9 +9,7 @@
   },
   "author": "Backpack Design System <backpack@skyscanner.net>",
   "license": "Apache-2.0",
-  "files": [
-    "src"
-  ],
+  "files": ["src"],
   "devDependencies": {
     "bpk-animate-height": "^1.1.33",
     "bpk-component-accordion": "^1.2.18",

@@ -59,8 +59,35 @@ class DocsPageWrapper extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = { selected: this.props.nativeSubpage ? 'native' : 'web' };
+
+    this.state = {
+      selected: this.props.nativeSubpage ? 'native' : 'web',
+    };
   }
+
+  componentWillMount = () => {
+    if (typeof window !== 'undefined') {
+      const url = new URL(window.location);
+      const platform = url.searchParams.get('platform');
+      if (platform) {
+        this.state = {
+          selected: platform === 'native' ? 'native' : 'web',
+        };
+      }
+    }
+  };
+
+  onClick = selected => {
+    if (typeof window !== 'undefined') {
+      const simpleWindowLocation = `${window.location}`.split('?')[0];
+      window.history.pushState(
+        `platform${selected}`,
+        'Title',
+        `${simpleWindowLocation}?platform=${selected}`,
+      );
+    }
+    this.setState({ selected });
+  };
 
   render() {
     const { blurb, nativeSubpage, title, webSubpage } = this.props;
@@ -79,7 +106,7 @@ class DocsPageWrapper extends React.Component {
               name="native"
               disabled={!nativeSubpage}
               selected={this.state.selected === 'native'}
-              onClick={() => this.setState({ selected: 'native' })}
+              onClick={() => this.onClick('native')}
             >
               <AlignedBpkSmallMobileIcon
                 className={getClassName('bpkdocs-page-wrapper__platform-icon')}
@@ -90,7 +117,7 @@ class DocsPageWrapper extends React.Component {
               name="web"
               disabled={!webSubpage}
               selected={this.state.selected === 'web'}
-              onClick={() => this.setState({ selected: 'web' })}
+              onClick={() => this.onClick('web')}
             >
               <AlignedBpkSmallWindowIcon
                 className={getClassName('bpkdocs-page-wrapper__platform-icon')}

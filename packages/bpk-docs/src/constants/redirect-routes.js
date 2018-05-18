@@ -19,77 +19,100 @@
 import * as ROUTES from './routes';
 
 const NEO_WEB_COMPONENT_REDIRECTS = {
-  '/components/web/text': ROUTES.NEO_TEXT,
-  '/components/web/links': ROUTES.NEO_LINK,
-  '/components/web/lists': ROUTES.NEO_LIST,
-  '/components/web/description-lists': ROUTES.NEO_DESCRIPTION_LIST,
-  '/components/web/tables': ROUTES.NEO_TABLE,
-  '/components/web/blockquotes': ROUTES.NEO_BLOCKQUOTE,
-  '/components/web/code': ROUTES.NEO_CODE,
-  '/components/web/buttons': ROUTES.NEO_BUTTON,
-  '/components/web/icons': ROUTES.NEO_ICON,
-  '/components/web/spinners': ROUTES.NEO_SPINNER,
-  '/components/web/forms': ROUTES.NEO_FORM,
-  '/components/web/cards': ROUTES.NEO_CARD,
-  '/components/web/chips': ROUTES.NEO_CHIP,
-  '/components/web/badge': ROUTES.NEO_BADGE,
-  '/components/web/panels': ROUTES.NEO_PANEL,
-  '/components/web/images': ROUTES.NEO_IMAGE,
-  '/components/web/banner-alerts': ROUTES.NEO_BANNER_ALERT,
-  '/components/web/navigation-stack': ROUTES.NEO_NAVIGATION_STACK,
-  '/components/web/navigation-bar': ROUTES.NEO_NAVIGATION_BAR,
-  '/components/web/mobile-scroll-container': ROUTES.NEO_MOBILE_SCROLL_CONTAINER,
-  '/components/web/modals': ROUTES.NEO_MODAL,
-  '/components/web/autosuggest': ROUTES.NEO_AUTOSUGGEST,
-  '/components/web/popovers': ROUTES.NEO_POPOVER,
-  '/components/web/calendar': ROUTES.NEO_CALENDAR,
-  '/components/web/datepicker': ROUTES.NEO_DATEPICKER,
-  '/components/web/tooltips': ROUTES.NEO_TOOLTIP,
-  '/components/web/accordions': ROUTES.NEO_ACCORDION,
-  '/components/web/nudgers': ROUTES.NEO_NUDGER,
-  '/components/web/progress': ROUTES.NEO_PROGRESS,
-  '/components/web/tickets': ROUTES.NEO_TICKET,
-  '/components/web/horizontal-nav': ROUTES.NEO_HORIZONTAL_NAV,
-  '/components/web/fieldsets': ROUTES.NEO_FIELDSET,
-  '/components/web/barcharts': ROUTES.NEO_BARCHART,
-  '/components/web/pagination': ROUTES.NEO_PAGINATION,
-  '/components/web/star-rating': ROUTES.NEO_STAR_RATING,
-  '/components/web/breakpoints': ROUTES.NEO_BREAKPOINT,
-  '/components/web/horizontal-grid': ROUTES.NEO_HORIZONTAL_GRID,
-  '/components/web/sliders': ROUTES.NEO_SLIDER,
-  '/components/web/drawer': ROUTES.NEO_DRAWER,
-  '/components/web/dialogs': ROUTES.NEO_DIALOG,
-  '/components/web/section-list': ROUTES.NEO_SECTION_LIST,
+  '/components/web/text': `${ROUTES.NEO_TEXT}?platform=web`,
+  '/components/web/links': `${ROUTES.NEO_LINK}?platform=web`,
+  '/components/web/lists': `${ROUTES.NEO_LIST}?platform=web`,
+  '/components/web/description-lists': `${
+    ROUTES.NEO_DESCRIPTION_LIST
+  }?platform=web`,
+  '/components/web/tables': `${ROUTES.NEO_TABLE}?platform=web`,
+  '/components/web/blockquotes': `${ROUTES.NEO_BLOCKQUOTE}?platform=web`,
+  '/components/web/code': `${ROUTES.NEO_CODE}?platform=web`,
+  '/components/web/buttons': `${ROUTES.NEO_BUTTON}?platform=web`,
+  '/components/web/icons': `${ROUTES.NEO_ICON}?platform=web`,
+  '/components/web/spinners': `${ROUTES.NEO_SPINNER}?platform=web`,
+  '/components/web/forms': `${ROUTES.NEO_FORM}?platform=web`,
+  '/components/web/cards': `${ROUTES.NEO_CARD}?platform=web`,
+  '/components/web/chips': `${ROUTES.NEO_CHIP}?platform=web`,
+  '/components/web/badge': `${ROUTES.NEO_BADGE}?platform=web`,
+  '/components/web/panels': `${ROUTES.NEO_PANEL}?platform=web`,
+  '/components/web/images': `${ROUTES.NEO_IMAGE}?platform=web`,
+  '/components/web/banner-alerts': `${ROUTES.NEO_BANNER_ALERT}?platform=web`,
+  '/components/web/navigation-stack': `${
+    ROUTES.NEO_NAVIGATION_STACK
+  }?platform=web`,
+  '/components/web/navigation-bar': `${ROUTES.NEO_NAVIGATION_BAR}?platform=web`,
+  '/components/web/mobile-scroll-container': `${
+    ROUTES.NEO_MOBILE_SCROLL_CONTAINER
+  }?platform=web`,
+  '/components/web/modals': `${ROUTES.NEO_MODAL}?platform=web`,
+  '/components/web/autosuggest': `${ROUTES.NEO_AUTOSUGGEST}?platform=web`,
+  '/components/web/popovers': `${ROUTES.NEO_POPOVER}?platform=web`,
+  '/components/web/calendar': `${ROUTES.NEO_CALENDAR}?platform=web`,
+  '/components/web/datepicker': `${ROUTES.NEO_DATEPICKER}?platform=web`,
+  '/components/web/tooltips': `${ROUTES.NEO_TOOLTIP}?platform=web`,
+  '/components/web/accordions': `${ROUTES.NEO_ACCORDION}?platform=web`,
+  '/components/web/nudgers': `${ROUTES.NEO_NUDGER}?platform=web`,
+  '/components/web/progress': `${ROUTES.NEO_PROGRESS}?platform=web`,
+  '/components/web/tickets': `${ROUTES.NEO_TICKET}?platform=web`,
+  '/components/web/horizontal-nav': `${ROUTES.NEO_HORIZONTAL_NAV}?platform=web`,
+  '/components/web/fieldsets': `${ROUTES.NEO_FIELDSET}?platform=web`,
+  '/components/web/barcharts': `${ROUTES.NEO_BARCHART}?platform=web`,
+  '/components/web/pagination': `${ROUTES.NEO_PAGINATION}?platform=web`,
+  '/components/web/star-rating': `${ROUTES.NEO_STAR_RATING}?platform=web`,
+  '/components/web/breakpoints': `${ROUTES.NEO_BREAKPOINT}?platform=web`,
+  '/components/web/horizontal-grid': `${
+    ROUTES.NEO_HORIZONTAL_GRID
+  }?platform=web`,
+  '/components/web/sliders': `${ROUTES.NEO_SLIDER}?platform=web`,
+  '/components/web/drawer': `${ROUTES.NEO_DRAWER}?platform=web`,
+  '/components/web/dialogs': `${ROUTES.NEO_DIALOG}?platform=web`,
+  '/components/web/section-list': `${ROUTES.NEO_SECTION_LIST}?platform=web`,
 };
 
 const NEO_NATIVE_REDIRECTS = {
-  '/components/native/banner-alerts': ROUTES.NEO_BANNER_ALERT,
-  '/components/native/badge': ROUTES.NEO_BADGE,
-  '/components/native/button': ROUTES.NEO_BUTTON,
-  '/components/native/button-link': ROUTES.NEO_BUTTON_LINK,
-  '/components/native/cards': ROUTES.NEO_CARD,
-  '/components/native/flat-list': ROUTES.NEO_FLAT_LIST,
+  '/components/native/banner-alerts': `${
+    ROUTES.NEO_BANNER_ALERT
+  }?platform=native`,
+  '/components/native/badge': `${ROUTES.NEO_BADGE}?platform=native`,
+  '/components/native/button': `${ROUTES.NEO_BUTTON}?platform=native`,
+  '/components/native/button-link': `${ROUTES.NEO_BUTTON_LINK}?platform=native`,
+  '/components/native/cards': `${ROUTES.NEO_CARD}?platform=native`,
+  '/components/native/flat-list': `${ROUTES.NEO_FLAT_LIST}?platform=native`,
   '/components/native': ROUTES.COMPONENTS,
-  '/components/native/horizontal-nav': ROUTES.NEO_HORIZONTAL_NAV,
-  '/components/native/icons': ROUTES.NEO_ICON,
-  '/components/native/text-input': ROUTES.NEO_TEXT_INPUT,
-  '/components/native/nudger': ROUTES.NEO_NUDGER,
-  '/components/native/navigation-stack': ROUTES.NEO_NAVIGATION_STACK,
-  '/components/native/navigation-bar': ROUTES.NEO_NAVIGATION_BAR,
-  '/components/native/panels': ROUTES.NEO_PANEL,
-  '/components/native/pagination-dots': ROUTES.NEO_PAGINATION_DOT,
-  '/components/native/phone-input': ROUTES.NEO_PHONE_INPUT,
-  '/components/native/picker': ROUTES.NEO_PICKER,
-  '/components/native/progress': ROUTES.NEO_PROGRESS,
-  '/components/native/section-list': ROUTES.NEO_SECTION_LIST,
-  '/components/native/select': ROUTES.NEO_SELECT,
-  '/components/native/spinners': ROUTES.NEO_SPINNER,
-  '/components/native/star-rating': ROUTES.NEO_STAR_RATING,
-  '/components/native/switches': ROUTES.NEO_SWITCH,
-  '/components/native/text': ROUTES.NEO_TEXT,
-  '/components/native/touchable-overlay': ROUTES.NEO_TOUCHABLE_OVERLAY,
-  '/components/native/touchable-native-feedback':
-    ROUTES.NEO_TOUCHABLE_NATIVE_FEEDBACK,
+  '/components/native/horizontal-nav': `${
+    ROUTES.NEO_HORIZONTAL_NAV
+  }?platform=native`,
+  '/components/native/icons': `${ROUTES.NEO_ICON}?platform=native`,
+  '/components/native/text-input': `${ROUTES.NEO_TEXT_INPUT}?platform=native`,
+  '/components/native/nudger': `${ROUTES.NEO_NUDGER}?platform=native`,
+  '/components/native/navigation-stack': `${
+    ROUTES.NEO_NAVIGATION_STACK
+  }?platform=native`,
+  '/components/native/navigation-bar': `${
+    ROUTES.NEO_NAVIGATION_BAR
+  }?platform=native`,
+  '/components/native/panels': `${ROUTES.NEO_PANEL}?platform=native`,
+  '/components/native/pagination-dots': `${
+    ROUTES.NEO_PAGINATION_DOT
+  }?platform=native`,
+  '/components/native/phone-input': `${ROUTES.NEO_PHONE_INPUT}?platform=native`,
+  '/components/native/picker': `${ROUTES.NEO_PICKER}?platform=native`,
+  '/components/native/progress': `${ROUTES.NEO_PROGRESS}?platform=native`,
+  '/components/native/section-list': `${
+    ROUTES.NEO_SECTION_LIST
+  }?platform=native`,
+  '/components/native/select': `${ROUTES.NEO_SELECT}?platform=native`,
+  '/components/native/spinners': `${ROUTES.NEO_SPINNER}?platform=native`,
+  '/components/native/star-rating': `${ROUTES.NEO_STAR_RATING}?platform=native`,
+  '/components/native/switches': `${ROUTES.NEO_SWITCH}?platform=native`,
+  '/components/native/text': `${ROUTES.NEO_TEXT}?platform=native`,
+  '/components/native/touchable-overlay': `${
+    ROUTES.NEO_TOUCHABLE_OVERLAY
+  }?platform=native`,
+  '/components/native/touchable-native-feedback': `${
+    ROUTES.NEO_TOUCHABLE_NATIVE_FEEDBACK
+  }?platform=native`,
 };
 
 const NEO_REDIRECTS = process.env.BPK_NEO
