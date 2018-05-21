@@ -18,6 +18,7 @@
 
 import PropTypes from 'prop-types';
 import React from 'react';
+import { withRouter } from 'react-router';
 import BpkContentContainer from 'bpk-component-content-container';
 import BpkHorizontalNav, {
   BpkHorizontalNavItem,
@@ -46,6 +47,11 @@ const contentShape = PropTypes.oneOfType([PropTypes.string, childrenPropType]);
 class DocsPageWrapper extends React.Component {
   static propTypes = {
     title: PropTypes.string.isRequired,
+    router: PropTypes.shape({
+      isActive: PropTypes.func,
+      replace: PropTypes.func,
+      push: PropTypes.func,
+    }).isRequired,
     blurb: contentShape,
     webSubpage: PropTypes.element,
     nativeSubpage: PropTypes.element,
@@ -61,33 +67,34 @@ class DocsPageWrapper extends React.Component {
     super(props);
 
     this.state = {
-      selected: this.props.nativeSubpage ? 'native' : 'web',
+      selected: this.getSelectedSubpage(),
     };
   }
 
   componentWillMount = () => {
-    if (typeof window !== 'undefined') {
-      const url = new URL(window.location);
-      const platform = url.searchParams.get('platform');
-      if (platform) {
-        this.state = {
-          selected: platform === 'native' ? 'native' : 'web',
-        };
-      }
+    const { router } = this.props;
+    const activePlatform = ['native', 'web'].find(platform =>
+      router.isActive({ query: { platform } }),
+    );
+    if (activePlatform) {
+      this.setState({ selected: activePlatform });
+    } else if (typeof window !== 'undefined') {
+      this.props.router.replace({
+        pathname: window.location.pathname,
+        query: { platform: this.getSelectedSubpage() },
+      });
     }
   };
 
   onClick = selected => {
-    if (typeof window !== 'undefined') {
-      const simpleWindowLocation = `${window.location}`.split('?')[0];
-      window.history.pushState(
-        `platform${selected}`,
-        'Title',
-        `${simpleWindowLocation}?platform=${selected}`,
-      );
-    }
+    this.props.router.push({
+      pathname: window.location.pathname,
+      query: { platform: selected },
+    });
     this.setState({ selected });
   };
+
+  getSelectedSubpage = () => (this.props.nativeSubpage ? 'native' : 'web');
 
   render() {
     const { blurb, nativeSubpage, title, webSubpage } = this.props;
@@ -135,4 +142,4 @@ class DocsPageWrapper extends React.Component {
   }
 }
 
-export default DocsPageWrapper;
+export default withRouter(DocsPageWrapper);
