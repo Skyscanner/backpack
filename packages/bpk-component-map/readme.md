@@ -33,8 +33,8 @@ export default () => (
     centerLongitude={-3.1967116}
     zoomEnabled={false}
     dragEnabled={false}
-    width="600px"
-    height="600px"
+    width="60%"
+    height="50%"
     language="en" />
 )
 
@@ -53,8 +53,8 @@ export default () => (
     boundWest={-3.2285547854247625}
     boundNorth={55.952707392208396}
     boundEast={-3.159632742578083}
-    width="600px"
-    height="600px"
+    width="60%"
+    height="50%"
     language="zh" />
 )
 
@@ -117,6 +117,6 @@ the boundSouth,boundWest,boundNorth,boundEast is one method to load the map usin
 The apiKey is required if you want call the google api without limit, you should apply it from google.
 
 Language code list:
-https://www.w3schools.com/tags/ref_language_codes.asp
+https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes
 region code list:
-https://www.w3schools.com/tags/ref_country_codes.asp
+https://en.wikipedia.org/wiki/ISO_3166-2#Current_codes

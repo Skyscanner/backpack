@@ -24,6 +24,7 @@ import { BpkSpinner } from 'bpk-component-spinner';
 import { cssModules } from 'bpk-react-utils';
 import STYLES from './bpk-map.scss';
 
+const mapUrl = 'https://maps.googleapis.com/maps/api/js';
 const getClassName = cssModules(STYLES);
 
 type ZoomChangedCallback = ?(zoom: number) => mixed;
@@ -177,8 +178,8 @@ class BpkMap extends Component<Props> {
     return (
       <InnerMap
         googleMapURL={
-          `https://maps.googleapis.com/maps/api/js?key=${apiKey}` +
-          `&v=3.exp&libraries=geometry,drawing,places&language=${language}&region=${region}`
+          `${mapUrl}?key=${apiKey}&language=${language}&region=${region}` +
+          '&v=3.exp&libraries=geometry,drawing,places'
         }
         loadingElement={<BpkSpinner />}
         mapElement={<div style={{ width, height }} />}

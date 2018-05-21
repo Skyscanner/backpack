@@ -49,8 +49,8 @@ storiesOf('bpk-component-map', module)
       centerLongitude={-3.1967116}
       zoomEnabled={false}
       dragEnabled={false}
-      width="600px"
-      height="600px"
+      width="60%"
+      height="50%"
       language="zh"
     />
   ))
