@@ -2,6 +2,16 @@
 
 [Unreleased changes](./unreleased.md).
 
+# 2018-05-21 - Navigation bar update and fix disabled buttons on android
+
+**Added:**
+- bpk-component-navigation-bar: 1.0.2 => 1.2.0
+  - The title prop now accepts nodes, so images and other elements can be passed in as well as text.
+
+**Fixed:**
+- react-native-bpk-component-button: 6.0.9 => 6.0.10
+  - Fix button height for destructive and secondary disabled buttons on android.
+
 # 2018-05-10 - Introducing navigation stack, section list and new props for horizontal-nav
 
 **Added:**
