@@ -21,6 +21,7 @@
     "prop-types": "^15.5.8"
   },
   "devDependencies": {
-    "bpk-component-icon": "^3.20.2"
+    "bpk-component-icon": "^3.20.2",
+    "bpk-tokens": "^27.0.0"
   }
 }

@@ -27,4 +27,11 @@
   > * {
     margin-bottom: $bpk-spacing-md;
   }
+
+  &__title-content-wrapper {
+    svg,
+    path {
+      fill: currentColor;
+    }
+  }
 }

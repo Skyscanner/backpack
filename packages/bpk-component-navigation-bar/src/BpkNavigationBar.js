@@ -29,7 +29,7 @@ const getClassNames = cssModules(STYLES);
 
 export type Props = {
   id: string,
-  title: string,
+  title: string | Element<any>,
   className: ?string,
   leadingButton: ?Element<any>,
   trailingButton: ?Element<any>,
@@ -72,7 +72,7 @@ const BpkNavigationBar = (props: Props) => {
 };
 
 BpkNavigationBar.propTypes = {
-  title: PropTypes.string.isRequired,
+  title: PropTypes.element.isRequired,
   className: PropTypes.string,
   leadingButton: PropTypes.element,
   trailingButton: PropTypes.element,

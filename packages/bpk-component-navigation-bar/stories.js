@@ -25,6 +25,7 @@ import { withRtlSupport } from 'bpk-component-icon';
 import ArrowIcon from 'bpk-component-icon/sm/long-arrow-left';
 import CloseIcon from 'bpk-component-icon/sm/close';
 import { cssModules } from 'bpk-react-utils';
+import AirlineLogo from './stories-components';
 
 import BpkNavigationBar, {
   BpkNavigationBarButtonLink,
@@ -93,6 +94,34 @@ storiesOf('bpk-component-navigation-bar', module)
       <BpkNavigationBar
         id="test"
         title="Backpack"
+        leadingButton={
+          <BpkNavigationBarIconButton
+            onClick={action('back clicked')}
+            icon={ArrowIconWithRtl}
+            label="back"
+          />
+        }
+        trailingButton={
+          <BpkNavigationBarButtonLink onClick={action('done clicked')}>
+            Done
+          </BpkNavigationBarButtonLink>
+        }
+      />
+    </div>
+  ))
+  .add('With icon', () => (
+    <div className={getClassNames('bpk-navigation-bar-story')}>
+      <BpkNavigationBar
+        id="test"
+        title={
+          <span
+            className={getClassNames(
+              'bpk-navigation-bar-story__title-content-wrapper',
+            )}
+          >
+            <AirlineLogo />
+          </span>
+        }
         leadingButton={
           <BpkNavigationBarIconButton
             onClick={action('back clicked')}

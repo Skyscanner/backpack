@@ -44,7 +44,7 @@ export default () => (
 | Property              | PropType | Required | Default Value    |
 | --------------------- | -------- | -------- | ---------------- |
 | id                    | string   | true     | -                |
-| title                 | string   | true     | -                |
+| title                 | element  | true     | -                |
 | className             | string   | false    | null             |
 | leadingButton         | element  | false    | null             |
 | trailingButton        | element  | false    | null             |
