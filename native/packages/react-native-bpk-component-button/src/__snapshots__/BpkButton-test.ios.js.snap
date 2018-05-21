@@ -583,6 +583,7 @@ exports[`iOS BpkButton should render correctly with type="destructive" and disab
         },
         Object {
           "borderColor": "transparent",
+          "borderWidth": 0,
         },
       ],
       Object {},
@@ -827,6 +828,7 @@ exports[`iOS BpkButton should render correctly with type="featured" and disabled
         },
         Object {
           "borderColor": "transparent",
+          "borderWidth": 0,
         },
       ],
       Object {},
@@ -1064,6 +1066,7 @@ exports[`iOS BpkButton should render correctly with type="primary" and disabled 
         },
         Object {
           "borderColor": "transparent",
+          "borderWidth": 0,
         },
       ],
       Object {},
@@ -1316,6 +1319,7 @@ exports[`iOS BpkButton should render correctly with type="secondary" and disable
         },
         Object {
           "borderColor": "transparent",
+          "borderWidth": 0,
         },
       ],
       Object {},
@@ -1817,6 +1821,7 @@ exports[`iOS BpkButton should support the "disabled" property 1`] = `
         },
         Object {
           "borderColor": "transparent",
+          "borderWidth": 0,
         },
       ],
       Object {},

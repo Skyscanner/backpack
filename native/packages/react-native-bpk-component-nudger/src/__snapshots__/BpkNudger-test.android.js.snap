@@ -592,6 +592,7 @@ exports[`Android BpkNudger should render correctly when value is a not an intege
           },
           Object {
             "borderColor": "transparent",
+            "borderWidth": 0,
           },
           Object {
             "width": 32,
@@ -1031,6 +1032,7 @@ exports[`Android BpkNudger should render correctly when value is greater than ma
           },
           Object {
             "borderColor": "transparent",
+            "borderWidth": 0,
           },
           Object {
             "width": 32,
@@ -1178,6 +1180,7 @@ exports[`Android BpkNudger should render correctly when value is less than min 1
           },
           Object {
             "borderColor": "transparent",
+            "borderWidth": 0,
           },
           Object {
             "width": 32,

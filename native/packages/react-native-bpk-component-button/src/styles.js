@@ -126,6 +126,7 @@ const modifiers = {
   disabled: StyleSheet.create({
     container: {
       borderColor: 'transparent',
+      borderWidth: 0,
     },
     text: {
       color: colorGray300,
