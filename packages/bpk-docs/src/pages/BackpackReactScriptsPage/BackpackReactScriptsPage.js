@@ -27,7 +27,7 @@ import CodeBlock from '../../components/CodeBlock';
 const createReactAppHref =
   'https://github.com/facebookincubator/create-react-app';
 const backpackReactScriptsChangelogHref =
-  'https://github.com/Skyscanner/backpack-react-scripts/blob/master/packages/react-scripts/CHANGELOG.md';
+  'https://github.com/Skyscanner/backpack-react-scripts/blob/fork/packages/react-scripts/CHANGELOG.md';
 
 const components = [
   {
