@@ -122,7 +122,7 @@ const components = [
   },
   {
     id: 'with-icon-title',
-    title: 'With icon in title',
+    title: 'With a custom title element',
     blurb: [
       <Paragraph>The title can include elements other than text.</Paragraph>,
     ],
