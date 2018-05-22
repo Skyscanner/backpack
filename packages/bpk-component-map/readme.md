@@ -120,3 +120,17 @@ Language code list:
 https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes
 region code list:
 https://en.wikipedia.org/wiki/ISO_3166-2#Current_codes
+
+more props can check: https://tomchentw.github.io/react-google-maps/#googlemap
+
+## BpkMapMarker Props
+
+| Property	                | PropType	| Required	| Default Value
+| ---------                 | --------  | --------  | -------------               |
+| latitude                  | number    | true      | null                        |
+| longitude                 | number    | true      | null                        |
+| mapPaneName               | string    | false     | overlayMouseTarget          |
+| children                  | element   | true      |                             |
+| getPixelPositionOffset    | func      | false     | null                        |
+
+more props can check: https://tomchentw.github.io/react-google-maps/#overlayview
