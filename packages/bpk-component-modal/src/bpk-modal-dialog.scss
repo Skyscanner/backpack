@@ -36,6 +36,8 @@
   outline: 0;
   background-color: $bpk-modal-background-color;
   opacity: $bpk-modal-opacity;
+  // FIX: Prevents ugly flickering when tapping inside the modal in Mobile Safari
+  -webkit-tap-highlight-color: transparent;
 
   @include bpk-box-shadow-xl;
   @include bpk-border-radius-sm;
