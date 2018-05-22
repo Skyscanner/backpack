@@ -18,6 +18,7 @@
 
 import PropTypes from 'prop-types';
 import React from 'react';
+import { withRouter } from 'react-router';
 import BpkContentContainer from 'bpk-component-content-container';
 import BpkHorizontalNav, {
   BpkHorizontalNavItem,
@@ -46,6 +47,11 @@ const contentShape = PropTypes.oneOfType([PropTypes.string, childrenPropType]);
 class DocsPageWrapper extends React.Component {
   static propTypes = {
     title: PropTypes.string.isRequired,
+    router: PropTypes.shape({
+      isActive: PropTypes.func,
+      replace: PropTypes.func,
+      push: PropTypes.func,
+    }).isRequired,
     blurb: contentShape,
     webSubpage: PropTypes.element,
     nativeSubpage: PropTypes.element,
@@ -59,8 +65,36 @@ class DocsPageWrapper extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = { selected: this.props.nativeSubpage ? 'native' : 'web' };
+
+    this.state = {
+      selected: this.getSelectedSubpage(),
+    };
   }
+
+  componentWillMount = () => {
+    const { router } = this.props;
+    const activePlatform = ['native', 'web'].find(platform =>
+      router.isActive({ query: { platform } }),
+    );
+    if (activePlatform) {
+      this.setState({ selected: activePlatform });
+    } else if (typeof window !== 'undefined') {
+      this.props.router.replace({
+        pathname: window.location.pathname,
+        query: { platform: this.getSelectedSubpage() },
+      });
+    }
+  };
+
+  onClick = selected => {
+    this.props.router.push({
+      pathname: window.location.pathname,
+      query: { platform: selected },
+    });
+    this.setState({ selected });
+  };
+
+  getSelectedSubpage = () => (this.props.nativeSubpage ? 'native' : 'web');
 
   render() {
     const { blurb, nativeSubpage, title, webSubpage } = this.props;
@@ -79,7 +113,7 @@ class DocsPageWrapper extends React.Component {
               name="native"
               disabled={!nativeSubpage}
               selected={this.state.selected === 'native'}
-              onClick={() => this.setState({ selected: 'native' })}
+              onClick={() => this.onClick('native')}
             >
               <AlignedBpkSmallMobileIcon
                 className={getClassName('bpkdocs-page-wrapper__platform-icon')}
@@ -90,7 +124,7 @@ class DocsPageWrapper extends React.Component {
               name="web"
               disabled={!webSubpage}
               selected={this.state.selected === 'web'}
-              onClick={() => this.setState({ selected: 'web' })}
+              onClick={() => this.onClick('web')}
             >
               <AlignedBpkSmallWindowIcon
                 className={getClassName('bpkdocs-page-wrapper__platform-icon')}
@@ -108,4 +142,4 @@ class DocsPageWrapper extends React.Component {
   }
 }
 
-export default DocsPageWrapper;
+export default withRouter(DocsPageWrapper);
