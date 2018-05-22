@@ -16,10 +16,13 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-set -e
 
 NPM_OWNERS="$( node scripts/npm/get-owners.js )"
 
+if [ $# -eq 1 ]; then
+  NPM_OWNERS=("$1")
+fi
+  
 echo "$NPM_OWNERS"
 read -p "Do you want to add the above owners to all packages (y/n)? " confirm
 
@@ -34,8 +37,14 @@ do
     package=`basename $f`
 
     if [ -d "$f" ] && [ -e "$f/package.json" ]; then
-      echo "Adding $username to $package."
-      npm owner add $username $package
+      if [ -z "$(grep "\"private\": true" "$f/package.json")" ]; then
+        echo "Adding $username to $package."
+        npm owner add $username $package
+
+        if [ $? -ne 0 ]; then
+          exit $?
+        fi
+      fi
     fi
   done
 done <<< "$NPM_OWNERS"
