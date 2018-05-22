@@ -17,7 +17,7 @@
  */
 /* @flow */
 
-import React, { Component } from 'react';
+import React, { Component, type Node } from 'react';
 import PropTypes from 'prop-types';
 import { withScriptjs, withGoogleMap, GoogleMap } from 'react-google-maps';
 import { BpkSpinner } from 'bpk-component-spinner';
