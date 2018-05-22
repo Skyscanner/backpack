@@ -18,5 +18,6 @@
 /* @flow */
 
 import BpkMap from './src/BpkMap';
+import BpkMapMarker from './src/BpkMapMarker';
 
-export default BpkMap;
+export { BpkMap, BpkMapMarker };
