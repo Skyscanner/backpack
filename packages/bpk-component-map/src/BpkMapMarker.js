@@ -18,7 +18,7 @@
 /* @flow */
 
 import PropTypes from 'prop-types';
-import React from 'react';
+import React, { type Node } from 'react';
 import { OverlayView } from 'react-google-maps';
 
 export type Props = {
