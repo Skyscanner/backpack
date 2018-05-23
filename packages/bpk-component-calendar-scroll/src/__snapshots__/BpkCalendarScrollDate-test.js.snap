@@ -1,0 +1,97 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BpkCalendarScrollDate should pass props through to button 1`] = `
+<button
+  aria-label="Nothing happened on this day in 2010"
+  aria-pressed={false}
+  className="bpk-calendar-scroll-date"
+  disabled={false}
+  onClick={[Function]}
+  onKeyDown={null}
+  tabIndex="-1"
+  type="button"
+>
+  <span
+    aria-hidden="true"
+  >
+    15
+  </span>
+</button>
+`;
+
+exports[`BpkCalendarScrollDate should render a disabled button 1`] = `
+<button
+  aria-label={15}
+  aria-pressed={false}
+  className="bpk-calendar-scroll-date"
+  disabled={true}
+  onClick={[Function]}
+  onKeyDown={null}
+  tabIndex="-1"
+  type="button"
+>
+  <span
+    aria-hidden="true"
+  >
+    15
+  </span>
+</button>
+`;
+
+exports[`BpkCalendarScrollDate should render a focused button with tabIndex 1`] = `
+<button
+  aria-label={15}
+  aria-pressed={false}
+  className="bpk-calendar-scroll-date"
+  disabled={false}
+  focused={true}
+  onClick={[Function]}
+  onKeyDown={null}
+  tabIndex="-1"
+  type="button"
+>
+  <span
+    aria-hidden="true"
+  >
+    15
+  </span>
+</button>
+`;
+
+exports[`BpkCalendarScrollDate should render correctly 1`] = `
+<button
+  aria-label={15}
+  aria-pressed={false}
+  className="bpk-calendar-scroll-date"
+  disabled={false}
+  onClick={[Function]}
+  onKeyDown={null}
+  tabIndex="-1"
+  type="button"
+>
+  <span
+    aria-hidden="true"
+  >
+    15
+  </span>
+</button>
+`;
+
+exports[`BpkCalendarScrollDate should render with a click and keyDown handler 1`] = `
+<button
+  aria-label={15}
+  aria-pressed={false}
+  className="bpk-calendar-scroll-date"
+  disabled={false}
+  onClick={[Function]}
+  onKeyDown={[Function]}
+  tabIndex="-1"
+  type="button"
+>
+  <span
+    aria-hidden="true"
+  >
+    15
+  </span>
+</button>
+`;

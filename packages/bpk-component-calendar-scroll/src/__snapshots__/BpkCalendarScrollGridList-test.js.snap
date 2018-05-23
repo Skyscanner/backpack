@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BpkCalendarScroll should render correctly 1`] = `
+<div
+  className="bpk-calendar-scroll-grid-list"
+>
+  <div
+    className="bpk-calendar-scroll-grid-list__strip"
+  />
+</div>
+`;
