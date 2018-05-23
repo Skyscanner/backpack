@@ -2,6 +2,14 @@
 
 [Unreleased changes](./unreleased.md).
 
+# 2018-05-23 - Fixed modals in mobile Safari
+
+**Fixed:**
+- bpk-component-datepicker: 8.0.29 => 8.0.30
+- bpk-component-dialog: 1.0.23 => 1.0.24
+- bpk-component-modal: 1.7.2 => 1.7.3
+  - Fixed a bug where the background would flicker when tapping modals in Mobile Safari.
+
 # 2018-05-21 - Navigation bar update and fix disabled buttons on android
 
 **Added:**
