@@ -48,13 +48,15 @@ const BpkCard = props => {
     children,
     focused,
     style: userStyle,
-    innerStyle,
+    innerStyle: userInnerStyle,
     ...rest
   } = props;
 
   const style = [styles.card];
+  const innerStyle = [];
+
   if (padded) {
-    style.push(styles.cardPadded);
+    innerStyle.push(styles.cardPadded);
   }
   if (focused) {
     style.push(styles.cardFocused);
@@ -62,17 +64,14 @@ const BpkCard = props => {
   if (userStyle) {
     style.push(userStyle);
   }
+  if (userInnerStyle) {
+    innerStyle.push(userInnerStyle);
+  }
 
   return (
-    <View style={userStyle}>
-      <BpkTouchableNativeFeedback
-        useForeground
-        accessibilityComponentType="button"
-        {...rest}
-      >
-        <View style={style}>
-          <View style={innerStyle}>{children}</View>
-        </View>
+    <View style={style}>
+      <BpkTouchableNativeFeedback accessibilityComponentType="button" {...rest}>
+        <View style={innerStyle}>{children}</View>
       </BpkTouchableNativeFeedback>
     </View>
   );
