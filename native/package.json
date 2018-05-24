@@ -7,7 +7,8 @@
     "start": "react-native start",
     "ios": "react-native run-ios",
     "android:emulator": "$ANDROID_HOME/tools/emulator -avd bpk-avd",
-    "android": "npm run android:emulator & react-native run-android",
+    "android:build": "react-native run-android",
+    "android": "npm run android:emulator & npm run android:build",
     "test": "jest --coverage",
     "storybook": "storybook start -p 7007 --root ../"
   },
