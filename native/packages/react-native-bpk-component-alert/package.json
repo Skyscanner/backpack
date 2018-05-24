@@ -1,0 +1,16 @@
+{
+  "name": "react-native-bpk-component-alert",
+  "version": "0.0.0",
+  "main": "index.js",
+  "description": "Backpack React Native alert component.",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:Skyscanner/backpack.git"
+  },
+  "author": "Backpack Design System <backpack@skyscanner.net>",
+  "license": "Apache-2.0",
+  "peerDependencies": {
+    "react": "^16.0.0-alpha.1",
+    "react-native": ">= 0.47.0"
+  }
+}
