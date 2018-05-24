@@ -2,6 +2,11 @@
 
 [Unreleased changes](./unreleased.md).
 
+# 2018-05-24 - Fixed React Native Card component in Android API 21
+**Fixed:**
+- react-native-bpk-component-card: 1.2.21 => 1.2.22
+  - fix visual layout in Android API level 21
+
 # 2018-05-23 - Fixed modals in mobile Safari
 
 **Fixed:**
