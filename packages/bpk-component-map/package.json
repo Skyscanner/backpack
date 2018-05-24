@@ -1,0 +1,24 @@
+{
+  "name": "bpk-component-map",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Backpack map component.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:Skyscanner/backpack.git"
+  },
+  "author": "Backpack Design System <backpack@skyscanner.net>",
+  "license": "Apache-2.0",
+  "peerDependencies": {
+    "react": "^15.0.0 || ^16.0.0"
+  },
+  "dependencies": {
+    "react-google-maps": "^9.4.5"
+  },
+  "devDependencies": {
+    "bpk-component-icon": "^3.20.2",
+    "bpk-component-tooltip": "^3.1.13",
+    "prop-types": "^15.5.8"
+  }
+}
