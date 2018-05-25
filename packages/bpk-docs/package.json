@@ -84,6 +84,7 @@
     "react-native-bpk-component-button": "^6.0.10",
     "react-native-bpk-component-button-link": "^3.0.2",
     "react-native-bpk-component-card": "^1.2.22",
+    "react-native-bpk-component-carousel": "^0.0.0",
     "react-native-bpk-component-flat-list": "^1.0.2",
     "react-native-bpk-component-horizontal-nav": "^3.0.10",
     "react-native-bpk-component-icon": "^1.7.0",
