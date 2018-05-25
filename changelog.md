@@ -2,6 +2,12 @@
 
 [Unreleased changes](./unreleased.md).
 
+# 2018-05-25 - Introducing the map component
+
+**Added:**
+- bpk-component-map: 1.0.0
+  - Introducing the map component for web, see https://backpack.github.io/components/map?platform=web
+
 # 2018-05-24 - Fixed React Native Card component in Android API 21
 **Fixed:**
 - react-native-bpk-component-card: 1.2.21 => 1.2.22
