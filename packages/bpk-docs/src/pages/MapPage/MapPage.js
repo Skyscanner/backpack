@@ -26,8 +26,8 @@ import DocsPageWrapper from './../../components/neo/DocsPageWrapper';
 import IntroBlurb from './../../components/neo/IntroBlurb';
 
 const BpkMapWithScript = withScriptjs(BpkMap);
-const MAP_URL =
-  'https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places';
+const API_KEY = '';
+const MAP_URL = `https://maps.googleapis.com/maps/api/js?v=3.exp&key=${API_KEY}$libraries=geometry,drawing,places`;
 
 // Shibuya crossing, Tokyo.
 const COORDINATES = {
@@ -60,7 +60,7 @@ const blurb = [
 
 const MapSubpage = ({ ...rest }) => (
   <DocsPageBuilder
-    title="Blockquote"
+    title="Map"
     components={components}
     readme={mapReadme}
     blurb={isNeo ? null : blurb}
