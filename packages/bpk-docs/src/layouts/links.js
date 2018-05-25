@@ -471,6 +471,12 @@ const neoComponentsLinks = [
         children: 'Horizontal grid',
         tags: ['web'],
       },
+      {
+        id: 'MAP',
+        route: routes.NEO_MAP,
+        children: 'Map',
+        tags: ['web'],
+      },
 
       // Native components.
       {

@@ -70,6 +70,7 @@ import ImagesPage from './../pages/ImagesPage';
 import BreakpointsPage from './../pages/BreakpointsPage';
 import HorizontalGridPage from './../pages/HorizontalGridPage';
 import BannerAlertsPage from './../pages/BannerAlertsPage';
+import MapPage from './../pages/MapPage';
 import MobileScrollContainerPage from './../pages/MobileScrollContainerPage';
 import ModalsPage from './../pages/ModalsPage';
 import AutosuggestPage from './../pages/AutosuggestPage';
@@ -337,6 +338,7 @@ const Routes = (
         <Route path={ROUTES.NEO_SELECT} component={NativeSelectPage} />
         <Route path={ROUTES.NEO_SWITCH} component={NativeSwitchPage} />
         <Route path={ROUTES.NEO_SECTION_LIST} component={NeoSectionListPage} />
+        <Route path={ROUTES.NEO_MAP} component={MapPage} />
         <Route
           path={ROUTES.NEO_TOUCHABLE_OVERLAY}
           component={NativeTouchableOverlayPage}
