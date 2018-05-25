@@ -19,6 +19,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import { withRouter } from 'react-router';
+import { find } from 'lodash';
 import BpkContentContainer from 'bpk-component-content-container';
 import BpkHorizontalNav, {
   BpkHorizontalNavItem,
@@ -73,7 +74,7 @@ class DocsPageWrapper extends React.Component {
 
   componentWillMount = () => {
     const { router } = this.props;
-    const activePlatform = ['native', 'web'].find(platform =>
+    const activePlatform = find(['native', 'web'], platform =>
       router.isActive({ query: { platform } }),
     );
     if (activePlatform) {
