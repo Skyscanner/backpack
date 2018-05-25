@@ -19,6 +19,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import { withRouter } from 'react-router';
+import { find } from 'lodash';
 import BpkContentContainer from 'bpk-component-content-container';
 import BpkHorizontalNav, {
   BpkHorizontalNavItem,
@@ -73,7 +74,7 @@ class DocsPageWrapper extends React.Component {
 
   componentWillMount = () => {
     const { router } = this.props;
-    const activePlatform = this.compatibleFind(['native', 'web'], platform =>
+    const activePlatform = find(['native', 'web'], platform =>
       router.isActive({ query: { platform } }),
     );
     if (activePlatform) {
@@ -95,27 +96,6 @@ class DocsPageWrapper extends React.Component {
   };
 
   getSelectedSubpage = () => (this.props.nativeSubpage ? 'native' : 'web');
-
-  compatibleFind = (arr, val) => {
-    if ('find' in arr) {
-      return arr.find(val);
-    }
-    // MDN Polyfill Code https://tc39.github.io/ecma262/#sec-array.prototype.find
-    const len = arr.length;
-    if (typeof val !== 'function') {
-      throw new TypeError('val must be a function');
-    }
-    const thisArg = arguments[1];
-    let k = 0;
-    while (k < len) {
-      const kValue = arr[k];
-      if (val.call(thisArg, kValue, k, arr)) {
-        return kValue;
-      }
-      k += 1;
-    }
-    return undefined;
-  };
 
   render() {
     const { blurb, nativeSubpage, title, webSubpage } = this.props;
