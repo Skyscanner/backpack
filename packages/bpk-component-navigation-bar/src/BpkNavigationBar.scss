@@ -44,7 +44,7 @@
 
     @include bpk-rtl {
       right: $bpk-spacing-sm;
-      left: unset;
+      left: auto;
     }
   }
 
@@ -52,7 +52,7 @@
     right: $bpk-spacing-sm;
 
     @include bpk-rtl {
-      right: unset;
+      right: auto;
       left: $bpk-spacing-sm;
     }
   }
