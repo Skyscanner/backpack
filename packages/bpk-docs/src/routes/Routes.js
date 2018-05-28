@@ -126,6 +126,7 @@ import NativeTextPage from './../pages/NativeTextPage';
 import NativeTouchableOverlayPage from './../pages/NativeTouchableOverlayPage';
 import NativeTouchableNativeFeedbackPage from './../pages/NativeTouchableNativeFeedbackPage';
 
+import NeoAlertPage from './../pages/AlertPage';
 import NeoBadgePage from './../pages/NeoBadgePage';
 import NeoBannerAlertPage from './../pages/NeoBannerAlertPage';
 import NeoButtonPage from './../pages/NeoButtonPage';
@@ -359,6 +360,7 @@ const Routes = (
         />
         <Route path={ROUTES.NEO_ALIGNMENT} component={AlignmentPage} />
         <Route path={ROUTES.NEO_THEMING} component={ThemingPage} />
+        <Route path={ROUTES.NEO_ALERT} component={NeoAlertPage} />
       </Route>
 
       {isOldSite && (

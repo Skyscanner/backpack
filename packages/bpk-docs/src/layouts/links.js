@@ -545,7 +545,12 @@ const neoComponentsLinks = [
         children: 'Touchable native feedback',
         tags: ['native'],
       },
-
+      {
+        id: 'NATIVE_ALERT',
+        route: routes.NEO_ALERT,
+        children: 'Alert',
+        tags: ['native'],
+      },
       // Utilities.
       {
         id: 'ALIGNMENT',

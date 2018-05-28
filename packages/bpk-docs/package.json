@@ -79,6 +79,7 @@
     "date-fns": "^1.17.0",
     "prop-types": "^15.5.8",
     "react": "^15.0.0",
+    "react-native-bpk-component-alert": "^0.0.1",
     "react-native-bpk-component-badge": "^1.0.5",
     "react-native-bpk-component-banner-alert": "^4.0.3",
     "react-native-bpk-component-button": "^6.0.11",
