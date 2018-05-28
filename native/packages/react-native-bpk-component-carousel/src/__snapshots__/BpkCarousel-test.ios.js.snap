@@ -1,0 +1,225 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`IOS BpkCarousel should render correctly 1`] = `
+Array [
+  <RCTScrollView
+    accessibilityLabel="I'm accessible"
+    accessible={true}
+    horizontal={true}
+    onLayout={[Function]}
+    onMomentumScrollEnd={[Function]}
+    pagingEnabled={true}
+    showsHorizontalScrollIndicator={false}
+    style={
+      Object {
+        "width": 300,
+      }
+    }
+  >
+    <View>
+      <View
+        style={
+          Array [
+            Array [
+              null,
+              Object {
+                "height": 300,
+                "width": 300,
+              },
+            ],
+          ]
+        }
+      >
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Array [
+              Object {
+                "color": "rgb(82, 76, 97)",
+                "fontFamily": "System",
+                "fontSize": 15,
+                "fontWeight": "400",
+              },
+              Object {},
+            ]
+          }
+        >
+          View 1
+        </Text>
+      </View>
+    </View>
+  </RCTScrollView>,
+  <View
+    accessibilityLabel="I'm accessible"
+    accessible={true}
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "rgba(37, 32, 51, 0.3)",
+          "borderRadius": 4,
+          "flexDirection": "row",
+          "height": 24,
+          "justifyContent": "center",
+          "paddingHorizontal": 12,
+          "paddingVertical": 8,
+          "width": 72,
+        },
+        Object {
+          "alignSelf": "center",
+          "marginTop": -32,
+        },
+      ]
+    }
+  >
+    <View
+      collapsable={undefined}
+      style={
+        Object {
+          "backgroundColor": "rgb(255, 255, 255)",
+          "borderRadius": 40,
+          "height": 6,
+          "marginHorizontal": 2,
+          "width": 6,
+        }
+      }
+    />
+  </View>,
+]
+`;
+
+exports[`IOS BpkCarousel should render correctly with an "accessibilityLabel" function 1`] = `
+Array [
+  <RCTScrollView
+    accessibilityLabel="0 of 1"
+    accessible={true}
+    horizontal={true}
+    onLayout={[Function]}
+    onMomentumScrollEnd={[Function]}
+    pagingEnabled={true}
+    showsHorizontalScrollIndicator={false}
+    style={null}
+  >
+    <View>
+      <View
+        style={
+          Array [
+            Array [
+              null,
+              Object {
+                "height": 300,
+                "width": 300,
+              },
+            ],
+          ]
+        }
+      >
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Array [
+              Object {
+                "color": "rgb(82, 76, 97)",
+                "fontFamily": "System",
+                "fontSize": 15,
+                "fontWeight": "400",
+              },
+              Object {},
+            ]
+          }
+        >
+          View 1
+        </Text>
+      </View>
+    </View>
+  </RCTScrollView>,
+  <View
+    accessibilityLabel="0 of 1"
+    accessible={true}
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "rgba(37, 32, 51, 0.3)",
+          "borderRadius": 4,
+          "flexDirection": "row",
+          "height": 24,
+          "justifyContent": "center",
+          "paddingHorizontal": 12,
+          "paddingVertical": 8,
+          "width": 72,
+        },
+        Object {
+          "alignSelf": "center",
+          "marginTop": -32,
+        },
+      ]
+    }
+  >
+    <View
+      collapsable={undefined}
+      style={
+        Object {
+          "backgroundColor": "rgb(255, 255, 255)",
+          "borderRadius": 40,
+          "height": 6,
+          "marginHorizontal": 2,
+          "width": 6,
+        }
+      }
+    />
+  </View>,
+]
+`;
+
+exports[`IOS BpkCarousel should render correctly without indicators 1`] = `
+<RCTScrollView
+  accessibilityLabel="I'm accessible"
+  accessible={true}
+  horizontal={true}
+  onLayout={[Function]}
+  onMomentumScrollEnd={[Function]}
+  pagingEnabled={true}
+  showsHorizontalScrollIndicator={false}
+  style={null}
+>
+  <View>
+    <View
+      style={
+        Array [
+          Array [
+            null,
+            Object {
+              "height": 300,
+              "width": 300,
+            },
+          ],
+        ]
+      }
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+              "fontFamily": "System",
+              "fontSize": 15,
+              "fontWeight": "400",
+            },
+            Object {},
+          ]
+        }
+      >
+        View 1
+      </Text>
+    </View>
+  </View>
+</RCTScrollView>
+`;
