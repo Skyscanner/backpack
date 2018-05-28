@@ -528,6 +528,12 @@ const neoComponentsLinks = [
         tags: ['native'],
       },
       {
+        id: 'NATIVE_CAROUSEL',
+        route: routes.NEO_CAROUSEL,
+        children: 'Carousel',
+        tags: ['native'],
+      },
+      {
         id: 'NATIVE_TOUCHABLE_OVERLAY',
         route: routes.NEO_TOUCHABLE_OVERLAY,
         children: 'Touchable overlay',

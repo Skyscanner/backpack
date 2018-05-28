@@ -177,6 +177,7 @@ export const NEO_TOUCHABLE_OVERLAY = '/components/touchable-overlay';
 export const NEO_TOUCHABLE_NATIVE_FEEDBACK =
   '/components/touchable-native-feedback';
 export const NEO_MAP = '/components/map';
+export const NEO_CAROUSEL = '/components/carousel';
 
 export const NEO_ALIGNMENT = '/components/alignment';
 export const NEO_THEMING = '/components/theming';

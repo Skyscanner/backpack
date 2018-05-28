@@ -93,6 +93,7 @@ import DialogsPage from './../pages/DialogsPage';
 import NavigationBarPage from './../pages/NavigationBarPage';
 import SectionListPage from './../pages/SectionListPage';
 import NavigationStackPage from './../pages/NavigationStackPage';
+import CarouselPage from './../pages/CarouselPage';
 
 import AlignmentPage from './../pages/AlignmentPage';
 import ThemingPage from './../pages/ThemingPage';
@@ -339,6 +340,7 @@ const Routes = (
         <Route path={ROUTES.NEO_SWITCH} component={NativeSwitchPage} />
         <Route path={ROUTES.NEO_SECTION_LIST} component={NeoSectionListPage} />
         <Route path={ROUTES.NEO_MAP} component={MapPage} />
+        <Route path={ROUTES.NEO_CAROUSEL} component={CarouselPage} />
         <Route
           path={ROUTES.NEO_TOUCHABLE_OVERLAY}
           component={NativeTouchableOverlayPage}
