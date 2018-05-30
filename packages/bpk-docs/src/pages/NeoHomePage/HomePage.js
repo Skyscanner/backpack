@@ -78,6 +78,7 @@ const CARD_CONTENTS = [
   //   href: ROUTES.STYLE_GUIDE,
   //   image: StyleGuideImage,
   //   icon: StyleGuideIcon,
+  //   iconWidth: '7.5rem',
   // },
   {
     key: 'github',
@@ -86,7 +87,7 @@ const CARD_CONTENTS = [
     blank: true,
     image: GitHubImage,
     icon: GitHubIcon,
-    iconWidth: '153px',
+    iconWidth: '9.5625rem',
     centerIcon: true,
   },
 ];

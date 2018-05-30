@@ -33,6 +33,7 @@ import UsageTable from './../../components/UsageTable';
 import SassdocLink from './../../components/SassdocLink';
 import ComponentScreenshots from './ComponentScreenshots';
 import PresentationBlock from './../../components/PresentationBlock';
+import HeroSection from '../../components/neo/HeroSection';
 
 import STYLES from './NeoDocsPageBuilder.scss';
 
@@ -194,7 +195,8 @@ const NeoDocsPageBuilder = props => {
   ];
 
   const menu = [...props.components, ...(props.customSections || [])];
-  const showPageHead = props.tokenMap || props.blurb || menu.length > 0;
+  const showPageHead =
+    props.showPageHead && (props.tokenMap || props.blurb || menu.length > 0);
 
   return (
     <BpkContentContainer
@@ -205,6 +207,7 @@ const NeoDocsPageBuilder = props => {
       )}
     >
       <Helmet title={props.title} />
+      {props.hero && <HeroSection {...props.hero} />}
       {showPageHead && (
         <PageHead
           title={props.wrapped ? null : props.title}
@@ -277,6 +280,12 @@ NeoDocsPageBuilder.propTypes = {
     }),
   }),
   wrapped: PropTypes.bool,
+  hero: PropTypes.shape({
+    imageUrl: PropTypes.string.isRequired,
+    heading: PropTypes.string.isRequired,
+    subHeading: PropTypes.node.isRequired,
+  }),
+  showPageHead: PropTypes.bool,
 };
 
 NeoDocsPageBuilder.defaultProps = {
@@ -289,6 +298,8 @@ NeoDocsPageBuilder.defaultProps = {
   sassdocId: null,
   usageTable: null,
   wrapped: false,
+  hero: null,
+  showPageHead: true,
 };
 
 export default NeoDocsPageBuilder;

@@ -17,14 +17,48 @@
  */
 
 import React from 'react';
-import IntroBlurb from './../../components/neo/IntroBlurb';
 
+import Paragraph, { ParagraphNoMargin } from './../../components/neo/Paragraph';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
 
-const blurb = [<IntroBlurb>Copywriting page!</IntroBlurb>];
+import CopywritingHeroImage from './../../static/copywriting_hero.jpg';
+
+const sections = [
+  {
+    id: 'intro',
+    title: "That's the point of everything we do.",
+    content: [
+      <Paragraph>
+        So, first of all, take a moment to feel noble. You might even give
+        yourself a pat on the back (but, um, make sure no-one is looking first).
+      </Paragraph>,
+      <Paragraph>
+        Still, if we&apos;re going to help people, we need to make sure
+        they&apos;re listening. And that&apos;s not just about what we tell them
+        &mdash; it&apos;s about how we tell them.
+      </Paragraph>,
+    ],
+  },
+];
 
 const CopywritingPage = () => (
-  <DocsPageBuilder title="Copywriting" blurb={blurb} />
+  <DocsPageBuilder
+    showMenu={false}
+    title="Copywriting"
+    customSections={sections}
+    hero={{
+      heading: `Writing for Skyscanner?\nThis basically makes you a hero.`,
+      subHeading: (
+        <ParagraphNoMargin>
+          No cape needed. (Please &mdash; no underwear over tights, either.)
+          Because writing for Skyscanner means you&apos;re helping people have
+          an amazing trip.
+        </ParagraphNoMargin>
+      ),
+      imageUrl: `/${CopywritingHeroImage}`,
+    }}
+    showPageHead={false}
+  />
 );
 
 export default CopywritingPage;

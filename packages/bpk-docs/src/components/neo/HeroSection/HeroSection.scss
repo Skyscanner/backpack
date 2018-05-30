@@ -18,40 +18,27 @@
 
 @import '~bpk-mixins/index';
 
-.bpkdocs-main-hero-image {
+.bpkdocs-hero-section {
   display: flex;
-  height: $bpk-spacing-xs * 21;
-  padding: $bpk-spacing-base;
+  height: $bpk-spacing-xs * 110;
+  padding: $bpk-spacing-xs * 10;
+  flex-direction: column;
   justify-content: flex-end;
   background-color: $bpk-color-gray-700;
   background-size: cover;
 
-  @include bpk-breakpoint-above-tablet {
-    height: $bpk-spacing-xs * 54;
+  @include bpk-breakpoint-mobile {
+    height: $bpk-spacing-xs * 70;
+    padding: $bpk-spacing-lg;
   }
 
-  &--collapsed {
-    height: 0;
-    padding: 0;
+  &__heading {
+    color: $bpk-color-white;
+    white-space: pre-line;
   }
 
-  &__hamburger {
-    &--hero-collapsed {
-      top: $bpk-spacing-base;
-      right: $bpk-spacing-base;
-
-      @include bpk-rtl {
-        right: auto;
-        left: $bpk-spacing-base;
-      }
-    }
-
-    > svg {
-      fill: $bpk-color-white;
-
-      @include bpk-breakpoint-above-tablet {
-        display: none;
-      }
-    }
+  &__subheading {
+    max-width: $bpk-spacing-xs * 120;
+    color: $bpk-color-white;
   }
 }
