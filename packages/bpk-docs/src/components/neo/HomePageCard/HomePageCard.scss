@@ -43,6 +43,10 @@ $bpk-caption-container-height-mobile: $bpk-card-height-mobile - $bpk-image-heigh
     height: $bpk-card-height-mobile;
   }
 
+  &--full-width {
+    width: 100%;
+  }
+
   &__image-container {
     position: relative;
     height: $bpk-image-height-desktop;
