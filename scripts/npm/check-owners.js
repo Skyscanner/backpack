@@ -22,7 +22,7 @@
 
 const fs = require('fs');
 const util = require('util');
-const http = require('http');
+const https = require('https');
 
 const readdir = util.promisify(fs.readdir);
 
@@ -34,7 +34,7 @@ const owners = meta.maintainers.map(maintainer => maintainer.npm).sort();
 
 const getPackageMaintainers = pkg =>
   new Promise((resolve, reject) => {
-    http.get(`http://registry.npmjs.org/${pkg}/`, res => {
+    https.get(`https://registry.npmjs.org/${pkg}/`, res => {
       let body = '';
       res.setEncoding('utf8');
       res.on('data', d => {
