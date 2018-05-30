@@ -175,5 +175,6 @@
     "weather": "EAA8",
     "wifi": "EAA9",
     "window--reduce": "EAAA",
-    "window": "EAAB"
+    "window": "EAAB",
+    "mileage": "EAB2"
 }
