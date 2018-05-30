@@ -34,7 +34,6 @@ const commonTests = () => {
             const tree = renderer
               .create(
                 <BpkPaginationDots
-                  accessibilityLabel={`${selectedIndex} of ${pageCount + 1}`}
                   pageCount={pageCount + 1}
                   selectedIndex={selectedIndex}
                 />,
@@ -49,25 +48,9 @@ const commonTests = () => {
       const tree = renderer
         .create(
           <BpkPaginationDots
-            accessibilityLabel="0 of 5"
             pageCount={5}
             selectedIndex={0}
             style={{ marginTop: 10 }}
-          />,
-        )
-        .toJSON();
-      expect(tree).toMatchSnapshot();
-    });
-
-    it(`should render correctly when accessibilityLabel is a function`, () => {
-      const accessibilityLabel = (pageCount, selectedIndex) =>
-        `Page ${pageCount} of ${selectedIndex}`;
-      const tree = renderer
-        .create(
-          <BpkPaginationDots
-            accessibilityLabel={accessibilityLabel}
-            pageCount={5}
-            selectedIndex={0}
           />,
         )
         .toJSON();
@@ -78,7 +61,6 @@ const commonTests = () => {
       const tree = renderer
         .create(
           <BpkPaginationDots
-            accessibilityLabel="0 of 5"
             pageCount={5}
             selectedIndex={0}
             testID="123" // Arbitrary prop.

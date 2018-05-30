@@ -19,22 +19,22 @@
 /* @flow */
 
 import React from 'react';
-import { Animated, StyleSheet, type AnimatedValue } from 'react-native';
 import PropTypes from 'prop-types';
 import {
   animationDurationSm,
   borderRadiusPill,
-  colorGray100,
+  colorGray200,
   colorWhite,
   spacingSm,
   paginationDotSizeSm,
   paginationDotSizeMd,
   paginationDotSizeBase,
 } from 'bpk-tokens/tokens/base.react.native';
+import { Animated, StyleSheet, type AnimatedValue } from 'react-native';
 
 const styles = StyleSheet.create({
   indicator: {
-    backgroundColor: colorGray100,
+    backgroundColor: colorGray200,
     borderRadius: borderRadiusPill,
     marginHorizontal: spacingSm / 2,
   },
@@ -63,6 +63,8 @@ type Props = {
 };
 
 class BpkPaginationDotsIndicator extends React.Component<Props, {}> {
+  size: AnimatedValue;
+
   static propTypes = {
     selected: PropTypes.bool,
     size: PropTypes.oneOf(Object.keys(INDICATOR_SIZES)),
@@ -73,6 +75,12 @@ class BpkPaginationDotsIndicator extends React.Component<Props, {}> {
     size: INDICATOR_SIZES.base,
   };
 
+  constructor(props: Props) {
+    super(props);
+
+    this.size = new Animated.Value(indicatorDimensions[this.props.size]);
+  }
+
   componentDidUpdate() {
     Animated.timing(this.size, {
       duration: animationDurationSm,
@@ -80,22 +88,35 @@ class BpkPaginationDotsIndicator extends React.Component<Props, {}> {
     }).start();
   }
 
-  size: AnimatedValue = new Animated.Value(
-    indicatorDimensions[this.props.size],
-  );
+  componentWillEnter(callback: () => mixed) {
+    this.size.setValue(indicatorDimensions[INDICATOR_SIZES.invisible]);
+
+    Animated.timing(this.size, {
+      duration: animationDurationSm,
+      toValue: indicatorDimensions[this.props.size],
+    }).start(callback);
+  }
+
+  componentWillLeave(callback: () => mixed) {
+    Animated.timing(this.size, {
+      duration: animationDurationSm,
+      toValue: indicatorDimensions[INDICATOR_SIZES.invisible],
+    }).start(callback);
+  }
 
   render() {
     const { selected } = this.props;
-    const style = [styles.indicator];
+    const style = [
+      styles.indicator,
+      {
+        height: this.size,
+        width: this.size,
+      },
+    ];
 
     if (selected) {
       style.push(styles.indicatorSelected);
     }
-
-    style.push({
-      height: this.size,
-      width: this.size,
-    });
 
     return <Animated.View style={style} />;
   }

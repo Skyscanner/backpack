@@ -24,24 +24,20 @@ const styles = StyleSheet.create({
   }
 });
 
-const accessibilityLabel = (pageCount, selectedIndex) => `${selectedIndex + 1} of ${pageCount}.`;
 
 export default class App extends Component {
   render() {
     return (
       <View style={styles.container}>
         <BpkPaginationDots
-          accessibilityLabel={accessibilityLabel}
           pageCount="10"
           selectedIndex="0"
         />
         <BpkPaginationDots
-          accessibilityLabel={accessibilityLabel}
           pageCount="3"
           selectedIndex="2"
         />
         <BpkPaginationDots
-          accessibilityLabel="2 of 5"
           pageCount="5"
           selectedIndex="1"
         />
@@ -56,7 +52,6 @@ export default class App extends Component {
 
 | Property            | PropType                  | Required | Default Value |
 | -----------         | ------------------------- | -------- | ------------- |
-| accessibilityLabel  | oneOfType(string, func)   | true     | -             |
 | pageCount           | number                    | true     | -             |
 | selectedIndex       | number                    | true     | -             |
 

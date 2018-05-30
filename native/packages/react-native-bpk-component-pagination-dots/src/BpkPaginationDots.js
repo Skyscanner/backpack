@@ -18,10 +18,9 @@
 
 /* @flow */
 
-import React from 'react';
-import { StyleSheet, View, ViewPropTypes } from 'react-native';
 import PropTypes from 'prop-types';
 import { setOpacity } from 'bpk-tokens';
+import React, { Component } from 'react';
 import {
   borderRadiusSm,
   colorGray900,
@@ -29,14 +28,12 @@ import {
   spacingMd,
   spacingLg,
 } from 'bpk-tokens/tokens/base.react.native';
+import { StyleSheet, ViewPropTypes, type StyleObj } from 'react-native';
 
 import BpkPaginationDotsIndicator, {
   INDICATOR_SIZES,
 } from './BpkPaginationDotsIndicator';
-
-// When there are 5 dots or fewer, they should all be displayed at full size.
-const MAX_DOTS_BEFORE_OVERFLOW = 5;
-const NUM_OF_DOTS_WHEN_OVERFLOWING = 6;
+import TransitionGroup from './TransitionGroup';
 
 const styles = StyleSheet.create({
   wrapper: {
@@ -52,143 +49,191 @@ const styles = StyleSheet.create({
   },
 });
 
-const indicatorMappings = {
-  start: [
-    INDICATOR_SIZES.base,
-    INDICATOR_SIZES.base,
-    INDICATOR_SIZES.base,
-    INDICATOR_SIZES.md,
-    INDICATOR_SIZES.sm,
-    INDICATOR_SIZES.invisible,
-  ],
-  closeToStart: [
-    INDICATOR_SIZES.md,
-    INDICATOR_SIZES.base,
-    INDICATOR_SIZES.base,
-    INDICATOR_SIZES.base,
-    INDICATOR_SIZES.md,
-    INDICATOR_SIZES.sm,
-  ],
-  middle: [
-    INDICATOR_SIZES.sm,
-    INDICATOR_SIZES.md,
-    INDICATOR_SIZES.base,
-    INDICATOR_SIZES.base,
-    INDICATOR_SIZES.md,
-    INDICATOR_SIZES.sm,
-  ],
-  closeToEnd: [
-    INDICATOR_SIZES.invisible,
-    INDICATOR_SIZES.sm,
-    INDICATOR_SIZES.md,
-    INDICATOR_SIZES.base,
-    INDICATOR_SIZES.base,
-    INDICATOR_SIZES.md,
-  ],
-  end: [
-    INDICATOR_SIZES.invisible,
-    INDICATOR_SIZES.sm,
-    INDICATOR_SIZES.md,
-    INDICATOR_SIZES.base,
-    INDICATOR_SIZES.base,
-    INDICATOR_SIZES.base,
-  ],
+const getIndicatorSlice = (pageCount, selectedIndex, direction) => {
+  if (pageCount <= 5) {
+    return {
+      begin: 0,
+      end: 5,
+    };
+  }
+
+  if (direction === 'forward') {
+    if (selectedIndex <= 2) {
+      return {
+        begin: 0,
+        end: 5,
+      };
+    }
+
+    if (selectedIndex === pageCount - 1) {
+      return {
+        begin: pageCount - 5,
+        end: pageCount,
+      };
+    }
+
+    if (selectedIndex >= pageCount - 2) {
+      return {
+        begin: pageCount - 6,
+        end: pageCount,
+      };
+    }
+
+    return {
+      begin: selectedIndex - 3,
+      end: selectedIndex + 3,
+    };
+  }
+
+  if (selectedIndex >= pageCount - 3) {
+    return {
+      begin: pageCount - 5,
+      end: pageCount,
+    };
+  }
+
+  if (selectedIndex === 0) {
+    return {
+      begin: 0,
+      end: 5,
+    };
+  }
+
+  if (selectedIndex <= 2) {
+    return {
+      begin: 0,
+      end: 6,
+    };
+  }
+
+  return {
+    begin: selectedIndex - 2,
+    end: selectedIndex + 4,
+  };
 };
 
-const createIndicatorsFromSizes = (sizesArray, selectedIndex) =>
-  sizesArray.map((indicatorSize, index) => (
-    <BpkPaginationDotsIndicator
-      key={index.toString()}
-      selected={selectedIndex === index}
-      size={indicatorSize}
-    />
-  ));
+const getIndicatorSize = (pageCount, index, selectedIndex, direction) => {
+  if (pageCount <= 5 || selectedIndex === index) {
+    return INDICATOR_SIZES.base;
+  }
 
-const getIndicators = (pageCount, selectedIndex) => {
-  if (pageCount <= MAX_DOTS_BEFORE_OVERFLOW) {
-    return new Array(pageCount)
+  if (direction === 'forward') {
+    if (selectedIndex <= 2 && index <= 2) {
+      return INDICATOR_SIZES.base;
+    }
+
+    if (index > selectedIndex - 3 && index < selectedIndex) {
+      return INDICATOR_SIZES.base;
+    }
+
+    if (
+      index === selectedIndex + 1 ||
+      (selectedIndex <= 2 && index === 3) ||
+      index === selectedIndex - 3
+    ) {
+      return INDICATOR_SIZES.md;
+    }
+  }
+
+  if (direction === 'backward') {
+    if (selectedIndex >= pageCount - 3 && index >= pageCount - 3) {
+      return INDICATOR_SIZES.base;
+    }
+
+    if (index < selectedIndex + 3 && index > selectedIndex) {
+      return INDICATOR_SIZES.base;
+    }
+
+    if (
+      index === selectedIndex - 1 ||
+      (selectedIndex >= pageCount - 3 && index === pageCount - 4) ||
+      index === selectedIndex + 3
+    ) {
+      return INDICATOR_SIZES.md;
+    }
+  }
+
+  return INDICATOR_SIZES.sm;
+};
+
+export type Props = {
+  pageCount: number,
+  selectedIndex: number,
+  initialDirection: 'forward' | 'backward',
+  style: ?StyleObj,
+};
+
+class BpkPaginationDots extends Component<Props> {
+  direction: 'forward' | 'backward';
+
+  static propTypes = {
+    pageCount: PropTypes.number.isRequired,
+    selectedIndex: PropTypes.number.isRequired,
+    initialDirection: PropTypes.string,
+    style: ViewPropTypes.style,
+  };
+
+  static defaultProps = {
+    initialDirection: 'forward',
+    style: null,
+  };
+
+  constructor(props: Props) {
+    super(props);
+
+    this.direction = this.props.initialDirection;
+  }
+
+  componentWillReceiveProps(nextProps: Props) {
+    if (nextProps.selectedIndex === this.props.selectedIndex) {
+      return;
+    }
+
+    this.direction =
+      nextProps.selectedIndex > this.props.selectedIndex
+        ? 'forward'
+        : 'backward';
+  }
+
+  render() {
+    const { pageCount, selectedIndex, style, ...rest } = this.props;
+
+    const indicators = new Array(pageCount)
       .fill()
       .map((_, index) => (
         <BpkPaginationDotsIndicator
           key={index.toString()}
           selected={selectedIndex === index}
+          size={getIndicatorSize(
+            pageCount,
+            index,
+            selectedIndex,
+            this.direction,
+          )}
         />
       ));
-  }
 
-  const maxPageIndex = pageCount - 1;
+    const { begin, end } = getIndicatorSlice(
+      pageCount,
+      selectedIndex,
+      this.direction,
+    );
 
-  if (selectedIndex <= 2) {
-    return createIndicatorsFromSizes(indicatorMappings.start, selectedIndex);
-  }
-  if (selectedIndex === 3) {
-    return createIndicatorsFromSizes(
-      indicatorMappings.closeToStart,
-      NUM_OF_DOTS_WHEN_OVERFLOWING - 4,
+    // console.warn(
+    //   indicators
+    //     .slice(begin, end)
+    //     .map(
+    //       ({ key, props: xprops }) =>
+    //         selectedIndex.toString() === key ? `[${xprops.size}]` : xprops.size,
+    //     ),
+    // );
+
+    return (
+      <TransitionGroup style={[styles.wrapper, style]} {...rest}>
+        {indicators.slice(begin, end)}
+      </TransitionGroup>
     );
   }
-  if (selectedIndex === maxPageIndex - 1) {
-    return createIndicatorsFromSizes(
-      indicatorMappings.closeToEnd,
-      NUM_OF_DOTS_WHEN_OVERFLOWING - 2,
-    );
-  }
-  if (selectedIndex === maxPageIndex) {
-    return createIndicatorsFromSizes(
-      indicatorMappings.end,
-      NUM_OF_DOTS_WHEN_OVERFLOWING - 1,
-    );
-  }
-  return createIndicatorsFromSizes(
-    indicatorMappings.middle,
-    NUM_OF_DOTS_WHEN_OVERFLOWING - 3,
-  );
-};
-
-export type Props = {
-  accessibilityLabel: string | ((number, number) => string),
-  pageCount: number,
-  selectedIndex: number,
-  style: ?any,
-};
-
-const BpkPaginationDots = (props: Props) => {
-  const {
-    accessibilityLabel,
-    pageCount,
-    selectedIndex,
-    style,
-    ...rest
-  } = props;
-
-  const label =
-    typeof accessibilityLabel === 'string'
-      ? accessibilityLabel
-      : accessibilityLabel && accessibilityLabel(pageCount, selectedIndex);
-
-  const indicators = getIndicators(pageCount, selectedIndex);
-  return (
-    <View
-      accessible
-      accessibilityLabel={label}
-      style={[styles.wrapper, style]}
-      {...rest}
-    >
-      {indicators}
-    </View>
-  );
-};
-
-BpkPaginationDots.propTypes = {
-  accessibilityLabel: PropTypes.oneOfType([PropTypes.string, PropTypes.func])
-    .isRequired,
-  pageCount: PropTypes.number.isRequired,
-  selectedIndex: PropTypes.number.isRequired,
-  style: ViewPropTypes.style,
-};
-
-BpkPaginationDots.defaultProps = {
-  style: null,
-};
+}
 
 export default BpkPaginationDots;

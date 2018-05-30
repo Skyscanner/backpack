@@ -16,7 +16,8 @@
   },
   "dependencies": {
     "bpk-tokens": "^27.0.0",
-    "prop-types": "^15.5.8"
+    "prop-types": "^15.5.8",
+    "react-native-transitiongroup": "^1.1.0"
   },
   "devDependencies": {
     "react-native-bpk-component-nudger": "^1.0.16"

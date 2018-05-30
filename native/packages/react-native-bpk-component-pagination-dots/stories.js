@@ -33,8 +33,9 @@ import {
   spacingXl,
 } from 'bpk-tokens/tokens/base.react.native';
 import BpkNudger from 'react-native-bpk-component-nudger';
+
 import CenterDecorator from '../../storybook/CenterDecorator';
-import { StorySubheading } from '../../storybook/TextStyles';
+import { StoryHeading, StorySubheading } from '../../storybook/TextStyles';
 
 import BpkPaginationDots from './index';
 
@@ -89,8 +90,8 @@ class StatefulBpkPaginationExample extends React.Component<
   constructor(props) {
     super(props);
     this.state = {
-      pageCount: 5,
-      selectedIndex: 0,
+      pageCount: 6,
+      selectedIndex: 5,
     };
   }
 
@@ -147,7 +148,6 @@ class StatefulBpkPaginationExample extends React.Component<
               ))}
           </ScrollView>
           <BpkPaginationDots
-            accessibilityLabel={`${selectedIndex + 1} of ${pageCount}`}
             pageCount={pageCount}
             selectedIndex={selectedIndex}
             style={styles.overlayDots}
@@ -181,34 +181,55 @@ class StatefulBpkPaginationExample extends React.Component<
 storiesOf('react-native-bpk-component-pagination-dots', module)
   .addDecorator(CenterDecorator)
   .add('docs:default', () => (
-    <View>
-      {new Array(5).fill().map((_, index) => (
-        <View key={index.toString()} style={styles.storyInstance}>
-          <StorySubheading>
-            {index + 1} page{index === 0 ? '' : 's'}
-          </StorySubheading>
+    <View style={{ alignItems: 'center' }}>
+      <StorySubheading style={styles.storyInstance}>
+        5 pages or less
+      </StorySubheading>
+      {new Array(5)
+        .fill()
+        .map((_, index) => (
           <BpkPaginationDots
-            accessibilityLabel={`1 of ${index + 1}`}
+            key={index.toString()}
             pageCount={index + 1}
             selectedIndex={0}
+            style={styles.storyInstance}
           />
+        ))}
+      <StorySubheading style={styles.storyInstance}>
+        More than 5 pages
+      </StorySubheading>
+      <View style={{ flexDirection: 'row' }}>
+        <View style={{ flex: 1, alignItems: 'center' }}>
+          <StorySubheading style={styles.storyInstance}>
+            Forward
+          </StorySubheading>
+          {new Array(6)
+            .fill()
+            .map((_, index) => (
+              <BpkPaginationDots
+                key={index.toString()}
+                pageCount={6}
+                selectedIndex={index}
+                style={styles.storyInstance}
+              />
+            ))}
         </View>
-      ))}
-      <View style={styles.storyInstance}>
-        <StorySubheading>
-          More than 5 pages (shown with different selected indexes)
-        </StorySubheading>
-        {new Array(7)
-          .fill()
-          .map((_, index) => (
-            <BpkPaginationDots
-              accessibilityLabel={`${index + 1} of 6`}
-              key={index.toString()}
-              pageCount={7}
-              selectedIndex={index}
-              style={styles.storyInstance}
-            />
-          ))}
+        <View style={{ flex: 1, alignItems: 'center' }}>
+          <StorySubheading style={styles.storyInstance}>
+            Backward
+          </StorySubheading>
+          {new Array(6)
+            .fill()
+            .map((_, index) => (
+              <BpkPaginationDots
+                key={index.toString()}
+                pageCount={6}
+                selectedIndex={5 - index}
+                initialDirection="backward"
+                style={styles.storyInstance}
+              />
+            ))}
+        </View>
       </View>
     </View>
   ))
@@ -219,11 +240,7 @@ storiesOf('react-native-bpk-component-pagination-dots', module)
           key={index.toString()}
           style={[styles.colorBlock, { backgroundColor: pageColors[index] }]}
         >
-          <BpkPaginationDots
-            pageCount={6}
-            selectedIndex={0}
-            accessibilityLabel={`${index + 1} of 6`}
-          />
+          <BpkPaginationDots pageCount={6} selectedIndex={0} />
         </View>
       ))}
     </View>
