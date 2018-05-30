@@ -107,7 +107,7 @@ module.exports = {
   lineHeightXs: 13,
   lineHeightXxl: 41,
   paginationDotSizeBase: 6,
-  paginationDotSizeMd: 3,
+  paginationDotSizeMd: 4,
   paginationDotSizeSm: 2,
   shadowLgColor: "rgb(37, 32, 51)",
   shadowLgOffsetHeight: 4,

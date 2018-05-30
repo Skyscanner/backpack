@@ -23,7 +23,7 @@ import PropTypes from 'prop-types';
 import {
   animationDurationSm,
   borderRadiusPill,
-  colorGray200,
+  colorGray100,
   colorWhite,
   spacingSm,
   paginationDotSizeSm,
@@ -34,7 +34,7 @@ import { Animated, StyleSheet, type AnimatedValue } from 'react-native';
 
 const styles = StyleSheet.create({
   indicator: {
-    backgroundColor: colorGray200,
+    backgroundColor: colorGray100,
     borderRadius: borderRadiusPill,
     marginHorizontal: spacingSm / 2,
   },
@@ -82,27 +82,25 @@ class BpkPaginationDotsIndicator extends React.Component<Props, {}> {
   }
 
   componentDidUpdate() {
-    Animated.timing(this.size, {
-      duration: animationDurationSm,
-      toValue: indicatorDimensions[this.props.size],
-    }).start();
+    this.animate(this.props.size);
   }
 
   componentWillEnter(callback: () => mixed) {
     this.size.setValue(indicatorDimensions[INDICATOR_SIZES.invisible]);
 
-    Animated.timing(this.size, {
-      duration: animationDurationSm,
-      toValue: indicatorDimensions[this.props.size],
-    }).start(callback);
+    this.animate(this.props.size, callback);
   }
 
   componentWillLeave(callback: () => mixed) {
+    this.animate(INDICATOR_SIZES.invisible, callback);
+  }
+
+  animate = (size: $Keys<typeof INDICATOR_SIZES>, callback: ?() => mixed) => {
     Animated.timing(this.size, {
       duration: animationDurationSm,
-      toValue: indicatorDimensions[INDICATOR_SIZES.invisible],
+      toValue: indicatorDimensions[size],
     }).start(callback);
-  }
+  };
 
   render() {
     const { selected } = this.props;

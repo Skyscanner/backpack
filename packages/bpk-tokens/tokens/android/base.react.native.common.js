@@ -113,7 +113,7 @@ module.exports = {
   lineHeightXs: 18,
   lineHeightXxl: 40,
   paginationDotSizeBase: 6,
-  paginationDotSizeMd: 3,
+  paginationDotSizeMd: 4,
   paginationDotSizeSm: 2,
   spacingBase: 16,
   spacingLg: 24,

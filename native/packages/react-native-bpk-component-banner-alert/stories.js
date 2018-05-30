@@ -162,13 +162,33 @@ storiesOf('react-native-bpk-component-banner-alert', module)
     <View>
       <BpkBannerAlert
         style={styles.bannerAlert}
-        type={ALERT_TYPES.warn}
-        message="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
-        sagittis sagittis purus, id blandit ipsum. Pellentesque nec diam nec
-        erat condimentum dapibus. Nunc diam augue, egestas id egestas ut,
-        facilisis nec mi. Donec et congue odio, nec laoreet est. Integer
-        rhoncus varius arcu, a fringilla libero laoreet at."
+        type={ALERT_TYPES.neutral}
+        message="Neutral alert."
       />
+      <BpkBannerAlert
+        style={styles.bannerAlert}
+        type={ALERT_TYPES.success}
+        message="Successful alert."
+      />
+      <DismissableBannerAlert
+        bannerStyle={styles.bannerAlert}
+        type={ALERT_TYPES.warn}
+        message="Warn alert with dismiss option."
+        dismissButtonLabel="Dismiss"
+      />
+      <ExpandableBannerAlert
+        style={styles.bannerAlert}
+        type={ALERT_TYPES.error}
+        message="Error alert with more information."
+      >
+        <BpkText textStyle="sm" style={styles.child}>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
+          sagittis sagittis purus, id blandit ipsum. Pellentesque nec diam nec
+          erat condimentum dapibus. Nunc diam augue, egestas id egestas ut,
+          facilisis nec mi. Donec et congue odio, nec laoreet est. Integer
+          rhoncus varius arcu, a fringilla libero laoreet at.
+        </BpkText>
+      </ExpandableBannerAlert>
     </View>
   ))
   .add('docs:default', () => (

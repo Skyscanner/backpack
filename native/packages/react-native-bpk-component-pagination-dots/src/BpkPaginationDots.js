@@ -18,9 +18,9 @@
 
 /* @flow */
 
+import React from 'react';
 import PropTypes from 'prop-types';
 import { setOpacity } from 'bpk-tokens';
-import React, { Component } from 'react';
 import {
   borderRadiusSm,
   colorGray900,
@@ -28,12 +28,12 @@ import {
   spacingMd,
   spacingLg,
 } from 'bpk-tokens/tokens/base.react.native';
+import TransitionGroup from '@skyscanner/react-native-transitiongroup';
 import { StyleSheet, ViewPropTypes, type StyleObj } from 'react-native';
 
 import BpkPaginationDotsIndicator, {
   INDICATOR_SIZES,
 } from './BpkPaginationDotsIndicator';
-import TransitionGroup from './TransitionGroup';
 
 const styles = StyleSheet.create({
   wrapper: {
@@ -49,39 +49,18 @@ const styles = StyleSheet.create({
   },
 });
 
-const getIndicatorSlice = (pageCount, selectedIndex, direction) => {
+const getIndicatorSlice = (pageCount, selectedIndex) => {
   if (pageCount <= 5) {
     return {
       begin: 0,
-      end: 5,
+      end: pageCount,
     };
   }
 
-  if (direction === 'forward') {
-    if (selectedIndex <= 2) {
-      return {
-        begin: 0,
-        end: 5,
-      };
-    }
-
-    if (selectedIndex === pageCount - 1) {
-      return {
-        begin: pageCount - 5,
-        end: pageCount,
-      };
-    }
-
-    if (selectedIndex >= pageCount - 2) {
-      return {
-        begin: pageCount - 6,
-        end: pageCount,
-      };
-    }
-
+  if (selectedIndex <= 2) {
     return {
-      begin: selectedIndex - 3,
-      end: selectedIndex + 3,
+      begin: 0,
+      end: 5,
     };
   }
 
@@ -92,65 +71,19 @@ const getIndicatorSlice = (pageCount, selectedIndex, direction) => {
     };
   }
 
-  if (selectedIndex === 0) {
-    return {
-      begin: 0,
-      end: 5,
-    };
-  }
-
-  if (selectedIndex <= 2) {
-    return {
-      begin: 0,
-      end: 6,
-    };
-  }
-
   return {
     begin: selectedIndex - 2,
-    end: selectedIndex + 4,
+    end: selectedIndex + 3,
   };
 };
 
-const getIndicatorSize = (pageCount, index, selectedIndex, direction) => {
+const getIndicatorSize = (pageCount, index, selectedIndex) => {
   if (pageCount <= 5 || selectedIndex === index) {
     return INDICATOR_SIZES.base;
   }
 
-  if (direction === 'forward') {
-    if (selectedIndex <= 2 && index <= 2) {
-      return INDICATOR_SIZES.base;
-    }
-
-    if (index > selectedIndex - 3 && index < selectedIndex) {
-      return INDICATOR_SIZES.base;
-    }
-
-    if (
-      index === selectedIndex + 1 ||
-      (selectedIndex <= 2 && index === 3) ||
-      index === selectedIndex - 3
-    ) {
-      return INDICATOR_SIZES.md;
-    }
-  }
-
-  if (direction === 'backward') {
-    if (selectedIndex >= pageCount - 3 && index >= pageCount - 3) {
-      return INDICATOR_SIZES.base;
-    }
-
-    if (index < selectedIndex + 3 && index > selectedIndex) {
-      return INDICATOR_SIZES.base;
-    }
-
-    if (
-      index === selectedIndex - 1 ||
-      (selectedIndex >= pageCount - 3 && index === pageCount - 4) ||
-      index === selectedIndex + 3
-    ) {
-      return INDICATOR_SIZES.md;
-    }
+  if (index >= selectedIndex - 1 && index <= selectedIndex + 1) {
+    return INDICATOR_SIZES.md;
   }
 
   return INDICATOR_SIZES.sm;
@@ -159,81 +92,66 @@ const getIndicatorSize = (pageCount, index, selectedIndex, direction) => {
 export type Props = {
   pageCount: number,
   selectedIndex: number,
-  initialDirection: 'forward' | 'backward',
   style: ?StyleObj,
 };
 
-class BpkPaginationDots extends Component<Props> {
-  direction: 'forward' | 'backward';
+const getIndicatorIndexFromKey = key => parseInt(key.replace(/\D/g, ''), 10);
 
-  static propTypes = {
-    pageCount: PropTypes.number.isRequired,
-    selectedIndex: PropTypes.number.isRequired,
-    initialDirection: PropTypes.string,
-    style: ViewPropTypes.style,
-  };
+const transitionGroupSorter = children =>
+  Object.keys(children)
+    .sort((a, b) => {
+      const aIndex = getIndicatorIndexFromKey(a);
+      const bIndex = getIndicatorIndexFromKey(b);
 
-  static defaultProps = {
-    initialDirection: 'forward',
-    style: null,
-  };
+      if (aIndex < bIndex) {
+        return -1;
+      }
 
-  constructor(props: Props) {
-    super(props);
+      if (aIndex > bIndex) {
+        return 1;
+      }
 
-    this.direction = this.props.initialDirection;
-  }
+      return 0;
+    })
+    .reduce((acc, key) => {
+      acc[key] = children[key];
+      return acc;
+    }, {});
 
-  componentWillReceiveProps(nextProps: Props) {
-    if (nextProps.selectedIndex === this.props.selectedIndex) {
-      return;
-    }
+const BpkPaginationDots = (props: Props) => {
+  const { pageCount, selectedIndex, style, ...rest } = props;
 
-    this.direction =
-      nextProps.selectedIndex > this.props.selectedIndex
-        ? 'forward'
-        : 'backward';
-  }
+  const indicators = new Array(pageCount)
+    .fill()
+    .map((_, index) => (
+      <BpkPaginationDotsIndicator
+        key={index.toString()}
+        selected={selectedIndex === index}
+        size={getIndicatorSize(pageCount, index, selectedIndex)}
+      />
+    ));
 
-  render() {
-    const { pageCount, selectedIndex, style, ...rest } = this.props;
+  const { begin, end } = getIndicatorSlice(pageCount, selectedIndex);
 
-    const indicators = new Array(pageCount)
-      .fill()
-      .map((_, index) => (
-        <BpkPaginationDotsIndicator
-          key={index.toString()}
-          selected={selectedIndex === index}
-          size={getIndicatorSize(
-            pageCount,
-            index,
-            selectedIndex,
-            this.direction,
-          )}
-        />
-      ));
+  return (
+    <TransitionGroup
+      style={[styles.wrapper, style]}
+      childrenSortFn={transitionGroupSorter}
+      {...rest}
+    >
+      {indicators.slice(begin, end)}
+    </TransitionGroup>
+  );
+};
 
-    const { begin, end } = getIndicatorSlice(
-      pageCount,
-      selectedIndex,
-      this.direction,
-    );
+BpkPaginationDots.propTypes = {
+  pageCount: PropTypes.number.isRequired,
+  selectedIndex: PropTypes.number.isRequired,
+  style: ViewPropTypes.style,
+};
 
-    // console.warn(
-    //   indicators
-    //     .slice(begin, end)
-    //     .map(
-    //       ({ key, props: xprops }) =>
-    //         selectedIndex.toString() === key ? `[${xprops.size}]` : xprops.size,
-    //     ),
-    // );
-
-    return (
-      <TransitionGroup style={[styles.wrapper, style]} {...rest}>
-        {indicators.slice(begin, end)}
-      </TransitionGroup>
-    );
-  }
-}
+BpkPaginationDots.defaultProps = {
+  style: null,
+};
 
 export default BpkPaginationDots;

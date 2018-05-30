@@ -35,7 +35,7 @@ import {
 import BpkNudger from 'react-native-bpk-component-nudger';
 
 import CenterDecorator from '../../storybook/CenterDecorator';
-import { StoryHeading, StorySubheading } from '../../storybook/TextStyles';
+import { StorySubheading } from '../../storybook/TextStyles';
 
 import BpkPaginationDots from './index';
 
@@ -90,8 +90,8 @@ class StatefulBpkPaginationExample extends React.Component<
   constructor(props) {
     super(props);
     this.state = {
-      pageCount: 6,
-      selectedIndex: 5,
+      pageCount: 5,
+      selectedIndex: 0,
     };
   }
 
@@ -181,55 +181,29 @@ class StatefulBpkPaginationExample extends React.Component<
 storiesOf('react-native-bpk-component-pagination-dots', module)
   .addDecorator(CenterDecorator)
   .add('docs:default', () => (
-    <View style={{ alignItems: 'center' }}>
-      <StorySubheading style={styles.storyInstance}>
-        5 pages or less
-      </StorySubheading>
-      {new Array(5)
-        .fill()
-        .map((_, index) => (
-          <BpkPaginationDots
-            key={index.toString()}
-            pageCount={index + 1}
-            selectedIndex={0}
-            style={styles.storyInstance}
-          />
-        ))}
-      <StorySubheading style={styles.storyInstance}>
-        More than 5 pages
-      </StorySubheading>
-      <View style={{ flexDirection: 'row' }}>
-        <View style={{ flex: 1, alignItems: 'center' }}>
-          <StorySubheading style={styles.storyInstance}>
-            Forward
+    <View>
+      {new Array(5).fill().map((_, index) => (
+        <View key={index.toString()} style={styles.storyInstance}>
+          <StorySubheading>
+            {index + 1} page{index === 0 ? '' : 's'}
           </StorySubheading>
-          {new Array(6)
-            .fill()
-            .map((_, index) => (
-              <BpkPaginationDots
-                key={index.toString()}
-                pageCount={6}
-                selectedIndex={index}
-                style={styles.storyInstance}
-              />
-            ))}
+          <BpkPaginationDots pageCount={index + 1} selectedIndex={0} />
         </View>
-        <View style={{ flex: 1, alignItems: 'center' }}>
-          <StorySubheading style={styles.storyInstance}>
-            Backward
-          </StorySubheading>
-          {new Array(6)
-            .fill()
-            .map((_, index) => (
-              <BpkPaginationDots
-                key={index.toString()}
-                pageCount={6}
-                selectedIndex={5 - index}
-                initialDirection="backward"
-                style={styles.storyInstance}
-              />
-            ))}
-        </View>
+      ))}
+      <View style={styles.storyInstance}>
+        <StorySubheading>
+          More than 5 pages (shown with different selected indexes)
+        </StorySubheading>
+        {new Array(6)
+          .fill()
+          .map((_, index) => (
+            <BpkPaginationDots
+              key={index.toString()}
+              pageCount={6}
+              selectedIndex={index}
+              style={styles.storyInstance}
+            />
+          ))}
       </View>
     </View>
   ))

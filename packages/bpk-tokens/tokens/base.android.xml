@@ -114,7 +114,7 @@
   <property name="LINE_HEIGHT_XS" category="typesettings">18dp</property>
   <property name="LINE_HEIGHT_XXL" category="typesettings">40dp</property>
   <property name="PAGINATION_DOT_SIZE_BASE" category="pagination-dots">6dp</property>
-  <property name="PAGINATION_DOT_SIZE_MD" category="pagination-dots">3dp</property>
+  <property name="PAGINATION_DOT_SIZE_MD" category="pagination-dots">4dp</property>
   <property name="PAGINATION_DOT_SIZE_SM" category="pagination-dots">2dp</property>
   <property name="SPACING_BASE" category="spacings">16dp</property>
   <property name="SPACING_LG" category="spacings">24dp</property>

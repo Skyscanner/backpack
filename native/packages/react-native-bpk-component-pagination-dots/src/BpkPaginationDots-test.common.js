@@ -23,25 +23,28 @@ import BpkPaginationDots from './BpkPaginationDots';
 
 const commonTests = () => {
   describe('BpkPaginationDots', () => {
-    // Using 10 as an arbitrary high number to test lots of permutations.
-    const NUM_OF_PERMUTATIONS_TO_TEST = 10;
-    new Array(NUM_OF_PERMUTATIONS_TO_TEST).fill().forEach((_, pageCount) => {
-      new Array(NUM_OF_PERMUTATIONS_TO_TEST)
-        .fill()
-        .forEach((blank, selectedIndex) => {
-          it(`should render correctly when pageCount is ${pageCount +
-            1} and selectedIndex is ${selectedIndex}`, () => {
-            const tree = renderer
-              .create(
-                <BpkPaginationDots
-                  pageCount={pageCount + 1}
-                  selectedIndex={selectedIndex}
-                />,
-              )
-              .toJSON();
-            expect(tree).toMatchSnapshot();
-          });
-        });
+    it(`should render correctly`, () => {
+      const tree = renderer
+        .create(<BpkPaginationDots pageCount={5} selectedIndex={2} />)
+        .toJSON();
+
+      expect(tree).toMatchSnapshot();
+    });
+
+    it(`should render correctly with a page count > 5`, () => {
+      const tree = renderer
+        .create(<BpkPaginationDots pageCount={6} selectedIndex={2} />)
+        .toJSON();
+
+      expect(tree).toMatchSnapshot();
+    });
+
+    it(`should render correctly with a page count equal to 11 and selected index equal to 9`, () => {
+      const tree = renderer
+        .create(<BpkPaginationDots pageCount={11} selectedIndex={9} />)
+        .toJSON();
+
+      expect(tree).toMatchSnapshot();
     });
 
     it(`should render correctly with custom styles`, () => {

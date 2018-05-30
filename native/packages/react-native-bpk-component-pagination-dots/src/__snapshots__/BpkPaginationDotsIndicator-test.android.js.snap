@@ -67,9 +67,9 @@ exports[`Android BpkPaginationIndicator should render correctly with size=md 1`]
     Object {
       "backgroundColor": "rgb(230, 228, 235)",
       "borderRadius": 40,
-      "height": 3,
+      "height": 4,
       "marginHorizontal": 2,
-      "width": 3,
+      "width": 4,
     }
   }
 />
