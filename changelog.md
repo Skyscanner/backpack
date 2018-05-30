@@ -2,6 +2,22 @@
 
 [Unreleased changes](./unreleased.md).
 
+# 2018-05-30 - Add mileage icon, RTL fix for IE
+
+**Added:**
+- bpk-component-icon: 3.20.2 => 3.21.0
+- bpk-mixins: 17.9.0 => 17.10.0
+- bpk-svgs: 5.16.0 => 5.17.0
+- react-native-bpk-component-icon: 1.7.0 => 1.8.0
+- react-native-bpk-component-button-link: 3.0.2 => 3.0.3
+- react-native-bpk-component-button: 6.0.10 => 6.0.11
+- react-native-bpk-component-navigation-bar: 2.0.6 => 2.0.7
+  - New icon: `mileage`
+
+**Fixed:**
+- bpk-component-navigation-bar: 1.2.0 => 1.2.1
+  - Fixed issue in IE where buttons were misplaced for RTL languages.
+
 # 2018-05-25 - Introducing the map component
 
 **Added:**
