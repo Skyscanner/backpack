@@ -32,6 +32,7 @@ import DefaultLayout from './../layouts/DefaultLayout';
 import UsingLayout from './../layouts/UsingLayout';
 import TokensLayout from './../layouts/TokensLayout';
 import DocsLayout from './../layouts/DocsLayout';
+// import StyleGuideLayout from './../layouts/StyleGuideLayout';
 
 import HomePage from './../pages/HomePage';
 import NeoHomePage from './../pages/NeoHomePage';
@@ -50,6 +51,8 @@ import BordersPage from './../pages/BordersPage';
 import SpacingsPage from './../pages/SpacingsPage';
 import AnimationPage from './../pages/AnimationPage';
 import ZIndexesPage from './../pages/ZIndexesPage';
+
+// import CopywritingPage from './../pages/CopywritingPage';
 
 import TextPage from './../pages/TextPage';
 import LinksPage from './../pages/LinksPage';
@@ -178,6 +181,11 @@ const Routes = (
       <Route path={ROUTES.TYPESETTING} component={TypesettingPage} />
       <Route path={ROUTES.Z_INDEXES} component={ZIndexesPage} />
     </Route>
+
+    {/* <Route path={ROUTES.STYLE_GUIDE} component={StyleGuideLayout}>
+      <IndexRedirect to={ROUTES.COPYWRITING} component={CopywritingPage} />
+      <Route path={ROUTES.COPYWRITING} component={CopywritingPage} />
+    </Route> */}
 
     <Route path={ROUTES.COMPONENTS} component={DocsLayout}>
       <IndexRedirect to={ROUTES.WEB_COMPONENTS} />
