@@ -112,6 +112,7 @@
     "menu--horizontal": "EA69",
     "menu--vertical": "EA6A",
     "menu": "EA6B",
+    "mileage": "EAB2",
     "minus": "EA6C",
     "mobile": "EA6D",
     "money": "EA6E",
@@ -175,6 +176,5 @@
     "weather": "EAA8",
     "wifi": "EAA9",
     "window--reduce": "EAAA",
-    "window": "EAAB",
-    "mileage": "EAB2"
+    "window": "EAAB"
 }
