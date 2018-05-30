@@ -20,6 +20,7 @@ import BpkButton from 'bpk-component-button';
 import { storiesOf } from '@storybook/react';
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
+import { text } from '@storybook/addon-knobs';
 
 import AnimateHeight from './index';
 
@@ -49,7 +50,9 @@ class AnimateHeightContainer extends Component {
       <div>
         <AnimateHeight {...rest} height={this.state.height} />
         <br />
-        <BpkButton onClick={this.onClick}>Toggle height!</BpkButton>
+        <BpkButton onClick={this.onClick}>
+          {text('Button copy', 'Toggle height!')}
+        </BpkButton>
       </div>
     );
   }
@@ -64,8 +67,11 @@ AnimateHeightContainer.propTypes = {
 
 storiesOf('bpk-animate-height', module).add('Example', () => (
   <AnimateHeightContainer fromHeight="auto" toHeight={0} duration={300}>
-    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
-    ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis
-    parturient montes, nascetur ridiculus mus.
+    {text(
+      'Copy',
+      `Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
+ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis
+parturient montes, nascetur ridiculus mus.`,
+    )}
   </AnimateHeightContainer>
 ));

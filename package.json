@@ -32,6 +32,7 @@
     "build:tokens": "lerna run tokens --scope bpk-tokens",
     "build:svgs": "lerna run svgs --scope bpk-svgs",
     "build": "npm run build:tokens && npm run build:svgs && lerna run build && (cd ./native && npm run link)",
+    "storybook:dist": "build-storybook -c .storybook -o dist/storybook",
     "storybook": "start-storybook -p 9001",
     "sassdoc": "sassdoc {packages/bpk-mixins/src/**/*,packages/bpk-svgs/dist/*,packages/bpk-tokens/tokens/base.default}.scss -d dist/sassdoc -v --strict",
     "docs": "webpack-dev-server --open",
@@ -66,6 +67,7 @@
   "license": "Apache-2.0",
   "devDependencies": {
     "@storybook/addon-actions": "^3.3.9",
+    "@storybook/addon-knobs": "^3.4.6",
     "@storybook/addon-links": "^3.3.9",
     "@storybook/react": "^3.3.9",
     "autoprefixer": "^8.0.0",

@@ -17,6 +17,7 @@ script:
   - npm run danger
   - npm test
   - npm run docs:neo:dist
+  - if [ "$TRAVIS_BRANCH" == 'master' ] && [ "$TRAVIS_PULL_REQUEST" == 'false' ]; then npm run storybook:dist; fi
   - test -e dist/index.html
   - test -e dist/sassdoc/index.html
 cache:
@@ -26,6 +27,7 @@ branches:
   only:
     - master
     - /^greenkeeper/.*$/
+
 deploy:
   provider: pages
   skip_cleanup: true
@@ -38,6 +40,7 @@ deploy:
   repo: backpack/backpack.github.io
   target-branch: master
   verbose: true
+
 notifications:
   slack:
     rooms:
