@@ -35,6 +35,7 @@ export type Props = {
   icon: string,
   blank: boolean,
   centerIcon: boolean,
+  fullWidth: boolean,
   iconWidth: ?string,
   className: ?string,
 };
@@ -47,20 +48,22 @@ const HomePageCard = (props: Props) => {
     icon,
     blank,
     centerIcon,
+    fullWidth,
     iconWidth,
     className,
     ...rest
   } = props;
-  const classNames = [getClassName('bpkdocs-home-page-card')];
 
-  if (className) {
-    classNames.push(className);
-  }
-  const iconClassNames = [getClassName('bpkdocs-home-page-card__icon')];
+  const classNames = getClassName(
+    'bpkdocs-home-page-card',
+    fullWidth && 'bpkdocs-home-page-card--full-width',
+    className,
+  );
 
-  if (centerIcon) {
-    iconClassNames.push(getClassName('bpkdocs-home-page-card__icon--centered'));
-  }
+  const iconClassNames = getClassName(
+    'bpkdocs-home-page-card__icon',
+    centerIcon && 'bpkdocs-home-page-card__icon--centered',
+  );
 
   return (
     <BpkCard
@@ -68,7 +71,7 @@ const HomePageCard = (props: Props) => {
       href={href}
       padded={false}
       blank={blank}
-      className={classNames.join(' ')}
+      className={classNames}
       {...rest}
     >
       <div className={getClassName('bpkdocs-home-page-card__inner')}>
@@ -83,7 +86,7 @@ const HomePageCard = (props: Props) => {
           <img
             src={icon}
             alt={title}
-            className={iconClassNames.join(' ')}
+            className={iconClassNames}
             style={{ width: iconWidth }}
           />
         </div>
@@ -106,12 +109,14 @@ HomePageCard.propTypes = {
   icon: PropTypes.string.isRequired,
   blank: PropTypes.bool,
   centerIcon: PropTypes.bool,
+  fullWidth: PropTypes.bool,
   iconWidth: PropTypes.string,
   className: PropTypes.string,
 };
 
 HomePageCard.defaultProps = {
   centerIcon: false,
+  fullWidth: false,
   blank: false,
   href: null,
   iconWidth: null,

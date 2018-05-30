@@ -34,11 +34,13 @@ import ComponentsImage from '../../static/components.jpg';
 import DesignTokensImage from '../../static/design_tokens.jpg';
 import GitHubImage from '../../static/github.jpg';
 import UsingBackpackImage from '../../static/using_bpk.jpg';
+// import StyleGuideImage from '../../static/style_guide.jpg';
 
 import ComponentsIcon from '../../static/components_icon.svg';
 import DesignTokensIcon from '../../static/design_tokens_icon.svg';
 import GitHubIcon from '../../static/github_icon.svg';
 import UsingBackpackIcon from '../../static/using_bpk_icon.svg';
+// import StyleGuideIcon from '../../static/style_guide_icon.svg';
 import BackpackLogoWhite from '../../static/backpack-logo-white.svg';
 import HeroImage from '../../static/hero.jpg';
 import LondonHeroImage from '../../static/london_hero.jpg';
@@ -68,7 +70,15 @@ const CARD_CONTENTS = [
     href: ROUTES.TOKENS,
     image: DesignTokensImage,
     icon: DesignTokensIcon,
+    // fullWidth: true, // TODO uncomment.
   },
+  // {
+  //   key: 'style-guide',
+  //   title: 'Style guide',
+  //   href: ROUTES.STYLE_GUIDE,
+  //   image: StyleGuideImage,
+  //   icon: StyleGuideIcon,
+  // },
   {
     key: 'github',
     title: 'GitHub',
