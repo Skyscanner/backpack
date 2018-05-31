@@ -83,6 +83,7 @@ npm install [package-name] --save-dev
 | [`bpk-stylesheets`](/packages/bpk-stylesheets) | [![npm version](https://badge.fury.io/js/bpk-stylesheets.svg)](http://badge.fury.io/js/bpk-stylesheets) |
 | [`bpk-svgs`](/packages/bpk-svgs) | [![npm version](https://badge.fury.io/js/bpk-svgs.svg)](http://badge.fury.io/js/bpk-svgs) |
 | [`bpk-tokens`](/packages/bpk-tokens) | [![npm version](https://badge.fury.io/js/bpk-tokens.svg)](http://badge.fury.io/js/bpk-tokens) |
+| [`react-native-bpk-component-alert`](/native/packages/react-native-bpk-component-alert) | [![npm version](https://badge.fury.io/js/react-native-bpk-component-alert.svg)](http://badge.fury.io/js/react-native-bpk-component-alert) |
 | [`react-native-bpk-component-animate-height`](/native/packages/react-native-bpk-component-animate-height) | [![npm version](https://badge.fury.io/js/react-native-bpk-component-animate-height.svg)](http://badge.fury.io/js/react-native-bpk-component-animate-height) |
 | [`react-native-bpk-component-badge`](/native/packages/react-native-bpk-component-badge) | [![npm version](https://badge.fury.io/js/react-native-bpk-component-badge.svg)](http://badge.fury.io/js/react-native-bpk-component-badge) |
 | [`react-native-bpk-component-banner-alert`](/native/packages/react-native-bpk-component-banner-alert) | [![npm version](https://badge.fury.io/js/react-native-bpk-component-banner-alert.svg)](http://badge.fury.io/js/react-native-bpk-component-banner-alert) |

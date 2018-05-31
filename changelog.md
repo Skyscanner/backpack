@@ -2,6 +2,12 @@
 
 [Unreleased changes](./unreleased.md).
 
+# 2018-05-31 - Add native alert component
+
+**Added:**
+- react-native-bpk-component-alert: 1.0.0
+  - Introducing the React Native alert component, see https://backpack.github.io/components/alert?platform=native
+
 # 2018-05-30 - Add mileage icon, RTL fix for IE
 
 **Added:**
