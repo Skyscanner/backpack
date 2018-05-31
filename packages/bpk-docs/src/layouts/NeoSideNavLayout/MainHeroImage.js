@@ -51,8 +51,18 @@ export default (props: Props) => {
     }
   }
 
+  const heroClassNames = getClassName(
+    'bpkdocs-main-hero-image',
+    !heroImage && 'bpkdocs-main-hero-image--collapsed',
+  );
+
+  const hamburgerMenuClassNames = getClassName(
+    'bpkdocs-main-hero-image__hamburger',
+    !heroImage && 'bpkdocs-main-hero-image__hamburger--hero-collapsed',
+  );
+
   return (
-    <div className={getClassName('bpkdocs-main-hero-image')} style={heroStyle}>
+    <div className={heroClassNames} style={heroStyle}>
       <BpkBreakpoint query={BREAKPOINTS.ABOVE_TABLET}>
         {aboveTablet =>
           !aboveTablet && (
@@ -60,7 +70,7 @@ export default (props: Props) => {
               label="Open menu"
               onClick={onHamburgerClick}
               customIcon={MenuIcon}
-              className={getClassName('bpkdocs-main-hero-image__hamburger')}
+              className={hamburgerMenuClassNames}
             />
           )
         }

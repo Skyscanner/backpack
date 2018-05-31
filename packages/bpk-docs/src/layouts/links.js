@@ -617,9 +617,6 @@ export default [
     id: 'STYLE_GUIDE',
     category: 'Style guide',
     sort: true,
-    hero: {
-      url: `/${DesignTokensImage}`, // TODO
-    },
     links: [
       { id: 'COPYWRITING', route: routes.COPYWRITING, children: 'Copywriting' },
     ],
