@@ -146,6 +146,8 @@ export const NEO_BADGE = '/components/badge';
 export const NEO_PANEL = '/components/panel';
 export const NEO_IMAGE = '/components/image';
 export const NEO_BANNER_ALERT = '/components/banner-alert';
+export const NEO_ALERT = '/components/alert';
+
 export const NEO_MOBILE_SCROLL_CONTAINER =
   '/components/mobile-scroll-container';
 export const NEO_MODAL = '/components/modal';
