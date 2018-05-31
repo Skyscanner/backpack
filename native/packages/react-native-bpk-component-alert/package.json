@@ -1,6 +1,6 @@
 {
   "name": "react-native-bpk-component-alert",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "main": "index.js",
   "description": "Backpack React Native alert component.",
   "repository": {
