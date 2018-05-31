@@ -17,6 +17,9 @@
 
 - bpk-component-breakpoint:
   - Change `children` proptype to `oneOfType(node, func)` (added `node`).
-  
+
 - bpk-component-phone-input:
   - Introducing the web phone input component.
+
+- bpk-component-select:
+  - Add ability to display an image in the select component.
