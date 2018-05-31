@@ -17,7 +17,6 @@
  */
 
 import addon from '@storybook/addons';
-import RNRestart from 'react-native-restart';
 import { I18nManager, AppRegistry, YellowBox } from 'react-native';
 import { getStorybookUI, configure } from '@storybook/react-native';
 
@@ -25,7 +24,6 @@ import { RTL_EVENT, CHANNEL_POLL_INTERVAL } from './constants';
 
 const toggleRTL = rtlEnabled => {
   I18nManager.forceRTL(!rtlEnabled);
-  RNRestart.Restart();
 };
 
 const onChannelAvailable = (...fns) => {
@@ -65,6 +63,7 @@ configure(() => {
   require('../packages/react-native-bpk-component-horizontal-nav/stories');
   require('../packages/react-native-bpk-component-icon/stories');
   require('../packages/react-native-bpk-component-navigation-bar/stories');
+  require('../packages/react-native-bpk-component-map/stories');
   require('../packages/react-native-bpk-component-nudger/stories');
   require('../packages/react-native-bpk-component-carousel-indicator/stories');
   require('../packages/react-native-bpk-component-panel/stories');
