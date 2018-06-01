@@ -30,6 +30,9 @@ export const buttonHeight = 32;
 export const buttonLineHeightLarge = 4 * 12;
 export const buttonPaddingHorizontal = 4 * 3;
 export const buttonPaddingVertical = 8;
+export const carouselIndicatorDotSizeBase = 6;
+export const carouselIndicatorDotSizeMd = 4;
+export const carouselIndicatorDotSizeSm = 2;
 export const colorBlue100 = "rgb(203, 238, 245)";
 export const colorBlue200 = "rgb(176, 228, 238)";
 export const colorBlue300 = "rgb(127, 215, 232)";
@@ -104,9 +107,6 @@ export const lineHeightSm = 18;
 export const lineHeightXl = 24;
 export const lineHeightXs = 13;
 export const lineHeightXxl = 41;
-export const paginationDotSizeBase = 6;
-export const paginationDotSizeMd = 4;
-export const paginationDotSizeSm = 2;
 export const shadowLgColor = "rgb(37, 32, 51)";
 export const shadowLgOffsetHeight = 4;
 export const shadowLgOffsetWidth = 0;
@@ -177,6 +177,11 @@ shadowXlOffsetHeight,
 shadowXlOffsetWidth,
 shadowXlOpacity,
 shadowXlRadius,
+};
+export const carouselIndicatorDots = {
+carouselIndicatorDotSizeBase,
+carouselIndicatorDotSizeMd,
+carouselIndicatorDotSizeSm,
 };
 export const colors = {
 colorBlue100,
@@ -265,11 +270,6 @@ textSmLineHeight,
 textXlLineHeight,
 textXsLineHeight,
 textXxlLineHeight,
-};
-export const paginationDots = {
-paginationDotSizeBase,
-paginationDotSizeMd,
-paginationDotSizeSm,
 };
 export const radii = {
 borderRadiusPill,

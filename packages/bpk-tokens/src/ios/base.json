@@ -5,7 +5,7 @@
     "./base/box-shadows.json",
     "./base/buttons.json",
     "./base/colors.json",
-    "./base/pagination-dots.json",
+    "./base/carousel-indicator-dots.json",
     "./base/spacing.json",
     "./base/touchables.json",
     "./base/typography.json"

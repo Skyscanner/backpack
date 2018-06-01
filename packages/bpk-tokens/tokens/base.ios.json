@@ -92,6 +92,27 @@
       "name": "buttonPaddingVertical"
     },
     {
+      "type": "size",
+      "category": "carousel-indicator-dots",
+      "value": "6",
+      "originalValue": "{!CAROUSEL_INDICATOR_DOT_SIZE_BASE}",
+      "name": "carouselIndicatorDotSizeBase"
+    },
+    {
+      "type": "size",
+      "category": "carousel-indicator-dots",
+      "value": "4",
+      "originalValue": "{!CAROUSEL_INDICATOR_DOT_SIZE_MD}",
+      "name": "carouselIndicatorDotSizeMd"
+    },
+    {
+      "type": "size",
+      "category": "carousel-indicator-dots",
+      "value": "2",
+      "originalValue": "{!CAROUSEL_INDICATOR_DOT_SIZE_SM}",
+      "name": "carouselIndicatorDotSizeSm"
+    },
+    {
       "type": "color",
       "category": "colors",
       "value": "#cbeef5ff",
@@ -608,27 +629,6 @@
       "category": "typesettings",
       "originalValue": "{!LINE_HEIGHT_XXL}",
       "name": "lineHeightXxl"
-    },
-    {
-      "type": "size",
-      "category": "pagination-dots",
-      "value": "6",
-      "originalValue": "{!PAGINATION_DOT_SIZE_BASE}",
-      "name": "paginationDotSizeBase"
-    },
-    {
-      "type": "size",
-      "category": "pagination-dots",
-      "value": "4",
-      "originalValue": "{!PAGINATION_DOT_SIZE_MD}",
-      "name": "paginationDotSizeMd"
-    },
-    {
-      "type": "size",
-      "category": "pagination-dots",
-      "value": "2",
-      "originalValue": "{!PAGINATION_DOT_SIZE_SM}",
-      "name": "paginationDotSizeSm"
     },
     {
       "value": "#252033ff",

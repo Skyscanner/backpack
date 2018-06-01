@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`iOS BpkPaginationDots should render correctly 1`] = `
+exports[`Android BpkCarouselIndicator should render correctly 1`] = `
 <View
   childrenSortFn={[Function]}
   pointerEvents="box-none"
@@ -9,7 +9,7 @@ exports[`iOS BpkPaginationDots should render correctly 1`] = `
       Object {
         "alignItems": "center",
         "backgroundColor": "rgba(37, 32, 51, 0.3)",
-        "borderRadius": 4,
+        "borderRadius": 2,
         "flexDirection": "row",
         "height": 24,
         "justifyContent": "center",
@@ -84,7 +84,7 @@ exports[`iOS BpkPaginationDots should render correctly 1`] = `
 </View>
 `;
 
-exports[`iOS BpkPaginationDots should render correctly with a page count > 5 1`] = `
+exports[`Android BpkCarouselIndicator should render correctly with a page count > 5 1`] = `
 <View
   childrenSortFn={[Function]}
   pointerEvents="box-none"
@@ -93,7 +93,7 @@ exports[`iOS BpkPaginationDots should render correctly with a page count > 5 1`]
       Object {
         "alignItems": "center",
         "backgroundColor": "rgba(37, 32, 51, 0.3)",
-        "borderRadius": 4,
+        "borderRadius": 2,
         "flexDirection": "row",
         "height": 24,
         "justifyContent": "center",
@@ -168,7 +168,7 @@ exports[`iOS BpkPaginationDots should render correctly with a page count > 5 1`]
 </View>
 `;
 
-exports[`iOS BpkPaginationDots should render correctly with a page count equal to 11 and selected index equal to 9 1`] = `
+exports[`Android BpkCarouselIndicator should render correctly with a page count equal to 11 and selected index equal to 9 1`] = `
 <View
   childrenSortFn={[Function]}
   pointerEvents="box-none"
@@ -177,7 +177,7 @@ exports[`iOS BpkPaginationDots should render correctly with a page count equal t
       Object {
         "alignItems": "center",
         "backgroundColor": "rgba(37, 32, 51, 0.3)",
-        "borderRadius": 4,
+        "borderRadius": 2,
         "flexDirection": "row",
         "height": 24,
         "justifyContent": "center",
@@ -252,7 +252,7 @@ exports[`iOS BpkPaginationDots should render correctly with a page count equal t
 </View>
 `;
 
-exports[`iOS BpkPaginationDots should render correctly with arbitrary props 1`] = `
+exports[`Android BpkCarouselIndicator should render correctly with arbitrary props 1`] = `
 <View
   childrenSortFn={[Function]}
   pointerEvents="box-none"
@@ -261,7 +261,7 @@ exports[`iOS BpkPaginationDots should render correctly with arbitrary props 1`] 
       Object {
         "alignItems": "center",
         "backgroundColor": "rgba(37, 32, 51, 0.3)",
-        "borderRadius": 4,
+        "borderRadius": 2,
         "flexDirection": "row",
         "height": 24,
         "justifyContent": "center",
@@ -337,7 +337,7 @@ exports[`iOS BpkPaginationDots should render correctly with arbitrary props 1`] 
 </View>
 `;
 
-exports[`iOS BpkPaginationDots should render correctly with custom styles 1`] = `
+exports[`Android BpkCarouselIndicator should render correctly with custom styles 1`] = `
 <View
   childrenSortFn={[Function]}
   pointerEvents="box-none"
@@ -346,7 +346,7 @@ exports[`iOS BpkPaginationDots should render correctly with custom styles 1`] = 
       Object {
         "alignItems": "center",
         "backgroundColor": "rgba(37, 32, 51, 0.3)",
-        "borderRadius": 4,
+        "borderRadius": 2,
         "flexDirection": "row",
         "height": 24,
         "justifyContent": "center",

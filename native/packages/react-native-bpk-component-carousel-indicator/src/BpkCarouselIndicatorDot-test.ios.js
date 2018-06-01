@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import commonTests from './BpkPaginationDotsIndicator-test.common';
+import commonTests from './BpkCarouselIndicatorDot-test.common';
 
 describe('iOS', () => {
   commonTests();

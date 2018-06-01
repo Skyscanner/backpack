@@ -88,7 +88,7 @@ storiesOf('react-native-bpk-component-carousel', module)
       {renderImages()}
     </BpkCarousel>
   ))
-  .add('Perf: 100 elements with pagination', () => {
+  .add('Perf: 100 elements in carousel', () => {
     const colors = [colorGray300, colorGray500];
     return (
       <BpkCarousel accessibilityLabel={accessibilityLabel} style={styles.view}>
