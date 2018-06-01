@@ -31,7 +31,7 @@ import BpkBreakpoint, { BREAKPOINTS } from 'bpk-component-breakpoint';
 import ComponentsIcon from '../../static/components_icon.svg';
 import DesignTokensIcon from '../../static/design_tokens_icon.svg';
 import UsingBackpackIcon from '../../static/using_bpk_icon.svg';
-// import StyleGuideIcon from '../../static/style_guide_icon.svg';
+import StyleGuideIcon from '../../static/style_guide_icon.svg';
 
 import * as ROUTES from './../../constants/routes';
 import STYLES from './SectionsList.scss';
@@ -49,11 +49,11 @@ const sections = {
     link: ROUTES.TOKENS,
     icon: DesignTokensIcon,
   },
-  // STYLE_GUIDE: {
-  //   title: 'Style guide',
-  //   link: ROUTES.STYLE_GUIDE,
-  //   icon: StyleGuideIcon,
-  // },
+  STYLE_GUIDE: {
+    title: 'Style guide',
+    link: ROUTES.STYLE_GUIDE,
+    icon: StyleGuideIcon,
+  },
   COMPONENTS: {
     title: 'Components',
     link: ROUTES.COMPONENTS,
