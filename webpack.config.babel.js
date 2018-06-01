@@ -165,7 +165,7 @@ const config = {
         ],
       },
       {
-        test: /readme\.md$/,
+        test: /\.md$/,
         use: ['raw-loader'],
       },
     ],
