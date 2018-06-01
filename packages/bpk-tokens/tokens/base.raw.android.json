@@ -54,6 +54,15 @@
     "BORDER_SIZE_XL": {
       "value": 3
     },
+    "CAROUSEL_INDICATOR_DOT_SIZE_BASE": {
+      "value": 6
+    },
+    "CAROUSEL_INDICATOR_DOT_SIZE_MD": {
+      "value": 4
+    },
+    "CAROUSEL_INDICATOR_DOT_SIZE_SM": {
+      "value": 2
+    },
     "ELEVATION_BASE": {
       "value": 6
     },
@@ -182,15 +191,6 @@
     },
     "LINE_HEIGHT_XXL": {
       "value": 40
-    },
-    "PAGINATION_DOT_SIZE_BASE": {
-      "value": 6
-    },
-    "PAGINATION_DOT_SIZE_MD": {
-      "value": 4
-    },
-    "PAGINATION_DOT_SIZE_SM": {
-      "value": 2
     },
     "PINK_100": {
       "value": "#FFBFD7"
@@ -395,6 +395,27 @@
       "value": "8",
       "originalValue": "{!SPACING_MD}",
       "name": "BUTTON_PADDING_VERTICAL"
+    },
+    "CAROUSEL_INDICATOR_DOT_SIZE_BASE": {
+      "type": "size",
+      "category": "carousel-indicator-dots",
+      "value": "6",
+      "originalValue": "{!CAROUSEL_INDICATOR_DOT_SIZE_BASE}",
+      "name": "CAROUSEL_INDICATOR_DOT_SIZE_BASE"
+    },
+    "CAROUSEL_INDICATOR_DOT_SIZE_MD": {
+      "type": "size",
+      "category": "carousel-indicator-dots",
+      "value": "4",
+      "originalValue": "{!CAROUSEL_INDICATOR_DOT_SIZE_MD}",
+      "name": "CAROUSEL_INDICATOR_DOT_SIZE_MD"
+    },
+    "CAROUSEL_INDICATOR_DOT_SIZE_SM": {
+      "type": "size",
+      "category": "carousel-indicator-dots",
+      "value": "2",
+      "originalValue": "{!CAROUSEL_INDICATOR_DOT_SIZE_SM}",
+      "name": "CAROUSEL_INDICATOR_DOT_SIZE_SM"
     },
     "COLOR_BLUE_100": {
       "type": "color",
@@ -956,27 +977,6 @@
       "originalValue": "{!LINE_HEIGHT_XXL}",
       "name": "LINE_HEIGHT_XXL"
     },
-    "PAGINATION_DOT_SIZE_BASE": {
-      "type": "size",
-      "category": "pagination-dots",
-      "value": "6",
-      "originalValue": "{!PAGINATION_DOT_SIZE_BASE}",
-      "name": "PAGINATION_DOT_SIZE_BASE"
-    },
-    "PAGINATION_DOT_SIZE_MD": {
-      "type": "size",
-      "category": "pagination-dots",
-      "value": "4",
-      "originalValue": "{!PAGINATION_DOT_SIZE_MD}",
-      "name": "PAGINATION_DOT_SIZE_MD"
-    },
-    "PAGINATION_DOT_SIZE_SM": {
-      "type": "size",
-      "category": "pagination-dots",
-      "value": "2",
-      "originalValue": "{!PAGINATION_DOT_SIZE_SM}",
-      "name": "PAGINATION_DOT_SIZE_SM"
-    },
     "SPACING_BASE": {
       "type": "size",
       "category": "spacings",
@@ -1167,6 +1167,9 @@
     "BUTTON_LINE_HEIGHT_LARGE",
     "BUTTON_PADDING_HORIZONTAL",
     "BUTTON_PADDING_VERTICAL",
+    "CAROUSEL_INDICATOR_DOT_SIZE_BASE",
+    "CAROUSEL_INDICATOR_DOT_SIZE_MD",
+    "CAROUSEL_INDICATOR_DOT_SIZE_SM",
     "COLOR_BLUE_100",
     "COLOR_BLUE_200",
     "COLOR_BLUE_300",
@@ -1247,9 +1250,6 @@
     "LINE_HEIGHT_XL",
     "LINE_HEIGHT_XS",
     "LINE_HEIGHT_XXL",
-    "PAGINATION_DOT_SIZE_BASE",
-    "PAGINATION_DOT_SIZE_MD",
-    "PAGINATION_DOT_SIZE_SM",
     "SPACING_BASE",
     "SPACING_LG",
     "SPACING_MD",

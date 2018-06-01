@@ -1,9 +1,9 @@
 {
-  "name": "react-native-bpk-component-pagination-dots",
+  "name": "react-native-bpk-component-carousel-indicator",
   "version": "0.0.11",
   "private": true,
   "main": "index.js",
-  "description": "Backpack React Native pagination dots component.",
+  "description": "Backpack React Native carousel indicators component.",
   "repository": {
     "type": "git",
     "url": "git@github.com:Skyscanner/backpack.git"

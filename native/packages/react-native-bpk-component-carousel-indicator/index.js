@@ -18,6 +18,6 @@
 
 /* @flow */
 
-import BpkPaginationDots from './src/BpkPaginationDots';
+import BpkCarouselIndicator from './src/BpkCarouselIndicator';
 
-export default BpkPaginationDots;
+export default BpkCarouselIndicator;

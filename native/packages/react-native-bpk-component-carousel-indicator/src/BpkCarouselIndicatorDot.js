@@ -26,9 +26,9 @@ import {
   colorGray100,
   colorWhite,
   spacingSm,
-  paginationDotSizeSm,
-  paginationDotSizeMd,
-  paginationDotSizeBase,
+  carouselIndicatorDotSizeSm,
+  carouselIndicatorDotSizeMd,
+  carouselIndicatorDotSizeBase,
 } from 'bpk-tokens/tokens/base.react.native';
 import { Animated, StyleSheet, type AnimatedValue } from 'react-native';
 
@@ -51,9 +51,9 @@ export const INDICATOR_SIZES = {
 };
 
 const indicatorDimensions = {
-  [INDICATOR_SIZES.base]: paginationDotSizeBase,
-  [INDICATOR_SIZES.md]: paginationDotSizeMd,
-  [INDICATOR_SIZES.sm]: paginationDotSizeSm,
+  [INDICATOR_SIZES.base]: carouselIndicatorDotSizeBase,
+  [INDICATOR_SIZES.md]: carouselIndicatorDotSizeMd,
+  [INDICATOR_SIZES.sm]: carouselIndicatorDotSizeSm,
   [INDICATOR_SIZES.invisible]: 0,
 };
 
@@ -62,7 +62,7 @@ type Props = {
   size: $Keys<typeof INDICATOR_SIZES>,
 };
 
-class BpkPaginationDotsIndicator extends React.Component<Props, {}> {
+class BpkCarouselIndicatorDot extends React.Component<Props, {}> {
   size: AnimatedValue;
 
   static propTypes = {
@@ -120,4 +120,4 @@ class BpkPaginationDotsIndicator extends React.Component<Props, {}> {
   }
 }
 
-export default BpkPaginationDotsIndicator;
+export default BpkCarouselIndicatorDot;

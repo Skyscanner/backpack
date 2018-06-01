@@ -1,0 +1,20 @@
+{
+  "imports": [
+    "./aliases.json"
+  ],
+  "global": {
+    "type": "size",
+    "category": "carousel-indicator-dots"
+  },
+  "props": {
+    "CAROUSEL_INDICATOR_DOT_SIZE_SM": {
+      "value": "{!CAROUSEL_INDICATOR_DOT_SIZE_SM}"
+    },
+    "CAROUSEL_INDICATOR_DOT_SIZE_MD": {
+      "value": "{!CAROUSEL_INDICATOR_DOT_SIZE_MD}"
+    },
+    "CAROUSEL_INDICATOR_DOT_SIZE_BASE": {
+      "value": "{!CAROUSEL_INDICATOR_DOT_SIZE_BASE}"
+    }
+  }
+}

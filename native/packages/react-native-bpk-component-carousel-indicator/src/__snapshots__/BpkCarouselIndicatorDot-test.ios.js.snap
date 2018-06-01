@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`iOS BpkPaginationIndicator should render correctly 1`] = `
+exports[`iOS BpkCarouselIndicator should render correctly 1`] = `
 <View
   collapsable={undefined}
   style={
@@ -15,7 +15,7 @@ exports[`iOS BpkPaginationIndicator should render correctly 1`] = `
 />
 `;
 
-exports[`iOS BpkPaginationIndicator should render correctly with selected 1`] = `
+exports[`iOS BpkCarouselIndicator should render correctly with selected 1`] = `
 <View
   collapsable={undefined}
   style={
@@ -30,7 +30,7 @@ exports[`iOS BpkPaginationIndicator should render correctly with selected 1`] = 
 />
 `;
 
-exports[`iOS BpkPaginationIndicator should render correctly with size=base 1`] = `
+exports[`iOS BpkCarouselIndicator should render correctly with size=base 1`] = `
 <View
   collapsable={undefined}
   style={
@@ -45,7 +45,7 @@ exports[`iOS BpkPaginationIndicator should render correctly with size=base 1`] =
 />
 `;
 
-exports[`iOS BpkPaginationIndicator should render correctly with size=invisible 1`] = `
+exports[`iOS BpkCarouselIndicator should render correctly with size=invisible 1`] = `
 <View
   collapsable={undefined}
   style={
@@ -60,7 +60,7 @@ exports[`iOS BpkPaginationIndicator should render correctly with size=invisible 
 />
 `;
 
-exports[`iOS BpkPaginationIndicator should render correctly with size=md 1`] = `
+exports[`iOS BpkCarouselIndicator should render correctly with size=md 1`] = `
 <View
   collapsable={undefined}
   style={
@@ -75,7 +75,7 @@ exports[`iOS BpkPaginationIndicator should render correctly with size=md 1`] = `
 />
 `;
 
-exports[`iOS BpkPaginationIndicator should render correctly with size=sm 1`] = `
+exports[`iOS BpkCarouselIndicator should render correctly with size=sm 1`] = `
 <View
   collapsable={undefined}
   style={

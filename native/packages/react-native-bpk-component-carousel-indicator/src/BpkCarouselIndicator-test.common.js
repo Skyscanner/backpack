@@ -19,13 +19,13 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 
-import BpkPaginationDots from './BpkPaginationDots';
+import BpkCarouselIndicator from './BpkCarouselIndicator';
 
 const commonTests = () => {
-  describe('BpkPaginationDots', () => {
+  describe('BpkCarouselIndicator', () => {
     it(`should render correctly`, () => {
       const tree = renderer
-        .create(<BpkPaginationDots pageCount={5} selectedIndex={2} />)
+        .create(<BpkCarouselIndicator pageCount={5} selectedIndex={2} />)
         .toJSON();
 
       expect(tree).toMatchSnapshot();
@@ -33,7 +33,7 @@ const commonTests = () => {
 
     it(`should render correctly with a page count > 5`, () => {
       const tree = renderer
-        .create(<BpkPaginationDots pageCount={6} selectedIndex={2} />)
+        .create(<BpkCarouselIndicator pageCount={6} selectedIndex={2} />)
         .toJSON();
 
       expect(tree).toMatchSnapshot();
@@ -41,7 +41,7 @@ const commonTests = () => {
 
     it(`should render correctly with a page count equal to 11 and selected index equal to 9`, () => {
       const tree = renderer
-        .create(<BpkPaginationDots pageCount={11} selectedIndex={9} />)
+        .create(<BpkCarouselIndicator pageCount={11} selectedIndex={9} />)
         .toJSON();
 
       expect(tree).toMatchSnapshot();
@@ -50,7 +50,7 @@ const commonTests = () => {
     it(`should render correctly with custom styles`, () => {
       const tree = renderer
         .create(
-          <BpkPaginationDots
+          <BpkCarouselIndicator
             pageCount={5}
             selectedIndex={0}
             style={{ marginTop: 10 }}
@@ -63,7 +63,7 @@ const commonTests = () => {
     it(`should render correctly with arbitrary props`, () => {
       const tree = renderer
         .create(
-          <BpkPaginationDots
+          <BpkCarouselIndicator
             pageCount={5}
             selectedIndex={0}
             testID="123" // Arbitrary prop.

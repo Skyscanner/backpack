@@ -18,7 +18,7 @@
 
 /* @flow */
 
-import commonTests from './BpkPaginationDots-test.common';
+import commonTests from './BpkCarouselIndicatorDot-test.common';
 
 jest.mock('react-native', () => {
   const reactNative = jest.requireActual('react-native');

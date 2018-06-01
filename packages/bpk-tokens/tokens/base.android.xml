@@ -33,6 +33,9 @@
   <property name="BUTTON_LINE_HEIGHT_LARGE" category="spacings">4 * 12dp</property>
   <property name="BUTTON_PADDING_HORIZONTAL" category="spacings">4 * 3dp</property>
   <property name="BUTTON_PADDING_VERTICAL" category="spacings">8dp</property>
+  <property name="CAROUSEL_INDICATOR_DOT_SIZE_BASE" category="carousel-indicator-dots">6dp</property>
+  <property name="CAROUSEL_INDICATOR_DOT_SIZE_MD" category="carousel-indicator-dots">4dp</property>
+  <property name="CAROUSEL_INDICATOR_DOT_SIZE_SM" category="carousel-indicator-dots">2dp</property>
   <color name="COLOR_BLUE_100" category="colors">#ffcbeef5</color>
   <color name="COLOR_BLUE_200" category="colors">#ffb0e4ee</color>
   <color name="COLOR_BLUE_300" category="colors">#ff7fd7e8</color>
@@ -113,9 +116,6 @@
   <property name="LINE_HEIGHT_XL" category="typesettings">32dp</property>
   <property name="LINE_HEIGHT_XS" category="typesettings">18dp</property>
   <property name="LINE_HEIGHT_XXL" category="typesettings">40dp</property>
-  <property name="PAGINATION_DOT_SIZE_BASE" category="pagination-dots">6dp</property>
-  <property name="PAGINATION_DOT_SIZE_MD" category="pagination-dots">4dp</property>
-  <property name="PAGINATION_DOT_SIZE_SM" category="pagination-dots">2dp</property>
   <property name="SPACING_BASE" category="spacings">16dp</property>
   <property name="SPACING_LG" category="spacings">24dp</property>
   <property name="SPACING_MD" category="spacings">8dp</property>

@@ -26,12 +26,12 @@ import {
   ViewPropTypes,
   StyleSheet,
 } from 'react-native';
-import BpkPaginationDots from 'react-native-bpk-component-pagination-dots';
+import BpkCarouselIndicator from 'react-native-bpk-component-carousel-indicator';
 import { spacingXl } from 'bpk-tokens/tokens/base.react.native';
 import typeof BpkCarouselItem from './BpkCarouselItem';
 
 const styles = StyleSheet.create({
-  pagination: {
+  carouselIndicator: {
     alignSelf: 'center',
     marginTop: -spacingXl,
   },
@@ -124,8 +124,8 @@ class BpkCarousel extends React.Component<Props, State> {
         </ScrollView>
         {shouldRenderChildren &&
           showIndicator && (
-            <BpkPaginationDots
-              style={styles.pagination}
+            <BpkCarouselIndicator
+              style={styles.carouselIndicator}
               accessibilityLabel={this.getAccessibilityLabel()}
               pageCount={childrenCount}
               selectedIndex={currentIndex}

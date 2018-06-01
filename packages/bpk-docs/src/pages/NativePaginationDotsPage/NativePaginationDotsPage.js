@@ -17,13 +17,13 @@
  */
 
 import React from 'react';
-import readme from 'react-native-bpk-component-pagination-dots/readme.md';
+import readme from 'react-native-bpk-component-carousel-indicator/readme.md';
 
-import iosScreenshotDefault from 'react-native-bpk-component-pagination-dots/screenshots/ios/default.png';
-import androidScreenshotDefault from 'react-native-bpk-component-pagination-dots/screenshots/android/default.png';
+import iosScreenshotDefault from 'react-native-bpk-component-carousel-indicator/screenshots/ios/default.png';
+import androidScreenshotDefault from 'react-native-bpk-component-carousel-indicator/screenshots/android/default.png';
 
-import iosScreenshotWithOverlay from 'react-native-bpk-component-pagination-dots/screenshots/ios/with-overlay.png';
-import androidScreenshotWithOverlay from 'react-native-bpk-component-pagination-dots/screenshots/android/with-overlay.png';
+import iosScreenshotWithOverlay from 'react-native-bpk-component-carousel-indicator/screenshots/ios/with-overlay.png';
+import androidScreenshotWithOverlay from 'react-native-bpk-component-carousel-indicator/screenshots/android/with-overlay.png';
 
 import Paragraph from './../../components/Paragraph';
 import DocsPageBuilder from './../../components/DocsPageBuilder';

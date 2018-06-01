@@ -37,7 +37,7 @@ import BpkNudger from 'react-native-bpk-component-nudger';
 import CenterDecorator from '../../storybook/CenterDecorator';
 import { StorySubheading } from '../../storybook/TextStyles';
 
-import BpkPaginationDots from './index';
+import BpkCarouselIndicator from './index';
 
 const PAGE_WIDTH = 300;
 
@@ -80,7 +80,7 @@ const pageColors = [
   colorRed500,
 ];
 
-class StatefulBpkPaginationExample extends React.Component<
+class StatefulBpkCarouselIndicatorExample extends React.Component<
   {},
   {
     pageCount: number,
@@ -147,7 +147,7 @@ class StatefulBpkPaginationExample extends React.Component<
                 />
               ))}
           </ScrollView>
-          <BpkPaginationDots
+          <BpkCarouselIndicator
             pageCount={pageCount}
             selectedIndex={selectedIndex}
             style={styles.overlayDots}
@@ -178,7 +178,7 @@ class StatefulBpkPaginationExample extends React.Component<
   }
 }
 
-storiesOf('react-native-bpk-component-pagination-dots', module)
+storiesOf('react-native-bpk-component-carousel-indicator', module)
   .addDecorator(CenterDecorator)
   .add('docs:default', () => (
     <View>
@@ -187,7 +187,7 @@ storiesOf('react-native-bpk-component-pagination-dots', module)
           <StorySubheading>
             {index + 1} page{index === 0 ? '' : 's'}
           </StorySubheading>
-          <BpkPaginationDots pageCount={index + 1} selectedIndex={0} />
+          <BpkCarouselIndicator pageCount={index + 1} selectedIndex={0} />
         </View>
       ))}
       <View style={styles.storyInstance}>
@@ -197,7 +197,7 @@ storiesOf('react-native-bpk-component-pagination-dots', module)
         {new Array(6)
           .fill()
           .map((_, index) => (
-            <BpkPaginationDots
+            <BpkCarouselIndicator
               key={index.toString()}
               pageCount={6}
               selectedIndex={index}
@@ -214,13 +214,13 @@ storiesOf('react-native-bpk-component-pagination-dots', module)
           key={index.toString()}
           style={[styles.colorBlock, { backgroundColor: pageColors[index] }]}
         >
-          <BpkPaginationDots pageCount={6} selectedIndex={0} />
+          <BpkCarouselIndicator pageCount={6} selectedIndex={0} />
         </View>
       ))}
     </View>
   ))
   .add('Stateful example', () => (
     <View>
-      <StatefulBpkPaginationExample />
+      <StatefulBpkCarouselIndicatorExample />
     </View>
   ));

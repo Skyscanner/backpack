@@ -31,9 +31,9 @@ import {
 import TransitionGroup from '@skyscanner/react-native-transitiongroup';
 import { StyleSheet, ViewPropTypes, type StyleObj } from 'react-native';
 
-import BpkPaginationDotsIndicator, {
+import BpkCarouselIndicatorDot, {
   INDICATOR_SIZES,
-} from './BpkPaginationDotsIndicator';
+} from './BpkCarouselIndicatorDot';
 
 const styles = StyleSheet.create({
   wrapper: {
@@ -118,13 +118,13 @@ const transitionGroupSorter = children =>
       return acc;
     }, {});
 
-const BpkPaginationDots = (props: Props) => {
+const BpkCarouselIndicator = (props: Props) => {
   const { pageCount, selectedIndex, style, ...rest } = props;
 
   const indicators = new Array(pageCount)
     .fill()
     .map((_, index) => (
-      <BpkPaginationDotsIndicator
+      <BpkCarouselIndicatorDot
         key={index.toString()}
         selected={selectedIndex === index}
         size={getIndicatorSize(pageCount, index, selectedIndex)}
@@ -144,14 +144,14 @@ const BpkPaginationDots = (props: Props) => {
   );
 };
 
-BpkPaginationDots.propTypes = {
+BpkCarouselIndicator.propTypes = {
   pageCount: PropTypes.number.isRequired,
   selectedIndex: PropTypes.number.isRequired,
   style: ViewPropTypes.style,
 };
 
-BpkPaginationDots.defaultProps = {
+BpkCarouselIndicator.defaultProps = {
   style: null,
 };
 
-export default BpkPaginationDots;
+export default BpkCarouselIndicator;
