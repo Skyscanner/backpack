@@ -46,10 +46,6 @@ $bpk-card-spacing-mobile: $bpk-spacing-md;
   width: calc(100% - (2 * #{$bpk-spacing-xl}));
   max-width: $bpk-center-content-width-desktop;
 
-  @media (max-width: $bpk-breakpoint-desktop) {
-    max-width: 100%;
-  }
-
   // stylelint-disable-next-line
   @include bpk-breakpoint-tablet {
     width: 100%;
@@ -58,5 +54,9 @@ $bpk-card-spacing-mobile: $bpk-spacing-md;
 
   @include bpk-breakpoint-mobile {
     padding: 0 $bpk-spacing-md;
+  }
+
+  @media (max-width: $bpk-breakpoint-desktop) {
+    max-width: 100%;
   }
 }
