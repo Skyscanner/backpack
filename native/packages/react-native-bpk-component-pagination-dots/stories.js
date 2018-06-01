@@ -33,6 +33,7 @@ import {
   spacingXl,
 } from 'bpk-tokens/tokens/base.react.native';
 import BpkNudger from 'react-native-bpk-component-nudger';
+
 import CenterDecorator from '../../storybook/CenterDecorator';
 import { StorySubheading } from '../../storybook/TextStyles';
 
@@ -147,7 +148,6 @@ class StatefulBpkPaginationExample extends React.Component<
               ))}
           </ScrollView>
           <BpkPaginationDots
-            accessibilityLabel={`${selectedIndex + 1} of ${pageCount}`}
             pageCount={pageCount}
             selectedIndex={selectedIndex}
             style={styles.overlayDots}
@@ -187,24 +187,19 @@ storiesOf('react-native-bpk-component-pagination-dots', module)
           <StorySubheading>
             {index + 1} page{index === 0 ? '' : 's'}
           </StorySubheading>
-          <BpkPaginationDots
-            accessibilityLabel={`1 of ${index + 1}`}
-            pageCount={index + 1}
-            selectedIndex={0}
-          />
+          <BpkPaginationDots pageCount={index + 1} selectedIndex={0} />
         </View>
       ))}
       <View style={styles.storyInstance}>
         <StorySubheading>
           More than 5 pages (shown with different selected indexes)
         </StorySubheading>
-        {new Array(7)
+        {new Array(6)
           .fill()
           .map((_, index) => (
             <BpkPaginationDots
-              accessibilityLabel={`${index + 1} of 6`}
               key={index.toString()}
-              pageCount={7}
+              pageCount={6}
               selectedIndex={index}
               style={styles.storyInstance}
             />
@@ -219,11 +214,7 @@ storiesOf('react-native-bpk-component-pagination-dots', module)
           key={index.toString()}
           style={[styles.colorBlock, { backgroundColor: pageColors[index] }]}
         >
-          <BpkPaginationDots
-            pageCount={6}
-            selectedIndex={0}
-            accessibilityLabel={`${index + 1} of 6`}
-          />
+          <BpkPaginationDots pageCount={6} selectedIndex={0} />
         </View>
       ))}
     </View>

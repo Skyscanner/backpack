@@ -19,7 +19,6 @@
 /* @flow */
 
 import React from 'react';
-import { Animated, StyleSheet, type AnimatedValue } from 'react-native';
 import PropTypes from 'prop-types';
 import {
   animationDurationSm,
@@ -31,6 +30,7 @@ import {
   paginationDotSizeMd,
   paginationDotSizeBase,
 } from 'bpk-tokens/tokens/base.react.native';
+import { Animated, StyleSheet, type AnimatedValue } from 'react-native';
 
 const styles = StyleSheet.create({
   indicator: {
@@ -63,6 +63,8 @@ type Props = {
 };
 
 class BpkPaginationDotsIndicator extends React.Component<Props, {}> {
+  size: AnimatedValue;
+
   static propTypes = {
     selected: PropTypes.bool,
     size: PropTypes.oneOf(Object.keys(INDICATOR_SIZES)),
@@ -73,29 +75,46 @@ class BpkPaginationDotsIndicator extends React.Component<Props, {}> {
     size: INDICATOR_SIZES.base,
   };
 
-  componentDidUpdate() {
-    Animated.timing(this.size, {
-      duration: animationDurationSm,
-      toValue: indicatorDimensions[this.props.size],
-    }).start();
+  constructor(props: Props) {
+    super(props);
+
+    this.size = new Animated.Value(indicatorDimensions[this.props.size]);
   }
 
-  size: AnimatedValue = new Animated.Value(
-    indicatorDimensions[this.props.size],
-  );
+  componentDidUpdate() {
+    this.animate(this.props.size);
+  }
+
+  componentWillEnter(callback: () => mixed) {
+    this.size.setValue(indicatorDimensions[INDICATOR_SIZES.invisible]);
+
+    this.animate(this.props.size, callback);
+  }
+
+  componentWillLeave(callback: () => mixed) {
+    this.animate(INDICATOR_SIZES.invisible, callback);
+  }
+
+  animate = (size: $Keys<typeof INDICATOR_SIZES>, callback: ?() => mixed) => {
+    Animated.timing(this.size, {
+      duration: animationDurationSm,
+      toValue: indicatorDimensions[size],
+    }).start(callback);
+  };
 
   render() {
     const { selected } = this.props;
-    const style = [styles.indicator];
+    const style = [
+      styles.indicator,
+      {
+        height: this.size,
+        width: this.size,
+      },
+    ];
 
     if (selected) {
       style.push(styles.indicatorSelected);
     }
-
-    style.push({
-      height: this.size,
-      width: this.size,
-    });
 
     return <Animated.View style={style} />;
   }

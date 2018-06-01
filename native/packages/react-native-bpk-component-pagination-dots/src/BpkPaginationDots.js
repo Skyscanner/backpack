@@ -19,7 +19,6 @@
 /* @flow */
 
 import React from 'react';
-import { StyleSheet, View, ViewPropTypes } from 'react-native';
 import PropTypes from 'prop-types';
 import { setOpacity } from 'bpk-tokens';
 import {
@@ -29,14 +28,12 @@ import {
   spacingMd,
   spacingLg,
 } from 'bpk-tokens/tokens/base.react.native';
+import TransitionGroup from '@skyscanner/react-native-transitiongroup';
+import { StyleSheet, ViewPropTypes, type StyleObj } from 'react-native';
 
 import BpkPaginationDotsIndicator, {
   INDICATOR_SIZES,
 } from './BpkPaginationDotsIndicator';
-
-// When there are 5 dots or fewer, they should all be displayed at full size.
-const MAX_DOTS_BEFORE_OVERFLOW = 5;
-const NUM_OF_DOTS_WHEN_OVERFLOWING = 6;
 
 const styles = StyleSheet.create({
   wrapper: {
@@ -52,136 +49,102 @@ const styles = StyleSheet.create({
   },
 });
 
-const indicatorMappings = {
-  start: [
-    INDICATOR_SIZES.base,
-    INDICATOR_SIZES.base,
-    INDICATOR_SIZES.base,
-    INDICATOR_SIZES.md,
-    INDICATOR_SIZES.sm,
-    INDICATOR_SIZES.invisible,
-  ],
-  closeToStart: [
-    INDICATOR_SIZES.md,
-    INDICATOR_SIZES.base,
-    INDICATOR_SIZES.base,
-    INDICATOR_SIZES.base,
-    INDICATOR_SIZES.md,
-    INDICATOR_SIZES.sm,
-  ],
-  middle: [
-    INDICATOR_SIZES.sm,
-    INDICATOR_SIZES.md,
-    INDICATOR_SIZES.base,
-    INDICATOR_SIZES.base,
-    INDICATOR_SIZES.md,
-    INDICATOR_SIZES.sm,
-  ],
-  closeToEnd: [
-    INDICATOR_SIZES.invisible,
-    INDICATOR_SIZES.sm,
-    INDICATOR_SIZES.md,
-    INDICATOR_SIZES.base,
-    INDICATOR_SIZES.base,
-    INDICATOR_SIZES.md,
-  ],
-  end: [
-    INDICATOR_SIZES.invisible,
-    INDICATOR_SIZES.sm,
-    INDICATOR_SIZES.md,
-    INDICATOR_SIZES.base,
-    INDICATOR_SIZES.base,
-    INDICATOR_SIZES.base,
-  ],
-};
-
-const createIndicatorsFromSizes = (sizesArray, selectedIndex) =>
-  sizesArray.map((indicatorSize, index) => (
-    <BpkPaginationDotsIndicator
-      key={index.toString()}
-      selected={selectedIndex === index}
-      size={indicatorSize}
-    />
-  ));
-
-const getIndicators = (pageCount, selectedIndex) => {
-  if (pageCount <= MAX_DOTS_BEFORE_OVERFLOW) {
-    return new Array(pageCount)
-      .fill()
-      .map((_, index) => (
-        <BpkPaginationDotsIndicator
-          key={index.toString()}
-          selected={selectedIndex === index}
-        />
-      ));
+const getIndicatorSlice = (pageCount, selectedIndex) => {
+  if (pageCount <= 5) {
+    return {
+      begin: 0,
+      end: pageCount,
+    };
   }
-
-  const maxPageIndex = pageCount - 1;
 
   if (selectedIndex <= 2) {
-    return createIndicatorsFromSizes(indicatorMappings.start, selectedIndex);
+    return {
+      begin: 0,
+      end: 5,
+    };
   }
-  if (selectedIndex === 3) {
-    return createIndicatorsFromSizes(
-      indicatorMappings.closeToStart,
-      NUM_OF_DOTS_WHEN_OVERFLOWING - 4,
-    );
+
+  if (selectedIndex >= pageCount - 3) {
+    return {
+      begin: pageCount - 5,
+      end: pageCount,
+    };
   }
-  if (selectedIndex === maxPageIndex - 1) {
-    return createIndicatorsFromSizes(
-      indicatorMappings.closeToEnd,
-      NUM_OF_DOTS_WHEN_OVERFLOWING - 2,
-    );
+
+  return {
+    begin: selectedIndex - 2,
+    end: selectedIndex + 3,
+  };
+};
+
+const getIndicatorSize = (pageCount, index, selectedIndex) => {
+  if (pageCount <= 5 || selectedIndex === index) {
+    return INDICATOR_SIZES.base;
   }
-  if (selectedIndex === maxPageIndex) {
-    return createIndicatorsFromSizes(
-      indicatorMappings.end,
-      NUM_OF_DOTS_WHEN_OVERFLOWING - 1,
-    );
+
+  if (index >= selectedIndex - 1 && index <= selectedIndex + 1) {
+    return INDICATOR_SIZES.md;
   }
-  return createIndicatorsFromSizes(
-    indicatorMappings.middle,
-    NUM_OF_DOTS_WHEN_OVERFLOWING - 3,
-  );
+
+  return INDICATOR_SIZES.sm;
 };
 
 export type Props = {
-  accessibilityLabel: string | ((number, number) => string),
   pageCount: number,
   selectedIndex: number,
-  style: ?any,
+  style: ?StyleObj,
 };
 
+const getIndicatorIndexFromKey = key => parseInt(key.replace(/\D/g, ''), 10);
+
+const transitionGroupSorter = children =>
+  Object.keys(children)
+    .sort((a, b) => {
+      const aIndex = getIndicatorIndexFromKey(a);
+      const bIndex = getIndicatorIndexFromKey(b);
+
+      if (aIndex < bIndex) {
+        return -1;
+      }
+
+      if (aIndex > bIndex) {
+        return 1;
+      }
+
+      return 0;
+    })
+    .reduce((acc, key) => {
+      acc[key] = children[key];
+      return acc;
+    }, {});
+
 const BpkPaginationDots = (props: Props) => {
-  const {
-    accessibilityLabel,
-    pageCount,
-    selectedIndex,
-    style,
-    ...rest
-  } = props;
+  const { pageCount, selectedIndex, style, ...rest } = props;
 
-  const label =
-    typeof accessibilityLabel === 'string'
-      ? accessibilityLabel
-      : accessibilityLabel && accessibilityLabel(pageCount, selectedIndex);
+  const indicators = new Array(pageCount)
+    .fill()
+    .map((_, index) => (
+      <BpkPaginationDotsIndicator
+        key={index.toString()}
+        selected={selectedIndex === index}
+        size={getIndicatorSize(pageCount, index, selectedIndex)}
+      />
+    ));
 
-  const indicators = getIndicators(pageCount, selectedIndex);
+  const { begin, end } = getIndicatorSlice(pageCount, selectedIndex);
+
   return (
-    <View
-      accessible
-      accessibilityLabel={label}
+    <TransitionGroup
       style={[styles.wrapper, style]}
+      childrenSortFn={transitionGroupSorter}
       {...rest}
     >
-      {indicators}
-    </View>
+      {indicators.slice(begin, end)}
+    </TransitionGroup>
   );
 };
 
 BpkPaginationDots.propTypes = {
-  accessibilityLabel: PropTypes.oneOfType([PropTypes.string, PropTypes.func])
-    .isRequired,
   pageCount: PropTypes.number.isRequired,
   selectedIndex: PropTypes.number.isRequired,
   style: ViewPropTypes.style,

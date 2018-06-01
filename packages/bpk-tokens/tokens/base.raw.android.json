@@ -187,7 +187,7 @@
       "value": 6
     },
     "PAGINATION_DOT_SIZE_MD": {
-      "value": 3
+      "value": 4
     },
     "PAGINATION_DOT_SIZE_SM": {
       "value": 2
@@ -966,7 +966,7 @@
     "PAGINATION_DOT_SIZE_MD": {
       "type": "size",
       "category": "pagination-dots",
-      "value": "3",
+      "value": "4",
       "originalValue": "{!PAGINATION_DOT_SIZE_MD}",
       "name": "PAGINATION_DOT_SIZE_MD"
     },

@@ -53,7 +53,8 @@ Array [
   </RCTScrollView>,
   <View
     accessibilityLabel="I'm accessible"
-    accessible={true}
+    childrenSortFn={[Function]}
+    pointerEvents="box-none"
     style={
       Array [
         Object {
@@ -139,7 +140,8 @@ Array [
   </RCTScrollView>,
   <View
     accessibilityLabel="0 of 1"
-    accessible={true}
+    childrenSortFn={[Function]}
+    pointerEvents="box-none"
     style={
       Array [
         Object {
