@@ -34,4 +34,8 @@
   &--white-background {
     background-color: $bpk-color-white;
   }
+
+  &--dark-background {
+    @include bpk-themeable-property(background-color, --bpk-docs-sidebar-background, $bpk-color-gray-900);
+  }
 }

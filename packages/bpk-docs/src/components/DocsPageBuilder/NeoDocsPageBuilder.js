@@ -82,7 +82,10 @@ const ComponentExample = component => {
   );
 
   const examples = (component.examples || []).length ? (
-    <PresentationBlock whiteBackground>
+    <PresentationBlock
+      darkBackground={component.dark}
+      whiteBackground={!component.dark}
+    >
       {Children.toArray(component.examples)}
     </PresentationBlock>
   ) : null;
