@@ -1,10 +1,23 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`BpkLink should render correctly with "blank" and "rel" attributes 1`] = `
+<a
+  className="bpk-link"
+  href="#"
+  onClick={null}
+  rel="rel-overwrite"
+  target="_blank"
+>
+  Link (new window)
+</a>
+`;
+
 exports[`BpkLink should render correctly with a "alternate" attribute 1`] = `
 <a
   className="bpk-link bpk-link--alternate"
   href="#"
   onClick={null}
+  rel={null}
   target={null}
 >
   Link
@@ -16,6 +29,7 @@ exports[`BpkLink should render correctly with a "blank" attribute 1`] = `
   className="bpk-link"
   href="#"
   onClick={null}
+  rel="noopener noreferrer"
   target="_blank"
 >
   Link (new window)
@@ -27,6 +41,7 @@ exports[`BpkLink should render correctly with a "className" attribute 1`] = `
   className="bpk-link test-class"
   href="#"
   onClick={null}
+  rel={null}
   target={null}
 >
   Link
@@ -38,9 +53,22 @@ exports[`BpkLink should render correctly with a "href" attribute 1`] = `
   className="bpk-link"
   href="#"
   onClick={null}
+  rel={null}
   target={null}
 >
   Link
+</a>
+`;
+
+exports[`BpkLink should render correctly with a "rel" attribute 1`] = `
+<a
+  className="bpk-link"
+  href="#"
+  onClick={null}
+  rel="rel-attr"
+  target="_blank"
+>
+  Link (new window)
 </a>
 `;
 
@@ -49,6 +77,7 @@ exports[`BpkLink should render correctly with a "white" attribute 1`] = `
   className="bpk-link bpk-link--alternate"
   href="#"
   onClick={null}
+  rel={null}
   target={null}
 >
   Link
@@ -61,6 +90,7 @@ exports[`BpkLink should render correctly with arbitrary attributes 1`] = `
   href="#"
   id="test-id"
   onClick={null}
+  rel={null}
   target={null}
 >
   Link

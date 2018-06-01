@@ -48,6 +48,8 @@ export default () => (
 | featured    | bool     | false    | false         |
 | iconOnly    | bool     | false    | false         |
 | onClick     | func     | false    | null          |
+| blank       | bool     | false    | false         |
+| rel         | string   | false    | null          |
 
 ## Theme Props
 

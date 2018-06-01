@@ -48,6 +48,28 @@ describe('BpkLink', () => {
     expect(tree).toMatchSnapshot();
   });
 
+  it('should render correctly with a "rel" attribute', () => {
+    const tree = renderer
+      .create(
+        <BpkLink href="#" blank rel="rel-attr">
+          Link (new window)
+        </BpkLink>,
+      )
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('should render correctly with "blank" and "rel" attributes', () => {
+    const tree = renderer
+      .create(
+        <BpkLink href="#" blank rel="rel-overwrite">
+          Link (new window)
+        </BpkLink>,
+      )
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
   it('should render correctly with a "white" attribute', () => {
     const tree = renderer
       .create(

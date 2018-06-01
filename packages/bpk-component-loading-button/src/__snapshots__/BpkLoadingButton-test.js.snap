@@ -544,6 +544,8 @@ exports[`BpkLoadingButton should render correctly with a "href" attribute 1`] = 
   className="bpk-button"
   href="#"
   onClick={null}
+  rel={null}
+  target={null}
 >
   My button
    

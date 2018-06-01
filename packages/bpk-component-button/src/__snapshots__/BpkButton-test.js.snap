@@ -22,6 +22,30 @@ exports[`BpkButton should render correctly 1`] = `
 </button>
 `;
 
+exports[`BpkButton should render correctly with "blank" and "rel" attributes 1`] = `
+<a
+  className="bpk-button"
+  href="#"
+  onClick={null}
+  rel="rel-overwrite"
+  target="_blank"
+>
+  My button
+</a>
+`;
+
+exports[`BpkButton should render correctly with "blank" attribute 1`] = `
+<a
+  className="bpk-button"
+  href="#"
+  onClick={null}
+  rel="noopener noreferrer"
+  target="_blank"
+>
+  My button
+</a>
+`;
+
 exports[`BpkButton should render correctly with "large" and "secondary" attributes 1`] = `
 <button
   className="bpk-button bpk-button--secondary bpk-button--large"
@@ -31,6 +55,18 @@ exports[`BpkButton should render correctly with "large" and "secondary" attribut
 >
   My button
 </button>
+`;
+
+exports[`BpkButton should render correctly with "rel" attribute 1`] = `
+<a
+  className="bpk-button"
+  href="#"
+  onClick={null}
+  rel="rel-attr"
+  target={null}
+>
+  My button
+</a>
 `;
 
 exports[`BpkButton should render correctly with a "destructive" attribute 1`] = `
@@ -60,6 +96,8 @@ exports[`BpkButton should render correctly with a "href" attribute 1`] = `
   className="bpk-button"
   href="#"
   onClick={null}
+  rel={null}
+  target={null}
 >
   My button
 </a>

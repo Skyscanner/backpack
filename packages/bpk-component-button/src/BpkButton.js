@@ -45,6 +45,8 @@ type Props = {
   link: boolean,
   iconOnly: boolean,
   featured: boolean,
+  blank: boolean,
+  rel: ?string,
 };
 
 const BpkButton = (props: Props) => {
@@ -61,6 +63,8 @@ const BpkButton = (props: Props) => {
     large,
     link,
     iconOnly,
+    blank,
+    rel: propRel,
     ...rest
   } = props;
 
@@ -94,9 +98,19 @@ const BpkButton = (props: Props) => {
 
   const classNameFinal = classNames.join(' ');
 
+  const target = blank ? '_blank' : null;
+  const rel = blank ? propRel || 'noopener noreferrer' : propRel;
+
   if (href) {
     return (
-      <a href={href} className={classNameFinal} onClick={onClick} {...rest}>
+      <a
+        href={href}
+        className={classNameFinal}
+        onClick={onClick}
+        target={target}
+        rel={rel}
+        {...rest}
+      >
         {children}
       </a>
     );
@@ -140,6 +154,8 @@ BpkButton.propTypes = {
   link: PropTypes.bool,
   iconOnly: PropTypes.bool,
   featured: PropTypes.bool,
+  blank: PropTypes.bool,
+  rel: PropTypes.string,
 };
 
 BpkButton.defaultProps = {
@@ -154,6 +170,8 @@ BpkButton.defaultProps = {
   link: false,
   iconOnly: false,
   featured: false,
+  blank: false,
+  rel: null,
 };
 
 export default BpkButton;

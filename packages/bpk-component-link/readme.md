@@ -32,6 +32,7 @@ export default () => (
 | href      | string   | true     | -             |
 | onClick   | func     | false    | null          |
 | blank     | bool     | false    | false         |
+| rel       | string   | false    | null          |
 | alternate | bool     | false    | false         |
 
 ### BpkButtonLink
