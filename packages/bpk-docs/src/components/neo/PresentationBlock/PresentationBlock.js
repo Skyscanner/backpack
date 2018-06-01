@@ -26,7 +26,7 @@ const getClassName = cssModules(STYLES);
 
 const PresentationBlock = props => {
   const classNames = [getClassName('bpkdocs-presentation-block')];
-  const { className, whiteBackground, ...rest } = props;
+  const { className, darkBackground, whiteBackground, ...rest } = props;
 
   if (className) {
     classNames.push(className);
@@ -35,6 +35,10 @@ const PresentationBlock = props => {
   if (whiteBackground) {
     classNames.push(
       getClassName('bpkdocs-presentation-block--white-background'),
+    );
+  } else if (darkBackground) {
+    classNames.push(
+      getClassName('bpkdocs-presentation-block--dark-background'),
     );
   }
 
@@ -45,11 +49,13 @@ PresentationBlock.propTypes = {
   children: PropTypes.node.isRequired,
   className: PropTypes.string,
   whiteBackground: PropTypes.bool,
+  darkBackground: PropTypes.bool,
 };
 
 PresentationBlock.defaultProps = {
   className: null,
   whiteBackground: false,
+  darkBackground: false,
 };
 
 export default PresentationBlock;
