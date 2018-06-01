@@ -228,6 +228,10 @@ Before running RN components locally, you'll need a few things in place.
 Available from the [Mac App Store](https://itunes.apple.com/gb/app/xcode/id497799835?mt=12). Once installed,
 open it and accept the licence agreement. You're free to close it after that.
 
+##### Ruby via rbenv or rvm
+
+We use Ruby to manage CocoaPods and recommend you use [rbenv](https://github.com/rbenv/rbenv) or [rvm](https://rvm.io/) to get the correct Ruby version. The ruby version is specified in `native/ios/.ruby-version`. With the correct ruby version and bundler installed run `bundler install` followed by `bundle exec pod install` inside `native/ios`.
+
 #### Android
 
 The following instructions heavily make use of [Homebrew](https://brew.sh/),
