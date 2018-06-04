@@ -107,4 +107,37 @@ describe('BpkButton', () => {
       .toJSON();
     expect(tree).toMatchSnapshot();
   });
+
+  it('should render correctly with "blank" attribute', () => {
+    const tree = renderer
+      .create(
+        <BpkButton href="#" blank>
+          My button
+        </BpkButton>,
+      )
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('should render correctly with "rel" attribute', () => {
+    const tree = renderer
+      .create(
+        <BpkButton href="#" rel="rel-attr">
+          My button
+        </BpkButton>,
+      )
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('should render correctly with "blank" and "rel" attributes', () => {
+    const tree = renderer
+      .create(
+        <BpkButton href="#" blank rel="rel-overwrite">
+          My button
+        </BpkButton>,
+      )
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 });
