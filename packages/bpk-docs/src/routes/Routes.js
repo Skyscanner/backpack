@@ -97,6 +97,7 @@ import NavigationBarPage from './../pages/NavigationBarPage';
 import SectionListPage from './../pages/SectionListPage';
 import NavigationStackPage from './../pages/NavigationStackPage';
 import CarouselPage from './../pages/CarouselPage';
+import PhoneInputPage from './../pages/PhoneInputPage';
 
 import AlignmentPage from './../pages/AlignmentPage';
 import ThemingPage from './../pages/ThemingPage';
@@ -114,7 +115,6 @@ import NativeNavigationBarPage from './../pages/NativeNavigationBarPage';
 import NativeNudgerPage from './../pages/NativeNudgerPage';
 import NativePaginationDotsPage from './../pages/NativePaginationDotsPage';
 import NativePanelsPage from './../pages/NativePanelsPage';
-import NativePhoneInputPage from './../pages/NativePhoneInputPage';
 import NativePickerPage from './../pages/NativePickerPage';
 import NativeProgressPage from './../pages/NativeProgressPage';
 import NativeSectionListPage from './../pages/NativeSectionListPage';
@@ -343,7 +343,7 @@ const Routes = (
           component={NativePaginationDotsPage}
         />
         <Route path={ROUTES.NEO_TEXT_INPUT} component={NativeInputPage} />
-        <Route path={ROUTES.NEO_PHONE_INPUT} component={NativePhoneInputPage} />
+        <Route path={ROUTES.NEO_PHONE_INPUT} component={PhoneInputPage} />
         <Route path={ROUTES.NEO_PICKER} component={NativePickerPage} />
         <Route path={ROUTES.NEO_SELECT} component={NativeSelectPage} />
         <Route path={ROUTES.NEO_SWITCH} component={NativeSwitchPage} />
@@ -399,10 +399,6 @@ const Routes = (
             component={NativePaginationDotsPage}
           />
           <Route path={ROUTES.NATIVE_PANELS} component={NativePanelsPage} />
-          <Route
-            path={ROUTES.NATIVE_PHONE_INPUT}
-            component={NativePhoneInputPage}
-          />
           <Route path={ROUTES.NATIVE_PICKER} component={NativePickerPage} />
           <Route path={ROUTES.NATIVE_PROGRESS} component={NativeProgressPage} />
           <Route
