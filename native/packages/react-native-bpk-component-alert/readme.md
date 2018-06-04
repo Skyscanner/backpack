@@ -21,13 +21,13 @@ BpkAlert.alert(
   [
     {
       text: 'Cancel',
-      onPress: () => action('negative button pressed'),
+      onPress: () => console.log('negative button pressed'),
       style: 'cancel',
     },
-    { text: 'Default', onPress: () => action('positive button press') },
+    { text: 'Default', onPress: () => console.log('positive button press') },
     {
       text: 'Destructive',
-      onPress: () => action('Destructive button press'),
+      onPress: () => console.log('Destructive button press'),
       style: 'destructive',
     },
   ],
