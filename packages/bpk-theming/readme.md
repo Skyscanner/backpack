@@ -16,7 +16,7 @@ import BpkThemeProvider from 'bpk-theming';
 import BpkLink, { themeAttributes as linkThemeAttributes } from 'bpk-component-link';
 
 const theme = {
-  linkTextColor: '#c00',
+  linkColor: '#c00',
   linkHoverColor: '#d00',
   linkActiveColor: '#a00',
   linkVisitedColor: '#800',
