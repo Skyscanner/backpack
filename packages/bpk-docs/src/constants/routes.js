@@ -22,7 +22,7 @@ export const HOME = '/';
 export const USING_BACKPACK = '/using';
 export const STYLE = '/style';
 export const TOKENS = '/tokens';
-// export const STYLE_GUIDE = '/style-guide';
+export const STYLE_GUIDE = '/style-guide';
 export const COMPONENTS = '/components';
 
 // using/
@@ -31,7 +31,7 @@ export const BACKPACK_REACT_SCRIPTS = '/using/backpack-react-scripts';
 export const BASE_STYLESHEET = '/using/base-stylesheet';
 
 // style-guide/
-// export const COPYWRITING = '/style-guide/copywriting';
+export const COPYWRITING = '/style-guide/copywriting';
 
 // components/bonds/
 export const COLORS = '/tokens/colors';
