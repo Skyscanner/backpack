@@ -36,6 +36,8 @@ import BpkLoadingButton from 'bpk-component-loading-button';
 import BpkRouterLink from 'bpk-component-router-link';
 import buttonReadme from 'bpk-component-button/readme.md';
 import loadingButtonReadme from 'bpk-component-loading-button/readme.md';
+import { cssModules } from 'bpk-react-utils';
+import STYLES from './buttons-page.scss';
 
 import * as ROUTES from './../../constants/routes';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
@@ -51,6 +53,12 @@ const AlignedBpkSmallHelpIcon = alignToButton(TestBpkSmallHelpIcon);
 const AlignedBpkLargeHelpIcon = alignToLargeButton(TestBpkLargeHelpIcon);
 const AlignedBpkSmallSearchIcon = alignToButton(TestBpkSmallSearchIcon);
 const AlignedBpkLargeSearchIcon = alignToLargeButton(TestBpkLargeSearchIcon);
+
+const getClassName = cssModules(STYLES);
+const buttonContainerClassName = getClassName(
+  'bpkdocs-buttons-page__button-container',
+);
+const buttonClassName = getClassName('bpkdocs-buttons-page__button');
 
 class LoadingButtonContainer extends Component<{}, { loading: boolean }> {
   constructor() {
@@ -93,16 +101,20 @@ const components = [
       </Paragraph>,
     ],
     examples: [
-      <BpkButton>Primary</BpkButton>,
-      ' ',
-      <BpkButton disabled>Disabled</BpkButton>,
-      <br />,
-      <br />,
-      <BpkButton large>Primary</BpkButton>,
-      ' ',
-      <BpkButton large disabled>
-        Disabled
-      </BpkButton>,
+      <div className={buttonContainerClassName}>
+        <BpkButton className={buttonClassName}>Primary</BpkButton>
+        <BpkButton className={buttonClassName} disabled>
+          Disabled
+        </BpkButton>
+      </div>,
+      <div className={buttonContainerClassName}>
+        <BpkButton className={buttonClassName} large>
+          Primary
+        </BpkButton>
+        <BpkButton className={buttonClassName} large disabled>
+          Disabled
+        </BpkButton>
+      </div>,
     ],
   },
   {
@@ -115,20 +127,22 @@ const components = [
       </Paragraph>,
     ],
     examples: [
-      <BpkButton secondary>Secondary</BpkButton>,
-      ' ',
-      <BpkButton secondary disabled>
-        Disabled
-      </BpkButton>,
-      <br />,
-      <br />,
-      <BpkButton large secondary>
-        Secondary
-      </BpkButton>,
-      ' ',
-      <BpkButton large secondary disabled>
-        Disabled
-      </BpkButton>,
+      <div className={buttonContainerClassName}>
+        <BpkButton className={buttonClassName} secondary>
+          Secondary
+        </BpkButton>
+        <BpkButton className={buttonClassName} secondary disabled>
+          Disabled
+        </BpkButton>
+      </div>,
+      <div className={buttonContainerClassName}>
+        <BpkButton className={buttonClassName} large secondary>
+          Secondary
+        </BpkButton>
+        <BpkButton className={buttonClassName} large secondary disabled>
+          Disabled
+        </BpkButton>
+      </div>,
     ],
   },
   {
@@ -138,20 +152,22 @@ const components = [
       <Paragraph>This button is reserved for featured buttons.</Paragraph>,
     ],
     examples: [
-      <BpkButton featured>Featured</BpkButton>,
-      ' ',
-      <BpkButton featured disabled>
-        Disabled
-      </BpkButton>,
-      <br />,
-      <br />,
-      <BpkButton large featured>
-        Featured
-      </BpkButton>,
-      ' ',
-      <BpkButton large featured disabled>
-        Disabled
-      </BpkButton>,
+      <div className={buttonContainerClassName}>
+        <BpkButton className={buttonClassName} featured>
+          Featured
+        </BpkButton>
+        <BpkButton className={buttonClassName} featured disabled>
+          Disabled
+        </BpkButton>
+      </div>,
+      <div className={buttonContainerClassName}>
+        <BpkButton className={buttonClassName} large featured>
+          Featured
+        </BpkButton>
+        <BpkButton className={buttonClassName} large featured disabled>
+          Disabled
+        </BpkButton>
+      </div>,
     ],
   },
   {
@@ -159,20 +175,22 @@ const components = [
     title: 'Destructive',
     blurb: 'This button can be used to highlight destructive actions.',
     examples: [
-      <BpkButton destructive>Destructive</BpkButton>,
-      ' ',
-      <BpkButton destructive disabled>
-        Disabled
-      </BpkButton>,
-      <br />,
-      <br />,
-      <BpkButton large destructive>
-        Destructive
-      </BpkButton>,
-      ' ',
-      <BpkButton large destructive disabled>
-        Disabled
-      </BpkButton>,
+      <div className={buttonContainerClassName}>
+        <BpkButton className={buttonClassName} destructive>
+          Destructive
+        </BpkButton>
+        <BpkButton className={buttonClassName} destructive disabled>
+          Disabled
+        </BpkButton>
+      </div>,
+      <div className={buttonContainerClassName}>
+        <BpkButton className={buttonClassName} large destructive>
+          Destructive
+        </BpkButton>
+        <BpkButton className={buttonClassName} large destructive disabled>
+          Disabled
+        </BpkButton>
+      </div>,
     ],
   },
   {
@@ -205,36 +223,34 @@ const components = [
       </Paragraph>,
     ],
     examples: [
-      <BpkButton iconOnly>
-        <AlignedBpkSmallArrowIcon fill={colors.colorWhite} />
-        <span className="visually-hidden">Search</span>
-      </BpkButton>,
-      ' ',
-      <BpkButton iconOnly secondary>
-        <AlignedBpkSmallHelpIcon fill={buttons.buttonSecondaryColor} />
-        <span className="visually-hidden">Help</span>
-      </BpkButton>,
-      ' ',
-      <BpkButton iconOnly destructive>
-        <AlignedBpkSmallTrashIcon fill={buttons.buttonDestructiveColor} />
-        <span className="visually-hidden">Delete</span>
-      </BpkButton>,
-      <br />,
-      <br />,
-      <BpkButton large iconOnly>
-        <AlignedBpkLargeArrowIcon fill={colors.colorWhite} />
-        <span className="visually-hidden">Search</span>
-      </BpkButton>,
-      ' ',
-      <BpkButton large iconOnly secondary>
-        <AlignedBpkLargeHelpIcon fill={buttons.buttonSecondaryColor} />
-        <span className="visually-hidden">Help</span>
-      </BpkButton>,
-      ' ',
-      <BpkButton large iconOnly destructive>
-        <AlignedBpkLargeTrashIcon fill={buttons.buttonDestructiveColor} />
-        <span className="visually-hidden">Delete</span>
-      </BpkButton>,
+      <div className={buttonContainerClassName}>
+        <BpkButton className={buttonClassName} iconOnly>
+          <AlignedBpkSmallArrowIcon fill={colors.colorWhite} />
+          <span className="visually-hidden">Search</span>
+        </BpkButton>
+        <BpkButton className={buttonClassName} iconOnly secondary>
+          <AlignedBpkSmallHelpIcon fill={buttons.buttonSecondaryColor} />
+          <span className="visually-hidden">Help</span>
+        </BpkButton>
+        <BpkButton className={buttonClassName} iconOnly destructive>
+          <AlignedBpkSmallTrashIcon fill={buttons.buttonDestructiveColor} />
+          <span className="visually-hidden">Delete</span>
+        </BpkButton>
+      </div>,
+      <div className={buttonContainerClassName}>
+        <BpkButton large className={buttonClassName} iconOnly>
+          <AlignedBpkLargeArrowIcon fill={colors.colorWhite} />
+          <span className="visually-hidden">Search</span>
+        </BpkButton>
+        <BpkButton large className={buttonClassName} iconOnly secondary>
+          <AlignedBpkLargeHelpIcon fill={buttons.buttonSecondaryColor} />
+          <span className="visually-hidden">Help</span>
+        </BpkButton>
+        <BpkButton large className={buttonClassName} iconOnly destructive>
+          <AlignedBpkLargeTrashIcon fill={buttons.buttonDestructiveColor} />
+          <span className="visually-hidden">Delete</span>
+        </BpkButton>
+      </div>,
     ],
   },
   {
