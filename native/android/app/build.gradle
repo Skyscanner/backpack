@@ -89,6 +89,17 @@ def enableSeparateBuildPerCPUArchitecture = false
  */
 def enableProguardInReleaseBuilds = false
 
+def getGMapsApiKey() {
+    Properties properties = new Properties()
+    properties.load(project.rootProject.file('local.properties').newDataInputStream())
+
+    if (properties.hasProperty('google_maps_api_key')) {
+        return properties.getProperty('google_maps_api_key')
+    }
+
+    return ''
+}
+
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
     buildToolsVersion rootProject.ext.buildToolsVersion
@@ -102,6 +113,7 @@ android {
         ndk {
             abiFilters "armeabi-v7a", "x86"
         }
+        manifestPlaceholders = [googleMapsApiKey:getGMapsApiKey()]
     }
     splits {
         abi {

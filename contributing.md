@@ -237,7 +237,7 @@ We use Ruby to manage CocoaPods and recommend you use [rbenv](https://github.com
 The following instructions heavily make use of [Homebrew](https://brew.sh/),
 which is available for macOS. Windows and Linux installation for these packages is also well-supported, but isn't currently documented here.
 
-In future, we intend to automate more of this to reduce the number of steps required.
+In future, we intend to automate more of this to reduce the number of steps required. To ensure that maps powered by Google work set the `google_maps_api_key` in `native/android/local.properties`.
 
 ##### Watchman (if not already installed)
 
