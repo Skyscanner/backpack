@@ -14,3 +14,6 @@
 
 - bpk-component-link:
   - When `blank` is set, `rel` is automatically set to `rel="noopener noreferrer"`.
+
+- bpk-component-breakpoint:
+  - Change `children` proptype to `oneOfType(node, func)` (added `node`).

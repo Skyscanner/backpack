@@ -43,7 +43,7 @@ const queryValidator = (props, ...rest) => {
 };
 
 BpkBreakpoint.propTypes = {
-  children: PropTypes.func.isRequired,
+  children: PropTypes.oneOfType([PropTypes.node, PropTypes.func]).isRequired,
   query: queryValidator, // eslint-disable-line react/require-default-props
   legacy: PropTypes.bool, // eslint-disable-line react/no-unused-prop-types
 };
