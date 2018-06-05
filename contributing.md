@@ -211,6 +211,8 @@ If you need any help writing documentation, get in touch!
 
 When adding documentation for a new component, add the new dependency in `packages/bpk-docs/package.json` and run `npm run bootstrap` to install it.
 
+The web Map component page requires an environment variable named `GOOGLE_MAPS_API_KEY`. During builds, this is set by Travis.
+
 ## React Native
 
 Backpack comes in two flavours: web and React Native. React Native (RN) components
