@@ -38,45 +38,6 @@ exports[`BpkPhoneInput should render correctly 1`] = `
 </span>
 `;
 
-exports[`BpkPhoneInput should render correctly with a "wrapperProps" attribute 1`] = `
-<span
-  aria-label="container"
-  className="bpk-phone-input container"
->
-  <select
-    aria-invalid={false}
-    className="bpk-select bpk-phone-input__dialing-code dialing-code"
-    disabled={false}
-    id="dialing-code"
-    name="Dialing code"
-    onChange={[Function]}
-    value="44"
-  >
-    <option
-      value="44"
-    >
-      +44
-    </option>
-    <option
-      value="55"
-    >
-      +55
-    </option>
-  </select>
-  <input
-    aria-invalid={false}
-    className="bpk-input bpk-phone-input__phone-number fancy-input"
-    disabled={false}
-    id="phone-input-id"
-    name="Telephone input"
-    onChange={[Function]}
-    placeholder="Telephone number"
-    type="number"
-    value="1234"
-  />
-</span>
-`;
-
 exports[`BpkPhoneInput should render correctly with a "disabled" attribute 1`] = `
 <span
   className="bpk-phone-input"
@@ -180,6 +141,92 @@ exports[`BpkPhoneInput should render correctly with a "valid" attribute 1`] = `
   <input
     aria-invalid={false}
     className="bpk-input bpk-input--valid bpk-phone-input__phone-number fancy-input"
+    disabled={false}
+    id="phone-input-id"
+    name="Telephone input"
+    onChange={[Function]}
+    placeholder="Telephone number"
+    type="number"
+    value="1234"
+  />
+</span>
+`;
+
+exports[`BpkPhoneInput should render correctly with a "wrapperProps" attribute 1`] = `
+<span
+  aria-label="container"
+  className="bpk-phone-input container"
+>
+  <select
+    aria-invalid={false}
+    className="bpk-select bpk-phone-input__dialing-code dialing-code"
+    disabled={false}
+    id="dialing-code"
+    name="Dialing code"
+    onChange={[Function]}
+    value="44"
+  >
+    <option
+      value="44"
+    >
+      +44
+    </option>
+    <option
+      value="55"
+    >
+      +55
+    </option>
+  </select>
+  <input
+    aria-invalid={false}
+    className="bpk-input bpk-phone-input__phone-number fancy-input"
+    disabled={false}
+    id="phone-input-id"
+    name="Telephone input"
+    onChange={[Function]}
+    placeholder="Telephone number"
+    type="number"
+    value="1234"
+  />
+</span>
+`;
+
+exports[`BpkPhoneInput should render correctly with a dialing code image attribute 1`] = `
+<span
+  className="bpk-phone-input"
+>
+  <div
+    className="bpk-select-wrapper bpk-phone-input__dialing-code-wrapper dialing-wrapper"
+  >
+    <div
+      className="bpk-select-wrapper__image"
+    >
+      <span />
+    </div>
+    <select
+      aria-invalid={false}
+      className="bpk-select bpk-select--borderless bpk-phone-input__dialing-code dialing-code"
+      disabled={false}
+      id="dialing-code"
+      name="Dialing code"
+      onChange={[Function]}
+      value="44"
+    >
+      <option
+        value="44"
+      >
+        +44
+      </option>
+      <option
+        value="55"
+      >
+        +55
+      </option>
+    </select>
+  </div>
+  <input
+    aria-invalid={false}
+    className="bpk-input bpk-phone-input__phone-number fancy-input"
     disabled={false}
     id="phone-input-id"
     name="Telephone input"

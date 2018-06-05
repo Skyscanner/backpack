@@ -13,6 +13,26 @@ npm install bpk-component-phone-input --save-dev
 ```js
 import React, { Component } from 'react';
 import BpkPhoneInput from 'bpk-component-phone-input';
+import BpkImage from 'bpk-component-image';
+
+const DIALING_CODE_TO_ID_MAP = {
+  '44': 'uk',
+  '55': 'br',
+};
+
+const getFlag = dialingCode => {
+  const countryCode = DIALING_CODE_TO_ID_MAP[dialingCode];
+  const url = `/resources/${countryCode}.png`;
+  return (
+    <BpkImage
+      altText="Flag"
+      height={38}
+      width={50}
+      style={{ width: '100%' }}
+      src={url}
+    />
+  );
+};
 
 export default class extends Component {
   constructor(props) {
@@ -47,6 +67,7 @@ export default class extends Component {
           id: 'dialing-code',
           name: 'Dialing code',
           'aria-label': 'Dialing code',
+          image: getFlag(this.state.dialingCode)
         }}
       />
     )

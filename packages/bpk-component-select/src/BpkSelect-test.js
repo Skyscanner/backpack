@@ -91,6 +91,31 @@ describe('BpkSelect', () => {
     expect(tree).toMatchSnapshot();
   });
 
+  it('should render correctly with image and "disabled" property', () => {
+    const tree = renderer
+      .create(
+        <BpkSelect
+          id="fruits"
+          name="fruits"
+          value="oranges"
+          imageWrapperClassName="imageWrapperClass--test"
+          wrapperClassName="wrapperClass--test"
+          image={selectImage}
+          disabled
+          onChange={() => null}
+        >
+          <option value="apples">Apples</option>
+          <option value="oranges">Oranges</option>
+          <option value="pears">Pears</option>
+          <option value="tomatoes" disabled>
+            Tomatoes
+          </option>
+        </BpkSelect>,
+      )
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
   it('should render correctly with "className" attribute', () => {
     const tree = renderer
       .create(

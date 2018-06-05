@@ -38,6 +38,7 @@ export default () => (
 | onChange                  | func       | true     | -             |
 | valid                     | bool       | false    | null          |
 | large                     | bool       | false    | false         |
+| disabled                  | bool       | false    | false         |
 | docked                    | bool       | false    | false         |
 | dockedFirst               | bool       | false    | false         |
 | dockedMiddle              | bool       | false    | false         |

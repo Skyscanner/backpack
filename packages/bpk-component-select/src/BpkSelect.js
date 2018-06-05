@@ -30,6 +30,7 @@ export type Props = {
   name: string,
   value: string,
   className: ?string,
+  disabled: boolean,
   docked: boolean,
   dockedFirst: boolean,
   dockedLast: boolean,
@@ -44,6 +45,7 @@ export type Props = {
 const BpkSelect = (props: Props) => {
   const {
     className,
+    disabled,
     docked,
     dockedFirst,
     dockedLast,
@@ -72,6 +74,7 @@ const BpkSelect = (props: Props) => {
         image && 'bpk-select--borderless',
         className,
       )}
+      disabled={disabled}
       aria-invalid={isInvalid}
       {...rest}
     />
@@ -94,6 +97,7 @@ const BpkSelect = (props: Props) => {
           className={getClassName(
             'bpk-select-wrapper__image',
             large && 'bpk-select-wrapper__image--large',
+            disabled && 'bpk-select-wrapper__image--disabled',
             imageWrapperClassName,
           )}
         >
@@ -111,6 +115,7 @@ BpkSelect.propTypes = {
   name: PropTypes.string.isRequired,
   value: PropTypes.string.isRequired,
   className: PropTypes.string,
+  disabled: PropTypes.bool,
   docked: PropTypes.bool,
   dockedFirst: PropTypes.bool,
   dockedLast: PropTypes.bool,
@@ -128,6 +133,7 @@ BpkSelect.defaultProps = {
   dockedFirst: false,
   dockedLast: false,
   dockedMiddle: false,
+  disabled: false,
   image: null,
   imageWrapperClassName: null,
   large: false,

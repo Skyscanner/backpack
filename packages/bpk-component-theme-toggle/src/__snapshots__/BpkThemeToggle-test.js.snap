@@ -11,6 +11,7 @@ exports[`BpkThemeToggle should render correctly 1`] = `
   <select
     aria-invalid={false}
     className="bpk-select"
+    disabled={false}
     id="theme-select"
     name="theme-select"
     onChange={[Function]}
