@@ -90,6 +90,7 @@ configure(() => {
   require('./../packages/bpk-component-pagination/stories');
   require('./../packages/bpk-component-panel/stories');
   require('./../packages/bpk-component-paragraph/stories');
+  require('./../packages/bpk-component-phone-input/stories');
   require('./../packages/bpk-component-popover/stories');
   require('./../packages/bpk-component-progress/stories');
   require('./../packages/bpk-component-radio/stories');
