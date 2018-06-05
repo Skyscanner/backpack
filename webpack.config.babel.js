@@ -36,6 +36,7 @@ const {
   ENABLE_CSS_MODULES,
   BPK_NEO,
   BPK_BUILT_AT,
+  GOOGLE_MAPS_API_KEY,
 } = process.env;
 const useCssModules = ENABLE_CSS_MODULES !== 'false';
 const isProduction = NODE_ENV === 'production';
@@ -197,6 +198,16 @@ if (BPK_NEO) {
       'process.env': {
         BPK_NEO: true,
         BPK_BUILT_AT,
+      },
+    }),
+  );
+}
+
+if (GOOGLE_MAPS_API_KEY) {
+  config.plugins.push(
+    new webpack.DefinePlugin({
+      'process.env': {
+        GOOGLE_MAPS_API_KEY: JSON.stringify(GOOGLE_MAPS_API_KEY),
       },
     }),
   );
