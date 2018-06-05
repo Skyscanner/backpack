@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+/* @flow */
+
 import BpkAlert from './src/BpkAlert';
 
 export default BpkAlert;
