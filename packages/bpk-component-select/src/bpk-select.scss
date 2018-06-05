@@ -45,6 +45,10 @@
     height: auto;
     padding: 0;
     border: transparent;
+
+    @include bpk-rtl {
+      padding: 0;
+    }
   }
 }
 
@@ -59,6 +63,11 @@ $select-image-large-height: 22 * $bpk-one-pixel-rem;
   flex-direction: row;
   align-items: center;
   background: none;
+
+  @include bpk-rtl {
+    padding-right: $bpk-select-padding-left;
+    padding-left: 0;
+  }
 }
 
 .bpk-select-wrapper {
@@ -90,6 +99,11 @@ $select-image-large-height: 22 * $bpk-one-pixel-rem;
     width: $select-image-width;
     height: $select-image-height;
     margin-right: $bpk-spacing-xs;
+
+    @include bpk-rtl {
+      margin-right: 0;
+      margin-left: $bpk-spacing-xs;
+    }
 
     &--large {
       width: $select-image-large-width;
