@@ -26,7 +26,7 @@ import DocsPageWrapper from './../../components/neo/DocsPageWrapper';
 import IntroBlurb from './../../components/neo/IntroBlurb';
 
 const BpkMapWithScript = withScriptjs(BpkMap);
-const API_KEY = '';
+const API_KEY = process.env.GOOGLE_MAPS_API_KEY || '';
 const MAP_URL = `https://maps.googleapis.com/maps/api/js?v=3.exp&key=${API_KEY}&libraries=geometry,drawing,places`;
 
 // Shibuya crossing, Tokyo.
