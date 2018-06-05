@@ -30,14 +30,18 @@ export default () => (
 
 ## Props
 
-| Property     | PropType | Required | Default Value |
-| ------------ | -------- | -------- | ------------- |
-| id           | string   | true     | -             |
-| name         | string   | true     | -             |
-| value        | string   | true     | -             |
-| onChange     | func     | true     | -             |
-| valid        | bool     | false    | null          |
-| large        | bool     | false    | false         |
-| dockedFirst  | bool     | false    | false         |
-| dockedMiddle | bool     | false    | false         |
-| dockedLast   | bool     | false    | false         |
+| Property                  | PropType   | Required | Default Value |
+| ------------              | --------   | -------- | ------------- |
+| id                        | string     | true     | -             |
+| name                      | string     | true     | -             |
+| value                     | string     | true     | -             |
+| onChange                  | func       | true     | -             |
+| valid                     | bool       | false    | null          |
+| large                     | bool       | false    | false         |
+| docked                    | bool       | false    | false         |
+| dockedFirst               | bool       | false    | false         |
+| dockedMiddle              | bool       | false    | false         |
+| dockedLast                | bool       | false    | false         |
+| image                     | node       | false    | null          |
+| wrapperClassName          | string     | false    | null          |
+| imageWrapperClassName     | string     | false    | null          |

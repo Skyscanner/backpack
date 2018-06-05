@@ -15,7 +15,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+/* @flow */
 
-import BpkSelect from './src/BpkSelect';
+import BpkSelect, { type Props } from './src/BpkSelect';
+
+export type BpkSelectProps = Props;
 
 export default BpkSelect;
