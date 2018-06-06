@@ -91,13 +91,12 @@ def enableProguardInReleaseBuilds = false
 
 def getGMapsApiKey() {
     Properties properties = new Properties()
-    properties.load(project.rootProject.file('local.properties').newDataInputStream())
-
-    if (properties.hasProperty('google_maps_api_key')) {
-        return properties.getProperty('google_maps_api_key')
+    try {
+        properties.load(project.rootProject.file('local.properties').newDataInputStream())
+        return properties.getProperty('google_maps_api_key', '')
+    } catch (FileNotFoundException e) {
+        return ''
     }
-
-    return ''
 }
 
 def hasBackpackDebugCert() {
