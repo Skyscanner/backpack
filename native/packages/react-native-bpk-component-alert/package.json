@@ -12,5 +12,8 @@
   "peerDependencies": {
     "react": "^16.0.0-alpha.1",
     "react-native": ">= 0.47.0"
+  },
+  "devDependencies": {
+    "react-native-bpk-component-button": "^6.0.11"
   }
 }

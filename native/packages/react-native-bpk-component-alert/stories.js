@@ -16,7 +16,12 @@
  * limitations under the License.
  */
 
+/* @flow */
+
+import React from 'react';
+import BpkButton from 'react-native-bpk-component-button';
 import { storiesOf, action } from '@storybook/react-native';
+
 import BpkAlert from './index';
 import CenterDecorator from '../../storybook/CenterDecorator';
 
@@ -114,9 +119,15 @@ const showOverflowingAlert = () => {
   );
 };
 
+const AlertTrigger = (props: { alert: () => mixed }) => (
+  <BpkButton title="Show alert" onPress={props.alert} />
+);
+
 storiesOf('react-native-bpk-component-alert', module)
   .addDecorator(CenterDecorator)
-  .add('docs:default', () => showAlert())
-  .add('docs:three-button', () => showAlertWithThreeButtons())
-  .add('docs:cancelable', () => showCancelableAlert())
-  .add('overflowing', () => showOverflowingAlert());
+  .add('docs:default', () => <AlertTrigger alert={showAlert} />)
+  .add('docs:three-button', () => (
+    <AlertTrigger alert={showAlertWithThreeButtons} />
+  ))
+  .add('docs:cancelable', () => <AlertTrigger alert={showCancelableAlert} />)
+  .add('overflowing', () => <AlertTrigger alert={showOverflowingAlert} />);
