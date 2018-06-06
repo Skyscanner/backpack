@@ -117,30 +117,27 @@ const components = [
   },
 ];
 
-const isNeo = process.env.BPK_NEO;
-
 const blurb = [
   <IntroBlurb>
     Drawers slide in from the edge of the screen and are used to display content
   </IntroBlurb>,
 ];
 
-const DrawerPage = ({ ...rest }) => (
+const DrawerSubPage = ({ ...rest }) => (
   <DocsPageBuilder
     title="Drawer"
-    blurb={isNeo ? null : blurb}
     components={components}
     readme={drawerReadme}
     {...rest}
   />
 );
 
-const NeoDrawerPage = () => (
+const DrawerPage = () => (
   <DocsPageWrapper
     title="Drawer"
     blurb={blurb}
-    webSubpage={<DrawerPage wrapped />}
+    webSubpage={<DrawerSubPage wrapped />}
   />
 );
 
-export default (isNeo ? NeoDrawerPage : DrawerPage);
+export default DrawerPage;

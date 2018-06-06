@@ -225,8 +225,6 @@ const AlignedArrow = withLargeButtonAlignment(LongArrowRightIcon);
   },
 ];
 
-const isNeo = process.env.BPK_NEO;
-
 const blurb = [
   <IntroBlurb>
     Alignment higher-order-components (HOCs) allow components to be aligned
@@ -240,21 +238,16 @@ const blurb = [
   </Paragraph>,
 ];
 
-const AlignmentPage = ({ ...rest }) => (
-  <DocsPageBuilder
-    title="Alignment"
-    blurb={isNeo ? null : blurb}
-    components={components}
-    {...rest}
-  />
+const AlignmentSubPage = ({ ...rest }) => (
+  <DocsPageBuilder title="Alignment" components={components} {...rest} />
 );
 
-const NeoAlignmentPage = () => (
+const AlignmentPage = () => (
   <DocsPageWrapper
     title="Alignment"
     blurb={blurb}
-    webSubpage={<AlignmentPage wrapped />}
+    webSubpage={<AlignmentSubPage wrapped />}
   />
 );
 
-export default (isNeo ? NeoAlignmentPage : AlignmentPage);
+export default AlignmentPage;

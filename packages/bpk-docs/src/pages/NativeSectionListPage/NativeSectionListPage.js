@@ -24,7 +24,6 @@ import androidScreenshotDefault from 'react-native-bpk-component-section-list/sc
 import iosScreenshotWithImages from 'react-native-bpk-component-section-list/screenshots/ios/with-images.png';
 import androidScreenshotWithImages from 'react-native-bpk-component-section-list/screenshots/android/with-images.png';
 
-import IntroBlurb from './../../components/neo/IntroBlurb';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
 
 const components = [
@@ -75,19 +74,9 @@ const components = [
   },
 ];
 
-const isNeo = process.env.BPK_NEO;
-
-const blurb = [
-  <IntroBlurb>
-    The section list component can be used for rendering lists with section
-    headers.
-  </IntroBlurb>,
-];
-
-const NativeSectionListPage = ({ ...rest }) => (
+const NativeSectionListSubPage = ({ ...rest }) => (
   <DocsPageBuilder
     title="Section list"
-    blurb={isNeo ? null : blurb}
     components={components}
     readme={readme}
     showMenu
@@ -95,4 +84,4 @@ const NativeSectionListPage = ({ ...rest }) => (
   />
 );
 
-export default NativeSectionListPage;
+export default NativeSectionListSubPage;

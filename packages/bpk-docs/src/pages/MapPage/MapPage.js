@@ -52,8 +52,6 @@ const components = [
   },
 ];
 
-const isNeo = process.env.BPK_NEO;
-
 const blurb = [
   <IntroBlurb>The map component is for embedding maps into pages.</IntroBlurb>,
 ];
@@ -63,7 +61,6 @@ const MapSubpage = ({ ...rest }) => (
     title="Map"
     components={components}
     readme={mapReadme}
-    blurb={isNeo ? null : blurb}
     {...rest}
   />
 );

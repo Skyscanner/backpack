@@ -26,7 +26,6 @@ import {
   SPINNER_TYPES,
 } from 'bpk-component-spinner';
 
-import IntroBlurb from './../../components/neo/IntroBlurb';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
 
 const components = [
@@ -65,20 +64,9 @@ const components = [
   },
 ];
 
-const blurb = [
-  <IntroBlurb>
-    Spinners are used to indicate that a part of the product is loading or
-    performing a task. These are available in 3 sizes, small (18px), large
-    (24px) and extra-large (48px).
-  </IntroBlurb>,
-];
-
-const isNeo = process.env.BPK_NEO;
-
 const SpinnersPage = ({ ...rest }) => (
   <DocsPageBuilder
     title="Spinners"
-    blurb={isNeo ? null : blurb}
     components={components}
     readme={spinnerReadme}
     sassdocId="svgs-mixin-bpk-spinner"

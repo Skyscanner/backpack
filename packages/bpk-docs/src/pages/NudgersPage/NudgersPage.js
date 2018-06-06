@@ -21,7 +21,6 @@ import BpkNudger from 'bpk-component-nudger';
 import nudgersReadme from 'bpk-component-nudger/readme.md';
 
 import DocsPageBuilder from './../../components/DocsPageBuilder';
-import IntroBlurb from './../../components/neo/IntroBlurb';
 import Paragraph from './../../components/Paragraph';
 
 class NudgerContainer extends Component {
@@ -65,18 +64,9 @@ const components = [
   },
 ];
 
-const isNeo = process.env.BPK_NEO;
-
-const blurb = [
-  <IntroBlurb>
-    Nudgers allow users to quickly specify a value within a given range.
-  </IntroBlurb>,
-];
-
 const NudgersPage = ({ ...rest }) => (
   <DocsPageBuilder
     title="Nudgers"
-    blurb={isNeo ? null : blurb}
     components={components}
     readme={nudgersReadme}
     {...rest}

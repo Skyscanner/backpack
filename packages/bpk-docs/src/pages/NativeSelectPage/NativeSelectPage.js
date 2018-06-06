@@ -51,8 +51,6 @@ const components = [
   },
 ];
 
-const isNeo = process.env.BPK_NEO;
-
 const blurb = [
   <IntroBlurb>
     Selects are styled to look like traditional dropdowns, however provide no
@@ -61,10 +59,9 @@ const blurb = [
   </IntroBlurb>,
 ];
 
-const NativeSelectPage = ({ ...rest }) => (
+const NativeSelectSubPage = ({ ...rest }) => (
   <DocsPageBuilder
     title="Select"
-    blurb={isNeo ? null : blurb}
     components={components}
     readme={readme}
     showMenu={false}
@@ -72,12 +69,12 @@ const NativeSelectPage = ({ ...rest }) => (
   />
 );
 
-const NeoNativeSelectPage = () => (
+const NativeSelectPage = () => (
   <DocsPageWrapper
     title="Select"
     blurb={blurb}
-    nativeSubpage={<NativeSelectPage wrapped />}
+    nativeSubpage={<NativeSelectSubPage wrapped />}
   />
 );
 
-export default (isNeo ? NeoNativeSelectPage : NativeSelectPage);
+export default NativeSelectPage;

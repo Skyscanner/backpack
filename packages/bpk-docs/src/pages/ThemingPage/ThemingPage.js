@@ -143,21 +143,6 @@ const webBlurb = [
   </BpkBlockquote>,
 ];
 
-const components = [
-  {
-    id: 'native',
-    title: 'Native',
-    blurb: nativeBlurb,
-    readme: nativeReadme,
-  },
-  {
-    id: 'web',
-    title: 'Web',
-    blurb: webBlurb,
-    readme: webReadme,
-  },
-];
-
 const blurb = [
   <IntroBlurb>
     All Backpack components have full theming support through through the theme
@@ -178,18 +163,7 @@ const blurb = [
   </Paragraph>,
 ];
 
-const isNeo = process.env.BPK_NEO;
-
-const ThemingPage = () => (
-  <DocsPageBuilder
-    title="Theming"
-    blurb={isNeo ? null : blurb}
-    components={components}
-    showMenu={false}
-  />
-);
-
-const NeoWebThemingPage = ({ ...rest }) => (
+const WebThemingPage = ({ ...rest }) => (
   <DocsPageBuilder
     blurb={webBlurb}
     showMenu={false}
@@ -198,7 +172,7 @@ const NeoWebThemingPage = ({ ...rest }) => (
   />
 );
 
-const NeoNativeThemingPage = ({ ...rest }) => (
+const NativeThemingPage = ({ ...rest }) => (
   <DocsPageBuilder
     blurb={nativeBlurb}
     showMenu={false}
@@ -207,13 +181,13 @@ const NeoNativeThemingPage = ({ ...rest }) => (
   />
 );
 
-const NeoThemingPage = () => (
+const ThemingPage = () => (
   <DocsPageWrapper
     title="Theming"
     blurb={blurb}
-    webSubpage={<NeoWebThemingPage wrapped />}
-    nativeSubpage={<NeoNativeThemingPage wrapped />}
+    webSubpage={<WebThemingPage wrapped />}
+    nativeSubpage={<NativeThemingPage wrapped />}
   />
 );
 
-export default (isNeo ? NeoThemingPage : ThemingPage);
+export default ThemingPage;

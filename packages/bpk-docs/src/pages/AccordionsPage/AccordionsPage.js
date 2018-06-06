@@ -197,30 +197,27 @@ const components = [
   },
 ];
 
-const isNeo = process.env.BPK_NEO;
-
 const blurb = [
   <IntroBlurb>
     An accordion allows users to expand and collapse sections of content.
   </IntroBlurb>,
 ];
 
-const AccordionsPage = ({ ...rest }) => (
+const AccordionsSubPage = ({ ...rest }) => (
   <DocsPageBuilder
     title="Accordion"
-    blurb={isNeo ? null : blurb}
     components={components}
     readme={accordionsReadme}
     {...rest}
   />
 );
 
-const NeoAccordionsPage = () => (
+const AccordionsPage = () => (
   <DocsPageWrapper
     title="Accordion"
     blurb={blurb}
-    webSubpage={<AccordionsPage wrapped />}
+    webSubpage={<AccordionsSubPage wrapped />}
   />
 );
 
-export default (isNeo ? NeoAccordionsPage : AccordionsPage);
+export default AccordionsPage;

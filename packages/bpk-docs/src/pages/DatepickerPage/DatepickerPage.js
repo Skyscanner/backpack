@@ -86,8 +86,6 @@ const components = [
   },
 ];
 
-const isNeo = process.env.BPK_NEO;
-
 const blurb = [
   <IntroBlurb>
     The datepicker is an input control that allows the user to pick a single
@@ -97,22 +95,21 @@ const blurb = [
   </IntroBlurb>,
 ];
 
-const DatepickerPage = ({ ...rest }) => (
+const DatepickerSubPage = ({ ...rest }) => (
   <DocsPageBuilder
     title="Datepicker"
-    blurb={isNeo ? null : blurb}
     components={components}
     readme={datepickerReadme}
     {...rest}
   />
 );
 
-const NeoDatepickerPage = () => (
+const DatepickerPage = () => (
   <DocsPageWrapper
     title="Date picker"
     blurb={blurb}
-    webSubpage={<DatepickerPage wrapped />}
+    webSubpage={<DatepickerSubPage wrapped />}
   />
 );
 
-export default (isNeo ? NeoDatepickerPage : DatepickerPage);
+export default DatepickerPage;

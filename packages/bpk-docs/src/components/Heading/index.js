@@ -16,9 +16,6 @@
  * limitations under the License.
  */
 
-import HeadingOld from './Heading';
-import HeadingNeo from '../neo/Heading';
-
-const Heading = process.env.BPK_NEO ? HeadingNeo : HeadingOld;
+import Heading from '../neo/Heading';
 
 export default Heading;

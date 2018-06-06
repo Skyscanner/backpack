@@ -29,7 +29,6 @@ import androidScreenshotModal from 'react-native-bpk-component-navigation-bar/sc
 import iosScreenshotTitleIcon from 'react-native-bpk-component-navigation-bar/screenshots/ios/title-icon.png';
 import androidScreenshotTitleIcon from 'react-native-bpk-component-navigation-bar/screenshots/android/title-icon.png';
 
-import IntroBlurb from './../../components/neo/IntroBlurb';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
 
 const components = [
@@ -129,20 +128,9 @@ const components = [
   },
 ];
 
-const isNeo = process.env.BPK_NEO;
-
-const blurb = [
-  <IntroBlurb>
-    The Backpack navigation bar emulates Android and iOS navigation bars
-    respectively while still retaining a Backpack look and feel. Additonally
-    navigation bars are completely themeable.
-  </IntroBlurb>,
-];
-
 const NativeNavigationBarPage = (props: Object) => (
   <DocsPageBuilder
     title="Navigation bar"
-    blurb={isNeo ? null : blurb}
     components={components}
     readme={readme}
     showMenu

@@ -75,8 +75,6 @@ const components = [
   },
 ];
 
-const isNeo = process.env.BPK_NEO;
-
 const blurb = [
   <IntroBlurb>
     Tickets combine the look and feel of{' '}
@@ -86,22 +84,21 @@ const blurb = [
   </IntroBlurb>,
 ];
 
-const TicketsPage = ({ ...rest }) => (
+const TicketsSubPage = ({ ...rest }) => (
   <DocsPageBuilder
     title="Tickets"
-    blurb={isNeo ? null : blurb}
     components={components}
     readme={ticketReadme}
     {...rest}
   />
 );
 
-const NeoTicketPage = () => (
+const TicketsPage = () => (
   <DocsPageWrapper
     title="Ticket"
     blurb={blurb}
-    webSubpage={<TicketsPage wrapped />}
+    webSubpage={<TicketsSubPage wrapped />}
   />
 );
 
-export default (isNeo ? NeoTicketPage : TicketsPage);
+export default TicketsPage;

@@ -19,24 +19,15 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-import SideNavLayout from './../SideNavLayout';
-import NeoSideNavLayout from './../NeoSideNavLayout';
+import SideNavLayout from './../NeoSideNavLayout';
 
 import links from './../links';
 
-const UsingLayout = ({ children, ...rest }) =>
-  process.env.BPK_NEO ? (
-    <NeoSideNavLayout activeSection="USING_BACKPACK" links={links} {...rest}>
-      {children}
-    </NeoSideNavLayout>
-  ) : (
-    <SideNavLayout
-      links={links.filter(link => link.id === 'USING_BACKPACK')}
-      {...rest}
-    >
-      {children}
-    </SideNavLayout>
-  );
+const UsingLayout = ({ children, ...rest }) => (
+  <SideNavLayout activeSection="USING_BACKPACK" links={links} {...rest}>
+    {children}
+  </SideNavLayout>
+);
 
 UsingLayout.propTypes = {
   children: PropTypes.node.isRequired,

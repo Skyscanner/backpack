@@ -26,7 +26,6 @@ import badgeReadme from 'bpk-component-badge/readme.md';
 import STYLES from './badge-page.scss';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
 import Paragraph from './../../components/Paragraph';
-import IntroBlurb from './../../components/neo/IntroBlurb';
 
 const getClassName = cssModules(STYLES);
 const badgeClassName = getClassName('bpkdocs-badge-page__badge-spacing');
@@ -197,23 +196,9 @@ const components = [
   },
 ];
 
-const isNeo = process.env.BPK_NEO;
-
 const BadgePage = ({ ...rest }) => (
   <DocsPageBuilder
     title="Badge"
-    blurb={
-      isNeo
-        ? []
-        : [
-            <IntroBlurb>
-              Badges are labels which hold small amounts of information. They
-              are available in a number of colors to signify different meanings.
-              Badges are most often used as counters, such as an indication of
-              unread notifications.
-            </IntroBlurb>,
-          ]
-    }
     components={components}
     readme={badgeReadme}
     sassdocId="badges"

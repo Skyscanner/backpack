@@ -180,18 +180,15 @@ const components = [
   },
 ];
 
-const isNeo = process.env.BPK_NEO;
-
 const blurb = [
   <IntroBlurb>
     Calendars are used for date selection within a defined time period.
   </IntroBlurb>,
 ];
 
-const CalendarPage = ({ ...rest }) => (
+const CalendarSubPage = ({ ...rest }) => (
   <DocsPageBuilder
     title="Calendar"
-    blurb={isNeo ? null : blurb}
     components={components}
     readme={calendarReadme}
     sassdocId="calendar"
@@ -199,12 +196,12 @@ const CalendarPage = ({ ...rest }) => (
   />
 );
 
-const NeoCalendarPage = () => (
+const CalendarPage = () => (
   <DocsPageWrapper
     title="Calendar"
     blurb={blurb}
-    webSubpage={<CalendarPage wrapped />}
+    webSubpage={<CalendarSubPage wrapped />}
   />
 );
 
-export default (isNeo ? NeoCalendarPage : CalendarPage);
+export default CalendarPage;

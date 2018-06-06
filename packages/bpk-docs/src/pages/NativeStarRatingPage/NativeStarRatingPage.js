@@ -22,7 +22,6 @@ import readme from 'react-native-bpk-component-star-rating/readme.md';
 import iosScreenshotDefault from 'react-native-bpk-component-star-rating/screenshots/ios/default.png';
 import androidScreenshotDefault from 'react-native-bpk-component-star-rating/screenshots/android/default.png';
 
-import IntroBlurb from './../../components/neo/IntroBlurb';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
 
 const components = [
@@ -52,18 +51,9 @@ const components = [
   },
 ];
 
-const isNeo = process.env.BPK_NEO;
-
-const blurb = [
-  <IntroBlurb>
-    Star ratings are used for displaying a score within a given range.
-  </IntroBlurb>,
-];
-
 const NativeStarRatingPage = ({ ...rest }) => (
   <DocsPageBuilder
     title="Star Ratings"
-    blurb={isNeo ? null : blurb}
     components={components}
     readme={readme}
     {...rest}

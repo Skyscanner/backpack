@@ -23,7 +23,6 @@ import panelReadme from 'bpk-component-panel/readme.md';
 
 import DocsPageBuilder from './../../components/DocsPageBuilder';
 import Paragraph from './../../components/Paragraph';
-import IntroBlurb from './../../components/neo/IntroBlurb';
 
 const components = [
   {
@@ -71,19 +70,9 @@ const components = [
   },
 ];
 
-const isNeo = process.env.BPK_NEO;
-
-const blurb = [
-  <IntroBlurb>
-    Panels are useful for housing distinct areas of related content. Unlike
-    cards these are not clickable.
-  </IntroBlurb>,
-];
-
 const PanelsPage = ({ ...rest }) => (
   <DocsPageBuilder
     title="Panel"
-    blurb={isNeo ? null : blurb}
     components={components}
     readme={panelReadme}
     sassdocId="panels"

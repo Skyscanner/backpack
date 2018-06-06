@@ -179,8 +179,6 @@ const components = [
   },
 ];
 
-const isNeo = process.env.BPK_NEO;
-
 const blurb = [
   <IntroBlurb>
     Modals are used to display content or views that are separate from the rest
@@ -188,10 +186,9 @@ const blurb = [
   </IntroBlurb>,
 ];
 
-const ModalsPage = ({ ...rest }: { [string]: any }) => (
+const ModalsSubPage = ({ ...rest }: { [string]: any }) => (
   <DocsPageBuilder
     title="Modal"
-    blurb={isNeo ? null : blurb}
     components={components}
     readme={modalReadme}
     usageTable={{
@@ -216,12 +213,12 @@ const ModalsPage = ({ ...rest }: { [string]: any }) => (
   />
 );
 
-const NeoModalPage = () => (
+const ModalsPage = () => (
   <DocsPageWrapper
     title="Modal"
     blurb={blurb}
-    webSubpage={<ModalsPage wrapped />}
+    webSubpage={<ModalsSubPage wrapped />}
   />
 );
 
-export default (isNeo ? NeoModalPage : ModalsPage);
+export default ModalsPage;

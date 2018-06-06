@@ -42,7 +42,6 @@ import STYLES from './buttons-page.scss';
 import * as ROUTES from './../../constants/routes';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
 import Paragraph from './../../components/Paragraph';
-import IntroBlurb from './../../components/neo/IntroBlurb';
 import Code from '../../components/Code';
 
 const AlignedBpkSmallArrowIcon = alignToButton(TestBpkSmallArrowIcon);
@@ -317,22 +316,9 @@ const customSections = [
   },
 ];
 
-const isNeo = process.env.BPK_NEO;
-
 const ButtonsPage = ({ ...rest }: { [string]: any }) => (
   <DocsPageBuilder
     title="Buttons"
-    blurb={
-      isNeo
-        ? []
-        : [
-            <IntroBlurb>
-              On this page, you’ll find examples and information on how to use
-              the button component. If you provide an href, an anchor tag is
-              rendered instead.
-            </IntroBlurb>,
-          ]
-    }
     components={components}
     sassdocId="buttons"
     readme={buttonReadme}

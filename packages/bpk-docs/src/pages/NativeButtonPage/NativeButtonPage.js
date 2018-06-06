@@ -17,7 +17,6 @@
  */
 
 import React from 'react';
-import BpkLink from 'bpk-component-link';
 import readme from 'react-native-bpk-component-button/readme.md';
 
 import iosScreenshotPrimary from 'react-native-bpk-component-button/screenshots/ios/primary.png';
@@ -29,14 +28,7 @@ import androidScreenshotSecondary from 'react-native-bpk-component-button/screen
 import androidScreenshotDestructive from 'react-native-bpk-component-button/screenshots/android/destructive.png';
 import androidScreenshotFeatured from 'react-native-bpk-component-button/screenshots/android/featured.png';
 
-import Paragraph from './../../components/Paragraph';
-import IntroBlurb from './../../components/neo/IntroBlurb';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
-
-import { THEMING } from './../../constants/routes';
-
-const reactNativeUrl =
-  'https://facebook.github.io/react-native/docs/touchablewithoutfeedback.html';
 
 const components = [
   {
@@ -129,34 +121,9 @@ const components = [
   },
 ];
 
-const isNeo = process.env.BPK_NEO;
-
 const NativeTextPage = ({ ...rest }) => (
   <DocsPageBuilder
     title="Buttons"
-    blurb={
-      isNeo
-        ? []
-        : [
-            <IntroBlurb>
-              The Backpack button component is for all your button pressing
-              needs. It&#39;s a wrapper around the React Native{' '}
-              <BpkLink href={reactNativeUrl}>
-                TouchableWithoutFeedback component
-              </BpkLink>, therefore it supports all the same behaviours and
-              properties.
-            </IntroBlurb>,
-            <Paragraph>
-              There are four types of button: primary, secondary, destructive
-              and featured. All button types can be large and disabled.
-            </Paragraph>,
-            <Paragraph>Buttons can be text or icon based.</Paragraph>,
-            <Paragraph>
-              Primary and secondary buttons can be{' '}
-              <BpkLink href={THEMING}>themed</BpkLink>.
-            </Paragraph>,
-          ]
-    }
     components={components}
     readme={readme}
     showMenu

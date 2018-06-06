@@ -16,11 +16,6 @@
  * limitations under the License.
  */
 
-import PresentationBlockOld from './PresentationBlock';
-import PresentationBlockNeo from '../neo/PresentationBlock';
-
-const PresentationBlock = process.env.BPK_NEO
-  ? PresentationBlockNeo
-  : PresentationBlockOld;
+import PresentationBlock from '../neo/PresentationBlock';
 
 export default PresentationBlock;

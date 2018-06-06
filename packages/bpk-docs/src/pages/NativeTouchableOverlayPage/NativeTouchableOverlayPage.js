@@ -57,8 +57,6 @@ const components = [
   },
 ];
 
-const isNeo = process.env.BPK_NEO;
-
 const blurb = [
   <IntroBlurb>
     This component is a replacement for the default React Native Touchable
@@ -78,10 +76,9 @@ const blurb = [
   </BpkBlockquote>,
 ];
 
-const NativeTouchableOverlayPage = ({ ...rest }) => (
+const NativeTouchableOverlaySubPage = ({ ...rest }) => (
   <DocsPageBuilder
     title="Touchable overlay"
-    blurb={isNeo ? null : blurb}
     components={components}
     readme={readme}
     showMenu={false}
@@ -89,14 +86,12 @@ const NativeTouchableOverlayPage = ({ ...rest }) => (
   />
 );
 
-const NeoNativeTouchableOverlayPage = () => (
+const NativeTouchableOverlayPage = () => (
   <DocsPageWrapper
     title="Touchable overlay"
     blurb={blurb}
-    nativeSubpage={<NativeTouchableOverlayPage wrapped />}
+    nativeSubpage={<NativeTouchableOverlaySubPage wrapped />}
   />
 );
 
-export default (isNeo
-  ? NeoNativeTouchableOverlayPage
-  : NativeTouchableOverlayPage);
+export default NativeTouchableOverlayPage;

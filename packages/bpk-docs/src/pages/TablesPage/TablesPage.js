@@ -71,25 +71,22 @@ const components = [
   },
 ];
 
-const isNeo = process.env.BPK_NEO;
-
-const TablesPage = ({ ...rest }) => (
+const TablesSubPage = ({ ...rest }) => (
   <DocsPageBuilder
     title="Table"
     readme={tablesReadme}
-    blurb={isNeo ? null : blurb}
     components={components}
     {...rest}
   />
 );
 
-const NeoTablePage = () => (
+const TablesPage = () => (
   <DocsPageWrapper
     title="Table"
     blurb={blurb}
     components={components}
-    webSubpage={<TablesPage wrapped />}
+    webSubpage={<TablesSubPage wrapped />}
   />
 );
 
-export default (isNeo ? NeoTablePage : TablesPage);
+export default TablesPage;

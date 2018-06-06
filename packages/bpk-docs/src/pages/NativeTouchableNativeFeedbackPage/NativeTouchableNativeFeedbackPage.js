@@ -49,8 +49,6 @@ const components = [
   },
 ];
 
-const isNeo = process.env.BPK_NEO;
-
 const blurb = [
   <IntroBlurb>
     React Native{"'"}s{' '}
@@ -72,10 +70,9 @@ const blurb = [
   </BpkBlockquote>,
 ];
 
-const NativeTouchableNativeFeedbackPage = ({ ...rest }) => (
+const NativeTouchableNativeFeedbackSubPage = ({ ...rest }) => (
   <DocsPageBuilder
     title="Touchable Native Feedback"
-    blurb={isNeo ? null : blurb}
     components={components}
     readme={readme}
     showMenu={false}
@@ -83,14 +80,12 @@ const NativeTouchableNativeFeedbackPage = ({ ...rest }) => (
   />
 );
 
-const NeoNativeTouchableNativeFeedbackPage = () => (
+const NativeTouchableNativeFeedbackPage = () => (
   <DocsPageWrapper
     title="Touchable native feedback"
     blurb={blurb}
-    nativeSubpage={<NativeTouchableNativeFeedbackPage wrapped />}
+    nativeSubpage={<NativeTouchableNativeFeedbackSubPage wrapped />}
   />
 );
 
-export default (isNeo
-  ? NeoNativeTouchableNativeFeedbackPage
-  : NativeTouchableNativeFeedbackPage);
+export default NativeTouchableNativeFeedbackPage;

@@ -51,8 +51,6 @@ const components = [
   },
 ];
 
-const isNeo = process.env.BPK_NEO;
-
 const blurb = [
   <IntroBlurb>
     Switches allow users to toggle between two states, on or off. On mobile,
@@ -60,10 +58,9 @@ const blurb = [
   </IntroBlurb>,
 ];
 
-const NativeSwitchPage = ({ ...rest }) => (
+const NativeSwitchSubPage = ({ ...rest }) => (
   <DocsPageBuilder
     title="Switch"
-    blurb={isNeo ? null : blurb}
     components={components}
     readme={readme}
     showMenu={false}
@@ -71,12 +68,12 @@ const NativeSwitchPage = ({ ...rest }) => (
   />
 );
 
-const NeoNativeSwitchPage = () => (
+const NativeSwitchPage = () => (
   <DocsPageWrapper
     title="Switch"
     blurb={blurb}
-    nativeSubpage={<NativeSwitchPage wrapped />}
+    nativeSubpage={<NativeSwitchSubPage wrapped />}
   />
 );
 
-export default (isNeo ? NeoNativeSwitchPage : NativeSwitchPage);
+export default NativeSwitchPage;

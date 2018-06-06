@@ -18,27 +18,10 @@
 
 import React from 'react';
 import BpkText from 'bpk-component-text';
-import BpkBlockquote from 'bpk-component-blockquote';
 
 import textReadme from 'bpk-component-text/readme.md';
 
 import DocsPageBuilder from './../../components/DocsPageBuilder';
-import IntroBlurb from './../../components/neo/IntroBlurb';
-import Code from '../../components/Code';
-
-const blurb = [
-  <IntroBlurb>
-    The text component enables you to use Backpack defined text styles. On web,
-    you can combine these with any of the heading tags, a span or a paragraph.
-    You can mix different text styles with the appropriate tag to achieve
-    semantic markup while retaining control over how the text looks.
-  </IntroBlurb>,
-  <BpkBlockquote extraSpace>
-    <BpkText bold>Note:</BpkText> Whilst <Code>BpkText</Code> allows for any
-    combination of text size and heading levels, we recommend that visual
-    hierarchy is maintained inline with the semantic structure.
-  </BpkBlockquote>,
-];
 
 const components = [
   {
@@ -66,13 +49,10 @@ const components = [
   },
 ];
 
-const isNeo = process.env.BPK_NEO;
-
 const TextPage = ({ ...rest }) => (
   <DocsPageBuilder
     title="Text"
     readme={textReadme}
-    blurb={isNeo ? null : blurb}
     components={components}
     {...rest}
   />
