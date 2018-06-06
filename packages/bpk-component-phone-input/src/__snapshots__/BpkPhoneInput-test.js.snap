@@ -198,14 +198,12 @@ exports[`BpkPhoneInput should render correctly with a dialing code image attribu
   <div
     className="bpk-select-wrapper bpk-phone-input__dialing-code-wrapper dialing-wrapper"
   >
-    <div
+    <span
       className="bpk-select-wrapper__image"
-    >
-      <span />
-    </div>
+    />
     <select
       aria-invalid={false}
-      className="bpk-select bpk-select--borderless bpk-phone-input__dialing-code dialing-code"
+      className="bpk-select bpk-select--with-image bpk-phone-input__dialing-code dialing-code"
       disabled={false}
       id="dialing-code"
       name="Dialing code"

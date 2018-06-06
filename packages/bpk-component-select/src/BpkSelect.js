@@ -71,7 +71,8 @@ const BpkSelect = (props: Props) => {
         dockedFirst && 'bpk-select--docked-first',
         dockedMiddle && 'bpk-select--docked-middle',
         dockedLast && 'bpk-select--docked-last',
-        image && 'bpk-select--borderless',
+        image && 'bpk-select--with-image',
+        image && large && 'bpk-select--with-image-large',
         className,
       )}
       disabled={disabled}
@@ -82,27 +83,15 @@ const BpkSelect = (props: Props) => {
 
   if (image) {
     return (
-      <div
-        className={getClassName(
-          'bpk-select-wrapper',
-          large && 'bpk-select-wrapper--large',
-          docked && 'bpk-select-wrapper--docked',
-          dockedFirst && 'bpk-select-wrapper--docked-first',
-          dockedMiddle && 'bpk-select-wrapper--docked-middle',
-          dockedLast && 'bpk-select-wrapper--docked-last',
-          wrapperClassName,
-        )}
-      >
-        <div
-          className={getClassName(
+      <div className={getClassName('bpk-select-wrapper', wrapperClassName)}>
+        {React.cloneElement(image, {
+          className: getClassName(
             'bpk-select-wrapper__image',
             large && 'bpk-select-wrapper__image--large',
             disabled && 'bpk-select-wrapper__image--disabled',
             imageWrapperClassName,
-          )}
-        >
-          {image}
-        </div>
+          ),
+        })}
         {select}
       </div>
     );
