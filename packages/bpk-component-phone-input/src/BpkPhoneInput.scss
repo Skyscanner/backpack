@@ -26,15 +26,6 @@
     width: auto;
   }
 
-  &__dialing-code {
-    padding-right: $bpk-spacing-md * 2;
-
-    @include bpk-rtl {
-      padding-right: 0;
-      padding-left: $bpk-spacing-md * 2;
-    }
-  }
-
   &__phone-number {
     flex-grow: 1;
 

@@ -64,13 +64,7 @@ class SelectWithImage extends React.Component {
     });
   };
 
-  image = id => (
-    <img
-      alt="Flag"
-      style={{ width: '100%' }}
-      src={getFlagUriFromCountryCode(id)}
-    />
-  );
+  image = id => <img alt="Flag" src={getFlagUriFromCountryCode(id)} />;
 
   render() {
     const { options, ...rest } = this.props;
