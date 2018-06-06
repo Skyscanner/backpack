@@ -19,7 +19,7 @@
 /* @flow */
 
 import React from 'react';
-import { ScrollView, StyleSheet, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import { storiesOf } from '@storybook/react-native';
 import {
   borderRadiusSm,
@@ -95,10 +95,6 @@ class StatefulBpkCarouselIndicatorExample extends React.Component<
     };
   }
 
-  getPageColor = index => pageColors[index % pageColors.length];
-
-  scrollViewRef: ScrollView = null;
-
   handlePageCountChange = pageCount => {
     let { selectedIndex } = this.state;
     if (selectedIndex >= pageCount) {
@@ -109,15 +105,6 @@ class StatefulBpkCarouselIndicatorExample extends React.Component<
 
   handleSelectedIndexChange = selectedIndex => {
     this.setState({ selectedIndex });
-    this.scrollViewRef.scrollTo({
-      x: PAGE_WIDTH * selectedIndex,
-    });
-  };
-
-  handleScroll = event => {
-    const { contentOffset } = event.nativeEvent;
-    const selectedIndex = contentOffset.x / PAGE_WIDTH;
-    this.setState({ selectedIndex });
   };
 
   render() {
@@ -125,28 +112,6 @@ class StatefulBpkCarouselIndicatorExample extends React.Component<
     return (
       <View>
         <View style={styles.overlay}>
-          <ScrollView
-            horizontal
-            pagingEnabled
-            onMomentumScrollEnd={this.handleScroll}
-            ref={ref => {
-              this.scrollViewRef = ref;
-            }}
-            showsHorizontalScrollIndicator={false}
-            style={styles.pager}
-          >
-            {new Array(pageCount)
-              .fill()
-              .map((_, index) => (
-                <View
-                  key={index.toString()}
-                  style={[
-                    styles.page,
-                    { backgroundColor: this.getPageColor(index) },
-                  ]}
-                />
-              ))}
-          </ScrollView>
           <BpkCarouselIndicator
             pageCount={pageCount}
             selectedIndex={selectedIndex}

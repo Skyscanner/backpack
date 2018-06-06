@@ -7,8 +7,9 @@ Array [
     accessible={true}
     horizontal={true}
     onLayout={[Function]}
-    onMomentumScrollEnd={[Function]}
+    onScroll={[Function]}
     pagingEnabled={true}
+    scrollEventThrottle={16}
     showsHorizontalScrollIndicator={false}
     style={
       Object {
@@ -98,8 +99,9 @@ Array [
     accessible={true}
     horizontal={true}
     onLayout={[Function]}
-    onMomentumScrollEnd={[Function]}
+    onScroll={[Function]}
     pagingEnabled={true}
+    scrollEventThrottle={16}
     showsHorizontalScrollIndicator={false}
     style={null}
   >
@@ -184,8 +186,9 @@ exports[`Android BpkCarousel should render correctly without indicators 1`] = `
   accessible={true}
   horizontal={true}
   onLayout={[Function]}
-  onMomentumScrollEnd={[Function]}
+  onScroll={[Function]}
   pagingEnabled={true}
+  scrollEventThrottle={16}
   showsHorizontalScrollIndicator={false}
   style={null}
 >
