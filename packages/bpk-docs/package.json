@@ -53,6 +53,7 @@
     "bpk-component-nudger": "^1.0.66",
     "bpk-component-pagination": "^1.0.29",
     "bpk-component-panel": "^1.0.62",
+    "bpk-component-phone-input": "^0.0.0",
     "bpk-component-popover": "^2.1.15",
     "bpk-component-progress": "^1.0.66",
     "bpk-component-radio": "^1.2.27",

@@ -478,6 +478,12 @@ const neoComponentsLinks = [
         tags: ['web'],
       },
 
+      {
+        id: 'PHONE_INPUT',
+        route: routes.NEO_PHONE_INPUT,
+        children: 'Phone input',
+        tags: ['native', 'web'],
+      },
       // Native components.
       {
         id: 'NATIVE_FLAT_LIST',
@@ -497,12 +503,6 @@ const neoComponentsLinks = [
       //   route: routes.NEO_PAGINATION_DOT,
       //   children: 'Pagination Dot',
       // },
-      {
-        id: 'NATIVE_PHONE_INPUT',
-        route: routes.NEO_PHONE_INPUT,
-        children: 'Phone number input',
-        tags: ['native'],
-      },
       {
         id: 'NATIVE_PICKER',
         route: routes.NEO_PICKER,

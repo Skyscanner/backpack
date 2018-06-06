@@ -22,11 +22,9 @@ import iosScreenshoDialingCodeList from 'react-native-bpk-component-phone-input/
 import iosScreenshotPhoneNumberInput from 'react-native-bpk-component-phone-input/screenshots/ios/phone-number-input.png';
 import androidScreenshotDialingCodeList from 'react-native-bpk-component-phone-input/screenshots/android/dialing-code-list.png';
 import androidScreenshotPhoneNumberInput from 'react-native-bpk-component-phone-input/screenshots/android/phone-number-input.png';
-import BpkBlockquote from 'bpk-component-blockquote';
 
-import IntroBlurb from './../../components/neo/IntroBlurb';
+import Paragraph from './../../components/Paragraph';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
-import DocsPageWrapper from './../../components/neo/DocsPageWrapper';
 
 const components = [
   {
@@ -75,38 +73,24 @@ const components = [
   },
 ];
 
-const isNeo = process.env.BPK_NEO;
-
 const blurb = [
-  <IntroBlurb>
-    The phone number input encapsulates two components that together enable the
-    collection of phone numbers.
-  </IntroBlurb>,
-  <BpkBlockquote>
+  <Paragraph>
     Consumers are responsible for using these two components together. The
     accessory view in the text input shall present the dialing code list when
     tapped and a selection should update the dialing code set in the input
     component.
-  </BpkBlockquote>,
+  </Paragraph>,
 ];
 
-const NativeInputPage = ({ ...rest }) => (
+const NativeInputPage = () => (
   <DocsPageBuilder
     title="Phone number input"
-    blurb={isNeo ? null : blurb}
+    blurb={blurb}
     components={components}
     readme={readme}
     showMenu={false}
-    {...rest}
+    wrapped
   />
 );
 
-const NeoNativeInputPage = () => (
-  <DocsPageWrapper
-    title="Phone number input"
-    blurb={blurb}
-    nativeSubpage={<NativeInputPage wrapped />}
-  />
-);
-
-export default (isNeo ? NeoNativeInputPage : NativeInputPage);
+export default NativeInputPage;
