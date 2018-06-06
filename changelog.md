@@ -2,6 +2,24 @@
 
 [Unreleased changes](./unreleased.md).
 
+# 2018-06-06 - Introduce phone input component, plus new props for button, link and breakpoint.
+
+- bpk-component-button: 2.0.21 => 2.1.0
+  - Added `blank` and `rel` props.
+  - When `blank` is set, `rel` is automatically set to `rel="noopener noreferrer"`.
+
+- bpk-component-link: 1.1.18 => 1.2.0
+  - When `blank` is set, `rel` is automatically set to `rel="noopener noreferrer"`.
+
+- bpk-component-breakpoint: 1.0.63 => 1.1.0
+  - Change `children` proptype to `oneOfType(node, func)` (added `node`).
+
+- bpk-component-phone-input: 0.0.0 => 1.0.0
+  - Introducing the web phone input component, see: https://backpack.github.io/components/phone-input/?platform=web
+
+- bpk-component-select: 2.1.68 => 2.2.0
+  - Add ability to display an image in the select component.
+
 # 2018-05-31 - Add native alert component
 
 **Added:**

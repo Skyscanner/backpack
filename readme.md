@@ -62,6 +62,7 @@ npm install [package-name] --save-dev
 | [`bpk-component-pagination`](/packages/bpk-component-pagination) | [![npm version](https://badge.fury.io/js/bpk-component-pagination.svg)](http://badge.fury.io/js/bpk-component-pagination) |
 | [`bpk-component-panel`](/packages/bpk-component-panel) | [![npm version](https://badge.fury.io/js/bpk-component-panel.svg)](http://badge.fury.io/js/bpk-component-panel) |
 | [`bpk-component-paragraph`](/packages/bpk-component-paragraph) | [![npm version](https://badge.fury.io/js/bpk-component-paragraph.svg)](http://badge.fury.io/js/bpk-component-paragraph) |
+| [`bpk-component-phone-input`](/packages/bpk-component-phone-input) | [![npm version](https://badge.fury.io/js/bpk-component-phone-input.svg)](http://badge.fury.io/js/bpk-component-phone-input) |
 | [`bpk-component-popover`](/packages/bpk-component-popover) | [![npm version](https://badge.fury.io/js/bpk-component-popover.svg)](http://badge.fury.io/js/bpk-component-popover) |
 | [`bpk-component-progress`](/packages/bpk-component-progress) | [![npm version](https://badge.fury.io/js/bpk-component-progress.svg)](http://badge.fury.io/js/bpk-component-progress) |
 | [`bpk-component-radio`](/packages/bpk-component-radio) | [![npm version](https://badge.fury.io/js/bpk-component-radio.svg)](http://badge.fury.io/js/bpk-component-radio) |
