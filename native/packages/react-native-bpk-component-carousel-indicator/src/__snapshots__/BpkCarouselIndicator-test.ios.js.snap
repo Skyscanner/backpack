@@ -25,7 +25,7 @@ exports[`iOS BpkCarouselIndicator should render correctly 1`] = `
     collapsable={undefined}
     style={
       Object {
-        "backgroundColor": "rgb(230, 228, 235)",
+        "backgroundColor": "rgb(178, 174, 189)",
         "borderRadius": 40,
         "height": 6,
         "marginHorizontal": 2,
@@ -37,7 +37,7 @@ exports[`iOS BpkCarouselIndicator should render correctly 1`] = `
     collapsable={undefined}
     style={
       Object {
-        "backgroundColor": "rgb(230, 228, 235)",
+        "backgroundColor": "rgb(178, 174, 189)",
         "borderRadius": 40,
         "height": 6,
         "marginHorizontal": 2,
@@ -61,7 +61,7 @@ exports[`iOS BpkCarouselIndicator should render correctly 1`] = `
     collapsable={undefined}
     style={
       Object {
-        "backgroundColor": "rgb(230, 228, 235)",
+        "backgroundColor": "rgb(178, 174, 189)",
         "borderRadius": 40,
         "height": 6,
         "marginHorizontal": 2,
@@ -73,7 +73,7 @@ exports[`iOS BpkCarouselIndicator should render correctly 1`] = `
     collapsable={undefined}
     style={
       Object {
-        "backgroundColor": "rgb(230, 228, 235)",
+        "backgroundColor": "rgb(178, 174, 189)",
         "borderRadius": 40,
         "height": 6,
         "marginHorizontal": 2,
@@ -109,7 +109,7 @@ exports[`iOS BpkCarouselIndicator should render correctly with a page count > 5 
     collapsable={undefined}
     style={
       Object {
-        "backgroundColor": "rgb(230, 228, 235)",
+        "backgroundColor": "rgb(178, 174, 189)",
         "borderRadius": 40,
         "height": 2,
         "marginHorizontal": 2,
@@ -121,7 +121,7 @@ exports[`iOS BpkCarouselIndicator should render correctly with a page count > 5 
     collapsable={undefined}
     style={
       Object {
-        "backgroundColor": "rgb(230, 228, 235)",
+        "backgroundColor": "rgb(178, 174, 189)",
         "borderRadius": 40,
         "height": 4,
         "marginHorizontal": 2,
@@ -145,7 +145,7 @@ exports[`iOS BpkCarouselIndicator should render correctly with a page count > 5 
     collapsable={undefined}
     style={
       Object {
-        "backgroundColor": "rgb(230, 228, 235)",
+        "backgroundColor": "rgb(178, 174, 189)",
         "borderRadius": 40,
         "height": 4,
         "marginHorizontal": 2,
@@ -157,7 +157,7 @@ exports[`iOS BpkCarouselIndicator should render correctly with a page count > 5 
     collapsable={undefined}
     style={
       Object {
-        "backgroundColor": "rgb(230, 228, 235)",
+        "backgroundColor": "rgb(178, 174, 189)",
         "borderRadius": 40,
         "height": 2,
         "marginHorizontal": 2,
@@ -193,7 +193,7 @@ exports[`iOS BpkCarouselIndicator should render correctly with a page count equa
     collapsable={undefined}
     style={
       Object {
-        "backgroundColor": "rgb(230, 228, 235)",
+        "backgroundColor": "rgb(178, 174, 189)",
         "borderRadius": 40,
         "height": 2,
         "marginHorizontal": 2,
@@ -205,7 +205,7 @@ exports[`iOS BpkCarouselIndicator should render correctly with a page count equa
     collapsable={undefined}
     style={
       Object {
-        "backgroundColor": "rgb(230, 228, 235)",
+        "backgroundColor": "rgb(178, 174, 189)",
         "borderRadius": 40,
         "height": 2,
         "marginHorizontal": 2,
@@ -217,7 +217,7 @@ exports[`iOS BpkCarouselIndicator should render correctly with a page count equa
     collapsable={undefined}
     style={
       Object {
-        "backgroundColor": "rgb(230, 228, 235)",
+        "backgroundColor": "rgb(178, 174, 189)",
         "borderRadius": 40,
         "height": 4,
         "marginHorizontal": 2,
@@ -241,7 +241,7 @@ exports[`iOS BpkCarouselIndicator should render correctly with a page count equa
     collapsable={undefined}
     style={
       Object {
-        "backgroundColor": "rgb(230, 228, 235)",
+        "backgroundColor": "rgb(178, 174, 189)",
         "borderRadius": 40,
         "height": 4,
         "marginHorizontal": 2,
@@ -290,7 +290,7 @@ exports[`iOS BpkCarouselIndicator should render correctly with arbitrary props 1
     collapsable={undefined}
     style={
       Object {
-        "backgroundColor": "rgb(230, 228, 235)",
+        "backgroundColor": "rgb(178, 174, 189)",
         "borderRadius": 40,
         "height": 6,
         "marginHorizontal": 2,
@@ -302,7 +302,7 @@ exports[`iOS BpkCarouselIndicator should render correctly with arbitrary props 1
     collapsable={undefined}
     style={
       Object {
-        "backgroundColor": "rgb(230, 228, 235)",
+        "backgroundColor": "rgb(178, 174, 189)",
         "borderRadius": 40,
         "height": 6,
         "marginHorizontal": 2,
@@ -314,7 +314,7 @@ exports[`iOS BpkCarouselIndicator should render correctly with arbitrary props 1
     collapsable={undefined}
     style={
       Object {
-        "backgroundColor": "rgb(230, 228, 235)",
+        "backgroundColor": "rgb(178, 174, 189)",
         "borderRadius": 40,
         "height": 6,
         "marginHorizontal": 2,
@@ -326,7 +326,7 @@ exports[`iOS BpkCarouselIndicator should render correctly with arbitrary props 1
     collapsable={undefined}
     style={
       Object {
-        "backgroundColor": "rgb(230, 228, 235)",
+        "backgroundColor": "rgb(178, 174, 189)",
         "borderRadius": 40,
         "height": 6,
         "marginHorizontal": 2,
@@ -376,7 +376,7 @@ exports[`iOS BpkCarouselIndicator should render correctly with custom styles 1`]
     collapsable={undefined}
     style={
       Object {
-        "backgroundColor": "rgb(230, 228, 235)",
+        "backgroundColor": "rgb(178, 174, 189)",
         "borderRadius": 40,
         "height": 6,
         "marginHorizontal": 2,
@@ -388,7 +388,7 @@ exports[`iOS BpkCarouselIndicator should render correctly with custom styles 1`]
     collapsable={undefined}
     style={
       Object {
-        "backgroundColor": "rgb(230, 228, 235)",
+        "backgroundColor": "rgb(178, 174, 189)",
         "borderRadius": 40,
         "height": 6,
         "marginHorizontal": 2,
@@ -400,7 +400,7 @@ exports[`iOS BpkCarouselIndicator should render correctly with custom styles 1`]
     collapsable={undefined}
     style={
       Object {
-        "backgroundColor": "rgb(230, 228, 235)",
+        "backgroundColor": "rgb(178, 174, 189)",
         "borderRadius": 40,
         "height": 6,
         "marginHorizontal": 2,
@@ -412,7 +412,7 @@ exports[`iOS BpkCarouselIndicator should render correctly with custom styles 1`]
     collapsable={undefined}
     style={
       Object {
-        "backgroundColor": "rgb(230, 228, 235)",
+        "backgroundColor": "rgb(178, 174, 189)",
         "borderRadius": 40,
         "height": 6,
         "marginHorizontal": 2,
