@@ -278,7 +278,7 @@ exports[`BpkSelect should render correctly with image 1`] = `
 >
   <img
     alt="placeholder"
-    className="bpk-select-wrapper__image"
+    className="image-class-name bpk-select-wrapper__image"
     src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg' viewBox%3D'0 0 200 150'%2F%3E"
   />
   <select
@@ -321,7 +321,7 @@ exports[`BpkSelect should render correctly with image and "disabled" property 1`
 >
   <img
     alt="placeholder"
-    className="bpk-select-wrapper__image bpk-select-wrapper__image--disabled imageWrapperClass--test"
+    className="image-class-name bpk-select-wrapper__image bpk-select-wrapper__image--disabled"
     src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg' viewBox%3D'0 0 200 150'%2F%3E"
   />
   <select
@@ -364,7 +364,7 @@ exports[`BpkSelect should render correctly with image and custom classes 1`] = `
 >
   <img
     alt="placeholder"
-    className="bpk-select-wrapper__image imageWrapperClass--test"
+    className="image-class-name bpk-select-wrapper__image"
     src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg' viewBox%3D'0 0 200 150'%2F%3E"
   />
   <select

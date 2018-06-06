@@ -45,4 +45,3 @@ export default () => (
 | dockedLast                | bool       | false    | false         |
 | image                     | node       | false    | null          |
 | wrapperClassName          | string     | false    | null          |
-| imageWrapperClassName     | string     | false    | null          |

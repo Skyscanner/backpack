@@ -36,7 +36,6 @@ export type Props = {
   dockedLast: boolean,
   dockedMiddle: boolean,
   image: ?Node,
-  imageWrapperClassName: ?string,
   large: boolean,
   valid: ?boolean,
   wrapperClassName: ?string,
@@ -51,7 +50,6 @@ const BpkSelect = (props: Props) => {
     dockedLast,
     dockedMiddle,
     image,
-    imageWrapperClassName,
     large,
     valid,
     wrapperClassName,
@@ -86,10 +84,10 @@ const BpkSelect = (props: Props) => {
       <div className={getClassName('bpk-select-wrapper', wrapperClassName)}>
         {React.cloneElement(image, {
           className: getClassName(
+            image.props.className,
             'bpk-select-wrapper__image',
             large && 'bpk-select-wrapper__image--large',
             disabled && 'bpk-select-wrapper__image--disabled',
-            imageWrapperClassName,
           ),
         })}
         {select}
@@ -110,7 +108,6 @@ BpkSelect.propTypes = {
   dockedLast: PropTypes.bool,
   dockedMiddle: PropTypes.bool,
   image: PropTypes.node,
-  imageWrapperClassName: PropTypes.string,
   large: PropTypes.bool,
   valid: PropTypes.bool,
   wrapperClassName: PropTypes.string,
@@ -124,7 +121,6 @@ BpkSelect.defaultProps = {
   dockedMiddle: false,
   disabled: false,
   image: null,
-  imageWrapperClassName: null,
   large: false,
   valid: null,
   wrapperClassName: null,
