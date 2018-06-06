@@ -58,6 +58,7 @@ configure(() => {
   require('../packages/react-native-bpk-component-button-link/stories');
   require('../packages/react-native-bpk-component-button/stories');
   require('../packages/react-native-bpk-component-card/stories');
+  require('../packages/react-native-bpk-component-carousel-indicator/stories');
   require('../packages/react-native-bpk-component-carousel/stories');
   require('../packages/react-native-bpk-component-flat-list/stories');
   require('../packages/react-native-bpk-component-horizontal-nav/stories');
@@ -65,7 +66,6 @@ configure(() => {
   require('../packages/react-native-bpk-component-navigation-bar/stories');
   require('../packages/react-native-bpk-component-map/stories');
   require('../packages/react-native-bpk-component-nudger/stories');
-  require('../packages/react-native-bpk-component-carousel-indicator/stories');
   require('../packages/react-native-bpk-component-panel/stories');
   require('../packages/react-native-bpk-component-phone-input/stories');
   require('../packages/react-native-bpk-component-picker/stories');

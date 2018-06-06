@@ -30,6 +30,8 @@ import BpkCarouselIndicator from 'react-native-bpk-component-carousel-indicator'
 import { spacingXl } from 'bpk-tokens/tokens/base.react.native';
 import typeof BpkCarouselItem from './BpkCarouselItem';
 
+const SCROLL_EVENT_THROTTLE = 16; // 1000ms / 60fps = 16ms
+
 const styles = StyleSheet.create({
   carouselIndicator: {
     alignSelf: 'center',
@@ -90,9 +92,11 @@ class BpkCarousel extends React.Component<Props, State> {
   handleScroll = (event: any) => {
     const { contentOffset } = event.nativeEvent;
     const currentIndex = this.state.width
-      ? contentOffset.x / this.state.width
+      ? Math.round(contentOffset.x / this.state.width)
       : 0;
-    this.setState({ currentIndex });
+    if (currentIndex !== this.state.currentIndex) {
+      this.setState({ currentIndex });
+    }
   };
 
   render() {
@@ -107,7 +111,8 @@ class BpkCarousel extends React.Component<Props, State> {
         <ScrollView
           accessible
           accessibilityLabel={this.getAccessibilityLabel()}
-          onMomentumScrollEnd={this.handleScroll}
+          onScroll={this.handleScroll}
+          scrollEventThrottle={SCROLL_EVENT_THROTTLE}
           onLayout={this.onLayout}
           horizontal
           pagingEnabled
