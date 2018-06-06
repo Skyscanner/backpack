@@ -6,7 +6,7 @@
     "link": "react-native link",
     "start": "react-native start",
     "ios": "react-native run-ios",
-    "android:emulator": "$ANDROID_HOME/tools/emulator -avd bpk-avd",
+    "android:emulator": "$ANDROID_SDK_ROOT/emulator/emulator -avd bpk-avd",
     "android:build": "react-native run-android",
     "android": "npm run android:emulator & npm run android:build",
     "test": "jest --coverage",

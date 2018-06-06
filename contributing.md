@@ -271,30 +271,32 @@ Add an environment variable pointing to the SDK location to your `~/.bash_profil
 (or similarly used file):
 
 ```
-echo "export ANDROID_HOME=\"$HOME/Library/Android/sdk\"" >> ~/.bash_profile && source ~/.bash_profile
+echo "export ANDROID_HOME=\"$HOME/Library/Android/sdk\"" >> ~/.bash_profile
+echo "export ANDROID_SDK_ROOT=\"$HOME/Library/Android/sdk\"" >> ~/.bash_profile
+source ~/.bash_profile
 ```
 
 Accept the SDK licences:
 
 ```
-$ANDROID_HOME/tools/bin/sdkmanager --licenses
+$ANDROID_SDK_ROOT/tools/bin/sdkmanager --licenses
 ```
 
 Download an Android system image. Note that you may get a warning about a `.cfg` file not being present.
 You're safe to ignore this.
 
 ```
-$ANDROID_HOME/tools/bin/sdkmanager "system-images;android-24;google_apis;x86"
+$ANDROID_SDK_ROOT/tools/bin/sdkmanager "system-images;android-27;google_apis;x86"
 ```
 
 Create an Android Virtual Device (AVD):
 
 ```
-$ANDROID_HOME/tools/bin/avdmanager create avd --name "bpk-avd" --package "system-images;android-24;google_apis;x86" --device "pixel"
+$ANDROID_SDK_ROOT/tools/bin/avdmanager create avd --name "bpk-avd" --package "system-images;android-27;google_apis;x86" --device "pixel" && cp native/android/bpk-avd.ini ~/.android/avd/bpk-avd.avd/config.ini
 ```
 
 You should now have a functioning Android development environment, including a
-virtual device to run things on. You can run the AVD manually with `$ANDROID_HOME/tools/emulator -avd bpk-avd`,
+virtual device to run things on. You can run the AVD manually with `$ANDROID_SDK_ROOT/emulator/emulator -avd bpk-avd`,
 but `npm run android` will handle this for you, so it's not required.
 
 ### Storybook
