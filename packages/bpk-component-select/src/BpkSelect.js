@@ -84,10 +84,10 @@ const BpkSelect = (props: Props) => {
       <div className={getClassName('bpk-select-wrapper', wrapperClassName)}>
         {React.cloneElement(image, {
           className: getClassName(
-            image.props.className,
             'bpk-select-wrapper__image',
             large && 'bpk-select-wrapper__image--large',
             disabled && 'bpk-select-wrapper__image--disabled',
+            image.props.className,
           ),
         })}
         {select}
