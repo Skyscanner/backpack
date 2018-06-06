@@ -44,10 +44,6 @@
   &--with-image {
     padding-left: $bpk-spacing-xl;
 
-    @media screen\0 {
-      padding-left: $bpk-spacing-xl !important; /* stylelint-disable-line declaration-no-important */
-    }
-
     @include bpk-rtl {
       padding-right: $bpk-spacing-xl;
       padding-left: $bpk-select-padding-right;
@@ -57,14 +53,14 @@
         padding-left: $bpk-spacing-sm !important; /* stylelint-disable-line declaration-no-important */
       }
     }
+
+    @media screen\0 {
+      padding-left: $bpk-spacing-xl !important; /* stylelint-disable-line declaration-no-important */
+    }
   }
 
   &--with-image-large {
     padding-left: $bpk-spacing-xxl + $bpk-spacing-xs;
-
-    @media screen\0 {
-      padding-left: $bpk-spacing-xxl + $bpk-spacing-xs !important; /* stylelint-disable-line declaration-no-important */
-    }
 
     @include bpk-rtl {
       padding-right: $bpk-spacing-xxl + $bpk-spacing-xs;
@@ -74,6 +70,10 @@
         padding-right: $bpk-spacing-xxl + $bpk-spacing-xs !important; /* stylelint-disable-line declaration-no-important */
         padding-left: $bpk-spacing-sm !important; /* stylelint-disable-line declaration-no-important */
       }
+    }
+
+    @media screen\0 {
+      padding-left: $bpk-spacing-xxl + $bpk-spacing-xs !important; /* stylelint-disable-line declaration-no-important */
     }
   }
 }
