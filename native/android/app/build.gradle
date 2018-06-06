@@ -100,6 +100,12 @@ def getGMapsApiKey() {
     return ''
 }
 
+def hasBackpackDebugCert() {
+    File file = new File('backpack.keystore')
+
+    return file.exists()
+}
+
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
     buildToolsVersion rootProject.ext.buildToolsVersion
@@ -113,8 +119,20 @@ android {
         ndk {
             abiFilters "armeabi-v7a", "x86"
         }
-        manifestPlaceholders = [googleMapsApiKey:getGMapsApiKey()]
+        manifestPlaceholders = [googleMapsApiKey: getGMapsApiKey()]
     }
+
+    if (hasBackpackDebugCert()) {
+        signingConfigs {
+            debug {
+                storeFile file("../backpack.keystore")
+                keyAlias 'backpackdebugkey'
+                keyPassword 'backpackrocks'
+                storePassword 'backpackrocks'
+            }
+        }
+    }
+
     splits {
         abi {
             reset()

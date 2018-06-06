@@ -239,7 +239,11 @@ We use Ruby to manage CocoaPods and recommend you use [rbenv](https://github.com
 The following instructions heavily make use of [Homebrew](https://brew.sh/),
 which is available for macOS. Windows and Linux installation for these packages is also well-supported, but isn't currently documented here.
 
-In future, we intend to automate more of this to reduce the number of steps required. To ensure that maps powered by Google work set the `google_maps_api_key` in `native/android/local.properties`.
+In future, we intend to automate more of this to reduce the number of steps required. To ensure that maps powered by Google work set the `google_maps_api_key` in `native/android/local.properties` and make sure you are using the backpack.keystore.
+
+##### APK signing
+
+For members of Backpack we have a keystore tied to our Google Maps API key in LastPass. Retrieve this key and place it in `native/android/backpack.keystore`. For contributors who are not members of Backpack nothing needs to be done, but Google Maps will not work. If you need Google Maps to work you'll need to supply your own Google Maps Api Key and possible keystore.
 
 ##### Watchman (if not already installed)
 
