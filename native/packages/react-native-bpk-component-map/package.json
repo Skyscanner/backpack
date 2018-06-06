@@ -1,6 +1,6 @@
 {
   "name": "react-native-bpk-component-map",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "private": true,
   "main": "index.js",
   "description": "Backpack React Native map component.",
@@ -15,7 +15,7 @@
     "react-native": ">= 0.51.0"
   },
   "dependencies": {
-    "bpk-tokens": "^27.0.0",
+    "bpk-tokens": "^27.0.1",
     "prop-types": "^15.5.8",
     "react-native-maps": "^0.21.0"
   }

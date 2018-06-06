@@ -1,6 +1,6 @@
 {
   "name": "react-native-bpk-component-phone-input",
-  "version": "1.0.16",
+  "version": "1.0.17",
   "main": "index.js",
   "description": "Backpack React Native phone input component.",
   "repository": {
@@ -14,15 +14,15 @@
     "react-native": ">= 0.47.0"
   },
   "dependencies": {
-    "bpk-tokens": "^27.0.0",
+    "bpk-tokens": "^27.0.1",
     "prop-types": "^15.5.8",
-    "react-native-bpk-component-flat-list": "^1.0.3",
-    "react-native-bpk-component-icon": "^1.8.0",
-    "react-native-bpk-component-section-list": "^1.0.3",
-    "react-native-bpk-component-select": "^1.0.1",
-    "react-native-bpk-component-text": "^2.1.35",
-    "react-native-bpk-component-text-input": "^2.2.12",
-    "react-native-bpk-component-touchable-native-feedback": "^1.1.9",
-    "react-native-bpk-component-touchable-overlay": "^1.0.17"
+    "react-native-bpk-component-flat-list": "^1.0.4",
+    "react-native-bpk-component-icon": "^1.8.1",
+    "react-native-bpk-component-section-list": "^1.0.4",
+    "react-native-bpk-component-select": "^1.0.2",
+    "react-native-bpk-component-text": "^2.1.36",
+    "react-native-bpk-component-text-input": "^2.2.13",
+    "react-native-bpk-component-touchable-native-feedback": "^1.1.10",
+    "react-native-bpk-component-touchable-overlay": "^1.0.18"
   }
 }
