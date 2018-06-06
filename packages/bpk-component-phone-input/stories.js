@@ -21,7 +21,27 @@
 import React, { Component } from 'react';
 import { storiesOf } from '@storybook/react';
 import BpkFieldSet from 'bpk-component-fieldset';
+import BpkImage from 'bpk-component-image';
 import BpkPhoneInput from './index';
+
+const DIALING_CODE_TO_ID_MAP = {
+  '44': 'uk',
+  '55': 'br',
+};
+
+const getFlag = dialingCode => {
+  const countryCode = DIALING_CODE_TO_ID_MAP[dialingCode];
+  const url = `https://images.skyscnr.com/images/country/flag/header/${countryCode}.png`;
+  return (
+    <BpkImage
+      altText="Flag"
+      height={38}
+      width={50}
+      style={{ width: '100%' }}
+      src={url}
+    />
+  );
+};
 
 type Props = {
   large: boolean,
@@ -47,7 +67,7 @@ class StoryContainer extends Component<
 
   constructor(props: Props) {
     super(props);
-    this.state = { dialingCode: '', value: '' };
+    this.state = { dialingCode: '44', value: '' };
   }
 
   onChange = (e: SyntheticInputEvent<HTMLElement>) => {
@@ -96,6 +116,7 @@ class StoryContainer extends Component<
             id: 'dialing-code',
             name: 'Dialing code',
             'aria-label': 'Dialing code',
+            image: getFlag(dialingCode),
           }}
         />
       </BpkFieldSet>

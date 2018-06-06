@@ -4,6 +4,7 @@ exports[`BpkSelect should render correctly 1`] = `
 <select
   aria-invalid={false}
   className="bpk-select"
+  disabled={false}
   id="fruits"
   name="fruits"
   onChange={[Function]}
@@ -37,6 +38,7 @@ exports[`BpkSelect should render correctly with "className" attribute 1`] = `
 <select
   aria-invalid={false}
   className="bpk-select test"
+  disabled={false}
   id="fruits"
   name="fruits"
   onChange={[Function]}
@@ -70,6 +72,7 @@ exports[`BpkSelect should render correctly with "docked" attribute 1`] = `
 <select
   aria-invalid={false}
   className="bpk-select bpk-select--docked"
+  disabled={false}
   id="fruits"
   name="fruits"
   onChange={[Function]}
@@ -103,6 +106,7 @@ exports[`BpkSelect should render correctly with "dockedFirst" attribute 1`] = `
 <select
   aria-invalid={false}
   className="bpk-select bpk-select--docked-first"
+  disabled={false}
   id="fruits"
   name="fruits"
   onChange={[Function]}
@@ -136,6 +140,7 @@ exports[`BpkSelect should render correctly with "dockedLast" attribute 1`] = `
 <select
   aria-invalid={false}
   className="bpk-select bpk-select--docked-last"
+  disabled={false}
   id="fruits"
   name="fruits"
   onChange={[Function]}
@@ -169,6 +174,7 @@ exports[`BpkSelect should render correctly with "dockedMiddle" attribute 1`] = `
 <select
   aria-invalid={false}
   className="bpk-select bpk-select--docked-middle"
+  disabled={false}
   id="fruits"
   name="fruits"
   onChange={[Function]}
@@ -202,6 +208,7 @@ exports[`BpkSelect should render correctly with "large" attribute 1`] = `
 <select
   aria-invalid={false}
   className="bpk-select bpk-select--large"
+  disabled={false}
   id="fruits"
   name="fruits"
   onChange={[Function]}
@@ -235,6 +242,7 @@ exports[`BpkSelect should render correctly with a "valid" attribute equal to fal
 <select
   aria-invalid={true}
   className="bpk-select"
+  disabled={false}
   id="fruits"
   name="fruits"
   onChange={[Function]}
@@ -279,6 +287,53 @@ exports[`BpkSelect should render correctly with image 1`] = `
   <select
     aria-invalid={false}
     className="bpk-select bpk-select--borderless"
+    disabled={false}
+    id="fruits"
+    name="fruits"
+    onChange={[Function]}
+    value="oranges"
+  >
+    <option
+      value="apples"
+    >
+      Apples
+    </option>
+    <option
+      value="oranges"
+    >
+      Oranges
+    </option>
+    <option
+      value="pears"
+    >
+      Pears
+    </option>
+    <option
+      disabled={true}
+      value="tomatoes"
+    >
+      Tomatoes
+    </option>
+  </select>
+</div>
+`;
+
+exports[`BpkSelect should render correctly with image and "disabled" property 1`] = `
+<div
+  className="bpk-select-wrapper wrapperClass--test"
+>
+  <div
+    className="bpk-select-wrapper__image bpk-select-wrapper__image--disabled imageWrapperClass--test"
+  >
+    <img
+      alt="placeholder"
+      src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg' viewBox%3D'0 0 200 150'%2F%3E"
+    />
+  </div>
+  <select
+    aria-invalid={false}
+    className="bpk-select bpk-select--borderless"
+    disabled={true}
     id="fruits"
     name="fruits"
     onChange={[Function]}
@@ -324,6 +379,7 @@ exports[`BpkSelect should render correctly with image and custom classes 1`] = `
   <select
     aria-invalid={false}
     className="bpk-select bpk-select--borderless"
+    disabled={false}
     id="fruits"
     name="fruits"
     onChange={[Function]}

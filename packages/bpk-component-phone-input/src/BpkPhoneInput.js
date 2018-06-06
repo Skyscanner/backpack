@@ -30,7 +30,12 @@ const getClassName = cssModules(STYLES);
 
 export type Props = {
   dialingCode: string,
-  dialingCodeProps: { id: string, name: string, className?: string },
+  dialingCodeProps: {
+    id: string,
+    name: string,
+    className?: string,
+    wrapperClassName?: string,
+  },
   dialingCodes: Array<{ code: string, description: string }>,
   id: string,
   name: string,
@@ -82,6 +87,10 @@ const BpkPhoneInput = (props: Props) => {
       <BpkSelect
         {...commonProps}
         {...dialingCodeProps}
+        wrapperClassName={getClassName(
+          'bpk-phone-input__dialing-code-wrapper',
+          dialingCodeProps.wrapperClassName,
+        )}
         className={getClassName(
           'bpk-phone-input__dialing-code',
           dialingCodeProps.className,

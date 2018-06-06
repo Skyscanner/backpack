@@ -27,6 +27,7 @@ const dialingCodeProps = {
   id: 'dialing-code',
   name: 'Dialing code',
   className: 'dialing-code',
+  wrapperClassName: 'dialing-wrapper',
 };
 
 const dialingCodes = [
@@ -80,6 +81,18 @@ describe('BpkPhoneInput', () => {
         <BpkPhoneInput
           {...defaultProps}
           wrapperProps={{ className: 'container', 'aria-label': 'container' }}
+        />,
+      )
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('should render correctly with a dialing code image attribute', () => {
+    const tree = renderer
+      .create(
+        <BpkPhoneInput
+          {...defaultProps}
+          dialingCodeProps={{ image: <span />, ...dialingCodeProps }}
         />,
       )
       .toJSON();

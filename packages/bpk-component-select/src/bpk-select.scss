@@ -109,5 +109,9 @@ $select-image-large-height: 22 * $bpk-one-pixel-rem;
       width: $select-image-large-width;
       height: $select-image-large-height;
     }
+
+    &--disabled {
+      opacity: .5;
+    }
   }
 }
