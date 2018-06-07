@@ -83,6 +83,7 @@
     "color": "^3.0.0",
     "copy-webpack-plugin": "^4.5.0",
     "css-loader": "^0.28.8",
+    "cypress": "^3.0.1",
     "danger": "^3.0.4",
     "del": "^3.0.0",
     "enzyme": "^3.3.0",
