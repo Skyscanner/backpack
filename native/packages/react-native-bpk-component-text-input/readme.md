@@ -100,3 +100,5 @@ export default class App extends Component {
 | validationMessage           | string                                                      | false    | null          |
 | style                       | style                                                       | false    | null          |
 | accessoryView               | node                                                        | false    | null          |
+
+**Note:** `BpkTextInput` wraps React Native's [Text Input component](https://facebook.github.io/react-native/docs/textinput.html) and exposes its props.
