@@ -26,7 +26,6 @@ import starRatingReadme from 'bpk-component-star-rating/readme.md';
 
 import DocsPageBuilder from './../../components/DocsPageBuilder';
 import Paragraph from './../../components/Paragraph';
-import IntroBlurb from './../../components/neo/IntroBlurb';
 
 const InteractiveStarRating = withInteractiveStarRatingState(
   BpkInteractiveStarRating,
@@ -73,18 +72,9 @@ const components = [
   },
 ];
 
-const isNeo = process.env.BPK_NEO;
-
-const blurb = [
-  <IntroBlurb>
-    Star ratings are used for displaying a score within a given range.
-  </IntroBlurb>,
-];
-
 const StarRatingPage = ({ ...rest }) => (
   <DocsPageBuilder
     title="Star rating"
-    blurb={isNeo ? null : blurb}
     components={components}
     readme={starRatingReadme}
     {...rest}

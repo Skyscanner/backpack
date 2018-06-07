@@ -19,5 +19,5 @@ import { withDefaultProps } from 'bpk-react-utils';
 import { BpkCodeBlock } from 'bpk-component-code';
 
 export default withDefaultProps(BpkCodeBlock, {
-  alternate: !!process.env.BPK_NEO,
+  alternate: true,
 });

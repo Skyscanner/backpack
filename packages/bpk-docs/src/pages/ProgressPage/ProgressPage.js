@@ -23,7 +23,6 @@ import ProgressContainer from './ProgressContainer';
 import SteppedProgressContainer from './SteppedProgressContainer';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
 import Paragraph from './../../components/Paragraph';
-import IntroBlurb from './../../components/neo/IntroBlurb';
 
 const components = [
   {
@@ -62,20 +61,9 @@ const components = [
   },
 ];
 
-const isNeo = process.env.BPK_NEO;
-
-const blurb = [
-  <IntroBlurb>
-    Progress bars are a great way of providing feedback when a tasking is
-    running. Unlike spinners, they give the user a clear idea of how long the
-    given task will take.
-  </IntroBlurb>,
-];
-
 const ProgressPage = ({ ...rest }) => (
   <DocsPageBuilder
     title="Progress bars"
-    blurb={isNeo ? null : blurb}
     components={components}
     readme={progressReadme}
     {...rest}

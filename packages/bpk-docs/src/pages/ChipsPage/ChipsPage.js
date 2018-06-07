@@ -103,8 +103,6 @@ const components = [
   },
 ];
 
-const isNeo = process.env.BPK_NEO;
-
 const blurb = [
   <IntroBlurb>
     Chips, sometimes called tags, are useful for displaying keywords or
@@ -112,22 +110,21 @@ const blurb = [
   </IntroBlurb>,
 ];
 
-const ChipsPage = ({ ...rest }: { [string]: any }) => (
+const ChipsSubPage = ({ ...rest }: { [string]: any }) => (
   <DocsPageBuilder
     title="Chips"
-    blurb={isNeo ? null : blurb}
     components={components}
     readme={chipReadme}
     {...rest}
   />
 );
 
-const NeoChipPage = () => (
+const ChipsPage = () => (
   <DocsPageWrapper
     title="Chip"
     blurb={blurb}
-    webSubpage={<ChipsPage wrapped />}
+    webSubpage={<ChipsSubPage wrapped />}
   />
 );
 
-export default (isNeo ? NeoChipPage : ChipsPage);
+export default ChipsPage;

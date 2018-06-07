@@ -84,8 +84,6 @@ const components = [
   },
 ];
 
-const isNeo = process.env.BPK_NEO;
-
 const blurb = [
   <IntroBlurb>
     The breakpoint component allows information to be displayed in different
@@ -94,10 +92,9 @@ const blurb = [
   </IntroBlurb>,
 ];
 
-const BreakpointsPage = ({ ...rest }) => (
+const BreakpointsSubPage = ({ ...rest }) => (
   <DocsPageBuilder
     title="Breakpoint"
-    blurb={isNeo ? null : blurb}
     components={components}
     readme={breakpointReadme}
     sassdocId="breakpoints"
@@ -105,12 +102,12 @@ const BreakpointsPage = ({ ...rest }) => (
   />
 );
 
-const NeoBreakpointPage = () => (
+const BreakpointsPage = () => (
   <DocsPageWrapper
     title="Breakpoint"
     blurb={blurb}
-    webSubpage={<BreakpointsPage wrapped />}
+    webSubpage={<BreakpointsSubPage wrapped />}
   />
 );
 
-export default (isNeo ? NeoBreakpointPage : BreakpointsPage);
+export default BreakpointsPage;

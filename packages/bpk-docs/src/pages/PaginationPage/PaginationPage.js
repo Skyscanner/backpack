@@ -101,8 +101,6 @@ const components = [
   },
 ];
 
-const isNeo = process.env.BPK_NEO;
-
 const blurb = [
   <IntroBlurb>
     The pagination component is used to indicate a series of related content
@@ -110,22 +108,21 @@ const blurb = [
   </IntroBlurb>,
 ];
 
-const PaginationPage = ({ ...rest }) => (
+const PaginationSubPage = ({ ...rest }) => (
   <DocsPageBuilder
     title="Pagination"
-    blurb={isNeo ? null : blurb}
     components={components}
     readme={paginationReadme}
     {...rest}
   />
 );
 
-const NeoPaginationPage = () => (
+const PaginationPage = () => (
   <DocsPageWrapper
     title="Pagination"
     blurb={blurb}
-    webSubpage={<PaginationPage wrapped />}
+    webSubpage={<PaginationSubPage wrapped />}
   />
 );
 
-export default (isNeo ? NeoPaginationPage : PaginationPage);
+export default PaginationPage;

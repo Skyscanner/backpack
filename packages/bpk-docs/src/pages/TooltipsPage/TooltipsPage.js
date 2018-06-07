@@ -123,8 +123,6 @@ const components = [
   },
 ];
 
-const isNeo = process.env.BPK_NEO;
-
 const blurb = [
   <IntroBlurb>
     Tooltips appear on hover of a particular element and are used to provide
@@ -139,10 +137,9 @@ const blurb = [
   </Paragraph>,
 ];
 
-const TooltipsPage = ({ ...rest }) => (
+const TooltipsSubPage = ({ ...rest }) => (
   <DocsPageBuilder
     title="Tooltips"
-    blurb={isNeo ? null : blurb}
     components={components}
     readme={tooltipReadme}
     usageTable={{
@@ -160,12 +157,12 @@ const TooltipsPage = ({ ...rest }) => (
   />
 );
 
-const NeoTooltipPage = () => (
+const TooltipsPage = () => (
   <DocsPageWrapper
     title="Tooltip"
     blurb={blurb}
-    webSubpage={<TooltipsPage wrapped />}
+    webSubpage={<TooltipsSubPage wrapped />}
   />
 );
 
-export default (isNeo ? NeoTooltipPage : TooltipsPage);
+export default TooltipsPage;

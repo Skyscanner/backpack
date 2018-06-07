@@ -63,24 +63,21 @@ const components = [
   },
 ];
 
-const isNeo = process.env.BPK_NEO;
-
-const DescriptionListsPage = ({ ...rest }) => (
+const DescriptionListsSubPage = ({ ...rest }) => (
   <DocsPageBuilder
     title="Description Lists"
     readme={descriptionlistsReadme}
-    blurb={isNeo ? null : blurb}
     components={components}
     {...rest}
   />
 );
 
-const NeoDescriptionListPage = () => (
+const DescriptionListsPage = () => (
   <DocsPageWrapper
     title="Description list"
     blurb={blurb}
-    webSubpage={<DescriptionListsPage wrapped />}
+    webSubpage={<DescriptionListsSubPage wrapped />}
   />
 );
 
-export default (isNeo ? NeoDescriptionListPage : DescriptionListsPage);
+export default DescriptionListsPage;

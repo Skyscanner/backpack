@@ -74,8 +74,6 @@ const components = [
   },
 ];
 
-const isNeo = process.env.BPK_NEO;
-
 const blurb = [
   <IntroBlurb>
     Text inputs are used to capture textual information as well as numbers and
@@ -83,10 +81,9 @@ const blurb = [
   </IntroBlurb>,
 ];
 
-const NativeInputPage = ({ ...rest }) => (
+const NativeInputSubPage = ({ ...rest }) => (
   <DocsPageBuilder
     title="Text input"
-    blurb={isNeo ? null : blurb}
     components={components}
     readme={readme}
     showMenu={false}
@@ -94,12 +91,12 @@ const NativeInputPage = ({ ...rest }) => (
   />
 );
 
-const NeoNativeInputPage = () => (
+const NativeInputPage = () => (
   <DocsPageWrapper
     title="Text input"
     blurb={blurb}
-    nativeSubpage={<NativeInputPage wrapped />}
+    nativeSubpage={<NativeInputSubPage wrapped />}
   />
 );
 
-export default (isNeo ? NeoNativeInputPage : NativeInputPage);
+export default NativeInputPage;

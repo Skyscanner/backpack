@@ -68,12 +68,9 @@ const blurb = [
   </IntroBlurb>,
 ];
 
-const isNeo = process.env.BPK_NEO;
-
-const DialogsPage = ({ ...rest }: { [string]: any }) => (
+const DialogsSubPage = ({ ...rest }: { [string]: any }) => (
   <DocsPageBuilder
     title="Dialogs"
-    blurb={isNeo ? null : blurb}
     components={components}
     readme={dialogReadme}
     usageTable={{
@@ -94,12 +91,12 @@ const DialogsPage = ({ ...rest }: { [string]: any }) => (
   />
 );
 
-const NeoDialogsPage = () => (
+const DialogsPage = () => (
   <DocsPageWrapper
     title="Dialog"
     blurb={blurb}
-    webSubpage={<DialogsPage wrapped />}
+    webSubpage={<DialogsSubPage wrapped />}
   />
 );
 
-export default (isNeo ? NeoDialogsPage : DialogsPage);
+export default DialogsPage;

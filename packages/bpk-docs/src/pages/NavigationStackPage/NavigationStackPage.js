@@ -65,8 +65,6 @@ const components = [
   },
 ];
 
-const isNeo = process.env.BPK_NEO;
-
 const blurb = [
   <IntroBlurb>
     The navigation stack component presents content in full-screen and makes use
@@ -74,22 +72,21 @@ const blurb = [
   </IntroBlurb>,
 ];
 
-const NavigationStackPage = ({ ...rest }: { [string]: any }) => (
+const NavigationStackSubPage = ({ ...rest }: { [string]: any }) => (
   <DocsPageBuilder
     title="Navigation stack"
-    blurb={isNeo ? null : blurb}
     components={components}
     readme={navigationStackReadme}
     {...rest}
   />
 );
 
-const NeoNavigationStackPage = () => (
+const NavigationStackPage = () => (
   <DocsPageWrapper
     title="Navigation stack"
     blurb={blurb}
-    webSubpage={<NavigationStackPage wrapped />}
+    webSubpage={<NavigationStackSubPage wrapped />}
   />
 );
 
-export default (isNeo ? NeoNavigationStackPage : NavigationStackPage);
+export default NavigationStackPage;

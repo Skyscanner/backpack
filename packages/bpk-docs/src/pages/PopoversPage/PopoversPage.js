@@ -140,8 +140,6 @@ const components = [
   },
 ];
 
-const isNeo = process.env.BPK_NEO;
-
 const blurb = [
   <IntroBlurb>
     Popovers display related content or functionality that is related to a
@@ -149,10 +147,9 @@ const blurb = [
   </IntroBlurb>,
 ];
 
-const PopoversPage = ({ ...rest }) => (
+const PopoversSubPage = ({ ...rest }) => (
   <DocsPageBuilder
     title="Popovers"
-    blurb={isNeo ? null : blurb}
     components={components}
     readme={popoverReadme}
     usageTable={{
@@ -174,12 +171,12 @@ const PopoversPage = ({ ...rest }) => (
   />
 );
 
-const NeoPopoverPage = () => (
+const PopoversPage = () => (
   <DocsPageWrapper
     title="Popover"
     blurb={blurb}
-    webSubpage={<PopoversPage wrapped />}
+    webSubpage={<PopoversSubPage wrapped />}
   />
 );
 
-export default (isNeo ? NeoPopoverPage : PopoversPage);
+export default PopoversPage;

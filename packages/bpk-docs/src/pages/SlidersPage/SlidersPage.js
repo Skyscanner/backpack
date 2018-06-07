@@ -78,30 +78,27 @@ const components = [
   },
 ];
 
-const isNeo = process.env.BPK_NEO;
-
 const blurb = [
   <IntroBlurb>
     Sliders allow users to input a numeric value from a given range.
   </IntroBlurb>,
 ];
 
-const SlidersPage = ({ ...rest }) => (
+const SlidersSubPage = ({ ...rest }) => (
   <DocsPageBuilder
     title="Slider"
-    blurb={isNeo ? null : blurb}
     components={components}
     readme={sliderReadme}
     {...rest}
   />
 );
 
-const NeoSliderPage = () => (
+const SlidersPage = () => (
   <DocsPageWrapper
     title="Slider"
     blurb={blurb}
-    webSubpage={<SlidersPage wrapped />}
+    webSubpage={<SlidersSubPage wrapped />}
   />
 );
 
-export default (isNeo ? NeoSliderPage : SlidersPage);
+export default SlidersPage;

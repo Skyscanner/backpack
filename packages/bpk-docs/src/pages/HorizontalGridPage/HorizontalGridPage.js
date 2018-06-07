@@ -82,18 +82,15 @@ const components = [
   },
 ];
 
-const isNeo = process.env.BPK_NEO;
-
 const blurb = [
   <IntroBlurb>
     A 12 column responsive grid to compose and layout pages.
   </IntroBlurb>,
 ];
 
-const HorizontalGridPage = ({ ...rest }) => (
+const HorizontalGridSubPage = ({ ...rest }) => (
   <DocsPageBuilder
     title="Horizontal grid"
-    blurb={isNeo ? null : blurb}
     components={components}
     readme={gridReadme}
     sassdocId="grids"
@@ -101,12 +98,12 @@ const HorizontalGridPage = ({ ...rest }) => (
   />
 );
 
-const NeoHorizontalGridPage = () => (
+const HorizontalGridPage = () => (
   <DocsPageWrapper
     title="Horizontal grid"
     blurb={blurb}
-    webSubpage={<HorizontalGridPage wrapped />}
+    webSubpage={<HorizontalGridSubPage wrapped />}
   />
 );
 
-export default (isNeo ? NeoHorizontalGridPage : HorizontalGridPage);
+export default HorizontalGridPage;

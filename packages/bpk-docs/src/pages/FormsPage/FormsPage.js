@@ -709,24 +709,21 @@ const components = [
   },
 ];
 
-const isNeo = process.env.BPK_NEO;
-
-const FormsPage = ({ ...rest }) => (
+const FormsSubPage = ({ ...rest }) => (
   <DocsPageBuilder
     title="Form elements"
-    blurb={isNeo ? null : blurb}
     components={components}
     sassdocId="forms"
     {...rest}
   />
 );
 
-const NeoFormsPage = () => (
+const FormsPage = () => (
   <DocsPageWrapper
     title="Forms"
     blurb={blurb}
-    webSubpage={<FormsPage wrapped />}
+    webSubpage={<FormsSubPage wrapped />}
   />
 );
 
-export default (isNeo ? NeoFormsPage : FormsPage);
+export default FormsPage;

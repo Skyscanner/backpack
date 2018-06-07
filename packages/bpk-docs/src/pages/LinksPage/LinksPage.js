@@ -23,15 +23,6 @@ import linkReadme from 'bpk-component-link/readme.md';
 
 import DocsPageBuilder from './../../components/DocsPageBuilder';
 import Paragraph from './../../components/Paragraph';
-import IntroBlurb from './../../components/neo/IntroBlurb';
-
-const isNeo = process.env.BPK_NEO;
-
-const blurb = [
-  <IntroBlurb>
-    This component enables you to link the user to other resources or pages.
-  </IntroBlurb>,
-];
 
 const components = [
   {
@@ -51,7 +42,6 @@ const LinkPage = ({ ...rest }) => (
     title="Links"
     readme={linkReadme}
     components={components}
-    blurb={isNeo ? null : blurb}
     {...rest}
   />
 );

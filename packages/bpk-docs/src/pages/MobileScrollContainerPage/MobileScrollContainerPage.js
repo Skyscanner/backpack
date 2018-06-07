@@ -34,8 +34,6 @@ const components = [
   },
 ];
 
-const isNeo = process.env.BPK_NEO;
-
 const blurb = [
   <IntroBlurb>
     The mobile scroll container component will hide overflowing content in fixed
@@ -43,24 +41,21 @@ const blurb = [
   </IntroBlurb>,
 ];
 
-const MobileScrollContainerPage = ({ ...rest }: { [string]: any }) => (
+const MobileScrollContainerSubPage = ({ ...rest }: { [string]: any }) => (
   <DocsPageBuilder
     title="Mobile scroll container"
-    blurb={isNeo ? null : blurb}
     components={components}
     readme={mobileScrollContainerReadme}
     {...rest}
   />
 );
 
-const NeoMobileScrollContainerPage = () => (
+const MobileScrollContainerPage = () => (
   <DocsPageWrapper
     title="Mobile scroll container"
     blurb={blurb}
-    webSubpage={<MobileScrollContainerPage wrapped />}
+    webSubpage={<MobileScrollContainerSubPage wrapped />}
   />
 );
 
-export default (isNeo
-  ? NeoMobileScrollContainerPage
-  : MobileScrollContainerPage);
+export default MobileScrollContainerPage;

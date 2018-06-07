@@ -76,8 +76,6 @@ const components = [
   },
 ];
 
-const isNeo = process.env.BPK_NEO;
-
 const blurb = [
   <IntroBlurb>
     The flat list component can be used to display content in the form of a
@@ -85,10 +83,9 @@ const blurb = [
   </IntroBlurb>,
 ];
 
-const NativeFlatListPage = ({ ...rest }) => (
+const NativeFlatListSubPage = ({ ...rest }) => (
   <DocsPageBuilder
     title="Flat list"
-    blurb={isNeo ? null : blurb}
     components={components}
     readme={readme}
     showMenu
@@ -96,12 +93,12 @@ const NativeFlatListPage = ({ ...rest }) => (
   />
 );
 
-const NeoFlatListPage = () => (
+const NativeFlatListPage = () => (
   <DocsPageWrapper
     title="Flat list"
     blurb={blurb}
-    nativeSubpage={<NativeFlatListPage wrapped />}
+    nativeSubpage={<NativeFlatListSubPage wrapped />}
   />
 );
 
-export default (isNeo ? NeoFlatListPage : NativeFlatListPage);
+export default NativeFlatListPage;

@@ -132,8 +132,6 @@ const components = [
   },
 ];
 
-const isNeo = process.env.BPK_NEO;
-
 const blurb = [
   <IntroBlurb>
     Bar charts are useful for displaying comparisons between categories of data.
@@ -142,22 +140,21 @@ const blurb = [
   </IntroBlurb>,
 ];
 
-const BarchartsPage = ({ ...rest }) => (
+const BarchartsSubPage = ({ ...rest }) => (
   <DocsPageBuilder
     title="Bar chart"
-    blurb={isNeo ? null : blurb}
     components={components}
     readme={barchartReadme}
     {...rest}
   />
 );
 
-const NeoBarchartPage = () => (
+const BarchartsPage = () => (
   <DocsPageWrapper
     title="Bar chart"
     blurb={blurb}
-    webSubpage={<BarchartsPage wrapped />}
+    webSubpage={<BarchartsSubPage wrapped />}
   />
 );
 
-export default (isNeo ? NeoBarchartPage : BarchartsPage);
+export default BarchartsPage;

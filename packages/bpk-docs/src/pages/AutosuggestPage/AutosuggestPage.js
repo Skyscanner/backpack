@@ -269,8 +269,6 @@ const components = [
   },
 ];
 
-const isNeo = process.env.BPK_NEO;
-
 const blurb = [
   <IntroBlurb>
     The autosuggest component assists users in query creation and completion by
@@ -278,10 +276,9 @@ const blurb = [
   </IntroBlurb>,
 ];
 
-const AutosuggestPage = ({ ...rest }) => (
+const AutosuggestSubPage = ({ ...rest }) => (
   <DocsPageBuilder
     title="Autosuggest"
-    blurb={isNeo ? null : blurb}
     components={components}
     readme={autosuggestReadme}
     sassdocId="autosuggest"
@@ -289,12 +286,12 @@ const AutosuggestPage = ({ ...rest }) => (
   />
 );
 
-const NeoAutosuggestPage = () => (
+const AutosuggestPage = () => (
   <DocsPageWrapper
     title="Autosuggest"
     blurb={blurb}
-    webSubpage={<AutosuggestPage wrapped />}
+    webSubpage={<AutosuggestSubPage wrapped />}
   />
 );
 
-export default (isNeo ? NeoAutosuggestPage : AutosuggestPage);
+export default AutosuggestPage;

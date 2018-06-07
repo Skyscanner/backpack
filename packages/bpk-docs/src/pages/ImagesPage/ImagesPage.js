@@ -168,26 +168,23 @@ const components = [
   },
 ];
 
-const isNeo = process.env.BPK_NEO;
-
 const blurb = [<IntroBlurb>A component for including images.</IntroBlurb>];
 
-const ImagesPage = ({ ...rest }) => (
+const ImagesSubPage = ({ ...rest }) => (
   <DocsPageBuilder
     title="Images"
-    blurb={isNeo ? null : blurb}
     components={components}
     readme={imagesReadme}
     {...rest}
   />
 );
 
-const NeoImagePage = () => (
+const ImagesPage = () => (
   <DocsPageWrapper
     title="Image"
     blurb={blurb}
-    webSubpage={<ImagesPage wrapped />}
+    webSubpage={<ImagesSubPage wrapped />}
   />
 );
 
-export default (isNeo ? NeoImagePage : ImagesPage);
+export default ImagesPage;

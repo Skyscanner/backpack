@@ -25,16 +25,6 @@ import BpkSectionList, {
 import sectionListReadme from 'bpk-component-section-list/readme.md';
 
 import DocsPageBuilder from './../../components/DocsPageBuilder';
-import IntroBlurb from './../../components/neo/IntroBlurb';
-
-const blurb = [
-  <IntroBlurb>
-    Section lists present data as a single-column list of rows that can be
-    divided into groups. They&apos;re great for displaying lists of options
-    containing text and controls, as well as linking to additional views or
-    pages.
-  </IntroBlurb>,
-];
 
 const components = [
   {
@@ -57,13 +47,10 @@ const components = [
   },
 ];
 
-const isNeo = process.env.BPK_NEO;
-
 const SectionListPage = ({ ...rest }) => (
   <DocsPageBuilder
     title="Section list"
     readme={sectionListReadme}
-    blurb={isNeo ? null : blurb}
     components={components}
     {...rest}
   />

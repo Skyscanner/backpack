@@ -23,7 +23,6 @@ import cardReadme from 'bpk-component-card/readme.md';
 
 import DocsPageBuilder from './../../components/DocsPageBuilder';
 import Paragraph from './../../components/Paragraph';
-import IntroBlurb from './../../components/neo/IntroBlurb';
 
 const components = [
   {
@@ -58,26 +57,9 @@ const components = [
   },
 ];
 
-const isNeo = process.env.BPK_NEO;
-
 const CardsPage = ({ ...rest }) => (
   <DocsPageBuilder
     title="Cards"
-    blurb={
-      isNeo
-        ? []
-        : [
-            <IntroBlurb>
-              Cards are used to group related items. They allow complex datasets
-              to be broken down into individual, distinct areas for easy
-              consumption.
-            </IntroBlurb>,
-            <Paragraph>
-              Cards are used as a signifier to give affordance to a clickable
-              set of elements.
-            </Paragraph>,
-          ]
-    }
     components={components}
     readme={cardReadme}
     sassdocId="cards"

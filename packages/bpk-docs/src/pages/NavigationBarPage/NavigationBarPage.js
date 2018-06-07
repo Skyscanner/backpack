@@ -31,7 +31,6 @@ import { cssModules } from 'bpk-react-utils';
 
 import DocsPageBuilder from './../../components/DocsPageBuilder';
 import Paragraph from './../../components/Paragraph';
-import IntroBlurb from './../../components/neo/IntroBlurb';
 import AirlineIcon from './page-components';
 
 import STYLES from './NavigationBarPage.scss';
@@ -157,19 +156,9 @@ const components = [
   },
 ];
 
-const isNeo = process.env.BPK_NEO;
-
-const blurb = [
-  <IntroBlurb>
-    The navigation bar component encapsulates a title and icon/text actions for
-    controlling views.
-  </IntroBlurb>,
-];
-
 const NavigationBarPage = ({ ...rest }: { [string]: any }) => (
   <DocsPageBuilder
     title="Navigation bar"
-    blurb={isNeo ? null : blurb}
     components={components}
     readme={navigationBarReadme}
     {...rest}

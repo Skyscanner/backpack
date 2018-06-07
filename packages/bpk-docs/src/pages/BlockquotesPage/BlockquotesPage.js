@@ -39,8 +39,6 @@ const components = [
   },
 ];
 
-const isNeo = process.env.BPK_NEO;
-
 const blurb = [
   <IntroBlurb>
     The blockquote component allows the creation of a section that is quoted
@@ -48,22 +46,21 @@ const blurb = [
   </IntroBlurb>,
 ];
 
-const BlockquotesPage = ({ ...rest }) => (
+const BlockquotesSubpagePage = ({ ...rest }) => (
   <DocsPageBuilder
     title="Blockquote"
     components={components}
     readme={blockquotesReadme}
-    blurb={isNeo ? null : blurb}
     {...rest}
   />
 );
 
-const NeoBlockquotePage = () => (
+const BlockquotesPage = () => (
   <DocsPageWrapper
     title="Blockquote"
     blurb={blurb}
-    webSubpage={<BlockquotesPage wrapped />}
+    webSubpage={<BlockquotesSubpagePage wrapped />}
   />
 );
 
-export default (isNeo ? NeoBlockquotePage : BlockquotesPage);
+export default BlockquotesPage;

@@ -314,8 +314,6 @@ const components = [
   },
 ];
 
-const isNeo = process.env.BPK_NEO;
-
 const blurb = [
   <IntroBlurb>
     Fieldsets encapsulate the composition of{' '}
@@ -330,22 +328,21 @@ const blurb = [
   </IntroBlurb>,
 ];
 
-const FieldsetPage = ({ ...rest }) => (
+const FieldsetSubPage = ({ ...rest }) => (
   <DocsPageBuilder
     title="Fieldsets"
-    blurb={isNeo ? null : blurb}
     components={components}
     readme={readme}
     {...rest}
   />
 );
 
-const NeoFieldsetPage = () => (
+const FieldsetPage = () => (
   <DocsPageWrapper
     title="Fieldset"
     blurb={blurb}
-    webSubpage={<FieldsetPage wrapped />}
+    webSubpage={<FieldsetSubPage wrapped />}
   />
 );
 
-export default (isNeo ? NeoFieldsetPage : FieldsetPage);
+export default FieldsetPage;

@@ -16,15 +16,8 @@
  * limitations under the License.
  */
 
-import DocsPageBuilderOld from './DocsPageBuilder';
-import DocsPageBuilderNeo from './NeoDocsPageBuilder';
-import ParagraphOld from '../Paragraph';
-import ParagraphNeo from '../neo/Paragraph';
-
-const DocsPageBuilder = process.env.BPK_NEO
-  ? DocsPageBuilderNeo
-  : DocsPageBuilderOld;
-const Paragraph = process.env.BPK_NEO ? ParagraphNeo : ParagraphOld;
+import DocsPageBuilder from './NeoDocsPageBuilder';
+import Paragraph from '../neo/Paragraph';
 
 export { Paragraph };
 export default DocsPageBuilder;

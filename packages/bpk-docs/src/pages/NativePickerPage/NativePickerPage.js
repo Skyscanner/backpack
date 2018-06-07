@@ -79,8 +79,6 @@ const components = [
   },
 ];
 
-const isNeo = process.env.BPK_NEO;
-
 const blurb = [
   <IntroBlurb>
     Pickers let the user pick a single option from a limited list of possible
@@ -88,10 +86,9 @@ const blurb = [
   </IntroBlurb>,
 ];
 
-const NativePickerPage = ({ ...rest }) => (
+const NativePickerSubPage = ({ ...rest }) => (
   <DocsPageBuilder
     title="Picker"
-    blurb={isNeo ? null : blurb}
     components={components}
     readme={readme}
     showMenu
@@ -99,12 +96,12 @@ const NativePickerPage = ({ ...rest }) => (
   />
 );
 
-const NeoNativePickerPage = () => (
+const NativePickerPage = () => (
   <DocsPageWrapper
     title="Picker"
     blurb={blurb}
-    nativeSubpage={<NativePickerPage wrapped />}
+    nativeSubpage={<NativePickerSubPage wrapped />}
   />
 );
 
-export default (isNeo ? NeoNativePickerPage : NativePickerPage);
+export default NativePickerPage;
