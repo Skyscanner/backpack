@@ -239,7 +239,11 @@ We use Ruby to manage CocoaPods and recommend you use [rbenv](https://github.com
 The following instructions heavily make use of [Homebrew](https://brew.sh/),
 which is available for macOS. Windows and Linux installation for these packages is also well-supported, but isn't currently documented here.
 
-In future, we intend to automate more of this to reduce the number of steps required. To ensure that maps powered by Google work set the `google_maps_api_key` in `native/android/local.properties`.
+In future, we intend to automate more of this to reduce the number of steps required. To ensure that maps powered by Google work set the `google_maps_api_key` in `native/android/local.properties` and make sure you are using the backpack.keystore.
+
+##### APK signing
+
+For members of Backpack we have a keystore tied to our Google Maps API key in LastPass. Retrieve this key and place it in `native/android/backpack.keystore`. For contributors who are not members of Backpack nothing needs to be done, but Google Maps will not work. If you need Google Maps to work you'll need to supply your own Google Maps Api Key and possible keystore.
 
 ##### Watchman (if not already installed)
 
@@ -267,30 +271,32 @@ Add an environment variable pointing to the SDK location to your `~/.bash_profil
 (or similarly used file):
 
 ```
-echo "export ANDROID_HOME=\"$HOME/Library/Android/sdk\"" >> ~/.bash_profile && source ~/.bash_profile
+echo "export ANDROID_HOME=\"$HOME/Library/Android/sdk\"" >> ~/.bash_profile
+echo "export ANDROID_SDK_ROOT=\"$HOME/Library/Android/sdk\"" >> ~/.bash_profile
+source ~/.bash_profile
 ```
 
 Accept the SDK licences:
 
 ```
-$ANDROID_HOME/tools/bin/sdkmanager --licenses
+$ANDROID_SDK_ROOT/tools/bin/sdkmanager --licenses
 ```
 
 Download an Android system image. Note that you may get a warning about a `.cfg` file not being present.
 You're safe to ignore this.
 
 ```
-$ANDROID_HOME/tools/bin/sdkmanager "system-images;android-24;google_apis;x86"
+$ANDROID_SDK_ROOT/tools/bin/sdkmanager "system-images;android-27;google_apis;x86"
 ```
 
 Create an Android Virtual Device (AVD):
 
 ```
-$ANDROID_HOME/tools/bin/avdmanager create avd --name "bpk-avd" --package "system-images;android-24;google_apis;x86" --device "pixel"
+$ANDROID_SDK_ROOT/tools/bin/avdmanager create avd --name "bpk-avd" --package "system-images;android-27;google_apis;x86" --device "pixel" && cp native/android/bpk-avd.ini ~/.android/avd/bpk-avd.avd/config.ini
 ```
 
 You should now have a functioning Android development environment, including a
-virtual device to run things on. You can run the AVD manually with `$ANDROID_HOME/tools/emulator -avd bpk-avd`,
+virtual device to run things on. You can run the AVD manually with `$ANDROID_SDK_ROOT/emulator/emulator -avd bpk-avd`,
 but `npm run android` will handle this for you, so it's not required.
 
 ### Storybook

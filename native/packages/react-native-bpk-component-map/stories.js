@@ -26,8 +26,8 @@ storiesOf('react-native-bpk-component-map', module).add('docs:default', () => (
   <BpkMap
     style={{ flex: 1 }}
     initialRegion={{
-      latitude: 37.78825,
-      longitude: -122.4324,
+      latitude: 55.944357,
+      longitude: -3.1967116,
       latitudeDelta: 0.0922,
       longitudeDelta: 0.0421,
     }}

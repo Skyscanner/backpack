@@ -91,13 +91,18 @@ def enableProguardInReleaseBuilds = false
 
 def getGMapsApiKey() {
     Properties properties = new Properties()
-    properties.load(project.rootProject.file('local.properties').newDataInputStream())
-
-    if (properties.hasProperty('google_maps_api_key')) {
-        return properties.getProperty('google_maps_api_key')
+    try {
+        properties.load(project.rootProject.file('local.properties').newDataInputStream())
+        return properties.getProperty('google_maps_api_key', '')
+    } catch (FileNotFoundException e) {
+        return ''
     }
+}
 
-    return ''
+def hasBackpackDebugCert() {
+    File file = new File('backpack.keystore')
+
+    return file.exists()
 }
 
 android {
@@ -113,8 +118,20 @@ android {
         ndk {
             abiFilters "armeabi-v7a", "x86"
         }
-        manifestPlaceholders = [googleMapsApiKey:getGMapsApiKey()]
+        manifestPlaceholders = [googleMapsApiKey: getGMapsApiKey()]
     }
+
+    if (hasBackpackDebugCert()) {
+        signingConfigs {
+            debug {
+                storeFile file("../backpack.keystore")
+                keyAlias 'backpackdebugkey'
+                keyPassword 'backpackrocks'
+                storePassword 'backpackrocks'
+            }
+        }
+    }
+
     splits {
         abi {
             reset()
