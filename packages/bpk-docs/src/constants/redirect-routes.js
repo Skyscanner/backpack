@@ -35,6 +35,7 @@ const NEO_WEB_COMPONENT_REDIRECTS = {
   '/components/web/badge': ROUTES.NEO_BADGE,
   '/components/web/panels': ROUTES.NEO_PANEL,
   '/components/web/images': ROUTES.NEO_IMAGE,
+  '/components/web/infinite-scroll': ROUTES.NEO_INFINITE_SCROLL,
   '/components/web/banner-alerts': ROUTES.NEO_BANNER_ALERT,
   '/components/web/navigation-stack': ROUTES.NEO_NAVIGATION_STACK,
   '/components/web/navigation-bar': ROUTES.NEO_NAVIGATION_BAR,

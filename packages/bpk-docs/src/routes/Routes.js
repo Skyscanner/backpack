@@ -67,6 +67,7 @@ import ChipsPage from './../pages/ChipsPage';
 import BadgePage from './../pages/BadgePage';
 import PanelsPage from './../pages/PanelsPage';
 import ImagesPage from './../pages/ImagesPage';
+import InfiniteScrollPage from './../pages/InfiniteScrollPage';
 import BreakpointsPage from './../pages/BreakpointsPage';
 import HorizontalGridPage from './../pages/HorizontalGridPage';
 import BannerAlertsPage from './../pages/BannerAlertsPage';
@@ -205,6 +206,9 @@ const Routes = (
         {isOldSite && <Route path={ROUTES.PANELS} component={PanelsPage} />}
         {isOldSite && <Route path={ROUTES.IMAGES} component={ImagesPage} />}
         {isOldSite && (
+          <Route path={ROUTES.INFINITE_SCROLL} component={InfiniteScrollPage} />
+        )}
+        {isOldSite && (
           <Route path={ROUTES.BANNER_ALERTS} component={BannerAlertsPage} />
         )}
         {isOldSite && (
@@ -286,6 +290,10 @@ const Routes = (
         <Route path={ROUTES.NEO_BADGE} component={NeoBadgePage} />
         <Route path={ROUTES.NEO_PANEL} component={NeoPanelPage} />
         <Route path={ROUTES.NEO_IMAGE} component={ImagesPage} />
+        <Route
+          path={ROUTES.NEO_INFINITE_SCROLL}
+          component={InfiniteScrollPage}
+        />
         <Route path={ROUTES.NEO_BANNER_ALERT} component={NeoBannerAlertPage} />
         <Route
           path={ROUTES.NEO_MOBILE_SCROLL_CONTAINER}

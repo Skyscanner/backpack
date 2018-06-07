@@ -327,6 +327,12 @@ const neoComponentsLinks = [
         tags: ['web'],
       },
       {
+        id: 'INFINITE_SCROLL',
+        route: routes.NEO_INFINITE_SCROLL,
+        children: 'Infinite scroll',
+        tags: ['web'],
+      },
+      {
         id: 'BANNER_ALERT',
         route: routes.NEO_BANNER_ALERT,
         children: 'Banner alert',
