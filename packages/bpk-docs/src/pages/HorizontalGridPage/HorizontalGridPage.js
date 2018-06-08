@@ -63,7 +63,7 @@ const components = [
       <BpkParagraph>
         The grid works in conjunction with the{' '}
         {
-          <BpkRouterLink to={routes.BREAKPOINTS}>
+          <BpkRouterLink to={routes.BREAKPOINT}>
             Breakpoint component
           </BpkRouterLink>
         }{' '}

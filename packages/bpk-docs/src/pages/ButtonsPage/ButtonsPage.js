@@ -300,10 +300,10 @@ const customSections = [
     content: [
       <Paragraph>
         Loading buttons support all the same props as the{' '}
-        <BpkRouterLink to={ROUTES.BUTTONS}>button</BpkRouterLink> component.
-        They are distinct in that they encapsulate the composition of{' '}
-        <BpkRouterLink to={ROUTES.ICONS}>icons</BpkRouterLink> as well as{' '}
-        <BpkRouterLink to={ROUTES.SPINNERS}>spinners</BpkRouterLink> to form a
+        <BpkRouterLink to={ROUTES.BUTTON}>button</BpkRouterLink> component. They
+        are distinct in that they encapsulate the composition of{' '}
+        <BpkRouterLink to={ROUTES.ICON}>icons</BpkRouterLink> as well as{' '}
+        <BpkRouterLink to={ROUTES.SPINNER}>spinners</BpkRouterLink> to form a
         nice, compelling call to action.
       </Paragraph>,
     ],

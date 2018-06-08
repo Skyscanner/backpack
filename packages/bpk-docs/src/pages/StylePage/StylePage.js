@@ -97,7 +97,7 @@ const StylePage = props => (
       </BpkGridColumn>
       <BpkGridColumn width={3} mobileWidth={12} tabletWidth={6}>
         <Link
-          to={ROUTES.ICONS}
+          to={ROUTES.ICON}
           className={getClassName('bpkdocs-style-page__link')}
         >
           <BpkTile

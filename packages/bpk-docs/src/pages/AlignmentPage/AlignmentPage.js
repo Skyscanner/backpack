@@ -170,7 +170,7 @@ const AlignedSpan = withAlignment(
       <Paragraph>
         HOC wrappers exist for common alignment tasks, such as aligning an icon
         within a button. Other examples can be seen in the{' '}
-        <BpkLink href={ROUTES.BUTTONS}>Buttons page</BpkLink>.
+        <BpkLink href={ROUTES.BUTTON}>Buttons page</BpkLink>.
       </Paragraph>,
       <CodeBlock>
         {`import LongArrowRightIconSm from 'bpk-component-icon/sm/long-arrow-right';
@@ -200,7 +200,7 @@ const AlignedArrow = withButtonAlignment(LongArrowRightIconSm);
       <Paragraph>
         Similarly, a HOC exists for aligning icons to a large button. Other
         examples can be seen in the{' '}
-        <BpkLink href={ROUTES.BUTTONS}>Buttons page</BpkLink>.
+        <BpkLink href={ROUTES.BUTTON}>Buttons page</BpkLink>.
       </Paragraph>,
       <CodeBlock>
         {`import LongArrowRightIcon from 'bpk-component-icon/lg/long-arrow-right';
@@ -233,7 +233,7 @@ const blurb = [
   <Heading level="h3">Installation</Heading>,
   <Paragraph>
     The alignment HOCs are provided in the <Code>bpk-component-icon</Code>{' '}
-    package. See <BpkLink href={ROUTES.ICONS}>Icons</BpkLink> for installation
+    package. See <BpkLink href={ROUTES.ICON}>Icons</BpkLink> for installation
     instructions.
   </Paragraph>,
 ];
