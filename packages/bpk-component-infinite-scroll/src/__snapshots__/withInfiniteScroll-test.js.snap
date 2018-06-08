@@ -12,15 +12,14 @@ exports[`withInfiniteScroll renders an empty list for the first render 1`] = `
 `;
 
 exports[`withInfiniteScroll renders items after the first render 1`] = `
-<_class
+<WithInfiniteScroll
   elementsPerScroll={5}
-  loadingComponent={null}
-  onClickSeeMore={[Function]}
   onItemsFetch={[Function]}
-  onScroll={[Function]}
-  onScrollFinished={[Function]}
+  onScroll={null}
+  onScrollFinished={null}
+  renderLoadingComponent={null}
+  renderSeeMoreComponent={null}
   seeMoreAfter={null}
-  seeMoreComponent={null}
 >
   <div>
     <List
@@ -68,25 +67,24 @@ exports[`withInfiniteScroll renders items after the first render 1`] = `
       className="bpk-sentinel"
     />
   </div>
-</_class>
+</WithInfiniteScroll>
 `;
 
-exports[`withInfiniteScroll should pass unused props to ComponentToExtend 1`] = `
-<_class
+exports[`withInfiniteScroll should pass extra props to the decorated component 1`] = `
+<WithInfiniteScroll
+  aria-label="Test"
   elementsPerScroll={5}
-  extraProp="extraProp"
-  loadingComponent={null}
-  onClickSeeMore={[Function]}
   onItemsFetch={[Function]}
-  onScroll={[Function]}
-  onScrollFinished={[Function]}
+  onScroll={null}
+  onScrollFinished={null}
+  renderLoadingComponent={null}
+  renderSeeMoreComponent={null}
   seeMoreAfter={null}
-  seeMoreComponent={null}
 >
   <div>
     <List
+      aria-label="Test"
       elements={Array []}
-      extraProp="extraProp"
     >
       <div
         id="list"
@@ -96,19 +94,18 @@ exports[`withInfiniteScroll should pass unused props to ComponentToExtend 1`] = 
       className="bpk-sentinel"
     />
   </div>
-</_class>
+</WithInfiniteScroll>
 `;
 
 exports[`withInfiniteScroll should render correctly when no more elements 1`] = `
-<_class
+<WithInfiniteScroll
   elementsPerScroll={5}
-  loadingComponent={null}
-  onClickSeeMore={[Function]}
   onItemsFetch={[Function]}
-  onScroll={[Function]}
-  onScrollFinished={[Function]}
+  onScroll={null}
+  onScrollFinished={null}
+  renderLoadingComponent={null}
+  renderSeeMoreComponent={null}
   seeMoreAfter={null}
-  seeMoreComponent={null}
 >
   <div>
     <List
@@ -153,19 +150,84 @@ exports[`withInfiniteScroll should render correctly when no more elements 1`] = 
       </div>
     </List>
   </div>
-</_class>
+</WithInfiniteScroll>
+`;
+
+exports[`withInfiniteScroll should render correctly with a "renderLoadingComponent" attribute 1`] = `
+<WithInfiniteScroll
+  elementsPerScroll={5}
+  onItemsFetch={[Function]}
+  onScroll={null}
+  onScrollFinished={null}
+  renderLoadingComponent={[Function]}
+  renderSeeMoreComponent={null}
+  seeMoreAfter={null}
+>
+  <div>
+    <List
+      elements={Array []}
+    >
+      <div
+        id="list"
+      />
+    </List>
+    <div
+      className={null}
+    >
+      <span>
+        Loading
+      </span>
+    </div>
+  </div>
+</WithInfiniteScroll>
+`;
+
+exports[`withInfiniteScroll should render correctly with a "renderSeeMoreComponent" attribute 1`] = `
+<WithInfiniteScroll
+  elementsPerScroll={1}
+  onItemsFetch={[Function]}
+  onScroll={null}
+  onScrollFinished={null}
+  renderLoadingComponent={null}
+  renderSeeMoreComponent={[Function]}
+  seeMoreAfter={0}
+>
+  <div>
+    <List
+      elements={
+        Array [
+          "Element 0",
+        ]
+      }
+    >
+      <div
+        id="list"
+      >
+        <div
+          key="Element 0"
+        >
+          Element 0
+        </div>
+      </div>
+    </List>
+    <button
+      onClick={[Function]}
+    >
+      see more
+    </button>
+  </div>
+</WithInfiniteScroll>
 `;
 
 exports[`withInfiniteScroll should render correctly with an "elementsPerScroll" attribute 1`] = `
-<_class
+<WithInfiniteScroll
   elementsPerScroll={1}
-  loadingComponent={null}
-  onClickSeeMore={[Function]}
   onItemsFetch={[Function]}
-  onScroll={[Function]}
-  onScrollFinished={[Function]}
+  onScroll={null}
+  onScrollFinished={null}
+  renderLoadingComponent={null}
+  renderSeeMoreComponent={null}
   seeMoreAfter={null}
-  seeMoreComponent={null}
 >
   <div>
     <List
@@ -189,52 +251,5 @@ exports[`withInfiniteScroll should render correctly with an "elementsPerScroll" 
       className="bpk-sentinel"
     />
   </div>
-</_class>
-`;
-
-exports[`withInfiniteScroll should render correctly with an "seeMoreComponent" attribute 1`] = `
-<_class
-  elementsPerScroll={1}
-  loadingComponent={null}
-  onClickSeeMore={[Function]}
-  onItemsFetch={[Function]}
-  onScroll={[Function]}
-  onScrollFinished={[Function]}
-  seeMoreAfter={0}
-  seeMoreComponent={
-    <button>
-      see more
-    </button>
-  }
->
-  <div>
-    <List
-      elements={
-        Array [
-          "Element 0",
-        ]
-      }
-    >
-      <div
-        id="list"
-      >
-        <div
-          key="Element 0"
-        >
-          Element 0
-        </div>
-      </div>
-    </List>
-    <div
-      onClick={[Function]}
-      onKeyPress={[Function]}
-      role="button"
-      tabIndex={0}
-    >
-      <button>
-        see more
-      </button>
-    </div>
-  </div>
-</_class>
+</WithInfiniteScroll>
 `;

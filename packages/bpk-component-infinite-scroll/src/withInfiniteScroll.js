@@ -43,12 +43,13 @@ type OnItemsFetchFunction = (
 
 export type Props = {
   elementsPerScroll: number,
-  loadingComponent: ?Element<any>,
   onItemsFetch: OnItemsFetchFunction,
-  onClickSeeMore: (event: SyntheticEvent<HTMLButtonElement>) => void,
-  onScroll: (o: ScrollEvent) => void,
-  onScrollFinished: (o: ScrollFinishedEvent) => void,
-  seeMoreComponent: Element<any>,
+  onScroll: ?(o: ScrollEvent) => void,
+  onScrollFinished: ?(o: ScrollFinishedEvent) => void,
+  renderLoadingComponent: ?() => Element<any>,
+  renderSeeMoreComponent: ?({
+    onSeeMoreClick: (event: SyntheticEvent<any>) => mixed,
+  }) => Element<any>,
   seeMoreAfter: number,
 };
 
@@ -66,33 +67,30 @@ type ExtendedProps = {
 const withInfiniteScroll = (
   ComponentToExtend: ComponentType<ExtendedProps>,
 ): ComponentType<Props> =>
-  class extends Component<Props, State> {
+  class WithInfiniteScroll extends Component<Props, State> {
     handleIntersection: IntersectionObserverCallback;
     handleKeyPress: (e: SyntheticKeyboardEvent<HTMLButtonElement>) => void;
     handleSeeMoreClick: (e: SyntheticEvent<HTMLButtonElement>) => void;
     observer: IntersectionObserver;
     onItemsFetch: OnItemsFetchFunction;
-    onScroll: (o: ScrollEvent) => void;
     sentinel: ?HTMLElement;
 
     static propTypes = {
       elementsPerScroll: PropTypes.number,
-      loadingComponent: PropTypes.node,
       onItemsFetch: PropTypes.func.isRequired,
-      onClickSeeMore: PropTypes.func,
       onScroll: PropTypes.func,
       onScrollFinished: PropTypes.func,
-      seeMoreComponent: PropTypes.node,
+      renderLoadingComponent: PropTypes.func,
+      renderSeeMoreComponent: PropTypes.func,
       seeMoreAfter: PropTypes.number,
     };
 
     static defaultProps = {
       elementsPerScroll: 5,
-      loadingComponent: null,
-      onClickSeeMore: () => {},
-      onScroll: () => {},
-      onScrollFinished: () => {},
-      seeMoreComponent: null,
+      onScroll: null,
+      onScrollFinished: null,
+      renderLoadingComponent: null,
+      renderSeeMoreComponent: null,
       seeMoreAfter: null,
     };
 
@@ -107,7 +105,6 @@ const withInfiniteScroll = (
       };
 
       this.onItemsFetch = props.onItemsFetch;
-      this.onScroll = props.onScroll;
       this.observer = new IntersectionObserver(this.handleIntersection, {
         threshold: 1,
       });
@@ -133,7 +130,7 @@ const withInfiniteScroll = (
 
     loadMore() {
       const { index, elementsToRender } = this.state;
-      const { elementsPerScroll, seeMoreAfter } = this.props;
+      const { elementsPerScroll, onScrollFinished, seeMoreAfter } = this.props;
       return this.onItemsFetch(index, elementsPerScroll).then(nextElements => {
         if (nextElements && nextElements.length > 0) {
           const nextIndex = index + elementsPerScroll;
@@ -143,9 +140,11 @@ const withInfiniteScroll = (
             showSeeMore: seeMoreAfter === index / elementsPerScroll,
           };
         }
-        this.props.onScrollFinished({
-          totalNumberElements: elementsToRender.length,
-        });
+        if (onScrollFinished) {
+          onScrollFinished({
+            totalNumberElements: elementsToRender.length,
+          });
+        }
         return {
           isListFinished: true,
         };
@@ -153,12 +152,15 @@ const withInfiniteScroll = (
     }
 
     handleIntersection = (entries: Array<IntersectionObserverEntry>) => {
+      const { onScroll } = this.props;
       const entry = entries[0];
       if (entry.intersectionRatio === 1) {
         if (this.sentinel) {
           this.observer.unobserve(this.sentinel);
         }
-        this.props.onScroll({ currentIndex: this.state.index });
+        if (onScroll) {
+          onScroll({ currentIndex: this.state.index });
+        }
         return this.loadMore().then(newState => {
           this.setState(newState);
         });
@@ -166,50 +168,24 @@ const withInfiniteScroll = (
       return Promise.resolve();
     };
 
-    handleKeyPress = (e: SyntheticKeyboardEvent<HTMLButtonElement>) => {
-      const { key } = e;
-      if (key === 'Enter' || key === ' ') {
-        return this.handleSeeMoreClick(e);
-      }
-      return Promise.resolve();
-    };
-
-    handleSeeMoreClick = (e: SyntheticEvent<HTMLButtonElement>) => {
-      this.props.onClickSeeMore(e);
-      return this.loadMore().then(newState => {
+    handleSeeMoreClick = () =>
+      this.loadMore().then(newState => {
         this.setState(newState);
       });
-    };
 
     render() {
       const { elementsToRender, isListFinished, showSeeMore } = this.state;
-      const { seeMoreComponent, loadingComponent } = this.props;
+      const { renderSeeMoreComponent, renderLoadingComponent } = this.props;
 
-      const rest = omit(this.props, [
-        'elementsPerScroll',
-        'loadingComponent',
-        'onItemsFetch',
-        'onClickSeeMore',
-        'onScroll',
-        'onScrollFinished',
-        'seeMoreComponent',
-        'seeMoreAfter',
-      ]);
+      const rest = omit(this.props, Object.keys(WithInfiniteScroll.propTypes));
 
       let loadingOrButton = null;
 
       if (!isListFinished) {
-        if (showSeeMore) {
-          loadingOrButton = (
-            <div
-              role="button"
-              tabIndex={0}
-              onKeyPress={this.handleKeyPress}
-              onClick={this.handleSeeMoreClick}
-            >
-              {seeMoreComponent}
-            </div>
-          );
+        if (showSeeMore && renderSeeMoreComponent) {
+          loadingOrButton = renderSeeMoreComponent({
+            onSeeMoreClick: this.handleSeeMoreClick,
+          });
         } else {
           loadingOrButton = (
             <div
@@ -217,10 +193,10 @@ const withInfiniteScroll = (
                 this.sentinel = spinner;
               }}
               className={
-                loadingComponent ? null : getClassNames('bpk-sentinel')
+                renderLoadingComponent ? null : getClassNames('bpk-sentinel')
               }
             >
-              {loadingComponent}
+              {renderLoadingComponent && renderLoadingComponent()}
             </div>
           );
         }

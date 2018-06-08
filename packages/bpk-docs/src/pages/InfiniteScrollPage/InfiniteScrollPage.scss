@@ -1,0 +1,53 @@
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2018 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+@import '~bpk-mixins';
+
+.bpk-docs-infinite-scroll-page {
+  &__fixed-panel {
+    height: $bpk-spacing-xxl * 10;
+    overflow-y: scroll;
+  }
+
+  &__list {
+    padding: 0;
+    list-style: none;
+
+    li {
+      display: flex;
+      height: $bpk-spacing-xxl * 2;
+      justify-content: center;
+      align-items: center;
+      color: $bpk-color-gray-700;
+    }
+
+    li:nth-child(2n) {
+      background-color: $bpk-color-gray-50;
+    }
+
+    li:nth-child(2n+1) {
+      background-color: $bpk-color-gray-100;
+    }
+  }
+
+  &__custom-component {
+    display: flex;
+    padding: $bpk-spacing-sm 0;
+    justify-content: center;
+  }
+}

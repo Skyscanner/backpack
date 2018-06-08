@@ -114,6 +114,12 @@ const ComponentsLinks = [
         tags: ['web'],
       },
       {
+        id: 'INFINITE_SCROLL',
+        route: routes.INFINITE_SCROLL,
+        children: 'Infinite scroll',
+        tags: ['web'],
+      },
+      {
         id: 'BANNER_ALERT',
         route: routes.BANNER_ALERT,
         children: 'Banner alert',
