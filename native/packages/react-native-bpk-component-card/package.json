@@ -1,6 +1,6 @@
 {
   "name": "react-native-bpk-component-card",
-  "version": "1.2.23",
+  "version": "1.2.24",
   "main": "index.js",
   "description": "Backpack React Native card component.",
   "repository": {
@@ -16,12 +16,12 @@
   "dependencies": {
     "bpk-tokens": "^27.0.1",
     "prop-types": "^15.5.8",
-    "react-native-bpk-component-touchable-native-feedback": "^1.1.10",
-    "react-native-bpk-component-touchable-overlay": "^1.0.18",
+    "react-native-bpk-component-touchable-native-feedback": "^1.1.11",
+    "react-native-bpk-component-touchable-overlay": "^1.0.19",
     "react-native-bpk-styles": "^1.0.8",
     "react-native-dash": "0.0.8"
   },
   "devDependencies": {
-    "react-native-bpk-component-text": "^2.1.36"
+    "react-native-bpk-component-text": "^2.1.37"
   }
 }
