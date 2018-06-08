@@ -2,23 +2,18 @@
 
 [Unreleased changes](./unreleased.md).
 
-# 2018-06-06 - Introduce phone input component, plus new props for button, link and breakpoint.
+# 2018-06-06 - Introduce native map component, plus fixed display issues with native select and phone input.
 
-- bpk-component-button: 2.0.21 => 2.1.0
-  - Added `blank` and `rel` props.
-  - When `blank` is set, `rel` is automatically set to `rel="noopener noreferrer"`.
+**Added:**
+- react-native-bpk-component-map: 0.0.1 => 1.0.0
+  - Introducing the React Native map component, see: https://backpack.github.io/components/map?platform=native
 
-- bpk-component-link: 1.1.18 => 1.2.0
-  - When `blank` is set, `rel` is automatically set to `rel="noopener noreferrer"`.
+**Fixed:**
+- react-native-bpk-component-phone-input: 1.0.17 => 1.0.18
+  - Fixed dialing code select display issue.
 
-- bpk-component-breakpoint: 1.0.63 => 1.1.0
-  - Change `children` proptype to `oneOfType(node, func)` (added `node`).
-
-- bpk-component-phone-input: 0.0.0 => 1.0.0
-  - Introducing the web phone input component, see: https://backpack.github.io/components/phone-input/?platform=web
-
-- bpk-component-select: 2.1.68 => 2.2.0
-  - Add ability to display an image in the select component.
+- react-native-bpk-component-select: 1.0.2 => 1.0.3
+  - Fixed display issue when squashed in a flex container.
 
 # 2018-05-31 - Add native alert component
 
