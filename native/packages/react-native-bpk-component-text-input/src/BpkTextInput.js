@@ -159,7 +159,7 @@ class BpkTextInput extends Component<Props, State> {
       ...rest
     } = this.props;
     const hasAccessoryView = accessoryView !== null;
-    const placeholerValue = isFocused || hasAccessoryView ? placeholder : null;
+    const placeholderValue = isFocused || hasAccessoryView ? placeholder : null;
 
     const validityIcon = valid ? (
       <ValidIcon />
@@ -212,7 +212,7 @@ class BpkTextInput extends Component<Props, State> {
               ref={inputRef}
               underlineColorAndroid="transparent"
               {...rest}
-              placeholder={placeholerValue}
+              placeholder={placeholderValue}
             />
             {!isFocused && validityIcon}
           </Animated.View>
