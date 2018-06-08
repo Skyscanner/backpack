@@ -1,0 +1,240 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`withInfiniteScroll renders an empty list for the first render 1`] = `
+<div>
+  <div
+    id="list"
+  />
+  <div
+    className="bpk-sentinel"
+  />
+</div>
+`;
+
+exports[`withInfiniteScroll renders items after the first render 1`] = `
+<_class
+  elementsPerScroll={5}
+  loadingComponent={null}
+  onClickSeeMore={[Function]}
+  onItemsFetch={[Function]}
+  onScroll={[Function]}
+  onScrollFinished={[Function]}
+  seeMoreAfter={null}
+  seeMoreComponent={null}
+>
+  <div>
+    <List
+      elements={
+        Array [
+          "Element 0",
+          "Element 1",
+          "Element 2",
+          "Element 3",
+          "Element 4",
+        ]
+      }
+    >
+      <div
+        id="list"
+      >
+        <div
+          key="Element 0"
+        >
+          Element 0
+        </div>
+        <div
+          key="Element 1"
+        >
+          Element 1
+        </div>
+        <div
+          key="Element 2"
+        >
+          Element 2
+        </div>
+        <div
+          key="Element 3"
+        >
+          Element 3
+        </div>
+        <div
+          key="Element 4"
+        >
+          Element 4
+        </div>
+      </div>
+    </List>
+    <div
+      className="bpk-sentinel"
+    />
+  </div>
+</_class>
+`;
+
+exports[`withInfiniteScroll should pass unused props to ComponentToExtend 1`] = `
+<_class
+  elementsPerScroll={5}
+  extraProp="extraProp"
+  loadingComponent={null}
+  onClickSeeMore={[Function]}
+  onItemsFetch={[Function]}
+  onScroll={[Function]}
+  onScrollFinished={[Function]}
+  seeMoreAfter={null}
+  seeMoreComponent={null}
+>
+  <div>
+    <List
+      elements={Array []}
+      extraProp="extraProp"
+    >
+      <div
+        id="list"
+      />
+    </List>
+    <div
+      className="bpk-sentinel"
+    />
+  </div>
+</_class>
+`;
+
+exports[`withInfiniteScroll should render correctly when no more elements 1`] = `
+<_class
+  elementsPerScroll={5}
+  loadingComponent={null}
+  onClickSeeMore={[Function]}
+  onItemsFetch={[Function]}
+  onScroll={[Function]}
+  onScrollFinished={[Function]}
+  seeMoreAfter={null}
+  seeMoreComponent={null}
+>
+  <div>
+    <List
+      elements={
+        Array [
+          "Element 0",
+          "Element 1",
+          "Element 2",
+          "Element 3",
+          "Element 4",
+        ]
+      }
+    >
+      <div
+        id="list"
+      >
+        <div
+          key="Element 0"
+        >
+          Element 0
+        </div>
+        <div
+          key="Element 1"
+        >
+          Element 1
+        </div>
+        <div
+          key="Element 2"
+        >
+          Element 2
+        </div>
+        <div
+          key="Element 3"
+        >
+          Element 3
+        </div>
+        <div
+          key="Element 4"
+        >
+          Element 4
+        </div>
+      </div>
+    </List>
+  </div>
+</_class>
+`;
+
+exports[`withInfiniteScroll should render correctly with an "elementsPerScroll" attribute 1`] = `
+<_class
+  elementsPerScroll={1}
+  loadingComponent={null}
+  onClickSeeMore={[Function]}
+  onItemsFetch={[Function]}
+  onScroll={[Function]}
+  onScrollFinished={[Function]}
+  seeMoreAfter={null}
+  seeMoreComponent={null}
+>
+  <div>
+    <List
+      elements={
+        Array [
+          "Element 0",
+        ]
+      }
+    >
+      <div
+        id="list"
+      >
+        <div
+          key="Element 0"
+        >
+          Element 0
+        </div>
+      </div>
+    </List>
+    <div
+      className="bpk-sentinel"
+    />
+  </div>
+</_class>
+`;
+
+exports[`withInfiniteScroll should render correctly with an "seeMoreComponent" attribute 1`] = `
+<_class
+  elementsPerScroll={1}
+  loadingComponent={null}
+  onClickSeeMore={[Function]}
+  onItemsFetch={[Function]}
+  onScroll={[Function]}
+  onScrollFinished={[Function]}
+  seeMoreAfter={0}
+  seeMoreComponent={
+    <button>
+      see more
+    </button>
+  }
+>
+  <div>
+    <List
+      elements={
+        Array [
+          "Element 0",
+        ]
+      }
+    >
+      <div
+        id="list"
+      >
+        <div
+          key="Element 0"
+        >
+          Element 0
+        </div>
+      </div>
+    </List>
+    <div
+      onClick={[Function]}
+      onKeyPress={[Function]}
+      role="button"
+      tabIndex={0}
+    >
+      <button>
+        see more
+      </button>
+    </div>
+  </div>
+</_class>
+`;

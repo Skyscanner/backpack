@@ -209,7 +209,10 @@ And loading [http://localhost:8080/](http://localhost:8080/)
 
 If you need any help writing documentation, get in touch!
 
-When adding documentation for a new component, add the new dependency in `packages/bpk-docs/package.json` and run `npm run bootstrap` to install it.
+When adding documentation for a new component:
+ * add the new dependency in `packages/bpk-docs/package.json` and run `npm run bootstrap` to install it.
+ * add routes for your new component in `packages/bpk-docs/src/constants/Routes.js` and `packages/bpk-docs/src/constants/redirect-routes.js`
+ * add new link in `packages/bpk-docs/src/layouts/links.js`
 
 The web Map component page requires an environment variable named `GOOGLE_MAPS_API_KEY`. During builds, this is set by Travis.
 

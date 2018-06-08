@@ -78,6 +78,7 @@ configure(() => {
   require('./../packages/bpk-component-horizontal-nav/stories');
   require('./../packages/bpk-component-icon/stories');
   require('./../packages/bpk-component-image/stories');
+  require('./../packages/bpk-component-infinite-scroll/stories');
   require('./../packages/bpk-component-input/stories');
   require('./../packages/bpk-component-label/stories');
   require('./../packages/bpk-component-link/stories');
