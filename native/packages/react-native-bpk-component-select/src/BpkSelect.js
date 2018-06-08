@@ -41,7 +41,7 @@ import {
 } from 'bpk-tokens/tokens/base.react.native';
 
 const styles = StyleSheet.create({
-  trigger: {
+  select: {
     flexDirection: 'row',
     borderColor: colorGray100,
     borderBottomWidth: borderSizeSm,
@@ -49,21 +49,19 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     paddingVertical: spacingSm,
   },
-  contentWrapper: {
-    flex: 1,
-    flexDirection: 'row',
-    alignItems: 'center',
+  selectContent: {
+    marginEnd: 'auto',
   },
-  disabled: {
+  selectContentDisabled: {
     color: colorGray100,
   },
-  image: {
+  selectImage: {
     width: spacingBase,
     height: spacingSm + spacingMd,
     backgroundColor: colorGray50,
     marginEnd: spacingMd,
   },
-  icon: {
+  selectIcon: {
     marginStart: spacingSm,
   },
 });
@@ -90,7 +88,11 @@ const BpkSelect = (props: Props) => {
   let content = label;
   if (label && typeof label === 'string') {
     content = (
-      <BpkText style={disabled ? styles.disabled : {}}>{content}</BpkText>
+      <BpkText
+        style={[styles.selectContent, disabled && styles.selectContentDisabled]}
+      >
+        {content}
+      </BpkText>
     );
   }
 
@@ -106,10 +108,10 @@ const BpkSelect = (props: Props) => {
   }
   const styledImage = image ? (
     cloneElement(image, {
-      style: [image.props.style, styles.image],
+      style: [image.props.style, styles.selectImage],
     })
   ) : (
-    <View style={styles.image} />
+    <View style={styles.selectImage} />
   );
 
   return (
@@ -121,12 +123,10 @@ const BpkSelect = (props: Props) => {
       accessibilityTraits={accessibilityTraits}
       {...platformProps}
     >
-      <View style={styles.trigger} {...rest}>
-        <View style={styles.contentWrapper}>
-          {showImage && styledImage}
-          {content}
-        </View>
-        <BpkIcon style={styles.icon} icon={icons['arrow-down']} small />
+      <View style={styles.select} {...rest}>
+        {showImage && styledImage}
+        {content}
+        <BpkIcon style={styles.selectIcon} icon={icons['arrow-down']} small />
       </View>
     </TouchablePlatformComponent>
   );

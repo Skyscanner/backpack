@@ -73,48 +73,43 @@ exports[`Android BpkPhoneNumberInput should render correctly 1`] = `
       }
       testID={undefined}
     >
-      <View
+      <Image
+        resizeMode="contain"
         style={
-          Object {
-            "alignItems": "center",
-            "flex": 1,
-            "flexDirection": "row",
-          }
+          Array [
+            undefined,
+            Object {
+              "backgroundColor": "rgb(243, 242, 245)",
+              "height": 12,
+              "marginEnd": 8,
+              "width": 16,
+            },
+          ]
+        }
+      />
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+              "fontFamily": "System",
+              "fontSize": 15,
+              "fontWeight": "400",
+            },
+            Array [
+              Object {
+                "marginEnd": "auto",
+              },
+              false,
+            ],
+          ]
         }
       >
-        <Image
-          resizeMode="contain"
-          style={
-            Array [
-              undefined,
-              Object {
-                "backgroundColor": "rgb(243, 242, 245)",
-                "height": 12,
-                "marginEnd": 8,
-                "width": 16,
-              },
-            ]
-          }
-        />
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
-          style={
-            Array [
-              Object {
-                "color": "rgb(82, 76, 97)",
-                "fontFamily": "System",
-                "fontSize": 15,
-                "fontWeight": "400",
-              },
-              Object {},
-            ]
-          }
-        >
-          +44
-        </Text>
-      </View>
+        +44
+      </Text>
       <Text
         accessible={true}
         allowFontScaling={true}
@@ -256,50 +251,45 @@ exports[`Android BpkPhoneNumberInput should render correctly with \`editable\` f
       }
       testID={undefined}
     >
-      <View
+      <Image
+        resizeMode="contain"
         style={
-          Object {
-            "alignItems": "center",
-            "flex": 1,
-            "flexDirection": "row",
-          }
+          Array [
+            undefined,
+            Object {
+              "backgroundColor": "rgb(243, 242, 245)",
+              "height": 12,
+              "marginEnd": 8,
+              "width": 16,
+            },
+          ]
         }
-      >
-        <Image
-          resizeMode="contain"
-          style={
-            Array [
-              undefined,
-              Object {
-                "backgroundColor": "rgb(243, 242, 245)",
-                "height": 12,
-                "marginEnd": 8,
-                "width": 16,
-              },
-            ]
-          }
-        />
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
-          style={
+      />
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+              "fontFamily": "System",
+              "fontSize": 15,
+              "fontWeight": "400",
+            },
             Array [
               Object {
-                "color": "rgb(82, 76, 97)",
-                "fontFamily": "System",
-                "fontSize": 15,
-                "fontWeight": "400",
+                "marginEnd": "auto",
               },
               Object {
                 "color": "rgb(230, 228, 235)",
               },
-            ]
-          }
-        >
-          +44
-        </Text>
-      </View>
+            ],
+          ]
+        }
+      >
+        +44
+      </Text>
       <Text
         accessible={true}
         allowFontScaling={true}

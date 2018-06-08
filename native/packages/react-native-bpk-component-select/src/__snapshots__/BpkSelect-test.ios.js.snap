@@ -34,15 +34,6 @@ exports[`iOS BpkSelect should render correctly 1`] = `
       }
     }
   >
-    <View
-      style={
-        Object {
-          "alignItems": "center",
-          "flex": 1,
-          "flexDirection": "row",
-        }
-      }
-    />
     <Text
       accessible={true}
       allowFontScaling={true}
@@ -120,29 +111,19 @@ exports[`iOS BpkSelect should render correctly with "showImage" and image 1`] = 
       }
     }
   >
-    <View
+    <Image
       style={
-        Object {
-          "alignItems": "center",
-          "flex": 1,
-          "flexDirection": "row",
-        }
+        Array [
+          undefined,
+          Object {
+            "backgroundColor": "rgb(243, 242, 245)",
+            "height": 12,
+            "marginEnd": 8,
+            "width": 16,
+          },
+        ]
       }
-    >
-      <Image
-        style={
-          Array [
-            undefined,
-            Object {
-              "backgroundColor": "rgb(243, 242, 245)",
-              "height": 12,
-              "marginEnd": 8,
-              "width": 16,
-            },
-          ]
-        }
-      />
-    </View>
+    />
     <Text
       accessible={true}
       allowFontScaling={true}
@@ -223,23 +204,13 @@ exports[`iOS BpkSelect should render correctly with "showImage" and no image 1`]
     <View
       style={
         Object {
-          "alignItems": "center",
-          "flex": 1,
-          "flexDirection": "row",
+          "backgroundColor": "rgb(243, 242, 245)",
+          "height": 12,
+          "marginEnd": 8,
+          "width": 16,
         }
       }
-    >
-      <View
-        style={
-          Object {
-            "backgroundColor": "rgb(243, 242, 245)",
-            "height": 12,
-            "marginEnd": 8,
-            "width": 16,
-          }
-        }
-      />
-    </View>
+    />
     <Text
       accessible={true}
       allowFontScaling={true}
@@ -317,34 +288,29 @@ exports[`iOS BpkSelect should render correctly with a text label 1`] = `
       }
     }
   >
-    <View
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
       style={
-        Object {
-          "alignItems": "center",
-          "flex": 1,
-          "flexDirection": "row",
-        }
-      }
-    >
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
-        style={
+        Array [
+          Object {
+            "color": "rgb(82, 76, 97)",
+            "fontFamily": "System",
+            "fontSize": 15,
+            "fontWeight": "400",
+          },
           Array [
             Object {
-              "color": "rgb(82, 76, 97)",
-              "fontFamily": "System",
-              "fontSize": 15,
-              "fontWeight": "400",
+              "marginEnd": "auto",
             },
-            Object {},
-          ]
-        }
-      >
-        label
-      </Text>
-    </View>
+            false,
+          ],
+        ]
+      }
+    >
+      label
+    </Text>
     <Text
       accessible={true}
       allowFontScaling={true}
@@ -422,17 +388,7 @@ exports[`iOS BpkSelect should render correctly with an element label 1`] = `
       }
     }
   >
-    <View
-      style={
-        Object {
-          "alignItems": "center",
-          "flex": 1,
-          "flexDirection": "row",
-        }
-      }
-    >
-      <View />
-    </View>
+    <View />
     <Text
       accessible={true}
       allowFontScaling={true}
@@ -514,34 +470,29 @@ exports[`iOS BpkSelect should render correctly with custom styles 1`] = `
       }
     }
   >
-    <View
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
       style={
-        Object {
-          "alignItems": "center",
-          "flex": 1,
-          "flexDirection": "row",
-        }
-      }
-    >
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
-        style={
+        Array [
+          Object {
+            "color": "rgb(82, 76, 97)",
+            "fontFamily": "System",
+            "fontSize": 15,
+            "fontWeight": "400",
+          },
           Array [
             Object {
-              "color": "rgb(82, 76, 97)",
-              "fontFamily": "System",
-              "fontSize": 15,
-              "fontWeight": "400",
+              "marginEnd": "auto",
             },
-            Object {},
-          ]
-        }
-      >
-        label
-      </Text>
-    </View>
+            false,
+          ],
+        ]
+      }
+    >
+      label
+    </Text>
     <Text
       accessible={true}
       allowFontScaling={true}
@@ -620,36 +571,31 @@ exports[`iOS BpkSelect should render correctly with the disabled prop 1`] = `
       }
     }
   >
-    <View
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
       style={
-        Object {
-          "alignItems": "center",
-          "flex": 1,
-          "flexDirection": "row",
-        }
-      }
-    >
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
-        style={
+        Array [
+          Object {
+            "color": "rgb(82, 76, 97)",
+            "fontFamily": "System",
+            "fontSize": 15,
+            "fontWeight": "400",
+          },
           Array [
             Object {
-              "color": "rgb(82, 76, 97)",
-              "fontFamily": "System",
-              "fontSize": 15,
-              "fontWeight": "400",
+              "marginEnd": "auto",
             },
             Object {
               "color": "rgb(230, 228, 235)",
             },
-          ]
-        }
-      >
-        label
-      </Text>
-    </View>
+          ],
+        ]
+      }
+    >
+      label
+    </Text>
     <Text
       accessible={true}
       allowFontScaling={true}
