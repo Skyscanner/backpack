@@ -475,7 +475,7 @@ const neoComponentsLinks = [
         id: 'MAP',
         route: routes.NEO_MAP,
         children: 'Map',
-        tags: ['web'],
+        tags: ['web', 'native'],
       },
 
       {

@@ -19,6 +19,9 @@
 import React from 'react';
 import BpkMap, { withScriptjs } from 'bpk-component-map';
 
+import iosScreenshot from 'react-native-bpk-component-map/screenshots/ios/default.png';
+import androidScreenshot from 'react-native-bpk-component-map/screenshots/android/default.png';
+import nativeMapReadme from 'react-native-bpk-component-map/readme.md';
 import mapReadme from 'bpk-component-map/readme.md';
 
 import DocsPageBuilder from './../../components/DocsPageBuilder';
@@ -52,16 +55,50 @@ const components = [
   },
 ];
 
+const nativeComponents = [
+  {
+    id: 'default',
+    title: 'Default',
+    screenshots: [
+      {
+        title: 'iOS',
+        width: 750,
+        height: 1334,
+        src: `/${iosScreenshot}`,
+        altText: 'iOS Map Component',
+        subText: '(iPhone 8 simulator)',
+      },
+      {
+        title: 'Android',
+        width: 1080,
+        height: 1920,
+        src: `/${androidScreenshot}`,
+        altText: 'Android Map Component',
+        subText: '(Google Pixel emulator)',
+      },
+    ],
+  },
+];
+
 const blurb = [
   <IntroBlurb>The map component is for embedding maps into pages.</IntroBlurb>,
 ];
 
-const MapSubpage = ({ ...rest }) => (
+const MapSubpage = () => (
   <DocsPageBuilder
     title="Map"
     components={components}
     readme={mapReadme}
-    {...rest}
+    wrapped
+  />
+);
+
+const NativeSubpage = () => (
+  <DocsPageBuilder
+    title="Map"
+    components={nativeComponents}
+    readme={nativeMapReadme}
+    wrapped
   />
 );
 
@@ -69,7 +106,8 @@ const MapPage = () => (
   <DocsPageWrapper
     title="Map"
     blurb={blurb}
-    webSubpage={<MapSubpage wrapped />}
+    webSubpage={<MapSubpage />}
+    nativeSubpage={<NativeSubpage />}
   />
 );
 

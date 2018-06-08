@@ -18,7 +18,6 @@
 
 import React from 'react';
 import { storiesOf } from '@storybook/react-native';
-// import { spacingXl, spacingBase } from 'bpk-tokens/tokens/base.react.native';
 
 import BpkMap from './index';
 
@@ -26,8 +25,8 @@ storiesOf('react-native-bpk-component-map', module).add('docs:default', () => (
   <BpkMap
     style={{ flex: 1 }}
     initialRegion={{
-      latitude: 55.944357,
-      longitude: -3.1967116,
+      latitude: 35.661777,
+      longitude: 139.704051,
       latitudeDelta: 0.0922,
       longitudeDelta: 0.0421,
     }}
