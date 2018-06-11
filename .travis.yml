@@ -16,7 +16,7 @@ script:
   - set -e
   - npm run danger
   - npm test
-  - npm run docs:neo:dist
+  - npm run docs:dist
   - if [ "$TRAVIS_BRANCH" == 'master' ] && [ "$TRAVIS_PULL_REQUEST" == 'false' ]; then npm run storybook:dist; fi
   - test -e dist/index.html
   - test -e dist/sassdoc/index.html

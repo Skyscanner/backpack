@@ -34,7 +34,6 @@ const {
   NODE_ENV,
   BPK_TOKENS,
   ENABLE_CSS_MODULES,
-  BPK_NEO,
   BPK_BUILT_AT,
   GOOGLE_MAPS_API_KEY,
 } = process.env;
@@ -192,16 +191,13 @@ const config = {
   },
 };
 
-if (BPK_NEO) {
-  config.plugins.push(
-    new webpack.DefinePlugin({
-      'process.env': {
-        BPK_NEO: true,
-        BPK_BUILT_AT,
-      },
-    }),
-  );
-}
+config.plugins.push(
+  new webpack.DefinePlugin({
+    'process.env': {
+      BPK_BUILT_AT,
+    },
+  }),
+);
 
 if (GOOGLE_MAPS_API_KEY) {
   config.plugins.push(
