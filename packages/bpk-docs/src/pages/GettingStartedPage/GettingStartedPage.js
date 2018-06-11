@@ -54,11 +54,11 @@ const components = [
         Skyscanner products on web, iOS and Android is as straightforward as:
         installing a package, importing it in a view and using it in JSX. Please
         see the Text component for{' '}
-        <BpkLink href={`${ROUTES.TEXT}`} blank>
+        <BpkLink href={`${ROUTES.TEXT}?platform=web`} blank>
           web
         </BpkLink>{' '}
         and&nbsp;
-        <BpkLink href={ROUTES.NATIVE_TEXT} blank>
+        <BpkLink href={`${ROUTES.TEXT}?platform=native`} blank>
           native
         </BpkLink>{' '}
         as examples.

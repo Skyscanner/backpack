@@ -91,7 +91,7 @@ const blurb = [
     The datepicker is an input control that allows the user to pick a single
     date. It embeds a{' '}
     <BpkRouterLink to={ROUTES.CALENDAR}>calendar component</BpkRouterLink> in a{' '}
-    <BpkRouterLink to={ROUTES.POPOVERS}>popover</BpkRouterLink>.
+    <BpkRouterLink to={ROUTES.POPOVER}>popover</BpkRouterLink>.
   </IntroBlurb>,
 ];
 

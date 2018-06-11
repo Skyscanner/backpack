@@ -317,10 +317,10 @@ const components = [
 const blurb = [
   <IntroBlurb>
     Fieldsets encapsulate the composition of{' '}
-    <BpkRouterLink to={`${ROUTES.FORMS}`}>form controls</BpkRouterLink>
-    , <BpkRouterLink to={`${ROUTES.FORMS}#labels`}>labels</BpkRouterLink>
+    <BpkRouterLink to={`${ROUTES.FORM}`}>form controls</BpkRouterLink>
+    , <BpkRouterLink to={`${ROUTES.FORM}#labels`}>labels</BpkRouterLink>
     &nbsp;&amp;{' '}
-    <BpkRouterLink to={`${ROUTES.FORMS}#validation`}>
+    <BpkRouterLink to={`${ROUTES.FORM}#validation`}>
       validation messages
     </BpkRouterLink>{' '}
     with the necessary attributes to ensure good accessibility for screen

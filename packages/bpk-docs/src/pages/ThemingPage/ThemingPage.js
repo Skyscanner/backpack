@@ -30,25 +30,22 @@ import DocsPageBuilder from './../../components/DocsPageBuilder';
 import DocsPageWrapper from './../../components/neo/DocsPageWrapper';
 
 import {
-  ACCORDIONS,
-  BARCHARTS,
-  BUTTONS,
+  ACCORDION,
+  BARCHART,
+  BLOCKQUOTE,
+  BUTTON,
   CALENDAR,
   DATEPICKER,
   DRAWER,
   HORIZONTAL_NAV,
-  MODALS,
+  LINK,
+  MODAL,
+  NAVIGATION_BAR,
+  NUDGER,
   PROGRESS,
-  NATIVE_BUTTON,
-  NATIVE_BUTTON_LINK,
-  NATIVE_HORIZONTAL_NAV,
-  NATIVE_NAVIGATION_BAR,
-  NATIVE_SPINNER,
-  NATIVE_SWITCH,
-  NUDGERS,
-  SPINNERS,
-  SLIDERS,
-  TYPOGRAPHY,
+  SLIDER,
+  SPINNER,
+  SWITCH,
 } from './../../constants/routes';
 
 const CONTEXT_API_URL = 'https://reactjs.org/docs/context.html';
@@ -59,24 +56,22 @@ const nativeBlurb = [
   <Paragraph>The following native components are themeable:</Paragraph>,
   <BpkList>
     <BpkListItem>
-      <BpkRouterLink to={NATIVE_BUTTON}>Button</BpkRouterLink>
+      <BpkRouterLink to={BUTTON}>Button</BpkRouterLink>
     </BpkListItem>
     <BpkListItem>
-      <BpkRouterLink to={NATIVE_BUTTON_LINK}>Link</BpkRouterLink>
+      <BpkRouterLink to={LINK}>Link</BpkRouterLink>
     </BpkListItem>
     <BpkListItem>
-      <BpkRouterLink to={NATIVE_HORIZONTAL_NAV}>
-        Horizontal navigation
-      </BpkRouterLink>
+      <BpkRouterLink to={HORIZONTAL_NAV}>Horizontal navigation</BpkRouterLink>
     </BpkListItem>
     <BpkListItem>
-      <BpkRouterLink to={NATIVE_NAVIGATION_BAR}>Navigation bar</BpkRouterLink>
+      <BpkRouterLink to={NAVIGATION_BAR}>Navigation bar</BpkRouterLink>
     </BpkListItem>
     <BpkListItem>
-      <BpkRouterLink to={NATIVE_SPINNER}>Spinner</BpkRouterLink>
+      <BpkRouterLink to={SPINNER}>Spinner</BpkRouterLink>
     </BpkListItem>
     <BpkListItem>
-      <BpkRouterLink to={NATIVE_SWITCH}>Switch</BpkRouterLink>
+      <BpkRouterLink to={SWITCH}>Switch</BpkRouterLink>
     </BpkListItem>
   </BpkList>,
 ];
@@ -85,18 +80,16 @@ const webBlurb = [
   <Paragraph>The following web components are themeable:</Paragraph>,
   <BpkList>
     <BpkListItem>
-      <BpkRouterLink to={ACCORDIONS}>Accordion</BpkRouterLink>
+      <BpkRouterLink to={ACCORDION}>Accordion</BpkRouterLink>
     </BpkListItem>
     <BpkListItem>
-      <BpkRouterLink to={BARCHARTS}>Bar chart</BpkRouterLink>
+      <BpkRouterLink to={BARCHART}>Bar chart</BpkRouterLink>
     </BpkListItem>
     <BpkListItem>
-      <BpkRouterLink to={`${TYPOGRAPHY}#blockquotes`}>
-        Blockquotes
-      </BpkRouterLink>
+      <BpkRouterLink to={BLOCKQUOTE}>Blockquotes</BpkRouterLink>
     </BpkListItem>
     <BpkListItem>
-      <BpkRouterLink to={BUTTONS}>Button</BpkRouterLink>
+      <BpkRouterLink to={`${BUTTON}?platform=web`}>Button</BpkRouterLink>
     </BpkListItem>
     <BpkListItem>
       <BpkRouterLink to={CALENDAR}>Calendar</BpkRouterLink>
@@ -108,25 +101,29 @@ const webBlurb = [
       <BpkRouterLink to={DRAWER}>Drawer</BpkRouterLink>
     </BpkListItem>
     <BpkListItem>
-      <BpkRouterLink to={HORIZONTAL_NAV}>Horizontal navigation</BpkRouterLink>
+      <BpkRouterLink to={`${HORIZONTAL_NAV}?platform=web`}>
+        Horizontal navigation
+      </BpkRouterLink>
     </BpkListItem>
     <BpkListItem>
-      <BpkRouterLink to={MODALS}>Modal</BpkRouterLink>
+      <BpkRouterLink to={MODAL}>Modal</BpkRouterLink>
     </BpkListItem>
     <BpkListItem>
-      <BpkRouterLink to={`${TYPOGRAPHY}#links`}>Link</BpkRouterLink>
+      <BpkRouterLink to={`${LINK}?platform=web`}>Link</BpkRouterLink>
     </BpkListItem>
     <BpkListItem>
-      <BpkRouterLink to={NUDGERS}>Nudgers</BpkRouterLink>
+      <BpkRouterLink to={`${NUDGER}?platform=web`}>Nudgers</BpkRouterLink>
     </BpkListItem>
     <BpkListItem>
-      <BpkRouterLink to={PROGRESS}>Progress bar</BpkRouterLink>
+      <BpkRouterLink to={`${PROGRESS}?platform=web`}>
+        Progress bar
+      </BpkRouterLink>
     </BpkListItem>
     <BpkListItem>
-      <BpkRouterLink to={SPINNERS}>Spinner</BpkRouterLink>
+      <BpkRouterLink to={`${SPINNER}?platform=web`}>Spinner</BpkRouterLink>
     </BpkListItem>
     <BpkListItem>
-      <BpkRouterLink to={SLIDERS}>Slider</BpkRouterLink>
+      <BpkRouterLink to={SLIDER}>Slider</BpkRouterLink>
     </BpkListItem>
   </BpkList>,
   <BpkBlockquote>

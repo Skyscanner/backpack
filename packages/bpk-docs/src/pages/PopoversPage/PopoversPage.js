@@ -131,7 +131,7 @@ const components = [
     title: 'Opened by an input',
     blurb: [
       <Paragraph>
-        You can use a <BpkRouterLink to={ROUTES.FORMS}>BpkInput</BpkRouterLink>{' '}
+        You can use a <BpkRouterLink to={ROUTES.FORM}>BpkInput</BpkRouterLink>{' '}
         enhanced with the <Code>withOpenEvents</Code> higher-order component to
         open popovers.
       </Paragraph>,

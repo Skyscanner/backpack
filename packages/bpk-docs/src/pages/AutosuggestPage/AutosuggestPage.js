@@ -197,7 +197,7 @@ const components = [
     blurb: [
       <Paragraph>
         You can insert a{' '}
-        <BpkRouterLink to={ROUTES.ICONS}>Backpack icon</BpkRouterLink> next to
+        <BpkRouterLink to={ROUTES.ICON}>Backpack icon</BpkRouterLink> next to
         each suggestion, useful for differentiation e.g. between airports,
         cities, and countries.
       </Paragraph>,

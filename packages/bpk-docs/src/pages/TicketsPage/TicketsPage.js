@@ -78,7 +78,7 @@ const components = [
 const blurb = [
   <IntroBlurb>
     Tickets combine the look and feel of{' '}
-    <BpkRouterLink to={ROUTES.CARDS}>Cards</BpkRouterLink> with an added
+    <BpkRouterLink to={ROUTES.CARD}>Cards</BpkRouterLink> with an added
     separation line to divide their content into two distinct areas. They can be
     configured to display both horizontally and vertically.
   </IntroBlurb>,

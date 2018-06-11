@@ -669,9 +669,9 @@ const components = [
       <BpkParagraph>
         Labels should always be used with form elements to provide context to
         the user. Relying on placeholders alone is not good practise. Have a
-        look at the{' '}
-        <BpkRouterLink to={ROUTES.FIELDSETS}>fieldset</BpkRouterLink> component
-        which composes labels, fields and validation messages accordingly.
+        look at the <BpkRouterLink to={ROUTES.FIELDSET}>fieldset</BpkRouterLink>{' '}
+        component which composes labels, fields and validation messages
+        accordingly.
       </BpkParagraph>,
     ],
     examples: [
@@ -692,7 +692,7 @@ const components = [
         , <BpkLink href="#selects">selects</BpkLink> and{' '}
         <BpkLink href="#checkboxes">checkboxes</BpkLink>. They should either be
         displayed on form submit or on field blur. Have a look at the{' '}
-        <BpkRouterLink to={ROUTES.FIELDSETS}>fieldset</BpkRouterLink> component
+        <BpkRouterLink to={ROUTES.FIELDSET}>fieldset</BpkRouterLink> component
         which composes labels, fields and validation messages accordingly.
       </BpkParagraph>,
     ],
