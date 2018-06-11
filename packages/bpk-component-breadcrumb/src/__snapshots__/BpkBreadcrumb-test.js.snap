@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BpkBreadcrumb should render correctly 1`] = `
+<nav
+  aria-label="My breadcrumbs"
+>
+  <ol
+    className="bpk-breadcrumb"
+  >
+    <div>
+      Anything can go in here
+    </div>
+  </ol>
+</nav>
+`;
+
+exports[`BpkBreadcrumb should render correctly with a custom class name 1`] = `
+<nav
+  aria-label="My breadcrumbs"
+  className="my-custom-class"
+>
+  <ol
+    className="bpk-breadcrumb"
+  >
+    <div>
+      Anything can go in here
+    </div>
+  </ol>
+</nav>
+`;
+
+exports[`BpkBreadcrumb should render correctly with arbitrary props 1`] = `
+<nav
+  aria-label="My breadcrumbs"
+  testID="arbitrary value"
+>
+  <ol
+    className="bpk-breadcrumb"
+  >
+    <div>
+      Anything can go in here
+    </div>
+  </ol>
+</nav>
+`;
+
