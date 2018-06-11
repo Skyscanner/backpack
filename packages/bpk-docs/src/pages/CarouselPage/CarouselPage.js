@@ -24,8 +24,8 @@ import readme from 'react-native-bpk-component-carousel/readme.md';
 import iosScreenshotDefault from 'react-native-bpk-component-carousel/screenshots/ios/default.png';
 import androidScreenshotDefault from 'react-native-bpk-component-carousel/screenshots/android/default.png';
 
-import DocsPageWrapper from './../../components/neo/DocsPageWrapper';
-import IntroBlurb from './../../components/neo/IntroBlurb';
+import DocsPageWrapper from './../../components/DocsPageWrapper';
+import IntroBlurb from './../../components/IntroBlurb';
 import Paragraph from './../../components/Paragraph';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
 

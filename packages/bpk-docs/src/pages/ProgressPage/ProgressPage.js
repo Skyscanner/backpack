@@ -16,57 +16,27 @@
  * limitations under the License.
  */
 
+/* @flow */
+
 import React from 'react';
-import progressReadme from 'bpk-component-progress/readme.md';
+import DocsPageWrapper from './../../components/DocsPageWrapper';
+import IntroBlurb from './../../components/IntroBlurb';
 
-import ProgressContainer from './ProgressContainer';
-import SteppedProgressContainer from './SteppedProgressContainer';
-import DocsPageBuilder from './../../components/DocsPageBuilder';
-import Paragraph from './../../components/Paragraph';
+import WebProgress from '../WebProgressPage';
+import NativeProgress from '../NativeProgressPage';
 
-const components = [
-  {
-    id: 'default',
-    title: 'Default',
-    blurb: [
-      <Paragraph>
-        This is the default progress bar which animates in and automatically
-        hides when complete.
-      </Paragraph>,
-    ],
-    examples: [<ProgressContainer />],
-  },
-  {
-    id: 'small',
-    title: 'Small',
-    blurb: [
-      <Paragraph>
-        This is very similar to the default progress bar but is a little thinner
-        to fit nicely inline, e.g. at the top of a page.
-      </Paragraph>,
-    ],
-    examples: [<ProgressContainer small />],
-  },
-  {
-    id: 'stepped',
-    title: 'Stepped',
-    blurb: [
-      <Paragraph>
-        This option allows you to specify how many steps there are in a given
-        task. These are great to guide users through longer processes such as
-        completing a form.
-      </Paragraph>,
-    ],
-    examples: [<SteppedProgressContainer />],
-  },
-];
-
-const ProgressPage = ({ ...rest }) => (
-  <DocsPageBuilder
-    title="Progress bars"
-    components={components}
-    readme={progressReadme}
-    {...rest}
+const ProgressPage = () => (
+  <DocsPageWrapper
+    title="Progress"
+    blurb={[
+      <IntroBlurb>
+        Progress bars are a great way of providing feedback when a tasking is
+        running. Unlike spinners, they give the user a clear idea of how long
+        the given task will take.
+      </IntroBlurb>,
+    ]}
+    webSubpage={<WebProgress wrapped />}
+    nativeSubpage={<NativeProgress wrapped />}
   />
 );
 

@@ -24,9 +24,9 @@ import androidScreenshotDefault from 'react-native-bpk-component-flat-list/scree
 import iosScreenshotWithImages from 'react-native-bpk-component-flat-list/screenshots/ios/with-images.png';
 import androidScreenshotWithImages from 'react-native-bpk-component-flat-list/screenshots/android/with-images.png';
 
-import IntroBlurb from './../../components/neo/IntroBlurb';
+import IntroBlurb from './../../components/IntroBlurb';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
-import DocsPageWrapper from './../../components/neo/DocsPageWrapper';
+import DocsPageWrapper from './../../components/DocsPageWrapper';
 
 const components = [
   {

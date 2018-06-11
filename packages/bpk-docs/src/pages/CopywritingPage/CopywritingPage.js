@@ -18,8 +18,8 @@
 
 import React from 'react';
 
-import { ParagraphNoMargin } from './../../components/neo/Paragraph';
-import InfoPageBuilder from './../../components/neo/InfoPageBuilder';
+import { ParagraphNoMargin } from './../../components/Paragraph';
+import InfoPageBuilder from './../../components/InfoPageBuilder';
 
 import CopywritingHeroImage from './../../static/copywriting_hero.jpg';
 

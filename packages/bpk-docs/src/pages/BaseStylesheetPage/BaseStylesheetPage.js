@@ -26,7 +26,7 @@ import Code from '../../components/Code';
 import CodeBlock from '../../components/CodeBlock';
 
 import Paragraph from './../../components/Paragraph';
-import IntroBlurb from './../../components/neo/IntroBlurb';
+import IntroBlurb from './../../components/IntroBlurb';
 
 const h5bpLink =
   'https://github.com/h5bp/html5-boilerplate/blob/5.3.0/dist/doc/css.md#common-helpers';

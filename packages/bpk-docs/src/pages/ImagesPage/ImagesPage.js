@@ -26,8 +26,8 @@ import imagesReadme from 'bpk-component-image/readme.md';
 import * as BREAKPOINTS from 'bpk-tokens/tokens/breakpoints.es6';
 
 import DocsPageBuilder from './../../components/DocsPageBuilder';
-import DocsPageWrapper from './../../components/neo/DocsPageWrapper';
-import IntroBlurb from './../../components/neo/IntroBlurb';
+import DocsPageWrapper from './../../components/DocsPageWrapper';
+import IntroBlurb from './../../components/IntroBlurb';
 
 const documentIfExists = typeof window !== 'undefined' ? document : null;
 const FadingImage = withLoadingBehavior(BpkImage);

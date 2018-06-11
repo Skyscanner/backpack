@@ -16,44 +16,29 @@
  * limitations under the License.
  */
 
+/* @flow */
+
 import React from 'react';
-import BpkSectionList, {
-  BpkSectionListSection,
-  BpkSectionListItem,
-} from 'bpk-component-section-list';
+import DocsPageWrapper from './../../components/DocsPageWrapper';
+import IntroBlurb from './../../components/IntroBlurb';
 
-import sectionListReadme from 'bpk-component-section-list/readme.md';
+import Web from '../WebSectionListPage';
+import Native from '../NativeSectionListPage';
 
-import DocsPageBuilder from './../../components/DocsPageBuilder';
-
-const components = [
-  {
-    id: 'default',
-    title: 'Default',
-    examples: [
-      <BpkSectionList>
-        <BpkSectionListSection headerText="Cities">
-          <BpkSectionListItem>Tokyo</BpkSectionListItem>
-          <BpkSectionListItem href="#">Rio de Janeiro</BpkSectionListItem>
-          <BpkSectionListItem href="#">London</BpkSectionListItem>
-        </BpkSectionListSection>
-        <BpkSectionListSection headerText="Countries">
-          <BpkSectionListItem>Japan</BpkSectionListItem>
-          <BpkSectionListItem href="#">Brazil</BpkSectionListItem>
-          <BpkSectionListItem href="#">United Kingdom</BpkSectionListItem>
-        </BpkSectionListSection>
-      </BpkSectionList>,
-    ],
-  },
-];
-
-const SectionListPage = ({ ...rest }) => (
-  <DocsPageBuilder
+const Page = () => (
+  <DocsPageWrapper
     title="Section list"
-    readme={sectionListReadme}
-    components={components}
-    {...rest}
+    blurb={[
+      <IntroBlurb>
+        Section lists present data as a single-column list of rows that can be
+        divided into groups. They&apos;re great for displaying lists of options
+        containing text and controls, as well as linking to additional views or
+        pages.
+      </IntroBlurb>,
+    ]}
+    webSubpage={<Web wrapped />}
+    nativeSubpage={<Native wrapped />}
   />
 );
 
-export default SectionListPage;
+export default Page;

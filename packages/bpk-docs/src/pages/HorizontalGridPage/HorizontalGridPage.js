@@ -25,10 +25,10 @@ import gridReadme from 'bpk-component-grid/readme.md';
 
 import * as routes from './../../constants/routes';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
-import DocsPageWrapper from './../../components/neo/DocsPageWrapper';
+import DocsPageWrapper from './../../components/DocsPageWrapper';
 
 import BpkParagraph from './../../components/Paragraph';
-import IntroBlurb from './../../components/neo/IntroBlurb';
+import IntroBlurb from './../../components/IntroBlurb';
 import Code from '../../components/Code';
 
 const components = [

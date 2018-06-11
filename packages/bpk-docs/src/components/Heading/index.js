@@ -16,6 +16,6 @@
  * limitations under the License.
  */
 
-import Heading from '../neo/Heading';
+import component from './Heading';
 
-export default Heading;
+export default component;

@@ -22,10 +22,10 @@ import React, { Component } from 'react';
 import BpkPhoneInput from 'bpk-component-phone-input';
 import readme from 'bpk-component-phone-input/readme.md';
 import BpkImage from 'bpk-component-image';
-import DocsPageWrapper from './../../components/neo/DocsPageWrapper';
+import DocsPageWrapper from './../../components/DocsPageWrapper';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
 
-import IntroBlurb from './../../components/neo/IntroBlurb';
+import IntroBlurb from './../../components/IntroBlurb';
 
 import NativePhoneInput from '../NativePhoneInputPage';
 
@@ -116,7 +116,7 @@ const WebSubPage = () => (
   />
 );
 
-const NeoBadgePage = () => (
+const BadgePage = () => (
   <DocsPageWrapper
     title="Phone input"
     blurb={[
@@ -130,4 +130,4 @@ const NeoBadgePage = () => (
   />
 );
 
-export default NeoBadgePage;
+export default BadgePage;

@@ -22,8 +22,8 @@ import { BpkList, BpkListItem } from 'bpk-component-list';
 import listReadme from 'bpk-component-list/readme.md';
 
 import DocsPageBuilder from './../../components/DocsPageBuilder';
-import DocsPageWrapper from './../../components/neo/DocsPageWrapper';
-import IntroBlurb from './../../components/neo/IntroBlurb';
+import DocsPageWrapper from './../../components/DocsPageWrapper';
+import IntroBlurb from './../../components/IntroBlurb';
 
 const blurb = [
   <IntroBlurb>

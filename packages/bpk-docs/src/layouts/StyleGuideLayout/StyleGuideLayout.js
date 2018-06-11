@@ -19,14 +19,14 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-import NeoSideNavLayout from './../NeoSideNavLayout';
+import SideNavLayout from './../SideNavLayout';
 
 import links from './../links';
 
 const StyleGuideLayout = ({ children, ...rest }) => (
-  <NeoSideNavLayout activeSection="STYLE_GUIDE" links={links} {...rest}>
+  <SideNavLayout activeSection="STYLE_GUIDE" links={links} {...rest}>
     {children}
-  </NeoSideNavLayout>
+  </SideNavLayout>
 );
 
 StyleGuideLayout.propTypes = {

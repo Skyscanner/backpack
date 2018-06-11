@@ -27,9 +27,9 @@ import BpkCalendar, {
 
 import calendarReadme from 'bpk-component-calendar/readme.md';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
-import DocsPageWrapper from './../../components/neo/DocsPageWrapper';
+import DocsPageWrapper from './../../components/DocsPageWrapper';
 import Paragraph from './../../components/Paragraph';
-import IntroBlurb from './../../components/neo/IntroBlurb';
+import IntroBlurb from './../../components/IntroBlurb';
 import addMonths from '../../../../bpk-component-calendar/node_modules/date-fns/add_months';
 import {
   weekDays,

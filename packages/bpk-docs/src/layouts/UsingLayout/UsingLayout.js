@@ -19,7 +19,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-import SideNavLayout from './../NeoSideNavLayout';
+import SideNavLayout from './../SideNavLayout';
 
 import links from './../links';
 

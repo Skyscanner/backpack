@@ -16,89 +16,177 @@
  * limitations under the License.
  */
 
-import PropTypes from 'prop-types';
 import React from 'react';
+import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
-import { PropTypes as RouterPropTypes } from 'react-router';
+import { browserHistory } from 'react-router';
 
-import BpkButton from 'bpk-component-button';
-import { colorWhite } from 'bpk-tokens/tokens/base.es6';
-import { withLargeButtonAlignment, withRtlSupport } from 'bpk-component-icon';
-import LongArrowRightIcon from 'bpk-component-icon/lg/long-arrow-right';
-import {
-  BpkGridContainer,
-  BpkGridRow,
-  BpkGridColumn,
-} from 'bpk-component-grid';
+import BpkText from 'bpk-component-text';
+
 import { cssModules } from 'bpk-react-utils';
-
-import Heading from './../../components/Heading';
-import Paragraph from './../../components/Paragraph';
 
 import STYLES from './home-page.scss';
 import * as ROUTES from './../../constants/routes';
 
-const getClassName = cssModules(STYLES);
-const AlignedLongArrowRightAltIcon = withRtlSupport(
-  withLargeButtonAlignment(LongArrowRightIcon),
-);
+import HomePageCard from '../../components/HomePageCard';
+import UpdatedAt from './UpdatedAt';
+import ComponentsImage from '../../static/components.jpg';
+import DesignTokensImage from '../../static/design_tokens.jpg';
+import GitHubImage from '../../static/github.jpg';
+import UsingBackpackImage from '../../static/using_bpk.jpg';
+import StyleGuideImage from '../../static/style_guide.jpg';
 
-class HomePage extends React.Component {
-  onGettingStartedClick = e => {
-    e.preventDefault();
-    this.props.router.push(e.currentTarget.getAttribute('href'));
+import ComponentsIcon from '../../static/components_icon.svg';
+import DesignTokensIcon from '../../static/design_tokens_icon.svg';
+import GitHubIcon from '../../static/github_icon.svg';
+import UsingBackpackIcon from '../../static/using_bpk_icon.svg';
+import StyleGuideIcon from '../../static/style_guide_icon.svg';
+import BackpackLogoWhite from '../../static/backpack-logo-white.svg';
+import HeroImage from '../../static/hero.jpg';
+import LondonHeroImage from '../../static/london_hero.jpg';
+import HongKongHeroImage from '../../static/hongKong_hero.jpg';
+import DohaHeroImage from '../../static/doha_hero.jpg';
+
+const getClassName = cssModules(STYLES);
+
+const CARD_CONTENTS = [
+  {
+    key: 'using-backpack',
+    title: 'Using Backpack',
+    href: ROUTES.GETTING_STARTED,
+    image: UsingBackpackImage,
+    icon: UsingBackpackIcon,
+  },
+  {
+    key: 'components',
+    title: 'Components',
+    href: ROUTES.COMPONENTS,
+    image: ComponentsImage,
+    icon: ComponentsIcon,
+  },
+  {
+    key: 'design-tokens',
+    title: 'Design tokens',
+    href: ROUTES.TOKENS,
+    image: DesignTokensImage,
+    icon: DesignTokensIcon,
+    fullWidth: true,
+  },
+  {
+    key: 'style-guide',
+    title: 'Style guide',
+    href: ROUTES.STYLE_GUIDE,
+    image: StyleGuideImage,
+    icon: StyleGuideIcon,
+    iconWidth: '7.5rem',
+  },
+  {
+    key: 'github',
+    title: 'GitHub',
+    href: 'https://github.com/skyscanner/backpack',
+    blank: true,
+    image: GitHubImage,
+    icon: GitHubIcon,
+    iconWidth: '9.5625rem',
+    centerIcon: true,
+  },
+];
+
+const HERO_IMAGE_THEMES = {
+  London: {
+    image: LondonHeroImage,
+    credit: null,
+    creditHref: 'https://unsplash.com/photos/q99oeAG46BY',
+  },
+  HongKong: {
+    image: HongKongHeroImage,
+    credit: null,
+    creditHref: 'https://unsplash.com/photos/q99oeAG46BY',
+  },
+  Doha: {
+    image: DohaHeroImage,
+    credit: null,
+    creditHref: 'https://unsplash.com/photos/q99oeAG46BY',
+  },
+  default: {
+    image: HeroImage,
+    credit: 'Vincent Guth: Hot Air Balloon',
+    creditHref: 'https://unsplash.com/photos/q99oeAG46BY',
+  },
+};
+const HomePage = (props, context) => {
+  const getHeroImageForTheme = () => {
+    if (
+      !context.theme ||
+      Object.keys(HERO_IMAGE_THEMES).indexOf(context.theme.themeName) < 0
+    ) {
+      return HERO_IMAGE_THEMES.default;
+    }
+    return HERO_IMAGE_THEMES[context.theme.themeName];
   };
 
-  render() {
-    return (
-      <section>
-        <Helmet title="Backpack" />
-        <div className={getClassName('bpkdocs-home-page__hero')}>
-          <BpkGridContainer>
-            <BpkGridRow>
-              <BpkGridColumn width={12}>
-                <Heading level="h1">Backpack</Heading>
-                <Heading level="h2">
-                  Backpack is a collection of design resources, reusable
-                  components and guidelines for creating Skyscanner products.
-                </Heading>
-                <BpkButton
-                  large
-                  href={ROUTES.GETTING_STARTED}
-                  onClick={this.onGettingStartedClick}
-                >
-                  Get started <AlignedLongArrowRightAltIcon fill={colorWhite} />
-                </BpkButton>
-              </BpkGridColumn>
-            </BpkGridRow>
-          </BpkGridContainer>
-        </div>
-        <BpkGridContainer>
-          <BpkGridRow>
-            <BpkGridColumn width={6} tabletWidth={12}>
-              <Heading level="h3">Mission</Heading>
-              <Paragraph>
-                To enable design and engineering to build coherent, beautiful
-                and usable products quickly and without pain.
-              </Paragraph>
-            </BpkGridColumn>
-            <BpkGridColumn width={6} tabletWidth={12}>
-              <Heading level="h3">About Backpack</Heading>
-              <Paragraph>
-                Backpack is the foundation for all Skyscanner products. It
-                builds on Atomic Design principles to help visualise how these
-                products are assembled.
-              </Paragraph>
-            </BpkGridColumn>
-          </BpkGridRow>
-        </BpkGridContainer>
-      </section>
-    );
-  }
-}
+  const heroImage = getHeroImageForTheme();
 
-HomePage.propTypes = {
-  router: PropTypes.shape(RouterPropTypes.routerShape).isRequired,
+  return (
+    <section>
+      <Helmet title="Backpack" />
+      <div
+        style={{ backgroundImage: `url(${heroImage.image})` }}
+        className={getClassName('bpkdocs-home-page__hero')}
+      >
+        <div className={getClassName('bpkdocs-home-page__hero-logo-container')}>
+          <div style={{ flex: 1 }}>
+            <img
+              src={BackpackLogoWhite}
+              className={getClassName('bpkdocs-home-page__hero-logo')}
+              alt="Backpack Logo"
+            />
+            {process.env.BPK_BUILT_AT && (
+              <UpdatedAt
+                date={new Date(process.env.BPK_BUILT_AT * 1000)}
+                className={getClassName('bpkdocs-home-page__hero-updated')}
+              />
+            )}
+          </div>
+          {heroImage.credit && (
+            <a
+              href={heroImage.creditHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={getClassName('bpkdocs-home-page__hero-credit')}
+            >
+              {heroImage.credit}
+            </a>
+          )}
+        </div>
+        <div className={getClassName('bpkdocs-home-page__hero-inner')}>
+          <BpkText
+            textStyle="xl"
+            tagName="h1"
+            className={getClassName('bpkdocs-home-page__hero-blurb')}
+          >
+            &mdash;<br />
+            Backpack is a collection of design resources, reusable components
+            and guidelines for creating Skyscanner products.
+          </BpkText>
+        </div>
+      </div>
+      <div className={getClassName('bpkdocs-home-page__cards-container')}>
+        {CARD_CONTENTS.map(({ href, ...rest }) => (
+          <HomePageCard
+            {...rest}
+            href={rest.blank ? href : null}
+            onClick={rest.blank ? null : () => browserHistory.push(href)}
+            className={getClassName('bpkdocs-home-page__card')}
+          />
+        ))}
+      </div>
+    </section>
+  );
+};
+
+HomePage.contextTypes = {
+  theme: PropTypes.object,
 };
 
 export default HomePage;

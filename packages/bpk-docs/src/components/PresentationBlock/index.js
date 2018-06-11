@@ -16,6 +16,6 @@
  * limitations under the License.
  */
 
-import PresentationBlock from '../neo/PresentationBlock';
+import component from './PresentationBlock';
 
-export default PresentationBlock;
+export default component;

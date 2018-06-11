@@ -23,9 +23,9 @@ import navigationStackReadme from 'bpk-component-navigation-stack/readme.md';
 import { cssModules } from 'bpk-react-utils';
 
 import DocsPageBuilder from './../../components/DocsPageBuilder';
-import DocsPageWrapper from './../../components/neo/DocsPageWrapper';
+import DocsPageWrapper from './../../components/DocsPageWrapper';
 import Paragraph from './../../components/Paragraph';
-import IntroBlurb from './../../components/neo/IntroBlurb';
+import IntroBlurb from './../../components/IntroBlurb';
 import {
   View,
   StackWithNavBar,

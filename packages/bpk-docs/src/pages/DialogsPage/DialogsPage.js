@@ -22,9 +22,9 @@ import React from 'react';
 import dialogReadme from 'bpk-component-dialog/readme.md';
 
 import Paragraph from './../../components/Paragraph';
-import IntroBlurb from './../../components/neo/IntroBlurb';
+import IntroBlurb from './../../components/IntroBlurb';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
-import DocsPageWrapper from './../../components/neo/DocsPageWrapper';
+import DocsPageWrapper from './../../components/DocsPageWrapper';
 import {
   DialogContainer,
   NonDismissibleDialogContainer,

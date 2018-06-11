@@ -22,14 +22,14 @@ export default links =>
     const bHasRoute = !!b.route;
 
     if (aHasRoute === bHasRoute) {
-      const aId = a.id.toLowerCase();
-      const bId = b.id.toLowerCase();
+      const aName = a.children.toLowerCase();
+      const bName = b.children.toLowerCase();
 
-      if (aId < bId) {
+      if (aName < bName) {
         return -1;
       }
 
-      if (aId > bId) {
+      if (aName > bName) {
         return 1;
       }
 

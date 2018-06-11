@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+/* @flow */
+
 import page from './SectionListPage';
 
 export default page;

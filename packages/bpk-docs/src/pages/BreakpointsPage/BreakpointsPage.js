@@ -23,8 +23,8 @@ import { cssModules } from 'bpk-react-utils';
 import breakpointReadme from 'bpk-component-breakpoint/readme.md';
 
 import DocsPageBuilder from './../../components/DocsPageBuilder';
-import DocsPageWrapper from './../../components/neo/DocsPageWrapper';
-import IntroBlurb from './../../components/neo/IntroBlurb';
+import DocsPageWrapper from './../../components/DocsPageWrapper';
+import IntroBlurb from './../../components/IntroBlurb';
 import STYLES from './breakpoints-page.scss';
 
 const getClassName = cssModules(STYLES);

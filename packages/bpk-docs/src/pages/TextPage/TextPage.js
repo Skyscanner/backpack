@@ -16,46 +16,29 @@
  * limitations under the License.
  */
 
+/* @flow */
+
 import React from 'react';
-import BpkText from 'bpk-component-text';
+import DocsPageWrapper from './../../components/DocsPageWrapper';
+import IntroBlurb from './../../components/IntroBlurb';
 
-import textReadme from 'bpk-component-text/readme.md';
+import Web from '../WebTextPage';
+import Native from '../NativeTextPage';
 
-import DocsPageBuilder from './../../components/DocsPageBuilder';
-
-const components = [
-  {
-    id: 'default',
-    title: 'Default',
-    examples: [
-      <div>
-        <BpkText textStyle="xxl" tagName="p">
-          Flights to Edinburgh
-        </BpkText>
-        <BpkText textStyle="xl" tagName="p">
-          Flights to Edinburgh
-        </BpkText>
-        <BpkText textStyle="lg" tagName="p">
-          Flights to Edinburgh
-        </BpkText>
-        <BpkText textStyle="base" tagName="p">
-          Flights to Edinburgh
-        </BpkText>
-        <BpkText textStyle="sm" tagName="p">
-          Flights to Edinburgh
-        </BpkText>
-      </div>,
-    ],
-  },
-];
-
-const TextPage = ({ ...rest }) => (
-  <DocsPageBuilder
+const Page = () => (
+  <DocsPageWrapper
     title="Text"
-    readme={textReadme}
-    components={components}
-    {...rest}
+    blurb={[
+      <IntroBlurb>
+        The text component enables you to use Backpack defined text styles. On
+        web, you can combine these with any of the heading tags, a span or a
+        paragraph. You can mix different text styles with the appropriate tag to
+        achieve semantic markup while retaining control over how the text looks.
+      </IntroBlurb>,
+    ]}
+    webSubpage={<Web wrapped />}
+    nativeSubpage={<Native wrapped />}
   />
 );
 
-export default TextPage;
+export default Page;

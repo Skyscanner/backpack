@@ -22,9 +22,9 @@ import readme from 'react-native-bpk-component-select/readme.md';
 import iosScreenshotDefault from 'react-native-bpk-component-select/screenshots/ios/default.png';
 import androidScreenshotDefault from 'react-native-bpk-component-select/screenshots/android/default.png';
 
-import IntroBlurb from './../../components/neo/IntroBlurb';
+import IntroBlurb from './../../components/IntroBlurb';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
-import DocsPageWrapper from './../../components/neo/DocsPageWrapper';
+import DocsPageWrapper from './../../components/DocsPageWrapper';
 
 const components = [
   {
