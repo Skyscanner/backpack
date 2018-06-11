@@ -23,7 +23,7 @@ import PropTypes from 'prop-types';
 import {
   animationDurationSm,
   borderRadiusPill,
-  colorGray100,
+  colorGray300,
   colorWhite,
   spacingSm,
   carouselIndicatorDotSizeSm,
@@ -34,7 +34,7 @@ import { Animated, StyleSheet, type AnimatedValue } from 'react-native';
 
 const styles = StyleSheet.create({
   indicator: {
-    backgroundColor: colorGray100,
+    backgroundColor: colorGray300,
     borderRadius: borderRadiusPill,
     marginHorizontal: spacingSm / 2,
   },

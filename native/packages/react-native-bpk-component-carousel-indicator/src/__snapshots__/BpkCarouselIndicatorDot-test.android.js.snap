@@ -5,7 +5,7 @@ exports[`Android BpkCarouselIndicator should render correctly 1`] = `
   collapsable={undefined}
   style={
     Object {
-      "backgroundColor": "rgb(230, 228, 235)",
+      "backgroundColor": "rgb(178, 174, 189)",
       "borderRadius": 40,
       "height": 6,
       "marginHorizontal": 2,
@@ -35,7 +35,7 @@ exports[`Android BpkCarouselIndicator should render correctly with size=base 1`]
   collapsable={undefined}
   style={
     Object {
-      "backgroundColor": "rgb(230, 228, 235)",
+      "backgroundColor": "rgb(178, 174, 189)",
       "borderRadius": 40,
       "height": 6,
       "marginHorizontal": 2,
@@ -50,7 +50,7 @@ exports[`Android BpkCarouselIndicator should render correctly with size=invisibl
   collapsable={undefined}
   style={
     Object {
-      "backgroundColor": "rgb(230, 228, 235)",
+      "backgroundColor": "rgb(178, 174, 189)",
       "borderRadius": 40,
       "height": 0,
       "marginHorizontal": 2,
@@ -65,7 +65,7 @@ exports[`Android BpkCarouselIndicator should render correctly with size=md 1`] =
   collapsable={undefined}
   style={
     Object {
-      "backgroundColor": "rgb(230, 228, 235)",
+      "backgroundColor": "rgb(178, 174, 189)",
       "borderRadius": 40,
       "height": 4,
       "marginHorizontal": 2,
@@ -80,7 +80,7 @@ exports[`Android BpkCarouselIndicator should render correctly with size=sm 1`] =
   collapsable={undefined}
   style={
     Object {
-      "backgroundColor": "rgb(230, 228, 235)",
+      "backgroundColor": "rgb(178, 174, 189)",
       "borderRadius": 40,
       "height": 2,
       "marginHorizontal": 2,
