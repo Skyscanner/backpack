@@ -25,4 +25,23 @@
   &--odd-sections {
     background-color: $bpk-color-gray-50;
   }
+
+  &__page-head {
+    &--with-swicher {
+      padding-bottom: 0;
+    }
+  }
+
+  &__token-switcher {
+    padding: 0 $bpk-spacing-xs * 10;
+
+    @include bpk-breakpoint-mobile {
+      padding: 0 $bpk-spacing-lg;
+    }
+  }
+
+  &__page-head-wrapper,
+  &__token-switcher {
+    background-color: $bpk-color-white;
+  }
 }
