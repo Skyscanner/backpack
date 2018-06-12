@@ -16,69 +16,26 @@
  * limitations under the License.
  */
 
+/* @flow */
+
 import React from 'react';
-import BpkStarRating, {
-  BpkInteractiveStarRating,
-  withInteractiveStarRatingState,
-} from 'bpk-component-star-rating';
+import DocsPageWrapper from './../../components/DocsPageWrapper';
+import IntroBlurb from './../../components/IntroBlurb';
 
-import starRatingReadme from 'bpk-component-star-rating/readme.md';
+import Web from '../WebStarRatingPage';
+import Native from '../NativeStarRatingPage';
 
-import DocsPageBuilder from './../../components/DocsPageBuilder';
-import Paragraph from './../../components/Paragraph';
-
-const InteractiveStarRating = withInteractiveStarRatingState(
-  BpkInteractiveStarRating,
-);
-
-const components = [
-  {
-    id: 'default',
-    title: 'Default',
-    blurb: [
-      <Paragraph>
-        By default, star ratings are shown in a static form. These can be set at
-        half star intervals.
-      </Paragraph>,
-    ],
-    examples: [<BpkStarRating rating={3.5} ratingLabel="3.5 stars" />],
-  },
-  {
-    id: 'large',
-    title: 'Large',
-    blurb: [
-      <Paragraph>Similar to the default, but in a large size.</Paragraph>,
-    ],
-    examples: [<BpkStarRating rating={3.5} ratingLabel="3.5 stars" large />],
-  },
-  {
-    id: 'interactive',
-    title: 'Interactive',
-    blurb: [
-      <Paragraph>
-        This version allows users to leave feedback on a given feature or area
-        by setting a rating.
-      </Paragraph>,
-    ],
-    examples: [
-      <InteractiveStarRating
-        id="my-star-rating"
-        large
-        getStarLabel={(rating, maxRating) =>
-          `${rating} out of ${maxRating} stars`
-        }
-      />,
-    ],
-  },
-];
-
-const StarRatingPage = ({ ...rest }) => (
-  <DocsPageBuilder
+const Page = () => (
+  <DocsPageWrapper
     title="Star rating"
-    components={components}
-    readme={starRatingReadme}
-    {...rest}
+    blurb={[
+      <IntroBlurb>
+        Star ratings are used for displaying a score within a given range.
+      </IntroBlurb>,
+    ]}
+    webSubpage={<Web wrapped />}
+    nativeSubpage={<Native wrapped />}
   />
 );
 
-export default StarRatingPage;
+export default Page;

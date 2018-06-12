@@ -26,9 +26,9 @@ import chipReadme from 'bpk-component-chip/readme.md';
 
 import STYLES from './ChipsPage.scss';
 import Paragraph from './../../components/Paragraph';
-import IntroBlurb from './../../components/neo/IntroBlurb';
+import IntroBlurb from './../../components/IntroBlurb';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
-import DocsPageWrapper from './../../components/neo/DocsPageWrapper';
+import DocsPageWrapper from './../../components/DocsPageWrapper';
 
 const getClassName = cssModules(STYLES);
 

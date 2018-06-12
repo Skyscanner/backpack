@@ -16,8 +16,8 @@
  * limitations under the License.
  */
 
-import DocsPageBuilder from './NeoDocsPageBuilder';
-import Paragraph from '../neo/Paragraph';
+import DocsPageBuilder from './DocsPageBuilder';
+import Paragraph from '../Paragraph';
 
 export { Paragraph };
 export default DocsPageBuilder;

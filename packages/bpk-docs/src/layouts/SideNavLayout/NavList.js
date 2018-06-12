@@ -15,87 +15,137 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+/* @flow */
 
-import React from 'react';
+import React, { Component } from 'react';
 import { Link } from 'react-router';
 import { cssModules } from 'bpk-react-utils';
-
-import STYLES from './nav-list.scss';
+import ArrowIcon from 'bpk-component-icon/sm/arrow-right';
+import { withRtlSupport } from 'bpk-component-icon';
+import NavListFilter, { type Option as FilterOption } from './NavListFilter';
+import STYLES from './NavList.scss';
 import sortLinks from './links-sorter';
 import {
-  linkPropType,
-  linksPropType,
-  categoryPropType,
-} from './sideNavPropTypes';
+  type LinkPropType,
+  type CategoryPropType,
+  type Category,
+} from './common-types';
 
 const getClassName = cssModules(STYLES);
 
-const NavLink = props => {
-  if (props.link.route) {
+const ArrowIconWithRtl = withRtlSupport(ArrowIcon);
+
+const NavLink = (props: LinkPropType) => {
+  const { children, route, tags, ...rest } = props;
+
+  if (route) {
     return (
       <Link
         className={getClassName('bpkdocs-side-nav-list__link')}
         activeClassName={getClassName('bpkdocs-side-nav-list__link--active')}
-        to={props.link.route}
+        to={route}
+        {...rest}
       >
-        {props.link.children}
+        <ArrowIconWithRtl
+          className={getClassName('bpkdocs-side-nav-list__link-active-icon')}
+        />
+        {children}
       </Link>
     );
   }
 
   return (
     <span className={getClassName('bpkdocs-side-nav-list__pending-link')}>
-      {props.link.children}
+      {props.children}
     </span>
   );
 };
 
-NavLink.propTypes = {
-  link: linkPropType.isRequired,
-};
-
-const NavListItem = props => (
+const NavListItem = (props: LinkPropType) => (
   <li className={getClassName('bpkdocs-side-nav-list__category-list-item')}>
-    <NavLink link={props.link} />
+    <NavLink {...props} />
   </li>
 );
 
-NavListItem.propTypes = {
-  link: linkPropType.isRequired,
+type NavListCategoryPropType = {
+  ...$Exact<CategoryPropType>,
+  onClick: ?() => mixed,
+  selectedFilter: ?FilterOption,
 };
 
-const NavListCategory = props => (
+const NavListCategory = (props: NavListCategoryPropType) => (
   <li className={getClassName('bpkdocs-side-nav-list__list-item')}>
-    <span className={getClassName('bpkdocs-side-nav-list__category-name')}>
-      {props.link.category}
-    </span>
     <ul className={getClassName('bpkdocs-side-nav-list__category-list')}>
-      {(props.link.sort ? sortLinks(props.link.links) : props.link.links).map(
-        link => <NavListItem key={link.id} link={link} />,
-      )}
+      {(props.sort ? sortLinks(props.links) : props.links)
+        .filter(x => {
+          if (!props.selectedFilter || props.selectedFilter === 'all') {
+            return true;
+          }
+
+          return x.tags && x.tags.indexOf(props.selectedFilter) >= 0;
+        })
+        .map(link => (
+          <NavListItem key={link.id} {...link} onClick={props.onClick} />
+        ))}
     </ul>
   </li>
 );
 
-NavListCategory.propTypes = {
-  link: categoryPropType.isRequired,
+type NavListPropTypes = {
+  links: Array<Category>,
+  supportsFiltering: boolean,
+  dimmed: boolean,
+  onClick: ?() => mixed,
 };
 
-const NavList = props => (
-  <ul className={getClassName('bpkdocs-side-nav-list__list')}>
-    {props.links.map(
-      link =>
-        link.category ? (
-          <NavListCategory key={link.id} link={link} />
-        ) : (
-          <NavLink key={link.id} link={link} />
-        ),
-    )}
-  </ul>
-);
-
-NavList.propTypes = {
-  links: linksPropType.isRequired,
+type NavListState = {
+  selectedFilter: FilterOption,
 };
+
+class NavList extends Component<NavListPropTypes, NavListState> {
+  constructor(props: NavListPropTypes) {
+    super(props);
+    this.state = {
+      selectedFilter: 'all',
+    };
+  }
+
+  onSelectedFilterChange = (selectedFilter: FilterOption) => {
+    this.setState({ selectedFilter });
+  };
+
+  render() {
+    const { dimmed, links, onClick, supportsFiltering } = this.props;
+
+    return (
+      <div className={getClassName(dimmed && 'bpkdocs-side-nav-list--dimmed')}>
+        {dimmed && (
+          <div
+            className={getClassName('bpkdocs-side-nav-list__list-overlay')}
+          />
+        )}
+        {supportsFiltering && (
+          <NavListFilter
+            className={getClassName('bpkdocs-side-nav-list__filter')}
+            onSelectedFilterChange={this.onSelectedFilterChange}
+            selected={this.state.selectedFilter}
+          />
+        )}
+        <ul className={getClassName('bpkdocs-side-nav-list__list')}>
+          {links.map(link => (
+            <NavListCategory
+              key={link.id}
+              {...link}
+              onClick={onClick}
+              selectedFilter={
+                supportsFiltering ? this.state.selectedFilter : null
+              }
+            />
+          ))}
+        </ul>
+      </div>
+    );
+  }
+}
 
 export default NavList;

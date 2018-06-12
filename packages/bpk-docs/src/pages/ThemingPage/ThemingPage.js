@@ -25,9 +25,9 @@ import nativeReadme from 'react-native-bpk-theming/readme.md';
 import webReadme from 'bpk-theming/readme.md';
 
 import Paragraph from './../../components/Paragraph';
-import IntroBlurb from './../../components/neo/IntroBlurb';
+import IntroBlurb from './../../components/IntroBlurb';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
-import DocsPageWrapper from './../../components/neo/DocsPageWrapper';
+import DocsPageWrapper from './../../components/DocsPageWrapper';
 
 import {
   ACCORDION,

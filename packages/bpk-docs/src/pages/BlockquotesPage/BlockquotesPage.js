@@ -22,8 +22,8 @@ import BpkBlockquote from 'bpk-component-blockquote';
 import blockquotesReadme from 'bpk-component-blockquote/readme.md';
 
 import DocsPageBuilder from './../../components/DocsPageBuilder';
-import DocsPageWrapper from './../../components/neo/DocsPageWrapper';
-import IntroBlurb from './../../components/neo/IntroBlurb';
+import DocsPageWrapper from './../../components/DocsPageWrapper';
+import IntroBlurb from './../../components/IntroBlurb';
 
 const components = [
   {

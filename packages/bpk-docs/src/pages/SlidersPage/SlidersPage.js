@@ -22,9 +22,9 @@ import sliderReadme from 'bpk-component-slider/readme.md';
 import { updateOnDirectionChange } from 'bpk-component-rtl-toggle';
 
 import DocsPageBuilder from './../../components/DocsPageBuilder';
-import DocsPageWrapper from './../../components/neo/DocsPageWrapper';
+import DocsPageWrapper from './../../components/DocsPageWrapper';
 import Paragraph from './../../components/Paragraph';
-import IntroBlurb from './../../components/neo/IntroBlurb';
+import IntroBlurb from './../../components/IntroBlurb';
 
 const EnhancedSlider = updateOnDirectionChange(BpkSlider);
 const components = [

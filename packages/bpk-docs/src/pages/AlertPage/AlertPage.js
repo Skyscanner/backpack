@@ -27,9 +27,9 @@ import androidScreenshotDefault from 'react-native-bpk-component-alert/screensho
 import androidCancelable from 'react-native-bpk-component-alert/screenshots/android/cancelable.png';
 import androidThreeButton from 'react-native-bpk-component-alert/screenshots/android/three-button.png';
 
-import IntroBlurb from './../../components/neo/IntroBlurb';
+import IntroBlurb from './../../components/IntroBlurb';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
-import DocsPageWrapper from './../../components/neo/DocsPageWrapper';
+import DocsPageWrapper from './../../components/DocsPageWrapper';
 import Paragraph from './../../components/Paragraph';
 
 const components = [

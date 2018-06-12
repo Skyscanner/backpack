@@ -19,150 +19,24 @@
 /* @flow */
 
 import React from 'react';
-import ArrowIcon from 'bpk-component-icon/sm/long-arrow-left';
-import CloseIcon from 'bpk-component-icon/sm/close';
-import { withRtlSupport } from 'bpk-component-icon';
-import BpkNavigationBar, {
-  BpkNavigationBarIconButton,
-  BpkNavigationBarButtonLink,
-} from 'bpk-component-navigation-bar';
-import navigationBarReadme from 'bpk-component-navigation-bar/readme.md';
-import { cssModules } from 'bpk-react-utils';
+import DocsPageWrapper from './../../components/DocsPageWrapper';
+import IntroBlurb from './../../components/IntroBlurb';
 
-import DocsPageBuilder from './../../components/DocsPageBuilder';
-import Paragraph from './../../components/Paragraph';
-import AirlineIcon from './page-components';
+import WebNavigation from '../WebNavigationBarPage';
+import NativeNavigation from '../NativeNavigationBarPage';
 
-import STYLES from './NavigationBarPage.scss';
-
-const getClassNames = cssModules(STYLES);
-const ArrowIconWithRtl = withRtlSupport(ArrowIcon);
-
-const components = [
-  {
-    id: 'default',
-    title: 'Default',
-    blurb: [],
-    examples: [
-      <div className={getClassNames('bpk-navigation-bar-example')}>
-        <BpkNavigationBar
-          id="default-bpk-nav"
-          title="Backpack"
-          leadingButton={
-            <BpkNavigationBarIconButton
-              onClick={() => {}}
-              icon={ArrowIconWithRtl}
-              label="back"
-            />
-          }
-        />
-      </div>,
-    ],
-  },
-  {
-    id: 'with-text-button',
-    title: 'With text button',
-    blurb: [
-      <Paragraph>
-        The navigation bar can be composed with text buttons.
-      </Paragraph>,
-    ],
-    examples: [
-      <div className={getClassNames('bpk-navigation-bar-example')}>
-        <BpkNavigationBar
-          id="default-bpk-nav"
-          title="Backpack"
-          leadingButton={
-            <BpkNavigationBarIconButton
-              onClick={() => {}}
-              icon={ArrowIconWithRtl}
-              label="back"
-            />
-          }
-          trailingButton={
-            <BpkNavigationBarButtonLink onClick={() => {}}>
-              Done
-            </BpkNavigationBarButtonLink>
-          }
-        />
-      </div>,
-    ],
-  },
-  {
-    id: 'with-icon-button',
-    title: 'With icon button',
-    blurb: [
-      <Paragraph>
-        The navigation bar can be composed with different icon buttons.
-      </Paragraph>,
-    ],
-    examples: [
-      <div className={getClassNames('bpk-navigation-bar-example')}>
-        <BpkNavigationBar
-          id="default-bpk-nav"
-          title="Backpack"
-          leadingButton={
-            <BpkNavigationBarIconButton
-              onClick={() => {}}
-              icon={ArrowIconWithRtl}
-              label="back"
-            />
-          }
-          trailingButton={
-            <BpkNavigationBarIconButton
-              onClick={() => {}}
-              icon={CloseIcon}
-              label="close"
-            />
-          }
-        />
-      </div>,
-    ],
-  },
-  {
-    id: 'with-icon-title',
-    title: 'With a custom title element',
-    blurb: [
-      <Paragraph>The title can include elements other than text.</Paragraph>,
-    ],
-    examples: [
-      <div className={getClassNames('bpk-navigation-bar-example')}>
-        <BpkNavigationBar
-          id="default-bpk-nav"
-          title={
-            <span
-              className={getClassNames(
-                'bpk-navigation-bar-example__title-content-wrapper',
-              )}
-            >
-              <AirlineIcon />
-            </span>
-          }
-          leadingButton={
-            <BpkNavigationBarIconButton
-              onClick={() => {}}
-              icon={ArrowIconWithRtl}
-              label="back"
-            />
-          }
-          trailingButton={
-            <BpkNavigationBarButtonLink onClick={() => {}}>
-              Done
-            </BpkNavigationBarButtonLink>
-          }
-        />
-      </div>,
-    ],
-  },
-];
-
-const NavigationBarPage = ({ ...rest }: { [string]: any }) => (
-  <DocsPageBuilder
+const BadgePage = () => (
+  <DocsPageWrapper
     title="Navigation bar"
-    components={components}
-    readme={navigationBarReadme}
-    {...rest}
+    blurb={[
+      <IntroBlurb>
+        The navigation bar component encapsulates a title and icon/text actions
+        for controlling views.
+      </IntroBlurb>,
+    ]}
+    webSubpage={<WebNavigation wrapped />}
+    nativeSubpage={<NativeNavigation wrapped />}
   />
 );
 
-export default NavigationBarPage;
+export default BadgePage;

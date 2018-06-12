@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import Paragraph, { ParagraphNoMargin } from '../neo/Paragraph';
+import Paragraph, { ParagraphNoMargin } from './Paragraph';
 
 export { ParagraphNoMargin };
 export default Paragraph;

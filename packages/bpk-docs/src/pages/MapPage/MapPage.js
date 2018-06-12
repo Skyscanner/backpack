@@ -25,8 +25,8 @@ import nativeMapReadme from 'react-native-bpk-component-map/readme.md';
 import mapReadme from 'bpk-component-map/readme.md';
 
 import DocsPageBuilder from './../../components/DocsPageBuilder';
-import DocsPageWrapper from './../../components/neo/DocsPageWrapper';
-import IntroBlurb from './../../components/neo/IntroBlurb';
+import DocsPageWrapper from './../../components/DocsPageWrapper';
+import IntroBlurb from './../../components/IntroBlurb';
 
 const BpkMapWithScript = withScriptjs(BpkMap);
 const API_KEY = process.env.GOOGLE_MAPS_API_KEY || '';

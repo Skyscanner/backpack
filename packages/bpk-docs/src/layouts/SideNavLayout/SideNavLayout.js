@@ -16,52 +16,124 @@
  * limitations under the License.
  */
 
-import React from 'react';
-import PropTypes from 'prop-types';
-import { PropTypes as RouterPropTypes } from 'react-router';
-import {
-  BpkGridContainer,
-  BpkGridRow,
-  BpkGridColumn,
-} from 'bpk-component-grid';
-import { cssModules } from 'bpk-react-utils';
+/* @flow */
 
-import STYLES from './side-nav-layout.scss';
-import NavList from './NavList';
-import NavSelect from './NavSelect';
-import { linksPropType } from './sideNavPropTypes';
+import BpkModal from 'bpk-component-modal';
+import { cssModules } from 'bpk-react-utils';
+import React, { Component, type Node } from 'react';
+import BpkBreakpoint, { BREAKPOINTS } from 'bpk-component-breakpoint';
+
+import Sidebar from './Sidebar';
+import STYLES from './SideNavLayout.scss';
+import MainHeroImage from './MainHeroImage';
+import { type Category } from './common-types';
 
 const getClassName = cssModules(STYLES);
 
-const SideNavLayout = ({ children, links, location }) => (
-  <BpkGridContainer>
-    <BpkGridRow>
-      <BpkGridColumn
-        width={12}
-        padded={false}
-        className={getClassName(
-          'bpkdocs-side-nav-layout__nav-select-container',
-        )}
-      >
-        <NavSelect links={links} location={location} />
-      </BpkGridColumn>
-      <BpkGridColumn
-        width={3}
-        className={getClassName('bpkdocs-side-nav-layout__nav-list-container')}
-      >
-        <NavList links={links} />
-      </BpkGridColumn>
-      <BpkGridColumn width={9} tabletWidth={12}>
-        {children}
-      </BpkGridColumn>
-    </BpkGridRow>
-  </BpkGridContainer>
-);
-
-SideNavLayout.propTypes = {
-  children: PropTypes.node.isRequired,
-  links: linksPropType.isRequired,
-  location: PropTypes.shape(RouterPropTypes.locationShape).isRequired,
+type Props = {
+  activeSection: string,
+  children: Node,
+  links: Array<Category>,
 };
 
-export default SideNavLayout;
+type State = {
+  modalOpen: boolean,
+  sectionListExpanded: boolean,
+  activeSection: string,
+};
+
+export default class SideNavLayout extends Component<Props, State> {
+  constructor(props: Props) {
+    super(props);
+
+    this.state = {
+      modalOpen: false,
+      sectionListExpanded: false,
+      activeSection: this.props.activeSection,
+    };
+  }
+
+  onMenuToggle = () => {
+    this.setState(prevState => ({
+      sectionListExpanded: !prevState.sectionListExpanded,
+    }));
+  };
+
+  onSectionChange = (activeSection: string) => {
+    this.setState(() => ({
+      activeSection,
+      sectionListExpanded: false,
+    }));
+  };
+
+  onMobileModalClose = () => {
+    this.setState(() => ({ modalOpen: false }));
+  };
+
+  onHamburgerClick = () => {
+    this.setState(() => ({ modalOpen: true }));
+  };
+
+  render() {
+    const { children, links } = this.props;
+    const { modalOpen, sectionListExpanded, activeSection } = this.state;
+    const { hero } = links.filter(link => link.id === activeSection)[0] || {
+      hero: null,
+    };
+
+    const sidebar = (
+      <Sidebar
+        activeSection={activeSection}
+        links={links}
+        sectionListExpanded={sectionListExpanded}
+        onMobileModalClose={this.onMobileModalClose}
+        onMenuToggle={this.onMenuToggle}
+        onSectionChange={this.onSectionChange}
+      />
+    );
+
+    return (
+      <section className={getClassName('bpkdocs-side-nav-layout')}>
+        <BpkBreakpoint query={BREAKPOINTS.TABLET}>
+          {isTablet =>
+            isTablet ? (
+              <BpkModal
+                id="mobile-nav-menu"
+                isOpen={modalOpen}
+                onClose={this.onMobileModalClose}
+                fullScreen
+                showHeader={false}
+                getApplicationElement={() =>
+                  document.getElementById('application-container')
+                }
+                renderTarget={() => document.getElementById('portal-target')}
+                className={getClassName('bpkdocs-side-nav-layout__modal')}
+                contentClassName={getClassName(
+                  'bpkdocs-side-nav-layout__modal-content',
+                )}
+                padded={false}
+              >
+                {sidebar}
+              </BpkModal>
+            ) : (
+              <div
+                className={getClassName(
+                  'bpkdocs-side-nav-layout__sidebar-destop-wrapper',
+                )}
+              >
+                {sidebar}
+              </div>
+            )
+          }
+        </BpkBreakpoint>
+        <section className={getClassName('bpkdocs-side-nav-layout__main')}>
+          <MainHeroImage
+            onHamburgerClick={this.onHamburgerClick}
+            heroImage={hero}
+          />
+          {children}
+        </section>
+      </section>
+    );
+  }
+}

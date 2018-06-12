@@ -16,94 +16,29 @@
  * limitations under the License.
  */
 
-import PropTypes from 'prop-types';
-import React, { Component } from 'react';
-import readme from 'bpk-component-horizontal-nav/readme.md';
-import BpkHorizontalNav, {
-  BpkHorizontalNavItem,
-} from 'bpk-component-horizontal-nav';
+/* @flow */
 
-import DocsPageBuilder from './../../components/DocsPageBuilder';
+import React from 'react';
+import DocsPageWrapper from './../../components/DocsPageWrapper';
+import IntroBlurb from './../../components/IntroBlurb';
 
-class HorizontalNavContainer extends Component {
-  constructor() {
-    super();
+import Web from '../WebHorizontalNavPage';
+import Native from '../NativeHorizontalNavPage';
 
-    this.state = {
-      selected: 'flights',
-    };
-  }
-
-  onClick = e => {
-    this.setState({
-      selected: e.target.name,
-    });
-  };
-
-  render() {
-    const { spaceAround, ...rest } = this.props;
-
-    return (
-      <BpkHorizontalNav {...rest}>
-        <BpkHorizontalNavItem
-          name="flights"
-          selected={this.state.selected === 'flights'}
-          onClick={this.onClick}
-          spaceAround={spaceAround}
-        >
-          Flights
-        </BpkHorizontalNavItem>
-        <BpkHorizontalNavItem
-          name="hotels"
-          selected={this.state.selected === 'hotels'}
-          onClick={this.onClick}
-          spaceAround={spaceAround}
-        >
-          Hotels
-        </BpkHorizontalNavItem>
-        <BpkHorizontalNavItem
-          name="car-hire"
-          selected={this.state.selected === 'car-hire'}
-          onClick={this.onClick}
-          spaceAround={spaceAround}
-        >
-          Car hire
-        </BpkHorizontalNavItem>
-      </BpkHorizontalNav>
-    );
-  }
-}
-
-HorizontalNavContainer.propTypes = {
-  spaceAround: PropTypes.bool,
-};
-
-HorizontalNavContainer.defaultProps = {
-  spaceAround: false,
-};
-
-const components = [
-  {
-    id: 'default',
-    title: 'Default',
-    blurb: 'By default, navigation items are left aligned.',
-    examples: [<HorizontalNavContainer />],
-  },
-  {
-    id: 'space-around',
-    title: 'Space around',
-    blurb: 'Navigation items can be configured to have space around them.',
-    examples: [<HorizontalNavContainer spaceAround />],
-  },
+const blurb = [
+  <IntroBlurb>
+    A simple navigation component, ideal for representing a section of a page
+    that links to other pages or views within the page.
+  </IntroBlurb>,
 ];
 
-const HorizontalNavPage = ({ ...rest }) => (
-  <DocsPageBuilder
+const Page = () => (
+  <DocsPageWrapper
     title="Horizontal navigation"
-    components={components}
-    readme={readme}
-    {...rest}
+    blurb={blurb}
+    webSubpage={<Web wrapped />}
+    nativeSubpage={<Native wrapped />}
   />
 );
 
-export default HorizontalNavPage;
+export default Page;

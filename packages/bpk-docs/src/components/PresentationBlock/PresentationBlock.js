@@ -20,16 +20,26 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { cssModules } from 'bpk-react-utils';
 
-import STYLES from './presentation-block.scss';
+import STYLES from './PresentationBlock.scss';
 
 const getClassName = cssModules(STYLES);
 
 const PresentationBlock = props => {
   const classNames = [getClassName('bpkdocs-presentation-block')];
-  const { className, ...rest } = props;
+  const { className, darkBackground, whiteBackground, ...rest } = props;
 
   if (className) {
     classNames.push(className);
+  }
+
+  if (whiteBackground) {
+    classNames.push(
+      getClassName('bpkdocs-presentation-block--white-background'),
+    );
+  } else if (darkBackground) {
+    classNames.push(
+      getClassName('bpkdocs-presentation-block--dark-background'),
+    );
   }
 
   return <section className={classNames.join(' ')} {...rest} />;
@@ -38,10 +48,14 @@ const PresentationBlock = props => {
 PresentationBlock.propTypes = {
   children: PropTypes.node.isRequired,
   className: PropTypes.string,
+  whiteBackground: PropTypes.bool,
+  darkBackground: PropTypes.bool,
 };
 
 PresentationBlock.defaultProps = {
   className: null,
+  whiteBackground: false,
+  darkBackground: false,
 };
 
 export default PresentationBlock;

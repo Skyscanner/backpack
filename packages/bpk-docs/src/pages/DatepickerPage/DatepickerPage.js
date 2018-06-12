@@ -23,10 +23,10 @@ import BpkRouterLink from 'bpk-component-router-link';
 import datepickerReadme from 'bpk-component-datepicker/readme.md';
 import * as ROUTES from './../../constants/routes';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
-import DocsPageWrapper from './../../components/neo/DocsPageWrapper';
+import DocsPageWrapper from './../../components/DocsPageWrapper';
 import format from '../../../../bpk-component-calendar/node_modules/date-fns/format';
 import Paragraph from './../../components/Paragraph';
-import IntroBlurb from './../../components/neo/IntroBlurb';
+import IntroBlurb from './../../components/IntroBlurb';
 import { weekDays } from '../../../../bpk-component-calendar/test-utils';
 
 const formatDate = date => format(date, 'DD/MM/YYYY');
