@@ -1,0 +1,148 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BpkBreadcrumbItem should render correctly 1`] = `
+<li
+  className="bpk-breadcrumb-item"
+>
+  <a
+    className="bpk-link bpk-breadcrumb-item__link"
+    href="https://backpack.github.io/"
+    onClick={null}
+    rel={null}
+    target={null}
+  >
+    Backpack
+  </a>
+  <svg
+    className="bpk-breadcrumb-item__arrow bpk-icon--rtl-support"
+    height="24"
+    style={
+      Object {
+        "height": "1.5rem",
+        "width": "1.5rem",
+      }
+    }
+    viewBox="0 0 24 24"
+    width="24"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M9.9 19.7L17 12 9.9 4.4c-.7-.7-1.7-.2-1.7.7v14c0 .8 1 1.3 1.7.6z"
+    />
+  </svg>
+</li>
+`;
+
+exports[`BpkBreadcrumbItem should render correctly with a "active" prop 1`] = `
+<li
+  className="bpk-breadcrumb-item"
+>
+  <span
+    aria-current="page"
+    className="bpk-text bpk-text--base bpk-breadcrumb-item__active-item"
+  >
+    Backpack
+  </span>
+</li>
+`;
+
+exports[`BpkBreadcrumbItem should render correctly with a custom class name 1`] = `
+<li
+  className="bpk-breadcrumb-item my-custom-class"
+>
+  <a
+    className="bpk-link bpk-breadcrumb-item__link"
+    href="https://backpack.github.io/"
+    onClick={null}
+    rel={null}
+    target={null}
+  >
+    Backpack
+  </a>
+  <svg
+    className="bpk-breadcrumb-item__arrow bpk-icon--rtl-support"
+    height="24"
+    style={
+      Object {
+        "height": "1.5rem",
+        "width": "1.5rem",
+      }
+    }
+    viewBox="0 0 24 24"
+    width="24"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M9.9 19.7L17 12 9.9 4.4c-.7-.7-1.7-.2-1.7.7v14c0 .8 1 1.3 1.7.6z"
+    />
+  </svg>
+</li>
+`;
+
+exports[`BpkBreadcrumbItem should render correctly with arbitrary props 1`] = `
+<li
+  className="bpk-breadcrumb-item"
+  testID="arbitrary value"
+>
+  <a
+    className="bpk-link bpk-breadcrumb-item__link"
+    href="https://backpack.github.io/"
+    onClick={null}
+    rel={null}
+    target={null}
+  >
+    Backpack
+  </a>
+  <svg
+    className="bpk-breadcrumb-item__arrow bpk-icon--rtl-support"
+    height="24"
+    style={
+      Object {
+        "height": "1.5rem",
+        "width": "1.5rem",
+      }
+    }
+    viewBox="0 0 24 24"
+    width="24"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M9.9 19.7L17 12 9.9 4.4c-.7-.7-1.7-.2-1.7.7v14c0 .8 1 1.3 1.7.6z"
+    />
+  </svg>
+</li>
+`;
+
+exports[`BpkBreadcrumbItem should render correctly with with "linkProps" attribute 1`] = `
+<li
+  className="bpk-breadcrumb-item"
+>
+  <a
+    className="bpk-link bpk-breadcrumb-item__link"
+    href="https://backpack.github.io/"
+    onClick={null}
+    rel={null}
+    target={null}
+    testID="arbitrary value"
+  >
+    Backpack
+  </a>
+  <svg
+    className="bpk-breadcrumb-item__arrow bpk-icon--rtl-support"
+    height="24"
+    style={
+      Object {
+        "height": "1.5rem",
+        "width": "1.5rem",
+      }
+    }
+    viewBox="0 0 24 24"
+    width="24"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M9.9 19.7L17 12 9.9 4.4c-.7-.7-1.7-.2-1.7.7v14c0 .8 1 1.3 1.7.6z"
+    />
+  </svg>
+</li>
+`;

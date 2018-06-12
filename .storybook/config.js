@@ -56,6 +56,7 @@ configure(() => {
   require('./../packages/bpk-component-banner-alert/stories');
   require('./../packages/bpk-component-barchart/stories');
   require('./../packages/bpk-component-blockquote/stories');
+  require('./../packages/bpk-component-breadcrumb/stories');
   require('./../packages/bpk-component-breakpoint/stories');
   require('./../packages/bpk-component-button/stories');
   require('./../packages/bpk-component-calendar/stories');
