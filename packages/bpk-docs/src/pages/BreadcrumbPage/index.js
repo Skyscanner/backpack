@@ -14,34 +14,10 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
-*/
-@import '~bpk-mixins';
+ */
 
-.bpkdocs-content-page {
-  &--even-sections {
-    background-color: $bpk-color-gray-100;
-  }
+/* @flow */
 
-  &--odd-sections {
-    background-color: $bpk-color-gray-50;
-  }
+import page from './BreadcrumbPage';
 
-  &__page-head {
-    &--with-swicher {
-      padding-bottom: 0;
-    }
-  }
-
-  &__token-switcher {
-    padding: 0 $bpk-spacing-xs * 10;
-
-    @include bpk-breakpoint-mobile {
-      padding: 0 $bpk-spacing-lg;
-    }
-  }
-
-  &__page-head-wrapper,
-  &__token-switcher {
-    background-color: $bpk-color-white;
-  }
-}
+export default page;
