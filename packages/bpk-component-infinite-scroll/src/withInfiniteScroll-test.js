@@ -100,12 +100,14 @@ describe('withInfiniteScroll', () => {
     expect(toJson(tree)).toMatchSnapshot();
   });
 
-  it('should render correctly with an "seeMoreComponent" attribute', async () => {
+  it('should render correctly with a "renderSeeMoreComponent" attribute', async () => {
     const tree = mount(
       <InfiniteList
         onItemsFetch={onItemsFetch(elementsArray)}
         elementsPerScroll={1}
-        seeMoreComponent={<button>see more</button>}
+        renderSeeMoreComponent={({ onSeeMoreClick }) => (
+          <button onClick={onSeeMoreClick}>see more</button>
+        )}
         seeMoreAfter={0}
       />,
     );
@@ -116,11 +118,22 @@ describe('withInfiniteScroll', () => {
     expect(toJson(tree)).toMatchSnapshot();
   });
 
-  it('should pass unused props to ComponentToExtend', () => {
+  it('should render correctly with a "renderLoadingComponent" attribute', () => {
     const tree = mount(
       <InfiniteList
         onItemsFetch={onItemsFetch(elementsArray)}
-        extraProp="extraProp"
+        renderLoadingComponent={() => <span>Loading</span>}
+      />,
+    );
+
+    expect(toJson(tree)).toMatchSnapshot();
+  });
+
+  it('should pass extra props to the decorated component', () => {
+    const tree = mount(
+      <InfiniteList
+        onItemsFetch={onItemsFetch(elementsArray)}
+        aria-label="Test"
       />,
     );
 
@@ -156,45 +169,28 @@ describe('withInfiniteScroll', () => {
     });
   });
 
-  it('should call onSeeMoreClicked when clicked on the seeMoreComponent', async () => {
-    const spy = jest.fn();
+  it('should fetch more items when see more is clicked', async () => {
+    const realFetch = onItemsFetch(elementsArray);
+    const fetchMore = jest.fn((...args) => realFetch(...args));
+
     const tree = mount(
       <InfiniteList
-        onItemsFetch={onItemsFetch(elementsArray)}
+        onItemsFetch={fetchMore}
         elementsPerScroll={1}
-        seeMoreComponent={<button>see more</button>}
+        renderSeeMoreComponent={({ onSeeMoreClick }) => (
+          <button id="test-button" onClick={onSeeMoreClick}>
+            see more
+          </button>
+        )}
         seeMoreAfter={0}
-        onClickSeeMore={spy}
       />,
     );
 
     await intersect();
     tree.update();
 
-    const button = tree.find('button');
+    const button = tree.find('#test-button');
     button.simulate('click');
-
-    expect(spy).toHaveBeenCalledWith(expect.any(Object));
-  });
-
-  it('should call onSeeMoreClicked when clicked using keyboard on the seeMoreComponent', async () => {
-    const spy = jest.fn();
-    const tree = mount(
-      <InfiniteList
-        onItemsFetch={onItemsFetch(elementsArray)}
-        elementsPerScroll={1}
-        seeMoreComponent={<button>see more</button>}
-        seeMoreAfter={0}
-        onClickSeeMore={spy}
-      />,
-    );
-
-    await intersect();
-    tree.update();
-
-    const button = tree.find('button');
-    button.simulate('keyPress', { key: 'Enter' });
-
-    expect(spy).toHaveBeenCalledWith(expect.any(Object));
+    expect(fetchMore).toHaveBeenCalledTimes(2);
   });
 });

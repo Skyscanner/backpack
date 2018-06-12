@@ -95,17 +95,14 @@ export default () => (
 )
 ```
 
-
 ## Props
 
-| Property           | PropType | Required | Default Value |
-| ------------------ | -------- | -------- | ------------- |
-| onItemsFetch       | func     | true     | -             |
-| elementsPerScroll  | number   | false    | 5             |
-| loadingComponent   | node     | false    | null          |
-| onClickSeeMore     | func     | false    | () => {}      |
-| onScroll           | func     | false    | () => {}      |
-| onScrollFinished   | func     | false    | () => {}      |
-| seeMoreAfter       | number   | false    | null          |
-| seeMoreComponent   | node     | false    | null          |
-
+| Property               | PropType | Required | Default Value |
+| ---------------------- | -------- | -------- | ------------- |
+| onItemsFetch           | func     | true     | -             |
+| elementsPerScroll      | number   | false    | 5             |
+| onScroll               | func     | false    | null          |
+| onScrollFinished       | func     | false    | null          |
+| renderLoadingComponent | func     | false    | null          |
+| renderSeeMoreComponent | func     | false    | null          |
+| seeMoreAfter           | number   | false    | null          |

@@ -61,7 +61,9 @@ storiesOf('bpk-component-infinite-scroll', module)
     <InfiniteList
       onItemsFetch={onItemsFetch(elementsArray)}
       seeMoreAfter={5}
-      seeMoreComponent={<BpkButton>See more</BpkButton>}
+      renderSeeMoreComponent={({ onSeeMoreClick }) => (
+        <BpkButton onClick={onSeeMoreClick}>See more</BpkButton>
+      )}
     />
   ))
   .add('Infinite list of elements', () => (
@@ -83,10 +85,19 @@ storiesOf('bpk-component-infinite-scroll', module)
       elementsPerScroll={10}
     />
   ))
-  .add('Custom loading Item', () => (
-    <InfiniteList
-      onItemsFetch={onItemsFetch(elementsArray)}
-      elementsPerScroll={10}
-      loadingComponent={<BpkSpinner type={SPINNER_TYPES.primary} />}
-    />
-  ));
+  .add('Custom loading Item', () => {
+    const fetchMore = onItemsFetch(elementsArray);
+    const delayed = (...args) =>
+      new Promise(resolve => {
+        setTimeout(() => resolve(fetchMore(...args)), 500);
+      });
+    return (
+      <InfiniteList
+        onItemsFetch={delayed}
+        elementsPerScroll={10}
+        renderLoadingComponent={() => (
+          <BpkSpinner type={SPINNER_TYPES.primary} />
+        )}
+      />
+    );
+  });

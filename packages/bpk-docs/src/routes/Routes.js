@@ -81,6 +81,7 @@ import ImagesPage from './../pages/ImagesPage';
 import LinkPage from './../pages/LinkPage';
 import ListsPage from './../pages/ListsPage';
 import MapPage from './../pages/MapPage';
+import InfiniteScrollPage from './../pages/InfiniteScrollPage';
 import MobileScrollContainerPage from './../pages/MobileScrollContainerPage';
 import ModalsPage from './../pages/ModalsPage';
 import NativeButtonLinkPage from './../pages/NativeButtonLinkPage';
@@ -210,6 +211,7 @@ const Routes = (
       <Route path={ROUTES.SWITCH} component={NativeSwitchPage} />
       <Route path={ROUTES.SECTION_LIST} component={SectionListPage} />
       <Route path={ROUTES.MAP} component={MapPage} />
+      <Route path={ROUTES.INFINITE_SCROLL} component={InfiniteScrollPage} />
       <Route path={ROUTES.CAROUSEL} component={CarouselPage} />
       <Route
         path={ROUTES.TOUCHABLE_OVERLAY}
