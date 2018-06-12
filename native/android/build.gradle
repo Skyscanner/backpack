@@ -26,10 +26,10 @@ allprojects {
 }
 
 ext {
-    compileSdkVersion   = 28
-    targetSdkVersion    = 28
+    compileSdkVersion   = 27
+    targetSdkVersion    = 27
     minSdkVersion       = 19
-    buildToolsVersion   = "28.0.0"
+    buildToolsVersion   = "27.0.3"
     supportLibVersion   = "27.0.1"
     googlePlayServicesVersion = "15.0.1"
     androidMapsUtilsVersion = "0.5+"
