@@ -36,7 +36,9 @@ const {
   const data = zip(changelogs, parsedChangelogs);
   const upcomingChanges = (await Promise.all(
     data.map(async ([changelogPath, parsedChangelog]) => {
-      const { upcoming: { changes } } = parsedChangelog;
+      const {
+        upcoming: { changes },
+      } = parsedChangelog;
       if (!changes) {
         return null;
       }

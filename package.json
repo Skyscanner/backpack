@@ -129,7 +129,7 @@
     "node-sass": "^4.7.2",
     "postcss-flexbugs-fixes": "^3.2.0",
     "postcss-loader": "^2.0.10",
-    "prettier": "^1.10.2",
+    "prettier": "^1.13.5",
     "prop-types": "^15.5.10",
     "punycode": "^2.1.0",
     "raw-loader": "^0.5.1",

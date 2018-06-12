@@ -75,9 +75,11 @@ export default function withLazyLoading(
     }
 
     setInView = (): void => {
-      this.setState((): {} => ({
-        inView: true,
-      }));
+      this.setState(
+        (): {} => ({
+          inView: true,
+        }),
+      );
       this.removeEventListeners();
     };
 
