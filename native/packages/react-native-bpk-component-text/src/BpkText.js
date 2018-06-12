@@ -98,8 +98,12 @@ const BpkText = props => {
   const { children, textStyle, style, emphasize, ...rest } = props;
 
   const finalStyle = [styles[textStyle]];
+  // Emphasize on iOS is not supported for the XXL size. This is also checked with
+  // the `emphasizePropType` prop.
+  const shouldEmpasize =
+    emphasize && !(Platform.OS === 'ios' && textStyle === 'xxl');
 
-  if (emphasize) {
+  if (shouldEmpasize) {
     finalStyle.push(getEmphasizeProperties(props));
   }
 

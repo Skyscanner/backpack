@@ -193,3 +193,24 @@ exports[`iOS BpkText should support overwriting styles 1`] = `
   Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
 </Text>
 `;
+
+exports[`iOS should not apply \`emphasize\` for textStyle="xxl" 1`] = `
+<Text
+  accessible={true}
+  allowFontScaling={true}
+  ellipsizeMode="tail"
+  style={
+    Array [
+      Object {
+        "color": "rgb(82, 76, 97)",
+        "fontFamily": "System",
+        "fontSize": 34,
+        "fontWeight": "700",
+      },
+      Object {},
+    ]
+  }
+>
+  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+</Text>
+`;

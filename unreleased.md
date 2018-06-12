@@ -9,3 +9,7 @@
 
 - react-native-bpk-component-carousel:
   - Introducing the React Native carousel component.
+
+**Fixed:**
+- react-bpk-component-infinite-scroll:
+  - In addition to issuing a prop warning when using emphasize in combination with xxl on iOS now nothing actually happens.

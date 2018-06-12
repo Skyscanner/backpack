@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+import React from 'react';
+import renderer from 'react-test-renderer';
 import BpkText from './BpkText';
 import commonTests from './BpkText-test.common';
 
@@ -37,5 +39,18 @@ describe('iOS', () => {
     ).toEqual(
       'Error: Invalid prop `emphasize` of value `true` supplied to `BpkText`. `textStyle` value of `xxl` cannot be emphasized.',
     ); // eslint-disable-line max-len
+  });
+
+  it('should not apply `emphasize` for textStyle="xxl"', () => {
+    const tree = renderer
+      .create(
+        <BpkText emphasize textStyle="xxl">
+          Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
+          commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus
+          et magnis dis parturient montes, nascetur ridiculus mus.
+        </BpkText>,
+      )
+      .toJSON();
+    expect(tree).toMatchSnapshot();
   });
 });
