@@ -30,6 +30,7 @@ import BpkCarousel, { BpkCarouselItem } from './index';
 
 const styles = StyleSheet.create({
   page: {
+    flex: 1,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
@@ -37,7 +38,7 @@ const styles = StyleSheet.create({
   view: {
     alignSelf: 'center',
     width: 350,
-    maxHeight: 233,
+    height: 233,
   },
 });
 

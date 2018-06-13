@@ -1,57 +1,83 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Android BpkCarousel should render correctly 1`] = `
-Array [
+<View
+  onLayout={[Function]}
+  style={
+    Object {
+      "width": 300,
+    }
+  }
+>
   <RCTScrollView
     accessibilityLabel="I'm accessible"
     accessible={true}
-    horizontal={true}
-    onLayout={[Function]}
-    onScroll={[Function]}
-    pagingEnabled={true}
-    scrollEventThrottle={16}
-    showsHorizontalScrollIndicator={false}
-    style={
-      Object {
-        "width": 300,
+    canChangeSize={false}
+    contentHeight={0}
+    contentWidth={0}
+    dataProvider={
+      DataProvider {
+        "_data": Array [
+          <BpkCarouselItem
+            style={null}
+          >
+            <BpkText
+              emphasize={false}
+              style={Object {}}
+              textStyle="base"
+            >
+              View 1
+            </BpkText>
+          </BpkCarouselItem>,
+        ],
+        "_firstIndexToProcess": 0,
+        "_size": 1,
+        "rowHasChanged": [Function],
       }
     }
+    disableRecycling={false}
+    externalScrollView={[Function]}
+    horizontal={true}
+    initialOffset={0}
+    initialRenderIndex={0}
+    isHorizontal={true}
+    layoutProvider={
+      LayoutProvider {
+        "_getLayoutTypeForIndex": [Function],
+        "_setLayoutForType": [Function],
+      }
+    }
+    onEndReachedThreshold={0}
+    onLayout={[Function]}
+    onScroll={[Function]}
+    onSizeChanged={[Function]}
+    pagingEnabled={true}
+    removeClippedSubviews={false}
+    renderAheadOffset={250}
+    rowRenderer={[Function]}
+    scrollEventThrottle={16}
+    scrollThrottle={16}
+    showsHorizontalScrollIndicator={false}
   >
     <View>
       <View
         style={
-          Array [
-            Array [
-              null,
-              Object {
-                "height": 300,
-                "width": 300,
-              },
-            ],
-          ]
+          Object {
+            "flexDirection": "row",
+          }
         }
       >
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
+        <View
           style={
-            Array [
-              Object {
-                "color": "rgb(82, 76, 97)",
-                "fontFamily": "System",
-                "fontSize": 15,
-                "fontWeight": "400",
-              },
-              Object {},
-            ]
+            Object {
+              "height": 0,
+              "width": 0,
+            }
           }
-        >
-          View 1
-        </Text>
+        />
       </View>
     </View>
-  </RCTScrollView>,
+  </RCTScrollView>
   <View
     accessibilityLabel="I'm accessible"
     childrenSortFn={[Function]}
@@ -71,7 +97,7 @@ Array [
         },
         Object {
           "alignSelf": "center",
-          "marginTop": -32,
+          "bottom": 32,
         },
       ]
     }
@@ -88,58 +114,84 @@ Array [
         }
       }
     />
-  </View>,
-]
+  </View>
+</View>
 `;
 
 exports[`Android BpkCarousel should render correctly with an "accessibilityLabel" function 1`] = `
-Array [
+<View
+  onLayout={[Function]}
+  style={null}
+>
   <RCTScrollView
     accessibilityLabel="0 of 1"
     accessible={true}
+    canChangeSize={false}
+    contentHeight={0}
+    contentWidth={0}
+    dataProvider={
+      DataProvider {
+        "_data": Array [
+          <BpkCarouselItem
+            style={null}
+          >
+            <BpkText
+              emphasize={false}
+              style={Object {}}
+              textStyle="base"
+            >
+              View 1
+            </BpkText>
+          </BpkCarouselItem>,
+        ],
+        "_firstIndexToProcess": 0,
+        "_size": 1,
+        "rowHasChanged": [Function],
+      }
+    }
+    disableRecycling={false}
+    externalScrollView={[Function]}
     horizontal={true}
+    initialOffset={0}
+    initialRenderIndex={0}
+    isHorizontal={true}
+    layoutProvider={
+      LayoutProvider {
+        "_getLayoutTypeForIndex": [Function],
+        "_setLayoutForType": [Function],
+      }
+    }
+    onEndReachedThreshold={0}
     onLayout={[Function]}
     onScroll={[Function]}
+    onSizeChanged={[Function]}
     pagingEnabled={true}
+    removeClippedSubviews={false}
+    renderAheadOffset={250}
+    rowRenderer={[Function]}
     scrollEventThrottle={16}
+    scrollThrottle={16}
     showsHorizontalScrollIndicator={false}
-    style={null}
   >
     <View>
       <View
         style={
-          Array [
-            Array [
-              null,
-              Object {
-                "height": 300,
-                "width": 300,
-              },
-            ],
-          ]
+          Object {
+            "flexDirection": "row",
+          }
         }
       >
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
+        <View
           style={
-            Array [
-              Object {
-                "color": "rgb(82, 76, 97)",
-                "fontFamily": "System",
-                "fontSize": 15,
-                "fontWeight": "400",
-              },
-              Object {},
-            ]
+            Object {
+              "height": 0,
+              "width": 0,
+            }
           }
-        >
-          View 1
-        </Text>
+        />
       </View>
     </View>
-  </RCTScrollView>,
+  </RCTScrollView>
   <View
     accessibilityLabel="0 of 1"
     childrenSortFn={[Function]}
@@ -159,7 +211,7 @@ Array [
         },
         Object {
           "alignSelf": "center",
-          "marginTop": -32,
+          "bottom": 32,
         },
       ]
     }
@@ -176,55 +228,83 @@ Array [
         }
       }
     />
-  </View>,
-]
+  </View>
+</View>
 `;
 
 exports[`Android BpkCarousel should render correctly without indicators 1`] = `
-<RCTScrollView
-  accessibilityLabel="I'm accessible"
-  accessible={true}
-  horizontal={true}
+<View
   onLayout={[Function]}
-  onScroll={[Function]}
-  pagingEnabled={true}
-  scrollEventThrottle={16}
-  showsHorizontalScrollIndicator={false}
   style={null}
 >
-  <View>
-    <View
-      style={
-        Array [
-          Array [
-            null,
-            Object {
-              "height": 300,
-              "width": 300,
-            },
-          ],
-        ]
+  <RCTScrollView
+    accessibilityLabel="I'm accessible"
+    accessible={true}
+    canChangeSize={false}
+    contentHeight={0}
+    contentWidth={0}
+    dataProvider={
+      DataProvider {
+        "_data": Array [
+          <BpkCarouselItem
+            style={null}
+          >
+            <BpkText
+              emphasize={false}
+              style={Object {}}
+              textStyle="base"
+            >
+              View 1
+            </BpkText>
+          </BpkCarouselItem>,
+        ],
+        "_firstIndexToProcess": 0,
+        "_size": 1,
+        "rowHasChanged": [Function],
       }
-    >
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
+    }
+    disableRecycling={false}
+    externalScrollView={[Function]}
+    horizontal={true}
+    initialOffset={0}
+    initialRenderIndex={0}
+    isHorizontal={true}
+    layoutProvider={
+      LayoutProvider {
+        "_getLayoutTypeForIndex": [Function],
+        "_setLayoutForType": [Function],
+      }
+    }
+    onEndReachedThreshold={0}
+    onLayout={[Function]}
+    onScroll={[Function]}
+    onSizeChanged={[Function]}
+    pagingEnabled={true}
+    removeClippedSubviews={false}
+    renderAheadOffset={250}
+    rowRenderer={[Function]}
+    scrollEventThrottle={16}
+    scrollThrottle={16}
+    showsHorizontalScrollIndicator={false}
+  >
+    <View>
+      <View
         style={
-          Array [
-            Object {
-              "color": "rgb(82, 76, 97)",
-              "fontFamily": "System",
-              "fontSize": 15,
-              "fontWeight": "400",
-            },
-            Object {},
-          ]
+          Object {
+            "flexDirection": "row",
+          }
         }
       >
-        View 1
-      </Text>
+        <View
+          style={
+            Object {
+              "height": 0,
+              "width": 0,
+            }
+          }
+        />
+      </View>
     </View>
-  </View>
-</RCTScrollView>
+  </RCTScrollView>
+</View>
 `;
