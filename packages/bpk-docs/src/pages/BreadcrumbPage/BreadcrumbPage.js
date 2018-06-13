@@ -52,7 +52,6 @@ const BreadcrumbSubPage = ({ ...rest }) => (
     title="Breadcrumb"
     components={components}
     readme={breadcrumbReadme}
-    sassdocId="Breadcrumbs"
     {...rest}
   />
 );
