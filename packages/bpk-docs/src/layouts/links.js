@@ -271,6 +271,12 @@ const ComponentsLinks = [
         children: 'Phone input',
         tags: ['native', 'web'],
       },
+      {
+        id: 'BREADCRUMB',
+        route: routes.BREADCRUMB,
+        children: 'Breadcrumb',
+        tags: ['web'],
+      },
       // Native components.
       {
         id: 'NATIVE_FLAT_LIST',

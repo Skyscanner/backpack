@@ -100,6 +100,7 @@ export const TOUCHABLE_NATIVE_FEEDBACK =
   '/components/touchable-native-feedback';
 export const MAP = '/components/map';
 export const CAROUSEL = '/components/carousel';
+export const BREADCRUMB = '/components/breadcrumb';
 
 export const ALIGNMENT = '/components/alignment';
 export const THEMING = '/components/theming';
