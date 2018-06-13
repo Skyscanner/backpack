@@ -14,7 +14,7 @@ import BpkText from './index';
 
 storiesOf('react-native-bpk-component-text', module)
   .addDecorator(CenterDecorator)
-  .add('docs:text-styles', () => (
+  .add('docs:default', () => (
     <View>
       <BpkText textStyle="xxl">Flights to Edinburgh</BpkText>
       <BpkText textStyle="xl">Flights to Edinburgh</BpkText>
@@ -24,7 +24,7 @@ storiesOf('react-native-bpk-component-text', module)
       <BpkText textStyle="xs">Flights to Edinburgh</BpkText>
     </View>
   ))
-  .add('Bold', () => (
+  .add('docs:emphasize', () => (
     <View>
       <BpkText textStyle="xxl" emphasize={Platform.OS === 'android'}>
         Flights to Edinburgh

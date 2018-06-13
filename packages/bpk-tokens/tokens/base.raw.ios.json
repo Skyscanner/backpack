@@ -84,11 +84,8 @@
     "FONT_SIZE_XXL": {
       "value": 34
     },
-    "FONT_WEIGHT_BOLD": {
-      "value": "700"
-    },
     "FONT_WEIGHT_HEAVY": {
-      "value": "800"
+      "value": "900"
     },
     "FONT_WEIGHT_NORMAL": {
       "value": "400"
@@ -1184,10 +1181,10 @@
       "name": "TEXT_XXL_FONT_SIZE"
     },
     "TEXT_XXL_FONT_WEIGHT": {
-      "value": "700",
+      "value": "900",
       "type": "string",
       "category": "font-weights",
-      "originalValue": "{!FONT_WEIGHT_BOLD}",
+      "originalValue": "{!FONT_WEIGHT_HEAVY}",
       "name": "TEXT_XXL_FONT_WEIGHT"
     },
     "TEXT_XXL_LINE_HEIGHT": {

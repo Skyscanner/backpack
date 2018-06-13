@@ -161,7 +161,7 @@ exports[`iOS BpkText should render correctly with textStyle="xxl" 1`] = `
         "color": "rgb(82, 76, 97)",
         "fontFamily": "System",
         "fontSize": 34,
-        "fontWeight": "700",
+        "fontWeight": "900",
       },
       Object {},
     ]
@@ -205,7 +205,7 @@ exports[`iOS should not apply \`emphasize\` for textStyle="xxl" 1`] = `
         "color": "rgb(82, 76, 97)",
         "fontFamily": "System",
         "fontSize": 34,
-        "fontWeight": "700",
+        "fontWeight": "900",
       },
       Object {},
     ]

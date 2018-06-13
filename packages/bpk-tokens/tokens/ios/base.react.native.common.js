@@ -147,7 +147,7 @@ module.exports = {
   textXsFontWeight: "400",
   textXsLineHeight: 13,
   textXxlFontSize: 34,
-  textXxlFontWeight: "700",
+  textXxlFontWeight: "900",
   textXxlLineHeight: 41,
   touchableOverlayColor: "rgb(37, 32, 51)",
   touchableOverlayOpacity: 0.15,
