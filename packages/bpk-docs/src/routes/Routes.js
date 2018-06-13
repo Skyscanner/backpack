@@ -62,6 +62,7 @@ import BannerAlertPage from './../pages/BannerAlertPage';
 import BarchartsPage from './../pages/BarchartsPage';
 import BlockquotesPage from './../pages/BlockquotesPage';
 import BreakpointsPage from './../pages/BreakpointsPage';
+import BreadcrumbPage from './../pages/BreadcrumbPage';
 import ButtonPage from './../pages/ButtonPage';
 import CalendarPage from './../pages/CalendarPage';
 import CardPage from './../pages/CardPage';
@@ -224,6 +225,7 @@ const Routes = (
       <Route path={ROUTES.ALIGNMENT} component={AlignmentPage} />
       <Route path={ROUTES.THEMING} component={ThemingPage} />
       <Route path={ROUTES.ALERT} component={AlertPage} />
+      <Route path={ROUTES.BREADCRUMB} component={BreadcrumbPage} />
     </Route>
 
     <Route path={ROUTES.GRID_COLUMN_DEMO} component={GridColumnDemoPage} />

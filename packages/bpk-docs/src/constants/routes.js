@@ -101,6 +101,7 @@ export const TOUCHABLE_NATIVE_FEEDBACK =
 export const MAP = '/components/map';
 export const CAROUSEL = '/components/carousel';
 export const INFINITE_SCROLL = '/components/infinite-scroll';
+export const BREADCRUMB = '/components/breadcrumb';
 
 export const ALIGNMENT = '/components/alignment';
 export const THEMING = '/components/theming';
