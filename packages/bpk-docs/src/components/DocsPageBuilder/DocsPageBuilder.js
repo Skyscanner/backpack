@@ -24,7 +24,8 @@ import React, { Children } from 'react';
 import BpkContentContainer from 'bpk-component-content-container';
 import { cssModules } from 'bpk-react-utils';
 
-import TokenSwitcher from './TokenSwitcher';
+import TokenSwitcher, { connect } from './TokenSwitcher';
+import TokenTable from './TokenTable';
 import PageHead from '../PageHead';
 import AlternatingPageContent from '../AlternatingPageContent';
 import Heading from './../Heading';
@@ -72,7 +73,7 @@ toSassdocLink.propTypes = {
   category: PropTypes.string.isRequired,
 };
 
-const ComponentExample = component => {
+const ComponentExample = (component, registerTokenTable) => {
   const heading = (
     <Heading id={component.id} level="h2">
       {component.title}
@@ -109,9 +110,9 @@ const ComponentExample = component => {
       ])
     : null;
 
-  const tokenMap = component.tokenMap ? (
-    <TokenSwitcher tokens={component.tokenMap} />
-  ) : null;
+  const tokenMap = component.tokenMap
+    ? registerTokenTable(<TokenTable tokens={component.tokenMap} />)
+    : null;
 
   const sassdocLink = component.sassdocId
     ? toSassdocLink({
@@ -160,8 +161,33 @@ const CustomSection = section => [
 ];
 
 const DocsPageBuilder = props => {
+  const tokenSwitcher = (
+    <TokenSwitcher
+      className={getClassName('bpkdocs-content-page__token-switcher')}
+    />
+  );
+  let hasTokens = !!props.tokenMap;
+  const components = Children.toArray(
+    props.components.map(component =>
+      ComponentExample(component, table => {
+        hasTokens = true;
+        return connect(
+          tokenSwitcher,
+          table,
+        );
+      }),
+    ),
+  );
+
+  const tokenTable = props.tokenMap
+    ? connect(
+        tokenSwitcher,
+        <TokenTable tokens={props.tokenMap} />,
+      )
+    : null;
+
   const sections = [
-    props.tokenMap ? <TokenSwitcher tokens={props.tokenMap} /> : null,
+    tokenTable,
     props.usageTable
       ? Children.toArray([
           <Heading id="usage" level="h2">
@@ -170,7 +196,7 @@ const DocsPageBuilder = props => {
           <UsageTable data={props.usageTable} />,
         ])
       : null,
-    ...Children.toArray(props.components.map(ComponentExample)),
+    ...components,
     props.readme
       ? Children.toArray([
           <Heading id="readme" level="h2">
@@ -208,15 +234,24 @@ const DocsPageBuilder = props => {
     >
       <Helmet title={props.title} />
       {showPageHead && (
-        <PageHead
-          title={props.wrapped ? null : props.title}
-          blurb={props.blurb}
-          menu={menu.map(({ id, title }) => ({
-            href: `#${id}`,
-            title,
-          }))}
-          wrapped={props.wrapped}
-        />
+        <div
+          className={getClassName('bpkdocs-content-page__page-head-wrapper')}
+        >
+          <PageHead
+            className={getClassName(
+              'bpkdocs-content-page__page-head',
+              hasTokens && 'bpkdocs-content-page__page-head--with-swicher',
+            )}
+            title={props.wrapped ? null : props.title}
+            blurb={props.blurb}
+            menu={menu.map(({ id, title }) => ({
+              href: `#${id}`,
+              title,
+            }))}
+            wrapped={props.wrapped}
+          />
+          {hasTokens && tokenSwitcher}
+        </div>
       )}
       <AlternatingPageContent sections={sections} invert={props.wrapped} />
     </BpkContentContainer>

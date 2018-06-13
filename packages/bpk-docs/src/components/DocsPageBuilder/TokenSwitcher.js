@@ -16,21 +16,11 @@
  * limitations under the License.
  */
 
-import PropTypes from 'prop-types';
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import BpkHorizontalNav, {
   BpkHorizontalNavItem,
 } from 'bpk-component-horizontal-nav';
-import {
-  BpkTable,
-  BpkTableHead,
-  BpkTableBody,
-  BpkTableRow,
-  BpkTableHeadCell,
-  BpkTableCell,
-} from 'bpk-component-table';
-
-import { formatTokenName, getTokenValue } from './../../helpers/tokens-helper';
 
 const platforms = {
   web: {
@@ -47,79 +37,107 @@ const platforms = {
   },
 };
 
-class TokenSwitcher extends Component {
-  constructor() {
-    super();
+const nextId = () => {
+  let id = 0;
+  return () => id++; // eslint-disable-line no-plusplus
+};
 
+const listeners = {};
+
+const addListener = (switcher, callback) => {
+  const switcherListeners = listeners[`${switcher.id}`] || [];
+  switcherListeners.push(callback);
+  listeners[`${switcher.id}`] = switcherListeners;
+};
+
+const removeListener = (switcher, toRemove) => {
+  const switcherListeners = listeners[`${switcher.id}`] || [];
+  listeners[`${switcher.id}`] = switcherListeners.filter(
+    callback => callback !== toRemove,
+  );
+};
+
+const onSwitch = (switcher, id) => {
+  const switcherListeners = listeners[`${switcher.id}`] || [];
+  switcherListeners.forEach(listener => listener(id));
+};
+
+class TokenSwitcher extends Component {
+  constructor(props) {
+    super(props);
+    this.internalId = nextId();
     this.state = {
       selectedPlatform: platforms.web.id,
     };
   }
 
-  onChange = id => {
+  componentWillUnmount() {
+    delete listeners[`${this.id}`];
+  }
+
+  onChange = selectedPlatform => {
+    onSwitch(this.id, selectedPlatform);
     this.setState(() => ({
-      selectedPlatform: id,
+      selectedPlatform,
     }));
   };
 
+  get id() {
+    return this.internalId;
+  }
+
   render() {
-    const { tokens } = this.props;
-    const { selectedPlatform } = this.state;
-
-    const selectedTokens = tokens[selectedPlatform] || {};
-    const keys = Object.keys(selectedTokens);
+    const { className } = this.props;
     return (
-      <div>
-        <BpkHorizontalNav>
-          {Object.keys(platforms).map(platform => {
-            const { id, name } = platforms[platform];
+      <BpkHorizontalNav className={className}>
+        {Object.keys(platforms).map(platform => {
+          const { id, name } = platforms[platform];
 
-            return (
-              <BpkHorizontalNavItem
-                key={id}
-                selected={this.state.selectedPlatform === id}
-                onClick={() => this.onChange(id)}
-              >
-                {name}
-              </BpkHorizontalNavItem>
-            );
-          })}
-        </BpkHorizontalNav>
-        <br />
-        <BpkTable alternate>
-          <BpkTableHead>
-            <BpkTableRow>
-              <BpkTableHeadCell alternate>Name</BpkTableHeadCell>
-              <BpkTableHeadCell alternate>Value</BpkTableHeadCell>
-            </BpkTableRow>
-          </BpkTableHead>
-          <BpkTableBody>
-            {!keys.length && (
-              <BpkTableRow key="notAvailable">
-                <BpkTableCell colSpan="2">N/A</BpkTableCell>
-              </BpkTableRow>
-            )}
-            {!!keys.length &&
-              keys.map(tokenName => {
-                const token = selectedTokens[tokenName];
-                return (
-                  <BpkTableRow key={tokenName}>
-                    <BpkTableCell>{formatTokenName(tokenName)}</BpkTableCell>
-                    <BpkTableCell>
-                      {getTokenValue(token, selectedPlatform)}
-                    </BpkTableCell>
-                  </BpkTableRow>
-                );
-              })}
-          </BpkTableBody>
-        </BpkTable>
-      </div>
+          return (
+            <BpkHorizontalNavItem
+              key={id}
+              selected={this.state.selectedPlatform === id}
+              onClick={() => this.onChange(id)}
+            >
+              {name}
+            </BpkHorizontalNavItem>
+          );
+        })}
+      </BpkHorizontalNav>
     );
   }
 }
 
 TokenSwitcher.propTypes = {
-  tokens: PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
+  className: PropTypes.string,
+};
+
+TokenSwitcher.defaultProps = {
+  className: null,
 };
 
 export default TokenSwitcher;
+
+export const connect = (tokenSwitcher, table) => {
+  /* eslint-disable react/no-multi-comp */
+  class SwitchAwareTable extends Component {
+    constructor(props) {
+      super(props);
+      this.state = { platform: null };
+      this.onSwitch = platform => this.setState({ platform });
+      addListener(tokenSwitcher, this.onSwitch);
+    }
+
+    componentWillUnmount() {
+      removeListener(tokenSwitcher, this.onSwitch);
+    }
+
+    render() {
+      const { platform } = this.state;
+      return React.cloneElement(table, {
+        platform: platform || platforms.web.id,
+      });
+    }
+  }
+  return <SwitchAwareTable />;
+};
