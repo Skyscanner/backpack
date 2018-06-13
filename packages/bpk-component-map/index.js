@@ -21,22 +21,4 @@
 import BpkMap from './src/BpkMap';
 
 export default BpkMap;
-export {
-  withGoogleMap,
-  withScriptjs,
-  GoogleMap,
-  Circle,
-  Marker,
-  Polyline,
-  Polygon,
-  Rectangle,
-  InfoWindow,
-  OverlayView,
-  GroundOverlay,
-  DirectionsRenderer,
-  FusionTablesLayer,
-  KmlLayer,
-  TrafficLayer,
-  StreetViewPanorama,
-  BicyclingLayer,
-} from 'react-google-maps';
+export { withScriptjs, Marker } from 'react-google-maps';
