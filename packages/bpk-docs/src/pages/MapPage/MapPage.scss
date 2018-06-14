@@ -16,13 +16,10 @@
  * limitations under the License.
  */
 
-/* @flow */
+@import '~bpk-mixins/index';
 
-import BpkMap from './src/BpkMap';
-import BpkOverlayView from './src/BpkOverlayView';
-import withGoogleMapsScript from './src/withGoogleMapsScript';
-import { type LatLong } from './src/common-types';
-
-export default BpkMap;
-export type BpkMapLatLong = LatLong;
-export { BpkOverlayView, withGoogleMapsScript };
+.bpkdocs-map-page {
+  &__map {
+    height: $bpk-spacing-xl * 15;
+  }
+}

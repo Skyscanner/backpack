@@ -15,14 +15,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 /* @flow */
 
-import BpkMap from './src/BpkMap';
-import BpkOverlayView from './src/BpkOverlayView';
-import withGoogleMapsScript from './src/withGoogleMapsScript';
-import { type LatLong } from './src/common-types';
+import React from 'react';
+import { BpkLargeSpinner, SPINNER_TYPES } from 'bpk-component-spinner';
+import { cssModules } from 'bpk-react-utils';
 
-export default BpkMap;
-export type BpkMapLatLong = LatLong;
-export { BpkOverlayView, withGoogleMapsScript };
+import STYLES from './DefaultLoadingElement.scss';
+
+const getClassName = cssModules(STYLES);
+
+const DefaultLoadingElement = () => (
+  <div className={getClassName('bpk-map-default-loading-element')}>
+    <BpkLargeSpinner type={SPINNER_TYPES.primary} />
+  </div>
+);
+
+export default DefaultLoadingElement;

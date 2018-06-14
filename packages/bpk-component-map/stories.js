@@ -21,106 +21,80 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import BpkMap, { withScriptjs } from './index';
+import BpkText from 'bpk-component-text';
+import BpkMap, { BpkOverlayView, withGoogleMapsScript } from './index';
 
-const BpkMapWithLoading = withScriptjs(BpkMap);
+const BpkMapWithLoading = withGoogleMapsScript(BpkMap);
 
 const StoryMap = props => {
-  const { language, ...rest } = props;
+  const { children, language, ...rest } = props;
   return (
-    <BpkMapWithLoading
-      containerElement={<div style={{ height: '400px' }} />}
-      mapElement={<div style={{ height: `100%` }} />}
-      googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&language=${language}&libraries=geometry,drawing,places`}
-      loadingElement={<div />}
-      {...rest}
-    />
+    <div style={{ height: '400px' }}>
+      <BpkMapWithLoading
+        googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&language=en&libraries=geometry,drawing,places"
+        {...rest}
+      >
+        {children}
+      </BpkMapWithLoading>
+    </div>
   );
 };
 
 StoryMap.propTypes = {
+  children: PropTypes.node,
   language: PropTypes.string,
 };
 
 StoryMap.defaultProps = {
+  children: null,
   language: '',
 };
 
-const zoom = level => {
+const onZoom = level => {
   action(`Zoom changed to ${level}`);
 };
 
-const drag = (bounds, center) => {
+const onRegionChange = (bounds, center) => {
   action(
     `Dragged to bounds: ${bounds.toString()}, center: ${center.toString()}`,
   );
 };
 
-type MapRef = ?{
-  getBounds: () => Object,
-  getCenter: () => Object,
-  getZoom: () => number,
-  fitBounds: ({
-    south: number,
-    west: number,
-    north: number,
-    east: number,
-  }) => void,
-};
-
 storiesOf('bpk-component-map', module)
   .add('Simple', () => (
     <StoryMap
-      defaultZoom={15}
-      defaultCenter={{ lat: 55.944357, lng: -3.1967116 }}
-      language="en"
+      zoom={15}
+      center={{ latitude: 55.944357, longitude: -3.1967116 }}
     />
   ))
-  .add('Zoom and drag disabled', () => (
+  .add('Drag disabled and controls hidden', () => (
     <StoryMap
-      defaultZoom={15}
-      defaultCenter={{ lat: 55.944357, lng: -3.1967116 }}
-      language="zh"
-      options={{
-        zoomControl: false,
-        dragEnabled: false,
-      }}
+      center={{ latitude: 55.944357, longitude: -3.1967116 }}
+      panEnabled={false}
+      showControls={false}
     />
   ))
-  .add('With onZoomChanged and onDragEnd callbacks', () => {
-    let ref: MapRef = null;
-
-    return (
-      <StoryMap
-        mapRef={map => {
-          ref = map;
-        }}
-        defaultZoom={15}
-        defaultCenter={{ lat: 55.944357, lng: -3.1967116 }}
-        onZoomChanged={() => {
-          if (ref) {
-            zoom(ref.getZoom());
-          }
-        }}
-        onDragEnd={() => {
-          if (ref) {
-            drag(ref.getBounds(), ref.getCenter());
-          }
-        }}
-      />
-    );
-  })
+  .add('With onZoom and onRegionChange callbacks', () => (
+    <StoryMap
+      center={{ latitude: 55.944357, longitude: -3.1967116 }}
+      onZoom={onZoom}
+      onRegionChange={onRegionChange}
+    />
+  ))
   .add('With a bounding box', () => (
     <StoryMap
-      mapRef={(map: MapRef) => {
-        if (map) {
-          map.fitBounds({
-            south: 55.94129273544452,
-            west: -3.2285547854247625,
-            north: 55.952707392208396,
-            east: -3.159632742578083,
-          });
-        }
+      bounds={{
+        south: 25.94129273544452,
+        west: -3.2285547854247625,
+        north: 20.952707392208396,
+        east: -2.159632742578083,
       }}
     />
+  ))
+  .add('With a marker', () => (
+    <StoryMap center={{ latitude: 55.944357, longitude: -3.1967116 }}>
+      <BpkOverlayView position={{ latitude: 55.944, longitude: -3.1967116 }}>
+        <BpkText>Backpack</BpkText>
+      </BpkOverlayView>
+    </StoryMap>
   ));
