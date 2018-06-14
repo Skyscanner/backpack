@@ -30,7 +30,7 @@
     "verbose": true,
     "testRegex": ".*-test(\\.ios)?(\\.android)?\\.js$",
     "transformIgnorePatterns": [
-      "node_modules/(?!react-native|bpk|@skyscanner)"
+      "node_modules/(?!react-native|bpk|@skyscanner|lodash-es)"
     ],
     "coverageThreshold": {
       "global": {

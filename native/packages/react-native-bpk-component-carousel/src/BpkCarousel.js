@@ -18,14 +18,14 @@
 
 /* @flow */
 
-import React, { Fragment, type Element, type ChildrenArray } from 'react';
+import React, { type Element, type ChildrenArray } from 'react';
 import PropTypes from 'prop-types';
+import { type StyleObj, ViewPropTypes, StyleSheet, View } from 'react-native';
 import {
-  ScrollView,
-  type StyleObj,
-  ViewPropTypes,
-  StyleSheet,
-} from 'react-native';
+  DataProvider,
+  LayoutProvider,
+  RecyclerListView,
+} from 'recyclerlistview';
 import BpkCarouselIndicator from 'react-native-bpk-component-carousel-indicator';
 import { spacingXl } from 'bpk-tokens/tokens/base.react.native';
 import typeof BpkCarouselItem from './BpkCarouselItem';
@@ -35,7 +35,7 @@ const SCROLL_EVENT_THROTTLE = 16; // 1000ms / 60fps = 16ms
 const styles = StyleSheet.create({
   carouselIndicator: {
     alignSelf: 'center',
-    marginTop: -spacingXl,
+    bottom: spacingXl,
   },
 });
 
@@ -48,6 +48,7 @@ export type Props = {
 
 type State = {
   currentIndex: number,
+  dataProvider: DataProvider,
   width: ?number,
   height: ?number,
 };
@@ -68,7 +69,15 @@ class BpkCarousel extends React.Component<Props, State> {
 
   constructor(props: Props) {
     super(props);
-    this.state = { width: null, height: null, currentIndex: 0 };
+    const dataProvider = new DataProvider((r1, r2) => r1 !== r2);
+    this.state = {
+      width: null,
+      height: null,
+      currentIndex: 0,
+      dataProvider: dataProvider.cloneWithRows(
+        React.Children.toArray(this.props.children),
+      ),
+    };
   }
 
   onLayout = (event: any) => {
@@ -89,6 +98,14 @@ class BpkCarousel extends React.Component<Props, State> {
     return accessibilityLabel;
   }
 
+  layoutProvider = new LayoutProvider(
+    () => 0,
+    (type, dimensions) => {
+      dimensions.width = this.state.width; // eslint-disable-line no-param-reassign
+      dimensions.height = this.state.height; // eslint-disable-line no-param-reassign
+    },
+  );
+
   handleScroll = (event: any) => {
     const { contentOffset } = event.nativeEvent;
     const currentIndex = this.state.width
@@ -99,6 +116,8 @@ class BpkCarousel extends React.Component<Props, State> {
     }
   };
 
+  renderItem = (type: number, item: Element<BpkCarouselItem>) => item;
+
   render() {
     const { children, showIndicator, style } = this.props;
     const { currentIndex, height, width } = this.state;
@@ -107,26 +126,21 @@ class BpkCarousel extends React.Component<Props, State> {
     const childrenCount = React.Children.count(children);
 
     return (
-      <Fragment>
-        <ScrollView
-          accessible
-          accessibilityLabel={this.getAccessibilityLabel()}
-          onScroll={this.handleScroll}
-          scrollEventThrottle={SCROLL_EVENT_THROTTLE}
-          onLayout={this.onLayout}
-          horizontal
-          pagingEnabled
-          showsHorizontalScrollIndicator={false}
-          style={style}
-        >
-          {shouldRenderChildren &&
-            React.Children.map(children, child =>
-              React.cloneElement(child, {
-                ...child.props,
-                style: [child.props.style, { width, height }],
-              }),
-            )}
-        </ScrollView>
+      <View style={style} onLayout={this.onLayout}>
+        {shouldRenderChildren && (
+          <RecyclerListView
+            layoutProvider={this.layoutProvider}
+            dataProvider={this.state.dataProvider}
+            rowRenderer={this.renderItem}
+            isHorizontal
+            pagingEnabled
+            accessible
+            accessibilityLabel={this.getAccessibilityLabel()}
+            onScroll={this.handleScroll}
+            scrollThrottle={SCROLL_EVENT_THROTTLE}
+            showsHorizontalScrollIndicator={false}
+          />
+        )}
         {shouldRenderChildren &&
           showIndicator && (
             <BpkCarouselIndicator
@@ -136,7 +150,7 @@ class BpkCarousel extends React.Component<Props, State> {
               selectedIndex={currentIndex}
             />
           )}
-      </Fragment>
+      </View>
     );
   }
 }
