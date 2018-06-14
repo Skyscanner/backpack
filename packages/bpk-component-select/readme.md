@@ -19,7 +19,7 @@ export default () => (
     id="fruits"
     name="fruits"
     value="oranges"
-    onChange={() => console.log('select changed')}
+    onChange={(e) => console.log(`select changed to ${e.target.value}`)}
   >
     <option value="apples">Apples</option>
     <option value="oranges">Oranges</option>

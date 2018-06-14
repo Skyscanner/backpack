@@ -23,6 +23,7 @@ import {
   iconSizeSm,
   lineHeightLg,
   iconSizeLg,
+  lineHeightSm,
 } from 'bpk-tokens/tokens/base.es6';
 import {
   withAlignment,
@@ -57,6 +58,7 @@ const AlignedLargeArrow = withAlignment(
 const AlignedButtonArrow = withButtonAlignment(LongArrowRightIconSm);
 const AlignedLargeButtonArrow = withLargeButtonAlignment(LongArrowRightIcon);
 const AlignedSpan = withAlignment('span', iconSizeLg, lineHeightBase);
+const AlignedSpanSmall = withAlignment('span', iconSizeLg, lineHeightSm);
 
 const components = [
   {
@@ -160,6 +162,41 @@ const AlignedSpan = withAlignment(
       <BpkText textStyle="base">
         <AwardIcon fill={colors.colorGray700} />
         <AlignedSpan>&nbsp; Search</AlignedSpan>
+      </BpkText>,
+    ],
+  },
+  {
+    id: 'smallWithIcon',
+    title: 'Text with textStyle "sm" alignment with an icon',
+    blurb: [
+      <Paragraph>
+        Similarly, to use a small text, line height and the BpkText wrapper need
+        to use the small size:
+      </Paragraph>,
+      <CodeBlock>
+        {`import AwardIcon from 'bpk-component-icon/lg/award';
+import { withAlignment } from 'bpk-component-icon';
+import { iconSizeLg, lineHeightSm } from 'bpk-tokens/tokens/base.es6';
+import BpkText from 'bpk-component-text';
+
+const AlignedSpanSmall = withAlignment(
+  'span', iconSizeLg, lineHeightSm
+);
+
+<BpkText textStyle="sm" >
+  <AwardIcon fill={colors.colorGray700} />
+  <AlignedSpanSmall>
+    &nbsp;
+    Search
+  </AlignedSpanSmall>
+</BpkText>
+`}
+      </CodeBlock>,
+    ],
+    examples: [
+      <BpkText textStyle="sm">
+        <AwardIcon fill={colors.colorGray700} />
+        <AlignedSpanSmall>&nbsp; Search</AlignedSpanSmall>
       </BpkText>,
     ],
   },

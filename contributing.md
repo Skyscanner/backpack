@@ -202,6 +202,7 @@ The “page” modules themselves contain introductory blurbs and examples for t
 You can run the docs app locally using:
 
 ```sh
+npm run build
 npm run docs
 ```
 
