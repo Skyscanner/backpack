@@ -27,6 +27,7 @@ npm install [package-name] --save-dev
 | [`bpk-component-banner-alert`](/packages/bpk-component-banner-alert) | [![npm version](https://badge.fury.io/js/bpk-component-banner-alert.svg)](http://badge.fury.io/js/bpk-component-banner-alert) |
 | [`bpk-component-barchart`](/packages/bpk-component-barchart) | [![npm version](https://badge.fury.io/js/bpk-component-barchart.svg)](http://badge.fury.io/js/bpk-component-barchart) |
 | [`bpk-component-blockquote`](/packages/bpk-component-blockquote) | [![npm version](https://badge.fury.io/js/bpk-component-blockquote.svg)](http://badge.fury.io/js/bpk-component-blockquote) |
+| [`bpk-component-breadcrumb`](/packages/bpk-component-breadcrumb) | [![npm version](https://badge.fury.io/js/bpk-component-breadcrumb.svg)](http://badge.fury.io/js/bpk-component-breadcrumb) |
 | [`bpk-component-breakpoint`](/packages/bpk-component-breakpoint) | [![npm version](https://badge.fury.io/js/bpk-component-breakpoint.svg)](http://badge.fury.io/js/bpk-component-breakpoint) |
 | [`bpk-component-button`](/packages/bpk-component-button) | [![npm version](https://badge.fury.io/js/bpk-component-button.svg)](http://badge.fury.io/js/bpk-component-button) |
 | [`bpk-component-calendar`](/packages/bpk-component-calendar) | [![npm version](https://badge.fury.io/js/bpk-component-calendar.svg)](http://badge.fury.io/js/bpk-component-calendar) |
@@ -49,6 +50,7 @@ npm install [package-name] --save-dev
 | [`bpk-component-horizontal-nav`](/packages/bpk-component-horizontal-nav) | [![npm version](https://badge.fury.io/js/bpk-component-horizontal-nav.svg)](http://badge.fury.io/js/bpk-component-horizontal-nav) |
 | [`bpk-component-icon`](/packages/bpk-component-icon) | [![npm version](https://badge.fury.io/js/bpk-component-icon.svg)](http://badge.fury.io/js/bpk-component-icon) |
 | [`bpk-component-image`](/packages/bpk-component-image) | [![npm version](https://badge.fury.io/js/bpk-component-image.svg)](http://badge.fury.io/js/bpk-component-image) |
+| [`bpk-component-infinite-scroll`](/packages/bpk-component-infinite-scroll) | [![npm version](https://badge.fury.io/js/bpk-component-infinite-scroll.svg)](http://badge.fury.io/js/bpk-component-infinite-scroll) |
 | [`bpk-component-input`](/packages/bpk-component-input) | [![npm version](https://badge.fury.io/js/bpk-component-input.svg)](http://badge.fury.io/js/bpk-component-input) |
 | [`bpk-component-label`](/packages/bpk-component-label) | [![npm version](https://badge.fury.io/js/bpk-component-label.svg)](http://badge.fury.io/js/bpk-component-label) |
 | [`bpk-component-link`](/packages/bpk-component-link) | [![npm version](https://badge.fury.io/js/bpk-component-link.svg)](http://badge.fury.io/js/bpk-component-link) |

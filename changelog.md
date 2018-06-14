@@ -1,6 +1,18 @@
 # Backpack changelog
 
 [Unreleased changes](./unreleased.md).
+# 2018-06-14 - Introduce breadcrumb component and infinite scroll, plus fixing invalid text combination for xxl on iOS.
+
+**Added:**
+- bpk-component-breadcrumb: 1.0.0
+  - Introducing the breadcrumb component for web , see https://backpack.github.io/components/breadcrumb/?platform=web
+
+- bpk-component-infinite-scroll: 1.0.0
+  - Introducing a React component for building infinite lists, see https://backpack.github.io/components/infinite-scroll?platform=web
+
+**Fixed:**
+- react-native-bpk-component-text: 2.1.37 => 2.1.38
+  - In addition to issuing a prop warning when using emphasize in combination with xxl on iOS now nothing actually happens.
 
 # 2018-06-08 - Introduce native map component, plus fixed display issues with native select and phone input.
 
