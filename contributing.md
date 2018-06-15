@@ -311,19 +311,18 @@ on a device.
 
 ## Publishing packages (Backpack squad members only)
 
-- Update the [changelog](/changelog.md) with every package that has changed, separating out breaking changes (*major*), additions (*minor*) and fixes (*patch*) changes (you should see examples of this in previous entries). Make sure to add
-  them at the top under a heading of “UNRELEASED"
+- Update the [unreleased changelog](/unreleased.md) with every package that has changed, separating out breaking changes (*major*), additions (*minor*) and fixes (*patch*) changes (you should see examples of this in previous entries of the [changelog](/changelog.md)).
   - Some useful commands for determining "what's changed?":
     - `npm run lerna updated`
     - `npm run lerna diff <package-name>`
 - Make sure you are an owner of the npm packages (speak to a member of the Backpack squad)
 - **Do not run `npm publish`. Instead, run `npm run publish`** (this will run `lerna publish`).
-- You’ll be asked to specify a new version for every package that has changed. Options are *patch*, *minor* or *major*. These should directly align to the entries you put in the [changelog](/changelog.md) in step 1.
+- You’ll be asked to specify a new version for every package that has changed. Options are *patch*, *minor* or *major*. These should directly align to the entries you put in the [unreleased changelog](/unreleased.md) in step 1.
 - You’ll be asked at the end to confirm. Note you can still exit without making these changes.
-- Update the [changelog](/changelog.md) with the package versions and update the title with today’s date and a brief summary of what has changed.
+- Move entries from [unreleased.md](/unreleased.md) to the [changelog](/changelog.md). Update the package versions for the new changes, and group them under a title with today’s date and a brief summary of what has changed.
 - Commit and push to master.
 
 ## Publishing new components
 Whenever a new component is added make sure the version is 0.0.1 until it gets published.
 
-When a component is released for the first time on NPM remember to add the component to the Skyscanner org through the [NPM UI](https://www.npmjs.com/org/skyscanner/team/backpack/add-package), be careful to add only Backpack components to the organisation.
+When a component is released for the first time on NPM remember to add the component to the Skyscanner org through the [NPM UI](https://www.npmjs.com/settings/skyscanner/teams/team/backpack/access), be careful to add only Backpack components to the organisation.
