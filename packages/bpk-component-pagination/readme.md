@@ -12,7 +12,7 @@ npm install bpk-component-pagination --save-dev
 
 ```js
 import React from 'react';
-import BpkPagination from 'bpk-component-paginaton';
+import BpkPagination from 'bpk-component-pagination';
 
 const Pagination = () => (
   <BpkPagination
