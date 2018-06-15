@@ -62,7 +62,7 @@ type Props = {
   size: $Keys<typeof INDICATOR_SIZES>,
 };
 
-class BpkCarouselIndicatorDot extends React.Component<Props, {}> {
+class BpkCarouselIndicatorDot extends React.PureComponent<Props, {}> {
   size: AnimatedValue;
 
   static propTypes = {

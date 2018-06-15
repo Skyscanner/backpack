@@ -30,7 +30,13 @@ import BpkCarouselIndicator from 'react-native-bpk-component-carousel-indicator'
 import { spacingXl } from 'bpk-tokens/tokens/base.react.native';
 import typeof BpkCarouselItem from './BpkCarouselItem';
 
-const SCROLL_EVENT_THROTTLE = 16; // 1000ms / 60fps = 16ms
+// 16ms would mean 60fps (1000ms / 60fps = 16ms) but that leads to too much
+// calls to setState when the carousel is being scrolled fast.
+// 250 is just a number where the "normal" performance is still very good
+// and also works well when scrolled fast.
+// IF YOU CHANGE THIS, MAKE SURE TO DO AN 0N-DEVICE TEST WITH ~100 IMAGES
+// AND SCROLLING FAST.
+const SCROLL_EVENT_THROTTLE = 250;
 
 const styles = StyleSheet.create({
   carouselIndicator: {

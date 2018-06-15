@@ -55,8 +55,8 @@ exports[`Android BpkCarousel should render correctly 1`] = `
     removeClippedSubviews={false}
     renderAheadOffset={250}
     rowRenderer={[Function]}
-    scrollEventThrottle={16}
-    scrollThrottle={16}
+    scrollEventThrottle={250}
+    scrollThrottle={250}
     showsHorizontalScrollIndicator={false}
   >
     <View>
@@ -169,8 +169,8 @@ exports[`Android BpkCarousel should render correctly with an "accessibilityLabel
     removeClippedSubviews={false}
     renderAheadOffset={250}
     rowRenderer={[Function]}
-    scrollEventThrottle={16}
-    scrollThrottle={16}
+    scrollEventThrottle={250}
+    scrollThrottle={250}
     showsHorizontalScrollIndicator={false}
   >
     <View>
@@ -283,8 +283,8 @@ exports[`Android BpkCarousel should render correctly without indicators 1`] = `
     removeClippedSubviews={false}
     renderAheadOffset={250}
     rowRenderer={[Function]}
-    scrollEventThrottle={16}
-    scrollThrottle={16}
+    scrollEventThrottle={250}
+    scrollThrottle={250}
     showsHorizontalScrollIndicator={false}
   >
     <View>
