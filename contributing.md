@@ -286,22 +286,24 @@ Accept the SDK licences:
 $ANDROID_SDK_ROOT/tools/bin/sdkmanager --licenses
 ```
 
-Download an Android system image. Note that you may get a warning about a `.cfg` file not being present.
-You're safe to ignore this.
+Download Android system images for the minimum and targeted API levels. Note that you may get a warning about a `.cfg` file not being present. You're safe to ignore this.
 
 ```
+$ANDROID_SDK_ROOT/tools/bin/sdkmanager "system-images;android-27;google_apis;x86"
 $ANDROID_SDK_ROOT/tools/bin/sdkmanager "system-images;android-21;google_apis;x86"
 ```
-
-Create an Android Virtual Device (AVD):
+Create Android Virtual Devices (AVDs):
 
 ```
-$ANDROID_SDK_ROOT/tools/bin/avdmanager create avd --name "bpk-avd" --package "system-images;android-21;google_apis;x86" --device "Nexus 5" && cp native/android/bpk-avd.ini ~/.android/avd/bpk-avd.avd/config.ini
+$ANDROID_SDK_ROOT/tools/bin/avdmanager create avd --name "bpk-avd" --package "system-images;android-27;google_apis;x86" --device "pixel" && cp native/android/bpk-avd.ini ~/.android/avd/bpk-avd.avd/config.ini
+$ANDROID_SDK_ROOT/tools/bin/avdmanager create avd --name "bpk-avd-min" --package "system-images;android-21;google_apis;x86" --device "Nexus 5"
 ```
 
-You should now have a functioning Android development environment, including a
-virtual device to run things on. You can run the AVD manually with `$ANDROID_SDK_ROOT/emulator/emulator -avd bpk-avd`,
+You should now have a functioning Android development environment, including
+virtual devices to run things on. You can run the AVD manually with `$ANDROID_SDK_ROOT/emulator/emulator -avd bpk-avd`,
 but `npm run android` will handle this for you, so it's not required.
+
+To test on the minimum supported API level , run the `bpk-avd-min` with `$ANDROID_SDK_ROOT/emulator/emulator -avd bpk-avd-min`. Make sure each component is rendered correctly and functions properly on all versions above `minSdkVersion` of Android.
 
 ### Storybook
 
