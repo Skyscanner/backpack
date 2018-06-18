@@ -3,7 +3,8 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorAccent">#00b2d6</item>
+        <item name="colorAccent">@color/background</item>
+        <item name="android:windowBackground">@color/background</item>
     </style>
 
 </resources>
