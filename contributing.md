@@ -290,13 +290,13 @@ Download an Android system image. Note that you may get a warning about a `.cfg`
 You're safe to ignore this.
 
 ```
-$ANDROID_SDK_ROOT/tools/bin/sdkmanager "system-images;android-27;google_apis;x86"
+$ANDROID_SDK_ROOT/tools/bin/sdkmanager "system-images;android-21;google_apis;x86"
 ```
 
 Create an Android Virtual Device (AVD):
 
 ```
-$ANDROID_SDK_ROOT/tools/bin/avdmanager create avd --name "bpk-avd" --package "system-images;android-27;google_apis;x86" --device "pixel" && cp native/android/bpk-avd.ini ~/.android/avd/bpk-avd.avd/config.ini
+$ANDROID_SDK_ROOT/tools/bin/avdmanager create avd --name "bpk-avd" --package "system-images;android-21;google_apis;x86" --device "Nexus 5" && cp native/android/bpk-avd.ini ~/.android/avd/bpk-avd.avd/config.ini
 ```
 
 You should now have a functioning Android development environment, including a
