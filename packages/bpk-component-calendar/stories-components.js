@@ -21,6 +21,13 @@
 import React, { Component } from 'react';
 import BpkButton from 'bpk-component-button';
 import addMonths from 'date-fns/add_months';
+import {
+  colorWhite,
+  colorRed500,
+  colorGray100,
+  colorGray300,
+  colorGreen500,
+} from 'bpk-tokens/tokens/base.es6';
 import { withButtonAlignment, withRtlSupport } from '../bpk-component-icon';
 import SmallLongArrowRightIcon from '../bpk-component-icon/sm/long-arrow-right';
 import SmallLongArrowLeftIcon from '../bpk-component-icon/sm/long-arrow-left';
@@ -92,7 +99,7 @@ const MyCalendarNav = ({ month, onMonthChange, direction }) => (
           onMonthChange(event, { month: addMonths(month, -1), source: 'PREV' })
         }
       >
-        <LeftIcon fill="white" />
+        <LeftIcon fill={colorWhite} />
       </BpkButton>&nbsp;
       <BpkButton
         iconOnly
@@ -100,7 +107,7 @@ const MyCalendarNav = ({ month, onMonthChange, direction }) => (
           onMonthChange(event, { month: addMonths(month, 1), source: 'NEXT' })
         }
       >
-        <RightIcon fill="white" />
+        <RightIcon fill={colorWhite} />
       </BpkButton>
     </div>
   </div>
@@ -110,16 +117,16 @@ const MyCalendarDate = props => {
   const cx = {
     textAlign: 'center',
     fontSize: '0.8em',
-    color: props.isOutside || props.isBlocked ? 'lightgrey' : 'inherit',
-    backgroundColor: props.isSelected ? '#eee' : 'inherit',
+    color: props.isOutside || props.isBlocked ? colorGray100 : 'inherit',
+    backgroundColor: props.isSelected ? colorGray300 : 'inherit',
   };
   const priceCx = {
-    color: 'rgb(255, 84, 82)',
+    color: colorRed500,
   };
   const day = props.date.getDate();
   const price = props.prices[day - 1];
   if (price < 100) {
-    priceCx.color = 'rgb(0, 215, 117)';
+    priceCx.color = colorGreen500;
   }
   return (
     <div style={cx}>
@@ -187,7 +194,7 @@ class MonthViewCalendar extends Component {
           style={{
             flexShrink: 1,
             margin: '0 2rem',
-            borderRight: '1px solid #e6e4eb',
+            borderRight: `1px solid ${colorGray100}`,
           }}
         />
         <MyReturnCalendar

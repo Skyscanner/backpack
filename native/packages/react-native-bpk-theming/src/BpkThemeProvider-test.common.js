@@ -19,6 +19,7 @@
 import { Text } from 'react-native';
 import React from 'react';
 import renderer from 'react-test-renderer';
+import { colorWhite } from 'bpk-tokens/tokens/base.react.native';
 
 import BpkThemeProvider from './BpkThemeProvider';
 
@@ -27,7 +28,7 @@ const commonTests = () => {
     it('should render correctly', () => {
       const tree = renderer
         .create(
-          <BpkThemeProvider theme={{ color: 'white' }}>
+          <BpkThemeProvider theme={{ color: colorWhite }}>
             <Text>Lorem ipsum</Text>
           </BpkThemeProvider>,
         )

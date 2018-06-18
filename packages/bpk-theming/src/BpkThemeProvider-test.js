@@ -18,6 +18,7 @@
 
 import React from 'react';
 import renderer from 'react-test-renderer';
+import { colorWhite } from 'bpk-tokens/tokens/base.es6';
 
 import BpkThemeProvider from './BpkThemeProvider';
 
@@ -26,7 +27,7 @@ describe('BpkThemeProvider', () => {
     const tree = renderer
       .create(
         <BpkThemeProvider
-          theme={{ color: 'white' }}
+          theme={{ color: colorWhite }}
           themeAttributes={['color']}
         >
           <p>Lorem Ipsum</p>
@@ -40,7 +41,7 @@ describe('BpkThemeProvider', () => {
     const tree = renderer
       .create(
         <BpkThemeProvider
-          theme={{ color: 'white' }}
+          theme={{ color: colorWhite }}
           themeAttributes={['color']}
           id="arbitrary"
         >
@@ -55,7 +56,7 @@ describe('BpkThemeProvider', () => {
     const tree = renderer
       .create(
         <BpkThemeProvider
-          theme={{ color: 'white', background: 'black' }}
+          theme={{ color: colorWhite, background: 'black' }}
           themeAttributes={[['color'], ['background']]}
         >
           <p>Lorem Ipsum</p>
@@ -82,7 +83,7 @@ describe('BpkThemeProvider', () => {
     const tree = renderer
       .create(
         <BpkThemeProvider
-          theme={{ a: 'a', color: 'white' }}
+          theme={{ a: 'a', color: colorWhite }}
           themeAttributes={['color']}
         >
           <p>Lorem Ipsum</p>
