@@ -164,7 +164,7 @@
       "category": "font-sizes"
     },
     "TEXT_XXL_FONT_WEIGHT": {
-      "value": "{!FONT_WEIGHT_HEAVY}",
+      "value": "{!FONT_WEIGHT_BOLD}",
       "type": "string",
       "category": "font-weights"
     },

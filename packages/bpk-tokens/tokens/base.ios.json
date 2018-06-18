@@ -897,10 +897,10 @@
       "name": "textXxlFontSize"
     },
     {
-      "value": "900",
+      "value": "700",
       "type": "string",
       "category": "font-weights",
-      "originalValue": "{!FONT_WEIGHT_HEAVY}",
+      "originalValue": "{!FONT_WEIGHT_BOLD}",
       "name": "textXxlFontWeight"
     },
     {

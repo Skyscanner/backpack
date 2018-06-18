@@ -23,7 +23,7 @@ exports[`IOS BpkCarousel should render correctly 1`] = `
           >
             <BpkText
               emphasize={false}
-              style={Object {}}
+              style={null}
               textStyle="base"
             >
               View 1
@@ -137,7 +137,7 @@ exports[`IOS BpkCarousel should render correctly with an "accessibilityLabel" fu
           >
             <BpkText
               emphasize={false}
-              style={Object {}}
+              style={null}
               textStyle="base"
             >
               View 1
@@ -251,7 +251,7 @@ exports[`IOS BpkCarousel should render correctly without indicators 1`] = `
           >
             <BpkText
               emphasize={false}
-              style={Object {}}
+              style={null}
               textStyle="base"
             >
               View 1

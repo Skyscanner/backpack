@@ -30,7 +30,6 @@ exports[`BpkTouchableOverlay should render correctly 1`] = `
           "fontSize": 15,
           "fontWeight": "400",
         },
-        Object {},
       ]
     }
   >
@@ -85,7 +84,6 @@ exports[`BpkTouchableOverlay should render correctly with arbitrary props 1`] = 
           "fontSize": 15,
           "fontWeight": "400",
         },
-        Object {},
       ]
     }
   >
@@ -140,7 +138,6 @@ exports[`BpkTouchableOverlay should render correctly with border radius props 1`
           "fontSize": 15,
           "fontWeight": "400",
         },
-        Object {},
       ]
     }
   >
@@ -198,7 +195,6 @@ exports[`BpkTouchableOverlay should render correctly with custom overlay styles 
           "fontSize": 15,
           "fontWeight": "400",
         },
-        Object {},
       ]
     }
   >
@@ -260,7 +256,6 @@ exports[`BpkTouchableOverlay should render correctly with custom style prop 1`] 
           "fontSize": 15,
           "fontWeight": "400",
         },
-        Object {},
       ]
     }
   >

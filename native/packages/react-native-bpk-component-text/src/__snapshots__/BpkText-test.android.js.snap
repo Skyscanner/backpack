@@ -13,7 +13,6 @@ exports[`Android BpkText should render correctly 1`] = `
         "fontSize": 16,
         "fontWeight": "400",
       },
-      Object {},
     ]
   }
 >
@@ -37,7 +36,6 @@ exports[`Android BpkText should render correctly with \`emphasize\` prop 1`] = `
       Object {
         "fontFamily": "sans-serif-medium",
       },
-      Object {},
     ]
   }
 >
@@ -58,7 +56,6 @@ exports[`Android BpkText should render correctly with textStyle="base" 1`] = `
         "fontSize": 16,
         "fontWeight": "400",
       },
-      Object {},
     ]
   }
 >
@@ -79,7 +76,6 @@ exports[`Android BpkText should render correctly with textStyle="lg" 1`] = `
         "fontSize": 20,
         "fontWeight": "400",
       },
-      Object {},
     ]
   }
 >
@@ -100,7 +96,6 @@ exports[`Android BpkText should render correctly with textStyle="sm" 1`] = `
         "fontSize": 14,
         "fontWeight": "400",
       },
-      Object {},
     ]
   }
 >
@@ -121,7 +116,6 @@ exports[`Android BpkText should render correctly with textStyle="xl" 1`] = `
         "fontSize": 24,
         "fontWeight": "400",
       },
-      Object {},
     ]
   }
 >
@@ -142,7 +136,6 @@ exports[`Android BpkText should render correctly with textStyle="xs" 1`] = `
         "fontSize": 12,
         "fontWeight": "400",
       },
-      Object {},
     ]
   }
 >
@@ -163,7 +156,6 @@ exports[`Android BpkText should render correctly with textStyle="xxl" 1`] = `
         "fontSize": 34,
         "fontWeight": "400",
       },
-      Object {},
     ]
   }
 >

@@ -22,7 +22,6 @@ exports[`Android BpkCarouselItem should render correctly 1`] = `
           "fontSize": 15,
           "fontWeight": "400",
         },
-        Object {},
       ]
     }
   >

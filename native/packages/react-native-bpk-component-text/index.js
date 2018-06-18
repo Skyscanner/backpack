@@ -16,7 +16,10 @@
  * limitations under the License.
  */
 
-import BpkText, { TEXT_STYLES } from './src/BpkText';
+/* @flow */
+
+import BpkText from './src/BpkText';
+import { TEXT_STYLES } from './src/common-types';
 
 export default BpkText;
 export { TEXT_STYLES };

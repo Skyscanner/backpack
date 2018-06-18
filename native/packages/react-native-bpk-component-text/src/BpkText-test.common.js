@@ -16,10 +16,14 @@
  * limitations under the License.
  */
 
-import { StyleSheet } from 'react-native';
+/* @flow */
+
 import React from 'react';
+import { StyleSheet } from 'react-native';
 import renderer from 'react-test-renderer';
-import BpkText, { TEXT_STYLES } from './BpkText';
+
+import BpkText from './BpkText';
+import { TEXT_STYLES } from './common-types';
 
 const commonTests = () => {
   describe('BpkText', () => {
@@ -81,8 +85,10 @@ const commonTests = () => {
       expect(
         BpkText.propTypes.emphasize(
           {
+            children: 'Lorem ipsum.',
             textStyle: 'sm',
             emphasize: true,
+            style: null,
           },
           'emphasize',
           'BpkText',
@@ -95,8 +101,11 @@ const commonTests = () => {
         BpkText.propTypes
           .emphasize(
             {
+              children: 'Lorem ipsum.',
               textStyle: 'sm',
+              // $FlowFixMe
               emphasize: 'asdf',
+              style: null,
             },
             'emphasize',
             'BpkText',
@@ -111,6 +120,9 @@ const commonTests = () => {
       expect(
         BpkText.propTypes.style(
           {
+            children: 'Lorem ipsum.',
+            textStyle: 'base',
+            emphasize: false,
             style: StyleSheet.create({
               breakingStyle: {
                 margin: 10,
@@ -128,6 +140,9 @@ const commonTests = () => {
         BpkText.propTypes
           .style(
             {
+              children: 'Lorem ipsum.',
+              textStyle: 'base',
+              emphasize: false,
               style: StyleSheet.create({
                 breakingStyle: {
                   fontWeight: '200',
@@ -142,10 +157,14 @@ const commonTests = () => {
         'Error: Invalid prop `style` with `fontWeight` value `200` supplied to `BpkText`. Use `emphasize` prop instead.',
       ); // eslint-disable-line max-len
     });
+
     it('should return false on undefined style', () => {
       expect(
         BpkText.propTypes.style(
           {
+            children: 'Lorem ipsum.',
+            textStyle: 'base',
+            emphasize: false,
             style: undefined,
           },
           'style',

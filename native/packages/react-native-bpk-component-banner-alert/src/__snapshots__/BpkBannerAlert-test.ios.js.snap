@@ -939,7 +939,6 @@ exports[`iOS BpkBannerAlert should render correctly with children provided (expa
                   "fontSize": 13,
                   "fontWeight": "400",
                 },
-                Object {},
               ]
             }
           >
@@ -971,7 +970,6 @@ exports[`iOS BpkBannerAlert should render correctly with children provided (expa
                   "fontSize": 13,
                   "fontWeight": "400",
                 },
-                Object {},
               ]
             }
           >
@@ -1153,7 +1151,6 @@ exports[`iOS BpkBannerAlert should render correctly with children provided (expa
                   "fontSize": 13,
                   "fontWeight": "400",
                 },
-                Object {},
               ]
             }
           >
@@ -1185,7 +1182,6 @@ exports[`iOS BpkBannerAlert should render correctly with children provided (expa
                   "fontSize": 13,
                   "fontWeight": "400",
                 },
-                Object {},
               ]
             }
           >
@@ -1703,7 +1699,6 @@ exports[`iOS BpkBannerAlert should render correctly with expanded 1`] = `
                   "fontSize": 13,
                   "fontWeight": "400",
                 },
-                Object {},
               ]
             }
           >
@@ -1735,7 +1730,6 @@ exports[`iOS BpkBannerAlert should render correctly with expanded 1`] = `
                   "fontSize": 13,
                   "fontWeight": "400",
                 },
-                Object {},
               ]
             }
           >
@@ -1917,7 +1911,6 @@ exports[`iOS BpkBannerAlert should render correctly with expanded 1`] = `
                   "fontSize": 13,
                   "fontWeight": "400",
                 },
-                Object {},
               ]
             }
           >
@@ -1949,7 +1942,6 @@ exports[`iOS BpkBannerAlert should render correctly with expanded 1`] = `
                   "fontSize": 13,
                   "fontWeight": "400",
                 },
-                Object {},
               ]
             }
           >

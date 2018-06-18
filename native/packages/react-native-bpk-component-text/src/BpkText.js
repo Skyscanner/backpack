@@ -16,9 +16,9 @@
  * limitations under the License.
  */
 
+/* @flow */
+
 import React from 'react';
-import PropTypes from 'prop-types';
-import { Text, Platform, StyleSheet } from 'react-native';
 import {
   colorGray700,
   fontFamily,
@@ -37,10 +37,10 @@ import {
   textXxlFontSize,
   textXxlFontWeight,
 } from 'bpk-tokens/tokens/base.react.native';
+import { Text, Platform, StyleSheet } from 'react-native';
 
-import { emphasizePropType, stylePropType } from './customPropTypes';
-
-const TEXT_STYLES = ['xs', 'sm', 'base', 'lg', 'xl', 'xxl'];
+import { shouldApplyFontWeightFix } from './font-weight-fix';
+import { propTypes, defaultProps, type Props } from './common-types';
 
 const TEXT_TOKENS = {
   textXsFontSize,
@@ -94,40 +94,40 @@ const styles = StyleSheet.create({
   xxl: { ...getStyleByTextStyle('xxl') },
 });
 
-const BpkText = props => {
-  const { children, textStyle, style, emphasize, ...rest } = props;
+const BpkText = (props: Props) => {
+  const { children, textStyle, style: userStyle, emphasize, ...rest } = props;
 
-  const finalStyle = [styles[textStyle]];
+  const style = [styles[textStyle]];
   // Emphasize on iOS is not supported for the XXL size. This is also checked with
   // the `emphasizePropType` prop.
   const shouldEmpasize =
     emphasize && !(Platform.OS === 'ios' && textStyle === 'xxl');
 
   if (shouldEmpasize) {
-    finalStyle.push(getEmphasizeProperties(props));
+    style.push(getEmphasizeProperties());
+
+    if (shouldApplyFontWeightFix) {
+      style.push({ fontWeight: '700' });
+    }
   }
 
-  finalStyle.push(style);
+  if (shouldApplyFontWeightFix && textStyle === 'xxl') {
+    style.push({ fontWeight: '800' });
+  }
+
+  if (userStyle) {
+    style.push(userStyle);
+  }
 
   return (
-    <Text style={finalStyle} {...rest}>
+    <Text style={style} {...rest}>
       {children}
     </Text>
   );
 };
 
-BpkText.propTypes = {
-  children: PropTypes.node.isRequired,
-  textStyle: PropTypes.oneOf(TEXT_STYLES),
-  emphasize: emphasizePropType,
-  style: stylePropType,
-};
+BpkText.propTypes = { ...propTypes };
 
-BpkText.defaultProps = {
-  textStyle: 'base',
-  emphasize: false,
-  style: {},
-};
+BpkText.defaultProps = { ...defaultProps };
 
 export default BpkText;
-export { TEXT_STYLES };

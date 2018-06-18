@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+/* @flow */
+
 import React from 'react';
 import renderer from 'react-test-renderer';
 import BpkText from './BpkText';
@@ -29,19 +31,22 @@ describe('iOS', () => {
       BpkText.propTypes
         .emphasize(
           {
+            children: 'Lorem ipsum.',
             textStyle: 'xxl',
             emphasize: true,
+            style: null,
           },
           'emphasize',
           'BpkText',
         )
         .toString(),
     ).toEqual(
-      'Error: Invalid prop `emphasize` of value `true` supplied to `BpkText`. `textStyle` value of `xxl` cannot be emphasized.',
-    ); // eslint-disable-line max-len
+      'Error: Invalid prop `emphasize` of value `true` supplied to `BpkText`. On iOS, `textStyle` value of `xxl` cannot be emphasized.',
+    );
   });
 
   it('should not apply `emphasize` for textStyle="xxl"', () => {
+    jest.spyOn(console, 'error').mockImplementation(() => null);
     const tree = renderer
       .create(
         <BpkText emphasize textStyle="xxl">

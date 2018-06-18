@@ -912,7 +912,6 @@ exports[`Android BpkBannerAlert should render correctly with children provided (
                   "fontSize": 14,
                   "fontWeight": "400",
                 },
-                Object {},
               ]
             }
           >
@@ -944,7 +943,6 @@ exports[`Android BpkBannerAlert should render correctly with children provided (
                   "fontSize": 14,
                   "fontWeight": "400",
                 },
-                Object {},
               ]
             }
           >
@@ -1115,7 +1113,6 @@ exports[`Android BpkBannerAlert should render correctly with children provided (
                   "fontSize": 14,
                   "fontWeight": "400",
                 },
-                Object {},
               ]
             }
           >
@@ -1147,7 +1144,6 @@ exports[`Android BpkBannerAlert should render correctly with children provided (
                   "fontSize": 14,
                   "fontWeight": "400",
                 },
-                Object {},
               ]
             }
           >
@@ -1662,7 +1658,6 @@ exports[`Android BpkBannerAlert should render correctly with expanded 1`] = `
                   "fontSize": 14,
                   "fontWeight": "400",
                 },
-                Object {},
               ]
             }
           >
@@ -1694,7 +1689,6 @@ exports[`Android BpkBannerAlert should render correctly with expanded 1`] = `
                   "fontSize": 14,
                   "fontWeight": "400",
                 },
-                Object {},
               ]
             }
           >
@@ -1865,7 +1859,6 @@ exports[`Android BpkBannerAlert should render correctly with expanded 1`] = `
                   "fontSize": 14,
                   "fontWeight": "400",
                 },
-                Object {},
               ]
             }
           >
@@ -1897,7 +1890,6 @@ exports[`Android BpkBannerAlert should render correctly with expanded 1`] = `
                   "fontSize": 14,
                   "fontWeight": "400",
                 },
-                Object {},
               ]
             }
           >
