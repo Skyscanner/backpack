@@ -13,7 +13,9 @@
 
 <resources>
 
-    <color name="accent">#00b2d6</color>
+    <color name="accent">@color/bpkBlue500</color>
+
+    <!--default background on API level 26 onwards -->
     <color name="background">#FAFAFA</color>
 
 </resources>
