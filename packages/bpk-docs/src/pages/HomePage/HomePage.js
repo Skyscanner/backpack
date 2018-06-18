@@ -41,7 +41,7 @@ import DesignTokensIcon from '../../static/design_tokens_icon.svg';
 import GitHubIcon from '../../static/github_icon.svg';
 import UsingBackpackIcon from '../../static/using_bpk_icon.svg';
 import StyleGuideIcon from '../../static/style_guide_icon.svg';
-import BackpackLogoWhite from '../../static/backpack-logo-white.svg';
+import BackpackLogoWhite from '../../static/backpack-logo-pride.svg';
 import HeroImage from '../../static/hero.jpg';
 import LondonHeroImage from '../../static/london_hero.jpg';
 import HongKongHeroImage from '../../static/hongKong_hero.jpg';
