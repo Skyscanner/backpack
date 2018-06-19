@@ -1,6 +1,16 @@
 # Backpack changelog
 
 [Unreleased changes](./unreleased.md).
+
+# 2018-06-19 - Introduce native carousel component.
+
+**Added:**
+- react-native-bpk-component-carousel: 1.0.0
+  - Introducing the React Native carousel component. See https://backpack.github.io/components/carousel?platform=native
+
+- react-native-bpk-component-carousel-indicator: 1.0.0
+  - Introducing the React Native carousel indicator component.
+
 # 2018-06-14 - Introduce breadcrumb component and infinite scroll, plus fixing invalid text combination for xxl on iOS.
 
 **Added:**
