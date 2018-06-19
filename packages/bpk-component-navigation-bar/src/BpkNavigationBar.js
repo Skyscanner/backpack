@@ -72,7 +72,7 @@ const BpkNavigationBar = (props: Props) => {
 };
 
 BpkNavigationBar.propTypes = {
-  title: PropTypes.element.isRequired,
+  title: PropTypes.oneOfType([PropTypes.element, PropTypes.string]).isRequired,
   className: PropTypes.string,
   leadingButton: PropTypes.element,
   trailingButton: PropTypes.element,
