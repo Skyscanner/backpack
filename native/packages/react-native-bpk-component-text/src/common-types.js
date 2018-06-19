@@ -16,9 +16,27 @@
  * limitations under the License.
  */
 
-import { Platform, StyleSheet } from 'react-native';
+/* @flow */
 
-export const emphasizePropType = (props, propName, componentName) => {
+import { type Node } from 'react';
+import PropTypes from 'prop-types';
+import { Platform, StyleSheet, type StyleObj } from 'react-native';
+
+export const TEXT_STYLES = ['xs', 'sm', 'base', 'lg', 'xl', 'xxl'];
+export type TextStyle = 'xs' | 'sm' | 'base' | 'lg' | 'xl' | 'xxl';
+
+export type Props = {
+  children: Node,
+  textStyle: TextStyle,
+  emphasize: boolean,
+  style: ?StyleObj,
+};
+
+export const emphasizePropType = (
+  props: Props,
+  propName: string,
+  componentName: string,
+) => {
   const value = props[propName];
   if (typeof value !== 'boolean') {
     return new Error(
@@ -30,14 +48,18 @@ export const emphasizePropType = (props, propName, componentName) => {
 
   if (Platform.OS === 'ios' && (enabled && props.textStyle === 'xxl')) {
     return new Error(
-      `Invalid prop \`${propName}\` of value \`${value}\` supplied to \`${componentName}\`. \`textStyle\` value of \`xxl\` cannot be emphasized.`,
+      `Invalid prop \`${propName}\` of value \`${value}\` supplied to \`${componentName}\`. On iOS, \`textStyle\` value of \`xxl\` cannot be emphasized.`,
     ); // eslint-disable-line max-len
   }
 
   return false;
 };
 
-export const stylePropType = (props, propName, componentName) => {
+export const stylePropType = (
+  props: Props,
+  propName: string,
+  componentName: string,
+) => {
   const value = StyleSheet.flatten(props[propName]);
 
   if (value === undefined) return false;
@@ -51,4 +73,17 @@ export const stylePropType = (props, propName, componentName) => {
   }
 
   return false;
+};
+
+export const propTypes = {
+  children: PropTypes.node.isRequired,
+  textStyle: PropTypes.oneOf(TEXT_STYLES),
+  emphasize: emphasizePropType,
+  style: stylePropType,
+};
+
+export const defaultProps = {
+  textStyle: 'base',
+  emphasize: false,
+  style: null,
 };

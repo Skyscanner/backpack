@@ -425,7 +425,6 @@ exports[`Android BpkButtonLink should support elements as icons 1`] = `
             "fontSize": 16,
             "fontWeight": "400",
           },
-          Object {},
         ]
       }
     >

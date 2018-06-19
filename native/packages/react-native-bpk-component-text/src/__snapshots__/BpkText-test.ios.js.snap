@@ -13,7 +13,6 @@ exports[`iOS BpkText should render correctly 1`] = `
         "fontSize": 15,
         "fontWeight": "400",
       },
-      Object {},
     ]
   }
 >
@@ -37,7 +36,6 @@ exports[`iOS BpkText should render correctly with \`emphasize\` prop 1`] = `
       Object {
         "fontWeight": "600",
       },
-      Object {},
     ]
   }
 >
@@ -58,7 +56,6 @@ exports[`iOS BpkText should render correctly with textStyle="base" 1`] = `
         "fontSize": 15,
         "fontWeight": "400",
       },
-      Object {},
     ]
   }
 >
@@ -79,7 +76,6 @@ exports[`iOS BpkText should render correctly with textStyle="lg" 1`] = `
         "fontSize": 17,
         "fontWeight": "400",
       },
-      Object {},
     ]
   }
 >
@@ -100,7 +96,6 @@ exports[`iOS BpkText should render correctly with textStyle="sm" 1`] = `
         "fontSize": 13,
         "fontWeight": "400",
       },
-      Object {},
     ]
   }
 >
@@ -121,7 +116,6 @@ exports[`iOS BpkText should render correctly with textStyle="xl" 1`] = `
         "fontSize": 20,
         "fontWeight": "400",
       },
-      Object {},
     ]
   }
 >
@@ -142,7 +136,6 @@ exports[`iOS BpkText should render correctly with textStyle="xs" 1`] = `
         "fontSize": 11,
         "fontWeight": "400",
       },
-      Object {},
     ]
   }
 >
@@ -163,7 +156,6 @@ exports[`iOS BpkText should render correctly with textStyle="xxl" 1`] = `
         "fontSize": 34,
         "fontWeight": "700",
       },
-      Object {},
     ]
   }
 >
@@ -207,7 +199,6 @@ exports[`iOS should not apply \`emphasize\` for textStyle="xxl" 1`] = `
         "fontSize": 34,
         "fontWeight": "700",
       },
-      Object {},
     ]
   }
 >

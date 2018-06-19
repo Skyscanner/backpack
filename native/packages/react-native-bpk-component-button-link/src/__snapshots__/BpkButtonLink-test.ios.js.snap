@@ -430,7 +430,6 @@ exports[`iOS BpkButtonLink should support elements as icons 1`] = `
             "fontSize": 15,
             "fontWeight": "400",
           },
-          Object {},
         ]
       }
     >

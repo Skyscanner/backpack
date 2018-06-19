@@ -28,7 +28,6 @@ exports[`iOS BpkPanel should render correctly 1`] = `
           "fontSize": 15,
           "fontWeight": "400",
         },
-        Object {},
       ]
     }
   >
@@ -66,7 +65,6 @@ exports[`iOS BpkPanel should render correctly with arbitrary props 1`] = `
           "fontSize": 15,
           "fontWeight": "400",
         },
-        Object {},
       ]
     }
   >
@@ -106,7 +104,6 @@ exports[`iOS BpkPanel should render correctly with custom style 1`] = `
           "fontSize": 15,
           "fontWeight": "400",
         },
-        Object {},
       ]
     }
   >
@@ -140,7 +137,6 @@ exports[`iOS BpkPanel should render correctly without padding 1`] = `
           "fontSize": 15,
           "fontWeight": "400",
         },
-        Object {},
       ]
     }
   >

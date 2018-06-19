@@ -18,10 +18,10 @@
 
 import React from 'react';
 import readme from 'react-native-bpk-component-text/readme.md';
-import iosScreenshot from 'react-native-bpk-component-text/screenshots/ios/text-styles.png';
-import androidScreenshot from 'react-native-bpk-component-text/screenshots/android/text-styles.png';
-import iosScreenshotBold from 'react-native-bpk-component-text/screenshots/ios/text-bold.png';
-import androidScreenshotBold from 'react-native-bpk-component-text/screenshots/android/text-bold.png';
+import iosScreenshot from 'react-native-bpk-component-text/screenshots/ios/default.png';
+import androidScreenshot from 'react-native-bpk-component-text/screenshots/android/default.png';
+import iosScreenshotBold from 'react-native-bpk-component-text/screenshots/ios/emphasize.png';
+import androidScreenshotBold from 'react-native-bpk-component-text/screenshots/android/emphasize.png';
 
 import DocsPageBuilder from './../../components/DocsPageBuilder';
 

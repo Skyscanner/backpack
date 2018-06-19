@@ -102,12 +102,6 @@
     "FONT_SIZE_XXL": {
       "value": 34
     },
-    "FONT_WEIGHT_BLACK": {
-      "value": "900"
-    },
-    "FONT_WEIGHT_BOLD": {
-      "value": "700"
-    },
     "FONT_WEIGHT_MEDIUM": {
       "value": "500"
     },
