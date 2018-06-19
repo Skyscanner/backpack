@@ -19,9 +19,9 @@ exports[`iOS BpkNudger should disable theming if the required attribute is omitt
         4294967295,
       ]
     }
-    end={undefined}
+    endPoint={undefined}
     locations={null}
-    start={undefined}
+    startPoint={undefined}
     style={
       Array [
         Array [
@@ -182,9 +182,9 @@ exports[`iOS BpkNudger should disable theming if the required attribute is omitt
         4294967295,
       ]
     }
-    end={undefined}
+    endPoint={undefined}
     locations={null}
-    start={undefined}
+    startPoint={undefined}
     style={
       Array [
         Array [
@@ -336,9 +336,9 @@ exports[`iOS BpkNudger should render correctly 1`] = `
         4294967295,
       ]
     }
-    end={undefined}
+    endPoint={undefined}
     locations={null}
-    start={undefined}
+    startPoint={undefined}
     style={
       Array [
         Array [
@@ -499,9 +499,9 @@ exports[`iOS BpkNudger should render correctly 1`] = `
         4294967295,
       ]
     }
-    end={undefined}
+    endPoint={undefined}
     locations={null}
-    start={undefined}
+    startPoint={undefined}
     style={
       Array [
         Array [
@@ -653,9 +653,9 @@ exports[`iOS BpkNudger should render correctly when value is a not an integer 1`
         4293321963,
       ]
     }
-    end={undefined}
+    endPoint={undefined}
     locations={null}
-    start={undefined}
+    startPoint={undefined}
     style={
       Array [
         Array [
@@ -827,9 +827,9 @@ exports[`iOS BpkNudger should render correctly when value is a not an integer 1`
         4294967295,
       ]
     }
-    end={undefined}
+    endPoint={undefined}
     locations={null}
-    start={undefined}
+    startPoint={undefined}
     style={
       Array [
         Array [
@@ -981,9 +981,9 @@ exports[`iOS BpkNudger should render correctly when value is greater than max 1`
         4294967295,
       ]
     }
-    end={undefined}
+    endPoint={undefined}
     locations={null}
-    start={undefined}
+    startPoint={undefined}
     style={
       Array [
         Array [
@@ -1144,9 +1144,9 @@ exports[`iOS BpkNudger should render correctly when value is greater than max 1`
         4293321963,
       ]
     }
-    end={undefined}
+    endPoint={undefined}
     locations={null}
-    start={undefined}
+    startPoint={undefined}
     style={
       Array [
         Array [
@@ -1309,9 +1309,9 @@ exports[`iOS BpkNudger should render correctly when value is less than min 1`] =
         4293321963,
       ]
     }
-    end={undefined}
+    endPoint={undefined}
     locations={null}
-    start={undefined}
+    startPoint={undefined}
     style={
       Array [
         Array [
@@ -1483,9 +1483,9 @@ exports[`iOS BpkNudger should render correctly when value is less than min 1`] =
         4294967295,
       ]
     }
-    end={undefined}
+    endPoint={undefined}
     locations={null}
-    start={undefined}
+    startPoint={undefined}
     style={
       Array [
         Array [
@@ -1637,9 +1637,9 @@ exports[`iOS BpkNudger should support theming 1`] = `
         4294967040,
       ]
     }
-    end={undefined}
+    endPoint={undefined}
     locations={null}
-    start={undefined}
+    startPoint={undefined}
     style={
       Array [
         Array [
@@ -1804,9 +1804,9 @@ exports[`iOS BpkNudger should support theming 1`] = `
         4294967040,
       ]
     }
-    end={undefined}
+    endPoint={undefined}
     locations={null}
-    start={undefined}
+    startPoint={undefined}
     style={
       Array [
         Array [
