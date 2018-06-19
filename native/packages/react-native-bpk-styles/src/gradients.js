@@ -17,18 +17,6 @@
  */
 /* @flow */
 
-/*
- * iOS 11
- *
- * With define: UIFontWeightSemibold: 0x3fd3333333333333
- * Without define: UIFontWeightSemibold: 0x3fd3333340000000
- *
- * iOS 10
- *
- * With define: UIFontWeightSemibold: 0x3fd3333333333333
- * Without define: UIFontWeightSemibold: 0x3fd3333340000000
- */
-
 import { colorBlue500 } from 'bpk-tokens/tokens/base.react.native';
 
 const ANGLES = {

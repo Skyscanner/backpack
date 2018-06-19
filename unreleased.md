@@ -3,7 +3,7 @@
 **Breaking:**
 
 - react-native-bpk-component-button:
-  - `react-native-line-gradient` is now a peer dependency instead of a dependency. The dependency is temporarily on `skyscanner/react-native-linear-gradient#new-gradient-implementation`.
+  - `react-native-linear-gradient` is now a peer dependency instead of a dependency. The dependency is temporarily on `skyscanner/react-native-linear-gradient#new-gradient-implementation`.
 
 **Added:**
 

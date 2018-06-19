@@ -10,7 +10,7 @@ npm install react-native-bpk-styles --save-dev
 
 ## Shadows
 
-The package includes definitions for the Backpack shadows. These are available as objects that can be spread in style definitions. These are iOS only and need to be complimented with an appropriate elevation for Android.
+The package includes definitions for the Backpack shadows. These are available as objects that can be spread in style definitions. These are iOS only and need to be complemented with an appropriate elevation for Android.
 
 
 ### Usage
