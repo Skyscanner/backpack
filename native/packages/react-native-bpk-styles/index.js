@@ -17,9 +17,10 @@
  */
 
 import shadows from './src/shadows';
+import gradients from './src/gradients';
 
 /*
 The below eslint-opt-out can be removed once this module exports
 multiple objects.
 */
-export { shadows }; // eslint-disable-line import/prefer-default-export
+export { shadows, gradients }; // eslint-disable-line import/prefer-default-export

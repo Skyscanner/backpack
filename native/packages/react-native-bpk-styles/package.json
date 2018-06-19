@@ -11,9 +11,11 @@
   "license": "Apache-2.0",
   "peerDependencies": {
     "react": "^16.0.0-alpha.1",
-    "react-native": ">= 0.47.0"
+    "react-native": ">= 0.47.0",
+    "react-native-linear-gradient": "skyscanner/react-native-linear-gradient#new-gradient-implementation"
   },
   "devDependencies": {
-    "bpk-tokens": "^27.0.2"
+    "bpk-tokens": "^27.0.2",
+    "react-native-bpk-component-text": "^2.1.39"
   }
 }

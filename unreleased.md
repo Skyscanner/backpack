@@ -1,3 +1,12 @@
 # Unreleased
 
-_Nothing yet..._
+**Breaking:**
+
+- react-native-bpk-component-button:
+  - `react-native-line-gradient` is now a peer dependency instead of a dependency. The dependency is temporarily on `skyscanner/react-native-linear-gradient#new-gradient-implementation`.
+
+**Added:**
+
+- react-native-bpk-styles:
+  - Added defintitions for the Skyscanner primary gradient. `react-native-bpk-styles` now has a peer depedency on `react-native-linear-gradient`.
+
