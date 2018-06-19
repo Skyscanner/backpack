@@ -36,7 +36,7 @@ const components = [
     id: 'default',
     title: 'Default',
     examples: [
-      <BpkBreadcrumb>
+      <BpkBreadcrumb label="Example breadcrumbs">
         <BpkBreadcrumbItem href="">Home</BpkBreadcrumbItem>
         <BpkBreadcrumbItem href="">Page 1</BpkBreadcrumbItem>
         <BpkBreadcrumbItem href="" active>
