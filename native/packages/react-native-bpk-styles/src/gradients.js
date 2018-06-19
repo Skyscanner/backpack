@@ -32,6 +32,7 @@ const ANGLES = {
 
 type Angle = $Keys<typeof ANGLES>;
 
+// Direction from start to end
 const ANGLES_TO_START_END = {
   [ANGLES.down]: {
     start: [0.5, 0.0],
@@ -49,19 +50,19 @@ const ANGLES_TO_START_END = {
     start: [0.5, 1.0],
     end: [0.5, 0.0],
   },
-  [ANGLES.topLeft]: {
+  [ANGLES.bottomRight]: {
     start: [0.0, 0.0],
     end: [1.0, 1.0],
   },
-  [ANGLES.topRight]: {
+  [ANGLES.bottomLeft]: {
     start: [1.0, 0.0],
     end: [0.0, 1.0],
   },
-  [ANGLES.bottomLeft]: {
+  [ANGLES.topRight]: {
     start: [0.0, 1.0],
     end: [1.0, 0.0],
   },
-  [ANGLES.bottomRight]: {
+  [ANGLES.topLeft]: {
     start: [1.0, 1.0],
     end: [0.0, 0.0],
   },
@@ -72,10 +73,10 @@ const gradientLight = '#02DDD8';
 export const startAndEndFromAngle = (angle: Angle) =>
   Object.keys(ANGLES_TO_START_END).includes(angle)
     ? ANGLES_TO_START_END[angle]
-    : ANGLES_TO_START_END[ANGLES.topLeft];
+    : ANGLES_TO_START_END[ANGLES.bottomRight];
 
 export default {
-  primary: (angle: Angle = ANGLES.topLeft) => {
+  primary: (angle: Angle = ANGLES.bottomRight) => {
     const { start, end } = startAndEndFromAngle(angle);
 
     return {

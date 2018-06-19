@@ -89,7 +89,7 @@ export default MyComponent;
 
 ### API
 
-The `gradients.primary` function takes an optional argument indicating the direction of the gradient. The valid directions are avaialble in `gradients.ANGLES` and are:
+The `gradients.primary` function takes an optional argument indicating the direction(given by the start to end) of the gradient. The valid directions are avaialble in `gradients.ANGLES` and are:
 
 + `ANGLES.down`
 + `ANGLES.right`
