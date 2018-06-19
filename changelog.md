@@ -2,6 +2,12 @@
 
 [Unreleased changes](./unreleased.md).
 
+# 2018-06-19 - Native text font-weight fix for iOS 11 + RN 0.55.X
+
+- react-native-bpk-component-text: 2.1.38 => 2.1.39
+  - An iOS 11 + React Native 0.55.X specific fix to render font-weight correctly. Affects text styles `xs`, `sm`, `base`, `lg`, `xl` when they are `emphasize`'d and `xxl` regardless of emphasis.
+  - Added flow types
+
 # 2018-06-19 - Introduce native carousel component.
 
 **Added:**
