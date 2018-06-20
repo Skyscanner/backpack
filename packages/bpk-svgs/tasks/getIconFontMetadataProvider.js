@@ -61,18 +61,16 @@ export default (codepointsPath: string) => {
         return obj;
       }, {});
 
-    const newFileContents = `${JSON.stringify(sortedCodepoints, null, 2)}\n`;
-
-    return fs.writeFile(absolutePath, newFileContents, err => {
-      const data = err
-        ? null
-        : {
-            path: file,
-            name,
-            unicode: [String.fromCodePoint(codepoints[name])],
-          };
-
-      callback(err, data);
-    });
+    try {
+      const newFileContents = `${JSON.stringify(sortedCodepoints, null, 2)}\n`;
+      fs.writeFileSync(absolutePath, newFileContents);
+      return callback(null, {
+        path: file,
+        name,
+        unicode: [String.fromCodePoint(codepoints[name])],
+      });
+    } catch (err) {
+      return callback(err, null);
+    }
   };
 };
