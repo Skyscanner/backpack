@@ -40,9 +40,9 @@ const getClassName = cssModules(STYLES);
 const withScrim = WrappedComponent => {
   class WithScrim extends Component {
     static propTypes = {
-      dark: PropTypes.bool,
       getApplicationElement: PropTypes.func.isRequired,
       onClose: onClosePropType,
+      dark: PropTypes.bool,
       isIphone: PropTypes.bool,
       isIpad: PropTypes.bool,
       containerClassName: PropTypes.string,
