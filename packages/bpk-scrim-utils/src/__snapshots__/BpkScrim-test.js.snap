@@ -8,3 +8,12 @@ exports[`BpkScrim should render correctly 1`] = `
   role="presentation"
 />
 `;
+
+exports[`BpkScrim should render correctly with dark="true" 1`] = `
+<div
+  className="bpk-scrim bpk-scrim--dark"
+  onMouseDown={null}
+  onTouchStart={null}
+  role="presentation"
+/>
+`;

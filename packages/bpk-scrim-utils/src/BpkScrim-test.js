@@ -25,4 +25,9 @@ describe('BpkScrim', () => {
     const tree = renderer.create(<BpkScrim />).toJSON();
     expect(tree).toMatchSnapshot();
   });
+
+  it('should render correctly with dark="true"', () => {
+    const tree = renderer.create(<BpkScrim dark />).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 });
