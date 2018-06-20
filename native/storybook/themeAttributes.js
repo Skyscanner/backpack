@@ -19,6 +19,8 @@
 const theme = {
   contentColor: '#2d244c',
   contentGray: '#757380',
+  // Because it's a theme, Backpack tokens shouldn't be used.
+  // eslint-disable-next-line backpack/use-tokens
   backgroundColor: '#fff',
   brandColors: {
     gradientStart: '#fce134',
