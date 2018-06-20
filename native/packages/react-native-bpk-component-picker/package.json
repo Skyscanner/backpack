@@ -1,6 +1,6 @@
 {
   "name": "react-native-bpk-component-picker",
-  "version": "2.0.6",
+  "version": "2.0.7",
   "main": "index.js",
   "description": "Backpack React Native picker component.",
   "repository": {
@@ -16,13 +16,13 @@
   "dependencies": {
     "bpk-tokens": "^27.0.2",
     "prop-types": "^15.5.8",
-    "react-native-bpk-component-button-link": "^3.0.7",
+    "react-native-bpk-component-button-link": "^3.0.8",
     "react-native-bpk-component-icon": "^1.8.4",
     "react-native-bpk-component-text": "^2.1.39",
     "react-native-bpk-component-touchable-native-feedback": "^1.1.13",
-    "react-native-bpk-component-touchable-overlay": "^1.0.21"
+    "react-native-bpk-component-touchable-overlay": "^1.0.22"
   },
   "devDependencies": {
-    "react-native-bpk-component-select": "^1.0.5"
+    "react-native-bpk-component-select": "^1.0.6"
   }
 }

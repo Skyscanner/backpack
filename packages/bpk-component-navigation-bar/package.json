@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-navigation-bar",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "description": "Backpack nativation bar component.",
   "main": "index.js",
   "repository": {
