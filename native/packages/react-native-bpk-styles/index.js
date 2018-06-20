@@ -15,11 +15,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+/* @flow */
 
 import shadows from './src/shadows';
+import gradients, { type Angle } from './src/gradients';
 
-/*
-The below eslint-opt-out can be removed once this module exports
-multiple objects.
-*/
-export { shadows }; // eslint-disable-line import/prefer-default-export
+export type GradientAngle = Angle;
+export { shadows, gradients };

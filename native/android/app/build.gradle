@@ -167,6 +167,7 @@ dependencies {
     implementation "com.facebook.react:react-native:+" // From node_modules
     implementation 'net.skyscanner.backpack:Backpack:0.1.0'
     implementation project(':react-native-maps')
+    implementation project(':react-native-linear-gradient')
 }
 
 // Run this once to be able to run the application with BUCK
