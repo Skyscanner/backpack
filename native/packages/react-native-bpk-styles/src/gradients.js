@@ -30,7 +30,7 @@ const ANGLES = {
   bottomRight: 'bottomRight',
 };
 
-type Angle = $Keys<typeof ANGLES>;
+export type Angle = $Keys<typeof ANGLES>;
 
 // Direction from start to end
 const ANGLES_TO_START_END = {
