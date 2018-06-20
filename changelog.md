@@ -2,6 +2,12 @@
 
 [Unreleased changes](./unreleased.md).
 
+# 2018-06-20 - Add dark version of BpkScrim
+
+**Added:**
+- bpk-scrim-utils: 3.1.32 => 3.2.0
+  - Add new prop `dark` for an alternative dark appearance of the scrim.
+
 # 2018-06-20 - Add gradient definitions to React Native
 
 **Breaking:**
