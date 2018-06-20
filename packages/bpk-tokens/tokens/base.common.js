@@ -330,6 +330,8 @@ module.exports = {
   radioCheckedCircleColor: "rgb(0, 140, 168)",
   requiredColor: "rgb(255, 84, 82)",
   scrimBackgroundColor: "rgb(178, 174, 189)",
+  scrimDarkBackgroundColor: "rgb(37, 32, 51)",
+  scrimDarkOpacity: ".95",
   scrimInitialOpacity: "0",
   scrimMobileOpacity: "1",
   scrimOpacity: ".7",

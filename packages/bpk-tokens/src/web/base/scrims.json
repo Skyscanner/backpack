@@ -21,6 +21,14 @@
     "SCRIM_MOBILE_OPACITY": {
       "value": "1",
       "type": "number"
+    },
+    "SCRIM_DARK_BACKGROUND_COLOR": {
+      "value": "{!GRAY_900}",
+      "type": "color"
+    },
+    "SCRIM_DARK_OPACITY": {
+      "value": ".95",
+      "type": "number"
     }
   }
 }

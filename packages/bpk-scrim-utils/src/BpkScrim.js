@@ -15,6 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+/* @flow */
 
 import React from 'react';
 import PropTypes from 'prop-types';
@@ -24,7 +25,11 @@ import STYLES from './bpk-scrim.scss';
 
 const getClassName = cssModules(STYLES);
 
-const BpkScrim = props => (
+type Props = {
+  dark: boolean,
+  onClose: ?() => mixed,
+};
+const BpkScrim = (props: Props) => (
   <TransitionInitialMount
     appearClassName={getClassName('bpk-scrim--appear')}
     appearActiveClassName={getClassName('bpk-scrim--appear-active')}
@@ -32,7 +37,7 @@ const BpkScrim = props => (
   >
     <div
       role="presentation"
-      className={getClassName('bpk-scrim')}
+      className={getClassName('bpk-scrim', props.dark && 'bpk-scrim--dark')}
       onMouseDown={props.onClose}
       onTouchStart={props.onClose}
     />
@@ -40,10 +45,12 @@ const BpkScrim = props => (
 );
 
 BpkScrim.propTypes = {
+  dark: PropTypes.boolean,
   onClose: PropTypes.func,
 };
 
 BpkScrim.defaultProps = {
+  dark: false,
   onClose: null,
 };
 

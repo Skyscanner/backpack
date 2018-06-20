@@ -15,10 +15,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+/* @flow */
+
 import focusScope from 'a11y-focus-scope';
 import focusStore from 'a11y-focus-store';
 import PropTypes from 'prop-types';
-import React, { Component } from 'react';
+import React, { Component, type ComponentType } from 'react';
 import { cssModules, wrapDisplayName } from 'bpk-react-utils';
 
 import BpkScrim from './BpkScrim';
@@ -36,8 +38,45 @@ import { onClosePropType } from './customPropTypes';
 
 const getClassName = cssModules(STYLES);
 
-const withScrim = WrappedComponent => {
-  class WithScrim extends Component {
+type Props = {
+  dark: boolean,
+  getApplicationElement: () => HTMLElement,
+  onClose: () => mixed,
+  isIphone: boolean,
+  isIpad: boolean,
+  containerClassName: string,
+  closeOnScrimClick: boolean,
+};
+
+const withScrim = (
+  WrappedComponent: ComponentType<any>,
+): ComponentType<Props> => {
+  class WithScrim extends Component<Props, {}> {
+    dialogElement: ?HTMLElement;
+
+    static propTypes = {
+      dark: PropTypes.bool,
+      getApplicationElement: PropTypes.func.isRequired,
+      onClose: onClosePropType,
+      isIphone: PropTypes.bool,
+      isIpad: PropTypes.bool,
+      containerClassName: PropTypes.string,
+      closeOnScrimClick: PropTypes.bool,
+    };
+
+    static defaultProps = {
+      dark: false,
+      onClose: null,
+      isIphone: /iPhone/i.test(
+        typeof window !== 'undefined' ? window.navigator.platform : '',
+      ),
+      isIpad: /iPad/i.test(
+        typeof window !== 'undefined' ? window.navigator.platform : '',
+      ),
+      containerClassName: null,
+      closeOnScrimClick: true,
+    };
+
     componentDidMount() {
       const { isIphone, isIpad, getApplicationElement } = this.props;
       const applicationElement = getApplicationElement();
@@ -104,6 +143,7 @@ const withScrim = WrappedComponent => {
         isIpad,
         containerClassName,
         closeOnScrimClick,
+        dark,
         ...rest
       } = this.props;
 
@@ -115,7 +155,7 @@ const withScrim = WrappedComponent => {
 
       return (
         <div className={classNames.join(' ')}>
-          <BpkScrim onClose={closeOnScrimClick ? onClose : null} />
+          <BpkScrim onClose={closeOnScrimClick ? onClose : null} dark={dark} />
           <WrappedComponent
             {...rest}
             isIphone={isIphone}
@@ -129,27 +169,6 @@ const withScrim = WrappedComponent => {
   }
 
   WithScrim.displayName = wrapDisplayName(WrappedComponent, 'withScrim');
-
-  WithScrim.propTypes = {
-    getApplicationElement: PropTypes.func.isRequired,
-    onClose: onClosePropType,
-    isIphone: PropTypes.bool,
-    isIpad: PropTypes.bool,
-    containerClassName: PropTypes.string,
-    closeOnScrimClick: PropTypes.bool,
-  };
-
-  WithScrim.defaultProps = {
-    onClose: null,
-    isIphone: /iPhone/i.test(
-      typeof window !== 'undefined' ? window.navigator.platform : '',
-    ),
-    isIpad: /iPad/i.test(
-      typeof window !== 'undefined' ? window.navigator.platform : '',
-    ),
-    containerClassName: null,
-    closeOnScrimClick: true,
-  };
 
   return WithScrim;
 };
