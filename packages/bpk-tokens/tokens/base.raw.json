@@ -2467,6 +2467,20 @@
       "originalValue": "{!GRAY_300}",
       "name": "SCRIM_BACKGROUND_COLOR"
     },
+    "SCRIM_DARK_BACKGROUND_COLOR": {
+      "category": "scrims",
+      "value": "rgb(37, 32, 51)",
+      "type": "color",
+      "originalValue": "{!GRAY_900}",
+      "name": "SCRIM_DARK_BACKGROUND_COLOR"
+    },
+    "SCRIM_DARK_OPACITY": {
+      "category": "scrims",
+      "value": ".95",
+      "type": "number",
+      "originalValue": ".95",
+      "name": "SCRIM_DARK_OPACITY"
+    },
     "SCRIM_INITIAL_OPACITY": {
       "category": "scrims",
       "value": "0",
@@ -3165,6 +3179,8 @@
     "RADIO_CHECKED_CIRCLE_COLOR",
     "REQUIRED_COLOR",
     "SCRIM_BACKGROUND_COLOR",
+    "SCRIM_DARK_BACKGROUND_COLOR",
+    "SCRIM_DARK_OPACITY",
     "SCRIM_INITIAL_OPACITY",
     "SCRIM_MOBILE_OPACITY",
     "SCRIM_OPACITY",

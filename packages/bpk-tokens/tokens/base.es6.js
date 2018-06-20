@@ -328,6 +328,8 @@ export const pMarginTop = "0";
 export const radioCheckedCircleColor = "rgb(0, 140, 168)";
 export const requiredColor = "rgb(255, 84, 82)";
 export const scrimBackgroundColor = "rgb(178, 174, 189)";
+export const scrimDarkBackgroundColor = "rgb(37, 32, 51)";
+export const scrimDarkOpacity = ".95";
 export const scrimInitialOpacity = "0";
 export const scrimMobileOpacity = "1";
 export const scrimOpacity = ".7";
@@ -737,6 +739,8 @@ borderRadiusXs,
 };
 export const scrims = {
 scrimBackgroundColor,
+scrimDarkBackgroundColor,
+scrimDarkOpacity,
 scrimInitialOpacity,
 scrimMobileOpacity,
 scrimOpacity,
