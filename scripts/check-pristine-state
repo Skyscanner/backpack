@@ -10,7 +10,10 @@ const [...filesToIgnore] = process.argv;
 
 const exists = item => !!item;
 
-const isNotInList = list => item => list.indexOf(item) === -1;
+const isNotInList = list => item => {
+  const filtered = list.filter((pathToIgnore) => item.endsWith(pathToIgnore));
+  return filtered.length === 0;
+};
 
 const init = async () => {
   const { stdout } = await execAsync(command, {
@@ -26,8 +29,8 @@ const init = async () => {
   if (changedFiles.length) {
     console.log(
       `😰  Git shows some files have been changed (ignoring ${filesToIgnore.join(
-        ',',
-      )}). Changed files: ${changedFiles.join(',')}`,
+        ', ',
+      )}). Changed files: ${changedFiles.join(', ')}`,
     );
     process.exit(1);
   }
