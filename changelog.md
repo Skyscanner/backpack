@@ -11,20 +11,16 @@
 # 2018-06-20 - Add gradient definitions to React Native
 
 **Breaking:**
-
 - react-native-bpk-component-button: 6.0.15 => 7.0.0
   - `react-native-linear-gradient` is now a peer dependency instead of a dependency. The dependency is temporarily on `skyscanner/react-native-linear-gradient#new-gradient-implementation`.
 
 **Added:**
-
 - react-native-bpk-styles: 1.0.9 => 1.1.0
   - Added defintitions for the Skyscanner primary gradient. `react-native-bpk-styles` now has a peer depedency on `react-native-linear-gradient`.
 
 **Fixed:**
-
 - bpk-component-navigation-bar: 1.2.3 => 1.2.4
-  - `title` now accepts strings, in addition to nodes
-
+  - `title` now accepts strings, in addition to elements
 
 # 2018-06-19 - Native text font-weight fix for iOS 11 + RN 0.55.X
 

@@ -27,8 +27,29 @@ import BpkNavigationIconButton from './BpkNavigationBarIconButton';
 describe('BpkNavigationBar', () => {
   it('should render correctly', () => {
     const tree = renderer
-      .create(<BpkNavigationBar id="test" title="test" aria-label="test" />)
+      .create(<BpkNavigationBar id="test" title="test" />)
       .toJSON();
+
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('should render correctly with custom class', () => {
+    const tree = renderer
+      .create(
+        <BpkNavigationBar id="test" title="test" className="my-custom-class" />,
+      )
+      .toJSON();
+
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('should render correctly with arbitrary props', () => {
+    const tree = renderer
+      .create(
+        <BpkNavigationBar id="test" title="test" testID="arbitrary value" />,
+      )
+      .toJSON();
+
     expect(tree).toMatchSnapshot();
   });
 
@@ -50,6 +71,7 @@ describe('BpkNavigationBar', () => {
         />,
       )
       .toJSON();
+
     expect(tree).toMatchSnapshot();
   });
 
@@ -71,6 +93,7 @@ describe('BpkNavigationBar', () => {
         />,
       )
       .toJSON();
+
     expect(tree).toMatchSnapshot();
   });
 
@@ -92,6 +115,7 @@ describe('BpkNavigationBar', () => {
         />,
       )
       .toJSON();
+
     expect(tree).toMatchSnapshot();
   });
 });

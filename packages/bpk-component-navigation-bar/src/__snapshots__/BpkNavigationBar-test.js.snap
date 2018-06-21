@@ -2,7 +2,6 @@
 
 exports[`BpkNavigationBar should render correctly 1`] = `
 <nav
-  aria-label="test"
   aria-labelledby="test-bpk-navigation-bar-title"
   className="bpk-navigation-bar"
 >
@@ -66,13 +65,8 @@ exports[`BpkNavigationBar should render correctly with an element for the title 
   aria-labelledby="test-bpk-navigation-bar-title"
   className="bpk-navigation-bar"
 >
-  <span
-    className="bpk-text bpk-text--base bpk-text--bold bpk-navigation-bar__title"
-    id="test-bpk-navigation-bar-title"
-  >
-    <span>
-      test
-    </span>
+  <span>
+    test
   </span>
   <button
     aria-label="test"
@@ -83,5 +77,34 @@ exports[`BpkNavigationBar should render correctly with an element for the title 
   >
     <span />
   </button>
+</nav>
+`;
+
+exports[`BpkNavigationBar should render correctly with arbitrary props 1`] = `
+<nav
+  aria-labelledby="test-bpk-navigation-bar-title"
+  className="bpk-navigation-bar"
+  testID="arbitrary value"
+>
+  <span
+    className="bpk-text bpk-text--base bpk-text--bold bpk-navigation-bar__title"
+    id="test-bpk-navigation-bar-title"
+  >
+    test
+  </span>
+</nav>
+`;
+
+exports[`BpkNavigationBar should render correctly with custom class 1`] = `
+<nav
+  aria-labelledby="test-bpk-navigation-bar-title"
+  className="bpk-navigation-bar my-custom-class"
+>
+  <span
+    className="bpk-text bpk-text--base bpk-text--bold bpk-navigation-bar__title"
+    id="test-bpk-navigation-bar-title"
+  >
+    test
+  </span>
 </nav>
 `;

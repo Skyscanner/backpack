@@ -109,7 +109,7 @@ storiesOf('bpk-component-navigation-bar', module)
       />
     </div>
   ))
-  .add('With icon', () => (
+  .add('With logo', () => (
     <div className={getClassNames('bpk-navigation-bar-story')}>
       <BpkNavigationBar
         id="test"
