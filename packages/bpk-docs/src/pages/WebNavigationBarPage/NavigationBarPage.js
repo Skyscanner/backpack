@@ -31,7 +31,7 @@ import { cssModules } from 'bpk-react-utils';
 
 import DocsPageBuilder from './../../components/DocsPageBuilder';
 import Paragraph from './../../components/Paragraph';
-import AirlineIcon from './page-components';
+import AirlineLogo from './AirlineLogo';
 
 import STYLES from './NavigationBarPage.scss';
 
@@ -129,15 +129,7 @@ const components = [
       <div className={getClassNames('bpk-navigation-bar-example')}>
         <BpkNavigationBar
           id="default-bpk-nav"
-          title={
-            <span
-              className={getClassNames(
-                'bpk-navigation-bar-example__title-content-wrapper',
-              )}
-            >
-              <AirlineIcon />
-            </span>
-          }
+          title={<AirlineLogo />}
           leadingButton={
             <BpkNavigationBarIconButton
               onClick={() => {}}

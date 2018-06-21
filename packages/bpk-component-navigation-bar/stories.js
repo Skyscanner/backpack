@@ -25,13 +25,14 @@ import { withRtlSupport } from 'bpk-component-icon';
 import ArrowIcon from 'bpk-component-icon/sm/long-arrow-left';
 import CloseIcon from 'bpk-component-icon/sm/close';
 import { cssModules } from 'bpk-react-utils';
-import AirlineLogo from './stories-components';
 
 import BpkNavigationBar, {
   BpkNavigationBarButtonLink,
   BpkNavigationBarIconButton,
 } from './index';
+
 import STYLES from './stories.scss';
+import AirlineLogo from './AirlineLogo';
 
 const getClassNames = cssModules(STYLES);
 const ArrowIconWithRtl = withRtlSupport(ArrowIcon);
@@ -109,19 +110,11 @@ storiesOf('bpk-component-navigation-bar', module)
       />
     </div>
   ))
-  .add('With icon', () => (
+  .add('With logo', () => (
     <div className={getClassNames('bpk-navigation-bar-story')}>
       <BpkNavigationBar
         id="test"
-        title={
-          <span
-            className={getClassNames(
-              'bpk-navigation-bar-story__title-content-wrapper',
-            )}
-          >
-            <AirlineLogo />
-          </span>
-        }
+        title={<AirlineLogo />}
         leadingButton={
           <BpkNavigationBarIconButton
             onClick={action('back clicked')}

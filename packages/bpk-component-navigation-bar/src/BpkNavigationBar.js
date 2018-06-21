@@ -18,7 +18,7 @@
 
 /* @flow */
 
-import React, { type Element } from 'react';
+import React, { type Node, type Element } from 'react';
 import PropTypes from 'prop-types';
 import { cssModules } from 'bpk-react-utils';
 import BpkText from 'bpk-component-text';
@@ -29,7 +29,7 @@ const getClassNames = cssModules(STYLES);
 
 export type Props = {
   id: string,
-  title: string | Element<any>,
+  title: Node,
   className: ?string,
   leadingButton: ?Element<any>,
   trailingButton: ?Element<any>,
@@ -50,21 +50,27 @@ const BpkNavigationBar = (props: Props) => {
     ...rest
   } = props;
 
+  const titleId = `${id}-bpk-navigation-bar-title`;
+
   return (
     <nav
-      aria-labelledby={`${id}-bpk-navigation-bar-title`}
+      aria-labelledby={titleId}
       className={getClassNames('bpk-navigation-bar', className)}
       {...rest}
     >
       {leadingButton &&
         cloneWithClass(leadingButton, 'bpk-navigation-bar__leading-item')}
-      <BpkText
-        id={`${id}-bpk-navigation-bar-title`}
-        bold
-        className={getClassNames('bpk-navigation-bar__title')}
-      >
-        {title}
-      </BpkText>
+      {typeof title === 'string' ? (
+        <BpkText
+          id={titleId}
+          bold
+          className={getClassNames('bpk-navigation-bar__title')}
+        >
+          {title}
+        </BpkText>
+      ) : (
+        title
+      )}
       {trailingButton &&
         cloneWithClass(trailingButton, 'bpk-navigation-bar__trailing-item')}
     </nav>
@@ -72,7 +78,7 @@ const BpkNavigationBar = (props: Props) => {
 };
 
 BpkNavigationBar.propTypes = {
-  title: PropTypes.oneOfType([PropTypes.element, PropTypes.string]).isRequired,
+  title: PropTypes.node.isRequired,
   className: PropTypes.string,
   leadingButton: PropTypes.element,
   trailingButton: PropTypes.element,

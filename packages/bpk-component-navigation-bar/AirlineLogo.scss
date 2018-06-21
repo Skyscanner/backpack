@@ -18,13 +18,6 @@
 
 @import '~bpk-mixins/index';
 
-.bpk-navigation-bar-example {
-  padding: $bpk-one-pixel-rem $bpk-one-pixel-rem $bpk-spacing-xxl;
-  background-color: $bpk-color-gray-50;
-
-  @include bpk-border-sm($bpk-color-gray-50);
-
-  > * {
-    margin-bottom: $bpk-spacing-md;
-  }
+.bpk-airline-logo {
+  @include bpk-themeable-property(fill, --bpk-navigation-bar-title-color, $bpk-color-gray-700);
 }
