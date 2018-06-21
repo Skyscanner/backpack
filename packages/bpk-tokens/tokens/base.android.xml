@@ -76,6 +76,7 @@
   <color name="COLOR_PINK_700" category="colors">#ffc50f52</color>
   <color name="COLOR_PINK_800" category="colors">#ffb00c48</color>
   <color name="COLOR_PINK_900" category="colors">#ff94053a</color>
+  <color name="COLOR_PRIMARY_GRADIENT_LIGHT" category="colors">#ff02ddd8</color>
   <color name="COLOR_RED_100" category="colors">#ffffd6d5</color>
   <color name="COLOR_RED_200" category="colors">#ffffbbba</color>
   <color name="COLOR_RED_300" category="colors">#ffff9694</color>

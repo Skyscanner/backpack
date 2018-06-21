@@ -189,6 +189,9 @@
     },
     "COLOR_PINK_900": {
       "value": "{!PINK_900}"
+    },
+    "COLOR_PRIMARY_GRADIENT_LIGHT": {
+      "value": "{!PRIMARY_GRADIENT_LIGHT}"
     }
   }
 }

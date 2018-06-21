@@ -73,6 +73,7 @@ export const colorPink600 = "rgb(217, 43, 107)";
 export const colorPink700 = "rgb(197, 15, 82)";
 export const colorPink800 = "rgb(176, 12, 72)";
 export const colorPink900 = "rgb(148, 5, 58)";
+export const colorPrimaryGradientLight = "rgb(2, 221, 216)";
 export const colorRed100 = "rgb(255, 214, 213)";
 export const colorRed200 = "rgb(255, 187, 186)";
 export const colorRed300 = "rgb(255, 150, 148)";
@@ -194,6 +195,7 @@ colorPink600,
 colorPink700,
 colorPink800,
 colorPink900,
+colorPrimaryGradientLight,
 colorRed100,
 colorRed200,
 colorRed300,

@@ -75,6 +75,7 @@ module.exports = {
   colorPink700: "rgb(197, 15, 82)",
   colorPink800: "rgb(176, 12, 72)",
   colorPink900: "rgb(148, 5, 58)",
+  colorPrimaryGradientLight: "rgb(2, 221, 216)",
   colorRed100: "rgb(255, 214, 213)",
   colorRed200: "rgb(255, 187, 186)",
   colorRed300: "rgb(255, 150, 148)",
