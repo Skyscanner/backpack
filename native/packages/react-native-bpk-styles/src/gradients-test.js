@@ -15,10 +15,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { colorBlue500 } from 'bpk-tokens/tokens/base.react.native';
+import {
+  colorBlue500,
+  colorPrimaryGradientLight,
+} from 'bpk-tokens/tokens/base.react.native';
 import gradients from './gradients';
 
-const colors = [colorBlue500, '#02DDD8'];
+const colors = [colorBlue500, colorPrimaryGradientLight];
 
 describe('gradients', () => {
   describe('primary', () => {
