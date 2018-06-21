@@ -7,6 +7,7 @@
     "start": "react-native start",
     "ios": "react-native run-ios --simulator=\"iPhone 8\"",
     "android:emulator": "$ANDROID_SDK_ROOT/emulator/emulator -avd bpk-avd",
+    "android:emulator:min": "$ANDROID_SDK_ROOT/emulator/emulator -avd bpk-avd-min",
     "android:build": "react-native run-android",
     "android": "npm run android:emulator & npm run android:build",
     "test": "jest --coverage",

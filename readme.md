@@ -17,6 +17,10 @@ https://backpack.github.io/
 npm install [package-name] --save-dev
 ```
 
+## Contributing
+
+To contribute please see [contributing.md](contributing.md).
+
 ## List of packages
 
 | Component | Version |
@@ -112,10 +116,6 @@ npm install [package-name] --save-dev
 | [`react-native-bpk-component-touchable-native-feedback`](/native/packages/react-native-bpk-component-touchable-native-feedback) | [![npm version](https://badge.fury.io/js/react-native-bpk-component-touchable-native-feedback.svg)](http://badge.fury.io/js/react-native-bpk-component-touchable-native-feedback) |
 | [`react-native-bpk-component-touchable-overlay`](/native/packages/react-native-bpk-component-touchable-overlay) | [![npm version](https://badge.fury.io/js/react-native-bpk-component-touchable-overlay.svg)](http://badge.fury.io/js/react-native-bpk-component-touchable-overlay) |
 | [`react-native-bpk-theming`](/native/packages/react-native-bpk-theming) | [![npm version](https://badge.fury.io/js/react-native-bpk-theming.svg)](http://badge.fury.io/js/react-native-bpk-theming) |
-
-## Contributing
-
-To contribute please see [contributing.md](contributing.md).
 
 ## Contact
 - backpack@skyscanner.net
