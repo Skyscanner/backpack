@@ -21,6 +21,7 @@
 .bpk-navigation-bar {
   position: relative;
   display: flex;
+  min-height: $bpk-spacing-xxl + $bpk-spacing-xs;
   padding: $bpk-spacing-sm;
   flex-direction: row;
   justify-content: center;

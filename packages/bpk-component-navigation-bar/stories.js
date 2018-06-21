@@ -113,15 +113,7 @@ storiesOf('bpk-component-navigation-bar', module)
     <div className={getClassNames('bpk-navigation-bar-story')}>
       <BpkNavigationBar
         id="test"
-        title={
-          <span
-            className={getClassNames(
-              'bpk-navigation-bar-story__title-content-wrapper',
-            )}
-          >
-            <AirlineLogo />
-          </span>
-        }
+        title={<AirlineLogo />}
         leadingButton={
           <BpkNavigationBarIconButton
             onClick={action('back clicked')}

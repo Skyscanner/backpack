@@ -129,15 +129,7 @@ const components = [
       <div className={getClassNames('bpk-navigation-bar-example')}>
         <BpkNavigationBar
           id="default-bpk-nav"
-          title={
-            <span
-              className={getClassNames(
-                'bpk-navigation-bar-example__title-content-wrapper',
-              )}
-            >
-              <AirlineIcon />
-            </span>
-          }
+          title={<AirlineIcon />}
           leadingButton={
             <BpkNavigationBarIconButton
               onClick={() => {}}
