@@ -1,6 +1,6 @@
 {
   "name": "react-native-bpk-component-touchable-overlay",
-  "version": "1.0.23",
+  "version": "1.0.24",
   "main": "index.js",
   "description": "Backpack React Native touchable overlay component.",
   "repository": {
@@ -14,10 +14,10 @@
     "react-native": ">= 0.47.0"
   },
   "dependencies": {
-    "bpk-tokens": "^27.0.3",
+    "bpk-tokens": "^27.0.4",
     "prop-types": "^15.5.8"
   },
   "devDependencies": {
-    "react-native-bpk-component-text": "^2.1.40"
+    "react-native-bpk-component-text": "^2.1.41"
   }
 }
