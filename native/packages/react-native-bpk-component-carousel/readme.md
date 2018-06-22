@@ -12,7 +12,7 @@ npm install react-native-bpk-component-carousel --save-dev
 
 ```js
 import React, { Component } from 'react';
-import { View, StyleSheet } from 'react-native';
+import { Image, View, StyleSheet } from 'react-native';
 import { spacingXl } from 'bpk-tokens/tokens/base.react.native';
 import BpkCarousel, { BpkCarouselItem } from 'react-native-bpk-component-carousel';
 
