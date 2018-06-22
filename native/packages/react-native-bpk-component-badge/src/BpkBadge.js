@@ -39,7 +39,8 @@ import { View, ViewPropTypes, StyleSheet } from 'react-native';
 const styles = StyleSheet.create({
   viewBase: {
     paddingHorizontal: spacingMd,
-    paddingVertical: spacingSm,
+    height: spacingSm * 5,
+    justifyContent: 'center',
   },
   viewWarning: {
     backgroundColor: colorYellow500,
@@ -58,11 +59,11 @@ const styles = StyleSheet.create({
   },
   viewOutline: {
     paddingHorizontal: spacingMd - borderSizeSm,
-    paddingVertical: spacingSm - borderSizeSm,
     backgroundColor: setOpacity(colorWhite, 0.2),
   },
   textBase: {
     color: colorGray700,
+    includeFontPadding: false,
   },
   textDestructive: {
     color: colorWhite,
