@@ -186,6 +186,9 @@
     "PINK_900": {
       "value": "#94053A"
     },
+    "PRIMARY_GRADIENT_LIGHT": {
+      "value": "#02DDD8"
+    },
     "RED_100": {
       "value": "#ffd6d5"
     },
@@ -1508,6 +1511,13 @@
       "originalValue": "{!GREEN_900}",
       "name": "COLOR_GREEN_900"
     },
+    "COLOR_PRIMARY_GRADIENT_LIGHT": {
+      "type": "color",
+      "category": "colors",
+      "value": "rgb(2, 221, 216)",
+      "originalValue": "{!PRIMARY_GRADIENT_LIGHT}",
+      "name": "COLOR_PRIMARY_GRADIENT_LIGHT"
+    },
     "COLOR_RED_100": {
       "type": "color",
       "category": "colors",
@@ -2429,7 +2439,7 @@
       "type": "background-image",
       "category": "colors",
       "value": "linear-gradient(135deg, #00b2d6 0%, #02DDD8 100%)",
-      "originalValue": "linear-gradient(135deg, {!BLUE_500} 0%, #02DDD8 100%)",
+      "originalValue": "linear-gradient(135deg, {!BLUE_500} 0%, {!PRIMARY_GRADIENT_LIGHT} 100%)",
       "name": "PRIMARY_GRADIENT"
     },
     "P_MARGIN_BOTTOM": {
@@ -3042,6 +3052,7 @@
     "COLOR_GREEN_700",
     "COLOR_GREEN_800",
     "COLOR_GREEN_900",
+    "COLOR_PRIMARY_GRADIENT_LIGHT",
     "COLOR_RED_100",
     "COLOR_RED_200",
     "COLOR_RED_300",

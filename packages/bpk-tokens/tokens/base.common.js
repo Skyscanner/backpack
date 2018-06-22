@@ -193,6 +193,7 @@ module.exports = {
   colorGreen700: "rgb(0, 168, 93)",
   colorGreen800: "rgb(0, 140, 77)",
   colorGreen900: "rgb(0, 102, 56)",
+  colorPrimaryGradientLight: "rgb(2, 221, 216)",
   colorRed100: "rgb(255, 214, 213)",
   colorRed200: "rgb(255, 187, 186)",
   colorRed300: "rgb(255, 150, 148)",

@@ -17,7 +17,10 @@
  */
 /* @flow */
 
-import { colorBlue500 } from 'bpk-tokens/tokens/base.react.native';
+import {
+  colorBlue500,
+  colorPrimaryGradientLight,
+} from 'bpk-tokens/tokens/base.react.native';
 
 const ANGLES = {
   down: 'down',
@@ -68,8 +71,6 @@ const ANGLES_TO_START_END = {
   },
 };
 
-const gradientLight = '#02DDD8';
-
 export const startAndEndFromAngle = (angle: Angle) =>
   Object.keys(ANGLES_TO_START_END).includes(angle)
     ? ANGLES_TO_START_END[angle]
@@ -80,7 +81,7 @@ export default {
     const { start, end } = startAndEndFromAngle(angle);
 
     return {
-      colors: [colorBlue500, gradientLight],
+      colors: [colorBlue500, colorPrimaryGradientLight],
       start: { x: start[0], y: start[1] },
       end: { x: end[0], y: end[1] },
     };

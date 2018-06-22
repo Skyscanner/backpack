@@ -161,8 +161,11 @@
       "value": "{!YELLOW_900}"
     },
     "PRIMARY_GRADIENT": {
-      "value": "linear-gradient(135deg, {!BLUE_500} 0%, #02DDD8 100%)",
+      "value": "linear-gradient(135deg, {!BLUE_500} 0%, {!PRIMARY_GRADIENT_LIGHT} 100%)",
       "type": "background-image"
+    },
+    "COLOR_PRIMARY_GRADIENT_LIGHT": {
+      "value": "{!PRIMARY_GRADIENT_LIGHT}"
     }
   }
 }

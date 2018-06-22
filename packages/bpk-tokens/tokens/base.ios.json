@@ -395,6 +395,13 @@
     {
       "type": "color",
       "category": "colors",
+      "value": "#02ddd8ff",
+      "originalValue": "{!PRIMARY_GRADIENT_LIGHT}",
+      "name": "colorPrimaryGradientLight"
+    },
+    {
+      "type": "color",
+      "category": "colors",
       "value": "#ffd6d5ff",
       "originalValue": "{!RED_100}",
       "name": "colorRed100"

@@ -60,6 +60,7 @@
     "PINK_600": "#D92B6B",
     "PINK_700": "#C50F52",
     "PINK_800": "#B00C48",
-    "PINK_900": "#94053A"
+    "PINK_900": "#94053A",
+    "PRIMARY_GRADIENT_LIGHT": "#02DDD8"
   }
 }

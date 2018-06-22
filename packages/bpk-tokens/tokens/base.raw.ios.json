@@ -201,6 +201,9 @@
     "PINK_900": {
       "value": "#94053A"
     },
+    "PRIMARY_GRADIENT_LIGHT": {
+      "value": "#02DDD8"
+    },
     "RED_100": {
       "value": "#ffd6d5"
     },
@@ -675,6 +678,13 @@
       "value": "#94053aff",
       "originalValue": "{!PINK_900}",
       "name": "COLOR_PINK_900"
+    },
+    "COLOR_PRIMARY_GRADIENT_LIGHT": {
+      "type": "color",
+      "category": "colors",
+      "value": "#02ddd8ff",
+      "originalValue": "{!PRIMARY_GRADIENT_LIGHT}",
+      "name": "COLOR_PRIMARY_GRADIENT_LIGHT"
     },
     "COLOR_RED_100": {
       "type": "color",
@@ -1280,6 +1290,7 @@
     "COLOR_PINK_700",
     "COLOR_PINK_800",
     "COLOR_PINK_900",
+    "COLOR_PRIMARY_GRADIENT_LIGHT",
     "COLOR_RED_100",
     "COLOR_RED_200",
     "COLOR_RED_300",
