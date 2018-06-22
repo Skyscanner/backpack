@@ -88,7 +88,7 @@ const components = [
 
 const blurb = [
   <IntroBlurb>
-    The datepicker is an input control that allows the user to pick a single
+    The date picker is an input control that allows the user to pick a single
     date. It embeds a{' '}
     <BpkRouterLink to={ROUTES.CALENDAR}>calendar component</BpkRouterLink> in a{' '}
     <BpkRouterLink to={ROUTES.POPOVER}>popover</BpkRouterLink>.
@@ -97,7 +97,7 @@ const blurb = [
 
 const DatepickerSubPage = ({ ...rest }) => (
   <DocsPageBuilder
-    title="Datepicker"
+    title="Date picker"
     components={components}
     readme={datepickerReadme}
     {...rest}

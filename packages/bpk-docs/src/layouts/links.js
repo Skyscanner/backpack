@@ -158,7 +158,7 @@ const ComponentsLinks = [
       {
         id: 'DATEPICKER',
         route: routes.DATEPICKER,
-        children: 'Datepicker',
+        children: 'Date picker',
         tags: ['web'],
       },
       {
