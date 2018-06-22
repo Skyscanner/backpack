@@ -88,9 +88,7 @@ export class DialogContainer extends Component<
           isOpen={this.state.isOpen}
           onClose={this.onClose}
           renderTarget={() => document.getElementById('portal-target')}
-          getApplicationElement={() =>
-            document.getElementById('application-container')
-          }
+          getApplicationElement={() => document.getElementById('pagewrap')}
           {...rest}
         >
           <ParagraphNoMargin>{children}</ParagraphNoMargin>
@@ -144,9 +142,7 @@ export class NonDismissibleDialogContainer extends Component<
           isOpen={this.state.isOpen}
           onClose={this.onClose}
           renderTarget={() => document.getElementById('portal-target')}
-          getApplicationElement={() =>
-            document.getElementById('application-container')
-          }
+          getApplicationElement={() => document.getElementById('pagewrap')}
           dismissible={false}
           {...this.props}
         >

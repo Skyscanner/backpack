@@ -76,9 +76,7 @@ const components = [
         daysOfWeek={weekDays}
         changeMonthLabel="Change month"
         title="Select date"
-        getApplicationElement={() =>
-          document.getElementById('application-container')
-        }
+        getApplicationElement={() => document.getElementById('pagewrap')}
         renderTarget={() => document.getElementById('portal-target')}
         inputProps={{ placeholder: 'Select date' }}
       />,

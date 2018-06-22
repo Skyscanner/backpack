@@ -42,7 +42,7 @@ const DefaultLayout = props => {
       id="portal-target"
       className={getClassName('bpkdocs-default-layout__container')}
     >
-      <div id="application-container">
+      <div id="pagewrap">
         <Helmet titleTemplate="%s | Backpack" />
         <main>{children}</main>
         <Footer />

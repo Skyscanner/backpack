@@ -19,7 +19,6 @@ class App extends Component {
   constructor() {
     super();
 
-
     this.state = {
       isOpen: false,
     };
@@ -29,18 +28,18 @@ class App extends Component {
     this.setState({
       isOpen: true,
     });
-  }
+  };
 
   onClose = () => {
     this.setState({
       isOpen: false,
     });
-  }
+  };
 
   render() {
     return (
       <div id="modal-container">
-        <div id="application-container">
+        <div id="pagewrap">
           <BpkButton onClick={this.onOpen}>Open modal</BpkButton>
         </div>
         <BpkModal
@@ -49,12 +48,8 @@ class App extends Component {
           onClose={this.onClose}
           title="Modal title"
           closeLabel="Close modal"
-          getApplicationElement={() =>
-            document.getElementById('application-container')
-          }
-          renderTarget={() =>
-            document.getElementById('modal-container')
-          }
+          getApplicationElement={() => document.getElementById('pagewrap')}
+          renderTarget={() => document.getElementById('modal-container')}
         >
           This is a modal. You can put anything you want in here.
         </BpkModal>
@@ -65,38 +60,38 @@ class App extends Component {
 ```
 
 > **Note:** In order to "hide" your application from screenreaders whilst the modal is open you need to let it know what
-  the root element for your application is by returning it's DOM node via the function passed to the
-  `getApplicationElement` prop (see the example above).
+> the root element for your application is by returning it's DOM node via the function passed to the
+> `getApplicationElement` prop (see the example above). The `pagewrap` element id is a convention we use internally at Skyscanner. In most cases it should "just work".
 
 > **Theming:** In order to theme the modal, a `renderTarget` needs to be supplied as a function which returns a DOM node
-  in the scope of a `BpkThemeProvider`.
+> in the scope of a `BpkThemeProvider`.
 
 ## Props
 
-| Property              | PropType | Required | Default Value    |
-| --------------------- | -------- | -------- | ---------------- |
-| id                    | string   | true     | -                |
-| children              | node     | true     | -                |
-| isOpen                | bool     | true     | -                |
-| onClose               | func     | true     | -                |
-| getApplicationElement | func     | true     | -                |
-| title                 | string   | true     | -                |
-| className             | string   | false    | null             |
-| contentClassName      | string   | false    | null             |
-| closeLabel            | string   | false    | null             |
-| closeText             | string   | false    | null             |
-| renderTarget          | func     | false    | null             |
-| wide                  | bool     | false    | false            |
-| fullScreenOnMobile    | bool     | false    | true             |
-| fullScreen            | bool     | false    | false            |
-| closeOnScrimClick     | bool     | false    | true             |
-| showHeader            | bool     | false    | true             |
-| closeOnEscPressed     | bool     | false    | true             |
-| padded                | bool     | false    | true             |
+| Property              | PropType | Required | Default Value |
+| --------------------- | -------- | -------- | ------------- |
+| id                    | string   | true     | -             |
+| children              | node     | true     | -             |
+| isOpen                | bool     | true     | -             |
+| onClose               | func     | true     | -             |
+| getApplicationElement | func     | true     | -             |
+| title                 | string   | true     | -             |
+| className             | string   | false    | null          |
+| contentClassName      | string   | false    | null          |
+| closeLabel            | string   | false    | null          |
+| closeText             | string   | false    | null          |
+| renderTarget          | func     | false    | null          |
+| wide                  | bool     | false    | false         |
+| fullScreenOnMobile    | bool     | false    | true          |
+| fullScreen            | bool     | false    | false         |
+| closeOnScrimClick     | bool     | false    | true          |
+| showHeader            | bool     | false    | true          |
+| closeOnEscPressed     | bool     | false    | true          |
+| padded                | bool     | false    | true          |
 
 ## Theme Props
 
-* `linkColor`
-* `linkHoverColor`
-* `linkActiveColor`
-* `linkVisitedColor`
+- `linkColor`
+- `linkHoverColor`
+- `linkActiveColor`
+- `linkVisitedColor`

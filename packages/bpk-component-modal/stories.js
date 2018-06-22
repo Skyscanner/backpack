@@ -131,16 +131,14 @@ class ModalContainer extends Component<
 
     return (
       <div id="modal-container">
-        <div id="application-container">
+        <div id="pagewrap">
           <BpkButton onClick={this.onOpen}>Open modal</BpkButton>
           <BpkModal
             id="my-modal"
             className="my-classname"
             isOpen={this.state.isOpen}
             onClose={this.onClose}
-            getApplicationElement={() =>
-              document.getElementById('application-container')
-            }
+            getApplicationElement={() => document.getElementById('pagewrap')}
             renderTarget={() => document.getElementById('modal-container')}
             {...rest}
           >

@@ -19,7 +19,6 @@ class App extends Component {
   constructor() {
     super();
 
-
     this.state = {
       isOpen: false,
     };
@@ -29,18 +28,18 @@ class App extends Component {
     this.setState({
       isOpen: true,
     });
-  }
+  };
 
   onClose = () => {
     this.setState({
       isOpen: false,
     });
-  }
+  };
 
   render() {
     return (
       <div>
-        <div id="application-container">
+        <div id="pagewrap">
           <BpkButton onClick={this.onOpen}>Open drawer</BpkButton>
         </div>
         <BpkDrawer
@@ -49,9 +48,7 @@ class App extends Component {
           onClose={this.onClose}
           title="Drawer title"
           closeLabel="Close drawer"
-          getApplicationElement={() =>
-            document.getElementById('application-container')
-          }
+          getApplicationElement={() => document.getElementById('pagewrap')}
         >
           This is a drawer. You can put anything you want in here.
         </BpkDrawer>
@@ -62,32 +59,32 @@ class App extends Component {
 ```
 
 > **Note:** In order to "hide" your application from screenreaders whilst the drawer is open you need to let it know what
-  the root element for your application is by returning it's DOM node via the function passed to the
-  `getApplicationElement` prop (see the example above).
+> the root element for your application is by returning it's DOM node via the function passed to the
+> `getApplicationElement` prop (see the example above). The `pagewrap` element id is a convention we use internally at Skyscanner. In most cases it should "just work".
 
 > **Theming:** In order to theme the drawer, a `renderTarget` needs to be supplied as a function which returns a DOM node
-  in the scope of a `BpkThemeProvider`.
+> in the scope of a `BpkThemeProvider`.
 
 ## Props
 
-| Property              | PropType             | Required | Default Value |
-| --------------------- | -------------------- | -------- | ------------- |
-| id                    | string               | true     | -             |
-| className             | string               | true     | -             |
-| contentClassName      | string               | true     | -             |
-| children              | node                 | true     | -             |
-| isOpen                | bool                 | true     | -             |
-| onClose               | func                 | true     | -             |
-| title                 | string               | true     | -             |
-| getApplicationElement | func                 | true     | -             |
-| closeLabel            | string               | false    | null          |
-| closeText             | string               | false    | null          |
-| hideTitle             | bool                 | false    | false         |
-| renderTarget          | func                 | false    | null          |
+| Property              | PropType | Required | Default Value |
+| --------------------- | -------- | -------- | ------------- |
+| id                    | string   | true     | -             |
+| className             | string   | true     | -             |
+| contentClassName      | string   | true     | -             |
+| children              | node     | true     | -             |
+| isOpen                | bool     | true     | -             |
+| onClose               | func     | true     | -             |
+| title                 | string   | true     | -             |
+| getApplicationElement | func     | true     | -             |
+| closeLabel            | string   | false    | null          |
+| closeText             | string   | false    | null          |
+| hideTitle             | bool     | false    | false         |
+| renderTarget          | func     | false    | null          |
 
 ## Theme Props
 
-* `linkColor`
-* `linkHoverColor`
-* `linkActiveColor`
-* `linkVisitedColor`
+- `linkColor`
+- `linkHoverColor`
+- `linkActiveColor`
+- `linkVisitedColor`
