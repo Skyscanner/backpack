@@ -33,9 +33,9 @@ const components = [
     blurb: [
       <Paragraph>
         Whether it is for web or app, every component should be considered
-        mobile-first and degrade to desktop. Components should take advantage of
+        mobile first and degrade to desktop. Components should take advantage of
         the platform. See our guide (coming soon) for more info on what is meant
-        by &apos;Authentically mobile&apos;.
+        by <em>Authentically mobile</em>.
       </Paragraph>,
     ],
   },
@@ -47,7 +47,7 @@ const components = [
         All Backpack components should work in multiple areas and situations,
         not just in the context of one screen. See the{' '}
         <BpkRouterLink to={ROUTES.CONTRIBUTING}>
-          Contributing section
+          contributing section
         </BpkRouterLink>{' '}
         for more info on what should live in Backpack.
       </Paragraph>,
@@ -59,7 +59,7 @@ const components = [
     blurb: [
       <Paragraph>
         For any new component, we will look to the open source community for
-        inspiration. If they meet the requirements, we will directly use them.
+        inspiration. If they meet our requirements, we will directly use them.
         For example, the{' '}
         <BpkRouterLink to={ROUTES.AUTOSUGGEST}>
           Autosuggest component
@@ -76,10 +76,10 @@ const components = [
     title: 'Accessible',
     blurb: [
       <Paragraph>
-        Screen readers, keyboard navigation and other assistive technology is
+        Screen readers, keyboard navigation and other assistive technologies are
         important as we look to support all kinds of travellers. All Skyscanner
         products should be accessible by everyone no matter their disability or
-        situation. See our guide (coming soon) for best practises.
+        situation. See our guide (coming soon) for best practices.
       </Paragraph>,
     ],
   },
@@ -88,7 +88,7 @@ const components = [
     title: 'RTL supported',
     blurb: [
       <Paragraph>
-        See our guide (coming soon) for best practises and advice for
+        See our guide (coming soon) for best practices and advice for
         right-to-left support.
       </Paragraph>,
     ],
@@ -109,15 +109,16 @@ const components = [
     blurb: [
       <Paragraph>
         Each component should be fully documented, showing each configuration
-        together with explanations where suitable. Additionally the components
-        readme and available props should be shown. See our guide on{' '}
+        together with explanations where suitable. Additionally the
+        component&apos;s readme and available props should be shown. See our
+        guide on{' '}
         <BpkLink
           href="https://github.com/Skyscanner/backpack/blob/master/decisions/writing-docs.md"
           blank
         >
           writing style
         </BpkLink>{' '}
-        for best practises for writing documentation.
+        for best practices for writing documentation.
       </Paragraph>,
     ],
   },
@@ -125,7 +126,7 @@ const components = [
 
 const blurb = [
   <IntroBlurb>
-    Backpack components, features and configurations are are created with the
+    Backpack components, features and configurations are created with the
     following principles in mind.
   </IntroBlurb>,
 ];

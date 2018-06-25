@@ -34,7 +34,7 @@ const components = [
     blurb: [
       <div>
         <Paragraph>
-          We always like to start with a chat. Mostly to ensure you don’t waste
+          We always like to start with a chat, mostly to ensure you don’t waste
           your time working on something that either the Backpack team are
           either working on or someone else is.
         </Paragraph>
@@ -82,10 +82,10 @@ const components = [
     blurb: [
       <div>
         <Paragraph>
-          Any contribution is welcomed, no matter it’s size. It might be a bug
+          Any contribution is welcomed, no matter its size. It might be a bug
           fix, a change to the way we organise something in Sketch, a new
           configuration for a component, a tweak to documentation or even as big
-          as a new component. Whatever it is you can count on us to work with
+          as a new component. Whatever it is, you can count on us to work with
           you to bring this into Backpack.
         </Paragraph>
         <BpkText tagName="h4" textStyle="lg">
@@ -93,10 +93,10 @@ const components = [
         </BpkText>
         <Paragraph>
           As a rule of thumb, any component or pattern that lives in Backpack
-          should be used in at least three places. Making something re-usable is
-          generally harder and more time consuming than making a one off.
+          should be used in at least three places. Making something reusable is
+          generally harder and more time consuming than making a one-off.
           Backpack’s role isn’t to serve every piece of UI in Skyscanner’s
-          product, it’s hear to help teams ship quicker in a consistent way.
+          product, it’s here to help teams ship quicker in a consistent way.
         </Paragraph>
         <Paragraph>
           As well as ensuring a good pairing of design and engineering, we also
@@ -113,18 +113,18 @@ const components = [
     blurb: [
       <div>
         <Paragraph>
-          Firstly, we don’t want you to be put off by the above list, we realise
-          its a lot to ask of someone when contributing. If you are able to
-          handle the whole thing, great, if not we will help you to get each
+          Firstly, we don’t want you to be put off by the above list. We realise
+          it&apos;s a lot to ask of someone when contributing. If you are able
+          to handle the whole thing, great, if not we will help you to get each
           part over the line, to ensure none of these things are a blocker.
         </Paragraph>
         <BpkText tagName="h4" textStyle="lg">
           Priority support
         </BpkText>
         <Paragraph>
-          You are not alone. We always prioritise third-party contributions and
-          are on hand for advice, pairing and general design/engineering support
-          throughout the process.
+          You&apos;re not alone. We always prioritise third-party contributions
+          and are on hand for advice, pairing and general design/engineering
+          support throughout the process.
         </Paragraph>
       </div>,
     ],
@@ -141,14 +141,13 @@ const components = [
         </Paragraph>
         <Paragraph>
           We hope your experience contributing was a good one, but we always
-          want to make it better. Please take 5 mins to complete{' '}
+          want to make it better. Please take five minutes to complete{' '}
           <BpkLink href="https://buzz12.typeform.com/to/LkxelN" blank>
             this short survey
-          </BpkLink>{' '}
-          - all responses are anonymous (unless you give us explicit consent to
-          attributing your name) so please be as honest. We take all feedback
-          really seriously and reguarly review to ensure Backpack is serving you
-          well.
+          </BpkLink>. All responses are anonymous (unless you give us explicit
+          consent to attribute your name) so please be honest. We take all
+          feedback really seriously and regularly review to ensure Backpack is
+          serving you well.
         </Paragraph>
       </div>,
     ],
@@ -159,7 +158,7 @@ const blurb = [
   <IntroBlurb>
     Contributing to Backpack is not only a great way to shape how Skyscanner’s
     products look, feel and behave, but also a great opportunity to evolve the
-    Skyscanner design language, and the way we build products.
+    Skyscanner design language and the way we build products.
   </IntroBlurb>,
 ];
 const ContributingPage = () => (
