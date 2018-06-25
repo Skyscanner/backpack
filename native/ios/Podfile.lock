@@ -87,7 +87,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   boost-for-react-native: 39c7adb57c4e60d6c5479dd8623128eb5b3f0f2c
-  BVLinearGradient: 4b3f3bdf1ac1a52a5ef5e65c9585d793a7c3f825
+  BVLinearGradient: 6d8909e3fc6b089defa4b89d967441fa6827a2ee
   DoubleConversion: e22e0762848812a87afd67ffda3998d9ef29170c
   Folly: 211775e49d8da0ca658aebc8eab89d642935755c
   glog: 1de0bb937dccdc981596d3b5825ebfb765017ded
