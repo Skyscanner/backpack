@@ -39,6 +39,8 @@ import HomePage from './../pages/HomePage';
 import GettingStartedPage from './../pages/GettingStartedPage';
 import BackpackReactScriptsPage from './../pages/BackpackReactScriptsPage';
 import BaseStylesheetPage from './../pages/BaseStylesheetPage';
+import ContributingPage from './../pages/ContributingPage';
+import PrinciplesPage from './../pages/PrinciplesPage';
 
 import StylePage from './../pages/StylePage';
 
@@ -132,6 +134,8 @@ const Routes = (
         component={BackpackReactScriptsPage}
       />
       <Route path={ROUTES.BASE_STYLESHEET} component={BaseStylesheetPage} />
+      <Route path={ROUTES.CONTRIBUTING} component={ContributingPage} />
+      <Route path={ROUTES.PRINCIPLES} component={PrinciplesPage} />
     </Route>
 
     <Route path={ROUTES.STYLE} component={StylePage} iconsSvgs={iconsSvgs} />

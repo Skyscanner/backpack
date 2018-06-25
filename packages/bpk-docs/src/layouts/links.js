@@ -401,6 +401,16 @@ export default [
         children: 'Getting started',
       },
       {
+        id: 'PRINCIPLES',
+        route: routes.PRINCIPLES,
+        children: 'Principles',
+      },
+      {
+        id: 'CONTRIBUTING',
+        route: routes.CONTRIBUTING,
+        children: 'Contributing',
+      },
+      {
         id: 'BACKPACK_REACT_SCRIPTS',
         route: routes.BACKPACK_REACT_SCRIPTS,
         children: 'Backpack React Scripts',
