@@ -28,6 +28,8 @@ export const STYLE_GUIDE = '/style-guide';
 export const GETTING_STARTED = '/using/getting-started';
 export const BACKPACK_REACT_SCRIPTS = '/using/backpack-react-scripts';
 export const BASE_STYLESHEET = '/using/base-stylesheet';
+export const CONTRIBUTING = '/using/contributing';
+export const PRINCIPLES = '/using/principles';
 
 // style-guide/
 export const COPYWRITING = '/style-guide/copywriting';
