@@ -6,8 +6,9 @@ exports[`iOS BpkBadge should render correctly docked to the end 1`] = `
     style={
       Array [
         Object {
+          "height": 20,
+          "justifyContent": "center",
           "paddingHorizontal": 8,
-          "paddingVertical": 4,
         },
         Object {
           "borderBottomLeftRadius": 4,
@@ -44,6 +45,7 @@ exports[`iOS BpkBadge should render correctly docked to the end 1`] = `
           Array [
             Object {
               "color": "rgb(82, 76, 97)",
+              "includeFontPadding": false,
             },
             undefined,
           ],
@@ -57,8 +59,9 @@ exports[`iOS BpkBadge should render correctly docked to the end 1`] = `
     style={
       Array [
         Object {
+          "height": 20,
+          "justifyContent": "center",
           "paddingHorizontal": 8,
-          "paddingVertical": 4,
         },
         Object {
           "borderBottomLeftRadius": 4,
@@ -95,6 +98,7 @@ exports[`iOS BpkBadge should render correctly docked to the end 1`] = `
           Array [
             Object {
               "color": "rgb(82, 76, 97)",
+              "includeFontPadding": false,
             },
             undefined,
           ],
@@ -108,8 +112,9 @@ exports[`iOS BpkBadge should render correctly docked to the end 1`] = `
     style={
       Array [
         Object {
+          "height": 20,
+          "justifyContent": "center",
           "paddingHorizontal": 8,
-          "paddingVertical": 4,
         },
         Object {
           "borderBottomLeftRadius": 4,
@@ -146,6 +151,7 @@ exports[`iOS BpkBadge should render correctly docked to the end 1`] = `
           Array [
             Object {
               "color": "rgb(82, 76, 97)",
+              "includeFontPadding": false,
             },
             Object {
               "color": "rgb(255, 255, 255)",
@@ -161,8 +167,9 @@ exports[`iOS BpkBadge should render correctly docked to the end 1`] = `
     style={
       Array [
         Object {
+          "height": 20,
+          "justifyContent": "center",
           "paddingHorizontal": 8,
-          "paddingVertical": 4,
         },
         Object {
           "borderBottomLeftRadius": 4,
@@ -199,6 +206,7 @@ exports[`iOS BpkBadge should render correctly docked to the end 1`] = `
           Array [
             Object {
               "color": "rgb(82, 76, 97)",
+              "includeFontPadding": false,
             },
             undefined,
           ],
@@ -212,8 +220,9 @@ exports[`iOS BpkBadge should render correctly docked to the end 1`] = `
     style={
       Array [
         Object {
+          "height": 20,
+          "justifyContent": "center",
           "paddingHorizontal": 8,
-          "paddingVertical": 4,
         },
         Object {
           "borderBottomLeftRadius": 4,
@@ -250,6 +259,7 @@ exports[`iOS BpkBadge should render correctly docked to the end 1`] = `
           Array [
             Object {
               "color": "rgb(82, 76, 97)",
+              "includeFontPadding": false,
             },
             undefined,
           ],
@@ -263,8 +273,9 @@ exports[`iOS BpkBadge should render correctly docked to the end 1`] = `
     style={
       Array [
         Object {
+          "height": 20,
+          "justifyContent": "center",
           "paddingHorizontal": 8,
-          "paddingVertical": 4,
         },
         Object {
           "borderBottomLeftRadius": 4,
@@ -276,7 +287,6 @@ exports[`iOS BpkBadge should render correctly docked to the end 1`] = `
           Object {
             "backgroundColor": "rgba(255, 255, 255, 0.2)",
             "paddingHorizontal": 7,
-            "paddingVertical": 3,
           },
           Object {
             "borderColor": "rgb(255, 255, 255)",
@@ -309,6 +319,7 @@ exports[`iOS BpkBadge should render correctly docked to the end 1`] = `
           Array [
             Object {
               "color": "rgb(82, 76, 97)",
+              "includeFontPadding": false,
             },
             Object {
               "color": "rgb(255, 255, 255)",
@@ -329,8 +340,9 @@ exports[`iOS BpkBadge should render correctly docked to the start 1`] = `
     style={
       Array [
         Object {
+          "height": 20,
+          "justifyContent": "center",
           "paddingHorizontal": 8,
-          "paddingVertical": 4,
         },
         Object {
           "borderBottomLeftRadius": 4,
@@ -367,6 +379,7 @@ exports[`iOS BpkBadge should render correctly docked to the start 1`] = `
           Array [
             Object {
               "color": "rgb(82, 76, 97)",
+              "includeFontPadding": false,
             },
             undefined,
           ],
@@ -380,8 +393,9 @@ exports[`iOS BpkBadge should render correctly docked to the start 1`] = `
     style={
       Array [
         Object {
+          "height": 20,
+          "justifyContent": "center",
           "paddingHorizontal": 8,
-          "paddingVertical": 4,
         },
         Object {
           "borderBottomLeftRadius": 4,
@@ -418,6 +432,7 @@ exports[`iOS BpkBadge should render correctly docked to the start 1`] = `
           Array [
             Object {
               "color": "rgb(82, 76, 97)",
+              "includeFontPadding": false,
             },
             undefined,
           ],
@@ -431,8 +446,9 @@ exports[`iOS BpkBadge should render correctly docked to the start 1`] = `
     style={
       Array [
         Object {
+          "height": 20,
+          "justifyContent": "center",
           "paddingHorizontal": 8,
-          "paddingVertical": 4,
         },
         Object {
           "borderBottomLeftRadius": 4,
@@ -469,6 +485,7 @@ exports[`iOS BpkBadge should render correctly docked to the start 1`] = `
           Array [
             Object {
               "color": "rgb(82, 76, 97)",
+              "includeFontPadding": false,
             },
             Object {
               "color": "rgb(255, 255, 255)",
@@ -484,8 +501,9 @@ exports[`iOS BpkBadge should render correctly docked to the start 1`] = `
     style={
       Array [
         Object {
+          "height": 20,
+          "justifyContent": "center",
           "paddingHorizontal": 8,
-          "paddingVertical": 4,
         },
         Object {
           "borderBottomLeftRadius": 4,
@@ -522,6 +540,7 @@ exports[`iOS BpkBadge should render correctly docked to the start 1`] = `
           Array [
             Object {
               "color": "rgb(82, 76, 97)",
+              "includeFontPadding": false,
             },
             undefined,
           ],
@@ -535,8 +554,9 @@ exports[`iOS BpkBadge should render correctly docked to the start 1`] = `
     style={
       Array [
         Object {
+          "height": 20,
+          "justifyContent": "center",
           "paddingHorizontal": 8,
-          "paddingVertical": 4,
         },
         Object {
           "borderBottomLeftRadius": 4,
@@ -573,6 +593,7 @@ exports[`iOS BpkBadge should render correctly docked to the start 1`] = `
           Array [
             Object {
               "color": "rgb(82, 76, 97)",
+              "includeFontPadding": false,
             },
             undefined,
           ],
@@ -586,8 +607,9 @@ exports[`iOS BpkBadge should render correctly docked to the start 1`] = `
     style={
       Array [
         Object {
+          "height": 20,
+          "justifyContent": "center",
           "paddingHorizontal": 8,
-          "paddingVertical": 4,
         },
         Object {
           "borderBottomLeftRadius": 4,
@@ -599,7 +621,6 @@ exports[`iOS BpkBadge should render correctly docked to the start 1`] = `
           Object {
             "backgroundColor": "rgba(255, 255, 255, 0.2)",
             "paddingHorizontal": 7,
-            "paddingVertical": 3,
           },
           Object {
             "borderColor": "rgb(255, 255, 255)",
@@ -632,6 +653,7 @@ exports[`iOS BpkBadge should render correctly docked to the start 1`] = `
           Array [
             Object {
               "color": "rgb(82, 76, 97)",
+              "includeFontPadding": false,
             },
             Object {
               "color": "rgb(255, 255, 255)",
@@ -652,8 +674,9 @@ exports[`iOS BpkBadge should render correctly in normal mode 1`] = `
     style={
       Array [
         Object {
+          "height": 20,
+          "justifyContent": "center",
           "paddingHorizontal": 8,
-          "paddingVertical": 4,
         },
         Object {
           "borderBottomLeftRadius": 4,
@@ -682,6 +705,7 @@ exports[`iOS BpkBadge should render correctly in normal mode 1`] = `
           Array [
             Object {
               "color": "rgb(82, 76, 97)",
+              "includeFontPadding": false,
             },
             undefined,
           ],
@@ -695,8 +719,9 @@ exports[`iOS BpkBadge should render correctly in normal mode 1`] = `
     style={
       Array [
         Object {
+          "height": 20,
+          "justifyContent": "center",
           "paddingHorizontal": 8,
-          "paddingVertical": 4,
         },
         Object {
           "borderBottomLeftRadius": 4,
@@ -725,6 +750,7 @@ exports[`iOS BpkBadge should render correctly in normal mode 1`] = `
           Array [
             Object {
               "color": "rgb(82, 76, 97)",
+              "includeFontPadding": false,
             },
             undefined,
           ],
@@ -738,8 +764,9 @@ exports[`iOS BpkBadge should render correctly in normal mode 1`] = `
     style={
       Array [
         Object {
+          "height": 20,
+          "justifyContent": "center",
           "paddingHorizontal": 8,
-          "paddingVertical": 4,
         },
         Object {
           "borderBottomLeftRadius": 4,
@@ -768,6 +795,7 @@ exports[`iOS BpkBadge should render correctly in normal mode 1`] = `
           Array [
             Object {
               "color": "rgb(82, 76, 97)",
+              "includeFontPadding": false,
             },
             Object {
               "color": "rgb(255, 255, 255)",
@@ -783,8 +811,9 @@ exports[`iOS BpkBadge should render correctly in normal mode 1`] = `
     style={
       Array [
         Object {
+          "height": 20,
+          "justifyContent": "center",
           "paddingHorizontal": 8,
-          "paddingVertical": 4,
         },
         Object {
           "borderBottomLeftRadius": 4,
@@ -813,6 +842,7 @@ exports[`iOS BpkBadge should render correctly in normal mode 1`] = `
           Array [
             Object {
               "color": "rgb(82, 76, 97)",
+              "includeFontPadding": false,
             },
             undefined,
           ],
@@ -826,8 +856,9 @@ exports[`iOS BpkBadge should render correctly in normal mode 1`] = `
     style={
       Array [
         Object {
+          "height": 20,
+          "justifyContent": "center",
           "paddingHorizontal": 8,
-          "paddingVertical": 4,
         },
         Object {
           "borderBottomLeftRadius": 4,
@@ -856,6 +887,7 @@ exports[`iOS BpkBadge should render correctly in normal mode 1`] = `
           Array [
             Object {
               "color": "rgb(82, 76, 97)",
+              "includeFontPadding": false,
             },
             undefined,
           ],
@@ -869,8 +901,9 @@ exports[`iOS BpkBadge should render correctly in normal mode 1`] = `
     style={
       Array [
         Object {
+          "height": 20,
+          "justifyContent": "center",
           "paddingHorizontal": 8,
-          "paddingVertical": 4,
         },
         Object {
           "borderBottomLeftRadius": 4,
@@ -882,7 +915,6 @@ exports[`iOS BpkBadge should render correctly in normal mode 1`] = `
           Object {
             "backgroundColor": "rgba(255, 255, 255, 0.2)",
             "paddingHorizontal": 7,
-            "paddingVertical": 3,
           },
           Object {
             "borderColor": "rgb(255, 255, 255)",
@@ -907,6 +939,7 @@ exports[`iOS BpkBadge should render correctly in normal mode 1`] = `
           Array [
             Object {
               "color": "rgb(82, 76, 97)",
+              "includeFontPadding": false,
             },
             Object {
               "color": "rgb(255, 255, 255)",
@@ -927,8 +960,9 @@ exports[`iOS BpkBadge should render correctly with user provided style 1`] = `
     style={
       Array [
         Object {
+          "height": 20,
+          "justifyContent": "center",
           "paddingHorizontal": 8,
-          "paddingVertical": 4,
         },
         Object {
           "borderBottomLeftRadius": 4,
@@ -960,6 +994,7 @@ exports[`iOS BpkBadge should render correctly with user provided style 1`] = `
           Array [
             Object {
               "color": "rgb(82, 76, 97)",
+              "includeFontPadding": false,
             },
             undefined,
           ],
@@ -973,8 +1008,9 @@ exports[`iOS BpkBadge should render correctly with user provided style 1`] = `
     style={
       Array [
         Object {
+          "height": 20,
+          "justifyContent": "center",
           "paddingHorizontal": 8,
-          "paddingVertical": 4,
         },
         Object {
           "borderBottomLeftRadius": 4,
@@ -1006,6 +1042,7 @@ exports[`iOS BpkBadge should render correctly with user provided style 1`] = `
           Array [
             Object {
               "color": "rgb(82, 76, 97)",
+              "includeFontPadding": false,
             },
             undefined,
           ],
@@ -1019,8 +1056,9 @@ exports[`iOS BpkBadge should render correctly with user provided style 1`] = `
     style={
       Array [
         Object {
+          "height": 20,
+          "justifyContent": "center",
           "paddingHorizontal": 8,
-          "paddingVertical": 4,
         },
         Object {
           "borderBottomLeftRadius": 4,
@@ -1052,6 +1090,7 @@ exports[`iOS BpkBadge should render correctly with user provided style 1`] = `
           Array [
             Object {
               "color": "rgb(82, 76, 97)",
+              "includeFontPadding": false,
             },
             Object {
               "color": "rgb(255, 255, 255)",
@@ -1067,8 +1106,9 @@ exports[`iOS BpkBadge should render correctly with user provided style 1`] = `
     style={
       Array [
         Object {
+          "height": 20,
+          "justifyContent": "center",
           "paddingHorizontal": 8,
-          "paddingVertical": 4,
         },
         Object {
           "borderBottomLeftRadius": 4,
@@ -1100,6 +1140,7 @@ exports[`iOS BpkBadge should render correctly with user provided style 1`] = `
           Array [
             Object {
               "color": "rgb(82, 76, 97)",
+              "includeFontPadding": false,
             },
             undefined,
           ],
@@ -1113,8 +1154,9 @@ exports[`iOS BpkBadge should render correctly with user provided style 1`] = `
     style={
       Array [
         Object {
+          "height": 20,
+          "justifyContent": "center",
           "paddingHorizontal": 8,
-          "paddingVertical": 4,
         },
         Object {
           "borderBottomLeftRadius": 4,
@@ -1146,6 +1188,7 @@ exports[`iOS BpkBadge should render correctly with user provided style 1`] = `
           Array [
             Object {
               "color": "rgb(82, 76, 97)",
+              "includeFontPadding": false,
             },
             undefined,
           ],
@@ -1159,8 +1202,9 @@ exports[`iOS BpkBadge should render correctly with user provided style 1`] = `
     style={
       Array [
         Object {
+          "height": 20,
+          "justifyContent": "center",
           "paddingHorizontal": 8,
-          "paddingVertical": 4,
         },
         Object {
           "borderBottomLeftRadius": 4,
@@ -1172,7 +1216,6 @@ exports[`iOS BpkBadge should render correctly with user provided style 1`] = `
           Object {
             "backgroundColor": "rgba(255, 255, 255, 0.2)",
             "paddingHorizontal": 7,
-            "paddingVertical": 3,
           },
           Object {
             "borderColor": "rgb(255, 255, 255)",
@@ -1200,6 +1243,7 @@ exports[`iOS BpkBadge should render correctly with user provided style 1`] = `
           Array [
             Object {
               "color": "rgb(82, 76, 97)",
+              "includeFontPadding": false,
             },
             Object {
               "color": "rgb(255, 255, 255)",
