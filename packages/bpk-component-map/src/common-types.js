@@ -1,7 +1,7 @@
 /*
  * Backpack - Skyscanner's Design System
  *
- * Copyright 2018 Skyscanner Ltd
+ * Copyright 2017 Skyscanner Ltd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,11 +18,15 @@
 
 /* @flow */
 
-import BpkMap from './src/BpkMap';
-import BpkOverlayView from './src/BpkOverlayView';
-import withGoogleMapsScript from './src/withGoogleMapsScript';
-import { type LatLong } from './src/common-types';
+import PropTypes from 'prop-types';
 
-export default BpkMap;
-export type BpkMapLatLong = LatLong;
-export { BpkOverlayView, withGoogleMapsScript };
+export type LatLong = {
+  latitude: number,
+  longitude: number,
+};
+
+// eslint-disable-next-line import/prefer-default-export
+export const LatLongPropType = PropTypes.shape({
+  latitude: PropTypes.number.isRequired,
+  longitude: PropTypes.number.isRequired,
+});

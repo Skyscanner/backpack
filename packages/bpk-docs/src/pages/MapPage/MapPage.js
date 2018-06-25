@@ -16,26 +16,36 @@
  * limitations under the License.
  */
 
+/* @flow */
+
 import React from 'react';
-import BpkMap, { withScriptjs } from 'bpk-component-map';
+import BpkMap, {
+  withGoogleMapsScript,
+  type BpkMapLatLong,
+} from 'bpk-component-map';
+import { cssModules } from 'bpk-react-utils';
 
 import iosScreenshot from 'react-native-bpk-component-map/screenshots/ios/default.png';
 import androidScreenshot from 'react-native-bpk-component-map/screenshots/android/default.png';
 import nativeMapReadme from 'react-native-bpk-component-map/readme.md';
 import mapReadme from 'bpk-component-map/readme.md';
 
+import STYLES from './MapPage.scss';
+
 import DocsPageBuilder from './../../components/DocsPageBuilder';
 import DocsPageWrapper from './../../components/DocsPageWrapper';
 import IntroBlurb from './../../components/IntroBlurb';
 
-const BpkMapWithScript = withScriptjs(BpkMap);
+const BpkMapWithScript = withGoogleMapsScript(BpkMap);
 const API_KEY = process.env.GOOGLE_MAPS_API_KEY || '';
 const MAP_URL = `https://maps.googleapis.com/maps/api/js?v=3.exp&key=${API_KEY}&libraries=geometry,drawing,places`;
 
+const getClassName = cssModules(STYLES);
+
 // Shibuya crossing, Tokyo.
-const COORDINATES = {
-  lat: 35.661777,
-  lng: 139.704051,
+const COORDINATES: BpkMapLatLong = {
+  latitude: 35.661777,
+  longitude: 139.704051,
 };
 
 const components = [
@@ -43,14 +53,13 @@ const components = [
     id: 'default',
     title: 'Default',
     examples: [
-      <BpkMapWithScript
-        googleMapURL={MAP_URL}
-        loadingElement={<div />}
-        containerElement={<div style={{ height: '400px' }} />}
-        mapElement={<div style={{ height: `100%` }} />}
-        defaultZoom={17}
-        defaultCenter={COORDINATES}
-      />,
+      <div className={getClassName('bpkdocs-map-page__map')}>
+        <BpkMapWithScript
+          googleMapURL={MAP_URL}
+          zoom={17}
+          center={COORDINATES}
+        />
+      </div>,
     ],
   },
 ];

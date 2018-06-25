@@ -12,56 +12,52 @@ npm install bpk-component-map --save-dev
 
 ```js
 import React from 'react';
-import BpkMap from 'bpk-component-map';
+import BpkText from 'bpk-component-text';
+import BpkMap, { BpkOverlayView } from 'bpk-component-map';
 
 export default () => (
   <BpkMap
-    containerElement={<div style={{ height: '400px' }} />}
-    mapElement={<div style={{ height: `100%` }} />}
-    defaultZoom={15}
-    defaultCenter={{
-      lat: 27.9881,
-      lng: 86.925,
+    zoom={15}
+    showControls={false}
+    panEnabled={false}
+    center={{
+      latitude: 27.9881,
+      longitude: 86.925,
     }}
-    options={{
-      zoomControl: false,
-      dragEnabled: false,
-    }}
-  />
+  >
+    <BpkOverlayView position={{ latitude: 27.9881, longitude: 86.925 }}>
+      <BpkText>Shibuya Crossing</BpkText>
+    </BpkOverlayView>
+  <BpkMap>
 );
 ```
 
 ## Accompanying HOCs
 
-### withScriptjs
+### withGoogleMapsScript
 
-`withScriptjs` is a HOC that loads the Google Maps Javascript, then loads the map. This is useful for when you don't already have the Google Maps Javascript loaded.
+`withGoogleMapsScript` is a HOC that loads the Google Maps Javascript, then loads the map. This is useful for when you don't already have the Google Maps Javascript loaded.
 
 If you intend to include multiple maps on one page, it's better to load the Google Maps Javascript elsewhere and not use this HOC, as it downloads the script every time it's used.
 
 ```js
 import React from 'react';
-import BpkMap, { withScriptjs } from 'bpk-component-map';
+import BpkMap, { withGoogleMapsScript } from 'bpk-component-map';
 
 const MAP_URL = 'https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places';
 
-const BpkMapWithScript = withScriptjs(BpkMap);
+const BpkMapWithScript = withGoogleMapsScript(BpkMap);
 
 export default () => (
   <BpkMapWithScript
     googleMapURL={MAP_URL}
-    loadingElement={<div />}
-    containerElement={<div style={{ height: '400px' }} />}
-    mapElement={<div style={{ height: `100%` }} />}
-    defaultZoom={15}
-    defaultCenter={{
-      lat: 27.9881,
-      lng: 86.925,
+    zoom={15}
+    center={{
+      latitide: 27.9881,
+      longitude: 86.925,
     }}
-    options={{
-      zoomControl: false,
-      dragEnabled: false,
-    }}
+    showControls={false}
+    panEnabled={false}
   />
 );
 ```
@@ -70,12 +66,33 @@ export default () => (
 
 ### BpkMap
 
-| Property	      | PropType	| Required                	| Default Value |
-| --------------- | --------- | ------------------------- | ------------- |
-| mapRef          | func      | false                     | null          |
+| Property	       | PropType                                                          | Required                 | Default Value                    |
+| ---------------- | ----------------------------------------------------------------- | ------------------------ | -------------------------------- |
+| bounds           | shape({north: number, east: number, south: number, west: number}) | false                    | null                             |
+| center           | shape({latitude: number, longitude: number})                      | false                    | null                             |
+| containerElement | node                                                              | false                    | <div style={{height: '100%'}} /> |
+| mapElement       | node                                                              | false                    | <div style={{height: '100%'}} /> |
+| mapRef           | func                                                              | false                    | null                             |
+| onRegionChange   | func                                                              | false                    | null                             |
+| onZoom           | func                                                              | false                    | null                             |
+| panEnabled       | bool                                                              | false                    | true                             |
+| showControls     | bool                                                              | false                    | true                             |
+| zoom             | number                                                            | false                    | 15                               |
 
-When using `withScriptjs`, some additional props are required. Refer to [`withScriptjs` from `react-google-maps`](https://tomchentw.github.io/react-google-maps/#withscriptjs).
+Note: One of `bounds` and `center` must be provided.
 
-Refer to [`GoogleMap` from `react-google-maps`](https://tomchentw.github.io/react-google-maps/#withgooglemap) for all other props.
+#### withGoogleMapsScript
 
-> Note: `bpk-component-map` also exports everything that `react-google-maps` does, such as `InfoBox` and `OverlayView`.
+When using `withGoogleMapsScript`, some additional props are available:
+
+| Property	       | PropType                                     | Required                  | Default Value  |
+| ---------------- | -------------------------------------------- | ------------------------- | -------------- |
+| googleMapURL     | string                                       | true                      | -              |
+| loadingElement   | node                                         | false                     | BpkSpinner     |
+
+### BpkOverlayView
+
+| Property	       | PropType                                     | Required                 | Default Value      |
+| ---------------- | -------------------------------------------- | ------------------------ | ------------------ |
+| children         | node                                         | true                     | -                  |
+| position         | shape({latitude: number, longitude: number}) | true                     | -                  |
