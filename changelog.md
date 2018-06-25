@@ -2,6 +2,21 @@
 
 [Unreleased changes](./unreleased.md).
 
+# 2018-06-25 - Map component improvements, plus adjusted height for the native badge component
+
+**Breaking:**
+
+- bpk-component-map: 1.0.5 => 2.0.0
+  - Removed all exports except for `BpkMap`, `BpkOverlayView` and `withGoogleMapsScript`.
+  - Introduced `BpkOverlayView` component to replace `OverlayView`.
+  - Introduced `withGoogleMapsScript` HOC to replace `withScriptjs`.
+  - Simplified `BpkMap`'s props by removing unused ones and renaming others.
+
+**Fixed:**
+
+- react-native-bpk-component-badge: 1.0.11 => 1.0.12
+  - Adjusted height to 20pt/dp for Android and iOS.
+
 # 2018-06-22 - Update dependency and title for navigation bar
 
 **Fixed:**
