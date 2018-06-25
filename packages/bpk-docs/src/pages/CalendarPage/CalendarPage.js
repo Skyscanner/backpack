@@ -24,6 +24,8 @@ import BpkCalendar, {
   BpkCalendarDate,
   BpkCalendarGridHeader,
 } from 'bpk-component-calendar';
+import BpkMobileScrollContainer from 'bpk-component-mobile-scroll-container';
+import { cssModules } from 'bpk-react-utils';
 
 import calendarReadme from 'bpk-component-calendar/readme.md';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
@@ -39,6 +41,10 @@ import {
   formatMonth,
   formatMonthArabic,
 } from '../../../../bpk-component-calendar/test-utils';
+
+import STYLES from './calendar-page.scss';
+
+const getClassName = cssModules(STYLES);
 
 /* eslint-disable react/no-multi-comp */
 class CalendarNavContainer extends Component {
@@ -108,13 +114,15 @@ const components = [
       </Paragraph>,
     ],
     examples: [
-      <CalendarContainer
-        id="calendar-1"
-        formatMonth={formatMonth}
-        formatDateFull={formatDateFull}
-        daysOfWeek={weekDays}
-        changeMonthLabel="Change month"
-      />,
+      <BpkMobileScrollContainer className={getClassName('bpk-calendar-demo')}>
+        <CalendarContainer
+          id="calendar-1"
+          formatMonth={formatMonth}
+          formatDateFull={formatDateFull}
+          daysOfWeek={weekDays}
+          changeMonthLabel="Change month"
+        />
+      </BpkMobileScrollContainer>,
     ],
   },
   {
@@ -127,14 +135,16 @@ const components = [
       </Paragraph>,
     ],
     examples: [
-      <CalendarContainer
-        id="calendar-ar1"
-        formatMonth={formatMonthArabic}
-        formatDateFull={formatDateFullArabic}
-        daysOfWeek={weekDaysArabic}
-        changeMonthLabel="Change month"
-        weekStartsOn={6}
-      />,
+      <BpkMobileScrollContainer className={getClassName('bpk-calendar-demo')}>
+        <CalendarContainer
+          id="calendar-ar1"
+          formatMonth={formatMonthArabic}
+          formatDateFull={formatDateFullArabic}
+          daysOfWeek={weekDaysArabic}
+          changeMonthLabel="Change month"
+          weekStartsOn={6}
+        />
+      </BpkMobileScrollContainer>,
     ],
   },
   {
@@ -159,6 +169,7 @@ const components = [
     ],
     examples: [
       <BpkCalendarGridHeader
+        className={getClassName('bpk-calendar-demo')}
         month={new Date()}
         daysOfWeek={weekDays}
         weekStartsOn={1}
@@ -168,6 +179,7 @@ const components = [
         showWeekendSeparator
       />,
       <BpkCalendarGrid
+        className={getClassName('bpk-calendar-demo')}
         month={new Date()}
         daysOfWeek={weekDays}
         weekStartsOn={1}
