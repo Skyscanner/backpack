@@ -40,7 +40,7 @@ const BpkScrim = props => (
 );
 
 BpkScrim.propTypes = {
-  dark: PropTypes.boolean,
+  dark: PropTypes.bool,
   onClose: PropTypes.func,
 };
 
