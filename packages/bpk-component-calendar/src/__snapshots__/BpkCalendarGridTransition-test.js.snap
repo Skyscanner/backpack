@@ -9,10 +9,10 @@ exports[`BpkCalendar should render correctly 1`] = `
     onTransitionEnd={[Function]}
     style={
       Object {
-        "MozTransform": "translateX(-294px)",
-        "WebkitTransform": "translateX(-294px)",
-        "msTransform": "translateX(-294px)",
-        "transform": "translateX(-294px)",
+        "MozTransform": "translateX(-18.375rem)",
+        "WebkitTransform": "translateX(-18.375rem)",
+        "msTransform": "translateX(-18.375rem)",
+        "transform": "translateX(-18.375rem)",
       }
     }
   >

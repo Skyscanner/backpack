@@ -51,13 +51,13 @@ describe('BpkCalendar', () => {
 
     expect(calendar.state('currentMonth')).toEqual(new Date(Date.UTC(2010, 1)));
     expect(calendar.state('isTransitioning')).toBe(false);
-    expect(calendar.state('transitionValue')).toBe(-294);
+    expect(calendar.state('transitionValue')).toBe('-18.375rem');
 
     // Next month
     calendar.setProps({ month: new Date(Date.UTC(2010, 2)) });
     expect(calendar.state('currentMonth')).toEqual(new Date(Date.UTC(2010, 2)));
     expect(calendar.state('isTransitioning')).toBe(false);
-    expect(calendar.state('transitionValue')).toBe(-294);
+    expect(calendar.state('transitionValue')).toBe('-18.375rem');
   });
 
   it('should transition to the previous month', () => {
@@ -70,13 +70,13 @@ describe('BpkCalendar', () => {
 
     expect(calendar.state('currentMonth')).toEqual(new Date(Date.UTC(2010, 1)));
     expect(calendar.state('isTransitioning')).toBe(false);
-    expect(calendar.state('transitionValue')).toBe(-294);
+    expect(calendar.state('transitionValue')).toBe('-18.375rem');
 
     // Previous month
     calendar.setProps({ month: new Date(Date.UTC(2010, 0)) });
     expect(calendar.state('currentMonth')).toEqual(new Date(Date.UTC(2010, 0)));
     expect(calendar.state('isTransitioning')).toBe(false);
-    expect(calendar.state('transitionValue')).toBe(-294);
+    expect(calendar.state('transitionValue')).toBe('-18.375rem');
   });
 
   it('should jump (without transition) to any other month', () => {
@@ -89,12 +89,12 @@ describe('BpkCalendar', () => {
 
     expect(calendar.state('currentMonth')).toEqual(new Date(Date.UTC(2010, 1)));
     expect(calendar.state('isTransitioning')).toBe(false);
-    expect(calendar.state('transitionValue')).toBe(-294);
+    expect(calendar.state('transitionValue')).toBe('-18.375rem');
 
     // 2 months ahead
     calendar.setProps({ month: new Date(Date.UTC(2010, 3)) });
     expect(calendar.state('currentMonth')).toEqual(new Date(Date.UTC(2010, 3)));
     expect(calendar.state('isTransitioning')).toBe(false);
-    expect(calendar.state('transitionValue')).toBe(-294);
+    expect(calendar.state('transitionValue')).toBe('-18.375rem');
   });
 });
