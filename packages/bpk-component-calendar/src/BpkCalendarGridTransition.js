@@ -43,9 +43,9 @@ import STYLES from './bpk-calendar-grid-transition.scss';
 const getClassName = cssModules(STYLES);
 
 const transitionValues = {
-  previous: 0,
-  current: -getCalendarGridWidth(),
-  next: -2 * getCalendarGridWidth(),
+  previous: '0px',
+  current: getCalendarGridWidth(-1),
+  next: getCalendarGridWidth(-2),
 };
 
 const getFocusedDateForMonth = (month, currentFocusedDate, minDate, maxDate) =>
@@ -142,27 +142,20 @@ class BpkCalendarGridTransition extends Component {
 
   render() {
     const { TransitionComponent, className, focusedDate, ...rest } = this.props;
+    const { isTransitioning, transitionValue } = this.state;
 
-    const stripClassNames = [
-      getClassName('bpk-calendar-grid-transition__strip'),
-    ];
-    if (this.state.isTransitioning) {
-      stripClassNames.push(
-        getClassName('bpk-calendar-grid-transition__strip--transitioning'),
-      );
-    }
+    const stripClassNames = getClassName(
+      'bpk-calendar-grid-transition__strip',
+      isTransitioning && 'bpk-calendar-grid-transition__strip--transitioning',
+    );
 
-    const classNames = [getClassName('bpk-calendar-grid-transition')];
-    if (className) {
-      classNames.push(className);
-    }
     const { min, max } = getMonthRange(rest.minDate, rest.maxDate);
 
     return (
-      <div className={classNames.join(' ')}>
+      <div className={getClassName('bpk-calendar-grid-transition', className)}>
         <div
-          className={stripClassNames.join(' ')}
-          style={getTransformStyles(this.state.transitionValue)}
+          className={stripClassNames}
+          style={getTransformStyles(transitionValue)}
           onTransitionEnd={this.onMonthTransitionEnd}
         >
           {this.state.months.map(
@@ -175,9 +168,7 @@ class BpkCalendarGridTransition extends Component {
                   preventKeyboardFocus={
                     index !== 1 || rest.preventKeyboardFocus
                   }
-                  isKeyboardFocusable={
-                    !this.state.isTransitioning && index === 1
-                  }
+                  isKeyboardFocusable={!isTransitioning && index === 1}
                   focusedDate={
                     index === 1
                       ? focusedDate
