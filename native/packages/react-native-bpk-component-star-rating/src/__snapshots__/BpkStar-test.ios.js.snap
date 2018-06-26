@@ -12,7 +12,7 @@ exports[`iOS BpkStar should render correctly when empty 1`] = `
 >
   <Text
     accessible={true}
-    allowFontScaling={true}
+    allowFontScaling={false}
     ellipsizeMode="tail"
     style={
       Array [
@@ -55,7 +55,7 @@ exports[`iOS BpkStar should render correctly when full 1`] = `
 >
   <Text
     accessible={true}
-    allowFontScaling={true}
+    allowFontScaling={false}
     ellipsizeMode="tail"
     style={
       Array [
@@ -85,7 +85,7 @@ exports[`iOS BpkStar should render correctly when full 1`] = `
   </Text>
   <Text
     accessible={true}
-    allowFontScaling={true}
+    allowFontScaling={false}
     ellipsizeMode="tail"
     style={
       Array [
@@ -134,7 +134,7 @@ exports[`iOS BpkStar should render correctly when half 1`] = `
 >
   <Text
     accessible={true}
-    allowFontScaling={true}
+    allowFontScaling={false}
     ellipsizeMode="tail"
     style={
       Array [
@@ -164,7 +164,7 @@ exports[`iOS BpkStar should render correctly when half 1`] = `
   </Text>
   <Text
     accessible={true}
-    allowFontScaling={true}
+    allowFontScaling={false}
     ellipsizeMode="tail"
     style={
       Array [

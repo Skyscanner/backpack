@@ -51,7 +51,7 @@ exports[`Android BpkBannerAlert should accept userland styling 1`] = `
       >
         <Text
           accessible={true}
-          allowFontScaling={true}
+          allowFontScaling={false}
           ellipsizeMode="tail"
           style={
             Array [
@@ -132,7 +132,7 @@ exports[`Android BpkBannerAlert should accept userland styling 1`] = `
       >
         <Text
           accessible={true}
-          allowFontScaling={true}
+          allowFontScaling={false}
           ellipsizeMode="tail"
           style={
             Array [
@@ -234,7 +234,7 @@ exports[`Android BpkBannerAlert should render correctly when not shown 1`] = `
       >
         <Text
           accessible={true}
-          allowFontScaling={true}
+          allowFontScaling={false}
           ellipsizeMode="tail"
           style={
             Array [
@@ -315,7 +315,7 @@ exports[`Android BpkBannerAlert should render correctly when not shown 1`] = `
       >
         <Text
           accessible={true}
-          allowFontScaling={true}
+          allowFontScaling={false}
           ellipsizeMode="tail"
           style={
             Array [
@@ -417,7 +417,7 @@ exports[`Android BpkBannerAlert should render correctly with animateOnEnter 1`] 
       >
         <Text
           accessible={true}
-          allowFontScaling={true}
+          allowFontScaling={false}
           ellipsizeMode="tail"
           style={
             Array [
@@ -498,7 +498,7 @@ exports[`Android BpkBannerAlert should render correctly with animateOnEnter 1`] 
       >
         <Text
           accessible={true}
-          allowFontScaling={true}
+          allowFontScaling={false}
           ellipsizeMode="tail"
           style={
             Array [
@@ -600,7 +600,7 @@ exports[`Android BpkBannerAlert should render correctly with animateOnLeave 1`] 
       >
         <Text
           accessible={true}
-          allowFontScaling={true}
+          allowFontScaling={false}
           ellipsizeMode="tail"
           style={
             Array [
@@ -681,7 +681,7 @@ exports[`Android BpkBannerAlert should render correctly with animateOnLeave 1`] 
       >
         <Text
           accessible={true}
-          allowFontScaling={true}
+          allowFontScaling={false}
           ellipsizeMode="tail"
           style={
             Array [
@@ -804,7 +804,7 @@ exports[`Android BpkBannerAlert should render correctly with children provided (
       >
         <Text
           accessible={true}
-          allowFontScaling={true}
+          allowFontScaling={false}
           ellipsizeMode="tail"
           style={
             Array [
@@ -852,7 +852,7 @@ exports[`Android BpkBannerAlert should render correctly with children provided (
         </Text>
         <Text
           accessible={true}
-          allowFontScaling={true}
+          allowFontScaling={false}
           ellipsizeMode="tail"
           style={
             Array [
@@ -1005,7 +1005,7 @@ exports[`Android BpkBannerAlert should render correctly with children provided (
       >
         <Text
           accessible={true}
-          allowFontScaling={true}
+          allowFontScaling={false}
           ellipsizeMode="tail"
           style={
             Array [
@@ -1053,7 +1053,7 @@ exports[`Android BpkBannerAlert should render correctly with children provided (
         </Text>
         <Text
           accessible={true}
-          allowFontScaling={true}
+          allowFontScaling={false}
           ellipsizeMode="tail"
           style={
             Array [
@@ -1206,7 +1206,7 @@ exports[`Android BpkBannerAlert should render correctly with dismissable 1`] = `
       >
         <Text
           accessible={true}
-          allowFontScaling={true}
+          allowFontScaling={false}
           ellipsizeMode="tail"
           style={
             Array [
@@ -1357,7 +1357,7 @@ exports[`Android BpkBannerAlert should render correctly with dismissable 1`] = `
       >
         <Text
           accessible={true}
-          allowFontScaling={true}
+          allowFontScaling={false}
           ellipsizeMode="tail"
           style={
             Array [
@@ -1550,7 +1550,7 @@ exports[`Android BpkBannerAlert should render correctly with expanded 1`] = `
       >
         <Text
           accessible={true}
-          allowFontScaling={true}
+          allowFontScaling={false}
           ellipsizeMode="tail"
           style={
             Array [
@@ -1598,7 +1598,7 @@ exports[`Android BpkBannerAlert should render correctly with expanded 1`] = `
         </Text>
         <Text
           accessible={true}
-          allowFontScaling={true}
+          allowFontScaling={false}
           ellipsizeMode="tail"
           style={
             Array [
@@ -1751,7 +1751,7 @@ exports[`Android BpkBannerAlert should render correctly with expanded 1`] = `
       >
         <Text
           accessible={true}
-          allowFontScaling={true}
+          allowFontScaling={false}
           ellipsizeMode="tail"
           style={
             Array [
@@ -1799,7 +1799,7 @@ exports[`Android BpkBannerAlert should render correctly with expanded 1`] = `
         </Text>
         <Text
           accessible={true}
-          allowFontScaling={true}
+          allowFontScaling={false}
           ellipsizeMode="tail"
           style={
             Array [
@@ -1952,7 +1952,7 @@ exports[`Android BpkBannerAlert should render correctly with type equal to error
       >
         <Text
           accessible={true}
-          allowFontScaling={true}
+          allowFontScaling={false}
           ellipsizeMode="tail"
           style={
             Array [
@@ -2033,7 +2033,7 @@ exports[`Android BpkBannerAlert should render correctly with type equal to error
       >
         <Text
           accessible={true}
-          allowFontScaling={true}
+          allowFontScaling={false}
           ellipsizeMode="tail"
           style={
             Array [
@@ -2135,7 +2135,7 @@ exports[`Android BpkBannerAlert should render correctly with type equal to neutr
       >
         <Text
           accessible={true}
-          allowFontScaling={true}
+          allowFontScaling={false}
           ellipsizeMode="tail"
           style={
             Array [
@@ -2216,7 +2216,7 @@ exports[`Android BpkBannerAlert should render correctly with type equal to neutr
       >
         <Text
           accessible={true}
-          allowFontScaling={true}
+          allowFontScaling={false}
           ellipsizeMode="tail"
           style={
             Array [
@@ -2318,7 +2318,7 @@ exports[`Android BpkBannerAlert should render correctly with type equal to succe
       >
         <Text
           accessible={true}
-          allowFontScaling={true}
+          allowFontScaling={false}
           ellipsizeMode="tail"
           style={
             Array [
@@ -2399,7 +2399,7 @@ exports[`Android BpkBannerAlert should render correctly with type equal to succe
       >
         <Text
           accessible={true}
-          allowFontScaling={true}
+          allowFontScaling={false}
           ellipsizeMode="tail"
           style={
             Array [
@@ -2501,7 +2501,7 @@ exports[`Android BpkBannerAlert should render correctly with type equal to warn 
       >
         <Text
           accessible={true}
-          allowFontScaling={true}
+          allowFontScaling={false}
           ellipsizeMode="tail"
           style={
             Array [
@@ -2582,7 +2582,7 @@ exports[`Android BpkBannerAlert should render correctly with type equal to warn 
       >
         <Text
           accessible={true}
-          allowFontScaling={true}
+          allowFontScaling={false}
           ellipsizeMode="tail"
           style={
             Array [
