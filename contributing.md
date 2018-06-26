@@ -59,7 +59,7 @@ If you use [nvm](https://github.com/creationix/nvm) or [nave](https://github.com
 
 To install npm, use `npm install --global npm@^5.6.0`.
 
-### React Native 
+### React Native
 
 > Skip this section if you don't intend to develop React Native components.
 
@@ -129,7 +129,7 @@ Run `npm install` to install dependencies from npm.
 
 Backpack is a multi-package repository, also known as a monorepo. This means that instead of having one code repository for each npm package, we manage them all inside this single repository.
 
-We use [Lerna](https://lernajs.io) to achieve this. Lerna links packages together inside this repo by 'bootstrapping'. 
+We use [Lerna](https://lernajs.io) to achieve this. Lerna links packages together inside this repo by 'bootstrapping'.
 
 When you run `npm install`, Lerna is bootstrapped automatically as a post-install hook. However, if you change dependencies within a package, you will need to run Lerna manually with `npm run bootstrap`.
 
@@ -164,7 +164,7 @@ Use `npm run build` to do this.
 
 ### Run the development environment
 
-We use [Storybook](https://getstorybook.io) for our development environment. The instructions for running it are different, depending on whether you're running the web or React Native storybook.
+We use [Storybook](https://storybook.js.org/) for our development environment. The instructions for running it are different, depending on whether you're running the web or React Native storybook.
 
 #### Web
 
@@ -301,7 +301,7 @@ The web Map component page requires an environment variable named `GOOGLE_MAPS_A
 
 * `npm run lint` to lint both JS and SCSS.
 * `npm run lint:js` to lint JS.
-* `npm run lint:js:fix` to lint and try to automatically fix any errors. 
+* `npm run lint:js:fix` to lint and try to automatically fix any errors.
 * `npm run lint:scss` to lint SCSS.
 
 </details>
