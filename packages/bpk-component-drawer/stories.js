@@ -62,7 +62,7 @@ class DrawerContainer extends Component {
 
     return (
       <div id="drawer-container">
-        <div id="application-container">
+        <div id="pagewrap">
           <BpkButton onClick={this.onOpen}>{buttonText}</BpkButton>
           <Paragraph>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut egestas
@@ -146,9 +146,7 @@ storiesOf('bpk-component-drawer', module)
       title="Drawer title"
       closeLabel="Close drawer"
       buttonText="Open drawer"
-      getApplicationElement={() =>
-        document.getElementById('application-container')
-      }
+      getApplicationElement={() => document.getElementById('pagewrap')}
     >
       This is a default drawer. You can put anything you want in here.
     </DrawerContainer>
@@ -158,9 +156,7 @@ storiesOf('bpk-component-drawer', module)
       title="Drawer title"
       closeLabel="Close drawer"
       buttonText="Open overflowing drawer"
-      getApplicationElement={() =>
-        document.getElementById('application-container')
-      }
+      getApplicationElement={() => document.getElementById('pagewrap')}
     >
       <Paragraph>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla lacus
@@ -285,9 +281,7 @@ storiesOf('bpk-component-drawer', module)
       title="Drawer title"
       closeText="Done"
       buttonText="Open drawer"
-      getApplicationElement={() =>
-        document.getElementById('application-container')
-      }
+      getApplicationElement={() => document.getElementById('pagewrap')}
     >
       This is a default drawer. You can put anything you want in here.
     </DrawerContainer>
@@ -298,9 +292,7 @@ storiesOf('bpk-component-drawer', module)
       hideTitle
       closeLabel="Close drawer"
       buttonText="Open drawer"
-      getApplicationElement={() =>
-        document.getElementById('application-container')
-      }
+      getApplicationElement={() => document.getElementById('pagewrap')}
     >
       This is a default drawer. You can put anything you want in here.
     </DrawerContainer>
@@ -310,9 +302,7 @@ storiesOf('bpk-component-drawer', module)
       title="Drawer title"
       closeLabel="Close drawer"
       buttonText="Open drawer"
-      getApplicationElement={() =>
-        document.getElementById('application-container')
-      }
+      getApplicationElement={() => document.getElementById('pagewrap')}
       contentClassName={getClassName('bpk-drawer-content-container')}
     >
       This is a flex drawer. You can put anything you want in here.

@@ -29,93 +29,92 @@ const daysOfWeek = [
 ];
 
 export default class App extends Component {
-  constructor () {
+  constructor() {
     super();
 
-
     this.state = {
-      selectedDate: null
-    }
+      selectedDate: null,
+    };
   }
 
-  handleDateSelect = (date) => {
+  handleDateSelect = date => {
     this.setState({
-      selectedDate: date
+      selectedDate: date,
     });
-  }
+  };
 
-  render () {
+  render() {
     return (
       <BpkDatepicker
-          id='datepicker'
-          daysOfWeek={daysOfWeek}
-          changeMonthLabel="Change month"
-          closeButtonText="Close"
-          title="Departure date"
-          getApplicationElement={() => document.getElementById('application-container')}
-          formatDate={formatDate}
-          formatMonth={formatMonth}
-          formatDateFull={formatDateFull}
-          onDateSelect={this.handleDateSelect}
-          date={this.state.selectedDate}
-        />
-    )
+        id="datepicker"
+        daysOfWeek={daysOfWeek}
+        changeMonthLabel="Change month"
+        closeButtonText="Close"
+        title="Departure date"
+        getApplicationElement={() => document.getElementById('pagewrap')}
+        formatDate={formatDate}
+        formatMonth={formatMonth}
+        formatDateFull={formatDateFull}
+        onDateSelect={this.handleDateSelect}
+        date={this.state.selectedDate}
+      />
+    );
   }
 }
 ```
 
 > **Theming:** In order to theme the modal, a `renderTarget` needs to be supplied as a function which returns a DOM node
-  in the scope of a `BpkThemeProvider`.
+> in the scope of a `BpkThemeProvider`.
 
 ## Props
 
 For more information on some these props, check the BpkCalendar documentation.
 
 > **Note:** Because this component uses a modal on mobile viewports, you need to let it know what
-  the root element of your application is by returning it's DOM node via the function passed to the
-  `getApplicationElement` prop (see the example above) - this is to "hide" your application from
-  screenreaders whilst the dateicker is open.
+> the root element of your application is by returning it's DOM node via the function passed to the
+> `getApplicationElement` prop (see the example above) - this is to "hide" your application from
+> screenreaders whilst the datepicker is open. The `pagewrap` element id is a convention we use internally at Skyscanner. In most cases it should "just work".
 
-| Property              | PropType             | Required | Default Value        |
-| --------------------- | -------------------- | -------- | -------------------- |
-| changeMonthLabel      | string               | true     | -                    |
-| closeButtonText       | string               | true     | -                    |
-| title                 | string               | true     | -                    |
-| id                    | string               | true     | -                    |
-| getApplicationElement | func                 | true     | -                    |
-| daysOfWeek            | object               | true     | -                    |
-| formatDate            | func                 | true     | -                    |
-| formatDateFull        | func                 | true     | -                    |
-| formatMonth           | func                 | true     | -                    |
-| date                  | Date                 | false    | null                 |
-| DateComponent         | func                 | false    | BpkCalendarDate  (*) |
-| dateModifiers         | object               | false    | {}               (*) |
-| inputProps            | object               | false    | {}                   |
-| markOutsideDays       | bool                 | false    | true             (*) |
-| markToday             | bool                 | false    | true             (*) |
-| maxDate               | Date                 | false    | new Date() + 1yr (*) |
-| minDate               | Date                 | false    | new Date()       (*) |
-| onDateSelect          | func                 | false    | null                 |
-| showWeekendSeparator  | bool                 | false    | true             (*) |
-| weekStartsOn          | number               | false    | 1                (*) |
-| initiallyFocusedDate  | Date                 | false    | null                 |
-| renderTarget          | func                 | false    | null                 |
+| Property              | PropType | Required | Default Value         |
+| --------------------- | -------- | -------- | --------------------- |
+| changeMonthLabel      | string   | true     | -                     |
+| closeButtonText       | string   | true     | -                     |
+| title                 | string   | true     | -                     |
+| id                    | string   | true     | -                     |
+| getApplicationElement | func     | true     | -                     |
+| daysOfWeek            | object   | true     | -                     |
+| formatDate            | func     | true     | -                     |
+| formatDateFull        | func     | true     | -                     |
+| formatMonth           | func     | true     | -                     |
+| date                  | Date     | false    | null                  |
+| DateComponent         | func     | false    | BpkCalendarDate (\*)  |
+| dateModifiers         | object   | false    | {} (\*)               |
+| inputProps            | object   | false    | {}                    |
+| markOutsideDays       | bool     | false    | true (\*)             |
+| markToday             | bool     | false    | true (\*)             |
+| maxDate               | Date     | false    | new Date() + 1yr (\*) |
+| minDate               | Date     | false    | new Date() (\*)       |
+| onDateSelect          | func     | false    | null                  |
+| showWeekendSeparator  | bool     | false    | true (\*)             |
+| weekStartsOn          | number   | false    | 1 (\*)                |
+| initiallyFocusedDate  | Date     | false    | null                  |
+| renderTarget          | func     | false    | null                  |
 
-> (*) Default value is defined on child component
+> (\*) Default value is defined on child component
 
 ## Theme Props
 
-* `calendarDateTextColor`
-* `calendarDateTextHoverColor`
-* `calendarDateTextActiveColor`
-* `calendarDateTextFocusColor`
-* `calendarDateTextSelectedColor`
-* `calendarDateSelectedBackgroundColor`
-* `calendarDateFocusedBorderColor`
-* `calendarNudgerIconColor`
-* `calendarNudgerIconHoverColor`
-* `calendarNudgerIconActiveColor`
-* `linkColor`
-* `linkHoverColor`
-* `linkActiveColor`
-* `linkVisitedColor`
+- `calendarDateTextColor`
+- `calendarDateTextHoverColor`
+- `calendarDateTextActiveColor`
+- `calendarDateTextFocusColor`
+- `calendarDateTextSelectedColor`
+- `calendarDateSelectedBackgroundColor`
+- `calendarDateFocusedBorderColor`
+- `calendarNudgerIconColor`
+- `calendarNudgerIconHoverColor`
+- `calendarNudgerIconActiveColor`
+- `linkColor`
+- `linkHoverColor`
+- `linkActiveColor`
+- `linkVisitedColor`

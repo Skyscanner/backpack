@@ -79,7 +79,7 @@ class DialogContainer extends Component<Props, State> {
   render() {
     return (
       <div id="dialog-container">
-        <div id="application-container">
+        <div id="pagewrap">
           <BpkButton onClick={this.onOpen}>Open dialog</BpkButton>
         </div>
         <BpkDialog
@@ -88,9 +88,7 @@ class DialogContainer extends Component<Props, State> {
           className="my-classname"
           isOpen={this.state.isOpen}
           onClose={this.onClose}
-          getApplicationElement={() =>
-            document.getElementById('application-container')
-          }
+          getApplicationElement={() => document.getElementById('pagewrap')}
           renderTarget={() => document.getElementById('dialog-container')}
           {...this.props}
         >

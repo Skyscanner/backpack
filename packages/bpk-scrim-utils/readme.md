@@ -30,6 +30,8 @@ const BoxWithScrim = withScrim(Box);
 `containerClassName` can be used to apply styles to the full-screen container into which the enriched component is inserted
 (eg. `display: flex` or `display: grid`)
 
+> **Note:** the `pagewrap` element id is a convention we use internally at Skyscanner. In most cases it should "just work".
+
 ### Props
 
 | Property              | PropType | Required | Default Value                                                                  |

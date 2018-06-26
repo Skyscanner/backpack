@@ -68,9 +68,7 @@ class DrawerContainer extends Component {
           isOpen={this.state.isOpen}
           onClose={this.onClose}
           title="Drawer title"
-          getApplicationElement={() =>
-            document.getElementById('application-container')
-          }
+          getApplicationElement={() => document.getElementById('pagewrap')}
           hideTitle={this.state.hideTitle}
           renderTarget={() => document.getElementById('portal-target')}
           {...rest}

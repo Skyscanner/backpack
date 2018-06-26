@@ -104,7 +104,7 @@ export default class SideNavLayout extends Component<Props, State> {
                 fullScreen
                 showHeader={false}
                 getApplicationElement={() =>
-                  document.getElementById('application-container')
+                  document.getElementById('pagewrap')
                 }
                 renderTarget={() => document.getElementById('portal-target')}
                 className={getClassName('bpkdocs-side-nav-layout__modal')}

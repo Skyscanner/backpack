@@ -85,9 +85,7 @@ class ModalContainer extends Component<Props, State> {
           isOpen={this.state.isOpen}
           onClose={this.onClose}
           wide={this.state.hideTitle}
-          getApplicationElement={() =>
-            document.getElementById('application-container')
-          }
+          getApplicationElement={() => document.getElementById('pagewrap')}
           renderTarget={() => document.getElementById('portal-target')}
           {...rest}
         >
