@@ -2,6 +2,15 @@
 
 [Unreleased changes](./unreleased.md).
 
+# 2018-06-26 - Fix for `bpk-scrim-utils` and `bpk-component-calendar`
+
+**Fixed:**
+
+- bpk-scrim-utils: 3.2.1 => 3.2.2
+  - Fixed incorrect propType for `dark` prop.
+- bpk-component-calendar: 4.2.35 => 4.2.36
+  - Fixed calendar to work with different font sizes.
+
 # 2018-06-25 - Map component improvements, plus adjusted height for the native badge component
 
 **Breaking:**
