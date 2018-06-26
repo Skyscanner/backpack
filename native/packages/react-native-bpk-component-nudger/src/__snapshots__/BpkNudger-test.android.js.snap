@@ -94,7 +94,7 @@ exports[`Android BpkNudger should disable theming if the required attribute is o
     >
       <Text
         accessible={true}
-        allowFontScaling={true}
+        allowFontScaling={false}
         ellipsizeMode="tail"
         style={
           Array [
@@ -240,7 +240,7 @@ exports[`Android BpkNudger should disable theming if the required attribute is o
     >
       <Text
         accessible={true}
-        allowFontScaling={true}
+        allowFontScaling={false}
         ellipsizeMode="tail"
         style={
           Array [
@@ -377,7 +377,7 @@ exports[`Android BpkNudger should render correctly 1`] = `
     >
       <Text
         accessible={true}
-        allowFontScaling={true}
+        allowFontScaling={false}
         ellipsizeMode="tail"
         style={
           Array [
@@ -523,7 +523,7 @@ exports[`Android BpkNudger should render correctly 1`] = `
     >
       <Text
         accessible={true}
-        allowFontScaling={true}
+        allowFontScaling={false}
         ellipsizeMode="tail"
         style={
           Array [
@@ -667,7 +667,7 @@ exports[`Android BpkNudger should render correctly when value is a not an intege
     >
       <Text
         accessible={true}
-        allowFontScaling={true}
+        allowFontScaling={false}
         ellipsizeMode="tail"
         style={
           Array [
@@ -817,7 +817,7 @@ exports[`Android BpkNudger should render correctly when value is a not an intege
     >
       <Text
         accessible={true}
-        allowFontScaling={true}
+        allowFontScaling={false}
         ellipsizeMode="tail"
         style={
           Array [
@@ -954,7 +954,7 @@ exports[`Android BpkNudger should render correctly when value is greater than ma
     >
       <Text
         accessible={true}
-        allowFontScaling={true}
+        allowFontScaling={false}
         ellipsizeMode="tail"
         style={
           Array [
@@ -1107,7 +1107,7 @@ exports[`Android BpkNudger should render correctly when value is greater than ma
     >
       <Text
         accessible={true}
-        allowFontScaling={true}
+        allowFontScaling={false}
         ellipsizeMode="tail"
         style={
           Array [
@@ -1255,7 +1255,7 @@ exports[`Android BpkNudger should render correctly when value is less than min 1
     >
       <Text
         accessible={true}
-        allowFontScaling={true}
+        allowFontScaling={false}
         ellipsizeMode="tail"
         style={
           Array [
@@ -1405,7 +1405,7 @@ exports[`Android BpkNudger should render correctly when value is less than min 1
     >
       <Text
         accessible={true}
-        allowFontScaling={true}
+        allowFontScaling={false}
         ellipsizeMode="tail"
         style={
           Array [
@@ -1542,7 +1542,7 @@ exports[`Android BpkNudger should support theming 1`] = `
     >
       <Text
         accessible={true}
-        allowFontScaling={true}
+        allowFontScaling={false}
         ellipsizeMode="tail"
         style={
           Array [
@@ -1690,7 +1690,7 @@ exports[`Android BpkNudger should support theming 1`] = `
     >
       <Text
         accessible={true}
-        allowFontScaling={true}
+        allowFontScaling={false}
         ellipsizeMode="tail"
         style={
           Array [

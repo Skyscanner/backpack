@@ -53,7 +53,7 @@ exports[`iOS BpkBannerAlert should accept userland styling 1`] = `
       >
         <Text
           accessible={true}
-          allowFontScaling={true}
+          allowFontScaling={false}
           ellipsizeMode="tail"
           style={
             Array [
@@ -136,7 +136,7 @@ exports[`iOS BpkBannerAlert should accept userland styling 1`] = `
       >
         <Text
           accessible={true}
-          allowFontScaling={true}
+          allowFontScaling={false}
           ellipsizeMode="tail"
           style={
             Array [
@@ -240,7 +240,7 @@ exports[`iOS BpkBannerAlert should render correctly when not shown 1`] = `
       >
         <Text
           accessible={true}
-          allowFontScaling={true}
+          allowFontScaling={false}
           ellipsizeMode="tail"
           style={
             Array [
@@ -323,7 +323,7 @@ exports[`iOS BpkBannerAlert should render correctly when not shown 1`] = `
       >
         <Text
           accessible={true}
-          allowFontScaling={true}
+          allowFontScaling={false}
           ellipsizeMode="tail"
           style={
             Array [
@@ -427,7 +427,7 @@ exports[`iOS BpkBannerAlert should render correctly with animateOnEnter 1`] = `
       >
         <Text
           accessible={true}
-          allowFontScaling={true}
+          allowFontScaling={false}
           ellipsizeMode="tail"
           style={
             Array [
@@ -510,7 +510,7 @@ exports[`iOS BpkBannerAlert should render correctly with animateOnEnter 1`] = `
       >
         <Text
           accessible={true}
-          allowFontScaling={true}
+          allowFontScaling={false}
           ellipsizeMode="tail"
           style={
             Array [
@@ -614,7 +614,7 @@ exports[`iOS BpkBannerAlert should render correctly with animateOnLeave 1`] = `
       >
         <Text
           accessible={true}
-          allowFontScaling={true}
+          allowFontScaling={false}
           ellipsizeMode="tail"
           style={
             Array [
@@ -697,7 +697,7 @@ exports[`iOS BpkBannerAlert should render correctly with animateOnLeave 1`] = `
       >
         <Text
           accessible={true}
-          allowFontScaling={true}
+          allowFontScaling={false}
           ellipsizeMode="tail"
           style={
             Array [
@@ -815,7 +815,7 @@ exports[`iOS BpkBannerAlert should render correctly with children provided (expa
       >
         <Text
           accessible={true}
-          allowFontScaling={true}
+          allowFontScaling={false}
           ellipsizeMode="tail"
           style={
             Array [
@@ -863,7 +863,7 @@ exports[`iOS BpkBannerAlert should render correctly with children provided (expa
         </Text>
         <Text
           accessible={true}
-          allowFontScaling={true}
+          allowFontScaling={false}
           ellipsizeMode="tail"
           style={
             Array [
@@ -1027,7 +1027,7 @@ exports[`iOS BpkBannerAlert should render correctly with children provided (expa
       >
         <Text
           accessible={true}
-          allowFontScaling={true}
+          allowFontScaling={false}
           ellipsizeMode="tail"
           style={
             Array [
@@ -1075,7 +1075,7 @@ exports[`iOS BpkBannerAlert should render correctly with children provided (expa
         </Text>
         <Text
           accessible={true}
-          allowFontScaling={true}
+          allowFontScaling={false}
           ellipsizeMode="tail"
           style={
             Array [
@@ -1249,7 +1249,7 @@ exports[`iOS BpkBannerAlert should render correctly with dismissable 1`] = `
       >
         <Text
           accessible={true}
-          allowFontScaling={true}
+          allowFontScaling={false}
           ellipsizeMode="tail"
           style={
             Array [
@@ -1322,7 +1322,7 @@ exports[`iOS BpkBannerAlert should render correctly with dismissable 1`] = `
       >
         <Text
           accessible={true}
-          allowFontScaling={true}
+          allowFontScaling={false}
           ellipsizeMode="tail"
           style={
             Array [
@@ -1396,7 +1396,7 @@ exports[`iOS BpkBannerAlert should render correctly with dismissable 1`] = `
       >
         <Text
           accessible={true}
-          allowFontScaling={true}
+          allowFontScaling={false}
           ellipsizeMode="tail"
           style={
             Array [
@@ -1469,7 +1469,7 @@ exports[`iOS BpkBannerAlert should render correctly with dismissable 1`] = `
       >
         <Text
           accessible={true}
-          allowFontScaling={true}
+          allowFontScaling={false}
           ellipsizeMode="tail"
           style={
             Array [
@@ -1575,7 +1575,7 @@ exports[`iOS BpkBannerAlert should render correctly with expanded 1`] = `
       >
         <Text
           accessible={true}
-          allowFontScaling={true}
+          allowFontScaling={false}
           ellipsizeMode="tail"
           style={
             Array [
@@ -1623,7 +1623,7 @@ exports[`iOS BpkBannerAlert should render correctly with expanded 1`] = `
         </Text>
         <Text
           accessible={true}
-          allowFontScaling={true}
+          allowFontScaling={false}
           ellipsizeMode="tail"
           style={
             Array [
@@ -1787,7 +1787,7 @@ exports[`iOS BpkBannerAlert should render correctly with expanded 1`] = `
       >
         <Text
           accessible={true}
-          allowFontScaling={true}
+          allowFontScaling={false}
           ellipsizeMode="tail"
           style={
             Array [
@@ -1835,7 +1835,7 @@ exports[`iOS BpkBannerAlert should render correctly with expanded 1`] = `
         </Text>
         <Text
           accessible={true}
-          allowFontScaling={true}
+          allowFontScaling={false}
           ellipsizeMode="tail"
           style={
             Array [
@@ -2006,7 +2006,7 @@ exports[`iOS BpkBannerAlert should render correctly with type equal to error 1`]
       >
         <Text
           accessible={true}
-          allowFontScaling={true}
+          allowFontScaling={false}
           ellipsizeMode="tail"
           style={
             Array [
@@ -2089,7 +2089,7 @@ exports[`iOS BpkBannerAlert should render correctly with type equal to error 1`]
       >
         <Text
           accessible={true}
-          allowFontScaling={true}
+          allowFontScaling={false}
           ellipsizeMode="tail"
           style={
             Array [
@@ -2193,7 +2193,7 @@ exports[`iOS BpkBannerAlert should render correctly with type equal to neutral 1
       >
         <Text
           accessible={true}
-          allowFontScaling={true}
+          allowFontScaling={false}
           ellipsizeMode="tail"
           style={
             Array [
@@ -2276,7 +2276,7 @@ exports[`iOS BpkBannerAlert should render correctly with type equal to neutral 1
       >
         <Text
           accessible={true}
-          allowFontScaling={true}
+          allowFontScaling={false}
           ellipsizeMode="tail"
           style={
             Array [
@@ -2380,7 +2380,7 @@ exports[`iOS BpkBannerAlert should render correctly with type equal to success 1
       >
         <Text
           accessible={true}
-          allowFontScaling={true}
+          allowFontScaling={false}
           ellipsizeMode="tail"
           style={
             Array [
@@ -2463,7 +2463,7 @@ exports[`iOS BpkBannerAlert should render correctly with type equal to success 1
       >
         <Text
           accessible={true}
-          allowFontScaling={true}
+          allowFontScaling={false}
           ellipsizeMode="tail"
           style={
             Array [
@@ -2567,7 +2567,7 @@ exports[`iOS BpkBannerAlert should render correctly with type equal to warn 1`] 
       >
         <Text
           accessible={true}
-          allowFontScaling={true}
+          allowFontScaling={false}
           ellipsizeMode="tail"
           style={
             Array [
@@ -2650,7 +2650,7 @@ exports[`iOS BpkBannerAlert should render correctly with type equal to warn 1`] 
       >
         <Text
           accessible={true}
-          allowFontScaling={true}
+          allowFontScaling={false}
           ellipsizeMode="tail"
           style={
             Array [

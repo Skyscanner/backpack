@@ -621,7 +621,7 @@ exports[`ios BpkNavigationBar should render correctly with an icon in the title 
       >
         <Text
           accessible={true}
-          allowFontScaling={true}
+          allowFontScaling={false}
           ellipsizeMode="tail"
           style={
             Array [

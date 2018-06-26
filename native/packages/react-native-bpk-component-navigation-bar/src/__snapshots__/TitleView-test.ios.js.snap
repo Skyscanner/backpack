@@ -14,7 +14,7 @@ exports[`ios TitleView should render correctly with leading icon 1`] = `
 >
   <Text
     accessible={true}
-    allowFontScaling={true}
+    allowFontScaling={false}
     ellipsizeMode="tail"
     style={
       Array [
@@ -157,7 +157,7 @@ exports[`ios TitleView should render correctly with trailing icon 1`] = `
   </Text>
   <Text
     accessible={true}
-    allowFontScaling={true}
+    allowFontScaling={false}
     ellipsizeMode="tail"
     style={
       Array [

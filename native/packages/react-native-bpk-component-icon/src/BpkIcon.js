@@ -65,7 +65,7 @@ const BpkIcon = (props: Props) => {
   }
 
   return (
-    <Text style={textStyleFinal} {...rest}>
+    <Text style={textStyleFinal} {...rest} allowFontScaling={false}>
       {mapCharacterCode(characterCode)}
     </Text>
   );

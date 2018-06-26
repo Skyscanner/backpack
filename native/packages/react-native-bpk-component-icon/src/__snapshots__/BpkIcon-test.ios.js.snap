@@ -3,7 +3,7 @@
 exports[`iOS BpkIcon should apply user props 1`] = `
 <Text
   accessible={true}
-  allowFontScaling={true}
+  allowFontScaling={false}
   ellipsizeMode="tail"
   style={
     Array [
@@ -26,7 +26,7 @@ exports[`iOS BpkIcon should apply user props 1`] = `
 exports[`iOS BpkIcon should render correctly 1`] = `
 <Text
   accessible={true}
-  allowFontScaling={true}
+  allowFontScaling={false}
   ellipsizeMode="tail"
   style={
     Array [
@@ -46,7 +46,7 @@ exports[`iOS BpkIcon should render correctly 1`] = `
 exports[`iOS BpkIcon should render small icon correctly 1`] = `
 <Text
   accessible={true}
-  allowFontScaling={true}
+  allowFontScaling={false}
   ellipsizeMode="tail"
   style={
     Array [

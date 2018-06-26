@@ -38,7 +38,7 @@ exports[`android BpkNavigationBarButton should render correctly back icon 1`] = 
   >
     <Text
       accessible={true}
-      allowFontScaling={true}
+      allowFontScaling={false}
       ellipsizeMode="tail"
       style={
         Array [
@@ -104,7 +104,7 @@ exports[`android BpkNavigationBarButton should render correctly disabled 1`] = `
   >
     <Text
       accessible={true}
-      allowFontScaling={true}
+      allowFontScaling={false}
       ellipsizeMode="tail"
       style={
         Array [
@@ -169,7 +169,7 @@ exports[`android BpkNavigationBarButton should render correctly with close icon 
   >
     <Text
       accessible={true}
-      allowFontScaling={true}
+      allowFontScaling={false}
       ellipsizeMode="tail"
       style={
         Array [
@@ -234,7 +234,7 @@ exports[`android BpkNavigationBarButton should render correctly with tick icon 1
   >
     <Text
       accessible={true}
-      allowFontScaling={true}
+      allowFontScaling={false}
       ellipsizeMode="tail"
       style={
         Array [
@@ -300,7 +300,7 @@ exports[`android BpkNavigationBarButton should respect "disabledTintColor" 1`] =
   >
     <Text
       accessible={true}
-      allowFontScaling={true}
+      allowFontScaling={false}
       ellipsizeMode="tail"
       style={
         Array [
@@ -365,7 +365,7 @@ exports[`android BpkNavigationBarButton should respect "tintColor" 1`] = `
   >
     <Text
       accessible={true}
-      allowFontScaling={true}
+      allowFontScaling={false}
       ellipsizeMode="tail"
       style={
         Array [
@@ -430,7 +430,7 @@ exports[`android BpkNavigationBarButton should respect "touchableColor" 1`] = `
   >
     <Text
       accessible={true}
-      allowFontScaling={true}
+      allowFontScaling={false}
       ellipsizeMode="tail"
       style={
         Array [

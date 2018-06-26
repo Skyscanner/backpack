@@ -562,7 +562,7 @@ exports[`RTL BpkTextInput should render correctly with description, valid=false 
       />
       <Text
         accessible={true}
-        allowFontScaling={true}
+        allowFontScaling={false}
         ellipsizeMode="tail"
         style={
           Array [
@@ -843,7 +843,7 @@ exports[`RTL BpkTextInput should render correctly with valid 1`] = `
       />
       <Text
         accessible={true}
-        allowFontScaling={true}
+        allowFontScaling={false}
         ellipsizeMode="tail"
         style={
           Array [
@@ -949,7 +949,7 @@ exports[`RTL BpkTextInput should render correctly with valid false 1`] = `
       />
       <Text
         accessible={true}
-        allowFontScaling={true}
+        allowFontScaling={false}
         ellipsizeMode="tail"
         style={
           Array [
@@ -1055,7 +1055,7 @@ exports[`RTL BpkTextInput should render correctly with valid false and a validat
       />
       <Text
         accessible={true}
-        allowFontScaling={true}
+        allowFontScaling={false}
         ellipsizeMode="tail"
         style={
           Array [

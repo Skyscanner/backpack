@@ -143,7 +143,7 @@ exports[`Android BpkButtonLink should render correctly with iconAlignment="leadi
     </Text>
     <Text
       accessible={true}
-      allowFontScaling={true}
+      allowFontScaling={false}
       ellipsizeMode="tail"
       style={
         Array [
@@ -244,7 +244,7 @@ exports[`Android BpkButtonLink should render correctly with iconAlignment="trail
     </Text>
     <Text
       accessible={true}
-      allowFontScaling={true}
+      allowFontScaling={false}
       ellipsizeMode="tail"
       style={
         Array [
@@ -653,7 +653,7 @@ exports[`Android BpkButtonLink should support the "icon" property 1`] = `
     </Text>
     <Text
       accessible={true}
-      allowFontScaling={true}
+      allowFontScaling={false}
       ellipsizeMode="tail"
       style={
         Array [

@@ -231,7 +231,7 @@ exports[`iOS BpkDialingCodeList should render correctly 1`] = `
         </View>
         <Text
           accessible={true}
-          allowFontScaling={true}
+          allowFontScaling={false}
           ellipsizeMode="tail"
           style={
             Array [
@@ -406,7 +406,7 @@ exports[`iOS BpkDialingCodeList should render correctly 1`] = `
         </View>
         <Text
           accessible={true}
-          allowFontScaling={true}
+          allowFontScaling={false}
           ellipsizeMode="tail"
           style={
             Array [
@@ -581,7 +581,7 @@ exports[`iOS BpkDialingCodeList should render correctly 1`] = `
         </View>
         <Text
           accessible={true}
-          allowFontScaling={true}
+          allowFontScaling={false}
           ellipsizeMode="tail"
           style={
             Array [
@@ -864,7 +864,7 @@ exports[`iOS BpkDialingCodeList should render correctly with "selectedId" set 1`
         </View>
         <Text
           accessible={true}
-          allowFontScaling={true}
+          allowFontScaling={false}
           ellipsizeMode="tail"
           style={
             Array [
@@ -1042,7 +1042,7 @@ exports[`iOS BpkDialingCodeList should render correctly with "selectedId" set 1`
         </View>
         <Text
           accessible={true}
-          allowFontScaling={true}
+          allowFontScaling={false}
           ellipsizeMode="tail"
           style={
             Array [
@@ -1217,7 +1217,7 @@ exports[`iOS BpkDialingCodeList should render correctly with "selectedId" set 1`
         </View>
         <Text
           accessible={true}
-          allowFontScaling={true}
+          allowFontScaling={false}
           ellipsizeMode="tail"
           style={
             Array [

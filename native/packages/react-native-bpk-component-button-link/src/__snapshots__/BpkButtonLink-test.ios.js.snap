@@ -145,7 +145,7 @@ exports[`iOS BpkButtonLink should render correctly with iconAlignment="leading" 
     </Text>
     <Text
       accessible={true}
-      allowFontScaling={true}
+      allowFontScaling={false}
       ellipsizeMode="tail"
       style={
         Array [
@@ -247,7 +247,7 @@ exports[`iOS BpkButtonLink should render correctly with iconAlignment="trailing"
     </Text>
     <Text
       accessible={true}
-      allowFontScaling={true}
+      allowFontScaling={false}
       ellipsizeMode="tail"
       style={
         Array [
@@ -658,7 +658,7 @@ exports[`iOS BpkButtonLink should support the "icon" property 1`] = `
     </Text>
     <Text
       accessible={true}
-      allowFontScaling={true}
+      allowFontScaling={false}
       ellipsizeMode="tail"
       style={
         Array [
@@ -759,7 +759,7 @@ exports[`iOS should support the "icon" and "large" property 1`] = `
     </Text>
     <Text
       accessible={true}
-      allowFontScaling={true}
+      allowFontScaling={false}
       ellipsizeMode="tail"
       style={
         Array [
