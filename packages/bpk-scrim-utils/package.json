@@ -1,6 +1,6 @@
 {
   "name": "bpk-scrim-utils",
-  "version": "3.2.1",
+  "version": "3.2.2",
   "description": "Higher order component that adds an overlay behind components and manages scroll states.",
   "main": "index.js",
   "repository": {

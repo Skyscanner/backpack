@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-calendar",
-  "version": "4.2.35",
+  "version": "4.2.36",
   "description": "Backpack calendar component.",
   "main": "index.js",
   "repository": {
