@@ -34,6 +34,11 @@
     "build": "npm run build:tokens && npm run build:svgs && lerna run build && (cd ./native && npm run link)",
     "storybook:dist": "build-storybook -c .storybook -o dist/storybook",
     "storybook": "start-storybook -p 9001",
+    "detox": "detox",
+    "detox:build:android": "detox build --configuration android.emu.debug",
+    "detox:build:ios": "detox build --configuration ios.sim.debug",
+    "detox:test:android": "detox test --configuration android.emu.debug",
+    "detox:test:ios": "detox test --configuration ios.sim.debug",
     "sassdoc": "sassdoc {packages/bpk-mixins/src/**/*,packages/bpk-svgs/dist/*,packages/bpk-tokens/tokens/base.default}.scss -d dist/sassdoc -v --strict",
     "docs": "BPK_BUILT_AT=$( date -u +%s ) webpack-dev-server --open",
     "docs:dist": "npm run clean:dist && NODE_ENV=production BPK_BUILT_AT=$( date -u +%s ) webpack --progress --display=minimal --bail && npm run sassdoc",
@@ -86,6 +91,7 @@
     "css-loader": "^0.28.8",
     "danger": "^3.0.4",
     "del": "^3.0.0",
+    "detox": "^8.0.0",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-15": "^1.0.5",
     "enzyme-to-json": "^3.3.0",
@@ -189,5 +195,24 @@
       "jest",
       "babel-jest"
     ]
+  },
+  "detox": {
+    "test-runner": "jest",
+    "runner-config": "native/e2e/config.json",
+    "specs": "e2e",
+    "configurations": {
+      "ios.sim.debug": {
+        "binaryPath": "native/ios/build/Build/Products/Debug-iphonesimulator/native.app",
+        "build": "xcodebuild -workspace native/ios/native.xcworkspace -scheme native -configuration Debug -sdk iphonesimulator -derivedDataPath native/ios/build",
+        "type": "ios.simulator",
+        "name": "iPhone 8"
+      },
+      "android.emu.debug": {
+        "binaryPath": "native/android/app/build/outputs/apk/debug/app-debug.apk",
+        "build": "pushd native/android && ./gradlew assembleDebug assembleAndroidTest -D testBuildType=debug && popd",
+        "type": "android.emulator",
+        "name": "bpk-avd"
+      }
+    }
   }
 }

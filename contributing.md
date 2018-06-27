@@ -112,6 +112,19 @@ $ANDROID_SDK_ROOT/tools/bin/avdmanager create avd --name "bpk-avd-min" --package
 ```
 </details>
 
+#### Detox
+
+> Skip this section if you don't intend to develop React Native components.
+
+Backpack uses [Detox](https://github.com/wix/detox) for e2e testing of React Native components, it requires `applesimutils` to be installed, this can be added by running
+
+```
+brew tap wix/brew
+brew install applesimutils
+```
+
+for any issue with Detox please refer the the [offical documentation](https://github.com/wix/detox/tree/master/docs).
+
 ### Code style
 
 Backpack uses a combination of [ESLint](https://eslint.org) and [Prettier](https://prettier.io) to enforce coding styles. ESLint runs as a pre-commit hook, so it isn't possible to commit code that causes ESLint to fail.
