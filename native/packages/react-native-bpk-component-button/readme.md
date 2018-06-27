@@ -23,7 +23,7 @@ pod 'BVLinearGradient', :path => '../node_modules/react-native-bpk-component-but
 ## Usage
 
 ```js
-import { View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import React, { Component } from 'react';
 import BpkButton from 'react-native-bpk-component-button';
 import { spacingBase } from 'bpk-tokens/tokens/base.react.native';

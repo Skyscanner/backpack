@@ -1,0 +1,469 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`iOS BpkChip should render correctly 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 4,
+      },
+    ]
+  }
+>
+  <View
+    accessibilityComponentType={undefined}
+    accessibilityLabel="Accessibility label"
+    accessibilityTraits={
+      Array [
+        "button",
+      ]
+    }
+    accessible={true}
+    hitSlop={undefined}
+    nativeID={undefined}
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={null}
+    testID={undefined}
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "height": 20,
+            "justifyContent": "space-between",
+            "paddingHorizontal": 4,
+          },
+        ]
+      }
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+              "fontFamily": "System",
+              "fontSize": 11,
+              "fontWeight": "400",
+            },
+            Array [
+              Object {
+                "color": "rgb(82, 76, 97)",
+              },
+            ],
+          ]
+        }
+      >
+        Label
+      </Text>
+    </View>
+    <View
+      style={
+        Array [
+          Object {
+            "backgroundColor": "rgb(37, 32, 51)",
+            "bottom": 0,
+            "flex": 1,
+            "left": 0,
+            "opacity": 0,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          },
+          Object {
+            "borderRadius": 4,
+          },
+        ]
+      }
+    />
+  </View>
+</View>
+`;
+
+exports[`iOS BpkChip should render correctly with "large" 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 4,
+      },
+    ]
+  }
+>
+  <View
+    accessibilityComponentType={undefined}
+    accessibilityLabel="Accessibility label"
+    accessibilityTraits={
+      Array [
+        "button",
+      ]
+    }
+    accessible={true}
+    hitSlop={undefined}
+    nativeID={undefined}
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={null}
+    testID={undefined}
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "height": 20,
+            "justifyContent": "space-between",
+            "paddingHorizontal": 4,
+          },
+          Object {
+            "height": 28,
+          },
+        ]
+      }
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+              "fontFamily": "System",
+              "fontSize": 11,
+              "fontWeight": "400",
+            },
+            Array [
+              Object {
+                "color": "rgb(82, 76, 97)",
+              },
+            ],
+          ]
+        }
+      >
+        Label
+      </Text>
+    </View>
+    <View
+      style={
+        Array [
+          Object {
+            "backgroundColor": "rgb(37, 32, 51)",
+            "bottom": 0,
+            "flex": 1,
+            "left": 0,
+            "opacity": 0,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          },
+          Object {
+            "borderRadius": 4,
+          },
+        ]
+      }
+    />
+  </View>
+</View>
+`;
+
+exports[`iOS BpkChip should render correctly with "selected" 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 4,
+      },
+      Object {
+        "backgroundColor": "rgb(0, 140, 168)",
+      },
+    ]
+  }
+>
+  <View
+    accessibilityComponentType={undefined}
+    accessibilityLabel="Accessibility label"
+    accessibilityTraits={
+      Array [
+        "button",
+        "selected",
+      ]
+    }
+    accessible={true}
+    hitSlop={undefined}
+    nativeID={undefined}
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={null}
+    testID={undefined}
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "height": 20,
+            "justifyContent": "space-between",
+            "paddingHorizontal": 4,
+          },
+        ]
+      }
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+              "fontFamily": "System",
+              "fontSize": 11,
+              "fontWeight": "400",
+            },
+            Array [
+              Object {
+                "color": "rgb(82, 76, 97)",
+              },
+              Object {
+                "color": "rgb(255, 255, 255)",
+              },
+            ],
+          ]
+        }
+      >
+        Label
+      </Text>
+    </View>
+    <View
+      style={
+        Array [
+          Object {
+            "backgroundColor": "rgb(37, 32, 51)",
+            "bottom": 0,
+            "flex": 1,
+            "left": 0,
+            "opacity": 0,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          },
+          Object {
+            "borderRadius": 4,
+          },
+        ]
+      }
+    />
+  </View>
+</View>
+`;
+
+exports[`iOS BpkChip should render correctly with arbitrary props 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 4,
+      },
+    ]
+  }
+>
+  <View
+    accessibilityComponentType={undefined}
+    accessibilityLabel="Accessibility label"
+    accessibilityTraits={
+      Array [
+        "button",
+      ]
+    }
+    accessible={true}
+    hitSlop={undefined}
+    nativeID={undefined}
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={null}
+    testID="123"
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "height": 20,
+            "justifyContent": "space-between",
+            "paddingHorizontal": 4,
+          },
+        ]
+      }
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+              "fontFamily": "System",
+              "fontSize": 11,
+              "fontWeight": "400",
+            },
+            Array [
+              Object {
+                "color": "rgb(82, 76, 97)",
+              },
+            ],
+          ]
+        }
+      >
+        Label
+      </Text>
+    </View>
+    <View
+      style={
+        Array [
+          Object {
+            "backgroundColor": "rgb(37, 32, 51)",
+            "bottom": 0,
+            "flex": 1,
+            "left": 0,
+            "opacity": 0,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          },
+          Object {
+            "borderRadius": 4,
+          },
+        ]
+      }
+    />
+  </View>
+</View>
+`;
+
+exports[`iOS BpkChip should render correctly with custom style 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "backgroundColor": "rgb(230, 228, 235)",
+        "borderRadius": 4,
+      },
+      Object {
+        "flex": 1,
+      },
+    ]
+  }
+>
+  <View
+    accessibilityComponentType={undefined}
+    accessibilityLabel="Accessibility label"
+    accessibilityTraits={
+      Array [
+        "button",
+      ]
+    }
+    accessible={true}
+    hitSlop={undefined}
+    nativeID={undefined}
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={null}
+    testID={undefined}
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "height": 20,
+            "justifyContent": "space-between",
+            "paddingHorizontal": 4,
+          },
+        ]
+      }
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+              "fontFamily": "System",
+              "fontSize": 11,
+              "fontWeight": "400",
+            },
+            Array [
+              Object {
+                "color": "rgb(82, 76, 97)",
+              },
+            ],
+          ]
+        }
+      >
+        Label
+      </Text>
+    </View>
+    <View
+      style={
+        Array [
+          Object {
+            "backgroundColor": "rgb(37, 32, 51)",
+            "bottom": 0,
+            "flex": 1,
+            "left": 0,
+            "opacity": 0,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          },
+          Object {
+            "borderRadius": 4,
+          },
+        ]
+      }
+    />
+  </View>
+</View>
+`;
