@@ -42,39 +42,62 @@ type BpkImageProps = {
 
 type ImageProps = {
   altText: string,
-  hidden: boolean,
-  onImageLoad: ?() => mixed,
+  hidden: ?boolean,
+  onImageLoad: () => mixed,
 };
 
-const Image = (props: ImageProps): Node => {
-  const { hidden, altText, onImageLoad, ...rest } = props;
+class Image extends Component<ImageProps> {
+  img: ?HTMLImageElement;
 
-  const imgClassNames = [getClassName('bpk-image__img')];
+  static propTypes = {
+    altText: PropTypes.string.isRequired,
+    hidden: PropTypes.bool,
+    onImageLoad: PropTypes.func.isRequired,
+  };
 
-  if (hidden) {
-    imgClassNames.push(getClassName('bpk-image__img--hidden'));
+  static defaultProps = {
+    hidden: false,
+  };
+
+  constructor(props) {
+    super(props);
+    this.img = null;
   }
 
-  return (
-    <img
-      className={imgClassNames.join(' ')}
-      alt={altText}
-      onLoad={onImageLoad}
-      {...rest}
-    />
-  );
-};
+  componentDidMount() {
+    if (this.img && this.img.src && this.img.complete) {
+      if (this.props.onImageLoad) {
+        this.props.onImageLoad();
+      }
+    }
+  }
 
-Image.propTypes = {
-  altText: PropTypes.string.isRequired,
-  hidden: PropTypes.bool,
-  onImageLoad: PropTypes.func.isRequired,
-};
+  setImgRef = el => {
+    this.img = el;
+  };
 
-Image.defaultProps = {
-  hidden: false,
-};
+  render() {
+    const { hidden, altText, onImageLoad, ...rest } = this.props;
 
+    const imgClassNames = [getClassName('bpk-image__img')];
+
+    if (hidden) {
+      imgClassNames.push(getClassName('bpk-image__img--hidden'));
+    }
+
+    return (
+      <img
+        className={imgClassNames.join(' ')}
+        alt={altText}
+        onLoad={onImageLoad}
+        ref={this.setImgRef}
+        {...rest}
+      />
+    );
+  }
+}
+
+// eslint-disable-next-line react/no-multi-comp
 class BpkImage extends Component<BpkImageProps> {
   onImageLoad: () => mixed;
   placeholder: ?HTMLElement;
