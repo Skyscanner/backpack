@@ -19,86 +19,23 @@
 /* @flow */
 
 import React from 'react';
-import { View, ViewPropTypes, StyleSheet, type StyleObj } from 'react-native';
-import PropTypes from 'prop-types';
-import BpkText from 'react-native-bpk-component-text';
+
+import BpkChipWrapper from './BpkChipWrapper';
 import {
-  borderRadiusSm,
-  colorGray100,
-  colorGray700,
-  spacingSm,
-  spacingLg,
-} from 'bpk-tokens/tokens/base.react.native';
-import BpkChipDismissButton from './BpkChipDismissButton';
+  type Props as CommonProps,
+  commonPropTypes,
+  commonDefaultProps,
+} from './common-types';
 
-const styles = StyleSheet.create({
-  wrapper: {
-    alignItems: 'center',
-    flexDirection: 'row',
-    height: spacingSm * 5,
-    justifyContent: 'space-between',
-    paddingHorizontal: spacingSm,
-    backgroundColor: colorGray100,
-    borderRadius: borderRadiusSm,
-  },
-  wrapperLarge: {
-    height: spacingLg + spacingSm,
-  },
-  text: {
-    color: colorGray700,
-  },
-  dismissBtn: {
-    marginLeft: spacingSm,
-  },
-});
-
-type Props = {
-  dismissButtonLabel: string,
-  label: string,
-  large: boolean,
-  onDismiss: () => mixed,
-  style: ?StyleObj,
-};
+type Props = CommonProps;
 
 const BpkDismissibleChip = (props: Props) => {
-  const { dismissButtonLabel, label, large, onDismiss, style, ...rest } = props;
+  const { ...rest } = props;
 
-  const wrapperStyle = [styles.wrapper];
-  const textStyle = [styles.text];
-
-  if (large) {
-    wrapperStyle.push(styles.wrapperLarge);
-  }
-
-  if (style) {
-    wrapperStyle.push(style);
-  }
-
-  return (
-    <View style={wrapperStyle} {...rest}>
-      <BpkText textStyle="xs" style={textStyle}>
-        {label}
-      </BpkText>
-      <BpkChipDismissButton
-        accessibilityLabel={dismissButtonLabel}
-        onPress={onDismiss}
-        style={styles.dismissBtn}
-      />
-    </View>
-  );
+  return <BpkChipWrapper {...rest} dismissible large selected={false} />;
 };
 
-BpkDismissibleChip.propTypes = {
-  dismissButtonLabel: PropTypes.string.isRequired,
-  label: PropTypes.string.isRequired,
-  onDismiss: PropTypes.func.isRequired,
-  large: PropTypes.bool,
-  style: ViewPropTypes.style,
-};
-
-BpkDismissibleChip.defaultProps = {
-  large: false,
-  style: null,
-};
+BpkDismissibleChip.propTypes = commonPropTypes;
+BpkDismissibleChip.defaultProps = commonDefaultProps;
 
 export default BpkDismissibleChip;

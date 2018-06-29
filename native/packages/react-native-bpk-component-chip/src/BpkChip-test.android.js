@@ -46,6 +46,10 @@ jest.mock('bpk-tokens/tokens/base.react.native', () =>
   jest.requireActual('bpk-tokens/tokens/base.react.native.android.js'),
 );
 
+jest.mock('./BpkChipInner', () =>
+  jest.requireActual('./BpkChipInner.android.js'),
+);
+
 jest.mock('TouchableNativeFeedback', () =>
   jest.requireActual(
     'react-native/Libraries/Components/Touchable/TouchableNativeFeedback.android.js',

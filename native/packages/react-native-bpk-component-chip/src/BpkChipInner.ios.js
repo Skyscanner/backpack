@@ -19,37 +19,32 @@
 /* @flow */
 
 import React from 'react';
-import PropTypes from 'prop-types';
 
-import BpkChipWrapper from './BpkChipWrapper';
-import {
-  type Props as CommonProps,
-  commonPropTypes,
-  commonDefaultProps,
-} from './common-types';
+import BpkTouchableOverlay from 'react-native-bpk-component-touchable-overlay';
 
-type Props = {
-  ...$Exact<CommonProps>,
-  large: boolean,
-  selected: boolean,
+import { type InnerProps } from './common-types';
+
+const BpkChipInner = (props: InnerProps) => {
+  const {
+    accessibilityLabel,
+    children,
+    selected,
+    style,
+    userStyle,
+    ...rest
+  } = props;
+
+  return (
+    <BpkTouchableOverlay
+      accessibilityLabel={accessibilityLabel}
+      accessibilityTraits={selected ? ['button', 'selected'] : ['button']}
+      borderRadius="sm"
+      style={[style, userStyle]}
+      {...rest}
+    >
+      {children}
+    </BpkTouchableOverlay>
+  );
 };
 
-const BpkChip = (props: Props) => {
-  const { ...rest } = props;
-
-  return <BpkChipWrapper {...rest} dismissible={false} />;
-};
-
-BpkChip.propTypes = {
-  ...commonPropTypes,
-  large: PropTypes.bool,
-  selected: PropTypes.bool,
-};
-
-BpkChip.defaultProps = {
-  ...commonDefaultProps,
-  large: false,
-  selected: false,
-};
-
-export default BpkChip;
+export default BpkChipInner;

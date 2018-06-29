@@ -5,9 +5,9 @@ exports[`Android BpkChip should render correctly 1`] = `
   style={
     Array [
       Object {
-        "backgroundColor": "rgb(230, 228, 235)",
         "borderRadius": 2,
       },
+      null,
     ]
   }
 >
@@ -36,10 +36,12 @@ exports[`Android BpkChip should render correctly 1`] = `
       Array [
         Object {
           "alignItems": "center",
+          "backgroundColor": "rgb(230, 228, 235)",
+          "borderRadius": 2,
           "flexDirection": "row",
-          "height": 20,
           "justifyContent": "space-between",
-          "paddingHorizontal": 4,
+          "minHeight": 20,
+          "paddingHorizontal": 8,
         },
       ]
     }
@@ -76,9 +78,9 @@ exports[`Android BpkChip should render correctly with "large" 1`] = `
   style={
     Array [
       Object {
-        "backgroundColor": "rgb(230, 228, 235)",
         "borderRadius": 2,
       },
+      null,
     ]
   }
 >
@@ -107,13 +109,15 @@ exports[`Android BpkChip should render correctly with "large" 1`] = `
       Array [
         Object {
           "alignItems": "center",
+          "backgroundColor": "rgb(230, 228, 235)",
+          "borderRadius": 2,
           "flexDirection": "row",
-          "height": 20,
           "justifyContent": "space-between",
-          "paddingHorizontal": 4,
+          "minHeight": 20,
+          "paddingHorizontal": 8,
         },
         Object {
-          "height": 28,
+          "minHeight": 28,
         },
       ]
     }
@@ -150,12 +154,9 @@ exports[`Android BpkChip should render correctly with "selected" 1`] = `
   style={
     Array [
       Object {
-        "backgroundColor": "rgb(230, 228, 235)",
         "borderRadius": 2,
       },
-      Object {
-        "backgroundColor": "rgb(0, 140, 168)",
-      },
+      null,
     ]
   }
 >
@@ -184,10 +185,15 @@ exports[`Android BpkChip should render correctly with "selected" 1`] = `
       Array [
         Object {
           "alignItems": "center",
+          "backgroundColor": "rgb(230, 228, 235)",
+          "borderRadius": 2,
           "flexDirection": "row",
-          "height": 20,
           "justifyContent": "space-between",
-          "paddingHorizontal": 4,
+          "minHeight": 20,
+          "paddingHorizontal": 8,
+        },
+        Object {
+          "backgroundColor": "rgb(0, 140, 168)",
         },
       ]
     }
@@ -227,9 +233,9 @@ exports[`Android BpkChip should render correctly with arbitrary props 1`] = `
   style={
     Array [
       Object {
-        "backgroundColor": "rgb(230, 228, 235)",
         "borderRadius": 2,
       },
+      null,
     ]
   }
 >
@@ -258,10 +264,12 @@ exports[`Android BpkChip should render correctly with arbitrary props 1`] = `
       Array [
         Object {
           "alignItems": "center",
+          "backgroundColor": "rgb(230, 228, 235)",
+          "borderRadius": 2,
           "flexDirection": "row",
-          "height": 20,
           "justifyContent": "space-between",
-          "paddingHorizontal": 4,
+          "minHeight": 20,
+          "paddingHorizontal": 8,
         },
       ]
     }
@@ -298,7 +306,6 @@ exports[`Android BpkChip should render correctly with custom style 1`] = `
   style={
     Array [
       Object {
-        "backgroundColor": "rgb(230, 228, 235)",
         "borderRadius": 2,
       },
       Object {
@@ -332,10 +339,12 @@ exports[`Android BpkChip should render correctly with custom style 1`] = `
       Array [
         Object {
           "alignItems": "center",
+          "backgroundColor": "rgb(230, 228, 235)",
+          "borderRadius": 2,
           "flexDirection": "row",
-          "height": 20,
           "justifyContent": "space-between",
-          "paddingHorizontal": 4,
+          "minHeight": 20,
+          "paddingHorizontal": 8,
         },
       ]
     }

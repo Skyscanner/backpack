@@ -31,23 +31,8 @@ const commonTests = () => {
         .create(
           <BpkDismissibleChip
             label="Label"
-            dismissButtonLabel="Dismiss"
-            onDismiss={onPress}
-          />,
-        )
-        .toJSON();
-
-      expect(tree).toMatchSnapshot();
-    });
-
-    it('should render correctly with "large"', () => {
-      const tree = renderer
-        .create(
-          <BpkDismissibleChip
-            large
-            label="Label"
-            dismissButtonLabel="Dismiss"
-            onDismiss={onPress}
+            accessibilityLabel="Dismiss"
+            onPress={onPress}
           />,
         )
         .toJSON();
@@ -65,8 +50,8 @@ const commonTests = () => {
       const tree = renderer
         .create(
           <BpkDismissibleChip
-            dismissButtonLabel="Dismiss"
-            onDismiss={onPress}
+            accessibilityLabel="Dismiss"
+            onPress={onPress}
             label="Label"
             style={styles.custom}
           />,
@@ -80,9 +65,9 @@ const commonTests = () => {
       const tree = renderer
         .create(
           <BpkDismissibleChip
-            onDismiss={onPress}
+            onPress={onPress}
             label="Label"
-            dismissButtonLabel="Dismiss"
+            accessibilityLabel="Dismiss"
             testID="123" // <- Arbitrary prop.
           />,
         )

@@ -2,19 +2,43 @@
 
 exports[`iOS BpkDismissibleChip should render correctly 1`] = `
 <View
-  style={
+  accessibilityComponentType={undefined}
+  accessibilityLabel="Dismiss"
+  accessibilityTraits={
     Array [
-      Object {
-        "alignItems": "center",
-        "backgroundColor": "rgb(230, 228, 235)",
-        "borderRadius": 4,
-        "flexDirection": "row",
-        "height": 20,
-        "justifyContent": "space-between",
-        "paddingHorizontal": 4,
-      },
+      "button",
     ]
   }
+  accessible={true}
+  hitSlop={undefined}
+  nativeID={undefined}
+  onLayout={undefined}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Array [
+      Array [
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "rgb(230, 228, 235)",
+          "borderRadius": 4,
+          "flexDirection": "row",
+          "justifyContent": "space-between",
+          "minHeight": 20,
+          "paddingHorizontal": 8,
+        },
+        Object {
+          "minHeight": 28,
+        },
+      ],
+      null,
+    ]
+  }
+  testID={undefined}
 >
   <Text
     accessible={true}
@@ -38,97 +62,6 @@ exports[`iOS BpkDismissibleChip should render correctly 1`] = `
   >
     Label
   </Text>
-  <View
-    accessibilityComponentType={undefined}
-    accessibilityLabel="Dismiss"
-    accessibilityTraits={
-      Array [
-        "button",
-      ]
-    }
-    accessible={true}
-    hitSlop={undefined}
-    nativeID={undefined}
-    onLayout={undefined}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
-    style={null}
-    testID={undefined}
-  >
-    <View
-      style={
-        Object {
-          "marginLeft": 4,
-        }
-      }
-    >
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
-        style={
-          Array [
-            Object {
-              "color": "rgb(82, 76, 97)",
-              "fontFamily": "BpkIcon",
-              "fontSize": 24,
-              "includeFontPadding": false,
-            },
-            Object {
-              "fontSize": 16,
-            },
-          ]
-        }
-      >
-        
-      </Text>
-    </View>
-    <View
-      style={
-        Array [
-          Object {
-            "backgroundColor": "rgb(37, 32, 51)",
-            "bottom": 0,
-            "flex": 1,
-            "left": 0,
-            "opacity": 0,
-            "position": "absolute",
-            "right": 0,
-            "top": 0,
-          },
-          Object {
-            "borderRadius": 4,
-          },
-        ]
-      }
-    />
-  </View>
-</View>
-`;
-
-exports[`iOS BpkDismissibleChip should render correctly with "large" 1`] = `
-<View
-  style={
-    Array [
-      Object {
-        "alignItems": "center",
-        "backgroundColor": "rgb(230, 228, 235)",
-        "borderRadius": 4,
-        "flexDirection": "row",
-        "height": 20,
-        "justifyContent": "space-between",
-        "paddingHorizontal": 4,
-      },
-      Object {
-        "height": 28,
-      },
-    ]
-  }
->
   <Text
     accessible={true}
     allowFontScaling={true}
@@ -137,105 +70,80 @@ exports[`iOS BpkDismissibleChip should render correctly with "large" 1`] = `
       Array [
         Object {
           "color": "rgb(82, 76, 97)",
-          "fontFamily": "System",
-          "fontSize": 11,
-          "fontWeight": "400",
+          "fontFamily": "BpkIcon",
+          "fontSize": 24,
+          "includeFontPadding": false,
         },
-        Array [
-          Object {
-            "color": "rgb(82, 76, 97)",
-          },
-        ],
+        Object {
+          "fontSize": 16,
+        },
+        Object {
+          "color": "rgb(129, 123, 143)",
+          "marginLeft": 4,
+        },
       ]
     }
   >
-    Label
+    
   </Text>
   <View
-    accessibilityComponentType={undefined}
-    accessibilityLabel="Dismiss"
-    accessibilityTraits={
+    style={
       Array [
-        "button",
+        Object {
+          "backgroundColor": "rgb(37, 32, 51)",
+          "bottom": 0,
+          "flex": 1,
+          "left": 0,
+          "opacity": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        },
+        Object {
+          "borderRadius": 4,
+        },
       ]
     }
-    accessible={true}
-    hitSlop={undefined}
-    nativeID={undefined}
-    onLayout={undefined}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
-    style={null}
-    testID={undefined}
-  >
-    <View
-      style={
-        Object {
-          "marginLeft": 4,
-        }
-      }
-    >
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
-        style={
-          Array [
-            Object {
-              "color": "rgb(82, 76, 97)",
-              "fontFamily": "BpkIcon",
-              "fontSize": 24,
-              "includeFontPadding": false,
-            },
-            Object {
-              "fontSize": 16,
-            },
-          ]
-        }
-      >
-        
-      </Text>
-    </View>
-    <View
-      style={
-        Array [
-          Object {
-            "backgroundColor": "rgb(37, 32, 51)",
-            "bottom": 0,
-            "flex": 1,
-            "left": 0,
-            "opacity": 0,
-            "position": "absolute",
-            "right": 0,
-            "top": 0,
-          },
-          Object {
-            "borderRadius": 4,
-          },
-        ]
-      }
-    />
-  </View>
+  />
 </View>
 `;
 
 exports[`iOS BpkDismissibleChip should render correctly with arbitrary props 1`] = `
 <View
+  accessibilityComponentType={undefined}
+  accessibilityLabel="Dismiss"
+  accessibilityTraits={
+    Array [
+      "button",
+    ]
+  }
+  accessible={true}
+  hitSlop={undefined}
+  nativeID={undefined}
+  onLayout={undefined}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
   style={
     Array [
-      Object {
-        "alignItems": "center",
-        "backgroundColor": "rgb(230, 228, 235)",
-        "borderRadius": 4,
-        "flexDirection": "row",
-        "height": 20,
-        "justifyContent": "space-between",
-        "paddingHorizontal": 4,
-      },
+      Array [
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "rgb(230, 228, 235)",
+          "borderRadius": 4,
+          "flexDirection": "row",
+          "justifyContent": "space-between",
+          "minHeight": 20,
+          "paddingHorizontal": 8,
+        },
+        Object {
+          "minHeight": 28,
+        },
+      ],
+      null,
     ]
   }
   testID="123"
@@ -262,96 +170,93 @@ exports[`iOS BpkDismissibleChip should render correctly with arbitrary props 1`]
   >
     Label
   </Text>
-  <View
-    accessibilityComponentType={undefined}
-    accessibilityLabel="Dismiss"
-    accessibilityTraits={
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    style={
       Array [
-        "button",
+        Object {
+          "color": "rgb(82, 76, 97)",
+          "fontFamily": "BpkIcon",
+          "fontSize": 24,
+          "includeFontPadding": false,
+        },
+        Object {
+          "fontSize": 16,
+        },
+        Object {
+          "color": "rgb(129, 123, 143)",
+          "marginLeft": 4,
+        },
       ]
     }
-    accessible={true}
-    hitSlop={undefined}
-    nativeID={undefined}
-    onLayout={undefined}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
-    style={null}
-    testID={undefined}
   >
-    <View
-      style={
+    
+  </Text>
+  <View
+    style={
+      Array [
         Object {
-          "marginLeft": 4,
-        }
-      }
-    >
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
-        style={
-          Array [
-            Object {
-              "color": "rgb(82, 76, 97)",
-              "fontFamily": "BpkIcon",
-              "fontSize": 24,
-              "includeFontPadding": false,
-            },
-            Object {
-              "fontSize": 16,
-            },
-          ]
-        }
-      >
-        
-      </Text>
-    </View>
-    <View
-      style={
-        Array [
-          Object {
-            "backgroundColor": "rgb(37, 32, 51)",
-            "bottom": 0,
-            "flex": 1,
-            "left": 0,
-            "opacity": 0,
-            "position": "absolute",
-            "right": 0,
-            "top": 0,
-          },
-          Object {
-            "borderRadius": 4,
-          },
-        ]
-      }
-    />
-  </View>
+          "backgroundColor": "rgb(37, 32, 51)",
+          "bottom": 0,
+          "flex": 1,
+          "left": 0,
+          "opacity": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        },
+        Object {
+          "borderRadius": 4,
+        },
+      ]
+    }
+  />
 </View>
 `;
 
 exports[`iOS BpkDismissibleChip should render correctly with custom style 1`] = `
 <View
+  accessibilityComponentType={undefined}
+  accessibilityLabel="Dismiss"
+  accessibilityTraits={
+    Array [
+      "button",
+    ]
+  }
+  accessible={true}
+  hitSlop={undefined}
+  nativeID={undefined}
+  onLayout={undefined}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
   style={
     Array [
-      Object {
-        "alignItems": "center",
-        "backgroundColor": "rgb(230, 228, 235)",
-        "borderRadius": 4,
-        "flexDirection": "row",
-        "height": 20,
-        "justifyContent": "space-between",
-        "paddingHorizontal": 4,
-      },
+      Array [
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "rgb(230, 228, 235)",
+          "borderRadius": 4,
+          "flexDirection": "row",
+          "justifyContent": "space-between",
+          "minHeight": 20,
+          "paddingHorizontal": 8,
+        },
+        Object {
+          "minHeight": 28,
+        },
+      ],
       Object {
         "flex": 1,
       },
     ]
   }
+  testID={undefined}
 >
   <Text
     accessible={true}
@@ -375,74 +280,48 @@ exports[`iOS BpkDismissibleChip should render correctly with custom style 1`] = 
   >
     Label
   </Text>
-  <View
-    accessibilityComponentType={undefined}
-    accessibilityLabel="Dismiss"
-    accessibilityTraits={
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    style={
       Array [
-        "button",
+        Object {
+          "color": "rgb(82, 76, 97)",
+          "fontFamily": "BpkIcon",
+          "fontSize": 24,
+          "includeFontPadding": false,
+        },
+        Object {
+          "fontSize": 16,
+        },
+        Object {
+          "color": "rgb(129, 123, 143)",
+          "marginLeft": 4,
+        },
       ]
     }
-    accessible={true}
-    hitSlop={undefined}
-    nativeID={undefined}
-    onLayout={undefined}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
-    style={null}
-    testID={undefined}
   >
-    <View
-      style={
+    
+  </Text>
+  <View
+    style={
+      Array [
         Object {
-          "marginLeft": 4,
-        }
-      }
-    >
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
-        style={
-          Array [
-            Object {
-              "color": "rgb(82, 76, 97)",
-              "fontFamily": "BpkIcon",
-              "fontSize": 24,
-              "includeFontPadding": false,
-            },
-            Object {
-              "fontSize": 16,
-            },
-          ]
-        }
-      >
-        
-      </Text>
-    </View>
-    <View
-      style={
-        Array [
-          Object {
-            "backgroundColor": "rgb(37, 32, 51)",
-            "bottom": 0,
-            "flex": 1,
-            "left": 0,
-            "opacity": 0,
-            "position": "absolute",
-            "right": 0,
-            "top": 0,
-          },
-          Object {
-            "borderRadius": 4,
-          },
-        ]
-      }
-    />
-  </View>
+          "backgroundColor": "rgb(37, 32, 51)",
+          "bottom": 0,
+          "flex": 1,
+          "left": 0,
+          "opacity": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        },
+        Object {
+          "borderRadius": 4,
+        },
+      ]
+    }
+  />
 </View>
 `;

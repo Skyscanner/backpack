@@ -33,15 +33,15 @@ export default class App extends Component {
     };
   }
 
-  handleToggle = () => {
+  dismiss = () => {
     this.setState({
-      flightsSelected: !this.state.flightsSelected,
+      showHotels: false,
     });
   };
 
-  handleDismiss = () => {
+  toggle = () => {
     this.setState({
-      showHotels: false,
+      flightsSelected: !this.state.flightsSelected,
     });
   };
 
@@ -51,15 +51,14 @@ export default class App extends Component {
         <BpkChip
           accessibilityLabel="Toggle flights"
           label="Flights"
-          onPress={this.handleToggle}
+          onPress={this.toggle}
           selected={this.state.flightsSelected}
         />
         { this.state.showHotels &&
           <BpkDismissibleChip
-            dismissButtonLabel="Remove hotels"
+            accessibilityLabel="Remove hotels"
             label="Hotels"
-            onDismiss={this.handleDismiss}
-            large
+            onPress={this.dismiss}
           />
         }
       </View>
@@ -84,8 +83,7 @@ export default class App extends Component {
 
 | Property              | PropType                                                                  | Required | Default Value |
 | --------------------- | ------------------------------------------------------------------------- | -------- | ------------- |
-| dismissButtonLabel    | string                                                                    | true     | -             |
+| accessibilityLabel    | string                                                                    | true     | -             |
 | label                 | string                                                                    | true     | -             |
-| onDismiss             | func                                                                      | true     | -             |
-| large                 | bool                                                                      | false    | false         |
+| onPress               | func                                                                      | true     | -             |
 

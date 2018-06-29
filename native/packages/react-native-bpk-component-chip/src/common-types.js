@@ -18,38 +18,31 @@
 
 /* @flow */
 
-import React from 'react';
+import { type Node } from 'react';
 import PropTypes from 'prop-types';
+import { type StyleObj, ViewPropTypes } from 'react-native';
 
-import BpkChipWrapper from './BpkChipWrapper';
-import {
-  type Props as CommonProps,
-  commonPropTypes,
-  commonDefaultProps,
-} from './common-types';
+export type Props = {
+  accessibilityLabel: string,
+  onPress: () => mixed,
+  label: string,
+  style: ?StyleObj,
+};
 
-type Props = {
-  ...$Exact<CommonProps>,
+export type InnerProps = {
+  accessibilityLabel: string,
+  children: Node,
   large: boolean,
   selected: boolean,
+  style: StyleObj,
+  userStyle: ?StyleObj,
 };
 
-const BpkChip = (props: Props) => {
-  const { ...rest } = props;
-
-  return <BpkChipWrapper {...rest} dismissible={false} />;
+export const commonPropTypes = {
+  accessibilityLabel: PropTypes.string.isRequired,
+  onPress: PropTypes.func.isRequired,
+  label: PropTypes.string.isRequired,
+  style: ViewPropTypes.style,
 };
 
-BpkChip.propTypes = {
-  ...commonPropTypes,
-  large: PropTypes.bool,
-  selected: PropTypes.bool,
-};
-
-BpkChip.defaultProps = {
-  ...commonDefaultProps,
-  large: false,
-  selected: false,
-};
-
-export default BpkChip;
+export const commonDefaultProps = { style: null };

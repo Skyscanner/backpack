@@ -20,7 +20,6 @@
 
 import React, { Fragment } from 'react';
 import { StyleSheet, View } from 'react-native';
-import PropTypes from 'prop-types';
 import { storiesOf } from '@storybook/react-native';
 import { action } from '@storybook/addon-actions';
 
@@ -36,9 +35,11 @@ const styles = StyleSheet.create({
   },
   chip: {
     marginRight: spacingSm,
+    marginBottom: spacingSm,
   },
   row: {
     flexDirection: 'row',
+    flexWrap: 'wrap',
     marginTop: spacingSm,
   },
 });
@@ -64,9 +65,7 @@ class StatefulBpkChipExample extends React.Component<
 
   toggleChip = chip => {
     action(`Toggling ${chip}`);
-    this.setState({
-      [chip]: !this.state[chip],
-    });
+    this.setState(prevState => ({ [chip]: !prevState[chip] }));
   };
 
   render() {
@@ -146,8 +145,8 @@ class StatefulBpkDismissibleChipExample extends React.Component<
         {this.state.flights && (
           <BpkDismissibleChip
             label="Flights"
-            dismissButtonLabel="Remove flights"
-            onDismiss={() => {
+            accessibilityLabel="Remove flights"
+            onPress={() => {
               this.removeChip('flights');
             }}
             style={styles.chip}
@@ -156,8 +155,8 @@ class StatefulBpkDismissibleChipExample extends React.Component<
         {this.state.hotels && (
           <BpkDismissibleChip
             label="Hotels"
-            dismissButtonLabel="Remove hotels"
-            onDismiss={() => {
+            accessibilityLabel="Remove hotels"
+            onPress={() => {
               this.removeChip('hotels');
             }}
             style={styles.chip}
@@ -166,8 +165,8 @@ class StatefulBpkDismissibleChipExample extends React.Component<
         {this.state.carHire && (
           <BpkDismissibleChip
             label="Car hire"
-            dismissButtonLabel="Remove car hire"
-            onDismiss={() => {
+            accessibilityLabel="Remove car hire"
+            onPress={() => {
               this.removeChip('carHire');
             }}
             style={styles.chip}
@@ -176,8 +175,8 @@ class StatefulBpkDismissibleChipExample extends React.Component<
         {this.state.trains && (
           <BpkDismissibleChip
             label="Trains"
-            dismissButtonLabel="Remove trains"
-            onDismiss={() => {
+            accessibilityLabel="Remove trains"
+            onPress={() => {
               this.removeChip('trains');
             }}
             style={styles.chip}
@@ -188,50 +187,21 @@ class StatefulBpkDismissibleChipExample extends React.Component<
   }
 }
 
-const StoryChip = ({ dismissible, ...rest }) =>
-  dismissible ? (
-    <BpkDismissibleChip
-      label="Label"
-      dismissButtonLabel="Dismiss"
-      onDismiss={action('Dismiss button pressed')}
-      style={styles.chip}
-      {...rest}
-    />
-  ) : (
-    <BpkChip
-      label="Label"
-      accessibilityLabel="Toggle label"
-      onPress={action('Chip pressed.')}
-      style={styles.chip}
-      {...rest}
-    />
-  );
-
-StoryChip.propTypes = {
-  dismissible: PropTypes.bool,
-};
-
-StoryChip.defaultProps = {
-  dismissible: false,
-};
-
-const generateStoryChips = large => (
-  <Fragment>
-    <View style={styles.bottomMargin}>
-      <BpkText>Default</BpkText>
-      <View style={styles.row}>
-        <StoryChip large={large} />
-        <StoryChip selected large={large} />
-      </View>
-    </View>
-    <View style={styles.bottomMargin}>
-      <BpkText>Dismissible</BpkText>
-      <View style={styles.row}>
-        <StoryChip large={large} dismissible />
-      </View>
-    </View>
-  </Fragment>
-);
+const COUNTRIES = [
+  'Afghanistan',
+  'Belgium',
+  'Canada',
+  'Denmark',
+  'Ethiopia',
+  'Fiji',
+  'Germany',
+  'Honduras',
+  'India',
+  'Jamaica',
+  'Kosovo',
+  'Lesotho',
+  'Madagascar',
+];
 
 storiesOf('react-native-bpk-component-chip', module)
   .addDecorator(CenterDecorator)
@@ -240,77 +210,48 @@ storiesOf('react-native-bpk-component-chip', module)
       <View style={styles.bottomMargin}>
         <BpkText>Default</BpkText>
         <View style={styles.row}>
-          <BpkChip
-            label="Label"
-            accessibilityLabel="Toggle label"
-            onPress={() => {}}
-            style={styles.chip}
-          />
-          <BpkChip
-            selected
-            label="Selected"
-            accessibilityLabel="Toggle label"
-            onPress={() => {}}
-            style={styles.chip}
-          />
+          {COUNTRIES.map((country, index) => (
+            <BpkChip
+              key={country}
+              label={country}
+              accessibilityLabel={`Toggle ${country}`}
+              onPress={() => {}}
+              selected={index % 4 === 0}
+              style={styles.chip}
+            />
+          ))}
         </View>
       </View>
       <View>
         <BpkText>Large</BpkText>
         <View style={styles.row}>
-          <BpkChip
-            large
-            label="Label"
-            accessibilityLabel="Toggle label"
-            onPress={() => {}}
-            style={styles.chip}
-          />
-          <BpkChip
-            selected
-            large
-            label="Selected"
-            accessibilityLabel="Toggle label"
-            onPress={() => {}}
-            style={styles.chip}
-          />
+          {COUNTRIES.map((country, index) => (
+            <BpkChip
+              key={country}
+              label={country}
+              accessibilityLabel={`Toggle ${country}`}
+              onPress={() => {}}
+              selected={index % 4 === 0}
+              large
+              style={styles.chip}
+            />
+          ))}
         </View>
       </View>
     </View>
   ))
   .add('docs:BpkDismissibleChip', () => (
-    <View>
-      <View style={styles.bottomMargin}>
-        <BpkText>Default</BpkText>
-        <View style={styles.row}>
-          <BpkDismissibleChip
-            label="Label"
-            dismissButtonLabel="Remove label"
-            onDismiss={() => {}}
-            style={styles.chip}
-          />
-        </View>
-      </View>
-      <View>
-        <BpkText>Large</BpkText>
-        <View style={styles.row}>
-          <BpkDismissibleChip
-            large
-            label="Label"
-            dismissButtonLabel="Remove label"
-            onDismiss={() => {}}
-            style={styles.chip}
-          />
-        </View>
-      </View>
-    </View>
-  ))
-  .add('All types', () => (
-    <View>
-      {generateStoryChips()}
-      <BpkText style={styles.bottomMargin} textStyle="xl">
-        Large
-      </BpkText>
-      {generateStoryChips(true)}
+    <View style={styles.row}>
+      {COUNTRIES.map((country, index) => (
+        <BpkDismissibleChip
+          key={country}
+          label={country}
+          accessibilityLabel={`Toggle ${country}`}
+          onPress={() => {}}
+          selected={index % 4 === 0}
+          style={styles.chip}
+        />
+      ))}
     </View>
   ))
   .add('Stateful examples', () => (
