@@ -85,7 +85,7 @@ const BpkMap = withGoogleMap((props: Props) => {
           mapRef(map);
         }
       }}
-      defaultCenter={
+      center={
         center
           ? {
               lat: center.latitude,
@@ -93,7 +93,7 @@ const BpkMap = withGoogleMap((props: Props) => {
             }
           : null
       }
-      defaultZoom={zoom}
+      zoom={zoom}
       options={{
         gestureHandling: panEnabled ? 'auto' : 'none',
         disableDefaultUI: !showControls,
