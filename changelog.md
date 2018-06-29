@@ -2,12 +2,20 @@
 
 [Unreleased changes](./unreleased.md).
 
+# 2018-06-29 - Fix for image component SSR race condition
+
+**Fixed:**
+
+- bpk-component-image: 2.0.39 => 2.0.40
+  - Fixed `onload` race condition when using server-side rendering.
+
 # 2018-06-26 - Fix for `bpk-scrim-utils` and `bpk-component-calendar`
 
 **Fixed:**
 
 - bpk-scrim-utils: 3.2.1 => 3.2.2
   - Fixed incorrect propType for `dark` prop.
+
 - bpk-component-calendar: 4.2.35 => 4.2.36
   - Fixed calendar to work with different font sizes.
 
@@ -30,11 +38,10 @@
 
 **Fixed:**
 
-- react-native-bpk-component-button-link:
-
+- react-native-bpk-component-button-link: 3.0.9 => 3.0.10
   - Loosened React Native peer dependency.
 
-- bpk-component-navigation-bar:
+- bpk-component-navigation-bar: 1.2.5 => 1.2.6
   - `title` prop type is now node.
 
 # 2018-06-20 - Add dark version of BpkScrim
