@@ -18,27 +18,6 @@
 
 /* @flow */
 
-import React from 'react';
-import DocsPageWrapper from './../../components/DocsPageWrapper';
-import IntroBlurb from './../../components/IntroBlurb';
+import page from './ChipsPage';
 
-import Web from '../WebChipsPage';
-import Native from '../NativeChipsPage';
-
-const blurb = [
-  <IntroBlurb>
-    Chips, sometimes called tags, are useful for displaying keywords or
-    categories from common sets of data.
-  </IntroBlurb>,
-];
-
-const Page = () => (
-  <DocsPageWrapper
-    title="Chip"
-    blurb={blurb}
-    webSubpage={<Web wrapped />}
-    nativeSubpage={<Native wrapped />}
-  />
-);
-
-export default Page;
+export default page;

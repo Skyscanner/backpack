@@ -16,8 +16,6 @@
  * limitations under the License.
  */
 
-import commonTests from './BpkChipDismissButton-test.common';
+import page from './NativeChipsPage';
 
-describe('iOS', () => {
-  commonTests();
-});
+export default page;
