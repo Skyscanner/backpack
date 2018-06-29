@@ -34,7 +34,7 @@ const styles = StyleSheet.create({
     marginBottom: spacingMd,
   },
   chip: {
-    marginRight: spacingSm,
+    marginEnd: spacingSm,
     marginBottom: spacingSm,
   },
   row: {

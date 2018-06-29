@@ -61,13 +61,15 @@ const styles = StyleSheet.create({
   },
   text: {
     color: colorGray700,
+    includeFontPadding: false,
   },
   textSelected: {
     color: colorWhite,
   },
   icon: {
     color: colorGray500,
-    marginLeft: spacingSm,
+    includeFontPadding: false,
+    marginStart: spacingSm,
   },
 });
 

@@ -62,6 +62,7 @@ exports[`Android BpkChip should render correctly 1`] = `
           Array [
             Object {
               "color": "rgb(82, 76, 97)",
+              "includeFontPadding": false,
             },
           ],
         ]
@@ -138,6 +139,7 @@ exports[`Android BpkChip should render correctly with "large" 1`] = `
           Array [
             Object {
               "color": "rgb(82, 76, 97)",
+              "includeFontPadding": false,
             },
           ],
         ]
@@ -214,6 +216,7 @@ exports[`Android BpkChip should render correctly with "selected" 1`] = `
           Array [
             Object {
               "color": "rgb(82, 76, 97)",
+              "includeFontPadding": false,
             },
             Object {
               "color": "rgb(255, 255, 255)",
@@ -290,6 +293,7 @@ exports[`Android BpkChip should render correctly with arbitrary props 1`] = `
           Array [
             Object {
               "color": "rgb(82, 76, 97)",
+              "includeFontPadding": false,
             },
           ],
         ]
@@ -365,6 +369,7 @@ exports[`Android BpkChip should render correctly with custom style 1`] = `
           Array [
             Object {
               "color": "rgb(82, 76, 97)",
+              "includeFontPadding": false,
             },
           ],
         ]

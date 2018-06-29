@@ -65,6 +65,7 @@ exports[`Android BpkDismissibleChip should render correctly 1`] = `
           Array [
             Object {
               "color": "rgb(82, 76, 97)",
+              "includeFontPadding": false,
             },
           ],
         ]
@@ -89,7 +90,8 @@ exports[`Android BpkDismissibleChip should render correctly 1`] = `
           },
           Object {
             "color": "rgb(129, 123, 143)",
-            "marginLeft": 4,
+            "includeFontPadding": false,
+            "marginStart": 4,
           },
         ]
       }
@@ -165,6 +167,7 @@ exports[`Android BpkDismissibleChip should render correctly with arbitrary props
           Array [
             Object {
               "color": "rgb(82, 76, 97)",
+              "includeFontPadding": false,
             },
           ],
         ]
@@ -189,7 +192,8 @@ exports[`Android BpkDismissibleChip should render correctly with arbitrary props
           },
           Object {
             "color": "rgb(129, 123, 143)",
-            "marginLeft": 4,
+            "includeFontPadding": false,
+            "marginStart": 4,
           },
         ]
       }
@@ -267,6 +271,7 @@ exports[`Android BpkDismissibleChip should render correctly with custom style 1`
           Array [
             Object {
               "color": "rgb(82, 76, 97)",
+              "includeFontPadding": false,
             },
           ],
         ]
@@ -291,7 +296,8 @@ exports[`Android BpkDismissibleChip should render correctly with custom style 1`
           },
           Object {
             "color": "rgb(129, 123, 143)",
-            "marginLeft": 4,
+            "includeFontPadding": false,
+            "marginStart": 4,
           },
         ]
       }
