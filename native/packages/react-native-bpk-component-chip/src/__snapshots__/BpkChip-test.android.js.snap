@@ -1,0 +1,382 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Android BpkChip should render correctly 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "borderRadius": 2,
+      },
+      null,
+    ]
+  }
+>
+  <View
+    accessibilityComponentType="button"
+    accessibilityLabel="Accessibility label"
+    accessibilityTraits={undefined}
+    accessible={true}
+    hasTVPreferredFocus={undefined}
+    hitSlop={undefined}
+    isTVSelectable={true}
+    nativeBackgroundAndroid={
+      Object {
+        "attribute": "selectableItemBackgroundBorderless",
+        "type": "ThemeAttrAndroid",
+      }
+    }
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "rgb(230, 228, 235)",
+          "borderRadius": 2,
+          "flexDirection": "row",
+          "justifyContent": "space-between",
+          "minHeight": 20,
+          "paddingHorizontal": 8,
+        },
+      ]
+    }
+    testID={undefined}
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "rgb(82, 76, 97)",
+            "fontFamily": "sans-serif",
+            "fontSize": 12,
+            "fontWeight": "400",
+          },
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+              "includeFontPadding": false,
+            },
+          ],
+        ]
+      }
+    >
+      Label
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`Android BpkChip should render correctly with "large" 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "borderRadius": 2,
+      },
+      null,
+    ]
+  }
+>
+  <View
+    accessibilityComponentType="button"
+    accessibilityLabel="Accessibility label"
+    accessibilityTraits={undefined}
+    accessible={true}
+    hasTVPreferredFocus={undefined}
+    hitSlop={undefined}
+    isTVSelectable={true}
+    nativeBackgroundAndroid={
+      Object {
+        "attribute": "selectableItemBackgroundBorderless",
+        "type": "ThemeAttrAndroid",
+      }
+    }
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "rgb(230, 228, 235)",
+          "borderRadius": 2,
+          "flexDirection": "row",
+          "justifyContent": "space-between",
+          "minHeight": 20,
+          "paddingHorizontal": 8,
+        },
+        Object {
+          "minHeight": 28,
+        },
+      ]
+    }
+    testID={undefined}
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "rgb(82, 76, 97)",
+            "fontFamily": "sans-serif",
+            "fontSize": 12,
+            "fontWeight": "400",
+          },
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+              "includeFontPadding": false,
+            },
+          ],
+        ]
+      }
+    >
+      Label
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`Android BpkChip should render correctly with "selected" 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "borderRadius": 2,
+      },
+      null,
+    ]
+  }
+>
+  <View
+    accessibilityComponentType="button"
+    accessibilityLabel="Accessibility label"
+    accessibilityTraits={undefined}
+    accessible={true}
+    hasTVPreferredFocus={undefined}
+    hitSlop={undefined}
+    isTVSelectable={true}
+    nativeBackgroundAndroid={
+      Object {
+        "attribute": "selectableItemBackgroundBorderless",
+        "type": "ThemeAttrAndroid",
+      }
+    }
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "rgb(230, 228, 235)",
+          "borderRadius": 2,
+          "flexDirection": "row",
+          "justifyContent": "space-between",
+          "minHeight": 20,
+          "paddingHorizontal": 8,
+        },
+        Object {
+          "backgroundColor": "rgb(0, 140, 168)",
+        },
+      ]
+    }
+    testID={undefined}
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "rgb(82, 76, 97)",
+            "fontFamily": "sans-serif",
+            "fontSize": 12,
+            "fontWeight": "400",
+          },
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+              "includeFontPadding": false,
+            },
+            Object {
+              "color": "rgb(255, 255, 255)",
+            },
+          ],
+        ]
+      }
+    >
+      Label
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`Android BpkChip should render correctly with arbitrary props 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "borderRadius": 2,
+      },
+      null,
+    ]
+  }
+>
+  <View
+    accessibilityComponentType="button"
+    accessibilityLabel="Accessibility label"
+    accessibilityTraits={undefined}
+    accessible={true}
+    hasTVPreferredFocus={undefined}
+    hitSlop={undefined}
+    isTVSelectable={true}
+    nativeBackgroundAndroid={
+      Object {
+        "attribute": "selectableItemBackgroundBorderless",
+        "type": "ThemeAttrAndroid",
+      }
+    }
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "rgb(230, 228, 235)",
+          "borderRadius": 2,
+          "flexDirection": "row",
+          "justifyContent": "space-between",
+          "minHeight": 20,
+          "paddingHorizontal": 8,
+        },
+      ]
+    }
+    testID="123"
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "rgb(82, 76, 97)",
+            "fontFamily": "sans-serif",
+            "fontSize": 12,
+            "fontWeight": "400",
+          },
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+              "includeFontPadding": false,
+            },
+          ],
+        ]
+      }
+    >
+      Label
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`Android BpkChip should render correctly with custom style 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "borderRadius": 2,
+      },
+      Object {
+        "flex": 1,
+      },
+    ]
+  }
+>
+  <View
+    accessibilityComponentType="button"
+    accessibilityLabel="Accessibility label"
+    accessibilityTraits={undefined}
+    accessible={true}
+    hasTVPreferredFocus={undefined}
+    hitSlop={undefined}
+    isTVSelectable={true}
+    nativeBackgroundAndroid={
+      Object {
+        "attribute": "selectableItemBackgroundBorderless",
+        "type": "ThemeAttrAndroid",
+      }
+    }
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "rgb(230, 228, 235)",
+          "borderRadius": 2,
+          "flexDirection": "row",
+          "justifyContent": "space-between",
+          "minHeight": 20,
+          "paddingHorizontal": 8,
+        },
+      ]
+    }
+    testID={undefined}
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "rgb(82, 76, 97)",
+            "fontFamily": "sans-serif",
+            "fontSize": 12,
+            "fontWeight": "400",
+          },
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+              "includeFontPadding": false,
+            },
+          ],
+        ]
+      }
+    >
+      Label
+    </Text>
+  </View>
+</View>
+`;
