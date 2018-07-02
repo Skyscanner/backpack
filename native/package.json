@@ -25,7 +25,7 @@
     "react-dom": "^16.3.1",
     "react-native": "^0.55.3",
     "react-test-renderer": "^16.3.1",
-    "react-native-linear-gradient": "react-native-community/react-native-linear-gradient"
+    "react-native-linear-gradient": "react-native-community/react-native-linear-gradient#20928ce2ac8038e8545c7f6c3faab05f866deabd"
   },
   "jest": {
     "preset": "react-native",
