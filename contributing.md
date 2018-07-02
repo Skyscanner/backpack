@@ -114,8 +114,6 @@ $ANDROID_SDK_ROOT/tools/bin/avdmanager create avd --name "bpk-avd-min" --package
 
 #### Detox
 
-> Skip this section if you don't intend to develop React Native components.
-
 Backpack uses [Detox](https://github.com/wix/detox) for e2e testing of React Native components, it requires `applesimutils` to be installed, this can be added by running
 
 ```
