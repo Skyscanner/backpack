@@ -50,6 +50,7 @@ class SwitchContainer extends Component {
         onValueChange={value => {
           this.setState({ value });
         }}
+        {...this.props}
       />
     );
   }
@@ -73,12 +74,12 @@ storiesOf('react-native-bpk-component-switch', module)
     <View>
       <View style={styles.bottomMargin}>
         <StorySubheading>Default</StorySubheading>
-        <SwitchContainer />
+        <SwitchContainer testID="switch" />
       </View>
       <View>
         <StorySubheading>Themed</StorySubheading>
         <BpkThemeProvider theme={themeAttributes}>
-          <SwitchContainer />
+          <SwitchContainer testID="switch-themed" />
         </BpkThemeProvider>
       </View>
     </View>
