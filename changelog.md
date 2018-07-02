@@ -2,6 +2,18 @@
 
 [Unreleased changes](./unreleased.md).
 
+# 2018-07-02 - New native chip component and web map enhancement
+
+**Added:**
+
+- react-native-bpk-component-chip:
+  - Introducing the native chip component. See https://backpack.github.io/components/chip?platform=native.
+
+**Fixed:**
+
+- bpk-component-map
+  - Now `center` and `zoom` are controlled: changing them will change the values in the map.
+
 # 2018-06-29 - Fix for image component SSR race condition
 
 **Fixed:**
