@@ -1,6 +1,6 @@
 {
   "name": "react-native-bpk-component-navigation-bar",
-  "version": "2.0.14",
+  "version": "2.0.15",
   "main": "index.js",
   "description": "Backpack React Native navigation bar component.",
   "repository": {
@@ -22,6 +22,6 @@
     "react-native-bpk-component-icon": "^1.8.6",
     "react-native-bpk-component-text": "^2.1.41",
     "react-native-bpk-component-touchable-native-feedback": "^1.1.15",
-    "react-native-bpk-theming": "^1.0.61"
+    "react-native-bpk-theming": "^1.0.62"
   }
 }
