@@ -10,10 +10,7 @@
       "ignore": "bpk-tether"
     },
     "publish": {
-      "ignore": [
-        "bpk-tether",
-        "bpk-docs"
-      ],
+      "ignore": ["bpk-tether"],
       "allowBranch": "master"
     }
   }
