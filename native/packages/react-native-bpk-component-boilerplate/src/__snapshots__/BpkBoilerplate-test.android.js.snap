@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Android BpkBoilerplate should render correctly 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "flex": 1,
+      },
+    ]
+  }
+/>
+`;
+
+exports[`Android BpkBoilerplate should render correctly with arbitrary props 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "flex": 1,
+      },
+    ]
+  }
+  testID="123"
+/>
+`;
+
+exports[`Android BpkBoilerplate should render correctly with custom style 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "flex": 1,
+      },
+      Object {
+        "flex": 1,
+      },
+    ]
+  }
+/>
+`;
