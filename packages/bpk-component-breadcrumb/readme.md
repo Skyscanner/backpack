@@ -11,7 +11,7 @@ npm install bpk-component-breadcrumb --save-dev
 ## Usage
 ```js
 import React, { Component } from 'react';
-import BpkBreadcrumb, { BpkBreadcrumbItem } 'bpk-component-breadcrumb';
+import BpkBreadcrumb, { BpkBreadcrumbItem } from 'bpk-component-breadcrumb';
 
 
 export default class App extends Component {
