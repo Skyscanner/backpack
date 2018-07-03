@@ -203,7 +203,6 @@ If you want to add a new component, we will need the following:
 - Tests
 - Documentation (Including main `readme.md`)
 
-
 ### Design
 
 Sketch is the preferred format for non-technical folks. We’d appreciate if you could provide an exact match of your component in Sketch format together with folders for each state e.g. disabled, expanded etc.
@@ -224,21 +223,9 @@ If you add a new file of mixins, for example for a new *atom*, make sure you add
 
 ### React component
 
-Each React component has its own subdirectory `packages/bpk-component-<component-name>`, where the npm module is stored. For it to be properly published, create a `package.json` starting at version `0.0.0` and take inspiration from existing packages in terms of structure. We use [CSS Modules](https://github.com/css-modules/css-modules) along with [BEM](http://getbem.com/) to prevent collisions and accidental overwrites in CSS.
+Use `npm run create-component` to create a new skeleton React component. Once this is created, use existing components for code style inspiration.
 
-#### Storybook
-
-Create a `stories.js` file and use it to list all the different possible states of your component. Check out Storybook's documentation for more details, and also check out the `stories.js` files of existing components.
-
-> Make sure you import your new component's stories into Storybook by adding it to `.storybook/config.js`.
-
-#### Testing
-
-React components need to be properly unit tested. We use [jest](https://facebook.github.io/jest/)'s snapshot testing, but depending on the complexity of your component, you may want to add additional tests.
-
-#### Readme
-
-Create a `readme.md` file that shows how to install and use your component. It should also include a table of the component's props, PropTypes and their default values. Take inspiration from existing components.
+We use [CSS Modules](https://github.com/css-modules/css-modules) along with [BEM](http://getbem.com/) to prevent collisions and accidental overwrites in CSS.
 
 ### Documentation
 
