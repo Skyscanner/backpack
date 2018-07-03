@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
     flex: 0.3,
     backgroundColor: colorGray100,
     borderColor: colorGray500,
-    borderWidth: 1,
+    borderWidth: 1, // eslint-disable-line backpack/use-tokens
   },
 });
 

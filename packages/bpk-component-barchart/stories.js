@@ -52,8 +52,8 @@ const data = require('./data');
 
 const margin = {
   top: 0,
-  left: 40,
-  bottom: 40,
+  left: 40, // eslint-disable-line backpack/use-tokens
+  bottom: 40, // eslint-disable-line backpack/use-tokens
   right: 0,
 };
 

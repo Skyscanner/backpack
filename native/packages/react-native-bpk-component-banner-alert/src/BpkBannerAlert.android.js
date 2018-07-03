@@ -48,7 +48,8 @@ import AnimateAndFade from './AnimateAndFade';
 
 const STYLES = StyleSheet.create({
   background: {
-    minHeight: 1, // required for AnimateAndFade to work correctly :/
+    // required for AnimateAndFade to work correctly :/
+    minHeight: 1, // eslint-disable-line backpack/use-tokens
     borderRadius: borderRadiusSm,
     backgroundColor: colorGray50,
   },

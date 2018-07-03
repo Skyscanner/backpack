@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
     padding: spacingBase,
   },
   cardPunchline: {
-    width: 1,
+    width: 1, // eslint-disable-line backpack/use-tokens
     marginTop: spacingMd,
     marginBottom: spacingMd,
     flexDirection: 'column',

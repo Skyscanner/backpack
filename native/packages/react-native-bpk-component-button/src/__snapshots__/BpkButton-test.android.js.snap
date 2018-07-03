@@ -1666,7 +1666,7 @@ exports[`Android BpkButton should support overwriting styles 1`] = `
         },
       ],
       Object {
-        "width": 100,
+        "width": 4,
       },
     ]
   }

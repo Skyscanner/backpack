@@ -18,6 +18,7 @@
 
 import React from 'react';
 import renderer from 'react-test-renderer';
+import { spacingSm } from 'bpk-tokens/tokens/base.react.native';
 
 import BpkHorizontalNav from './BpkHorizontalNav';
 import BpkHorizontalNavItem from './BpkHorizontalNavItem';
@@ -50,7 +51,7 @@ const commonTests = () => {
     it('should render correctly with custom "style" prop', () => {
       const tree = renderer
         .create(
-          <BpkHorizontalNav selectedId="0" style={{ marginBottom: 10 }}>
+          <BpkHorizontalNav selectedId="0" style={{ marginBottom: spacingSm }}>
             My nav content.
           </BpkHorizontalNav>,
         )

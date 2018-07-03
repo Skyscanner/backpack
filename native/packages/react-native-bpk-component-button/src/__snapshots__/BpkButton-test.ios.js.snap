@@ -1706,7 +1706,7 @@ exports[`iOS BpkButton should support overwriting styles 1`] = `
       ],
       Object {},
       Object {
-        "width": 100,
+        "width": 4,
       },
     ]
   }

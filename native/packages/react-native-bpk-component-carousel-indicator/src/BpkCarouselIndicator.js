@@ -60,7 +60,7 @@ const getIndicatorSlice = (pageCount, selectedIndex) => {
   if (selectedIndex <= 2) {
     return {
       begin: 0,
-      end: 5,
+      end: 5, // eslint-disable-line backpack/use-tokens
     };
   }
 

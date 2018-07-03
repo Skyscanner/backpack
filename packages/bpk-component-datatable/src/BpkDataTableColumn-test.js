@@ -18,10 +18,11 @@
 
 import React from 'react';
 import { Column } from 'react-virtualized';
+import { spacingSm } from 'bpk-tokens/tokens/base.es6';
 import BpkDataTableColumn from './BpkDataTableColumn';
 import bpkHeaderRenderer from './bpkHeaderRenderer';
 
-const defaultProps = { label: 'Name', dataKey: 'name', width: 100 };
+const defaultProps = { label: 'Name', dataKey: 'name', width: spacingSm };
 
 describe('BpkDataTableColumn', () => {
   it('has the same propTypes as react-virtualized Column', () => {

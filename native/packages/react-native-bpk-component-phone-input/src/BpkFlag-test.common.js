@@ -19,6 +19,7 @@
 import React from 'react';
 import { Image } from 'react-native';
 import renderer from 'react-test-renderer';
+import { spacingSm } from 'bpk-tokens/tokens/base.react.native';
 import BpkFlag from './BpkFlag';
 
 const commonTests = () => {
@@ -41,7 +42,7 @@ const commonTests = () => {
 
     it('should render correctly with a custom style', () => {
       const tree = renderer
-        .create(<BpkFlag style={{ borderRadius: 10 }} />)
+        .create(<BpkFlag style={{ borderRadius: spacingSm }} />)
         .toJSON();
       expect(tree).toMatchSnapshot();
     });

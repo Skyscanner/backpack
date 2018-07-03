@@ -21,6 +21,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import BpkText from 'react-native-bpk-component-text';
+import { spacingSm } from 'bpk-tokens/tokens/base.react.native';
 
 import { ALERT_TYPES } from './common-types';
 import BpkBannerAlert from './BpkBannerAlert';
@@ -106,7 +107,7 @@ const commonTests = () => {
       const tree = renderer
         .create(
           <BpkBannerAlert
-            style={{ width: 50 }}
+            style={{ width: spacingSm }}
             type={ALERT_TYPES.neutral}
             message="Neutral alert."
           />,

@@ -21,6 +21,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import BpkText from 'react-native-bpk-component-text';
+import { spacingSm } from 'bpk-tokens/tokens/base.react.native';
 import BpkCarouselItem from './BpkCarouselItem';
 
 const commonTests = () => {
@@ -28,7 +29,7 @@ const commonTests = () => {
     it('should render correctly', () => {
       const tree = renderer
         .create(
-          <BpkCarouselItem style={{ width: 300 }}>
+          <BpkCarouselItem style={{ width: spacingSm }}>
             <BpkText>View 1</BpkText>
           </BpkCarouselItem>,
         )

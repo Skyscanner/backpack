@@ -28,11 +28,11 @@ import BpkSectionList, {
 
 const styles = StyleSheet.create({
   topMargin: {
-    marginTop: 20,
+    marginTop: 20, // eslint-disable-line backpack/use-tokens
   },
   image: {
-    width: 24,
-    height: 16,
+    width: 24, // eslint-disable-line backpack/use-tokens
+    height: 16, // eslint-disable-line backpack/use-tokens
   },
 });
 

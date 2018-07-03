@@ -20,6 +20,7 @@ import React from 'react';
 import { Text } from 'react-native';
 import renderer from 'react-test-renderer';
 import BpkThemeProvider from 'react-native-bpk-theming';
+import { spacingSm } from 'bpk-tokens/tokens/base.react.native';
 
 import BpkButton from './BpkButton';
 import { BUTTON_TYPES, ICON_ALIGNMENTS } from './common-types';
@@ -110,7 +111,7 @@ const commonTests = () => {
           <BpkButton
             title="Lorem ipsum"
             onPress={onPressFn}
-            style={{ width: 100 }}
+            style={{ width: spacingSm }}
           />,
         )
         .toJSON();

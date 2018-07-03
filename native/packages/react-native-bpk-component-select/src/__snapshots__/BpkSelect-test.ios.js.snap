@@ -453,7 +453,7 @@ exports[`iOS BpkSelect should render correctly with custom styles 1`] = `
   onStartShouldSetResponder={[Function]}
   style={
     Object {
-      "marginTop": 10,
+      "marginTop": 4,
     }
   }
   testID={undefined}

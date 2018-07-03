@@ -22,6 +22,7 @@ import React from 'react';
 import { StyleSheet } from 'react-native';
 import renderer from 'react-test-renderer';
 import BpkThemeProvider from 'react-native-bpk-theming';
+import { spacingSm } from 'bpk-tokens/tokens/base.react.native';
 import BpkProgress from './BpkProgress';
 
 // Manually triggers the onLayout callback with the value provided
@@ -49,7 +50,7 @@ const commonTests = () => {
           accessibilityLabel={accessibilityLabel}
         />,
         {
-          width: 200,
+          width: spacingSm,
         },
       ).toJSON();
       expect(tree).toMatchSnapshot();
@@ -63,7 +64,7 @@ const commonTests = () => {
           value={0.2}
           accessibilityLabel={accessibilityLabel}
         />,
-        { width: 100 },
+        { width: spacingSm },
       ).toJSON();
       expect(tree).toMatchSnapshot();
     });
@@ -126,7 +127,7 @@ const commonTests = () => {
           accessibilityLabel={accessibilityLabel}
         />,
         {
-          width: 1,
+          width: spacingSm,
         },
       ).toJSON();
       expect(tree).toMatchSnapshot();
@@ -141,7 +142,7 @@ const commonTests = () => {
           accessibilityLabel={accessibilityLabel}
         />,
         {
-          width: 1,
+          width: spacingSm,
         },
       ).toJSON();
       expect(tree).toMatchSnapshot();

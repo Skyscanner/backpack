@@ -5,7 +5,7 @@ exports[`BpkImage should accept userland className 1`] = `
   className="userland-classname"
   style={
     Object {
-      "width": 500,
+      "width": ".75rem",
     }
   }
 >
@@ -33,7 +33,7 @@ exports[`BpkImage should accept userland styling 1`] = `
   className={null}
   style={
     Object {
-      "width": 500,
+      "width": ".75rem",
     }
   }
 >

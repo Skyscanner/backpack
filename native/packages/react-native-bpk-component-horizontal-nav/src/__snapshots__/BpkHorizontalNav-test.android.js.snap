@@ -73,7 +73,7 @@ exports[`Android BpkHorizontalNav should render correctly with custom "style" pr
         "flexDirection": "column",
       },
       Object {
-        "marginBottom": 10,
+        "marginBottom": 4,
       },
     ]
   }

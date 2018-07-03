@@ -21,6 +21,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import BpkText from 'react-native-bpk-component-text';
+import { spacingSm } from 'bpk-tokens/tokens/base.react.native';
 import BpkCarousel from './BpkCarousel';
 import BpkCarouselItem from './BpkCarouselItem';
 
@@ -29,7 +30,10 @@ const accessibilityLabel = "I'm accessible";
 // Manually triggers the onLayout callback with the value provided
 const renderWithLayout = (
   component: any,
-  layout: { width?: number, height?: number } = { width: 300, height: 300 },
+  layout: { width?: number, height?: number } = {
+    width: spacingSm,
+    height: spacingSm,
+  },
 ) => {
   const rendered = renderer.create(component);
   const mockNativeEvent = {
@@ -47,7 +51,7 @@ const commonTests = () => {
       const tree = renderWithLayout(
         <BpkCarousel
           accessibilityLabel={accessibilityLabel}
-          style={{ width: 300 }}
+          style={{ width: spacingSm }}
         >
           <BpkCarouselItem>
             <BpkText>View 1</BpkText>

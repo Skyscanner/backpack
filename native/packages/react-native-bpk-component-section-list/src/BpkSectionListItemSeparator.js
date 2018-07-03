@@ -29,7 +29,7 @@ import {
 const styles = StyleSheet.create({
   separator: {
     flex: 1,
-    height: 1,
+    height: 1, // eslint-disable-line backpack/use-tokens
     backgroundColor: colorGray100,
     ...Platform.select({
       ios: {

@@ -260,7 +260,7 @@ exports[`iOS BpkAnimateHeight should render correctly with user styling padding 
     Object {
       "borderRadius": 0,
       "height": null,
-      "marginBottom": 12,
+      "marginBottom": 4,
       "overflow": "hidden",
     }
   }

@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
   indicator: {
     backgroundColor: colorGray300,
     borderRadius: borderRadiusPill,
-    marginHorizontal: spacingSm / 2,
+    marginHorizontal: spacingSm / 2, // eslint-disable-line backpack/use-tokens
   },
   indicatorSelected: {
     backgroundColor: colorWhite,

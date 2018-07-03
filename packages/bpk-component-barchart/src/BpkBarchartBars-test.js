@@ -16,6 +16,10 @@
  * limitations under the License.
  */
 
+// TODO: remove this once we update the Chart implementation to accept values
+// other than pixels
+/* eslint-disable backpack/use-tokens */
+
 import React from 'react';
 import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';

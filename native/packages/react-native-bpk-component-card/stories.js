@@ -50,7 +50,7 @@ const styles = StyleSheet.create({
     overflow: 'visible',
   },
   cardListItem: {
-    marginTop: 20,
+    marginTop: 20, // eslint-disable-line backpack/use-tokens
   },
   cardMainStyle: {
     flex: 3,

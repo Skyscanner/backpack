@@ -355,7 +355,7 @@ exports[`iOS BpkCarouselIndicator should render correctly with custom styles 1`]
         "width": 72,
       },
       Object {
-        "marginTop": 10,
+        "marginTop": 4,
       },
     ]
   }

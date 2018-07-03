@@ -19,6 +19,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import BpkThemeProvider from 'react-native-bpk-theming';
+import { spacingSm } from 'bpk-tokens/tokens/base.react.native';
 import BpkHorizontalNavItem from './BpkHorizontalNavItem';
 
 const commonTests = () => {
@@ -80,7 +81,7 @@ const commonTests = () => {
             id="0"
             title="Nav"
             onPress={onPressFn}
-            style={{ marginBottom: 10 }}
+            style={{ marginBottom: spacingSm }}
           >
             My nav content.
           </BpkHorizontalNavItem>,

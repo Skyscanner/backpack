@@ -9,7 +9,7 @@ exports[`iOS BpkBannerAlert should accept userland styling 1`] = `
       "height": null,
       "opacity": 1,
       "overflow": "hidden",
-      "width": 50,
+      "width": 4,
     }
   }
 >

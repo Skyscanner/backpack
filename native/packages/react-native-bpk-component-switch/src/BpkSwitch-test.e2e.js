@@ -43,8 +43,7 @@ describe('Example', () => {
       await element(by.id('switch-themed')).swipe('left', 'fast', 0.2);
       await sleep(500);
     } catch (exc) {
-      // eslint-disable-next-line no-console
-      console.error(exc);
+      console.error(exc); // eslint-disable-line no-console
     }
   });
 });

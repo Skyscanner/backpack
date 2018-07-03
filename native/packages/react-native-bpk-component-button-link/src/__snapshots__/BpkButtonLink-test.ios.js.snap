@@ -464,7 +464,7 @@ exports[`iOS BpkButtonLink should support overwriting styles 1`] = `
   style={
     Object {
       "opacity": 1,
-      "width": 100,
+      "width": 4,
     }
   }
   testID={undefined}

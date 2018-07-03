@@ -34,7 +34,7 @@ type Props = {
 const styles = StyleSheet.create({
   flag: {
     borderColor: colorGray100,
-    borderWidth: 1,
+    borderWidth: 1, // eslint-disable-line backpack/use-tokens
   },
 });
 

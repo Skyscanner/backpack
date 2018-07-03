@@ -19,6 +19,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import BpkText from 'react-native-bpk-component-text';
+import { spacingSm } from 'bpk-tokens/tokens/base.react.native';
 
 import BpkAnimateHeight from './BpkAnimateHeight';
 
@@ -70,7 +71,7 @@ const commonTests = () => {
     it('should render correctly with user styling padding', () => {
       const tree = renderer
         .create(
-          <BpkAnimateHeight expanded style={{ marginBottom: 12 }}>
+          <BpkAnimateHeight expanded style={{ marginBottom: spacingSm }}>
             {animateHeightContent}
           </BpkAnimateHeight>,
         )

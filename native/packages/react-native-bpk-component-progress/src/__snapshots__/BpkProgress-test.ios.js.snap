@@ -59,7 +59,7 @@ exports[`IOS BpkProgress should not go over the max bound 1`] = `
         "backgroundColor": "rgb(0, 215, 117)",
         "borderRadius": 40,
         "height": 8,
-        "width": 1,
+        "width": 4,
       }
     }
   />
@@ -92,7 +92,7 @@ exports[`IOS BpkProgress should render correctly 1`] = `
         "backgroundColor": "rgb(0, 215, 117)",
         "borderRadius": 40,
         "height": 8,
-        "width": 20,
+        "width": 0.4,
       }
     }
   />
@@ -125,7 +125,7 @@ exports[`IOS BpkProgress should render correctly with "min" and "max" attributes
         "backgroundColor": "rgb(0, 215, 117)",
         "borderRadius": 40,
         "height": 8,
-        "width": 20,
+        "width": 0.8,
       }
     }
   />

@@ -30,7 +30,7 @@ exports[`Android BpkFlag should render correctly with a custom style 1`] = `
         "width": 24,
       },
       Object {
-        "borderRadius": 10,
+        "borderRadius": 4,
       },
     ]
   }

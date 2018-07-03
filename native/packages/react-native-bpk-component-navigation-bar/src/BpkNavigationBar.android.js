@@ -57,18 +57,18 @@ const ANDROID_THEME_ATTRIBUTES = [
 const styles = StyleSheet.create({
   barOuter: {
     flexDirection: 'column',
-    paddingHorizontal: 8,
+    paddingHorizontal: 8, // eslint-disable-line backpack/use-tokens
     width: '100%',
     backgroundColor: colorBlue500,
     elevation: 3,
   },
   barOuterWithSubtitle: {
-    paddingBottom: 16,
+    paddingBottom: 16, // eslint-disable-line backpack/use-tokens
   },
   bar: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    height: 56,
+    height: 56, // eslint-disable-line backpack/use-tokens
     alignItems: 'center',
   },
   barOnlyTrailingButton: {
@@ -76,8 +76,8 @@ const styles = StyleSheet.create({
   },
   titleString: {
     position: 'absolute',
-    start: 72,
-    bottom: 15,
+    start: 72, // eslint-disable-line backpack/use-tokens
+    bottom: 15, // eslint-disable-line backpack/use-tokens
   },
   titleViewOuter: {
     position: 'absolute',
@@ -89,11 +89,11 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   leadingIcon: {
-    padding: 8,
+    padding: 8, // eslint-disable-line backpack/use-tokens
     color: colorWhite,
   },
   subtitleViewContainer: {
-    paddingHorizontal: 8,
+    paddingHorizontal: 8, // eslint-disable-line backpack/use-tokens
   },
 });
 
@@ -213,7 +213,7 @@ class BpkNavigationBar extends Component<Props, {}> {
           {React.cloneElement(title, {
             style: [
               title.props.style ? title.props.style : null,
-              { maxHeight: 32 },
+              { maxHeight: 32 }, // eslint-disable-line backpack/use-tokens
             ],
           })}
         </View>
