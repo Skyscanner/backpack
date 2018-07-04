@@ -29,7 +29,7 @@ import React, { Component, type Node } from 'react';
 import { cssModules, withDefaultProps } from 'bpk-react-utils';
 
 import STYLES from './DialogExamples.scss';
-import { ParagraphNoMargin } from './../../components/Paragraph';
+import { ParagraphNoMargin } from '../../components/Paragraph';
 
 const getClassName = cssModules(STYLES);
 
@@ -127,9 +127,9 @@ export class NonDismissibleDialogContainer extends Component<
   };
 
   onTermsChange = () => {
-    this.setState({
-      termsAccepted: !this.state.termsAccepted,
-    });
+    this.setState(prevState => ({
+      termsAccepted: !prevState.termsAccepted,
+    }));
   };
 
   render() {

@@ -17,7 +17,7 @@
  */
 import React from 'react';
 import addons from '@storybook/addons';
-import { RTL_EVENT } from './../constants';
+import { RTL_EVENT } from '../constants';
 
 class Panel extends React.Component {
   constructor(props) {
@@ -26,17 +26,19 @@ class Panel extends React.Component {
       rtlEnabled: false,
     };
   }
+
   toggleRtl = () => {
-    this.setState({
-      rtlEnabled: !this.state.rtlEnabled,
-    });
+    this.setState(prevState => ({
+      rtlEnabled: !prevState.rtlEnabled,
+    }));
     const channel = addons.getChannel();
     channel.emit(RTL_EVENT, this.state.rtlEnabled);
   };
+
   render() {
     return (
       <div>
-        <button onClick={this.toggleRtl}>
+        <button type="button" onClick={this.toggleRtl}>
           {this.state.rtlEnabled ? 'Disable' : 'Enable'} RTL
         </button>
       </div>

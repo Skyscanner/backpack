@@ -118,12 +118,15 @@ const withBannerAlertState = (WrappedComponent: ComponentType<any>) => {
     }
 
     onExpandToggle = () => {
-      const expanded = !this.state.expanded;
-      this.setState({ expanded });
+      this.setState(prevState => {
+        const expanded = !prevState.expanded;
 
-      if (this.props.onExpandToggle) {
-        this.props.onExpandToggle(expanded);
-      }
+        if (this.props.onExpandToggle) {
+          this.props.onExpandToggle(expanded);
+        }
+
+        return { expanded };
+      });
     };
 
     onDismiss = () => {

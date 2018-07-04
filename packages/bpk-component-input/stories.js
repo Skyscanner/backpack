@@ -24,6 +24,8 @@ import { action } from '@storybook/addon-actions';
 
 import BpkText from 'bpk-component-text';
 import BpkInput, {
+  propTypes as inputPropTypes,
+  defaultProps as inputDefaultProps,
   type BpkInputProps,
   INPUT_TYPES,
   CLEAR_BUTTON_MODES,
@@ -38,7 +40,7 @@ type State = {
   value: string,
 };
 
-const { value: valueProp, ...propTypes } = BpkInput.propTypes;
+const { value: valueProp, ...propTypes } = inputPropTypes;
 
 class ClearableInput extends Component<Props, State> {
   static propTypes = {
@@ -47,7 +49,7 @@ class ClearableInput extends Component<Props, State> {
   };
 
   static defaultProps = {
-    ...BpkInput.defaultProps,
+    ...inputDefaultProps,
   };
 
   constructor(props: Props) {

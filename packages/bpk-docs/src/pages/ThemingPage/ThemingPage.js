@@ -24,10 +24,10 @@ import BpkBlockquote from 'bpk-component-blockquote';
 import nativeReadme from 'react-native-bpk-theming/readme.md';
 import webReadme from 'bpk-theming/readme.md';
 
-import Paragraph from './../../components/Paragraph';
-import IntroBlurb from './../../components/IntroBlurb';
-import DocsPageBuilder from './../../components/DocsPageBuilder';
-import DocsPageWrapper from './../../components/DocsPageWrapper';
+import Paragraph from '../../components/Paragraph';
+import IntroBlurb from '../../components/IntroBlurb';
+import DocsPageBuilder from '../../components/DocsPageBuilder';
+import DocsPageWrapper from '../../components/DocsPageWrapper';
 
 import {
   ACCORDION,
@@ -46,7 +46,7 @@ import {
   SLIDER,
   SPINNER,
   SWITCH,
-} from './../../constants/routes';
+} from '../../constants/routes';
 
 const CONTEXT_API_URL = 'https://reactjs.org/docs/context.html';
 const CSS_VARIABLES_URL =

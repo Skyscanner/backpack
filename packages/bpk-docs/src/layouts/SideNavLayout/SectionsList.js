@@ -33,7 +33,7 @@ import DesignTokensIcon from '../../static/design_tokens_icon.svg';
 import UsingBackpackIcon from '../../static/using_bpk_icon.svg';
 import StyleGuideIcon from '../../static/style_guide_icon.svg';
 
-import * as ROUTES from './../../constants/routes';
+import * as ROUTES from '../../constants/routes';
 import STYLES from './SectionsList.scss';
 
 const getClassName = cssModules(STYLES);
@@ -95,6 +95,7 @@ const SectionListItem = (props: SectionListItemProps) => {
         <a
           href={props.link}
           target="_blank"
+          rel="noopener noreferrer"
           className={getClassName('bpkdocs-sections-list__list-item')}
         >
           {props.title}
@@ -169,6 +170,7 @@ const SectionsList = (props: Props) => {
           />
         )}
         <button
+          type="button"
           onClick={onMenuToggle}
           className={getClassName('bpkdocs-sections-list__heading-button')}
         >

@@ -117,7 +117,8 @@ function getMonthsInRange(from, to) {
 const dateToBoundaries = (date, minDate, maxDate) => {
   if (isWithinRange(date, minDate, maxDate)) {
     return date;
-  } else if (isBefore(date, minDate)) {
+  }
+  if (isBefore(date, minDate)) {
     return minDate;
   }
   return maxDate;

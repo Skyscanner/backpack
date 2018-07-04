@@ -149,7 +149,7 @@ const labelPropType = (
   return false;
 };
 
-export const BpkFieldsetPropTypes = {
+export const propTypes = {
   children: PropTypes.element.isRequired,
   label: labelPropType,
   disabled: PropTypes.bool,
@@ -162,9 +162,7 @@ export const BpkFieldsetPropTypes = {
   description: PropTypes.string,
 };
 
-BpkFieldset.propTypes = BpkFieldsetPropTypes;
-
-export const BpkFieldsetDefaultPropTypes = {
+export const defaultProps = {
   label: null,
   disabled: false,
   valid: null,
@@ -175,6 +173,8 @@ export const BpkFieldsetDefaultPropTypes = {
   validationProps: {},
   description: null,
 };
-BpkFieldset.defaultProps = BpkFieldsetDefaultPropTypes;
+
+BpkFieldset.propTypes = { ...propTypes };
+BpkFieldset.defaultProps = { ...defaultProps };
 
 export default BpkFieldset;

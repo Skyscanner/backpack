@@ -25,9 +25,9 @@ import {
 
 import descriptionlistsReadme from 'bpk-component-description-list/readme.md';
 
-import DocsPageBuilder from './../../components/DocsPageBuilder';
-import DocsPageWrapper from './../../components/DocsPageWrapper';
-import IntroBlurb from './../../components/IntroBlurb';
+import DocsPageBuilder from '../../components/DocsPageBuilder';
+import DocsPageWrapper from '../../components/DocsPageWrapper';
+import IntroBlurb from '../../components/IntroBlurb';
 
 const blurb = [
   <IntroBlurb>

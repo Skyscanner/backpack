@@ -30,7 +30,9 @@ jest.mock(
       constructor(target, popover, options) {
         options.onCreate();
       }
+
       scheduleUpdate = () => {};
+
       destroy = () => {};
     },
 );
@@ -71,7 +73,8 @@ describe('BpkPopoverPortal', () => {
       .create(
         <BpkPopoverPortal
           id="my-popover"
-          target={() => document.createElement('button')}
+          // $FlowFixMe
+          target={() => document.createElement('button', { type: 'button' })}
           isOpen={false}
           onClose={() => null}
           label="My popover"

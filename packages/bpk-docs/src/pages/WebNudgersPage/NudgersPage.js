@@ -20,8 +20,8 @@ import React, { Component } from 'react';
 import BpkNudger from 'bpk-component-nudger';
 import nudgersReadme from 'bpk-component-nudger/readme.md';
 
-import DocsPageBuilder from './../../components/DocsPageBuilder';
-import Paragraph from './../../components/Paragraph';
+import DocsPageBuilder from '../../components/DocsPageBuilder';
+import Paragraph from '../../components/Paragraph';
 
 class NudgerContainer extends Component {
   constructor() {
@@ -31,6 +31,7 @@ class NudgerContainer extends Component {
       value: 2,
     };
   }
+
   handleChange = value => {
     this.setState({ value });
   };

@@ -19,8 +19,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import BpkText from './../packages/react-native-bpk-component-text';
-import { spacingSm } from './../../packages/bpk-tokens/tokens/base.react.native';
+import BpkText from '../packages/react-native-bpk-component-text';
+import { spacingSm } from '../../packages/bpk-tokens/tokens/base.react.native';
 
 const StoryHeading = ({ children, ...rest }) => (
   <BpkText textStyle="xxl" {...rest}>

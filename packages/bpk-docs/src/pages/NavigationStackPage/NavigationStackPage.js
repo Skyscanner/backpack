@@ -22,10 +22,10 @@ import React from 'react';
 import navigationStackReadme from 'bpk-component-navigation-stack/readme.md';
 import { cssModules } from 'bpk-react-utils';
 
-import DocsPageBuilder from './../../components/DocsPageBuilder';
-import DocsPageWrapper from './../../components/DocsPageWrapper';
-import Paragraph from './../../components/Paragraph';
-import IntroBlurb from './../../components/IntroBlurb';
+import DocsPageBuilder from '../../components/DocsPageBuilder';
+import DocsPageWrapper from '../../components/DocsPageWrapper';
+import Paragraph from '../../components/Paragraph';
+import IntroBlurb from '../../components/IntroBlurb';
 import {
   View,
   StackWithNavBar,

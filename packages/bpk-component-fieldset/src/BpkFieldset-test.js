@@ -23,7 +23,7 @@ import BpkSelect from 'bpk-component-select';
 import BpkCheckbox from 'bpk-component-checkbox';
 import BpkInput, { INPUT_TYPES } from 'bpk-component-input';
 
-import BpkFieldset from './BpkFieldset';
+import BpkFieldset, { propTypes } from './BpkFieldset';
 
 describe('BpkFieldset', () => {
   it('should render correctly with input component', () => {
@@ -220,14 +220,14 @@ describe('BpkFieldset', () => {
   });
 
   it('should reject label property when label is omitted', () => {
-    expect(BpkFieldset.propTypes.label({}, 'label').toString()).toEqual(
+    expect(propTypes.label({}, 'label').toString()).toEqual(
       'Error: `label` is required when `isCheckbox` is false.',
     ); // eslint-disable-line max-len
   });
 
   it('should accept no label property when label is omitted but isCheckbox is included', () => {
-    expect(
-      BpkFieldset.propTypes.label({ isCheckbox: true }, 'label').toString(),
-    ).toEqual('false');
+    expect(propTypes.label({ isCheckbox: true }, 'label').toString()).toEqual(
+      'false',
+    );
   });
 });

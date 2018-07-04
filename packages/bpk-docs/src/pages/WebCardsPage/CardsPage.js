@@ -21,8 +21,8 @@ import BpkCard from 'bpk-component-card';
 
 import cardReadme from 'bpk-component-card/readme.md';
 
-import DocsPageBuilder from './../../components/DocsPageBuilder';
-import Paragraph from './../../components/Paragraph';
+import DocsPageBuilder from '../../components/DocsPageBuilder';
+import Paragraph from '../../components/Paragraph';
 
 const components = [
   {

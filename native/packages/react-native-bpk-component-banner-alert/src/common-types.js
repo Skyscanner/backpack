@@ -51,7 +51,7 @@ export type Props = {
   bannerStyle: ?any,
 };
 
-export const commonPropTypes = {
+export const propTypes = {
   message: PropTypes.string.isRequired,
   type: PropTypes.oneOf(Object.keys(ALERT_TYPES)).isRequired,
   animateOnEnter: PropTypes.bool,
@@ -67,7 +67,7 @@ export const commonPropTypes = {
   bannerStyle: ViewPropTypes.style,
 };
 
-export const commonDefaultProps = {
+export const defaultProps = {
   animateOnEnter: false,
   animateOnLeave: false,
   children: null,

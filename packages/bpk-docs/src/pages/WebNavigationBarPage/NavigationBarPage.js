@@ -29,8 +29,8 @@ import BpkNavigationBar, {
 import navigationBarReadme from 'bpk-component-navigation-bar/readme.md';
 import { cssModules } from 'bpk-react-utils';
 
-import DocsPageBuilder from './../../components/DocsPageBuilder';
-import Paragraph from './../../components/Paragraph';
+import DocsPageBuilder from '../../components/DocsPageBuilder';
+import Paragraph from '../../components/Paragraph';
 import AirlineLogo from './AirlineLogo';
 
 import STYLES from './NavigationBarPage.scss';

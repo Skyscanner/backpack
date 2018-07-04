@@ -21,10 +21,10 @@ import React, { Component } from 'react';
 import BpkPagination from 'bpk-component-pagination';
 import paginationReadme from 'bpk-component-pagination/readme.md';
 
-import DocsPageBuilder from './../../components/DocsPageBuilder';
-import DocsPageWrapper from './../../components/DocsPageWrapper';
-import Paragraph from './../../components/Paragraph';
-import IntroBlurb from './../../components/IntroBlurb';
+import DocsPageBuilder from '../../components/DocsPageBuilder';
+import DocsPageWrapper from '../../components/DocsPageWrapper';
+import Paragraph from '../../components/Paragraph';
+import IntroBlurb from '../../components/IntroBlurb';
 
 class PaginationContainer extends Component {
   constructor(props) {

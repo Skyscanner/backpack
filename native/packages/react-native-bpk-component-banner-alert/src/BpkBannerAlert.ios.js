@@ -40,8 +40,8 @@ import BpkTouchableOverlay from 'react-native-bpk-component-touchable-overlay';
 import {
   type Props,
   ALERT_TYPES,
-  commonPropTypes,
-  commonDefaultProps,
+  propTypes,
+  defaultProps,
 } from './common-types';
 
 import AnimateAndFade from './AnimateAndFade';
@@ -214,8 +214,8 @@ const BpkBannerAlert = (props: Props) => {
   );
 };
 
-BpkBannerAlert.propTypes = commonPropTypes;
+BpkBannerAlert.propTypes = { ...propTypes };
 
-BpkBannerAlert.defaultProps = commonDefaultProps;
+BpkBannerAlert.defaultProps = { ...defaultProps };
 
 export default BpkBannerAlert;

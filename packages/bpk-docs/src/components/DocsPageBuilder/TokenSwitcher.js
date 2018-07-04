@@ -119,12 +119,14 @@ TokenSwitcher.defaultProps = {
 export default TokenSwitcher;
 
 export const connect = (tokenSwitcher, table) => {
-  /* eslint-disable react/no-multi-comp */
+  /* eslint-disable react/no-multi-comp, react/no-this-in-sfc */
   class SwitchAwareTable extends Component {
     constructor(props) {
       super(props);
+
       this.state = { platform: null };
       this.onSwitch = platform => this.setState({ platform });
+
       addListener(tokenSwitcher, this.onSwitch);
     }
 
@@ -134,10 +136,13 @@ export const connect = (tokenSwitcher, table) => {
 
     render() {
       const { platform } = this.state;
+
       return React.cloneElement(table, {
         platform: platform || platforms.web.id,
       });
     }
   }
+
   return <SwitchAwareTable />;
+  /* eslint-enable */
 };

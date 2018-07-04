@@ -30,6 +30,7 @@
   "rules": {
     "backpack/use-tokens": 2,
     "backpack/auto-import-tokens": 2,
+    "react/destructuring-assignment": 0,
     "prettier/prettier": "error",
     "react/jsx-filename-extension": 0,
     "import/no-extraneous-dependencies": 0,
@@ -39,6 +40,12 @@
       2,
       {
         "allowRequiredDefaults": true
+      }
+    ],
+    "react/require-default-props": [
+      2,
+      {
+        "forbidDefaultForRequired": false
       }
     ],
     "react/prefer-stateless-function": [

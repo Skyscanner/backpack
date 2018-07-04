@@ -29,7 +29,7 @@ import BpkSmallWindowIcon from 'bpk-component-icon/sm/window';
 import { withButtonAlignment } from 'bpk-component-icon';
 import { cssModules } from 'bpk-react-utils';
 
-import Heading from './../Heading';
+import Heading from '../Heading';
 import Blurb from './Blurb';
 import STYLES from './DocsPageWrapper.scss';
 

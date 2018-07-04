@@ -62,7 +62,7 @@ class AnimateHeightDemo extends React.Component {
   }
 
   onToggle = () => {
-    this.setState({ expanded: !this.state.expanded });
+    this.setState(prevState => ({ expanded: !prevState.expanded }));
   };
 
   render() {

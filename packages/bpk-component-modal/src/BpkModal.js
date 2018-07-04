@@ -25,6 +25,8 @@ import { Portal, cssModules } from 'bpk-react-utils';
 
 import STYLES from './bpk-modal.scss';
 import BpkModalDialog, {
+  propTypes as modalDialogPropTypes,
+  defaultProps as modalDialogDefaultProps,
   type Props as ModalDialogProps,
 } from './BpkModalDialog';
 import { modalOnClosePropType } from './customPropTypes';
@@ -96,10 +98,10 @@ const BpkModal = (props: Props) => {
   );
 };
 
-const { dialogRef, ...modalDialogPropTypes } = BpkModalDialog.propTypes;
+const { dialogRef, ...newModalDialogPropTypes } = modalDialogPropTypes;
 
-BpkModal.propTypes = {
-  ...modalDialogPropTypes,
+export const propTypes = {
+  ...newModalDialogPropTypes,
   onClose: modalOnClosePropType,
   isIphone: PropTypes.bool,
   isOpen: PropTypes.bool.isRequired,
@@ -109,8 +111,8 @@ BpkModal.propTypes = {
   closeOnEscPressed: PropTypes.bool,
 };
 
-BpkModal.defaultProps = {
-  ...BpkModalDialog.defaultProps,
+export const defaultProps = {
+  ...modalDialogDefaultProps,
   renderTarget: null,
   target: null,
   isIphone: /iPhone/i.test(
@@ -119,5 +121,8 @@ BpkModal.defaultProps = {
   closeOnScrimClick: true,
   closeOnEscPressed: true,
 };
+
+BpkModal.propTypes = { ...propTypes };
+BpkModal.defaultProps = { ...defaultProps };
 
 export default BpkModal;

@@ -17,9 +17,15 @@
  */
 /* @flow */
 
-import BpkInput, { INPUT_TYPES as TYPES, type Props } from './src/BpkInput';
-import CLEAR_BUTTON_MODES from './src/clearButtonModes';
+import BpkInput from './src/BpkInput';
 import withOpenEvents from './src/withOpenEvents';
+import {
+  propTypes,
+  defaultProps,
+  CLEAR_BUTTON_MODES,
+  INPUT_TYPES as TYPES,
+  type Props,
+} from './src/common-types';
 
 export default BpkInput;
 
@@ -31,6 +37,7 @@ const DEPRECATED_INPUT_TYPES = {
   PASSWORD: 'password',
   TEL: 'tel',
 };
+
 export type BpkInputProps = Props;
 export const INPUT_TYPES = { ...DEPRECATED_INPUT_TYPES, ...TYPES };
-export { withOpenEvents, CLEAR_BUTTON_MODES };
+export { propTypes, defaultProps, withOpenEvents, CLEAR_BUTTON_MODES };

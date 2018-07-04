@@ -34,7 +34,8 @@ const getPropsIcon = props => {
 
   if (loading) {
     return iconLoading;
-  } else if (disabled) {
+  }
+  if (disabled) {
     return iconDisabled;
   }
   return icon;

@@ -95,6 +95,7 @@ describe('BpkThemeProvider', () => {
 
   it('should warn about missing theme attributes', () => {
     expect(
+      // eslint-disable-next-line react/forbid-foreign-prop-types
       BpkThemeProvider.propTypes
         .themeAttributes(
           {
@@ -112,6 +113,7 @@ describe('BpkThemeProvider', () => {
 
   it('should warn about extraneous theme attributes', () => {
     expect(
+      // eslint-disable-next-line react/forbid-foreign-prop-types
       BpkThemeProvider.propTypes
         .themeAttributes(
           {

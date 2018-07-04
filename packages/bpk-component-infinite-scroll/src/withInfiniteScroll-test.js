@@ -106,7 +106,9 @@ describe('withInfiniteScroll', () => {
         onItemsFetch={onItemsFetch(elementsArray)}
         elementsPerScroll={1}
         renderSeeMoreComponent={({ onSeeMoreClick }) => (
-          <button onClick={onSeeMoreClick}>see more</button>
+          <button type="button" onClick={onSeeMoreClick}>
+            see more
+          </button>
         )}
         seeMoreAfter={0}
       />,
@@ -178,7 +180,7 @@ describe('withInfiniteScroll', () => {
         onItemsFetch={fetchMore}
         elementsPerScroll={1}
         renderSeeMoreComponent={({ onSeeMoreClick }) => (
-          <button id="test-button" onClick={onSeeMoreClick}>
+          <button type="button" id="test-button" onClick={onSeeMoreClick}>
             see more
           </button>
         )}

@@ -128,6 +128,7 @@ const BpkButton = (props: Props) => {
 
   const buttonType = submit ? 'submit' : 'button';
 
+  /* eslint-disable react/button-has-type */
   return (
     <button
       type={buttonType}
@@ -139,6 +140,7 @@ const BpkButton = (props: Props) => {
       {children}
     </button>
   );
+  /* eslint-enable */
 };
 
 BpkButton.propTypes = {

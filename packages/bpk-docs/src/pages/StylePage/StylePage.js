@@ -30,10 +30,10 @@ import {
   BpkGridRow,
   BpkGridColumn,
 } from 'bpk-component-grid';
-import Heading from './../../components/Heading';
-import Paragraph from './../../components/Paragraph';
+import Heading from '../../components/Heading';
+import Paragraph from '../../components/Paragraph';
 
-import * as ROUTES from './../../constants/routes';
+import * as ROUTES from '../../constants/routes';
 import STYLES from './StylePage.scss';
 import iconsImage from './icons.png';
 import sassImage from './sass-react-logos.svg';

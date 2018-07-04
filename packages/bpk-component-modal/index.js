@@ -18,10 +18,10 @@
 
 /* @flow */
 
-import BpkModal, { type Props } from './src/BpkModal';
 import themeAttributes from './src/themeAttributes';
+import BpkModal, { type Props, propTypes, defaultProps } from './src/BpkModal';
 
 export type BpkModalProps = Props;
 
 export default BpkModal;
-export { themeAttributes };
+export { propTypes, defaultProps, themeAttributes };

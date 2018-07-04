@@ -25,9 +25,9 @@ import readme from 'react-native-bpk-component-touchable-overlay/readme.md';
 import iosScreenshotDefault from 'react-native-bpk-component-touchable-overlay/screenshots/default.png';
 import iosScreenshotTouchableHighlight from 'react-native-bpk-component-touchable-overlay/screenshots/touchable-highlight.png';
 
-import IntroBlurb from './../../components/IntroBlurb';
-import DocsPageBuilder from './../../components/DocsPageBuilder';
-import DocsPageWrapper from './../../components/DocsPageWrapper';
+import IntroBlurb from '../../components/IntroBlurb';
+import DocsPageBuilder from '../../components/DocsPageBuilder';
+import DocsPageWrapper from '../../components/DocsPageWrapper';
 
 const touchableNativeFeedbackUrl =
   '/components/native/touchable-native-feedback';

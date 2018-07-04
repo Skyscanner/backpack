@@ -21,12 +21,12 @@ import BpkDatepicker from 'bpk-component-datepicker';
 import BpkRouterLink from 'bpk-component-router-link';
 
 import datepickerReadme from 'bpk-component-datepicker/readme.md';
-import * as ROUTES from './../../constants/routes';
-import DocsPageBuilder from './../../components/DocsPageBuilder';
-import DocsPageWrapper from './../../components/DocsPageWrapper';
+import * as ROUTES from '../../constants/routes';
+import DocsPageBuilder from '../../components/DocsPageBuilder';
+import DocsPageWrapper from '../../components/DocsPageWrapper';
 import format from '../../../../bpk-component-calendar/node_modules/date-fns/format';
-import Paragraph from './../../components/Paragraph';
-import IntroBlurb from './../../components/IntroBlurb';
+import Paragraph from '../../components/Paragraph';
+import IntroBlurb from '../../components/IntroBlurb';
 import { weekDays } from '../../../../bpk-component-calendar/test-utils';
 
 const formatDate = date => format(date, 'DD/MM/YYYY');
@@ -41,6 +41,7 @@ class DatepickerContainer extends Component {
       date: null,
     };
   }
+
   render() {
     return (
       <BpkDatepicker

@@ -26,8 +26,8 @@ import BpkInput, { INPUT_TYPES } from 'bpk-component-input';
 
 import BpkFieldset, {
   type BpkFieldsetProps,
-  BpkFieldsetPropTypes,
-  BpkFieldsetDefaultPropTypes,
+  propTypes,
+  defaultProps,
 } from './index';
 
 type Props = {
@@ -42,13 +42,13 @@ type State = {
 
 class FieldsetContainer extends Component<Props, State> {
   static propTypes = {
-    ...BpkFieldsetPropTypes,
+    ...propTypes,
     validValue: PropTypes.oneOfType([PropTypes.string, PropTypes.bool])
       .isRequired,
   };
 
   static defaultProps = {
-    ...BpkFieldsetDefaultPropTypes,
+    ...defaultProps,
     isCheckbox: false,
   };
 

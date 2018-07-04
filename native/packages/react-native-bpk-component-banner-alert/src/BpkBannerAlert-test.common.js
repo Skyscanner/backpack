@@ -155,48 +155,6 @@ const commonTests = () => {
       expect(tree).toMatchSnapshot();
     });
 
-    it('should error if dismissable and expandable', () => {
-      expect(
-        BpkBannerAlert.propTypes
-          .dismissable(
-            {
-              dismissable: true,
-              children: <BpkText textStyle="sm">CHILD</BpkText>,
-            },
-            'dismissable',
-            'BpkBannerAlert',
-          )
-          .toString(),
-      ).toEqual(
-        'Error: Invalid prop `dismissable` with value `true` supplied to `BpkBannerAlert`. Banner alert cannot be expanded to show children if it is dismissable.',
-      ); // eslint-disable-line max-len
-    });
-
-    it('should not error if only expandable', () => {
-      expect(
-        BpkBannerAlert.propTypes.dismissable(
-          {
-            children: <BpkText textStyle="sm">CHILD</BpkText>,
-          },
-          'dismissable',
-          'BpkBannerAlert',
-        ),
-      ).toEqual(false);
-    });
-
-    it('should not error if only dismissable', () => {
-      expect(
-        BpkBannerAlert.propTypes.dismissable(
-          {
-            dismissable: true,
-            children: null,
-          },
-          'dismissable',
-          'BpkBannerAlert',
-        ),
-      ).toEqual(false);
-    });
-
     it('should not throw if alert type not provided', () => {
       jest.spyOn(console, 'error').mockImplementation(() => null);
 

@@ -28,7 +28,7 @@ import androidScreenshotSecondary from 'react-native-bpk-component-button/screen
 import androidScreenshotDestructive from 'react-native-bpk-component-button/screenshots/android/destructive.png';
 import androidScreenshotFeatured from 'react-native-bpk-component-button/screenshots/android/featured.png';
 
-import DocsPageBuilder from './../../components/DocsPageBuilder';
+import DocsPageBuilder from '../../components/DocsPageBuilder';
 
 const components = [
   {

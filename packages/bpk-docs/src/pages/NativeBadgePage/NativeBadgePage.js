@@ -26,7 +26,7 @@ import androidScreenshotDefault from 'react-native-bpk-component-badge/screensho
 import androidScreenshotDockedStart from 'react-native-bpk-component-badge/screenshots/android/docked-start.png';
 import androidScreenshotDockedEnd from 'react-native-bpk-component-badge/screenshots/android/docked-end.png';
 
-import DocsPageBuilder from './../../components/DocsPageBuilder';
+import DocsPageBuilder from '../../components/DocsPageBuilder';
 
 const components = [
   {

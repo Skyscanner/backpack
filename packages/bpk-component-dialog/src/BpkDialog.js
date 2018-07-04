@@ -22,7 +22,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { cssModules } from 'bpk-react-utils';
 import BpkCloseButton from 'bpk-component-close-button';
-import BpkModal, { type BpkModalProps } from 'bpk-component-modal';
+import BpkModal, {
+  type BpkModalProps,
+  propTypes as modalPropTypes,
+  defaultProps as modalDefaultProps,
+} from 'bpk-component-modal';
 
 import STYLES from './BpkDialog.scss';
 import { onClosePropType } from './customPropTypes';
@@ -66,17 +70,17 @@ const {
   closeOnScrimClick,
   closeOnEscPressed,
   fullScreenOnMobile,
-  ...modalPropTypes
-} = BpkModal.propTypes;
+  ...newModalPropTypes
+} = modalPropTypes;
 
 BpkDialog.propTypes = {
-  ...modalPropTypes,
+  ...newModalPropTypes,
   onClose: onClosePropType,
   dismissible: PropTypes.bool,
 };
 
 BpkDialog.defaultProps = {
-  ...BpkModal.defaultProps,
+  ...modalDefaultProps,
   onClose: null,
   dismissible: true,
 };

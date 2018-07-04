@@ -48,6 +48,37 @@ export type Props = {
   accessoryView: ?Node,
 };
 
+export const propTypes = {
+  label: PropTypes.string.isRequired,
+  value: PropTypes.string.isRequired,
+  // eslint-disable-next-line react/forbid-foreign-prop-types
+  clearButtonMode: TextInput.propTypes.clearButtonMode,
+  description: PropTypes.string,
+  editable: PropTypes.bool,
+  inputRef: PropTypes.func,
+  onBlur: PropTypes.func,
+  onFocus: PropTypes.func,
+  placeholder: PropTypes.string,
+  style: ViewPropTypes.style,
+  valid: PropTypes.oneOf([true, false, null]),
+  validationMessage: PropTypes.string,
+  accessoryView: PropTypes.node,
+};
+
+export const defaultProps = {
+  clearButtonMode: 'while-editing',
+  description: null,
+  editable: true,
+  inputRef: null,
+  onBlur: null,
+  onFocus: null,
+  placeholder: null,
+  style: null,
+  valid: null,
+  validationMessage: null,
+  accessoryView: null,
+};
+
 type State = {
   isFocused: boolean,
 };
@@ -55,35 +86,9 @@ type State = {
 class BpkTextInput extends Component<Props, State> {
   animatedValues: { color: AnimatedValue, labelPosition: AnimatedValue };
 
-  static propTypes = {
-    label: PropTypes.string.isRequired,
-    value: PropTypes.string.isRequired,
-    clearButtonMode: TextInput.propTypes.clearButtonMode,
-    description: PropTypes.string,
-    editable: PropTypes.bool,
-    inputRef: PropTypes.func,
-    onBlur: PropTypes.func,
-    onFocus: PropTypes.func,
-    placeholder: PropTypes.string,
-    style: ViewPropTypes.style,
-    valid: PropTypes.oneOf([true, false, null]),
-    validationMessage: PropTypes.string,
-    accessoryView: PropTypes.node,
-  };
+  static propTypes = { ...propTypes };
 
-  static defaultProps = {
-    clearButtonMode: 'while-editing',
-    description: null,
-    editable: true,
-    inputRef: null,
-    onBlur: null,
-    onFocus: null,
-    placeholder: null,
-    style: null,
-    valid: null,
-    validationMessage: null,
-    accessoryView: null,
-  };
+  static defaultProps = { ...defaultProps };
 
   constructor(props: Props) {
     super(props);

@@ -39,12 +39,19 @@ export default function withLazyLoading(
     WithLazyLoadingState,
   > {
     checkInView: () => void;
+
     element: ?HTMLElement;
+
     isInViewPort: () => boolean;
+
     placeholderReference: string;
+
     removeEventListeners: () => void;
+
     setInView: () => void;
+
     state: WithLazyLoadingState;
+
     supportsPassiveEvents: () => boolean;
 
     static defaultProps: {};

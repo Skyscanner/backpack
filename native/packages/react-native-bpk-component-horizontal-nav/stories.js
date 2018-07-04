@@ -40,6 +40,7 @@ class ManagedNav extends React.Component {
     super(props);
     this.state = { selectedId: '2' };
   }
+
   render() {
     return (
       <BpkHorizontalNav selectedId={this.state.selectedId}>

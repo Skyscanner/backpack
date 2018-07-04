@@ -31,8 +31,8 @@ import BpkBannerAlert, {
 import BpkCheckBox from 'bpk-component-checkbox';
 import BpkButton from 'bpk-component-button';
 import bannerAlertReadme from 'bpk-component-banner-alert/readme.md';
-import DocsPageBuilder from './../../components/DocsPageBuilder';
-import Paragraph from './../../components/Paragraph';
+import DocsPageBuilder from '../../components/DocsPageBuilder';
+import Paragraph from '../../components/Paragraph';
 
 import STYLES from './bpk-banner-alerts-page.scss';
 
@@ -103,9 +103,9 @@ class ToggleShowBanner extends Component<
   }
 
   toggle = (): void => {
-    this.setState({
-      show: !this.state.show,
-    });
+    this.setState(prevState => ({
+      show: !prevState.show,
+    }));
   };
 
   render(): Node {
@@ -142,7 +142,9 @@ type DismissDemoState = {
 // eslint-disable-next-line react/no-multi-comp
 class BpkBannerAlertDismissDemo extends Component<any, DismissDemoState> {
   reset: Function;
+
   setDismissed: Function;
+
   bannerAlerts: Array<BannerAlertConfig>;
 
   constructor() {
@@ -178,13 +180,17 @@ class BpkBannerAlertDismissDemo extends Component<any, DismissDemoState> {
   }
 
   setDismissed = index => {
-    const updatedBannerAlerts = JSON.parse(
-      JSON.stringify(this.state.bannerAlerts),
-    );
-    updatedBannerAlerts[index].show = false;
-    this.setState({
-      bannerAlerts: updatedBannerAlerts,
-      dirty: true,
+    this.setState(prevState => {
+      const updatedBannerAlerts = JSON.parse(
+        JSON.stringify(prevState.bannerAlerts),
+      );
+
+      updatedBannerAlerts[index].show = false;
+
+      return {
+        bannerAlerts: updatedBannerAlerts,
+        dirty: true,
+      };
     });
   };
 
@@ -245,6 +251,7 @@ class BpkBannerAlertFadeDemo extends Component<FadeDemoProps, FadeDemoState> {
   static defaultProps = {
     message: null,
   };
+
   constructor() {
     super();
 
@@ -254,8 +261,12 @@ class BpkBannerAlertFadeDemo extends Component<FadeDemoProps, FadeDemoState> {
   }
 
   addBannerAlert = () => {
-    this.setState({
-      bannerAlertCount: (this.state.bannerAlertCount += 1),
+    this.setState(prevState => {
+      const bannerAlertCount = prevState.bannerAlertCount + 1;
+
+      return {
+        bannerAlertCount,
+      };
     });
   };
 

@@ -22,7 +22,7 @@ import readme from 'react-native-bpk-component-button-link/readme.md';
 import iosScreenshot from 'react-native-bpk-component-button-link/screenshots/ios/default.png';
 import androidScreenshot from 'react-native-bpk-component-button-link/screenshots/android/default.png';
 
-import DocsPageBuilder from './../../components/DocsPageBuilder';
+import DocsPageBuilder from '../../components/DocsPageBuilder';
 
 const components = [
   {

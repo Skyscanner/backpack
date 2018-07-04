@@ -37,12 +37,12 @@ import checkboxReadme from 'bpk-component-checkbox/readme.md';
 import validationReadme from 'bpk-component-form-validation/readme.md';
 
 import STYLES from './forms-page.scss';
-import * as ROUTES from './../../constants/routes';
-import DocsPageBuilder from './../../components/DocsPageBuilder';
-import DocsPageWrapper from './../../components/DocsPageWrapper';
+import * as ROUTES from '../../constants/routes';
+import DocsPageBuilder from '../../components/DocsPageBuilder';
+import DocsPageWrapper from '../../components/DocsPageWrapper';
 import InputContainer from './InputContainer';
-import BpkParagraph from './../../components/Paragraph';
-import IntroBlurb from './../../components/IntroBlurb';
+import BpkParagraph from '../../components/Paragraph';
+import IntroBlurb from '../../components/IntroBlurb';
 
 import RadioContainer from './RadioContainer';
 

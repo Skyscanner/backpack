@@ -527,6 +527,7 @@ exports[`BpkBannerAlertInner should render correctly with a element based messag
             aria-label="View more"
             className="bpk-banner-alert__toggle-button"
             title="View more"
+            type="button"
           >
             <span
               style={
@@ -986,6 +987,7 @@ exports[`BpkBannerAlertInner should render correctly with child nodes 1`] = `
             aria-label="View more"
             className="bpk-banner-alert__toggle-button"
             title="View more"
+            type="button"
           >
             <span
               style={

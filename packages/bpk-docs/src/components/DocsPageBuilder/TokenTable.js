@@ -27,7 +27,7 @@ import {
   BpkTableCell,
 } from 'bpk-component-table';
 
-import { formatTokenName, getTokenValue } from './../../helpers/tokens-helper';
+import { formatTokenName, getTokenValue } from '../../helpers/tokens-helper';
 
 const TokenTable = props => {
   const { tokens, platform } = props;

@@ -77,7 +77,7 @@ class BpkThemeProvider extends Component {
 }
 
 BpkThemeProvider.childContextTypes = {
-  theme: PropTypes.object,
+  theme: PropTypes.object, // eslint-disable-line react/forbid-prop-types
 };
 
 const themeAttributesPropType = (props, propName, componentName) => {

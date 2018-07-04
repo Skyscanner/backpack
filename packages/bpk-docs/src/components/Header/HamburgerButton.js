@@ -44,7 +44,6 @@ const HamburgerButton = props => {
       onClick={onClick}
       className={classNames.join(' ')}
       aria-expanded={expanded}
-      aria-controls="menu-list"
       aria-label={expanded ? 'Close menu' : 'Open menu'}
       {...rest}
     >

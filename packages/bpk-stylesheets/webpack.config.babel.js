@@ -20,7 +20,7 @@ import WrapperPlugin from 'wrapper-webpack-plugin';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import { blockComment as licenseHeader } from 'bpk-tokens/formatters/license-header';
 
-import postCssPlugins from './../../scripts/webpack/postCssPlugins';
+import postCssPlugins from '../../scripts/webpack/postCssPlugins';
 
 module.exports = {
   entry: {

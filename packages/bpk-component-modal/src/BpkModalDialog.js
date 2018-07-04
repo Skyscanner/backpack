@@ -116,7 +116,7 @@ const BpkModalDialog = (props: Props) => {
   /* eslint-enable */
 };
 
-BpkModalDialog.propTypes = {
+export const propTypes = {
   id: PropTypes.string.isRequired,
   children: PropTypes.node.isRequired,
   isIphone: PropTypes.bool.isRequired,
@@ -134,7 +134,7 @@ BpkModalDialog.propTypes = {
   padded: PropTypes.bool,
 };
 
-BpkModalDialog.defaultProps = {
+export const defaultProps = {
   title: null,
   onClose: null,
   className: null,
@@ -147,5 +147,8 @@ BpkModalDialog.defaultProps = {
   fullScreen: false,
   padded: true,
 };
+
+BpkModalDialog.propTypes = { ...propTypes };
+BpkModalDialog.defaultProps = { ...defaultProps };
 
 export default BpkModalDialog;

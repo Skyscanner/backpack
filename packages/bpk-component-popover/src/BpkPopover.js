@@ -153,7 +153,7 @@ const BpkPopover = (props: Props) => {
   );
 };
 
-BpkPopover.propTypes = {
+export const propTypes = {
   id: PropTypes.string.isRequired,
   onClose: PropTypes.func.isRequired,
   label: PropTypes.string.isRequired,
@@ -165,11 +165,14 @@ BpkPopover.propTypes = {
   className: PropTypes.string,
 };
 
-BpkPopover.defaultProps = {
+export const defaultProps = {
   padded: true,
   labelAsTitle: false,
   closeButtonIcon: true,
   className: null,
 };
+
+BpkPopover.propTypes = { ...propTypes };
+BpkPopover.defaultProps = { ...defaultProps };
 
 export default BpkPopover;

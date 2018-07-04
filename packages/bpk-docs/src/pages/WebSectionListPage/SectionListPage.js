@@ -24,7 +24,7 @@ import BpkSectionList, {
 
 import sectionListReadme from 'bpk-component-section-list/readme.md';
 
-import DocsPageBuilder from './../../components/DocsPageBuilder';
+import DocsPageBuilder from '../../components/DocsPageBuilder';
 
 const components = [
   {

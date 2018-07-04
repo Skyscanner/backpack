@@ -26,7 +26,7 @@ import androidScreenshotDefault from 'react-native-bpk-component-horizontal-nav/
 import androidScreenshotSmall from 'react-native-bpk-component-horizontal-nav/screenshots/android/small.png';
 import androidScreenshotSpaceAround from 'react-native-bpk-component-horizontal-nav/screenshots/android/space-around.png'; // eslint-disable-line max-len
 
-import DocsPageBuilder from './../../components/DocsPageBuilder';
+import DocsPageBuilder from '../../components/DocsPageBuilder';
 
 const components = [
   {

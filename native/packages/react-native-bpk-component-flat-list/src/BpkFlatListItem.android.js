@@ -65,6 +65,7 @@ const styles = StyleSheet.create({
 
 class BpkFlatListItem extends React.PureComponent<ListItemProps> {
   static propTypes = LIST_ITEM_PROP_TYPES;
+
   static defaultProps = LIST_ITEM_DEFAULT_PROPS;
 
   render() {

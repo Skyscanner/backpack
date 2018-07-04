@@ -21,7 +21,7 @@ import {
   spacingBase,
   spacingLg,
   spacingXxl,
-} from './../../packages/bpk-tokens/tokens/base.react.native';
+} from '../../packages/bpk-tokens/tokens/base.react.native';
 
 const styles = StyleSheet.create({
   centered: {

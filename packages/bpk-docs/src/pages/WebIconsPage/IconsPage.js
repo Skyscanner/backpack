@@ -26,12 +26,12 @@ import icons from 'bpk-component-icon/all';
 
 import iconReadme from 'bpk-component-icon/readme.md';
 
-import * as ROUTES from './../../constants/routes';
-import IconSearchApp from './../../components/IconSearchApp';
-import DocsPageBuilder from './../../components/DocsPageBuilder';
-import Heading from './../../components/Heading';
-import Paragraph from './../../components/Paragraph';
-import IntroBlurb from './../../components/IntroBlurb';
+import * as ROUTES from '../../constants/routes';
+import IconSearchApp from '../../components/IconSearchApp';
+import DocsPageBuilder from '../../components/DocsPageBuilder';
+import Heading from '../../components/Heading';
+import Paragraph from '../../components/Paragraph';
+import IntroBlurb from '../../components/IntroBlurb';
 import Code from '../../components/Code';
 
 const AlignedBpkSmallDownloadIcon = withButtonAlignment(BpkSmallDownloadIcon);
