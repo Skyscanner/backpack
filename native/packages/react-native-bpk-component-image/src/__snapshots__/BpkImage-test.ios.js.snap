@@ -1,0 +1,176 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`iOS BpkImage should render correctly 1`] = `
+<Image
+  alt="test"
+  collapsable={undefined}
+  onLoad={null}
+  source={
+    Object {
+      "uri": "https://images.unsplash.com/photo-1518225853900-cc01b1092211?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=d75dd482ea9e2ed4d53017c326497143&dpr=1&auto=format&fit=crop&w=1000&q=80&cs=tinysrgb",
+    }
+  }
+  style={
+    Object {
+      "borderRadius": 4,
+      "height": "100%",
+      "overflow": "hidden",
+      "width": "100%",
+    }
+  }
+/>
+`;
+
+exports[`iOS BpkImage should render correctly when not loaded 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "height": "100%",
+        "width": "100%",
+      },
+      Object {
+        "borderRadius": 4,
+        "overflow": "hidden",
+      },
+    ]
+  }
+>
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "rgb(178, 174, 189)",
+        "flex": 1,
+        "height": "100%",
+        "justifyContent": "center",
+        "opacity": 1,
+        "position": "absolute",
+        "width": "100%",
+      }
+    }
+  >
+    <ActivityIndicator
+      animating={true}
+      color="rgb(82, 76, 97)"
+      hidesWhenStopped={true}
+      size="small"
+      theme={null}
+    />
+  </View>
+  <Image
+    alt="test"
+    collapsable={undefined}
+    onLoad={null}
+    source={
+      Object {
+        "uri": "https://images.unsplash.com/photo-1518225853900-cc01b1092211?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=d75dd482ea9e2ed4d53017c326497143&dpr=1&auto=format&fit=crop&w=1000&q=80&cs=tinysrgb",
+      }
+    }
+    style={
+      Object {
+        "height": "100%",
+        "opacity": 0,
+        "width": "100%",
+      }
+    }
+  />
+</View>
+`;
+
+exports[`iOS BpkImage should render correctly when unloaded and out of view 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "height": "100%",
+        "width": "100%",
+      },
+      Object {
+        "borderRadius": 4,
+        "overflow": "hidden",
+      },
+    ]
+  }
+>
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "rgb(178, 174, 189)",
+        "flex": 1,
+        "height": "100%",
+        "justifyContent": "center",
+        "opacity": 1,
+        "position": "absolute",
+        "width": "100%",
+      }
+    }
+  />
+</View>
+`;
+
+exports[`iOS BpkImage should render correctly with arbitrary props 1`] = `
+<Image
+  alt="test"
+  collapsable={undefined}
+  onLoad={null}
+  source={
+    Object {
+      "uri": "https://images.unsplash.com/photo-1518225853900-cc01b1092211?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=d75dd482ea9e2ed4d53017c326497143&dpr=1&auto=format&fit=crop&w=1000&q=80&cs=tinysrgb",
+    }
+  }
+  style={
+    Object {
+      "borderRadius": 4,
+      "height": "100%",
+      "overflow": "hidden",
+      "width": "100%",
+    }
+  }
+  testID="123"
+/>
+`;
+
+exports[`iOS BpkImage should render correctly with custom style 1`] = `
+<Image
+  alt="test"
+  collapsable={undefined}
+  onLoad={null}
+  source={
+    Object {
+      "uri": "https://images.unsplash.com/photo-1518225853900-cc01b1092211?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=d75dd482ea9e2ed4d53017c326497143&dpr=1&auto=format&fit=crop&w=1000&q=80&cs=tinysrgb",
+    }
+  }
+  style={
+    Object {
+      "borderRadius": 4,
+      "flex": 1,
+      "height": "100%",
+      "overflow": "hidden",
+      "width": "100%",
+    }
+  }
+/>
+`;
+
+exports[`iOS BpkImage should render correctly without border radius 1`] = `
+<Image
+  alt="test"
+  collapsable={undefined}
+  onLoad={null}
+  source={
+    Object {
+      "uri": "https://images.unsplash.com/photo-1518225853900-cc01b1092211?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=d75dd482ea9e2ed4d53017c326497143&dpr=1&auto=format&fit=crop&w=1000&q=80&cs=tinysrgb",
+    }
+  }
+  style={
+    Object {
+      "height": "100%",
+      "width": "100%",
+    }
+  }
+/>
+`;

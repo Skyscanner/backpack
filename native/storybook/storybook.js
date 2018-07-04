@@ -64,6 +64,7 @@ configure(() => {
   require('../packages/react-native-bpk-component-flat-list/stories');
   require('../packages/react-native-bpk-component-horizontal-nav/stories');
   require('../packages/react-native-bpk-component-icon/stories');
+  require('../packages/react-native-bpk-component-image/stories');
   require('../packages/react-native-bpk-component-navigation-bar/stories');
   require('../packages/react-native-bpk-component-map/stories');
   require('../packages/react-native-bpk-component-nudger/stories');
