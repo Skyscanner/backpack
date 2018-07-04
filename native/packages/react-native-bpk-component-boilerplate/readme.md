@@ -14,7 +14,7 @@ npm install react-native-bpk-component-boilerplate --save-dev
 import React, { Component } from 'react';
 import { StyleSheet, View } from 'react-native';
 import { spacingBase } from 'bpk-tokens/tokens/base.react.native';
-import BpkBoilerplate from 'react-native-bpk-component-chip';
+import BpkBoilerplate from 'react-native-bpk-component-boilerplate';
 
 const styles = StyleSheet.create({
   container: {
