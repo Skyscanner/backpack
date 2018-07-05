@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   backIcon: {
-    marginEnd: 8,
+    marginEnd: 8, // eslint-disable-line backpack/use-tokens
   },
 });
 

@@ -43,10 +43,10 @@ const styles = StyleSheet.create({
     zIndex: 2,
   },
   leading: {
-    marginStart: 8,
+    marginStart: 8, // eslint-disable-line backpack/use-tokens
   },
   trailing: {
-    marginEnd: 8,
+    marginEnd: 8, // eslint-disable-line backpack/use-tokens
   },
 });
 

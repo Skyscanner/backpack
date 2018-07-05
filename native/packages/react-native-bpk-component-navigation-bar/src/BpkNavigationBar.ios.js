@@ -52,20 +52,21 @@ const statusBarPadding = isIphoneX ? 44 : 20;
 const styles = StyleSheet.create({
   barOuter: {
     flexDirection: 'column',
-    paddingHorizontal: 8,
+    paddingHorizontal: 8, // eslint-disable-line backpack/use-tokens
     width: '100%',
     backgroundColor: colorGray50,
     shadowColor: colorGray100,
     shadowOpacity: 1,
     shadowRadius: 0,
-    shadowOffset: { width: 0, height: 1 },
+    shadowOffset: { width: 0, height: 1 }, // eslint-disable-line backpack/use-tokens
   },
   barOuterWithSubtitle: {
-    paddingBottom: 16,
+    paddingBottom: 16, // eslint-disable-line backpack/use-tokens
   },
   barInner: {
     paddingTop: statusBarPadding, // Status bar
-    height: 64, // 44 for the bar + 20 for the status bar
+    // 44 for the bar + 20 for the status bar
+    height: 64, // eslint-disable-line backpack/use-tokens
     overflow: 'visible',
     flexDirection: 'row',
     alignItems: 'center',
@@ -76,7 +77,7 @@ const styles = StyleSheet.create({
   },
   iPhoneXBar: {
     paddingTop: statusBarPadding,
-    height: 88,
+    height: 88, // eslint-disable-line backpack/use-tokens
   },
   titleContainer: {
     position: 'absolute',
@@ -84,7 +85,7 @@ const styles = StyleSheet.create({
     left: 0,
     right: 0,
     bottom: 0,
-    height: 44,
+    height: 44, // eslint-disable-line backpack/use-tokens
     justifyContent: 'center',
     alignItems: 'center',
   },
@@ -92,7 +93,7 @@ const styles = StyleSheet.create({
     maxWidth: '60%',
   },
   subtitleViewContainer: {
-    paddingHorizontal: 8,
+    paddingHorizontal: 8, // eslint-disable-line backpack/use-tokens
   },
 });
 
@@ -204,7 +205,7 @@ class BpkNavigationBar extends Component<Props, {}> {
       titleView = React.cloneElement(title, {
         style: [
           title.props.style ? title.props.style : null,
-          { maxHeight: 28 },
+          { maxHeight: 28 }, // eslint-disable-line backpack/use-tokens
         ],
       });
     }

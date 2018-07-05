@@ -16,6 +16,10 @@
  * limitations under the License.
  */
 
+// TODO: remove this once we update the Chart implementation to accept values
+// other than pixels
+/* eslint-disable backpack/use-tokens */
+
 import React from 'react';
 import renderer from 'react-test-renderer';
 import { scaleLinear, scaleBand } from 'd3-scale';

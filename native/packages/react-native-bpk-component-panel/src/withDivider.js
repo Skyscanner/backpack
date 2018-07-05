@@ -42,13 +42,13 @@ const styles = StyleSheet.create({
     padding: spacingBase,
   },
   panelPunchline: {
-    width: 1,
+    width: 1, // eslint-disable-line backpack/use-tokens
     flexDirection: 'column',
     backgroundColor: colorGray100,
   },
   panelPunchlineVertical: {
     width: null,
-    height: 1,
+    height: 1, // eslint-disable-line backpack/use-tokens
     flexDirection: 'row',
   },
   panelStub: {

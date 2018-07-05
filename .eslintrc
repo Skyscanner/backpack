@@ -29,6 +29,7 @@
   },
   "rules": {
     "backpack/use-tokens": 2,
+    "backpack/auto-import-tokens": 2,
     "prettier/prettier": "error",
     "react/jsx-filename-extension": 0,
     "import/no-extraneous-dependencies": 0,

@@ -5,7 +5,7 @@ exports[`IOS BpkCarousel should render correctly 1`] = `
   onLayout={[Function]}
   style={
     Object {
-      "width": 300,
+      "width": 4,
     }
   }
 >

@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
     marginBottom: spacingBase,
   },
   singleRow: {
-    minWidth: 100,
+    minWidth: 100, // eslint-disable-line backpack/use-tokens
   },
   singleIcon: {
     marginHorizontal: spacingSm,

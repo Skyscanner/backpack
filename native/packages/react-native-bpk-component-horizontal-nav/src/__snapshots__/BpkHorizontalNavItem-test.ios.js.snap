@@ -411,7 +411,7 @@ exports[`iOS BpkHorizontalNavItem should render correctly with custom "style" pr
           "justifyContent": "center",
         },
         Object {
-          "marginBottom": 10,
+          "marginBottom": 4,
         },
       ]
     }

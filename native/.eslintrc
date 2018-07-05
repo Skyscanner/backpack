@@ -1,0 +1,7 @@
+{
+  "rules": {
+    "backpack/auto-import-tokens": [2, {
+      "platform": "native"
+    }]
+  }
+}

@@ -73,7 +73,7 @@ exports[`iOS BpkHorizontalNav should render correctly with custom "style" prop 1
         "flexDirection": "column",
       },
       Object {
-        "marginBottom": 10,
+        "marginBottom": 4,
       },
     ]
   }

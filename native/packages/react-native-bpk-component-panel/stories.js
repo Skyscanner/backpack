@@ -50,7 +50,7 @@ const styles = StyleSheet.create({
     overflow: 'visible',
   },
   panelListItem: {
-    marginTop: 20,
+    marginTop: 20, // eslint-disable-line backpack/use-tokens
   },
   panelMainStyle: {
     flex: 3,

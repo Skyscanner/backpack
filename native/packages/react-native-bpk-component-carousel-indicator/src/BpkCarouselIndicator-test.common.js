@@ -18,6 +18,7 @@
 
 import React from 'react';
 import renderer from 'react-test-renderer';
+import { spacingSm } from 'bpk-tokens/tokens/base.react.native';
 
 import BpkCarouselIndicator from './BpkCarouselIndicator';
 
@@ -53,7 +54,7 @@ const commonTests = () => {
           <BpkCarouselIndicator
             pageCount={5}
             selectedIndex={0}
-            style={{ marginTop: 10 }}
+            style={{ marginTop: spacingSm }}
           />,
         )
         .toJSON();

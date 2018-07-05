@@ -21,6 +21,7 @@
 import React from 'react';
 import { StyleSheet } from 'react-native';
 import renderer from 'react-test-renderer';
+import { spacingSm } from 'bpk-tokens/tokens/base.react.native';
 
 import BpkText from './BpkText';
 import { TEXT_STYLES } from './common-types';
@@ -125,7 +126,7 @@ const commonTests = () => {
             emphasize: false,
             style: StyleSheet.create({
               breakingStyle: {
-                margin: 10,
+                margin: spacingSm,
               },
             }).breakingStyle,
           },

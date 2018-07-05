@@ -317,7 +317,7 @@ exports[`iOS BpkTextInput should render correctly with custom style 1`] = `
     Array [
       undefined,
       Object {
-        "marginLeft": 10,
+        "marginLeft": 4,
       },
     ]
   }

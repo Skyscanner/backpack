@@ -57,7 +57,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: spacingMd,
     flexDirection: 'row',
     backgroundColor: colorGray50,
-    borderTopWidth: 1,
+    borderTopWidth: 1, // eslint-disable-line backpack/use-tokens
     borderColor: colorGray200,
     justifyContent: 'flex-end',
   },

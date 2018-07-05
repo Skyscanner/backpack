@@ -2,7 +2,7 @@
 
 exports[`BpkChartMargin should render correctly 1`] = `
 <g
-  transform="translate(40, 10)"
+  transform="translate(.75rem, .75rem)"
 >
   Children
 </g>

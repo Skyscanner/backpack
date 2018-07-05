@@ -33,8 +33,8 @@ const styles = StyleSheet.create({
   },
   view: {
     alignSelf: 'center',
-    width: 350,
-    height: 233,
+    width: 350, // eslint-disable-line backpack/use-tokens
+    height: 233, // eslint-disable-line backpack/use-tokens
   },
 });
 

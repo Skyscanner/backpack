@@ -47,10 +47,10 @@ const styles = StyleSheet.create({
     fontSize: 28,
   },
   leading: {
-    marginStart: 3,
+    marginStart: 3, // eslint-disable-line backpack/use-tokens
   },
   trailing: {
-    marginEnd: 3,
+    marginEnd: 3, // eslint-disable-line backpack/use-tokens
   },
 });
 

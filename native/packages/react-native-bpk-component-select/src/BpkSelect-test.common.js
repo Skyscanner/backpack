@@ -19,6 +19,7 @@
 import React from 'react';
 import { View } from 'react-native';
 import TestRenderer from 'react-test-renderer';
+import { spacingSm } from 'bpk-tokens/tokens/base.react.native';
 import BpkSelect from './BpkSelect';
 
 const Image = 'Image';
@@ -54,7 +55,11 @@ const commonTests = () => {
 
     it('should render correctly with custom styles', () => {
       const testRenderer = TestRenderer.create(
-        <BpkSelect label="label" onPress={emptyFn} style={{ marginTop: 10 }} />,
+        <BpkSelect
+          label="label"
+          onPress={emptyFn}
+          style={{ marginTop: spacingSm }}
+        />,
       );
       expect(testRenderer.toJSON()).toMatchSnapshot();
     });

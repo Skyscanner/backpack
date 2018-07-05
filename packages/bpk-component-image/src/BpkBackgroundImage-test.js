@@ -18,6 +18,7 @@
 
 import React from 'react';
 import renderer from 'react-test-renderer';
+import { spacingSm } from 'bpk-tokens/tokens/base.es6';
 import BpkBackgroundImage from './BpkBackgroundImage';
 
 describe('BpkBackgroundImage', () => {
@@ -31,7 +32,13 @@ describe('BpkBackgroundImage', () => {
           }}
           src="./path/to/image.jpg"
         >
-          <div style={{ opacity: 0.7, marginLeft: 35, paddingTop: 25 }} />
+          <div
+            style={{
+              opacity: 0.7,
+              marginLeft: spacingSm,
+              paddingTop: spacingSm,
+            }}
+          />
         </BpkBackgroundImage>,
       )
       .toJSON();
@@ -55,7 +62,13 @@ describe('BpkBackgroundImage', () => {
           }}
           src="./path/to/image.jpg"
         >
-          <div style={{ opacity: 0.7, marginLeft: 35, paddingTop: 25 }} />
+          <div
+            style={{
+              opacity: 0.7,
+              marginLeft: spacingSm,
+              paddingTop: spacingSm,
+            }}
+          />
         </BpkBackgroundImage>,
       )
       .toJSON();
@@ -79,7 +92,13 @@ describe('BpkBackgroundImage', () => {
           }}
           src="./path/to/image.jpg"
         >
-          <div style={{ opacity: 0.7, marginLeft: 35, paddingTop: 25 }} />
+          <div
+            style={{
+              opacity: 0.7,
+              marginLeft: spacingSm,
+              paddingTop: spacingSm,
+            }}
+          />
         </BpkBackgroundImage>,
       )
       .toJSON();

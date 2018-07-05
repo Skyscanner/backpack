@@ -27,10 +27,10 @@ import { setOpacity } from 'bpk-tokens';
 // NOTE: this file explicitly does not use the Backpack tokens because it's based on Material design tokens not Backpack.
 const styles = StyleSheet.create({
   clipView: {
-    borderRadius: 40,
+    borderRadius: 40, // eslint-disable-line backpack/use-tokens
   },
   icon: {
-    padding: 8,
+    padding: 8, // eslint-disable-line backpack/use-tokens
   },
 });
 

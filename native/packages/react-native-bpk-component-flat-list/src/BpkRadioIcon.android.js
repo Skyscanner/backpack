@@ -29,11 +29,12 @@ import {
 // Not using a token as this is replicating an Android native UI element.
 const radioSize = 20;
 const innerSize = radioSize / 2;
+const borderWidth = 1;
 
 const styles = StyleSheet.create({
   outer: {
     borderRadius: radioSize,
-    borderWidth: 2,
+    borderWidth,
     borderColor: colorGray100,
     height: radioSize,
     width: radioSize,

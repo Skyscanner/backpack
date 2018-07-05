@@ -33,7 +33,7 @@ const innerSize = radioSize / 2;
 const styles = StyleSheet.create({
   outer: {
     borderRadius: radioSize,
-    borderWidth: 2,
+    borderWidth: 2, // eslint-disable-line backpack/use-tokens
     borderColor: colorGray100,
     height: radioSize,
     width: radioSize,

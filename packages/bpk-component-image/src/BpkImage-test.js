@@ -21,6 +21,7 @@ import renderer from 'react-test-renderer';
 import { mount } from 'enzyme';
 import toJson from 'enzyme-to-json';
 import * as BREAKPOINTS from 'bpk-tokens/tokens/breakpoints.es6';
+import { spacingSm } from 'bpk-tokens/tokens/base.es6';
 import BpkImage from './BpkImage';
 
 describe('BpkImage', () => {
@@ -46,7 +47,7 @@ describe('BpkImage', () => {
           altText="image description"
           width={816}
           height={544}
-          style={{ width: 500 }}
+          style={{ width: spacingSm }}
           src="./path/to/image.jpg"
         />,
       )
@@ -62,7 +63,7 @@ describe('BpkImage', () => {
           altText="image description"
           width={816}
           height={544}
-          style={{ width: 500 }}
+          style={{ width: spacingSm }}
           className="userland-classname"
           src="./path/to/image.jpg"
         />,

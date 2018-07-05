@@ -19,6 +19,7 @@
 import React from 'react';
 import TestRenderer from 'react-test-renderer';
 import { StyleSheet, View } from 'react-native';
+import { spacingSm } from 'bpk-tokens/tokens/base.react.native';
 
 import BpkTextInput from './BpkTextInput';
 
@@ -43,7 +44,7 @@ const commonTests = () => {
     it('should render correctly with custom style', () => {
       const styles = StyleSheet.create({
         custom: {
-          marginLeft: 10,
+          marginLeft: spacingSm,
         },
       });
 

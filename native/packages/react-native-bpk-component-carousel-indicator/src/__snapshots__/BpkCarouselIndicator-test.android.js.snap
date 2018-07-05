@@ -355,7 +355,7 @@ exports[`Android BpkCarouselIndicator should render correctly with custom styles
         "width": 72,
       },
       Object {
-        "marginTop": 10,
+        "marginTop": 4,
       },
     ]
   }

@@ -113,9 +113,9 @@ exports[`BpkBackgroundImage should have inView behavior 1`] = `
     <div
       style={
         Object {
-          "marginLeft": 35,
+          "marginLeft": ".75rem",
           "opacity": 0.7,
-          "paddingTop": 25,
+          "paddingTop": ".75rem",
         }
       }
     />
@@ -344,9 +344,9 @@ exports[`BpkBackgroundImage should render correctly 1`] = `
     <div
       style={
         Object {
-          "marginLeft": 35,
+          "marginLeft": ".75rem",
           "opacity": 0.7,
-          "paddingTop": 25,
+          "paddingTop": ".75rem",
         }
       }
     />

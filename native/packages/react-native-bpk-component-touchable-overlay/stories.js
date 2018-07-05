@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
     backgroundColor: colorWhite,
   },
   view: {
-    padding: 10,
+    padding: 10, // eslint-disable-line backpack/use-tokens
   },
 });
 

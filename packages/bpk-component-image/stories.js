@@ -36,13 +36,16 @@ const FadingLazyLoadedImage = withLoadingBehavior(
 // Unused, will be reinstated when BpkBackgroundImage is.
 // const FadingLazyLoadedBackgroundImage = withLoadingBehavior(withLazyLoading(BpkBackgroundImage, documentIfExists));
 
+const imageWidth = 612;
+const imageHeight = 408;
+
 storiesOf('bpk-component-image', module)
   .add('Default', () => (
     <BpkImage
       altText="image"
       width={612}
       height={408}
-      style={{ width: 612, height: 408 }}
+      style={{ width: imageWidth, height: imageHeight }}
       src={image}
     />
   ))
@@ -68,7 +71,7 @@ storiesOf('bpk-component-image', module)
       altText="image"
       width={612}
       height={408}
-      style={{ width: 612, height: 408 }}
+      style={{ width: imageWidth, height: imageHeight }}
       src={image}
     />
   ))
@@ -77,7 +80,7 @@ storiesOf('bpk-component-image', module)
       altText="image"
       width={612}
       height={408}
-      style={{ width: 612, height: 408 }}
+      style={{ width: imageWidth, height: imageHeight }}
       src={image}
     />
   ))
@@ -86,7 +89,7 @@ storiesOf('bpk-component-image', module)
       altText="image"
       width={612}
       height={408}
-      style={{ width: 612, height: 408 }}
+      style={{ width: imageWidth, height: imageHeight }}
       src={image}
     />
   ))
@@ -97,21 +100,21 @@ storiesOf('bpk-component-image', module)
           altText="image"
           width={612}
           height={408}
-          style={{ width: 612, height: 408 }}
+          style={{ width: imageWidth, height: imageHeight }}
           src={image}
         />
         <FadingLazyLoadedImage
           altText="image"
           width={612}
           height={408}
-          style={{ width: 612, height: 408 }}
+          style={{ width: imageWidth, height: imageHeight }}
           src={image}
         />
         <FadingLazyLoadedImage
           altText="image"
           width={612}
           height={408}
-          style={{ width: 612, height: 408 }}
+          style={{ width: imageWidth, height: imageHeight }}
           src={image}
         />
       </div>
