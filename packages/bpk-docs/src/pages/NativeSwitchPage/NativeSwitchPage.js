@@ -19,8 +19,8 @@
 import React from 'react';
 import readme from 'react-native-bpk-component-switch/readme.md';
 
-import iosScreenshotDefault from 'react-native-bpk-component-switch/screenshots/ios/default.png';
-import androidScreenshotDefault from 'react-native-bpk-component-switch/screenshots/android/default.png';
+import iosVideo from 'react-native-bpk-component-switch/videos/ios/all-types-react-native-bpk-component-switch.mp4';
+import androidVideo from 'react-native-bpk-component-switch/videos/android/all-types-react-native-bpk-component-switch.mp4';
 
 import IntroBlurb from '../../components/IntroBlurb';
 import DocsPageBuilder from '../../components/DocsPageBuilder';
@@ -30,22 +30,18 @@ const components = [
   {
     id: 'default',
     title: 'Default',
-    screenshots: [
+    videos: [
       {
         title: 'iOS',
         width: 750,
-        height: 1334,
-        src: `/${iosScreenshotDefault}`,
-        altText: 'iOS Default Switch Component',
+        src: `/${iosVideo}`,
         subText: '(iPhone 8 simulator)',
       },
       {
         title: 'Android',
-        width: 1080,
-        height: 1920,
-        src: `/${androidScreenshotDefault}`,
-        altText: 'Android Default Switch Component',
-        subText: '(Google Pixel emulator)',
+        width: 750,
+        src: `/${androidVideo}`,
+        subText: '(Google Pixel emualtor)',
       },
     ],
   },

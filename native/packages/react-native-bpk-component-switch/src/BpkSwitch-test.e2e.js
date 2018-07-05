@@ -19,7 +19,10 @@
  */
 
 /* global element, device, by */
-const sleep = delay => new Promise(_ => setTimeout(_, delay));
+const {
+  testRunner,
+  utils: { waitForAnimationToComplete },
+} = require('./../../../e2e');
 
 describe('Example', () => {
   beforeEach(async () => {
@@ -27,23 +30,30 @@ describe('Example', () => {
   });
 
   it('docs:switch', async () => {
-    try {
+    const switchTest = async controllerEmitter => {
+      controllerEmitter.emit('test:started');
+
       await expect(element(by.id('switch'))).toBeVisible();
       await expect(element(by.id('switch-themed'))).toBeVisible();
 
       await element(by.id('switch')).swipe('right', 'fast', 0.2);
-      await sleep(500);
+      await waitForAnimationToComplete();
 
       await element(by.id('switch-themed')).swipe('right', 'fast', 0.2);
-      await sleep(500);
+      await waitForAnimationToComplete();
 
       await element(by.id('switch')).swipe('left', 'fast', 0.2);
-      await sleep(500);
+      await waitForAnimationToComplete();
 
       await element(by.id('switch-themed')).swipe('left', 'fast', 0.2);
-      await sleep(500);
-    } catch (exc) {
-      console.error(exc); // eslint-disable-line no-console
-    }
+      await waitForAnimationToComplete();
+    };
+
+    await testRunner(
+      'react-native-bpk-component-switch',
+      'All types',
+      `${__dirname}/../videos/${process.env.BPK_PLATFORM}`,
+      switchTest,
+    );
   });
 });
