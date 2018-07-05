@@ -145,6 +145,13 @@ class BpkNavigationBar extends Component<Props, {}> {
     );
   }
 
+  componentDidUpdate() {
+    this.theme = getThemeAttributes(
+      IOS_THEME_ATTRIBUTES,
+      this.props.theme || {},
+    );
+  }
+
   render() {
     const {
       title,
