@@ -2,6 +2,14 @@
 
 [Unreleased changes](./unreleased.md).
 
+# 2018-07-05 - Fix bug in theme changing for react-native-component-navigation-bar
+
+
+**Fixed:**
+
+- react-native-bpk-component-navigation-bar: 2.0.15 => 2.0.16
+  - Update this.theme on componentDidUpdate for RN navigation bar
+
 # 2018-07-02 - New native chip component and web map enhancement
 
 **Added:**
