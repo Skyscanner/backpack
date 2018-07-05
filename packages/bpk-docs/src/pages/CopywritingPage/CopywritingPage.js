@@ -18,10 +18,10 @@
 
 import React from 'react';
 
-import { ParagraphNoMargin } from './../../components/Paragraph';
-import InfoPageBuilder from './../../components/InfoPageBuilder';
+import { ParagraphNoMargin } from '../../components/Paragraph';
+import InfoPageBuilder from '../../components/InfoPageBuilder';
 
-import CopywritingHeroImage from './../../static/copywriting_hero.jpg';
+import CopywritingHeroImage from '../../static/copywriting_hero.jpg';
 
 import intro from './content/intro.md';
 import whyListen from './content/why-listen.md';

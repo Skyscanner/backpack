@@ -29,7 +29,7 @@ import androidScreenshotModal from 'react-native-bpk-component-navigation-bar/sc
 import iosScreenshotTitleIcon from 'react-native-bpk-component-navigation-bar/screenshots/ios/title-icon.png';
 import androidScreenshotTitleIcon from 'react-native-bpk-component-navigation-bar/screenshots/android/title-icon.png';
 
-import DocsPageBuilder from './../../components/DocsPageBuilder';
+import DocsPageBuilder from '../../components/DocsPageBuilder';
 
 const components = [
   {

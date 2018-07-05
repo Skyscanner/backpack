@@ -21,11 +21,11 @@ import BpkText from 'bpk-component-text';
 import BpkLink from 'bpk-component-link';
 import BpkRouterLink from 'bpk-component-router-link';
 
-import DocsPageBuilder from './../../components/DocsPageBuilder';
+import DocsPageBuilder from '../../components/DocsPageBuilder';
 
-import * as ROUTES from './../../constants/routes';
-import Paragraph from './../../components/Paragraph';
-import IntroBlurb from './../../components/IntroBlurb';
+import * as ROUTES from '../../constants/routes';
+import Paragraph from '../../components/Paragraph';
+import IntroBlurb from '../../components/IntroBlurb';
 
 const components = [
   {

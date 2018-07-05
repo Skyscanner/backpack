@@ -24,7 +24,7 @@ import iosScreenshotDismissible from 'react-native-bpk-component-chip/screenshot
 import androidScreenshotDefault from 'react-native-bpk-component-chip/screenshots/android/BpkChip.png';
 import androidScreenshotDismissible from 'react-native-bpk-component-chip/screenshots/android/BpkDismissibleChip.png';
 
-import DocsPageBuilder from './../../components/DocsPageBuilder';
+import DocsPageBuilder from '../../components/DocsPageBuilder';
 
 const components = [
   {

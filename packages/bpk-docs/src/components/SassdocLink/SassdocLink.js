@@ -21,7 +21,7 @@ import PropTypes from 'prop-types';
 import BpkLink from 'bpk-component-link';
 import { cssModules } from 'bpk-react-utils';
 
-import sassdocLogoSvg from './../../static/sassdoc-logo.svg';
+import sassdocLogoSvg from '../../static/sassdoc-logo.svg';
 
 import STYLES from './SassdocLink.scss';
 

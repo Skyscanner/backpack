@@ -21,8 +21,8 @@ import BpkLink, { BpkButtonLink } from 'bpk-component-link';
 
 import linkReadme from 'bpk-component-link/readme.md';
 
-import DocsPageBuilder from './../../components/DocsPageBuilder';
-import Paragraph from './../../components/Paragraph';
+import DocsPageBuilder from '../../components/DocsPageBuilder';
+import Paragraph from '../../components/Paragraph';
 
 const components = [
   {

@@ -18,7 +18,7 @@
 
 /* @flow */
 
-import * as routes from './../constants/routes';
+import * as routes from '../constants/routes';
 
 import ComponentsImage from '../static/components_hero.jpg';
 import UsingBackpackImage from '../static/using_backpack_hero.jpg';

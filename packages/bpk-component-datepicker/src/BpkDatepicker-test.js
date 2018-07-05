@@ -31,6 +31,7 @@ jest.mock(
   () =>
     class Popper {
       scheduleUpdate = () => {};
+
       destroy = () => {};
     },
 );

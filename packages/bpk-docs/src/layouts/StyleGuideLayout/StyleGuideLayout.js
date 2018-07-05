@@ -19,9 +19,9 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-import SideNavLayout from './../SideNavLayout';
+import SideNavLayout from '../SideNavLayout';
 
-import links from './../links';
+import links from '../links';
 
 const StyleGuideLayout = ({ children, ...rest }) => (
   <SideNavLayout activeSection="STYLE_GUIDE" links={links} {...rest}>

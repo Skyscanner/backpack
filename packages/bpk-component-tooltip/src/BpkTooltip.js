@@ -74,16 +74,19 @@ const BpkTooltip = (props: TooltipProps) => {
   );
 };
 
-BpkTooltip.propTypes = {
+export const propTypes = {
   id: PropTypes.string.isRequired,
   children: PropTypes.node.isRequired,
   className: PropTypes.string,
   padded: PropTypes.bool,
 };
 
-BpkTooltip.defaultProps = {
+export const defaultProps = {
   className: null,
   padded: true,
 };
+
+BpkTooltip.propTypes = { ...propTypes };
+BpkTooltip.defaultProps = { ...defaultProps };
 
 export default BpkTooltip;

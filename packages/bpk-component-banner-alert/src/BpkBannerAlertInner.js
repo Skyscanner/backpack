@@ -91,6 +91,7 @@ const ToggleButton = (props: ToggleButtonProps) => {
 
   return (
     <button
+      type="button"
       className={getClassName('bpk-banner-alert__toggle-button')}
       aria-label={props.label}
       aria-expanded={props.expanded}

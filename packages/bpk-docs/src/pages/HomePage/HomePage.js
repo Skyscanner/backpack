@@ -26,7 +26,7 @@ import BpkText from 'bpk-component-text';
 import { cssModules } from 'bpk-react-utils';
 
 import STYLES from './home-page.scss';
-import * as ROUTES from './../../constants/routes';
+import * as ROUTES from '../../constants/routes';
 
 import HomePageCard from '../../components/HomePageCard';
 import UpdatedAt from './UpdatedAt';
@@ -186,7 +186,7 @@ const HomePage = (props, context) => {
 };
 
 HomePage.contextTypes = {
-  theme: PropTypes.object,
+  theme: PropTypes.object, // eslint-disable-line react/forbid-prop-types
 };
 
 export default HomePage;

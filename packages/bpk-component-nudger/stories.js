@@ -31,6 +31,7 @@ class NudgerContainer extends Component {
       value: 2,
     };
   }
+
   handleChange = value => {
     this.setState({ value });
   };

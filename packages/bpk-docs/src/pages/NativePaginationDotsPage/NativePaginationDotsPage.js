@@ -25,8 +25,8 @@ import androidScreenshotDefault from 'react-native-bpk-component-carousel-indica
 import iosScreenshotWithOverlay from 'react-native-bpk-component-carousel-indicator/screenshots/ios/with-overlay.png';
 import androidScreenshotWithOverlay from 'react-native-bpk-component-carousel-indicator/screenshots/android/with-overlay.png';
 
-import Paragraph from './../../components/Paragraph';
-import DocsPageBuilder from './../../components/DocsPageBuilder';
+import Paragraph from '../../components/Paragraph';
+import DocsPageBuilder from '../../components/DocsPageBuilder';
 
 const components = [
   {

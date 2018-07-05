@@ -43,6 +43,7 @@ class SwitchContainer extends Component {
     super(props);
     this.state = { value: false };
   }
+
   render() {
     return (
       <BpkSwitch

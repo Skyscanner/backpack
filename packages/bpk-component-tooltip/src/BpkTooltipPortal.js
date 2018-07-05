@@ -23,7 +23,11 @@ import PropTypes from 'prop-types';
 import React, { Component, type Node } from 'react';
 import { Portal, cssModules } from 'bpk-react-utils';
 
-import BpkTooltip, { type TooltipProps } from './BpkTooltip';
+import BpkTooltip, {
+  propTypes as tooltipPropTypes,
+  defaultProps as tooltipDefaultProps,
+  type TooltipProps,
+} from './BpkTooltip';
 import { ARROW_ID } from './constants';
 import STYLES from './BpkTooltip.scss';
 
@@ -54,10 +58,11 @@ type State = {
 
 class BpkTooltipPortal extends Component<Props, State> {
   popper: ?Popper;
+
   targetRef: ?HTMLElement;
 
   static propTypes = {
-    ...BpkTooltip.propTypes,
+    ...tooltipPropTypes,
     target: PropTypes.node.isRequired,
     children: PropTypes.node.isRequired,
     placement: PropTypes.oneOf(Popper.placements),
@@ -69,7 +74,7 @@ class BpkTooltipPortal extends Component<Props, State> {
   };
 
   static defaultProps = {
-    ...BpkTooltip.defaultProps,
+    ...tooltipDefaultProps,
     placement: 'bottom',
     hideOnTouchDevices: true,
     padded: true,

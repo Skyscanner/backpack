@@ -77,19 +77,26 @@ export const getTokens = (tokens, keys = null) =>
     .sortBy(token => {
       if (token.name.indexOf('_XXS') !== -1) {
         return 0;
-      } else if (token.name.indexOf('_XS') !== -1) {
+      }
+      if (token.name.indexOf('_XS') !== -1) {
         return 1;
-      } else if (token.name.indexOf('_SM') !== -1) {
+      }
+      if (token.name.indexOf('_SM') !== -1) {
         return 2;
-      } else if (token.name.indexOf('_MD') !== -1) {
+      }
+      if (token.name.indexOf('_MD') !== -1) {
         return 3;
-      } else if (token.name.indexOf('_BASE') !== -1) {
+      }
+      if (token.name.indexOf('_BASE') !== -1) {
         return 4;
-      } else if (token.name.indexOf('_LG') !== -1) {
+      }
+      if (token.name.indexOf('_LG') !== -1) {
         return 5;
-      } else if (token.name.indexOf('_XL') !== -1) {
+      }
+      if (token.name.indexOf('_XL') !== -1) {
         return 6;
-      } else if (token.name.indexOf('_XXL') !== -1) {
+      }
+      if (token.name.indexOf('_XXL') !== -1) {
         return 7;
       }
 

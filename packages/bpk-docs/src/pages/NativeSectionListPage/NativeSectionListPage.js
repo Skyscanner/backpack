@@ -24,7 +24,7 @@ import androidScreenshotDefault from 'react-native-bpk-component-section-list/sc
 import iosScreenshotWithImages from 'react-native-bpk-component-section-list/screenshots/ios/with-images.png';
 import androidScreenshotWithImages from 'react-native-bpk-component-section-list/screenshots/android/with-images.png';
 
-import DocsPageBuilder from './../../components/DocsPageBuilder';
+import DocsPageBuilder from '../../components/DocsPageBuilder';
 
 const components = [
   {

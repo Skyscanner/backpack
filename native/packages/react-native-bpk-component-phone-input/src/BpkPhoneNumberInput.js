@@ -21,6 +21,8 @@ import React, { cloneElement } from 'react';
 import { type Node, Platform, StyleSheet } from 'react-native';
 import PropTypes from 'prop-types';
 import BpkTextInput, {
+  propTypes as textInputPropTypes,
+  defaultProps as textInputDefaultProps,
   type BpkTextInputProps,
 } from 'react-native-bpk-component-text-input';
 import BpkSelect from 'react-native-bpk-component-select';
@@ -78,20 +80,22 @@ const BpkPhoneNumberInput = (props: Props) => {
 
 const {
   accessoryView: _thisIsIgnored,
-  ...textInputPropTypes
-} = BpkTextInput.propTypes;
+  ...newTextInputPropTypes
+} = textInputPropTypes;
 const {
   accessoryView: _thisIsAlsoIgnored,
-  ...textInputDefaultProp
-} = BpkTextInput.defaultProps;
+  ...newTextInputDefaultProps
+} = textInputDefaultProps;
 
-BpkPhoneNumberInput.propTypes = {
-  ...textInputPropTypes,
+export const propTypes = {
+  ...newTextInputPropTypes,
   dialingCode: PropTypes.shape(...CODE_PROP_TYPES).isRequired,
   renderFlag: PropTypes.func.isRequired,
   onDialingCodePress: PropTypes.func.isRequired,
 };
 
-BpkPhoneNumberInput.defaultProps = textInputDefaultProp;
+BpkPhoneNumberInput.propTypes = { ...propTypes };
+
+BpkPhoneNumberInput.defaultProps = { ...newTextInputDefaultProps };
 
 export default BpkPhoneNumberInput;

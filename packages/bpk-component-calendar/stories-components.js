@@ -180,14 +180,14 @@ class MonthViewCalendar extends Component {
           date={this.state.departDate}
           fixedWidth={false}
           onDateSelect={departDate => {
-            this.setState({
+            this.setState(prevState => ({
               departDate,
               returnDate: dateToBoundaries(
-                this.state.returnDate,
+                prevState.returnDate,
                 departDate,
                 this.maxDate,
               ),
-            });
+            }));
           }}
         />
         <div
@@ -206,14 +206,14 @@ class MonthViewCalendar extends Component {
           date={this.state.returnDate}
           fixedWidth={false}
           onDateSelect={returnDate => {
-            this.setState({
+            this.setState(prevState => ({
               returnDate,
               departDate: dateToBoundaries(
-                this.state.departDate,
+                prevState.departDate,
                 this.minDate,
                 returnDate,
               ),
-            });
+            }));
           }}
         />
       </div>

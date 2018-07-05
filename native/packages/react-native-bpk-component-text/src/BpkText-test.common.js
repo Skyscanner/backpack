@@ -19,9 +19,7 @@
 /* @flow */
 
 import React from 'react';
-import { StyleSheet } from 'react-native';
 import renderer from 'react-test-renderer';
-import { spacingSm } from 'bpk-tokens/tokens/base.react.native';
 
 import BpkText from './BpkText';
 import { TEXT_STYLES } from './common-types';
@@ -80,98 +78,6 @@ const commonTests = () => {
           .toJSON();
         expect(tree).toMatchSnapshot();
       });
-    });
-
-    it('should accept valid emphasize prop', () => {
-      expect(
-        BpkText.propTypes.emphasize(
-          {
-            children: 'Lorem ipsum.',
-            textStyle: 'sm',
-            emphasize: true,
-            style: null,
-          },
-          'emphasize',
-          'BpkText',
-        ),
-      ).toEqual(false);
-    });
-
-    it('should error if emphasize prop is wrong type', () => {
-      expect(
-        BpkText.propTypes
-          .emphasize(
-            {
-              children: 'Lorem ipsum.',
-              textStyle: 'sm',
-              // $FlowFixMe
-              emphasize: 'asdf',
-              style: null,
-            },
-            'emphasize',
-            'BpkText',
-          )
-          .toString(),
-      ).toEqual(
-        'Error: Invalid prop `emphasize` of type `string` supplied to `BpkText`, expected `boolean`.',
-      ); // eslint-disable-line max-len
-    });
-
-    it('should accept valid style prop', () => {
-      expect(
-        BpkText.propTypes.style(
-          {
-            children: 'Lorem ipsum.',
-            textStyle: 'base',
-            emphasize: false,
-            style: StyleSheet.create({
-              breakingStyle: {
-                margin: spacingSm,
-              },
-            }).breakingStyle,
-          },
-          'style',
-          'BpkText',
-        ),
-      ).toEqual(false);
-    });
-
-    it('should error on invalid style prop', () => {
-      expect(
-        BpkText.propTypes
-          .style(
-            {
-              children: 'Lorem ipsum.',
-              textStyle: 'base',
-              emphasize: false,
-              style: StyleSheet.create({
-                breakingStyle: {
-                  fontWeight: '200',
-                },
-              }).breakingStyle,
-            },
-            'style',
-            'BpkText',
-          )
-          .toString(),
-      ).toEqual(
-        'Error: Invalid prop `style` with `fontWeight` value `200` supplied to `BpkText`. Use `emphasize` prop instead.',
-      ); // eslint-disable-line max-len
-    });
-
-    it('should return false on undefined style', () => {
-      expect(
-        BpkText.propTypes.style(
-          {
-            children: 'Lorem ipsum.',
-            textStyle: 'base',
-            emphasize: false,
-            style: undefined,
-          },
-          'style',
-          'BpkText',
-        ),
-      ).toBeFalsy();
     });
   });
 };

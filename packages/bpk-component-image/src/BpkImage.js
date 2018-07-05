@@ -100,7 +100,9 @@ class Image extends Component<ImageProps> {
 // eslint-disable-next-line react/no-multi-comp
 class BpkImage extends Component<BpkImageProps> {
   onImageLoad: () => mixed;
+
   placeholder: ?HTMLElement;
+
   static defaultProps: {};
 
   onImageLoad = (): void => {

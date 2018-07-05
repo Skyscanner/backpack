@@ -20,11 +20,11 @@ import React from 'react';
 import BpkLink from 'bpk-component-link';
 import BpkRouterLink from 'bpk-component-router-link';
 
-import * as ROUTES from './../../constants/routes';
-import DocsPageBuilder from './../../components/DocsPageBuilder';
+import * as ROUTES from '../../constants/routes';
+import DocsPageBuilder from '../../components/DocsPageBuilder';
 
-import Paragraph from './../../components/Paragraph';
-import IntroBlurb from './../../components/IntroBlurb';
+import Paragraph from '../../components/Paragraph';
+import IntroBlurb from '../../components/IntroBlurb';
 
 const components = [
   {

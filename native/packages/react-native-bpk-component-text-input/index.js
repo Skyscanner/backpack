@@ -18,7 +18,12 @@
 
 /* @flow */
 
-import BpkTextInput, { type Props } from './src/BpkTextInput';
+import BpkTextInput, {
+  propTypes,
+  defaultProps,
+  type Props,
+} from './src/BpkTextInput';
 
 export type BpkTextInputProps = Props;
+export { propTypes, defaultProps };
 export default BpkTextInput;

@@ -30,7 +30,7 @@ import androidScreenshotWithDivider from 'react-native-bpk-component-card/screen
 import iosScreenshotWithDividerArrangedVertically from 'react-native-bpk-component-card/screenshots/ios/with-divider-arranged-vertically.png';
 import androidScreenshotWithDividerArrangedVertically from 'react-native-bpk-component-card/screenshots/android/with-divider-arranged-vertically.png';
 
-import DocsPageBuilder from './../../components/DocsPageBuilder';
+import DocsPageBuilder from '../../components/DocsPageBuilder';
 
 const components = [
   {

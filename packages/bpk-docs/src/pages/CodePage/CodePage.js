@@ -21,10 +21,10 @@ import { BpkCode, BpkCodeBlock } from 'bpk-component-code';
 
 import codeReadme from 'bpk-component-code/readme.md';
 
-import DocsPageBuilder from './../../components/DocsPageBuilder';
-import DocsPageWrapper from './../../components/DocsPageWrapper';
-import Paragraph from './../../components/Paragraph';
-import IntroBlurb from './../../components/IntroBlurb';
+import DocsPageBuilder from '../../components/DocsPageBuilder';
+import DocsPageWrapper from '../../components/DocsPageWrapper';
+import Paragraph from '../../components/Paragraph';
+import IntroBlurb from '../../components/IntroBlurb';
 
 const blurb = [
   <IntroBlurb>

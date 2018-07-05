@@ -24,7 +24,7 @@ import iosScreenshotSmall from 'react-native-bpk-component-spinner/screenshots/i
 import androidScreenshotDefault from 'react-native-bpk-component-spinner/screenshots/android/default.png';
 import androidScreenshotSmall from 'react-native-bpk-component-spinner/screenshots/android/small.png';
 
-import DocsPageBuilder from './../../components/DocsPageBuilder';
+import DocsPageBuilder from '../../components/DocsPageBuilder';
 
 const components = [
   {

@@ -28,8 +28,8 @@ import { BpkList, BpkListItem } from 'bpk-component-list';
 
 import infiniteScrollReadme from '../../../../bpk-component-infinite-scroll/readme.md';
 
-import DocsPageBuilder from './../../components/DocsPageBuilder';
-import IntroBlurb from './../../components/IntroBlurb';
+import DocsPageBuilder from '../../components/DocsPageBuilder';
+import IntroBlurb from '../../components/IntroBlurb';
 
 import STYLES from './InfiniteScrollPage.scss';
 import DocsPageWrapper from '../../components/DocsPageWrapper';

@@ -24,9 +24,9 @@ import readme from 'react-native-bpk-component-touchable-native-feedback/readme.
 
 import androidScreenshotDefault from 'react-native-bpk-component-touchable-native-feedback/screenshots/default.png';
 
-import IntroBlurb from './../../components/IntroBlurb';
-import DocsPageBuilder from './../../components/DocsPageBuilder';
-import DocsPageWrapper from './../../components/DocsPageWrapper';
+import IntroBlurb from '../../components/IntroBlurb';
+import DocsPageBuilder from '../../components/DocsPageBuilder';
+import DocsPageWrapper from '../../components/DocsPageWrapper';
 
 const touchableOverlay = '/components/native/touchable-overlay';
 const RNTouchableNativeFeedback =

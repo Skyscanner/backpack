@@ -19,11 +19,11 @@
 
 import BpkFieldset, {
   type Props,
-  BpkFieldsetPropTypes,
-  BpkFieldsetDefaultPropTypes,
+  propTypes,
+  defaultProps,
 } from './src/BpkFieldset';
 
 export type BpkFieldsetProps = Props;
 
 export default BpkFieldset;
-export { BpkFieldsetPropTypes, BpkFieldsetDefaultPropTypes };
+export { propTypes, defaultProps };

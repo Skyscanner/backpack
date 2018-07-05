@@ -50,6 +50,7 @@ class StatefulBpkTextInput extends Component<
   static propTypes = {
     initialValue: PropTypes.string.isRequired,
   };
+
   constructor(props) {
     super(props);
 

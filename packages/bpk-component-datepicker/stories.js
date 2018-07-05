@@ -65,6 +65,7 @@ class CalendarContainer extends Component {
       date: props.date,
     };
   }
+
   render() {
     return (
       <div id="datepicker-element">
@@ -128,14 +129,14 @@ class ReturnDatepicker extends Component {
             inputProps={inputProps}
             date={this.state.departDate}
             onDateSelect={departDate => {
-              this.setState({
+              this.setState(prevState => ({
                 departDate,
                 returnDate: dateToBoundaries(
-                  this.state.returnDate,
+                  prevState.returnDate,
                   departDate,
                   this.maxDate,
                 ),
-              });
+              }));
               action('Selected departure date')(departDate);
             }}
             onMonthChange={action('Changed month')}
@@ -156,14 +157,14 @@ class ReturnDatepicker extends Component {
             inputProps={inputProps}
             date={this.state.returnDate}
             onDateSelect={returnDate => {
-              this.setState({
+              this.setState(prevState => ({
                 returnDate,
                 departDate: dateToBoundaries(
-                  this.state.departDate,
+                  prevState.departDate,
                   this.minDate,
                   returnDate,
                 ),
-              });
+              }));
               action('Selected return date')(returnDate);
             }}
             onMonthChange={action('Changed month')}

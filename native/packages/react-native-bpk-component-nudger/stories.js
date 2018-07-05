@@ -45,9 +45,11 @@ class StatefulBpkNudger extends Component<{}, { value: number }> {
     super();
     this.state = { value: 1 };
   }
+
   handleChange = value => {
     this.setState({ value });
   };
+
   render() {
     return (
       <BpkNudger

@@ -25,7 +25,7 @@ import BpkThemeProvider from 'bpk-theming';
 import { PropTypes as RouterPropTypes } from 'react-router';
 import { cssModules } from 'bpk-react-utils';
 
-import themeAttributes from './../../themeableAttributes';
+import themeAttributes from '../../themeableAttributes';
 
 import STYLES from './default-layout.scss';
 import Footer from '../../components/Footer';

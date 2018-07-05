@@ -28,7 +28,12 @@ import { spacingBase } from 'bpk-tokens/tokens/base.react.native';
 
 import CenterDecorator from '../../storybook/CenterDecorator';
 
-import BpkBannerAlert, { ALERT_TYPES, type BpkBannerAlertProps } from './index';
+import BpkBannerAlert, {
+  ALERT_TYPES,
+  type BpkBannerAlertProps,
+  propTypes as bannerAlertPropTypes,
+  defaultProps as bannerAlertDefaultProps,
+} from './index';
 
 const styles = StyleSheet.create({
   bannerAlert: {
@@ -44,11 +49,12 @@ class ExpandableBannerAlert extends Component<
   { expanded: boolean },
 > {
   static propTypes = {
-    ...BpkBannerAlert.propTypes,
+    ...bannerAlertPropTypes,
     toggleExpandedButtonLabel: PropTypes.string,
   };
+
   static defaultProps = {
-    ...BpkBannerAlert.defaultProps,
+    ...bannerAlertDefaultProps,
     toggleExpandedButtonLabel: null,
   };
 
@@ -61,7 +67,7 @@ class ExpandableBannerAlert extends Component<
   }
 
   onToggleExpanded = () => {
-    this.setState({ expanded: !this.state.expanded });
+    this.setState(prevState => ({ expanded: !prevState.expanded }));
   };
 
   render() {
@@ -81,8 +87,9 @@ class DismissableBannerAlert extends Component<
   BpkBannerAlertProps,
   { show: boolean },
 > {
-  static propTypes = BpkBannerAlert.propTypes;
-  static defaultProps = BpkBannerAlert.defaultProps;
+  static propTypes = { ...bannerAlertPropTypes };
+
+  static defaultProps = { ...bannerAlertDefaultProps };
 
   constructor() {
     super();
@@ -113,8 +120,9 @@ class BpkBannerAlertFadeDemo extends Component<
   BpkBannerAlertProps,
   { bannerAlertCount: number },
 > {
-  static propTypes = BpkBannerAlert.propTypes;
-  static defaultProps = BpkBannerAlert.defaultProps;
+  static propTypes = { ...bannerAlertPropTypes };
+
+  static defaultProps = { ...bannerAlertDefaultProps };
 
   constructor() {
     super();
@@ -125,9 +133,9 @@ class BpkBannerAlertFadeDemo extends Component<
   }
 
   addBannerAlert = () => {
-    this.setState({
-      bannerAlertCount: this.state.bannerAlertCount + 1,
-    });
+    this.setState(prevState => ({
+      bannerAlertCount: prevState.bannerAlertCount + 1,
+    }));
   };
 
   render() {

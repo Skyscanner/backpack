@@ -23,7 +23,7 @@ import BpkHorizontalNav, {
   BpkHorizontalNavItem,
 } from 'bpk-component-horizontal-nav';
 
-import DocsPageBuilder from './../../components/DocsPageBuilder';
+import DocsPageBuilder from '../../components/DocsPageBuilder';
 
 class HorizontalNavContainer extends Component {
   constructor() {

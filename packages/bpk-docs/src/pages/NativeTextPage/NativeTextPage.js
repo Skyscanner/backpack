@@ -23,7 +23,7 @@ import androidScreenshot from 'react-native-bpk-component-text/screenshots/andro
 import iosScreenshotBold from 'react-native-bpk-component-text/screenshots/ios/emphasize.png';
 import androidScreenshotBold from 'react-native-bpk-component-text/screenshots/android/emphasize.png';
 
-import DocsPageBuilder from './../../components/DocsPageBuilder';
+import DocsPageBuilder from '../../components/DocsPageBuilder';
 
 const components = [
   {

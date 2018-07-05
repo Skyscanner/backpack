@@ -31,7 +31,7 @@ import BpkLink from 'bpk-component-link';
 
 import STYLES from './Header.scss';
 
-import * as ROUTES from './../../constants/routes';
+import * as ROUTES from '../../constants/routes';
 import HamburgerButton from './HamburgerButton';
 
 const getClassName = cssModules(STYLES);

@@ -26,7 +26,11 @@ import focusScope from 'a11y-focus-scope';
 import { Portal, cssModules } from 'bpk-react-utils';
 
 import STYLES from './BpkPopover.scss';
-import BpkPopover, { type Props as PopoverProps } from './BpkPopover';
+import BpkPopover, {
+  propTypes as popoverPropTypes,
+  defaultProps as popoverDefaultProps,
+  type Props as PopoverProps,
+} from './BpkPopover';
 import { ARROW_ID } from './constants';
 
 const getClassName = cssModules(STYLES);
@@ -44,10 +48,11 @@ export type Props = {
 
 class BpkPopoverPortal extends Component<Props> {
   popper: ?Popper;
+
   previousTargetElement: ?HTMLElement;
 
   static propTypes = {
-    ...BpkPopover.propTypes,
+    ...popoverPropTypes,
     target: PropTypes.oneOfType([PropTypes.func, PropTypes.node]).isRequired,
     isOpen: PropTypes.bool.isRequired,
     onClose: PropTypes.func.isRequired,
@@ -59,13 +64,14 @@ class BpkPopoverPortal extends Component<Props> {
   };
 
   static defaultProps = {
-    ...BpkPopover.defaultProps,
+    ...popoverDefaultProps,
     placement: 'bottom',
     portalStyle: null,
     portalClassName: null,
     renderTarget: null,
     popperModifiers: null,
   };
+
   constructor() {
     super();
 

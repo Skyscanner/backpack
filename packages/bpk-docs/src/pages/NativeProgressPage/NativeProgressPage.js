@@ -25,7 +25,7 @@ import androidScreenshotDefault from 'react-native-bpk-component-progress/screen
 import iosScreenshotBar from 'react-native-bpk-component-progress/screenshots/ios/bar.png';
 import androidScreenshotBar from 'react-native-bpk-component-progress/screenshots/android/bar.png';
 
-import DocsPageBuilder from './../../components/DocsPageBuilder';
+import DocsPageBuilder from '../../components/DocsPageBuilder';
 
 const components = [
   {

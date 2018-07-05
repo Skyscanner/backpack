@@ -39,9 +39,9 @@ import loadingButtonReadme from 'bpk-component-loading-button/readme.md';
 import { cssModules } from 'bpk-react-utils';
 import STYLES from './buttons-page.scss';
 
-import * as ROUTES from './../../constants/routes';
-import DocsPageBuilder from './../../components/DocsPageBuilder';
-import Paragraph from './../../components/Paragraph';
+import * as ROUTES from '../../constants/routes';
+import DocsPageBuilder from '../../components/DocsPageBuilder';
+import Paragraph from '../../components/Paragraph';
 import Code from '../../components/Code';
 
 const AlignedBpkSmallArrowIcon = alignToButton(TestBpkSmallArrowIcon);

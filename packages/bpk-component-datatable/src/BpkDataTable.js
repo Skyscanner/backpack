@@ -108,23 +108,27 @@ class BpkDataTable extends Component {
     const column = this.props.children.find(
       child => child.props.dataKey === sortBy,
     );
+
     if (column.props.disableSort === true) {
       return;
     }
 
-    const sortDirection = getSortDirection(
-      this.state,
-      sortBy,
-      getSortIconDirection(event.target),
-      column.props.defaultSortDirection || SortDirection.ASC,
-    );
-    const sortedList = sortList({
-      sortBy,
-      sortDirection,
-      list: this.props.rows,
-    });
+    this.setState(prevState => {
+      const sortDirection = getSortDirection(
+        prevState,
+        sortBy,
+        getSortIconDirection(event.target),
+        column.props.defaultSortDirection || SortDirection.ASC,
+      );
 
-    this.setState({ sortBy, sortDirection, sortedList });
+      const sortedList = sortList({
+        sortBy,
+        sortDirection,
+        list: this.props.rows,
+      });
+
+      return { sortBy, sortDirection, sortedList };
+    });
   };
 
   rowClassName = ({ index }) => {

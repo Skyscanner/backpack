@@ -43,6 +43,7 @@ const withAnimatedProps = (Component, propsToMonitor) =>
         this.state[prop] = new Animated.Value(props[prop]);
       });
     }
+
     componentWillReceiveProps(nextProps) {
       const animations = propsToMonitor.map(prop =>
         Animated.timing(this.state[prop], {
@@ -52,6 +53,7 @@ const withAnimatedProps = (Component, propsToMonitor) =>
       );
       Animated.parallel(animations).start();
     }
+
     render() {
       const newProps = {};
       propsToMonitor.forEach(prop => {

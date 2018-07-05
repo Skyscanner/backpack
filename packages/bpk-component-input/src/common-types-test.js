@@ -16,8 +16,7 @@
  * limitations under the License.
  */
 
-import clearablePropType from './customPropTypes';
-import CLEAR_BUTTON_MODES from './clearButtonModes';
+import { CLEAR_BUTTON_MODES, clearablePropType } from './common-types';
 
 describe('clearablePropType', () => {
   const COMPONENT_NAME = 'ExampleComponent';

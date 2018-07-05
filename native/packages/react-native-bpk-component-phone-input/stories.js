@@ -28,7 +28,10 @@ import CenterDecorator from '../../storybook/CenterDecorator';
 
 import { BpkDialingCodeList } from './index';
 import { type Id, type Code } from './src/common-types';
-import BpkPhoneNumberInput, { type Props } from './src/BpkPhoneNumberInput';
+import BpkPhoneNumberInput, {
+  type Props,
+  propTypes as phoneNumberInputPropTypes,
+} from './src/BpkPhoneNumberInput';
 
 const styles = StyleSheet.create({
   fullOuter: {
@@ -40,7 +43,8 @@ const styles = StyleSheet.create({
   },
 });
 
-const { value: _ignored, ...propTypes } = BpkPhoneNumberInput.propTypes;
+const { value: _ignored, ...propTypes } = phoneNumberInputPropTypes;
+
 class StatefulBpkPhoneNumberInput extends Component<
   {
     initialValue: string,
@@ -53,6 +57,7 @@ class StatefulBpkPhoneNumberInput extends Component<
     ...propTypes,
     initialValue: PropTypes.string.isRequired,
   };
+
   static defaultProps = BpkPhoneNumberInput.defaultProps;
 
   constructor(props) {

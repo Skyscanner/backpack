@@ -61,8 +61,11 @@ type Props = {
 
 class AnimateAndFade extends Component<Props> {
   height: ?Animated.Value;
+
   opacity: Animated.Value;
+
   innerViewRef: ?ReactNativeView;
+
   shouldRenderHeight: boolean;
 
   static propTypes = {

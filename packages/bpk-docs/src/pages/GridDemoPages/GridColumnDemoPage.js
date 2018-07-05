@@ -25,7 +25,7 @@ import {
   BpkGridColumn,
 } from 'bpk-component-grid';
 
-import Heading from './../../components/Heading';
+import Heading from '../../components/Heading';
 
 import Lozenge from './Lozenge';
 

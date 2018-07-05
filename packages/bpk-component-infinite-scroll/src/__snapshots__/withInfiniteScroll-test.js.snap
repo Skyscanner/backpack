@@ -212,6 +212,7 @@ exports[`withInfiniteScroll should render correctly with a "renderSeeMoreCompone
     </List>
     <button
       onClick={[Function]}
+      type="button"
     >
       see more
     </button>

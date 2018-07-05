@@ -26,10 +26,10 @@ import { BpkButtonLink } from 'bpk-component-link';
 import modalReadme from 'bpk-component-modal/readme.md';
 
 import LoginFormExample from './LoginFormExample';
-import DocsPageBuilder from './../../components/DocsPageBuilder';
-import DocsPageWrapper from './../../components/DocsPageWrapper';
-import Paragraph from './../../components/Paragraph';
-import IntroBlurb from './../../components/IntroBlurb';
+import DocsPageBuilder from '../../components/DocsPageBuilder';
+import DocsPageWrapper from '../../components/DocsPageWrapper';
+import Paragraph from '../../components/Paragraph';
+import IntroBlurb from '../../components/IntroBlurb';
 
 type Props = {
   buttonText: string,

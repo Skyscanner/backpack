@@ -87,6 +87,7 @@ type State = {
 
 class BpkMobileScrollContainer extends Component<Props, State> {
   innerEl: ?HTMLElement;
+
   scrollerEl: ?HTMLElement;
 
   static propTypes = {

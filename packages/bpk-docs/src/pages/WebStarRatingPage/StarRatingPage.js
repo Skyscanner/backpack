@@ -24,8 +24,8 @@ import BpkStarRating, {
 
 import starRatingReadme from 'bpk-component-star-rating/readme.md';
 
-import DocsPageBuilder from './../../components/DocsPageBuilder';
-import Paragraph from './../../components/Paragraph';
+import DocsPageBuilder from '../../components/DocsPageBuilder';
+import Paragraph from '../../components/Paragraph';
 
 const InteractiveStarRating = withInteractiveStarRatingState(
   BpkInteractiveStarRating,

@@ -64,35 +64,44 @@ type ExtendedProps = {
   elements: Array<any>,
 };
 
+const propTypes = {
+  elementsPerScroll: PropTypes.number,
+  onItemsFetch: PropTypes.func.isRequired,
+  onScroll: PropTypes.func,
+  onScrollFinished: PropTypes.func,
+  renderLoadingComponent: PropTypes.func,
+  renderSeeMoreComponent: PropTypes.func,
+  seeMoreAfter: PropTypes.number,
+};
+
+const defaultProps = {
+  elementsPerScroll: 5,
+  onScroll: null,
+  onScrollFinished: null,
+  renderLoadingComponent: null,
+  renderSeeMoreComponent: null,
+  seeMoreAfter: null,
+};
+
 const withInfiniteScroll = (
   ComponentToExtend: ComponentType<ExtendedProps>,
 ): ComponentType<Props> =>
   class WithInfiniteScroll extends Component<Props, State> {
     handleIntersection: IntersectionObserverCallback;
+
     handleKeyPress: (e: SyntheticKeyboardEvent<HTMLButtonElement>) => void;
+
     handleSeeMoreClick: (e: SyntheticEvent<HTMLButtonElement>) => void;
+
     observer: IntersectionObserver;
+
     onItemsFetch: OnItemsFetchFunction;
+
     sentinel: ?HTMLElement;
 
-    static propTypes = {
-      elementsPerScroll: PropTypes.number,
-      onItemsFetch: PropTypes.func.isRequired,
-      onScroll: PropTypes.func,
-      onScrollFinished: PropTypes.func,
-      renderLoadingComponent: PropTypes.func,
-      renderSeeMoreComponent: PropTypes.func,
-      seeMoreAfter: PropTypes.number,
-    };
+    static propTypes = { ...propTypes };
 
-    static defaultProps = {
-      elementsPerScroll: 5,
-      onScroll: null,
-      onScrollFinished: null,
-      renderLoadingComponent: null,
-      renderSeeMoreComponent: null,
-      seeMoreAfter: null,
-    };
+    static defaultProps = { ...defaultProps };
 
     constructor(props: Props) {
       super(props);
@@ -177,7 +186,7 @@ const withInfiniteScroll = (
       const { elementsToRender, isListFinished, showSeeMore } = this.state;
       const { renderSeeMoreComponent, renderLoadingComponent } = this.props;
 
-      const rest = omit(this.props, Object.keys(WithInfiniteScroll.propTypes));
+      const rest = omit(this.props, Object.keys(propTypes));
 
       let loadingOrButton = null;
 

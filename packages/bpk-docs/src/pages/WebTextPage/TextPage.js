@@ -21,7 +21,7 @@ import BpkText from 'bpk-component-text';
 
 import textReadme from 'bpk-component-text/readme.md';
 
-import DocsPageBuilder from './../../components/DocsPageBuilder';
+import DocsPageBuilder from '../../components/DocsPageBuilder';
 
 const components = [
   {

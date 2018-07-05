@@ -25,8 +25,8 @@ import { cssModules } from 'bpk-react-utils';
 import chipReadme from 'bpk-component-chip/readme.md';
 
 import STYLES from './ChipsPage.scss';
-import Paragraph from './../../components/Paragraph';
-import DocsPageBuilder from './../../components/DocsPageBuilder';
+import Paragraph from '../../components/Paragraph';
+import DocsPageBuilder from '../../components/DocsPageBuilder';
 
 const getClassName = cssModules(STYLES);
 

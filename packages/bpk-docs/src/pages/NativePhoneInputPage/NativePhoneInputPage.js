@@ -23,8 +23,8 @@ import iosScreenshotPhoneNumberInput from 'react-native-bpk-component-phone-inpu
 import androidScreenshotDialingCodeList from 'react-native-bpk-component-phone-input/screenshots/android/dialing-code-list.png';
 import androidScreenshotPhoneNumberInput from 'react-native-bpk-component-phone-input/screenshots/android/phone-number-input.png';
 
-import Paragraph from './../../components/Paragraph';
-import DocsPageBuilder from './../../components/DocsPageBuilder';
+import Paragraph from '../../components/Paragraph';
+import DocsPageBuilder from '../../components/DocsPageBuilder';
 
 const components = [
   {

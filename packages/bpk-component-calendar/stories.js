@@ -53,6 +53,7 @@ class CalendarContainer extends Component {
       date,
     };
   }
+
   render() {
     return (
       <BpkCalendar

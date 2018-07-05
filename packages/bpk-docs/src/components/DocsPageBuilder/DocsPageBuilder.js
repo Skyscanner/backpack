@@ -28,12 +28,12 @@ import TokenSwitcher, { connect } from './TokenSwitcher';
 import TokenTable from './TokenTable';
 import PageHead from '../PageHead';
 import AlternatingPageContent from '../AlternatingPageContent';
-import Heading from './../Heading';
-import Paragraph from './../Paragraph';
-import UsageTable from './../UsageTable';
-import SassdocLink from './../SassdocLink';
+import Heading from '../Heading';
+import Paragraph from '../Paragraph';
+import UsageTable from '../UsageTable';
+import SassdocLink from '../SassdocLink';
 import ComponentScreenshots from './ComponentScreenshots';
-import PresentationBlock from './../PresentationBlock';
+import PresentationBlock from '../PresentationBlock';
 
 import STYLES from './DocsPageBuilder.scss';
 

@@ -20,7 +20,9 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import renderer from 'react-test-renderer';
-import BpkInput, { INPUT_TYPES } from './BpkInput';
+
+import BpkInput from './BpkInput';
+import { INPUT_TYPES } from './common-types';
 
 describe('BpkInput', () => {
   it('should render correctly', () => {

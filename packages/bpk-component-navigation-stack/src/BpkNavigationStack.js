@@ -61,6 +61,7 @@ class BpkNavigationStack extends React.Component<Props, State> {
   }
 
   onTransitionEnter = () => this.startTransition('entering');
+
   onTransitionExit = () => this.startTransition('leaving');
 
   startTransition = (transition: Transitions) => {

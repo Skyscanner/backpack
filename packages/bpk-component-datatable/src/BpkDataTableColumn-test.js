@@ -26,14 +26,17 @@ const defaultProps = { label: 'Name', dataKey: 'name', width: spacingSm };
 
 describe('BpkDataTableColumn', () => {
   it('has the same propTypes as react-virtualized Column', () => {
+    // eslint-disable-next-line react/forbid-foreign-prop-types
     expect(BpkDataTableColumn.propTypes).toEqual(Column.propTypes);
   });
+
   it('has the same defaultProps as react-virtualized Column, with the exception of headerRenderer', () => {
     expect(BpkDataTableColumn.defaultProps).toEqual({
       ...Column.defaultProps,
       headerRenderer: bpkHeaderRenderer,
     });
   });
+
   describe('toColumn', () => {
     const toColumn = (props = {}) =>
       BpkDataTableColumn.toColumn(
@@ -44,14 +47,17 @@ describe('BpkDataTableColumn', () => {
       const { type } = toColumn();
       expect(type).toBe(Column);
     });
+
     it('sets a default className', () => {
       const { props } = toColumn();
       expect(props.className).toBe('bpk-data-table-column');
     });
+
     it('adds additional classNames', () => {
       const { props } = toColumn({ className: 'custom-class-name' });
       expect(props.className).toBe('bpk-data-table-column custom-class-name');
     });
+
     it('passess all additional props', () => {
       const additionalProps = { something: 1, somethingFn: () => true };
       const { props } = toColumn(additionalProps);

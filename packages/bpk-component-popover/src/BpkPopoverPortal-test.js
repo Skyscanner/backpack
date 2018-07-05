@@ -30,7 +30,9 @@ jest.mock(
       constructor(target, popover, options) {
         options.onCreate();
       }
+
       scheduleUpdate = () => {};
+
       destroy = () => {};
     },
 );
@@ -71,7 +73,10 @@ describe('BpkPopoverPortal', () => {
       .create(
         <BpkPopoverPortal
           id="my-popover"
-          target={() => document.createElement('button')}
+          // Ignoring this warning because Flow doesn't yet support a secondary
+          // argument for document.createElement.
+          // $FlowFixMe
+          target={() => document.createElement('button', { type: 'button' })}
           isOpen={false}
           onClose={() => null}
           label="My popover"

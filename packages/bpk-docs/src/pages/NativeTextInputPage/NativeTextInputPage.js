@@ -23,9 +23,9 @@ import iosScreenshotWithAccessoryView from 'react-native-bpk-component-text-inpu
 import androidScreenshot from 'react-native-bpk-component-text-input/screenshots/android/text-inputs.png';
 import androidScreenshotWithAccessoryView from 'react-native-bpk-component-text-input/screenshots/android/text-inputs-with-accessory-view.png';
 
-import IntroBlurb from './../../components/IntroBlurb';
-import DocsPageBuilder from './../../components/DocsPageBuilder';
-import DocsPageWrapper from './../../components/DocsPageWrapper';
+import IntroBlurb from '../../components/IntroBlurb';
+import DocsPageBuilder from '../../components/DocsPageBuilder';
+import DocsPageWrapper from '../../components/DocsPageWrapper';
 
 const components = [
   {

@@ -20,30 +20,12 @@
 
 import React from 'react';
 import renderer from 'react-test-renderer';
+
 import BpkText from './BpkText';
 import commonTests from './BpkText-test.common';
 
 describe('iOS', () => {
   commonTests();
-
-  it('should error on invalid emphasize prop', () => {
-    expect(
-      BpkText.propTypes
-        .emphasize(
-          {
-            children: 'Lorem ipsum.',
-            textStyle: 'xxl',
-            emphasize: true,
-            style: null,
-          },
-          'emphasize',
-          'BpkText',
-        )
-        .toString(),
-    ).toEqual(
-      'Error: Invalid prop `emphasize` of value `true` supplied to `BpkText`. On iOS, `textStyle` value of `xxl` cannot be emphasized.',
-    );
-  });
 
   it('should not apply `emphasize` for textStyle="xxl"', () => {
     jest.spyOn(console, 'error').mockImplementation(() => null);

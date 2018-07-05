@@ -24,10 +24,10 @@ import { BpkButtonLink } from 'bpk-component-link';
 
 import drawerReadme from 'bpk-component-drawer/readme.md';
 
-import DocsPageBuilder from './../../components/DocsPageBuilder';
-import DocsPageWrapper from './../../components/DocsPageWrapper';
-import Paragraph from './../../components/Paragraph';
-import IntroBlurb from './../../components/IntroBlurb';
+import DocsPageBuilder from '../../components/DocsPageBuilder';
+import DocsPageWrapper from '../../components/DocsPageWrapper';
+import Paragraph from '../../components/Paragraph';
+import IntroBlurb from '../../components/IntroBlurb';
 
 class DrawerContainer extends Component {
   constructor() {

@@ -22,11 +22,11 @@ import tooltipReadme from 'bpk-component-tooltip/readme.md';
 import { spacingSm, colorGreen500 } from 'bpk-tokens/tokens/base.es6';
 import { cssModules } from 'bpk-react-utils';
 
-import DocsPageBuilder from './../../components/DocsPageBuilder';
-import DocsPageWrapper from './../../components/DocsPageWrapper';
-import Heading from './../../components/Heading';
-import Paragraph from './../../components/Paragraph';
-import IntroBlurb from './../../components/IntroBlurb';
+import DocsPageBuilder from '../../components/DocsPageBuilder';
+import DocsPageWrapper from '../../components/DocsPageWrapper';
+import Heading from '../../components/Heading';
+import Paragraph from '../../components/Paragraph';
+import IntroBlurb from '../../components/IntroBlurb';
 import STYLES from './tooltips-page.scss';
 
 const getClassName = cssModules(STYLES);

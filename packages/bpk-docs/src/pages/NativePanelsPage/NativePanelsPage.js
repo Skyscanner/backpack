@@ -28,7 +28,7 @@ import androidScreenshotWithDivider from 'react-native-bpk-component-panel/scree
 import iosScreenshotWithDividerArrangedVertically from 'react-native-bpk-component-panel/screenshots/ios/with-divider-arranged-vertically.png';
 import androidScreenshotWithDividerArrangedVertically from 'react-native-bpk-component-panel/screenshots/android/with-divider-arranged-vertically.png';
 
-import DocsPageBuilder from './../../components/DocsPageBuilder';
+import DocsPageBuilder from '../../components/DocsPageBuilder';
 
 const components = [
   {

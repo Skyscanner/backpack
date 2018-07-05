@@ -21,8 +21,8 @@ import BpkPanel from 'bpk-component-panel';
 
 import panelReadme from 'bpk-component-panel/readme.md';
 
-import DocsPageBuilder from './../../components/DocsPageBuilder';
-import Paragraph from './../../components/Paragraph';
+import DocsPageBuilder from '../../components/DocsPageBuilder';
+import Paragraph from '../../components/Paragraph';
 
 const components = [
   {

@@ -32,9 +32,9 @@ import mapReadme from 'bpk-component-map/readme.md';
 
 import STYLES from './MapPage.scss';
 
-import DocsPageBuilder from './../../components/DocsPageBuilder';
-import DocsPageWrapper from './../../components/DocsPageWrapper';
-import IntroBlurb from './../../components/IntroBlurb';
+import DocsPageBuilder from '../../components/DocsPageBuilder';
+import DocsPageWrapper from '../../components/DocsPageWrapper';
+import IntroBlurb from '../../components/IntroBlurb';
 
 const BpkMapWithScript = withGoogleMapsScript(BpkMap);
 const API_KEY = process.env.GOOGLE_MAPS_API_KEY || '';

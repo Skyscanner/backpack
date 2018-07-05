@@ -24,8 +24,8 @@ import { cssModules } from 'bpk-react-utils';
 import badgeReadme from 'bpk-component-badge/readme.md';
 
 import STYLES from './badge-page.scss';
-import DocsPageBuilder from './../../components/DocsPageBuilder';
-import Paragraph from './../../components/Paragraph';
+import DocsPageBuilder from '../../components/DocsPageBuilder';
+import Paragraph from '../../components/Paragraph';
 
 const getClassName = cssModules(STYLES);
 const badgeClassName = getClassName('bpkdocs-badge-page__badge-spacing');

@@ -22,11 +22,11 @@ import BpkBlockquote from 'bpk-component-blockquote';
 import BpkRouterLink from 'bpk-component-router-link';
 import { BpkList, BpkListItem } from 'bpk-component-list';
 
-import * as ROUTES from './../../constants/routes';
-import DocsPageBuilder from './../../components/DocsPageBuilder';
-import Heading from './../../components/Heading';
-import Paragraph from './../../components/Paragraph';
-import IntroBlurb from './../../components/IntroBlurb';
+import * as ROUTES from '../../constants/routes';
+import DocsPageBuilder from '../../components/DocsPageBuilder';
+import Heading from '../../components/Heading';
+import Paragraph from '../../components/Paragraph';
+import IntroBlurb from '../../components/IntroBlurb';
 import Code from '../../components/Code';
 import CodeBlock from '../../components/CodeBlock';
 

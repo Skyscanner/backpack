@@ -27,7 +27,7 @@ import androidScreenshotDefault from 'react-native-bpk-component-banner-alert/sc
 import androidScreenshotDismissable from 'react-native-bpk-component-banner-alert/screenshots/android/dismissable.png';
 import androidScreenshotExpandable from 'react-native-bpk-component-banner-alert/screenshots/android/expandable.png';
 
-import DocsPageBuilder from './../../components/DocsPageBuilder';
+import DocsPageBuilder from '../../components/DocsPageBuilder';
 
 const components = [
   {

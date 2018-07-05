@@ -28,10 +28,10 @@ import BpkMobileScrollContainer from 'bpk-component-mobile-scroll-container';
 import { cssModules } from 'bpk-react-utils';
 
 import calendarReadme from 'bpk-component-calendar/readme.md';
-import DocsPageBuilder from './../../components/DocsPageBuilder';
-import DocsPageWrapper from './../../components/DocsPageWrapper';
-import Paragraph from './../../components/Paragraph';
-import IntroBlurb from './../../components/IntroBlurb';
+import DocsPageBuilder from '../../components/DocsPageBuilder';
+import DocsPageWrapper from '../../components/DocsPageWrapper';
+import Paragraph from '../../components/Paragraph';
+import IntroBlurb from '../../components/IntroBlurb';
 import addMonths from '../../../../bpk-component-calendar/node_modules/date-fns/add_months';
 import {
   weekDays,
@@ -87,6 +87,7 @@ class CalendarContainer extends Component {
       date: new Date(),
     };
   }
+
   render() {
     return (
       <BpkCalendar

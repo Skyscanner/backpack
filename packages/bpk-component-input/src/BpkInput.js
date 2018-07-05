@@ -15,45 +15,23 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 /* @flow */
 
-import PropTypes from 'prop-types';
 import React from 'react';
 import { cssModules } from 'bpk-react-utils';
 
 import BpkClearButton from './BpkClearButton';
-import CLEAR_BUTTON_MODES from './clearButtonModes';
 
-import clearablePropType from './customPropTypes';
 import STYLES from './BpkInput.scss';
+import {
+  type Props,
+  propTypes,
+  defaultProps,
+  CLEAR_BUTTON_MODES,
+} from './common-types';
 
 const getClassName = cssModules(STYLES);
-
-export const INPUT_TYPES = {
-  text: 'text',
-  email: 'email',
-  number: 'number',
-  password: 'password',
-  tel: 'tel',
-};
-
-export type Props = {
-  id: string,
-  name: string,
-  value: string,
-  type: $Keys<typeof INPUT_TYPES>,
-  className: ?string,
-  valid: ?boolean,
-  large: boolean,
-  docked: boolean,
-  dockedFirst: boolean,
-  dockedMiddle: boolean,
-  dockedLast: boolean,
-  inputRef: ?(?HTMLInputElement) => mixed,
-  clearButtonMode: $Keys<typeof CLEAR_BUTTON_MODES>,
-  clearButtonLabel: ?string,
-  onClear: ?(event: SyntheticEvent<HTMLButtonElement>) => mixed,
-};
 
 const BpkInput = (props: Props) => {
   const classNames = [getClassName('bpk-input')];
@@ -164,43 +142,7 @@ const BpkInput = (props: Props) => {
   );
 };
 
-BpkInput.propTypes = {
-  id: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired,
-  value: PropTypes.string.isRequired,
-  type: PropTypes.oneOf([
-    INPUT_TYPES.text,
-    INPUT_TYPES.email,
-    INPUT_TYPES.number,
-    INPUT_TYPES.password,
-    INPUT_TYPES.tel,
-  ]),
-  className: PropTypes.string,
-  valid: PropTypes.bool,
-  large: PropTypes.bool,
-  docked: PropTypes.bool,
-  dockedFirst: PropTypes.bool,
-  dockedMiddle: PropTypes.bool,
-  dockedLast: PropTypes.bool,
-  inputRef: PropTypes.func,
-  clearButtonMode: PropTypes.oneOf(Object.keys(CLEAR_BUTTON_MODES)),
-  clearButtonLabel: clearablePropType,
-  onClear: clearablePropType,
-};
-
-BpkInput.defaultProps = {
-  type: INPUT_TYPES.text,
-  className: null,
-  valid: null,
-  large: false,
-  docked: false,
-  dockedFirst: false,
-  dockedMiddle: false,
-  dockedLast: false,
-  inputRef: null,
-  clearButtonMode: CLEAR_BUTTON_MODES.never,
-  clearButtonLabel: null,
-  onClear: null,
-};
+BpkInput.propTypes = { ...propTypes };
+BpkInput.defaultProps = { ...defaultProps };
 
 export default BpkInput;

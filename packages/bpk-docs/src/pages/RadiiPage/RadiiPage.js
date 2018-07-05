@@ -22,9 +22,9 @@ import IOS_TOKENS from 'bpk-tokens/tokens/base.raw.ios.json';
 import ANDROID_TOKENS from 'bpk-tokens/tokens/base.raw.android.json';
 import BpkBlockquote from 'bpk-component-blockquote';
 
-import IntroBlurb from './../../components/IntroBlurb';
-import DocsPageBuilder from './../../components/DocsPageBuilder';
-import { getPlatformTokens } from './../../helpers/tokens-helper';
+import IntroBlurb from '../../components/IntroBlurb';
+import DocsPageBuilder from '../../components/DocsPageBuilder';
+import { getPlatformTokens } from '../../helpers/tokens-helper';
 
 const blurb = [
   <IntroBlurb>

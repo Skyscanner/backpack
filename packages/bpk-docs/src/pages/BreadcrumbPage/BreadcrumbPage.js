@@ -20,9 +20,9 @@ import React from 'react';
 import breadcrumbReadme from 'bpk-component-breadcrumb/readme.md';
 import BpkBreadcrumb, { BpkBreadcrumbItem } from 'bpk-component-breadcrumb';
 
-import IntroBlurb from './../../components/IntroBlurb';
-import DocsPageWrapper from './../../components/DocsPageWrapper';
-import DocsPageBuilder from './../../components/DocsPageBuilder';
+import IntroBlurb from '../../components/IntroBlurb';
+import DocsPageWrapper from '../../components/DocsPageWrapper';
+import DocsPageBuilder from '../../components/DocsPageBuilder';
 
 const blurb = [
   <IntroBlurb>
