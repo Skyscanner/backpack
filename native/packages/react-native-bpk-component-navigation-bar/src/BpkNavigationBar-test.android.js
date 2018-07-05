@@ -135,6 +135,24 @@ describe('android', () => {
       expect(tree).toMatchSnapshot();
     });
 
+    it('should render correctly when title is null', () => {
+      const tree = renderer
+        .create(
+          <BpkNavigationBar
+            title={null}
+            leadingButton={
+              <BpkNavigationBarButtonAndroid
+                title="Back"
+                icon="long-arrow-left"
+                onPress={jest.fn()}
+              />
+            }
+          />,
+        )
+        .toJSON();
+      expect(tree).toMatchSnapshot();
+    });
+
     it('should render correctly with a subtitle view', () => {
       const tree = renderer
         .create(

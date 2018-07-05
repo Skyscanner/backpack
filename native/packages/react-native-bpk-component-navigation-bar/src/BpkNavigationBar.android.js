@@ -192,7 +192,7 @@ class BpkNavigationBar extends Component<Props, {}> {
     // title in the body of the if to `'string' | TitleWithIcon
     if (
       typeof title === 'string' ||
-      (typeof title === 'object' && title.icon)
+      (title !== null && typeof title === 'object' && title.icon)
     ) {
       titleView = (
         <TitleView
@@ -207,7 +207,12 @@ class BpkNavigationBar extends Component<Props, {}> {
     // title in the body of the if to `Element`.
     // While this if is mutually exclusive to the above it
     // cannot be an else if as Flow seems unable to handle this.
-    if (typeof title === 'object' && title.type && isValidElement(title)) {
+    if (
+      title !== null &&
+      typeof title === 'object' &&
+      title.type &&
+      isValidElement(title)
+    ) {
       titleView = (
         <View style={styles.titleViewOuter}>
           {React.cloneElement(title, {

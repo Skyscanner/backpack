@@ -124,6 +124,24 @@ describe('ios', () => {
       expect(tree).toMatchSnapshot();
     });
 
+    it('should render correctly when title is null', () => {
+      const tree = renderer
+        .create(
+          <BpkNavigationBar
+            title={null}
+            leadingButton={
+              <BpkNavigationBarBackButtonIOS
+                title="Back"
+                showTitle
+                onPress={jest.fn()}
+              />
+            }
+          />,
+        )
+        .toJSON();
+      expect(tree).toMatchSnapshot();
+    });
+
     it('should render correctly with an icon in the title', () => {
       const tree = renderer
         .create(
