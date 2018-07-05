@@ -20,7 +20,7 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import { colorWhite } from 'bpk-tokens/tokens/base.es6';
 
-import BpkThemeProvider from './BpkThemeProvider';
+import BpkThemeProvider, { propTypes } from './BpkThemeProvider';
 
 describe('BpkThemeProvider', () => {
   it('should render correctly', () => {
@@ -96,7 +96,7 @@ describe('BpkThemeProvider', () => {
   it('should warn about missing theme attributes', () => {
     expect(
       // eslint-disable-next-line react/forbid-foreign-prop-types
-      BpkThemeProvider.propTypes
+      propTypes
         .themeAttributes(
           {
             theme: {},
@@ -114,7 +114,7 @@ describe('BpkThemeProvider', () => {
   it('should warn about extraneous theme attributes', () => {
     expect(
       // eslint-disable-next-line react/forbid-foreign-prop-types
-      BpkThemeProvider.propTypes
+      propTypes
         .themeAttributes(
           {
             theme: { one: 'a', two: 'a' },

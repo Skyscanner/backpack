@@ -19,6 +19,7 @@
 /* @flow */
 
 import { StyleSheet } from 'react-native';
+import { spacingSm } from 'bpk-tokens/tokens/base.react.native';
 
 import { emphasizePropType, stylePropType } from './common-types';
 
@@ -83,7 +84,7 @@ describe('stylePropType', () => {
           emphasize: false,
           style: StyleSheet.create({
             breakingStyle: {
-              margin: 10,
+              margin: spacingSm,
             },
           }).breakingStyle,
         },
