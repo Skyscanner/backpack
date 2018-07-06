@@ -1,7 +1,7 @@
 /*
  * Backpack - Skyscanner's Design System
  *
- * Copyright 2018-present Skyscanner Ltd
+ * Copyright 2018 Skyscanner Ltd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,19 +14,33 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- *
  */
+const { spawn } = require('child_process');
 
-const detox = require('detox');
-const config = require('../../package.json').detox;
+const recordSimulator = fileName =>
+  spawn('xcrun', [
+    'simctl',
+    'io',
+    'booted',
+    'recordVideo',
+    '--type=fmp4',
+    fileName,
+  ]);
 
-// Set the default test timeout of 120s
-jest.setTimeout(120000);
+class Recorder {
+  constructor(filePath) {
+    this.filePath = filePath;
+    this.handle = null;
+  }
 
-beforeAll(async () => {
-  await detox.init(config);
-});
+  startRecording() {
+    this.handle = recordSimulator(this.filePath);
+  }
 
-afterAll(async () => {
-  await detox.cleanup();
-});
+  finishRecording() {
+    this.handle.kill('SIGINT');
+    this.handle = null;
+  }
+}
+
+module.exports = Recorder;

@@ -24,16 +24,17 @@ import React, { Children } from 'react';
 import BpkContentContainer from 'bpk-component-content-container';
 import { cssModules } from 'bpk-react-utils';
 
+import AlternatingPageContent from '../AlternatingPageContent';
+import ComponentScreenshots from './ComponentScreenshots';
+import ComponentVideos from './ComponentVideos';
+import Heading from '../Heading';
+import PageHead from '../PageHead';
+import Paragraph from '../Paragraph';
+import PresentationBlock from '../PresentationBlock';
+import SassdocLink from '../SassdocLink';
 import TokenSwitcher, { connect } from './TokenSwitcher';
 import TokenTable from './TokenTable';
-import PageHead from '../PageHead';
-import AlternatingPageContent from '../AlternatingPageContent';
-import Heading from '../Heading';
-import Paragraph from '../Paragraph';
 import UsageTable from '../UsageTable';
-import SassdocLink from '../SassdocLink';
-import ComponentScreenshots from './ComponentScreenshots';
-import PresentationBlock from '../PresentationBlock';
 
 import STYLES from './DocsPageBuilder.scss';
 
@@ -93,6 +94,9 @@ const ComponentExample = (component, registerTokenTable) => {
     <ComponentScreenshots screenshots={component.screenshots} />
   ) : null;
 
+  const videos = (component.videos || []).length ? (
+    <ComponentVideos videos={component.videos} />
+  ) : null;
   const blurb = component.blurb ? toNodes(component.blurb) : null;
 
   const readme = component.readme
@@ -127,6 +131,7 @@ const ComponentExample = (component, registerTokenTable) => {
       {blurb}
       {tokenMap}
       {screenshots}
+      {videos}
       {examples}
       {readme}
       {sassdocLink}
@@ -280,6 +285,14 @@ DocsPageBuilder.propTypes = {
           width: PropTypes.number.isRequired,
           height: PropTypes.number.isRequired,
           altText: PropTypes.string.isRequired,
+          subText: PropTypes.string.isRequired,
+        }),
+      ),
+      videos: PropTypes.arrayOf(
+        PropTypes.shape({
+          title: PropTypes.string.isRequired,
+          src: PropTypes.string.isRequired,
+          width: PropTypes.number.isRequired,
           subText: PropTypes.string.isRequired,
         }),
       ),

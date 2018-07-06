@@ -141,7 +141,7 @@ const config = {
         }),
       },
       {
-        test: /\.(jpg|png|svg)$/,
+        test: /\.(jpg|png|svg|mp4)$/,
         exclude: /node_modules/,
         use: [
           {
