@@ -22,11 +22,11 @@ import BpkBlockquote from 'bpk-component-blockquote';
 import BpkRouterLink from 'bpk-component-router-link';
 import { BpkList, BpkListItem } from 'bpk-component-list';
 
-import * as ROUTES from './../../constants/routes';
-import DocsPageBuilder from './../../components/DocsPageBuilder';
-import Heading from './../../components/Heading';
-import Paragraph from './../../components/Paragraph';
-import IntroBlurb from './../../components/IntroBlurb';
+import * as ROUTES from '../../constants/routes';
+import DocsPageBuilder from '../../components/DocsPageBuilder';
+import Heading from '../../components/Heading';
+import Paragraph from '../../components/Paragraph';
+import IntroBlurb from '../../components/IntroBlurb';
 import Code from '../../components/Code';
 import CodeBlock from '../../components/CodeBlock';
 
@@ -179,41 +179,13 @@ const components = [
           for Sketch.
         </BpkListItem>
         <BpkListItem>
-          Download the Backpack Sketch libraries:
-          <BpkList>
-            <BpkListItem>
-              <BpkLink
-                href="https://www.dropbox.com/s/vyswgx5f6af45vl/Backpack_Web_Sketch_Library.sketch?dl=0"
-                blank
-              >
-                Web Sketch library
-              </BpkLink>
-            </BpkListItem>
-            <BpkListItem>
-              <BpkLink
-                href="https://www.dropbox.com/s/d6hxj3jufh9f4jj/Backpack_iOS_Sketch_Library.sketch?dl=0"
-                blank
-              >
-                iOS Sketch library
-              </BpkLink>
-            </BpkListItem>
-            <BpkListItem>
-              <BpkLink
-                href="https://www.dropbox.com/s/u1tbpvxlebo417w/Backpack_Android_Sketch_Library.sketch?dl=0"
-                blank
-              >
-                Android Sketch library
-              </BpkLink>
-            </BpkListItem>
-            <BpkListItem>
-              <BpkLink
-                href="https://www.dropbox.com/s/rq8igam034ejrwb/Backpack_Icons_Sketch_Library.sketch?dl=0"
-                blank
-              >
-                Icon Sketch library
-              </BpkLink>
-            </BpkListItem>
-          </BpkList>
+          Download the{' '}
+          <BpkLink
+            href="https://www.dropbox.com/sh/9izfzwqfh33klyu/AADNHWajq5g-9rwTUoGPoixAa?dl=0"
+            blank
+          >
+            Backpack Sketch libraries.
+          </BpkLink>
         </BpkListItem>
         <BpkListItem>Import the library/libraries in Sketch.</BpkListItem>
         <BpkListItem>
