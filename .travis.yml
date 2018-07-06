@@ -6,7 +6,7 @@ env:
     - NPM_CONFIG_LOGLEVEL=warn
     - secure: lpcZNywBxi9I7Zy8wpgq4y5cMT3WJhRuswT/AEILAoKKD4utAH1ibLigjcYTjXai2oHP8hH8e2BBvAibJtfWVlFUaaXWk1RrR7Zs8ligdpQkmKOUB7m41xj2JiYFn3DNntAd21Gvu8zq+SlY2TG50VjQmWOkVf49Yq6/ED3nQ6r352dV6II0e+Qm99+VA9em1QYGLI2jiAZVpgMXOCw3jHrtusVMAyrwPHixrpw1TvoflvHTMLlAxeaa4MyBxy6+qBEjacXxQvi8+OGYNyi7zLYxijTUMqJwVB8L9uLgrUQbWP8HA3QzCnKAim/SADsgoMPYxWBQk45mdgJptznZVrQON4gL222LZrSuuwGK4OVu132hrDRHnKJ8bQS95WvpQkPTE6Yh3rDAuAMprrEIJt4c4WhyXovo9165aG03AqkqeSIQOmCXPFld2+qzqnI+V+QsocDhtsz29kCEHjjLUbxg0GzW8JfBFSjVW38FebvPfz8dOhj1osNIIjKxi8Twdtx8knfuHkEb6q2Fp3nvDhUPai/1FXdiNo+/Jz1FcPvDuAaa7hCj1ZRos5Ce/iJJwndgal5PLFdr5lwkm2Jd7iYYwv7tPStFSX42tuSf92LZns/hHDGTI439eu3/lryCoByG/+98qa+iIRmjLyesbfn0+0PQMjSfyo3Gwe8rtnQ=
 before_install:
-  - npm install -g greenkeeper-lockfile@1
+  - npm install -g greenkeeper-lockfile@2
 before_script: greenkeeper-lockfile-update
 after_script: greenkeeper-lockfile-upload
 install:
