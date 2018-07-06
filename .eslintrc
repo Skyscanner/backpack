@@ -7,7 +7,6 @@
       "plugin:flowtype/recommended"
   ],
   "plugins": [
-    "backpack",
     "prettier",
     "flowtype"
   ],
@@ -28,8 +27,6 @@
     }
   },
   "rules": {
-    "backpack/use-tokens": 2,
-    "backpack/auto-import-tokens": 2,
     "react/destructuring-assignment": 0,
     "prettier/prettier": "error",
     "react/jsx-filename-extension": 0,
