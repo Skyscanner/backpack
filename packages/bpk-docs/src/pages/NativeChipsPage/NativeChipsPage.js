@@ -19,10 +19,10 @@
 import React from 'react';
 import readme from 'react-native-bpk-component-chip/readme.md';
 
-import iosScreenshotDefault from 'react-native-bpk-component-chip/screenshots/ios/BpkChip.png';
-import iosScreenshotDismissible from 'react-native-bpk-component-chip/screenshots/ios/BpkDismissibleChip.png';
-import androidScreenshotDefault from 'react-native-bpk-component-chip/screenshots/android/BpkChip.png';
-import androidScreenshotDismissible from 'react-native-bpk-component-chip/screenshots/android/BpkDismissibleChip.png';
+import iosScreenshotDefault from 'react-native-bpk-component-chip/screenshots/ios/default.png';
+import iosScreenshotDismissible from 'react-native-bpk-component-chip/screenshots/ios/dismissible.png';
+import androidScreenshotDefault from 'react-native-bpk-component-chip/screenshots/android/default.png';
+import androidScreenshotDismissible from 'react-native-bpk-component-chip/screenshots/android/dismissible.png';
 
 import DocsPageBuilder from '../../components/DocsPageBuilder';
 

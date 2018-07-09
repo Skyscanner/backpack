@@ -205,7 +205,7 @@ const COUNTRIES = [
 
 storiesOf('react-native-bpk-component-chip', module)
   .addDecorator(CenterDecorator)
-  .add('docs:BpkChip', () => (
+  .add('docs:default', () => (
     <View>
       <View style={styles.bottomMargin}>
         <BpkText>Default</BpkText>
@@ -240,7 +240,7 @@ storiesOf('react-native-bpk-component-chip', module)
       </View>
     </View>
   ))
-  .add('docs:BpkDismissibleChip', () => (
+  .add('docs:dismissible', () => (
     <View style={styles.row}>
       {COUNTRIES.map((country, index) => (
         <BpkDismissibleChip
