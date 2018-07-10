@@ -37,7 +37,7 @@ export default () => (
 );
 ```
 
-### With Loading HOC
+### With Loading Behaviour
 
 ```js
 import React, { Component } from 'react';

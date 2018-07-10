@@ -95,6 +95,7 @@
     "react-native-bpk-component-flat-list": "^1.0.10",
     "react-native-bpk-component-horizontal-nav": "^3.0.19",
     "react-native-bpk-component-icon": "^1.8.6",
+    "react-native-bpk-component-image": "^0.0.0",
     "react-native-bpk-component-map": "^1.0.3",
     "react-native-bpk-component-navigation-bar": "^2.0.16",
     "react-native-bpk-component-nudger": "^1.0.24",

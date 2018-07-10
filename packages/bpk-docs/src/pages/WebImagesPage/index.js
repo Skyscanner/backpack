@@ -16,22 +16,6 @@
  * limitations under the License.
  */
 
-/* @flow */
+import page from './WebImagesPage';
 
-import React from 'react';
-import DocsPageWrapper from '../../components/DocsPageWrapper';
-import IntroBlurb from '../../components/IntroBlurb';
-
-import Web from '../WebImagesPage';
-import Native from '../NativeImagesPage';
-
-const ImagesPage = () => (
-  <DocsPageWrapper
-    title="Image"
-    blurb={[<IntroBlurb>A component for including images.</IntroBlurb>]}
-    webSubpage={<Web wrapped />}
-    nativeSubpage={<Native wrapped />}
-  />
-);
-
-export default ImagesPage;
+export default page;
