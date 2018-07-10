@@ -73,8 +73,8 @@ configure(() => {
   require('./../packages/bpk-component-drawer/stories');
   require('./../packages/bpk-component-fieldset/stories');
   require('./../packages/bpk-component-form-validation/stories');
-  require('./../packages/bpk-component-grid/stories');
   require('./../packages/bpk-component-grid-toggle/stories');
+  require('./../packages/bpk-component-grid/stories');
   require('./../packages/bpk-component-heading/stories');
   require('./../packages/bpk-component-horizontal-nav/stories');
   require('./../packages/bpk-component-icon/stories');

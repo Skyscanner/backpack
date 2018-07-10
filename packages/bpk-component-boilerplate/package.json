@@ -1,7 +1,7 @@
 {
   "name": "bpk-component-boilerplate",
   "version": "0.0.0",
-  "description": "Backpack boilerplate component. For reference only, not intended to be used or published.",
+  "description": "Backpack boilerplate component.",
   "main": "index.js",
   "repository": {
     "type": "git",

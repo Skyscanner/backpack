@@ -14,11 +14,7 @@ npm install bpk-component-boilerplate --save-dev
 import React from 'react';
 import BpkBoilerplate from 'bpk-component-code';
 
-export default () => (
-  <div>
-    <BpkBoilerPlate />
-  </div>
-);
+export default () => <BpkBoilerplate />;
 ```
 
 ## Props
