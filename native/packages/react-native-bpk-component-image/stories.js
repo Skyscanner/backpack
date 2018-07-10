@@ -18,70 +18,22 @@
 
 /* @flow */
 
-import React, { Component } from 'react';
-import { View, StyleSheet, type ImageSourcePropType } from 'react-native';
-import BpkButton from 'react-native-bpk-component-button';
-import { spacingBase, spacingLg } from 'bpk-tokens/tokens/base.react.native';
+import React from 'react';
+import { StyleSheet } from 'react-native';
+import { spacingLg } from 'bpk-tokens/tokens/base.react.native';
 import { storiesOf } from '@storybook/react-native';
 
 import CenterDecorator from '../../storybook/CenterDecorator';
-import BpkImage from './index';
+import BpkImage, { withLoadingBehaviour } from './index';
+
+const BpkImageWithLoading = withLoadingBehaviour(BpkImage);
 
 const styles = StyleSheet.create({
-  button: {
-    marginBottom: spacingBase,
-  },
   image: {
     width: '100%',
     height: spacingLg * 10,
   },
 });
-
-type Props = {
-  source: ImageSourcePropType,
-};
-type State = { loaded: boolean };
-
-class BpkImageLoadingStory extends Component<Props, State> {
-  static propTypes = {};
-
-  static defaultProps = {};
-
-  constructor(props: Props) {
-    super(props);
-    this.state = {
-      loaded: false,
-    };
-  }
-
-  onLoadToggle = () => {
-    this.setState(prevState => ({ loaded: !prevState.loaded }));
-  };
-
-  render() {
-    const { source, ...rest } = this.props;
-
-    return (
-      <View>
-        <BpkButton
-          style={styles.button}
-          title={
-            this.state.loaded ? 'Reload story to try again' : 'Mark as loaded'
-          }
-          onPress={this.onLoadToggle}
-          disabled={this.state.loaded}
-        />
-        <BpkImage
-          loaded={this.state.loaded}
-          alt="test"
-          style={styles.image}
-          source={source}
-          {...rest}
-        />
-      </View>
-    );
-  }
-}
 
 storiesOf('react-native-bpk-component-image', module)
   .addDecorator(CenterDecorator)
@@ -89,7 +41,7 @@ storiesOf('react-native-bpk-component-image', module)
     <BpkImage
       alt="test"
       source={{
-        uri: 'https://unsplash.com/photos/HC6Gkb9x4Ro/download?force=true',
+        uri: 'https://unsplash.com/photos/fZ1gqh4jPgM/download?force=true',
       }}
       style={styles.image}
     />
@@ -104,8 +56,10 @@ storiesOf('react-native-bpk-component-image', module)
       style={styles.image}
     />
   ))
-  .add('docs:loading', () => (
-    <BpkImageLoadingStory
+  .add('docs:withLoadingBehaviour', () => (
+    <BpkImageWithLoading
+      alt="test"
+      style={styles.image}
       source={{
         uri: 'https://unsplash.com/photos/HEkMWKpynBA/download?force=true',
       }}
@@ -117,7 +71,7 @@ storiesOf('react-native-bpk-component-image', module)
       loaded={false}
       alt="test"
       source={{
-        uri: 'https://unsplash.com/photos/HC6Gkb9x4Ro/download?force=true',
+        uri: 'https://unsplash.com/photos/fZ1gqh4jPgM/download?force=true',
       }}
       style={styles.image}
     />
