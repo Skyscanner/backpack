@@ -10,6 +10,8 @@ npm install react-native-bpk-component-image --save-dev
 
 ## Usage
 
+### Default
+
 ```js
 import React, { Component } from 'react';
 import { StyleSheet, View } from 'react-native';
@@ -31,6 +33,35 @@ const styles = StyleSheet.create({
 export default () => (
   <View style={styles.container}>
     <BpkImage style={styles.image} alt="image title" source={{uri: "imageUri"}} />
+  </View>
+);
+```
+
+### With Loading HOC
+
+```js
+import React, { Component } from 'react';
+import { StyleSheet, View } from 'react-native';
+import { spacingBase, spacingLg } from 'bpk-tokens/tokens/base.react.native';
+import BpkImage, { withLoadingBehaviour } from './index';
+
+const BpkImageWithLoading = withLoadingBehaviour(BpkImage);
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    padding: spacingBase,
+  },
+  image: {
+    width: '100%',
+    height: spacingLg * 10,
+  },
+});
+
+export default () => (
+  <View style={styles.container}>
+    <BpkImageWithLoading style={styles.image} alt="image title" source={{uri: "imageUri"}} />
   </View>
 );
 ```

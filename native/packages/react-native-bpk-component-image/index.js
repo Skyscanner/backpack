@@ -19,6 +19,8 @@
 /* @flow */
 
 import BpkImage, { type Props as BpkImageProps } from './src/BpkImage';
+import withLoadingBehaviour from './src/withLoadingBehaviour';
 
 export type { BpkImageProps };
+export { withLoadingBehaviour };
 export default BpkImage;
