@@ -2,6 +2,13 @@
 
 [Unreleased changes](./unreleased.md).
 
+# 2018-07-11 - Release native image component
+
+**Added:**
+
+- react-native-bpk-component-image: 0.0.0 => 1.0.0
+  - Introducing the native image component. See https://backpack.github.io/components/image?platform=native.
+
 # 2018-07-05 - Fix bug in theme changing for react-native-component-navigation-bar
 
 
@@ -14,12 +21,12 @@
 
 **Added:**
 
-- react-native-bpk-component-chip:
+- react-native-bpk-component-chip: 0.0.0 => 1.0.0
   - Introducing the native chip component. See https://backpack.github.io/components/chip?platform=native.
 
 **Fixed:**
 
-- bpk-component-map
+- bpk-component-map: 2.0.0 => 2.0.1
   - Now `center` and `zoom` are controlled: changing them will change the values in the map.
 
 # 2018-06-29 - Fix for image component SSR race condition
