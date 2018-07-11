@@ -1,5 +1,5 @@
 /*
- * Backpack - Skyscanner's Design Systrem
+ * Backpack - Skyscanner's Design System
  *
  * Copyright 2018 Skyscanner Ltd
  *
