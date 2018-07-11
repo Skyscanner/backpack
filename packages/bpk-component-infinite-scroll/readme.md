@@ -12,7 +12,7 @@ npm install bpk-component-infinite-scroll --save-dev
 ```js
 import React from 'react';
 import PropTypes from 'prop-types';
-import { withInfiniteScroll } from 'bpk-component-infinite-scroll';
+import withInfiniteScroll from 'bpk-component-infinite-scroll';
 
 const SomeList = ({elements}) => (
   <div id="list">
@@ -61,7 +61,7 @@ Promise that resolves to the sub-array between the indices i and i+n.
 ```js
 import React from 'react';
 import PropTypes from 'prop-types';
-import { withInfiniteScroll, onItemsFetch} from 'bpk-component-infinite-scroll';
+import withInfiniteScroll, { onItemsFetch } from 'bpk-component-infinite-scroll';
 
 const SomeList = ({elements}) => (
   <div id="list">
