@@ -37,6 +37,7 @@ import TokenTable from './TokenTable';
 import UsageTable from '../UsageTable';
 
 import STYLES from './DocsPageBuilder.scss';
+import PlatformSwitchingContent from './PlatformSwitchingContent';
 
 const getClassName = cssModules(STYLES);
 
@@ -74,7 +75,7 @@ toSassdocLink.propTypes = {
   category: PropTypes.string.isRequired,
 };
 
-const ComponentExample = (component, registerTokenTable) => {
+const ComponentExample = (component, registerPlatformSwitchingContent) => {
   const heading = (
     <Heading id={component.id} level="h2">
       {component.title}
@@ -115,7 +116,17 @@ const ComponentExample = (component, registerTokenTable) => {
     : null;
 
   const tokenMap = component.tokenMap
-    ? registerTokenTable(<TokenTable tokens={component.tokenMap} />)
+    ? registerPlatformSwitchingContent(
+        <TokenTable tokens={component.tokenMap} />,
+      )
+    : null;
+
+  const platformSwitchingContent = component.platformSwitchingContent
+    ? registerPlatformSwitchingContent(
+        <PlatformSwitchingContent
+          content={component.platformSwitchingContent}
+        />,
+      )
     : null;
 
   const sassdocLink = component.sassdocId
@@ -130,6 +141,7 @@ const ComponentExample = (component, registerTokenTable) => {
       {heading}
       {blurb}
       {tokenMap}
+      {platformSwitchingContent}
       {screenshots}
       {videos}
       {examples}
@@ -174,11 +186,11 @@ const DocsPageBuilder = props => {
   let hasTokens = !!props.tokenMap;
   const components = Children.toArray(
     props.components.map(component =>
-      ComponentExample(component, table => {
+      ComponentExample(component, platformSwitching => {
         hasTokens = true;
         return connect(
           tokenSwitcher,
-          table,
+          platformSwitching,
         );
       }),
     ),
@@ -299,6 +311,11 @@ DocsPageBuilder.propTypes = {
       examples: PropTypes.arrayOf(childrenPropType),
       readme: PropTypes.string,
       tokenMap: PropTypes.shape({
+        web: PropTypes.object,
+        ios: PropTypes.object,
+        android: PropTypes.object,
+      }),
+      platformSwitchingContent: PropTypes.shape({
         web: PropTypes.object,
         ios: PropTypes.object,
         android: PropTypes.object,
