@@ -18,6 +18,7 @@
     "a11y-focus-store": "^1.0.0",
     "bpk-component-close-button": "^1.0.68",
     "bpk-component-link": "^1.2.3",
+    "bpk-component-text": "^1.0.64",
     "bpk-mixins": "^17.10.4",
     "bpk-react-utils": "^2.6.1",
     "prop-types": "^15.5.8"
