@@ -1,6 +1,6 @@
 {
   "name": "bpk-stylesheets",
-  "version": "3.2.110",
+  "version": "3.2.111",
   "description": "Backpack's stylesheets.",
   "main": "index.js",
   "scripts": {
