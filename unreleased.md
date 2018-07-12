@@ -1,3 +1,6 @@
 # Unreleased
 
-_Nothing yet!_
+**Fixed:**
+- bpk-component-popover:
+- bpk-component-datepicker:
+  - Popover footer close link is now text style `base`.

@@ -99,12 +99,6 @@ $arrow-size: $bpk-spacing-sm;
     @include bpk-border-bottom-sm($bpk-color-gray-100);
   }
 
-  &__heading {
-    @include bpk-text;
-    @include bpk-text--base;
-    @include bpk-text--bold;
-  }
-
   &__label {
     @include bpk-visually-hidden;
   }
@@ -121,8 +115,6 @@ $arrow-size: $bpk-spacing-sm;
     padding: $bpk-spacing-xs $bpk-spacing-sm;
     text-align: right;
 
-    @include bpk-text;
-    @include bpk-text--sm;
     @include bpk-border-top-sm($bpk-color-gray-100);
 
     @include bpk-rtl {
