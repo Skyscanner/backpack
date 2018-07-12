@@ -2,6 +2,23 @@
 
 [Unreleased changes](./unreleased.md).
 
+# 2018-07-12 - New icons and better 'close' link
+
+**Added:**
+- bpk-component-icon: 3.21.4 => 3.22.0
+- bpk-mixins: 17.10.4 => 17.11.0
+- bpk-svgs: 5.17.4 => 5.18.0
+- react-native-bpk-component-button-link: 3.0.12 => 3.0.13
+- react-native-bpk-component-button: 7.0.4 => 7.0.5
+- react-native-bpk-component-icon: 1.8.7. => 1.9.0
+- react-native-bpk-component-navigation-bar: 2.0.17 => 2.0.18
+  - New icons: `gears-automatic` and `gears-manual`.
+
+**Fixed:**
+- bpk-component-datepicker: 8.0.39 => 8.0.40
+- bpk-component-popover: 2.1.20 => 2.1.21
+  - Popover footer close link is now text style `base`.
+
 # 2018-07-11 - Release native image component
 
 **Added:**
