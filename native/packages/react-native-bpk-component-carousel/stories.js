@@ -17,12 +17,17 @@
  */
 
 import React from 'react';
-import { Image, StyleSheet } from 'react-native';
+import { StyleSheet } from 'react-native';
 import { storiesOf } from '@storybook/react-native';
 import { colorGray300 } from 'bpk-tokens/tokens/base.react.native';
 import BpkText from 'react-native-bpk-component-text';
+import BpkImage, {
+  withLoadingBehaviour,
+} from 'react-native-bpk-component-image';
 import CenterDecorator from '../../storybook/CenterDecorator';
 import BpkCarousel, { BpkCarouselItem } from './index';
+
+const WithLoadingBpkImage = withLoadingBehaviour(BpkImage);
 
 const styles = StyleSheet.create({
   page: {
@@ -141,7 +146,11 @@ const renderImages = useFullComplement => {
   }
   return images.map(uri => (
     <BpkCarouselItem key={uri}>
-      <Image style={{ width: '100%', height: '100%' }} source={{ uri }} />
+      <WithLoadingBpkImage
+        alt="uri"
+        style={{ width: '100%', height: '100%' }}
+        source={{ uri }}
+      />
     </BpkCarouselItem>
   ));
 };
@@ -161,8 +170,9 @@ storiesOf('react-native-bpk-component-carousel', module)
         <BpkText textStyle="xl"> View 1 </BpkText>
       </BpkCarouselItem>
       <BpkCarouselItem>
-        <Image
+        <WithLoadingBpkImage
           style={{ width: '100%', height: '100%' }}
+          alt="Canadian Rockies"
           source={{
             uri:
               'https://content.skyscnr.com/96508dbac15a2895b0147dc7e7f9ad30/canadian-rockies-canada.jpg',

@@ -15,6 +15,9 @@ import React, { Component } from 'react';
 import { Image, View, StyleSheet } from 'react-native';
 import { spacingXl } from 'bpk-tokens/tokens/base.react.native';
 import BpkCarousel, { BpkCarouselItem } from 'react-native-bpk-component-carousel';
+import BpkImage, { withLoadingBehaviour } from 'react-native-bpk-component-image';
+
+const WithLoadingBpkImage = withLoadingBehaviour(BpkImage);
 
 const styles = StyleSheet.create({
   carousel: {
@@ -33,13 +36,15 @@ export default () => (
     style={styles.carousel}
   >
     <BpkCarouselItem>
-      <Image
+      <WithLoadingBpkImage
+        alt="Description of image"
         style={styles.image}
         source={require('./path/to/image.jpg')}
       />
     </BpkCarouselItem>
     <BpkCarouselItem>
-      <Image
+      <WithLoadingBpkImage
+        alt="Description of image"
         style={styles.image}
         source={require('./path/to/image.jpg')}
       />
