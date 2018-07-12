@@ -131,18 +131,6 @@ if (unlicensedFiles.length > 0) {
   );
 }
 
-// Encourage smaller PRs.
-const bigPRThreshold = 8;
-if (fileChanges.length > bigPRThreshold) {
-  warn(
-    `This PR contains ${fileChanges.length} files (${
-      createdFiles.length
-    } new, ${
-      modifiedFiles.length
-    } modified). Consider splitting it into multiple PRs.`,
-  ); // eslint-disable-line max-len
-}
-
 // iOS tokens should not appear in Android snapshot files
 const androidSnapshotsWithIosTokens = fileChanges.filter(filePath => {
   if (!filePath.match(/\.android\.js\.snap$/)) {
