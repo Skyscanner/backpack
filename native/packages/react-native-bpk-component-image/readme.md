@@ -43,7 +43,7 @@ export default () => (
 import React, { Component } from 'react';
 import { StyleSheet, View } from 'react-native';
 import { spacingBase, spacingLg } from 'bpk-tokens/tokens/base.react.native';
-import BpkImage, { withLoadingBehaviour } from './index';
+import BpkImage, { withLoadingBehaviour } from 'react-native-bpk-component-image';
 
 const BpkImageWithLoading = withLoadingBehaviour(BpkImage);
 
