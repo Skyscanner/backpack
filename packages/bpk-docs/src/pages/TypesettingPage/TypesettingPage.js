@@ -21,9 +21,11 @@ import TOKENS from 'bpk-tokens/tokens/base.raw.json';
 import IOS_TOKENS from 'bpk-tokens/tokens/base.raw.ios.json';
 import ANDROID_TOKENS from 'bpk-tokens/tokens/base.raw.android.json';
 import BpkBlockquote from 'bpk-component-blockquote';
+import { BpkList, BpkListItem } from 'bpk-component-list';
+import { BpkCode } from 'bpk-component-code';
 
 import IntroBlurb from '../../components/IntroBlurb';
-import DocsPageBuilder from '../../components/DocsPageBuilder';
+import DocsPageBuilder, { Paragraph } from '../../components/DocsPageBuilder';
 import { getPlatformTokens } from '../../helpers/tokens-helper';
 
 const blurb = [
@@ -44,6 +46,48 @@ const components = [
       ANDROID_TOKENS,
       ({ name }) => name === 'FONT_FAMILY_BASE',
     ),
+  },
+  {
+    id: 'font-weight',
+    title: 'Font weight',
+    platformSwitchingContent: {
+      ios: (
+        <section>
+          <Paragraph>
+            When designing for iOS, use <strong>SF Pro Text</strong>.
+          </Paragraph>
+          <BpkList>
+            <BpkListItem>Regular</BpkListItem>
+            <BpkListItem>Semi-bold (for emphasised text)</BpkListItem>
+            <BpkListItem>
+              Heavy (for <BpkCode>font-size-xxl</BpkCode> only)
+            </BpkListItem>
+          </BpkList>
+        </section>
+      ),
+      android: (
+        <section>
+          <Paragraph>
+            When designing for Android, use <strong>Roboto</strong>.
+          </Paragraph>
+          <BpkList>
+            <BpkListItem>Regular</BpkListItem>
+            <BpkListItem>Medium (for emphasised text)</BpkListItem>
+          </BpkList>
+        </section>
+      ),
+      web: (
+        <section>
+          <Paragraph>
+            When designing for web, use <strong>SF UI Text</strong>.
+          </Paragraph>
+          <BpkList>
+            <BpkListItem>Regular</BpkListItem>
+            <BpkListItem>Bold (for emphasised text)</BpkListItem>
+          </BpkList>
+        </section>
+      ),
+    },
   },
   {
     id: 'font-size',
