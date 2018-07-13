@@ -15,17 +15,25 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-const { spawn } = require('child_process');
+const { command, rawCommand } = require('../utils');
 
 const recordSimulator = fileName =>
-  spawn('xcrun', [
+  rawCommand(
+    'xcrun',
     'simctl',
     'io',
     'booted',
     'recordVideo',
     '--type=fmp4',
     fileName,
-  ]);
+  );
+
+const optimiseRecordedVideo = filename => {
+  command(`scripts/video/convert-to-mp4.sh`, filename).catch(error => {
+    console.error(error); // eslint-disable-line no-console
+    command(`rm -rf ${filename}`);
+  });
+};
 
 class Recorder {
   constructor(filePath) {
@@ -40,6 +48,7 @@ class Recorder {
   finishRecording() {
     this.handle.kill('SIGINT');
     this.handle = null;
+    optimiseRecordedVideo(this.filePath);
   }
 }
 

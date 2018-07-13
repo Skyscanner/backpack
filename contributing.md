@@ -114,11 +114,11 @@ $ANDROID_SDK_ROOT/tools/bin/avdmanager create avd --name "bpk-avd-min" --package
 
 #### Detox
 
-Backpack uses [Detox](https://github.com/wix/detox) for e2e testing of React Native components, it requires `applesimutils` to be installed, this can be added by running
+Backpack uses [Detox](https://github.com/wix/detox) for e2e testing of React Native components, which requires `applesimutils` and `ffmpeg` to be installed:
 
 ```
 brew tap wix/brew
-brew install applesimutils
+brew install applesimutils ffmpeg
 ```
 
 for any issue with Detox please refer the the [offical documentation](https://github.com/wix/detox/tree/master/docs).
