@@ -5,60 +5,24 @@ env:
   global:
     - NPM_CONFIG_LOGLEVEL=warn
     - secure: lpcZNywBxi9I7Zy8wpgq4y5cMT3WJhRuswT/AEILAoKKD4utAH1ibLigjcYTjXai2oHP8hH8e2BBvAibJtfWVlFUaaXWk1RrR7Zs8ligdpQkmKOUB7m41xj2JiYFn3DNntAd21Gvu8zq+SlY2TG50VjQmWOkVf49Yq6/ED3nQ6r352dV6II0e+Qm99+VA9em1QYGLI2jiAZVpgMXOCw3jHrtusVMAyrwPHixrpw1TvoflvHTMLlAxeaa4MyBxy6+qBEjacXxQvi8+OGYNyi7zLYxijTUMqJwVB8L9uLgrUQbWP8HA3QzCnKAim/SADsgoMPYxWBQk45mdgJptznZVrQON4gL222LZrSuuwGK4OVu132hrDRHnKJ8bQS95WvpQkPTE6Yh3rDAuAMprrEIJt4c4WhyXovo9165aG03AqkqeSIQOmCXPFld2+qzqnI+V+QsocDhtsz29kCEHjjLUbxg0GzW8JfBFSjVW38FebvPfz8dOhj1osNIIjKxi8Twdtx8knfuHkEb6q2Fp3nvDhUPai/1FXdiNo+/Jz1FcPvDuAaa7hCj1ZRos5Ce/iJJwndgal5PLFdr5lwkm2Jd7iYYwv7tPStFSX42tuSf92LZns/hHDGTI439eu3/lryCoByG/+98qa+iIRmjLyesbfn0+0PQMjSfyo3Gwe8rtnQ=
-
-
-jobs:
-  include:
-    - stage: build shared cache
-      script:
-        - npm install -g greenkeeper-lockfile@1
-        - greenkeeper-lockfile-update
-        - npm install
-        - npm run build
-        - greenkeeper-lockfile-upload
-
-    - stage: parallel task
-      script:
-        - npm run lint
-
-    - stage: parallel task
-      install: npm run bootstrap
-      script:
-        - npm run check-bpk-dependencies
-
-    - stage: parallel task
-      script:
-        - ./scripts/check-pristine-state package-lock.json
-        - npm run danger
-
-    - stage: parallel task
-      install: npm run bootstrap
-      script:
-        - npm run jest
-
-    - stage: parallel task
-      install: npm run bootstrap
-      script:
-        - npm run test:native
-
-    - stage: parallel task
-      install: npm run bootstrap
-      script:
-        - npm run docs:dist
-        - if [ "$TRAVIS_BRANCH" == 'master' ] && [ "$TRAVIS_PULL_REQUEST" == 'false' ]; then npm run storybook:dist; fi
-        - test -e dist/index.html
-        - test -e dist/sassdoc/index.html
-
-    - stage: parallel task
-      install: npm run bootstrap
-      script:
-        - npm run flow
-
+before_install:
+  - npm install -g greenkeeper-lockfile@1
+before_script: greenkeeper-lockfile-update
+after_script: greenkeeper-lockfile-upload
+install:
+  - npm install
+  - npm run build
+script:
+  - set -e
+  - ./scripts/check-pristine-state package-lock.json
+  - npm run danger
+  - npm test
+  - npm run docs:dist
+  - if [ "$TRAVIS_BRANCH" == 'master' ] && [ "$TRAVIS_PULL_REQUEST" == 'false' ]; then npm run storybook:dist; fi
+  - test -e dist/index.html
+  - test -e dist/sassdoc/index.html
 cache:
   directories:
-    - packages/bpk-component-icon
-    - package/bpk-token
-    - native/node_modules
     - node_modules
 branches:
   only:
@@ -67,6 +31,7 @@ branches:
 
 deploy:
   provider: pages
+  skip_cleanup: true
   github_token: $DEPLOY_TOKEN
   on:
     branch: master
