@@ -1,13 +1,10 @@
 {
   "parser": "babel-eslint",
   "extends": [
-      "skyscanner",
-      "prettier",
-      "prettier/react",
+      "skyscanner-with-prettier",
       "plugin:flowtype/recommended"
   ],
   "plugins": [
-    "prettier",
     "flowtype"
   ],
   "env": {
