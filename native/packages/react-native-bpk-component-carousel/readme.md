@@ -37,6 +37,7 @@ export default () => (
   >
     <BpkCarouselItem>
       <WithLoadingBpkImage
+        rounded={false}
         alt="Description of image"
         style={styles.image}
         source={require('./path/to/image.jpg')}
@@ -44,6 +45,7 @@ export default () => (
     </BpkCarouselItem>
     <BpkCarouselItem>
       <WithLoadingBpkImage
+        rounded={false}
         alt="Description of image"
         style={styles.image}
         source={require('./path/to/image.jpg')}
