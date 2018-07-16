@@ -44,6 +44,11 @@ jobs:
     - stage: parallel task
       install: npm run bootstrap
       script:
+        - npm run flow
+
+    - stage: docs
+      install: npm run bootstrap
+      script:
         - npm run docs:dist
         - if [ "$TRAVIS_BRANCH" == 'master' ] && [ "$TRAVIS_PULL_REQUEST" == 'false' ]; then npm run storybook:dist; fi
         - test -e dist/index.html
@@ -59,11 +64,6 @@ jobs:
         repo: backpack/backpack.github.io
         target-branch: master
         verbose: true
-
-    - stage: parallel task
-      install: npm run bootstrap
-      script:
-        - npm run flow
 
 cache:
   directories:
