@@ -59,7 +59,7 @@ configure(() => {
   require('./../packages/bpk-component-breadcrumb/stories');
   require('./../packages/bpk-component-breakpoint/stories');
   require('./../packages/bpk-component-button/stories');
-require('./../packages/bpk-component-calendar-scrollable/stories');
+  require('./../packages/bpk-component-calendar-scrollable/stories');
   require('./../packages/bpk-component-calendar/stories');
   require('./../packages/bpk-component-card/stories');
   require('./../packages/bpk-component-checkbox/stories');
