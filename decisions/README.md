@@ -10,3 +10,4 @@ This directory is a collections of decisions that the squad has made on various 
 * [Component SCSS filenames](component-scss-filenames.md)
 * [How we ignore `eslint` rules](eslint-ignores.md)
 * [Naming convention for theme attributes](theme-props-naming.md)
+* [Parallel Builds in Travis](parallel-builds.md)
