@@ -19,24 +19,24 @@
 
 import React from 'react';
 import renderer from 'react-test-renderer';
-import BpkCalendarScrollable from './BpkCalendarScrollable';
+import BpkScrollableCalendar from './BpkScrollableCalendar';
 
-describe('BpkCalendarScrollable', () => {
+describe('BpkScrollableCalendar', () => {
   it('should render correctly', () => {
-    const tree = renderer.create(<BpkCalendarScrollable />).toJSON();
+    const tree = renderer.create(<BpkScrollableCalendar />).toJSON();
     expect(tree).toMatchSnapshot();
   });
 
   it('should support custom class names', () => {
     const tree = renderer
-      .create(<BpkCalendarScrollable className="custom-classname" />)
+      .create(<BpkScrollableCalendar className="custom-classname" />)
       .toJSON();
     expect(tree).toMatchSnapshot();
   });
 
   it('should support arbitrary props', () => {
     const tree = renderer
-      .create(<BpkCalendarScrollable testID="123" />)
+      .create(<BpkScrollableCalendar testID="123" />)
       .toJSON();
     expect(tree).toMatchSnapshot();
   });

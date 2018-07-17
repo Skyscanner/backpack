@@ -17,9 +17,9 @@
  */
 /* @flow */
 
-import BpkCalendarScrollable, {
-  type Props as BpkCalendarScrollableProps,
-} from './src/BpkCalendarScrollable';
+import BpkScrollableCalendar, {
+  type Props as BpkScrollableCalendarProps,
+} from './src/BpkScrollableCalendar';
 
-export type { BpkCalendarScrollableProps };
-export default BpkCalendarScrollable;
+export type { BpkScrollableCalendarProps };
+export default BpkScrollableCalendar;
