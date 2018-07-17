@@ -23,6 +23,7 @@
     "react-native-bpk-component-text": "^2.1.42",
     "react-native-bpk-component-text-input": "^2.2.20",
     "react-native-bpk-component-touchable-native-feedback": "^1.1.16",
-    "react-native-bpk-component-touchable-overlay": "^1.0.25"
+    "react-native-bpk-component-touchable-overlay": "^1.0.25",
+    "react-native-bpk-component-image": "^1.0.1"
   }
 }

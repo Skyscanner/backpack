@@ -17,10 +17,10 @@
  */
 
 import React from 'react';
-import { Text } from 'react-native';
 import renderer from 'react-test-renderer';
 import BpkThemeProvider from 'react-native-bpk-theming';
 import { spacingSm } from 'bpk-tokens/tokens/base.react.native';
+import BpkText from 'react-native-bpk-component-text';
 
 import BpkButton from './BpkButton';
 import { BUTTON_TYPES, ICON_ALIGNMENTS } from './common-types';
@@ -96,7 +96,7 @@ const commonTests = () => {
         .create(
           <BpkButton
             title="Lorem ipsum"
-            icon={<Text>foo</Text>}
+            icon={<BpkText>foo</BpkText>}
             iconOnly
             onPress={onPressFn}
           />,

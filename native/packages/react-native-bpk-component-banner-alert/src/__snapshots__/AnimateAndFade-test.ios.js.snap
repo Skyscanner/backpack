@@ -29,6 +29,16 @@ exports[`iOS AnimateAndFade should render correctly 1`] = `
       accessible={true}
       allowFontScaling={true}
       ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "rgb(82, 76, 97)",
+            "fontFamily": "System",
+            "fontSize": 15,
+            "fontWeight": "400",
+          },
+        ]
+      }
     >
       Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
     </Text>
@@ -44,6 +54,16 @@ exports[`iOS AnimateAndFade should render correctly 1`] = `
       accessible={true}
       allowFontScaling={true}
       ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "rgb(82, 76, 97)",
+            "fontFamily": "System",
+            "fontSize": 15,
+            "fontWeight": "400",
+          },
+        ]
+      }
     >
       Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
     </Text>
@@ -80,6 +100,16 @@ exports[`iOS AnimateAndFade should render correctly when show is false 1`] = `
       accessible={true}
       allowFontScaling={true}
       ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "rgb(82, 76, 97)",
+            "fontFamily": "System",
+            "fontSize": 15,
+            "fontWeight": "400",
+          },
+        ]
+      }
     >
       Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
     </Text>
@@ -95,6 +125,16 @@ exports[`iOS AnimateAndFade should render correctly when show is false 1`] = `
       accessible={true}
       allowFontScaling={true}
       ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "rgb(82, 76, 97)",
+            "fontFamily": "System",
+            "fontSize": 15,
+            "fontWeight": "400",
+          },
+        ]
+      }
     >
       Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
     </Text>
@@ -131,6 +171,16 @@ exports[`iOS AnimateAndFade should render correctly with animateOnEnter 1`] = `
       accessible={true}
       allowFontScaling={true}
       ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "rgb(82, 76, 97)",
+            "fontFamily": "System",
+            "fontSize": 15,
+            "fontWeight": "400",
+          },
+        ]
+      }
     >
       Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
     </Text>
@@ -146,6 +196,16 @@ exports[`iOS AnimateAndFade should render correctly with animateOnEnter 1`] = `
       accessible={true}
       allowFontScaling={true}
       ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "rgb(82, 76, 97)",
+            "fontFamily": "System",
+            "fontSize": 15,
+            "fontWeight": "400",
+          },
+        ]
+      }
     >
       Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
     </Text>
@@ -182,6 +242,16 @@ exports[`iOS AnimateAndFade should render correctly with animateOnLeave 1`] = `
       accessible={true}
       allowFontScaling={true}
       ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "rgb(82, 76, 97)",
+            "fontFamily": "System",
+            "fontSize": 15,
+            "fontWeight": "400",
+          },
+        ]
+      }
     >
       Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
     </Text>
@@ -197,6 +267,16 @@ exports[`iOS AnimateAndFade should render correctly with animateOnLeave 1`] = `
       accessible={true}
       allowFontScaling={true}
       ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "rgb(82, 76, 97)",
+            "fontFamily": "System",
+            "fontSize": 15,
+            "fontWeight": "400",
+          },
+        ]
+      }
     >
       Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
     </Text>

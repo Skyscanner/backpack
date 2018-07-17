@@ -1509,6 +1509,16 @@ exports[`Android BpkButton should support elements as icons 1`] = `
       accessible={true}
       allowFontScaling={true}
       ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "rgb(82, 76, 97)",
+            "fontFamily": "sans-serif",
+            "fontSize": 16,
+            "fontWeight": "400",
+          },
+        ]
+      }
     >
       foo
     </Text>

@@ -159,7 +159,7 @@ class BpkImage extends Component<BpkImageProps> {
             </CSSTransition>
           )}
           {inView && (
-            <Image
+            <Image // eslint-disable-line backpack/use-components
               hidden={loading}
               altText={altText}
               onImageLoad={this.onImageLoad}
@@ -169,7 +169,7 @@ class BpkImage extends Component<BpkImageProps> {
           {typeof window === 'undefined' &&
             (!inView || loading) && (
               <noscript>
-                <Image
+                <Image // eslint-disable-line backpack/use-components
                   altText={altText}
                   onImageLoad={this.onImageLoad}
                   {...rest}

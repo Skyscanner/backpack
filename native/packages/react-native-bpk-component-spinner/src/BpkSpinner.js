@@ -76,6 +76,7 @@ const BpkSpinner = props => {
   }
 
   return (
+    // eslint-disable-next-line backpack/use-components
     <ActivityIndicator
       color={getSpinnerColor(themeAttributes, type)}
       size={small ? 'small' : 'large'}

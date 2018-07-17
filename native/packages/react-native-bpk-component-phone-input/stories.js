@@ -138,7 +138,9 @@ class StatefulBpkDialingCodeList extends React.Component<
           this.setState({ selectedId: item.id });
         }}
         renderFlag={item => (
-          <Image source={{ uri: getFlagUriFromCountryCode(item.id) }} />
+          <Image // eslint-disable-line backpack/use-components
+            source={{ uri: getFlagUriFromCountryCode(item.id) }}
+          />
         )}
       />
     );
@@ -183,6 +185,7 @@ class FullyIntegrated extends React.Component<
   };
 
   renderFlag = item => (
+    // eslint-disable-next-line backpack/use-components
     <Image source={{ uri: getFlagUriFromCountryCode(item.id) }} />
   );
 
@@ -242,7 +245,9 @@ storiesOf('react-native-bpk-component-phone-input/BpkPhoneNumberInput', module)
       keyboardType="phone-pad"
       dialingCode={{ dialingCode: '+61', id: 'au', name: 'Australia' }}
       renderFlag={() => (
-        <Image source={{ uri: getFlagUriFromCountryCode('AU') }} />
+        <Image // eslint-disable-line backpack/use-components
+          source={{ uri: getFlagUriFromCountryCode('AU') }}
+        />
       )}
       onDialingCodePress={action('Dialing code pressed')}
     />
@@ -254,7 +259,9 @@ storiesOf('react-native-bpk-component-phone-input/BpkPhoneNumberInput', module)
       keyboardType="phone-pad"
       dialingCode={{ dialingCode: '+61', id: 'au', name: 'Australia' }}
       renderFlag={() => (
-        <Image source={{ uri: getFlagUriFromCountryCode('AU') }} />
+        <Image // eslint-disable-line backpack/use-components
+          source={{ uri: getFlagUriFromCountryCode('AU') }}
+        />
       )}
       editable={false}
       onDialingCodePress={action('Dialing code pressed')}

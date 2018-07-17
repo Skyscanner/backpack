@@ -17,8 +17,8 @@
  */
 
 import React from 'react';
-import { Image } from 'react-native';
 import renderer from 'react-test-renderer';
+import { Image } from 'react-native';
 import BpkFlatListItem from './BpkFlatListItem';
 
 const onPressFn = jest.fn();
@@ -48,7 +48,7 @@ const commonTests = () => {
           <BpkFlatListItem
             title="List item"
             onPress={onPressFn}
-            image={<Image />}
+            image={<Image />} // eslint-disable-line backpack/use-components
           />,
         )
         .toJSON();

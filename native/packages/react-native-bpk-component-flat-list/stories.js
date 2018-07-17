@@ -95,6 +95,7 @@ class StatefulBpkFlatList extends React.Component<{
       selected={this.state.selectedCountry === item.id}
       image={
         this.props.showImages ? (
+          // eslint-disable-next-line backpack/use-components
           <Image
             source={{ uri: getFlagUriFromCountryCode(item.id) }}
             style={styles.image}

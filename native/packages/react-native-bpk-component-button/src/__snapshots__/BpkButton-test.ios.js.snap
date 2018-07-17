@@ -1506,6 +1506,16 @@ exports[`iOS BpkButton should support elements as icons 1`] = `
       accessible={true}
       allowFontScaling={true}
       ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "rgb(82, 76, 97)",
+            "fontFamily": "System",
+            "fontSize": 15,
+            "fontWeight": "400",
+          },
+        ]
+      }
     >
       foo
     </Text>

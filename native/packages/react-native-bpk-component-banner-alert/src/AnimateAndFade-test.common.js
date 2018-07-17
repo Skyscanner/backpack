@@ -19,12 +19,12 @@
 /* @flow */
 
 import React from 'react';
-import { Text } from 'react-native';
 import renderer from 'react-test-renderer';
+import BpkText from 'react-native-bpk-component-text';
 import AnimateAndFade from './AnimateAndFade';
 
 const child = (
-  <Text>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</Text>
+  <BpkText>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</BpkText>
 );
 
 const commonTests = () => {

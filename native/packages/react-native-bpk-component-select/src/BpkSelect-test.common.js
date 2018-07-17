@@ -22,7 +22,7 @@ import TestRenderer from 'react-test-renderer';
 import { spacingSm } from 'bpk-tokens/tokens/base.react.native';
 import BpkSelect from './BpkSelect';
 
-const Image = 'Image';
+const FakeImage = 'Image';
 
 const commonTests = () => {
   describe('BpkSelect', () => {
@@ -73,7 +73,7 @@ const commonTests = () => {
 
     it('should render correctly with "showImage" and image', () => {
       const testRenderer = TestRenderer.create(
-        <BpkSelect onPress={emptyFn} showImage image={<Image />} />,
+        <BpkSelect onPress={emptyFn} showImage image={<FakeImage />} />,
       );
       expect(testRenderer.toJSON()).toMatchSnapshot();
     });

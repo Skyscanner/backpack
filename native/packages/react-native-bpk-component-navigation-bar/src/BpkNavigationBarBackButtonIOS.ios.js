@@ -59,6 +59,8 @@ const BpkNavigationBarBackButtonIOS = (props: Props) => {
       accessible
       style={styles.button}
     >
+      {/* TODO: replace with BpkImage */}
+      {/* eslint-disable-next-line backpack/use-components */}
       <Image
         source={chevron}
         style={[styles.backIcon, { tintColor: tintColorFinal }]}

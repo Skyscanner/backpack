@@ -5,6 +5,16 @@ exports[`iOS BpkThemeProvider should render correctly 1`] = `
   accessible={true}
   allowFontScaling={true}
   ellipsizeMode="tail"
+  style={
+    Array [
+      Object {
+        "color": "rgb(82, 76, 97)",
+        "fontFamily": "System",
+        "fontSize": 15,
+        "fontWeight": "400",
+      },
+    ]
+  }
 >
   Lorem ipsum
 </Text>
