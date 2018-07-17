@@ -2,7 +2,7 @@
 
 [Unreleased changes](./unreleased.md).
 
-# 2018-07-16 - Bug fixes
+# 2018-07-17 - Bug fixes
 
 **Fixed:**
 - bpk-component-infinite-scroll: 1.0.5 => 1.0.6
