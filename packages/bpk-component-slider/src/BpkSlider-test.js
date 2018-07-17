@@ -20,6 +20,8 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import BpkSlider from './BpkSlider';
 
+jest.mock('react-slider', () => 'react-slider');
+
 describe('BpkSlider', () => {
   it('should render correctly', () => {
     const tree = renderer

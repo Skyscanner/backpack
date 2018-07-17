@@ -9,3 +9,6 @@
 
 - react-native-bpk-horizontal-nav:
   - `BpkHorizontalNav` now displays correctly when using RTL.
+
+- bpk-component-slider:
+  - Fixed a bug where the handle would get stuck at the minimum value by upgrading `react-slider`. See [`react-slider#136`](https://github.com/mpowaga/react-slider/issues/136).
