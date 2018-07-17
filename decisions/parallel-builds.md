@@ -1,26 +1,26 @@
 # Parallel Builds
 
 ## Decision
-For the time being there is no real benefit on parallelising the build steps in travis, so the CI will remain a serial flow.
+For the time being there is no real benefit on parallelising the build steps in Travis, so the CI will remain a serial flow.
 
 ### Idea
-Travis CI has a beta feature to launch job in parallel cutting down the amount of time the whole build process takes, with an inital PoC the time was cut in half, jolly good!
+Travis CI has a beta feature to launch jobs in parallel, cutting down the amount of time the whole build process takes. With an initial PoC the time was cut in half, jolly good!
 
 ### Problems
-when it came down to make production ready, some issues were found:
+When it came down to make the PoC production ready, some issues were found:
 
 - Caching
-  - Our monorepo relies on Lerna to create symlinks to the different packages, unfortunately symlinks are not cached by travis so the command `npm run bootrsap` needs to run in every parallel job, it take rougly 120 seconds to complete so each parallel job has 2 minutes of overhead
-- Doc Site
-  - When building and testing the docs site, all the test needs to pass so this step cannot run in parallel and needs to wait for the other jobs to finish before starting
+  - Our monorepo relies on Lerna to create symlinks to the different packages, unfortunately symlinks are not cached by travis so the command `npm run bootstrap` needs to run in every parallel job. It takes roughly 120 seconds to complete, so each parallel job has 2 minutes of overhead.
+- Docs site
+  - When building and testing the docs site, all the tests needs to pass. So, this step cannot run in parallel and needs to wait for the other jobs to finish before starting.
 
-The overhead of each task and the docs site running as last step are making the total build time the same if not worse than what we currently have.
+The overhead of each task and the docs site running as the last step are making the total build time the same if not worse than what we currently have.
 
 ### Conclusion
-Having no discernible difference between the current time and the proposed solution the YAGNI approach was chosen, if the CI will increase in the future parallelising the builds could be a viable solution
+Having no discernible difference between the current time and the proposed solution, the YAGNI approach was chosen. If the CI time increases in the future parallelising the builds could be a viable solution.
 
 ### Reference
-The `.travis.yml` parallel buils were structured like this:
+The `.travis.yml` parallel builds were structured like this:
 
 ```yml
 [...]
