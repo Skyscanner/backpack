@@ -19,6 +19,7 @@
   },
   "devDependencies": {
     "bpk-tokens": "^27.0.4",
-    "react-native-bpk-component-button": "^7.0.5"
+    "react-native-bpk-component-button": "^7.0.5",
+    "react-native-bpk-component-text": "^2.1.42"
   }
 }

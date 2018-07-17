@@ -124,7 +124,7 @@ class StatefulBpkSectionList extends React.Component<{
       selected={this.state.selectedAirport === item.id}
       image={
         this.props.showImages ? (
-          <Image
+          <Image // eslint-disable-line backpack/use-components
             source={{ uri: getFlagUriFromCountryCode(section.country) }}
             style={styles.image}
           />

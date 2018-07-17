@@ -31,6 +31,7 @@ const commonTests = () => {
     });
 
     it('should render correctly with an image', () => {
+      // eslint-disable-next-line backpack/use-components
       const tree = renderer.create(<BpkFlag flag={<Image />} />).toJSON();
       expect(tree).toMatchSnapshot();
     });

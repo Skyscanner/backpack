@@ -19,7 +19,7 @@
 /* @flow */
 
 import React from 'react';
-import { Text } from 'react-native';
+import BpkText from 'react-native-bpk-component-text';
 
 import { iconPropType, themePropType } from './utils';
 
@@ -43,7 +43,7 @@ describe('utils', () => {
         iconPropType(
           {
             iconOnly: true,
-            icon: <Text>foo</Text>,
+            icon: <BpkText>foo</BpkText>,
           },
           'icon',
           'BpkButton',

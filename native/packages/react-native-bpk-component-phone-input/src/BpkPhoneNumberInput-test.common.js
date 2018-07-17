@@ -17,8 +17,8 @@
  */
 /* @flow */
 import React from 'react';
-import { Image } from 'react-native';
 import renderer from 'react-test-renderer';
+import { Image } from 'react-native';
 import BpkPhoneNumberInput from './BpkPhoneNumberInput';
 
 const onPressFn = jest.fn();
@@ -38,7 +38,7 @@ const commonTests = () => {
               name: 'United Kingdom',
             }}
             onDialingCodePress={onPressFn}
-            renderFlag={() => <Image />}
+            renderFlag={() => <Image />} // eslint-disable-line backpack/use-components
             editable
           />,
         )
@@ -58,7 +58,7 @@ const commonTests = () => {
               name: 'United Kingdom',
             }}
             onDialingCodePress={onPressFn}
-            renderFlag={() => <Image />}
+            renderFlag={() => <Image />} // eslint-disable-line backpack/use-components
             editable={false}
           />,
         )

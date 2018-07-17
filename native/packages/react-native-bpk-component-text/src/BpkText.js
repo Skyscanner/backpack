@@ -120,6 +120,7 @@ const BpkText = (props: Props) => {
   }
 
   return (
+    // eslint-disable-next-line backpack/use-components
     <Text style={style} {...rest}>
       {children}
     </Text>

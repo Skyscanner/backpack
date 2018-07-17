@@ -17,9 +17,10 @@
  */
 
 import React from 'react';
-import { View, StyleSheet, Text } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 import { storiesOf } from '@storybook/react-native';
 import { spacingBase } from 'bpk-tokens/tokens/base.react.native';
+import BpkText from 'react-native-bpk-component-text';
 import BpkStarRating, { BpkStar, STAR_TYPES } from './index';
 import CenterDecorator from '../../storybook/CenterDecorator';
 
@@ -36,52 +37,52 @@ storiesOf('react-native-bpk-component-star-rating/BpkStarRating', module)
   .add('docs:default', () => (
     <View>
       <View style={styles.container}>
-        <Text>0 out of 5</Text>
+        <BpkText>0 out of 5</BpkText>
         <StarRating rating={0} />
       </View>
       <View style={styles.container}>
-        <Text>2.5 out of 5</Text>
+        <BpkText>2.5 out of 5</BpkText>
         <StarRating rating={2.5} />
       </View>
       <View style={styles.container}>
-        <Text>5 out of 5</Text>
+        <BpkText>5 out of 5</BpkText>
         <StarRating rating={5} />
       </View>
     </View>
   ))
   .add('Full Stars', () => (
     <View style={styles.container}>
-      <Text>5 out of 5</Text>
+      <BpkText>5 out of 5</BpkText>
       <StarRating rating={5} />
     </View>
   ))
   .add('Empty Stars', () => (
     <View style={styles.container}>
-      <Text>0 out of 5</Text>
+      <BpkText>0 out of 5</BpkText>
       <StarRating rating={0} />
     </View>
   ))
   .add('3 Stars Rating', () => (
     <View style={styles.container}>
-      <Text>3 out of 5</Text>
+      <BpkText>3 out of 5</BpkText>
       <StarRating rating={3} />
     </View>
   ))
   .add('3 1/2 Stars Rating', () => (
     <View style={styles.container}>
-      <Text>3.5 out of 5</Text>
+      <BpkText>3.5 out of 5</BpkText>
       <StarRating rating={3.5} />
     </View>
   ))
   .add('3.3 Stars', () => (
     <View style={styles.container}>
-      <Text>3.3 out of 5</Text>
+      <BpkText>3.3 out of 5</BpkText>
       <StarRating rating={3.3} />
     </View>
   ))
   .add('3.7 Stars', () => (
     <View style={styles.container}>
-      <Text>3.7 out of 5</Text>
+      <BpkText>3.7 out of 5</BpkText>
       <StarRating rating={3.7} />
     </View>
   ));
@@ -90,19 +91,19 @@ storiesOf('react-native-bpk-component-star-rating/BpkStar', module)
   .addDecorator(CenterDecorator)
   .add('Full', () => (
     <View style={styles.container}>
-      <Text>Full Star</Text>
+      <BpkText>Full Star</BpkText>
       <BpkStar type={STAR_TYPES.FULL} />
     </View>
   ))
   .add('Half', () => (
     <View style={styles.container}>
-      <Text>Half Star</Text>
+      <BpkText>Half Star</BpkText>
       <BpkStar type={STAR_TYPES.HALF} />
     </View>
   ))
   .add('Empty', () => (
     <View style={styles.container}>
-      <Text>Empty Star</Text>
+      <BpkText>Empty Star</BpkText>
       <BpkStar type={STAR_TYPES.EMPTY} />
     </View>
   ));

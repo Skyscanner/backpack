@@ -47,6 +47,7 @@ const BpkTouchableNativeFeedback = (props: Props) => {
   }
 
   return (
+    // eslint-disable-next-line backpack/use-components
     <TouchableNativeFeedback style={style} background={background} {...rest}>
       {React.Children.only(children)}
     </TouchableNativeFeedback>
