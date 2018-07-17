@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BpkScrollableCalendar should render correctly 1`] = `
+<div
+  className="bpk-scrollable-calendar"
+>
+  I am an example component.
+</div>
+`;
+
+exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
+<div
+  className="bpk-scrollable-calendar"
+  testID="123"
+>
+  I am an example component.
+</div>
+`;
+
+exports[`BpkScrollableCalendar should support custom class names 1`] = `
+<div
+  className="bpk-scrollable-calendar custom-classname"
+>
+  I am an example component.
+</div>
+`;
