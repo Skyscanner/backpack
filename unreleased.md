@@ -7,3 +7,5 @@
 - react-native-bpk-component-image:
   - Fixed `source` type to accept the same values as the `Image` component.
 
+- react-native-bpk-horizontal-nav:
+  - `BpkHorizontalNav` now displays correctly when using RTL.

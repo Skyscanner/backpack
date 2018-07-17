@@ -16,7 +16,13 @@
  * limitations under the License.
  */
 
-import { ScrollView, StyleSheet, View, ViewPropTypes } from 'react-native';
+import {
+  I18nManager,
+  ScrollView,
+  StyleSheet,
+  View,
+  ViewPropTypes,
+} from 'react-native';
 import React from 'react';
 import PropTypes from 'prop-types';
 import {
@@ -50,6 +56,9 @@ const styles = StyleSheet.create({
   },
   innerSpaceAround: {
     justifyContent: 'space-around',
+  },
+  indicatorWrapper: {
+    flexDirection: I18nManager.isRTL ? 'row-reverse' : 'row',
   },
 });
 
@@ -121,10 +130,12 @@ class BpkHorizontalNav extends React.Component {
         return null;
       }
       return (
-        <AnimatedIndicator
-          xOffset={this.state.indicatorOffsetX}
-          width={this.state.indicatorWidth}
-        />
+        <View style={styles.indicatorWrapper}>
+          <AnimatedIndicator
+            xOffset={this.state.indicatorOffsetX}
+            width={this.state.indicatorWidth}
+          />
+        </View>
       );
     };
 
