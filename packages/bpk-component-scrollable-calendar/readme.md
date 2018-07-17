@@ -1,20 +1,20 @@
-# bpk-component-calendar-scrollable
+# bpk-component-scrollable-calendar
 
-> Backpack example component.
+> Backpack scrollable calendar component.
 
 ## Installation
 
 ```sh
-npm install bpk-component-calendar-scrollable --save-dev
+npm install bpk-component-scrollable-calendar --save-dev
 ```
 
 ## Usage
 
 ```js
 import React from 'react';
-import BpkCalendarScrollable from 'bpk-component-code';
+import BpkScrollableCalendar from 'bpk-component-code';
 
-export default () => <BpkCalendarScrollable />;
+export default () => <BpkScrollableCalendar />;
 ```
 
 ## Props

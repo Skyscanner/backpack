@@ -17,11 +17,34 @@
  */
 /* @flow */
 
+import PropTypes from 'prop-types';
 import React from 'react';
-import { storiesOf } from '@storybook/react';
+import { cssModules } from '../../bpk-react-utils';
 
-import BpkCalendarScrollable from './index';
+import STYLES from './BpkScrollableCalendar.scss';
 
-storiesOf('bpk-component-calendar-scrollable', module).add('Default', () => (
-  <BpkCalendarScrollable />
-));
+const getClassName = cssModules(STYLES);
+
+export type Props = {
+  className: ?string,
+};
+const BpkScrollableCalendar = (props: Props) => {
+  const { className, ...rest } = props;
+  const classNames = getClassName('bpk-scrollable-calendar', className);
+
+  return (
+    <div className={classNames} {...rest}>
+      I am an example component.
+    </div>
+  );
+};
+
+BpkScrollableCalendar.propTypes = {
+  className: PropTypes.string,
+};
+
+BpkScrollableCalendar.defaultProps = {
+  className: null,
+};
+
+export default BpkScrollableCalendar;
