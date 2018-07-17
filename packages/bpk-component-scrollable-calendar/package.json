@@ -1,8 +1,8 @@
 {
-  "name": "bpk-component-calendar-scrollable",
+  "name": "bpk-component-scrollable-calendar",
   "version": "0.0.0",
   "private": true,
-  "description": "Backpack calendar-scrollable component.",
+  "description": "Backpack scrollable calendar component.",
   "main": "index.js",
   "repository": {
     "type": "git",

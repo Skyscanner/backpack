@@ -25,14 +25,19 @@ import STYLES from './withDescription.scss';
 
 const getClassName = cssModules(STYLES);
 
-export default function withDescription(Component: ComponentType<any>, description: string): ComponentType<any> {
+export default function withDescription(
+  Component: ComponentType<any>,
+  description: string,
+): ComponentType<any> {
   const WithDescription = props => {
     const { children, ...rest } = props;
 
     return (
       <span>
         <Component {...rest}>{children}</Component>
-        <span className={getClassName('bpk-icon-description')}>{description}</span>
+        <span className={getClassName('bpk-icon-description')}>
+          {description}
+        </span>
       </span>
     );
   };
