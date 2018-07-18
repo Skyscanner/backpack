@@ -39,6 +39,7 @@ import {
   commonPropTypes,
   commonDefaultProps,
   BUTTON_TYPES,
+  ICON_ALIGNMENTS,
 } from './common-types';
 
 export type Props = {
@@ -124,3 +125,4 @@ BpkButton.defaultProps = {
 };
 
 export default withTheme(BpkButton);
+export { BUTTON_TYPES, ICON_ALIGNMENTS };

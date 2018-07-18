@@ -25,7 +25,7 @@ pod 'BVLinearGradient', :path => '../node_modules/react-native-bpk-component-but
 ```js
 import { StyleSheet, View } from 'react-native';
 import React, { Component } from 'react';
-import BpkButton from 'react-native-bpk-component-button';
+import BpkButton, { BUTTON_TYPES, ICON_ALIGNMENTS } from 'react-native-bpk-component-button';
 import { spacingBase } from 'bpk-tokens/tokens/base.react.native';
 
 const styles = StyleSheet.create({
@@ -41,42 +41,42 @@ export default class App extends Component {
     return (
       <View style={styles.container}>
         <BpkButton
-          type="primary"
+          type={BUTTON_TYPES.primary}
           title="Book flight"
           onPress={() => {}}
         />
         <BpkButton
-          type="featured"
+          type={BUTTON_TYPES.featured}
           title="Book flight"
           onPress={() => {}}
         />
         <BpkButton
           disabled
-          type="destructive"
+          type={BUTTON_TYPES.destructive}
           title="Book flight"
           onPress={() => {}}
         />
         <BpkButton
           large
-          type="primary"
+          type={BUTTON_TYPES.primary}
           title="Book flight"
           onPress={() => {}}
         />
         <BpkButton
-          type="featured"
-          title="Book flight"
-          icon="baggage"
-          onPress={() => {}}
-        />
-        <BpkButton
-          type="primary"
+          type={BUTTON_TYPES.featured}
           title="Book flight"
           icon="baggage"
-          iconAlignment="leading"
           onPress={() => {}}
         />
         <BpkButton
-          type="featured"
+          type={BUTTON_TYPES.primary}
+          title="Book flight"
+          icon="baggage"
+          iconAlignment={ICON_ALIGNMENTS.leading}
+          onPress={() => {}}
+        />
+        <BpkButton
+          type={BUTTON_TYPES.featured}
           title="Book flight"
           icon="baggage"
           iconOnly
@@ -97,7 +97,7 @@ export default class App extends Component {
 | accessibilityLabel    | string                                                                    | false    | props.title   |
 | disabled              | bool                                                                      | false    | false         |
 | icon                  | oneOf(string, element) Strings must be a [BpkIcon](/components/web/icons) | false    | null          |
-| iconAlignment         | oneOf('leading', 'trailing')                                              | false    | trailing      |
+| iconAlignment         | oneOf('leading', 'trailing', 'centerLeading', 'centerTrailing')           | false    | trailing      |
 | iconOnly (iOS only)   | bool                                                                      | false    | false         |
 | large (iOS only)      | bool                                                                      | false    | false         |
 | theme                 | See [Theme Props](#theme-props) below                                     | false    | null          |

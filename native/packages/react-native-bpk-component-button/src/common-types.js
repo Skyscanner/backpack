@@ -18,7 +18,7 @@
 
 /* @flow */
 
-import { ViewPropTypes } from 'react-native';
+import { ViewPropTypes, type StyleObj } from 'react-native';
 import { type Node } from 'react';
 import PropTypes from 'prop-types';
 import { type Theme } from 'react-native-bpk-theming';
@@ -35,6 +35,8 @@ export const BUTTON_TYPES = {
 export const ICON_ALIGNMENTS = {
   leading: 'leading',
   trailing: 'trailing',
+  centerLeading: 'centerLeading',
+  centerTrailing: 'centerTrailing',
 };
 
 export type CommonProps = {
@@ -43,7 +45,7 @@ export type CommonProps = {
   accessibilityLabel: ?string,
   disabled: boolean,
   icon: ?Node,
-  style: ?(Object | Array<Object>),
+  style: ?StyleObj,
   type: $Keys<typeof BUTTON_TYPES>,
   theme: ?Theme,
   iconAlignment: $Keys<typeof ICON_ALIGNMENTS>,

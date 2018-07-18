@@ -27,8 +27,7 @@ import { icons } from 'react-native-bpk-component-icon';
 import { spacingMd } from 'bpk-tokens/tokens/base.react.native';
 import BpkText from 'react-native-bpk-component-text';
 
-import BpkButton from './index';
-import { BUTTON_TYPES } from './src/common-types';
+import BpkButton, { BUTTON_TYPES, ICON_ALIGNMENTS } from './index';
 import themeAttributes from '../../storybook/themeAttributes';
 import { StoryHeading, StorySubheading } from '../../storybook/TextStyles';
 import CenterDecorator from '../../storybook/CenterDecorator';
@@ -42,6 +41,9 @@ const styles = StyleSheet.create({
   buttonStyles: {
     marginBottom: spacingMd,
     marginRight: spacingMd,
+  },
+  bottomMargin: {
+    marginBottom: spacingMd,
   },
 });
 
@@ -159,9 +161,9 @@ const allThemedButtons = (
   <BpkThemeProvider theme={themeAttributes}>
     <View>
       <StoryHeading>Primary</StoryHeading>
-      {generateButtonStoryForType('primary')}
+      {generateButtonStoryForType(BUTTON_TYPES.primary)}
       <StoryHeading>Secondary</StoryHeading>
-      {generateButtonStoryForType('secondary')}
+      {generateButtonStoryForType(BUTTON_TYPES.secondary)}
     </View>
   </BpkThemeProvider>
 );
@@ -181,6 +183,21 @@ storiesOf('react-native-bpk-component-button', module)
     <View>{generateButtonStoryForType('featured')}</View>
   ))
   .add('docs:withTheme', () => allThemedButtons)
+  .add('Icon alignments', () => (
+    <View>
+      {Object.keys(ICON_ALIGNMENTS).map(iconAlignment => (
+        <BpkButton
+          key={iconAlignment}
+          iconAlignment={iconAlignment}
+          title={iconAlignment}
+          icon="star"
+          type={BUTTON_TYPES.primary}
+          onPress={action(`${iconAlignment} button pressed.`)}
+          style={styles.bottomMargin}
+        />
+      ))}
+    </View>
+  ))
   .add('All Button Types', () => (
     <ScrollView>
       <StoryHeading>All Types</StoryHeading>
