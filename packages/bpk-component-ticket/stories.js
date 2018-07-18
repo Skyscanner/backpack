@@ -117,6 +117,16 @@ storiesOf('bpk-component-ticket', module)
       nascetur ridiculus mus.
     </BpkTicket>
   ))
+  .add('With a "href" prop', () => (
+    <BpkTicket stub="Lorem ipsum dolor sit amet." href="#">
+      Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
+      ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis
+      dis parturient montes, nascetur ridiculus mus. Lorem ipsum dolor sit amet,
+      consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean
+      massa. Cum sociis natoque penatibus et magnis dis parturient montes,
+      nascetur ridiculus mus.
+    </BpkTicket>
+  ))
   /* eslint-disable react/no-array-index-key */
   .add('Day view', () => (
     <div style={{ margin: '0 auto', maxWidth: '800px' }}>
