@@ -285,6 +285,279 @@ exports[`Android BpkButton should render correctly 1`] = `
 </View>
 `;
 
+exports[`Android BpkButton should render correctly with iconAlignment="centerLeading" 1`] = `
+<View
+  style={
+    Array [
+      Array [
+        Object {
+          "borderRadius": 40,
+          "height": 36,
+        },
+        undefined,
+      ],
+      null,
+    ]
+  }
+>
+  <View
+    accessibilityComponentType="button"
+    accessibilityLabel="Lorem ipsum"
+    accessibilityTraits={
+      Array [
+        "button",
+      ]
+    }
+    accessible={true}
+    hasTVPreferredFocus={undefined}
+    hitSlop={undefined}
+    isTVSelectable={true}
+    nativeBackgroundAndroid={
+      Object {
+        "attribute": "selectableItemBackgroundBorderless",
+        "type": "ThemeAttrAndroid",
+      }
+    }
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Array [
+        Array [
+          Object {
+            "borderRadius": 40,
+            "height": 36,
+            "paddingHorizontal": 12,
+            "paddingVertical": 8,
+          },
+          undefined,
+        ],
+        Object {
+          "backgroundColor": "rgb(0, 215, 117)",
+        },
+        Array [
+          Object {
+            "alignItems": "center",
+            "flex": 1,
+            "flexDirection": "row",
+            "justifyContent": "center",
+          },
+          Object {
+            "flexDirection": "row-reverse",
+          },
+        ],
+      ]
+    }
+    testID={undefined}
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "rgb(82, 76, 97)",
+            "fontFamily": "sans-serif",
+            "fontSize": 14,
+            "fontWeight": "400",
+          },
+          Object {
+            "fontFamily": "sans-serif-medium",
+          },
+          Array [
+            Array [
+              Object {
+                "backgroundColor": "transparent",
+                "color": "rgb(255, 255, 255)",
+              },
+              undefined,
+            ],
+            Object {},
+          ],
+        ]
+      }
+    >
+      LOREM IPSUM
+    </Text>
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "rgb(82, 76, 97)",
+            "fontFamily": "BpkIcon",
+            "fontSize": 24,
+            "includeFontPadding": false,
+          },
+          Object {
+            "fontSize": 16,
+          },
+          Array [
+            Array [
+              Object {
+                "backgroundColor": "transparent",
+                "color": "rgb(255, 255, 255)",
+              },
+              undefined,
+            ],
+            Object {},
+            Array [
+              Object {
+                "marginLeft": 4,
+              },
+              Object {
+                "marginLeft": 0,
+                "marginRight": 4,
+              },
+            ],
+          ],
+        ]
+      }
+    >
+      
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`Android BpkButton should render correctly with iconAlignment="centerTrailing" 1`] = `
+<View
+  style={
+    Array [
+      Array [
+        Object {
+          "borderRadius": 40,
+          "height": 36,
+        },
+      ],
+      null,
+    ]
+  }
+>
+  <View
+    accessibilityComponentType="button"
+    accessibilityLabel="Lorem ipsum"
+    accessibilityTraits={
+      Array [
+        "button",
+      ]
+    }
+    accessible={true}
+    hasTVPreferredFocus={undefined}
+    hitSlop={undefined}
+    isTVSelectable={true}
+    nativeBackgroundAndroid={
+      Object {
+        "attribute": "selectableItemBackgroundBorderless",
+        "type": "ThemeAttrAndroid",
+      }
+    }
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Array [
+        Array [
+          Object {
+            "borderRadius": 40,
+            "height": 36,
+            "paddingHorizontal": 12,
+            "paddingVertical": 8,
+          },
+        ],
+        Object {
+          "backgroundColor": "rgb(0, 215, 117)",
+        },
+        Array [
+          Object {
+            "alignItems": "center",
+            "flex": 1,
+            "flexDirection": "row",
+            "justifyContent": "center",
+          },
+        ],
+      ]
+    }
+    testID={undefined}
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "rgb(82, 76, 97)",
+            "fontFamily": "sans-serif",
+            "fontSize": 14,
+            "fontWeight": "400",
+          },
+          Object {
+            "fontFamily": "sans-serif-medium",
+          },
+          Array [
+            Array [
+              Object {
+                "backgroundColor": "transparent",
+                "color": "rgb(255, 255, 255)",
+              },
+            ],
+            Object {},
+          ],
+        ]
+      }
+    >
+      LOREM IPSUM
+    </Text>
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "rgb(82, 76, 97)",
+            "fontFamily": "BpkIcon",
+            "fontSize": 24,
+            "includeFontPadding": false,
+          },
+          Object {
+            "fontSize": 16,
+          },
+          Array [
+            Array [
+              Object {
+                "backgroundColor": "transparent",
+                "color": "rgb(255, 255, 255)",
+              },
+            ],
+            Object {},
+            Array [
+              Object {
+                "marginLeft": 4,
+              },
+            ],
+          ],
+        ]
+      }
+    >
+      
+    </Text>
+  </View>
+</View>
+`;
+
 exports[`Android BpkButton should render correctly with iconAlignment="leading" 1`] = `
 <View
   style={
@@ -416,10 +689,10 @@ exports[`Android BpkButton should render correctly with iconAlignment="leading" 
             ],
             Object {},
             Array [
-              null,
               Object {
                 "marginLeft": 4,
               },
+              undefined,
               Object {
                 "marginLeft": 0,
                 "marginRight": 4,
@@ -559,10 +832,10 @@ exports[`Android BpkButton should render correctly with iconAlignment="trailing"
             ],
             Object {},
             Array [
-              null,
               Object {
                 "marginLeft": 4,
               },
+              undefined,
             ],
           ],
         ]
@@ -1650,10 +1923,10 @@ exports[`Android BpkButton should support having an icon as well as a title 1`] 
             ],
             Object {},
             Array [
-              null,
               Object {
                 "marginLeft": 4,
               },
+              undefined,
             ],
           ],
         ]
@@ -1995,10 +2268,10 @@ exports[`Android BpkButton should support the "icon" property 1`] = `
             ],
             Object {},
             Array [
-              null,
               Object {
                 "marginLeft": 4,
               },
+              undefined,
             ],
           ],
         ]
@@ -2106,8 +2379,13 @@ exports[`Android BpkButton should support the "iconOnly" property 1`] = `
             ],
             Object {},
             Array [
-              null,
-              undefined,
+              Object {
+                "marginLeft": 4,
+              },
+              Object {
+                "marginLeft": 0,
+                "marginRight": 0,
+              },
             ],
           ],
         ]

@@ -68,12 +68,15 @@ const base = StyleSheet.create({
       lineHeight: lineHeightXs,
     }),
   })(),
-  icon: Platform.select({
-    ios: () => null,
-    android: () => ({
-      lineHeight: spacingBase,
-    }),
-  })(),
+  icon: {
+    marginLeft: spacingSm,
+    ...Platform.select({
+      ios: () => null,
+      android: () => ({
+        lineHeight: spacingBase,
+      }),
+    })(),
+  },
 });
 
 const outlineButtonStyle = {
@@ -139,6 +142,10 @@ const modifiers = {
     button: {
       paddingHorizontal: 0,
     },
+    icon: {
+      marginLeft: 0,
+      marginRight: 0,
+    },
   }),
   iconOnlyLarge: StyleSheet.create({
     container: {
@@ -147,21 +154,19 @@ const modifiers = {
     button: {
       paddingHorizontal: 0,
     },
+    icon: {
+      marginLeft: 0,
+      marginRight: 0,
+    },
   }),
   textAndIcon: StyleSheet.create({
     view: {
       justifyContent: 'space-between',
     },
-    icon: {
-      marginLeft: spacingSm,
-    },
   }),
   textAndIconLarge: StyleSheet.create({
     view: {
       justifyContent: 'space-between',
-    },
-    icon: {
-      marginLeft: spacingSm,
     },
   }),
   iconLeading: StyleSheet.create({
