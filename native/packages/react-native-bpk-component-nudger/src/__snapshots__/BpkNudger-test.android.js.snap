@@ -123,8 +123,12 @@ exports[`Android BpkNudger should disable theming if the required attribute is o
               Array [
                 Object {
                   "lineHeight": 16,
+                  "marginLeft": 4,
                 },
-                undefined,
+                Object {
+                  "marginLeft": 0,
+                  "marginRight": 0,
+                },
               ],
             ],
           ]
@@ -269,8 +273,12 @@ exports[`Android BpkNudger should disable theming if the required attribute is o
               Array [
                 Object {
                   "lineHeight": 16,
+                  "marginLeft": 4,
                 },
-                undefined,
+                Object {
+                  "marginLeft": 0,
+                  "marginRight": 0,
+                },
               ],
             ],
           ]
@@ -406,8 +414,12 @@ exports[`Android BpkNudger should render correctly 1`] = `
               Array [
                 Object {
                   "lineHeight": 16,
+                  "marginLeft": 4,
                 },
-                undefined,
+                Object {
+                  "marginLeft": 0,
+                  "marginRight": 0,
+                },
               ],
             ],
           ]
@@ -552,8 +564,12 @@ exports[`Android BpkNudger should render correctly 1`] = `
               Array [
                 Object {
                   "lineHeight": 16,
+                  "marginLeft": 4,
                 },
-                undefined,
+                Object {
+                  "marginLeft": 0,
+                  "marginRight": 0,
+                },
               ],
             ],
           ]
@@ -699,9 +715,13 @@ exports[`Android BpkNudger should render correctly when value is a not an intege
               Array [
                 Object {
                   "lineHeight": 16,
+                  "marginLeft": 4,
                 },
                 undefined,
-                undefined,
+                Object {
+                  "marginLeft": 0,
+                  "marginRight": 0,
+                },
               ],
             ],
           ]
@@ -846,8 +866,12 @@ exports[`Android BpkNudger should render correctly when value is a not an intege
               Array [
                 Object {
                   "lineHeight": 16,
+                  "marginLeft": 4,
                 },
-                undefined,
+                Object {
+                  "marginLeft": 0,
+                  "marginRight": 0,
+                },
               ],
             ],
           ]
@@ -983,8 +1007,12 @@ exports[`Android BpkNudger should render correctly when value is greater than ma
               Array [
                 Object {
                   "lineHeight": 16,
+                  "marginLeft": 4,
                 },
-                undefined,
+                Object {
+                  "marginLeft": 0,
+                  "marginRight": 0,
+                },
               ],
             ],
           ]
@@ -1139,9 +1167,13 @@ exports[`Android BpkNudger should render correctly when value is greater than ma
               Array [
                 Object {
                   "lineHeight": 16,
+                  "marginLeft": 4,
                 },
                 undefined,
-                undefined,
+                Object {
+                  "marginLeft": 0,
+                  "marginRight": 0,
+                },
               ],
             ],
           ]
@@ -1287,9 +1319,13 @@ exports[`Android BpkNudger should render correctly when value is less than min 1
               Array [
                 Object {
                   "lineHeight": 16,
+                  "marginLeft": 4,
                 },
                 undefined,
-                undefined,
+                Object {
+                  "marginLeft": 0,
+                  "marginRight": 0,
+                },
               ],
             ],
           ]
@@ -1434,8 +1470,12 @@ exports[`Android BpkNudger should render correctly when value is less than min 1
               Array [
                 Object {
                   "lineHeight": 16,
+                  "marginLeft": 4,
                 },
-                undefined,
+                Object {
+                  "marginLeft": 0,
+                  "marginRight": 0,
+                },
               ],
             ],
           ]
@@ -1573,8 +1613,12 @@ exports[`Android BpkNudger should support theming 1`] = `
               Array [
                 Object {
                   "lineHeight": 16,
+                  "marginLeft": 4,
                 },
-                undefined,
+                Object {
+                  "marginLeft": 0,
+                  "marginRight": 0,
+                },
               ],
             ],
           ]
@@ -1721,8 +1765,12 @@ exports[`Android BpkNudger should support theming 1`] = `
               Array [
                 Object {
                   "lineHeight": 16,
+                  "marginLeft": 4,
                 },
-                undefined,
+                Object {
+                  "marginLeft": 0,
+                  "marginRight": 0,
+                },
               ],
             ],
           ]

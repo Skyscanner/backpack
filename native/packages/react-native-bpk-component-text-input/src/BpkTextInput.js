@@ -154,6 +154,14 @@ class BpkTextInput extends Component<Props, State> {
     return this.props.value || this.state.isFocused ? 0 : 1;
   }
 
+  getPlaceholderValue() {
+    const { isFocused } = this.state;
+    const { accessoryView, mask, placeholder } = this.props;
+    const hasAccessoryView = accessoryView !== null;
+
+    return isFocused || hasAccessoryView ? placeholder || mask : null;
+  }
+
   render() {
     const { isFocused } = this.state;
     const {
@@ -173,8 +181,7 @@ class BpkTextInput extends Component<Props, State> {
       ...rest
     } = this.props;
     const hasAccessoryView = accessoryView !== null;
-    const placeholerValue =
-      isFocused || hasAccessoryView ? placeholder || mask : null;
+    const placeholerValue = this.getPlaceholderValue();
 
     const validityIcon = valid ? (
       <ValidIcon />

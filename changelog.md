@@ -2,6 +2,17 @@
 
 [Unreleased changes](./unreleased.md).
 
+# 2018-07-18 - New native button abilities and a bug fix
+
+**Added:**
+- react-native-bpk-component-button: 7.0.6 => 7.1.0
+  - Added `BUTTON_TYPES` and `ICON_ALIGNMENTS` exports.
+  - Added `centerLeading` and `centerTrailing` to the possible values of `iconAlignment`.
+
+**Fixed:**
+- bpk-component-navigation-stack: 1.0.9 => 1.0.10
+  - Fixed stack height in IE11.
+
 # 2018-07-17 - Bug fixes
 
 **Fixed:**

@@ -72,13 +72,15 @@ export const getStyleForElement = (
         : styles.modifiers.iconOnly[elementType],
     );
   } else if (title && icon) {
-    styleForElement.push(
-      styles.modifiers[isLarge ? 'textAndIconLarge' : 'textAndIcon'][
-        elementType
-      ],
-    );
+    if (iconAlignment === 'leading' || iconAlignment === 'trailing') {
+      styleForElement.push(
+        styles.modifiers[isLarge ? 'textAndIconLarge' : 'textAndIcon'][
+          elementType
+        ],
+      );
+    }
 
-    if (iconAlignment === 'leading') {
+    if (iconAlignment === 'leading' || iconAlignment === 'centerLeading') {
       styleForElement.push(styles.modifiers.iconLeading[elementType]);
     }
   }
