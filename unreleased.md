@@ -1,3 +1,5 @@
 # Unreleased
 
-__Nothing yet...__
++**Added:**
++- react-native-bpk-component-text-input:
++  - Added `tinymask` support via mask property

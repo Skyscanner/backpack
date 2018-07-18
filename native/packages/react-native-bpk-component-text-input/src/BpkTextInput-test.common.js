@@ -156,6 +156,26 @@ const commonTests = () => {
 
       expect(testRenderer.toJSON()).toMatchSnapshot();
     });
+
+    it('should render correctly with mask="99/99"', () => {
+      const testRenderer = TestRenderer.create(
+        <BpkTextInput label="Name" value="1234" mask="99/99" />,
+      );
+
+      expect(testRenderer.toJSON()).toMatchSnapshot();
+    });
+
+    it('should render correctly with mask="9999-9999-9999-9999"', () => {
+      const testRenderer = TestRenderer.create(
+        <BpkTextInput
+          label="Name"
+          value="1234123412341234"
+          mask="9999-9999-9999-9999"
+        />,
+      );
+
+      expect(testRenderer.toJSON()).toMatchSnapshot();
+    });
   });
 };
 

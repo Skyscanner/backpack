@@ -29,6 +29,7 @@ import {
 } from 'react-native';
 import BpkText from 'react-native-bpk-component-text';
 import { animationDurationSm } from 'bpk-tokens/tokens/base.react.native';
+import TinyMask from 'tinymask';
 import { ValidIcon, InvalidIcon } from './BpkTextInputIcons';
 import { getLabelStyle, getInputContainerStyle, styles } from './styles';
 
@@ -39,6 +40,7 @@ export type Props = {
   editable: boolean,
   description: ?string,
   inputRef: ?(Node) => void,
+  mask: ?string,
   onBlur: ?() => void,
   onFocus: ?() => void,
   placeholder: ?string,
@@ -56,6 +58,7 @@ export const propTypes = {
   description: PropTypes.string,
   editable: PropTypes.bool,
   inputRef: PropTypes.func,
+  mask: PropTypes.string,
   onBlur: PropTypes.func,
   onFocus: PropTypes.func,
   placeholder: PropTypes.string,
@@ -70,6 +73,7 @@ export const defaultProps = {
   description: null,
   editable: true,
   inputRef: null,
+  mask: null,
   onBlur: null,
   onFocus: null,
   placeholder: null,
@@ -86,6 +90,8 @@ type State = {
 class BpkTextInput extends Component<Props, State> {
   animatedValues: { color: AnimatedValue, labelPosition: AnimatedValue };
 
+  tinymask: TinyMask;
+
   static propTypes = { ...propTypes };
 
   static defaultProps = { ...defaultProps };
@@ -101,6 +107,8 @@ class BpkTextInput extends Component<Props, State> {
       color: new Animated.Value(this.getColorAnimatedValue()),
       labelPosition: new Animated.Value(this.getLabelPositionAnimatedValue()),
     };
+
+    this.tinymask = new TinyMask(props.mask || '');
   }
 
   componentDidUpdate() {
@@ -156,6 +164,7 @@ class BpkTextInput extends Component<Props, State> {
       editable,
       label,
       value,
+      mask,
       style: userStyle,
       valid,
       onFocus,
@@ -164,7 +173,8 @@ class BpkTextInput extends Component<Props, State> {
       ...rest
     } = this.props;
     const hasAccessoryView = accessoryView !== null;
-    const placeholerValue = isFocused || hasAccessoryView ? placeholder : null;
+    const placeholerValue =
+      isFocused || hasAccessoryView ? placeholder || mask : null;
 
     const validityIcon = valid ? (
       <ValidIcon />
@@ -210,7 +220,7 @@ class BpkTextInput extends Component<Props, State> {
           <Animated.View style={animatedInputStyle}>
             <TextInput
               editable={editable}
-              value={value || ''}
+              value={mask ? this.tinymask.mask(value) : value || ''}
               style={styles.input}
               onFocus={this.onFocus}
               onBlur={this.onBlur}

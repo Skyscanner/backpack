@@ -128,6 +128,20 @@ storiesOf('react-native-bpk-component-text-input', module)
         keyboardType="phone-pad"
         style={styles.input}
       />
+      <StatefulBpkTextInput
+        label="Input with date mask"
+        initialValue=""
+        mask="99/99"
+        maxLength={5}
+        style={styles.input}
+      />
+      <StatefulBpkTextInput
+        label="Input with card number mask"
+        initialValue=""
+        mask="9999-9999-9999-9999"
+        maxLength={19}
+        style={styles.input}
+      />
     </ScrollView>
   ))
   .add('docs:text-inputs-with-accessory-view', () => (
