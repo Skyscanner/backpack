@@ -46,6 +46,7 @@
 
   &__paper {
     position: relative;
+    z-index: 0;
     background-color: $bpk-card-background-color;
 
     @include bpk-box-shadow-sm;
