@@ -24,7 +24,7 @@ import { storiesOf } from '@storybook/react';
 import BpkButton from 'bpk-component-button';
 import ArrowRightIcon from 'bpk-component-icon/sm/long-arrow-right';
 import { withButtonAlignment, withRtlSupport } from 'bpk-component-icon';
-import BpkCard from './index';
+import BpkTicket from './index';
 import STYLES from './stories.scss';
 
 const getClassName = cssModules(STYLES);
@@ -44,7 +44,7 @@ const flights = Array(100).fill({
 });
 
 const Flight = ({ flight }) => (
-  <BpkCard
+  <BpkTicket
     className={getClassName('bpk-stories-flight')}
     stub={
       <div className={getClassName('bpk-stories-flight__stub')}>
@@ -79,7 +79,7 @@ const Flight = ({ flight }) => (
     <div className={getClassName('bpk-stories-flight__small')}>
       Operated by BA Cityflyer
     </div>
-  </BpkCard>
+  </BpkTicket>
 );
 
 Flight.propTypes = {
@@ -88,34 +88,34 @@ Flight.propTypes = {
 
 storiesOf('bpk-component-ticket', module)
   .add('Default', () => (
-    <BpkCard stub="Lorem ipsum dolor sit amet.">
+    <BpkTicket stub="Lorem ipsum dolor sit amet.">
       Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
       ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis
       dis parturient montes, nascetur ridiculus mus. Lorem ipsum dolor sit amet,
       consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean
       massa. Cum sociis natoque penatibus et magnis dis parturient montes,
       nascetur ridiculus mus.
-    </BpkCard>
+    </BpkTicket>
   ))
   .add('Vertical', () => (
-    <BpkCard stub="Lorem ipsum dolor sit amet." vertical>
+    <BpkTicket stub="Lorem ipsum dolor sit amet." vertical>
       Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
       ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis
       dis parturient montes, nascetur ridiculus mus. Lorem ipsum dolor sit amet,
       consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean
       massa. Cum sociis natoque penatibus et magnis dis parturient montes,
       nascetur ridiculus mus.
-    </BpkCard>
+    </BpkTicket>
   ))
   .add('Without padding', () => (
-    <BpkCard stub="Lorem ipsum dolor sit amet." padded={false}>
+    <BpkTicket stub="Lorem ipsum dolor sit amet." padded={false}>
       Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
       ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis
       dis parturient montes, nascetur ridiculus mus. Lorem ipsum dolor sit amet,
       consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean
       massa. Cum sociis natoque penatibus et magnis dis parturient montes,
       nascetur ridiculus mus.
-    </BpkCard>
+    </BpkTicket>
   ))
   /* eslint-disable react/no-array-index-key */
   .add('Day view', () => (
