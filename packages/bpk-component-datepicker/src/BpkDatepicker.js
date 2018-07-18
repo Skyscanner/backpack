@@ -41,12 +41,17 @@ class BpkDatepicker extends Component {
   }
 
   onOpen = () => {
-    this.setState({
-      isOpen: true,
-    });
+    setTimeout(() => {
+      console.log();
+      console.log('open');
+      this.setState({
+        isOpen: true,
+      });
+    }, 50);
   };
 
   onClose = () => {
+    console.log('close');
     this.setState({
       isOpen: false,
     });

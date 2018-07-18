@@ -81,6 +81,7 @@ class Portal extends Component {
   }
 
   onDocumentMouseDown(event) {
+    console.log('portal mouse down');
     const clickEventProperties = this.getClickEventProperties(event);
     if (
       clickEventProperties.isNotLeftClick ||
@@ -91,10 +92,12 @@ class Portal extends Component {
       return;
     }
 
+    console.log('portal is starting a close');
     this.shouldClose = true;
   }
 
   onDocumentMouseUp(event) {
+    console.log('portal mouse up');
     const clickEventProperties = this.getClickEventProperties(event);
 
     if (
@@ -107,6 +110,7 @@ class Portal extends Component {
     }
 
     if (this.shouldClose) {
+      console.log('portal is finishing a close');
       this.props.onClose(event, { source: 'DOCUMENT_CLICK' });
     }
   }
