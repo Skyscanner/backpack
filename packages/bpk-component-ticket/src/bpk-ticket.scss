@@ -36,10 +36,6 @@
     }
   }
 
-  &--fallback {
-    display: table;
-  }
-
   &--vertical {
     flex-direction: column;
   }
@@ -69,14 +65,6 @@
       // pointer-events doesn't work on ie
       @media screen\0 {
         z-index: -1; // TODO
-      }
-    }
-
-    &--fallback {
-      display: table-cell;
-
-      &::after {
-        display: none;
       }
     }
   }
@@ -134,10 +122,6 @@
 
     &--padded {
       padding: $bpk-card-padding;
-    }
-
-    &--fallback {
-      width: 32%;
     }
   }
 

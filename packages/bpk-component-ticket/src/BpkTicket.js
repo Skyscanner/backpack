@@ -26,11 +26,6 @@ import STYLES from './bpk-ticket.scss';
 
 const getClassName = cssModules(STYLES);
 
-const isIE9 = () => {
-  if (typeof window === 'undefined') return false;
-  return window.navigator.appVersion.indexOf('MSIE 9.') !== -1;
-};
-
 type Props = {
   children: Node,
   stub: Node,
@@ -67,7 +62,6 @@ const BpkTicket = (props: Props) => {
   const punchlineClassNames = [getClassName('bpk-ticket__punchline')];
   const startNotchClassNames = [getClassName('bpk-ticket__notch')];
   const endNotchClassNames = [getClassName('bpk-ticket__notch')];
-  const fallback = isIE9();
 
   if (className) {
     classNames.push(className);
@@ -97,20 +91,9 @@ const BpkTicket = (props: Props) => {
     stubInnerClassNames.push(
       getClassName('bpk-ticket__stub-inner--horizontal'),
     );
-
-    if (!fallback) {
-      punchlineClassNames.push(getClassName('bpk-ticket__punchline--vertical'));
-      startNotchClassNames.push(getClassName('bpk-ticket__notch--top'));
-      endNotchClassNames.push(getClassName('bpk-ticket__notch--bottom'));
-    } else {
-      classNames.push(getClassName('bpk-ticket--fallback'));
-      mainClassNames.push(getClassName('bpk-ticket__paper--fallback'));
-      stubClassNames.push(
-        getClassName('bpk-ticket__paper--fallback'),
-        getClassName('bpk-ticket__stub--fallback'),
-      );
-      punchlineClassNames.push(getClassName('bpk-ticket__punchline--fallback'));
-    }
+    punchlineClassNames.push(getClassName('bpk-ticket__punchline--vertical'));
+    startNotchClassNames.push(getClassName('bpk-ticket__notch--top'));
+    endNotchClassNames.push(getClassName('bpk-ticket__notch--bottom'));
   }
 
   const classNameFinal = classNames.join(' ');
