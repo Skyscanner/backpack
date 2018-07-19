@@ -2,6 +2,32 @@
 
 [Unreleased changes](./unreleased.md).
 
+# 2018-07-18 - New native button abilities and a bug fix
+
+**Added:**
+- react-native-bpk-component-button: 7.0.6 => 7.1.0
+  - Added `BUTTON_TYPES` and `ICON_ALIGNMENTS` exports.
+  - Added `centerLeading` and `centerTrailing` to the possible values of `iconAlignment`.
+
+**Fixed:**
+- bpk-component-navigation-stack: 1.0.9 => 1.0.10
+  - Fixed stack height in IE11.
+
+# 2018-07-17 - Bug fixes
+
+**Fixed:**
+- bpk-component-infinite-scroll: 1.0.5 => 1.0.6
+  - Scroll intersection evaluation changed. Previously, it an intersection of, exactly, 1 (100%) was expected. This change cover the case when the intersection ratio is almost 1 (i.e. 1.001).
+
+- react-native-bpk-component-image: 1.0.1 => 1.0.2
+  - Fixed `source` type to accept the same values as the `Image` component.
+
+- react-native-bpk-component-horizontal-nav: 3.0.21 => 3.0.22
+  - `BpkHorizontalNav` now displays correctly when using RTL.
+
+- bpk-component-slider: 1.1.34 => 1.1.35
+  - Fixed a bug where the handle would get stuck at the minimum value by upgrading `react-slider`. See [`react-slider#136`](https://github.com/mpowaga/react-slider/issues/136).
+
 # 2018-07-12 - New icons and better 'close' link
 
 **Added:**

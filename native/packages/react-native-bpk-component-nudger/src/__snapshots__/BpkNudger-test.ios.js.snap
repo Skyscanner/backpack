@@ -131,8 +131,13 @@ exports[`iOS BpkNudger should disable theming if the required attribute is omitt
               ],
               Object {},
               Array [
-                null,
-                undefined,
+                Object {
+                  "marginLeft": 4,
+                },
+                Object {
+                  "marginLeft": 0,
+                  "marginRight": 0,
+                },
               ],
             ],
           ]
@@ -304,8 +309,13 @@ exports[`iOS BpkNudger should disable theming if the required attribute is omitt
               ],
               Object {},
               Array [
-                null,
-                undefined,
+                Object {
+                  "marginLeft": 4,
+                },
+                Object {
+                  "marginLeft": 0,
+                  "marginRight": 0,
+                },
               ],
             ],
           ]
@@ -468,8 +478,13 @@ exports[`iOS BpkNudger should render correctly 1`] = `
               ],
               Object {},
               Array [
-                null,
-                undefined,
+                Object {
+                  "marginLeft": 4,
+                },
+                Object {
+                  "marginLeft": 0,
+                  "marginRight": 0,
+                },
               ],
             ],
           ]
@@ -641,8 +656,13 @@ exports[`iOS BpkNudger should render correctly 1`] = `
               ],
               Object {},
               Array [
-                null,
-                undefined,
+                Object {
+                  "marginLeft": 4,
+                },
+                Object {
+                  "marginLeft": 0,
+                  "marginRight": 0,
+                },
               ],
             ],
           ]
@@ -815,9 +835,14 @@ exports[`iOS BpkNudger should render correctly when value is a not an integer 1`
               ],
               Object {},
               Array [
-                null,
+                Object {
+                  "marginLeft": 4,
+                },
                 undefined,
-                undefined,
+                Object {
+                  "marginLeft": 0,
+                  "marginRight": 0,
+                },
               ],
             ],
           ]
@@ -989,8 +1014,13 @@ exports[`iOS BpkNudger should render correctly when value is a not an integer 1`
               ],
               Object {},
               Array [
-                null,
-                undefined,
+                Object {
+                  "marginLeft": 4,
+                },
+                Object {
+                  "marginLeft": 0,
+                  "marginRight": 0,
+                },
               ],
             ],
           ]
@@ -1153,8 +1183,13 @@ exports[`iOS BpkNudger should render correctly when value is greater than max 1`
               ],
               Object {},
               Array [
-                null,
-                undefined,
+                Object {
+                  "marginLeft": 4,
+                },
+                Object {
+                  "marginLeft": 0,
+                  "marginRight": 0,
+                },
               ],
             ],
           ]
@@ -1336,9 +1371,14 @@ exports[`iOS BpkNudger should render correctly when value is greater than max 1`
               ],
               Object {},
               Array [
-                null,
+                Object {
+                  "marginLeft": 4,
+                },
                 undefined,
-                undefined,
+                Object {
+                  "marginLeft": 0,
+                  "marginRight": 0,
+                },
               ],
             ],
           ]
@@ -1511,9 +1551,14 @@ exports[`iOS BpkNudger should render correctly when value is less than min 1`] =
               ],
               Object {},
               Array [
-                null,
+                Object {
+                  "marginLeft": 4,
+                },
                 undefined,
-                undefined,
+                Object {
+                  "marginLeft": 0,
+                  "marginRight": 0,
+                },
               ],
             ],
           ]
@@ -1685,8 +1730,13 @@ exports[`iOS BpkNudger should render correctly when value is less than min 1`] =
               ],
               Object {},
               Array [
-                null,
-                undefined,
+                Object {
+                  "marginLeft": 4,
+                },
+                Object {
+                  "marginLeft": 0,
+                  "marginRight": 0,
+                },
               ],
             ],
           ]
@@ -1853,8 +1903,13 @@ exports[`iOS BpkNudger should support theming 1`] = `
                 "color": "red",
               },
               Array [
-                null,
-                undefined,
+                Object {
+                  "marginLeft": 4,
+                },
+                Object {
+                  "marginLeft": 0,
+                  "marginRight": 0,
+                },
               ],
             ],
           ]
@@ -2030,8 +2085,13 @@ exports[`iOS BpkNudger should support theming 1`] = `
                 "color": "red",
               },
               Array [
-                null,
-                undefined,
+                Object {
+                  "marginLeft": 4,
+                },
+                Object {
+                  "marginLeft": 0,
+                  "marginRight": 0,
+                },
               ],
             ],
           ]

@@ -17,12 +17,13 @@
  */
 
 import React from 'react';
-import { I18nManager, Image, Platform } from 'react-native';
+import { I18nManager, Platform } from 'react-native';
 import { storiesOf } from '@storybook/react-native';
 import { action } from '@storybook/addon-actions';
 import BpkThemeProvider from 'react-native-bpk-theming';
 import BpkCard from 'react-native-bpk-component-card';
 import BpkText from 'react-native-bpk-component-text';
+import BpkImage from 'react-native-bpk-component-image';
 
 import themeAttributes from '../../storybook/themeAttributes';
 import BpkNavigationBar, {
@@ -138,7 +139,7 @@ storiesOf('react-native-bpk-component-navigation-bar', module)
     <BpkThemeProvider theme={themeAttributes}>
       <BpkNavigationBar
         leadingButton={backButton()}
-        title={<Image source={exampleLogo} />}
+        title={<BpkImage alt="logo" source={exampleLogo} />}
       />
     </BpkThemeProvider>
   ))

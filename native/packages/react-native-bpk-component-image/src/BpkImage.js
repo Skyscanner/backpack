@@ -79,8 +79,12 @@ class BpkImage extends Component<Props> {
 
   static propTypes = {
     alt: PropTypes.string.isRequired,
-    source: PropTypes.oneOfType([PropTypes.string, PropTypes.object])
-      .isRequired,
+    // see: https://github.com/facebook/react-native/blob/master/Libraries/Image/ImageSourcePropType.js#L82
+    source: PropTypes.oneOfType([
+      PropTypes.object,
+      PropTypes.number,
+      PropTypes.arrayOf(PropTypes.object),
+    ]).isRequired,
     inView: PropTypes.bool,
     loaded: PropTypes.bool,
     onLoad: PropTypes.func,

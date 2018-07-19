@@ -48,7 +48,7 @@ const commonTests = () => {
           <BpkSectionListItem
             title="List item"
             onPress={onPressFn}
-            image={<Image />}
+            image={<Image />} // eslint-disable-line backpack/use-components
           />,
         )
         .toJSON();

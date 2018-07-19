@@ -50,7 +50,7 @@ const commonTests = () => {
           <BpkDialingCodeList
             dialingCodes={CODES}
             onItemPress={onPressFn}
-            renderFlag={() => <Image />}
+            renderFlag={() => <Image />} // eslint-disable-line backpack/use-components
           />,
         )
         .toJSON();
@@ -64,7 +64,7 @@ const commonTests = () => {
             dialingCodes={CODES}
             onItemPress={onPressFn}
             selectedId="0"
-            renderFlag={() => <Image />}
+            renderFlag={() => <Image />} // eslint-disable-line backpack/use-components
           />,
         )
         .toJSON();

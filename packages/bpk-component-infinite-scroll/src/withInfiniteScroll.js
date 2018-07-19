@@ -163,7 +163,7 @@ const withInfiniteScroll = (
     handleIntersection = (entries: Array<IntersectionObserverEntry>) => {
       const { onScroll } = this.props;
       const entry = entries[0];
-      if (entry.intersectionRatio === 1) {
+      if (entry.intersectionRatio >= 1) {
         if (this.sentinel) {
           this.observer.unobserve(this.sentinel);
         }

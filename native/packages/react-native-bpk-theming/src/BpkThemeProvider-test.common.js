@@ -16,10 +16,10 @@
  * limitations under the License.
  */
 
-import { Text } from 'react-native';
 import React from 'react';
 import renderer from 'react-test-renderer';
 import { colorWhite } from 'bpk-tokens/tokens/base.react.native';
+import BpkText from 'react-native-bpk-component-text';
 
 import BpkThemeProvider from './BpkThemeProvider';
 
@@ -29,7 +29,7 @@ const commonTests = () => {
       const tree = renderer
         .create(
           <BpkThemeProvider theme={{ color: colorWhite }}>
-            <Text>Lorem ipsum</Text>
+            <BpkText>Lorem ipsum</BpkText>
           </BpkThemeProvider>,
         )
         .toJSON();
@@ -41,7 +41,7 @@ const commonTests = () => {
       expect(() =>
         renderer.create(
           <BpkThemeProvider>
-            <Text>Lorem ipsum</Text>
+            <BpkText>Lorem ipsum</BpkText>
           </BpkThemeProvider>,
         ),
       ).toThrow('[ThemeProvider] Please make your theme prop a plain object');
