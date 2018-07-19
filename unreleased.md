@@ -23,3 +23,6 @@
 - bpk-react-utils:
   - Upgraded `react-transition-group` from `^2.2.1` -> `^2.4.0`.
   - Upgraded `recompose` from `^0.26.0` -> `^0.27.1`.
+
+- bpk-component-ticket:
+  - Fixed an issue where the hover state would sometimes not apply.
