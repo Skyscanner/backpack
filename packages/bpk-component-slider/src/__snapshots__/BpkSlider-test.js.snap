@@ -1,97 +1,407 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`BpkSlider should render correctly 1`] = `
-<react-slider
-  barClassName="bpk-slider__bar"
+<div
   className="bpk-slider"
-  handleActiveClassName="bpk-slider__handle--active"
-  handleClassName="bpk-slider__handle"
-  invert={false}
-  max={100}
-  min={0}
-  value={25}
-  withBars={true}
-/>
+  onClick={[Function]}
+  onMouseDown={[Function]}
+  style={
+    Object {
+      "position": "relative",
+    }
+  }
+>
+  <div
+    className="bpk-slider__bar bpk-slider__bar-0"
+    style={
+      Object {
+        "left": 0,
+        "position": "absolute",
+        "right": 0,
+        "willChange": "",
+      }
+    }
+  />
+  <div
+    className="bpk-slider__bar bpk-slider__bar-1"
+    style={
+      Object {
+        "left": 0,
+        "position": "absolute",
+        "right": 0,
+        "willChange": "",
+      }
+    }
+  />
+  <div
+    aria-label={undefined}
+    aria-valuemax={100}
+    aria-valuemin={0}
+    aria-valuenow={25}
+    aria-valuetext={undefined}
+    className="bpk-slider__handle bpk-slider__handle-0 "
+    onFocus={[Function]}
+    onMouseDown={[Function]}
+    onTouchStart={[Function]}
+    role="slider"
+    style={
+      Object {
+        "left": "0px",
+        "position": "absolute",
+        "willChange": "",
+        "zIndex": 1,
+      }
+    }
+    tabIndex={0}
+  />
+</div>
 `;
 
 exports[`BpkSlider should render correctly with a "className" attribute 1`] = `
-<react-slider
-  barClassName="bpk-slider__bar"
+<div
   className="bpk-slider my-slider"
-  handleActiveClassName="bpk-slider__handle--active"
-  handleClassName="bpk-slider__handle"
-  invert={false}
-  max={100}
-  min={0}
-  value={25}
-  withBars={true}
-/>
+  onClick={[Function]}
+  onMouseDown={[Function]}
+  style={
+    Object {
+      "position": "relative",
+    }
+  }
+>
+  <div
+    className="bpk-slider__bar bpk-slider__bar-0"
+    style={
+      Object {
+        "left": 0,
+        "position": "absolute",
+        "right": 0,
+        "willChange": "",
+      }
+    }
+  />
+  <div
+    className="bpk-slider__bar bpk-slider__bar-1"
+    style={
+      Object {
+        "left": 0,
+        "position": "absolute",
+        "right": 0,
+        "willChange": "",
+      }
+    }
+  />
+  <div
+    aria-label={undefined}
+    aria-valuemax={100}
+    aria-valuemin={0}
+    aria-valuenow={25}
+    aria-valuetext={undefined}
+    className="bpk-slider__handle bpk-slider__handle-0 "
+    onFocus={[Function]}
+    onMouseDown={[Function]}
+    onTouchStart={[Function]}
+    role="slider"
+    style={
+      Object {
+        "left": "0px",
+        "position": "absolute",
+        "willChange": "",
+        "zIndex": 1,
+      }
+    }
+    tabIndex={0}
+  />
+</div>
 `;
 
 exports[`BpkSlider should render correctly with a "large" attribute 1`] = `
-<react-slider
-  barClassName="bpk-slider__bar"
+<div
   className="bpk-slider bpk-slider--large"
-  handleActiveClassName="bpk-slider__handle--active"
-  handleClassName="bpk-slider__handle bpk-slider__handle--large"
-  invert={false}
-  max={9}
-  min={0}
-  value={2}
-  withBars={true}
-/>
+  onClick={[Function]}
+  onMouseDown={[Function]}
+  style={
+    Object {
+      "position": "relative",
+    }
+  }
+>
+  <div
+    className="bpk-slider__bar bpk-slider__bar-0"
+    style={
+      Object {
+        "left": 0,
+        "position": "absolute",
+        "right": 0,
+        "willChange": "",
+      }
+    }
+  />
+  <div
+    className="bpk-slider__bar bpk-slider__bar-1"
+    style={
+      Object {
+        "left": 0,
+        "position": "absolute",
+        "right": 0,
+        "willChange": "",
+      }
+    }
+  />
+  <div
+    aria-label={undefined}
+    aria-valuemax={9}
+    aria-valuemin={0}
+    aria-valuenow={2}
+    aria-valuetext={undefined}
+    className="bpk-slider__handle bpk-slider__handle--large bpk-slider__handle bpk-slider__handle--large-0 "
+    onFocus={[Function]}
+    onMouseDown={[Function]}
+    onTouchStart={[Function]}
+    role="slider"
+    style={
+      Object {
+        "left": "0px",
+        "position": "absolute",
+        "willChange": "",
+        "zIndex": 1,
+      }
+    }
+    tabIndex={0}
+  />
+</div>
 `;
 
 exports[`BpkSlider should render correctly with a "step" attribute 1`] = `
-<react-slider
-  barClassName="bpk-slider__bar"
+<div
   className="bpk-slider"
-  handleActiveClassName="bpk-slider__handle--active"
-  handleClassName="bpk-slider__handle"
-  invert={false}
-  max={100}
-  min={0}
-  step={10}
-  value={2}
-  withBars={true}
-/>
+  onClick={[Function]}
+  onMouseDown={[Function]}
+  style={
+    Object {
+      "position": "relative",
+    }
+  }
+>
+  <div
+    className="bpk-slider__bar bpk-slider__bar-0"
+    style={
+      Object {
+        "left": 0,
+        "position": "absolute",
+        "right": 0,
+        "willChange": "",
+      }
+    }
+  />
+  <div
+    className="bpk-slider__bar bpk-slider__bar-1"
+    style={
+      Object {
+        "left": 0,
+        "position": "absolute",
+        "right": 0,
+        "willChange": "",
+      }
+    }
+  />
+  <div
+    aria-label={undefined}
+    aria-valuemax={100}
+    aria-valuemin={0}
+    aria-valuenow={0}
+    aria-valuetext={undefined}
+    className="bpk-slider__handle bpk-slider__handle-0 "
+    onFocus={[Function]}
+    onMouseDown={[Function]}
+    onTouchStart={[Function]}
+    role="slider"
+    style={
+      Object {
+        "left": "0px",
+        "position": "absolute",
+        "willChange": "",
+        "zIndex": 1,
+      }
+    }
+    tabIndex={0}
+  />
+</div>
 `;
 
 exports[`BpkSlider should render correctly with a minimum distance between controls 1`] = `
-<react-slider
-  barClassName="bpk-slider__bar"
+<div
   className="bpk-slider bpk-slider--range"
-  handleActiveClassName="bpk-slider__handle--active"
-  handleClassName="bpk-slider__handle"
-  invert={false}
-  max={100}
-  min={0}
-  minDistance={20}
-  value={
-    Array [
-      10,
-      90,
-    ]
+  onClick={[Function]}
+  onMouseDown={[Function]}
+  style={
+    Object {
+      "position": "relative",
+    }
   }
-  withBars={true}
-/>
+>
+  <div
+    className="bpk-slider__bar bpk-slider__bar-0"
+    style={
+      Object {
+        "left": 0,
+        "position": "absolute",
+        "right": 0,
+        "willChange": "",
+      }
+    }
+  />
+  <div
+    className="bpk-slider__bar bpk-slider__bar-1"
+    style={
+      Object {
+        "left": 0,
+        "position": "absolute",
+        "right": 0,
+        "willChange": "",
+      }
+    }
+  />
+  <div
+    className="bpk-slider__bar bpk-slider__bar-2"
+    style={
+      Object {
+        "left": 0,
+        "position": "absolute",
+        "right": 0,
+        "willChange": "",
+      }
+    }
+  />
+  <div
+    aria-label={undefined}
+    aria-valuemax={100}
+    aria-valuemin={0}
+    aria-valuenow={10}
+    aria-valuetext={undefined}
+    className="bpk-slider__handle bpk-slider__handle-0 "
+    onFocus={[Function]}
+    onMouseDown={[Function]}
+    onTouchStart={[Function]}
+    role="slider"
+    style={
+      Object {
+        "left": "0px",
+        "position": "absolute",
+        "willChange": "",
+        "zIndex": 1,
+      }
+    }
+    tabIndex={0}
+  />
+  <div
+    aria-label={undefined}
+    aria-valuemax={100}
+    aria-valuemin={0}
+    aria-valuenow={90}
+    aria-valuetext={undefined}
+    className="bpk-slider__handle bpk-slider__handle-1 "
+    onFocus={[Function]}
+    onMouseDown={[Function]}
+    onTouchStart={[Function]}
+    role="slider"
+    style={
+      Object {
+        "left": "0px",
+        "position": "absolute",
+        "willChange": "",
+        "zIndex": 2,
+      }
+    }
+    tabIndex={0}
+  />
+</div>
 `;
 
 exports[`BpkSlider should render correctly with a range of values 1`] = `
-<react-slider
-  barClassName="bpk-slider__bar"
+<div
   className="bpk-slider bpk-slider--range"
-  handleActiveClassName="bpk-slider__handle--active"
-  handleClassName="bpk-slider__handle"
-  invert={false}
-  max={100}
-  min={0}
-  value={
-    Array [
-      10,
-      90,
-    ]
+  onClick={[Function]}
+  onMouseDown={[Function]}
+  style={
+    Object {
+      "position": "relative",
+    }
   }
-  withBars={true}
-/>
+>
+  <div
+    className="bpk-slider__bar bpk-slider__bar-0"
+    style={
+      Object {
+        "left": 0,
+        "position": "absolute",
+        "right": 0,
+        "willChange": "",
+      }
+    }
+  />
+  <div
+    className="bpk-slider__bar bpk-slider__bar-1"
+    style={
+      Object {
+        "left": 0,
+        "position": "absolute",
+        "right": 0,
+        "willChange": "",
+      }
+    }
+  />
+  <div
+    className="bpk-slider__bar bpk-slider__bar-2"
+    style={
+      Object {
+        "left": 0,
+        "position": "absolute",
+        "right": 0,
+        "willChange": "",
+      }
+    }
+  />
+  <div
+    aria-label={undefined}
+    aria-valuemax={100}
+    aria-valuemin={0}
+    aria-valuenow={10}
+    aria-valuetext={undefined}
+    className="bpk-slider__handle bpk-slider__handle-0 "
+    onFocus={[Function]}
+    onMouseDown={[Function]}
+    onTouchStart={[Function]}
+    role="slider"
+    style={
+      Object {
+        "left": "0px",
+        "position": "absolute",
+        "willChange": "",
+        "zIndex": 1,
+      }
+    }
+    tabIndex={0}
+  />
+  <div
+    aria-label={undefined}
+    aria-valuemax={100}
+    aria-valuemin={0}
+    aria-valuenow={90}
+    aria-valuetext={undefined}
+    className="bpk-slider__handle bpk-slider__handle-1 "
+    onFocus={[Function]}
+    onMouseDown={[Function]}
+    onTouchStart={[Function]}
+    role="slider"
+    style={
+      Object {
+        "left": "0px",
+        "position": "absolute",
+        "willChange": "",
+        "zIndex": 2,
+      }
+    }
+    tabIndex={0}
+  />
+</div>
 `;

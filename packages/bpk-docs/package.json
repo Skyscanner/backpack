@@ -1,6 +1,6 @@
 {
   "name": "bpk-docs",
-  "version": "0.0.285",
+  "version": "0.0.286",
   "main": "index.js",
   "description": "Backpack documentation site.",
   "repository": {
@@ -88,7 +88,7 @@
     "react-native-bpk-component-banner-alert": "^4.0.15",
     "react-native-bpk-component-button": "^7.1.0",
     "react-native-bpk-component-button-link": "^3.0.15",
-    "react-native-bpk-component-card": "^1.2.31",
+    "react-native-bpk-component-card": "^1.2.32",
     "react-native-bpk-component-carousel": "^1.0.9",
     "react-native-bpk-component-carousel-indicator": "^1.0.9",
     "react-native-bpk-component-chip": "^1.0.3",
@@ -97,7 +97,7 @@
     "react-native-bpk-component-icon": "^1.9.1",
     "react-native-bpk-component-image": "^1.0.3",
     "react-native-bpk-component-map": "^1.0.3",
-    "react-native-bpk-component-navigation-bar": "^2.0.20",
+    "react-native-bpk-component-navigation-bar": "^2.0.21",
     "react-native-bpk-component-nudger": "^1.0.28",
     "react-native-bpk-component-panel": "^1.0.13",
     "react-native-bpk-component-phone-input": "^1.0.27",
@@ -112,7 +112,6 @@
     "react-native-bpk-component-text-input": "^2.2.21",
     "react-native-bpk-component-touchable-native-feedback": "^1.1.17",
     "react-native-bpk-component-touchable-overlay": "^1.0.26",
-    "react-native-bpk-theming": "^1.0.66",
-    "uglify-loader": "^1.4.0"
+    "react-native-bpk-theming": "^1.0.66"
   }
 }

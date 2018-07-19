@@ -116,4 +116,4 @@ export default class App extends Component {
 
 ## Mask
 
-More details abot how to use and define a mask can be found here: https://github.com/benhurott/tinymask
+More details about how to use and define a mask can be found here: https://github.com/benhurott/tinymask
