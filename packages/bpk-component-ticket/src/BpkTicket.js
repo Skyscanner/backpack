@@ -16,8 +16,10 @@
  * limitations under the License.
  */
 
+/* @flow */
+
 import PropTypes from 'prop-types';
-import React from 'react';
+import React, { type Node } from 'react';
 import { cssModules } from 'bpk-react-utils';
 
 import STYLES from './bpk-ticket.scss';
@@ -29,7 +31,18 @@ const isIE9 = () => {
   return window.navigator.appVersion.indexOf('MSIE 9.') !== -1;
 };
 
-const BpkTicket = props => {
+type Props = {
+  children: Node,
+  stub: Node,
+  stubProps: { [string]: any },
+  padded: boolean,
+  vertical: boolean,
+  className: ?string,
+  stubClassName: ?string,
+  href: ?string,
+};
+
+const BpkTicket = (props: Props) => {
   const {
     children,
     href,
