@@ -18,7 +18,7 @@
     "bpk-react-utils": "^2.6.1",
     "bpk-tokens": "^27.0.4",
     "d3-path": "^1.0.5",
-    "d3-scale": "^1.0.5",
+    "d3-scale": "^2.1.0",
     "lodash.debounce": "^4.0.8",
     "prop-types": "^15.5.8"
   },

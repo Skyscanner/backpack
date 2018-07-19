@@ -20,47 +20,57 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import BpkSlider from './BpkSlider';
 
-jest.mock('react-slider', () => 'react-slider');
+const createNodeMock = () => document.createElement('div');
 
 describe('BpkSlider', () => {
   it('should render correctly', () => {
     const tree = renderer
-      .create(<BpkSlider min={0} max={100} value={25} />)
+      .create(<BpkSlider min={0} max={100} value={25} />, { createNodeMock })
       .toJSON();
     expect(tree).toMatchSnapshot();
   });
 
   it('should render correctly with a "className" attribute', () => {
     const tree = renderer
-      .create(<BpkSlider min={0} max={100} value={25} className="my-slider" />)
+      .create(
+        <BpkSlider min={0} max={100} value={25} className="my-slider" />,
+        { createNodeMock },
+      )
       .toJSON();
     expect(tree).toMatchSnapshot();
   });
 
   it('should render correctly with a "large" attribute', () => {
     const tree = renderer
-      .create(<BpkSlider min={0} max={9} value={2} large />)
+      .create(<BpkSlider min={0} max={9} value={2} large />, { createNodeMock })
       .toJSON();
     expect(tree).toMatchSnapshot();
   });
 
   it('should render correctly with a "step" attribute', () => {
     const tree = renderer
-      .create(<BpkSlider min={0} max={100} value={2} step={10} />)
+      .create(<BpkSlider min={0} max={100} value={2} step={10} />, {
+        createNodeMock,
+      })
       .toJSON();
     expect(tree).toMatchSnapshot();
   });
 
   it('should render correctly with a range of values', () => {
     const tree = renderer
-      .create(<BpkSlider min={0} max={100} value={[10, 90]} />)
+      .create(<BpkSlider min={0} max={100} value={[10, 90]} />, {
+        createNodeMock,
+      })
       .toJSON();
     expect(tree).toMatchSnapshot();
   });
 
   it('should render correctly with a minimum distance between controls', () => {
     const tree = renderer
-      .create(<BpkSlider min={0} max={100} value={[10, 90]} minDistance={20} />)
+      .create(
+        <BpkSlider min={0} max={100} value={[10, 90]} minDistance={20} />,
+        { createNodeMock },
+      )
       .toJSON();
     expect(tree).toMatchSnapshot();
   });
