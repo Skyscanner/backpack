@@ -26,3 +26,4 @@
 
 - bpk-component-ticket:
   - Fixed an issue where the hover state would sometimes not apply.
+  - Added `overflow: hidden` to `BpkTicket` to prevent clipped images.
