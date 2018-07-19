@@ -1,4 +1,4 @@
-# Adding types
+# Writing docs
 
 ## Decision
 Use these guidelines when writing docs for components:
