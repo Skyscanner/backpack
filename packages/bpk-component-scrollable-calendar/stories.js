@@ -15,9 +15,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+/* @flow */
 
-@import '~bpk-mixins/index';
+import React from 'react';
+import { storiesOf } from '@storybook/react';
 
-.bpk-calendar-scrollable {
-  display: flex;
-}
+import BpkScrollableCalendar from '.';
+
+storiesOf('bpk-component-scrollable-calendar', module).add('Default', () => (
+  <BpkScrollableCalendar />
+));
