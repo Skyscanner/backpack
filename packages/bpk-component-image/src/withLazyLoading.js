@@ -20,6 +20,7 @@
 import React, { type Node, type ComponentType } from 'react';
 import PropTypes from 'prop-types';
 import { wrapDisplayName } from 'bpk-react-utils';
+import throttle from 'lodash/throttle';
 
 type WithLazyLoadingProps = {
   className: ?string,
@@ -82,11 +83,9 @@ export default function withLazyLoading(
     }
 
     setInView = (): void => {
-      this.setState(
-        (): {} => ({
-          inView: true,
-        }),
-      );
+      this.setState(() => ({
+        inView: true,
+      }));
       this.removeEventListeners();
     };
 
@@ -104,11 +103,11 @@ export default function withLazyLoading(
       documentRef.removeEventListener('fullscreenchange', this.checkInView);
     };
 
-    checkInView = (): void => {
+    checkInView = throttle(() => {
       if (this.isInViewPort()) {
         this.setInView();
       }
-    };
+    }, 250);
 
     // This function is taken from modernizr
     // See https://github.com/modernizr/modernizr

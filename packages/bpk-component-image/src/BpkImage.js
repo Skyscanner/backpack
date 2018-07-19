@@ -145,6 +145,23 @@ class BpkImage extends Component<BpkImageProps> {
           style={{ height: 0, paddingBottom: aspectRatioPc }}
           className={classNames.join(' ')}
         >
+          {/* 
+            Image needs to come before the spinner to avoid a problem where
+            some images would not fully render in mobile Safari when running
+            on a slow network. 
+            
+            The closest to an explanation that I can come up is that putting 
+            the image first means it is rendered first so it has priority, 
+            which seems to be enough to fix it.
+          */}
+          {inView && (
+            <Image // eslint-disable-line backpack/use-components
+              hidden={loading}
+              altText={altText}
+              onImageLoad={this.onImageLoad}
+              {...rest}
+            />
+          )}
           {loading && (
             <CSSTransition
               classNames={{
@@ -157,14 +174,6 @@ class BpkImage extends Component<BpkImageProps> {
                 <BpkSpinner />
               </div>
             </CSSTransition>
-          )}
-          {inView && (
-            <Image // eslint-disable-line backpack/use-components
-              hidden={loading}
-              altText={altText}
-              onImageLoad={this.onImageLoad}
-              {...rest}
-            />
           )}
           {typeof window === 'undefined' &&
             (!inView || loading) && (

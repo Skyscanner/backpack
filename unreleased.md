@@ -1,11 +1,10 @@
 # Unreleased
 
-+**Added:**
+**Added:**
 - react-native-bpk-component-text-input:
   - Added `tinymask` support via mask property
 
 **Fixed:**
-
 - bpk-component-barchart:
   - Upgraded `d3-scale` from `^1.0.5` -> `^2.1.0`.
 
@@ -31,3 +30,6 @@
 - bpk-component-ticket:
   - Fixed an issue where the hover state would sometimes not apply.
   - When tickets have `padded={false}`, content overflowing the ticket borders will be hidden.
+
+- bpk-component-image:
+  - Fixed loading behaviour in mobile Safari on slow networks.
