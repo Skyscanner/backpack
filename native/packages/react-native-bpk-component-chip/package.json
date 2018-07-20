@@ -1,6 +1,6 @@
 {
   "name": "react-native-bpk-component-chip",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "main": "index.js",
   "description": "Backpack React Native chip component.",
   "repository": {
@@ -14,11 +14,11 @@
     "react-native": ">= 0.47.0"
   },
   "dependencies": {
-    "bpk-tokens": "^27.0.4",
+    "bpk-tokens": "^27.0.5",
     "prop-types": "^15.5.8",
-    "react-native-bpk-component-icon": "^1.9.1",
-    "react-native-bpk-component-text": "^2.1.43",
-    "react-native-bpk-component-touchable-native-feedback": "^1.1.17",
-    "react-native-bpk-component-touchable-overlay": "^1.0.26"
+    "react-native-bpk-component-icon": "^1.9.2",
+    "react-native-bpk-component-text": "^2.1.44",
+    "react-native-bpk-component-touchable-native-feedback": "^1.1.18",
+    "react-native-bpk-component-touchable-overlay": "^1.0.27"
   }
 }

@@ -1,6 +1,6 @@
 {
   "name": "react-native-bpk-styles",
-  "version": "1.1.4",
+  "version": "1.1.5",
   "main": "index.js",
   "description": "Backpack React Native common styles.",
   "repository": {
@@ -15,7 +15,7 @@
     "react-native-linear-gradient": "react-native-community/react-native-linear-gradient"
   },
   "devDependencies": {
-    "bpk-tokens": "^27.0.4",
-    "react-native-bpk-component-text": "^2.1.43"
+    "bpk-tokens": "^27.0.5",
+    "react-native-bpk-component-text": "^2.1.44"
   }
 }
