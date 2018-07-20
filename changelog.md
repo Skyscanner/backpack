@@ -5,38 +5,37 @@
 # 2018-07-20 - Added `tinymask` support to native text, plus dependencies update and bug fixes.
 
 **Added:**
-- react-native-bpk-component-text-input:
+- react-native-bpk-component-text-input: 2.2.21 => 2.3.0
   - Added `tinymask` support via mask property
 
 **Fixed:**
-- bpk-component-barchart:
+- bpk-component-barchart: 2.3.8 => 2.3.9
   - Upgraded `d3-scale` from `^1.0.5` -> `^2.1.0`.
 
-- bpk-component-breakpoint:
+- bpk-component-breakpoint: 1.1.4 => 1.1.5
   - Upgraded `react-respnsive` from `^3.0.0` -> `^4.1.0`.
 
-- bpk-component-drawer:
+- bpk-component-drawer: 1.2.13 => 1.2.24
   - Upgraded `react-transition-group` from `^2.2.1` -> `^2.4.0`.
 
-- bpk-component-image:
+- bpk-component-image: 1.2.23 => 1.2.24
   - Upgraded `react-transition-group` from `^2.2.1` -> `^2.4.0`.
+  - Fixed loading behaviour in mobile Safari on slow networks.
 
-- bpk-component-navigation-stack:
+- bpk-component-navigation-stack: 1.0.9 => 1.0.10
   - Upgraded `react-transition-group` from `^2.3.1` -> `^2.4.0`.
 
-- bpk-component-slider:
+- bpk-component-slider: 1.1.36 => 1.1.38
   - Upgraded `react-slider` from `^0.11.1` -> `^0.11.2`.
 
-- bpk-react-utils:
+- bpk-react-utils: 2.6.1 => 2.6.2
   - Upgraded `react-transition-group` from `^2.2.1` -> `^2.4.0`.
   - Upgraded `recompose` from `^0.26.0` -> `^0.27.1`.
 
-- bpk-component-ticket:
+- bpk-component-ticket: 1.1.54 => 1.1.55
   - Fixed an issue where the hover state would sometimes not apply.
   - When tickets have `padded={false}`, content overflowing the ticket borders will be hidden.
 
-- bpk-component-image:
-  - Fixed loading behaviour in mobile Safari on slow networks.
 
 # 2018-07-19 - Update react-native-dash dependency
 
