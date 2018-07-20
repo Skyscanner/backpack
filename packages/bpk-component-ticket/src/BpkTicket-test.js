@@ -60,6 +60,19 @@ describe('BpkTicket', () => {
     expect(tree).toMatchSnapshot();
   });
 
+  it('should render correctly with "padded" attribute equal to "false" and a "vertical" attribute', () => {
+    const tree = renderer
+      .create(
+        <BpkTicket stub="Ticket stub" vertical padded={false}>
+          Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
+          commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus
+          et magnis dis parturient montes, nascetur ridiculus mus.
+        </BpkTicket>,
+      )
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
   it('should render correctly with a "vertical" attribute', () => {
     const tree = renderer
       .create(

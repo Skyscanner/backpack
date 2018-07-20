@@ -26,3 +26,4 @@
 
 - bpk-component-ticket:
   - Fixed an issue where the hover state would sometimes not apply.
+  - When tickets have `padded={false}`, an inner wrapper is now applied to clip the content.

@@ -117,6 +117,15 @@ storiesOf('bpk-component-ticket', module)
       nascetur ridiculus mus.
     </BpkTicket>
   ))
+  .add('Without padding and with an image ', () => (
+    <BpkTicket stub="Lorem ipsum dolor sit amet." padded={false}>
+      <img
+        src="https://images.unsplash.com/44/MIbCzcvxQdahamZSNQ26_12082014-IMG_3526.jpg?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=22b674fb2c751f77f7d80d22c77da67a&auto=format&fit=crop&w=1650&q=80"
+        alt="Thoughtful bear"
+        width={300}
+      />
+    </BpkTicket>
+  ))
   .add('With a "href" prop', () => (
     <BpkTicket stub="Lorem ipsum dolor sit amet." href="#">
       Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
