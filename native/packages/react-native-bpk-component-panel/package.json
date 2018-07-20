@@ -1,6 +1,6 @@
 {
   "name": "react-native-bpk-component-panel",
-  "version": "1.0.13",
+  "version": "1.0.14",
   "main": "index.js",
   "description": "Backpack React Native panel component.",
   "repository": {
@@ -14,10 +14,10 @@
     "react-native": ">= 0.47.0"
   },
   "dependencies": {
-    "bpk-tokens": "^27.0.4",
+    "bpk-tokens": "^27.0.5",
     "prop-types": "^15.5.8"
   },
   "devDependencies": {
-    "react-native-bpk-component-text": "^2.1.43"
+    "react-native-bpk-component-text": "^2.1.44"
   }
 }

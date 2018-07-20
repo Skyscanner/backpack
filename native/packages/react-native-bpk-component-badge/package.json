@@ -1,6 +1,6 @@
 {
   "name": "react-native-bpk-component-badge",
-  "version": "1.0.14",
+  "version": "1.0.15",
   "main": "index.js",
   "description": "Backpack React Native badge component.",
   "repository": {
@@ -17,7 +17,7 @@
     "prop-types": "^15.5.8"
   },
   "devDependencies": {
-    "bpk-tokens": "^27.0.4",
-    "react-native-bpk-component-text": "^2.1.43"
+    "bpk-tokens": "^27.0.5",
+    "react-native-bpk-component-text": "^2.1.44"
   }
 }
