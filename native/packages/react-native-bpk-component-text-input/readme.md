@@ -80,6 +80,18 @@ export default class App extends Component {
           keyboardType="phone-pad"
           value="+441234567890"
         />
+        <BpkTextInput
+          label="Date"
+          mask="99/99"
+          maxLength={5}
+          style={styles.input}
+        />
+        <BpkTextInput
+          label="Card number"
+          mask="9999-9999-9999-9999"
+          maxLength={19}
+          style={styles.input}
+        />
       </View>
     );
   }
@@ -95,8 +107,13 @@ export default class App extends Component {
 | clearButtonMode (iOS only)  | oneOf('never', 'while-editing', 'unless-editing', 'always') | false    | while-editing |
 | description                 | string                                                      | false    | null          |
 | editable                    | bool                                                        | false    | true          |
+| mask                        | string                                                      | false    | null          |
 | inputRef                    | func                                                        | false    | null          |
 | valid                       | oneOf(true, false, null)                                    | false    | null          |
 | validationMessage           | string                                                      | false    | null          |
 | style                       | style                                                       | false    | null          |
 | accessoryView               | node                                                        | false    | null          |
+
+## Mask
+
+More details about how to use and define a mask can be found here: https://github.com/benhurott/tinymask

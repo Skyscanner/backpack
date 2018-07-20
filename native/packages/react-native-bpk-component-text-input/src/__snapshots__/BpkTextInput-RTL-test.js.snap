@@ -769,6 +769,160 @@ exports[`RTL BpkTextInput should render correctly with inputRef set 1`] = `
 </View>
 `;
 
+exports[`RTL BpkTextInput should render correctly with mask="99/99" 1`] = `
+<View
+  style={
+    Array [
+      undefined,
+      null,
+    ]
+  }
+>
+  <View
+    style={
+      Object {
+        "flexDirection": "row",
+        "paddingTop": 18,
+      }
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      collapsable={undefined}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "rgba(129, 123, 143, 1)",
+          "fontFamily": "System",
+          "fontSize": 13,
+          "fontWeight": "400",
+          "lineHeight": 18,
+          "position": "absolute",
+          "top": 0,
+        }
+      }
+    >
+      Name
+    </Text>
+    <View
+      collapsable={undefined}
+      style={
+        Object {
+          "alignItems": "center",
+          "borderBottomColor": "rgba(230, 228, 235, 1)",
+          "borderBottomWidth": 1,
+          "flex": 1,
+          "flexDirection": "row",
+        }
+      }
+    >
+      <TextInput
+        allowFontScaling={true}
+        clearButtonMode="while-editing"
+        editable={true}
+        onBlur={[Function]}
+        onFocus={[Function]}
+        placeholder={null}
+        style={
+          Object {
+            "borderBottomWidth": 0,
+            "color": "rgb(82, 76, 97)",
+            "flex": 1,
+            "fontSize": 15,
+            "fontWeight": "400",
+            "lineHeight": 20,
+            "minHeight": 28,
+            "paddingHorizontal": 0,
+            "paddingVertical": 4,
+            "textAlign": "right",
+          }
+        }
+        underlineColorAndroid="transparent"
+        value="12/34"
+      />
+    </View>
+  </View>
+</View>
+`;
+
+exports[`RTL BpkTextInput should render correctly with mask="9999-9999-9999-9999" 1`] = `
+<View
+  style={
+    Array [
+      undefined,
+      null,
+    ]
+  }
+>
+  <View
+    style={
+      Object {
+        "flexDirection": "row",
+        "paddingTop": 18,
+      }
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      collapsable={undefined}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "rgba(129, 123, 143, 1)",
+          "fontFamily": "System",
+          "fontSize": 13,
+          "fontWeight": "400",
+          "lineHeight": 18,
+          "position": "absolute",
+          "top": 0,
+        }
+      }
+    >
+      Name
+    </Text>
+    <View
+      collapsable={undefined}
+      style={
+        Object {
+          "alignItems": "center",
+          "borderBottomColor": "rgba(230, 228, 235, 1)",
+          "borderBottomWidth": 1,
+          "flex": 1,
+          "flexDirection": "row",
+        }
+      }
+    >
+      <TextInput
+        allowFontScaling={true}
+        clearButtonMode="while-editing"
+        editable={true}
+        onBlur={[Function]}
+        onFocus={[Function]}
+        placeholder={null}
+        style={
+          Object {
+            "borderBottomWidth": 0,
+            "color": "rgb(82, 76, 97)",
+            "flex": 1,
+            "fontSize": 15,
+            "fontWeight": "400",
+            "lineHeight": 20,
+            "minHeight": 28,
+            "paddingHorizontal": 0,
+            "paddingVertical": 4,
+            "textAlign": "right",
+          }
+        }
+        underlineColorAndroid="transparent"
+        value="1234-1234-1234-1234"
+      />
+    </View>
+  </View>
+</View>
+`;
+
 exports[`RTL BpkTextInput should render correctly with valid 1`] = `
 <View
   style={
