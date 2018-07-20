@@ -214,7 +214,7 @@ exports[`BpkTouchableOverlay should render correctly with custom overlay styles 
           "top": 0,
         },
         Object {
-          "backgroundColor": "red",
+          "backgroundColor": "rgb(255, 84, 82)",
         },
       ]
     }
@@ -239,7 +239,7 @@ exports[`BpkTouchableOverlay should render correctly with custom style prop 1`] 
   onStartShouldSetResponder={[Function]}
   style={
     Object {
-      "backgroundColor": "red",
+      "backgroundColor": "rgb(255, 84, 82)",
     }
   }
   testID={undefined}

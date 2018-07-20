@@ -49,7 +49,7 @@ exports[`BpkMobileScrollContainer should render correctly with a custom "style" 
   className="bpk-mobile-scroll-container"
   style={
     Object {
-      "backgroundColor": "red",
+      "backgroundColor": "rgb(255, 84, 82)",
       "height": "auto",
     }
   }

@@ -20,6 +20,7 @@
 
 import React from 'react';
 import renderer from 'react-test-renderer';
+import { colorRed500 } from 'bpk-tokens/tokens/base.react.native';
 
 import BpkText from './BpkText';
 import { TEXT_STYLES } from './common-types';
@@ -55,7 +56,7 @@ const commonTests = () => {
     it('should support overwriting styles', () => {
       const tree = renderer
         .create(
-          <BpkText style={{ color: 'red' }}>
+          <BpkText style={{ color: colorRed500 }}>
             Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
             commodo ligula eget dolor. Aenean massa. Cum sociis natoque
             penatibus et magnis dis parturient montes, nascetur ridiculus mus.

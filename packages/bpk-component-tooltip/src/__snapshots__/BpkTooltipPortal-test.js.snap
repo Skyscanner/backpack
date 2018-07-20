@@ -110,7 +110,7 @@ exports[`BpkTooltipPortal should render correctly with custom portal style 1`] =
   onOpen={[Function]}
   style={
     Object {
-      "color": "red",
+      "color": "rgb(255, 84, 82)",
     }
   }
   target={

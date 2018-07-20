@@ -22,7 +22,7 @@ import React from 'react';
 import { StyleSheet } from 'react-native';
 import renderer from 'react-test-renderer';
 import BpkThemeProvider from 'react-native-bpk-theming';
-import { spacingSm } from 'bpk-tokens/tokens/base.react.native';
+import { spacingSm, colorRed500 } from 'bpk-tokens/tokens/base.react.native';
 import BpkProgress from './BpkProgress';
 
 // Manually triggers the onLayout callback with the value provided
@@ -102,7 +102,7 @@ const commonTests = () => {
 
     it('should render correctly with a "fillStyle" attribute', () => {
       const styles = StyleSheet.create({
-        fill: { backgroundColor: 'red' },
+        fill: { backgroundColor: colorRed500 },
       });
       const tree = renderer
         .create(
