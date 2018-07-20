@@ -2,7 +2,7 @@
 
 [Unreleased changes](./unreleased.md).
 
-# 2018-07-19 - Updat react-native-dash dependency
+# 2018-07-19 - Update react-native-dash dependency
 
 - react-native-bpk-component-card: 1.2.31 => 1.2.32
   - Update `react-native-dash` depedency to latest(0.0.9).
