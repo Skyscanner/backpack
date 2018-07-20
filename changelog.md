@@ -2,6 +2,42 @@
 
 [Unreleased changes](./unreleased.md).
 
+# 2018-07-20 - Added `tinymask` support to native text, plus dependencies update and bug fixes.
+
+**Added:**
+- react-native-bpk-component-text-input:
+  - Added `tinymask` support via mask property
+
+**Fixed:**
+- bpk-component-barchart:
+  - Upgraded `d3-scale` from `^1.0.5` -> `^2.1.0`.
+
+- bpk-component-breakpoint:
+  - Upgraded `react-respnsive` from `^3.0.0` -> `^4.1.0`.
+
+- bpk-component-drawer:
+  - Upgraded `react-transition-group` from `^2.2.1` -> `^2.4.0`.
+
+- bpk-component-image:
+  - Upgraded `react-transition-group` from `^2.2.1` -> `^2.4.0`.
+
+- bpk-component-navigation-stack:
+  - Upgraded `react-transition-group` from `^2.3.1` -> `^2.4.0`.
+
+- bpk-component-slider:
+  - Upgraded `react-slider` from `^0.11.1` -> `^0.11.2`.
+
+- bpk-react-utils:
+  - Upgraded `react-transition-group` from `^2.2.1` -> `^2.4.0`.
+  - Upgraded `recompose` from `^0.26.0` -> `^0.27.1`.
+
+- bpk-component-ticket:
+  - Fixed an issue where the hover state would sometimes not apply.
+  - When tickets have `padded={false}`, content overflowing the ticket borders will be hidden.
+
+- bpk-component-image:
+  - Fixed loading behaviour in mobile Safari on slow networks.
+
 # 2018-07-19 - Update react-native-dash dependency
 
 - react-native-bpk-component-card: 1.2.31 => 1.2.32
