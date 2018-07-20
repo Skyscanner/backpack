@@ -18,6 +18,26 @@
 
 @import '~bpk-mixins/index';
 
+@mixin hidden-box-shadow-after {
+  z-index: 0;
+
+  &::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    content: '';
+    display: block;
+    z-index: -1;
+    transition: opacity 200ms ease-in-out;
+    border-radius: inherit;
+    box-shadow: $bpk-box-shadow-lg;
+    opacity: 0;
+    pointer-events: none; // To prevent the pseudo element absorbing click events
+  }
+}
+
 .bpk-ticket {
   $notch-size: $bpk-spacing-xs;
 
@@ -30,7 +50,15 @@
   text-decoration: none;
   cursor: pointer;
 
+  @include bpk-box-shadow-sm;
+  @include bpk-border-radius-sm;
+  @include hidden-box-shadow-after;
+
   @include bpk-hover {
+    &::after {
+      opacity: 1;
+    }
+
     .bpk-ticket__paper::after {
       opacity: 1;
     }
@@ -40,32 +68,21 @@
     flex-direction: column;
   }
 
-  &__paper {
-    position: relative;
-    z-index: 0;
-    background-color: $bpk-card-background-color;
-
-    @include bpk-box-shadow-sm;
+  &--with-notches {
+    box-shadow: none;
 
     &::after {
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      content: '';
-      display: block;
-      z-index: -1;
-      transition: opacity 200ms ease-in-out;
-      border-radius: inherit;
-      box-shadow: $bpk-box-shadow-lg;
-      opacity: 0;
-      pointer-events: none; // To prevent the pseudo element absorbing click events
+      content: none;
+    }
+  }
 
-      // pointer-events doesn't work on ie
-      @media screen\0 {
-        z-index: -1; // TODO
-      }
+  &__paper {
+    position: relative;
+    background-color: $bpk-card-background-color;
+
+    &--with-notches {
+      @include bpk-box-shadow-sm;
+      @include hidden-box-shadow-after;
     }
   }
 
@@ -139,6 +156,14 @@
     background-color: $bpk-card-background-color;
 
     &--horizontal {
+      height: $bpk-one-pixel-rem * 2;
+      background-image: url(map-get($bpk-elements, card-dash-horizontal));
+      background-repeat: repeat-x;
+      background-position: 0 50%;
+      background-size: 8 * $bpk-one-pixel-rem 2 * $bpk-one-pixel-rem;
+    }
+
+    &--horizontal-with-notches {
       height: $notch-size * 2;
       margin: auto $notch-size;
       padding: 0 $notch-size;
@@ -149,6 +174,14 @@
     }
 
     &--vertical {
+      width: $bpk-one-pixel-rem * 2;
+      background-image: url(map-get($bpk-elements, card-dash-vertical));
+      background-repeat: repeat-y;
+      background-position: 50% 0;
+      background-size: 2 * $bpk-one-pixel-rem 8 * $bpk-one-pixel-rem;
+    }
+
+    &--vertical-with-notches {
       width: $notch-size * 2;
       margin: $notch-size auto;
       padding: $notch-size 0;

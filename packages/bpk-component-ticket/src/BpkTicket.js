@@ -32,6 +32,7 @@ type Props = {
   stubProps: { [string]: any },
   padded: boolean,
   vertical: boolean,
+  withNotches: boolean,
   className: ?string,
   stubClassName: ?string,
   href: ?string,
@@ -44,6 +45,7 @@ const BpkTicket = (props: Props) => {
     padded,
     stub,
     vertical,
+    withNotches,
     className,
     stubClassName,
     stubProps,
@@ -54,6 +56,7 @@ const BpkTicket = (props: Props) => {
     'bpk-ticket',
     className,
     vertical && 'bpk-ticket--vertical',
+    withNotches && 'bpk-ticket--with-notches',
   );
 
   const mainClassNames = getClassName(
@@ -62,6 +65,7 @@ const BpkTicket = (props: Props) => {
     padded && 'bpk-ticket__main--padded',
     vertical && 'bpk-ticket__main--vertical',
     !vertical && 'bpk-ticket__main--horizontal',
+    withNotches && 'bpk-ticket__paper--with-notches',
   );
 
   const mainInnerClassNames = getClassName(
@@ -77,6 +81,7 @@ const BpkTicket = (props: Props) => {
     padded && 'bpk-ticket__stub--padded',
     vertical && 'bpk-ticket__stub--vertical',
     !vertical && 'bpk-ticket__stub--horizontal',
+    withNotches && 'bpk-ticket__paper--with-notches',
   );
 
   const stubInnerClassNames = getClassName(
@@ -87,8 +92,14 @@ const BpkTicket = (props: Props) => {
 
   const punchlineClassNames = getClassName(
     'bpk-ticket__punchline',
-    vertical && 'bpk-ticket__punchline--horizontal',
-    !vertical && 'bpk-ticket__punchline--vertical',
+    vertical &&
+      (withNotches
+        ? 'bpk-ticket__punchline--horizontal-with-notches'
+        : 'bpk-ticket__punchline--horizontal'),
+    !vertical &&
+      (withNotches
+        ? 'bpk-ticket__punchline--vertical-with-notches'
+        : 'bpk-ticket__punchline--vertical'),
   );
 
   const startNotchClassNames = getClassName(
@@ -125,8 +136,8 @@ const BpkTicket = (props: Props) => {
       role="presentation"
       aria-hidden="true"
     >
-      <div className={startNotchClassNames} />
-      <div className={endNotchClassNames} />
+      {withNotches && <div className={startNotchClassNames} />}
+      {withNotches && <div className={endNotchClassNames} />}
     </div>,
     <div key="stub" className={stubClassNames} {...stubProps}>
       {stubContent}
@@ -157,6 +168,7 @@ BpkTicket.propTypes = {
   vertical: PropTypes.bool,
   stubClassName: PropTypes.string,
   stubProps: PropTypes.object, // eslint-disable-line react/forbid-prop-types
+  withNotches: PropTypes.bool,
 };
 
 BpkTicket.defaultProps = {
@@ -166,6 +178,7 @@ BpkTicket.defaultProps = {
   vertical: false,
   stubClassName: null,
   stubProps: {},
+  withNotches: true,
 };
 
 export default BpkTicket;
