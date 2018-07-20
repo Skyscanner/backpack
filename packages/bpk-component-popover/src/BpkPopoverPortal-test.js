@@ -115,7 +115,7 @@ describe('BpkPopoverPortal', () => {
 
     it('should render correctly with portalStyle added to portal component', () => {
       const shallowRenderer = Shallow.createRenderer();
-      const customStyle: ?Object = { color: 'red' };
+      const customStyle: ?Object = { color: 'red' }; // eslint-disable-line  backpack/use-tokens
       const result = shallowRenderer.render(
         <BpkPopoverPortal
           id="my-popover"

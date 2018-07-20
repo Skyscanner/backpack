@@ -64,7 +64,7 @@ describe('Portal', () => {
   });
 
   it('should render with a custom style property', done => {
-    const customStyle = { color: 'red' };
+    const customStyle = { color: 'red' }; // eslint-disable-line backpack/use-tokens
     const assertion = portalElement => {
       expect(portalElement.style.color).toEqual(customStyle.color);
       done();

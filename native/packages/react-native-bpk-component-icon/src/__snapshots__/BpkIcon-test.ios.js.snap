@@ -14,7 +14,7 @@ exports[`iOS BpkIcon should apply user props 1`] = `
         "includeFontPadding": false,
       },
       Object {
-        "color": "blue",
+        "color": "rgb(0, 178, 214)",
       },
     ]
   }

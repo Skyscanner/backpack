@@ -155,7 +155,7 @@ exports[`Android BpkProgress should render correctly with a "fillStyle" attribut
     collapsable={undefined}
     style={
       Object {
-        "backgroundColor": "red",
+        "backgroundColor": "rgb(255, 84, 82)",
         "borderRadius": 40,
         "height": 8,
         "width": 0,

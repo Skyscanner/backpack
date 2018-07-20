@@ -20,6 +20,7 @@
 
 import React from 'react';
 import renderer from 'react-test-renderer';
+import { colorRed500 } from 'bpk-tokens/tokens/base.es6';
 
 jest.mock('bpk-react-utils', () => {
   const original = jest.requireActual('bpk-react-utils');
@@ -85,7 +86,7 @@ describe('BpkTooltipPortal', () => {
         <BpkTooltipPortal
           id="my-tooltip"
           target={<div>target</div>}
-          portalStyle={{ color: 'red' }}
+          portalStyle={{ color: colorRed500 }}
         >
           My tooltip content
         </BpkTooltipPortal>,

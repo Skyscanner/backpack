@@ -16,6 +16,7 @@
  * limitations under the License.
  */
 /* @flow */
+import { colorRed500 } from 'bpk-tokens/tokens/base.react.native';
 import { isValidTheme, makeThemePropType, getThemeAttributes } from './util';
 
 const REQUIRED_ATTRIBUTES: Array<string> = [
@@ -58,7 +59,7 @@ describe('makeThemePropType', () => {
   it('should not fail when the theme is valid', () => {
     expect(
       propType(
-        { style: { color: 'red' }, theme: VALID_THEME },
+        { style: { color: colorRed500 }, theme: VALID_THEME },
         'theme',
         'TestComponent',
       ),
@@ -67,14 +68,14 @@ describe('makeThemePropType', () => {
 
   it('should not fail when no theme is given', () => {
     expect(
-      propType({ style: { color: 'red' } }, 'theme', 'TestComponent'),
+      propType({ style: { color: colorRed500 } }, 'theme', 'TestComponent'),
     ).toBeFalsy();
   });
 
   it('should fail when the theme is invalid', () => {
     expect(
       propType(
-        { style: { color: 'red' }, theme: INVALID_THEME },
+        { style: { color: colorRed500 }, theme: INVALID_THEME },
         'theme',
         'TestComponent',
       ),

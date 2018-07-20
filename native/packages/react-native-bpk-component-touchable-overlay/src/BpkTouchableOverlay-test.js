@@ -20,13 +20,14 @@ import React from 'react';
 import { StyleSheet } from 'react-native';
 import renderer from 'react-test-renderer';
 import BpkText from 'react-native-bpk-component-text';
+import { colorRed500 } from 'bpk-tokens/tokens/base.react.native';
 
 import BpkTouchableOverlay from './BpkTouchableOverlay';
 
 describe('BpkTouchableOverlay', () => {
   const styles = StyleSheet.create({
     custom: {
-      backgroundColor: 'red',
+      backgroundColor: colorRed500,
     },
   });
 

@@ -63,6 +63,7 @@ describe('BpkText', () => {
   it('should pass down unknown props', () => {
     const tree = renderer
       .create(
+        // eslint-disable-next-line backpack/use-tokens
         <BpkText style={{ color: 'red' }}>
           Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
           commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus

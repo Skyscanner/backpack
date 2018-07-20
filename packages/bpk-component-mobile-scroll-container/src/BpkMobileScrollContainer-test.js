@@ -20,6 +20,7 @@
 
 import React from 'react';
 import renderer from 'react-test-renderer';
+import { colorRed500 } from 'bpk-tokens/tokens/base.es6';
 
 import BpkMobileScrollContainer, {
   computeScrollBarAwareHeight,
@@ -76,7 +77,7 @@ describe('BpkMobileScrollContainer', () => {
   it('should render correctly with a custom "style" attribute', () => {
     const tree = renderer
       .create(
-        <BpkMobileScrollContainer style={{ backgroundColor: 'red' }}>
+        <BpkMobileScrollContainer style={{ backgroundColor: colorRed500 }}>
           Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
           commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus
           et magnis dis parturient montes, nascetur ridiculus mus.
