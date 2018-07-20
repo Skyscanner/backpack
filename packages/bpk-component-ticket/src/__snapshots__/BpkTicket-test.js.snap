@@ -38,7 +38,11 @@ exports[`BpkTicket should render correctly with "padded" attribute equal to "fal
   <div
     className="bpk-ticket__paper bpk-ticket__main bpk-ticket__main--horizontal"
   >
-    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+    <div
+      className="bpk-ticket__main-inner bpk-ticket__main-inner--horizontal"
+    >
+      Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+    </div>
   </div>
   <div
     aria-hidden="true"
@@ -55,7 +59,49 @@ exports[`BpkTicket should render correctly with "padded" attribute equal to "fal
   <div
     className="bpk-ticket__paper bpk-ticket__stub bpk-ticket__stub--horizontal"
   >
-    Ticket stub
+    <div
+      className="bpk-ticket__stub-inner bpk-ticket__stub-inner--horizontal"
+    >
+      Ticket stub
+    </div>
+  </div>
+</div>
+`;
+
+exports[`BpkTicket should render correctly with "padded" attribute equal to "false" and a "vertical" attribute 1`] = `
+<div
+  className="bpk-ticket bpk-ticket--vertical"
+  role="button"
+>
+  <div
+    className="bpk-ticket__paper bpk-ticket__main bpk-ticket__main--vertical"
+  >
+    <div
+      className="bpk-ticket__main-inner bpk-ticket__main-inner--vertical"
+    >
+      Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+    </div>
+  </div>
+  <div
+    aria-hidden="true"
+    className="bpk-ticket__punchline bpk-ticket__punchline--horizontal"
+    role="presentation"
+  >
+    <div
+      className="bpk-ticket__notch bpk-ticket__notch--left"
+    />
+    <div
+      className="bpk-ticket__notch bpk-ticket__notch--right"
+    />
+  </div>
+  <div
+    className="bpk-ticket__paper bpk-ticket__stub bpk-ticket__stub--vertical"
+  >
+    <div
+      className="bpk-ticket__stub-inner bpk-ticket__stub-inner--vertical"
+    >
+      Ticket stub
+    </div>
   </div>
 </div>
 `;

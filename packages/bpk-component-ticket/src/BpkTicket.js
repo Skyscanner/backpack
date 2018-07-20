@@ -41,13 +41,16 @@ const BpkTicket = props => {
     stubProps,
     ...rest
   } = props;
+
   const classNames = [getClassName('bpk-ticket')];
   const mainClassNames = ['bpk-ticket__paper', 'bpk-ticket__main'].map(
     getClassName,
   );
+  const mainInnerClassNames = [getClassName('bpk-ticket__main-inner')];
   const stubClassNames = ['bpk-ticket__paper', 'bpk-ticket__stub'].map(
     getClassName,
   );
+  const stubInnerClassNames = [getClassName('bpk-ticket__stub-inner')];
   const punchlineClassNames = [getClassName('bpk-ticket__punchline')];
   const startNotchClassNames = [getClassName('bpk-ticket__notch')];
   const endNotchClassNames = [getClassName('bpk-ticket__notch')];
@@ -66,13 +69,21 @@ const BpkTicket = props => {
   if (vertical) {
     classNames.push(getClassName('bpk-ticket--vertical'));
     mainClassNames.push(getClassName('bpk-ticket__main--vertical'));
+    mainInnerClassNames.push(getClassName('bpk-ticket__main-inner--vertical'));
     stubClassNames.push(getClassName('bpk-ticket__stub--vertical'));
+    stubInnerClassNames.push(getClassName('bpk-ticket__stub-inner--vertical'));
     punchlineClassNames.push(getClassName('bpk-ticket__punchline--horizontal'));
     startNotchClassNames.push(getClassName('bpk-ticket__notch--left'));
     endNotchClassNames.push(getClassName('bpk-ticket__notch--right'));
   } else {
     mainClassNames.push(getClassName('bpk-ticket__main--horizontal'));
+    mainInnerClassNames.push(
+      getClassName('bpk-ticket__main-inner--horizontal'),
+    );
     stubClassNames.push(getClassName('bpk-ticket__stub--horizontal'));
+    stubInnerClassNames.push(
+      getClassName('bpk-ticket__stub-inner--horizontal'),
+    );
 
     if (!fallback) {
       punchlineClassNames.push(getClassName('bpk-ticket__punchline--vertical'));
@@ -91,9 +102,21 @@ const BpkTicket = props => {
 
   const classNameFinal = classNames.join(' ');
 
+  const mainContent = padded ? (
+    children
+  ) : (
+    <div className={mainInnerClassNames.join(' ')}>{children}</div>
+  );
+
+  const stubContent = padded ? (
+    stub
+  ) : (
+    <div className={stubInnerClassNames.join(' ')}>{stub}</div>
+  );
+
   const contents = [
     <div key="main" className={mainClassNames.join(' ')}>
-      {children}
+      {mainContent}
     </div>,
     <div
       key="punchline"
@@ -105,7 +128,7 @@ const BpkTicket = props => {
       <div className={endNotchClassNames.join(' ')} />
     </div>,
     <div key="stub" className={stubClassNames.join(' ')} {...stubProps}>
-      {stub}
+      {stubContent}
     </div>,
   ];
 
