@@ -50,94 +50,99 @@ const BpkTicket = (props: Props) => {
     ...rest
   } = props;
 
-  const classNames = [getClassName('bpk-ticket')];
-  const mainClassNames = ['bpk-ticket__paper', 'bpk-ticket__main'].map(
-    getClassName,
+  const classNames = getClassName(
+    'bpk-ticket',
+    className,
+    vertical && 'bpk-ticket--vertical',
   );
-  const mainInnerClassNames = [getClassName('bpk-ticket__main-inner')];
-  const stubClassNames = ['bpk-ticket__paper', 'bpk-ticket__stub'].map(
-    getClassName,
+
+  const mainClassNames = getClassName(
+    'bpk-ticket__paper',
+    'bpk-ticket__main',
+    padded && 'bpk-ticket__main--padded',
+    vertical && 'bpk-ticket__main--vertical',
+    !vertical && 'bpk-ticket__main--horizontal',
   );
-  const stubInnerClassNames = [getClassName('bpk-ticket__stub-inner')];
-  const punchlineClassNames = [getClassName('bpk-ticket__punchline')];
-  const startNotchClassNames = [getClassName('bpk-ticket__notch')];
-  const endNotchClassNames = [getClassName('bpk-ticket__notch')];
 
-  if (className) {
-    classNames.push(className);
-  }
-  if (stubClassName) {
-    stubClassNames.push(stubClassName);
-  }
-  if (padded) {
-    mainClassNames.push(getClassName('bpk-ticket__main--padded'));
-    stubClassNames.push(getClassName('bpk-ticket__stub--padded'));
-  }
-  if (vertical) {
-    classNames.push(getClassName('bpk-ticket--vertical'));
-    mainClassNames.push(getClassName('bpk-ticket__main--vertical'));
-    mainInnerClassNames.push(getClassName('bpk-ticket__main-inner--vertical'));
-    stubClassNames.push(getClassName('bpk-ticket__stub--vertical'));
-    stubInnerClassNames.push(getClassName('bpk-ticket__stub-inner--vertical'));
-    punchlineClassNames.push(getClassName('bpk-ticket__punchline--horizontal'));
-    startNotchClassNames.push(getClassName('bpk-ticket__notch--left'));
-    endNotchClassNames.push(getClassName('bpk-ticket__notch--right'));
-  } else {
-    mainClassNames.push(getClassName('bpk-ticket__main--horizontal'));
-    mainInnerClassNames.push(
-      getClassName('bpk-ticket__main-inner--horizontal'),
-    );
-    stubClassNames.push(getClassName('bpk-ticket__stub--horizontal'));
-    stubInnerClassNames.push(
-      getClassName('bpk-ticket__stub-inner--horizontal'),
-    );
-    punchlineClassNames.push(getClassName('bpk-ticket__punchline--vertical'));
-    startNotchClassNames.push(getClassName('bpk-ticket__notch--top'));
-    endNotchClassNames.push(getClassName('bpk-ticket__notch--bottom'));
-  }
+  const mainInnerClassNames = getClassName(
+    'bpk-ticket__main-inner',
+    vertical && 'bpk-ticket__main-inner--vertical',
+    !vertical && 'bpk-ticket__main-inner--horizontal',
+  );
 
-  const classNameFinal = classNames.join(' ');
+  const stubClassNames = getClassName(
+    'bpk-ticket__paper',
+    'bpk-ticket__stub',
+    stubClassName,
+    padded && 'bpk-ticket__stub--padded',
+    vertical && 'bpk-ticket__stub--vertical',
+    !vertical && 'bpk-ticket__stub--horizontal',
+  );
+
+  const stubInnerClassNames = getClassName(
+    'bpk-ticket__stub-inner',
+    vertical && 'bpk-ticket__stub-inner--vertical',
+    !vertical && 'bpk-ticket__stub-inner--horizontal',
+  );
+
+  const punchlineClassNames = getClassName(
+    'bpk-ticket__punchline',
+    vertical && 'bpk-ticket__punchline--horizontal',
+    !vertical && 'bpk-ticket__punchline--vertical',
+  );
+
+  const startNotchClassNames = getClassName(
+    'bpk-ticket__notch',
+    vertical && 'bpk-ticket__notch--left',
+    !vertical && 'bpk-ticket__notch--top',
+  );
+
+  const endNotchClassNames = getClassName(
+    'bpk-ticket__notch',
+    vertical && 'bpk-ticket__notch--right',
+    !vertical && 'bpk-ticket__notch--bottom',
+  );
 
   const mainContent = padded ? (
     children
   ) : (
-    <div className={mainInnerClassNames.join(' ')}>{children}</div>
+    <div className={mainInnerClassNames}>{children}</div>
   );
 
   const stubContent = padded ? (
     stub
   ) : (
-    <div className={stubInnerClassNames.join(' ')}>{stub}</div>
+    <div className={stubInnerClassNames}>{stub}</div>
   );
 
   const contents = [
-    <div key="main" className={mainClassNames.join(' ')}>
+    <div key="main" className={mainClassNames}>
       {mainContent}
     </div>,
     <div
       key="punchline"
-      className={punchlineClassNames.join(' ')}
+      className={punchlineClassNames}
       role="presentation"
       aria-hidden="true"
     >
-      <div className={startNotchClassNames.join(' ')} />
-      <div className={endNotchClassNames.join(' ')} />
+      <div className={startNotchClassNames} />
+      <div className={endNotchClassNames} />
     </div>,
-    <div key="stub" className={stubClassNames.join(' ')} {...stubProps}>
+    <div key="stub" className={stubClassNames} {...stubProps}>
       {stubContent}
     </div>,
   ];
 
   if (href) {
     return (
-      <a href={href} className={classNameFinal} {...rest}>
+      <a href={href} className={classNames} {...rest}>
         {contents}
       </a>
     );
   }
 
   return (
-    <div role="button" className={classNameFinal} {...rest}>
+    <div role="button" className={classNames} {...rest}>
       {contents}
     </div>
   );
