@@ -20,7 +20,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import BpkBreakpoint, { BREAKPOINTS } from 'bpk-component-breakpoint';
 import { cssModules } from 'bpk-react-utils';
-import breakpointReadme from 'bpk-component-breakpoint/readme.md';
+import breakpointReadme from 'bpk-component-breakpoint/README.md';
 
 import DocsPageBuilder from '../../components/DocsPageBuilder';
 import DocsPageWrapper from '../../components/DocsPageWrapper';

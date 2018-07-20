@@ -18,7 +18,7 @@
 
 import React from 'react';
 import BpkSlider from 'bpk-component-slider';
-import sliderReadme from 'bpk-component-slider/readme.md';
+import sliderReadme from 'bpk-component-slider/README.md';
 import { updateOnDirectionChange } from 'bpk-component-rtl-toggle';
 
 import DocsPageBuilder from '../../components/DocsPageBuilder';

@@ -19,7 +19,7 @@
 import React from 'react';
 import { BpkList, BpkListItem } from 'bpk-component-list';
 
-import listReadme from 'bpk-component-list/readme.md';
+import listReadme from 'bpk-component-list/README.md';
 
 import DocsPageBuilder from '../../components/DocsPageBuilder';
 import DocsPageWrapper from '../../components/DocsPageWrapper';

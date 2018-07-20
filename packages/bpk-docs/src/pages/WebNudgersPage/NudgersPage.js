@@ -18,7 +18,7 @@
 
 import React, { Component } from 'react';
 import BpkNudger from 'bpk-component-nudger';
-import nudgersReadme from 'bpk-component-nudger/readme.md';
+import nudgersReadme from 'bpk-component-nudger/README.md';
 
 import DocsPageBuilder from '../../components/DocsPageBuilder';
 import Paragraph from '../../components/Paragraph';

@@ -17,7 +17,7 @@
  */
 
 import React from 'react';
-import breadcrumbReadme from 'bpk-component-breadcrumb/readme.md';
+import breadcrumbReadme from 'bpk-component-breadcrumb/README.md';
 import BpkBreadcrumb, { BpkBreadcrumbItem } from 'bpk-component-breadcrumb';
 
 import IntroBlurb from '../../components/IntroBlurb';

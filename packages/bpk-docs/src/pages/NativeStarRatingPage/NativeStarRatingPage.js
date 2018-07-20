@@ -17,7 +17,7 @@
  */
 
 import React from 'react';
-import readme from 'react-native-bpk-component-star-rating/readme.md';
+import readme from 'react-native-bpk-component-star-rating/README.md';
 
 import iosScreenshotDefault from 'react-native-bpk-component-star-rating/screenshots/ios/default.png';
 import androidScreenshotDefault from 'react-native-bpk-component-star-rating/screenshots/android/default.png';

@@ -23,7 +23,7 @@ import {
   BpkDescriptionDetails,
 } from 'bpk-component-description-list';
 
-import descriptionlistsReadme from 'bpk-component-description-list/readme.md';
+import descriptionlistsReadme from 'bpk-component-description-list/README.md';
 
 import DocsPageBuilder from '../../components/DocsPageBuilder';
 import DocsPageWrapper from '../../components/DocsPageWrapper';

@@ -20,7 +20,7 @@ import React from 'react';
 import BpkLink from 'bpk-component-link';
 import BpkText from 'bpk-component-text';
 import BpkBlockquote from 'bpk-component-blockquote';
-import readme from 'react-native-bpk-component-touchable-native-feedback/readme.md';
+import readme from 'react-native-bpk-component-touchable-native-feedback/README.md';
 
 import androidScreenshotDefault from 'react-native-bpk-component-touchable-native-feedback/screenshots/default.png';
 

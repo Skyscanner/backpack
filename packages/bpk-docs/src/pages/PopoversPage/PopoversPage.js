@@ -21,7 +21,7 @@ import BpkButton from 'bpk-component-button';
 import BpkPopover from 'bpk-component-popover';
 import BpkInput, { withOpenEvents } from 'bpk-component-input';
 import BpkRouterLink from 'bpk-component-router-link';
-import popoverReadme from 'bpk-component-popover/readme.md';
+import popoverReadme from 'bpk-component-popover/README.md';
 
 import * as ROUTES from '../../constants/routes';
 import DocsPageBuilder from '../../components/DocsPageBuilder';

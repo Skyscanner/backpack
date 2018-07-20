@@ -20,7 +20,7 @@ import React, { Component } from 'react';
 import BpkDatepicker from 'bpk-component-datepicker';
 import BpkRouterLink from 'bpk-component-router-link';
 
-import datepickerReadme from 'bpk-component-datepicker/readme.md';
+import datepickerReadme from 'bpk-component-datepicker/README.md';
 import * as ROUTES from '../../constants/routes';
 import DocsPageBuilder from '../../components/DocsPageBuilder';
 import DocsPageWrapper from '../../components/DocsPageWrapper';

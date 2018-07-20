@@ -23,7 +23,7 @@ import BpkModal from 'bpk-component-modal';
 import BpkButton from 'bpk-component-button';
 import { BpkButtonLink } from 'bpk-component-link';
 
-import modalReadme from 'bpk-component-modal/readme.md';
+import modalReadme from 'bpk-component-modal/README.md';
 
 import LoginFormExample from './LoginFormExample';
 import DocsPageBuilder from '../../components/DocsPageBuilder';

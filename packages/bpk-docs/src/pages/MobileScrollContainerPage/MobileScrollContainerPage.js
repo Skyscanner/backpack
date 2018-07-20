@@ -19,7 +19,7 @@
 /* @flow */
 
 import React from 'react';
-import mobileScrollContainerReadme from 'bpk-component-mobile-scroll-container/readme.md';
+import mobileScrollContainerReadme from 'bpk-component-mobile-scroll-container/README.md';
 
 import BlockExample from './BlockExample';
 import IntroBlurb from '../../components/IntroBlurb';

@@ -27,8 +27,8 @@ import { cssModules } from 'bpk-react-utils';
 
 import iosScreenshot from 'react-native-bpk-component-map/screenshots/ios/default.png';
 import androidScreenshot from 'react-native-bpk-component-map/screenshots/android/default.png';
-import nativeMapReadme from 'react-native-bpk-component-map/readme.md';
-import mapReadme from 'bpk-component-map/readme.md';
+import nativeMapReadme from 'react-native-bpk-component-map/README.md';
+import mapReadme from 'bpk-component-map/README.md';
 
 import STYLES from './MapPage.scss';
 

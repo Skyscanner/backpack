@@ -22,7 +22,7 @@ import BpkImage, {
   withLoadingBehavior,
 } from 'bpk-component-image';
 
-import imagesReadme from 'bpk-component-image/readme.md';
+import imagesReadme from 'bpk-component-image/README.md';
 import * as BREAKPOINTS from 'bpk-tokens/tokens/breakpoints.es6';
 
 import DocsPageBuilder from '../../components/DocsPageBuilder';

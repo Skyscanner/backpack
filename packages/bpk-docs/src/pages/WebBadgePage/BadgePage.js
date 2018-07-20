@@ -21,7 +21,7 @@ import BpkBadge, { BADGE_TYPES } from 'bpk-component-badge';
 
 import { cssModules } from 'bpk-react-utils';
 
-import badgeReadme from 'bpk-component-badge/readme.md';
+import badgeReadme from 'bpk-component-badge/README.md';
 
 import STYLES from './badge-page.scss';
 import DocsPageBuilder from '../../components/DocsPageBuilder';

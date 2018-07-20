@@ -22,7 +22,7 @@ import React, { Component } from 'react';
 import BpkChip from 'bpk-component-chip';
 import BpkButton from 'bpk-component-button';
 import { cssModules } from 'bpk-react-utils';
-import chipReadme from 'bpk-component-chip/readme.md';
+import chipReadme from 'bpk-component-chip/README.md';
 
 import STYLES from './ChipsPage.scss';
 import Paragraph from '../../components/Paragraph';

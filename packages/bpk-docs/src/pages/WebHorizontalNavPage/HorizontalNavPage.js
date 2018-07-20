@@ -18,7 +18,7 @@
 
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import readme from 'bpk-component-horizontal-nav/readme.md';
+import readme from 'bpk-component-horizontal-nav/README.md';
 import BpkHorizontalNav, {
   BpkHorizontalNavItem,
 } from 'bpk-component-horizontal-nav';

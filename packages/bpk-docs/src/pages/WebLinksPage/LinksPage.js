@@ -19,7 +19,7 @@
 import React from 'react';
 import BpkLink, { BpkButtonLink } from 'bpk-component-link';
 
-import linkReadme from 'bpk-component-link/readme.md';
+import linkReadme from 'bpk-component-link/README.md';
 
 import DocsPageBuilder from '../../components/DocsPageBuilder';
 import Paragraph from '../../components/Paragraph';
