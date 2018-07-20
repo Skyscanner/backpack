@@ -96,6 +96,12 @@ exports[`BpkImage should have loading behavior 1`] = `
       }
     }
   >
+    <img
+      alt="image description"
+      className="bpk-image__img bpk-image__img--hidden"
+      onLoad={[Function]}
+      src="./path/to/image.jpg"
+    />
     <div
       className="bpk-image__spinner"
     >
@@ -183,12 +189,6 @@ exports[`BpkImage should have loading behavior 1`] = `
         />
       </svg>
     </div>
-    <img
-      alt="image description"
-      className="bpk-image__img bpk-image__img--hidden"
-      onLoad={[Function]}
-      src="./path/to/image.jpg"
-    />
   </div>
 </div>
 `;
