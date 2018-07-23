@@ -40,12 +40,13 @@ const flights = Array(100).fill({
   departure: '20:50',
   arrival: '22:10',
   duration: '1h 20',
-  logo: '//logos.skyscnr.com/images/airlines/small/BA.png',
+  logo: '//logos.skyscnr.com/images/airlines/BA.png',
 });
 
 const Flight = ({ flight }) => (
   <BpkTicket
     className={getClassName('bpk-stories-flight')}
+    stubClassName={getClassName('bpk-stories-flight__stub')}
     stub={
       <div className={getClassName('bpk-stories-flight__stub')}>
         <div className={getClassName('bpk-stories-flight__small')}>
@@ -61,23 +62,29 @@ const Flight = ({ flight }) => (
     }
   >
     <div className={getClassName('bpk-stories-flight__main')}>
-      <img src={flight.logo} alt="BA Logo" />
-      <div className={getClassName('bpk-stories-flight__from')}>
-        <div className={getClassName('bpk-stories-flight__time')}>
-          {flight.departure}
+      <div className={getClassName('bpk-stories-flight__flight-overview')}>
+        <img
+          className={getClassName('bpk-stories-flight__logo')}
+          src={flight.logo}
+          alt="BA Logo"
+        />
+        <div className={getClassName('bpk-stories-flight__from')}>
+          <div className={getClassName('bpk-stories-flight__time')}>
+            {flight.departure}
+          </div>
+          <div>{flight.from}</div>
         </div>
-        <div>{flight.from}</div>
-      </div>
-      <div>{flight.duration}</div>
-      <div className={getClassName('bpk-stories-flight__to')}>
-        <div className={getClassName('bpk-stories-flight__time')}>
-          {flight.arrival}
+        <div>{flight.duration}</div>
+        <div className={getClassName('bpk-stories-flight__to')}>
+          <div className={getClassName('bpk-stories-flight__time')}>
+            {flight.arrival}
+          </div>
+          <div>{flight.to}</div>
         </div>
-        <div>{flight.to}</div>
       </div>
-    </div>
-    <div className={getClassName('bpk-stories-flight__small')}>
-      Operated by BA Cityflyer
+      <div className={getClassName('bpk-stories-flight__small')}>
+        Operated by BA Cityflyer
+      </div>
     </div>
   </BpkTicket>
 );

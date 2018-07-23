@@ -22,8 +22,11 @@
   margin-bottom: 2rem;
 
   &__stub {
+    display: flex;
     padding: 1rem;
-    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 
   &__small {
@@ -33,16 +36,28 @@
     @include bpk-text--sm;
   }
 
+  &__logo {
+    width: 4rem;
+    height: 2rem;
+  }
+
   &__price {
     @include bpk-text;
     @include bpk-text--lg;
     @include bpk-text--bold;
   }
 
-  &__main {
+  &__flight-overview {
     display: flex;
     margin-bottom: 1rem;
     align-items: center;
+    flex: 1;
+  }
+
+  &__main {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
   }
 
   &__from {
