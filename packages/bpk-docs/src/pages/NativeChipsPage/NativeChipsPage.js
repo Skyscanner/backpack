@@ -17,7 +17,7 @@
  */
 
 import React from 'react';
-import readme from 'react-native-bpk-component-chip/readme.md';
+import readme from 'react-native-bpk-component-chip/README.md';
 
 import iosScreenshotDefault from 'react-native-bpk-component-chip/screenshots/ios/default.png';
 import iosScreenshotDismissible from 'react-native-bpk-component-chip/screenshots/ios/dismissible.png';

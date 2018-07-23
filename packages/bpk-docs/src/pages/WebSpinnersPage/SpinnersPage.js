@@ -17,7 +17,7 @@
  */
 
 import React from 'react';
-import spinnerReadme from 'bpk-component-spinner/readme.md';
+import spinnerReadme from 'bpk-component-spinner/README.md';
 import SpinnerLayout from 'bpk-component-spinner/SpinnerLayout';
 import {
   BpkSpinner,

@@ -17,7 +17,7 @@
  */
 
 import React from 'react';
-import readme from 'react-native-bpk-component-horizontal-nav/readme.md';
+import readme from 'react-native-bpk-component-horizontal-nav/README.md';
 
 import iosScreenshotDefault from 'react-native-bpk-component-horizontal-nav/screenshots/ios/default.png';
 import iosScreenshotSmall from 'react-native-bpk-component-horizontal-nav/screenshots/ios/small.png';

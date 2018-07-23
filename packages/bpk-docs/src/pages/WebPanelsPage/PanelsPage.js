@@ -19,7 +19,7 @@
 import React from 'react';
 import BpkPanel from 'bpk-component-panel';
 
-import panelReadme from 'bpk-component-panel/readme.md';
+import panelReadme from 'bpk-component-panel/README.md';
 
 import DocsPageBuilder from '../../components/DocsPageBuilder';
 import Paragraph from '../../components/Paragraph';

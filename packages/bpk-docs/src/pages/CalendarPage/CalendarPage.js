@@ -27,7 +27,7 @@ import BpkCalendar, {
 import BpkMobileScrollContainer from 'bpk-component-mobile-scroll-container';
 import { cssModules } from 'bpk-react-utils';
 
-import calendarReadme from 'bpk-component-calendar/readme.md';
+import calendarReadme from 'bpk-component-calendar/README.md';
 import DocsPageBuilder from '../../components/DocsPageBuilder';
 import DocsPageWrapper from '../../components/DocsPageWrapper';
 import Paragraph from '../../components/Paragraph';

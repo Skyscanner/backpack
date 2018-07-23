@@ -26,7 +26,7 @@ import BpkNavigationBar, {
   BpkNavigationBarIconButton,
   BpkNavigationBarButtonLink,
 } from 'bpk-component-navigation-bar';
-import navigationBarReadme from 'bpk-component-navigation-bar/readme.md';
+import navigationBarReadme from 'bpk-component-navigation-bar/README.md';
 import { cssModules } from 'bpk-react-utils';
 
 import DocsPageBuilder from '../../components/DocsPageBuilder';

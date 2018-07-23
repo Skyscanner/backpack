@@ -17,7 +17,7 @@
  */
 
 import React from 'react';
-import progressReadme from 'bpk-component-progress/readme.md';
+import progressReadme from 'bpk-component-progress/README.md';
 
 import ProgressContainer from './ProgressContainer';
 import SteppedProgressContainer from './SteppedProgressContainer';

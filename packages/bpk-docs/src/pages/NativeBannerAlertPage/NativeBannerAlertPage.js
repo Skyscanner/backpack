@@ -17,7 +17,7 @@
  */
 
 import React from 'react';
-import readme from 'react-native-bpk-component-banner-alert/readme.md';
+import readme from 'react-native-bpk-component-banner-alert/README.md';
 
 import iosScreenshotDefault from 'react-native-bpk-component-banner-alert/screenshots/ios/default.png';
 import iosScreenshotDismissable from 'react-native-bpk-component-banner-alert/screenshots/ios/dismissable.png';

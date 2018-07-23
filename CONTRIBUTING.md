@@ -201,7 +201,7 @@ If you want to add a new component, we will need the following:
 - React component
 - Stories
 - Tests
-- Documentation (Including main `readme.md`)
+- Documentation (Including main `README.md`)
 
 ### Design
 

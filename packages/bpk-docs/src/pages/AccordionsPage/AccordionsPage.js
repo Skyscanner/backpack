@@ -18,7 +18,7 @@
 
 import React from 'react';
 import BpkCheckbox from 'bpk-component-checkbox';
-import accordionsReadme from 'bpk-component-accordion/readme.md';
+import accordionsReadme from 'bpk-component-accordion/README.md';
 import {
   BpkAccordion,
   BpkAccordionItem,

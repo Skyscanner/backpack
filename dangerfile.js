@@ -70,8 +70,8 @@ if (nativeComponentIntroduced) {
   );
 }
 
-// If any of the packages have changed, the unreleased log should have been updated.
-const unreleasedModified = includes(modifiedFiles, 'unreleased.md');
+// If any of the packages have changed, the UNRELEASED log should have been updated.
+const unreleasedModified = includes(modifiedFiles, 'UNRELEASED.md');
 const packagesModified = fileChanges.some(
   filePath =>
     (filePath.startsWith('packages/') ||
@@ -80,7 +80,7 @@ const packagesModified = fileChanges.some(
 );
 if (packagesModified && !unreleasedModified && !declaredTrivial) {
   warn(
-    "One or more packages have changed, but `unreleased.md` wasn't updated.",
+    "One or more packages have changed, but `UNRELEASED.md` wasn't updated.",
   );
 }
 

@@ -19,7 +19,7 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import BpkPagination from 'bpk-component-pagination';
-import paginationReadme from 'bpk-component-pagination/readme.md';
+import paginationReadme from 'bpk-component-pagination/README.md';
 
 import DocsPageBuilder from '../../components/DocsPageBuilder';
 import DocsPageWrapper from '../../components/DocsPageWrapper';

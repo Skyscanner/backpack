@@ -28,13 +28,13 @@ import BpkFormValidation from 'bpk-component-form-validation';
 import BpkBannerAlert, { ALERT_TYPES } from 'bpk-component-banner-alert';
 import { cssModules } from 'bpk-react-utils';
 
-import inputReadme from 'bpk-component-input/readme.md';
-import labelReadme from 'bpk-component-label/readme.md';
-import radioReadme from 'bpk-component-radio/readme.md';
-import selectReadme from 'bpk-component-select/readme.md';
-import textareaReadme from 'bpk-component-textarea/readme.md';
-import checkboxReadme from 'bpk-component-checkbox/readme.md';
-import validationReadme from 'bpk-component-form-validation/readme.md';
+import inputReadme from 'bpk-component-input/README.md';
+import labelReadme from 'bpk-component-label/README.md';
+import radioReadme from 'bpk-component-radio/README.md';
+import selectReadme from 'bpk-component-select/README.md';
+import textareaReadme from 'bpk-component-textarea/README.md';
+import checkboxReadme from 'bpk-component-checkbox/README.md';
+import validationReadme from 'bpk-component-form-validation/README.md';
 
 import STYLES from './forms-page.scss';
 import * as ROUTES from '../../constants/routes';

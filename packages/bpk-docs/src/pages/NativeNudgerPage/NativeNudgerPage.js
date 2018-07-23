@@ -17,7 +17,7 @@
  */
 
 import React from 'react';
-import readme from 'react-native-bpk-component-nudger/readme.md';
+import readme from 'react-native-bpk-component-nudger/README.md';
 
 import iosScreenshotDefault from 'react-native-bpk-component-nudger/screenshots/ios/default.png';
 import androidScreenshotDefault from 'react-native-bpk-component-nudger/screenshots/android/default.png';

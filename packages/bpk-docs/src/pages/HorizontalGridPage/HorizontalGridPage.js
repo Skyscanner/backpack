@@ -21,7 +21,7 @@ import BpkBlockquote from 'bpk-component-blockquote';
 import BpkRouterLink from 'bpk-component-router-link';
 import BpkText from 'bpk-component-text';
 
-import gridReadme from 'bpk-component-grid/readme.md';
+import gridReadme from 'bpk-component-grid/README.md';
 
 import * as routes from '../../constants/routes';
 import DocsPageBuilder from '../../components/DocsPageBuilder';

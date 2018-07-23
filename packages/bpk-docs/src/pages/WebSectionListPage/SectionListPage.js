@@ -22,7 +22,7 @@ import BpkSectionList, {
   BpkSectionListItem,
 } from 'bpk-component-section-list';
 
-import sectionListReadme from 'bpk-component-section-list/readme.md';
+import sectionListReadme from 'bpk-component-section-list/README.md';
 
 import DocsPageBuilder from '../../components/DocsPageBuilder';
 

@@ -19,7 +19,7 @@
 /* @flow */
 
 import React from 'react';
-import readme from 'react-native-bpk-component-carousel/readme.md';
+import readme from 'react-native-bpk-component-carousel/README.md';
 
 import iosScreenshotDefault from 'react-native-bpk-component-carousel/screenshots/ios/default.png';
 import androidScreenshotDefault from 'react-native-bpk-component-carousel/screenshots/android/default.png';

@@ -17,7 +17,7 @@
  */
 
 import React from 'react';
-import readme from 'react-native-bpk-component-alert/readme.md';
+import readme from 'react-native-bpk-component-alert/README.md';
 import { BpkCode } from 'bpk-component-code';
 
 import iosScreenshotDefault from 'react-native-bpk-component-alert/screenshots/ios/default.png';

@@ -18,7 +18,7 @@
 /* @flow */
 
 import React from 'react';
-import readme from 'react-native-bpk-component-progress/readme.md';
+import readme from 'react-native-bpk-component-progress/README.md';
 
 import iosScreenshotDefault from 'react-native-bpk-component-progress/screenshots/ios/default.png';
 import androidScreenshotDefault from 'react-native-bpk-component-progress/screenshots/android/default.png';

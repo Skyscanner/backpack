@@ -18,7 +18,7 @@
 
 import React from 'react';
 import BpkTooltip from 'bpk-component-tooltip';
-import tooltipReadme from 'bpk-component-tooltip/readme.md';
+import tooltipReadme from 'bpk-component-tooltip/README.md';
 import { spacingSm, colorGreen500 } from 'bpk-tokens/tokens/base.es6';
 import { cssModules } from 'bpk-react-utils';
 

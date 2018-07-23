@@ -19,7 +19,7 @@
 /* @flow */
 
 import React from 'react';
-import navigationStackReadme from 'bpk-component-navigation-stack/readme.md';
+import navigationStackReadme from 'bpk-component-navigation-stack/README.md';
 import { cssModules } from 'bpk-react-utils';
 
 import DocsPageBuilder from '../../components/DocsPageBuilder';

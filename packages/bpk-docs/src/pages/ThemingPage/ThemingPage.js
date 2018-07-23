@@ -21,8 +21,8 @@ import BpkLink from 'bpk-component-link';
 import BpkRouterLink from 'bpk-component-router-link';
 import { BpkList, BpkListItem } from 'bpk-component-list';
 import BpkBlockquote from 'bpk-component-blockquote';
-import nativeReadme from 'react-native-bpk-theming/readme.md';
-import webReadme from 'bpk-theming/readme.md';
+import nativeReadme from 'react-native-bpk-theming/README.md';
+import webReadme from 'bpk-theming/README.md';
 
 import Paragraph from '../../components/Paragraph';
 import IntroBlurb from '../../components/IntroBlurb';

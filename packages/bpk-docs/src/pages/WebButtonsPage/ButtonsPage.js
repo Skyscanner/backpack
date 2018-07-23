@@ -34,8 +34,8 @@ import TestBpkLargeSearchIcon from 'bpk-component-icon/lg/search';
 
 import BpkLoadingButton from 'bpk-component-loading-button';
 import BpkRouterLink from 'bpk-component-router-link';
-import buttonReadme from 'bpk-component-button/readme.md';
-import loadingButtonReadme from 'bpk-component-loading-button/readme.md';
+import buttonReadme from 'bpk-component-button/README.md';
+import loadingButtonReadme from 'bpk-component-loading-button/README.md';
 import { cssModules } from 'bpk-react-utils';
 import STYLES from './buttons-page.scss';
 

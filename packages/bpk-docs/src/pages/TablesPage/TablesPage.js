@@ -26,7 +26,7 @@ import {
   BpkTableCell,
 } from 'bpk-component-table';
 
-import tablesReadme from 'bpk-component-table/readme.md';
+import tablesReadme from 'bpk-component-table/README.md';
 
 import DocsPageBuilder from '../../components/DocsPageBuilder';
 import DocsPageWrapper from '../../components/DocsPageWrapper';

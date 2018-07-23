@@ -26,7 +26,7 @@ import BpkAutosuggest, {
   BpkAutosuggestSuggestion,
 } from 'bpk-component-autosuggest';
 
-import autosuggestReadme from 'bpk-component-autosuggest/readme.md';
+import autosuggestReadme from 'bpk-component-autosuggest/README.md';
 
 import * as ROUTES from '../../constants/routes';
 import DocsPageBuilder from '../../components/DocsPageBuilder';

@@ -17,7 +17,7 @@
  */
 
 import React from 'react';
-import readme from 'react-native-bpk-component-phone-input/readme.md';
+import readme from 'react-native-bpk-component-phone-input/README.md';
 import iosScreenshoDialingCodeList from 'react-native-bpk-component-phone-input/screenshots/ios/dialing-code-list.png';
 import iosScreenshotPhoneNumberInput from 'react-native-bpk-component-phone-input/screenshots/ios/phone-number-input.png';
 import androidScreenshotDialingCodeList from 'react-native-bpk-component-phone-input/screenshots/android/dialing-code-list.png';

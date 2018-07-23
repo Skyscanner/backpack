@@ -17,7 +17,7 @@
  */
 
 import React from 'react';
-import readme from 'react-native-bpk-component-button/readme.md';
+import readme from 'react-native-bpk-component-button/README.md';
 
 import iosScreenshotPrimary from 'react-native-bpk-component-button/screenshots/ios/primary.png';
 import iosScreenshotSecondary from 'react-native-bpk-component-button/screenshots/ios/secondary.png';

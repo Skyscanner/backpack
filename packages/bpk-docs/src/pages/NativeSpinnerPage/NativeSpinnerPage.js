@@ -17,7 +17,7 @@
  */
 
 import React from 'react';
-import readme from 'react-native-bpk-component-spinner/readme.md';
+import readme from 'react-native-bpk-component-spinner/README.md';
 
 import iosScreenshotDefault from 'react-native-bpk-component-spinner/screenshots/ios/default.png';
 import iosScreenshotSmall from 'react-native-bpk-component-spinner/screenshots/ios/small.png';

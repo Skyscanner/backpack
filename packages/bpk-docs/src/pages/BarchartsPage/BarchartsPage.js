@@ -21,7 +21,7 @@ import BpkLink from 'bpk-component-link';
 import BpkBarchart from 'bpk-component-barchart';
 import { onePixelRem } from 'bpk-tokens/tokens/base.es6';
 import { withSelectedState } from 'bpk-component-barchart/hocs';
-import barchartReadme from 'bpk-component-barchart/readme.md';
+import barchartReadme from 'bpk-component-barchart/README.md';
 import { updateOnDirectionChange } from 'bpk-component-rtl-toggle';
 
 import data from 'bpk-component-barchart/data.json';

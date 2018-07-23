@@ -22,7 +22,7 @@ import BpkSelect from 'bpk-component-select';
 import BpkCheckbox from 'bpk-component-checkbox';
 import BpkFieldset from 'bpk-component-fieldset';
 import BpkRouterLink from 'bpk-component-router-link';
-import readme from 'bpk-component-fieldset/readme.md';
+import readme from 'bpk-component-fieldset/README.md';
 import PropTypes from 'prop-types';
 import React, { cloneElement, Component } from 'react';
 import { cssModules } from 'bpk-react-utils';

@@ -17,7 +17,7 @@
  */
 
 import React from 'react';
-import readme from 'react-native-bpk-component-switch/readme.md';
+import readme from 'react-native-bpk-component-switch/README.md';
 
 import iosVideo from 'react-native-bpk-component-switch/videos/ios/all-types-react-native-bpk-component-switch.mp4';
 import androidVideo from 'react-native-bpk-component-switch/videos/android/all-types-react-native-bpk-component-switch.mp4';
