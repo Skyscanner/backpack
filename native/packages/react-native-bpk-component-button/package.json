@@ -1,6 +1,6 @@
 {
   "name": "react-native-bpk-component-button",
-  "version": "7.1.1",
+  "version": "7.1.2",
   "main": "index.js",
   "description": "Backpack React Native button component.",
   "repository": {
@@ -15,13 +15,13 @@
     "react-native-linear-gradient": "react-native-community/react-native-linear-gradient"
   },
   "dependencies": {
-    "bpk-tokens": "^27.0.5",
+    "bpk-tokens": "^27.0.6",
     "lodash": "^4.17.4",
     "prop-types": "^15.5.8",
-    "react-native-bpk-component-icon": "^1.9.2",
-    "react-native-bpk-component-text": "^2.1.44",
-    "react-native-bpk-component-touchable-native-feedback": "^1.1.18",
-    "react-native-bpk-component-touchable-overlay": "^1.0.27",
-    "react-native-bpk-theming": "^1.0.67"
+    "react-native-bpk-component-icon": "^1.9.3",
+    "react-native-bpk-component-text": "^2.1.45",
+    "react-native-bpk-component-touchable-native-feedback": "^1.1.19",
+    "react-native-bpk-component-touchable-overlay": "^1.0.28",
+    "react-native-bpk-theming": "^1.0.68"
   }
 }
