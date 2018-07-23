@@ -25,7 +25,7 @@
   bottom: 0;
   left: 0;
   z-index: $bpk-zindex-scrim;
-  transition: opacity $bpk-duration-xs ease-in-out;
+  transition: opacity $bpk-duration-sm ease-in-out;
   background-color: $bpk-scrim-background-color;
   opacity: $bpk-scrim-opacity;
   overflow: hidden;
