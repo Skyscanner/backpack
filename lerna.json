@@ -10,11 +10,7 @@
       "ignore": ["bpk-tether"]
     },
     "publish": {
-      "ignore": [
-        "bpk-tether",
-        "bpk-component-boilerplate",
-        "react-native-bpk-component-boilerplate"
-      ],
+      "ignore": ["bpk-tether"],
       "allowBranch": "master"
     }
   }

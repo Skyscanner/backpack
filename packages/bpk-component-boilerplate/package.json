@@ -1,5 +1,6 @@
 {
   "name": "bpk-component-boilerplate",
+  "private": true,
   "version": "0.0.0",
   "description": "Backpack boilerplate component.",
   "main": "index.js",
