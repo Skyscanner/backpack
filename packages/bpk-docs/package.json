@@ -1,6 +1,6 @@
 {
   "name": "bpk-docs",
-  "version": "0.0.288",
+  "version": "0.0.289",
   "main": "index.js",
   "description": "Backpack documentation site.",
   "repository": {
@@ -70,7 +70,7 @@
     "bpk-component-text": "^1.0.67",
     "bpk-component-textarea": "^1.0.69",
     "bpk-component-theme-toggle": "^1.0.44",
-    "bpk-component-ticket": "^1.1.56",
+    "bpk-component-ticket": "^1.1.57",
     "bpk-component-tile": "^0.0.75",
     "bpk-component-tooltip": "^3.1.22",
     "bpk-mixins": "^17.11.2",
