@@ -19,7 +19,7 @@ npm install [package-name] --save-dev
 
 ## Contributing
 
-To contribute please see [contributing.md](contributing.md).
+To contribute please see [contributing.md](CONTRIBUTING.md).
 
 ## List of packages
 
