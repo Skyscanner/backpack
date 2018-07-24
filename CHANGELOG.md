@@ -2,6 +2,12 @@
 
 [Unreleased changes](./unreleased.md).
 
+# 2018-07-24 - Fixed issue with Ticket component children height
+
+**Fixed:**
+- bpk-component-ticket: 1.1.56 => 1.1.57
+  - Issue when non-padded containers not being rendered at full-height of the ticket component.
+
 # 2018-07-20 - Added `tinymask` support to native text, plus dependencies update and bug fixes.
 
 **Added:**
