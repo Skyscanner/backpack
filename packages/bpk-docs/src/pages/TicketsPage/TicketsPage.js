@@ -73,6 +73,18 @@ const components = [
       </BpkTicket>,
     ],
   },
+  {
+    id: 'without-notches',
+    title: 'Without notches',
+    blurb: 'You can also remove the notches from the ticket.',
+    examples: [
+      <BpkTicket stub="Lorem ipsum dolor sit amet." withNotches={false}>
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
+        ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis
+        dis parturient montes, nascetur ridiculus mus.
+      </BpkTicket>,
+    ],
+  },
 ];
 
 const blurb = [

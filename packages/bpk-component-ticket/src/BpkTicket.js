@@ -16,132 +16,144 @@
  * limitations under the License.
  */
 
+/* @flow */
+
 import PropTypes from 'prop-types';
-import React from 'react';
+import React, { type Node } from 'react';
 import { cssModules } from 'bpk-react-utils';
 
 import STYLES from './bpk-ticket.scss';
 
 const getClassName = cssModules(STYLES);
 
-const isIE9 = () => {
-  if (typeof window === 'undefined') return false;
-  return window.navigator.appVersion.indexOf('MSIE 9.') !== -1;
+type Props = {
+  children: Node,
+  stub: Node,
+  stubProps: { [string]: any },
+  padded: boolean,
+  vertical: boolean,
+  withNotches: boolean,
+  className: ?string,
+  stubClassName: ?string,
+  href: ?string,
 };
 
-const BpkTicket = props => {
+const BpkTicket = (props: Props) => {
   const {
     children,
     href,
     padded,
     stub,
     vertical,
+    withNotches,
     className,
     stubClassName,
     stubProps,
     ...rest
   } = props;
 
-  const classNames = [getClassName('bpk-ticket')];
-  const mainClassNames = ['bpk-ticket__paper', 'bpk-ticket__main'].map(
-    getClassName,
+  const classNames = getClassName(
+    'bpk-ticket',
+    className,
+    vertical && 'bpk-ticket--vertical',
+    withNotches && 'bpk-ticket--with-notches',
   );
-  const mainInnerClassNames = [getClassName('bpk-ticket__main-inner')];
-  const stubClassNames = ['bpk-ticket__paper', 'bpk-ticket__stub'].map(
-    getClassName,
+
+  const mainClassNames = getClassName(
+    'bpk-ticket__paper',
+    'bpk-ticket__main',
+    padded && 'bpk-ticket__main--padded',
+    vertical && 'bpk-ticket__main--vertical',
+    !vertical && 'bpk-ticket__main--horizontal',
+    withNotches && 'bpk-ticket__paper--with-notches',
   );
-  const stubInnerClassNames = [getClassName('bpk-ticket__stub-inner')];
-  const punchlineClassNames = [getClassName('bpk-ticket__punchline')];
-  const startNotchClassNames = [getClassName('bpk-ticket__notch')];
-  const endNotchClassNames = [getClassName('bpk-ticket__notch')];
-  const fallback = isIE9();
 
-  if (className) {
-    classNames.push(className);
-  }
-  if (stubClassName) {
-    stubClassNames.push(stubClassName);
-  }
-  if (padded) {
-    mainClassNames.push(getClassName('bpk-ticket__main--padded'));
-    stubClassNames.push(getClassName('bpk-ticket__stub--padded'));
-  }
-  if (vertical) {
-    classNames.push(getClassName('bpk-ticket--vertical'));
-    mainClassNames.push(getClassName('bpk-ticket__main--vertical'));
-    mainInnerClassNames.push(getClassName('bpk-ticket__main-inner--vertical'));
-    stubClassNames.push(getClassName('bpk-ticket__stub--vertical'));
-    stubInnerClassNames.push(getClassName('bpk-ticket__stub-inner--vertical'));
-    punchlineClassNames.push(getClassName('bpk-ticket__punchline--horizontal'));
-    startNotchClassNames.push(getClassName('bpk-ticket__notch--left'));
-    endNotchClassNames.push(getClassName('bpk-ticket__notch--right'));
-  } else {
-    mainClassNames.push(getClassName('bpk-ticket__main--horizontal'));
-    mainInnerClassNames.push(
-      getClassName('bpk-ticket__main-inner--horizontal'),
-    );
-    stubClassNames.push(getClassName('bpk-ticket__stub--horizontal'));
-    stubInnerClassNames.push(
-      getClassName('bpk-ticket__stub-inner--horizontal'),
-    );
+  const mainInnerClassNames = getClassName(
+    'bpk-ticket__main-inner',
+    vertical && 'bpk-ticket__main-inner--vertical',
+    !vertical && 'bpk-ticket__main-inner--horizontal',
+  );
 
-    if (!fallback) {
-      punchlineClassNames.push(getClassName('bpk-ticket__punchline--vertical'));
-      startNotchClassNames.push(getClassName('bpk-ticket__notch--top'));
-      endNotchClassNames.push(getClassName('bpk-ticket__notch--bottom'));
-    } else {
-      classNames.push(getClassName('bpk-ticket--fallback'));
-      mainClassNames.push(getClassName('bpk-ticket__paper--fallback'));
-      stubClassNames.push(
-        getClassName('bpk-ticket__paper--fallback'),
-        getClassName('bpk-ticket__stub--fallback'),
-      );
-      punchlineClassNames.push(getClassName('bpk-ticket__punchline--fallback'));
-    }
-  }
+  const stubClassNames = getClassName(
+    'bpk-ticket__paper',
+    'bpk-ticket__stub',
+    stubClassName,
+    padded && 'bpk-ticket__stub--padded',
+    vertical && 'bpk-ticket__stub--vertical',
+    !vertical && 'bpk-ticket__stub--horizontal',
+    withNotches && 'bpk-ticket__paper--with-notches',
+  );
 
-  const classNameFinal = classNames.join(' ');
+  const stubInnerClassNames = getClassName(
+    'bpk-ticket__stub-inner',
+    vertical && 'bpk-ticket__stub-inner--vertical',
+    !vertical && 'bpk-ticket__stub-inner--horizontal',
+  );
+
+  const punchlineClassNames = getClassName(
+    'bpk-ticket__punchline',
+    vertical &&
+      (withNotches
+        ? 'bpk-ticket__punchline--horizontal-with-notches'
+        : 'bpk-ticket__punchline--horizontal'),
+    !vertical &&
+      (withNotches
+        ? 'bpk-ticket__punchline--vertical-with-notches'
+        : 'bpk-ticket__punchline--vertical'),
+  );
+
+  const startNotchClassNames = getClassName(
+    'bpk-ticket__notch',
+    vertical && 'bpk-ticket__notch--left',
+    !vertical && 'bpk-ticket__notch--top',
+  );
+
+  const endNotchClassNames = getClassName(
+    'bpk-ticket__notch',
+    vertical && 'bpk-ticket__notch--right',
+    !vertical && 'bpk-ticket__notch--bottom',
+  );
 
   const mainContent = padded ? (
     children
   ) : (
-    <div className={mainInnerClassNames.join(' ')}>{children}</div>
+    <div className={mainInnerClassNames}>{children}</div>
   );
 
   const stubContent = padded ? (
     stub
   ) : (
-    <div className={stubInnerClassNames.join(' ')}>{stub}</div>
+    <div className={stubInnerClassNames}>{stub}</div>
   );
 
   const contents = [
-    <div key="main" className={mainClassNames.join(' ')}>
+    <div key="main" className={mainClassNames}>
       {mainContent}
     </div>,
     <div
       key="punchline"
-      className={punchlineClassNames.join(' ')}
+      className={punchlineClassNames}
       role="presentation"
       aria-hidden="true"
     >
-      <div className={startNotchClassNames.join(' ')} />
-      <div className={endNotchClassNames.join(' ')} />
+      {withNotches && <div className={startNotchClassNames} />}
+      {withNotches && <div className={endNotchClassNames} />}
     </div>,
-    <div key="stub" className={stubClassNames.join(' ')} {...stubProps}>
+    <div key="stub" className={stubClassNames} {...stubProps}>
       {stubContent}
     </div>,
   ];
 
   if (href) {
     return (
-      <a href={href} className={classNameFinal} {...rest}>
+      <a href={href} className={classNames} {...rest}>
         {contents}
       </a>
     );
   }
 
   return (
-    <div role="button" className={classNameFinal} {...rest}>
+    <div role="button" className={classNames} {...rest}>
       {contents}
     </div>
   );
@@ -156,6 +168,7 @@ BpkTicket.propTypes = {
   vertical: PropTypes.bool,
   stubClassName: PropTypes.string,
   stubProps: PropTypes.object, // eslint-disable-line react/forbid-prop-types
+  withNotches: PropTypes.bool,
 };
 
 BpkTicket.defaultProps = {
@@ -165,6 +178,7 @@ BpkTicket.defaultProps = {
   vertical: false,
   stubClassName: null,
   stubProps: {},
+  withNotches: true,
 };
 
 export default BpkTicket;

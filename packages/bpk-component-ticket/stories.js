@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+/* @flow */
+
 import PropTypes from 'prop-types';
 import React from 'react';
 import { cssModules } from 'bpk-react-utils';
@@ -131,6 +133,26 @@ storiesOf('bpk-component-ticket', module)
         alt="Thoughtful bear"
         width={300}
       />
+    </BpkTicket>
+  ))
+  .add('Without notches', () => (
+    <BpkTicket stub="Lorem ipsum dolor sit amet." withNotches={false}>
+      Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
+      ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis
+      dis parturient montes, nascetur ridiculus mus. Lorem ipsum dolor sit amet,
+      consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean
+      massa. Cum sociis natoque penatibus et magnis dis parturient montes,
+      nascetur ridiculus mus.
+    </BpkTicket>
+  ))
+  .add('Without notches (vertical)', () => (
+    <BpkTicket stub="Lorem ipsum dolor sit amet." vertical withNotches={false}>
+      Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
+      ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis
+      dis parturient montes, nascetur ridiculus mus. Lorem ipsum dolor sit amet,
+      consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean
+      massa. Cum sociis natoque penatibus et magnis dis parturient montes,
+      nascetur ridiculus mus.
     </BpkTicket>
   ))
   .add('With a "href" prop', () => (

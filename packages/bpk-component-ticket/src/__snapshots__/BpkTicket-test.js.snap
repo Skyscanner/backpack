@@ -2,17 +2,17 @@
 
 exports[`BpkTicket should render correctly 1`] = `
 <div
-  className="bpk-ticket"
+  className="bpk-ticket bpk-ticket--with-notches"
   role="button"
 >
   <div
-    className="bpk-ticket__paper bpk-ticket__main bpk-ticket__main--padded bpk-ticket__main--horizontal"
+    className="bpk-ticket__paper bpk-ticket__main bpk-ticket__main--padded bpk-ticket__main--horizontal bpk-ticket__paper--with-notches"
   >
     Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
   </div>
   <div
     aria-hidden="true"
-    className="bpk-ticket__punchline bpk-ticket__punchline--vertical"
+    className="bpk-ticket__punchline bpk-ticket__punchline--vertical-with-notches"
     role="presentation"
   >
     <div
@@ -23,7 +23,7 @@ exports[`BpkTicket should render correctly 1`] = `
     />
   </div>
   <div
-    className="bpk-ticket__paper bpk-ticket__stub bpk-ticket__stub--padded bpk-ticket__stub--horizontal"
+    className="bpk-ticket__paper bpk-ticket__stub bpk-ticket__stub--padded bpk-ticket__stub--horizontal bpk-ticket__paper--with-notches"
   >
     Ticket stub
   </div>
@@ -32,11 +32,11 @@ exports[`BpkTicket should render correctly 1`] = `
 
 exports[`BpkTicket should render correctly with "padded" attribute equal to "false" 1`] = `
 <div
-  className="bpk-ticket"
+  className="bpk-ticket bpk-ticket--with-notches"
   role="button"
 >
   <div
-    className="bpk-ticket__paper bpk-ticket__main bpk-ticket__main--horizontal"
+    className="bpk-ticket__paper bpk-ticket__main bpk-ticket__main--horizontal bpk-ticket__paper--with-notches"
   >
     <div
       className="bpk-ticket__main-inner bpk-ticket__main-inner--horizontal"
@@ -46,7 +46,7 @@ exports[`BpkTicket should render correctly with "padded" attribute equal to "fal
   </div>
   <div
     aria-hidden="true"
-    className="bpk-ticket__punchline bpk-ticket__punchline--vertical"
+    className="bpk-ticket__punchline bpk-ticket__punchline--vertical-with-notches"
     role="presentation"
   >
     <div
@@ -57,7 +57,7 @@ exports[`BpkTicket should render correctly with "padded" attribute equal to "fal
     />
   </div>
   <div
-    className="bpk-ticket__paper bpk-ticket__stub bpk-ticket__stub--horizontal"
+    className="bpk-ticket__paper bpk-ticket__stub bpk-ticket__stub--horizontal bpk-ticket__paper--with-notches"
   >
     <div
       className="bpk-ticket__stub-inner bpk-ticket__stub-inner--horizontal"
@@ -70,11 +70,11 @@ exports[`BpkTicket should render correctly with "padded" attribute equal to "fal
 
 exports[`BpkTicket should render correctly with "padded" attribute equal to "false" and a "vertical" attribute 1`] = `
 <div
-  className="bpk-ticket bpk-ticket--vertical"
+  className="bpk-ticket bpk-ticket--vertical bpk-ticket--with-notches"
   role="button"
 >
   <div
-    className="bpk-ticket__paper bpk-ticket__main bpk-ticket__main--vertical"
+    className="bpk-ticket__paper bpk-ticket__main bpk-ticket__main--vertical bpk-ticket__paper--with-notches"
   >
     <div
       className="bpk-ticket__main-inner bpk-ticket__main-inner--vertical"
@@ -84,7 +84,7 @@ exports[`BpkTicket should render correctly with "padded" attribute equal to "fal
   </div>
   <div
     aria-hidden="true"
-    className="bpk-ticket__punchline bpk-ticket__punchline--horizontal"
+    className="bpk-ticket__punchline bpk-ticket__punchline--horizontal-with-notches"
     role="presentation"
   >
     <div
@@ -95,7 +95,7 @@ exports[`BpkTicket should render correctly with "padded" attribute equal to "fal
     />
   </div>
   <div
-    className="bpk-ticket__paper bpk-ticket__stub bpk-ticket__stub--vertical"
+    className="bpk-ticket__paper bpk-ticket__stub bpk-ticket__stub--vertical bpk-ticket__paper--with-notches"
   >
     <div
       className="bpk-ticket__stub-inner bpk-ticket__stub-inner--vertical"
@@ -106,9 +106,9 @@ exports[`BpkTicket should render correctly with "padded" attribute equal to "fal
 </div>
 `;
 
-exports[`BpkTicket should render correctly with a "className" attribute 1`] = `
+exports[`BpkTicket should render correctly with "withNotches" attribute equal to "false" 1`] = `
 <div
-  className="bpk-ticket custom-class"
+  className="bpk-ticket"
   role="button"
 >
   <div
@@ -120,14 +120,7 @@ exports[`BpkTicket should render correctly with a "className" attribute 1`] = `
     aria-hidden="true"
     className="bpk-ticket__punchline bpk-ticket__punchline--vertical"
     role="presentation"
-  >
-    <div
-      className="bpk-ticket__notch bpk-ticket__notch--top"
-    />
-    <div
-      className="bpk-ticket__notch bpk-ticket__notch--bottom"
-    />
-  </div>
+  />
   <div
     className="bpk-ticket__paper bpk-ticket__stub bpk-ticket__stub--padded bpk-ticket__stub--horizontal"
   >
@@ -136,68 +129,7 @@ exports[`BpkTicket should render correctly with a "className" attribute 1`] = `
 </div>
 `;
 
-exports[`BpkTicket should render correctly with a "stubClassName" attribute 1`] = `
-<div
-  className="bpk-ticket"
-  role="button"
->
-  <div
-    className="bpk-ticket__paper bpk-ticket__main bpk-ticket__main--padded bpk-ticket__main--horizontal"
-  >
-    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-  </div>
-  <div
-    aria-hidden="true"
-    className="bpk-ticket__punchline bpk-ticket__punchline--vertical"
-    role="presentation"
-  >
-    <div
-      className="bpk-ticket__notch bpk-ticket__notch--top"
-    />
-    <div
-      className="bpk-ticket__notch bpk-ticket__notch--bottom"
-    />
-  </div>
-  <div
-    className="bpk-ticket__paper bpk-ticket__stub custom-class bpk-ticket__stub--padded bpk-ticket__stub--horizontal"
-  >
-    Ticket stub
-  </div>
-</div>
-`;
-
-exports[`BpkTicket should render correctly with a "stubProps" attribute 1`] = `
-<div
-  className="bpk-ticket"
-  role="button"
->
-  <div
-    className="bpk-ticket__paper bpk-ticket__main bpk-ticket__main--padded bpk-ticket__main--horizontal"
-  >
-    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-  </div>
-  <div
-    aria-hidden="true"
-    className="bpk-ticket__punchline bpk-ticket__punchline--vertical"
-    role="presentation"
-  >
-    <div
-      className="bpk-ticket__notch bpk-ticket__notch--top"
-    />
-    <div
-      className="bpk-ticket__notch bpk-ticket__notch--bottom"
-    />
-  </div>
-  <div
-    className="bpk-ticket__paper bpk-ticket__stub custom-class bpk-ticket__stub--padded bpk-ticket__stub--horizontal"
-    foo="bar"
-  >
-    Ticket stub
-  </div>
-</div>
-`;
-
-exports[`BpkTicket should render correctly with a "vertical" attribute 1`] = `
+exports[`BpkTicket should render correctly with "withNotches" attribute equal to "false" and a "vertical" attribute 1`] = `
 <div
   className="bpk-ticket bpk-ticket--vertical"
   role="button"
@@ -211,14 +143,7 @@ exports[`BpkTicket should render correctly with a "vertical" attribute 1`] = `
     aria-hidden="true"
     className="bpk-ticket__punchline bpk-ticket__punchline--horizontal"
     role="presentation"
-  >
-    <div
-      className="bpk-ticket__notch bpk-ticket__notch--left"
-    />
-    <div
-      className="bpk-ticket__notch bpk-ticket__notch--right"
-    />
-  </div>
+  />
   <div
     className="bpk-ticket__paper bpk-ticket__stub bpk-ticket__stub--padded bpk-ticket__stub--vertical"
   >
@@ -227,19 +152,19 @@ exports[`BpkTicket should render correctly with a "vertical" attribute 1`] = `
 </div>
 `;
 
-exports[`BpkTicket should render correctly with an "href" attribute 1`] = `
-<a
-  className="bpk-ticket"
-  href="//www.skyscanner.net"
+exports[`BpkTicket should render correctly with a "className" attribute 1`] = `
+<div
+  className="bpk-ticket custom-class bpk-ticket--with-notches"
+  role="button"
 >
   <div
-    className="bpk-ticket__paper bpk-ticket__main bpk-ticket__main--padded bpk-ticket__main--horizontal"
+    className="bpk-ticket__paper bpk-ticket__main bpk-ticket__main--padded bpk-ticket__main--horizontal bpk-ticket__paper--with-notches"
   >
     Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
   </div>
   <div
     aria-hidden="true"
-    className="bpk-ticket__punchline bpk-ticket__punchline--vertical"
+    className="bpk-ticket__punchline bpk-ticket__punchline--vertical-with-notches"
     role="presentation"
   >
     <div
@@ -250,7 +175,128 @@ exports[`BpkTicket should render correctly with an "href" attribute 1`] = `
     />
   </div>
   <div
-    className="bpk-ticket__paper bpk-ticket__stub bpk-ticket__stub--padded bpk-ticket__stub--horizontal"
+    className="bpk-ticket__paper bpk-ticket__stub bpk-ticket__stub--padded bpk-ticket__stub--horizontal bpk-ticket__paper--with-notches"
+  >
+    Ticket stub
+  </div>
+</div>
+`;
+
+exports[`BpkTicket should render correctly with a "stubClassName" attribute 1`] = `
+<div
+  className="bpk-ticket bpk-ticket--with-notches"
+  role="button"
+>
+  <div
+    className="bpk-ticket__paper bpk-ticket__main bpk-ticket__main--padded bpk-ticket__main--horizontal bpk-ticket__paper--with-notches"
+  >
+    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+  </div>
+  <div
+    aria-hidden="true"
+    className="bpk-ticket__punchline bpk-ticket__punchline--vertical-with-notches"
+    role="presentation"
+  >
+    <div
+      className="bpk-ticket__notch bpk-ticket__notch--top"
+    />
+    <div
+      className="bpk-ticket__notch bpk-ticket__notch--bottom"
+    />
+  </div>
+  <div
+    className="bpk-ticket__paper bpk-ticket__stub custom-class bpk-ticket__stub--padded bpk-ticket__stub--horizontal bpk-ticket__paper--with-notches"
+  >
+    Ticket stub
+  </div>
+</div>
+`;
+
+exports[`BpkTicket should render correctly with a "stubProps" attribute 1`] = `
+<div
+  className="bpk-ticket bpk-ticket--with-notches"
+  role="button"
+>
+  <div
+    className="bpk-ticket__paper bpk-ticket__main bpk-ticket__main--padded bpk-ticket__main--horizontal bpk-ticket__paper--with-notches"
+  >
+    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+  </div>
+  <div
+    aria-hidden="true"
+    className="bpk-ticket__punchline bpk-ticket__punchline--vertical-with-notches"
+    role="presentation"
+  >
+    <div
+      className="bpk-ticket__notch bpk-ticket__notch--top"
+    />
+    <div
+      className="bpk-ticket__notch bpk-ticket__notch--bottom"
+    />
+  </div>
+  <div
+    className="bpk-ticket__paper bpk-ticket__stub custom-class bpk-ticket__stub--padded bpk-ticket__stub--horizontal bpk-ticket__paper--with-notches"
+    foo="bar"
+  >
+    Ticket stub
+  </div>
+</div>
+`;
+
+exports[`BpkTicket should render correctly with a "vertical" attribute 1`] = `
+<div
+  className="bpk-ticket bpk-ticket--vertical bpk-ticket--with-notches"
+  role="button"
+>
+  <div
+    className="bpk-ticket__paper bpk-ticket__main bpk-ticket__main--padded bpk-ticket__main--vertical bpk-ticket__paper--with-notches"
+  >
+    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+  </div>
+  <div
+    aria-hidden="true"
+    className="bpk-ticket__punchline bpk-ticket__punchline--horizontal-with-notches"
+    role="presentation"
+  >
+    <div
+      className="bpk-ticket__notch bpk-ticket__notch--left"
+    />
+    <div
+      className="bpk-ticket__notch bpk-ticket__notch--right"
+    />
+  </div>
+  <div
+    className="bpk-ticket__paper bpk-ticket__stub bpk-ticket__stub--padded bpk-ticket__stub--vertical bpk-ticket__paper--with-notches"
+  >
+    Ticket stub
+  </div>
+</div>
+`;
+
+exports[`BpkTicket should render correctly with an "href" attribute 1`] = `
+<a
+  className="bpk-ticket bpk-ticket--with-notches"
+  href="//www.skyscanner.net"
+>
+  <div
+    className="bpk-ticket__paper bpk-ticket__main bpk-ticket__main--padded bpk-ticket__main--horizontal bpk-ticket__paper--with-notches"
+  >
+    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+  </div>
+  <div
+    aria-hidden="true"
+    className="bpk-ticket__punchline bpk-ticket__punchline--vertical-with-notches"
+    role="presentation"
+  >
+    <div
+      className="bpk-ticket__notch bpk-ticket__notch--top"
+    />
+    <div
+      className="bpk-ticket__notch bpk-ticket__notch--bottom"
+    />
+  </div>
+  <div
+    className="bpk-ticket__paper bpk-ticket__stub bpk-ticket__stub--padded bpk-ticket__stub--horizontal bpk-ticket__paper--with-notches"
   >
     Ticket stub
   </div>
