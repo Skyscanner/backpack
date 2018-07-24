@@ -2,6 +2,18 @@
 
 [Unreleased changes](./unreleased.md).
 
+# 2018-07-24 - Added icon account--add
+
+**Added:**
+ - bpk-component-icon: 3.22.2 => 3.23.0
+ - bpk-mixins: 17.11.2 => 17.11.3
+ - bpk-svgs: 5.18.2 => 5.18.3
+ - react-native-bpk-component-button-link: 3.0.17 => 3.0.18
+ - react-native-bpk-component-button-link: 3.0.17 => 3.0.18
+ - react-native-bpk-component-icon: 1.9.3 => 1.10.0
+ - react-native-bpk-component-navigation-bar: 2.0.23 => 2.0.24
+   - New icon: account--add.
+
 # 2018-07-24 - Added `withNotches` prop to ticket component
 
 **Added:**
