@@ -2,7 +2,13 @@
 
 [Unreleased changes](./unreleased.md).
 
-# 2018-07-24 - Fixed issue with Ticket component children height
+# 2018-07-24 - Added `withNotches` prop to ticket component
+
+**Added:**
+- bpk-component-ticket: 1.1.57 => 1.2.0
+  - Added `withNotches` prop for optionally removing the notches.
+
+# 2018-07-24 - Fixed issue with ticket component children height
 
 **Fixed:**
 - bpk-component-ticket: 1.1.56 => 1.1.57
