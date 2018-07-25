@@ -1,4 +1,6 @@
 PODS:
+  - Backpack2 (0.0.1):
+    - React
   - boost-for-react-native (1.63.0)
   - BVLinearGradient (2.4.0):
     - React
@@ -50,6 +52,7 @@ PODS:
   - yoga (0.55.3.React)
 
 DEPENDENCIES:
+  - Backpack2 (from `../packages/react-native-backpack`)
   - BVLinearGradient (from `../node_modules/react-native-linear-gradient`)
   - DoubleConversion (from `../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec`)
   - Folly (from `../node_modules/react-native/third-party-podspecs/Folly.podspec`)
@@ -70,6 +73,8 @@ SPEC REPOS:
     - boost-for-react-native
 
 EXTERNAL SOURCES:
+  Backpack2:
+    :path: "../packages/react-native-backpack"
   BVLinearGradient:
     :path: "../node_modules/react-native-linear-gradient"
   DoubleConversion:
@@ -86,6 +91,7 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon/yoga"
 
 SPEC CHECKSUMS:
+  Backpack2: f9cac143c068068833339b7eb74e868bb674c141
   boost-for-react-native: 39c7adb57c4e60d6c5479dd8623128eb5b3f0f2c
   BVLinearGradient: 6d8909e3fc6b089defa4b89d967441fa6827a2ee
   DoubleConversion: e22e0762848812a87afd67ffda3998d9ef29170c
@@ -95,6 +101,6 @@ SPEC CHECKSUMS:
   react-native-maps: 066c2afcc89e18726377bcc685315f989ca22449
   yoga: a23273df0088bf7f2bb7e5d7b00044ea57a2a54a
 
-PODFILE CHECKSUM: 4c874fdf4cbedad78777096fccc5cc84c5d0b1f5
+PODFILE CHECKSUM: 75fef3dbbc44227ea11535152a59427137fc454a
 
 COCOAPODS: 1.5.3
