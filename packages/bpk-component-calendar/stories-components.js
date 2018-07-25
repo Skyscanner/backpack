@@ -19,6 +19,7 @@
 /* eslint-disable react/prop-types */
 
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import BpkButton from 'bpk-component-button';
 import addMonths from 'date-fns/add_months';
 import {
@@ -157,18 +158,16 @@ const MyReturnCalendar = withCalendarState(
 );
 
 class MonthViewCalendar extends Component {
-  constructor() {
-    super();
-
-    this.minDate = startOfDay(new Date());
-    this.maxDate = startOfDay(addMonths(new Date(), 12));
+  constructor(props) {
+    super(props);
     this.state = {
-      departDate: startOfDay(addDays(new Date(), 1)),
-      returnDate: startOfDay(addDays(new Date(), 4)),
+      departDate: props.departureDate,
+      returnDate: props.returnDate,
     };
   }
 
   render() {
+    const { maxDate, minDate, ...rest } = this.props;
     return (
       <div style={{ display: 'flex', justifyContent: 'space-around' }}>
         <MyDepartCalendar
@@ -185,10 +184,11 @@ class MonthViewCalendar extends Component {
               returnDate: dateToBoundaries(
                 prevState.returnDate,
                 departDate,
-                this.maxDate,
+                maxDate,
               ),
             }));
           }}
+          {...rest}
         />
         <div
           style={{
@@ -210,15 +210,32 @@ class MonthViewCalendar extends Component {
               returnDate,
               departDate: dateToBoundaries(
                 prevState.departDate,
-                this.minDate,
+                minDate,
                 returnDate,
               ),
             }));
           }}
+          {...rest}
         />
       </div>
     );
   }
 }
+
+MonthViewCalendar.propTypes = {
+  minDate: PropTypes.instanceOf(Date),
+  maxDate: PropTypes.instanceOf(Date),
+  departureDate: PropTypes.instanceOf(Date),
+  returnDate: PropTypes.instanceOf(Date),
+  weekStartsOn: PropTypes.number,
+};
+
+MonthViewCalendar.defaultProps = {
+  minDate: startOfDay(new Date()),
+  maxDate: startOfDay(addMonths(new Date(), 12)),
+  departureDate: startOfDay(addDays(new Date(), 1)),
+  returnDate: startOfDay(addDays(new Date(), 4)),
+  weekStartsOn: 1,
+};
 
 export default MonthViewCalendar;
