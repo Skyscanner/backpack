@@ -12,6 +12,7 @@
 #import <React/RCTBundleURLProvider.h>
 #import <React/RCTRootView.h>
 #import <React/RCTI18nUtil.h>
+#import <Backpack2/Panel.h>
 
 @implementation AppDelegate
 
@@ -22,6 +23,7 @@
 
   jsCodeLocation = [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:@"index.ios" fallbackResource:nil];
 
+  BPKPanel *panel = [[BPKPanel alloc] initWithFrame:CGRectZero];
   RCTRootView *rootView = [[RCTRootView alloc] initWithBundleURL:jsCodeLocation
                                                       moduleName:@"native"
                                                initialProperties:nil

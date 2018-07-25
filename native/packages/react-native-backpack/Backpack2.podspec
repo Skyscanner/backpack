@@ -15,6 +15,22 @@
 require 'json'
 version = JSON.parse(File.read('package.json'))['version']
 
+define_react_native_subspec = Proc.new do |name, root_spec|
+  # Define subspec for native iOS code
+  root_spec.subspec name do |ss|
+    ss.source_files = "libraries/#{name}/ios/native/classes/**/*.{h,m}"
+    ss.public_header_files = "libraries/#{name}/ios/native/classes/*.h"
+
+    # Define additional subspec for React Native bindings
+    ss.subspec 'React' do |rs|
+      rs.source_files = "libraries/#{name}/ios/react/classes/**/*.{h,m}"
+      rs.public_header_files = "libraries/#{name}/ios/react/classes/*.h"
+
+      rs.dependency 'React'
+    end
+  end
+end
+
 Pod::Spec.new do |s|
   # TODO: `Backpack2` is a temporary name. We should use `Backpack` instead, but
   # to do that we need to merge the existing pod from `backpack-ios` into this
@@ -34,6 +50,8 @@ Pod::Spec.new do |s|
   s.author           = {
     'Backpack Design System' => 'backpack@skyscanner.net'
   }
-  s.dependency 'React'
   s.ios.deployment_target = '9.0'
+  s.frameworks = 'UIKit', 'Foundation'
+
+  define_react_native_subspec.call('Panel', s)
 end
