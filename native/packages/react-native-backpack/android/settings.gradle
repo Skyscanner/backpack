@@ -1,1 +1,4 @@
+# TODO: `Backpack2` is a temporary name. We should use `Backpack` instead, but
+# to do that we need to merge the existing modules from `backpack-android` into this
+
 rootProject.name = 'Backpack2'
