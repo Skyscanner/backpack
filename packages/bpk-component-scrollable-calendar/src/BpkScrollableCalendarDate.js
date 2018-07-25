@@ -24,8 +24,8 @@ class BpkScrollableCalendarDate extends PureComponent {
   render() {
     const { date, isOutside, ...rest } = this.props;
 
-    // Returning empty span when isOutside is true ensures only focused month displays in grid
-    return !isOutside ? <BpkCalendarDate date={date} {...rest} /> : <span />;
+    // Returning null when isOutside is true ensures only focused month displays in grid
+    return !isOutside ? <BpkCalendarDate date={date} {...rest} /> : null;
   }
 }
 
