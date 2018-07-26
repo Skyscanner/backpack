@@ -23,7 +23,7 @@ import BpkButton from 'bpk-component-button';
 import BpkCard from 'bpk-component-card';
 import { BpkSpinner, SPINNER_TYPES } from 'bpk-component-spinner';
 
-import withInfiniteScroll, { onItemsFetch } from './index';
+import withInfiniteScroll, { ArrayDataSource, DataSource } from './index';
 
 const elementsArray = [];
 
@@ -53,51 +53,76 @@ List.propTypes = {
 
 const InfiniteList = withInfiniteScroll(List);
 
+class DelayedDataSource extends ArrayDataSource {
+  fetchItems(index, nElements) {
+    return new Promise(resolve => {
+      setTimeout(() => resolve(super.fetchItems(index, nElements)), 500);
+    });
+  }
+}
+
+class InfiniteDataSource extends DataSource {
+  constructor() {
+    super();
+    this.elements = [];
+  }
+
+  fetchItems(index, nElements) {
+    return new Promise(resolve => {
+      for (let i = 0; i < nElements; i += 1) {
+        this.elements.push(index + i);
+      }
+      resolve(this.elements);
+    });
+  }
+}
+
 storiesOf('bpk-component-infinite-scroll', module)
   .add('Default', () => (
-    <InfiniteList onItemsFetch={onItemsFetch(elementsArray)} />
+    <InfiniteList dataSource={new ArrayDataSource(elementsArray)} />
   ))
   .add('Stopping after 5 scrolls', () => (
     <InfiniteList
-      onItemsFetch={onItemsFetch(elementsArray)}
-      seeMoreAfter={5}
+      dataSource={new ArrayDataSource(elementsArray)}
+      seeMoreAfter={1}
       renderSeeMoreComponent={({ onSeeMoreClick }) => (
         <BpkButton onClick={onSeeMoreClick}>See more</BpkButton>
       )}
     />
   ))
   .add('Infinite list of elements', () => (
-    <InfiniteList
-      onItemsFetch={(index, nElements) =>
-        new Promise(resolve => {
-          const newElements = [];
-          for (let i = 0; i < nElements; i += 1) {
-            newElements.push(index + i);
-          }
-          resolve(newElements);
-        })
-      }
-    />
+    <InfiniteList dataSource={new InfiniteDataSource()} />
   ))
   .add('Load 10 elements per scroll', () => (
     <InfiniteList
-      onItemsFetch={onItemsFetch(elementsArray)}
+      dataSource={new ArrayDataSource(elementsArray)}
       elementsPerScroll={10}
     />
   ))
-  .add('Custom loading Item', () => {
-    const fetchMore = onItemsFetch(elementsArray);
-    const delayed = (...args) =>
-      new Promise(resolve => {
-        setTimeout(() => resolve(fetchMore(...args)), 500);
-      });
+  .add('Custom loading Item', () => (
+    <InfiniteList
+      dataSource={new DelayedDataSource(elementsArray)}
+      elementsPerScroll={10}
+      renderLoadingComponent={() => <BpkSpinner type={SPINNER_TYPES.primary} />}
+    />
+  ))
+  .add('Force update data', () => {
+    const dataSource = new ArrayDataSource(elementsArray);
     return (
-      <InfiniteList
-        onItemsFetch={delayed}
-        elementsPerScroll={10}
-        renderLoadingComponent={() => (
-          <BpkSpinner type={SPINNER_TYPES.primary} />
-        )}
-      />
+      <div>
+        <BpkButton
+          onClick={() => {
+            const newElements = [];
+            const k = Math.floor(Math.random() * 10);
+            for (let i = 0; i < 100; i += 1) {
+              newElements.push(`Element ${k} ${i}`);
+            }
+            dataSource.updateData(newElements);
+          }}
+        >
+          Update items
+        </BpkButton>
+        <InfiniteList dataSource={dataSource} />
+      </div>
     );
   });

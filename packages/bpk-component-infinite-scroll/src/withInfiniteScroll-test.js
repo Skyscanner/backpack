@@ -22,7 +22,7 @@ import renderer from 'react-test-renderer';
 import { mount } from 'enzyme';
 import toJson from 'enzyme-to-json';
 import withInfiniteScroll from './withInfiniteScroll';
-import onItemsFetch from './onItemsFetch';
+import { ArrayDataSource } from './DataSource';
 
 describe('withInfiniteScroll', () => {
   const elementsArray = [];
@@ -56,7 +56,7 @@ describe('withInfiniteScroll', () => {
 
   it('renders an empty list for the first render', () => {
     const tree = renderer.create(
-      <InfiniteList onItemsFetch={onItemsFetch(elementsArray)} />,
+      <InfiniteList dataSource={new ArrayDataSource(elementsArray)} />,
     );
 
     expect(tree).toMatchSnapshot();
@@ -64,7 +64,7 @@ describe('withInfiniteScroll', () => {
 
   it('renders items after the first render', async () => {
     const tree = mount(
-      <InfiniteList onItemsFetch={onItemsFetch(elementsArray)} />,
+      <InfiniteList dataSource={new ArrayDataSource(elementsArray)} />,
     );
 
     await intersect();
@@ -75,7 +75,7 @@ describe('withInfiniteScroll', () => {
 
   it('should render correctly when no more elements', async () => {
     const tree = mount(
-      <InfiniteList onItemsFetch={onItemsFetch(elementsArray)} />,
+      <InfiniteList dataSource={new ArrayDataSource(elementsArray)} />,
     );
 
     await intersect();
@@ -89,7 +89,7 @@ describe('withInfiniteScroll', () => {
   it('should render correctly with an "elementsPerScroll" attribute', async () => {
     const tree = mount(
       <InfiniteList
-        onItemsFetch={onItemsFetch(elementsArray)}
+        dataSource={new ArrayDataSource(elementsArray)}
         elementsPerScroll={1}
       />,
     );
@@ -103,7 +103,7 @@ describe('withInfiniteScroll', () => {
   it('should render correctly with a "renderSeeMoreComponent" attribute', async () => {
     const tree = mount(
       <InfiniteList
-        onItemsFetch={onItemsFetch(elementsArray)}
+        dataSource={new ArrayDataSource(elementsArray)}
         elementsPerScroll={1}
         renderSeeMoreComponent={({ onSeeMoreClick }) => (
           <button type="button" onClick={onSeeMoreClick}>
@@ -123,7 +123,7 @@ describe('withInfiniteScroll', () => {
   it('should render correctly with a "renderLoadingComponent" attribute', () => {
     const tree = mount(
       <InfiniteList
-        onItemsFetch={onItemsFetch(elementsArray)}
+        dataSource={new ArrayDataSource(elementsArray)}
         renderLoadingComponent={() => <span>Loading</span>}
       />,
     );
@@ -134,7 +134,7 @@ describe('withInfiniteScroll', () => {
   it('should pass extra props to the decorated component', () => {
     const tree = mount(
       <InfiniteList
-        onItemsFetch={onItemsFetch(elementsArray)}
+        dataSource={new ArrayDataSource(elementsArray)}
         aria-label="Test"
       />,
     );
@@ -146,7 +146,7 @@ describe('withInfiniteScroll', () => {
     const spy = jest.fn();
     mount(
       <InfiniteList
-        onItemsFetch={onItemsFetch(elementsArray)}
+        dataSource={new ArrayDataSource(elementsArray)}
         onScroll={spy}
       />,
     );
@@ -161,7 +161,10 @@ describe('withInfiniteScroll', () => {
   it('should call onScrollFinished when no more elements to render', async () => {
     const spy = jest.fn();
     mount(
-      <InfiniteList onItemsFetch={onItemsFetch([])} onScrollFinished={spy} />,
+      <InfiniteList
+        dataSource={new ArrayDataSource([])}
+        onScrollFinished={spy}
+      />,
     );
 
     await intersect();
@@ -172,12 +175,14 @@ describe('withInfiniteScroll', () => {
   });
 
   it('should fetch more items when see more is clicked', async () => {
-    const realFetch = onItemsFetch(elementsArray);
-    const fetchMore = jest.fn((...args) => realFetch(...args));
+    const myDs = new ArrayDataSource(elementsArray);
+
+    const mockFetch = myDs.fetchItems.bind(myDs);
+    myDs.fetchItems = jest.fn((...args) => mockFetch(...args));
 
     const tree = mount(
       <InfiniteList
-        onItemsFetch={fetchMore}
+        dataSource={myDs}
         elementsPerScroll={1}
         renderSeeMoreComponent={({ onSeeMoreClick }) => (
           <button type="button" id="test-button" onClick={onSeeMoreClick}>
@@ -193,6 +198,22 @@ describe('withInfiniteScroll', () => {
 
     const button = tree.find('#test-button');
     button.simulate('click');
-    expect(fetchMore).toHaveBeenCalledTimes(2);
+    expect(myDs.fetchItems).toHaveBeenCalledTimes(3);
+  });
+
+  it('should refresh data when data changes', async () => {
+    const myDs = new ArrayDataSource(elementsArray);
+
+    const mockFetch = myDs.fetchItems.bind(myDs);
+    myDs.fetchItems = jest.fn((...args) => mockFetch(...args));
+
+    const tree = mount(<InfiniteList dataSource={myDs} />);
+
+    expect(toJson(tree)).toMatchSnapshot();
+    myDs.updateData([1, 2, 3]);
+    tree.update();
+
+    expect(myDs.fetchItems).toHaveBeenCalledTimes(2);
+    expect(toJson(tree)).toMatchSnapshot();
   });
 });

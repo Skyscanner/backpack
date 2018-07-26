@@ -22,7 +22,9 @@ import React, { Component, type Element, type ComponentType } from 'react';
 import PropTypes from 'prop-types';
 import { cssModules } from 'bpk-react-utils';
 import omit from 'lodash/omit';
+
 import './intersection-observer';
+import DataSource from './DataSource';
 
 import STYLES from './withInfiniteScroll.scss';
 
@@ -36,14 +38,9 @@ type ScrollFinishedEvent = {
   totalNumberElements: number,
 };
 
-type OnItemsFetchFunction = (
-  index: number,
-  elementsPerScroll: number,
-) => Promise<Array<any>>;
-
 export type Props = {
   elementsPerScroll: number,
-  onItemsFetch: OnItemsFetchFunction,
+  dataSource: DataSource<any>,
   onScroll: ?(o: ScrollEvent) => void,
   onScrollFinished: ?(o: ScrollFinishedEvent) => void,
   renderLoadingComponent: ?() => Element<any>,
@@ -66,7 +63,7 @@ type ExtendedProps = {
 
 const propTypes = {
   elementsPerScroll: PropTypes.number,
-  onItemsFetch: PropTypes.func.isRequired,
+  dataSource: PropTypes.instanceOf(DataSource).isRequired,
   onScroll: PropTypes.func,
   onScrollFinished: PropTypes.func,
   renderLoadingComponent: PropTypes.func,
@@ -95,8 +92,6 @@ const withInfiniteScroll = (
 
     observer: IntersectionObserver;
 
-    onItemsFetch: OnItemsFetchFunction;
-
     sentinel: ?HTMLElement;
 
     static propTypes = { ...propTypes };
@@ -113,51 +108,76 @@ const withInfiniteScroll = (
         showSeeMore: false,
       };
 
-      this.onItemsFetch = props.onItemsFetch;
+      this.props.dataSource.onDataChange(this.updateData);
       this.observer = new IntersectionObserver(this.handleIntersection, {
         threshold: 1,
       });
     }
 
     componentDidMount() {
-      if (this.sentinel) {
-        this.observer.observe(this.sentinel);
-      }
+      this.loadMore().then(newState => {
+        this.setState(newState);
+      });
     }
 
-    componentDidUpdate() {
+    componentDidUpdate(prevProps) {
       if (this.sentinel && this.state.index > 0) {
         this.observer.observe(this.sentinel);
       }
+      if (this.props.dataSource !== prevProps.dataSource) {
+        prevProps.dataSource.removeListener(this.updateData);
+        this.props.dataSource.onDataChange(this.updateData);
+        this.loadMore(0).then(newState => {
+          this.setState({
+            ...newState,
+            isListFinished: false,
+          });
+        });
+      }
     }
 
-    componentWillUnMount() {
+    componentWillUnmount() {
+      this.props.dataSource.removeListener(this.updateData);
       if (this.sentinel) {
         this.observer.unobserve(this.sentinel);
       }
     }
 
-    loadMore() {
-      const { index, elementsToRender } = this.state;
-      const { elementsPerScroll, onScrollFinished, seeMoreAfter } = this.props;
-      return this.onItemsFetch(index, elementsPerScroll).then(nextElements => {
-        if (nextElements && nextElements.length > 0) {
-          const nextIndex = index + elementsPerScroll;
-          return {
-            index: nextIndex,
-            elementsToRender: elementsToRender.concat(nextElements),
-            showSeeMore: seeMoreAfter === index / elementsPerScroll,
-          };
-        }
-        if (onScrollFinished) {
-          onScrollFinished({
-            totalNumberElements: elementsToRender.length,
+    updateData = () => {
+      const { index } = this.state;
+      const { elementsPerScroll } = this.props;
+      this.props.dataSource
+        .fetchItems(index - elementsPerScroll, elementsPerScroll)
+        .then(updatedElements => {
+          this.setState({
+            elementsToRender: updatedElements,
           });
-        }
-        return {
-          isListFinished: true,
-        };
-      });
+        });
+    };
+
+    loadMore(indexParam) {
+      const index = indexParam != null ? indexParam : this.state.index;
+      const { elementsPerScroll, onScrollFinished, seeMoreAfter } = this.props;
+      return this.props.dataSource
+        .fetchItems(index, elementsPerScroll)
+        .then(nextElements => {
+          if (nextElements && nextElements.length > 0) {
+            const nextIndex = index + elementsPerScroll;
+            return {
+              index: nextIndex,
+              elementsToRender: nextElements,
+              showSeeMore: seeMoreAfter === index / elementsPerScroll,
+            };
+          }
+          if (onScrollFinished) {
+            onScrollFinished({
+              totalNumberElements: nextElements.length,
+            });
+          }
+          return {
+            isListFinished: true,
+          };
+        });
     }
 
     handleIntersection = (entries: Array<IntersectionObserverEntry>) => {
@@ -177,10 +197,11 @@ const withInfiniteScroll = (
       return Promise.resolve();
     };
 
-    handleSeeMoreClick = () =>
+    handleSeeMoreClick = () => {
       this.loadMore().then(newState => {
         this.setState(newState);
       });
+    };
 
     render() {
       const { elementsToRender, isListFinished, showSeeMore } = this.state;

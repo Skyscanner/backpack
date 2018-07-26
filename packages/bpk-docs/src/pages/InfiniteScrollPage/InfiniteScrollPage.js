@@ -19,7 +19,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import withInfiniteScroll, {
-  onItemsFetch,
+  DataSource,
+  ArrayDataSource,
 } from 'bpk-component-infinite-scroll';
 import BpkButton from 'bpk-component-button';
 import { BpkSpinner, SPINNER_TYPES } from 'bpk-component-spinner';
@@ -101,8 +102,32 @@ const CustomLoading = () => (
   </div>
 );
 
+class InfiniteDataSource extends DataSource {
+  constructor() {
+    super();
+    this.elements = [];
+  }
+
+  fetchItems(index, nElements) {
+    return new Promise(resolve => {
+      for (let i = 0; i < nElements; i += 1) {
+        this.elements.push(`Item ${index + i}`);
+      }
+      resolve(this.elements);
+    });
+  }
+}
+
+class DelayedDataSource extends ArrayDataSource {
+  fetchItems(index, nElements) {
+    return new Promise(resolve => {
+      setTimeout(() => resolve(super.fetchItems(index, nElements)), 500);
+    });
+  }
+}
+
 const InfiniteList = withInfiniteScroll(List);
-const defaultFetch = onItemsFetch(elementsArray);
+const defaultFetch = new ArrayDataSource(elementsArray);
 
 const components = [
   {
@@ -111,19 +136,7 @@ const components = [
     blurb: 'Loads five more list items upon reaching the bottom of the list.',
     examples: [
       <FixedHeightPanel>
-        <InfiniteList
-          onItemsFetch={(index, nElements) =>
-            new Promise(resolve => {
-              setTimeout(() => {
-                const elements = [];
-                for (let i = 0; i < nElements; i += 1) {
-                  elements.push(`Item ${index + i}`);
-                }
-                resolve(elements);
-              }, 10);
-            })
-          }
-        />
+        <InfiniteList dataSource={new InfiniteDataSource()} />
       </FixedHeightPanel>,
     ],
   },
@@ -133,7 +146,7 @@ const components = [
     blurb: 'Loads one more list item upon reaching the bottom of the list.',
     examples: [
       <FixedHeightPanel>
-        <InfiniteList onItemsFetch={defaultFetch} elementsPerScroll={1} />
+        <InfiniteList dataSource={defaultFetch} elementsPerScroll={1} />
       </FixedHeightPanel>,
     ],
   },
@@ -145,7 +158,7 @@ const components = [
     examples: [
       <FixedHeightPanel>
         <InfiniteList
-          onItemsFetch={defaultFetch}
+          dataSource={defaultFetch}
           elementsPerScroll={5}
           seeMoreAfter={2}
           renderSeeMoreComponent={CustomSeeMore}
@@ -160,13 +173,7 @@ const components = [
     examples: [
       <FixedHeightPanel>
         <InfiniteList
-          onItemsFetch={(index, nElements) =>
-            new Promise(resolve => {
-              setTimeout(() => {
-                resolve(defaultFetch(index, nElements));
-              }, 500);
-            })
-          }
+          dataSource={new DelayedDataSource(elementsArray)}
           elementsPerScroll={5}
           renderLoadingComponent={CustomLoading}
         />
