@@ -3,9 +3,9 @@ package net.skyscanner.backpack.panel;
 import android.content.Context;
 import android.view.View;
 
-public class BPKPanel extends View {
+public class BpkPanel extends View {
 
-  public BPKPanel(Context context) {
+  public BpkPanel(Context context) {
     super(context);
   }
 

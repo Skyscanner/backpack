@@ -1,4 +1,4 @@
-package net.skyscanner.backpack.panel;
+package net.skyscaner.backpack.panel;
 
 import com.facebook.react.ReactPackage;
 import com.facebook.react.bridge.NativeModule;
@@ -18,7 +18,8 @@ public class PanelPackage implements ReactPackage {
     @Override
     public List<ViewManager> createViewManagers(ReactApplicationContext reactContext) {
         return Arrays.<ViewManager>asList(
-                new PanelManager());
+                new PanelManager(),
+                new PanelWithDivider()
+        );
     }
-
 }

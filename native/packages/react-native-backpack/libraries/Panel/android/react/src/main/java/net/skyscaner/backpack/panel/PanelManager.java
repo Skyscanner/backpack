@@ -1,10 +1,12 @@
-package net.skyscanner.backpack.panel;
+package net.skyscaner.backpack.panel;
 
 import com.facebook.react.uimanager.SimpleViewManager;
 import com.facebook.react.uimanager.ThemedReactContext;
 
+import net.skyscanner.backpack.panel.BpkPanel;
 
-public class PanelManager extends SimpleViewManager<BPKPanel> {
+
+public class PanelManager extends SimpleViewManager<BpkPanel> {
 
     public static final String REACT_CLASS = "BPKPanel";
 
@@ -14,7 +16,7 @@ public class PanelManager extends SimpleViewManager<BPKPanel> {
     }
 
     @Override
-    protected BPKPanel createViewInstance(ThemedReactContext reactContext) {
-        return new BPKPanel(reactContext);
+    protected BpkPanel createViewInstance(ThemedReactContext reactContext) {
+        return new BpkPanel(reactContext);
     }
 }
