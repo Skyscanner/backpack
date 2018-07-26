@@ -1,4 +1,4 @@
-package com.backpack;
+package net.skyscanner.backpack;
 
 import android.app.Application;
 
