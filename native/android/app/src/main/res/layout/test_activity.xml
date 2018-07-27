@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/components"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <net.skyscanner.backpack.panel.BpkPanel
+        android:id="@+id/panel"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:bpk_panel_padding="true">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/stub" />
+    </net.skyscanner.backpack.panel.BpkPanel>
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/storybook_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Storybook" />
+</LinearLayout>

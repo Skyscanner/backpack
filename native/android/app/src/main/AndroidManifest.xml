@@ -20,7 +20,7 @@
             android:value="${googleMapsApiKey}" />
 
         <activity
-            android:name=".MainActivity"
+            android:name=".TestActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
             android:label="@string/app_name"
             android:windowSoftInputMode="adjustResize">
@@ -29,6 +29,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".MainActivity" />
         <activity android:name="com.facebook.react.devsupport.DevSettingsActivity" />
     </application>
 
