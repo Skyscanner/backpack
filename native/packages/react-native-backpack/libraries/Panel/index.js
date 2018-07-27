@@ -16,5 +16,26 @@
  * limitations under the License.
  */
 /* @flow */
+import React, { type Node } from 'react';
+import PropTypes from 'prop-types';
+import { requireNativeComponent } from 'react-native';
 
-// Not much to see here
+type Props = {
+  children: Node,
+  padded: boolean,
+};
+
+const BpkPanel = (props: Props) => <NativePanel {...props} />;
+
+BpkPanel.propTypes = {
+  children: PropTypes.node.isRequired,
+  padded: PropTypes.bool,
+};
+
+BpkPanel.defaultProps = {
+  padded: true,
+};
+
+const NativePanel = requireNativeComponent('BPKPanelWrapper', BpkPanel);
+
+export default BpkPanel;
