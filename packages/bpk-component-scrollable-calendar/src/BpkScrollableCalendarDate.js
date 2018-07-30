@@ -18,7 +18,10 @@
 
 import PropTypes from 'prop-types';
 import React, { PureComponent } from 'react';
-import { BpkCalendarDate, CustomPropTypes } from 'bpk-component-calendar';
+import {
+  BpkCalendarDate,
+  BpkCalendarDatePropTypes,
+} from 'bpk-component-calendar';
 
 class BpkScrollableCalendarDate extends PureComponent {
   render() {
@@ -30,30 +33,12 @@ class BpkScrollableCalendarDate extends PureComponent {
 }
 
 BpkScrollableCalendarDate.propTypes = {
-  // Required
-  date: PropTypes.instanceOf(Date).isRequired,
-  // Optional
-  isBlocked: PropTypes.bool,
-  isFocused: PropTypes.bool,
+  ...BpkCalendarDatePropTypes,
   isOutside: PropTypes.bool,
-  isSelected: PropTypes.bool,
-  isToday: PropTypes.bool,
-  modifiers: CustomPropTypes.DateModifiers,
-  onClick: PropTypes.func,
-  onDateKeyDown: PropTypes.func,
-  preventKeyboardFocus: PropTypes.bool,
 };
 
 BpkScrollableCalendarDate.defaultProps = {
-  isBlocked: false,
-  isFocused: false,
   isOutside: false,
-  isSelected: false,
-  isToday: false,
-  modifiers: {},
-  onClick: null,
-  onDateKeyDown: null,
-  preventKeyboardFocus: true,
 };
 
 export default BpkScrollableCalendarDate;
