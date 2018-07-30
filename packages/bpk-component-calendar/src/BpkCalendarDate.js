@@ -139,7 +139,7 @@ class BpkCalendarDate extends PureComponent {
   }
 }
 
-export const BpkCalendarDatePropTypes = {
+export const propTypes = {
   // Required
   date: PropTypes.instanceOf(Date).isRequired,
   // Optional
@@ -155,7 +155,7 @@ export const BpkCalendarDatePropTypes = {
   preventKeyboardFocus: PropTypes.bool,
 };
 
-BpkCalendarDate.propTypes = BpkCalendarDatePropTypes;
+BpkCalendarDate.propTypes = propTypes;
 
 BpkCalendarDate.defaultProps = {
   isBlocked: false,
