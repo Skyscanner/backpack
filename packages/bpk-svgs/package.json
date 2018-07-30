@@ -1,6 +1,6 @@
 {
   "name": "bpk-svgs",
-  "version": "5.18.3",
+  "version": "5.18.4",
   "description": "Backpack's library of SVG's.",
   "main": "_index.scss",
   "scripts": {

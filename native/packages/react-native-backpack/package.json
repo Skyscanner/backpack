@@ -1,6 +1,6 @@
 {
   "name": "react-native-backpack",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "private": "true",
   "main": "index.js",
   "description": "Backpack's React Native library with native components",
