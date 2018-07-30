@@ -2,10 +2,18 @@
 
 [Unreleased changes](./unreleased.md).
 
+# 2018-07-30 - Fixed issue where modal scrim would not fade in.
+
+**Fixed:**
+- bpk-component-modal:  1.7.14 => 1.8.0
+- bpk-component-dialog: 1.0.35 => 1.1.0
+- bpk-component-datepicker: 8.0.43 => 8.1.0
+  - Scrim fade animation wasn't rendering properly before, giving a janky feel. This has now been fixed so that it fades in nicely.
+
 # 2018-07-30 - Fixed issue with DST transition during midnight in Safari.
 
 **Fixed:**
-- bpk-component-datepicker:
+ - bpk-component-datepicker: 8.0.43 => 8.1.0
   - Fixed issue with DST transition during midnight in Safari that would cause some days in the BRT timezone not to render.
 
 # 2018-07-24 - Added icon account--add
