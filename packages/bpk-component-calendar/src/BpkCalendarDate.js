@@ -155,6 +155,8 @@ BpkCalendarDate.propTypes = {
   preventKeyboardFocus: PropTypes.bool,
 };
 
+export const BpkCalendarDatePropTypes = BpkCalendarDate.propTypes;
+
 BpkCalendarDate.defaultProps = {
   isBlocked: false,
   isFocused: false,
