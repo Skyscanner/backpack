@@ -20,6 +20,8 @@ import React, { Component } from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import addMonths from 'date-fns/add_months';
+import BpkText from 'bpk-component-text';
+
 import {
   formatMonth,
   formatDateFull,
@@ -210,4 +212,21 @@ storiesOf('bpk-component-calendar', module)
       markOutsideDays={false}
     />
   ))
-  .add('Custom composed calendar', () => <MonthViewCalendar />);
+  .add('Custom composed calendar', () => <MonthViewCalendar />)
+  .add('Custom composed calendar (Safary DST bug)', () => (
+    <div>
+      <p>
+        <BpkText>Set your timezone to BRT (Brasilia)</BpkText>
+      </p>
+      <p>
+        <BpkText>Departure date should be Nov 3 and return Nov 4</BpkText>
+      </p>
+      <MonthViewCalendar
+        minDate={new Date(2018, 10, 1)}
+        maxDate={new Date(2018, 10, 20)}
+        departureDate={new Date(2018, 10, 3)}
+        returnDate={new Date(2018, 10, 4, 1, 0, 0, 0)}
+        weekStartsOn={0}
+      />
+    </div>
+  ));
