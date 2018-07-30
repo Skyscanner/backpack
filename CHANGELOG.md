@@ -2,6 +2,12 @@
 
 [Unreleased changes](./unreleased.md).
 
+# 2018-07-30 - Fixed issue with DST transition during midnight in Safari.
+
+**Fixed:**
+- bpk-component-datepicker:
+  - Fixed issue with DST transition during midnight in Safari that would cause some days in the BRT timezone not to render.
+
 # 2018-07-24 - Added icon account--add
 
 **Added:**
