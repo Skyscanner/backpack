@@ -26,9 +26,7 @@ storiesOf('bpk-component-scrollable-calendar', module).add(
   'BpkScrollableCalendarDate',
   () => (
     <div>
-      <h3> Middle date is an empty span - outside of current month </h3>
-      <BpkScrollableCalendarDate date={new Date()} />
-      <BpkScrollableCalendarDate date={new Date()} isOutside />
+      <h3> An example BpkScrollableCalendarDate component</h3>
       <BpkScrollableCalendarDate date={new Date()} />
     </div>
   ),
