@@ -15,13 +15,13 @@ class PanelManager : ViewGroupManager<BpkPanel>() {
         return BpkPanel(reactContext)
     }
 
-    @ReactProp(name = "bpkpadding", defaultBoolean = true)
-    fun setPadding(panel: BpkPanel, padding: Boolean) {
-        panel.setmPadding(padding)
+    @ReactProp(name = "padded", defaultBoolean = true)
+    fun setPadding(panel: BpkPanel, padded: Boolean) {
+        panel.setmPadding(padded)
     }
 
     companion object {
-        val REACT_CLASS = "BpkPanel"
+        val REACT_CLASS = "BPKPanelWrapper"
     }
 
 }

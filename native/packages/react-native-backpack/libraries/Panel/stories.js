@@ -19,19 +19,15 @@
 
 import React from 'react';
 import { storiesOf } from '@storybook/react-native';
-import { StyleSheet } from 'react-native';
 import BpkText from 'react-native-bpk-component-text';
+import CenterDecorator from '../../../../storybook/CenterDecorator';
 
-import BpkPanel from './panel';
+import BpkPanel from './index';
 
-const styles = StyleSheet.create({
-  text: {
-    fontSize: 14,
-  },
-});
-
-storiesOf('react-native-backpack/BPKPanel', module).add('docs:default', () => (
-  <BpkPanel bpkpadding>
-    <BpkText style={styles.text}>Get started with bpkpanel</BpkText>
-  </BpkPanel>
-));
+storiesOf('react-native-backpack/BPKPanel', module)
+  .addDecorator(CenterDecorator)
+  .add('docs:default', () => (
+    <BpkPanel height={40}>
+      <BpkText>Label</BpkText>
+    </BpkPanel>
+  ));

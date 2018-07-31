@@ -16,7 +16,6 @@
  * limitations under the License.
  */
 /* @flow */
-import React, { type Node } from 'react';
 import PropTypes from 'prop-types';
 import { requireNativeComponent } from 'react-native';
 
@@ -24,18 +23,17 @@ type Props = {
   children: Node,
   padded: boolean,
 };
+/* eslint-disable react/prefer-stateless-function */
+class BpkPanel extends Component<Props, {}> {
+  static propTypes = {
+    padded: PropTypes.bool,
+    ...View.propTypes, // include the default view properties
+  };
 
-const BpkPanel = (props: Props) => <NativePanel {...props} />;
-
-BpkPanel.propTypes = {
-  children: PropTypes.node.isRequired,
-  padded: PropTypes.bool,
-};
-
-BpkPanel.defaultProps = {
-  padded: true,
-};
-
+  static defaultProps = {
+    padded: true,
+  };
+  
 const NativePanel = requireNativeComponent('BPKPanelWrapper', BpkPanel);
 
 export default BpkPanel;

@@ -1,12 +1,8 @@
 package net.skyscanner.backpack
 
 import android.content.Context
-import android.content.res.TypedArray
-import android.graphics.drawable.Drawable
 import android.util.AttributeSet
 import android.widget.LinearLayout
-
-import net.skyscanner.backpack.R
 
 
 class BpkPanel : LinearLayout {
@@ -27,10 +23,10 @@ class BpkPanel : LinearLayout {
 
     fun setmPadding(mPadding: Boolean) {
         this.mPadding = mPadding
-        initialize()
+        draw()
     }
 
-    private fun initialize() {
+    private fun draw() {
         this.background = context.getDrawable(R.drawable.border)
         val padding = resources.getDimensionPixelOffset(R.dimen.bpkSpacingSm)
         if (mPadding)
@@ -48,7 +44,7 @@ class BpkPanel : LinearLayout {
             //default value of padding is true
             mPadding = a.getBoolean(R.styleable.panel_bpk_panel_padding, true)
         }
-        initialize()
+        draw()
     }
 
 }
