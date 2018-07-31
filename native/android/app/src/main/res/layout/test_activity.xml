@@ -9,7 +9,7 @@
     android:orientation="vertical">
 
 
-    <net.skyscanner.backpack.panel.BpkPanel
+    <net.skyscanner.backpack.BpkPanel
         android:id="@+id/panel"
         android:layout_gravity="center_horizontal"
         android:layout_width="wrap_content"
@@ -20,7 +20,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/stub" />
-    </net.skyscanner.backpack.panel.BpkPanel>
+    </net.skyscanner.backpack.BpkPanel>
 
     <android.support.v7.widget.AppCompatButton
         android:id="@+id/storybook_btn"

@@ -1,4 +1,4 @@
-package net.skyscanner.backpack.panel;
+package net.skyscanner.backpack;
 
 import android.content.Context;
 import android.view.View;

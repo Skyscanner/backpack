@@ -10,8 +10,6 @@ import com.facebook.react.shell.MainReactPackage
 import com.facebook.soloader.SoLoader
 import com.airbnb.android.react.maps.MapsPackage
 
-import net.skyscaner.backpack.panel.PanelPackage
-
 import java.util.Arrays
 
 class MainApplication : Application(), ReactApplication {
