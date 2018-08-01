@@ -122,10 +122,10 @@
             </objects>
             <point key="canvasLocation" x="1229.5999999999999" y="-255.02248875562222"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Navigation View Controller-->
         <scene sceneID="Al2-ag-9FY">
             <objects>
-                <navigationController id="U8t-uX-l4A" sceneMemberID="viewController">
+                <navigationController id="U8t-uX-l4A" customClass="NavigationViewController" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="K7U-MS-TXS">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -138,10 +138,10 @@
             </objects>
             <point key="canvasLocation" x="-567" y="93"/>
         </scene>
-        <!--Storybook View Controller-->
+        <!--Storybook-->
         <scene sceneID="Pvh-Zf-25O">
             <objects>
-                <viewController id="wiC-sH-N6m" customClass="StorybookViewController" sceneMemberID="viewController">
+                <viewController title="Storybook" id="wiC-sH-N6m" customClass="StorybookViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eON-AM-eIx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
