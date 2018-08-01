@@ -15,23 +15,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* @flow */
 
-import React from 'react';
-import { storiesOf } from '@storybook/react-native';
-import BpkText from 'react-native-bpk-component-text';
-import CenterDecorator from '../../storybook/CenterDecorator';
+#import "BPKBadgeWrapperManager.h"
 
-import { BpkPanel, BpkBadge } from './index';
+#import "BPKBadgeWrapper.h"
 
-storiesOf('react-native-backpack/BPKPanel', module)
-  .addDecorator(CenterDecorator)
-  .add('docs:default', () => (
-    <BpkPanel>
-      <BpkText>Label</BpkText>
-    </BpkPanel>
-  ));
+NS_ASSUME_NONNULL_BEGIN
+@implementation BPKBadgeWrapperManager
+RCT_EXPORT_MODULE()
 
-storiesOf('react-native-backpack/BPKBadge', module)
-  .addDecorator(CenterDecorator)
-  .add('docs:default', () => <BpkBadge message="Success" />);
+- (UIView * )view {
+    return [[BPKBadgeWrapper alloc] initWithBridge:self.bridge];
+}
+RCT_EXPORT_VIEW_PROPERTY(message, NSString *)
+RCT_EXPORT_VIEW_PROPERTY(type, BPKBadgeType)
+
+
+@end
+NS_ASSUME_NONNULL_END

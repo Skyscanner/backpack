@@ -18,5 +18,6 @@
 /* @flow */
 
 import BpkPanel from './libraries/Panel';
+import BpkBadge from './libraries/Badge';
 
-export { BpkPanel }; // eslint-disable-line import/prefer-default-export
+export { BpkPanel, BpkBadge };

@@ -15,23 +15,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* @flow */
 
-import React from 'react';
-import { storiesOf } from '@storybook/react-native';
-import BpkText from 'react-native-bpk-component-text';
-import CenterDecorator from '../../storybook/CenterDecorator';
+#import <React/RCTView.h>
 
-import { BpkPanel, BpkBadge } from './index';
-
-storiesOf('react-native-backpack/BPKPanel', module)
-  .addDecorator(CenterDecorator)
-  .add('docs:default', () => (
-    <BpkPanel>
-      <BpkText>Label</BpkText>
-    </BpkPanel>
-  ));
-
-storiesOf('react-native-backpack/BPKBadge', module)
-  .addDecorator(CenterDecorator)
-  .add('docs:default', () => <BpkBadge message="Success" />);
+NS_ASSUME_NONNULL_BEGIN
+@class RCTBridge;
+@interface BPKBadgeWrapper : RCTView
+- (instancetype)initWithBridge:(RCTBridge *)bridge NS_DESIGNATED_INITIALIZER;
+@end
+NS_ASSUME_NONNULL_END

@@ -15,23 +15,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* @flow */
+#import <React/RCTViewManager.h>
 
-import React from 'react';
-import { storiesOf } from '@storybook/react-native';
-import BpkText from 'react-native-bpk-component-text';
-import CenterDecorator from '../../storybook/CenterDecorator';
 
-import { BpkPanel, BpkBadge } from './index';
+@interface BPKBadgeWrapperManager : RCTViewManager
 
-storiesOf('react-native-backpack/BPKPanel', module)
-  .addDecorator(CenterDecorator)
-  .add('docs:default', () => (
-    <BpkPanel>
-      <BpkText>Label</BpkText>
-    </BpkPanel>
-  ));
-
-storiesOf('react-native-backpack/BPKBadge', module)
-  .addDecorator(CenterDecorator)
-  .add('docs:default', () => <BpkBadge message="Success" />);
+@end
