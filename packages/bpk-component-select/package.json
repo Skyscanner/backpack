@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-select",
-  "version": "2.2.10",
+  "version": "2.2.11",
   "description": "Backpack select component.",
   "main": "index.js",
   "repository": {
@@ -13,7 +13,7 @@
     "react": "^15.0.0 || ^16.0.0"
   },
   "dependencies": {
-    "bpk-mixins": "^17.11.5",
+    "bpk-mixins": "^17.11.6",
     "bpk-react-utils": "^2.6.3",
     "prop-types": "^15.5.8"
   }
