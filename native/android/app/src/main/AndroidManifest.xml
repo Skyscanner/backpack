@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="net.skyscanner.backpack"
@@ -19,18 +20,27 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="${googleMapsApiKey}" />
 
+        <activity android:name=".MainActivity" />
+        <activity android:name="com.facebook.react.devsupport.DevSettingsActivity" />
         <activity
-            android:name=".TestActivity"
-            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
-            android:label="@string/app_name"
-            android:windowSoftInputMode="adjustResize">
+            android:name=".demo.ComponentListActivity"
+            android:label="@string/title_component_list"
+            android:theme="@style/AppTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity" />
-        <activity android:name="com.facebook.react.devsupport.DevSettingsActivity" />
+        <activity
+            android:name=".demo.ComponentDetailActivity"
+            android:label="@string/title_component_detail"
+            android:parentActivityName=".demo.ComponentListActivity"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="net.skyscanner.backpack.demo.ComponentListActivity" />
+        </activity>
     </application>
 
 </manifest>
