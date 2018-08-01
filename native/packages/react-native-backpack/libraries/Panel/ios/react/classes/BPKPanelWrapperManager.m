@@ -16,10 +16,18 @@
  * limitations under the License.
  */
 
-#import <UIKit/UIKit.h>
+#import "BPKPanelWrapperManager.h"
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+#import "BPKPanelWrapper.h"
 
-@property (nonatomic, strong) UIWindow *window;
+NS_ASSUME_NONNULL_BEGIN
+@implementation BPKPanelWrapperManager
+RCT_EXPORT_MODULE()
+
+- (UIView * )view {
+    return [[BPKPanelWrapper alloc] initWithFrame:CGRectZero];
+}
+RCT_EXPORT_VIEW_PROPERTY(padded, BOOL)
 
 @end
+NS_ASSUME_NONNULL_END

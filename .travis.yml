@@ -14,7 +14,7 @@ install:
   - npm run build
 script:
   - set -e
-  - ./scripts/check-pristine-state package-lock.json
+  - ./scripts/check-pristine-state package-lock.json native/ios/native.xcodeproj/project.pbxproj native/ios/native/Info.plist
   - npm run danger
   - npm test
   - npm run docs:dist

@@ -15,11 +15,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+/* @flow */
 
-#import <UIKit/UIKit.h>
+import React from 'react';
+import { storiesOf } from '@storybook/react-native';
+import BpkText from 'react-native-bpk-component-text';
+import CenterDecorator from '../../storybook/CenterDecorator';
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+import { BpkPanel } from './index';
 
-@property (nonatomic, strong) UIWindow *window;
-
-@end
+storiesOf('react-native-backpack/BPKPanel', module)
+  .addDecorator(CenterDecorator)
+  .add('docs:default', () => (
+    <BpkPanel>
+      <BpkText>Label</BpkText>
+    </BpkPanel>
+  ));

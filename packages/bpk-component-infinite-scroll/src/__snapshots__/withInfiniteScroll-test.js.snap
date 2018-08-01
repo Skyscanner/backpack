@@ -13,8 +13,21 @@ exports[`withInfiniteScroll renders an empty list for the first render 1`] = `
 
 exports[`withInfiniteScroll renders items after the first render 1`] = `
 <WithInfiniteScroll
+  dataSource={
+    ArrayDataSource {
+      "elements": Array [
+        "Element 0",
+        "Element 1",
+        "Element 2",
+        "Element 3",
+        "Element 4",
+      ],
+      "listeners": Array [
+        [Function],
+      ],
+    }
+  }
   elementsPerScroll={5}
-  onItemsFetch={[Function]}
   onScroll={null}
   onScrollFinished={null}
   renderLoadingComponent={null}
@@ -73,8 +86,21 @@ exports[`withInfiniteScroll renders items after the first render 1`] = `
 exports[`withInfiniteScroll should pass extra props to the decorated component 1`] = `
 <WithInfiniteScroll
   aria-label="Test"
+  dataSource={
+    ArrayDataSource {
+      "elements": Array [
+        "Element 0",
+        "Element 1",
+        "Element 2",
+        "Element 3",
+        "Element 4",
+      ],
+      "listeners": Array [
+        [Function],
+      ],
+    }
+  }
   elementsPerScroll={5}
-  onItemsFetch={[Function]}
   onScroll={null}
   onScrollFinished={null}
   renderLoadingComponent={null}
@@ -97,10 +123,99 @@ exports[`withInfiniteScroll should pass extra props to the decorated component 1
 </WithInfiniteScroll>
 `;
 
+exports[`withInfiniteScroll should refresh data when data changes 1`] = `
+<WithInfiniteScroll
+  dataSource={
+    ArrayDataSource {
+      "elements": Array [
+        "Element 0",
+        "Element 1",
+        "Element 2",
+        "Element 3",
+        "Element 4",
+      ],
+      "fetchItems": [Function],
+      "listeners": Array [
+        [Function],
+      ],
+    }
+  }
+  elementsPerScroll={5}
+  onScroll={null}
+  onScrollFinished={null}
+  renderLoadingComponent={null}
+  renderSeeMoreComponent={null}
+  seeMoreAfter={null}
+>
+  <div>
+    <List
+      elements={Array []}
+    >
+      <div
+        id="list"
+      />
+    </List>
+    <div
+      className="bpk-sentinel"
+    />
+  </div>
+</WithInfiniteScroll>
+`;
+
+exports[`withInfiniteScroll should refresh data when data changes 2`] = `
+<WithInfiniteScroll
+  dataSource={
+    ArrayDataSource {
+      "elements": Array [
+        1,
+        2,
+        3,
+      ],
+      "fetchItems": [Function],
+      "listeners": Array [
+        [Function],
+      ],
+    }
+  }
+  elementsPerScroll={5}
+  onScroll={null}
+  onScrollFinished={null}
+  renderLoadingComponent={null}
+  renderSeeMoreComponent={null}
+  seeMoreAfter={null}
+>
+  <div>
+    <List
+      elements={Array []}
+    >
+      <div
+        id="list"
+      />
+    </List>
+    <div
+      className="bpk-sentinel"
+    />
+  </div>
+</WithInfiniteScroll>
+`;
+
 exports[`withInfiniteScroll should render correctly when no more elements 1`] = `
 <WithInfiniteScroll
+  dataSource={
+    ArrayDataSource {
+      "elements": Array [
+        "Element 0",
+        "Element 1",
+        "Element 2",
+        "Element 3",
+        "Element 4",
+      ],
+      "listeners": Array [
+        [Function],
+      ],
+    }
+  }
   elementsPerScroll={5}
-  onItemsFetch={[Function]}
   onScroll={null}
   onScrollFinished={null}
   renderLoadingComponent={null}
@@ -155,8 +270,21 @@ exports[`withInfiniteScroll should render correctly when no more elements 1`] = 
 
 exports[`withInfiniteScroll should render correctly with a "renderLoadingComponent" attribute 1`] = `
 <WithInfiniteScroll
+  dataSource={
+    ArrayDataSource {
+      "elements": Array [
+        "Element 0",
+        "Element 1",
+        "Element 2",
+        "Element 3",
+        "Element 4",
+      ],
+      "listeners": Array [
+        [Function],
+      ],
+    }
+  }
   elementsPerScroll={5}
-  onItemsFetch={[Function]}
   onScroll={null}
   onScrollFinished={null}
   renderLoadingComponent={[Function]}
@@ -184,8 +312,21 @@ exports[`withInfiniteScroll should render correctly with a "renderLoadingCompone
 
 exports[`withInfiniteScroll should render correctly with a "renderSeeMoreComponent" attribute 1`] = `
 <WithInfiniteScroll
+  dataSource={
+    ArrayDataSource {
+      "elements": Array [
+        "Element 0",
+        "Element 1",
+        "Element 2",
+        "Element 3",
+        "Element 4",
+      ],
+      "listeners": Array [
+        [Function],
+      ],
+    }
+  }
   elementsPerScroll={1}
-  onItemsFetch={[Function]}
   onScroll={null}
   onScrollFinished={null}
   renderLoadingComponent={null}
@@ -222,8 +363,21 @@ exports[`withInfiniteScroll should render correctly with a "renderSeeMoreCompone
 
 exports[`withInfiniteScroll should render correctly with an "elementsPerScroll" attribute 1`] = `
 <WithInfiniteScroll
+  dataSource={
+    ArrayDataSource {
+      "elements": Array [
+        "Element 0",
+        "Element 1",
+        "Element 2",
+        "Element 3",
+        "Element 4",
+      ],
+      "listeners": Array [
+        [Function],
+      ],
+    }
+  }
   elementsPerScroll={1}
-  onItemsFetch={[Function]}
   onScroll={null}
   onScrollFinished={null}
   renderLoadingComponent={null}

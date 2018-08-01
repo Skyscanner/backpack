@@ -13,5 +13,11 @@
   "peerDependencies": {
     "react": "^16.0.0-alpha.1",
     "react-native": ">= 0.47.0"
+  },
+  "dependencies": {
+    "prop-types": "^15.5.8"
+  },
+  "devDependencies": {
+    "react-native-bpk-component-text": "^2.1.45"
   }
 }

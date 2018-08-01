@@ -1,9 +1,15 @@
 # Unreleased
 
-##### bpk-component-scrollable-calendar:
+**New:**
+ - bpk-component-scrollable-calendar:
+   - implemented BpkScrollableCalendarDate, built on top of BpkCalendarDate
 
-- implemented BpkScrollableCalendarDate, built on top of BpkCalendarDate
+**Changed:** 
+ - bpk-component-calendar:
+   - exposed propTypes as BpkCalendarPropTypes for reuse in BpkScrollableCalendarDate
 
-##### bpk-component-calendar:
+**Breaking:**
+ - bpk-component-infinite-scroll:
+   - Added DataSource class. Can be used to trigger updates when the data for infinite scroll has changed.
+   - `onItemsFetch` prop replaced in favour of DataSource.
 
-- exposed propTypes as BpkCalendarPropTypes for reuse in BpkScrollableCalendarDate

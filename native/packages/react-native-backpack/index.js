@@ -17,4 +17,6 @@
  */
 /* @flow */
 
-// Not much to see here
+import BpkPanel from './libraries/Panel';
+
+export { BpkPanel }; // eslint-disable-line import/prefer-default-export

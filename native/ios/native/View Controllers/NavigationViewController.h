@@ -16,17 +16,9 @@
  * limitations under the License.
  */
 
-/* @flow */
+#import <UIKit/UIKit.h>
+#import <React/RCTBridgeModule.h>
 
-export default (elementsArray: Array<Object>) => (
-  index: number,
-  nElements: number,
-): Promise<Array<Object>> =>
-  new Promise(resolve => {
-    const totalElements = elementsArray.length;
-    const n = totalElements - index;
-    if (n <= 0) {
-      return resolve([]);
-    }
-    return resolve(elementsArray.slice(index, index + Math.min(n, nElements)));
-  });
+@interface NavigationViewController : UINavigationController<RCTBridgeModule>
+
+@end
