@@ -14,7 +14,14 @@ PODS:
   - Backpack/Shadow (0.7.0)
   - Backpack/Spacing (0.7.0)
   - Backpack2 (0.0.3):
+    - Backpack2/Badge (= 0.0.3)
     - Backpack2/Panel (= 0.0.3)
+  - Backpack2/Badge (0.0.3):
+    - Backpack
+    - Backpack2/Badge/React (= 0.0.3)
+  - Backpack2/Badge/React (0.0.3):
+    - Backpack
+    - React
   - Backpack2/Panel (0.0.3):
     - Backpack
     - Backpack2/Panel/React (= 0.0.3)
@@ -113,7 +120,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Backpack: b732cf0ed2fbb84e35e34c4c65faab9e0bf5ed46
-  Backpack2: f8d5a4f8ad508fc8cbfa6a45439416a9376216da
+  Backpack2: cf2275c0504174519df3c95cde067ab2d78ca9da
   boost-for-react-native: 39c7adb57c4e60d6c5479dd8623128eb5b3f0f2c
   BVLinearGradient: 6d8909e3fc6b089defa4b89d967441fa6827a2ee
   DoubleConversion: e22e0762848812a87afd67ffda3998d9ef29170c
