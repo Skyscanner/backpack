@@ -16,10 +16,11 @@
  * limitations under the License.
  */
 
-#import <UIKit/UIKit.h>
+#import "RCTView.h"
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
-
-@property (nonatomic, strong) UIWindow *window;
-
+NS_ASSUME_NONNULL_BEGIN
+@class RCTBridge;
+@interface BPKPanelWrapper : UIView
+- (instancetype)initWithFrame:(CGRect)frame NS_DESIGNATED_INITIALIZER;
 @end
+NS_ASSUME_NONNULL_END

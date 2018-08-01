@@ -20,5 +20,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 @interface BPKPanel: UIView
+@property (nonatomic, assign, getter=isPadded) IBInspectable BOOL padded;
+
 @end
 NS_ASSUME_NONNULL_END
