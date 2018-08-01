@@ -140,7 +140,7 @@
     "react-svg-loader": "^2.1.0",
     "react-test-renderer": "^15.4.1",
     "rimraf": "^2.5.4",
-    "sass-loader": "^6.0.6",
+    "sass-loader": "^7.1.0",
     "sassdoc": "^2.5.0",
     "semver": "^5.5.0",
     "static-site-generator-webpack-plugin": "github:skyscanner/static-site-generator-webpack-plugin#7bac616",
