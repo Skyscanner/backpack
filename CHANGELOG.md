@@ -2,6 +2,13 @@
 
 [Unreleased changes](./unreleased.md).
 
+# 2018-08-01 - Breaking changes to the infinite scroll component.
+
+**Breaking:**
+ - bpk-component-infinite-scroll: 1.0.10 => 2.0.1
+   - Added DataSource class. Can be used to trigger updates when the data for infinite scroll has changed.
+   - `onItemsFetch` prop replaced in favour of DataSource.
+
 # 2018-07-30 - Fixed issue where modal scrim would not fade in.
 
 **Fixed:**
