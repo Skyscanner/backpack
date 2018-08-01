@@ -42,12 +42,32 @@
                                             <segue destination="Rhj-2C-rYP" kind="show" id="b8H-b3-wLW"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="V8a-Wi-hBI" style="IBUITableViewCellStyleDefault" id="yPv-nH-bWs">
+                                        <rect key="frame" x="0.0" y="99.5" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yPv-nH-bWs" id="8ei-58-TRB">
+                                            <rect key="frame" x="0.0" y="0.0" width="341" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Badge" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="V8a-Wi-hBI">
+                                                    <rect key="frame" x="16" y="0.0" width="324" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="4xH-kV-tvf" kind="show" id="bff-Wd-cd2"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                             <tableViewSection headerTitle="React Native" id="pe5-fe-i9r">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="bUO-du-Lwl" style="IBUITableViewCellStyleDefault" id="Uef-hy-ehf">
-                                        <rect key="frame" x="0.0" y="155.5" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="199.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Uef-hy-ehf" id="SWD-nI-JzW">
                                             <rect key="frame" x="0.0" y="0.0" width="341" height="43.5"/>
@@ -80,10 +100,444 @@
             </objects>
             <point key="canvasLocation" x="385" y="93"/>
         </scene>
-        <!--Panel View Controller-->
+        <!--Badge-->
+        <scene sceneID="wge-cs-e17">
+            <objects>
+                <viewController title="Badge" id="4xH-kV-tvf" customClass="BadgeViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="37I-jQ-1S4">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="qmw-Bg-hYp">
+                                <rect key="frame" x="0.0" y="-235.5" width="375" height="1138"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SGQ-Cb-jd8">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="366"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Success" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wA3-tZ-RsD">
+                                                <rect key="frame" x="8" y="72.5" width="64.5" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="glB-TY-lyt">
+                                                <rect key="frame" x="8" y="101.5" width="359" height="256.5"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KpH-lY-yVH" customClass="BPKBadge">
+                                                        <rect key="frame" x="8" y="103" width="50" height="50.5"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="message" value="Apples"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pDu-9P-HfX" customClass="BPKBadge">
+                                                        <rect key="frame" x="105.5" y="103" width="50" height="50.5"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="message" value="Bananas"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MNm-qx-C28" customClass="BPKBadge">
+                                                        <rect key="frame" x="203.5" y="103" width="50" height="50.5"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="message" value="Strawberries"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="96j-SH-jsW" customClass="BPKBadge">
+                                                        <rect key="frame" x="301" y="103" width="50" height="50.5"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="message" value="Pears"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                </subviews>
+                                                <edgeInsets key="layoutMargins" top="4" left="8" bottom="4" right="8"/>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="glB-TY-lyt" secondAttribute="bottom" constant="8" id="9Ws-bg-hHx"/>
+                                            <constraint firstItem="glB-TY-lyt" firstAttribute="leading" secondItem="SGQ-Cb-jd8" secondAttribute="leadingMargin" id="NQX-Jd-WTT"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="glB-TY-lyt" secondAttribute="trailing" id="bSO-bM-RJL"/>
+                                            <constraint firstItem="wA3-tZ-RsD" firstAttribute="leading" secondItem="SGQ-Cb-jd8" secondAttribute="leadingMargin" id="g5X-2j-I0e"/>
+                                            <constraint firstItem="wA3-tZ-RsD" firstAttribute="top" secondItem="SGQ-Cb-jd8" secondAttribute="topMargin" id="gGF-Kd-JSZ"/>
+                                            <constraint firstItem="glB-TY-lyt" firstAttribute="top" secondItem="wA3-tZ-RsD" secondAttribute="bottom" constant="8" id="gMt-Yx-Bmg"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3gh-0h-1lf">
+                                        <rect key="frame" x="0.0" y="366" width="375" height="128"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Warning" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j67-cn-ity">
+                                                <rect key="frame" x="8" y="8" width="63.5" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="TFk-bi-gBO">
+                                                <rect key="frame" x="8" y="37" width="359" height="83"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XUI-aY-vPB" customClass="BPKBadge">
+                                                        <rect key="frame" x="8" y="16.5" width="50" height="50"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="message" value="Apples"/>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="type">
+                                                                <integer key="value" value="1"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Yp3-7Z-liU" customClass="BPKBadge">
+                                                        <rect key="frame" x="105.5" y="16.5" width="50" height="50"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="message" value="Bananas"/>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="type">
+                                                                <integer key="value" value="1"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6XM-c4-BrH" customClass="BPKBadge">
+                                                        <rect key="frame" x="203.5" y="16.5" width="50" height="50"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="message" value="Strawberries"/>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="type">
+                                                                <integer key="value" value="1"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vLz-Bp-F3E" customClass="BPKBadge">
+                                                        <rect key="frame" x="301" y="16.5" width="50" height="50"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="message" value="Pears"/>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="type">
+                                                                <integer key="value" value="1"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                </subviews>
+                                                <edgeInsets key="layoutMargins" top="4" left="8" bottom="4" right="8"/>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="TFk-bi-gBO" firstAttribute="top" secondItem="j67-cn-ity" secondAttribute="bottom" constant="8" id="CD0-5t-sbp"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="TFk-bi-gBO" secondAttribute="trailing" id="k0G-zO-D6B"/>
+                                            <constraint firstItem="j67-cn-ity" firstAttribute="top" secondItem="3gh-0h-1lf" secondAttribute="topMargin" id="nAl-yb-qV8"/>
+                                            <constraint firstItem="j67-cn-ity" firstAttribute="leading" secondItem="3gh-0h-1lf" secondAttribute="leadingMargin" id="nqm-G5-Eah"/>
+                                            <constraint firstItem="TFk-bi-gBO" firstAttribute="leading" secondItem="3gh-0h-1lf" secondAttribute="leadingMargin" id="slZ-UW-bII"/>
+                                            <constraint firstAttribute="bottom" secondItem="TFk-bi-gBO" secondAttribute="bottom" constant="8" id="y37-3E-HBm"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h66-2p-0gu">
+                                        <rect key="frame" x="0.0" y="494" width="375" height="144"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Destructive" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZZ8-wY-noU">
+                                                <rect key="frame" x="8" y="8" width="88" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="Gmn-Gp-Ks5">
+                                                <rect key="frame" x="8" y="36.5" width="359" height="99.5"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EEy-pz-PD3" customClass="BPKBadge">
+                                                        <rect key="frame" x="8" y="4" width="50" height="91.5"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="message" value="Apples"/>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="type">
+                                                                <integer key="value" value="2"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4th-X0-AUM" customClass="BPKBadge">
+                                                        <rect key="frame" x="105.5" y="4" width="50" height="91.5"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="message" value="Bananas"/>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="type">
+                                                                <integer key="value" value="2"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DEt-pK-wel" customClass="BPKBadge">
+                                                        <rect key="frame" x="203.5" y="4" width="50" height="91.5"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="message" value="Strawberries"/>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="type">
+                                                                <integer key="value" value="2"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PKn-xo-F5J" customClass="BPKBadge">
+                                                        <rect key="frame" x="301" y="4" width="50" height="91.5"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="message" value="Pears"/>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="type">
+                                                                <integer key="value" value="2"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                </subviews>
+                                                <edgeInsets key="layoutMargins" top="4" left="8" bottom="4" right="8"/>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="ZZ8-wY-noU" firstAttribute="top" secondItem="h66-2p-0gu" secondAttribute="topMargin" id="7Iu-nX-N30"/>
+                                            <constraint firstItem="Gmn-Gp-Ks5" firstAttribute="leading" secondItem="h66-2p-0gu" secondAttribute="leadingMargin" id="Qcb-3G-oFi"/>
+                                            <constraint firstAttribute="bottom" secondItem="Gmn-Gp-Ks5" secondAttribute="bottom" constant="8" id="Woh-wx-MYc"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="Gmn-Gp-Ks5" secondAttribute="trailing" id="kl3-J7-1vl"/>
+                                            <constraint firstItem="ZZ8-wY-noU" firstAttribute="leading" secondItem="h66-2p-0gu" secondAttribute="leadingMargin" id="lzu-XH-Q05"/>
+                                            <constraint firstItem="Gmn-Gp-Ks5" firstAttribute="top" secondItem="ZZ8-wY-noU" secondAttribute="bottom" constant="8" id="mrO-xF-Qz7"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nN2-Oc-jQn">
+                                        <rect key="frame" x="0.0" y="638" width="375" height="180"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Light" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D0H-Aj-oNC">
+                                                <rect key="frame" x="8" y="8" width="39" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vb6-KN-DHe">
+                                                <rect key="frame" x="8" y="36.5" width="359" height="143.5"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="mzw-hE-hSL">
+                                                        <rect key="frame" x="0.0" y="0.0" width="359" height="143.5"/>
+                                                        <subviews>
+                                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vEA-E5-hU1" customClass="BPKBadge">
+                                                                <rect key="frame" x="8" y="47" width="50" height="50"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="message" value="Apples"/>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="type">
+                                                                        <integer key="value" value="3"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </view>
+                                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="isa-Oy-W2f" customClass="BPKBadge">
+                                                                <rect key="frame" x="105.5" y="47" width="50" height="50"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="message" value="Bananas"/>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="type">
+                                                                        <integer key="value" value="3"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </view>
+                                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hlS-eH-UBk" customClass="BPKBadge">
+                                                                <rect key="frame" x="203.5" y="47" width="50" height="50"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="message" value="Strawberries"/>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="type">
+                                                                        <integer key="value" value="3"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </view>
+                                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Df0-b7-3ly" customClass="BPKBadge">
+                                                                <rect key="frame" x="301" y="47" width="50" height="50"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="message" value="Pears"/>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="type">
+                                                                        <integer key="value" value="3"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </view>
+                                                        </subviews>
+                                                        <edgeInsets key="layoutMargins" top="4" left="8" bottom="4" right="8"/>
+                                                    </stackView>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstItem="mzw-hE-hSL" firstAttribute="top" secondItem="Vb6-KN-DHe" secondAttribute="top" id="3cR-j8-k6e"/>
+                                                    <constraint firstAttribute="bottom" secondItem="mzw-hE-hSL" secondAttribute="bottom" id="HzK-Eq-5fV"/>
+                                                    <constraint firstAttribute="trailing" secondItem="mzw-hE-hSL" secondAttribute="trailing" id="XvL-eA-GCq"/>
+                                                    <constraint firstItem="mzw-hE-hSL" firstAttribute="leading" secondItem="Vb6-KN-DHe" secondAttribute="leading" id="z7v-yP-Vao"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="Vb6-KN-DHe" secondAttribute="bottom" id="DoA-HX-eT9"/>
+                                            <constraint firstItem="Vb6-KN-DHe" firstAttribute="top" secondItem="D0H-Aj-oNC" secondAttribute="bottom" constant="8" id="Dsh-zD-Ji7"/>
+                                            <constraint firstItem="D0H-Aj-oNC" firstAttribute="leading" secondItem="nN2-Oc-jQn" secondAttribute="leadingMargin" id="P4b-IB-82n"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="Vb6-KN-DHe" secondAttribute="trailing" id="azK-wz-54r"/>
+                                            <constraint firstItem="D0H-Aj-oNC" firstAttribute="top" secondItem="nN2-Oc-jQn" secondAttribute="topMargin" id="nnx-ia-Rat"/>
+                                            <constraint firstItem="Vb6-KN-DHe" firstAttribute="leading" secondItem="nN2-Oc-jQn" secondAttribute="leadingMargin" id="ucj-g3-bGZ"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7mx-WU-UUn">
+                                        <rect key="frame" x="0.0" y="818" width="375" height="164"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Inverse" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aAM-nu-rF3">
+                                                <rect key="frame" x="8" y="8" width="55" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pmb-Cy-cY6">
+                                                <rect key="frame" x="8" y="36.5" width="359" height="127.5"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="OZt-9s-X4S">
+                                                        <rect key="frame" x="0.0" y="0.0" width="359" height="127.5"/>
+                                                        <subviews>
+                                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BX9-P0-mgT" customClass="BPKBadge">
+                                                                <rect key="frame" x="8" y="39" width="50" height="50"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="message" value="Apples"/>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="type">
+                                                                        <integer key="value" value="4"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </view>
+                                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="f5i-pw-wDw" customClass="BPKBadge">
+                                                                <rect key="frame" x="105.5" y="39" width="50" height="50"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="message" value="Bananas"/>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="type">
+                                                                        <integer key="value" value="4"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </view>
+                                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eln-4c-ggR" customClass="BPKBadge">
+                                                                <rect key="frame" x="203.5" y="39" width="50" height="50"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="message" value="Strawberries"/>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="type">
+                                                                        <integer key="value" value="4"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </view>
+                                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qpA-mS-gPf" customClass="BPKBadge">
+                                                                <rect key="frame" x="301" y="39" width="50" height="50"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="message" value="Pears"/>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="type">
+                                                                        <integer key="value" value="4"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </view>
+                                                        </subviews>
+                                                        <edgeInsets key="layoutMargins" top="4" left="8" bottom="4" right="8"/>
+                                                    </stackView>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="bottom" secondItem="OZt-9s-X4S" secondAttribute="bottom" id="32f-be-8g8"/>
+                                                    <constraint firstAttribute="trailing" secondItem="OZt-9s-X4S" secondAttribute="trailing" id="CpU-rd-1tz"/>
+                                                    <constraint firstItem="OZt-9s-X4S" firstAttribute="leading" secondItem="Pmb-Cy-cY6" secondAttribute="leading" id="O1j-DV-ZMg"/>
+                                                    <constraint firstItem="OZt-9s-X4S" firstAttribute="top" secondItem="Pmb-Cy-cY6" secondAttribute="top" id="xm1-Cu-M80"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="Pmb-Cy-cY6" secondAttribute="bottom" id="247-hX-91h"/>
+                                            <constraint firstItem="Pmb-Cy-cY6" firstAttribute="top" secondItem="aAM-nu-rF3" secondAttribute="bottom" constant="8" id="7Fc-Q6-VIx"/>
+                                            <constraint firstItem="aAM-nu-rF3" firstAttribute="leading" secondItem="7mx-WU-UUn" secondAttribute="leadingMargin" id="fH3-PU-Kbo"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="Pmb-Cy-cY6" secondAttribute="trailing" id="qxG-jm-z6h"/>
+                                            <constraint firstItem="aAM-nu-rF3" firstAttribute="top" secondItem="7mx-WU-UUn" secondAttribute="topMargin" id="vj4-H7-Gic"/>
+                                            <constraint firstItem="Pmb-Cy-cY6" firstAttribute="leading" secondItem="7mx-WU-UUn" secondAttribute="leadingMargin" id="yP4-hV-m6n"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2x3-k7-feL">
+                                        <rect key="frame" x="0.0" y="982" width="375" height="156"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Outline" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xaf-Nl-1tc">
+                                                <rect key="frame" x="8" y="8" width="55" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7X4-eW-kBu">
+                                                <rect key="frame" x="8" y="36.5" width="359" height="119.5"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="5j7-rw-aBG">
+                                                        <rect key="frame" x="0.0" y="0.0" width="359" height="119.5"/>
+                                                        <subviews>
+                                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vgg-JW-MNX" customClass="BPKBadge">
+                                                                <rect key="frame" x="8" y="35" width="50" height="50"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="message" value="Apples"/>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="type">
+                                                                        <integer key="value" value="5"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </view>
+                                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kzb-Uh-E2n" customClass="BPKBadge">
+                                                                <rect key="frame" x="105.5" y="35" width="50" height="50"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="message" value="Bananas"/>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="type">
+                                                                        <integer key="value" value="5"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </view>
+                                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OCp-8u-H1Z" customClass="BPKBadge">
+                                                                <rect key="frame" x="203.5" y="35" width="50" height="50"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="message" value="Strawberries"/>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="type">
+                                                                        <integer key="value" value="5"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </view>
+                                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PAW-uT-Z2B" customClass="BPKBadge">
+                                                                <rect key="frame" x="301" y="35" width="50" height="50"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="message" value="Pears"/>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="type">
+                                                                        <integer key="value" value="5"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </view>
+                                                        </subviews>
+                                                        <edgeInsets key="layoutMargins" top="4" left="8" bottom="4" right="8"/>
+                                                    </stackView>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstItem="5j7-rw-aBG" firstAttribute="leading" secondItem="7X4-eW-kBu" secondAttribute="leading" id="C9L-FE-qAN"/>
+                                                    <constraint firstAttribute="bottom" secondItem="5j7-rw-aBG" secondAttribute="bottom" id="Ze9-nX-PkL"/>
+                                                    <constraint firstItem="5j7-rw-aBG" firstAttribute="top" secondItem="7X4-eW-kBu" secondAttribute="top" id="aeO-sb-od7"/>
+                                                    <constraint firstAttribute="trailing" secondItem="5j7-rw-aBG" secondAttribute="trailing" id="mb6-mN-RTh"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="xaf-Nl-1tc" firstAttribute="leading" secondItem="2x3-k7-feL" secondAttribute="leadingMargin" id="1hQ-Ia-xUM"/>
+                                            <constraint firstItem="7X4-eW-kBu" firstAttribute="top" secondItem="xaf-Nl-1tc" secondAttribute="bottom" constant="8" id="4OG-TT-hdv"/>
+                                            <constraint firstItem="xaf-Nl-1tc" firstAttribute="top" secondItem="2x3-k7-feL" secondAttribute="topMargin" id="V8x-ZO-FdV"/>
+                                            <constraint firstItem="7X4-eW-kBu" firstAttribute="leading" secondItem="2x3-k7-feL" secondAttribute="leadingMargin" id="ZCG-Z8-q1g"/>
+                                            <constraint firstAttribute="bottom" secondItem="7X4-eW-kBu" secondAttribute="bottom" id="fbZ-3J-hog"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="7X4-eW-kBu" secondAttribute="trailing" id="gr6-5m-JPm"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="qmw-Bg-hYp" firstAttribute="centerY" secondItem="37I-jQ-1S4" secondAttribute="centerY" id="4R2-rr-BFs"/>
+                            <constraint firstItem="qmw-Bg-hYp" firstAttribute="leading" secondItem="2qy-7O-ejQ" secondAttribute="leading" id="Qyp-Za-8QR"/>
+                            <constraint firstItem="qmw-Bg-hYp" firstAttribute="trailing" secondItem="2qy-7O-ejQ" secondAttribute="trailing" id="dWL-Wk-Tlr"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="2qy-7O-ejQ"/>
+                    </view>
+                    <connections>
+                        <outletCollection property="darkViews" destination="Vb6-KN-DHe" id="sTi-fh-vpC"/>
+                        <outletCollection property="darkViews" destination="Pmb-Cy-cY6" id="5pc-Z1-HX7"/>
+                        <outletCollection property="darkViews" destination="7X4-eW-kBu" id="uDr-c4-ys3"/>
+                        <outletCollection property="labels" destination="wA3-tZ-RsD" id="AL9-1v-Ece"/>
+                        <outletCollection property="labels" destination="j67-cn-ity" id="oRT-TB-cbX"/>
+                        <outletCollection property="labels" destination="ZZ8-wY-noU" id="WuG-Nx-a1e"/>
+                        <outletCollection property="labels" destination="D0H-Aj-oNC" id="v3R-Nd-2oV"/>
+                        <outletCollection property="labels" destination="aAM-nu-rF3" id="AXm-9Y-iPe"/>
+                        <outletCollection property="labels" destination="xaf-Nl-1tc" id="IlA-hT-Ym9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Rxp-jp-dso" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1229.5999999999999" y="114.69265367316342"/>
+        </scene>
+        <!--Panel-->
         <scene sceneID="ZXf-g6-bJf">
             <objects>
-                <viewController id="Rhj-2C-rYP" customClass="PanelViewController" sceneMemberID="viewController">
+                <viewController title="Panel" id="Rhj-2C-rYP" customClass="PanelViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oa2-Id-Kbx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -120,7 +574,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dbi-qS-quP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1229.5999999999999" y="-255.02248875562222"/>
+            <point key="canvasLocation" x="1230" y="-1191"/>
         </scene>
         <!--Navigation View Controller-->
         <scene sceneID="Al2-ag-9FY">
@@ -151,7 +605,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bED-qZ-lvS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1230" y="444"/>
+            <point key="canvasLocation" x="1230" y="1139"/>
         </scene>
     </scenes>
 </document>

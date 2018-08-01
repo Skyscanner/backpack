@@ -21,6 +21,7 @@
 		D66FC4912109DA3C0063B1A6 /* StorybookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D66FC4902109DA3C0063B1A6 /* StorybookViewController.m */; };
 		D66FC4942109F16F0063B1A6 /* PanelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D66FC4932109F16F0063B1A6 /* PanelViewController.m */; };
 		D67672F1211188ED009C5E02 /* NavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D67672F0211188ED009C5E02 /* NavigationViewController.m */; };
+		D67672F42111D10C009C5E02 /* BadgeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D67672F32111D10C009C5E02 /* BadgeViewController.m */; };
 		E19140ED6394488C9626FE7A /* BpkIcon.woff in Resources */ = {isa = PBXBuildFile; fileRef = E436C94A65D1410092B05450 /* BpkIcon.woff */; };
 /* End PBXBuildFile section */
 
@@ -68,6 +69,8 @@
 		D66FC4932109F16F0063B1A6 /* PanelViewController.m */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.c.objc; path = PanelViewController.m; sourceTree = "<group>"; tabWidth = 4; };
 		D67672EF211188ED009C5E02 /* NavigationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NavigationViewController.h; sourceTree = "<group>"; };
 		D67672F0211188ED009C5E02 /* NavigationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NavigationViewController.m; sourceTree = "<group>"; };
+		D67672F22111D10C009C5E02 /* BadgeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BadgeViewController.h; sourceTree = "<group>"; };
+		D67672F32111D10C009C5E02 /* BadgeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BadgeViewController.m; sourceTree = "<group>"; };
 		E436C94A65D1410092B05450 /* BpkIcon.woff */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = BpkIcon.woff; path = "../../packages/bpk-svgs/dist/font/BpkIcon.woff"; sourceTree = "<group>"; };
 		FBB4289347D8862ADA374625 /* Pods-Backpack Native.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Backpack Native.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Backpack Native/Pods-Backpack Native.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -200,6 +203,8 @@
 				D66FC4932109F16F0063B1A6 /* PanelViewController.m */,
 				D67672EF211188ED009C5E02 /* NavigationViewController.h */,
 				D67672F0211188ED009C5E02 /* NavigationViewController.m */,
+				D67672F22111D10C009C5E02 /* BadgeViewController.h */,
+				D67672F32111D10C009C5E02 /* BadgeViewController.m */,
 			);
 			name = "View Controllers";
 			path = "native/View Controllers";
@@ -428,10 +433,12 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Backpack Native/Pods-Backpack Native-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/Backpack2/BPKBadge.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/Backpack2/BPKPanel.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/BPKBadge.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/BPKPanel.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -455,6 +462,7 @@
 			files = (
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
+				D67672F42111D10C009C5E02 /* BadgeViewController.m in Sources */,
 				D67672F1211188ED009C5E02 /* NavigationViewController.m in Sources */,
 				D66FC4912109DA3C0063B1A6 /* StorybookViewController.m in Sources */,
 				D66FC4942109F16F0063B1A6 /* PanelViewController.m in Sources */,
