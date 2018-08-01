@@ -28,6 +28,7 @@ public class ComponentDetailActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
 
+
         // Show the Up button in the action bar.
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
@@ -50,7 +51,7 @@ public class ComponentDetailActivity extends AppCompatActivity {
             arguments.putString(ComponentDetailFragment.ARG_ITEM_ID,
                     getIntent().getStringExtra(ComponentDetailFragment.ARG_ITEM_ID));
             ComponentRegistery.Component component = ComponentRegistery.ITEM_MAP.get(getIntent().getStringExtra(ComponentDetailFragment.ARG_ITEM_ID));
-
+            toolbar.setTitle(getIntent().getStringExtra(ComponentDetailFragment.ARG_ITEM_ID));
             ComponentDetailFragment fragment = null;
             try {
                 fragment = component.fragmentClass.newInstance();
