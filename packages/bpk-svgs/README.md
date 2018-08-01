@@ -10,7 +10,7 @@ npm install bpk-svgs --save-dev
 
 ## Usage
 
-This package exposes Backpack SVG's in various formats:
+This package exposes Backpack SVGs in various formats:
 
 - React components
   ```
