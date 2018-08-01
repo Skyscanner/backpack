@@ -22,7 +22,7 @@ import withInfiniteScroll, {
   type Props as WithInfiniteScrollProps,
 } from './src/withInfiniteScroll';
 
-export { default as onItemsFetch } from './src/onItemsFetch';
+export { default as DataSource, ArrayDataSource } from './src/DataSource';
 
 export type { WithInfiniteScrollProps };
 
