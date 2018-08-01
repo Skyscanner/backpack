@@ -27,7 +27,7 @@ import { BpkPanel } from './index';
 storiesOf('react-native-backpack/BPKPanel', module)
   .addDecorator(CenterDecorator)
   .add('docs:default', () => (
-    <BpkPanel>
+    <BpkPanel padded>
       <BpkText>Label</BpkText>
     </BpkPanel>
   ));

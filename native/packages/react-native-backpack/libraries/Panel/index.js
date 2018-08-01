@@ -16,24 +16,10 @@
  * limitations under the License.
  */
 /* @flow */
-import PropTypes from 'prop-types';
-import { requireNativeComponent } from 'react-native';
+import { Platform } from 'react-native';
+import BpkPanelIos from './index.ios';
+import BpkPanelAndroid from './index.android';
 
-type Props = {
-  children: Node,
-  padded: boolean,
-};
-/* eslint-disable react/prefer-stateless-function */
-class BpkPanel extends Component<Props, {}> {
-  static propTypes = {
-    padded: PropTypes.bool,
-    ...View.propTypes, // include the default view properties
-  };
-
-  static defaultProps = {
-    padded: true,
-  };
-  
-const NativePanel = requireNativeComponent('BPKPanelWrapper', BpkPanel);
+const BpkPanel = Platform.OS === 'ios' ? BpkPanelIos : BpkPanelAndroid;
 
 export default BpkPanel;

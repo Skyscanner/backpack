@@ -85,7 +85,6 @@ configure(() => {
   require('../packages/react-native-bpk-component-touchable-overlay/stories');
   require('../packages/react-native-bpk-styles/stories');
   require('../packages/react-native-bpk-theming/stories');
-  require('../packages/react-native-backpack/libraries/Panel/stories');
 }, module);
 /* eslint-enable global-require */
 
