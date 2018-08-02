@@ -21,10 +21,9 @@ define_react_native_subspec = Proc.new do |name, root_spec|
     ss.source_files = "libraries/#{name}/ios/native/classes/**/*.{h,m}"
     ss.public_header_files = "libraries/#{name}/ios/native/classes/*.h"
     ss.resource_bundle = {
-      'BPKPanel' => "libraries/#{name}/ios/native/resources/**/*"
+      "BPK#{name}" => "libraries/#{name}/ios/native/resources/**/*"
     }
     ss.dependency 'Backpack'
-
     # Define additional subspec for React Native bindings
     ss.subspec 'React' do |rs|
       rs.source_files = "libraries/#{name}/ios/react/classes/**/*.{h,m}"
@@ -58,5 +57,6 @@ Pod::Spec.new do |s|
   s.frameworks = 'UIKit', 'Foundation'
 
   define_react_native_subspec.call('Panel', s)
+  define_react_native_subspec.call('Badge', s)
 end
 
