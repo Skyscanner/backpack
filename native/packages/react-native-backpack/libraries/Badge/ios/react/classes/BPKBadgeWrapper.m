@@ -24,7 +24,6 @@
 #import <React/RCTUIManager.h>
 #import <React/RCTShadowView.h>
 #import <React/RCTComponent.h>
-//#import <React/UIView+React.h>
 
 NS_ASSUME_NONNULL_BEGIN
 @interface BPKBadgeWrapper() <RCTComponent>
@@ -56,10 +55,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)layoutSubviews {
     [super layoutSubviews];
+    self.inner.frame = self.bounds;
 
-    CGSize size = [[self.bridge.uiManager viewForReactTag:self.reactTag] systemLayoutSizeFittingSize:UILayoutFittingExpandedSize];
+    CGSize size = [self.inner systemLayoutSizeFittingSize:UILayoutFittingExpandedSize];
     RCTExecuteOnUIManagerQueue(^{
-        [self.bridge.uiManager shadowViewForReactTag:self.reactTag].intrinsicContentSize = size;
+        RCTShadowView *shadowView = [self.bridge.uiManager shadowViewForReactTag:self.reactTag];
+        shadowView.intrinsicContentSize = size;
     });
 }
 
@@ -77,6 +78,10 @@ NS_ASSUME_NONNULL_BEGIN
     self.inner.type = type;
 }
 
+- (BPKBadgeType)type {
+    return self.inner.type;
+}
+
 #pragma mark - Private
 
 - (void)setup {
@@ -84,18 +89,18 @@ NS_ASSUME_NONNULL_BEGIN
     self.inner = badge;
 
     [self addSubview:badge];
-    badge.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    badge.translatesAutoresizingMaskIntoConstraints = NO;
 }
 
 @end
 
 @implementation RCTConvert(BPKBadgeType)
-RCT_ENUM_CONVERTER(BPKBadgeType, (@{ @"badgeTypeSuccess" : @(BPKBadgeTypeSuccess),
-                                     @"badgeTypeWarning" : @(BPKBadgeTypeWarning),
-                                     @"badgeTypeDestructive" : @(BPKBadgeTypeDestructive),
-                                     @"badgeTypeLight" : @(BPKBadgeTypeLight),
-                                     @"badgeTypeInverse" : @(BPKBadgeTypeInverse),
-                                     @"badgeTypeOutline" : @(BPKBadgeTypeOutline)}),
+RCT_ENUM_CONVERTER(BPKBadgeType, (@{ @"success" : @(BPKBadgeTypeSuccess),
+                                     @"warning" : @(BPKBadgeTypeWarning),
+                                     @"destructive" : @(BPKBadgeTypeDestructive),
+                                     @"light" : @(BPKBadgeTypeLight),
+                                     @"inverse" : @(BPKBadgeTypeInverse),
+                                     @"outline" : @(BPKBadgeTypeOutline)}),
                    BPKBadgeTypeSuccess, integerValue)
 @end
 

@@ -22,7 +22,7 @@ import { storiesOf } from '@storybook/react-native';
 import BpkText from 'react-native-bpk-component-text';
 import CenterDecorator from '../../storybook/CenterDecorator';
 
-import { BpkPanel, BpkBadge } from './index';
+import { BpkPanel } from './index';
 
 storiesOf('react-native-backpack/BPKPanel', module)
   .addDecorator(CenterDecorator)
@@ -31,7 +31,3 @@ storiesOf('react-native-backpack/BPKPanel', module)
       <BpkText>Label</BpkText>
     </BpkPanel>
   ));
-
-storiesOf('react-native-backpack/BPKBadge', module)
-  .addDecorator(CenterDecorator)
-  .add('docs:default', () => <BpkBadge message="Success" />);

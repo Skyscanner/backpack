@@ -20,39 +20,27 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { requireNativeComponent } from 'react-native';
 
-type BadgeType =
-  | 'badgeTypeSuccess'
-  | 'badgeTypeWarning'
-  | 'badgeTypeDestructive'
-  | 'badgeTypeLight'
-  | 'badgeTypeInverse'
-  | 'badgeTypeOutline';
+export const BADGE_TYPES = {
+  success: 'success',
+  warning: 'warning',
+  destructive: 'destructive',
+  light: 'light',
+  inverse: 'inverse',
+  outline: 'outline',
+};
+
+type BadgeType = $Keys<typeof BADGE_TYPES>;
 
 type Props = {
   message: string,
   type: BadgeType,
 };
 
-export const BADGE_TYPES = {
-  success: 'badgeTypeSuccess',
-  warning: 'badgeTypeWarning',
-  destructive: 'badgeTypeDestructive',
-  light: 'badgeTypeLight',
-  inverse: 'badgeTypeInverse',
-  outline: 'badgeTypeOutline',
-};
 const BpkBadge = (props: Props) => <NativeBadge {...props} />;
 
 BpkBadge.propTypes = {
   message: PropTypes.string.isRequired,
-  type: PropTypes.oneOf([
-    'badgeTypeSuccess',
-    'badgeTypeWarning',
-    'badgeTypeDestructive',
-    'badgeTypeLight',
-    'badgeTypeInverse',
-    'badgeTypeOutline',
-  ]),
+  type: PropTypes.oneOf(Object.keys(BADGE_TYPES)),
 };
 
 BpkBadge.defaultProps = {
