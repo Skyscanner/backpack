@@ -20,8 +20,12 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import BpkScrollableCalendar from '.';
+import BpkScrollableCalendar, { BpkScrollableCalendarDate } from './index';
 
-storiesOf('bpk-component-scrollable-calendar', module).add('Default', () => (
-  <BpkScrollableCalendar />
-));
+storiesOf('bpk-component-scrollable-calendar', module)
+  .add('Default', () => <BpkScrollableCalendar />)
+  .add('BpkScrollableCalendarDate', () => (
+    <div>
+      <BpkScrollableCalendarDate date={new Date()} />
+    </div>
+  ));
