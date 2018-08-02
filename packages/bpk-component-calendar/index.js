@@ -22,9 +22,7 @@ import BpkCalendarContainer, {
 import BpkCalendarGrid from './src/BpkCalendarGrid';
 import BpkCalendarGridHeader from './src/BpkCalendarGridHeader';
 import BpkCalendarNav from './src/BpkCalendarNav';
-import BpkCalendarDate, {
-  propTypes as BpkCalendarDatePropTypes,
-} from './src/BpkCalendarDate';
+import BpkCalendarDate, { propTypes } from './src/BpkCalendarDate';
 import composeCalendar from './src/composeCalendar';
 import CustomPropTypes from './src/custom-proptypes';
 import * as DateUtils from './src/date-utils';
@@ -42,5 +40,5 @@ export {
   composeCalendar,
   withCalendarState,
   themeAttributes,
-  BpkCalendarDatePropTypes,
+  propTypes,
 };
