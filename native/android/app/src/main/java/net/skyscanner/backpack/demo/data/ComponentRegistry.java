@@ -1,6 +1,7 @@
 package net.skyscanner.backpack.demo.data;
 
 import net.skyscanner.backpack.demo.ComponentDetailFragment;
+import net.skyscanner.backpack.demo.stories.BadgeFragment;
 import net.skyscanner.backpack.demo.stories.PanelFragment;
 
 import java.util.ArrayList;
@@ -14,7 +15,7 @@ import java.util.Map;
  * <p>
  * TODO: Replace all uses of this class before publishing your app.
  */
-public class ComponentRegistery {
+public class ComponentRegistry {
 
     /**
      * An array of sample (dummy) items.
@@ -28,6 +29,7 @@ public class ComponentRegistery {
 
     static {
         addItem(new Component("Panel", PanelFragment.class));
+        addItem(new Component("Badge", BadgeFragment.class));
     }
 
     private static void addItem(Component item) {
@@ -41,6 +43,7 @@ public class ComponentRegistery {
     public static class Component {
         public final String id;
         public final Class<? extends ComponentDetailFragment> fragmentClass;
+
         public Component(String id, Class<? extends ComponentDetailFragment> fragmentClass) {
             this.id = id;
             this.fragmentClass = fragmentClass;

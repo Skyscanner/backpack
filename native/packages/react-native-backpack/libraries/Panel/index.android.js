@@ -25,7 +25,7 @@ type Props = {
   padded: boolean,
 };
 /* eslint-disable react/prefer-stateless-function */
-class BpkPanelAndroid extends Component<Props, {}> {
+class BpkPanel extends Component<Props, {}> {
   static propTypes = {
     padded: PropTypes.bool,
     ...View.propTypes, // include the default view properties
@@ -40,6 +40,6 @@ class BpkPanelAndroid extends Component<Props, {}> {
   }
 }
 /* eslint-enable react/prefer-stateless-function */
-const NativePanel = requireNativeComponent('BPKPanelWrapper', BpkPanelAndroid);
+const NativePanel = requireNativeComponent('BPKPanelWrapper', BpkPanel);
 
-export default BpkPanelAndroid;
+export default BpkPanel;

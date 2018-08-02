@@ -189,6 +189,7 @@ dependencies {
     implementation project(':panel-native')
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation "org.jetbrains.kotlin:kotlin-reflect:$kotlin_version"
+    implementation 'com.squareup.picasso:picasso:2.71828'
 }
 
 // Run this once to be able to run the application with BUCK

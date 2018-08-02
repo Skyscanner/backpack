@@ -8,9 +8,12 @@ import android.support.v7.widget.Toolbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.app.ActionBar;
 import android.view.MenuItem;
+import android.widget.ImageView;
+
+import com.squareup.picasso.*;
 
 import net.skyscanner.backpack.R;
-import net.skyscanner.backpack.demo.data.ComponentRegistery;
+import net.skyscanner.backpack.demo.data.ComponentRegistry;
 
 /**
  * An activity representing a single Component detail screen. This
@@ -26,8 +29,9 @@ public class ComponentDetailActivity extends AppCompatActivity {
         setContentView(R.layout.activity_component_detail);
         Toolbar toolbar = (Toolbar) findViewById(R.id.detail_toolbar);
         setSupportActionBar(toolbar);
-
-
+        ImageView image = findViewById(R.id.img);
+        Picasso.get().load(R.drawable.header).resize(1024, 800)
+                .onlyScaleDown().into(image);
 
         // Show the Up button in the action bar.
         ActionBar actionBar = getSupportActionBar();
@@ -50,36 +54,22 @@ public class ComponentDetailActivity extends AppCompatActivity {
             Bundle arguments = new Bundle();
             arguments.putString(ComponentDetailFragment.ARG_ITEM_ID,
                     getIntent().getStringExtra(ComponentDetailFragment.ARG_ITEM_ID));
-            ComponentRegistery.Component component = ComponentRegistery.ITEM_MAP.get(getIntent().getStringExtra(ComponentDetailFragment.ARG_ITEM_ID));
+            ComponentRegistry.Component component = ComponentRegistry.ITEM_MAP.get(getIntent().getStringExtra(ComponentDetailFragment.ARG_ITEM_ID));
             toolbar.setTitle(getIntent().getStringExtra(ComponentDetailFragment.ARG_ITEM_ID));
             ComponentDetailFragment fragment = null;
             try {
                 fragment = component.fragmentClass.newInstance();
-            } catch (InstantiationException e) {e.printStackTrace();
+            } catch (InstantiationException e) {
+                e.printStackTrace();
 
             } catch (IllegalAccessException e) {
                 e.printStackTrace();
             }
+
             fragment.setArguments(arguments);
             getSupportFragmentManager().beginTransaction()
                     .add(R.id.component_detail_container, fragment)
                     .commit();
         }
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-        if (id == android.R.id.home) {
-            // This ID represents the Home or Up button. In the case of this
-            // activity, the Up button is shown. For
-            // more details, see the Navigation pattern on Android Design:
-            //
-            // http://developer.android.com/design/patterns/navigation.html#up-vs-back
-            //
-            navigateUpTo(new Intent(this, ComponentListActivity.class));
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
     }
 }

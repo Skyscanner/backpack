@@ -25,17 +25,17 @@ type Props = {
   padded: boolean,
 };
 
-const BpkPanelIos = (props: Props) => <NativePanel {...props} />;
+const BpkPanel = (props: Props) => <NativePanel {...props} />;
 
-BpkPanelIos.propTypes = {
+BpkPanel.propTypes = {
   children: PropTypes.node.isRequired,
   padded: PropTypes.bool,
 };
 
-BpkPanelIos.defaultProps = {
+BpkPanel.defaultProps = {
   padded: true,
 };
 
-const NativePanel = requireNativeComponent('BPKPanelWrapper', BpkPanelIos);
+const NativePanel = requireNativeComponent('BPKPanelWrapper', BpkPanel);
 
-export default BpkPanelIos;
+export default BpkPanel;

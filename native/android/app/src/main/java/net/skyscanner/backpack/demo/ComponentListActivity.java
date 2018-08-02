@@ -17,7 +17,7 @@ import android.widget.TextView;
 import net.skyscanner.backpack.MainActivity;
 import net.skyscanner.backpack.R;
 
-import net.skyscanner.backpack.demo.data.ComponentRegistery;
+import net.skyscanner.backpack.demo.data.ComponentRegistry;
 
 import java.util.List;
 
@@ -58,7 +58,7 @@ public class ComponentListActivity extends AppCompatActivity {
         storyView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(),MainActivity.class);
+                Intent intent = new Intent(v.getContext(), MainActivity.class);
                 startActivity(intent);
             }
         });
@@ -68,19 +68,19 @@ public class ComponentListActivity extends AppCompatActivity {
     }
 
     private void setupRecyclerView(@NonNull RecyclerView recyclerView) {
-        recyclerView.setAdapter(new SimpleItemRecyclerViewAdapter(this, ComponentRegistery.ITEMS, mTwoPane));
+        recyclerView.setAdapter(new SimpleItemRecyclerViewAdapter(this, ComponentRegistry.ITEMS, mTwoPane));
     }
 
     public static class SimpleItemRecyclerViewAdapter
             extends RecyclerView.Adapter<SimpleItemRecyclerViewAdapter.ViewHolder> {
 
         private final ComponentListActivity mParentActivity;
-        private final List<ComponentRegistery.Component> mValues;
+        private final List<ComponentRegistry.Component> mValues;
         private final boolean mTwoPane;
         private final View.OnClickListener mOnClickListener = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ComponentRegistery.Component item = (ComponentRegistery.Component) view.getTag();
+                ComponentRegistry.Component item = (ComponentRegistry.Component) view.getTag();
                 if (mTwoPane) {
                     Bundle arguments = new Bundle();
                     arguments.putString(ComponentDetailFragment.ARG_ITEM_ID, item.id);
@@ -108,7 +108,7 @@ public class ComponentListActivity extends AppCompatActivity {
         };
 
         SimpleItemRecyclerViewAdapter(ComponentListActivity parent,
-                                      List<ComponentRegistery.Component> items,
+                                      List<ComponentRegistry.Component> items,
                                       boolean twoPane) {
             mValues = items;
             mParentActivity = parent;

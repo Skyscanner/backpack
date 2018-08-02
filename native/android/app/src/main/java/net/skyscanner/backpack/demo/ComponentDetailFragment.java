@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 
 import net.skyscanner.backpack.R;
-import net.skyscanner.backpack.demo.data.ComponentRegistery;
+import net.skyscanner.backpack.demo.data.ComponentRegistry;
 
 /**
  * A fragment representing a single Component detail screen.
@@ -24,7 +24,7 @@ public class ComponentDetailFragment extends Fragment {
     /**
      * The dummy content this fragment is presenting.
      */
-    private ComponentRegistery.Component mItem;
+    private ComponentRegistry.Component mItem;
 
     /**
      * Mandatory empty constructor for the fragment manager to instantiate the
@@ -41,7 +41,7 @@ public class ComponentDetailFragment extends Fragment {
             // Load the dummy content specified by the fragment
             // arguments. In a real-world scenario, use a Loader
             // to load content from a content provider.
-            mItem = ComponentRegistery.ITEM_MAP.get(getArguments().getString(ARG_ITEM_ID));
+            mItem = ComponentRegistry.ITEM_MAP.get(getArguments().getString(ARG_ITEM_ID));
 
             Activity activity = this.getActivity();
             CollapsingToolbarLayout appBarLayout = (CollapsingToolbarLayout) activity.findViewById(R.id.toolbar_layout);

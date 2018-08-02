@@ -44,5 +44,5 @@
 
         <include layout="@layout/component_list" />
     </LinearLayout>
-    
+
 </android.support.design.widget.CoordinatorLayout>
