@@ -71,7 +71,7 @@ const capitalise = input => input.charAt(0).toUpperCase() + input.slice(1);
 const generateBadgeStory = (contents: Array<string>) => {
   const badgeWrapperStyle = [style.badgeWrapper];
   badgeWrapperStyle.push(style.center);
-  const badges = Object.entries(BADGE_TYPES).map(([key, type]) => (
+  const badges = Object.keys(BADGE_TYPES).map(key => (
     <View key={key}>
       <StorySubheading>{capitalise(key)}</StorySubheading>
       <View style={[badgeWrapperStyle, style[key]]}>
@@ -79,7 +79,7 @@ const generateBadgeStory = (contents: Array<string>) => {
           <BpkBadge
             key={content}
             message={content}
-            type={type}
+            type={key}
             style={style.badge}
           />
         ))}
