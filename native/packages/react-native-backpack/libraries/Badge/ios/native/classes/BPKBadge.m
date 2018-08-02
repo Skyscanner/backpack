@@ -101,9 +101,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)setMessage:(NSString *)message {
     self.label.text = message;
-    [self.label sizeToFit];
-    [self.label setNeedsLayout];
-    [self setNeedsLayout];
 }
 
 - (NSString *)message {

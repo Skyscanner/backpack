@@ -13,19 +13,19 @@ PODS:
   - Backpack/Radii (0.7.0)
   - Backpack/Shadow (0.7.0)
   - Backpack/Spacing (0.7.0)
-  - Backpack2 (0.0.3):
-    - Backpack2/Badge (= 0.0.3)
-    - Backpack2/Panel (= 0.0.3)
-  - Backpack2/Badge (0.0.3):
+  - Backpack2 (0.0.4):
+    - Backpack2/Badge (= 0.0.4)
+    - Backpack2/Panel (= 0.0.4)
+  - Backpack2/Badge (0.0.4):
     - Backpack
-    - Backpack2/Badge/React (= 0.0.3)
-  - Backpack2/Badge/React (0.0.3):
+    - Backpack2/Badge/React (= 0.0.4)
+  - Backpack2/Badge/React (0.0.4):
     - Backpack
     - React
-  - Backpack2/Panel (0.0.3):
+  - Backpack2/Panel (0.0.4):
     - Backpack
-    - Backpack2/Panel/React (= 0.0.3)
-  - Backpack2/Panel/React (0.0.3):
+    - Backpack2/Panel/React (= 0.0.4)
+  - Backpack2/Panel/React (0.0.4):
     - Backpack
     - React
   - boost-for-react-native (1.63.0)

@@ -15,9 +15,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* @flow */
+#import <React/RCTViewManager.h>
 
-import BpkPanel from './libraries/Panel';
-import BpkBadge from './libraries/Badge';
 
-export { BpkPanel, BpkBadge };
+@interface BPKBadgeWrapperManager : RCTViewManager
+
+@end

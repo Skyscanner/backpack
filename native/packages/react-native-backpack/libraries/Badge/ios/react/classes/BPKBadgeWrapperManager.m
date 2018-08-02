@@ -15,9 +15,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* @flow */
 
-import BpkPanel from './libraries/Panel';
-import BpkBadge from './libraries/Badge';
+#import "BPKBadgeWrapperManager.h"
 
-export { BpkPanel, BpkBadge };
+#import "BPKBadgeWrapper.h"
+
+NS_ASSUME_NONNULL_BEGIN
+@implementation BPKBadgeWrapperManager
+RCT_EXPORT_MODULE()
+
+- (UIView * )view {
+    return [[BPKBadgeWrapper alloc] initWithBridge:self.bridge];
+}
+RCT_EXPORT_VIEW_PROPERTY(message, NSString *)
+RCT_EXPORT_VIEW_PROPERTY(type, BPKBadgeType)
+
+@end
+NS_ASSUME_NONNULL_END
