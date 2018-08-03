@@ -24,7 +24,7 @@ import net.skyscanner.backpack.demo.data.ComponentRegistry;
 public class ComponentDetailActivity extends AppCompatActivity {
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_component_detail);
         Toolbar toolbar = (Toolbar) findViewById(R.id.detail_toolbar);
@@ -57,13 +57,12 @@ public class ComponentDetailActivity extends AppCompatActivity {
             ComponentRegistry.Component component = ComponentRegistry.ITEM_MAP.get(getIntent().getStringExtra(ComponentDetailFragment.ARG_ITEM_ID));
             toolbar.setTitle(getIntent().getStringExtra(ComponentDetailFragment.ARG_ITEM_ID));
             ComponentDetailFragment fragment = null;
+
             try {
                 fragment = component.fragmentClass.newInstance();
-            } catch (InstantiationException e) {
+            } catch (InstantiationException | IllegalAccessException e) {
                 e.printStackTrace();
-
-            } catch (IllegalAccessException e) {
-                e.printStackTrace();
+                throw new RuntimeException();
             }
 
             fragment.setArguments(arguments);
