@@ -15,16 +15,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* @flow */
 
-import BpkScrollableCalendar, {
-  type Props as BpkScrollableCalendarProps,
-} from './src/BpkScrollableCalendar';
-import BpkScrollableCalendarDate from './src/BpkScrollableCalendarDate';
-import BpkScrollableCalendarGrid from './src/BpkScrollableCalendarGrid';
+@import '~bpk-mixins/index';
 
-export type { BpkScrollableCalendarProps };
-
-export default BpkScrollableCalendar;
-
-export { BpkScrollableCalendarDate, BpkScrollableCalendarGrid };
+$shadow-bottom: 0 1px 0 0 $bpk-color-gray-100; /* stylelint-disable-line unit-blacklist */
+$shadow-left: -1px 0 0 0 $bpk-color-gray-100; /* stylelint-disable-line unit-blacklist */
+$shadow-right: 1px 0 0 0 $bpk-color-gray-100; /* stylelint-disable-line unit-blacklist */
+$calendar-width: 7 * ($bpk-calendar-day-size + $bpk-calendar-day-spacing);
+$calendar-height: 6 * ($bpk-calendar-day-size + $bpk-calendar-day-spacing);
