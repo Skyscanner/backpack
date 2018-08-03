@@ -13,7 +13,7 @@
         <net.skyscanner.backpack.BpkPanel
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:bpk_panel_padding="false">
+            app:bpk_padding="false">
 
             <TextView
                 android:layout_width="match_parent"
@@ -24,7 +24,7 @@
         <net.skyscanner.backpack.BpkPanel
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:bpk_panel_padding="true">
+            app:bpk_padding="true">
 
             <TextView
                 android:layout_width="match_parent"

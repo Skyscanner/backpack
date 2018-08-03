@@ -39,8 +39,8 @@ class BpkPanel : LinearLayout {
 
     private fun initialize(context: Context, attrs: AttributeSet?, defStyleAttr: Int) {
 
-        val a = context.obtainStyledAttributes(attrs, R.styleable.panel, R.attr.bpk_panel_padding, 0)
-        if (a.hasValue(R.styleable.panel_bpk_panel_padding)) {
+        val a = context.obtainStyledAttributes(attrs, R.styleable.panel, R.attr.bpk_padding, 0)
+        if (a.hasValue(R.styleable.panel_bpk_padding)) {
             //default value of padding is true
             mPadding = a.getBoolean(R.styleable.panel_bpk_panel_padding, true)
         }

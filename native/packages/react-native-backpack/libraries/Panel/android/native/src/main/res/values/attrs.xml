@@ -2,7 +2,7 @@
 <resources>
 
     <declare-styleable name="panel">
-        <attr name="bpk_panel_padding" format="boolean" />
+        <attr name="bpk_padding" format="boolean" />
     </declare-styleable>
 
 </resources>

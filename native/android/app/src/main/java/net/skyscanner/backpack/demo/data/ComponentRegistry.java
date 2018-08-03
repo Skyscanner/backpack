@@ -29,7 +29,6 @@ public class ComponentRegistry {
 
     static {
         addItem(new Component("Panel", PanelFragment.class));
-        addItem(new Component("Badge", BadgeFragment.class));
     }
 
     private static void addItem(Component item) {
