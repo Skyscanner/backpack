@@ -17,7 +17,17 @@
  */
 /* @flow */
 
-import BpkPanel from './libraries/Panel';
-import BpkBadge from './libraries/Badge';
+import React from 'react';
+import { storiesOf } from '@storybook/react-native';
+import BpkText from 'react-native-bpk-component-text';
+import CenterDecorator from '../../../../storybook/CenterDecorator';
 
-export { BpkPanel, BpkBadge };
+import BpkPanel from './index';
+
+storiesOf('react-native-backpack/BPKPanel', module)
+  .addDecorator(CenterDecorator)
+  .add('docs:default', () => (
+    <BpkPanel padded>
+      <BpkText>Label</BpkText>
+    </BpkPanel>
+  ));
