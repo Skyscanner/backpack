@@ -27,7 +27,7 @@ import BpkScrollableCalendar, {
   BpkScrollableCalendarDate,
   BpkScrollableCalendarGrid,
 } from './index';
-import { BpkCalendarGrid } from 'bpk-component-calendar';
+
 storiesOf('bpk-component-scrollable-calendar', module)
   .add('Default', () => <BpkScrollableCalendar />)
   .add('BpkScrollableCalendarDate', () => (
