@@ -19,7 +19,9 @@
 import BpkCalendarContainer, {
   withCalendarState,
 } from './src/BpkCalendarContainer';
-import BpkCalendarGrid from './src/BpkCalendarGrid';
+import BpkCalendarGrid, {
+  propTypes as BpkCalendarGridPropTypes,
+} from './src/BpkCalendarGrid';
 import BpkCalendarGridHeader from './src/BpkCalendarGridHeader';
 import BpkCalendarNav from './src/BpkCalendarNav';
 import BpkCalendarDate, {
@@ -43,4 +45,5 @@ export {
   withCalendarState,
   themeAttributes,
   BpkCalendarDatePropTypes,
+  BpkCalendarGridPropTypes,
 };

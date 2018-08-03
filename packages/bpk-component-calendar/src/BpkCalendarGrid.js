@@ -144,7 +144,7 @@ class BpkCalendarGrid extends Component {
   }
 }
 
-BpkCalendarGrid.propTypes = {
+export const propTypes = {
   // Required
   DateComponent: PropTypes.func.isRequired,
   daysOfWeek: CustomPropTypes.DaysOfWeek.isRequired,
@@ -167,6 +167,8 @@ BpkCalendarGrid.propTypes = {
   showWeekendSeparator: PropTypes.bool,
   weekStartsOn: PropTypes.number,
 };
+
+BpkCalendarGrid.propTypes = propTypes;
 
 BpkCalendarGrid.defaultProps = {
   className: null,
