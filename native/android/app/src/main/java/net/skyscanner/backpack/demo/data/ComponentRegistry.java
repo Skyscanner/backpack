@@ -1,7 +1,6 @@
 package net.skyscanner.backpack.demo.data;
 
 import net.skyscanner.backpack.demo.ComponentDetailFragment;
-import net.skyscanner.backpack.demo.stories.BadgeFragment;
 import net.skyscanner.backpack.demo.stories.PanelFragment;
 
 import java.util.ArrayList;

@@ -20,7 +20,7 @@ import React, { Component, type Node } from 'react';
 import PropTypes from 'prop-types';
 import { requireNativeComponent, View } from 'react-native';
 
-type Props = {
+export type Props = {
   children: Node,
   padded: boolean,
 };
