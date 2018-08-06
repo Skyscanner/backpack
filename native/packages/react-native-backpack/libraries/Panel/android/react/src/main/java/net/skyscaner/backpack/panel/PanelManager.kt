@@ -17,7 +17,7 @@ class PanelManager : ViewGroupManager<BpkPanel>() {
 
     @ReactProp(name = "padded", defaultBoolean = true)
     fun setPadding(panel: BpkPanel, padded: Boolean) {
-        panel.setmPadding(padded)
+        panel.mPadding = padded
     }
 
     companion object {

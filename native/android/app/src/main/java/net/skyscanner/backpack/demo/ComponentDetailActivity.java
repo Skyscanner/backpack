@@ -1,16 +1,12 @@
 package net.skyscanner.backpack.demo;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v7.widget.Toolbar;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.app.ActionBar;
-import android.view.MenuItem;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.widget.ImageView;
 
-import com.squareup.picasso.*;
+import com.squareup.picasso.Picasso;
 
 import net.skyscanner.backpack.R;
 import net.skyscanner.backpack.demo.data.ComponentRegistry;

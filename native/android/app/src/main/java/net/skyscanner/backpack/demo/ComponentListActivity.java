@@ -42,7 +42,7 @@ public class ComponentListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_component_list);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         toolbar.setTitle(getTitle());
 
@@ -87,11 +87,9 @@ public class ComponentListActivity extends AppCompatActivity {
                     ComponentDetailFragment fragment = null;
                     try {
                         fragment = item.fragmentClass.newInstance();
-                    } catch (InstantiationException e) {
+                    } catch (InstantiationException | IllegalAccessException e) {
                         e.printStackTrace();
-
-                    } catch (IllegalAccessException e) {
-                        e.printStackTrace();
+                        throw new RuntimeException();
                     }
                     fragment.setArguments(arguments);
                     mParentActivity.getSupportFragmentManager().beginTransaction()
@@ -140,7 +138,7 @@ public class ComponentListActivity extends AppCompatActivity {
 
             ViewHolder(View view) {
                 super(view);
-                name = (TextView) view.findViewById(R.id.component_name);
+                name = view.findViewById(R.id.component_name);
             }
         }
     }

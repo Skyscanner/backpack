@@ -5,24 +5,24 @@ import android.util.AttributeSet
 import android.widget.LinearLayout
 
 
-class BpkPanel : LinearLayout {
+class BpkPanel(
+        context: Context,
+        attrs: AttributeSet?,
+        defStyleAttr: Int) : LinearLayout(context, attrs, defStyleAttr) {
 
-    private var mPadding: Boolean = false
+    constructor(context: Context) : this(context, null)
+    constructor(context: Context, attrs: AttributeSet?) : this(context, attrs, R.style.Bpk_panel)
 
-    constructor(context: Context) : super(context)
-
-    constructor(context: Context, attrs: AttributeSet?, defStyleAttr: Int) : super(context, attrs, defStyleAttr) {
+    init {
+        this.orientation = LinearLayout.VERTICAL
         initialize(context, attrs, defStyleAttr)
     }
 
-    constructor(context: Context, attrs: AttributeSet?) : super(context, attrs) {
-        initialize(context, attrs, R.style.Bpk_panel)
-    }
-
-    fun setmPadding(mPadding: Boolean) {
-        this.mPadding = mPadding
-        draw()
-    }
+    var mPadding: Boolean = false
+        set(value) {
+            field = value
+            draw()
+        }
 
     private fun draw() {
         this.background = context.getDrawable(R.drawable.border)
