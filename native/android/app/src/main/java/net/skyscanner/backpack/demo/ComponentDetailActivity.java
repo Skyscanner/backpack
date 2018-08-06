@@ -57,8 +57,7 @@ public class ComponentDetailActivity extends AppCompatActivity {
             try {
                 fragment = component.fragmentClass.newInstance();
             } catch (InstantiationException | IllegalAccessException e) {
-                e.printStackTrace();
-                throw new RuntimeException();
+                throw new RuntimeException(e);
             }
 
             fragment.setArguments(arguments);

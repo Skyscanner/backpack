@@ -88,8 +88,7 @@ public class ComponentListActivity extends AppCompatActivity {
                     try {
                         fragment = item.fragmentClass.newInstance();
                     } catch (InstantiationException | IllegalAccessException e) {
-                        e.printStackTrace();
-                        throw new RuntimeException();
+                        throw new RuntimeException(e);
                     }
                     fragment.setArguments(arguments);
                     mParentActivity.getSupportFragmentManager().beginTransaction()
