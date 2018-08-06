@@ -19,7 +19,7 @@
 
 import PropTypes from 'prop-types';
 import React from 'react';
-import { cssModules } from '../../bpk-react-utils';
+import { cssModules } from 'bpk-react-utils';
 
 import STYLES from './BpkScrollableCalendar.scss';
 
