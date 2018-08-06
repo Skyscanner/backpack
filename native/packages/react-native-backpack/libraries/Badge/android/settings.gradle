@@ -1,0 +1,6 @@
+
+include 'badge-native'
+project(':badge-native').projectDir = new File('native')
+
+include 'badge-react'
+project(':badge-react').projectDir = new File('react')

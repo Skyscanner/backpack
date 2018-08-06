@@ -18,4 +18,8 @@ project(':panel-native').projectDir = new File('../packages/react-native-backpac
 include 'panel-react'
 project(':panel-react').projectDir = new File('../packages/react-native-backpack/libraries/Panel/android/react')
 
+include 'badge-native'
+project(':badge-native').projectDir = new File('../packages/react-native-backpack/libraries/Badge/android/native')
 
+include 'badge-react'
+project(':badge-react').projectDir = new File('../packages/react-native-backpack/libraries/Badge/android/react')
