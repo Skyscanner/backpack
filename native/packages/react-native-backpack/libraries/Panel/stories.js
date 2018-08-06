@@ -16,26 +16,23 @@
  * limitations under the License.
  */
 /* @flow */
-import React, { type Node } from 'react';
-import PropTypes from 'prop-types';
-import { requireNativeComponent } from 'react-native';
 
-type Props = {
-  children: Node,
-  padded: boolean,
-};
+import React from 'react';
+import { storiesOf } from '@storybook/react-native';
+import BpkText from 'react-native-bpk-component-text';
+import CenterDecorator from '../../../../storybook/CenterDecorator';
 
-const BpkPanel = (props: Props) => <NativePanel {...props} />;
+import BpkPanel from './index';
 
-BpkPanel.propTypes = {
-  children: PropTypes.node.isRequired,
-  padded: PropTypes.bool,
-};
-
-BpkPanel.defaultProps = {
-  padded: true,
-};
-
-const NativePanel = requireNativeComponent('BPKPanelWrapper', BpkPanel);
-
-export default BpkPanel;
+storiesOf('react-native-backpack/BPKPanel', module)
+  .addDecorator(CenterDecorator)
+  .add('docs:default', () => (
+    <BpkPanel>
+      <BpkText>Label</BpkText>
+    </BpkPanel>
+  ))
+  .add('docs:withPadding', () => (
+    <BpkPanel padded>
+      <BpkText>Label</BpkText>
+    </BpkPanel>
+  ));

@@ -26,6 +26,15 @@ project.xcworkspace
 .gradle
 local.properties
 *.iml
+/.idea/caches/build_file_checksums.ser
+/.idea/libraries
+/.idea/modules.xml
+/.idea/workspace.xml
+.DS_Store
+/build
+/captures
+.externalNativeBuild
+gradlew.bat
 
 # node.js
 #

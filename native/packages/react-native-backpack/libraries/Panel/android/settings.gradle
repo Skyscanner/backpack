@@ -1,0 +1,5 @@
+include ':react'
+
+include 'panel-native'
+project(':panel-native').projectDir = new File('native')
+
