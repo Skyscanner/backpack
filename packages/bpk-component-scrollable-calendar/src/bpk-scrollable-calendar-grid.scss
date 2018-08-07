@@ -17,7 +17,6 @@
  */
 
 @import '~bpk-mixins/index';
-@import 'variables';
 
 .bpk-scrollable-calendar-grid {
   width: 100%;
@@ -26,7 +25,7 @@
 
   &--animating {
     z-index: 1;
-    transition: transform .2s ease-in-out;
+    transition: transform 0.2s ease-in-out;
   }
 
   &__title {

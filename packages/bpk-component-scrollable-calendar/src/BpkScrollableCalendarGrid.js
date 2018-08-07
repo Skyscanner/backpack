@@ -29,37 +29,31 @@ import STYLES from './bpk-scrollable-calendar-grid.scss';
 
 const getClassName = cssModules(STYLES);
 
-/*
-  BpkScrollableCalendarGrid - the grid representing a whole month
-*/
+const BpkScrollableCalendarGrid = props => {
+  const { month, className, ...rest } = props;
 
-class BpkScrollableCalendarGrid extends BpkCalendarGrid {
-  render() {
-    const { month, className, ...rest } = this.props;
-
-    const classNames = [getClassName('bpk-scrollable-calendar-grid')];
-    if (className) {
-      classNames.push(className);
-    }
-
-    return (
-      <div>
-        <BpkText
-          className={getClassName('bpk-scrollable-calendar-grid__title')}
-          tagName="h1"
-          textStyle="lg"
-        >
-          {format(month, 'MMMM')}
-        </BpkText>
-        <BpkCalendarGrid
-          className={getClassName('bpk-scrollable-calendar-grid__caption')}
-          month={month}
-          {...rest}
-        />
-      </div>
-    );
+  const classNames = [getClassName('bpk-scrollable-calendar-grid')];
+  if (className) {
+    classNames.push(className);
   }
-}
+
+  return (
+    <div>
+      <BpkText
+        className={getClassName('bpk-scrollable-calendar-grid__title')}
+        tagName="h1"
+        textStyle="lg"
+      >
+        {format(month, 'MMMM')}
+      </BpkText>
+      <BpkCalendarGrid
+        className={getClassName('bpk-scrollable-calendar-grid__caption')}
+        month={month}
+        {...rest}
+      />
+    </div>
+  );
+};
 
 BpkScrollableCalendarGrid.propTypes = {
   ...BpkCalendarGridPropTypes,
