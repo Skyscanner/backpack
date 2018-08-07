@@ -18,7 +18,7 @@
 /* @flow */
 import React from 'react';
 import PropTypes from 'prop-types';
-import { requireNativeComponent } from 'react-native';
+import { requireNativeComponent, View } from 'react-native';
 
 export const BADGE_TYPES = {
   success: 'success',
@@ -41,6 +41,7 @@ const BpkBadge = (props: Props) => <NativeBadge {...props} />;
 BpkBadge.propTypes = {
   message: PropTypes.string.isRequired,
   type: PropTypes.oneOf(Object.keys(BADGE_TYPES)),
+  ...View.propTypes,
 };
 
 BpkBadge.defaultProps = {

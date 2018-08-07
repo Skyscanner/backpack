@@ -4,10 +4,12 @@ import android.content.Context
 import android.content.res.TypedArray
 import android.graphics.drawable.GradientDrawable
 import android.util.AttributeSet
+import android.view.Gravity
+import android.widget.LinearLayout
 import android.widget.TextView
 
 
-class BpkBadge(
+open class BpkBadge(
         context: Context,
         attrs: AttributeSet?,
         defStyleAttr: Int) : TextView(context, attrs, defStyleAttr) {
@@ -26,6 +28,10 @@ class BpkBadge(
             setup()
         }
     var message: String? = null
+        set(value) {
+            field = value
+            setup()
+        }
 
     private fun initialize(context: Context, attrs: AttributeSet?, defStyleAttr: Int) {
 
@@ -49,6 +55,9 @@ class BpkBadge(
             this.text = message
         }
 
+        if (mType == null) {
+            return
+        }
         //set padding
         val paddingMd = resources.getDimension(R.dimen.bpkSpacingMd).toInt()
         val paddingSm = resources.getDimension(R.dimen.bpkSpacingSm).toInt()
@@ -77,17 +86,30 @@ class BpkBadge(
         border.cornerRadii = radius
         this.background = border
 
+        val params = LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT)
+        this.gravity = Gravity.CENTER
+        this.layoutParams = params
     }
 
-    enum class BpkBadgeType constructor(internal var id: Int, var bgColor: Int, var textColor: Int) {
-        BPKBadgeTypeSuccess(1, R.color.bpkGreen500, R.color.bpkGray700),
-        BPKBadgeTypeWarning(2, R.color.bpkYellow500, R.color.bpkGray700),
-        BPKBadgeTypeDestructive(3, R.color.bpkRed500, R.color.bpkWhite),
-        BPKBadgeTypeLight(4, R.color.bpkGray50, R.color.bpkGray700),
-        BPKBadgeTypeInverse(5, R.color.bpkWhite, R.color.bpkGray700),
-        BPKBadgeTypeOutline(6, R.color.bpkWhite, R.color.bpkWhite);
+    enum class BpkBadgeType constructor(internal var id: Int,
+                                        var type: String,
+                                        var bgColor: Int,
+                                        var textColor: Int) {
+        BPKBadgeTypeSuccess(1, "success", R.color.bpkGreen500, R.color.bpkGray700),
+        BPKBadgeTypeWarning(2, "warning", R.color.bpkYellow500, R.color.bpkGray700),
+        BPKBadgeTypeDestructive(3, "destructive", R.color.bpkRed500, R.color.bpkWhite),
+        BPKBadgeTypeLight(4, "light", R.color.bpkGray50, R.color.bpkGray700),
+        BPKBadgeTypeInverse(5, "inverse", R.color.bpkWhite, R.color.bpkGray700),
+        BPKBadgeTypeOutline(6, "outline", R.color.bpkWhite, R.color.bpkWhite);
 
         companion object {
+
+            fun fromType(type: String): BpkBadgeType {
+                for (f in values()) {
+                    if (f.type == type) return f
+                }
+                throw IllegalArgumentException()
+            }
 
             internal fun fromId(id: Int): BpkBadgeType {
                 for (f in values()) {

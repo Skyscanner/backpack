@@ -19,6 +19,8 @@ android {
 }
 
 dependencies {
+    implementation "com.facebook.react:react-native:+" // From node_modules
+    implementation project(':badge-native')
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 }
 repositories {

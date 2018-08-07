@@ -36,6 +36,9 @@ const style = StyleSheet.create({
     flexDirection: 'column',
     flexWrap: 'wrap',
   },
+  badge: {
+    alignSelf: 'baseline',
+  },
   badgeWrapper: {
     alignSelf: 'stretch',
     justifyContent: 'space-around',
@@ -95,5 +98,10 @@ storiesOf('react-native-backpack/Badge', module)
   .add('docs:default', () => (
     <View>
       {generateBadgeStory(['Apples', 'Bananas', 'Strawberries', 'Pears'])}
+    </View>
+  ))
+  .add('docs:test', () => (
+    <View>
+      <BpkBadge style={style.badge} message="hello" type="success" />
     </View>
   ));
