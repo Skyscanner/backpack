@@ -23,16 +23,7 @@
   border-collapse: separate;
   border-spacing: 0;
 
-  &--animating {
-    z-index: 1;
-    transition: transform .2s ease-in-out;
-  }
-
   &__title {
     margin: $bpk-spacing-md 0 $bpk-spacing-sm $bpk-spacing-sm;
-  }
-
-  &__month {
-    @include bpk-visually-hidden;
   }
 }

@@ -32,13 +32,13 @@ const getClassName = cssModules(STYLES);
 const BpkScrollableCalendarGrid = props => {
   const { month, className, ...rest } = props;
 
-  const classNames = [getClassName('bpk-scrollable-calendar-grid')];
+  const classNames = getClassName('bpk-scrollable-calendar-grid', className);
   if (className) {
     classNames.push(className);
   }
 
   return (
-    <div>
+    <div className={classNames}>
       <BpkText
         className={getClassName('bpk-scrollable-calendar-grid__title')}
         tagName="h1"
@@ -46,11 +46,7 @@ const BpkScrollableCalendarGrid = props => {
       >
         {format(month, 'MMMM')}
       </BpkText>
-      <BpkCalendarGrid
-        className={getClassName('bpk-scrollable-calendar-grid__caption')}
-        month={month}
-        {...rest}
-      />
+      <BpkCalendarGrid month={month} {...rest} />
     </div>
   );
 };
