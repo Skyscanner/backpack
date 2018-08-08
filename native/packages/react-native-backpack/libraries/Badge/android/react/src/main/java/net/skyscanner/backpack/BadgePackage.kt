@@ -1,4 +1,4 @@
-package net.skyscaner.backpack.badge
+package net.skyscanner.backpack
 
 import com.facebook.react.ReactPackage
 import com.facebook.react.bridge.NativeModule

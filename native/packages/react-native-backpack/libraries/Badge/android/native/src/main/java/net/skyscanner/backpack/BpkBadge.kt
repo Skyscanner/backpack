@@ -1,4 +1,4 @@
-package net.skyscaner.backpack
+package net.skyscanner.backpack
 
 import android.content.Context
 import android.content.res.TypedArray

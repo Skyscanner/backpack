@@ -1,9 +1,8 @@
-package net.skyscaner.backpack.badge
+package net.skyscanner.backpack
 
 import com.facebook.react.uimanager.SimpleViewManager
 import com.facebook.react.uimanager.ThemedReactContext
 import com.facebook.react.uimanager.annotations.ReactProp
-import net.skyscaner.backpack.BpkBadge
 
 
 class BadgeManager : SimpleViewManager<BpkBadge>() {

@@ -9,7 +9,6 @@ import com.facebook.react.ReactPackage
 import com.facebook.react.shell.MainReactPackage
 import com.facebook.soloader.SoLoader
 import com.airbnb.android.react.maps.MapsPackage
-import net.skyscaner.backpack.badge.BadgePackage
 
 import java.util.Arrays
 
