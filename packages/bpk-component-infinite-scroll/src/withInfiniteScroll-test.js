@@ -38,7 +38,10 @@ describe('withInfiniteScroll', () => {
   );
 
   List.propTypes = {
-    elements: PropTypes.arrayOf(PropTypes.string).isRequired,
+    elements: PropTypes.oneOfType([
+      PropTypes.arrayOf(PropTypes.string),
+      PropTypes.arrayOf(PropTypes.number),
+    ]).isRequired,
   };
 
   const InfiniteList = withInfiniteScroll(List);
@@ -162,15 +165,17 @@ describe('withInfiniteScroll', () => {
     const spy = jest.fn();
     mount(
       <InfiniteList
-        dataSource={new ArrayDataSource([])}
+        dataSource={new ArrayDataSource([1, 2])}
         onScrollFinished={spy}
+        elementsPerScroll={2}
       />,
     );
 
     await intersect();
+    await intersect();
 
     expect(spy).toHaveBeenCalledWith({
-      totalNumberElements: 0,
+      totalNumberElements: 2,
     });
   });
 

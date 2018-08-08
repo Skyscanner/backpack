@@ -10,8 +10,6 @@ npm install bpk-component-infinite-scroll --save-dev
 
 ## <a name="Usage"></a>Usage
 ```js
-/* @flow */
-
 import React from 'react';
 import PropTypes from 'prop-types';
 import BpkButton from 'bpk-component-button';
@@ -68,19 +66,48 @@ export default () => (
 
 ## Accompanying classes
 
-DataSource
+## DataSource
 
-`DataSource` is a class used by the InfiniteScroll component to listen
-for changes in the data and react to it by reloading the current items
+`DataSource` is a class used by the InfiniteScroll component to fetch items
+and listen for changes in the data and react to it by reloading the current items
 in the list.
 
+### Methods
+
+`fetchItems(index, nElements)`
+
+Called by the `InfiniteScroll` component every time new data is
+requested (by scrolling down) and should return the data starting from `index` plus `nElements` (number of elements). It should return a promise object.
+
+Example:
 ```js
-/* @flow */
+fetchItems(0, 5) // should return 5 items starting from position 0
+fetchItems(5, 5) // should return 5 items starting from position 5
+```
+
+*Calling this method directly in the `DataSource` class will result in an error, it should be implemented by the subclass extending `DataSource`.*
+
+`onDataChange(cb)`
+
+Adds a new change listener to this `DataSource`, to be called when data is updated. Returns true if added or false otherwise.
+
+`removeListener(cb)`
+
+Removes the callback from the list of change listeners. Returns true if removed or false otherwise.
+
+`triggerListeners(...args)`
+
+Triggers all listeners in response to data changes. This method should be
+used by subclasses to tell the `InfiniteScroll` component it should refresh
+its data.
+
+
+```js
 import React from 'react';
 import PropTypes from 'prop-types';
 import withInfiniteScroll, { DataSource } from 'bpk-component-infinite-scroll';
 
-const SomeList = ({elements}) => (
+const SomeList = ({ elements }) => (
   <div id="list">
     {elements.map(element => (
       <div key={element} style={{ height: '50px' }}>
@@ -90,19 +117,17 @@ const SomeList = ({elements}) => (
   </div>
 )
 
-class InfiniteDataSource extends DataSource {
+class RemoteFlightsDataSource extends DataSource {
   constructor() {
     super();
-    this.elements = [];
+    myWebSocketConnection.on('dataChange', () => {
+      // tell the `InfiniteScroll` component to refresh its data
+      this.triggerListeners(); 
+    })
   }
 
   fetchItems(index, nElements) {
-    return new Promise(resolve => {
-      for (let i = 0; i < nElements; i += 1) {
-        this.elements.push(`Item ${index + i}`);
-      }
-      resolve(this.elements);
-    });
+    return fetch(`https://my-api/flights?start=${index}&count=${nElements}`);
   }
 }
 
@@ -110,16 +135,28 @@ const InfiniteList = withInfiniteScroll(SomeList);
 
 export default () => (
   <InfiniteList
-    dataSource={new InfiniteDataSource()}
+    dataSource={new RemoteFlightsDataSource()}
   />
 )
 ```
 
-ArrayDataSource
+## ArrayDataSource
 
 `ArrayDataSource` is a class that extends from `DataSource`. Accepts an array
 as a parameter in the constructor and uses it as source for the infinite scroll.
-To see and example of this class [Usage](#Usage) .
+
+> See [Usage](#Usage) for an example of this class in use.
+
+### Methods
+*refer to the `DataSource` methods section for a list of all methods*
+
+`fetchItems(index, nElements)`
+
+Returns a subset of the array data.
+
+`updateData(newData)`
+
+Updates the internal array and triggers all listeners.
 
 ## Props
 

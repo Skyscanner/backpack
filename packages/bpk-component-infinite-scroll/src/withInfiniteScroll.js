@@ -22,6 +22,7 @@ import React, { Component, type Element, type ComponentType } from 'react';
 import PropTypes from 'prop-types';
 import { cssModules } from 'bpk-react-utils';
 import omit from 'lodash/omit';
+import extend from 'lodash/extend';
 
 import './intersection-observer';
 import DataSource from './DataSource';
@@ -115,7 +116,7 @@ const withInfiniteScroll = (
     }
 
     componentDidMount() {
-      this.loadMore().then(newState => {
+      this.fetchItems().then(newState => {
         this.setState(newState);
       });
     }
@@ -124,13 +125,17 @@ const withInfiniteScroll = (
       if (this.sentinel && this.state.index > 0) {
         this.observer.observe(this.sentinel);
       }
+
       if (this.props.dataSource !== prevProps.dataSource) {
         prevProps.dataSource.removeListener(this.updateData);
         this.props.dataSource.onDataChange(this.updateData);
-        this.loadMore(0).then(newState => {
+        this.fetchItems({
+          index: 0,
+          elementsPerScroll: this.props.elementsPerScroll,
+          elementsToRender: [],
+        }).then(newState => {
           this.setState({
             ...newState,
-            isListFinished: false,
           });
         });
       }
@@ -145,19 +150,24 @@ const withInfiniteScroll = (
 
     updateData = () => {
       const { index } = this.state;
-      const { elementsPerScroll } = this.props;
-      this.props.dataSource
-        .fetchItems(index - elementsPerScroll, elementsPerScroll)
-        .then(updatedElements => {
-          this.setState({
-            elementsToRender: updatedElements,
-          });
+      this.props.dataSource.fetchItems(0, index).then(updatedElements => {
+        this.setState({
+          elementsToRender: updatedElements,
         });
+      });
     };
 
-    loadMore(indexParam) {
-      const index = indexParam != null ? indexParam : this.state.index;
-      const { elementsPerScroll, onScrollFinished, seeMoreAfter } = this.props;
+    fetchItems(config) {
+      const { onScrollFinished, seeMoreAfter } = this.props;
+      const { index, elementsPerScroll, elementsToRender } = extend(
+        {
+          index: this.state.index,
+          elementsPerScroll: this.props.elementsPerScroll,
+          elementsToRender: this.state.elementsToRender,
+        },
+        config,
+      );
+
       return this.props.dataSource
         .fetchItems(index, elementsPerScroll)
         .then(nextElements => {
@@ -165,13 +175,14 @@ const withInfiniteScroll = (
             const nextIndex = index + elementsPerScroll;
             return {
               index: nextIndex,
-              elementsToRender: nextElements,
+              elementsToRender: (elementsToRender || []).concat(nextElements),
               showSeeMore: seeMoreAfter === index / elementsPerScroll,
+              isListFinished: false,
             };
           }
           if (onScrollFinished) {
             onScrollFinished({
-              totalNumberElements: nextElements.length,
+              totalNumberElements: elementsToRender.length,
             });
           }
           return {
@@ -190,7 +201,7 @@ const withInfiniteScroll = (
         if (onScroll) {
           onScroll({ currentIndex: this.state.index });
         }
-        return this.loadMore().then(newState => {
+        return this.fetchItems().then(newState => {
           this.setState(newState);
         });
       }
@@ -198,7 +209,7 @@ const withInfiniteScroll = (
     };
 
     handleSeeMoreClick = () => {
-      this.loadMore().then(newState => {
+      this.fetchItems().then(newState => {
         this.setState(newState);
       });
     };

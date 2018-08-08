@@ -16,34 +16,81 @@
  * limitations under the License.
  */
 
-import DataSource from './DataSource';
+import DataSource, { ArrayDataSource } from './DataSource';
 
-describe('DataSource', () => {
+const withCommonTests = (createNewInstance, extraTests) => {
   let dataSource;
 
   beforeEach(() => {
-    dataSource = new DataSource();
+    dataSource = createNewInstance();
   });
 
   it('can add listeners', () => {
     const f = () => {};
-    expect(dataSource.listeners.length).toEqual(0);
-    dataSource.onDataChange(f);
-    expect(dataSource.listeners.length).toEqual(1);
+    expect(dataSource.onDataChange(f)).toBe(true);
   });
 
   it('can remove listeners', () => {
     const f = () => {};
-    dataSource.listeners = [f];
-    expect(dataSource.listeners.length).toEqual(1);
-    dataSource.removeListener(f);
-    expect(dataSource.listeners.length).toEqual(0);
+    dataSource.onDataChange(f);
+    expect(dataSource.removeListener(f)).toBe(true);
   });
 
   it('can execute listeners', () => {
     const f = jest.fn();
-    dataSource.listeners = [f];
+    dataSource.onDataChange(f);
     dataSource.triggerListeners(1);
     expect(f).toHaveBeenCalledWith(1);
   });
+
+  it('returns false when adding duplicated listeners', () => {
+    const f = () => {};
+    expect(dataSource.onDataChange(f)).toBe(true);
+    expect(dataSource.onDataChange(f)).toBe(false);
+  });
+
+  it('returns false when deleting invalid listeners', () => {
+    const f = () => {};
+    const x = () => {};
+    dataSource.onDataChange(f);
+    expect(dataSource.removeListener(x)).toBe(false);
+  });
+
+  if (extraTests) {
+    extraTests(() => dataSource);
+  }
+};
+
+describe('DataSource', () =>
+  withCommonTests(
+    () => new DataSource(),
+    getDs => {
+      it('it throws an error when fetchItems is called directly', () => {
+        expect(() => getDs().fetchItems()).toThrow(/Not implemented/);
+      });
+    },
+  ));
+
+describe('ArrayDataSource', () => {
+  const elements = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  withCommonTests(
+    () => new ArrayDataSource(elements),
+    getDs => {
+      describe('fetchItems', () => {
+        it('fetches items correctly', async () => {
+          expect(await getDs().fetchItems(0, 5)).toEqual([1, 2, 3, 4, 5]);
+          expect(await getDs().fetchItems(5, 5)).toEqual([6, 7, 8, 9, 10]);
+          expect(await getDs().fetchItems(1, 3)).toEqual([2, 3, 4]);
+          expect(await getDs().fetchItems(0, 15)).toEqual(elements);
+        });
+
+        it('handles invalid arguments', async () => {
+          expect(await getDs().fetchItems(-1, 2)).toEqual([1, 2]);
+          expect(await getDs().fetchItems(10, 2)).toEqual([]);
+          expect(await getDs().fetchItems(11, 2)).toEqual([]);
+          expect(await getDs().fetchItems(0, -2)).toEqual([]);
+        });
+      });
+    },
+  );
 });
