@@ -29,6 +29,21 @@ import BpkCalendarScrollDate from './BpkScrollableCalendarDate';
 import { weekDays, formatDateFull, formatMonth } from '../test-utils';
 
 describe('BpkCalendarScrollGrid', () => {
+  it('should render correctly with no optional props set', () => {
+    const tree = renderer
+      .create(
+        <BpkCalendarScrollGrid
+          month={new Date('2016-10')}
+          formatMonth={formatMonth}
+          formatDateFull={formatDateFull}
+          DateComponent={BpkCalendarScrollDate}
+          daysOfWeek={weekDays}
+        />,
+      )
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
   it('should render correctly with "showWeekendSeparator" attribute set to false', () => {
     const tree = renderer
       .create(
