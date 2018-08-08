@@ -18,14 +18,30 @@
 /* @flow */
 
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
-import BpkScrollableCalendar, { BpkScrollableCalendarDate } from './index';
+import { storiesOf } from '@storybook/react';
+import { action } from '@storybook/addon-actions';
+
+import { weekDays, formatMonth, formatDateFull } from './test-utils';
+import BpkScrollableCalendar, {
+  BpkScrollableCalendarDate,
+  BpkScrollableCalendarGrid,
+} from './index';
 
 storiesOf('bpk-component-scrollable-calendar', module)
   .add('Default', () => <BpkScrollableCalendar />)
   .add('BpkScrollableCalendarDate', () => (
-    <div>
-      <BpkScrollableCalendarDate date={new Date()} />
-    </div>
+    <BpkScrollableCalendarDate date={new Date()} />
+  ))
+  .add('BpkScrollableCalendarGrid', () => (
+    <BpkScrollableCalendarGrid
+      month={new Date()}
+      weekStartsOn={1}
+      daysOfWeek={weekDays}
+      onDateClick={action('Clicked day')}
+      formatMonth={formatMonth}
+      formatDateFull={formatDateFull}
+      DateComponent={BpkScrollableCalendarDate}
+      showWeekendSeparator
+    />
   ));
