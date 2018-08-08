@@ -36,9 +36,6 @@ const style = StyleSheet.create({
     flexDirection: 'column',
     flexWrap: 'wrap',
   },
-  badge: {
-    alignSelf: 'baseline',
-  },
   badgeWrapper: {
     alignSelf: 'stretch',
     justifyContent: 'space-around',
@@ -79,12 +76,7 @@ const generateBadgeStory = (contents: Array<string>) => {
       <StorySubheading>{capitalise(key)}</StorySubheading>
       <View style={[badgeWrapperStyle, style[key]]}>
         {contents.map(content => (
-          <BpkBadge
-            key={content}
-            message={content}
-            type={key}
-            style={style.badge}
-          />
+          <BpkBadge key={content} message={content} type={key} />
         ))}
       </View>
     </View>
@@ -102,6 +94,6 @@ storiesOf('react-native-backpack/Badge', module)
   ))
   .add('docs:test', () => (
     <View>
-      <BpkBadge style={style.badge} message="hello" type="success" />
+      <BpkBadge message="hello" type="success" />
     </View>
   ));

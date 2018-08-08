@@ -36,7 +36,11 @@ type Props = {
   type: BadgeType,
 };
 
-const BpkBadge = (props: Props) => <NativeBadge {...props} />;
+const BpkBadge = (props: Props) => (
+  /* eslint-disable backpack/use-tokens */
+  <NativeBadge style={{ width: 100, height: 30 }} {...props} />
+  /* eslint-enable backpack/use-tokens */
+);
 
 BpkBadge.propTypes = {
   message: PropTypes.string.isRequired,

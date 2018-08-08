@@ -22,7 +22,7 @@ open class BpkBadge(
         setup()
     }
 
-    var mType: BpkBadgeType = BpkBadgeType.BPKBadgeTypeSuccess
+    var type: BpkBadgeType = BpkBadgeType.BPKBadgeTypeSuccess
         set(value) {
             field = value
             setup()
@@ -30,7 +30,7 @@ open class BpkBadge(
     var message: String? = null
         set(value) {
             field = value
-            setup()
+            this.text = message
         }
 
     private fun initialize(context: Context, attrs: AttributeSet?, defStyleAttr: Int) {
@@ -41,7 +41,7 @@ open class BpkBadge(
                 0, 0)
 
         if (a.hasValue(R.styleable.badge_bpk_badge_type)) {
-            mType = BpkBadgeType.fromId(a.getInt(R.styleable.badge_bpk_badge_type, 0))
+            type = BpkBadgeType.fromId(a.getInt(R.styleable.badge_bpk_badge_type, 0))
         }
         if (a.hasValue(R.styleable.badge_bpk_message)) {
             message = a.getString(R.styleable.badge_bpk_message)
@@ -55,7 +55,7 @@ open class BpkBadge(
             this.text = message
         }
 
-        if (mType == null) {
+        if (type == null) {
             return
         }
         //set padding
@@ -64,16 +64,17 @@ open class BpkBadge(
         this.setPadding(paddingMd, paddingSm, paddingMd, paddingSm)
 
         //set Text color
-        this.setTextColor(context.resources.getColor(mType.textColor))
+        this.setTextColor(context.resources.getColor(type.textColor))
 
         // Set background color
         val border = GradientDrawable()
-        border.setColor(context.resources.getColor(mType.bgColor))
+        border.setColor(context.resources.getColor(type.bgColor))
 
         //Set border
-        if (mType == BpkBadgeType.BPKBadgeTypeOutline) {
+        if (type == BpkBadgeType.BPKBadgeTypeOutline) {
             border.setStroke(resources.getDimension(R.dimen.badge_border_size).toInt(), context.resources.getColor(R.color.bpkWhite))
-            border.setColor(context.resources.getColor(mType.bgColor) and 0x32ffffff)
+            //set alpha for border
+            border.setColor(context.resources.getColor(type.bgColor) and 0x32ffffff)
         }
 
         //set corner radius
