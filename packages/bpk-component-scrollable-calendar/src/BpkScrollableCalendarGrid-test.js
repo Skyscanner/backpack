@@ -22,10 +22,11 @@ import renderer from 'react-test-renderer';
 import { mount } from 'enzyme';
 import isWeekend from 'date-fns/is_weekend';
 
-import { weekDays, formatDateFull, formatMonth } from '../test-utils';
+import { colorRed500 } from 'bpk-tokens/tokens/base.es6';
 import BpkCalendarScrollGrid from './BpkScrollableCalendarGrid';
 import BpkCalendarScrollDate from './BpkScrollableCalendarDate';
-import { colorRed500 } from '../../bpk-component-calendar/node_modules/bpk-tokens/tokens/base.es6';
+
+import { weekDays, formatDateFull, formatMonth } from '../test-utils';
 
 describe('BpkCalendarScrollGrid', () => {
   it('should render correctly with "showWeekendSeparator" attribute set to false', () => {
