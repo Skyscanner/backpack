@@ -26,15 +26,31 @@ import { weekDays, formatMonth, formatDateFull } from './test-utils';
 import BpkScrollableCalendar, {
   BpkScrollableCalendarDate,
   BpkScrollableCalendarGrid,
+  BpkScrollableCalendarGridList,
 } from './index';
 
 storiesOf('bpk-component-scrollable-calendar', module)
   .add('Default', () => <BpkScrollableCalendar />)
   .add('BpkScrollableCalendarDate', () => (
-    <BpkScrollableCalendarDate date={new Date()} />
+    <BpkScrollableCalendarDate
+      date={new Date()}
+      onDateClick={action('Clicked day')}
+    />
   ))
   .add('BpkScrollableCalendarGrid', () => (
     <BpkScrollableCalendarGrid
+      month={new Date()}
+      weekStartsOn={1}
+      daysOfWeek={weekDays}
+      onDateClick={action('Clicked day')}
+      formatMonth={formatMonth}
+      formatDateFull={formatDateFull}
+      DateComponent={BpkScrollableCalendarDate}
+      showWeekendSeparator
+    />
+  ))
+  .add('BpkScrollableCalendarGridList', () => (
+    <BpkScrollableCalendarGridList
       month={new Date()}
       weekStartsOn={1}
       daysOfWeek={weekDays}
