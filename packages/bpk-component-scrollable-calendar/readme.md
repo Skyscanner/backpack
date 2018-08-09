@@ -8,6 +8,16 @@
 npm install bpk-component-scrollable-calendar --save-dev
 ```
 
+### BpkScrollableCalendarGrid
+
+The BpkScrollableCalendarGrid component displays a month as a table.
+Above this table it displays the month's name in a `BpkText`. When
+used with `BpkScrollableCalendarDate`, it only displays days from
+that specific month. It is built on top of BpkCalendarGrid and
+uses the same props.
+
+[Please refer to the props of BpkCalendarGrid here](https://backpack.github.io/components/calendar/?platform=web#bpkcalendargrid).
+
 ### BpkScrollableCalendarDate
 
 The BpkScrollableCalendarDate component is used to render the content of a cell
@@ -15,15 +25,4 @@ The BpkScrollableCalendarDate component is used to render the content of a cell
 and uses the same props. The only difference is that when isOutside is true,
 null is returned in order to only display of specific month in the calendar grid.
 
-| Property             | PropType | Required | Default Value |
-| -------------------- | -------- | -------- | ------------- |
-| date                 | Date     | true     | -             |
-| isBlocked            | bool     | false    | false         |
-| isFocused            | bool     | false    | false         |
-| isKeyboardFocusable  | bool     | false    | true          |
-| isOutside            | bool     | false    | false         |
-| isSelected           | bool     | false    | false         |
-| isToday              | bool     | false    | false         |
-| onClick              | func     | false    | null          |
-| onDateKeyDown        | func     | false    | null          |
-| preventKeyboardFocus | bool     | false    | true          |
+[Please refer to the props of BpkCalendarDate here](https://backpack.github.io/components/calendar?platform=web#bpkcalendardate).
