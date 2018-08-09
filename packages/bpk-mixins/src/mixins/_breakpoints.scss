@@ -34,7 +34,7 @@
 ///
 /// @example scss
 ///   .selector {
-///     @include bpk-breakpoint-mobile() {
+///     @include bpk-breakpoint-mobile {
 ///       /* mobile viewport scss goes here */
 ///     }
 ///
@@ -53,7 +53,7 @@
 ///
 /// @example scss
 ///   .selector {
-///     @include bpk-breakpoint-tablet() {
+///     @include bpk-breakpoint-tablet {
 ///       /* mobile & tablet viewport scss goes here */
 ///     }
 ///
@@ -72,7 +72,7 @@
 ///
 /// @example scss
 ///   .selector {
-///     @include bpk-breakpoint-tablet-only() {
+///     @include bpk-breakpoint-tablet-only {
 ///       /* tablet viewport scss goes here */
 ///     }
 ///
@@ -91,7 +91,7 @@
 ///
 /// @example scss
 ///   .selector {
-///     @include bpk-breakpoint-above-mobile() {
+///     @include bpk-breakpoint-above-mobile {
 ///       /* tablet & desktop viewport scss goes here */
 ///     }
 ///
@@ -110,7 +110,7 @@
 ///
 /// @example scss
 ///   .selector {
-///     @include bpk-breakpoint-above-tablet() {
+///     @include bpk-breakpoint-above-tablet {
 ///       /* desktop viewport scss goes here */
 ///     }
 ///
