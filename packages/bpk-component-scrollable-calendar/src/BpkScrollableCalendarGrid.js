@@ -33,9 +33,6 @@ const BpkScrollableCalendarGrid = props => {
   const { month, className, ...rest } = props;
 
   const classNames = getClassName('bpk-scrollable-calendar-grid', className);
-  if (className) {
-    classNames.push(className);
-  }
 
   return (
     <div className={classNames}>
