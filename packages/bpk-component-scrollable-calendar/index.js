@@ -22,9 +22,14 @@ import BpkScrollableCalendar, {
 } from './src/BpkScrollableCalendar';
 import BpkScrollableCalendarDate from './src/BpkScrollableCalendarDate';
 import BpkScrollableCalendarGrid from './src/BpkScrollableCalendarGrid';
+import BpkScrollableCalendarGridList from './src/BpkScrollableCalendarGridList';
 
 export type { BpkScrollableCalendarProps };
 
 export default BpkScrollableCalendar;
 
-export { BpkScrollableCalendarDate, BpkScrollableCalendarGrid };
+export {
+  BpkScrollableCalendarDate,
+  BpkScrollableCalendarGrid,
+  BpkScrollableCalendarGridList,
+};
