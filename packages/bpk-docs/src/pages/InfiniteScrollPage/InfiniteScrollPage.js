@@ -110,10 +110,10 @@ class InfiniteDataSource extends DataSource {
 
   fetchItems(index, nElements) {
     return new Promise(resolve => {
-      for (let i = 0; i < nElements; i += 1) {
+      for (let i = index; i < index + nElements; i += 1) {
         this.elements.push(`Item ${index + i}`);
       }
-      resolve(this.elements);
+      resolve(this.elements.slice(index, index + nElements));
     });
   }
 }

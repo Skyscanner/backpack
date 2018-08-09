@@ -70,7 +70,9 @@ export class ArrayDataSource<T = any> extends DataSource<T> {
       if (n <= 0) {
         return resolve([]);
       }
-      return resolve(elements.slice(0, index + nElements));
+      const start = Math.max(index, 0);
+      const end = Math.max(start, start + nElements);
+      return resolve(elements.slice(start, end));
     });
   }
 

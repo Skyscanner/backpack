@@ -18,7 +18,7 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import { storiesOf } from '@storybook/react';
+import { storiesOf, action } from '@storybook/react';
 import BpkButton from 'bpk-component-button';
 import BpkCard from 'bpk-component-card';
 import { BpkSpinner, SPINNER_TYPES } from 'bpk-component-spinner';
@@ -31,9 +31,9 @@ for (let i = 0; i < 100; i += 1) {
   elementsArray.push(`Element ${i}`);
 }
 
-const List = props => (
-  <div id="list">
-    {props.elements.map(element => (
+const List = ({ elements }) => (
+  <div>
+    {elements.map(element => (
       <BpkCard
         style={{
           margin: '5px',
@@ -69,17 +69,33 @@ class InfiniteDataSource extends DataSource {
 
   fetchItems(index, nElements) {
     return new Promise(resolve => {
-      for (let i = 0; i < nElements; i += 1) {
-        this.elements.push(index + i);
+      for (let i = index; i < index + nElements; i += 1) {
+        this.elements.push(i);
       }
-      resolve(this.elements);
+      resolve(this.elements.slice(index, index + nElements));
     });
   }
 }
 
+/*
+ * Scrolls back to the top before rendering the story.
+ * We do this because when stories change the scroll position will (probably) be
+ * at the botton, which will cause the next story to load all items up to that position.
+ * That is not a problem but we want each story to start with a clean state.
+ */
+const withScrollReset = story => {
+  window.scrollTo(0, 0);
+  return story();
+};
+
 storiesOf('bpk-component-infinite-scroll', module)
+  .addDecorator(withScrollReset)
   .add('Default', () => (
-    <InfiniteList dataSource={new ArrayDataSource(elementsArray)} />
+    <InfiniteList
+      dataSource={new ArrayDataSource(elementsArray)}
+      onScrollFinished={action('scroll finished')}
+      onScroll={action('onScroll')}
+    />
   ))
   .add('Stopping after 5 scrolls', () => (
     <InfiniteList
