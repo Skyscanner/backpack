@@ -159,7 +159,7 @@ const accessibilityLabel = (page, total) => `${page} of ${total}`;
 
 storiesOf('react-native-bpk-component-carousel', module)
   .addDecorator(CenterDecorator)
-  .add('Default', () => (
+  .add('docs:default', () => (
     <BpkCarousel style={styles.view} accessibilityLabel={accessibilityLabel}>
       {renderImages()}
     </BpkCarousel>

@@ -56,7 +56,7 @@ storiesOf('react-native-bpk-component-image', module)
       style={styles.image}
     />
   ))
-  .add('docs:withLoadingBehaviour', () => (
+  .add('With Loading Behaviour', () => (
     <BpkImageWithLoading
       alt="test"
       style={styles.image}

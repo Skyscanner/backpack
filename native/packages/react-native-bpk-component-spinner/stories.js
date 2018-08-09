@@ -69,7 +69,7 @@ storiesOf('react-native-bpk-component-spinner', module)
   .addDecorator(CenterDecorator)
   .add('docs:default', () => <View>{generateAllSpinnerTypes()}</View>)
   .add('docs:small', () => <View>{generateAllSpinnerTypes(true)}</View>)
-  .add('docs:withTheme', () => <View>{getThemedButtons()}</View>)
+  .add('With theme', () => <View>{getThemedButtons()}</View>)
   .add('All types', () => (
     <ScrollView>
       <StoryHeading>Default</StoryHeading>

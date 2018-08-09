@@ -182,7 +182,7 @@ storiesOf('react-native-bpk-component-button', module)
   .add('docs:featured', () => (
     <View>{generateButtonStoryForType('featured')}</View>
   ))
-  .add('docs:withTheme', () => allThemedButtons)
+  .add('Themed', () => allThemedButtons)
   .add('Icon alignments', () => (
     <View>
       {Object.keys(ICON_ALIGNMENTS).map(iconAlignment => (

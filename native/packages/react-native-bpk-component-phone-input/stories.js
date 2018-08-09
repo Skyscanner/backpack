@@ -228,7 +228,7 @@ storiesOf('react-native-bpk-component-phone-input/Integrated', module).add(
 storiesOf(
   'react-native-bpk-component-phone-input/BpkDialingCodeList',
   module,
-).add('docs:default', () => <StatefulBpkDialingCodeList />);
+).add('docs:dialing-code-list', () => <StatefulBpkDialingCodeList />);
 
 storiesOf(
   'react-native-bpk-component-phone-input/BpkDialingCodeListItem',
@@ -237,7 +237,7 @@ storiesOf(
 
 storiesOf('react-native-bpk-component-phone-input/BpkPhoneNumberInput', module)
   .addDecorator(CenterDecorator)
-  .add('docs:default', () => (
+  .add('docs:phone-number-input', () => (
     <StatefulBpkPhoneNumberInput
       placeholder="4XX XXX XXX"
       label="Phone number"

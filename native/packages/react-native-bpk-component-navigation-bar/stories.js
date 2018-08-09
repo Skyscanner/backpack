@@ -135,7 +135,7 @@ storiesOf('react-native-bpk-component-navigation-bar', module)
       title={{ value: 'Checkout', icon: 'lock', iconPosition: 'leading' }}
     />
   ))
-  .add('themed', () => (
+  .add('Themed', () => (
     <BpkThemeProvider theme={themeAttributes}>
       <BpkNavigationBar
         leadingButton={backButton()}
@@ -143,13 +143,13 @@ storiesOf('react-native-bpk-component-navigation-bar', module)
       />
     </BpkThemeProvider>
   ))
-  .add('extreme example', () => (
+  .add('Extreme example', () => (
     <BpkNavigationBar
       leadingButton={backButton()}
       title="This is a very long title with a lot of content"
     />
   ))
-  .add('disabled button', () => (
+  .add('Disabled button', () => (
     <BpkNavigationBar
       leadingButton={cancelButton()}
       trailingButton={doneButton(true)}

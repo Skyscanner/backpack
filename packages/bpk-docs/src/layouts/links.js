@@ -94,7 +94,12 @@ const ComponentsLinks = [
         children: 'Card',
         tags: ['web', 'native'],
       },
-      { id: 'CHIP', route: routes.CHIP, children: 'Chip', tags: ['web'] },
+      {
+        id: 'CHIP',
+        route: routes.CHIP,
+        children: 'Chip',
+        tags: ['web', 'native'],
+      },
       {
         id: 'BADGE',
         route: routes.BADGE,
@@ -111,7 +116,7 @@ const ComponentsLinks = [
         id: 'IMAGE',
         route: routes.IMAGE,
         children: 'Image',
-        tags: ['web'],
+        tags: ['web', 'native'],
       },
       {
         id: 'INFINITE_SCROLL',

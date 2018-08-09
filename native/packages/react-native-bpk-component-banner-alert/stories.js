@@ -166,7 +166,7 @@ class BpkBannerAlertFadeDemo extends Component<
 
 storiesOf('react-native-bpk-component-banner-alert', module)
   .addDecorator(CenterDecorator)
-  .add('docs:banner-alerts', () => (
+  .add('Banner alerts', () => (
     <View>
       <BpkBannerAlert
         style={styles.bannerAlert}
@@ -326,7 +326,7 @@ storiesOf('react-native-bpk-component-banner-alert', module)
       </ExpandableBannerAlert>
     </View>
   ))
-  .add('docs:fade-in', () => (
+  .add('Fade-in', () => (
     <BpkBannerAlertFadeDemo
       bannerStyle={styles.bannerAlert}
       message="Banner alert with dismiss option"
@@ -334,7 +334,7 @@ storiesOf('react-native-bpk-component-banner-alert', module)
       type={ALERT_TYPES.success}
     />
   ))
-  .add('docs:edge-cases', () => {
+  .add('Edge-cases', () => {
     // eslint-disable-next-line max-len
     const message =
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sagittis sagittis purus, id blandit ipsum.';

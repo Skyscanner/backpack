@@ -143,4 +143,9 @@ storiesOf('react-native-bpk-component-picker', module)
       <StorySubheading>Disabled</StorySubheading>
       <StatefulBpkPicker disabled style={styles.picker} />
     </View>
+  ))
+  .add('docs:picker-open', () => (
+    <View>
+      <StatefulBpkPicker isOpen style={styles.picker} />
+    </View>
   ));
