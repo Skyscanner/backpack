@@ -63,48 +63,45 @@ describe('Portal', () => {
     expect(div).toMatchSnapshot();
   });
 
-  it('should render with a custom style property', done => {
+  it('should render with a custom style property', () => {
     const customStyle = { color: 'red' }; // eslint-disable-line backpack/use-tokens
-    const assertion = portalElement => {
-      expect(portalElement.style.color).toEqual(customStyle.color);
-      done();
-    };
 
-    mount(
-      <Portal isOpen onOpen={assertion} style={customStyle}>
+    const portal = mount(
+      <Portal isOpen style={customStyle}>
         <div>My portal content</div>
       </Portal>,
     );
+
+    expect(portal.instance().portalElement.style.color).toEqual(
+      customStyle.color,
+    );
   });
 
-  it('should render with a custom className property', done => {
+  it('should render with a custom className property', () => {
     const customClassname = 'my-custom-classname';
-    const assertion = portalElement => {
-      expect(portalElement.classList.contains(customClassname)).toBe(true);
-      done();
-    };
 
-    mount(
-      <Portal isOpen onOpen={assertion} className={customClassname}>
+    const portal = mount(
+      <Portal isOpen className={customClassname}>
         <div>My portal content</div>
       </Portal>,
     );
+
+    expect(
+      portal.instance().portalElement.classList.contains(customClassname),
+    ).toBe(true);
   });
 
-  it('should render portal children to document.body', done => {
-    const firstAssertion = () => {
-      expect(document.body.lastChild.textContent).toEqual('My portal content');
-      done();
-    };
-
+  it('should render portal children to document.body', () => {
     mount(
-      <Portal isOpen onOpen={firstAssertion}>
+      <Portal isOpen>
         <div>My portal content</div>
       </Portal>,
     );
+
+    expect(document.body.lastChild.textContent).toEqual('My portal content');
   });
 
-  it('should remove portal children from document.body on close', done => {
+  it('should remove portal children from document.body on close', () => {
     const div = document.createElement('div');
     div.appendChild(document.createTextNode('Not a portal'));
     document.body.appendChild(div);
@@ -119,10 +116,9 @@ describe('Portal', () => {
 
     expect(document.body.lastChild.textContent).toEqual('My portal content');
 
-    portal.setProps({ isOpen: false }, () => {
-      expect(document.body.lastChild.textContent).toEqual('Not a portal');
-      done();
-    });
+    portal.setProps({ isOpen: false }).update();
+
+    expect(document.body.lastChild.textContent).toEqual('Not a portal');
   });
 
   it('should call the onClose handler on click outside', () => {
@@ -311,7 +307,7 @@ describe('Portal', () => {
     expect(onCloseSpy.mock.calls.length).toEqual(1);
   });
 
-  it('should call the onRender handler when props are updated', done => {
+  it('should call the onRender handler when props are updated', () => {
     const onRenderSpy = jest.fn();
 
     const portal = mount(
@@ -322,50 +318,55 @@ describe('Portal', () => {
 
     expect(onRenderSpy.mock.calls.length).toBe(1);
 
-    portal.setProps({ target: <div>target1</div> }, () => {
-      expect(onRenderSpy.mock.calls.length).toBe(2);
-      portal.setProps({ target: <div>target2</div> }, () => {
-        expect(onRenderSpy.mock.calls.length).toBe(3);
-        done();
-      });
-    });
+    portal.setProps({ target: <div>target1</div> }).update();
+    expect(onRenderSpy.mock.calls.length).toBe(2);
+
+    portal.setProps({ target: <div>target2</div> }).update();
+    expect(onRenderSpy.mock.calls.length).toBe(3);
   });
 
   it('should call the onRender handler before the onOpen handler handler when props are updated', () => {
     let order = 0;
-    const onRender = () => {
-      order = 1;
-    };
-    const onOpen = () => {
-      order = 2;
-    };
+
     const portal = mount(
-      <Portal isOpen={false} onRender={onRender} onOpen={onOpen}>
+      <Portal
+        isOpen={false}
+        onRender={() => {
+          order = 1;
+        }}
+        onOpen={() => {
+          order = 2;
+        }}
+      >
         <div>My portal content</div>
       </Portal>,
     );
-    portal.setProps({ isOpen: true }, () => {
-      expect(order).toBe(2);
-    });
+
+    portal.setProps({ isOpen: true }).update();
+    expect(order).toBe(2);
   });
 
   it('should call the onRender handler before the onOpen handler handler when component is mounted', () => {
     let order = 0;
-    const onRender = () => {
-      order = 1;
-    };
-    const onOpen = () => {
-      order = 2;
-    };
+
     mount(
-      <Portal isOpen onRender={onRender} onOpen={onOpen}>
+      <Portal
+        isOpen
+        onRender={() => {
+          order = 1;
+        }}
+        onOpen={() => {
+          order = 2;
+        }}
+      >
         <div>My portal content</div>
       </Portal>,
     );
+
     expect(order).toBe(2);
   });
 
-  it('should not call the onRender handler when isOpen is false', done => {
+  it('should not call the onRender handler when isOpen is false', () => {
     const onRenderSpy = jest.fn();
 
     const portal = mount(
@@ -376,13 +377,11 @@ describe('Portal', () => {
 
     expect(onRenderSpy.mock.calls.length).toBe(0);
 
-    portal.setProps({ isOpen: true }, () => {
-      expect(onRenderSpy.mock.calls.length).toBe(1);
-      portal.setProps({ isOpen: false }, () => {
-        expect(onRenderSpy.mock.calls.length).toBe(1);
-        done();
-      });
-    });
+    portal.setProps({ isOpen: true }).update();
+    expect(onRenderSpy.mock.calls.length).toBe(1);
+
+    portal.setProps({ isOpen: false }).update();
+    expect(onRenderSpy.mock.calls.length).toBe(1);
   });
 
   describe('lifecycle methods', () => {
@@ -409,25 +408,21 @@ describe('Portal', () => {
     });
 
     describe('componentWillReceiveProps()', () => {
-      it('should close the portal when isOpen is removed', done => {
-        portal.setProps({ isOpen: false }, () => {
-          expect(closeSpy.mock.calls.length).toEqual(1);
-          done();
-        });
+      it('should close the portal when isOpen is removed', () => {
+        portal.setProps({ isOpen: false }).update();
+        expect(closeSpy.mock.calls.length).toEqual(1);
       });
 
-      it('should open the portal again when isOpen is added', done => {
-        portal.setProps({ isOpen: true }, () => {
-          expect(openSpy.mock.calls.length).toEqual(2);
-          done();
-        });
+      it('should open the portal again when isOpen is added', () => {
+        portal.setProps({ isOpen: true }).update();
+        expect(openSpy.mock.calls.length).toEqual(2);
       });
 
-      it('should call beforeClose when isOpen is removed', done => {
-        portal.setProps({ beforeClose: beforeCloseSpy, isOpen: false }, () => {
-          expect(beforeCloseSpy.mock.calls.length).toEqual(1);
-          done();
-        });
+      it('should call beforeClose when isOpen is removed', () => {
+        portal
+          .setProps({ beforeClose: beforeCloseSpy, isOpen: false })
+          .update();
+        expect(beforeCloseSpy.mock.calls.length).toEqual(1);
       });
     });
 
