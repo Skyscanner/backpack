@@ -16,7 +16,7 @@ used with `BpkScrollableCalendarDate`, it only displays days from
 that specific month. It is built on top of BpkCalendarGrid and
 uses the same props.
 
-[Please refer to the props of BpkCalendarGrid here](https://backpack.github.io/components/calendar?platform=web#props).
+[Please refer to the props of BpkCalendarGrid here](https://backpack.github.io/components/calendar/?platform=web#bpkcalendargrid).
 
 ### BpkScrollableCalendarDate
 
@@ -25,4 +25,4 @@ The BpkScrollableCalendarDate component is used to render the content of a cell
 and uses the same props. The only difference is that when isOutside is true,
 null is returned in order to only display of specific month in the calendar grid.
 
-[Please refer to the props of BpkCalendarDate here](https://backpack.github.io/components/calendar?platform=web#props).
+[Please refer to the props of BpkCalendarDate here](https://backpack.github.io/components/calendar?platform=web#bpkcalendardate).
