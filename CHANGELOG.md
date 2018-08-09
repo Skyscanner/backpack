@@ -2,6 +2,16 @@
 
 [Unreleased changes](./unreleased.md).
 
+# 2018-08-09 - Changes to the Infinite scroll component and Calendar.
+
+**Added:**
+- bpk-component-calendar: 4.2.44 => 4.3.0
+  - Exposed BpkCalendarDatePropTypes for reuse in other components.
+
+**Fixed:**
+- bpk-component-infinite-scroll: 2.0.1 => 2.0.2
+  - Changed to fetch only a subset of the data, and not all, on scroll.
+
 # 2018-08-01 - Breaking changes to the infinite scroll component.
 
 **Breaking:**
