@@ -24,7 +24,8 @@ class MainApplication : Application(), ReactApplication {
                     MainReactPackage(),
                     MapsPackage(),
                     LinearGradientPackage(),
-                    PanelPackage()
+                    PanelPackage(),
+                    BadgePackage()
             )
         }
     }

@@ -52,6 +52,7 @@ const hideWarnings = () => {
 /* eslint-disable global-require */
 configure(() => {
   require('../packages/react-native-backpack/libraries/Panel/stories');
+  require('../packages/react-native-backpack/libraries/Badge/stories');
   require('../packages/react-native-bpk-component-alert/stories');
   require('../packages/react-native-bpk-component-animate-height/stories');
   require('../packages/react-native-bpk-component-badge/stories');
