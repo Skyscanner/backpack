@@ -1,6 +1,19 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
+apply plugin: 'maven-publish'
 
+
+publishing {
+    publications {
+        library(MavenPublication) {
+            // Don't forget to change these
+            groupId 'net.skyscanner.backpack'
+            artifactId 'bpk-badge'
+            version '0.1'
+            artifact(bundleRelease)
+        }
+    }
+}
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
     buildToolsVersion rootProject.ext.buildToolsVersion
