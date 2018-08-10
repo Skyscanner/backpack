@@ -15,21 +15,27 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* @flow */
 
-import BpkScrollableCalendar, {
-  type Props as BpkScrollableCalendarProps,
-} from './src/BpkScrollableCalendar';
-import BpkScrollableCalendarDate from './src/BpkScrollableCalendarDate';
-import BpkScrollableCalendarGrid from './src/BpkScrollableCalendarGrid';
-import BpkScrollableCalendarGridList from './src/BpkScrollableCalendarGridList';
+@import '~bpk-mixins/index';
 
-export type { BpkScrollableCalendarProps };
+$calendar-height: 7 * ($bpk-calendar-day-size + $bpk-calendar-day-spacing);
 
-export default BpkScrollableCalendar;
+.bpk-scrollable-calendar-grid-list {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  box-sizing: border-box;
 
-export {
-  BpkScrollableCalendarDate,
-  BpkScrollableCalendarGrid,
-  BpkScrollableCalendarGridList,
-};
+  &__strip {
+    display: flex;
+    z-index: 0;
+    height: $calendar-height;
+    flex-direction: column;
+  }
+
+  &__item {
+    display: inline-table;
+  }
+}
