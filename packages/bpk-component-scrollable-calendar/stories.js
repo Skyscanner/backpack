@@ -16,11 +16,15 @@
  * limitations under the License.
  */
 /* @flow */
-
 import React from 'react';
 
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
+import {
+  BpkCalendarGridHeader,
+  composeCalendar,
+  DateUtils,
+} from 'bpk-component-calendar';
 
 import { weekDays, formatMonth, formatDateFull } from './test-utils';
 import BpkScrollableCalendar, {
@@ -28,6 +32,13 @@ import BpkScrollableCalendar, {
   BpkScrollableCalendarGrid,
   BpkScrollableCalendarGridList,
 } from './index';
+
+const BpkCalendar = composeCalendar(
+  null,
+  BpkCalendarGridHeader,
+  BpkScrollableCalendarGridList,
+  BpkScrollableCalendarDate,
+);
 
 storiesOf('bpk-component-scrollable-calendar', module)
   .add('Default', () => <BpkScrollableCalendar />)
@@ -39,7 +50,7 @@ storiesOf('bpk-component-scrollable-calendar', module)
   ))
   .add('BpkScrollableCalendarGrid', () => (
     <BpkScrollableCalendarGrid
-      month={new Date()}
+      month={new Date(2019, 1, 0)}
       weekStartsOn={1}
       daysOfWeek={weekDays}
       onDateClick={action('Clicked day')}
@@ -59,5 +70,22 @@ storiesOf('bpk-component-scrollable-calendar', module)
       formatDateFull={formatDateFull}
       DateComponent={BpkScrollableCalendarDate}
       showWeekendSeparator
+      minDate={DateUtils.addDays(new Date(), -1)}
+      maxDate={DateUtils.addMonths(new Date(), 12)}
+    />
+  ))
+  .add('Calendar - default', () => (
+    <BpkCalendar
+      month={new Date()}
+      weekStartsOn={1}
+      daysOfWeek={weekDays}
+      onDateClick={action('Clicked day')}
+      formatMonth={formatMonth}
+      formatDateFull={formatDateFull}
+      DateComponent={BpkScrollableCalendarDate}
+      showWeekendSeparator
+      // Subtract one day from today's date to make today selectable by default
+      minDate={DateUtils.addDays(new Date(), -1)}
+      maxDate={DateUtils.addMonths(new Date(), 12)}
     />
   ));
