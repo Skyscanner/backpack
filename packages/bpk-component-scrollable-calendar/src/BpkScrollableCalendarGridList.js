@@ -35,9 +35,6 @@ const BpkScrollableCalendarGridList = props => {
     'bpk-scrollable-calendar-grid-list',
     className,
   );
-  if (className) {
-    classNames.push(className);
-  }
 
   const startDate = startOfDay(startOfMonth(minDate));
   const endDate = startOfDay(startOfMonth(maxDate));
@@ -51,11 +48,11 @@ const BpkScrollableCalendarGridList = props => {
   return (
     <div className={classNames}>
       <div className={getClassName('bpk-scrollable-calendar-grid-list__strip')}>
-        {months.map((m, index) => (
+        {months.map((month, index) => (
           <BpkScrollableCalendarGrid
             {...props}
-            key={DateUtils.formatIsoMonth(m)}
-            month={m}
+            key={DateUtils.formatIsoMonth(month)}
+            month={month}
             focusedDate={focusedDate}
             preventKeyboardFocus={rest.preventKeyboardFocus}
             aria-hidden={index !== 1}
@@ -69,8 +66,8 @@ const BpkScrollableCalendarGridList = props => {
 
 BpkScrollableCalendarGridList.propTypes = {
   className: PropTypes.string,
-  minDate: PropTypes.instanceOf(Date).isRequired,
-  maxDate: PropTypes.instanceOf(Date).isRequired,
+  minDate: PropTypes.instanceOf(Date),
+  maxDate: PropTypes.instanceOf(Date),
   focusedDate: PropTypes.instanceOf(Date),
   ...BpkCalendarGridPropTypes,
 };
