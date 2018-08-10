@@ -50,7 +50,7 @@ open class BpkBadge(
         a.recycle()
     }
 
-    fun setup() {
+    private fun setup() {
         if (message != null) {
             this.text = message
         }
