@@ -41,7 +41,9 @@ const BpkScrollableCalendarGrid = props => {
         tagName="h1"
         textStyle="lg"
       >
-        {format(month, 'MMMM')}
+        {month.getMonth() === 0
+          ? format(month, 'MMMM - YYYY')
+          : format(month, 'MMMM')}
       </BpkText>
       <BpkCalendarGrid month={month} {...rest} />
     </div>
