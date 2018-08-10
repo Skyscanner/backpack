@@ -18,8 +18,4 @@
 
 @import '~bpk-mixins/index';
 
-$shadow-bottom: 0 $bpk-one-pixel-rem 0 0 $bpk-color-gray-100;
-$shadow-left: -$bpk-one-pixel-rem 0 0 0 $bpk-color-gray-100;
-$shadow-right: $bpk-one-pixel-rem 0 0 0 $bpk-color-gray-100;
-$calendar-width: 7 * ($bpk-calendar-day-size + $bpk-calendar-day-spacing);
 $calendar-height: 7 * ($bpk-calendar-day-size + $bpk-calendar-day-spacing);
