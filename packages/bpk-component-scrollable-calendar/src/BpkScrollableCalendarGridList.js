@@ -66,17 +66,14 @@ const BpkScrollableCalendarGridList = props => {
 
 BpkScrollableCalendarGridList.propTypes = {
   className: PropTypes.string,
-  minDate: PropTypes.instanceOf(Date),
-  maxDate: PropTypes.instanceOf(Date),
+  minDate: PropTypes.instanceOf(Date).isRequired,
+  maxDate: PropTypes.instanceOf(Date).isRequired,
   focusedDate: PropTypes.instanceOf(Date),
   ...BpkCalendarGridPropTypes,
 };
 
 BpkScrollableCalendarGridList.defaultProps = {
   className: null,
-  // Subtract one day from today's date to make today selectable by default
-  minDate: DateUtils.addDays(new Date(), -1),
-  maxDate: DateUtils.addMonths(new Date(), 12),
   focusedDate: null,
 };
 
