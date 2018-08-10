@@ -47,7 +47,7 @@ const onPress = action('Touchable overlay press');
 
 storiesOf('react-native-bpk-component-touchable-overlay', module)
   .addDecorator(CenterDecorator)
-  .add('docs:text-content', () => (
+  .add('docs:default', () => (
     <BpkTouchableOverlay
       onPress={onPress}
       accessibilityLabel="Example touchable overlay"
@@ -55,7 +55,7 @@ storiesOf('react-native-bpk-component-touchable-overlay', module)
       {textContent}
     </BpkTouchableOverlay>
   ))
-  .add('docs:view-content', () => (
+  .add('View Content', () => (
     <BpkTouchableOverlay
       onPress={onPress}
       accessibilityLabel="Example touchable overlay"

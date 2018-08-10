@@ -101,14 +101,14 @@ const getColouredIcons = () => (
 
 storiesOf('react-native-bpk-component-icon', module)
   .addDecorator(CenterDecorator)
-  .add('docs:icons', () => (
+  .add('docs:default', () => (
     <View style={styles.container}>
       {getSmallIcons()}
       {getLargeIcons()}
       {getColouredIcons()}
     </View>
   ))
-  .add('docs:all-icons', () => (
+  .add('All Icons', () => (
     <View style={styles.container}>
       <View style={styles.group}>
         {Object.keys(icons).map(name => (

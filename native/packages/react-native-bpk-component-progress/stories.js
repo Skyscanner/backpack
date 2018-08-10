@@ -98,14 +98,20 @@ ProgressContainer.propTypes = {
 
 storiesOf('react-native-bpk-component-progress', module)
   .addDecorator(CenterDecorator)
-  .add('default', () => (
+  .add('docs:default', () => (
+    <ProgressContainer initialValue={40} steps={[]} types={['default']} />
+  ))
+  .add('docs:bar', () => (
+    <ProgressContainer initialValue={40} steps={[]} types={['bar']} />
+  ))
+  .add('Default', () => (
     <ProgressContainer
       initialValue={40}
       steps={[0, 25, 50, 75, 100]}
       types={['default', 'bar']}
     />
   ))
-  .add('theme:default', () => (
+  .add('Default Themed', () => (
     <BpkThemeProvider theme={themeAttributes}>
       <ProgressContainer
         initialValue={40}
@@ -113,10 +119,4 @@ storiesOf('react-native-bpk-component-progress', module)
         types={['default', 'bar']}
       />
     </BpkThemeProvider>
-  ))
-  .add('docs:default', () => (
-    <ProgressContainer initialValue={40} steps={[]} types={['default']} />
-  ))
-  .add('docs:bar', () => (
-    <ProgressContainer initialValue={40} steps={[]} types={['bar']} />
   ));

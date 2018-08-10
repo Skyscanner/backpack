@@ -126,8 +126,8 @@ const AlertTrigger = (props: { alert: () => mixed }) => (
 storiesOf('react-native-bpk-component-alert', module)
   .addDecorator(CenterDecorator)
   .add('docs:default', () => <AlertTrigger alert={showAlert} />)
+  .add('docs:cancelable', () => <AlertTrigger alert={showCancelableAlert} />)
   .add('docs:three-button', () => (
     <AlertTrigger alert={showAlertWithThreeButtons} />
   ))
-  .add('docs:cancelable', () => <AlertTrigger alert={showCancelableAlert} />)
   .add('overflowing', () => <AlertTrigger alert={showOverflowingAlert} />);

@@ -53,7 +53,7 @@ const components = [
   },
   {
     id: 'with-images',
-    title: 'With image',
+    title: 'With images',
     blurb: 'List items can also contain images.',
     screenshots: [
       {

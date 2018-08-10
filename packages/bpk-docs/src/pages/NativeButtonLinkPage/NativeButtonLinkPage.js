@@ -52,7 +52,7 @@ const components = [
 
 const NativeTextPage = ({ ...rest }) => (
   <DocsPageBuilder
-    title="Button Links"
+    title="Links"
     components={components}
     readme={readme}
     {...rest}

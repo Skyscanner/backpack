@@ -47,7 +47,7 @@ const onPress = action('Touchable native feedback press');
 
 storiesOf('react-native-bpk-component-touchable-native-feedback', module)
   .addDecorator(CenterDecorator)
-  .add('docs:view-content', () => (
+  .add('docs:default', () => (
     <BpkTouchableNativeFeedback
       onPress={onPress}
       accessibilityLabel="Example touchable native feedback"
@@ -55,7 +55,7 @@ storiesOf('react-native-bpk-component-touchable-native-feedback', module)
       {viewContent}
     </BpkTouchableNativeFeedback>
   ))
-  .add('docs:view-wrapper', () => (
+  .add('View Wrapper', () => (
     <View style={styles.wrappingView}>
       <BpkTouchableNativeFeedback
         onPress={onPress}
