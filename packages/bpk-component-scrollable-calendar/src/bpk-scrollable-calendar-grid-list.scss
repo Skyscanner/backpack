@@ -17,7 +17,8 @@
  */
 
 @import '~bpk-mixins/index';
-@import 'variables';
+
+$calendar-height: 7 * ($bpk-calendar-day-size + $bpk-calendar-day-spacing);
 
 .bpk-scrollable-calendar-grid-list {
   position: relative;
