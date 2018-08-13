@@ -43,4 +43,3 @@ exports[`BpkBreadcrumb should render correctly with arbitrary props 1`] = `
   </ol>
 </nav>
 `;
-

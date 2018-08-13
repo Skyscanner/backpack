@@ -306,8 +306,8 @@ exports[`BpkCalendarScrollGridList should render correctly with "showWeekendSepa
               <button
                 aria-label="Friday, 10th August 2018"
                 aria-pressed={false}
-                className="bpk-calendar-date bpk-calendar-date--today"
-                disabled={false}
+                className="bpk-calendar-date bpk-calendar-date--blocked"
+                disabled={true}
                 onClick={[Function]}
                 onKeyDown={null}
                 tabIndex="-1"
@@ -326,8 +326,8 @@ exports[`BpkCalendarScrollGridList should render correctly with "showWeekendSepa
               <button
                 aria-label="Saturday, 11th August 2018"
                 aria-pressed={false}
-                className="bpk-calendar-date"
-                disabled={false}
+                className="bpk-calendar-date bpk-calendar-date--blocked"
+                disabled={true}
                 onClick={[Function]}
                 onKeyDown={null}
                 tabIndex="-1"
@@ -350,8 +350,8 @@ exports[`BpkCalendarScrollGridList should render correctly with "showWeekendSepa
               <button
                 aria-label="Sunday, 12th August 2018"
                 aria-pressed={false}
-                className="bpk-calendar-date"
-                disabled={false}
+                className="bpk-calendar-date bpk-calendar-date--blocked"
+                disabled={true}
                 onClick={[Function]}
                 onKeyDown={null}
                 tabIndex="-1"
@@ -370,7 +370,7 @@ exports[`BpkCalendarScrollGridList should render correctly with "showWeekendSepa
               <button
                 aria-label="Monday, 13th August 2018"
                 aria-pressed={false}
-                className="bpk-calendar-date"
+                className="bpk-calendar-date bpk-calendar-date--today"
                 disabled={false}
                 onClick={[Function]}
                 onKeyDown={null}
@@ -9538,8 +9538,8 @@ exports[`BpkCalendarScrollGridList should render correctly with "showWeekendSepa
               <button
                 aria-label="Sunday, 11th August 2019"
                 aria-pressed={false}
-                className="bpk-calendar-date bpk-calendar-date--blocked"
-                disabled={true}
+                className="bpk-calendar-date"
+                disabled={false}
                 onClick={[Function]}
                 onKeyDown={null}
                 tabIndex="-1"
@@ -9558,8 +9558,8 @@ exports[`BpkCalendarScrollGridList should render correctly with "showWeekendSepa
               <button
                 aria-label="Monday, 12th August 2019"
                 aria-pressed={false}
-                className="bpk-calendar-date bpk-calendar-date--blocked"
-                disabled={true}
+                className="bpk-calendar-date"
+                disabled={false}
                 onClick={[Function]}
                 onKeyDown={null}
                 tabIndex="-1"
@@ -9578,8 +9578,8 @@ exports[`BpkCalendarScrollGridList should render correctly with "showWeekendSepa
               <button
                 aria-label="Tuesday, 13th August 2019"
                 aria-pressed={false}
-                className="bpk-calendar-date bpk-calendar-date--blocked"
-                disabled={true}
+                className="bpk-calendar-date"
+                disabled={false}
                 onClick={[Function]}
                 onKeyDown={null}
                 tabIndex="-1"
@@ -10296,8 +10296,8 @@ exports[`BpkCalendarScrollGridList should render correctly with a "dateModifiers
               <button
                 aria-label="Friday, 10th August 2018"
                 aria-pressed={false}
-                className="bpk-calendar-date bpk-calendar-date--modifier-someClass bpk-calendar-date--today"
-                disabled={false}
+                className="bpk-calendar-date bpk-calendar-date--modifier-someClass bpk-calendar-date--blocked"
+                disabled={true}
                 onClick={[Function]}
                 onKeyDown={null}
                 tabIndex="-1"
@@ -10316,8 +10316,8 @@ exports[`BpkCalendarScrollGridList should render correctly with a "dateModifiers
               <button
                 aria-label="Saturday, 11th August 2018"
                 aria-pressed={false}
-                className="bpk-calendar-date bpk-calendar-date--modifier-someClass"
-                disabled={false}
+                className="bpk-calendar-date bpk-calendar-date--modifier-someClass bpk-calendar-date--blocked"
+                disabled={true}
                 onClick={[Function]}
                 onKeyDown={null}
                 tabIndex="-1"
@@ -10336,8 +10336,8 @@ exports[`BpkCalendarScrollGridList should render correctly with a "dateModifiers
               <button
                 aria-label="Sunday, 12th August 2018"
                 aria-pressed={false}
-                className="bpk-calendar-date bpk-calendar-date--modifier-someClass"
-                disabled={false}
+                className="bpk-calendar-date bpk-calendar-date--modifier-someClass bpk-calendar-date--blocked"
+                disabled={true}
                 onClick={[Function]}
                 onKeyDown={null}
                 tabIndex="-1"
@@ -10360,7 +10360,7 @@ exports[`BpkCalendarScrollGridList should render correctly with a "dateModifiers
               <button
                 aria-label="Monday, 13th August 2018"
                 aria-pressed={false}
-                className="bpk-calendar-date bpk-calendar-date--modifier-someClass"
+                className="bpk-calendar-date bpk-calendar-date--modifier-someClass bpk-calendar-date--today"
                 disabled={false}
                 onClick={[Function]}
                 onKeyDown={null}
@@ -19524,8 +19524,8 @@ exports[`BpkCalendarScrollGridList should render correctly with a "dateModifiers
               <button
                 aria-label="Sunday, 11th August 2019"
                 aria-pressed={false}
-                className="bpk-calendar-date bpk-calendar-date--modifier-someClass bpk-calendar-date--blocked"
-                disabled={true}
+                className="bpk-calendar-date bpk-calendar-date--modifier-someClass"
+                disabled={false}
                 onClick={[Function]}
                 onKeyDown={null}
                 tabIndex="-1"
@@ -19548,8 +19548,8 @@ exports[`BpkCalendarScrollGridList should render correctly with a "dateModifiers
               <button
                 aria-label="Monday, 12th August 2019"
                 aria-pressed={false}
-                className="bpk-calendar-date bpk-calendar-date--modifier-someClass bpk-calendar-date--blocked"
-                disabled={true}
+                className="bpk-calendar-date bpk-calendar-date--modifier-someClass"
+                disabled={false}
                 onClick={[Function]}
                 onKeyDown={null}
                 tabIndex="-1"
@@ -19568,8 +19568,8 @@ exports[`BpkCalendarScrollGridList should render correctly with a "dateModifiers
               <button
                 aria-label="Tuesday, 13th August 2019"
                 aria-pressed={false}
-                className="bpk-calendar-date bpk-calendar-date--modifier-someClass bpk-calendar-date--blocked"
-                disabled={true}
+                className="bpk-calendar-date bpk-calendar-date--modifier-someClass"
+                disabled={false}
                 onClick={[Function]}
                 onKeyDown={null}
                 tabIndex="-1"
@@ -30096,8 +30096,8 @@ exports[`BpkCalendarScrollGridList should render correctly with a different "wee
               <button
                 aria-label="Friday, 10th August 2018"
                 aria-pressed={false}
-                className="bpk-calendar-date bpk-calendar-date--today"
-                disabled={false}
+                className="bpk-calendar-date bpk-calendar-date--blocked"
+                disabled={true}
                 onClick={[Function]}
                 onKeyDown={null}
                 tabIndex="-1"
@@ -30116,8 +30116,8 @@ exports[`BpkCalendarScrollGridList should render correctly with a different "wee
               <button
                 aria-label="Saturday, 11th August 2018"
                 aria-pressed={false}
-                className="bpk-calendar-date"
-                disabled={false}
+                className="bpk-calendar-date bpk-calendar-date--blocked"
+                disabled={true}
                 onClick={[Function]}
                 onKeyDown={null}
                 tabIndex="-1"
@@ -30136,8 +30136,8 @@ exports[`BpkCalendarScrollGridList should render correctly with a different "wee
               <button
                 aria-label="Sunday, 12th August 2018"
                 aria-pressed={false}
-                className="bpk-calendar-date"
-                disabled={false}
+                className="bpk-calendar-date bpk-calendar-date--blocked"
+                disabled={true}
                 onClick={[Function]}
                 onKeyDown={null}
                 tabIndex="-1"
@@ -30156,7 +30156,7 @@ exports[`BpkCalendarScrollGridList should render correctly with a different "wee
               <button
                 aria-label="Monday, 13th August 2018"
                 aria-pressed={false}
-                className="bpk-calendar-date"
+                className="bpk-calendar-date bpk-calendar-date--today"
                 disabled={false}
                 onClick={[Function]}
                 onKeyDown={null}
@@ -39324,8 +39324,8 @@ exports[`BpkCalendarScrollGridList should render correctly with a different "wee
               <button
                 aria-label="Sunday, 11th August 2019"
                 aria-pressed={false}
-                className="bpk-calendar-date bpk-calendar-date--blocked"
-                disabled={true}
+                className="bpk-calendar-date"
+                disabled={false}
                 onClick={[Function]}
                 onKeyDown={null}
                 tabIndex="-1"
@@ -39344,8 +39344,8 @@ exports[`BpkCalendarScrollGridList should render correctly with a different "wee
               <button
                 aria-label="Monday, 12th August 2019"
                 aria-pressed={false}
-                className="bpk-calendar-date bpk-calendar-date--blocked"
-                disabled={true}
+                className="bpk-calendar-date"
+                disabled={false}
                 onClick={[Function]}
                 onKeyDown={null}
                 tabIndex="-1"
@@ -39364,8 +39364,8 @@ exports[`BpkCalendarScrollGridList should render correctly with a different "wee
               <button
                 aria-label="Tuesday, 13th August 2019"
                 aria-pressed={false}
-                className="bpk-calendar-date bpk-calendar-date--blocked"
-                disabled={true}
+                className="bpk-calendar-date"
+                disabled={false}
                 onClick={[Function]}
                 onKeyDown={null}
                 tabIndex="-1"
@@ -40095,8 +40095,8 @@ exports[`BpkCalendarScrollGridList should render correctly with no optional prop
               <button
                 aria-label="Friday, 10th August 2018"
                 aria-pressed={false}
-                className="bpk-calendar-date bpk-calendar-date--today"
-                disabled={false}
+                className="bpk-calendar-date bpk-calendar-date--blocked"
+                disabled={true}
                 onClick={[Function]}
                 onKeyDown={null}
                 tabIndex="-1"
@@ -40115,8 +40115,8 @@ exports[`BpkCalendarScrollGridList should render correctly with no optional prop
               <button
                 aria-label="Saturday, 11th August 2018"
                 aria-pressed={false}
-                className="bpk-calendar-date"
-                disabled={false}
+                className="bpk-calendar-date bpk-calendar-date--blocked"
+                disabled={true}
                 onClick={[Function]}
                 onKeyDown={null}
                 tabIndex="-1"
@@ -40135,8 +40135,8 @@ exports[`BpkCalendarScrollGridList should render correctly with no optional prop
               <button
                 aria-label="Sunday, 12th August 2018"
                 aria-pressed={false}
-                className="bpk-calendar-date"
-                disabled={false}
+                className="bpk-calendar-date bpk-calendar-date--blocked"
+                disabled={true}
                 onClick={[Function]}
                 onKeyDown={null}
                 tabIndex="-1"
@@ -40159,7 +40159,7 @@ exports[`BpkCalendarScrollGridList should render correctly with no optional prop
               <button
                 aria-label="Monday, 13th August 2018"
                 aria-pressed={false}
-                className="bpk-calendar-date"
+                className="bpk-calendar-date bpk-calendar-date--today"
                 disabled={false}
                 onClick={[Function]}
                 onKeyDown={null}
@@ -49323,8 +49323,8 @@ exports[`BpkCalendarScrollGridList should render correctly with no optional prop
               <button
                 aria-label="Sunday, 11th August 2019"
                 aria-pressed={false}
-                className="bpk-calendar-date bpk-calendar-date--blocked"
-                disabled={true}
+                className="bpk-calendar-date"
+                disabled={false}
                 onClick={[Function]}
                 onKeyDown={null}
                 tabIndex="-1"
@@ -49347,8 +49347,8 @@ exports[`BpkCalendarScrollGridList should render correctly with no optional prop
               <button
                 aria-label="Monday, 12th August 2019"
                 aria-pressed={false}
-                className="bpk-calendar-date bpk-calendar-date--blocked"
-                disabled={true}
+                className="bpk-calendar-date"
+                disabled={false}
                 onClick={[Function]}
                 onKeyDown={null}
                 tabIndex="-1"
@@ -49367,8 +49367,8 @@ exports[`BpkCalendarScrollGridList should render correctly with no optional prop
               <button
                 aria-label="Tuesday, 13th August 2019"
                 aria-pressed={false}
-                className="bpk-calendar-date bpk-calendar-date--blocked"
-                disabled={true}
+                className="bpk-calendar-date"
+                disabled={false}
                 onClick={[Function]}
                 onKeyDown={null}
                 tabIndex="-1"
