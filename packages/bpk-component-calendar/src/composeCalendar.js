@@ -51,6 +51,7 @@ const composeCalendar = (Nav, GridHeader, Grid, CalendarDate) => {
       showWeekendSeparator,
       weekStartsOn,
       fixedWidth,
+      gridClassName,
     } = props;
 
     if (className) {
@@ -72,6 +73,9 @@ const composeCalendar = (Nav, GridHeader, Grid, CalendarDate) => {
     // adds spacing between the nav and grid.
     if (!GridHeader && Nav) {
       gridClasses.push(getClassName('bpk-calendar__grid'));
+    }
+    if (gridClassName) {
+      gridClasses.push(gridClassName);
     }
 
     return (
@@ -143,6 +147,7 @@ const composeCalendar = (Nav, GridHeader, Grid, CalendarDate) => {
     selectedDate: PropTypes.instanceOf(Date),
     showWeekendSeparator: PropTypes.bool,
     weekStartsOn: PropTypes.number,
+    gridClassName: PropTypes.string,
   };
 
   BpkCalendar.defaultProps = {
@@ -159,6 +164,7 @@ const composeCalendar = (Nav, GridHeader, Grid, CalendarDate) => {
     selectedDate: null,
     showWeekendSeparator: true,
     weekStartsOn: 1,
+    gridClassName: null,
   };
 
   return BpkCalendar;

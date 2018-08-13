@@ -17,34 +17,19 @@
  */
 /* @flow */
 
-import PropTypes from 'prop-types';
-import React from 'react';
-import { cssModules } from 'bpk-react-utils';
+import {
+  BpkCalendarGridHeader,
+  withCalendarState,
+  composeCalendar,
+} from 'bpk-component-calendar';
+import BpkscrollableCalendarDate from './BpkScrollableCalendarDate';
+import BpkScrollableCalendarGridList from './BpkScrollableCalendarGridList';
 
-import STYLES from './BpkScrollableCalendar.scss';
-
-const getClassName = cssModules(STYLES);
-
-export type Props = {
-  className: ?string,
-};
-const BpkScrollableCalendar = (props: Props) => {
-  const { className, ...rest } = props;
-  const classNames = getClassName('bpk-scrollable-calendar', className);
-
-  return (
-    <div className={classNames} {...rest}>
-      I am an example component.
-    </div>
-  );
-};
-
-BpkScrollableCalendar.propTypes = {
-  className: PropTypes.string,
-};
-
-BpkScrollableCalendar.defaultProps = {
-  className: null,
-};
-
-export default BpkScrollableCalendar;
+export default withCalendarState(
+  composeCalendar(
+    null,
+    BpkCalendarGridHeader,
+    BpkScrollableCalendarGridList,
+    BpkscrollableCalendarDate,
+  ),
+);
