@@ -26,7 +26,7 @@
     "jest:native:watch": "(cd ./native && jest --watch)",
     "jest:update": "jest --updateSnapshot",
     "jest:watch": "jest --watch",
-    "jest": "jest --coverage",
+    "jest": "TZ=Europe/London jest --coverage",
     "flow": "flow",
     "flow-typed": "flow-typed",
     "build:tokens": "lerna run tokens --scope bpk-tokens",
