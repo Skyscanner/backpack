@@ -2,7 +2,7 @@
 <resources>
 
     <declare-styleable name="badge">
-        <attr name="bpk_badge_type" format="enum">
+        <attr name="type" format="enum">
             <enum name="success" value="1" />
             <enum name="warning" value="2" />
             <enum name="destructive" value="3" />
@@ -10,7 +10,7 @@
             <enum name="inverse" value="5" />
             <enum name="outline" value="6" />
         </attr>
-        <attr name="bpk_message" format="string"/>
+        <attr name="message" format="string"/>
     </declare-styleable>
 
 </resources>

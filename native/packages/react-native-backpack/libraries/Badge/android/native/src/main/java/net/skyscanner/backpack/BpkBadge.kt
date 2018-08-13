@@ -3,16 +3,15 @@ package net.skyscanner.backpack
 import android.content.Context
 import android.content.res.TypedArray
 import android.graphics.drawable.GradientDrawable
+import android.support.v7.widget.AppCompatTextView
 import android.util.AttributeSet
 import android.view.Gravity
 import android.widget.LinearLayout
-import android.widget.TextView
-
 
 open class BpkBadge(
         context: Context,
         attrs: AttributeSet?,
-        defStyleAttr: Int) : TextView(context, attrs, defStyleAttr) {
+        defStyleAttr: Int) : AppCompatTextView(context, attrs, defStyleAttr) {
 
     constructor(context: Context) : this(context, null)
     constructor(context: Context, attrs: AttributeSet?) : this(context, attrs, R.style.Bpk_badge)
@@ -22,7 +21,7 @@ open class BpkBadge(
         setup()
     }
 
-    var type: BpkBadgeType = BpkBadgeType.BPKBadgeTypeSuccess
+    var type: Type = Type.Success
         set(value) {
             field = value
             setup()
@@ -40,11 +39,11 @@ open class BpkBadge(
                 R.styleable.badge,
                 0, 0)
 
-        if (a.hasValue(R.styleable.badge_bpk_badge_type)) {
-            type = BpkBadgeType.fromId(a.getInt(R.styleable.badge_bpk_badge_type, 0))
+        if (a.hasValue(R.styleable.badge_type)) {
+            type = Type.fromId(a.getInt(R.styleable.badge_type, 0))
         }
-        if (a.hasValue(R.styleable.badge_bpk_message)) {
-            message = a.getString(R.styleable.badge_bpk_message)
+        if (a.hasValue(R.styleable.badge_message)) {
+            message = a.getString(R.styleable.badge_message)
         }
 
         a.recycle()
@@ -71,7 +70,7 @@ open class BpkBadge(
         border.setColor(context.resources.getColor(type.bgColor))
 
         //Set border
-        if (type == BpkBadgeType.BPKBadgeTypeOutline) {
+        if (type == Type.Outline) {
             border.setStroke(resources.getDimension(R.dimen.badge_border_size).toInt(), context.resources.getColor(R.color.bpkWhite))
             //set alpha for border
             border.setColor(context.resources.getColor(type.bgColor) and 0x32ffffff)
@@ -92,27 +91,27 @@ open class BpkBadge(
         this.layoutParams = params
     }
 
-    enum class BpkBadgeType constructor(internal var id: Int,
+    enum class Type constructor(internal var id: Int,
                                         var type: String,
                                         var bgColor: Int,
                                         var textColor: Int) {
-        BPKBadgeTypeSuccess(1, "success", R.color.bpkGreen500, R.color.bpkGray700),
-        BPKBadgeTypeWarning(2, "warning", R.color.bpkYellow500, R.color.bpkGray700),
-        BPKBadgeTypeDestructive(3, "destructive", R.color.bpkRed500, R.color.bpkWhite),
-        BPKBadgeTypeLight(4, "light", R.color.bpkGray50, R.color.bpkGray700),
-        BPKBadgeTypeInverse(5, "inverse", R.color.bpkWhite, R.color.bpkGray700),
-        BPKBadgeTypeOutline(6, "outline", R.color.bpkWhite, R.color.bpkWhite);
+        Success(1, "success", R.color.bpkGreen500, R.color.bpkGray700),
+        Warning(2, "warning", R.color.bpkYellow500, R.color.bpkGray700),
+        Destructive(3, "destructive", R.color.bpkRed500, R.color.bpkWhite),
+        Light(4, "light", R.color.bpkGray50, R.color.bpkGray700),
+        Inverse(5, "inverse", R.color.bpkWhite, R.color.bpkGray700),
+        Outline(6, "outline", R.color.bpkWhite, R.color.bpkWhite);
 
         companion object {
 
-            fun fromType(type: String): BpkBadgeType {
+            fun fromType(type: String): Type {
                 for (f in values()) {
                     if (f.type == type) return f
                 }
                 throw IllegalArgumentException()
             }
 
-            internal fun fromId(id: Int): BpkBadgeType {
+            internal fun fromId(id: Int): Type {
                 for (f in values()) {
                     if (f.id == id) return f
                 }

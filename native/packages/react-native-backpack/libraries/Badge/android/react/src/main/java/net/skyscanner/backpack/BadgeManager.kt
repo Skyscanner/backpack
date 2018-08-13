@@ -22,7 +22,7 @@ class BadgeManager : SimpleViewManager<BpkBadge>() {
 
     @ReactProp(name = "type")
     fun setType(badge: BpkBadge, type: String) {
-        badge.type = BpkBadge.BpkBadgeType.fromType(type)
+        badge.type = BpkBadge.Type.fromType(type)
     }
 
     companion object {
