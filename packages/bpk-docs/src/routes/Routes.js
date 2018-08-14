@@ -104,6 +104,7 @@ import PanelPage from '../pages/PanelPage';
 import PhoneInputPage from '../pages/PhoneInputPage';
 import PopoversPage from '../pages/PopoversPage';
 import ProgressPage from '../pages/ProgressPage';
+import ScrollableCalendarPage from '../pages/ScrollableCalendarPage';
 import SectionListPage from '../pages/SectionListPage';
 import SlidersPage from '../pages/SlidersPage';
 import SpinnerPage from '../pages/SpinnerPage';
@@ -211,6 +212,10 @@ const Routes = (
       <Route path={ROUTES.PICKER} component={NativePickerPage} />
       <Route path={ROUTES.SELECT} component={NativeSelectPage} />
       <Route path={ROUTES.SWITCH} component={NativeSwitchPage} />
+      <Route
+        path={ROUTES.SCROLLABLE_CALENDAR}
+        component={ScrollableCalendarPage}
+      />
       <Route path={ROUTES.SECTION_LIST} component={SectionListPage} />
       <Route path={ROUTES.MAP} component={MapPage} />
       <Route path={ROUTES.INFINITE_SCROLL} component={InfiniteScrollPage} />

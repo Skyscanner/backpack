@@ -85,6 +85,7 @@ export const PAGINATION = '/components/pagination';
 export const STAR_RATING = '/components/star-rating';
 export const BREAKPOINT = '/components/breakpoint';
 export const HORIZONTAL_GRID = '/components/horizontal-grid';
+export const SCROLLABLE_CALENDAR = '/components/scrollable-calendar';
 export const SLIDER = '/components/slider';
 export const DRAWER = '/components/drawer';
 export const DIALOG = '/components/dialog';

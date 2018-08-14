@@ -125,7 +125,7 @@ const composeCalendar = (Nav, GridHeader, Grid, CalendarDate) => {
 
   BpkCalendar.propTypes = {
     // Required
-    changeMonthLabel: PropTypes.string.isRequired,
+    changeMonthLabel: Nav ? PropTypes.string.isRequired : PropTypes.string,
     daysOfWeek: CustomPropTypes.DaysOfWeek.isRequired,
     formatDateFull: PropTypes.func.isRequired,
     formatMonth: PropTypes.func.isRequired,
@@ -151,6 +151,7 @@ const composeCalendar = (Nav, GridHeader, Grid, CalendarDate) => {
   };
 
   BpkCalendar.defaultProps = {
+    changeMonthLabel: null,
     className: null,
     dateModifiers: {},
     fixedWidth: true,
