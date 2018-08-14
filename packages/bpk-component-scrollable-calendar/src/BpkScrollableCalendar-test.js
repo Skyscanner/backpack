@@ -19,24 +19,66 @@
 
 import React from 'react';
 import renderer from 'react-test-renderer';
+import { DateUtils } from 'bpk-component-calendar';
+
 import BpkScrollableCalendar from './BpkScrollableCalendar';
+import { weekDays, formatDateFull, formatMonth } from '../test-utils';
+
+const testDate = new Date(2010, 1, 15);
 
 describe('BpkScrollableCalendar', () => {
   it('should render correctly', () => {
-    const tree = renderer.create(<BpkScrollableCalendar />).toJSON();
+    const tree = renderer
+      .create(
+        <BpkScrollableCalendar
+          weekStartsOn={1}
+          daysOfWeek={weekDays}
+          formatMonth={formatMonth}
+          formatDateFull={formatDateFull}
+          showWeekendSeparator
+          // Subtract one day from today's date to make today selectable by default
+          minDate={DateUtils.addDays(testDate, -1)}
+          maxDate={DateUtils.addMonths(testDate, 12)}
+        />,
+      )
+      .toJSON();
     expect(tree).toMatchSnapshot();
   });
 
   it('should support custom class names', () => {
     const tree = renderer
-      .create(<BpkScrollableCalendar className="custom-classname" />)
+      .create(
+        <BpkScrollableCalendar
+          weekStartsOn={1}
+          daysOfWeek={weekDays}
+          formatMonth={formatMonth}
+          formatDateFull={formatDateFull}
+          showWeekendSeparator
+          // Subtract one day from today's date to make today selectable by default
+          minDate={DateUtils.addDays(testDate, -1)}
+          maxDate={DateUtils.addMonths(testDate, 12)}
+          className="custom-classname"
+        />,
+      )
       .toJSON();
     expect(tree).toMatchSnapshot();
   });
 
   it('should support arbitrary props', () => {
     const tree = renderer
-      .create(<BpkScrollableCalendar testID="123" />)
+      .create(
+        <BpkScrollableCalendar
+          weekStartsOn={1}
+          daysOfWeek={weekDays}
+          formatMonth={formatMonth}
+          formatDateFull={formatDateFull}
+          showWeekendSeparator
+          // Subtract one day from today's date to make today selectable by default
+          minDate={DateUtils.addDays(testDate, -1)}
+          maxDate={DateUtils.addMonths(testDate, 12)}
+          testID="123"
+        />,
+      )
       .toJSON();
     expect(tree).toMatchSnapshot();
   });

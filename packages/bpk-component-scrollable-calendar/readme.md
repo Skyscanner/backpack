@@ -8,6 +8,59 @@
 npm install bpk-component-scrollable-calendar --save-dev
 ```
 
+## Usage
+
+```js
+import React, { Component } from 'react';
+import { DateUtils } from 'bpk-component-calendar';
+import BpkScrollableCalendar from 'bpk-component-scrollable-calendar';
+import format from 'date-fns/format';
+
+const formatDateFull = date => format(date, 'dddd, Do MMMM YYYY');
+const formatMonth = date => format(date, 'MMMM YYYY');
+const daysOfWeek = [
+  {
+    name: 'Sunday',
+    nameAbbr: 'Sun',
+    index: 0,
+    isWeekend: true,
+  },
+  // ...
+];
+
+export default class App extends Component {
+  constructor() {
+    super();
+
+    this.state = {
+      selectedDate: null,
+    };
+  }
+
+  handleDateSelect = date => {
+    this.setState({
+      selectedDate: date,
+    });
+  };
+
+  render() {
+    return (
+      <BpkScrollableCalendar
+        id="calendar"
+        onDateSelect={this.handleDateSelect}
+        formatMonth={formatMonth}
+        formatDateFull={formatDateFull}
+        daysOfWeek={daysOfWeek}
+        date={this.state.selectedDate}
+        // Subtract one day from today's date to make today selectable by default
+        minDate={DateUtils.addDays(new Date(), -1)}
+        maxDate={DateUtils.addMonths(new Date(), 12)}
+      />
+    );
+  }
+}
+```
+
 ### BpkScrollableCalendarGridList
 
 This component is the main scrollable grid of months for the scrollable calendar.

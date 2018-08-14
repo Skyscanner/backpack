@@ -29,13 +29,15 @@ import BpkScrollableCalendarGridList from './BpkScrollableCalendarGridList';
 
 import { weekDays, formatDateFull, formatMonth } from '../test-utils';
 
+const testDate = new Date(2010, 1, 15);
+
 describe('BpkCalendarScrollGridList', () => {
   it('should render correctly with no optional props set', () => {
     const tree = renderer
       .create(
         <BpkScrollableCalendarGridList
-          minDate={DateUtils.addDays(new Date(), -1)}
-          maxDate={DateUtils.addMonths(new Date(), 12)}
+          minDate={DateUtils.addDays(testDate, -1)}
+          maxDate={DateUtils.addMonths(testDate, 12)}
           formatMonth={formatMonth}
           formatDateFull={formatDateFull}
           DateComponent={BpkCalendarScrollDate}
@@ -50,8 +52,8 @@ describe('BpkCalendarScrollGridList', () => {
     const tree = renderer
       .create(
         <BpkScrollableCalendarGridList
-          minDate={DateUtils.addDays(new Date(), -1)}
-          maxDate={DateUtils.addMonths(new Date(), 12)}
+          minDate={DateUtils.addDays(testDate, -1)}
+          maxDate={DateUtils.addMonths(testDate, 12)}
           formatMonth={formatMonth}
           formatDateFull={formatDateFull}
           DateComponent={BpkCalendarScrollDate}
@@ -68,8 +70,8 @@ describe('BpkCalendarScrollGridList', () => {
     const tree = renderer
       .create(
         <BpkScrollableCalendarGridList
-          minDate={DateUtils.addDays(new Date(), -1)}
-          maxDate={DateUtils.addMonths(new Date(), 12)}
+          minDate={DateUtils.addDays(testDate, -1)}
+          maxDate={DateUtils.addMonths(testDate, 12)}
           formatMonth={formatMonth}
           formatDateFull={formatDateFull}
           DateComponent={BpkCalendarScrollDate}
@@ -89,8 +91,8 @@ describe('BpkCalendarScrollGridList', () => {
     const tree = renderer
       .create(
         <BpkScrollableCalendarGridList
-          minDate={DateUtils.addDays(new Date(), -1)}
-          maxDate={DateUtils.addMonths(new Date(), 12)}
+          minDate={DateUtils.addDays(testDate, -1)}
+          maxDate={DateUtils.addMonths(testDate, 12)}
           formatMonth={formatMonth}
           formatDateFull={formatDateFull}
           DateComponent={BpkCalendarScrollDate}
@@ -124,8 +126,8 @@ describe('BpkCalendarScrollGridList', () => {
     const tree = renderer
       .create(
         <BpkScrollableCalendarGridList
-          minDate={DateUtils.addDays(new Date(), -1)}
-          maxDate={DateUtils.addMonths(new Date(), 12)}
+          minDate={DateUtils.addDays(testDate, -1)}
+          maxDate={DateUtils.addMonths(testDate, 12)}
           formatMonth={formatMonth}
           formatDateFull={formatDateFull}
           DateComponent={MyCustomDate}

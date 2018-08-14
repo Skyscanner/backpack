@@ -15,33 +15,85 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* @flow */
-import React from 'react';
 
+import PropTypes from 'prop-types';
+import React, { Component } from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import {
-  BpkCalendarGridHeader,
-  composeCalendar,
-  DateUtils,
-} from 'bpk-component-calendar';
+import { DateUtils } from 'bpk-component-calendar';
 
-import { weekDays, formatMonth, formatDateFull } from './test-utils';
+import {
+  formatDateFull,
+  formatDateFullArabic,
+  formatDateFullJapanese,
+  formatMonth,
+  formatMonthArabic,
+  formatMonthJapanese,
+  weekDays,
+  weekDaysMoreWeekend,
+  weekDaysArabic,
+  weekDaysJapanese,
+} from './test-utils';
 import BpkScrollableCalendar, {
   BpkScrollableCalendarDate,
   BpkScrollableCalendarGrid,
   BpkScrollableCalendarGridList,
 } from './index';
 
-const BpkCalendar = composeCalendar(
-  null,
-  BpkCalendarGridHeader,
-  BpkScrollableCalendarGridList,
-  BpkScrollableCalendarDate,
-);
+export default class ScrollableCal extends Component {
+  constructor(props) {
+    super(props);
+
+    const selectedDate = this.props.selectTodaysDate ? new Date() : null;
+
+    this.state = {
+      selectedDate,
+    };
+  }
+
+  handleDateSelect = date => {
+    this.setState({
+      selectedDate: date,
+    });
+  };
+
+  render() {
+    return (
+      <BpkScrollableCalendar
+        id="calendar"
+        {...this.props}
+        onDateSelect={selectedDate => {
+          this.setState({ selectedDate });
+          action('Selected day')(selectedDate);
+        }}
+        date={this.state.selectedDate}
+      />
+    );
+  }
+}
+ScrollableCal.propTypes = {
+  selectTodaysDate: PropTypes.bool,
+};
+
+ScrollableCal.defaultProps = {
+  selectTodaysDate: true,
+};
 
 storiesOf('bpk-component-scrollable-calendar', module)
-  .add('Default', () => <BpkScrollableCalendar />)
+  .add('Scrollable Calendar - default', () => (
+    <ScrollableCal
+      weekStartsOn={1}
+      daysOfWeek={weekDays}
+      formatMonth={formatMonth}
+      formatDateFull={formatDateFull}
+      DateComponent={BpkScrollableCalendarDate}
+      showWeekendSeparator
+      selectTodaysDate
+      // Subtract one day from today's date to make today selectable by default
+      minDate={DateUtils.addDays(new Date(), -1)}
+      maxDate={DateUtils.addMonths(new Date(), 12)}
+    />
+  ))
   .add('BpkScrollableCalendarDate', () => (
     <BpkScrollableCalendarDate
       date={new Date()}
@@ -70,21 +122,89 @@ storiesOf('bpk-component-scrollable-calendar', module)
       formatDateFull={formatDateFull}
       DateComponent={BpkScrollableCalendarDate}
       showWeekendSeparator
+      selectTodaysDate
       minDate={DateUtils.addDays(new Date(), -1)}
       maxDate={DateUtils.addMonths(new Date(), 12)}
     />
   ))
-  .add('Calendar - default', () => (
-    <BpkCalendar
-      month={new Date()}
-      weekStartsOn={1}
-      daysOfWeek={weekDays}
-      onDateClick={action('Clicked day')}
+  .add("Scrollable Calendar - Don't show weekend separator", () => (
+    <ScrollableCal
+      id="myCalendar"
       formatMonth={formatMonth}
       formatDateFull={formatDateFull}
-      DateComponent={BpkScrollableCalendarDate}
-      showWeekendSeparator
-      // Subtract one day from today's date to make today selectable by default
+      daysOfWeek={weekDays}
+      showWeekendSeparator={false}
+      selectTodaysDate
+      minDate={DateUtils.addDays(new Date(), -1)}
+      maxDate={DateUtils.addMonths(new Date(), 12)}
+    />
+  ))
+  .add('Scrollable Calendar - Week starts on a Sunday', () => (
+    <ScrollableCal
+      id="myCalendar"
+      formatMonth={formatMonth}
+      formatDateFull={formatDateFull}
+      daysOfWeek={weekDays}
+      weekStartsOn={0}
+      selectTodaysDate
+      minDate={DateUtils.addDays(new Date(), -1)}
+      maxDate={DateUtils.addMonths(new Date(), 12)}
+    />
+  ))
+  .add('Scrollable Calendar - Honest weekend', () => (
+    <ScrollableCal
+      id="myCalendar"
+      formatMonth={formatMonth}
+      formatDateFull={formatDateFull}
+      daysOfWeek={weekDaysMoreWeekend}
+      selectTodaysDate
+      minDate={DateUtils.addDays(new Date(), -1)}
+      maxDate={DateUtils.addMonths(new Date(), 12)}
+    />
+  ))
+  .add('Scrollable Calendar - ar-AE locale', () => (
+    <ScrollableCal
+      id="myCalendar"
+      formatMonth={formatMonthArabic}
+      formatDateFull={formatDateFullArabic}
+      daysOfWeek={weekDaysArabic}
+      weekStartsOn={6}
+      selectTodaysDate
+      minDate={DateUtils.addDays(new Date(), -1)}
+      maxDate={DateUtils.addMonths(new Date(), 12)}
+    />
+  ))
+  .add('Scrollable Calendar - ja-JP locale', () => (
+    <ScrollableCal
+      id="myCalendar"
+      formatMonth={formatMonthJapanese}
+      formatDateFull={formatDateFullJapanese}
+      daysOfWeek={weekDaysJapanese}
+      weekStartsOn={0}
+      selectTodaysDate
+      minDate={DateUtils.addDays(new Date(), -1)}
+      maxDate={DateUtils.addMonths(new Date(), 12)}
+    />
+  ))
+  .add('Scrollable Calendar - Different min/max date', () => (
+    <ScrollableCal
+      id="myCalendar"
+      formatMonth={formatMonth}
+      formatDateFull={formatDateFull}
+      daysOfWeek={weekDays}
+      selectTodaysDate
+      minDate={new Date(2020, 4, 15)}
+      maxDate={new Date(2020, 5, 15)}
+    />
+  ))
+  .add("Scrollable Calendar - Don't mark today", () => (
+    <ScrollableCal
+      id="myCalendar"
+      formatMonth={formatMonth}
+      formatDateFull={formatDateFull}
+      daysOfWeek={weekDays}
+      markToday={false}
+      selectTodaysDate
       minDate={DateUtils.addDays(new Date(), -1)}
       maxDate={DateUtils.addMonths(new Date(), 12)}
     />

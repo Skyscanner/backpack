@@ -19,7 +19,6 @@
 import React from 'react';
 import { cssModules } from 'bpk-react-utils';
 import BpkText from 'bpk-component-text';
-import format from 'date-fns/format';
 import {
   BpkCalendarGrid,
   BpkCalendarGridPropTypes,
@@ -41,9 +40,7 @@ const BpkScrollableCalendarGrid = props => {
         tagName="h1"
         textStyle="lg"
       >
-        {month.getMonth() === 0
-          ? format(month, 'MMMM - YYYY')
-          : format(month, 'MMMM')}
+        {props.formatMonth(month)}
       </BpkText>
       <BpkCalendarGrid month={month} {...rest} />
     </div>
