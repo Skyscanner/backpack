@@ -168,6 +168,7 @@ withCalendarState(composeCalendar(
 | selectedDate          | Date                 | false    | null             |
 | weekStartsOn          | number               | false    | 1                |
 | initiallyFocusedDate  | Date                 | false    | null             |
+| gridClassName		| string	       | false    | null	     |
 
 Some of the more complex props and props for sub-components are detailed below.
 
