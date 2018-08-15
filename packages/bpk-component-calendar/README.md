@@ -149,25 +149,26 @@ withCalendarState(composeCalendar(
 
 ## Props
 
-| Property              | PropType             | Required | Default Value    |
-| --------------------- | -------------------- | -------- | ---------------- |
-| changeMonthLabel      | string               | true     | -                |
-| daysOfWeek            | object               | true     | -                |
-| formatDateFull        | func                 | true     | -                |
-| formatMonth           | func                 | true     | -                |
-| id                    | string               | true     | -                |
-| className             | string               | false    | null             |
-| fixedWidth            | bool                 | false    | true             |
-| markOutsideDays       | bool                 | false    | true             |
-| markToday             | bool                 | false    | true             |
-| maxDate               | Date                 | false    | new Date() + 1yr |
-| minDate               | Date                 | false    | new Date()       |
-| onDateSelect          | func                 | false    | null             |
-| onMonthChange         | func                 | false    | null             |
-| showWeekendSeparator  | bool                 | false    | true             |
-| selectedDate          | Date                 | false    | null             |
-| weekStartsOn          | number               | false    | 1                |
-| initiallyFocusedDate  | Date                 | false    | null             |
+| Property              | PropType             | Required            | Default Value    |
+| --------------------- | -------------------- | ------------------- | ---------------- |
+| daysOfWeek            | object               | true                | -                |
+| formatDateFull        | func                 | true                | -                |
+| formatMonth           | func                 | true                | -                |
+| id                    | string               | true                | -                |
+| changeMonthLabel      | string               | if Nav !== null     | -                |
+| className             | string               | false               | null             |
+| fixedWidth            | bool                 | false               | true             |
+| gridClassName         | string               | false               | null             |
+| initiallyFocusedDate  | Date                 | false               | null             |
+| markOutsideDays       | bool                 | false               | true             |
+| markToday             | bool                 | false               | true             |
+| maxDate               | Date                 | false               | new Date() + 1yr |
+| minDate               | Date                 | false               | new Date()       |
+| onDateSelect          | func                 | false               | null             |
+| onMonthChange         | func                 | false               | null             |
+| selectedDate          | Date                 | false               | null             |
+| showWeekendSeparator  | bool                 | false               | true             |
+| weekStartsOn          | number               | false               | 1                |
 
 Some of the more complex props and props for sub-components are detailed below.
 
