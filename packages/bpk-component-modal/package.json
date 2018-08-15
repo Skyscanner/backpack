@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-modal",
-  "version": "1.8.3",
+  "version": "1.8.4",
   "description": "Backpack modal component.",
   "main": "index.js",
   "repository": {
@@ -13,16 +13,16 @@
     "react": "^15.4.0 || ^16.0.0"
   },
   "dependencies": {
-    "bpk-component-close-button": "^1.0.76",
-    "bpk-component-icon": "^3.22.7",
-    "bpk-component-link": "^1.2.11",
-    "bpk-mixins": "^17.11.7",
-    "bpk-react-utils": "^2.6.3",
-    "bpk-scrim-utils": "^3.2.10",
+    "bpk-component-close-button": "^1.0.77",
+    "bpk-component-icon": "^3.22.8",
+    "bpk-component-link": "^1.2.12",
+    "bpk-mixins": "^17.11.8",
+    "bpk-react-utils": "^2.6.4",
+    "bpk-scrim-utils": "^3.2.11",
     "prop-types": "^15.5.8"
   },
   "devDependencies": {
-    "bpk-component-button": "^2.1.12",
-    "bpk-component-text": "^1.0.72"
+    "bpk-component-button": "^2.1.13",
+    "bpk-component-text": "^1.0.73"
   }
 }

@@ -1,6 +1,6 @@
 {
   "name": "react-native-bpk-component-horizontal-nav",
-  "version": "3.0.28",
+  "version": "3.0.29",
   "main": "index.js",
   "description": "Backpack React Native horizontal navigation component.",
   "repository": {
@@ -17,8 +17,8 @@
     "bpk-tokens": "^27.0.6",
     "prop-types": "^15.5.8",
     "react-native-bpk-component-text": "^2.1.45",
-    "react-native-bpk-component-touchable-native-feedback": "^1.1.19",
-    "react-native-bpk-component-touchable-overlay": "^1.0.28",
-    "react-native-bpk-theming": "^1.0.71"
+    "react-native-bpk-component-touchable-native-feedback": "^1.1.20",
+    "react-native-bpk-component-touchable-overlay": "^1.0.29",
+    "react-native-bpk-theming": "^1.0.72"
   }
 }

@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-nudger",
-  "version": "1.0.79",
+  "version": "1.0.80",
   "description": "Backpack nudger component.",
   "main": "index.js",
   "repository": {
@@ -13,15 +13,15 @@
     "react": "^15.0.0 || ^16.0.0"
   },
   "dependencies": {
-    "bpk-component-button": "^2.1.12",
-    "bpk-component-icon": "^3.22.7",
-    "bpk-mixins": "^17.11.7",
-    "bpk-react-utils": "^2.6.3",
+    "bpk-component-button": "^2.1.13",
+    "bpk-component-icon": "^3.22.8",
+    "bpk-mixins": "^17.11.8",
+    "bpk-react-utils": "^2.6.4",
     "bpk-tokens": "^27.0.6",
     "lodash.clamp": "^4.0.3",
     "prop-types": "^15.5.8"
   },
   "devDependencies": {
-    "bpk-component-label": "^3.2.80"
+    "bpk-component-label": "^3.2.81"
   }
 }
