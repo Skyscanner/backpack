@@ -66,7 +66,7 @@ const components = [
         <Paragraph>
           Check out{' '}
           <BpkLink
-            href="https://github.com/Skyscanner/backpack/blob/master/contributing.md"
+            href="https://github.com/Skyscanner/backpack/blob/master/CONTRIBUTING.md"
             blank
           >
             contributing.md
