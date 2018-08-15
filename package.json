@@ -94,7 +94,7 @@
     "del": "^3.0.0",
     "detox": "^8.0.0",
     "enzyme": "^3.3.0",
-    "enzyme-adapter-react-15": "^1.0.5",
+    "enzyme-adapter-react-15": "^1.5.0",
     "enzyme-to-json": "^3.3.0",
     "eslint-config-skyscanner-with-prettier": "^0.2.2",
     "eslint-plugin-flowtype": "^2.41.0",
