@@ -2,6 +2,18 @@
 
 [Unreleased changes](./unreleased.md).
 
+# 2018-08-15 - Made breadcrumb more responsive
+
+**Added:**
+- bpk-component-calendar: 4.3.0 => 4.3.1
+  - Expose `gridClassName` for composed calendars.
+  - `changeMonthLabel` is now only required iff a Nav component is being used.
+
+**Fixed:**
+- bpk-component-breadcrumb: 1.0.13 => 1.0.14
+  - Container now wraps  on smaller screens
+
+
 # 2018-08-09 - Changes to the Infinite scroll component and Calendar.
 
 **Added:**
