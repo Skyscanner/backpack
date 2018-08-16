@@ -22,9 +22,16 @@ import React from 'react';
 import { cssModules } from 'bpk-react-utils';
 import { DateUtils, BpkCalendarGridPropTypes } from 'bpk-component-calendar';
 import { startOfDay, startOfMonth } from 'date-fns';
+import {
+  AutoSizer,
+  List,
+  CellMeasurer,
+  CellMeasurerCache,
+} from 'react-virtualized';
 
 import STYLES from './bpk-scrollable-calendar-grid-list.scss';
 import BpkScrollableCalendarGrid from './BpkScrollableCalendarGrid';
+import getMonthsArray from './utils';
 
 const getClassName = cssModules(STYLES);
 
@@ -51,20 +58,57 @@ const BpkScrollableCalendarGridList = props => {
   const monthsCount = DateUtils.differenceInCalendarMonths(endDate, startDate);
   const months = getMonthsArray(startDate, monthsCount);
 
-  return (
-    <div className={classNames}>
-      <div className={getClassName('bpk-scrollable-calendar-grid-list__strip')}>
-        {months.map((month, index) => (
+  const cache = new CellMeasurerCache({
+    fixedWidth: true,
+    defaultHeight: 276, // most common height (in px) of BpkScrollableCalendarGrid
+  });
+
+  /* eslint-disable react/prop-types */
+
+  function rowRenderer({ index, key, style, parent }) {
+    return (
+      <CellMeasurer
+        key={key}
+        cache={cache}
+        parent={parent}
+        columnIndex={0}
+        rowIndex={index}
+      >
+        <div style={style}>
           <BpkScrollableCalendarGrid
             {...props}
-            key={DateUtils.formatIsoMonth(month)}
-            month={month}
+            key={key}
+            month={months[index]}
             focusedDate={focusedDate}
             preventKeyboardFocus={rest.preventKeyboardFocus}
             aria-hidden={index !== 1}
             className={getClassName('bpk-scrollable-calendar-grid-list__item')}
           />
-        ))}
+        </div>
+      </CellMeasurer>
+    );
+  }
+
+  function renderList({ width, height }) {
+    return (
+      <List
+        width={width}
+        height={height}
+        deferredMeasurementCache={cache}
+        rowHeight={cache.rowHeight}
+        rowRenderer={rowRenderer}
+        rowCount={months.length}
+        overscanRowCount={1}
+      />
+    );
+  }
+
+  /* eslint-enable react/prop-types */
+
+  return (
+    <div className={classNames}>
+      <div className={getClassName('bpk-scrollable-calendar-grid-list__strip')}>
+        <AutoSizer>{(width, height) => renderList(width, height)}</AutoSizer>{' '}
       </div>
     </div>
   );
