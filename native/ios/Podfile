@@ -1,7 +1,6 @@
 platform :ios, '9.0'
 
 target 'Backpack Native' do
-  pod 'Backpack2', path: '../packages/react-native-backpack'
 
   # Your 'node_modules' directory is probably in the root of your project,
   # but if not, adjust the `:path` accordingly

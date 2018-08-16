@@ -21,7 +21,6 @@
 #import <React/RCTBundleURLProvider.h>
 #import <React/RCTRootView.h>
 #import <React/RCTI18nUtil.h>
-#import <Backpack2/Panel.h>
 
 @implementation AppDelegate
 
