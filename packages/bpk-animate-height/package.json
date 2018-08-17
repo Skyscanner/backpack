@@ -13,7 +13,7 @@
     "react": "^15.0.0 || ^16.0.0"
   },
   "dependencies": {
-    "prop-types": "^15.5.8"
+    "prop-types": "^15.6.2"
   },
   "devDependencies": {
     "bpk-component-button": "^2.1.13",

@@ -17,7 +17,7 @@
     "bpk-component-label": "^3.2.81",
     "bpk-mixins": "^17.11.8",
     "bpk-react-utils": "^2.6.4",
-    "prop-types": "^15.5.8"
+    "prop-types": "^15.6.2"
   },
   "devDependencies": {
     "bpk-component-checkbox": "^1.4.40",
