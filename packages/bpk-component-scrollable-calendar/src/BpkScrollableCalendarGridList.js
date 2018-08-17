@@ -28,6 +28,16 @@ import BpkScrollableCalendarGrid from './BpkScrollableCalendarGrid';
 
 const getClassName = cssModules(STYLES);
 
+const getMonthsArray = (startDate, count) => {
+  const months = [];
+
+  for (let i = 0; i < count + 1; i += 1) {
+    months.push(DateUtils.addMonths(startDate, i));
+  }
+
+  return months;
+};
+
 const BpkScrollableCalendarGridList = props => {
   const { className, minDate, maxDate, focusedDate, ...rest } = props;
 
@@ -38,12 +48,8 @@ const BpkScrollableCalendarGridList = props => {
 
   const startDate = startOfDay(startOfMonth(minDate));
   const endDate = startOfDay(startOfMonth(maxDate));
-  const months = [
-    startDate,
-    ...Array.from(
-      Array(DateUtils.differenceInCalendarMonths(endDate, startDate)).keys(),
-    ).map(i => DateUtils.addMonths(startDate, i + 1)),
-  ];
+  const monthsCount = DateUtils.differenceInCalendarMonths(endDate, startDate);
+  const months = getMonthsArray(startDate, monthsCount);
 
   return (
     <div className={classNames}>

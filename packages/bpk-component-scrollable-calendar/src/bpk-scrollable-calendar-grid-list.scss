@@ -29,7 +29,6 @@ $calendar-height: 7 * ($bpk-calendar-day-size + $bpk-calendar-day-spacing);
   box-sizing: border-box;
 
   &__strip {
-    display: flex;
     z-index: 0;
     height: $calendar-height;
     flex-direction: column;
