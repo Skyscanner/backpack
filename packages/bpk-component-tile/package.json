@@ -16,7 +16,7 @@
   "dependencies": {
     "bpk-component-icon": "^3.22.8",
     "bpk-mixins": "^17.11.8",
-    "prop-types": "^15.5.8"
+    "prop-types": "^15.6.2"
   },
   "devDependencies": {
     "bpk-react-utils": "^2.6.4"

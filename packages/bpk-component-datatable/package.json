@@ -17,7 +17,7 @@
     "bpk-mixins": "^17.11.8",
     "bpk-react-utils": "^2.6.4",
     "lodash": "^4.17.4",
-    "prop-types": "^15.5.8",
+    "prop-types": "^15.6.2",
     "react-virtualized": "^9.10.1"
   },
   "devDependencies": {
