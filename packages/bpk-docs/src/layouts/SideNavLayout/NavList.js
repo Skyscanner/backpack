@@ -18,7 +18,7 @@
 /* @flow */
 
 import React, { Component } from 'react';
-import { Link } from 'react-router';
+import { NavLink as RouterNavLink } from 'react-router-dom';
 import { cssModules } from 'bpk-react-utils';
 import ArrowIcon from 'bpk-component-icon/sm/arrow-right';
 import { withRtlSupport } from 'bpk-component-icon';
@@ -40,7 +40,7 @@ const NavLink = (props: LinkPropType) => {
 
   if (route) {
     return (
-      <Link
+      <RouterNavLink
         className={getClassName('bpkdocs-side-nav-list__link')}
         activeClassName={getClassName('bpkdocs-side-nav-list__link--active')}
         to={route}
@@ -50,7 +50,7 @@ const NavLink = (props: LinkPropType) => {
           className={getClassName('bpkdocs-side-nav-list__link-active-icon')}
         />
         {children}
-      </Link>
+      </RouterNavLink>
     );
   }
 

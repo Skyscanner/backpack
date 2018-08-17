@@ -20,7 +20,6 @@ export const HOME = '/';
 
 // TOP LEVEL
 export const USING_BACKPACK = '/using';
-export const STYLE = '/style';
 export const TOKENS = '/tokens';
 export const STYLE_GUIDE = '/style-guide';
 

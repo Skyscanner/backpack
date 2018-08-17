@@ -17,13 +17,7 @@
  */
 
 import React from 'react';
-import {
-  Route,
-  IndexRoute,
-  IndexRedirect,
-  Redirect,
-  withRouter,
-} from 'react-router';
+import { Route, Redirect, Switch } from 'react-router-dom';
 
 import * as ROUTES from '../constants/routes';
 import redirects from '../constants/redirect-routes';
@@ -31,8 +25,8 @@ import redirects from '../constants/redirect-routes';
 import DefaultLayout from '../layouts/DefaultLayout';
 import UsingLayout from '../layouts/UsingLayout';
 import TokensLayout from '../layouts/TokensLayout';
-import DocsLayout from '../layouts/DocsLayout';
 import StyleGuideLayout from '../layouts/StyleGuideLayout';
+import DocsLayout from '../layouts/DocsLayout';
 
 import HomePage from '../pages/HomePage';
 
@@ -41,8 +35,6 @@ import BackpackReactScriptsPage from '../pages/BackpackReactScriptsPage';
 import BaseStylesheetPage from '../pages/BaseStylesheetPage';
 import ContributingPage from '../pages/ContributingPage';
 import PrinciplesPage from '../pages/PrinciplesPage';
-
-import StylePage from '../pages/StylePage';
 
 import ColorsPage from '../pages/ColorsPage';
 import TypesettingPage from '../pages/TypesettingPage';
@@ -87,10 +79,8 @@ import MapPage from '../pages/MapPage';
 import InfiniteScrollPage from '../pages/InfiniteScrollPage';
 import MobileScrollContainerPage from '../pages/MobileScrollContainerPage';
 import ModalsPage from '../pages/ModalsPage';
-import NativeButtonLinkPage from '../pages/NativeButtonLinkPage';
 import NativeFlatListPage from '../pages/NativeFlatListPage';
 import NativeInputPage from '../pages/NativeTextInputPage';
-import NativePaginationDotsPage from '../pages/NativePaginationDotsPage';
 import NativePickerPage from '../pages/NativePickerPage';
 import NativeSelectPage from '../pages/NativeSelectPage';
 import NativeSwitchPage from '../pages/NativeSwitchPage';
@@ -117,130 +107,161 @@ import TooltipsPage from '../pages/TooltipsPage';
 
 import { GridColumnDemoPage, GridOffsetDemoPage } from '../pages/GridDemoPages';
 
-// eslint-disable-next-line import/no-webpack-loader-syntax
-const iconsSvgs = require('!!file-loader?name=[name].[hash].zip!zip-it-loader!./../../../bpk-svgs/src/icons/icons');
+const Routes = () => (
+  <DefaultLayout>
+    <Switch>
+      <Route exact path={ROUTES.HOME} component={HomePage} />
 
-const Routes = (
-  <Route path={ROUTES.HOME} component={DefaultLayout}>
-    <IndexRoute component={withRouter(HomePage)} />
+      <Route path={ROUTES.USING_BACKPACK}>
+        <UsingLayout>
+          <Switch>
+            <Redirect
+              exact
+              from={ROUTES.USING_BACKPACK}
+              to={ROUTES.GETTING_STARTED}
+            />
+            <Route
+              path={ROUTES.GETTING_STARTED}
+              component={GettingStartedPage}
+            />
+            <Route
+              path={ROUTES.BACKPACK_REACT_SCRIPTS}
+              component={BackpackReactScriptsPage}
+            />
+            <Route
+              path={ROUTES.BASE_STYLESHEET}
+              component={BaseStylesheetPage}
+            />
+            <Route path={ROUTES.CONTRIBUTING} component={ContributingPage} />
+            <Route path={ROUTES.PRINCIPLES} component={PrinciplesPage} />
+          </Switch>
+        </UsingLayout>
+      </Route>
 
-    <Route path={ROUTES.USING_BACKPACK} component={UsingLayout}>
-      <IndexRedirect to={ROUTES.GETTING_STARTED} />
-      <Route path={ROUTES.GETTING_STARTED} component={GettingStartedPage} />
-      <Route
-        path={ROUTES.BACKPACK_REACT_SCRIPTS}
-        component={BackpackReactScriptsPage}
-      />
-      <Route path={ROUTES.BASE_STYLESHEET} component={BaseStylesheetPage} />
-      <Route path={ROUTES.CONTRIBUTING} component={ContributingPage} />
-      <Route path={ROUTES.PRINCIPLES} component={PrinciplesPage} />
-    </Route>
+      <Route path={ROUTES.TOKENS}>
+        <TokensLayout>
+          <Switch>
+            <Redirect exact from={ROUTES.TOKENS} to={ROUTES.ANIMATION} />
+            <Route path={ROUTES.ANIMATION} component={AnimationPage} />
+            <Route path={ROUTES.BORDERS} component={BordersPage} />
+            <Route path={ROUTES.COLORS} component={ColorsPage} />
+            <Route path={ROUTES.SPACINGS} component={SpacingsPage} />
+            <Route path={ROUTES.RADII} component={RadiiPage} />
+            <Route path={ROUTES.SHADOWS} component={ShadowsPage} />
+            <Route path={ROUTES.TYPESETTING} component={TypesettingPage} />
+            <Route path={ROUTES.Z_INDEXES} component={ZIndexesPage} />
+          </Switch>
+        </TokensLayout>
+      </Route>
 
-    <Route path={ROUTES.STYLE} component={StylePage} iconsSvgs={iconsSvgs} />
+      <Route path={ROUTES.STYLE_GUIDE}>
+        <StyleGuideLayout>
+          <Switch>
+            <Redirect exact from={ROUTES.STYLE_GUIDE} to={ROUTES.COPYWRITING} />
+            <Route path={ROUTES.COPYWRITING} component={CopywritingPage} />
+          </Switch>
+        </StyleGuideLayout>
+      </Route>
 
-    <Route path={ROUTES.TOKENS} component={TokensLayout}>
-      <IndexRedirect to={ROUTES.ANIMATION} />
-      <Route path={ROUTES.ANIMATION} component={AnimationPage} />
-      <Route path={ROUTES.BORDERS} component={BordersPage} />
-      <Route path={ROUTES.COLORS} component={ColorsPage} />
-      <Route path={ROUTES.SPACINGS} component={SpacingsPage} />
-      <Route path={ROUTES.RADII} component={RadiiPage} />
-      <Route path={ROUTES.SHADOWS} component={ShadowsPage} />
-      <Route path={ROUTES.TYPESETTING} component={TypesettingPage} />
-      <Route path={ROUTES.Z_INDEXES} component={ZIndexesPage} />
-    </Route>
-
-    <Route path={ROUTES.STYLE_GUIDE} component={StyleGuideLayout}>
-      <IndexRedirect to={ROUTES.COPYWRITING} component={CopywritingPage} />
-      <Route path={ROUTES.COPYWRITING} component={CopywritingPage} />
-    </Route>
-
-    <Route path={ROUTES.COMPONENTS} component={DocsLayout}>
-      <IndexRedirect to={ROUTES.ACCORDION} />
-      <Route path={ROUTES.TEXT} component={TextPage} />
-      <Route path={ROUTES.LINK} component={LinkPage} />
-      <Route path={ROUTES.LIST} component={ListsPage} />
-      <Route path={ROUTES.DESCRIPTION_LIST} component={DescriptionListsPage} />
-      <Route path={ROUTES.TABLE} component={TablesPage} />
-      <Route path={ROUTES.BLOCKQUOTE} component={BlockquotesPage} />
-      <Route path={ROUTES.CODE} component={CodePage} />
-      <Route path={ROUTES.BUTTON} component={ButtonPage} />
-      <Route path={ROUTES.BUTTON_LINK} component={NativeButtonLinkPage} />
-      <Route path={ROUTES.ICON} component={IconPage} />
-      <Route path={ROUTES.SPINNER} component={SpinnerPage} />
-      <Route path={ROUTES.FORM} component={FormsPage} />
-      <Route path={ROUTES.CARD} component={CardPage} />
-      <Route path={ROUTES.CHIP} component={ChipsPage} />
-      <Route path={ROUTES.BADGE} component={BadgePage} />
-      <Route path={ROUTES.PANEL} component={PanelPage} />
-      <Route path={ROUTES.IMAGE} component={ImagesPage} />
-      <Route path={ROUTES.BANNER_ALERT} component={BannerAlertPage} />
-      <Route
-        path={ROUTES.MOBILE_SCROLL_CONTAINER}
-        component={MobileScrollContainerPage}
-      />
-      <Route path={ROUTES.MODAL} component={ModalsPage} />
-      <Route path={ROUTES.AUTOSUGGEST} component={AutosuggestPage} />
-      <Route path={ROUTES.POPOVER} component={PopoversPage} />
-      <Route path={ROUTES.CALENDAR} component={CalendarPage} />
-      <Route path={ROUTES.DATEPICKER} component={DatepickerPage} />
-      <Route path={ROUTES.TOOLTIP} component={TooltipsPage} />
-      <Route path={ROUTES.ACCORDION} component={AccordionsPage} />
-      <Route path={ROUTES.NUDGER} component={NudgerPage} />
-      <Route path={ROUTES.PROGRESS} component={ProgressPage} />
-      <Route path={ROUTES.TICKET} component={TicketsPage} />
-      <Route path={ROUTES.HORIZONTAL_NAV} component={HorizontalNavPage} />
-      <Route path={ROUTES.FIELDSET} component={FieldsetsPage} />
-      <Route path={ROUTES.BARCHART} component={BarchartsPage} />
-      <Route path={ROUTES.PAGINATION} component={PaginationPage} />
-      <Route path={ROUTES.STAR_RATING} component={StarRatingPage} />
-      <Route path={ROUTES.BREAKPOINT} component={BreakpointsPage} />
-      <Route path={ROUTES.HORIZONTAL_GRID} component={HorizontalGridPage} />
-      <Route path={ROUTES.SLIDER} component={SlidersPage} />
-      <Route path={ROUTES.DRAWER} component={DrawerPage} />
-      <Route path={ROUTES.DIALOG} component={DialogsPage} />
-      <Route path={ROUTES.INPUT} component={NativeInputPage} />
-      <Route path={ROUTES.FLAT_LIST} component={NativeFlatListPage} />
-      <Route path={ROUTES.NAVIGATION_BAR} component={NavigationBarPage} />
-      <Route path={ROUTES.NAVIGATION_STACK} component={NavigationStackPage} />
-      <Route
-        path={ROUTES.PAGINATION_DOT}
-        component={NativePaginationDotsPage}
-      />
-      <Route path={ROUTES.TEXT_INPUT} component={NativeInputPage} />
-      <Route path={ROUTES.PHONE_INPUT} component={PhoneInputPage} />
-      <Route path={ROUTES.PICKER} component={NativePickerPage} />
-      <Route path={ROUTES.SELECT} component={NativeSelectPage} />
-      <Route path={ROUTES.SWITCH} component={NativeSwitchPage} />
-      <Route
-        path={ROUTES.SCROLLABLE_CALENDAR}
-        component={ScrollableCalendarPage}
-      />
-      <Route path={ROUTES.SECTION_LIST} component={SectionListPage} />
-      <Route path={ROUTES.MAP} component={MapPage} />
-      <Route path={ROUTES.INFINITE_SCROLL} component={InfiniteScrollPage} />
-      <Route path={ROUTES.CAROUSEL} component={CarouselPage} />
-      <Route
-        path={ROUTES.TOUCHABLE_OVERLAY}
-        component={NativeTouchableOverlayPage}
-      />
-      <Route
-        path={ROUTES.TOUCHABLE_NATIVE_FEEDBACK}
-        component={NativeTouchableNativeFeedbackPage}
-      />
-      <Route path={ROUTES.ALIGNMENT} component={AlignmentPage} />
-      <Route path={ROUTES.THEMING} component={ThemingPage} />
-      <Route path={ROUTES.ALERT} component={AlertPage} />
-      <Route path={ROUTES.BREADCRUMB} component={BreadcrumbPage} />
-    </Route>
+      <Route path={ROUTES.COMPONENTS}>
+        <DocsLayout>
+          <Switch>
+            <Redirect exact from={ROUTES.COMPONENTS} to={ROUTES.ACCORDION} />
+            <Route path={ROUTES.ACCORDION} component={AccordionsPage} />
+            <Route path={ROUTES.ALERT} component={AlertPage} />
+            <Route path={ROUTES.ALIGNMENT} component={AlignmentPage} />
+            <Route path={ROUTES.AUTOSUGGEST} component={AutosuggestPage} />
+            <Route path={ROUTES.BADGE} component={BadgePage} />
+            <Route path={ROUTES.BANNER_ALERT} component={BannerAlertPage} />
+            <Route path={ROUTES.BARCHART} component={BarchartsPage} />
+            <Route path={ROUTES.BLOCKQUOTE} component={BlockquotesPage} />
+            <Route path={ROUTES.BREADCRUMB} component={BreadcrumbPage} />
+            <Route path={ROUTES.BREAKPOINT} component={BreakpointsPage} />
+            <Route path={ROUTES.BUTTON} component={ButtonPage} />
+            <Route path={ROUTES.CALENDAR} component={CalendarPage} />
+            <Route path={ROUTES.CARD} component={CardPage} />
+            <Route path={ROUTES.CAROUSEL} component={CarouselPage} />
+            <Route path={ROUTES.CHIP} component={ChipsPage} />
+            <Route path={ROUTES.CODE} component={CodePage} />
+            <Route path={ROUTES.DATEPICKER} component={DatepickerPage} />
+            <Route
+              path={ROUTES.DESCRIPTION_LIST}
+              component={DescriptionListsPage}
+            />
+            <Route path={ROUTES.DIALOG} component={DialogsPage} />
+            <Route path={ROUTES.DRAWER} component={DrawerPage} />
+            <Route path={ROUTES.FIELDSET} component={FieldsetsPage} />
+            <Route path={ROUTES.FLAT_LIST} component={NativeFlatListPage} />
+            <Route path={ROUTES.FORM} component={FormsPage} />
+            <Route
+              path={ROUTES.HORIZONTAL_GRID}
+              component={HorizontalGridPage}
+            />
+            <Route path={ROUTES.HORIZONTAL_NAV} component={HorizontalNavPage} />
+            <Route path={ROUTES.ICON} component={IconPage} />
+            <Route path={ROUTES.IMAGE} component={ImagesPage} />
+            <Route
+              path={ROUTES.INFINITE_SCROLL}
+              component={InfiniteScrollPage}
+            />
+            <Route path={ROUTES.LINK} component={LinkPage} />
+            <Route path={ROUTES.LIST} component={ListsPage} />
+            <Route path={ROUTES.MAP} component={MapPage} />
+            <Route
+              path={ROUTES.MOBILE_SCROLL_CONTAINER}
+              component={MobileScrollContainerPage}
+            />
+            <Route path={ROUTES.MODAL} component={ModalsPage} />
+            <Route path={ROUTES.NAVIGATION_BAR} component={NavigationBarPage} />
+            <Route
+              path={ROUTES.NAVIGATION_STACK}
+              component={NavigationStackPage}
+            />
+            <Route path={ROUTES.NUDGER} component={NudgerPage} />
+            <Route path={ROUTES.PAGINATION} component={PaginationPage} />
+            <Route path={ROUTES.PANEL} component={PanelPage} />
+            <Route path={ROUTES.PHONE_INPUT} component={PhoneInputPage} />
+            <Route path={ROUTES.PICKER} component={NativePickerPage} />
+            <Route path={ROUTES.POPOVER} component={PopoversPage} />
+            <Route path={ROUTES.PROGRESS} component={ProgressPage} />
+            <Route
+              path={ROUTES.SCROLLABLE_CALENDAR}
+              component={ScrollableCalendarPage}
+            />
+            <Route path={ROUTES.SECTION_LIST} component={SectionListPage} />
+            <Route path={ROUTES.SELECT} component={NativeSelectPage} />
+            <Route path={ROUTES.SLIDER} component={SlidersPage} />
+            <Route path={ROUTES.SPINNER} component={SpinnerPage} />
+            <Route path={ROUTES.STAR_RATING} component={StarRatingPage} />
+            <Route path={ROUTES.SWITCH} component={NativeSwitchPage} />
+            <Route path={ROUTES.TABLE} component={TablesPage} />
+            <Route path={ROUTES.TEXT} component={TextPage} />
+            <Route path={ROUTES.TEXT_INPUT} component={NativeInputPage} />
+            <Route path={ROUTES.THEMING} component={ThemingPage} />
+            <Route path={ROUTES.TICKET} component={TicketsPage} />
+            <Route path={ROUTES.TOOLTIP} component={TooltipsPage} />
+            <Route
+              path={ROUTES.TOUCHABLE_NATIVE_FEEDBACK}
+              component={NativeTouchableNativeFeedbackPage}
+            />
+            <Route
+              path={ROUTES.TOUCHABLE_OVERLAY}
+              component={NativeTouchableOverlayPage}
+            />
+          </Switch>
+        </DocsLayout>
+      </Route>
+    </Switch>
 
     <Route path={ROUTES.GRID_COLUMN_DEMO} component={GridColumnDemoPage} />
     <Route path={ROUTES.GRID_OFFSET_DEMO} component={GridOffsetDemoPage} />
 
-    {Object.keys(redirects).map(from => (
-      <Redirect key={from} from={from} to={redirects[from]} />
-    ))}
-  </Route>
+    <Switch>
+      {Object.keys(redirects).map(from => (
+        <Redirect key={from} exact from={from} to={redirects[from]} />
+      ))}
+    </Switch>
+  </DefaultLayout>
 );
 
 export default Routes;

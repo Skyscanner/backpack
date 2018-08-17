@@ -22,7 +22,6 @@ import React from 'react';
 import { updateOnThemeChange } from 'bpk-component-theme-toggle';
 import BpkThemeProvider from 'bpk-theming';
 
-import { PropTypes as RouterPropTypes } from 'react-router';
 import { cssModules } from 'bpk-react-utils';
 
 import themeAttributes from '../../themeableAttributes';
@@ -52,11 +51,7 @@ const DefaultLayout = props => {
 };
 
 DefaultLayout.propTypes = {
-  children: PropTypes.oneOfType([
-    PropTypes.arrayOf(PropTypes.node),
-    PropTypes.node,
-  ]).isRequired,
-  location: PropTypes.shape(RouterPropTypes.locationShape).isRequired, // eslint-disable-line react/no-unused-prop-types
+  children: PropTypes.node.isRequired,
 };
 
 export default DefaultLayout;

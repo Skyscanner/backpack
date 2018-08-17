@@ -17,67 +17,66 @@
  */
 
 import React from 'react';
+import 'bpk-stylesheets/base';
 import ReactDOM from 'react-dom';
-import Helmet from 'react-helmet';
-import ReactDOMServer from 'react-dom/server';
-import {
-  Router,
-  RouterContext,
-  match,
-  browserHistory,
-  createMemoryHistory,
-} from 'react-router';
-import 'es6-promise/auto';
+import 'bpk-stylesheets/base.css';
+// import Helmet from 'react-helmet';
+// import ReactDOMServer from 'react-dom/server';
+import { BrowserRouter } from 'react-router-dom';
 
-import routes from './routes';
-import template from './template';
-import { extractAssets } from './webpackStats';
+import Routes from './routes';
+// import template from './template';
+// import { extractAssets } from './webpackStats';
 
 if (typeof window !== 'undefined' && typeof document !== 'undefined') {
   const root = document.getElementById('react-mount');
 
   ReactDOM.render(
-    React.createElement(Router, {
-      history: browserHistory,
-      onUpdate: () => {
-        if (`${window.location}`.indexOf('#') === -1) {
-          window.scrollTo(0, 0);
-        }
-      },
-      routes,
-    }),
+    <BrowserRouter>
+      <div>
+        <Routes />
+      </div>
+    </BrowserRouter>,
+    // React.createElement(BrowserHistory, {
+    //   onUpdate: () => {
+    //     if (`${window.location}`.indexOf('#') === -1) {
+    //       window.scrollTo(0, 0);
+    //     }
+    //   },
+    //   routes,
+    // }),
     root,
   );
 }
 
-export default (locals, callback) => {
-  const history = createMemoryHistory();
-  const location = history.createLocation(locals.path);
-  const assets = extractAssets(locals.webpackStats);
+// export default (locals, callback) => {
+//   const history = createMemoryHistory();
+//   const location = history.createLocation(locals.path);
+//   const assets = extractAssets(locals.webpackStats);
 
-  match({ routes, location, history }, (error, redirectLocation, props) => {
-    // Explicit check for null here due to odd behaviour with react router's match function
-    // It passes undefined in cases where matches are not found.
-    // So we use their error object if it is truthy, otherwise we create our own.
-    if (error !== null) {
-      return callback(
-        error ||
-          new Error(`React Router failed to match ${JSON.stringify(location)}`),
-      );
-    }
+//   match({ routes, location, history }, (error, redirectLocation, props) => {
+//     // Explicit check for null here due to odd behaviour with react router's match function
+//     // It passes undefined in cases where matches are not found.
+//     // So we use their error object if it is truthy, otherwise we create our own.
+//     if (error !== null) {
+//       return callback(
+//         error ||
+//           new Error(`React Router failed to match ${JSON.stringify(location)}`),
+//       );
+//     }
 
-    if (redirectLocation) {
-      return callback(
-        error,
-        `<script>window.location = '${redirectLocation.pathname}';</script>`,
-      );
-    }
+//     if (redirectLocation) {
+//       return callback(
+//         error,
+//         `<script>window.location = '${redirectLocation.pathname}';</script>`,
+//       );
+//     }
 
-    const html = ReactDOMServer.renderToStaticMarkup(
-      React.createElement(RouterContext, props),
-    );
-    const head = Helmet.rewind();
+//     const html = ReactDOMServer.renderToStaticMarkup(
+//       React.createElement(RouterContext, props),
+//     );
+//     const head = Helmet.rewind();
 
-    return callback(error, template({ head, html, assets }));
-  });
-};
+//     return callback(error, template({ head, html, assets }));
+//   });
+// };

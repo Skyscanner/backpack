@@ -18,8 +18,7 @@
 
 import PropTypes from 'prop-types';
 import React from 'react';
-import { withRouter } from 'react-router';
-import { find } from 'lodash';
+import { withRouter, Switch, Redirect, Route } from 'react-router-dom';
 import BpkContentContainer from 'bpk-component-content-container';
 import BpkHorizontalNav, {
   BpkHorizontalNavItem,
@@ -38,109 +37,116 @@ const getClassName = cssModules(STYLES);
 const AlignedBpkSmallMobileIcon = withButtonAlignment(BpkSmallMobileIcon);
 const AlignedBpkSmallWindowIcon = withButtonAlignment(BpkSmallWindowIcon);
 
-const childrenPropType = PropTypes.oneOfType([
-  PropTypes.arrayOf(PropTypes.node),
-  PropTypes.node,
-]);
+const contentShape = PropTypes.oneOfType([PropTypes.string, PropTypes.node]);
 
-const contentShape = PropTypes.oneOfType([PropTypes.string, childrenPropType]);
+const PlatformNav = ({
+  platform,
+  onNativeClick,
+  onWebClick,
+  disableNativeTab,
+  disableWebTab,
+}) => (
+  <BpkHorizontalNav
+    className={getClassName('bpkdocs-page-wrapper__platform-switcher')}
+  >
+    <BpkHorizontalNavItem
+      name="native"
+      disabled={disableNativeTab}
+      selected={platform === 'native'}
+      onClick={onNativeClick}
+    >
+      <AlignedBpkSmallMobileIcon
+        className={getClassName('bpkdocs-page-wrapper__platform-icon')}
+      />
+      Native
+    </BpkHorizontalNavItem>
+    <BpkHorizontalNavItem
+      name="web"
+      disabled={disableWebTab}
+      selected={platform === 'web'}
+      onClick={onWebClick}
+    >
+      <AlignedBpkSmallWindowIcon
+        className={getClassName('bpkdocs-page-wrapper__platform-icon')}
+      />
+      Web
+    </BpkHorizontalNavItem>
+  </BpkHorizontalNav>
+);
 
-class DocsPageWrapper extends React.Component {
-  static propTypes = {
-    title: PropTypes.string.isRequired,
-    router: PropTypes.shape({
-      isActive: PropTypes.func,
-      replace: PropTypes.func,
-      push: PropTypes.func,
-    }).isRequired,
-    blurb: contentShape,
-    webSubpage: PropTypes.element,
-    nativeSubpage: PropTypes.element,
-  };
+PlatformNav.propTypes = {
+  platform: PropTypes.oneOf(['web', 'native']).isRequired,
+  onNativeClick: PropTypes.func.isRequired,
+  onWebClick: PropTypes.func.isRequired,
+  disableNativeTab: PropTypes.bool.isRequired,
+  disableWebTab: PropTypes.bool.isRequired,
+};
 
-  static defaultProps = {
-    blurb: null,
-    webSubpage: null,
-    nativeSubpage: null,
-  };
+const DocsPageWrapper = props => {
+  const { blurb, nativeSubpage, title, webSubpage, match, history } = props;
 
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      selected: this.getSelectedSubpage(),
-    };
-  }
-
-  componentWillMount = () => {
-    const { router } = this.props;
-    const activePlatform = find(['native', 'web'], platform =>
-      router.isActive({ query: { platform } }),
-    );
-    if (activePlatform) {
-      this.setState({ selected: activePlatform });
-    } else if (typeof window !== 'undefined') {
-      this.props.router.replace({
-        pathname: window.location.pathname,
-        query: { platform: this.getSelectedSubpage() },
-      });
-    }
-  };
-
-  onClick = selected => {
-    this.props.router.push({
-      pathname: window.location.pathname,
-      query: { platform: selected },
-    });
-    this.setState({ selected });
-  };
-
-  getSelectedSubpage = () => (this.props.nativeSubpage ? 'native' : 'web');
-
-  render() {
-    const { blurb, nativeSubpage, title, webSubpage } = this.props;
-
-    return (
-      <BpkContentContainer className={getClassName('bpkdocs-page-wrapper')}>
-        <div className={getClassName('bpkdocs-page-wrapper__inner')}>
-          <Heading level="h1">{title}</Heading>
-          {blurb && <Blurb content={blurb} />}
-        </div>
-        <div>
-          <BpkHorizontalNav
-            className={getClassName('bpkdocs-page-wrapper__platform-switcher')}
-          >
-            <BpkHorizontalNavItem
-              name="native"
-              disabled={!nativeSubpage}
-              selected={this.state.selected === 'native'}
-              onClick={() => this.onClick('native')}
-            >
-              <AlignedBpkSmallMobileIcon
-                className={getClassName('bpkdocs-page-wrapper__platform-icon')}
+  return (
+    <BpkContentContainer className={getClassName('bpkdocs-page-wrapper')}>
+      <div className={getClassName('bpkdocs-page-wrapper__inner')}>
+        <Heading level="h1">{title}</Heading>
+        {blurb && <Blurb content={blurb} />}
+      </div>
+      <Switch>
+        <Redirect
+          exact
+          from={match.path}
+          to={`${match.path}/${nativeSubpage ? 'native' : 'web'}`}
+        />
+        {nativeSubpage && (
+          <Route path={`${match.path}/native`}>
+            <div>
+              <PlatformNav
+                platform="native"
+                onNativeClick={() => history.push(`${match.path}/native`)}
+                onWebClick={() => history.push(`${match.path}/web`)}
+                disableNativeTab={!nativeSubpage}
+                disableWebTab={!webSubpage}
               />
-              Native
-            </BpkHorizontalNavItem>
-            <BpkHorizontalNavItem
-              name="web"
-              disabled={!webSubpage}
-              selected={this.state.selected === 'web'}
-              onClick={() => this.onClick('web')}
-            >
-              <AlignedBpkSmallWindowIcon
-                className={getClassName('bpkdocs-page-wrapper__platform-icon')}
+              {nativeSubpage}
+            </div>
+          </Route>
+        )}
+        {webSubpage && (
+          <Route path={`${match.path}/web`}>
+            <div>
+              <PlatformNav
+                platform="web"
+                onNativeClick={() => history.push(`${match.path}/native`)}
+                onWebClick={() => history.push(`${match.path}/web`)}
+                disableNativeTab={!nativeSubpage}
+                disableWebTab={!webSubpage}
               />
-              Web
-            </BpkHorizontalNavItem>
-          </BpkHorizontalNav>
-          <div>
-            {this.state.selected === 'native' && nativeSubpage}
-            {this.state.selected === 'web' && webSubpage}
-          </div>
-        </div>
-      </BpkContentContainer>
-    );
-  }
-}
+              {webSubpage}
+            </div>
+          </Route>
+        )}
+      </Switch>
+    </BpkContentContainer>
+  );
+};
+
+DocsPageWrapper.propTypes = {
+  title: PropTypes.string.isRequired,
+  match: PropTypes.shape({
+    path: PropTypes.string.isRequired,
+  }).isRequired,
+  history: PropTypes.shape({
+    push: PropTypes.func.isRequired,
+  }).isRequired,
+  blurb: contentShape,
+  webSubpage: PropTypes.element,
+  nativeSubpage: PropTypes.element,
+};
+
+DocsPageWrapper.defaultProps = {
+  blurb: null,
+  webSubpage: null,
+  nativeSubpage: null,
+};
 
 export default withRouter(DocsPageWrapper);

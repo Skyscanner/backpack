@@ -18,7 +18,7 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import { IndexLink, withRouter } from 'react-router';
+import { Link, withRouter } from 'react-router-dom';
 
 import AnimateHeight from 'bpk-animate-height';
 import BpkHorizontalNav, {
@@ -93,14 +93,14 @@ const Header = props => {
   return (
     <header className={getClassName('bpkdocs-header')}>
       <div className={getClassName('bpkdocs-header__wrapper')}>
-        <IndexLink
+        <Link
           to={ROUTES.HOME}
           className={getClassName('bpkdocs-header__logo-link')}
         >
           <span className={getClassName('bpkdocs-header__logo-link-text')}>
             Backpack
           </span>
-        </IndexLink>
+        </Link>
         <nav className={getClassName('bpkdocs-header__hamburger-container')}>
           <HamburgerButton
             expanded={expanded}

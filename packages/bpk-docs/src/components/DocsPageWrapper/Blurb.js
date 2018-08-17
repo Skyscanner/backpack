@@ -29,7 +29,9 @@ const Blurb = ({ content }) =>
   isString(content) ? (
     <Paragraph>{content}</Paragraph>
   ) : (
-    <div className={getClassName('bpkdocs-page-wrapper__blurb')}>{content}</div>
+    <div className={getClassName('bpkdocs-page-wrapper__blurb')}>
+      {React.Children.toArray(content)}
+    </div>
   );
 
 Blurb.propTypes = {
