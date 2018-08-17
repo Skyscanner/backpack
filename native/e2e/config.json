@@ -1,5 +1,0 @@
-{
-  "setupTestFrameworkScriptFile": "./init.js",
-  "roots": ["../..//native/packages/"],
-  "testRegex": ".*\\.e2e\\.js$"
-}
