@@ -7,7 +7,6 @@ exports[`BpkModal should render correctly in the given target if renderTarget is
   <div>
     <div
       class="bpk-scrim-content bpk-modal__container bpk-modal__container--full-screen-mobile"
-      data-reactroot=""
     >
       <div
         class="bpk-scrim"
@@ -29,9 +28,7 @@ exports[`BpkModal should render correctly in the given target if renderTarget is
           >
             Modal title
           </h2>
-          <!-- react-text: 6 -->
            
-          <!-- /react-text -->
           <button
             aria-label="Close"
             class="bpk-close-button bpk-modal__close-button"

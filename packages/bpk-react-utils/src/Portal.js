@@ -199,9 +199,9 @@ class Portal extends Component {
       this.portalElement.className = this.props.className;
     }
 
-    this.renderPortal();
-
-    this.props.onOpen(this.portalElement, this.getTargetElement());
+    this.renderPortal(() => {
+      this.props.onOpen(this.portalElement, this.getTargetElement());
+    });
   }
 
   close() {
@@ -241,7 +241,7 @@ class Portal extends Component {
     return supportsPassiveOption;
   }
 
-  renderPortal() {
+  renderPortal(cb = () => {}) {
     // If the `target` prop is null, it's fine that there is no targetElement
     // Otherwise, if a `target` is provided, we don't render if we cannot find the respective element
     const missesExpectedTarget = this.props.target && !this.getTargetElement();
@@ -255,8 +255,11 @@ class Portal extends Component {
           if (this.props.isOpen) {
             this.props.onRender(this.portalElement, this.getTargetElement());
           }
+          cb();
         },
       );
+    } else {
+      setImmediate(cb);
     }
   }
 
