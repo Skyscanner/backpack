@@ -1,6 +1,7 @@
 [ignore]
 .*/node_modules/jsonlint/.*
 .*/native/.*/node_modules/.*
+.*/node_modules/config-chain/test/broken.json
 
 [include]
 
