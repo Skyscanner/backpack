@@ -113,7 +113,7 @@
     "jest": "^21.2.1",
     "js-yaml": "^3.11.0",
     "json-loader": "^0.5.4",
-    "lerna": "^2.7.1",
+    "lerna": "^3.0.3",
     "lint-staged": "^7.0.2",
     "lodash": "^4.17.4",
     "marked": "^0.4.0",

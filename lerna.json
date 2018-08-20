@@ -1,16 +1,13 @@
 {
   "lerna": "2.4.0",
   "version": "independent",
-  "packages": [
-    "packages/*",
-    "native/packages/*"
-  ],
-  "commands": {
+  "packages": ["packages/*", "native/packages/*"],
+  "command": {
     "bootstrap": {
       "ignore": ["bpk-tether"]
     },
     "publish": {
-      "ignore": ["bpk-tether"],
+      "ignoreChanges": ["bpk-tether"],
       "allowBranch": "master"
     }
   }
