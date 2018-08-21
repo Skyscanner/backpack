@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "engines": {
-    "node": "^8.10.0",
+    "node": "^8.11.4",
     "npm": "^5.6.0"
   },
   "scripts": {
@@ -124,7 +124,6 @@
     "prompt": "^1.0.0",
     "prop-types": "^15.5.10",
     "punycode": "^2.1.0",
-    "puppeteer": "^1.5.0",
     "raw-loader": "^0.5.1",
     "react": "^15.4.1",
     "react-addons-test-utils": "^15.4.1",
