@@ -76,6 +76,7 @@ toSassdocLink.propTypes = {
 };
 
 const ComponentExample = (component, registerPlatformSwitchingContent) => {
+  // FIXME: we're getting a missing "key" warning from this component
   const heading = (
     <Heading id={component.id} level="h2">
       {component.title}

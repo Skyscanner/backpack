@@ -18,7 +18,7 @@
 
 import PropTypes from 'prop-types';
 import React from 'react';
-import { withRouter, Switch, Redirect, Route } from 'react-router-dom';
+import { withRouter, Redirect } from 'react-router-dom';
 import BpkContentContainer from 'bpk-component-content-container';
 import BpkHorizontalNav, {
   BpkHorizontalNavItem,
@@ -82,8 +82,33 @@ PlatformNav.propTypes = {
   disableWebTab: PropTypes.bool.isRequired,
 };
 
+const getBasePath = url => {
+  let normalized = url;
+  if (url.endsWith('/')) {
+    normalized = url.substring(0, url.length - 1);
+  }
+
+  const parts = normalized.split('/');
+  const lastPart = parts[parts.length - 1];
+  if (lastPart === 'native' || lastPart === 'web') {
+    parts.pop();
+  }
+  return parts.join('/');
+};
+
 const DocsPageWrapper = props => {
-  const { blurb, nativeSubpage, title, webSubpage, match, history } = props;
+  const {
+    blurb,
+    nativeSubpage,
+    title,
+    webSubpage,
+    match,
+    history,
+    location,
+  } = props;
+  const path = getBasePath(match.url);
+  // TODO: This is deprecated, we should eventually remove
+  const webQueryString = location.search.indexOf('platform=web') >= 0;
 
   return (
     <BpkContentContainer className={getClassName('bpkdocs-page-wrapper')}>
@@ -91,41 +116,39 @@ const DocsPageWrapper = props => {
         <Heading level="h1">{title}</Heading>
         {blurb && <Blurb content={blurb} />}
       </div>
-      <Switch>
+      {!match.params.platform && (
         <Redirect
           exact
-          from={match.path}
-          to={`${match.path}/${nativeSubpage ? 'native' : 'web'}`}
+          from={path}
+          to={`${path}/${webQueryString || !nativeSubpage ? 'web' : 'native'}`}
         />
-        {nativeSubpage && (
-          <Route path={`${match.path}/native`}>
-            <div>
-              <PlatformNav
-                platform="native"
-                onNativeClick={() => history.push(`${match.path}/native`)}
-                onWebClick={() => history.push(`${match.path}/web`)}
-                disableNativeTab={!nativeSubpage}
-                disableWebTab={!webSubpage}
-              />
-              {nativeSubpage}
-            </div>
-          </Route>
+      )}
+      {nativeSubpage &&
+        match.params.platform === 'native' && (
+          <div>
+            <PlatformNav
+              platform="native"
+              onNativeClick={() => history.push(`${path}/native`)}
+              onWebClick={() => history.push(`${path}/web`)}
+              disableNativeTab={!nativeSubpage}
+              disableWebTab={!webSubpage}
+            />
+            {nativeSubpage}
+          </div>
         )}
-        {webSubpage && (
-          <Route path={`${match.path}/web`}>
-            <div>
-              <PlatformNav
-                platform="web"
-                onNativeClick={() => history.push(`${match.path}/native`)}
-                onWebClick={() => history.push(`${match.path}/web`)}
-                disableNativeTab={!nativeSubpage}
-                disableWebTab={!webSubpage}
-              />
-              {webSubpage}
-            </div>
-          </Route>
+      {webSubpage &&
+        match.params.platform === 'web' && (
+          <div>
+            <PlatformNav
+              platform="web"
+              onNativeClick={() => history.push(`${path}/native`)}
+              onWebClick={() => history.push(`${path}/web`)}
+              disableNativeTab={!nativeSubpage}
+              disableWebTab={!webSubpage}
+            />
+            {webSubpage}
+          </div>
         )}
-      </Switch>
     </BpkContentContainer>
   );
 };
@@ -137,6 +160,9 @@ DocsPageWrapper.propTypes = {
   }).isRequired,
   history: PropTypes.shape({
     push: PropTypes.func.isRequired,
+  }).isRequired,
+  location: PropTypes.shape({
+    search: PropTypes.string.isRequired,
   }).isRequired,
   blurb: contentShape,
   webSubpage: PropTypes.element,

@@ -17,34 +17,46 @@
  */
 
 import React from 'react';
+import PropTypes from 'prop-types';
 import 'bpk-stylesheets/base';
 import ReactDOM from 'react-dom';
 import 'bpk-stylesheets/base.css';
 // import Helmet from 'react-helmet';
 // import ReactDOMServer from 'react-dom/server';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, withRouter } from 'react-router-dom';
 
 import Routes from './routes';
 // import template from './template';
 // import { extractAssets } from './webpackStats';
+
+const ScrollToTop = withRouter(
+  class extends React.Component {
+    static propTypes = {
+      children: PropTypes.node.isRequired,
+      location: PropTypes.object.isRequired, // eslint-disable-line
+    };
+
+    componentDidUpdate(prevProps) {
+      if (this.props.location !== prevProps.location) {
+        window.scrollTo(0, 0);
+      }
+    }
+
+    render() {
+      return this.props.children;
+    }
+  },
+);
 
 if (typeof window !== 'undefined' && typeof document !== 'undefined') {
   const root = document.getElementById('react-mount');
 
   ReactDOM.render(
     <BrowserRouter>
-      <div>
+      <ScrollToTop>
         <Routes />
-      </div>
+      </ScrollToTop>
     </BrowserRouter>,
-    // React.createElement(BrowserHistory, {
-    //   onUpdate: () => {
-    //     if (`${window.location}`.indexOf('#') === -1) {
-    //       window.scrollTo(0, 0);
-    //     }
-    //   },
-    //   routes,
-    // }),
     root,
   );
 }

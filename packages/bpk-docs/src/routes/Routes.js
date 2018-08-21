@@ -107,160 +107,238 @@ import TooltipsPage from '../pages/TooltipsPage';
 
 import { GridColumnDemoPage, GridOffsetDemoPage } from '../pages/GridDemoPages';
 
+const withPlatform = route => `${route}/:platform(native|web)?`;
+
+const ROUTES_MAPPING = [
+  { path: ROUTES.HOME, component: HomePage },
+  {
+    path: ROUTES.USING_BACKPACK,
+    layout: UsingLayout,
+    redirect: ROUTES.GETTING_STARTED,
+    routes: [
+      {
+        path: ROUTES.GETTING_STARTED,
+        component: GettingStartedPage,
+      },
+      {
+        path: ROUTES.BACKPACK_REACT_SCRIPTS,
+        component: BackpackReactScriptsPage,
+      },
+      {
+        path: ROUTES.BASE_STYLESHEET,
+        component: BaseStylesheetPage,
+      },
+      { path: ROUTES.CONTRIBUTING, component: ContributingPage },
+      { path: ROUTES.PRINCIPLES, component: PrinciplesPage },
+    ],
+  },
+  {
+    path: ROUTES.TOKENS,
+    layout: TokensLayout,
+    redirect: ROUTES.ANIMATION,
+    routes: [
+      { path: ROUTES.ANIMATION, component: AnimationPage },
+      { path: ROUTES.BORDERS, component: BordersPage },
+      { path: ROUTES.COLORS, component: ColorsPage },
+      { path: ROUTES.SPACINGS, component: SpacingsPage },
+      { path: ROUTES.RADII, component: RadiiPage },
+      { path: ROUTES.SHADOWS, component: ShadowsPage },
+      { path: ROUTES.TYPESETTING, component: TypesettingPage },
+      { path: ROUTES.Z_INDEXES, component: ZIndexesPage },
+    ],
+  },
+  {
+    path: ROUTES.STYLE_GUIDE,
+    layout: StyleGuideLayout,
+    redirect: ROUTES.COPYWRITING,
+    routes: [{ path: ROUTES.COPYWRITING, component: CopywritingPage }],
+  },
+  {
+    path: ROUTES.COMPONENTS,
+    layout: DocsLayout,
+    redirect: ROUTES.ACCORDION,
+    routes: [
+      { path: withPlatform(ROUTES.ACCORDION), component: AccordionsPage },
+      { path: withPlatform(ROUTES.ALERT), component: AlertPage },
+      { path: withPlatform(ROUTES.ALIGNMENT), component: AlignmentPage },
+      {
+        path: withPlatform(ROUTES.AUTOSUGGEST),
+        component: AutosuggestPage,
+      },
+      { path: withPlatform(ROUTES.BADGE), component: BadgePage },
+      {
+        path: withPlatform(ROUTES.BANNER_ALERT),
+        component: BannerAlertPage,
+      },
+      { path: withPlatform(ROUTES.BARCHART), component: BarchartsPage },
+      {
+        path: withPlatform(ROUTES.BLOCKQUOTE),
+        component: BlockquotesPage,
+      },
+      { path: withPlatform(ROUTES.BREADCRUMB), component: BreadcrumbPage },
+      {
+        path: withPlatform(ROUTES.BREAKPOINT),
+        component: BreakpointsPage,
+      },
+      { path: withPlatform(ROUTES.BUTTON), component: ButtonPage },
+      { path: withPlatform(ROUTES.CALENDAR), component: CalendarPage },
+      { path: withPlatform(ROUTES.CARD), component: CardPage },
+      { path: withPlatform(ROUTES.CAROUSEL), component: CarouselPage },
+      { path: withPlatform(ROUTES.CHIP), component: ChipsPage },
+      { path: withPlatform(ROUTES.CODE), component: CodePage },
+      { path: withPlatform(ROUTES.DATEPICKER), component: DatepickerPage },
+      {
+        path: withPlatform(ROUTES.DESCRIPTION_LIST),
+        component: DescriptionListsPage,
+      },
+      { path: withPlatform(ROUTES.DIALOG), component: DialogsPage },
+      { path: withPlatform(ROUTES.DRAWER), component: DrawerPage },
+      { path: withPlatform(ROUTES.FIELDSET), component: FieldsetsPage },
+      {
+        path: withPlatform(ROUTES.FLAT_LIST),
+        component: NativeFlatListPage,
+      },
+      { path: withPlatform(ROUTES.FORM), component: FormsPage },
+      {
+        path: withPlatform(ROUTES.HORIZONTAL_GRID),
+        component: HorizontalGridPage,
+      },
+      {
+        path: withPlatform(ROUTES.HORIZONTAL_NAV),
+        component: HorizontalNavPage,
+      },
+      { path: withPlatform(ROUTES.ICON), component: IconPage },
+      { path: withPlatform(ROUTES.IMAGE), component: ImagesPage },
+      {
+        path: withPlatform(ROUTES.INFINITE_SCROLL),
+        component: InfiniteScrollPage,
+      },
+      { path: withPlatform(ROUTES.LINK), component: LinkPage },
+      { path: withPlatform(ROUTES.LIST), component: ListsPage },
+      { path: withPlatform(ROUTES.MAP), component: MapPage },
+      {
+        path: withPlatform(ROUTES.MOBILE_SCROLL_CONTAINER),
+        component: MobileScrollContainerPage,
+      },
+      { path: withPlatform(ROUTES.MODAL), component: ModalsPage },
+      {
+        path: withPlatform(ROUTES.NAVIGATION_BAR),
+        component: NavigationBarPage,
+      },
+      {
+        path: withPlatform(ROUTES.NAVIGATION_STACK),
+        component: NavigationStackPage,
+      },
+      { path: withPlatform(ROUTES.NUDGER), component: NudgerPage },
+      { path: withPlatform(ROUTES.PAGINATION), component: PaginationPage },
+      { path: withPlatform(ROUTES.PANEL), component: PanelPage },
+      {
+        path: withPlatform(ROUTES.PHONE_INPUT),
+        component: PhoneInputPage,
+      },
+      { path: withPlatform(ROUTES.PICKER), component: NativePickerPage },
+      { path: withPlatform(ROUTES.POPOVER), component: PopoversPage },
+      { path: withPlatform(ROUTES.PROGRESS), component: ProgressPage },
+      {
+        path: withPlatform(ROUTES.SCROLLABLE_CALENDAR),
+        component: ScrollableCalendarPage,
+      },
+      {
+        path: withPlatform(ROUTES.SECTION_LIST),
+        component: SectionListPage,
+      },
+      { path: withPlatform(ROUTES.SELECT), component: NativeSelectPage },
+      { path: withPlatform(ROUTES.SLIDER), component: SlidersPage },
+      { path: withPlatform(ROUTES.SPINNER), component: SpinnerPage },
+      {
+        path: withPlatform(ROUTES.STAR_RATING),
+        component: StarRatingPage,
+      },
+      { path: withPlatform(ROUTES.SWITCH), component: NativeSwitchPage },
+      { path: withPlatform(ROUTES.TABLE), component: TablesPage },
+      { path: withPlatform(ROUTES.TEXT), component: TextPage },
+      {
+        path: withPlatform(ROUTES.TEXT_INPUT),
+        component: NativeInputPage,
+      },
+      { path: withPlatform(ROUTES.THEMING), component: ThemingPage },
+      { path: withPlatform(ROUTES.TICKET), component: TicketsPage },
+      { path: withPlatform(ROUTES.TOOLTIP), component: TooltipsPage },
+      {
+        path: withPlatform(ROUTES.TOUCHABLE_NATIVE_FEEDBACK),
+        component: NativeTouchableNativeFeedbackPage,
+      },
+      {
+        path: withPlatform(ROUTES.TOUCHABLE_OVERLAY),
+        component: NativeTouchableOverlayPage,
+      },
+    ],
+  },
+  { path: ROUTES.GRID_COLUMN_DEMO, component: GridColumnDemoPage },
+  { path: ROUTES.GRID_OFFSET_DEMO, component: GridOffsetDemoPage },
+  ...Object.keys(redirects).map(from => ({
+    path: from,
+    redirect: redirects[from],
+  })),
+];
+
+const withLayout = (Layout, Component) => {
+  if (!Layout) {
+    return Component;
+  }
+  return props => (
+    <Layout>
+      <Component {...props} />
+    </Layout>
+  );
+};
+
+const expandRoutes = (routes, layout) =>
+  routes.reduce((all, routeConfig) => {
+    const {
+      component,
+      routes: childRoutes,
+      layout: routeLayout,
+      redirect,
+      path,
+      ...routeProps
+    } = routeConfig;
+    if (component) {
+      const Component = withLayout(layout, component);
+      all.push(
+        <Route
+          key={path}
+          path={path}
+          component={Component}
+          exact
+          {...routeProps}
+        />,
+      );
+    }
+
+    if (redirect) {
+      all.push(<Redirect exact key={path} from={path} to={redirect} />);
+    }
+
+    // Note we concat child routes instead of nesting them because
+    // we want a "flat" deffinition so we get a 404 when the child route
+    // doesn't match, even if the parent does.
+    // e.g. if we have `/components` as a route and `/components/badge` nested,
+    // `/components/anything` would still render because the parent matches.
+    // The solution is to have them in a flat structure inside a <Switch>
+    // container.
+    if (childRoutes && childRoutes.length) {
+      return all.concat(expandRoutes(childRoutes, routeLayout));
+    }
+
+    return all;
+  }, []);
+
+const allRoutes = expandRoutes(ROUTES_MAPPING);
+
 const Routes = () => (
   <DefaultLayout>
-    <Switch>
-      <Route exact path={ROUTES.HOME} component={HomePage} />
-
-      <Route path={ROUTES.USING_BACKPACK}>
-        <UsingLayout>
-          <Switch>
-            <Redirect
-              exact
-              from={ROUTES.USING_BACKPACK}
-              to={ROUTES.GETTING_STARTED}
-            />
-            <Route
-              path={ROUTES.GETTING_STARTED}
-              component={GettingStartedPage}
-            />
-            <Route
-              path={ROUTES.BACKPACK_REACT_SCRIPTS}
-              component={BackpackReactScriptsPage}
-            />
-            <Route
-              path={ROUTES.BASE_STYLESHEET}
-              component={BaseStylesheetPage}
-            />
-            <Route path={ROUTES.CONTRIBUTING} component={ContributingPage} />
-            <Route path={ROUTES.PRINCIPLES} component={PrinciplesPage} />
-          </Switch>
-        </UsingLayout>
-      </Route>
-
-      <Route path={ROUTES.TOKENS}>
-        <TokensLayout>
-          <Switch>
-            <Redirect exact from={ROUTES.TOKENS} to={ROUTES.ANIMATION} />
-            <Route path={ROUTES.ANIMATION} component={AnimationPage} />
-            <Route path={ROUTES.BORDERS} component={BordersPage} />
-            <Route path={ROUTES.COLORS} component={ColorsPage} />
-            <Route path={ROUTES.SPACINGS} component={SpacingsPage} />
-            <Route path={ROUTES.RADII} component={RadiiPage} />
-            <Route path={ROUTES.SHADOWS} component={ShadowsPage} />
-            <Route path={ROUTES.TYPESETTING} component={TypesettingPage} />
-            <Route path={ROUTES.Z_INDEXES} component={ZIndexesPage} />
-          </Switch>
-        </TokensLayout>
-      </Route>
-
-      <Route path={ROUTES.STYLE_GUIDE}>
-        <StyleGuideLayout>
-          <Switch>
-            <Redirect exact from={ROUTES.STYLE_GUIDE} to={ROUTES.COPYWRITING} />
-            <Route path={ROUTES.COPYWRITING} component={CopywritingPage} />
-          </Switch>
-        </StyleGuideLayout>
-      </Route>
-
-      <Route path={ROUTES.COMPONENTS}>
-        <DocsLayout>
-          <Switch>
-            <Redirect exact from={ROUTES.COMPONENTS} to={ROUTES.ACCORDION} />
-            <Route path={ROUTES.ACCORDION} component={AccordionsPage} />
-            <Route path={ROUTES.ALERT} component={AlertPage} />
-            <Route path={ROUTES.ALIGNMENT} component={AlignmentPage} />
-            <Route path={ROUTES.AUTOSUGGEST} component={AutosuggestPage} />
-            <Route path={ROUTES.BADGE} component={BadgePage} />
-            <Route path={ROUTES.BANNER_ALERT} component={BannerAlertPage} />
-            <Route path={ROUTES.BARCHART} component={BarchartsPage} />
-            <Route path={ROUTES.BLOCKQUOTE} component={BlockquotesPage} />
-            <Route path={ROUTES.BREADCRUMB} component={BreadcrumbPage} />
-            <Route path={ROUTES.BREAKPOINT} component={BreakpointsPage} />
-            <Route path={ROUTES.BUTTON} component={ButtonPage} />
-            <Route path={ROUTES.CALENDAR} component={CalendarPage} />
-            <Route path={ROUTES.CARD} component={CardPage} />
-            <Route path={ROUTES.CAROUSEL} component={CarouselPage} />
-            <Route path={ROUTES.CHIP} component={ChipsPage} />
-            <Route path={ROUTES.CODE} component={CodePage} />
-            <Route path={ROUTES.DATEPICKER} component={DatepickerPage} />
-            <Route
-              path={ROUTES.DESCRIPTION_LIST}
-              component={DescriptionListsPage}
-            />
-            <Route path={ROUTES.DIALOG} component={DialogsPage} />
-            <Route path={ROUTES.DRAWER} component={DrawerPage} />
-            <Route path={ROUTES.FIELDSET} component={FieldsetsPage} />
-            <Route path={ROUTES.FLAT_LIST} component={NativeFlatListPage} />
-            <Route path={ROUTES.FORM} component={FormsPage} />
-            <Route
-              path={ROUTES.HORIZONTAL_GRID}
-              component={HorizontalGridPage}
-            />
-            <Route path={ROUTES.HORIZONTAL_NAV} component={HorizontalNavPage} />
-            <Route path={ROUTES.ICON} component={IconPage} />
-            <Route path={ROUTES.IMAGE} component={ImagesPage} />
-            <Route
-              path={ROUTES.INFINITE_SCROLL}
-              component={InfiniteScrollPage}
-            />
-            <Route path={ROUTES.LINK} component={LinkPage} />
-            <Route path={ROUTES.LIST} component={ListsPage} />
-            <Route path={ROUTES.MAP} component={MapPage} />
-            <Route
-              path={ROUTES.MOBILE_SCROLL_CONTAINER}
-              component={MobileScrollContainerPage}
-            />
-            <Route path={ROUTES.MODAL} component={ModalsPage} />
-            <Route path={ROUTES.NAVIGATION_BAR} component={NavigationBarPage} />
-            <Route
-              path={ROUTES.NAVIGATION_STACK}
-              component={NavigationStackPage}
-            />
-            <Route path={ROUTES.NUDGER} component={NudgerPage} />
-            <Route path={ROUTES.PAGINATION} component={PaginationPage} />
-            <Route path={ROUTES.PANEL} component={PanelPage} />
-            <Route path={ROUTES.PHONE_INPUT} component={PhoneInputPage} />
-            <Route path={ROUTES.PICKER} component={NativePickerPage} />
-            <Route path={ROUTES.POPOVER} component={PopoversPage} />
-            <Route path={ROUTES.PROGRESS} component={ProgressPage} />
-            <Route
-              path={ROUTES.SCROLLABLE_CALENDAR}
-              component={ScrollableCalendarPage}
-            />
-            <Route path={ROUTES.SECTION_LIST} component={SectionListPage} />
-            <Route path={ROUTES.SELECT} component={NativeSelectPage} />
-            <Route path={ROUTES.SLIDER} component={SlidersPage} />
-            <Route path={ROUTES.SPINNER} component={SpinnerPage} />
-            <Route path={ROUTES.STAR_RATING} component={StarRatingPage} />
-            <Route path={ROUTES.SWITCH} component={NativeSwitchPage} />
-            <Route path={ROUTES.TABLE} component={TablesPage} />
-            <Route path={ROUTES.TEXT} component={TextPage} />
-            <Route path={ROUTES.TEXT_INPUT} component={NativeInputPage} />
-            <Route path={ROUTES.THEMING} component={ThemingPage} />
-            <Route path={ROUTES.TICKET} component={TicketsPage} />
-            <Route path={ROUTES.TOOLTIP} component={TooltipsPage} />
-            <Route
-              path={ROUTES.TOUCHABLE_NATIVE_FEEDBACK}
-              component={NativeTouchableNativeFeedbackPage}
-            />
-            <Route
-              path={ROUTES.TOUCHABLE_OVERLAY}
-              component={NativeTouchableOverlayPage}
-            />
-          </Switch>
-        </DocsLayout>
-      </Route>
-    </Switch>
-
-    <Route path={ROUTES.GRID_COLUMN_DEMO} component={GridColumnDemoPage} />
-    <Route path={ROUTES.GRID_OFFSET_DEMO} component={GridOffsetDemoPage} />
-
-    <Switch>
-      {Object.keys(redirects).map(from => (
-        <Redirect key={from} exact from={from} to={redirects[from]} />
-      ))}
-    </Switch>
+    <Switch>{allRoutes}</Switch>
   </DefaultLayout>
 );
 
