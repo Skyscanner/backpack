@@ -185,10 +185,6 @@ dependencies {
     androidTestImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test:rules:1.0.1'
-    implementation project(':panel-react')
-    implementation project(':panel-native')
-    implementation project(':badge-react')
-    implementation project(':badge-native')
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation "org.jetbrains.kotlin:kotlin-reflect:$kotlin_version"
     implementation 'com.squareup.picasso:picasso:2.71828'

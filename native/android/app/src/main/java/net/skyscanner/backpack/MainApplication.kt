@@ -23,9 +23,7 @@ class MainApplication : Application(), ReactApplication {
             return Arrays.asList(
                     MainReactPackage(),
                     MapsPackage(),
-                    LinearGradientPackage(),
-                    PanelPackage(),
-                    BadgePackage()
+                    LinearGradientPackage()
             )
         }
     }

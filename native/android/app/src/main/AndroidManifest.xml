@@ -20,27 +20,14 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="${googleMapsApiKey}" />
 
-        <activity android:name=".MainActivity" android:exported="true"/>
-        <activity android:name="com.facebook.react.devsupport.DevSettingsActivity" />
-        <activity
-            android:name=".demo.ComponentListActivity"
-            android:label="@string/title_component_list"
-            android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity" android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".demo.ComponentDetailActivity"
-            android:label="@string/title_component_detail"
-            android:parentActivityName=".demo.ComponentListActivity"
-            android:theme="@style/AppTheme">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="net.skyscanner.backpack.demo.ComponentListActivity" />
-        </activity>
+        <activity android:name="com.facebook.react.devsupport.DevSettingsActivity" />
     </application>
 
 </manifest>
