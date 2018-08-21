@@ -1,6 +1,6 @@
 {
   "name": "react-native-bpk-component-alert",
-  "version": "1.0.18",
+  "version": "1.0.19",
   "main": "index.js",
   "description": "Backpack React Native alert component.",
   "repository": {
@@ -14,6 +14,6 @@
     "react-native": ">= 0.47.0"
   },
   "devDependencies": {
-    "react-native-bpk-component-button": "^7.1.6"
+    "react-native-bpk-component-button": "^7.1.7"
   }
 }

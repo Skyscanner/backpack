@@ -1,6 +1,6 @@
 {
   "name": "react-native-bpk-component-flat-list",
-  "version": "1.0.19",
+  "version": "1.0.20",
   "main": "index.js",
   "description": "Backpack React Native flat list component.",
   "repository": {
@@ -14,11 +14,11 @@
     "react-native": ">= 0.47.0"
   },
   "dependencies": {
-    "bpk-tokens": "^27.0.6",
+    "bpk-tokens": "^27.0.7",
     "prop-types": "^15.5.8",
-    "react-native-bpk-component-icon": "^1.9.7",
-    "react-native-bpk-component-text": "^2.1.45",
-    "react-native-bpk-component-touchable-native-feedback": "^1.1.20",
-    "react-native-bpk-component-touchable-overlay": "^1.0.29"
+    "react-native-bpk-component-icon": "^1.9.8",
+    "react-native-bpk-component-text": "^2.1.46",
+    "react-native-bpk-component-touchable-native-feedback": "^1.1.21",
+    "react-native-bpk-component-touchable-overlay": "^1.0.30"
   }
 }
