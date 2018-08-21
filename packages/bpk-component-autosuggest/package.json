@@ -16,8 +16,8 @@
     "bpk-component-input": "^3.3.32",
     "bpk-mixins": "^17.11.8",
     "bpk-react-utils": "^2.6.4",
-    "prop-types": "^15.5.8",
-    "react-autosuggest": "^9.0.1"
+    "prop-types": "^15.6.2",
+    "react-autosuggest": "^9.4.0"
   },
   "devDependencies": {
     "bpk-component-icon": "^3.22.8"

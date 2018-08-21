@@ -2,15 +2,17 @@
 
 exports[`BpkAutosuggest should render correctly 1`] = `
 <div
+  aria-expanded={false}
+  aria-haspopup="listbox"
+  aria-owns="react-autowhatever-1"
   className="bpk-autosuggest__container"
+  role="combobox"
 >
   <input
     aria-activedescendant={null}
     aria-autocomplete="list"
-    aria-expanded={false}
-    aria-haspopup={false}
+    aria-controls="react-autowhatever-1"
     aria-invalid={false}
-    aria-owns="react-autowhatever-1"
     autoComplete="off"
     className="bpk-input"
     id="origin"
@@ -19,7 +21,6 @@ exports[`BpkAutosuggest should render correctly 1`] = `
     onChange={[Function]}
     onFocus={[Function]}
     onKeyDown={[Function]}
-    role="combobox"
     style={Object {}}
     type="text"
     value="Edinburgh"
@@ -27,21 +28,24 @@ exports[`BpkAutosuggest should render correctly 1`] = `
   <div
     className="bpk-autosuggest__suggestions-container"
     id="react-autowhatever-1"
+    role="listbox"
   />
 </div>
 `;
 
 exports[`BpkAutosuggest should render correctly with an "alwaysRenderSuggestions" attribute 1`] = `
 <div
+  aria-expanded={true}
+  aria-haspopup="listbox"
+  aria-owns="react-autowhatever-1"
   className="bpk-autosuggest__container bpk-autosuggest__container--open"
+  role="combobox"
 >
   <input
     aria-activedescendant={null}
     aria-autocomplete="list"
-    aria-expanded={true}
-    aria-haspopup={true}
+    aria-controls="react-autowhatever-1"
     aria-invalid={false}
-    aria-owns="react-autowhatever-1"
     autoComplete="off"
     className="bpk-input"
     id="origin"
@@ -50,7 +54,6 @@ exports[`BpkAutosuggest should render correctly with an "alwaysRenderSuggestions
     onChange={[Function]}
     onFocus={[Function]}
     onKeyDown={[Function]}
-    role="combobox"
     style={Object {}}
     type="text"
     value="Edinburgh"
@@ -58,12 +61,14 @@ exports[`BpkAutosuggest should render correctly with an "alwaysRenderSuggestions
   <div
     className="bpk-autosuggest__suggestions-container bpk-autosuggest__suggestions-container--open"
     id="react-autowhatever-1"
+    role="listbox"
   >
     <ul
       className="bpk-autosuggest__suggestions-list"
       role="listbox"
     >
       <li
+        aria-selected={false}
         className="bpk-autosuggest__suggestion-item"
         data-section-index={null}
         data-suggestion-index={0}
@@ -80,6 +85,7 @@ exports[`BpkAutosuggest should render correctly with an "alwaysRenderSuggestions
         </span>
       </li>
       <li
+        aria-selected={false}
         className="bpk-autosuggest__suggestion-item"
         data-section-index={null}
         data-suggestion-index={1}
@@ -96,6 +102,7 @@ exports[`BpkAutosuggest should render correctly with an "alwaysRenderSuggestions
         </span>
       </li>
       <li
+        aria-selected={false}
         className="bpk-autosuggest__suggestion-item"
         data-section-index={null}
         data-suggestion-index={2}
