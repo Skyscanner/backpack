@@ -15,9 +15,15 @@ install:
 script:
   - set -e
   - ./scripts/check-pristine-state package-lock.json native/ios/native.xcodeproj/project.pbxproj native/ios/native/Info.plist
+  - echo 'Running danger' && echo -en 'travis_fold:start:DANGER\\r'
   - npm run danger
+  - echo "travis_fold:end:DANGER\\r"
+  - echo 'Running tests' && echo -en 'travis_fold:start:TEST\\r'
   - npm test
+  - echo "travis_fold:end:TEST\\r"
+  - echo 'Building docs' && echo -en 'travis_fold:start:DOCS_DIST\\r'
   - npm run docs:dist
+  - echo "travis_fold:end:DOCS_DIST\\r"
   - if [ "$TRAVIS_BRANCH" == 'master' ] && [ "$TRAVIS_PULL_REQUEST" == 'false' ]; then npm run storybook:dist; fi
   - test -e dist/index.html
   - test -e dist/sassdoc/index.html
