@@ -95,7 +95,7 @@
     "eslint_d": "^5.3.1",
     "extract-text-webpack-plugin": "^3.0.2",
     "file-loader": "^1.1.6",
-    "flow-bin": "^0.75.0",
+    "flow-bin": "^0.77.0",
     "flow-typed": "^2.4.0",
     "globby": "^8.0.1",
     "gulp": "^3.9.1",
