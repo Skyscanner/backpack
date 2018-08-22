@@ -21,13 +21,18 @@ import PropTypes from 'prop-types';
 import 'bpk-stylesheets/base';
 import ReactDOM from 'react-dom';
 import 'bpk-stylesheets/base.css';
-// import Helmet from 'react-helmet';
-// import ReactDOMServer from 'react-dom/server';
-import { BrowserRouter, withRouter } from 'react-router-dom';
+import Helmet from 'react-helmet';
+import ReactDOMServer from 'react-dom/server';
+import {
+  BrowserRouter,
+  StaticRouter,
+  withRouter,
+  matchPath,
+} from 'react-router-dom';
 
-import Routes from './routes';
-// import template from './template';
-// import { extractAssets } from './webpackStats';
+import Routes, { ROUTES_MAPPINGS } from './routes';
+import template from './template';
+import { extractAssets } from './webpackStats';
 
 const ScrollToTop = withRouter(
   class extends React.Component {
@@ -61,34 +66,44 @@ if (typeof window !== 'undefined' && typeof document !== 'undefined') {
   );
 }
 
-// export default (locals, callback) => {
-//   const history = createMemoryHistory();
-//   const location = history.createLocation(locals.path);
-//   const assets = extractAssets(locals.webpackStats);
+export default (() => {
+  const flattenRoutes = routes =>
+    routes.reduce((all, route) => {
+      all.push(route);
 
-//   match({ routes, location, history }, (error, redirectLocation, props) => {
-//     // Explicit check for null here due to odd behaviour with react router's match function
-//     // It passes undefined in cases where matches are not found.
-//     // So we use their error object if it is truthy, otherwise we create our own.
-//     if (error !== null) {
-//       return callback(
-//         error ||
-//           new Error(`React Router failed to match ${JSON.stringify(location)}`),
-//       );
-//     }
+      if (route.routes) {
+        return all.concat(flattenRoutes(route.routes));
+      }
 
-//     if (redirectLocation) {
-//       return callback(
-//         error,
-//         `<script>window.location = '${redirectLocation.pathname}';</script>`,
-//       );
-//     }
+      return all;
+    }, []);
 
-//     const html = ReactDOMServer.renderToStaticMarkup(
-//       React.createElement(RouterContext, props),
-//     );
-//     const head = Helmet.rewind();
+  const flattenedRoutes = flattenRoutes(ROUTES_MAPPINGS);
 
-//     return callback(error, template({ head, html, assets }));
-//   });
-// };
+  return (locals, callback) => {
+    const assets = extractAssets(locals.webpackStats);
+
+    const match = flattenedRoutes.find(route =>
+      matchPath(locals.path, { exact: true, path: route.path }),
+    );
+
+    if (!match) {
+      return callback(new Error(`React Router failed to match ${locals.path}`));
+    }
+
+    if (match.redirect) {
+      return callback(
+        null,
+        `<script>window.location = '${match.redirect}';</script>`,
+      );
+    }
+
+    const html = ReactDOMServer.renderToStaticMarkup(
+      <StaticRouter location={locals.path} context={{}}>
+        <Routes />
+      </StaticRouter>,
+    );
+    const head = Helmet.rewind();
+    return callback(null, template({ head, html, assets }));
+  };
+})();

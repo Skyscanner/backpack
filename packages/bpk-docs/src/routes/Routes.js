@@ -107,9 +107,7 @@ import TooltipsPage from '../pages/TooltipsPage';
 
 import { GridColumnDemoPage, GridOffsetDemoPage } from '../pages/GridDemoPages';
 
-const withPlatform = route => `${route}/:platform(native|web)?`;
-
-const ROUTES_MAPPING = [
+export const ROUTES_MAPPINGS = [
   { path: ROUTES.HOME, component: HomePage },
   {
     path: ROUTES.USING_BACKPACK,
@@ -158,118 +156,118 @@ const ROUTES_MAPPING = [
     layout: DocsLayout,
     redirect: ROUTES.ACCORDION,
     routes: [
-      { path: withPlatform(ROUTES.ACCORDION), component: AccordionsPage },
-      { path: withPlatform(ROUTES.ALERT), component: AlertPage },
-      { path: withPlatform(ROUTES.ALIGNMENT), component: AlignmentPage },
+      { path: ROUTES.ACCORDION, component: AccordionsPage },
+      { path: ROUTES.ALERT, component: AlertPage },
+      { path: ROUTES.ALIGNMENT, component: AlignmentPage },
       {
-        path: withPlatform(ROUTES.AUTOSUGGEST),
+        path: ROUTES.AUTOSUGGEST,
         component: AutosuggestPage,
       },
-      { path: withPlatform(ROUTES.BADGE), component: BadgePage },
+      { path: ROUTES.BADGE, component: BadgePage },
       {
-        path: withPlatform(ROUTES.BANNER_ALERT),
+        path: ROUTES.BANNER_ALERT,
         component: BannerAlertPage,
       },
-      { path: withPlatform(ROUTES.BARCHART), component: BarchartsPage },
+      { path: ROUTES.BARCHART, component: BarchartsPage },
       {
-        path: withPlatform(ROUTES.BLOCKQUOTE),
+        path: ROUTES.BLOCKQUOTE,
         component: BlockquotesPage,
       },
-      { path: withPlatform(ROUTES.BREADCRUMB), component: BreadcrumbPage },
+      { path: ROUTES.BREADCRUMB, component: BreadcrumbPage },
       {
-        path: withPlatform(ROUTES.BREAKPOINT),
+        path: ROUTES.BREAKPOINT,
         component: BreakpointsPage,
       },
-      { path: withPlatform(ROUTES.BUTTON), component: ButtonPage },
-      { path: withPlatform(ROUTES.CALENDAR), component: CalendarPage },
-      { path: withPlatform(ROUTES.CARD), component: CardPage },
-      { path: withPlatform(ROUTES.CAROUSEL), component: CarouselPage },
-      { path: withPlatform(ROUTES.CHIP), component: ChipsPage },
-      { path: withPlatform(ROUTES.CODE), component: CodePage },
-      { path: withPlatform(ROUTES.DATEPICKER), component: DatepickerPage },
+      { path: ROUTES.BUTTON, component: ButtonPage },
+      { path: ROUTES.CALENDAR, component: CalendarPage },
+      { path: ROUTES.CARD, component: CardPage },
+      { path: ROUTES.CAROUSEL, component: CarouselPage },
+      { path: ROUTES.CHIP, component: ChipsPage },
+      { path: ROUTES.CODE, component: CodePage },
+      { path: ROUTES.DATEPICKER, component: DatepickerPage },
       {
-        path: withPlatform(ROUTES.DESCRIPTION_LIST),
+        path: ROUTES.DESCRIPTION_LIST,
         component: DescriptionListsPage,
       },
-      { path: withPlatform(ROUTES.DIALOG), component: DialogsPage },
-      { path: withPlatform(ROUTES.DRAWER), component: DrawerPage },
-      { path: withPlatform(ROUTES.FIELDSET), component: FieldsetsPage },
+      { path: ROUTES.DIALOG, component: DialogsPage },
+      { path: ROUTES.DRAWER, component: DrawerPage },
+      { path: ROUTES.FIELDSET, component: FieldsetsPage },
       {
-        path: withPlatform(ROUTES.FLAT_LIST),
+        path: ROUTES.FLAT_LIST,
         component: NativeFlatListPage,
       },
-      { path: withPlatform(ROUTES.FORM), component: FormsPage },
+      { path: ROUTES.FORM, component: FormsPage },
       {
-        path: withPlatform(ROUTES.HORIZONTAL_GRID),
+        path: ROUTES.HORIZONTAL_GRID,
         component: HorizontalGridPage,
       },
       {
-        path: withPlatform(ROUTES.HORIZONTAL_NAV),
+        path: ROUTES.HORIZONTAL_NAV,
         component: HorizontalNavPage,
       },
-      { path: withPlatform(ROUTES.ICON), component: IconPage },
-      { path: withPlatform(ROUTES.IMAGE), component: ImagesPage },
+      { path: ROUTES.ICON, component: IconPage },
+      { path: ROUTES.IMAGE, component: ImagesPage },
       {
-        path: withPlatform(ROUTES.INFINITE_SCROLL),
+        path: ROUTES.INFINITE_SCROLL,
         component: InfiniteScrollPage,
       },
-      { path: withPlatform(ROUTES.LINK), component: LinkPage },
-      { path: withPlatform(ROUTES.LIST), component: ListsPage },
-      { path: withPlatform(ROUTES.MAP), component: MapPage },
+      { path: ROUTES.LINK, component: LinkPage },
+      { path: ROUTES.LIST, component: ListsPage },
+      { path: ROUTES.MAP, component: MapPage },
       {
-        path: withPlatform(ROUTES.MOBILE_SCROLL_CONTAINER),
+        path: ROUTES.MOBILE_SCROLL_CONTAINER,
         component: MobileScrollContainerPage,
       },
-      { path: withPlatform(ROUTES.MODAL), component: ModalsPage },
+      { path: ROUTES.MODAL, component: ModalsPage },
       {
-        path: withPlatform(ROUTES.NAVIGATION_BAR),
+        path: ROUTES.NAVIGATION_BAR,
         component: NavigationBarPage,
       },
       {
-        path: withPlatform(ROUTES.NAVIGATION_STACK),
+        path: ROUTES.NAVIGATION_STACK,
         component: NavigationStackPage,
       },
-      { path: withPlatform(ROUTES.NUDGER), component: NudgerPage },
-      { path: withPlatform(ROUTES.PAGINATION), component: PaginationPage },
-      { path: withPlatform(ROUTES.PANEL), component: PanelPage },
+      { path: ROUTES.NUDGER, component: NudgerPage },
+      { path: ROUTES.PAGINATION, component: PaginationPage },
+      { path: ROUTES.PANEL, component: PanelPage },
       {
-        path: withPlatform(ROUTES.PHONE_INPUT),
+        path: ROUTES.PHONE_INPUT,
         component: PhoneInputPage,
       },
-      { path: withPlatform(ROUTES.PICKER), component: NativePickerPage },
-      { path: withPlatform(ROUTES.POPOVER), component: PopoversPage },
-      { path: withPlatform(ROUTES.PROGRESS), component: ProgressPage },
+      { path: ROUTES.PICKER, component: NativePickerPage },
+      { path: ROUTES.POPOVER, component: PopoversPage },
+      { path: ROUTES.PROGRESS, component: ProgressPage },
       {
-        path: withPlatform(ROUTES.SCROLLABLE_CALENDAR),
+        path: ROUTES.SCROLLABLE_CALENDAR,
         component: ScrollableCalendarPage,
       },
       {
-        path: withPlatform(ROUTES.SECTION_LIST),
+        path: ROUTES.SECTION_LIST,
         component: SectionListPage,
       },
-      { path: withPlatform(ROUTES.SELECT), component: NativeSelectPage },
-      { path: withPlatform(ROUTES.SLIDER), component: SlidersPage },
-      { path: withPlatform(ROUTES.SPINNER), component: SpinnerPage },
+      { path: ROUTES.SELECT, component: NativeSelectPage },
+      { path: ROUTES.SLIDER, component: SlidersPage },
+      { path: ROUTES.SPINNER, component: SpinnerPage },
       {
-        path: withPlatform(ROUTES.STAR_RATING),
+        path: ROUTES.STAR_RATING,
         component: StarRatingPage,
       },
-      { path: withPlatform(ROUTES.SWITCH), component: NativeSwitchPage },
-      { path: withPlatform(ROUTES.TABLE), component: TablesPage },
-      { path: withPlatform(ROUTES.TEXT), component: TextPage },
+      { path: ROUTES.SWITCH, component: NativeSwitchPage },
+      { path: ROUTES.TABLE, component: TablesPage },
+      { path: ROUTES.TEXT, component: TextPage },
       {
-        path: withPlatform(ROUTES.TEXT_INPUT),
+        path: ROUTES.TEXT_INPUT,
         component: NativeInputPage,
       },
-      { path: withPlatform(ROUTES.THEMING), component: ThemingPage },
-      { path: withPlatform(ROUTES.TICKET), component: TicketsPage },
-      { path: withPlatform(ROUTES.TOOLTIP), component: TooltipsPage },
+      { path: ROUTES.THEMING, component: ThemingPage },
+      { path: ROUTES.TICKET, component: TicketsPage },
+      { path: ROUTES.TOOLTIP, component: TooltipsPage },
       {
-        path: withPlatform(ROUTES.TOUCHABLE_NATIVE_FEEDBACK),
+        path: ROUTES.TOUCHABLE_NATIVE_FEEDBACK,
         component: NativeTouchableNativeFeedbackPage,
       },
       {
-        path: withPlatform(ROUTES.TOUCHABLE_OVERLAY),
+        path: ROUTES.TOUCHABLE_OVERLAY,
         component: NativeTouchableOverlayPage,
       },
     ],
@@ -282,34 +280,22 @@ const ROUTES_MAPPING = [
   })),
 ];
 
-const withLayout = (Layout, Component) => {
-  if (!Layout) {
-    return Component;
-  }
-  return props => (
-    <Layout>
-      <Component {...props} />
-    </Layout>
-  );
-};
-
-const expandRoutes = (routes, layout) =>
+const expandRoutes = routes =>
   routes.reduce((all, routeConfig) => {
     const {
       component,
       routes: childRoutes,
-      layout: routeLayout,
+      layout: RouteLayout,
       redirect,
       path,
       ...routeProps
     } = routeConfig;
     if (component) {
-      const Component = withLayout(layout, component);
       all.push(
         <Route
           key={path}
           path={path}
-          component={Component}
+          component={component}
           exact
           {...routeProps}
         />,
@@ -317,24 +303,23 @@ const expandRoutes = (routes, layout) =>
     }
 
     if (redirect) {
-      all.push(<Redirect exact key={path} from={path} to={redirect} />);
+      all.push(<Redirect exact key={redirect} from={path} to={redirect} />);
     }
 
-    // Note we concat child routes instead of nesting them because
-    // we want a "flat" deffinition so we get a 404 when the child route
-    // doesn't match, even if the parent does.
-    // e.g. if we have `/components` as a route and `/components/badge` nested,
-    // `/components/anything` would still render because the parent matches.
-    // The solution is to have them in a flat structure inside a <Switch>
-    // container.
     if (childRoutes && childRoutes.length) {
-      return all.concat(expandRoutes(childRoutes, routeLayout));
+      all.push(
+        <Route key={path} path={path}>
+          <RouteLayout>
+            <Switch>{expandRoutes(childRoutes)}</Switch>
+          </RouteLayout>
+        </Route>,
+      );
     }
 
     return all;
   }, []);
 
-const allRoutes = expandRoutes(ROUTES_MAPPING);
+const allRoutes = expandRoutes(ROUTES_MAPPINGS);
 
 const Routes = () => (
   <DefaultLayout>

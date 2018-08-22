@@ -18,7 +18,7 @@
 
 import PropTypes from 'prop-types';
 import React from 'react';
-import { withRouter, Redirect } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 import BpkContentContainer from 'bpk-component-content-container';
 import BpkHorizontalNav, {
   BpkHorizontalNavItem,
@@ -107,8 +107,14 @@ const DocsPageWrapper = props => {
     location,
   } = props;
   const path = getBasePath(match.url);
-  // TODO: This is deprecated, we should eventually remove
-  const webQueryString = location.search.indexOf('platform=web') >= 0;
+  let renderWeb = location.search.indexOf('platform=web') >= 0;
+  let renderNative = location.search.indexOf('platform=native') >= 0;
+
+  if (!renderWeb && !renderNative) {
+    renderNative = !!nativeSubpage;
+    renderWeb = !!webSubpage && !renderNative;
+    history.replace(`${path}?platform=${renderNative ? 'native' : 'web'}`);
+  }
 
   return (
     <BpkContentContainer className={getClassName('bpkdocs-page-wrapper')}>
@@ -116,20 +122,13 @@ const DocsPageWrapper = props => {
         <Heading level="h1">{title}</Heading>
         {blurb && <Blurb content={blurb} />}
       </div>
-      {!match.params.platform && (
-        <Redirect
-          exact
-          from={path}
-          to={`${path}/${webQueryString || !nativeSubpage ? 'web' : 'native'}`}
-        />
-      )}
       {nativeSubpage &&
-        match.params.platform === 'native' && (
+        renderNative && (
           <div>
             <PlatformNav
               platform="native"
-              onNativeClick={() => history.push(`${path}/native`)}
-              onWebClick={() => history.push(`${path}/web`)}
+              onNativeClick={() => history.push(`${path}?platform=native`)}
+              onWebClick={() => history.push(`${path}?platform=web`)}
               disableNativeTab={!nativeSubpage}
               disableWebTab={!webSubpage}
             />
@@ -137,12 +136,12 @@ const DocsPageWrapper = props => {
           </div>
         )}
       {webSubpage &&
-        match.params.platform === 'web' && (
+        renderWeb && (
           <div>
             <PlatformNav
               platform="web"
-              onNativeClick={() => history.push(`${path}/native`)}
-              onWebClick={() => history.push(`${path}/web`)}
+              onNativeClick={() => history.push(`${path}?platform=native`)}
+              onWebClick={() => history.push(`${path}?platform=web`)}
               disableNativeTab={!nativeSubpage}
               disableWebTab={!webSubpage}
             />
