@@ -89,7 +89,7 @@ const {
 
 export const propTypes = {
   ...newTextInputPropTypes,
-  dialingCode: PropTypes.shape(...CODE_PROP_TYPES).isRequired,
+  dialingCode: PropTypes.shape(CODE_PROP_TYPES).isRequired,
   renderFlag: PropTypes.func.isRequired,
   onDialingCodePress: PropTypes.func.isRequired,
 };
