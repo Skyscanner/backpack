@@ -122,10 +122,7 @@ export const ROUTES_MAPPINGS = [
         path: ROUTES.BACKPACK_REACT_SCRIPTS,
         component: BackpackReactScriptsPage,
       },
-      {
-        path: ROUTES.BASE_STYLESHEET,
-        component: BaseStylesheetPage,
-      },
+      { path: ROUTES.BASE_STYLESHEET, component: BaseStylesheetPage },
       { path: ROUTES.CONTRIBUTING, component: ContributingPage },
       { path: ROUTES.PRINCIPLES, component: PrinciplesPage },
     ],
