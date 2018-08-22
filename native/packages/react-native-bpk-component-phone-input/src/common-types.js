@@ -61,8 +61,7 @@ export const LIST_ITEM_PROP_TYPES = {
 };
 
 export const LIST_COMMON_PROP_TYPES = {
-  dialingCodes: PropTypes.arrayOf(PropTypes.shape(...CODE_PROP_TYPES))
-    .isRequired,
+  dialingCodes: PropTypes.arrayOf(PropTypes.shape(CODE_PROP_TYPES)).isRequired,
   onItemPress: PropTypes.func.isRequired,
   renderFlag: PropTypes.func.isRequired,
   selectedId: PropTypes.string,
