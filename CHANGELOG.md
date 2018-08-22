@@ -2,6 +2,11 @@
 
 [Unreleased changes](./unreleased.md).
 
+# 2018-08-22 - Fixed native phone imput prop types
+
+- react-native-bpk-component-phone-input: 1.0.34 => 1.0.35
+  - fixed spread operation in PropTypes
+
 # 2018-08-15 - Made breadcrumb more responsive
 
 **Added:**
