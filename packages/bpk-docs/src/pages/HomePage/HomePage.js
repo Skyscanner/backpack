@@ -19,7 +19,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
-import { browserHistory } from 'react-router';
 
 import BpkText from 'bpk-component-text';
 
@@ -115,6 +114,8 @@ const HERO_IMAGE_THEMES = {
   },
 };
 const HomePage = (props, context) => {
+  const { history } = props;
+
   const getHeroImageForTheme = () => {
     if (
       !context.theme ||
@@ -176,13 +177,17 @@ const HomePage = (props, context) => {
           <HomePageCard
             {...rest}
             href={rest.blank ? href : null}
-            onClick={rest.blank ? null : () => browserHistory.push(href)}
+            onClick={rest.blank ? null : () => history.push(href)}
             className={getClassName('bpkdocs-home-page__card')}
           />
         ))}
       </div>
     </section>
   );
+};
+
+HomePage.propTypes = {
+  history: PropTypes.shape({ push: PropTypes.func }).isRequired,
 };
 
 HomePage.contextTypes = {

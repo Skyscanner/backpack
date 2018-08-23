@@ -17,67 +17,93 @@
  */
 
 import React from 'react';
+import PropTypes from 'prop-types';
+import 'bpk-stylesheets/base';
 import ReactDOM from 'react-dom';
+import 'bpk-stylesheets/base.css';
 import Helmet from 'react-helmet';
 import ReactDOMServer from 'react-dom/server';
 import {
-  Router,
-  RouterContext,
-  match,
-  browserHistory,
-  createMemoryHistory,
-} from 'react-router';
-import 'es6-promise/auto';
+  BrowserRouter,
+  StaticRouter,
+  withRouter,
+  matchPath,
+} from 'react-router-dom';
 
-import routes from './routes';
+import Routes, { ROUTES_MAPPINGS } from './routes';
 import template from './template';
 import { extractAssets } from './webpackStats';
+
+const ScrollToTop = withRouter(
+  class extends React.Component {
+    static propTypes = {
+      children: PropTypes.node.isRequired,
+      location: PropTypes.object.isRequired, // eslint-disable-line
+    };
+
+    componentDidUpdate(prevProps) {
+      if (this.props.location !== prevProps.location) {
+        window.scrollTo(0, 0);
+      }
+    }
+
+    render() {
+      return this.props.children;
+    }
+  },
+);
 
 if (typeof window !== 'undefined' && typeof document !== 'undefined') {
   const root = document.getElementById('react-mount');
 
   ReactDOM.render(
-    React.createElement(Router, {
-      history: browserHistory,
-      onUpdate: () => {
-        if (`${window.location}`.indexOf('#') === -1) {
-          window.scrollTo(0, 0);
-        }
-      },
-      routes,
-    }),
+    <BrowserRouter>
+      <ScrollToTop>
+        <Routes />
+      </ScrollToTop>
+    </BrowserRouter>,
     root,
   );
 }
 
-export default (locals, callback) => {
-  const history = createMemoryHistory();
-  const location = history.createLocation(locals.path);
-  const assets = extractAssets(locals.webpackStats);
+export default (() => {
+  const flattenRoutes = routes =>
+    routes.reduce((all, route) => {
+      all.push(route);
 
-  match({ routes, location, history }, (error, redirectLocation, props) => {
-    // Explicit check for null here due to odd behaviour with react router's match function
-    // It passes undefined in cases where matches are not found.
-    // So we use their error object if it is truthy, otherwise we create our own.
-    if (error !== null) {
-      return callback(
-        error ||
-          new Error(`React Router failed to match ${JSON.stringify(location)}`),
-      );
+      if (route.routes) {
+        return all.concat(flattenRoutes(route.routes));
+      }
+
+      return all;
+    }, []);
+
+  const flattenedRoutes = flattenRoutes(ROUTES_MAPPINGS);
+
+  return (locals, callback) => {
+    const assets = extractAssets(locals.webpackStats);
+
+    const match = flattenedRoutes.find(route =>
+      matchPath(locals.path, { exact: true, path: route.path }),
+    );
+
+    if (!match) {
+      return callback(new Error(`React Router failed to match ${locals.path}`));
     }
 
-    if (redirectLocation) {
+    if (match.redirect) {
       return callback(
-        error,
-        `<script>window.location = '${redirectLocation.pathname}';</script>`,
+        null,
+        `<script>window.location = '${match.redirect}';</script>`,
       );
     }
 
     const html = ReactDOMServer.renderToStaticMarkup(
-      React.createElement(RouterContext, props),
+      <StaticRouter location={locals.path} context={{}}>
+        <Routes />
+      </StaticRouter>,
     );
     const head = Helmet.rewind();
-
-    return callback(error, template({ head, html, assets }));
-  });
-};
+    return callback(null, template({ head, html, assets }));
+  };
+})();

@@ -2,9 +2,11 @@
 
 exports[`BpkRouterLink should render correctly with a "className" attribute 1`] = `
 <a
+  aria-current={null}
   className="bpk-router-link my-custom-class-1 my-custom-class-2"
+  href="/home"
   onClick={[Function]}
-  style={Object {}}
+  style={undefined}
 >
   Link
 </a>
@@ -12,9 +14,11 @@ exports[`BpkRouterLink should render correctly with a "className" attribute 1`] 
 
 exports[`BpkRouterLink should render correctly with a "to" attribute 1`] = `
 <a
+  aria-current={null}
   className="bpk-router-link"
+  href="/home"
   onClick={[Function]}
-  style={Object {}}
+  style={undefined}
 >
   Link
 </a>
@@ -22,9 +26,11 @@ exports[`BpkRouterLink should render correctly with a "to" attribute 1`] = `
 
 exports[`BpkRouterLink should render correctly with arbitrary attributes 1`] = `
 <a
+  aria-current={null}
   className="bpk-router-link"
+  href="/home"
   onClick={[Function]}
-  style={Object {}}
+  style={undefined}
   target="_blank"
 >
   Link

@@ -76,6 +76,7 @@ toSassdocLink.propTypes = {
 };
 
 const ComponentExample = (component, registerPlatformSwitchingContent) => {
+  // FIXME: we're getting a missing "key" warning from this component
   const heading = (
     <Heading id={component.id} level="h2">
       {component.title}
@@ -275,12 +276,7 @@ const DocsPageBuilder = props => {
   );
 };
 
-const childrenPropType = PropTypes.oneOfType([
-  PropTypes.arrayOf(PropTypes.node),
-  PropTypes.node,
-]);
-
-const contentShape = PropTypes.oneOfType([PropTypes.string, childrenPropType]);
+const contentShape = PropTypes.oneOfType([PropTypes.string, PropTypes.node]);
 
 DocsPageBuilder.propTypes = {
   title: PropTypes.string.isRequired,
@@ -308,7 +304,7 @@ DocsPageBuilder.propTypes = {
           subText: PropTypes.string.isRequired,
         }),
       ),
-      examples: PropTypes.arrayOf(childrenPropType),
+      examples: PropTypes.arrayOf(PropTypes.node),
       readme: PropTypes.string,
       tokenMap: PropTypes.shape({
         web: PropTypes.object,

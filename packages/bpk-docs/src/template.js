@@ -16,9 +16,6 @@
  * limitations under the License.
  */
 
-import 'bpk-stylesheets/base';
-import 'bpk-stylesheets/base.css';
-
 import './static/favicon.ico';
 import appleTouchIcon from './static/apple-touch-icon.png';
 

@@ -36,7 +36,9 @@ const toNodes = children => {
     return null;
   }
 
-  return isString(children) ? [<Paragraph>{children}</Paragraph>] : children;
+  return isString(children)
+    ? [<Paragraph>{children}</Paragraph>]
+    : React.Children.toArray(children);
 };
 
 type MenuItem = {

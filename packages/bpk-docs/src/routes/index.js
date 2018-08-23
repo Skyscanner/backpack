@@ -16,6 +16,7 @@
  * limitations under the License.
  */
 
-import routes from './Routes';
+import routes, { ROUTES_MAPPINGS } from './Routes';
 
+export { ROUTES_MAPPINGS };
 export default routes;

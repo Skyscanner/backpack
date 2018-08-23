@@ -20,7 +20,6 @@ export const HOME = '/';
 
 // TOP LEVEL
 export const USING_BACKPACK = '/using';
-export const STYLE = '/style';
 export const TOKENS = '/tokens';
 export const STYLE_GUIDE = '/style-guide';
 
@@ -92,7 +91,6 @@ export const DIALOG = '/components/dialog';
 export const FLAT_LIST = '/components/flat-list';
 export const NAVIGATION_BAR = '/components/navigation-bar';
 export const NAVIGATION_STACK = '/components/navigation-stack';
-export const PAGINATION_DOT = '/components/pagination-dot';
 export const PHONE_INPUT = '/components/phone-input';
 export const PICKER = '/components/picker';
 export const SECTION_LIST = '/components/section-list';
