@@ -7,7 +7,6 @@ exports[`BpkDialog should render correctly in the given target if renderTarget i
   <div>
     <div
       class="bpk-scrim-content bpk-modal__container"
-      data-reactroot=""
     >
       <div
         class="bpk-scrim"
@@ -41,9 +40,7 @@ exports[`BpkDialog should render correctly in the given target if renderTarget i
               />
             </svg>
           </button>
-          <!-- react-text: 8 -->
           Dialog content inside a custom target
-          <!-- /react-text -->
         </div>
       </section>
     </div>
@@ -58,7 +55,6 @@ exports[`BpkDialog should render correctly when it is not dismissible 2`] = `
   <div>
     <div
       class="bpk-scrim-content bpk-modal__container"
-      data-reactroot=""
     >
       <div
         class="bpk-scrim"
@@ -74,9 +70,7 @@ exports[`BpkDialog should render correctly when it is not dismissible 2`] = `
         <div
           class="bpk-modal__content bpk-modal__content--padded"
         >
-          <!-- react-text: 5 -->
           Dialog content inside a custom target
-          <!-- /react-text -->
         </div>
       </section>
     </div>

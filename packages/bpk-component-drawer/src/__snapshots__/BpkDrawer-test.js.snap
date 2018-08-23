@@ -7,7 +7,6 @@ exports[`BpkDrawer should render correctly in the given target if renderTarget i
   <div>
     <div
       class="bpk-scrim-content bpk-drawer__container"
-      data-reactroot=""
     >
       <div
         class="bpk-scrim"
@@ -29,9 +28,7 @@ exports[`BpkDrawer should render correctly in the given target if renderTarget i
           >
             Drawer title
           </h2>
-          <!-- react-text: 6 -->
            
-          <!-- /react-text -->
           <button
             aria-label="Close"
             class="bpk-close-button bpk-drawer__close-button"

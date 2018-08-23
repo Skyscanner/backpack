@@ -7,9 +7,7 @@ exports[`Portal should render correctly with renderTarget 1`] = `null`;
 exports[`Portal should render correctly with renderTarget 2`] = `
 <div>
   <div>
-    <div
-      data-reactroot=""
-    >
+    <div>
       My portal content
     </div>
   </div>
