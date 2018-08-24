@@ -82,20 +82,6 @@ PlatformNav.propTypes = {
   disableWebTab: PropTypes.bool.isRequired,
 };
 
-const getBasePath = url => {
-  let normalized = url;
-  if (url.endsWith('/')) {
-    normalized = url.substring(0, url.length - 1);
-  }
-
-  const parts = normalized.split('/');
-  const lastPart = parts[parts.length - 1];
-  if (lastPart === 'native' || lastPart === 'web') {
-    parts.pop();
-  }
-  return parts.join('/');
-};
-
 const DocsPageWrapper = props => {
   const {
     blurb,
@@ -106,7 +92,7 @@ const DocsPageWrapper = props => {
     history,
     location,
   } = props;
-  const path = getBasePath(match.url);
+  const path = match.url;
   let renderWeb = location.search.indexOf('platform=web') >= 0;
   let renderNative = location.search.indexOf('platform=native') >= 0;
 
