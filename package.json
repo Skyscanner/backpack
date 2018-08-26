@@ -146,7 +146,7 @@
     "theo": "^8.0.0-beta.2",
     "tinycolor2": "^1.4.1",
     "webpack": "^3.10.0",
-    "webpack-dev-server": "^2.11.0",
+    "webpack-dev-server": "^3.1.6",
     "wrapper-webpack-plugin": "^1.0.0",
     "zip-it-loader": "^0.3.0"
   },
