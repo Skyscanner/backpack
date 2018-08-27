@@ -191,7 +191,6 @@ exports[`BpkBarchart should render correctly 1`] = `
         onBarClick={null}
         onBarFocus={null}
         onBarHover={null}
-        onBarTouch={null}
         outerPadding={0}
         xScale={[Function]}
         xScaleDataKey="month"
@@ -394,7 +393,6 @@ exports[`BpkBarchart should render correctly with "className" prop 1`] = `
         onBarClick={null}
         onBarFocus={null}
         onBarHover={null}
-        onBarTouch={null}
         outerPadding={0}
         xScale={[Function]}
         xScaleDataKey="month"
@@ -597,7 +595,6 @@ exports[`BpkBarchart should render correctly with "leadingScrollIndicatorClassNa
         onBarClick={null}
         onBarFocus={null}
         onBarHover={null}
-        onBarTouch={null}
         outerPadding={0}
         xScale={[Function]}
         xScaleDataKey="month"
@@ -800,7 +797,6 @@ exports[`BpkBarchart should render correctly with "trailingScrollIndicatorClassN
         onBarClick={null}
         onBarFocus={null}
         onBarHover={null}
-        onBarTouch={null}
         outerPadding={0}
         xScale={[Function]}
         xScaleDataKey="month"
@@ -945,7 +941,6 @@ exports[`BpkBarchart should render with "disableDataTable" prop 1`] = `
         onBarClick={null}
         onBarFocus={null}
         onBarHover={null}
-        onBarTouch={null}
         outerPadding={0}
         xScale={[Function]}
         xScaleDataKey="month"
@@ -1148,7 +1143,6 @@ exports[`BpkBarchart should render with "getBarLabel" prop 1`] = `
         onBarClick={null}
         onBarFocus={null}
         onBarHover={null}
-        onBarTouch={null}
         outerPadding={0}
         xScale={[Function]}
         xScaleDataKey="month"
@@ -1352,7 +1346,6 @@ exports[`BpkBarchart should render with "hideXAxisLabel" prop 1`] = `
         onBarClick={null}
         onBarFocus={null}
         onBarHover={null}
-        onBarTouch={null}
         outerPadding={0}
         xScale={[Function]}
         xScaleDataKey="month"
@@ -1556,7 +1549,6 @@ exports[`BpkBarchart should render with "hideYAxisLabel" prop 1`] = `
         onBarClick={null}
         onBarFocus={null}
         onBarHover={null}
-        onBarTouch={null}
         outerPadding={0}
         xScale={[Function]}
         xScaleDataKey="month"
@@ -1759,7 +1751,6 @@ exports[`BpkBarchart should render with "onBarClick" prop 1`] = `
         onBarClick={[Function]}
         onBarFocus={null}
         onBarHover={null}
-        onBarTouch={null}
         outerPadding={0}
         xScale={[Function]}
         xScaleDataKey="month"
@@ -1962,210 +1953,6 @@ exports[`BpkBarchart should render with "onBarHover" prop 1`] = `
         onBarClick={null}
         onBarFocus={null}
         onBarHover={[Function]}
-        onBarTouch={null}
-        outerPadding={0}
-        xScale={[Function]}
-        xScaleDataKey="month"
-        yScale={[Function]}
-        yScaleDataKey="price"
-      />
-    </BpkChartMargin>
-  </svg>
-</BpkMobileScrollContainer>
-`;
-
-exports[`BpkBarchart should render with "onBarTouch" prop 1`] = `
-<BpkMobileScrollContainer
-  className={null}
-  innerContainerTagName="div"
-  leadingIndicatorClassName={null}
-  style={null}
-  trailingIndicatorClassName={null}
->
-  <BpkChartDataTable
-    data={
-      Array [
-        Object {
-          "month": "Jan",
-          "price": 305,
-        },
-        Object {
-          "month": "Feb",
-          "price": 348,
-        },
-        Object {
-          "month": "Mar",
-          "price": 418,
-        },
-        Object {
-          "month": "Apr",
-          "price": 448,
-        },
-        Object {
-          "month": "May",
-          "price": 344,
-        },
-        Object {
-          "month": "Jun",
-          "price": 322,
-        },
-        Object {
-          "month": "Jul",
-          "price": 340,
-        },
-        Object {
-          "month": "Aug",
-          "price": 327,
-        },
-        Object {
-          "month": "Sep",
-          "price": 444,
-        },
-        Object {
-          "month": "Oct",
-          "price": 422,
-        },
-        Object {
-          "month": "Nov",
-          "price": 344,
-        },
-        Object {
-          "month": "Dec",
-          "price": 301,
-        },
-      ]
-    }
-    xAxisLabel="Month"
-    xScaleDataKey="month"
-    yAxisLabel="Average price (£)"
-    yScaleDataKey="price"
-  />
-  <svg
-    className="bpk-barchart"
-    height={200}
-    width={200}
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <BpkBarchartDefs />
-    <BpkChartMargin
-      margin={
-        Object {
-          "bottom": 48,
-          "left": 78,
-          "right": 0,
-          "top": 6,
-        }
-      }
-    >
-      <BpkChartAxis
-        height={200}
-        label="Average price (£)"
-        margin={
-          Object {
-            "bottom": 48,
-            "left": 78,
-            "right": 0,
-            "top": 6,
-          }
-        }
-        numTicks={null}
-        orientation="y"
-        scale={[Function]}
-        tickEvery={1}
-        tickOffset={0}
-        tickValue={[Function]}
-        width={200}
-      />
-      <BpkChartAxis
-        height={200}
-        label="Month"
-        margin={
-          Object {
-            "bottom": 48,
-            "left": 78,
-            "right": 0,
-            "top": 6,
-          }
-        }
-        numTicks={null}
-        orientation="x"
-        scale={[Function]}
-        tickEvery={1}
-        tickOffset={0}
-        tickValue={[Function]}
-        width={200}
-      />
-      <BpkBarchartBars
-        BarComponent={[Function]}
-        data={
-          Array [
-            Object {
-              "month": "Jan",
-              "price": 305,
-            },
-            Object {
-              "month": "Feb",
-              "price": 348,
-            },
-            Object {
-              "month": "Mar",
-              "price": 418,
-            },
-            Object {
-              "month": "Apr",
-              "price": 448,
-            },
-            Object {
-              "month": "May",
-              "price": 344,
-            },
-            Object {
-              "month": "Jun",
-              "price": 322,
-            },
-            Object {
-              "month": "Jul",
-              "price": 340,
-            },
-            Object {
-              "month": "Aug",
-              "price": 327,
-            },
-            Object {
-              "month": "Sep",
-              "price": 444,
-            },
-            Object {
-              "month": "Oct",
-              "price": 422,
-            },
-            Object {
-              "month": "Nov",
-              "price": 344,
-            },
-            Object {
-              "month": "Dec",
-              "price": 301,
-            },
-          ]
-        }
-        getBarLabel={[Function]}
-        getBarSelection={[Function]}
-        height={200}
-        innerPadding={0.35}
-        margin={
-          Object {
-            "bottom": 48,
-            "left": 78,
-            "right": 0,
-            "top": 6,
-          }
-        }
-        maxYValue={448}
-        onBarClick={null}
-        onBarFocus={null}
-        onBarHover={null}
-        onBarTouch={[Function]}
         outerPadding={0}
         xScale={[Function]}
         xScaleDataKey="month"
@@ -2385,7 +2172,6 @@ exports[`BpkBarchart should render with "showGridlines" prop 1`] = `
         onBarClick={null}
         onBarFocus={null}
         onBarHover={null}
-        onBarTouch={null}
         outerPadding={0.35}
         xScale={[Function]}
         xScaleDataKey="month"

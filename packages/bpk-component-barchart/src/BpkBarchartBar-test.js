@@ -62,22 +62,6 @@ describe('BpkBarchartBar', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  it('should render with an onTouch handler', () => {
-    const tree = renderer
-      .create(
-        <BpkBarchartBar
-          x={10}
-          y={10}
-          width={20}
-          height={100}
-          label="Bar"
-          onTouch={() => null}
-        />,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
-  });
-
   it('should render as an outlier', () => {
     const tree = renderer
       .create(

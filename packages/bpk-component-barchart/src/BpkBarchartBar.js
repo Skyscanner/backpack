@@ -51,7 +51,6 @@ const BpkBarchartBar = props => {
     onClick,
     onHover,
     onFocus,
-    onTouch,
     outlier,
     selected,
     padding,
@@ -70,7 +69,7 @@ const BpkBarchartBar = props => {
   if (selected) {
     classNames.push(getClassName('bpk-barchart-bar--selected'));
   }
-  if (onClick || onHover || onTouch) {
+  if (onClick || onHover) {
     classNames.push(getClassName('bpk-barchart-bar--interactive'));
   }
   if (outlier) {
@@ -103,7 +102,6 @@ const BpkBarchartBar = props => {
         onClick={onClick || undefined}
         onMouseOver={onHover || undefined}
         onFocus={onFocus || undefined}
-        onTouch={onTouch || undefined}
         onKeyDown={onClick ? handleKeyboardEvent(onClick) : undefined}
         tabIndex={onClick ? 0 : undefined}
         role={onClick ? 'button' : undefined}
@@ -124,7 +122,6 @@ BpkBarchartBar.propTypes = {
   onClick: PropTypes.func,
   onHover: PropTypes.func,
   onFocus: PropTypes.func,
-  onTouch: PropTypes.func,
   outlier: PropTypes.bool,
   padding: PropTypes.number,
   selected: PropTypes.bool,
@@ -135,7 +132,6 @@ BpkBarchartBar.defaultProps = {
   onClick: null,
   onHover: null,
   onFocus: null,
-  onTouch: null,
   outlier: false,
   padding: 0,
   selected: false,
