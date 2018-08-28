@@ -1,6 +1,6 @@
 {
   "name": "bpk-tokens",
-  "version": "27.0.8",
+  "version": "27.0.9",
   "description": "Backpack design tokens for colors, spacing, font, etc.",
   "main": "index.js",
   "scripts": {
