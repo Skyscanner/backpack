@@ -19,15 +19,15 @@
 @import '~bpk-mixins/index';
 
 $calendar-height: 7 * ($bpk-calendar-day-size + $bpk-calendar-day-spacing);
-$calendar-width: 7 * ($bpk-calendar-day-size + $bpk-calendar-day-spacing);
 
 .bpk-scrollable-calendar-grid-list {
   position: relative;
   width: 100%;
   height: 100%;
   overflow-x: hidden;
-  overflow-y: scroll;
+  overflow-y: none;
   box-sizing: border-box;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
 
   &__strip {
     z-index: 0;
