@@ -15,6 +15,6 @@
   "dependencies": {
     "bpk-mixins": "^17.11.10",
     "bpk-tokens": "^27.0.8",
-    "normalize.css": "8.0.0"
+    "normalize.css": "4.2.0"
   }
 }
