@@ -2,6 +2,24 @@
 
 [Unreleased changes](./unreleased.md).
 
+# 2018-08-28 - Fixed banner alert `Module not found` issue
+
+**Breaking:**
+
+- bpk-component-router-link: 1.0.77 => 2.0.0
+  - upgraded react router from 2.x to 4.x
+
+**Fixed:**
+
+- bpk-react-utils: 2.6.6 => 2.6.7
+  - fixed Portal to work with react 16.
+
+- bpk-component-banner-alert: 2.0.40 => 2.0.41
+  - Fixed issue with `Module not found` error.
+
+- bpk-stylesheets: 3.2.122 => 3.2.123
+  - Reverted previous breaking change to base stylesheet.
+
 # 2018-08-22 - Fixed native phone imput prop types
 
 **Fixed:**
