@@ -1,5 +1,5 @@
 {
   "rules": {
-    "backpack/use-tokens": 0
+    "backpack/use-tokens": "off"
   }
 }
