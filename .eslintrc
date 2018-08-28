@@ -1,8 +1,8 @@
 {
   "parser": "babel-eslint",
   "extends": [
-      "skyscanner-with-prettier",
-      "plugin:flowtype/recommended"
+    "skyscanner-with-prettier",
+    "plugin:flowtype/recommended"
   ],
   "plugins": [
     "flowtype"
@@ -25,57 +25,46 @@
   },
   "rules": {
     "prettier/prettier": "error",
-    "react/jsx-filename-extension": 0,
-    "import/no-extraneous-dependencies": 0,
+    "react/jsx-filename-extension": "off",
+    "import/no-extraneous-dependencies": "off",
+    // This is superceded by jsx-a11y/label-has-associated-control
+    "jsx-a11y/label-has-for": "off",
     // We want to keep prop-types alongside flow types so we relax this rule to allow us to specify defaults for
     // required flow props
     "react/default-props-match-prop-types": [
-      2,
+      "error",
       {
         "allowRequiredDefaults": true
       }
     ],
     "react/require-default-props": [
-      2,
+      "error",
       {
         "forbidDefaultForRequired": false
       }
     ],
     "react/prefer-stateless-function": [
-      2,
+      "error",
       {
         "ignorePureComponents": true
       }
     ],
-    // See https://github.com/evcohen/eslint-plugin-jsx-a11y/issues/282
-    "jsx-a11y/label-has-for": [
-      2,
+    "react/sort-comp": [
+      "error",
       {
-        "components": [
-          "Label"
-        ],
-        "required": {
-          "some": [
-            "nesting",
-            "id"
-          ]
-        },
-        "allowChildren": false
+        "order": [
+          "type-annotations",
+          "static-methods",
+          "lifecycle",
+          "/^on.+$/",
+          "getters",
+          "setters",
+          "/^(get|set)(?!(InitialState$|DefaultProps$|ChildContext$)).+$/",
+          "everything-else",
+          "/^render.+$/",
+          "render"
+        ]
       }
-    ],
-    "react/sort-comp": ["error", {
-      "order": [
-        "type-annotations",
-        "static-methods",
-        "lifecycle",
-        "/^on.+$/",
-        "getters",
-        "setters",
-        "/^(get|set)(?!(InitialState$|DefaultProps$|ChildContext$)).+$/",
-        "everything-else",
-        "/^render.+$/",
-        "render"
-      ],
-    }],
+    ]
   }
 }

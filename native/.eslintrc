@@ -1,7 +1,10 @@
 {
   "rules": {
-    "backpack/use-tokens": [2, {
-      "platform": "native"
-    }]
+    "backpack/use-tokens": [
+      "error",
+      {
+        "platform": "native"
+      }
+    ]
   }
 }

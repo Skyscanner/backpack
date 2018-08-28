@@ -38,10 +38,6 @@ const BpkRadio = props => {
     classNames.push(className);
   }
 
-  // This is awkward because the label-has-for rule enforces an 'id' / 'for' pairing
-  // when it's not really necessary for nested inputs.
-  // See https://github.com/evcohen/eslint-plugin-jsx-a11y/issues/51.
-  /* eslint-disable jsx-a11y/label-has-for */
   return (
     <label className={classNames.join(' ')}>
       <input
@@ -55,7 +51,6 @@ const BpkRadio = props => {
       {label}
     </label>
   );
-  /* eslint-enable */
 };
 
 BpkRadio.propTypes = {

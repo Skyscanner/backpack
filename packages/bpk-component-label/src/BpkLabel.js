@@ -48,8 +48,6 @@ const BpkLabel = (props: Props) => {
   }
 
   return (
-    // The BpkFieldset component addresses the issue of enforcing `htmlFor`
-    // eslint-disable-next-line jsx-a11y/label-has-for
     <label className={classNames.join(' ')} {...rest}>
       {children}
       {required && (

@@ -91,7 +91,7 @@
     "enzyme": "^3.4.4",
     "enzyme-adapter-react-16": "^1.2.0",
     "enzyme-to-json": "^3.3.4",
-    "eslint-config-skyscanner-with-prettier": "^0.2.2",
+    "eslint-config-skyscanner-with-prettier": "^0.3.0",
     "eslint-plugin-flowtype": "^2.50.0",
     "eslint_d": "^7.0.0",
     "extract-text-webpack-plugin": "^3.0.2",
