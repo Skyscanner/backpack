@@ -48,7 +48,6 @@ const BpkBarchartBars = props => {
     onBarClick,
     onBarHover,
     onBarFocus,
-    onBarTouch,
     data,
     xScaleDataKey,
     yScaleDataKey,
@@ -89,7 +88,6 @@ const BpkBarchartBars = props => {
             onClick={onBarClick ? e => onBarClick(e, { point }) : null}
             onHover={onBarHover ? e => onBarHover(e, { point }) : null}
             onFocus={onBarFocus ? e => onBarFocus(e, { point }) : null}
-            onTouch={onBarTouch ? e => onBarTouch(e, { point }) : null}
             selected={getBarSelection(point)}
             padding={innerPadding}
             {...rest}
@@ -123,7 +121,6 @@ BpkBarchartBars.propTypes = {
   onBarClick: PropTypes.func,
   onBarHover: PropTypes.func,
   onBarFocus: PropTypes.func,
-  onBarTouch: PropTypes.func,
 };
 
 BpkBarchartBars.defaultProps = {
@@ -132,7 +129,6 @@ BpkBarchartBars.defaultProps = {
   onBarClick: null,
   onBarHover: null,
   onBarFocus: null,
-  onBarTouch: null,
   getBarSelection: () => false,
 };
 

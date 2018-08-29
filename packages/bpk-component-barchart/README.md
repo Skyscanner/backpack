@@ -61,7 +61,6 @@ export default () => (
 | [onBarClick](#onbarclick)               | func                                  | false    | null             |
 | [onBarHover](#onbarhover)               | func                                  | false    | null             |
 | [onBarFocus](#onbarfocus)               | func                                  | false    | null             |
-| [onBarTouch](#onbartouch)               | func                                  | false    | null             |
 | [getBarLabel](#getbarlabel)             | func                                  | false    | See prop details |
 | [getBarSelection](#getbarselection)     | func                                  | false    | See prop details |
 | BarComponent                            | func                                  | false    | BpkBarchartBar   |
@@ -152,16 +151,6 @@ const onBarHover = (event, {
 ```javascript
 const onBarFocus = (event, {
   point: <Object>, // The `data` array object from the bar focused
-}) => {
-  ...
-}
-```
-
-#### onBarTouch
-
-```javascript
-const onBarTouch = (event, {
-  point: <Object>, // The `data` array object from the bar touched
 }) => {
   ...
 }
