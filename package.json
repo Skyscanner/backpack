@@ -88,7 +88,7 @@
     "css-loader": "^1.0.0",
     "danger": "^3.8.6",
     "del": "^3.0.0",
-    "enzyme": "^3.4.4",
+    "enzyme": "^3.5.0",
     "enzyme-adapter-react-16": "^1.2.0",
     "enzyme-to-json": "^3.3.4",
     "eslint-config-skyscanner-with-prettier": "^0.3.0",
