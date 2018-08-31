@@ -2,6 +2,15 @@
 
 [Unreleased changes](./UNRELEASED.md).
 
+# 2018-08-31 - Fixed DataTable and removed unused BarChart prop
+
+**Fixed:**
+- bpk-component-datatable: 0.1.34 => 0.1.35
+  - Fixed an issue where sorting columns would cause an exception.
+
+- bpk-component-barchart: 2.3.20 => 2.3.21
+  - Removes `onBarTouch` prop as it ultimately had no effect
+
 # 2018-08-28 - Fixed banner alert `Module not found` issue
 
 **Breaking:**
