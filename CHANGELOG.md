@@ -1,6 +1,6 @@
 # Backpack changelog
 
-[Unreleased changes](./unreleased.md).
+[Unreleased changes](./UNRELEASED.md).
 
 # 2018-08-28 - Fixed banner alert `Module not found` issue
 
