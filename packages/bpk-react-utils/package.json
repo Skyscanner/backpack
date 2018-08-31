@@ -1,6 +1,6 @@
 {
   "name": "bpk-react-utils",
-  "version": "2.6.7",
+  "version": "2.6.8",
   "description": "Utilities for Backpack's React components.",
   "main": "index.js",
   "repository": {
