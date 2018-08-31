@@ -113,11 +113,14 @@ class BpkDataTable extends Component {
       return;
     }
 
+    // TODO This hack has been introduced as event.target directly below was evaluating to `undefined` when used directly below.
+    // There is a follow-up JIRA ticket (https://gojira.skyscanner.net/browse/BPK-1883) to investigate the cause of this further.
+    const eventTarget = event.target;
     this.setState(prevState => {
       const sortDirection = getSortDirection(
         prevState,
         sortBy,
-        getSortIconDirection(event.target),
+        getSortIconDirection(eventTarget),
         column.props.defaultSortDirection || SortDirection.ASC,
       );
 
