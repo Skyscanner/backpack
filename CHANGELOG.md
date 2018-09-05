@@ -2,6 +2,18 @@
 
 [Unreleased changes](./UNRELEASED.md).
 
+# 2018-09-05 - New 'family' icon
+
+**Added:**
+- bpk-component-icon: 3.22.12 => 3.23.1
+- bpk-mixins: 7.11.12 => 7.11.13
+- bpk-svgs: 5.18.9 => 5.18.10
+- react-native-bpk-component-icon: 1.9.11 => 1.10.1
+- react-native-bpk-component-button-link: 3.0.25 => 3.0.26
+- react-native-bpk-component-button: 7.1.10 => 7.1.11
+- react-native-bpk-component-navigation-bar: 2.0.31 => 2.0.31
+  - New icon: `family`.
+
 # 2018-08-31 - Fixed DataTable and removed unused BarChart prop
 
 **Fixed:**
