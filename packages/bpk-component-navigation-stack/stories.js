@@ -23,7 +23,7 @@ import { cssModules } from 'bpk-react-utils';
 import { storiesOf } from '@storybook/react';
 import { updateOnDirectionChange } from 'bpk-component-rtl-toggle';
 
-import STYLES from './stories.scss';
+import STYLES from './stories.css';
 import BpkNavigationStack, { withNavigationStackState } from './index';
 import {
   View,

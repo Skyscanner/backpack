@@ -26,7 +26,7 @@ import {
   colorGray100,
 } from 'bpk-tokens/tokens/base.es6';
 
-import STYLES from './stories.scss';
+import STYLES from './stories.css';
 import BpkHorizontalNav, { BpkHorizontalNavItem } from './index';
 
 const getClassName = cssModules(STYLES);

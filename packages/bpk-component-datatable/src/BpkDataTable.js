@@ -23,7 +23,7 @@ import { cssModules } from 'bpk-react-utils';
 import _sortBy from 'lodash/sortBy';
 import _omit from 'lodash/omit';
 
-import STYLES from './bpk-data-table.scss';
+import STYLES from './bpk-data-table.css';
 import BpkDataTableColumn from './BpkDataTableColumn';
 import hasChildrenOfType from './hasChildrenOfType';
 import { getSortIconDirection } from './bpkHeaderRenderer';

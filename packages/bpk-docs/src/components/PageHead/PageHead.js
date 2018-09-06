@@ -27,7 +27,7 @@ import isString from 'lodash/isString';
 import Heading from '../Heading';
 import Paragraph from '../Paragraph';
 
-import STYLES from './PageHead.scss';
+import STYLES from './PageHead.css';
 
 const getClassName = cssModules(STYLES);
 

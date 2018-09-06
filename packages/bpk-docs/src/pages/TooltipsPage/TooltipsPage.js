@@ -27,7 +27,7 @@ import DocsPageWrapper from '../../components/DocsPageWrapper';
 import Heading from '../../components/Heading';
 import Paragraph from '../../components/Paragraph';
 import IntroBlurb from '../../components/IntroBlurb';
-import STYLES from './tooltips-page.scss';
+import STYLES from './tooltips-page.css';
 
 const getClassName = cssModules(STYLES);
 

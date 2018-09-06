@@ -26,7 +26,7 @@ import BpkImage, {
   withLoadingBehavior,
 } from 'bpk-component-image';
 
-import STYLES from './ComponentScreenshots.scss';
+import STYLES from './ComponentScreenshots.css';
 
 const getClassName = cssModules(STYLES);
 const documentIfExists = typeof window !== 'undefined' ? document : null;

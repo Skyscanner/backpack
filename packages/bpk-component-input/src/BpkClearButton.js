@@ -23,7 +23,7 @@ import ClearIcon from 'bpk-component-icon/sm/close-circle';
 import { withButtonAlignment } from 'bpk-component-icon';
 import { cssModules } from 'bpk-react-utils';
 
-import STYLES from './bpk-clear-button.scss';
+import STYLES from './bpk-clear-button.css';
 
 const getClassName = cssModules(STYLES);
 

@@ -24,7 +24,7 @@ import BpkText from 'bpk-component-text';
 
 import { cssModules } from 'bpk-react-utils';
 
-import STYLES from './home-page.scss';
+import STYLES from './home-page.css';
 import * as ROUTES from '../../constants/routes';
 
 import HomePageCard from '../../components/HomePageCard';

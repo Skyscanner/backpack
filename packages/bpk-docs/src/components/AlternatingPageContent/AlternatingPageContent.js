@@ -20,7 +20,7 @@
 import React, { type Node } from 'react';
 import { cssModules } from 'bpk-react-utils';
 
-import STYLES from './AlternatingPageContent.scss';
+import STYLES from './AlternatingPageContent.css';
 
 const getClassName = cssModules(STYLES);
 

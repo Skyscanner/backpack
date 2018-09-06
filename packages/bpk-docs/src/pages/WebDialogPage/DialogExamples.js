@@ -28,7 +28,7 @@ import React, { Component, type Node } from 'react';
 
 import { cssModules, withDefaultProps } from 'bpk-react-utils';
 
-import STYLES from './DialogExamples.scss';
+import STYLES from './DialogExamples.css';
 import { ParagraphNoMargin } from '../../components/Paragraph';
 
 const getClassName = cssModules(STYLES);

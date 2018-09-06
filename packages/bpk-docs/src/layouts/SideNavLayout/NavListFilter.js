@@ -20,7 +20,7 @@ import React from 'react';
 import { cssModules } from 'bpk-react-utils';
 import BpkRadio from 'bpk-component-radio';
 
-import STYLES from './NavListFilter.scss';
+import STYLES from './NavListFilter.css';
 
 const getClassName = cssModules(STYLES);
 

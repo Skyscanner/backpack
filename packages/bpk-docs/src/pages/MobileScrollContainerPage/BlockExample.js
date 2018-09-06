@@ -22,7 +22,7 @@ import React, { type Node } from 'react';
 import { cssModules } from 'bpk-react-utils';
 import BpkMobileScrollContainer from 'bpk-component-mobile-scroll-container';
 
-import STYLES from './BlockExample.scss';
+import STYLES from './BlockExample.css';
 
 const getClassName = cssModules(STYLES);
 

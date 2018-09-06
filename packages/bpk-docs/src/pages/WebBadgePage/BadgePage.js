@@ -26,7 +26,7 @@ import { cssModules } from 'bpk-react-utils';
 
 import badgeReadme from 'bpk-component-badge/README.md';
 
-import STYLES from './badge-page.scss';
+import STYLES from './badge-page.css';
 import DocsPageBuilder from '../../components/DocsPageBuilder';
 import Paragraph from '../../components/Paragraph';
 

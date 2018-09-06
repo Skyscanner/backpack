@@ -42,7 +42,7 @@ import {
   formatMonthArabic,
 } from '../../../../bpk-component-calendar/test-utils';
 
-import STYLES from './calendar-page.scss';
+import STYLES from './calendar-page.css';
 
 const getClassName = cssModules(STYLES);
 

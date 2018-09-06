@@ -17,3 +17,4 @@ native/android/captures
 *.xcworkspace
 native/ios/Pods
 native/android/backpack.keystore
+packages/**/*.css

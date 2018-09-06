@@ -20,7 +20,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { cssModules } from 'bpk-react-utils';
 
-import STYLES from './stories.scss';
+import STYLES from './stories.css';
 
 const getClassName = cssModules(STYLES);
 

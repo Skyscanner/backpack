@@ -28,7 +28,7 @@ import BpkModal, {
   defaultProps as modalDefaultProps,
 } from 'bpk-component-modal';
 
-import STYLES from './BpkDialog.scss';
+import STYLES from './BpkDialog.css';
 import { onClosePropType } from './customPropTypes';
 
 const getClassName = cssModules(STYLES);

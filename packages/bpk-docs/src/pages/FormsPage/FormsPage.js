@@ -36,7 +36,7 @@ import textareaReadme from 'bpk-component-textarea/README.md';
 import checkboxReadme from 'bpk-component-checkbox/README.md';
 import validationReadme from 'bpk-component-form-validation/README.md';
 
-import STYLES from './forms-page.scss';
+import STYLES from './forms-page.css';
 import * as ROUTES from '../../constants/routes';
 import DocsPageBuilder from '../../components/DocsPageBuilder';
 import DocsPageWrapper from '../../components/DocsPageWrapper';

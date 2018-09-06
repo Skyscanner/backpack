@@ -24,7 +24,7 @@ import React, { type Node } from 'react';
 import BpkCloseButton from 'bpk-component-close-button';
 import { TransitionInitialMount, cssModules } from 'bpk-react-utils';
 
-import STYLES from './bpk-modal-dialog.scss';
+import STYLES from './bpk-modal-dialog.css';
 
 import { titlePropType, onClosePropType } from './customPropTypes';
 

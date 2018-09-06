@@ -20,7 +20,7 @@ import _ from 'lodash';
 import React from 'react';
 import { cssModules } from 'bpk-react-utils';
 
-import STYLES from './IconSearchResults.scss';
+import STYLES from './IconSearchResults.css';
 import customPropTypes from './propTypes';
 import IconSearchResult from './IconSearchResult';
 import Heading from '../Heading';

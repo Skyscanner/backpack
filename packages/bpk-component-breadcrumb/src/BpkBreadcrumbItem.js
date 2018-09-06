@@ -26,7 +26,7 @@ import { cssModules } from 'bpk-react-utils';
 import { withRtlSupport } from 'bpk-component-icon';
 import ArrowRight from 'bpk-component-icon/lg/arrow-right';
 
-import STYLES from './BpkBreadcrumbItem.scss';
+import STYLES from './BpkBreadcrumbItem.css';
 
 const getClassName = cssModules(STYLES);
 

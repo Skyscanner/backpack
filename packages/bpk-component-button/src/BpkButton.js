@@ -21,7 +21,7 @@
 import React, { type Node } from 'react';
 import PropTypes from 'prop-types';
 
-import STYLES from './bpk-button.scss';
+import STYLES from './bpk-button.css';
 
 // This was originally depended upon from the bpk-react-utils package, however
 // we decided to inline it in this particular component so as not to bloat the

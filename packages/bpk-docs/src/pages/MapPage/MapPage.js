@@ -30,7 +30,7 @@ import androidScreenshot from 'react-native-bpk-component-map/screenshots/androi
 import nativeMapReadme from 'react-native-bpk-component-map/README.md';
 import mapReadme from 'bpk-component-map/README.md';
 
-import STYLES from './MapPage.scss';
+import STYLES from './MapPage.css';
 
 import DocsPageBuilder from '../../components/DocsPageBuilder';
 import DocsPageWrapper from '../../components/DocsPageWrapper';

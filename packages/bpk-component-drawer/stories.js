@@ -26,7 +26,7 @@ import BpkText from 'bpk-component-text';
 
 import BpkDrawer from './index';
 
-import STYLES from './stories.scss';
+import STYLES from './stories.css';
 
 const getClassName = cssModules(STYLES);
 

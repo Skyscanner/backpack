@@ -22,7 +22,7 @@ import React from 'react';
 import { cssModules } from 'bpk-react-utils';
 
 import Heading from '../Heading';
-import STYLES from './HeroSection.scss';
+import STYLES from './HeroSection.css';
 
 const getClassName = cssModules(STYLES);
 

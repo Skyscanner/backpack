@@ -31,7 +31,7 @@ import BpkNavigationBar, {
   BpkNavigationBarIconButton,
 } from './index';
 
-import STYLES from './stories.scss';
+import STYLES from './stories.css';
 import AirlineLogo from './AirlineLogo';
 
 const getClassNames = cssModules(STYLES);

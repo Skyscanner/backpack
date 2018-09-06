@@ -26,7 +26,7 @@ import { cssModules } from 'bpk-react-utils';
 
 import themeAttributes from '../../themeableAttributes';
 
-import STYLES from './default-layout.scss';
+import STYLES from './default-layout.css';
 import Footer from '../../components/Footer';
 
 const EnhancedThemeProvider = updateOnThemeChange(BpkThemeProvider);

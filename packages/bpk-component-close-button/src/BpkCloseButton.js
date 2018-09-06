@@ -21,7 +21,7 @@ import React from 'react';
 import CloseIcon from 'bpk-component-icon/sm/close';
 import { cssModules } from 'bpk-react-utils';
 
-import STYLES from './bpk-close-button.scss';
+import STYLES from './bpk-close-button.css';
 
 const getClassName = cssModules(STYLES);
 

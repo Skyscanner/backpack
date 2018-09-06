@@ -20,7 +20,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { cssModules } from 'bpk-react-utils';
 
-import STYLES from './IconSearchResult.scss';
+import STYLES from './IconSearchResult.css';
 import customPropTypes from './propTypes';
 
 const getClassName = cssModules(STYLES);

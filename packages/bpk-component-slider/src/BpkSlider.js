@@ -21,7 +21,7 @@ import Slider from 'react-slider';
 import PropTypes from 'prop-types';
 import { cssModules } from 'bpk-react-utils';
 
-import STYLES from './bpk-slider.scss';
+import STYLES from './bpk-slider.css';
 
 const getClassName = cssModules(STYLES);
 

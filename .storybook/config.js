@@ -19,7 +19,8 @@ import React from 'react';
 import { configure, addDecorator } from '@storybook/react';
 import { withKnobs } from '@storybook/addon-knobs';
 
-import '../packages/bpk-stylesheets';
+import '../packages/bpk-stylesheets/base';
+import '../packages/bpk-stylesheets/base.css';
 import TOKENS from '../packages/bpk-tokens/tokens/base.common';
 import BpkGridToggle from '../packages/bpk-component-grid-toggle';
 import BpkRtlToggle from '../packages/bpk-component-rtl-toggle';

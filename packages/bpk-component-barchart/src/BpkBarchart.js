@@ -38,7 +38,7 @@ import {
   applyMarginRTLTransform,
 } from './RTLtransforms';
 import { ORIENTATION_X, ORIENTATION_Y } from './orientation';
-import STYLES from './bpk-barchart.scss';
+import STYLES from './bpk-barchart.css';
 
 const getClassName = cssModules(STYLES);
 

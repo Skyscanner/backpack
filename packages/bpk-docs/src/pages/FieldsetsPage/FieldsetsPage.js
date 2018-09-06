@@ -30,7 +30,7 @@ import BpkAutosuggest, {
   BpkAutosuggestSuggestion,
 } from 'bpk-component-autosuggest';
 
-import STYLES from './fieldsets-page.scss';
+import STYLES from './fieldsets-page.css';
 import * as ROUTES from '../../constants/routes';
 import DocsPageBuilder from '../../components/DocsPageBuilder';
 import DocsPageWrapper from '../../components/DocsPageWrapper';

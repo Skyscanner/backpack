@@ -20,7 +20,7 @@ import React, { Children } from 'react';
 import { cssModules } from 'bpk-react-utils';
 
 import { SPINNER_TYPES } from './index';
-import STYLES from './SpinnerLayout.scss';
+import STYLES from './SpinnerLayout.css';
 
 const getClassName = cssModules(STYLES);
 

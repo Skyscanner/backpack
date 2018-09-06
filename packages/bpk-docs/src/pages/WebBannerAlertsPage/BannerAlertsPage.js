@@ -34,7 +34,7 @@ import bannerAlertReadme from 'bpk-component-banner-alert/README.md';
 import DocsPageBuilder from '../../components/DocsPageBuilder';
 import Paragraph from '../../components/Paragraph';
 
-import STYLES from './bpk-banner-alerts-page.scss';
+import STYLES from './bpk-banner-alerts-page.css';
 
 const getClassName = cssModules(STYLES);
 const componentClassName = getClassName('bpk-banner-alerts-page__component');

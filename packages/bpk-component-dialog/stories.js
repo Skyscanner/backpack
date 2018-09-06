@@ -27,7 +27,7 @@ import { cssModules, withDefaultProps } from 'bpk-react-utils';
 
 import BpkDialog from './index';
 
-import STYLES from './stories.scss';
+import STYLES from './stories.css';
 
 const getClassName = cssModules(STYLES);
 

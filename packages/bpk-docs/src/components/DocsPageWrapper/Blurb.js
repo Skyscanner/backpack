@@ -21,7 +21,7 @@ import React from 'react';
 import isString from 'lodash/isString';
 import { cssModules } from 'bpk-react-utils';
 import Paragraph from '../Paragraph';
-import STYLES from './DocsPageWrapper.scss';
+import STYLES from './DocsPageWrapper.css';
 
 const getClassName = cssModules(STYLES);
 

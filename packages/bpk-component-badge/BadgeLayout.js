@@ -23,7 +23,7 @@ import React, { type Node, Children } from 'react';
 import { cssModules } from 'bpk-react-utils';
 
 import { BADGE_TYPES } from './index';
-import STYLES from './badge-layout.scss';
+import STYLES from './badge-layout.css';
 
 const getClassName = cssModules(STYLES);
 

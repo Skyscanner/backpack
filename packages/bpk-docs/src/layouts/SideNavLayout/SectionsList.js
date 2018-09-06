@@ -34,7 +34,7 @@ import UsingBackpackIcon from '../../static/using_bpk_icon.svg';
 import StyleGuideIcon from '../../static/style_guide_icon.svg';
 
 import * as ROUTES from '../../constants/routes';
-import STYLES from './SectionsList.scss';
+import STYLES from './SectionsList.css';
 
 const getClassName = cssModules(STYLES);
 

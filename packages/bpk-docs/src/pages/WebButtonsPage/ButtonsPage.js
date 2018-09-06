@@ -37,7 +37,7 @@ import BpkRouterLink from 'bpk-component-router-link';
 import buttonReadme from 'bpk-component-button/README.md';
 import loadingButtonReadme from 'bpk-component-loading-button/README.md';
 import { cssModules } from 'bpk-react-utils';
-import STYLES from './buttons-page.scss';
+import STYLES from './buttons-page.css';
 
 import * as ROUTES from '../../constants/routes';
 import DocsPageBuilder from '../../components/DocsPageBuilder';

@@ -32,7 +32,7 @@ import BpkNavigationStack, {
 import BpkButton from 'bpk-component-button';
 import { cssModules } from 'bpk-react-utils';
 
-import STYLES from './NavigationStackPage.scss';
+import STYLES from './NavigationStackPage.css';
 
 const getClassName = cssModules(STYLES);
 const ArrowIconWithRtl = withRtlSupport(ArrowIcon);

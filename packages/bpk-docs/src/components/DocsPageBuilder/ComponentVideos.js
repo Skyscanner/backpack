@@ -23,7 +23,7 @@ import BpkText from 'bpk-component-text';
 import BpkPanel from 'bpk-component-panel';
 import { cssModules } from 'bpk-react-utils';
 
-import STYLES from './ComponentVideos.scss';
+import STYLES from './ComponentVideos.css';
 
 const getClassName = cssModules(STYLES);
 

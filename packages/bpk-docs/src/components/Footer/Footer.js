@@ -26,7 +26,7 @@ import { withAlignment, withDescription } from 'bpk-component-icon';
 import { lineHeightSm, iconSizeSm } from 'bpk-tokens/tokens/base.es6';
 import BpkLink from 'bpk-component-link';
 
-import STYLES from './Footer.scss';
+import STYLES from './Footer.css';
 
 const getClassName = cssModules(STYLES);
 

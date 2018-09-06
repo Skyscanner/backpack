@@ -23,7 +23,7 @@ import BpkContentContainer from 'bpk-component-content-container';
 import { colors, primaryGradient } from 'bpk-tokens/tokens/base.es6';
 import { cssModules } from 'bpk-react-utils';
 
-import STYLES from './colors-page.scss';
+import STYLES from './colors-page.css';
 import Heading from '../../components/Heading';
 import ColorSwatch from '../../components/ColorSwatch';
 import DocsPageBuilder from '../../components/DocsPageBuilder';

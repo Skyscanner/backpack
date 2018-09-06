@@ -25,7 +25,7 @@ import React, { Component } from 'react';
 import BpkBreakpoint, { BREAKPOINTS } from 'bpk-component-breakpoint';
 import BpkCalendar, { CustomPropTypes } from 'bpk-component-calendar';
 
-import STYLES from './bpk-datepicker.scss';
+import STYLES from './bpk-datepicker.css';
 
 const getClassName = cssModules(STYLES);
 

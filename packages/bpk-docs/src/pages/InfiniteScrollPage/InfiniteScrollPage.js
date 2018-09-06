@@ -32,7 +32,7 @@ import infiniteScrollReadme from '../../../../bpk-component-infinite-scroll/READ
 import DocsPageBuilder from '../../components/DocsPageBuilder';
 import IntroBlurb from '../../components/IntroBlurb';
 
-import STYLES from './InfiniteScrollPage.scss';
+import STYLES from './InfiniteScrollPage.css';
 import DocsPageWrapper from '../../components/DocsPageWrapper';
 
 const getClassName = cssModules(STYLES);

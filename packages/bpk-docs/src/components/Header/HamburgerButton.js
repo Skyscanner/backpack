@@ -23,7 +23,7 @@ import CloseIcon from 'bpk-component-icon/sm/close';
 import { withButtonAlignment } from 'bpk-component-icon';
 import { cssModules } from 'bpk-react-utils';
 
-import STYLES from './HamburgerButton.scss';
+import STYLES from './HamburgerButton.css';
 
 const getClassName = cssModules(STYLES);
 

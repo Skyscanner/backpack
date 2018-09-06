@@ -24,7 +24,7 @@ import { cssModules } from 'bpk-react-utils';
 import BpkInput, { INPUT_TYPES } from 'bpk-component-input';
 import BpkSelect from 'bpk-component-select';
 
-import STYLES from './BpkPhoneInput.scss';
+import STYLES from './BpkPhoneInput.css';
 
 const getClassName = cssModules(STYLES);
 

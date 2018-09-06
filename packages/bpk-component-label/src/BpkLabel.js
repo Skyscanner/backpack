@@ -21,7 +21,7 @@ import PropTypes, { type Node } from 'prop-types';
 import React from 'react';
 import { cssModules } from 'bpk-react-utils';
 
-import STYLES from './bpk-label.scss';
+import STYLES from './bpk-label.css';
 
 const getClassName = cssModules(STYLES);
 

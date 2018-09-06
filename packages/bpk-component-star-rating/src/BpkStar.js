@@ -25,7 +25,7 @@ import HalfLargeIcon from 'bpk-component-icon/lg/star-half';
 import { withRtlSupport } from 'bpk-component-icon';
 import { cssModules } from 'bpk-react-utils';
 
-import STYLES from './BpkStar.scss';
+import STYLES from './BpkStar.css';
 
 const getClassName = cssModules(STYLES);
 

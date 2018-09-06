@@ -20,7 +20,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { TransitionInitialMount, cssModules } from 'bpk-react-utils';
 
-import STYLES from './bpk-scrim.scss';
+import STYLES from './bpk-scrim.css';
 
 const getClassName = cssModules(STYLES);
 

@@ -23,7 +23,7 @@ import { cssModules } from 'bpk-react-utils';
 import { STAR_TYPES } from './BpkStar';
 import BpkInteractiveStar from './BpkInteractiveStar';
 
-import STYLES from './BpkStarRating.scss';
+import STYLES from './BpkStarRating.css';
 
 const getClassName = cssModules(STYLES);
 

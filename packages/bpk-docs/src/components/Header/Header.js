@@ -29,7 +29,7 @@ import { cssModules } from 'bpk-react-utils';
 import BpkRouterLink from 'bpk-component-router-link';
 import BpkLink from 'bpk-component-link';
 
-import STYLES from './Header.scss';
+import STYLES from './Header.css';
 
 import * as ROUTES from '../../constants/routes';
 import HamburgerButton from './HamburgerButton';

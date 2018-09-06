@@ -33,7 +33,7 @@ import DocsPageBuilder from '../../components/DocsPageBuilder';
 import Paragraph from '../../components/Paragraph';
 import AirlineLogo from './AirlineLogo';
 
-import STYLES from './NavigationBarPage.scss';
+import STYLES from './NavigationBarPage.css';
 
 const getClassNames = cssModules(STYLES);
 const ArrowIconWithRtl = withRtlSupport(ArrowIcon);

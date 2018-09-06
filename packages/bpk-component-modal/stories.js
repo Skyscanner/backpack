@@ -28,7 +28,7 @@ import BpkText from 'bpk-component-text';
 
 import BpkModal from './index';
 
-import STYLES from './stories.scss';
+import STYLES from './stories.css';
 
 const getClassName = cssModules(STYLES);
 

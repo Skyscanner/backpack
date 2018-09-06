@@ -21,7 +21,7 @@ import React from 'react';
 import { BpkLargeSpinner, SPINNER_TYPES } from 'bpk-component-spinner';
 import { cssModules } from 'bpk-react-utils';
 
-import STYLES from './DefaultLoadingElement.scss';
+import STYLES from './DefaultLoadingElement.css';
 
 const getClassName = cssModules(STYLES);
 

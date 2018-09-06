@@ -22,7 +22,7 @@ import BpkLabel from 'bpk-component-label';
 import BpkInput, { INPUT_TYPES } from 'bpk-component-input';
 import { cssModules } from 'bpk-react-utils';
 
-import STYLES from './IconSearchForm.scss';
+import STYLES from './IconSearchForm.css';
 
 const getClassName = cssModules(STYLES);
 const FILTER_INPUT_ID = 'icon_search_form_filter';

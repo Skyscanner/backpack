@@ -31,7 +31,7 @@ import { cssModules } from 'bpk-react-utils';
 import BpkTickIcon from 'bpk-component-icon/sm/tick-circle';
 import BpkCloseIcon from 'bpk-component-icon/sm/close-circle';
 
-import STYLES from './UsageTable.scss';
+import STYLES from './UsageTable.css';
 
 const getClassName = cssModules(STYLES);
 

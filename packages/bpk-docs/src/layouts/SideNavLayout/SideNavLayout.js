@@ -24,7 +24,7 @@ import React, { Component, type Node } from 'react';
 import BpkBreakpoint, { BREAKPOINTS } from 'bpk-component-breakpoint';
 
 import Sidebar from './Sidebar';
-import STYLES from './SideNavLayout.scss';
+import STYLES from './SideNavLayout.css';
 import MainHeroImage from './MainHeroImage';
 import { type Category } from './common-types';
 

@@ -20,7 +20,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { cssModules } from 'bpk-react-utils';
 
-import STYLES from './bpk-content-container.scss';
+import STYLES from './bpk-content-container.css';
 
 const getClassName = cssModules(STYLES);
 

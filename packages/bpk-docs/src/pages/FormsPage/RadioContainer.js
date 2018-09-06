@@ -21,7 +21,7 @@ import React, { Component } from 'react';
 import BpkRadio from 'bpk-component-radio';
 import { cssModules } from 'bpk-react-utils';
 
-import STYLES from './forms-page.scss';
+import STYLES from './forms-page.css';
 
 const getClassName = cssModules(STYLES);
 

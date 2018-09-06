@@ -24,7 +24,7 @@ import MenuIcon from 'bpk-component-icon/lg/menu';
 import BpkCloseButton from 'bpk-component-close-button';
 import BpkBreakpoint, { BREAKPOINTS } from 'bpk-component-breakpoint';
 
-import STYLES from './MainHeroImage.scss';
+import STYLES from './MainHeroImage.css';
 
 const getClassName = cssModules(STYLES);
 

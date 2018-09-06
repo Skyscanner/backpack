@@ -25,7 +25,7 @@ import PlusIcon from 'bpk-component-icon/sm/plus';
 import { cssModules } from 'bpk-react-utils';
 import clamp from 'lodash.clamp';
 
-import STYLES from './bpk-nudger.scss';
+import STYLES from './bpk-nudger.css';
 
 const getClassName = cssModules(STYLES);
 

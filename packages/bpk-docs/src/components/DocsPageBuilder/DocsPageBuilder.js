@@ -36,7 +36,7 @@ import TokenSwitcher, { connect } from './TokenSwitcher';
 import TokenTable from './TokenTable';
 import UsageTable from '../UsageTable';
 
-import STYLES from './DocsPageBuilder.scss';
+import STYLES from './DocsPageBuilder.css';
 import PlatformSwitchingContent from './PlatformSwitchingContent';
 
 const getClassName = cssModules(STYLES);

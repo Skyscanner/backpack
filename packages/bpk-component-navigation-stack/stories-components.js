@@ -32,7 +32,7 @@ import React, {
 import BpkLeftArrowIcon from 'bpk-component-icon/sm/long-arrow-left';
 import BpkRightArrowIcon from 'bpk-component-icon/sm/long-arrow-right';
 
-import STYLES from './stories.scss';
+import STYLES from './stories.css';
 import BpkNavigationStack from './index';
 
 const LeftArrowIcon = withRtlSupport(BpkLeftArrowIcon);

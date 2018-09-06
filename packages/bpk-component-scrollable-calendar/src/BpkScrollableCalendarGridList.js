@@ -26,7 +26,7 @@ import withInfiniteScroll, {
 } from 'bpk-component-infinite-scroll';
 import { startOfDay, startOfMonth } from 'date-fns';
 
-import STYLES from './bpk-scrollable-calendar-grid-list.scss';
+import STYLES from './bpk-scrollable-calendar-grid-list.css';
 import BpkScrollableCalendarGrid from './BpkScrollableCalendarGrid';
 import getMonthsArray from './utils';
 

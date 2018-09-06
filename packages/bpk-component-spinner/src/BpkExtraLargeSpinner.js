@@ -21,7 +21,7 @@ import PropTypes from 'prop-types';
 import { cssModules } from 'bpk-react-utils';
 import XlSpinner from 'bpk-svgs/dist/js/spinners/xl';
 
-import STYLES from './bpk-spinner.scss';
+import STYLES from './bpk-spinner.css';
 import SPINNER_TYPES from './spinnerTypes';
 
 const getClassName = cssModules(STYLES);

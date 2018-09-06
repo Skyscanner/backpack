@@ -22,7 +22,7 @@ import { cssModules } from 'bpk-react-utils';
 import { borderRadiusXs } from 'bpk-tokens/tokens/base.es6';
 import { remToPx } from './utils';
 
-import STYLES from './bpk-barchart-bar.scss';
+import STYLES from './bpk-barchart-bar.css';
 
 const getClassName = cssModules(STYLES);
 

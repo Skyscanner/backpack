@@ -22,7 +22,7 @@ import { withDefaultProps } from 'bpk-react-utils';
 
 import BpkText from './index';
 
-import STYLE from './stories.scss';
+import STYLE from './stories.css';
 
 const Paragraph = withDefaultProps(BpkText, {
   textStyle: 'lg',

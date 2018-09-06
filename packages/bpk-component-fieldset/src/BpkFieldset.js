@@ -23,7 +23,7 @@ import BpkLabel from 'bpk-component-label';
 import BpkFormValidation from 'bpk-component-form-validation';
 import { cssModules } from 'bpk-react-utils';
 
-import STYLES from './bpk-fieldset.scss';
+import STYLES from './bpk-fieldset.css';
 
 const getClassName = cssModules(STYLES);
 

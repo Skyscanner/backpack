@@ -21,7 +21,7 @@ import React from 'react';
 import AnimateHeight from 'bpk-animate-height';
 import { cssModules } from 'bpk-react-utils';
 
-import STYLES from './bpk-form-validation.scss';
+import STYLES from './bpk-form-validation.css';
 
 const getClassName = cssModules(STYLES);
 

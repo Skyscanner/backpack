@@ -35,7 +35,7 @@ import BpkBarchart, {
 import { ORIENTATION_X, ORIENTATION_Y } from './src/orientation';
 import { withSelectedState } from './hocs';
 
-import STYLES from './stories.scss';
+import STYLES from './stories.css';
 
 const getClassName = cssModules(STYLES);
 

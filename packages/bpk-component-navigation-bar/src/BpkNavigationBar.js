@@ -23,7 +23,7 @@ import PropTypes from 'prop-types';
 import { cssModules } from 'bpk-react-utils';
 import BpkText from 'bpk-component-text';
 
-import STYLES from './BpkNavigationBar.scss';
+import STYLES from './BpkNavigationBar.css';
 
 const getClassNames = cssModules(STYLES);
 

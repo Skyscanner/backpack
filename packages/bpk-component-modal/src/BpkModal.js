@@ -23,7 +23,7 @@ import React, { type Element } from 'react';
 import { withScrim } from 'bpk-scrim-utils';
 import { Portal, cssModules } from 'bpk-react-utils';
 
-import STYLES from './bpk-modal.scss';
+import STYLES from './bpk-modal.css';
 import BpkModalDialog, {
   propTypes as modalDialogPropTypes,
   defaultProps as modalDialogDefaultProps,

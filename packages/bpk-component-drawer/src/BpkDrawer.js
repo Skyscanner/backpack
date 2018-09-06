@@ -23,7 +23,7 @@ import { withScrim } from 'bpk-scrim-utils';
 
 import BpkDrawerContent from './BpkDrawerContent';
 
-import STYLES from './bpk-drawer.scss';
+import STYLES from './bpk-drawer.css';
 
 const getClassName = cssModules(STYLES);
 

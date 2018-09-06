@@ -23,7 +23,7 @@ import React, { type Node } from 'react';
 import { cssModules } from 'bpk-react-utils';
 import BpkCloseButton from 'bpk-component-close-button';
 
-import STYLES from './bpk-chip.scss';
+import STYLES from './bpk-chip.css';
 
 const getClassName = cssModules(STYLES);
 
