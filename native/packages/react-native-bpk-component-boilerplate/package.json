@@ -1,7 +1,7 @@
 {
   "name": "react-native-bpk-component-boilerplate",
   "private": true,
-  "version": "0.0.6",
+  "version": "0.0.7",
   "main": "index.js",
   "description": "Backpack React Native boilerplate component.",
   "repository": {
@@ -15,7 +15,7 @@
     "react-native": ">= 0.47.0"
   },
   "dependencies": {
-    "bpk-tokens": "^27.0.11",
+    "bpk-tokens": "^27.0.12",
     "prop-types": "^15.5.8"
   }
 }
