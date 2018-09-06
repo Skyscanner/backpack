@@ -11,7 +11,7 @@
     "preinstall": "npx ensure-node-env",
     "postinstall:native": "(cd ./native && npm install)",
     "postinstall": "npm run postinstall:native && npm run bootstrap",
-    "bootstrap": "lerna bootstrap",
+    "bootstrap": "lerna bootstrap -- --no-package-lock",
     "lerna": "lerna",
     "clean:dist": "rm -rf dist",
     "clean:lerna": "lerna clean --yes",
