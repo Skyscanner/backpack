@@ -16,10 +16,15 @@
  * limitations under the License.
  */
 
+// We disable backpack/use-components for the whole file here as:
+// a) we are testing the theme provider, not Bpktext
+// b) Importing BpkText it causes cyclic dependencies in lerna
+/* eslint-disable backpack/use-components */
+
 import React from 'react';
 import renderer from 'react-test-renderer';
 import { colorWhite } from 'bpk-tokens/tokens/base.react.native';
-import BpkText from 'react-native-bpk-component-text';
+import { Text } from 'react-native';
 
 import BpkThemeProvider from './BpkThemeProvider';
 
@@ -29,7 +34,7 @@ const commonTests = () => {
       const tree = renderer
         .create(
           <BpkThemeProvider theme={{ color: colorWhite }}>
-            <BpkText>Lorem ipsum</BpkText>
+            <Text>Lorem ipsum</Text>
           </BpkThemeProvider>,
         )
         .toJSON();
@@ -41,7 +46,7 @@ const commonTests = () => {
       expect(() =>
         renderer.create(
           <BpkThemeProvider>
-            <BpkText>Lorem ipsum</BpkText>
+            <Text>Lorem ipsum</Text>
           </BpkThemeProvider>,
         ),
       ).toThrow('[ThemeProvider] Please make your theme prop a plain object');

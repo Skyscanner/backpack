@@ -20,7 +20,6 @@ import React, { Component } from 'react';
 import { action } from '@storybook/addon-actions';
 import { storiesOf } from '@storybook/react-native';
 import { StyleSheet, View, Picker } from 'react-native';
-import BpkButton from 'react-native-bpk-component-button';
 import {
   spacingMd,
   colorWhite,
@@ -31,6 +30,10 @@ import {
   colorYellow400,
   colorYellow500,
 } from 'bpk-tokens/tokens/base.react.native';
+
+// We import relatively because a) it's just for a story and
+// b) it causes cyclic dependencies in lerna
+import BpkButton from '../react-native-bpk-component-button';
 import CenterDecorator from '../../storybook/CenterDecorator';
 
 import BpkThemeProvider from './index';
