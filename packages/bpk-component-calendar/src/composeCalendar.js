@@ -21,7 +21,7 @@ import React from 'react';
 import { cssModules } from 'bpk-react-utils';
 
 import CustomPropTypes from './custom-proptypes';
-import STYLES from './BpkCalendar.scss';
+import STYLES from './BpkCalendar.css';
 
 const getClassName = cssModules(STYLES);
 

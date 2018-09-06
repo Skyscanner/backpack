@@ -21,7 +21,7 @@ import React, { type Element, type ComponentType } from 'react';
 import PropTypes from 'prop-types';
 import { cssModules, wrapDisplayName } from 'bpk-react-utils';
 
-import STYLES from './withDescription.scss';
+import STYLES from './withDescription.css';
 
 const getClassName = cssModules(STYLES);
 

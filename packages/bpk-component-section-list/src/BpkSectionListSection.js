@@ -23,7 +23,7 @@ import React, { type Node } from 'react';
 import { cssModules } from 'bpk-react-utils';
 import BpkText from 'bpk-component-text';
 
-import STYLES from './BpkSectionListSection.scss';
+import STYLES from './BpkSectionListSection.css';
 
 const getClassName = cssModules(STYLES);
 
