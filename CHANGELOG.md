@@ -2,6 +2,15 @@
 
 [Unreleased changes](./UNRELEASED.md).
 
+# 2018-09-06 - Fixed RN icon component for iOS
+
+**Fixed:**
+- react-native-bpk-component-icon: 1.10.1 => 1.10.2
+- react-native-bpk-component-button-link: 3.0.26 => 3.0.27
+- react-native-bpk-component-button: 7.1.11 => 7.1.12
+- react-native-bpk-component-navigation-bar: 2.0.32 => 2.0.33
+  - Fixed an issue where usage of the above components would cause a red screen.
+
 # 2018-09-05 - New 'family' icon
 
 **Added:**
