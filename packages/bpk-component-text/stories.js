@@ -20,7 +20,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { withDefaultProps } from 'bpk-react-utils';
 
-import STYLE from './stories.scss';
+import STYLE from './stories.css';
 
 import BpkText from './index';
 

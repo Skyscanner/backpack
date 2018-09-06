@@ -22,7 +22,7 @@ import { colorWhite } from 'bpk-tokens/tokens/base.es6';
 import clamp from 'lodash.clamp';
 import { cssModules } from 'bpk-react-utils';
 
-import STYLES from './BpkProgress.scss';
+import STYLES from './BpkProgress.css';
 
 const getClassName = cssModules(STYLES);
 

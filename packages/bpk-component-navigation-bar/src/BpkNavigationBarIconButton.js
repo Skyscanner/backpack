@@ -24,7 +24,7 @@ import PropTypes from 'prop-types';
 import BpkIconButton from 'bpk-component-close-button';
 import { cssModules } from 'bpk-react-utils';
 
-import STYLES from './BpkNavigationBarIconButton.scss';
+import STYLES from './BpkNavigationBarIconButton.css';
 
 const getClassName = cssModules(STYLES);
 
