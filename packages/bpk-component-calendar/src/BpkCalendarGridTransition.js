@@ -36,7 +36,7 @@ import {
   isWithinRange,
   getMonthRange,
 } from './date-utils';
-import STYLES from './BpkCalendarGridTransition.scss';
+import STYLES from './BpkCalendarGridTransition.css';
 
 const getClassName = cssModules(STYLES);
 

@@ -22,7 +22,7 @@ import PropTypes from 'prop-types';
 import React, { type Node } from 'react';
 import { cssModules } from 'bpk-react-utils';
 
-import STYLES from './BpkText.scss';
+import STYLES from './BpkText.css';
 
 const getClassName = cssModules(STYLES);
 

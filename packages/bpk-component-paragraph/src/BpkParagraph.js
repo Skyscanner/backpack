@@ -20,7 +20,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { cssModules } from 'bpk-react-utils';
 
-import STYLES from './BpkParagraph.scss';
+import STYLES from './BpkParagraph.css';
 
 const getClassName = cssModules(STYLES);
 

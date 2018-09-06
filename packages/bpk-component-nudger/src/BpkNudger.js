@@ -28,7 +28,7 @@ import {
   COMMON_DEFAULT_PROPS,
   COMMON_PROP_TYPES,
 } from './common-types';
-import STYLES from './BpkNudger.scss';
+import STYLES from './BpkNudger.css';
 
 type Props = {
   ...$Exact<CommonProps<number>>,

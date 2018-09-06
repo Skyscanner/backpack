@@ -23,7 +23,7 @@ import { cssModules, withDefaultProps } from 'bpk-react-utils';
 import BpkButton from 'bpk-component-button';
 import BpkText from 'bpk-component-text';
 
-import STYLES from './stories.scss';
+import STYLES from './stories.css';
 
 import BpkDrawer from './index';
 

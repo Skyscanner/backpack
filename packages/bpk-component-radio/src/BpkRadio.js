@@ -20,7 +20,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { cssModules } from 'bpk-react-utils';
 
-import STYLES from './BpkRadio.scss';
+import STYLES from './BpkRadio.css';
 
 const getClassName = cssModules(STYLES);
 

@@ -23,7 +23,7 @@ import { DateUtils, BpkCalendarGridPropTypes } from 'bpk-component-calendar';
 import { startOfDay, startOfMonth, isSameMonth } from 'date-fns';
 import { VariableSizeList as List } from 'react-window';
 
-import STYLES from './BpkScrollableCalendarGridList.scss';
+import STYLES from './BpkScrollableCalendarGridList.css';
 import BpkScrollableCalendarGrid from './BpkScrollableCalendarGrid';
 import getMonthsArray from './utils';
 
