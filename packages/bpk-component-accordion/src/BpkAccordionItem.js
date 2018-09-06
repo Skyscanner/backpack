@@ -23,7 +23,7 @@ import { withButtonAlignment } from 'bpk-component-icon';
 import ChevronDownIcon from 'bpk-component-icon/sm/chevron-down';
 import { cssModules } from 'bpk-react-utils';
 
-import STYLES from './BpkAccordionItem.scss';
+import STYLES from './BpkAccordionItem.css';
 
 const getClassName = cssModules(STYLES);
 

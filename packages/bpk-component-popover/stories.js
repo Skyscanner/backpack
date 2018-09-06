@@ -26,7 +26,7 @@ import { storiesOf } from '@storybook/react';
 import BpkText from 'bpk-component-text';
 import BpkContentContainer from 'bpk-component-content-container';
 
-import STYLES from './stories.scss';
+import STYLES from './stories.css';
 
 import BpkPopover, { type BpkPopoverProps as PopoverProps } from './index';
 

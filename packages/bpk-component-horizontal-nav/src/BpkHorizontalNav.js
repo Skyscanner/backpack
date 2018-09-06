@@ -23,7 +23,7 @@ import { cssModules } from 'bpk-react-utils';
 import React, { Component, type Node } from 'react';
 import BpkMobileScrollContainer from 'bpk-component-mobile-scroll-container';
 
-import STYLES from './BpkHorizontalNav.scss';
+import STYLES from './BpkHorizontalNav.css';
 
 const getClassName = cssModules(STYLES);
 
