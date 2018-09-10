@@ -1,5 +1,4 @@
 {
-  "lerna": "2.4.0",
   "version": "independent",
   "packages": ["packages/*", "native/packages/*"],
   "command": {
@@ -7,7 +6,7 @@
       "ignore": ["bpk-tether"]
     },
     "publish": {
-      "ignoreChanges": ["bpk-tether"],
+      "ignoreChanges": ["bpk-tether", "package-lock.json"],
       "allowBranch": "master"
     }
   }
