@@ -3,11 +3,10 @@
   "packages": ["packages/*", "native/packages/*"],
   "command": {
     "bootstrap": {
-      "ignore": ["bpk-tether"],
-      "npmClientArgs": ["--no-package-lock"]
+      "ignore": ["bpk-tether"]
     },
     "publish": {
-      "ignoreChanges": ["bpk-tether"],
+      "ignoreChanges": ["bpk-tether", "package-lock.json"],
       "allowBranch": "master"
     }
   }
