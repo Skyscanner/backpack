@@ -45,11 +45,7 @@ const components = [
     blurb: [
       <Paragraph>
         All Backpack components should work in multiple areas and situations,
-        not just in the context of one screen. See the{' '}
-        <BpkRouterLink to={ROUTES.CONTRIBUTING}>
-          contributing section
-        </BpkRouterLink>{' '}
-        for more info on what should live in Backpack.
+        not just in the context of one screen.
       </Paragraph>,
     ],
   },

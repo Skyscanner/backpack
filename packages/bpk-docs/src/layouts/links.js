@@ -411,11 +411,6 @@ export default [
         children: 'Principles',
       },
       {
-        id: 'CONTRIBUTING',
-        route: routes.CONTRIBUTING,
-        children: 'Contributing',
-      },
-      {
         id: 'BACKPACK_REACT_SCRIPTS',
         route: routes.BACKPACK_REACT_SCRIPTS,
         children: 'Backpack React Scripts',
