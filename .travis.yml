@@ -1,6 +1,4 @@
 language: node_js
-node_js:
-  - lts/carbon
 env:
   global:
     - NPM_CONFIG_LOGLEVEL=warn
@@ -24,6 +22,7 @@ script:
 cache:
   directories:
     - node_modules
+    - native/node_modules
 branches:
   only:
     - master
