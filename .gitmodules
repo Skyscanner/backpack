@@ -1,0 +1,8 @@
+[submodule "backpack-android"]
+	path = backpack-android
+	url = https://github.com/Skyscanner/backpack-android
+	ignore = all
+[submodule "backpack-ios"]
+	path = backpack-ios
+	url = https://github.com/Skyscanner/backpack-ios
+	ignore = all
