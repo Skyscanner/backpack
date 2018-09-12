@@ -132,4 +132,5 @@ export default {
   '/components/web/typography': ROUTES.TEXT,
   '/resources': ROUTES.GETTING_STARTED,
   '/tokens/layout': ROUTES.SPACINGS,
+  '/using/contributing': ROUTES.USING_BACKPACK,
 };

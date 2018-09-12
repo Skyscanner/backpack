@@ -33,7 +33,6 @@ import HomePage from '../pages/HomePage';
 import GettingStartedPage from '../pages/GettingStartedPage';
 import BackpackReactScriptsPage from '../pages/BackpackReactScriptsPage';
 import BaseStylesheetPage from '../pages/BaseStylesheetPage';
-import ContributingPage from '../pages/ContributingPage';
 import PrinciplesPage from '../pages/PrinciplesPage';
 
 import ColorsPage from '../pages/ColorsPage';
@@ -123,7 +122,6 @@ export const ROUTES_MAPPINGS = [
         component: BackpackReactScriptsPage,
       },
       { path: ROUTES.BASE_STYLESHEET, component: BaseStylesheetPage },
-      { path: ROUTES.CONTRIBUTING, component: ContributingPage },
       { path: ROUTES.PRINCIPLES, component: PrinciplesPage },
     ],
   },
