@@ -108,7 +108,7 @@
     "gulp-jsonlint": "^1.2.2",
     "gulp-merge": "^0.1.1",
     "gulp-rename": "^1.4.0",
-    "gulp-svgmin": "^1.2.3",
+    "gulp-svgmin": "^2.0.0",
     "gulp-theo": "^2.0.0",
     "husky": "^0.14.3",
     "jest": "^21.2.1",
