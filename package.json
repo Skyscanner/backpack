@@ -35,8 +35,8 @@
     "storybook:dist": "build-storybook -c .storybook -o dist/storybook",
     "storybook": "start-storybook -p 9001",
     "sassdoc": "sassdoc {packages/bpk-mixins/src/**/*,packages/bpk-svgs/dist/*,packages/bpk-tokens/tokens/base.default}.scss -d dist/sassdoc -v --strict",
-    "docs": "BPK_BUILT_AT=$( date -u +%s ) webpack-dev-server --open",
-    "docs:dist": "npm run clean:dist && NODE_ENV=production BPK_BUILT_AT=$( date -u +%s ) webpack --progress --display=minimal --bail && npm run sassdoc",
+    "docs": "npm run submodules:pull && BPK_BUILT_AT=$( date -u +%s ) webpack-dev-server --open",
+    "docs:dist": "npm run submodules:pull && npm run clean:dist && NODE_ENV=production BPK_BUILT_AT=$( date -u +%s ) webpack --progress --display=minimal --bail && npm run sassdoc",
     "start": "npm run build && npm run storybook",
     "native": "./subshell ./native npm run storybook",
     "generate-changelogs": "node scripts/release-process/generate-changelogs.js",
@@ -51,7 +51,11 @@
     "publish": "npm run check-owners && npm run build && git pull --rebase && npm run flow stop && npm run test && lerna publish",
     "danger": "danger ci",
     "prettier": "prettier --config .prettierrc --write \"**/*.js\"",
-    "create-component": "node scripts/npm/create-component.js"
+    "create-component": "node scripts/npm/create-component.js",
+    "submodules:pull": "git submodule foreach git pull origin master",
+    "submodules:update": "npm run submodules:unlock && npm run submodules:pull && git add backpack-android && git add backpack-ios && git commit -m\"[skip ci] Update submodules\" && npm run submodules:lock",
+    "submodules:unlock": "sed 's/ignore = all/#ignore = all/g' .gitmodules -i",
+    "submodules:lock": "sed 's/#ignore = all/ignore = all/g' .gitmodules -i"
   },
   "lint-staged": {
     "*.js": [

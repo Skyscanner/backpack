@@ -119,9 +119,12 @@ const getBpkPackageVersions = packageFiles =>
 console.log('Checking Backpack cross dependencies...');
 console.log('');
 
-let packageFiles = execSync('find . -name package.json | grep -v node_modules')
+let packageFiles = execSync(
+  'find packages native -name package.json | grep -v node_modules',
+)
   .toString()
   .split('\n');
+
 packageFiles = packageFiles.filter(s => s !== '');
 const bpkPackageVersions = getBpkPackageVersions(packageFiles);
 
