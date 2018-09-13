@@ -2,6 +2,12 @@
 
 [Unreleased changes](./UNRELEASED.md).
 
+# 2018-09-13 - Move svgs to bpk-svgs dist
+
+**Added:**
+- bpk-svgs:
+  - The source svgs are now available in `dist` under `dists/svgs`.
+
 # 2018-09-06 - Fixed RN icon component for iOS
 
 **Fixed:**
