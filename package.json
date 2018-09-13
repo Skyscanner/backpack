@@ -176,11 +176,19 @@
   },
   "greenkeeper": {
     "ignore": [
-      "react",
-      "react-dom",
-      "react-test-renderer",
-      "jest",
-      "babel-jest"
+      "babel-loader",
+      "css-loader",
+      "extract-text-webpack-plugin",
+      "file-loader",
+      "json-loader",
+      "postcss-loader",
+      "raw-loader",
+      "sass-loader",
+      "style-loader",
+      "webpack",
+      "webpack-dev-server",
+      "wrapper-webpack-plugin",
+      "zip-it-loader"
     ]
   }
 }
