@@ -342,8 +342,11 @@ gulp.task('icons-font', ['icons-common'], () => {
   return merge(saveFont, saveMapping);
 });
 
-gulp.task('copy-svgs', () =>
-  gulp.src('src/**/*.svg').pipe(gulp.dest('dist/svgs')),
+gulp.task('copy-svgs', ['icons-common'], () =>
+  gulp
+    .src('src/**/*.svg')
+    .pipe(clone())
+    .pipe(gulp.dest('dist/svgs')),
 );
 
 gulp.task('default', [
