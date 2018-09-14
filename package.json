@@ -33,7 +33,7 @@
     "build:svgs": "lerna run svgs --scope bpk-svgs",
     "build": "npm run build:tokens && npm run build:svgs && lerna run build && (cd ./native && npm run link)",
     "storybook:dist": "build-storybook -c .storybook -o dist/storybook",
-    "ios-api:dist": "git submodule update --init --recursive && (cd backpack-ios && bundle install && npm i && (cd Example && bundle exec pod install) && gulp && rake \"docs['../dist/ios/']\")",
+    "ios-api:dist": "(cd backpack-ios && bundle install && rake \"docs['../dist/ios/']\")",
     "storybook": "start-storybook -p 9001",
     "sassdoc:dist": "sassdoc {packages/bpk-mixins/src/**/*,packages/bpk-svgs/dist/*,packages/bpk-tokens/tokens/base.default}.scss -d dist/sassdoc -v --strict",
     "docs": "npm run submodules:pull && BPK_BUILT_AT=$( date -u +%s ) webpack-dev-server --open",
