@@ -2,6 +2,12 @@
 
 [Unreleased changes](./UNRELEASED.md).
 
+# 2018-09-14 - Republished Icon
+
+**Fixed:**
+- bpk-component-icon: 3.23.3 => 3.23.4
+  - Republished as previous publish partially failed
+
 # 2018-09-13 - Move svgs to bpk-svgs dist
 
 **Added:**
