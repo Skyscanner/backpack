@@ -112,6 +112,12 @@ $ANDROID_SDK_ROOT/tools/bin/avdmanager create avd --name "bpk-avd-min" --package
 ```
 </details>
 
+### Android and iOS (not React Native)
+
+Backpack also supports native Android and iOS. This is separate from React Native, using the Android SDK and UIKit.
+
+They can be found at [backpack-android](https://github.com/skyscanner/backpack-android) and [backpack-ios](https://github.com/skyscanner/backpack-ios).
+
 ### Code style
 
 Backpack uses a combination of [ESLint](https://eslint.org) and [Prettier](https://prettier.io) to enforce coding styles. ESLint runs as a pre-commit hook, so it isn't possible to commit code that causes ESLint to fail.
