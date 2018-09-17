@@ -70,7 +70,7 @@ describe('BpkCalendarScrollGrid', () => {
           formatDateFull={formatDateFull}
           DateComponent={BpkCalendarScrollDate}
           daysOfWeek={weekDays}
-          weekStartsOn={3}
+          weekStartsOn={5}
           showWeekendSeparator
         />,
       )

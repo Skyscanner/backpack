@@ -42,7 +42,7 @@ const BpkScrollableCalendarGrid = props => {
       >
         {props.formatMonth(month)}
       </BpkText>
-      <BpkCalendarGrid month={month} {...rest} />
+      <BpkCalendarGrid month={month} ignoreOutsideDate {...rest} />
     </div>
   );
 };

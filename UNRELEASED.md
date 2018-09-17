@@ -1,3 +1,5 @@
 # Unreleased
 
-_Nothing so far..._
+**Added:**
+ - bpk-component-scrollable-calendar:
+   - Introduced React Virtualized to improve performance.
