@@ -59,7 +59,6 @@ storiesOf('react-native-bpk-component-image', module)
   ))
   .add('With Loading Behaviour', () => (
     <BpkImageWithLoading
-      imageComponent={CustomImage}
       alt="test"
       style={styles.image}
       source={{
