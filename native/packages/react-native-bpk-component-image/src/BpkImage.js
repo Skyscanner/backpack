@@ -141,11 +141,10 @@ class BpkImage extends Component<Props> {
       inView,
       rounded,
       loaded,
-      imageComponent,
+      imageComponent: ImageComponent,
       ...rest
     } = this.props;
 
-    const ImageComponent = imageComponent;
     const outerStyle = [styles.outer];
     if (rounded) {
       outerStyle.push(styles.outerWithBorderRadius);

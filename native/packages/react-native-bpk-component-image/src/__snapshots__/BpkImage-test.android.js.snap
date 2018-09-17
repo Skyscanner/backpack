@@ -113,10 +113,8 @@ exports[`Android BpkImage should render correctly when unloaded and out of view 
 `;
 
 exports[`Android BpkImage should render correctly with a custom image component 1`] = `
-<Image
+<CustomImage
   alt="test"
-  collapsable={undefined}
-  isCustom={true}
   onLoad={null}
   source={
     Object {
@@ -124,12 +122,16 @@ exports[`Android BpkImage should render correctly with a custom image component 
     }
   }
   style={
-    Object {
-      "borderRadius": 2,
-      "height": "100%",
-      "overflow": "hidden",
-      "width": "100%",
-    }
+    Array [
+      Object {
+        "height": "100%",
+        "width": "100%",
+      },
+      Object {
+        "borderRadius": 2,
+        "overflow": "hidden",
+      },
+    ]
   }
 />
 `;

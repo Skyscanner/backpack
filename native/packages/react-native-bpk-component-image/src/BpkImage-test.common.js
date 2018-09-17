@@ -19,9 +19,9 @@
 import React from 'react';
 import { StyleSheet } from 'react-native';
 import renderer from 'react-test-renderer';
-
 import BpkImage from './BpkImage';
-import CustomImage from './CustomImage';
+
+const CustomImage = 'CustomImage';
 
 const requiredProps = {
   alt: 'test',
