@@ -25,6 +25,7 @@ import { storiesOf } from '@storybook/react-native';
 
 import CenterDecorator from '../../storybook/CenterDecorator';
 import BpkImage, { withLoadingBehaviour } from './index';
+import CustomImage from './src/CustomImage';
 
 const BpkImageWithLoading = withLoadingBehaviour(BpkImage);
 
@@ -58,6 +59,7 @@ storiesOf('react-native-bpk-component-image', module)
   ))
   .add('With Loading Behaviour', () => (
     <BpkImageWithLoading
+      imageComponent={CustomImage}
       alt="test"
       style={styles.image}
       source={{
@@ -72,6 +74,16 @@ storiesOf('react-native-bpk-component-image', module)
       alt="test"
       source={{
         uri: 'https://unsplash.com/photos/fZ1gqh4jPgM/download?force=true',
+      }}
+      style={styles.image}
+    />
+  ))
+  .add('With Custom Image Component', () => (
+    <BpkImage
+      imageComponent={CustomImage}
+      alt="test"
+      source={{
+        uri: 'https://unsplash.com/photos/InrNz281-S8/download?force=true',
       }}
       style={styles.image}
     />

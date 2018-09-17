@@ -68,6 +68,7 @@ export type Props = {
   onLoad: ?() => mixed,
   rounded: boolean,
   style: ?StyleObj,
+  imageComponent: ?() => mixed,
 };
 
 class BpkImage extends Component<Props> {
@@ -90,6 +91,7 @@ class BpkImage extends Component<Props> {
     onLoad: PropTypes.func,
     rounded: PropTypes.bool,
     style: ViewPropTypes.style,
+    imageComponent: PropTypes.func,
   };
 
   static defaultProps = {
@@ -98,6 +100,7 @@ class BpkImage extends Component<Props> {
     onLoad: null,
     rounded: true,
     style: null,
+    imageComponent: Animated.Image,
   };
 
   constructor(props: Props) {
@@ -132,8 +135,16 @@ class BpkImage extends Component<Props> {
   };
 
   render() {
-    const { style: userStyle, inView, rounded, loaded, ...rest } = this.props;
+    const {
+      style: userStyle,
+      inView,
+      rounded,
+      loaded,
+      imageComponent,
+      ...rest
+    } = this.props;
 
+    const ImageComponent = imageComponent;
     const outerStyle = [styles.outer];
     if (rounded) {
       outerStyle.push(styles.outerWithBorderRadius);
@@ -153,7 +164,7 @@ class BpkImage extends Component<Props> {
           {inView && <BpkSpinner small type="dark" />}
         </Animated.View>
         {inView && (
-          <Animated.Image
+          <ImageComponent
             onLoad={this.onImageLoad}
             style={[styles.image, { opacity: this.imageOpacity }]}
             {...rest}
@@ -161,7 +172,7 @@ class BpkImage extends Component<Props> {
         )}
       </View>
     ) : (
-      <Animated.Image onLoad={this.onImageLoad} style={outerStyle} {...rest} />
+      <ImageComponent onLoad={this.onImageLoad} style={outerStyle} {...rest} />
     );
   }
 }

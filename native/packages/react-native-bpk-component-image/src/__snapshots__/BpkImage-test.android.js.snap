@@ -112,6 +112,28 @@ exports[`Android BpkImage should render correctly when unloaded and out of view 
 </View>
 `;
 
+exports[`Android BpkImage should render correctly with a custom image component 1`] = `
+<Image
+  alt="test"
+  collapsable={undefined}
+  isCustom={true}
+  onLoad={null}
+  source={
+    Object {
+      "uri": "https://images.unsplash.com/photo-1518225853900-cc01b1092211?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=d75dd482ea9e2ed4d53017c326497143&dpr=1&auto=format&fit=crop&w=1000&q=80&cs=tinysrgb",
+    }
+  }
+  style={
+    Object {
+      "borderRadius": 2,
+      "height": "100%",
+      "overflow": "hidden",
+      "width": "100%",
+    }
+  }
+/>
+`;
+
 exports[`Android BpkImage should render correctly with arbitrary props 1`] = `
 <Image
   alt="test"
