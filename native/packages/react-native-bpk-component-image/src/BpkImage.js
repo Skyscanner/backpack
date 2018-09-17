@@ -18,7 +18,7 @@
 
 /* @flow */
 
-import React, { Component } from 'react';
+import React, { Component, type ComponentType } from 'react';
 import PropTypes from 'prop-types';
 import {
   Animated,
@@ -27,6 +27,7 @@ import {
   ViewPropTypes,
   type ImageSourcePropType,
   type StyleObj,
+  type ImageProps,
 } from 'react-native';
 import BpkSpinner from 'react-native-bpk-component-spinner';
 
@@ -68,7 +69,7 @@ export type Props = {
   onLoad: ?() => mixed,
   rounded: boolean,
   style: ?StyleObj,
-  imageComponent: ?() => mixed,
+  imageComponent: ComponentType<ImageProps>,
 };
 
 class BpkImage extends Component<Props> {
@@ -91,7 +92,7 @@ class BpkImage extends Component<Props> {
     onLoad: PropTypes.func,
     rounded: PropTypes.bool,
     style: ViewPropTypes.style,
-    imageComponent: PropTypes.func,
+    imageComponent: PropTypes.element,
   };
 
   static defaultProps = {
