@@ -92,7 +92,7 @@ class BpkImage extends Component<Props> {
     onLoad: PropTypes.func,
     rounded: PropTypes.bool,
     style: ViewPropTypes.style,
-    imageComponent: PropTypes.element,
+    imageComponent: PropTypes.func,
   };
 
   static defaultProps = {
