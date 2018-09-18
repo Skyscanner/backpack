@@ -26,6 +26,7 @@
     "SPACING_LG": 24,
     "SPACING_XL": 32,
     "SPACING_XXL": 40,
+    "SPACING_NONE": 0,
     "BORDER_SIZE_SM": 1,
     "BORDER_SIZE_LG": 2,
     "BORDER_SIZE_XL": 3,
