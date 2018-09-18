@@ -70,12 +70,13 @@ export default () => (
 
 ### BpkImage
 
-| Property | PropType                               | Required  | Default Value |
-| -------- | -------------------------------------- | --------- | ------------- |
-| alt      | string                                 | true      | -             |
-| source   | oneOf(number, object, arrayOf(object)) | true      | -             |
-| inView   | boolean                                | false     | true          |
-| loaded   | boolean                                | false     | true          |
-| onLoad   | function                               | false     | null          |
-| rounded  | boolean                                | false     | true          |
-| style    | style                                  | false     | null          |
+| Property        | PropType                               | Required  | Default Value   |
+| --------------- | -------------------------------------- | --------- | --------------- |
+| alt             | string                                 | true      | -               |
+| source          | oneOf(number, object, arrayOf(object)) | true      | -               |
+| imageComponent  | function                               | false     | Animated.Image  |
+| inView          | boolean                                | false     | true            |
+| loaded          | boolean                                | false     | true            |
+| onLoad          | function                               | false     | null            |
+| rounded         | boolean                                | false     | true            |
+| style           | style                                  | false     | null            |

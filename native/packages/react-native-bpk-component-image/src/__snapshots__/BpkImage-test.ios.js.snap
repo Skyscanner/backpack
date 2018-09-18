@@ -112,6 +112,30 @@ exports[`iOS BpkImage should render correctly when unloaded and out of view 1`] 
 </View>
 `;
 
+exports[`iOS BpkImage should render correctly with a custom image component 1`] = `
+<CustomImage
+  alt="test"
+  onLoad={null}
+  source={
+    Object {
+      "uri": "https://images.unsplash.com/photo-1518225853900-cc01b1092211?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=d75dd482ea9e2ed4d53017c326497143&dpr=1&auto=format&fit=crop&w=1000&q=80&cs=tinysrgb",
+    }
+  }
+  style={
+    Array [
+      Object {
+        "height": "100%",
+        "width": "100%",
+      },
+      Object {
+        "borderRadius": 4,
+        "overflow": "hidden",
+      },
+    ]
+  }
+/>
+`;
+
 exports[`iOS BpkImage should render correctly with arbitrary props 1`] = `
 <Image
   alt="test"

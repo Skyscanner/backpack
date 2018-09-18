@@ -19,8 +19,9 @@
 import React from 'react';
 import { StyleSheet } from 'react-native';
 import renderer from 'react-test-renderer';
-
 import BpkImage from './BpkImage';
+
+const CustomImage = 'CustomImage';
 
 const requiredProps = {
   alt: 'test',
@@ -81,6 +82,15 @@ const commonTests = () => {
 
       expect(tree).toMatchSnapshot();
     });
+
+    it('should render correctly with a custom image component', () => {
+      const tree = renderer
+        .create(<BpkImage imageComponent={CustomImage} {...requiredProps} />)
+        .toJSON();
+
+      expect(tree).toMatchSnapshot();
+    });
   });
 };
+
 export default commonTests;

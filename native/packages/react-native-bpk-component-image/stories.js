@@ -19,7 +19,7 @@
 /* @flow */
 
 import React from 'react';
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Animated } from 'react-native';
 import { spacingLg } from 'bpk-tokens/tokens/base.react.native';
 import { storiesOf } from '@storybook/react-native';
 
@@ -27,6 +27,7 @@ import CenterDecorator from '../../storybook/CenterDecorator';
 import BpkImage, { withLoadingBehaviour } from './index';
 
 const BpkImageWithLoading = withLoadingBehaviour(BpkImage);
+const CustomImage = props => <Animated.Image isCustom {...props} />;
 
 const styles = StyleSheet.create({
   image: {
@@ -72,6 +73,26 @@ storiesOf('react-native-bpk-component-image', module)
       alt="test"
       source={{
         uri: 'https://unsplash.com/photos/fZ1gqh4jPgM/download?force=true',
+      }}
+      style={styles.image}
+    />
+  ))
+  .add('With Custom Image Component', () => (
+    <BpkImage
+      imageComponent={CustomImage}
+      alt="test"
+      source={{
+        uri: 'https://unsplash.com/photos/InrNz281-S8/download?force=true',
+      }}
+      style={styles.image}
+    />
+  ))
+  .add('With Custom Loading Image Component', () => (
+    <BpkImageWithLoading
+      imageComponent={CustomImage}
+      alt="test"
+      source={{
+        uri: 'https://unsplash.com/photos/InrNz281-S8/download?force=true',
       }}
       style={styles.image}
     />
