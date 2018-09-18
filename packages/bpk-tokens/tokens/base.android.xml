@@ -120,6 +120,7 @@
   <property name="SPACING_BASE" category="spacings">16dp</property>
   <property name="SPACING_LG" category="spacings">24dp</property>
   <property name="SPACING_MD" category="spacings">8dp</property>
+  <property name="SPACING_NONE" category="spacings">0dp</property>
   <property name="SPACING_SM" category="spacings">4dp</property>
   <property name="SPACING_XL" category="spacings">32dp</property>
   <property name="SPACING_XXL" category="spacings">40dp</property>

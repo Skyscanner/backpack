@@ -279,6 +279,9 @@
     "SPACING_MD": {
       "value": "1.125rem"
     },
+    "SPACING_NONE": {
+      "value": "0rem"
+    },
     "SPACING_SM": {
       "value": ".75rem"
     },

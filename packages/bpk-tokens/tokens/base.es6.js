@@ -349,6 +349,7 @@ export const selectPaddingTop = ".375rem";
 export const spacingBase = "1.5rem";
 export const spacingLg = "1.875rem";
 export const spacingMd = "1.125rem";
+export const spacingNone = "0rem";
 export const spacingSm = ".75rem";
 export const spacingXl = "2.250rem";
 export const spacingXs = ".375rem";
@@ -763,6 +764,7 @@ pMarginTop,
 spacingBase,
 spacingLg,
 spacingMd,
+spacingNone,
 spacingSm,
 spacingXl,
 spacingXs,

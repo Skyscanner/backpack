@@ -119,6 +119,7 @@ module.exports = {
   spacingBase: 16,
   spacingLg: 24,
   spacingMd: 8,
+  spacingNone: 0,
   spacingSm: 4,
   spacingXl: 32,
   spacingXxl: 40,

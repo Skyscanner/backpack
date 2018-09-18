@@ -228,6 +228,9 @@
     "SPACING_MD": {
       "value": "1.125rem"
     },
+    "SPACING_NONE": {
+      "value": "0rem"
+    },
     "SPACING_SM": {
       "value": ".75rem"
     },
@@ -2617,6 +2620,13 @@
       "originalValue": "{!SPACING_MD}",
       "name": "SPACING_MD"
     },
+    "SPACING_NONE": {
+      "type": "size",
+      "category": "spacings",
+      "value": "0rem",
+      "originalValue": "{!SPACING_NONE}",
+      "name": "SPACING_NONE"
+    },
     "SPACING_SM": {
       "type": "size",
       "category": "spacings",
@@ -3210,6 +3220,7 @@
     "SPACING_BASE",
     "SPACING_LG",
     "SPACING_MD",
+    "SPACING_NONE",
     "SPACING_SM",
     "SPACING_XL",
     "SPACING_XS",
