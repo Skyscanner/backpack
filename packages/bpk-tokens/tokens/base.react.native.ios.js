@@ -126,6 +126,7 @@ export const shadowXlRadius = 50;
 export const spacingBase = 16;
 export const spacingLg = 24;
 export const spacingMd = 8;
+export const spacingNone = 0;
 export const spacingSm = 4;
 export const spacingXl = 32;
 export const spacingXxl = 40;
@@ -286,6 +287,7 @@ buttonPaddingVertical,
 spacingBase,
 spacingLg,
 spacingMd,
+spacingNone,
 spacingSm,
 spacingXl,
 spacingXxl,
