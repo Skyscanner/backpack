@@ -1,6 +1,6 @@
 {
   "name": "react-native-bpk-theming",
-  "version": "1.0.78",
+  "version": "1.0.79",
   "main": "index.js",
   "description": "Backpack React Native theming utlities.",
   "repository": {
@@ -18,6 +18,6 @@
     "theming": "^1.1.0"
   },
   "devDependencies": {
-    "bpk-tokens": "^27.0.12"
+    "bpk-tokens": "^27.1.0"
   }
 }
