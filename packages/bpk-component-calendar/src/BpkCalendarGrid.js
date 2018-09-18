@@ -91,6 +91,7 @@ class BpkCalendarGrid extends Component {
       focusedDate,
       minDate,
       maxDate,
+      ignoreOutsideDate,
     } = this.props;
 
     const { calendarMonthWeeks, daysOfWeek } = this.state;
@@ -136,6 +137,7 @@ class BpkCalendarGrid extends Component {
               focusedDate={focusedDate}
               minDate={minDate}
               maxDate={maxDate}
+              ignoreOutsideDate={ignoreOutsideDate}
             />
           ))}
         </tbody>
@@ -166,6 +168,7 @@ export const propTypes = {
   selectedDate: PropTypes.instanceOf(Date),
   showWeekendSeparator: PropTypes.bool,
   weekStartsOn: PropTypes.number,
+  ignoreOutsideDate: PropTypes.bool,
 };
 
 BpkCalendarGrid.propTypes = propTypes;
@@ -185,6 +188,7 @@ BpkCalendarGrid.defaultProps = {
   selectedDate: null,
   showWeekendSeparator: true,
   weekStartsOn: 1,
+  ignoreOutsideDate: false,
 };
 
 export default BpkCalendarGrid;

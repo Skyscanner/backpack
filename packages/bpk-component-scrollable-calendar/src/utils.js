@@ -16,26 +16,15 @@
  * limitations under the License.
  */
 
-@import '~bpk-mixins/index';
+import { DateUtils } from 'bpk-component-calendar';
 
-$calendar-height: 7 * ($bpk-calendar-day-size + $bpk-calendar-day-spacing);
+const getMonthsArray = (startDate, count) => {
+  const months = [];
 
-.bpk-scrollable-calendar-grid-list {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  overflow-x: hidden;
-  overflow-y: none;
-  box-sizing: border-box;
-  -ms-overflow-style: -ms-autohiding-scrollbar;
-
-  &__strip {
-    z-index: 0;
-    height: $calendar-height;
-    flex-direction: column;
+  for (let i = 0; i < count + 1; i += 1) {
+    months.push(DateUtils.addMonths(startDate, i));
   }
 
-  &__item {
-    display: inline-table;
-  }
-}
+  return months;
+};
+export default getMonthsArray;

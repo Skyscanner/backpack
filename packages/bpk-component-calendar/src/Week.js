@@ -45,6 +45,10 @@ const shallowEqualProps = (props1, props2, propList) => {
   return true;
 };
 
+function or(total, bool) {
+  return total || bool;
+}
+
 /*
   Week - table row containing a week full of DateContainer components
 */
@@ -119,10 +123,23 @@ class Week extends Component {
       preventKeyboardFocus,
       selectedDate,
       showWeekendSeparator,
+      ignoreOutsideDate,
     } = this.props;
 
     const firstDayOfWeekendIndex = getFirstDayOfWeekend(daysOfWeek);
     const lastDayOfWeekendIndex = getLastDayOfWeekend(daysOfWeek);
+
+    if (ignoreOutsideDate) {
+      const daysOutside = this.props.dates.map(date =>
+        isSameMonth(date, month),
+      );
+
+      const shouldRender = daysOutside.reduce(or);
+
+      if (!shouldRender) {
+        return null;
+      }
+    }
 
     return (
       <tr className={getClassName('bpk-calendar-grid__week')}>
@@ -153,6 +170,7 @@ class Week extends Component {
               }
               isOutside={markOutsideDays && !isSameMonth(date, month)}
               isToday={markToday && isToday(date)}
+              isEmptyCell={!isSameMonth(date, month) && ignoreOutsideDate}
             />
           </DateContainer>
         ))}
@@ -180,6 +198,7 @@ Week.propTypes = {
   onDateClick: PropTypes.func,
   onDateKeyDown: PropTypes.func,
   selectedDate: PropTypes.instanceOf(Date),
+  ignoreOutsideDate: PropTypes.bool,
 };
 
 Week.defaultProps = {
@@ -189,6 +208,7 @@ Week.defaultProps = {
   onDateClick: null,
   onDateKeyDown: null,
   selectedDate: null,
+  ignoreOutsideDate: false,
 };
 
 /*
@@ -204,13 +224,18 @@ const DateContainer = props => {
     classNames.push(getClassName('bpk-calendar-grid__date--weekend-end'));
   }
 
-  return <td className={classNames.join(' ')}>{props.children}</td>;
+  return (
+    <td aria-hidden={props.isEmptyCell} className={classNames.join(' ')}>
+      {props.children}
+    </td>
+  );
 };
 
 DateContainer.propTypes = {
   children: PropTypes.element.isRequired,
   weekendStart: PropTypes.bool.isRequired,
   weekendEnd: PropTypes.bool.isRequired,
+  isEmptyCell: PropTypes.bool.isRequired,
 };
 
 export default Week;

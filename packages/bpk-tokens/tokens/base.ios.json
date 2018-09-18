@@ -766,6 +766,13 @@
     {
       "type": "size",
       "category": "spacings",
+      "value": "0",
+      "originalValue": "{!SPACING_NONE}",
+      "name": "spacingNone"
+    },
+    {
+      "type": "size",
+      "category": "spacings",
       "value": "4",
       "originalValue": "{!SPACING_SM}",
       "name": "spacingSm"

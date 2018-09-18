@@ -28,6 +28,9 @@
     "SPACING_XXL": {
       "value": "{!SPACING_XXL}"
     },
+    "SPACING_NONE": {
+      "value": "{!SPACING_NONE}"
+    },
     "ONE_PIXEL_REM": {
       "value": "{!ONE_PIXEL_REM}"
     }

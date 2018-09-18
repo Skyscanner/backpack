@@ -21,59 +21,127 @@ import React from 'react';
 
 import { cssModules } from 'bpk-react-utils';
 import { DateUtils, BpkCalendarGridPropTypes } from 'bpk-component-calendar';
-import { startOfDay, startOfMonth } from 'date-fns';
+import { startOfDay, startOfMonth, isSameMonth } from 'date-fns';
+import {
+  AutoSizer,
+  List,
+  CellMeasurer,
+  CellMeasurerCache,
+} from 'react-virtualized';
 
 import STYLES from './bpk-scrollable-calendar-grid-list.scss';
 import BpkScrollableCalendarGrid from './BpkScrollableCalendarGrid';
+import getMonthsArray from './utils';
 
 const getClassName = cssModules(STYLES);
 
-const getMonthsArray = (startDate, count) => {
-  const months = [];
+class BpkScrollableCalendarGridList extends React.Component {
+  constructor(props) {
+    super(props);
 
-  for (let i = 0; i < count + 1; i += 1) {
-    months.push(DateUtils.addMonths(startDate, i));
+    this.rowRenderer = this.rowRenderer.bind(this);
+    this.renderList = this.renderList.bind(this);
+
+    const startDate = startOfDay(startOfMonth(this.props.minDate));
+    const endDate = startOfDay(startOfMonth(this.props.maxDate));
+    const monthsCount = DateUtils.differenceInCalendarMonths(
+      endDate,
+      startDate,
+    );
+    const months = getMonthsArray(startDate, monthsCount);
+
+    const cache = new CellMeasurerCache({
+      fixedWidth: true,
+      defaultHeight: 276, // most common height (in px) of BpkScrollableCalendarGrid
+    });
+    this.state = {
+      months,
+      cache,
+    };
   }
 
-  return months;
-};
+  getHtmlElement = () =>
+    typeof document !== 'undefined' ? document.querySelector('html') : {};
 
-const BpkScrollableCalendarGridList = props => {
-  const { className, minDate, maxDate, focusedDate, ...rest } = props;
-
-  const classNames = getClassName(
-    'bpk-scrollable-calendar-grid-list',
-    className,
-  );
-
-  const startDate = startOfDay(startOfMonth(minDate));
-  const endDate = startOfDay(startOfMonth(maxDate));
-  const monthsCount = DateUtils.differenceInCalendarMonths(endDate, startDate);
-  const months = getMonthsArray(startDate, monthsCount);
-
-  return (
-    <div className={classNames}>
-      <div className={getClassName('bpk-scrollable-calendar-grid-list__strip')}>
-        {months.map((month, index) => (
+  rowRenderer({ index, key, style, parent }) {
+    return (
+      <CellMeasurer
+        key={key}
+        cache={this.state.cache}
+        parent={parent}
+        columnIndex={0}
+        rowIndex={index}
+      >
+        <div style={style}>
           <BpkScrollableCalendarGrid
-            {...props}
-            key={DateUtils.formatIsoMonth(month)}
-            month={month}
-            focusedDate={focusedDate}
-            preventKeyboardFocus={rest.preventKeyboardFocus}
+            onDateClick={this.props.onDateClick}
+            {...this.props}
+            key={key}
+            month={this.state.months[index]}
+            focusedDate={this.props.focusedDate}
+            preventKeyboardFocus={this.props.preventKeyboardFocus}
             aria-hidden={index !== 1}
             className={getClassName('bpk-scrollable-calendar-grid-list__item')}
           />
-        ))}
+        </div>
+      </CellMeasurer>
+    );
+  }
+
+  renderList({ width, height }) {
+    return (
+      <List
+        extraData={this.props}
+        style={
+          this.getHtmlElement().dir === 'rtl' ? { direction: 'rtl' } : null
+        }
+        width={width}
+        height={height}
+        deferredMeasurementCache={this.state.cache}
+        rowHeight={this.state.cache.rowHeight}
+        rowRenderer={this.rowRenderer}
+        rowCount={this.state.months.length}
+        overscanRowCount={0}
+        scrollToIndex={
+          isSameMonth(this.props.focusedDate, this.props.selectedDate)
+            ? DateUtils.differenceInCalendarMonths(
+                this.props.selectedDate,
+                this.props.minDate,
+              )
+            : DateUtils.differenceInCalendarMonths(
+                this.props.focusedDate,
+                this.props.minDate,
+              )
+        }
+      />
+    );
+  }
+
+  render() {
+    return (
+      <div
+        className={getClassName(
+          'bpk-scrollable-calendar-grid-list',
+          this.props.className,
+        )}
+      >
+        <div
+          className={getClassName('bpk-scrollable-calendar-grid-list__strip')}
+        >
+          <AutoSizer>
+            {(width, height) => this.renderList(width, height)}
+          </AutoSizer>{' '}
+        </div>
       </div>
-    </div>
-  );
-};
+    );
+  }
+}
 
 BpkScrollableCalendarGridList.propTypes = {
   className: PropTypes.string,
   minDate: PropTypes.instanceOf(Date).isRequired,
   maxDate: PropTypes.instanceOf(Date).isRequired,
+  selectedDate: PropTypes.instanceOf(Date).isRequired,
   focusedDate: PropTypes.instanceOf(Date),
   ...BpkCalendarGridPropTypes,
 };
@@ -83,9 +151,4 @@ BpkScrollableCalendarGridList.defaultProps = {
   focusedDate: null,
 };
 
-const addScrollableCalendarGridList = ListItem => props => (
-  <BpkScrollableCalendarGridList ListItem={ListItem} {...props} />
-);
-
 export default BpkScrollableCalendarGridList;
-export { addScrollableCalendarGridList };
