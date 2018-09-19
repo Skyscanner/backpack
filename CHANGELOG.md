@@ -5,6 +5,8 @@
 # 2018-09-18 - Added functionality to scrollable-calendar and RN image
 
 **Added:**
+ - bpk-component-scrollable-calendar: 0.0.14 => 0.1.0
+   - Introduced React Virtualized to improve performance.
  - bpk-tokens: 27.0.0 => 27.1.0
    - Added spacingNone (0px) to the available spacings
  - react-native-bpk-component-image: 1.0.2 => 1.1.0
