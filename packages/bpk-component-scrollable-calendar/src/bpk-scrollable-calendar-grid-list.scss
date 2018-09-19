@@ -31,7 +31,8 @@ $calendar-height: 7 * ($bpk-calendar-day-size + $bpk-calendar-day-spacing);
 
   &__strip {
     z-index: 0;
-    height: $calendar-height;
+    height: 100%;
+    min-height: $calendar-height;
     flex-direction: column;
   }
 
