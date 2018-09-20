@@ -31,7 +31,7 @@ import Heading from '../Heading';
 import PageHead from '../PageHead';
 import Paragraph from '../Paragraph';
 import PresentationBlock from '../PresentationBlock';
-import SassdocLink from '../SassdocLink';
+import { createFromType } from '../ApidocLink';
 import TokenSwitcher, { connect } from './TokenSwitcher';
 import TokenTable from './TokenTable';
 import UsageTable from '../UsageTable';
@@ -62,18 +62,9 @@ const markdownToHTML = (readmeString, headerPrefix = '') =>
     { renderer, headerPrefix },
   );
 
-const toSassdocLink = props => (
-  <SassdocLink
-    sassdocId={props.sassdocId}
-    category={props.category}
-    transparentBackground
-  />
-);
-
-toSassdocLink.propTypes = {
-  sassdocId: PropTypes.string.isRequired,
-  category: PropTypes.string.isRequired,
-};
+const toSassdocLink = createFromType('sass');
+const toIosDocLink = createFromType('ios');
+const toAndroidDocLink = createFromType('android');
 
 const ComponentExample = (component, registerPlatformSwitchingContent) => {
   // FIXME: we're getting a missing "key" warning from this component
@@ -137,6 +128,20 @@ const ComponentExample = (component, registerPlatformSwitchingContent) => {
       })
     : null;
 
+  const androidDocLink = component.androidDocId
+    ? toAndroidDocLink({
+        package: component.androidDocId,
+        title: component.title,
+      })
+    : null;
+
+  const iosDocLink = component.iosDocId
+    ? toIosDocLink({
+        component: component.iosDocId,
+        title: component.title,
+      })
+    : null;
+
   return (
     <div>
       {heading}
@@ -148,6 +153,8 @@ const ComponentExample = (component, registerPlatformSwitchingContent) => {
       {examples}
       {readme}
       {sassdocLink}
+      {androidDocLink}
+      {iosDocLink}
     </div>
   );
 };
@@ -235,6 +242,18 @@ const DocsPageBuilder = props => {
       ? toSassdocLink({
           sassdocId: props.sassdocId,
           category: props.title,
+        })
+      : null,
+    props.androidDocId
+      ? toAndroidDocLink({
+          package: props.androidDocId,
+          title: props.title,
+        })
+      : null,
+    props.iosDocId
+      ? toIosDocLink({
+          component: props.iosDocId,
+          title: props.title,
         })
       : null,
   ];
@@ -332,7 +351,9 @@ DocsPageBuilder.propTypes = {
       content: PropTypes.arrayOf(contentShape),
     }),
   ),
+  iosDocId: PropTypes.string,
   sassdocId: PropTypes.string,
+  androidDocId: PropTypes.string,
   usageTable: PropTypes.shape({
     data: PropTypes.shape({
       dos: PropTypes.arrayOf(PropTypes.string.isRequired),
@@ -349,7 +370,9 @@ DocsPageBuilder.defaultProps = {
   readme: null,
   tokenMap: null,
   customSections: null,
+  iosDocId: null,
   sassdocId: null,
+  androidDocId: null,
   usageTable: null,
   wrapped: false,
 };
