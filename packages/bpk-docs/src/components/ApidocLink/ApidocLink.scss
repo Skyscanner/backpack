@@ -18,9 +18,10 @@
 
 @import '~bpk-mixins/index';
 
-.bpkdocs-sassdoc-link {
+.bpkdocs-apidoc-link {
   padding: $bpk-spacing-sm;
-  background-color: $bpk-color-gray-50;
+  border-radius: 0;
+  background-color: transparent;
 
   @include bpk-border-radius-xs;
 
@@ -39,10 +40,5 @@
       display: block;
       height: 100%;
     }
-  }
-
-  &--transparent-background {
-    border-radius: 0;
-    background-color: transparent;
   }
 }

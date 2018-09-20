@@ -16,6 +16,7 @@
  * limitations under the License.
  */
 
-import component from './SassdocLink';
+import ApidocLink, { createFromType } from './ApidocLink';
 
-export default component;
+export { createFromType };
+export default ApidocLink;
