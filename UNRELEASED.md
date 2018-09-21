@@ -1,2 +1,5 @@
 # Unreleased
-[NO-JIRA] Adjust button to use min height for accessibility
+
+**Fixed:**
+- react-native-bpk-component-button:
+  - The default button variant now correctly works with Dynamic Text sizes.
