@@ -1,4 +1,2 @@
 # Unreleased
-
-_Nothing yet!_
-
+[NO-JIRA] Adjust button to use min height for accessibility
