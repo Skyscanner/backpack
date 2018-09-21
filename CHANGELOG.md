@@ -2,6 +2,12 @@
 
 [Unreleased changes](./UNRELEASED.md).
 
+# 2018-09-21 - Fix issue in scrollable calendar component
+
+**Fixed:**
+ - bpk-component-scrollable-calendar: 0.1.0 => 0.1.1
+   - Fixed an issue where `gridClassName` didn't work as expected.
+
 # 2018-09-18 - Added functionality to scrollable-calendar and RN image
 
 **Added:**
