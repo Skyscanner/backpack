@@ -43,11 +43,11 @@ import { Platform, StyleSheet } from 'react-native';
 const base = StyleSheet.create({
   container: {
     borderRadius: borderRadiusPill,
-    height: buttonHeight,
+    minHeight: buttonHeight,
   },
   button: {
     borderRadius: borderRadiusPill,
-    height: buttonHeight,
+    minHeight: buttonHeight,
     paddingVertical: buttonPaddingVertical,
     paddingHorizontal: buttonPaddingHorizontal,
   },

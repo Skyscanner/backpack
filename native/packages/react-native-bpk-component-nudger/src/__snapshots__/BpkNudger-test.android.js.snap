@@ -18,7 +18,7 @@ exports[`Android BpkNudger should disable theming if the required attribute is o
         Array [
           Object {
             "borderRadius": 40,
-            "height": 32,
+            "minHeight": 32,
           },
           Object {
             "borderColor": "rgb(230, 228, 235)",
@@ -64,7 +64,7 @@ exports[`Android BpkNudger should disable theming if the required attribute is o
           Array [
             Object {
               "borderRadius": 40,
-              "height": 32,
+              "minHeight": 32,
               "paddingHorizontal": 12,
               "paddingVertical": 8,
             },
@@ -168,7 +168,7 @@ exports[`Android BpkNudger should disable theming if the required attribute is o
         Array [
           Object {
             "borderRadius": 40,
-            "height": 32,
+            "minHeight": 32,
           },
           Object {
             "borderColor": "rgb(230, 228, 235)",
@@ -214,7 +214,7 @@ exports[`Android BpkNudger should disable theming if the required attribute is o
           Array [
             Object {
               "borderRadius": 40,
-              "height": 32,
+              "minHeight": 32,
               "paddingHorizontal": 12,
               "paddingVertical": 8,
             },
@@ -309,7 +309,7 @@ exports[`Android BpkNudger should render correctly 1`] = `
         Array [
           Object {
             "borderRadius": 40,
-            "height": 32,
+            "minHeight": 32,
           },
           Object {
             "borderColor": "rgb(230, 228, 235)",
@@ -355,7 +355,7 @@ exports[`Android BpkNudger should render correctly 1`] = `
           Array [
             Object {
               "borderRadius": 40,
-              "height": 32,
+              "minHeight": 32,
               "paddingHorizontal": 12,
               "paddingVertical": 8,
             },
@@ -459,7 +459,7 @@ exports[`Android BpkNudger should render correctly 1`] = `
         Array [
           Object {
             "borderRadius": 40,
-            "height": 32,
+            "minHeight": 32,
           },
           Object {
             "borderColor": "rgb(230, 228, 235)",
@@ -505,7 +505,7 @@ exports[`Android BpkNudger should render correctly 1`] = `
           Array [
             Object {
               "borderRadius": 40,
-              "height": 32,
+              "minHeight": 32,
               "paddingHorizontal": 12,
               "paddingVertical": 8,
             },
@@ -600,7 +600,7 @@ exports[`Android BpkNudger should render correctly when value is a not an intege
         Array [
           Object {
             "borderRadius": 40,
-            "height": 32,
+            "minHeight": 32,
           },
           Object {
             "borderColor": "rgb(230, 228, 235)",
@@ -651,7 +651,7 @@ exports[`Android BpkNudger should render correctly when value is a not an intege
           Array [
             Object {
               "borderRadius": 40,
-              "height": 32,
+              "minHeight": 32,
               "paddingHorizontal": 12,
               "paddingVertical": 8,
             },
@@ -761,7 +761,7 @@ exports[`Android BpkNudger should render correctly when value is a not an intege
         Array [
           Object {
             "borderRadius": 40,
-            "height": 32,
+            "minHeight": 32,
           },
           Object {
             "borderColor": "rgb(230, 228, 235)",
@@ -807,7 +807,7 @@ exports[`Android BpkNudger should render correctly when value is a not an intege
           Array [
             Object {
               "borderRadius": 40,
-              "height": 32,
+              "minHeight": 32,
               "paddingHorizontal": 12,
               "paddingVertical": 8,
             },
@@ -902,7 +902,7 @@ exports[`Android BpkNudger should render correctly when value is greater than ma
         Array [
           Object {
             "borderRadius": 40,
-            "height": 32,
+            "minHeight": 32,
           },
           Object {
             "borderColor": "rgb(230, 228, 235)",
@@ -948,7 +948,7 @@ exports[`Android BpkNudger should render correctly when value is greater than ma
           Array [
             Object {
               "borderRadius": 40,
-              "height": 32,
+              "minHeight": 32,
               "paddingHorizontal": 12,
               "paddingVertical": 8,
             },
@@ -1052,7 +1052,7 @@ exports[`Android BpkNudger should render correctly when value is greater than ma
         Array [
           Object {
             "borderRadius": 40,
-            "height": 32,
+            "minHeight": 32,
           },
           Object {
             "borderColor": "rgb(230, 228, 235)",
@@ -1103,7 +1103,7 @@ exports[`Android BpkNudger should render correctly when value is greater than ma
           Array [
             Object {
               "borderRadius": 40,
-              "height": 32,
+              "minHeight": 32,
               "paddingHorizontal": 12,
               "paddingVertical": 8,
             },
@@ -1204,7 +1204,7 @@ exports[`Android BpkNudger should render correctly when value is less than min 1
         Array [
           Object {
             "borderRadius": 40,
-            "height": 32,
+            "minHeight": 32,
           },
           Object {
             "borderColor": "rgb(230, 228, 235)",
@@ -1255,7 +1255,7 @@ exports[`Android BpkNudger should render correctly when value is less than min 1
           Array [
             Object {
               "borderRadius": 40,
-              "height": 32,
+              "minHeight": 32,
               "paddingHorizontal": 12,
               "paddingVertical": 8,
             },
@@ -1365,7 +1365,7 @@ exports[`Android BpkNudger should render correctly when value is less than min 1
         Array [
           Object {
             "borderRadius": 40,
-            "height": 32,
+            "minHeight": 32,
           },
           Object {
             "borderColor": "rgb(230, 228, 235)",
@@ -1411,7 +1411,7 @@ exports[`Android BpkNudger should render correctly when value is less than min 1
           Array [
             Object {
               "borderRadius": 40,
-              "height": 32,
+              "minHeight": 32,
               "paddingHorizontal": 12,
               "paddingVertical": 8,
             },
@@ -1506,7 +1506,7 @@ exports[`Android BpkNudger should support theming 1`] = `
         Array [
           Object {
             "borderRadius": 40,
-            "height": 32,
+            "minHeight": 32,
           },
           Object {
             "borderColor": "rgb(230, 228, 235)",
@@ -1552,7 +1552,7 @@ exports[`Android BpkNudger should support theming 1`] = `
           Array [
             Object {
               "borderRadius": 40,
-              "height": 32,
+              "minHeight": 32,
               "paddingHorizontal": 12,
               "paddingVertical": 8,
             },
@@ -1658,7 +1658,7 @@ exports[`Android BpkNudger should support theming 1`] = `
         Array [
           Object {
             "borderRadius": 40,
-            "height": 32,
+            "minHeight": 32,
           },
           Object {
             "borderColor": "rgb(230, 228, 235)",
@@ -1704,7 +1704,7 @@ exports[`Android BpkNudger should support theming 1`] = `
           Array [
             Object {
               "borderRadius": 40,
-              "height": 32,
+              "minHeight": 32,
               "paddingHorizontal": 12,
               "paddingVertical": 8,
             },

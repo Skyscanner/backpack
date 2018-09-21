@@ -13,7 +13,7 @@ exports[`iOS BpkButton should render correctly 1`] = `
       Array [
         Object {
           "borderRadius": 40,
-          "height": 32,
+          "minHeight": 32,
         },
       ],
       Object {},
@@ -44,7 +44,7 @@ exports[`iOS BpkButton should render correctly 1`] = `
         Array [
           Object {
             "borderRadius": 40,
-            "height": 32,
+            "minHeight": 32,
             "paddingHorizontal": 12,
             "paddingVertical": 8,
           },
@@ -127,7 +127,7 @@ exports[`iOS BpkButton should render correctly with iconAlignment="centerLeading
       Array [
         Object {
           "borderRadius": 40,
-          "height": 32,
+          "minHeight": 32,
         },
         undefined,
       ],
@@ -159,7 +159,7 @@ exports[`iOS BpkButton should render correctly with iconAlignment="centerLeading
         Array [
           Object {
             "borderRadius": 40,
-            "height": 32,
+            "minHeight": 32,
             "paddingHorizontal": 12,
             "paddingVertical": 8,
           },
@@ -286,7 +286,7 @@ exports[`iOS BpkButton should render correctly with iconAlignment="centerTrailin
       Array [
         Object {
           "borderRadius": 40,
-          "height": 32,
+          "minHeight": 32,
         },
       ],
       Object {},
@@ -317,7 +317,7 @@ exports[`iOS BpkButton should render correctly with iconAlignment="centerTrailin
         Array [
           Object {
             "borderRadius": 40,
-            "height": 32,
+            "minHeight": 32,
             "paddingHorizontal": 12,
             "paddingVertical": 8,
           },
@@ -434,7 +434,7 @@ exports[`iOS BpkButton should render correctly with iconAlignment="leading" 1`] 
       Array [
         Object {
           "borderRadius": 40,
-          "height": 32,
+          "minHeight": 32,
         },
         undefined,
         undefined,
@@ -467,7 +467,7 @@ exports[`iOS BpkButton should render correctly with iconAlignment="leading" 1`] 
         Array [
           Object {
             "borderRadius": 40,
-            "height": 32,
+            "minHeight": 32,
             "paddingHorizontal": 12,
             "paddingVertical": 8,
           },
@@ -601,7 +601,7 @@ exports[`iOS BpkButton should render correctly with iconAlignment="trailing" 1`]
       Array [
         Object {
           "borderRadius": 40,
-          "height": 32,
+          "minHeight": 32,
         },
         undefined,
       ],
@@ -633,7 +633,7 @@ exports[`iOS BpkButton should render correctly with iconAlignment="trailing" 1`]
         Array [
           Object {
             "borderRadius": 40,
-            "height": 32,
+            "minHeight": 32,
             "paddingHorizontal": 12,
             "paddingVertical": 8,
           },
@@ -757,7 +757,7 @@ exports[`iOS BpkButton should render correctly with type="destructive" 1`] = `
       Array [
         Object {
           "borderRadius": 40,
-          "height": 32,
+          "minHeight": 32,
         },
         Object {
           "borderColor": "rgb(230, 228, 235)",
@@ -792,7 +792,7 @@ exports[`iOS BpkButton should render correctly with type="destructive" 1`] = `
         Array [
           Object {
             "borderRadius": 40,
-            "height": 32,
+            "minHeight": 32,
             "paddingHorizontal": 12,
             "paddingVertical": 8,
           },
@@ -882,7 +882,7 @@ exports[`iOS BpkButton should render correctly with type="destructive" and disab
       Array [
         Object {
           "borderRadius": 40,
-          "height": 32,
+          "minHeight": 32,
         },
         Object {
           "borderColor": "rgb(230, 228, 235)",
@@ -922,7 +922,7 @@ exports[`iOS BpkButton should render correctly with type="destructive" and disab
         Array [
           Object {
             "borderRadius": 40,
-            "height": 32,
+            "minHeight": 32,
             "paddingHorizontal": 12,
             "paddingVertical": 8,
           },
@@ -1017,7 +1017,7 @@ exports[`iOS BpkButton should render correctly with type="featured" 1`] = `
       Array [
         Object {
           "borderRadius": 40,
-          "height": 32,
+          "minHeight": 32,
         },
       ],
       Object {},
@@ -1048,7 +1048,7 @@ exports[`iOS BpkButton should render correctly with type="featured" 1`] = `
         Array [
           Object {
             "borderRadius": 40,
-            "height": 32,
+            "minHeight": 32,
             "paddingHorizontal": 12,
             "paddingVertical": 8,
           },
@@ -1131,7 +1131,7 @@ exports[`iOS BpkButton should render correctly with type="featured" and disabled
       Array [
         Object {
           "borderRadius": 40,
-          "height": 32,
+          "minHeight": 32,
         },
         Object {
           "borderColor": "transparent",
@@ -1167,7 +1167,7 @@ exports[`iOS BpkButton should render correctly with type="featured" and disabled
         Array [
           Object {
             "borderRadius": 40,
-            "height": 32,
+            "minHeight": 32,
             "paddingHorizontal": 12,
             "paddingVertical": 8,
           },
@@ -1255,7 +1255,7 @@ exports[`iOS BpkButton should render correctly with type="primary" 1`] = `
       Array [
         Object {
           "borderRadius": 40,
-          "height": 32,
+          "minHeight": 32,
         },
       ],
       Object {},
@@ -1286,7 +1286,7 @@ exports[`iOS BpkButton should render correctly with type="primary" 1`] = `
         Array [
           Object {
             "borderRadius": 40,
-            "height": 32,
+            "minHeight": 32,
             "paddingHorizontal": 12,
             "paddingVertical": 8,
           },
@@ -1369,7 +1369,7 @@ exports[`iOS BpkButton should render correctly with type="primary" and disabled 
       Array [
         Object {
           "borderRadius": 40,
-          "height": 32,
+          "minHeight": 32,
         },
         Object {
           "borderColor": "transparent",
@@ -1405,7 +1405,7 @@ exports[`iOS BpkButton should render correctly with type="primary" and disabled 
         Array [
           Object {
             "borderRadius": 40,
-            "height": 32,
+            "minHeight": 32,
             "paddingHorizontal": 12,
             "paddingVertical": 8,
           },
@@ -1493,7 +1493,7 @@ exports[`iOS BpkButton should render correctly with type="secondary" 1`] = `
       Array [
         Object {
           "borderRadius": 40,
-          "height": 32,
+          "minHeight": 32,
         },
         Object {
           "borderColor": "rgb(230, 228, 235)",
@@ -1528,7 +1528,7 @@ exports[`iOS BpkButton should render correctly with type="secondary" 1`] = `
         Array [
           Object {
             "borderRadius": 40,
-            "height": 32,
+            "minHeight": 32,
             "paddingHorizontal": 12,
             "paddingVertical": 8,
           },
@@ -1618,7 +1618,7 @@ exports[`iOS BpkButton should render correctly with type="secondary" and disable
       Array [
         Object {
           "borderRadius": 40,
-          "height": 32,
+          "minHeight": 32,
         },
         Object {
           "borderColor": "rgb(230, 228, 235)",
@@ -1658,7 +1658,7 @@ exports[`iOS BpkButton should render correctly with type="secondary" and disable
         Array [
           Object {
             "borderRadius": 40,
-            "height": 32,
+            "minHeight": 32,
             "paddingHorizontal": 12,
             "paddingVertical": 8,
           },
@@ -1753,7 +1753,7 @@ exports[`iOS BpkButton should support elements as icons 1`] = `
       Array [
         Object {
           "borderRadius": 40,
-          "height": 32,
+          "minHeight": 32,
         },
         Object {
           "width": 32,
@@ -1787,7 +1787,7 @@ exports[`iOS BpkButton should support elements as icons 1`] = `
         Array [
           Object {
             "borderRadius": 40,
-            "height": 32,
+            "minHeight": 32,
             "paddingHorizontal": 12,
             "paddingVertical": 8,
           },
@@ -1862,7 +1862,7 @@ exports[`iOS BpkButton should support having an icon as well as a title 1`] = `
       Array [
         Object {
           "borderRadius": 40,
-          "height": 32,
+          "minHeight": 32,
         },
         undefined,
       ],
@@ -1894,7 +1894,7 @@ exports[`iOS BpkButton should support having an icon as well as a title 1`] = `
         Array [
           Object {
             "borderRadius": 40,
-            "height": 32,
+            "minHeight": 32,
             "paddingHorizontal": 12,
             "paddingVertical": 8,
           },
@@ -2018,7 +2018,7 @@ exports[`iOS BpkButton should support overwriting styles 1`] = `
       Array [
         Object {
           "borderRadius": 40,
-          "height": 32,
+          "minHeight": 32,
         },
       ],
       Object {},
@@ -2051,7 +2051,7 @@ exports[`iOS BpkButton should support overwriting styles 1`] = `
         Array [
           Object {
             "borderRadius": 40,
-            "height": 32,
+            "minHeight": 32,
             "paddingHorizontal": 12,
             "paddingVertical": 8,
           },
@@ -2134,7 +2134,7 @@ exports[`iOS BpkButton should support the "disabled" property 1`] = `
       Array [
         Object {
           "borderRadius": 40,
-          "height": 32,
+          "minHeight": 32,
         },
         Object {
           "borderColor": "transparent",
@@ -2170,7 +2170,7 @@ exports[`iOS BpkButton should support the "disabled" property 1`] = `
         Array [
           Object {
             "borderRadius": 40,
-            "height": 32,
+            "minHeight": 32,
             "paddingHorizontal": 12,
             "paddingVertical": 8,
           },
@@ -2258,7 +2258,7 @@ exports[`iOS BpkButton should support the "icon" property 1`] = `
       Array [
         Object {
           "borderRadius": 40,
-          "height": 32,
+          "minHeight": 32,
         },
         undefined,
       ],
@@ -2290,7 +2290,7 @@ exports[`iOS BpkButton should support the "icon" property 1`] = `
         Array [
           Object {
             "borderRadius": 40,
-            "height": 32,
+            "minHeight": 32,
             "paddingHorizontal": 12,
             "paddingVertical": 8,
           },
@@ -2414,7 +2414,7 @@ exports[`iOS BpkButton should support the "iconOnly" property 1`] = `
       Array [
         Object {
           "borderRadius": 40,
-          "height": 32,
+          "minHeight": 32,
         },
         Object {
           "width": 32,
@@ -2448,7 +2448,7 @@ exports[`iOS BpkButton should support the "iconOnly" property 1`] = `
         Array [
           Object {
             "borderRadius": 40,
-            "height": 32,
+            "minHeight": 32,
             "paddingHorizontal": 12,
             "paddingVertical": 8,
           },
@@ -2545,7 +2545,7 @@ exports[`iOS BpkButton should support the "secondary" property 1`] = `
       Array [
         Object {
           "borderRadius": 40,
-          "height": 32,
+          "minHeight": 32,
         },
         Object {
           "borderColor": "rgb(230, 228, 235)",
@@ -2580,7 +2580,7 @@ exports[`iOS BpkButton should support the "secondary" property 1`] = `
         Array [
           Object {
             "borderRadius": 40,
-            "height": 32,
+            "minHeight": 32,
             "paddingHorizontal": 12,
             "paddingVertical": 8,
           },
@@ -2670,7 +2670,7 @@ exports[`iOS BpkButtonThemed should render correctly 1`] = `
       Array [
         Object {
           "borderRadius": 40,
-          "height": 32,
+          "minHeight": 32,
         },
       ],
       Object {},
@@ -2701,7 +2701,7 @@ exports[`iOS BpkButtonThemed should render correctly 1`] = `
         Array [
           Object {
             "borderRadius": 40,
-            "height": 32,
+            "minHeight": 32,
             "paddingHorizontal": 12,
             "paddingVertical": 8,
           },
@@ -2786,7 +2786,7 @@ exports[`iOS should support the "icon" and "large" property 1`] = `
       Array [
         Object {
           "borderRadius": 40,
-          "height": 32,
+          "minHeight": 32,
         },
         Object {
           "minHeight": 48,
@@ -2821,7 +2821,7 @@ exports[`iOS should support the "icon" and "large" property 1`] = `
         Array [
           Object {
             "borderRadius": 40,
-            "height": 32,
+            "minHeight": 32,
             "paddingHorizontal": 12,
             "paddingVertical": 8,
           },
@@ -2950,7 +2950,7 @@ exports[`iOS should support the "iconOnly" and "large" property 1`] = `
       Array [
         Object {
           "borderRadius": 40,
-          "height": 32,
+          "minHeight": 32,
         },
         Object {
           "minHeight": 48,
@@ -2987,7 +2987,7 @@ exports[`iOS should support the "iconOnly" and "large" property 1`] = `
         Array [
           Object {
             "borderRadius": 40,
-            "height": 32,
+            "minHeight": 32,
             "paddingHorizontal": 12,
             "paddingVertical": 8,
           },
@@ -3088,7 +3088,7 @@ exports[`iOS should support the "large" and secondary property 1`] = `
       Array [
         Object {
           "borderRadius": 40,
-          "height": 32,
+          "minHeight": 32,
         },
         Object {
           "borderColor": "rgb(230, 228, 235)",
@@ -3126,7 +3126,7 @@ exports[`iOS should support the "large" and secondary property 1`] = `
         Array [
           Object {
             "borderRadius": 40,
-            "height": 32,
+            "minHeight": 32,
             "paddingHorizontal": 12,
             "paddingVertical": 8,
           },
@@ -3222,7 +3222,7 @@ exports[`iOS should support the "large" property 1`] = `
       Array [
         Object {
           "borderRadius": 40,
-          "height": 32,
+          "minHeight": 32,
         },
         Object {
           "minHeight": 48,
@@ -3256,7 +3256,7 @@ exports[`iOS should support the "large" property 1`] = `
         Array [
           Object {
             "borderRadius": 40,
-            "height": 32,
+            "minHeight": 32,
             "paddingHorizontal": 12,
             "paddingVertical": 8,
           },
