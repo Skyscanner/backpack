@@ -2,7 +2,7 @@
 
 [Unreleased changes](./UNRELEASED.md).
 
-# 2018-09-24 - Fix react native button the support dynamic text sizes
+# 2018-09-24 - Fix react native button to support dynamic text sizes
 
 **Fixed:**
 - react-native-bpk-component-button: 7.1.14 => 7.1.15
