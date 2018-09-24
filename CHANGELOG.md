@@ -2,6 +2,12 @@
 
 [Unreleased changes](./UNRELEASED.md).
 
+# 2018-09-24 - Fix react native button the support dynamic text sizes
+
+**Fixed:**
+- react-native-bpk-component-button: 7.1.14 => 7.1.15
+  - The default button variant now correctly works with Dynamic Text sizes.
+
 # 2018-09-21 - Fix issue in scrollable calendar component
 
 **Fixed:**
