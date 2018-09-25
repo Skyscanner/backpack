@@ -52,7 +52,7 @@ const AndroidDocLink = ({ package: pkg, title, ...rest }) => (
     renderLink={() => (
       <span>
         Check out{' '}
-        <BpkLink href={`/android/backpack-android/${pkg}`} blank>
+        <BpkLink href={`/android/versions/latest/${pkg}`} blank>
           {title} on Backpack&apos;s Android docs
         </BpkLink>{' '}
         for more.
@@ -72,7 +72,7 @@ const IosDocLink = ({ component, title, ...rest }) => (
     renderLink={() => (
       <span>
         Check out{' '}
-        <BpkLink href={`/ios/Classes/${component}.html`} blank>
+        <BpkLink href={`/ios/versions/latest/Classes/${component}.html`} blank>
           {title} on Backpack&apos;s iOS docs
         </BpkLink>{' '}
         for more.
