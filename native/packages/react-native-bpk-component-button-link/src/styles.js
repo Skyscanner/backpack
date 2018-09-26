@@ -28,13 +28,13 @@ import {
 
 const styles = StyleSheet.create({
   view: {
-    height: spacingXl,
+    minHeight: spacingXl,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
   },
   viewLarge: {
-    height: spacingXl + spacingSm,
+    minHeight: spacingXl + spacingSm,
   },
   viewLeading: {
     flexDirection: 'row-reverse',
