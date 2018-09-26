@@ -77,6 +77,7 @@ const TitleView = (props: {
       <BpkText
         textStyle="lg"
         emphasize
+        allowFontScaling={false}
         numberOfLines={1}
         ellipsizeMode="tail"
         style={[{ color: tintColor }, hasIcon ? styles.textWithIcon : null]}
