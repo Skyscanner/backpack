@@ -63,6 +63,7 @@ const styles = StyleSheet.create({
   },
   textBase: {
     color: colorGray700,
+    allowFontScaling: false,
     includeFontPadding: false,
   },
   textDestructive: {
