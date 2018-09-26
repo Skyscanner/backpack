@@ -86,6 +86,8 @@ const styles = StyleSheet.create({
 const animatedStyles = StyleSheet.create({
   label: {
     fontFamily,
+    ellipsizeMode: 'tail',
+    numberOfLines: 1,
     position: 'absolute',
   },
   inputContainerWithAccessoryView: {
