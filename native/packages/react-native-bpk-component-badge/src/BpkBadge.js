@@ -63,7 +63,6 @@ const styles = StyleSheet.create({
   },
   textBase: {
     color: colorGray700,
-    allowFontScaling: false,
     includeFontPadding: false,
   },
   textDestructive: {
@@ -158,7 +157,7 @@ const BpkBadge = (props: Props) => {
 
   return (
     <View style={viewStyle}>
-      <BpkText style={textStyle} textStyle="xs">
+      <BpkText allowFontScaling={false} style={textStyle} textStyle="xs">
         {message}
       </BpkText>
     </View>

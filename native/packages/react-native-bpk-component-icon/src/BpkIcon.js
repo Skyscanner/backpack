@@ -34,7 +34,6 @@ const styles = StyleSheet.create({
     fontSize: spacingLg,
     includeFontPadding: false,
     color: colorGray700,
-    allowFontScaling: false,
   },
   small: {
     fontSize: spacingBase,
@@ -67,7 +66,7 @@ const BpkIcon = (props: Props) => {
 
   return (
     // eslint-disable-next-line backpack/use-components
-    <Text style={textStyleFinal} {...rest}>
+    <Text allowFontScaling={false} style={textStyleFinal} {...rest}>
       {mapCharacterCode(characterCode)}
     </Text>
   );
