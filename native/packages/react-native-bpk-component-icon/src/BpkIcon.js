@@ -34,6 +34,7 @@ const styles = StyleSheet.create({
     fontSize: spacingLg,
     includeFontPadding: false,
     color: colorGray700,
+    allowFontScaling: false,
   },
   small: {
     fontSize: spacingBase,
