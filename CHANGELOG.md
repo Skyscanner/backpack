@@ -2,6 +2,24 @@
 
 [Unreleased changes](./UNRELEASED.md).
 
+# 2018-09-27 - Fix more react native dynamic text issues
+
+**Fixed:**
+- react-native-bpk-component-badge: 1.0.23 => 1.0.24
+  - Disabled font scaling.
+
+- react-native-bpk-component-button-link: 3.0.29 => 3.0.30
+  - Disabled font scaling.
+
+- react-native-bpk-component-icon: 1.10.4 => 1.10.5
+  - Font scaling is disabled by default.
+
+- react-native-bpk-component-navigation-bar: 2.0.36 => 2.0.37
+  - Title text now aligned with system and does not support font scaling.
+
+- react-native-bpk-component-text-input: 2.3.13 => 2.3.14
+  - Overflowing label text is now truncated.
+
 # 2018-09-24 - Fix react native button to support dynamic text sizes
 
 **Fixed:**
