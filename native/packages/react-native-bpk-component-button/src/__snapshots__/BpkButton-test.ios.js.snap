@@ -213,7 +213,7 @@ exports[`iOS BpkButton should render correctly with iconAlignment="centerLeading
     </Text>
     <Text
       accessible={true}
-      allowFontScaling={true}
+      allowFontScaling={false}
       ellipsizeMode="tail"
       style={
         Array [
@@ -366,7 +366,7 @@ exports[`iOS BpkButton should render correctly with iconAlignment="centerTrailin
     </Text>
     <Text
       accessible={true}
-      allowFontScaling={true}
+      allowFontScaling={false}
       ellipsizeMode="tail"
       style={
         Array [
@@ -526,7 +526,7 @@ exports[`iOS BpkButton should render correctly with iconAlignment="leading" 1`] 
     </Text>
     <Text
       accessible={true}
-      allowFontScaling={true}
+      allowFontScaling={false}
       ellipsizeMode="tail"
       style={
         Array [
@@ -687,7 +687,7 @@ exports[`iOS BpkButton should render correctly with iconAlignment="trailing" 1`]
     </Text>
     <Text
       accessible={true}
-      allowFontScaling={true}
+      allowFontScaling={false}
       ellipsizeMode="tail"
       style={
         Array [
@@ -1948,7 +1948,7 @@ exports[`iOS BpkButton should support having an icon as well as a title 1`] = `
     </Text>
     <Text
       accessible={true}
-      allowFontScaling={true}
+      allowFontScaling={false}
       ellipsizeMode="tail"
       style={
         Array [
@@ -2344,7 +2344,7 @@ exports[`iOS BpkButton should support the "icon" property 1`] = `
     </Text>
     <Text
       accessible={true}
-      allowFontScaling={true}
+      allowFontScaling={false}
       ellipsizeMode="tail"
       style={
         Array [
@@ -2472,7 +2472,7 @@ exports[`iOS BpkButton should support the "iconOnly" property 1`] = `
   >
     <Text
       accessible={true}
-      allowFontScaling={true}
+      allowFontScaling={false}
       ellipsizeMode="tail"
       style={
         Array [
@@ -2881,7 +2881,7 @@ exports[`iOS should support the "icon" and "large" property 1`] = `
     </Text>
     <Text
       accessible={true}
-      allowFontScaling={true}
+      allowFontScaling={false}
       ellipsizeMode="tail"
       style={
         Array [
@@ -3016,7 +3016,7 @@ exports[`iOS should support the "iconOnly" and "large" property 1`] = `
   >
     <Text
       accessible={true}
-      allowFontScaling={true}
+      allowFontScaling={false}
       ellipsizeMode="tail"
       style={
         Array [

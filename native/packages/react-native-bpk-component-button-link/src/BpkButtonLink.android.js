@@ -95,7 +95,13 @@ const BpkButtonLink = (props: Props) => {
         {...rest}
       >
         <View style={viewStyle}>
-          <BpkText textStyle="sm" emphasize numberOfLines={1} style={textStyle}>
+          <BpkText
+            textStyle="sm"
+            allowFontScaling={false}
+            emphasize
+            numberOfLines={1}
+            style={textStyle}
+          >
             {title.toUpperCase()}
           </BpkText>
           {typeof icon === 'string' ? (

@@ -94,15 +94,15 @@ exports[`iOS BpkPicker should render correctly 1`] = `
               Object {
                 "alignItems": "center",
                 "flexDirection": "row",
-                "height": 32,
                 "justifyContent": "center",
+                "minHeight": 32,
               },
             ]
           }
         >
           <Text
             accessible={true}
-            allowFontScaling={true}
+            allowFontScaling={false}
             ellipsizeMode="tail"
             numberOfLines={1}
             style={
@@ -259,15 +259,15 @@ exports[`iOS BpkPicker should render correctly with a selected value 1`] = `
               Object {
                 "alignItems": "center",
                 "flexDirection": "row",
-                "height": 32,
                 "justifyContent": "center",
+                "minHeight": 32,
               },
             ]
           }
         >
           <Text
             accessible={true}
-            allowFontScaling={true}
+            allowFontScaling={false}
             ellipsizeMode="tail"
             numberOfLines={1}
             style={

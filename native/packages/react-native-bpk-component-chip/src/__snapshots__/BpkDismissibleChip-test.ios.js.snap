@@ -65,7 +65,7 @@ exports[`iOS BpkDismissibleChip should render correctly 1`] = `
   </Text>
   <Text
     accessible={true}
-    allowFontScaling={true}
+    allowFontScaling={false}
     ellipsizeMode="tail"
     style={
       Array [
@@ -175,7 +175,7 @@ exports[`iOS BpkDismissibleChip should render correctly with arbitrary props 1`]
   </Text>
   <Text
     accessible={true}
-    allowFontScaling={true}
+    allowFontScaling={false}
     ellipsizeMode="tail"
     style={
       Array [
@@ -287,7 +287,7 @@ exports[`iOS BpkDismissibleChip should render correctly with custom style 1`] = 
   </Text>
   <Text
     accessible={true}
-    allowFontScaling={true}
+    allowFontScaling={false}
     ellipsizeMode="tail"
     style={
       Array [

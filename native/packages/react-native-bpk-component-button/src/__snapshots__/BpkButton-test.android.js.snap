@@ -386,7 +386,7 @@ exports[`Android BpkButton should render correctly with iconAlignment="centerLea
     </Text>
     <Text
       accessible={true}
-      allowFontScaling={true}
+      allowFontScaling={false}
       ellipsizeMode="tail"
       style={
         Array [
@@ -522,7 +522,7 @@ exports[`Android BpkButton should render correctly with iconAlignment="centerTra
     </Text>
     <Text
       accessible={true}
-      allowFontScaling={true}
+      allowFontScaling={false}
       ellipsizeMode="tail"
       style={
         Array [
@@ -665,7 +665,7 @@ exports[`Android BpkButton should render correctly with iconAlignment="leading" 
     </Text>
     <Text
       accessible={true}
-      allowFontScaling={true}
+      allowFontScaling={false}
       ellipsizeMode="tail"
       style={
         Array [
@@ -809,7 +809,7 @@ exports[`Android BpkButton should render correctly with iconAlignment="trailing"
     </Text>
     <Text
       accessible={true}
-      allowFontScaling={true}
+      allowFontScaling={false}
       ellipsizeMode="tail"
       style={
         Array [
@@ -1900,7 +1900,7 @@ exports[`Android BpkButton should support having an icon as well as a title 1`] 
     </Text>
     <Text
       accessible={true}
-      allowFontScaling={true}
+      allowFontScaling={false}
       ellipsizeMode="tail"
       style={
         Array [
@@ -2245,7 +2245,7 @@ exports[`Android BpkButton should support the "icon" property 1`] = `
     </Text>
     <Text
       accessible={true}
-      allowFontScaling={true}
+      allowFontScaling={false}
       ellipsizeMode="tail"
       style={
         Array [
@@ -2356,7 +2356,7 @@ exports[`Android BpkButton should support the "iconOnly" property 1`] = `
   >
     <Text
       accessible={true}
-      allowFontScaling={true}
+      allowFontScaling={false}
       ellipsizeMode="tail"
       style={
         Array [

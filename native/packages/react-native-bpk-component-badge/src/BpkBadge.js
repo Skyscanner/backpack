@@ -157,7 +157,7 @@ const BpkBadge = (props: Props) => {
 
   return (
     <View style={viewStyle}>
-      <BpkText style={textStyle} textStyle="xs">
+      <BpkText allowFontScaling={false} style={textStyle} textStyle="xs">
         {message}
       </BpkText>
     </View>

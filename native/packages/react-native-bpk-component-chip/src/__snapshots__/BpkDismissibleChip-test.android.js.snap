@@ -75,7 +75,7 @@ exports[`Android BpkDismissibleChip should render correctly 1`] = `
     </Text>
     <Text
       accessible={true}
-      allowFontScaling={true}
+      allowFontScaling={false}
       ellipsizeMode="tail"
       style={
         Array [
@@ -177,7 +177,7 @@ exports[`Android BpkDismissibleChip should render correctly with arbitrary props
     </Text>
     <Text
       accessible={true}
-      allowFontScaling={true}
+      allowFontScaling={false}
       ellipsizeMode="tail"
       style={
         Array [
@@ -281,7 +281,7 @@ exports[`Android BpkDismissibleChip should render correctly with custom style 1`
     </Text>
     <Text
       accessible={true}
-      allowFontScaling={true}
+      allowFontScaling={false}
       ellipsizeMode="tail"
       style={
         Array [

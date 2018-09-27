@@ -66,7 +66,7 @@ const BpkIcon = (props: Props) => {
 
   return (
     // eslint-disable-next-line backpack/use-components
-    <Text style={textStyleFinal} {...rest}>
+    <Text allowFontScaling={false} style={textStyleFinal} {...rest}>
       {mapCharacterCode(characterCode)}
     </Text>
   );
