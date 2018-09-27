@@ -139,7 +139,7 @@ exports[`ios - iPhone X  BpkNavigationBar should render correctly 1`] = `
       >
         <Text
           accessible={true}
-          allowFontScaling={true}
+          allowFontScaling={false}
           ellipsizeMode="tail"
           numberOfLines={1}
           style={
@@ -291,7 +291,7 @@ exports[`ios - iPhone X  BpkNavigationBar should render correctly with trailing 
       >
         <Text
           accessible={true}
-          allowFontScaling={true}
+          allowFontScaling={false}
           ellipsizeMode="tail"
           numberOfLines={1}
           style={

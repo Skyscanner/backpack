@@ -138,7 +138,7 @@ exports[`Android BpkDialingCodeList should render correctly 1`] = `
         </View>
         <Text
           accessible={true}
-          allowFontScaling={true}
+          allowFontScaling={false}
           ellipsizeMode="tail"
           style={
             Array [
@@ -281,7 +281,7 @@ exports[`Android BpkDialingCodeList should render correctly 1`] = `
         </View>
         <Text
           accessible={true}
-          allowFontScaling={true}
+          allowFontScaling={false}
           ellipsizeMode="tail"
           style={
             Array [
@@ -424,7 +424,7 @@ exports[`Android BpkDialingCodeList should render correctly 1`] = `
         </View>
         <Text
           accessible={true}
-          allowFontScaling={true}
+          allowFontScaling={false}
           ellipsizeMode="tail"
           style={
             Array [
@@ -610,7 +610,7 @@ exports[`Android BpkDialingCodeList should render correctly with "selectedId" se
         </View>
         <Text
           accessible={true}
-          allowFontScaling={true}
+          allowFontScaling={false}
           ellipsizeMode="tail"
           style={
             Array [
@@ -756,7 +756,7 @@ exports[`Android BpkDialingCodeList should render correctly with "selectedId" se
         </View>
         <Text
           accessible={true}
-          allowFontScaling={true}
+          allowFontScaling={false}
           ellipsizeMode="tail"
           style={
             Array [
@@ -899,7 +899,7 @@ exports[`Android BpkDialingCodeList should render correctly with "selectedId" se
         </View>
         <Text
           accessible={true}
-          allowFontScaling={true}
+          allowFontScaling={false}
           ellipsizeMode="tail"
           style={
             Array [

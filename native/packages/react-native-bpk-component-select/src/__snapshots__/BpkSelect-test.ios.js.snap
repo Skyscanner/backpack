@@ -36,7 +36,7 @@ exports[`iOS BpkSelect should render correctly 1`] = `
   >
     <Text
       accessible={true}
-      allowFontScaling={true}
+      allowFontScaling={false}
       ellipsizeMode="tail"
       style={
         Array [
@@ -126,7 +126,7 @@ exports[`iOS BpkSelect should render correctly with "showImage" and image 1`] = 
     />
     <Text
       accessible={true}
-      allowFontScaling={true}
+      allowFontScaling={false}
       ellipsizeMode="tail"
       style={
         Array [
@@ -213,7 +213,7 @@ exports[`iOS BpkSelect should render correctly with "showImage" and no image 1`]
     />
     <Text
       accessible={true}
-      allowFontScaling={true}
+      allowFontScaling={false}
       ellipsizeMode="tail"
       style={
         Array [
@@ -313,7 +313,7 @@ exports[`iOS BpkSelect should render correctly with a text label 1`] = `
     </Text>
     <Text
       accessible={true}
-      allowFontScaling={true}
+      allowFontScaling={false}
       ellipsizeMode="tail"
       style={
         Array [
@@ -391,7 +391,7 @@ exports[`iOS BpkSelect should render correctly with an element label 1`] = `
     <View />
     <Text
       accessible={true}
-      allowFontScaling={true}
+      allowFontScaling={false}
       ellipsizeMode="tail"
       style={
         Array [
@@ -495,7 +495,7 @@ exports[`iOS BpkSelect should render correctly with custom styles 1`] = `
     </Text>
     <Text
       accessible={true}
-      allowFontScaling={true}
+      allowFontScaling={false}
       ellipsizeMode="tail"
       style={
         Array [
@@ -598,7 +598,7 @@ exports[`iOS BpkSelect should render correctly with the disabled prop 1`] = `
     </Text>
     <Text
       accessible={true}
-      allowFontScaling={true}
+      allowFontScaling={false}
       ellipsizeMode="tail"
       style={
         Array [

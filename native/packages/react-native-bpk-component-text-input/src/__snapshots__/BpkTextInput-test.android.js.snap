@@ -22,6 +22,7 @@ exports[`Android BpkTextInput should ignore when placeholder is provided, as ele
       allowFontScaling={true}
       collapsable={undefined}
       ellipsizeMode="tail"
+      numberOfLines={1}
       style={
         Object {
           "color": "rgba(178, 174, 189, 1)",
@@ -99,6 +100,7 @@ exports[`Android BpkTextInput should render correctly 1`] = `
       allowFontScaling={true}
       collapsable={undefined}
       ellipsizeMode="tail"
+      numberOfLines={1}
       style={
         Object {
           "color": "rgba(178, 174, 189, 1)",
@@ -176,6 +178,7 @@ exports[`Android BpkTextInput should render correctly with \`accessoryView\` 1`]
       allowFontScaling={true}
       collapsable={undefined}
       ellipsizeMode="tail"
+      numberOfLines={1}
       style={
         Object {
           "color": "rgba(129, 123, 143, 1)",
@@ -255,6 +258,7 @@ exports[`Android BpkTextInput should render correctly with arbitrary props 1`] =
       allowFontScaling={true}
       collapsable={undefined}
       ellipsizeMode="tail"
+      numberOfLines={1}
       style={
         Object {
           "color": "rgba(178, 174, 189, 1)",
@@ -335,6 +339,7 @@ exports[`Android BpkTextInput should render correctly with custom style 1`] = `
       allowFontScaling={true}
       collapsable={undefined}
       ellipsizeMode="tail"
+      numberOfLines={1}
       style={
         Object {
           "color": "rgba(178, 174, 189, 1)",
@@ -412,6 +417,7 @@ exports[`Android BpkTextInput should render correctly with description 1`] = `
       allowFontScaling={true}
       collapsable={undefined}
       ellipsizeMode="tail"
+      numberOfLines={1}
       style={
         Object {
           "color": "rgba(129, 123, 143, 1)",
@@ -510,6 +516,7 @@ exports[`Android BpkTextInput should render correctly with description, valid=fa
       allowFontScaling={true}
       collapsable={undefined}
       ellipsizeMode="tail"
+      numberOfLines={1}
       style={
         Object {
           "color": "rgba(255, 84, 82, 1)",
@@ -562,7 +569,7 @@ exports[`Android BpkTextInput should render correctly with description, valid=fa
       />
       <Text
         accessible={true}
-        allowFontScaling={true}
+        allowFontScaling={false}
         ellipsizeMode="tail"
         style={
           Array [
@@ -637,6 +644,7 @@ exports[`Android BpkTextInput should render correctly with editable=false 1`] = 
       allowFontScaling={true}
       collapsable={undefined}
       ellipsizeMode="tail"
+      numberOfLines={1}
       style={
         Object {
           "color": "rgba(230, 228, 235, 1)",
@@ -714,6 +722,7 @@ exports[`Android BpkTextInput should render correctly with inputRef set 1`] = `
       allowFontScaling={true}
       collapsable={undefined}
       ellipsizeMode="tail"
+      numberOfLines={1}
       style={
         Object {
           "color": "rgba(178, 174, 189, 1)",
@@ -791,6 +800,7 @@ exports[`Android BpkTextInput should render correctly with mask="99/99" 1`] = `
       allowFontScaling={true}
       collapsable={undefined}
       ellipsizeMode="tail"
+      numberOfLines={1}
       style={
         Object {
           "color": "rgba(129, 123, 143, 1)",
@@ -868,6 +878,7 @@ exports[`Android BpkTextInput should render correctly with mask="9999-9999-9999-
       allowFontScaling={true}
       collapsable={undefined}
       ellipsizeMode="tail"
+      numberOfLines={1}
       style={
         Object {
           "color": "rgba(129, 123, 143, 1)",
@@ -945,6 +956,7 @@ exports[`Android BpkTextInput should render correctly with valid 1`] = `
       allowFontScaling={true}
       collapsable={undefined}
       ellipsizeMode="tail"
+      numberOfLines={1}
       style={
         Object {
           "color": "rgba(178, 174, 189, 1)",
@@ -997,7 +1009,7 @@ exports[`Android BpkTextInput should render correctly with valid 1`] = `
       />
       <Text
         accessible={true}
-        allowFontScaling={true}
+        allowFontScaling={false}
         ellipsizeMode="tail"
         style={
           Array [
@@ -1051,6 +1063,7 @@ exports[`Android BpkTextInput should render correctly with valid false 1`] = `
       allowFontScaling={true}
       collapsable={undefined}
       ellipsizeMode="tail"
+      numberOfLines={1}
       style={
         Object {
           "color": "rgba(178, 174, 189, 1)",
@@ -1103,7 +1116,7 @@ exports[`Android BpkTextInput should render correctly with valid false 1`] = `
       />
       <Text
         accessible={true}
-        allowFontScaling={true}
+        allowFontScaling={false}
         ellipsizeMode="tail"
         style={
           Array [
@@ -1157,6 +1170,7 @@ exports[`Android BpkTextInput should render correctly with valid false and a val
       allowFontScaling={true}
       collapsable={undefined}
       ellipsizeMode="tail"
+      numberOfLines={1}
       style={
         Object {
           "color": "rgba(178, 174, 189, 1)",
@@ -1209,7 +1223,7 @@ exports[`Android BpkTextInput should render correctly with valid false and a val
       />
       <Text
         accessible={true}
-        allowFontScaling={true}
+        allowFontScaling={false}
         ellipsizeMode="tail"
         style={
           Array [
@@ -1284,6 +1298,7 @@ exports[`Android BpkTextInput should render correctly with value 1`] = `
       allowFontScaling={true}
       collapsable={undefined}
       ellipsizeMode="tail"
+      numberOfLines={1}
       style={
         Object {
           "color": "rgba(129, 123, 143, 1)",

@@ -22,6 +22,7 @@ exports[`iOS BpkPhoneNumberInput should render correctly 1`] = `
       allowFontScaling={true}
       collapsable={undefined}
       ellipsizeMode="tail"
+      numberOfLines={1}
       style={
         Object {
           "color": "rgba(129, 123, 143, 1)",
@@ -112,7 +113,7 @@ exports[`iOS BpkPhoneNumberInput should render correctly 1`] = `
         </Text>
         <Text
           accessible={true}
-          allowFontScaling={true}
+          allowFontScaling={false}
           ellipsizeMode="tail"
           style={
             Array [
@@ -216,6 +217,7 @@ exports[`iOS BpkPhoneNumberInput should render correctly with \`editable\` false
       allowFontScaling={true}
       collapsable={undefined}
       ellipsizeMode="tail"
+      numberOfLines={1}
       style={
         Object {
           "color": "rgba(230, 228, 235, 1)",
@@ -309,7 +311,7 @@ exports[`iOS BpkPhoneNumberInput should render correctly with \`editable\` false
         </Text>
         <Text
           accessible={true}
-          allowFontScaling={true}
+          allowFontScaling={false}
           ellipsizeMode="tail"
           style={
             Array [

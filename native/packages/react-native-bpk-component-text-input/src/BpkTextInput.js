@@ -222,7 +222,13 @@ class BpkTextInput extends Component<Props, State> {
     return (
       <View style={[styles.container, userStyle]}>
         <View style={styles.rowContainer}>
-          <Animated.Text style={animatedLabelStyle}>{label}</Animated.Text>
+          <Animated.Text
+            numberOfLines={1}
+            ellipsizeMode="tail"
+            style={animatedLabelStyle}
+          >
+            {label}
+          </Animated.Text>
           {accessoryView}
           <Animated.View style={animatedInputStyle}>
             <TextInput

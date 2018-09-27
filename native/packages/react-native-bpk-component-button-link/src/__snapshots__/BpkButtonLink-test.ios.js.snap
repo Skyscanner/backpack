@@ -36,15 +36,15 @@ exports[`iOS BpkButtonLink should render correctly 1`] = `
         Object {
           "alignItems": "center",
           "flexDirection": "row",
-          "height": 32,
           "justifyContent": "center",
+          "minHeight": 32,
         },
       ]
     }
   >
     <Text
       accessible={true}
-      allowFontScaling={true}
+      allowFontScaling={false}
       ellipsizeMode="tail"
       numberOfLines={1}
       style={
@@ -108,8 +108,8 @@ exports[`iOS BpkButtonLink should render correctly with iconAlignment="leading" 
         Object {
           "alignItems": "center",
           "flexDirection": "row",
-          "height": 32,
           "justifyContent": "center",
+          "minHeight": 32,
         },
         Object {
           "flexDirection": "row-reverse",
@@ -119,7 +119,7 @@ exports[`iOS BpkButtonLink should render correctly with iconAlignment="leading" 
   >
     <Text
       accessible={true}
-      allowFontScaling={true}
+      allowFontScaling={false}
       ellipsizeMode="tail"
       numberOfLines={1}
       style={
@@ -145,7 +145,7 @@ exports[`iOS BpkButtonLink should render correctly with iconAlignment="leading" 
     </Text>
     <Text
       accessible={true}
-      allowFontScaling={true}
+      allowFontScaling={false}
       ellipsizeMode="tail"
       style={
         Array [
@@ -213,15 +213,15 @@ exports[`iOS BpkButtonLink should render correctly with iconAlignment="trailing"
         Object {
           "alignItems": "center",
           "flexDirection": "row",
-          "height": 32,
           "justifyContent": "center",
+          "minHeight": 32,
         },
       ]
     }
   >
     <Text
       accessible={true}
-      allowFontScaling={true}
+      allowFontScaling={false}
       ellipsizeMode="tail"
       numberOfLines={1}
       style={
@@ -247,7 +247,7 @@ exports[`iOS BpkButtonLink should render correctly with iconAlignment="trailing"
     </Text>
     <Text
       accessible={true}
-      allowFontScaling={true}
+      allowFontScaling={false}
       ellipsizeMode="tail"
       style={
         Array [
@@ -311,15 +311,15 @@ exports[`iOS BpkButtonLink should render correctly with theme prop 1`] = `
         Object {
           "alignItems": "center",
           "flexDirection": "row",
-          "height": 32,
           "justifyContent": "center",
+          "minHeight": 32,
         },
       ]
     }
   >
     <Text
       accessible={true}
-      allowFontScaling={true}
+      allowFontScaling={false}
       ellipsizeMode="tail"
       numberOfLines={1}
       style={
@@ -386,15 +386,15 @@ exports[`iOS BpkButtonLink should support elements as icons 1`] = `
         Object {
           "alignItems": "center",
           "flexDirection": "row",
-          "height": 32,
           "justifyContent": "center",
+          "minHeight": 32,
         },
       ]
     }
   >
     <Text
       accessible={true}
-      allowFontScaling={true}
+      allowFontScaling={false}
       ellipsizeMode="tail"
       numberOfLines={1}
       style={
@@ -476,15 +476,15 @@ exports[`iOS BpkButtonLink should support overwriting styles 1`] = `
         Object {
           "alignItems": "center",
           "flexDirection": "row",
-          "height": 32,
           "justifyContent": "center",
+          "minHeight": 32,
         },
       ]
     }
   >
     <Text
       accessible={true}
-      allowFontScaling={true}
+      allowFontScaling={false}
       ellipsizeMode="tail"
       numberOfLines={1}
       style={
@@ -549,15 +549,15 @@ exports[`iOS BpkButtonLink should support the "disabled" property 1`] = `
         Object {
           "alignItems": "center",
           "flexDirection": "row",
-          "height": 32,
           "justifyContent": "center",
+          "minHeight": 32,
         },
       ]
     }
   >
     <Text
       accessible={true}
-      allowFontScaling={true}
+      allowFontScaling={false}
       ellipsizeMode="tail"
       numberOfLines={1}
       style={
@@ -624,15 +624,15 @@ exports[`iOS BpkButtonLink should support the "icon" property 1`] = `
         Object {
           "alignItems": "center",
           "flexDirection": "row",
-          "height": 32,
           "justifyContent": "center",
+          "minHeight": 32,
         },
       ]
     }
   >
     <Text
       accessible={true}
-      allowFontScaling={true}
+      allowFontScaling={false}
       ellipsizeMode="tail"
       numberOfLines={1}
       style={
@@ -658,7 +658,7 @@ exports[`iOS BpkButtonLink should support the "icon" property 1`] = `
     </Text>
     <Text
       accessible={true}
-      allowFontScaling={true}
+      allowFontScaling={false}
       ellipsizeMode="tail"
       style={
         Array [
@@ -722,18 +722,18 @@ exports[`iOS should support the "icon" and "large" property 1`] = `
         Object {
           "alignItems": "center",
           "flexDirection": "row",
-          "height": 32,
           "justifyContent": "center",
+          "minHeight": 32,
         },
         Object {
-          "height": 36,
+          "minHeight": 36,
         },
       ]
     }
   >
     <Text
       accessible={true}
-      allowFontScaling={true}
+      allowFontScaling={false}
       ellipsizeMode="tail"
       numberOfLines={1}
       style={
@@ -759,7 +759,7 @@ exports[`iOS should support the "icon" and "large" property 1`] = `
     </Text>
     <Text
       accessible={true}
-      allowFontScaling={true}
+      allowFontScaling={false}
       ellipsizeMode="tail"
       style={
         Array [
@@ -820,18 +820,18 @@ exports[`iOS should support the "large" property 1`] = `
         Object {
           "alignItems": "center",
           "flexDirection": "row",
-          "height": 32,
           "justifyContent": "center",
+          "minHeight": 32,
         },
         Object {
-          "height": 36,
+          "minHeight": 36,
         },
       ]
     }
   >
     <Text
       accessible={true}
-      allowFontScaling={true}
+      allowFontScaling={false}
       ellipsizeMode="tail"
       numberOfLines={1}
       style={
