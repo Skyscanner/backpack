@@ -126,7 +126,6 @@ const BpkPickerMenu = (props: PickerMenuProps) => {
             return (
               <BpkPickerItem
                 {...item}
-                allowFontScaling={false}
                 onPress={value => {
                   onValueChange(value, index);
                   onClose();
