@@ -40,6 +40,7 @@ export type Props = {
   ...$Exact<CommonProps>,
   borderlessBackground: boolean,
   style: ?any,
+  allowFontScaling: boolean,
 };
 
 const BpkButtonLink = (props: Props) => {
@@ -53,6 +54,7 @@ const BpkButtonLink = (props: Props) => {
     title,
     borderlessBackground,
     theme,
+    allowFontScaling,
     ...rest
   } = props;
 
@@ -95,7 +97,13 @@ const BpkButtonLink = (props: Props) => {
         {...rest}
       >
         <View style={viewStyle}>
-          <BpkText textStyle="sm" emphasize numberOfLines={1} style={textStyle}>
+          <BpkText
+            allowFontScaling
+            textStyle="sm"
+            emphasize
+            numberOfLines={1}
+            style={textStyle}
+          >
             {title.toUpperCase()}
           </BpkText>
           {typeof icon === 'string' ? (
@@ -113,6 +121,7 @@ const propTypes = {
   ...commonPropTypes,
   borderlessBackground: PropTypes.bool,
   style: ViewPropTypes.style,
+  allowFontScaling: PropTypes.bool,
 };
 
 BpkButtonLink.propTypes = propTypes;
@@ -121,6 +130,7 @@ BpkButtonLink.defaultProps = {
   ...commonDefaultProps,
   borderlessBackground: true,
   style: null,
+  allowFontScaling: true,
 };
 
 export default withTheme(BpkButtonLink);

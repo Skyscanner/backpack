@@ -38,6 +38,7 @@ import {
 export type Props = {
   ...$Exact<CommonProps>,
   large: boolean,
+  allowFontScaling: boolean,
 };
 
 const BpkButtonLink = (props: Props) => {
@@ -98,6 +99,7 @@ const BpkButtonLink = (props: Props) => {
           textStyle={large ? 'lg' : 'sm'}
           emphasize
           numberOfLines={1}
+          allowFontScaling
           style={textStyle}
         >
           {title}
@@ -115,11 +117,13 @@ const BpkButtonLink = (props: Props) => {
 BpkButtonLink.propTypes = {
   ...commonPropTypes,
   large: PropTypes.bool,
+  allowFontScaling: PropTypes.bool,
 };
 
 BpkButtonLink.defaultProps = {
   ...commonDefaultProps,
   large: false,
+  allowFontScaling: true,
 };
 
 export default withTheme(BpkButtonLink);
