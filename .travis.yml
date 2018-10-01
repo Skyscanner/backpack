@@ -1,15 +1,21 @@
 language: node_js
+
 env:
   global:
     - NPM_CONFIG_LOGLEVEL=warn
     - secure: ZzSXv0mXeBuJ3Lb+zIHXn04vTxve1C9LYCdVZmqibPCbc0k5DA3up/sSuMsJzUqoS4FxOCm1wOq/oXvEgBEJgxjCkevH7Qo9V7AtCHgs6gF2yaeBFdm1jjf7sB2BxO9F3EcpPSgWXHNNRX6SFxw0a3qMLvE5kDZIzDwIaOtR/j9NweiIXkua2gZkuOKqc18HulTZ5zlK/XBW4TrOwxJyDOYYHTdzhYXVVdK5lFof8pd6MUpk+s5eRxtBPtDq4GO4MPtj1Z5dYmhEUALEepJAjYRWqhzlsVwWwqAChJDEhUYoyAXVS9Mf+LZrD5LDzWYcmCrlsebPczEcEKoN+CMRmNW8w6/l+xPoPYac7nubtQCqZA32LkdGQ/7oG6w2ttsKnotREp/1JAGpi59uEOeJ3EjysGOH5Y+pphNgLjZg2UICoT3rYwqglKSARdLMIBfgzVF3aHVnRgUam8i830DSHTrc5ShxpL6O0mwZa6Bemf9jwsXC5Dpo0XaIbA4zOV+Y4Gq98YBN9U3Y50dyPbbsc5VTRlCJZrC7+vIgNgy8P4vYsITip3Nj9pAmKNFV1t3ChtkxI6Q7CM70CVdJALeireeok0kz+HKbuOy0t0Efz90lPj+WsleZEJBve7AFYPzR1h6Czs072X4sQlPXedcCHRhD48WgbBX0IfzTiAYCuG0=
+
 before_install:
   - npm install -g greenkeeper-lockfile@2
+
 before_script: greenkeeper-lockfile-update
+
 after_script: greenkeeper-lockfile-upload
+
 install:
   - npm install
   - npm run build
+
 script:
   - set -e
   - ./scripts/check-pristine-state package-lock.json native/ios/native.xcodeproj/project.pbxproj native/ios/native/Info.plist
@@ -19,10 +25,12 @@ script:
   - if [ "$TRAVIS_BRANCH" == 'master' ] && [ "$TRAVIS_PULL_REQUEST" == 'false' ]; then npm run storybook:dist; fi
   - test -e dist/index.html
   - test -e dist/sassdoc/index.html
+
 cache:
   directories:
     - node_modules
     - native/node_modules
+
 branches:
   only:
     - master

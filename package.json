@@ -7,11 +7,10 @@
     "npm": "^6.4.1"
   },
   "scripts": {
-    "precommit": "lint-staged",
     "preinstall": "npx ensure-node-env",
     "postinstall:native": "(cd ./native && npm install)",
     "postinstall": "npm run postinstall:native && npm run bootstrap",
-    "bootstrap": "lerna bootstrap",
+    "bootstrap": "lerna bootstrap --no-ci",
     "lerna": "lerna",
     "clean:dist": "rm -rf dist",
     "clean:lerna": "lerna clean --yes",
@@ -57,12 +56,18 @@
     "submodules:unlock": "sed 's/ignore = all/#ignore = all/g' .gitmodules -i",
     "submodules:lock": "sed 's/#ignore = all/ignore = all/g' .gitmodules -i"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
   "lint-staged": {
     "*.js": [
-      "eslint"
+      "npm run lint:js:fix",
+      "git add"
     ],
     "*.scss": [
-      "stylelint --syntax scss"
+      "npm run lint:scss"
     ]
   },
   "repository": {
@@ -100,7 +105,7 @@
     "eslint_d": "^7.0.0",
     "extract-text-webpack-plugin": "^3.0.2",
     "file-loader": "^2.0.0",
-    "flow-bin": "^0.80.0",
+    "flow-bin": "^0.81.0",
     "flow-typed": "^2.5.1",
     "globby": "^8.0.1",
     "gulp": "^3.9.1",
@@ -114,7 +119,7 @@
     "gulp-rename": "^1.4.0",
     "gulp-svgmin": "^1.2.3",
     "gulp-theo": "^2.0.0",
-    "husky": "^0.14.3",
+    "husky": "^1.0.0",
     "jest": "^21.2.1",
     "js-yaml": "^3.12.0",
     "json-loader": "^0.5.4",
@@ -131,12 +136,12 @@
     "punycode": "^2.1.1",
     "raf": "^3.4.0",
     "raw-loader": "^0.5.1",
-    "react": "^16.4.2",
-    "react-dom": "^16.4.2",
+    "react": "16.4.2",
+    "react-dom": "16.4.2",
     "react-helmet": "^5.2.0",
     "react-router-dom": "^4.3.1",
     "react-svg-loader": "^2.1.0",
-    "react-test-renderer": "^16.4.2",
+    "react-test-renderer": "16.4.2",
     "rimraf": "^2.5.4",
     "sass-loader": "^7.1.0",
     "sassdoc": "^2.5.0",
