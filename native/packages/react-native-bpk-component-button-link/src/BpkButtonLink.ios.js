@@ -97,7 +97,6 @@ const BpkButtonLink = (props: Props) => {
         <BpkText
           textStyle={large ? 'lg' : 'sm'}
           emphasize
-          allowFontScaling={false}
           numberOfLines={1}
           style={textStyle}
         >
