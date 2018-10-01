@@ -43,7 +43,7 @@ exports[`Android BpkButtonLink should render correctly 1`] = `
   >
     <Text
       accessible={true}
-      allowFontScaling={false}
+      allowFontScaling={true}
       ellipsizeMode="tail"
       numberOfLines={1}
       style={
@@ -117,7 +117,7 @@ exports[`Android BpkButtonLink should render correctly with iconAlignment="leadi
   >
     <Text
       accessible={true}
-      allowFontScaling={false}
+      allowFontScaling={true}
       ellipsizeMode="tail"
       numberOfLines={1}
       style={
@@ -218,7 +218,7 @@ exports[`Android BpkButtonLink should render correctly with iconAlignment="trail
   >
     <Text
       accessible={true}
-      allowFontScaling={false}
+      allowFontScaling={true}
       ellipsizeMode="tail"
       numberOfLines={1}
       style={
@@ -315,7 +315,7 @@ exports[`Android BpkButtonLink should render correctly with theme prop 1`] = `
   >
     <Text
       accessible={true}
-      allowFontScaling={false}
+      allowFontScaling={true}
       ellipsizeMode="tail"
       numberOfLines={1}
       style={
@@ -389,7 +389,7 @@ exports[`Android BpkButtonLink should support elements as icons 1`] = `
   >
     <Text
       accessible={true}
-      allowFontScaling={false}
+      allowFontScaling={true}
       ellipsizeMode="tail"
       numberOfLines={1}
       style={
@@ -481,7 +481,7 @@ exports[`Android BpkButtonLink should support overwriting styles 1`] = `
   >
     <Text
       accessible={true}
-      allowFontScaling={false}
+      allowFontScaling={true}
       ellipsizeMode="tail"
       numberOfLines={1}
       style={
@@ -553,7 +553,7 @@ exports[`Android BpkButtonLink should support the "disabled" property 1`] = `
   >
     <Text
       accessible={true}
-      allowFontScaling={false}
+      allowFontScaling={true}
       ellipsizeMode="tail"
       numberOfLines={1}
       style={
@@ -627,7 +627,7 @@ exports[`Android BpkButtonLink should support the "icon" property 1`] = `
   >
     <Text
       accessible={true}
-      allowFontScaling={false}
+      allowFontScaling={true}
       ellipsizeMode="tail"
       numberOfLines={1}
       style={
@@ -724,7 +724,7 @@ exports[`Android should support "borderlessBackground" equal to false 1`] = `
   >
     <Text
       accessible={true}
-      allowFontScaling={false}
+      allowFontScaling={true}
       ellipsizeMode="tail"
       numberOfLines={1}
       style={
