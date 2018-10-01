@@ -89,4 +89,36 @@ describe('BpkAutosuggest', () => {
 
     expect(input).toEqual(inputRef);
   });
+
+  it('should default autocomplete to off', () => {
+    const tree = ReactTestUtils.renderIntoDocument(
+      <BpkAutosuggest
+        suggestions={suggestions}
+        onSuggestionsFetchRequested={onSuggestionsFetchRequested}
+        onSuggestionsClearRequested={onSuggestionsClearRequested}
+        getSuggestionValue={getSuggestionValue}
+        renderSuggestion={renderSuggestion}
+        inputProps={inputProps}
+      />,
+    );
+
+    const input = ReactTestUtils.findRenderedDOMComponentWithTag(tree, 'input');
+    expect(input.autocomplete).toEqual('off');
+  });
+
+  it('should allow a consumer to override autocomplete', () => {
+    const tree = ReactTestUtils.renderIntoDocument(
+      <BpkAutosuggest
+        suggestions={suggestions}
+        onSuggestionsFetchRequested={onSuggestionsFetchRequested}
+        onSuggestionsClearRequested={onSuggestionsClearRequested}
+        getSuggestionValue={getSuggestionValue}
+        renderSuggestion={renderSuggestion}
+        inputProps={{ autoComplete: 'on', ...inputProps }}
+      />,
+    );
+
+    const input = ReactTestUtils.findRenderedDOMComponentWithTag(tree, 'input');
+    expect(input.autocomplete).toEqual('on');
+  });
 });

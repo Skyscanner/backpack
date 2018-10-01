@@ -50,7 +50,7 @@ Autosuggest.defaultProps.theme = {
 };
 
 Autosuggest.defaultProps.renderInputComponent = inputProps => {
-  const { ref, inputRef, ...rest } = inputProps;
+  const { ref, inputRef, autoComplete = 'off', ...rest } = inputProps;
 
   return (
     <BpkInput
@@ -61,6 +61,7 @@ Autosuggest.defaultProps.renderInputComponent = inputProps => {
           inputRef(element);
         }
       }}
+      autoComplete={autoComplete}
       {...rest}
     />
   );
