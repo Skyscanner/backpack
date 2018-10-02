@@ -19,7 +19,7 @@
 /// RTL aware leading margin
 ///
 /// @param {string} $margin The desired leading margin.
-/// @param {boolean} $resetUppositeMargin [false] Whether to reset the opposite margin to 0.
+/// @param {boolean} $resetOppositeMargin [false] Whether to reset the opposite margin to 0.
 ///
 /// @content
 ///
@@ -46,7 +46,7 @@
 /// RTL aware trailing margin
 ///
 /// @param {string} $margin The desired trailing margin.
-/// @param {boolean} $resetUppositeMargin [false] Whether to reset the opposite margin to 0.
+/// @param {boolean} $resetOppositeMargin [false] Whether to reset the opposite margin to 0.
 ///
 /// @content
 ///
