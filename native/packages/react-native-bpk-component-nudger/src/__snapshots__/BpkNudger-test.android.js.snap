@@ -82,7 +82,6 @@ exports[`Android BpkNudger should disable theming if the required attribute is o
           Array [
             Object {
               "alignItems": "center",
-              "flex": 1,
               "flexDirection": "row",
               "justifyContent": "center",
             },
@@ -232,7 +231,6 @@ exports[`Android BpkNudger should disable theming if the required attribute is o
           Array [
             Object {
               "alignItems": "center",
-              "flex": 1,
               "flexDirection": "row",
               "justifyContent": "center",
             },
@@ -373,7 +371,6 @@ exports[`Android BpkNudger should render correctly 1`] = `
           Array [
             Object {
               "alignItems": "center",
-              "flex": 1,
               "flexDirection": "row",
               "justifyContent": "center",
             },
@@ -523,7 +520,6 @@ exports[`Android BpkNudger should render correctly 1`] = `
           Array [
             Object {
               "alignItems": "center",
-              "flex": 1,
               "flexDirection": "row",
               "justifyContent": "center",
             },
@@ -670,7 +666,6 @@ exports[`Android BpkNudger should render correctly when value is a not an intege
           Array [
             Object {
               "alignItems": "center",
-              "flex": 1,
               "flexDirection": "row",
               "justifyContent": "center",
             },
@@ -825,7 +820,6 @@ exports[`Android BpkNudger should render correctly when value is a not an intege
           Array [
             Object {
               "alignItems": "center",
-              "flex": 1,
               "flexDirection": "row",
               "justifyContent": "center",
             },
@@ -966,7 +960,6 @@ exports[`Android BpkNudger should render correctly when value is greater than ma
           Array [
             Object {
               "alignItems": "center",
-              "flex": 1,
               "flexDirection": "row",
               "justifyContent": "center",
             },
@@ -1122,7 +1115,6 @@ exports[`Android BpkNudger should render correctly when value is greater than ma
           Array [
             Object {
               "alignItems": "center",
-              "flex": 1,
               "flexDirection": "row",
               "justifyContent": "center",
             },
@@ -1274,7 +1266,6 @@ exports[`Android BpkNudger should render correctly when value is less than min 1
           Array [
             Object {
               "alignItems": "center",
-              "flex": 1,
               "flexDirection": "row",
               "justifyContent": "center",
             },
@@ -1429,7 +1420,6 @@ exports[`Android BpkNudger should render correctly when value is less than min 1
           Array [
             Object {
               "alignItems": "center",
-              "flex": 1,
               "flexDirection": "row",
               "justifyContent": "center",
             },
@@ -1570,7 +1560,6 @@ exports[`Android BpkNudger should support theming 1`] = `
           Array [
             Object {
               "alignItems": "center",
-              "flex": 1,
               "flexDirection": "row",
               "justifyContent": "center",
             },
@@ -1722,7 +1711,6 @@ exports[`Android BpkNudger should support theming 1`] = `
           Array [
             Object {
               "alignItems": "center",
-              "flex": 1,
               "flexDirection": "row",
               "justifyContent": "center",
             },
