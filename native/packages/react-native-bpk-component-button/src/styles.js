@@ -28,78 +28,49 @@ import {
   colorGreen500,
   colorPink500,
   colorPink600,
-  buttonHeight,
   buttonPaddingVertical,
   buttonPaddingHorizontal,
   buttonBorderWidth,
-  buttonLineHeightLarge,
-  lineHeightXs,
   borderRadiusPill,
   spacingSm,
+  spacingMd,
   spacingBase,
+  spacingLg,
 } from 'bpk-tokens/tokens/base.react.native';
-import { Platform, StyleSheet } from 'react-native';
+import { StyleSheet } from 'react-native';
 
 const base = StyleSheet.create({
-  container: {
-    borderRadius: borderRadiusPill,
-    minHeight: buttonHeight,
-  },
   button: {
+    borderColor: 'transparent',
+    borderWidth: buttonBorderWidth,
     borderRadius: borderRadiusPill,
-    minHeight: buttonHeight,
-    paddingVertical: buttonPaddingVertical,
-    paddingHorizontal: buttonPaddingHorizontal,
-  },
-  view: {
+    paddingVertical: buttonPaddingVertical - buttonBorderWidth,
+    paddingHorizontal: buttonPaddingHorizontal - buttonBorderWidth,
     alignItems: 'center',
     flexDirection: 'row',
     justifyContent: 'center',
   },
-  text: Platform.select({
-    ios: () => ({
-      backgroundColor: 'transparent',
-      color: colorWhite,
-    }),
-    android: () => ({
-      backgroundColor: 'transparent',
-      color: colorWhite,
-      lineHeight: lineHeightXs,
-    }),
-  })(),
+  text: {
+    color: colorWhite,
+  },
   icon: {
-    marginLeft: spacingSm,
-    ...Platform.select({
-      ios: () => null,
-      android: () => ({
-        lineHeight: spacingBase,
-      }),
-    })(),
+    marginStart: spacingSm,
   },
 });
 
-const outlineButtonStyle = {
-  paddingVertical: buttonPaddingVertical - buttonBorderWidth,
-  paddingHorizontal: buttonPaddingHorizontal - buttonBorderWidth,
-};
-
 const types = {
   secondary: StyleSheet.create({
-    container: {
+    button: {
       borderColor: colorGray100,
-      borderWidth: buttonBorderWidth,
     },
-    button: outlineButtonStyle,
     text: {
       color: colorBlue500,
     },
   }),
   destructive: StyleSheet.create({
-    container: {
+    button: {
       borderColor: colorGray100,
-      borderWidth: buttonBorderWidth,
     },
-    button: outlineButtonStyle,
     text: {
       color: colorRed500,
     },
@@ -108,73 +79,54 @@ const types = {
 
 const modifiers = {
   large: StyleSheet.create({
-    container: {
-      minHeight: buttonLineHeightLarge,
-    },
     button: {
-      minHeight: buttonLineHeightLarge,
-      paddingHorizontal: spacingBase,
-    },
-  }),
-  largeWithOutline: StyleSheet.create({
-    container: {
-      minHeight: buttonLineHeightLarge,
-    },
-    button: {
-      height: '100%',
+      paddingVertical: spacingBase - spacingSm - buttonBorderWidth,
       paddingHorizontal: spacingBase - buttonBorderWidth,
+    },
+    text: {
+      lineHeight: spacingLg,
     },
   }),
   disabled: StyleSheet.create({
-    container: {
-      borderColor: 'transparent',
-      borderWidth: 0,
-    },
     text: {
       color: colorGray300,
     },
   }),
   iconOnly: StyleSheet.create({
-    container: {
-      width: buttonHeight,
-    },
     button: {
-      paddingHorizontal: 0,
+      paddingVertical: spacingMd - buttonBorderWidth,
+      paddingHorizontal: spacingMd - buttonBorderWidth,
     },
     icon: {
-      marginLeft: 0,
-      marginRight: 0,
+      marginStart: 0,
     },
   }),
   iconOnlyLarge: StyleSheet.create({
-    container: {
-      width: buttonLineHeightLarge,
-    },
     button: {
-      paddingHorizontal: 0,
+      paddingVertical: spacingBase - spacingSm - buttonBorderWidth,
+      paddingHorizontal: spacingBase - spacingSm - buttonBorderWidth,
     },
     icon: {
-      marginLeft: 0,
-      marginRight: 0,
+      marginStart: 0,
     },
   }),
   textAndIcon: StyleSheet.create({
-    view: {
+    button: {
       justifyContent: 'space-between',
     },
   }),
   textAndIconLarge: StyleSheet.create({
-    view: {
+    button: {
       justifyContent: 'space-between',
     },
   }),
   iconLeading: StyleSheet.create({
-    view: {
+    button: {
       flexDirection: 'row-reverse',
     },
     icon: {
-      marginLeft: 0,
-      marginRight: spacingSm,
+      marginStart: 0,
+      marginEnd: spacingSm,
     },
   }),
 };
