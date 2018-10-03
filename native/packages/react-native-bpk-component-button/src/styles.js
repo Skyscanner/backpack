@@ -28,8 +28,6 @@ import {
   colorGreen500,
   colorPink500,
   colorPink600,
-  buttonPaddingVertical,
-  buttonPaddingHorizontal,
   buttonBorderWidth,
   borderRadiusPill,
   spacingSm,
@@ -37,24 +35,26 @@ import {
   spacingBase,
   spacingLg,
 } from 'bpk-tokens/tokens/base.react.native';
-import { StyleSheet } from 'react-native';
+import { Platform, StyleSheet } from 'react-native';
 
 const base = StyleSheet.create({
   button: {
     borderColor: 'transparent',
     borderWidth: buttonBorderWidth,
     borderRadius: borderRadiusPill,
-    paddingVertical: buttonPaddingVertical - buttonBorderWidth,
-    paddingHorizontal: buttonPaddingHorizontal - buttonBorderWidth,
+    paddingVertical: spacingMd - buttonBorderWidth,
+    paddingHorizontal: spacingBase - spacingSm - buttonBorderWidth,
     alignItems: 'center',
     flexDirection: 'row',
     justifyContent: 'center',
   },
   text: {
     color: colorWhite,
+    lineHeight: Platform.OS === 'android' ? spacingLg - spacingSm : null,
   },
   icon: {
     marginStart: spacingSm,
+    lineHeight: Platform.OS === 'android' ? spacingLg - spacingSm : null,
   },
 });
 
@@ -95,7 +95,8 @@ const modifiers = {
   iconOnly: StyleSheet.create({
     button: {
       paddingVertical: spacingMd - buttonBorderWidth,
-      paddingHorizontal: spacingMd - buttonBorderWidth,
+      paddingHorizontal:
+        Platform.OS === 'android' ? spacingMd : spacingMd - buttonBorderWidth,
     },
     icon: {
       marginStart: 0,

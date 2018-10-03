@@ -66,6 +66,7 @@ exports[`iOS BpkButton should render correctly 1`] = `
             Array [
               Object {
                 "color": "rgb(255, 255, 255)",
+                "lineHeight": null,
               },
             ],
             Object {},
@@ -167,6 +168,7 @@ exports[`iOS BpkButton should render correctly with iconAlignment="centerLeading
             Array [
               Object {
                 "color": "rgb(255, 255, 255)",
+                "lineHeight": null,
               },
               undefined,
             ],
@@ -196,12 +198,14 @@ exports[`iOS BpkButton should render correctly with iconAlignment="centerLeading
             Array [
               Object {
                 "color": "rgb(255, 255, 255)",
+                "lineHeight": null,
               },
               undefined,
             ],
             Object {},
             Array [
               Object {
+                "lineHeight": null,
                 "marginStart": 4,
               },
               Object {
@@ -304,6 +308,7 @@ exports[`iOS BpkButton should render correctly with iconAlignment="centerTrailin
             Array [
               Object {
                 "color": "rgb(255, 255, 255)",
+                "lineHeight": null,
               },
             ],
             Object {},
@@ -332,11 +337,13 @@ exports[`iOS BpkButton should render correctly with iconAlignment="centerTrailin
             Array [
               Object {
                 "color": "rgb(255, 255, 255)",
+                "lineHeight": null,
               },
             ],
             Object {},
             Array [
               Object {
+                "lineHeight": null,
                 "marginStart": 4,
               },
             ],
@@ -441,6 +448,7 @@ exports[`iOS BpkButton should render correctly with iconAlignment="leading" 1`] 
             Array [
               Object {
                 "color": "rgb(255, 255, 255)",
+                "lineHeight": null,
               },
               undefined,
               undefined,
@@ -471,6 +479,7 @@ exports[`iOS BpkButton should render correctly with iconAlignment="leading" 1`] 
             Array [
               Object {
                 "color": "rgb(255, 255, 255)",
+                "lineHeight": null,
               },
               undefined,
               undefined,
@@ -478,6 +487,7 @@ exports[`iOS BpkButton should render correctly with iconAlignment="leading" 1`] 
             Object {},
             Array [
               Object {
+                "lineHeight": null,
                 "marginStart": 4,
               },
               undefined,
@@ -584,6 +594,7 @@ exports[`iOS BpkButton should render correctly with iconAlignment="trailing" 1`]
             Array [
               Object {
                 "color": "rgb(255, 255, 255)",
+                "lineHeight": null,
               },
               undefined,
             ],
@@ -613,12 +624,14 @@ exports[`iOS BpkButton should render correctly with iconAlignment="trailing" 1`]
             Array [
               Object {
                 "color": "rgb(255, 255, 255)",
+                "lineHeight": null,
               },
               undefined,
             ],
             Object {},
             Array [
               Object {
+                "lineHeight": null,
                 "marginStart": 4,
               },
               undefined,
@@ -721,6 +734,7 @@ exports[`iOS BpkButton should render correctly with type="destructive" 1`] = `
             Array [
               Object {
                 "color": "rgb(255, 255, 255)",
+                "lineHeight": null,
               },
               Object {
                 "color": "rgb(255, 84, 82)",
@@ -827,6 +841,7 @@ exports[`iOS BpkButton should render correctly with type="destructive" and disab
             Array [
               Object {
                 "color": "rgb(255, 255, 255)",
+                "lineHeight": null,
               },
               Object {
                 "color": "rgb(255, 84, 82)",
@@ -931,6 +946,7 @@ exports[`iOS BpkButton should render correctly with type="featured" 1`] = `
             Array [
               Object {
                 "color": "rgb(255, 255, 255)",
+                "lineHeight": null,
               },
             ],
             Object {},
@@ -1031,6 +1047,7 @@ exports[`iOS BpkButton should render correctly with type="featured" and disabled
             Array [
               Object {
                 "color": "rgb(255, 255, 255)",
+                "lineHeight": null,
               },
               Object {
                 "color": "rgb(178, 174, 189)",
@@ -1132,6 +1149,7 @@ exports[`iOS BpkButton should render correctly with type="primary" 1`] = `
             Array [
               Object {
                 "color": "rgb(255, 255, 255)",
+                "lineHeight": null,
               },
             ],
             Object {},
@@ -1232,6 +1250,7 @@ exports[`iOS BpkButton should render correctly with type="primary" and disabled 
             Array [
               Object {
                 "color": "rgb(255, 255, 255)",
+                "lineHeight": null,
               },
               Object {
                 "color": "rgb(178, 174, 189)",
@@ -1336,6 +1355,7 @@ exports[`iOS BpkButton should render correctly with type="secondary" 1`] = `
             Array [
               Object {
                 "color": "rgb(255, 255, 255)",
+                "lineHeight": null,
               },
               Object {
                 "color": "rgb(0, 178, 214)",
@@ -1442,6 +1462,7 @@ exports[`iOS BpkButton should render correctly with type="secondary" and disable
             Array [
               Object {
                 "color": "rgb(255, 255, 255)",
+                "lineHeight": null,
               },
               Object {
                 "color": "rgb(0, 178, 214)",
@@ -1640,6 +1661,7 @@ exports[`iOS BpkButton should support having an icon as well as a title 1`] = `
             Array [
               Object {
                 "color": "rgb(255, 255, 255)",
+                "lineHeight": null,
               },
               undefined,
             ],
@@ -1669,12 +1691,14 @@ exports[`iOS BpkButton should support having an icon as well as a title 1`] = `
             Array [
               Object {
                 "color": "rgb(255, 255, 255)",
+                "lineHeight": null,
               },
               undefined,
             ],
             Object {},
             Array [
               Object {
+                "lineHeight": null,
                 "marginStart": 4,
               },
               undefined,
@@ -1778,6 +1802,7 @@ exports[`iOS BpkButton should support overwriting styles 1`] = `
             Array [
               Object {
                 "color": "rgb(255, 255, 255)",
+                "lineHeight": null,
               },
             ],
             Object {},
@@ -1878,6 +1903,7 @@ exports[`iOS BpkButton should support the "disabled" property 1`] = `
             Array [
               Object {
                 "color": "rgb(255, 255, 255)",
+                "lineHeight": null,
               },
               Object {
                 "color": "rgb(178, 174, 189)",
@@ -1982,6 +2008,7 @@ exports[`iOS BpkButton should support the "icon" property 1`] = `
             Array [
               Object {
                 "color": "rgb(255, 255, 255)",
+                "lineHeight": null,
               },
               undefined,
             ],
@@ -2011,12 +2038,14 @@ exports[`iOS BpkButton should support the "icon" property 1`] = `
             Array [
               Object {
                 "color": "rgb(255, 255, 255)",
+                "lineHeight": null,
               },
               undefined,
             ],
             Object {},
             Array [
               Object {
+                "lineHeight": null,
                 "marginStart": 4,
               },
               undefined,
@@ -2120,12 +2149,14 @@ exports[`iOS BpkButton should support the "iconOnly" property 1`] = `
             Array [
               Object {
                 "color": "rgb(255, 255, 255)",
+                "lineHeight": null,
               },
               undefined,
             ],
             Object {},
             Array [
               Object {
+                "lineHeight": null,
                 "marginStart": 4,
               },
               Object {
@@ -2230,6 +2261,7 @@ exports[`iOS BpkButton should support the "secondary" property 1`] = `
             Array [
               Object {
                 "color": "rgb(255, 255, 255)",
+                "lineHeight": null,
               },
               Object {
                 "color": "rgb(0, 178, 214)",
@@ -2331,6 +2363,7 @@ exports[`iOS BpkButtonThemed should render correctly 1`] = `
             Array [
               Object {
                 "color": "rgb(255, 255, 255)",
+                "lineHeight": null,
               },
             ],
             Object {
@@ -2438,6 +2471,7 @@ exports[`iOS should support the "icon" and "large" property 1`] = `
             Array [
               Object {
                 "color": "rgb(255, 255, 255)",
+                "lineHeight": null,
               },
               Object {
                 "lineHeight": 24,
@@ -2467,6 +2501,7 @@ exports[`iOS should support the "icon" and "large" property 1`] = `
             Array [
               Object {
                 "color": "rgb(255, 255, 255)",
+                "lineHeight": null,
               },
               Object {
                 "lineHeight": 24,
@@ -2476,6 +2511,7 @@ exports[`iOS should support the "icon" and "large" property 1`] = `
             Object {},
             Array [
               Object {
+                "lineHeight": null,
                 "marginStart": 4,
               },
               undefined,
@@ -2581,6 +2617,7 @@ exports[`iOS should support the "iconOnly" and "large" property 1`] = `
             Array [
               Object {
                 "color": "rgb(255, 255, 255)",
+                "lineHeight": null,
               },
               Object {
                 "lineHeight": 24,
@@ -2590,6 +2627,7 @@ exports[`iOS should support the "iconOnly" and "large" property 1`] = `
             Object {},
             Array [
               Object {
+                "lineHeight": null,
                 "marginStart": 4,
               },
               undefined,
@@ -2699,6 +2737,7 @@ exports[`iOS should support the "large" and secondary property 1`] = `
             Array [
               Object {
                 "color": "rgb(255, 255, 255)",
+                "lineHeight": null,
               },
               Object {
                 "color": "rgb(0, 178, 214)",
@@ -2807,6 +2846,7 @@ exports[`iOS should support the "large" property 1`] = `
             Array [
               Object {
                 "color": "rgb(255, 255, 255)",
+                "lineHeight": null,
               },
               Object {
                 "lineHeight": 24,
