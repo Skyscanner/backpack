@@ -275,6 +275,78 @@ exports[`iOS BpkButtonLink should render correctly with iconAlignment="trailing"
 </View>
 `;
 
+exports[`iOS BpkButtonLink should render correctly with text props provided 1`] = `
+<View
+  accessibilityComponentType="button"
+  accessibilityLabel="Lorem ipsum"
+  accessibilityTraits={
+    Array [
+      "button",
+    ]
+  }
+  accessible={true}
+  collapsable={undefined}
+  hasTVPreferredFocus={undefined}
+  hitSlop={undefined}
+  isTVSelectable={true}
+  nativeID={undefined}
+  onLayout={undefined}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "opacity": 1,
+    }
+  }
+  testID={undefined}
+  tvParallaxProperties={undefined}
+>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "justifyContent": "center",
+          "minHeight": 32,
+        },
+      ]
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={false}
+      ellipsizeMode="tail"
+      numberOfLines={1}
+      style={
+        Array [
+          Object {
+            "color": "rgb(82, 76, 97)",
+            "fontFamily": "System",
+            "fontSize": 13,
+            "fontWeight": "400",
+          },
+          Object {
+            "fontWeight": "600",
+          },
+          Array [
+            Object {
+              "color": "rgb(0, 178, 214)",
+            },
+          ],
+        ]
+      }
+    >
+      Lorem ipsum
+    </Text>
+  </View>
+</View>
+`;
+
 exports[`iOS BpkButtonLink should render correctly with theme prop 1`] = `
 <View
   accessibilityComponentType="button"

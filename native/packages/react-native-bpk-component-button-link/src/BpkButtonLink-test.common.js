@@ -117,6 +117,22 @@ const commonTests = () => {
       expect(tree).toMatchSnapshot();
     });
 
+    it('should render correctly with text props provided', () => {
+      const onPressFn = jest.fn();
+
+      const tree = renderer
+        .create(
+          <BpkButtonLink
+            title="Lorem ipsum"
+            onPress={onPressFn}
+            textProps={{ allowFontScaling: false }}
+          />,
+        )
+        .toJSON();
+
+      expect(tree).toMatchSnapshot();
+    });
+
     Object.keys(ICON_ALIGNMENTS).forEach(alignmentType => {
       it(`should render correctly with iconAlignment="${alignmentType}"`, () => {
         const onPressFn = jest.fn();
