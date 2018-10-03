@@ -63,11 +63,11 @@
   },
   "lint-staged": {
     "*.js": [
-      "npm run lint:js:fix",
+      "eslint --fix",
       "git add"
     ],
     "*.scss": [
-      "npm run lint:scss"
+      "stylelint --syntax scss"
     ]
   },
   "repository": {
