@@ -15,9 +15,12 @@ exports[`Android BpkNudger should disable theming if the required attribute is o
   <View
     style={
       Array [
-        Object {
-          "borderRadius": 0,
-        },
+        Array [
+          Object {
+            "borderRadius": 40,
+          },
+          undefined,
+        ],
         Object {
           "marginRight": 4,
         },
@@ -148,9 +151,12 @@ exports[`Android BpkNudger should disable theming if the required attribute is o
   <View
     style={
       Array [
-        Object {
-          "borderRadius": 0,
-        },
+        Array [
+          Object {
+            "borderRadius": 40,
+          },
+          undefined,
+        ],
         Object {
           "marginLeft": 4,
         },
@@ -272,9 +278,12 @@ exports[`Android BpkNudger should render correctly 1`] = `
   <View
     style={
       Array [
-        Object {
-          "borderRadius": 0,
-        },
+        Array [
+          Object {
+            "borderRadius": 40,
+          },
+          undefined,
+        ],
         Object {
           "marginRight": 4,
         },
@@ -405,9 +414,12 @@ exports[`Android BpkNudger should render correctly 1`] = `
   <View
     style={
       Array [
-        Object {
-          "borderRadius": 0,
-        },
+        Array [
+          Object {
+            "borderRadius": 40,
+          },
+          undefined,
+        ],
         Object {
           "marginLeft": 4,
         },
@@ -529,9 +541,13 @@ exports[`Android BpkNudger should render correctly when value is a not an intege
   <View
     style={
       Array [
-        Object {
-          "borderRadius": 0,
-        },
+        Array [
+          Object {
+            "borderRadius": 40,
+          },
+          undefined,
+          undefined,
+        ],
         Object {
           "marginRight": 4,
         },
@@ -668,9 +684,12 @@ exports[`Android BpkNudger should render correctly when value is a not an intege
   <View
     style={
       Array [
-        Object {
-          "borderRadius": 0,
-        },
+        Array [
+          Object {
+            "borderRadius": 40,
+          },
+          undefined,
+        ],
         Object {
           "marginLeft": 4,
         },
@@ -792,9 +811,12 @@ exports[`Android BpkNudger should render correctly when value is greater than ma
   <View
     style={
       Array [
-        Object {
-          "borderRadius": 0,
-        },
+        Array [
+          Object {
+            "borderRadius": 40,
+          },
+          undefined,
+        ],
         Object {
           "marginRight": 4,
         },
@@ -925,9 +947,13 @@ exports[`Android BpkNudger should render correctly when value is greater than ma
   <View
     style={
       Array [
-        Object {
-          "borderRadius": 0,
-        },
+        Array [
+          Object {
+            "borderRadius": 40,
+          },
+          undefined,
+          undefined,
+        ],
         Object {
           "marginLeft": 4,
         },
@@ -1055,9 +1081,13 @@ exports[`Android BpkNudger should render correctly when value is less than min 1
   <View
     style={
       Array [
-        Object {
-          "borderRadius": 0,
-        },
+        Array [
+          Object {
+            "borderRadius": 40,
+          },
+          undefined,
+          undefined,
+        ],
         Object {
           "marginRight": 4,
         },
@@ -1194,9 +1224,12 @@ exports[`Android BpkNudger should render correctly when value is less than min 1
   <View
     style={
       Array [
-        Object {
-          "borderRadius": 0,
-        },
+        Array [
+          Object {
+            "borderRadius": 40,
+          },
+          undefined,
+        ],
         Object {
           "marginLeft": 4,
         },
@@ -1318,9 +1351,12 @@ exports[`Android BpkNudger should support theming 1`] = `
   <View
     style={
       Array [
-        Object {
-          "borderRadius": 0,
-        },
+        Array [
+          Object {
+            "borderRadius": 40,
+          },
+          undefined,
+        ],
         Object {
           "marginRight": 4,
         },
@@ -1453,9 +1489,12 @@ exports[`Android BpkNudger should support theming 1`] = `
   <View
     style={
       Array [
-        Object {
-          "borderRadius": 0,
-        },
+        Array [
+          Object {
+            "borderRadius": 40,
+          },
+          undefined,
+        ],
         Object {
           "marginLeft": 4,
         },

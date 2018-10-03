@@ -74,6 +74,7 @@ const BpkButton = (props: Props) => {
   const theme = shouldApplyTheme ? themeProp : null;
 
   const accessibilityTraits = ['button'];
+  const containerStyle = getStyleForElement('androidContainer', props);
   const buttonStyle = getStyleForElement('button', props);
   const backgroundColor = getAndroidBackgroundColour(theme, props);
 
@@ -82,7 +83,7 @@ const BpkButton = (props: Props) => {
   }
 
   return (
-    <View style={[{ borderRadius: 0 }, style]}>
+    <View style={[containerStyle, style]}>
       <BpkTouchableNativeFeedback
         disabled={disabled}
         onPress={onPress}

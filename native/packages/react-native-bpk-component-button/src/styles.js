@@ -38,6 +38,9 @@ import {
 import { Platform, StyleSheet } from 'react-native';
 
 const base = StyleSheet.create({
+  androidContainer: {
+    borderRadius: borderRadiusPill,
+  },
   button: {
     borderColor: 'transparent',
     borderWidth: buttonBorderWidth,
