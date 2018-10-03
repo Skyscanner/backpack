@@ -53,7 +53,6 @@ const base = StyleSheet.create({
   },
   view: {
     alignItems: 'center',
-    flex: 1,
     flexDirection: 'row',
     justifyContent: 'center',
   },

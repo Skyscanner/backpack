@@ -55,7 +55,6 @@ exports[`Android API levels Android API<21 should render without ripple 1`] = `
         Array [
           Object {
             "alignItems": "center",
-            "flex": 1,
             "flexDirection": "row",
             "justifyContent": "center",
           },
@@ -149,7 +148,6 @@ exports[`Android API levels Android API>=21 should render with ripple 1`] = `
         Array [
           Object {
             "alignItems": "center",
-            "flex": 1,
             "flexDirection": "row",
             "justifyContent": "center",
           },
@@ -243,7 +241,6 @@ exports[`Android BpkButton should render correctly 1`] = `
         Array [
           Object {
             "alignItems": "center",
-            "flex": 1,
             "flexDirection": "row",
             "justifyContent": "center",
           },
@@ -342,7 +339,6 @@ exports[`Android BpkButton should render correctly with iconAlignment="centerLea
         Array [
           Object {
             "alignItems": "center",
-            "flex": 1,
             "flexDirection": "row",
             "justifyContent": "center",
           },
@@ -482,7 +478,6 @@ exports[`Android BpkButton should render correctly with iconAlignment="centerTra
         Array [
           Object {
             "alignItems": "center",
-            "flex": 1,
             "flexDirection": "row",
             "justifyContent": "center",
           },
@@ -617,7 +612,6 @@ exports[`Android BpkButton should render correctly with iconAlignment="leading" 
         Array [
           Object {
             "alignItems": "center",
-            "flex": 1,
             "flexDirection": "row",
             "justifyContent": "center",
           },
@@ -765,7 +759,6 @@ exports[`Android BpkButton should render correctly with iconAlignment="trailing"
         Array [
           Object {
             "alignItems": "center",
-            "flex": 1,
             "flexDirection": "row",
             "justifyContent": "center",
           },
@@ -910,7 +903,6 @@ exports[`Android BpkButton should render correctly with type="destructive" 1`] =
         Array [
           Object {
             "alignItems": "center",
-            "flex": 1,
             "flexDirection": "row",
             "justifyContent": "center",
           },
@@ -1024,7 +1016,6 @@ exports[`Android BpkButton should render correctly with type="destructive" and d
         Array [
           Object {
             "alignItems": "center",
-            "flex": 1,
             "flexDirection": "row",
             "justifyContent": "center",
           },
@@ -1128,7 +1119,6 @@ exports[`Android BpkButton should render correctly with type="featured" 1`] = `
         Array [
           Object {
             "alignItems": "center",
-            "flex": 1,
             "flexDirection": "row",
             "justifyContent": "center",
           },
@@ -1231,7 +1221,6 @@ exports[`Android BpkButton should render correctly with type="featured" and disa
         Array [
           Object {
             "alignItems": "center",
-            "flex": 1,
             "flexDirection": "row",
             "justifyContent": "center",
           },
@@ -1332,7 +1321,6 @@ exports[`Android BpkButton should render correctly with type="primary" 1`] = `
         Array [
           Object {
             "alignItems": "center",
-            "flex": 1,
             "flexDirection": "row",
             "justifyContent": "center",
           },
@@ -1435,7 +1423,6 @@ exports[`Android BpkButton should render correctly with type="primary" and disab
         Array [
           Object {
             "alignItems": "center",
-            "flex": 1,
             "flexDirection": "row",
             "justifyContent": "center",
           },
@@ -1544,7 +1531,6 @@ exports[`Android BpkButton should render correctly with type="secondary" 1`] = `
         Array [
           Object {
             "alignItems": "center",
-            "flex": 1,
             "flexDirection": "row",
             "justifyContent": "center",
           },
@@ -1658,7 +1644,6 @@ exports[`Android BpkButton should render correctly with type="secondary" and dis
         Array [
           Object {
             "alignItems": "center",
-            "flex": 1,
             "flexDirection": "row",
             "justifyContent": "center",
           },
@@ -1768,7 +1753,6 @@ exports[`Android BpkButton should support elements as icons 1`] = `
         Array [
           Object {
             "alignItems": "center",
-            "flex": 1,
             "flexDirection": "row",
             "justifyContent": "center",
           },
@@ -1856,7 +1840,6 @@ exports[`Android BpkButton should support having an icon as well as a title 1`] 
         Array [
           Object {
             "alignItems": "center",
-            "flex": 1,
             "flexDirection": "row",
             "justifyContent": "center",
           },
@@ -1995,7 +1978,6 @@ exports[`Android BpkButton should support overwriting styles 1`] = `
         Array [
           Object {
             "alignItems": "center",
-            "flex": 1,
             "flexDirection": "row",
             "justifyContent": "center",
           },
@@ -2098,7 +2080,6 @@ exports[`Android BpkButton should support the "disabled" property 1`] = `
         Array [
           Object {
             "alignItems": "center",
-            "flex": 1,
             "flexDirection": "row",
             "justifyContent": "center",
           },
@@ -2201,7 +2182,6 @@ exports[`Android BpkButton should support the "icon" property 1`] = `
         Array [
           Object {
             "alignItems": "center",
-            "flex": 1,
             "flexDirection": "row",
             "justifyContent": "center",
           },
@@ -2344,7 +2324,6 @@ exports[`Android BpkButton should support the "iconOnly" property 1`] = `
         Array [
           Object {
             "alignItems": "center",
-            "flex": 1,
             "flexDirection": "row",
             "justifyContent": "center",
           },
@@ -2460,7 +2439,6 @@ exports[`Android BpkButton should support the "secondary" property 1`] = `
         Array [
           Object {
             "alignItems": "center",
-            "flex": 1,
             "flexDirection": "row",
             "justifyContent": "center",
           },
@@ -2560,7 +2538,6 @@ exports[`Android BpkButtonThemed should render correctly 1`] = `
         Array [
           Object {
             "alignItems": "center",
-            "flex": 1,
             "flexDirection": "row",
             "justifyContent": "center",
           },
