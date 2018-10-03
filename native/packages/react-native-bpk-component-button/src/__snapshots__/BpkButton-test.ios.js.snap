@@ -2,65 +2,50 @@
 
 exports[`iOS BpkButton should render correctly 1`] = `
 <View
-  colors={
+  accessibilityComponentType="button"
+  accessibilityLabel="Lorem ipsum"
+  accessibilityTraits={
     Array [
-      "rgb(0, 215, 117)",
-      "rgb(0, 189, 104)",
+      "button",
     ]
   }
-  style={
-    Array [
-      Array [
-        Object {
-          "borderRadius": 40,
-          "minHeight": 32,
-        },
-      ],
-      Object {},
-      null,
-    ]
-  }
+  accessible={true}
+  hitSlop={undefined}
+  nativeID={undefined}
+  onLayout={undefined}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={null}
+  testID={undefined}
 >
   <View
-    accessibilityComponentType="button"
-    accessibilityLabel="Lorem ipsum"
-    accessibilityTraits={
+    colors={
       Array [
-        "button",
+        "rgb(0, 215, 117)",
+        "rgb(0, 189, 104)",
       ]
     }
-    accessible={true}
-    hitSlop={undefined}
-    nativeID={undefined}
-    onLayout={undefined}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
     style={
       Array [
         Array [
           Object {
+            "alignItems": "center",
+            "borderColor": "transparent",
             "borderRadius": 40,
-            "minHeight": 32,
-            "paddingHorizontal": 12,
-            "paddingVertical": 8,
+            "borderWidth": 2,
+            "flexDirection": "row",
+            "justifyContent": "center",
+            "paddingHorizontal": 10,
+            "paddingVertical": 6,
           },
         ],
         Object {},
-        Array [
-          Object {
-            "alignItems": "center",
-            "flex": 1,
-            "flexDirection": "row",
-            "justifyContent": "center",
-          },
-        ],
       ]
     }
-    testID={undefined}
   >
     <Text
       accessible={true}
@@ -80,8 +65,8 @@ exports[`iOS BpkButton should render correctly 1`] = `
           Array [
             Array [
               Object {
-                "backgroundColor": "transparent",
                 "color": "rgb(255, 255, 255)",
+                "lineHeight": null,
               },
             ],
             Object {},
@@ -91,95 +76,78 @@ exports[`iOS BpkButton should render correctly 1`] = `
     >
       Lorem ipsum
     </Text>
-    <View
-      style={
-        Array [
-          Object {
-            "backgroundColor": "rgb(37, 32, 51)",
-            "bottom": 0,
-            "flex": 1,
-            "left": 0,
-            "opacity": 0,
-            "position": "absolute",
-            "right": 0,
-            "top": 0,
-          },
-          Object {
-            "borderRadius": 40,
-          },
-        ]
-      }
-    />
   </View>
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "rgb(37, 32, 51)",
+          "bottom": 0,
+          "flex": 1,
+          "left": 0,
+          "opacity": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        },
+        Object {
+          "borderRadius": 40,
+        },
+      ]
+    }
+  />
 </View>
 `;
 
 exports[`iOS BpkButton should render correctly with iconAlignment="centerLeading" 1`] = `
 <View
-  colors={
+  accessibilityComponentType="button"
+  accessibilityLabel="Lorem ipsum"
+  accessibilityTraits={
     Array [
-      "rgb(0, 215, 117)",
-      "rgb(0, 189, 104)",
+      "button",
     ]
   }
-  style={
-    Array [
-      Array [
-        Object {
-          "borderRadius": 40,
-          "minHeight": 32,
-        },
-        undefined,
-      ],
-      Object {},
-      null,
-    ]
-  }
+  accessible={true}
+  hitSlop={undefined}
+  nativeID={undefined}
+  onLayout={undefined}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={null}
+  testID={undefined}
 >
   <View
-    accessibilityComponentType="button"
-    accessibilityLabel="Lorem ipsum"
-    accessibilityTraits={
+    colors={
       Array [
-        "button",
+        "rgb(0, 215, 117)",
+        "rgb(0, 189, 104)",
       ]
     }
-    accessible={true}
-    hitSlop={undefined}
-    nativeID={undefined}
-    onLayout={undefined}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
     style={
       Array [
         Array [
           Object {
-            "borderRadius": 40,
-            "minHeight": 32,
-            "paddingHorizontal": 12,
-            "paddingVertical": 8,
-          },
-          undefined,
-        ],
-        Object {},
-        Array [
-          Object {
             "alignItems": "center",
-            "flex": 1,
+            "borderColor": "transparent",
+            "borderRadius": 40,
+            "borderWidth": 2,
             "flexDirection": "row",
             "justifyContent": "center",
+            "paddingHorizontal": 10,
+            "paddingVertical": 6,
           },
           Object {
             "flexDirection": "row-reverse",
           },
         ],
+        Object {},
       ]
     }
-    testID={undefined}
   >
     <Text
       accessible={true}
@@ -199,8 +167,8 @@ exports[`iOS BpkButton should render correctly with iconAlignment="centerLeading
           Array [
             Array [
               Object {
-                "backgroundColor": "transparent",
                 "color": "rgb(255, 255, 255)",
+                "lineHeight": null,
               },
               undefined,
             ],
@@ -229,19 +197,20 @@ exports[`iOS BpkButton should render correctly with iconAlignment="centerLeading
           Array [
             Array [
               Object {
-                "backgroundColor": "transparent",
                 "color": "rgb(255, 255, 255)",
+                "lineHeight": null,
               },
               undefined,
             ],
             Object {},
             Array [
               Object {
-                "marginLeft": 4,
+                "lineHeight": null,
+                "marginStart": 4,
               },
               Object {
-                "marginLeft": 0,
-                "marginRight": 4,
+                "marginEnd": 4,
+                "marginStart": 0,
               },
             ],
           ],
@@ -250,90 +219,75 @@ exports[`iOS BpkButton should render correctly with iconAlignment="centerLeading
     >
       
     </Text>
-    <View
-      style={
-        Array [
-          Object {
-            "backgroundColor": "rgb(37, 32, 51)",
-            "bottom": 0,
-            "flex": 1,
-            "left": 0,
-            "opacity": 0,
-            "position": "absolute",
-            "right": 0,
-            "top": 0,
-          },
-          Object {
-            "borderRadius": 40,
-          },
-        ]
-      }
-    />
   </View>
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "rgb(37, 32, 51)",
+          "bottom": 0,
+          "flex": 1,
+          "left": 0,
+          "opacity": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        },
+        Object {
+          "borderRadius": 40,
+        },
+      ]
+    }
+  />
 </View>
 `;
 
 exports[`iOS BpkButton should render correctly with iconAlignment="centerTrailing" 1`] = `
 <View
-  colors={
+  accessibilityComponentType="button"
+  accessibilityLabel="Lorem ipsum"
+  accessibilityTraits={
     Array [
-      "rgb(0, 215, 117)",
-      "rgb(0, 189, 104)",
+      "button",
     ]
   }
-  style={
-    Array [
-      Array [
-        Object {
-          "borderRadius": 40,
-          "minHeight": 32,
-        },
-      ],
-      Object {},
-      null,
-    ]
-  }
+  accessible={true}
+  hitSlop={undefined}
+  nativeID={undefined}
+  onLayout={undefined}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={null}
+  testID={undefined}
 >
   <View
-    accessibilityComponentType="button"
-    accessibilityLabel="Lorem ipsum"
-    accessibilityTraits={
+    colors={
       Array [
-        "button",
+        "rgb(0, 215, 117)",
+        "rgb(0, 189, 104)",
       ]
     }
-    accessible={true}
-    hitSlop={undefined}
-    nativeID={undefined}
-    onLayout={undefined}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
     style={
       Array [
         Array [
           Object {
+            "alignItems": "center",
+            "borderColor": "transparent",
             "borderRadius": 40,
-            "minHeight": 32,
-            "paddingHorizontal": 12,
-            "paddingVertical": 8,
+            "borderWidth": 2,
+            "flexDirection": "row",
+            "justifyContent": "center",
+            "paddingHorizontal": 10,
+            "paddingVertical": 6,
           },
         ],
         Object {},
-        Array [
-          Object {
-            "alignItems": "center",
-            "flex": 1,
-            "flexDirection": "row",
-            "justifyContent": "center",
-          },
-        ],
       ]
     }
-    testID={undefined}
   >
     <Text
       accessible={true}
@@ -353,8 +307,8 @@ exports[`iOS BpkButton should render correctly with iconAlignment="centerTrailin
           Array [
             Array [
               Object {
-                "backgroundColor": "transparent",
                 "color": "rgb(255, 255, 255)",
+                "lineHeight": null,
               },
             ],
             Object {},
@@ -382,14 +336,15 @@ exports[`iOS BpkButton should render correctly with iconAlignment="centerTrailin
           Array [
             Array [
               Object {
-                "backgroundColor": "transparent",
                 "color": "rgb(255, 255, 255)",
+                "lineHeight": null,
               },
             ],
             Object {},
             Array [
               Object {
-                "marginLeft": 4,
+                "lineHeight": null,
+                "marginStart": 4,
               },
             ],
           ],
@@ -398,89 +353,70 @@ exports[`iOS BpkButton should render correctly with iconAlignment="centerTrailin
     >
       
     </Text>
-    <View
-      style={
-        Array [
-          Object {
-            "backgroundColor": "rgb(37, 32, 51)",
-            "bottom": 0,
-            "flex": 1,
-            "left": 0,
-            "opacity": 0,
-            "position": "absolute",
-            "right": 0,
-            "top": 0,
-          },
-          Object {
-            "borderRadius": 40,
-          },
-        ]
-      }
-    />
   </View>
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "rgb(37, 32, 51)",
+          "bottom": 0,
+          "flex": 1,
+          "left": 0,
+          "opacity": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        },
+        Object {
+          "borderRadius": 40,
+        },
+      ]
+    }
+  />
 </View>
 `;
 
 exports[`iOS BpkButton should render correctly with iconAlignment="leading" 1`] = `
 <View
-  colors={
+  accessibilityComponentType="button"
+  accessibilityLabel="Lorem ipsum"
+  accessibilityTraits={
     Array [
-      "rgb(0, 215, 117)",
-      "rgb(0, 189, 104)",
+      "button",
     ]
   }
-  style={
-    Array [
-      Array [
-        Object {
-          "borderRadius": 40,
-          "minHeight": 32,
-        },
-        undefined,
-        undefined,
-      ],
-      Object {},
-      null,
-    ]
-  }
+  accessible={true}
+  hitSlop={undefined}
+  nativeID={undefined}
+  onLayout={undefined}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={null}
+  testID={undefined}
 >
   <View
-    accessibilityComponentType="button"
-    accessibilityLabel="Lorem ipsum"
-    accessibilityTraits={
+    colors={
       Array [
-        "button",
+        "rgb(0, 215, 117)",
+        "rgb(0, 189, 104)",
       ]
     }
-    accessible={true}
-    hitSlop={undefined}
-    nativeID={undefined}
-    onLayout={undefined}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
     style={
       Array [
         Array [
           Object {
-            "borderRadius": 40,
-            "minHeight": 32,
-            "paddingHorizontal": 12,
-            "paddingVertical": 8,
-          },
-          undefined,
-          undefined,
-        ],
-        Object {},
-        Array [
-          Object {
             "alignItems": "center",
-            "flex": 1,
+            "borderColor": "transparent",
+            "borderRadius": 40,
+            "borderWidth": 2,
             "flexDirection": "row",
             "justifyContent": "center",
+            "paddingHorizontal": 10,
+            "paddingVertical": 6,
           },
           Object {
             "justifyContent": "space-between",
@@ -489,9 +425,9 @@ exports[`iOS BpkButton should render correctly with iconAlignment="leading" 1`] 
             "flexDirection": "row-reverse",
           },
         ],
+        Object {},
       ]
     }
-    testID={undefined}
   >
     <Text
       accessible={true}
@@ -511,8 +447,8 @@ exports[`iOS BpkButton should render correctly with iconAlignment="leading" 1`] 
           Array [
             Array [
               Object {
-                "backgroundColor": "transparent",
                 "color": "rgb(255, 255, 255)",
+                "lineHeight": null,
               },
               undefined,
               undefined,
@@ -542,8 +478,8 @@ exports[`iOS BpkButton should render correctly with iconAlignment="leading" 1`] 
           Array [
             Array [
               Object {
-                "backgroundColor": "transparent",
                 "color": "rgb(255, 255, 255)",
+                "lineHeight": null,
               },
               undefined,
               undefined,
@@ -551,12 +487,13 @@ exports[`iOS BpkButton should render correctly with iconAlignment="leading" 1`] 
             Object {},
             Array [
               Object {
-                "marginLeft": 4,
+                "lineHeight": null,
+                "marginStart": 4,
               },
               undefined,
               Object {
-                "marginLeft": 0,
-                "marginRight": 4,
+                "marginEnd": 4,
+                "marginStart": 0,
               },
             ],
           ],
@@ -565,95 +502,78 @@ exports[`iOS BpkButton should render correctly with iconAlignment="leading" 1`] 
     >
       
     </Text>
-    <View
-      style={
-        Array [
-          Object {
-            "backgroundColor": "rgb(37, 32, 51)",
-            "bottom": 0,
-            "flex": 1,
-            "left": 0,
-            "opacity": 0,
-            "position": "absolute",
-            "right": 0,
-            "top": 0,
-          },
-          Object {
-            "borderRadius": 40,
-          },
-        ]
-      }
-    />
   </View>
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "rgb(37, 32, 51)",
+          "bottom": 0,
+          "flex": 1,
+          "left": 0,
+          "opacity": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        },
+        Object {
+          "borderRadius": 40,
+        },
+      ]
+    }
+  />
 </View>
 `;
 
 exports[`iOS BpkButton should render correctly with iconAlignment="trailing" 1`] = `
 <View
-  colors={
+  accessibilityComponentType="button"
+  accessibilityLabel="Lorem ipsum"
+  accessibilityTraits={
     Array [
-      "rgb(0, 215, 117)",
-      "rgb(0, 189, 104)",
+      "button",
     ]
   }
-  style={
-    Array [
-      Array [
-        Object {
-          "borderRadius": 40,
-          "minHeight": 32,
-        },
-        undefined,
-      ],
-      Object {},
-      null,
-    ]
-  }
+  accessible={true}
+  hitSlop={undefined}
+  nativeID={undefined}
+  onLayout={undefined}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={null}
+  testID={undefined}
 >
   <View
-    accessibilityComponentType="button"
-    accessibilityLabel="Lorem ipsum"
-    accessibilityTraits={
+    colors={
       Array [
-        "button",
+        "rgb(0, 215, 117)",
+        "rgb(0, 189, 104)",
       ]
     }
-    accessible={true}
-    hitSlop={undefined}
-    nativeID={undefined}
-    onLayout={undefined}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
     style={
       Array [
         Array [
           Object {
-            "borderRadius": 40,
-            "minHeight": 32,
-            "paddingHorizontal": 12,
-            "paddingVertical": 8,
-          },
-          undefined,
-        ],
-        Object {},
-        Array [
-          Object {
             "alignItems": "center",
-            "flex": 1,
+            "borderColor": "transparent",
+            "borderRadius": 40,
+            "borderWidth": 2,
             "flexDirection": "row",
             "justifyContent": "center",
+            "paddingHorizontal": 10,
+            "paddingVertical": 6,
           },
           Object {
             "justifyContent": "space-between",
           },
         ],
+        Object {},
       ]
     }
-    testID={undefined}
   >
     <Text
       accessible={true}
@@ -673,8 +593,8 @@ exports[`iOS BpkButton should render correctly with iconAlignment="trailing" 1`]
           Array [
             Array [
               Object {
-                "backgroundColor": "transparent",
                 "color": "rgb(255, 255, 255)",
+                "lineHeight": null,
               },
               undefined,
             ],
@@ -703,15 +623,16 @@ exports[`iOS BpkButton should render correctly with iconAlignment="trailing" 1`]
           Array [
             Array [
               Object {
-                "backgroundColor": "transparent",
                 "color": "rgb(255, 255, 255)",
+                "lineHeight": null,
               },
               undefined,
             ],
             Object {},
             Array [
               Object {
-                "marginLeft": 4,
+                "lineHeight": null,
+                "marginStart": 4,
               },
               undefined,
             ],
@@ -721,98 +642,78 @@ exports[`iOS BpkButton should render correctly with iconAlignment="trailing" 1`]
     >
       
     </Text>
-    <View
-      style={
-        Array [
-          Object {
-            "backgroundColor": "rgb(37, 32, 51)",
-            "bottom": 0,
-            "flex": 1,
-            "left": 0,
-            "opacity": 0,
-            "position": "absolute",
-            "right": 0,
-            "top": 0,
-          },
-          Object {
-            "borderRadius": 40,
-          },
-        ]
-      }
-    />
   </View>
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "rgb(37, 32, 51)",
+          "bottom": 0,
+          "flex": 1,
+          "left": 0,
+          "opacity": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        },
+        Object {
+          "borderRadius": 40,
+        },
+      ]
+    }
+  />
 </View>
 `;
 
 exports[`iOS BpkButton should render correctly with type="destructive" 1`] = `
 <View
-  colors={
+  accessibilityComponentType="button"
+  accessibilityLabel="Lorem ipsum"
+  accessibilityTraits={
     Array [
-      "rgb(255, 255, 255)",
-      "rgb(255, 255, 255)",
+      "button",
     ]
   }
-  style={
-    Array [
-      Array [
-        Object {
-          "borderRadius": 40,
-          "minHeight": 32,
-        },
-        Object {
-          "borderColor": "rgb(230, 228, 235)",
-          "borderWidth": 2,
-        },
-      ],
-      Object {},
-      null,
-    ]
-  }
+  accessible={true}
+  hitSlop={undefined}
+  nativeID={undefined}
+  onLayout={undefined}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={null}
+  testID={undefined}
 >
   <View
-    accessibilityComponentType="button"
-    accessibilityLabel="Lorem ipsum"
-    accessibilityTraits={
+    colors={
       Array [
-        "button",
+        "rgb(255, 255, 255)",
+        "rgb(255, 255, 255)",
       ]
     }
-    accessible={true}
-    hitSlop={undefined}
-    nativeID={undefined}
-    onLayout={undefined}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
     style={
       Array [
         Array [
           Object {
+            "alignItems": "center",
+            "borderColor": "transparent",
             "borderRadius": 40,
-            "minHeight": 32,
-            "paddingHorizontal": 12,
-            "paddingVertical": 8,
-          },
-          Object {
+            "borderWidth": 2,
+            "flexDirection": "row",
+            "justifyContent": "center",
             "paddingHorizontal": 10,
             "paddingVertical": 6,
           },
-        ],
-        Object {},
-        Array [
           Object {
-            "alignItems": "center",
-            "flex": 1,
-            "flexDirection": "row",
-            "justifyContent": "center",
+            "borderColor": "rgb(230, 228, 235)",
           },
         ],
+        Object {},
       ]
     }
-    testID={undefined}
   >
     <Text
       accessible={true}
@@ -832,8 +733,8 @@ exports[`iOS BpkButton should render correctly with type="destructive" 1`] = `
           Array [
             Array [
               Object {
-                "backgroundColor": "transparent",
                 "color": "rgb(255, 255, 255)",
+                "lineHeight": null,
               },
               Object {
                 "color": "rgb(255, 84, 82)",
@@ -846,105 +747,80 @@ exports[`iOS BpkButton should render correctly with type="destructive" 1`] = `
     >
       Lorem ipsum
     </Text>
-    <View
-      style={
-        Array [
-          Object {
-            "backgroundColor": "rgb(37, 32, 51)",
-            "bottom": 0,
-            "flex": 1,
-            "left": 0,
-            "opacity": 0,
-            "position": "absolute",
-            "right": 0,
-            "top": 0,
-          },
-          Object {
-            "borderRadius": 40,
-          },
-        ]
-      }
-    />
   </View>
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "rgb(37, 32, 51)",
+          "bottom": 0,
+          "flex": 1,
+          "left": 0,
+          "opacity": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        },
+        Object {
+          "borderRadius": 40,
+        },
+      ]
+    }
+  />
 </View>
 `;
 
 exports[`iOS BpkButton should render correctly with type="destructive" and disabled 1`] = `
 <View
-  colors={
+  accessibilityComponentType="button"
+  accessibilityLabel="Lorem ipsum"
+  accessibilityTraits={
     Array [
-      "rgb(230, 228, 235)",
-      "rgb(230, 228, 235)",
+      "button",
+      "disabled",
     ]
   }
-  style={
-    Array [
-      Array [
-        Object {
-          "borderRadius": 40,
-          "minHeight": 32,
-        },
-        Object {
-          "borderColor": "rgb(230, 228, 235)",
-          "borderWidth": 2,
-        },
-        Object {
-          "borderColor": "transparent",
-          "borderWidth": 0,
-        },
-      ],
-      Object {},
-      null,
-    ]
-  }
+  accessible={true}
+  hitSlop={undefined}
+  nativeID={undefined}
+  onLayout={undefined}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={null}
+  testID={undefined}
 >
   <View
-    accessibilityComponentType="button"
-    accessibilityLabel="Lorem ipsum"
-    accessibilityTraits={
+    colors={
       Array [
-        "button",
-        "disabled",
+        "rgb(230, 228, 235)",
+        "rgb(230, 228, 235)",
       ]
     }
-    accessible={true}
-    hitSlop={undefined}
-    nativeID={undefined}
-    onLayout={undefined}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
     style={
       Array [
         Array [
           Object {
+            "alignItems": "center",
+            "borderColor": "transparent",
             "borderRadius": 40,
-            "minHeight": 32,
-            "paddingHorizontal": 12,
-            "paddingVertical": 8,
-          },
-          Object {
+            "borderWidth": 2,
+            "flexDirection": "row",
+            "justifyContent": "center",
             "paddingHorizontal": 10,
             "paddingVertical": 6,
+          },
+          Object {
+            "borderColor": "rgb(230, 228, 235)",
           },
           undefined,
         ],
         Object {},
-        Array [
-          Object {
-            "alignItems": "center",
-            "flex": 1,
-            "flexDirection": "row",
-            "justifyContent": "center",
-          },
-          undefined,
-        ],
       ]
     }
-    testID={undefined}
   >
     <Text
       accessible={true}
@@ -964,8 +840,8 @@ exports[`iOS BpkButton should render correctly with type="destructive" and disab
           Array [
             Array [
               Object {
-                "backgroundColor": "transparent",
                 "color": "rgb(255, 255, 255)",
+                "lineHeight": null,
               },
               Object {
                 "color": "rgb(255, 84, 82)",
@@ -981,90 +857,75 @@ exports[`iOS BpkButton should render correctly with type="destructive" and disab
     >
       Lorem ipsum
     </Text>
-    <View
-      style={
-        Array [
-          Object {
-            "backgroundColor": "rgb(37, 32, 51)",
-            "bottom": 0,
-            "flex": 1,
-            "left": 0,
-            "opacity": 0,
-            "position": "absolute",
-            "right": 0,
-            "top": 0,
-          },
-          Object {
-            "borderRadius": 40,
-          },
-        ]
-      }
-    />
   </View>
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "rgb(37, 32, 51)",
+          "bottom": 0,
+          "flex": 1,
+          "left": 0,
+          "opacity": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        },
+        Object {
+          "borderRadius": 40,
+        },
+      ]
+    }
+  />
 </View>
 `;
 
 exports[`iOS BpkButton should render correctly with type="featured" 1`] = `
 <View
-  colors={
+  accessibilityComponentType="button"
+  accessibilityLabel="Lorem ipsum"
+  accessibilityTraits={
     Array [
-      "rgb(250, 72, 138)",
-      "rgb(217, 43, 107)",
+      "button",
     ]
   }
-  style={
-    Array [
-      Array [
-        Object {
-          "borderRadius": 40,
-          "minHeight": 32,
-        },
-      ],
-      Object {},
-      null,
-    ]
-  }
+  accessible={true}
+  hitSlop={undefined}
+  nativeID={undefined}
+  onLayout={undefined}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={null}
+  testID={undefined}
 >
   <View
-    accessibilityComponentType="button"
-    accessibilityLabel="Lorem ipsum"
-    accessibilityTraits={
+    colors={
       Array [
-        "button",
+        "rgb(250, 72, 138)",
+        "rgb(217, 43, 107)",
       ]
     }
-    accessible={true}
-    hitSlop={undefined}
-    nativeID={undefined}
-    onLayout={undefined}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
     style={
       Array [
         Array [
           Object {
+            "alignItems": "center",
+            "borderColor": "transparent",
             "borderRadius": 40,
-            "minHeight": 32,
-            "paddingHorizontal": 12,
-            "paddingVertical": 8,
+            "borderWidth": 2,
+            "flexDirection": "row",
+            "justifyContent": "center",
+            "paddingHorizontal": 10,
+            "paddingVertical": 6,
           },
         ],
         Object {},
-        Array [
-          Object {
-            "alignItems": "center",
-            "flex": 1,
-            "flexDirection": "row",
-            "justifyContent": "center",
-          },
-        ],
       ]
     }
-    testID={undefined}
   >
     <Text
       accessible={true}
@@ -1084,8 +945,8 @@ exports[`iOS BpkButton should render correctly with type="featured" 1`] = `
           Array [
             Array [
               Object {
-                "backgroundColor": "transparent",
                 "color": "rgb(255, 255, 255)",
+                "lineHeight": null,
               },
             ],
             Object {},
@@ -1095,97 +956,77 @@ exports[`iOS BpkButton should render correctly with type="featured" 1`] = `
     >
       Lorem ipsum
     </Text>
-    <View
-      style={
-        Array [
-          Object {
-            "backgroundColor": "rgb(37, 32, 51)",
-            "bottom": 0,
-            "flex": 1,
-            "left": 0,
-            "opacity": 0,
-            "position": "absolute",
-            "right": 0,
-            "top": 0,
-          },
-          Object {
-            "borderRadius": 40,
-          },
-        ]
-      }
-    />
   </View>
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "rgb(37, 32, 51)",
+          "bottom": 0,
+          "flex": 1,
+          "left": 0,
+          "opacity": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        },
+        Object {
+          "borderRadius": 40,
+        },
+      ]
+    }
+  />
 </View>
 `;
 
 exports[`iOS BpkButton should render correctly with type="featured" and disabled 1`] = `
 <View
-  colors={
+  accessibilityComponentType="button"
+  accessibilityLabel="Lorem ipsum"
+  accessibilityTraits={
     Array [
-      "rgb(230, 228, 235)",
-      "rgb(230, 228, 235)",
+      "button",
+      "disabled",
     ]
   }
-  style={
-    Array [
-      Array [
-        Object {
-          "borderRadius": 40,
-          "minHeight": 32,
-        },
-        Object {
-          "borderColor": "transparent",
-          "borderWidth": 0,
-        },
-      ],
-      Object {},
-      null,
-    ]
-  }
+  accessible={true}
+  hitSlop={undefined}
+  nativeID={undefined}
+  onLayout={undefined}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={null}
+  testID={undefined}
 >
   <View
-    accessibilityComponentType="button"
-    accessibilityLabel="Lorem ipsum"
-    accessibilityTraits={
+    colors={
       Array [
-        "button",
-        "disabled",
+        "rgb(230, 228, 235)",
+        "rgb(230, 228, 235)",
       ]
     }
-    accessible={true}
-    hitSlop={undefined}
-    nativeID={undefined}
-    onLayout={undefined}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
     style={
       Array [
         Array [
           Object {
+            "alignItems": "center",
+            "borderColor": "transparent",
             "borderRadius": 40,
-            "minHeight": 32,
-            "paddingHorizontal": 12,
-            "paddingVertical": 8,
+            "borderWidth": 2,
+            "flexDirection": "row",
+            "justifyContent": "center",
+            "paddingHorizontal": 10,
+            "paddingVertical": 6,
           },
           undefined,
         ],
         Object {},
-        Array [
-          Object {
-            "alignItems": "center",
-            "flex": 1,
-            "flexDirection": "row",
-            "justifyContent": "center",
-          },
-          undefined,
-        ],
       ]
     }
-    testID={undefined}
   >
     <Text
       accessible={true}
@@ -1205,8 +1046,8 @@ exports[`iOS BpkButton should render correctly with type="featured" and disabled
           Array [
             Array [
               Object {
-                "backgroundColor": "transparent",
                 "color": "rgb(255, 255, 255)",
+                "lineHeight": null,
               },
               Object {
                 "color": "rgb(178, 174, 189)",
@@ -1219,90 +1060,75 @@ exports[`iOS BpkButton should render correctly with type="featured" and disabled
     >
       Lorem ipsum
     </Text>
-    <View
-      style={
-        Array [
-          Object {
-            "backgroundColor": "rgb(37, 32, 51)",
-            "bottom": 0,
-            "flex": 1,
-            "left": 0,
-            "opacity": 0,
-            "position": "absolute",
-            "right": 0,
-            "top": 0,
-          },
-          Object {
-            "borderRadius": 40,
-          },
-        ]
-      }
-    />
   </View>
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "rgb(37, 32, 51)",
+          "bottom": 0,
+          "flex": 1,
+          "left": 0,
+          "opacity": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        },
+        Object {
+          "borderRadius": 40,
+        },
+      ]
+    }
+  />
 </View>
 `;
 
 exports[`iOS BpkButton should render correctly with type="primary" 1`] = `
 <View
-  colors={
+  accessibilityComponentType="button"
+  accessibilityLabel="Lorem ipsum"
+  accessibilityTraits={
     Array [
-      "rgb(0, 215, 117)",
-      "rgb(0, 189, 104)",
+      "button",
     ]
   }
-  style={
-    Array [
-      Array [
-        Object {
-          "borderRadius": 40,
-          "minHeight": 32,
-        },
-      ],
-      Object {},
-      null,
-    ]
-  }
+  accessible={true}
+  hitSlop={undefined}
+  nativeID={undefined}
+  onLayout={undefined}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={null}
+  testID={undefined}
 >
   <View
-    accessibilityComponentType="button"
-    accessibilityLabel="Lorem ipsum"
-    accessibilityTraits={
+    colors={
       Array [
-        "button",
+        "rgb(0, 215, 117)",
+        "rgb(0, 189, 104)",
       ]
     }
-    accessible={true}
-    hitSlop={undefined}
-    nativeID={undefined}
-    onLayout={undefined}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
     style={
       Array [
         Array [
           Object {
+            "alignItems": "center",
+            "borderColor": "transparent",
             "borderRadius": 40,
-            "minHeight": 32,
-            "paddingHorizontal": 12,
-            "paddingVertical": 8,
+            "borderWidth": 2,
+            "flexDirection": "row",
+            "justifyContent": "center",
+            "paddingHorizontal": 10,
+            "paddingVertical": 6,
           },
         ],
         Object {},
-        Array [
-          Object {
-            "alignItems": "center",
-            "flex": 1,
-            "flexDirection": "row",
-            "justifyContent": "center",
-          },
-        ],
       ]
     }
-    testID={undefined}
   >
     <Text
       accessible={true}
@@ -1322,8 +1148,8 @@ exports[`iOS BpkButton should render correctly with type="primary" 1`] = `
           Array [
             Array [
               Object {
-                "backgroundColor": "transparent",
                 "color": "rgb(255, 255, 255)",
+                "lineHeight": null,
               },
             ],
             Object {},
@@ -1333,97 +1159,77 @@ exports[`iOS BpkButton should render correctly with type="primary" 1`] = `
     >
       Lorem ipsum
     </Text>
-    <View
-      style={
-        Array [
-          Object {
-            "backgroundColor": "rgb(37, 32, 51)",
-            "bottom": 0,
-            "flex": 1,
-            "left": 0,
-            "opacity": 0,
-            "position": "absolute",
-            "right": 0,
-            "top": 0,
-          },
-          Object {
-            "borderRadius": 40,
-          },
-        ]
-      }
-    />
   </View>
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "rgb(37, 32, 51)",
+          "bottom": 0,
+          "flex": 1,
+          "left": 0,
+          "opacity": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        },
+        Object {
+          "borderRadius": 40,
+        },
+      ]
+    }
+  />
 </View>
 `;
 
 exports[`iOS BpkButton should render correctly with type="primary" and disabled 1`] = `
 <View
-  colors={
+  accessibilityComponentType="button"
+  accessibilityLabel="Lorem ipsum"
+  accessibilityTraits={
     Array [
-      "rgb(230, 228, 235)",
-      "rgb(230, 228, 235)",
+      "button",
+      "disabled",
     ]
   }
-  style={
-    Array [
-      Array [
-        Object {
-          "borderRadius": 40,
-          "minHeight": 32,
-        },
-        Object {
-          "borderColor": "transparent",
-          "borderWidth": 0,
-        },
-      ],
-      Object {},
-      null,
-    ]
-  }
+  accessible={true}
+  hitSlop={undefined}
+  nativeID={undefined}
+  onLayout={undefined}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={null}
+  testID={undefined}
 >
   <View
-    accessibilityComponentType="button"
-    accessibilityLabel="Lorem ipsum"
-    accessibilityTraits={
+    colors={
       Array [
-        "button",
-        "disabled",
+        "rgb(230, 228, 235)",
+        "rgb(230, 228, 235)",
       ]
     }
-    accessible={true}
-    hitSlop={undefined}
-    nativeID={undefined}
-    onLayout={undefined}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
     style={
       Array [
         Array [
           Object {
+            "alignItems": "center",
+            "borderColor": "transparent",
             "borderRadius": 40,
-            "minHeight": 32,
-            "paddingHorizontal": 12,
-            "paddingVertical": 8,
+            "borderWidth": 2,
+            "flexDirection": "row",
+            "justifyContent": "center",
+            "paddingHorizontal": 10,
+            "paddingVertical": 6,
           },
           undefined,
         ],
         Object {},
-        Array [
-          Object {
-            "alignItems": "center",
-            "flex": 1,
-            "flexDirection": "row",
-            "justifyContent": "center",
-          },
-          undefined,
-        ],
       ]
     }
-    testID={undefined}
   >
     <Text
       accessible={true}
@@ -1443,8 +1249,8 @@ exports[`iOS BpkButton should render correctly with type="primary" and disabled 
           Array [
             Array [
               Object {
-                "backgroundColor": "transparent",
                 "color": "rgb(255, 255, 255)",
+                "lineHeight": null,
               },
               Object {
                 "color": "rgb(178, 174, 189)",
@@ -1457,98 +1263,78 @@ exports[`iOS BpkButton should render correctly with type="primary" and disabled 
     >
       Lorem ipsum
     </Text>
-    <View
-      style={
-        Array [
-          Object {
-            "backgroundColor": "rgb(37, 32, 51)",
-            "bottom": 0,
-            "flex": 1,
-            "left": 0,
-            "opacity": 0,
-            "position": "absolute",
-            "right": 0,
-            "top": 0,
-          },
-          Object {
-            "borderRadius": 40,
-          },
-        ]
-      }
-    />
   </View>
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "rgb(37, 32, 51)",
+          "bottom": 0,
+          "flex": 1,
+          "left": 0,
+          "opacity": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        },
+        Object {
+          "borderRadius": 40,
+        },
+      ]
+    }
+  />
 </View>
 `;
 
 exports[`iOS BpkButton should render correctly with type="secondary" 1`] = `
 <View
-  colors={
+  accessibilityComponentType="button"
+  accessibilityLabel="Lorem ipsum"
+  accessibilityTraits={
     Array [
-      "rgb(255, 255, 255)",
-      "rgb(255, 255, 255)",
+      "button",
     ]
   }
-  style={
-    Array [
-      Array [
-        Object {
-          "borderRadius": 40,
-          "minHeight": 32,
-        },
-        Object {
-          "borderColor": "rgb(230, 228, 235)",
-          "borderWidth": 2,
-        },
-      ],
-      Object {},
-      null,
-    ]
-  }
+  accessible={true}
+  hitSlop={undefined}
+  nativeID={undefined}
+  onLayout={undefined}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={null}
+  testID={undefined}
 >
   <View
-    accessibilityComponentType="button"
-    accessibilityLabel="Lorem ipsum"
-    accessibilityTraits={
+    colors={
       Array [
-        "button",
+        "rgb(255, 255, 255)",
+        "rgb(255, 255, 255)",
       ]
     }
-    accessible={true}
-    hitSlop={undefined}
-    nativeID={undefined}
-    onLayout={undefined}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
     style={
       Array [
         Array [
           Object {
+            "alignItems": "center",
+            "borderColor": "transparent",
             "borderRadius": 40,
-            "minHeight": 32,
-            "paddingHorizontal": 12,
-            "paddingVertical": 8,
-          },
-          Object {
+            "borderWidth": 2,
+            "flexDirection": "row",
+            "justifyContent": "center",
             "paddingHorizontal": 10,
             "paddingVertical": 6,
           },
-        ],
-        Object {},
-        Array [
           Object {
-            "alignItems": "center",
-            "flex": 1,
-            "flexDirection": "row",
-            "justifyContent": "center",
+            "borderColor": "rgb(230, 228, 235)",
           },
         ],
+        Object {},
       ]
     }
-    testID={undefined}
   >
     <Text
       accessible={true}
@@ -1568,8 +1354,8 @@ exports[`iOS BpkButton should render correctly with type="secondary" 1`] = `
           Array [
             Array [
               Object {
-                "backgroundColor": "transparent",
                 "color": "rgb(255, 255, 255)",
+                "lineHeight": null,
               },
               Object {
                 "color": "rgb(0, 178, 214)",
@@ -1582,105 +1368,80 @@ exports[`iOS BpkButton should render correctly with type="secondary" 1`] = `
     >
       Lorem ipsum
     </Text>
-    <View
-      style={
-        Array [
-          Object {
-            "backgroundColor": "rgb(37, 32, 51)",
-            "bottom": 0,
-            "flex": 1,
-            "left": 0,
-            "opacity": 0,
-            "position": "absolute",
-            "right": 0,
-            "top": 0,
-          },
-          Object {
-            "borderRadius": 40,
-          },
-        ]
-      }
-    />
   </View>
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "rgb(37, 32, 51)",
+          "bottom": 0,
+          "flex": 1,
+          "left": 0,
+          "opacity": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        },
+        Object {
+          "borderRadius": 40,
+        },
+      ]
+    }
+  />
 </View>
 `;
 
 exports[`iOS BpkButton should render correctly with type="secondary" and disabled 1`] = `
 <View
-  colors={
+  accessibilityComponentType="button"
+  accessibilityLabel="Lorem ipsum"
+  accessibilityTraits={
     Array [
-      "rgb(230, 228, 235)",
-      "rgb(230, 228, 235)",
+      "button",
+      "disabled",
     ]
   }
-  style={
-    Array [
-      Array [
-        Object {
-          "borderRadius": 40,
-          "minHeight": 32,
-        },
-        Object {
-          "borderColor": "rgb(230, 228, 235)",
-          "borderWidth": 2,
-        },
-        Object {
-          "borderColor": "transparent",
-          "borderWidth": 0,
-        },
-      ],
-      Object {},
-      null,
-    ]
-  }
+  accessible={true}
+  hitSlop={undefined}
+  nativeID={undefined}
+  onLayout={undefined}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={null}
+  testID={undefined}
 >
   <View
-    accessibilityComponentType="button"
-    accessibilityLabel="Lorem ipsum"
-    accessibilityTraits={
+    colors={
       Array [
-        "button",
-        "disabled",
+        "rgb(230, 228, 235)",
+        "rgb(230, 228, 235)",
       ]
     }
-    accessible={true}
-    hitSlop={undefined}
-    nativeID={undefined}
-    onLayout={undefined}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
     style={
       Array [
         Array [
           Object {
+            "alignItems": "center",
+            "borderColor": "transparent",
             "borderRadius": 40,
-            "minHeight": 32,
-            "paddingHorizontal": 12,
-            "paddingVertical": 8,
-          },
-          Object {
+            "borderWidth": 2,
+            "flexDirection": "row",
+            "justifyContent": "center",
             "paddingHorizontal": 10,
             "paddingVertical": 6,
+          },
+          Object {
+            "borderColor": "rgb(230, 228, 235)",
           },
           undefined,
         ],
         Object {},
-        Array [
-          Object {
-            "alignItems": "center",
-            "flex": 1,
-            "flexDirection": "row",
-            "justifyContent": "center",
-          },
-          undefined,
-        ],
       ]
     }
-    testID={undefined}
   >
     <Text
       accessible={true}
@@ -1700,8 +1461,8 @@ exports[`iOS BpkButton should render correctly with type="secondary" and disable
           Array [
             Array [
               Object {
-                "backgroundColor": "transparent",
                 "color": "rgb(255, 255, 255)",
+                "lineHeight": null,
               },
               Object {
                 "color": "rgb(0, 178, 214)",
@@ -1717,97 +1478,79 @@ exports[`iOS BpkButton should render correctly with type="secondary" and disable
     >
       Lorem ipsum
     </Text>
-    <View
-      style={
-        Array [
-          Object {
-            "backgroundColor": "rgb(37, 32, 51)",
-            "bottom": 0,
-            "flex": 1,
-            "left": 0,
-            "opacity": 0,
-            "position": "absolute",
-            "right": 0,
-            "top": 0,
-          },
-          Object {
-            "borderRadius": 40,
-          },
-        ]
-      }
-    />
   </View>
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "rgb(37, 32, 51)",
+          "bottom": 0,
+          "flex": 1,
+          "left": 0,
+          "opacity": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        },
+        Object {
+          "borderRadius": 40,
+        },
+      ]
+    }
+  />
 </View>
 `;
 
 exports[`iOS BpkButton should support elements as icons 1`] = `
 <View
-  colors={
+  accessibilityComponentType="button"
+  accessibilityLabel="Lorem ipsum"
+  accessibilityTraits={
     Array [
-      "rgb(0, 215, 117)",
-      "rgb(0, 189, 104)",
+      "button",
     ]
   }
-  style={
-    Array [
-      Array [
-        Object {
-          "borderRadius": 40,
-          "minHeight": 32,
-        },
-        Object {
-          "width": 32,
-        },
-      ],
-      Object {},
-      null,
-    ]
-  }
+  accessible={true}
+  hitSlop={undefined}
+  nativeID={undefined}
+  onLayout={undefined}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={null}
+  testID={undefined}
 >
   <View
-    accessibilityComponentType="button"
-    accessibilityLabel="Lorem ipsum"
-    accessibilityTraits={
+    colors={
       Array [
-        "button",
+        "rgb(0, 215, 117)",
+        "rgb(0, 189, 104)",
       ]
     }
-    accessible={true}
-    hitSlop={undefined}
-    nativeID={undefined}
-    onLayout={undefined}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
     style={
       Array [
         Array [
           Object {
+            "alignItems": "center",
+            "borderColor": "transparent",
             "borderRadius": 40,
-            "minHeight": 32,
-            "paddingHorizontal": 12,
-            "paddingVertical": 8,
+            "borderWidth": 2,
+            "flexDirection": "row",
+            "justifyContent": "center",
+            "paddingHorizontal": 10,
+            "paddingVertical": 6,
           },
           Object {
-            "paddingHorizontal": 0,
+            "paddingHorizontal": 6,
+            "paddingVertical": 6,
           },
         ],
         Object {},
-        Array [
-          Object {
-            "alignItems": "center",
-            "flex": 1,
-            "flexDirection": "row",
-            "justifyContent": "center",
-          },
-          undefined,
-        ],
       ]
     }
-    testID={undefined}
   >
     <Text
       accessible={true}
@@ -1826,95 +1569,78 @@ exports[`iOS BpkButton should support elements as icons 1`] = `
     >
       foo
     </Text>
-    <View
-      style={
-        Array [
-          Object {
-            "backgroundColor": "rgb(37, 32, 51)",
-            "bottom": 0,
-            "flex": 1,
-            "left": 0,
-            "opacity": 0,
-            "position": "absolute",
-            "right": 0,
-            "top": 0,
-          },
-          Object {
-            "borderRadius": 40,
-          },
-        ]
-      }
-    />
   </View>
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "rgb(37, 32, 51)",
+          "bottom": 0,
+          "flex": 1,
+          "left": 0,
+          "opacity": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        },
+        Object {
+          "borderRadius": 40,
+        },
+      ]
+    }
+  />
 </View>
 `;
 
 exports[`iOS BpkButton should support having an icon as well as a title 1`] = `
 <View
-  colors={
+  accessibilityComponentType="button"
+  accessibilityLabel="Lorem ipsum"
+  accessibilityTraits={
     Array [
-      "rgb(0, 215, 117)",
-      "rgb(0, 189, 104)",
+      "button",
     ]
   }
-  style={
-    Array [
-      Array [
-        Object {
-          "borderRadius": 40,
-          "minHeight": 32,
-        },
-        undefined,
-      ],
-      Object {},
-      null,
-    ]
-  }
+  accessible={true}
+  hitSlop={undefined}
+  nativeID={undefined}
+  onLayout={undefined}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={null}
+  testID={undefined}
 >
   <View
-    accessibilityComponentType="button"
-    accessibilityLabel="Lorem ipsum"
-    accessibilityTraits={
+    colors={
       Array [
-        "button",
+        "rgb(0, 215, 117)",
+        "rgb(0, 189, 104)",
       ]
     }
-    accessible={true}
-    hitSlop={undefined}
-    nativeID={undefined}
-    onLayout={undefined}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
     style={
       Array [
         Array [
           Object {
-            "borderRadius": 40,
-            "minHeight": 32,
-            "paddingHorizontal": 12,
-            "paddingVertical": 8,
-          },
-          undefined,
-        ],
-        Object {},
-        Array [
-          Object {
             "alignItems": "center",
-            "flex": 1,
+            "borderColor": "transparent",
+            "borderRadius": 40,
+            "borderWidth": 2,
             "flexDirection": "row",
             "justifyContent": "center",
+            "paddingHorizontal": 10,
+            "paddingVertical": 6,
           },
           Object {
             "justifyContent": "space-between",
           },
         ],
+        Object {},
       ]
     }
-    testID={undefined}
   >
     <Text
       accessible={true}
@@ -1934,8 +1660,8 @@ exports[`iOS BpkButton should support having an icon as well as a title 1`] = `
           Array [
             Array [
               Object {
-                "backgroundColor": "transparent",
                 "color": "rgb(255, 255, 255)",
+                "lineHeight": null,
               },
               undefined,
             ],
@@ -1964,15 +1690,16 @@ exports[`iOS BpkButton should support having an icon as well as a title 1`] = `
           Array [
             Array [
               Object {
-                "backgroundColor": "transparent",
                 "color": "rgb(255, 255, 255)",
+                "lineHeight": null,
               },
               undefined,
             ],
             Object {},
             Array [
               Object {
-                "marginLeft": 4,
+                "lineHeight": null,
+                "marginStart": 4,
               },
               undefined,
             ],
@@ -1982,92 +1709,79 @@ exports[`iOS BpkButton should support having an icon as well as a title 1`] = `
     >
       
     </Text>
-    <View
-      style={
-        Array [
-          Object {
-            "backgroundColor": "rgb(37, 32, 51)",
-            "bottom": 0,
-            "flex": 1,
-            "left": 0,
-            "opacity": 0,
-            "position": "absolute",
-            "right": 0,
-            "top": 0,
-          },
-          Object {
-            "borderRadius": 40,
-          },
-        ]
-      }
-    />
   </View>
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "rgb(37, 32, 51)",
+          "bottom": 0,
+          "flex": 1,
+          "left": 0,
+          "opacity": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        },
+        Object {
+          "borderRadius": 40,
+        },
+      ]
+    }
+  />
 </View>
 `;
 
 exports[`iOS BpkButton should support overwriting styles 1`] = `
 <View
-  colors={
+  accessibilityComponentType="button"
+  accessibilityLabel="Lorem ipsum"
+  accessibilityTraits={
     Array [
-      "rgb(0, 215, 117)",
-      "rgb(0, 189, 104)",
+      "button",
     ]
   }
+  accessible={true}
+  hitSlop={undefined}
+  nativeID={undefined}
+  onLayout={undefined}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
   style={
-    Array [
-      Array [
-        Object {
-          "borderRadius": 40,
-          "minHeight": 32,
-        },
-      ],
-      Object {},
-      Object {
-        "width": 4,
-      },
-    ]
+    Object {
+      "width": 4,
+    }
   }
+  testID={undefined}
 >
   <View
-    accessibilityComponentType="button"
-    accessibilityLabel="Lorem ipsum"
-    accessibilityTraits={
+    colors={
       Array [
-        "button",
+        "rgb(0, 215, 117)",
+        "rgb(0, 189, 104)",
       ]
     }
-    accessible={true}
-    hitSlop={undefined}
-    nativeID={undefined}
-    onLayout={undefined}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
     style={
       Array [
         Array [
           Object {
+            "alignItems": "center",
+            "borderColor": "transparent",
             "borderRadius": 40,
-            "minHeight": 32,
-            "paddingHorizontal": 12,
-            "paddingVertical": 8,
+            "borderWidth": 2,
+            "flexDirection": "row",
+            "justifyContent": "center",
+            "paddingHorizontal": 10,
+            "paddingVertical": 6,
           },
         ],
         Object {},
-        Array [
-          Object {
-            "alignItems": "center",
-            "flex": 1,
-            "flexDirection": "row",
-            "justifyContent": "center",
-          },
-        ],
       ]
     }
-    testID={undefined}
   >
     <Text
       accessible={true}
@@ -2087,8 +1801,8 @@ exports[`iOS BpkButton should support overwriting styles 1`] = `
           Array [
             Array [
               Object {
-                "backgroundColor": "transparent",
                 "color": "rgb(255, 255, 255)",
+                "lineHeight": null,
               },
             ],
             Object {},
@@ -2098,97 +1812,77 @@ exports[`iOS BpkButton should support overwriting styles 1`] = `
     >
       Lorem ipsum
     </Text>
-    <View
-      style={
-        Array [
-          Object {
-            "backgroundColor": "rgb(37, 32, 51)",
-            "bottom": 0,
-            "flex": 1,
-            "left": 0,
-            "opacity": 0,
-            "position": "absolute",
-            "right": 0,
-            "top": 0,
-          },
-          Object {
-            "borderRadius": 40,
-          },
-        ]
-      }
-    />
   </View>
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "rgb(37, 32, 51)",
+          "bottom": 0,
+          "flex": 1,
+          "left": 0,
+          "opacity": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        },
+        Object {
+          "borderRadius": 40,
+        },
+      ]
+    }
+  />
 </View>
 `;
 
 exports[`iOS BpkButton should support the "disabled" property 1`] = `
 <View
-  colors={
+  accessibilityComponentType="button"
+  accessibilityLabel="Lorem ipsum"
+  accessibilityTraits={
     Array [
-      "rgb(230, 228, 235)",
-      "rgb(230, 228, 235)",
+      "button",
+      "disabled",
     ]
   }
-  style={
-    Array [
-      Array [
-        Object {
-          "borderRadius": 40,
-          "minHeight": 32,
-        },
-        Object {
-          "borderColor": "transparent",
-          "borderWidth": 0,
-        },
-      ],
-      Object {},
-      null,
-    ]
-  }
+  accessible={true}
+  hitSlop={undefined}
+  nativeID={undefined}
+  onLayout={undefined}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={null}
+  testID={undefined}
 >
   <View
-    accessibilityComponentType="button"
-    accessibilityLabel="Lorem ipsum"
-    accessibilityTraits={
+    colors={
       Array [
-        "button",
-        "disabled",
+        "rgb(230, 228, 235)",
+        "rgb(230, 228, 235)",
       ]
     }
-    accessible={true}
-    hitSlop={undefined}
-    nativeID={undefined}
-    onLayout={undefined}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
     style={
       Array [
         Array [
           Object {
+            "alignItems": "center",
+            "borderColor": "transparent",
             "borderRadius": 40,
-            "minHeight": 32,
-            "paddingHorizontal": 12,
-            "paddingVertical": 8,
+            "borderWidth": 2,
+            "flexDirection": "row",
+            "justifyContent": "center",
+            "paddingHorizontal": 10,
+            "paddingVertical": 6,
           },
           undefined,
         ],
         Object {},
-        Array [
-          Object {
-            "alignItems": "center",
-            "flex": 1,
-            "flexDirection": "row",
-            "justifyContent": "center",
-          },
-          undefined,
-        ],
       ]
     }
-    testID={undefined}
   >
     <Text
       accessible={true}
@@ -2208,8 +1902,8 @@ exports[`iOS BpkButton should support the "disabled" property 1`] = `
           Array [
             Array [
               Object {
-                "backgroundColor": "transparent",
                 "color": "rgb(255, 255, 255)",
+                "lineHeight": null,
               },
               Object {
                 "color": "rgb(178, 174, 189)",
@@ -2222,95 +1916,78 @@ exports[`iOS BpkButton should support the "disabled" property 1`] = `
     >
       Lorem ipsum
     </Text>
-    <View
-      style={
-        Array [
-          Object {
-            "backgroundColor": "rgb(37, 32, 51)",
-            "bottom": 0,
-            "flex": 1,
-            "left": 0,
-            "opacity": 0,
-            "position": "absolute",
-            "right": 0,
-            "top": 0,
-          },
-          Object {
-            "borderRadius": 40,
-          },
-        ]
-      }
-    />
   </View>
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "rgb(37, 32, 51)",
+          "bottom": 0,
+          "flex": 1,
+          "left": 0,
+          "opacity": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        },
+        Object {
+          "borderRadius": 40,
+        },
+      ]
+    }
+  />
 </View>
 `;
 
 exports[`iOS BpkButton should support the "icon" property 1`] = `
 <View
-  colors={
+  accessibilityComponentType="button"
+  accessibilityLabel="Lorem ipsum"
+  accessibilityTraits={
     Array [
-      "rgb(0, 215, 117)",
-      "rgb(0, 189, 104)",
+      "button",
     ]
   }
-  style={
-    Array [
-      Array [
-        Object {
-          "borderRadius": 40,
-          "minHeight": 32,
-        },
-        undefined,
-      ],
-      Object {},
-      null,
-    ]
-  }
+  accessible={true}
+  hitSlop={undefined}
+  nativeID={undefined}
+  onLayout={undefined}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={null}
+  testID={undefined}
 >
   <View
-    accessibilityComponentType="button"
-    accessibilityLabel="Lorem ipsum"
-    accessibilityTraits={
+    colors={
       Array [
-        "button",
+        "rgb(0, 215, 117)",
+        "rgb(0, 189, 104)",
       ]
     }
-    accessible={true}
-    hitSlop={undefined}
-    nativeID={undefined}
-    onLayout={undefined}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
     style={
       Array [
         Array [
           Object {
-            "borderRadius": 40,
-            "minHeight": 32,
-            "paddingHorizontal": 12,
-            "paddingVertical": 8,
-          },
-          undefined,
-        ],
-        Object {},
-        Array [
-          Object {
             "alignItems": "center",
-            "flex": 1,
+            "borderColor": "transparent",
+            "borderRadius": 40,
+            "borderWidth": 2,
             "flexDirection": "row",
             "justifyContent": "center",
+            "paddingHorizontal": 10,
+            "paddingVertical": 6,
           },
           Object {
             "justifyContent": "space-between",
           },
         ],
+        Object {},
       ]
     }
-    testID={undefined}
   >
     <Text
       accessible={true}
@@ -2330,8 +2007,8 @@ exports[`iOS BpkButton should support the "icon" property 1`] = `
           Array [
             Array [
               Object {
-                "backgroundColor": "transparent",
                 "color": "rgb(255, 255, 255)",
+                "lineHeight": null,
               },
               undefined,
             ],
@@ -2360,15 +2037,16 @@ exports[`iOS BpkButton should support the "icon" property 1`] = `
           Array [
             Array [
               Object {
-                "backgroundColor": "transparent",
                 "color": "rgb(255, 255, 255)",
+                "lineHeight": null,
               },
               undefined,
             ],
             Object {},
             Array [
               Object {
-                "marginLeft": 4,
+                "lineHeight": null,
+                "marginStart": 4,
               },
               undefined,
             ],
@@ -2378,97 +2056,79 @@ exports[`iOS BpkButton should support the "icon" property 1`] = `
     >
       
     </Text>
-    <View
-      style={
-        Array [
-          Object {
-            "backgroundColor": "rgb(37, 32, 51)",
-            "bottom": 0,
-            "flex": 1,
-            "left": 0,
-            "opacity": 0,
-            "position": "absolute",
-            "right": 0,
-            "top": 0,
-          },
-          Object {
-            "borderRadius": 40,
-          },
-        ]
-      }
-    />
   </View>
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "rgb(37, 32, 51)",
+          "bottom": 0,
+          "flex": 1,
+          "left": 0,
+          "opacity": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        },
+        Object {
+          "borderRadius": 40,
+        },
+      ]
+    }
+  />
 </View>
 `;
 
 exports[`iOS BpkButton should support the "iconOnly" property 1`] = `
 <View
-  colors={
+  accessibilityComponentType="button"
+  accessibilityLabel="Lorem ipsum"
+  accessibilityTraits={
     Array [
-      "rgb(0, 215, 117)",
-      "rgb(0, 189, 104)",
+      "button",
     ]
   }
-  style={
-    Array [
-      Array [
-        Object {
-          "borderRadius": 40,
-          "minHeight": 32,
-        },
-        Object {
-          "width": 32,
-        },
-      ],
-      Object {},
-      null,
-    ]
-  }
+  accessible={true}
+  hitSlop={undefined}
+  nativeID={undefined}
+  onLayout={undefined}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={null}
+  testID={undefined}
 >
   <View
-    accessibilityComponentType="button"
-    accessibilityLabel="Lorem ipsum"
-    accessibilityTraits={
+    colors={
       Array [
-        "button",
+        "rgb(0, 215, 117)",
+        "rgb(0, 189, 104)",
       ]
     }
-    accessible={true}
-    hitSlop={undefined}
-    nativeID={undefined}
-    onLayout={undefined}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
     style={
       Array [
         Array [
           Object {
+            "alignItems": "center",
+            "borderColor": "transparent",
             "borderRadius": 40,
-            "minHeight": 32,
-            "paddingHorizontal": 12,
-            "paddingVertical": 8,
+            "borderWidth": 2,
+            "flexDirection": "row",
+            "justifyContent": "center",
+            "paddingHorizontal": 10,
+            "paddingVertical": 6,
           },
           Object {
-            "paddingHorizontal": 0,
+            "paddingHorizontal": 6,
+            "paddingVertical": 6,
           },
         ],
         Object {},
-        Array [
-          Object {
-            "alignItems": "center",
-            "flex": 1,
-            "flexDirection": "row",
-            "justifyContent": "center",
-          },
-          undefined,
-        ],
       ]
     }
-    testID={undefined}
   >
     <Text
       accessible={true}
@@ -2488,19 +2148,19 @@ exports[`iOS BpkButton should support the "iconOnly" property 1`] = `
           Array [
             Array [
               Object {
-                "backgroundColor": "transparent",
                 "color": "rgb(255, 255, 255)",
+                "lineHeight": null,
               },
               undefined,
             ],
             Object {},
             Array [
               Object {
-                "marginLeft": 4,
+                "lineHeight": null,
+                "marginStart": 4,
               },
               Object {
-                "marginLeft": 0,
-                "marginRight": 0,
+                "marginStart": 0,
               },
             ],
           ],
@@ -2509,98 +2169,78 @@ exports[`iOS BpkButton should support the "iconOnly" property 1`] = `
     >
       
     </Text>
-    <View
-      style={
-        Array [
-          Object {
-            "backgroundColor": "rgb(37, 32, 51)",
-            "bottom": 0,
-            "flex": 1,
-            "left": 0,
-            "opacity": 0,
-            "position": "absolute",
-            "right": 0,
-            "top": 0,
-          },
-          Object {
-            "borderRadius": 40,
-          },
-        ]
-      }
-    />
   </View>
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "rgb(37, 32, 51)",
+          "bottom": 0,
+          "flex": 1,
+          "left": 0,
+          "opacity": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        },
+        Object {
+          "borderRadius": 40,
+        },
+      ]
+    }
+  />
 </View>
 `;
 
 exports[`iOS BpkButton should support the "secondary" property 1`] = `
 <View
-  colors={
+  accessibilityComponentType="button"
+  accessibilityLabel="Lorem ipsum"
+  accessibilityTraits={
     Array [
-      "rgb(255, 255, 255)",
-      "rgb(255, 255, 255)",
+      "button",
     ]
   }
-  style={
-    Array [
-      Array [
-        Object {
-          "borderRadius": 40,
-          "minHeight": 32,
-        },
-        Object {
-          "borderColor": "rgb(230, 228, 235)",
-          "borderWidth": 2,
-        },
-      ],
-      Object {},
-      null,
-    ]
-  }
+  accessible={true}
+  hitSlop={undefined}
+  nativeID={undefined}
+  onLayout={undefined}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={null}
+  testID={undefined}
 >
   <View
-    accessibilityComponentType="button"
-    accessibilityLabel="Lorem ipsum"
-    accessibilityTraits={
+    colors={
       Array [
-        "button",
+        "rgb(255, 255, 255)",
+        "rgb(255, 255, 255)",
       ]
     }
-    accessible={true}
-    hitSlop={undefined}
-    nativeID={undefined}
-    onLayout={undefined}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
     style={
       Array [
         Array [
           Object {
+            "alignItems": "center",
+            "borderColor": "transparent",
             "borderRadius": 40,
-            "minHeight": 32,
-            "paddingHorizontal": 12,
-            "paddingVertical": 8,
-          },
-          Object {
+            "borderWidth": 2,
+            "flexDirection": "row",
+            "justifyContent": "center",
             "paddingHorizontal": 10,
             "paddingVertical": 6,
           },
-        ],
-        Object {},
-        Array [
           Object {
-            "alignItems": "center",
-            "flex": 1,
-            "flexDirection": "row",
-            "justifyContent": "center",
+            "borderColor": "rgb(230, 228, 235)",
           },
         ],
+        Object {},
       ]
     }
-    testID={undefined}
   >
     <Text
       accessible={true}
@@ -2620,8 +2260,8 @@ exports[`iOS BpkButton should support the "secondary" property 1`] = `
           Array [
             Array [
               Object {
-                "backgroundColor": "transparent",
                 "color": "rgb(255, 255, 255)",
+                "lineHeight": null,
               },
               Object {
                 "color": "rgb(0, 178, 214)",
@@ -2634,90 +2274,75 @@ exports[`iOS BpkButton should support the "secondary" property 1`] = `
     >
       Lorem ipsum
     </Text>
-    <View
-      style={
-        Array [
-          Object {
-            "backgroundColor": "rgb(37, 32, 51)",
-            "bottom": 0,
-            "flex": 1,
-            "left": 0,
-            "opacity": 0,
-            "position": "absolute",
-            "right": 0,
-            "top": 0,
-          },
-          Object {
-            "borderRadius": 40,
-          },
-        ]
-      }
-    />
   </View>
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "rgb(37, 32, 51)",
+          "bottom": 0,
+          "flex": 1,
+          "left": 0,
+          "opacity": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        },
+        Object {
+          "borderRadius": 40,
+        },
+      ]
+    }
+  />
 </View>
 `;
 
 exports[`iOS BpkButtonThemed should render correctly 1`] = `
 <View
-  colors={
+  accessibilityComponentType="button"
+  accessibilityLabel="Lorem ipsum"
+  accessibilityTraits={
     Array [
-      "green",
-      "blue",
+      "button",
     ]
   }
-  style={
-    Array [
-      Array [
-        Object {
-          "borderRadius": 40,
-          "minHeight": 32,
-        },
-      ],
-      Object {},
-      null,
-    ]
-  }
+  accessible={true}
+  hitSlop={undefined}
+  nativeID={undefined}
+  onLayout={undefined}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={null}
+  testID={undefined}
 >
   <View
-    accessibilityComponentType="button"
-    accessibilityLabel="Lorem ipsum"
-    accessibilityTraits={
+    colors={
       Array [
-        "button",
+        "green",
+        "blue",
       ]
     }
-    accessible={true}
-    hitSlop={undefined}
-    nativeID={undefined}
-    onLayout={undefined}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
     style={
       Array [
         Array [
           Object {
+            "alignItems": "center",
+            "borderColor": "transparent",
             "borderRadius": 40,
-            "minHeight": 32,
-            "paddingHorizontal": 12,
-            "paddingVertical": 8,
+            "borderWidth": 2,
+            "flexDirection": "row",
+            "justifyContent": "center",
+            "paddingHorizontal": 10,
+            "paddingVertical": 6,
           },
         ],
         Object {},
-        Array [
-          Object {
-            "alignItems": "center",
-            "flex": 1,
-            "flexDirection": "row",
-            "justifyContent": "center",
-          },
-        ],
       ]
     }
-    testID={undefined}
   >
     <Text
       accessible={true}
@@ -2737,8 +2362,8 @@ exports[`iOS BpkButtonThemed should render correctly 1`] = `
           Array [
             Array [
               Object {
-                "backgroundColor": "transparent",
                 "color": "rgb(255, 255, 255)",
+                "lineHeight": null,
               },
             ],
             Object {
@@ -2750,103 +2375,82 @@ exports[`iOS BpkButtonThemed should render correctly 1`] = `
     >
       Lorem ipsum
     </Text>
-    <View
-      style={
-        Array [
-          Object {
-            "backgroundColor": "rgb(37, 32, 51)",
-            "bottom": 0,
-            "flex": 1,
-            "left": 0,
-            "opacity": 0,
-            "position": "absolute",
-            "right": 0,
-            "top": 0,
-          },
-          Object {
-            "borderRadius": 40,
-          },
-        ]
-      }
-    />
   </View>
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "rgb(37, 32, 51)",
+          "bottom": 0,
+          "flex": 1,
+          "left": 0,
+          "opacity": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        },
+        Object {
+          "borderRadius": 40,
+        },
+      ]
+    }
+  />
 </View>
 `;
 
 exports[`iOS should support the "icon" and "large" property 1`] = `
 <View
-  colors={
+  accessibilityComponentType="button"
+  accessibilityLabel="Lorem ipsum"
+  accessibilityTraits={
     Array [
-      "rgb(0, 215, 117)",
-      "rgb(0, 189, 104)",
+      "button",
     ]
   }
-  style={
-    Array [
-      Array [
-        Object {
-          "borderRadius": 40,
-          "minHeight": 32,
-        },
-        Object {
-          "minHeight": 48,
-        },
-        undefined,
-      ],
-      Object {},
-      null,
-    ]
-  }
+  accessible={true}
+  hitSlop={undefined}
+  nativeID={undefined}
+  onLayout={undefined}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={null}
+  testID={undefined}
 >
   <View
-    accessibilityComponentType="button"
-    accessibilityLabel="Lorem ipsum"
-    accessibilityTraits={
+    colors={
       Array [
-        "button",
+        "rgb(0, 215, 117)",
+        "rgb(0, 189, 104)",
       ]
     }
-    accessible={true}
-    hitSlop={undefined}
-    nativeID={undefined}
-    onLayout={undefined}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
     style={
       Array [
         Array [
           Object {
-            "borderRadius": 40,
-            "minHeight": 32,
-            "paddingHorizontal": 12,
-            "paddingVertical": 8,
-          },
-          Object {
-            "minHeight": 48,
-            "paddingHorizontal": 16,
-          },
-          undefined,
-        ],
-        Object {},
-        Array [
-          Object {
             "alignItems": "center",
-            "flex": 1,
+            "borderColor": "transparent",
+            "borderRadius": 40,
+            "borderWidth": 2,
             "flexDirection": "row",
             "justifyContent": "center",
+            "paddingHorizontal": 10,
+            "paddingVertical": 6,
           },
-          undefined,
+          Object {
+            "paddingHorizontal": 14,
+            "paddingVertical": 10,
+          },
           Object {
             "justifyContent": "space-between",
           },
         ],
+        Object {},
       ]
     }
-    testID={undefined}
   >
     <Text
       accessible={true}
@@ -2866,10 +2470,12 @@ exports[`iOS should support the "icon" and "large" property 1`] = `
           Array [
             Array [
               Object {
-                "backgroundColor": "transparent",
                 "color": "rgb(255, 255, 255)",
+                "lineHeight": null,
               },
-              undefined,
+              Object {
+                "lineHeight": 24,
+              },
               undefined,
             ],
             Object {},
@@ -2894,16 +2500,19 @@ exports[`iOS should support the "icon" and "large" property 1`] = `
           Array [
             Array [
               Object {
-                "backgroundColor": "transparent",
                 "color": "rgb(255, 255, 255)",
+                "lineHeight": null,
               },
-              undefined,
+              Object {
+                "lineHeight": 24,
+              },
               undefined,
             ],
             Object {},
             Array [
               Object {
-                "marginLeft": 4,
+                "lineHeight": null,
+                "marginStart": 4,
               },
               undefined,
               undefined,
@@ -2914,105 +2523,83 @@ exports[`iOS should support the "icon" and "large" property 1`] = `
     >
       
     </Text>
-    <View
-      style={
-        Array [
-          Object {
-            "backgroundColor": "rgb(37, 32, 51)",
-            "bottom": 0,
-            "flex": 1,
-            "left": 0,
-            "opacity": 0,
-            "position": "absolute",
-            "right": 0,
-            "top": 0,
-          },
-          Object {
-            "borderRadius": 40,
-          },
-        ]
-      }
-    />
   </View>
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "rgb(37, 32, 51)",
+          "bottom": 0,
+          "flex": 1,
+          "left": 0,
+          "opacity": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        },
+        Object {
+          "borderRadius": 40,
+        },
+      ]
+    }
+  />
 </View>
 `;
 
 exports[`iOS should support the "iconOnly" and "large" property 1`] = `
 <View
-  colors={
+  accessibilityComponentType="button"
+  accessibilityLabel="Lorem ipsum"
+  accessibilityTraits={
     Array [
-      "rgb(0, 215, 117)",
-      "rgb(0, 189, 104)",
+      "button",
     ]
   }
-  style={
-    Array [
-      Array [
-        Object {
-          "borderRadius": 40,
-          "minHeight": 32,
-        },
-        Object {
-          "minHeight": 48,
-        },
-        Object {
-          "width": 48,
-        },
-      ],
-      Object {},
-      null,
-    ]
-  }
+  accessible={true}
+  hitSlop={undefined}
+  nativeID={undefined}
+  onLayout={undefined}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={null}
+  testID={undefined}
 >
   <View
-    accessibilityComponentType="button"
-    accessibilityLabel="Lorem ipsum"
-    accessibilityTraits={
+    colors={
       Array [
-        "button",
+        "rgb(0, 215, 117)",
+        "rgb(0, 189, 104)",
       ]
     }
-    accessible={true}
-    hitSlop={undefined}
-    nativeID={undefined}
-    onLayout={undefined}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
     style={
       Array [
         Array [
           Object {
+            "alignItems": "center",
+            "borderColor": "transparent",
             "borderRadius": 40,
-            "minHeight": 32,
-            "paddingHorizontal": 12,
-            "paddingVertical": 8,
+            "borderWidth": 2,
+            "flexDirection": "row",
+            "justifyContent": "center",
+            "paddingHorizontal": 10,
+            "paddingVertical": 6,
           },
           Object {
-            "minHeight": 48,
-            "paddingHorizontal": 16,
+            "paddingHorizontal": 14,
+            "paddingVertical": 10,
           },
           Object {
-            "paddingHorizontal": 0,
+            "paddingHorizontal": 10,
+            "paddingVertical": 10,
           },
         ],
         Object {},
-        Array [
-          Object {
-            "alignItems": "center",
-            "flex": 1,
-            "flexDirection": "row",
-            "justifyContent": "center",
-          },
-          undefined,
-          undefined,
-        ],
       ]
     }
-    testID={undefined}
   >
     <Text
       accessible={true}
@@ -3029,21 +2616,23 @@ exports[`iOS should support the "iconOnly" and "large" property 1`] = `
           Array [
             Array [
               Object {
-                "backgroundColor": "transparent",
                 "color": "rgb(255, 255, 255)",
+                "lineHeight": null,
               },
-              undefined,
+              Object {
+                "lineHeight": 24,
+              },
               undefined,
             ],
             Object {},
             Array [
               Object {
-                "marginLeft": 4,
+                "lineHeight": null,
+                "marginStart": 4,
               },
               undefined,
               Object {
-                "marginLeft": 0,
-                "marginRight": 0,
+                "marginStart": 0,
               },
             ],
           ],
@@ -3052,106 +2641,82 @@ exports[`iOS should support the "iconOnly" and "large" property 1`] = `
     >
       
     </Text>
-    <View
-      style={
-        Array [
-          Object {
-            "backgroundColor": "rgb(37, 32, 51)",
-            "bottom": 0,
-            "flex": 1,
-            "left": 0,
-            "opacity": 0,
-            "position": "absolute",
-            "right": 0,
-            "top": 0,
-          },
-          Object {
-            "borderRadius": 40,
-          },
-        ]
-      }
-    />
   </View>
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "rgb(37, 32, 51)",
+          "bottom": 0,
+          "flex": 1,
+          "left": 0,
+          "opacity": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        },
+        Object {
+          "borderRadius": 40,
+        },
+      ]
+    }
+  />
 </View>
 `;
 
 exports[`iOS should support the "large" and secondary property 1`] = `
 <View
-  colors={
+  accessibilityComponentType="button"
+  accessibilityLabel="Lorem ipsum"
+  accessibilityTraits={
     Array [
-      "rgb(255, 255, 255)",
-      "rgb(255, 255, 255)",
+      "button",
     ]
   }
-  style={
-    Array [
-      Array [
-        Object {
-          "borderRadius": 40,
-          "minHeight": 32,
-        },
-        Object {
-          "borderColor": "rgb(230, 228, 235)",
-          "borderWidth": 2,
-        },
-        Object {
-          "minHeight": 48,
-        },
-      ],
-      Object {},
-      null,
-    ]
-  }
+  accessible={true}
+  hitSlop={undefined}
+  nativeID={undefined}
+  onLayout={undefined}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={null}
+  testID={undefined}
 >
   <View
-    accessibilityComponentType="button"
-    accessibilityLabel="Lorem ipsum"
-    accessibilityTraits={
+    colors={
       Array [
-        "button",
+        "rgb(255, 255, 255)",
+        "rgb(255, 255, 255)",
       ]
     }
-    accessible={true}
-    hitSlop={undefined}
-    nativeID={undefined}
-    onLayout={undefined}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
     style={
       Array [
         Array [
           Object {
+            "alignItems": "center",
+            "borderColor": "transparent",
             "borderRadius": 40,
-            "minHeight": 32,
-            "paddingHorizontal": 12,
-            "paddingVertical": 8,
-          },
-          Object {
+            "borderWidth": 2,
+            "flexDirection": "row",
+            "justifyContent": "center",
             "paddingHorizontal": 10,
             "paddingVertical": 6,
           },
           Object {
-            "height": "100%",
+            "borderColor": "rgb(230, 228, 235)",
+          },
+          Object {
             "paddingHorizontal": 14,
+            "paddingVertical": 10,
           },
         ],
         Object {},
-        Array [
-          Object {
-            "alignItems": "center",
-            "flex": 1,
-            "flexDirection": "row",
-            "justifyContent": "center",
-          },
-          undefined,
-        ],
       ]
     }
-    testID={undefined}
   >
     <Text
       accessible={true}
@@ -3171,13 +2736,15 @@ exports[`iOS should support the "large" and secondary property 1`] = `
           Array [
             Array [
               Object {
-                "backgroundColor": "transparent",
                 "color": "rgb(255, 255, 255)",
+                "lineHeight": null,
               },
               Object {
                 "color": "rgb(0, 178, 214)",
               },
-              undefined,
+              Object {
+                "lineHeight": 24,
+              },
             ],
             Object {},
           ],
@@ -3186,98 +2753,79 @@ exports[`iOS should support the "large" and secondary property 1`] = `
     >
       Lorem ipsum
     </Text>
-    <View
-      style={
-        Array [
-          Object {
-            "backgroundColor": "rgb(37, 32, 51)",
-            "bottom": 0,
-            "flex": 1,
-            "left": 0,
-            "opacity": 0,
-            "position": "absolute",
-            "right": 0,
-            "top": 0,
-          },
-          Object {
-            "borderRadius": 40,
-          },
-        ]
-      }
-    />
   </View>
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "rgb(37, 32, 51)",
+          "bottom": 0,
+          "flex": 1,
+          "left": 0,
+          "opacity": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        },
+        Object {
+          "borderRadius": 40,
+        },
+      ]
+    }
+  />
 </View>
 `;
 
 exports[`iOS should support the "large" property 1`] = `
 <View
-  colors={
+  accessibilityComponentType="button"
+  accessibilityLabel="Lorem ipsum"
+  accessibilityTraits={
     Array [
-      "rgb(0, 215, 117)",
-      "rgb(0, 189, 104)",
+      "button",
     ]
   }
-  style={
-    Array [
-      Array [
-        Object {
-          "borderRadius": 40,
-          "minHeight": 32,
-        },
-        Object {
-          "minHeight": 48,
-        },
-      ],
-      Object {},
-      null,
-    ]
-  }
+  accessible={true}
+  hitSlop={undefined}
+  nativeID={undefined}
+  onLayout={undefined}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={null}
+  testID={undefined}
 >
   <View
-    accessibilityComponentType="button"
-    accessibilityLabel="Lorem ipsum"
-    accessibilityTraits={
+    colors={
       Array [
-        "button",
+        "rgb(0, 215, 117)",
+        "rgb(0, 189, 104)",
       ]
     }
-    accessible={true}
-    hitSlop={undefined}
-    nativeID={undefined}
-    onLayout={undefined}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
     style={
       Array [
         Array [
           Object {
+            "alignItems": "center",
+            "borderColor": "transparent",
             "borderRadius": 40,
-            "minHeight": 32,
-            "paddingHorizontal": 12,
-            "paddingVertical": 8,
+            "borderWidth": 2,
+            "flexDirection": "row",
+            "justifyContent": "center",
+            "paddingHorizontal": 10,
+            "paddingVertical": 6,
           },
           Object {
-            "minHeight": 48,
-            "paddingHorizontal": 16,
+            "paddingHorizontal": 14,
+            "paddingVertical": 10,
           },
         ],
         Object {},
-        Array [
-          Object {
-            "alignItems": "center",
-            "flex": 1,
-            "flexDirection": "row",
-            "justifyContent": "center",
-          },
-          undefined,
-        ],
       ]
     }
-    testID={undefined}
   >
     <Text
       accessible={true}
@@ -3297,10 +2845,12 @@ exports[`iOS should support the "large" property 1`] = `
           Array [
             Array [
               Object {
-                "backgroundColor": "transparent",
                 "color": "rgb(255, 255, 255)",
+                "lineHeight": null,
               },
-              undefined,
+              Object {
+                "lineHeight": 24,
+              },
             ],
             Object {},
           ],
@@ -3309,25 +2859,25 @@ exports[`iOS should support the "large" property 1`] = `
     >
       Lorem ipsum
     </Text>
-    <View
-      style={
-        Array [
-          Object {
-            "backgroundColor": "rgb(37, 32, 51)",
-            "bottom": 0,
-            "flex": 1,
-            "left": 0,
-            "opacity": 0,
-            "position": "absolute",
-            "right": 0,
-            "top": 0,
-          },
-          Object {
-            "borderRadius": 40,
-          },
-        ]
-      }
-    />
   </View>
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "rgb(37, 32, 51)",
+          "bottom": 0,
+          "flex": 1,
+          "left": 0,
+          "opacity": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        },
+        Object {
+          "borderRadius": 40,
+        },
+      ]
+    }
+  />
 </View>
 `;

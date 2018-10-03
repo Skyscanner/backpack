@@ -12,96 +12,75 @@ exports[`iOS BpkNudger should disable theming if the required attribute is omitt
     ]
   }
 >
-  <BVLinearGradient
-    colors={
+  <View
+    accessibilityComponentType="button"
+    accessibilityLabel="Decrease"
+    accessibilityTraits={
       Array [
-        4294967295,
-        4294967295,
+        "button",
       ]
     }
-    endPoint={
-      Object {
-        "x": 0.5,
-        "y": 1,
-      }
-    }
-    locations={null}
-    startPoint={
-      Object {
-        "x": 0.5,
-        "y": 0,
-      }
-    }
+    accessible={true}
+    hitSlop={undefined}
+    nativeID={undefined}
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
     style={
-      Array [
-        Array [
-          Object {
-            "borderRadius": 40,
-            "minHeight": 32,
-          },
-          Object {
-            "borderColor": "rgb(230, 228, 235)",
-            "borderWidth": 2,
-          },
-          Object {
-            "width": 32,
-          },
-        ],
-        Object {},
-        Object {
-          "marginRight": 4,
-        },
-      ]
+      Object {
+        "marginRight": 4,
+      }
     }
+    testID={undefined}
   >
-    <View
-      accessibilityComponentType="button"
-      accessibilityLabel="Decrease"
-      accessibilityTraits={
+    <BVLinearGradient
+      colors={
         Array [
-          "button",
+          4294967295,
+          4294967295,
         ]
       }
-      accessible={true}
-      hitSlop={undefined}
-      nativeID={undefined}
-      onLayout={undefined}
-      onResponderGrant={[Function]}
-      onResponderMove={[Function]}
-      onResponderRelease={[Function]}
-      onResponderTerminate={[Function]}
-      onResponderTerminationRequest={[Function]}
-      onStartShouldSetResponder={[Function]}
+      endPoint={
+        Object {
+          "x": 0.5,
+          "y": 1,
+        }
+      }
+      locations={null}
+      startPoint={
+        Object {
+          "x": 0.5,
+          "y": 0,
+        }
+      }
       style={
         Array [
           Array [
             Object {
+              "alignItems": "center",
+              "borderColor": "transparent",
               "borderRadius": 40,
-              "minHeight": 32,
-              "paddingHorizontal": 12,
-              "paddingVertical": 8,
-            },
-            Object {
+              "borderWidth": 2,
+              "flexDirection": "row",
+              "justifyContent": "center",
               "paddingHorizontal": 10,
               "paddingVertical": 6,
             },
             Object {
-              "paddingHorizontal": 0,
+              "borderColor": "rgb(230, 228, 235)",
+            },
+            Object {
+              "paddingHorizontal": 6,
+              "paddingVertical": 6,
             },
           ],
           Object {},
-          Array [
-            Object {
-              "alignItems": "center",
-              "flex": 1,
-              "flexDirection": "row",
-              "justifyContent": "center",
-            },
-            undefined,
-          ],
         ]
       }
-      testID={undefined}
     >
       <Text
         accessible={true}
@@ -121,8 +100,8 @@ exports[`iOS BpkNudger should disable theming if the required attribute is omitt
             Array [
               Array [
                 Object {
-                  "backgroundColor": "transparent",
                   "color": "rgb(255, 255, 255)",
+                  "lineHeight": null,
                 },
                 Object {
                   "color": "rgb(0, 178, 214)",
@@ -132,11 +111,11 @@ exports[`iOS BpkNudger should disable theming if the required attribute is omitt
               Object {},
               Array [
                 Object {
-                  "marginLeft": 4,
+                  "lineHeight": null,
+                  "marginStart": 4,
                 },
                 Object {
-                  "marginLeft": 0,
-                  "marginRight": 0,
+                  "marginStart": 0,
                 },
               ],
             ],
@@ -145,27 +124,27 @@ exports[`iOS BpkNudger should disable theming if the required attribute is omitt
       >
         
       </Text>
-      <View
-        style={
-          Array [
-            Object {
-              "backgroundColor": "rgb(37, 32, 51)",
-              "bottom": 0,
-              "flex": 1,
-              "left": 0,
-              "opacity": 0,
-              "position": "absolute",
-              "right": 0,
-              "top": 0,
-            },
-            Object {
-              "borderRadius": 40,
-            },
-          ]
-        }
-      />
-    </View>
-  </BVLinearGradient>
+    </BVLinearGradient>
+    <View
+      style={
+        Array [
+          Object {
+            "backgroundColor": "rgb(37, 32, 51)",
+            "bottom": 0,
+            "flex": 1,
+            "left": 0,
+            "opacity": 0,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          },
+          Object {
+            "borderRadius": 40,
+          },
+        ]
+      }
+    />
+  </View>
   <Text
     accessible={true}
     allowFontScaling={true}
@@ -190,96 +169,75 @@ exports[`iOS BpkNudger should disable theming if the required attribute is omitt
   >
     3
   </Text>
-  <BVLinearGradient
-    colors={
+  <View
+    accessibilityComponentType="button"
+    accessibilityLabel="Increase"
+    accessibilityTraits={
       Array [
-        4294967295,
-        4294967295,
+        "button",
       ]
     }
-    endPoint={
-      Object {
-        "x": 0.5,
-        "y": 1,
-      }
-    }
-    locations={null}
-    startPoint={
-      Object {
-        "x": 0.5,
-        "y": 0,
-      }
-    }
+    accessible={true}
+    hitSlop={undefined}
+    nativeID={undefined}
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
     style={
-      Array [
-        Array [
-          Object {
-            "borderRadius": 40,
-            "minHeight": 32,
-          },
-          Object {
-            "borderColor": "rgb(230, 228, 235)",
-            "borderWidth": 2,
-          },
-          Object {
-            "width": 32,
-          },
-        ],
-        Object {},
-        Object {
-          "marginLeft": 4,
-        },
-      ]
+      Object {
+        "marginLeft": 4,
+      }
     }
+    testID={undefined}
   >
-    <View
-      accessibilityComponentType="button"
-      accessibilityLabel="Increase"
-      accessibilityTraits={
+    <BVLinearGradient
+      colors={
         Array [
-          "button",
+          4294967295,
+          4294967295,
         ]
       }
-      accessible={true}
-      hitSlop={undefined}
-      nativeID={undefined}
-      onLayout={undefined}
-      onResponderGrant={[Function]}
-      onResponderMove={[Function]}
-      onResponderRelease={[Function]}
-      onResponderTerminate={[Function]}
-      onResponderTerminationRequest={[Function]}
-      onStartShouldSetResponder={[Function]}
+      endPoint={
+        Object {
+          "x": 0.5,
+          "y": 1,
+        }
+      }
+      locations={null}
+      startPoint={
+        Object {
+          "x": 0.5,
+          "y": 0,
+        }
+      }
       style={
         Array [
           Array [
             Object {
+              "alignItems": "center",
+              "borderColor": "transparent",
               "borderRadius": 40,
-              "minHeight": 32,
-              "paddingHorizontal": 12,
-              "paddingVertical": 8,
-            },
-            Object {
+              "borderWidth": 2,
+              "flexDirection": "row",
+              "justifyContent": "center",
               "paddingHorizontal": 10,
               "paddingVertical": 6,
             },
             Object {
-              "paddingHorizontal": 0,
+              "borderColor": "rgb(230, 228, 235)",
+            },
+            Object {
+              "paddingHorizontal": 6,
+              "paddingVertical": 6,
             },
           ],
           Object {},
-          Array [
-            Object {
-              "alignItems": "center",
-              "flex": 1,
-              "flexDirection": "row",
-              "justifyContent": "center",
-            },
-            undefined,
-          ],
         ]
       }
-      testID={undefined}
     >
       <Text
         accessible={true}
@@ -299,8 +257,8 @@ exports[`iOS BpkNudger should disable theming if the required attribute is omitt
             Array [
               Array [
                 Object {
-                  "backgroundColor": "transparent",
                   "color": "rgb(255, 255, 255)",
+                  "lineHeight": null,
                 },
                 Object {
                   "color": "rgb(0, 178, 214)",
@@ -310,11 +268,11 @@ exports[`iOS BpkNudger should disable theming if the required attribute is omitt
               Object {},
               Array [
                 Object {
-                  "marginLeft": 4,
+                  "lineHeight": null,
+                  "marginStart": 4,
                 },
                 Object {
-                  "marginLeft": 0,
-                  "marginRight": 0,
+                  "marginStart": 0,
                 },
               ],
             ],
@@ -323,27 +281,27 @@ exports[`iOS BpkNudger should disable theming if the required attribute is omitt
       >
         
       </Text>
-      <View
-        style={
-          Array [
-            Object {
-              "backgroundColor": "rgb(37, 32, 51)",
-              "bottom": 0,
-              "flex": 1,
-              "left": 0,
-              "opacity": 0,
-              "position": "absolute",
-              "right": 0,
-              "top": 0,
-            },
-            Object {
-              "borderRadius": 40,
-            },
-          ]
-        }
-      />
-    </View>
-  </BVLinearGradient>
+    </BVLinearGradient>
+    <View
+      style={
+        Array [
+          Object {
+            "backgroundColor": "rgb(37, 32, 51)",
+            "bottom": 0,
+            "flex": 1,
+            "left": 0,
+            "opacity": 0,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          },
+          Object {
+            "borderRadius": 40,
+          },
+        ]
+      }
+    />
+  </View>
 </View>
 `;
 
@@ -359,96 +317,75 @@ exports[`iOS BpkNudger should render correctly 1`] = `
     ]
   }
 >
-  <BVLinearGradient
-    colors={
+  <View
+    accessibilityComponentType="button"
+    accessibilityLabel="Decrease"
+    accessibilityTraits={
       Array [
-        4294967295,
-        4294967295,
+        "button",
       ]
     }
-    endPoint={
-      Object {
-        "x": 0.5,
-        "y": 1,
-      }
-    }
-    locations={null}
-    startPoint={
-      Object {
-        "x": 0.5,
-        "y": 0,
-      }
-    }
+    accessible={true}
+    hitSlop={undefined}
+    nativeID={undefined}
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
     style={
-      Array [
-        Array [
-          Object {
-            "borderRadius": 40,
-            "minHeight": 32,
-          },
-          Object {
-            "borderColor": "rgb(230, 228, 235)",
-            "borderWidth": 2,
-          },
-          Object {
-            "width": 32,
-          },
-        ],
-        Object {},
-        Object {
-          "marginRight": 4,
-        },
-      ]
+      Object {
+        "marginRight": 4,
+      }
     }
+    testID={undefined}
   >
-    <View
-      accessibilityComponentType="button"
-      accessibilityLabel="Decrease"
-      accessibilityTraits={
+    <BVLinearGradient
+      colors={
         Array [
-          "button",
+          4294967295,
+          4294967295,
         ]
       }
-      accessible={true}
-      hitSlop={undefined}
-      nativeID={undefined}
-      onLayout={undefined}
-      onResponderGrant={[Function]}
-      onResponderMove={[Function]}
-      onResponderRelease={[Function]}
-      onResponderTerminate={[Function]}
-      onResponderTerminationRequest={[Function]}
-      onStartShouldSetResponder={[Function]}
+      endPoint={
+        Object {
+          "x": 0.5,
+          "y": 1,
+        }
+      }
+      locations={null}
+      startPoint={
+        Object {
+          "x": 0.5,
+          "y": 0,
+        }
+      }
       style={
         Array [
           Array [
             Object {
+              "alignItems": "center",
+              "borderColor": "transparent",
               "borderRadius": 40,
-              "minHeight": 32,
-              "paddingHorizontal": 12,
-              "paddingVertical": 8,
-            },
-            Object {
+              "borderWidth": 2,
+              "flexDirection": "row",
+              "justifyContent": "center",
               "paddingHorizontal": 10,
               "paddingVertical": 6,
             },
             Object {
-              "paddingHorizontal": 0,
+              "borderColor": "rgb(230, 228, 235)",
+            },
+            Object {
+              "paddingHorizontal": 6,
+              "paddingVertical": 6,
             },
           ],
           Object {},
-          Array [
-            Object {
-              "alignItems": "center",
-              "flex": 1,
-              "flexDirection": "row",
-              "justifyContent": "center",
-            },
-            undefined,
-          ],
         ]
       }
-      testID={undefined}
     >
       <Text
         accessible={true}
@@ -468,8 +405,8 @@ exports[`iOS BpkNudger should render correctly 1`] = `
             Array [
               Array [
                 Object {
-                  "backgroundColor": "transparent",
                   "color": "rgb(255, 255, 255)",
+                  "lineHeight": null,
                 },
                 Object {
                   "color": "rgb(0, 178, 214)",
@@ -479,11 +416,11 @@ exports[`iOS BpkNudger should render correctly 1`] = `
               Object {},
               Array [
                 Object {
-                  "marginLeft": 4,
+                  "lineHeight": null,
+                  "marginStart": 4,
                 },
                 Object {
-                  "marginLeft": 0,
-                  "marginRight": 0,
+                  "marginStart": 0,
                 },
               ],
             ],
@@ -492,27 +429,27 @@ exports[`iOS BpkNudger should render correctly 1`] = `
       >
         
       </Text>
-      <View
-        style={
-          Array [
-            Object {
-              "backgroundColor": "rgb(37, 32, 51)",
-              "bottom": 0,
-              "flex": 1,
-              "left": 0,
-              "opacity": 0,
-              "position": "absolute",
-              "right": 0,
-              "top": 0,
-            },
-            Object {
-              "borderRadius": 40,
-            },
-          ]
-        }
-      />
-    </View>
-  </BVLinearGradient>
+    </BVLinearGradient>
+    <View
+      style={
+        Array [
+          Object {
+            "backgroundColor": "rgb(37, 32, 51)",
+            "bottom": 0,
+            "flex": 1,
+            "left": 0,
+            "opacity": 0,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          },
+          Object {
+            "borderRadius": 40,
+          },
+        ]
+      }
+    />
+  </View>
   <Text
     accessible={true}
     allowFontScaling={true}
@@ -537,96 +474,75 @@ exports[`iOS BpkNudger should render correctly 1`] = `
   >
     3
   </Text>
-  <BVLinearGradient
-    colors={
+  <View
+    accessibilityComponentType="button"
+    accessibilityLabel="Increase"
+    accessibilityTraits={
       Array [
-        4294967295,
-        4294967295,
+        "button",
       ]
     }
-    endPoint={
-      Object {
-        "x": 0.5,
-        "y": 1,
-      }
-    }
-    locations={null}
-    startPoint={
-      Object {
-        "x": 0.5,
-        "y": 0,
-      }
-    }
+    accessible={true}
+    hitSlop={undefined}
+    nativeID={undefined}
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
     style={
-      Array [
-        Array [
-          Object {
-            "borderRadius": 40,
-            "minHeight": 32,
-          },
-          Object {
-            "borderColor": "rgb(230, 228, 235)",
-            "borderWidth": 2,
-          },
-          Object {
-            "width": 32,
-          },
-        ],
-        Object {},
-        Object {
-          "marginLeft": 4,
-        },
-      ]
+      Object {
+        "marginLeft": 4,
+      }
     }
+    testID={undefined}
   >
-    <View
-      accessibilityComponentType="button"
-      accessibilityLabel="Increase"
-      accessibilityTraits={
+    <BVLinearGradient
+      colors={
         Array [
-          "button",
+          4294967295,
+          4294967295,
         ]
       }
-      accessible={true}
-      hitSlop={undefined}
-      nativeID={undefined}
-      onLayout={undefined}
-      onResponderGrant={[Function]}
-      onResponderMove={[Function]}
-      onResponderRelease={[Function]}
-      onResponderTerminate={[Function]}
-      onResponderTerminationRequest={[Function]}
-      onStartShouldSetResponder={[Function]}
+      endPoint={
+        Object {
+          "x": 0.5,
+          "y": 1,
+        }
+      }
+      locations={null}
+      startPoint={
+        Object {
+          "x": 0.5,
+          "y": 0,
+        }
+      }
       style={
         Array [
           Array [
             Object {
+              "alignItems": "center",
+              "borderColor": "transparent",
               "borderRadius": 40,
-              "minHeight": 32,
-              "paddingHorizontal": 12,
-              "paddingVertical": 8,
-            },
-            Object {
+              "borderWidth": 2,
+              "flexDirection": "row",
+              "justifyContent": "center",
               "paddingHorizontal": 10,
               "paddingVertical": 6,
             },
             Object {
-              "paddingHorizontal": 0,
+              "borderColor": "rgb(230, 228, 235)",
+            },
+            Object {
+              "paddingHorizontal": 6,
+              "paddingVertical": 6,
             },
           ],
           Object {},
-          Array [
-            Object {
-              "alignItems": "center",
-              "flex": 1,
-              "flexDirection": "row",
-              "justifyContent": "center",
-            },
-            undefined,
-          ],
         ]
       }
-      testID={undefined}
     >
       <Text
         accessible={true}
@@ -646,8 +562,8 @@ exports[`iOS BpkNudger should render correctly 1`] = `
             Array [
               Array [
                 Object {
-                  "backgroundColor": "transparent",
                   "color": "rgb(255, 255, 255)",
+                  "lineHeight": null,
                 },
                 Object {
                   "color": "rgb(0, 178, 214)",
@@ -657,11 +573,11 @@ exports[`iOS BpkNudger should render correctly 1`] = `
               Object {},
               Array [
                 Object {
-                  "marginLeft": 4,
+                  "lineHeight": null,
+                  "marginStart": 4,
                 },
                 Object {
-                  "marginLeft": 0,
-                  "marginRight": 0,
+                  "marginStart": 0,
                 },
               ],
             ],
@@ -670,27 +586,27 @@ exports[`iOS BpkNudger should render correctly 1`] = `
       >
         
       </Text>
-      <View
-        style={
-          Array [
-            Object {
-              "backgroundColor": "rgb(37, 32, 51)",
-              "bottom": 0,
-              "flex": 1,
-              "left": 0,
-              "opacity": 0,
-              "position": "absolute",
-              "right": 0,
-              "top": 0,
-            },
-            Object {
-              "borderRadius": 40,
-            },
-          ]
-        }
-      />
-    </View>
-  </BVLinearGradient>
+    </BVLinearGradient>
+    <View
+      style={
+        Array [
+          Object {
+            "backgroundColor": "rgb(37, 32, 51)",
+            "bottom": 0,
+            "flex": 1,
+            "left": 0,
+            "opacity": 0,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          },
+          Object {
+            "borderRadius": 40,
+          },
+        ]
+      }
+    />
+  </View>
 </View>
 `;
 
@@ -706,103 +622,77 @@ exports[`iOS BpkNudger should render correctly when value is a not an integer 1`
     ]
   }
 >
-  <BVLinearGradient
-    colors={
+  <View
+    accessibilityComponentType="button"
+    accessibilityLabel="Decrease"
+    accessibilityTraits={
       Array [
-        4293321963,
-        4293321963,
+        "button",
+        "disabled",
       ]
     }
-    endPoint={
-      Object {
-        "x": 0.5,
-        "y": 1,
-      }
-    }
-    locations={null}
-    startPoint={
-      Object {
-        "x": 0.5,
-        "y": 0,
-      }
-    }
+    accessible={true}
+    hitSlop={undefined}
+    nativeID={undefined}
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
     style={
-      Array [
-        Array [
-          Object {
-            "borderRadius": 40,
-            "minHeight": 32,
-          },
-          Object {
-            "borderColor": "rgb(230, 228, 235)",
-            "borderWidth": 2,
-          },
-          Object {
-            "borderColor": "transparent",
-            "borderWidth": 0,
-          },
-          Object {
-            "width": 32,
-          },
-        ],
-        Object {},
-        Object {
-          "marginRight": 4,
-        },
-      ]
+      Object {
+        "marginRight": 4,
+      }
     }
+    testID={undefined}
   >
-    <View
-      accessibilityComponentType="button"
-      accessibilityLabel="Decrease"
-      accessibilityTraits={
+    <BVLinearGradient
+      colors={
         Array [
-          "button",
-          "disabled",
+          4293321963,
+          4293321963,
         ]
       }
-      accessible={true}
-      hitSlop={undefined}
-      nativeID={undefined}
-      onLayout={undefined}
-      onResponderGrant={[Function]}
-      onResponderMove={[Function]}
-      onResponderRelease={[Function]}
-      onResponderTerminate={[Function]}
-      onResponderTerminationRequest={[Function]}
-      onStartShouldSetResponder={[Function]}
+      endPoint={
+        Object {
+          "x": 0.5,
+          "y": 1,
+        }
+      }
+      locations={null}
+      startPoint={
+        Object {
+          "x": 0.5,
+          "y": 0,
+        }
+      }
       style={
         Array [
           Array [
             Object {
+              "alignItems": "center",
+              "borderColor": "transparent",
               "borderRadius": 40,
-              "minHeight": 32,
-              "paddingHorizontal": 12,
-              "paddingVertical": 8,
-            },
-            Object {
+              "borderWidth": 2,
+              "flexDirection": "row",
+              "justifyContent": "center",
               "paddingHorizontal": 10,
               "paddingVertical": 6,
             },
+            Object {
+              "borderColor": "rgb(230, 228, 235)",
+            },
             undefined,
             Object {
-              "paddingHorizontal": 0,
+              "paddingHorizontal": 6,
+              "paddingVertical": 6,
             },
           ],
           Object {},
-          Array [
-            Object {
-              "alignItems": "center",
-              "flex": 1,
-              "flexDirection": "row",
-              "justifyContent": "center",
-            },
-            undefined,
-            undefined,
-          ],
         ]
       }
-      testID={undefined}
     >
       <Text
         accessible={true}
@@ -822,8 +712,8 @@ exports[`iOS BpkNudger should render correctly when value is a not an integer 1`
             Array [
               Array [
                 Object {
-                  "backgroundColor": "transparent",
                   "color": "rgb(255, 255, 255)",
+                  "lineHeight": null,
                 },
                 Object {
                   "color": "rgb(0, 178, 214)",
@@ -836,12 +726,12 @@ exports[`iOS BpkNudger should render correctly when value is a not an integer 1`
               Object {},
               Array [
                 Object {
-                  "marginLeft": 4,
+                  "lineHeight": null,
+                  "marginStart": 4,
                 },
                 undefined,
                 Object {
-                  "marginLeft": 0,
-                  "marginRight": 0,
+                  "marginStart": 0,
                 },
               ],
             ],
@@ -850,27 +740,27 @@ exports[`iOS BpkNudger should render correctly when value is a not an integer 1`
       >
         
       </Text>
-      <View
-        style={
-          Array [
-            Object {
-              "backgroundColor": "rgb(37, 32, 51)",
-              "bottom": 0,
-              "flex": 1,
-              "left": 0,
-              "opacity": 0,
-              "position": "absolute",
-              "right": 0,
-              "top": 0,
-            },
-            Object {
-              "borderRadius": 40,
-            },
-          ]
-        }
-      />
-    </View>
-  </BVLinearGradient>
+    </BVLinearGradient>
+    <View
+      style={
+        Array [
+          Object {
+            "backgroundColor": "rgb(37, 32, 51)",
+            "bottom": 0,
+            "flex": 1,
+            "left": 0,
+            "opacity": 0,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          },
+          Object {
+            "borderRadius": 40,
+          },
+        ]
+      }
+    />
+  </View>
   <Text
     accessible={true}
     allowFontScaling={true}
@@ -895,96 +785,75 @@ exports[`iOS BpkNudger should render correctly when value is a not an integer 1`
   >
     1
   </Text>
-  <BVLinearGradient
-    colors={
+  <View
+    accessibilityComponentType="button"
+    accessibilityLabel="Increase"
+    accessibilityTraits={
       Array [
-        4294967295,
-        4294967295,
+        "button",
       ]
     }
-    endPoint={
-      Object {
-        "x": 0.5,
-        "y": 1,
-      }
-    }
-    locations={null}
-    startPoint={
-      Object {
-        "x": 0.5,
-        "y": 0,
-      }
-    }
+    accessible={true}
+    hitSlop={undefined}
+    nativeID={undefined}
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
     style={
-      Array [
-        Array [
-          Object {
-            "borderRadius": 40,
-            "minHeight": 32,
-          },
-          Object {
-            "borderColor": "rgb(230, 228, 235)",
-            "borderWidth": 2,
-          },
-          Object {
-            "width": 32,
-          },
-        ],
-        Object {},
-        Object {
-          "marginLeft": 4,
-        },
-      ]
+      Object {
+        "marginLeft": 4,
+      }
     }
+    testID={undefined}
   >
-    <View
-      accessibilityComponentType="button"
-      accessibilityLabel="Increase"
-      accessibilityTraits={
+    <BVLinearGradient
+      colors={
         Array [
-          "button",
+          4294967295,
+          4294967295,
         ]
       }
-      accessible={true}
-      hitSlop={undefined}
-      nativeID={undefined}
-      onLayout={undefined}
-      onResponderGrant={[Function]}
-      onResponderMove={[Function]}
-      onResponderRelease={[Function]}
-      onResponderTerminate={[Function]}
-      onResponderTerminationRequest={[Function]}
-      onStartShouldSetResponder={[Function]}
+      endPoint={
+        Object {
+          "x": 0.5,
+          "y": 1,
+        }
+      }
+      locations={null}
+      startPoint={
+        Object {
+          "x": 0.5,
+          "y": 0,
+        }
+      }
       style={
         Array [
           Array [
             Object {
+              "alignItems": "center",
+              "borderColor": "transparent",
               "borderRadius": 40,
-              "minHeight": 32,
-              "paddingHorizontal": 12,
-              "paddingVertical": 8,
-            },
-            Object {
+              "borderWidth": 2,
+              "flexDirection": "row",
+              "justifyContent": "center",
               "paddingHorizontal": 10,
               "paddingVertical": 6,
             },
             Object {
-              "paddingHorizontal": 0,
+              "borderColor": "rgb(230, 228, 235)",
+            },
+            Object {
+              "paddingHorizontal": 6,
+              "paddingVertical": 6,
             },
           ],
           Object {},
-          Array [
-            Object {
-              "alignItems": "center",
-              "flex": 1,
-              "flexDirection": "row",
-              "justifyContent": "center",
-            },
-            undefined,
-          ],
         ]
       }
-      testID={undefined}
     >
       <Text
         accessible={true}
@@ -1004,8 +873,8 @@ exports[`iOS BpkNudger should render correctly when value is a not an integer 1`
             Array [
               Array [
                 Object {
-                  "backgroundColor": "transparent",
                   "color": "rgb(255, 255, 255)",
+                  "lineHeight": null,
                 },
                 Object {
                   "color": "rgb(0, 178, 214)",
@@ -1015,11 +884,11 @@ exports[`iOS BpkNudger should render correctly when value is a not an integer 1`
               Object {},
               Array [
                 Object {
-                  "marginLeft": 4,
+                  "lineHeight": null,
+                  "marginStart": 4,
                 },
                 Object {
-                  "marginLeft": 0,
-                  "marginRight": 0,
+                  "marginStart": 0,
                 },
               ],
             ],
@@ -1028,27 +897,27 @@ exports[`iOS BpkNudger should render correctly when value is a not an integer 1`
       >
         
       </Text>
-      <View
-        style={
-          Array [
-            Object {
-              "backgroundColor": "rgb(37, 32, 51)",
-              "bottom": 0,
-              "flex": 1,
-              "left": 0,
-              "opacity": 0,
-              "position": "absolute",
-              "right": 0,
-              "top": 0,
-            },
-            Object {
-              "borderRadius": 40,
-            },
-          ]
-        }
-      />
-    </View>
-  </BVLinearGradient>
+    </BVLinearGradient>
+    <View
+      style={
+        Array [
+          Object {
+            "backgroundColor": "rgb(37, 32, 51)",
+            "bottom": 0,
+            "flex": 1,
+            "left": 0,
+            "opacity": 0,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          },
+          Object {
+            "borderRadius": 40,
+          },
+        ]
+      }
+    />
+  </View>
 </View>
 `;
 
@@ -1064,96 +933,75 @@ exports[`iOS BpkNudger should render correctly when value is greater than max 1`
     ]
   }
 >
-  <BVLinearGradient
-    colors={
+  <View
+    accessibilityComponentType="button"
+    accessibilityLabel="Decrease"
+    accessibilityTraits={
       Array [
-        4294967295,
-        4294967295,
+        "button",
       ]
     }
-    endPoint={
-      Object {
-        "x": 0.5,
-        "y": 1,
-      }
-    }
-    locations={null}
-    startPoint={
-      Object {
-        "x": 0.5,
-        "y": 0,
-      }
-    }
+    accessible={true}
+    hitSlop={undefined}
+    nativeID={undefined}
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
     style={
-      Array [
-        Array [
-          Object {
-            "borderRadius": 40,
-            "minHeight": 32,
-          },
-          Object {
-            "borderColor": "rgb(230, 228, 235)",
-            "borderWidth": 2,
-          },
-          Object {
-            "width": 32,
-          },
-        ],
-        Object {},
-        Object {
-          "marginRight": 4,
-        },
-      ]
+      Object {
+        "marginRight": 4,
+      }
     }
+    testID={undefined}
   >
-    <View
-      accessibilityComponentType="button"
-      accessibilityLabel="Decrease"
-      accessibilityTraits={
+    <BVLinearGradient
+      colors={
         Array [
-          "button",
+          4294967295,
+          4294967295,
         ]
       }
-      accessible={true}
-      hitSlop={undefined}
-      nativeID={undefined}
-      onLayout={undefined}
-      onResponderGrant={[Function]}
-      onResponderMove={[Function]}
-      onResponderRelease={[Function]}
-      onResponderTerminate={[Function]}
-      onResponderTerminationRequest={[Function]}
-      onStartShouldSetResponder={[Function]}
+      endPoint={
+        Object {
+          "x": 0.5,
+          "y": 1,
+        }
+      }
+      locations={null}
+      startPoint={
+        Object {
+          "x": 0.5,
+          "y": 0,
+        }
+      }
       style={
         Array [
           Array [
             Object {
+              "alignItems": "center",
+              "borderColor": "transparent",
               "borderRadius": 40,
-              "minHeight": 32,
-              "paddingHorizontal": 12,
-              "paddingVertical": 8,
-            },
-            Object {
+              "borderWidth": 2,
+              "flexDirection": "row",
+              "justifyContent": "center",
               "paddingHorizontal": 10,
               "paddingVertical": 6,
             },
             Object {
-              "paddingHorizontal": 0,
+              "borderColor": "rgb(230, 228, 235)",
+            },
+            Object {
+              "paddingHorizontal": 6,
+              "paddingVertical": 6,
             },
           ],
           Object {},
-          Array [
-            Object {
-              "alignItems": "center",
-              "flex": 1,
-              "flexDirection": "row",
-              "justifyContent": "center",
-            },
-            undefined,
-          ],
         ]
       }
-      testID={undefined}
     >
       <Text
         accessible={true}
@@ -1173,8 +1021,8 @@ exports[`iOS BpkNudger should render correctly when value is greater than max 1`
             Array [
               Array [
                 Object {
-                  "backgroundColor": "transparent",
                   "color": "rgb(255, 255, 255)",
+                  "lineHeight": null,
                 },
                 Object {
                   "color": "rgb(0, 178, 214)",
@@ -1184,11 +1032,11 @@ exports[`iOS BpkNudger should render correctly when value is greater than max 1`
               Object {},
               Array [
                 Object {
-                  "marginLeft": 4,
+                  "lineHeight": null,
+                  "marginStart": 4,
                 },
                 Object {
-                  "marginLeft": 0,
-                  "marginRight": 0,
+                  "marginStart": 0,
                 },
               ],
             ],
@@ -1197,27 +1045,27 @@ exports[`iOS BpkNudger should render correctly when value is greater than max 1`
       >
         
       </Text>
-      <View
-        style={
-          Array [
-            Object {
-              "backgroundColor": "rgb(37, 32, 51)",
-              "bottom": 0,
-              "flex": 1,
-              "left": 0,
-              "opacity": 0,
-              "position": "absolute",
-              "right": 0,
-              "top": 0,
-            },
-            Object {
-              "borderRadius": 40,
-            },
-          ]
-        }
-      />
-    </View>
-  </BVLinearGradient>
+    </BVLinearGradient>
+    <View
+      style={
+        Array [
+          Object {
+            "backgroundColor": "rgb(37, 32, 51)",
+            "bottom": 0,
+            "flex": 1,
+            "left": 0,
+            "opacity": 0,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          },
+          Object {
+            "borderRadius": 40,
+          },
+        ]
+      }
+    />
+  </View>
   <Text
     accessible={true}
     allowFontScaling={true}
@@ -1242,103 +1090,77 @@ exports[`iOS BpkNudger should render correctly when value is greater than max 1`
   >
     3
   </Text>
-  <BVLinearGradient
-    colors={
+  <View
+    accessibilityComponentType="button"
+    accessibilityLabel="Increase"
+    accessibilityTraits={
       Array [
-        4293321963,
-        4293321963,
+        "button",
+        "disabled",
       ]
     }
-    endPoint={
-      Object {
-        "x": 0.5,
-        "y": 1,
-      }
-    }
-    locations={null}
-    startPoint={
-      Object {
-        "x": 0.5,
-        "y": 0,
-      }
-    }
+    accessible={true}
+    hitSlop={undefined}
+    nativeID={undefined}
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
     style={
-      Array [
-        Array [
-          Object {
-            "borderRadius": 40,
-            "minHeight": 32,
-          },
-          Object {
-            "borderColor": "rgb(230, 228, 235)",
-            "borderWidth": 2,
-          },
-          Object {
-            "borderColor": "transparent",
-            "borderWidth": 0,
-          },
-          Object {
-            "width": 32,
-          },
-        ],
-        Object {},
-        Object {
-          "marginLeft": 4,
-        },
-      ]
+      Object {
+        "marginLeft": 4,
+      }
     }
+    testID={undefined}
   >
-    <View
-      accessibilityComponentType="button"
-      accessibilityLabel="Increase"
-      accessibilityTraits={
+    <BVLinearGradient
+      colors={
         Array [
-          "button",
-          "disabled",
+          4293321963,
+          4293321963,
         ]
       }
-      accessible={true}
-      hitSlop={undefined}
-      nativeID={undefined}
-      onLayout={undefined}
-      onResponderGrant={[Function]}
-      onResponderMove={[Function]}
-      onResponderRelease={[Function]}
-      onResponderTerminate={[Function]}
-      onResponderTerminationRequest={[Function]}
-      onStartShouldSetResponder={[Function]}
+      endPoint={
+        Object {
+          "x": 0.5,
+          "y": 1,
+        }
+      }
+      locations={null}
+      startPoint={
+        Object {
+          "x": 0.5,
+          "y": 0,
+        }
+      }
       style={
         Array [
           Array [
             Object {
+              "alignItems": "center",
+              "borderColor": "transparent",
               "borderRadius": 40,
-              "minHeight": 32,
-              "paddingHorizontal": 12,
-              "paddingVertical": 8,
-            },
-            Object {
+              "borderWidth": 2,
+              "flexDirection": "row",
+              "justifyContent": "center",
               "paddingHorizontal": 10,
               "paddingVertical": 6,
             },
+            Object {
+              "borderColor": "rgb(230, 228, 235)",
+            },
             undefined,
             Object {
-              "paddingHorizontal": 0,
+              "paddingHorizontal": 6,
+              "paddingVertical": 6,
             },
           ],
           Object {},
-          Array [
-            Object {
-              "alignItems": "center",
-              "flex": 1,
-              "flexDirection": "row",
-              "justifyContent": "center",
-            },
-            undefined,
-            undefined,
-          ],
         ]
       }
-      testID={undefined}
     >
       <Text
         accessible={true}
@@ -1358,8 +1180,8 @@ exports[`iOS BpkNudger should render correctly when value is greater than max 1`
             Array [
               Array [
                 Object {
-                  "backgroundColor": "transparent",
                   "color": "rgb(255, 255, 255)",
+                  "lineHeight": null,
                 },
                 Object {
                   "color": "rgb(0, 178, 214)",
@@ -1372,12 +1194,12 @@ exports[`iOS BpkNudger should render correctly when value is greater than max 1`
               Object {},
               Array [
                 Object {
-                  "marginLeft": 4,
+                  "lineHeight": null,
+                  "marginStart": 4,
                 },
                 undefined,
                 Object {
-                  "marginLeft": 0,
-                  "marginRight": 0,
+                  "marginStart": 0,
                 },
               ],
             ],
@@ -1386,27 +1208,27 @@ exports[`iOS BpkNudger should render correctly when value is greater than max 1`
       >
         
       </Text>
-      <View
-        style={
-          Array [
-            Object {
-              "backgroundColor": "rgb(37, 32, 51)",
-              "bottom": 0,
-              "flex": 1,
-              "left": 0,
-              "opacity": 0,
-              "position": "absolute",
-              "right": 0,
-              "top": 0,
-            },
-            Object {
-              "borderRadius": 40,
-            },
-          ]
-        }
-      />
-    </View>
-  </BVLinearGradient>
+    </BVLinearGradient>
+    <View
+      style={
+        Array [
+          Object {
+            "backgroundColor": "rgb(37, 32, 51)",
+            "bottom": 0,
+            "flex": 1,
+            "left": 0,
+            "opacity": 0,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          },
+          Object {
+            "borderRadius": 40,
+          },
+        ]
+      }
+    />
+  </View>
 </View>
 `;
 
@@ -1422,103 +1244,77 @@ exports[`iOS BpkNudger should render correctly when value is less than min 1`] =
     ]
   }
 >
-  <BVLinearGradient
-    colors={
+  <View
+    accessibilityComponentType="button"
+    accessibilityLabel="Decrease"
+    accessibilityTraits={
       Array [
-        4293321963,
-        4293321963,
+        "button",
+        "disabled",
       ]
     }
-    endPoint={
-      Object {
-        "x": 0.5,
-        "y": 1,
-      }
-    }
-    locations={null}
-    startPoint={
-      Object {
-        "x": 0.5,
-        "y": 0,
-      }
-    }
+    accessible={true}
+    hitSlop={undefined}
+    nativeID={undefined}
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
     style={
-      Array [
-        Array [
-          Object {
-            "borderRadius": 40,
-            "minHeight": 32,
-          },
-          Object {
-            "borderColor": "rgb(230, 228, 235)",
-            "borderWidth": 2,
-          },
-          Object {
-            "borderColor": "transparent",
-            "borderWidth": 0,
-          },
-          Object {
-            "width": 32,
-          },
-        ],
-        Object {},
-        Object {
-          "marginRight": 4,
-        },
-      ]
+      Object {
+        "marginRight": 4,
+      }
     }
+    testID={undefined}
   >
-    <View
-      accessibilityComponentType="button"
-      accessibilityLabel="Decrease"
-      accessibilityTraits={
+    <BVLinearGradient
+      colors={
         Array [
-          "button",
-          "disabled",
+          4293321963,
+          4293321963,
         ]
       }
-      accessible={true}
-      hitSlop={undefined}
-      nativeID={undefined}
-      onLayout={undefined}
-      onResponderGrant={[Function]}
-      onResponderMove={[Function]}
-      onResponderRelease={[Function]}
-      onResponderTerminate={[Function]}
-      onResponderTerminationRequest={[Function]}
-      onStartShouldSetResponder={[Function]}
+      endPoint={
+        Object {
+          "x": 0.5,
+          "y": 1,
+        }
+      }
+      locations={null}
+      startPoint={
+        Object {
+          "x": 0.5,
+          "y": 0,
+        }
+      }
       style={
         Array [
           Array [
             Object {
+              "alignItems": "center",
+              "borderColor": "transparent",
               "borderRadius": 40,
-              "minHeight": 32,
-              "paddingHorizontal": 12,
-              "paddingVertical": 8,
-            },
-            Object {
+              "borderWidth": 2,
+              "flexDirection": "row",
+              "justifyContent": "center",
               "paddingHorizontal": 10,
               "paddingVertical": 6,
             },
+            Object {
+              "borderColor": "rgb(230, 228, 235)",
+            },
             undefined,
             Object {
-              "paddingHorizontal": 0,
+              "paddingHorizontal": 6,
+              "paddingVertical": 6,
             },
           ],
           Object {},
-          Array [
-            Object {
-              "alignItems": "center",
-              "flex": 1,
-              "flexDirection": "row",
-              "justifyContent": "center",
-            },
-            undefined,
-            undefined,
-          ],
         ]
       }
-      testID={undefined}
     >
       <Text
         accessible={true}
@@ -1538,8 +1334,8 @@ exports[`iOS BpkNudger should render correctly when value is less than min 1`] =
             Array [
               Array [
                 Object {
-                  "backgroundColor": "transparent",
                   "color": "rgb(255, 255, 255)",
+                  "lineHeight": null,
                 },
                 Object {
                   "color": "rgb(0, 178, 214)",
@@ -1552,12 +1348,12 @@ exports[`iOS BpkNudger should render correctly when value is less than min 1`] =
               Object {},
               Array [
                 Object {
-                  "marginLeft": 4,
+                  "lineHeight": null,
+                  "marginStart": 4,
                 },
                 undefined,
                 Object {
-                  "marginLeft": 0,
-                  "marginRight": 0,
+                  "marginStart": 0,
                 },
               ],
             ],
@@ -1566,27 +1362,27 @@ exports[`iOS BpkNudger should render correctly when value is less than min 1`] =
       >
         
       </Text>
-      <View
-        style={
-          Array [
-            Object {
-              "backgroundColor": "rgb(37, 32, 51)",
-              "bottom": 0,
-              "flex": 1,
-              "left": 0,
-              "opacity": 0,
-              "position": "absolute",
-              "right": 0,
-              "top": 0,
-            },
-            Object {
-              "borderRadius": 40,
-            },
-          ]
-        }
-      />
-    </View>
-  </BVLinearGradient>
+    </BVLinearGradient>
+    <View
+      style={
+        Array [
+          Object {
+            "backgroundColor": "rgb(37, 32, 51)",
+            "bottom": 0,
+            "flex": 1,
+            "left": 0,
+            "opacity": 0,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          },
+          Object {
+            "borderRadius": 40,
+          },
+        ]
+      }
+    />
+  </View>
   <Text
     accessible={true}
     allowFontScaling={true}
@@ -1611,96 +1407,75 @@ exports[`iOS BpkNudger should render correctly when value is less than min 1`] =
   >
     3
   </Text>
-  <BVLinearGradient
-    colors={
+  <View
+    accessibilityComponentType="button"
+    accessibilityLabel="Increase"
+    accessibilityTraits={
       Array [
-        4294967295,
-        4294967295,
+        "button",
       ]
     }
-    endPoint={
-      Object {
-        "x": 0.5,
-        "y": 1,
-      }
-    }
-    locations={null}
-    startPoint={
-      Object {
-        "x": 0.5,
-        "y": 0,
-      }
-    }
+    accessible={true}
+    hitSlop={undefined}
+    nativeID={undefined}
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
     style={
-      Array [
-        Array [
-          Object {
-            "borderRadius": 40,
-            "minHeight": 32,
-          },
-          Object {
-            "borderColor": "rgb(230, 228, 235)",
-            "borderWidth": 2,
-          },
-          Object {
-            "width": 32,
-          },
-        ],
-        Object {},
-        Object {
-          "marginLeft": 4,
-        },
-      ]
+      Object {
+        "marginLeft": 4,
+      }
     }
+    testID={undefined}
   >
-    <View
-      accessibilityComponentType="button"
-      accessibilityLabel="Increase"
-      accessibilityTraits={
+    <BVLinearGradient
+      colors={
         Array [
-          "button",
+          4294967295,
+          4294967295,
         ]
       }
-      accessible={true}
-      hitSlop={undefined}
-      nativeID={undefined}
-      onLayout={undefined}
-      onResponderGrant={[Function]}
-      onResponderMove={[Function]}
-      onResponderRelease={[Function]}
-      onResponderTerminate={[Function]}
-      onResponderTerminationRequest={[Function]}
-      onStartShouldSetResponder={[Function]}
+      endPoint={
+        Object {
+          "x": 0.5,
+          "y": 1,
+        }
+      }
+      locations={null}
+      startPoint={
+        Object {
+          "x": 0.5,
+          "y": 0,
+        }
+      }
       style={
         Array [
           Array [
             Object {
+              "alignItems": "center",
+              "borderColor": "transparent",
               "borderRadius": 40,
-              "minHeight": 32,
-              "paddingHorizontal": 12,
-              "paddingVertical": 8,
-            },
-            Object {
+              "borderWidth": 2,
+              "flexDirection": "row",
+              "justifyContent": "center",
               "paddingHorizontal": 10,
               "paddingVertical": 6,
             },
             Object {
-              "paddingHorizontal": 0,
+              "borderColor": "rgb(230, 228, 235)",
+            },
+            Object {
+              "paddingHorizontal": 6,
+              "paddingVertical": 6,
             },
           ],
           Object {},
-          Array [
-            Object {
-              "alignItems": "center",
-              "flex": 1,
-              "flexDirection": "row",
-              "justifyContent": "center",
-            },
-            undefined,
-          ],
         ]
       }
-      testID={undefined}
     >
       <Text
         accessible={true}
@@ -1720,8 +1495,8 @@ exports[`iOS BpkNudger should render correctly when value is less than min 1`] =
             Array [
               Array [
                 Object {
-                  "backgroundColor": "transparent",
                   "color": "rgb(255, 255, 255)",
+                  "lineHeight": null,
                 },
                 Object {
                   "color": "rgb(0, 178, 214)",
@@ -1731,11 +1506,11 @@ exports[`iOS BpkNudger should render correctly when value is less than min 1`] =
               Object {},
               Array [
                 Object {
-                  "marginLeft": 4,
+                  "lineHeight": null,
+                  "marginStart": 4,
                 },
                 Object {
-                  "marginLeft": 0,
-                  "marginRight": 0,
+                  "marginStart": 0,
                 },
               ],
             ],
@@ -1744,27 +1519,27 @@ exports[`iOS BpkNudger should render correctly when value is less than min 1`] =
       >
         
       </Text>
-      <View
-        style={
-          Array [
-            Object {
-              "backgroundColor": "rgb(37, 32, 51)",
-              "bottom": 0,
-              "flex": 1,
-              "left": 0,
-              "opacity": 0,
-              "position": "absolute",
-              "right": 0,
-              "top": 0,
-            },
-            Object {
-              "borderRadius": 40,
-            },
-          ]
-        }
-      />
-    </View>
-  </BVLinearGradient>
+    </BVLinearGradient>
+    <View
+      style={
+        Array [
+          Object {
+            "backgroundColor": "rgb(37, 32, 51)",
+            "bottom": 0,
+            "flex": 1,
+            "left": 0,
+            "opacity": 0,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          },
+          Object {
+            "borderRadius": 40,
+          },
+        ]
+      }
+    />
+  </View>
 </View>
 `;
 
@@ -1780,98 +1555,75 @@ exports[`iOS BpkNudger should support theming 1`] = `
     ]
   }
 >
-  <BVLinearGradient
-    colors={
+  <View
+    accessibilityComponentType="button"
+    accessibilityLabel="Decrease"
+    accessibilityTraits={
       Array [
-        4294967040,
-        4294967040,
+        "button",
       ]
     }
-    endPoint={
-      Object {
-        "x": 0.5,
-        "y": 1,
-      }
-    }
-    locations={null}
-    startPoint={
-      Object {
-        "x": 0.5,
-        "y": 0,
-      }
-    }
+    accessible={true}
+    hitSlop={undefined}
+    nativeID={undefined}
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
     style={
-      Array [
-        Array [
-          Object {
-            "borderRadius": 40,
-            "minHeight": 32,
-          },
-          Object {
-            "borderColor": "rgb(230, 228, 235)",
-            "borderWidth": 2,
-          },
-          Object {
-            "width": 32,
-          },
-        ],
-        Object {
-          "borderColor": "blue",
-        },
-        Object {
-          "marginRight": 4,
-        },
-      ]
+      Object {
+        "marginRight": 4,
+      }
     }
+    testID={undefined}
   >
-    <View
-      accessibilityComponentType="button"
-      accessibilityLabel="Decrease"
-      accessibilityTraits={
+    <BVLinearGradient
+      colors={
         Array [
-          "button",
+          4294967040,
+          4294967040,
         ]
       }
-      accessible={true}
-      hitSlop={undefined}
-      nativeID={undefined}
-      onLayout={undefined}
-      onResponderGrant={[Function]}
-      onResponderMove={[Function]}
-      onResponderRelease={[Function]}
-      onResponderTerminate={[Function]}
-      onResponderTerminationRequest={[Function]}
-      onStartShouldSetResponder={[Function]}
+      endPoint={
+        Object {
+          "x": 0.5,
+          "y": 1,
+        }
+      }
+      locations={null}
+      startPoint={
+        Object {
+          "x": 0.5,
+          "y": 0,
+        }
+      }
       style={
         Array [
           Array [
             Object {
+              "alignItems": "center",
+              "borderColor": "transparent",
               "borderRadius": 40,
-              "minHeight": 32,
-              "paddingHorizontal": 12,
-              "paddingVertical": 8,
-            },
-            Object {
+              "borderWidth": 2,
+              "flexDirection": "row",
+              "justifyContent": "center",
               "paddingHorizontal": 10,
               "paddingVertical": 6,
             },
             Object {
-              "paddingHorizontal": 0,
+              "borderColor": "rgb(230, 228, 235)",
+            },
+            Object {
+              "paddingHorizontal": 6,
+              "paddingVertical": 6,
             },
           ],
           Object {},
-          Array [
-            Object {
-              "alignItems": "center",
-              "flex": 1,
-              "flexDirection": "row",
-              "justifyContent": "center",
-            },
-            undefined,
-          ],
         ]
       }
-      testID={undefined}
     >
       <Text
         accessible={true}
@@ -1891,8 +1643,8 @@ exports[`iOS BpkNudger should support theming 1`] = `
             Array [
               Array [
                 Object {
-                  "backgroundColor": "transparent",
                   "color": "rgb(255, 255, 255)",
+                  "lineHeight": null,
                 },
                 Object {
                   "color": "rgb(0, 178, 214)",
@@ -1904,11 +1656,11 @@ exports[`iOS BpkNudger should support theming 1`] = `
               },
               Array [
                 Object {
-                  "marginLeft": 4,
+                  "lineHeight": null,
+                  "marginStart": 4,
                 },
                 Object {
-                  "marginLeft": 0,
-                  "marginRight": 0,
+                  "marginStart": 0,
                 },
               ],
             ],
@@ -1917,27 +1669,27 @@ exports[`iOS BpkNudger should support theming 1`] = `
       >
         
       </Text>
-      <View
-        style={
-          Array [
-            Object {
-              "backgroundColor": "rgb(37, 32, 51)",
-              "bottom": 0,
-              "flex": 1,
-              "left": 0,
-              "opacity": 0,
-              "position": "absolute",
-              "right": 0,
-              "top": 0,
-            },
-            Object {
-              "borderRadius": 40,
-            },
-          ]
-        }
-      />
-    </View>
-  </BVLinearGradient>
+    </BVLinearGradient>
+    <View
+      style={
+        Array [
+          Object {
+            "backgroundColor": "rgb(37, 32, 51)",
+            "bottom": 0,
+            "flex": 1,
+            "left": 0,
+            "opacity": 0,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          },
+          Object {
+            "borderRadius": 40,
+          },
+        ]
+      }
+    />
+  </View>
   <Text
     accessible={true}
     allowFontScaling={true}
@@ -1962,98 +1714,75 @@ exports[`iOS BpkNudger should support theming 1`] = `
   >
     3
   </Text>
-  <BVLinearGradient
-    colors={
+  <View
+    accessibilityComponentType="button"
+    accessibilityLabel="Increase"
+    accessibilityTraits={
       Array [
-        4294967040,
-        4294967040,
+        "button",
       ]
     }
-    endPoint={
-      Object {
-        "x": 0.5,
-        "y": 1,
-      }
-    }
-    locations={null}
-    startPoint={
-      Object {
-        "x": 0.5,
-        "y": 0,
-      }
-    }
+    accessible={true}
+    hitSlop={undefined}
+    nativeID={undefined}
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
     style={
-      Array [
-        Array [
-          Object {
-            "borderRadius": 40,
-            "minHeight": 32,
-          },
-          Object {
-            "borderColor": "rgb(230, 228, 235)",
-            "borderWidth": 2,
-          },
-          Object {
-            "width": 32,
-          },
-        ],
-        Object {
-          "borderColor": "blue",
-        },
-        Object {
-          "marginLeft": 4,
-        },
-      ]
+      Object {
+        "marginLeft": 4,
+      }
     }
+    testID={undefined}
   >
-    <View
-      accessibilityComponentType="button"
-      accessibilityLabel="Increase"
-      accessibilityTraits={
+    <BVLinearGradient
+      colors={
         Array [
-          "button",
+          4294967040,
+          4294967040,
         ]
       }
-      accessible={true}
-      hitSlop={undefined}
-      nativeID={undefined}
-      onLayout={undefined}
-      onResponderGrant={[Function]}
-      onResponderMove={[Function]}
-      onResponderRelease={[Function]}
-      onResponderTerminate={[Function]}
-      onResponderTerminationRequest={[Function]}
-      onStartShouldSetResponder={[Function]}
+      endPoint={
+        Object {
+          "x": 0.5,
+          "y": 1,
+        }
+      }
+      locations={null}
+      startPoint={
+        Object {
+          "x": 0.5,
+          "y": 0,
+        }
+      }
       style={
         Array [
           Array [
             Object {
+              "alignItems": "center",
+              "borderColor": "transparent",
               "borderRadius": 40,
-              "minHeight": 32,
-              "paddingHorizontal": 12,
-              "paddingVertical": 8,
-            },
-            Object {
+              "borderWidth": 2,
+              "flexDirection": "row",
+              "justifyContent": "center",
               "paddingHorizontal": 10,
               "paddingVertical": 6,
             },
             Object {
-              "paddingHorizontal": 0,
+              "borderColor": "rgb(230, 228, 235)",
+            },
+            Object {
+              "paddingHorizontal": 6,
+              "paddingVertical": 6,
             },
           ],
           Object {},
-          Array [
-            Object {
-              "alignItems": "center",
-              "flex": 1,
-              "flexDirection": "row",
-              "justifyContent": "center",
-            },
-            undefined,
-          ],
         ]
       }
-      testID={undefined}
     >
       <Text
         accessible={true}
@@ -2073,8 +1802,8 @@ exports[`iOS BpkNudger should support theming 1`] = `
             Array [
               Array [
                 Object {
-                  "backgroundColor": "transparent",
                   "color": "rgb(255, 255, 255)",
+                  "lineHeight": null,
                 },
                 Object {
                   "color": "rgb(0, 178, 214)",
@@ -2086,11 +1815,11 @@ exports[`iOS BpkNudger should support theming 1`] = `
               },
               Array [
                 Object {
-                  "marginLeft": 4,
+                  "lineHeight": null,
+                  "marginStart": 4,
                 },
                 Object {
-                  "marginLeft": 0,
-                  "marginRight": 0,
+                  "marginStart": 0,
                 },
               ],
             ],
@@ -2099,26 +1828,26 @@ exports[`iOS BpkNudger should support theming 1`] = `
       >
         
       </Text>
-      <View
-        style={
-          Array [
-            Object {
-              "backgroundColor": "rgb(37, 32, 51)",
-              "bottom": 0,
-              "flex": 1,
-              "left": 0,
-              "opacity": 0,
-              "position": "absolute",
-              "right": 0,
-              "top": 0,
-            },
-            Object {
-              "borderRadius": 40,
-            },
-          ]
-        }
-      />
-    </View>
-  </BVLinearGradient>
+    </BVLinearGradient>
+    <View
+      style={
+        Array [
+          Object {
+            "backgroundColor": "rgb(37, 32, 51)",
+            "bottom": 0,
+            "flex": 1,
+            "left": 0,
+            "opacity": 0,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          },
+          Object {
+            "borderRadius": 40,
+          },
+        ]
+      }
+    />
+  </View>
 </View>
 `;

@@ -54,11 +54,7 @@ export const getStyleForElement = (
   }
 
   if (isLarge) {
-    const modifier = ['secondary', 'destructive'].includes(type)
-      ? 'largeWithOutline'
-      : 'large';
-
-    styleForElement.push(styles.modifiers[modifier][elementType]);
+    styleForElement.push(styles.modifiers.large[elementType]);
   }
 
   if (disabled) {

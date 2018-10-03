@@ -57,7 +57,6 @@ const BpkButton = (props: Props) => {
     iconOnly,
     large,
     onPress,
-    style,
     title,
     type,
     theme: themeProp,
@@ -79,30 +78,26 @@ const BpkButton = (props: Props) => {
 
   const accessibilityTraits = ['button'];
   const gradientColors = getGradientColors(theme, props);
-  const containerStyle = getStyleForElement('container', props);
   const buttonStyle = getStyleForElement('button', props);
   const buttonTheme = getThemingForElement('button', theme, props);
-  const containerTheme = getThemingForElement('container', theme, props);
 
   if (disabled) {
     accessibilityTraits.push('disabled');
   }
 
   return (
-    <LinearGradient
-      colors={gradientColors}
-      style={[containerStyle, containerTheme, style]}
+    <BpkTouchableOverlay
+      accessibilityComponentType="button"
+      accessibilityLabel={accessibilityLabel || title}
+      accessibilityTraits={accessibilityTraits}
+      borderRadius="pill"
+      disabled={disabled}
+      onPress={onPress}
+      {...rest}
     >
-      <BpkTouchableOverlay
-        accessibilityComponentType="button"
-        accessibilityLabel={accessibilityLabel || title}
-        accessibilityTraits={accessibilityTraits}
-        borderRadius="pill"
-        disabled={disabled}
-        onPress={onPress}
-        style={[buttonStyle, buttonTheme, getStyleForElement('view', props)]}
-        type={type}
-        {...rest}
+      <LinearGradient
+        colors={gradientColors}
+        style={[buttonStyle, buttonTheme]}
       >
         {!iconOnly && (
           <BpkText
@@ -118,8 +113,8 @@ const BpkButton = (props: Props) => {
         ) : (
           icon
         )}
-      </BpkTouchableOverlay>
-    </LinearGradient>
+      </LinearGradient>
+    </BpkTouchableOverlay>
   );
 };
 

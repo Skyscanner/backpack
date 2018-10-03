@@ -74,7 +74,7 @@ const BpkButton = (props: Props) => {
   const theme = shouldApplyTheme ? themeProp : null;
 
   const accessibilityTraits = ['button'];
-  const containerStyle = getStyleForElement('container', props);
+  const containerStyle = getStyleForElement('androidContainer', props);
   const buttonStyle = getStyleForElement('button', props);
   const backgroundColor = getAndroidBackgroundColour(theme, props);
 
@@ -93,13 +93,7 @@ const BpkButton = (props: Props) => {
         accessibilityTraits={accessibilityTraits}
         {...rest}
       >
-        <View
-          style={[
-            buttonStyle,
-            backgroundColor,
-            getStyleForElement('view', props),
-          ]}
-        >
+        <View style={[buttonStyle, backgroundColor]}>
           {!iconOnly && (
             <BpkText textStyle="sm" emphasize style={textStyle(theme, props)}>
               {title.toUpperCase()}
