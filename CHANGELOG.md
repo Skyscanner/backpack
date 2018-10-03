@@ -2,6 +2,21 @@
 
 [Unreleased changes](./UNRELEASED.md).
 
+# 2018-10-03 - Fix for react native button stretching
+
+**Fixed:**
+
+- react-native-bpk-component-button: 7.1.16 => 7.1.17
+- react-native-bpk-component-nudger: 1.0.44 => 1.0.45
+  - Fix issue with buttons stretching in flex containers.
+  - Fix text / icon alignment issues on iOS.
+
+- bpk-component-autosuggest:
+  - bpk-component-autosuggest: 3.0.109 => 3.0.110
+
+- bpk-react-utils:
+  - bpk-react-utils: 2.6.10 => 2.6.11
+
 # 2018-09-27 - Fix more react native dynamic text issues
 
 **Fixed:**
