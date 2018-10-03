@@ -95,7 +95,7 @@
     "copy-webpack-plugin": "^4.5.2",
     "core-js": "^2.5.7",
     "css-loader": "^1.0.0",
-    "danger": "^3.8.6",
+    "danger": "^4.3.0",
     "del": "^3.0.0",
     "enzyme": "^3.4.4",
     "enzyme-adapter-react-16": "^1.2.0",
