@@ -20,6 +20,7 @@
 		D66FC4882109D8610063B1A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D66FC4872109D8610063B1A6 /* Main.storyboard */; };
 		D66FC4912109DA3C0063B1A6 /* StorybookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D66FC4902109DA3C0063B1A6 /* StorybookViewController.m */; };
 		E19140ED6394488C9626FE7A /* BpkIcon.woff in Resources */ = {isa = PBXBuildFile; fileRef = E436C94A65D1410092B05450 /* BpkIcon.woff */; };
+		CD97D274772C442994C3117B /* BpkIconIOS.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 83C39DAE966144799B2F2FB7 /* BpkIconIOS.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,7 @@
 		D66FC4902109DA3C0063B1A6 /* StorybookViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 4; lastKnownFileType = sourcecode.c.objc; path = StorybookViewController.m; sourceTree = "<group>"; tabWidth = 4; };
 		E436C94A65D1410092B05450 /* BpkIcon.woff */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = BpkIcon.woff; path = "../../packages/bpk-svgs/dist/font/BpkIcon.woff"; sourceTree = "<group>"; };
 		FBB4289347D8862ADA374625 /* Pods-Backpack Native.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Backpack Native.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Backpack Native/Pods-Backpack Native.debug.xcconfig"; sourceTree = "<group>"; };
+		83C39DAE966144799B2F2FB7 /* BpkIconIOS.ttf */ = {isa = PBXFileReference; name = "BpkIconIOS.ttf"; path = "../../packages/bpk-svgs/dist/font/BpkIconIOS.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +183,7 @@
 				8C8F437769B54A038A210159 /* BpkIcon.eot */,
 				E436C94A65D1410092B05450 /* BpkIcon.woff */,
 				3CA50A36B56148BD95AF98C2 /* iconMapping.json */,
+				83C39DAE966144799B2F2FB7 /* BpkIconIOS.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -343,6 +346,7 @@
 				C8B831744C5A4256BD1B5010 /* BpkIcon.eot in Resources */,
 				E19140ED6394488C9626FE7A /* BpkIcon.woff in Resources */,
 				8E33D9A4365E4F84826CF0C6 /* iconMapping.json in Resources */,
+				CD97D274772C442994C3117B /* BpkIconIOS.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

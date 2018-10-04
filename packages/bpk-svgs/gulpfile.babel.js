@@ -295,28 +295,46 @@ gulp.task('icons-lg', ['icons-common'], () => {
 });
 
 gulp.task('icons-font', ['icons-common'], () => {
-  const generateFont = gulp
-    .src('src/icons/**/*.svg')
-    .pipe(chmod(0o644))
-    .pipe(
-      iconfont({
-        metadataProvider: getIconFontMetadataProvider('tasks/codepoints.json'),
-        fontName: 'BpkIcon',
-        formats: ['ttf', 'eot', 'woff'],
-        /**
-         * Normalize and fontHeight(>1000) are needed in order to have all the glyphs rendered
-         * correctly, for more info go to the npm package docs
-         * https://www.npmjs.com/package/gulp-iconfont
-         */
-        normalize: true,
-        fontHeight: 1001,
-        timestamp: 1436442578, // A static timestamp to prevent changes showing up in git, backpack's first commit!
-      }),
-    );
+  /* We generate two copies of the exact same font here because when we
+   * integrate both the React Native Icon and iOS Icon in the same iOS
+   * app the underlying names in the font have to be different to
+   * prevent UIKit from refusing to load either font. Setting a
+   * different name for the `fontName` parameter of `iconFont`
+   * ensures this happens. Simply having a different name on
+   * disk is not enough as UIKit uses the name at index 1 in
+   * the name table of the font for uniqueness.
+   */
+  const generateFont = (name = 'BpkIcon') =>
+    gulp
+      .src('src/icons/**/*.svg')
+      .pipe(chmod(0o644))
+      .pipe(
+        iconfont({
+          metadataProvider: getIconFontMetadataProvider(
+            'tasks/codepoints.json',
+          ),
+          fontName: name,
+          formats: ['ttf', 'eot', 'woff'],
+          /**
+           * Normalize and fontHeight(>1000) are needed in order to have all the glyphs rendered
+           * correctly, for more info go to the npm package docs
+           * https://www.npmjs.com/package/gulp-iconfont
+           */
+          normalize: true,
+          fontHeight: 1001,
+          timestamp: 1436442578, // A static timestamp to prevent changes showing up in git, backpack's first commit!
+        }),
+      );
 
-  const saveFont = generateFont.pipe(clone()).pipe(gulp.dest('dist/font'));
+  const fontStream = generateFont();
+  const saveFonts = [
+    fontStream.pipe(clone()).pipe(gulp.dest('dist/font')),
+    generateFont('BpkIconIOS')
+      .pipe(clone())
+      .pipe(gulp.dest('dist/font')),
+  ];
 
-  const saveMapping = generateFont.on('glyphs', glyphs => {
+  const saveMapping = fontStream.on('glyphs', glyphs => {
     const baseDir = 'dist/font';
     const mapping = glyphs.reduce((acc, glyph) => {
       // use punycode to get the text representation of the unicode
@@ -339,7 +357,7 @@ gulp.task('icons-font', ['icons-common'], () => {
     mappingStream.end();
   });
 
-  return merge(saveFont, saveMapping);
+  return merge(...saveFonts, saveMapping);
 });
 
 gulp.task('copy-svgs', ['icons-common'], () =>
