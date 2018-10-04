@@ -1,3 +1,6 @@
 # Unreleased
 
-_Nothing yet..._
+**Fixed:**
+
+- bpk-component-autosuggest:
+  - Updated `react-autosuggest` dependency: `9.4.1` => `9.4.2`
