@@ -2,6 +2,22 @@
 
 [Unreleased changes](./UNRELEASED.md).
 
+# 2018-10-05 - Fix more react native dynamic text issues
+
+**Added:**
+
+- react-native-bpk-component-button-link: 3.0.32 => 3.1.0
+  - Reverted `allowFontScalling={false}` change.
+  - Add `textProps` prop.
+
+**Fixed:**
+
+- react-native-bpk-component-picker: 2.0.31 => 2.0.32
+  - Prevent font scaling of button link in in iOS picker menu.
+
+- bpk-component-autosuggest: 3.0.111 => 3.0.112
+  - Updated `react-autosuggest` dependency: `9.4.1` => `9.4.2`
+
 # 2018-10-03 - Fix for react native button stretching
 
 **Fixed:**
