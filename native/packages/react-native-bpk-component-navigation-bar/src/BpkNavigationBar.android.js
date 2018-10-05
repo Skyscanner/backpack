@@ -105,8 +105,8 @@ type AndroidTheme = {
 export type Props = {
   title: TitleProp,
   theme: ?AndroidTheme,
-  leadingButton: ?Element<BpkNavigationBarButtonAndroid>,
-  trailingButton: ?Element<BpkNavigationBarButtonAndroid>,
+  leadingButton: ?Element<typeof BpkNavigationBarButtonAndroid>,
+  trailingButton: ?Element<typeof BpkNavigationBarButtonAndroid>,
   subtitleView: ?Element<any>,
   // FIXME: We need a better flow type for style
   style: any,
