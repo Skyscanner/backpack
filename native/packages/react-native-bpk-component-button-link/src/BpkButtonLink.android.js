@@ -53,6 +53,7 @@ const BpkButtonLink = (props: Props) => {
     title,
     borderlessBackground,
     theme,
+    textProps,
     ...rest
   } = props;
 
@@ -97,10 +98,10 @@ const BpkButtonLink = (props: Props) => {
         <View style={viewStyle}>
           <BpkText
             textStyle="sm"
-            allowFontScaling={false}
             emphasize
             numberOfLines={1}
             style={textStyle}
+            {...textProps}
           >
             {title.toUpperCase()}
           </BpkText>

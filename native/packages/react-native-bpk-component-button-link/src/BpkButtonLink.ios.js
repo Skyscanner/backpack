@@ -50,6 +50,7 @@ const BpkButtonLink = (props: Props) => {
     onPress,
     title,
     theme,
+    textProps,
     ...rest
   } = props;
 
@@ -97,9 +98,9 @@ const BpkButtonLink = (props: Props) => {
         <BpkText
           textStyle={large ? 'lg' : 'sm'}
           emphasize
-          allowFontScaling={false}
           numberOfLines={1}
           style={textStyle}
+          {...textProps}
         >
           {title}
         </BpkText>

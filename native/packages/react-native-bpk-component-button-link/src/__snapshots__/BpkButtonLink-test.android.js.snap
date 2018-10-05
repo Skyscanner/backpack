@@ -43,7 +43,7 @@ exports[`Android BpkButtonLink should render correctly 1`] = `
   >
     <Text
       accessible={true}
-      allowFontScaling={false}
+      allowFontScaling={true}
       ellipsizeMode="tail"
       numberOfLines={1}
       style={
@@ -117,7 +117,7 @@ exports[`Android BpkButtonLink should render correctly with iconAlignment="leadi
   >
     <Text
       accessible={true}
-      allowFontScaling={false}
+      allowFontScaling={true}
       ellipsizeMode="tail"
       numberOfLines={1}
       style={
@@ -218,7 +218,7 @@ exports[`Android BpkButtonLink should render correctly with iconAlignment="trail
   >
     <Text
       accessible={true}
-      allowFontScaling={false}
+      allowFontScaling={true}
       ellipsizeMode="tail"
       numberOfLines={1}
       style={
@@ -272,7 +272,7 @@ exports[`Android BpkButtonLink should render correctly with iconAlignment="trail
 </View>
 `;
 
-exports[`Android BpkButtonLink should render correctly with theme prop 1`] = `
+exports[`Android BpkButtonLink should render correctly with text props provided 1`] = `
 <View
   style={null}
 >
@@ -316,6 +316,77 @@ exports[`Android BpkButtonLink should render correctly with theme prop 1`] = `
     <Text
       accessible={true}
       allowFontScaling={false}
+      ellipsizeMode="tail"
+      numberOfLines={1}
+      style={
+        Array [
+          Object {
+            "color": "rgb(82, 76, 97)",
+            "fontFamily": "sans-serif",
+            "fontSize": 14,
+            "fontWeight": "400",
+          },
+          Object {
+            "fontFamily": "sans-serif-medium",
+          },
+          Array [
+            Object {
+              "color": "rgb(0, 178, 214)",
+            },
+          ],
+        ]
+      }
+    >
+      LOREM IPSUM
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`Android BpkButtonLink should render correctly with theme prop 1`] = `
+<View
+  style={null}
+>
+  <View
+    accessibilityComponentType="button"
+    accessibilityLabel="Lorem ipsum"
+    accessibilityTraits={
+      Array [
+        "button",
+      ]
+    }
+    accessible={true}
+    hasTVPreferredFocus={undefined}
+    hitSlop={undefined}
+    isTVSelectable={true}
+    nativeBackgroundAndroid={
+      Object {
+        "attribute": "selectableItemBackgroundBorderless",
+        "type": "ThemeAttrAndroid",
+      }
+    }
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "justifyContent": "center",
+          "minHeight": 32,
+        },
+      ]
+    }
+    testID={undefined}
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
       ellipsizeMode="tail"
       numberOfLines={1}
       style={
@@ -389,7 +460,7 @@ exports[`Android BpkButtonLink should support elements as icons 1`] = `
   >
     <Text
       accessible={true}
-      allowFontScaling={false}
+      allowFontScaling={true}
       ellipsizeMode="tail"
       numberOfLines={1}
       style={
@@ -481,7 +552,7 @@ exports[`Android BpkButtonLink should support overwriting styles 1`] = `
   >
     <Text
       accessible={true}
-      allowFontScaling={false}
+      allowFontScaling={true}
       ellipsizeMode="tail"
       numberOfLines={1}
       style={
@@ -553,7 +624,7 @@ exports[`Android BpkButtonLink should support the "disabled" property 1`] = `
   >
     <Text
       accessible={true}
-      allowFontScaling={false}
+      allowFontScaling={true}
       ellipsizeMode="tail"
       numberOfLines={1}
       style={
@@ -627,7 +698,7 @@ exports[`Android BpkButtonLink should support the "icon" property 1`] = `
   >
     <Text
       accessible={true}
-      allowFontScaling={false}
+      allowFontScaling={true}
       ellipsizeMode="tail"
       numberOfLines={1}
       style={
@@ -724,7 +795,7 @@ exports[`Android should support "borderlessBackground" equal to false 1`] = `
   >
     <Text
       accessible={true}
-      allowFontScaling={false}
+      allowFontScaling={true}
       ellipsizeMode="tail"
       numberOfLines={1}
       style={

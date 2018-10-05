@@ -92,7 +92,13 @@ const BpkPickerMenu = (props: Props) => {
       </TouchableWithoutFeedback>
       <View style={styles.modal}>
         <View style={styles.modalHeader}>
-          <BpkButtonLink title={doneLabel} onPress={onClose} />
+          <BpkButtonLink
+            title={doneLabel}
+            onPress={onClose}
+            textProps={{
+              allowFontScaling: false,
+            }}
+          />
         </View>
         <Picker selectedValue={selectedValue} onValueChange={onValueChange}>
           {pickerItems}

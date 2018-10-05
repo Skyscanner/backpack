@@ -41,6 +41,7 @@ export type CommonProps = {
   theme: ?{
     buttonLinkTextColor: string,
   },
+  textProps: ?Object,
 };
 
 export const commonPropTypes = {
@@ -51,6 +52,7 @@ export const commonPropTypes = {
   icon: PropTypes.node,
   iconAlignment: PropTypes.oneOf(Object.keys(ICON_ALIGNMENTS)),
   theme: themePropType,
+  textProps: PropTypes.object,
 };
 
 export const commonDefaultProps = {
@@ -59,4 +61,5 @@ export const commonDefaultProps = {
   icon: null,
   iconAlignment: ICON_ALIGNMENTS.trailing,
   theme: null,
+  textProps: null,
 };

@@ -1296,7 +1296,7 @@ exports[`Android BpkBannerAlert should render correctly with dismissable 1`] = `
           >
             <Text
               accessible={true}
-              allowFontScaling={false}
+              allowFontScaling={true}
               ellipsizeMode="tail"
               numberOfLines={1}
               style={
@@ -1447,7 +1447,7 @@ exports[`Android BpkBannerAlert should render correctly with dismissable 1`] = `
           >
             <Text
               accessible={true}
-              allowFontScaling={false}
+              allowFontScaling={true}
               ellipsizeMode="tail"
               numberOfLines={1}
               style={

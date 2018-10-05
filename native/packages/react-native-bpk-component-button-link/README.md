@@ -70,6 +70,7 @@ export default class App extends Component {
 | large (iOS only)                    | bool                                                                      | false    | false         |
 | borderlessBackground (Android only) | bool                                                                      | false    | true          |
 | theme                               | See [Theme Props](#theme-props) below                                     | false    | null          |
+| textProps                           | object                                                                    | false    | null          |
 
 ## Theme Props
 
