@@ -2,7 +2,7 @@
 
 [Unreleased changes](./UNRELEASED.md).
 
-# 2018-10-05 - Fix more react native dynamic text issues
+# 2018-10-08 - Align web progress bar to mobile platforms
 
 **Fixed:**
  - bpk-component-progress 1.0.90 => 1.0.91:
