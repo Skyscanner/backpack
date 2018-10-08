@@ -4,6 +4,12 @@
 
 # 2018-10-05 - Fix more react native dynamic text issues
 
+**Fixed:**
+ - bpk-component-progress 1.0.90 => 1.0.91:
+   - Changed non-stepped progress bar to have rounded corners to match RN bpk progress bar
+
+# 2018-10-05 - Fix more react native dynamic text issues
+
 **Added:**
 
 - react-native-bpk-component-button-link: 3.0.32 => 3.1.0
