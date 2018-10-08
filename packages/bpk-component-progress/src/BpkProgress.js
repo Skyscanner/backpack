@@ -84,6 +84,11 @@ class BpkProgress extends Component {
       classNames.push(getClassName('bpk-progress--small'));
     }
 
+    const valueClassName = [getClassName('bpk-progress__value')];
+    if (stepped) {
+      valueClassName.push(getClassName('bpk-progress__value--stepped'));
+    }
+
     const adjustedValue = clamp(value, min, max);
     const percentage = 100 * (adjustedValue / (max - min));
     const numberOfSteps = stepped ? max - min - 1 : 0;
@@ -103,7 +108,7 @@ class BpkProgress extends Component {
         {...rest}
       >
         <div
-          className={getClassName('bpk-progress__value')}
+          className={valueClassName.join(' ')}
           style={{ width: `${percentage}%` }}
           onTransitionEnd={this.handleCompleteTransitionEnd}
         />
