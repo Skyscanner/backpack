@@ -39,8 +39,13 @@
     content: ' ';
     width: 0%;
     transition: width $bpk-duration-base ease-in-out;
+    border-radius: $bpk-border-radius-sm;
 
     @include bpk-themeable-property(background-color, --bpk-progress-bar-fill-color, $bpk-color-green-500);
+
+    &--stepped {
+      border-radius: 0;
+    }
   }
 
   &__step {
