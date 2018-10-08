@@ -85,13 +85,14 @@ type Props = {
 const BpkSelect = (props: Props) => {
   const { disabled, label, onPress, style, image, showImage, ...rest } = props;
 
-  let content = label;
+  let content = null;
+
   if (label && typeof label === 'string') {
     content = (
       <BpkText
         style={[styles.selectContent, disabled && styles.selectContentDisabled]}
       >
-        {content}
+        {label}
       </BpkText>
     );
   }
@@ -125,7 +126,7 @@ const BpkSelect = (props: Props) => {
     >
       <View style={styles.select} {...rest}>
         {showImage && styledImage}
-        {content}
+        {content || label}
         <BpkIcon style={styles.selectIcon} icon={icons['arrow-down']} small />
       </View>
     </TouchablePlatformComponent>

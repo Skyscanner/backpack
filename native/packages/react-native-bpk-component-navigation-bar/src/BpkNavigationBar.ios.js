@@ -103,9 +103,9 @@ type IOSTheme = {
 };
 
 type ButtonType =
-  | BpkNavigationBarBackButtonIOS
-  | BpkNavigationBarTextButtonIOS
-  | BpkNavigationBarIconButtonIOS;
+  | typeof BpkNavigationBarBackButtonIOS
+  | typeof BpkNavigationBarTextButtonIOS
+  | typeof BpkNavigationBarIconButtonIOS;
 
 export type Props = {
   title: TitleProp,
