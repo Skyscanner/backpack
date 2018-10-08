@@ -33,7 +33,7 @@ exports[`BpkProgress should render correctly with "small" and "stepped" attribut
   tabIndex="0"
 >
   <div
-    className="bpk-progress__value"
+    className="bpk-progress__value bpk-progress__value--stepped"
     onTransitionEnd={[Function]}
     style={
       Object {
@@ -171,7 +171,7 @@ exports[`BpkProgress should render correctly with a "stepColor" attribute 1`] = 
   tabIndex="0"
 >
   <div
-    className="bpk-progress__value"
+    className="bpk-progress__value bpk-progress__value--stepped"
     onTransitionEnd={[Function]}
     style={
       Object {
@@ -265,7 +265,7 @@ exports[`BpkProgress should render correctly with a "stepped" attribute 1`] = `
   tabIndex="0"
 >
   <div
-    className="bpk-progress__value"
+    className="bpk-progress__value bpk-progress__value--stepped"
     onTransitionEnd={[Function]}
     style={
       Object {
