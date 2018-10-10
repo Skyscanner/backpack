@@ -57,16 +57,17 @@ exports[`Android BpkNudger should disable theming if the required attribute is o
           Array [
             Object {
               "alignItems": "center",
-              "borderColor": "transparent",
               "borderRadius": 40,
-              "borderWidth": 2,
               "flexDirection": "row",
               "justifyContent": "center",
-              "paddingHorizontal": 10,
-              "paddingVertical": 6,
+              "paddingHorizontal": 12,
+              "paddingVertical": 8,
             },
             Object {
               "borderColor": "rgb(230, 228, 235)",
+              "borderWidth": 2,
+              "paddingHorizontal": 10,
+              "paddingVertical": 6,
             },
             Object {
               "paddingHorizontal": 8,
@@ -193,16 +194,17 @@ exports[`Android BpkNudger should disable theming if the required attribute is o
           Array [
             Object {
               "alignItems": "center",
-              "borderColor": "transparent",
               "borderRadius": 40,
-              "borderWidth": 2,
               "flexDirection": "row",
               "justifyContent": "center",
-              "paddingHorizontal": 10,
-              "paddingVertical": 6,
+              "paddingHorizontal": 12,
+              "paddingVertical": 8,
             },
             Object {
               "borderColor": "rgb(230, 228, 235)",
+              "borderWidth": 2,
+              "paddingHorizontal": 10,
+              "paddingVertical": 6,
             },
             Object {
               "paddingHorizontal": 8,
@@ -320,16 +322,17 @@ exports[`Android BpkNudger should render correctly 1`] = `
           Array [
             Object {
               "alignItems": "center",
-              "borderColor": "transparent",
               "borderRadius": 40,
-              "borderWidth": 2,
               "flexDirection": "row",
               "justifyContent": "center",
-              "paddingHorizontal": 10,
-              "paddingVertical": 6,
+              "paddingHorizontal": 12,
+              "paddingVertical": 8,
             },
             Object {
               "borderColor": "rgb(230, 228, 235)",
+              "borderWidth": 2,
+              "paddingHorizontal": 10,
+              "paddingVertical": 6,
             },
             Object {
               "paddingHorizontal": 8,
@@ -456,16 +459,17 @@ exports[`Android BpkNudger should render correctly 1`] = `
           Array [
             Object {
               "alignItems": "center",
-              "borderColor": "transparent",
               "borderRadius": 40,
-              "borderWidth": 2,
               "flexDirection": "row",
               "justifyContent": "center",
-              "paddingHorizontal": 10,
-              "paddingVertical": 6,
+              "paddingHorizontal": 12,
+              "paddingVertical": 8,
             },
             Object {
               "borderColor": "rgb(230, 228, 235)",
+              "borderWidth": 2,
+              "paddingHorizontal": 10,
+              "paddingVertical": 6,
             },
             Object {
               "paddingHorizontal": 8,
@@ -585,16 +589,17 @@ exports[`Android BpkNudger should render correctly when value is a not an intege
           Array [
             Object {
               "alignItems": "center",
-              "borderColor": "transparent",
               "borderRadius": 40,
-              "borderWidth": 2,
               "flexDirection": "row",
               "justifyContent": "center",
-              "paddingHorizontal": 10,
-              "paddingVertical": 6,
+              "paddingHorizontal": 12,
+              "paddingVertical": 8,
             },
             Object {
               "borderColor": "rgb(230, 228, 235)",
+              "borderWidth": 2,
+              "paddingHorizontal": 10,
+              "paddingVertical": 6,
             },
             undefined,
             Object {
@@ -726,16 +731,17 @@ exports[`Android BpkNudger should render correctly when value is a not an intege
           Array [
             Object {
               "alignItems": "center",
-              "borderColor": "transparent",
               "borderRadius": 40,
-              "borderWidth": 2,
               "flexDirection": "row",
               "justifyContent": "center",
-              "paddingHorizontal": 10,
-              "paddingVertical": 6,
+              "paddingHorizontal": 12,
+              "paddingVertical": 8,
             },
             Object {
               "borderColor": "rgb(230, 228, 235)",
+              "borderWidth": 2,
+              "paddingHorizontal": 10,
+              "paddingVertical": 6,
             },
             Object {
               "paddingHorizontal": 8,
@@ -853,16 +859,17 @@ exports[`Android BpkNudger should render correctly when value is greater than ma
           Array [
             Object {
               "alignItems": "center",
-              "borderColor": "transparent",
               "borderRadius": 40,
-              "borderWidth": 2,
               "flexDirection": "row",
               "justifyContent": "center",
-              "paddingHorizontal": 10,
-              "paddingVertical": 6,
+              "paddingHorizontal": 12,
+              "paddingVertical": 8,
             },
             Object {
               "borderColor": "rgb(230, 228, 235)",
+              "borderWidth": 2,
+              "paddingHorizontal": 10,
+              "paddingVertical": 6,
             },
             Object {
               "paddingHorizontal": 8,
@@ -991,16 +998,17 @@ exports[`Android BpkNudger should render correctly when value is greater than ma
           Array [
             Object {
               "alignItems": "center",
-              "borderColor": "transparent",
               "borderRadius": 40,
-              "borderWidth": 2,
               "flexDirection": "row",
               "justifyContent": "center",
-              "paddingHorizontal": 10,
-              "paddingVertical": 6,
+              "paddingHorizontal": 12,
+              "paddingVertical": 8,
             },
             Object {
               "borderColor": "rgb(230, 228, 235)",
+              "borderWidth": 2,
+              "paddingHorizontal": 10,
+              "paddingVertical": 6,
             },
             undefined,
             Object {
@@ -1125,16 +1133,17 @@ exports[`Android BpkNudger should render correctly when value is less than min 1
           Array [
             Object {
               "alignItems": "center",
-              "borderColor": "transparent",
               "borderRadius": 40,
-              "borderWidth": 2,
               "flexDirection": "row",
               "justifyContent": "center",
-              "paddingHorizontal": 10,
-              "paddingVertical": 6,
+              "paddingHorizontal": 12,
+              "paddingVertical": 8,
             },
             Object {
               "borderColor": "rgb(230, 228, 235)",
+              "borderWidth": 2,
+              "paddingHorizontal": 10,
+              "paddingVertical": 6,
             },
             undefined,
             Object {
@@ -1266,16 +1275,17 @@ exports[`Android BpkNudger should render correctly when value is less than min 1
           Array [
             Object {
               "alignItems": "center",
-              "borderColor": "transparent",
               "borderRadius": 40,
-              "borderWidth": 2,
               "flexDirection": "row",
               "justifyContent": "center",
-              "paddingHorizontal": 10,
-              "paddingVertical": 6,
+              "paddingHorizontal": 12,
+              "paddingVertical": 8,
             },
             Object {
               "borderColor": "rgb(230, 228, 235)",
+              "borderWidth": 2,
+              "paddingHorizontal": 10,
+              "paddingVertical": 6,
             },
             Object {
               "paddingHorizontal": 8,
@@ -1393,16 +1403,17 @@ exports[`Android BpkNudger should support theming 1`] = `
           Array [
             Object {
               "alignItems": "center",
-              "borderColor": "transparent",
               "borderRadius": 40,
-              "borderWidth": 2,
               "flexDirection": "row",
               "justifyContent": "center",
-              "paddingHorizontal": 10,
-              "paddingVertical": 6,
+              "paddingHorizontal": 12,
+              "paddingVertical": 8,
             },
             Object {
               "borderColor": "rgb(230, 228, 235)",
+              "borderWidth": 2,
+              "paddingHorizontal": 10,
+              "paddingVertical": 6,
             },
             Object {
               "paddingHorizontal": 8,
@@ -1531,16 +1542,17 @@ exports[`Android BpkNudger should support theming 1`] = `
           Array [
             Object {
               "alignItems": "center",
-              "borderColor": "transparent",
               "borderRadius": 40,
-              "borderWidth": 2,
               "flexDirection": "row",
               "justifyContent": "center",
-              "paddingHorizontal": 10,
-              "paddingVertical": 6,
+              "paddingHorizontal": 12,
+              "paddingVertical": 8,
             },
             Object {
               "borderColor": "rgb(230, 228, 235)",
+              "borderWidth": 2,
+              "paddingHorizontal": 10,
+              "paddingVertical": 6,
             },
             Object {
               "paddingHorizontal": 8,

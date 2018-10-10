@@ -42,11 +42,9 @@ const base = StyleSheet.create({
     borderRadius: borderRadiusPill,
   },
   button: {
-    borderColor: 'transparent',
-    borderWidth: buttonBorderWidth,
     borderRadius: borderRadiusPill,
-    paddingVertical: spacingMd - buttonBorderWidth,
-    paddingHorizontal: spacingBase - spacingSm - buttonBorderWidth,
+    paddingVertical: spacingMd,
+    paddingHorizontal: spacingBase - spacingSm,
     alignItems: 'center',
     flexDirection: 'row',
     justifyContent: 'center',
@@ -65,6 +63,9 @@ const types = {
   secondary: StyleSheet.create({
     button: {
       borderColor: colorGray100,
+      borderWidth: buttonBorderWidth,
+      paddingVertical: spacingMd - buttonBorderWidth,
+      paddingHorizontal: spacingBase - spacingSm - buttonBorderWidth,
     },
     text: {
       color: colorBlue500,
@@ -73,6 +74,9 @@ const types = {
   destructive: StyleSheet.create({
     button: {
       borderColor: colorGray100,
+      borderWidth: buttonBorderWidth,
+      paddingVertical: spacingMd - buttonBorderWidth,
+      paddingHorizontal: spacingBase - spacingSm - buttonBorderWidth,
     },
     text: {
       color: colorRed500,
@@ -82,6 +86,15 @@ const types = {
 
 const modifiers = {
   large: StyleSheet.create({
+    button: {
+      paddingVertical: spacingBase - spacingSm,
+      paddingHorizontal: spacingBase,
+    },
+    text: {
+      lineHeight: spacingLg,
+    },
+  }),
+  largeWithBorder: StyleSheet.create({
     button: {
       paddingVertical: spacingBase - spacingSm - buttonBorderWidth,
       paddingHorizontal: spacingBase - buttonBorderWidth,
@@ -97,6 +110,25 @@ const modifiers = {
   }),
   iconOnly: StyleSheet.create({
     button: {
+      paddingVertical: spacingMd,
+      paddingHorizontal:
+        Platform.OS === 'android' ? spacingMd + buttonBorderWidth : spacingMd,
+    },
+    icon: {
+      marginStart: 0,
+    },
+  }),
+  iconOnlyLarge: StyleSheet.create({
+    button: {
+      paddingVertical: spacingBase - spacingSm,
+      paddingHorizontal: spacingBase - spacingSm,
+    },
+    icon: {
+      marginStart: 0,
+    },
+  }),
+  iconOnlyWithBorder: StyleSheet.create({
+    button: {
       paddingVertical: spacingMd - buttonBorderWidth,
       paddingHorizontal:
         Platform.OS === 'android' ? spacingMd : spacingMd - buttonBorderWidth,
@@ -105,7 +137,7 @@ const modifiers = {
       marginStart: 0,
     },
   }),
-  iconOnlyLarge: StyleSheet.create({
+  iconOnlyWithBorderLarge: StyleSheet.create({
     button: {
       paddingVertical: spacingBase - spacingSm - buttonBorderWidth,
       paddingHorizontal: spacingBase - spacingSm - buttonBorderWidth,

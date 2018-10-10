@@ -54,7 +54,11 @@ export const getStyleForElement = (
   }
 
   if (isLarge) {
-    styleForElement.push(styles.modifiers.large[elementType]);
+    if (type === 'secondary' || type === 'destructive') {
+      styleForElement.push(styles.modifiers.largeWithBorder[elementType]);
+    } else {
+      styleForElement.push(styles.modifiers.large[elementType]);
+    }
   }
 
   if (disabled) {
@@ -62,11 +66,19 @@ export const getStyleForElement = (
   }
 
   if (iconOnly) {
-    styleForElement.push(
-      isLarge
-        ? styles.modifiers.iconOnlyLarge[elementType]
-        : styles.modifiers.iconOnly[elementType],
-    );
+    if (type === 'secondary' || type === 'destructive') {
+      styleForElement.push(
+        isLarge
+          ? styles.modifiers.iconOnlyWithBorderLarge[elementType]
+          : styles.modifiers.iconOnlyWithBorder[elementType],
+      );
+    } else {
+      styleForElement.push(
+        isLarge
+          ? styles.modifiers.iconOnlyLarge[elementType]
+          : styles.modifiers.iconOnly[elementType],
+      );
+    }
   } else if (title && icon) {
     if (iconAlignment === 'leading' || iconAlignment === 'trailing') {
       styleForElement.push(
