@@ -20,6 +20,7 @@ import _ from 'lodash';
 import tinycolor from 'tinycolor2';
 
 import sortTokens from './sort-tokens';
+import { adjustTypographyAndroid } from './adjust-typography';
 import { xmlComment } from './license-header';
 
 const tagName = type => (type === 'color' ? 'color' : 'property');
@@ -62,7 +63,9 @@ export const tokenTemplate = ({ name, value, type, category }) =>
 export default result => {
   const { props } = sortTokens(result.toJS());
 
-  const singleTokens = _.map(props, tokenTemplate).join('\n');
+  const singleTokens = _.map(props, prop =>
+    tokenTemplate(adjustTypographyAndroid(prop)),
+  ).join('\n');
 
   const source = `<?xml version="1.0" encoding="utf-8"?>
 ${xmlComment}
