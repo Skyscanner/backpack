@@ -19,6 +19,7 @@
 import _ from 'lodash';
 
 import sortTokens from './sort-tokens';
+import adjustTypography from './adjust-typography';
 import { blockComment } from './license-header';
 import valueTemplate from './react-native-value-template';
 
@@ -32,7 +33,7 @@ export const categoryTemplate = (
 ${_.map(props, prop => `${_.camelCase(prop.name)},`).join('\n')}
 };`;
 
-export default result => {
+const bpkReactNativeEs6Js = (result, platform = 'other') => {
   const { props } = sortTokens(result.toJS());
 
   const categories = _(props)
@@ -40,7 +41,9 @@ export default result => {
     .uniq()
     .value();
 
-  const singleTokens = _.map(props, prop => tokenTemplate(prop)).join('\n');
+  const singleTokens = _.map(props, prop =>
+    tokenTemplate(adjustTypography(prop, platform)),
+  ).join('\n');
 
   const groupedTokens = categories
     .sort()
@@ -56,3 +59,11 @@ export default result => {
 
   return [blockComment, singleTokens, groupedTokens].join('\n');
 };
+
+export default bpkReactNativeEs6Js;
+
+export const bpkReactNativeEs6JsAndroid = result =>
+  bpkReactNativeEs6Js(result, 'androidRn');
+
+export const bpkReactNativeEs6JsIos = result =>
+  bpkReactNativeEs6Js(result, 'iosRn');

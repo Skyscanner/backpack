@@ -124,7 +124,7 @@ exports[`iOS BpkDialingCodeList should render correctly 1`] = `
               Object {
                 "color": "rgb(82, 76, 97)",
                 "fontFamily": "System",
-                "fontSize": 17,
+                "fontSize": 20,
                 "fontWeight": "400",
               },
               Object {
@@ -214,7 +214,7 @@ exports[`iOS BpkDialingCodeList should render correctly 1`] = `
                 Object {
                   "color": "rgb(82, 76, 97)",
                   "fontFamily": "System",
-                  "fontSize": 17,
+                  "fontSize": 20,
                   "fontWeight": "400",
                 },
                 Array [
@@ -299,7 +299,7 @@ exports[`iOS BpkDialingCodeList should render correctly 1`] = `
               Object {
                 "color": "rgb(82, 76, 97)",
                 "fontFamily": "System",
-                "fontSize": 17,
+                "fontSize": 20,
                 "fontWeight": "400",
               },
               Object {
@@ -389,7 +389,7 @@ exports[`iOS BpkDialingCodeList should render correctly 1`] = `
                 Object {
                   "color": "rgb(82, 76, 97)",
                   "fontFamily": "System",
-                  "fontSize": 17,
+                  "fontSize": 20,
                   "fontWeight": "400",
                 },
                 Array [
@@ -474,7 +474,7 @@ exports[`iOS BpkDialingCodeList should render correctly 1`] = `
               Object {
                 "color": "rgb(82, 76, 97)",
                 "fontFamily": "System",
-                "fontSize": 17,
+                "fontSize": 20,
                 "fontWeight": "400",
               },
               Object {
@@ -564,7 +564,7 @@ exports[`iOS BpkDialingCodeList should render correctly 1`] = `
                 Object {
                   "color": "rgb(82, 76, 97)",
                   "fontFamily": "System",
-                  "fontSize": 17,
+                  "fontSize": 20,
                   "fontWeight": "400",
                 },
                 Array [
@@ -755,7 +755,7 @@ exports[`iOS BpkDialingCodeList should render correctly with "selectedId" set 1`
               Object {
                 "color": "rgb(82, 76, 97)",
                 "fontFamily": "System",
-                "fontSize": 17,
+                "fontSize": 20,
                 "fontWeight": "400",
               },
               Object {
@@ -845,7 +845,7 @@ exports[`iOS BpkDialingCodeList should render correctly with "selectedId" set 1`
                 Object {
                   "color": "rgb(82, 76, 97)",
                   "fontFamily": "System",
-                  "fontSize": 17,
+                  "fontSize": 20,
                   "fontWeight": "400",
                 },
                 Array [
@@ -935,7 +935,7 @@ exports[`iOS BpkDialingCodeList should render correctly with "selectedId" set 1`
               Object {
                 "color": "rgb(82, 76, 97)",
                 "fontFamily": "System",
-                "fontSize": 17,
+                "fontSize": 20,
                 "fontWeight": "400",
               },
               Object {
@@ -1025,7 +1025,7 @@ exports[`iOS BpkDialingCodeList should render correctly with "selectedId" set 1`
                 Object {
                   "color": "rgb(82, 76, 97)",
                   "fontFamily": "System",
-                  "fontSize": 17,
+                  "fontSize": 20,
                   "fontWeight": "400",
                 },
                 Array [
@@ -1110,7 +1110,7 @@ exports[`iOS BpkDialingCodeList should render correctly with "selectedId" set 1`
               Object {
                 "color": "rgb(82, 76, 97)",
                 "fontFamily": "System",
-                "fontSize": 17,
+                "fontSize": 20,
                 "fontWeight": "400",
               },
               Object {
@@ -1200,7 +1200,7 @@ exports[`iOS BpkDialingCodeList should render correctly with "selectedId" set 1`
                 Object {
                   "color": "rgb(82, 76, 97)",
                   "fontFamily": "System",
-                  "fontSize": 17,
+                  "fontSize": 20,
                   "fontWeight": "400",
                 },
                 Array [

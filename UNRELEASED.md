@@ -1,3 +1,4 @@
 # Unreleased
 
-__Nothing yet__
+- bpk-tokens:
+  - Token values updated to support new type-scale.

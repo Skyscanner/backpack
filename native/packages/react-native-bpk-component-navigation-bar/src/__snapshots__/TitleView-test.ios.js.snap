@@ -50,7 +50,7 @@ exports[`ios TitleView should render correctly with leading icon 1`] = `
         Object {
           "color": "rgb(82, 76, 97)",
           "fontFamily": "System",
-          "fontSize": 17,
+          "fontSize": 20,
           "fontWeight": "400",
         },
         Object {
@@ -94,7 +94,7 @@ exports[`ios TitleView should render correctly with only a title 1`] = `
         Object {
           "color": "rgb(82, 76, 97)",
           "fontFamily": "System",
-          "fontSize": 17,
+          "fontSize": 20,
           "fontWeight": "400",
         },
         Object {
@@ -136,7 +136,7 @@ exports[`ios TitleView should render correctly with trailing icon 1`] = `
         Object {
           "color": "rgb(82, 76, 97)",
           "fontFamily": "System",
-          "fontSize": 17,
+          "fontSize": 20,
           "fontWeight": "400",
         },
         Object {
