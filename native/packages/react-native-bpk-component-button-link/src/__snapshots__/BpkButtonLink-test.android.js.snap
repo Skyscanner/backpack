@@ -53,6 +53,7 @@ exports[`Android BpkButtonLink should render correctly 1`] = `
             "fontFamily": "sans-serif",
             "fontSize": 14,
             "fontWeight": "400",
+            "letterSpacing": 0,
           },
           Object {
             "fontFamily": "sans-serif-medium",
@@ -127,6 +128,7 @@ exports[`Android BpkButtonLink should render correctly with iconAlignment="leadi
             "fontFamily": "sans-serif",
             "fontSize": 14,
             "fontWeight": "400",
+            "letterSpacing": 0,
           },
           Object {
             "fontFamily": "sans-serif-medium",
@@ -228,6 +230,7 @@ exports[`Android BpkButtonLink should render correctly with iconAlignment="trail
             "fontFamily": "sans-serif",
             "fontSize": 14,
             "fontWeight": "400",
+            "letterSpacing": 0,
           },
           Object {
             "fontFamily": "sans-serif-medium",
@@ -325,6 +328,7 @@ exports[`Android BpkButtonLink should render correctly with text props provided 
             "fontFamily": "sans-serif",
             "fontSize": 14,
             "fontWeight": "400",
+            "letterSpacing": 0,
           },
           Object {
             "fontFamily": "sans-serif-medium",
@@ -396,6 +400,7 @@ exports[`Android BpkButtonLink should render correctly with theme prop 1`] = `
             "fontFamily": "sans-serif",
             "fontSize": 14,
             "fontWeight": "400",
+            "letterSpacing": 0,
           },
           Object {
             "fontFamily": "sans-serif-medium",
@@ -470,6 +475,7 @@ exports[`Android BpkButtonLink should support elements as icons 1`] = `
             "fontFamily": "sans-serif",
             "fontSize": 14,
             "fontWeight": "400",
+            "letterSpacing": 0,
           },
           Object {
             "fontFamily": "sans-serif-medium",
@@ -495,7 +501,9 @@ exports[`Android BpkButtonLink should support elements as icons 1`] = `
             "fontFamily": "sans-serif",
             "fontSize": 16,
             "fontWeight": "400",
+            "letterSpacing": -0.2,
           },
+          Object {},
         ]
       }
     >
@@ -562,6 +570,7 @@ exports[`Android BpkButtonLink should support overwriting styles 1`] = `
             "fontFamily": "sans-serif",
             "fontSize": 14,
             "fontWeight": "400",
+            "letterSpacing": 0,
           },
           Object {
             "fontFamily": "sans-serif-medium",
@@ -634,6 +643,7 @@ exports[`Android BpkButtonLink should support the "disabled" property 1`] = `
             "fontFamily": "sans-serif",
             "fontSize": 14,
             "fontWeight": "400",
+            "letterSpacing": 0,
           },
           Object {
             "fontFamily": "sans-serif-medium",
@@ -708,6 +718,7 @@ exports[`Android BpkButtonLink should support the "icon" property 1`] = `
             "fontFamily": "sans-serif",
             "fontSize": 14,
             "fontWeight": "400",
+            "letterSpacing": 0,
           },
           Object {
             "fontFamily": "sans-serif-medium",
@@ -805,6 +816,7 @@ exports[`Android should support "borderlessBackground" equal to false 1`] = `
             "fontFamily": "sans-serif",
             "fontSize": 14,
             "fontWeight": "400",
+            "letterSpacing": 0,
           },
           Object {
             "fontFamily": "sans-serif-medium",

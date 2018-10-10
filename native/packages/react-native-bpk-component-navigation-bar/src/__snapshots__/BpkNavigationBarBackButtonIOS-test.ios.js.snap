@@ -114,7 +114,9 @@ exports[`iOS BpkNavigationBarBackButtonIOS should render correctly with title 1`
           "fontFamily": "System",
           "fontSize": 20,
           "fontWeight": "400",
+          "letterSpacing": -0.78,
         },
+        Object {},
         Array [
           Object {
             "color": "rgb(82, 76, 97)",

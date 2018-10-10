@@ -58,7 +58,9 @@ exports[`Android BpkListItem should render correctly 1`] = `
             "fontFamily": "sans-serif",
             "fontSize": 16,
             "fontWeight": "400",
+            "letterSpacing": -0.2,
           },
+          Object {},
           Array [
             Object {
               "color": "rgb(82, 76, 97)",
@@ -171,7 +173,9 @@ exports[`Android BpkListItem should support the "image" property 1`] = `
             "fontFamily": "sans-serif",
             "fontSize": 16,
             "fontWeight": "400",
+            "letterSpacing": -0.2,
           },
+          Object {},
           Array [
             Object {
               "color": "rgb(82, 76, 97)",
@@ -274,7 +278,9 @@ exports[`Android BpkListItem should support the "selected" property 1`] = `
             "fontFamily": "sans-serif",
             "fontSize": 16,
             "fontWeight": "400",
+            "letterSpacing": -0.2,
           },
+          Object {},
           Array [
             Object {
               "color": "rgb(82, 76, 97)",

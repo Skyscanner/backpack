@@ -95,7 +95,9 @@ exports[`ios BpkNavigationBar should render correctly 1`] = `
               "fontFamily": "System",
               "fontSize": 20,
               "fontWeight": "400",
+              "letterSpacing": -0.78,
             },
+            Object {},
             Array [
               Object {
                 "color": "rgb(82, 76, 97)",
@@ -146,6 +148,7 @@ exports[`ios BpkNavigationBar should render correctly 1`] = `
                 "fontFamily": "System",
                 "fontSize": 20,
                 "fontWeight": "400",
+                "letterSpacing": -0.78,
               },
               Object {
                 "fontWeight": "600",
@@ -265,7 +268,9 @@ exports[`ios BpkNavigationBar should render correctly with a subtitle view 1`] =
               "fontFamily": "System",
               "fontSize": 20,
               "fontWeight": "400",
+              "letterSpacing": -0.78,
             },
+            Object {},
             Array [
               Object {
                 "color": "rgb(82, 76, 97)",
@@ -316,6 +321,7 @@ exports[`ios BpkNavigationBar should render correctly with a subtitle view 1`] =
                 "fontFamily": "System",
                 "fontSize": 20,
                 "fontWeight": "400",
+                "letterSpacing": -0.78,
               },
               Object {
                 "fontWeight": "600",
@@ -443,7 +449,9 @@ exports[`ios BpkNavigationBar should render correctly with a title view 1`] = `
               "fontFamily": "System",
               "fontSize": 20,
               "fontWeight": "400",
+              "letterSpacing": -0.78,
             },
+            Object {},
             Array [
               Object {
                 "color": "rgb(82, 76, 97)",
@@ -580,7 +588,9 @@ exports[`ios BpkNavigationBar should render correctly with an icon in the title 
               "fontFamily": "System",
               "fontSize": 20,
               "fontWeight": "400",
+              "letterSpacing": -0.78,
             },
+            Object {},
             Array [
               Object {
                 "color": "rgb(82, 76, 97)",
@@ -659,6 +669,7 @@ exports[`ios BpkNavigationBar should render correctly with an icon in the title 
                 "fontFamily": "System",
                 "fontSize": 20,
                 "fontWeight": "400",
+                "letterSpacing": -0.78,
               },
               Object {
                 "fontWeight": "600",
@@ -780,7 +791,9 @@ exports[`ios BpkNavigationBar should render correctly with custom style 1`] = `
               "fontFamily": "System",
               "fontSize": 20,
               "fontWeight": "400",
+              "letterSpacing": -0.78,
             },
+            Object {},
             Array [
               Object {
                 "color": "rgb(82, 76, 97)",
@@ -831,6 +844,7 @@ exports[`ios BpkNavigationBar should render correctly with custom style 1`] = `
                 "fontFamily": "System",
                 "fontSize": 20,
                 "fontWeight": "400",
+                "letterSpacing": -0.78,
               },
               Object {
                 "fontWeight": "600",
@@ -929,7 +943,9 @@ exports[`ios BpkNavigationBar should render correctly with trailing button 1`] =
               "fontFamily": "System",
               "fontSize": 20,
               "fontWeight": "400",
+              "letterSpacing": -0.78,
             },
+            Object {},
             Array [
               Object {
                 "color": "rgb(82, 76, 97)",
@@ -980,6 +996,7 @@ exports[`ios BpkNavigationBar should render correctly with trailing button 1`] =
                 "fontFamily": "System",
                 "fontSize": 20,
                 "fontWeight": "400",
+                "letterSpacing": -0.78,
               },
               Object {
                 "fontWeight": "600",
@@ -1039,6 +1056,7 @@ exports[`ios BpkNavigationBar should render correctly with trailing button 1`] =
               "fontFamily": "System",
               "fontSize": 20,
               "fontWeight": "400",
+              "letterSpacing": -0.78,
             },
             Object {
               "fontWeight": "600",

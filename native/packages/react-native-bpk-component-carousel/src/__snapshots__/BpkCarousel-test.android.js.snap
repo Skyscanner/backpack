@@ -22,9 +22,10 @@ exports[`Android BpkCarousel should render correctly 1`] = `
             style={null}
           >
             <BpkText
-              emphasize={false}
+              emphasize={null}
               style={null}
               textStyle="base"
+              weight="regular"
             >
               View 1
             </BpkText>
@@ -136,9 +137,10 @@ exports[`Android BpkCarousel should render correctly with an "accessibilityLabel
             style={null}
           >
             <BpkText
-              emphasize={false}
+              emphasize={null}
               style={null}
               textStyle="base"
+              weight="regular"
             >
               View 1
             </BpkText>
@@ -250,9 +252,10 @@ exports[`Android BpkCarousel should render correctly without indicators 1`] = `
             style={null}
           >
             <BpkText
-              emphasize={false}
+              emphasize={null}
               style={null}
               textStyle="base"
+              weight="regular"
             >
               View 1
             </BpkText>

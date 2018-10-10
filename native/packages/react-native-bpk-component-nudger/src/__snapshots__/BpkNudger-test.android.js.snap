@@ -136,6 +136,7 @@ exports[`Android BpkNudger should disable theming if the required attribute is o
           "fontFamily": "sans-serif",
           "fontSize": 20,
           "fontWeight": "400",
+          "letterSpacing": -0.4,
         },
         Object {
           "fontFamily": "sans-serif-medium",
@@ -401,6 +402,7 @@ exports[`Android BpkNudger should render correctly 1`] = `
           "fontFamily": "sans-serif",
           "fontSize": 20,
           "fontWeight": "400",
+          "letterSpacing": -0.4,
         },
         Object {
           "fontFamily": "sans-serif-medium",
@@ -673,6 +675,7 @@ exports[`Android BpkNudger should render correctly when value is a not an intege
           "fontFamily": "sans-serif",
           "fontSize": 20,
           "fontWeight": "400",
+          "letterSpacing": -0.4,
         },
         Object {
           "fontFamily": "sans-serif-medium",
@@ -938,6 +941,7 @@ exports[`Android BpkNudger should render correctly when value is greater than ma
           "fontFamily": "sans-serif",
           "fontSize": 20,
           "fontWeight": "400",
+          "letterSpacing": -0.4,
         },
         Object {
           "fontFamily": "sans-serif-medium",
@@ -1217,6 +1221,7 @@ exports[`Android BpkNudger should render correctly when value is less than min 1
           "fontFamily": "sans-serif",
           "fontSize": 20,
           "fontWeight": "400",
+          "letterSpacing": -0.4,
         },
         Object {
           "fontFamily": "sans-serif-medium",
@@ -1484,6 +1489,7 @@ exports[`Android BpkNudger should support theming 1`] = `
           "fontFamily": "sans-serif",
           "fontSize": 20,
           "fontWeight": "400",
+          "letterSpacing": -0.4,
         },
         Object {
           "fontFamily": "sans-serif-medium",

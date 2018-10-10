@@ -20,8 +20,10 @@ import React from 'react';
 import readme from 'react-native-bpk-component-text/README.md';
 import iosScreenshot from 'react-native-bpk-component-text/screenshots/ios/default.png';
 import androidScreenshot from 'react-native-bpk-component-text/screenshots/android/default.png';
-import iosScreenshotBold from 'react-native-bpk-component-text/screenshots/ios/emphasize.png';
-import androidScreenshotBold from 'react-native-bpk-component-text/screenshots/android/emphasize.png';
+import iosScreenshotEmphasized from 'react-native-bpk-component-text/screenshots/ios/emphasize.png';
+import androidScreenshotEmphasized from 'react-native-bpk-component-text/screenshots/android/emphasize.png';
+import iosScreenshotHeavy from 'react-native-bpk-component-text/screenshots/ios/heavy.png';
+import androidScreenshotHeavy from 'react-native-bpk-component-text/screenshots/android/heavy.png';
 
 import DocsPageBuilder from '../../components/DocsPageBuilder';
 
@@ -49,14 +51,14 @@ const components = [
     ],
   },
   {
-    id: 'emphasize',
-    title: 'Emphasize',
+    id: 'emphasized',
+    title: 'Emphasized',
     screenshots: [
       {
         title: 'iOS',
         width: 750,
         height: 1334,
-        src: `/${iosScreenshotBold}`,
+        src: `/${iosScreenshotEmphasized}`,
         altText: 'iOS Emphasized Text Component',
         subText: '(iPhone 8 simulator)',
       },
@@ -64,8 +66,30 @@ const components = [
         title: 'Android',
         width: 1080,
         height: 1920,
-        src: `/${androidScreenshotBold}`,
+        src: `/${androidScreenshotEmphasized}`,
         altText: 'Android Emphasized Text Component',
+        subText: '(Google Pixel emulator)',
+      },
+    ],
+  },
+  {
+    id: 'heavy',
+    title: 'Heavy',
+    screenshots: [
+      {
+        title: 'iOS',
+        width: 750,
+        height: 1334,
+        src: `/${iosScreenshotHeavy}`,
+        altText: 'iOS Heavy Text Component',
+        subText: '(iPhone 8 simulator)',
+      },
+      {
+        title: 'Android',
+        width: 1080,
+        height: 1920,
+        src: `/${androidScreenshotHeavy}`,
+        altText: 'Android Heavy Text Component',
         subText: '(Google Pixel emulator)',
       },
     ],

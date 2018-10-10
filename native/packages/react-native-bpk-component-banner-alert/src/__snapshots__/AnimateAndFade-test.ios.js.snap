@@ -36,7 +36,9 @@ exports[`iOS AnimateAndFade should render correctly 1`] = `
             "fontFamily": "System",
             "fontSize": 16,
             "fontWeight": "400",
+            "letterSpacing": 0.12,
           },
+          Object {},
         ]
       }
     >
@@ -61,7 +63,9 @@ exports[`iOS AnimateAndFade should render correctly 1`] = `
             "fontFamily": "System",
             "fontSize": 16,
             "fontWeight": "400",
+            "letterSpacing": 0.12,
           },
+          Object {},
         ]
       }
     >
@@ -107,7 +111,9 @@ exports[`iOS AnimateAndFade should render correctly when show is false 1`] = `
             "fontFamily": "System",
             "fontSize": 16,
             "fontWeight": "400",
+            "letterSpacing": 0.12,
           },
+          Object {},
         ]
       }
     >
@@ -132,7 +138,9 @@ exports[`iOS AnimateAndFade should render correctly when show is false 1`] = `
             "fontFamily": "System",
             "fontSize": 16,
             "fontWeight": "400",
+            "letterSpacing": 0.12,
           },
+          Object {},
         ]
       }
     >
@@ -178,7 +186,9 @@ exports[`iOS AnimateAndFade should render correctly with animateOnEnter 1`] = `
             "fontFamily": "System",
             "fontSize": 16,
             "fontWeight": "400",
+            "letterSpacing": 0.12,
           },
+          Object {},
         ]
       }
     >
@@ -203,7 +213,9 @@ exports[`iOS AnimateAndFade should render correctly with animateOnEnter 1`] = `
             "fontFamily": "System",
             "fontSize": 16,
             "fontWeight": "400",
+            "letterSpacing": 0.12,
           },
+          Object {},
         ]
       }
     >
@@ -249,7 +261,9 @@ exports[`iOS AnimateAndFade should render correctly with animateOnLeave 1`] = `
             "fontFamily": "System",
             "fontSize": 16,
             "fontWeight": "400",
+            "letterSpacing": 0.12,
           },
+          Object {},
         ]
       }
     >
@@ -274,7 +288,9 @@ exports[`iOS AnimateAndFade should render correctly with animateOnLeave 1`] = `
             "fontFamily": "System",
             "fontSize": 16,
             "fontWeight": "400",
+            "letterSpacing": 0.12,
           },
+          Object {},
         ]
       }
     >

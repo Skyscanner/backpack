@@ -21,6 +21,7 @@ exports[`iOS BpkSectionListHeader should render correctly 1`] = `
           "fontFamily": "System",
           "fontSize": 20,
           "fontWeight": "400",
+          "letterSpacing": -0.78,
         },
         Object {
           "fontWeight": "600",

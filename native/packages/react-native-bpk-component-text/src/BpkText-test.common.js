@@ -23,7 +23,7 @@ import renderer from 'react-test-renderer';
 import { colorRed500 } from 'bpk-tokens/tokens/base.react.native';
 
 import BpkText from './BpkText';
-import { TEXT_STYLES } from './common-types';
+import { TEXT_STYLES, WEIGHT_STYLES } from './common-types';
 
 const commonTests = () => {
   describe('BpkText', () => {
@@ -40,7 +40,9 @@ const commonTests = () => {
       expect(tree).toMatchSnapshot();
     });
 
-    it('should render correctly with `emphasize` prop', () => {
+    it('should render correctly with deprecated `emphasize` prop', () => {
+      const consoleWarnFn = jest.fn();
+      jest.spyOn(console, 'warn').mockImplementation(consoleWarnFn);
       const tree = renderer
         .create(
           <BpkText emphasize>
@@ -51,6 +53,23 @@ const commonTests = () => {
         )
         .toJSON();
       expect(tree).toMatchSnapshot();
+      expect(consoleWarnFn.mock.calls.length).toBe(1);
+    });
+
+    it('should ignore weight prop if deprecated `emphasize` prop is being used', () => {
+      const consoleWarnFn = jest.fn();
+      jest.spyOn(console, 'warn').mockImplementation(consoleWarnFn);
+      const tree = renderer
+        .create(
+          <BpkText textStyle="xxl" emphasize weight={WEIGHT_STYLES.heavy}>
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
+            commodo ligula eget dolor. Aenean massa. Cum sociis natoque
+            penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+          </BpkText>,
+        )
+        .toJSON();
+      expect(tree).toMatchSnapshot();
+      expect(consoleWarnFn.mock.calls.length).toBe(1);
     });
 
     it('should support overwriting styles', () => {
@@ -71,6 +90,34 @@ const commonTests = () => {
         const tree = renderer
           .create(
             <BpkText textStyle={textStyle}>
+              Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
+              commodo ligula eget dolor. Aenean massa. Cum sociis natoque
+              penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+            </BpkText>,
+          )
+          .toJSON();
+        expect(tree).toMatchSnapshot();
+      });
+    });
+    TEXT_STYLES.forEach(textStyle => {
+      it(`should render correctly with textStyle="${textStyle} and weight="emphasized"`, () => {
+        const tree = renderer
+          .create(
+            <BpkText weight={WEIGHT_STYLES.emphasized} textStyle={textStyle}>
+              Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
+              commodo ligula eget dolor. Aenean massa. Cum sociis natoque
+              penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+            </BpkText>,
+          )
+          .toJSON();
+        expect(tree).toMatchSnapshot();
+      });
+    });
+    TEXT_STYLES.filter(s => s.includes(`xl`)).forEach(textStyle => {
+      it(`should render correctly with textStyle="${textStyle} and weight="heavy"`, () => {
+        const tree = renderer
+          .create(
+            <BpkText weight={WEIGHT_STYLES.heavy} textStyle={textStyle}>
               Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
               commodo ligula eget dolor. Aenean massa. Cum sociis natoque
               penatibus et magnis dis parturient montes, nascetur ridiculus mus.

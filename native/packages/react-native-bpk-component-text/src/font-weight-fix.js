@@ -32,6 +32,11 @@
 
 import { Platform } from 'react-native';
 
+// NB: In React Native, font-weight constants have been added due to an issue on iOS < 8.2
+// https://github.com/facebook/react-native/blob/370bcffba748e895ad8afa825bfef40bff859c95/React/Views/RCTFont.mm#L18-L31
+// shouldApplyFontWeightFix determines whether these will take effect, and whether we should therefore apply an adjustement to counter it
+// At the time of writing, iOS 11 and 12 (the two latest versions) are affected.
+
 export let RN_VERSION = null;
 export const IOS_VERSION =
   Platform.OS === 'ios' && parseInt(Platform.Version, 10);
@@ -48,7 +53,8 @@ try {
 
   const isAffectedRNVersion = major === 0 && minor === 55;
 
-  shouldApplyFontWeightFix = isAffectedRNVersion && IOS_VERSION === 11;
+  shouldApplyFontWeightFix =
+    isAffectedRNVersion && (IOS_VERSION === 11 || IOS_VERSION === 12);
 } catch (e) {
   // do nothing
 }
