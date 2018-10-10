@@ -31,6 +31,7 @@ export default () => (
 | name       | string   | true     | -             |
 | label      | node     | true     | -             |
 | required   | bool     | false    | false         |
+| disabled   | bool     | false    | false         |
 | white      | bool     | false    | false         |
 | smallLabel | bool     | false    | false         |
 
