@@ -2,13 +2,19 @@
 
 [Unreleased changes](./UNRELEASED.md).
 
+# 2018-10-11 - Fix React Native buttons on Android
+
+**Fixed:**
+ - react-native-bpk-component-button: 7.1.18 => 7.1.19
+   - Fixed an issue where primary and featured buttons were the wrong size on Android.
+
 # 2018-10-08 - Align web progress bar to mobile platforms
 
 **Fixed:**
  - bpk-component-progress 1.0.90 => 1.0.91:
    - Changed non-stepped progress bar to have rounded corners to match RN bpk progress bar
 
-# 2018-10-05 - Fix more react native dynamic text issues
+# 2018-10-05 - Fix more React Bative dynamic text issues
 
 **Added:**
 
@@ -24,7 +30,7 @@
 - bpk-component-autosuggest: 3.0.111 => 3.0.112
   - Updated `react-autosuggest` dependency: `9.4.1` => `9.4.2`
 
-# 2018-10-03 - Fix for react native button stretching
+# 2018-10-03 - Fix for React Native button stretching
 
 **Fixed:**
 
@@ -39,7 +45,7 @@
 - bpk-react-utils:
   - bpk-react-utils: 2.6.10 => 2.6.11
 
-# 2018-09-27 - Fix more react native dynamic text issues
+# 2018-09-27 - Fix more React Native dynamic text issues
 
 **Fixed:**
 - react-native-bpk-component-badge: 1.0.23 => 1.0.24
@@ -57,7 +63,7 @@
 - react-native-bpk-component-text-input: 2.3.13 => 2.3.14
   - Overflowing label text is now truncated.
 
-# 2018-09-24 - Fix react native button to support dynamic text sizes
+# 2018-09-24 - Fix React Native button to support dynamic text sizes
 
 **Fixed:**
 - react-native-bpk-component-button: 7.1.14 => 7.1.15
