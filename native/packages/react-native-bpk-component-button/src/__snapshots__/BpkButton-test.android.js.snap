@@ -43,13 +43,11 @@ exports[`Android API levels Android API<21 should render without ripple 1`] = `
         Array [
           Object {
             "alignItems": "center",
-            "borderColor": "transparent",
             "borderRadius": 40,
-            "borderWidth": 2,
             "flexDirection": "row",
             "justifyContent": "center",
-            "paddingHorizontal": 10,
-            "paddingVertical": 6,
+            "paddingHorizontal": 12,
+            "paddingVertical": 8,
           },
         ],
         Object {
@@ -132,13 +130,11 @@ exports[`Android API levels Android API>=21 should render with ripple 1`] = `
         Array [
           Object {
             "alignItems": "center",
-            "borderColor": "transparent",
             "borderRadius": 40,
-            "borderWidth": 2,
             "flexDirection": "row",
             "justifyContent": "center",
-            "paddingHorizontal": 10,
-            "paddingVertical": 6,
+            "paddingHorizontal": 12,
+            "paddingVertical": 8,
           },
         ],
         Object {
@@ -221,13 +217,11 @@ exports[`Android BpkButton should render correctly 1`] = `
         Array [
           Object {
             "alignItems": "center",
-            "borderColor": "transparent",
             "borderRadius": 40,
-            "borderWidth": 2,
             "flexDirection": "row",
             "justifyContent": "center",
-            "paddingHorizontal": 10,
-            "paddingVertical": 6,
+            "paddingHorizontal": 12,
+            "paddingVertical": 8,
           },
         ],
         Object {
@@ -314,13 +308,11 @@ exports[`Android BpkButton should render correctly with iconAlignment="centerLea
         Array [
           Object {
             "alignItems": "center",
-            "borderColor": "transparent",
             "borderRadius": 40,
-            "borderWidth": 2,
             "flexDirection": "row",
             "justifyContent": "center",
-            "paddingHorizontal": 10,
-            "paddingVertical": 6,
+            "paddingHorizontal": 12,
+            "paddingVertical": 8,
           },
           Object {
             "flexDirection": "row-reverse",
@@ -450,13 +442,11 @@ exports[`Android BpkButton should render correctly with iconAlignment="centerTra
         Array [
           Object {
             "alignItems": "center",
-            "borderColor": "transparent",
             "borderRadius": 40,
-            "borderWidth": 2,
             "flexDirection": "row",
             "justifyContent": "center",
-            "paddingHorizontal": 10,
-            "paddingVertical": 6,
+            "paddingHorizontal": 12,
+            "paddingVertical": 8,
           },
         ],
         Object {
@@ -579,13 +569,11 @@ exports[`Android BpkButton should render correctly with iconAlignment="leading" 
         Array [
           Object {
             "alignItems": "center",
-            "borderColor": "transparent",
             "borderRadius": 40,
-            "borderWidth": 2,
             "flexDirection": "row",
             "justifyContent": "center",
-            "paddingHorizontal": 10,
-            "paddingVertical": 6,
+            "paddingHorizontal": 12,
+            "paddingVertical": 8,
           },
           Object {
             "justifyContent": "space-between",
@@ -722,13 +710,11 @@ exports[`Android BpkButton should render correctly with iconAlignment="trailing"
         Array [
           Object {
             "alignItems": "center",
-            "borderColor": "transparent",
             "borderRadius": 40,
-            "borderWidth": 2,
             "flexDirection": "row",
             "justifyContent": "center",
-            "paddingHorizontal": 10,
-            "paddingVertical": 6,
+            "paddingHorizontal": 12,
+            "paddingVertical": 8,
           },
           Object {
             "justifyContent": "space-between",
@@ -855,16 +841,17 @@ exports[`Android BpkButton should render correctly with type="destructive" 1`] =
         Array [
           Object {
             "alignItems": "center",
-            "borderColor": "transparent",
             "borderRadius": 40,
-            "borderWidth": 2,
             "flexDirection": "row",
             "justifyContent": "center",
-            "paddingHorizontal": 10,
-            "paddingVertical": 6,
+            "paddingHorizontal": 12,
+            "paddingVertical": 8,
           },
           Object {
             "borderColor": "rgb(230, 228, 235)",
+            "borderWidth": 2,
+            "paddingHorizontal": 10,
+            "paddingVertical": 6,
           },
         ],
         Object {
@@ -955,16 +942,17 @@ exports[`Android BpkButton should render correctly with type="destructive" and d
         Array [
           Object {
             "alignItems": "center",
-            "borderColor": "transparent",
             "borderRadius": 40,
-            "borderWidth": 2,
             "flexDirection": "row",
             "justifyContent": "center",
-            "paddingHorizontal": 10,
-            "paddingVertical": 6,
+            "paddingHorizontal": 12,
+            "paddingVertical": 8,
           },
           Object {
             "borderColor": "rgb(230, 228, 235)",
+            "borderWidth": 2,
+            "paddingHorizontal": 10,
+            "paddingVertical": 6,
           },
           undefined,
         ],
@@ -1057,13 +1045,11 @@ exports[`Android BpkButton should render correctly with type="featured" 1`] = `
         Array [
           Object {
             "alignItems": "center",
-            "borderColor": "transparent",
             "borderRadius": 40,
-            "borderWidth": 2,
             "flexDirection": "row",
             "justifyContent": "center",
-            "paddingHorizontal": 10,
-            "paddingVertical": 6,
+            "paddingHorizontal": 12,
+            "paddingVertical": 8,
           },
         ],
         Object {
@@ -1151,13 +1137,11 @@ exports[`Android BpkButton should render correctly with type="featured" and disa
         Array [
           Object {
             "alignItems": "center",
-            "borderColor": "transparent",
             "borderRadius": 40,
-            "borderWidth": 2,
             "flexDirection": "row",
             "justifyContent": "center",
-            "paddingHorizontal": 10,
-            "paddingVertical": 6,
+            "paddingHorizontal": 12,
+            "paddingVertical": 8,
           },
           undefined,
         ],
@@ -1247,13 +1231,11 @@ exports[`Android BpkButton should render correctly with type="primary" 1`] = `
         Array [
           Object {
             "alignItems": "center",
-            "borderColor": "transparent",
             "borderRadius": 40,
-            "borderWidth": 2,
             "flexDirection": "row",
             "justifyContent": "center",
-            "paddingHorizontal": 10,
-            "paddingVertical": 6,
+            "paddingHorizontal": 12,
+            "paddingVertical": 8,
           },
         ],
         Object {
@@ -1341,13 +1323,11 @@ exports[`Android BpkButton should render correctly with type="primary" and disab
         Array [
           Object {
             "alignItems": "center",
-            "borderColor": "transparent",
             "borderRadius": 40,
-            "borderWidth": 2,
             "flexDirection": "row",
             "justifyContent": "center",
-            "paddingHorizontal": 10,
-            "paddingVertical": 6,
+            "paddingHorizontal": 12,
+            "paddingVertical": 8,
           },
           undefined,
         ],
@@ -1437,16 +1417,17 @@ exports[`Android BpkButton should render correctly with type="secondary" 1`] = `
         Array [
           Object {
             "alignItems": "center",
-            "borderColor": "transparent",
             "borderRadius": 40,
-            "borderWidth": 2,
             "flexDirection": "row",
             "justifyContent": "center",
-            "paddingHorizontal": 10,
-            "paddingVertical": 6,
+            "paddingHorizontal": 12,
+            "paddingVertical": 8,
           },
           Object {
             "borderColor": "rgb(230, 228, 235)",
+            "borderWidth": 2,
+            "paddingHorizontal": 10,
+            "paddingVertical": 6,
           },
         ],
         Object {
@@ -1537,16 +1518,17 @@ exports[`Android BpkButton should render correctly with type="secondary" and dis
         Array [
           Object {
             "alignItems": "center",
-            "borderColor": "transparent",
             "borderRadius": 40,
-            "borderWidth": 2,
             "flexDirection": "row",
             "justifyContent": "center",
-            "paddingHorizontal": 10,
-            "paddingVertical": 6,
+            "paddingHorizontal": 12,
+            "paddingVertical": 8,
           },
           Object {
             "borderColor": "rgb(230, 228, 235)",
+            "borderWidth": 2,
+            "paddingHorizontal": 10,
+            "paddingVertical": 6,
           },
           undefined,
         ],
@@ -1640,17 +1622,15 @@ exports[`Android BpkButton should support elements as icons 1`] = `
         Array [
           Object {
             "alignItems": "center",
-            "borderColor": "transparent",
             "borderRadius": 40,
-            "borderWidth": 2,
             "flexDirection": "row",
             "justifyContent": "center",
-            "paddingHorizontal": 10,
-            "paddingVertical": 6,
+            "paddingHorizontal": 12,
+            "paddingVertical": 8,
           },
           Object {
-            "paddingHorizontal": 6,
-            "paddingVertical": 6,
+            "paddingHorizontal": 8,
+            "paddingVertical": 8,
           },
         ],
         Object {
@@ -1725,13 +1705,11 @@ exports[`Android BpkButton should support having an icon as well as a title 1`] 
         Array [
           Object {
             "alignItems": "center",
-            "borderColor": "transparent",
             "borderRadius": 40,
-            "borderWidth": 2,
             "flexDirection": "row",
             "justifyContent": "center",
-            "paddingHorizontal": 10,
-            "paddingVertical": 6,
+            "paddingHorizontal": 12,
+            "paddingVertical": 8,
           },
           Object {
             "justifyContent": "space-between",
@@ -1860,13 +1838,11 @@ exports[`Android BpkButton should support overwriting styles 1`] = `
         Array [
           Object {
             "alignItems": "center",
-            "borderColor": "transparent",
             "borderRadius": 40,
-            "borderWidth": 2,
             "flexDirection": "row",
             "justifyContent": "center",
-            "paddingHorizontal": 10,
-            "paddingVertical": 6,
+            "paddingHorizontal": 12,
+            "paddingVertical": 8,
           },
         ],
         Object {
@@ -1954,13 +1930,11 @@ exports[`Android BpkButton should support the "disabled" property 1`] = `
         Array [
           Object {
             "alignItems": "center",
-            "borderColor": "transparent",
             "borderRadius": 40,
-            "borderWidth": 2,
             "flexDirection": "row",
             "justifyContent": "center",
-            "paddingHorizontal": 10,
-            "paddingVertical": 6,
+            "paddingHorizontal": 12,
+            "paddingVertical": 8,
           },
           undefined,
         ],
@@ -2051,13 +2025,11 @@ exports[`Android BpkButton should support the "icon" property 1`] = `
         Array [
           Object {
             "alignItems": "center",
-            "borderColor": "transparent",
             "borderRadius": 40,
-            "borderWidth": 2,
             "flexDirection": "row",
             "justifyContent": "center",
-            "paddingHorizontal": 10,
-            "paddingVertical": 6,
+            "paddingHorizontal": 12,
+            "paddingVertical": 8,
           },
           Object {
             "justifyContent": "space-between",
@@ -2185,17 +2157,15 @@ exports[`Android BpkButton should support the "iconOnly" property 1`] = `
         Array [
           Object {
             "alignItems": "center",
-            "borderColor": "transparent",
             "borderRadius": 40,
-            "borderWidth": 2,
             "flexDirection": "row",
             "justifyContent": "center",
-            "paddingHorizontal": 10,
-            "paddingVertical": 6,
+            "paddingHorizontal": 12,
+            "paddingVertical": 8,
           },
           Object {
-            "paddingHorizontal": 6,
-            "paddingVertical": 6,
+            "paddingHorizontal": 8,
+            "paddingVertical": 8,
           },
         ],
         Object {
@@ -2291,16 +2261,17 @@ exports[`Android BpkButton should support the "secondary" property 1`] = `
         Array [
           Object {
             "alignItems": "center",
-            "borderColor": "transparent",
             "borderRadius": 40,
-            "borderWidth": 2,
             "flexDirection": "row",
             "justifyContent": "center",
-            "paddingHorizontal": 10,
-            "paddingVertical": 6,
+            "paddingHorizontal": 12,
+            "paddingVertical": 8,
           },
           Object {
             "borderColor": "rgb(230, 228, 235)",
+            "borderWidth": 2,
+            "paddingHorizontal": 10,
+            "paddingVertical": 6,
           },
         ],
         Object {
@@ -2389,13 +2360,11 @@ exports[`Android BpkButtonThemed should render correctly 1`] = `
         Array [
           Object {
             "alignItems": "center",
-            "borderColor": "transparent",
             "borderRadius": 40,
-            "borderWidth": 2,
             "flexDirection": "row",
             "justifyContent": "center",
-            "paddingHorizontal": 10,
-            "paddingVertical": 6,
+            "paddingHorizontal": 12,
+            "paddingVertical": 8,
           },
         ],
         Object {
