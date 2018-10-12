@@ -29,6 +29,7 @@ import {
   withRouter,
   matchPath,
 } from 'react-router-dom';
+import 'es6-promise/auto';
 
 import Routes, { ROUTES_MAPPINGS } from './routes';
 import template from './template';
