@@ -111,7 +111,7 @@ const withInfiniteScroll = (
 
       this.props.dataSource.onDataChange(this.updateData);
       this.observer = new IntersectionObserver(this.handleIntersection, {
-        threshold: 1,
+        threshold: 0.99, // using 0.99 instead of 1 to avoid problems with float precision in IE11
       });
     }
 
@@ -194,7 +194,7 @@ const withInfiniteScroll = (
     handleIntersection = (entries: Array<IntersectionObserverEntry>) => {
       const { onScroll } = this.props;
       const entry = entries[0];
-      if (entry.intersectionRatio >= 1) {
+      if (entry.isIntersecting) {
         if (this.sentinel) {
           this.observer.unobserve(this.sentinel);
         }

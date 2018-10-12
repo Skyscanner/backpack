@@ -50,7 +50,7 @@ describe('withInfiniteScroll', () => {
   beforeEach(() => {
     global.IntersectionObserver = class {
       constructor(callback) {
-        intersect = async () => callback([{ intersectionRatio: 1 }]);
+        intersect = async () => callback([{ isIntersecting: true }]);
       }
       observe() {} // eslint-disable-line
       unobserve() {} // eslint-disable-line
