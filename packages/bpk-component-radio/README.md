@@ -31,6 +31,7 @@ export default () => (
 | name      | string   | true     | -             |
 | label     | node     | true     | -             |
 | white     | bool     | false    | false         |
+| disabled  | bool     | false    | false         |
 
 ## Theme Props
 
