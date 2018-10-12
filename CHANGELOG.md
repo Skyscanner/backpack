@@ -2,6 +2,12 @@
 
 [Unreleased changes](./UNRELEASED.md).
 
+# 2018-10-12 - Fix Infinite Scroll problem on IE11
+
+**Fixed:**
+- bpk-component-infinite-scroll: 2.0.13 => 2.0.14
+  - Changed IntersectionObserver threshold from 1 to 0.99.
+
 # 2018-10-11 - Fix React Native buttons on Android
 
 **Fixed:**
