@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-accordion",
-  "version": "1.2.44",
+  "version": "1.2.45",
   "description": "Backpack accordion component.",
   "main": "index.js",
   "repository": {
@@ -20,7 +20,7 @@
     "prop-types": "^15.6.2"
   },
   "devDependencies": {
-    "bpk-component-checkbox": "^1.4.51",
+    "bpk-component-checkbox": "^1.4.52",
     "bpk-tokens": "^27.1.0"
   }
 }
