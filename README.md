@@ -9,6 +9,10 @@
 
 https://backpack.github.io/
 
+## Changelog
+
+The up-to-date changelog can be found [here](./CHANGELOG.md)
+
 ## Usage
 
 ### Installing packages
