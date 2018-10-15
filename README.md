@@ -11,7 +11,7 @@ https://backpack.github.io/
 
 ## Changelog
 
-The up-to-date changelog can be found [here](./CHANGELOG.md)
+[View our up-to-date changelog](./CHANGELOG.md)
 
 ## Usage
 
