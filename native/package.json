@@ -11,7 +11,7 @@
     "android:build": "react-native run-android",
     "android": "npm run android:emulator & npm run android:build",
     "test": "jest --coverage",
-    "storybook": "storybook start -p 7007 --skip-packager | react-native start --projectRoot ../"
+    "storybook": "storybook start -p 7007 --skip-packager | react-native start --watchFolders $PWD/.."
   },
   "rnpm": {
     "assets": [
@@ -19,12 +19,13 @@
     ]
   },
   "devDependencies": {
-    "@storybook/react-native": "^3.3.10",
-    "babel-preset-react-native": "^4.0.0",
-    "react": "16.3.1",
-    "react-dom": "16.3.1",
+    "@storybook/react-native": "^3.4.11",
+    "babel-core": "7.0.0-bridge.0",
+    "metro-react-native-babel-preset": "^0.45.0",
+    "react": "16.5.1",
+    "react-dom": "16.5.1",
     "react-native": "0.57.1",
-    "react-test-renderer": "16.3.1",
+    "react-test-renderer": "16.5.1",
     "react-native-linear-gradient": "react-native-community/react-native-linear-gradient#20928ce2ac8038e8545c7f6c3faab05f866deabd"
   },
   "jest": {
