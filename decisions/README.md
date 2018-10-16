@@ -13,4 +13,5 @@ This directory is a collection of decisions that the squad has made on various t
 * [Naming convention for theme attributes](theme-props-naming.md)
 * [Parallel builds](parallel-builds.md)
 * [We don't set line heights for native typography](native-line-heights.md)
+* [Type Ramp](tracking.md)
 * [Writing docs](writing-docs.md)
