@@ -1,6 +1,6 @@
 # Support for Tracking
 
-The type-ramp system uses the following values for tracking:
+The type ramp system uses the following values for tracking:
 
 font size | letter Spacing in sketch | letter Spacing Android
 |--------|-------|-----|
@@ -19,7 +19,7 @@ font size | letter Spacing in sketch | letter Spacing Android
 
 ## Android
 
-For android the value for `letterSpacing` is calculated as
+For Android the value for `letterSpacing` is calculated as
 
 `letterSpacing` = `letterSpacing(Sketch)` / `font-size`
 
