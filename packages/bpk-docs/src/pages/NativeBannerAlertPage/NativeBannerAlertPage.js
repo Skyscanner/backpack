@@ -101,6 +101,7 @@ const components = [
 const NativeBannerAlertPage = ({ ...rest }) => (
   <DocsPageBuilder
     title="Banner Alerts"
+    npmPackageName="react-native-bpk-component-banner-alert"
     components={components}
     readme={readme}
     showMenu

@@ -404,6 +404,7 @@ const components = [
 const BannerAlertsPage = ({ ...rest }: { [string]: any }) => (
   <DocsPageBuilder
     title="Banner alerts"
+    npmPackageName="bpk-component-banner-alert"
     components={components}
     sassdocId="notifications"
     readme={bannerAlertReadme}

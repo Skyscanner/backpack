@@ -290,6 +290,15 @@ const DocsPageBuilder = props => {
           {hasTokens && tokenSwitcher}
         </div>
       )}
+      {props.npmPackageName && (
+        <a href={`https:\/\/badge.fury.io/js/${props.npmPackageName}`}>
+          <img
+            src={`https:\/\/badge.fury.io/js/${props.npmPackageName}.svg`}
+            alt="npm version"
+            height="18"
+          />
+        </a>
+      )}
       <AlternatingPageContent sections={sections} invert={props.wrapped} />
     </BpkContentContainer>
   );
@@ -352,6 +361,7 @@ DocsPageBuilder.propTypes = {
     }),
   ),
   iosDocId: PropTypes.string,
+  npmPackageName: PropTypes.string,
   sassdocId: PropTypes.string,
   androidDocId: PropTypes.string,
   usageTable: PropTypes.shape({
@@ -371,6 +381,7 @@ DocsPageBuilder.defaultProps = {
   tokenMap: null,
   customSections: null,
   iosDocId: null,
+  npmPackageName: null,
   sassdocId: null,
   androidDocId: null,
   usageTable: null,
