@@ -1,226 +1,61 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`BpkCalendarScrollGridList should render correctly with "showWeekendSeparator" attribute set to false 1`] = `
-<div
-  className="bpk-scrollable-calendar-grid-list"
->
+<div>
   <div
     className="bpk-scrollable-calendar-grid-list__strip"
-  >
-    <div
-      className={undefined}
-      style={
-        Object {
-          "height": 0,
-          "overflow": "visible",
-          "width": 0,
-        }
-      }
-    >
-      <div
-        aria-label="grid"
-        aria-readonly={true}
-        className="ReactVirtualized__Grid ReactVirtualized__List"
-        id={undefined}
-        onScroll={[Function]}
-        role="grid"
-        style={
-          Object {
-            "WebkitOverflowScrolling": "touch",
-            "boxSizing": "border-box",
-            "direction": "ltr",
-            "height": 0,
-            "overflowX": "hidden",
-            "overflowY": "auto",
-            "position": "relative",
-            "width": 0,
-            "willChange": "transform",
-          }
-        }
-        tabIndex={0}
-      />
-    </div>
-     
-  </div>
+    style={null}
+  />
+  <div
+    className="bpk-sentinel"
+  />
 </div>
 `;
 
 exports[`BpkCalendarScrollGridList should render correctly with a "dateModifiers" attribute 1`] = `
-<div
-  className="bpk-scrollable-calendar-grid-list"
->
+<div>
   <div
     className="bpk-scrollable-calendar-grid-list__strip"
-  >
-    <div
-      className={undefined}
-      style={
-        Object {
-          "height": 0,
-          "overflow": "visible",
-          "width": 0,
-        }
-      }
-    >
-      <div
-        aria-label="grid"
-        aria-readonly={true}
-        className="ReactVirtualized__Grid ReactVirtualized__List"
-        id={undefined}
-        onScroll={[Function]}
-        role="grid"
-        style={
-          Object {
-            "WebkitOverflowScrolling": "touch",
-            "boxSizing": "border-box",
-            "direction": "ltr",
-            "height": 0,
-            "overflowX": "hidden",
-            "overflowY": "auto",
-            "position": "relative",
-            "width": 0,
-            "willChange": "transform",
-          }
-        }
-        tabIndex={0}
-      />
-    </div>
-     
-  </div>
+    style={null}
+  />
+  <div
+    className="bpk-sentinel"
+  />
 </div>
 `;
 
 exports[`BpkCalendarScrollGridList should render correctly with a custom date component 1`] = `
-<div
-  className="bpk-scrollable-calendar-grid-list"
->
+<div>
   <div
     className="bpk-scrollable-calendar-grid-list__strip"
-  >
-    <div
-      className={undefined}
-      style={
-        Object {
-          "height": 0,
-          "overflow": "visible",
-          "width": 0,
-        }
-      }
-    >
-      <div
-        aria-label="grid"
-        aria-readonly={true}
-        className="ReactVirtualized__Grid ReactVirtualized__List"
-        id={undefined}
-        onScroll={[Function]}
-        role="grid"
-        style={
-          Object {
-            "WebkitOverflowScrolling": "touch",
-            "boxSizing": "border-box",
-            "direction": "ltr",
-            "height": 0,
-            "overflowX": "hidden",
-            "overflowY": "auto",
-            "position": "relative",
-            "width": 0,
-            "willChange": "transform",
-          }
-        }
-        tabIndex={0}
-      />
-    </div>
-     
-  </div>
+    style={null}
+  />
+  <div
+    className="bpk-sentinel"
+  />
 </div>
 `;
 
 exports[`BpkCalendarScrollGridList should render correctly with a different "weekStartsOn" attribute 1`] = `
-<div
-  className="bpk-scrollable-calendar-grid-list"
->
+<div>
   <div
     className="bpk-scrollable-calendar-grid-list__strip"
-  >
-    <div
-      className={undefined}
-      style={
-        Object {
-          "height": 0,
-          "overflow": "visible",
-          "width": 0,
-        }
-      }
-    >
-      <div
-        aria-label="grid"
-        aria-readonly={true}
-        className="ReactVirtualized__Grid ReactVirtualized__List"
-        id={undefined}
-        onScroll={[Function]}
-        role="grid"
-        style={
-          Object {
-            "WebkitOverflowScrolling": "touch",
-            "boxSizing": "border-box",
-            "direction": "ltr",
-            "height": 0,
-            "overflowX": "hidden",
-            "overflowY": "auto",
-            "position": "relative",
-            "width": 0,
-            "willChange": "transform",
-          }
-        }
-        tabIndex={0}
-      />
-    </div>
-     
-  </div>
+    style={null}
+  />
+  <div
+    className="bpk-sentinel"
+  />
 </div>
 `;
 
 exports[`BpkCalendarScrollGridList should render correctly with no optional props set 1`] = `
-<div
-  className="bpk-scrollable-calendar-grid-list"
->
+<div>
   <div
     className="bpk-scrollable-calendar-grid-list__strip"
-  >
-    <div
-      className={undefined}
-      style={
-        Object {
-          "height": 0,
-          "overflow": "visible",
-          "width": 0,
-        }
-      }
-    >
-      <div
-        aria-label="grid"
-        aria-readonly={true}
-        className="ReactVirtualized__Grid ReactVirtualized__List"
-        id={undefined}
-        onScroll={[Function]}
-        role="grid"
-        style={
-          Object {
-            "WebkitOverflowScrolling": "touch",
-            "boxSizing": "border-box",
-            "direction": "ltr",
-            "height": 0,
-            "overflowX": "hidden",
-            "overflowY": "auto",
-            "position": "relative",
-            "width": 0,
-            "willChange": "transform",
-          }
-        }
-        tabIndex={0}
-      />
-    </div>
-     
-  </div>
+    style={null}
+  />
+  <div
+    className="bpk-sentinel"
+  />
 </div>
 `;
