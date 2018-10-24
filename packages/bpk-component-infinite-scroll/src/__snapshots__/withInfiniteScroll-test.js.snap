@@ -28,6 +28,7 @@ exports[`withInfiniteScroll renders items after the first render 1`] = `
     }
   }
   elementsPerScroll={5}
+  initiallyLoadedElements={5}
   onScroll={null}
   onScrollFinished={null}
   renderLoadingComponent={null}
@@ -101,6 +102,7 @@ exports[`withInfiniteScroll should pass extra props to the decorated component 1
     }
   }
   elementsPerScroll={5}
+  initiallyLoadedElements={5}
   onScroll={null}
   onScrollFinished={null}
   renderLoadingComponent={null}
@@ -141,6 +143,7 @@ exports[`withInfiniteScroll should refresh data when data changes 1`] = `
     }
   }
   elementsPerScroll={5}
+  initiallyLoadedElements={5}
   onScroll={null}
   onScrollFinished={null}
   renderLoadingComponent={null}
@@ -178,6 +181,7 @@ exports[`withInfiniteScroll should refresh data when data changes 2`] = `
     }
   }
   elementsPerScroll={5}
+  initiallyLoadedElements={5}
   onScroll={null}
   onScrollFinished={null}
   renderLoadingComponent={null}
@@ -216,6 +220,7 @@ exports[`withInfiniteScroll should render correctly when no more elements 1`] = 
     }
   }
   elementsPerScroll={5}
+  initiallyLoadedElements={5}
   onScroll={null}
   onScrollFinished={null}
   renderLoadingComponent={null}
@@ -285,6 +290,7 @@ exports[`withInfiniteScroll should render correctly with a "renderLoadingCompone
     }
   }
   elementsPerScroll={5}
+  initiallyLoadedElements={5}
   onScroll={null}
   onScrollFinished={null}
   renderLoadingComponent={[Function]}
@@ -327,6 +333,7 @@ exports[`withInfiniteScroll should render correctly with a "renderSeeMoreCompone
     }
   }
   elementsPerScroll={1}
+  initiallyLoadedElements={5}
   onScroll={null}
   onScrollFinished={null}
   renderLoadingComponent={null}
@@ -378,6 +385,7 @@ exports[`withInfiniteScroll should render correctly with an "elementsPerScroll" 
     }
   }
   elementsPerScroll={1}
+  initiallyLoadedElements={5}
   onScroll={null}
   onScrollFinished={null}
   renderLoadingComponent={null}

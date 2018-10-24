@@ -40,6 +40,7 @@ type ScrollFinishedEvent = {
 };
 
 export type Props = {
+  initiallyLoadedElements: number,
   elementsPerScroll: number,
   dataSource: DataSource<any>,
   onScroll: ?(o: ScrollEvent) => void,
@@ -63,6 +64,7 @@ type ExtendedProps = {
 };
 
 const propTypes = {
+  initiallyLoadedElements: PropTypes.number,
   elementsPerScroll: PropTypes.number,
   dataSource: PropTypes.instanceOf(DataSource).isRequired,
   onScroll: PropTypes.func,
@@ -73,6 +75,7 @@ const propTypes = {
 };
 
 const defaultProps = {
+  initiallyLoadedElements: 5,
   elementsPerScroll: 5,
   onScroll: null,
   onScrollFinished: null,
@@ -116,7 +119,9 @@ const withInfiniteScroll = (
     }
 
     componentDidMount() {
-      this.fetchItems().then(newState => {
+      this.fetchItems({
+        elementsPerScroll: this.props.initiallyLoadedElements,
+      }).then(newState => {
         this.setState(newState);
       });
     }

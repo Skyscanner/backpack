@@ -109,6 +109,13 @@ storiesOf('bpk-component-infinite-scroll', module)
   .add('Infinite list of elements', () => (
     <InfiniteList dataSource={new InfiniteDataSource()} />
   ))
+  .add('Different no. elements on load and on scroll', () => (
+    <InfiniteList
+      dataSource={new InfiniteDataSource()}
+      initiallyLoadedElements={4}
+      elementsPerScroll={2}
+    />
+  ))
   .add('Load 10 elements per scroll', () => (
     <InfiniteList
       dataSource={new ArrayDataSource(elementsArray)}
