@@ -11,6 +11,45 @@ exports[`withInfiniteScroll renders an empty list for the first render 1`] = `
 </div>
 `;
 
+exports[`withInfiniteScroll renders correctly with different initial and onScroll numbers 1`] = `
+<WithInfiniteScroll
+  dataSource={
+    ArrayDataSource {
+      "elements": Array [
+        "Element 0",
+        "Element 1",
+        "Element 2",
+        "Element 3",
+        "Element 4",
+      ],
+      "listeners": Array [
+        [Function],
+      ],
+    }
+  }
+  elementsPerScroll={2}
+  initiallyLoadedElements={3}
+  onScroll={null}
+  onScrollFinished={null}
+  renderLoadingComponent={null}
+  renderSeeMoreComponent={null}
+  seeMoreAfter={null}
+>
+  <div>
+    <List
+      elements={Array []}
+    >
+      <div
+        id="list"
+      />
+    </List>
+    <div
+      className="bpk-sentinel"
+    />
+  </div>
+</WithInfiniteScroll>
+`;
+
 exports[`withInfiniteScroll renders items after the first render 1`] = `
 <WithInfiniteScroll
   dataSource={
