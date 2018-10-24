@@ -95,8 +95,9 @@ class BpkScrollableCalendarGridList extends React.Component {
     return (
       <List
         dataSource={months}
-        elementsPerScroll={Math.max(
-          5,
+        elementsPerScroll={2}
+        initiallyLoadedElements={Math.max(
+          2,
           differenceInCalendarMonths(
             this.props.selectedDate,
             startOfDay(startOfMonth(this.props.minDate)),
