@@ -165,8 +165,8 @@ Updates the internal array and triggers all listeners.
 | Property                | PropType               | Required | Default Value |
 | ----------------------- | ---------------------- | -------- | ------------- |
 | dataSource              | instanceOf(DataSource) | true     | -             |
-| initiallyLoadedElements | number                 | false    | 5             |
 | elementsPerScroll       | number                 | false    | 5             |
+| initiallyLoadedElements | number                 | false    | 5             |
 | onScroll                | func                   | false    | null          |
 | onScrollFinished        | func                   | false    | null          |
 | renderLoadingComponent  | func                   | false    | null          |
