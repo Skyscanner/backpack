@@ -46,7 +46,7 @@ exports[`iOS BpkChip should render correctly 1`] = `
         Object {
           "color": "rgb(82, 76, 97)",
           "fontFamily": "System",
-          "fontSize": 11,
+          "fontSize": 12,
           "fontWeight": "400",
         },
         Array [
@@ -131,7 +131,7 @@ exports[`iOS BpkChip should render correctly with "large" 1`] = `
         Object {
           "color": "rgb(82, 76, 97)",
           "fontFamily": "System",
-          "fontSize": 11,
+          "fontSize": 12,
           "fontWeight": "400",
         },
         Array [
@@ -217,7 +217,7 @@ exports[`iOS BpkChip should render correctly with "selected" 1`] = `
         Object {
           "color": "rgb(82, 76, 97)",
           "fontFamily": "System",
-          "fontSize": 11,
+          "fontSize": 12,
           "fontWeight": "400",
         },
         Array [
@@ -302,7 +302,7 @@ exports[`iOS BpkChip should render correctly with arbitrary props 1`] = `
         Object {
           "color": "rgb(82, 76, 97)",
           "fontFamily": "System",
-          "fontSize": 11,
+          "fontSize": 12,
           "fontWeight": "400",
         },
         Array [
@@ -386,7 +386,7 @@ exports[`iOS BpkChip should render correctly with custom style 1`] = `
         Object {
           "color": "rgb(82, 76, 97)",
           "fontFamily": "System",
-          "fontSize": 11,
+          "fontSize": 12,
           "fontWeight": "400",
         },
         Array [

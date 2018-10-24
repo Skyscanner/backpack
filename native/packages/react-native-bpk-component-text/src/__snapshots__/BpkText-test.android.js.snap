@@ -153,7 +153,7 @@ exports[`Android BpkText should render correctly with textStyle="xxl" 1`] = `
       Object {
         "color": "rgb(82, 76, 97)",
         "fontFamily": "sans-serif",
-        "fontSize": 34,
+        "fontSize": 36,
         "fontWeight": "400",
       },
     ]

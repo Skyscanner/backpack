@@ -39,7 +39,7 @@ exports[`Android BpkBadge should render correctly docked to the end 1`] = `
           Object {
             "color": "rgb(82, 76, 97)",
             "fontFamily": "System",
-            "fontSize": 11,
+            "fontSize": 12,
             "fontWeight": "400",
           },
           Array [
@@ -92,7 +92,7 @@ exports[`Android BpkBadge should render correctly docked to the end 1`] = `
           Object {
             "color": "rgb(82, 76, 97)",
             "fontFamily": "System",
-            "fontSize": 11,
+            "fontSize": 12,
             "fontWeight": "400",
           },
           Array [
@@ -145,7 +145,7 @@ exports[`Android BpkBadge should render correctly docked to the end 1`] = `
           Object {
             "color": "rgb(82, 76, 97)",
             "fontFamily": "System",
-            "fontSize": 11,
+            "fontSize": 12,
             "fontWeight": "400",
           },
           Array [
@@ -200,7 +200,7 @@ exports[`Android BpkBadge should render correctly docked to the end 1`] = `
           Object {
             "color": "rgb(82, 76, 97)",
             "fontFamily": "System",
-            "fontSize": 11,
+            "fontSize": 12,
             "fontWeight": "400",
           },
           Array [
@@ -253,7 +253,7 @@ exports[`Android BpkBadge should render correctly docked to the end 1`] = `
           Object {
             "color": "rgb(82, 76, 97)",
             "fontFamily": "System",
-            "fontSize": 11,
+            "fontSize": 12,
             "fontWeight": "400",
           },
           Array [
@@ -313,7 +313,7 @@ exports[`Android BpkBadge should render correctly docked to the end 1`] = `
           Object {
             "color": "rgb(82, 76, 97)",
             "fontFamily": "System",
-            "fontSize": 11,
+            "fontSize": 12,
             "fontWeight": "400",
           },
           Array [
@@ -373,7 +373,7 @@ exports[`Android BpkBadge should render correctly docked to the start 1`] = `
           Object {
             "color": "rgb(82, 76, 97)",
             "fontFamily": "System",
-            "fontSize": 11,
+            "fontSize": 12,
             "fontWeight": "400",
           },
           Array [
@@ -426,7 +426,7 @@ exports[`Android BpkBadge should render correctly docked to the start 1`] = `
           Object {
             "color": "rgb(82, 76, 97)",
             "fontFamily": "System",
-            "fontSize": 11,
+            "fontSize": 12,
             "fontWeight": "400",
           },
           Array [
@@ -479,7 +479,7 @@ exports[`Android BpkBadge should render correctly docked to the start 1`] = `
           Object {
             "color": "rgb(82, 76, 97)",
             "fontFamily": "System",
-            "fontSize": 11,
+            "fontSize": 12,
             "fontWeight": "400",
           },
           Array [
@@ -534,7 +534,7 @@ exports[`Android BpkBadge should render correctly docked to the start 1`] = `
           Object {
             "color": "rgb(82, 76, 97)",
             "fontFamily": "System",
-            "fontSize": 11,
+            "fontSize": 12,
             "fontWeight": "400",
           },
           Array [
@@ -587,7 +587,7 @@ exports[`Android BpkBadge should render correctly docked to the start 1`] = `
           Object {
             "color": "rgb(82, 76, 97)",
             "fontFamily": "System",
-            "fontSize": 11,
+            "fontSize": 12,
             "fontWeight": "400",
           },
           Array [
@@ -647,7 +647,7 @@ exports[`Android BpkBadge should render correctly docked to the start 1`] = `
           Object {
             "color": "rgb(82, 76, 97)",
             "fontFamily": "System",
-            "fontSize": 11,
+            "fontSize": 12,
             "fontWeight": "400",
           },
           Array [
@@ -699,7 +699,7 @@ exports[`Android BpkBadge should render correctly in normal mode 1`] = `
           Object {
             "color": "rgb(82, 76, 97)",
             "fontFamily": "System",
-            "fontSize": 11,
+            "fontSize": 12,
             "fontWeight": "400",
           },
           Array [
@@ -744,7 +744,7 @@ exports[`Android BpkBadge should render correctly in normal mode 1`] = `
           Object {
             "color": "rgb(82, 76, 97)",
             "fontFamily": "System",
-            "fontSize": 11,
+            "fontSize": 12,
             "fontWeight": "400",
           },
           Array [
@@ -789,7 +789,7 @@ exports[`Android BpkBadge should render correctly in normal mode 1`] = `
           Object {
             "color": "rgb(82, 76, 97)",
             "fontFamily": "System",
-            "fontSize": 11,
+            "fontSize": 12,
             "fontWeight": "400",
           },
           Array [
@@ -836,7 +836,7 @@ exports[`Android BpkBadge should render correctly in normal mode 1`] = `
           Object {
             "color": "rgb(82, 76, 97)",
             "fontFamily": "System",
-            "fontSize": 11,
+            "fontSize": 12,
             "fontWeight": "400",
           },
           Array [
@@ -881,7 +881,7 @@ exports[`Android BpkBadge should render correctly in normal mode 1`] = `
           Object {
             "color": "rgb(82, 76, 97)",
             "fontFamily": "System",
-            "fontSize": 11,
+            "fontSize": 12,
             "fontWeight": "400",
           },
           Array [
@@ -933,7 +933,7 @@ exports[`Android BpkBadge should render correctly in normal mode 1`] = `
           Object {
             "color": "rgb(82, 76, 97)",
             "fontFamily": "System",
-            "fontSize": 11,
+            "fontSize": 12,
             "fontWeight": "400",
           },
           Array [
@@ -988,7 +988,7 @@ exports[`Android BpkBadge should render correctly with user provided style 1`] =
           Object {
             "color": "rgb(82, 76, 97)",
             "fontFamily": "System",
-            "fontSize": 11,
+            "fontSize": 12,
             "fontWeight": "400",
           },
           Array [
@@ -1036,7 +1036,7 @@ exports[`Android BpkBadge should render correctly with user provided style 1`] =
           Object {
             "color": "rgb(82, 76, 97)",
             "fontFamily": "System",
-            "fontSize": 11,
+            "fontSize": 12,
             "fontWeight": "400",
           },
           Array [
@@ -1084,7 +1084,7 @@ exports[`Android BpkBadge should render correctly with user provided style 1`] =
           Object {
             "color": "rgb(82, 76, 97)",
             "fontFamily": "System",
-            "fontSize": 11,
+            "fontSize": 12,
             "fontWeight": "400",
           },
           Array [
@@ -1134,7 +1134,7 @@ exports[`Android BpkBadge should render correctly with user provided style 1`] =
           Object {
             "color": "rgb(82, 76, 97)",
             "fontFamily": "System",
-            "fontSize": 11,
+            "fontSize": 12,
             "fontWeight": "400",
           },
           Array [
@@ -1182,7 +1182,7 @@ exports[`Android BpkBadge should render correctly with user provided style 1`] =
           Object {
             "color": "rgb(82, 76, 97)",
             "fontFamily": "System",
-            "fontSize": 11,
+            "fontSize": 12,
             "fontWeight": "400",
           },
           Array [
@@ -1237,7 +1237,7 @@ exports[`Android BpkBadge should render correctly with user provided style 1`] =
           Object {
             "color": "rgb(82, 76, 97)",
             "fontFamily": "System",
-            "fontSize": 11,
+            "fontSize": 12,
             "fontWeight": "400",
           },
           Array [

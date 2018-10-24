@@ -19,19 +19,30 @@
 import _ from 'lodash';
 
 import sortTokens from './sort-tokens';
+import adjustTypography from './adjust-typography';
 import { blockComment } from './license-header';
 import valueTemplate from './react-native-value-template';
 
 export const tokenTemplate = ({ name, value, type }) =>
   `${_.camelCase(name)}: ${valueTemplate(value, type)}`;
 
-export default result => {
+const bpkReactNativeCommon = (result, platform = 'other') => {
   const { props } = sortTokens(result.toJS());
 
   const source = `
 module.exports = {
-  ${_.map(props, prop => tokenTemplate(prop)).join(',\n  ')}
+  ${_.map(props, prop => tokenTemplate(adjustTypography(prop, platform))).join(
+    ',\n  ',
+  )}
 };`;
 
   return [blockComment, source].join('\n');
 };
+
+export default bpkReactNativeCommon;
+
+export const bpkReactNativeCommonJsAndroid = result =>
+  bpkReactNativeCommon(result, 'androidRn');
+
+export const bpkReactNativeCommonJsIos = result =>
+  bpkReactNativeCommon(result, 'iosRn');

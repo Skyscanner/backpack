@@ -19,11 +19,19 @@
 import _ from 'lodash';
 
 import sortTokens from './sort-tokens';
+import adjustTypography from './adjust-typography';
 
-export default result => {
+const bpkRawJson = (result, platform = 'other') => {
   const { aliases, props } = sortTokens(result.toJS());
-  const propsObj = _.keyBy(props, 'name');
+  const adjustedProps = props.map(prop => adjustTypography(prop, platform));
+  const propsObj = _.keyBy(adjustedProps, 'name');
   const propKeys = Object.keys(propsObj);
 
   return JSON.stringify({ aliases, props: propsObj, propKeys }, null, 2);
 };
+
+export default bpkRawJson;
+
+export const bpkRawJsonAndroid = result => bpkRawJson(result, 'android');
+
+export const bpkRawJsonIos = result => bpkRawJson(result, 'ios');
