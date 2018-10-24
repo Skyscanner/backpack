@@ -2,6 +2,26 @@
 
 [Unreleased changes](./UNRELEASED.md).
 
+# 2018-10-24 - New icons added
+
+**Added:**
+
+- bpk-component-icon: 3.23.8 => 3.23.9
+- bpk-mixins: 17.11.19 => 17.11.20
+- bpk-svgs: 5.19.3 => 5.19.4
+- react-native-bpk-component-button-link: 3.1.1 => 3.1.2
+- react-native-bpk-component-button: 7.1.20 => 7.1.21
+- react-native-bpk-component-icon: 1.10.8 => 1.10.9
+- react-native-bpk-component-navigation-bar: 2.0.41 => 2.0.42
+  - New icons added:
+  - bws--call-back
+  - bws--end-call
+  - bws--keypad
+  - bws--mute
+  - bws--phone-call
+  - bws--send-message
+  - bws--un-mute
+
 # 2018-10-12 - Fix Infinite Scroll problem on IE11
 
 **Fixed:**

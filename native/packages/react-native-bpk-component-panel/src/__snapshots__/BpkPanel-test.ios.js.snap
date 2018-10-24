@@ -25,7 +25,7 @@ exports[`iOS BpkPanel should render correctly 1`] = `
         Object {
           "color": "rgb(82, 76, 97)",
           "fontFamily": "System",
-          "fontSize": 15,
+          "fontSize": 16,
           "fontWeight": "400",
         },
       ]
@@ -62,7 +62,7 @@ exports[`iOS BpkPanel should render correctly with arbitrary props 1`] = `
         Object {
           "color": "rgb(82, 76, 97)",
           "fontFamily": "System",
-          "fontSize": 15,
+          "fontSize": 16,
           "fontWeight": "400",
         },
       ]
@@ -101,7 +101,7 @@ exports[`iOS BpkPanel should render correctly with custom style 1`] = `
         Object {
           "color": "rgb(82, 76, 97)",
           "fontFamily": "System",
-          "fontSize": 15,
+          "fontSize": 16,
           "fontWeight": "400",
         },
       ]
@@ -134,7 +134,7 @@ exports[`iOS BpkPanel should render correctly without padding 1`] = `
         Object {
           "color": "rgb(82, 76, 97)",
           "fontFamily": "System",
-          "fontSize": 15,
+          "fontSize": 16,
           "fontWeight": "400",
         },
       ]

@@ -41,7 +41,7 @@ exports[`iOS BpkNavigationBarTextButtonIOS should render correctly 1`] = `
         Object {
           "color": "rgb(82, 76, 97)",
           "fontFamily": "System",
-          "fontSize": 17,
+          "fontSize": 20,
           "fontWeight": "400",
         },
         Array [
@@ -99,7 +99,7 @@ exports[`iOS BpkNavigationBarTextButtonIOS should render correctly disabled 1`] 
         Object {
           "color": "rgb(82, 76, 97)",
           "fontFamily": "System",
-          "fontSize": 17,
+          "fontSize": 20,
           "fontWeight": "400",
         },
         Array [
@@ -156,7 +156,7 @@ exports[`iOS BpkNavigationBarTextButtonIOS should render correctly emphasize 1`]
         Object {
           "color": "rgb(82, 76, 97)",
           "fontFamily": "System",
-          "fontSize": 17,
+          "fontSize": 20,
           "fontWeight": "400",
         },
         Object {
@@ -216,7 +216,7 @@ exports[`iOS BpkNavigationBarTextButtonIOS should render correctly leading confi
         Object {
           "color": "rgb(82, 76, 97)",
           "fontFamily": "System",
-          "fontSize": 17,
+          "fontSize": 20,
           "fontWeight": "400",
         },
         Array [
@@ -274,7 +274,7 @@ exports[`iOS BpkNavigationBarTextButtonIOS should resepect "disabledTintColor" 1
         Object {
           "color": "rgb(82, 76, 97)",
           "fontFamily": "System",
-          "fontSize": 17,
+          "fontSize": 20,
           "fontWeight": "400",
         },
         Array [
@@ -331,7 +331,7 @@ exports[`iOS BpkNavigationBarTextButtonIOS should resepect "tintColor" 1`] = `
         Object {
           "color": "rgb(82, 76, 97)",
           "fontFamily": "System",
-          "fontSize": 17,
+          "fontSize": 20,
           "fontWeight": "400",
         },
         Array [

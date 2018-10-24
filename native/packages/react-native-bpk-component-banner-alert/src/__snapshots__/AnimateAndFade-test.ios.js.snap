@@ -34,7 +34,7 @@ exports[`iOS AnimateAndFade should render correctly 1`] = `
           Object {
             "color": "rgb(82, 76, 97)",
             "fontFamily": "System",
-            "fontSize": 15,
+            "fontSize": 16,
             "fontWeight": "400",
           },
         ]
@@ -59,7 +59,7 @@ exports[`iOS AnimateAndFade should render correctly 1`] = `
           Object {
             "color": "rgb(82, 76, 97)",
             "fontFamily": "System",
-            "fontSize": 15,
+            "fontSize": 16,
             "fontWeight": "400",
           },
         ]
@@ -105,7 +105,7 @@ exports[`iOS AnimateAndFade should render correctly when show is false 1`] = `
           Object {
             "color": "rgb(82, 76, 97)",
             "fontFamily": "System",
-            "fontSize": 15,
+            "fontSize": 16,
             "fontWeight": "400",
           },
         ]
@@ -130,7 +130,7 @@ exports[`iOS AnimateAndFade should render correctly when show is false 1`] = `
           Object {
             "color": "rgb(82, 76, 97)",
             "fontFamily": "System",
-            "fontSize": 15,
+            "fontSize": 16,
             "fontWeight": "400",
           },
         ]
@@ -176,7 +176,7 @@ exports[`iOS AnimateAndFade should render correctly with animateOnEnter 1`] = `
           Object {
             "color": "rgb(82, 76, 97)",
             "fontFamily": "System",
-            "fontSize": 15,
+            "fontSize": 16,
             "fontWeight": "400",
           },
         ]
@@ -201,7 +201,7 @@ exports[`iOS AnimateAndFade should render correctly with animateOnEnter 1`] = `
           Object {
             "color": "rgb(82, 76, 97)",
             "fontFamily": "System",
-            "fontSize": 15,
+            "fontSize": 16,
             "fontWeight": "400",
           },
         ]
@@ -247,7 +247,7 @@ exports[`iOS AnimateAndFade should render correctly with animateOnLeave 1`] = `
           Object {
             "color": "rgb(82, 76, 97)",
             "fontFamily": "System",
-            "fontSize": 15,
+            "fontSize": 16,
             "fontWeight": "400",
           },
         ]
@@ -272,7 +272,7 @@ exports[`iOS AnimateAndFade should render correctly with animateOnLeave 1`] = `
           Object {
             "color": "rgb(82, 76, 97)",
             "fontFamily": "System",
-            "fontSize": 15,
+            "fontSize": 16,
             "fontWeight": "400",
           },
         ]

@@ -92,7 +92,7 @@ exports[`Android BpkPicker should render correctly 1`] = `
             "elevation": 5,
           },
           Object {
-            "maxHeight": 112,
+            "maxHeight": 102,
           },
         ]
       }
@@ -311,7 +311,7 @@ exports[`Android BpkPicker should render correctly with a selected value 1`] = `
             "elevation": 5,
           },
           Object {
-            "maxHeight": 112,
+            "maxHeight": 102,
           },
         ]
       }

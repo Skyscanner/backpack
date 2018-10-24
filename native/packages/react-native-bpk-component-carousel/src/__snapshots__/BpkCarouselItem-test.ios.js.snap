@@ -19,7 +19,7 @@ exports[`IOS BpkCarouselItem should render correctly 1`] = `
         Object {
           "color": "rgb(82, 76, 97)",
           "fontFamily": "System",
-          "fontSize": 15,
+          "fontSize": 16,
           "fontWeight": "400",
         },
       ]
