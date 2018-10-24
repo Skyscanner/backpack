@@ -102,18 +102,29 @@ export const elevationXl = 24;
 export const elevationXs = 2;
 export const fontFamily = "sans-serif";
 export const fontFamilyEmphasize = "sans-serif-medium";
+export const fontFamilyHeavy = "sans-serif-black";
 export const fontSizeBase = 16;
+export const fontSizeCaps = 10;
 export const fontSizeLg = 20;
 export const fontSizeSm = 14;
 export const fontSizeXl = 24;
 export const fontSizeXs = 12;
-export const fontSizeXxl = 34;
-export const lineHeightBase = 24;
-export const lineHeightLg = 28;
-export const lineHeightSm = 20;
-export const lineHeightXl = 32;
-export const lineHeightXs = 18;
-export const lineHeightXxl = 40;
+export const fontSizeXxl = 36;
+export const fontSizeXxxl = 42;
+export const letterSpacingBase = -0.2;
+export const letterSpacingCaps = 0.4;
+export const letterSpacingLg = -0.4;
+export const letterSpacingSm = 0;
+export const letterSpacingXl = -0.6;
+export const letterSpacingXs = 0;
+export const letterSpacingXxl = -1;
+export const letterSpacingXxxl = -1.2;
+export const lineHeightBase = 19;
+export const lineHeightLg = 23;
+export const lineHeightSm = 16;
+export const lineHeightXl = 28;
+export const lineHeightXs = 14;
+export const lineHeightXxl = 42;
 export const spacingBase = 16;
 export const spacingLg = 24;
 export const spacingMd = 8;
@@ -123,23 +134,32 @@ export const spacingXl = 32;
 export const spacingXxl = 40;
 export const textBaseFontSize = 16;
 export const textBaseFontWeight = "400";
-export const textBaseLineHeight = 24;
+export const textBaseLetterSpacing = -0.2;
+export const textBaseLineHeight = 19;
 export const textEmphasizedFontWeight = "500";
 export const textLgFontSize = 20;
 export const textLgFontWeight = "400";
-export const textLgLineHeight = 28;
+export const textLgLetterSpacing = -0.4;
+export const textLgLineHeight = 23;
 export const textSmFontSize = 14;
 export const textSmFontWeight = "400";
-export const textSmLineHeight = 20;
+export const textSmLetterSpacing = 0;
+export const textSmLineHeight = 16;
 export const textXlFontSize = 24;
 export const textXlFontWeight = "400";
-export const textXlLineHeight = 32;
+export const textXlLetterSpacing = -0.6;
+export const textXlLineHeight = 28;
 export const textXsFontSize = 12;
 export const textXsFontWeight = "400";
-export const textXsLineHeight = 18;
-export const textXxlFontSize = 34;
+export const textXsLetterSpacing = 0;
+export const textXsLineHeight = 14;
+export const textXxlFontSize = 36;
 export const textXxlFontWeight = "400";
-export const textXxlLineHeight = 40;
+export const textXxlLetterSpacing = -1;
+export const textXxlLineHeight = 42;
+export const textXxxlFontSize = 42;
+export const textXxxlFontWeight = "400";
+export const textXxxlLetterSpacing = -1.2;
 export const animations = {
 animationDurationBase,
 animationDurationSm,
@@ -233,6 +253,7 @@ textSmFontSize,
 textXlFontSize,
 textXsFontSize,
 textXxlFontSize,
+textXxxlFontSize,
 };
 export const fontWeights = {
 textBaseFontWeight,
@@ -242,6 +263,24 @@ textSmFontWeight,
 textXlFontWeight,
 textXsFontWeight,
 textXxlFontWeight,
+textXxxlFontWeight,
+};
+export const letterSpacings = {
+letterSpacingBase,
+letterSpacingCaps,
+letterSpacingLg,
+letterSpacingSm,
+letterSpacingXl,
+letterSpacingXs,
+letterSpacingXxl,
+letterSpacingXxxl,
+textBaseLetterSpacing,
+textLgLetterSpacing,
+textSmLetterSpacing,
+textXlLetterSpacing,
+textXsLetterSpacing,
+textXxlLetterSpacing,
+textXxxlLetterSpacing,
 };
 export const lineHeights = {
 textBaseLineHeight,
@@ -272,12 +311,15 @@ spacingXxl,
 export const typesettings = {
 fontFamily,
 fontFamilyEmphasize,
+fontFamilyHeavy,
 fontSizeBase,
+fontSizeCaps,
 fontSizeLg,
 fontSizeSm,
 fontSizeXl,
 fontSizeXs,
 fontSizeXxl,
+fontSizeXxxl,
 lineHeightBase,
 lineHeightLg,
 lineHeightSm,

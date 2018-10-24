@@ -49,7 +49,7 @@ exports[`iOS BpkDismissibleChip should render correctly 1`] = `
         Object {
           "color": "rgb(82, 76, 97)",
           "fontFamily": "System",
-          "fontSize": 11,
+          "fontSize": 12,
           "fontWeight": "400",
         },
         Array [
@@ -159,7 +159,7 @@ exports[`iOS BpkDismissibleChip should render correctly with arbitrary props 1`]
         Object {
           "color": "rgb(82, 76, 97)",
           "fontFamily": "System",
-          "fontSize": 11,
+          "fontSize": 12,
           "fontWeight": "400",
         },
         Array [
@@ -271,7 +271,7 @@ exports[`iOS BpkDismissibleChip should render correctly with custom style 1`] = 
         Object {
           "color": "rgb(82, 76, 97)",
           "fontFamily": "System",
-          "fontSize": 11,
+          "fontSize": 12,
           "fontWeight": "400",
         },
         Array [

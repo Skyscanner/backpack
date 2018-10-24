@@ -33,7 +33,7 @@ exports[`iOS BpkAnimateHeight should render correctly collapsed 1`] = `
           Object {
             "color": "rgb(82, 76, 97)",
             "fontFamily": "System",
-            "fontSize": 15,
+            "fontSize": 16,
             "fontWeight": "400",
           },
         ]
@@ -61,7 +61,7 @@ exports[`iOS BpkAnimateHeight should render correctly collapsed 1`] = `
           Object {
             "color": "rgb(82, 76, 97)",
             "fontFamily": "System",
-            "fontSize": 15,
+            "fontSize": 16,
             "fontWeight": "400",
           },
         ]
@@ -106,7 +106,7 @@ exports[`iOS BpkAnimateHeight should render correctly expanded 1`] = `
           Object {
             "color": "rgb(82, 76, 97)",
             "fontFamily": "System",
-            "fontSize": 15,
+            "fontSize": 16,
             "fontWeight": "400",
           },
         ]
@@ -134,7 +134,7 @@ exports[`iOS BpkAnimateHeight should render correctly expanded 1`] = `
           Object {
             "color": "rgb(82, 76, 97)",
             "fontFamily": "System",
-            "fontSize": 15,
+            "fontSize": 16,
             "fontWeight": "400",
           },
         ]
@@ -179,7 +179,7 @@ exports[`iOS BpkAnimateHeight should render correctly with n children 1`] = `
           Object {
             "color": "rgb(82, 76, 97)",
             "fontFamily": "System",
-            "fontSize": 15,
+            "fontSize": 16,
             "fontWeight": "400",
           },
         ]
@@ -196,7 +196,7 @@ exports[`iOS BpkAnimateHeight should render correctly with n children 1`] = `
           Object {
             "color": "rgb(82, 76, 97)",
             "fontFamily": "System",
-            "fontSize": 15,
+            "fontSize": 16,
             "fontWeight": "400",
           },
         ]
@@ -224,7 +224,7 @@ exports[`iOS BpkAnimateHeight should render correctly with n children 1`] = `
           Object {
             "color": "rgb(82, 76, 97)",
             "fontFamily": "System",
-            "fontSize": 15,
+            "fontSize": 16,
             "fontWeight": "400",
           },
         ]
@@ -241,7 +241,7 @@ exports[`iOS BpkAnimateHeight should render correctly with n children 1`] = `
           Object {
             "color": "rgb(82, 76, 97)",
             "fontFamily": "System",
-            "fontSize": 15,
+            "fontSize": 16,
             "fontWeight": "400",
           },
         ]
@@ -287,7 +287,7 @@ exports[`iOS BpkAnimateHeight should render correctly with user styling padding 
           Object {
             "color": "rgb(82, 76, 97)",
             "fontFamily": "System",
-            "fontSize": 15,
+            "fontSize": 16,
             "fontWeight": "400",
           },
         ]
@@ -315,7 +315,7 @@ exports[`iOS BpkAnimateHeight should render correctly with user styling padding 
           Object {
             "color": "rgb(82, 76, 97)",
             "fontFamily": "System",
-            "fontSize": 15,
+            "fontSize": 16,
             "fontWeight": "400",
           },
         ]

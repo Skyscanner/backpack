@@ -13,7 +13,7 @@ exports[`Android BpkTextInput should ignore when placeholder is provided, as ele
     style={
       Object {
         "flexDirection": "row",
-        "paddingTop": 20,
+        "paddingTop": 16,
       }
     }
   >
@@ -29,9 +29,9 @@ exports[`Android BpkTextInput should ignore when placeholder is provided, as ele
           "fontFamily": "sans-serif",
           "fontSize": 16,
           "fontWeight": "400",
-          "lineHeight": 24,
+          "lineHeight": 19,
           "position": "absolute",
-          "top": 23,
+          "top": 19,
         }
       }
     >
@@ -63,8 +63,8 @@ exports[`Android BpkTextInput should ignore when placeholder is provided, as ele
             "flex": 1,
             "fontSize": 16,
             "fontWeight": "400",
-            "lineHeight": 24,
-            "minHeight": 32,
+            "lineHeight": 19,
+            "minHeight": 27,
             "paddingHorizontal": 0,
             "paddingVertical": 4,
             "textAlign": "left",
@@ -91,7 +91,7 @@ exports[`Android BpkTextInput should render correctly 1`] = `
     style={
       Object {
         "flexDirection": "row",
-        "paddingTop": 20,
+        "paddingTop": 16,
       }
     }
   >
@@ -107,9 +107,9 @@ exports[`Android BpkTextInput should render correctly 1`] = `
           "fontFamily": "sans-serif",
           "fontSize": 16,
           "fontWeight": "400",
-          "lineHeight": 24,
+          "lineHeight": 19,
           "position": "absolute",
-          "top": 23,
+          "top": 19,
         }
       }
     >
@@ -141,8 +141,8 @@ exports[`Android BpkTextInput should render correctly 1`] = `
             "flex": 1,
             "fontSize": 16,
             "fontWeight": "400",
-            "lineHeight": 24,
-            "minHeight": 32,
+            "lineHeight": 19,
+            "minHeight": 27,
             "paddingHorizontal": 0,
             "paddingVertical": 4,
             "textAlign": "left",
@@ -169,7 +169,7 @@ exports[`Android BpkTextInput should render correctly with \`accessoryView\` 1`]
     style={
       Object {
         "flexDirection": "row",
-        "paddingTop": 20,
+        "paddingTop": 16,
       }
     }
   >
@@ -185,7 +185,7 @@ exports[`Android BpkTextInput should render correctly with \`accessoryView\` 1`]
           "fontFamily": "sans-serif",
           "fontSize": 14,
           "fontWeight": "400",
-          "lineHeight": 20,
+          "lineHeight": 16,
           "position": "absolute",
           "top": 0,
         }
@@ -221,8 +221,8 @@ exports[`Android BpkTextInput should render correctly with \`accessoryView\` 1`]
             "flex": 1,
             "fontSize": 16,
             "fontWeight": "400",
-            "lineHeight": 24,
-            "minHeight": 32,
+            "lineHeight": 19,
+            "minHeight": 27,
             "paddingHorizontal": 0,
             "paddingVertical": 4,
             "textAlign": "left",
@@ -249,7 +249,7 @@ exports[`Android BpkTextInput should render correctly with arbitrary props 1`] =
     style={
       Object {
         "flexDirection": "row",
-        "paddingTop": 20,
+        "paddingTop": 16,
       }
     }
   >
@@ -265,9 +265,9 @@ exports[`Android BpkTextInput should render correctly with arbitrary props 1`] =
           "fontFamily": "sans-serif",
           "fontSize": 16,
           "fontWeight": "400",
-          "lineHeight": 24,
+          "lineHeight": 19,
           "position": "absolute",
-          "top": 23,
+          "top": 19,
         }
       }
     >
@@ -299,8 +299,8 @@ exports[`Android BpkTextInput should render correctly with arbitrary props 1`] =
             "flex": 1,
             "fontSize": 16,
             "fontWeight": "400",
-            "lineHeight": 24,
-            "minHeight": 32,
+            "lineHeight": 19,
+            "minHeight": 27,
             "paddingHorizontal": 0,
             "paddingVertical": 4,
             "textAlign": "left",
@@ -330,7 +330,7 @@ exports[`Android BpkTextInput should render correctly with custom style 1`] = `
     style={
       Object {
         "flexDirection": "row",
-        "paddingTop": 20,
+        "paddingTop": 16,
       }
     }
   >
@@ -346,9 +346,9 @@ exports[`Android BpkTextInput should render correctly with custom style 1`] = `
           "fontFamily": "sans-serif",
           "fontSize": 16,
           "fontWeight": "400",
-          "lineHeight": 24,
+          "lineHeight": 19,
           "position": "absolute",
-          "top": 23,
+          "top": 19,
         }
       }
     >
@@ -380,8 +380,8 @@ exports[`Android BpkTextInput should render correctly with custom style 1`] = `
             "flex": 1,
             "fontSize": 16,
             "fontWeight": "400",
-            "lineHeight": 24,
-            "minHeight": 32,
+            "lineHeight": 19,
+            "minHeight": 27,
             "paddingHorizontal": 0,
             "paddingVertical": 4,
             "textAlign": "left",
@@ -408,7 +408,7 @@ exports[`Android BpkTextInput should render correctly with description 1`] = `
     style={
       Object {
         "flexDirection": "row",
-        "paddingTop": 20,
+        "paddingTop": 16,
       }
     }
   >
@@ -424,7 +424,7 @@ exports[`Android BpkTextInput should render correctly with description 1`] = `
           "fontFamily": "sans-serif",
           "fontSize": 14,
           "fontWeight": "400",
-          "lineHeight": 20,
+          "lineHeight": 16,
           "position": "absolute",
           "top": 0,
         }
@@ -458,8 +458,8 @@ exports[`Android BpkTextInput should render correctly with description 1`] = `
             "flex": 1,
             "fontSize": 16,
             "fontWeight": "400",
-            "lineHeight": 24,
-            "minHeight": 32,
+            "lineHeight": 19,
+            "minHeight": 27,
             "paddingHorizontal": 0,
             "paddingVertical": 4,
             "textAlign": "left",
@@ -507,7 +507,7 @@ exports[`Android BpkTextInput should render correctly with description, valid=fa
     style={
       Object {
         "flexDirection": "row",
-        "paddingTop": 20,
+        "paddingTop": 16,
       }
     }
   >
@@ -523,7 +523,7 @@ exports[`Android BpkTextInput should render correctly with description, valid=fa
           "fontFamily": "sans-serif",
           "fontSize": 14,
           "fontWeight": "400",
-          "lineHeight": 20,
+          "lineHeight": 16,
           "position": "absolute",
           "top": 0,
         }
@@ -557,8 +557,8 @@ exports[`Android BpkTextInput should render correctly with description, valid=fa
             "flex": 1,
             "fontSize": 16,
             "fontWeight": "400",
-            "lineHeight": 24,
-            "minHeight": 32,
+            "lineHeight": 19,
+            "minHeight": 27,
             "paddingHorizontal": 0,
             "paddingVertical": 4,
             "textAlign": "left",
@@ -635,7 +635,7 @@ exports[`Android BpkTextInput should render correctly with editable=false 1`] = 
     style={
       Object {
         "flexDirection": "row",
-        "paddingTop": 20,
+        "paddingTop": 16,
       }
     }
   >
@@ -651,9 +651,9 @@ exports[`Android BpkTextInput should render correctly with editable=false 1`] = 
           "fontFamily": "sans-serif",
           "fontSize": 16,
           "fontWeight": "400",
-          "lineHeight": 24,
+          "lineHeight": 19,
           "position": "absolute",
-          "top": 23,
+          "top": 19,
         }
       }
     >
@@ -685,8 +685,8 @@ exports[`Android BpkTextInput should render correctly with editable=false 1`] = 
             "flex": 1,
             "fontSize": 16,
             "fontWeight": "400",
-            "lineHeight": 24,
-            "minHeight": 32,
+            "lineHeight": 19,
+            "minHeight": 27,
             "paddingHorizontal": 0,
             "paddingVertical": 4,
             "textAlign": "left",
@@ -713,7 +713,7 @@ exports[`Android BpkTextInput should render correctly with inputRef set 1`] = `
     style={
       Object {
         "flexDirection": "row",
-        "paddingTop": 20,
+        "paddingTop": 16,
       }
     }
   >
@@ -729,9 +729,9 @@ exports[`Android BpkTextInput should render correctly with inputRef set 1`] = `
           "fontFamily": "sans-serif",
           "fontSize": 16,
           "fontWeight": "400",
-          "lineHeight": 24,
+          "lineHeight": 19,
           "position": "absolute",
-          "top": 23,
+          "top": 19,
         }
       }
     >
@@ -763,8 +763,8 @@ exports[`Android BpkTextInput should render correctly with inputRef set 1`] = `
             "flex": 1,
             "fontSize": 16,
             "fontWeight": "400",
-            "lineHeight": 24,
-            "minHeight": 32,
+            "lineHeight": 19,
+            "minHeight": 27,
             "paddingHorizontal": 0,
             "paddingVertical": 4,
             "textAlign": "left",
@@ -791,7 +791,7 @@ exports[`Android BpkTextInput should render correctly with mask="99/99" 1`] = `
     style={
       Object {
         "flexDirection": "row",
-        "paddingTop": 20,
+        "paddingTop": 16,
       }
     }
   >
@@ -807,7 +807,7 @@ exports[`Android BpkTextInput should render correctly with mask="99/99" 1`] = `
           "fontFamily": "sans-serif",
           "fontSize": 14,
           "fontWeight": "400",
-          "lineHeight": 20,
+          "lineHeight": 16,
           "position": "absolute",
           "top": 0,
         }
@@ -841,8 +841,8 @@ exports[`Android BpkTextInput should render correctly with mask="99/99" 1`] = `
             "flex": 1,
             "fontSize": 16,
             "fontWeight": "400",
-            "lineHeight": 24,
-            "minHeight": 32,
+            "lineHeight": 19,
+            "minHeight": 27,
             "paddingHorizontal": 0,
             "paddingVertical": 4,
             "textAlign": "left",
@@ -869,7 +869,7 @@ exports[`Android BpkTextInput should render correctly with mask="9999-9999-9999-
     style={
       Object {
         "flexDirection": "row",
-        "paddingTop": 20,
+        "paddingTop": 16,
       }
     }
   >
@@ -885,7 +885,7 @@ exports[`Android BpkTextInput should render correctly with mask="9999-9999-9999-
           "fontFamily": "sans-serif",
           "fontSize": 14,
           "fontWeight": "400",
-          "lineHeight": 20,
+          "lineHeight": 16,
           "position": "absolute",
           "top": 0,
         }
@@ -919,8 +919,8 @@ exports[`Android BpkTextInput should render correctly with mask="9999-9999-9999-
             "flex": 1,
             "fontSize": 16,
             "fontWeight": "400",
-            "lineHeight": 24,
-            "minHeight": 32,
+            "lineHeight": 19,
+            "minHeight": 27,
             "paddingHorizontal": 0,
             "paddingVertical": 4,
             "textAlign": "left",
@@ -947,7 +947,7 @@ exports[`Android BpkTextInput should render correctly with valid 1`] = `
     style={
       Object {
         "flexDirection": "row",
-        "paddingTop": 20,
+        "paddingTop": 16,
       }
     }
   >
@@ -963,9 +963,9 @@ exports[`Android BpkTextInput should render correctly with valid 1`] = `
           "fontFamily": "sans-serif",
           "fontSize": 16,
           "fontWeight": "400",
-          "lineHeight": 24,
+          "lineHeight": 19,
           "position": "absolute",
-          "top": 23,
+          "top": 19,
         }
       }
     >
@@ -997,8 +997,8 @@ exports[`Android BpkTextInput should render correctly with valid 1`] = `
             "flex": 1,
             "fontSize": 16,
             "fontWeight": "400",
-            "lineHeight": 24,
-            "minHeight": 32,
+            "lineHeight": 19,
+            "minHeight": 27,
             "paddingHorizontal": 0,
             "paddingVertical": 4,
             "textAlign": "left",
@@ -1054,7 +1054,7 @@ exports[`Android BpkTextInput should render correctly with valid false 1`] = `
     style={
       Object {
         "flexDirection": "row",
-        "paddingTop": 20,
+        "paddingTop": 16,
       }
     }
   >
@@ -1070,9 +1070,9 @@ exports[`Android BpkTextInput should render correctly with valid false 1`] = `
           "fontFamily": "sans-serif",
           "fontSize": 16,
           "fontWeight": "400",
-          "lineHeight": 24,
+          "lineHeight": 19,
           "position": "absolute",
-          "top": 23,
+          "top": 19,
         }
       }
     >
@@ -1104,8 +1104,8 @@ exports[`Android BpkTextInput should render correctly with valid false 1`] = `
             "flex": 1,
             "fontSize": 16,
             "fontWeight": "400",
-            "lineHeight": 24,
-            "minHeight": 32,
+            "lineHeight": 19,
+            "minHeight": 27,
             "paddingHorizontal": 0,
             "paddingVertical": 4,
             "textAlign": "left",
@@ -1161,7 +1161,7 @@ exports[`Android BpkTextInput should render correctly with valid false and a val
     style={
       Object {
         "flexDirection": "row",
-        "paddingTop": 20,
+        "paddingTop": 16,
       }
     }
   >
@@ -1177,9 +1177,9 @@ exports[`Android BpkTextInput should render correctly with valid false and a val
           "fontFamily": "sans-serif",
           "fontSize": 16,
           "fontWeight": "400",
-          "lineHeight": 24,
+          "lineHeight": 19,
           "position": "absolute",
-          "top": 23,
+          "top": 19,
         }
       }
     >
@@ -1211,8 +1211,8 @@ exports[`Android BpkTextInput should render correctly with valid false and a val
             "flex": 1,
             "fontSize": 16,
             "fontWeight": "400",
-            "lineHeight": 24,
-            "minHeight": 32,
+            "lineHeight": 19,
+            "minHeight": 27,
             "paddingHorizontal": 0,
             "paddingVertical": 4,
             "textAlign": "left",
@@ -1289,7 +1289,7 @@ exports[`Android BpkTextInput should render correctly with value 1`] = `
     style={
       Object {
         "flexDirection": "row",
-        "paddingTop": 20,
+        "paddingTop": 16,
       }
     }
   >
@@ -1305,7 +1305,7 @@ exports[`Android BpkTextInput should render correctly with value 1`] = `
           "fontFamily": "sans-serif",
           "fontSize": 14,
           "fontWeight": "400",
-          "lineHeight": 20,
+          "lineHeight": 16,
           "position": "absolute",
           "top": 0,
         }
@@ -1339,8 +1339,8 @@ exports[`Android BpkTextInput should render correctly with value 1`] = `
             "flex": 1,
             "fontSize": 16,
             "fontWeight": "400",
-            "lineHeight": 24,
-            "minHeight": 32,
+            "lineHeight": 19,
+            "minHeight": 27,
             "paddingHorizontal": 0,
             "paddingVertical": 4,
             "textAlign": "left",
