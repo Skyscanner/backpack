@@ -10,7 +10,7 @@
   "author": "Backpack Design System <backpack@skyscanner.net>",
   "license": "Apache-2.0",
   "peerDependencies": {
-    "react": "^16.0.0",
+    "react": "^16.6.0",
     "react-native": ">= 0.52.0"
   },
   "dependencies": {
