@@ -21,7 +21,7 @@
 import { Platform, StyleSheet, View } from 'react-native';
 import React from 'react';
 import PropTypes from 'prop-types';
-import BpkText from 'react-native-bpk-component-text';
+import BpkText, { WEIGHT_STYLES } from 'react-native-bpk-component-text';
 import {
   spacingSm,
   spacingBase,
@@ -63,7 +63,7 @@ type Props = {
 const BpkSectionHeader = (props: Props) => (
   <View style={styles.outer}>
     <BpkText
-      emphasize
+      weight={WEIGHT_STYLES.emphasized}
       textStyle={Platform.OS === 'android' ? 'sm' : 'lg'}
       style={styles.text}
     >

@@ -22,7 +22,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { View, ViewPropTypes } from 'react-native';
 import BpkIcon from 'react-native-bpk-component-icon';
-import BpkText from 'react-native-bpk-component-text';
+import BpkText, { WEIGHT_STYLES } from 'react-native-bpk-component-text';
 import { getThemeAttributes, withTheme } from 'react-native-bpk-theming';
 import BpkTouchableNativeFeedback from 'react-native-bpk-component-touchable-native-feedback';
 
@@ -98,7 +98,7 @@ const BpkButtonLink = (props: Props) => {
         <View style={viewStyle}>
           <BpkText
             textStyle="sm"
-            emphasize
+            weight={WEIGHT_STYLES.emphasized}
             numberOfLines={1}
             style={textStyle}
             {...textProps}
