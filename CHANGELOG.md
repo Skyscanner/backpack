@@ -2,6 +2,26 @@
 
 [Unreleased changes](./UNRELEASED.md).
 
+# 2018-10-24 - Icons renamed and new prop for InfiniteScroll
+
+**Breaking:**
+
+- bpk-svgs: 5.19.4 => 6.0.0
+  - Icons renamed:
+  - bws--call-back => call-back
+  - bws--end-call => end-call
+  - bws--keypad => keypad
+  - bws--mute => mute
+  - bws--phone-call => phone-call
+  - bws--send-message => send-message
+  - bws--un-mute => unmute
+  - send-message icon replaced with new version
+
+**Added:**
+
+- bpk-component-infinite-scroll: 2.0.16 => 2.1.0
+  - Added possibility to have different number of elements loaded on load and on scroll
+
 # 2018-10-24 - New icons added
 
 **Added:**
