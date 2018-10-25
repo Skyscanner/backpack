@@ -338,6 +338,12 @@ const ComponentsLinks = [
         tags: ['native'],
       },
       {
+        id: 'SCROLLABLE_CALENDAR',
+        route: routes.SCROLLABLE_CALENDAR,
+        children: 'Scrollable calendar',
+        tags: ['web'],
+      },
+      {
         id: 'NATIVE_TOUCHABLE_OVERLAY',
         route: routes.TOUCHABLE_OVERLAY,
         children: 'Touchable overlay',
