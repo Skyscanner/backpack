@@ -128,6 +128,21 @@
       "category": "letter-spacings"
     },
 
+    "TEXT_CAPS_LETTER_SPACING": {
+      "value": "{!LETTER_SPACING_CAPS}",
+      "type": "letter-spacing",
+      "category": "letter-spacings"
+    },
+    "TEXT_CAPS_FONT_SIZE": {
+      "value": "{!FONT_SIZE_CAPS}",
+      "type": "font-size",
+      "category": "font-sizes"
+    },
+    "TEXT_CAPS_FONT_WEIGHT": {
+      "value": "{!FONT_WEIGHT_REGULAR}",
+      "type": "string",
+      "category": "font-weights"
+    },
     "TEXT_XS_LETTER_SPACING": {
       "value": "{!LETTER_SPACING_XS}",
       "type": "letter-spacing",

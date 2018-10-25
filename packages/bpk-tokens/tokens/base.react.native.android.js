@@ -136,6 +136,9 @@ export const textBaseFontSize = 16;
 export const textBaseFontWeight = "400";
 export const textBaseLetterSpacing = -0.2;
 export const textBaseLineHeight = 19;
+export const textCapsFontSize = 10;
+export const textCapsFontWeight = "400";
+export const textCapsLetterSpacing = 0.4;
 export const textEmphasizedFontWeight = "500";
 export const textLgFontSize = 20;
 export const textLgFontWeight = "400";
@@ -248,6 +251,7 @@ elevationXs,
 };
 export const fontSizes = {
 textBaseFontSize,
+textCapsFontSize,
 textLgFontSize,
 textSmFontSize,
 textXlFontSize,
@@ -257,6 +261,7 @@ textXxxlFontSize,
 };
 export const fontWeights = {
 textBaseFontWeight,
+textCapsFontWeight,
 textEmphasizedFontWeight,
 textLgFontWeight,
 textSmFontWeight,
@@ -275,6 +280,7 @@ letterSpacingXs,
 letterSpacingXxl,
 letterSpacingXxxl,
 textBaseLetterSpacing,
+textCapsLetterSpacing,
 textLgLetterSpacing,
 textSmLetterSpacing,
 textXlLetterSpacing,

@@ -890,6 +890,27 @@
       "originalValue": "{!LINE_HEIGHT_BASE}"
     },
     {
+      "value": "10",
+      "type": "font-size",
+      "category": "font-sizes",
+      "originalValue": "{!FONT_SIZE_CAPS}",
+      "name": "textCapsFontSize"
+    },
+    {
+      "value": "400",
+      "type": "string",
+      "category": "font-weights",
+      "originalValue": "{!FONT_WEIGHT_NORMAL}",
+      "name": "textCapsFontWeight"
+    },
+    {
+      "value": 0.28,
+      "type": "letter-spacing",
+      "category": "letter-spacings",
+      "originalValue": "{!LETTER_SPACING_CAPS}",
+      "name": "textCapsLetterSpacing"
+    },
+    {
       "value": "600",
       "type": "string",
       "category": "font-weights",

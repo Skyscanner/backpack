@@ -1171,6 +1171,27 @@
       "name": "TEXT_BASE_LINE_HEIGHT",
       "originalValue": "{!LINE_HEIGHT_BASE}"
     },
+    "TEXT_CAPS_FONT_SIZE": {
+      "value": "10",
+      "type": "font-size",
+      "category": "font-sizes",
+      "originalValue": "{!FONT_SIZE_CAPS}",
+      "name": "TEXT_CAPS_FONT_SIZE"
+    },
+    "TEXT_CAPS_FONT_WEIGHT": {
+      "value": "400",
+      "type": "string",
+      "category": "font-weights",
+      "originalValue": "{!FONT_WEIGHT_REGULAR}",
+      "name": "TEXT_CAPS_FONT_WEIGHT"
+    },
+    "TEXT_CAPS_LETTER_SPACING": {
+      "value": 0.04,
+      "type": "letter-spacing",
+      "category": "letter-spacings",
+      "originalValue": "{!LETTER_SPACING_CAPS}",
+      "name": "TEXT_CAPS_LETTER_SPACING"
+    },
     "TEXT_EMPHASIZED_FONT_WEIGHT": {
       "value": "500",
       "type": "string",
@@ -1460,6 +1481,9 @@
     "TEXT_BASE_FONT_WEIGHT",
     "TEXT_BASE_LETTER_SPACING",
     "TEXT_BASE_LINE_HEIGHT",
+    "TEXT_CAPS_FONT_SIZE",
+    "TEXT_CAPS_FONT_WEIGHT",
+    "TEXT_CAPS_LETTER_SPACING",
     "TEXT_EMPHASIZED_FONT_WEIGHT",
     "TEXT_LG_FONT_SIZE",
     "TEXT_LG_FONT_WEIGHT",
