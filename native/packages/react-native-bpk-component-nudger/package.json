@@ -11,7 +11,7 @@
   "license": "Apache-2.0",
   "peerDependencies": {
     "react": "^16.0.0-alpha.1",
-    "react-native": ">= 0.47.0"
+    "react-native": ">=0.57.4"
   },
   "devDependencies": {
     "react-native-bpk-theming": "^1.0.81"
