@@ -9,14 +9,17 @@ npm install bpk-component-infinite-scroll --save-dev
 ```
 
 ## <a name="Usage"></a>Usage
+
 ```js
 import React from 'react';
 import PropTypes from 'prop-types';
 import BpkButton from 'bpk-component-button';
 import BpkSpinner, { SPINNER_TYPES } from 'bpk-component-spinner';
-import withInfiniteScroll, { ArrayDataSource } from 'bpk-component-infinite-scroll';
+import withInfiniteScroll, {
+  ArrayDataSource,
+} from 'bpk-component-infinite-scroll';
 
-const SomeList = ({elements}) => (
+const SomeList = ({ elements }) => (
   <div id="list">
     {elements.map(element => (
       <div key={element} style={{ height: '50px' }}>
@@ -24,7 +27,7 @@ const SomeList = ({elements}) => (
       </div>
     ))}
   </div>
-)
+);
 
 const elementsArray = [
   'element 1',
@@ -37,7 +40,7 @@ const elementsArray = [
   'element 8',
   'element 9',
   'element 10',
-]
+];
 
 const CustomLoading = () => (
   <div>
@@ -61,7 +64,7 @@ export default () => (
     renderSeeMoreComponent={CustomSeeMore}
     seeMoreAfter={1}
   />
-)
+);
 ```
 
 ## Accompanying classes
@@ -80,12 +83,13 @@ Called by the `InfiniteScroll` component every time new data is
 requested (by scrolling down) and should return the data starting from `index` plus `nElements` (number of elements). It should return a promise object.
 
 Example:
+
 ```js
-fetchItems(0, 5) // should return 5 items starting from position 0
-fetchItems(5, 5) // should return 5 items starting from position 5
+fetchItems(0, 5); // should return 5 items starting from position 0
+fetchItems(5, 5); // should return 5 items starting from position 5
 ```
 
-*Calling this method directly in the `DataSource` class will result in an error, it should be implemented by the subclass extending `DataSource`.*
+_Calling this method directly in the `DataSource` class will result in an error, it should be implemented by the subclass extending `DataSource`._
 
 `onDataChange(cb)`
 
@@ -101,7 +105,6 @@ Triggers all listeners in response to data changes. This method should be
 used by subclasses to tell the `InfiniteScroll` component it should refresh
 its data.
 
-
 ```js
 import React from 'react';
 import PropTypes from 'prop-types';
@@ -115,15 +118,15 @@ const SomeList = ({ elements }) => (
       </div>
     ))}
   </div>
-)
+);
 
 class RemoteFlightsDataSource extends DataSource {
   constructor() {
     super();
     myWebSocketConnection.on('dataChange', () => {
       // tell the `InfiniteScroll` component to refresh its data
-      this.triggerListeners(); 
-    })
+      this.triggerListeners();
+    });
   }
 
   fetchItems(index, nElements) {
@@ -134,10 +137,8 @@ class RemoteFlightsDataSource extends DataSource {
 const InfiniteList = withInfiniteScroll(SomeList);
 
 export default () => (
-  <InfiniteList
-    dataSource={new RemoteFlightsDataSource()}
-  />
-)
+  <InfiniteList dataSource={new RemoteFlightsDataSource()} />
+);
 ```
 
 ## ArrayDataSource
@@ -148,7 +149,8 @@ as a parameter in the constructor and uses it as source for the infinite scroll.
 > See [Usage](#Usage) for an example of this class in use.
 
 ### Methods
-*refer to the `DataSource` methods section for a list of all methods*
+
+_refer to the `DataSource` methods section for a list of all methods_
 
 `fetchItems(index, nElements)`
 
@@ -160,12 +162,13 @@ Updates the internal array and triggers all listeners.
 
 ## Props
 
-| Property               | PropType                | Required | Default Value |
-| ---------------------- | ----------------------- | -------- | ------------- |
-| dataSource             | instanceOf(DataSource)  | true     | -             |
-| elementsPerScroll      | number                  | false    | 5             |
-| onScroll               | func                    | false    | null          |
-| onScrollFinished       | func                    | false    | null          |
-| renderLoadingComponent | func                    | false    | null          |
-| renderSeeMoreComponent | func                    | false    | null          |
-| seeMoreAfter           | number                  | false    | null          |
+| Property                | PropType               | Required | Default Value |
+| ----------------------- | ---------------------- | -------- | ------------- |
+| dataSource              | instanceOf(DataSource) | true     | -             |
+| elementsPerScroll       | number                 | false    | 5             |
+| initiallyLoadedElements | number                 | false    | 5             |
+| onScroll                | func                   | false    | null          |
+| onScrollFinished        | func                   | false    | null          |
+| renderLoadingComponent  | func                   | false    | null          |
+| renderSeeMoreComponent  | func                   | false    | null          |
+| seeMoreAfter            | number                 | false    | null          |

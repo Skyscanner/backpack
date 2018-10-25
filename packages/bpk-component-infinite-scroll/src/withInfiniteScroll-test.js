@@ -76,6 +76,17 @@ describe('withInfiniteScroll', () => {
     expect(toJson(tree)).toMatchSnapshot();
   });
 
+  it('renders correctly with different initial and onScroll numbers', () => {
+    const tree = mount(
+      <InfiniteList
+        dataSource={new ArrayDataSource(elementsArray)}
+        initiallyLoadedElements={3}
+        elementsPerScroll={2}
+      />,
+    );
+    expect(toJson(tree)).toMatchSnapshot();
+  });
+
   it('should render correctly when no more elements', async () => {
     const tree = mount(
       <InfiniteList dataSource={new ArrayDataSource(elementsArray)} />,

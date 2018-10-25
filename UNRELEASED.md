@@ -12,6 +12,11 @@
   - bws--send-message => send-message
   - bws--un-mute => unmute
   - send-message icon replaced with new version
-
+  
 - bpk-tokens:
   - Token values updated to support new type-scale.
+
+**Added:**
+
+- bpk-component-infinite-scroll:
+  - Added possibility to have different number of elements loaded on load and on scroll
