@@ -1,5 +1,29 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`iOS BpkText should ignore weight prop if deprecated \`emphasize\` prop is being used 1`] = `
+<Text
+  accessible={true}
+  allowFontScaling={true}
+  ellipsizeMode="tail"
+  style={
+    Array [
+      Object {
+        "color": "rgb(82, 76, 97)",
+        "fontFamily": "System",
+        "fontSize": 36,
+        "fontWeight": "400",
+        "letterSpacing": -1.396,
+      },
+      Object {
+        "fontWeight": "600",
+      },
+    ]
+  }
+>
+  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+</Text>
+`;
+
 exports[`iOS BpkText should render correctly 1`] = `
 <Text
   accessible={true}
@@ -12,7 +36,9 @@ exports[`iOS BpkText should render correctly 1`] = `
         "fontFamily": "System",
         "fontSize": 16,
         "fontWeight": "400",
+        "letterSpacing": 0.12,
       },
+      Object {},
     ]
   }
 >
@@ -20,7 +46,7 @@ exports[`iOS BpkText should render correctly 1`] = `
 </Text>
 `;
 
-exports[`iOS BpkText should render correctly with \`emphasize\` prop 1`] = `
+exports[`iOS BpkText should render correctly with deprecated \`emphasize\` prop 1`] = `
 <Text
   accessible={true}
   allowFontScaling={true}
@@ -32,6 +58,31 @@ exports[`iOS BpkText should render correctly with \`emphasize\` prop 1`] = `
         "fontFamily": "System",
         "fontSize": 16,
         "fontWeight": "400",
+        "letterSpacing": 0.12,
+      },
+      Object {
+        "fontWeight": "600",
+      },
+    ]
+  }
+>
+  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+</Text>
+`;
+
+exports[`iOS BpkText should render correctly with textStyle="base and weight="emphasized" 1`] = `
+<Text
+  accessible={true}
+  allowFontScaling={true}
+  ellipsizeMode="tail"
+  style={
+    Array [
+      Object {
+        "color": "rgb(82, 76, 97)",
+        "fontFamily": "System",
+        "fontSize": 16,
+        "fontWeight": "400",
+        "letterSpacing": 0.12,
       },
       Object {
         "fontWeight": "600",
@@ -55,6 +106,78 @@ exports[`iOS BpkText should render correctly with textStyle="base" 1`] = `
         "fontFamily": "System",
         "fontSize": 16,
         "fontWeight": "400",
+        "letterSpacing": 0.12,
+      },
+      Object {},
+    ]
+  }
+>
+  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+</Text>
+`;
+
+exports[`iOS BpkText should render correctly with textStyle="caps and weight="emphasized" 1`] = `
+<Text
+  accessible={true}
+  allowFontScaling={true}
+  ellipsizeMode="tail"
+  style={
+    Array [
+      Object {
+        "color": "rgb(82, 76, 97)",
+        "fontFamily": "System",
+        "fontSize": 10,
+        "fontWeight": "400",
+        "letterSpacing": 0.28,
+      },
+      Object {
+        "fontWeight": "600",
+      },
+    ]
+  }
+>
+  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+</Text>
+`;
+
+exports[`iOS BpkText should render correctly with textStyle="caps" 1`] = `
+<Text
+  accessible={true}
+  allowFontScaling={true}
+  ellipsizeMode="tail"
+  style={
+    Array [
+      Object {
+        "color": "rgb(82, 76, 97)",
+        "fontFamily": "System",
+        "fontSize": 10,
+        "fontWeight": "400",
+        "letterSpacing": 0.28,
+      },
+      Object {},
+    ]
+  }
+>
+  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+</Text>
+`;
+
+exports[`iOS BpkText should render correctly with textStyle="lg and weight="emphasized" 1`] = `
+<Text
+  accessible={true}
+  allowFontScaling={true}
+  ellipsizeMode="tail"
+  style={
+    Array [
+      Object {
+        "color": "rgb(82, 76, 97)",
+        "fontFamily": "System",
+        "fontSize": 20,
+        "fontWeight": "400",
+        "letterSpacing": -0.78,
+      },
+      Object {
+        "fontWeight": "600",
       },
     ]
   }
@@ -75,6 +198,32 @@ exports[`iOS BpkText should render correctly with textStyle="lg" 1`] = `
         "fontFamily": "System",
         "fontSize": 20,
         "fontWeight": "400",
+        "letterSpacing": -0.78,
+      },
+      Object {},
+    ]
+  }
+>
+  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+</Text>
+`;
+
+exports[`iOS BpkText should render correctly with textStyle="sm and weight="emphasized" 1`] = `
+<Text
+  accessible={true}
+  allowFontScaling={true}
+  ellipsizeMode="tail"
+  style={
+    Array [
+      Object {
+        "color": "rgb(82, 76, 97)",
+        "fontFamily": "System",
+        "fontSize": 14,
+        "fontWeight": "400",
+        "letterSpacing": 0.154,
+      },
+      Object {
+        "fontWeight": "600",
       },
     ]
   }
@@ -95,6 +244,56 @@ exports[`iOS BpkText should render correctly with textStyle="sm" 1`] = `
         "fontFamily": "System",
         "fontSize": 14,
         "fontWeight": "400",
+        "letterSpacing": 0.154,
+      },
+      Object {},
+    ]
+  }
+>
+  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+</Text>
+`;
+
+exports[`iOS BpkText should render correctly with textStyle="xl and weight="emphasized" 1`] = `
+<Text
+  accessible={true}
+  allowFontScaling={true}
+  ellipsizeMode="tail"
+  style={
+    Array [
+      Object {
+        "color": "rgb(82, 76, 97)",
+        "fontFamily": "System",
+        "fontSize": 24,
+        "fontWeight": "400",
+        "letterSpacing": -0.96,
+      },
+      Object {
+        "fontWeight": "600",
+      },
+    ]
+  }
+>
+  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+</Text>
+`;
+
+exports[`iOS BpkText should render correctly with textStyle="xl and weight="heavy" 1`] = `
+<Text
+  accessible={true}
+  allowFontScaling={true}
+  ellipsizeMode="tail"
+  style={
+    Array [
+      Object {
+        "color": "rgb(82, 76, 97)",
+        "fontFamily": "System",
+        "fontSize": 24,
+        "fontWeight": "400",
+        "letterSpacing": -0.96,
+      },
+      Object {
+        "fontWeight": undefined,
       },
     ]
   }
@@ -115,6 +314,32 @@ exports[`iOS BpkText should render correctly with textStyle="xl" 1`] = `
         "fontFamily": "System",
         "fontSize": 24,
         "fontWeight": "400",
+        "letterSpacing": -0.96,
+      },
+      Object {},
+    ]
+  }
+>
+  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+</Text>
+`;
+
+exports[`iOS BpkText should render correctly with textStyle="xs and weight="emphasized" 1`] = `
+<Text
+  accessible={true}
+  allowFontScaling={true}
+  ellipsizeMode="tail"
+  style={
+    Array [
+      Object {
+        "color": "rgb(82, 76, 97)",
+        "fontFamily": "System",
+        "fontSize": 12,
+        "fontWeight": "400",
+        "letterSpacing": 0,
+      },
+      Object {
+        "fontWeight": "600",
       },
     ]
   }
@@ -135,6 +360,56 @@ exports[`iOS BpkText should render correctly with textStyle="xs" 1`] = `
         "fontFamily": "System",
         "fontSize": 12,
         "fontWeight": "400",
+        "letterSpacing": 0,
+      },
+      Object {},
+    ]
+  }
+>
+  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+</Text>
+`;
+
+exports[`iOS BpkText should render correctly with textStyle="xxl and weight="emphasized" 1`] = `
+<Text
+  accessible={true}
+  allowFontScaling={true}
+  ellipsizeMode="tail"
+  style={
+    Array [
+      Object {
+        "color": "rgb(82, 76, 97)",
+        "fontFamily": "System",
+        "fontSize": 36,
+        "fontWeight": "400",
+        "letterSpacing": -1.396,
+      },
+      Object {
+        "fontWeight": "600",
+      },
+    ]
+  }
+>
+  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+</Text>
+`;
+
+exports[`iOS BpkText should render correctly with textStyle="xxl and weight="heavy" 1`] = `
+<Text
+  accessible={true}
+  allowFontScaling={true}
+  ellipsizeMode="tail"
+  style={
+    Array [
+      Object {
+        "color": "rgb(82, 76, 97)",
+        "fontFamily": "System",
+        "fontSize": 36,
+        "fontWeight": "400",
+        "letterSpacing": -1.396,
+      },
+      Object {
+        "fontWeight": undefined,
       },
     ]
   }
@@ -155,7 +430,79 @@ exports[`iOS BpkText should render correctly with textStyle="xxl" 1`] = `
         "fontFamily": "System",
         "fontSize": 36,
         "fontWeight": "400",
+        "letterSpacing": -1.396,
       },
+      Object {},
+    ]
+  }
+>
+  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+</Text>
+`;
+
+exports[`iOS BpkText should render correctly with textStyle="xxxl and weight="emphasized" 1`] = `
+<Text
+  accessible={true}
+  allowFontScaling={true}
+  ellipsizeMode="tail"
+  style={
+    Array [
+      Object {
+        "color": "rgb(82, 76, 97)",
+        "fontFamily": "System",
+        "fontSize": 42,
+        "fontWeight": "400",
+        "letterSpacing": -1.6199999999999999,
+      },
+      Object {
+        "fontWeight": "600",
+      },
+    ]
+  }
+>
+  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+</Text>
+`;
+
+exports[`iOS BpkText should render correctly with textStyle="xxxl and weight="heavy" 1`] = `
+<Text
+  accessible={true}
+  allowFontScaling={true}
+  ellipsizeMode="tail"
+  style={
+    Array [
+      Object {
+        "color": "rgb(82, 76, 97)",
+        "fontFamily": "System",
+        "fontSize": 42,
+        "fontWeight": "400",
+        "letterSpacing": -1.6199999999999999,
+      },
+      Object {
+        "fontWeight": undefined,
+      },
+    ]
+  }
+>
+  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+</Text>
+`;
+
+exports[`iOS BpkText should render correctly with textStyle="xxxl" 1`] = `
+<Text
+  accessible={true}
+  allowFontScaling={true}
+  ellipsizeMode="tail"
+  style={
+    Array [
+      Object {
+        "color": "rgb(82, 76, 97)",
+        "fontFamily": "System",
+        "fontSize": 42,
+        "fontWeight": "400",
+        "letterSpacing": -1.6199999999999999,
+      },
+      Object {},
     ]
   }
 >
@@ -175,7 +522,9 @@ exports[`iOS BpkText should support overwriting styles 1`] = `
         "fontFamily": "System",
         "fontSize": 16,
         "fontWeight": "400",
+        "letterSpacing": 0.12,
       },
+      Object {},
       Object {
         "color": "rgb(255, 84, 82)",
       },
@@ -198,6 +547,10 @@ exports[`iOS should not apply \`emphasize\` for textStyle="xxl" 1`] = `
         "fontFamily": "System",
         "fontSize": 36,
         "fontWeight": "400",
+        "letterSpacing": -1.396,
+      },
+      Object {
+        "fontWeight": "600",
       },
     ]
   }

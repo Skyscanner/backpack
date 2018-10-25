@@ -88,7 +88,9 @@ exports[`Android BpkBannerAlert should accept userland styling 1`] = `
                 "fontFamily": "sans-serif",
                 "fontSize": 14,
                 "fontWeight": "400",
+                "letterSpacing": 0,
               },
+              Object {},
               Object {
                 "flex": 1,
               },
@@ -169,7 +171,9 @@ exports[`Android BpkBannerAlert should accept userland styling 1`] = `
                 "fontFamily": "sans-serif",
                 "fontSize": 14,
                 "fontWeight": "400",
+                "letterSpacing": 0,
               },
+              Object {},
               Object {
                 "flex": 1,
               },
@@ -271,7 +275,9 @@ exports[`Android BpkBannerAlert should render correctly when not shown 1`] = `
                 "fontFamily": "sans-serif",
                 "fontSize": 14,
                 "fontWeight": "400",
+                "letterSpacing": 0,
               },
+              Object {},
               Object {
                 "flex": 1,
               },
@@ -352,7 +358,9 @@ exports[`Android BpkBannerAlert should render correctly when not shown 1`] = `
                 "fontFamily": "sans-serif",
                 "fontSize": 14,
                 "fontWeight": "400",
+                "letterSpacing": 0,
               },
+              Object {},
               Object {
                 "flex": 1,
               },
@@ -454,7 +462,9 @@ exports[`Android BpkBannerAlert should render correctly with animateOnEnter 1`] 
                 "fontFamily": "sans-serif",
                 "fontSize": 14,
                 "fontWeight": "400",
+                "letterSpacing": 0,
               },
+              Object {},
               Object {
                 "flex": 1,
               },
@@ -535,7 +545,9 @@ exports[`Android BpkBannerAlert should render correctly with animateOnEnter 1`] 
                 "fontFamily": "sans-serif",
                 "fontSize": 14,
                 "fontWeight": "400",
+                "letterSpacing": 0,
               },
+              Object {},
               Object {
                 "flex": 1,
               },
@@ -637,7 +649,9 @@ exports[`Android BpkBannerAlert should render correctly with animateOnLeave 1`] 
                 "fontFamily": "sans-serif",
                 "fontSize": 14,
                 "fontWeight": "400",
+                "letterSpacing": 0,
               },
+              Object {},
               Object {
                 "flex": 1,
               },
@@ -718,7 +732,9 @@ exports[`Android BpkBannerAlert should render correctly with animateOnLeave 1`] 
                 "fontFamily": "sans-serif",
                 "fontSize": 14,
                 "fontWeight": "400",
+                "letterSpacing": 0,
               },
+              Object {},
               Object {
                 "flex": 1,
               },
@@ -841,7 +857,9 @@ exports[`Android BpkBannerAlert should render correctly with children provided (
                 "fontFamily": "sans-serif",
                 "fontSize": 14,
                 "fontWeight": "400",
+                "letterSpacing": 0,
               },
+              Object {},
               Object {
                 "flex": 1,
               },
@@ -911,7 +929,9 @@ exports[`Android BpkBannerAlert should render correctly with children provided (
                   "fontFamily": "sans-serif",
                   "fontSize": 14,
                   "fontWeight": "400",
+                  "letterSpacing": 0,
                 },
+                Object {},
               ]
             }
           >
@@ -942,7 +962,9 @@ exports[`Android BpkBannerAlert should render correctly with children provided (
                   "fontFamily": "sans-serif",
                   "fontSize": 14,
                   "fontWeight": "400",
+                  "letterSpacing": 0,
                 },
+                Object {},
               ]
             }
           >
@@ -1042,7 +1064,9 @@ exports[`Android BpkBannerAlert should render correctly with children provided (
                 "fontFamily": "sans-serif",
                 "fontSize": 14,
                 "fontWeight": "400",
+                "letterSpacing": 0,
               },
+              Object {},
               Object {
                 "flex": 1,
               },
@@ -1112,7 +1136,9 @@ exports[`Android BpkBannerAlert should render correctly with children provided (
                   "fontFamily": "sans-serif",
                   "fontSize": 14,
                   "fontWeight": "400",
+                  "letterSpacing": 0,
                 },
+                Object {},
               ]
             }
           >
@@ -1143,7 +1169,9 @@ exports[`Android BpkBannerAlert should render correctly with children provided (
                   "fontFamily": "sans-serif",
                   "fontSize": 14,
                   "fontWeight": "400",
+                  "letterSpacing": 0,
                 },
+                Object {},
               ]
             }
           >
@@ -1243,7 +1271,9 @@ exports[`Android BpkBannerAlert should render correctly with dismissable 1`] = `
                 "fontFamily": "sans-serif",
                 "fontSize": 14,
                 "fontWeight": "400",
+                "letterSpacing": 0,
               },
+              Object {},
               Object {
                 "flex": 1,
               },
@@ -1306,6 +1336,7 @@ exports[`Android BpkBannerAlert should render correctly with dismissable 1`] = `
                     "fontFamily": "sans-serif",
                     "fontSize": 14,
                     "fontWeight": "400",
+                    "letterSpacing": 0,
                   },
                   Object {
                     "fontFamily": "sans-serif-medium",
@@ -1394,7 +1425,9 @@ exports[`Android BpkBannerAlert should render correctly with dismissable 1`] = `
                 "fontFamily": "sans-serif",
                 "fontSize": 14,
                 "fontWeight": "400",
+                "letterSpacing": 0,
               },
+              Object {},
               Object {
                 "flex": 1,
               },
@@ -1457,6 +1490,7 @@ exports[`Android BpkBannerAlert should render correctly with dismissable 1`] = `
                     "fontFamily": "sans-serif",
                     "fontSize": 14,
                     "fontWeight": "400",
+                    "letterSpacing": 0,
                   },
                   Object {
                     "fontFamily": "sans-serif-medium",
@@ -1587,7 +1621,9 @@ exports[`Android BpkBannerAlert should render correctly with expanded 1`] = `
                 "fontFamily": "sans-serif",
                 "fontSize": 14,
                 "fontWeight": "400",
+                "letterSpacing": 0,
               },
+              Object {},
               Object {
                 "flex": 1,
               },
@@ -1657,7 +1693,9 @@ exports[`Android BpkBannerAlert should render correctly with expanded 1`] = `
                   "fontFamily": "sans-serif",
                   "fontSize": 14,
                   "fontWeight": "400",
+                  "letterSpacing": 0,
                 },
+                Object {},
               ]
             }
           >
@@ -1688,7 +1726,9 @@ exports[`Android BpkBannerAlert should render correctly with expanded 1`] = `
                   "fontFamily": "sans-serif",
                   "fontSize": 14,
                   "fontWeight": "400",
+                  "letterSpacing": 0,
                 },
+                Object {},
               ]
             }
           >
@@ -1788,7 +1828,9 @@ exports[`Android BpkBannerAlert should render correctly with expanded 1`] = `
                 "fontFamily": "sans-serif",
                 "fontSize": 14,
                 "fontWeight": "400",
+                "letterSpacing": 0,
               },
+              Object {},
               Object {
                 "flex": 1,
               },
@@ -1858,7 +1900,9 @@ exports[`Android BpkBannerAlert should render correctly with expanded 1`] = `
                   "fontFamily": "sans-serif",
                   "fontSize": 14,
                   "fontWeight": "400",
+                  "letterSpacing": 0,
                 },
+                Object {},
               ]
             }
           >
@@ -1889,7 +1933,9 @@ exports[`Android BpkBannerAlert should render correctly with expanded 1`] = `
                   "fontFamily": "sans-serif",
                   "fontSize": 14,
                   "fontWeight": "400",
+                  "letterSpacing": 0,
                 },
+                Object {},
               ]
             }
           >
@@ -1989,7 +2035,9 @@ exports[`Android BpkBannerAlert should render correctly with type equal to error
                 "fontFamily": "sans-serif",
                 "fontSize": 14,
                 "fontWeight": "400",
+                "letterSpacing": 0,
               },
+              Object {},
               Object {
                 "flex": 1,
               },
@@ -2070,7 +2118,9 @@ exports[`Android BpkBannerAlert should render correctly with type equal to error
                 "fontFamily": "sans-serif",
                 "fontSize": 14,
                 "fontWeight": "400",
+                "letterSpacing": 0,
               },
+              Object {},
               Object {
                 "flex": 1,
               },
@@ -2172,7 +2222,9 @@ exports[`Android BpkBannerAlert should render correctly with type equal to neutr
                 "fontFamily": "sans-serif",
                 "fontSize": 14,
                 "fontWeight": "400",
+                "letterSpacing": 0,
               },
+              Object {},
               Object {
                 "flex": 1,
               },
@@ -2253,7 +2305,9 @@ exports[`Android BpkBannerAlert should render correctly with type equal to neutr
                 "fontFamily": "sans-serif",
                 "fontSize": 14,
                 "fontWeight": "400",
+                "letterSpacing": 0,
               },
+              Object {},
               Object {
                 "flex": 1,
               },
@@ -2355,7 +2409,9 @@ exports[`Android BpkBannerAlert should render correctly with type equal to succe
                 "fontFamily": "sans-serif",
                 "fontSize": 14,
                 "fontWeight": "400",
+                "letterSpacing": 0,
               },
+              Object {},
               Object {
                 "flex": 1,
               },
@@ -2436,7 +2492,9 @@ exports[`Android BpkBannerAlert should render correctly with type equal to succe
                 "fontFamily": "sans-serif",
                 "fontSize": 14,
                 "fontWeight": "400",
+                "letterSpacing": 0,
               },
+              Object {},
               Object {
                 "flex": 1,
               },
@@ -2538,7 +2596,9 @@ exports[`Android BpkBannerAlert should render correctly with type equal to warn 
                 "fontFamily": "sans-serif",
                 "fontSize": 14,
                 "fontWeight": "400",
+                "letterSpacing": 0,
               },
+              Object {},
               Object {
                 "flex": 1,
               },
@@ -2619,7 +2679,9 @@ exports[`Android BpkBannerAlert should render correctly with type equal to warn 
                 "fontFamily": "sans-serif",
                 "fontSize": 14,
                 "fontWeight": "400",
+                "letterSpacing": 0,
               },
+              Object {},
               Object {
                 "flex": 1,
               },

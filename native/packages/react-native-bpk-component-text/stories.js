@@ -25,59 +25,84 @@ import {
   colorGray500,
   colorGreen500,
   colorYellow500,
+  colorPink500,
 } from 'bpk-tokens/tokens/base.react.native';
-import { View, Platform } from 'react-native';
+import { View } from 'react-native';
 import { storiesOf } from '@storybook/react-native';
 import CenterDecorator from '../../storybook/CenterDecorator';
 
-import BpkText from './index';
+import BpkText, { WEIGHT_STYLES } from './index';
 
 storiesOf('react-native-bpk-component-text', module)
   .addDecorator(CenterDecorator)
   .add('docs:default', () => (
     <View>
+      <BpkText textStyle="xxxl">Flights to Edinburgh</BpkText>
       <BpkText textStyle="xxl">Flights to Edinburgh</BpkText>
       <BpkText textStyle="xl">Flights to Edinburgh</BpkText>
       <BpkText textStyle="lg">Flights to Edinburgh</BpkText>
       <BpkText textStyle="base">Flights to Edinburgh</BpkText>
       <BpkText textStyle="sm">Flights to Edinburgh</BpkText>
       <BpkText textStyle="xs">Flights to Edinburgh</BpkText>
+      <BpkText textStyle="caps">FLIGHTS TO EDINBURGH</BpkText>
     </View>
   ))
   .add('docs:emphasize', () => (
     <View>
-      <BpkText textStyle="xxl" emphasize={Platform.OS === 'android'}>
+      <BpkText textStyle="xxxl" weight={WEIGHT_STYLES.emphasized}>
         Flights to Edinburgh
       </BpkText>
-      <BpkText textStyle="xl" emphasize>
+      <BpkText textStyle="xxl" weight={WEIGHT_STYLES.emphasized}>
         Flights to Edinburgh
       </BpkText>
-      <BpkText textStyle="lg" emphasize>
+      <BpkText textStyle="xl" weight={WEIGHT_STYLES.emphasized}>
         Flights to Edinburgh
       </BpkText>
-      <BpkText textStyle="base" emphasize>
+      <BpkText textStyle="lg" weight={WEIGHT_STYLES.emphasized}>
         Flights to Edinburgh
       </BpkText>
-      <BpkText textStyle="sm" emphasize>
+      <BpkText textStyle="base" weight={WEIGHT_STYLES.emphasized}>
         Flights to Edinburgh
       </BpkText>
-      <BpkText textStyle="xs" emphasize>
+      <BpkText textStyle="sm" weight={WEIGHT_STYLES.emphasized}>
+        Flights to Edinburgh
+      </BpkText>
+      <BpkText textStyle="xs" weight={WEIGHT_STYLES.emphasized}>
+        Flights to Edinburgh
+      </BpkText>
+      <BpkText textStyle="caps" weight={WEIGHT_STYLES.emphasized}>
+        FLIGHTS TO EDINBURGH
+      </BpkText>
+    </View>
+  ))
+  .add('docs:heavy', () => (
+    <View>
+      <BpkText textStyle="xxxl" weight={WEIGHT_STYLES.heavy}>
+        Flights to Edinburgh
+      </BpkText>
+      <BpkText textStyle="xxl" weight={WEIGHT_STYLES.heavy}>
+        Flights to Edinburgh
+      </BpkText>
+      <BpkText textStyle="xl" weight={WEIGHT_STYLES.heavy}>
         Flights to Edinburgh
       </BpkText>
     </View>
   ))
   .add('Colours', () => (
     <View>
-      <BpkText textStyle="xxl" style={{ color: colorBlue700 }}>
+      <BpkText textStyle="xxxl" style={{ color: colorBlue700 }}>
         Flights to Edinburgh
       </BpkText>
-      <BpkText textStyle="xl" style={{ color: colorRed500 }}>
+      <BpkText textStyle="xxl" style={{ color: colorRed500 }}>
         Flights to Edinburgh
       </BpkText>
-      <BpkText textStyle="lg" style={{ color: colorGreen500 }}>
+      <BpkText textStyle="xl" style={{ color: colorGreen500 }}>
         Flights to Edinburgh
       </BpkText>
-      <BpkText textStyle="base" style={{ color: colorYellow500 }}>
+      <BpkText textStyle="lg" style={{ color: colorYellow500 }}>
+        Flights to Edinburgh
+      </BpkText>
+      <BpkText textStyle="base" style={{ color: colorPink500 }}>
         Flights to Edinburgh
       </BpkText>
       <BpkText textStyle="sm" style={{ color: colorBlue700 }}>
@@ -86,5 +111,13 @@ storiesOf('react-native-bpk-component-text', module)
       <BpkText textStyle="xs" style={{ color: colorGray500 }}>
         Flights to Edinburgh
       </BpkText>
+      <BpkText textStyle="caps" style={{ color: colorRed500 }}>
+        FLIGHTS TO EDINBURGH
+      </BpkText>
+    </View>
+  ))
+  .add('Emphasised (deprecated)', () => (
+    <View>
+      <BpkText emphasize>Flights to Edinburgh</BpkText>
     </View>
   ));

@@ -481,7 +481,9 @@ exports[`Android BpkTextInput should render correctly with description 1`] = `
           "fontFamily": "sans-serif",
           "fontSize": 12,
           "fontWeight": "400",
+          "letterSpacing": 0,
         },
+        Object {},
         Object {
           "color": "rgb(129, 123, 143)",
           "paddingTop": 4,
@@ -609,7 +611,9 @@ exports[`Android BpkTextInput should render correctly with description, valid=fa
           "fontFamily": "sans-serif",
           "fontSize": 12,
           "fontWeight": "400",
+          "letterSpacing": 0,
         },
+        Object {},
         Object {
           "color": "rgb(255, 84, 82)",
           "paddingTop": 4,
@@ -1263,7 +1267,9 @@ exports[`Android BpkTextInput should render correctly with valid false and a val
           "fontFamily": "sans-serif",
           "fontSize": 12,
           "fontWeight": "400",
+          "letterSpacing": 0,
         },
+        Object {},
         Object {
           "color": "rgb(255, 84, 82)",
           "paddingTop": 4,

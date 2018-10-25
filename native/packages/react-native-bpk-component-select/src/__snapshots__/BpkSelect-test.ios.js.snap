@@ -299,7 +299,9 @@ exports[`iOS BpkSelect should render correctly with a text label 1`] = `
             "fontFamily": "System",
             "fontSize": 16,
             "fontWeight": "400",
+            "letterSpacing": 0.12,
           },
+          Object {},
           Array [
             Object {
               "marginEnd": "auto",
@@ -481,7 +483,9 @@ exports[`iOS BpkSelect should render correctly with custom styles 1`] = `
             "fontFamily": "System",
             "fontSize": 16,
             "fontWeight": "400",
+            "letterSpacing": 0.12,
           },
+          Object {},
           Array [
             Object {
               "marginEnd": "auto",
@@ -582,7 +586,9 @@ exports[`iOS BpkSelect should render correctly with the disabled prop 1`] = `
             "fontFamily": "System",
             "fontSize": 16,
             "fontWeight": "400",
+            "letterSpacing": 0.12,
           },
+          Object {},
           Array [
             Object {
               "marginEnd": "auto",

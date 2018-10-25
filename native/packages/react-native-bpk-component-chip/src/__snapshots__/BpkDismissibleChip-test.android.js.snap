@@ -61,7 +61,9 @@ exports[`Android BpkDismissibleChip should render correctly 1`] = `
             "fontFamily": "sans-serif",
             "fontSize": 12,
             "fontWeight": "400",
+            "letterSpacing": 0,
           },
+          Object {},
           Array [
             Object {
               "color": "rgb(82, 76, 97)",
@@ -163,7 +165,9 @@ exports[`Android BpkDismissibleChip should render correctly with arbitrary props
             "fontFamily": "sans-serif",
             "fontSize": 12,
             "fontWeight": "400",
+            "letterSpacing": 0,
           },
+          Object {},
           Array [
             Object {
               "color": "rgb(82, 76, 97)",
@@ -267,7 +271,9 @@ exports[`Android BpkDismissibleChip should render correctly with custom style 1`
             "fontFamily": "sans-serif",
             "fontSize": 12,
             "fontWeight": "400",
+            "letterSpacing": 0,
           },
+          Object {},
           Array [
             Object {
               "color": "rgb(82, 76, 97)",
