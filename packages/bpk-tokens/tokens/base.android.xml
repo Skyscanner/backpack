@@ -139,6 +139,9 @@
   <property name="TEXT_BASE_FONT_WEIGHT" category="font-weights">400</property>
   <property name="TEXT_BASE_LETTER_SPACING" category="letter-spacings">-0.0125</property>
   <property name="TEXT_BASE_LINE_HEIGHT" category="line-heights">19dp</property>
+  <property name="TEXT_CAPS_FONT_SIZE" category="font-sizes">10sp</property>
+  <property name="TEXT_CAPS_FONT_WEIGHT" category="font-weights">400</property>
+  <property name="TEXT_CAPS_LETTER_SPACING" category="letter-spacings">0.04</property>
   <property name="TEXT_EMPHASIZED_FONT_WEIGHT" category="font-weights">500</property>
   <property name="TEXT_LG_FONT_SIZE" category="font-sizes">20sp</property>
   <property name="TEXT_LG_FONT_WEIGHT" category="font-weights">400</property>
