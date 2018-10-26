@@ -20,7 +20,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { StyleSheet, TouchableOpacity } from 'react-native';
-import BpkText from 'react-native-bpk-component-text';
+import BpkText, { WEIGHT_STYLES } from 'react-native-bpk-component-text';
 import {
   colorGray300,
   colorGray700,
@@ -84,7 +84,11 @@ const BpkNavigationBarTextButtonIOS = (props: Props) => {
       style={buttonStyle}
       disabled={disabled}
     >
-      <BpkText textStyle="lg" emphasize={emphasize} style={titleStyle}>
+      <BpkText
+        textStyle="lg"
+        weight={emphasize ? WEIGHT_STYLES.emphasized : WEIGHT_STYLES.regular}
+        style={titleStyle}
+      >
         {title}
       </BpkText>
     </TouchableOpacity>
