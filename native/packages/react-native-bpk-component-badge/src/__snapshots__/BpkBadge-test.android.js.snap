@@ -36,7 +36,7 @@ exports[`Android BpkBadge should render correctly docked to the end 1`] = `
         Array [
           Object {
             "color": "rgb(82, 76, 97)",
-            "fontFamily": "System",
+            "fontFamily": "sans-serif",
             "fontSize": 12,
             "fontWeight": "400",
             "letterSpacing": 0,
@@ -89,7 +89,7 @@ exports[`Android BpkBadge should render correctly docked to the end 1`] = `
         Array [
           Object {
             "color": "rgb(82, 76, 97)",
-            "fontFamily": "System",
+            "fontFamily": "sans-serif",
             "fontSize": 12,
             "fontWeight": "400",
             "letterSpacing": 0,
@@ -142,7 +142,7 @@ exports[`Android BpkBadge should render correctly docked to the end 1`] = `
         Array [
           Object {
             "color": "rgb(82, 76, 97)",
-            "fontFamily": "System",
+            "fontFamily": "sans-serif",
             "fontSize": 12,
             "fontWeight": "400",
             "letterSpacing": 0,
@@ -197,7 +197,7 @@ exports[`Android BpkBadge should render correctly docked to the end 1`] = `
         Array [
           Object {
             "color": "rgb(82, 76, 97)",
-            "fontFamily": "System",
+            "fontFamily": "sans-serif",
             "fontSize": 12,
             "fontWeight": "400",
             "letterSpacing": 0,
@@ -250,7 +250,7 @@ exports[`Android BpkBadge should render correctly docked to the end 1`] = `
         Array [
           Object {
             "color": "rgb(82, 76, 97)",
-            "fontFamily": "System",
+            "fontFamily": "sans-serif",
             "fontSize": 12,
             "fontWeight": "400",
             "letterSpacing": 0,
@@ -310,7 +310,7 @@ exports[`Android BpkBadge should render correctly docked to the end 1`] = `
         Array [
           Object {
             "color": "rgb(82, 76, 97)",
-            "fontFamily": "System",
+            "fontFamily": "sans-serif",
             "fontSize": 12,
             "fontWeight": "400",
             "letterSpacing": 0,
@@ -370,7 +370,7 @@ exports[`Android BpkBadge should render correctly docked to the start 1`] = `
         Array [
           Object {
             "color": "rgb(82, 76, 97)",
-            "fontFamily": "System",
+            "fontFamily": "sans-serif",
             "fontSize": 12,
             "fontWeight": "400",
             "letterSpacing": 0,
@@ -423,7 +423,7 @@ exports[`Android BpkBadge should render correctly docked to the start 1`] = `
         Array [
           Object {
             "color": "rgb(82, 76, 97)",
-            "fontFamily": "System",
+            "fontFamily": "sans-serif",
             "fontSize": 12,
             "fontWeight": "400",
             "letterSpacing": 0,
@@ -476,7 +476,7 @@ exports[`Android BpkBadge should render correctly docked to the start 1`] = `
         Array [
           Object {
             "color": "rgb(82, 76, 97)",
-            "fontFamily": "System",
+            "fontFamily": "sans-serif",
             "fontSize": 12,
             "fontWeight": "400",
             "letterSpacing": 0,
@@ -531,7 +531,7 @@ exports[`Android BpkBadge should render correctly docked to the start 1`] = `
         Array [
           Object {
             "color": "rgb(82, 76, 97)",
-            "fontFamily": "System",
+            "fontFamily": "sans-serif",
             "fontSize": 12,
             "fontWeight": "400",
             "letterSpacing": 0,
@@ -584,7 +584,7 @@ exports[`Android BpkBadge should render correctly docked to the start 1`] = `
         Array [
           Object {
             "color": "rgb(82, 76, 97)",
-            "fontFamily": "System",
+            "fontFamily": "sans-serif",
             "fontSize": 12,
             "fontWeight": "400",
             "letterSpacing": 0,
@@ -644,7 +644,7 @@ exports[`Android BpkBadge should render correctly docked to the start 1`] = `
         Array [
           Object {
             "color": "rgb(82, 76, 97)",
-            "fontFamily": "System",
+            "fontFamily": "sans-serif",
             "fontSize": 12,
             "fontWeight": "400",
             "letterSpacing": 0,
@@ -696,7 +696,7 @@ exports[`Android BpkBadge should render correctly in normal mode 1`] = `
         Array [
           Object {
             "color": "rgb(82, 76, 97)",
-            "fontFamily": "System",
+            "fontFamily": "sans-serif",
             "fontSize": 12,
             "fontWeight": "400",
             "letterSpacing": 0,
@@ -741,7 +741,7 @@ exports[`Android BpkBadge should render correctly in normal mode 1`] = `
         Array [
           Object {
             "color": "rgb(82, 76, 97)",
-            "fontFamily": "System",
+            "fontFamily": "sans-serif",
             "fontSize": 12,
             "fontWeight": "400",
             "letterSpacing": 0,
@@ -786,7 +786,7 @@ exports[`Android BpkBadge should render correctly in normal mode 1`] = `
         Array [
           Object {
             "color": "rgb(82, 76, 97)",
-            "fontFamily": "System",
+            "fontFamily": "sans-serif",
             "fontSize": 12,
             "fontWeight": "400",
             "letterSpacing": 0,
@@ -833,7 +833,7 @@ exports[`Android BpkBadge should render correctly in normal mode 1`] = `
         Array [
           Object {
             "color": "rgb(82, 76, 97)",
-            "fontFamily": "System",
+            "fontFamily": "sans-serif",
             "fontSize": 12,
             "fontWeight": "400",
             "letterSpacing": 0,
@@ -878,7 +878,7 @@ exports[`Android BpkBadge should render correctly in normal mode 1`] = `
         Array [
           Object {
             "color": "rgb(82, 76, 97)",
-            "fontFamily": "System",
+            "fontFamily": "sans-serif",
             "fontSize": 12,
             "fontWeight": "400",
             "letterSpacing": 0,
@@ -930,7 +930,7 @@ exports[`Android BpkBadge should render correctly in normal mode 1`] = `
         Array [
           Object {
             "color": "rgb(82, 76, 97)",
-            "fontFamily": "System",
+            "fontFamily": "sans-serif",
             "fontSize": 12,
             "fontWeight": "400",
             "letterSpacing": 0,
@@ -985,7 +985,7 @@ exports[`Android BpkBadge should render correctly with user provided style 1`] =
         Array [
           Object {
             "color": "rgb(82, 76, 97)",
-            "fontFamily": "System",
+            "fontFamily": "sans-serif",
             "fontSize": 12,
             "fontWeight": "400",
             "letterSpacing": 0,
@@ -1033,7 +1033,7 @@ exports[`Android BpkBadge should render correctly with user provided style 1`] =
         Array [
           Object {
             "color": "rgb(82, 76, 97)",
-            "fontFamily": "System",
+            "fontFamily": "sans-serif",
             "fontSize": 12,
             "fontWeight": "400",
             "letterSpacing": 0,
@@ -1081,7 +1081,7 @@ exports[`Android BpkBadge should render correctly with user provided style 1`] =
         Array [
           Object {
             "color": "rgb(82, 76, 97)",
-            "fontFamily": "System",
+            "fontFamily": "sans-serif",
             "fontSize": 12,
             "fontWeight": "400",
             "letterSpacing": 0,
@@ -1131,7 +1131,7 @@ exports[`Android BpkBadge should render correctly with user provided style 1`] =
         Array [
           Object {
             "color": "rgb(82, 76, 97)",
-            "fontFamily": "System",
+            "fontFamily": "sans-serif",
             "fontSize": 12,
             "fontWeight": "400",
             "letterSpacing": 0,
@@ -1179,7 +1179,7 @@ exports[`Android BpkBadge should render correctly with user provided style 1`] =
         Array [
           Object {
             "color": "rgb(82, 76, 97)",
-            "fontFamily": "System",
+            "fontFamily": "sans-serif",
             "fontSize": 12,
             "fontWeight": "400",
             "letterSpacing": 0,
@@ -1234,7 +1234,7 @@ exports[`Android BpkBadge should render correctly with user provided style 1`] =
         Array [
           Object {
             "color": "rgb(82, 76, 97)",
-            "fontFamily": "System",
+            "fontFamily": "sans-serif",
             "fontSize": 12,
             "fontWeight": "400",
             "letterSpacing": 0,

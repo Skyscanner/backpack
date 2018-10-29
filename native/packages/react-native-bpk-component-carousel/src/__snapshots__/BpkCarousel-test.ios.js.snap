@@ -37,7 +37,92 @@ exports[`IOS BpkCarousel should render correctly 1`] = `
       }
     }
     disableRecycling={false}
-    externalScrollView={[Function]}
+    externalScrollView={
+      [MockFunction] {
+        "calls": Array [
+          Array [
+            Object {
+              "accessibilityLabel": "I'm accessible",
+              "accessible": true,
+              "canChangeSize": false,
+              "children": <Component
+                style={
+                  Object {
+                    "flexDirection": "row",
+                  }
+                }
+              >
+                <Component
+                  style={
+                    Object {
+                      "height": 0,
+                      "width": 0,
+                    }
+                  }
+                />
+              </Component>,
+              "contentHeight": 0,
+              "contentWidth": 0,
+              "dataProvider": DataProvider {
+                "_data": Array [
+                  <BpkCarouselItem
+                    style={null}
+                  >
+                    <BpkText
+                      emphasize={null}
+                      style={null}
+                      textStyle="base"
+                      weight="regular"
+                    >
+                      View 1
+                    </BpkText>
+                  </BpkCarouselItem>,
+                ],
+                "_firstIndexToProcess": 0,
+                "_size": 1,
+                "rowHasChanged": [Function],
+              },
+              "disableRecycling": false,
+              "externalScrollView": [MockFunction] {
+                "calls": [Circular],
+                "results": Array [
+                  Object {
+                    "isThrow": false,
+                    "value": undefined,
+                  },
+                ],
+              },
+              "horizontal": true,
+              "initialOffset": 0,
+              "initialRenderIndex": 0,
+              "isHorizontal": true,
+              "layoutProvider": LayoutProvider {
+                "_getLayoutTypeForIndex": [Function],
+                "_setLayoutForType": [Function],
+              },
+              "onEndReachedThreshold": 0,
+              "onLayout": [Function],
+              "onScroll": [Function],
+              "onSizeChanged": [Function],
+              "pagingEnabled": true,
+              "removeClippedSubviews": false,
+              "renderAheadOffset": 250,
+              "rowRenderer": [Function],
+              "scrollEventThrottle": 250,
+              "scrollThrottle": 250,
+              "showsHorizontalScrollIndicator": false,
+            },
+            Object {},
+          ],
+        ],
+        "results": Array [
+          Object {
+            "isThrow": false,
+            "value": undefined,
+          },
+        ],
+      }
+    }
     horizontal={true}
     initialOffset={0}
     initialRenderIndex={0}
@@ -151,7 +236,178 @@ exports[`IOS BpkCarousel should render correctly with an "accessibilityLabel" fu
       }
     }
     disableRecycling={false}
-    externalScrollView={[Function]}
+    externalScrollView={
+      [MockFunction] {
+        "calls": Array [
+          Array [
+            Object {
+              "accessibilityLabel": "I'm accessible",
+              "accessible": true,
+              "canChangeSize": false,
+              "children": <Component
+                style={
+                  Object {
+                    "flexDirection": "row",
+                  }
+                }
+              >
+                <Component
+                  style={
+                    Object {
+                      "height": 0,
+                      "width": 0,
+                    }
+                  }
+                />
+              </Component>,
+              "contentHeight": 0,
+              "contentWidth": 0,
+              "dataProvider": DataProvider {
+                "_data": Array [
+                  <BpkCarouselItem
+                    style={null}
+                  >
+                    <BpkText
+                      emphasize={null}
+                      style={null}
+                      textStyle="base"
+                      weight="regular"
+                    >
+                      View 1
+                    </BpkText>
+                  </BpkCarouselItem>,
+                ],
+                "_firstIndexToProcess": 0,
+                "_size": 1,
+                "rowHasChanged": [Function],
+              },
+              "disableRecycling": false,
+              "externalScrollView": [MockFunction] {
+                "calls": [Circular],
+                "results": Array [
+                  Object {
+                    "isThrow": false,
+                    "value": undefined,
+                  },
+                  Object {
+                    "isThrow": false,
+                    "value": undefined,
+                  },
+                ],
+              },
+              "horizontal": true,
+              "initialOffset": 0,
+              "initialRenderIndex": 0,
+              "isHorizontal": true,
+              "layoutProvider": LayoutProvider {
+                "_getLayoutTypeForIndex": [Function],
+                "_setLayoutForType": [Function],
+              },
+              "onEndReachedThreshold": 0,
+              "onLayout": [Function],
+              "onScroll": [Function],
+              "onSizeChanged": [Function],
+              "pagingEnabled": true,
+              "removeClippedSubviews": false,
+              "renderAheadOffset": 250,
+              "rowRenderer": [Function],
+              "scrollEventThrottle": 250,
+              "scrollThrottle": 250,
+              "showsHorizontalScrollIndicator": false,
+            },
+            Object {},
+          ],
+          Array [
+            Object {
+              "accessibilityLabel": "0 of 1",
+              "accessible": true,
+              "canChangeSize": false,
+              "children": <Component
+                style={
+                  Object {
+                    "flexDirection": "row",
+                  }
+                }
+              >
+                <Component
+                  style={
+                    Object {
+                      "height": 0,
+                      "width": 0,
+                    }
+                  }
+                />
+              </Component>,
+              "contentHeight": 0,
+              "contentWidth": 0,
+              "dataProvider": DataProvider {
+                "_data": Array [
+                  <BpkCarouselItem
+                    style={null}
+                  >
+                    <BpkText
+                      emphasize={null}
+                      style={null}
+                      textStyle="base"
+                      weight="regular"
+                    >
+                      View 1
+                    </BpkText>
+                  </BpkCarouselItem>,
+                ],
+                "_firstIndexToProcess": 0,
+                "_size": 1,
+                "rowHasChanged": [Function],
+              },
+              "disableRecycling": false,
+              "externalScrollView": [MockFunction] {
+                "calls": [Circular],
+                "results": Array [
+                  Object {
+                    "isThrow": false,
+                    "value": undefined,
+                  },
+                  Object {
+                    "isThrow": false,
+                    "value": undefined,
+                  },
+                ],
+              },
+              "horizontal": true,
+              "initialOffset": 0,
+              "initialRenderIndex": 0,
+              "isHorizontal": true,
+              "layoutProvider": LayoutProvider {
+                "_getLayoutTypeForIndex": [Function],
+                "_setLayoutForType": [Function],
+              },
+              "onEndReachedThreshold": 0,
+              "onLayout": [Function],
+              "onScroll": [Function],
+              "onSizeChanged": [Function],
+              "pagingEnabled": true,
+              "removeClippedSubviews": false,
+              "renderAheadOffset": 250,
+              "rowRenderer": [Function],
+              "scrollEventThrottle": 250,
+              "scrollThrottle": 250,
+              "showsHorizontalScrollIndicator": false,
+            },
+            Object {},
+          ],
+        ],
+        "results": Array [
+          Object {
+            "isThrow": false,
+            "value": undefined,
+          },
+          Object {
+            "isThrow": false,
+            "value": undefined,
+          },
+        ],
+      }
+    }
     horizontal={true}
     initialOffset={0}
     initialRenderIndex={0}
@@ -265,7 +521,272 @@ exports[`IOS BpkCarousel should render correctly without indicators 1`] = `
       }
     }
     disableRecycling={false}
-    externalScrollView={[Function]}
+    externalScrollView={
+      [MockFunction] {
+        "calls": Array [
+          Array [
+            Object {
+              "accessibilityLabel": "I'm accessible",
+              "accessible": true,
+              "canChangeSize": false,
+              "children": <Component
+                style={
+                  Object {
+                    "flexDirection": "row",
+                  }
+                }
+              >
+                <Component
+                  style={
+                    Object {
+                      "height": 0,
+                      "width": 0,
+                    }
+                  }
+                />
+              </Component>,
+              "contentHeight": 0,
+              "contentWidth": 0,
+              "dataProvider": DataProvider {
+                "_data": Array [
+                  <BpkCarouselItem
+                    style={null}
+                  >
+                    <BpkText
+                      emphasize={null}
+                      style={null}
+                      textStyle="base"
+                      weight="regular"
+                    >
+                      View 1
+                    </BpkText>
+                  </BpkCarouselItem>,
+                ],
+                "_firstIndexToProcess": 0,
+                "_size": 1,
+                "rowHasChanged": [Function],
+              },
+              "disableRecycling": false,
+              "externalScrollView": [MockFunction] {
+                "calls": [Circular],
+                "results": Array [
+                  Object {
+                    "isThrow": false,
+                    "value": undefined,
+                  },
+                  Object {
+                    "isThrow": false,
+                    "value": undefined,
+                  },
+                  Object {
+                    "isThrow": false,
+                    "value": undefined,
+                  },
+                ],
+              },
+              "horizontal": true,
+              "initialOffset": 0,
+              "initialRenderIndex": 0,
+              "isHorizontal": true,
+              "layoutProvider": LayoutProvider {
+                "_getLayoutTypeForIndex": [Function],
+                "_setLayoutForType": [Function],
+              },
+              "onEndReachedThreshold": 0,
+              "onLayout": [Function],
+              "onScroll": [Function],
+              "onSizeChanged": [Function],
+              "pagingEnabled": true,
+              "removeClippedSubviews": false,
+              "renderAheadOffset": 250,
+              "rowRenderer": [Function],
+              "scrollEventThrottle": 250,
+              "scrollThrottle": 250,
+              "showsHorizontalScrollIndicator": false,
+            },
+            Object {},
+          ],
+          Array [
+            Object {
+              "accessibilityLabel": "0 of 1",
+              "accessible": true,
+              "canChangeSize": false,
+              "children": <Component
+                style={
+                  Object {
+                    "flexDirection": "row",
+                  }
+                }
+              >
+                <Component
+                  style={
+                    Object {
+                      "height": 0,
+                      "width": 0,
+                    }
+                  }
+                />
+              </Component>,
+              "contentHeight": 0,
+              "contentWidth": 0,
+              "dataProvider": DataProvider {
+                "_data": Array [
+                  <BpkCarouselItem
+                    style={null}
+                  >
+                    <BpkText
+                      emphasize={null}
+                      style={null}
+                      textStyle="base"
+                      weight="regular"
+                    >
+                      View 1
+                    </BpkText>
+                  </BpkCarouselItem>,
+                ],
+                "_firstIndexToProcess": 0,
+                "_size": 1,
+                "rowHasChanged": [Function],
+              },
+              "disableRecycling": false,
+              "externalScrollView": [MockFunction] {
+                "calls": [Circular],
+                "results": Array [
+                  Object {
+                    "isThrow": false,
+                    "value": undefined,
+                  },
+                  Object {
+                    "isThrow": false,
+                    "value": undefined,
+                  },
+                  Object {
+                    "isThrow": false,
+                    "value": undefined,
+                  },
+                ],
+              },
+              "horizontal": true,
+              "initialOffset": 0,
+              "initialRenderIndex": 0,
+              "isHorizontal": true,
+              "layoutProvider": LayoutProvider {
+                "_getLayoutTypeForIndex": [Function],
+                "_setLayoutForType": [Function],
+              },
+              "onEndReachedThreshold": 0,
+              "onLayout": [Function],
+              "onScroll": [Function],
+              "onSizeChanged": [Function],
+              "pagingEnabled": true,
+              "removeClippedSubviews": false,
+              "renderAheadOffset": 250,
+              "rowRenderer": [Function],
+              "scrollEventThrottle": 250,
+              "scrollThrottle": 250,
+              "showsHorizontalScrollIndicator": false,
+            },
+            Object {},
+          ],
+          Array [
+            Object {
+              "accessibilityLabel": "I'm accessible",
+              "accessible": true,
+              "canChangeSize": false,
+              "children": <Component
+                style={
+                  Object {
+                    "flexDirection": "row",
+                  }
+                }
+              >
+                <Component
+                  style={
+                    Object {
+                      "height": 0,
+                      "width": 0,
+                    }
+                  }
+                />
+              </Component>,
+              "contentHeight": 0,
+              "contentWidth": 0,
+              "dataProvider": DataProvider {
+                "_data": Array [
+                  <BpkCarouselItem
+                    style={null}
+                  >
+                    <BpkText
+                      emphasize={null}
+                      style={null}
+                      textStyle="base"
+                      weight="regular"
+                    >
+                      View 1
+                    </BpkText>
+                  </BpkCarouselItem>,
+                ],
+                "_firstIndexToProcess": 0,
+                "_size": 1,
+                "rowHasChanged": [Function],
+              },
+              "disableRecycling": false,
+              "externalScrollView": [MockFunction] {
+                "calls": [Circular],
+                "results": Array [
+                  Object {
+                    "isThrow": false,
+                    "value": undefined,
+                  },
+                  Object {
+                    "isThrow": false,
+                    "value": undefined,
+                  },
+                  Object {
+                    "isThrow": false,
+                    "value": undefined,
+                  },
+                ],
+              },
+              "horizontal": true,
+              "initialOffset": 0,
+              "initialRenderIndex": 0,
+              "isHorizontal": true,
+              "layoutProvider": LayoutProvider {
+                "_getLayoutTypeForIndex": [Function],
+                "_setLayoutForType": [Function],
+              },
+              "onEndReachedThreshold": 0,
+              "onLayout": [Function],
+              "onScroll": [Function],
+              "onSizeChanged": [Function],
+              "pagingEnabled": true,
+              "removeClippedSubviews": false,
+              "renderAheadOffset": 250,
+              "rowRenderer": [Function],
+              "scrollEventThrottle": 250,
+              "scrollThrottle": 250,
+              "showsHorizontalScrollIndicator": false,
+            },
+            Object {},
+          ],
+        ],
+        "results": Array [
+          Object {
+            "isThrow": false,
+            "value": undefined,
+          },
+          Object {
+            "isThrow": false,
+            "value": undefined,
+          },
+          Object {
+            "isThrow": false,
+            "value": undefined,
+          },
+        ],
+      }
+    }
     horizontal={true}
     initialOffset={0}
     initialRenderIndex={0}
