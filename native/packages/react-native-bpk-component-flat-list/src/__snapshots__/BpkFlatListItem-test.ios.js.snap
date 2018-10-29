@@ -10,9 +10,6 @@ exports[`iOS BpkFlatListItem should render correctly 1`] = `
     ]
   }
   accessible={true}
-  hitSlop={undefined}
-  nativeID={undefined}
-  onLayout={undefined}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
   onResponderRelease={[Function]}
@@ -30,7 +27,6 @@ exports[`iOS BpkFlatListItem should render correctly 1`] = `
       "paddingVertical": 8,
     }
   }
-  testID={undefined}
 >
   <View
     style={
@@ -42,9 +38,6 @@ exports[`iOS BpkFlatListItem should render correctly 1`] = `
     }
   >
     <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
       style={
         Array [
           Object {
@@ -68,9 +61,7 @@ exports[`iOS BpkFlatListItem should render correctly 1`] = `
     </Text>
   </View>
   <Text
-    accessible={true}
     allowFontScaling={false}
-    ellipsizeMode="tail"
     style={
       Array [
         Object {
@@ -122,9 +113,6 @@ exports[`iOS BpkFlatListItem should support the "image" property 1`] = `
     ]
   }
   accessible={true}
-  hitSlop={undefined}
-  nativeID={undefined}
-  onLayout={undefined}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
   onResponderRelease={[Function]}
@@ -142,7 +130,6 @@ exports[`iOS BpkFlatListItem should support the "image" property 1`] = `
       "paddingVertical": 8,
     }
   }
-  testID={undefined}
 >
   <View
     style={
@@ -164,9 +151,6 @@ exports[`iOS BpkFlatListItem should support the "image" property 1`] = `
       }
     />
     <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
       style={
         Array [
           Object {
@@ -190,9 +174,7 @@ exports[`iOS BpkFlatListItem should support the "image" property 1`] = `
     </Text>
   </View>
   <Text
-    accessible={true}
     allowFontScaling={false}
-    ellipsizeMode="tail"
     style={
       Array [
         Object {
@@ -244,9 +226,6 @@ exports[`iOS BpkFlatListItem should support the "selected" property 1`] = `
     ]
   }
   accessible={true}
-  hitSlop={undefined}
-  nativeID={undefined}
-  onLayout={undefined}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
   onResponderRelease={[Function]}
@@ -264,7 +243,6 @@ exports[`iOS BpkFlatListItem should support the "selected" property 1`] = `
       "paddingVertical": 8,
     }
   }
-  testID={undefined}
 >
   <View
     style={
@@ -276,9 +254,6 @@ exports[`iOS BpkFlatListItem should support the "selected" property 1`] = `
     }
   >
     <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
       style={
         Array [
           Object {
@@ -304,9 +279,7 @@ exports[`iOS BpkFlatListItem should support the "selected" property 1`] = `
     </Text>
   </View>
   <Text
-    accessible={true}
     allowFontScaling={false}
-    ellipsizeMode="tail"
     style={
       Array [
         Object {

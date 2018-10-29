@@ -14,13 +14,7 @@ exports[`iOS BpkPicker should render correctly 1`] = `
   visible={false}
 >
   <View
-    accessibilityComponentType={undefined}
-    accessibilityLabel={undefined}
-    accessibilityTraits={undefined}
     accessible={true}
-    hitSlop={undefined}
-    nativeID={undefined}
-    onLayout={undefined}
     onResponderGrant={[Function]}
     onResponderMove={[Function]}
     onResponderRelease={[Function]}
@@ -32,7 +26,6 @@ exports[`iOS BpkPicker should render correctly 1`] = `
         "flex": 1,
       }
     }
-    testID={undefined}
   />
   <View
     style={
@@ -60,20 +53,9 @@ exports[`iOS BpkPicker should render correctly 1`] = `
       }
     >
       <View
-        accessibilityComponentType="button"
         accessibilityLabel="Done"
-        accessibilityTraits={
-          Array [
-            "button",
-          ]
-        }
         accessible={true}
-        collapsable={undefined}
-        hasTVPreferredFocus={undefined}
-        hitSlop={undefined}
         isTVSelectable={true}
-        nativeID={undefined}
-        onLayout={undefined}
         onResponderGrant={[Function]}
         onResponderMove={[Function]}
         onResponderRelease={[Function]}
@@ -85,8 +67,6 @@ exports[`iOS BpkPicker should render correctly 1`] = `
             "opacity": 1,
           }
         }
-        testID={undefined}
-        tvParallaxProperties={undefined}
       >
         <View
           style={
@@ -101,9 +81,7 @@ exports[`iOS BpkPicker should render correctly 1`] = `
           }
         >
           <Text
-            accessible={true}
             allowFontScaling={false}
-            ellipsizeMode="tail"
             numberOfLines={1}
             style={
               Array [
@@ -130,9 +108,7 @@ exports[`iOS BpkPicker should render correctly 1`] = `
         </View>
       </View>
     </View>
-    <View
-      style={undefined}
-    >
+    <View>
       <RCTPicker
         items={
           Array [
@@ -180,13 +156,7 @@ exports[`iOS BpkPicker should render correctly with a selected value 1`] = `
   visible={false}
 >
   <View
-    accessibilityComponentType={undefined}
-    accessibilityLabel={undefined}
-    accessibilityTraits={undefined}
     accessible={true}
-    hitSlop={undefined}
-    nativeID={undefined}
-    onLayout={undefined}
     onResponderGrant={[Function]}
     onResponderMove={[Function]}
     onResponderRelease={[Function]}
@@ -198,7 +168,6 @@ exports[`iOS BpkPicker should render correctly with a selected value 1`] = `
         "flex": 1,
       }
     }
-    testID={undefined}
   />
   <View
     style={
@@ -226,20 +195,9 @@ exports[`iOS BpkPicker should render correctly with a selected value 1`] = `
       }
     >
       <View
-        accessibilityComponentType="button"
         accessibilityLabel="Done"
-        accessibilityTraits={
-          Array [
-            "button",
-          ]
-        }
         accessible={true}
-        collapsable={undefined}
-        hasTVPreferredFocus={undefined}
-        hitSlop={undefined}
         isTVSelectable={true}
-        nativeID={undefined}
-        onLayout={undefined}
         onResponderGrant={[Function]}
         onResponderMove={[Function]}
         onResponderRelease={[Function]}
@@ -251,8 +209,6 @@ exports[`iOS BpkPicker should render correctly with a selected value 1`] = `
             "opacity": 1,
           }
         }
-        testID={undefined}
-        tvParallaxProperties={undefined}
       >
         <View
           style={
@@ -267,9 +223,7 @@ exports[`iOS BpkPicker should render correctly with a selected value 1`] = `
           }
         >
           <Text
-            accessible={true}
             allowFontScaling={false}
-            ellipsizeMode="tail"
             numberOfLines={1}
             style={
               Array [
@@ -296,9 +250,7 @@ exports[`iOS BpkPicker should render correctly with a selected value 1`] = `
         </View>
       </View>
     </View>
-    <View
-      style={undefined}
-    >
+    <View>
       <RCTPicker
         items={
           Array [

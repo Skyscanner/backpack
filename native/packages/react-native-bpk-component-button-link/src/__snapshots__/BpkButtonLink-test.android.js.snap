@@ -5,16 +5,8 @@ exports[`Android BpkButtonLink should render correctly 1`] = `
   style={null}
 >
   <View
-    accessibilityComponentType="button"
     accessibilityLabel="Lorem ipsum"
-    accessibilityTraits={
-      Array [
-        "button",
-      ]
-    }
     accessible={true}
-    hasTVPreferredFocus={undefined}
-    hitSlop={undefined}
     isTVSelectable={true}
     nativeBackgroundAndroid={
       Object {
@@ -22,7 +14,6 @@ exports[`Android BpkButtonLink should render correctly 1`] = `
         "type": "ThemeAttrAndroid",
       }
     }
-    onLayout={undefined}
     onResponderGrant={[Function]}
     onResponderMove={[Function]}
     onResponderRelease={[Function]}
@@ -39,12 +30,8 @@ exports[`Android BpkButtonLink should render correctly 1`] = `
         },
       ]
     }
-    testID={undefined}
   >
     <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
       numberOfLines={1}
       style={
         Array [
@@ -77,16 +64,8 @@ exports[`Android BpkButtonLink should render correctly with iconAlignment="leadi
   style={null}
 >
   <View
-    accessibilityComponentType="button"
     accessibilityLabel="Lorem ipsum"
-    accessibilityTraits={
-      Array [
-        "button",
-      ]
-    }
     accessible={true}
-    hasTVPreferredFocus={undefined}
-    hitSlop={undefined}
     isTVSelectable={true}
     nativeBackgroundAndroid={
       Object {
@@ -94,7 +73,6 @@ exports[`Android BpkButtonLink should render correctly with iconAlignment="leadi
         "type": "ThemeAttrAndroid",
       }
     }
-    onLayout={undefined}
     onResponderGrant={[Function]}
     onResponderMove={[Function]}
     onResponderRelease={[Function]}
@@ -114,12 +92,8 @@ exports[`Android BpkButtonLink should render correctly with iconAlignment="leadi
         },
       ]
     }
-    testID={undefined}
   >
     <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
       numberOfLines={1}
       style={
         Array [
@@ -144,9 +118,7 @@ exports[`Android BpkButtonLink should render correctly with iconAlignment="leadi
       LOREM IPSUM
     </Text>
     <Text
-      accessible={true}
       allowFontScaling={false}
-      ellipsizeMode="tail"
       style={
         Array [
           Object {
@@ -182,16 +154,8 @@ exports[`Android BpkButtonLink should render correctly with iconAlignment="trail
   style={null}
 >
   <View
-    accessibilityComponentType="button"
     accessibilityLabel="Lorem ipsum"
-    accessibilityTraits={
-      Array [
-        "button",
-      ]
-    }
     accessible={true}
-    hasTVPreferredFocus={undefined}
-    hitSlop={undefined}
     isTVSelectable={true}
     nativeBackgroundAndroid={
       Object {
@@ -199,7 +163,6 @@ exports[`Android BpkButtonLink should render correctly with iconAlignment="trail
         "type": "ThemeAttrAndroid",
       }
     }
-    onLayout={undefined}
     onResponderGrant={[Function]}
     onResponderMove={[Function]}
     onResponderRelease={[Function]}
@@ -216,12 +179,8 @@ exports[`Android BpkButtonLink should render correctly with iconAlignment="trail
         },
       ]
     }
-    testID={undefined}
   >
     <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
       numberOfLines={1}
       style={
         Array [
@@ -246,9 +205,7 @@ exports[`Android BpkButtonLink should render correctly with iconAlignment="trail
       LOREM IPSUM
     </Text>
     <Text
-      accessible={true}
       allowFontScaling={false}
-      ellipsizeMode="tail"
       style={
         Array [
           Object {
@@ -280,16 +237,8 @@ exports[`Android BpkButtonLink should render correctly with text props provided 
   style={null}
 >
   <View
-    accessibilityComponentType="button"
     accessibilityLabel="Lorem ipsum"
-    accessibilityTraits={
-      Array [
-        "button",
-      ]
-    }
     accessible={true}
-    hasTVPreferredFocus={undefined}
-    hitSlop={undefined}
     isTVSelectable={true}
     nativeBackgroundAndroid={
       Object {
@@ -297,7 +246,6 @@ exports[`Android BpkButtonLink should render correctly with text props provided 
         "type": "ThemeAttrAndroid",
       }
     }
-    onLayout={undefined}
     onResponderGrant={[Function]}
     onResponderMove={[Function]}
     onResponderRelease={[Function]}
@@ -314,12 +262,9 @@ exports[`Android BpkButtonLink should render correctly with text props provided 
         },
       ]
     }
-    testID={undefined}
   >
     <Text
-      accessible={true}
       allowFontScaling={false}
-      ellipsizeMode="tail"
       numberOfLines={1}
       style={
         Array [
@@ -352,16 +297,8 @@ exports[`Android BpkButtonLink should render correctly with theme prop 1`] = `
   style={null}
 >
   <View
-    accessibilityComponentType="button"
     accessibilityLabel="Lorem ipsum"
-    accessibilityTraits={
-      Array [
-        "button",
-      ]
-    }
     accessible={true}
-    hasTVPreferredFocus={undefined}
-    hitSlop={undefined}
     isTVSelectable={true}
     nativeBackgroundAndroid={
       Object {
@@ -369,7 +306,6 @@ exports[`Android BpkButtonLink should render correctly with theme prop 1`] = `
         "type": "ThemeAttrAndroid",
       }
     }
-    onLayout={undefined}
     onResponderGrant={[Function]}
     onResponderMove={[Function]}
     onResponderRelease={[Function]}
@@ -386,12 +322,8 @@ exports[`Android BpkButtonLink should render correctly with theme prop 1`] = `
         },
       ]
     }
-    testID={undefined}
   >
     <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
       numberOfLines={1}
       style={
         Array [
@@ -427,16 +359,8 @@ exports[`Android BpkButtonLink should support elements as icons 1`] = `
   style={null}
 >
   <View
-    accessibilityComponentType="button"
     accessibilityLabel="Lorem ipsum"
-    accessibilityTraits={
-      Array [
-        "button",
-      ]
-    }
     accessible={true}
-    hasTVPreferredFocus={undefined}
-    hitSlop={undefined}
     isTVSelectable={true}
     nativeBackgroundAndroid={
       Object {
@@ -444,7 +368,6 @@ exports[`Android BpkButtonLink should support elements as icons 1`] = `
         "type": "ThemeAttrAndroid",
       }
     }
-    onLayout={undefined}
     onResponderGrant={[Function]}
     onResponderMove={[Function]}
     onResponderRelease={[Function]}
@@ -461,12 +384,8 @@ exports[`Android BpkButtonLink should support elements as icons 1`] = `
         },
       ]
     }
-    testID={undefined}
   >
     <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
       numberOfLines={1}
       style={
         Array [
@@ -491,9 +410,6 @@ exports[`Android BpkButtonLink should support elements as icons 1`] = `
       LOREM IPSUM
     </Text>
     <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
       style={
         Array [
           Object {
@@ -522,16 +438,8 @@ exports[`Android BpkButtonLink should support overwriting styles 1`] = `
   }
 >
   <View
-    accessibilityComponentType="button"
     accessibilityLabel="Lorem ipsum"
-    accessibilityTraits={
-      Array [
-        "button",
-      ]
-    }
     accessible={true}
-    hasTVPreferredFocus={undefined}
-    hitSlop={undefined}
     isTVSelectable={true}
     nativeBackgroundAndroid={
       Object {
@@ -539,7 +447,6 @@ exports[`Android BpkButtonLink should support overwriting styles 1`] = `
         "type": "ThemeAttrAndroid",
       }
     }
-    onLayout={undefined}
     onResponderGrant={[Function]}
     onResponderMove={[Function]}
     onResponderRelease={[Function]}
@@ -556,12 +463,8 @@ exports[`Android BpkButtonLink should support overwriting styles 1`] = `
         },
       ]
     }
-    testID={undefined}
   >
     <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
       numberOfLines={1}
       style={
         Array [
@@ -594,17 +497,8 @@ exports[`Android BpkButtonLink should support the "disabled" property 1`] = `
   style={null}
 >
   <View
-    accessibilityComponentType="button"
     accessibilityLabel="Lorem ipsum"
-    accessibilityTraits={
-      Array [
-        "button",
-        "disabled",
-      ]
-    }
     accessible={true}
-    hasTVPreferredFocus={undefined}
-    hitSlop={undefined}
     isTVSelectable={true}
     nativeBackgroundAndroid={
       Object {
@@ -612,7 +506,6 @@ exports[`Android BpkButtonLink should support the "disabled" property 1`] = `
         "type": "ThemeAttrAndroid",
       }
     }
-    onLayout={undefined}
     onResponderGrant={[Function]}
     onResponderMove={[Function]}
     onResponderRelease={[Function]}
@@ -629,12 +522,8 @@ exports[`Android BpkButtonLink should support the "disabled" property 1`] = `
         },
       ]
     }
-    testID={undefined}
   >
     <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
       numberOfLines={1}
       style={
         Array [
@@ -670,16 +559,8 @@ exports[`Android BpkButtonLink should support the "icon" property 1`] = `
   style={null}
 >
   <View
-    accessibilityComponentType="button"
     accessibilityLabel="Lorem ipsum"
-    accessibilityTraits={
-      Array [
-        "button",
-      ]
-    }
     accessible={true}
-    hasTVPreferredFocus={undefined}
-    hitSlop={undefined}
     isTVSelectable={true}
     nativeBackgroundAndroid={
       Object {
@@ -687,7 +568,6 @@ exports[`Android BpkButtonLink should support the "icon" property 1`] = `
         "type": "ThemeAttrAndroid",
       }
     }
-    onLayout={undefined}
     onResponderGrant={[Function]}
     onResponderMove={[Function]}
     onResponderRelease={[Function]}
@@ -704,12 +584,8 @@ exports[`Android BpkButtonLink should support the "icon" property 1`] = `
         },
       ]
     }
-    testID={undefined}
   >
     <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
       numberOfLines={1}
       style={
         Array [
@@ -734,9 +610,7 @@ exports[`Android BpkButtonLink should support the "icon" property 1`] = `
       LOREM IPSUM
     </Text>
     <Text
-      accessible={true}
       allowFontScaling={false}
-      ellipsizeMode="tail"
       style={
         Array [
           Object {
@@ -768,16 +642,8 @@ exports[`Android should support "borderlessBackground" equal to false 1`] = `
   style={null}
 >
   <View
-    accessibilityComponentType="button"
     accessibilityLabel="Lorem ipsum"
-    accessibilityTraits={
-      Array [
-        "button",
-      ]
-    }
     accessible={true}
-    hasTVPreferredFocus={undefined}
-    hitSlop={undefined}
     isTVSelectable={true}
     nativeBackgroundAndroid={
       Object {
@@ -785,7 +651,6 @@ exports[`Android should support "borderlessBackground" equal to false 1`] = `
         "type": "ThemeAttrAndroid",
       }
     }
-    onLayout={undefined}
     onResponderGrant={[Function]}
     onResponderMove={[Function]}
     onResponderRelease={[Function]}
@@ -802,12 +667,8 @@ exports[`Android should support "borderlessBackground" equal to false 1`] = `
         },
       ]
     }
-    testID={undefined}
   >
     <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
       numberOfLines={1}
       style={
         Array [

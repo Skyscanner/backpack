@@ -104,7 +104,6 @@ exports[`IOS BpkCarousel should render correctly 1`] = `
     }
   >
     <View
-      collapsable={undefined}
       style={
         Object {
           "backgroundColor": "rgb(255, 255, 255)",
@@ -219,7 +218,6 @@ exports[`IOS BpkCarousel should render correctly with an "accessibilityLabel" fu
     }
   >
     <View
-      collapsable={undefined}
       style={
         Object {
           "backgroundColor": "rgb(255, 255, 255)",

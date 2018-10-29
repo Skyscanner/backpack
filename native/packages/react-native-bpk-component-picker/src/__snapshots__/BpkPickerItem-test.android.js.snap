@@ -2,16 +2,8 @@
 
 exports[`Android BpkPickerItem should render correctly 1`] = `
 <View
-  accessibilityComponentType="button"
   accessibilityLabel="label"
-  accessibilityTraits={
-    Array [
-      "button",
-    ]
-  }
   accessible={true}
-  hasTVPreferredFocus={undefined}
-  hitSlop={undefined}
   isTVSelectable={true}
   nativeBackgroundAndroid={
     Object {
@@ -19,7 +11,6 @@ exports[`Android BpkPickerItem should render correctly 1`] = `
       "type": "ThemeAttrAndroid",
     }
   }
-  onLayout={undefined}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
   onResponderRelease={[Function]}
@@ -31,12 +22,8 @@ exports[`Android BpkPickerItem should render correctly 1`] = `
       "padding": 16,
     }
   }
-  testID={undefined}
 >
   <Text
-    accessible={true}
-    allowFontScaling={true}
-    ellipsizeMode="tail"
     style={
       Array [
         Object {
@@ -58,16 +45,8 @@ exports[`Android BpkPickerItem should render correctly 1`] = `
 
 exports[`Android BpkPickerItem should render correctly with an onPress function 1`] = `
 <View
-  accessibilityComponentType="button"
   accessibilityLabel="label"
-  accessibilityTraits={
-    Array [
-      "button",
-    ]
-  }
   accessible={true}
-  hasTVPreferredFocus={undefined}
-  hitSlop={undefined}
   isTVSelectable={true}
   nativeBackgroundAndroid={
     Object {
@@ -75,7 +54,6 @@ exports[`Android BpkPickerItem should render correctly with an onPress function 
       "type": "ThemeAttrAndroid",
     }
   }
-  onLayout={undefined}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
   onResponderRelease={[Function]}
@@ -87,12 +65,8 @@ exports[`Android BpkPickerItem should render correctly with an onPress function 
       "padding": 16,
     }
   }
-  testID={undefined}
 >
   <Text
-    accessible={true}
-    allowFontScaling={true}
-    ellipsizeMode="tail"
     style={
       Array [
         Object {
@@ -114,17 +88,8 @@ exports[`Android BpkPickerItem should render correctly with an onPress function 
 
 exports[`Android BpkPickerItem should render correctly with the selected prop 1`] = `
 <View
-  accessibilityComponentType="button"
   accessibilityLabel="label"
-  accessibilityTraits={
-    Array [
-      "button",
-      "selected",
-    ]
-  }
   accessible={true}
-  hasTVPreferredFocus={undefined}
-  hitSlop={undefined}
   isTVSelectable={true}
   nativeBackgroundAndroid={
     Object {
@@ -132,7 +97,6 @@ exports[`Android BpkPickerItem should render correctly with the selected prop 1`
       "type": "ThemeAttrAndroid",
     }
   }
-  onLayout={undefined}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
   onResponderRelease={[Function]}
@@ -144,12 +108,8 @@ exports[`Android BpkPickerItem should render correctly with the selected prop 1`
       "padding": 16,
     }
   }
-  testID={undefined}
 >
   <Text
-    accessible={true}
-    allowFontScaling={true}
-    ellipsizeMode="tail"
     style={
       Array [
         Object {

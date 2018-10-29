@@ -2,21 +2,16 @@
 
 exports[`iOS BpkSwitch should disable theming if the required attribute is omitted 1`] = `
 <RCTSwitch
-  disabled={false}
   onChange={[Function]}
   onResponderTerminationRequest={[Function]}
   onStartShouldSetResponder={[Function]}
   onTintColor="rgb(0, 178, 214)"
   style={
-    Array [
-      Object {
-        "height": 31,
-        "width": 51,
-      },
-      undefined,
-    ]
+    Object {
+      "height": 31,
+      "width": 51,
+    }
   }
-  thumbTintColor={null}
   tintColor="rgb(230, 228, 235)"
   value={true}
 />
@@ -24,21 +19,16 @@ exports[`iOS BpkSwitch should disable theming if the required attribute is omitt
 
 exports[`iOS BpkSwitch should render correctly 1`] = `
 <RCTSwitch
-  disabled={false}
   onChange={[Function]}
   onResponderTerminationRequest={[Function]}
   onStartShouldSetResponder={[Function]}
   onTintColor="rgb(0, 178, 214)"
   style={
-    Array [
-      Object {
-        "height": 31,
-        "width": 51,
-      },
-      undefined,
-    ]
+    Object {
+      "height": 31,
+      "width": 51,
+    }
   }
-  thumbTintColor={null}
   tintColor="rgb(230, 228, 235)"
   value={false}
 />
@@ -46,21 +36,16 @@ exports[`iOS BpkSwitch should render correctly 1`] = `
 
 exports[`iOS BpkSwitch should support the "value" prop 1`] = `
 <RCTSwitch
-  disabled={false}
   onChange={[Function]}
   onResponderTerminationRequest={[Function]}
   onStartShouldSetResponder={[Function]}
   onTintColor="rgb(0, 178, 214)"
   style={
-    Array [
-      Object {
-        "height": 31,
-        "width": 51,
-      },
-      undefined,
-    ]
+    Object {
+      "height": 31,
+      "width": 51,
+    }
   }
-  thumbTintColor={null}
   tintColor="rgb(230, 228, 235)"
   value={true}
 />
@@ -68,21 +53,16 @@ exports[`iOS BpkSwitch should support the "value" prop 1`] = `
 
 exports[`iOS BpkSwitch should support theming 1`] = `
 <RCTSwitch
-  disabled={false}
   onChange={[Function]}
   onResponderTerminationRequest={[Function]}
   onStartShouldSetResponder={[Function]}
   onTintColor="red"
   style={
-    Array [
-      Object {
-        "height": 31,
-        "width": 51,
-      },
-      undefined,
-    ]
+    Object {
+      "height": 31,
+      "width": 51,
+    }
   }
-  thumbTintColor={null}
   tintColor="rgb(230, 228, 235)"
   value={true}
 />

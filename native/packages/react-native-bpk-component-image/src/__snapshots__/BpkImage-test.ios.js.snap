@@ -3,7 +3,6 @@
 exports[`iOS BpkImage should render correctly 1`] = `
 <Image
   alt="test"
-  collapsable={undefined}
   onLoad={null}
   source={
     Object {
@@ -37,7 +36,6 @@ exports[`iOS BpkImage should render correctly when not loaded 1`] = `
   }
 >
   <View
-    collapsable={undefined}
     style={
       Object {
         "alignItems": "center",
@@ -61,7 +59,6 @@ exports[`iOS BpkImage should render correctly when not loaded 1`] = `
   </View>
   <Image
     alt="test"
-    collapsable={undefined}
     onLoad={null}
     source={
       Object {
@@ -95,7 +92,6 @@ exports[`iOS BpkImage should render correctly when unloaded and out of view 1`] 
   }
 >
   <View
-    collapsable={undefined}
     style={
       Object {
         "alignItems": "center",
@@ -139,7 +135,6 @@ exports[`iOS BpkImage should render correctly with a custom image component 1`] 
 exports[`iOS BpkImage should render correctly with arbitrary props 1`] = `
 <Image
   alt="test"
-  collapsable={undefined}
   onLoad={null}
   source={
     Object {
@@ -161,7 +156,6 @@ exports[`iOS BpkImage should render correctly with arbitrary props 1`] = `
 exports[`iOS BpkImage should render correctly with custom style 1`] = `
 <Image
   alt="test"
-  collapsable={undefined}
   onLoad={null}
   source={
     Object {
@@ -183,7 +177,6 @@ exports[`iOS BpkImage should render correctly with custom style 1`] = `
 exports[`iOS BpkImage should render correctly without border radius 1`] = `
 <Image
   alt="test"
-  collapsable={undefined}
   onLoad={null}
   source={
     Object {

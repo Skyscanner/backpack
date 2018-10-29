@@ -2,9 +2,7 @@
 
 exports[`iOS InvalidIcon should render correctly 1`] = `
 <Text
-  accessible={true}
   allowFontScaling={false}
-  ellipsizeMode="tail"
   style={
     Array [
       Object {
@@ -34,9 +32,7 @@ exports[`iOS InvalidIcon should render correctly 1`] = `
 
 exports[`iOS ValidIcon should render correctly 1`] = `
 <Text
-  accessible={true}
   allowFontScaling={false}
-  ellipsizeMode="tail"
   style={
     Array [
       Object {

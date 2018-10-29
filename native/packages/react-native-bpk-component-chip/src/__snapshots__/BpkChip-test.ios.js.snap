@@ -2,7 +2,6 @@
 
 exports[`iOS BpkChip should render correctly 1`] = `
 <View
-  accessibilityComponentType={undefined}
   accessibilityLabel="Accessibility label"
   accessibilityTraits={
     Array [
@@ -10,9 +9,6 @@ exports[`iOS BpkChip should render correctly 1`] = `
     ]
   }
   accessible={true}
-  hitSlop={undefined}
-  nativeID={undefined}
-  onLayout={undefined}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
   onResponderRelease={[Function]}
@@ -35,12 +31,8 @@ exports[`iOS BpkChip should render correctly 1`] = `
       null,
     ]
   }
-  testID={undefined}
 >
   <Text
-    accessible={true}
-    allowFontScaling={true}
-    ellipsizeMode="tail"
     style={
       Array [
         Object {
@@ -86,7 +78,6 @@ exports[`iOS BpkChip should render correctly 1`] = `
 
 exports[`iOS BpkChip should render correctly with "large" 1`] = `
 <View
-  accessibilityComponentType={undefined}
   accessibilityLabel="Accessibility label"
   accessibilityTraits={
     Array [
@@ -94,9 +85,6 @@ exports[`iOS BpkChip should render correctly with "large" 1`] = `
     ]
   }
   accessible={true}
-  hitSlop={undefined}
-  nativeID={undefined}
-  onLayout={undefined}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
   onResponderRelease={[Function]}
@@ -122,12 +110,8 @@ exports[`iOS BpkChip should render correctly with "large" 1`] = `
       null,
     ]
   }
-  testID={undefined}
 >
   <Text
-    accessible={true}
-    allowFontScaling={true}
-    ellipsizeMode="tail"
     style={
       Array [
         Object {
@@ -173,7 +157,6 @@ exports[`iOS BpkChip should render correctly with "large" 1`] = `
 
 exports[`iOS BpkChip should render correctly with "selected" 1`] = `
 <View
-  accessibilityComponentType={undefined}
   accessibilityLabel="Accessibility label"
   accessibilityTraits={
     Array [
@@ -182,9 +165,6 @@ exports[`iOS BpkChip should render correctly with "selected" 1`] = `
     ]
   }
   accessible={true}
-  hitSlop={undefined}
-  nativeID={undefined}
-  onLayout={undefined}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
   onResponderRelease={[Function]}
@@ -210,12 +190,8 @@ exports[`iOS BpkChip should render correctly with "selected" 1`] = `
       null,
     ]
   }
-  testID={undefined}
 >
   <Text
-    accessible={true}
-    allowFontScaling={true}
-    ellipsizeMode="tail"
     style={
       Array [
         Object {
@@ -264,7 +240,6 @@ exports[`iOS BpkChip should render correctly with "selected" 1`] = `
 
 exports[`iOS BpkChip should render correctly with arbitrary props 1`] = `
 <View
-  accessibilityComponentType={undefined}
   accessibilityLabel="Accessibility label"
   accessibilityTraits={
     Array [
@@ -272,9 +247,6 @@ exports[`iOS BpkChip should render correctly with arbitrary props 1`] = `
     ]
   }
   accessible={true}
-  hitSlop={undefined}
-  nativeID={undefined}
-  onLayout={undefined}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
   onResponderRelease={[Function]}
@@ -300,9 +272,6 @@ exports[`iOS BpkChip should render correctly with arbitrary props 1`] = `
   testID="123"
 >
   <Text
-    accessible={true}
-    allowFontScaling={true}
-    ellipsizeMode="tail"
     style={
       Array [
         Object {
@@ -348,7 +317,6 @@ exports[`iOS BpkChip should render correctly with arbitrary props 1`] = `
 
 exports[`iOS BpkChip should render correctly with custom style 1`] = `
 <View
-  accessibilityComponentType={undefined}
   accessibilityLabel="Accessibility label"
   accessibilityTraits={
     Array [
@@ -356,9 +324,6 @@ exports[`iOS BpkChip should render correctly with custom style 1`] = `
     ]
   }
   accessible={true}
-  hitSlop={undefined}
-  nativeID={undefined}
-  onLayout={undefined}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
   onResponderRelease={[Function]}
@@ -383,12 +348,8 @@ exports[`iOS BpkChip should render correctly with custom style 1`] = `
       },
     ]
   }
-  testID={undefined}
 >
   <Text
-    accessible={true}
-    allowFontScaling={true}
-    ellipsizeMode="tail"
     style={
       Array [
         Object {

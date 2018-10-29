@@ -22,7 +22,7 @@ import renderer from 'react-test-renderer';
 import BpkNavigationBarTextButtonIOS from './BpkNavigationBarTextButtonIOS.ios';
 
 jest.mock('bpk-tokens/tokens/base.react.native', () =>
-  jest.requireActual('bpk-tokens/tokens/base.react.native.android.js'),
+  jest.requireActual('bpk-tokens/tokens/base.react.native.ios.js'),
 );
 
 describe('iOS', () => {

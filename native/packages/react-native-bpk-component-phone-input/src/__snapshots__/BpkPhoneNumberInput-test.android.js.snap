@@ -13,23 +13,20 @@ exports[`Android BpkPhoneNumberInput should render correctly 1`] = `
     style={
       Object {
         "flexDirection": "row",
-        "paddingTop": 17,
+        "paddingTop": 16,
       }
     }
   >
     <Text
-      accessible={true}
-      allowFontScaling={true}
-      collapsable={undefined}
       ellipsizeMode="tail"
       numberOfLines={1}
       style={
         Object {
           "color": "rgba(129, 123, 143, 1)",
-          "fontFamily": "System",
+          "fontFamily": "sans-serif",
           "fontSize": 14,
           "fontWeight": "400",
-          "lineHeight": 17,
+          "lineHeight": 16,
           "position": "absolute",
           "top": 0,
         }
@@ -38,16 +35,7 @@ exports[`Android BpkPhoneNumberInput should render correctly 1`] = `
       Phone number
     </Text>
     <View
-      accessibilityComponentType="button"
-      accessibilityLabel={undefined}
-      accessibilityTraits={
-        Array [
-          "button",
-        ]
-      }
       accessible={true}
-      hasTVPreferredFocus={undefined}
-      hitSlop={undefined}
       isTVSelectable={true}
       nativeBackgroundAndroid={
         Object {
@@ -55,7 +43,6 @@ exports[`Android BpkPhoneNumberInput should render correctly 1`] = `
           "type": "ThemeAttrAndroid",
         }
       }
-      onLayout={undefined}
       onResponderGrant={[Function]}
       onResponderMove={[Function]}
       onResponderRelease={[Function]}
@@ -72,7 +59,6 @@ exports[`Android BpkPhoneNumberInput should render correctly 1`] = `
           "paddingVertical": 4,
         }
       }
-      testID={undefined}
     >
       <Image
         resizeMode="contain"
@@ -89,17 +75,14 @@ exports[`Android BpkPhoneNumberInput should render correctly 1`] = `
         }
       />
       <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
         style={
           Array [
             Object {
               "color": "rgb(82, 76, 97)",
-              "fontFamily": "System",
+              "fontFamily": "sans-serif",
               "fontSize": 16,
               "fontWeight": "400",
-              "letterSpacing": 0.12,
+              "letterSpacing": -0.2,
             },
             Object {},
             Array [
@@ -114,9 +97,7 @@ exports[`Android BpkPhoneNumberInput should render correctly 1`] = `
         +44
       </Text>
       <Text
-        accessible={true}
         allowFontScaling={false}
-        ellipsizeMode="tail"
         style={
           Array [
             Object {
@@ -138,7 +119,6 @@ exports[`Android BpkPhoneNumberInput should render correctly 1`] = `
       </Text>
     </View>
     <View
-      collapsable={undefined}
       style={
         Object {
           "alignItems": "center",
@@ -193,23 +173,20 @@ exports[`Android BpkPhoneNumberInput should render correctly with \`editable\` f
     style={
       Object {
         "flexDirection": "row",
-        "paddingTop": 17,
+        "paddingTop": 16,
       }
     }
   >
     <Text
-      accessible={true}
-      allowFontScaling={true}
-      collapsable={undefined}
       ellipsizeMode="tail"
       numberOfLines={1}
       style={
         Object {
           "color": "rgba(230, 228, 235, 1)",
-          "fontFamily": "System",
+          "fontFamily": "sans-serif",
           "fontSize": 14,
           "fontWeight": "400",
-          "lineHeight": 17,
+          "lineHeight": 16,
           "position": "absolute",
           "top": 0,
         }
@@ -218,17 +195,7 @@ exports[`Android BpkPhoneNumberInput should render correctly with \`editable\` f
       Phone number
     </Text>
     <View
-      accessibilityComponentType="button"
-      accessibilityLabel={undefined}
-      accessibilityTraits={
-        Array [
-          "button",
-          "disabled",
-        ]
-      }
       accessible={true}
-      hasTVPreferredFocus={undefined}
-      hitSlop={undefined}
       isTVSelectable={true}
       nativeBackgroundAndroid={
         Object {
@@ -236,7 +203,6 @@ exports[`Android BpkPhoneNumberInput should render correctly with \`editable\` f
           "type": "ThemeAttrAndroid",
         }
       }
-      onLayout={undefined}
       onResponderGrant={[Function]}
       onResponderMove={[Function]}
       onResponderRelease={[Function]}
@@ -253,7 +219,6 @@ exports[`Android BpkPhoneNumberInput should render correctly with \`editable\` f
           "paddingVertical": 4,
         }
       }
-      testID={undefined}
     >
       <Image
         resizeMode="contain"
@@ -270,17 +235,14 @@ exports[`Android BpkPhoneNumberInput should render correctly with \`editable\` f
         }
       />
       <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
         style={
           Array [
             Object {
               "color": "rgb(82, 76, 97)",
-              "fontFamily": "System",
+              "fontFamily": "sans-serif",
               "fontSize": 16,
               "fontWeight": "400",
-              "letterSpacing": 0.12,
+              "letterSpacing": -0.2,
             },
             Object {},
             Array [
@@ -297,9 +259,7 @@ exports[`Android BpkPhoneNumberInput should render correctly with \`editable\` f
         +44
       </Text>
       <Text
-        accessible={true}
         allowFontScaling={false}
-        ellipsizeMode="tail"
         style={
           Array [
             Object {
@@ -321,7 +281,6 @@ exports[`Android BpkPhoneNumberInput should render correctly with \`editable\` f
       </Text>
     </View>
     <View
-      collapsable={undefined}
       style={
         Object {
           "alignItems": "center",

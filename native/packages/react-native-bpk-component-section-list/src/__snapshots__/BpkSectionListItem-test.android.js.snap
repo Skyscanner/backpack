@@ -2,16 +2,8 @@
 
 exports[`Android BpkListItem should render correctly 1`] = `
 <View
-  accessibilityComponentType="button"
   accessibilityLabel="List item"
-  accessibilityTraits={
-    Array [
-      "button",
-    ]
-  }
   accessible={true}
-  hasTVPreferredFocus={undefined}
-  hitSlop={undefined}
   isTVSelectable={true}
   nativeBackgroundAndroid={
     Object {
@@ -19,7 +11,6 @@ exports[`Android BpkListItem should render correctly 1`] = `
       "type": "ThemeAttrAndroid",
     }
   }
-  onLayout={undefined}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
   onResponderRelease={[Function]}
@@ -36,7 +27,6 @@ exports[`Android BpkListItem should render correctly 1`] = `
       "padding": 16,
     }
   }
-  testID={undefined}
 >
   <View
     style={
@@ -48,9 +38,6 @@ exports[`Android BpkListItem should render correctly 1`] = `
     }
   >
     <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
       style={
         Array [
           Object {
@@ -107,16 +94,8 @@ exports[`Android BpkListItem should render correctly 1`] = `
 
 exports[`Android BpkListItem should support the "image" property 1`] = `
 <View
-  accessibilityComponentType="button"
   accessibilityLabel="List item"
-  accessibilityTraits={
-    Array [
-      "button",
-    ]
-  }
   accessible={true}
-  hasTVPreferredFocus={undefined}
-  hitSlop={undefined}
   isTVSelectable={true}
   nativeBackgroundAndroid={
     Object {
@@ -124,7 +103,6 @@ exports[`Android BpkListItem should support the "image" property 1`] = `
       "type": "ThemeAttrAndroid",
     }
   }
-  onLayout={undefined}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
   onResponderRelease={[Function]}
@@ -141,7 +119,6 @@ exports[`Android BpkListItem should support the "image" property 1`] = `
       "padding": 16,
     }
   }
-  testID={undefined}
 >
   <View
     style={
@@ -163,9 +140,6 @@ exports[`Android BpkListItem should support the "image" property 1`] = `
       }
     />
     <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
       style={
         Array [
           Object {
@@ -222,16 +196,8 @@ exports[`Android BpkListItem should support the "image" property 1`] = `
 
 exports[`Android BpkListItem should support the "selected" property 1`] = `
 <View
-  accessibilityComponentType="button"
   accessibilityLabel="List item"
-  accessibilityTraits={
-    Array [
-      "button",
-    ]
-  }
   accessible={true}
-  hasTVPreferredFocus={undefined}
-  hitSlop={undefined}
   isTVSelectable={true}
   nativeBackgroundAndroid={
     Object {
@@ -239,7 +205,6 @@ exports[`Android BpkListItem should support the "selected" property 1`] = `
       "type": "ThemeAttrAndroid",
     }
   }
-  onLayout={undefined}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
   onResponderRelease={[Function]}
@@ -256,7 +221,6 @@ exports[`Android BpkListItem should support the "selected" property 1`] = `
       "padding": 16,
     }
   }
-  testID={undefined}
 >
   <View
     style={
@@ -268,9 +232,6 @@ exports[`Android BpkListItem should support the "selected" property 1`] = `
     }
   >
     <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
       style={
         Array [
           Object {

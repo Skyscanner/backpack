@@ -2,16 +2,8 @@
 
 exports[`Android BpkHorizontalNavItem should render correctly 1`] = `
 <View
-  accessibilityComponentType="button"
   accessibilityLabel="Nav"
-  accessibilityTraits={
-    Array [
-      "button",
-    ]
-  }
   accessible={true}
-  hasTVPreferredFocus={undefined}
-  hitSlop={undefined}
   isTVSelectable={true}
   nativeBackgroundAndroid={
     Object {
@@ -19,7 +11,6 @@ exports[`Android BpkHorizontalNavItem should render correctly 1`] = `
       "type": "ThemeAttrAndroid",
     }
   }
-  onLayout={undefined}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
   onResponderRelease={[Function]}
@@ -34,12 +25,8 @@ exports[`Android BpkHorizontalNavItem should render correctly 1`] = `
       },
     ]
   }
-  testID={undefined}
 >
   <Text
-    accessible={true}
-    allowFontScaling={true}
-    ellipsizeMode="tail"
     style={
       Array [
         Object {
@@ -66,16 +53,8 @@ exports[`Android BpkHorizontalNavItem should render correctly 1`] = `
 
 exports[`Android BpkHorizontalNavItem should render correctly with "selected" prop 1`] = `
 <View
-  accessibilityComponentType="button"
   accessibilityLabel="Nav"
-  accessibilityTraits={
-    Array [
-      "button",
-    ]
-  }
   accessible={true}
-  hasTVPreferredFocus={undefined}
-  hitSlop={undefined}
   isTVSelectable={true}
   nativeBackgroundAndroid={
     Object {
@@ -83,7 +62,6 @@ exports[`Android BpkHorizontalNavItem should render correctly with "selected" pr
       "type": "ThemeAttrAndroid",
     }
   }
-  onLayout={undefined}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
   onResponderRelease={[Function]}
@@ -98,12 +76,8 @@ exports[`Android BpkHorizontalNavItem should render correctly with "selected" pr
       },
     ]
   }
-  testID={undefined}
 >
   <Text
-    accessible={true}
-    allowFontScaling={true}
-    ellipsizeMode="tail"
     style={
       Array [
         Object {
@@ -133,16 +107,8 @@ exports[`Android BpkHorizontalNavItem should render correctly with "selected" pr
 
 exports[`Android BpkHorizontalNavItem should render correctly with "small" prop 1`] = `
 <View
-  accessibilityComponentType="button"
   accessibilityLabel="Nav"
-  accessibilityTraits={
-    Array [
-      "button",
-    ]
-  }
   accessible={true}
-  hasTVPreferredFocus={undefined}
-  hitSlop={undefined}
   isTVSelectable={true}
   nativeBackgroundAndroid={
     Object {
@@ -150,7 +116,6 @@ exports[`Android BpkHorizontalNavItem should render correctly with "small" prop 
       "type": "ThemeAttrAndroid",
     }
   }
-  onLayout={undefined}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
   onResponderRelease={[Function]}
@@ -168,12 +133,8 @@ exports[`Android BpkHorizontalNavItem should render correctly with "small" prop 
       },
     ]
   }
-  testID={undefined}
 >
   <Text
-    accessible={true}
-    allowFontScaling={true}
-    ellipsizeMode="tail"
     style={
       Array [
         Object {
@@ -200,16 +161,8 @@ exports[`Android BpkHorizontalNavItem should render correctly with "small" prop 
 
 exports[`Android BpkHorizontalNavItem should render correctly with "spaceAround" prop 1`] = `
 <View
-  accessibilityComponentType="button"
   accessibilityLabel="Nav"
-  accessibilityTraits={
-    Array [
-      "button",
-    ]
-  }
   accessible={true}
-  hasTVPreferredFocus={undefined}
-  hitSlop={undefined}
   isTVSelectable={true}
   nativeBackgroundAndroid={
     Object {
@@ -217,7 +170,6 @@ exports[`Android BpkHorizontalNavItem should render correctly with "spaceAround"
       "type": "ThemeAttrAndroid",
     }
   }
-  onLayout={undefined}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
   onResponderRelease={[Function]}
@@ -232,12 +184,8 @@ exports[`Android BpkHorizontalNavItem should render correctly with "spaceAround"
       },
     ]
   }
-  testID={undefined}
 >
   <Text
-    accessible={true}
-    allowFontScaling={true}
-    ellipsizeMode="tail"
     style={
       Array [
         Object {
@@ -264,16 +212,8 @@ exports[`Android BpkHorizontalNavItem should render correctly with "spaceAround"
 
 exports[`Android BpkHorizontalNavItem should render correctly with arbitrary props 1`] = `
 <View
-  accessibilityComponentType="button"
   accessibilityLabel="Nav"
-  accessibilityTraits={
-    Array [
-      "button",
-    ]
-  }
   accessible={true}
-  hasTVPreferredFocus={undefined}
-  hitSlop={undefined}
   isTVSelectable={true}
   nativeBackgroundAndroid={
     Object {
@@ -281,7 +221,6 @@ exports[`Android BpkHorizontalNavItem should render correctly with arbitrary pro
       "type": "ThemeAttrAndroid",
     }
   }
-  onLayout={undefined}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
   onResponderRelease={[Function]}
@@ -296,12 +235,8 @@ exports[`Android BpkHorizontalNavItem should render correctly with arbitrary pro
       },
     ]
   }
-  testID={undefined}
 >
   <Text
-    accessible={true}
-    allowFontScaling={true}
-    ellipsizeMode="tail"
     style={
       Array [
         Object {
@@ -328,16 +263,8 @@ exports[`Android BpkHorizontalNavItem should render correctly with arbitrary pro
 
 exports[`Android BpkHorizontalNavItem should render correctly with custom "style" prop 1`] = `
 <View
-  accessibilityComponentType="button"
   accessibilityLabel="Nav"
-  accessibilityTraits={
-    Array [
-      "button",
-    ]
-  }
   accessible={true}
-  hasTVPreferredFocus={undefined}
-  hitSlop={undefined}
   isTVSelectable={true}
   nativeBackgroundAndroid={
     Object {
@@ -345,7 +272,6 @@ exports[`Android BpkHorizontalNavItem should render correctly with custom "style
       "type": "ThemeAttrAndroid",
     }
   }
-  onLayout={undefined}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
   onResponderRelease={[Function]}
@@ -363,12 +289,8 @@ exports[`Android BpkHorizontalNavItem should render correctly with custom "style
       },
     ]
   }
-  testID={undefined}
 >
   <Text
-    accessible={true}
-    allowFontScaling={true}
-    ellipsizeMode="tail"
     style={
       Array [
         Object {
@@ -395,16 +317,8 @@ exports[`Android BpkHorizontalNavItem should render correctly with custom "style
 
 exports[`Android BpkHorizontalNavItem should support theming 1`] = `
 <View
-  accessibilityComponentType="button"
   accessibilityLabel="Nav"
-  accessibilityTraits={
-    Array [
-      "button",
-    ]
-  }
   accessible={true}
-  hasTVPreferredFocus={undefined}
-  hitSlop={undefined}
   isTVSelectable={true}
   nativeBackgroundAndroid={
     Object {
@@ -412,7 +326,6 @@ exports[`Android BpkHorizontalNavItem should support theming 1`] = `
       "type": "ThemeAttrAndroid",
     }
   }
-  onLayout={undefined}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
   onResponderRelease={[Function]}
@@ -427,12 +340,8 @@ exports[`Android BpkHorizontalNavItem should support theming 1`] = `
       },
     ]
   }
-  testID={undefined}
 >
   <Text
-    accessible={true}
-    allowFontScaling={true}
-    ellipsizeMode="tail"
     style={
       Array [
         Object {

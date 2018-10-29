@@ -17,9 +17,6 @@ exports[`Android BpkPanel should render correctly 1`] = `
   }
 >
   <Text
-    accessible={true}
-    allowFontScaling={true}
-    ellipsizeMode="tail"
     style={
       Array [
         Object {
@@ -56,9 +53,6 @@ exports[`Android BpkPanel should render correctly with arbitrary props 1`] = `
   testID="arbitrary value"
 >
   <Text
-    accessible={true}
-    allowFontScaling={true}
-    ellipsizeMode="tail"
     style={
       Array [
         Object {
@@ -97,9 +91,6 @@ exports[`Android BpkPanel should render correctly with custom style 1`] = `
   }
 >
   <Text
-    accessible={true}
-    allowFontScaling={true}
-    ellipsizeMode="tail"
     style={
       Array [
         Object {
@@ -132,9 +123,6 @@ exports[`Android BpkPanel should render correctly without padding 1`] = `
   }
 >
   <Text
-    accessible={true}
-    allowFontScaling={true}
-    ellipsizeMode="tail"
     style={
       Array [
         Object {

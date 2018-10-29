@@ -2,9 +2,7 @@
 
 exports[`RTL InvalidIcon should render correctly 1`] = `
 <Text
-  accessible={true}
   allowFontScaling={false}
-  ellipsizeMode="tail"
   style={
     Array [
       Object {
@@ -34,9 +32,7 @@ exports[`RTL InvalidIcon should render correctly 1`] = `
 
 exports[`RTL ValidIcon should render correctly 1`] = `
 <Text
-  accessible={true}
   allowFontScaling={false}
-  ellipsizeMode="tail"
   style={
     Array [
       Object {

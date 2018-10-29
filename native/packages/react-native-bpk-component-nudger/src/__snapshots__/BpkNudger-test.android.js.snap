@@ -28,16 +28,8 @@ exports[`Android BpkNudger should disable theming if the required attribute is o
     }
   >
     <View
-      accessibilityComponentType="button"
       accessibilityLabel="Decrease"
-      accessibilityTraits={
-        Array [
-          "button",
-        ]
-      }
       accessible={true}
-      hasTVPreferredFocus={undefined}
-      hitSlop={undefined}
       isTVSelectable={true}
       nativeBackgroundAndroid={
         Object {
@@ -45,7 +37,6 @@ exports[`Android BpkNudger should disable theming if the required attribute is o
           "type": "ThemeAttrAndroid",
         }
       }
-      onLayout={undefined}
       onResponderGrant={[Function]}
       onResponderMove={[Function]}
       onResponderRelease={[Function]}
@@ -79,12 +70,9 @@ exports[`Android BpkNudger should disable theming if the required attribute is o
           },
         ]
       }
-      testID={undefined}
     >
       <Text
-        accessible={true}
         allowFontScaling={false}
-        ellipsizeMode="tail"
         style={
           Array [
             Object {
@@ -126,9 +114,6 @@ exports[`Android BpkNudger should disable theming if the required attribute is o
     </View>
   </View>
   <Text
-    accessible={true}
-    allowFontScaling={true}
-    ellipsizeMode="tail"
     style={
       Array [
         Object {
@@ -166,16 +151,8 @@ exports[`Android BpkNudger should disable theming if the required attribute is o
     }
   >
     <View
-      accessibilityComponentType="button"
       accessibilityLabel="Increase"
-      accessibilityTraits={
-        Array [
-          "button",
-        ]
-      }
       accessible={true}
-      hasTVPreferredFocus={undefined}
-      hitSlop={undefined}
       isTVSelectable={true}
       nativeBackgroundAndroid={
         Object {
@@ -183,7 +160,6 @@ exports[`Android BpkNudger should disable theming if the required attribute is o
           "type": "ThemeAttrAndroid",
         }
       }
-      onLayout={undefined}
       onResponderGrant={[Function]}
       onResponderMove={[Function]}
       onResponderRelease={[Function]}
@@ -217,12 +193,9 @@ exports[`Android BpkNudger should disable theming if the required attribute is o
           },
         ]
       }
-      testID={undefined}
     >
       <Text
-        accessible={true}
         allowFontScaling={false}
-        ellipsizeMode="tail"
         style={
           Array [
             Object {
@@ -294,16 +267,8 @@ exports[`Android BpkNudger should render correctly 1`] = `
     }
   >
     <View
-      accessibilityComponentType="button"
       accessibilityLabel="Decrease"
-      accessibilityTraits={
-        Array [
-          "button",
-        ]
-      }
       accessible={true}
-      hasTVPreferredFocus={undefined}
-      hitSlop={undefined}
       isTVSelectable={true}
       nativeBackgroundAndroid={
         Object {
@@ -311,7 +276,6 @@ exports[`Android BpkNudger should render correctly 1`] = `
           "type": "ThemeAttrAndroid",
         }
       }
-      onLayout={undefined}
       onResponderGrant={[Function]}
       onResponderMove={[Function]}
       onResponderRelease={[Function]}
@@ -345,12 +309,9 @@ exports[`Android BpkNudger should render correctly 1`] = `
           },
         ]
       }
-      testID={undefined}
     >
       <Text
-        accessible={true}
         allowFontScaling={false}
-        ellipsizeMode="tail"
         style={
           Array [
             Object {
@@ -392,9 +353,6 @@ exports[`Android BpkNudger should render correctly 1`] = `
     </View>
   </View>
   <Text
-    accessible={true}
-    allowFontScaling={true}
-    ellipsizeMode="tail"
     style={
       Array [
         Object {
@@ -432,16 +390,8 @@ exports[`Android BpkNudger should render correctly 1`] = `
     }
   >
     <View
-      accessibilityComponentType="button"
       accessibilityLabel="Increase"
-      accessibilityTraits={
-        Array [
-          "button",
-        ]
-      }
       accessible={true}
-      hasTVPreferredFocus={undefined}
-      hitSlop={undefined}
       isTVSelectable={true}
       nativeBackgroundAndroid={
         Object {
@@ -449,7 +399,6 @@ exports[`Android BpkNudger should render correctly 1`] = `
           "type": "ThemeAttrAndroid",
         }
       }
-      onLayout={undefined}
       onResponderGrant={[Function]}
       onResponderMove={[Function]}
       onResponderRelease={[Function]}
@@ -483,12 +432,9 @@ exports[`Android BpkNudger should render correctly 1`] = `
           },
         ]
       }
-      testID={undefined}
     >
       <Text
-        accessible={true}
         allowFontScaling={false}
-        ellipsizeMode="tail"
         style={
           Array [
             Object {
@@ -561,17 +507,8 @@ exports[`Android BpkNudger should render correctly when value is a not an intege
     }
   >
     <View
-      accessibilityComponentType="button"
       accessibilityLabel="Decrease"
-      accessibilityTraits={
-        Array [
-          "button",
-          "disabled",
-        ]
-      }
       accessible={true}
-      hasTVPreferredFocus={undefined}
-      hitSlop={undefined}
       isTVSelectable={true}
       nativeBackgroundAndroid={
         Object {
@@ -579,7 +516,6 @@ exports[`Android BpkNudger should render correctly when value is a not an intege
           "type": "ThemeAttrAndroid",
         }
       }
-      onLayout={undefined}
       onResponderGrant={[Function]}
       onResponderMove={[Function]}
       onResponderRelease={[Function]}
@@ -614,12 +550,9 @@ exports[`Android BpkNudger should render correctly when value is a not an intege
           },
         ]
       }
-      testID={undefined}
     >
       <Text
-        accessible={true}
         allowFontScaling={false}
-        ellipsizeMode="tail"
         style={
           Array [
             Object {
@@ -665,9 +598,6 @@ exports[`Android BpkNudger should render correctly when value is a not an intege
     </View>
   </View>
   <Text
-    accessible={true}
-    allowFontScaling={true}
-    ellipsizeMode="tail"
     style={
       Array [
         Object {
@@ -705,16 +635,8 @@ exports[`Android BpkNudger should render correctly when value is a not an intege
     }
   >
     <View
-      accessibilityComponentType="button"
       accessibilityLabel="Increase"
-      accessibilityTraits={
-        Array [
-          "button",
-        ]
-      }
       accessible={true}
-      hasTVPreferredFocus={undefined}
-      hitSlop={undefined}
       isTVSelectable={true}
       nativeBackgroundAndroid={
         Object {
@@ -722,7 +644,6 @@ exports[`Android BpkNudger should render correctly when value is a not an intege
           "type": "ThemeAttrAndroid",
         }
       }
-      onLayout={undefined}
       onResponderGrant={[Function]}
       onResponderMove={[Function]}
       onResponderRelease={[Function]}
@@ -756,12 +677,9 @@ exports[`Android BpkNudger should render correctly when value is a not an intege
           },
         ]
       }
-      testID={undefined}
     >
       <Text
-        accessible={true}
         allowFontScaling={false}
-        ellipsizeMode="tail"
         style={
           Array [
             Object {
@@ -833,16 +751,8 @@ exports[`Android BpkNudger should render correctly when value is greater than ma
     }
   >
     <View
-      accessibilityComponentType="button"
       accessibilityLabel="Decrease"
-      accessibilityTraits={
-        Array [
-          "button",
-        ]
-      }
       accessible={true}
-      hasTVPreferredFocus={undefined}
-      hitSlop={undefined}
       isTVSelectable={true}
       nativeBackgroundAndroid={
         Object {
@@ -850,7 +760,6 @@ exports[`Android BpkNudger should render correctly when value is greater than ma
           "type": "ThemeAttrAndroid",
         }
       }
-      onLayout={undefined}
       onResponderGrant={[Function]}
       onResponderMove={[Function]}
       onResponderRelease={[Function]}
@@ -884,12 +793,9 @@ exports[`Android BpkNudger should render correctly when value is greater than ma
           },
         ]
       }
-      testID={undefined}
     >
       <Text
-        accessible={true}
         allowFontScaling={false}
-        ellipsizeMode="tail"
         style={
           Array [
             Object {
@@ -931,9 +837,6 @@ exports[`Android BpkNudger should render correctly when value is greater than ma
     </View>
   </View>
   <Text
-    accessible={true}
-    allowFontScaling={true}
-    ellipsizeMode="tail"
     style={
       Array [
         Object {
@@ -972,17 +875,8 @@ exports[`Android BpkNudger should render correctly when value is greater than ma
     }
   >
     <View
-      accessibilityComponentType="button"
       accessibilityLabel="Increase"
-      accessibilityTraits={
-        Array [
-          "button",
-          "disabled",
-        ]
-      }
       accessible={true}
-      hasTVPreferredFocus={undefined}
-      hitSlop={undefined}
       isTVSelectable={true}
       nativeBackgroundAndroid={
         Object {
@@ -990,7 +884,6 @@ exports[`Android BpkNudger should render correctly when value is greater than ma
           "type": "ThemeAttrAndroid",
         }
       }
-      onLayout={undefined}
       onResponderGrant={[Function]}
       onResponderMove={[Function]}
       onResponderRelease={[Function]}
@@ -1025,12 +918,9 @@ exports[`Android BpkNudger should render correctly when value is greater than ma
           },
         ]
       }
-      testID={undefined}
     >
       <Text
-        accessible={true}
         allowFontScaling={false}
-        ellipsizeMode="tail"
         style={
           Array [
             Object {
@@ -1107,17 +997,8 @@ exports[`Android BpkNudger should render correctly when value is less than min 1
     }
   >
     <View
-      accessibilityComponentType="button"
       accessibilityLabel="Decrease"
-      accessibilityTraits={
-        Array [
-          "button",
-          "disabled",
-        ]
-      }
       accessible={true}
-      hasTVPreferredFocus={undefined}
-      hitSlop={undefined}
       isTVSelectable={true}
       nativeBackgroundAndroid={
         Object {
@@ -1125,7 +1006,6 @@ exports[`Android BpkNudger should render correctly when value is less than min 1
           "type": "ThemeAttrAndroid",
         }
       }
-      onLayout={undefined}
       onResponderGrant={[Function]}
       onResponderMove={[Function]}
       onResponderRelease={[Function]}
@@ -1160,12 +1040,9 @@ exports[`Android BpkNudger should render correctly when value is less than min 1
           },
         ]
       }
-      testID={undefined}
     >
       <Text
-        accessible={true}
         allowFontScaling={false}
-        ellipsizeMode="tail"
         style={
           Array [
             Object {
@@ -1211,9 +1088,6 @@ exports[`Android BpkNudger should render correctly when value is less than min 1
     </View>
   </View>
   <Text
-    accessible={true}
-    allowFontScaling={true}
-    ellipsizeMode="tail"
     style={
       Array [
         Object {
@@ -1251,16 +1125,8 @@ exports[`Android BpkNudger should render correctly when value is less than min 1
     }
   >
     <View
-      accessibilityComponentType="button"
       accessibilityLabel="Increase"
-      accessibilityTraits={
-        Array [
-          "button",
-        ]
-      }
       accessible={true}
-      hasTVPreferredFocus={undefined}
-      hitSlop={undefined}
       isTVSelectable={true}
       nativeBackgroundAndroid={
         Object {
@@ -1268,7 +1134,6 @@ exports[`Android BpkNudger should render correctly when value is less than min 1
           "type": "ThemeAttrAndroid",
         }
       }
-      onLayout={undefined}
       onResponderGrant={[Function]}
       onResponderMove={[Function]}
       onResponderRelease={[Function]}
@@ -1302,12 +1167,9 @@ exports[`Android BpkNudger should render correctly when value is less than min 1
           },
         ]
       }
-      testID={undefined}
     >
       <Text
-        accessible={true}
         allowFontScaling={false}
-        ellipsizeMode="tail"
         style={
           Array [
             Object {
@@ -1379,16 +1241,8 @@ exports[`Android BpkNudger should support theming 1`] = `
     }
   >
     <View
-      accessibilityComponentType="button"
       accessibilityLabel="Decrease"
-      accessibilityTraits={
-        Array [
-          "button",
-        ]
-      }
       accessible={true}
-      hasTVPreferredFocus={undefined}
-      hitSlop={undefined}
       isTVSelectable={true}
       nativeBackgroundAndroid={
         Object {
@@ -1396,7 +1250,6 @@ exports[`Android BpkNudger should support theming 1`] = `
           "type": "ThemeAttrAndroid",
         }
       }
-      onLayout={undefined}
       onResponderGrant={[Function]}
       onResponderMove={[Function]}
       onResponderRelease={[Function]}
@@ -1430,12 +1283,9 @@ exports[`Android BpkNudger should support theming 1`] = `
           },
         ]
       }
-      testID={undefined}
     >
       <Text
-        accessible={true}
         allowFontScaling={false}
-        ellipsizeMode="tail"
         style={
           Array [
             Object {
@@ -1479,9 +1329,6 @@ exports[`Android BpkNudger should support theming 1`] = `
     </View>
   </View>
   <Text
-    accessible={true}
-    allowFontScaling={true}
-    ellipsizeMode="tail"
     style={
       Array [
         Object {
@@ -1519,16 +1366,8 @@ exports[`Android BpkNudger should support theming 1`] = `
     }
   >
     <View
-      accessibilityComponentType="button"
       accessibilityLabel="Increase"
-      accessibilityTraits={
-        Array [
-          "button",
-        ]
-      }
       accessible={true}
-      hasTVPreferredFocus={undefined}
-      hitSlop={undefined}
       isTVSelectable={true}
       nativeBackgroundAndroid={
         Object {
@@ -1536,7 +1375,6 @@ exports[`Android BpkNudger should support theming 1`] = `
           "type": "ThemeAttrAndroid",
         }
       }
-      onLayout={undefined}
       onResponderGrant={[Function]}
       onResponderMove={[Function]}
       onResponderRelease={[Function]}
@@ -1570,12 +1408,9 @@ exports[`Android BpkNudger should support theming 1`] = `
           },
         ]
       }
-      testID={undefined}
     >
       <Text
-        accessible={true}
         allowFontScaling={false}
-        ellipsizeMode="tail"
         style={
           Array [
             Object {

@@ -39,20 +39,9 @@ exports[`ios - iPhone X  BpkNavigationBar should render correctly 1`] = `
     }
   >
     <View
-      accessibilityComponentType="button"
       accessibilityLabel="Back"
-      accessibilityTraits={
-        Array [
-          "button",
-        ]
-      }
       accessible={true}
-      collapsable={undefined}
-      hasTVPreferredFocus={undefined}
-      hitSlop={undefined}
       isTVSelectable={true}
-      nativeID={undefined}
-      onLayout={undefined}
       onResponderGrant={[Function]}
       onResponderMove={[Function]}
       onResponderRelease={[Function]}
@@ -67,8 +56,6 @@ exports[`ios - iPhone X  BpkNavigationBar should render correctly 1`] = `
           "zIndex": 2,
         }
       }
-      testID={undefined}
-      tvParallaxProperties={undefined}
     >
       <Image
         source={
@@ -88,9 +75,6 @@ exports[`ios - iPhone X  BpkNavigationBar should render correctly 1`] = `
         }
       />
       <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
         style={
           Array [
             Object {
@@ -140,7 +124,6 @@ exports[`ios - iPhone X  BpkNavigationBar should render correctly 1`] = `
         }
       >
         <Text
-          accessible={true}
           allowFontScaling={false}
           ellipsizeMode="tail"
           numberOfLines={1}
@@ -212,20 +195,9 @@ exports[`ios - iPhone X  BpkNavigationBar should render correctly with trailing 
     }
   >
     <View
-      accessibilityComponentType="button"
       accessibilityLabel="Cancel"
-      accessibilityTraits={
-        Array [
-          "button",
-        ]
-      }
       accessible={true}
-      collapsable={undefined}
-      hasTVPreferredFocus={undefined}
-      hitSlop={undefined}
       isTVSelectable={true}
-      nativeID={undefined}
-      onLayout={undefined}
       onResponderGrant={[Function]}
       onResponderMove={[Function]}
       onResponderRelease={[Function]}
@@ -239,13 +211,8 @@ exports[`ios - iPhone X  BpkNavigationBar should render correctly with trailing 
           "zIndex": 2,
         }
       }
-      testID={undefined}
-      tvParallaxProperties={undefined}
     >
       <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
         style={
           Array [
             Object {
@@ -295,7 +262,6 @@ exports[`ios - iPhone X  BpkNavigationBar should render correctly with trailing 
         }
       >
         <Text
-          accessible={true}
           allowFontScaling={false}
           ellipsizeMode="tail"
           numberOfLines={1}
@@ -325,20 +291,9 @@ exports[`ios - iPhone X  BpkNavigationBar should render correctly with trailing 
       </View>
     </View>
     <View
-      accessibilityComponentType="button"
       accessibilityLabel="Done"
-      accessibilityTraits={
-        Array [
-          "button",
-        ]
-      }
       accessible={true}
-      collapsable={undefined}
-      hasTVPreferredFocus={undefined}
-      hitSlop={undefined}
       isTVSelectable={true}
-      nativeID={undefined}
-      onLayout={undefined}
       onResponderGrant={[Function]}
       onResponderMove={[Function]}
       onResponderRelease={[Function]}
@@ -352,13 +307,8 @@ exports[`ios - iPhone X  BpkNavigationBar should render correctly with trailing 
           "zIndex": 2,
         }
       }
-      testID={undefined}
-      tvParallaxProperties={undefined}
     >
       <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
         style={
           Array [
             Object {

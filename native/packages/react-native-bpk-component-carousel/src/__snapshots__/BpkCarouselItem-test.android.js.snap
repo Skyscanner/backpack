@@ -11,17 +11,14 @@ exports[`Android BpkCarouselItem should render correctly 1`] = `
   }
 >
   <Text
-    accessible={true}
-    allowFontScaling={true}
-    ellipsizeMode="tail"
     style={
       Array [
         Object {
           "color": "rgb(82, 76, 97)",
-          "fontFamily": "System",
+          "fontFamily": "sans-serif",
           "fontSize": 16,
           "fontWeight": "400",
-          "letterSpacing": 0.12,
+          "letterSpacing": -0.2,
         },
         Object {},
       ]
