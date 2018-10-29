@@ -1,11 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`iOS BpkThemeProvider should render correctly 1`] = `
-<Text
-  accessible={true}
-  allowFontScaling={true}
-  ellipsizeMode="tail"
->
+<Text>
   Lorem ipsum
 </Text>
 `;

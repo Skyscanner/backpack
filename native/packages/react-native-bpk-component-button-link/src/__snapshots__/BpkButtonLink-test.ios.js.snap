@@ -2,20 +2,9 @@
 
 exports[`iOS BpkButtonLink should render correctly 1`] = `
 <View
-  accessibilityComponentType="button"
   accessibilityLabel="Lorem ipsum"
-  accessibilityTraits={
-    Array [
-      "button",
-    ]
-  }
   accessible={true}
-  collapsable={undefined}
-  hasTVPreferredFocus={undefined}
-  hitSlop={undefined}
   isTVSelectable={true}
-  nativeID={undefined}
-  onLayout={undefined}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
   onResponderRelease={[Function]}
@@ -27,8 +16,6 @@ exports[`iOS BpkButtonLink should render correctly 1`] = `
       "opacity": 1,
     }
   }
-  testID={undefined}
-  tvParallaxProperties={undefined}
 >
   <View
     style={
@@ -43,9 +30,6 @@ exports[`iOS BpkButtonLink should render correctly 1`] = `
     }
   >
     <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
       numberOfLines={1}
       style={
         Array [
@@ -75,20 +59,9 @@ exports[`iOS BpkButtonLink should render correctly 1`] = `
 
 exports[`iOS BpkButtonLink should render correctly with iconAlignment="leading" 1`] = `
 <View
-  accessibilityComponentType="button"
   accessibilityLabel="Lorem ipsum"
-  accessibilityTraits={
-    Array [
-      "button",
-    ]
-  }
   accessible={true}
-  collapsable={undefined}
-  hasTVPreferredFocus={undefined}
-  hitSlop={undefined}
   isTVSelectable={true}
-  nativeID={undefined}
-  onLayout={undefined}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
   onResponderRelease={[Function]}
@@ -100,8 +73,6 @@ exports[`iOS BpkButtonLink should render correctly with iconAlignment="leading" 
       "opacity": 1,
     }
   }
-  testID={undefined}
-  tvParallaxProperties={undefined}
 >
   <View
     style={
@@ -119,9 +90,6 @@ exports[`iOS BpkButtonLink should render correctly with iconAlignment="leading" 
     }
   >
     <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
       numberOfLines={1}
       style={
         Array [
@@ -146,9 +114,7 @@ exports[`iOS BpkButtonLink should render correctly with iconAlignment="leading" 
       Lorem ipsum
     </Text>
     <Text
-      accessible={true}
       allowFontScaling={false}
-      ellipsizeMode="tail"
       style={
         Array [
           Object {
@@ -181,20 +147,9 @@ exports[`iOS BpkButtonLink should render correctly with iconAlignment="leading" 
 
 exports[`iOS BpkButtonLink should render correctly with iconAlignment="trailing" 1`] = `
 <View
-  accessibilityComponentType="button"
   accessibilityLabel="Lorem ipsum"
-  accessibilityTraits={
-    Array [
-      "button",
-    ]
-  }
   accessible={true}
-  collapsable={undefined}
-  hasTVPreferredFocus={undefined}
-  hitSlop={undefined}
   isTVSelectable={true}
-  nativeID={undefined}
-  onLayout={undefined}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
   onResponderRelease={[Function]}
@@ -206,8 +161,6 @@ exports[`iOS BpkButtonLink should render correctly with iconAlignment="trailing"
       "opacity": 1,
     }
   }
-  testID={undefined}
-  tvParallaxProperties={undefined}
 >
   <View
     style={
@@ -222,9 +175,6 @@ exports[`iOS BpkButtonLink should render correctly with iconAlignment="trailing"
     }
   >
     <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
       numberOfLines={1}
       style={
         Array [
@@ -249,9 +199,7 @@ exports[`iOS BpkButtonLink should render correctly with iconAlignment="trailing"
       Lorem ipsum
     </Text>
     <Text
-      accessible={true}
       allowFontScaling={false}
-      ellipsizeMode="tail"
       style={
         Array [
           Object {
@@ -280,20 +228,9 @@ exports[`iOS BpkButtonLink should render correctly with iconAlignment="trailing"
 
 exports[`iOS BpkButtonLink should render correctly with text props provided 1`] = `
 <View
-  accessibilityComponentType="button"
   accessibilityLabel="Lorem ipsum"
-  accessibilityTraits={
-    Array [
-      "button",
-    ]
-  }
   accessible={true}
-  collapsable={undefined}
-  hasTVPreferredFocus={undefined}
-  hitSlop={undefined}
   isTVSelectable={true}
-  nativeID={undefined}
-  onLayout={undefined}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
   onResponderRelease={[Function]}
@@ -305,8 +242,6 @@ exports[`iOS BpkButtonLink should render correctly with text props provided 1`] 
       "opacity": 1,
     }
   }
-  testID={undefined}
-  tvParallaxProperties={undefined}
 >
   <View
     style={
@@ -321,9 +256,7 @@ exports[`iOS BpkButtonLink should render correctly with text props provided 1`] 
     }
   >
     <Text
-      accessible={true}
       allowFontScaling={false}
-      ellipsizeMode="tail"
       numberOfLines={1}
       style={
         Array [
@@ -353,20 +286,9 @@ exports[`iOS BpkButtonLink should render correctly with text props provided 1`] 
 
 exports[`iOS BpkButtonLink should render correctly with theme prop 1`] = `
 <View
-  accessibilityComponentType="button"
   accessibilityLabel="Lorem ipsum"
-  accessibilityTraits={
-    Array [
-      "button",
-    ]
-  }
   accessible={true}
-  collapsable={undefined}
-  hasTVPreferredFocus={undefined}
-  hitSlop={undefined}
   isTVSelectable={true}
-  nativeID={undefined}
-  onLayout={undefined}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
   onResponderRelease={[Function]}
@@ -378,8 +300,6 @@ exports[`iOS BpkButtonLink should render correctly with theme prop 1`] = `
       "opacity": 1,
     }
   }
-  testID={undefined}
-  tvParallaxProperties={undefined}
 >
   <View
     style={
@@ -394,9 +314,6 @@ exports[`iOS BpkButtonLink should render correctly with theme prop 1`] = `
     }
   >
     <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
       numberOfLines={1}
       style={
         Array [
@@ -429,20 +346,9 @@ exports[`iOS BpkButtonLink should render correctly with theme prop 1`] = `
 
 exports[`iOS BpkButtonLink should support elements as icons 1`] = `
 <View
-  accessibilityComponentType="button"
   accessibilityLabel="Lorem ipsum"
-  accessibilityTraits={
-    Array [
-      "button",
-    ]
-  }
   accessible={true}
-  collapsable={undefined}
-  hasTVPreferredFocus={undefined}
-  hitSlop={undefined}
   isTVSelectable={true}
-  nativeID={undefined}
-  onLayout={undefined}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
   onResponderRelease={[Function]}
@@ -454,8 +360,6 @@ exports[`iOS BpkButtonLink should support elements as icons 1`] = `
       "opacity": 1,
     }
   }
-  testID={undefined}
-  tvParallaxProperties={undefined}
 >
   <View
     style={
@@ -470,9 +374,6 @@ exports[`iOS BpkButtonLink should support elements as icons 1`] = `
     }
   >
     <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
       numberOfLines={1}
       style={
         Array [
@@ -497,9 +398,6 @@ exports[`iOS BpkButtonLink should support elements as icons 1`] = `
       Lorem ipsum
     </Text>
     <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
       style={
         Array [
           Object {
@@ -521,20 +419,9 @@ exports[`iOS BpkButtonLink should support elements as icons 1`] = `
 
 exports[`iOS BpkButtonLink should support overwriting styles 1`] = `
 <View
-  accessibilityComponentType="button"
   accessibilityLabel="Lorem ipsum"
-  accessibilityTraits={
-    Array [
-      "button",
-    ]
-  }
   accessible={true}
-  collapsable={undefined}
-  hasTVPreferredFocus={undefined}
-  hitSlop={undefined}
   isTVSelectable={true}
-  nativeID={undefined}
-  onLayout={undefined}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
   onResponderRelease={[Function]}
@@ -547,8 +434,6 @@ exports[`iOS BpkButtonLink should support overwriting styles 1`] = `
       "width": 4,
     }
   }
-  testID={undefined}
-  tvParallaxProperties={undefined}
 >
   <View
     style={
@@ -563,9 +448,6 @@ exports[`iOS BpkButtonLink should support overwriting styles 1`] = `
     }
   >
     <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
       numberOfLines={1}
       style={
         Array [
@@ -595,21 +477,9 @@ exports[`iOS BpkButtonLink should support overwriting styles 1`] = `
 
 exports[`iOS BpkButtonLink should support the "disabled" property 1`] = `
 <View
-  accessibilityComponentType="button"
   accessibilityLabel="Lorem ipsum"
-  accessibilityTraits={
-    Array [
-      "button",
-      "disabled",
-    ]
-  }
   accessible={true}
-  collapsable={undefined}
-  hasTVPreferredFocus={undefined}
-  hitSlop={undefined}
   isTVSelectable={true}
-  nativeID={undefined}
-  onLayout={undefined}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
   onResponderRelease={[Function]}
@@ -621,8 +491,6 @@ exports[`iOS BpkButtonLink should support the "disabled" property 1`] = `
       "opacity": 1,
     }
   }
-  testID={undefined}
-  tvParallaxProperties={undefined}
 >
   <View
     style={
@@ -637,9 +505,6 @@ exports[`iOS BpkButtonLink should support the "disabled" property 1`] = `
     }
   >
     <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
       numberOfLines={1}
       style={
         Array [
@@ -672,20 +537,9 @@ exports[`iOS BpkButtonLink should support the "disabled" property 1`] = `
 
 exports[`iOS BpkButtonLink should support the "icon" property 1`] = `
 <View
-  accessibilityComponentType="button"
   accessibilityLabel="Lorem ipsum"
-  accessibilityTraits={
-    Array [
-      "button",
-    ]
-  }
   accessible={true}
-  collapsable={undefined}
-  hasTVPreferredFocus={undefined}
-  hitSlop={undefined}
   isTVSelectable={true}
-  nativeID={undefined}
-  onLayout={undefined}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
   onResponderRelease={[Function]}
@@ -697,8 +551,6 @@ exports[`iOS BpkButtonLink should support the "icon" property 1`] = `
       "opacity": 1,
     }
   }
-  testID={undefined}
-  tvParallaxProperties={undefined}
 >
   <View
     style={
@@ -713,9 +565,6 @@ exports[`iOS BpkButtonLink should support the "icon" property 1`] = `
     }
   >
     <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
       numberOfLines={1}
       style={
         Array [
@@ -740,9 +589,7 @@ exports[`iOS BpkButtonLink should support the "icon" property 1`] = `
       Lorem ipsum
     </Text>
     <Text
-      accessible={true}
       allowFontScaling={false}
-      ellipsizeMode="tail"
       style={
         Array [
           Object {
@@ -771,20 +618,9 @@ exports[`iOS BpkButtonLink should support the "icon" property 1`] = `
 
 exports[`iOS should support the "icon" and "large" property 1`] = `
 <View
-  accessibilityComponentType="button"
   accessibilityLabel="Lorem ipsum"
-  accessibilityTraits={
-    Array [
-      "button",
-    ]
-  }
   accessible={true}
-  collapsable={undefined}
-  hasTVPreferredFocus={undefined}
-  hitSlop={undefined}
   isTVSelectable={true}
-  nativeID={undefined}
-  onLayout={undefined}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
   onResponderRelease={[Function]}
@@ -796,8 +632,6 @@ exports[`iOS should support the "icon" and "large" property 1`] = `
       "opacity": 1,
     }
   }
-  testID={undefined}
-  tvParallaxProperties={undefined}
 >
   <View
     style={
@@ -815,9 +649,6 @@ exports[`iOS should support the "icon" and "large" property 1`] = `
     }
   >
     <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
       numberOfLines={1}
       style={
         Array [
@@ -842,9 +673,7 @@ exports[`iOS should support the "icon" and "large" property 1`] = `
       Lorem ipsum
     </Text>
     <Text
-      accessible={true}
       allowFontScaling={false}
-      ellipsizeMode="tail"
       style={
         Array [
           Object {
@@ -870,20 +699,9 @@ exports[`iOS should support the "icon" and "large" property 1`] = `
 
 exports[`iOS should support the "large" property 1`] = `
 <View
-  accessibilityComponentType="button"
   accessibilityLabel="Lorem ipsum"
-  accessibilityTraits={
-    Array [
-      "button",
-    ]
-  }
   accessible={true}
-  collapsable={undefined}
-  hasTVPreferredFocus={undefined}
-  hitSlop={undefined}
   isTVSelectable={true}
-  nativeID={undefined}
-  onLayout={undefined}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
   onResponderRelease={[Function]}
@@ -895,8 +713,6 @@ exports[`iOS should support the "large" property 1`] = `
       "opacity": 1,
     }
   }
-  testID={undefined}
-  tvParallaxProperties={undefined}
 >
   <View
     style={
@@ -914,9 +730,6 @@ exports[`iOS should support the "large" property 1`] = `
     }
   >
     <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
       numberOfLines={1}
       style={
         Array [

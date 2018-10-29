@@ -31,9 +31,7 @@ exports[`iOS BpkBadge should render correctly docked to the end 1`] = `
     }
   >
     <Text
-      accessible={true}
       allowFontScaling={false}
-      ellipsizeMode="tail"
       style={
         Array [
           Object {
@@ -86,9 +84,7 @@ exports[`iOS BpkBadge should render correctly docked to the end 1`] = `
     }
   >
     <Text
-      accessible={true}
       allowFontScaling={false}
-      ellipsizeMode="tail"
       style={
         Array [
           Object {
@@ -141,9 +137,7 @@ exports[`iOS BpkBadge should render correctly docked to the end 1`] = `
     }
   >
     <Text
-      accessible={true}
       allowFontScaling={false}
-      ellipsizeMode="tail"
       style={
         Array [
           Object {
@@ -198,9 +192,7 @@ exports[`iOS BpkBadge should render correctly docked to the end 1`] = `
     }
   >
     <Text
-      accessible={true}
       allowFontScaling={false}
-      ellipsizeMode="tail"
       style={
         Array [
           Object {
@@ -253,9 +245,7 @@ exports[`iOS BpkBadge should render correctly docked to the end 1`] = `
     }
   >
     <Text
-      accessible={true}
       allowFontScaling={false}
-      ellipsizeMode="tail"
       style={
         Array [
           Object {
@@ -315,9 +305,7 @@ exports[`iOS BpkBadge should render correctly docked to the end 1`] = `
     }
   >
     <Text
-      accessible={true}
       allowFontScaling={false}
-      ellipsizeMode="tail"
       style={
         Array [
           Object {
@@ -377,9 +365,7 @@ exports[`iOS BpkBadge should render correctly docked to the start 1`] = `
     }
   >
     <Text
-      accessible={true}
       allowFontScaling={false}
-      ellipsizeMode="tail"
       style={
         Array [
           Object {
@@ -432,9 +418,7 @@ exports[`iOS BpkBadge should render correctly docked to the start 1`] = `
     }
   >
     <Text
-      accessible={true}
       allowFontScaling={false}
-      ellipsizeMode="tail"
       style={
         Array [
           Object {
@@ -487,9 +471,7 @@ exports[`iOS BpkBadge should render correctly docked to the start 1`] = `
     }
   >
     <Text
-      accessible={true}
       allowFontScaling={false}
-      ellipsizeMode="tail"
       style={
         Array [
           Object {
@@ -544,9 +526,7 @@ exports[`iOS BpkBadge should render correctly docked to the start 1`] = `
     }
   >
     <Text
-      accessible={true}
       allowFontScaling={false}
-      ellipsizeMode="tail"
       style={
         Array [
           Object {
@@ -599,9 +579,7 @@ exports[`iOS BpkBadge should render correctly docked to the start 1`] = `
     }
   >
     <Text
-      accessible={true}
       allowFontScaling={false}
-      ellipsizeMode="tail"
       style={
         Array [
           Object {
@@ -661,9 +639,7 @@ exports[`iOS BpkBadge should render correctly docked to the start 1`] = `
     }
   >
     <Text
-      accessible={true}
       allowFontScaling={false}
-      ellipsizeMode="tail"
       style={
         Array [
           Object {
@@ -715,9 +691,7 @@ exports[`iOS BpkBadge should render correctly in normal mode 1`] = `
     }
   >
     <Text
-      accessible={true}
       allowFontScaling={false}
-      ellipsizeMode="tail"
       style={
         Array [
           Object {
@@ -762,9 +736,7 @@ exports[`iOS BpkBadge should render correctly in normal mode 1`] = `
     }
   >
     <Text
-      accessible={true}
       allowFontScaling={false}
-      ellipsizeMode="tail"
       style={
         Array [
           Object {
@@ -809,9 +781,7 @@ exports[`iOS BpkBadge should render correctly in normal mode 1`] = `
     }
   >
     <Text
-      accessible={true}
       allowFontScaling={false}
-      ellipsizeMode="tail"
       style={
         Array [
           Object {
@@ -858,9 +828,7 @@ exports[`iOS BpkBadge should render correctly in normal mode 1`] = `
     }
   >
     <Text
-      accessible={true}
       allowFontScaling={false}
-      ellipsizeMode="tail"
       style={
         Array [
           Object {
@@ -905,9 +873,7 @@ exports[`iOS BpkBadge should render correctly in normal mode 1`] = `
     }
   >
     <Text
-      accessible={true}
       allowFontScaling={false}
-      ellipsizeMode="tail"
       style={
         Array [
           Object {
@@ -959,9 +925,7 @@ exports[`iOS BpkBadge should render correctly in normal mode 1`] = `
     }
   >
     <Text
-      accessible={true}
       allowFontScaling={false}
-      ellipsizeMode="tail"
       style={
         Array [
           Object {
@@ -1016,9 +980,7 @@ exports[`iOS BpkBadge should render correctly with user provided style 1`] = `
     }
   >
     <Text
-      accessible={true}
       allowFontScaling={false}
-      ellipsizeMode="tail"
       style={
         Array [
           Object {
@@ -1066,9 +1028,7 @@ exports[`iOS BpkBadge should render correctly with user provided style 1`] = `
     }
   >
     <Text
-      accessible={true}
       allowFontScaling={false}
-      ellipsizeMode="tail"
       style={
         Array [
           Object {
@@ -1116,9 +1076,7 @@ exports[`iOS BpkBadge should render correctly with user provided style 1`] = `
     }
   >
     <Text
-      accessible={true}
       allowFontScaling={false}
-      ellipsizeMode="tail"
       style={
         Array [
           Object {
@@ -1168,9 +1126,7 @@ exports[`iOS BpkBadge should render correctly with user provided style 1`] = `
     }
   >
     <Text
-      accessible={true}
       allowFontScaling={false}
-      ellipsizeMode="tail"
       style={
         Array [
           Object {
@@ -1218,9 +1174,7 @@ exports[`iOS BpkBadge should render correctly with user provided style 1`] = `
     }
   >
     <Text
-      accessible={true}
       allowFontScaling={false}
-      ellipsizeMode="tail"
       style={
         Array [
           Object {
@@ -1275,9 +1229,7 @@ exports[`iOS BpkBadge should render correctly with user provided style 1`] = `
     }
   >
     <Text
-      accessible={true}
       allowFontScaling={false}
-      ellipsizeMode="tail"
       style={
         Array [
           Object {

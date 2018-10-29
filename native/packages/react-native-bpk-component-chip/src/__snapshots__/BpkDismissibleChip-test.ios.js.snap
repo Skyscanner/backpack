@@ -2,7 +2,6 @@
 
 exports[`iOS BpkDismissibleChip should render correctly 1`] = `
 <View
-  accessibilityComponentType={undefined}
   accessibilityLabel="Dismiss"
   accessibilityTraits={
     Array [
@@ -10,9 +9,6 @@ exports[`iOS BpkDismissibleChip should render correctly 1`] = `
     ]
   }
   accessible={true}
-  hitSlop={undefined}
-  nativeID={undefined}
-  onLayout={undefined}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
   onResponderRelease={[Function]}
@@ -38,12 +34,8 @@ exports[`iOS BpkDismissibleChip should render correctly 1`] = `
       null,
     ]
   }
-  testID={undefined}
 >
   <Text
-    accessible={true}
-    allowFontScaling={true}
-    ellipsizeMode="tail"
     style={
       Array [
         Object {
@@ -66,9 +58,7 @@ exports[`iOS BpkDismissibleChip should render correctly 1`] = `
     Label
   </Text>
   <Text
-    accessible={true}
     allowFontScaling={false}
-    ellipsizeMode="tail"
     style={
       Array [
         Object {
@@ -114,7 +104,6 @@ exports[`iOS BpkDismissibleChip should render correctly 1`] = `
 
 exports[`iOS BpkDismissibleChip should render correctly with arbitrary props 1`] = `
 <View
-  accessibilityComponentType={undefined}
   accessibilityLabel="Dismiss"
   accessibilityTraits={
     Array [
@@ -122,9 +111,6 @@ exports[`iOS BpkDismissibleChip should render correctly with arbitrary props 1`]
     ]
   }
   accessible={true}
-  hitSlop={undefined}
-  nativeID={undefined}
-  onLayout={undefined}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
   onResponderRelease={[Function]}
@@ -153,9 +139,6 @@ exports[`iOS BpkDismissibleChip should render correctly with arbitrary props 1`]
   testID="123"
 >
   <Text
-    accessible={true}
-    allowFontScaling={true}
-    ellipsizeMode="tail"
     style={
       Array [
         Object {
@@ -178,9 +161,7 @@ exports[`iOS BpkDismissibleChip should render correctly with arbitrary props 1`]
     Label
   </Text>
   <Text
-    accessible={true}
     allowFontScaling={false}
-    ellipsizeMode="tail"
     style={
       Array [
         Object {
@@ -226,7 +207,6 @@ exports[`iOS BpkDismissibleChip should render correctly with arbitrary props 1`]
 
 exports[`iOS BpkDismissibleChip should render correctly with custom style 1`] = `
 <View
-  accessibilityComponentType={undefined}
   accessibilityLabel="Dismiss"
   accessibilityTraits={
     Array [
@@ -234,9 +214,6 @@ exports[`iOS BpkDismissibleChip should render correctly with custom style 1`] = 
     ]
   }
   accessible={true}
-  hitSlop={undefined}
-  nativeID={undefined}
-  onLayout={undefined}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
   onResponderRelease={[Function]}
@@ -264,12 +241,8 @@ exports[`iOS BpkDismissibleChip should render correctly with custom style 1`] = 
       },
     ]
   }
-  testID={undefined}
 >
   <Text
-    accessible={true}
-    allowFontScaling={true}
-    ellipsizeMode="tail"
     style={
       Array [
         Object {
@@ -292,9 +265,7 @@ exports[`iOS BpkDismissibleChip should render correctly with custom style 1`] = 
     Label
   </Text>
   <Text
-    accessible={true}
     allowFontScaling={false}
-    ellipsizeMode="tail"
     style={
       Array [
         Object {

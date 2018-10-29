@@ -13,9 +13,7 @@ exports[`android TitleView should render correctly with leading icon 1`] = `
   }
 >
   <Text
-    accessible={true}
     allowFontScaling={false}
-    ellipsizeMode="tail"
     style={
       Array [
         Object {
@@ -41,7 +39,6 @@ exports[`android TitleView should render correctly with leading icon 1`] = `
     
   </Text>
   <Text
-    accessible={true}
     allowFontScaling={false}
     ellipsizeMode="tail"
     numberOfLines={1}
@@ -86,7 +83,6 @@ exports[`android TitleView should render correctly with only a title 1`] = `
   }
 >
   <Text
-    accessible={true}
     allowFontScaling={false}
     ellipsizeMode="tail"
     numberOfLines={1}
@@ -129,7 +125,6 @@ exports[`android TitleView should render correctly with trailing icon 1`] = `
   }
 >
   <Text
-    accessible={true}
     allowFontScaling={false}
     ellipsizeMode="tail"
     numberOfLines={1}
@@ -159,9 +154,7 @@ exports[`android TitleView should render correctly with trailing icon 1`] = `
     Checkout
   </Text>
   <Text
-    accessible={true}
     allowFontScaling={false}
-    ellipsizeMode="tail"
     style={
       Array [
         Object {

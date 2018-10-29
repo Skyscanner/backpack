@@ -2,12 +2,7 @@
 
 exports[`BpkTouchableNativeFeedback should render correctly on API < 21 1`] = `
 <FakeComponent
-  accessibilityComponentType={undefined}
-  accessibilityLabel={undefined}
-  accessibilityTraits={undefined}
   accessible={true}
-  hasTVPreferredFocus={undefined}
-  hitSlop={undefined}
   isTVSelectable={true}
   nativeBackgroundAndroid={
     Object {
@@ -15,25 +10,18 @@ exports[`BpkTouchableNativeFeedback should render correctly on API < 21 1`] = `
       "type": "ThemeAttrAndroid",
     }
   }
-  onLayout={undefined}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
   onResponderRelease={[Function]}
   onResponderTerminate={[Function]}
   onResponderTerminationRequest={[Function]}
   onStartShouldSetResponder={[Function]}
-  testID={undefined}
 />
 `;
 
 exports[`BpkTouchableNativeFeedback should render correctly on API >= 21 1`] = `
 <FakeComponent
-  accessibilityComponentType={undefined}
-  accessibilityLabel={undefined}
-  accessibilityTraits={undefined}
   accessible={true}
-  hasTVPreferredFocus={undefined}
-  hitSlop={undefined}
   isTVSelectable={true}
   nativeBackgroundAndroid={
     Object {
@@ -41,25 +29,18 @@ exports[`BpkTouchableNativeFeedback should render correctly on API >= 21 1`] = `
       "type": "ThemeAttrAndroid",
     }
   }
-  onLayout={undefined}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
   onResponderRelease={[Function]}
   onResponderTerminate={[Function]}
   onResponderTerminationRequest={[Function]}
   onStartShouldSetResponder={[Function]}
-  testID={undefined}
 />
 `;
 
 exports[`BpkTouchableNativeFeedback should render correctly with arbitrary props 1`] = `
 <FakeComponent
-  accessibilityComponentType={undefined}
-  accessibilityLabel={undefined}
-  accessibilityTraits={undefined}
   accessible={true}
-  hasTVPreferredFocus={undefined}
-  hitSlop={undefined}
   isTVSelectable={true}
   nativeBackgroundAndroid={
     Object {
@@ -67,7 +48,6 @@ exports[`BpkTouchableNativeFeedback should render correctly with arbitrary props
       "type": "ThemeAttrAndroid",
     }
   }
-  onLayout={undefined}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
   onResponderRelease={[Function]}
@@ -80,12 +60,7 @@ exports[`BpkTouchableNativeFeedback should render correctly with arbitrary props
 
 exports[`BpkTouchableNativeFeedback should render correctly with custom style prop 1`] = `
 <FakeComponent
-  accessibilityComponentType={undefined}
-  accessibilityLabel={undefined}
-  accessibilityTraits={undefined}
   accessible={true}
-  hasTVPreferredFocus={undefined}
-  hitSlop={undefined}
   isTVSelectable={true}
   nativeBackgroundAndroid={
     Object {
@@ -93,13 +68,11 @@ exports[`BpkTouchableNativeFeedback should render correctly with custom style pr
       "type": "ThemeAttrAndroid",
     }
   }
-  onLayout={undefined}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
   onResponderRelease={[Function]}
   onResponderTerminate={[Function]}
   onResponderTerminationRequest={[Function]}
   onStartShouldSetResponder={[Function]}
-  testID={undefined}
 />
 `;

@@ -10,9 +10,6 @@ exports[`iOS BpkButton should render correctly 1`] = `
     ]
   }
   accessible={true}
-  hitSlop={undefined}
-  nativeID={undefined}
-  onLayout={undefined}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
   onResponderRelease={[Function]}
@@ -20,7 +17,6 @@ exports[`iOS BpkButton should render correctly 1`] = `
   onResponderTerminationRequest={[Function]}
   onStartShouldSetResponder={[Function]}
   style={null}
-  testID={undefined}
 >
   <View
     colors={
@@ -46,9 +42,6 @@ exports[`iOS BpkButton should render correctly 1`] = `
     }
   >
     <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
       style={
         Array [
           Object {
@@ -108,9 +101,6 @@ exports[`iOS BpkButton should render correctly with iconAlignment="centerLeading
     ]
   }
   accessible={true}
-  hitSlop={undefined}
-  nativeID={undefined}
-  onLayout={undefined}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
   onResponderRelease={[Function]}
@@ -118,7 +108,6 @@ exports[`iOS BpkButton should render correctly with iconAlignment="centerLeading
   onResponderTerminationRequest={[Function]}
   onStartShouldSetResponder={[Function]}
   style={null}
-  testID={undefined}
 >
   <View
     colors={
@@ -147,9 +136,6 @@ exports[`iOS BpkButton should render correctly with iconAlignment="centerLeading
     }
   >
     <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
       style={
         Array [
           Object {
@@ -178,9 +164,7 @@ exports[`iOS BpkButton should render correctly with iconAlignment="centerLeading
       Lorem ipsum
     </Text>
     <Text
-      accessible={true}
       allowFontScaling={false}
-      ellipsizeMode="tail"
       style={
         Array [
           Object {
@@ -250,9 +234,6 @@ exports[`iOS BpkButton should render correctly with iconAlignment="centerTrailin
     ]
   }
   accessible={true}
-  hitSlop={undefined}
-  nativeID={undefined}
-  onLayout={undefined}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
   onResponderRelease={[Function]}
@@ -260,7 +241,6 @@ exports[`iOS BpkButton should render correctly with iconAlignment="centerTrailin
   onResponderTerminationRequest={[Function]}
   onStartShouldSetResponder={[Function]}
   style={null}
-  testID={undefined}
 >
   <View
     colors={
@@ -286,9 +266,6 @@ exports[`iOS BpkButton should render correctly with iconAlignment="centerTrailin
     }
   >
     <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
       style={
         Array [
           Object {
@@ -316,9 +293,7 @@ exports[`iOS BpkButton should render correctly with iconAlignment="centerTrailin
       Lorem ipsum
     </Text>
     <Text
-      accessible={true}
       allowFontScaling={false}
-      ellipsizeMode="tail"
       style={
         Array [
           Object {
@@ -383,9 +358,6 @@ exports[`iOS BpkButton should render correctly with iconAlignment="leading" 1`] 
     ]
   }
   accessible={true}
-  hitSlop={undefined}
-  nativeID={undefined}
-  onLayout={undefined}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
   onResponderRelease={[Function]}
@@ -393,7 +365,6 @@ exports[`iOS BpkButton should render correctly with iconAlignment="leading" 1`] 
   onResponderTerminationRequest={[Function]}
   onStartShouldSetResponder={[Function]}
   style={null}
-  testID={undefined}
 >
   <View
     colors={
@@ -425,9 +396,6 @@ exports[`iOS BpkButton should render correctly with iconAlignment="leading" 1`] 
     }
   >
     <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
       style={
         Array [
           Object {
@@ -457,9 +425,7 @@ exports[`iOS BpkButton should render correctly with iconAlignment="leading" 1`] 
       Lorem ipsum
     </Text>
     <Text
-      accessible={true}
       allowFontScaling={false}
-      ellipsizeMode="tail"
       style={
         Array [
           Object {
@@ -531,9 +497,6 @@ exports[`iOS BpkButton should render correctly with iconAlignment="trailing" 1`]
     ]
   }
   accessible={true}
-  hitSlop={undefined}
-  nativeID={undefined}
-  onLayout={undefined}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
   onResponderRelease={[Function]}
@@ -541,7 +504,6 @@ exports[`iOS BpkButton should render correctly with iconAlignment="trailing" 1`]
   onResponderTerminationRequest={[Function]}
   onStartShouldSetResponder={[Function]}
   style={null}
-  testID={undefined}
 >
   <View
     colors={
@@ -570,9 +532,6 @@ exports[`iOS BpkButton should render correctly with iconAlignment="trailing" 1`]
     }
   >
     <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
       style={
         Array [
           Object {
@@ -601,9 +560,7 @@ exports[`iOS BpkButton should render correctly with iconAlignment="trailing" 1`]
       Lorem ipsum
     </Text>
     <Text
-      accessible={true}
       allowFontScaling={false}
-      ellipsizeMode="tail"
       style={
         Array [
           Object {
@@ -670,9 +627,6 @@ exports[`iOS BpkButton should render correctly with type="destructive" 1`] = `
     ]
   }
   accessible={true}
-  hitSlop={undefined}
-  nativeID={undefined}
-  onLayout={undefined}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
   onResponderRelease={[Function]}
@@ -680,7 +634,6 @@ exports[`iOS BpkButton should render correctly with type="destructive" 1`] = `
   onResponderTerminationRequest={[Function]}
   onStartShouldSetResponder={[Function]}
   style={null}
-  testID={undefined}
 >
   <View
     colors={
@@ -712,9 +665,6 @@ exports[`iOS BpkButton should render correctly with type="destructive" 1`] = `
     }
   >
     <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
       style={
         Array [
           Object {
@@ -778,9 +728,6 @@ exports[`iOS BpkButton should render correctly with type="destructive" and disab
     ]
   }
   accessible={true}
-  hitSlop={undefined}
-  nativeID={undefined}
-  onLayout={undefined}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
   onResponderRelease={[Function]}
@@ -788,7 +735,6 @@ exports[`iOS BpkButton should render correctly with type="destructive" and disab
   onResponderTerminationRequest={[Function]}
   onStartShouldSetResponder={[Function]}
   style={null}
-  testID={undefined}
 >
   <View
     colors={
@@ -821,9 +767,6 @@ exports[`iOS BpkButton should render correctly with type="destructive" and disab
     }
   >
     <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
       style={
         Array [
           Object {
@@ -889,9 +832,6 @@ exports[`iOS BpkButton should render correctly with type="featured" 1`] = `
     ]
   }
   accessible={true}
-  hitSlop={undefined}
-  nativeID={undefined}
-  onLayout={undefined}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
   onResponderRelease={[Function]}
@@ -899,7 +839,6 @@ exports[`iOS BpkButton should render correctly with type="featured" 1`] = `
   onResponderTerminationRequest={[Function]}
   onStartShouldSetResponder={[Function]}
   style={null}
-  testID={undefined}
 >
   <View
     colors={
@@ -925,9 +864,6 @@ exports[`iOS BpkButton should render correctly with type="featured" 1`] = `
     }
   >
     <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
       style={
         Array [
           Object {
@@ -988,9 +924,6 @@ exports[`iOS BpkButton should render correctly with type="featured" and disabled
     ]
   }
   accessible={true}
-  hitSlop={undefined}
-  nativeID={undefined}
-  onLayout={undefined}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
   onResponderRelease={[Function]}
@@ -998,7 +931,6 @@ exports[`iOS BpkButton should render correctly with type="featured" and disabled
   onResponderTerminationRequest={[Function]}
   onStartShouldSetResponder={[Function]}
   style={null}
-  testID={undefined}
 >
   <View
     colors={
@@ -1025,9 +957,6 @@ exports[`iOS BpkButton should render correctly with type="featured" and disabled
     }
   >
     <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
       style={
         Array [
           Object {
@@ -1090,9 +1019,6 @@ exports[`iOS BpkButton should render correctly with type="primary" 1`] = `
     ]
   }
   accessible={true}
-  hitSlop={undefined}
-  nativeID={undefined}
-  onLayout={undefined}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
   onResponderRelease={[Function]}
@@ -1100,7 +1026,6 @@ exports[`iOS BpkButton should render correctly with type="primary" 1`] = `
   onResponderTerminationRequest={[Function]}
   onStartShouldSetResponder={[Function]}
   style={null}
-  testID={undefined}
 >
   <View
     colors={
@@ -1126,9 +1051,6 @@ exports[`iOS BpkButton should render correctly with type="primary" 1`] = `
     }
   >
     <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
       style={
         Array [
           Object {
@@ -1189,9 +1111,6 @@ exports[`iOS BpkButton should render correctly with type="primary" and disabled 
     ]
   }
   accessible={true}
-  hitSlop={undefined}
-  nativeID={undefined}
-  onLayout={undefined}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
   onResponderRelease={[Function]}
@@ -1199,7 +1118,6 @@ exports[`iOS BpkButton should render correctly with type="primary" and disabled 
   onResponderTerminationRequest={[Function]}
   onStartShouldSetResponder={[Function]}
   style={null}
-  testID={undefined}
 >
   <View
     colors={
@@ -1226,9 +1144,6 @@ exports[`iOS BpkButton should render correctly with type="primary" and disabled 
     }
   >
     <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
       style={
         Array [
           Object {
@@ -1291,9 +1206,6 @@ exports[`iOS BpkButton should render correctly with type="secondary" 1`] = `
     ]
   }
   accessible={true}
-  hitSlop={undefined}
-  nativeID={undefined}
-  onLayout={undefined}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
   onResponderRelease={[Function]}
@@ -1301,7 +1213,6 @@ exports[`iOS BpkButton should render correctly with type="secondary" 1`] = `
   onResponderTerminationRequest={[Function]}
   onStartShouldSetResponder={[Function]}
   style={null}
-  testID={undefined}
 >
   <View
     colors={
@@ -1333,9 +1244,6 @@ exports[`iOS BpkButton should render correctly with type="secondary" 1`] = `
     }
   >
     <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
       style={
         Array [
           Object {
@@ -1399,9 +1307,6 @@ exports[`iOS BpkButton should render correctly with type="secondary" and disable
     ]
   }
   accessible={true}
-  hitSlop={undefined}
-  nativeID={undefined}
-  onLayout={undefined}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
   onResponderRelease={[Function]}
@@ -1409,7 +1314,6 @@ exports[`iOS BpkButton should render correctly with type="secondary" and disable
   onResponderTerminationRequest={[Function]}
   onStartShouldSetResponder={[Function]}
   style={null}
-  testID={undefined}
 >
   <View
     colors={
@@ -1442,9 +1346,6 @@ exports[`iOS BpkButton should render correctly with type="secondary" and disable
     }
   >
     <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
       style={
         Array [
           Object {
@@ -1510,9 +1411,6 @@ exports[`iOS BpkButton should support elements as icons 1`] = `
     ]
   }
   accessible={true}
-  hitSlop={undefined}
-  nativeID={undefined}
-  onLayout={undefined}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
   onResponderRelease={[Function]}
@@ -1520,7 +1418,6 @@ exports[`iOS BpkButton should support elements as icons 1`] = `
   onResponderTerminationRequest={[Function]}
   onStartShouldSetResponder={[Function]}
   style={null}
-  testID={undefined}
 >
   <View
     colors={
@@ -1550,9 +1447,6 @@ exports[`iOS BpkButton should support elements as icons 1`] = `
     }
   >
     <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
       style={
         Array [
           Object {
@@ -1601,9 +1495,6 @@ exports[`iOS BpkButton should support having an icon as well as a title 1`] = `
     ]
   }
   accessible={true}
-  hitSlop={undefined}
-  nativeID={undefined}
-  onLayout={undefined}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
   onResponderRelease={[Function]}
@@ -1611,7 +1502,6 @@ exports[`iOS BpkButton should support having an icon as well as a title 1`] = `
   onResponderTerminationRequest={[Function]}
   onStartShouldSetResponder={[Function]}
   style={null}
-  testID={undefined}
 >
   <View
     colors={
@@ -1640,9 +1530,6 @@ exports[`iOS BpkButton should support having an icon as well as a title 1`] = `
     }
   >
     <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
       style={
         Array [
           Object {
@@ -1671,9 +1558,7 @@ exports[`iOS BpkButton should support having an icon as well as a title 1`] = `
       Lorem ipsum
     </Text>
     <Text
-      accessible={true}
       allowFontScaling={false}
-      ellipsizeMode="tail"
       style={
         Array [
           Object {
@@ -1740,9 +1625,6 @@ exports[`iOS BpkButton should support overwriting styles 1`] = `
     ]
   }
   accessible={true}
-  hitSlop={undefined}
-  nativeID={undefined}
-  onLayout={undefined}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
   onResponderRelease={[Function]}
@@ -1754,7 +1636,6 @@ exports[`iOS BpkButton should support overwriting styles 1`] = `
       "width": 4,
     }
   }
-  testID={undefined}
 >
   <View
     colors={
@@ -1780,9 +1661,6 @@ exports[`iOS BpkButton should support overwriting styles 1`] = `
     }
   >
     <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
       style={
         Array [
           Object {
@@ -1843,9 +1721,6 @@ exports[`iOS BpkButton should support the "disabled" property 1`] = `
     ]
   }
   accessible={true}
-  hitSlop={undefined}
-  nativeID={undefined}
-  onLayout={undefined}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
   onResponderRelease={[Function]}
@@ -1853,7 +1728,6 @@ exports[`iOS BpkButton should support the "disabled" property 1`] = `
   onResponderTerminationRequest={[Function]}
   onStartShouldSetResponder={[Function]}
   style={null}
-  testID={undefined}
 >
   <View
     colors={
@@ -1880,9 +1754,6 @@ exports[`iOS BpkButton should support the "disabled" property 1`] = `
     }
   >
     <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
       style={
         Array [
           Object {
@@ -1945,9 +1816,6 @@ exports[`iOS BpkButton should support the "icon" property 1`] = `
     ]
   }
   accessible={true}
-  hitSlop={undefined}
-  nativeID={undefined}
-  onLayout={undefined}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
   onResponderRelease={[Function]}
@@ -1955,7 +1823,6 @@ exports[`iOS BpkButton should support the "icon" property 1`] = `
   onResponderTerminationRequest={[Function]}
   onStartShouldSetResponder={[Function]}
   style={null}
-  testID={undefined}
 >
   <View
     colors={
@@ -1984,9 +1851,6 @@ exports[`iOS BpkButton should support the "icon" property 1`] = `
     }
   >
     <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
       style={
         Array [
           Object {
@@ -2015,9 +1879,7 @@ exports[`iOS BpkButton should support the "icon" property 1`] = `
       Lorem ipsum
     </Text>
     <Text
-      accessible={true}
       allowFontScaling={false}
-      ellipsizeMode="tail"
       style={
         Array [
           Object {
@@ -2084,9 +1946,6 @@ exports[`iOS BpkButton should support the "iconOnly" property 1`] = `
     ]
   }
   accessible={true}
-  hitSlop={undefined}
-  nativeID={undefined}
-  onLayout={undefined}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
   onResponderRelease={[Function]}
@@ -2094,7 +1953,6 @@ exports[`iOS BpkButton should support the "iconOnly" property 1`] = `
   onResponderTerminationRequest={[Function]}
   onStartShouldSetResponder={[Function]}
   style={null}
-  testID={undefined}
 >
   <View
     colors={
@@ -2124,9 +1982,7 @@ exports[`iOS BpkButton should support the "iconOnly" property 1`] = `
     }
   >
     <Text
-      accessible={true}
       allowFontScaling={false}
-      ellipsizeMode="tail"
       style={
         Array [
           Object {
@@ -2195,9 +2051,6 @@ exports[`iOS BpkButton should support the "secondary" property 1`] = `
     ]
   }
   accessible={true}
-  hitSlop={undefined}
-  nativeID={undefined}
-  onLayout={undefined}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
   onResponderRelease={[Function]}
@@ -2205,7 +2058,6 @@ exports[`iOS BpkButton should support the "secondary" property 1`] = `
   onResponderTerminationRequest={[Function]}
   onStartShouldSetResponder={[Function]}
   style={null}
-  testID={undefined}
 >
   <View
     colors={
@@ -2237,9 +2089,6 @@ exports[`iOS BpkButton should support the "secondary" property 1`] = `
     }
   >
     <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
       style={
         Array [
           Object {
@@ -2302,9 +2151,6 @@ exports[`iOS BpkButtonThemed should render correctly 1`] = `
     ]
   }
   accessible={true}
-  hitSlop={undefined}
-  nativeID={undefined}
-  onLayout={undefined}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
   onResponderRelease={[Function]}
@@ -2312,7 +2158,6 @@ exports[`iOS BpkButtonThemed should render correctly 1`] = `
   onResponderTerminationRequest={[Function]}
   onStartShouldSetResponder={[Function]}
   style={null}
-  testID={undefined}
 >
   <View
     colors={
@@ -2338,9 +2183,6 @@ exports[`iOS BpkButtonThemed should render correctly 1`] = `
     }
   >
     <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
       style={
         Array [
           Object {
@@ -2402,9 +2244,6 @@ exports[`iOS should support the "icon" and "large" property 1`] = `
     ]
   }
   accessible={true}
-  hitSlop={undefined}
-  nativeID={undefined}
-  onLayout={undefined}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
   onResponderRelease={[Function]}
@@ -2412,7 +2251,6 @@ exports[`iOS should support the "icon" and "large" property 1`] = `
   onResponderTerminationRequest={[Function]}
   onStartShouldSetResponder={[Function]}
   style={null}
-  testID={undefined}
 >
   <View
     colors={
@@ -2445,9 +2283,6 @@ exports[`iOS should support the "icon" and "large" property 1`] = `
     }
   >
     <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
       style={
         Array [
           Object {
@@ -2479,9 +2314,7 @@ exports[`iOS should support the "icon" and "large" property 1`] = `
       Lorem ipsum
     </Text>
     <Text
-      accessible={true}
       allowFontScaling={false}
-      ellipsizeMode="tail"
       style={
         Array [
           Object {
@@ -2549,9 +2382,6 @@ exports[`iOS should support the "iconOnly" and "large" property 1`] = `
     ]
   }
   accessible={true}
-  hitSlop={undefined}
-  nativeID={undefined}
-  onLayout={undefined}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
   onResponderRelease={[Function]}
@@ -2559,7 +2389,6 @@ exports[`iOS should support the "iconOnly" and "large" property 1`] = `
   onResponderTerminationRequest={[Function]}
   onStartShouldSetResponder={[Function]}
   style={null}
-  testID={undefined}
 >
   <View
     colors={
@@ -2593,9 +2422,7 @@ exports[`iOS should support the "iconOnly" and "large" property 1`] = `
     }
   >
     <Text
-      accessible={true}
       allowFontScaling={false}
-      ellipsizeMode="tail"
       style={
         Array [
           Object {
@@ -2665,9 +2492,6 @@ exports[`iOS should support the "large" and secondary property 1`] = `
     ]
   }
   accessible={true}
-  hitSlop={undefined}
-  nativeID={undefined}
-  onLayout={undefined}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
   onResponderRelease={[Function]}
@@ -2675,7 +2499,6 @@ exports[`iOS should support the "large" and secondary property 1`] = `
   onResponderTerminationRequest={[Function]}
   onStartShouldSetResponder={[Function]}
   style={null}
-  testID={undefined}
 >
   <View
     colors={
@@ -2711,9 +2534,6 @@ exports[`iOS should support the "large" and secondary property 1`] = `
     }
   >
     <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
       style={
         Array [
           Object {
@@ -2779,9 +2599,6 @@ exports[`iOS should support the "large" property 1`] = `
     ]
   }
   accessible={true}
-  hitSlop={undefined}
-  nativeID={undefined}
-  onLayout={undefined}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
   onResponderRelease={[Function]}
@@ -2789,7 +2606,6 @@ exports[`iOS should support the "large" property 1`] = `
   onResponderTerminationRequest={[Function]}
   onStartShouldSetResponder={[Function]}
   style={null}
-  testID={undefined}
 >
   <View
     colors={
@@ -2819,9 +2635,6 @@ exports[`iOS should support the "large" property 1`] = `
     }
   >
     <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
       style={
         Array [
           Object {

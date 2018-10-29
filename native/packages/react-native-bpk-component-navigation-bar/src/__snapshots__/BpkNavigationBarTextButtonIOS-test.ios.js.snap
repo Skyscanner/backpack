@@ -2,20 +2,9 @@
 
 exports[`iOS BpkNavigationBarTextButtonIOS should render correctly 1`] = `
 <View
-  accessibilityComponentType="button"
   accessibilityLabel="Edit"
-  accessibilityTraits={
-    Array [
-      "button",
-    ]
-  }
   accessible={true}
-  collapsable={undefined}
-  hasTVPreferredFocus={undefined}
-  hitSlop={undefined}
   isTVSelectable={true}
-  nativeID={undefined}
-  onLayout={undefined}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
   onResponderRelease={[Function]}
@@ -29,21 +18,16 @@ exports[`iOS BpkNavigationBarTextButtonIOS should render correctly 1`] = `
       "zIndex": 2,
     }
   }
-  testID={undefined}
-  tvParallaxProperties={undefined}
 >
   <Text
-    accessible={true}
-    allowFontScaling={true}
-    ellipsizeMode="tail"
     style={
       Array [
         Object {
           "color": "rgb(82, 76, 97)",
-          "fontFamily": "System",
+          "fontFamily": "sans-serif",
           "fontSize": 20,
           "fontWeight": "400",
-          "letterSpacing": -0.78,
+          "letterSpacing": -0.4,
         },
         Object {},
         Array [
@@ -61,21 +45,9 @@ exports[`iOS BpkNavigationBarTextButtonIOS should render correctly 1`] = `
 
 exports[`iOS BpkNavigationBarTextButtonIOS should render correctly disabled 1`] = `
 <View
-  accessibilityComponentType="button"
   accessibilityLabel="Done"
-  accessibilityTraits={
-    Array [
-      "button",
-      "disabled",
-    ]
-  }
   accessible={true}
-  collapsable={undefined}
-  hasTVPreferredFocus={undefined}
-  hitSlop={undefined}
   isTVSelectable={true}
-  nativeID={undefined}
-  onLayout={undefined}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
   onResponderRelease={[Function]}
@@ -89,21 +61,16 @@ exports[`iOS BpkNavigationBarTextButtonIOS should render correctly disabled 1`] 
       "zIndex": 2,
     }
   }
-  testID={undefined}
-  tvParallaxProperties={undefined}
 >
   <Text
-    accessible={true}
-    allowFontScaling={true}
-    ellipsizeMode="tail"
     style={
       Array [
         Object {
           "color": "rgb(82, 76, 97)",
-          "fontFamily": "System",
+          "fontFamily": "sans-serif",
           "fontSize": 20,
           "fontWeight": "400",
-          "letterSpacing": -0.78,
+          "letterSpacing": -0.4,
         },
         Object {},
         Array [
@@ -121,20 +88,9 @@ exports[`iOS BpkNavigationBarTextButtonIOS should render correctly disabled 1`] 
 
 exports[`iOS BpkNavigationBarTextButtonIOS should render correctly emphasize 1`] = `
 <View
-  accessibilityComponentType="button"
   accessibilityLabel="Done"
-  accessibilityTraits={
-    Array [
-      "button",
-    ]
-  }
   accessible={true}
-  collapsable={undefined}
-  hasTVPreferredFocus={undefined}
-  hitSlop={undefined}
   isTVSelectable={true}
-  nativeID={undefined}
-  onLayout={undefined}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
   onResponderRelease={[Function]}
@@ -148,24 +104,19 @@ exports[`iOS BpkNavigationBarTextButtonIOS should render correctly emphasize 1`]
       "zIndex": 2,
     }
   }
-  testID={undefined}
-  tvParallaxProperties={undefined}
 >
   <Text
-    accessible={true}
-    allowFontScaling={true}
-    ellipsizeMode="tail"
     style={
       Array [
         Object {
           "color": "rgb(82, 76, 97)",
-          "fontFamily": "System",
+          "fontFamily": "sans-serif",
           "fontSize": 20,
           "fontWeight": "400",
-          "letterSpacing": -0.78,
+          "letterSpacing": -0.4,
         },
         Object {
-          "fontWeight": "600",
+          "fontWeight": "500",
         },
         Array [
           Object {
@@ -182,20 +133,9 @@ exports[`iOS BpkNavigationBarTextButtonIOS should render correctly emphasize 1`]
 
 exports[`iOS BpkNavigationBarTextButtonIOS should render correctly leading configuration 1`] = `
 <View
-  accessibilityComponentType="button"
   accessibilityLabel="Cancel"
-  accessibilityTraits={
-    Array [
-      "button",
-    ]
-  }
   accessible={true}
-  collapsable={undefined}
-  hasTVPreferredFocus={undefined}
-  hitSlop={undefined}
   isTVSelectable={true}
-  nativeID={undefined}
-  onLayout={undefined}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
   onResponderRelease={[Function]}
@@ -209,21 +149,16 @@ exports[`iOS BpkNavigationBarTextButtonIOS should render correctly leading confi
       "zIndex": 2,
     }
   }
-  testID={undefined}
-  tvParallaxProperties={undefined}
 >
   <Text
-    accessible={true}
-    allowFontScaling={true}
-    ellipsizeMode="tail"
     style={
       Array [
         Object {
           "color": "rgb(82, 76, 97)",
-          "fontFamily": "System",
+          "fontFamily": "sans-serif",
           "fontSize": 20,
           "fontWeight": "400",
-          "letterSpacing": -0.78,
+          "letterSpacing": -0.4,
         },
         Object {},
         Array [
@@ -241,21 +176,9 @@ exports[`iOS BpkNavigationBarTextButtonIOS should render correctly leading confi
 
 exports[`iOS BpkNavigationBarTextButtonIOS should resepect "disabledTintColor" 1`] = `
 <View
-  accessibilityComponentType="button"
   accessibilityLabel="Done"
-  accessibilityTraits={
-    Array [
-      "button",
-      "disabled",
-    ]
-  }
   accessible={true}
-  collapsable={undefined}
-  hasTVPreferredFocus={undefined}
-  hitSlop={undefined}
   isTVSelectable={true}
-  nativeID={undefined}
-  onLayout={undefined}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
   onResponderRelease={[Function]}
@@ -269,21 +192,16 @@ exports[`iOS BpkNavigationBarTextButtonIOS should resepect "disabledTintColor" 1
       "zIndex": 2,
     }
   }
-  testID={undefined}
-  tvParallaxProperties={undefined}
 >
   <Text
-    accessible={true}
-    allowFontScaling={true}
-    ellipsizeMode="tail"
     style={
       Array [
         Object {
           "color": "rgb(82, 76, 97)",
-          "fontFamily": "System",
+          "fontFamily": "sans-serif",
           "fontSize": 20,
           "fontWeight": "400",
-          "letterSpacing": -0.78,
+          "letterSpacing": -0.4,
         },
         Object {},
         Array [
@@ -301,20 +219,9 @@ exports[`iOS BpkNavigationBarTextButtonIOS should resepect "disabledTintColor" 1
 
 exports[`iOS BpkNavigationBarTextButtonIOS should resepect "tintColor" 1`] = `
 <View
-  accessibilityComponentType="button"
   accessibilityLabel="Done"
-  accessibilityTraits={
-    Array [
-      "button",
-    ]
-  }
   accessible={true}
-  collapsable={undefined}
-  hasTVPreferredFocus={undefined}
-  hitSlop={undefined}
   isTVSelectable={true}
-  nativeID={undefined}
-  onLayout={undefined}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
   onResponderRelease={[Function]}
@@ -328,21 +235,16 @@ exports[`iOS BpkNavigationBarTextButtonIOS should resepect "tintColor" 1`] = `
       "zIndex": 2,
     }
   }
-  testID={undefined}
-  tvParallaxProperties={undefined}
 >
   <Text
-    accessible={true}
-    allowFontScaling={true}
-    ellipsizeMode="tail"
     style={
       Array [
         Object {
           "color": "rgb(82, 76, 97)",
-          "fontFamily": "System",
+          "fontFamily": "sans-serif",
           "fontSize": 20,
           "fontWeight": "400",
-          "letterSpacing": -0.78,
+          "letterSpacing": -0.4,
         },
         Object {},
         Array [

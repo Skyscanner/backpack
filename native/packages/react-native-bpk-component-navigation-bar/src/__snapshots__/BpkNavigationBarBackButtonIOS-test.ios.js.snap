@@ -2,20 +2,9 @@
 
 exports[`iOS BpkNavigationBarBackButtonIOS should render correctly 1`] = `
 <View
-  accessibilityComponentType="button"
   accessibilityLabel="Back"
-  accessibilityTraits={
-    Array [
-      "button",
-    ]
-  }
   accessible={true}
-  collapsable={undefined}
-  hasTVPreferredFocus={undefined}
-  hitSlop={undefined}
   isTVSelectable={true}
-  nativeID={undefined}
-  onLayout={undefined}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
   onResponderRelease={[Function]}
@@ -30,8 +19,6 @@ exports[`iOS BpkNavigationBarBackButtonIOS should render correctly 1`] = `
       "zIndex": 2,
     }
   }
-  testID={undefined}
-  tvParallaxProperties={undefined}
 >
   <Image
     source={
@@ -55,20 +42,9 @@ exports[`iOS BpkNavigationBarBackButtonIOS should render correctly 1`] = `
 
 exports[`iOS BpkNavigationBarBackButtonIOS should render correctly with title 1`] = `
 <View
-  accessibilityComponentType="button"
   accessibilityLabel="Back"
-  accessibilityTraits={
-    Array [
-      "button",
-    ]
-  }
   accessible={true}
-  collapsable={undefined}
-  hasTVPreferredFocus={undefined}
-  hitSlop={undefined}
   isTVSelectable={true}
-  nativeID={undefined}
-  onLayout={undefined}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
   onResponderRelease={[Function]}
@@ -83,8 +59,6 @@ exports[`iOS BpkNavigationBarBackButtonIOS should render correctly with title 1`
       "zIndex": 2,
     }
   }
-  testID={undefined}
-  tvParallaxProperties={undefined}
 >
   <Image
     source={
@@ -104,9 +78,6 @@ exports[`iOS BpkNavigationBarBackButtonIOS should render correctly with title 1`
     }
   />
   <Text
-    accessible={true}
-    allowFontScaling={true}
-    ellipsizeMode="tail"
     style={
       Array [
         Object {

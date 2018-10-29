@@ -2,7 +2,6 @@
 
 exports[`Android BpkBannerAlert should accept userland styling 1`] = `
 <View
-  collapsable={undefined}
   style={
     Object {
       "borderRadius": 0,
@@ -50,9 +49,7 @@ exports[`Android BpkBannerAlert should accept userland styling 1`] = `
         }
       >
         <Text
-          accessible={true}
           allowFontScaling={false}
-          ellipsizeMode="tail"
           style={
             Array [
               Object {
@@ -78,9 +75,6 @@ exports[`Android BpkBannerAlert should accept userland styling 1`] = `
           
         </Text>
         <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
           style={
             Array [
               Object {
@@ -133,9 +127,7 @@ exports[`Android BpkBannerAlert should accept userland styling 1`] = `
         }
       >
         <Text
-          accessible={true}
           allowFontScaling={false}
-          ellipsizeMode="tail"
           style={
             Array [
               Object {
@@ -161,9 +153,6 @@ exports[`Android BpkBannerAlert should accept userland styling 1`] = `
           
         </Text>
         <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
           style={
             Array [
               Object {
@@ -190,7 +179,6 @@ exports[`Android BpkBannerAlert should accept userland styling 1`] = `
 
 exports[`Android BpkBannerAlert should render correctly when not shown 1`] = `
 <View
-  collapsable={undefined}
   style={
     Object {
       "borderRadius": 0,
@@ -237,9 +225,7 @@ exports[`Android BpkBannerAlert should render correctly when not shown 1`] = `
         }
       >
         <Text
-          accessible={true}
           allowFontScaling={false}
-          ellipsizeMode="tail"
           style={
             Array [
               Object {
@@ -265,9 +251,6 @@ exports[`Android BpkBannerAlert should render correctly when not shown 1`] = `
           
         </Text>
         <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
           style={
             Array [
               Object {
@@ -320,9 +303,7 @@ exports[`Android BpkBannerAlert should render correctly when not shown 1`] = `
         }
       >
         <Text
-          accessible={true}
           allowFontScaling={false}
-          ellipsizeMode="tail"
           style={
             Array [
               Object {
@@ -348,9 +329,6 @@ exports[`Android BpkBannerAlert should render correctly when not shown 1`] = `
           
         </Text>
         <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
           style={
             Array [
               Object {
@@ -377,7 +355,6 @@ exports[`Android BpkBannerAlert should render correctly when not shown 1`] = `
 
 exports[`Android BpkBannerAlert should render correctly with animateOnEnter 1`] = `
 <View
-  collapsable={undefined}
   style={
     Object {
       "borderRadius": 0,
@@ -424,9 +401,7 @@ exports[`Android BpkBannerAlert should render correctly with animateOnEnter 1`] 
         }
       >
         <Text
-          accessible={true}
           allowFontScaling={false}
-          ellipsizeMode="tail"
           style={
             Array [
               Object {
@@ -452,9 +427,6 @@ exports[`Android BpkBannerAlert should render correctly with animateOnEnter 1`] 
           
         </Text>
         <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
           style={
             Array [
               Object {
@@ -507,9 +479,7 @@ exports[`Android BpkBannerAlert should render correctly with animateOnEnter 1`] 
         }
       >
         <Text
-          accessible={true}
           allowFontScaling={false}
-          ellipsizeMode="tail"
           style={
             Array [
               Object {
@@ -535,9 +505,6 @@ exports[`Android BpkBannerAlert should render correctly with animateOnEnter 1`] 
           
         </Text>
         <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
           style={
             Array [
               Object {
@@ -564,7 +531,6 @@ exports[`Android BpkBannerAlert should render correctly with animateOnEnter 1`] 
 
 exports[`Android BpkBannerAlert should render correctly with animateOnLeave 1`] = `
 <View
-  collapsable={undefined}
   style={
     Object {
       "borderRadius": 0,
@@ -611,9 +577,7 @@ exports[`Android BpkBannerAlert should render correctly with animateOnLeave 1`] 
         }
       >
         <Text
-          accessible={true}
           allowFontScaling={false}
-          ellipsizeMode="tail"
           style={
             Array [
               Object {
@@ -639,9 +603,6 @@ exports[`Android BpkBannerAlert should render correctly with animateOnLeave 1`] 
           
         </Text>
         <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
           style={
             Array [
               Object {
@@ -694,9 +655,7 @@ exports[`Android BpkBannerAlert should render correctly with animateOnLeave 1`] 
         }
       >
         <Text
-          accessible={true}
           allowFontScaling={false}
-          ellipsizeMode="tail"
           style={
             Array [
               Object {
@@ -722,9 +681,6 @@ exports[`Android BpkBannerAlert should render correctly with animateOnLeave 1`] 
           
         </Text>
         <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
           style={
             Array [
               Object {
@@ -751,7 +707,6 @@ exports[`Android BpkBannerAlert should render correctly with animateOnLeave 1`] 
 
 exports[`Android BpkBannerAlert should render correctly with children provided (expandable) 1`] = `
 <View
-  collapsable={undefined}
   style={
     Object {
       "borderRadius": 0,
@@ -787,12 +742,8 @@ exports[`Android BpkBannerAlert should render correctly with children provided (
       }
     >
       <View
-        accessibilityComponentType="button"
         accessibilityLabel="Expand"
-        accessibilityTraits={undefined}
         accessible={true}
-        hasTVPreferredFocus={undefined}
-        hitSlop={undefined}
         isTVSelectable={true}
         nativeBackgroundAndroid={
           Object {
@@ -800,7 +751,6 @@ exports[`Android BpkBannerAlert should render correctly with children provided (
             "type": "ThemeAttrAndroid",
           }
         }
-        onLayout={undefined}
         onResponderGrant={[Function]}
         onResponderMove={[Function]}
         onResponderRelease={[Function]}
@@ -816,12 +766,9 @@ exports[`Android BpkBannerAlert should render correctly with children provided (
             "paddingVertical": 8,
           }
         }
-        testID={undefined}
       >
         <Text
-          accessible={true}
           allowFontScaling={false}
-          ellipsizeMode="tail"
           style={
             Array [
               Object {
@@ -847,9 +794,6 @@ exports[`Android BpkBannerAlert should render correctly with children provided (
           
         </Text>
         <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
           style={
             Array [
               Object {
@@ -869,9 +813,7 @@ exports[`Android BpkBannerAlert should render correctly with children provided (
           Neutral alert.
         </Text>
         <Text
-          accessible={true}
           allowFontScaling={false}
-          ellipsizeMode="tail"
           style={
             Array [
               Object {
@@ -893,7 +835,6 @@ exports[`Android BpkBannerAlert should render correctly with children provided (
         </Text>
       </View>
       <View
-        collapsable={undefined}
         style={
           Object {
             "borderRadius": 0,
@@ -919,9 +860,6 @@ exports[`Android BpkBannerAlert should render correctly with children provided (
           }
         >
           <Text
-            accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
             style={
               Array [
                 Object {
@@ -952,9 +890,6 @@ exports[`Android BpkBannerAlert should render correctly with children provided (
           }
         >
           <Text
-            accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
             style={
               Array [
                 Object {
@@ -994,12 +929,8 @@ exports[`Android BpkBannerAlert should render correctly with children provided (
       }
     >
       <View
-        accessibilityComponentType="button"
         accessibilityLabel="Expand"
-        accessibilityTraits={undefined}
         accessible={true}
-        hasTVPreferredFocus={undefined}
-        hitSlop={undefined}
         isTVSelectable={true}
         nativeBackgroundAndroid={
           Object {
@@ -1007,7 +938,6 @@ exports[`Android BpkBannerAlert should render correctly with children provided (
             "type": "ThemeAttrAndroid",
           }
         }
-        onLayout={undefined}
         onResponderGrant={[Function]}
         onResponderMove={[Function]}
         onResponderRelease={[Function]}
@@ -1023,12 +953,9 @@ exports[`Android BpkBannerAlert should render correctly with children provided (
             "paddingVertical": 8,
           }
         }
-        testID={undefined}
       >
         <Text
-          accessible={true}
           allowFontScaling={false}
-          ellipsizeMode="tail"
           style={
             Array [
               Object {
@@ -1054,9 +981,6 @@ exports[`Android BpkBannerAlert should render correctly with children provided (
           
         </Text>
         <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
           style={
             Array [
               Object {
@@ -1076,9 +1000,7 @@ exports[`Android BpkBannerAlert should render correctly with children provided (
           Neutral alert.
         </Text>
         <Text
-          accessible={true}
           allowFontScaling={false}
-          ellipsizeMode="tail"
           style={
             Array [
               Object {
@@ -1100,7 +1022,6 @@ exports[`Android BpkBannerAlert should render correctly with children provided (
         </Text>
       </View>
       <View
-        collapsable={undefined}
         style={
           Object {
             "borderRadius": 0,
@@ -1126,9 +1047,6 @@ exports[`Android BpkBannerAlert should render correctly with children provided (
           }
         >
           <Text
-            accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
             style={
               Array [
                 Object {
@@ -1159,9 +1077,6 @@ exports[`Android BpkBannerAlert should render correctly with children provided (
           }
         >
           <Text
-            accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
             style={
               Array [
                 Object {
@@ -1186,7 +1101,6 @@ exports[`Android BpkBannerAlert should render correctly with children provided (
 
 exports[`Android BpkBannerAlert should render correctly with dismissable 1`] = `
 <View
-  collapsable={undefined}
   style={
     Object {
       "borderRadius": 0,
@@ -1233,9 +1147,7 @@ exports[`Android BpkBannerAlert should render correctly with dismissable 1`] = `
         }
       >
         <Text
-          accessible={true}
           allowFontScaling={false}
-          ellipsizeMode="tail"
           style={
             Array [
               Object {
@@ -1261,9 +1173,6 @@ exports[`Android BpkBannerAlert should render correctly with dismissable 1`] = `
           
         </Text>
         <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
           style={
             Array [
               Object {
@@ -1283,20 +1192,9 @@ exports[`Android BpkBannerAlert should render correctly with dismissable 1`] = `
           Neutral alert.
         </Text>
         <View
-          accessibilityComponentType="button"
           accessibilityLabel="Dismiss"
-          accessibilityTraits={
-            Array [
-              "button",
-            ]
-          }
           accessible={true}
-          collapsable={undefined}
-          hasTVPreferredFocus={undefined}
-          hitSlop={undefined}
           isTVSelectable={true}
-          nativeID={undefined}
-          onLayout={undefined}
           onResponderGrant={[Function]}
           onResponderMove={[Function]}
           onResponderRelease={[Function]}
@@ -1309,8 +1207,6 @@ exports[`Android BpkBannerAlert should render correctly with dismissable 1`] = `
               "opacity": 1,
             }
           }
-          testID={undefined}
-          tvParallaxProperties={undefined}
         >
           <View
             style={
@@ -1325,9 +1221,6 @@ exports[`Android BpkBannerAlert should render correctly with dismissable 1`] = `
             }
           >
             <Text
-              accessible={true}
-              allowFontScaling={true}
-              ellipsizeMode="tail"
               numberOfLines={1}
               style={
                 Array [
@@ -1387,9 +1280,7 @@ exports[`Android BpkBannerAlert should render correctly with dismissable 1`] = `
         }
       >
         <Text
-          accessible={true}
           allowFontScaling={false}
-          ellipsizeMode="tail"
           style={
             Array [
               Object {
@@ -1415,9 +1306,6 @@ exports[`Android BpkBannerAlert should render correctly with dismissable 1`] = `
           
         </Text>
         <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
           style={
             Array [
               Object {
@@ -1437,20 +1325,9 @@ exports[`Android BpkBannerAlert should render correctly with dismissable 1`] = `
           Neutral alert.
         </Text>
         <View
-          accessibilityComponentType="button"
           accessibilityLabel="Dismiss"
-          accessibilityTraits={
-            Array [
-              "button",
-            ]
-          }
           accessible={true}
-          collapsable={undefined}
-          hasTVPreferredFocus={undefined}
-          hitSlop={undefined}
           isTVSelectable={true}
-          nativeID={undefined}
-          onLayout={undefined}
           onResponderGrant={[Function]}
           onResponderMove={[Function]}
           onResponderRelease={[Function]}
@@ -1463,8 +1340,6 @@ exports[`Android BpkBannerAlert should render correctly with dismissable 1`] = `
               "opacity": 1,
             }
           }
-          testID={undefined}
-          tvParallaxProperties={undefined}
         >
           <View
             style={
@@ -1479,9 +1354,6 @@ exports[`Android BpkBannerAlert should render correctly with dismissable 1`] = `
             }
           >
             <Text
-              accessible={true}
-              allowFontScaling={true}
-              ellipsizeMode="tail"
               numberOfLines={1}
               style={
                 Array [
@@ -1515,7 +1387,6 @@ exports[`Android BpkBannerAlert should render correctly with dismissable 1`] = `
 
 exports[`Android BpkBannerAlert should render correctly with expanded 1`] = `
 <View
-  collapsable={undefined}
   style={
     Object {
       "borderRadius": 0,
@@ -1551,12 +1422,8 @@ exports[`Android BpkBannerAlert should render correctly with expanded 1`] = `
       }
     >
       <View
-        accessibilityComponentType="button"
         accessibilityLabel="Expand"
-        accessibilityTraits={undefined}
         accessible={true}
-        hasTVPreferredFocus={undefined}
-        hitSlop={undefined}
         isTVSelectable={true}
         nativeBackgroundAndroid={
           Object {
@@ -1564,7 +1431,6 @@ exports[`Android BpkBannerAlert should render correctly with expanded 1`] = `
             "type": "ThemeAttrAndroid",
           }
         }
-        onLayout={undefined}
         onResponderGrant={[Function]}
         onResponderMove={[Function]}
         onResponderRelease={[Function]}
@@ -1580,12 +1446,9 @@ exports[`Android BpkBannerAlert should render correctly with expanded 1`] = `
             "paddingVertical": 8,
           }
         }
-        testID={undefined}
       >
         <Text
-          accessible={true}
           allowFontScaling={false}
-          ellipsizeMode="tail"
           style={
             Array [
               Object {
@@ -1611,9 +1474,6 @@ exports[`Android BpkBannerAlert should render correctly with expanded 1`] = `
           
         </Text>
         <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
           style={
             Array [
               Object {
@@ -1633,9 +1493,7 @@ exports[`Android BpkBannerAlert should render correctly with expanded 1`] = `
           Neutral alert.
         </Text>
         <Text
-          accessible={true}
           allowFontScaling={false}
-          ellipsizeMode="tail"
           style={
             Array [
               Object {
@@ -1657,7 +1515,6 @@ exports[`Android BpkBannerAlert should render correctly with expanded 1`] = `
         </Text>
       </View>
       <View
-        collapsable={undefined}
         style={
           Object {
             "borderRadius": 0,
@@ -1683,9 +1540,6 @@ exports[`Android BpkBannerAlert should render correctly with expanded 1`] = `
           }
         >
           <Text
-            accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
             style={
               Array [
                 Object {
@@ -1716,9 +1570,6 @@ exports[`Android BpkBannerAlert should render correctly with expanded 1`] = `
           }
         >
           <Text
-            accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
             style={
               Array [
                 Object {
@@ -1758,12 +1609,8 @@ exports[`Android BpkBannerAlert should render correctly with expanded 1`] = `
       }
     >
       <View
-        accessibilityComponentType="button"
         accessibilityLabel="Expand"
-        accessibilityTraits={undefined}
         accessible={true}
-        hasTVPreferredFocus={undefined}
-        hitSlop={undefined}
         isTVSelectable={true}
         nativeBackgroundAndroid={
           Object {
@@ -1771,7 +1618,6 @@ exports[`Android BpkBannerAlert should render correctly with expanded 1`] = `
             "type": "ThemeAttrAndroid",
           }
         }
-        onLayout={undefined}
         onResponderGrant={[Function]}
         onResponderMove={[Function]}
         onResponderRelease={[Function]}
@@ -1787,12 +1633,9 @@ exports[`Android BpkBannerAlert should render correctly with expanded 1`] = `
             "paddingVertical": 8,
           }
         }
-        testID={undefined}
       >
         <Text
-          accessible={true}
           allowFontScaling={false}
-          ellipsizeMode="tail"
           style={
             Array [
               Object {
@@ -1818,9 +1661,6 @@ exports[`Android BpkBannerAlert should render correctly with expanded 1`] = `
           
         </Text>
         <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
           style={
             Array [
               Object {
@@ -1840,9 +1680,7 @@ exports[`Android BpkBannerAlert should render correctly with expanded 1`] = `
           Neutral alert.
         </Text>
         <Text
-          accessible={true}
           allowFontScaling={false}
-          ellipsizeMode="tail"
           style={
             Array [
               Object {
@@ -1864,7 +1702,6 @@ exports[`Android BpkBannerAlert should render correctly with expanded 1`] = `
         </Text>
       </View>
       <View
-        collapsable={undefined}
         style={
           Object {
             "borderRadius": 0,
@@ -1890,9 +1727,6 @@ exports[`Android BpkBannerAlert should render correctly with expanded 1`] = `
           }
         >
           <Text
-            accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
             style={
               Array [
                 Object {
@@ -1923,9 +1757,6 @@ exports[`Android BpkBannerAlert should render correctly with expanded 1`] = `
           }
         >
           <Text
-            accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
             style={
               Array [
                 Object {
@@ -1950,7 +1781,6 @@ exports[`Android BpkBannerAlert should render correctly with expanded 1`] = `
 
 exports[`Android BpkBannerAlert should render correctly with type equal to error 1`] = `
 <View
-  collapsable={undefined}
   style={
     Object {
       "borderRadius": 0,
@@ -1997,9 +1827,7 @@ exports[`Android BpkBannerAlert should render correctly with type equal to error
         }
       >
         <Text
-          accessible={true}
           allowFontScaling={false}
-          ellipsizeMode="tail"
           style={
             Array [
               Object {
@@ -2025,9 +1853,6 @@ exports[`Android BpkBannerAlert should render correctly with type equal to error
           
         </Text>
         <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
           style={
             Array [
               Object {
@@ -2080,9 +1905,7 @@ exports[`Android BpkBannerAlert should render correctly with type equal to error
         }
       >
         <Text
-          accessible={true}
           allowFontScaling={false}
-          ellipsizeMode="tail"
           style={
             Array [
               Object {
@@ -2108,9 +1931,6 @@ exports[`Android BpkBannerAlert should render correctly with type equal to error
           
         </Text>
         <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
           style={
             Array [
               Object {
@@ -2137,7 +1957,6 @@ exports[`Android BpkBannerAlert should render correctly with type equal to error
 
 exports[`Android BpkBannerAlert should render correctly with type equal to neutral 1`] = `
 <View
-  collapsable={undefined}
   style={
     Object {
       "borderRadius": 0,
@@ -2184,9 +2003,7 @@ exports[`Android BpkBannerAlert should render correctly with type equal to neutr
         }
       >
         <Text
-          accessible={true}
           allowFontScaling={false}
-          ellipsizeMode="tail"
           style={
             Array [
               Object {
@@ -2212,9 +2029,6 @@ exports[`Android BpkBannerAlert should render correctly with type equal to neutr
           
         </Text>
         <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
           style={
             Array [
               Object {
@@ -2267,9 +2081,7 @@ exports[`Android BpkBannerAlert should render correctly with type equal to neutr
         }
       >
         <Text
-          accessible={true}
           allowFontScaling={false}
-          ellipsizeMode="tail"
           style={
             Array [
               Object {
@@ -2295,9 +2107,6 @@ exports[`Android BpkBannerAlert should render correctly with type equal to neutr
           
         </Text>
         <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
           style={
             Array [
               Object {
@@ -2324,7 +2133,6 @@ exports[`Android BpkBannerAlert should render correctly with type equal to neutr
 
 exports[`Android BpkBannerAlert should render correctly with type equal to success 1`] = `
 <View
-  collapsable={undefined}
   style={
     Object {
       "borderRadius": 0,
@@ -2371,9 +2179,7 @@ exports[`Android BpkBannerAlert should render correctly with type equal to succe
         }
       >
         <Text
-          accessible={true}
           allowFontScaling={false}
-          ellipsizeMode="tail"
           style={
             Array [
               Object {
@@ -2399,9 +2205,6 @@ exports[`Android BpkBannerAlert should render correctly with type equal to succe
           
         </Text>
         <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
           style={
             Array [
               Object {
@@ -2454,9 +2257,7 @@ exports[`Android BpkBannerAlert should render correctly with type equal to succe
         }
       >
         <Text
-          accessible={true}
           allowFontScaling={false}
-          ellipsizeMode="tail"
           style={
             Array [
               Object {
@@ -2482,9 +2283,6 @@ exports[`Android BpkBannerAlert should render correctly with type equal to succe
           
         </Text>
         <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
           style={
             Array [
               Object {
@@ -2511,7 +2309,6 @@ exports[`Android BpkBannerAlert should render correctly with type equal to succe
 
 exports[`Android BpkBannerAlert should render correctly with type equal to warn 1`] = `
 <View
-  collapsable={undefined}
   style={
     Object {
       "borderRadius": 0,
@@ -2558,9 +2355,7 @@ exports[`Android BpkBannerAlert should render correctly with type equal to warn 
         }
       >
         <Text
-          accessible={true}
           allowFontScaling={false}
-          ellipsizeMode="tail"
           style={
             Array [
               Object {
@@ -2586,9 +2381,6 @@ exports[`Android BpkBannerAlert should render correctly with type equal to warn 
           
         </Text>
         <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
           style={
             Array [
               Object {
@@ -2641,9 +2433,7 @@ exports[`Android BpkBannerAlert should render correctly with type equal to warn 
         }
       >
         <Text
-          accessible={true}
           allowFontScaling={false}
-          ellipsizeMode="tail"
           style={
             Array [
               Object {
@@ -2669,9 +2459,6 @@ exports[`Android BpkBannerAlert should render correctly with type equal to warn 
           
         </Text>
         <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
           style={
             Array [
               Object {

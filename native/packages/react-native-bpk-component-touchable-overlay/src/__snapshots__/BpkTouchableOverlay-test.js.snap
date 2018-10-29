@@ -2,13 +2,7 @@
 
 exports[`BpkTouchableOverlay should render correctly 1`] = `
 <View
-  accessibilityComponentType={undefined}
-  accessibilityLabel={undefined}
-  accessibilityTraits={undefined}
   accessible={true}
-  hitSlop={undefined}
-  nativeID={undefined}
-  onLayout={undefined}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
   onResponderRelease={[Function]}
@@ -16,12 +10,8 @@ exports[`BpkTouchableOverlay should render correctly 1`] = `
   onResponderTerminationRequest={[Function]}
   onStartShouldSetResponder={[Function]}
   style={null}
-  testID={undefined}
 >
   <Text
-    accessible={true}
-    allowFontScaling={true}
-    ellipsizeMode="tail"
     style={
       Array [
         Object {
@@ -58,13 +48,7 @@ exports[`BpkTouchableOverlay should render correctly 1`] = `
 
 exports[`BpkTouchableOverlay should render correctly with arbitrary props 1`] = `
 <View
-  accessibilityComponentType={undefined}
-  accessibilityLabel={undefined}
-  accessibilityTraits={undefined}
   accessible={true}
-  hitSlop={undefined}
-  nativeID={undefined}
-  onLayout={undefined}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
   onResponderRelease={[Function]}
@@ -75,9 +59,6 @@ exports[`BpkTouchableOverlay should render correctly with arbitrary props 1`] = 
   testID="arbitrary value"
 >
   <Text
-    accessible={true}
-    allowFontScaling={true}
-    ellipsizeMode="tail"
     style={
       Array [
         Object {
@@ -114,13 +95,7 @@ exports[`BpkTouchableOverlay should render correctly with arbitrary props 1`] = 
 
 exports[`BpkTouchableOverlay should render correctly with border radius props 1`] = `
 <View
-  accessibilityComponentType={undefined}
-  accessibilityLabel={undefined}
-  accessibilityTraits={undefined}
   accessible={true}
-  hitSlop={undefined}
-  nativeID={undefined}
-  onLayout={undefined}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
   onResponderRelease={[Function]}
@@ -131,9 +106,6 @@ exports[`BpkTouchableOverlay should render correctly with border radius props 1`
   testID="arbitrary value"
 >
   <Text
-    accessible={true}
-    allowFontScaling={true}
-    ellipsizeMode="tail"
     style={
       Array [
         Object {
@@ -173,13 +145,7 @@ exports[`BpkTouchableOverlay should render correctly with border radius props 1`
 
 exports[`BpkTouchableOverlay should render correctly with custom overlay styles 1`] = `
 <View
-  accessibilityComponentType={undefined}
-  accessibilityLabel={undefined}
-  accessibilityTraits={undefined}
   accessible={true}
-  hitSlop={undefined}
-  nativeID={undefined}
-  onLayout={undefined}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
   onResponderRelease={[Function]}
@@ -190,9 +156,6 @@ exports[`BpkTouchableOverlay should render correctly with custom overlay styles 
   testID="arbitrary value"
 >
   <Text
-    accessible={true}
-    allowFontScaling={true}
-    ellipsizeMode="tail"
     style={
       Array [
         Object {
@@ -232,13 +195,7 @@ exports[`BpkTouchableOverlay should render correctly with custom overlay styles 
 
 exports[`BpkTouchableOverlay should render correctly with custom style prop 1`] = `
 <View
-  accessibilityComponentType={undefined}
-  accessibilityLabel={undefined}
-  accessibilityTraits={undefined}
   accessible={true}
-  hitSlop={undefined}
-  nativeID={undefined}
-  onLayout={undefined}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
   onResponderRelease={[Function]}
@@ -250,12 +207,8 @@ exports[`BpkTouchableOverlay should render correctly with custom style prop 1`] 
       "backgroundColor": "rgb(255, 84, 82)",
     }
   }
-  testID={undefined}
 >
   <Text
-    accessible={true}
-    allowFontScaling={true}
-    ellipsizeMode="tail"
     style={
       Array [
         Object {

@@ -3,16 +3,12 @@
 exports[`iOS BpkSelect should render correctly 1`] = `
 <View
   accessibilityComponentType="button"
-  accessibilityLabel={undefined}
   accessibilityTraits={
     Array [
       "button",
     ]
   }
   accessible={true}
-  hitSlop={undefined}
-  nativeID={undefined}
-  onLayout={undefined}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
   onResponderRelease={[Function]}
@@ -20,7 +16,6 @@ exports[`iOS BpkSelect should render correctly 1`] = `
   onResponderTerminationRequest={[Function]}
   onStartShouldSetResponder={[Function]}
   style={null}
-  testID={undefined}
 >
   <View
     style={
@@ -35,9 +30,7 @@ exports[`iOS BpkSelect should render correctly 1`] = `
     }
   >
     <Text
-      accessible={true}
       allowFontScaling={false}
-      ellipsizeMode="tail"
       style={
         Array [
           Object {
@@ -80,16 +73,12 @@ exports[`iOS BpkSelect should render correctly 1`] = `
 exports[`iOS BpkSelect should render correctly with "showImage" and image 1`] = `
 <View
   accessibilityComponentType="button"
-  accessibilityLabel={undefined}
   accessibilityTraits={
     Array [
       "button",
     ]
   }
   accessible={true}
-  hitSlop={undefined}
-  nativeID={undefined}
-  onLayout={undefined}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
   onResponderRelease={[Function]}
@@ -97,7 +86,6 @@ exports[`iOS BpkSelect should render correctly with "showImage" and image 1`] = 
   onResponderTerminationRequest={[Function]}
   onStartShouldSetResponder={[Function]}
   style={null}
-  testID={undefined}
 >
   <View
     style={
@@ -125,9 +113,7 @@ exports[`iOS BpkSelect should render correctly with "showImage" and image 1`] = 
       }
     />
     <Text
-      accessible={true}
       allowFontScaling={false}
-      ellipsizeMode="tail"
       style={
         Array [
           Object {
@@ -170,16 +156,12 @@ exports[`iOS BpkSelect should render correctly with "showImage" and image 1`] = 
 exports[`iOS BpkSelect should render correctly with "showImage" and no image 1`] = `
 <View
   accessibilityComponentType="button"
-  accessibilityLabel={undefined}
   accessibilityTraits={
     Array [
       "button",
     ]
   }
   accessible={true}
-  hitSlop={undefined}
-  nativeID={undefined}
-  onLayout={undefined}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
   onResponderRelease={[Function]}
@@ -187,7 +169,6 @@ exports[`iOS BpkSelect should render correctly with "showImage" and no image 1`]
   onResponderTerminationRequest={[Function]}
   onStartShouldSetResponder={[Function]}
   style={null}
-  testID={undefined}
 >
   <View
     style={
@@ -212,9 +193,7 @@ exports[`iOS BpkSelect should render correctly with "showImage" and no image 1`]
       }
     />
     <Text
-      accessible={true}
       allowFontScaling={false}
-      ellipsizeMode="tail"
       style={
         Array [
           Object {
@@ -257,16 +236,12 @@ exports[`iOS BpkSelect should render correctly with "showImage" and no image 1`]
 exports[`iOS BpkSelect should render correctly with a text label 1`] = `
 <View
   accessibilityComponentType="button"
-  accessibilityLabel={undefined}
   accessibilityTraits={
     Array [
       "button",
     ]
   }
   accessible={true}
-  hitSlop={undefined}
-  nativeID={undefined}
-  onLayout={undefined}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
   onResponderRelease={[Function]}
@@ -274,7 +249,6 @@ exports[`iOS BpkSelect should render correctly with a text label 1`] = `
   onResponderTerminationRequest={[Function]}
   onStartShouldSetResponder={[Function]}
   style={null}
-  testID={undefined}
 >
   <View
     style={
@@ -289,9 +263,6 @@ exports[`iOS BpkSelect should render correctly with a text label 1`] = `
     }
   >
     <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
       style={
         Array [
           Object {
@@ -314,9 +285,7 @@ exports[`iOS BpkSelect should render correctly with a text label 1`] = `
       label
     </Text>
     <Text
-      accessible={true}
       allowFontScaling={false}
-      ellipsizeMode="tail"
       style={
         Array [
           Object {
@@ -359,16 +328,12 @@ exports[`iOS BpkSelect should render correctly with a text label 1`] = `
 exports[`iOS BpkSelect should render correctly with an element label 1`] = `
 <View
   accessibilityComponentType="button"
-  accessibilityLabel={undefined}
   accessibilityTraits={
     Array [
       "button",
     ]
   }
   accessible={true}
-  hitSlop={undefined}
-  nativeID={undefined}
-  onLayout={undefined}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
   onResponderRelease={[Function]}
@@ -376,7 +341,6 @@ exports[`iOS BpkSelect should render correctly with an element label 1`] = `
   onResponderTerminationRequest={[Function]}
   onStartShouldSetResponder={[Function]}
   style={null}
-  testID={undefined}
 >
   <View
     style={
@@ -392,9 +356,7 @@ exports[`iOS BpkSelect should render correctly with an element label 1`] = `
   >
     <View />
     <Text
-      accessible={true}
       allowFontScaling={false}
-      ellipsizeMode="tail"
       style={
         Array [
           Object {
@@ -437,16 +399,12 @@ exports[`iOS BpkSelect should render correctly with an element label 1`] = `
 exports[`iOS BpkSelect should render correctly with custom styles 1`] = `
 <View
   accessibilityComponentType="button"
-  accessibilityLabel={undefined}
   accessibilityTraits={
     Array [
       "button",
     ]
   }
   accessible={true}
-  hitSlop={undefined}
-  nativeID={undefined}
-  onLayout={undefined}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
   onResponderRelease={[Function]}
@@ -458,7 +416,6 @@ exports[`iOS BpkSelect should render correctly with custom styles 1`] = `
       "marginTop": 4,
     }
   }
-  testID={undefined}
 >
   <View
     style={
@@ -473,9 +430,6 @@ exports[`iOS BpkSelect should render correctly with custom styles 1`] = `
     }
   >
     <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
       style={
         Array [
           Object {
@@ -498,9 +452,7 @@ exports[`iOS BpkSelect should render correctly with custom styles 1`] = `
       label
     </Text>
     <Text
-      accessible={true}
       allowFontScaling={false}
-      ellipsizeMode="tail"
       style={
         Array [
           Object {
@@ -543,7 +495,6 @@ exports[`iOS BpkSelect should render correctly with custom styles 1`] = `
 exports[`iOS BpkSelect should render correctly with the disabled prop 1`] = `
 <View
   accessibilityComponentType="button"
-  accessibilityLabel={undefined}
   accessibilityTraits={
     Array [
       "button",
@@ -551,9 +502,6 @@ exports[`iOS BpkSelect should render correctly with the disabled prop 1`] = `
     ]
   }
   accessible={true}
-  hitSlop={undefined}
-  nativeID={undefined}
-  onLayout={undefined}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
   onResponderRelease={[Function]}
@@ -561,7 +509,6 @@ exports[`iOS BpkSelect should render correctly with the disabled prop 1`] = `
   onResponderTerminationRequest={[Function]}
   onStartShouldSetResponder={[Function]}
   style={null}
-  testID={undefined}
 >
   <View
     style={
@@ -576,9 +523,6 @@ exports[`iOS BpkSelect should render correctly with the disabled prop 1`] = `
     }
   >
     <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
       style={
         Array [
           Object {
@@ -603,9 +547,7 @@ exports[`iOS BpkSelect should render correctly with the disabled prop 1`] = `
       label
     </Text>
     <Text
-      accessible={true}
       allowFontScaling={false}
-      ellipsizeMode="tail"
       style={
         Array [
           Object {

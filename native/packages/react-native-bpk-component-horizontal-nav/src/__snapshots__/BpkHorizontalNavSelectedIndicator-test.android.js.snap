@@ -2,7 +2,6 @@
 
 exports[`Android BpkHorizontalNavSelectedIndicator should render correctly 1`] = `
 <View
-  collapsable={undefined}
   style={
     Object {
       "backgroundColor": "rgb(0, 140, 168)",
@@ -20,7 +19,6 @@ exports[`Android BpkHorizontalNavSelectedIndicator should render correctly 1`] =
 
 exports[`Android BpkHorizontalNavSelectedIndicator should support theming 1`] = `
 <View
-  collapsable={undefined}
   style={
     Object {
       "backgroundColor": "red",

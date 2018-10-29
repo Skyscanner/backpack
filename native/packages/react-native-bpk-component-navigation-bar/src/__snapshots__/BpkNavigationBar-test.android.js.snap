@@ -34,16 +34,8 @@ exports[`android BpkNavigationBar should render correctly 1`] = `
       }
     >
       <View
-        accessibilityComponentType="button"
         accessibilityLabel="Back"
-        accessibilityTraits={
-          Array [
-            "button",
-          ]
-        }
         accessible={true}
-        hasTVPreferredFocus={undefined}
-        hitSlop={undefined}
         isTVSelectable={true}
         nativeBackgroundAndroid={
           Object {
@@ -52,19 +44,15 @@ exports[`android BpkNavigationBar should render correctly 1`] = `
             "type": "RippleAndroid",
           }
         }
-        onLayout={undefined}
         onResponderGrant={[Function]}
         onResponderMove={[Function]}
         onResponderRelease={[Function]}
         onResponderTerminate={[Function]}
         onResponderTerminationRequest={[Function]}
         onStartShouldSetResponder={[Function]}
-        testID={undefined}
       >
         <Text
-          accessible={true}
           allowFontScaling={false}
-          ellipsizeMode="tail"
           style={
             Array [
               Object {
@@ -104,7 +92,6 @@ exports[`android BpkNavigationBar should render correctly 1`] = `
       }
     >
       <Text
-        accessible={true}
         allowFontScaling={false}
         ellipsizeMode="tail"
         numberOfLines={1}
@@ -173,16 +160,8 @@ exports[`android BpkNavigationBar should render correctly with a subtitle view 1
       }
     >
       <View
-        accessibilityComponentType="button"
         accessibilityLabel="Back"
-        accessibilityTraits={
-          Array [
-            "button",
-          ]
-        }
         accessible={true}
-        hasTVPreferredFocus={undefined}
-        hitSlop={undefined}
         isTVSelectable={true}
         nativeBackgroundAndroid={
           Object {
@@ -191,19 +170,15 @@ exports[`android BpkNavigationBar should render correctly with a subtitle view 1
             "type": "RippleAndroid",
           }
         }
-        onLayout={undefined}
         onResponderGrant={[Function]}
         onResponderMove={[Function]}
         onResponderRelease={[Function]}
         onResponderTerminate={[Function]}
         onResponderTerminationRequest={[Function]}
         onStartShouldSetResponder={[Function]}
-        testID={undefined}
       >
         <Text
-          accessible={true}
           allowFontScaling={false}
-          ellipsizeMode="tail"
           style={
             Array [
               Object {
@@ -243,7 +218,6 @@ exports[`android BpkNavigationBar should render correctly with a subtitle view 1
       }
     >
       <Text
-        accessible={true}
         allowFontScaling={false}
         ellipsizeMode="tail"
         numberOfLines={1}
@@ -320,16 +294,8 @@ exports[`android BpkNavigationBar should render correctly with a title view 1`] 
       }
     >
       <View
-        accessibilityComponentType="button"
         accessibilityLabel="Back"
-        accessibilityTraits={
-          Array [
-            "button",
-          ]
-        }
         accessible={true}
-        hasTVPreferredFocus={undefined}
-        hitSlop={undefined}
         isTVSelectable={true}
         nativeBackgroundAndroid={
           Object {
@@ -338,19 +304,15 @@ exports[`android BpkNavigationBar should render correctly with a title view 1`] 
             "type": "RippleAndroid",
           }
         }
-        onLayout={undefined}
         onResponderGrant={[Function]}
         onResponderMove={[Function]}
         onResponderRelease={[Function]}
         onResponderTerminate={[Function]}
         onResponderTerminationRequest={[Function]}
         onStartShouldSetResponder={[Function]}
-        testID={undefined}
       >
         <Text
-          accessible={true}
           allowFontScaling={false}
-          ellipsizeMode="tail"
           style={
             Array [
               Object {
@@ -437,16 +399,8 @@ exports[`android BpkNavigationBar should render correctly with an icon in the ti
       }
     >
       <View
-        accessibilityComponentType="button"
         accessibilityLabel="Back"
-        accessibilityTraits={
-          Array [
-            "button",
-          ]
-        }
         accessible={true}
-        hasTVPreferredFocus={undefined}
-        hitSlop={undefined}
         isTVSelectable={true}
         nativeBackgroundAndroid={
           Object {
@@ -455,19 +409,15 @@ exports[`android BpkNavigationBar should render correctly with an icon in the ti
             "type": "RippleAndroid",
           }
         }
-        onLayout={undefined}
         onResponderGrant={[Function]}
         onResponderMove={[Function]}
         onResponderRelease={[Function]}
         onResponderTerminate={[Function]}
         onResponderTerminationRequest={[Function]}
         onStartShouldSetResponder={[Function]}
-        testID={undefined}
       >
         <Text
-          accessible={true}
           allowFontScaling={false}
-          ellipsizeMode="tail"
           style={
             Array [
               Object {
@@ -507,9 +457,7 @@ exports[`android BpkNavigationBar should render correctly with an icon in the ti
       }
     >
       <Text
-        accessible={true}
         allowFontScaling={false}
-        ellipsizeMode="tail"
         style={
           Array [
             Object {
@@ -535,7 +483,6 @@ exports[`android BpkNavigationBar should render correctly with an icon in the ti
         
       </Text>
       <Text
-        accessible={true}
         allowFontScaling={false}
         ellipsizeMode="tail"
         numberOfLines={1}
@@ -606,16 +553,8 @@ exports[`android BpkNavigationBar should render correctly with custom style 1`] 
       }
     >
       <View
-        accessibilityComponentType="button"
         accessibilityLabel="Back"
-        accessibilityTraits={
-          Array [
-            "button",
-          ]
-        }
         accessible={true}
-        hasTVPreferredFocus={undefined}
-        hitSlop={undefined}
         isTVSelectable={true}
         nativeBackgroundAndroid={
           Object {
@@ -624,19 +563,15 @@ exports[`android BpkNavigationBar should render correctly with custom style 1`] 
             "type": "RippleAndroid",
           }
         }
-        onLayout={undefined}
         onResponderGrant={[Function]}
         onResponderMove={[Function]}
         onResponderRelease={[Function]}
         onResponderTerminate={[Function]}
         onResponderTerminationRequest={[Function]}
         onStartShouldSetResponder={[Function]}
-        testID={undefined}
       >
         <Text
-          accessible={true}
           allowFontScaling={false}
-          ellipsizeMode="tail"
           style={
             Array [
               Object {
@@ -676,7 +611,6 @@ exports[`android BpkNavigationBar should render correctly with custom style 1`] 
       }
     >
       <Text
-        accessible={true}
         allowFontScaling={false}
         ellipsizeMode="tail"
         numberOfLines={1}
@@ -742,16 +676,8 @@ exports[`android BpkNavigationBar should render correctly with trailing button 1
       }
     >
       <View
-        accessibilityComponentType="button"
         accessibilityLabel="Close"
-        accessibilityTraits={
-          Array [
-            "button",
-          ]
-        }
         accessible={true}
-        hasTVPreferredFocus={undefined}
-        hitSlop={undefined}
         isTVSelectable={true}
         nativeBackgroundAndroid={
           Object {
@@ -760,19 +686,15 @@ exports[`android BpkNavigationBar should render correctly with trailing button 1
             "type": "RippleAndroid",
           }
         }
-        onLayout={undefined}
         onResponderGrant={[Function]}
         onResponderMove={[Function]}
         onResponderRelease={[Function]}
         onResponderTerminate={[Function]}
         onResponderTerminationRequest={[Function]}
         onStartShouldSetResponder={[Function]}
-        testID={undefined}
       >
         <Text
-          accessible={true}
           allowFontScaling={false}
-          ellipsizeMode="tail"
           style={
             Array [
               Object {
@@ -812,7 +734,6 @@ exports[`android BpkNavigationBar should render correctly with trailing button 1
       }
     >
       <Text
-        accessible={true}
         allowFontScaling={false}
         ellipsizeMode="tail"
         numberOfLines={1}
@@ -848,16 +769,8 @@ exports[`android BpkNavigationBar should render correctly with trailing button 1
       }
     >
       <View
-        accessibilityComponentType="button"
         accessibilityLabel="Done"
-        accessibilityTraits={
-          Array [
-            "button",
-          ]
-        }
         accessible={true}
-        hasTVPreferredFocus={undefined}
-        hitSlop={undefined}
         isTVSelectable={true}
         nativeBackgroundAndroid={
           Object {
@@ -866,19 +779,15 @@ exports[`android BpkNavigationBar should render correctly with trailing button 1
             "type": "RippleAndroid",
           }
         }
-        onLayout={undefined}
         onResponderGrant={[Function]}
         onResponderMove={[Function]}
         onResponderRelease={[Function]}
         onResponderTerminate={[Function]}
         onResponderTerminationRequest={[Function]}
         onStartShouldSetResponder={[Function]}
-        testID={undefined}
       >
         <Text
-          accessible={true}
           allowFontScaling={false}
-          ellipsizeMode="tail"
           style={
             Array [
               Object {

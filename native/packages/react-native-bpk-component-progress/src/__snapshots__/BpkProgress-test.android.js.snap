@@ -20,7 +20,6 @@ exports[`Android BpkProgress should not go bellow the min bound 1`] = `
   }
 >
   <View
-    collapsable={undefined}
     style={
       Object {
         "backgroundColor": "rgb(0, 215, 117)",
@@ -53,7 +52,6 @@ exports[`Android BpkProgress should not go over the max bound 1`] = `
   }
 >
   <View
-    collapsable={undefined}
     style={
       Object {
         "backgroundColor": "rgb(0, 215, 117)",
@@ -86,7 +84,6 @@ exports[`Android BpkProgress should render correctly 1`] = `
   }
 >
   <View
-    collapsable={undefined}
     style={
       Object {
         "backgroundColor": "rgb(0, 215, 117)",
@@ -119,7 +116,6 @@ exports[`Android BpkProgress should render correctly with "min" and "max" attrib
   }
 >
   <View
-    collapsable={undefined}
     style={
       Object {
         "backgroundColor": "rgb(0, 215, 117)",
@@ -152,7 +148,6 @@ exports[`Android BpkProgress should render correctly with a "fillStyle" attribut
   }
 >
   <View
-    collapsable={undefined}
     style={
       Object {
         "backgroundColor": "rgb(255, 84, 82)",
@@ -187,7 +182,6 @@ exports[`Android BpkProgress should render correctly with a "style" attribute 1`
   }
 >
   <View
-    collapsable={undefined}
     style={
       Object {
         "backgroundColor": "rgb(0, 215, 117)",
@@ -219,7 +213,6 @@ exports[`Android BpkProgress should render correctly with a "type" attribute 1`]
   }
 >
   <View
-    collapsable={undefined}
     style={
       Object {
         "backgroundColor": "rgb(0, 215, 117)",
@@ -251,7 +244,6 @@ exports[`Android BpkProgress should render correctly with accessibilityLabel pas
   }
 >
   <View
-    collapsable={undefined}
     style={
       Object {
         "backgroundColor": "rgb(0, 215, 117)",
@@ -286,7 +278,6 @@ exports[`Android BpkProgress should support theming 1`] = `
   }
 >
   <View
-    collapsable={undefined}
     style={
       Object {
         "backgroundColor": "blue",
