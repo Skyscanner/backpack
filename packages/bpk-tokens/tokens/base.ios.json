@@ -624,7 +624,7 @@
       "name": "letterSpacingCaps"
     },
     {
-      "value": -0.78,
+      "value": null,
       "type": "letter-spacing",
       "category": "letter-spacings",
       "originalValue": "{!LETTER_SPACING_LG}",
@@ -638,7 +638,7 @@
       "name": "letterSpacingSm"
     },
     {
-      "value": -0.96,
+      "value": null,
       "type": "letter-spacing",
       "category": "letter-spacings",
       "originalValue": "{!LETTER_SPACING_XL}",
@@ -652,14 +652,14 @@
       "name": "letterSpacingXs"
     },
     {
-      "value": -1.396,
+      "value": null,
       "type": "letter-spacing",
       "category": "letter-spacings",
       "originalValue": "{!LETTER_SPACING_XXL}",
       "name": "letterSpacingXxl"
     },
     {
-      "value": -1.6199999999999999,
+      "value": null,
       "type": "letter-spacing",
       "category": "letter-spacings",
       "originalValue": "{!LETTER_SPACING_XXXL}",
@@ -932,7 +932,7 @@
       "name": "textLgFontWeight"
     },
     {
-      "value": -0.78,
+      "value": null,
       "type": "letter-spacing",
       "category": "letter-spacings",
       "originalValue": "{!LETTER_SPACING_LG}",
@@ -988,7 +988,7 @@
       "name": "textXlFontWeight"
     },
     {
-      "value": -0.96,
+      "value": null,
       "type": "letter-spacing",
       "category": "letter-spacings",
       "originalValue": "{!LETTER_SPACING_XL}",
@@ -1044,7 +1044,7 @@
       "name": "textXxlFontWeight"
     },
     {
-      "value": -1.396,
+      "value": null,
       "type": "letter-spacing",
       "category": "letter-spacings",
       "originalValue": "{!LETTER_SPACING_XXL}",
@@ -1072,7 +1072,7 @@
       "name": "textXxxlFontWeight"
     },
     {
-      "value": -1.6199999999999999,
+      "value": null,
       "type": "letter-spacing",
       "category": "letter-spacings",
       "originalValue": "{!LETTER_SPACING_XXXL}",

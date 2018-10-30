@@ -52,7 +52,7 @@ exports[`ios TitleView should render correctly with leading icon 1`] = `
           "fontFamily": "System",
           "fontSize": 20,
           "fontWeight": "400",
-          "letterSpacing": -0.78,
+          "letterSpacing": null,
         },
         Object {
           "fontWeight": "600",
@@ -97,7 +97,7 @@ exports[`ios TitleView should render correctly with only a title 1`] = `
           "fontFamily": "System",
           "fontSize": 20,
           "fontWeight": "400",
-          "letterSpacing": -0.78,
+          "letterSpacing": null,
         },
         Object {
           "fontWeight": "600",
@@ -140,7 +140,7 @@ exports[`ios TitleView should render correctly with trailing icon 1`] = `
           "fontFamily": "System",
           "fontSize": 20,
           "fontWeight": "400",
-          "letterSpacing": -0.78,
+          "letterSpacing": null,
         },
         Object {
           "fontWeight": "600",
