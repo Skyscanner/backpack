@@ -21,6 +21,7 @@
   "devDependencies": {
     "@babel/core": "^7.1.2",
     "@storybook/react-native": "^3.4.11",
+    "babel-core": "^7.0.0-bridge.0",
     "jest": "^23.6.0",
     "jest-cli": "^23.6.0",
     "metro-react-native-babel-preset": "^0.48.1",
