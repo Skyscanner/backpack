@@ -1,5 +1,10 @@
 # Unreleased
 
+**Fixed:**
+
+- react-native-component-button:
+  - Fixed ripple effect for Android and react native 0.57.x
+
 **Added:**
 
 - react-native-bpk-component-text:
