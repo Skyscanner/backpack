@@ -2455,7 +2455,7 @@ exports[`iOS should support the "icon" and "large" property 1`] = `
             "fontFamily": "System",
             "fontSize": 20,
             "fontWeight": "400",
-            "letterSpacing": -0.78,
+            "letterSpacing": null,
           },
           Object {
             "fontWeight": "600",
@@ -2721,7 +2721,7 @@ exports[`iOS should support the "large" and secondary property 1`] = `
             "fontFamily": "System",
             "fontSize": 20,
             "fontWeight": "400",
-            "letterSpacing": -0.78,
+            "letterSpacing": null,
           },
           Object {
             "fontWeight": "600",
@@ -2829,7 +2829,7 @@ exports[`iOS should support the "large" property 1`] = `
             "fontFamily": "System",
             "fontSize": 20,
             "fontWeight": "400",
-            "letterSpacing": -0.78,
+            "letterSpacing": null,
           },
           Object {
             "fontWeight": "600",

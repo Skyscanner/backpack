@@ -123,7 +123,7 @@ exports[`Android BpkDialingCodeList should render correctly 1`] = `
                   "fontFamily": "System",
                   "fontSize": 20,
                   "fontWeight": "400",
-                  "letterSpacing": -0.78,
+                  "letterSpacing": null,
                 },
                 Object {},
                 Array [
@@ -268,7 +268,7 @@ exports[`Android BpkDialingCodeList should render correctly 1`] = `
                   "fontFamily": "System",
                   "fontSize": 20,
                   "fontWeight": "400",
-                  "letterSpacing": -0.78,
+                  "letterSpacing": null,
                 },
                 Object {},
                 Array [
@@ -413,7 +413,7 @@ exports[`Android BpkDialingCodeList should render correctly 1`] = `
                   "fontFamily": "System",
                   "fontSize": 20,
                   "fontWeight": "400",
-                  "letterSpacing": -0.78,
+                  "letterSpacing": null,
                 },
                 Object {},
                 Array [
@@ -599,7 +599,7 @@ exports[`Android BpkDialingCodeList should render correctly with "selectedId" se
                   "fontFamily": "System",
                   "fontSize": 20,
                   "fontWeight": "400",
-                  "letterSpacing": -0.78,
+                  "letterSpacing": null,
                 },
                 Object {},
                 Array [
@@ -749,7 +749,7 @@ exports[`Android BpkDialingCodeList should render correctly with "selectedId" se
                   "fontFamily": "System",
                   "fontSize": 20,
                   "fontWeight": "400",
-                  "letterSpacing": -0.78,
+                  "letterSpacing": null,
                 },
                 Object {},
                 Array [
@@ -894,7 +894,7 @@ exports[`Android BpkDialingCodeList should render correctly with "selectedId" se
                   "fontFamily": "System",
                   "fontSize": 20,
                   "fontWeight": "400",
-                  "letterSpacing": -0.78,
+                  "letterSpacing": null,
                 },
                 Object {},
                 Array [

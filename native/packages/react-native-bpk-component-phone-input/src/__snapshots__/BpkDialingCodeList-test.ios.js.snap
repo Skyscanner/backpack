@@ -126,7 +126,7 @@ exports[`iOS BpkDialingCodeList should render correctly 1`] = `
                 "fontFamily": "System",
                 "fontSize": 20,
                 "fontWeight": "400",
-                "letterSpacing": -0.78,
+                "letterSpacing": null,
               },
               Object {
                 "fontWeight": "600",
@@ -217,7 +217,7 @@ exports[`iOS BpkDialingCodeList should render correctly 1`] = `
                   "fontFamily": "System",
                   "fontSize": 20,
                   "fontWeight": "400",
-                  "letterSpacing": -0.78,
+                  "letterSpacing": null,
                 },
                 Object {},
                 Array [
@@ -304,7 +304,7 @@ exports[`iOS BpkDialingCodeList should render correctly 1`] = `
                 "fontFamily": "System",
                 "fontSize": 20,
                 "fontWeight": "400",
-                "letterSpacing": -0.78,
+                "letterSpacing": null,
               },
               Object {
                 "fontWeight": "600",
@@ -395,7 +395,7 @@ exports[`iOS BpkDialingCodeList should render correctly 1`] = `
                   "fontFamily": "System",
                   "fontSize": 20,
                   "fontWeight": "400",
-                  "letterSpacing": -0.78,
+                  "letterSpacing": null,
                 },
                 Object {},
                 Array [
@@ -482,7 +482,7 @@ exports[`iOS BpkDialingCodeList should render correctly 1`] = `
                 "fontFamily": "System",
                 "fontSize": 20,
                 "fontWeight": "400",
-                "letterSpacing": -0.78,
+                "letterSpacing": null,
               },
               Object {
                 "fontWeight": "600",
@@ -573,7 +573,7 @@ exports[`iOS BpkDialingCodeList should render correctly 1`] = `
                   "fontFamily": "System",
                   "fontSize": 20,
                   "fontWeight": "400",
-                  "letterSpacing": -0.78,
+                  "letterSpacing": null,
                 },
                 Object {},
                 Array [
@@ -766,7 +766,7 @@ exports[`iOS BpkDialingCodeList should render correctly with "selectedId" set 1`
                 "fontFamily": "System",
                 "fontSize": 20,
                 "fontWeight": "400",
-                "letterSpacing": -0.78,
+                "letterSpacing": null,
               },
               Object {
                 "fontWeight": "600",
@@ -857,7 +857,7 @@ exports[`iOS BpkDialingCodeList should render correctly with "selectedId" set 1`
                   "fontFamily": "System",
                   "fontSize": 20,
                   "fontWeight": "400",
-                  "letterSpacing": -0.78,
+                  "letterSpacing": null,
                 },
                 Object {},
                 Array [
@@ -949,7 +949,7 @@ exports[`iOS BpkDialingCodeList should render correctly with "selectedId" set 1`
                 "fontFamily": "System",
                 "fontSize": 20,
                 "fontWeight": "400",
-                "letterSpacing": -0.78,
+                "letterSpacing": null,
               },
               Object {
                 "fontWeight": "600",
@@ -1040,7 +1040,7 @@ exports[`iOS BpkDialingCodeList should render correctly with "selectedId" set 1`
                   "fontFamily": "System",
                   "fontSize": 20,
                   "fontWeight": "400",
-                  "letterSpacing": -0.78,
+                  "letterSpacing": null,
                 },
                 Object {},
                 Array [
@@ -1127,7 +1127,7 @@ exports[`iOS BpkDialingCodeList should render correctly with "selectedId" set 1`
                 "fontFamily": "System",
                 "fontSize": 20,
                 "fontWeight": "400",
-                "letterSpacing": -0.78,
+                "letterSpacing": null,
               },
               Object {
                 "fontWeight": "600",
@@ -1218,7 +1218,7 @@ exports[`iOS BpkDialingCodeList should render correctly with "selectedId" set 1`
                   "fontFamily": "System",
                   "fontSize": 20,
                   "fontWeight": "400",
-                  "letterSpacing": -0.78,
+                  "letterSpacing": null,
                 },
                 Object {},
                 Array [

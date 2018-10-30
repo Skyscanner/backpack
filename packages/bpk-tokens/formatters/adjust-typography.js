@@ -97,7 +97,9 @@ const adjustTypographyAndroid = prop => {
 
 const adjustTypographyIos = prop => {
   let adjustedValue = prop.value;
-  if (prop.type === 'letter-spacing') {
+  if (prop.value === 'null') {
+    adjustedValue = null;
+  } else if (prop.type === 'letter-spacing') {
     const correspondingFontSize = getCorrespondingFontSizeTokensIos(prop.name);
     if (correspondingFontSize === undefined) {
       throw new Error(

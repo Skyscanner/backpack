@@ -166,22 +166,22 @@
       "value": 0.4
     },
     "LETTER_SPACING_LG": {
-      "value": -0.4
+      "value": null
     },
     "LETTER_SPACING_SM": {
       "value": 0
     },
     "LETTER_SPACING_XL": {
-      "value": -0.6
+      "value": null
     },
     "LETTER_SPACING_XS": {
       "value": 0
     },
     "LETTER_SPACING_XXL": {
-      "value": -1
+      "value": null
     },
     "LETTER_SPACING_XXXL": {
-      "value": -1.2
+      "value": null
     },
     "LINE_HEIGHT_BASE": {
       "value": 19
@@ -944,7 +944,7 @@
       "name": "LETTER_SPACING_CAPS"
     },
     "LETTER_SPACING_LG": {
-      "value": -0.78,
+      "value": null,
       "type": "letter-spacing",
       "category": "letter-spacings",
       "originalValue": "{!LETTER_SPACING_LG}",
@@ -958,7 +958,7 @@
       "name": "LETTER_SPACING_SM"
     },
     "LETTER_SPACING_XL": {
-      "value": -0.96,
+      "value": null,
       "type": "letter-spacing",
       "category": "letter-spacings",
       "originalValue": "{!LETTER_SPACING_XL}",
@@ -972,14 +972,14 @@
       "name": "LETTER_SPACING_XS"
     },
     "LETTER_SPACING_XXL": {
-      "value": -1.396,
+      "value": null,
       "type": "letter-spacing",
       "category": "letter-spacings",
       "originalValue": "{!LETTER_SPACING_XXL}",
       "name": "LETTER_SPACING_XXL"
     },
     "LETTER_SPACING_XXXL": {
-      "value": -1.6199999999999999,
+      "value": null,
       "type": "letter-spacing",
       "category": "letter-spacings",
       "originalValue": "{!LETTER_SPACING_XXXL}",
@@ -1252,7 +1252,7 @@
       "name": "TEXT_LG_FONT_WEIGHT"
     },
     "TEXT_LG_LETTER_SPACING": {
-      "value": -0.78,
+      "value": null,
       "type": "letter-spacing",
       "category": "letter-spacings",
       "originalValue": "{!LETTER_SPACING_LG}",
@@ -1308,7 +1308,7 @@
       "name": "TEXT_XL_FONT_WEIGHT"
     },
     "TEXT_XL_LETTER_SPACING": {
-      "value": -0.96,
+      "value": null,
       "type": "letter-spacing",
       "category": "letter-spacings",
       "originalValue": "{!LETTER_SPACING_XL}",
@@ -1364,7 +1364,7 @@
       "name": "TEXT_XXL_FONT_WEIGHT"
     },
     "TEXT_XXL_LETTER_SPACING": {
-      "value": -1.396,
+      "value": null,
       "type": "letter-spacing",
       "category": "letter-spacings",
       "originalValue": "{!LETTER_SPACING_XXL}",
@@ -1392,7 +1392,7 @@
       "name": "TEXT_XXXL_FONT_WEIGHT"
     },
     "TEXT_XXXL_LETTER_SPACING": {
-      "value": -1.6199999999999999,
+      "value": null,
       "type": "letter-spacing",
       "category": "letter-spacings",
       "originalValue": "{!LETTER_SPACING_XXXL}",
