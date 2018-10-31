@@ -155,8 +155,9 @@ exports[`iOS BpkNudger should disable theming if the required attribute is omitt
         Object {
           "color": "rgb(82, 76, 97)",
           "fontFamily": "System",
-          "fontSize": 17,
+          "fontSize": 20,
           "fontWeight": "400",
+          "letterSpacing": null,
         },
         Object {
           "fontWeight": "600",
@@ -462,8 +463,9 @@ exports[`iOS BpkNudger should render correctly 1`] = `
         Object {
           "color": "rgb(82, 76, 97)",
           "fontFamily": "System",
-          "fontSize": 17,
+          "fontSize": 20,
           "fontWeight": "400",
+          "letterSpacing": null,
         },
         Object {
           "fontWeight": "600",
@@ -775,8 +777,9 @@ exports[`iOS BpkNudger should render correctly when value is a not an integer 1`
         Object {
           "color": "rgb(82, 76, 97)",
           "fontFamily": "System",
-          "fontSize": 17,
+          "fontSize": 20,
           "fontWeight": "400",
+          "letterSpacing": null,
         },
         Object {
           "fontWeight": "600",
@@ -1082,8 +1085,9 @@ exports[`iOS BpkNudger should render correctly when value is greater than max 1`
         Object {
           "color": "rgb(82, 76, 97)",
           "fontFamily": "System",
-          "fontSize": 17,
+          "fontSize": 20,
           "fontWeight": "400",
+          "letterSpacing": null,
         },
         Object {
           "fontWeight": "600",
@@ -1401,8 +1405,9 @@ exports[`iOS BpkNudger should render correctly when value is less than min 1`] =
         Object {
           "color": "rgb(82, 76, 97)",
           "fontFamily": "System",
-          "fontSize": 17,
+          "fontSize": 20,
           "fontWeight": "400",
+          "letterSpacing": null,
         },
         Object {
           "fontWeight": "600",
@@ -1710,8 +1715,9 @@ exports[`iOS BpkNudger should support theming 1`] = `
         Object {
           "color": "rgb(82, 76, 97)",
           "fontFamily": "System",
-          "fontSize": 17,
+          "fontSize": 20,
           "fontWeight": "400",
+          "letterSpacing": null,
         },
         Object {
           "fontWeight": "600",

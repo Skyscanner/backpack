@@ -25,6 +25,7 @@ import iosTokens from '../tokens/base.raw.ios.json';
 
 const ANDROID_ONLY_PROPS = [
   'FONT_FAMILY_EMPHASIZE',
+  'FONT_FAMILY_HEAVY',
   'ELEVATION_XS',
   'ELEVATION_SM',
   'ELEVATION_BASE',

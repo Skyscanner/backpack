@@ -98,7 +98,9 @@ exports[`ios - iPhone X  BpkNavigationBar should render correctly 1`] = `
               "fontFamily": "sans-serif",
               "fontSize": 20,
               "fontWeight": "400",
+              "letterSpacing": -0.4,
             },
+            Object {},
             Array [
               Object {
                 "color": "rgb(82, 76, 97)",
@@ -149,6 +151,7 @@ exports[`ios - iPhone X  BpkNavigationBar should render correctly 1`] = `
                 "fontFamily": "sans-serif",
                 "fontSize": 20,
                 "fontWeight": "400",
+                "letterSpacing": -0.4,
               },
               Object {
                 "fontWeight": "500",
@@ -250,7 +253,9 @@ exports[`ios - iPhone X  BpkNavigationBar should render correctly with trailing 
               "fontFamily": "sans-serif",
               "fontSize": 20,
               "fontWeight": "400",
+              "letterSpacing": -0.4,
             },
+            Object {},
             Array [
               Object {
                 "color": "rgb(82, 76, 97)",
@@ -301,6 +306,7 @@ exports[`ios - iPhone X  BpkNavigationBar should render correctly with trailing 
                 "fontFamily": "sans-serif",
                 "fontSize": 20,
                 "fontWeight": "400",
+                "letterSpacing": -0.4,
               },
               Object {
                 "fontWeight": "500",
@@ -360,6 +366,7 @@ exports[`ios - iPhone X  BpkNavigationBar should render correctly with trailing 
               "fontFamily": "sans-serif",
               "fontSize": 20,
               "fontWeight": "400",
+              "letterSpacing": -0.4,
             },
             Object {
               "fontWeight": "500",

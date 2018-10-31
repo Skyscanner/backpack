@@ -18,62 +18,12 @@
 
 /* @flow */
 
+import PropTypes from 'prop-types';
 import { StyleSheet } from 'react-native';
 import { spacingSm } from 'bpk-tokens/tokens/base.react.native';
 
-import { emphasizePropType, stylePropType } from './common-types';
+import { stylePropType, weightPropType, WEIGHT_STYLES } from './common-types';
 
-describe('emphasizePropType', () => {
-  it('should error on invalid emphasize prop', () => {
-    expect(
-      emphasizePropType(
-        {
-          children: 'Lorem ipsum.',
-          textStyle: 'xxl',
-          emphasize: true,
-          style: null,
-        },
-        'emphasize',
-        'BpkText',
-      ).toString(),
-    ).toEqual(
-      'Error: Invalid prop `emphasize` of value `true` supplied to `BpkText`. On iOS, `textStyle` value of `xxl` cannot be emphasized.',
-    );
-  });
-
-  it('should accept valid emphasize prop', () => {
-    expect(
-      emphasizePropType(
-        {
-          children: 'Lorem ipsum.',
-          textStyle: 'sm',
-          emphasize: true,
-          style: null,
-        },
-        'emphasize',
-        'BpkText',
-      ),
-    ).toEqual(false);
-  });
-
-  it('should error if emphasize prop is wrong type', () => {
-    expect(
-      emphasizePropType(
-        {
-          children: 'Lorem ipsum.',
-          textStyle: 'sm',
-          // $FlowFixMe
-          emphasize: 'asdf',
-          style: null,
-        },
-        'emphasize',
-        'BpkText',
-      ).toString(),
-    ).toEqual(
-      'Error: Invalid prop `emphasize` of type `string` supplied to `BpkText`, expected `boolean`.',
-    ); // eslint-disable-line max-len
-  });
-});
 describe('stylePropType', () => {
   it('should accept valid style prop', () => {
     expect(
@@ -81,6 +31,7 @@ describe('stylePropType', () => {
         {
           children: 'Lorem ipsum.',
           textStyle: 'base',
+          weight: WEIGHT_STYLES.regular,
           emphasize: false,
           style: StyleSheet.create({
             breakingStyle: {
@@ -100,6 +51,7 @@ describe('stylePropType', () => {
         {
           children: 'Lorem ipsum.',
           textStyle: 'base',
+          weight: WEIGHT_STYLES.regular,
           emphasize: false,
           style: StyleSheet.create({
             breakingStyle: {
@@ -111,8 +63,25 @@ describe('stylePropType', () => {
         'BpkText',
       ).toString(),
     ).toEqual(
-      'Error: Invalid prop `style` with `fontWeight` value `200` supplied to `BpkText`. Use `emphasize` prop instead.',
+      'Error: Invalid prop `style` with `fontWeight` value `200` supplied to `BpkText`. Use `weight` prop instead.',
     ); // eslint-disable-line max-len
+  });
+
+  it('should error when textStyle="base" and weight="heavy"', () => {
+    const consoleWarnFn = jest.fn();
+    jest.spyOn(console, 'warn').mockImplementation(consoleWarnFn);
+
+    PropTypes.checkPropTypes(
+      { weight: weightPropType },
+      {
+        textStyle: 'base',
+        weight: WEIGHT_STYLES.heavy,
+      },
+      'weight',
+      'BpkText',
+    );
+
+    expect(consoleWarnFn.mock.calls.length).toBe(1);
   });
 
   it('should return false on undefined style', () => {
@@ -121,6 +90,7 @@ describe('stylePropType', () => {
         {
           children: 'Lorem ipsum.',
           textStyle: 'base',
+          weight: WEIGHT_STYLES.regular,
           emphasize: false,
           style: undefined,
         },

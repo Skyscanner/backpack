@@ -47,7 +47,9 @@ exports[`Android BpkHorizontalNavItem should render correctly 1`] = `
           "fontFamily": "sans-serif",
           "fontSize": 16,
           "fontWeight": "400",
+          "letterSpacing": -0.2,
         },
+        Object {},
         Array [
           Object {
             "color": "rgb(82, 76, 97)",
@@ -109,7 +111,9 @@ exports[`Android BpkHorizontalNavItem should render correctly with "selected" pr
           "fontFamily": "sans-serif",
           "fontSize": 16,
           "fontWeight": "400",
+          "letterSpacing": -0.2,
         },
+        Object {},
         Array [
           Object {
             "color": "rgb(82, 76, 97)",
@@ -177,7 +181,9 @@ exports[`Android BpkHorizontalNavItem should render correctly with "small" prop 
           "fontFamily": "sans-serif",
           "fontSize": 14,
           "fontWeight": "400",
+          "letterSpacing": 0,
         },
+        Object {},
         Array [
           Object {
             "color": "rgb(82, 76, 97)",
@@ -239,7 +245,9 @@ exports[`Android BpkHorizontalNavItem should render correctly with "spaceAround"
           "fontFamily": "sans-serif",
           "fontSize": 16,
           "fontWeight": "400",
+          "letterSpacing": -0.2,
         },
+        Object {},
         Array [
           Object {
             "color": "rgb(82, 76, 97)",
@@ -301,7 +309,9 @@ exports[`Android BpkHorizontalNavItem should render correctly with arbitrary pro
           "fontFamily": "sans-serif",
           "fontSize": 16,
           "fontWeight": "400",
+          "letterSpacing": -0.2,
         },
+        Object {},
         Array [
           Object {
             "color": "rgb(82, 76, 97)",
@@ -366,7 +376,9 @@ exports[`Android BpkHorizontalNavItem should render correctly with custom "style
           "fontFamily": "sans-serif",
           "fontSize": 16,
           "fontWeight": "400",
+          "letterSpacing": -0.2,
         },
+        Object {},
         Array [
           Object {
             "color": "rgb(82, 76, 97)",
@@ -428,7 +440,9 @@ exports[`Android BpkHorizontalNavItem should support theming 1`] = `
           "fontFamily": "sans-serif",
           "fontSize": 16,
           "fontWeight": "400",
+          "letterSpacing": -0.2,
         },
+        Object {},
         Array [
           Object {
             "color": "rgb(82, 76, 97)",

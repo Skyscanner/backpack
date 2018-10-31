@@ -54,8 +54,9 @@ exports[`iOS BpkButton should render correctly 1`] = `
           Object {
             "color": "rgb(82, 76, 97)",
             "fontFamily": "System",
-            "fontSize": 13,
+            "fontSize": 14,
             "fontWeight": "400",
+            "letterSpacing": 0.154,
           },
           Object {
             "fontWeight": "600",
@@ -154,8 +155,9 @@ exports[`iOS BpkButton should render correctly with iconAlignment="centerLeading
           Object {
             "color": "rgb(82, 76, 97)",
             "fontFamily": "System",
-            "fontSize": 13,
+            "fontSize": 14,
             "fontWeight": "400",
+            "letterSpacing": 0.154,
           },
           Object {
             "fontWeight": "600",
@@ -292,8 +294,9 @@ exports[`iOS BpkButton should render correctly with iconAlignment="centerTrailin
           Object {
             "color": "rgb(82, 76, 97)",
             "fontFamily": "System",
-            "fontSize": 13,
+            "fontSize": 14,
             "fontWeight": "400",
+            "letterSpacing": 0.154,
           },
           Object {
             "fontWeight": "600",
@@ -430,8 +433,9 @@ exports[`iOS BpkButton should render correctly with iconAlignment="leading" 1`] 
           Object {
             "color": "rgb(82, 76, 97)",
             "fontFamily": "System",
-            "fontSize": 13,
+            "fontSize": 14,
             "fontWeight": "400",
+            "letterSpacing": 0.154,
           },
           Object {
             "fontWeight": "600",
@@ -574,8 +578,9 @@ exports[`iOS BpkButton should render correctly with iconAlignment="trailing" 1`]
           Object {
             "color": "rgb(82, 76, 97)",
             "fontFamily": "System",
-            "fontSize": 13,
+            "fontSize": 14,
             "fontWeight": "400",
+            "letterSpacing": 0.154,
           },
           Object {
             "fontWeight": "600",
@@ -715,8 +720,9 @@ exports[`iOS BpkButton should render correctly with type="destructive" 1`] = `
           Object {
             "color": "rgb(82, 76, 97)",
             "fontFamily": "System",
-            "fontSize": 13,
+            "fontSize": 14,
             "fontWeight": "400",
+            "letterSpacing": 0.154,
           },
           Object {
             "fontWeight": "600",
@@ -823,8 +829,9 @@ exports[`iOS BpkButton should render correctly with type="destructive" and disab
           Object {
             "color": "rgb(82, 76, 97)",
             "fontFamily": "System",
-            "fontSize": 13,
+            "fontSize": 14,
             "fontWeight": "400",
+            "letterSpacing": 0.154,
           },
           Object {
             "fontWeight": "600",
@@ -926,8 +933,9 @@ exports[`iOS BpkButton should render correctly with type="featured" 1`] = `
           Object {
             "color": "rgb(82, 76, 97)",
             "fontFamily": "System",
-            "fontSize": 13,
+            "fontSize": 14,
             "fontWeight": "400",
+            "letterSpacing": 0.154,
           },
           Object {
             "fontWeight": "600",
@@ -1025,8 +1033,9 @@ exports[`iOS BpkButton should render correctly with type="featured" and disabled
           Object {
             "color": "rgb(82, 76, 97)",
             "fontFamily": "System",
-            "fontSize": 13,
+            "fontSize": 14,
             "fontWeight": "400",
+            "letterSpacing": 0.154,
           },
           Object {
             "fontWeight": "600",
@@ -1125,8 +1134,9 @@ exports[`iOS BpkButton should render correctly with type="primary" 1`] = `
           Object {
             "color": "rgb(82, 76, 97)",
             "fontFamily": "System",
-            "fontSize": 13,
+            "fontSize": 14,
             "fontWeight": "400",
+            "letterSpacing": 0.154,
           },
           Object {
             "fontWeight": "600",
@@ -1224,8 +1234,9 @@ exports[`iOS BpkButton should render correctly with type="primary" and disabled 
           Object {
             "color": "rgb(82, 76, 97)",
             "fontFamily": "System",
-            "fontSize": 13,
+            "fontSize": 14,
             "fontWeight": "400",
+            "letterSpacing": 0.154,
           },
           Object {
             "fontWeight": "600",
@@ -1330,8 +1341,9 @@ exports[`iOS BpkButton should render correctly with type="secondary" 1`] = `
           Object {
             "color": "rgb(82, 76, 97)",
             "fontFamily": "System",
-            "fontSize": 13,
+            "fontSize": 14,
             "fontWeight": "400",
+            "letterSpacing": 0.154,
           },
           Object {
             "fontWeight": "600",
@@ -1438,8 +1450,9 @@ exports[`iOS BpkButton should render correctly with type="secondary" and disable
           Object {
             "color": "rgb(82, 76, 97)",
             "fontFamily": "System",
-            "fontSize": 13,
+            "fontSize": 14,
             "fontWeight": "400",
+            "letterSpacing": 0.154,
           },
           Object {
             "fontWeight": "600",
@@ -1545,9 +1558,11 @@ exports[`iOS BpkButton should support elements as icons 1`] = `
           Object {
             "color": "rgb(82, 76, 97)",
             "fontFamily": "System",
-            "fontSize": 15,
+            "fontSize": 16,
             "fontWeight": "400",
+            "letterSpacing": 0.12,
           },
+          Object {},
         ]
       }
     >
@@ -1633,8 +1648,9 @@ exports[`iOS BpkButton should support having an icon as well as a title 1`] = `
           Object {
             "color": "rgb(82, 76, 97)",
             "fontFamily": "System",
-            "fontSize": 13,
+            "fontSize": 14,
             "fontWeight": "400",
+            "letterSpacing": 0.154,
           },
           Object {
             "fontWeight": "600",
@@ -1772,8 +1788,9 @@ exports[`iOS BpkButton should support overwriting styles 1`] = `
           Object {
             "color": "rgb(82, 76, 97)",
             "fontFamily": "System",
-            "fontSize": 13,
+            "fontSize": 14,
             "fontWeight": "400",
+            "letterSpacing": 0.154,
           },
           Object {
             "fontWeight": "600",
@@ -1871,8 +1888,9 @@ exports[`iOS BpkButton should support the "disabled" property 1`] = `
           Object {
             "color": "rgb(82, 76, 97)",
             "fontFamily": "System",
-            "fontSize": 13,
+            "fontSize": 14,
             "fontWeight": "400",
+            "letterSpacing": 0.154,
           },
           Object {
             "fontWeight": "600",
@@ -1974,8 +1992,9 @@ exports[`iOS BpkButton should support the "icon" property 1`] = `
           Object {
             "color": "rgb(82, 76, 97)",
             "fontFamily": "System",
-            "fontSize": 13,
+            "fontSize": 14,
             "fontWeight": "400",
+            "letterSpacing": 0.154,
           },
           Object {
             "fontWeight": "600",
@@ -2226,8 +2245,9 @@ exports[`iOS BpkButton should support the "secondary" property 1`] = `
           Object {
             "color": "rgb(82, 76, 97)",
             "fontFamily": "System",
-            "fontSize": 13,
+            "fontSize": 14,
             "fontWeight": "400",
+            "letterSpacing": 0.154,
           },
           Object {
             "fontWeight": "600",
@@ -2326,8 +2346,9 @@ exports[`iOS BpkButtonThemed should render correctly 1`] = `
           Object {
             "color": "rgb(82, 76, 97)",
             "fontFamily": "System",
-            "fontSize": 13,
+            "fontSize": 14,
             "fontWeight": "400",
+            "letterSpacing": 0.154,
           },
           Object {
             "fontWeight": "600",
@@ -2432,8 +2453,9 @@ exports[`iOS should support the "icon" and "large" property 1`] = `
           Object {
             "color": "rgb(82, 76, 97)",
             "fontFamily": "System",
-            "fontSize": 17,
+            "fontSize": 20,
             "fontWeight": "400",
+            "letterSpacing": null,
           },
           Object {
             "fontWeight": "600",
@@ -2697,8 +2719,9 @@ exports[`iOS should support the "large" and secondary property 1`] = `
           Object {
             "color": "rgb(82, 76, 97)",
             "fontFamily": "System",
-            "fontSize": 17,
+            "fontSize": 20,
             "fontWeight": "400",
+            "letterSpacing": null,
           },
           Object {
             "fontWeight": "600",
@@ -2804,8 +2827,9 @@ exports[`iOS should support the "large" property 1`] = `
           Object {
             "color": "rgb(82, 76, 97)",
             "fontFamily": "System",
-            "fontSize": 17,
+            "fontSize": 20,
             "fontWeight": "400",
+            "letterSpacing": null,
           },
           Object {
             "fontWeight": "600",

@@ -21,7 +21,7 @@
 import React from 'react';
 import { withTheme } from 'react-native-bpk-theming';
 import BpkIcon from 'react-native-bpk-component-icon';
-import BpkText from 'react-native-bpk-component-text';
+import BpkText, { WEIGHT_STYLES } from 'react-native-bpk-component-text';
 import BpkTouchableNativeFeedback from 'react-native-bpk-component-touchable-native-feedback';
 import { View } from 'react-native';
 
@@ -83,7 +83,7 @@ const BpkButton = (props: Props) => {
   }
 
   return (
-    <View style={[containerStyle, style]}>
+    <View style={[containerStyle, style, backgroundColor]}>
       <BpkTouchableNativeFeedback
         disabled={disabled}
         onPress={onPress}
@@ -95,7 +95,11 @@ const BpkButton = (props: Props) => {
       >
         <View style={[buttonStyle, backgroundColor]}>
           {!iconOnly && (
-            <BpkText textStyle="sm" emphasize style={textStyle(theme, props)}>
+            <BpkText
+              textStyle="sm"
+              weight={WEIGHT_STYLES.emphasized}
+              style={textStyle(theme, props)}
+            >
               {title.toUpperCase()}
             </BpkText>
           )}

@@ -2,6 +2,58 @@
 
 [Unreleased changes](./UNRELEASED.md).
 
+# 2018-10-31 - New prop for native text and bugfix for native button
+
+**Fixed:**
+
+- react-native-bpk-component-button: 7.1.22 => 7.1.23
+  - Fixed ripple effect for Android and react native 0.57.x
+
+**Added:**
+
+- react-native-bpk-component-text: 2.1.55 => 2.2.0
+  - Added `weight` prop to control font weight. `emphasize` is now deprecated and will be removed in a future version. Use `weight="emphasized"` to emphasise text from now on.
+
+# 2018-10-24 - Icons renamed and new prop for InfiniteScroll
+
+**Breaking:**
+
+- bpk-svgs: 5.19.4 => 6.0.0
+  - Icons renamed:
+  - bws--call-back => call-back
+  - bws--end-call => end-call
+  - bws--keypad => keypad
+  - bws--mute => mute
+  - bws--phone-call => phone-call
+  - bws--send-message => send-message
+  - bws--un-mute => unmute
+  - send-message icon replaced with new version
+
+**Added:**
+
+- bpk-component-infinite-scroll: 2.0.16 => 2.1.0
+  - Added possibility to have different number of elements loaded on load and on scroll
+
+# 2018-10-24 - New icons added
+
+**Added:**
+
+- bpk-component-icon: 3.23.8 => 3.23.9
+- bpk-mixins: 17.11.19 => 17.11.20
+- bpk-svgs: 5.19.3 => 5.19.4
+- react-native-bpk-component-button-link: 3.1.1 => 3.1.2
+- react-native-bpk-component-button: 7.1.20 => 7.1.21
+- react-native-bpk-component-icon: 1.10.8 => 1.10.9
+- react-native-bpk-component-navigation-bar: 2.0.41 => 2.0.42
+  - New icons added:
+  - bws--call-back
+  - bws--end-call
+  - bws--keypad
+  - bws--mute
+  - bws--phone-call
+  - bws--send-message
+  - bws--un-mute
+
 # 2018-10-12 - Fix Infinite Scroll problem on IE11
 
 **Fixed:**

@@ -52,6 +52,7 @@ exports[`android TitleView should render correctly with leading icon 1`] = `
           "fontFamily": "sans-serif",
           "fontSize": 20,
           "fontWeight": "400",
+          "letterSpacing": -0.4,
         },
         Object {
           "fontFamily": "sans-serif-medium",
@@ -96,6 +97,7 @@ exports[`android TitleView should render correctly with only a title 1`] = `
           "fontFamily": "sans-serif",
           "fontSize": 20,
           "fontWeight": "400",
+          "letterSpacing": -0.4,
         },
         Object {
           "fontFamily": "sans-serif-medium",
@@ -138,6 +140,7 @@ exports[`android TitleView should render correctly with trailing icon 1`] = `
           "fontFamily": "sans-serif",
           "fontSize": 20,
           "fontWeight": "400",
+          "letterSpacing": -0.4,
         },
         Object {
           "fontFamily": "sans-serif-medium",

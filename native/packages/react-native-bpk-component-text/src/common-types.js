@@ -20,39 +20,41 @@
 
 import { type Node } from 'react';
 import PropTypes from 'prop-types';
-import { Platform, StyleSheet, type StyleObj } from 'react-native';
+import { StyleSheet, type StyleObj } from 'react-native';
 
-export const TEXT_STYLES = ['xs', 'sm', 'base', 'lg', 'xl', 'xxl'];
-export type TextStyle = 'xs' | 'sm' | 'base' | 'lg' | 'xl' | 'xxl';
+export const TEXT_STYLES = [
+  'caps',
+  'xs',
+  'sm',
+  'base',
+  'lg',
+  'xl',
+  'xxl',
+  'xxxl',
+];
+export type TextStyle =
+  | 'caps'
+  | 'xs'
+  | 'sm'
+  | 'base'
+  | 'lg'
+  | 'xl'
+  | 'xxl'
+  | 'xxxl';
+
+export const WEIGHT_STYLES = {
+  regular: 'regular',
+  emphasized: 'emphasized',
+  heavy: 'heavy',
+};
+export type Weight = $Keys<typeof WEIGHT_STYLES>;
 
 export type Props = {
   children: Node,
-  textStyle: TextStyle,
-  emphasize: boolean,
+  emphasize: ?boolean,
   style: ?StyleObj,
-};
-
-export const emphasizePropType = (
-  props: Props,
-  propName: string,
-  componentName: string,
-) => {
-  const value = props[propName];
-  if (typeof value !== 'boolean') {
-    return new Error(
-      `Invalid prop \`${propName}\` of type \`${typeof value}\` supplied to \`${componentName}\`, expected \`boolean\`.`,
-    ); // eslint-disable-line max-len
-  }
-
-  const enabled = !!value;
-
-  if (Platform.OS === 'ios' && (enabled && props.textStyle === 'xxl')) {
-    return new Error(
-      `Invalid prop \`${propName}\` of value \`${value}\` supplied to \`${componentName}\`. On iOS, \`textStyle\` value of \`xxl\` cannot be emphasized.`,
-    ); // eslint-disable-line max-len
-  }
-
-  return false;
+  textStyle: TextStyle,
+  weight: Weight,
 };
 
 export const stylePropType = (
@@ -68,22 +70,61 @@ export const stylePropType = (
     return new Error(
       `Invalid prop \`${propName}\` with \`fontWeight\` value \`${
         value.fontWeight
-      }\` supplied to \`${componentName}\`. Use \`emphasize\` prop instead.`,
+      }\` supplied to \`${componentName}\`. Use \`weight\` prop instead.`,
     ); // eslint-disable-line max-len
   }
 
   return false;
 };
 
+// Weight can only be heavy if textStyle is `xl`, `xxl` or `xxl`.
+export const isWeightValid = (weight: string, textStyle: string) =>
+  weight !== WEIGHT_STYLES.heavy ||
+  (weight === WEIGHT_STYLES.heavy && textStyle.match(/^x+l$/));
+
+export const weightPropType = (
+  props: Props,
+  propName: string,
+  componentName: string,
+) => {
+  if (!isWeightValid(props[propName], props.textStyle)) {
+    console.warn(
+      `${propName} "${
+        props[propName]
+      }" can only be used on ${componentName} with textStyle "xl", "xxl" or "xxxl". Try ${propName}="${
+        WEIGHT_STYLES.emphasized
+      }" instead.`,
+    );
+  }
+
+  PropTypes.oneOf(Object.keys(WEIGHT_STYLES))(props, propName, componentName);
+};
+
+// If this pattern is used elsewhere, it should be abstracted to bpk-react-utils and this file refactored.
+const deprecated = (propType, explanation) => (
+  props: { [string]: any },
+  propName: string,
+  componentName: string,
+  ...rest: [any]
+) => {
+  if (props[propName] != null) {
+    const message = `"${propName}" property of "${componentName}" has been deprecated. ${explanation}`;
+    console.warn(message); // eslint-disable-line no-console
+  }
+  return propType(props, propName, componentName, ...rest);
+};
+
 export const propTypes = {
   children: PropTypes.node.isRequired,
-  textStyle: PropTypes.oneOf(TEXT_STYLES),
-  emphasize: emphasizePropType,
+  emphasize: deprecated(PropTypes.bool, 'Use "weight" instead.'),
   style: stylePropType,
+  textStyle: PropTypes.oneOf(TEXT_STYLES),
+  weight: weightPropType,
 };
 
 export const defaultProps = {
-  textStyle: 'base',
-  emphasize: false,
+  emphasize: null,
   style: null,
+  textStyle: 'base',
+  weight: WEIGHT_STYLES.regular,
 };

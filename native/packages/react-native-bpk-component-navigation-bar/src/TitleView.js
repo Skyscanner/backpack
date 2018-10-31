@@ -19,7 +19,7 @@
 
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
-import BpkText from 'react-native-bpk-component-text';
+import BpkText, { WEIGHT_STYLES } from 'react-native-bpk-component-text';
 import BpkIcon, { icons } from 'react-native-bpk-component-icon';
 import { spacingSm } from 'bpk-tokens/tokens/base.react.native';
 
@@ -76,7 +76,7 @@ const TitleView = (props: {
       {isLeading && icon}
       <BpkText
         textStyle="lg"
-        emphasize
+        weight={WEIGHT_STYLES.emphasized}
         allowFontScaling={false}
         numberOfLines={1}
         ellipsizeMode="tail"

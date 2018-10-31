@@ -92,7 +92,7 @@ exports[`Android BpkPicker should render correctly 1`] = `
             "elevation": 5,
           },
           Object {
-            "maxHeight": 112,
+            "maxHeight": 102,
           },
         ]
       }
@@ -148,7 +148,9 @@ exports[`Android BpkPicker should render correctly 1`] = `
                     "fontFamily": "sans-serif",
                     "fontSize": 16,
                     "fontWeight": "400",
+                    "letterSpacing": -0.2,
                   },
+                  Object {},
                   Object {},
                 ]
               }
@@ -204,7 +206,9 @@ exports[`Android BpkPicker should render correctly 1`] = `
                     "fontFamily": "sans-serif",
                     "fontSize": 16,
                     "fontWeight": "400",
+                    "letterSpacing": -0.2,
                   },
+                  Object {},
                   Object {},
                 ]
               }
@@ -311,7 +315,7 @@ exports[`Android BpkPicker should render correctly with a selected value 1`] = `
             "elevation": 5,
           },
           Object {
-            "maxHeight": 112,
+            "maxHeight": 102,
           },
         ]
       }
@@ -368,7 +372,9 @@ exports[`Android BpkPicker should render correctly with a selected value 1`] = `
                     "fontFamily": "sans-serif",
                     "fontSize": 16,
                     "fontWeight": "400",
+                    "letterSpacing": -0.2,
                   },
+                  Object {},
                   Object {
                     "color": "rgb(0, 178, 214)",
                   },
@@ -426,7 +432,9 @@ exports[`Android BpkPicker should render correctly with a selected value 1`] = `
                     "fontFamily": "sans-serif",
                     "fontSize": 16,
                     "fontWeight": "400",
+                    "letterSpacing": -0.2,
                   },
+                  Object {},
                   Object {},
                 ]
               }

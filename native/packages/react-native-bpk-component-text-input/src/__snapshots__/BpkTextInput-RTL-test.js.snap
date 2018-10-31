@@ -13,7 +13,7 @@ exports[`RTL BpkTextInput should ignore when placeholder is provided, as element
     style={
       Object {
         "flexDirection": "row",
-        "paddingTop": 18,
+        "paddingTop": 17,
       }
     }
   >
@@ -27,11 +27,11 @@ exports[`RTL BpkTextInput should ignore when placeholder is provided, as element
         Object {
           "color": "rgba(178, 174, 189, 1)",
           "fontFamily": "System",
-          "fontSize": 15,
+          "fontSize": 16,
           "fontWeight": "400",
-          "lineHeight": 20,
+          "lineHeight": 19,
           "position": "absolute",
-          "top": 21,
+          "top": 20,
         }
       }
     >
@@ -61,10 +61,10 @@ exports[`RTL BpkTextInput should ignore when placeholder is provided, as element
             "borderBottomWidth": 0,
             "color": "rgb(82, 76, 97)",
             "flex": 1,
-            "fontSize": 15,
+            "fontSize": 16,
             "fontWeight": "400",
-            "lineHeight": 20,
-            "minHeight": 28,
+            "lineHeight": 19,
+            "minHeight": 27,
             "paddingHorizontal": 0,
             "paddingVertical": 4,
             "textAlign": "right",
@@ -91,7 +91,7 @@ exports[`RTL BpkTextInput should render correctly 1`] = `
     style={
       Object {
         "flexDirection": "row",
-        "paddingTop": 18,
+        "paddingTop": 17,
       }
     }
   >
@@ -105,11 +105,11 @@ exports[`RTL BpkTextInput should render correctly 1`] = `
         Object {
           "color": "rgba(178, 174, 189, 1)",
           "fontFamily": "System",
-          "fontSize": 15,
+          "fontSize": 16,
           "fontWeight": "400",
-          "lineHeight": 20,
+          "lineHeight": 19,
           "position": "absolute",
-          "top": 21,
+          "top": 20,
         }
       }
     >
@@ -139,10 +139,10 @@ exports[`RTL BpkTextInput should render correctly 1`] = `
             "borderBottomWidth": 0,
             "color": "rgb(82, 76, 97)",
             "flex": 1,
-            "fontSize": 15,
+            "fontSize": 16,
             "fontWeight": "400",
-            "lineHeight": 20,
-            "minHeight": 28,
+            "lineHeight": 19,
+            "minHeight": 27,
             "paddingHorizontal": 0,
             "paddingVertical": 4,
             "textAlign": "right",
@@ -169,7 +169,7 @@ exports[`RTL BpkTextInput should render correctly with \`accessoryView\` 1`] = `
     style={
       Object {
         "flexDirection": "row",
-        "paddingTop": 18,
+        "paddingTop": 17,
       }
     }
   >
@@ -183,9 +183,9 @@ exports[`RTL BpkTextInput should render correctly with \`accessoryView\` 1`] = `
         Object {
           "color": "rgba(129, 123, 143, 1)",
           "fontFamily": "System",
-          "fontSize": 13,
+          "fontSize": 14,
           "fontWeight": "400",
-          "lineHeight": 18,
+          "lineHeight": 17,
           "position": "absolute",
           "top": 0,
         }
@@ -219,10 +219,10 @@ exports[`RTL BpkTextInput should render correctly with \`accessoryView\` 1`] = `
             "borderBottomWidth": 0,
             "color": "rgb(82, 76, 97)",
             "flex": 1,
-            "fontSize": 15,
+            "fontSize": 16,
             "fontWeight": "400",
-            "lineHeight": 20,
-            "minHeight": 28,
+            "lineHeight": 19,
+            "minHeight": 27,
             "paddingHorizontal": 0,
             "paddingVertical": 4,
             "textAlign": "right",
@@ -249,7 +249,7 @@ exports[`RTL BpkTextInput should render correctly with arbitrary props 1`] = `
     style={
       Object {
         "flexDirection": "row",
-        "paddingTop": 18,
+        "paddingTop": 17,
       }
     }
   >
@@ -263,11 +263,11 @@ exports[`RTL BpkTextInput should render correctly with arbitrary props 1`] = `
         Object {
           "color": "rgba(178, 174, 189, 1)",
           "fontFamily": "System",
-          "fontSize": 15,
+          "fontSize": 16,
           "fontWeight": "400",
-          "lineHeight": 20,
+          "lineHeight": 19,
           "position": "absolute",
-          "top": 21,
+          "top": 20,
         }
       }
     >
@@ -297,10 +297,10 @@ exports[`RTL BpkTextInput should render correctly with arbitrary props 1`] = `
             "borderBottomWidth": 0,
             "color": "rgb(82, 76, 97)",
             "flex": 1,
-            "fontSize": 15,
+            "fontSize": 16,
             "fontWeight": "400",
-            "lineHeight": 20,
-            "minHeight": 28,
+            "lineHeight": 19,
+            "minHeight": 27,
             "paddingHorizontal": 0,
             "paddingVertical": 4,
             "textAlign": "right",
@@ -330,7 +330,7 @@ exports[`RTL BpkTextInput should render correctly with custom style 1`] = `
     style={
       Object {
         "flexDirection": "row",
-        "paddingTop": 18,
+        "paddingTop": 17,
       }
     }
   >
@@ -344,11 +344,11 @@ exports[`RTL BpkTextInput should render correctly with custom style 1`] = `
         Object {
           "color": "rgba(178, 174, 189, 1)",
           "fontFamily": "System",
-          "fontSize": 15,
+          "fontSize": 16,
           "fontWeight": "400",
-          "lineHeight": 20,
+          "lineHeight": 19,
           "position": "absolute",
-          "top": 21,
+          "top": 20,
         }
       }
     >
@@ -378,10 +378,10 @@ exports[`RTL BpkTextInput should render correctly with custom style 1`] = `
             "borderBottomWidth": 0,
             "color": "rgb(82, 76, 97)",
             "flex": 1,
-            "fontSize": 15,
+            "fontSize": 16,
             "fontWeight": "400",
-            "lineHeight": 20,
-            "minHeight": 28,
+            "lineHeight": 19,
+            "minHeight": 27,
             "paddingHorizontal": 0,
             "paddingVertical": 4,
             "textAlign": "right",
@@ -408,7 +408,7 @@ exports[`RTL BpkTextInput should render correctly with description 1`] = `
     style={
       Object {
         "flexDirection": "row",
-        "paddingTop": 18,
+        "paddingTop": 17,
       }
     }
   >
@@ -422,9 +422,9 @@ exports[`RTL BpkTextInput should render correctly with description 1`] = `
         Object {
           "color": "rgba(129, 123, 143, 1)",
           "fontFamily": "System",
-          "fontSize": 13,
+          "fontSize": 14,
           "fontWeight": "400",
-          "lineHeight": 18,
+          "lineHeight": 17,
           "position": "absolute",
           "top": 0,
         }
@@ -456,10 +456,10 @@ exports[`RTL BpkTextInput should render correctly with description 1`] = `
             "borderBottomWidth": 0,
             "color": "rgb(82, 76, 97)",
             "flex": 1,
-            "fontSize": 15,
+            "fontSize": 16,
             "fontWeight": "400",
-            "lineHeight": 20,
-            "minHeight": 28,
+            "lineHeight": 19,
+            "minHeight": 27,
             "paddingHorizontal": 0,
             "paddingVertical": 4,
             "textAlign": "right",
@@ -479,9 +479,11 @@ exports[`RTL BpkTextInput should render correctly with description 1`] = `
         Object {
           "color": "rgb(82, 76, 97)",
           "fontFamily": "System",
-          "fontSize": 11,
+          "fontSize": 12,
           "fontWeight": "400",
+          "letterSpacing": 0,
         },
+        Object {},
         Object {
           "color": "rgb(129, 123, 143)",
           "paddingTop": 4,
@@ -507,7 +509,7 @@ exports[`RTL BpkTextInput should render correctly with description, valid=false 
     style={
       Object {
         "flexDirection": "row",
-        "paddingTop": 18,
+        "paddingTop": 17,
       }
     }
   >
@@ -521,9 +523,9 @@ exports[`RTL BpkTextInput should render correctly with description, valid=false 
         Object {
           "color": "rgba(255, 84, 82, 1)",
           "fontFamily": "System",
-          "fontSize": 13,
+          "fontSize": 14,
           "fontWeight": "400",
-          "lineHeight": 18,
+          "lineHeight": 17,
           "position": "absolute",
           "top": 0,
         }
@@ -555,10 +557,10 @@ exports[`RTL BpkTextInput should render correctly with description, valid=false 
             "borderBottomWidth": 0,
             "color": "rgb(82, 76, 97)",
             "flex": 1,
-            "fontSize": 15,
+            "fontSize": 16,
             "fontWeight": "400",
-            "lineHeight": 20,
-            "minHeight": 28,
+            "lineHeight": 19,
+            "minHeight": 27,
             "paddingHorizontal": 0,
             "paddingVertical": 4,
             "textAlign": "right",
@@ -607,9 +609,11 @@ exports[`RTL BpkTextInput should render correctly with description, valid=false 
         Object {
           "color": "rgb(82, 76, 97)",
           "fontFamily": "System",
-          "fontSize": 11,
+          "fontSize": 12,
           "fontWeight": "400",
+          "letterSpacing": 0,
         },
+        Object {},
         Object {
           "color": "rgb(255, 84, 82)",
           "paddingTop": 4,
@@ -635,7 +639,7 @@ exports[`RTL BpkTextInput should render correctly with editable=false 1`] = `
     style={
       Object {
         "flexDirection": "row",
-        "paddingTop": 18,
+        "paddingTop": 17,
       }
     }
   >
@@ -649,11 +653,11 @@ exports[`RTL BpkTextInput should render correctly with editable=false 1`] = `
         Object {
           "color": "rgba(230, 228, 235, 1)",
           "fontFamily": "System",
-          "fontSize": 15,
+          "fontSize": 16,
           "fontWeight": "400",
-          "lineHeight": 20,
+          "lineHeight": 19,
           "position": "absolute",
-          "top": 21,
+          "top": 20,
         }
       }
     >
@@ -683,10 +687,10 @@ exports[`RTL BpkTextInput should render correctly with editable=false 1`] = `
             "borderBottomWidth": 0,
             "color": "rgb(82, 76, 97)",
             "flex": 1,
-            "fontSize": 15,
+            "fontSize": 16,
             "fontWeight": "400",
-            "lineHeight": 20,
-            "minHeight": 28,
+            "lineHeight": 19,
+            "minHeight": 27,
             "paddingHorizontal": 0,
             "paddingVertical": 4,
             "textAlign": "right",
@@ -713,7 +717,7 @@ exports[`RTL BpkTextInput should render correctly with inputRef set 1`] = `
     style={
       Object {
         "flexDirection": "row",
-        "paddingTop": 18,
+        "paddingTop": 17,
       }
     }
   >
@@ -727,11 +731,11 @@ exports[`RTL BpkTextInput should render correctly with inputRef set 1`] = `
         Object {
           "color": "rgba(178, 174, 189, 1)",
           "fontFamily": "System",
-          "fontSize": 15,
+          "fontSize": 16,
           "fontWeight": "400",
-          "lineHeight": 20,
+          "lineHeight": 19,
           "position": "absolute",
-          "top": 21,
+          "top": 20,
         }
       }
     >
@@ -761,10 +765,10 @@ exports[`RTL BpkTextInput should render correctly with inputRef set 1`] = `
             "borderBottomWidth": 0,
             "color": "rgb(82, 76, 97)",
             "flex": 1,
-            "fontSize": 15,
+            "fontSize": 16,
             "fontWeight": "400",
-            "lineHeight": 20,
-            "minHeight": 28,
+            "lineHeight": 19,
+            "minHeight": 27,
             "paddingHorizontal": 0,
             "paddingVertical": 4,
             "textAlign": "right",
@@ -791,7 +795,7 @@ exports[`RTL BpkTextInput should render correctly with mask="99/99" 1`] = `
     style={
       Object {
         "flexDirection": "row",
-        "paddingTop": 18,
+        "paddingTop": 17,
       }
     }
   >
@@ -805,9 +809,9 @@ exports[`RTL BpkTextInput should render correctly with mask="99/99" 1`] = `
         Object {
           "color": "rgba(129, 123, 143, 1)",
           "fontFamily": "System",
-          "fontSize": 13,
+          "fontSize": 14,
           "fontWeight": "400",
-          "lineHeight": 18,
+          "lineHeight": 17,
           "position": "absolute",
           "top": 0,
         }
@@ -839,10 +843,10 @@ exports[`RTL BpkTextInput should render correctly with mask="99/99" 1`] = `
             "borderBottomWidth": 0,
             "color": "rgb(82, 76, 97)",
             "flex": 1,
-            "fontSize": 15,
+            "fontSize": 16,
             "fontWeight": "400",
-            "lineHeight": 20,
-            "minHeight": 28,
+            "lineHeight": 19,
+            "minHeight": 27,
             "paddingHorizontal": 0,
             "paddingVertical": 4,
             "textAlign": "right",
@@ -869,7 +873,7 @@ exports[`RTL BpkTextInput should render correctly with mask="9999-9999-9999-9999
     style={
       Object {
         "flexDirection": "row",
-        "paddingTop": 18,
+        "paddingTop": 17,
       }
     }
   >
@@ -883,9 +887,9 @@ exports[`RTL BpkTextInput should render correctly with mask="9999-9999-9999-9999
         Object {
           "color": "rgba(129, 123, 143, 1)",
           "fontFamily": "System",
-          "fontSize": 13,
+          "fontSize": 14,
           "fontWeight": "400",
-          "lineHeight": 18,
+          "lineHeight": 17,
           "position": "absolute",
           "top": 0,
         }
@@ -917,10 +921,10 @@ exports[`RTL BpkTextInput should render correctly with mask="9999-9999-9999-9999
             "borderBottomWidth": 0,
             "color": "rgb(82, 76, 97)",
             "flex": 1,
-            "fontSize": 15,
+            "fontSize": 16,
             "fontWeight": "400",
-            "lineHeight": 20,
-            "minHeight": 28,
+            "lineHeight": 19,
+            "minHeight": 27,
             "paddingHorizontal": 0,
             "paddingVertical": 4,
             "textAlign": "right",
@@ -947,7 +951,7 @@ exports[`RTL BpkTextInput should render correctly with valid 1`] = `
     style={
       Object {
         "flexDirection": "row",
-        "paddingTop": 18,
+        "paddingTop": 17,
       }
     }
   >
@@ -961,11 +965,11 @@ exports[`RTL BpkTextInput should render correctly with valid 1`] = `
         Object {
           "color": "rgba(178, 174, 189, 1)",
           "fontFamily": "System",
-          "fontSize": 15,
+          "fontSize": 16,
           "fontWeight": "400",
-          "lineHeight": 20,
+          "lineHeight": 19,
           "position": "absolute",
-          "top": 21,
+          "top": 20,
         }
       }
     >
@@ -995,10 +999,10 @@ exports[`RTL BpkTextInput should render correctly with valid 1`] = `
             "borderBottomWidth": 0,
             "color": "rgb(82, 76, 97)",
             "flex": 1,
-            "fontSize": 15,
+            "fontSize": 16,
             "fontWeight": "400",
-            "lineHeight": 20,
-            "minHeight": 28,
+            "lineHeight": 19,
+            "minHeight": 27,
             "paddingHorizontal": 0,
             "paddingVertical": 4,
             "textAlign": "right",
@@ -1054,7 +1058,7 @@ exports[`RTL BpkTextInput should render correctly with valid false 1`] = `
     style={
       Object {
         "flexDirection": "row",
-        "paddingTop": 18,
+        "paddingTop": 17,
       }
     }
   >
@@ -1068,11 +1072,11 @@ exports[`RTL BpkTextInput should render correctly with valid false 1`] = `
         Object {
           "color": "rgba(178, 174, 189, 1)",
           "fontFamily": "System",
-          "fontSize": 15,
+          "fontSize": 16,
           "fontWeight": "400",
-          "lineHeight": 20,
+          "lineHeight": 19,
           "position": "absolute",
-          "top": 21,
+          "top": 20,
         }
       }
     >
@@ -1102,10 +1106,10 @@ exports[`RTL BpkTextInput should render correctly with valid false 1`] = `
             "borderBottomWidth": 0,
             "color": "rgb(82, 76, 97)",
             "flex": 1,
-            "fontSize": 15,
+            "fontSize": 16,
             "fontWeight": "400",
-            "lineHeight": 20,
-            "minHeight": 28,
+            "lineHeight": 19,
+            "minHeight": 27,
             "paddingHorizontal": 0,
             "paddingVertical": 4,
             "textAlign": "right",
@@ -1161,7 +1165,7 @@ exports[`RTL BpkTextInput should render correctly with valid false and a validat
     style={
       Object {
         "flexDirection": "row",
-        "paddingTop": 18,
+        "paddingTop": 17,
       }
     }
   >
@@ -1175,11 +1179,11 @@ exports[`RTL BpkTextInput should render correctly with valid false and a validat
         Object {
           "color": "rgba(178, 174, 189, 1)",
           "fontFamily": "System",
-          "fontSize": 15,
+          "fontSize": 16,
           "fontWeight": "400",
-          "lineHeight": 20,
+          "lineHeight": 19,
           "position": "absolute",
-          "top": 21,
+          "top": 20,
         }
       }
     >
@@ -1209,10 +1213,10 @@ exports[`RTL BpkTextInput should render correctly with valid false and a validat
             "borderBottomWidth": 0,
             "color": "rgb(82, 76, 97)",
             "flex": 1,
-            "fontSize": 15,
+            "fontSize": 16,
             "fontWeight": "400",
-            "lineHeight": 20,
-            "minHeight": 28,
+            "lineHeight": 19,
+            "minHeight": 27,
             "paddingHorizontal": 0,
             "paddingVertical": 4,
             "textAlign": "right",
@@ -1261,9 +1265,11 @@ exports[`RTL BpkTextInput should render correctly with valid false and a validat
         Object {
           "color": "rgb(82, 76, 97)",
           "fontFamily": "System",
-          "fontSize": 11,
+          "fontSize": 12,
           "fontWeight": "400",
+          "letterSpacing": 0,
         },
+        Object {},
         Object {
           "color": "rgb(255, 84, 82)",
           "paddingTop": 4,
@@ -1289,7 +1295,7 @@ exports[`RTL BpkTextInput should render correctly with value 1`] = `
     style={
       Object {
         "flexDirection": "row",
-        "paddingTop": 18,
+        "paddingTop": 17,
       }
     }
   >
@@ -1303,9 +1309,9 @@ exports[`RTL BpkTextInput should render correctly with value 1`] = `
         Object {
           "color": "rgba(129, 123, 143, 1)",
           "fontFamily": "System",
-          "fontSize": 13,
+          "fontSize": 14,
           "fontWeight": "400",
-          "lineHeight": 18,
+          "lineHeight": 17,
           "position": "absolute",
           "top": 0,
         }
@@ -1337,10 +1343,10 @@ exports[`RTL BpkTextInput should render correctly with value 1`] = `
             "borderBottomWidth": 0,
             "color": "rgb(82, 76, 97)",
             "flex": 1,
-            "fontSize": 15,
+            "fontSize": 16,
             "fontWeight": "400",
-            "lineHeight": 20,
-            "minHeight": 28,
+            "lineHeight": 19,
+            "minHeight": 27,
             "paddingHorizontal": 0,
             "paddingVertical": 4,
             "textAlign": "right",

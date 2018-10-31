@@ -23,7 +23,7 @@ import { StyleSheet, View, ViewPropTypes } from 'react-native';
 import PropTypes from 'prop-types';
 import { clamp } from 'lodash';
 import BpkButton from 'react-native-bpk-component-button';
-import BpkText from 'react-native-bpk-component-text';
+import BpkText, { WEIGHT_STYLES } from 'react-native-bpk-component-text';
 import { icons } from 'react-native-bpk-component-icon';
 import { spacingSm, spacingLg } from 'bpk-tokens/tokens/base.react.native';
 
@@ -80,7 +80,11 @@ const BpkNudger = (props: Props) => {
         title={decreaseButtonLabel}
         style={styles.buttonMinus}
       />
-      <BpkText textStyle="lg" emphasize style={styles.text}>
+      <BpkText
+        textStyle="lg"
+        weight={WEIGHT_STYLES.emphasized}
+        style={styles.text}
+      >
         {adjustedValue}
       </BpkText>
       <BpkButton
