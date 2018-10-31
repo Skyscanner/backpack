@@ -145,6 +145,7 @@ class Week extends Component {
       <tr className={getClassName('bpk-calendar-grid__week')}>
         {this.props.dates.map(date => (
           <DateContainer
+            isEmptyCell={!isSameMonth(date, month) && ignoreOutsideDate}
             key={date.getDate()}
             weekendStart={
               showWeekendSeparator && firstDayOfWeekendIndex === getDay(date)
