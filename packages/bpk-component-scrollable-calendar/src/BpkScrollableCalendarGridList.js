@@ -24,12 +24,7 @@ import { DateUtils, BpkCalendarGridPropTypes } from 'bpk-component-calendar';
 import withInfiniteScroll, {
   ArrayDataSource,
 } from 'bpk-component-infinite-scroll';
-import {
-  startOfDay,
-  startOfMonth,
-  isSameMonth,
-  differenceInCalendarMonths,
-} from 'date-fns';
+import { startOfDay, startOfMonth } from 'date-fns';
 
 import STYLES from './bpk-scrollable-calendar-grid-list.scss';
 import BpkScrollableCalendarGrid from './BpkScrollableCalendarGrid';
@@ -41,8 +36,6 @@ class BpkScrollableCalendarGridList extends React.Component {
   constructor(props) {
     super(props);
 
-    this.ref = React.createRef();
-
     const startDate = startOfDay(startOfMonth(this.props.minDate));
     const endDate = startOfDay(startOfMonth(this.props.maxDate));
     const monthsCount = DateUtils.differenceInCalendarMonths(
@@ -51,21 +44,18 @@ class BpkScrollableCalendarGridList extends React.Component {
     );
     const months = getMonthsArray(startDate, monthsCount);
 
+    this.lastLoaded = 0;
     this.state = { months };
-  }
 
-  componentDidMount() {
-    if (this.ref.current) {
-      this.ref.current.scrollIntoView({
-        behavior: 'smooth',
-        block: 'bottom',
-        inline: 'center',
-      });
-    }
+    this.setLoaded = this.setLoaded.bind(this);
   }
 
   getHtmlElement = () =>
     typeof document !== 'undefined' ? document.querySelector('html') : {};
+
+  setLoaded(month) {
+    this.lastLoaded = Math.max(month, this.lastLoaded);
+  }
 
   render() {
     const Calendars = ({ elements }) => (
@@ -76,17 +66,19 @@ class BpkScrollableCalendarGridList extends React.Component {
         }
       >
         {elements.map((month, index) => (
-          <BpkScrollableCalendarGrid
-            onDateClick={this.props.onDateClick}
-            {...this.props}
-            ref={isSameMonth(this.props.selectedDate, month) ? this.ref : null}
-            key={month}
-            month={month}
-            focusedDate={this.props.focusedDate}
-            preventKeyboardFocus={this.props.preventKeyboardFocus}
-            aria-hidden={index !== 1}
-            className={getClassName('bpk-scrollable-calendar-grid-list__item')}
-          />
+          <div ref={() => this.setLoaded(index)} key={month}>
+            <BpkScrollableCalendarGrid
+              onDateClick={this.props.onDateClick}
+              {...this.props}
+              month={month}
+              focusedDate={this.props.focusedDate}
+              preventKeyboardFocus={this.props.preventKeyboardFocus}
+              aria-hidden={index !== 1}
+              className={getClassName(
+                'bpk-scrollable-calendar-grid-list__item',
+              )}
+            />
+          </div>
         ))}
       </div>
     );
@@ -96,13 +88,7 @@ class BpkScrollableCalendarGridList extends React.Component {
       <List
         dataSource={months}
         elementsPerScroll={2}
-        initiallyLoadedElements={Math.max(
-          2,
-          differenceInCalendarMonths(
-            this.props.selectedDate,
-            startOfDay(startOfMonth(this.props.minDate)),
-          ) + 1,
-        )}
+        initiallyLoadedElements={Math.max(2, this.lastLoaded + 1)}
       />
     );
   }
