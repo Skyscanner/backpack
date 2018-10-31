@@ -2,6 +2,18 @@
 
 [Unreleased changes](./UNRELEASED.md).
 
+# 2018-10-31 - New prop for native text and bugfix for native button
+
+**Fixed:**
+
+- react-native-bpk-component-button: 7.1.22 => 7.1.23
+  - Fixed ripple effect for Android and react native 0.57.x
+
+**Added:**
+
+- react-native-bpk-component-text: 2.1.55 => 2.2.0
+  - Added `weight` prop to control font weight. `emphasize` is now deprecated and will be removed in a future version. Use `weight="emphasized"` to emphasise text from now on.
+
 # 2018-10-24 - Icons renamed and new prop for InfiniteScroll
 
 **Breaking:**
