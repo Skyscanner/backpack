@@ -83,7 +83,7 @@ const BpkButton = (props: Props) => {
   }
 
   return (
-    <View style={[containerStyle, style]}>
+    <View style={[containerStyle, style, backgroundColor]}>
       <BpkTouchableNativeFeedback
         disabled={disabled}
         onPress={onPress}
