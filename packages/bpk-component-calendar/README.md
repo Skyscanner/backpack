@@ -29,32 +29,33 @@ const daysOfWeek = [
 ];
 
 export default class App extends Component {
-  constructor() {
+  constructor () {
     super();
 
+
     this.state = {
-      selectedDate: null,
-    };
+      selectedDate: null
+    }
   }
 
-  handleDateSelect = date => {
+  handleDateSelect = (date) => {
     this.setState({
-      selectedDate: date,
+      selectedDate: date
     });
-  };
+  }
 
-  render() {
+  render () {
     return (
       <div>
         <BpkInput
-          id="dateInput"
+          id='dateInput'
           type={INPUT_TYPES.text}
-          name="date"
+          name='date'
           value={(this.state.selectedDate || '').toString()}
-          placeholder="Departure date"
+          placeholder='Departure date'
         />
         <BpkCalendar
-          id="calendar"
+          id='calendar'
           onDateSelect={this.handleDateSelect}
           formatMonth={formatMonth}
           formatDateFull={formatDateFull}
@@ -63,7 +64,7 @@ export default class App extends Component {
           date={this.state.selectedDate}
         />
       </div>
-    );
+    )
   }
 }
 ```
@@ -88,14 +89,12 @@ The default export of this package uses the following set of components:
 Composition and state are implemented using the aforementioned higher-order components:
 
 ```js
-withCalendarState(
-  composeCalendar(
-    BpkCalendarNav,
-    BpkCalendarGridHeader,
-    TransitioningBpkCalendarGrid,
-    BpkCalendarDate,
-  ),
-);
+withCalendarState(composeCalendar(
+  BpkCalendarNav,
+  BpkCalendarGridHeader,
+  TransitioningBpkCalendarGrid,
+  BpkCalendarDate,
+))
 ```
 
 ### Building a custom calendar
@@ -103,32 +102,45 @@ withCalendarState(
 A custom calendar can be created by swapping out any default component for an alternative:
 
 ```js
-composeCalendar(MyNavigation, MyHeader, MyGrid, MyDate);
+composeCalendar(
+  MyNavigation,
+  MyHeader,
+  MyGrid,
+  MyDate,
+)
 ```
 
 The navigation and header components are optional. If they are not needed, the arguments to `composeCalendar` should be set to `null`:
 
 ```js
-composeCalendar(null, null, MyGrid, MyDate);
+composeCalendar(
+  null,
+  null,
+  MyGrid,
+  MyDate,
+)
 ```
 
 In many cases, you might want to keep most of the components and replace only one or two:
 
 ```js
-composeCalendar(BpkCalendarNav, BpkCalendarGridHeader, BpkCalendarGrid, MyDate);
+composeCalendar(
+  BpkCalendarNav,
+  BpkCalendarGridHeader,
+  BpkCalendarGrid,
+  MyDate,
+)
 ```
 
 Finally, focus management and support for keyboard input can be added using `withCalendarState`:
 
 ```js
-withCalendarState(
-  composeCalendar(
-    BpkCalendarNav,
-    BpkCalendarGridHeader,
-    BpkCalendarGrid,
-    MyDate,
-  ),
-);
+withCalendarState(composeCalendar(
+  BpkCalendarNav,
+  BpkCalendarGridHeader,
+  BpkCalendarGrid,
+  MyDate,
+))
 ```
 
 > When implementing a replacement for any of the default calendar components, make sure it
@@ -137,26 +149,26 @@ withCalendarState(
 
 ## Props
 
-| Property             | PropType | Required | Default Value    |
-| -------------------- | -------- | -------- | ---------------- |
-| changeMonthLabel     | string   | true     | -                |
-| daysOfWeek           | object   | true     | -                |
-| formatDateFull       | func     | true     | -                |
-| formatMonth          | func     | true     | -                |
-| id                   | string   | true     | -                |
-| className            | string   | false    | null             |
-| fixedWidth           | bool     | false    | true             |
-| markOutsideDays      | bool     | false    | true             |
-| markToday            | bool     | false    | true             |
-| maxDate              | Date     | false    | new Date() + 1yr |
-| minDate              | Date     | false    | new Date()       |
-| onDateSelect         | func     | false    | null             |
-| onMonthChange        | func     | false    | null             |
-| showWeekendSeparator | bool     | false    | true             |
-| selectedDate         | Date     | false    | null             |
-| weekStartsOn         | number   | false    | 1                |
-| initiallyFocusedDate | Date     | false    | null             |
-| gridClassName        | string   | false    | null             |
+| Property              | PropType             | Required            | Default Value    |
+| --------------------- | -------------------- | ------------------- | ---------------- |
+| daysOfWeek            | object               | true                | -                |
+| formatDateFull        | func                 | true                | -                |
+| formatMonth           | func                 | true                | -                |
+| id                    | string               | true                | -                |
+| changeMonthLabel      | string               | if Nav !== null     | -                |
+| className             | string               | false               | null             |
+| fixedWidth            | bool                 | false               | true             |
+| gridClassName         | string               | false               | null             |
+| initiallyFocusedDate  | Date                 | false               | null             |
+| markOutsideDays       | bool                 | false               | true             |
+| markToday             | bool                 | false               | true             |
+| maxDate               | Date                 | false               | new Date() + 1yr |
+| minDate               | Date                 | false               | new Date()       |
+| onDateSelect          | func                 | false               | null             |
+| onMonthChange         | func                 | false               | null             |
+| selectedDate          | Date                 | false               | null             |
+| showWeekendSeparator  | bool                 | false               | true             |
+| weekStartsOn          | number               | false               | 1                |
 
 Some of the more complex props and props for sub-components are detailed below.
 
@@ -165,16 +177,16 @@ Some of the more complex props and props for sub-components are detailed below.
 The BpkCalendarNav component is used to change the month that is being displayed by using
 buttons and a select box.
 
-| Property         | PropType | Required | Default Value |
-| ---------------- | -------- | -------- | ------------- |
-| changeMonthLabel | string   | true     | -             |
-| formatMonth      | func     | true     | -             |
-| id               | string   | true     | -             |
-| maxDate          | Date     | true     | -             |
-| minDate          | Date     | true     | -             |
-| month            | Date     | true     | -             |
-| onMonthChange    | func     | false    | null          |
-| disabled         | bool     | false    | false         |
+| Property              | PropType             | Required | Default Value    |
+| --------------------- | -------------------- | -------- | ---------------- |
+| changeMonthLabel      | string               | true     | -                |
+| formatMonth           | func                 | true     | -                |
+| id                    | string               | true     | -                |
+| maxDate               | Date                 | true     | -                |
+| minDate               | Date                 | true     | -                |
+| month                 | Date                 | true     | -                |
+| onMonthChange         | func                 | false    | null             |
+| disabled              | bool                 | false    | false            |
 
 ### BpkCalendarGridHeader
 
@@ -182,55 +194,55 @@ The BpkCalendarGridHeader component displays the header of `BpkCalendarGrid`, li
 the days of the week. This is needed as a separate component, as the header should stay
 in place while the rest of the grid transitions when changing months.
 
-| Property             | PropType | Required | Default Value |
-| -------------------- | -------- | -------- | ------------- |
-| showWeekendSeparator | bool     | true     | -             |
-| daysOfWeek           | object   | true     | -             |
-| weekStartsOn         | number   | true     | -             |
-| showWeekendSeparator | bool     | false    | false         |
-| className            | string   | false    | null          |
+| Property              | PropType             | Required | Default Value    |
+| --------------------- | -------------------- | -------- | ---------------- |
+| showWeekendSeparator  | bool                 | true     | -                |
+| daysOfWeek            | object               | true     | -                |
+| weekStartsOn          | number               | true     | -                |
+| showWeekendSeparator  | bool                 | false    | false            |
+| className             | string               | false    | null             |
 
 ### BpkCalendarGrid
 
 The BpkCalendarGrid component displays a month as a table.
 
-| Property             | PropType | Required | Default Value    |
-| -------------------- | -------- | -------- | ---------------- |
-| DateComponent        | func     | true     | -                |
-| daysOfWeek           | object   | true     | -                |
-| formatDateFull       | func     | true     | -                |
-| formatMonth          | func     | true     | -                |
-| month                | Date     | true     | -                |
-| focusedDate          | Date     | false    | null             |
-| isKeyboardFocusable  | bool     | false    | true             |
-| markOutsideDays      | bool     | false    | true             |
-| markToday            | bool     | false    | true             |
-| maxDate              | Date     | false    | new Date() + 1yr |
-| minDate              | Date     | false    | new Date()       |
-| onDateClick          | func     | false    | null             |
-| onDateKeyDown        | func     | false    | null             |
-| preventKeyboardFocus | bool     | false    | false            |
-| selectedDate         | Date     | false    | null             |
-| showWeekendSeparator | bool     | false    | true             |
-| weekStartsOn         | number   | false    | 1                |
+| Property              | PropType             | Required | Default Value    |
+| --------------------- | -------------------- | -------- | ---------------- |
+| DateComponent         | func                 | true     | -                |
+| daysOfWeek            | object               | true     | -                |
+| formatDateFull        | func                 | true     | -                |
+| formatMonth           | func                 | true     | -                |
+| month                 | Date                 | true     | -                |
+| focusedDate           | Date                 | false    | null             |
+| isKeyboardFocusable   | bool                 | false    | true             |
+| markOutsideDays       | bool                 | false    | true             |
+| markToday             | bool                 | false    | true             |
+| maxDate               | Date                 | false    | new Date() + 1yr |
+| minDate               | Date                 | false    | new Date()       |
+| onDateClick           | func                 | false    | null             |
+| onDateKeyDown         | func                 | false    | null             |
+| preventKeyboardFocus  | bool                 | false    | false            |
+| selectedDate          | Date                 | false    | null             |
+| showWeekendSeparator  | bool                 | false    | true             |
+| weekStartsOn          | number               | false    | 1                |
 
 ### BpkCalendarDate
 
 The BpkCalendarDate component is used to render the content of a cell
 (a single day) inside the calendar grid.
 
-| Property             | PropType | Required | Default Value |
-| -------------------- | -------- | -------- | ------------- |
-| date                 | Date     | true     | -             |
-| isBlocked            | bool     | false    | false         |
-| isFocused            | bool     | false    | false         |
-| isKeyboardFocusable  | bool     | false    | true          |
-| isOutside            | bool     | false    | false         |
-| isSelected           | bool     | false    | false         |
-| isToday              | bool     | false    | false         |
-| onClick              | func     | false    | null          |
-| onDateKeyDown        | func     | false    | null          |
-| preventKeyboardFocus | bool     | false    | true          |
+| Property              | PropType             | Required | Default Value    |
+| --------------------- | -------------------- | -------- | ---------------- |
+| date                  | Date                 | true     | -                |
+| isBlocked             | bool                 | false    | false            |
+| isFocused             | bool                 | false    | false            |
+| isKeyboardFocusable   | bool                 | false    | true             |
+| isOutside             | bool                 | false    | false            |
+| isSelected            | bool                 | false    | false            |
+| isToday               | bool                 | false    | false            |
+| onClick               | func                 | false    | null             |
+| onDateKeyDown         | func                 | false    | null             |
+| preventKeyboardFocus  | bool                 | false    | true             |
 
 ### Prop details
 
@@ -312,13 +324,14 @@ Sets the date that is focused initially, this prop has no effect if `selectedDat
 
 ## Theme Props
 
-- `calendarDateTextColor`
-- `calendarDateTextHoverColor`
-- `calendarDateTextActiveColor`
-- `calendarDateTextFocusColor`
-- `calendarDateTextSelectedColor`
-- `calendarDateSelectedBackgroundColor`
-- `calendarDateFocusedBorderColor`
-- `calendarNudgerIconColor`
-- `calendarNudgerIconHoverColor`
-- `calendarNudgerIconActiveColor`
+* `calendarDateTextColor`
+* `calendarDateTextHoverColor`
+* `calendarDateTextActiveColor`
+* `calendarDateTextFocusColor`
+* `calendarDateTextSelectedColor`
+* `calendarDateSelectedBackgroundColor`
+* `calendarDateFocusedBorderColor`
+* `calendarNudgerIconColor`
+* `calendarNudgerIconHoverColor`
+* `calendarNudgerIconActiveColor`
+
