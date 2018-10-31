@@ -171,7 +171,6 @@ class Week extends Component {
               }
               isOutside={markOutsideDays && !isSameMonth(date, month)}
               isToday={markToday && isToday(date)}
-              isEmptyCell={!isSameMonth(date, month) && ignoreOutsideDate}
             />
           </DateContainer>
         ))}
