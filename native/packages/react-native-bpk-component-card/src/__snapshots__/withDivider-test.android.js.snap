@@ -28,9 +28,10 @@ exports[`Android withDivider should render correctly 1`] = `
     }
   >
     <BpkText
-      emphasize={false}
+      emphasize={null}
       style={null}
       textStyle="base"
+      weight="regular"
     >
       Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
     </BpkText>
@@ -64,9 +65,10 @@ exports[`Android withDivider should render correctly 1`] = `
     }
   >
     <BpkText
-      emphasize={false}
+      emphasize={null}
       style={null}
       textStyle="base"
+      weight="regular"
     >
       Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
     </BpkText>
@@ -103,9 +105,10 @@ exports[`Android withDivider should render correctly with arbitrary props 1`] = 
     }
   >
     <BpkText
-      emphasize={false}
+      emphasize={null}
       style={null}
       textStyle="base"
+      weight="regular"
     >
       Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
     </BpkText>
@@ -139,9 +142,10 @@ exports[`Android withDivider should render correctly with arbitrary props 1`] = 
     }
   >
     <BpkText
-      emphasize={false}
+      emphasize={null}
       style={null}
       textStyle="base"
+      weight="regular"
     >
       Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
     </BpkText>
@@ -180,9 +184,10 @@ exports[`Android withDivider should render correctly with custom main style 1`] 
     }
   >
     <BpkText
-      emphasize={false}
+      emphasize={null}
       style={null}
       textStyle="base"
+      weight="regular"
     >
       Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
     </BpkText>
@@ -216,9 +221,10 @@ exports[`Android withDivider should render correctly with custom main style 1`] 
     }
   >
     <BpkText
-      emphasize={false}
+      emphasize={null}
       style={null}
       textStyle="base"
+      weight="regular"
     >
       Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
     </BpkText>
@@ -254,9 +260,10 @@ exports[`Android withDivider should render correctly with custom stub style 1`] 
     }
   >
     <BpkText
-      emphasize={false}
+      emphasize={null}
       style={null}
       textStyle="base"
+      weight="regular"
     >
       Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
     </BpkText>
@@ -293,9 +300,10 @@ exports[`Android withDivider should render correctly with custom stub style 1`] 
     }
   >
     <BpkText
-      emphasize={false}
+      emphasize={null}
       style={null}
       textStyle="base"
+      weight="regular"
     >
       Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
     </BpkText>
@@ -328,9 +336,10 @@ exports[`Android withDivider should render correctly without padding 1`] = `
     }
   >
     <BpkText
-      emphasize={false}
+      emphasize={null}
       style={null}
       textStyle="base"
+      weight="regular"
     >
       Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
     </BpkText>
@@ -361,9 +370,10 @@ exports[`Android withDivider should render correctly without padding 1`] = `
     }
   >
     <BpkText
-      emphasize={false}
+      emphasize={null}
       style={null}
       textStyle="base"
+      weight="regular"
     >
       Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
     </BpkText>

@@ -264,7 +264,9 @@ exports[`Android BpkSelect should render correctly with a text label 1`] = `
           "fontFamily": "sans-serif",
           "fontSize": 16,
           "fontWeight": "400",
+          "letterSpacing": -0.2,
         },
+        Object {},
         Array [
           Object {
             "marginEnd": "auto",
@@ -416,7 +418,9 @@ exports[`Android BpkSelect should render correctly with custom styles 1`] = `
           "fontFamily": "sans-serif",
           "fontSize": 16,
           "fontWeight": "400",
+          "letterSpacing": -0.2,
         },
+        Object {},
         Array [
           Object {
             "marginEnd": "auto",
@@ -504,7 +508,9 @@ exports[`Android BpkSelect should render correctly with the disabled prop 1`] = 
           "fontFamily": "sans-serif",
           "fontSize": 16,
           "fontWeight": "400",
+          "letterSpacing": -0.2,
         },
+        Object {},
         Array [
           Object {
             "marginEnd": "auto",

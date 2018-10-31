@@ -27,9 +27,11 @@ exports[`BpkTouchableOverlay should render correctly 1`] = `
         Object {
           "color": "rgb(82, 76, 97)",
           "fontFamily": "System",
-          "fontSize": 15,
+          "fontSize": 16,
           "fontWeight": "400",
+          "letterSpacing": 0.12,
         },
+        Object {},
       ]
     }
   >
@@ -81,9 +83,11 @@ exports[`BpkTouchableOverlay should render correctly with arbitrary props 1`] = 
         Object {
           "color": "rgb(82, 76, 97)",
           "fontFamily": "System",
-          "fontSize": 15,
+          "fontSize": 16,
           "fontWeight": "400",
+          "letterSpacing": 0.12,
         },
+        Object {},
       ]
     }
   >
@@ -135,9 +139,11 @@ exports[`BpkTouchableOverlay should render correctly with border radius props 1`
         Object {
           "color": "rgb(82, 76, 97)",
           "fontFamily": "System",
-          "fontSize": 15,
+          "fontSize": 16,
           "fontWeight": "400",
+          "letterSpacing": 0.12,
         },
+        Object {},
       ]
     }
   >
@@ -192,9 +198,11 @@ exports[`BpkTouchableOverlay should render correctly with custom overlay styles 
         Object {
           "color": "rgb(82, 76, 97)",
           "fontFamily": "System",
-          "fontSize": 15,
+          "fontSize": 16,
           "fontWeight": "400",
+          "letterSpacing": 0.12,
         },
+        Object {},
       ]
     }
   >
@@ -253,9 +261,11 @@ exports[`BpkTouchableOverlay should render correctly with custom style prop 1`] 
         Object {
           "color": "rgb(82, 76, 97)",
           "fontFamily": "System",
-          "fontSize": 15,
+          "fontSize": 16,
           "fontWeight": "400",
+          "letterSpacing": 0.12,
         },
+        Object {},
       ]
     }
   >

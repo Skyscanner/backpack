@@ -19,7 +19,7 @@
 /* @flow */
 
 import BpkText from './src/BpkText';
-import { TEXT_STYLES } from './src/common-types';
+import { TEXT_STYLES, WEIGHT_STYLES } from './src/common-types';
 
 export default BpkText;
-export { TEXT_STYLES };
+export { TEXT_STYLES, WEIGHT_STYLES };

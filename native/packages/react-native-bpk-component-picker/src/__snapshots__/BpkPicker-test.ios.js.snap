@@ -110,8 +110,9 @@ exports[`iOS BpkPicker should render correctly 1`] = `
                 Object {
                   "color": "rgb(82, 76, 97)",
                   "fontFamily": "System",
-                  "fontSize": 13,
+                  "fontSize": 14,
                   "fontWeight": "400",
+                  "letterSpacing": 0.154,
                 },
                 Object {
                   "fontWeight": "600",
@@ -275,8 +276,9 @@ exports[`iOS BpkPicker should render correctly with a selected value 1`] = `
                 Object {
                   "color": "rgb(82, 76, 97)",
                   "fontFamily": "System",
-                  "fontSize": 13,
+                  "fontSize": 14,
                   "fontWeight": "400",
+                  "letterSpacing": 0.154,
                 },
                 Object {
                   "fontWeight": "600",

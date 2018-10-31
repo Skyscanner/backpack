@@ -106,13 +106,24 @@ const checkBpkDependencies = (packageFile, correctVersions) => {
   }
 };
 
+const getLatestProductionVersion = version => {
+  if (version.includes('-alpha')) {
+    return version.split('-alpha')[0];
+  }
+  if (version.includes('-beta')) {
+    return version.split('-beta')[0];
+  }
+  return version;
+};
+
 const getBpkPackageVersions = packageFiles =>
   packageFiles.reduce((acc, pkg) => {
     if (pkg === '' || !pkg.includes('bpk-')) {
       return acc;
     }
     const pfContent = JSON.parse(fs.readFileSync(pkg));
-    acc[pfContent.name] = pfContent.version;
+    const latestVersion = getLatestProductionVersion(pfContent.version);
+    acc[pfContent.name] = latestVersion;
     return acc;
   }, {});
 

@@ -50,9 +50,11 @@ exports[`iOS BpkFlatListItem should render correctly 1`] = `
           Object {
             "color": "rgb(82, 76, 97)",
             "fontFamily": "System",
-            "fontSize": 17,
+            "fontSize": 20,
             "fontWeight": "400",
+            "letterSpacing": null,
           },
+          Object {},
           Array [
             Object {
               "flex": 1,
@@ -170,9 +172,11 @@ exports[`iOS BpkFlatListItem should support the "image" property 1`] = `
           Object {
             "color": "rgb(82, 76, 97)",
             "fontFamily": "System",
-            "fontSize": 17,
+            "fontSize": 20,
             "fontWeight": "400",
+            "letterSpacing": null,
           },
+          Object {},
           Array [
             Object {
               "flex": 1,
@@ -280,9 +284,11 @@ exports[`iOS BpkFlatListItem should support the "selected" property 1`] = `
           Object {
             "color": "rgb(82, 76, 97)",
             "fontFamily": "System",
-            "fontSize": 17,
+            "fontSize": 20,
             "fontWeight": "400",
+            "letterSpacing": null,
           },
+          Object {},
           Array [
             Object {
               "flex": 1,

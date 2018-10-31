@@ -44,7 +44,9 @@ exports[`Android BpkPickerItem should render correctly 1`] = `
           "fontFamily": "sans-serif",
           "fontSize": 16,
           "fontWeight": "400",
+          "letterSpacing": -0.2,
         },
+        Object {},
         Object {},
       ]
     }
@@ -98,7 +100,9 @@ exports[`Android BpkPickerItem should render correctly with an onPress function 
           "fontFamily": "sans-serif",
           "fontSize": 16,
           "fontWeight": "400",
+          "letterSpacing": -0.2,
         },
+        Object {},
         Object {},
       ]
     }
@@ -153,7 +157,9 @@ exports[`Android BpkPickerItem should render correctly with the selected prop 1`
           "fontFamily": "sans-serif",
           "fontSize": 16,
           "fontWeight": "400",
+          "letterSpacing": -0.2,
         },
+        Object {},
         Object {
           "color": "rgb(0, 178, 214)",
         },

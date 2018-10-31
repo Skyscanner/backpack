@@ -41,9 +41,11 @@ exports[`iOS BpkHorizontalNavItem should render correctly 1`] = `
           Object {
             "color": "rgb(82, 76, 97)",
             "fontFamily": "System",
-            "fontSize": 15,
+            "fontSize": 16,
             "fontWeight": "400",
+            "letterSpacing": 0.12,
           },
+          Object {},
           Array [
             Object {
               "color": "rgb(82, 76, 97)",
@@ -116,9 +118,11 @@ exports[`iOS BpkHorizontalNavItem should render correctly with "selected" prop 1
           Object {
             "color": "rgb(82, 76, 97)",
             "fontFamily": "System",
-            "fontSize": 15,
+            "fontSize": 16,
             "fontWeight": "400",
+            "letterSpacing": 0.12,
           },
+          Object {},
           Array [
             Object {
               "color": "rgb(82, 76, 97)",
@@ -197,9 +201,11 @@ exports[`iOS BpkHorizontalNavItem should render correctly with "small" prop 1`] 
           Object {
             "color": "rgb(82, 76, 97)",
             "fontFamily": "System",
-            "fontSize": 13,
+            "fontSize": 14,
             "fontWeight": "400",
+            "letterSpacing": 0.154,
           },
+          Object {},
           Array [
             Object {
               "color": "rgb(82, 76, 97)",
@@ -272,9 +278,11 @@ exports[`iOS BpkHorizontalNavItem should render correctly with "spaceAround" pro
           Object {
             "color": "rgb(82, 76, 97)",
             "fontFamily": "System",
-            "fontSize": 15,
+            "fontSize": 16,
             "fontWeight": "400",
+            "letterSpacing": 0.12,
           },
+          Object {},
           Array [
             Object {
               "color": "rgb(82, 76, 97)",
@@ -347,9 +355,11 @@ exports[`iOS BpkHorizontalNavItem should render correctly with arbitrary props 1
           Object {
             "color": "rgb(82, 76, 97)",
             "fontFamily": "System",
-            "fontSize": 15,
+            "fontSize": 16,
             "fontWeight": "400",
+            "letterSpacing": 0.12,
           },
+          Object {},
           Array [
             Object {
               "color": "rgb(82, 76, 97)",
@@ -425,9 +435,11 @@ exports[`iOS BpkHorizontalNavItem should render correctly with custom "style" pr
           Object {
             "color": "rgb(82, 76, 97)",
             "fontFamily": "System",
-            "fontSize": 15,
+            "fontSize": 16,
             "fontWeight": "400",
+            "letterSpacing": 0.12,
           },
+          Object {},
           Array [
             Object {
               "color": "rgb(82, 76, 97)",
@@ -500,9 +512,11 @@ exports[`iOS BpkHorizontalNavItem should support theming 1`] = `
           Object {
             "color": "rgb(82, 76, 97)",
             "fontFamily": "System",
-            "fontSize": 15,
+            "fontSize": 16,
             "fontWeight": "400",
+            "letterSpacing": 0.12,
           },
+          Object {},
           Array [
             Object {
               "color": "rgb(82, 76, 97)",
