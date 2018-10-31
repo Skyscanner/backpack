@@ -1,6 +1,3 @@
 # Unreleased
 
-**Breaking:**
-
-- bpk-tokens:
-  - Token values updated to support new type scale.
+_Nothing yet!_

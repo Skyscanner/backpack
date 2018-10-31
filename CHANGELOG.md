@@ -2,6 +2,32 @@
 
 [Unreleased changes](./UNRELEASED.md).
 
+# 2018-10-31 - New type scale
+
+**Breaking:**
+- react-native-bpk-component-alert: 1.0.35 => 2.0.0
+- react-native-bpk-component-badge: 1.0.28 => 2.0.0
+- react-native-bpk-component-banner-alert: 4.0.39 => 5.0.0
+- react-native-bpk-component-button-link: 3.1.4 => 4.0.0
+- react-native-bpk-component-button: 7.1.23 => 8.0.0
+- react-native-bpk-component-chip: 1.0.24 => 2.0.0
+- react-native-bpk-component-flat-list: 1.0.34 => 2.0.0
+- react-native-bpk-component-horizontal-nav: 3.0.40 => 4.0.0
+- react-native-bpk-component-navigation-bar: 2.0.44 => 3.0.0
+- react-native-bpk-component-nudger: 1.0.51 => 2.0.0
+- react-native-bpk-component-phone-input: 1.0.50 => 2.0.0
+- react-native-bpk-component-picker: 2.0.37 => 3.0.0
+- react-native-bpk-component-section-list: 1.0.34 => 2.0.0
+- react-native-bpk-component-select: 1.0.33 => 2.0.0
+- react-native-bpk-component-text-input: 2.3.20 => 3.0.0
+- react-native-bpk-component-text: 2.2.0 => 3.0.0
+  - Now consuming token values for the new type scale.
+
+**Added:**
+
+- bpk-tokens: 27.1.1 => 27.2.0
+  - Token values updated to support new type scale on mobile platforms. (No change for web.)
+
 # 2018-10-31 - New prop for native text and bugfix for native button
 
 **Fixed:**
