@@ -86,7 +86,7 @@ configure(() => {
 }, module);
 /* eslint-enable global-require */
 
-const StorybookUI = getStorybookUI({ onDeviceUI: false });
+const StorybookUI = getStorybookUI({ onDeviceUI: true });
 
 AppRegistry.registerComponent('native', () => StorybookUI);
 
