@@ -2,6 +2,16 @@
 
 [Unreleased changes](./UNRELEASED.md).
 
+# 2018-11-01 - Remove use of deprecated property
+
+**Fixed:**
+
+ - react-native-bpk-component-button-link: 4.0.0 => 4.0.1
+ - react-native-bpk-component-button: 8.0.0 => 8.0.1
+ - react-native-bpk-component-navigation-bar: 3.0.0 => 3.0.1
+ - react-native-bpk-component-nudger: 2.0.0 => 2.0.1
+   - Token values updated to support new type-scale.
+
 # 2018-10-31 - New type scale
 
 **Breaking:**
