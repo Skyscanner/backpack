@@ -15,7 +15,7 @@
   },
   "dependencies": {
     "lodash": "^4.17.4",
-    "theming": "^1.1.0"
+    "theming": "^2.1.1"
   },
   "devDependencies": {
     "bpk-tokens": "^27.2.0"
