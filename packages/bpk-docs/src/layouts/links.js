@@ -434,6 +434,11 @@ export default [
     sort: true,
     links: [
       { id: 'COPYWRITING', route: routes.COPYWRITING, children: 'Copywriting' },
+      {
+        id: 'TONE_OF_VOICE',
+        route: routes.TONE_OF_VOICE,
+        children: 'Tone of voice',
+      },
     ],
   },
 ];
