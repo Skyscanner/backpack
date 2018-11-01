@@ -22,7 +22,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { withTheme } from 'react-native-bpk-theming';
 import BpkIcon from 'react-native-bpk-component-icon';
-import BpkText from 'react-native-bpk-component-text';
+import BpkText, { WEIGHT_STYLES } from 'react-native-bpk-component-text';
 import LinearGradient from 'react-native-linear-gradient';
 import BpkTouchableOverlay from 'react-native-bpk-component-touchable-overlay';
 
@@ -102,7 +102,7 @@ const BpkButton = (props: Props) => {
         {!iconOnly && (
           <BpkText
             textStyle={large ? 'lg' : 'sm'}
-            emphasize
+            weight={WEIGHT_STYLES.emphasized}
             style={textStyle(theme, props)}
           >
             {title}
