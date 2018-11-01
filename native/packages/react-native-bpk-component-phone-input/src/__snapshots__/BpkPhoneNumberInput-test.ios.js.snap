@@ -64,14 +64,16 @@ exports[`iOS BpkPhoneNumberInput should render correctly 1`] = `
     >
       <View
         style={
-          Object {
-            "alignItems": "center",
-            "borderBottomWidth": 1,
-            "borderColor": "rgb(230, 228, 235)",
-            "flexDirection": "row",
-            "justifyContent": "space-between",
-            "paddingVertical": 4,
-          }
+          Array [
+            Object {
+              "alignItems": "center",
+              "borderBottomWidth": 1,
+              "borderColor": "rgb(230, 228, 235)",
+              "flexDirection": "row",
+              "justifyContent": "space-between",
+              "paddingVertical": 4,
+            },
+          ]
         }
       >
         <Image
@@ -262,14 +264,16 @@ exports[`iOS BpkPhoneNumberInput should render correctly with \`editable\` false
     >
       <View
         style={
-          Object {
-            "alignItems": "center",
-            "borderBottomWidth": 1,
-            "borderColor": "rgb(230, 228, 235)",
-            "flexDirection": "row",
-            "justifyContent": "space-between",
-            "paddingVertical": 4,
-          }
+          Array [
+            Object {
+              "alignItems": "center",
+              "borderBottomWidth": 1,
+              "borderColor": "rgb(230, 228, 235)",
+              "flexDirection": "row",
+              "justifyContent": "space-between",
+              "paddingVertical": 4,
+            },
+          ]
         }
       >
         <Image

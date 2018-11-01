@@ -24,14 +24,16 @@ exports[`iOS BpkSelect should render correctly 1`] = `
 >
   <View
     style={
-      Object {
-        "alignItems": "center",
-        "borderBottomWidth": 1,
-        "borderColor": "rgb(230, 228, 235)",
-        "flexDirection": "row",
-        "justifyContent": "space-between",
-        "paddingVertical": 4,
-      }
+      Array [
+        Object {
+          "alignItems": "center",
+          "borderBottomWidth": 1,
+          "borderColor": "rgb(230, 228, 235)",
+          "flexDirection": "row",
+          "justifyContent": "space-between",
+          "paddingVertical": 4,
+        },
+      ]
     }
   >
     <Text
@@ -101,14 +103,16 @@ exports[`iOS BpkSelect should render correctly with "showImage" and image 1`] = 
 >
   <View
     style={
-      Object {
-        "alignItems": "center",
-        "borderBottomWidth": 1,
-        "borderColor": "rgb(230, 228, 235)",
-        "flexDirection": "row",
-        "justifyContent": "space-between",
-        "paddingVertical": 4,
-      }
+      Array [
+        Object {
+          "alignItems": "center",
+          "borderBottomWidth": 1,
+          "borderColor": "rgb(230, 228, 235)",
+          "flexDirection": "row",
+          "justifyContent": "space-between",
+          "paddingVertical": 4,
+        },
+      ]
     }
   >
     <Image
@@ -191,14 +195,16 @@ exports[`iOS BpkSelect should render correctly with "showImage" and no image 1`]
 >
   <View
     style={
-      Object {
-        "alignItems": "center",
-        "borderBottomWidth": 1,
-        "borderColor": "rgb(230, 228, 235)",
-        "flexDirection": "row",
-        "justifyContent": "space-between",
-        "paddingVertical": 4,
-      }
+      Array [
+        Object {
+          "alignItems": "center",
+          "borderBottomWidth": 1,
+          "borderColor": "rgb(230, 228, 235)",
+          "flexDirection": "row",
+          "justifyContent": "space-between",
+          "paddingVertical": 4,
+        },
+      ]
     }
   >
     <View
@@ -211,6 +217,361 @@ exports[`iOS BpkSelect should render correctly with "showImage" and no image 1`]
         }
       }
     />
+    <Text
+      accessible={true}
+      allowFontScaling={false}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "rgb(82, 76, 97)",
+            "fontFamily": "BpkIcon",
+            "fontSize": 24,
+            "includeFontPadding": false,
+          },
+          Object {
+            "fontSize": 16,
+          },
+          Object {
+            "marginStart": 4,
+          },
+        ]
+      }
+    >
+      
+    </Text>
+  </View>
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "rgb(37, 32, 51)",
+          "bottom": 0,
+          "flex": 1,
+          "left": 0,
+          "opacity": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        },
+      ]
+    }
+  />
+</View>
+`;
+
+exports[`iOS BpkSelect should render correctly with "valid" false 1`] = `
+<View
+  accessibilityComponentType="button"
+  accessibilityLabel={undefined}
+  accessibilityTraits={
+    Array [
+      "button",
+    ]
+  }
+  accessible={true}
+  hitSlop={undefined}
+  nativeID={undefined}
+  onLayout={undefined}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={null}
+  testID={undefined}
+>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "borderBottomWidth": 1,
+          "borderColor": "rgb(230, 228, 235)",
+          "flexDirection": "row",
+          "justifyContent": "space-between",
+          "paddingVertical": 4,
+        },
+        Object {
+          "borderColor": "rgb(255, 84, 82)",
+        },
+      ]
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={false}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "rgb(82, 76, 97)",
+            "fontFamily": "BpkIcon",
+            "fontSize": 24,
+            "includeFontPadding": false,
+          },
+          Object {
+            "fontSize": 16,
+          },
+          Array [
+            Object {
+              "marginStart": 4,
+            },
+            Object {
+              "color": "rgb(255, 84, 82)",
+            },
+          ],
+        ]
+      }
+    >
+      
+    </Text>
+    <Text
+      accessible={true}
+      allowFontScaling={false}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "rgb(82, 76, 97)",
+            "fontFamily": "BpkIcon",
+            "fontSize": 24,
+            "includeFontPadding": false,
+          },
+          Object {
+            "fontSize": 16,
+          },
+          Object {
+            "marginStart": 4,
+          },
+        ]
+      }
+    >
+      
+    </Text>
+  </View>
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "rgb(37, 32, 51)",
+          "bottom": 0,
+          "flex": 1,
+          "left": 0,
+          "opacity": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        },
+      ]
+    }
+  />
+</View>
+`;
+
+exports[`iOS BpkSelect should render correctly with "valid" false and a validation message 1`] = `
+<View>
+  <View
+    accessibilityComponentType="button"
+    accessibilityLabel={undefined}
+    accessibilityTraits={
+      Array [
+        "button",
+      ]
+    }
+    accessible={true}
+    hitSlop={undefined}
+    nativeID={undefined}
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={null}
+    testID={undefined}
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "borderBottomWidth": 1,
+            "borderColor": "rgb(230, 228, 235)",
+            "flexDirection": "row",
+            "justifyContent": "space-between",
+            "paddingVertical": 4,
+          },
+          Object {
+            "borderColor": "rgb(255, 84, 82)",
+          },
+        ]
+      }
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={false}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+              "fontFamily": "BpkIcon",
+              "fontSize": 24,
+              "includeFontPadding": false,
+            },
+            Object {
+              "fontSize": 16,
+            },
+            Array [
+              Object {
+                "marginStart": 4,
+              },
+              Object {
+                "color": "rgb(255, 84, 82)",
+              },
+            ],
+          ]
+        }
+      >
+        
+      </Text>
+      <Text
+        accessible={true}
+        allowFontScaling={false}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+              "fontFamily": "BpkIcon",
+              "fontSize": 24,
+              "includeFontPadding": false,
+            },
+            Object {
+              "fontSize": 16,
+            },
+            Object {
+              "marginStart": 4,
+            },
+          ]
+        }
+      >
+        
+      </Text>
+    </View>
+    <View
+      style={
+        Array [
+          Object {
+            "backgroundColor": "rgb(37, 32, 51)",
+            "bottom": 0,
+            "flex": 1,
+            "left": 0,
+            "opacity": 0,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          },
+        ]
+      }
+    />
+  </View>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    style={
+      Array [
+        Object {
+          "color": "rgb(82, 76, 97)",
+          "fontFamily": "System",
+          "fontSize": 12,
+          "fontWeight": "400",
+          "letterSpacing": 0,
+        },
+        Object {},
+        Object {
+          "color": "rgb(255, 84, 82)",
+          "paddingTop": 4,
+        },
+      ]
+    }
+  >
+    Nope
+  </Text>
+</View>
+`;
+
+exports[`iOS BpkSelect should render correctly with "valid" true 1`] = `
+<View
+  accessibilityComponentType="button"
+  accessibilityLabel={undefined}
+  accessibilityTraits={
+    Array [
+      "button",
+    ]
+  }
+  accessible={true}
+  hitSlop={undefined}
+  nativeID={undefined}
+  onLayout={undefined}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={null}
+  testID={undefined}
+>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "borderBottomWidth": 1,
+          "borderColor": "rgb(230, 228, 235)",
+          "flexDirection": "row",
+          "justifyContent": "space-between",
+          "paddingVertical": 4,
+        },
+        Object {
+          "borderColor": "rgb(0, 215, 117)",
+        },
+      ]
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={false}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "rgb(82, 76, 97)",
+            "fontFamily": "BpkIcon",
+            "fontSize": 24,
+            "includeFontPadding": false,
+          },
+          Object {
+            "fontSize": 16,
+          },
+          Array [
+            Object {
+              "marginStart": 4,
+            },
+            Object {
+              "color": "rgb(0, 215, 117)",
+            },
+          ],
+        ]
+      }
+    >
+      
+    </Text>
     <Text
       accessible={true}
       allowFontScaling={false}
@@ -278,14 +639,16 @@ exports[`iOS BpkSelect should render correctly with a text label 1`] = `
 >
   <View
     style={
-      Object {
-        "alignItems": "center",
-        "borderBottomWidth": 1,
-        "borderColor": "rgb(230, 228, 235)",
-        "flexDirection": "row",
-        "justifyContent": "space-between",
-        "paddingVertical": 4,
-      }
+      Array [
+        Object {
+          "alignItems": "center",
+          "borderBottomWidth": 1,
+          "borderColor": "rgb(230, 228, 235)",
+          "flexDirection": "row",
+          "justifyContent": "space-between",
+          "paddingVertical": 4,
+        },
+      ]
     }
   >
     <Text
@@ -380,14 +743,16 @@ exports[`iOS BpkSelect should render correctly with an element label 1`] = `
 >
   <View
     style={
-      Object {
-        "alignItems": "center",
-        "borderBottomWidth": 1,
-        "borderColor": "rgb(230, 228, 235)",
-        "flexDirection": "row",
-        "justifyContent": "space-between",
-        "paddingVertical": 4,
-      }
+      Array [
+        Object {
+          "alignItems": "center",
+          "borderBottomWidth": 1,
+          "borderColor": "rgb(230, 228, 235)",
+          "flexDirection": "row",
+          "justifyContent": "space-between",
+          "paddingVertical": 4,
+        },
+      ]
     }
   >
     <View />
@@ -462,14 +827,16 @@ exports[`iOS BpkSelect should render correctly with custom styles 1`] = `
 >
   <View
     style={
-      Object {
-        "alignItems": "center",
-        "borderBottomWidth": 1,
-        "borderColor": "rgb(230, 228, 235)",
-        "flexDirection": "row",
-        "justifyContent": "space-between",
-        "paddingVertical": 4,
-      }
+      Array [
+        Object {
+          "alignItems": "center",
+          "borderBottomWidth": 1,
+          "borderColor": "rgb(230, 228, 235)",
+          "flexDirection": "row",
+          "justifyContent": "space-between",
+          "paddingVertical": 4,
+        },
+      ]
     }
   >
     <Text
@@ -565,14 +932,16 @@ exports[`iOS BpkSelect should render correctly with the disabled prop 1`] = `
 >
   <View
     style={
-      Object {
-        "alignItems": "center",
-        "borderBottomWidth": 1,
-        "borderColor": "rgb(230, 228, 235)",
-        "flexDirection": "row",
-        "justifyContent": "space-between",
-        "paddingVertical": 4,
-      }
+      Array [
+        Object {
+          "alignItems": "center",
+          "borderBottomWidth": 1,
+          "borderColor": "rgb(230, 228, 235)",
+          "flexDirection": "row",
+          "justifyContent": "space-between",
+          "paddingVertical": 4,
+        },
+      ]
     }
   >
     <Text

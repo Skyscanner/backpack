@@ -77,6 +77,27 @@ const commonTests = () => {
       );
       expect(testRenderer.toJSON()).toMatchSnapshot();
     });
+
+    it('should render correctly with "valid" true', () => {
+      const testRenderer = TestRenderer.create(
+        <BpkSelect onPress={emptyFn} valid />,
+      );
+      expect(testRenderer.toJSON()).toMatchSnapshot();
+    });
+
+    it('should render correctly with "valid" false', () => {
+      const testRenderer = TestRenderer.create(
+        <BpkSelect onPress={emptyFn} valid={false} />,
+      );
+      expect(testRenderer.toJSON()).toMatchSnapshot();
+    });
+
+    it('should render correctly with "valid" false and a validation message', () => {
+      const testRenderer = TestRenderer.create(
+        <BpkSelect onPress={emptyFn} valid={false} validationMessage="Nope" />,
+      );
+      expect(testRenderer.toJSON()).toMatchSnapshot();
+    });
   });
 };
 

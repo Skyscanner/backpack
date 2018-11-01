@@ -30,8 +30,13 @@ export default () => (
       onPress={openSelectUI}
       label="Select an Option"
     />
+    <BpkSelect
+      onPress={openSelectUI}
+      label="Select an Option"
+      valid={false}
+      validationMessage="An option must be selected to continue"
+    />
   </View>
-
 );
 ```
 
@@ -42,3 +47,5 @@ export default () => (
 | onPress              | func                                  | true     | -             |
 | disabled             | bool                                  | false    | false         |
 | label                | oneOfType(string, element)            | false    | null          |
+| valid                | oneOf(true, false, null)              | false    | null          |
+| validationMessage    | string                                | false    | null          |

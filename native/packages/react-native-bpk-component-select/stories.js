@@ -45,6 +45,58 @@ storiesOf('react-native-bpk-component-select', module)
       </View>
 
       <StorySubheading>With image</StorySubheading>
-      <BpkSelect onPress={action('Select pressed')} label="Value" showImage />
+      <View style={styles.select}>
+        <BpkSelect onPress={action('Select pressed')} label="Value" showImage />
+      </View>
+
+      <StorySubheading>Valid</StorySubheading>
+      <View style={styles.select}>
+        <BpkSelect onPress={action('Select pressed')} label="Value" valid />
+      </View>
+
+      <StorySubheading>Invalid</StorySubheading>
+      <BpkSelect
+        onPress={action('Select pressed')}
+        label="Value"
+        valid={false}
+        validationMessage="A value must be selected to continue"
+      />
+    </View>
+  ))
+  .add('extreme', () => (
+    <View>
+      <StorySubheading>Normal</StorySubheading>
+      <View style={styles.select}>
+        <BpkSelect
+          onPress={action('Select pressed')}
+          label="Value with a very very very very long title that is definitely going to run off the end"
+        />
+      </View>
+
+      <StorySubheading>With image</StorySubheading>
+      <View style={styles.select}>
+        <BpkSelect
+          onPress={action('Select pressed')}
+          label="Value with a very very very very long title that is definitely going to run off the end"
+          showImage
+        />
+      </View>
+
+      <StorySubheading>Valid</StorySubheading>
+      <View style={styles.select}>
+        <BpkSelect
+          onPress={action('Select pressed')}
+          label="Value with a very very very very long title that is definitely going to run off the end"
+          valid
+        />
+      </View>
+
+      <StorySubheading>Invalid</StorySubheading>
+      <BpkSelect
+        onPress={action('Select pressed')}
+        label="Value with a very very very very long title that is definitely going to run off the end"
+        valid={false}
+        validationMessage="A value must be selected to continue"
+      />
     </View>
   ));
