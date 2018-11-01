@@ -31,6 +31,7 @@ export const PRINCIPLES = '/using/principles';
 
 // style-guide/
 export const COPYWRITING = '/style-guide/copywriting';
+export const TONE_OF_VOICE = '/style-guide/tone-of-voice';
 
 // components/bonds/
 export const COLORS = '/tokens/colors';

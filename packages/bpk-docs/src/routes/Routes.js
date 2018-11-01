@@ -45,6 +45,7 @@ import AnimationPage from '../pages/AnimationPage';
 import ZIndexesPage from '../pages/ZIndexesPage';
 
 import CopywritingPage from '../pages/CopywritingPage';
+import ToneOfVoicePage from '../pages/ToneOfVoicePage';
 
 import AccordionsPage from '../pages/AccordionsPage';
 import AlertPage from '../pages/AlertPage';
@@ -144,7 +145,10 @@ export const ROUTES_MAPPINGS = [
     path: ROUTES.STYLE_GUIDE,
     layout: StyleGuideLayout,
     redirect: ROUTES.COPYWRITING,
-    routes: [{ path: ROUTES.COPYWRITING, component: CopywritingPage }],
+    routes: [
+      { path: ROUTES.COPYWRITING, component: CopywritingPage },
+      { path: ROUTES.TONE_OF_VOICE, component: ToneOfVoicePage },
+    ],
   },
   {
     path: ROUTES.COMPONENTS,

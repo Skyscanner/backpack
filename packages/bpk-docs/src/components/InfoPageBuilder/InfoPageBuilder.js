@@ -18,7 +18,7 @@
 
 /* @flow */
 
-import React from 'react';
+import React, { type Node } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import marked from 'marked';
@@ -51,7 +51,8 @@ const markdownToHTML = (input: string): string =>
 type SectionType = {
   id: string,
   title: string,
-  markdown: string,
+  markdown: ?string,
+  content: ?Node,
 };
 
 type SectionProps = {
@@ -70,11 +71,14 @@ class Section extends React.Component<SectionProps, { expanded: boolean }> {
     expanded: PropTypes.bool,
     id: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
-    markdown: PropTypes.string.isRequired,
+    markdown: PropTypes.string,
+    content: PropTypes.node,
   };
 
   static defaultProps = {
     expanded: false,
+    markdown: null,
+    content: null,
   };
 
   constructor(props) {
@@ -87,7 +91,7 @@ class Section extends React.Component<SectionProps, { expanded: boolean }> {
   };
 
   render() {
-    const { id, markdown, title } = this.props;
+    const { id, content, markdown, title } = this.props;
     const { expanded } = this.state;
     return (
       <section>
@@ -123,6 +127,11 @@ class Section extends React.Component<SectionProps, { expanded: boolean }> {
             />
           </BpkAnimateHeight>
         )}
+        {content && (
+          <BpkAnimateHeight height={expanded ? 'auto' : 0} duration={200}>
+            {content}
+          </BpkAnimateHeight>
+        )}
       </section>
     );
   }
@@ -151,7 +160,8 @@ InfoPageBuilder.propTypes = {
       expanded: PropTypes.bool,
       id: PropTypes.string.isRequired,
       title: PropTypes.string.isRequired,
-      markdown: PropTypes.string.isRequired,
+      markdown: PropTypes.string,
+      content: PropTypes.node,
     }),
   ).isRequired,
   title: PropTypes.string.isRequired,
