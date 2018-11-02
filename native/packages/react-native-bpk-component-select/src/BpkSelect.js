@@ -30,15 +30,17 @@ import PropTypes from 'prop-types';
 import BpkTouchableOverlay from 'react-native-bpk-component-touchable-overlay';
 import BpkTouchableNativeFeedback from 'react-native-bpk-component-touchable-native-feedback';
 import BpkText from 'react-native-bpk-component-text';
-import BpkIcon, { icons } from 'react-native-bpk-component-icon';
 import {
   colorGray50,
   colorGray100,
+  colorRed500,
+  colorGreen500,
   borderSizeSm,
   spacingBase,
   spacingMd,
   spacingSm,
 } from 'bpk-tokens/tokens/base.react.native';
+import { ValidIcon, InvalidIcon, SelectIcon } from './BpkSelectIcons';
 
 const styles = StyleSheet.create({
   select: {
@@ -48,6 +50,12 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
     paddingVertical: spacingSm,
+  },
+  valid: {
+    borderColor: colorGreen500,
+  },
+  invalid: {
+    borderColor: colorRed500,
   },
   selectContent: {
     marginEnd: 'auto',
@@ -61,8 +69,9 @@ const styles = StyleSheet.create({
     backgroundColor: colorGray50,
     marginEnd: spacingMd,
   },
-  selectIcon: {
-    marginStart: spacingSm,
+  validationMessage: {
+    color: colorRed500,
+    paddingTop: spacingSm,
   },
 });
 
@@ -72,10 +81,12 @@ const TouchablePlatformComponent = Platform.select({
 });
 
 type Props = {
-  onPress: () => mixed,
   disabled: boolean,
+  onPress: () => mixed,
   label: ?(string | Element),
   style: ?any,
+  valid: ?boolean,
+  validationMessage: ?string,
 
   // Image
   image: ?Element<typeof Image>,
@@ -83,7 +94,17 @@ type Props = {
 };
 
 const BpkSelect = (props: Props) => {
-  const { disabled, label, onPress, style, image, showImage, ...rest } = props;
+  const {
+    disabled,
+    label,
+    onPress,
+    style,
+    valid,
+    validationMessage,
+    image,
+    showImage,
+    ...rest
+  } = props;
 
   let content = null;
 
@@ -115,7 +136,29 @@ const BpkSelect = (props: Props) => {
     <View style={styles.selectImage} />
   );
 
-  return (
+  const validityIcon = valid ? (
+    <ValidIcon />
+  ) : (
+    valid === false && <InvalidIcon />
+  );
+
+  let extraInfo = null;
+  if (valid === false && validationMessage) {
+    extraInfo = (
+      <BpkText textStyle="xs" style={styles.validationMessage}>
+        {validationMessage}
+      </BpkText>
+    );
+  }
+
+  const selectStyle = [styles.select];
+  if (valid) {
+    selectStyle.push(styles.valid);
+  } else if (valid === false) {
+    selectStyle.push(styles.invalid);
+  }
+
+  const selectComponent = (
     <TouchablePlatformComponent
       disabled={disabled}
       style={style}
@@ -124,13 +167,24 @@ const BpkSelect = (props: Props) => {
       accessibilityTraits={accessibilityTraits}
       {...platformProps}
     >
-      <View style={styles.select} {...rest}>
+      <View style={selectStyle} {...rest}>
         {showImage && styledImage}
         {content || label}
-        <BpkIcon style={styles.selectIcon} icon={icons['arrow-down']} small />
+        {validityIcon}
+        <SelectIcon />
       </View>
     </TouchablePlatformComponent>
   );
+
+  if (extraInfo) {
+    return (
+      <View>
+        {selectComponent}
+        {extraInfo}
+      </View>
+    );
+  }
+  return selectComponent;
 };
 
 BpkSelect.propTypes = {
@@ -138,6 +192,8 @@ BpkSelect.propTypes = {
   disabled: PropTypes.bool,
   label: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
   style: ViewPropTypes.style,
+  valid: PropTypes.oneOf([true, false, null]),
+  validationMessage: PropTypes.string,
 
   // Image
   image: PropTypes.element,
@@ -148,6 +204,8 @@ BpkSelect.defaultProps = {
   disabled: false,
   label: null,
   style: null,
+  valid: null,
+  validationMessage: null,
 
   // Image
   image: null,
