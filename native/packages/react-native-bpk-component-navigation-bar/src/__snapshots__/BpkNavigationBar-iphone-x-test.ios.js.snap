@@ -96,9 +96,9 @@ exports[`ios - iPhone X  BpkNavigationBar should render correctly 1`] = `
             Object {
               "color": "rgb(82, 76, 97)",
               "fontFamily": "sans-serif",
-              "fontSize": 20,
+              "fontSize": 16,
               "fontWeight": "400",
-              "letterSpacing": -0.4,
+              "letterSpacing": -0.2,
             },
             Object {},
             Array [
@@ -149,9 +149,9 @@ exports[`ios - iPhone X  BpkNavigationBar should render correctly 1`] = `
               Object {
                 "color": "rgb(82, 76, 97)",
                 "fontFamily": "sans-serif",
-                "fontSize": 20,
+                "fontSize": 16,
                 "fontWeight": "400",
-                "letterSpacing": -0.4,
+                "letterSpacing": -0.2,
               },
               Object {
                 "fontWeight": "500",
@@ -251,9 +251,9 @@ exports[`ios - iPhone X  BpkNavigationBar should render correctly with trailing 
             Object {
               "color": "rgb(82, 76, 97)",
               "fontFamily": "sans-serif",
-              "fontSize": 20,
+              "fontSize": 16,
               "fontWeight": "400",
-              "letterSpacing": -0.4,
+              "letterSpacing": -0.2,
             },
             Object {},
             Array [
@@ -304,9 +304,9 @@ exports[`ios - iPhone X  BpkNavigationBar should render correctly with trailing 
               Object {
                 "color": "rgb(82, 76, 97)",
                 "fontFamily": "sans-serif",
-                "fontSize": 20,
+                "fontSize": 16,
                 "fontWeight": "400",
-                "letterSpacing": -0.4,
+                "letterSpacing": -0.2,
               },
               Object {
                 "fontWeight": "500",
@@ -364,9 +364,9 @@ exports[`ios - iPhone X  BpkNavigationBar should render correctly with trailing 
             Object {
               "color": "rgb(82, 76, 97)",
               "fontFamily": "sans-serif",
-              "fontSize": 20,
+              "fontSize": 16,
               "fontWeight": "400",
-              "letterSpacing": -0.4,
+              "letterSpacing": -0.2,
             },
             Object {
               "fontWeight": "500",

@@ -18,7 +18,7 @@
 /* @flow */
 
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, View, Platform } from 'react-native';
 import BpkText, { WEIGHT_STYLES } from 'react-native-bpk-component-text';
 import BpkIcon, { icons } from 'react-native-bpk-component-icon';
 import { spacingSm } from 'bpk-tokens/tokens/base.react.native';
@@ -75,7 +75,7 @@ const TitleView = (props: {
     <View style={[styles.container, style]} {...rest}>
       {isLeading && icon}
       <BpkText
-        textStyle="lg"
+        textStyle={Platform.OS === 'android' ? 'lg' : 'base'}
         weight={WEIGHT_STYLES.emphasized}
         allowFontScaling={false}
         numberOfLines={1}

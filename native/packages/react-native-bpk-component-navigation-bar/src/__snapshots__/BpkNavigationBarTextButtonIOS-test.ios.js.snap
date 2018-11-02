@@ -41,9 +41,9 @@ exports[`iOS BpkNavigationBarTextButtonIOS should render correctly 1`] = `
         Object {
           "color": "rgb(82, 76, 97)",
           "fontFamily": "System",
-          "fontSize": 20,
+          "fontSize": 16,
           "fontWeight": "400",
-          "letterSpacing": null,
+          "letterSpacing": 0.12,
         },
         Object {},
         Array [
@@ -101,9 +101,9 @@ exports[`iOS BpkNavigationBarTextButtonIOS should render correctly disabled 1`] 
         Object {
           "color": "rgb(82, 76, 97)",
           "fontFamily": "System",
-          "fontSize": 20,
+          "fontSize": 16,
           "fontWeight": "400",
-          "letterSpacing": null,
+          "letterSpacing": 0.12,
         },
         Object {},
         Array [
@@ -160,9 +160,9 @@ exports[`iOS BpkNavigationBarTextButtonIOS should render correctly emphasize 1`]
         Object {
           "color": "rgb(82, 76, 97)",
           "fontFamily": "System",
-          "fontSize": 20,
+          "fontSize": 16,
           "fontWeight": "400",
-          "letterSpacing": null,
+          "letterSpacing": 0.12,
         },
         Object {
           "fontWeight": "600",
@@ -221,9 +221,9 @@ exports[`iOS BpkNavigationBarTextButtonIOS should render correctly leading confi
         Object {
           "color": "rgb(82, 76, 97)",
           "fontFamily": "System",
-          "fontSize": 20,
+          "fontSize": 16,
           "fontWeight": "400",
-          "letterSpacing": null,
+          "letterSpacing": 0.12,
         },
         Object {},
         Array [
@@ -281,9 +281,9 @@ exports[`iOS BpkNavigationBarTextButtonIOS should resepect "disabledTintColor" 1
         Object {
           "color": "rgb(82, 76, 97)",
           "fontFamily": "System",
-          "fontSize": 20,
+          "fontSize": 16,
           "fontWeight": "400",
-          "letterSpacing": null,
+          "letterSpacing": 0.12,
         },
         Object {},
         Array [
@@ -340,9 +340,9 @@ exports[`iOS BpkNavigationBarTextButtonIOS should resepect "tintColor" 1`] = `
         Object {
           "color": "rgb(82, 76, 97)",
           "fontFamily": "System",
-          "fontSize": 20,
+          "fontSize": 16,
           "fontWeight": "400",
-          "letterSpacing": null,
+          "letterSpacing": 0.12,
         },
         Object {},
         Array [
