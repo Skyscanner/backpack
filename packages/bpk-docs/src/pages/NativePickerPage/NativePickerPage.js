@@ -22,9 +22,6 @@ import readme from 'react-native-bpk-component-picker/README.md';
 import iosScreenshotDefault from 'react-native-bpk-component-picker/screenshots/ios/default.png';
 import androidScreenshotDefault from 'react-native-bpk-component-picker/screenshots/android/default.png';
 
-import iosScreenshotDefaultPickerOpen from 'react-native-bpk-component-picker/screenshots/ios/default-picker-open.png';
-import androidScreenshotDefaultPickerOpen from 'react-native-bpk-component-picker/screenshots/android/default-picker-open.png';
-
 import IntroBlurb from '../../components/IntroBlurb';
 import DocsPageBuilder from '../../components/DocsPageBuilder';
 import DocsPageWrapper from '../../components/DocsPageWrapper';
@@ -49,29 +46,6 @@ const components = [
         width: 1080,
         height: 1920,
         src: `/${androidScreenshotDefault}`,
-        altText: 'Android Default Nudger Component',
-        subText: '(Google Pixel emulator)',
-      },
-    ],
-  },
-  {
-    id: 'picker-open',
-    title: 'Picker open',
-    blurb: 'Picker modal open.',
-    screenshots: [
-      {
-        title: 'iOS',
-        width: 750,
-        height: 1334,
-        src: `/${iosScreenshotDefaultPickerOpen}`,
-        altText: 'iOS Default Nudger Component',
-        subText: '(iPhone 8 simulator)',
-      },
-      {
-        title: 'Android',
-        width: 1080,
-        height: 1920,
-        src: `/${androidScreenshotDefaultPickerOpen}`,
         altText: 'Android Default Nudger Component',
         subText: '(Google Pixel emulator)',
       },

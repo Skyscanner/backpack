@@ -29,7 +29,6 @@ import {
   spacingMd,
 } from 'bpk-tokens/tokens/base.react.native';
 import CenterDecorator from '../../storybook/CenterDecorator';
-import { StorySubheading } from '../../storybook/TextStyles';
 
 import BpkPicker, { BpkPickerItem } from './index';
 import { type PickerValue } from './src/common-types';
@@ -134,18 +133,11 @@ storiesOf('react-native-bpk-component-picker', module)
   .addDecorator(CenterDecorator)
   .add('docs:default', () => (
     <View>
-      <StorySubheading>No selected value</StorySubheading>
-      <StatefulBpkPicker style={styles.picker} />
-
-      <StorySubheading>With a selected value</StorySubheading>
-      <StatefulBpkPicker selectedValue="1" style={styles.picker} />
-
-      <StorySubheading>Disabled</StorySubheading>
-      <StatefulBpkPicker disabled style={styles.picker} />
+      <StatefulBpkPicker isOpen style={styles.picker} />
     </View>
   ))
-  .add('docs:picker-open', () => (
+  .add('picker-closed', () => (
     <View>
-      <StatefulBpkPicker isOpen style={styles.picker} />
+      <StatefulBpkPicker style={styles.picker} />
     </View>
   ));
