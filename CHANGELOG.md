@@ -2,6 +2,13 @@
 
 [Unreleased changes](./UNRELEASED.md).
 
+# 2018-11-02 - Add validation to RN Select component
+
+**Added:**
+
+- react-native-bpk-component-select:
+  - Added `valid` and `validationMessage` props to make Select component to be consistent with Text Inputs. [See the docs](https://backpack.github.io/components/select/?platform=native)
+
 # 2018-11-01 - Remove use of deprecated property
 
 **Fixed:**
