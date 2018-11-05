@@ -64,7 +64,7 @@ const BpkSectionHeader = (props: Props) => (
   <View style={styles.outer}>
     <BpkText
       weight={WEIGHT_STYLES.emphasized}
-      textStyle={Platform.OS === 'android' ? 'sm' : 'lg'}
+      textStyle={Platform.OS === 'android' ? 'sm' : 'base'}
       style={styles.text}
     >
       {props.title}

@@ -85,7 +85,7 @@ const BpkNavigationBarTextButtonIOS = (props: Props) => {
       disabled={disabled}
     >
       <BpkText
-        textStyle="lg"
+        textStyle="base"
         weight={emphasize ? WEIGHT_STYLES.emphasized : WEIGHT_STYLES.regular}
         style={titleStyle}
       >

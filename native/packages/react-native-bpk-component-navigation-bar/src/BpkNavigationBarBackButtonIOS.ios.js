@@ -66,7 +66,7 @@ const BpkNavigationBarBackButtonIOS = (props: Props) => {
         style={[styles.backIcon, { tintColor: tintColorFinal }]}
       />
       {showTitle && (
-        <BpkText textStyle="lg" style={titleStyle}>
+        <BpkText textStyle="base" style={titleStyle}>
           {title}
         </BpkText>
       )}

@@ -99,7 +99,7 @@ class BpkFlatListItem extends React.PureComponent<ListItemProps> {
         <View style={styles.content}>
           {styledImage}
           <BpkText
-            textStyle="lg"
+            textStyle="base"
             style={[styles.text, selected ? styles.textSelected : null]}
           >
             {title}

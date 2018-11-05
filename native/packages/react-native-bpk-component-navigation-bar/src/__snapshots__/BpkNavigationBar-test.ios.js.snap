@@ -93,9 +93,9 @@ exports[`ios BpkNavigationBar should render correctly 1`] = `
             Object {
               "color": "rgb(82, 76, 97)",
               "fontFamily": "System",
-              "fontSize": 20,
+              "fontSize": 16,
               "fontWeight": "400",
-              "letterSpacing": null,
+              "letterSpacing": 0.12,
             },
             Object {},
             Array [
@@ -146,9 +146,9 @@ exports[`ios BpkNavigationBar should render correctly 1`] = `
               Object {
                 "color": "rgb(82, 76, 97)",
                 "fontFamily": "System",
-                "fontSize": 20,
+                "fontSize": 16,
                 "fontWeight": "400",
-                "letterSpacing": null,
+                "letterSpacing": 0.12,
               },
               Object {
                 "fontWeight": "600",
@@ -266,9 +266,9 @@ exports[`ios BpkNavigationBar should render correctly with a subtitle view 1`] =
             Object {
               "color": "rgb(82, 76, 97)",
               "fontFamily": "System",
-              "fontSize": 20,
+              "fontSize": 16,
               "fontWeight": "400",
-              "letterSpacing": null,
+              "letterSpacing": 0.12,
             },
             Object {},
             Array [
@@ -319,9 +319,9 @@ exports[`ios BpkNavigationBar should render correctly with a subtitle view 1`] =
               Object {
                 "color": "rgb(82, 76, 97)",
                 "fontFamily": "System",
-                "fontSize": 20,
+                "fontSize": 16,
                 "fontWeight": "400",
-                "letterSpacing": null,
+                "letterSpacing": 0.12,
               },
               Object {
                 "fontWeight": "600",
@@ -447,9 +447,9 @@ exports[`ios BpkNavigationBar should render correctly with a title view 1`] = `
             Object {
               "color": "rgb(82, 76, 97)",
               "fontFamily": "System",
-              "fontSize": 20,
+              "fontSize": 16,
               "fontWeight": "400",
-              "letterSpacing": null,
+              "letterSpacing": 0.12,
             },
             Object {},
             Array [
@@ -586,9 +586,9 @@ exports[`ios BpkNavigationBar should render correctly with an icon in the title 
             Object {
               "color": "rgb(82, 76, 97)",
               "fontFamily": "System",
-              "fontSize": 20,
+              "fontSize": 16,
               "fontWeight": "400",
-              "letterSpacing": null,
+              "letterSpacing": 0.12,
             },
             Object {},
             Array [
@@ -667,9 +667,9 @@ exports[`ios BpkNavigationBar should render correctly with an icon in the title 
               Object {
                 "color": "rgb(82, 76, 97)",
                 "fontFamily": "System",
-                "fontSize": 20,
+                "fontSize": 16,
                 "fontWeight": "400",
-                "letterSpacing": null,
+                "letterSpacing": 0.12,
               },
               Object {
                 "fontWeight": "600",
@@ -789,9 +789,9 @@ exports[`ios BpkNavigationBar should render correctly with custom style 1`] = `
             Object {
               "color": "rgb(82, 76, 97)",
               "fontFamily": "System",
-              "fontSize": 20,
+              "fontSize": 16,
               "fontWeight": "400",
-              "letterSpacing": null,
+              "letterSpacing": 0.12,
             },
             Object {},
             Array [
@@ -842,9 +842,9 @@ exports[`ios BpkNavigationBar should render correctly with custom style 1`] = `
               Object {
                 "color": "rgb(82, 76, 97)",
                 "fontFamily": "System",
-                "fontSize": 20,
+                "fontSize": 16,
                 "fontWeight": "400",
-                "letterSpacing": null,
+                "letterSpacing": 0.12,
               },
               Object {
                 "fontWeight": "600",
@@ -941,9 +941,9 @@ exports[`ios BpkNavigationBar should render correctly with trailing button 1`] =
             Object {
               "color": "rgb(82, 76, 97)",
               "fontFamily": "System",
-              "fontSize": 20,
+              "fontSize": 16,
               "fontWeight": "400",
-              "letterSpacing": null,
+              "letterSpacing": 0.12,
             },
             Object {},
             Array [
@@ -994,9 +994,9 @@ exports[`ios BpkNavigationBar should render correctly with trailing button 1`] =
               Object {
                 "color": "rgb(82, 76, 97)",
                 "fontFamily": "System",
-                "fontSize": 20,
+                "fontSize": 16,
                 "fontWeight": "400",
-                "letterSpacing": null,
+                "letterSpacing": 0.12,
               },
               Object {
                 "fontWeight": "600",
@@ -1054,9 +1054,9 @@ exports[`ios BpkNavigationBar should render correctly with trailing button 1`] =
             Object {
               "color": "rgb(82, 76, 97)",
               "fontFamily": "System",
-              "fontSize": 20,
+              "fontSize": 16,
               "fontWeight": "400",
-              "letterSpacing": null,
+              "letterSpacing": 0.12,
             },
             Object {
               "fontWeight": "600",
