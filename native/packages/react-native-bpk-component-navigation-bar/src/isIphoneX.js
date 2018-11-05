@@ -21,5 +21,16 @@ import { DeviceInfo } from 'react-native';
 
 export default (() => {
   const { width, height } = DeviceInfo.Dimensions.window;
-  return width === 375 && height === 812;
+
+  // iPhone X and XS
+  if (width === 375 && height === 812) {
+    return true;
+  }
+
+  // iPhone XS Max and XR
+  if (width === 414 && height === 896) {
+    return true;
+  }
+
+  return false;
 })();
