@@ -5,14 +5,14 @@
 # 2018-11-05 - Update some components to use `base` text style instead of `lg`
 
 **Breaking:**
-- react-native-bpk-component-navigation-bar:
+- react-native-bpk-component-navigation-bar: 3.0.1 => 4.0.0
   - (iOS only) Navigation bar text now uses `base` text style as the new type scale made these too large. ([See below for type scale changes](https://github.com/Skyscanner/backpack/blob/master/CHANGELOG.md#2018-10-31---new-type-scale))
 
-- react-native-bpk-component-flat-list:
-- react-native-bpk-component-phone-input:
+- react-native-bpk-component-flat-list: 2.0.0 => 3.0.0
+- react-native-bpk-component-phone-input: 2.0.2 => 3.0.0
   - (iOS only) Flat list now uses `base` text style as the new type scale made these too large. ([See below for type scale changes](https://github.com/Skyscanner/backpack/blob/master/CHANGELOG.md#2018-10-31---new-type-scale))
 
-- react-native-bpk-component-section-list:
+- react-native-bpk-component-section-list: 2.0.0 => 3.0.0
   - (iOS only) Section list now uses `base` text style as the new type scale made these too large. ([See below for type scale changes](https://github.com/Skyscanner/backpack/blob/master/CHANGELOG.md#2018-10-31---new-type-scale))
 
 
