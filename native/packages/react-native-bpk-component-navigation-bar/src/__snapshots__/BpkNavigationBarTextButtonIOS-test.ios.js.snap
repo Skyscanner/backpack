@@ -24,10 +24,10 @@ exports[`iOS BpkNavigationBarTextButtonIOS should render correctly 1`] = `
       Array [
         Object {
           "color": "rgb(82, 76, 97)",
-          "fontFamily": "sans-serif",
+          "fontFamily": "System",
           "fontSize": 20,
           "fontWeight": "400",
-          "letterSpacing": -0.4,
+          "letterSpacing": -0.78,
         },
         Object {},
         Array [
@@ -67,10 +67,10 @@ exports[`iOS BpkNavigationBarTextButtonIOS should render correctly disabled 1`] 
       Array [
         Object {
           "color": "rgb(82, 76, 97)",
-          "fontFamily": "sans-serif",
+          "fontFamily": "System",
           "fontSize": 20,
           "fontWeight": "400",
-          "letterSpacing": -0.4,
+          "letterSpacing": -0.78,
         },
         Object {},
         Array [
@@ -110,13 +110,13 @@ exports[`iOS BpkNavigationBarTextButtonIOS should render correctly emphasize 1`]
       Array [
         Object {
           "color": "rgb(82, 76, 97)",
-          "fontFamily": "sans-serif",
+          "fontFamily": "System",
           "fontSize": 20,
           "fontWeight": "400",
-          "letterSpacing": -0.4,
+          "letterSpacing": -0.78,
         },
         Object {
-          "fontWeight": "500",
+          "fontWeight": "600",
         },
         Array [
           Object {
@@ -155,10 +155,10 @@ exports[`iOS BpkNavigationBarTextButtonIOS should render correctly leading confi
       Array [
         Object {
           "color": "rgb(82, 76, 97)",
-          "fontFamily": "sans-serif",
+          "fontFamily": "System",
           "fontSize": 20,
           "fontWeight": "400",
-          "letterSpacing": -0.4,
+          "letterSpacing": -0.78,
         },
         Object {},
         Array [
@@ -198,10 +198,10 @@ exports[`iOS BpkNavigationBarTextButtonIOS should resepect "disabledTintColor" 1
       Array [
         Object {
           "color": "rgb(82, 76, 97)",
-          "fontFamily": "sans-serif",
+          "fontFamily": "System",
           "fontSize": 20,
           "fontWeight": "400",
-          "letterSpacing": -0.4,
+          "letterSpacing": -0.78,
         },
         Object {},
         Array [
@@ -241,10 +241,10 @@ exports[`iOS BpkNavigationBarTextButtonIOS should resepect "tintColor" 1`] = `
       Array [
         Object {
           "color": "rgb(82, 76, 97)",
-          "fontFamily": "sans-serif",
+          "fontFamily": "System",
           "fontSize": 20,
           "fontWeight": "400",
-          "letterSpacing": -0.4,
+          "letterSpacing": -0.78,
         },
         Object {},
         Array [
