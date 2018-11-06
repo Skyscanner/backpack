@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import addon from '@storybook/addons';
+// import addon from '@storybook/addons';
 import { I18nManager, AppRegistry, YellowBox } from 'react-native';
 import { getStorybookUI, configure } from '@storybook/react-native';
 
@@ -26,18 +26,18 @@ const toggleRTL = rtlEnabled => {
   I18nManager.forceRTL(!rtlEnabled);
 };
 
-const onChannelAvailable = (...fns) => {
-  const interval = setInterval(() => {
-    try {
-      const channel = addon.getChannel();
-      clearInterval(interval);
-      fns.map(fn => fn(channel));
-      return true;
-    } catch (exe) {
-      return false;
-    }
-  }, CHANNEL_POLL_INTERVAL);
-};
+// const onChannelAvailable = (...fns) => {
+//   const interval = setInterval(() => {
+//     try {
+//       const channel = addon.getChannel();
+//       clearInterval(interval);
+//       fns.map(fn => fn(channel));
+//       return true;
+//     } catch (exe) {
+//       return false;
+//     }
+//   }, CHANNEL_POLL_INTERVAL);
+// };
 
 const enableRtlFromUi = channel => {
   channel.on(RTL_EVENT, toggleRTL);
@@ -52,44 +52,44 @@ const hideWarnings = () => {
 /* eslint-disable global-require */
 configure(() => {
   require('../packages/react-native-bpk-component-alert/stories');
-  require('../packages/react-native-bpk-component-animate-height/stories');
-  require('../packages/react-native-bpk-component-badge/stories');
-  require('../packages/react-native-bpk-component-banner-alert/stories');
-  require('../packages/react-native-bpk-component-button-link/stories');
-  require('../packages/react-native-bpk-component-button/stories');
-  require('../packages/react-native-bpk-component-card/stories');
-  require('../packages/react-native-bpk-component-carousel-indicator/stories');
-  require('../packages/react-native-bpk-component-carousel/stories');
-  require('../packages/react-native-bpk-component-chip/stories');
-  require('../packages/react-native-bpk-component-flat-list/stories');
-  require('../packages/react-native-bpk-component-horizontal-nav/stories');
-  require('../packages/react-native-bpk-component-icon/stories');
-  require('../packages/react-native-bpk-component-image/stories');
-  require('../packages/react-native-bpk-component-map/stories');
-  require('../packages/react-native-bpk-component-navigation-bar/stories');
-  require('../packages/react-native-bpk-component-nudger/stories');
-  require('../packages/react-native-bpk-component-panel/stories');
-  require('../packages/react-native-bpk-component-phone-input/stories');
-  require('../packages/react-native-bpk-component-picker/stories');
-  require('../packages/react-native-bpk-component-progress/stories');
-  require('../packages/react-native-bpk-component-section-list/stories');
-  require('../packages/react-native-bpk-component-select/stories');
-  require('../packages/react-native-bpk-component-spinner/stories');
-  require('../packages/react-native-bpk-component-star-rating/stories');
-  require('../packages/react-native-bpk-component-switch/stories');
-  require('../packages/react-native-bpk-component-text-input/stories');
-  require('../packages/react-native-bpk-component-text/stories');
-  require('../packages/react-native-bpk-component-touchable-native-feedback/stories');
-  require('../packages/react-native-bpk-component-touchable-overlay/stories');
-  require('../packages/react-native-bpk-styles/stories');
-  require('../packages/react-native-bpk-theming/stories');
+  // require('../packages/react-native-bpk-component-animate-height/stories');
+  // require('../packages/react-native-bpk-component-badge/stories');
+  // require('../packages/react-native-bpk-component-banner-alert/stories');
+  // require('../packages/react-native-bpk-component-button-link/stories');
+  // require('../packages/react-native-bpk-component-button/stories');
+  // require('../packages/react-native-bpk-component-card/stories');
+  // require('../packages/react-native-bpk-component-carousel-indicator/stories');
+  // require('../packages/react-native-bpk-component-carousel/stories');
+  // require('../packages/react-native-bpk-component-chip/stories');
+  // require('../packages/react-native-bpk-component-flat-list/stories');
+  // require('../packages/react-native-bpk-component-horizontal-nav/stories');
+  // require('../packages/react-native-bpk-component-icon/stories');
+  // require('../packages/react-native-bpk-component-image/stories');
+  // require('../packages/react-native-bpk-component-map/stories');
+  // require('../packages/react-native-bpk-component-navigation-bar/stories');
+  // require('../packages/react-native-bpk-component-nudger/stories');
+  // require('../packages/react-native-bpk-component-panel/stories');
+  // require('../packages/react-native-bpk-component-phone-input/stories');
+  // require('../packages/react-native-bpk-component-picker/stories');
+  // require('../packages/react-native-bpk-component-progress/stories');
+  // require('../packages/react-native-bpk-component-section-list/stories');
+  // require('../packages/react-native-bpk-component-select/stories');
+  // require('../packages/react-native-bpk-component-spinner/stories');
+  // require('../packages/react-native-bpk-component-star-rating/stories');
+  // require('../packages/react-native-bpk-component-switch/stories');
+  // require('../packages/react-native-bpk-component-text-input/stories');
+  // require('../packages/react-native-bpk-component-text/stories');
+  // require('../packages/react-native-bpk-component-touchable-native-feedback/stories');
+  // require('../packages/react-native-bpk-component-touchable-overlay/stories');
+  // require('../packages/react-native-bpk-styles/stories');
+  // require('../packages/react-native-bpk-theming/stories');
 }, module);
 /* eslint-enable global-require */
 
-const StorybookUI = getStorybookUI({ onDeviceUI: true });
+const StorybookUI = getStorybookUI({ onDeviceUI: false });
 
 AppRegistry.registerComponent('native', () => StorybookUI);
 
-onChannelAvailable(enableRtlFromUi, hideWarnings);
+// onChannelAvailable(enableRtlFromUi, hideWarnings);
 
 export default StorybookUI;

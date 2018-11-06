@@ -11,7 +11,7 @@
     "android:build": "react-native run-android",
     "android": "npm run android:emulator & npm run android:build",
     "test": "jest --coverage",
-    "storybook": "storybook start"
+    "storybook": "storybook start | react-native start --projectRoot storybook --watchFolders $PWD/.."
   },
   "rnpm": {
     "assets": [
@@ -20,10 +20,14 @@
   },
   "devDependencies": {
     "@babel/core": "^7.1.2",
-    "@storybook/react-native": "^4.0.2",
-    "@storybook/addon-actions": "^4.0.2",
-    "@storybook/addon-knobs": "^4.0.2",
+    "@babel/preset-react": "^7.0.0",
+    "@babel/runtime": "^7.1.2",
+    "@storybook/addon-actions": "^4.0.4",
+    "@storybook/addon-knobs": "^4.0.4",
+    "@storybook/addons": "^4.0.4",
+    "@storybook/react-native": "^4.0.4",
     "babel-core": "^7.0.0-bridge.0",
+    "babel-loader": "^8.0.4",
     "jest": "^23.6.0",
     "jest-cli": "^23.6.0",
     "metro-react-native-babel-preset": "^0.49.0",
