@@ -43,6 +43,7 @@ export type Props = {
   initiallyLoadedElements: number,
   elementsPerScroll: number,
   dataSource: DataSource<any>,
+  onDataFetchFailed: ?(event: SyntheticEvent<>) => mixed,
   onScroll: ?(o: ScrollEvent) => void,
   onScrollFinished: ?(o: ScrollFinishedEvent) => void,
   renderLoadingComponent: ?() => Element<any>,
@@ -67,6 +68,7 @@ const propTypes = {
   initiallyLoadedElements: PropTypes.number,
   elementsPerScroll: PropTypes.number,
   dataSource: PropTypes.instanceOf(DataSource).isRequired,
+  onDataFetchFailed: PropTypes.func,
   onScroll: PropTypes.func,
   onScrollFinished: PropTypes.func,
   renderLoadingComponent: PropTypes.func,
@@ -77,6 +79,7 @@ const propTypes = {
 const defaultProps = {
   initiallyLoadedElements: 5,
   elementsPerScroll: 5,
+  onDataFetchFailed: null,
   onScroll: null,
   onScrollFinished: null,
   renderLoadingComponent: null,
@@ -121,9 +124,11 @@ const withInfiniteScroll = (
     componentDidMount() {
       this.fetchItems({
         elementsPerScroll: this.props.initiallyLoadedElements,
-      }).then(newState => {
-        this.setState(newState);
-      });
+      })
+        .then(newState => {
+          this.setState(newState);
+        })
+        .catch(this.handleFetchItemsFailed);
     }
 
     componentDidUpdate(prevProps) {
@@ -138,32 +143,52 @@ const withInfiniteScroll = (
           index: 0,
           elementsPerScroll: this.props.elementsPerScroll,
           elementsToRender: [],
-        }).then(newState => {
-          this.setState({
-            ...newState,
-          });
-        });
+        })
+          .then(newState => {
+            this.setState({
+              ...newState,
+            });
+          })
+          .catch(this.handleFetchItemsFailed);
       }
     }
 
     componentWillUnmount() {
       this.props.dataSource.removeListener(this.updateData);
+      this.unobserveSentinel();
+    }
+
+    unobserveSentinel() {
       if (this.sentinel) {
         this.observer.unobserve(this.sentinel);
       }
     }
 
+    handleFetchItemsFailed() {
+      this.unobserveSentinel();
+      this.setState({ isListFinished: true });
+    }
+
     updateData = () => {
       const { index } = this.state;
-      this.props.dataSource.fetchItems(0, index).then(updatedElements => {
-        this.setState({
-          elementsToRender: updatedElements,
-        });
-      });
+      const { dataSource } = this.props;
+      dataSource
+        .fetchItems(0, index)
+        .then(updatedElements => {
+          this.setState({
+            elementsToRender: updatedElements,
+          });
+        })
+        .catch(this.handleFetchItemsFailed);
     };
 
     fetchItems(config) {
-      const { onScrollFinished, seeMoreAfter } = this.props;
+      const {
+        onScrollFinished,
+        seeMoreAfter,
+        dataSource,
+        onDataFetchFailed,
+      } = this.props;
       const { index, elementsPerScroll, elementsToRender } = extend(
         {
           index: this.state.index,
@@ -173,7 +198,7 @@ const withInfiniteScroll = (
         config,
       );
 
-      return this.props.dataSource
+      return dataSource
         .fetchItems(index, elementsPerScroll)
         .then(nextElements => {
           if (nextElements && nextElements.length > 0) {
@@ -182,7 +207,6 @@ const withInfiniteScroll = (
               index: nextIndex,
               elementsToRender: (elementsToRender || []).concat(nextElements),
               showSeeMore: seeMoreAfter === index / elementsPerScroll,
-              isListFinished: false,
             };
           }
           if (onScrollFinished) {
@@ -193,6 +217,12 @@ const withInfiniteScroll = (
           return {
             isListFinished: true,
           };
+        })
+        .catch(err => {
+          if (onDataFetchFailed) {
+            onDataFetchFailed(err);
+          }
+          throw err;
         });
     }
 
@@ -200,23 +230,25 @@ const withInfiniteScroll = (
       const { onScroll } = this.props;
       const entry = entries[0];
       if (entry.isIntersecting) {
-        if (this.sentinel) {
-          this.observer.unobserve(this.sentinel);
-        }
+        this.unobserveSentinel();
         if (onScroll) {
           onScroll({ currentIndex: this.state.index });
         }
-        return this.fetchItems().then(newState => {
-          this.setState(newState);
-        });
+        return this.fetchItems()
+          .then(newState => {
+            this.setState(newState);
+          })
+          .catch(this.handleFetchItemsFailed);
       }
       return Promise.resolve();
     };
 
     handleSeeMoreClick = () => {
-      this.fetchItems().then(newState => {
-        this.setState(newState);
-      });
+      this.fetchItems()
+        .then(newState => {
+          this.setState(newState);
+        })
+        .catch(this.handleFetchItemsFailed);
     };
 
     render() {

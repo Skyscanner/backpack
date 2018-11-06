@@ -167,6 +167,7 @@ Updates the internal array and triggers all listeners.
 | dataSource              | instanceOf(DataSource) | true     | -             |
 | elementsPerScroll       | number                 | false    | 5             |
 | initiallyLoadedElements | number                 | false    | 5             |
+| onDataFetchFailed       | func                   | false    | null          |
 | onScroll                | func                   | false    | null          |
 | onScrollFinished        | func                   | false    | null          |
 | renderLoadingComponent  | func                   | false    | null          |
