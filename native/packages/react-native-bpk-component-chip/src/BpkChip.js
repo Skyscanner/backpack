@@ -30,7 +30,6 @@ import {
 
 type Props = {
   ...$Exact<CommonProps>,
-  large: boolean,
   selected: boolean,
 };
 
@@ -42,13 +41,11 @@ const BpkChip = (props: Props) => {
 
 BpkChip.propTypes = {
   ...commonPropTypes,
-  large: PropTypes.bool,
   selected: PropTypes.bool,
 };
 
 BpkChip.defaultProps = {
   ...commonDefaultProps,
-  large: false,
   selected: false,
 };
 

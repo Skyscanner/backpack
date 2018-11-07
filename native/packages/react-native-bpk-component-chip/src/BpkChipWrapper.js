@@ -19,22 +19,22 @@
 /* @flow */
 
 import React from 'react';
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Platform } from 'react-native';
 import PropTypes from 'prop-types';
 
 import BpkIcon from 'react-native-bpk-component-icon';
 import BpkText from 'react-native-bpk-component-text';
 import {
-  borderRadiusSm,
-  colorBlue700,
-  colorGray100,
+  borderRadiusPill,
+  colorBlue500,
   colorGray500,
   colorGray700,
   colorWhite,
   spacingSm,
   spacingMd,
-  spacingLg,
+  spacingBase,
 } from 'bpk-tokens/tokens/base.react.native';
+import { shadows } from 'react-native-bpk-styles';
 
 import BpkChipInner from './BpkChipInner';
 import {
@@ -46,18 +46,18 @@ import {
 const styles = StyleSheet.create({
   inner: {
     alignItems: 'center',
-    backgroundColor: colorGray100,
-    borderRadius: borderRadiusSm,
+    backgroundColor: colorWhite,
+    borderRadius: borderRadiusPill,
     flexDirection: 'row',
-    minHeight: spacingSm * 5,
     justifyContent: 'space-between',
-    paddingHorizontal: spacingMd,
-  },
-  innerLarge: {
-    minHeight: spacingLg + spacingSm,
+    paddingHorizontal: spacingBase,
+    paddingVertical: spacingMd,
+    ...Platform.select({
+      ios: shadows.base(),
+    }),
   },
   innerSelected: {
-    backgroundColor: colorBlue700,
+    backgroundColor: colorBlue500,
   },
   text: {
     color: colorGray700,
@@ -76,7 +76,6 @@ const styles = StyleSheet.create({
 type Props = {
   ...$Exact<CommonProps>,
   dismissible: boolean,
-  large: boolean,
   selected: boolean,
 };
 
@@ -85,7 +84,6 @@ const BpkChipWrapper = (props: Props) => {
     accessibilityLabel,
     dismissible,
     label,
-    large,
     selected,
     style,
     ...rest
@@ -93,10 +91,6 @@ const BpkChipWrapper = (props: Props) => {
 
   const innerStyle = [styles.inner];
   const textStyle = [styles.text];
-
-  if (large) {
-    innerStyle.push(styles.innerLarge);
-  }
 
   if (selected) {
     innerStyle.push(styles.innerSelected);
@@ -107,12 +101,11 @@ const BpkChipWrapper = (props: Props) => {
     <BpkChipInner
       accessibilityLabel={accessibilityLabel}
       selected={selected}
-      large={large}
       style={innerStyle}
       userStyle={style}
       {...rest}
     >
-      <BpkText textStyle="xs" style={textStyle}>
+      <BpkText textStyle="sm" style={textStyle}>
         {label}
       </BpkText>
       {dismissible && <BpkIcon icon="close" small style={styles.icon} />}
@@ -123,14 +116,12 @@ const BpkChipWrapper = (props: Props) => {
 BpkChipWrapper.propTypes = {
   ...commonPropTypes,
   dismissible: PropTypes.bool,
-  large: PropTypes.bool,
   selected: PropTypes.bool,
 };
 
 BpkChipWrapper.defaultProps = {
   ...commonDefaultProps,
   dismissible: false,
-  large: false,
   selected: false,
 };
 

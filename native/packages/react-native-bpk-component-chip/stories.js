@@ -24,18 +24,22 @@ import { storiesOf } from '@storybook/react-native';
 import { action } from '@storybook/addon-actions';
 
 import BpkText from 'react-native-bpk-component-text';
-import { spacingSm, spacingMd } from 'bpk-tokens/tokens/base.react.native';
+import {
+  spacingSm,
+  spacingBase,
+  spacingLg,
+} from 'bpk-tokens/tokens/base.react.native';
 
 import CenterDecorator from '../../storybook/CenterDecorator';
 import BpkChip, { BpkDismissibleChip } from './index';
 
 const styles = StyleSheet.create({
   bottomMargin: {
-    marginBottom: spacingMd,
+    marginBottom: spacingLg,
   },
   chip: {
-    marginEnd: spacingSm,
-    marginBottom: spacingSm,
+    marginEnd: spacingBase,
+    marginBottom: spacingBase,
   },
   row: {
     flexDirection: 'row',
@@ -206,37 +210,18 @@ const COUNTRIES = [
 storiesOf('react-native-bpk-component-chip', module)
   .addDecorator(CenterDecorator)
   .add('docs:default', () => (
-    <View>
-      <View style={styles.bottomMargin}>
-        <BpkText>Default</BpkText>
-        <View style={styles.row}>
-          {COUNTRIES.map((country, index) => (
-            <BpkChip
-              key={country}
-              label={country}
-              accessibilityLabel={`Toggle ${country}`}
-              onPress={() => {}}
-              selected={index % 4 === 0}
-              style={styles.chip}
-            />
-          ))}
-        </View>
-      </View>
-      <View>
-        <BpkText>Large</BpkText>
-        <View style={styles.row}>
-          {COUNTRIES.map((country, index) => (
-            <BpkChip
-              key={country}
-              label={country}
-              accessibilityLabel={`Toggle ${country}`}
-              onPress={() => {}}
-              selected={index % 4 === 0}
-              large
-              style={styles.chip}
-            />
-          ))}
-        </View>
+    <View style={styles.bottomMargin}>
+      <View style={styles.row}>
+        {COUNTRIES.map((country, index) => (
+          <BpkChip
+            key={country}
+            label={country}
+            accessibilityLabel={`Toggle ${country}`}
+            onPress={() => {}}
+            selected={index % 4 === 0}
+            style={styles.chip}
+          />
+        ))}
       </View>
     </View>
   ))

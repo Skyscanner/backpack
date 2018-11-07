@@ -32,12 +32,16 @@ const styles = StyleSheet.create({
     borderRadius: borderRadiusSm,
     ...Platform.select({
       ios: shadows.base(),
-      android: elevationBase
+      android: {
+        elevation: elevationBase
+      },
     })
   },
   componentFocused: Platform.select({
     ios: shadows.large(),
-    android: elevationLg
+    android: {
+      elevation: elevationLg,
+    }
   })
 });
 

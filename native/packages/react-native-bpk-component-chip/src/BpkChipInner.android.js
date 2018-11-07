@@ -22,13 +22,17 @@ import React from 'react';
 import { View, StyleSheet } from 'react-native';
 
 import BpkTouchableNativeFeedback from 'react-native-bpk-component-touchable-native-feedback';
-import { borderRadiusSm } from 'bpk-tokens/tokens/base.react.native';
+import {
+  borderRadiusPill,
+  elevationXs,
+} from 'bpk-tokens/tokens/base.react.native';
 
 import { type InnerProps } from './common-types';
 
 const styles = StyleSheet.create({
   wrapper: {
-    borderRadius: borderRadiusSm,
+    elevation: elevationXs,
+    borderRadius: borderRadiusPill,
   },
 });
 

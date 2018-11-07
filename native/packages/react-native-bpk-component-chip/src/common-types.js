@@ -32,7 +32,6 @@ export type Props = {
 export type InnerProps = {
   accessibilityLabel: string,
   children: Node,
-  large: boolean,
   selected: boolean,
   style: StyleObj,
   userStyle: ?StyleObj,
