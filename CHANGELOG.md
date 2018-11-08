@@ -2,9 +2,17 @@
 
 [Unreleased changes](./UNRELEASED.md).
 
+# 2018-11-08 - Add `disabled` prop to native chips
+
+**Added:**
+
+- react-native-bpk-component-chip: 3.0.0 => 3.1.0
+  - Added `disabled` prop to chips.
+
 # 2018-11-08 - New chip design
 
 **Breaking:**
+
 - react-native-bpk-component-chip: 2.0.1 => 3.0.0
   - Chips now feature a beautiful new design. The `large` prop has also been removed. See https://backpack.github.io/components/chip?platform=native
 
