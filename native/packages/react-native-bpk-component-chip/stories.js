@@ -219,6 +219,7 @@ storiesOf('react-native-bpk-component-chip', module)
             accessibilityLabel={`Toggle ${country}`}
             onPress={() => {}}
             selected={index % 4 === 0}
+            disabled={index % 10 === 0}
             style={styles.chip}
           />
         ))}
@@ -234,6 +235,7 @@ storiesOf('react-native-bpk-component-chip', module)
           accessibilityLabel={`Toggle ${country}`}
           onPress={() => {}}
           selected={index % 4 === 0}
+          disabled={index % 10 === 0}
           style={styles.chip}
         />
       ))}

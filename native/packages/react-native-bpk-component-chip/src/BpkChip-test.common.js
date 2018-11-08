@@ -55,6 +55,21 @@ const commonTests = () => {
       expect(tree).toMatchSnapshot();
     });
 
+    it('should render correctly with "disabled"', () => {
+      const tree = renderer
+        .create(
+          <BpkChip
+            disabled
+            label="Label"
+            accessibilityLabel="Accessibility label"
+            onPress={onPress}
+          />,
+        )
+        .toJSON();
+
+      expect(tree).toMatchSnapshot();
+    });
+
     it('should render correctly with custom style', () => {
       const styles = StyleSheet.create({
         custom: {
