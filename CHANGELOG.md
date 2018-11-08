@@ -2,6 +2,12 @@
 
 [Unreleased changes](./UNRELEASED.md).
 
+# 2018-11-08 - New chip design
+
+**Breaking:**
+- react-native-bpk-component-chip: 2.0.1 => 3.0.0
+  - Chips now feature a beautiful new design. The `large` prop has also been removed. See https://backpack.github.io/components/chip?platform=native
+
 # 2018-11-05 - Update some components to use `base` text style instead of `lg`
 
 **Breaking:**
