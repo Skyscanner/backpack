@@ -16,6 +16,6 @@
   "dependencies": {
     "bpk-tokens": "^27.2.0",
     "prop-types": "^15.5.8",
-    "react-native-maps": "^0.21.0"
+    "react-native-maps": "^0.22.1"
   }
 }
