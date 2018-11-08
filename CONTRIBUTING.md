@@ -50,7 +50,7 @@ Conventions and squad decisions are kept in the [decisions folder](/decisions). 
 
 Backpack is developed using Node, using the following versions:
 
-* `LTS/Carbon` (Node ^8.12.0)
+* `LTS/Dubnium` (Node ^10.13.0)
 * `^6.4.1` (npm)
 
 This is enforced using a pre-install hook that calls out to [ensure-node-env](https://github.com/Skyscanner/ensure-node-env).
