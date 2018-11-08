@@ -38,7 +38,7 @@ const BpkChipInner = (props: InnerProps) => {
     <BpkTouchableOverlay
       accessibilityLabel={accessibilityLabel}
       accessibilityTraits={selected ? ['button', 'selected'] : ['button']}
-      borderRadius="sm"
+      borderRadius="pill"
       style={[style, userStyle]}
       {...rest}
     >

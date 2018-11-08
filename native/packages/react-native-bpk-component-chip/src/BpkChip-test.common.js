@@ -40,21 +40,6 @@ const commonTests = () => {
       expect(tree).toMatchSnapshot();
     });
 
-    it('should render correctly with "large"', () => {
-      const tree = renderer
-        .create(
-          <BpkChip
-            large
-            label="Label"
-            accessibilityLabel="Accessibility label"
-            onPress={onPress}
-          />,
-        )
-        .toJSON();
-
-      expect(tree).toMatchSnapshot();
-    });
-
     it('should render correctly with "selected"', () => {
       const tree = renderer
         .create(

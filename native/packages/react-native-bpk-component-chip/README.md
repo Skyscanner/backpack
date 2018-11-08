@@ -76,7 +76,6 @@ export default class App extends Component {
 | accessibilityLabel    | string                                                                    | true     | -             |
 | onPress               | func                                                                      | true     | -             |
 | label                 | string                                                                    | true     | -             |
-| large                 | bool                                                                      | false    | false         |
 | selected              | bool                                                                      | false    | false         |
 
 ### BpkDismissibleChip
