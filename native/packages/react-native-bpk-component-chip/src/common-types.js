@@ -24,6 +24,7 @@ import { type StyleObj, ViewPropTypes } from 'react-native';
 
 export type Props = {
   accessibilityLabel: string,
+  disabled: boolean,
   onPress: () => mixed,
   label: string,
   style: ?StyleObj,
@@ -32,6 +33,7 @@ export type Props = {
 export type InnerProps = {
   accessibilityLabel: string,
   children: Node,
+  disabled: boolean,
   selected: boolean,
   style: StyleObj,
   userStyle: ?StyleObj,
@@ -39,9 +41,13 @@ export type InnerProps = {
 
 export const commonPropTypes = {
   accessibilityLabel: PropTypes.string.isRequired,
+  disabled: PropTypes.bool,
   onPress: PropTypes.func.isRequired,
   label: PropTypes.string.isRequired,
   style: ViewPropTypes.style,
 };
 
-export const commonDefaultProps = { style: null };
+export const commonDefaultProps = {
+  disabled: false,
+  style: null,
+};

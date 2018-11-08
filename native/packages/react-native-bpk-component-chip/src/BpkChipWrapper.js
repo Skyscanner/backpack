@@ -27,6 +27,7 @@ import BpkText from 'react-native-bpk-component-text';
 import {
   borderRadiusPill,
   colorBlue500,
+  colorGray300,
   colorGray500,
   colorGray700,
   colorWhite,
@@ -59,6 +60,9 @@ const styles = StyleSheet.create({
   innerSelected: {
     backgroundColor: colorBlue500,
   },
+  innerDisabled: {
+    backgroundColor: colorWhite,
+  },
   text: {
     color: colorGray700,
     includeFontPadding: false,
@@ -66,10 +70,16 @@ const styles = StyleSheet.create({
   textSelected: {
     color: colorWhite,
   },
+  textDisabled: {
+    color: colorGray300,
+  },
   icon: {
     color: colorGray500,
     includeFontPadding: false,
     marginStart: spacingSm,
+  },
+  iconDisabled: {
+    color: colorGray300,
   },
 });
 
@@ -83,6 +93,7 @@ const BpkChipWrapper = (props: Props) => {
   const {
     accessibilityLabel,
     dismissible,
+    disabled,
     label,
     selected,
     style,
@@ -91,15 +102,23 @@ const BpkChipWrapper = (props: Props) => {
 
   const innerStyle = [styles.inner];
   const textStyle = [styles.text];
+  const iconStyle = [styles.icon];
 
   if (selected) {
     innerStyle.push(styles.innerSelected);
     textStyle.push(styles.textSelected);
   }
 
+  if (disabled) {
+    innerStyle.push(styles.innerDisabled);
+    textStyle.push(styles.textDisabled);
+    iconStyle.push(styles.iconDisabled);
+  }
+
   return (
     <BpkChipInner
       accessibilityLabel={accessibilityLabel}
+      disabled={disabled}
       selected={selected}
       style={innerStyle}
       userStyle={style}
@@ -108,7 +127,7 @@ const BpkChipWrapper = (props: Props) => {
       <BpkText textStyle="sm" style={textStyle}>
         {label}
       </BpkText>
-      {dismissible && <BpkIcon icon="close" small style={styles.icon} />}
+      {dismissible && <BpkIcon icon="close" small style={iconStyle} />}
     </BpkChipInner>
   );
 };
