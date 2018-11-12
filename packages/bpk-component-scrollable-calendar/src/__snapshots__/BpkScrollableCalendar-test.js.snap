@@ -82,47 +82,14 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
       </li>
     </ol>
   </header>
-  <div
-    className="bpk-scrollable-calendar-grid-list"
-  >
+  <div>
     <div
       className="bpk-scrollable-calendar-grid-list__strip"
-    >
-      <div
-        className={undefined}
-        style={
-          Object {
-            "height": 0,
-            "overflow": "visible",
-            "width": 0,
-          }
-        }
-      >
-        <div
-          aria-label="grid"
-          aria-readonly={true}
-          className="ReactVirtualized__Grid ReactVirtualized__List"
-          id={undefined}
-          onScroll={[Function]}
-          role="grid"
-          style={
-            Object {
-              "WebkitOverflowScrolling": "touch",
-              "boxSizing": "border-box",
-              "direction": "ltr",
-              "height": 0,
-              "overflowX": "hidden",
-              "overflowY": "auto",
-              "position": "relative",
-              "width": 0,
-              "willChange": "transform",
-            }
-          }
-          tabIndex={0}
-        />
-      </div>
-       
-    </div>
+      style={null}
+    />
+    <div
+      className="bpk-sentinel"
+    />
   </div>
 </div>
 `;
@@ -209,47 +176,14 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
       </li>
     </ol>
   </header>
-  <div
-    className="bpk-scrollable-calendar-grid-list"
-  >
+  <div>
     <div
       className="bpk-scrollable-calendar-grid-list__strip"
-    >
-      <div
-        className={undefined}
-        style={
-          Object {
-            "height": 0,
-            "overflow": "visible",
-            "width": 0,
-          }
-        }
-      >
-        <div
-          aria-label="grid"
-          aria-readonly={true}
-          className="ReactVirtualized__Grid ReactVirtualized__List"
-          id={undefined}
-          onScroll={[Function]}
-          role="grid"
-          style={
-            Object {
-              "WebkitOverflowScrolling": "touch",
-              "boxSizing": "border-box",
-              "direction": "ltr",
-              "height": 0,
-              "overflowX": "hidden",
-              "overflowY": "auto",
-              "position": "relative",
-              "width": 0,
-              "willChange": "transform",
-            }
-          }
-          tabIndex={0}
-        />
-      </div>
-       
-    </div>
+      style={null}
+    />
+    <div
+      className="bpk-sentinel"
+    />
   </div>
 </div>
 `;
@@ -336,47 +270,14 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
       </li>
     </ol>
   </header>
-  <div
-    className="bpk-scrollable-calendar-grid-list"
-  >
+  <div>
     <div
       className="bpk-scrollable-calendar-grid-list__strip"
-    >
-      <div
-        className={undefined}
-        style={
-          Object {
-            "height": 0,
-            "overflow": "visible",
-            "width": 0,
-          }
-        }
-      >
-        <div
-          aria-label="grid"
-          aria-readonly={true}
-          className="ReactVirtualized__Grid ReactVirtualized__List"
-          id={undefined}
-          onScroll={[Function]}
-          role="grid"
-          style={
-            Object {
-              "WebkitOverflowScrolling": "touch",
-              "boxSizing": "border-box",
-              "direction": "ltr",
-              "height": 0,
-              "overflowX": "hidden",
-              "overflowY": "auto",
-              "position": "relative",
-              "width": 0,
-              "willChange": "transform",
-            }
-          }
-          tabIndex={0}
-        />
-      </div>
-       
-    </div>
+      style={null}
+    />
+    <div
+      className="bpk-sentinel"
+    />
   </div>
 </div>
 `;
