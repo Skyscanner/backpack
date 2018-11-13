@@ -2,6 +2,14 @@
 
 [Unreleased changes](./UNRELEASED.md).
 
+# 2018-11-13 - Make scrollable calendar more performant
+
+**Fixed:**
+- bpk-component-calendar: 4.3.17 => 4.3.18
+- bpk-component-datepicker: 8.1.20 => 8.1.21
+- bpk-component-scrollable-calendar: 0.1.8 => 0.1.9
+  - Use bpk-component-infinite-scroll instead of react-virtualized
+
 # 2018-11-08 - Add `disabled` prop to native chips
 
 **Added:**
