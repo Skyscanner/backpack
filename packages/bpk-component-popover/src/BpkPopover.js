@@ -58,6 +58,7 @@ export type Props = {
   labelAsTitle: boolean,
   closeButtonIcon: boolean,
   className: ?string,
+  tabIndex: string,
 };
 
 const BpkPopover = (props: Props) => {
@@ -71,6 +72,7 @@ const BpkPopover = (props: Props) => {
     padded,
     labelAsTitle,
     closeButtonIcon,
+    tabIndex,
     ...rest
   } = props;
 
@@ -125,6 +127,7 @@ const BpkPopover = (props: Props) => {
               />
             ) : (
               <BpkButtonLink
+                tabIndex={props.tabIndex}
                 onClick={bindEventSource(
                   EVENT_SOURCES.CLOSE_LINK,
                   props.onClose,
@@ -143,6 +146,7 @@ const BpkPopover = (props: Props) => {
         {!labelAsTitle && (
           <footer className={getClassName('bpk-popover__footer')}>
             <BpkButtonLink
+              tabIndex={props.tabIndex}
               onClick={bindEventSource(EVENT_SOURCES.CLOSE_LINK, props.onClose)}
             >
               {closeButtonText}
@@ -164,6 +168,7 @@ export const propTypes = {
   labelAsTitle: PropTypes.bool,
   closeButtonIcon: PropTypes.bool,
   className: PropTypes.string,
+  tabIndex: PropTypes.string,
 };
 
 export const defaultProps = {
@@ -171,6 +176,7 @@ export const defaultProps = {
   labelAsTitle: false,
   closeButtonIcon: true,
   className: null,
+  tabIndex: '1',
 };
 
 BpkPopover.propTypes = { ...propTypes };

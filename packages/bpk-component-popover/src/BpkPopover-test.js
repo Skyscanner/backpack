@@ -41,6 +41,21 @@ describe('BpkPopover', () => {
     expect(tree).toMatchSnapshot();
   });
 
+  it('should render correctly with "tabIndex" attribute being set', () => {
+    const tree = renderer
+      .create(
+        <BpkPopover
+          id="my-popover"
+          onClose={() => null}
+          label="My popover"
+          closeButtonText="Close"
+          tabIndex="0"
+        />,
+      )
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
   it('should render correctly with "padded" attribute equal to false', () => {
     const tree = renderer
       .create(

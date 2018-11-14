@@ -53,6 +53,7 @@ class App extends Component {
           renderTarget={() =>
             document.getElementById('popover-container')
           }
+          tabIndex="0"
         >
           <BpkText>My popover content</BpkText>
         </BpkPopover>
@@ -84,6 +85,7 @@ class App extends Component {
 | portalClassName       | string                                    | false    | null          |
 | renderTarget          | func                                      | false    | null          |
 | popperModifiers       | object                                    | false    | null          |
+| tabIndex              | string                                    | false    | "1"           |
 
 In order to attach the popover to a regular DOM element, provide a function which returns it to `target`:
 

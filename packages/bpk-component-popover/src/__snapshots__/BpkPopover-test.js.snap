@@ -170,3 +170,40 @@ exports[`BpkPopover should render correctly with "padded" attribute equal to fal
   </footer>
 </section>
 `;
+
+exports[`BpkPopover should render correctly with "tabIndex" attribute being set 1`] = `
+<section
+  aria-labelledby="bpk-popover-label-my-popover"
+  className="bpk-popover"
+  id="my-popover"
+  role="dialog"
+  tabIndex="-1"
+>
+  <span
+    className="bpk-popover__arrow"
+    id="js-bpk-popover-arrow"
+    role="presentation"
+  />
+  <span
+    className="bpk-popover__label"
+    id="bpk-popover-label-my-popover"
+  >
+    My popover
+  </span>
+  <div
+    className="bpk-popover__body--padded"
+  />
+  <footer
+    className="bpk-popover__footer"
+  >
+    <button
+      className="bpk-link"
+      onClick={[Function]}
+      tabIndex="0"
+      type="button"
+    >
+      Close
+    </button>
+  </footer>
+</section>
+`;
