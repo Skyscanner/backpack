@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-horizontal-nav",
-  "version": "2.3.29",
+  "version": "2.3.30",
   "description": "Backpack horizontal nav component.",
   "main": "index.js",
   "repository": {
@@ -13,8 +13,8 @@
     "react": "^15.0.0 || ^16.0.0"
   },
   "dependencies": {
-    "bpk-component-mobile-scroll-container": "^1.1.30",
-    "bpk-mixins": "^17.11.22",
+    "bpk-component-mobile-scroll-container": "^1.1.31",
+    "bpk-mixins": "^17.11.23",
     "bpk-react-utils": "^2.6.13",
     "prop-types": "^15.6.2"
   },
