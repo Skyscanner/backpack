@@ -19,7 +19,7 @@
       "category": "box-shadows"
     },
     "SHADOW_SM_OPACITY": {
-      "value": 0.3,
+      "value": 0.15,
       "type": "size",
       "category": "box-shadows"
     },
@@ -44,39 +44,54 @@
       "category": "box-shadows"
     },
     "SHADOW_LG_OPACITY": {
-      "value": 0.25,
+      "value": 0.15,
       "type": "size",
       "category": "box-shadows"
     },
     "SHADOW_LG_RADIUS": {
-      "value": 14,
+      "value": 16,
       "type": "size",
       "category": "box-shadows"
     },
     "SHADOW_XL_COLOR": {
       "value": "{!GRAY_900}",
       "type": "color",
-      "category": "box-shadows"
+      "category": "box-shadows",
+      "meta": {
+        "deprecated": true
+      }
     },
     "SHADOW_XL_OFFSET_HEIGHT": {
       "value": 12,
       "type": "size",
-      "category": "box-shadows"
+      "category": "box-shadows",
+      "meta": {
+        "deprecated": true
+      }
     },
     "SHADOW_XL_OFFSET_WIDTH": {
       "value": 0,
       "type": "size",
-      "category": "box-shadows"
+      "category": "box-shadows",
+      "meta": {
+        "deprecated": true
+      }
     },
     "SHADOW_XL_OPACITY": {
       "value": 0.2,
       "type": "size",
-      "category": "box-shadows"
+      "category": "box-shadows",
+      "meta": {
+        "deprecated": true
+      }
     },
     "SHADOW_XL_RADIUS": {
       "value": 50,
       "type": "size",
-      "category": "box-shadows"
+      "category": "box-shadows",
+      "meta": {
+        "deprecated": true
+      }
     }
   }
 }
