@@ -2,6 +2,13 @@
 
 [Unreleased changes](./UNRELEASED.md).
 
+# 2018-11-14 - Update send-message icon
+
+**Fixed:**
+
+- bpk-svgs: 6.0.1 => 6.0.2
+  - Updated `send-message` icon
+
 # 2018-11-13 - Make scrollable calendar more performant
 
 **Fixed:**
