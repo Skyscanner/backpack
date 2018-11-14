@@ -1,3 +1,5 @@
 # Unreleased
 
-_Nothing yet!_
+**Changed:**
+
+- Updated `send-message` icon.
