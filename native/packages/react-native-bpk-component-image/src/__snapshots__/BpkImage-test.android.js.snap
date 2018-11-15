@@ -12,7 +12,7 @@ exports[`Android BpkImage should render correctly 1`] = `
   }
   style={
     Object {
-      "borderRadius": 2,
+      "borderRadius": 4,
       "height": "100%",
       "overflow": "hidden",
       "width": "100%",
@@ -30,7 +30,7 @@ exports[`Android BpkImage should render correctly when not loaded 1`] = `
         "width": "100%",
       },
       Object {
-        "borderRadius": 2,
+        "borderRadius": 4,
         "overflow": "hidden",
       },
     ]
@@ -88,7 +88,7 @@ exports[`Android BpkImage should render correctly when unloaded and out of view 
         "width": "100%",
       },
       Object {
-        "borderRadius": 2,
+        "borderRadius": 4,
         "overflow": "hidden",
       },
     ]
@@ -128,7 +128,7 @@ exports[`Android BpkImage should render correctly with a custom image component 
         "width": "100%",
       },
       Object {
-        "borderRadius": 2,
+        "borderRadius": 4,
         "overflow": "hidden",
       },
     ]
@@ -148,7 +148,7 @@ exports[`Android BpkImage should render correctly with arbitrary props 1`] = `
   }
   style={
     Object {
-      "borderRadius": 2,
+      "borderRadius": 4,
       "height": "100%",
       "overflow": "hidden",
       "width": "100%",
@@ -170,7 +170,7 @@ exports[`Android BpkImage should render correctly with custom style 1`] = `
   }
   style={
     Object {
-      "borderRadius": 2,
+      "borderRadius": 4,
       "flex": 1,
       "height": "100%",
       "overflow": "hidden",

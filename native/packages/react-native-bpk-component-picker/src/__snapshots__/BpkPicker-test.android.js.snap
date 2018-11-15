@@ -88,7 +88,7 @@ exports[`Android BpkPicker should render correctly 1`] = `
         Array [
           Object {
             "backgroundColor": "rgb(255, 255, 255)",
-            "borderRadius": 2,
+            "borderRadius": 4,
             "elevation": 5,
           },
           Object {
@@ -311,7 +311,7 @@ exports[`Android BpkPicker should render correctly with a selected value 1`] = `
         Array [
           Object {
             "backgroundColor": "rgb(255, 255, 255)",
-            "borderRadius": 2,
+            "borderRadius": 4,
             "elevation": 5,
           },
           Object {

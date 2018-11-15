@@ -20,8 +20,9 @@
 export const animationDurationBase = 400;
 export const animationDurationSm = 200;
 export const animationDurationXs = 50;
+export const borderRadiusLg = 24;
 export const borderRadiusPill = 40;
-export const borderRadiusSm = 2;
+export const borderRadiusSm = 4;
 export const borderSizeLg = 2;
 export const borderSizeSm = 1;
 export const borderSizeXl = 3;
@@ -297,6 +298,7 @@ textXsLineHeight,
 textXxlLineHeight,
 };
 export const radii = {
+borderRadiusLg,
 borderRadiusPill,
 borderRadiusSm,
 };

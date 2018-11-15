@@ -39,11 +39,14 @@
     "BLUE_900": {
       "value": "#005567"
     },
+    "BORDER_RADIUS_LG": {
+      "value": 24
+    },
     "BORDER_RADIUS_PILL": {
       "value": 40
     },
     "BORDER_RADIUS_SM": {
-      "value": 2
+      "value": 4
     },
     "BORDER_SIZE_LG": {
       "value": 2
@@ -359,6 +362,13 @@
       "originalValue": "{!ANIMATION_DURATION_XS}",
       "name": "ANIMATION_DURATION_XS"
     },
+    "BORDER_RADIUS_LG": {
+      "type": "size",
+      "value": "24",
+      "category": "radii",
+      "originalValue": "{!BORDER_RADIUS_LG}",
+      "name": "BORDER_RADIUS_LG"
+    },
     "BORDER_RADIUS_PILL": {
       "type": "size",
       "value": "40",
@@ -368,7 +378,7 @@
     },
     "BORDER_RADIUS_SM": {
       "type": "size",
-      "value": "2",
+      "value": "4",
       "category": "radii",
       "originalValue": "{!BORDER_RADIUS_SM}",
       "name": "BORDER_RADIUS_SM"
@@ -1365,6 +1375,7 @@
     "ANIMATION_DURATION_BASE",
     "ANIMATION_DURATION_SM",
     "ANIMATION_DURATION_XS",
+    "BORDER_RADIUS_LG",
     "BORDER_RADIUS_PILL",
     "BORDER_RADIUS_SM",
     "BORDER_SIZE_LG",

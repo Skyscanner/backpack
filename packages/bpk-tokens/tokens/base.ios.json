@@ -23,6 +23,13 @@
     },
     {
       "type": "size",
+      "value": "24",
+      "category": "radii",
+      "originalValue": "{!BORDER_RADIUS_LG}",
+      "name": "borderRadiusLg"
+    },
+    {
+      "type": "size",
       "value": "40",
       "category": "radii",
       "originalValue": "{!BORDER_RADIUS_PILL}",

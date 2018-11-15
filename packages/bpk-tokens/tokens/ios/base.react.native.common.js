@@ -22,6 +22,7 @@ module.exports = {
   animationDurationBase: 400,
   animationDurationSm: 200,
   animationDurationXs: 50,
+  borderRadiusLg: 24,
   borderRadiusPill: 40,
   borderRadiusSm: 4,
   borderSizeLg: 2,

@@ -6,7 +6,7 @@ exports[`Android BpkCard should render correctly 1`] = `
     Array [
       Object {
         "backgroundColor": "rgb(255, 255, 255)",
-        "borderRadius": 2,
+        "borderRadius": 4,
         "elevation": 2,
       },
     ]
@@ -71,7 +71,7 @@ exports[`Android BpkCard should render correctly with arbitrary props 1`] = `
     Array [
       Object {
         "backgroundColor": "rgb(255, 255, 255)",
-        "borderRadius": 2,
+        "borderRadius": 4,
         "elevation": 2,
       },
     ]
@@ -136,7 +136,7 @@ exports[`Android BpkCard should render correctly with custom inner style 1`] = `
     Array [
       Object {
         "backgroundColor": "rgb(255, 255, 255)",
-        "borderRadius": 2,
+        "borderRadius": 4,
         "elevation": 2,
       },
     ]
@@ -204,7 +204,7 @@ exports[`Android BpkCard should render correctly with custom style 1`] = `
     Array [
       Object {
         "backgroundColor": "rgb(255, 255, 255)",
-        "borderRadius": 2,
+        "borderRadius": 4,
         "elevation": 2,
       },
       Object {
@@ -272,7 +272,7 @@ exports[`Android BpkCard should render correctly with the "focused" state 1`] = 
     Array [
       Object {
         "backgroundColor": "rgb(255, 255, 255)",
-        "borderRadius": 2,
+        "borderRadius": 4,
         "elevation": 2,
       },
       Object {
@@ -340,7 +340,7 @@ exports[`Android BpkCard should render correctly without padding 1`] = `
     Array [
       Object {
         "backgroundColor": "rgb(255, 255, 255)",
-        "borderRadius": 2,
+        "borderRadius": 4,
         "elevation": 2,
       },
     ]

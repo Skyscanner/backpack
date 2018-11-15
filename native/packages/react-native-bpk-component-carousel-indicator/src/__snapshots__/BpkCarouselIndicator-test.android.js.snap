@@ -9,7 +9,7 @@ exports[`Android BpkCarouselIndicator should render correctly 1`] = `
       Object {
         "alignItems": "center",
         "backgroundColor": "rgba(37, 32, 51, 0.3)",
-        "borderRadius": 2,
+        "borderRadius": 4,
         "flexDirection": "row",
         "height": 24,
         "justifyContent": "center",
@@ -93,7 +93,7 @@ exports[`Android BpkCarouselIndicator should render correctly with a page count 
       Object {
         "alignItems": "center",
         "backgroundColor": "rgba(37, 32, 51, 0.3)",
-        "borderRadius": 2,
+        "borderRadius": 4,
         "flexDirection": "row",
         "height": 24,
         "justifyContent": "center",
@@ -177,7 +177,7 @@ exports[`Android BpkCarouselIndicator should render correctly with a page count 
       Object {
         "alignItems": "center",
         "backgroundColor": "rgba(37, 32, 51, 0.3)",
-        "borderRadius": 2,
+        "borderRadius": 4,
         "flexDirection": "row",
         "height": 24,
         "justifyContent": "center",
@@ -261,7 +261,7 @@ exports[`Android BpkCarouselIndicator should render correctly with arbitrary pro
       Object {
         "alignItems": "center",
         "backgroundColor": "rgba(37, 32, 51, 0.3)",
-        "borderRadius": 2,
+        "borderRadius": 4,
         "flexDirection": "row",
         "height": 24,
         "justifyContent": "center",
@@ -346,7 +346,7 @@ exports[`Android BpkCarouselIndicator should render correctly with custom styles
       Object {
         "alignItems": "center",
         "backgroundColor": "rgba(37, 32, 51, 0.3)",
-        "borderRadius": 2,
+        "borderRadius": 4,
         "flexDirection": "row",
         "height": 24,
         "justifyContent": "center",
