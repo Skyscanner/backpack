@@ -25,7 +25,7 @@ exports[`iOS BpkCard should render correctly 1`] = `
           "height": 0.5,
           "width": 0,
         },
-        "shadowOpacity": 0.3,
+        "shadowOpacity": 0.15,
         "shadowRadius": 1.5,
       },
       Object {
@@ -111,7 +111,7 @@ exports[`iOS BpkCard should render correctly with arbitrary props 1`] = `
           "height": 0.5,
           "width": 0,
         },
-        "shadowOpacity": 0.3,
+        "shadowOpacity": 0.15,
         "shadowRadius": 1.5,
       },
       Object {
@@ -197,7 +197,7 @@ exports[`iOS BpkCard should render correctly with custom inner style 1`] = `
           "height": 0.5,
           "width": 0,
         },
-        "shadowOpacity": 0.3,
+        "shadowOpacity": 0.15,
         "shadowRadius": 1.5,
       },
       Object {
@@ -286,7 +286,7 @@ exports[`iOS BpkCard should render correctly with custom style 1`] = `
           "height": 0.5,
           "width": 0,
         },
-        "shadowOpacity": 0.3,
+        "shadowOpacity": 0.15,
         "shadowRadius": 1.5,
       },
       Object {
@@ -375,7 +375,7 @@ exports[`iOS BpkCard should render correctly with the "focused" state 1`] = `
           "height": 0.5,
           "width": 0,
         },
-        "shadowOpacity": 0.3,
+        "shadowOpacity": 0.15,
         "shadowRadius": 1.5,
       },
       Object {
@@ -384,11 +384,11 @@ exports[`iOS BpkCard should render correctly with the "focused" state 1`] = `
       Object {
         "shadowColor": "rgb(37, 32, 51)",
         "shadowOffset": Object {
-          "height": 6,
+          "height": 2,
           "width": 0,
         },
-        "shadowOpacity": 0.2,
-        "shadowRadius": 25,
+        "shadowOpacity": 0.15,
+        "shadowRadius": 8,
       },
     ]
   }
@@ -470,7 +470,7 @@ exports[`iOS BpkCard should render correctly without padding 1`] = `
           "height": 0.5,
           "width": 0,
         },
-        "shadowOpacity": 0.3,
+        "shadowOpacity": 0.15,
         "shadowRadius": 1.5,
       },
     ]

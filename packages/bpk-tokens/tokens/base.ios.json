@@ -729,17 +729,17 @@
       "name": "shadowLgOffsetWidth"
     },
     {
-      "value": 0.25,
+      "value": 0.15,
       "type": "size",
       "category": "box-shadows",
-      "originalValue": 0.25,
+      "originalValue": 0.15,
       "name": "shadowLgOpacity"
     },
     {
-      "value": 14,
+      "value": 16,
       "type": "size",
       "category": "box-shadows",
-      "originalValue": 14,
+      "originalValue": 16,
       "name": "shadowLgRadius"
     },
     {
@@ -764,10 +764,10 @@
       "name": "shadowSmOffsetWidth"
     },
     {
-      "value": 0.3,
+      "value": 0.15,
       "type": "size",
       "category": "box-shadows",
-      "originalValue": 0.3,
+      "originalValue": 0.15,
       "name": "shadowSmOpacity"
     },
     {
@@ -781,36 +781,36 @@
       "value": "#252033ff",
       "type": "color",
       "category": "box-shadows",
-      "originalValue": "{!GRAY_900}",
-      "name": "shadowXlColor"
+      "name": "shadowXlColor",
+      "originalValue": "{!GRAY_900}"
     },
     {
       "value": 12,
       "type": "size",
       "category": "box-shadows",
-      "originalValue": 12,
-      "name": "shadowXlOffsetHeight"
+      "name": "shadowXlOffsetHeight",
+      "originalValue": 12
     },
     {
       "value": 0,
       "type": "size",
       "category": "box-shadows",
-      "originalValue": 0,
-      "name": "shadowXlOffsetWidth"
+      "name": "shadowXlOffsetWidth",
+      "originalValue": 0
     },
     {
       "value": 0.2,
       "type": "size",
       "category": "box-shadows",
-      "originalValue": 0.2,
-      "name": "shadowXlOpacity"
+      "name": "shadowXlOpacity",
+      "originalValue": 0.2
     },
     {
       "value": 50,
       "type": "size",
       "category": "box-shadows",
-      "originalValue": 50,
-      "name": "shadowXlRadius"
+      "name": "shadowXlRadius",
+      "originalValue": 50
     },
     {
       "type": "size",

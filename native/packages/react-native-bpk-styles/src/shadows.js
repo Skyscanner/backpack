@@ -23,11 +23,11 @@ import {
   shadowSmOffsetHeight,
   shadowSmOpacity,
   shadowSmRadius,
-  shadowXlColor,
-  shadowXlOffsetWidth,
-  shadowXlOffsetHeight,
-  shadowXlOpacity,
-  shadowXlRadius,
+  shadowLgColor,
+  shadowLgOffsetWidth,
+  shadowLgOffsetHeight,
+  shadowLgOpacity,
+  shadowLgRadius,
 } from 'bpk-tokens/tokens/base.react.native';
 
 export default {
@@ -41,12 +41,12 @@ export default {
     shadowRadius: shadowSmRadius / PixelRatio.get(),
   }),
   large: () => ({
-    shadowColor: shadowXlColor,
+    shadowColor: shadowLgColor,
     shadowOffset: {
-      height: shadowXlOffsetHeight / PixelRatio.get(),
-      width: shadowXlOffsetWidth,
+      height: shadowLgOffsetHeight / PixelRatio.get(),
+      width: shadowLgOffsetWidth,
     },
-    shadowOpacity: shadowXlOpacity,
-    shadowRadius: shadowXlRadius / PixelRatio.get(),
+    shadowOpacity: shadowLgOpacity,
+    shadowRadius: shadowLgRadius / PixelRatio.get(),
   }),
 };

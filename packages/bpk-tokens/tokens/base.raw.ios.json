@@ -1049,17 +1049,17 @@
       "name": "SHADOW_LG_OFFSET_WIDTH"
     },
     "SHADOW_LG_OPACITY": {
-      "value": 0.25,
+      "value": 0.15,
       "type": "size",
       "category": "box-shadows",
-      "originalValue": 0.25,
+      "originalValue": 0.15,
       "name": "SHADOW_LG_OPACITY"
     },
     "SHADOW_LG_RADIUS": {
-      "value": 14,
+      "value": 16,
       "type": "size",
       "category": "box-shadows",
-      "originalValue": 14,
+      "originalValue": 16,
       "name": "SHADOW_LG_RADIUS"
     },
     "SHADOW_SM_COLOR": {
@@ -1084,10 +1084,10 @@
       "name": "SHADOW_SM_OFFSET_WIDTH"
     },
     "SHADOW_SM_OPACITY": {
-      "value": 0.3,
+      "value": 0.15,
       "type": "size",
       "category": "box-shadows",
-      "originalValue": 0.3,
+      "originalValue": 0.15,
       "name": "SHADOW_SM_OPACITY"
     },
     "SHADOW_SM_RADIUS": {
@@ -1101,36 +1101,36 @@
       "value": "#252033ff",
       "type": "color",
       "category": "box-shadows",
-      "originalValue": "{!GRAY_900}",
-      "name": "SHADOW_XL_COLOR"
+      "name": "SHADOW_XL_COLOR",
+      "originalValue": "{!GRAY_900}"
     },
     "SHADOW_XL_OFFSET_HEIGHT": {
       "value": 12,
       "type": "size",
       "category": "box-shadows",
-      "originalValue": 12,
-      "name": "SHADOW_XL_OFFSET_HEIGHT"
+      "name": "SHADOW_XL_OFFSET_HEIGHT",
+      "originalValue": 12
     },
     "SHADOW_XL_OFFSET_WIDTH": {
       "value": 0,
       "type": "size",
       "category": "box-shadows",
-      "originalValue": 0,
-      "name": "SHADOW_XL_OFFSET_WIDTH"
+      "name": "SHADOW_XL_OFFSET_WIDTH",
+      "originalValue": 0
     },
     "SHADOW_XL_OPACITY": {
       "value": 0.2,
       "type": "size",
       "category": "box-shadows",
-      "originalValue": 0.2,
-      "name": "SHADOW_XL_OPACITY"
+      "name": "SHADOW_XL_OPACITY",
+      "originalValue": 0.2
     },
     "SHADOW_XL_RADIUS": {
       "value": 50,
       "type": "size",
       "category": "box-shadows",
-      "originalValue": 50,
-      "name": "SHADOW_XL_RADIUS"
+      "name": "SHADOW_XL_RADIUS",
+      "originalValue": 50
     },
     "SPACING_BASE": {
       "type": "size",
