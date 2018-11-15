@@ -11,16 +11,16 @@ exports[`Android BpkBadge should render correctly docked to the end 1`] = `
           "paddingHorizontal": 8,
         },
         Object {
-          "borderBottomLeftRadius": 2,
-          "borderBottomRightRadius": 2,
-          "borderTopLeftRadius": 2,
-          "borderTopRightRadius": 2,
+          "borderBottomLeftRadius": 4,
+          "borderBottomRightRadius": 4,
+          "borderTopLeftRadius": 4,
+          "borderTopRightRadius": 4,
         },
         Object {
           "backgroundColor": "rgb(0, 215, 117)",
         },
         Object {
-          "borderBottomLeftRadius": 2,
+          "borderBottomLeftRadius": 4,
           "borderBottomRightRadius": 0,
           "borderRightWidth": 0,
           "borderTopLeftRadius": 0,
@@ -66,16 +66,16 @@ exports[`Android BpkBadge should render correctly docked to the end 1`] = `
           "paddingHorizontal": 8,
         },
         Object {
-          "borderBottomLeftRadius": 2,
-          "borderBottomRightRadius": 2,
-          "borderTopLeftRadius": 2,
-          "borderTopRightRadius": 2,
+          "borderBottomLeftRadius": 4,
+          "borderBottomRightRadius": 4,
+          "borderTopLeftRadius": 4,
+          "borderTopRightRadius": 4,
         },
         Object {
           "backgroundColor": "rgb(255, 187, 0)",
         },
         Object {
-          "borderBottomLeftRadius": 2,
+          "borderBottomLeftRadius": 4,
           "borderBottomRightRadius": 0,
           "borderRightWidth": 0,
           "borderTopLeftRadius": 0,
@@ -121,16 +121,16 @@ exports[`Android BpkBadge should render correctly docked to the end 1`] = `
           "paddingHorizontal": 8,
         },
         Object {
-          "borderBottomLeftRadius": 2,
-          "borderBottomRightRadius": 2,
-          "borderTopLeftRadius": 2,
-          "borderTopRightRadius": 2,
+          "borderBottomLeftRadius": 4,
+          "borderBottomRightRadius": 4,
+          "borderTopLeftRadius": 4,
+          "borderTopRightRadius": 4,
         },
         Object {
           "backgroundColor": "rgb(255, 84, 82)",
         },
         Object {
-          "borderBottomLeftRadius": 2,
+          "borderBottomLeftRadius": 4,
           "borderBottomRightRadius": 0,
           "borderRightWidth": 0,
           "borderTopLeftRadius": 0,
@@ -178,16 +178,16 @@ exports[`Android BpkBadge should render correctly docked to the end 1`] = `
           "paddingHorizontal": 8,
         },
         Object {
-          "borderBottomLeftRadius": 2,
-          "borderBottomRightRadius": 2,
-          "borderTopLeftRadius": 2,
-          "borderTopRightRadius": 2,
+          "borderBottomLeftRadius": 4,
+          "borderBottomRightRadius": 4,
+          "borderTopLeftRadius": 4,
+          "borderTopRightRadius": 4,
         },
         Object {
           "backgroundColor": "rgb(243, 242, 245)",
         },
         Object {
-          "borderBottomLeftRadius": 2,
+          "borderBottomLeftRadius": 4,
           "borderBottomRightRadius": 0,
           "borderRightWidth": 0,
           "borderTopLeftRadius": 0,
@@ -233,16 +233,16 @@ exports[`Android BpkBadge should render correctly docked to the end 1`] = `
           "paddingHorizontal": 8,
         },
         Object {
-          "borderBottomLeftRadius": 2,
-          "borderBottomRightRadius": 2,
-          "borderTopLeftRadius": 2,
-          "borderTopRightRadius": 2,
+          "borderBottomLeftRadius": 4,
+          "borderBottomRightRadius": 4,
+          "borderTopLeftRadius": 4,
+          "borderTopRightRadius": 4,
         },
         Object {
           "backgroundColor": "rgb(255, 255, 255)",
         },
         Object {
-          "borderBottomLeftRadius": 2,
+          "borderBottomLeftRadius": 4,
           "borderBottomRightRadius": 0,
           "borderRightWidth": 0,
           "borderTopLeftRadius": 0,
@@ -288,10 +288,10 @@ exports[`Android BpkBadge should render correctly docked to the end 1`] = `
           "paddingHorizontal": 8,
         },
         Object {
-          "borderBottomLeftRadius": 2,
-          "borderBottomRightRadius": 2,
-          "borderTopLeftRadius": 2,
-          "borderTopRightRadius": 2,
+          "borderBottomLeftRadius": 4,
+          "borderBottomRightRadius": 4,
+          "borderTopLeftRadius": 4,
+          "borderTopRightRadius": 4,
         },
         Array [
           Object {
@@ -304,7 +304,7 @@ exports[`Android BpkBadge should render correctly docked to the end 1`] = `
           },
         ],
         Object {
-          "borderBottomLeftRadius": 2,
+          "borderBottomLeftRadius": 4,
           "borderBottomRightRadius": 0,
           "borderRightWidth": 0,
           "borderTopLeftRadius": 0,
@@ -357,17 +357,17 @@ exports[`Android BpkBadge should render correctly docked to the start 1`] = `
           "paddingHorizontal": 8,
         },
         Object {
-          "borderBottomLeftRadius": 2,
-          "borderBottomRightRadius": 2,
-          "borderTopLeftRadius": 2,
-          "borderTopRightRadius": 2,
+          "borderBottomLeftRadius": 4,
+          "borderBottomRightRadius": 4,
+          "borderTopLeftRadius": 4,
+          "borderTopRightRadius": 4,
         },
         Object {
           "backgroundColor": "rgb(0, 215, 117)",
         },
         Object {
           "borderBottomLeftRadius": 0,
-          "borderBottomRightRadius": 2,
+          "borderBottomRightRadius": 4,
           "borderLeftWidth": 0,
           "borderTopLeftRadius": 0,
           "borderTopRightRadius": 0,
@@ -412,17 +412,17 @@ exports[`Android BpkBadge should render correctly docked to the start 1`] = `
           "paddingHorizontal": 8,
         },
         Object {
-          "borderBottomLeftRadius": 2,
-          "borderBottomRightRadius": 2,
-          "borderTopLeftRadius": 2,
-          "borderTopRightRadius": 2,
+          "borderBottomLeftRadius": 4,
+          "borderBottomRightRadius": 4,
+          "borderTopLeftRadius": 4,
+          "borderTopRightRadius": 4,
         },
         Object {
           "backgroundColor": "rgb(255, 187, 0)",
         },
         Object {
           "borderBottomLeftRadius": 0,
-          "borderBottomRightRadius": 2,
+          "borderBottomRightRadius": 4,
           "borderLeftWidth": 0,
           "borderTopLeftRadius": 0,
           "borderTopRightRadius": 0,
@@ -467,17 +467,17 @@ exports[`Android BpkBadge should render correctly docked to the start 1`] = `
           "paddingHorizontal": 8,
         },
         Object {
-          "borderBottomLeftRadius": 2,
-          "borderBottomRightRadius": 2,
-          "borderTopLeftRadius": 2,
-          "borderTopRightRadius": 2,
+          "borderBottomLeftRadius": 4,
+          "borderBottomRightRadius": 4,
+          "borderTopLeftRadius": 4,
+          "borderTopRightRadius": 4,
         },
         Object {
           "backgroundColor": "rgb(255, 84, 82)",
         },
         Object {
           "borderBottomLeftRadius": 0,
-          "borderBottomRightRadius": 2,
+          "borderBottomRightRadius": 4,
           "borderLeftWidth": 0,
           "borderTopLeftRadius": 0,
           "borderTopRightRadius": 0,
@@ -524,17 +524,17 @@ exports[`Android BpkBadge should render correctly docked to the start 1`] = `
           "paddingHorizontal": 8,
         },
         Object {
-          "borderBottomLeftRadius": 2,
-          "borderBottomRightRadius": 2,
-          "borderTopLeftRadius": 2,
-          "borderTopRightRadius": 2,
+          "borderBottomLeftRadius": 4,
+          "borderBottomRightRadius": 4,
+          "borderTopLeftRadius": 4,
+          "borderTopRightRadius": 4,
         },
         Object {
           "backgroundColor": "rgb(243, 242, 245)",
         },
         Object {
           "borderBottomLeftRadius": 0,
-          "borderBottomRightRadius": 2,
+          "borderBottomRightRadius": 4,
           "borderLeftWidth": 0,
           "borderTopLeftRadius": 0,
           "borderTopRightRadius": 0,
@@ -579,17 +579,17 @@ exports[`Android BpkBadge should render correctly docked to the start 1`] = `
           "paddingHorizontal": 8,
         },
         Object {
-          "borderBottomLeftRadius": 2,
-          "borderBottomRightRadius": 2,
-          "borderTopLeftRadius": 2,
-          "borderTopRightRadius": 2,
+          "borderBottomLeftRadius": 4,
+          "borderBottomRightRadius": 4,
+          "borderTopLeftRadius": 4,
+          "borderTopRightRadius": 4,
         },
         Object {
           "backgroundColor": "rgb(255, 255, 255)",
         },
         Object {
           "borderBottomLeftRadius": 0,
-          "borderBottomRightRadius": 2,
+          "borderBottomRightRadius": 4,
           "borderLeftWidth": 0,
           "borderTopLeftRadius": 0,
           "borderTopRightRadius": 0,
@@ -634,10 +634,10 @@ exports[`Android BpkBadge should render correctly docked to the start 1`] = `
           "paddingHorizontal": 8,
         },
         Object {
-          "borderBottomLeftRadius": 2,
-          "borderBottomRightRadius": 2,
-          "borderTopLeftRadius": 2,
-          "borderTopRightRadius": 2,
+          "borderBottomLeftRadius": 4,
+          "borderBottomRightRadius": 4,
+          "borderTopLeftRadius": 4,
+          "borderTopRightRadius": 4,
         },
         Array [
           Object {
@@ -651,7 +651,7 @@ exports[`Android BpkBadge should render correctly docked to the start 1`] = `
         ],
         Object {
           "borderBottomLeftRadius": 0,
-          "borderBottomRightRadius": 2,
+          "borderBottomRightRadius": 4,
           "borderLeftWidth": 0,
           "borderTopLeftRadius": 0,
           "borderTopRightRadius": 0,
@@ -703,10 +703,10 @@ exports[`Android BpkBadge should render correctly in normal mode 1`] = `
           "paddingHorizontal": 8,
         },
         Object {
-          "borderBottomLeftRadius": 2,
-          "borderBottomRightRadius": 2,
-          "borderTopLeftRadius": 2,
-          "borderTopRightRadius": 2,
+          "borderBottomLeftRadius": 4,
+          "borderBottomRightRadius": 4,
+          "borderTopLeftRadius": 4,
+          "borderTopRightRadius": 4,
         },
         Object {
           "backgroundColor": "rgb(0, 215, 117)",
@@ -750,10 +750,10 @@ exports[`Android BpkBadge should render correctly in normal mode 1`] = `
           "paddingHorizontal": 8,
         },
         Object {
-          "borderBottomLeftRadius": 2,
-          "borderBottomRightRadius": 2,
-          "borderTopLeftRadius": 2,
-          "borderTopRightRadius": 2,
+          "borderBottomLeftRadius": 4,
+          "borderBottomRightRadius": 4,
+          "borderTopLeftRadius": 4,
+          "borderTopRightRadius": 4,
         },
         Object {
           "backgroundColor": "rgb(255, 187, 0)",
@@ -797,10 +797,10 @@ exports[`Android BpkBadge should render correctly in normal mode 1`] = `
           "paddingHorizontal": 8,
         },
         Object {
-          "borderBottomLeftRadius": 2,
-          "borderBottomRightRadius": 2,
-          "borderTopLeftRadius": 2,
-          "borderTopRightRadius": 2,
+          "borderBottomLeftRadius": 4,
+          "borderBottomRightRadius": 4,
+          "borderTopLeftRadius": 4,
+          "borderTopRightRadius": 4,
         },
         Object {
           "backgroundColor": "rgb(255, 84, 82)",
@@ -846,10 +846,10 @@ exports[`Android BpkBadge should render correctly in normal mode 1`] = `
           "paddingHorizontal": 8,
         },
         Object {
-          "borderBottomLeftRadius": 2,
-          "borderBottomRightRadius": 2,
-          "borderTopLeftRadius": 2,
-          "borderTopRightRadius": 2,
+          "borderBottomLeftRadius": 4,
+          "borderBottomRightRadius": 4,
+          "borderTopLeftRadius": 4,
+          "borderTopRightRadius": 4,
         },
         Object {
           "backgroundColor": "rgb(243, 242, 245)",
@@ -893,10 +893,10 @@ exports[`Android BpkBadge should render correctly in normal mode 1`] = `
           "paddingHorizontal": 8,
         },
         Object {
-          "borderBottomLeftRadius": 2,
-          "borderBottomRightRadius": 2,
-          "borderTopLeftRadius": 2,
-          "borderTopRightRadius": 2,
+          "borderBottomLeftRadius": 4,
+          "borderBottomRightRadius": 4,
+          "borderTopLeftRadius": 4,
+          "borderTopRightRadius": 4,
         },
         Object {
           "backgroundColor": "rgb(255, 255, 255)",
@@ -940,10 +940,10 @@ exports[`Android BpkBadge should render correctly in normal mode 1`] = `
           "paddingHorizontal": 8,
         },
         Object {
-          "borderBottomLeftRadius": 2,
-          "borderBottomRightRadius": 2,
-          "borderTopLeftRadius": 2,
-          "borderTopRightRadius": 2,
+          "borderBottomLeftRadius": 4,
+          "borderBottomRightRadius": 4,
+          "borderTopLeftRadius": 4,
+          "borderTopRightRadius": 4,
         },
         Array [
           Object {
@@ -1001,10 +1001,10 @@ exports[`Android BpkBadge should render correctly with user provided style 1`] =
           "paddingHorizontal": 8,
         },
         Object {
-          "borderBottomLeftRadius": 2,
-          "borderBottomRightRadius": 2,
-          "borderTopLeftRadius": 2,
-          "borderTopRightRadius": 2,
+          "borderBottomLeftRadius": 4,
+          "borderBottomRightRadius": 4,
+          "borderTopLeftRadius": 4,
+          "borderTopRightRadius": 4,
         },
         Object {
           "backgroundColor": "rgb(0, 215, 117)",
@@ -1051,10 +1051,10 @@ exports[`Android BpkBadge should render correctly with user provided style 1`] =
           "paddingHorizontal": 8,
         },
         Object {
-          "borderBottomLeftRadius": 2,
-          "borderBottomRightRadius": 2,
-          "borderTopLeftRadius": 2,
-          "borderTopRightRadius": 2,
+          "borderBottomLeftRadius": 4,
+          "borderBottomRightRadius": 4,
+          "borderTopLeftRadius": 4,
+          "borderTopRightRadius": 4,
         },
         Object {
           "backgroundColor": "rgb(255, 187, 0)",
@@ -1101,10 +1101,10 @@ exports[`Android BpkBadge should render correctly with user provided style 1`] =
           "paddingHorizontal": 8,
         },
         Object {
-          "borderBottomLeftRadius": 2,
-          "borderBottomRightRadius": 2,
-          "borderTopLeftRadius": 2,
-          "borderTopRightRadius": 2,
+          "borderBottomLeftRadius": 4,
+          "borderBottomRightRadius": 4,
+          "borderTopLeftRadius": 4,
+          "borderTopRightRadius": 4,
         },
         Object {
           "backgroundColor": "rgb(255, 84, 82)",
@@ -1153,10 +1153,10 @@ exports[`Android BpkBadge should render correctly with user provided style 1`] =
           "paddingHorizontal": 8,
         },
         Object {
-          "borderBottomLeftRadius": 2,
-          "borderBottomRightRadius": 2,
-          "borderTopLeftRadius": 2,
-          "borderTopRightRadius": 2,
+          "borderBottomLeftRadius": 4,
+          "borderBottomRightRadius": 4,
+          "borderTopLeftRadius": 4,
+          "borderTopRightRadius": 4,
         },
         Object {
           "backgroundColor": "rgb(243, 242, 245)",
@@ -1203,10 +1203,10 @@ exports[`Android BpkBadge should render correctly with user provided style 1`] =
           "paddingHorizontal": 8,
         },
         Object {
-          "borderBottomLeftRadius": 2,
-          "borderBottomRightRadius": 2,
-          "borderTopLeftRadius": 2,
-          "borderTopRightRadius": 2,
+          "borderBottomLeftRadius": 4,
+          "borderBottomRightRadius": 4,
+          "borderTopLeftRadius": 4,
+          "borderTopRightRadius": 4,
         },
         Object {
           "backgroundColor": "rgb(255, 255, 255)",
@@ -1253,10 +1253,10 @@ exports[`Android BpkBadge should render correctly with user provided style 1`] =
           "paddingHorizontal": 8,
         },
         Object {
-          "borderBottomLeftRadius": 2,
-          "borderBottomRightRadius": 2,
-          "borderTopLeftRadius": 2,
-          "borderTopRightRadius": 2,
+          "borderBottomLeftRadius": 4,
+          "borderBottomRightRadius": 4,
+          "borderTopLeftRadius": 4,
+          "borderTopRightRadius": 4,
         },
         Array [
           Object {

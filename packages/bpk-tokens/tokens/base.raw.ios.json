@@ -39,6 +39,9 @@
     "BLUE_900": {
       "value": "#005567"
     },
+    "BORDER_RADIUS_LG": {
+      "value": 24
+    },
     "BORDER_RADIUS_PILL": {
       "value": 40
     },
@@ -340,6 +343,13 @@
       "category": "animations",
       "originalValue": "{!ANIMATION_DURATION_XS}",
       "name": "ANIMATION_DURATION_XS"
+    },
+    "BORDER_RADIUS_LG": {
+      "type": "size",
+      "value": "24",
+      "category": "radii",
+      "originalValue": "{!BORDER_RADIUS_LG}",
+      "name": "BORDER_RADIUS_LG"
     },
     "BORDER_RADIUS_PILL": {
       "type": "size",
@@ -1431,6 +1441,7 @@
     "ANIMATION_DURATION_BASE",
     "ANIMATION_DURATION_SM",
     "ANIMATION_DURATION_XS",
+    "BORDER_RADIUS_LG",
     "BORDER_RADIUS_PILL",
     "BORDER_RADIUS_SM",
     "BORDER_SIZE_LG",

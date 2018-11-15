@@ -22,6 +22,10 @@
       "value": "{!BORDER_RADIUS_SM}",
       "category": "radii"
     },
+    "BORDER_RADIUS_LG": {
+      "value": "{!BORDER_RADIUS_LG}",
+      "category": "radii"
+    },
     "BORDER_RADIUS_PILL": {
       "value": "{!BORDER_RADIUS_PILL}",
       "category": "radii"

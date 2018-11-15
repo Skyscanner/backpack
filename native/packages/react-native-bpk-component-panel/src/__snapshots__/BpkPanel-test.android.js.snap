@@ -7,7 +7,7 @@ exports[`Android BpkPanel should render correctly 1`] = `
       Object {
         "backgroundColor": "rgb(255, 255, 255)",
         "borderColor": "rgb(230, 228, 235)",
-        "borderRadius": 2,
+        "borderRadius": 4,
         "borderWidth": 1,
       },
       Object {
@@ -45,7 +45,7 @@ exports[`Android BpkPanel should render correctly with arbitrary props 1`] = `
       Object {
         "backgroundColor": "rgb(255, 255, 255)",
         "borderColor": "rgb(230, 228, 235)",
-        "borderRadius": 2,
+        "borderRadius": 4,
         "borderWidth": 1,
       },
       Object {
@@ -84,7 +84,7 @@ exports[`Android BpkPanel should render correctly with custom style 1`] = `
       Object {
         "backgroundColor": "rgb(255, 255, 255)",
         "borderColor": "rgb(230, 228, 235)",
-        "borderRadius": 2,
+        "borderRadius": 4,
         "borderWidth": 1,
       },
       Object {
@@ -125,7 +125,7 @@ exports[`Android BpkPanel should render correctly without padding 1`] = `
       Object {
         "backgroundColor": "rgb(255, 255, 255)",
         "borderColor": "rgb(230, 228, 235)",
-        "borderRadius": 2,
+        "borderRadius": 4,
         "borderWidth": 1,
       },
     ]
