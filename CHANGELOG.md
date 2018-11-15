@@ -2,6 +2,19 @@
 
 [Unreleased changes](./UNRELEASED.md).
 
+# 2018-11-15 - Change shadow and border radius tokens
+
+**Changed:**
+- bpk-tokens: 27.2.0 => 27.2.1
+  - Updated iOS shadow tokens and deprecated XL shadow tokens on iOS.
+  - Changed Android `borderRadiusSm` token to `4`.
+  - Added `borderRadiusLg` tokens to Android and iOS.
+- react-native-bpk-component-card: 1.2.49 => 1.2.50
+- react-native-bpk-component-chip: 3.1.1 => 3.1.2
+  - Updated to use new shadow tokens. Shadows are now slightly softer.
+- react-native-bpk-styles: 1.1.20 => 1.1.21
+  - Tweaked `shadows.large` to use large tokens instead of deprecated XL ones.
+
 # 2018-11-14 - Update send-message icon
 
 **Fixed:**
