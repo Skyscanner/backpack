@@ -99,11 +99,12 @@
   <color name="COLOR_YELLOW_700" category="colors">#ffe1a500</color>
   <color name="COLOR_YELLOW_800" category="colors">#ffc28e00</color>
   <color name="COLOR_YELLOW_900" category="colors">#ff9c7200</color>
-  <property name="ELEVATION_BASE" category="elevation">6dp</property>
-  <property name="ELEVATION_LG" category="elevation">16dp</property>
-  <property name="ELEVATION_SM" category="elevation">4dp</property>
-  <property name="ELEVATION_XL" category="elevation">24dp</property>
-  <property name="ELEVATION_XS" category="elevation">2dp</property>
+  <property name="ELEVATION_BASE" category="elevation">4dp</property>
+  <property name="ELEVATION_LG" category="elevation">8dp</property>
+  <property name="ELEVATION_SM" category="elevation">2dp</property>
+  <property name="ELEVATION_XL" category="elevation">16dp</property>
+  <property name="ELEVATION_XS" category="elevation">1dp</property>
+  <property name="ELEVATION_XXL" category="elevation">24dp</property>
   <property name="FONT_FAMILY" category="typesettings">"sans-serif"</property>
   <property name="FONT_FAMILY_EMPHASIZE" category="typesettings">"sans-serif-medium"</property>
   <property name="FONT_FAMILY_HEAVY" category="typesettings">"sans-serif-black"</property>

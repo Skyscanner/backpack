@@ -96,11 +96,12 @@ export const colorYellow600 = "rgb(240, 176, 0)";
 export const colorYellow700 = "rgb(225, 165, 0)";
 export const colorYellow800 = "rgb(194, 142, 0)";
 export const colorYellow900 = "rgb(156, 114, 0)";
-export const elevationBase = 6;
-export const elevationLg = 16;
-export const elevationSm = 4;
-export const elevationXl = 24;
-export const elevationXs = 2;
+export const elevationBase = 4;
+export const elevationLg = 8;
+export const elevationSm = 2;
+export const elevationXl = 16;
+export const elevationXs = 1;
+export const elevationXxl = 24;
 export const fontFamily = "sans-serif";
 export const fontFamilyEmphasize = "sans-serif-medium";
 export const fontFamilyHeavy = "sans-serif-black";
@@ -249,6 +250,7 @@ elevationLg,
 elevationSm,
 elevationXl,
 elevationXs,
+elevationXxl,
 };
 export const fontSizes = {
 textBaseFontSize,
