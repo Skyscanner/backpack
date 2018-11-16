@@ -67,19 +67,22 @@
       "value": 2
     },
     "ELEVATION_BASE": {
-      "value": 6
-    },
-    "ELEVATION_LG": {
-      "value": 16
-    },
-    "ELEVATION_SM": {
       "value": 4
     },
+    "ELEVATION_LG": {
+      "value": 8
+    },
+    "ELEVATION_SM": {
+      "value": 2
+    },
     "ELEVATION_XL": {
-      "value": 24
+      "value": 16
     },
     "ELEVATION_XS": {
-      "value": 2
+      "value": 1
+    },
+    "ELEVATION_XXL": {
+      "value": 24
     },
     "FONT_FAMILY": {
       "value": "\"sans-serif\""
@@ -897,37 +900,44 @@
     "ELEVATION_BASE": {
       "type": "size",
       "category": "elevation",
-      "value": "6",
+      "value": "4",
       "originalValue": "{!ELEVATION_BASE}",
       "name": "ELEVATION_BASE"
     },
     "ELEVATION_LG": {
       "type": "size",
       "category": "elevation",
-      "value": "16",
+      "value": "8",
       "originalValue": "{!ELEVATION_LG}",
       "name": "ELEVATION_LG"
     },
     "ELEVATION_SM": {
       "type": "size",
       "category": "elevation",
-      "value": "4",
+      "value": "2",
       "originalValue": "{!ELEVATION_SM}",
       "name": "ELEVATION_SM"
     },
     "ELEVATION_XL": {
       "type": "size",
       "category": "elevation",
-      "value": "24",
+      "value": "16",
       "originalValue": "{!ELEVATION_XL}",
       "name": "ELEVATION_XL"
     },
     "ELEVATION_XS": {
       "type": "size",
       "category": "elevation",
-      "value": "2",
+      "value": "1",
       "originalValue": "{!ELEVATION_XS}",
       "name": "ELEVATION_XS"
+    },
+    "ELEVATION_XXL": {
+      "type": "size",
+      "category": "elevation",
+      "value": "24",
+      "originalValue": "{!ELEVATION_XXL}",
+      "name": "ELEVATION_XXL"
     },
     "FONT_FAMILY": {
       "value": "\"sans-serif\"",
@@ -1456,6 +1466,7 @@
     "ELEVATION_SM",
     "ELEVATION_XL",
     "ELEVATION_XS",
+    "ELEVATION_XXL",
     "FONT_FAMILY",
     "FONT_FAMILY_EMPHASIZE",
     "FONT_FAMILY_HEAVY",

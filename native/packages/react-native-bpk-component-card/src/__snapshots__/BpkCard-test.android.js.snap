@@ -276,7 +276,7 @@ exports[`Android BpkCard should render correctly with the "focused" state 1`] = 
         "elevation": 2,
       },
       Object {
-        "elevation": 16,
+        "elevation": 8,
       },
     ]
   }

@@ -24,14 +24,14 @@ import { View, StyleSheet } from 'react-native';
 import BpkTouchableNativeFeedback from 'react-native-bpk-component-touchable-native-feedback';
 import {
   borderRadiusPill,
-  elevationXs,
+  elevationSm,
 } from 'bpk-tokens/tokens/base.react.native';
 
 import { type InnerProps } from './common-types';
 
 const styles = StyleSheet.create({
   wrapper: {
-    elevation: elevationXs,
+    elevation: elevationSm,
     borderRadius: borderRadiusPill,
   },
 });

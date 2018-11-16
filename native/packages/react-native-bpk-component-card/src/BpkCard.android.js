@@ -19,7 +19,7 @@
 import { View, StyleSheet, ViewPropTypes } from 'react-native';
 import {
   colorWhite,
-  elevationXs,
+  elevationSm,
   elevationLg,
   borderRadiusSm,
   spacingBase,
@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
   card: {
     backgroundColor: colorWhite,
     borderRadius: borderRadiusSm,
-    elevation: elevationXs,
+    elevation: elevationSm,
   },
   cardPadded: {
     padding: spacingBase,
