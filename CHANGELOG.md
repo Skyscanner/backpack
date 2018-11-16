@@ -2,6 +2,15 @@
 
 [Unreleased changes](./UNRELEASED.md).
 
+# 2018-11-16 - Change elevation tokens
+
+**Added, changed:**
+
+- bpk-tokens: 27.2.1 => 27.3.0
+  - Changed elevation token values. Also added a new `elevationXxl` token. See https://backpack.github.io/tokens/shadows for the new values.
+- react-native-bpk-component-card: 1.2.50 => 1.2.51
+  - Focused cards now have a slightly different shadow to reflect the above elevation token changes.
+
 # 2018-11-15 - Change shadow and border radius tokens
 
 **Changed:**
