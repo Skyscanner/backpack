@@ -19,6 +19,8 @@
 /* @flow */
 
 import React from 'react';
+import PropTypes from 'prop-types';
+import { deprecated } from 'bpk-react-utils';
 import { View } from 'react-native';
 import renderer from 'react-test-renderer';
 import { spacingSm } from 'bpk-tokens/tokens/base.react.native';
@@ -79,6 +81,24 @@ const commonTests = () => {
         .create(generateBadgeStory({ style: { margin: spacingSm } }))
         .toJSON();
       expect(tree).toMatchSnapshot();
+    });
+
+    it('should warn when message prop is used', () => {
+      const consoleWarnFn = jest.fn();
+      jest.spyOn(console, 'warn').mockImplementation(consoleWarnFn);
+
+      PropTypes.checkPropTypes(
+        {
+          message: deprecated(PropTypes.string, 'Use "children" instead.'),
+        },
+        {
+          message: true,
+        },
+        'message',
+        'BpkBadge',
+      );
+
+      expect(consoleWarnFn.mock.calls.length).toBe(1);
     });
   });
 };

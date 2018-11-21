@@ -24,8 +24,10 @@ import { View, StyleSheet } from 'react-native';
 import {
   colorGray50,
   colorGray700,
+  colorWhite,
   spacingSm,
 } from 'bpk-tokens/tokens/base.react.native';
+import BpkText from 'react-native-bpk-component-text';
 
 import BpkBadge, { BADGE_TYPES, BADGE_DOCKED_TYPES } from './index';
 import { StorySubheading } from '../../storybook/TextStyles';
@@ -61,6 +63,12 @@ const style = StyleSheet.create({
   outline: {
     backgroundColor: colorGray700,
   },
+  textdestructive: {
+    color: colorWhite,
+  },
+  textoutline: {
+    color: colorWhite,
+  },
   inverse: {
     backgroundColor: colorGray700,
   },
@@ -85,11 +93,19 @@ const generateBadgeStory = (
         {contents.map(content => (
           <BpkBadge
             key={content}
-            message={content}
+            alt={content}
             docked={config.docked}
             type={i}
             style={style.badge}
-          />
+          >
+            <BpkText
+              allowFontScaling={false}
+              style={style[`text${i}`]}
+              textStyle="xs"
+            >
+              {content}
+            </BpkText>
+          </BpkBadge>
         ))}
       </View>
     </View>
@@ -113,5 +129,10 @@ storiesOf('react-native-bpk-component-badge', module)
   .add('docs:docked-end', () => (
     <View>
       {generateBadgeStory(['Advert'], { docked: BADGE_DOCKED_TYPES.end })}
+    </View>
+  ))
+  .add('Message (deprecated)', () => (
+    <View>
+      <BpkBadge message="Message" style={style.badge} />
     </View>
   ));

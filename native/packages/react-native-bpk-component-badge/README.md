@@ -14,6 +14,7 @@ npm install react-native-bpk-component-badge --save-dev
 import React, { Component } from 'react';
 import { View, StyleSheet } from 'react-native';
 import BpkBadge, { BADGE_TYPES, BADGE_DOCKED_TYPES } from 'react-native-bpk-component-badge';
+import BpkText from 'react-native-bpk-component-text';
 import { spacingBase } from 'bpk-tokens/tokens/base.react.native';
 
 const styles = StyleSheet.create({
@@ -28,15 +29,16 @@ export default class App extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <BpkBadge message="Badge" type={BADGE_TYPES.success} />
-        <BpkBadge message="Badge" type={BADGE_TYPES.warning} />
-        <BpkBadge message="Badge" type={BADGE_TYPES.destructive} />
-        <BpkBadge message="Badge" type={BADGE_TYPES.inverse} />
-        <BpkBadge message="Badge" type={BADGE_TYPES.light} />
-        <BpkBadge message="Badge" type={BADGE_TYPES.outline} />
-        <BpkBadge message="Badge" type={BADGE_TYPES.success} />
-        <BpkBadge message="Badge" docked={BADGE_DOCKED_TYPES.start} type={BADGE_TYPES.warning} />
-        <BpkBadge message="Badge" docked={BADGE_DOCKED_TYPES.end} type={BADGE_TYPES.destructive} />
+        <BpkBadge alt="Badge" type={BADGE_TYPES.success}><BpkText>Badge</BpkText></BpkBadge>
+        <BpkBadge alt="Badge" type={BADGE_TYPES.warning}><BpkText>Badge</BpkText></BpkBadge>
+        <BpkBadge alt="Badge" type={BADGE_TYPES.destructive}><BpkText>Badge</BpkText></BpkBadge>
+        <BpkBadge alt="Badge" type={BADGE_TYPES.inverse}><BpkText>Badge</BpkText></BpkBadge>
+        <BpkBadge alt="Badge" type={BADGE_TYPES.light}><BpkText>Badge</BpkText></BpkBadge>
+        <BpkBadge alt="Badge" type={BADGE_TYPES.outline}><BpkText>Badge</BpkText></BpkBadge>
+        <BpkBadge alt="Badge" type={BADGE_TYPES.success}><BpkText>Badge</BpkText></BpkBadge>
+        <BpkBadge alt="Badge" docked={BADGE_DOCKED_TYPES.start} type={BADGE_TYPES.warning}><BpkText>Badge</BpkText></BpkBadge>
+        <BpkBadge alt="Badge" docked={BADGE_DOCKED_TYPES.end} type={BADGE_TYPES.destructive}><BpkText>Badge</BpkText></BpkBadge>
+
       </View >
     );
   }
@@ -44,8 +46,9 @@ export default class App extends Component {
 ```
 ## Props
 
-| Property              | PropType                                                                 | Required | Default Value |
+| Property              | PropType                                                                  | Required | Default Value |
 | --------------------- | --------------------------------------------------------------------------| -------- | ------------- |
-| message               | string                                                                    | true     | -             |
+| alt                   | string                                                                    | true     | -             |
+| children              | node                                                                      | true     | -             |
 | docked                | oneOf('start', 'end')                                                     | false    | null          |
 | type                  | oneOf('success', 'warning', 'destructive', 'light', 'inverse', 'outline') | false    | warning       |

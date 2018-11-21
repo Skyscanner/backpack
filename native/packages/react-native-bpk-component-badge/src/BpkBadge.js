@@ -21,6 +21,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { setOpacity } from 'bpk-tokens';
+import { deprecated } from 'bpk-react-utils';
 import BpkText from 'react-native-bpk-component-text';
 import {
   colorGray700,
@@ -165,16 +166,19 @@ const BpkBadge = (props: Props) => {
 };
 
 BpkBadge.propTypes = {
-  message: PropTypes.string.isRequired,
-  type: PropTypes.oneOf(Object.keys(BADGE_TYPES)),
+  alt: PropTypes.string.isRequired,
+  children: PropTypes.node.isRequired,
   docked: PropTypes.oneOf(Object.keys(BADGE_DOCKED_TYPES)),
+  message: deprecated(PropTypes.string, 'Use "children" instead.'),
   style: ViewPropTypes.style,
+  type: PropTypes.oneOf(Object.keys(BADGE_TYPES)),
 };
 
 BpkBadge.defaultProps = {
-  type: BADGE_TYPES.warning,
   docked: null,
+  message: null,
   style: null,
+  type: BADGE_TYPES.warning,
 };
 
 export default BpkBadge;
