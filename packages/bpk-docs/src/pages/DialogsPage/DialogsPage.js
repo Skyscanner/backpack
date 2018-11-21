@@ -22,6 +22,8 @@ import React from 'react';
 import DocsPageWrapper from '../../components/DocsPageWrapper';
 import IntroBlurb from '../../components/IntroBlurb';
 
+import AndroidDialogs from '../AndroidDialogPage';
+import IOSDialogs from '../IOSDialogPage';
 import WebDialogs from '../WebDialogPage';
 
 const blurb = [
@@ -35,6 +37,8 @@ const DialogsPage = () => (
   <DocsPageWrapper
     title="Dialog"
     blurb={blurb}
+    androidSubpage={<AndroidDialogs wrapped />}
+    iosSubpage={<IOSDialogs wrapped />}
     webSubpage={<WebDialogs wrapped />}
   />
 );
