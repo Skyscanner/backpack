@@ -53,8 +53,8 @@
     "create-component": "node scripts/npm/create-component.js",
     "submodules:pull": "git submodule foreach git pull origin master",
     "submodules:update": "npm run submodules:unlock && npm run submodules:pull && git add backpack-android && git add backpack-ios && git commit -m\"[skip ci] Update submodules\" && npm run submodules:lock",
-    "submodules:unlock": "sed 's/ignore = all/#ignore = all/g' .gitmodules -i",
-    "submodules:lock": "sed 's/#ignore = all/ignore = all/g' .gitmodules -i"
+    "submodules:unlock": "sed 's/ignore = all/#ignore = all/g' .gitmodules > .gitmodules.tmp && mv .gitmodules.tmp .gitmodules",
+    "submodules:lock": "sed 's/#ignore = all/ignore = all/g' .gitmodules > .gitmodules.tmp && mv .gitmodules.tmp .gitmodules"
   },
   "husky": {
     "hooks": {
