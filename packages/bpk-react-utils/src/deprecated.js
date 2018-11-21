@@ -16,26 +16,21 @@
  * limitations under the License.
  */
 
-import wrapDisplayName from 'recompose/wrapDisplayName';
-import Portal from './src/Portal';
-import TransitionInitialMount from './src/TransitionInitialMount';
-import cssModules from './src/cssModules';
-import deprecated from './src/deprecated';
-import withDefaultProps from './src/withDefaultProps';
+/* @flow */
+import { type PropType } from 'prop-types';
 
-export {
-  Portal,
-  TransitionInitialMount,
-  cssModules,
-  deprecated,
-  withDefaultProps,
-  wrapDisplayName,
+const deprecated = (propType: PropType, alternativeSuggestion: string) => (
+  props: { [string]: any },
+  propName: string,
+  componentName: string,
+  ...rest: [any]
+) => {
+  if (props[propName] != null) {
+    const message = `"${propName}" property of "${componentName}" has been deprecated. ${alternativeSuggestion}`;
+    // eslint-disable-next-line no-console
+    console.warn(message);
+  }
+  return propType(props, propName, componentName, ...rest);
 };
-export default {
-  Portal,
-  TransitionInitialMount,
-  cssModules,
-  deprecated,
-  withDefaultProps,
-  wrapDisplayName,
-};
+
+export default deprecated;
