@@ -21,6 +21,7 @@
 import { type Node } from 'react';
 import PropTypes from 'prop-types';
 import { StyleSheet, type StyleObj } from 'react-native';
+import { deprecated } from 'bpk-react-utils';
 
 export const TEXT_STYLES = [
   'caps',
@@ -88,6 +89,7 @@ export const weightPropType = (
   componentName: string,
 ) => {
   if (!isWeightValid(props[propName], props.textStyle)) {
+    // eslint-disable-next-line no-console
     console.warn(
       `${propName} "${
         props[propName]
@@ -98,20 +100,6 @@ export const weightPropType = (
   }
 
   PropTypes.oneOf(Object.keys(WEIGHT_STYLES))(props, propName, componentName);
-};
-
-// If this pattern is used elsewhere, it should be abstracted to bpk-react-utils and this file refactored.
-const deprecated = (propType, explanation) => (
-  props: { [string]: any },
-  propName: string,
-  componentName: string,
-  ...rest: [any]
-) => {
-  if (props[propName] != null) {
-    const message = `"${propName}" property of "${componentName}" has been deprecated. ${explanation}`;
-    console.warn(message); // eslint-disable-line no-console
-  }
-  return propType(props, propName, componentName, ...rest);
 };
 
 export const propTypes = {
