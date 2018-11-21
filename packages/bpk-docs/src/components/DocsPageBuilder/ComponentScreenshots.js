@@ -49,7 +49,9 @@ const ComponentScreenshot = ({ title, subText, ...rest }) => {
       className={getClassName('bpkdocs-component-screenshots__item')}
     >
       <dt className={getClassName('bpkdocs-component-screenshots__item-title')}>
-        <BpkText tagName="h3">{title}</BpkText>
+        <BpkText tagName="h3" textStyle="xs">
+          {title}
+        </BpkText>
       </dt>
       <dd
         className={getClassName(
