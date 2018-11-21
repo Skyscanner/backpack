@@ -18,25 +18,6 @@
 
 /* @flow */
 
-import React from 'react';
-import DocsPageWrapper from '../../components/DocsPageWrapper';
-import IntroBlurb from '../../components/IntroBlurb';
+import page from './DialogsPage';
 
-import WebDialogs from '../WebDialogPage';
-
-const blurb = [
-  <IntroBlurb>
-    Dialogs inform users about a specific task and may contain critical
-    information, or require decisions or acknowledgement.
-  </IntroBlurb>,
-];
-
-const DialogsPage = () => (
-  <DocsPageWrapper
-    title="Dialog"
-    blurb={blurb}
-    webSubpage={<WebDialogs wrapped />}
-  />
-);
-
-export default DialogsPage;
+export default page;
