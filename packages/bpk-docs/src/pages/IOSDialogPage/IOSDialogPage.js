@@ -64,7 +64,7 @@ const IOSDialogPage = ({ ...rest }) => (
     title="Dialog"
     components={components}
     readme={readme}
-    iosDocId="BPKDialog"
+    iosDocId="BPKDialogController"
     showMenu
     {...rest}
   />
