@@ -2,6 +2,18 @@
 
 [Unreleased changes](./UNRELEASED.md).
 
+# 2018-11-22
+
+**Added:**
+ - bpk-react-utils: 2.6.13 => 2.7.0
+   - Added `deprecated` function that accepts a prop type and adds a suitable console warning when the prop is used.
+
+**Changed**
+
+- bpk-component-badge: 1.1.43 => 1.1.44
+  - Badges containing icons are now slightly taller (20px instead of 18px) and the icon inside will be resized and positioned to fit better. See https://backpack.github.io/components/badge?platform=web#with-icons
+
+
 # 2018-11-16 - Change elevation tokens
 
 **Added, changed:**
