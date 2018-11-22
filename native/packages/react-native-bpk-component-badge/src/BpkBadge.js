@@ -136,7 +136,7 @@ const textStyleMap: { [key: string]: Object | Array<Object> } = {
 };
 
 const BpkBadge = (props: Props) => {
-  const { message, docked, type, style: userStyle } = props;
+  const { alt, children, message, docked, type, style: userStyle } = props;
 
   const viewStyle = [styles.viewBase, styles.borderBase];
   const textStyle = [styles.textBase];
@@ -156,11 +156,20 @@ const BpkBadge = (props: Props) => {
     viewStyle.push(userStyle);
   }
 
-  return (
-    <View style={viewStyle}>
+  let altFinal = alt;
+  let childrenFinal = children;
+  if (message) {
+    altFinal = message;
+    childrenFinal = (
       <BpkText allowFontScaling={false} style={textStyle} textStyle="xs">
         {message}
       </BpkText>
+    );
+  }
+
+  return (
+    <View style={viewStyle} alt={altFinal}>
+      {childrenFinal}
     </View>
   );
 };
