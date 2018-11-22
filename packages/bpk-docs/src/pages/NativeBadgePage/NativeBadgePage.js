@@ -22,9 +22,13 @@ import readme from 'react-native-bpk-component-badge/README.md';
 import iosScreenshotDefault from 'react-native-bpk-component-badge/screenshots/ios/default.png';
 import iosScreenshotDockedStart from 'react-native-bpk-component-badge/screenshots/ios/docked-start.png';
 import iosScreenshotDockedEnd from 'react-native-bpk-component-badge/screenshots/ios/docked-end.png';
+import iosScreenshotWithIcon from 'react-native-bpk-component-badge/screenshots/ios/with-icon.png';
+import iosScreenshotWithMultipleIcons from 'react-native-bpk-component-badge/screenshots/ios/with-multiple-icons.png';
 import androidScreenshotDefault from 'react-native-bpk-component-badge/screenshots/android/default.png';
 import androidScreenshotDockedStart from 'react-native-bpk-component-badge/screenshots/android/docked-start.png';
 import androidScreenshotDockedEnd from 'react-native-bpk-component-badge/screenshots/android/docked-end.png';
+import androidScreenshotWithIcon from 'react-native-bpk-component-badge/screenshots/android/with-icon.png';
+import androidScreenshotWithMultipleIcons from 'react-native-bpk-component-badge/screenshots/android/with-multiple-icons.png';
 
 import DocsPageBuilder from '../../components/DocsPageBuilder';
 
@@ -47,6 +51,50 @@ const components = [
         height: 1920,
         src: `/${androidScreenshotDefault}`,
         altText: 'Android Default Badge Component',
+        subText: '(Google Pixel emulator)',
+      },
+    ],
+  },
+  {
+    id: 'with-icon',
+    title: 'With an icon',
+    screenshots: [
+      {
+        title: 'iOS',
+        width: 750,
+        height: 1334,
+        src: `/${iosScreenshotWithIcon}`,
+        altText: 'iOS Badge Component with a single icon',
+        subText: '(iPhone 8 simulator)',
+      },
+      {
+        title: 'Android',
+        width: 1080,
+        height: 1920,
+        src: `/${androidScreenshotWithIcon}`,
+        altText: 'Android Badge Component with a single icon',
+        subText: '(Google Pixel emulator)',
+      },
+    ],
+  },
+  {
+    id: 'with-icons',
+    title: 'With multiple icons and an icon separator',
+    screenshots: [
+      {
+        title: 'iOS',
+        width: 750,
+        height: 1334,
+        src: `/${iosScreenshotWithMultipleIcons}`,
+        altText: 'iOS Badge Component with multiple icons',
+        subText: '(iPhone 8 simulator)',
+      },
+      {
+        title: 'Android',
+        width: 1080,
+        height: 1920,
+        src: `/${androidScreenshotWithMultipleIcons}`,
+        altText: 'Android Badge Component with multiple icons',
         subText: '(Google Pixel emulator)',
       },
     ],
