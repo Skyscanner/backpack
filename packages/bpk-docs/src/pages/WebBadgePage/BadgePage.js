@@ -18,6 +18,9 @@
 
 import React from 'react';
 import BpkBadge, { BADGE_TYPES } from 'bpk-component-badge';
+import BpkSmallFlightIcon from 'bpk-component-icon/sm/flight';
+import BpkSmallCarIcon from 'bpk-component-icon/sm/cars';
+import BpkSmallHotelIcon from 'bpk-component-icon/sm/hotels';
 
 import { cssModules } from 'bpk-react-utils';
 
@@ -191,6 +194,24 @@ const components = [
       </BpkBadge>,
       <BpkBadge type={BADGE_TYPES.outline} className={badgeClassName}>
         Pears
+      </BpkBadge>,
+    ],
+  },
+  {
+    id: 'with-icons',
+    title: 'With icons',
+    blurb: [
+      <Paragraph>
+        When badges contain icons, the icons are resized to fit and have some
+        margin applied. The badge&apos;s height also increases slightly.
+      </Paragraph>,
+    ],
+    examples: [
+      <BpkBadge type={BADGE_TYPES.success} className={badgeClassName}>
+        <BpkSmallFlightIcon /> Flights
+      </BpkBadge>,
+      <BpkBadge type={BADGE_TYPES.warning} className={badgeClassName}>
+        <BpkSmallHotelIcon /> + <BpkSmallCarIcon /> Multiple
       </BpkBadge>,
     ],
   },

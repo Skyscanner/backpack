@@ -20,6 +20,9 @@
 
 import React from 'react';
 import { storiesOf } from '@storybook/react';
+import BpkSmallBeerIcon from 'bpk-component-icon/sm/beer';
+import BpkSmallFlightIcon from 'bpk-component-icon/sm/flight';
+import BpkSmallWeatherIcon from 'bpk-component-icon/sm/weather';
 
 import BpkBadge, { BADGE_TYPES } from './index';
 import BadgeLayout from './BadgeLayout';
@@ -29,6 +32,24 @@ storiesOf('bpk-component-badge', module)
     <BadgeLayout>
       <div>
         This is a badge <BpkBadge>Promocionado</BpkBadge>
+      </div>
+    </BadgeLayout>
+  ))
+  .add('With icons', () => (
+    <BadgeLayout>
+      <div>
+        With one icon{' '}
+        <BpkBadge>
+          <BpkSmallFlightIcon />
+          Promocionado
+        </BpkBadge>
+      </div>
+      <div>
+        With multiple icons{' '}
+        <BpkBadge>
+          <BpkSmallWeatherIcon /> + <BpkSmallBeerIcon />
+          Promocionado
+        </BpkBadge>
       </div>
     </BadgeLayout>
   ))

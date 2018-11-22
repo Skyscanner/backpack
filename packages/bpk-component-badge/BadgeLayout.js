@@ -19,7 +19,7 @@
 /* @flow */
 
 import PropTypes from 'prop-types';
-import React, { type Element, Children } from 'react';
+import React, { type Node, Children } from 'react';
 import { cssModules } from 'bpk-react-utils';
 
 import { BADGE_TYPES } from './index';
@@ -35,7 +35,7 @@ const LIGHT_BADGES = [
 
 export type Props = {
   docked: ?string,
-  children: Element<*>,
+  children: Node,
 };
 
 const BadgeLayout = (props: Props) => {

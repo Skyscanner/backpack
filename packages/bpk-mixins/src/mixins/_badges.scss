@@ -31,13 +31,29 @@
 ///   }
 
 @mixin bpk-badge {
-  display: inline-block;
+  display: inline-flex;
   padding: $bpk-badge-padding-y $bpk-badge-padding-x;
+  align-items: center;
   background-color: $bpk-badge-background-color;
 
   @include bpk-border-radius-xs;
   @include bpk-text;
   @include bpk-text--sm;
+
+  // // HACK: Icons have an inline style attribute setting the height and width.
+  // // so the only way to override this in CSS is to use !important.
+  > svg {
+    /* stylelint-disable declaration-no-important */
+    width: 16 * $bpk-one-pixel-rem !important;
+    height: 16 * $bpk-one-pixel-rem !important;
+    /* stylelint-enable declaration-no-important */
+    margin-top: $bpk-one-pixel-rem * 2;
+    margin-bottom: $bpk-one-pixel-rem * 2;
+
+    &:last-of-type {
+      @include bpk-margin-trailing($bpk-badge-padding-x);
+    }
+  }
 }
 /// Centered badge. Modifies the bpk-badge mixin.
 ///
