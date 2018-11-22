@@ -1,6 +1,6 @@
 {
   "name": "react-native-bpk-component-carousel-indicator",
-  "version": "1.0.38",
+  "version": "1.0.39",
   "main": "index.js",
   "description": "Backpack React Native carousel indicators component.",
   "repository": {
@@ -19,6 +19,6 @@
     "prop-types": "^15.5.8"
   },
   "devDependencies": {
-    "react-native-bpk-component-nudger": "^2.0.5"
+    "react-native-bpk-component-nudger": "^2.0.6"
   }
 }

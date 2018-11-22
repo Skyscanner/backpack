@@ -1,6 +1,6 @@
 {
   "name": "react-native-bpk-component-image",
-  "version": "1.1.15",
+  "version": "1.1.16",
   "main": "index.js",
   "description": "Backpack React Native image component.",
   "repository": {
@@ -14,12 +14,12 @@
     "react-native": ">= 0.47.0"
   },
   "dependencies": {
-    "bpk-react-utils": "^2.6.13",
+    "bpk-react-utils": "^2.7.0",
     "bpk-tokens": "^27.3.0",
     "prop-types": "^15.5.8",
     "react-native-bpk-component-spinner": "^1.0.73"
   },
   "devDependencies": {
-    "react-native-bpk-component-button": "^8.0.5"
+    "react-native-bpk-component-button": "^8.0.6"
   }
 }
