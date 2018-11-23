@@ -169,10 +169,10 @@ withCalendarState(composeCalendar(
 | selectedDate          | Date                 | false               | null             |
 | showWeekendSeparator  | bool                 | false               | true             |
 | weekStartsOn          | number               | false               | 1                |
-| navProps              | object               | false               | {}               |
-| headerProps           | object               | false               | {}               |
-| gridProps             | object               | false               | {}               |
-| dateProps             | object               | false               | {}               |
+| navProps              | object               | false               | null             |
+| headerProps           | object               | false               | null             |
+| gridProps             | object               | false               | null             |
+| dateProps             | object               | false               | null             |
 
 Some of the more complex props and props for sub-components are detailed below.
 

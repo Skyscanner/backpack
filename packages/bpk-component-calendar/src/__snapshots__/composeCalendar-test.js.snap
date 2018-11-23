@@ -68,7 +68,7 @@ exports[`composeCalendar should compose a nav, header, grid and date component c
     DateComponent="Date"
     className=""
     dateModifiers={Object {}}
-    dateProps={Object {}}
+    dateProps={null}
     daysOfWeek={
       Array [
         Object {
@@ -216,7 +216,7 @@ exports[`composeCalendar should render with "fixedWidth" set to false 1`] = `
     DateComponent="Date"
     className=""
     dateModifiers={Object {}}
-    dateProps={Object {}}
+    dateProps={null}
     daysOfWeek={
       Array [
         Object {
@@ -349,7 +349,7 @@ exports[`composeCalendar should render with custom className prop correctly 1`] 
     DateComponent="Date"
     className=""
     dateModifiers={Object {}}
-    dateProps={Object {}}
+    dateProps={null}
     daysOfWeek={
       Array [
         Object {
@@ -431,7 +431,7 @@ exports[`composeCalendar should render without a header element 1`] = `
     DateComponent="Date"
     className="bpk-calendar__grid"
     dateModifiers={Object {}}
-    dateProps={Object {}}
+    dateProps={null}
     daysOfWeek={
       Array [
         Object {
@@ -504,7 +504,7 @@ exports[`composeCalendar should render without a nav or header element 1`] = `
     DateComponent="Date"
     className=""
     dateModifiers={Object {}}
-    dateProps={Object {}}
+    dateProps={null}
     daysOfWeek={
       Array [
         Object {

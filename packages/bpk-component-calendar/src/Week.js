@@ -212,7 +212,7 @@ Week.defaultProps = {
   onDateKeyDown: null,
   selectedDate: null,
   ignoreOutsideDate: false,
-  dateProps: {},
+  dateProps: null,
 };
 
 /*

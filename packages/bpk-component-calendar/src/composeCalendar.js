@@ -180,10 +180,10 @@ const composeCalendar = (Nav, GridHeader, Grid, CalendarDate) => {
     showWeekendSeparator: true,
     weekStartsOn: 1,
     gridClassName: null,
-    navProps: {},
-    headerProps: {},
-    gridProps: {},
-    dateProps: {},
+    navProps: null,
+    headerProps: null,
+    gridProps: null,
+    dateProps: null,
   };
 
   return BpkCalendar;

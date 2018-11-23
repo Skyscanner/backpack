@@ -192,7 +192,7 @@ BpkCalendarGrid.defaultProps = {
   showWeekendSeparator: true,
   weekStartsOn: 1,
   ignoreOutsideDate: false,
-  dateProps: {},
+  dateProps: null,
 };
 
 export default BpkCalendarGrid;
