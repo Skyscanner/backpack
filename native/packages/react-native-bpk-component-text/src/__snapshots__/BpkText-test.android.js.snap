@@ -10,9 +10,9 @@ exports[`Android BpkText should ignore weight prop if deprecated \`emphasize\` p
       Object {
         "color": "rgb(82, 76, 97)",
         "fontFamily": "sans-serif",
-        "fontSize": 36,
+        "fontSize": 30,
         "fontWeight": "400",
-        "letterSpacing": -1,
+        "letterSpacing": -0.8,
       },
       Object {
         "fontFamily": "sans-serif-medium",
@@ -380,9 +380,9 @@ exports[`Android BpkText should render correctly with textStyle="xxl and weight=
       Object {
         "color": "rgb(82, 76, 97)",
         "fontFamily": "sans-serif",
-        "fontSize": 36,
+        "fontSize": 30,
         "fontWeight": "400",
-        "letterSpacing": -1,
+        "letterSpacing": -0.8,
       },
       Object {
         "fontFamily": "sans-serif-medium",
@@ -404,9 +404,9 @@ exports[`Android BpkText should render correctly with textStyle="xxl and weight=
       Object {
         "color": "rgb(82, 76, 97)",
         "fontFamily": "sans-serif",
-        "fontSize": 36,
+        "fontSize": 30,
         "fontWeight": "400",
-        "letterSpacing": -1,
+        "letterSpacing": -0.8,
       },
       Object {
         "fontFamily": "sans-serif-black",
@@ -428,9 +428,9 @@ exports[`Android BpkText should render correctly with textStyle="xxl" 1`] = `
       Object {
         "color": "rgb(82, 76, 97)",
         "fontFamily": "sans-serif",
-        "fontSize": 36,
+        "fontSize": 30,
         "fontWeight": "400",
-        "letterSpacing": -1,
+        "letterSpacing": -0.8,
       },
       Object {},
     ]
@@ -450,9 +450,9 @@ exports[`Android BpkText should render correctly with textStyle="xxxl and weight
       Object {
         "color": "rgb(82, 76, 97)",
         "fontFamily": "sans-serif",
-        "fontSize": 42,
+        "fontSize": 36,
         "fontWeight": "400",
-        "letterSpacing": -1.2,
+        "letterSpacing": -1,
       },
       Object {
         "fontFamily": "sans-serif-medium",
@@ -474,9 +474,9 @@ exports[`Android BpkText should render correctly with textStyle="xxxl and weight
       Object {
         "color": "rgb(82, 76, 97)",
         "fontFamily": "sans-serif",
-        "fontSize": 42,
+        "fontSize": 36,
         "fontWeight": "400",
-        "letterSpacing": -1.2,
+        "letterSpacing": -1,
       },
       Object {
         "fontFamily": "sans-serif-black",
@@ -498,9 +498,9 @@ exports[`Android BpkText should render correctly with textStyle="xxxl" 1`] = `
       Object {
         "color": "rgb(82, 76, 97)",
         "fontFamily": "sans-serif",
-        "fontSize": 42,
+        "fontSize": 36,
         "fontWeight": "400",
-        "letterSpacing": -1.2,
+        "letterSpacing": -1,
       },
       Object {},
     ]

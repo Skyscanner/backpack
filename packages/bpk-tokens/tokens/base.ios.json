@@ -603,14 +603,14 @@
       "name": "fontSizeXs"
     },
     {
-      "value": "36",
+      "value": "30",
       "type": "font-size",
       "category": "typesettings",
       "originalValue": "{!FONT_SIZE_XXL}",
       "name": "fontSizeXxl"
     },
     {
-      "value": "42",
+      "value": "36",
       "type": "font-size",
       "category": "typesettings",
       "originalValue": "{!FONT_SIZE_XXXL}",
@@ -1037,7 +1037,7 @@
       "originalValue": "{!LINE_HEIGHT_XS}"
     },
     {
-      "value": "36",
+      "value": "30",
       "type": "font-size",
       "category": "font-sizes",
       "originalValue": "{!FONT_SIZE_XXL}",
@@ -1065,7 +1065,7 @@
       "originalValue": "{!LINE_HEIGHT_XXL}"
     },
     {
-      "value": "42",
+      "value": "36",
       "type": "font-size",
       "category": "font-sizes",
       "originalValue": "{!FONT_SIZE_XXXL}",
