@@ -10,3 +10,5 @@
 - bpk-tokens:
   - Changed `fontSizeXxl` and `fontSizeXxl` tokens for Android and iOS. They are now `30` and `36` (previously `36` and `42`).
   - Changed `letterSpacingXxl` and `letterSpacingXxxl` tokens for Android. They are now `-0.8` and `-1.0` (previously `-1.0` and `-1.2`).
+- bpk-component-calendar
+  - BpkCalendar accepts navProps, headerProps, gridProps and dateProps and passes them to sub-components

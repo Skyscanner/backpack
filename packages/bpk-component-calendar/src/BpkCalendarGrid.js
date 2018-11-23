@@ -92,6 +92,7 @@ class BpkCalendarGrid extends Component {
       minDate,
       maxDate,
       ignoreOutsideDate,
+      dateProps,
     } = this.props;
 
     const { calendarMonthWeeks, daysOfWeek } = this.state;
@@ -138,6 +139,7 @@ class BpkCalendarGrid extends Component {
               minDate={minDate}
               maxDate={maxDate}
               ignoreOutsideDate={ignoreOutsideDate}
+              dateProps={dateProps}
             />
           ))}
         </tbody>
@@ -169,6 +171,7 @@ export const propTypes = {
   showWeekendSeparator: PropTypes.bool,
   weekStartsOn: PropTypes.number,
   ignoreOutsideDate: PropTypes.bool,
+  dateProps: PropTypes.object, // eslint-disable-line react/forbid-prop-types
 };
 
 BpkCalendarGrid.propTypes = propTypes;
@@ -189,6 +192,7 @@ BpkCalendarGrid.defaultProps = {
   showWeekendSeparator: true,
   weekStartsOn: 1,
   ignoreOutsideDate: false,
+  dateProps: {},
 };
 
 export default BpkCalendarGrid;

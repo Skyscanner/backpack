@@ -124,6 +124,7 @@ class Week extends Component {
       selectedDate,
       showWeekendSeparator,
       ignoreOutsideDate,
+      dateProps,
     } = this.props;
 
     const firstDayOfWeekendIndex = getFirstDayOfWeekend(daysOfWeek);
@@ -171,6 +172,7 @@ class Week extends Component {
               }
               isOutside={markOutsideDays && !isSameMonth(date, month)}
               isToday={markToday && isToday(date)}
+              {...dateProps}
             />
           </DateContainer>
         ))}
@@ -199,6 +201,7 @@ Week.propTypes = {
   onDateKeyDown: PropTypes.func,
   selectedDate: PropTypes.instanceOf(Date),
   ignoreOutsideDate: PropTypes.bool,
+  dateProps: PropTypes.object, // eslint-disable-line react/forbid-prop-types
 };
 
 Week.defaultProps = {
@@ -209,6 +212,7 @@ Week.defaultProps = {
   onDateKeyDown: null,
   selectedDate: null,
   ignoreOutsideDate: false,
+  dateProps: {},
 };
 
 /*

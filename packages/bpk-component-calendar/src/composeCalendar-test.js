@@ -128,4 +128,39 @@ describe('composeCalendar', () => {
       .toJSON();
     expect(tree).toMatchSnapshot();
   });
+
+  it('should pass props to their respective components', () => {
+    const PropsBasedCalendarComponent = composeCalendar(
+      props => props.name,
+      props => props.name,
+      props => (
+        <div>
+          <h1>{props.name}</h1>
+          <props.DateComponent {...props.dateProps} />
+        </div>
+      ),
+      props => props.name,
+    );
+
+    const tree = renderer
+      .create(
+        <PropsBasedCalendarComponent
+          id="myCalendar"
+          formatMonth={formatMonth}
+          formatDateFull={formatDateFull}
+          daysOfWeek={weekDays}
+          changeMonthLabel="Change month"
+          minDate={new Date(Date.UTC(2010, 1, 15))}
+          maxDate={new Date(Date.UTC(2010, 2, 15))}
+          month={new Date(Date.UTC(2010, 1, 15))}
+          navProps={{ name: 'Nav' }}
+          headerProps={{ name: 'Header' }}
+          gridProps={{ name: 'Grid' }}
+          dateProps={{ name: 'Date' }}
+        />,
+        { createNodeMock },
+      )
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 });
