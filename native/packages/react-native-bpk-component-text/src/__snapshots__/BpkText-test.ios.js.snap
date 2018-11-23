@@ -10,7 +10,7 @@ exports[`iOS BpkText should ignore weight prop if deprecated \`emphasize\` prop 
       Object {
         "color": "rgb(82, 76, 97)",
         "fontFamily": "System",
-        "fontSize": 36,
+        "fontSize": 30,
         "fontWeight": "400",
         "letterSpacing": null,
       },
@@ -380,7 +380,7 @@ exports[`iOS BpkText should render correctly with textStyle="xxl and weight="emp
       Object {
         "color": "rgb(82, 76, 97)",
         "fontFamily": "System",
-        "fontSize": 36,
+        "fontSize": 30,
         "fontWeight": "400",
         "letterSpacing": null,
       },
@@ -404,7 +404,7 @@ exports[`iOS BpkText should render correctly with textStyle="xxl and weight="hea
       Object {
         "color": "rgb(82, 76, 97)",
         "fontFamily": "System",
-        "fontSize": 36,
+        "fontSize": 30,
         "fontWeight": "400",
         "letterSpacing": null,
       },
@@ -428,7 +428,7 @@ exports[`iOS BpkText should render correctly with textStyle="xxl" 1`] = `
       Object {
         "color": "rgb(82, 76, 97)",
         "fontFamily": "System",
-        "fontSize": 36,
+        "fontSize": 30,
         "fontWeight": "400",
         "letterSpacing": null,
       },
@@ -450,7 +450,7 @@ exports[`iOS BpkText should render correctly with textStyle="xxxl and weight="em
       Object {
         "color": "rgb(82, 76, 97)",
         "fontFamily": "System",
-        "fontSize": 42,
+        "fontSize": 36,
         "fontWeight": "400",
         "letterSpacing": null,
       },
@@ -474,7 +474,7 @@ exports[`iOS BpkText should render correctly with textStyle="xxxl and weight="he
       Object {
         "color": "rgb(82, 76, 97)",
         "fontFamily": "System",
-        "fontSize": 42,
+        "fontSize": 36,
         "fontWeight": "400",
         "letterSpacing": null,
       },
@@ -498,7 +498,7 @@ exports[`iOS BpkText should render correctly with textStyle="xxxl" 1`] = `
       Object {
         "color": "rgb(82, 76, 97)",
         "fontFamily": "System",
-        "fontSize": 42,
+        "fontSize": 36,
         "fontWeight": "400",
         "letterSpacing": null,
       },
@@ -545,7 +545,7 @@ exports[`iOS should not apply \`emphasize\` for textStyle="xxl" 1`] = `
       Object {
         "color": "rgb(82, 76, 97)",
         "fontFamily": "System",
-        "fontSize": 36,
+        "fontSize": 30,
         "fontWeight": "400",
         "letterSpacing": null,
       },
