@@ -52,6 +52,10 @@ const composeCalendar = (Nav, GridHeader, Grid, CalendarDate) => {
       weekStartsOn,
       fixedWidth,
       gridClassName,
+      navProps,
+      headerProps,
+      gridProps,
+      dateProps,
     } = props;
 
     if (className) {
@@ -89,6 +93,7 @@ const composeCalendar = (Nav, GridHeader, Grid, CalendarDate) => {
             minDate={minDate}
             month={month}
             onMonthChange={onMonthChange}
+            {...navProps}
           />
         )}
         {GridHeader && (
@@ -97,6 +102,7 @@ const composeCalendar = (Nav, GridHeader, Grid, CalendarDate) => {
             showWeekendSeparator={showWeekendSeparator}
             weekStartsOn={weekStartsOn}
             className={headerClasses.join(' ')}
+            {...headerProps}
           />
         )}
         <Grid
@@ -118,6 +124,8 @@ const composeCalendar = (Nav, GridHeader, Grid, CalendarDate) => {
           markOutsideDays={markOutsideDays}
           selectedDate={selectedDate}
           className={gridClasses.join(' ')}
+          dateProps={dateProps}
+          {...gridProps}
         />
       </div>
     );
@@ -148,6 +156,12 @@ const composeCalendar = (Nav, GridHeader, Grid, CalendarDate) => {
     showWeekendSeparator: PropTypes.bool,
     weekStartsOn: PropTypes.number,
     gridClassName: PropTypes.string,
+    /* eslint-disable react/forbid-prop-types */
+    navProps: PropTypes.object,
+    headerProps: PropTypes.object,
+    gridProps: PropTypes.object,
+    dateProps: PropTypes.object,
+    /* eslint-enable */
   };
 
   BpkCalendar.defaultProps = {
@@ -166,6 +180,10 @@ const composeCalendar = (Nav, GridHeader, Grid, CalendarDate) => {
     showWeekendSeparator: true,
     weekStartsOn: 1,
     gridClassName: null,
+    navProps: null,
+    headerProps: null,
+    gridProps: null,
+    dateProps: null,
   };
 
   return BpkCalendar;

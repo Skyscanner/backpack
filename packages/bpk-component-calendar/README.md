@@ -169,6 +169,10 @@ withCalendarState(composeCalendar(
 | selectedDate          | Date                 | false               | null             |
 | showWeekendSeparator  | bool                 | false               | true             |
 | weekStartsOn          | number               | false               | 1                |
+| navProps              | object               | false               | null             |
+| headerProps           | object               | false               | null             |
+| gridProps             | object               | false               | null             |
+| dateProps             | object               | false               | null             |
 
 Some of the more complex props and props for sub-components are detailed below.
 
@@ -321,6 +325,10 @@ const onMonthChange = (event, {
 #### initiallyFocusedDate
 
 Sets the date that is focused initially, this prop has no effect if `selectedDate` or the deprecated `date` prop are specified in which case the date specified in those props is focused. If no selected date is set and `initiallyFocusedDate` is not set the focused date is the `minDate`(defaults to today if it has not been explicitly set).
+
+#### navProps, headerProps, gridProps, dateProps
+
+These are useful if your custom implementation of one of these components requires additional properties. They will be passed, unmodified, to the respective component.
 
 ## Theme Props
 
