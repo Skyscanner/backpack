@@ -20,6 +20,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {
   borderRadiusSm,
+  borderRadiusLg,
   borderRadiusPill,
   touchableOverlayColor,
   touchableOverlayOpacity,
@@ -45,6 +46,9 @@ const styles = StyleSheet.create({
   overlayBorderRadiusSm: {
     borderRadius: borderRadiusSm,
   },
+  overlayBorderRadiusLg: {
+    borderRadius: borderRadiusLg,
+  },
   overlayBorderRadiusPill: {
     borderRadius: borderRadiusPill,
   },
@@ -69,6 +73,9 @@ const BpkTouchableOverlay = props => {
   const overlayStyles = [styles.overlay];
   if (borderRadius === 'sm') {
     overlayStyles.push(styles.overlayBorderRadiusSm);
+  }
+  if (borderRadius === 'lg') {
+    overlayStyles.push(styles.overlayBorderRadiusLg);
   }
   if (borderRadius === 'pill') {
     overlayStyles.push(styles.overlayBorderRadiusPill);
@@ -110,7 +117,7 @@ const BpkTouchableOverlay = props => {
 
 BpkTouchableOverlay.propTypes = {
   children: PropTypes.node.isRequired,
-  borderRadius: PropTypes.oneOf(['sm', 'pill']),
+  borderRadius: PropTypes.oneOf(['sm', 'lg', 'pill']),
   style: ViewPropTypes.style,
   overlayStyle: ViewPropTypes.style,
   onPressIn: PropTypes.func,
