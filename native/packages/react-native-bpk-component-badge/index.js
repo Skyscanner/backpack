@@ -23,8 +23,9 @@ import BpkBadge, {
   BADGE_TYPES,
   BADGE_DOCKED_TYPES,
 } from './src/BpkBadge';
+import BpkBadgeIcons from './src/BpkBadgeIcons';
 
 export type BpkBadgeProps = Props;
 
-export { BADGE_TYPES, BADGE_DOCKED_TYPES };
+export { BpkBadgeIcons, BADGE_TYPES, BADGE_DOCKED_TYPES };
 export default BpkBadge;

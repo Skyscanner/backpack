@@ -21,13 +21,18 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react-native';
 import { View, StyleSheet } from 'react-native';
+import BpkIcon, { icons } from 'react-native-bpk-component-icon';
 import {
   colorGray50,
   colorGray700,
   spacingSm,
 } from 'bpk-tokens/tokens/base.react.native';
 
-import BpkBadge, { BADGE_TYPES, BADGE_DOCKED_TYPES } from './index';
+import BpkBadge, {
+  BpkBadgeIcons,
+  BADGE_TYPES,
+  BADGE_DOCKED_TYPES,
+} from './index';
 import { StorySubheading } from '../../storybook/TextStyles';
 import CenterDecorator from '../../storybook/CenterDecorator';
 
@@ -66,11 +71,19 @@ const style = StyleSheet.create({
   },
 });
 
-const capitalise = input => input.charAt(0).toUpperCase() + input.slice(1);
+const capitalize = input => input.charAt(0).toUpperCase() + input.slice(1);
+
+const iconSets = {
+  single: [<BpkIcon icon={icons.flight} />],
+  multiple: [<BpkIcon icon={icons.flight} />, <BpkIcon icon={icons.hotels} />],
+};
 
 const generateBadgeStory = (
   contents: Array<string>,
-  config: { docked?: $Keys<typeof BADGE_DOCKED_TYPES> } = {},
+  config: {
+    docked?: $Keys<typeof BADGE_DOCKED_TYPES>,
+    icons?: string,
+  } = {},
 ) => {
   const badgeWrapperStyle = [style.badgeWrapper];
   if (config.docked) {
@@ -80,12 +93,20 @@ const generateBadgeStory = (
   }
   const badges = Object.keys(BADGE_TYPES).map(i => (
     <View key={i}>
-      <StorySubheading>{capitalise(i)}</StorySubheading>
+      <StorySubheading>{capitalize(i)}</StorySubheading>
       <View style={[badgeWrapperStyle, style[i]]}>
         {contents.map(content => (
           <BpkBadge
             key={content}
             message={content}
+            accessoryView={
+              config.icons ? (
+                <BpkBadgeIcons
+                  icons={iconSets[config.icons]}
+                  separator={config.icons === 'multiple' ? '+' : null}
+                />
+              ) : null
+            }
             docked={config.docked}
             type={i}
             style={style.badge}
@@ -103,6 +124,20 @@ storiesOf('react-native-bpk-component-badge', module)
   .add('docs:default', () => (
     <View>
       {generateBadgeStory(['Apples', 'Bananas', 'Strawberries', 'Pears'])}
+    </View>
+  ))
+  .add('docs:with-icon', () => (
+    <View>
+      {generateBadgeStory(['Apples', 'Bananas', 'Strawberries'], {
+        icons: 'single',
+      })}
+    </View>
+  ))
+  .add('docs:with-multiple-icons', () => (
+    <View>
+      {generateBadgeStory(['4% off'], {
+        icons: 'multiple',
+      })}
     </View>
   ))
   .add('docs:docked-start', () => (

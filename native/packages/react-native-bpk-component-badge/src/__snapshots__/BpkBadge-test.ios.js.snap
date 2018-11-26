@@ -6,6 +6,8 @@ exports[`iOS BpkBadge should render correctly docked to the end 1`] = `
     style={
       Array [
         Object {
+          "alignItems": "center",
+          "flexDirection": "row",
           "height": 20,
           "justifyContent": "center",
           "paddingHorizontal": 8,
@@ -61,6 +63,8 @@ exports[`iOS BpkBadge should render correctly docked to the end 1`] = `
     style={
       Array [
         Object {
+          "alignItems": "center",
+          "flexDirection": "row",
           "height": 20,
           "justifyContent": "center",
           "paddingHorizontal": 8,
@@ -116,6 +120,8 @@ exports[`iOS BpkBadge should render correctly docked to the end 1`] = `
     style={
       Array [
         Object {
+          "alignItems": "center",
+          "flexDirection": "row",
           "height": 20,
           "justifyContent": "center",
           "paddingHorizontal": 8,
@@ -173,6 +179,8 @@ exports[`iOS BpkBadge should render correctly docked to the end 1`] = `
     style={
       Array [
         Object {
+          "alignItems": "center",
+          "flexDirection": "row",
           "height": 20,
           "justifyContent": "center",
           "paddingHorizontal": 8,
@@ -228,6 +236,8 @@ exports[`iOS BpkBadge should render correctly docked to the end 1`] = `
     style={
       Array [
         Object {
+          "alignItems": "center",
+          "flexDirection": "row",
           "height": 20,
           "justifyContent": "center",
           "paddingHorizontal": 8,
@@ -283,6 +293,8 @@ exports[`iOS BpkBadge should render correctly docked to the end 1`] = `
     style={
       Array [
         Object {
+          "alignItems": "center",
+          "flexDirection": "row",
           "height": 20,
           "justifyContent": "center",
           "paddingHorizontal": 8,
@@ -352,6 +364,8 @@ exports[`iOS BpkBadge should render correctly docked to the start 1`] = `
     style={
       Array [
         Object {
+          "alignItems": "center",
+          "flexDirection": "row",
           "height": 20,
           "justifyContent": "center",
           "paddingHorizontal": 8,
@@ -407,6 +421,8 @@ exports[`iOS BpkBadge should render correctly docked to the start 1`] = `
     style={
       Array [
         Object {
+          "alignItems": "center",
+          "flexDirection": "row",
           "height": 20,
           "justifyContent": "center",
           "paddingHorizontal": 8,
@@ -462,6 +478,8 @@ exports[`iOS BpkBadge should render correctly docked to the start 1`] = `
     style={
       Array [
         Object {
+          "alignItems": "center",
+          "flexDirection": "row",
           "height": 20,
           "justifyContent": "center",
           "paddingHorizontal": 8,
@@ -519,6 +537,8 @@ exports[`iOS BpkBadge should render correctly docked to the start 1`] = `
     style={
       Array [
         Object {
+          "alignItems": "center",
+          "flexDirection": "row",
           "height": 20,
           "justifyContent": "center",
           "paddingHorizontal": 8,
@@ -574,6 +594,8 @@ exports[`iOS BpkBadge should render correctly docked to the start 1`] = `
     style={
       Array [
         Object {
+          "alignItems": "center",
+          "flexDirection": "row",
           "height": 20,
           "justifyContent": "center",
           "paddingHorizontal": 8,
@@ -629,6 +651,8 @@ exports[`iOS BpkBadge should render correctly docked to the start 1`] = `
     style={
       Array [
         Object {
+          "alignItems": "center",
+          "flexDirection": "row",
           "height": 20,
           "justifyContent": "center",
           "paddingHorizontal": 8,
@@ -698,6 +722,8 @@ exports[`iOS BpkBadge should render correctly in normal mode 1`] = `
     style={
       Array [
         Object {
+          "alignItems": "center",
+          "flexDirection": "row",
           "height": 20,
           "justifyContent": "center",
           "paddingHorizontal": 8,
@@ -745,6 +771,8 @@ exports[`iOS BpkBadge should render correctly in normal mode 1`] = `
     style={
       Array [
         Object {
+          "alignItems": "center",
+          "flexDirection": "row",
           "height": 20,
           "justifyContent": "center",
           "paddingHorizontal": 8,
@@ -792,6 +820,8 @@ exports[`iOS BpkBadge should render correctly in normal mode 1`] = `
     style={
       Array [
         Object {
+          "alignItems": "center",
+          "flexDirection": "row",
           "height": 20,
           "justifyContent": "center",
           "paddingHorizontal": 8,
@@ -841,6 +871,8 @@ exports[`iOS BpkBadge should render correctly in normal mode 1`] = `
     style={
       Array [
         Object {
+          "alignItems": "center",
+          "flexDirection": "row",
           "height": 20,
           "justifyContent": "center",
           "paddingHorizontal": 8,
@@ -888,6 +920,8 @@ exports[`iOS BpkBadge should render correctly in normal mode 1`] = `
     style={
       Array [
         Object {
+          "alignItems": "center",
+          "flexDirection": "row",
           "height": 20,
           "justifyContent": "center",
           "paddingHorizontal": 8,
@@ -935,6 +969,8 @@ exports[`iOS BpkBadge should render correctly in normal mode 1`] = `
     style={
       Array [
         Object {
+          "alignItems": "center",
+          "flexDirection": "row",
           "height": 20,
           "justifyContent": "center",
           "paddingHorizontal": 8,
@@ -990,12 +1026,1348 @@ exports[`iOS BpkBadge should render correctly in normal mode 1`] = `
 </View>
 `;
 
+exports[`iOS BpkBadge should render correctly with icon 1`] = `
+<View>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "height": 20,
+          "justifyContent": "center",
+          "paddingHorizontal": 8,
+        },
+        Object {
+          "borderBottomLeftRadius": 4,
+          "borderBottomRightRadius": 4,
+          "borderTopLeftRadius": 4,
+          "borderTopRightRadius": 4,
+        },
+        Object {
+          "backgroundColor": "rgb(0, 215, 117)",
+        },
+      ]
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={false}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "rgb(82, 76, 97)",
+            "fontFamily": "BpkIcon",
+            "fontSize": 24,
+            "includeFontPadding": false,
+          },
+          Object {
+            "fontSize": 16,
+          },
+          Array [
+            Object {
+              "includeFontPadding": false,
+              "marginEnd": 4,
+            },
+            Object {
+              "color": "rgb(82, 76, 97)",
+              "includeFontPadding": false,
+            },
+          ],
+        ]
+      }
+    >
+      
+    </Text>
+    <Text
+      accessible={true}
+      allowFontScaling={false}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "rgb(82, 76, 97)",
+            "fontFamily": "System",
+            "fontSize": 12,
+            "fontWeight": "400",
+            "letterSpacing": 0,
+          },
+          Object {},
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+              "includeFontPadding": false,
+            },
+            undefined,
+          ],
+        ]
+      }
+    >
+      Badge
+    </Text>
+  </View>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "height": 20,
+          "justifyContent": "center",
+          "paddingHorizontal": 8,
+        },
+        Object {
+          "borderBottomLeftRadius": 4,
+          "borderBottomRightRadius": 4,
+          "borderTopLeftRadius": 4,
+          "borderTopRightRadius": 4,
+        },
+        Object {
+          "backgroundColor": "rgb(255, 187, 0)",
+        },
+      ]
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={false}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "rgb(82, 76, 97)",
+            "fontFamily": "BpkIcon",
+            "fontSize": 24,
+            "includeFontPadding": false,
+          },
+          Object {
+            "fontSize": 16,
+          },
+          Array [
+            Object {
+              "includeFontPadding": false,
+              "marginEnd": 4,
+            },
+            Object {
+              "color": "rgb(82, 76, 97)",
+              "includeFontPadding": false,
+            },
+          ],
+        ]
+      }
+    >
+      
+    </Text>
+    <Text
+      accessible={true}
+      allowFontScaling={false}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "rgb(82, 76, 97)",
+            "fontFamily": "System",
+            "fontSize": 12,
+            "fontWeight": "400",
+            "letterSpacing": 0,
+          },
+          Object {},
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+              "includeFontPadding": false,
+            },
+            undefined,
+          ],
+        ]
+      }
+    >
+      Badge
+    </Text>
+  </View>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "height": 20,
+          "justifyContent": "center",
+          "paddingHorizontal": 8,
+        },
+        Object {
+          "borderBottomLeftRadius": 4,
+          "borderBottomRightRadius": 4,
+          "borderTopLeftRadius": 4,
+          "borderTopRightRadius": 4,
+        },
+        Object {
+          "backgroundColor": "rgb(255, 84, 82)",
+        },
+      ]
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={false}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "rgb(82, 76, 97)",
+            "fontFamily": "BpkIcon",
+            "fontSize": 24,
+            "includeFontPadding": false,
+          },
+          Object {
+            "fontSize": 16,
+          },
+          Array [
+            Object {
+              "includeFontPadding": false,
+              "marginEnd": 4,
+            },
+            Object {
+              "color": "rgb(255, 255, 255)",
+              "includeFontPadding": false,
+            },
+          ],
+        ]
+      }
+    >
+      
+    </Text>
+    <Text
+      accessible={true}
+      allowFontScaling={false}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "rgb(82, 76, 97)",
+            "fontFamily": "System",
+            "fontSize": 12,
+            "fontWeight": "400",
+            "letterSpacing": 0,
+          },
+          Object {},
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+              "includeFontPadding": false,
+            },
+            Object {
+              "color": "rgb(255, 255, 255)",
+            },
+          ],
+        ]
+      }
+    >
+      Badge
+    </Text>
+  </View>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "height": 20,
+          "justifyContent": "center",
+          "paddingHorizontal": 8,
+        },
+        Object {
+          "borderBottomLeftRadius": 4,
+          "borderBottomRightRadius": 4,
+          "borderTopLeftRadius": 4,
+          "borderTopRightRadius": 4,
+        },
+        Object {
+          "backgroundColor": "rgb(243, 242, 245)",
+        },
+      ]
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={false}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "rgb(82, 76, 97)",
+            "fontFamily": "BpkIcon",
+            "fontSize": 24,
+            "includeFontPadding": false,
+          },
+          Object {
+            "fontSize": 16,
+          },
+          Array [
+            Object {
+              "includeFontPadding": false,
+              "marginEnd": 4,
+            },
+            Object {
+              "color": "rgb(82, 76, 97)",
+              "includeFontPadding": false,
+            },
+          ],
+        ]
+      }
+    >
+      
+    </Text>
+    <Text
+      accessible={true}
+      allowFontScaling={false}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "rgb(82, 76, 97)",
+            "fontFamily": "System",
+            "fontSize": 12,
+            "fontWeight": "400",
+            "letterSpacing": 0,
+          },
+          Object {},
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+              "includeFontPadding": false,
+            },
+            undefined,
+          ],
+        ]
+      }
+    >
+      Badge
+    </Text>
+  </View>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "height": 20,
+          "justifyContent": "center",
+          "paddingHorizontal": 8,
+        },
+        Object {
+          "borderBottomLeftRadius": 4,
+          "borderBottomRightRadius": 4,
+          "borderTopLeftRadius": 4,
+          "borderTopRightRadius": 4,
+        },
+        Object {
+          "backgroundColor": "rgb(255, 255, 255)",
+        },
+      ]
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={false}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "rgb(82, 76, 97)",
+            "fontFamily": "BpkIcon",
+            "fontSize": 24,
+            "includeFontPadding": false,
+          },
+          Object {
+            "fontSize": 16,
+          },
+          Array [
+            Object {
+              "includeFontPadding": false,
+              "marginEnd": 4,
+            },
+            Object {
+              "color": "rgb(82, 76, 97)",
+              "includeFontPadding": false,
+            },
+          ],
+        ]
+      }
+    >
+      
+    </Text>
+    <Text
+      accessible={true}
+      allowFontScaling={false}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "rgb(82, 76, 97)",
+            "fontFamily": "System",
+            "fontSize": 12,
+            "fontWeight": "400",
+            "letterSpacing": 0,
+          },
+          Object {},
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+              "includeFontPadding": false,
+            },
+            undefined,
+          ],
+        ]
+      }
+    >
+      Badge
+    </Text>
+  </View>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "height": 20,
+          "justifyContent": "center",
+          "paddingHorizontal": 8,
+        },
+        Object {
+          "borderBottomLeftRadius": 4,
+          "borderBottomRightRadius": 4,
+          "borderTopLeftRadius": 4,
+          "borderTopRightRadius": 4,
+        },
+        Array [
+          Object {
+            "backgroundColor": "rgba(255, 255, 255, 0.2)",
+            "paddingHorizontal": 7,
+          },
+          Object {
+            "borderColor": "rgb(255, 255, 255)",
+            "borderWidth": 1,
+          },
+        ],
+      ]
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={false}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "rgb(82, 76, 97)",
+            "fontFamily": "BpkIcon",
+            "fontSize": 24,
+            "includeFontPadding": false,
+          },
+          Object {
+            "fontSize": 16,
+          },
+          Array [
+            Object {
+              "includeFontPadding": false,
+              "marginEnd": 4,
+            },
+            Object {
+              "color": "rgb(255, 255, 255)",
+              "includeFontPadding": false,
+            },
+          ],
+        ]
+      }
+    >
+      
+    </Text>
+    <Text
+      accessible={true}
+      allowFontScaling={false}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "rgb(82, 76, 97)",
+            "fontFamily": "System",
+            "fontSize": 12,
+            "fontWeight": "400",
+            "letterSpacing": 0,
+          },
+          Object {},
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+              "includeFontPadding": false,
+            },
+            Object {
+              "color": "rgb(255, 255, 255)",
+            },
+          ],
+        ]
+      }
+    >
+      Badge
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`iOS BpkBadge should render correctly with multiple icons 1`] = `
+<View>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "height": 20,
+          "justifyContent": "center",
+          "paddingHorizontal": 8,
+        },
+        Object {
+          "borderBottomLeftRadius": 4,
+          "borderBottomRightRadius": 4,
+          "borderTopLeftRadius": 4,
+          "borderTopRightRadius": 4,
+        },
+        Object {
+          "backgroundColor": "rgb(0, 215, 117)",
+        },
+      ]
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={false}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "rgb(82, 76, 97)",
+            "fontFamily": "BpkIcon",
+            "fontSize": 24,
+            "includeFontPadding": false,
+          },
+          Object {
+            "fontSize": 16,
+          },
+          Array [
+            Object {
+              "includeFontPadding": false,
+              "marginEnd": 4,
+            },
+            Object {
+              "color": "rgb(82, 76, 97)",
+              "includeFontPadding": false,
+            },
+          ],
+        ]
+      }
+    >
+      
+    </Text>
+    <Text
+      accessible={true}
+      allowFontScaling={false}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "rgb(82, 76, 97)",
+            "fontFamily": "System",
+            "fontSize": 12,
+            "fontWeight": "400",
+            "letterSpacing": 0,
+          },
+          Object {},
+          Array [
+            Object {
+              "includeFontPadding": false,
+              "marginEnd": 4,
+            },
+            Object {
+              "color": "rgb(82, 76, 97)",
+              "includeFontPadding": false,
+            },
+          ],
+        ]
+      }
+    >
+      +
+    </Text>
+    <Text
+      accessible={true}
+      allowFontScaling={false}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "rgb(82, 76, 97)",
+            "fontFamily": "BpkIcon",
+            "fontSize": 24,
+            "includeFontPadding": false,
+          },
+          Object {
+            "fontSize": 16,
+          },
+          Array [
+            Object {
+              "includeFontPadding": false,
+              "marginEnd": 4,
+            },
+            Object {
+              "color": "rgb(82, 76, 97)",
+              "includeFontPadding": false,
+            },
+          ],
+        ]
+      }
+    >
+      
+    </Text>
+    <Text
+      accessible={true}
+      allowFontScaling={false}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "rgb(82, 76, 97)",
+            "fontFamily": "System",
+            "fontSize": 12,
+            "fontWeight": "400",
+            "letterSpacing": 0,
+          },
+          Object {},
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+              "includeFontPadding": false,
+            },
+            undefined,
+          ],
+        ]
+      }
+    >
+      Badge
+    </Text>
+  </View>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "height": 20,
+          "justifyContent": "center",
+          "paddingHorizontal": 8,
+        },
+        Object {
+          "borderBottomLeftRadius": 4,
+          "borderBottomRightRadius": 4,
+          "borderTopLeftRadius": 4,
+          "borderTopRightRadius": 4,
+        },
+        Object {
+          "backgroundColor": "rgb(255, 187, 0)",
+        },
+      ]
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={false}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "rgb(82, 76, 97)",
+            "fontFamily": "BpkIcon",
+            "fontSize": 24,
+            "includeFontPadding": false,
+          },
+          Object {
+            "fontSize": 16,
+          },
+          Array [
+            Object {
+              "includeFontPadding": false,
+              "marginEnd": 4,
+            },
+            Object {
+              "color": "rgb(82, 76, 97)",
+              "includeFontPadding": false,
+            },
+          ],
+        ]
+      }
+    >
+      
+    </Text>
+    <Text
+      accessible={true}
+      allowFontScaling={false}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "rgb(82, 76, 97)",
+            "fontFamily": "System",
+            "fontSize": 12,
+            "fontWeight": "400",
+            "letterSpacing": 0,
+          },
+          Object {},
+          Array [
+            Object {
+              "includeFontPadding": false,
+              "marginEnd": 4,
+            },
+            Object {
+              "color": "rgb(82, 76, 97)",
+              "includeFontPadding": false,
+            },
+          ],
+        ]
+      }
+    >
+      +
+    </Text>
+    <Text
+      accessible={true}
+      allowFontScaling={false}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "rgb(82, 76, 97)",
+            "fontFamily": "BpkIcon",
+            "fontSize": 24,
+            "includeFontPadding": false,
+          },
+          Object {
+            "fontSize": 16,
+          },
+          Array [
+            Object {
+              "includeFontPadding": false,
+              "marginEnd": 4,
+            },
+            Object {
+              "color": "rgb(82, 76, 97)",
+              "includeFontPadding": false,
+            },
+          ],
+        ]
+      }
+    >
+      
+    </Text>
+    <Text
+      accessible={true}
+      allowFontScaling={false}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "rgb(82, 76, 97)",
+            "fontFamily": "System",
+            "fontSize": 12,
+            "fontWeight": "400",
+            "letterSpacing": 0,
+          },
+          Object {},
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+              "includeFontPadding": false,
+            },
+            undefined,
+          ],
+        ]
+      }
+    >
+      Badge
+    </Text>
+  </View>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "height": 20,
+          "justifyContent": "center",
+          "paddingHorizontal": 8,
+        },
+        Object {
+          "borderBottomLeftRadius": 4,
+          "borderBottomRightRadius": 4,
+          "borderTopLeftRadius": 4,
+          "borderTopRightRadius": 4,
+        },
+        Object {
+          "backgroundColor": "rgb(255, 84, 82)",
+        },
+      ]
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={false}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "rgb(82, 76, 97)",
+            "fontFamily": "BpkIcon",
+            "fontSize": 24,
+            "includeFontPadding": false,
+          },
+          Object {
+            "fontSize": 16,
+          },
+          Array [
+            Object {
+              "includeFontPadding": false,
+              "marginEnd": 4,
+            },
+            Object {
+              "color": "rgb(255, 255, 255)",
+              "includeFontPadding": false,
+            },
+          ],
+        ]
+      }
+    >
+      
+    </Text>
+    <Text
+      accessible={true}
+      allowFontScaling={false}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "rgb(82, 76, 97)",
+            "fontFamily": "System",
+            "fontSize": 12,
+            "fontWeight": "400",
+            "letterSpacing": 0,
+          },
+          Object {},
+          Array [
+            Object {
+              "includeFontPadding": false,
+              "marginEnd": 4,
+            },
+            Object {
+              "color": "rgb(255, 255, 255)",
+              "includeFontPadding": false,
+            },
+          ],
+        ]
+      }
+    >
+      +
+    </Text>
+    <Text
+      accessible={true}
+      allowFontScaling={false}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "rgb(82, 76, 97)",
+            "fontFamily": "BpkIcon",
+            "fontSize": 24,
+            "includeFontPadding": false,
+          },
+          Object {
+            "fontSize": 16,
+          },
+          Array [
+            Object {
+              "includeFontPadding": false,
+              "marginEnd": 4,
+            },
+            Object {
+              "color": "rgb(255, 255, 255)",
+              "includeFontPadding": false,
+            },
+          ],
+        ]
+      }
+    >
+      
+    </Text>
+    <Text
+      accessible={true}
+      allowFontScaling={false}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "rgb(82, 76, 97)",
+            "fontFamily": "System",
+            "fontSize": 12,
+            "fontWeight": "400",
+            "letterSpacing": 0,
+          },
+          Object {},
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+              "includeFontPadding": false,
+            },
+            Object {
+              "color": "rgb(255, 255, 255)",
+            },
+          ],
+        ]
+      }
+    >
+      Badge
+    </Text>
+  </View>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "height": 20,
+          "justifyContent": "center",
+          "paddingHorizontal": 8,
+        },
+        Object {
+          "borderBottomLeftRadius": 4,
+          "borderBottomRightRadius": 4,
+          "borderTopLeftRadius": 4,
+          "borderTopRightRadius": 4,
+        },
+        Object {
+          "backgroundColor": "rgb(243, 242, 245)",
+        },
+      ]
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={false}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "rgb(82, 76, 97)",
+            "fontFamily": "BpkIcon",
+            "fontSize": 24,
+            "includeFontPadding": false,
+          },
+          Object {
+            "fontSize": 16,
+          },
+          Array [
+            Object {
+              "includeFontPadding": false,
+              "marginEnd": 4,
+            },
+            Object {
+              "color": "rgb(82, 76, 97)",
+              "includeFontPadding": false,
+            },
+          ],
+        ]
+      }
+    >
+      
+    </Text>
+    <Text
+      accessible={true}
+      allowFontScaling={false}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "rgb(82, 76, 97)",
+            "fontFamily": "System",
+            "fontSize": 12,
+            "fontWeight": "400",
+            "letterSpacing": 0,
+          },
+          Object {},
+          Array [
+            Object {
+              "includeFontPadding": false,
+              "marginEnd": 4,
+            },
+            Object {
+              "color": "rgb(82, 76, 97)",
+              "includeFontPadding": false,
+            },
+          ],
+        ]
+      }
+    >
+      +
+    </Text>
+    <Text
+      accessible={true}
+      allowFontScaling={false}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "rgb(82, 76, 97)",
+            "fontFamily": "BpkIcon",
+            "fontSize": 24,
+            "includeFontPadding": false,
+          },
+          Object {
+            "fontSize": 16,
+          },
+          Array [
+            Object {
+              "includeFontPadding": false,
+              "marginEnd": 4,
+            },
+            Object {
+              "color": "rgb(82, 76, 97)",
+              "includeFontPadding": false,
+            },
+          ],
+        ]
+      }
+    >
+      
+    </Text>
+    <Text
+      accessible={true}
+      allowFontScaling={false}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "rgb(82, 76, 97)",
+            "fontFamily": "System",
+            "fontSize": 12,
+            "fontWeight": "400",
+            "letterSpacing": 0,
+          },
+          Object {},
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+              "includeFontPadding": false,
+            },
+            undefined,
+          ],
+        ]
+      }
+    >
+      Badge
+    </Text>
+  </View>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "height": 20,
+          "justifyContent": "center",
+          "paddingHorizontal": 8,
+        },
+        Object {
+          "borderBottomLeftRadius": 4,
+          "borderBottomRightRadius": 4,
+          "borderTopLeftRadius": 4,
+          "borderTopRightRadius": 4,
+        },
+        Object {
+          "backgroundColor": "rgb(255, 255, 255)",
+        },
+      ]
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={false}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "rgb(82, 76, 97)",
+            "fontFamily": "BpkIcon",
+            "fontSize": 24,
+            "includeFontPadding": false,
+          },
+          Object {
+            "fontSize": 16,
+          },
+          Array [
+            Object {
+              "includeFontPadding": false,
+              "marginEnd": 4,
+            },
+            Object {
+              "color": "rgb(82, 76, 97)",
+              "includeFontPadding": false,
+            },
+          ],
+        ]
+      }
+    >
+      
+    </Text>
+    <Text
+      accessible={true}
+      allowFontScaling={false}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "rgb(82, 76, 97)",
+            "fontFamily": "System",
+            "fontSize": 12,
+            "fontWeight": "400",
+            "letterSpacing": 0,
+          },
+          Object {},
+          Array [
+            Object {
+              "includeFontPadding": false,
+              "marginEnd": 4,
+            },
+            Object {
+              "color": "rgb(82, 76, 97)",
+              "includeFontPadding": false,
+            },
+          ],
+        ]
+      }
+    >
+      +
+    </Text>
+    <Text
+      accessible={true}
+      allowFontScaling={false}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "rgb(82, 76, 97)",
+            "fontFamily": "BpkIcon",
+            "fontSize": 24,
+            "includeFontPadding": false,
+          },
+          Object {
+            "fontSize": 16,
+          },
+          Array [
+            Object {
+              "includeFontPadding": false,
+              "marginEnd": 4,
+            },
+            Object {
+              "color": "rgb(82, 76, 97)",
+              "includeFontPadding": false,
+            },
+          ],
+        ]
+      }
+    >
+      
+    </Text>
+    <Text
+      accessible={true}
+      allowFontScaling={false}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "rgb(82, 76, 97)",
+            "fontFamily": "System",
+            "fontSize": 12,
+            "fontWeight": "400",
+            "letterSpacing": 0,
+          },
+          Object {},
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+              "includeFontPadding": false,
+            },
+            undefined,
+          ],
+        ]
+      }
+    >
+      Badge
+    </Text>
+  </View>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "height": 20,
+          "justifyContent": "center",
+          "paddingHorizontal": 8,
+        },
+        Object {
+          "borderBottomLeftRadius": 4,
+          "borderBottomRightRadius": 4,
+          "borderTopLeftRadius": 4,
+          "borderTopRightRadius": 4,
+        },
+        Array [
+          Object {
+            "backgroundColor": "rgba(255, 255, 255, 0.2)",
+            "paddingHorizontal": 7,
+          },
+          Object {
+            "borderColor": "rgb(255, 255, 255)",
+            "borderWidth": 1,
+          },
+        ],
+      ]
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={false}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "rgb(82, 76, 97)",
+            "fontFamily": "BpkIcon",
+            "fontSize": 24,
+            "includeFontPadding": false,
+          },
+          Object {
+            "fontSize": 16,
+          },
+          Array [
+            Object {
+              "includeFontPadding": false,
+              "marginEnd": 4,
+            },
+            Object {
+              "color": "rgb(255, 255, 255)",
+              "includeFontPadding": false,
+            },
+          ],
+        ]
+      }
+    >
+      
+    </Text>
+    <Text
+      accessible={true}
+      allowFontScaling={false}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "rgb(82, 76, 97)",
+            "fontFamily": "System",
+            "fontSize": 12,
+            "fontWeight": "400",
+            "letterSpacing": 0,
+          },
+          Object {},
+          Array [
+            Object {
+              "includeFontPadding": false,
+              "marginEnd": 4,
+            },
+            Object {
+              "color": "rgb(255, 255, 255)",
+              "includeFontPadding": false,
+            },
+          ],
+        ]
+      }
+    >
+      +
+    </Text>
+    <Text
+      accessible={true}
+      allowFontScaling={false}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "rgb(82, 76, 97)",
+            "fontFamily": "BpkIcon",
+            "fontSize": 24,
+            "includeFontPadding": false,
+          },
+          Object {
+            "fontSize": 16,
+          },
+          Array [
+            Object {
+              "includeFontPadding": false,
+              "marginEnd": 4,
+            },
+            Object {
+              "color": "rgb(255, 255, 255)",
+              "includeFontPadding": false,
+            },
+          ],
+        ]
+      }
+    >
+      
+    </Text>
+    <Text
+      accessible={true}
+      allowFontScaling={false}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "rgb(82, 76, 97)",
+            "fontFamily": "System",
+            "fontSize": 12,
+            "fontWeight": "400",
+            "letterSpacing": 0,
+          },
+          Object {},
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+              "includeFontPadding": false,
+            },
+            Object {
+              "color": "rgb(255, 255, 255)",
+            },
+          ],
+        ]
+      }
+    >
+      Badge
+    </Text>
+  </View>
+</View>
+`;
+
 exports[`iOS BpkBadge should render correctly with user provided style 1`] = `
 <View>
   <View
     style={
       Array [
         Object {
+          "alignItems": "center",
+          "flexDirection": "row",
           "height": 20,
           "justifyContent": "center",
           "paddingHorizontal": 8,
@@ -1046,6 +2418,8 @@ exports[`iOS BpkBadge should render correctly with user provided style 1`] = `
     style={
       Array [
         Object {
+          "alignItems": "center",
+          "flexDirection": "row",
           "height": 20,
           "justifyContent": "center",
           "paddingHorizontal": 8,
@@ -1096,6 +2470,8 @@ exports[`iOS BpkBadge should render correctly with user provided style 1`] = `
     style={
       Array [
         Object {
+          "alignItems": "center",
+          "flexDirection": "row",
           "height": 20,
           "justifyContent": "center",
           "paddingHorizontal": 8,
@@ -1148,6 +2524,8 @@ exports[`iOS BpkBadge should render correctly with user provided style 1`] = `
     style={
       Array [
         Object {
+          "alignItems": "center",
+          "flexDirection": "row",
           "height": 20,
           "justifyContent": "center",
           "paddingHorizontal": 8,
@@ -1198,6 +2576,8 @@ exports[`iOS BpkBadge should render correctly with user provided style 1`] = `
     style={
       Array [
         Object {
+          "alignItems": "center",
+          "flexDirection": "row",
           "height": 20,
           "justifyContent": "center",
           "paddingHorizontal": 8,
@@ -1248,6 +2628,8 @@ exports[`iOS BpkBadge should render correctly with user provided style 1`] = `
     style={
       Array [
         Object {
+          "alignItems": "center",
+          "flexDirection": "row",
           "height": 20,
           "justifyContent": "center",
           "paddingHorizontal": 8,

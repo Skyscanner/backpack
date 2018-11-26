@@ -18,7 +18,7 @@
 
 /* @flow */
 
-import React from 'react';
+import React, { type Element } from 'react';
 import PropTypes from 'prop-types';
 import { setOpacity } from 'bpk-tokens';
 import BpkText from 'react-native-bpk-component-text';
@@ -38,6 +38,8 @@ import { View, ViewPropTypes, StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
   viewBase: {
+    flexDirection: 'row',
+    alignItems: 'center',
     paddingHorizontal: spacingMd,
     height: spacingSm * 5,
     justifyContent: 'center',
@@ -115,6 +117,7 @@ export const BADGE_DOCKED_TYPES = {
 
 export type Props = {
   message: string,
+  accessoryView: ?Element<*>,
   type: $Keys<typeof BADGE_TYPES>,
   docked: ?$Keys<typeof BADGE_DOCKED_TYPES>,
   style: ?(Object | Array<Object>),
@@ -135,7 +138,7 @@ const textStyleMap: { [key: string]: Object | Array<Object> } = {
 };
 
 const BpkBadge = (props: Props) => {
-  const { message, docked, type, style: userStyle } = props;
+  const { accessoryView, message, docked, type, style: userStyle } = props;
 
   const viewStyle = [styles.viewBase, styles.borderBase];
   const textStyle = [styles.textBase];
@@ -155,8 +158,15 @@ const BpkBadge = (props: Props) => {
     viewStyle.push(userStyle);
   }
 
+  const adjustedAccessoryView =
+    accessoryView &&
+    React.cloneElement(accessoryView, {
+      itemStyle: textStyle,
+    });
+
   return (
     <View style={viewStyle}>
+      {adjustedAccessoryView}
       <BpkText allowFontScaling={false} style={textStyle} textStyle="xs">
         {message}
       </BpkText>
@@ -166,15 +176,17 @@ const BpkBadge = (props: Props) => {
 
 BpkBadge.propTypes = {
   message: PropTypes.string.isRequired,
-  type: PropTypes.oneOf(Object.keys(BADGE_TYPES)),
   docked: PropTypes.oneOf(Object.keys(BADGE_DOCKED_TYPES)),
+  accessoryView: PropTypes.element,
   style: ViewPropTypes.style,
+  type: PropTypes.oneOf(Object.keys(BADGE_TYPES)),
 };
 
 BpkBadge.defaultProps = {
-  type: BADGE_TYPES.warning,
+  accessoryView: null,
   docked: null,
   style: null,
+  type: BADGE_TYPES.warning,
 };
 
 export default BpkBadge;

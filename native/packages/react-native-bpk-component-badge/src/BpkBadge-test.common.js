@@ -22,11 +22,19 @@ import React from 'react';
 import { View } from 'react-native';
 import renderer from 'react-test-renderer';
 import { spacingSm } from 'bpk-tokens/tokens/base.react.native';
+import BpkIcon, { icons } from 'react-native-bpk-component-icon';
 
 import BpkBadge, { BADGE_TYPES, BADGE_DOCKED_TYPES } from './BpkBadge';
+import BpkBadgeIcons from './BpkBadgeIcons';
+
+const iconSets = {
+  single: [<BpkIcon icon={icons.flight} />],
+  multiple: [<BpkIcon icon={icons.flight} />, <BpkIcon icon={icons.hotels} />],
+};
 
 const generateBadgeStory = (config: {
   docked?: $Keys<typeof BADGE_DOCKED_TYPES>,
+  icons?: string,
   style?: Object,
 }) => {
   const badges = Object.keys(BADGE_TYPES).map(type => (
@@ -36,6 +44,14 @@ const generateBadgeStory = (config: {
       message="Badge"
       docked={config.docked}
       type={type}
+      accessoryView={
+        config.icons ? (
+          <BpkBadgeIcons
+            icons={iconSets[config.icons]}
+            separator={config.icons === 'multiple' ? '+' : null}
+          />
+        ) : null
+      }
     />
   ));
 
@@ -46,6 +62,20 @@ const commonTests = () => {
   describe('BpkBadge', () => {
     it('should render correctly in normal mode', () => {
       const tree = renderer.create(generateBadgeStory({})).toJSON();
+      expect(tree).toMatchSnapshot();
+    });
+
+    it('should render correctly with icon', () => {
+      const tree = renderer
+        .create(generateBadgeStory({ icons: 'single' }))
+        .toJSON();
+      expect(tree).toMatchSnapshot();
+    });
+
+    it('should render correctly with multiple icons', () => {
+      const tree = renderer
+        .create(generateBadgeStory({ icons: 'multiple' }))
+        .toJSON();
       expect(tree).toMatchSnapshot();
     });
 
