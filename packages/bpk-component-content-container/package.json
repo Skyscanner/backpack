@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-content-container",
-  "version": "1.3.36",
+  "version": "1.3.37-alpha.2+f40da8723",
   "description": "Backpack content container component.",
   "main": "index.js",
   "repository": {
@@ -13,8 +13,9 @@
     "react": "^15.0.0 || ^16.0.0"
   },
   "dependencies": {
-    "bpk-mixins": "^17.11.27",
+    "bpk-mixins": "^17.11.28-alpha.2+f40da8723",
     "bpk-react-utils": "^2.7.0",
     "prop-types": "^15.6.2"
-  }
+  },
+  "gitHead": "f40da8723fe27214ac268fe828219f7901e58408"
 }
