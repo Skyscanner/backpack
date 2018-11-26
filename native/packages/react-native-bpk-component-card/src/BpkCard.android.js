@@ -22,17 +22,22 @@ import {
   elevationSm,
   elevationLg,
   borderRadiusSm,
+  borderRadiusLg,
   spacingBase,
 } from 'bpk-tokens/tokens/base.react.native';
 import BpkTouchableNativeFeedback from 'react-native-bpk-component-touchable-native-feedback';
 import React from 'react';
 import PropTypes from 'prop-types';
+import CORNER_STYLES, { defaultCornerStyle } from './BpkCardCornerStyles';
 
 const styles = StyleSheet.create({
   card: {
     backgroundColor: colorWhite,
     borderRadius: borderRadiusSm,
     elevation: elevationSm,
+  },
+  cardCornerStyleLarge: {
+    borderRadius: borderRadiusLg,
   },
   cardPadded: {
     padding: spacingBase,
@@ -44,9 +49,10 @@ const styles = StyleSheet.create({
 
 const BpkCard = props => {
   const {
-    padded,
     children,
+    cornerStyle,
     focused,
+    padded,
     style: userStyle,
     innerStyle: userInnerStyle,
     ...rest
@@ -67,6 +73,9 @@ const BpkCard = props => {
   if (userInnerStyle) {
     innerStyle.push(userInnerStyle);
   }
+  if (cornerStyle === CORNER_STYLES.lg) {
+    style.push(styles.cardCornerStyleLarge);
+  }
 
   return (
     <View style={style}>
@@ -80,17 +89,19 @@ const BpkCard = props => {
 BpkCard.propTypes = {
   children: PropTypes.node.isRequired,
   onPress: PropTypes.func.isRequired,
+  cornerStyle: PropTypes.oneOf(Object.keys(CORNER_STYLES)),
   focused: PropTypes.bool,
+  innerStyle: ViewPropTypes.style,
   padded: PropTypes.bool,
   style: ViewPropTypes.style,
-  innerStyle: ViewPropTypes.style,
 };
 
 BpkCard.defaultProps = {
+  cornerStyle: defaultCornerStyle,
   focused: false,
+  innerStyle: null,
   padded: true,
   style: null,
-  innerStyle: null,
 };
 
 export default BpkCard;

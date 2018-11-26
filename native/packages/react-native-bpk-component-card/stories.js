@@ -21,7 +21,7 @@ import { ScrollView, StyleSheet } from 'react-native';
 import BpkText from 'react-native-bpk-component-text';
 import { storiesOf, action } from '@storybook/react-native';
 
-import BpkCard, { withDivider } from './index';
+import BpkCard, { CORNER_STYLES, withDivider } from './index';
 import CenterDecorator from '../../storybook/CenterDecorator';
 
 const BpkCardWithDivider = withDivider(BpkCard);
@@ -70,6 +70,11 @@ storiesOf('react-native-bpk-component-card', module)
       {content}
     </BpkCard>
   ))
+  .add('docs:large-corner-style', () => (
+    <BpkCard onPress={onPress} cornerStyle={CORNER_STYLES.lg}>
+      {content}
+    </BpkCard>
+  ))
   .add('docs:with-divider', () => (
     <BpkCardWithDivider
       onPress={onPress}
@@ -100,6 +105,16 @@ storiesOf('react-native-bpk-component-card', module)
       stub={stubContent}
       mainStyle={styles.cardMainStyle}
       focused
+    >
+      {mainContent}
+    </BpkCardWithDivider>
+  ))
+  .add('With divider and large corner style', () => (
+    <BpkCardWithDivider
+      onPress={onPress}
+      stub={stubContent}
+      mainStyle={styles.cardMainStyle}
+      cornerStyle={CORNER_STYLES.lg}
     >
       {mainContent}
     </BpkCardWithDivider>

@@ -3,6 +3,84 @@
 exports[`Android withDivider should render correctly 1`] = `
 <BpkCard
   accessibilityLabel="Example Card"
+  cornerStyle="sm"
+  focused={false}
+  innerStyle={
+    Array [
+      Object {
+        "flexDirection": "row",
+      },
+    ]
+  }
+  onPress={[Function]}
+  padded={false}
+  style={null}
+>
+  <Component
+    style={
+      Array [
+        Object {
+          "flex": 1,
+        },
+        Object {
+          "padding": 16,
+        },
+      ]
+    }
+  >
+    <BpkText
+      emphasize={null}
+      style={null}
+      textStyle="base"
+      weight="regular"
+    >
+      Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+    </BpkText>
+  </Component>
+  <_class
+    dashColor="rgb(230, 228, 235)"
+    dashGap={4}
+    dashLength={4}
+    dashThickness={1}
+    style={
+      Array [
+        Object {
+          "flexDirection": "column",
+          "marginBottom": 8,
+          "marginTop": 8,
+          "width": 1,
+        },
+      ]
+    }
+  />
+  <Component
+    style={
+      Array [
+        Object {
+          "flex": 1,
+        },
+        Object {
+          "padding": 16,
+        },
+      ]
+    }
+  >
+    <BpkText
+      emphasize={null}
+      style={null}
+      textStyle="base"
+      weight="regular"
+    >
+      Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+    </BpkText>
+  </Component>
+</BpkCard>
+`;
+
+exports[`Android withDivider should render correctly with "cornerStyle=large" 1`] = `
+<BpkCard
+  accessibilityLabel="Example Card"
+  cornerStyle="lg"
   focused={false}
   innerStyle={
     Array [
@@ -79,6 +157,7 @@ exports[`Android withDivider should render correctly 1`] = `
 exports[`Android withDivider should render correctly with arbitrary props 1`] = `
 <BpkCard
   accessibilityLabel="Example Card"
+  cornerStyle="sm"
   focused={false}
   innerStyle={
     Array [
@@ -156,6 +235,7 @@ exports[`Android withDivider should render correctly with arbitrary props 1`] = 
 exports[`Android withDivider should render correctly with custom main style 1`] = `
 <BpkCard
   accessibilityLabel="Example Card"
+  cornerStyle="sm"
   focused={false}
   innerStyle={
     Array [
@@ -235,6 +315,7 @@ exports[`Android withDivider should render correctly with custom main style 1`] 
 exports[`Android withDivider should render correctly with custom stub style 1`] = `
 <BpkCard
   accessibilityLabel="Example Card"
+  cornerStyle="sm"
   focused={false}
   innerStyle={
     Array [
@@ -314,6 +395,7 @@ exports[`Android withDivider should render correctly with custom stub style 1`] 
 exports[`Android withDivider should render correctly without padding 1`] = `
 <BpkCard
   accessibilityLabel="Example Card"
+  cornerStyle="sm"
   focused={false}
   innerStyle={
     Array [

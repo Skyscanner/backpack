@@ -16,9 +16,8 @@
  * limitations under the License.
  */
 
-import BpkCard from './src/BpkCard';
-import CORNER_STYLES from './src/BpkCardCornerStyles';
-import withDivider from './src/withDivider';
+const CORNER_STYLES = { sm: 'sm', lg: 'lg' };
+const defaultCornerStyle = CORNER_STYLES.sm;
 
-export { CORNER_STYLES, withDivider };
-export default BpkCard;
+export default CORNER_STYLES;
+export { defaultCornerStyle };
