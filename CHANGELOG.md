@@ -4,6 +4,11 @@
 
 # 2018-11-26
 
+**Added:**
+ - react-native-bpk-component-badge: 2.0.5 => 2.1.0
+     - Badges now accept an optional `accessoryView` that allows icons, or other content, to be placed alongside the text inside the badge. See https://backpack.github.io/components/badge/?platform=native#with-icons
+     - We've also added a `BpkBadgeIcons` component which provides an easy way to configure icons to display within the `accessoryView`.
+
 **Breaking:**
 
 - react-native-bpk-component-text: 3.0.4 => 4.0.0
@@ -14,7 +19,7 @@
 - bpk-tokens: 27.3.0 => 27.4.0
   - Changed `fontSizeXxl` and `fontSizeXxl` tokens for Android and iOS. They are now `30` and `36` (previously `36` and `42`).
   - Changed `letterSpacingXxl` and `letterSpacingXxxl` tokens for Android. They are now `-0.8` and `-1.0` (previously `-1.0` and `-1.2`).
-- bpk-component-calendar
+- bpk-component-calendar: 4.3.22 => 4.3.23
   - BpkCalendar accepts navProps, headerProps, gridProps and dateProps and passes them to sub-components
 
 
