@@ -47,8 +47,8 @@ export default class App extends Component {
 
 ## Props
 
-| Property     | PropType            | Required | Default Value |
-| ------------ | ------------------- | -------- | ------------- |
-| children     | node                | true     | -             |
-| borderRadius | oneOf('sm', 'pill') | false    | null          |
-| overlayStyle | object              | false    | null          |
+| Property     | PropType                  | Required | Default Value |
+| ------------ | ------------------------- | -------- | ------------- |
+| children     | node                      | true     | -             |
+| borderRadius | oneOf('sm', 'lg', 'pill') | false    | null          |
+| overlayStyle | object                    | false    | null          |
