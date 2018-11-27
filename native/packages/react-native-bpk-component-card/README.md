@@ -69,7 +69,7 @@ import React, { Component } from 'react';
 import { View, StyleSheet, Text } from 'react-native';
 import BpkText from 'react-native-bpk-component-text';
 import { spacingBase } from 'bpk-tokens/tokens/base.react.native';
-import BpkCard, { withDivider } from 'react-native-bpk-component-card';
+import BpkCard, { CORNER_STYLES, withDivider } from 'react-native-bpk-component-card';
 
 const BpkCardWithDivider = withDivider(BpkCard);
 
@@ -120,6 +120,7 @@ export default class App extends Component {
           stub={content}
           accessibilityLabel="Example Card"
           focused
+          cornerStyle={CORNER_STYLES.lg}
         >
           {content}
         </BpkCardWithDivider>
@@ -133,13 +134,14 @@ export default class App extends Component {
 
 *BpkCard:*
 
-| Property   | PropType  | Required | Default Value |
-| ---------- | --------- | -------- | ------------- |
-| children   | node      | true     | -             |
-| onPress    | func      | true     | -             |
-| focused    | bool      | false    | false         |
-| padded     | bool      | false    | true          |
-| innerStyle | object    | false    | null          |
+| Property   | PropType                                  | Required | Default Value       |
+| ---------- | ----------------------------------------- | -------- | ------------------- |
+| children   | node                                      | true     | -                   |
+| onPress    | func                                      | true     | -                   |
+| focused    | bool                                      | false    | false               |
+| innerStyle | object                                    | false    | null                |
+| cornerStyle| oneOf(CORNER_STYLES.sm, CORNER_STYLES.lg) | false    | CORNER_STYLES.sm |
+| padded     | bool                                      | false    | true                |
 
 *After `withDivider`:*
 

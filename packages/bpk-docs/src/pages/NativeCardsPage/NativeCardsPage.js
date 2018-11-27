@@ -23,6 +23,8 @@ import iosScreenshotDefault from 'react-native-bpk-component-card/screenshots/io
 import androidScreenshotDefault from 'react-native-bpk-component-card/screenshots/android/default.png';
 import iosScreenshotFocused from 'react-native-bpk-component-card/screenshots/ios/focused.png';
 import androidScreenshotFocused from 'react-native-bpk-component-card/screenshots/android/focused.png';
+import iosScreenshotCornerStyleLarge from 'react-native-bpk-component-card/screenshots/ios/large-corner-style.png';
+import androidScreenshotCornerStyleLarge from 'react-native-bpk-component-card/screenshots/android/large-corner-style.png';
 import iosScreenshotWithoutPadding from 'react-native-bpk-component-card/screenshots/ios/without-padding.png';
 import androidScreenshotWithoutPadding from 'react-native-bpk-component-card/screenshots/android/without-padding.png';
 import iosScreenshotWithDivider from 'react-native-bpk-component-card/screenshots/ios/with-divider.png';
@@ -100,6 +102,28 @@ const components = [
         height: 1920,
         src: `/${androidScreenshotFocused}`,
         altText: 'Android Card Focused Component',
+        subText: '(Google Pixel emulator)',
+      },
+    ],
+  },
+  {
+    id: 'large-corner-style',
+    title: 'Large corner style',
+    screenshots: [
+      {
+        title: 'iOS',
+        width: 750,
+        height: 1334,
+        src: `/${iosScreenshotCornerStyleLarge}`,
+        altText: 'iOS Card Component with large corner style',
+        subText: '(iPhone 8 simulator)',
+      },
+      {
+        title: 'Android',
+        width: 1080,
+        height: 1920,
+        src: `/${androidScreenshotCornerStyleLarge}`,
+        altText: 'Android Card Component with large corner style',
         subText: '(Google Pixel emulator)',
       },
     ],

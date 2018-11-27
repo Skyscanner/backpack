@@ -22,6 +22,7 @@ import ShallowRenderer from 'react-test-renderer/shallow';
 import BpkText from 'react-native-bpk-component-text';
 
 import BpkCard from './BpkCard';
+import CORNER_STYLES from './BpkCardCornerStyles';
 import withDivider from './withDivider';
 
 const BpkCardWithDivider = withDivider(BpkCard);
@@ -65,6 +66,22 @@ const commonTests = () => {
           accessibilityLabel="Example Card"
           stub={content}
           padded={false}
+        >
+          {content}
+        </BpkCardWithDivider>,
+      );
+
+      const tree = renderer.getRenderOutput();
+      expect(tree).toMatchSnapshot();
+    });
+
+    it('should render correctly with "cornerStyle=large"', () => {
+      renderer.render(
+        <BpkCardWithDivider
+          onPress={onPress}
+          accessibilityLabel="Example Card"
+          stub={content}
+          cornerStyle={CORNER_STYLES.lg}
         >
           {content}
         </BpkCardWithDivider>,

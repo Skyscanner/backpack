@@ -20,18 +20,23 @@ import { StyleSheet, View, ViewPropTypes } from 'react-native';
 import {
   colorWhite,
   borderRadiusSm,
+  borderRadiusLg,
   spacingBase,
 } from 'bpk-tokens/tokens/base.react.native';
 import { shadows } from 'react-native-bpk-styles';
 import React from 'react';
 import PropTypes from 'prop-types';
 import BpkTouchableOverlay from 'react-native-bpk-component-touchable-overlay';
+import CORNER_STYLES, { defaultCornerStyle } from './BpkCardCornerStyles';
 
 const styles = StyleSheet.create({
   card: {
     backgroundColor: colorWhite,
     borderRadius: borderRadiusSm,
     ...shadows.base(),
+  },
+  cardCornerStyleLarge: {
+    borderRadius: borderRadiusLg,
   },
   cardPadded: {
     padding: spacingBase,
@@ -44,9 +49,10 @@ const styles = StyleSheet.create({
 
 const BpkCard = props => {
   const {
-    padded,
     children,
+    cornerStyle,
     focused,
+    padded,
     style: userStyle,
     innerStyle: userInnerStyle,
     ...rest
@@ -67,12 +73,15 @@ const BpkCard = props => {
   if (userInnerStyle) {
     innerStyle.push(userInnerStyle);
   }
+  if (cornerStyle === CORNER_STYLES.lg) {
+    style.push(styles.cardCornerStyleLarge);
+  }
 
   return (
     <BpkTouchableOverlay
       accessibilityComponentType="button"
       style={style}
-      borderRadius="sm"
+      borderRadius={cornerStyle}
       {...rest}
     >
       <View style={innerStyle}>{children}</View>
@@ -83,17 +92,19 @@ const BpkCard = props => {
 BpkCard.propTypes = {
   children: PropTypes.node.isRequired,
   onPress: PropTypes.func.isRequired,
+  cornerStyle: PropTypes.oneOf(Object.keys(CORNER_STYLES)),
   focused: PropTypes.bool,
+  innerStyle: ViewPropTypes.style,
   padded: PropTypes.bool,
   style: ViewPropTypes.style,
-  innerStyle: ViewPropTypes.style,
 };
 
 BpkCard.defaultProps = {
+  cornerStyle: defaultCornerStyle,
   focused: false,
+  innerStyle: null,
   padded: true,
   style: null,
-  innerStyle: null,
 };
 
 export default BpkCard;

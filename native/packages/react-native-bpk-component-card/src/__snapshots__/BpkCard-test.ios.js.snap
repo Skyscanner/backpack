@@ -86,6 +86,95 @@ exports[`iOS BpkCard should render correctly 1`] = `
 </View>
 `;
 
+exports[`iOS BpkCard should render correctly when "cornerStyle=large" 1`] = `
+<View
+  accessibilityComponentType="button"
+  accessibilityLabel="Example Card"
+  accessibilityTraits={undefined}
+  accessible={true}
+  hitSlop={undefined}
+  nativeID={undefined}
+  onLayout={undefined}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Array [
+      Object {
+        "backgroundColor": "rgb(255, 255, 255)",
+        "borderRadius": 4,
+        "shadowColor": "rgb(37, 32, 51)",
+        "shadowOffset": Object {
+          "height": 0.5,
+          "width": 0,
+        },
+        "shadowOpacity": 0.15,
+        "shadowRadius": 1.5,
+      },
+      Object {
+        "padding": 16,
+      },
+      Object {
+        "borderRadius": 24,
+      },
+    ]
+  }
+  testID={undefined}
+>
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "transparent",
+        },
+      ]
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "rgb(82, 76, 97)",
+            "fontFamily": "System",
+            "fontSize": 16,
+            "fontWeight": "400",
+            "letterSpacing": 0.12,
+          },
+          Object {},
+        ]
+      }
+    >
+      Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+    </Text>
+  </View>
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "rgb(37, 32, 51)",
+          "bottom": 0,
+          "flex": 1,
+          "left": 0,
+          "opacity": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        },
+        Object {
+          "borderRadius": 24,
+        },
+      ]
+    }
+  />
+</View>
+`;
+
 exports[`iOS BpkCard should render correctly with arbitrary props 1`] = `
 <View
   accessibilityComponentType="button"

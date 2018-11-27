@@ -22,6 +22,7 @@ import renderer from 'react-test-renderer';
 import BpkText from 'react-native-bpk-component-text';
 
 import BpkCard from './BpkCard';
+import CORNER_STYLES from './BpkCardCornerStyles';
 
 const commonTests = () => {
   const onPress = jest.fn();
@@ -67,6 +68,22 @@ const commonTests = () => {
       const tree = renderer
         .create(
           <BpkCard onPress={onPress} focused accessibilityLabel="Example Card">
+            {content}
+          </BpkCard>,
+        )
+        .toJSON();
+
+      expect(tree).toMatchSnapshot();
+    });
+
+    it('should render correctly when "cornerStyle=large"', () => {
+      const tree = renderer
+        .create(
+          <BpkCard
+            onPress={onPress}
+            cornerStyle={CORNER_STYLES.lg}
+            accessibilityLabel="Example Card"
+          >
             {content}
           </BpkCard>,
         )
