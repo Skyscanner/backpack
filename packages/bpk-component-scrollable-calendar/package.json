@@ -14,10 +14,10 @@
   },
   "dependencies": {
     "bpk-component-calendar": "^4.4.0",
-    "bpk-component-infinite-scroll": "^2.1.6",
     "bpk-component-text": "^1.0.92",
     "bpk-mixins": "^17.11.27",
     "bpk-react-utils": "^2.7.0",
-    "prop-types": "^15.5.8"
+    "prop-types": "^15.5.8",
+    "react-virtualized": "^9.20.1"
   }
 }
