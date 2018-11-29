@@ -73,4 +73,11 @@ describe('BpkCalendarDate', () => {
       .toJSON();
     expect(tree).toMatchSnapshot();
   });
+
+  it('should set a custom class', () => {
+    const tree = renderer
+      .create(<BpkCalendarDate date={new Date(2010, 1, 15)} className="fake" />)
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 });
