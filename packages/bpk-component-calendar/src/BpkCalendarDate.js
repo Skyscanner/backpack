@@ -147,6 +147,7 @@ export const propTypes = {
   // Required
   date: PropTypes.instanceOf(Date).isRequired,
   // Optional
+  className: PropTypes.string,
   isBlocked: PropTypes.bool,
   isFocused: PropTypes.bool,
   isKeyboardFocusable: PropTypes.bool,
@@ -157,12 +158,12 @@ export const propTypes = {
   onClick: PropTypes.func,
   onDateKeyDown: PropTypes.func,
   preventKeyboardFocus: PropTypes.bool,
-  className: PropTypes.string,
 };
 
 BpkCalendarDate.propTypes = propTypes;
 
 BpkCalendarDate.defaultProps = {
+  className: null,
   isBlocked: false,
   isFocused: false,
   isKeyboardFocusable: true,
@@ -173,7 +174,6 @@ BpkCalendarDate.defaultProps = {
   onClick: null,
   onDateKeyDown: null,
   preventKeyboardFocus: true,
-  className: null,
 };
 
 export default BpkCalendarDate;

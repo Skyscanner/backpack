@@ -100,7 +100,7 @@ exports[`BpkCalendarDate should set a custom class 1`] = `
 <button
   aria-label={15}
   aria-pressed={false}
-  className="bpk-calendar-date fake"
+  className="bpk-calendar-date userlandClassName"
   disabled={false}
   onClick={[Function]}
   onKeyDown={null}
