@@ -2,10 +2,10 @@
 
 exports[`BpkScrollableCalendar should render correctly 1`] = `
 <div
-  className="bpk-calendar bpk-calendar--fixed"
+  className="bpk-calendar bpk-scrollable-calendar bpk-calendar--fixed"
 >
   <header
-    className="bpk-calendar-header"
+    className="bpk-calendar-header bpk-scrollable-calendar__header"
   >
     <ol
       className="bpk-calendar-header__week"
@@ -96,10 +96,10 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
 
 exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
 <div
-  className="bpk-calendar bpk-calendar--fixed"
+  className="bpk-calendar bpk-scrollable-calendar bpk-calendar--fixed"
 >
   <header
-    className="bpk-calendar-header"
+    className="bpk-calendar-header bpk-scrollable-calendar__header"
   >
     <ol
       className="bpk-calendar-header__week"
@@ -190,10 +190,10 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
 
 exports[`BpkScrollableCalendar should support custom class names 1`] = `
 <div
-  className="bpk-calendar custom-classname bpk-calendar--fixed"
+  className="bpk-calendar custom-classname bpk-scrollable-calendar bpk-calendar--fixed"
 >
   <header
-    className="bpk-calendar-header"
+    className="bpk-calendar-header bpk-scrollable-calendar__header"
   >
     <ol
       className="bpk-calendar-header__week"

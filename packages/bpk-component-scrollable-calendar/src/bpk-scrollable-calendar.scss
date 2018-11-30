@@ -20,4 +20,9 @@
 
 .bpk-scrollable-calendar {
   display: flex;
+  flex-direction: column;
+
+  &__header {
+    flex-shrink: 0;
+  }
 }

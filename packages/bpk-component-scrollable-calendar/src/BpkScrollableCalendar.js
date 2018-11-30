@@ -22,14 +22,35 @@ import {
   withCalendarState,
   composeCalendar,
 } from 'bpk-component-calendar';
+
+import React from 'react';
+import cssModules from 'bpk-react-utils/src/cssModules';
+
 import BpkscrollableCalendarDate from './BpkScrollableCalendarDate';
 import BpkScrollableCalendarGridList from './BpkScrollableCalendarGridList';
 
-export default withCalendarState(
-  composeCalendar(
-    null,
-    BpkCalendarGridHeader,
-    BpkScrollableCalendarGridList,
-    BpkscrollableCalendarDate,
+import STYLES from './bpk-scrollable-calendar.scss';
+
+const getClassName = cssModules(STYLES);
+
+const withClassName = (Component, newClassName) => props => {
+  const className = props.className
+    ? `${props.className} ${newClassName}`
+    : newClassName;
+  return <Component {...props} className={className} />;
+};
+
+export default withClassName(
+  withCalendarState(
+    composeCalendar(
+      null,
+      withClassName(
+        BpkCalendarGridHeader,
+        getClassName('bpk-scrollable-calendar__header'),
+      ),
+      BpkScrollableCalendarGridList,
+      BpkscrollableCalendarDate,
+    ),
   ),
+  getClassName('bpk-scrollable-calendar'),
 );
