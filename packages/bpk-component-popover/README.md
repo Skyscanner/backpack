@@ -69,21 +69,21 @@ class App extends Component {
 
 | Property              | PropType                                  | Required | Default Value |
 | --------------------- | ----------------------------------------- | -------- | ------------- |
-| id                    | string                                    | true     | -             |
 | children              | node                                      | true     | -             |
-| target                | element or func                           | true     | -             |
-| isOpen                | bool                                      | true     | -             |
-| onClose               | func                                      | true     | -             |
-| label                 | string                                    | true     | -             |
 | closeButtonText       | string                                    | true     | -             |
-| placement             | oneOf(['top', 'right', 'bottom', 'left']) | false    | 'bottom'      |
-| padded                | bool                                      | false    | true          |
-| labelAsTitle          | bool                                      | false    | false         |
+| id                    | string                                    | true     | -             |
+| isOpen                | bool                                      | true     | -             |
+| label                 | string                                    | true     | -             |
+| onClose               | func                                      | true     | -             |
+| target                | element or func                           | true     | -             |
 | closeButtonIcon       | bool                                      | false    | true          |
-| portalStyle           | object                                    | false    | null          |
-| portalClassName       | string                                    | false    | null          |
-| renderTarget          | func                                      | false    | null          |
+| labelAsTitle          | bool                                      | false    | false         |
+| padded                | bool                                      | false    | true          |
+| placement             | oneOf(['top', 'right', 'bottom', 'left']) | false    | 'bottom'      |
 | popperModifiers       | object                                    | false    | null          |
+| portalClassName       | string                                    | false    | null          |
+| portalStyle           | object                                    | false    | null          |
+| renderTarget          | func                                      | false    | null          |
 
 In order to attach the popover to a regular DOM element, provide a function which returns it to `target`:
 
