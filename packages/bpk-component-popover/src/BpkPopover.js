@@ -44,33 +44,31 @@ const bindEventSource = (source, callback) => event => {
 };
 
 export type Props = {
+  children: Node,
+  closeButtonIcon: boolean,
+  closeButtonText: string,
   id: string,
+  label: string,
+  labelAsTitle: boolean,
   onClose: (
     event: SyntheticEvent<>,
-    props: {
-      source: $Values<typeof EVENT_SOURCES>,
-    },
+    props: { source: $Values<typeof EVENT_SOURCES> },
   ) => mixed,
-  label: string,
-  closeButtonText: string,
-  children: Node,
   padded: boolean,
-  labelAsTitle: boolean,
-  closeButtonIcon: boolean,
   className: ?string,
 };
 
 const BpkPopover = (props: Props) => {
   const {
-    id,
-    onClose,
-    label,
-    closeButtonText,
     children,
     className,
-    padded,
-    labelAsTitle,
     closeButtonIcon,
+    closeButtonText,
+    id,
+    label,
+    labelAsTitle,
+    onClose,
+    padded,
     ...rest
   } = props;
 
@@ -155,22 +153,22 @@ const BpkPopover = (props: Props) => {
 };
 
 export const propTypes = {
-  id: PropTypes.string.isRequired,
-  onClose: PropTypes.func.isRequired,
-  label: PropTypes.string.isRequired,
-  closeButtonText: PropTypes.string.isRequired,
   children: PropTypes.node.isRequired,
-  padded: PropTypes.bool,
-  labelAsTitle: PropTypes.bool,
-  closeButtonIcon: PropTypes.bool,
+  closeButtonText: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
+  label: PropTypes.string.isRequired,
+  onClose: PropTypes.func.isRequired,
   className: PropTypes.string,
+  closeButtonIcon: PropTypes.bool,
+  labelAsTitle: PropTypes.bool,
+  padded: PropTypes.bool,
 };
 
 export const defaultProps = {
-  padded: true,
-  labelAsTitle: false,
-  closeButtonIcon: true,
   className: null,
+  closeButtonIcon: true,
+  labelAsTitle: false,
+  padded: true,
 };
 
 BpkPopover.propTypes = { ...propTypes };
