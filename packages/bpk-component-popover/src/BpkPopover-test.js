@@ -41,6 +41,25 @@ describe('BpkPopover', () => {
     expect(tree).toMatchSnapshot();
   });
 
+  it('should render correctly with "closeButtonProps" provided', () => {
+    const tree = renderer
+      .create(
+        <BpkPopover
+          id="my-popover"
+          onClose={() => null}
+          label="My popover"
+          closeButtonText="Close"
+          tabIndex="0"
+          closeButtonProps={{ tabIndex: 0 }}
+        >
+          My popover content
+        </BpkPopover>,
+      )
+      .toJSON();
+
+    expect(tree).toMatchSnapshot();
+  });
+
   it('should render correctly with "padded" attribute equal to false', () => {
     const tree = renderer
       .create(

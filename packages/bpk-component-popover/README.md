@@ -53,6 +53,9 @@ class App extends Component {
           renderTarget={() =>
             document.getElementById('popover-container')
           }
+          closeButtonProps={{
+            tabIndex: 0,
+          }}
         >
           <BpkText>My popover content</BpkText>
         </BpkPopover>
@@ -77,6 +80,7 @@ class App extends Component {
 | onClose               | func                                      | true     | -             |
 | target                | element or func                           | true     | -             |
 | closeButtonIcon       | bool                                      | false    | true          |
+| closeButtonProps      | object                                    | false    | null          |
 | labelAsTitle          | bool                                      | false    | false         |
 | padded                | bool                                      | false    | true          |
 | placement             | oneOf(['top', 'right', 'bottom', 'left']) | false    | 'bottom'      |

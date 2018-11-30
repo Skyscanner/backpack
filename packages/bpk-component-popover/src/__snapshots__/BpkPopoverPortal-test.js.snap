@@ -21,6 +21,7 @@ exports[`BpkPopoverPortal Custom Portal props should render correctly with porta
   <BpkPopover
     className={null}
     closeButtonIcon={true}
+    closeButtonProps={null}
     closeButtonText="Close"
     id="my-popover"
     label="My popover"
@@ -60,6 +61,7 @@ exports[`BpkPopoverPortal Custom Portal props should render correctly with porta
   <BpkPopover
     className={null}
     closeButtonIcon={true}
+    closeButtonProps={null}
     closeButtonText="Close"
     id="my-popover"
     label="My popover"
