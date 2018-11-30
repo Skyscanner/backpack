@@ -104,6 +104,7 @@ import TextPage from '../pages/TextPage';
 import ThemingPage from '../pages/ThemingPage';
 import TicketsPage from '../pages/TicketsPage';
 import TooltipsPage from '../pages/TooltipsPage';
+import BagCheckPage from '../pages/BagCheckPage';
 
 import { GridColumnDemoPage, GridOffsetDemoPage } from '../pages/GridDemoPages';
 
@@ -273,6 +274,7 @@ export const ROUTES_MAPPINGS = [
   },
   { path: ROUTES.GRID_COLUMN_DEMO, component: GridColumnDemoPage },
   { path: ROUTES.GRID_OFFSET_DEMO, component: GridOffsetDemoPage },
+  { path: ROUTES.BAG_CHECK, component: BagCheckPage },
   ...Object.keys(redirects).map(from => ({
     path: from,
     redirect: redirects[from],
