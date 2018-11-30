@@ -2,6 +2,14 @@
 
 [Unreleased changes](./UNRELEASED.md).
 
+# 2018-11-30 Support custom class names on BpkCalendarDate
+
+**Added:**
+- bpk-component-calendar: 4.3.23 => 4.4.0
+- bpk-component-datepicker: 8.1.26 => 8.1.27
+- bpk-component-scrollable-calendar: 0.1.14 => 0.1.15
+  - Added `className` property to BpkCalendarDate component
+
 # 2018-11-27 Add RN card configuration for more rounded corners
 
 **Added:**
