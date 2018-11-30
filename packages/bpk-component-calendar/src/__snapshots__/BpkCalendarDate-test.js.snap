@@ -95,3 +95,22 @@ exports[`BpkCalendarDate should render with a click and keyDown handler 1`] = `
   </span>
 </button>
 `;
+
+exports[`BpkCalendarDate should set a custom class 1`] = `
+<button
+  aria-label={15}
+  aria-pressed={false}
+  className="bpk-calendar-date userlandClassName"
+  disabled={false}
+  onClick={[Function]}
+  onKeyDown={null}
+  tabIndex="-1"
+  type="button"
+>
+  <span
+    aria-hidden="true"
+  >
+    15
+  </span>
+</button>
+`;

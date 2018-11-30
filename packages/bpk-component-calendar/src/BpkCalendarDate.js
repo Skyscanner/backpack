@@ -86,6 +86,7 @@ class BpkCalendarDate extends PureComponent {
       isOutside,
       isToday,
       isKeyboardFocusable,
+      className,
       ...buttonProps
     } = this.props;
     const classNames = [getClassName('bpk-calendar-date')];
@@ -112,6 +113,9 @@ class BpkCalendarDate extends PureComponent {
     }
     if (isToday) {
       classNames.push(getClassName('bpk-calendar-date--today'));
+    }
+    if (className) {
+      classNames.push(className);
     }
 
     delete buttonProps.preventKeyboardFocus;
@@ -143,6 +147,7 @@ export const propTypes = {
   // Required
   date: PropTypes.instanceOf(Date).isRequired,
   // Optional
+  className: PropTypes.string,
   isBlocked: PropTypes.bool,
   isFocused: PropTypes.bool,
   isKeyboardFocusable: PropTypes.bool,
@@ -158,6 +163,7 @@ export const propTypes = {
 BpkCalendarDate.propTypes = propTypes;
 
 BpkCalendarDate.defaultProps = {
+  className: null,
   isBlocked: false,
   isFocused: false,
   isKeyboardFocusable: true,
