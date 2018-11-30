@@ -4,6 +4,8 @@
 
 - bpk-component-popover:
   - Added `closeButtonProps` so that consumers can set props on the close button - for example, `tabIndex`.
+- bpk-component-image
+  - Introducing `BpkBackgroundImage` for rendering background images. See https://backpack.github.io/components/image?platform=web#background-image.
 
 **Fixed:**
 

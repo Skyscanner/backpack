@@ -15,21 +15,44 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+/* @flow */
 
+import React, { type Node, Component } from 'react';
 import PropTypes from 'prop-types';
-import React from 'react';
 import { cssModules } from 'bpk-react-utils';
 import { BpkSpinner } from 'bpk-component-spinner';
+import CSSTransition from 'react-transition-group/CSSTransition';
+import { animations } from 'bpk-tokens/tokens/base.es6';
 
 import STYLES from './bpk-background-image.scss';
 
 const getClassName = cssModules(STYLES);
 
-class BpkBackgroundImage extends React.Component {
-  constructor(props) {
-    super(props);
+type BpkBackgroundImageProps = {
+  children: Node,
+  height: number,
+  inView: boolean,
+  loading: boolean,
+  src: string,
+  width: number,
+  className: ?string,
+  onLoad: ?() => mixed,
+  style: ?{}, // eslint-disable-line react/forbid-prop-types
+  imageStyle: ?{}, // eslint-disable-line react/forbid-prop-types
+};
 
-    this.trackImage = null;
+class BpkBackgroundImage extends Component<BpkBackgroundImageProps> {
+  trackImg: ?Image;
+
+  onBackgroundImageLoad: () => mixed;
+
+  startImageLoad: () => mixed;
+
+  static defaultProps: {};
+
+  constructor(props: BpkBackgroundImageProps) {
+    super(props);
+    this.trackImg = null;
   }
 
   componentDidMount() {
@@ -38,113 +61,116 @@ class BpkBackgroundImage extends React.Component {
     }
   }
 
-  componentWillReceiveProps(newProps) {
+  componentWillReceiveProps(newProps: BpkBackgroundImageProps) {
     if (!this.props.inView && newProps.inView) {
       this.startImageLoad();
     }
   }
 
-  onBackgroundImageLoad = () => {
+  onBackgroundImageLoad = (): void => {
     if (this.props.onLoad) {
       this.props.onLoad();
     }
-    delete this.trackImage;
+    delete this.trackImg;
   };
 
-  startImageLoad = () => {
-    this.trackImage = new Image();
-    this.trackImage.src = this.props.src;
-    this.trackImage.onload = this.onBackgroundImageLoad;
+  startImageLoad = (): void => {
+    this.trackImg = new Image();
+    this.trackImg.src = this.props.src;
+    this.trackImg.onload = this.onBackgroundImageLoad;
   };
 
-  render() {
+  render(): Node {
     const {
+      width,
+      height,
       children,
       className,
       inView,
       loading,
-      onLoad,
       src,
       imageStyle,
-      imageClassName,
-      ...rest
+      style,
     } = this.props;
 
+    const aspectRatio = width / height;
+    const aspectRatioPc = `${100 / aspectRatio}%`;
+
     const classNames = [getClassName('bpk-background-image')];
-    const spinnerClassNames = [getClassName('bpk-background-image__spinner')];
-    const contentClassNames = [getClassName('bpk-background-image__content')];
+    const imageClassNames = [getClassName('bpk-background-image__img')];
 
     if (!loading) {
-      spinnerClassNames.push(
-        getClassName('bpk-background-image__spinner--hide'),
-      );
-      contentClassNames.push(
-        getClassName('bpk-background-image__content--show'),
-      );
+      classNames.push(getClassName('bpk-background-image--no-background'));
+      imageClassNames.push(getClassName('bpk-background-image__img--shown'));
     }
-
-    if (className) {
-      classNames.push(className);
-    }
-
-    if (imageClassName) {
-      contentClassNames.push(imageClassName);
-    }
-
-    const contentClassNamesNoScript = [
-      getClassName('bpk-background-image__content'),
-      getClassName('bpk-background-image__content--show'),
-    ];
 
     return (
-      <div className={classNames.join(' ')} {...rest}>
-        <div className={spinnerClassNames.join(' ')}>
-          <BpkSpinner />
-        </div>
+      <div style={style} className={className}>
         <div
-          className={contentClassNames.join(' ')}
           style={{
-            backgroundImage: !inView || loading ? '' : `url(${src})`,
-            ...imageStyle,
+            height: 0,
+            paddingBottom: aspectRatioPc,
           }}
+          className={classNames.join(' ')}
         >
+          <div
+            style={{
+              backgroundImage: !inView || loading ? '' : `url(${src})`,
+              ...imageStyle,
+            }}
+            className={imageClassNames.join(' ')}
+          />
+          {loading && (
+            <CSSTransition
+              classNames={{
+                exit: getClassName('bpk-image__spinner--shown'),
+                exitActive: getClassName('bpk-image__spinner--hidden'),
+              }}
+              timeout={parseInt(animations.durationBase, 10)}
+            >
+              <div className={getClassName('bpk-image__spinner')}>
+                <BpkSpinner />
+              </div>
+            </CSSTransition>
+          )}
+          {typeof window === 'undefined' &&
+            (!inView || loading) && (
+              <noscript>
+                <div
+                  style={{
+                    backgroundImage: `url(${src})`,
+                    ...imageStyle,
+                  }}
+                  className={imageClassNames.join(' ')}
+                />
+              </noscript>
+            )}
           {!loading && children}
         </div>
-        {typeof window === 'undefined' &&
-          (!inView || loading) && (
-            <noscript>
-              <div
-                className={contentClassNamesNoScript.join(' ')}
-                style={{ backgroundImage: `url(${src})`, ...imageStyle }}
-              >
-                {children}
-              </div>
-            </noscript>
-          )}
       </div>
     );
   }
 }
 
 BpkBackgroundImage.propTypes = {
+  height: PropTypes.number.isRequired,
   src: PropTypes.string.isRequired,
-  children: PropTypes.node,
+  width: PropTypes.number.isRequired,
   className: PropTypes.string,
-  imageClassName: PropTypes.string,
-  imageStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   inView: PropTypes.bool,
   loading: PropTypes.bool,
   onLoad: PropTypes.func,
+  style: PropTypes.object, // eslint-disable-line react/forbid-prop-types
+  imageStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
 };
 
 BpkBackgroundImage.defaultProps = {
-  children: null,
   className: null,
-  imageClassName: null,
-  imageStyle: null,
   inView: true,
   loading: false,
   onLoad: null,
+  style: {},
+  imageStyle: {},
 };
 
 export default BpkBackgroundImage;
