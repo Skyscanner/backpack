@@ -142,32 +142,30 @@ class BpkNavigationBar extends Component<Props, {}> {
     );
   }
 
-  componentDidMount() {
-    this.updateStatusBar();
-  }
-
   componentDidUpdate() {
     this.theme = getThemeAttributes(
       ANDROID_THEME_ATTRIBUTES,
       this.props.theme || {},
     );
-
-    this.updateStatusBar();
   }
 
-  updateStatusBar() {
+  navigationBarStyles() {
     if (this.theme) {
       const {
         navigationBarStatusBarColor,
         navigationBarStatusBarStyle,
       } = this.theme;
 
-      StatusBar.setBackgroundColor(navigationBarStatusBarColor);
-      StatusBar.setBarStyle(navigationBarStatusBarStyle);
-    } else {
-      StatusBar.setBackgroundColor(colorBlue700);
-      StatusBar.setBarStyle('light-content');
+      return {
+        navigationBarStatusBarColor,
+        navigationBarStatusBarStyle,
+      };
     }
+
+    return {
+      navigationBarStatusBarColor: colorBlue700,
+      navigationBarStatusBarStyle: 'light-content',
+    };
   }
 
   render() {
@@ -249,8 +247,17 @@ class BpkNavigationBar extends Component<Props, {}> {
       outerBarStyle.push(style);
     }
 
+    const {
+      navigationBarStatusBarColor,
+      navigationBarStatusBarStyle,
+    } = this.navigationBarStyles();
+
     return (
       <View style={outerBarStyle}>
+        <StatusBar
+          backgroundColor={navigationBarStatusBarColor}
+          barStyle={navigationBarStatusBarStyle}
+        />
         <View style={barStyle}>
           {leadingButton &&
             React.cloneElement(leadingButton, {
