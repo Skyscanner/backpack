@@ -77,6 +77,7 @@ const styles = StyleSheet.create({
   titleString: {
     position: 'absolute',
     start: 72, // eslint-disable-line backpack/use-tokens
+    end: 72, // eslint-disable-line backpack/use-tokens
     bottom: 15, // eslint-disable-line backpack/use-tokens
   },
   titleViewOuter: {
