@@ -56,6 +56,7 @@ export type Props = {
   ) => mixed,
   padded: boolean,
   className: ?string,
+  closeButtonProps: ?Object,
 };
 
 const BpkPopover = (props: Props) => {
@@ -63,6 +64,7 @@ const BpkPopover = (props: Props) => {
     children,
     className,
     closeButtonIcon,
+    closeButtonProps,
     closeButtonText,
     id,
     label,
@@ -120,6 +122,7 @@ const BpkPopover = (props: Props) => {
                   EVENT_SOURCES.CLOSE_BUTTON,
                   props.onClose,
                 )}
+                {...closeButtonProps}
               />
             ) : (
               <BpkButtonLink
@@ -127,6 +130,7 @@ const BpkPopover = (props: Props) => {
                   EVENT_SOURCES.CLOSE_LINK,
                   props.onClose,
                 )}
+                {...closeButtonProps}
               >
                 {closeButtonText}
               </BpkButtonLink>
@@ -142,6 +146,7 @@ const BpkPopover = (props: Props) => {
           <footer className={getClassName('bpk-popover__footer')}>
             <BpkButtonLink
               onClick={bindEventSource(EVENT_SOURCES.CLOSE_LINK, props.onClose)}
+              {...closeButtonProps}
             >
               {closeButtonText}
             </BpkButtonLink>
@@ -160,6 +165,7 @@ export const propTypes = {
   onClose: PropTypes.func.isRequired,
   className: PropTypes.string,
   closeButtonIcon: PropTypes.bool,
+  closeButtonProps: PropTypes.object,
   labelAsTitle: PropTypes.bool,
   padded: PropTypes.bool,
 };
@@ -167,6 +173,7 @@ export const propTypes = {
 export const defaultProps = {
   className: null,
   closeButtonIcon: true,
+  closeButtonProps: null,
   labelAsTitle: false,
   padded: true,
 };
