@@ -42,6 +42,8 @@ exports[`android BpkNavigationBar should render correctly 1`] = `
           ]
         }
         accessible={true}
+        hasTVPreferredFocus={undefined}
+        hitSlop={undefined}
         isTVSelectable={true}
         nativeBackgroundAndroid={
           Object {
@@ -50,12 +52,14 @@ exports[`android BpkNavigationBar should render correctly 1`] = `
             "type": "RippleAndroid",
           }
         }
+        onLayout={undefined}
         onResponderGrant={[Function]}
         onResponderMove={[Function]}
         onResponderRelease={[Function]}
         onResponderTerminate={[Function]}
         onResponderTerminationRequest={[Function]}
         onStartShouldSetResponder={[Function]}
+        testID={undefined}
       >
         <Text
           accessible={true}
@@ -178,6 +182,8 @@ exports[`android BpkNavigationBar should render correctly with a subtitle view 1
           ]
         }
         accessible={true}
+        hasTVPreferredFocus={undefined}
+        hitSlop={undefined}
         isTVSelectable={true}
         nativeBackgroundAndroid={
           Object {
@@ -186,12 +192,14 @@ exports[`android BpkNavigationBar should render correctly with a subtitle view 1
             "type": "RippleAndroid",
           }
         }
+        onLayout={undefined}
         onResponderGrant={[Function]}
         onResponderMove={[Function]}
         onResponderRelease={[Function]}
         onResponderTerminate={[Function]}
         onResponderTerminationRequest={[Function]}
         onStartShouldSetResponder={[Function]}
+        testID={undefined}
       >
         <Text
           accessible={true}
@@ -322,6 +330,8 @@ exports[`android BpkNavigationBar should render correctly with a title view 1`] 
           ]
         }
         accessible={true}
+        hasTVPreferredFocus={undefined}
+        hitSlop={undefined}
         isTVSelectable={true}
         nativeBackgroundAndroid={
           Object {
@@ -330,12 +340,14 @@ exports[`android BpkNavigationBar should render correctly with a title view 1`] 
             "type": "RippleAndroid",
           }
         }
+        onLayout={undefined}
         onResponderGrant={[Function]}
         onResponderMove={[Function]}
         onResponderRelease={[Function]}
         onResponderTerminate={[Function]}
         onResponderTerminationRequest={[Function]}
         onStartShouldSetResponder={[Function]}
+        testID={undefined}
       >
         <Text
           accessible={true}
@@ -435,6 +447,8 @@ exports[`android BpkNavigationBar should render correctly with an icon in the ti
           ]
         }
         accessible={true}
+        hasTVPreferredFocus={undefined}
+        hitSlop={undefined}
         isTVSelectable={true}
         nativeBackgroundAndroid={
           Object {
@@ -443,12 +457,14 @@ exports[`android BpkNavigationBar should render correctly with an icon in the ti
             "type": "RippleAndroid",
           }
         }
+        onLayout={undefined}
         onResponderGrant={[Function]}
         onResponderMove={[Function]}
         onResponderRelease={[Function]}
         onResponderTerminate={[Function]}
         onResponderTerminationRequest={[Function]}
         onStartShouldSetResponder={[Function]}
+        testID={undefined}
       >
         <Text
           accessible={true}
@@ -601,6 +617,8 @@ exports[`android BpkNavigationBar should render correctly with custom style 1`] 
           ]
         }
         accessible={true}
+        hasTVPreferredFocus={undefined}
+        hitSlop={undefined}
         isTVSelectable={true}
         nativeBackgroundAndroid={
           Object {
@@ -609,12 +627,14 @@ exports[`android BpkNavigationBar should render correctly with custom style 1`] 
             "type": "RippleAndroid",
           }
         }
+        onLayout={undefined}
         onResponderGrant={[Function]}
         onResponderMove={[Function]}
         onResponderRelease={[Function]}
         onResponderTerminate={[Function]}
         onResponderTerminationRequest={[Function]}
         onStartShouldSetResponder={[Function]}
+        testID={undefined}
       >
         <Text
           accessible={true}
@@ -734,6 +754,8 @@ exports[`android BpkNavigationBar should render correctly with trailing button 1
           ]
         }
         accessible={true}
+        hasTVPreferredFocus={undefined}
+        hitSlop={undefined}
         isTVSelectable={true}
         nativeBackgroundAndroid={
           Object {
@@ -742,12 +764,14 @@ exports[`android BpkNavigationBar should render correctly with trailing button 1
             "type": "RippleAndroid",
           }
         }
+        onLayout={undefined}
         onResponderGrant={[Function]}
         onResponderMove={[Function]}
         onResponderRelease={[Function]}
         onResponderTerminate={[Function]}
         onResponderTerminationRequest={[Function]}
         onStartShouldSetResponder={[Function]}
+        testID={undefined}
       >
         <Text
           accessible={true}
@@ -837,6 +861,8 @@ exports[`android BpkNavigationBar should render correctly with trailing button 1
           ]
         }
         accessible={true}
+        hasTVPreferredFocus={undefined}
+        hitSlop={undefined}
         isTVSelectable={true}
         nativeBackgroundAndroid={
           Object {
@@ -845,12 +871,14 @@ exports[`android BpkNavigationBar should render correctly with trailing button 1
             "type": "RippleAndroid",
           }
         }
+        onLayout={undefined}
         onResponderGrant={[Function]}
         onResponderMove={[Function]}
         onResponderRelease={[Function]}
         onResponderTerminate={[Function]}
         onResponderTerminationRequest={[Function]}
         onStartShouldSetResponder={[Function]}
+        testID={undefined}
       >
         <Text
           accessible={true}
