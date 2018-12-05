@@ -17,23 +17,26 @@
  */
 
 @import '~bpk-mixins/index';
+@import './bpk-image.scss';
 
 .bpk-background-image {
   @include bpk-image;
 
-  &__content {
-    @include bpk-image__content;
+  &__spinner {
+    @include bpk-image__spinner;
+  }
 
-    &--show {
-      @include bpk-image__content--show;
+  &__img {
+    opacity: 0;
+
+    @include bpk-image__img;
+
+    &--shown {
+      opacity: 1;
     }
   }
 
-  &__spinner {
-    @include bpk-image__spinner;
-
-    &--hide {
-      @include bpk-image__spinner--hide;
-    }
+  &--no-background {
+    @include bpk-image--no-background;
   }
 }

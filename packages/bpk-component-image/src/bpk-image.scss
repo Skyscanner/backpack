@@ -18,7 +18,45 @@
 
 @import '~bpk-mixins/index';
 
-.bpk-image {
+@mixin bpk-image__spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: block;
+  align-items: center;
+  transform: translate(-50%, -50%);
+
+  &--hidden {
+    transition: opacity $bpk-duration-base ease-in-out;
+    opacity: 0;
+  }
+
+  &--shown {
+    transition: opacity $bpk-duration-base ease-in-out;
+    opacity: 1;
+  }
+}
+
+@mixin bpk-image__img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  transition: opacity $bpk-duration-base ease-in-out;
+
+  &--hidden {
+    opacity: 0;
+  }
+}
+
+@mixin bpk-image--no-background {
+  background-color: transparent;
+}
+
+@mixin bpk-image {
   position: relative;
   display: block;
   max-width: 100%;
@@ -26,43 +64,22 @@
   background-color: $bpk-color-gray-100;
   overflow: hidden;
   transition-delay: $bpk-duration-base;
+}
+
+.bpk-image {
+  opacity: 1;
+
+  @include bpk-image;
 
   &__img {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    display: block;
-    width: 100%;
-    transition: opacity $bpk-duration-base ease-in-out;
-    opacity: 1;
-
-    &--hidden {
-      opacity: 0;
-    }
+    @include bpk-image__img;
   }
 
   &__spinner {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    display: block;
-    align-items: center;
-    transform: translate(-50%, -50%);
-
-    &--hidden {
-      transition: opacity $bpk-duration-base ease-in-out;
-      opacity: 0;
-    }
-
-    &--shown {
-      transition: opacity $bpk-duration-base ease-in-out;
-      opacity: 1;
-    }
+    @include bpk-image__spinner;
   }
 
   &--no-background {
-    background-color: transparent;
+    @include bpk-image--no-background;
   }
 }
