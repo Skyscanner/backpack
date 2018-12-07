@@ -2,6 +2,14 @@
 
 [Unreleased changes](./UNRELEASED.md).
 
+# 2018-12-07 - Navigation bar fix
+
+**Fixed:**
+
+- react-native-bpk-component-navigation-bar:
+  - Remove the use of `StatusBar` on Android.
+
+
 # 2018-12-05 Background image component and popover props
 
 **Added:**
