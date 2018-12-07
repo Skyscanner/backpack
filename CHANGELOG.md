@@ -6,7 +6,7 @@
 
 **Fixed:**
 
-- react-native-bpk-component-navigation-bar:
+- react-native-bpk-component-navigation-bar: 4.0.8 => 4.0.9
   - Remove the use of `StatusBar` on Android.
 
 
