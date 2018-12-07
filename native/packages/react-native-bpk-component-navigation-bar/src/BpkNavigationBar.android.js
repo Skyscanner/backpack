@@ -19,13 +19,7 @@
 
 import React, { Component, isValidElement } from 'react';
 import PropTypes from 'prop-types';
-import {
-  type Element,
-  StatusBar,
-  StyleSheet,
-  View,
-  ViewPropTypes,
-} from 'react-native';
+import { type Element, StyleSheet, View, ViewPropTypes } from 'react-native';
 import {
   withTheme,
   getThemeAttributes,
@@ -34,7 +28,6 @@ import {
 import {
   colorBlue300,
   colorBlue500,
-  colorBlue700,
   colorWhite,
 } from 'bpk-tokens/tokens/base.react.native';
 
@@ -149,25 +142,6 @@ class BpkNavigationBar extends Component<Props, {}> {
     );
   }
 
-  navigationBarStyles() {
-    if (this.theme) {
-      const {
-        navigationBarStatusBarColor,
-        navigationBarStatusBarStyle,
-      } = this.theme;
-
-      return {
-        navigationBarStatusBarColor,
-        navigationBarStatusBarStyle,
-      };
-    }
-
-    return {
-      navigationBarStatusBarColor: colorBlue700,
-      navigationBarStatusBarStyle: 'light-content',
-    };
-  }
-
   render() {
     const {
       title,
@@ -247,17 +221,8 @@ class BpkNavigationBar extends Component<Props, {}> {
       outerBarStyle.push(style);
     }
 
-    const {
-      navigationBarStatusBarColor,
-      navigationBarStatusBarStyle,
-    } = this.navigationBarStyles();
-
     return (
       <View style={outerBarStyle}>
-        <StatusBar
-          backgroundColor={navigationBarStatusBarColor}
-          barStyle={navigationBarStatusBarStyle}
-        />
         <View style={barStyle}>
           {leadingButton &&
             React.cloneElement(leadingButton, {
