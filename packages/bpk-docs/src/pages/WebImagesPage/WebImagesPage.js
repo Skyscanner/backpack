@@ -18,11 +18,14 @@
 
 import React from 'react';
 import BpkImage, {
+  BpkBackgroundImage,
   withLazyLoading,
   withLoadingBehavior,
 } from 'bpk-component-image';
+import BpkText from 'bpk-component-text';
 
 import imagesReadme from 'bpk-component-image/README.md';
+import * as SPACINGS from 'bpk-tokens/tokens/base.es6';
 import * as BREAKPOINTS from 'bpk-tokens/tokens/breakpoints.es6';
 
 import DocsPageBuilder from '../../components/DocsPageBuilder';
@@ -162,6 +165,27 @@ const components = [
           (min-width: ${BREAKPOINTS.breakpointTablet}) calc(100vw - 18rem),
           calc(100vw - 4.5rem)`}
       />,
+    ],
+  },
+  {
+    id: 'background-image',
+    title: 'As a background image',
+    blurb:
+      'Use the background image component when you want the image to be the background of an element, with inner content.',
+    examples: [
+      <BpkBackgroundImage altText="Lake" width={816} height={544} src={image1}>
+        <div
+          style={{
+            opacity: 0.9,
+            marginLeft: SPACINGS.spacingSm,
+            paddingTop: SPACINGS.spacingSm,
+          }}
+        >
+          <BpkText tagName="h2" textStyle="lg">
+            I&apos;m text overlaid on an image!
+          </BpkText>
+        </div>
+      </BpkBackgroundImage>,
     ],
   },
 ];
