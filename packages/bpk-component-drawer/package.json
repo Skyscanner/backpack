@@ -21,7 +21,7 @@
     "bpk-scrim-utils": "^3.2.37",
     "bpk-tokens": "^27.4.6",
     "prop-types": "^15.6.2",
-    "react-transition-group": "^2.4.0"
+    "react-transition-group": "^2.5.3"
   },
   "devDependencies": {
     "bpk-component-button": "^2.1.39",
