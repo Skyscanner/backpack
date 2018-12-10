@@ -107,7 +107,7 @@
     "flow-bin": "^0.86.0",
     "flow-typed": "^2.5.1",
     "globby": "^8.0.1",
-    "gulp": "^3.9.1",
+    "gulp": "^4.0.0",
     "gulp-chmod": "^2.0.0",
     "gulp-cli": "^2.0.0",
     "gulp-clone": "^2.0.1",
