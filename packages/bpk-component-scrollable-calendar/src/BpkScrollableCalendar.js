@@ -24,7 +24,7 @@ import {
 } from 'bpk-component-calendar';
 
 import React from 'react';
-import cssModules from 'bpk-react-utils/src/cssModules';
+import { cssModules } from 'bpk-react-utils';
 
 import BpkscrollableCalendarDate from './BpkScrollableCalendarDate';
 import BpkScrollableCalendarGridList from './BpkScrollableCalendarGridList';
