@@ -92,9 +92,7 @@ class BpkScrollableCalendarGridList extends React.Component {
     return (
       <List
         extraData={this.props}
-        style={
-          this.getHtmlElement().dir === 'rtl' ? { direction: 'rtl' } : null
-        }
+        style={this.getHtmlElement().dir === 'rtl' ? { direction: 'rtl' } : {}}
         width={width}
         height={height}
         deferredMeasurementCache={this.state.cache}
