@@ -24,7 +24,7 @@
   padding: 0;
   border: none;
   border-radius: $bpk-border-radius-pill;
-  background-color: $bpk-calendar-day-background-color;
+  background-color: transparent;
   font-size: $bpk-font-size-base;
   text-align: center;
   cursor: pointer;
@@ -48,7 +48,6 @@
   }
 
   &--outside {
-    background-color: $bpk-calendar-day-outside-background-color;
     color: $bpk-calendar-day-outside-color;
   }
 
@@ -72,17 +71,14 @@
   }
 
   &:disabled {
-    background-color: $bpk-calendar-day-disabled-background-color;
     color: $bpk-calendar-day-disabled-color;
     cursor: not-allowed;
 
     @include bpk-hover {
-      background-color: $bpk-calendar-day-disabled-background-color;
       color: $bpk-calendar-day-disabled-color;
     }
 
     &:active {
-      background-color: $bpk-calendar-day-disabled-background-color;
       color: $bpk-calendar-day-disabled-color;
     }
   }
