@@ -2,6 +2,16 @@
 
 [Unreleased changes](./UNRELEASED.md).
 
+# 2018-12-12 - Scrollable calendar uses react-virtualised again
+
+**Fixed:**
+
+- bpk-component-calendar: 4.4.0 => 4.4.1
+   - Date buttons now have transparent backgrounds instead of white which caused display issues in scrollabel calendar.
+
+- bpk-component-scrollable-calendar: 0.1.15 => 0.1.16
+  - Revert to use react-virtualized instead of bpk-component-infinite-scroll.
+
 # 2018-12-07 - Navigation bar fix
 
 **Fixed:**
