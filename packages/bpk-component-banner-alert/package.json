@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-banner-alert",
-  "version": "2.0.58",
+  "version": "2.0.59",
   "description": "Backpack banner alert component.",
   "main": "index.js",
   "repository": {
@@ -13,12 +13,12 @@
     "react": "^15.0.0 || ^16.0.0"
   },
   "dependencies": {
-    "bpk-animate-height": "^1.1.67",
-    "bpk-component-close-button": "^1.0.97",
-    "bpk-component-icon": "^3.23.16",
-    "bpk-mixins": "^17.11.27",
+    "bpk-animate-height": "^1.1.68",
+    "bpk-component-close-button": "^1.0.98",
+    "bpk-component-icon": "^3.23.17",
+    "bpk-mixins": "^17.11.28",
     "bpk-react-utils": "^2.7.0",
-    "bpk-tokens": "^27.4.0",
+    "bpk-tokens": "^27.4.1",
     "prop-types": "^15.6.2",
     "react-transition-group": "^1.2.1"
   }
