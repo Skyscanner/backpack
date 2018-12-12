@@ -111,3 +111,4 @@ export const UTILITIES = '/components/utilities';
 // MISC
 export const GRID_COLUMN_DEMO = '/grid-column-demo';
 export const GRID_OFFSET_DEMO = '/grid-offset-demo';
+export const BAG_CHECK = '/bag-check-bookmarklet';

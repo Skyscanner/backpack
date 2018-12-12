@@ -57,6 +57,7 @@ const sassOptions = {
 const config = {
   entry: {
     docs: './packages/bpk-docs/src/index.js',
+    bagCheck: './packages/bpk-docs/src/bag-check-bookmarklet/index.js',
   },
 
   output: {
