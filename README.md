@@ -5,13 +5,10 @@
 [![Build Status](https://travis-ci.org/Skyscanner/backpack.svg?branch=master)](https://travis-ci.org/Skyscanner/backpack)
 [![Greenkeeper badge](https://badges.greenkeeper.io/Skyscanner/backpack.svg)](https://greenkeeper.io/)
 
-## Documentation
+## Quick links
 
-https://backpack.github.io/
-
-## Changelog
-
-[View our up-to-date changelog](./CHANGELOG.md)
+- [Documentation](https://backpack.github.io/)
+- [Changelog](./CHANGELOG.md)
 
 ## Usage
 
