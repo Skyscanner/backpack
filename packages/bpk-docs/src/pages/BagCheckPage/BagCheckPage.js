@@ -40,7 +40,7 @@ const Page = () => {
   return (
     <div className={getClassName('bpk-docs-bag-check-page')}>
       <BpkText tagName="h1" textStyle="lg">
-        Drag and drop the link bellow to your bookmarks toolbar
+        Drag and drop the link below to your bookmarks toolbar.
       </BpkText>
       <BpkLink
         href={script}
