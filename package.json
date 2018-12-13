@@ -48,6 +48,7 @@
     "android": "(cd ./native && npm run android)",
     "check-owners": "npm whoami && ( node scripts/npm/get-owners.js | grep -E $(npm whoami) ) && node scripts/npm/check-owners.js",
     "publish": "npm run check-owners && npm run build && git pull --rebase && npm run flow stop && npm run test && lerna publish",
+    "release": "npm run publish",
     "danger": "danger ci",
     "prettier": "prettier --config .prettierrc --write \"**/*.js\"",
     "create-component": "node scripts/npm/create-component.js",
