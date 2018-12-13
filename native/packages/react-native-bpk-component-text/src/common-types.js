@@ -87,6 +87,7 @@ export const weightPropType = (
   props: Props,
   propName: string,
   componentName: string,
+  ...rest: Array<any>
 ) => {
   if (!isWeightValid(props[propName], props.textStyle)) {
     // eslint-disable-next-line no-console
@@ -99,7 +100,12 @@ export const weightPropType = (
     );
   }
 
-  PropTypes.oneOf(Object.keys(WEIGHT_STYLES))(props, propName, componentName);
+  PropTypes.oneOf(Object.keys(WEIGHT_STYLES))(
+    props,
+    propName,
+    componentName,
+    ...rest,
+  );
 };
 
 export const propTypes = {
