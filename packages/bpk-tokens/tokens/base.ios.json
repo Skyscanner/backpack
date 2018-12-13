@@ -788,36 +788,41 @@
       "value": "#252033ff",
       "type": "color",
       "category": "box-shadows",
-      "name": "shadowXlColor",
-      "originalValue": "{!GRAY_900}"
+      "deprecated": true,
+      "originalValue": "{!GRAY_900}",
+      "name": "shadowXlColor"
     },
     {
       "value": 12,
       "type": "size",
       "category": "box-shadows",
-      "name": "shadowXlOffsetHeight",
-      "originalValue": 12
+      "deprecated": true,
+      "originalValue": 12,
+      "name": "shadowXlOffsetHeight"
     },
     {
       "value": 0,
       "type": "size",
       "category": "box-shadows",
-      "name": "shadowXlOffsetWidth",
-      "originalValue": 0
+      "deprecated": true,
+      "originalValue": 0,
+      "name": "shadowXlOffsetWidth"
     },
     {
       "value": 0.2,
       "type": "size",
       "category": "box-shadows",
-      "name": "shadowXlOpacity",
-      "originalValue": 0.2
+      "deprecated": true,
+      "originalValue": 0.2,
+      "name": "shadowXlOpacity"
     },
     {
       "value": 50,
       "type": "size",
       "category": "box-shadows",
-      "name": "shadowXlRadius",
-      "originalValue": 50
+      "deprecated": true,
+      "originalValue": 50,
+      "name": "shadowXlRadius"
     },
     {
       "type": "size",
@@ -893,8 +898,9 @@
       "value": "19",
       "type": "size",
       "category": "line-heights",
-      "name": "textBaseLineHeight",
-      "originalValue": "{!LINE_HEIGHT_BASE}"
+      "deprecated": true,
+      "originalValue": "{!LINE_HEIGHT_BASE}",
+      "name": "textBaseLineHeight"
     },
     {
       "value": "10",
@@ -949,8 +955,9 @@
       "value": "24",
       "type": "size",
       "category": "line-heights",
-      "name": "textLgLineHeight",
-      "originalValue": "{!LINE_HEIGHT_LG}"
+      "deprecated": true,
+      "originalValue": "{!LINE_HEIGHT_LG}",
+      "name": "textLgLineHeight"
     },
     {
       "value": "14",
@@ -977,8 +984,9 @@
       "value": "17",
       "type": "size",
       "category": "line-heights",
-      "name": "textSmLineHeight",
-      "originalValue": "{!LINE_HEIGHT_SM}"
+      "deprecated": true,
+      "originalValue": "{!LINE_HEIGHT_SM}",
+      "name": "textSmLineHeight"
     },
     {
       "value": "24",
@@ -1005,8 +1013,9 @@
       "value": "29",
       "type": "size",
       "category": "line-heights",
-      "name": "textXlLineHeight",
-      "originalValue": "{!LINE_HEIGHT_XL}"
+      "deprecated": true,
+      "originalValue": "{!LINE_HEIGHT_XL}",
+      "name": "textXlLineHeight"
     },
     {
       "value": "12",
@@ -1033,8 +1042,9 @@
       "value": "14",
       "type": "size",
       "category": "line-heights",
-      "name": "textXsLineHeight",
-      "originalValue": "{!LINE_HEIGHT_XS}"
+      "deprecated": true,
+      "originalValue": "{!LINE_HEIGHT_XS}",
+      "name": "textXsLineHeight"
     },
     {
       "value": "30",
@@ -1061,8 +1071,9 @@
       "value": "43",
       "type": "size",
       "category": "line-heights",
-      "name": "textXxlLineHeight",
-      "originalValue": "{!LINE_HEIGHT_XXL}"
+      "deprecated": true,
+      "originalValue": "{!LINE_HEIGHT_XXL}",
+      "name": "textXxlLineHeight"
     },
     {
       "value": "36",
@@ -1103,15 +1114,17 @@
       "category": "touchables",
       "value": "#252033ff",
       "type": "color",
-      "name": "underlayColor",
-      "originalValue": "{!GRAY_900}"
+      "deprecated": true,
+      "originalValue": "{!GRAY_900}",
+      "name": "underlayColor"
     },
     {
       "category": "touchables",
       "value": "0.15",
       "type": "number",
-      "name": "underlayOpacity",
-      "originalValue": "0.15"
+      "deprecated": true,
+      "originalValue": "0.15",
+      "name": "underlayOpacity"
     }
   ]
 }

@@ -57,41 +57,31 @@
       "value": "{!GRAY_900}",
       "type": "color",
       "category": "box-shadows",
-      "meta": {
-        "deprecated": true
-      }
+      "deprecated": true
     },
     "SHADOW_XL_OFFSET_HEIGHT": {
       "value": 12,
       "type": "size",
       "category": "box-shadows",
-      "meta": {
-        "deprecated": true
-      }
+      "deprecated": true
     },
     "SHADOW_XL_OFFSET_WIDTH": {
       "value": 0,
       "type": "size",
       "category": "box-shadows",
-      "meta": {
-        "deprecated": true
-      }
+      "deprecated": true
     },
     "SHADOW_XL_OPACITY": {
       "value": 0.2,
       "type": "size",
       "category": "box-shadows",
-      "meta": {
-        "deprecated": true
-      }
+      "deprecated": true
     },
     "SHADOW_XL_RADIUS": {
       "value": 50,
       "type": "size",
       "category": "box-shadows",
-      "meta": {
-        "deprecated": true
-      }
+      "deprecated": true
     }
   }
 }

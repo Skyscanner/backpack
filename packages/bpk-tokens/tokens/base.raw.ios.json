@@ -1111,36 +1111,41 @@
       "value": "#252033ff",
       "type": "color",
       "category": "box-shadows",
-      "name": "SHADOW_XL_COLOR",
-      "originalValue": "{!GRAY_900}"
+      "deprecated": true,
+      "originalValue": "{!GRAY_900}",
+      "name": "SHADOW_XL_COLOR"
     },
     "SHADOW_XL_OFFSET_HEIGHT": {
       "value": 12,
       "type": "size",
       "category": "box-shadows",
-      "name": "SHADOW_XL_OFFSET_HEIGHT",
-      "originalValue": 12
+      "deprecated": true,
+      "originalValue": 12,
+      "name": "SHADOW_XL_OFFSET_HEIGHT"
     },
     "SHADOW_XL_OFFSET_WIDTH": {
       "value": 0,
       "type": "size",
       "category": "box-shadows",
-      "name": "SHADOW_XL_OFFSET_WIDTH",
-      "originalValue": 0
+      "deprecated": true,
+      "originalValue": 0,
+      "name": "SHADOW_XL_OFFSET_WIDTH"
     },
     "SHADOW_XL_OPACITY": {
       "value": 0.2,
       "type": "size",
       "category": "box-shadows",
-      "name": "SHADOW_XL_OPACITY",
-      "originalValue": 0.2
+      "deprecated": true,
+      "originalValue": 0.2,
+      "name": "SHADOW_XL_OPACITY"
     },
     "SHADOW_XL_RADIUS": {
       "value": 50,
       "type": "size",
       "category": "box-shadows",
-      "name": "SHADOW_XL_RADIUS",
-      "originalValue": 50
+      "deprecated": true,
+      "originalValue": 50,
+      "name": "SHADOW_XL_RADIUS"
     },
     "SPACING_BASE": {
       "type": "size",
@@ -1216,8 +1221,9 @@
       "value": "19",
       "type": "size",
       "category": "line-heights",
-      "name": "TEXT_BASE_LINE_HEIGHT",
-      "originalValue": "{!LINE_HEIGHT_BASE}"
+      "deprecated": true,
+      "originalValue": "{!LINE_HEIGHT_BASE}",
+      "name": "TEXT_BASE_LINE_HEIGHT"
     },
     "TEXT_CAPS_FONT_SIZE": {
       "value": "10",
@@ -1272,8 +1278,9 @@
       "value": "24",
       "type": "size",
       "category": "line-heights",
-      "name": "TEXT_LG_LINE_HEIGHT",
-      "originalValue": "{!LINE_HEIGHT_LG}"
+      "deprecated": true,
+      "originalValue": "{!LINE_HEIGHT_LG}",
+      "name": "TEXT_LG_LINE_HEIGHT"
     },
     "TEXT_SM_FONT_SIZE": {
       "value": "14",
@@ -1300,8 +1307,9 @@
       "value": "17",
       "type": "size",
       "category": "line-heights",
-      "name": "TEXT_SM_LINE_HEIGHT",
-      "originalValue": "{!LINE_HEIGHT_SM}"
+      "deprecated": true,
+      "originalValue": "{!LINE_HEIGHT_SM}",
+      "name": "TEXT_SM_LINE_HEIGHT"
     },
     "TEXT_XL_FONT_SIZE": {
       "value": "24",
@@ -1328,8 +1336,9 @@
       "value": "29",
       "type": "size",
       "category": "line-heights",
-      "name": "TEXT_XL_LINE_HEIGHT",
-      "originalValue": "{!LINE_HEIGHT_XL}"
+      "deprecated": true,
+      "originalValue": "{!LINE_HEIGHT_XL}",
+      "name": "TEXT_XL_LINE_HEIGHT"
     },
     "TEXT_XS_FONT_SIZE": {
       "value": "12",
@@ -1356,8 +1365,9 @@
       "value": "14",
       "type": "size",
       "category": "line-heights",
-      "name": "TEXT_XS_LINE_HEIGHT",
-      "originalValue": "{!LINE_HEIGHT_XS}"
+      "deprecated": true,
+      "originalValue": "{!LINE_HEIGHT_XS}",
+      "name": "TEXT_XS_LINE_HEIGHT"
     },
     "TEXT_XXL_FONT_SIZE": {
       "value": "30",
@@ -1384,8 +1394,9 @@
       "value": "43",
       "type": "size",
       "category": "line-heights",
-      "name": "TEXT_XXL_LINE_HEIGHT",
-      "originalValue": "{!LINE_HEIGHT_XXL}"
+      "deprecated": true,
+      "originalValue": "{!LINE_HEIGHT_XXL}",
+      "name": "TEXT_XXL_LINE_HEIGHT"
     },
     "TEXT_XXXL_FONT_SIZE": {
       "value": "36",
@@ -1426,15 +1437,17 @@
       "category": "touchables",
       "value": "#252033ff",
       "type": "color",
-      "name": "UNDERLAY_COLOR",
-      "originalValue": "{!GRAY_900}"
+      "deprecated": true,
+      "originalValue": "{!GRAY_900}",
+      "name": "UNDERLAY_COLOR"
     },
     "UNDERLAY_OPACITY": {
       "category": "touchables",
       "value": "0.15",
       "type": "number",
-      "name": "UNDERLAY_OPACITY",
-      "originalValue": "0.15"
+      "deprecated": true,
+      "originalValue": "0.15",
+      "name": "UNDERLAY_OPACITY"
     }
   },
   "propKeys": [
