@@ -39,6 +39,13 @@ export default ({ head = {}, html = '', assets = {} }) => `<!doctype html>
   ${html}
 </div>
 
+<script type="text/javascript">
+  window.BPK_DOC_GLOBALS = window.BPK_DOC_GLOBALS || {};
+  window.BPK_DOC_GLOBALS.entries = {
+    bagCheck: '${assets.bagCheck.js}',
+  }
+</script>
+
 <script src="/${assets.docs.js}" async></script>
 
 </body>
