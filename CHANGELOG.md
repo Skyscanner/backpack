@@ -2,6 +2,17 @@
 
 [Unreleased changes](./UNRELEASED.md).
 
+# 2018-12-13 - Fixes for text and text input components
+
+**Fixed:**
+
+- react-native-bpk-component-text: 4.0.1 => 4.0.2
+  - Remove warning about invalid prop type usage.
+
+- react-native-bpk-component-text-input: 3.0.7 => 3.0.8
+- react-native-bpk-component-phone-input: 3.0.7 => 3.0.8
+  - Removed line height to fix an issue where overflowing content didn't scroll correctly.
+
 # 2018-12-12 - Scrollable calendar uses react-virtualised again
 
 **Fixed:**
