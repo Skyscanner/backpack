@@ -84,24 +84,6 @@ if (packagesModified && !unreleasedModified && !declaredTrivial) {
   );
 }
 
-// If source files have changed, the snapshots should have been updated.
-const componentSourceFilesModified = fileChanges.some(
-  filePath =>
-    // packages/(one or more chars)/src/(one or more chars).js
-    filePath.match(/packages\/.*bpk-component.+\/src\/.+\.js/) &&
-    !filePath.includes('-test.'),
-);
-
-const snapshotsModified = fileChanges.some(filePath =>
-  filePath.endsWith('.js.snap'),
-);
-
-if (componentSourceFilesModified && !snapshotsModified) {
-  warn(
-    "Package source files (e.g. `packages/package-name/src/Component.js`) were updated, but snapshots weren't. Have you checked that the tests still pass?",
-  ); // eslint-disable-line max-len
-}
-
 // Ensure package-lock changes are intentional.
 const lockFileUpdated = includes(modifiedFiles, 'package-lock.json');
 if (lockFileUpdated) {
