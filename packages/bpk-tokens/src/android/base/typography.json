@@ -1,5 +1,7 @@
 {
-  "imports": ["./aliases.json"],
+  "imports": [
+    "./aliases.json"
+  ],
   "props": {
     "FONT_FAMILY": {
       "value": "{!FONT_FAMILY}",
@@ -16,7 +18,6 @@
       "type": "font",
       "category": "typesettings"
     },
-
     "FONT_SIZE_CAPS": {
       "value": "{!FONT_SIZE_CAPS}",
       "type": "font-size",
@@ -127,7 +128,6 @@
       "type": "letter-spacing",
       "category": "letter-spacings"
     },
-
     "TEXT_CAPS_LETTER_SPACING": {
       "value": "{!LETTER_SPACING_CAPS}",
       "type": "letter-spacing",
@@ -162,9 +162,7 @@
       "value": "{!LINE_HEIGHT_XS}",
       "type": "size",
       "category": "line-heights",
-      "meta": {
-        "deprecated": true
-      }
+      "deprecated": true
     },
     "TEXT_SM_LETTER_SPACING": {
       "value": "{!LETTER_SPACING_SM}",
@@ -185,9 +183,7 @@
       "value": "{!LINE_HEIGHT_SM}",
       "type": "size",
       "category": "line-heights",
-      "meta": {
-        "deprecated": true
-      }
+      "deprecated": true
     },
     "TEXT_BASE_LETTER_SPACING": {
       "value": "{!LETTER_SPACING_BASE}",
@@ -208,9 +204,7 @@
       "value": "{!LINE_HEIGHT_BASE}",
       "type": "size",
       "category": "line-heights",
-      "meta": {
-        "deprecated": true
-      }
+      "deprecated": true
     },
     "TEXT_LG_LETTER_SPACING": {
       "value": "{!LETTER_SPACING_LG}",
@@ -231,9 +225,7 @@
       "value": "{!LINE_HEIGHT_LG}",
       "type": "size",
       "category": "line-heights",
-      "meta": {
-        "deprecated": true
-      }
+      "deprecated": true
     },
     "TEXT_XL_LETTER_SPACING": {
       "value": "{!LETTER_SPACING_XL}",
@@ -254,9 +246,7 @@
       "value": "{!LINE_HEIGHT_XL}",
       "type": "size",
       "category": "line-heights",
-      "meta": {
-        "deprecated": true
-      }
+      "deprecated": true
     },
     "TEXT_XXL_LETTER_SPACING": {
       "value": "{!LETTER_SPACING_XXL}",
@@ -277,9 +267,7 @@
       "value": "{!LINE_HEIGHT_XXL}",
       "type": "size",
       "category": "line-heights",
-      "meta": {
-        "deprecated": true
-      }
+      "deprecated": true
     },
     "TEXT_XXXL_LETTER_SPACING": {
       "value": "{!LETTER_SPACING_XXXL}",

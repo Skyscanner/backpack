@@ -9,16 +9,12 @@
     "UNDERLAY_COLOR": {
       "value": "{!GRAY_900}",
       "type": "color",
-      "meta": {
-        "deprecated": true
-      }
+      "deprecated": true
     },
     "UNDERLAY_OPACITY": {
       "value": "0.15",
       "type": "number",
-      "meta": {
-        "deprecated": true
-      }
+      "deprecated": true
     },
     "TOUCHABLE_OVERLAY_COLOR": {
       "value": "{!GRAY_900}",

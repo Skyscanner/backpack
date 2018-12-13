@@ -18,9 +18,7 @@
     },
     "ZINDEX_MODAL_SCRIM": {
       "value": "{!ZINDEX_SCRIM}",
-      "meta": {
-        "deprecated": true
-      }
+      "deprecated": true
     },
     "ZINDEX_SCRIM": {
       "value": "{!ZINDEX_SCRIM}"

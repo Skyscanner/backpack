@@ -33,9 +33,7 @@
     "BUTTON_BACKGROUND_IMAGE": {
       "value": "linear-gradient(-180deg, {!GREEN_500} 0%, {!GREEN_600} 100%)",
       "type": "background-image",
-      "meta": {
-        "deprecated": true
-      }
+      "deprecated": true
     },
     "BUTTON_GRADIENT_START_COLOR": {
       "value": "{!GREEN_500}",
@@ -188,23 +186,17 @@
     "BUTTON_SECONDARY_BOX_SHADOW": {
       "value": "0 0 0 2px {!GRAY_100} inset",
       "type": "box-shadow",
-      "meta": {
-        "deprecated": true
-      }
+      "deprecated": true
     },
     "BUTTON_SECONDARY_HOVER_BOX_SHADOW": {
       "value": "0 0 0 2px {!BLUE_500} inset",
       "type": "box-shadow",
-      "meta": {
-        "deprecated": true
-      }
+      "deprecated": true
     },
     "BUTTON_SECONDARY_ACTIVE_BOX_SHADOW": {
       "value": "0 0 0 3px {!BLUE_500} inset",
       "type": "box-shadow",
-      "meta": {
-        "deprecated": true
-      }
+      "deprecated": true
     },
     "BUTTON_SECONDARY_BORDER_COLOR": {
       "value": "{!GRAY_100}",

@@ -1188,8 +1188,9 @@
       "value": "19",
       "type": "size",
       "category": "line-heights",
-      "name": "TEXT_BASE_LINE_HEIGHT",
-      "originalValue": "{!LINE_HEIGHT_BASE}"
+      "deprecated": true,
+      "originalValue": "{!LINE_HEIGHT_BASE}",
+      "name": "TEXT_BASE_LINE_HEIGHT"
     },
     "TEXT_CAPS_FONT_SIZE": {
       "value": "10",
@@ -1244,8 +1245,9 @@
       "value": "23",
       "type": "size",
       "category": "line-heights",
-      "name": "TEXT_LG_LINE_HEIGHT",
-      "originalValue": "{!LINE_HEIGHT_LG}"
+      "deprecated": true,
+      "originalValue": "{!LINE_HEIGHT_LG}",
+      "name": "TEXT_LG_LINE_HEIGHT"
     },
     "TEXT_SM_FONT_SIZE": {
       "value": "14",
@@ -1272,8 +1274,9 @@
       "value": "16",
       "type": "size",
       "category": "line-heights",
-      "name": "TEXT_SM_LINE_HEIGHT",
-      "originalValue": "{!LINE_HEIGHT_SM}"
+      "deprecated": true,
+      "originalValue": "{!LINE_HEIGHT_SM}",
+      "name": "TEXT_SM_LINE_HEIGHT"
     },
     "TEXT_XL_FONT_SIZE": {
       "value": "24",
@@ -1300,8 +1303,9 @@
       "value": "28",
       "type": "size",
       "category": "line-heights",
-      "name": "TEXT_XL_LINE_HEIGHT",
-      "originalValue": "{!LINE_HEIGHT_XL}"
+      "deprecated": true,
+      "originalValue": "{!LINE_HEIGHT_XL}",
+      "name": "TEXT_XL_LINE_HEIGHT"
     },
     "TEXT_XS_FONT_SIZE": {
       "value": "12",
@@ -1328,8 +1332,9 @@
       "value": "14",
       "type": "size",
       "category": "line-heights",
-      "name": "TEXT_XS_LINE_HEIGHT",
-      "originalValue": "{!LINE_HEIGHT_XS}"
+      "deprecated": true,
+      "originalValue": "{!LINE_HEIGHT_XS}",
+      "name": "TEXT_XS_LINE_HEIGHT"
     },
     "TEXT_XXL_FONT_SIZE": {
       "value": "30",
@@ -1356,8 +1361,9 @@
       "value": "42",
       "type": "size",
       "category": "line-heights",
-      "name": "TEXT_XXL_LINE_HEIGHT",
-      "originalValue": "{!LINE_HEIGHT_XXL}"
+      "deprecated": true,
+      "originalValue": "{!LINE_HEIGHT_XXL}",
+      "name": "TEXT_XXL_LINE_HEIGHT"
     },
     "TEXT_XXXL_FONT_SIZE": {
       "value": "36",

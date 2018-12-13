@@ -9,30 +9,22 @@
     "MODAL_SCRIM_BACKGROUND_COLOR": {
       "value": "{!GRAY_300}",
       "type": "color",
-      "meta": {
-        "deprecated": true
-      }
+      "deprecated": true
     },
     "MODAL_SCRIM_INITIAL_OPACITY": {
       "value": "0",
       "type": "number",
-      "meta": {
-        "deprecated": true
-      }
+      "deprecated": true
     },
     "MODAL_SCRIM_OPACITY": {
       "value": ".7",
       "type": "number",
-      "meta": {
-        "deprecated": true
-      }
+      "deprecated": true
     },
     "MODAL_SCRIM_MOBILE_OPACITY": {
       "value": "1",
       "type": "number",
-      "meta": {
-        "deprecated": true
-      }
+      "deprecated": true
     },
     "MODAL_BACKGROUND_COLOR": {
       "value": "{!WHITE}",
@@ -61,16 +53,12 @@
     "MODAL_CLOSE_ICON_FILL": {
       "value": "{!GRAY_500}",
       "type": "color",
-      "meta": {
-        "deprecated": true
-      }
+      "deprecated": true
     },
     "MODAL_CLOSE_ICON_HOVER_FILL": {
       "value": "{!GRAY_700}",
       "type": "color",
-      "meta": {
-        "deprecated": true
-      }
+      "deprecated": true
     },
     "MODAL_CONTENT_PADDING": {
       "value": "{!SPACING_SM}",
