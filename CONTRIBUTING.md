@@ -316,7 +316,7 @@ To run these manually, from inside the `/native` folder, run `npm run android:em
     - `npm run lerna updated`
     - `npm run lerna diff <package-name>`
 - Make sure you are an owner of the npm packages (speak to a member of the Backpack squad).
-- **Do not run `npm publish`. Instead, run `npm run publish`** (this will run `lerna publish`).
+- **Run `npm run release`** (this will run `lerna publish`). Do not run `npm publish`.
 - You’ll be asked to specify a new version for every package that has changed. Options are *patch*, *minor* or *major*. These should directly align to the entries you put in the [unreleased changelog](/unreleased.md) in step 1.
 - You’ll be asked at the end to confirm. Note you can still exit without making these changes.
 - Move entries from [unreleased.md](/unreleased.md) to the [changelog](/changelog.md). Update the package versions for the new changes, and group them under a title with today’s date and a brief summary of what has changed.
