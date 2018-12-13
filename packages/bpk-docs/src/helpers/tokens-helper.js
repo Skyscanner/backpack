@@ -70,7 +70,7 @@ export const getTokenValue = (token, platform) => {
 export const getTokens = (tokens, keys = null) =>
   _.chain(keys || Object.keys(tokens))
     .reduce((acc, key) => {
-      if (!tokens[key]) return acc;
+      if (!tokens[key] || tokens[key].deprecated) return acc;
       acc[key] = tokens[key];
       return acc;
     }, {})
