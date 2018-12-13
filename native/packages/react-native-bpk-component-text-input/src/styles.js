@@ -67,7 +67,6 @@ const styles = StyleSheet.create({
     minHeight,
     fontSize: textBaseFontSize,
     fontWeight: textBaseFontWeight,
-    lineHeight: lineHeightBase,
     color: colorGray700,
     borderBottomWidth: 0,
     textAlign: I18nManager.isRTL ? 'right' : 'left',
