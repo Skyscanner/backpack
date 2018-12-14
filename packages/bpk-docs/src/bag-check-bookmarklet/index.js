@@ -16,16 +16,20 @@
  * limitations under the License.
  */
 
-const BUCKET_BASE_PATH =
-  'https://s3-eu-west-1.amazonaws.com/skyscanner-prod-sttc-int-eu-west-1/sttc/backpack/bag-check';
+const BUCKET_BASE_PATH = 'https://js.skyscnr.com/sttc/backpack/bag-check';
 
-const error = msg => alert(`${msg} - Please contact #backpack`); // eslint-disable-line no-alert
+const error = (msg, ex = null) => {
+  alert(`${msg} - Please contact #backpack`); // eslint-disable-line no-alert
+  if (ex) {
+    console.error('BagCheck failed:', ex); // eslint-disable-line no-console
+  }
+};
 
 const fetchLatest = basePath => {
   const script = document.createElement('script');
   script.src = `${basePath}/latest.js`;
   script.type = 'text/javascript';
-  script.onerror = e => error(`Failed with error: ${e}`);
+  script.onerror = e => error(`Failed to download BagCheck`, e);
 
   document.getElementsByTagName('body')[0].appendChild(script);
 };
@@ -33,7 +37,7 @@ const fetchLatest = basePath => {
 // Called when latest.js loads
 window.bagCheckLatestLoaded = latest => {
   if (!Object.prototype.hasOwnProperty.call(latest, 'js')) {
-    error('`js` key missing in latest.js.');
+    error('`js` key missing in latest.js');
     return;
   }
 
