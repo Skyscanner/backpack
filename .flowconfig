@@ -1,4 +1,5 @@
 [ignore]
+<PROJECT_ROOT>/backpack-react-native/.*
 .*/node_modules/jsonlint/.*
 .*/node_modules/config-chain/test/broken.json
 
@@ -11,6 +12,7 @@
 [options]
 module.name_mapper.extension='scss' -> '<PROJECT_ROOT>/scripts/stubs/styleStub.js'
 module.name_mapper.extension='md' -> '<PROJECT_ROOT>/scripts/stubs/fileStub.js'
+module.name_mapper.extension='png' -> '<PROJECT_ROOT>/scripts/stubs/fileStub.js'
 emoji=true
 
 module.file_ext=.js

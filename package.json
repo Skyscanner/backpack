@@ -158,6 +158,9 @@
     "transformIgnorePatterns": [
       "node_modules/(?!bpk)"
     ],
+    "testPathIgnorePatterns": [
+      "backpack-react-native/"
+    ],
     "moduleNameMapper": {
       "react-transition-group/CSSTransition": "<rootDir>/scripts/stubs/cssTransitionStub.js",
       "^.+\\.scss$": "<rootDir>/scripts/stubs/styleStub.js",

@@ -23,7 +23,6 @@
 import fs from 'fs';
 import { includes } from 'lodash';
 import { danger, fail, warn, message } from 'danger';
-import { props as iosProps } from './packages/bpk-tokens/tokens/base.raw.ios.json';
 
 import * as meta from './meta.json';
 
@@ -48,25 +47,14 @@ if (isPrExternal) {
   message('Thanks for the PR 🎉.');
 }
 
-// Ensure new web components are extensible by consumers.
-const webComponentIntroduced = createdFiles.some(filePath =>
+// Ensure new components are extensible by consumers.
+const componentIntroduced = createdFiles.some(filePath =>
   filePath.match(/packages\/bpk-component.+\/src\/.+\.js/),
 );
 
-if (webComponentIntroduced) {
+if (componentIntroduced) {
   warn(
-    'It looks like you are introducing a web component. Ensure the component style is extensible via `className`.',
-  );
-}
-
-// Ensure new native components are extensible by consumers.
-const nativeComponentIntroduced = createdFiles.some(filePath =>
-  filePath.match(/native\/packages\/react-native-bpk-component.+\/src\/.+\.js/),
-);
-
-if (nativeComponentIntroduced) {
-  warn(
-    'It looks like you are introducing a native component. Ensure the component style is extensible via `style`.',
+    'It looks like you are introducing a new component. Ensure the component style is extensible via `className`.',
   );
 }
 
@@ -74,8 +62,7 @@ if (nativeComponentIntroduced) {
 const unreleasedModified = includes(modifiedFiles, 'UNRELEASED.md');
 const packagesModified = fileChanges.some(
   filePath =>
-    (filePath.startsWith('packages/') ||
-      filePath.startsWith('native/packages/')) &&
+    filePath.startsWith('packages/') &&
     !filePath.startsWith('packages/bpk-docs/'),
 );
 if (packagesModified && !unreleasedModified && !declaredTrivial) {
@@ -127,26 +114,6 @@ if (unlicensedFiles.length > 0) {
   fail(
     `These new files do not include the license heading: ${unlicensedFiles.join(
       ', ',
-    )}`,
-  );
-}
-
-// iOS tokens should not appear in Android snapshot files
-const androidSnapshotsWithIosTokens = fileChanges.filter(filePath => {
-  if (!filePath.match(/\.android\.js\.snap$/)) {
-    return false;
-  }
-
-  const fileContent = fs.readFileSync(filePath).toString();
-
-  return fileContent.includes(`"fontFamily": ${iosProps.FONT_FAMILY.VALUE},`);
-});
-
-if (androidSnapshotsWithIosTokens.length > 0) {
-  // eslint-disable-next-line max-len
-  fail(
-    `iOS tokens have been found in the following Android snapshots:\n  - ${androidSnapshotsWithIosTokens.join(
-      '\n  - ',
     )}`,
   );
 }
