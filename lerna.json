@@ -1,6 +1,6 @@
 {
   "version": "independent",
-  "packages": ["packages/*", "native/packages/*"],
+  "packages": ["packages/*"],
   "command": {
     "bootstrap": {
       "ignore": ["bpk-tether"]

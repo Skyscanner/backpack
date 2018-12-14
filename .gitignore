@@ -13,7 +13,3 @@ sassdoc-data.json
 backpack.iml
 yarn.lock
 /packages/*/changelog.md
-native/android/captures
-*.xcworkspace
-native/ios/Pods
-native/android/backpack.keystore

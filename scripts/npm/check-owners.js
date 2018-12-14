@@ -85,10 +85,8 @@ const verifyMaintainers = data => {
 
 console.log(`Maintainers are:\n  ${owners.join('\n  ')}\n`);
 
-Promise.all([readdir('packages/'), readdir('native/packages/')])
-  .then(packages =>
-    [...packages[0], ...packages[1]].filter(i => !i.startsWith('.')),
-  )
+readdir('packages/')
+  .then(packages => packages.filter(i => !i.startsWith('.')))
   .then(packages => Promise.all(packages.map(getPackageMaintainers)))
   .then(maintainers => maintainers.forEach(verifyMaintainers))
   .then(() => {
