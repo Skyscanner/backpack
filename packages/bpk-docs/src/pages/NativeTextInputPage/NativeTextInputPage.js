@@ -17,11 +17,11 @@
  */
 
 import React from 'react';
-import readme from 'react-native-bpk-component-text-input/README.md';
-import iosScreenshot from 'react-native-bpk-component-text-input/screenshots/ios/text-inputs.png';
-import iosScreenshotWithAccessoryView from 'react-native-bpk-component-text-input/screenshots/ios/text-inputs-with-accessory-view.png';
-import androidScreenshot from 'react-native-bpk-component-text-input/screenshots/android/text-inputs.png';
-import androidScreenshotWithAccessoryView from 'react-native-bpk-component-text-input/screenshots/android/text-inputs-with-accessory-view.png';
+import readme from '../../../../../backpack-react-native/packages/react-native-bpk-component-text-input/README.md';
+import iosScreenshot from '../../../../../backpack-react-native/packages/react-native-bpk-component-text-input/screenshots/ios/text-inputs.png';
+import iosScreenshotWithAccessoryView from '../../../../../backpack-react-native/packages/react-native-bpk-component-text-input/screenshots/ios/text-inputs-with-accessory-view.png';
+import androidScreenshot from '../../../../../backpack-react-native/packages/react-native-bpk-component-text-input/screenshots/android/text-inputs.png';
+import androidScreenshotWithAccessoryView from '../../../../../backpack-react-native/packages/react-native-bpk-component-text-input/screenshots/android/text-inputs-with-accessory-view.png';
 
 import IntroBlurb from '../../components/IntroBlurb';
 import DocsPageBuilder from '../../components/DocsPageBuilder';

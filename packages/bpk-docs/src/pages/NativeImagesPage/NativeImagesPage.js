@@ -17,13 +17,13 @@
  */
 
 import React from 'react';
-import readme from 'react-native-bpk-component-image/README.md';
+import readme from '../../../../../backpack-react-native/packages/react-native-bpk-component-image/README.md';
 
-import iosScreenshotDefault from 'react-native-bpk-component-image/screenshots/ios/default.png';
-import androidScreenshotDefault from 'react-native-bpk-component-image/screenshots/android/default.png';
+import iosScreenshotDefault from '../../../../../backpack-react-native/packages/react-native-bpk-component-image/screenshots/ios/default.png';
+import androidScreenshotDefault from '../../../../../backpack-react-native/packages/react-native-bpk-component-image/screenshots/android/default.png';
 
-import iosScreenshotNoBorderRadius from 'react-native-bpk-component-image/screenshots/ios/no-border-radius.png';
-import androidScreenshotNoBorderRadius from 'react-native-bpk-component-image/screenshots/android/no-border-radius.png';
+import iosScreenshotNoBorderRadius from '../../../../../backpack-react-native/packages/react-native-bpk-component-image/screenshots/ios/no-border-radius.png';
+import androidScreenshotNoBorderRadius from '../../../../../backpack-react-native/packages/react-native-bpk-component-image/screenshots/android/no-border-radius.png';
 
 import DocsPageBuilder from '../../components/DocsPageBuilder';
 
