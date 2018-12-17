@@ -93,6 +93,7 @@ class BpkCalendarGrid extends Component {
       maxDate,
       ignoreOutsideDate,
       dateProps,
+      cellClassName,
     } = this.props;
 
     const { calendarMonthWeeks, daysOfWeek } = this.state;
@@ -140,6 +141,7 @@ class BpkCalendarGrid extends Component {
               maxDate={maxDate}
               ignoreOutsideDate={ignoreOutsideDate}
               dateProps={dateProps}
+              cellClassName={cellClassName}
             />
           ))}
         </tbody>
@@ -157,6 +159,7 @@ export const propTypes = {
   month: PropTypes.instanceOf(Date).isRequired,
   // Optional
   className: PropTypes.string,
+  cellClassName: PropTypes.string,
   dateModifiers: CustomPropTypes.DateModifiers,
   focusedDate: PropTypes.instanceOf(Date),
   isKeyboardFocusable: PropTypes.bool,
@@ -193,6 +196,7 @@ BpkCalendarGrid.defaultProps = {
   weekStartsOn: 1,
   ignoreOutsideDate: false,
   dateProps: null,
+  cellClassName: null,
 };
 
 export default BpkCalendarGrid;

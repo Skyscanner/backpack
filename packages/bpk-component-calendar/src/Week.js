@@ -68,6 +68,7 @@ class Week extends Component {
       'showWeekendSeparator',
       'weekStartsOn',
       'dates',
+      'cellClassName',
     ];
 
     if (!shallowEqualProps(this.props, nextProps, shallowProps)) {
@@ -146,6 +147,7 @@ class Week extends Component {
       <tr className={getClassName('bpk-calendar-grid__week')}>
         {this.props.dates.map(date => (
           <DateContainer
+            className={this.props.cellClassName}
             isEmptyCell={!isSameMonth(date, month) && ignoreOutsideDate}
             key={date.getDate()}
             weekendStart={
@@ -197,6 +199,7 @@ Week.propTypes = {
   focusedDate: PropTypes.instanceOf(Date),
   maxDate: PropTypes.instanceOf(Date),
   minDate: PropTypes.instanceOf(Date),
+  cellClassName: PropTypes.string,
   onDateClick: PropTypes.func,
   onDateKeyDown: PropTypes.func,
   selectedDate: PropTypes.instanceOf(Date),
@@ -205,6 +208,7 @@ Week.propTypes = {
 };
 
 Week.defaultProps = {
+  cellClassName: null,
   focusedDate: null,
   maxDate: null,
   minDate: null,
@@ -227,6 +231,9 @@ const DateContainer = props => {
   if (props.weekendEnd) {
     classNames.push(getClassName('bpk-calendar-grid__date--weekend-end'));
   }
+  if (props.className) {
+    classNames.push(props.className);
+  }
 
   return (
     <td aria-hidden={props.isEmptyCell} className={classNames.join(' ')}>
@@ -240,6 +247,11 @@ DateContainer.propTypes = {
   weekendStart: PropTypes.bool.isRequired,
   weekendEnd: PropTypes.bool.isRequired,
   isEmptyCell: PropTypes.bool.isRequired,
+  className: PropTypes.string,
+};
+
+DateContainer.defaultProps = {
+  className: null,
 };
 
 export default Week;
