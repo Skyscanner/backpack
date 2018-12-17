@@ -49,7 +49,7 @@ export type Props = {
   renderSeeMoreComponent: ?({
     onSeeMoreClick: (event: SyntheticEvent<any>) => mixed,
   }) => Element<any>,
-  seeMoreAfter: number,
+  seeMoreAfter: ?number,
 };
 
 export type State = {
