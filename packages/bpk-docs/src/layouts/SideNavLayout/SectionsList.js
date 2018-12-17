@@ -134,8 +134,8 @@ type Props = {
   activeSection: string,
   onMenuToggle: () => mixed,
   onSectionChange: (activeSection: string) => mixed,
-  expanded?: boolean,
-  className?: string,
+  expanded: boolean,
+  className: ?string,
 };
 
 const SectionsList = (props: Props) => {
