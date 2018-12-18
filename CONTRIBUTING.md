@@ -59,64 +59,12 @@ If you use [nvm](https://github.com/creationix/nvm) or [nave](https://github.com
 
 To install npm, use `npm install --global npm@^6.4.1`.
 
-### React Native
 
-> Skip this section if you don't intend to develop React Native components.
+### Android, iOS and React Native
 
-<details>
-<summary>iOS</summary>
+Backpack also supports React Native, plus native Android and iOS.
 
-Install XCode from the [App Store](https://itunes.apple.com/gb/app/xcode/id497799835?mt=12). Once installed, open it and accept the licence agreement. You're free to close it after that.
-
-We use [Cocoapods](https://cocoapods.org) to install some iOS-specific dependencies. Cocoapods uses Ruby, so you'll need to install that too. [rbenv](https://github.com/rbenv/rbenv) and [rvm](https://rvm.io/) are both good ways to get Ruby. The version of Ruby you'll need is specified in `native/ios/.ruby-version`.
-
-Once you have Ruby, install [Bundler](https://bundler.io) with `gem install bundler`.
-
-</details>
-
-<details>
-<summary>Android</summary>
-
-Get [Homebrew](https://brew.sh/) if you don't already have it.
-
-Install Watchman with `brew install watchman`, then install Java 8 with `brew tap caskroom/versions && brew cask install java8`.
-
-Get Android Studio with `brew cask install android-studio`. Once installed, open it and a setup wizard will guide you through installing lots of extra things like the Android SDK (choose *Standard* installation). You may be asked for your password during this. You're free to close Android Studio once this is done.
-
-Add an environment variable pointing to the SDK location to your `~/.bash_profile`
-(or similarly used file):
-
-```
-echo "export ANDROID_HOME=\"$HOME/Library/Android/sdk\"" >> ~/.bash_profile
-echo "export ANDROID_SDK_ROOT=\"$HOME/Library/Android/sdk\"" >> ~/.bash_profile
-source ~/.bash_profile
-```
-
-Accept the SDK licences:
-
-```
-$ANDROID_SDK_ROOT/tools/bin/sdkmanager --licenses
-```
-
-Download Android system images for the minimum and targeted API levels. Note that you may get a warning about a `.cfg` file not being present. You're safe to ignore this.
-
-```
-$ANDROID_SDK_ROOT/tools/bin/sdkmanager "system-images;android-27;google_apis;x86"
-$ANDROID_SDK_ROOT/tools/bin/sdkmanager "system-images;android-21;google_apis;x86"
-```
-Create Android Virtual Devices (AVDs):
-
-```
-$ANDROID_SDK_ROOT/tools/bin/avdmanager create avd --name "bpk-avd" --package "system-images;android-27;google_apis;x86" --device "pixel" && cp native/android/bpk-avd.ini ~/.android/avd/bpk-avd.avd/config.ini
-$ANDROID_SDK_ROOT/tools/bin/avdmanager create avd --name "bpk-avd-min" --package "system-images;android-21;google_apis;x86" --device "Nexus 5"
-```
-</details>
-
-### Android and iOS (not React Native)
-
-Backpack also supports native Android and iOS. This is separate from React Native, using the Android SDK and UIKit.
-
-They can be found at [backpack-android](https://github.com/skyscanner/backpack-android) and [backpack-ios](https://github.com/skyscanner/backpack-ios).
+They can be found at [backpack-android](https://github.com/skyscanner/backpack-android) and [backpack-ios](https://github.com/skyscanner/backpack-ios) and [backpack-react-native](https://github.com/skyscanner/backpack-react-native)
 
 ### Code style
 
@@ -141,27 +89,6 @@ When you run `npm install`, Lerna is bootstrapped automatically as a post-instal
 
 </details>
 
-#### React Native
-
-> Skip this section if you don't intend to develop React Native components.
-
-<details>
-<summary>iOS</summary>
-
-From inside `native/ios`, run `bundler install` followed by `bundle exec pod install`.
-</details>
-
-<details>
-<summary>Android</summary>
-
-To ensure that maps powered by Google work set the `google_maps_api_key` in `native/android/local.properties` and make sure you are using the backpack.keystore.
-
-##### APK signing
-
-For members of Backpack we have a keystore tied to our Google Maps API key in LastPass. Retrieve this key and place it in `native/android/backpack.keystore`. For contributors who are not members of Backpack nothing needs to be done, but Google Maps will not work. If you need Google Maps to work you'll need to supply your own Google Maps Api Key and possible keystore.
-
-</details>
-
 ### Build the code
 
 Backpack's code depends on some things that must be built first, such as icon fonts, SVGs and tokens.
@@ -170,21 +97,11 @@ Use `npm run build` to do this.
 
 ### Run the development environment
 
-We use [Storybook](https://storybook.js.org/) for our development environment. The instructions for running it are different, depending on whether you're running the web or React Native storybook.
+We use [Storybook](https://storybook.js.org/) for our development environment.
 
 #### Web
 
 Run `npm start` to start the storybook server, then go to [http://localhost:9001](http://localhost:9001) in a web browser to view it.
-
-#### React Native
-
-1. Run `npm run native` to start the storybook server.
-2. Open another terminal tab/window.
-3. Run `npm run ios` to run the Backpack app on an iPhone simulator.
-4. Run `npm run android` to run the Backpack app on an Android emulator.
-5. Go to [http://localhost:7007](http://localhost:7007) in a web browser.
-
-At this point, you should have a functioning development environment running on your local machine.
 
 ## Adding a new component
 
@@ -263,9 +180,9 @@ Bear in mind that small, incremental pull requests are likely to be reviewed fas
 <details>
 <summary>Run tests</summary>
 
-`npm test` will run all tests for both web and React Native. It will pick up any files that end in `-test.js`, so you don't need to do anything to make Jest pick them up. You can also use `npm run test:native` to only run React Native tests.
+`npm test` will pick up any files that end in `-test.js`, so you don't need to do anything to make Jest pick them up.
 
-You can also run the tests in 'watch mode', which means the process will continually run and run tests every time files change. Use `npm run jest:watch` to do this, or `npm run jest:native:watch` to only run them for React Native.
+You can also run the tests in 'watch mode', which means the process will continually run and run tests every time files change. Use `npm run jest:watch` to do this.
 
 </details>
 
@@ -300,15 +217,6 @@ The web Map component page requires an environment variable named `GOOGLE_MAPS_A
 </details>
 
 <details>
-<summary>Run Android emulators manually</summary>
-
-The setup process detailed in *[Prerequisites](#prerequisites)* created two Android emulators. One with API version 27 and another with 21.
-
-To run these manually, from inside the `/native` folder, run `npm run android:emulator` or `npm run android:emulator:min` to run API versions 27 and 21 respectively.
-
-</details>
-
-<details>
 <summary>Publish packages (Backpack squad members only)</summary>
 
 - Update the [unreleased changelog](/unreleased.md) with every package that has changed, separating out breaking changes (*major*), additions (*minor*) and fixes (*patch*) changes (you should see examples of this in previous entries of the [changelog](/changelog.md)).
@@ -330,7 +238,7 @@ When a component is released for the first time on npm, remember to add the comp
 
 ## Submodules
 
-`backpack-android` and `backpack-ios` folders are git submodules used solely for documentation. They shouldn't be directly used for anything else.
+`backpack-android`, `backpack-ios` and `backpack-react-native` folders are git submodules used solely for documentation. They shouldn't be directly used for anything else.
 
 The documentation build will ensure the local submodules are up to date before using it so there is no need to do any git command directly. That being
 said, from time to time it's good to update the submodules to point to a newer commit so fewer changes will be pulled before each doc build.

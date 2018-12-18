@@ -17,10 +17,10 @@
  */
 
 import React from 'react';
-import readme from 'react-native-bpk-component-button-link/README.md';
+import readme from '../../../../../backpack-react-native/packages/react-native-bpk-component-button-link/README.md';
 
-import iosScreenshot from 'react-native-bpk-component-button-link/screenshots/ios/default.png';
-import androidScreenshot from 'react-native-bpk-component-button-link/screenshots/android/default.png';
+import iosScreenshot from '../../../../../backpack-react-native/packages/react-native-bpk-component-button-link/screenshots/ios/default.png';
+import androidScreenshot from '../../../../../backpack-react-native/packages/react-native-bpk-component-button-link/screenshots/android/default.png';
 
 import DocsPageBuilder from '../../components/DocsPageBuilder';
 

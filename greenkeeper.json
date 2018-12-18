@@ -81,43 +81,6 @@
         "packages/bpk-theming/package.json",
         "packages/bpk-tokens/package.json"
       ]
-    },
-    "native": {
-      "packages": [
-        "native/package.json",
-        "native/packages/react-native-bpk-component-alert/package.json",
-        "native/packages/react-native-bpk-component-animate-height/package.json",
-        "native/packages/react-native-bpk-component-badge/package.json",
-        "native/packages/react-native-bpk-component-banner-alert/package.json",
-        "native/packages/react-native-bpk-component-boilerplate/package.json",
-        "native/packages/react-native-bpk-component-button-link/package.json",
-        "native/packages/react-native-bpk-component-button/package.json",
-        "native/packages/react-native-bpk-component-card/package.json",
-        "native/packages/react-native-bpk-component-carousel-indicator/package.json",
-        "native/packages/react-native-bpk-component-carousel/package.json",
-        "native/packages/react-native-bpk-component-chip/package.json",
-        "native/packages/react-native-bpk-component-flat-list/package.json",
-        "native/packages/react-native-bpk-component-horizontal-nav/package.json",
-        "native/packages/react-native-bpk-component-icon/package.json",
-        "native/packages/react-native-bpk-component-map/package.json",
-        "native/packages/react-native-bpk-component-navigation-bar/package.json",
-        "native/packages/react-native-bpk-component-nudger/package.json",
-        "native/packages/react-native-bpk-component-panel/package.json",
-        "native/packages/react-native-bpk-component-phone-input/package.json",
-        "native/packages/react-native-bpk-component-picker/package.json",
-        "native/packages/react-native-bpk-component-progress/package.json",
-        "native/packages/react-native-bpk-component-section-list/package.json",
-        "native/packages/react-native-bpk-component-select/package.json",
-        "native/packages/react-native-bpk-component-spinner/package.json",
-        "native/packages/react-native-bpk-component-star-rating/package.json",
-        "native/packages/react-native-bpk-component-switch/package.json",
-        "native/packages/react-native-bpk-component-text-input/package.json",
-        "native/packages/react-native-bpk-component-text/package.json",
-        "native/packages/react-native-bpk-component-touchable-native-feedback/package.json",
-        "native/packages/react-native-bpk-component-touchable-overlay/package.json",
-        "native/packages/react-native-bpk-styles/package.json",
-        "native/packages/react-native-bpk-theming/package.json"
-      ]
     }
   }
 }

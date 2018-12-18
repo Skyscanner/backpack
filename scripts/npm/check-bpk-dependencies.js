@@ -131,7 +131,7 @@ console.log('Checking Backpack cross dependencies...');
 console.log('');
 
 let packageFiles = execSync(
-  'find packages native -name package.json | grep -v node_modules',
+  'find packages -name package.json | grep -v node_modules',
 )
   .toString()
   .split('\n');

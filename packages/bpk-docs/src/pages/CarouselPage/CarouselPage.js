@@ -19,10 +19,10 @@
 /* @flow */
 
 import React from 'react';
-import readme from 'react-native-bpk-component-carousel/README.md';
 
-import iosScreenshotDefault from 'react-native-bpk-component-carousel/screenshots/ios/default.png';
-import androidScreenshotDefault from 'react-native-bpk-component-carousel/screenshots/android/default.png';
+import iosScreenshotDefault from '../../../../../backpack-react-native/packages/react-native-bpk-component-carousel/screenshots/ios/default.png';
+import androidScreenshotDefault from '../../../../../backpack-react-native/packages/react-native-bpk-component-carousel/screenshots/android/default.png';
+import readme from '../../../../../backpack-react-native/packages/react-native-bpk-component-carousel/README.md';
 
 import DocsPageWrapper from '../../components/DocsPageWrapper';
 import IntroBlurb from '../../components/IntroBlurb';

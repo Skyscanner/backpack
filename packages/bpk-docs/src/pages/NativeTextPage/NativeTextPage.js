@@ -17,13 +17,13 @@
  */
 
 import React from 'react';
-import readme from 'react-native-bpk-component-text/README.md';
-import iosScreenshot from 'react-native-bpk-component-text/screenshots/ios/default.png';
-import androidScreenshot from 'react-native-bpk-component-text/screenshots/android/default.png';
-import iosScreenshotEmphasized from 'react-native-bpk-component-text/screenshots/ios/emphasize.png';
-import androidScreenshotEmphasized from 'react-native-bpk-component-text/screenshots/android/emphasize.png';
-import iosScreenshotHeavy from 'react-native-bpk-component-text/screenshots/ios/heavy.png';
-import androidScreenshotHeavy from 'react-native-bpk-component-text/screenshots/android/heavy.png';
+import readme from '../../../../../backpack-react-native/packages/react-native-bpk-component-text/README.md';
+import iosScreenshot from '../../../../../backpack-react-native/packages/react-native-bpk-component-text/screenshots/ios/default.png';
+import androidScreenshot from '../../../../../backpack-react-native/packages/react-native-bpk-component-text/screenshots/android/default.png';
+import iosScreenshotEmphasized from '../../../../../backpack-react-native/packages/react-native-bpk-component-text/screenshots/ios/emphasize.png';
+import androidScreenshotEmphasized from '../../../../../backpack-react-native/packages/react-native-bpk-component-text/screenshots/android/emphasize.png';
+import iosScreenshotHeavy from '../../../../../backpack-react-native/packages/react-native-bpk-component-text/screenshots/ios/heavy.png';
+import androidScreenshotHeavy from '../../../../../backpack-react-native/packages/react-native-bpk-component-text/screenshots/android/heavy.png';
 
 import DocsPageBuilder from '../../components/DocsPageBuilder';
 

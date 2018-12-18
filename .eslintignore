@@ -8,3 +8,4 @@ coverage
 /packages/bpk-tokens/tokens
 backpack-android
 backpack-ios
+backpack-react-native

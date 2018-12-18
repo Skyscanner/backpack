@@ -32,12 +32,6 @@ const STORYBOOK_CONFIG_SPLIT_POINT_2 = '}, module);';
 
 const schema = {
   properties: {
-    platform: {
-      description: 'native or web?',
-      default: 'native',
-      pattern: /^(native|web)$/,
-      message: 'Enter "native" or "web"',
-    },
     name: {
       description: "Enter the component name, e.g. 'banner-alert'",
       pattern: /^[a-z-]+$/,
@@ -94,23 +88,16 @@ const sortLines = (lineA, lineB) => {
   return 0;
 };
 
-const createComponent = async (err, { platform, name }) => {
+const createComponent = async (err, { name }) => {
   if (err) {
     console.error(err);
     return;
   }
 
-  let boilerplateComponentPath = `packages/bpk-component-boilerplate`;
-  let newComponentPath = `packages/bpk-component-${name}`;
-  let storybookConfigFile = `.storybook/config.js`;
-  let storybookImport = `require('./../${newComponentPath}/stories');`;
-
-  if (platform === 'native') {
-    boilerplateComponentPath = `native/packages/react-native-bpk-component-boilerplate`;
-    newComponentPath = `native/packages/react-native-bpk-component-${name}`;
-    storybookConfigFile = `native/storybook/storybook.js`;
-    storybookImport = `require('../packages/react-native-bpk-component-${name}/stories');`;
-  }
+  const boilerplateComponentPath = `packages/bpk-component-boilerplate`;
+  const newComponentPath = `packages/bpk-component-${name}`;
+  const storybookConfigFile = `.storybook/config.js`;
+  const storybookImport = `require('./../${newComponentPath}/stories');`;
 
   const pascalCaseName = _.pascalCase(name);
 
@@ -182,19 +169,8 @@ const createComponent = async (err, { platform, name }) => {
 
     console.log(colors.green(`${newComponentPath} has been created! 👍\n`));
 
-    if (platform === 'web') {
-      console.log(`Run tests with ${colors.cyan(`npm test`)}`);
-      console.log(`Run Storybook with ${colors.cyan(`npm start`)}`);
-    } else {
-      console.log(`Run tests with ${colors.cyan(`npm run test:native`)}`);
-      console.log(
-        `Run Storybook with ${colors.cyan(
-          `npm run native`,
-        )}, then in another terminal run ${colors.cyan(
-          `npm run ios`,
-        )} and ${colors.cyan(`npm run android`)}`,
-      );
-    }
+    console.log(`Run tests with ${colors.cyan(`npm test`)}`);
+    console.log(`Run Storybook with ${colors.cyan(`npm start`)}`);
   };
 
   fs.exists(newComponentPath, componentCreationProcess);

@@ -11,7 +11,7 @@ install:
 
 script:
   - set -e
-  - ./scripts/check-pristine-state package-lock.json native/ios/native.xcodeproj/project.pbxproj native/ios/native/Info.plist
+  - ./scripts/check-pristine-state package-lock.json
   - npm run danger
   - npm test
   - npm run docs:dist
@@ -22,7 +22,6 @@ script:
 cache:
   directories:
     - node_modules
-    - native/node_modules
 
 branches:
   only:

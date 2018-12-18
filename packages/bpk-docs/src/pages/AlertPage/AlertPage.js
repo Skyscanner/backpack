@@ -17,15 +17,15 @@
  */
 
 import React from 'react';
-import readme from 'react-native-bpk-component-alert/README.md';
 import { BpkCode } from 'bpk-component-code';
+import readme from '../../../../../backpack-react-native/packages/react-native-bpk-component-alert/README.md';
 
-import iosScreenshotDefault from 'react-native-bpk-component-alert/screenshots/ios/default.png';
-import iosCancelable from 'react-native-bpk-component-alert/screenshots/ios/cancelable.png';
-import iosThreeButton from 'react-native-bpk-component-alert/screenshots/ios/three-button.png';
-import androidScreenshotDefault from 'react-native-bpk-component-alert/screenshots/android/default.png';
-import androidCancelable from 'react-native-bpk-component-alert/screenshots/android/cancelable.png';
-import androidThreeButton from 'react-native-bpk-component-alert/screenshots/android/three-button.png';
+import iosScreenshotDefault from '../../../../../backpack-react-native/packages/react-native-bpk-component-alert/screenshots/ios/default.png';
+import iosCancelable from '../../../../../backpack-react-native/packages/react-native-bpk-component-alert/screenshots/ios/cancelable.png';
+import iosThreeButton from '../../../../../backpack-react-native/packages/react-native-bpk-component-alert/screenshots/ios/three-button.png';
+import androidScreenshotDefault from '../../../../../backpack-react-native/packages/react-native-bpk-component-alert/screenshots/android/default.png';
+import androidCancelable from '../../../../../backpack-react-native/packages/react-native-bpk-component-alert/screenshots/android/cancelable.png';
+import androidThreeButton from '../../../../../backpack-react-native/packages/react-native-bpk-component-alert/screenshots/android/three-button.png';
 
 import IntroBlurb from '../../components/IntroBlurb';
 import DocsPageBuilder from '../../components/DocsPageBuilder';

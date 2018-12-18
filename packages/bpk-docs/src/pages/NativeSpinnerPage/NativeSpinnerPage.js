@@ -17,12 +17,12 @@
  */
 
 import React from 'react';
-import readme from 'react-native-bpk-component-spinner/README.md';
+import readme from '../../../../../backpack-react-native/packages/react-native-bpk-component-spinner/README.md';
 
-import iosScreenshotDefault from 'react-native-bpk-component-spinner/screenshots/ios/default.png';
-import iosScreenshotSmall from 'react-native-bpk-component-spinner/screenshots/ios/small.png';
-import androidScreenshotDefault from 'react-native-bpk-component-spinner/screenshots/android/default.png';
-import androidScreenshotSmall from 'react-native-bpk-component-spinner/screenshots/android/small.png';
+import iosScreenshotDefault from '../../../../../backpack-react-native/packages/react-native-bpk-component-spinner/screenshots/ios/default.png';
+import iosScreenshotSmall from '../../../../../backpack-react-native/packages/react-native-bpk-component-spinner/screenshots/ios/small.png';
+import androidScreenshotDefault from '../../../../../backpack-react-native/packages/react-native-bpk-component-spinner/screenshots/android/default.png';
+import androidScreenshotSmall from '../../../../../backpack-react-native/packages/react-native-bpk-component-spinner/screenshots/android/small.png';
 
 import DocsPageBuilder from '../../components/DocsPageBuilder';
 

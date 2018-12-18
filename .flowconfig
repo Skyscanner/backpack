@@ -1,6 +1,6 @@
 [ignore]
+<PROJECT_ROOT>/backpack-react-native/.*
 .*/node_modules/jsonlint/.*
-.*/native/.*/node_modules/.*
 .*/node_modules/config-chain/test/broken.json
 
 [include]
@@ -12,17 +12,10 @@
 [options]
 module.name_mapper.extension='scss' -> '<PROJECT_ROOT>/scripts/stubs/styleStub.js'
 module.name_mapper.extension='md' -> '<PROJECT_ROOT>/scripts/stubs/fileStub.js'
-module.name_mapper='\(react-native\)' -> '<PROJECT_ROOT>/scripts/stubs/jsModuleStub.js'
-module.name_mapper='\(react-native-linear-gradient\)' -> '<PROJECT_ROOT>/scripts/stubs/jsModuleStub.js'
-module.name_mapper='\(@storybook/react-native\)' -> '<PROJECT_ROOT>/scripts/stubs/jsModuleStub.js'
-module.name_mapper='\(@skyscanner/react-native-transitiongroup\)' -> '<PROJECT_ROOT>/scripts/stubs/jsModuleStub.js'
-module.name_mapper='\(react-native-maps\)' -> '<PROJECT_ROOT>/scripts/stubs/jsModuleStub.js'
-module.name_mapper='\(recyclerlistview\)' -> '<PROJECT_ROOT>/scripts/stubs/jsModuleStub.js'
+module.name_mapper.extension='png' -> '<PROJECT_ROOT>/scripts/stubs/fileStub.js'
 emoji=true
 
 module.file_ext=.js
 module.file_ext=.json
-module.file_ext=.ios.js
-module.file_ext=.android.js
 
 [strict]

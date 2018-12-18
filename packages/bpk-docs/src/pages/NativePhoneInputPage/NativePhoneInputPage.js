@@ -17,11 +17,11 @@
  */
 
 import React from 'react';
-import readme from 'react-native-bpk-component-phone-input/README.md';
-import iosScreenshoDialingCodeList from 'react-native-bpk-component-phone-input/screenshots/ios/dialing-code-list.png';
-import iosScreenshotPhoneNumberInput from 'react-native-bpk-component-phone-input/screenshots/ios/phone-number-input.png';
-import androidScreenshotDialingCodeList from 'react-native-bpk-component-phone-input/screenshots/android/dialing-code-list.png';
-import androidScreenshotPhoneNumberInput from 'react-native-bpk-component-phone-input/screenshots/android/phone-number-input.png';
+import readme from '../../../../../backpack-react-native/packages/react-native-bpk-component-phone-input/README.md';
+import iosScreenshoDialingCodeList from '../../../../../backpack-react-native/packages/react-native-bpk-component-phone-input/screenshots/ios/dialing-code-list.png';
+import iosScreenshotPhoneNumberInput from '../../../../../backpack-react-native/packages/react-native-bpk-component-phone-input/screenshots/ios/phone-number-input.png';
+import androidScreenshotDialingCodeList from '../../../../../backpack-react-native/packages/react-native-bpk-component-phone-input/screenshots/android/dialing-code-list.png';
+import androidScreenshotPhoneNumberInput from '../../../../../backpack-react-native/packages/react-native-bpk-component-phone-input/screenshots/android/phone-number-input.png';
 
 import Paragraph from '../../components/Paragraph';
 import DocsPageBuilder from '../../components/DocsPageBuilder';
