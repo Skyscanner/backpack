@@ -18,6 +18,8 @@
 
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
+import startOfMonth from 'date-fns/start_of_month';
+import endOfMonth from 'date-fns/end_of_month';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { DateUtils } from 'bpk-component-calendar';
@@ -93,6 +95,38 @@ storiesOf('bpk-component-scrollable-calendar', module)
       minDate={DateUtils.addDays(new Date(), -1)}
       maxDate={DateUtils.addMonths(new Date(), 12)}
     />
+  ))
+  .add('Scrollable Calendar in a tall container', () => (
+    <div style={{ height: '500px', display: 'flex' }}>
+      <ScrollableCal
+        weekStartsOn={1}
+        daysOfWeek={weekDays}
+        formatMonth={formatMonth}
+        formatDateFull={formatDateFull}
+        DateComponent={BpkScrollableCalendarDate}
+        showWeekendSeparator
+        selectTodaysDate
+        // Subtract one day from today's date to make today selectable by default
+        minDate={DateUtils.addDays(new Date(), -1)}
+        maxDate={DateUtils.addMonths(new Date(), 12)}
+      />
+    </div>
+  ))
+  .add('Scrollable Calendar with a single month', () => (
+    <div style={{ height: '500px', display: 'flex' }}>
+      <ScrollableCal
+        weekStartsOn={1}
+        daysOfWeek={weekDays}
+        formatMonth={formatMonth}
+        formatDateFull={formatDateFull}
+        DateComponent={BpkScrollableCalendarDate}
+        showWeekendSeparator
+        selectTodaysDate
+        // Subtract one day from today's date to make today selectable by default
+        minDate={startOfMonth(new Date())}
+        maxDate={endOfMonth(new Date())}
+      />
+    </div>
   ))
   .add('BpkScrollableCalendarDate', () => (
     <BpkScrollableCalendarDate

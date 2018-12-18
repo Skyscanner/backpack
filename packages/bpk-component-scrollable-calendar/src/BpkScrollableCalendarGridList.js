@@ -123,13 +123,9 @@ class BpkScrollableCalendarGridList extends React.Component {
           this.props.className,
         )}
       >
-        <div
-          className={getClassName('bpk-scrollable-calendar-grid-list__strip')}
-        >
-          <AutoSizer>
-            {({ width, height }) => this.renderList(width, height)}
-          </AutoSizer>{' '}
-        </div>
+        <AutoSizer>
+          {({ width, height }) => this.renderList(width, height)}
+        </AutoSizer>{' '}
       </div>
     );
   }

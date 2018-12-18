@@ -5,43 +5,39 @@ exports[`BpkCalendarScrollGridList should render correctly with "showWeekendSepa
   className="bpk-scrollable-calendar-grid-list"
 >
   <div
-    className="bpk-scrollable-calendar-grid-list__strip"
+    className={undefined}
+    style={
+      Object {
+        "height": 0,
+        "overflow": "visible",
+        "width": 0,
+      }
+    }
   >
     <div
-      className={undefined}
+      aria-label="grid"
+      aria-readonly={true}
+      className="ReactVirtualized__Grid ReactVirtualized__List"
+      id={undefined}
+      onScroll={[Function]}
+      role="grid"
       style={
         Object {
+          "WebkitOverflowScrolling": "touch",
+          "boxSizing": "border-box",
+          "direction": "ltr",
           "height": 0,
-          "overflow": "visible",
+          "overflowX": "hidden",
+          "overflowY": "auto",
+          "position": "relative",
           "width": 0,
+          "willChange": "transform",
         }
       }
-    >
-      <div
-        aria-label="grid"
-        aria-readonly={true}
-        className="ReactVirtualized__Grid ReactVirtualized__List"
-        id={undefined}
-        onScroll={[Function]}
-        role="grid"
-        style={
-          Object {
-            "WebkitOverflowScrolling": "touch",
-            "boxSizing": "border-box",
-            "direction": "ltr",
-            "height": 0,
-            "overflowX": "hidden",
-            "overflowY": "auto",
-            "position": "relative",
-            "width": 0,
-            "willChange": "transform",
-          }
-        }
-        tabIndex={0}
-      />
-    </div>
-     
+      tabIndex={0}
+    />
   </div>
+   
 </div>
 `;
 
@@ -50,43 +46,39 @@ exports[`BpkCalendarScrollGridList should render correctly with a "dateModifiers
   className="bpk-scrollable-calendar-grid-list"
 >
   <div
-    className="bpk-scrollable-calendar-grid-list__strip"
+    className={undefined}
+    style={
+      Object {
+        "height": 0,
+        "overflow": "visible",
+        "width": 0,
+      }
+    }
   >
     <div
-      className={undefined}
+      aria-label="grid"
+      aria-readonly={true}
+      className="ReactVirtualized__Grid ReactVirtualized__List"
+      id={undefined}
+      onScroll={[Function]}
+      role="grid"
       style={
         Object {
+          "WebkitOverflowScrolling": "touch",
+          "boxSizing": "border-box",
+          "direction": "ltr",
           "height": 0,
-          "overflow": "visible",
+          "overflowX": "hidden",
+          "overflowY": "auto",
+          "position": "relative",
           "width": 0,
+          "willChange": "transform",
         }
       }
-    >
-      <div
-        aria-label="grid"
-        aria-readonly={true}
-        className="ReactVirtualized__Grid ReactVirtualized__List"
-        id={undefined}
-        onScroll={[Function]}
-        role="grid"
-        style={
-          Object {
-            "WebkitOverflowScrolling": "touch",
-            "boxSizing": "border-box",
-            "direction": "ltr",
-            "height": 0,
-            "overflowX": "hidden",
-            "overflowY": "auto",
-            "position": "relative",
-            "width": 0,
-            "willChange": "transform",
-          }
-        }
-        tabIndex={0}
-      />
-    </div>
-     
+      tabIndex={0}
+    />
   </div>
+   
 </div>
 `;
 
@@ -95,43 +87,39 @@ exports[`BpkCalendarScrollGridList should render correctly with a custom date co
   className="bpk-scrollable-calendar-grid-list"
 >
   <div
-    className="bpk-scrollable-calendar-grid-list__strip"
+    className={undefined}
+    style={
+      Object {
+        "height": 0,
+        "overflow": "visible",
+        "width": 0,
+      }
+    }
   >
     <div
-      className={undefined}
+      aria-label="grid"
+      aria-readonly={true}
+      className="ReactVirtualized__Grid ReactVirtualized__List"
+      id={undefined}
+      onScroll={[Function]}
+      role="grid"
       style={
         Object {
+          "WebkitOverflowScrolling": "touch",
+          "boxSizing": "border-box",
+          "direction": "ltr",
           "height": 0,
-          "overflow": "visible",
+          "overflowX": "hidden",
+          "overflowY": "auto",
+          "position": "relative",
           "width": 0,
+          "willChange": "transform",
         }
       }
-    >
-      <div
-        aria-label="grid"
-        aria-readonly={true}
-        className="ReactVirtualized__Grid ReactVirtualized__List"
-        id={undefined}
-        onScroll={[Function]}
-        role="grid"
-        style={
-          Object {
-            "WebkitOverflowScrolling": "touch",
-            "boxSizing": "border-box",
-            "direction": "ltr",
-            "height": 0,
-            "overflowX": "hidden",
-            "overflowY": "auto",
-            "position": "relative",
-            "width": 0,
-            "willChange": "transform",
-          }
-        }
-        tabIndex={0}
-      />
-    </div>
-     
+      tabIndex={0}
+    />
   </div>
+   
 </div>
 `;
 
@@ -140,43 +128,39 @@ exports[`BpkCalendarScrollGridList should render correctly with a different "wee
   className="bpk-scrollable-calendar-grid-list"
 >
   <div
-    className="bpk-scrollable-calendar-grid-list__strip"
+    className={undefined}
+    style={
+      Object {
+        "height": 0,
+        "overflow": "visible",
+        "width": 0,
+      }
+    }
   >
     <div
-      className={undefined}
+      aria-label="grid"
+      aria-readonly={true}
+      className="ReactVirtualized__Grid ReactVirtualized__List"
+      id={undefined}
+      onScroll={[Function]}
+      role="grid"
       style={
         Object {
+          "WebkitOverflowScrolling": "touch",
+          "boxSizing": "border-box",
+          "direction": "ltr",
           "height": 0,
-          "overflow": "visible",
+          "overflowX": "hidden",
+          "overflowY": "auto",
+          "position": "relative",
           "width": 0,
+          "willChange": "transform",
         }
       }
-    >
-      <div
-        aria-label="grid"
-        aria-readonly={true}
-        className="ReactVirtualized__Grid ReactVirtualized__List"
-        id={undefined}
-        onScroll={[Function]}
-        role="grid"
-        style={
-          Object {
-            "WebkitOverflowScrolling": "touch",
-            "boxSizing": "border-box",
-            "direction": "ltr",
-            "height": 0,
-            "overflowX": "hidden",
-            "overflowY": "auto",
-            "position": "relative",
-            "width": 0,
-            "willChange": "transform",
-          }
-        }
-        tabIndex={0}
-      />
-    </div>
-     
+      tabIndex={0}
+    />
   </div>
+   
 </div>
 `;
 
@@ -185,42 +169,38 @@ exports[`BpkCalendarScrollGridList should render correctly with no optional prop
   className="bpk-scrollable-calendar-grid-list"
 >
   <div
-    className="bpk-scrollable-calendar-grid-list__strip"
+    className={undefined}
+    style={
+      Object {
+        "height": 0,
+        "overflow": "visible",
+        "width": 0,
+      }
+    }
   >
     <div
-      className={undefined}
+      aria-label="grid"
+      aria-readonly={true}
+      className="ReactVirtualized__Grid ReactVirtualized__List"
+      id={undefined}
+      onScroll={[Function]}
+      role="grid"
       style={
         Object {
+          "WebkitOverflowScrolling": "touch",
+          "boxSizing": "border-box",
+          "direction": "ltr",
           "height": 0,
-          "overflow": "visible",
+          "overflowX": "hidden",
+          "overflowY": "auto",
+          "position": "relative",
           "width": 0,
+          "willChange": "transform",
         }
       }
-    >
-      <div
-        aria-label="grid"
-        aria-readonly={true}
-        className="ReactVirtualized__Grid ReactVirtualized__List"
-        id={undefined}
-        onScroll={[Function]}
-        role="grid"
-        style={
-          Object {
-            "WebkitOverflowScrolling": "touch",
-            "boxSizing": "border-box",
-            "direction": "ltr",
-            "height": 0,
-            "overflowX": "hidden",
-            "overflowY": "auto",
-            "position": "relative",
-            "width": 0,
-            "willChange": "transform",
-          }
-        }
-        tabIndex={0}
-      />
-    </div>
-     
+      tabIndex={0}
+    />
   </div>
+   
 </div>
 `;
