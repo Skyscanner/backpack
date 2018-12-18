@@ -2,6 +2,13 @@
 
 [Unreleased changes](./UNRELEASED.md).
 
+# 2018-12-18 - Fix scrollable calendar DOM layout
+
+**Fixed:**
+
+- bpk-component-scrollable-calendar: 0.1.16 => 0.1.17
+  - Remove an unnecessary wrapper element that complicated layouts.
+
 # 2018-12-13 - Fixes for text and text input components
 
 **Fixed:**
