@@ -1,3 +1,7 @@
 # Unreleased
 
-_Nothing yet..._
+**Fixed:**
+
+ - bpk-tokens:
+   - Correctly expose token `textHeavyFontWeight`.
+

@@ -149,6 +149,7 @@ export const textCapsFontSize = 10;
 export const textCapsFontWeight = "400";
 export const textCapsLetterSpacing = 0.28;
 export const textEmphasizedFontWeight = "600";
+export const textHeavyFontWeight = "700";
 export const textLgFontSize = 20;
 export const textLgFontWeight = "400";
 export const textLgLetterSpacing = null;
@@ -286,6 +287,7 @@ export const fontWeights = {
 textBaseFontWeight,
 textCapsFontWeight,
 textEmphasizedFontWeight,
+textHeavyFontWeight,
 textLgFontWeight,
 textSmFontWeight,
 textXlFontWeight,

@@ -274,6 +274,11 @@
       "type": "string",
       "category": "font-weights"
     },
+    "TEXT_HEAVY_FONT_WEIGHT": {
+      "value": "{!FONT_WEIGHT_BOLD}",
+      "type": "string",
+      "category": "font-weights"
+    },
     "TEXT_EMPHASIZED_FONT_WEIGHT": {
       "value": "{!FONT_WEIGHT_SEMIBOLD}",
       "type": "string",

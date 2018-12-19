@@ -1253,6 +1253,13 @@
       "originalValue": "{!FONT_WEIGHT_SEMIBOLD}",
       "name": "TEXT_EMPHASIZED_FONT_WEIGHT"
     },
+    "TEXT_HEAVY_FONT_WEIGHT": {
+      "value": "700",
+      "type": "string",
+      "category": "font-weights",
+      "originalValue": "{!FONT_WEIGHT_BOLD}",
+      "name": "TEXT_HEAVY_FONT_WEIGHT"
+    },
     "TEXT_LG_FONT_SIZE": {
       "value": "20",
       "type": "font-size",
@@ -1583,6 +1590,7 @@
     "TEXT_CAPS_FONT_WEIGHT",
     "TEXT_CAPS_LETTER_SPACING",
     "TEXT_EMPHASIZED_FONT_WEIGHT",
+    "TEXT_HEAVY_FONT_WEIGHT",
     "TEXT_LG_FONT_SIZE",
     "TEXT_LG_FONT_WEIGHT",
     "TEXT_LG_LETTER_SPACING",
