@@ -2,6 +2,13 @@
 
 [Unreleased changes](./UNRELEASED.md).
 
+# 2018-12-19 - Fix exposure of iOS font token
+
+**Fixed:**
+
+ - bpk-tokens: 27.4.2 => 27.4.3
+   - Correctly expose token `textHeavyFontWeight`.
+
 # 2018-12-18 - Fix scrollable calendar DOM layout
 
 **Fixed:**
