@@ -6,7 +6,7 @@
 
 **Fixed:**
 
- - bpk-tokens: 27.4.2 => 27.4.3
+ - bpk-tokens: 27.4.2 => 27.4.4
    - Correctly expose token `textHeavyFontWeight`.
 
 # 2018-12-18 - Fix scrollable calendar DOM layout

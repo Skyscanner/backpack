@@ -151,7 +151,7 @@ module.exports = {
   textCapsFontWeight: "400",
   textCapsLetterSpacing: 0.28,
   textEmphasizedFontWeight: "600",
-  textHeavyFontWeight: "700",
+  textHeavyFontWeight: "800",
   textLgFontSize: 20,
   textLgFontWeight: "400",
   textLgLetterSpacing: null,
