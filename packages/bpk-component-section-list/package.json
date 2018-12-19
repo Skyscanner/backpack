@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-section-list",
-  "version": "1.0.36",
+  "version": "1.0.37",
   "description": "Backpack section list component.",
   "main": "index.js",
   "repository": {
@@ -13,11 +13,11 @@
     "react": "^15.0.0 || ^16.0.0"
   },
   "dependencies": {
-    "bpk-component-icon": "^3.23.18",
-    "bpk-component-text": "^1.0.94",
-    "bpk-mixins": "^17.11.29",
+    "bpk-component-icon": "^3.23.19",
+    "bpk-component-text": "^1.0.95",
+    "bpk-mixins": "^17.11.30",
     "bpk-react-utils": "^2.7.0",
-    "bpk-tokens": "^27.4.2",
+    "bpk-tokens": "^27.4.3",
     "prop-types": "^15.6.2"
   }
 }
