@@ -94,7 +94,7 @@
       "value": 36
     },
     "FONT_WEIGHT_BOLD": {
-      "value": "700"
+      "value": "800"
     },
     "FONT_WEIGHT_NORMAL": {
       "value": "400"
@@ -1254,7 +1254,7 @@
       "name": "TEXT_EMPHASIZED_FONT_WEIGHT"
     },
     "TEXT_HEAVY_FONT_WEIGHT": {
-      "value": "700",
+      "value": "800",
       "type": "string",
       "category": "font-weights",
       "originalValue": "{!FONT_WEIGHT_BOLD}",
