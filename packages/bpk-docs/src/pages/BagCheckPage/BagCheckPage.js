@@ -22,34 +22,27 @@ import React from 'react';
 import BpkLink from 'bpk-component-link';
 import BpkText from 'bpk-component-text';
 import { cssModules } from 'bpk-react-utils';
-import getGlobal from '../../helpers/globals-helper';
 import STYLES from './bag-check-page.scss';
+
+/* eslint-disable */
+// $FlowFixMe
+const bookmarklet = require('!!raw-loader!uglify-loader!babel-loader!../../bag-check-bookmarklet');
+/* eslint-enable */
 
 const getClassName = cssModules(STYLES);
 
-const Page = () => {
-  if (typeof window === 'undefined' || !window.location) {
-    return null;
-  }
-
-  // NOTE: this is updated with the proper hash during the prod build.
-  const bagCheckFile = getGlobal('entries.bagCheck', 'bagCheck.js');
-  const link = `${window.location.origin}/${bagCheckFile}`;
-  const script = `javascript:(function(){var t=document.createElement("script");t.type="application/javascript",t.src="${link}",document.getElementsByTagName("body")[0].appendChild(t)}());`;
-
-  return (
-    <div className={getClassName('bpk-docs-bag-check-page')}>
-      <BpkText tagName="h1" textStyle="lg">
-        Drag and drop the link below to your bookmarks toolbar.
-      </BpkText>
-      <BpkLink
-        href={script}
-        className={getClassName('bpk-docs-bag-check-page__link')}
-      >
-        <BpkText textStyle="xl">BagCheck</BpkText>
-      </BpkLink>
-    </div>
-  );
-};
+const Page = () => (
+  <div className={getClassName('bpk-docs-bag-check-page')}>
+    <BpkText tagName="h1" textStyle="lg">
+      Drag and drop the link below to your bookmarks toolbar.
+    </BpkText>
+    <BpkLink
+      href={`javascript:(function(){${bookmarklet}})();`}
+      className={getClassName('bpk-docs-bag-check-page__link')}
+    >
+      <BpkText textStyle="xl">BagCheck</BpkText>
+    </BpkLink>
+  </div>
+);
 
 export default Page;
