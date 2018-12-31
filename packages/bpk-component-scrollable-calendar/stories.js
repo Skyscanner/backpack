@@ -81,8 +81,9 @@ ScrollableCal.defaultProps = {
   selectTodaysDate: true,
 };
 
-storiesOf('bpk-component-scrollable-calendar', module)
-  .add('Scrollable Calendar - default', () => (
+storiesOf('bpk-component-scrollable-calendar', module).add(
+  'Scrollable Calendar - default',
+  () => (
     <ScrollableCal
       weekStartsOn={1}
       daysOfWeek={weekDays}
@@ -93,6 +94,40 @@ storiesOf('bpk-component-scrollable-calendar', module)
       selectTodaysDate
       // Subtract one day from today's date to make today selectable by default
       minDate={DateUtils.addDays(new Date(), -1)}
+      maxDate={DateUtils.addMonths(new Date(), 12)}
+    />
+  ),
+);
+storiesOf('bpk-component-scrollable-calendar', module).add(
+  'Scrollable Calendar - week starts on 7',
+  () => (
+    <ScrollableCal
+      weekStartsOn={7}
+      daysOfWeek={weekDays}
+      formatMonth={formatMonth}
+      formatDateFull={formatDateFull}
+      DateComponent={BpkScrollableCalendarDate}
+      showWeekendSeparator
+      selectTodaysDate
+      // Subtract one day from today's date to make today selectable by default
+      minDate={DateUtils.addDays(new Date(), -1)}
+      maxDate={DateUtils.addMonths(new Date(), 12)}
+    />
+  ),
+);
+storiesOf('bpk-component-scrollable-calendar', module)
+  .add('Scrollable Calendar - with focused date', () => (
+    <ScrollableCal
+      weekStartsOn={1}
+      daysOfWeek={weekDays}
+      formatMonth={formatMonth}
+      formatDateFull={formatDateFull}
+      DateComponent={BpkScrollableCalendarDate}
+      showWeekendSeparator
+      selectTodaysDate
+      // Subtract one day from today's date to make today selectable by default
+      minDate={DateUtils.addDays(new Date(), -1)}
+      focusedDate={DateUtils.addMonths(new Date(), 11)}
       maxDate={DateUtils.addMonths(new Date(), 12)}
     />
   ))

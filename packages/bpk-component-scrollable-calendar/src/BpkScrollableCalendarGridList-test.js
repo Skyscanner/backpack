@@ -18,7 +18,7 @@
 
 import PropTypes from 'prop-types';
 import React from 'react';
-import renderer from 'react-test-renderer';
+import Shallow from 'react-test-renderer/shallow';
 
 import isWeekend from 'date-fns/is_weekend';
 import { DateUtils } from 'bpk-component-calendar';
@@ -33,80 +33,77 @@ const testDate = new Date(2010, 1, 15);
 
 describe('BpkCalendarScrollGridList', () => {
   it('should render correctly with no optional props set', () => {
-    const tree = renderer
-      .create(
-        <BpkScrollableCalendarGridList
-          minDate={DateUtils.addDays(testDate, -1)}
-          maxDate={DateUtils.addMonths(testDate, 12)}
-          formatMonth={formatMonth}
-          formatDateFull={formatDateFull}
-          DateComponent={BpkCalendarScrollDate}
-          daysOfWeek={weekDays}
-        />,
-      )
-      .toJSON();
+    const shallowRenderer = Shallow.createRenderer();
+    const tree = shallowRenderer.render(
+      <BpkScrollableCalendarGridList
+        minDate={DateUtils.addDays(testDate, -1)}
+        maxDate={DateUtils.addMonths(testDate, 12)}
+        formatMonth={formatMonth}
+        formatDateFull={formatDateFull}
+        DateComponent={BpkCalendarScrollDate}
+        daysOfWeek={weekDays}
+      />,
+    );
     expect(tree).toMatchSnapshot();
   });
 
   it('should render correctly with "showWeekendSeparator" attribute set to false', () => {
-    const tree = renderer
-      .create(
-        <BpkScrollableCalendarGridList
-          minDate={DateUtils.addDays(testDate, -1)}
-          maxDate={DateUtils.addMonths(testDate, 12)}
-          formatMonth={formatMonth}
-          formatDateFull={formatDateFull}
-          DateComponent={BpkCalendarScrollDate}
-          daysOfWeek={weekDays}
-          weekStartsOn={0}
-          showWeekendSeparator={false}
-        />,
-      )
-      .toJSON();
+    const shallowRenderer = Shallow.createRenderer();
+    const tree = shallowRenderer.render(
+      <BpkScrollableCalendarGridList
+        minDate={DateUtils.addDays(testDate, -1)}
+        maxDate={DateUtils.addMonths(testDate, 12)}
+        formatMonth={formatMonth}
+        formatDateFull={formatDateFull}
+        DateComponent={BpkCalendarScrollDate}
+        daysOfWeek={weekDays}
+        weekStartsOn={0}
+        showWeekendSeparator={false}
+      />,
+    );
     expect(tree).toMatchSnapshot();
   });
 
   it('should render correctly with a different "weekStartsOn" attribute', () => {
-    const tree = renderer
-      .create(
-        <BpkScrollableCalendarGridList
-          minDate={DateUtils.addDays(testDate, -1)}
-          maxDate={DateUtils.addMonths(testDate, 12)}
-          formatMonth={formatMonth}
-          formatDateFull={formatDateFull}
-          DateComponent={BpkCalendarScrollDate}
-          daysOfWeek={weekDays}
-          weekStartsOn={3}
-          showWeekendSeparator
-        />,
-      )
-      .toJSON();
+    const shallowRenderer = Shallow.createRenderer();
+    const tree = shallowRenderer.render(
+      <BpkScrollableCalendarGridList
+        minDate={DateUtils.addDays(testDate, -1)}
+        maxDate={DateUtils.addMonths(testDate, 12)}
+        formatMonth={formatMonth}
+        formatDateFull={formatDateFull}
+        DateComponent={BpkCalendarScrollDate}
+        daysOfWeek={weekDays}
+        weekStartsOn={3}
+        showWeekendSeparator
+      />,
+    );
     expect(tree).toMatchSnapshot();
   });
 
   it('should render correctly with a "dateModifiers" attribute', () => {
+    const shallowRenderer = Shallow.createRenderer();
     const modifiers = {
       someClass: () => true,
     };
-    const tree = renderer
-      .create(
-        <BpkScrollableCalendarGridList
-          minDate={DateUtils.addDays(testDate, -1)}
-          maxDate={DateUtils.addMonths(testDate, 12)}
-          formatMonth={formatMonth}
-          formatDateFull={formatDateFull}
-          DateComponent={BpkCalendarScrollDate}
-          daysOfWeek={weekDays}
-          weekStartsOn={1}
-          dateModifiers={modifiers}
-          showWeekendSeparator
-        />,
-      )
-      .toJSON();
+    const tree = shallowRenderer.render(
+      <BpkScrollableCalendarGridList
+        minDate={DateUtils.addDays(testDate, -1)}
+        maxDate={DateUtils.addMonths(testDate, 12)}
+        formatMonth={formatMonth}
+        formatDateFull={formatDateFull}
+        DateComponent={BpkCalendarScrollDate}
+        daysOfWeek={weekDays}
+        weekStartsOn={1}
+        dateModifiers={modifiers}
+        showWeekendSeparator
+      />,
+    );
     expect(tree).toMatchSnapshot();
   });
 
   it('should render correctly with a custom date component', () => {
+    const shallowRenderer = Shallow.createRenderer();
     const MyCustomDate = props => {
       const cx = {
         backgroundColor: colorRed500,
@@ -123,20 +120,18 @@ describe('BpkCalendarScrollGridList', () => {
     MyCustomDate.propTypes = {
       date: PropTypes.instanceOf(Date).isRequired,
     };
-    const tree = renderer
-      .create(
-        <BpkScrollableCalendarGridList
-          minDate={DateUtils.addDays(testDate, -1)}
-          maxDate={DateUtils.addMonths(testDate, 12)}
-          formatMonth={formatMonth}
-          formatDateFull={formatDateFull}
-          DateComponent={MyCustomDate}
-          daysOfWeek={weekDays}
-          weekStartsOn={1}
-          showWeekendSeparator
-        />,
-      )
-      .toJSON();
+    const tree = shallowRenderer.render(
+      <BpkScrollableCalendarGridList
+        minDate={DateUtils.addDays(testDate, -1)}
+        maxDate={DateUtils.addMonths(testDate, 12)}
+        formatMonth={formatMonth}
+        formatDateFull={formatDateFull}
+        DateComponent={MyCustomDate}
+        daysOfWeek={weekDays}
+        weekStartsOn={1}
+        showWeekendSeparator
+      />,
+    );
     expect(tree).toMatchSnapshot();
   });
 });

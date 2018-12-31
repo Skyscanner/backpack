@@ -1,370 +1,230 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`BpkScrollableCalendar should render correctly 1`] = `
-<div
-  className="bpk-calendar bpk-calendar--fixed"
->
-  <header
-    className="bpk-calendar-header"
-  >
-    <ol
-      className="bpk-calendar-header__week"
-    >
-      <li
-        className="bpk-calendar-header__weekday"
-        title="Monday"
-      >
-        <span
-          aria-hidden="true"
-        >
-          Mon
-        </span>
-      </li>
-      <li
-        className="bpk-calendar-header__weekday"
-        title="Tuesday"
-      >
-        <span
-          aria-hidden="true"
-        >
-          Tue
-        </span>
-      </li>
-      <li
-        className="bpk-calendar-header__weekday"
-        title="Wednesday"
-      >
-        <span
-          aria-hidden="true"
-        >
-          Wed
-        </span>
-      </li>
-      <li
-        className="bpk-calendar-header__weekday"
-        title="Thursday"
-      >
-        <span
-          aria-hidden="true"
-        >
-          Thu
-        </span>
-      </li>
-      <li
-        className="bpk-calendar-header__weekday"
-        title="Friday"
-      >
-        <span
-          aria-hidden="true"
-        >
-          Fri
-        </span>
-      </li>
-      <li
-        className="bpk-calendar-header__weekday bpk-calendar-header__weekday--weekend bpk-calendar-header__weekday--weekend-start"
-        title="Saturday"
-      >
-        <span
-          aria-hidden="true"
-        >
-          Sat
-        </span>
-      </li>
-      <li
-        className="bpk-calendar-header__weekday bpk-calendar-header__weekday--weekend bpk-calendar-header__weekday--weekend-end"
-        title="Sunday"
-      >
-        <span
-          aria-hidden="true"
-        >
-          Sun
-        </span>
-      </li>
-    </ol>
-  </header>
-  <div
-    className="bpk-scrollable-calendar-grid-list"
-  >
-    <div
-      className={undefined}
-      style={
-        Object {
-          "height": 0,
-          "overflow": "visible",
-          "width": 0,
-        }
-      }
-    >
-      <div
-        aria-label="grid"
-        aria-readonly={true}
-        className="ReactVirtualized__Grid ReactVirtualized__List"
-        id={undefined}
-        onScroll={[Function]}
-        role="grid"
-        style={
-          Object {
-            "WebkitOverflowScrolling": "touch",
-            "boxSizing": "border-box",
-            "direction": "ltr",
-            "height": 0,
-            "overflowX": "hidden",
-            "overflowY": "auto",
-            "position": "relative",
-            "width": 0,
-            "willChange": "transform",
-          }
-        }
-        tabIndex={0}
-      />
-    </div>
-     
-  </div>
-</div>
+<BpkCalendar
+  changeMonthLabel={null}
+  className={null}
+  dateModifiers={Object {}}
+  dateProps={null}
+  daysOfWeek={
+    Array [
+      Object {
+        "index": 0,
+        "isWeekend": true,
+        "name": "Sunday",
+        "nameAbbr": "Sun",
+      },
+      Object {
+        "index": 1,
+        "isWeekend": false,
+        "name": "Monday",
+        "nameAbbr": "Mon",
+      },
+      Object {
+        "index": 2,
+        "isWeekend": false,
+        "name": "Tuesday",
+        "nameAbbr": "Tue",
+      },
+      Object {
+        "index": 3,
+        "isWeekend": false,
+        "name": "Wednesday",
+        "nameAbbr": "Wed",
+      },
+      Object {
+        "index": 4,
+        "isWeekend": false,
+        "name": "Thursday",
+        "nameAbbr": "Thu",
+      },
+      Object {
+        "index": 5,
+        "isWeekend": false,
+        "name": "Friday",
+        "nameAbbr": "Fri",
+      },
+      Object {
+        "index": 6,
+        "isWeekend": true,
+        "name": "Saturday",
+        "nameAbbr": "Sat",
+      },
+    ]
+  }
+  fixedWidth={true}
+  focusedDate={2010-02-14T00:00:00.000Z}
+  formatDateFull={[Function]}
+  formatMonth={[Function]}
+  gridClassName={null}
+  gridProps={null}
+  headerProps={null}
+  initiallyFocusedDate={null}
+  markOutsideDays={true}
+  markToday={true}
+  maxDate={2011-02-15T00:00:00.000Z}
+  minDate={2010-02-14T00:00:00.000Z}
+  month={2010-02-01T00:00:00.000Z}
+  navProps={null}
+  onDateClick={[Function]}
+  onDateKeyDown={[Function]}
+  onMonthChange={[Function]}
+  preventKeyboardFocus={true}
+  selectedDate={null}
+  showWeekendSeparator={true}
+  weekStartsOn={1}
+/>
 `;
 
 exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
-<div
-  className="bpk-calendar bpk-calendar--fixed"
->
-  <header
-    className="bpk-calendar-header"
-  >
-    <ol
-      className="bpk-calendar-header__week"
-    >
-      <li
-        className="bpk-calendar-header__weekday"
-        title="Monday"
-      >
-        <span
-          aria-hidden="true"
-        >
-          Mon
-        </span>
-      </li>
-      <li
-        className="bpk-calendar-header__weekday"
-        title="Tuesday"
-      >
-        <span
-          aria-hidden="true"
-        >
-          Tue
-        </span>
-      </li>
-      <li
-        className="bpk-calendar-header__weekday"
-        title="Wednesday"
-      >
-        <span
-          aria-hidden="true"
-        >
-          Wed
-        </span>
-      </li>
-      <li
-        className="bpk-calendar-header__weekday"
-        title="Thursday"
-      >
-        <span
-          aria-hidden="true"
-        >
-          Thu
-        </span>
-      </li>
-      <li
-        className="bpk-calendar-header__weekday"
-        title="Friday"
-      >
-        <span
-          aria-hidden="true"
-        >
-          Fri
-        </span>
-      </li>
-      <li
-        className="bpk-calendar-header__weekday bpk-calendar-header__weekday--weekend bpk-calendar-header__weekday--weekend-start"
-        title="Saturday"
-      >
-        <span
-          aria-hidden="true"
-        >
-          Sat
-        </span>
-      </li>
-      <li
-        className="bpk-calendar-header__weekday bpk-calendar-header__weekday--weekend bpk-calendar-header__weekday--weekend-end"
-        title="Sunday"
-      >
-        <span
-          aria-hidden="true"
-        >
-          Sun
-        </span>
-      </li>
-    </ol>
-  </header>
-  <div
-    className="bpk-scrollable-calendar-grid-list"
-  >
-    <div
-      className={undefined}
-      style={
-        Object {
-          "height": 0,
-          "overflow": "visible",
-          "width": 0,
-        }
-      }
-    >
-      <div
-        aria-label="grid"
-        aria-readonly={true}
-        className="ReactVirtualized__Grid ReactVirtualized__List"
-        id={undefined}
-        onScroll={[Function]}
-        role="grid"
-        style={
-          Object {
-            "WebkitOverflowScrolling": "touch",
-            "boxSizing": "border-box",
-            "direction": "ltr",
-            "height": 0,
-            "overflowX": "hidden",
-            "overflowY": "auto",
-            "position": "relative",
-            "width": 0,
-            "willChange": "transform",
-          }
-        }
-        tabIndex={0}
-      />
-    </div>
-     
-  </div>
-</div>
+<BpkCalendar
+  changeMonthLabel={null}
+  className={null}
+  dateModifiers={Object {}}
+  dateProps={null}
+  daysOfWeek={
+    Array [
+      Object {
+        "index": 0,
+        "isWeekend": true,
+        "name": "Sunday",
+        "nameAbbr": "Sun",
+      },
+      Object {
+        "index": 1,
+        "isWeekend": false,
+        "name": "Monday",
+        "nameAbbr": "Mon",
+      },
+      Object {
+        "index": 2,
+        "isWeekend": false,
+        "name": "Tuesday",
+        "nameAbbr": "Tue",
+      },
+      Object {
+        "index": 3,
+        "isWeekend": false,
+        "name": "Wednesday",
+        "nameAbbr": "Wed",
+      },
+      Object {
+        "index": 4,
+        "isWeekend": false,
+        "name": "Thursday",
+        "nameAbbr": "Thu",
+      },
+      Object {
+        "index": 5,
+        "isWeekend": false,
+        "name": "Friday",
+        "nameAbbr": "Fri",
+      },
+      Object {
+        "index": 6,
+        "isWeekend": true,
+        "name": "Saturday",
+        "nameAbbr": "Sat",
+      },
+    ]
+  }
+  fixedWidth={true}
+  focusedDate={2010-02-14T00:00:00.000Z}
+  formatDateFull={[Function]}
+  formatMonth={[Function]}
+  gridClassName={null}
+  gridProps={null}
+  headerProps={null}
+  initiallyFocusedDate={null}
+  markOutsideDays={true}
+  markToday={true}
+  maxDate={2011-02-15T00:00:00.000Z}
+  minDate={2010-02-14T00:00:00.000Z}
+  month={2010-02-01T00:00:00.000Z}
+  navProps={null}
+  onDateClick={[Function]}
+  onDateKeyDown={[Function]}
+  onMonthChange={[Function]}
+  preventKeyboardFocus={true}
+  selectedDate={null}
+  showWeekendSeparator={true}
+  testID="123"
+  weekStartsOn={1}
+/>
 `;
 
 exports[`BpkScrollableCalendar should support custom class names 1`] = `
-<div
-  className="bpk-calendar custom-classname bpk-calendar--fixed"
->
-  <header
-    className="bpk-calendar-header"
-  >
-    <ol
-      className="bpk-calendar-header__week"
-    >
-      <li
-        className="bpk-calendar-header__weekday"
-        title="Monday"
-      >
-        <span
-          aria-hidden="true"
-        >
-          Mon
-        </span>
-      </li>
-      <li
-        className="bpk-calendar-header__weekday"
-        title="Tuesday"
-      >
-        <span
-          aria-hidden="true"
-        >
-          Tue
-        </span>
-      </li>
-      <li
-        className="bpk-calendar-header__weekday"
-        title="Wednesday"
-      >
-        <span
-          aria-hidden="true"
-        >
-          Wed
-        </span>
-      </li>
-      <li
-        className="bpk-calendar-header__weekday"
-        title="Thursday"
-      >
-        <span
-          aria-hidden="true"
-        >
-          Thu
-        </span>
-      </li>
-      <li
-        className="bpk-calendar-header__weekday"
-        title="Friday"
-      >
-        <span
-          aria-hidden="true"
-        >
-          Fri
-        </span>
-      </li>
-      <li
-        className="bpk-calendar-header__weekday bpk-calendar-header__weekday--weekend bpk-calendar-header__weekday--weekend-start"
-        title="Saturday"
-      >
-        <span
-          aria-hidden="true"
-        >
-          Sat
-        </span>
-      </li>
-      <li
-        className="bpk-calendar-header__weekday bpk-calendar-header__weekday--weekend bpk-calendar-header__weekday--weekend-end"
-        title="Sunday"
-      >
-        <span
-          aria-hidden="true"
-        >
-          Sun
-        </span>
-      </li>
-    </ol>
-  </header>
-  <div
-    className="bpk-scrollable-calendar-grid-list"
-  >
-    <div
-      className={undefined}
-      style={
-        Object {
-          "height": 0,
-          "overflow": "visible",
-          "width": 0,
-        }
-      }
-    >
-      <div
-        aria-label="grid"
-        aria-readonly={true}
-        className="ReactVirtualized__Grid ReactVirtualized__List"
-        id={undefined}
-        onScroll={[Function]}
-        role="grid"
-        style={
-          Object {
-            "WebkitOverflowScrolling": "touch",
-            "boxSizing": "border-box",
-            "direction": "ltr",
-            "height": 0,
-            "overflowX": "hidden",
-            "overflowY": "auto",
-            "position": "relative",
-            "width": 0,
-            "willChange": "transform",
-          }
-        }
-        tabIndex={0}
-      />
-    </div>
-     
-  </div>
-</div>
+<BpkCalendar
+  changeMonthLabel={null}
+  className="custom-classname"
+  dateModifiers={Object {}}
+  dateProps={null}
+  daysOfWeek={
+    Array [
+      Object {
+        "index": 0,
+        "isWeekend": true,
+        "name": "Sunday",
+        "nameAbbr": "Sun",
+      },
+      Object {
+        "index": 1,
+        "isWeekend": false,
+        "name": "Monday",
+        "nameAbbr": "Mon",
+      },
+      Object {
+        "index": 2,
+        "isWeekend": false,
+        "name": "Tuesday",
+        "nameAbbr": "Tue",
+      },
+      Object {
+        "index": 3,
+        "isWeekend": false,
+        "name": "Wednesday",
+        "nameAbbr": "Wed",
+      },
+      Object {
+        "index": 4,
+        "isWeekend": false,
+        "name": "Thursday",
+        "nameAbbr": "Thu",
+      },
+      Object {
+        "index": 5,
+        "isWeekend": false,
+        "name": "Friday",
+        "nameAbbr": "Fri",
+      },
+      Object {
+        "index": 6,
+        "isWeekend": true,
+        "name": "Saturday",
+        "nameAbbr": "Sat",
+      },
+    ]
+  }
+  fixedWidth={true}
+  focusedDate={2010-02-14T00:00:00.000Z}
+  formatDateFull={[Function]}
+  formatMonth={[Function]}
+  gridClassName={null}
+  gridProps={null}
+  headerProps={null}
+  initiallyFocusedDate={null}
+  markOutsideDays={true}
+  markToday={true}
+  maxDate={2011-02-15T00:00:00.000Z}
+  minDate={2010-02-14T00:00:00.000Z}
+  month={2010-02-01T00:00:00.000Z}
+  navProps={null}
+  onDateClick={[Function]}
+  onDateKeyDown={[Function]}
+  onMonthChange={[Function]}
+  preventKeyboardFocus={true}
+  selectedDate={null}
+  showWeekendSeparator={true}
+  weekStartsOn={1}
+/>
 `;
