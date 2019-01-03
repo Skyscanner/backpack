@@ -28,7 +28,7 @@ export default () => (
     <BpkOverlayView position={{ latitude: 27.9881, longitude: 86.925 }}>
       <BpkText>Shibuya Crossing</BpkText>
     </BpkOverlayView>
-  <BpkMap>
+  </BpkMap>
 );
 ```
 
