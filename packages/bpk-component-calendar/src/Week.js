@@ -19,6 +19,9 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { cssModules } from 'bpk-react-utils';
+import areRangesOverlapping from 'date-fns/are_ranges_overlapping';
+import dateMin from 'date-fns/min';
+import dateMax from 'date-fns/max';
 
 import {
   getDay,
@@ -101,6 +104,58 @@ class Week extends Component {
     }
     if (!isSameDay(nextProps.maxDate, this.props.maxDate)) {
       return true;
+    }
+
+    const selectionStartChanged = !isSameDay(
+      this.props.selectionStart,
+      nextProps.selectionStart,
+    );
+    const selectionEndChanged = !isSameDay(
+      this.props.selectionEnd,
+      nextProps.selectionEnd,
+    );
+
+    if (selectionStartChanged || selectionEndChanged) {
+      const firstDate = nextProps.dates[0];
+      const lastDate = nextProps.dates[nextProps.dates.length - 1];
+      if (
+        areRangesOverlapping(
+          this.props.selectionStart,
+          this.props.selectionEnd,
+          firstDate,
+          lastDate,
+        ) ||
+        areRangesOverlapping(
+          nextProps.selectionStart,
+          nextProps.selectionEnd,
+          firstDate,
+          lastDate,
+        )
+      ) {
+        if (
+          selectionStartChanged &&
+          areRangesOverlapping(
+            dateMin(this.props.selectionStart, nextProps.selectionStart),
+            dateMax(this.props.selectionStart, nextProps.selectionStart),
+            firstDate,
+            lastDate,
+          )
+        ) {
+          return true;
+        }
+
+        if (
+          selectionEndChanged &&
+          areRangesOverlapping(
+            dateMin(this.props.selectionEnd, nextProps.selectionEnd),
+            dateMax(this.props.selectionEnd, nextProps.selectionEnd),
+            firstDate,
+            lastDate,
+          )
+        ) {
+          return true;
+        }
+      }
     }
 
     return false;
@@ -203,6 +258,8 @@ Week.propTypes = {
   onDateClick: PropTypes.func,
   onDateKeyDown: PropTypes.func,
   selectedDate: PropTypes.instanceOf(Date),
+  selectionEnd: PropTypes.instanceOf(Date),
+  selectionStart: PropTypes.instanceOf(Date),
   ignoreOutsideDate: PropTypes.bool,
   dateProps: PropTypes.object, // eslint-disable-line react/forbid-prop-types
 };
@@ -215,6 +272,8 @@ Week.defaultProps = {
   onDateClick: null,
   onDateKeyDown: null,
   selectedDate: null,
+  selectionEnd: null,
+  selectionStart: null,
   ignoreOutsideDate: false,
   dateProps: null,
 };

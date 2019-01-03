@@ -1,6 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme/build';
 import startOfDay from 'date-fns/start_of_day';
+import parseDate from 'date-fns/parse';
 
 import Week from './Week';
 import { weekDays } from '../test-utils';
@@ -121,5 +122,43 @@ describe('Week', () => {
         maxDate: new Date(1980, 9, 1),
       }),
     ).toBe(true);
+  });
+
+  [
+    ['0611', '0613', '0611', '0613', false, 'does not change'],
+    ['0605', '0607', '0607', '0608', false, 'start changes outside week'],
+    ['0605', '0615', '0607', '0615', false, 'changes but fully overlaps'],
+    ['0612', '0615', '0613', '0615', true, 'start changes within week'],
+    ['0614', '0615', '0612', '0615', true, 'start moves earlier within week'],
+    ['0612', '0615', '0608', '0615', true, 'start moves from week to outside'],
+    ['0620', '0622', '0608', '0622', true, 'start moves from after to before'],
+    ['0608', '0622', '0620', '0622', true, 'start moves from before to after'],
+    ['0612', '0614', '0612', '0615', true, 'end changes within week'],
+    ['0612', '0615', '0612', '0613', true, 'end moves earlier within week'],
+    ['0605', '0614', '0605', '0608', true, 'end moves from week to outside'],
+    ['0605', '0620', '0605', '0608', true, 'end moves from after to before'],
+    ['0605', '0608', '0605', '0620', true, 'end moves from before to after'],
+    ['0602', '0605', '0622', '0625', false, 'moves entirely past the week'],
+  ].forEach(([start, end, newStart, newEnd, expected, reason]) => {
+    it(`should${
+      expected ? '' : ' not'
+    } update when selection range ${reason}`, () => {
+      const date = dt => parseDate(`1980${dt}`);
+      const week = shallow(
+        <Week
+          {...initialProps}
+          selectionStart={date(start)}
+          selectionEnd={date(end)}
+        />,
+      ).instance();
+
+      expect(
+        week.shouldComponentUpdate({
+          ...initialProps,
+          selectionStart: date(newStart),
+          selectionEnd: date(newEnd),
+        }),
+      ).toBe(expected);
+    });
   });
 });

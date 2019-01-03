@@ -88,6 +88,8 @@ class BpkCalendarGrid extends Component {
       markToday,
       markOutsideDays,
       selectedDate,
+      selectionEnd,
+      selectionStart,
       focusedDate,
       minDate,
       maxDate,
@@ -136,6 +138,8 @@ class BpkCalendarGrid extends Component {
               markToday={markToday}
               markOutsideDays={markOutsideDays}
               selectedDate={selectedDate}
+              selectionEnd={selectionEnd}
+              selectionStart={selectionStart}
               focusedDate={focusedDate}
               minDate={minDate}
               maxDate={maxDate}
@@ -171,6 +175,8 @@ export const propTypes = {
   onDateKeyDown: PropTypes.func,
   preventKeyboardFocus: PropTypes.bool,
   selectedDate: PropTypes.instanceOf(Date),
+  selectionEnd: PropTypes.instanceOf(Date),
+  selectionStart: PropTypes.instanceOf(Date),
   showWeekendSeparator: PropTypes.bool,
   weekStartsOn: PropTypes.number,
   ignoreOutsideDate: PropTypes.bool,
@@ -192,6 +198,8 @@ BpkCalendarGrid.defaultProps = {
   onDateKeyDown: null,
   preventKeyboardFocus: false,
   selectedDate: null,
+  selectionEnd: null,
+  selectionStart: null,
   showWeekendSeparator: true,
   weekStartsOn: 1,
   ignoreOutsideDate: false,
