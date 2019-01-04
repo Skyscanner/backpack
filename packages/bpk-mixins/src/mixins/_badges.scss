@@ -49,10 +49,6 @@
     /* stylelint-enable declaration-no-important */
     margin-top: $bpk-one-pixel-rem * 2;
     margin-bottom: $bpk-one-pixel-rem * 2;
-
-    &:last-of-type {
-      @include bpk-margin-trailing($bpk-badge-padding-x);
-    }
   }
 }
 /// Centered badge. Modifies the bpk-badge mixin.
