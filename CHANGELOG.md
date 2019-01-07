@@ -2,6 +2,13 @@
 
 [Unreleased changes](./UNRELEASED.md).
 
+# 2019-01-07 - Fix background image bug
+
+**Fixed:**
+
+- bpk-component-image
+  - Fixed a bug with `BpkBackgroundImage` where inner content would not display unless it had an explicit opacity set.
+
 # 2019-01-07 - Fix badge padding
 
 **Fixed:**
