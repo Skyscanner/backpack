@@ -2,6 +2,13 @@
 
 [Unreleased changes](./UNRELEASED.md).
 
+# 2019-01-07 - Fix badge padding
+
+**Fixed:**
+
+- bpk-component-badge:
+  - Badges with icons and no text now have correctly-spaced padding.
+
 # 2018-12-19 - Fix exposure of iOS font token
 
 **Fixed:**
