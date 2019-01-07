@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-image",
-  "version": "2.1.6",
+  "version": "2.1.7",
   "description": "Backpack image component.",
   "main": "index.js",
   "repository": {
