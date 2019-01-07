@@ -6,14 +6,14 @@
 
 **Fixed:**
 
-- bpk-component-image
+- bpk-component-image: 2.1.6 => 2.1.7
   - Fixed a bug with `BpkBackgroundImage` where inner content would not display unless it had an explicit opacity set.
 
 # 2019-01-07 - Fix badge padding
 
 **Fixed:**
 
-- bpk-component-badge:
+- bpk-component-badge: 1.1.49 => 1.1.50
   - Badges with icons and no text now have correctly-spaced padding.
 
 # 2018-12-19 - Fix exposure of iOS font token
