@@ -118,7 +118,7 @@
     "lerna": "^3.7.1",
     "lint-staged": "^8.1.0",
     "lodash": "^4.17.11",
-    "marked": "^0.5.2",
+    "marked": "^0.6.0",
     "merge-stream": "^1.0.1",
     "node-sass": "^4.11.0",
     "postcss-flexbugs-fixes": "^4.1.0",
