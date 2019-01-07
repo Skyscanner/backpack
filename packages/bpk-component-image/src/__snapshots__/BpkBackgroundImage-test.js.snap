@@ -27,6 +27,9 @@ exports[`BpkBackgroundImage should accept userland className 1`] = `
         }
       }
     />
+    <div
+      className="bpk-background-image__content"
+    />
   </div>
 </div>
 `;
@@ -62,6 +65,9 @@ exports[`BpkBackgroundImage should have inView behavior 1`] = `
           "width": "100%",
         }
       }
+    />
+    <div
+      className="bpk-background-image__content"
     />
   </div>
 </div>
@@ -218,14 +224,18 @@ exports[`BpkBackgroundImage should render correctly 1`] = `
       }
     />
     <div
-      style={
-        Object {
-          "marginLeft": ".75rem",
-          "opacity": 0.7,
-          "paddingTop": ".75rem",
+      className="bpk-background-image__content"
+    >
+      <div
+        style={
+          Object {
+            "marginLeft": ".75rem",
+            "opacity": 0.7,
+            "paddingTop": ".75rem",
+          }
         }
-      }
-    />
+      />
+    </div>
   </div>
 </div>
 `;

@@ -136,9 +136,7 @@ storiesOf('bpk-component-image', module)
       }}
       src={image}
     >
-      <div
-        style={{ opacity: 0.7, marginLeft: spacingSm, paddingTop: spacingSm }}
-      >
+      <div style={{ marginLeft: spacingSm, paddingTop: spacingSm }}>
         <BpkText tagName="h2" textStyle="lg">
           Lorem ipsum dolor sit amet
         </BpkText>
@@ -157,9 +155,7 @@ storiesOf('bpk-component-image', module)
       }}
       src={image}
     >
-      <div
-        style={{ opacity: 0.7, marginLeft: spacingSm, paddingTop: spacingSm }}
-      >
+      <div style={{ marginLeft: spacingSm, paddingTop: spacingSm }}>
         <BpkText tagName="h2" textStyle="lg">
           Lorem ipsum dolor sit amet
         </BpkText>
