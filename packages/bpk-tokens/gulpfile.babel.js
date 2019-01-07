@@ -23,7 +23,7 @@ import gulp from 'gulp';
 import theo from 'theo';
 import gulpTheo from 'gulp-theo';
 import { flatten } from 'lodash';
-import gulpMerge from 'gulp-merge';
+import gulpMerge from 'merge2';
 import jsonLint from 'gulp-jsonlint';
 
 import bpkScss from './formatters/bpk.scss';
@@ -96,17 +96,17 @@ theo.registerFormat('android.xml', bpkAndroid);
 theo.registerTransform('ios', ['color/hex8rgba']);
 theo.registerTransform('android', ['color/hex8rgba']);
 
-gulp.task('clean', () => del(['tokens']));
+gulp.task('clean', done => del(['tokens'], done));
 
-gulp.task('lint', () => {
+gulp.task('lint', () =>
   gulp
     .src('./src/**/*.json')
     .pipe(jsonLint())
     .pipe(jsonLint.reporter())
-    .pipe(jsonLint.failAfterError());
-});
+    .pipe(jsonLint.failAfterError()),
+);
 
-gulp.task('tokens', ['clean', 'lint'], done => {
+const createTokens = done => {
   const streams = tokenSets.map(({ platform, format, nest }) => {
     let outputPath = 'tokens';
 
@@ -138,13 +138,12 @@ gulp.task('tokens', ['clean', 'lint'], done => {
         if (oldPath !== newPath) {
           fs.renameSync(oldPath, newPath);
         }
-        return done;
       });
   });
 
   gulpMerge(streams).on('finish', done);
+};
 
-  return done;
-});
+gulp.task('tokens', gulp.series(gulp.parallel('clean', 'lint'), createTokens));
 
-gulp.task('default', ['tokens']);
+gulp.task('default', gulp.series('tokens'));
