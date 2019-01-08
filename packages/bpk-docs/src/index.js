@@ -43,7 +43,10 @@ const ScrollToTop = withRouter(
     };
 
     componentDidUpdate(prevProps) {
-      if (this.props.location !== prevProps.location) {
+      const isNewLocation = this.props.location !== prevProps.location;
+      const hashIsEmpty = !this.props.location.hash;
+
+      if (isNewLocation && hashIsEmpty) {
         window.scrollTo(0, 0);
       }
     }
