@@ -28,10 +28,10 @@ const getFolders = dir =>
     .readdirSync(dir)
     .filter(file => fs.statSync(path.join(dir, file)).isDirectory());
 
-gulp.task('clean', () => del(getFolders(ICONS_FOLDER_PATH)));
+gulp.task('clean', done => del(getFolders(ICONS_FOLDER_PATH), done));
 
-gulp.task('copy', () => {
-  gulp.src(`${ICONS_FOLDER_PATH}/**/*.js`).pipe(gulp.dest('.'));
-});
+gulp.task('copy', () =>
+  gulp.src(`${ICONS_FOLDER_PATH}/**/*.js`).pipe(gulp.dest('.')),
+);
 
-gulp.task('default', ['copy']);
+gulp.task('default', gulp.series('copy'));
