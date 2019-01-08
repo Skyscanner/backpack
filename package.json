@@ -8,7 +8,7 @@
   },
   "scripts": {
     "preinstall": "npx ensure-node-env",
-    "postinstall": "npm run bootstrap",
+    "postinstall": "",
     "bootstrap": "lerna bootstrap --no-ci",
     "lerna": "lerna",
     "clean:dist": "rm -rf dist",
@@ -114,7 +114,7 @@
     "jest": "^21.2.1",
     "js-yaml": "^3.12.0",
     "json-loader": "^0.5.4",
-    "lerna": "^3.7.1",
+    "lerna": "^3.9.0",
     "lint-staged": "^8.1.0",
     "lodash": "^4.17.11",
     "marked": "^0.6.0",
