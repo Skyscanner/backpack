@@ -2,7 +2,7 @@
 
 [Unreleased changes](./UNRELEASED.md).
 
-# 2019-01-07 - Fix background image bug
+# 2019-01-08 - Reduce bpk-component-scrollable-calendar bundle size
 
 **Fixed:**
 
