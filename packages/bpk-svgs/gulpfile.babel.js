@@ -172,7 +172,7 @@ gulp.task('icons-common', () =>
     .pipe(gulp.dest('src/icons')),
 );
 
-gulp.task('icons-sm', ['icons-common'], () => {
+gulp.task('icons-sm', () => {
   const svgs = gulp.src('src/icons/**/*.svg').pipe(chmod(0o644));
 
   const styleAttribute = `style="width:${smallIconSize};height:${smallIconSize}"`;
@@ -233,7 +233,7 @@ gulp.task('icons-sm', ['icons-common'], () => {
   return merge(react, datauri, rawDatauri);
 });
 
-gulp.task('icons-lg', ['icons-common'], () => {
+gulp.task('icons-lg', () => {
   const svgs = gulp.src('src/icons/**/*.svg').pipe(chmod(0o644));
 
   const styleAttribute = `style="width:${largeIconSize};height:${largeIconSize}"`;
@@ -294,7 +294,7 @@ gulp.task('icons-lg', ['icons-common'], () => {
   return merge(react, datauri, rawDatauri);
 });
 
-gulp.task('icons-font', ['icons-common'], () => {
+gulp.task('icons-font', () => {
   /* We generate two copies of the exact same font here because when we
    * integrate both the React Native Icon and iOS Icon in the same iOS
    * app the underlying names in the font have to be different to
@@ -360,18 +360,16 @@ gulp.task('icons-font', ['icons-common'], () => {
   return merge(...saveFonts, saveMapping);
 });
 
-gulp.task('copy-svgs', ['icons-common'], () =>
+gulp.task('copy-svgs', () =>
   gulp
     .src('src/**/*.svg')
     .pipe(clone())
     .pipe(gulp.dest('dist/svgs')),
 );
 
-gulp.task('default', [
-  'elements',
-  'spinners',
-  'icons-sm',
-  'icons-lg',
-  'icons-font',
-  'copy-svgs',
-]);
+const allIcons = gulp.series(
+  'icons-common',
+  gulp.parallel('icons-sm', 'icons-lg', 'icons-font', 'copy-svgs'),
+);
+
+gulp.task('default', gulp.parallel('elements', 'spinners', allIcons));

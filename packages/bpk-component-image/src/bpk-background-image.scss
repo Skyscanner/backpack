@@ -36,6 +36,10 @@
     }
   }
 
+  &__content {
+    position: relative;
+  }
+
   &--no-background {
     @include bpk-image--no-background;
   }

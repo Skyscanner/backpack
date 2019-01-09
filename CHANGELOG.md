@@ -2,6 +2,27 @@
 
 [Unreleased changes](./UNRELEASED.md).
 
+# 2019-01-08 - Reduce bpk-component-scrollable-calendar bundle size
+
+**Fixed:**
+
+ - bpk-component-scrollable-calendar:
+   - We've swapped out `react-virtualized` for `react-window`, which reduces the prod bundle size by around 62kb! 🎉
+
+# 2019-01-07 - Fix background image bug
+
+**Fixed:**
+
+- bpk-component-image: 2.1.6 => 2.1.7
+  - Fixed a bug with `BpkBackgroundImage` where inner content would not display unless it had an explicit opacity set.
+
+# 2019-01-07 - Fix badge padding
+
+**Fixed:**
+
+- bpk-component-badge: 1.1.49 => 1.1.50
+  - Badges with icons and no text now have correctly-spaced padding.
+
 # 2018-12-19 - Fix exposure of iOS font token
 
 **Fixed:**

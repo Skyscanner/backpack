@@ -18,7 +18,7 @@
 /* @flow */
 
 import React from 'react';
-import renderer from 'react-test-renderer';
+import Shallow from 'react-test-renderer/shallow';
 import { DateUtils } from 'bpk-component-calendar';
 
 import BpkScrollableCalendar from './BpkScrollableCalendar';
@@ -28,58 +28,55 @@ const testDate = new Date(2010, 1, 15);
 
 describe('BpkScrollableCalendar', () => {
   it('should render correctly', () => {
-    const tree = renderer
-      .create(
-        <BpkScrollableCalendar
-          weekStartsOn={1}
-          daysOfWeek={weekDays}
-          formatMonth={formatMonth}
-          formatDateFull={formatDateFull}
-          showWeekendSeparator
-          // Subtract one day from today's date to make today selectable by default
-          minDate={DateUtils.addDays(testDate, -1)}
-          maxDate={DateUtils.addMonths(testDate, 12)}
-        />,
-      )
-      .toJSON();
+    const shallowRenderer = Shallow.createRenderer();
+    const tree = shallowRenderer.render(
+      <BpkScrollableCalendar
+        weekStartsOn={1}
+        daysOfWeek={weekDays}
+        formatMonth={formatMonth}
+        formatDateFull={formatDateFull}
+        showWeekendSeparator
+        // Subtract one day from today's date to make today selectable by default
+        minDate={DateUtils.addDays(testDate, -1)}
+        maxDate={DateUtils.addMonths(testDate, 12)}
+      />,
+    );
     expect(tree).toMatchSnapshot();
   });
 
   it('should support custom class names', () => {
-    const tree = renderer
-      .create(
-        <BpkScrollableCalendar
-          weekStartsOn={1}
-          daysOfWeek={weekDays}
-          formatMonth={formatMonth}
-          formatDateFull={formatDateFull}
-          showWeekendSeparator
-          // Subtract one day from today's date to make today selectable by default
-          minDate={DateUtils.addDays(testDate, -1)}
-          maxDate={DateUtils.addMonths(testDate, 12)}
-          className="custom-classname"
-        />,
-      )
-      .toJSON();
+    const shallowRenderer = Shallow.createRenderer();
+    const tree = shallowRenderer.render(
+      <BpkScrollableCalendar
+        weekStartsOn={1}
+        daysOfWeek={weekDays}
+        formatMonth={formatMonth}
+        formatDateFull={formatDateFull}
+        showWeekendSeparator
+        // Subtract one day from today's date to make today selectable by default
+        minDate={DateUtils.addDays(testDate, -1)}
+        maxDate={DateUtils.addMonths(testDate, 12)}
+        className="custom-classname"
+      />,
+    );
     expect(tree).toMatchSnapshot();
   });
 
   it('should support arbitrary props', () => {
-    const tree = renderer
-      .create(
-        <BpkScrollableCalendar
-          weekStartsOn={1}
-          daysOfWeek={weekDays}
-          formatMonth={formatMonth}
-          formatDateFull={formatDateFull}
-          showWeekendSeparator
-          // Subtract one day from today's date to make today selectable by default
-          minDate={DateUtils.addDays(testDate, -1)}
-          maxDate={DateUtils.addMonths(testDate, 12)}
-          testID="123"
-        />,
-      )
-      .toJSON();
+    const shallowRenderer = Shallow.createRenderer();
+    const tree = shallowRenderer.render(
+      <BpkScrollableCalendar
+        weekStartsOn={1}
+        daysOfWeek={weekDays}
+        formatMonth={formatMonth}
+        formatDateFull={formatDateFull}
+        showWeekendSeparator
+        // Subtract one day from today's date to make today selectable by default
+        minDate={DateUtils.addDays(testDate, -1)}
+        maxDate={DateUtils.addMonths(testDate, 12)}
+        testID="123"
+      />,
+    );
     expect(tree).toMatchSnapshot();
   });
 });

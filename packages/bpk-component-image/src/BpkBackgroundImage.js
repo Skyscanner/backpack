@@ -145,7 +145,11 @@ class BpkBackgroundImage extends Component<BpkBackgroundImageProps> {
                 />
               </noscript>
             )}
-          {!loading && children}
+          {!loading && (
+            <div className={getClassName('bpk-background-image__content')}>
+              {children}
+            </div>
+          )}
         </div>
       </div>
     );

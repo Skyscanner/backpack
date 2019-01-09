@@ -41,14 +41,20 @@ storiesOf('bpk-component-badge', module)
         With one icon{' '}
         <BpkBadge>
           <BpkSmallFlightIcon />
-          Promocionado
+          &nbsp;Promocionado
         </BpkBadge>
       </div>
       <div>
         With multiple icons{' '}
         <BpkBadge>
           <BpkSmallWeatherIcon /> + <BpkSmallBeerIcon />
-          Promocionado
+          &nbsp;Promocionado
+        </BpkBadge>
+      </div>
+      <div>
+        With multiple icons and no text{' '}
+        <BpkBadge>
+          <BpkSmallWeatherIcon /> + <BpkSmallBeerIcon />
         </BpkBadge>
       </div>
     </BadgeLayout>
