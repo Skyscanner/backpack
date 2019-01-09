@@ -80,7 +80,7 @@
     "babel-loader": "^7.1.5",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-plugin-transform-object-rest-spread": "^6.20.2",
-    "babel-preset-es2015": "^6.18.0",
+    "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.16.0",
     "chalk": "^2.4.1",
     "colors": "^1.3.3",
@@ -180,6 +180,7 @@
     "ignore": [
       "babel-loader",
       "css-loader",
+      "danger",
       "extract-text-webpack-plugin",
       "file-loader",
       "json-loader",
