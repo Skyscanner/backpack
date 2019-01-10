@@ -351,7 +351,7 @@ module.exports = {
   spacingBase: "1.5rem",
   spacingLg: "1.875rem",
   spacingMd: "1.125rem",
-  spacingNone: "0rem",
+  spacingNone: "0",
   spacingSm: ".75rem",
   spacingXl: "2.250rem",
   spacingXs: ".375rem",
