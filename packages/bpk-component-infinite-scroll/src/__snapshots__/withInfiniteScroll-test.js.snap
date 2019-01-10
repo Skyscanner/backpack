@@ -312,6 +312,50 @@ exports[`withInfiniteScroll should render correctly when no more elements 1`] = 
 </WithInfiniteScroll>
 `;
 
+exports[`withInfiniteScroll should render correctly with a "loaderMinDisplay" attribute 1`] = `
+<WithInfiniteScroll
+  dataSource={
+    ArrayDataSource {
+      "elements": Array [
+        "Element 0",
+        "Element 1",
+        "Element 2",
+        "Element 3",
+        "Element 4",
+      ],
+      "listeners": Array [
+        [Function],
+      ],
+    }
+  }
+  elementsPerScroll={5}
+  initiallyLoadedElements={5}
+  loaderMinDisplay="small"
+  onScroll={null}
+  onScrollFinished={null}
+  renderLoadingComponent={[Function]}
+  renderSeeMoreComponent={null}
+  seeMoreAfter={null}
+>
+  <div>
+    <List
+      elements={Array []}
+    >
+      <div
+        id="list"
+      />
+    </List>
+    <div
+      className={null}
+    >
+      <span>
+        Loading
+      </span>
+    </div>
+  </div>
+</WithInfiniteScroll>
+`;
+
 exports[`withInfiniteScroll should render correctly with a "renderLoadingComponent" attribute 1`] = `
 <WithInfiniteScroll
   dataSource={

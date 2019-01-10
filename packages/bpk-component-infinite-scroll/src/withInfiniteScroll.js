@@ -40,9 +40,10 @@ type ScrollFinishedEvent = {
 };
 
 export type Props = {
-  initiallyLoadedElements: number,
-  elementsPerScroll: number,
   dataSource: DataSource<any>,
+  elementsPerScroll: number,
+  initiallyLoadedElements: number,
+  loaderMinDisplay: ?('small' | 'half' | 'full'),
   onScroll: ?(o: ScrollEvent) => void,
   onScrollFinished: ?(o: ScrollFinishedEvent) => void,
   renderLoadingComponent: ?() => Element<any>,
@@ -67,6 +68,7 @@ const propTypes = {
   initiallyLoadedElements: PropTypes.number,
   elementsPerScroll: PropTypes.number,
   dataSource: PropTypes.instanceOf(DataSource).isRequired,
+  loaderMinDisplay: PropTypes.oneOf(['small', 'half', 'full']),
   onScroll: PropTypes.func,
   onScrollFinished: PropTypes.func,
   renderLoadingComponent: PropTypes.func,
@@ -113,8 +115,15 @@ const withInfiniteScroll = (
       };
 
       this.props.dataSource.onDataChange(this.updateData);
+
+      const thresholds = {
+        small: 0.01,
+        half: 0.5,
+        full: 0.99, // using 0.99 instead of 1 to avoid problems with float precision in IE11
+      };
+      const displaySize = this.props.loaderMinDisplay || 'full';
       this.observer = new IntersectionObserver(this.handleIntersection, {
-        threshold: 0.99, // using 0.99 instead of 1 to avoid problems with float precision in IE11
+        threshold: thresholds[displaySize],
       });
     }
 

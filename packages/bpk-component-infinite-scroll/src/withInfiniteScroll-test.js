@@ -145,6 +145,18 @@ describe('withInfiniteScroll', () => {
     expect(toJson(tree)).toMatchSnapshot();
   });
 
+  it('should render correctly with a "loaderMinDisplay" attribute', () => {
+    const tree = mount(
+      <InfiniteList
+        dataSource={new ArrayDataSource(elementsArray)}
+        renderLoadingComponent={() => <span>Loading</span>}
+        loaderMinDisplay="small"
+      />,
+    );
+
+    expect(toJson(tree)).toMatchSnapshot();
+  });
+
   it('should pass extra props to the decorated component', () => {
     const tree = mount(
       <InfiniteList
