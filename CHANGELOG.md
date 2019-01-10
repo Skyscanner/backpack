@@ -2,6 +2,19 @@
 
 [Unreleased changes](./UNRELEASED.md).
 
+# 2019-01-10 - New calendar properties
+
+**Added**
+
+- bpk-component-calendar: 4.4.6 => 4.5.0
+  - Add `cellClassName` for adding styles to the table cells in the grid.
+  - Add `selectionStart` and `selectionEnd` properties so that the Week object can know to re-render itself if the user is selecting a range and changes the week's selected status.
+
+**Fixed:**
+
+- bpk-tokens: 27.4.5 => 27.4.6
+  - Changed `spacingNone` from `0rem` to `0`. This won't affect any usage in CSS as they're equivalent.
+
 # 2019-01-08 - Reduce bpk-component-scrollable-calendar bundle size
 
 **Fixed:**
