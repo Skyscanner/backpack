@@ -229,7 +229,7 @@
       "value": "1.125rem"
     },
     "SPACING_NONE": {
-      "value": "0rem"
+      "value": "0"
     },
     "SPACING_SM": {
       "value": ".75rem"
@@ -2636,7 +2636,7 @@
     "SPACING_NONE": {
       "type": "size",
       "category": "spacings",
-      "value": "0rem",
+      "value": "0",
       "originalValue": "{!SPACING_NONE}",
       "name": "SPACING_NONE"
     },

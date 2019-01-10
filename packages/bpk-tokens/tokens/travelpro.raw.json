@@ -280,7 +280,7 @@
       "value": "1.125rem"
     },
     "SPACING_NONE": {
-      "value": "0rem"
+      "value": "0"
     },
     "SPACING_SM": {
       "value": ".75rem"
