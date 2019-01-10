@@ -46,11 +46,13 @@ describe('withInfiniteScroll', () => {
 
   const InfiniteList = withInfiniteScroll(List);
   let intersect;
+  let currentOptions = {};
 
   beforeEach(() => {
     global.IntersectionObserver = class {
-      constructor(callback) {
+      constructor(callback, options) {
         intersect = async () => callback([{ isIntersecting: true }]);
+        currentOptions = options;
       }
       observe() {} // eslint-disable-line
       unobserve() {} // eslint-disable-line
@@ -145,16 +147,70 @@ describe('withInfiniteScroll', () => {
     expect(toJson(tree)).toMatchSnapshot();
   });
 
-  it('should render correctly with a "loaderMinDisplay" attribute', () => {
+  it('should render correctly with a "loaderIntersectionTrigger" attribute', () => {
     const tree = mount(
       <InfiniteList
         dataSource={new ArrayDataSource(elementsArray)}
         renderLoadingComponent={() => <span>Loading</span>}
-        loaderMinDisplay="small"
+        loaderIntersectionTrigger="small"
       />,
     );
 
     expect(toJson(tree)).toMatchSnapshot();
+  });
+
+  it('should create the IntersectionObserver with a 0.01 threshold if the prop is set to "small"', () => {
+    mount(
+      <InfiniteList
+        dataSource={new ArrayDataSource(elementsArray)}
+        renderLoadingComponent={() => <span>Loading</span>}
+        loaderIntersectionTrigger="small"
+      />,
+    );
+
+    expect(currentOptions).toEqual({ threshold: 0.01 });
+  });
+
+  it('should create the IntersectionObserver with a 0.5 threshold if the prop is set to "half"', () => {
+    mount(
+      <InfiniteList
+        dataSource={new ArrayDataSource(elementsArray)}
+        renderLoadingComponent={() => <span>Loading</span>}
+        loaderIntersectionTrigger="half"
+      />,
+    );
+
+    expect(currentOptions).toEqual({ threshold: 0.5 });
+  });
+
+  it('should create the IntersectionObserver with a 0.99 threshold if the prop is set to "full"', () => {
+    mount(
+      <InfiniteList
+        dataSource={new ArrayDataSource(elementsArray)}
+        renderLoadingComponent={() => <span>Loading</span>}
+        loaderIntersectionTrigger="full"
+      />,
+    );
+
+    expect(currentOptions).toEqual({ threshold: 0.99 });
+  });
+
+  it('should create the IntersectionObserver with a 0.99 threshold if the prop is not set', () => {
+    mount(<InfiniteList dataSource={new ArrayDataSource(elementsArray)} />);
+
+    expect(currentOptions).toEqual({ threshold: 0.99 });
+  });
+
+  it('should create the IntersectionObserver with a 0.99 threshold if the prop is set with an invalid value', () => {
+    mount(
+      <InfiniteList
+        dataSource={new ArrayDataSource(elementsArray)}
+        renderLoadingComponent={() => <span>Loading</span>}
+        loaderIntersectionTrigger="invalid"
+      />,
+    );
+
+    expect(currentOptions).toEqual({ threshold: 0.99 });
   });
 
   it('should pass extra props to the decorated component', () => {

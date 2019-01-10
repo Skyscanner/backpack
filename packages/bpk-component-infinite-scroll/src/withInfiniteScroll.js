@@ -43,7 +43,7 @@ export type Props = {
   dataSource: DataSource<any>,
   elementsPerScroll: number,
   initiallyLoadedElements: number,
-  loaderMinDisplay: ?('small' | 'half' | 'full'),
+  loaderIntersectionTrigger: ?('small' | 'half' | 'full'),
   onScroll: ?(o: ScrollEvent) => void,
   onScrollFinished: ?(o: ScrollFinishedEvent) => void,
   renderLoadingComponent: ?() => Element<any>,
@@ -68,7 +68,7 @@ const propTypes = {
   initiallyLoadedElements: PropTypes.number,
   elementsPerScroll: PropTypes.number,
   dataSource: PropTypes.instanceOf(DataSource).isRequired,
-  loaderMinDisplay: PropTypes.oneOf(['small', 'half', 'full']),
+  loaderIntersectionTrigger: PropTypes.oneOf(['small', 'half', 'full']),
   onScroll: PropTypes.func,
   onScrollFinished: PropTypes.func,
   renderLoadingComponent: PropTypes.func,
@@ -79,6 +79,7 @@ const propTypes = {
 const defaultProps = {
   initiallyLoadedElements: 5,
   elementsPerScroll: 5,
+  loaderIntersectionTrigger: 'full',
   onScroll: null,
   onScrollFinished: null,
   renderLoadingComponent: null,
@@ -121,9 +122,9 @@ const withInfiniteScroll = (
         half: 0.5,
         full: 0.99, // using 0.99 instead of 1 to avoid problems with float precision in IE11
       };
-      const displaySize = this.props.loaderMinDisplay || 'full';
+      const displaySize = this.props.loaderIntersectionTrigger || 'full';
       this.observer = new IntersectionObserver(this.handleIntersection, {
-        threshold: thresholds[displaySize],
+        threshold: thresholds[displaySize] || thresholds.full,
       });
     }
 
