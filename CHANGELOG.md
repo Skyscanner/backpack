@@ -2,6 +2,12 @@
 
 [Unreleased changes](./UNRELEASED.md).
 
+# 2019-01-11 Bug fix for Scrollable Calendar
+
+**Fixed:**
+ - bpk-component-scrollable-calendar:
+   - Fixed an error that was appearing when used with React < 16.3.
+
 # 2019-01-11 Infinite scroll observer threshold prop
 
 **Added:**
