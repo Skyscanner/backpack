@@ -22,6 +22,7 @@ import React from 'react';
 import DocsPageWrapper from '../../components/DocsPageWrapper';
 import IntroBlurb from '../../components/IntroBlurb';
 
+import IOSBadge from '../IOSBadgePage';
 import WebBadge from '../WebBadgePage';
 import NativeBadge from '../NativeBadgePage';
 
@@ -34,6 +35,7 @@ const BadgePage = () => (
         describe or highlight areas.
       </IntroBlurb>,
     ]}
+    iosSubpage={<IOSBadge wrapped />}
     webSubpage={<WebBadge wrapped />}
     nativeSubpage={<NativeBadge wrapped />}
   />
