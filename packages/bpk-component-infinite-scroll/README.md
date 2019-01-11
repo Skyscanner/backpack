@@ -162,13 +162,14 @@ Updates the internal array and triggers all listeners.
 
 ## Props
 
-| Property                | PropType               | Required | Default Value |
-| ----------------------- | ---------------------- | -------- | ------------- |
-| dataSource              | instanceOf(DataSource) | true     | -             |
-| elementsPerScroll       | number                 | false    | 5             |
-| initiallyLoadedElements | number                 | false    | 5             |
-| onScroll                | func                   | false    | null          |
-| onScrollFinished        | func                   | false    | null          |
-| renderLoadingComponent  | func                   | false    | null          |
-| renderSeeMoreComponent  | func                   | false    | null          |
-| seeMoreAfter            | number                 | false    | null          |
+| Property                | PropType                         | Required | Default Value |
+| ----------------------- | -------------------------------- | -------- | ------------- |
+| dataSource              | instanceOf(DataSource)           | true     | -             |
+| elementsPerScroll       | number                           | false    | 5             |
+| initiallyLoadedElements | number                           | false    | 5             |
+| loaderMinDisplay        | oneOf(['small', 'half', 'full']) | false    | 'full'        |
+| onScroll                | func                             | false    | null          |
+| onScrollFinished        | func                             | false    | null          |
+| renderLoadingComponent  | func                             | false    | null          |
+| renderSeeMoreComponent  | func                             | false    | null          |
+| seeMoreAfter            | number                           | false    | null          |
