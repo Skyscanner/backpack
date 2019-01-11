@@ -2,9 +2,16 @@
 
 [Unreleased changes](./UNRELEASED.md).
 
+# 2019-01-11 Infinite scroll observer threshold prop
+
+**Added:**
+
+- bpk-component-infinite-scroll:
+  - Added `loaderIntersectionTrigger` so that consumers can decide which percentage of the loading component needs to be visible before triggering the fetch method. Options are `small`, `half` and `full`, being `full` the default option.
+
 # 2019-01-10 - New calendar properties
 
-**Added**
+**Added:**
 
 - bpk-component-calendar: 4.4.6 => 4.5.0
   - Add `cellClassName` for adding styles to the table cells in the grid.
