@@ -25,7 +25,7 @@ import Code from '../../components/Code';
 import CodeBlock from '../../components/CodeBlock';
 
 const createReactAppHref =
-  'https://github.com/facebookincubator/create-react-app';
+  'https://facebook.github.io/create-react-app/docs/getting-started';
 const backpackReactScriptsChangelogHref =
   'https://github.com/Skyscanner/backpack-react-scripts/blob/fork/packages/react-scripts/CHANGELOG.md';
 
@@ -35,9 +35,7 @@ const components = [
     title: 'TL;DR',
     blurb: [
       <CodeBlock>
-        {`npm install -g create-react-app
-
-create-react-app my-app --scripts-version=backpack-react-scripts
+        {`npx create-react-app my-app --scripts-version=backpack-react-scripts
 cd my-app
 npm start`}
       </CodeBlock>,
@@ -66,7 +64,7 @@ npm start`}
           Create React App
         </BpkLink>. It is almost identical in terms of its feature set, apart
         from some custom configuration which adds support for compilation of
-        Backpack components (Sass stylesheets etc).
+        Backpack components.
       </Paragraph>,
       <Paragraph>
         The generated project also comes with Backpack integration out the box -
@@ -77,7 +75,7 @@ npm start`}
         For more comprehensive documentation, please refer to the Create React
         App{' '}
         <BpkLink href={createReactAppHref} blank>
-          readme
+          docs
         </BpkLink>, as the majority of it&apos;s content still applies to{' '}
         <Code>backpack-react-scripts</Code>.
       </Paragraph>,
@@ -104,7 +102,7 @@ npm start`}
         codebases with a standardised way of building production web apps with
         Backpack + React at Skyscanner. When you create an app using{' '}
         <Code>
-          create-react-app my-app --scripts-version=backpack-react-scripts
+          npx create-react-app my-app --scripts-version=backpack-react-scripts
         </Code>, you&apos;ll notice that your project&apos;s{' '}
         <Code>package.json</Code> has a dependency on{' '}
         <Code>backpack-react-scripts</Code>. When we release new versions going
