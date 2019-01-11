@@ -43,7 +43,7 @@ class BpkScrollableCalendarGridList extends React.Component {
   constructor(props) {
     super(props);
 
-    this.outerDivRef = React.createRef();
+    this.outerDiv = null;
 
     const startDate = startOfDay(startOfMonth(this.props.minDate));
     const endDate = startOfDay(startOfMonth(this.props.maxDate));
@@ -88,7 +88,7 @@ class BpkScrollableCalendarGridList extends React.Component {
     this.state.monthItemHeights[index] || ESTIMATED_MONTH_ITEM_HEIGHT;
 
   setComponentHeight = () => {
-    const outerNode = this.outerDivRef.current;
+    const outerNode = this.outerDiv;
     if (outerNode) {
       const newHeight = outerNode.clientHeight;
       this.setState({ outerHeight: newHeight });
@@ -128,7 +128,9 @@ class BpkScrollableCalendarGridList extends React.Component {
           'bpk-scrollable-calendar-grid-list',
           this.props.className,
         )}
-        ref={this.outerDivRef}
+        ref={div => {
+          this.outerDiv = div;
+        }}
       >
         <List
           extraData={this.props}
