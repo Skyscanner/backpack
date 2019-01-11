@@ -1,6 +1,6 @@
 {
   "name": "bpk-docs",
-  "version": "0.0.344",
+  "version": "0.0.345",
   "main": "index.js",
   "description": "Backpack documentation site.",
   "repository": {
@@ -41,7 +41,7 @@
     "bpk-component-horizontal-nav": "^2.3.41",
     "bpk-component-icon": "^3.23.23",
     "bpk-component-image": "^2.1.9",
-    "bpk-component-infinite-scroll": "^2.1.13",
+    "bpk-component-infinite-scroll": "^2.2.0",
     "bpk-component-input": "^3.3.59",
     "bpk-component-label": "^3.2.107",
     "bpk-component-link": "^1.2.38",
