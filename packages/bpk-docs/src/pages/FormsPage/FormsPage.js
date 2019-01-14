@@ -688,8 +688,8 @@ const components = [
       <BpkParagraph>
         Validation messages should be used to provide the user with specific
         feedback about an error with a particular form input field. They can be
-        attached to <BpkLink href="#inputs">inputs</BpkLink>
-        , <BpkLink href="#selects">selects</BpkLink> and{' '}
+        attached to <BpkLink href="#inputs">inputs</BpkLink>,{' '}
+        <BpkLink href="#selects">selects</BpkLink> and{' '}
         <BpkLink href="#checkboxes">checkboxes</BpkLink>. They should either be
         displayed on form submit or on field blur. Have a look at the{' '}
         <BpkRouterLink to={ROUTES.FIELDSET}>fieldset</BpkRouterLink> component

@@ -63,7 +63,8 @@ const components = [
         is powered by{' '}
         <BpkLink href="https://react-autosuggest.js.org/" blank>
           React Autosuggest
-        </BpkLink>.
+        </BpkLink>
+        .
       </Paragraph>,
     ],
   },

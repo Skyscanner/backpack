@@ -101,7 +101,8 @@ const MyCalendarNav = ({ month, onMonthChange, direction }) => (
         }
       >
         <LeftIcon fill={colorWhite} />
-      </BpkButton>&nbsp;
+      </BpkButton>
+      &nbsp;
       <BpkButton
         iconOnly
         onClick={event =>

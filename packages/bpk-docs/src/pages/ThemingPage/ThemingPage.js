@@ -136,7 +136,8 @@ const webBlurb = [
     overview of this check{' '}
     <BpkLink href="https://caniuse.com/#feat=css-variables" blank>
       caniuse
-    </BpkLink>.
+    </BpkLink>
+    .
   </BpkBlockquote>,
 ];
 
@@ -151,7 +152,8 @@ const blurb = [
     In React Native, this is achieved using React&apos;s{' '}
     <BpkLink href={CONTEXT_API_URL} blank>
       context API
-    </BpkLink>. On the web,{' '}
+    </BpkLink>
+    . On the web,{' '}
     <BpkLink href={CSS_VARIABLES_URL} blank>
       CSS variables
     </BpkLink>{' '}

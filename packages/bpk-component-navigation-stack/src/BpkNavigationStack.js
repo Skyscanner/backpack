@@ -98,7 +98,8 @@ class BpkNavigationStack extends React.Component<Props, State> {
           {Children.map(views, (view, idx) => (
             <Transition
               in
-              key={idx}
+              // The order of these is unlikley to change...
+              key={idx} // eslint-disable-line react/no-array-index-key
               timeout={parseInt(durationSm, 10)}
               unmountOnExit
               onEnter={this.onTransitionEnter}

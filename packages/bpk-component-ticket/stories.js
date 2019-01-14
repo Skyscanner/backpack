@@ -168,6 +168,8 @@ storiesOf('bpk-component-ticket', module)
   /* eslint-disable react/no-array-index-key */
   .add('Day view', () => (
     <div style={{ margin: '0 auto', maxWidth: '800px' }}>
-      {flights.map((f, i) => <Flight flight={f} key={`f-${i}`} />)}
+      {flights.map((f, i) => (
+        <Flight flight={f} key={`f-${i}`} />
+      ))}
     </div>
   ));

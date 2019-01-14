@@ -67,7 +67,8 @@ const components = [
         The recommended way to get started with Backpack on web is to use{' '}
         <BpkRouterLink to={ROUTES.BACKPACK_REACT_SCRIPTS}>
           Backpack React Scripts
-        </BpkRouterLink>.
+        </BpkRouterLink>
+        .
         <br />
         <br />
         <strong>Note:</strong> If you are looking to integrate Backpack
@@ -142,17 +143,20 @@ const components = [
         tilde importing mechanism. If you are not using{' '}
         <BpkLink href={sassLoaderUrl} blank>
           sass-loader
-        </BpkLink>, you can use{' '}
+        </BpkLink>
+        , you can use{' '}
         <BpkLink href={nodeSassTildeImporterUrl}>
           node-sass-tilde-importer
-        </BpkLink>. The <Code>indentedSyntax</Code> option is unsupported.
+        </BpkLink>
+        . The <Code>indentedSyntax</Code> option is unsupported.
       </BpkBlockquote>,
       <Paragraph>
         To get an idea of all the variables and mixins available, head on over
         to the{' '}
         <BpkLink href="/sassdoc" blank>
           full reference documentation
-        </BpkLink>.
+        </BpkLink>
+        .
       </Paragraph>,
     ],
     examples: [],

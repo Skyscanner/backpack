@@ -35,7 +35,8 @@ const SassdocLink = ({ sassdocId, category, ...rest }) => (
         Looking for &quot;{category}&quot; Sass variables and mixins? Check out{' '}
         <BpkLink href={`/sassdoc/#${sassdocId}`} blank>
           Backpack&apos;s Sassdoc
-        </BpkLink>.
+        </BpkLink>
+        .
       </span>
     )}
     {...rest}

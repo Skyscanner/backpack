@@ -62,9 +62,10 @@ npm start`}
         conjunction with Facebook&apos;s{' '}
         <BpkLink href={createReactAppHref} blank>
           Create React App
-        </BpkLink>. It is almost identical in terms of its feature set, apart
-        from some custom configuration which adds support for compilation of
-        Backpack components.
+        </BpkLink>
+        . It is almost identical in terms of its feature set, apart from some
+        custom configuration which adds support for compilation of Backpack
+        components.
       </Paragraph>,
       <Paragraph>
         The generated project also comes with Backpack integration out the box -
@@ -76,7 +77,8 @@ npm start`}
         App{' '}
         <BpkLink href={createReactAppHref} blank>
           docs
-        </BpkLink>, as the majority of it&apos;s content still applies to{' '}
+        </BpkLink>
+        , as the majority of it&apos;s content still applies to{' '}
         <Code>backpack-react-scripts</Code>.
       </Paragraph>,
     ],
@@ -103,12 +105,12 @@ npm start`}
         Backpack + React at Skyscanner. When you create an app using{' '}
         <Code>
           npx create-react-app my-app --scripts-version=backpack-react-scripts
-        </Code>, you&apos;ll notice that your project&apos;s{' '}
-        <Code>package.json</Code> has a dependency on{' '}
-        <Code>backpack-react-scripts</Code>. When we release new versions going
-        forward (i.e. support for server-side rendering etc), all you need to do
-        is bump the version number and run <Code>npm install</Code> to reap the
-        rewards.
+        </Code>
+        , you&apos;ll notice that your project&apos;s <Code>package.json</Code>{' '}
+        has a dependency on <Code>backpack-react-scripts</Code>. When we release
+        new versions going forward (i.e. support for server-side rendering etc),
+        all you need to do is bump the version number and run{' '}
+        <Code>npm install</Code> to reap the rewards.
       </Paragraph>,
     ],
     examples: [],

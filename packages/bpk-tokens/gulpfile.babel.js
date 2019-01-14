@@ -65,11 +65,10 @@ const PLATFORM_FORMATS = {
 
 const tokenSets = flatten(
   Object.keys(PLATFORM_FORMATS).map(platform =>
-    PLATFORM_FORMATS[platform].map(
-      format =>
-        typeof format !== 'string'
-          ? { platform, ...format }
-          : { platform, format },
+    PLATFORM_FORMATS[platform].map(format =>
+      typeof format !== 'string'
+        ? { platform, ...format }
+        : { platform, format },
     ),
   ),
 );
