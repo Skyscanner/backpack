@@ -23,9 +23,7 @@ import iosScreenshotWithAccessoryView from '../../../../../backpack-react-native
 import androidScreenshot from '../../../../../backpack-react-native/packages/react-native-bpk-component-text-input/screenshots/android/text-inputs.png';
 import androidScreenshotWithAccessoryView from '../../../../../backpack-react-native/packages/react-native-bpk-component-text-input/screenshots/android/text-inputs-with-accessory-view.png';
 
-import IntroBlurb from '../../components/IntroBlurb';
 import DocsPageBuilder from '../../components/DocsPageBuilder';
-import DocsPageWrapper from '../../components/DocsPageWrapper';
 
 const components = [
   {
@@ -74,28 +72,13 @@ const components = [
   },
 ];
 
-const blurb = [
-  <IntroBlurb>
-    Text inputs are used to capture textual information as well as numbers and
-    passwords.
-  </IntroBlurb>,
-];
-
-const NativeInputSubPage = ({ ...rest }) => (
+const NativeInputPage = ({ ...rest }) => (
   <DocsPageBuilder
     title="Text input"
     components={components}
     readme={readme}
     showMenu={false}
     {...rest}
-  />
-);
-
-const NativeInputPage = () => (
-  <DocsPageWrapper
-    title="Text input"
-    blurb={blurb}
-    nativeSubpage={<NativeInputSubPage wrapped />}
   />
 );
 

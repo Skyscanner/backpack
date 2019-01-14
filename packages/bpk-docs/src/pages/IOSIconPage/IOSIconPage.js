@@ -16,28 +16,38 @@
  * limitations under the License.
  */
 
-/* @flow */
-
 import React from 'react';
-import DocsPageWrapper from '../../components/DocsPageWrapper';
-import IntroBlurb from '../../components/IntroBlurb';
 
-import IOS from '../IOSIconPage';
-import Web from '../WebIconsPage';
-import Native from '../NativeIconsPage';
+import readme from '../../../../../backpack-ios/Backpack/Icon/README.md';
+import screenshotAll from '../../../../../backpack-ios/screenshots/Icon/all.png';
 
-const Page = () => (
-  <DocsPageWrapper
+import DocsPageBuilder from '../../components/DocsPageBuilder';
+
+const components = [
+  {
+    id: 'default',
+    title: 'Default',
+    screenshots: [
+      {
+        width: 750,
+        height: 1334,
+        src: `/${screenshotAll}`,
+        altText: 'Icons for iOS.',
+        subText: '(iPhone 8 simulator)',
+      },
+    ],
+  },
+];
+
+const IOSIconPage = ({ ...rest }) => (
+  <DocsPageBuilder
     title="Icon"
-    blurb={[
-      <IntroBlurb>
-        A suite of icons for representing concepts, features and actions.
-      </IntroBlurb>,
-    ]}
-    iosSubpage={<IOS wrapped />}
-    webSubpage={<Web wrapped />}
-    nativeSubpage={<Native wrapped />}
+    components={components}
+    readme={readme}
+    iosDocId="BPKIcon"
+    showMenu
+    {...rest}
   />
 );
 
-export default Page;
+export default IOSIconPage;

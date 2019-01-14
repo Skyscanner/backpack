@@ -17,26 +17,26 @@
  */
 
 import React from 'react';
-
-import DocsPageWrapper from '../../components/DocsPageWrapper';
 import IntroBlurb from '../../components/IntroBlurb';
+import DocsPageWrapper from '../../components/DocsPageWrapper';
 
-import IOSCalendar from '../IOSCalendarPage';
-import WebCalendar from '../WebCalendarPage';
+import IOSSwitchPage from '../IOSSwitchPage';
+import NativeSwitchPage from '../NativeSwitchPage';
 
 const blurb = [
   <IntroBlurb>
-    Calendars are used for date selection within a defined time period.
+    Switches allow users to toggle between two states, on or off. On mobile,
+    these are often used as a replacement for checkboxes.
   </IntroBlurb>,
 ];
 
-const CalendarPage = () => (
+const SwitchPage = () => (
   <DocsPageWrapper
-    title="Calendar"
+    title="Switch"
     blurb={blurb}
-    iosSubpage={<IOSCalendar wrapped />}
-    webSubpage={<WebCalendar wrapped />}
+    iosSubpage={<IOSSwitchPage wrapped />}
+    nativeSubpage={<NativeSwitchPage wrapped />}
   />
 );
 
-export default CalendarPage;
+export default SwitchPage;

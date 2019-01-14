@@ -16,31 +16,38 @@
  * limitations under the License.
  */
 
-/* @flow */
-
 import React from 'react';
-import DocsPageWrapper from '../../components/DocsPageWrapper';
-import IntroBlurb from '../../components/IntroBlurb';
 
-import IOS from '../IOSChipPage';
-import Web from '../WebChipsPage';
-import Native from '../NativeChipsPage';
+import readme from '../../../../../backpack-ios/Backpack/Chip/README.md';
+import screenshotAll from '../../../../../backpack-ios/screenshots/Chip/all.png';
 
-const blurb = [
-  <IntroBlurb>
-    Chips, sometimes called tags, are useful for displaying keywords or
-    categories from common sets of data.
-  </IntroBlurb>,
+import DocsPageBuilder from '../../components/DocsPageBuilder';
+
+const components = [
+  {
+    id: 'default',
+    title: 'Default',
+    screenshots: [
+      {
+        width: 750,
+        height: 1334,
+        src: `/${screenshotAll}`,
+        altText: 'Chips for iOS.',
+        subText: '(iPhone 8 simulator)',
+      },
+    ],
+  },
 ];
 
-const Page = () => (
-  <DocsPageWrapper
+const IOSChipPage = ({ ...rest }) => (
+  <DocsPageBuilder
     title="Chip"
-    blurb={blurb}
-    iosSubpage={<IOS wrapped />}
-    webSubpage={<Web wrapped />}
-    nativeSubpage={<Native wrapped />}
+    components={components}
+    readme={readme}
+    iosDocId="BPKChip"
+    showMenu
+    {...rest}
   />
 );
 
-export default Page;
+export default IOSChipPage;

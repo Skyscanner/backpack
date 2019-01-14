@@ -23,8 +23,9 @@ import DocsPageWrapper from '../../components/DocsPageWrapper';
 import Paragraph from '../../components/Paragraph';
 import IntroBlurb from '../../components/IntroBlurb';
 
-import Web from '../WebCardsPage';
-import Native from '../NativeCardsPage';
+import IOSCard from '../IOSCardPage';
+import WebCard from '../WebCardsPage';
+import NativeCard from '../NativeCardsPage';
 
 const Page = () => (
   <DocsPageWrapper
@@ -39,8 +40,9 @@ const Page = () => (
         elements.
       </Paragraph>,
     ]}
-    webSubpage={<Web wrapped />}
-    nativeSubpage={<Native wrapped />}
+    iosSubpage={<IOSCard wrapped />}
+    webSubpage={<WebCard wrapped />}
+    nativeSubpage={<NativeCard wrapped />}
   />
 );
 

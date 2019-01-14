@@ -16,31 +16,38 @@
  * limitations under the License.
  */
 
-/* @flow */
-
 import React from 'react';
-import DocsPageWrapper from '../../components/DocsPageWrapper';
-import IntroBlurb from '../../components/IntroBlurb';
 
-import IOS from '../IOSSpinnerPage';
-import Web from '../WebSpinnersPage';
-import Native from '../NativeSpinnerPage';
+import readme from '../../../../../backpack-ios/Backpack/Spinner/README.md';
+import screenshotAll from '../../../../../backpack-ios/screenshots/Spinner/all.png';
 
-const blurb = [
-  <IntroBlurb>
-    Spinners are used to indicate that a part of the product is loading or
-    performing a task when the amount of time needed is unknown.
-  </IntroBlurb>,
+import DocsPageBuilder from '../../components/DocsPageBuilder';
+
+const components = [
+  {
+    id: 'default',
+    title: 'Default',
+    screenshots: [
+      {
+        width: 750,
+        height: 1334,
+        src: `/${screenshotAll}`,
+        altText: 'Spinner for iOS.',
+        subText: '(iPhone 8 simulator)',
+      },
+    ],
+  },
 ];
 
-const Page = () => (
-  <DocsPageWrapper
+const IOSSpinnerPage = ({ ...rest }) => (
+  <DocsPageBuilder
     title="Spinner"
-    blurb={blurb}
-    iosSubpage={<IOS wrapped />}
-    webSubpage={<Web wrapped />}
-    nativeSubpage={<Native wrapped />}
+    components={components}
+    readme={readme}
+    iosDocId="BPKSpinner"
+    showMenu
+    {...rest}
   />
 );
 
-export default Page;
+export default IOSSpinnerPage;

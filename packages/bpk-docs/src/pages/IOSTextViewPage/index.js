@@ -16,27 +16,6 @@
  * limitations under the License.
  */
 
-import React from 'react';
+import page from './IOSTextViewPage';
 
-import DocsPageWrapper from '../../components/DocsPageWrapper';
-import IntroBlurb from '../../components/IntroBlurb';
-
-import IOSCalendar from '../IOSCalendarPage';
-import WebCalendar from '../WebCalendarPage';
-
-const blurb = [
-  <IntroBlurb>
-    Calendars are used for date selection within a defined time period.
-  </IntroBlurb>,
-];
-
-const CalendarPage = () => (
-  <DocsPageWrapper
-    title="Calendar"
-    blurb={blurb}
-    iosSubpage={<IOSCalendar wrapped />}
-    webSubpage={<WebCalendar wrapped />}
-  />
-);
-
-export default CalendarPage;
+export default page;

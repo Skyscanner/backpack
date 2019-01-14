@@ -16,29 +16,38 @@
  * limitations under the License.
  */
 
-/* @flow */
-
 import React from 'react';
-import DocsPageWrapper from '../../components/DocsPageWrapper';
-import IntroBlurb from '../../components/IntroBlurb';
 
-import IOS from '../IOSPanelPage';
-import Web from '../WebPanelsPage';
-import Native from '../NativePanelsPage';
+import readme from '../../../../../backpack-ios/Backpack/Panel/README.md';
+import screenshotAll from '../../../../../backpack-ios/screenshots/Panel/all.png';
 
-const Page = () => (
-  <DocsPageWrapper
+import DocsPageBuilder from '../../components/DocsPageBuilder';
+
+const components = [
+  {
+    id: 'default',
+    title: 'Default',
+    screenshots: [
+      {
+        width: 750,
+        height: 1334,
+        src: `/${screenshotAll}`,
+        altText: 'Panel for iOS.',
+        subText: '(iPhone 8 simulator)',
+      },
+    ],
+  },
+];
+
+const IOSPanelPage = ({ ...rest }) => (
+  <DocsPageBuilder
     title="Panel"
-    blurb={[
-      <IntroBlurb>
-        Panels are useful for housing distinct areas of related content. Unlike
-        cards these are not clickable.
-      </IntroBlurb>,
-    ]}
-    iosSubpage={<IOS wrapped />}
-    webSubpage={<Web wrapped />}
-    nativeSubpage={<Native wrapped />}
+    components={components}
+    readme={readme}
+    iosDocId="BPKPanel"
+    showMenu
+    {...rest}
   />
 );
 
-export default Page;
+export default IOSPanelPage;

@@ -80,10 +80,8 @@ import InfiniteScrollPage from '../pages/InfiniteScrollPage';
 import MobileScrollContainerPage from '../pages/MobileScrollContainerPage';
 import ModalsPage from '../pages/ModalsPage';
 import NativeFlatListPage from '../pages/NativeFlatListPage';
-import NativeInputPage from '../pages/NativeTextInputPage';
 import NativePickerPage from '../pages/NativePickerPage';
 import NativeSelectPage from '../pages/NativeSelectPage';
-import NativeSwitchPage from '../pages/NativeSwitchPage';
 import NativeTouchableNativeFeedbackPage from '../pages/NativeTouchableNativeFeedbackPage';
 import NativeTouchableOverlayPage from '../pages/NativeTouchableOverlayPage';
 import NavigationBarPage from '../pages/NavigationBarPage';
@@ -99,7 +97,9 @@ import SectionListPage from '../pages/SectionListPage';
 import SlidersPage from '../pages/SlidersPage';
 import SpinnerPage from '../pages/SpinnerPage';
 import StarRatingPage from '../pages/StarRatingPage';
+import SwitchPage from '../pages/SwitchPage';
 import TablesPage from '../pages/TablesPage';
+import TextInputPage from '../pages/TextInputPage';
 import TextPage from '../pages/TextPage';
 import ThemingPage from '../pages/ThemingPage';
 import TicketsPage from '../pages/TicketsPage';
@@ -252,12 +252,12 @@ export const ROUTES_MAPPINGS = [
         path: ROUTES.STAR_RATING,
         component: StarRatingPage,
       },
-      { path: ROUTES.SWITCH, component: NativeSwitchPage },
+      { path: ROUTES.SWITCH, component: SwitchPage },
       { path: ROUTES.TABLE, component: TablesPage },
       { path: ROUTES.TEXT, component: TextPage },
       {
         path: ROUTES.TEXT_INPUT,
-        component: NativeInputPage,
+        component: TextInputPage,
       },
       { path: ROUTES.THEMING, component: ThemingPage },
       { path: ROUTES.TICKET, component: TicketsPage },

@@ -18,25 +18,26 @@
 
 import React from 'react';
 
-import DocsPageWrapper from '../../components/DocsPageWrapper';
 import IntroBlurb from '../../components/IntroBlurb';
+import DocsPageWrapper from '../../components/DocsPageWrapper';
 
-import IOSCalendar from '../IOSCalendarPage';
-import WebCalendar from '../WebCalendarPage';
+import IOS from '../IOSTextViewPage';
+import Native from '../NativeTextInputPage';
 
 const blurb = [
   <IntroBlurb>
-    Calendars are used for date selection within a defined time period.
+    Text inputs are used to capture textual information as well as numbers and
+    passwords.
   </IntroBlurb>,
 ];
 
-const CalendarPage = () => (
+const TextInputPage = () => (
   <DocsPageWrapper
-    title="Calendar"
+    title="Text input"
     blurb={blurb}
-    iosSubpage={<IOSCalendar wrapped />}
-    webSubpage={<WebCalendar wrapped />}
+    iosSubpage={<IOS wrapped />}
+    nativeSubpage={<Native wrapped />}
   />
 );
 
-export default CalendarPage;
+export default TextInputPage;
