@@ -32,7 +32,7 @@ const components = [
         width: 1080,
         height: 1920,
         src: `/${screenshotAll}`,
-        altText: 'Alert dialog with a call to action.',
+        altText: 'Android badges',
         subText: '(Google Pixel emulator)',
       },
     ],
