@@ -22,6 +22,7 @@ import React from 'react';
 import DocsPageWrapper from '../../components/DocsPageWrapper';
 import IntroBlurb from '../../components/IntroBlurb';
 
+import Android from '../AndroidChipPage';
 import IOS from '../IOSChipPage';
 import Web from '../WebChipsPage';
 import Native from '../NativeChipsPage';
@@ -37,6 +38,7 @@ const Page = () => (
   <DocsPageWrapper
     title="Chip"
     blurb={blurb}
+    androidSubpage={<Android wrapped />}
     iosSubpage={<IOS wrapped />}
     webSubpage={<Web wrapped />}
     nativeSubpage={<Native wrapped />}

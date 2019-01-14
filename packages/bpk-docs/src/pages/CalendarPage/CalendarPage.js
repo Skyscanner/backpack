@@ -21,6 +21,7 @@ import React from 'react';
 import DocsPageWrapper from '../../components/DocsPageWrapper';
 import IntroBlurb from '../../components/IntroBlurb';
 
+import AndroidCalendar from '../AndroidCalendarPage';
 import IOSCalendar from '../IOSCalendarPage';
 import WebCalendar from '../WebCalendarPage';
 
@@ -34,6 +35,7 @@ const CalendarPage = () => (
   <DocsPageWrapper
     title="Calendar"
     blurb={blurb}
+    androidSubpage={<AndroidCalendar wrapped />}
     iosSubpage={<IOSCalendar wrapped />}
     webSubpage={<WebCalendar wrapped />}
   />

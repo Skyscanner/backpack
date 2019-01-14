@@ -22,6 +22,7 @@ import React from 'react';
 import DocsPageWrapper from '../../components/DocsPageWrapper';
 import IntroBlurb from '../../components/IntroBlurb';
 
+import Android from '../AndroidSpinnerPage';
 import IOS from '../IOSSpinnerPage';
 import Web from '../WebSpinnersPage';
 import Native from '../NativeSpinnerPage';
@@ -37,6 +38,7 @@ const Page = () => (
   <DocsPageWrapper
     title="Spinner"
     blurb={blurb}
+    androidSubpage={<Android wrapped />}
     iosSubpage={<IOS wrapped />}
     webSubpage={<Web wrapped />}
     nativeSubpage={<Native wrapped />}

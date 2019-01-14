@@ -23,6 +23,7 @@ import DocsPageWrapper from '../../components/DocsPageWrapper';
 import Paragraph from '../../components/Paragraph';
 import IntroBlurb from '../../components/IntroBlurb';
 
+import AndroidCard from '../AndroidCardPage';
 import IOSCard from '../IOSCardPage';
 import WebCard from '../WebCardsPage';
 import NativeCard from '../NativeCardsPage';
@@ -40,6 +41,7 @@ const Page = () => (
         elements.
       </Paragraph>,
     ]}
+    androidSubpage={<AndroidCard wrapped />}
     iosSubpage={<IOSCard wrapped />}
     webSubpage={<WebCard wrapped />}
     nativeSubpage={<NativeCard wrapped />}
