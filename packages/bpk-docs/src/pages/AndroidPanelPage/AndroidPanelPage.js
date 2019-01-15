@@ -17,10 +17,9 @@
  */
 
 import React from 'react';
-import readme from '../../../../../backpack-react-native/packages/react-native-bpk-component-switch/README.md';
 
-import iosVideo from '../../../../../backpack-react-native/packages/react-native-bpk-component-switch/videos/ios/all-types-react-native-bpk-component-switch.mp4';
-import androidVideo from '../../../../../backpack-react-native/packages/react-native-bpk-component-switch/videos/android/all-types-react-native-bpk-component-switch.mp4';
+import readme from '../../../../../backpack-android/docs/Panel/README.md';
+import screenshotDefault from '../../../../../backpack-android/docs/Panel/screenshots/all.png';
 
 import DocsPageBuilder from '../../components/DocsPageBuilder';
 
@@ -28,31 +27,27 @@ const components = [
   {
     id: 'default',
     title: 'Default',
-    videos: [
+    screenshots: [
       {
-        title: 'iOS',
-        width: 750,
-        src: `/${iosVideo}`,
-        subText: '(iPhone 8 simulator)',
-      },
-      {
-        title: 'Android',
-        width: 750,
-        src: `/${androidVideo}`,
-        subText: '(Google Pixel emualtor)',
+        width: 1080,
+        height: 1920,
+        src: `/${screenshotDefault}`,
+        altText: 'Panel component',
+        subText: '(Google Pixel emulator)',
       },
     ],
   },
 ];
 
-const NativeSwitchPage = ({ ...rest }) => (
+const AndroidSpinnerPage = ({ ...rest }) => (
   <DocsPageBuilder
-    title="Switch"
+    title="Panel"
     components={components}
     readme={readme}
-    showMenu={false}
+    androidDocId="net.skyscanner.backpack.panel"
+    showMenu
     {...rest}
   />
 );
 
-export default NativeSwitchPage;
+export default AndroidSpinnerPage;

@@ -17,42 +17,37 @@
  */
 
 import React from 'react';
-import readme from '../../../../../backpack-react-native/packages/react-native-bpk-component-switch/README.md';
 
-import iosVideo from '../../../../../backpack-react-native/packages/react-native-bpk-component-switch/videos/ios/all-types-react-native-bpk-component-switch.mp4';
-import androidVideo from '../../../../../backpack-react-native/packages/react-native-bpk-component-switch/videos/android/all-types-react-native-bpk-component-switch.mp4';
+import readme from '../../../../../backpack-android/docs/Calendar/README.md';
+import screenshotAll from '../../../../../backpack-android/docs/Calendar/screenshots/range.png';
 
 import DocsPageBuilder from '../../components/DocsPageBuilder';
 
 const components = [
   {
-    id: 'default',
-    title: 'Default',
-    videos: [
+    id: 'range',
+    title: 'Range',
+    screenshots: [
       {
-        title: 'iOS',
-        width: 750,
-        src: `/${iosVideo}`,
-        subText: '(iPhone 8 simulator)',
-      },
-      {
-        title: 'Android',
-        width: 750,
-        src: `/${androidVideo}`,
-        subText: '(Google Pixel emualtor)',
+        width: 1080,
+        height: 1920,
+        src: `/${screenshotAll}`,
+        altText: 'Calendar with a range of dates',
+        subText: '(Google Pixel emulator)',
       },
     ],
   },
 ];
 
-const NativeSwitchPage = ({ ...rest }) => (
+const AndroidCalendarPage = ({ ...rest }) => (
   <DocsPageBuilder
-    title="Switch"
+    title="Calendar"
     components={components}
     readme={readme}
-    showMenu={false}
+    androidDocId="net.skyscanner.backpack.calendar"
+    showMenu
     {...rest}
   />
 );
 
-export default NativeSwitchPage;
+export default AndroidCalendarPage;

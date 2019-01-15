@@ -16,33 +16,29 @@
  * limitations under the License.
  */
 
-/* @flow */
-
 import React from 'react';
-import DocsPageWrapper from '../../components/DocsPageWrapper';
 import IntroBlurb from '../../components/IntroBlurb';
+import DocsPageWrapper from '../../components/DocsPageWrapper';
 
-import Android from '../AndroidSpinnerPage';
-import IOS from '../IOSSpinnerPage';
-import Web from '../WebSpinnersPage';
-import Native from '../NativeSpinnerPage';
+import AndroidSwitchPage from '../AndroidSwitchPage';
+import IOSSwitchPage from '../IOSSwitchPage';
+import NativeSwitchPage from '../NativeSwitchPage';
 
 const blurb = [
   <IntroBlurb>
-    Spinners are used to indicate that a part of the product is loading or
-    performing a task when the amount of time needed is unknown.
+    Switches allow users to toggle between two states, on or off. On mobile,
+    these are often used as a replacement for checkboxes.
   </IntroBlurb>,
 ];
 
-const Page = () => (
+const SwitchPage = () => (
   <DocsPageWrapper
-    title="Spinner"
+    title="Switch"
     blurb={blurb}
-    androidSubpage={<Android wrapped />}
-    iosSubpage={<IOS wrapped />}
-    webSubpage={<Web wrapped />}
-    nativeSubpage={<Native wrapped />}
+    androidSubpage={<AndroidSwitchPage wrapped />}
+    iosSubpage={<IOSSwitchPage wrapped />}
+    nativeSubpage={<NativeSwitchPage wrapped />}
   />
 );
 
-export default Page;
+export default SwitchPage;

@@ -16,33 +16,28 @@
  * limitations under the License.
  */
 
-/* @flow */
-
 import React from 'react';
-import DocsPageWrapper from '../../components/DocsPageWrapper';
-import IntroBlurb from '../../components/IntroBlurb';
 
-import Android from '../AndroidSpinnerPage';
-import IOS from '../IOSSpinnerPage';
-import Web from '../WebSpinnersPage';
-import Native from '../NativeSpinnerPage';
+import IntroBlurb from '../../components/IntroBlurb';
+import DocsPageWrapper from '../../components/DocsPageWrapper';
+
+import IOS from '../IOSTextViewPage';
+import Native from '../NativeTextInputPage';
 
 const blurb = [
   <IntroBlurb>
-    Spinners are used to indicate that a part of the product is loading or
-    performing a task when the amount of time needed is unknown.
+    Text inputs are used to capture textual information as well as numbers and
+    passwords.
   </IntroBlurb>,
 ];
 
-const Page = () => (
+const TextInputPage = () => (
   <DocsPageWrapper
-    title="Spinner"
+    title="Text input"
     blurb={blurb}
-    androidSubpage={<Android wrapped />}
     iosSubpage={<IOS wrapped />}
-    webSubpage={<Web wrapped />}
     nativeSubpage={<Native wrapped />}
   />
 );
 
-export default Page;
+export default TextInputPage;

@@ -22,6 +22,8 @@ import React from 'react';
 import DocsPageWrapper from '../../components/DocsPageWrapper';
 import IntroBlurb from '../../components/IntroBlurb';
 
+import AndroidButtons from '../AndroidButtonPage';
+import IOSButtons from '../IOSButtonPage';
 import WebButtons from '../WebButtonsPage';
 import NativeButtons from '../NativeButtonPage';
 
@@ -33,6 +35,8 @@ const ButtonPage = () => (
         Buttons make common actions and navigation easy to perform.
       </IntroBlurb>,
     ]}
+    androidSubpage={<AndroidButtons wrapped />}
+    iosSubpage={<IOSButtons wrapped />}
     webSubpage={<WebButtons wrapped />}
     nativeSubpage={<NativeButtons wrapped />}
   />

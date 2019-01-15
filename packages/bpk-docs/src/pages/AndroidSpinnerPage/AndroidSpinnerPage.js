@@ -17,10 +17,10 @@
  */
 
 import React from 'react';
-import readme from '../../../../../backpack-react-native/packages/react-native-bpk-component-switch/README.md';
 
-import iosVideo from '../../../../../backpack-react-native/packages/react-native-bpk-component-switch/videos/ios/all-types-react-native-bpk-component-switch.mp4';
-import androidVideo from '../../../../../backpack-react-native/packages/react-native-bpk-component-switch/videos/android/all-types-react-native-bpk-component-switch.mp4';
+import readme from '../../../../../backpack-android/docs/Spinner/README.md';
+import screenshotDefault from '../../../../../backpack-android/docs/Spinner/screenshots/default.png';
+import screenshotSmall from '../../../../../backpack-android/docs/Spinner/screenshots/small.png';
 
 import DocsPageBuilder from '../../components/DocsPageBuilder';
 
@@ -28,31 +28,40 @@ const components = [
   {
     id: 'default',
     title: 'Default',
-    videos: [
+    screenshots: [
       {
-        title: 'iOS',
-        width: 750,
-        src: `/${iosVideo}`,
-        subText: '(iPhone 8 simulator)',
+        width: 1080,
+        height: 1920,
+        src: `/${screenshotDefault}`,
+        altText: 'Spinner component',
+        subText: '(Google Pixel emulator)',
       },
+    ],
+  },
+  {
+    id: 'small',
+    title: 'Small',
+    screenshots: [
       {
-        title: 'Android',
-        width: 750,
-        src: `/${androidVideo}`,
-        subText: '(Google Pixel emualtor)',
+        width: 1080,
+        height: 1920,
+        src: `/${screenshotSmall}`,
+        altText: 'Small spinner component',
+        subText: '(Google Pixel emulator)',
       },
     ],
   },
 ];
 
-const NativeSwitchPage = ({ ...rest }) => (
+const AndroidSpinnerPage = ({ ...rest }) => (
   <DocsPageBuilder
-    title="Switch"
+    title="Spinner"
     components={components}
     readme={readme}
-    showMenu={false}
+    androidDocId="net.skyscanner.backpack.spinner"
+    showMenu
     {...rest}
   />
 );
 
-export default NativeSwitchPage;
+export default AndroidSpinnerPage;

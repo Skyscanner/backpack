@@ -17,10 +17,9 @@
  */
 
 import React from 'react';
-import readme from '../../../../../backpack-react-native/packages/react-native-bpk-component-switch/README.md';
 
-import iosVideo from '../../../../../backpack-react-native/packages/react-native-bpk-component-switch/videos/ios/all-types-react-native-bpk-component-switch.mp4';
-import androidVideo from '../../../../../backpack-react-native/packages/react-native-bpk-component-switch/videos/android/all-types-react-native-bpk-component-switch.mp4';
+import readme from '../../../../../backpack-ios/Backpack/Switch/README.md';
+import screenshotDefault from '../../../../../backpack-ios/screenshots/Switch/default.png';
 
 import DocsPageBuilder from '../../components/DocsPageBuilder';
 
@@ -28,31 +27,27 @@ const components = [
   {
     id: 'default',
     title: 'Default',
-    videos: [
+    screenshots: [
       {
-        title: 'iOS',
         width: 750,
-        src: `/${iosVideo}`,
+        height: 1334,
+        src: `/${screenshotDefault}`,
+        altText: 'Switch for iOS.',
         subText: '(iPhone 8 simulator)',
-      },
-      {
-        title: 'Android',
-        width: 750,
-        src: `/${androidVideo}`,
-        subText: '(Google Pixel emualtor)',
       },
     ],
   },
 ];
 
-const NativeSwitchPage = ({ ...rest }) => (
+const IOSSwitchPage = ({ ...rest }) => (
   <DocsPageBuilder
     title="Switch"
     components={components}
     readme={readme}
-    showMenu={false}
+    iosDocId="BPKSwitch"
+    showMenu
     {...rest}
   />
 );
 
-export default NativeSwitchPage;
+export default IOSSwitchPage;

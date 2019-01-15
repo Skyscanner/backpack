@@ -16,30 +16,37 @@
  * limitations under the License.
  */
 
-/* @flow */
-
 import React from 'react';
-import DocsPageWrapper from '../../components/DocsPageWrapper';
-import IntroBlurb from '../../components/IntroBlurb';
 
-import Android from '../AndroidIconPage';
-import IOS from '../IOSIconPage';
-import Web from '../WebIconsPage';
-import Native from '../NativeIconsPage';
+import readme from '../../../../../backpack-android/docs/Icon/README.md';
+import screenshotAll from '../../../../../backpack-android/docs/Icon/screenshots/all.png';
 
-const Page = () => (
-  <DocsPageWrapper
+import DocsPageBuilder from '../../components/DocsPageBuilder';
+
+const components = [
+  {
+    id: 'default',
+    title: 'Default',
+    screenshots: [
+      {
+        width: 750,
+        height: 1334,
+        src: `/${screenshotAll}`,
+        altText: 'Icons for Android.',
+        subText: '(Google Pixel Emulator)',
+      },
+    ],
+  },
+];
+
+const AndroidIconPage = ({ ...rest }) => (
+  <DocsPageBuilder
     title="Icon"
-    blurb={[
-      <IntroBlurb>
-        A suite of icons for representing concepts, features and actions.
-      </IntroBlurb>,
-    ]}
-    androidSubpage={<Android wrapped />}
-    iosSubpage={<IOS wrapped />}
-    webSubpage={<Web wrapped />}
-    nativeSubpage={<Native wrapped />}
+    components={components}
+    readme={readme}
+    showMenu
+    {...rest}
   />
 );
 
-export default Page;
+export default AndroidIconPage;
