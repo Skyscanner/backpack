@@ -33,7 +33,9 @@ describe('withInfiniteScroll', () => {
 
   const List = props => (
     <div id="list">
-      {props.elements.map(element => <div key={element}>{element}</div>)}
+      {props.elements.map(element => (
+        <div key={element}>{element}</div>
+      ))}
     </div>
   );
 

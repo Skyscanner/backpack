@@ -32,20 +32,22 @@ type Props = {
 const AlternatingPageContent = (props: Props) => (
   <section className={getClassName('bpkdocs-alternating-content')}>
     {React.Children.toArray(
-      props.sections.filter(x => x).map((section, i) => {
-        const useAlternateStyle = i % 2 === (props.invert ? 1 : 0);
-        const classNames = [
-          getClassName('bpkdocs-alternating-content__section'),
-        ];
+      props.sections
+        .filter(x => x)
+        .map((section, i) => {
+          const useAlternateStyle = i % 2 === (props.invert ? 1 : 0);
+          const classNames = [
+            getClassName('bpkdocs-alternating-content__section'),
+          ];
 
-        if (useAlternateStyle) {
-          classNames.push(
-            getClassName('bpkdocs-alternating-content__section--alternate'),
-          );
-        }
+          if (useAlternateStyle) {
+            classNames.push(
+              getClassName('bpkdocs-alternating-content__section--alternate'),
+            );
+          }
 
-        return <div className={classNames.join(' ')}>{section}</div>;
-      }),
+          return <div className={classNames.join(' ')}>{section}</div>;
+        }),
     )}
   </section>
 );

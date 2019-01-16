@@ -60,8 +60,8 @@ const components = [
     title: 'Cancellable',
     blurb: [
       <Paragraph>
-        Android alerts can optionally be marked as <BpkCode>cancelable</BpkCode>.
-        Clicking outside the bounds of the alert will dismiss it without a
+        Android alerts can optionally be marked as <BpkCode>cancelable</BpkCode>
+        . Clicking outside the bounds of the alert will dismiss it without a
         callback.
       </Paragraph>,
     ],

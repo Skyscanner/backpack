@@ -158,38 +158,33 @@ class BpkCalendarGridTransition extends Component {
           style={getTransformStyles(transitionValue)}
           onTransitionEnd={this.onMonthTransitionEnd}
         >
-          {this.state.months.map(
-            (m, index) =>
-              isWithinRange(m, min, max) ? (
-                <TransitionComponent
-                  {...rest}
-                  key={formatIsoMonth(m)}
-                  month={m}
-                  preventKeyboardFocus={
-                    index !== 1 || rest.preventKeyboardFocus
-                  }
-                  isKeyboardFocusable={!isTransitioning && index === 1}
-                  focusedDate={
-                    index === 1
-                      ? focusedDate
-                      : getFocusedDateForMonth(
-                          m,
-                          focusedDate,
-                          rest.minDate,
-                          rest.maxDate,
-                        )
-                  }
-                  aria-hidden={index !== 1}
-                  className={getClassName('bpk-calendar-grid-transition__grid')}
-                />
-              ) : (
-                <div
-                  className={getClassName(
-                    'bpk-calendar-grid-transition__dummy',
-                  )}
-                  key={formatIsoMonth(m)}
-                />
-              ),
+          {this.state.months.map((m, index) =>
+            isWithinRange(m, min, max) ? (
+              <TransitionComponent
+                {...rest}
+                key={formatIsoMonth(m)}
+                month={m}
+                preventKeyboardFocus={index !== 1 || rest.preventKeyboardFocus}
+                isKeyboardFocusable={!isTransitioning && index === 1}
+                focusedDate={
+                  index === 1
+                    ? focusedDate
+                    : getFocusedDateForMonth(
+                        m,
+                        focusedDate,
+                        rest.minDate,
+                        rest.maxDate,
+                      )
+                }
+                aria-hidden={index !== 1}
+                className={getClassName('bpk-calendar-grid-transition__grid')}
+              />
+            ) : (
+              <div
+                className={getClassName('bpk-calendar-grid-transition__dummy')}
+                key={formatIsoMonth(m)}
+              />
+            ),
           )}
         </div>
       </div>

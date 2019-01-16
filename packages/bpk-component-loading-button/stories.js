@@ -44,7 +44,8 @@ storiesOf('bpk-component-loading-button', module)
       &nbsp;
       <BpkLoadingButton loading onClick={action('THIS SHOULD NOT HAPPEN')}>
         Loading
-      </BpkLoadingButton>&nbsp; &nbsp;
+      </BpkLoadingButton>
+      &nbsp; &nbsp;
       <BpkLoadingButton large onClick={action('large primary clicked')}>
         Button
       </BpkLoadingButton>
@@ -87,7 +88,8 @@ storiesOf('bpk-component-loading-button', module)
         onClick={action('THIS SHOULD NOT HAPPEN')}
       >
         Loading
-      </BpkLoadingButton>&nbsp; &nbsp;
+      </BpkLoadingButton>
+      &nbsp; &nbsp;
       <BpkLoadingButton
         secondary
         large
@@ -135,7 +137,8 @@ storiesOf('bpk-component-loading-button', module)
         onClick={action('THIS SHOULD NOT HAPPEN')}
       >
         Loading
-      </BpkLoadingButton>&nbsp; &nbsp;
+      </BpkLoadingButton>
+      &nbsp; &nbsp;
       <BpkLoadingButton
         destructive
         large
@@ -228,7 +231,8 @@ storiesOf('bpk-component-loading-button', module)
         onClick={action('THIS SHOULD NOT HAPPEN')}
       >
         Loading
-      </BpkLoadingButton>&nbsp; &nbsp;
+      </BpkLoadingButton>
+      &nbsp; &nbsp;
       <BpkLoadingButton
         featured
         large
@@ -258,42 +262,51 @@ storiesOf('bpk-component-loading-button', module)
   ))
   .add('Icon-only button', () => (
     <div>
-      <BpkLoadingButton iconOnly onClick={action('iconOnly button clicked')} />&nbsp;
+      <BpkLoadingButton iconOnly onClick={action('iconOnly button clicked')} />
+      &nbsp;
       <BpkLoadingButton
         iconOnly
         secondary
         onClick={action('iconOnly button secondary clicked')}
-      />&nbsp;
+      />
+      &nbsp;
       <BpkLoadingButton
         iconOnly
         destructive
         onClick={action('iconOnly button destructive clicked')}
-      />&nbsp;
+      />
+      &nbsp;
       <BpkLoadingButton
         iconOnly
         disabled
         onClick={action('THIS SHOULD NOT HAPPEN')}
-      />&nbsp;
+      />
+      &nbsp;
       <BpkLoadingButton
         iconOnly
         loading
         onClick={action('THIS SHOULD NOT HAPPEN')}
-      />&nbsp;
+      />
+      &nbsp;
       <BpkLoadingButton
         iconOnly
         featured
         onClick={action('iconOnly button featured clicked')}
-      />&nbsp; &nbsp;<BpkLoadingButton
+      />
+      &nbsp; &nbsp;
+      <BpkLoadingButton
         iconOnly
         large
         onClick={action('large iconOnly button clicked')}
-      />&nbsp;
+      />
+      &nbsp;
       <BpkLoadingButton
         iconOnly
         large
         secondary
         onClick={action('large iconOnly button secondary clicked')}
-      />&nbsp;
+      />
+      &nbsp;
       <BpkLoadingButton
         iconOnly
         large
@@ -306,19 +319,22 @@ storiesOf('bpk-component-loading-button', module)
         large
         disabled
         onClick={action('THIS SHOULD NOT HAPPEN')}
-      />&nbsp;
+      />
+      &nbsp;
       <BpkLoadingButton
         iconOnly
         large
         loading
         onClick={action('THIS SHOULD NOT HAPPEN')}
-      />&nbsp;
+      />
+      &nbsp;
       <BpkLoadingButton
         iconOnly
         large
         featured
         onClick={action('large iconOnly button featured clicked')}
-      />&nbsp;
+      />
+      &nbsp;
     </div>
   ))
   .add('Mixture', () => (
@@ -348,7 +364,8 @@ storiesOf('bpk-component-loading-button', module)
       &nbsp;
       <BpkLoadingButton iconOnly onClick={action('iconOnly button clicked')}>
         <span className="visually-hidden">Search</span>
-      </BpkLoadingButton>&nbsp; &nbsp;
+      </BpkLoadingButton>
+      &nbsp; &nbsp;
       <BpkLoadingButton large onClick={action('primary button clicked')}>
         Button
       </BpkLoadingButton>
@@ -430,7 +447,8 @@ storiesOf('bpk-component-loading-button', module)
         onClick={action('iconOnly anchor clicked')}
       >
         <span className="visually-hidden">Search</span>
-      </BpkLoadingButton>&nbsp; &nbsp;
+      </BpkLoadingButton>
+      &nbsp; &nbsp;
       <BpkLoadingButton
         href="#"
         large
@@ -520,7 +538,8 @@ storiesOf('bpk-component-loading-button', module)
           onClick={action('iconOnly clicked')}
         >
           <span className="visually-hidden">Search</span>
-        </BpkLoadingButton>&nbsp;
+        </BpkLoadingButton>
+        &nbsp;
         <BpkLoadingButton
           large
           icon={iconLg}

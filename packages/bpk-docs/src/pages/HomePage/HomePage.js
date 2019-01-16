@@ -166,7 +166,8 @@ const HomePage = (props, context) => {
             tagName="h1"
             className={getClassName('bpkdocs-home-page__hero-blurb')}
           >
-            &mdash;<br />
+            &mdash;
+            <br />
             Backpack is a collection of design resources, reusable components
             and guidelines for creating Skyscanner products.
           </BpkText>

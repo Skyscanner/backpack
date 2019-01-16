@@ -39,7 +39,8 @@ describe('BpkBadge', () => {
     const tree = renderer
       .create(
         <BpkBadge>
-          <BpkSmallFlightIcon />Promociando
+          <BpkSmallFlightIcon />
+          Promociando
         </BpkBadge>,
       )
       .toJSON();

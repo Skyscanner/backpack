@@ -51,27 +51,25 @@ const components = [
           element is never exceeded due to padding or border.
         </BpkListItem>
         <BpkListItem>
-          The default <Code>color</Code>, <Code>font-family</Code>, &nbsp;<Code>
-            font-size
-          </Code>{' '}
-          & <Code>line-height</Code>.
+          The default <Code>color</Code>, <Code>font-family</Code>, &nbsp;
+          <Code>font-size</Code> & <Code>line-height</Code>.
         </BpkListItem>
         <BpkListItem>
           Utility classes based on the{' '}
           <BpkLink href={h5bpLink} blank>
             HTML5 Boilerplate common helpers
-          </BpkLink>, including: &nbsp;<Code>.hidden</Code>, &nbsp;<Code>
-            .visuallyhidden
-          </Code>, &nbsp;<Code>.visuallyhidden.focusable</Code>, &nbsp;<Code>
-            .invisible
-          </Code>{' '}
+          </BpkLink>
+          , including: &nbsp;<Code>.hidden</Code>, &nbsp;
+          <Code>.visuallyhidden</Code>, &nbsp;
+          <Code>.visuallyhidden.focusable</Code>, &nbsp;<Code>.invisible</Code>{' '}
           and <Code>.clearfix</Code>.
         </BpkListItem>
         <BpkListItem>That&apos;s it!</BpkListItem>
       </BpkList>,
       <BpkBlockquote extraSpace>
         <strong>Note:</strong> There is also a small amount of JavaScript that
-        does &quot;<BpkLink href="https://modernizr.com/" blank>
+        does &quot;
+        <BpkLink href="https://modernizr.com/" blank>
           Modernizr
         </BpkLink>{' '}
         like&quot; feature detection (currently used to prevent hover effects on

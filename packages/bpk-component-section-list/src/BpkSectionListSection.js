@@ -44,7 +44,9 @@ const BpkSectionListSection = (props: Props) => {
         </header>
       )}
       <ul className={getClassName('bpk-section-list-section')}>
-        {React.Children.map(children, child => <li>{child}</li>)}
+        {React.Children.map(children, child => (
+          <li>{child}</li>
+        ))}
       </ul>
     </section>
   );

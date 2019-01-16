@@ -133,18 +133,17 @@ class BpkBackgroundImage extends Component<BpkBackgroundImageProps> {
               </div>
             </CSSTransition>
           )}
-          {typeof window === 'undefined' &&
-            (!inView || loading) && (
-              <noscript>
-                <div
-                  style={{
-                    backgroundImage: `url(${src})`,
-                    ...imageStyle,
-                  }}
-                  className={imageClassNames.join(' ')}
-                />
-              </noscript>
-            )}
+          {typeof window === 'undefined' && (!inView || loading) && (
+            <noscript>
+              <div
+                style={{
+                  backgroundImage: `url(${src})`,
+                  ...imageStyle,
+                }}
+                className={imageClassNames.join(' ')}
+              />
+            </noscript>
+          )}
           {!loading && (
             <div className={getClassName('bpk-background-image__content')}>
               {children}

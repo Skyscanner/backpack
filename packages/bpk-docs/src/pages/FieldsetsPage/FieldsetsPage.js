@@ -317,8 +317,8 @@ const components = [
 const blurb = [
   <IntroBlurb>
     Fieldsets encapsulate the composition of{' '}
-    <BpkRouterLink to={`${ROUTES.FORM}`}>form controls</BpkRouterLink>
-    , <BpkRouterLink to={`${ROUTES.FORM}#labels`}>labels</BpkRouterLink>
+    <BpkRouterLink to={`${ROUTES.FORM}`}>form controls</BpkRouterLink>,{' '}
+    <BpkRouterLink to={`${ROUTES.FORM}#labels`}>labels</BpkRouterLink>
     &nbsp;&amp;{' '}
     <BpkRouterLink to={`${ROUTES.FORM}#validation`}>
       validation messages

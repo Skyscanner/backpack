@@ -48,7 +48,8 @@ const Footer = () => (
       </span>
       <div className={getClassName('bpkdocs-footer__controls')}>
         <div>
-          <BpkGridToggle />&nbsp;|&nbsp;
+          <BpkGridToggle />
+          &nbsp;|&nbsp;
           <BpkRtlToggle />
         </div>
         <BpkThemeToggle
