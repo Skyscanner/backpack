@@ -24,6 +24,10 @@ import BpkHorizontalNav, {
   BpkHorizontalNavItem,
 } from 'bpk-component-horizontal-nav';
 import { cssModules } from 'bpk-react-utils';
+import {
+  setPlatformInLocalStorage,
+  getPlatformFromLocalStorage,
+} from '../../helpers/storage-helper';
 
 import Heading from '../Heading';
 import Blurb from './Blurb';
@@ -116,17 +120,28 @@ const DocsPageWrapper = props => {
     web: webSubpage,
   };
 
+  const canUsePlatformPreference = platformPreference => {
+    if (!platformPreference) {
+      return false;
+    }
+    return (
+      (platformPreference === 'web' && webSubpage) ||
+      (platformPreference === 'native' && nativeSubpage) ||
+      (platformPreference === 'ios' && iosSubpage) ||
+      (platformPreference === 'android' && androidSubpage)
+    );
+  };
+
   let initiallySelectedPlatform = 'web';
-  let initiallyRenderedSubpage = webSubpage;
-  if (androidSubpage) {
+  const platformFromLocalStorage = getPlatformFromLocalStorage();
+  if (canUsePlatformPreference(platformFromLocalStorage)) {
+    initiallySelectedPlatform = platformFromLocalStorage;
+  } else if (androidSubpage) {
     initiallySelectedPlatform = 'android';
-    initiallyRenderedSubpage = androidSubpage;
   } else if (iosSubpage) {
     initiallySelectedPlatform = 'ios';
-    initiallyRenderedSubpage = iosSubpage;
   } else if (nativeSubpage) {
     initiallySelectedPlatform = 'native';
-    initiallyRenderedSubpage = nativeSubpage;
   }
 
   const platformQueryParamMatches = platformQueryParamRegex.exec(
@@ -135,12 +150,14 @@ const DocsPageWrapper = props => {
   if (platformQueryParamMatches && platforms[platformQueryParamMatches[1]]) {
     const platformQueryParam = platformQueryParamMatches[1];
     initiallySelectedPlatform = platformQueryParam;
-    initiallyRenderedSubpage = platforms[platformQueryParam];
   } else {
     history.replace(`${path}?platform=${initiallySelectedPlatform}`);
   }
 
+  const initiallyRenderedSubpage = platforms[initiallySelectedPlatform];
+
   const onPlatformClick = platformName => {
+    setPlatformInLocalStorage(platformName);
     history.push(`${path}?platform=${platformName}`);
   };
 
