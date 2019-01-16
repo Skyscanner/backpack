@@ -22,7 +22,7 @@ import React, { type Node, Component } from 'react';
 import { cssModules } from 'bpk-react-utils';
 import BpkAnimateHeight from 'bpk-animate-height';
 import { durationSm } from 'bpk-tokens/tokens/base.es6';
-import CSSTransitionGroup from 'react-transition-group/CSSTransitionGroup';
+import { TransitionGroup, CSSTransition } from 'react-transition-group';
 
 import STYLES from './animate-and-fade.scss';
 
@@ -149,25 +149,33 @@ class AnimateAndFade extends Component<Props, State> {
         height={this.state.isExpanded ? 'auto' : 0}
       >
         {showPlaceholder && <div style={{ opacity: 0.35 }}>{children}</div>}
-        <CSSTransitionGroup
-          transitionName={{
-            leave: getClassName('bpk-animate-and-fade--leave'),
-            leaveActive: getClassName('bpk-animate-and-fade--leave-active'),
-            enter: getClassName('bpk-animate-and-fade--enter'),
-            enterActive: getClassName('bpk-animate-and-fade--enter-active'),
-            appear: getClassName('bpk-animate-and-fade--appear'),
-            appearActive: getClassName('bpk-animate-and-fade--appear-active'),
-          }}
-          transitionLeave={animateOnLeave}
-          transitionEnter={animateOnEnter}
-          transitionAppear={animateOnEnter}
-          transitionLeaveTimeout={ANIMATION_DURATION * 2}
-          transitionEnterTimeout={ANIMATION_DURATION * 2}
-          transitionAppearTimeout={ANIMATION_DURATION * 2}
+        <TransitionGroup
+          exit={animateOnLeave}
+          enter={animateOnEnter}
+          appear={animateOnEnter}
           onTransitionEnd={this.onFadeComplete}
         >
-          {this.state.visible && children}
-        </CSSTransitionGroup>
+          {this.state.visible && (
+            <CSSTransition
+              classNames={{
+                exit: getClassName('bpk-animate-and-fade--leave'),
+                exitActive: getClassName('bpk-animate-and-fade--leave-active'),
+                enter: getClassName('bpk-animate-and-fade--enter'),
+                enterActive: getClassName('bpk-animate-and-fade--enter-active'),
+                appear: getClassName('bpk-animate-and-fade--appear'),
+                appearActive: getClassName(
+                  'bpk-animate-and-fade--appear-active',
+                ),
+              }}
+              timeout={{
+                enter: ANIMATION_DURATION * 2,
+                exit: ANIMATION_DURATION * 2,
+              }}
+            >
+              {children}
+            </CSSTransition>
+          )}
+        </TransitionGroup>
       </BpkAnimateHeight>
     ) : null;
   }

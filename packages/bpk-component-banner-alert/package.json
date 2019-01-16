@@ -20,6 +20,6 @@
     "bpk-react-utils": "^2.7.1",
     "bpk-tokens": "^27.4.7",
     "prop-types": "^15.6.2",
-    "react-transition-group": "^1.2.1"
+    "react-transition-group": "^2.5.3"
   }
 }
