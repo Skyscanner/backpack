@@ -22,6 +22,7 @@ import { cssModules } from 'bpk-react-utils';
 import areRangesOverlapping from 'date-fns/are_ranges_overlapping';
 import dateMin from 'date-fns/min';
 import dateMax from 'date-fns/max';
+import startOfDay from 'date-fns/start_of_day';
 
 import {
   getDay,
@@ -116,8 +117,9 @@ class Week extends Component {
     );
 
     if (selectionStartChanged || selectionEndChanged) {
-      const firstDate = nextProps.dates[0];
-      const lastDate = nextProps.dates[nextProps.dates.length - 1];
+      const firstDate = startOfDay(nextProps.dates[0]).getTime() - 1;
+      const lastDate =
+        startOfDay(nextProps.dates[nextProps.dates.length - 1]).getTime() + 1;
       if (
         areRangesOverlapping(
           this.props.selectionStart,
