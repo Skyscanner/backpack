@@ -30,6 +30,7 @@ import {
   type CategoryPropType,
   type Category,
 } from './common-types';
+import { setPlatformInLocalStorage } from '../../helpers/storage-helper';
 
 const getClassName = cssModules(STYLES);
 
@@ -111,6 +112,7 @@ class NavList extends Component<NavListPropTypes, NavListState> {
   }
 
   onSelectedFilterChange = (selectedFilter: FilterOption) => {
+    setPlatformInLocalStorage(selectedFilter);
     this.setState({ selectedFilter });
   };
 
