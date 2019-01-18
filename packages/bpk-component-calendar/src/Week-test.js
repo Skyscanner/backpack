@@ -157,6 +157,10 @@ describe('Week', () => {
     ['0605', '0620', '0605', '0608', true, 'end moves from after to before'],
     ['0605', '0608', '0605', '0620', true, 'end moves from before to after'],
     ['0602', '0605', '0622', '0625', false, 'moves entirely past the week'],
+    ['0610', '0617', '0611', '0617', true, 'moves from start edge into week'],
+    ['0612', '0616', '0612', '0615', true, 'moves from end edge into week'],
+    ['0610', '0617', '0609', '0617', true, 'moves from start edge out of week'],
+    ['0611', '0616', '0611', '0617', true, 'moves from end edge out of week'],
   ].forEach(([start, end, newStart, newEnd, expected, reason]) => {
     it(`should${
       expected ? '' : ' not'
