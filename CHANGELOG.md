@@ -2,6 +2,12 @@
 
 [Unreleased changes](./UNRELEASED.md).
 
+# 2019-01-18 Bug fix for Calendar range selection
+
+**Fixed:**
+- bpk-component-calendar
+  - Fix edge cases with Week component's support for range selection
+
 # 2019-01-11 Bug fix for Scrollable Calendar
 
 **Fixed:**
