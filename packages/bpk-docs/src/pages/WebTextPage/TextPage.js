@@ -23,6 +23,8 @@ import textReadme from 'bpk-component-text/README.md';
 
 import DocsPageBuilder from '../../components/DocsPageBuilder';
 
+const TEXT = 'Lorem ipsum';
+
 const components = [
   {
     id: 'default',
@@ -30,19 +32,19 @@ const components = [
     examples: [
       <div>
         <BpkText textStyle="xxl" tagName="p">
-          Flights to Edinburgh
+          {TEXT}
         </BpkText>
         <BpkText textStyle="xl" tagName="p">
-          Flights to Edinburgh
+          {TEXT}
         </BpkText>
         <BpkText textStyle="lg" tagName="p">
-          Flights to Edinburgh
+          {TEXT}
         </BpkText>
         <BpkText textStyle="base" tagName="p">
-          Flights to Edinburgh
+          {TEXT}
         </BpkText>
         <BpkText textStyle="sm" tagName="p">
-          Flights to Edinburgh
+          {TEXT}
         </BpkText>
       </div>,
     ],
