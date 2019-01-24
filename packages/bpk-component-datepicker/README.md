@@ -75,30 +75,30 @@ For more information on some these props, check the BpkCalendar documentation.
 > `getApplicationElement` prop (see the example above) - this is to "hide" your application from
 > screenreaders whilst the datepicker is open. The `pagewrap` element id is a convention we use internally at Skyscanner. In most cases it should "just work".
 
-| Property              | PropType | Required | Default Value         |
-| --------------------- | -------- | -------- | --------------------- |
-| changeMonthLabel      | string   | true     | -                     |
-| closeButtonText       | string   | true     | -                     |
-| title                 | string   | true     | -                     |
-| id                    | string   | true     | -                     |
-| getApplicationElement | func     | true     | -                     |
-| daysOfWeek            | object   | true     | -                     |
-| formatDate            | func     | true     | -                     |
-| formatDateFull        | func     | true     | -                     |
-| formatMonth           | func     | true     | -                     |
-| date                  | Date     | false    | null                  |
-| DateComponent         | func     | false    | BpkCalendarDate (\*)  |
-| dateModifiers         | object   | false    | {} (\*)               |
-| inputProps            | object   | false    | {}                    |
-| markOutsideDays       | bool     | false    | true (\*)             |
-| markToday             | bool     | false    | true (\*)             |
-| maxDate               | Date     | false    | new Date() + 1yr (\*) |
-| minDate               | Date     | false    | new Date() (\*)       |
-| onDateSelect          | func     | false    | null                  |
-| showWeekendSeparator  | bool     | false    | true (\*)             |
-| weekStartsOn          | number   | false    | 1 (\*)                |
-| initiallyFocusedDate  | Date     | false    | null                  |
-| renderTarget          | func     | false    | null                  |
+| Property              | PropType        | Required | Default Value         |
+| --------------------- | --------------- | -------- | --------------------- |
+| changeMonthLabel      | string          | true     | -                     |
+| closeButtonText       | string          | true     | -                     |
+| title                 | string          | true     | -                     |
+| id                    | string          | true     | -                     |
+| getApplicationElement | func            | true     | -                     |
+| daysOfWeek            | arrayOf(object) | true     | -                     |
+| formatDate            | func            | true     | -                     |
+| formatDateFull        | func            | true     | -                     |
+| formatMonth           | func            | true     | -                     |
+| date                  | Date            | false    | null                  |
+| DateComponent         | func            | false    | BpkCalendarDate (\*)  |
+| dateModifiers         | object          | false    | {} (\*)               |
+| inputProps            | object          | false    | {}                    |
+| markOutsideDays       | bool            | false    | true (\*)             |
+| markToday             | bool            | false    | true (\*)             |
+| maxDate               | Date            | false    | new Date() + 1yr (\*) |
+| minDate               | Date            | false    | new Date() (\*)       |
+| onDateSelect          | func            | false    | null                  |
+| showWeekendSeparator  | bool            | false    | true (\*)             |
+| weekStartsOn          | number          | false    | 1 (\*)                |
+| initiallyFocusedDate  | Date            | false    | null                  |
+| renderTarget          | func            | false    | null                  |
 
 > (\*) Default value is defined on child component
 

@@ -213,7 +213,7 @@ The BpkCalendarGrid component displays a month as a table.
 | Property              | PropType             | Required | Default Value    |
 | --------------------- | -------------------- | -------- | ---------------- |
 | DateComponent         | func                 | true     | -                |
-| daysOfWeek            | object               | true     | -                |
+| daysOfWeek            | array(object)        | true     | -                |
 | formatDateFull        | func                 | true     | -                |
 | formatMonth           | func                 | true     | -                |
 | month                 | Date                 | true     | -                |
