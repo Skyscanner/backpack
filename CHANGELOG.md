@@ -2,6 +2,14 @@
 
 [Unreleased changes](./UNRELEASED.md).
 
+# 2019-01-23 New social-like icon
+
+**Added:**
+- bpk-component-icon: 3.25.0
+- bpk-mixins: 17.13.0
+- bpk-svgs: 6.2.0
+  - New social-like icon.
+
 # 2019-01-23 New speaker icon
 
 **Added:**
