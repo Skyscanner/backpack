@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-dialog",
-  "version": "1.1.33",
+  "version": "1.1.34",
   "description": "Backpack dialog component.",
   "main": "index.js",
   "repository": {
@@ -13,14 +13,14 @@
     "react": "^15.4.0 || ^16.0.0"
   },
   "dependencies": {
-    "bpk-component-modal": "^1.8.33",
+    "bpk-component-modal": "^1.8.34",
     "prop-types": "^15.6.2"
   },
   "devDependencies": {
-    "bpk-component-button": "^2.1.41",
-    "bpk-component-close-button": "^1.0.106",
-    "bpk-component-text": "^1.0.101",
-    "bpk-mixins": "^17.12.0",
+    "bpk-component-button": "^2.1.42",
+    "bpk-component-close-button": "^1.0.107",
+    "bpk-component-text": "^1.0.102",
+    "bpk-mixins": "^17.13.0",
     "bpk-react-utils": "^2.7.1"
   }
 }
