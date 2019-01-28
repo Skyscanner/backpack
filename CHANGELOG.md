@@ -2,12 +2,12 @@
 
 [Unreleased changes](./UNRELEASED.md).
 
-# 2019-01-23 New speak icon
+# 2019-01-23 New speaker icon
 
 **Added:**
- - bpk-component-icon: 3.24.0
- - bpk-mixins: 17.12.0
- - bpk-svgs: 6.1.0
+- bpk-component-icon: 3.24.0
+- bpk-mixins: 17.12.0
+- bpk-svgs: 6.1.0
   - New speaker icon.
 
 # 2019-01-18 Bug fix for Calendar range selection
