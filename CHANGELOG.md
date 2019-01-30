@@ -2,7 +2,7 @@
 
 [Unreleased changes](./UNRELEASED.md).
 
-# 2019-01-23 New social-like icon
+# 2019-01-28 New social-like icon
 
 **Added:**
 - bpk-component-icon: 3.25.0
