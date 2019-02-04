@@ -21,6 +21,10 @@ import PropTypes from 'prop-types';
 import BpkHorizontalNav, {
   BpkHorizontalNavItem,
 } from 'bpk-component-horizontal-nav';
+import {
+  setPlatformInLocalStorage,
+  getPlatformFromLocalStorage,
+} from '../../helpers/storage-helper';
 
 const platforms = {
   web: {
@@ -58,6 +62,7 @@ const removeListener = (switcher, toRemove) => {
 };
 
 const onSwitch = (switcher, id) => {
+  setPlatformInLocalStorage(id);
   const switcherListeners = listeners[`${switcher.id}`] || [];
   switcherListeners.forEach(listener => listener(id));
 };
@@ -69,6 +74,13 @@ class TokenSwitcher extends Component {
     this.state = {
       selectedPlatform: platforms.web.id,
     };
+  }
+
+  componentDidMount() {
+    const selectedPlatform = getPlatformFromLocalStorage();
+    if (platforms[selectedPlatform]) {
+      this.setState({ selectedPlatform });
+    }
   }
 
   componentWillUnmount() {

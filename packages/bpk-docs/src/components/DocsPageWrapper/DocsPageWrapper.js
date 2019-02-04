@@ -124,12 +124,7 @@ const DocsPageWrapper = props => {
     if (!platformPreference) {
       return false;
     }
-    return (
-      (platformPreference === 'web' && webSubpage) ||
-      (platformPreference === 'native' && nativeSubpage) ||
-      (platformPreference === 'ios' && iosSubpage) ||
-      (platformPreference === 'android' && androidSubpage)
-    );
+    return !!platforms[platformPreference];
   };
 
   let initiallySelectedPlatform = 'web';
