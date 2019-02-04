@@ -21,6 +21,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import renderer from 'react-test-renderer';
+
 import BpkPopover from './BpkPopover';
 
 describe('BpkPopover', () => {

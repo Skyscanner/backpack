@@ -22,14 +22,14 @@ import React, { Component, type Node } from 'react';
 import BpkModal from 'bpk-component-modal';
 import BpkButton from 'bpk-component-button';
 import { BpkButtonLink } from 'bpk-component-link';
-
 import modalReadme from 'bpk-component-modal/README.md';
 
-import LoginFormExample from './LoginFormExample';
 import DocsPageBuilder from '../../components/DocsPageBuilder';
 import DocsPageWrapper from '../../components/DocsPageWrapper';
 import Paragraph from '../../components/Paragraph';
 import IntroBlurb from '../../components/IntroBlurb';
+
+import LoginFormExample from './LoginFormExample';
 
 type Props = {
   buttonText: string,

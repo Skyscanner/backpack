@@ -21,6 +21,7 @@ import renderer from 'react-test-renderer';
 import { shallow } from 'enzyme';
 import BpkInput from 'bpk-component-input';
 import BpkSelect from 'bpk-component-select';
+
 import BpkPhoneInput from './BpkPhoneInput';
 
 const dialingCodeProps = {

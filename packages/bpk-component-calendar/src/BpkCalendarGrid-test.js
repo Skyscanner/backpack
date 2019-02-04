@@ -24,6 +24,7 @@ import isWeekend from 'date-fns/is_weekend';
 import { colorGreen500, colorRed500 } from 'bpk-tokens/tokens/base.es6';
 
 import { weekDays, formatDateFull, formatMonth } from '../test-utils';
+
 import BpkCalendarGrid from './BpkCalendarGrid';
 import BpkCalendarDate from './BpkCalendarDate';
 

@@ -18,13 +18,12 @@
 /* @flow */
 
 import React from 'react';
-import readme from '../../../../../backpack-react-native/packages/react-native-bpk-component-progress/README.md';
 
+import readme from '../../../../../backpack-react-native/packages/react-native-bpk-component-progress/README.md';
 import iosScreenshotDefault from '../../../../../backpack-react-native/packages/react-native-bpk-component-progress/screenshots/ios/default.png';
 import androidScreenshotDefault from '../../../../../backpack-react-native/packages/react-native-bpk-component-progress/screenshots/android/default.png';
 import iosScreenshotBar from '../../../../../backpack-react-native/packages/react-native-bpk-component-progress/screenshots/ios/bar.png';
 import androidScreenshotBar from '../../../../../backpack-react-native/packages/react-native-bpk-component-progress/screenshots/android/bar.png';
-
 import DocsPageBuilder from '../../components/DocsPageBuilder';
 
 const components = [

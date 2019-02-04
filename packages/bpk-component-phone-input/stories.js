@@ -22,6 +22,7 @@ import React, { Component } from 'react';
 import { storiesOf } from '@storybook/react';
 import BpkFieldSet from 'bpk-component-fieldset';
 import BpkImage from 'bpk-component-image';
+
 import BpkPhoneInput from './index';
 
 const DIALING_CODE_TO_ID_MAP = {

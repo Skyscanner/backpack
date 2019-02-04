@@ -22,6 +22,7 @@ import React from 'react';
 import { cssModules } from 'bpk-react-utils';
 
 import Heading from '../Heading';
+
 import STYLES from './HeroSection.scss';
 
 const getClassName = cssModules(STYLES);

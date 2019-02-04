@@ -19,6 +19,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import { mount } from 'enzyme';
+
 import updateOnDirectionChange from './updateOnDirectionChange';
 import { DIRECTION_CHANGE_EVENT, getHtmlElement } from './utils';
 

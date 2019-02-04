@@ -20,7 +20,6 @@ import React from 'react';
 
 import readme from '../../../../../backpack-android/docs/Badge/README.md';
 import screenshotAll from '../../../../../backpack-android/docs/Badge/screenshots/all.png';
-
 import DocsPageBuilder from '../../components/DocsPageBuilder';
 
 const components = [

@@ -18,6 +18,7 @@
 
 import React from 'react';
 import { shallow } from 'enzyme';
+
 import BpkPaginationList from './BpkPaginationList';
 import BpkPaginationBreak from './BpkPaginationBreak';
 

@@ -19,7 +19,6 @@
 import React, { Component } from 'react';
 
 import customPropTypes from './propTypes';
-
 import IconSearchForm from './IconSearchForm';
 import IconSearchResults from './IconSearchResults';
 

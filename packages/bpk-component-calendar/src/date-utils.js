@@ -20,7 +20,6 @@ import startOfMonth from 'date-fns/start_of_month';
 import endOfMonth from 'date-fns/end_of_month';
 import lastDayOfMonth from 'date-fns/last_day_of_month';
 import getDay from 'date-fns/get_day';
-
 import isWithinRange from 'date-fns/is_within_range';
 import isToday from 'date-fns/is_today';
 import isSaturday from 'date-fns/is_saturday';
@@ -30,13 +29,11 @@ import isSameWeek from 'date-fns/is_same_week';
 import isSameMonth from 'date-fns/is_same_month';
 import isBefore from 'date-fns/is_before';
 import differenceInCalendarMonths from 'date-fns/difference_in_calendar_months';
-
 import addDays from 'date-fns/add_days';
 import addMonths from 'date-fns/add_months';
 import setMonth from 'date-fns/set_month';
 import setYear from 'date-fns/set_year';
 import startOfDay from 'date-fns/start_of_day';
-
 import parse from 'date-fns/parse';
 import format from 'date-fns/format';
 

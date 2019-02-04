@@ -16,11 +16,12 @@
  * limitations under the License.
  */
 
-const zip = require('lodash/zip');
 const { promisify } = require('util');
 const fs = require('fs');
 const path = require('path');
 const process = require('process');
+
+const zip = require('lodash/zip');
 
 const template = require('./package-changelog-template.js');
 const {

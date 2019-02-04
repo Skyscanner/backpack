@@ -15,12 +15,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
+const fs = require('fs');
+const path = require('path');
+const { promisify } = require('util');
+
 const flatten = require('lodash/flatten');
 const globby = require('globby');
-const fs = require('fs');
 const yaml = require('js-yaml');
-const { promisify } = require('util');
-const path = require('path');
 
 const CHANGELOG_GLOBS = ['packages/*/changelog.yml'];
 const GLOBBY_OPTIONS = {

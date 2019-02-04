@@ -24,13 +24,14 @@ import { storiesOf } from '@storybook/react';
 import { updateOnDirectionChange } from 'bpk-component-rtl-toggle';
 
 import STYLES from './stories.scss';
-import BpkNavigationStack, { withNavigationStackState } from './index';
 import {
   View,
   SimpleNav,
   NavigationBar,
   withNavigationBar,
 } from './stories-components';
+
+import BpkNavigationStack, { withNavigationStackState } from './index';
 
 const RtlAwareNavigationStack = updateOnDirectionChange(BpkNavigationStack);
 

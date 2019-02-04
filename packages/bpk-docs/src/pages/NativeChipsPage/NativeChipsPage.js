@@ -17,13 +17,12 @@
  */
 
 import React from 'react';
-import readme from '../../../../../backpack-react-native/packages/react-native-bpk-component-chip/README.md';
 
+import readme from '../../../../../backpack-react-native/packages/react-native-bpk-component-chip/README.md';
 import iosScreenshotDefault from '../../../../../backpack-react-native/packages/react-native-bpk-component-chip/screenshots/ios/default.png';
 import iosScreenshotDismissible from '../../../../../backpack-react-native/packages/react-native-bpk-component-chip/screenshots/ios/dismissible.png';
 import androidScreenshotDefault from '../../../../../backpack-react-native/packages/react-native-bpk-component-chip/screenshots/android/default.png';
 import androidScreenshotDismissible from '../../../../../backpack-react-native/packages/react-native-bpk-component-chip/screenshots/android/dismissible.png';
-
 import DocsPageBuilder from '../../components/DocsPageBuilder';
 
 const components = [

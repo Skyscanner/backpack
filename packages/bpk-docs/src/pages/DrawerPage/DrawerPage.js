@@ -21,7 +21,6 @@ import React, { Component } from 'react';
 import BpkDrawer from 'bpk-component-drawer';
 import BpkButton from 'bpk-component-button';
 import { BpkButtonLink } from 'bpk-component-link';
-
 import drawerReadme from 'bpk-component-drawer/README.md';
 
 import DocsPageBuilder from '../../components/DocsPageBuilder';

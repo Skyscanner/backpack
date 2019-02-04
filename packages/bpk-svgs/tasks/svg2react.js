@@ -17,6 +17,7 @@
  */
 
 import { Transform } from 'stream';
+
 import { PluginError } from 'gulp-util';
 import loader from 'react-svg-loader';
 

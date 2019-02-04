@@ -22,7 +22,6 @@ import {
   BpkDescriptionTerm,
   BpkDescriptionDetails,
 } from 'bpk-component-description-list';
-
 import descriptionlistsReadme from 'bpk-component-description-list/README.md';
 
 import DocsPageBuilder from '../../components/DocsPageBuilder';

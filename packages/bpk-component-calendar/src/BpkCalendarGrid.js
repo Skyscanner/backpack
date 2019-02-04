@@ -29,7 +29,6 @@ import {
   orderDaysOfWeek,
 } from './date-utils';
 import CustomPropTypes from './custom-proptypes';
-
 import STYLES from './bpk-calendar-grid.scss';
 
 const getClassName = cssModules(STYLES);

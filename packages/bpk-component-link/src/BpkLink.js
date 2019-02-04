@@ -19,10 +19,10 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import { cssModules } from 'bpk-react-utils';
+
 import themeAttributes, {
   linkAlternateThemeAttributes,
 } from './themeAttributes';
-
 import STYLES from './bpk-link.scss';
 
 const getClassName = cssModules(STYLES);

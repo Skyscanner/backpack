@@ -21,8 +21,9 @@ import React from 'react';
 import Shallow from 'react-test-renderer/shallow';
 import { DateUtils } from 'bpk-component-calendar';
 
-import BpkScrollableCalendar from './BpkScrollableCalendar';
 import { weekDays, formatDateFull, formatMonth } from '../test-utils';
+
+import BpkScrollableCalendar from './BpkScrollableCalendar';
 
 const testDate = new Date(2010, 1, 15);
 

@@ -18,8 +18,10 @@
 
 import React from 'react';
 import renderer from 'react-test-renderer';
-import composeCalendar from './composeCalendar';
+
 import { weekDays, formatMonth, formatDateFull } from '../test-utils';
+
+import composeCalendar from './composeCalendar';
 
 const createNodeMock = () => ({
   focus: () => null,

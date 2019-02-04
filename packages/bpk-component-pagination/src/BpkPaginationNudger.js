@@ -20,7 +20,6 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { cssModules } from 'bpk-react-utils';
 import { withButtonAlignment, withRtlSupport } from 'bpk-component-icon';
-
 import ArrowLeftIcon from 'bpk-component-icon/lg/arrow-left';
 import ArrowRightIcon from 'bpk-component-icon/lg/arrow-right';
 

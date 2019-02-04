@@ -25,11 +25,11 @@ import BpkDialog from 'bpk-component-dialog';
 import BpkButton from 'bpk-component-button';
 import BpkCheckbox from 'bpk-component-checkbox';
 import React, { Component, type Node } from 'react';
-
 import { cssModules, withDefaultProps } from 'bpk-react-utils';
 
-import STYLES from './DialogExamples.scss';
 import { ParagraphNoMargin } from '../../components/Paragraph';
+
+import STYLES from './DialogExamples.scss';
 
 const getClassName = cssModules(STYLES);
 

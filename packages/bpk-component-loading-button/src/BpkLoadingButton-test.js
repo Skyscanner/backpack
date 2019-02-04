@@ -20,6 +20,7 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import { withButtonAlignment } from 'bpk-component-icon';
 import BaggageIcon from 'bpk-component-icon/sm/baggage';
+
 import BpkLoadingButton from './BpkLoadingButton';
 
 describe('BpkLoadingButton', () => {

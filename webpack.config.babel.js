@@ -18,6 +18,7 @@
 
 import fs from 'fs';
 import path from 'path';
+
 import webpack from 'webpack';
 import WrapperPlugin from 'wrapper-webpack-plugin';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';

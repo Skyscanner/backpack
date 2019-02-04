@@ -23,6 +23,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import { scaleLinear, scaleBand } from 'd3-scale';
+
 import BpkChartGridLines from './BpkChartGridLines';
 import { ORIENTATION_X, ORIENTATION_Y } from './orientation';
 

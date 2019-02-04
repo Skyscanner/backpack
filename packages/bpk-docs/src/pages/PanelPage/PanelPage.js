@@ -19,9 +19,9 @@
 /* @flow */
 
 import React from 'react';
+
 import DocsPageWrapper from '../../components/DocsPageWrapper';
 import IntroBlurb from '../../components/IntroBlurb';
-
 import Android from '../AndroidPanelPage';
 import IOS from '../IOSPanelPage';
 import Web from '../WebPanelsPage';

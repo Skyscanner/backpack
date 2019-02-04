@@ -26,7 +26,6 @@ import extend from 'lodash/extend';
 
 import './intersection-observer';
 import DataSource from './DataSource';
-
 import STYLES from './withInfiniteScroll.scss';
 
 const getClassNames = cssModules(STYLES);

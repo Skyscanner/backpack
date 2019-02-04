@@ -23,7 +23,6 @@ import React from 'react';
 import iosScreenshotDefault from '../../../../../backpack-react-native/packages/react-native-bpk-component-carousel/screenshots/ios/default.png';
 import androidScreenshotDefault from '../../../../../backpack-react-native/packages/react-native-bpk-component-carousel/screenshots/android/default.png';
 import readme from '../../../../../backpack-react-native/packages/react-native-bpk-component-carousel/README.md';
-
 import DocsPageWrapper from '../../components/DocsPageWrapper';
 import IntroBlurb from '../../components/IntroBlurb';
 import Paragraph from '../../components/Paragraph';

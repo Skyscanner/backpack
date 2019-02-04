@@ -18,7 +18,6 @@
 
 import React from 'react';
 import { BpkCode, BpkCodeBlock } from 'bpk-component-code';
-
 import codeReadme from 'bpk-component-code/README.md';
 
 import DocsPageBuilder from '../../components/DocsPageBuilder';

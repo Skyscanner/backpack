@@ -17,12 +17,12 @@
  */
 
 import React from 'react';
+
 import readme from '../../../../../backpack-react-native/packages/react-native-bpk-component-text-input/README.md';
 import iosScreenshot from '../../../../../backpack-react-native/packages/react-native-bpk-component-text-input/screenshots/ios/text-inputs.png';
 import iosScreenshotWithAccessoryView from '../../../../../backpack-react-native/packages/react-native-bpk-component-text-input/screenshots/ios/text-inputs-with-accessory-view.png';
 import androidScreenshot from '../../../../../backpack-react-native/packages/react-native-bpk-component-text-input/screenshots/android/text-inputs.png';
 import androidScreenshotWithAccessoryView from '../../../../../backpack-react-native/packages/react-native-bpk-component-text-input/screenshots/android/text-inputs-with-accessory-view.png';
-
 import DocsPageBuilder from '../../components/DocsPageBuilder';
 
 const components = [

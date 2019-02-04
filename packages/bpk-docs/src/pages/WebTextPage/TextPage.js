@@ -18,7 +18,6 @@
 
 import React from 'react';
 import BpkText from 'bpk-component-text';
-
 import textReadme from 'bpk-component-text/README.md';
 
 import DocsPageBuilder from '../../components/DocsPageBuilder';

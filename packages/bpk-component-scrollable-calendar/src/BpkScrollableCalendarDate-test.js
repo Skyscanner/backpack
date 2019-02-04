@@ -18,6 +18,7 @@
 
 import React from 'react';
 import renderer from 'react-test-renderer';
+
 import BpkScrollableCalendarDate from './BpkScrollableCalendarDate';
 
 const testDate = new Date(2010, 1, 15);

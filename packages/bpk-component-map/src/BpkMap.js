@@ -21,6 +21,7 @@
 import React, { type Node } from 'react';
 import PropTypes from 'prop-types';
 import { withGoogleMap, GoogleMap } from 'react-google-maps';
+
 import { LatLongPropType, type LatLong } from './common-types';
 
 export type Bounds = {

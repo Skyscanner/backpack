@@ -23,10 +23,10 @@ import BpkScrollableCalendar, {
   BpkScrollableCalendarGrid,
   BpkScrollableCalendarDate,
 } from 'bpk-component-scrollable-calendar';
-
 import scrollableCalendarReadme from 'bpk-component-scrollable-calendar/README.md';
 
 import DocsPageBuilder from '../../components/DocsPageBuilder';
+
 import {
   weekDays,
   formatDateFull,

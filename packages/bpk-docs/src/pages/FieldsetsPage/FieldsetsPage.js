@@ -30,11 +30,12 @@ import BpkAutosuggest, {
   BpkAutosuggestSuggestion,
 } from 'bpk-component-autosuggest';
 
-import STYLES from './fieldsets-page.scss';
 import * as ROUTES from '../../constants/routes';
 import DocsPageBuilder from '../../components/DocsPageBuilder';
 import DocsPageWrapper from '../../components/DocsPageWrapper';
 import IntroBlurb from '../../components/IntroBlurb';
+
+import STYLES from './fieldsets-page.scss';
 
 const getClassName = cssModules(STYLES);
 

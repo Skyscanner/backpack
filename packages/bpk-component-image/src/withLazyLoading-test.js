@@ -18,6 +18,7 @@
 
 import React from 'react';
 import { shallow, mount } from 'enzyme';
+
 import withLazyLoading from './withLazyLoading';
 
 const createDocumentMock = () => {

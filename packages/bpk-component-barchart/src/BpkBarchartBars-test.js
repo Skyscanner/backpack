@@ -24,9 +24,11 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
 import { scaleLinear, scaleBand } from 'd3-scale';
+
+import data from '../data.json';
+
 import BpkBarchartBars from './BpkBarchartBars';
 import BpkBarchartBar from './BpkBarchartBar';
-import data from '../data.json';
 
 const margin = {
   top: 10,

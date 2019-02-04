@@ -21,10 +21,11 @@
 import React from 'react';
 import mobileScrollContainerReadme from 'bpk-component-mobile-scroll-container/README.md';
 
-import BlockExample from './BlockExample';
 import IntroBlurb from '../../components/IntroBlurb';
 import DocsPageBuilder from '../../components/DocsPageBuilder';
 import DocsPageWrapper from '../../components/DocsPageWrapper';
+
+import BlockExample from './BlockExample';
 
 const components = [
   {

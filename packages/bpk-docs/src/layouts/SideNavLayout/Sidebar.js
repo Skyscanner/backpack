@@ -24,11 +24,12 @@ import { cssModules } from 'bpk-react-utils';
 import BpkCloseButton from 'bpk-component-close-button';
 import BpkBreakpoint, { BREAKPOINTS } from 'bpk-component-breakpoint';
 
+import BackpackLogoWhite from '../../static/backpack-logo-white.svg';
+
 import NavList from './NavList';
 import STYLES from './Sidebar.scss';
 import SectionsList from './SectionsList';
 import { type Category } from './common-types';
-import BackpackLogoWhite from '../../static/backpack-logo-white.svg';
 
 const getClassName = cssModules(STYLES);
 

@@ -21,20 +21,16 @@ import { Route, Redirect, Switch } from 'react-router-dom';
 
 import * as ROUTES from '../constants/routes';
 import redirects from '../constants/redirect-routes';
-
 import DefaultLayout from '../layouts/DefaultLayout';
 import UsingLayout from '../layouts/UsingLayout';
 import TokensLayout from '../layouts/TokensLayout';
 import StyleGuideLayout from '../layouts/StyleGuideLayout';
 import DocsLayout from '../layouts/DocsLayout';
-
 import HomePage from '../pages/HomePage';
-
 import GettingStartedPage from '../pages/GettingStartedPage';
 import BackpackReactScriptsPage from '../pages/BackpackReactScriptsPage';
 import BaseStylesheetPage from '../pages/BaseStylesheetPage';
 import PrinciplesPage from '../pages/PrinciplesPage';
-
 import ColorsPage from '../pages/ColorsPage';
 import TypesettingPage from '../pages/TypesettingPage';
 import RadiiPage from '../pages/RadiiPage';
@@ -43,10 +39,8 @@ import BordersPage from '../pages/BordersPage';
 import SpacingsPage from '../pages/SpacingsPage';
 import AnimationPage from '../pages/AnimationPage';
 import ZIndexesPage from '../pages/ZIndexesPage';
-
 import CopywritingPage from '../pages/CopywritingPage';
 import ToneOfVoicePage from '../pages/ToneOfVoicePage';
-
 import AccordionsPage from '../pages/AccordionsPage';
 import AlertPage from '../pages/AlertPage';
 import AlignmentPage from '../pages/AlignmentPage';
@@ -105,7 +99,6 @@ import ThemingPage from '../pages/ThemingPage';
 import TicketsPage from '../pages/TicketsPage';
 import TooltipsPage from '../pages/TooltipsPage';
 import BagCheckPage from '../pages/BagCheckPage';
-
 import { GridColumnDemoPage, GridOffsetDemoPage } from '../pages/GridDemoPages';
 
 export const ROUTES_MAPPINGS = [

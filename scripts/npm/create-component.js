@@ -19,11 +19,12 @@
 /* eslint-disable no-console */
 
 const { execSync } = require('child_process');
-const prompt = require('prompt');
 const fs = require('fs');
-const colors = require('colors');
 const { Transform } = require('stream');
 const path = require('path');
+
+const colors = require('colors');
+const prompt = require('prompt');
 const _ = require('lodash');
 const globby = require('globby');
 

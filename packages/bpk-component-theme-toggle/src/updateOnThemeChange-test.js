@@ -20,6 +20,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import renderer from 'react-test-renderer';
 import { mount } from 'enzyme';
+
 import updateOnThemeChange from './updateOnThemeChange';
 import { THEME_CHANGE_EVENT, getHtmlElement } from './utils';
 

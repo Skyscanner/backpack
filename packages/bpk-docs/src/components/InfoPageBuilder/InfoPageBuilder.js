@@ -31,8 +31,9 @@ import { withButtonAlignment } from 'bpk-component-icon';
 
 import HeroSection from '../HeroSection';
 import Heading from '../Heading';
-import STYLES from './InfoPageBuilder.scss';
 import AlternatingPageContent from '../AlternatingPageContent';
+
+import STYLES from './InfoPageBuilder.scss';
 
 const getClassName = cssModules(STYLES);
 const renderer = new marked.Renderer();

@@ -21,8 +21,8 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-
 import BpkText from 'bpk-component-text';
+
 import BpkInput, {
   propTypes as inputPropTypes,
   defaultProps as inputDefaultProps,

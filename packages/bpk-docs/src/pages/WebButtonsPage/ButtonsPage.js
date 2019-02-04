@@ -31,18 +31,18 @@ import TestBpkSmallHelpIcon from 'bpk-component-icon/sm/help';
 import TestBpkLargeHelpIcon from 'bpk-component-icon/lg/help';
 import TestBpkSmallSearchIcon from 'bpk-component-icon/sm/search';
 import TestBpkLargeSearchIcon from 'bpk-component-icon/lg/search';
-
 import BpkLoadingButton from 'bpk-component-loading-button';
 import BpkRouterLink from 'bpk-component-router-link';
 import buttonReadme from 'bpk-component-button/README.md';
 import loadingButtonReadme from 'bpk-component-loading-button/README.md';
 import { cssModules } from 'bpk-react-utils';
-import STYLES from './buttons-page.scss';
 
 import * as ROUTES from '../../constants/routes';
 import DocsPageBuilder from '../../components/DocsPageBuilder';
 import Paragraph from '../../components/Paragraph';
 import Code from '../../components/Code';
+
+import STYLES from './buttons-page.scss';
 
 const AlignedBpkSmallArrowIcon = alignToButton(TestBpkSmallArrowIcon);
 const AlignedBpkLargeArrowIcon = alignToLargeButton(TestBpkLargeArrowIcon);

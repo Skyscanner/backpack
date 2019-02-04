@@ -18,6 +18,7 @@
 
 import React from 'react';
 import renderer from 'react-test-renderer';
+
 import BpkButtonLink, { themeAttributes } from './BpkButtonLink';
 
 describe('BpkButtonLink', () => {

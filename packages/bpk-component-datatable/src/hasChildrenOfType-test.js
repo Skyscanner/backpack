@@ -17,6 +17,7 @@
  */
 
 import React from 'react';
+
 import hasChildrenOfType, { getDisplayName } from './hasChildrenOfType';
 
 const Component = () => <div>Component</div>;

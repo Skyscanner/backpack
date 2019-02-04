@@ -22,6 +22,7 @@ import PropTypes from 'prop-types';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import BpkText from 'bpk-component-text';
+
 import BpkMap, { BpkOverlayView, withGoogleMapsScript } from './index';
 
 const BpkMapWithLoading = withGoogleMapsScript(BpkMap);

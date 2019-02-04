@@ -19,6 +19,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { cssModules } from 'bpk-react-utils';
+
 import BpkPaginationList from './BpkPaginationList';
 import BpkPaginationNudger from './BpkPaginationNudger';
 import STYLES from './bpk-pagination.scss';

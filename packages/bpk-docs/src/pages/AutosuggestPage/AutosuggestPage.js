@@ -25,13 +25,11 @@ import FlightIcon from 'bpk-component-icon/lg/flight';
 import BpkAutosuggest, {
   BpkAutosuggestSuggestion,
 } from 'bpk-component-autosuggest';
-
 import autosuggestReadme from 'bpk-component-autosuggest/README.md';
 
 import * as ROUTES from '../../constants/routes';
 import DocsPageBuilder from '../../components/DocsPageBuilder';
 import DocsPageWrapper from '../../components/DocsPageWrapper';
-
 import Paragraph from '../../components/Paragraph';
 import IntroBlurb from '../../components/IntroBlurb';
 

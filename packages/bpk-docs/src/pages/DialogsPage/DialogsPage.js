@@ -19,9 +19,9 @@
 /* @flow */
 
 import React from 'react';
+
 import DocsPageWrapper from '../../components/DocsPageWrapper';
 import IntroBlurb from '../../components/IntroBlurb';
-
 import AndroidDialogs from '../AndroidDialogPage';
 import IOSDialogs from '../IOSDialogPage';
 import WebDialogs from '../WebDialogPage';

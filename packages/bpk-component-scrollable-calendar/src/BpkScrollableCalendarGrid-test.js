@@ -21,12 +21,12 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import { mount } from 'enzyme';
 import isWeekend from 'date-fns/is_weekend';
-
 import { colorRed500 } from 'bpk-tokens/tokens/base.es6';
-import BpkCalendarScrollGrid from './BpkScrollableCalendarGrid';
-import BpkCalendarScrollDate from './BpkScrollableCalendarDate';
 
 import { weekDays, formatDateFull, formatMonth } from '../test-utils';
+
+import BpkCalendarScrollGrid from './BpkScrollableCalendarGrid';
+import BpkCalendarScrollDate from './BpkScrollableCalendarDate';
 
 describe('BpkCalendarScrollGrid', () => {
   it('should render correctly with no optional props set', () => {

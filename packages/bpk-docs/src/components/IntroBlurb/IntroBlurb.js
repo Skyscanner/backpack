@@ -18,6 +18,7 @@
 
 import BpkText from 'bpk-component-text';
 import { cssModules, withDefaultProps } from 'bpk-react-utils';
+
 import STYLES from './IntroBlurb.scss';
 
 const getClassName = cssModules(STYLES);

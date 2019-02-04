@@ -20,6 +20,7 @@ import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { storiesOf } from '@storybook/react';
 import { updateOnDirectionChange } from 'bpk-component-rtl-toggle';
+
 import BpkSlider from './index';
 
 class SliderContainer extends Component {

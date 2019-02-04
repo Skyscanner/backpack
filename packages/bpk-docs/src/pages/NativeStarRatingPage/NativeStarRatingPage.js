@@ -17,11 +17,10 @@
  */
 
 import React from 'react';
-import readme from '../../../../../backpack-react-native/packages/react-native-bpk-component-star-rating/README.md';
 
+import readme from '../../../../../backpack-react-native/packages/react-native-bpk-component-star-rating/README.md';
 import iosScreenshotDefault from '../../../../../backpack-react-native/packages/react-native-bpk-component-star-rating/screenshots/ios/default.png';
 import androidScreenshotDefault from '../../../../../backpack-react-native/packages/react-native-bpk-component-star-rating/screenshots/android/default.png';
-
 import DocsPageBuilder from '../../components/DocsPageBuilder';
 
 const components = [

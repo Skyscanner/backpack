@@ -27,7 +27,6 @@ import BpkInput, { INPUT_TYPES } from 'bpk-component-input';
 import BpkFormValidation from 'bpk-component-form-validation';
 import BpkBannerAlert, { ALERT_TYPES } from 'bpk-component-banner-alert';
 import { cssModules } from 'bpk-react-utils';
-
 import inputReadme from 'bpk-component-input/README.md';
 import labelReadme from 'bpk-component-label/README.md';
 import radioReadme from 'bpk-component-radio/README.md';
@@ -36,14 +35,14 @@ import textareaReadme from 'bpk-component-textarea/README.md';
 import checkboxReadme from 'bpk-component-checkbox/README.md';
 import validationReadme from 'bpk-component-form-validation/README.md';
 
-import STYLES from './forms-page.scss';
 import * as ROUTES from '../../constants/routes';
 import DocsPageBuilder from '../../components/DocsPageBuilder';
 import DocsPageWrapper from '../../components/DocsPageWrapper';
-import InputContainer from './InputContainer';
 import BpkParagraph from '../../components/Paragraph';
 import IntroBlurb from '../../components/IntroBlurb';
 
+import InputContainer from './InputContainer';
+import STYLES from './forms-page.scss';
 import RadioContainer from './RadioContainer';
 
 const getClassName = cssModules(STYLES);

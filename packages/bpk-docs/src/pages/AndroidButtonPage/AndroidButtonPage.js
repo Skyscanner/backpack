@@ -24,7 +24,6 @@ import screenshotSecondary from '../../../../../backpack-android/docs/Button/scr
 import screenshotDestructive from '../../../../../backpack-android/docs/Button/screenshots/destructive.png';
 import screenshotOutline from '../../../../../backpack-android/docs/Button/screenshots/outline.png';
 import screenshotFeatured from '../../../../../backpack-android/docs/Button/screenshots/featured.png';
-
 import DocsPageBuilder from '../../components/DocsPageBuilder';
 
 const components = [

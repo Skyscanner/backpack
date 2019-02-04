@@ -19,6 +19,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { borderRadiusXs } from 'bpk-tokens/tokens/base.es6';
+
 import { remToPx } from './utils';
 
 const borderRadius = remToPx(borderRadiusXs);

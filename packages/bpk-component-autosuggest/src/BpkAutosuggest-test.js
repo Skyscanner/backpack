@@ -19,6 +19,7 @@
 import React from 'react';
 import ReactTestUtils from 'react-dom/test-utils';
 import renderer from 'react-test-renderer';
+
 import BpkAutosuggest from './BpkAutosuggest';
 
 const suggestions = ['Edinburgh', 'Glasgow', 'London'];

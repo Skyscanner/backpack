@@ -18,7 +18,6 @@
 
 import PropTypes from 'prop-types';
 import React from 'react';
-
 import ArrowLeftIcon from 'bpk-component-icon/lg/arrow-left';
 import ArrowRightIcon from 'bpk-component-icon/lg/arrow-right';
 import BpkSelect from 'bpk-component-select';
@@ -33,7 +32,6 @@ import {
   parseIsoDate,
   startOfMonth,
 } from './date-utils';
-
 import STYLES from './bpk-calendar-nav.scss';
 
 const getClassName = cssModules(STYLES);

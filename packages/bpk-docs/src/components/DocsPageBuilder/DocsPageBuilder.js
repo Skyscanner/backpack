@@ -25,17 +25,17 @@ import BpkContentContainer from 'bpk-component-content-container';
 import { cssModules } from 'bpk-react-utils';
 
 import AlternatingPageContent from '../AlternatingPageContent';
-import ComponentScreenshots from './ComponentScreenshots';
-import ComponentVideos from './ComponentVideos';
 import Heading from '../Heading';
 import PageHead from '../PageHead';
 import Paragraph from '../Paragraph';
 import PresentationBlock from '../PresentationBlock';
 import { createFromType } from '../ApidocLink';
-import TokenSwitcher, { connect } from './TokenSwitcher';
-import TokenTable from './TokenTable';
 import UsageTable from '../UsageTable';
 
+import TokenSwitcher, { connect } from './TokenSwitcher';
+import TokenTable from './TokenTable';
+import ComponentVideos from './ComponentVideos';
+import ComponentScreenshots from './ComponentScreenshots';
 import STYLES from './DocsPageBuilder.scss';
 import PlatformSwitchingContent from './PlatformSwitchingContent';
 

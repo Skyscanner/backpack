@@ -22,12 +22,13 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { cssModules } from 'bpk-react-utils';
 import { storiesOf } from '@storybook/react';
-
 import BpkButton from 'bpk-component-button';
 import ArrowRightIcon from 'bpk-component-icon/sm/long-arrow-right';
 import { withButtonAlignment, withRtlSupport } from 'bpk-component-icon';
-import BpkTicket from './index';
+
 import STYLES from './stories.scss';
+
+import BpkTicket from './index';
 
 const getClassName = cssModules(STYLES);
 

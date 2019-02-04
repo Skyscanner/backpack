@@ -18,8 +18,8 @@
 /* @flow */
 
 import React from 'react';
-import readme from '../../../../../backpack-react-native/packages/react-native-bpk-component-navigation-bar/README.md';
 
+import readme from '../../../../../backpack-react-native/packages/react-native-bpk-component-navigation-bar/README.md';
 import iosScreenshotDefault from '../../../../../backpack-react-native/packages/react-native-bpk-component-navigation-bar/screenshots/ios/default.png';
 import androidScreenshotDefault from '../../../../../backpack-react-native/packages/react-native-bpk-component-navigation-bar/screenshots/android/default.png';
 import iosScreenshotSubtitleView from '../../../../../backpack-react-native/packages/react-native-bpk-component-navigation-bar/screenshots/ios/subtitle-view.png';
@@ -28,7 +28,6 @@ import iosScreenshotModal from '../../../../../backpack-react-native/packages/re
 import androidScreenshotModal from '../../../../../backpack-react-native/packages/react-native-bpk-component-navigation-bar/screenshots/android/modal.png';
 import iosScreenshotTitleIcon from '../../../../../backpack-react-native/packages/react-native-bpk-component-navigation-bar/screenshots/ios/title-icon.png';
 import androidScreenshotTitleIcon from '../../../../../backpack-react-native/packages/react-native-bpk-component-navigation-bar/screenshots/android/title-icon.png';
-
 import DocsPageBuilder from '../../components/DocsPageBuilder';
 
 const components = [

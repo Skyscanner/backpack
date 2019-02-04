@@ -20,7 +20,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import SideNavLayout from '../SideNavLayout';
-
 import links from '../links';
 
 const TokensLayout = ({ children, ...rest }) => (

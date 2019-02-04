@@ -18,10 +18,8 @@
 /* @flow */
 import React from 'react';
 import PropTypes from 'prop-types';
-
 import BpkCard from 'bpk-component-card';
 import BpkText from 'bpk-component-text';
-
 import { cssModules } from 'bpk-react-utils';
 
 import STYLES from './HomePageCard.scss';

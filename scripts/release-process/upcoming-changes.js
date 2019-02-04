@@ -17,10 +17,11 @@
  */
 /* eslint-disable no-console */
 
+const process = require('process');
+
 const zip = require('lodash/zip');
 const semver = require('semver');
 const chalk = require('chalk');
-const process = require('process');
 
 const {
   allChangelogPaths,
@@ -71,12 +72,12 @@ const {
 
   console.log(`${chalk.blue.bold('Upcoming changes:')}
 ${upcomingChanges.map(
-    change =>
-      `${chalk.green(
-        `${change.name}: ${change.currentVersion} => ${change.nextVersion}
+  change =>
+    `${chalk.green(
+      `${change.name}: ${change.currentVersion} => ${change.nextVersion}
         `,
-      )}`,
-  )}
+    )}`,
+)}
   `);
 })().catch(e => {
   console.error(`Upcoming changes failed with error: ${e}`);

@@ -22,11 +22,10 @@ import React, { Component } from 'react';
 import BpkPhoneInput from 'bpk-component-phone-input';
 import readme from 'bpk-component-phone-input/README.md';
 import BpkImage from 'bpk-component-image';
+
 import DocsPageWrapper from '../../components/DocsPageWrapper';
 import DocsPageBuilder from '../../components/DocsPageBuilder';
-
 import IntroBlurb from '../../components/IntroBlurb';
-
 import NativePhoneInput from '../NativePhoneInputPage';
 
 const DIALING_CODE_TO_ID_MAP = {

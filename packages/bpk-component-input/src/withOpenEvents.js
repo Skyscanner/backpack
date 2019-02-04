@@ -18,7 +18,6 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-
 import { cssModules, wrapDisplayName } from 'bpk-react-utils';
 
 import STYLES from './BpkInput.scss';

@@ -28,9 +28,10 @@ import {
   BpkTableHeadCell,
 } from 'bpk-component-table';
 
-import BpkStarRating, { BpkStar, STAR_TYPES } from './index';
 import BpkInteractiveStarRating from './src/BpkInteractiveStarRating';
 import withInteractiveStarRatingState from './src/withInteractiveStarRatingState';
+
+import BpkStarRating, { BpkStar, STAR_TYPES } from './index';
 
 const InteractiveStarRating = withInteractiveStarRatingState(
   BpkInteractiveStarRating,

@@ -21,8 +21,9 @@ import { shallow } from 'enzyme/build';
 import startOfDay from 'date-fns/start_of_day';
 import parseDate from 'date-fns/parse';
 
-import Week from './Week';
 import { weekDays } from '../test-utils';
+
+import Week from './Week';
 
 const DummyDateComponent = () => <div />;
 

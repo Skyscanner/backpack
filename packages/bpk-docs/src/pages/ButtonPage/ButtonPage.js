@@ -19,9 +19,9 @@
 /* @flow */
 
 import React from 'react';
+
 import DocsPageWrapper from '../../components/DocsPageWrapper';
 import IntroBlurb from '../../components/IntroBlurb';
-
 import AndroidButtons from '../AndroidButtonPage';
 import IOSButtons from '../IOSButtonPage';
 import WebButtons from '../WebButtonsPage';

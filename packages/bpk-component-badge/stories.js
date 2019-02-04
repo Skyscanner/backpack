@@ -24,8 +24,9 @@ import BpkSmallBeerIcon from 'bpk-component-icon/sm/beer';
 import BpkSmallFlightIcon from 'bpk-component-icon/sm/flight';
 import BpkSmallWeatherIcon from 'bpk-component-icon/sm/weather';
 
-import BpkBadge, { BADGE_TYPES } from './index';
 import BadgeLayout from './BadgeLayout';
+
+import BpkBadge, { BADGE_TYPES } from './index';
 
 storiesOf('bpk-component-badge', module)
   .add('Default', () => (

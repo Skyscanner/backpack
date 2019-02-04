@@ -27,6 +27,7 @@ import BpkThemeToggle, {
   updateOnThemeChange,
 } from '../packages/bpk-component-theme-toggle';
 import BpkThemeProvider from '../packages/bpk-theming';
+
 import themeableAttributes from './themeableAttributes';
 
 const EnhancedThemeProvider = updateOnThemeChange(BpkThemeProvider);
