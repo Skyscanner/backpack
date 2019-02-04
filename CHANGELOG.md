@@ -2,6 +2,19 @@
 
 [Unreleased changes](./UNRELEASED.md).
 
+# 2019-02-04 New grid layout icon
+
+**Added:**
+
+- bpk-component-icon: 3.25.0 => 3.26.0
+- bpk-mixins: 17.13.0 => 17.14.0
+- bpk-svgs: 6.2.0 => 6.3.0
+  - Add `grid-layout` icon.
+
+**Fixed:**
+- bpk-component-banner-alert: 2.0.68 => 2.0.69
+  - Upgrade `react-transition-group` to `"^2.5.3`.
+
 # 2019-01-28 New social-like icon
 
 **Added:**
