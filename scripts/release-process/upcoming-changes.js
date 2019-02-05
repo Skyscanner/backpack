@@ -77,8 +77,7 @@ ${upcomingChanges.map(
       `${change.name}: ${change.currentVersion} => ${change.nextVersion}
         `,
     )}`,
-)}
-  `);
+)}`);
 })().catch(e => {
   console.error(`Upcoming changes failed with error: ${e}`);
   process.exit(1);
