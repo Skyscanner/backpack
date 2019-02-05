@@ -25,7 +25,6 @@ import screenshotDestructive from '../../../../../backpack-ios/screenshots/Butto
 import screenshotFeatured from '../../../../../backpack-ios/screenshots/Button/featured.png';
 import screenshotLink from '../../../../../backpack-ios/screenshots/Button/link.png';
 import screenshotOutline from '../../../../../backpack-ios/screenshots/Button/outline.png';
-
 import DocsPageBuilder from '../../components/DocsPageBuilder';
 
 const components = [

@@ -24,12 +24,13 @@ import BpkHorizontalNav, {
   BpkHorizontalNavItem,
 } from 'bpk-component-horizontal-nav';
 import { cssModules } from 'bpk-react-utils';
+
 import {
   setPlatformInLocalStorage,
   getPlatformFromLocalStorage,
 } from '../../helpers/storage-helper';
-
 import Heading from '../Heading';
+
 import Blurb from './Blurb';
 import STYLES from './DocsPageWrapper.scss';
 

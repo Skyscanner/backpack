@@ -22,6 +22,7 @@ import { mount } from 'enzyme';
 import toJson from 'enzyme-to-json';
 import * as BREAKPOINTS from 'bpk-tokens/tokens/breakpoints.es6';
 import { spacingSm } from 'bpk-tokens/tokens/base.es6';
+
 import BpkImage from './BpkImage';
 
 describe('BpkImage', () => {

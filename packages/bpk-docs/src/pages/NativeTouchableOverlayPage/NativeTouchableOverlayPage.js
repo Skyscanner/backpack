@@ -20,11 +20,10 @@ import React from 'react';
 import BpkLink from 'bpk-component-link';
 import BpkText from 'bpk-component-text';
 import BpkBlockquote from 'bpk-component-blockquote';
-import readme from '../../../../../backpack-react-native/packages/react-native-bpk-component-touchable-overlay/README.md';
 
+import readme from '../../../../../backpack-react-native/packages/react-native-bpk-component-touchable-overlay/README.md';
 import iosScreenshotDefault from '../../../../../backpack-react-native/packages/react-native-bpk-component-touchable-overlay/screenshots/default.png';
 import iosScreenshotTouchableHighlight from '../../../../../backpack-react-native/packages/react-native-bpk-component-touchable-overlay/screenshots/touchable-highlight.png';
-
 import IntroBlurb from '../../components/IntroBlurb';
 import DocsPageBuilder from '../../components/DocsPageBuilder';
 import DocsPageWrapper from '../../components/DocsPageWrapper';

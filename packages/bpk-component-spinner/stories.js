@@ -20,6 +20,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 
 import SpinnerLayout from './SpinnerLayout';
+
 import {
   BpkSpinner,
   BpkLargeSpinner,

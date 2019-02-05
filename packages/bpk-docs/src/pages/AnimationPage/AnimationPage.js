@@ -20,8 +20,8 @@ import React from 'react';
 import TOKENS from 'bpk-tokens/tokens/base.raw.json';
 import IOS_TOKENS from 'bpk-tokens/tokens/base.raw.ios.json';
 import ANDROID_TOKENS from 'bpk-tokens/tokens/base.raw.android.json';
-import IntroBlurb from '../../components/IntroBlurb';
 
+import IntroBlurb from '../../components/IntroBlurb';
 import DocsPageBuilder from '../../components/DocsPageBuilder';
 import { getPlatformTokens } from '../../helpers/tokens-helper';
 

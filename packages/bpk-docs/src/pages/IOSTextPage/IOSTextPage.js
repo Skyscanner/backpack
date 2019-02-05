@@ -22,7 +22,6 @@ import readme from '../../../../../backpack-ios/Backpack/Label/README.md';
 import screenshotDefault from '../../../../../backpack-ios/screenshots/Label/default.png';
 import screenshotEmphasized from '../../../../../backpack-ios/screenshots/Label/emphasized.png';
 import screenshotHeavy from '../../../../../backpack-ios/screenshots/Label/heavy.png';
-
 import DocsPageBuilder from '../../components/DocsPageBuilder';
 
 const components = [

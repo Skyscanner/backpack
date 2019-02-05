@@ -20,9 +20,9 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { withDefaultProps } from 'bpk-react-utils';
 
-import BpkText from './index';
-
 import STYLE from './stories.scss';
+
+import BpkText from './index';
 
 const Paragraph = withDefaultProps(BpkText, {
   textStyle: 'lg',

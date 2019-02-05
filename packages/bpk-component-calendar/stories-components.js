@@ -29,11 +29,14 @@ import {
   colorGray300,
   colorGreen500,
 } from 'bpk-tokens/tokens/base.es6';
+
 import { withButtonAlignment, withRtlSupport } from '../bpk-component-icon';
 import SmallLongArrowRightIcon from '../bpk-component-icon/sm/long-arrow-right';
 import SmallLongArrowLeftIcon from '../bpk-component-icon/sm/long-arrow-left';
+
 import { dateToBoundaries, startOfDay, addDays } from './src/date-utils';
 import { formatMonth, formatDateFull, weekDays } from './test-utils';
+
 import {
   BpkCalendarGrid,
   BpkCalendarGridHeader,

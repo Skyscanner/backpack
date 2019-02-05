@@ -21,7 +21,6 @@ import BpkStarRating, {
   BpkInteractiveStarRating,
   withInteractiveStarRatingState,
 } from 'bpk-component-star-rating';
-
 import starRatingReadme from 'bpk-component-star-rating/README.md';
 
 import DocsPageBuilder from '../../components/DocsPageBuilder';

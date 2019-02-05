@@ -20,13 +20,12 @@ import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { storiesOf } from '@storybook/react';
 import { cssModules, withDefaultProps } from 'bpk-react-utils';
-
 import BpkButton from 'bpk-component-button';
 import BpkText from 'bpk-component-text';
 
-import BpkDrawer from './index';
-
 import STYLES from './stories.scss';
+
+import BpkDrawer from './index';
 
 const getClassName = cssModules(STYLES);
 

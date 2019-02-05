@@ -18,6 +18,7 @@
 
 import React from 'react';
 import renderer from 'react-test-renderer';
+
 import BpkTableBody from './BpkTableBody';
 
 describe('BpkTableBody', () => {

@@ -19,22 +19,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
-
 import BpkText from 'bpk-component-text';
-
 import { cssModules } from 'bpk-react-utils';
 
-import STYLES from './home-page.scss';
 import * as ROUTES from '../../constants/routes';
-
 import HomePageCard from '../../components/HomePageCard';
-import UpdatedAt from './UpdatedAt';
 import ComponentsImage from '../../static/components.jpg';
 import DesignTokensImage from '../../static/design_tokens.jpg';
 import GitHubImage from '../../static/github.jpg';
 import UsingBackpackImage from '../../static/using_bpk.jpg';
 import StyleGuideImage from '../../static/style_guide.jpg';
-
 import ComponentsIcon from '../../static/components_icon.svg';
 import DesignTokensIcon from '../../static/design_tokens_icon.svg';
 import GitHubIcon from '../../static/github_icon.svg';
@@ -45,6 +39,9 @@ import HeroImage from '../../static/hero.jpg';
 import LondonHeroImage from '../../static/london_hero.jpg';
 import HongKongHeroImage from '../../static/hongKong_hero.jpg';
 import DohaHeroImage from '../../static/doha_hero.jpg';
+
+import UpdatedAt from './UpdatedAt';
+import STYLES from './home-page.scss';
 
 const getClassName = cssModules(STYLES);
 

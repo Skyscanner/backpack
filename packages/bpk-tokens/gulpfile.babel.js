@@ -17,8 +17,9 @@
  */
 
 import fs from 'fs';
-import del from 'del';
 import path from 'path';
+
+import del from 'del';
 import gulp from 'gulp';
 import theo from 'theo';
 import gulpTheo from 'gulp-theo';

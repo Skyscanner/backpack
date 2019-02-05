@@ -19,6 +19,7 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { storiesOf } from '@storybook/react';
+
 import BpkPagination from './index';
 
 class PaginationContainer extends Component {

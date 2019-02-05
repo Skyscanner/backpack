@@ -18,6 +18,7 @@
 
 import React from 'react';
 import renderer from 'react-test-renderer';
+
 import BpkCard from './BpkCard';
 
 describe('BpkCard', () => {

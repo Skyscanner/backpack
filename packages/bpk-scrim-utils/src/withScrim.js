@@ -31,7 +31,6 @@ import {
   unfixBody,
   unlockScroll,
 } from './scroll-utils';
-
 import STYLES from './bpk-scrim-content.scss';
 import { onClosePropType } from './customPropTypes';
 

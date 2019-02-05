@@ -20,13 +20,11 @@ import React from 'react';
 import BpkBlockquote from 'bpk-component-blockquote';
 import BpkRouterLink from 'bpk-component-router-link';
 import BpkText from 'bpk-component-text';
-
 import gridReadme from 'bpk-component-grid/README.md';
 
 import * as routes from '../../constants/routes';
 import DocsPageBuilder from '../../components/DocsPageBuilder';
 import DocsPageWrapper from '../../components/DocsPageWrapper';
-
 import BpkParagraph from '../../components/Paragraph';
 import IntroBlurb from '../../components/IntroBlurb';
 import Code from '../../components/Code';

@@ -23,6 +23,7 @@ import { storiesOf } from '@storybook/react';
 import { withDefaultProps } from 'bpk-react-utils';
 import BpkText from 'bpk-component-text';
 import { spacingSm, colorGreen500 } from 'bpk-tokens/tokens/base.es6';
+
 import BpkTooltip from './index';
 
 const st = {

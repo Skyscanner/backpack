@@ -27,7 +27,6 @@ import screenshotWithDivider from '../../../../../backpack-ios/screenshots/Card/
 import screenshotWithDividerWithoutPadding from '../../../../../backpack-ios/screenshots/Card/with-divider-without-padding.png';
 import screenshotWithDividerCornerStyleLarge from '../../../../../backpack-ios/screenshots/Card/with-divider-and-corner-style-large.png';
 import screenshotWithDividerArrangedVertically from '../../../../../backpack-ios/screenshots/Card/with-divider-arranged-vertically.png';
-
 import DocsPageBuilder from '../../components/DocsPageBuilder';
 
 const components = [

@@ -19,7 +19,6 @@
 import React from 'react';
 import BpkTicket from 'bpk-component-ticket';
 import BpkRouterLink from 'bpk-component-router-link';
-
 import ticketReadme from 'bpk-component-ticket/README.md';
 
 import * as ROUTES from '../../constants/routes';

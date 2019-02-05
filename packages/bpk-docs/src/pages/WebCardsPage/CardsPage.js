@@ -18,7 +18,6 @@
 
 import React from 'react';
 import BpkCard from 'bpk-component-card';
-
 import cardReadme from 'bpk-component-card/README.md';
 
 import DocsPageBuilder from '../../components/DocsPageBuilder';

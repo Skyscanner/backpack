@@ -17,11 +17,10 @@
  */
 
 import React from 'react';
-import readme from '../../../../../backpack-react-native/packages/react-native-bpk-component-select/README.md';
 
+import readme from '../../../../../backpack-react-native/packages/react-native-bpk-component-select/README.md';
 import iosScreenshotDefault from '../../../../../backpack-react-native/packages/react-native-bpk-component-select/screenshots/ios/default.png';
 import androidScreenshotDefault from '../../../../../backpack-react-native/packages/react-native-bpk-component-select/screenshots/android/default.png';
-
 import IntroBlurb from '../../components/IntroBlurb';
 import DocsPageBuilder from '../../components/DocsPageBuilder';
 import DocsPageWrapper from '../../components/DocsPageWrapper';

@@ -34,6 +34,7 @@ import {
   weekDaysJapanese,
   weekDays,
 } from './test-utils';
+import MonthViewCalendar from './stories-components';
 
 import BpkCalendar, {
   // BpkCalendarView,
@@ -42,8 +43,6 @@ import BpkCalendar, {
   BpkCalendarNav,
   BpkCalendarDate,
 } from './index';
-
-import MonthViewCalendar from './stories-components';
 
 class CalendarContainer extends Component {
   constructor(props) {

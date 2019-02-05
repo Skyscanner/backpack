@@ -24,17 +24,16 @@ import BpkMap, {
   type BpkMapLatLong,
 } from 'bpk-component-map';
 import { cssModules } from 'bpk-react-utils';
-
 import mapReadme from 'bpk-component-map/README.md';
+
 import iosScreenshot from '../../../../../backpack-react-native/packages/react-native-bpk-component-map/screenshots/ios/default.png';
 import androidScreenshot from '../../../../../backpack-react-native/packages/react-native-bpk-component-map/screenshots/android/default.png';
 import nativeMapReadme from '../../../../../backpack-react-native/packages/react-native-bpk-component-map/README.md';
-
-import STYLES from './MapPage.scss';
-
 import DocsPageBuilder from '../../components/DocsPageBuilder';
 import DocsPageWrapper from '../../components/DocsPageWrapper';
 import IntroBlurb from '../../components/IntroBlurb';
+
+import STYLES from './MapPage.scss';
 
 const BpkMapWithScript = withGoogleMapsScript(BpkMap);
 const API_KEY = process.env.GOOGLE_MAPS_API_KEY || '';

@@ -19,8 +19,9 @@ import PropTypes from 'prop-types';
 import React, { Children } from 'react';
 import { cssModules } from 'bpk-react-utils';
 
-import { SPINNER_TYPES } from './index';
 import STYLES from './SpinnerLayout.scss';
+
+import { SPINNER_TYPES } from './index';
 
 const getClassName = cssModules(STYLES);
 

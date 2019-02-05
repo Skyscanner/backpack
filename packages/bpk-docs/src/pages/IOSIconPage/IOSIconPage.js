@@ -20,7 +20,6 @@ import React from 'react';
 
 import readme from '../../../../../backpack-ios/Backpack/Icon/README.md';
 import screenshotAll from '../../../../../backpack-ios/screenshots/Icon/all.png';
-
 import DocsPageBuilder from '../../components/DocsPageBuilder';
 
 const components = [

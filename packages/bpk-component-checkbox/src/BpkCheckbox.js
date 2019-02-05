@@ -20,7 +20,6 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { cssModules } from 'bpk-react-utils';
 import { spacingSm } from 'bpk-tokens/tokens/base.es6';
-
 import Tick from 'bpk-component-icon/sm/tick';
 
 import STYLES from './BpkCheckbox.scss';

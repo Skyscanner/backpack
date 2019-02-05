@@ -16,8 +16,9 @@
  * limitations under the License.
  */
 
-import DocsPageBuilder from './DocsPageBuilder';
 import Paragraph from '../Paragraph';
+
+import DocsPageBuilder from './DocsPageBuilder';
 
 export { Paragraph };
 export default DocsPageBuilder;

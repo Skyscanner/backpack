@@ -20,6 +20,7 @@
 import React, { type ComponentType } from 'react';
 import PropTypes from 'prop-types';
 import { withScriptjs } from 'react-google-maps';
+
 import DefaultLoadingElement from './DefaultLoadingElement';
 
 function withGoogleMapsScript(Component: ComponentType<any>) {

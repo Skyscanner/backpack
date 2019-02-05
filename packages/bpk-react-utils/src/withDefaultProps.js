@@ -18,7 +18,6 @@
 
 import PropTypes from 'prop-types';
 import React from 'react';
-
 import wrapDisplayName from 'recompose/wrapDisplayName';
 
 const withDefaultProps = (WrappedComponent, defaultProps) => {

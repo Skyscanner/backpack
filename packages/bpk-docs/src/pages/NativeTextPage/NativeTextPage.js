@@ -17,6 +17,7 @@
  */
 
 import React from 'react';
+
 import readme from '../../../../../backpack-react-native/packages/react-native-bpk-component-text/README.md';
 import iosScreenshot from '../../../../../backpack-react-native/packages/react-native-bpk-component-text/screenshots/ios/default.png';
 import androidScreenshot from '../../../../../backpack-react-native/packages/react-native-bpk-component-text/screenshots/android/default.png';
@@ -24,7 +25,6 @@ import iosScreenshotEmphasized from '../../../../../backpack-react-native/packag
 import androidScreenshotEmphasized from '../../../../../backpack-react-native/packages/react-native-bpk-component-text/screenshots/android/emphasize.png';
 import iosScreenshotHeavy from '../../../../../backpack-react-native/packages/react-native-bpk-component-text/screenshots/ios/heavy.png';
 import androidScreenshotHeavy from '../../../../../backpack-react-native/packages/react-native-bpk-component-text/screenshots/android/heavy.png';
-
 import DocsPageBuilder from '../../components/DocsPageBuilder';
 
 const components = [

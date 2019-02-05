@@ -19,15 +19,14 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import Shallow from 'react-test-renderer/shallow';
-
 import isWeekend from 'date-fns/is_weekend';
 import { DateUtils } from 'bpk-component-calendar';
 import { colorRed500 } from 'bpk-tokens/tokens/base.es6';
 
+import { weekDays, formatDateFull, formatMonth } from '../test-utils';
+
 import BpkCalendarScrollDate from './BpkScrollableCalendarDate';
 import BpkScrollableCalendarGridList from './BpkScrollableCalendarGridList';
-
-import { weekDays, formatDateFull, formatMonth } from '../test-utils';
 
 const testDate = new Date(2010, 1, 15);
 

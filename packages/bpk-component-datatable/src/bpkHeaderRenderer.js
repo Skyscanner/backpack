@@ -22,8 +22,8 @@ import { cssModules } from 'bpk-react-utils';
 import BpkSmallArrowDownIcon from 'bpk-component-icon/sm/arrow-down';
 import BpkSmallArrowUpIcon from 'bpk-component-icon/sm/arrow-up';
 import { withRtlSupport } from 'bpk-component-icon';
-import { hasClassName } from './utils';
 
+import { hasClassName } from './utils';
 import STYLES from './bpk-data-table-column.scss';
 
 const DownIcon = withRtlSupport(BpkSmallArrowDownIcon);

@@ -22,7 +22,6 @@ import React from 'react';
 import { cssModules } from 'bpk-react-utils';
 
 import BpkClearButton from './BpkClearButton';
-
 import STYLES from './BpkInput.scss';
 import {
   type Props,

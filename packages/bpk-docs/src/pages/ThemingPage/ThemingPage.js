@@ -22,13 +22,12 @@ import BpkRouterLink from 'bpk-component-router-link';
 import { BpkList, BpkListItem } from 'bpk-component-list';
 import BpkBlockquote from 'bpk-component-blockquote';
 import webReadme from 'bpk-theming/README.md';
-import nativeReadme from '../../../../../backpack-react-native/packages/react-native-bpk-theming/README.md';
 
+import nativeReadme from '../../../../../backpack-react-native/packages/react-native-bpk-theming/README.md';
 import Paragraph from '../../components/Paragraph';
 import IntroBlurb from '../../components/IntroBlurb';
 import DocsPageBuilder from '../../components/DocsPageBuilder';
 import DocsPageWrapper from '../../components/DocsPageWrapper';
-
 import {
   ACCORDION,
   BARCHART,

@@ -29,6 +29,7 @@ import {
 } from '../bpk-component-icon';
 import SmallLongArrowRightIcon from '../bpk-component-icon/sm/long-arrow-right';
 import LargeLongArrowRightIcon from '../bpk-component-icon/lg/long-arrow-right';
+
 import BpkButton from './index';
 
 const AlignedSmallLongArrowRightIcon = withButtonAlignment(

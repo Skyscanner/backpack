@@ -36,6 +36,7 @@ import BpkText from 'bpk-component-text';
 import LongArrowRightIcon from 'bpk-component-icon/lg/long-arrow-right';
 import LongArrowRightIconSm from 'bpk-component-icon/sm/long-arrow-right';
 import AwardIcon from 'bpk-component-icon/lg/award';
+
 import DocsPageBuilder from '../../components/DocsPageBuilder';
 import DocsPageWrapper from '../../components/DocsPageWrapper';
 import Heading from '../../components/Heading';

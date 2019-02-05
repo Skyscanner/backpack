@@ -42,7 +42,6 @@ import {
   COMMON_PROP_TYPES,
   COMMON_DEFAULT_PROPS,
 } from './common-types';
-
 import STYLES from './bpk-banner-alert.scss';
 
 const getClassName = cssModules(STYLES);

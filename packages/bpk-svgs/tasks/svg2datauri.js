@@ -18,6 +18,7 @@
 
 import path from 'path';
 import { Transform } from 'stream';
+
 import { PluginError } from 'gulp-util';
 
 const PLUGIN_NAME = 'svg2datauri';

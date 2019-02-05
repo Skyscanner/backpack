@@ -19,10 +19,11 @@
 import React from 'react';
 import progressReadme from 'bpk-component-progress/README.md';
 
-import ProgressContainer from './ProgressContainer';
-import SteppedProgressContainer from './SteppedProgressContainer';
 import DocsPageBuilder from '../../components/DocsPageBuilder';
 import Paragraph from '../../components/Paragraph';
+
+import ProgressContainer from './ProgressContainer';
+import SteppedProgressContainer from './SteppedProgressContainer';
 
 const components = [
   {

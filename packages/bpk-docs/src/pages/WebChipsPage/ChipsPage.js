@@ -24,9 +24,10 @@ import BpkButton from 'bpk-component-button';
 import { cssModules } from 'bpk-react-utils';
 import chipReadme from 'bpk-component-chip/README.md';
 
-import STYLES from './ChipsPage.scss';
 import Paragraph from '../../components/Paragraph';
 import DocsPageBuilder from '../../components/DocsPageBuilder';
+
+import STYLES from './ChipsPage.scss';
 
 const getClassName = cssModules(STYLES);
 

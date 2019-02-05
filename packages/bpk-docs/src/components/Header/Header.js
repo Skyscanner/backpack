@@ -19,19 +19,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link, withRouter } from 'react-router-dom';
-
 import AnimateHeight from 'bpk-animate-height';
 import BpkHorizontalNav, {
   BpkHorizontalNavItem,
 } from 'bpk-component-horizontal-nav';
 import { cssModules } from 'bpk-react-utils';
-
 import BpkRouterLink from 'bpk-component-router-link';
 import BpkLink from 'bpk-component-link';
 
-import STYLES from './Header.scss';
-
 import * as ROUTES from '../../constants/routes';
+
+import STYLES from './Header.scss';
 import HamburgerButton from './HamburgerButton';
 
 const getClassName = cssModules(STYLES);

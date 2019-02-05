@@ -27,6 +27,7 @@ import {
 } from 'bpk-tokens/tokens/base.es6';
 
 import STYLES from './stories.scss';
+
 import BpkHorizontalNav, { BpkHorizontalNavItem } from './index';
 
 const getClassName = cssModules(STYLES);

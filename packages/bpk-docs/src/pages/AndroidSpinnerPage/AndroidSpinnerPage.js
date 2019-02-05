@@ -21,7 +21,6 @@ import React from 'react';
 import readme from '../../../../../backpack-android/docs/Spinner/README.md';
 import screenshotDefault from '../../../../../backpack-android/docs/Spinner/screenshots/default.png';
 import screenshotSmall from '../../../../../backpack-android/docs/Spinner/screenshots/small.png';
-
 import DocsPageBuilder from '../../components/DocsPageBuilder';
 
 const components = [

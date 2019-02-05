@@ -18,7 +18,6 @@
 
 import React from 'react';
 import BpkBlockquote from 'bpk-component-blockquote';
-
 import blockquotesReadme from 'bpk-component-blockquote/README.md';
 
 import DocsPageBuilder from '../../components/DocsPageBuilder';

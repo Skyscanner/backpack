@@ -24,14 +24,18 @@ import { colors, primaryGradient } from 'bpk-tokens/tokens/base.es6';
 import { cssModules } from 'bpk-react-utils';
 
 import STYLES from './colors-page.scss';
+
 import Heading from '../../components/Heading';
 import ColorSwatch from '../../components/ColorSwatch';
 import DocsPageBuilder from '../../components/DocsPageBuilder';
 
 /* eslint-disable import/no-webpack-loader-syntax */
 const coreRgbAse = require('!!file-loader?name=[name].[hash].ase!./../../static/core_rgb.ase');
+
 const coreRgbClr = require('!!file-loader?name=[name].[hash].clr!./../../static/core_rgb.clr');
+
 const extendedRgbAse = require('!!file-loader?name=[name].[hash].ase!./../../static/extended_rgb.ase');
+
 const extendedRgbClr = require('!!file-loader?name=[name].[hash].clr!./../../static/extended_rgb.clr');
 
 const getClassName = cssModules(STYLES);

@@ -21,6 +21,7 @@ import PropTypes from 'prop-types';
 import BpkHorizontalNav, {
   BpkHorizontalNavItem,
 } from 'bpk-component-horizontal-nav';
+
 import {
   setPlatformInLocalStorage,
   getPlatformFromLocalStorage,

@@ -21,6 +21,7 @@
 import React, { type Element } from 'react';
 import { mount } from 'enzyme';
 import renderer from 'react-test-renderer';
+
 import withNavigationStackState from './withNavigationStackState';
 
 describe('withNavigationStackState', () => {

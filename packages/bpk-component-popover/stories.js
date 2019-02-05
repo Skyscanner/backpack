@@ -26,9 +26,9 @@ import { storiesOf } from '@storybook/react';
 import BpkText from 'bpk-component-text';
 import BpkContentContainer from 'bpk-component-content-container';
 
-import BpkPopover, { type BpkPopoverProps as PopoverProps } from './index';
-
 import STYLES from './stories.scss';
+
+import BpkPopover, { type BpkPopoverProps as PopoverProps } from './index';
 
 const getClassName = cssModules(STYLES);
 

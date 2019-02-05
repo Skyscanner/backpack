@@ -21,7 +21,6 @@ import React from 'react';
 import readme from '../../../../../backpack-ios/Backpack/Dialog/README.md';
 import screenshotAlert from '../../../../../backpack-ios/screenshots/Dialog/with-cta.png';
 import screenshotBottomSheet from '../../../../../backpack-ios/screenshots/Dialog/delete-confirmation.png';
-
 import DocsPageBuilder from '../../components/DocsPageBuilder';
 
 const components = [

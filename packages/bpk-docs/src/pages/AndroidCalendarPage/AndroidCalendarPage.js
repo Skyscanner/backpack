@@ -20,7 +20,6 @@ import React from 'react';
 
 import readme from '../../../../../backpack-android/docs/Calendar/README.md';
 import screenshotAll from '../../../../../backpack-android/docs/Calendar/screenshots/range.png';
-
 import DocsPageBuilder from '../../components/DocsPageBuilder';
 
 const components = [

@@ -18,6 +18,7 @@
 
 import React from 'react';
 import renderer from 'react-test-renderer';
+
 import BpkLink, { themeAttributes } from './BpkLink';
 
 describe('BpkLink', () => {

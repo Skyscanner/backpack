@@ -19,6 +19,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import { spacingSm } from 'bpk-tokens/tokens/base.es6';
+
 import BpkBackgroundImage from './BpkBackgroundImage';
 
 describe('BpkBackgroundImage', () => {

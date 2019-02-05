@@ -17,8 +17,10 @@
  */
 
 import { scaleBand } from 'd3-scale';
-import { center, identity, remToPx } from './utils';
+
 import data from '../data.json';
+
+import { center, identity, remToPx } from './utils';
 
 describe('utils', () => {
   describe('identity', () => {

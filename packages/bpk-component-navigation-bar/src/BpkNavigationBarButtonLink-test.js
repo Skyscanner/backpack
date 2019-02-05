@@ -20,6 +20,7 @@
 
 import React from 'react';
 import renderer from 'react-test-renderer';
+
 import BpkNavigationBarButtonLink from './BpkNavigationBarButtonLink';
 
 describe('BpkNavigationButtonLink', () => {

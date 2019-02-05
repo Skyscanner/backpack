@@ -21,14 +21,13 @@ import BpkBadge, { BADGE_TYPES } from 'bpk-component-badge';
 import BpkSmallFlightIcon from 'bpk-component-icon/sm/flight';
 import BpkSmallCarIcon from 'bpk-component-icon/sm/cars';
 import BpkSmallHotelIcon from 'bpk-component-icon/sm/hotels';
-
 import { cssModules } from 'bpk-react-utils';
-
 import badgeReadme from 'bpk-component-badge/README.md';
 
-import STYLES from './badge-page.scss';
 import DocsPageBuilder from '../../components/DocsPageBuilder';
 import Paragraph from '../../components/Paragraph';
+
+import STYLES from './badge-page.scss';
 
 const getClassName = cssModules(STYLES);
 const badgeClassName = getClassName('bpkdocs-badge-page__badge-spacing');

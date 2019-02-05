@@ -16,6 +16,9 @@
  * limitations under the License.
  */
 
+import punycode from 'punycode';
+import fs from 'fs';
+
 import del from 'del';
 import _ from 'lodash';
 import gulp from 'gulp';
@@ -28,8 +31,7 @@ import merge from 'merge-stream';
 import tinycolor from 'tinycolor2';
 import tokens from 'bpk-tokens/tokens/base.raw.json';
 import iconfont from 'gulp-iconfont';
-import punycode from 'punycode';
-import fs from 'fs';
+
 import svg2react from './tasks/svg2react';
 import svg2datauri, { sassMap, svg2sassvar } from './tasks/svg2datauri';
 import getIconFontMetadataProvider from './tasks/getIconFontMetadataProvider';

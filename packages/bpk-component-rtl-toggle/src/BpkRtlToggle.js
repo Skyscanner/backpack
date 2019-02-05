@@ -19,6 +19,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { BpkButtonLink } from 'bpk-component-link';
+
 import { getHtmlElement, DIRECTIONS, DIRECTION_CHANGE_EVENT } from './utils';
 
 const getDirection = () => getHtmlElement().dir || DIRECTIONS.LTR;

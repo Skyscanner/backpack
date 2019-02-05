@@ -18,6 +18,7 @@
 
 import React from 'react';
 import renderer from 'react-test-renderer';
+
 import BpkGridColumn from './BpkGridColumn';
 
 describe('BpkGridColumn', () => {

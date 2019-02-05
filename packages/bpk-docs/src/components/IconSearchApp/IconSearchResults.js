@@ -20,10 +20,11 @@ import _ from 'lodash';
 import React from 'react';
 import { cssModules } from 'bpk-react-utils';
 
+import Heading from '../Heading';
+
 import STYLES from './IconSearchResults.scss';
 import customPropTypes from './propTypes';
 import IconSearchResult from './IconSearchResult';
-import Heading from '../Heading';
 
 const getClassName = cssModules(STYLES);
 

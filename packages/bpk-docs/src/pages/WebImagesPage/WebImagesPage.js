@@ -23,7 +23,6 @@ import BpkImage, {
   withLoadingBehavior,
 } from 'bpk-component-image';
 import BpkText from 'bpk-component-text';
-
 import imagesReadme from 'bpk-component-image/README.md';
 import * as SPACINGS from 'bpk-tokens/tokens/base.es6';
 import * as BREAKPOINTS from 'bpk-tokens/tokens/breakpoints.es6';

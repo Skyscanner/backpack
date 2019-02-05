@@ -17,8 +17,8 @@
  */
 
 import React from 'react';
-import readme from '../../../../../backpack-react-native/packages/react-native-bpk-component-panel/README.md';
 
+import readme from '../../../../../backpack-react-native/packages/react-native-bpk-component-panel/README.md';
 import iosScreenshotDefault from '../../../../../backpack-react-native/packages/react-native-bpk-component-panel/screenshots/ios/default.png';
 import androidScreenshotDefault from '../../../../../backpack-react-native/packages/react-native-bpk-component-panel/screenshots/android/default.png';
 import iosScreenshotWithoutPadding from '../../../../../backpack-react-native/packages/react-native-bpk-component-panel/screenshots/ios/without-padding.png';
@@ -27,7 +27,6 @@ import iosScreenshotWithDivider from '../../../../../backpack-react-native/packa
 import androidScreenshotWithDivider from '../../../../../backpack-react-native/packages/react-native-bpk-component-panel/screenshots/android/with-divider.png';
 import iosScreenshotWithDividerArrangedVertically from '../../../../../backpack-react-native/packages/react-native-bpk-component-panel/screenshots/ios/with-divider-arranged-vertically.png';
 import androidScreenshotWithDividerArrangedVertically from '../../../../../backpack-react-native/packages/react-native-bpk-component-panel/screenshots/android/with-divider-arranged-vertically.png';
-
 import DocsPageBuilder from '../../components/DocsPageBuilder';
 
 const components = [

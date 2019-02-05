@@ -20,7 +20,6 @@ import React from 'react';
 
 import readme from '../../../../../backpack-ios/Backpack/Switch/README.md';
 import screenshotDefault from '../../../../../backpack-ios/screenshots/Switch/default.png';
-
 import DocsPageBuilder from '../../components/DocsPageBuilder';
 
 const components = [

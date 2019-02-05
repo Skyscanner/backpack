@@ -20,6 +20,7 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import { mount } from 'enzyme';
 import { SortDirection } from 'react-virtualized';
+
 import bpkHeaderRenderer, { getSortIconDirection } from './bpkHeaderRenderer';
 
 jest.mock('./utils', () => ({

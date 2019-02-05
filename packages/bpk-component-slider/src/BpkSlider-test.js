@@ -18,6 +18,7 @@
 
 import React from 'react';
 import renderer from 'react-test-renderer';
+
 import BpkSlider from './BpkSlider';
 
 const createNodeMock = () => document.createElement('div');

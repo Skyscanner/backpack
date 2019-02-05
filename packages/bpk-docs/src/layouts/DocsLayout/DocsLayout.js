@@ -20,7 +20,6 @@ import PropTypes from 'prop-types';
 import React from 'react';
 
 import SideNavLayout from '../SideNavLayout';
-
 import links from '../links';
 
 const DocsLayout = ({ children, ...rest }) => (

@@ -19,6 +19,7 @@
 
 import React from 'react';
 import renderer from 'react-test-renderer';
+
 import BpkCode from './BpkCode';
 
 describe('BpkCode', () => {

@@ -19,6 +19,7 @@
 
 import React from 'react';
 import renderer from 'react-test-renderer';
+
 import BpkBannerAlertInner, { CONFIGURATION } from './BpkBannerAlertInner';
 import { ALERT_TYPES } from './common-types';
 

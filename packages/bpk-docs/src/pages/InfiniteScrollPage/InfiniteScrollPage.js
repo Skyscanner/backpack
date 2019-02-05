@@ -28,12 +28,11 @@ import { cssModules } from 'bpk-react-utils';
 import { BpkList, BpkListItem } from 'bpk-component-list';
 
 import infiniteScrollReadme from '../../../../bpk-component-infinite-scroll/README.md';
-
 import DocsPageBuilder from '../../components/DocsPageBuilder';
 import IntroBlurb from '../../components/IntroBlurb';
+import DocsPageWrapper from '../../components/DocsPageWrapper';
 
 import STYLES from './InfiniteScrollPage.scss';
-import DocsPageWrapper from '../../components/DocsPageWrapper';
 
 const getClassName = cssModules(STYLES);
 

@@ -19,8 +19,10 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
-import BpkBarchart from './BpkBarchart';
+
 import data from '../data.json';
+
+import BpkBarchart from './BpkBarchart';
 
 const { prices } = data;
 const size = 200;

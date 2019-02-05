@@ -23,7 +23,6 @@ import BpkButton from 'bpk-component-button';
 import { withButtonAlignment } from 'bpk-component-icon';
 import BpkSmallDownloadIcon from 'bpk-component-icon/sm/download';
 import icons from 'bpk-component-icon/all';
-
 import iconReadme from 'bpk-component-icon/README.md';
 
 import * as ROUTES from '../../constants/routes';

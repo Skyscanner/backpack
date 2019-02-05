@@ -20,7 +20,6 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-
 import {
   weekDays,
   formatMonth,
@@ -33,6 +32,7 @@ import {
   addDays,
   startOfDay,
 } from 'bpk-component-calendar/src/date-utils';
+
 import BpkDatepicker from './index';
 
 const formatDate = date => format(date, 'DD/MM/YYYY');

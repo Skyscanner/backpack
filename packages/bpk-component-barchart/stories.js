@@ -24,18 +24,17 @@ import BpkText from 'bpk-component-text';
 import { updateOnDirectionChange } from 'bpk-component-rtl-toggle';
 import { lineHeightSm } from 'bpk-tokens/tokens/base.es6';
 import { scaleLinear, scaleBand } from 'd3-scale';
+
 import { remToPx } from './src/utils';
+import { ORIENTATION_X, ORIENTATION_Y } from './src/orientation';
+import { withSelectedState } from './hocs';
+import STYLES from './stories.scss';
 
 import BpkBarchart, {
   BpkChartGridLines,
   BpkChartAxis,
   BpkChartMargin,
 } from './index';
-
-import { ORIENTATION_X, ORIENTATION_Y } from './src/orientation';
-import { withSelectedState } from './hocs';
-
-import STYLES from './stories.scss';
 
 const getClassName = cssModules(STYLES);
 

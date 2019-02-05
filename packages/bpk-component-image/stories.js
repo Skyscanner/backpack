@@ -18,10 +18,10 @@
 
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-
 import BpkMobileScrollContainer from 'bpk-component-mobile-scroll-container';
 import BpkText from 'bpk-component-text';
 import { spacingSm } from 'bpk-tokens/tokens/base.es6';
+
 import BpkImage, {
   BpkBackgroundImage,
   withLazyLoading,

@@ -17,13 +17,12 @@
  */
 
 import React from 'react';
-
 import BpkButton from 'bpk-component-button';
 import BpkSmallDownloadIcon from 'bpk-component-icon/sm/download';
 import { withButtonAlignment } from 'bpk-component-icon';
+
 import InfoPageBuilder from '../../components/InfoPageBuilder';
 import Paragraph from '../../components/Paragraph';
-
 import CopywritingHeroImage from '../../static/copywriting_hero.jpg';
 
 // eslint-disable-next-line import/no-webpack-loader-syntax

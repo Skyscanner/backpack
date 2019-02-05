@@ -19,8 +19,10 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import { mount } from 'enzyme';
-import BpkCalendarContainer from './BpkCalendarContainer';
+
 import { weekDays, formatDateFull, formatMonth } from '../test-utils';
+
+import BpkCalendarContainer from './BpkCalendarContainer';
 import { addDays } from './date-utils';
 
 const createNodeMock = () => ({
