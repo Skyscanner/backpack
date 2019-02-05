@@ -33,10 +33,10 @@
   }
 
   &__token-switcher {
-    padding: 0 $bpk-spacing-xs * 10;
+    margin: 0 $bpk-spacing-xs * 10;
 
     @include bpk-breakpoint-mobile {
-      padding: 0 $bpk-spacing-lg;
+      margin: 0 $bpk-spacing-lg;
     }
   }
 

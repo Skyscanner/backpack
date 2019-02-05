@@ -23,10 +23,19 @@
   &__inner {
     padding: $bpk-spacing-xs * 10;
     padding-bottom: 0;
+
+    @include bpk-breakpoint-mobile {
+      padding: $bpk-spacing-lg;
+      padding-bottom: 0;
+    }
   }
 
   &__platform-switcher {
-    padding: 0 $bpk-spacing-xs * 10;
+    margin: 0 $bpk-spacing-xs * 10;
+
+    @include bpk-breakpoint-mobile {
+      margin: 0 $bpk-spacing-lg;
+    }
   }
 
   &__platform-icon {
