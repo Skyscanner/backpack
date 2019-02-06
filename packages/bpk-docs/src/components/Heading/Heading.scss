@@ -1,4 +1,7 @@
 /*
+import BpkHorizontalNav, {
+  BpkHorizontalNavItem,
+} from 'bpk-component-horizontal-nav';
  * Backpack - Skyscanner's Design System
  *
  * Copyright 2018 Skyscanner Ltd
@@ -28,6 +31,8 @@
     @include bpk-text-xxl;
 
     @include bpk-breakpoint-mobile {
+      margin-bottom: $bpk-spacing-base;
+
       @include bpk-text-xl;
     }
   }
@@ -38,6 +43,8 @@
     @include bpk-text-xxl;
 
     @include bpk-breakpoint-mobile {
+      margin-bottom: $bpk-spacing-base;
+
       @include bpk-text-lg;
     }
   }
