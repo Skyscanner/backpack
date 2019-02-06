@@ -20,9 +20,6 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import BpkContentContainer from 'bpk-component-content-container';
-import BpkHorizontalNav, {
-  BpkHorizontalNavItem,
-} from 'bpk-component-horizontal-nav';
 import { cssModules } from 'bpk-react-utils';
 
 import {
@@ -31,6 +28,7 @@ import {
 } from '../../helpers/storage-helper';
 import Heading from '../Heading';
 
+import DocsPlatformNav from './DocsPlatformNav';
 import Blurb from './Blurb';
 import STYLES from './DocsPageWrapper.scss';
 
@@ -38,67 +36,6 @@ const getClassName = cssModules(STYLES);
 
 const contentShape = PropTypes.oneOfType([PropTypes.string, PropTypes.node]);
 const platformQueryParamRegex = /platform=(android|ios|native|web)/;
-
-const PlatformNav = ({
-  platform,
-  onNativeClick,
-  onWebClick,
-  onAndroidClick,
-  onIOSClick,
-  disableNativeTab,
-  disableWebTab,
-  disableAndroidTab,
-  disableIOSTab,
-}) => (
-  <BpkHorizontalNav
-    className={getClassName('bpkdocs-page-wrapper__platform-switcher')}
-  >
-    <BpkHorizontalNavItem
-      name="android"
-      disabled={disableAndroidTab}
-      selected={platform === 'android'}
-      onClick={onAndroidClick}
-    >
-      Android
-    </BpkHorizontalNavItem>
-    <BpkHorizontalNavItem
-      name="ios"
-      disabled={disableIOSTab}
-      selected={platform === 'ios'}
-      onClick={onIOSClick}
-    >
-      iOS
-    </BpkHorizontalNavItem>
-    <BpkHorizontalNavItem
-      name="native"
-      disabled={disableNativeTab}
-      selected={platform === 'native'}
-      onClick={onNativeClick}
-    >
-      React Native
-    </BpkHorizontalNavItem>
-    <BpkHorizontalNavItem
-      name="web"
-      disabled={disableWebTab}
-      selected={platform === 'web'}
-      onClick={onWebClick}
-    >
-      Web
-    </BpkHorizontalNavItem>
-  </BpkHorizontalNav>
-);
-
-PlatformNav.propTypes = {
-  platform: PropTypes.oneOf(['android', 'ios', 'native', 'web']).isRequired,
-  onAndroidClick: PropTypes.func.isRequired,
-  onIOSClick: PropTypes.func.isRequired,
-  onNativeClick: PropTypes.func.isRequired,
-  onWebClick: PropTypes.func.isRequired,
-  disableAndroidTab: PropTypes.bool.isRequired,
-  disableIOSTab: PropTypes.bool.isRequired,
-  disableNativeTab: PropTypes.bool.isRequired,
-  disableWebTab: PropTypes.bool.isRequired,
-};
 
 const DocsPageWrapper = props => {
   const {
@@ -165,7 +102,7 @@ const DocsPageWrapper = props => {
       </div>
 
       <div>
-        <PlatformNav
+        <DocsPlatformNav
           platform={initiallySelectedPlatform}
           onAndroidClick={() => onPlatformClick('android')}
           onIOSClick={() => onPlatformClick('ios')}
