@@ -171,12 +171,15 @@ const HomePage = (props, context) => {
         </div>
       </div>
       <div className={getClassName('bpkdocs-home-page__cards-container')}>
-        {CARD_CONTENTS.map(({ href, ...rest }) => (
+        {CARD_CONTENTS.map(({ href, fullWidth, ...rest }) => (
           <HomePageCard
             {...rest}
             href={rest.blank ? href : null}
             onClick={rest.blank ? null : () => history.push(href)}
-            className={getClassName('bpkdocs-home-page__card')}
+            className={getClassName(
+              'bpkdocs-home-page__card',
+              fullWidth && 'bpkdocs-home-page__card--full-width',
+            )}
           />
         ))}
       </div>
