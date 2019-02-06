@@ -2,6 +2,12 @@
 
 [Unreleased changes](./UNRELEASED.md).
 
+# 2019-02-06 Revert breakpoint breaking change
+
+**Fixed:**
+ - bpk-component-breakpoint: 1.1.42 => 1.1.43
+  - Downgrade `react-responsive` to revert react 16.3.0 breaking change.
+
 # 2019-02-04 New grid layout icon
 
 **Added:**
