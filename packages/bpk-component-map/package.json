@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-map",
-  "version": "2.0.40",
+  "version": "2.0.41",
   "description": "Backpack map component.",
   "main": "index.js",
   "repository": {
@@ -13,14 +13,14 @@
     "react": "^15.0.0 || ^16.0.0"
   },
   "dependencies": {
-    "bpk-component-spinner": "^2.2.73",
-    "bpk-mixins": "^17.14.0",
-    "bpk-react-utils": "^2.7.1",
+    "bpk-component-spinner": "^2.2.74",
+    "bpk-mixins": "^17.14.1",
+    "bpk-react-utils": "^2.7.2",
     "prop-types": "^15.5.8",
     "react-google-maps": "^9.4.5"
   },
   "devDependencies": {
-    "bpk-component-text": "^1.0.103",
+    "bpk-component-text": "^1.0.104",
     "prop-types": "^15.5.8"
   }
 }
