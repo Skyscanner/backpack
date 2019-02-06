@@ -33,7 +33,6 @@ export type Props = {
   icon: string,
   blank: boolean,
   centerIcon: boolean,
-  fullWidth: boolean,
   iconWidth: ?string,
   className: ?string,
 };
@@ -46,17 +45,12 @@ const HomePageCard = (props: Props) => {
     icon,
     blank,
     centerIcon,
-    fullWidth,
     iconWidth,
     className,
     ...rest
   } = props;
 
-  const classNames = getClassName(
-    'bpkdocs-home-page-card',
-    fullWidth && 'bpkdocs-home-page-card--full-width',
-    className,
-  );
+  const classNames = getClassName('bpkdocs-home-page-card', className);
 
   const iconClassNames = getClassName(
     'bpkdocs-home-page-card__icon',
@@ -107,14 +101,12 @@ HomePageCard.propTypes = {
   icon: PropTypes.string.isRequired,
   blank: PropTypes.bool,
   centerIcon: PropTypes.bool,
-  fullWidth: PropTypes.bool,
   iconWidth: PropTypes.string,
   className: PropTypes.string,
 };
 
 HomePageCard.defaultProps = {
   centerIcon: false,
-  fullWidth: false,
   blank: false,
   href: null,
   iconWidth: null,

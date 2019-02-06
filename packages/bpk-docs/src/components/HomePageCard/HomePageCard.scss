@@ -33,6 +33,7 @@ $bpk-image-height-mobile: $bpk-spacing-xs * 27;
 $bpk-caption-container-height-mobile: $bpk-card-height-mobile - $bpk-image-height-mobile;
 
 .bpkdocs-home-page-card {
+  width: 100%;
   height: $bpk-card-height-desktop;
 
   @include bpk-breakpoint-tablet {
@@ -41,10 +42,6 @@ $bpk-caption-container-height-mobile: $bpk-card-height-mobile - $bpk-image-heigh
 
   @include bpk-breakpoint-mobile {
     height: $bpk-card-height-mobile;
-  }
-
-  &--full-width {
-    width: 100%;
   }
 
   &__image-container {
