@@ -57,6 +57,17 @@ storiesOf('bpk-component-horizontal-nav', module)
       <BpkHorizontalNavItem>Car hire</BpkHorizontalNavItem>
     </BpkHorizontalNav>
   ))
+  .add('Scroll to selected element', () => (
+    <div
+      className={getClassName('bpk-horizontal-nav-stories__narrow-container')}
+    >
+      <BpkHorizontalNav autoScrollToSelected>
+        <BpkHorizontalNavItem>Flights</BpkHorizontalNavItem>
+        <BpkHorizontalNavItem>Hotels</BpkHorizontalNavItem>
+        <BpkHorizontalNavItem selected>Car hire</BpkHorizontalNavItem>
+      </BpkHorizontalNav>
+    </div>
+  ))
   .add('Using custom scroll colors', () => (
     <BpkHorizontalNav
       className={getClassName('bpk-horizontal-nav-custom-scrollers')}

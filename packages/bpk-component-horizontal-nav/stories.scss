@@ -31,3 +31,11 @@ $custom-color: $bpk-color-green-100;
     @include bpk-scroll-indicator-right($custom-color);
   }
 }
+
+.bpk-horizontal-nav-stories {
+  &__narrow-container {
+    width: 10rem;
+    height: 10rem;
+    border-right: .1rem lightgray solid;
+  }
+}

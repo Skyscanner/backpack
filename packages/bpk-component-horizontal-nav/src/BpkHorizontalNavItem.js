@@ -17,7 +17,7 @@
  */
 /* @flow */
 
-import React, { type Node } from 'react';
+import React, { Component, type Node } from 'react';
 import PropTypes from 'prop-types';
 import { cssModules } from 'bpk-react-utils';
 
@@ -34,75 +34,80 @@ export type Props = {
   className: ?string,
 };
 
-const BpkHorizontalNavItem = (props: Props) => {
-  const {
-    children,
-    className,
-    disabled,
-    href,
-    selected,
-    spaceAround,
-    ...rest
-  } = props;
+// In order to be able to access refs on the HorizontalNavItems, they need to be a fully defined
+// React Component class.
+// eslint-disable-next-line react/prefer-stateless-function
+class BpkHorizontalNavItem extends Component<Props> {
+  static propTypes = {
+    children: PropTypes.node.isRequired,
+    className: PropTypes.string,
+    selected: PropTypes.bool,
+    spaceAround: PropTypes.bool,
+    href: PropTypes.string,
+    disabled: PropTypes.bool,
+  };
 
-  const classNames = getClassName(
-    'bpk-horizontal-nav__item',
-    spaceAround && 'bpk-horizontal-nav__item--space-around',
-  );
-  const innerClassNames = getClassName(
-    'bpk-horizontal-nav__link',
-    selected && 'bpk-horizontal-nav__link--selected',
-    disabled && 'bpk-horizontal-nav__link--disabled',
-    className,
-  );
+  static defaultProps = {
+    className: null,
+    selected: false,
+    spaceAround: false,
+    href: null,
+    disabled: false,
+  };
 
-  const clickableElement = href ? (
-    <a
-      href={href}
-      className={innerClassNames}
-      aria-disabled={selected || disabled}
-      {...rest}
-    >
-      {children}
-    </a>
-  ) : (
-    <button
-      type="button"
-      className={innerClassNames}
-      disabled={selected || disabled}
-      {...rest}
-    >
-      {children}
-    </button>
-  );
+  render() {
+    const {
+      children,
+      className,
+      disabled,
+      href,
+      selected,
+      spaceAround,
+      ...rest
+    } = this.props;
 
-  return (
-    <li
-      role="tab"
-      aria-selected={selected ? 'true' : 'false'}
-      className={classNames}
-    >
-      {clickableElement}
-    </li>
-  );
-};
+    const classNames = getClassName(
+      'bpk-horizontal-nav__item',
+      spaceAround && 'bpk-horizontal-nav__item--space-around',
+    );
+    const innerClassNames = getClassName(
+      'bpk-horizontal-nav__link',
+      selected && 'bpk-horizontal-nav__link--selected',
+      disabled && 'bpk-horizontal-nav__link--disabled',
+      className,
+    );
 
-BpkHorizontalNavItem.propTypes = {
-  children: PropTypes.node.isRequired,
-  className: PropTypes.string,
-  selected: PropTypes.bool,
-  spaceAround: PropTypes.bool,
-  href: PropTypes.string,
-  disabled: PropTypes.bool,
-};
+    const clickableElement = href ? (
+      <a
+        href={href}
+        className={innerClassNames}
+        aria-disabled={selected || disabled}
+        {...rest}
+      >
+        {children}
+      </a>
+    ) : (
+      <button
+        type="button"
+        className={innerClassNames}
+        disabled={selected || disabled}
+        {...rest}
+      >
+        {children}
+      </button>
+    );
 
-BpkHorizontalNavItem.defaultProps = {
-  className: null,
-  selected: false,
-  spaceAround: false,
-  href: null,
-  disabled: false,
-};
+    return (
+      <li
+        role="tab"
+        aria-selected={selected ? 'true' : 'false'}
+        className={classNames}
+      >
+        {clickableElement}
+      </li>
+    );
+  }
+}
 
 const themeAttributes = [
   'horizontalNavLinkColor',
