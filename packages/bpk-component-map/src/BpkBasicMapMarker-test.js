@@ -18,12 +18,21 @@
 
 /* @flow */
 
-import BpkMap from './src/BpkMap';
-import BpkMapMarker from './src/BpkMapMarker';
-import BpkOverlayView from './src/BpkOverlayView';
-import withGoogleMapsScript from './src/withGoogleMapsScript';
-import { type LatLong } from './src/common-types';
+import React from 'react';
+import { shallow } from 'enzyme';
+import toJson from 'enzyme-to-json';
 
-export default BpkMap;
-export type BpkMapLatLong = LatLong;
-export { BpkMapMarker, BpkOverlayView, withGoogleMapsScript };
+import BpkBasicMapMarker from './BpkBasicMapMarker';
+
+describe('BpkBasicMapMarker', () => {
+  it('should render correctly', () => {
+    const position = {
+      latitude: 41.386947,
+      longitude: 2.170048,
+    };
+    const tree = shallow(
+      <BpkBasicMapMarker position={position}>Children</BpkBasicMapMarker>,
+    );
+    expect(toJson(tree)).toMatchSnapshot();
+  });
+});

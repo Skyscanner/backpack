@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BpkMapMarker should render properly 1`] = `
+<BpkBasicMapMarker
+  position={
+    Object {
+      "latitude": 41.386947,
+      "longitude": 2.170048,
+    }
+  }
+>
+  <button
+    onClick={null}
+    type="button"
+  >
+    <div
+      className="   "
+      style={null}
+    >
+      Icon
+    </div>
+    <div
+      className=" "
+    >
+      <Component />
+    </div>
+  </button>
+</BpkBasicMapMarker>
+`;
