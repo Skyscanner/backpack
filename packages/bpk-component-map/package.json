@@ -13,6 +13,7 @@
     "react": "^15.0.0 || ^16.0.0"
   },
   "dependencies": {
+    "bpk-component-icon": "^3.26.2",
     "bpk-component-spinner": "^2.2.75",
     "bpk-mixins": "^17.14.2",
     "bpk-react-utils": "^2.7.2",
