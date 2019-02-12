@@ -1,3 +1,7 @@
 # Unreleased
 
-_Nothing yet..._
+**Added:**
+- bpk-component-icon:
+- bpk-mixins:
+- bpk-svgs:
+  - Add `hide` icon.
