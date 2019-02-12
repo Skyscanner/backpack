@@ -2,6 +2,14 @@
 
 [Unreleased changes](./UNRELEASED.md).
 
+# 2019-02-12 New Hide icon
+
+**Added:**
+- bpk-component-icon:
+- bpk-mixins:
+- bpk-svgs:
+  - Add `hide` icon.
+
 # 2019-02-06 Revert breakpoint breaking change
 
 **Fixed:**
