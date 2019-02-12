@@ -14,6 +14,7 @@ script:
   - ./scripts/check-pristine-state package-lock.json
   - npm run danger
   - npm test
+  - npm run submodules:pull
   - npm run docs:dist
   - if [ "$TRAVIS_BRANCH" == 'master' ] && [ "$TRAVIS_PULL_REQUEST" == 'false' ]; then npm run storybook:dist; fi
   - test -e dist/index.html
