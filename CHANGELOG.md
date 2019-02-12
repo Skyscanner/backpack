@@ -5,9 +5,9 @@
 # 2019-02-12 New Hide icon
 
 **Added:**
-- bpk-component-icon:
-- bpk-mixins:
-- bpk-svgs:
+- bpk-component-icon: 3.26.1 => 3.26.2
+- bpk-mixins: 17.14.1 => 17.14.2
+- bpk-svgs: 6.3.1 => 6.3.2
   - Add `hide` icon.
 
 # 2019-02-06 Revert breakpoint breaking change
