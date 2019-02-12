@@ -240,10 +240,8 @@ When a component is released for the first time on npm, remember to add the comp
 
 `backpack-android`, `backpack-ios` and `backpack-react-native` folders are git submodules used solely for documentation. They shouldn't be directly used for anything else.
 
-The documentation build will ensure the local submodules are up to date before using it so there is no need to do any git command directly. That being
-said, from time to time it's good to update the submodules to point to a newer commit so fewer changes will be pulled before each doc build.
-
-To do the above run `npm run submodules:update` and then `git push origin master`.
+The documentation build will pull the current version of submodules so there is no need to do any git command directly. That being
+said, to update the submodules to point to the latest version, you will need to run `npm run submodules:update` which will commit the resulting changes.
 
 ## And finally..
 
