@@ -20,11 +20,14 @@
 
 import React, { type Node } from 'react';
 import PropTypes from 'prop-types';
+import { cssModules } from 'bpk-react-utils';
 import ArrowDownIcon from 'bpk-component-icon/sm/arrow-down';
 
 import { LatLongPropType, type LatLong } from './common-types';
 import BpkBasicMapMarker from './BpkBasicMapMarker';
 import STYLES from './BpkMapMarker.scss';
+
+const getClassName = cssModules(STYLES);
 
 export const MARKER_TYPES = {
   primary: 'primary',
@@ -55,25 +58,25 @@ const BpkMapMarker = (props: Props) => {
     ...rest
   } = props;
 
-  const classNames = [
-    STYLES['bpk-map-marker'],
-    STYLES[`bpk-map-marker--${type}`],
-    onClick && STYLES['bpk-map-marker--dynamic'],
-    large ? STYLES['bpk-map-marker--large'] : null,
+  const classNames = getClassName(
+    'bpk-map-marker',
+    `bpk-map-marker--${type}`,
+    onClick && 'bpk-map-marker--dynamic',
+    large ? 'bpk-map-marker--large' : null,
     className,
-  ];
+  );
 
-  const arrowClassNames = [STYLES['bpk-map-marker__arrow'], arrowClassName];
+  const arrowClassNames = getClassName('bpk-map-marker__arrow', arrowClassName);
 
   return (
     <BpkBasicMapMarker position={position} {...rest}>
       <button
         type="button"
-        className={STYLES['bpk-map-marker__wrapper']}
+        className={getClassName('bpk-map-marker__wrapper')}
         onClick={onClick}
       >
-        <div className={classNames.join(' ')}>{icon}</div>
-        <div className={arrowClassNames.join(' ')}>
+        <div className={classNames}>{icon}</div>
+        <div className={arrowClassNames}>
           <ArrowDownIcon />
         </div>
       </button>

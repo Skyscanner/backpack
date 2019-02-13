@@ -114,7 +114,7 @@ const generateTheme = ({
   radioCheckedColor: primaryColor700,
 
   mapMarkerPrimaryBackgroundColor: primaryColor700,
-  mapMarkerSecondaryBackgroundColor: secondaryColor700,
+  mapMarkerSecondaryBackgroundColor: secondaryColor500,
 
   navigationBarIconButtonColor: colorWhite,
   navigationBarIconButtonHoverColor: colorWhite,

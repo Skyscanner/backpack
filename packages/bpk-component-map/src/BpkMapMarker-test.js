@@ -25,13 +25,42 @@ import toJson from 'enzyme-to-json';
 import BpkMapMarker from './BpkMapMarker';
 
 describe('BpkMapMarker', () => {
+  const position = {
+    latitude: 41.386947,
+    longitude: 2.170048,
+  };
+  const icon = <span>Icon</span>;
+
   it('should render properly', () => {
-    const position = {
-      latitude: 41.386947,
-      longitude: 2.170048,
-    };
+    const tree = shallow(<BpkMapMarker position={position} icon={icon} />);
+    expect(toJson(tree)).toMatchSnapshot();
+  });
+
+  it('should render correctly with a "large" attribute', () => {
     const tree = shallow(
-      <BpkMapMarker position={position} icon={<span>Icon</span>} />,
+      <BpkMapMarker position={position} icon={icon} large />,
+    );
+    expect(toJson(tree)).toMatchSnapshot();
+  });
+
+  it('should render correctly with a "className" attribute', () => {
+    const tree = shallow(
+      <BpkMapMarker
+        position={position}
+        icon={icon}
+        className="custom-class-1 custom-class-2"
+      />,
+    );
+    expect(toJson(tree)).toMatchSnapshot();
+  });
+
+  it('should render correctly with a "arrowClassName" attribute', () => {
+    const tree = shallow(
+      <BpkMapMarker
+        position={position}
+        icon={icon}
+        arrowClassName="custom-class-1 custom-class-2"
+      />,
     );
     expect(toJson(tree)).toMatchSnapshot();
   });

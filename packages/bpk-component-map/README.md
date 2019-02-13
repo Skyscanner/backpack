@@ -13,6 +13,7 @@ npm install bpk-component-map --save-dev
 ```js
 import React from 'react';
 import BpkText from 'bpk-component-text';
+import { withRtlSupport } from 'bpk-component-icon';
 import LandmarkIconLg from 'bpk-component-icon/lg/landmark';
 import BpkMap, { BpkMapMarker, BpkOverlayView, MARKER_TYPES } from 'bpk-component-map';
 
@@ -106,6 +107,8 @@ When using `withGoogleMapsScript`, some additional props are available:
 | ---------------- | -------------------------------------------- | ------------------------ | -------------------- |
 | icon             | node                                         | true                     | -                    |
 | position         | shape({latitude: number, longitude: number}) | true                     | -                    |
+| className        | string                                       | false                    | null                 |
+| arrowClassName   | string                                       | false                    | null                 |
 | large            | bool                                         | false                    | false                |
 | onClick          | func                                         | false                    | null                 |
 | type             | oneOf(MARKER_TYPES)                          | false                    | MARKER_TYPES.primary |
