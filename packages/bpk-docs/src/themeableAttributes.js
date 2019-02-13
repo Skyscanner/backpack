@@ -32,6 +32,10 @@ import {
   linkAlternateThemeAttributes,
   themeAttributes as linkThemeAttributes,
 } from 'bpk-component-link';
+import {
+  primaryMarkerThemeAttributes,
+  secondaryMarkerThemeAttributes,
+} from 'bpk-component-map';
 import { themeAttributes as modalThemeAttributes } from 'bpk-component-modal';
 import { themeAttributes as nudgerThemeAttributes } from 'bpk-component-nudger';
 import { themeAttributes as paginationThemeAttributes } from 'bpk-component-pagination';
@@ -73,5 +77,7 @@ export default [
   ...sliderThemeAttributes,
   ...spinnerThemeAttributes,
   ...navigationBarThemeAttributes,
+  ...primaryMarkerThemeAttributes,
+  ...secondaryMarkerThemeAttributes,
   ...docsThemeAttributes,
 ];

@@ -116,3 +116,13 @@ When using `withGoogleMapsScript`, some additional props are available:
 | ---------------- | -------------------------------------------- | ------------------------ | ------------------ |
 | children         | node                                         | true                     | -                  |
 | position         | shape({latitude: number, longitude: number}) | true                     | -                  |
+
+## Theme Props
+
+Primary markers:
+
+* `mapMarkerPrimaryBackgroundColor`
+
+Secondary markers:
+
+* `mapMarkerSecondaryBackgroundColor`
