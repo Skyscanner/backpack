@@ -77,6 +77,7 @@ type Props = {
   className: ?string,
   leadingIndicatorClassName: ?string,
   trailingIndicatorClassName: ?string,
+  scrollerRef: ?Function,
   style: ?Object,
 };
 
@@ -92,6 +93,7 @@ class BpkMobileScrollContainer extends Component<Props, State> {
 
   static propTypes = {
     children: PropTypes.node.isRequired,
+    scrollerRef: PropTypes.func,
     innerContainerTagName: PropTypes.string,
     className: PropTypes.string,
     leadingIndicatorClassName: PropTypes.string,
@@ -100,6 +102,7 @@ class BpkMobileScrollContainer extends Component<Props, State> {
   };
 
   static defaultProps = {
+    scrollerRef: null,
     innerContainerTagName: 'div',
     className: null,
     leadingIndicatorClassName: null,
@@ -164,6 +167,7 @@ class BpkMobileScrollContainer extends Component<Props, State> {
     const classNames = [getClassName('bpk-mobile-scroll-container')];
     const {
       children,
+      scrollerRef,
       innerContainerTagName,
       className,
       leadingIndicatorClassName,
@@ -189,6 +193,9 @@ class BpkMobileScrollContainer extends Component<Props, State> {
       >
         <div
           ref={el => {
+            if (scrollerRef) {
+              scrollerRef(el);
+            }
             this.scrollerEl = el;
           }}
           onScroll={this.setScrollIndicatorClassName}

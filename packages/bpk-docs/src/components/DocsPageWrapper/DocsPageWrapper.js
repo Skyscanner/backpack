@@ -51,6 +51,7 @@ const PlatformNav = ({
   disableIOSTab,
 }) => (
   <BpkHorizontalNav
+    autoScrollToSelected
     className={getClassName('bpkdocs-page-wrapper__platform-switcher')}
   >
     <BpkHorizontalNavItem
