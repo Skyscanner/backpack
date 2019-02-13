@@ -62,7 +62,7 @@ const BpkMapMarker = (props: Props) => {
     'bpk-map-marker',
     `bpk-map-marker--${type}`,
     onClick && 'bpk-map-marker--dynamic',
-    large ? 'bpk-map-marker--large' : null,
+    large && 'bpk-map-marker--large',
     className,
   );
 
