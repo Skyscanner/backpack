@@ -14,11 +14,8 @@ exports[`BpkMapMarker should render properly 1`] = `
     type="button"
   >
     <div
-      className="   "
-      style={null}
-    >
-      Icon
-    </div>
+      className="    "
+    />
     <div
       className=" "
     >
