@@ -1,12 +1,12 @@
 [submodule "backpack-android"]
 	path = backpack-android
 	url = https://github.com/Skyscanner/backpack-android
-	##ignore = all
+	#ignore = all
 [submodule "backpack-ios"]
 	path = backpack-ios
 	url = https://github.com/Skyscanner/backpack-ios
-	##ignore = all
+	#ignore = all
 [submodule "backpack-react-native"]
 	path = backpack-react-native
 	url = https://github.com/Skyscanner/backpack-react-native
-	##ignore = all
+	#ignore = all
