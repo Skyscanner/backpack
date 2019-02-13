@@ -16,29 +16,13 @@
  * limitations under the License.
  */
 
-/* @flow */
+export const primaryMarkerThemeAttributes = ['mapMarkerPrimaryBackgroundColor'];
 
-import BpkMap from './src/BpkMap';
-import BpkMapMarker, {
-  MARKER_TYPES,
-  type MarkerType,
-} from './src/BpkMapMarker';
-import BpkOverlayView from './src/BpkOverlayView';
-import withGoogleMapsScript from './src/withGoogleMapsScript';
-import { type LatLong } from './src/common-types';
-import {
+export const secondaryMarkerThemeAttributes = [
+  'mapMarkerSecondaryBackgroundColor',
+];
+
+export default {
   primaryMarkerThemeAttributes,
   secondaryMarkerThemeAttributes,
-} from './src/themeAttributes';
-
-export default BpkMap;
-export type BpkMapLatLong = LatLong;
-export type BpkMapMarkerType = MarkerType;
-export {
-  BpkMapMarker,
-  BpkOverlayView,
-  withGoogleMapsScript,
-  primaryMarkerThemeAttributes,
-  secondaryMarkerThemeAttributes,
-  MARKER_TYPES,
 };

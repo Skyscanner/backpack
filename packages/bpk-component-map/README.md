@@ -13,7 +13,10 @@ npm install bpk-component-map --save-dev
 ```js
 import React from 'react';
 import BpkText from 'bpk-component-text';
-import BpkMap, { BpkOverlayView } from 'bpk-component-map';
+import LandmarkIconLg from 'bpk-component-icon/lg/landmark';
+import BpkMap, { BpkMapMarker, BpkOverlayView, MARKER_TYPES } from 'bpk-component-map';
+
+const AlignedLandmarkIconLg = withRtlSupport(LandmarkIconLg);
 
 export default () => (
   <BpkMap
@@ -25,6 +28,13 @@ export default () => (
       longitude: 86.925,
     }}
   >
+    <BpkMapMarker
+      icon={<AlignedLandmarkIconLg />}
+      type={MARKER_TYPES.secondary}
+      position={{ latitude: 27.9881, longitude: 86.925 }}
+      onClick={() => {}}
+      large
+    />
     <BpkOverlayView position={{ latitude: 27.9881, longitude: 86.925 }}>
       <BpkText>Shibuya Crossing</BpkText>
     </BpkOverlayView>
@@ -89,6 +99,16 @@ When using `withGoogleMapsScript`, some additional props are available:
 | ---------------- | -------------------------------------------- | ------------------------- | -------------- |
 | googleMapURL     | string                                       | true                      | -              |
 | loadingElement   | node                                         | false                     | BpkSpinner     |
+
+### BpkMapMarker
+
+| Property	       | PropType                                     | Required                 | Default Value        |
+| ---------------- | -------------------------------------------- | ------------------------ | -------------------- |
+| icon             | node                                         | true                     | -                    |
+| position         | shape({latitude: number, longitude: number}) | true                     | -                    |
+| large            | bool                                         | false                    | false                |
+| onClick          | func                                         | false                    | null                 |
+| type             | oneOf(MARKER_TYPES)                          | false                    | MARKER_TYPES.primary |
 
 ### BpkOverlayView
 

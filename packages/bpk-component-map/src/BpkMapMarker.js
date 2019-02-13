@@ -26,10 +26,17 @@ import { LatLongPropType, type LatLong } from './common-types';
 import BpkBasicMapMarker from './BpkBasicMapMarker';
 import STYLES from './BpkMapMarker.scss';
 
+export const MARKER_TYPES = {
+  primary: 'primary',
+  secondary: 'secondary',
+};
+
+export type MarkerType = $Keys<typeof MARKER_TYPES>;
+
 type Props = {
-  children: Node,
+  icon: Node,
   position: LatLong,
-  themeColor: ?string,
+  type: MarkerType,
   className: ?string,
   arrowClassName: ?string,
   large: ?boolean,
@@ -38,26 +45,25 @@ type Props = {
 
 const BpkMapMarker = (props: Props) => {
   const {
-    children,
+    icon,
     position,
-    themeColor,
     className,
     arrowClassName,
     large,
     onClick,
+    type,
     ...rest
   } = props;
 
   const classNames = [
     STYLES['bpk-map-marker'],
+    STYLES[`bpk-map-marker--${type}`],
     onClick && STYLES['bpk-map-marker--dynamic'],
     large ? STYLES['bpk-map-marker--large'] : null,
     className,
   ];
 
   const arrowClassNames = [STYLES['bpk-map-marker__arrow'], arrowClassName];
-
-  const bubbleStyle = themeColor ? { backgroundColor: themeColor } : null;
 
   return (
     <BpkBasicMapMarker position={position} {...rest}>
@@ -66,9 +72,7 @@ const BpkMapMarker = (props: Props) => {
         className={STYLES['bpk-map-marker__wrapper']}
         onClick={onClick}
       >
-        <div className={classNames.join(' ')} style={bubbleStyle}>
-          {children}
-        </div>
+        <div className={classNames.join(' ')}>{icon}</div>
         <div className={arrowClassNames.join(' ')}>
           <ArrowDownIcon />
         </div>
@@ -78,21 +82,21 @@ const BpkMapMarker = (props: Props) => {
 };
 
 BpkMapMarker.propTypes = {
-  children: PropTypes.node.isRequired,
+  icon: PropTypes.node.isRequired,
   position: LatLongPropType.isRequired,
-  themeColor: PropTypes.string,
   className: PropTypes.string,
   arrowClassName: PropTypes.string,
   large: PropTypes.bool,
   onClick: PropTypes.func,
+  type: PropTypes.oneOf(Object.keys(MARKER_TYPES)),
 };
 
 BpkMapMarker.defaultProps = {
-  themeColor: null,
   className: null,
   arrowClassName: null,
   large: false,
   onClick: null,
+  type: MARKER_TYPES.primary,
 };
 
 export default BpkMapMarker;

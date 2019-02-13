@@ -30,6 +30,7 @@ import FoodIconSm from 'bpk-component-icon/sm/food';
 import BpkMap, {
   BpkOverlayView,
   BpkMapMarker,
+  MARKER_TYPES,
   withGoogleMapsScript,
 } from './index';
 
@@ -116,21 +117,20 @@ storiesOf('bpk-component-map', module)
       <BpkMapMarker
         large
         position={{ latitude: 55.944, longitude: -3.1967116 }}
-      >
-        <AlignedLandmarkIconLg />
-      </BpkMapMarker>
+        icon={<AlignedLandmarkIconLg />}
+      />
       <BpkMapMarker
-        themeColor="#008ca8"
         large
         position={{ latitude: 55.943, longitude: -3.1937116 }}
         onClick={() => {
           alert('Marker clicked');
         }}
-      >
-        <AlignedBusIconLg />
-      </BpkMapMarker>
-      <BpkMapMarker position={{ latitude: 55.942, longitude: -3.2018116 }}>
-        <AlignedFoodIconSm />
-      </BpkMapMarker>
+        icon={<AlignedBusIconLg />}
+      />
+      <BpkMapMarker
+        position={{ latitude: 55.942, longitude: -3.2018116 }}
+        type={MARKER_TYPES.secondary}
+        icon={<AlignedFoodIconSm />}
+      />
     </StoryMap>
   ));

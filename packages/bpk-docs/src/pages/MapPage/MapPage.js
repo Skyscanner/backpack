@@ -21,6 +21,8 @@
 import React from 'react';
 import BpkMap, {
   withGoogleMapsScript,
+  MARKER_TYPES,
+  type BpkMapMarkerType,
   type BpkMapLatLong,
 } from 'bpk-component-map';
 import { cssModules } from 'bpk-react-utils';
