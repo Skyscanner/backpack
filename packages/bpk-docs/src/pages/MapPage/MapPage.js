@@ -21,11 +21,15 @@
 import React from 'react';
 import BpkMap, {
   withGoogleMapsScript,
+  BpkMapMarker,
   MARKER_TYPES,
-  type BpkMapMarkerType,
   type BpkMapLatLong,
 } from 'bpk-component-map';
 import { cssModules } from 'bpk-react-utils';
+import LandmarkIconLg from 'bpk-component-icon/lg/landmark';
+import BusIconLg from 'bpk-component-icon/lg/bus';
+import FoodIconSm from 'bpk-component-icon/sm/food';
+import { withRtlSupport } from 'bpk-component-icon';
 import mapReadme from 'bpk-component-map/README.md';
 
 import iosScreenshot from '../../../../../backpack-react-native/packages/react-native-bpk-component-map/screenshots/ios/default.png';
@@ -36,6 +40,10 @@ import DocsPageWrapper from '../../components/DocsPageWrapper';
 import IntroBlurb from '../../components/IntroBlurb';
 
 import STYLES from './MapPage.scss';
+
+const AlignedLandmarkIconLg = withRtlSupport(LandmarkIconLg);
+const AlignedBusIconLg = withRtlSupport(BusIconLg);
+const AlignedFoodIconSm = withRtlSupport(FoodIconSm);
 
 const BpkMapWithScript = withGoogleMapsScript(BpkMap);
 const API_KEY = process.env.GOOGLE_MAPS_API_KEY || '';
@@ -60,6 +68,51 @@ const components = [
           zoom={17}
           center={COORDINATES}
         />
+      </div>,
+    ],
+  },
+  {
+    id: 'map-markers',
+    title: 'Map markers',
+    blurb:
+      'Add custom markers to the map. You can customise the icon and the type to change the colour.',
+    examples: [
+      <div className={getClassName('bpkdocs-map-page__map')}>
+        <BpkMapWithScript googleMapURL={MAP_URL} zoom={17} center={COORDINATES}>
+          <BpkMapMarker
+            large
+            icon={<AlignedBusIconLg />}
+            position={{
+              latitude: 35.661777,
+              longitude: 139.704051,
+            }}
+            onClick={() => {
+              alert('Beep beep!');
+            }}
+          />
+          <BpkMapMarker
+            large
+            icon={<AlignedLandmarkIconLg />}
+            position={{
+              latitude: 35.6625,
+              longitude: 139.705051,
+            }}
+            onClick={() => {
+              alert('Interesting!');
+            }}
+          />
+          <BpkMapMarker
+            type={MARKER_TYPES.secondary}
+            icon={<AlignedFoodIconSm />}
+            position={{
+              latitude: 35.6615,
+              longitude: 139.705051,
+            }}
+            onClick={() => {
+              alert('Yum!');
+            }}
+          />
+        </BpkMapWithScript>
       </div>,
     ],
   },
