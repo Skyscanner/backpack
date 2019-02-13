@@ -26,10 +26,17 @@
   align-items: center;
   border: $bpk-border-size-xl solid $bpk-color-white;
   border-radius: 50%;
-  background-color: $bpk-color-green-700;
   color: $bpk-color-white;
 
   @include bpk-box-shadow-lg;
+
+  &--primary {
+    @include bpk-themeable-property(background-color, --bpk-map-marker-primary-background-color, $bpk-color-green-700);
+  }
+
+  &--secondary {
+    @include bpk-themeable-property(background-color, --bpk-map-marker-secondary-background-color, $bpk-color-blue-700);
+  }
 
   &--large {
     width: $bpk-spacing-xxl;
