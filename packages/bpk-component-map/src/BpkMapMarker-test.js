@@ -30,7 +30,9 @@ describe('BpkMapMarker', () => {
       latitude: 41.386947,
       longitude: 2.170048,
     };
-    const tree = shallow(<BpkMapMarker position={position}>Icon</BpkMapMarker>);
+    const tree = shallow(
+      <BpkMapMarker position={position} icon={<span>Icon</span>} />,
+    );
     expect(toJson(tree)).toMatchSnapshot();
   });
 });

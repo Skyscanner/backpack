@@ -15,7 +15,11 @@ exports[`BpkMapMarker should render properly 1`] = `
   >
     <div
       className="    "
-    />
+    >
+      <span>
+        Icon
+      </span>
+    </div>
     <div
       className=" "
     >
