@@ -69,5 +69,6 @@ export default () => (
 | children                    | node     | true     | -             |
 | className                   | string   | false    | null          |
 | leadingIndicatorClassName   | string   | false    | null          |
+| scrollerRef                 | func     | false    | null          |
 | trailingIndicatorClassName  | string   | false    | null          |
 

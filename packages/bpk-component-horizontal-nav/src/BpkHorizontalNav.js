@@ -18,8 +18,9 @@
 /* @flow */
 
 import PropTypes from 'prop-types';
-import React, { type Node } from 'react';
+import ReactDOM from 'react-dom';
 import { cssModules } from 'bpk-react-utils';
+import React, { Component, type Node } from 'react';
 import BpkMobileScrollContainer from 'bpk-component-mobile-scroll-container';
 
 import STYLES from './BpkHorizontalNav.scss';
@@ -31,47 +32,114 @@ export type Props = {
   className: ?string,
   leadingScrollIndicatorClassName: ?string,
   trailingScrollIndicatorClassName: ?string,
+  autoScrollToSelected: boolean,
 };
 
-const BpkHorizontalNav = (props: Props) => {
-  const classNames = [getClassName('bpk-horizontal-nav')];
-  const {
-    children,
-    className,
-    leadingScrollIndicatorClassName,
-    trailingScrollIndicatorClassName,
-    ...rest
-  } = props;
+const getLeft = (ref: ?Element): number => {
+  if (!ref) {
+    return 0;
+  }
+  const pos = ref.getBoundingClientRect();
+  return pos.left;
+};
 
-  // Outer classNames
-  if (className) {
-    classNames.push(className);
+class BpkHorizontalNav extends Component<Props> {
+  selectedItemRef: ?Element;
+
+  scrollRef: ?Element;
+
+  static propTypes = {
+    children: PropTypes.node.isRequired,
+    className: PropTypes.string,
+    leadingScrollIndicatorClassName: PropTypes.string,
+    trailingScrollIndicatorClassName: PropTypes.string,
+    autoScrollToSelected: PropTypes.bool,
+  };
+
+  static defaultProps = {
+    className: null,
+    leadingScrollIndicatorClassName: null,
+    trailingScrollIndicatorClassName: null,
+    autoScrollToSelected: false,
+  };
+
+  constructor(props: Props) {
+    super(props);
+
+    this.scrollRef = null;
+    this.selectedItemRef = null;
   }
 
-  return (
-    <BpkMobileScrollContainer
-      innerContainerTagName="nav"
-      className={classNames.join(' ')}
-      leadingIndicatorClassName={leadingScrollIndicatorClassName}
-      trailingIndicatorClassName={trailingScrollIndicatorClassName}
-      {...rest}
-    >
-      <ul className={getClassName('bpk-horizontal-nav__list')}>{children}</ul>
-    </BpkMobileScrollContainer>
-  );
-};
+  componentDidMount = () => {
+    if (
+      !this.props.autoScrollToSelected ||
+      !this.scrollRef ||
+      !this.selectedItemRef
+    ) {
+      return;
+    }
 
-BpkHorizontalNav.propTypes = {
-  children: PropTypes.node.isRequired,
-  className: PropTypes.string,
-  leadingScrollIndicatorClassName: PropTypes.string,
-  trailingScrollIndicatorClassName: PropTypes.string,
-};
+    // Using find dom node is preferable here over changing the underlying mechanism of BpkHorizontalNavItem to accomodate dom-node refs
+    // eslint-disable-next-line react/no-find-dom-node
+    const selectedItemRef = ((ReactDOM.findDOMNode(
+      this.selectedItemRef,
+    ): any): Element);
 
-BpkHorizontalNav.defaultProps = {
-  className: null,
-  leadingScrollIndicatorClassName: null,
-  trailingScrollIndicatorClassName: null,
-};
+    const scrollValue = getLeft(selectedItemRef) - getLeft(this.scrollRef);
+
+    if (this.scrollRef) {
+      this.scrollRef.scrollLeft = scrollValue;
+    }
+  };
+
+  render() {
+    const classNames = [getClassName('bpk-horizontal-nav')];
+    const {
+      children: rawChildren,
+      className,
+      autoScrollToSelected,
+      leadingScrollIndicatorClassName,
+      trailingScrollIndicatorClassName,
+      ...rest
+    } = this.props;
+
+    // Outer classNames
+    if (className) {
+      classNames.push(className);
+    }
+
+    let children = null;
+    if (!autoScrollToSelected) {
+      children = rawChildren;
+    } else {
+      children = React.Children.map(rawChildren, child => {
+        if (!child || !child.props || !child.props.selected) {
+          return child;
+        }
+
+        return React.cloneElement(child, {
+          ref: ref => {
+            this.selectedItemRef = ref;
+          },
+        });
+      });
+    }
+
+    return (
+      <BpkMobileScrollContainer
+        innerContainerTagName="nav"
+        className={classNames.join(' ')}
+        leadingIndicatorClassName={leadingScrollIndicatorClassName}
+        trailingIndicatorClassName={trailingScrollIndicatorClassName}
+        scrollerRef={ref => {
+          this.scrollRef = ref;
+        }}
+        {...rest}
+      >
+        <ul className={getClassName('bpk-horizontal-nav__list')}>{children}</ul>
+      </BpkMobileScrollContainer>
+    );
+  }
+}
 
 export default BpkHorizontalNav;

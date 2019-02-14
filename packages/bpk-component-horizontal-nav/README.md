@@ -65,6 +65,7 @@ export default class App extends Component {
 | Property                          | PropType | Required | Default Value |
 | --------------------------------- | -------- | -------- | ------------- |
 | children                          | node     | true     | -             |
+| autoScrollToSelected              | bool     | false    | false         |
 | className                         | string   | false    | null          |
 | leadingScrollIndicatorClassName   | string   | false    | null          |
 | trailingScrollIndicatorClassName  | string   | false    | null          |
