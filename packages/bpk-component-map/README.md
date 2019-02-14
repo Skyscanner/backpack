@@ -111,7 +111,7 @@ When using `withGoogleMapsScript`, some additional props are available:
 | className        | string                                       | false                    | null                 |
 | large            | bool                                         | false                    | false                |
 | onClick          | func                                         | false                    | null                 |
-| type             | oneOf(MARKER_TYPES)                          | false                    | MARKER_TYPES.primary |
+| type             | oneOf('primary', 'secondary')                | false                    | MARKER_TYPES.primary |
 
 ### BpkOverlayView
 
