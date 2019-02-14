@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BpkBasicMapMarker should render correctly 1`] = `
+<BpkOverlayView
+  getPixelPositionOffset={[Function]}
+  position={
+    Object {
+      "latitude": 41.386947,
+      "longitude": 2.170048,
+    }
+  }
+>
+  Children
+</BpkOverlayView>
+`;

@@ -22,10 +22,23 @@ import PropTypes from 'prop-types';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import BpkText from 'bpk-component-text';
+import { withRtlSupport } from 'bpk-component-icon';
+import LandmarkIconLg from 'bpk-component-icon/lg/landmark';
+import BusIconLg from 'bpk-component-icon/lg/bus';
+import FoodIconSm from 'bpk-component-icon/sm/food';
 
-import BpkMap, { BpkOverlayView, withGoogleMapsScript } from './index';
+import BpkMap, {
+  BpkOverlayView,
+  BpkMapMarker,
+  MARKER_TYPES,
+  withGoogleMapsScript,
+} from './index';
 
 const BpkMapWithLoading = withGoogleMapsScript(BpkMap);
+
+const AlignedLandmarkIconLg = withRtlSupport(LandmarkIconLg);
+const AlignedBusIconLg = withRtlSupport(BusIconLg);
+const AlignedFoodIconSm = withRtlSupport(FoodIconSm);
 
 const StoryMap = props => {
   const { children, language, ...rest } = props;
@@ -97,5 +110,27 @@ storiesOf('bpk-component-map', module)
       <BpkOverlayView position={{ latitude: 55.944, longitude: -3.1967116 }}>
         <BpkText>Backpack</BpkText>
       </BpkOverlayView>
+    </StoryMap>
+  ))
+  .add('With BpkMapMarker', () => (
+    <StoryMap center={{ latitude: 55.944357, longitude: -3.1967116 }}>
+      <BpkMapMarker
+        large
+        position={{ latitude: 55.944, longitude: -3.1967116 }}
+        icon={<AlignedLandmarkIconLg />}
+      />
+      <BpkMapMarker
+        large
+        position={{ latitude: 55.943, longitude: -3.1937116 }}
+        onClick={() => {
+          alert('Marker clicked');
+        }}
+        icon={<AlignedBusIconLg />}
+      />
+      <BpkMapMarker
+        position={{ latitude: 55.942, longitude: -3.2018116 }}
+        type={MARKER_TYPES.secondary}
+        icon={<AlignedFoodIconSm />}
+      />
     </StoryMap>
   ));

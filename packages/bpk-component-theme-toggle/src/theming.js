@@ -113,6 +113,9 @@ const generateTheme = ({
   checkboxCheckedColor: primaryColor700,
   radioCheckedColor: primaryColor700,
 
+  mapMarkerPrimaryBackgroundColor: primaryColor700,
+  mapMarkerSecondaryBackgroundColor: secondaryColor700,
+
   navigationBarIconButtonColor: colorWhite,
   navigationBarIconButtonHoverColor: colorWhite,
   navigationBarIconButtonActiveColor: colorWhite,

@@ -1,0 +1,121 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BpkMapMarker should render correctly with a "arrowClassName" attribute 1`] = `
+<BpkBasicMapMarker
+  position={
+    Object {
+      "latitude": 41.386947,
+      "longitude": 2.170048,
+    }
+  }
+>
+  <button
+    className="bpk-map-marker__wrapper"
+    onClick={null}
+    type="button"
+  >
+    <div
+      className="bpk-map-marker bpk-map-marker--primary"
+    >
+      <span>
+        Icon
+      </span>
+    </div>
+    <div
+      className="bpk-map-marker__arrow custom-class-1 custom-class-2"
+    >
+      <Component />
+    </div>
+  </button>
+</BpkBasicMapMarker>
+`;
+
+exports[`BpkMapMarker should render correctly with a "className" attribute 1`] = `
+<BpkBasicMapMarker
+  position={
+    Object {
+      "latitude": 41.386947,
+      "longitude": 2.170048,
+    }
+  }
+>
+  <button
+    className="bpk-map-marker__wrapper"
+    onClick={null}
+    type="button"
+  >
+    <div
+      className="bpk-map-marker bpk-map-marker--primary custom-class-1 custom-class-2"
+    >
+      <span>
+        Icon
+      </span>
+    </div>
+    <div
+      className="bpk-map-marker__arrow"
+    >
+      <Component />
+    </div>
+  </button>
+</BpkBasicMapMarker>
+`;
+
+exports[`BpkMapMarker should render correctly with a "large" attribute 1`] = `
+<BpkBasicMapMarker
+  position={
+    Object {
+      "latitude": 41.386947,
+      "longitude": 2.170048,
+    }
+  }
+>
+  <button
+    className="bpk-map-marker__wrapper"
+    onClick={null}
+    type="button"
+  >
+    <div
+      className="bpk-map-marker bpk-map-marker--primary bpk-map-marker--large"
+    >
+      <span>
+        Icon
+      </span>
+    </div>
+    <div
+      className="bpk-map-marker__arrow"
+    >
+      <Component />
+    </div>
+  </button>
+</BpkBasicMapMarker>
+`;
+
+exports[`BpkMapMarker should render properly 1`] = `
+<BpkBasicMapMarker
+  position={
+    Object {
+      "latitude": 41.386947,
+      "longitude": 2.170048,
+    }
+  }
+>
+  <button
+    className="bpk-map-marker__wrapper"
+    onClick={null}
+    type="button"
+  >
+    <div
+      className="bpk-map-marker bpk-map-marker--primary"
+    >
+      <span>
+        Icon
+      </span>
+    </div>
+    <div
+      className="bpk-map-marker__arrow"
+    >
+      <Component />
+    </div>
+  </button>
+</BpkBasicMapMarker>
+`;
