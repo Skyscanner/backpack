@@ -24,8 +24,9 @@
 
   &--active {
     padding: $bpk-spacing-base;
-    background-color: $bpk-color-blue-500;
     color: $bpk-color-white;
+
+    @include bpk-apply-primary-color-to(background-color);
   }
 
   &--inactive {

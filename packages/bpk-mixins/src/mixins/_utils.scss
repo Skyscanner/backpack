@@ -177,12 +177,24 @@
 ///
 /// @example scss
 ///   .selector {
-///     @bpk-themeable-property(color, --bpk-link-text-color, $fallback-text-color);
+///     @include bpk-themeable-property(color, --bpk-link-text-color, $fallback-text-color);
 ///   }
 
 @mixin bpk-themeable-property($property, $variableName, $fallback) {
   #{$property}: $fallback;
   #{$property}: var($variableName, $fallback);
+}
+
+/// Create a property that uses the Backpack primary color blue-500.
+///
+/// @content
+///
+/// @example scss
+///   .selector {
+///     @include bpk-apply-primary-color-to(color);
+///   }
+@mixin bpk-apply-primary-color-to($property) {
+  @include bpk-themeable-property($property, --bpk-primary-color, $bpk-color-blue-500);
 }
 
 /// Replace part of a string with another string.
