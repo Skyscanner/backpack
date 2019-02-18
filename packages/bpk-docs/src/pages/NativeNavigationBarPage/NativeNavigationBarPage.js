@@ -26,6 +26,7 @@ import iosScreenshotSubtitleView from '../../../../../backpack-react-native/pack
 import androidScreenshotSubtitleView from '../../../../../backpack-react-native/packages/react-native-bpk-component-navigation-bar/screenshots/android/subtitle-view.png';
 import iosScreenshotModal from '../../../../../backpack-react-native/packages/react-native-bpk-component-navigation-bar/screenshots/ios/modal.png';
 import androidScreenshotModal from '../../../../../backpack-react-native/packages/react-native-bpk-component-navigation-bar/screenshots/android/modal.png';
+import iosScreenshotPrimaryTextButtons from '../../../../../backpack-react-native/packages/react-native-bpk-component-navigation-bar/screenshots/ios/primary-text-buttons.png';
 import iosScreenshotTitleIcon from '../../../../../backpack-react-native/packages/react-native-bpk-component-navigation-bar/screenshots/ios/title-icon.png';
 import androidScreenshotTitleIcon from '../../../../../backpack-react-native/packages/react-native-bpk-component-navigation-bar/screenshots/android/title-icon.png';
 import DocsPageBuilder from '../../components/DocsPageBuilder';
@@ -75,6 +76,21 @@ const components = [
         src: `/${androidScreenshotModal}`,
         altText: 'Android Modal Navigation Bar',
         subText: '(Nexus 5 Emulator)',
+      },
+    ],
+  },
+  {
+    id: 'primary-text-buttons',
+    title: 'Primary text buttons',
+    blurb: 'On iOS, text buttons can have a primary colour.',
+    screenshots: [
+      {
+        title: 'iOS',
+        width: 750,
+        height: 1334,
+        src: `/${iosScreenshotPrimaryTextButtons}`,
+        altText: 'iOS Navigation Bar with primary text buttons',
+        subText: '(iPhone 8 simulator)',
       },
     ],
   },
