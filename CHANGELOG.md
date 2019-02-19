@@ -2,6 +2,15 @@
 
 [Unreleased changes](./UNRELEASED.md).
 
+# 2019-02-19 Map markers and horizontal nav scrolling
+
+**Added:**
+ - bpk-component-horizontal-nav: 2.3.47 => 2.4.0
+   - Added `autoScrollToSelected` prop. When used, the horizontal nav will ensure that the selected item is within view when loaded on narrow devices.
+- bpk-component-map: 2.0.42 => 2.1.0
+  - Added the component `BpkMapMarker`.
+
+
 # 2019-02-12 New Hide icon
 
 **Added:**
