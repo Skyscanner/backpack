@@ -40,6 +40,9 @@ const generateTheme = ({
   themeName,
 }) => ({
   themeName,
+
+  primaryColor: primaryColor500,
+
   accordionActiveColor: primaryColor700,
   accordionColor: primaryColor500,
   accordionHoverColor: primaryColor600,
