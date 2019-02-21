@@ -2,6 +2,21 @@
 
 [Unreleased changes](./UNRELEASED.md).
 
+# 2019-02-21 Add mixin for primary color use
+
+**Added:**
+- bpk-mixins:
+  - Added a mixin for primary colour: `bpk-apply-primary-color-to`.
+    ```scss
+    @import '~bpk-mixins';
+
+    .selector {
+      // Instead of
+      // color: $bpk-color-blue-500;
+      @include bpk-apply-primary-color-to(color);
+    }
+    ```
+
 # 2019-02-19 Map markers and horizontal nav scrolling
 
 **Added:**
