@@ -2,6 +2,14 @@
 
 [Unreleased changes](./UNRELEASED.md).
 
+# 2019-02-22 New `eco-leaf` icon
+
+**Added:**
+- bpk-component-icon: 3.26.3 => 3.27.0
+- bpk-mixins: 17.15.0 => 17.16.0
+- bpk-svgs: 6.3.2 => 6.4.0
+  - New 'eco-leaf' icon added.
+
 # 2019-02-21 Add mixin for primary color use
 
 **Added:**
