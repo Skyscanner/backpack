@@ -45,4 +45,3 @@ export default () => (
 
 By default the `pushView` and `popView` callbacks are forwarded to the children, if you
 want to disabled this behaviour pass `false` as the second argument, in this case the
-callbacks are forwarded to the Stack component instead.

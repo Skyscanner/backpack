@@ -11,4 +11,3 @@ export default ((_ref) => {
     width: "1.5rem",
     height: "1.5rem"
   }} {...props}><path d="M20 6.758v6.278h-7v4.277a2 2 0 1 1-2 0v-4.277H6v4.277a2 2 0 1 1-2 0V6.758a2 2 0 1 1 2 0v4.028h5V6.758a2 2 0 1 1 2 0v4.028h5V6.758a2 2 0 1 1 2 0z" /></svg>;
-});

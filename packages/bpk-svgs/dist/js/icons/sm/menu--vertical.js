@@ -11,4 +11,3 @@ export default ((_ref) => {
     width: "1.125rem",
     height: "1.125rem"
   }} {...props}><circle cx="12" cy="5" r="2" /><circle cx="12" cy="12" r="2" /><circle cx="12" cy="19" r="2" /></svg>;
-});
