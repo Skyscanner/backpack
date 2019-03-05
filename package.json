@@ -100,7 +100,7 @@
     "file-loader": "^2.0.0",
     "flow-bin": "^0.94.0",
     "flow-typed": "^2.5.1",
-    "globby": "^8.0.1",
+    "globby": "^9.1.0",
     "gulp": "^4.0.0",
     "gulp-chmod": "^2.0.0",
     "gulp-cli": "^2.0.0",
