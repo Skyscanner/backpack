@@ -113,14 +113,15 @@ class BpkImage extends Component<BpkImageProps> {
 
   render(): Node {
     const {
-      width,
-      height,
       altText,
       className,
+      height,
       inView,
       loading,
       onLoad,
       style,
+      supportNoScript,
+      width,
       ...rest
     } = this.props;
 
@@ -175,15 +176,17 @@ class BpkImage extends Component<BpkImageProps> {
               </div>
             </CSSTransition>
           )}
-          {typeof window === 'undefined' && (!inView || loading) && (
-            <noscript>
-              <Image // eslint-disable-line backpack/use-components
-                altText={altText}
-                onImageLoad={this.onImageLoad}
-                {...rest}
-              />
-            </noscript>
-          )}
+          {supportNoScript &&
+            typeof window === 'undefined' &&
+            (!inView || loading) && (
+              <noscript>
+                <Image // eslint-disable-line backpack/use-components
+                  altText={altText}
+                  onImageLoad={this.onImageLoad}
+                  {...rest}
+                />
+              </noscript>
+            )}
         </div>
       </div>
     );
@@ -200,6 +203,7 @@ BpkImage.propTypes = {
   loading: PropTypes.bool,
   onLoad: PropTypes.func,
   style: PropTypes.object, // eslint-disable-line react/forbid-prop-types
+  supportNoScript: PropTypes.bool,
 };
 
 BpkImage.defaultProps = {
@@ -208,6 +212,7 @@ BpkImage.defaultProps = {
   loading: false,
   onLoad: null,
   style: {},
+  supportNoScript: true,
 };
 
 export default BpkImage;

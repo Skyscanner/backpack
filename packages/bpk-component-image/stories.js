@@ -161,4 +161,14 @@ storiesOf('bpk-component-image', module)
         </BpkText>
       </div>
     </FadingLazyLoadedBackgroundImage>
+  ))
+  .add('no-script disabled', () => (
+    <BpkImage
+      altText="image"
+      supportNoScript={false}
+      width={612}
+      height={408}
+      style={{ width: imageWidth, height: imageHeight }}
+      src={image}
+    />
   ));

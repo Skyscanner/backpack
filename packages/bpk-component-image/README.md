@@ -147,6 +147,7 @@ export default () => (
 | width            | number    | true     | -                   |
 | className        | string    | false    | null                |
 | inView           | bool      | false    | true                |
+| supportNoScript  | bool      | false    | true                |
 | loading          | bool      | false    | false               |
 | onLoad           | func      | false    | null                |
 
