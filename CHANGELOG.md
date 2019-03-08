@@ -2,6 +2,12 @@
 
 [Unreleased changes](./UNRELEASED.md).
 
+# 2019-03-08 New prop for BpkThemingProvider
+
+**Added:**
+- bpk-theming: 1.1.28 => 1.2.0
+  - Added `component` prop to allow defining the element used to wrap all childrens.
+
 # 2019-02-22 New `eco-leaf` icon
 
 **Added:**
