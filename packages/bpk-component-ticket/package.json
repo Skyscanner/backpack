@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-ticket",
-  "version": "1.2.41",
+  "version": "1.2.42",
   "description": "Backpack ticket component.",
   "main": "index.js",
   "repository": {
@@ -13,12 +13,12 @@
     "react": "^15.0.0 || ^16.0.0"
   },
   "dependencies": {
-    "bpk-mixins": "^17.16.0",
-    "bpk-react-utils": "^2.7.2",
+    "bpk-mixins": "^17.16.1",
+    "bpk-react-utils": "^2.7.3",
     "prop-types": "^15.6.2"
   },
   "devDependencies": {
-    "bpk-component-button": "^2.1.47",
-    "bpk-component-icon": "^3.27.0"
+    "bpk-component-button": "^2.1.48",
+    "bpk-component-icon": "^3.27.1"
   }
 }
