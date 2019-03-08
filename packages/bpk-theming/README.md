@@ -35,8 +35,9 @@ export default class App extends Component {
 
 ## Props
 
-| Property            | PropType        | Required | Default Value |
-| -----------         | --------------- | -------- | ------------- |
-| children            | node            | true     | -             |
-| theme               | object          | false    | null          |
-| themeAttributes     | arrayOf(string) | true     | -             |
+| Property            | PropType                           | Required         | Default Value |
+| -----------         | ---------------------------------- | ---------------- | ------------- |
+| children            | node                               | true             | -             |
+| themeAttributes     | arrayOf(string)                    | true             | -             |
+| component           | oneOf(function, string)            | false            | div           |
+| theme               | object                             | false            | null          |

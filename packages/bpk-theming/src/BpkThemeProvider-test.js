@@ -17,10 +17,31 @@
  */
 
 import React from 'react';
+import PropTypes from 'prop-types';
 import renderer from 'react-test-renderer';
 import { colorWhite } from 'bpk-tokens/tokens/base.es6';
 
 import BpkThemeProvider, { propTypes } from './BpkThemeProvider';
+
+const CustomComponentFunction = ({ children, ...rest }) => (
+  <span {...rest}>{children}</span>
+);
+
+CustomComponentFunction.propTypes = {
+  children: PropTypes.node.isRequired,
+};
+
+// eslint-disable-next-line
+class CustomComponentClass extends React.Component {
+  render() {
+    const { children, ...rest } = this.props;
+    return <span {...rest}>{children}</span>;
+  }
+}
+
+CustomComponentClass.propTypes = {
+  children: PropTypes.node.isRequired,
+};
 
 describe('BpkThemeProvider', () => {
   it('should render correctly', () => {
@@ -29,6 +50,51 @@ describe('BpkThemeProvider', () => {
         <BpkThemeProvider
           theme={{ color: colorWhite }}
           themeAttributes={['color']}
+        >
+          <p>Lorem Ipsum</p>
+        </BpkThemeProvider>,
+      )
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('should render correctly with custom native component', () => {
+    const tree = renderer
+      .create(
+        <BpkThemeProvider
+          theme={{ color: colorWhite }}
+          themeAttributes={['color']}
+          component="header"
+        >
+          <p>Lorem Ipsum</p>
+        </BpkThemeProvider>,
+      )
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('should render correctly with custom component function', () => {
+    const tree = renderer
+      .create(
+        <BpkThemeProvider
+          theme={{ color: colorWhite }}
+          themeAttributes={['color']}
+          component={CustomComponentFunction}
+        >
+          <p>Lorem Ipsum</p>
+        </BpkThemeProvider>,
+      )
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('should render correctly with custom component', () => {
+    const tree = renderer
+      .create(
+        <BpkThemeProvider
+          theme={{ color: colorWhite }}
+          themeAttributes={['color']}
+          component={CustomComponentClass}
         >
           <p>Lorem Ipsum</p>
         </BpkThemeProvider>,
