@@ -44,6 +44,48 @@ exports[`BpkThemeProvider should render correctly with arbitrary props 1`] = `
 </div>
 `;
 
+exports[`BpkThemeProvider should render correctly with custom component 1`] = `
+<span
+  style={
+    Object {
+      "--bpk-color": "rgb(255, 255, 255)",
+    }
+  }
+>
+  <p>
+    Lorem Ipsum
+  </p>
+</span>
+`;
+
+exports[`BpkThemeProvider should render correctly with custom component function 1`] = `
+<span
+  style={
+    Object {
+      "--bpk-color": "rgb(255, 255, 255)",
+    }
+  }
+>
+  <p>
+    Lorem Ipsum
+  </p>
+</span>
+`;
+
+exports[`BpkThemeProvider should render correctly with custom native component 1`] = `
+<header
+  style={
+    Object {
+      "--bpk-color": "rgb(255, 255, 255)",
+    }
+  }
+>
+  <p>
+    Lorem Ipsum
+  </p>
+</header>
+`;
+
 exports[`BpkThemeProvider should render without theming when theme is missing attributes 1`] = `
 <div
   style={Object {}}
