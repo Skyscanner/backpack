@@ -2,6 +2,21 @@
 
 [Unreleased changes](./UNRELEASED.md).
 
+# 2019-03-11 BpkThemingProvider now accepts `style` prop
+
+**Fixed:**
+- bpk-theming: 1.2.0 => 1.2.1
+  - `style` prop is now correctly applied in `BpkThemeProvider` e.g:
+    ```
+    <BpkThemeProvider
+      theme={{ color: colorWhite }}
+      themeAttributes={['color']}
+      style={{ /* user defined style goes here */ }}
+    >
+      <p>Lorem Ipsum</p>
+    </BpkThemeProvider>,
+    ```
+
 # 2019-03-08 New prop for BpkThemingProvider
 
 **Added:**
