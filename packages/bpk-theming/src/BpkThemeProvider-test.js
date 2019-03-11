@@ -21,7 +21,7 @@ import PropTypes from 'prop-types';
 import renderer from 'react-test-renderer';
 import { colorWhite } from 'bpk-tokens/tokens/base.es6';
 
-import BpkThemeProvider, { propTypes } from './BpkThemeProvider';
+import BpkThemeProvider from './BpkThemeProvider';
 
 const CustomComponentFunction = ({ children, ...rest }) => (
   <span {...rest}>{children}</span>
@@ -118,6 +118,21 @@ describe('BpkThemeProvider', () => {
     expect(tree).toMatchSnapshot();
   });
 
+  it('should render correctly with arbitrary user defined style', () => {
+    const tree = renderer
+      .create(
+        <BpkThemeProvider
+          theme={{ color: colorWhite }}
+          themeAttributes={['color']}
+          style={{ content: 'user defined' }}
+        >
+          <p>Lorem Ipsum</p>
+        </BpkThemeProvider>,
+      )
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
   it('should correctly flatten the themeAttribute prop', () => {
     const tree = renderer
       .create(
@@ -162,7 +177,7 @@ describe('BpkThemeProvider', () => {
   it('should warn about missing theme attributes', () => {
     expect(
       // eslint-disable-next-line react/forbid-foreign-prop-types
-      propTypes
+      BpkThemeProvider.propTypes
         .themeAttributes(
           {
             theme: {},
@@ -180,7 +195,7 @@ describe('BpkThemeProvider', () => {
   it('should warn about extraneous theme attributes', () => {
     expect(
       // eslint-disable-next-line react/forbid-foreign-prop-types
-      propTypes
+      BpkThemeProvider.propTypes
         .themeAttributes(
           {
             theme: { one: 'a', two: 'a' },
