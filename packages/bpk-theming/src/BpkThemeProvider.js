@@ -68,6 +68,7 @@ class BpkThemeProvider extends Component {
       theme,
       themeAttributes,
       component: WrapperComponent,
+      style: userStyle,
       ...rest
     } = this.props;
 
@@ -75,7 +76,7 @@ class BpkThemeProvider extends Component {
     const style = createStyle(theme, dedupedThemeAttributes);
 
     return (
-      <WrapperComponent style={style} {...rest}>
+      <WrapperComponent style={[userStyle, style]} {...rest}>
         {children}
       </WrapperComponent>
     );
@@ -131,20 +132,19 @@ const themeAttributesPropType = (props, propName, componentName) => {
   return false;
 };
 
-export const propTypes = {
+BpkThemeProvider.propTypes = {
   children: PropTypes.node.isRequired,
   theme: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   themeAttributes: themeAttributesPropType, // eslint-disable-line react/require-default-props
   // (disabled because isRequired is inside the custom validator)
   component: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
+  style: PropTypes.object, // eslint-disable-line react/forbid-prop-types
 };
 
-export const defaultProps = {
+BpkThemeProvider.defaultProps = {
   theme: null,
   component: 'div',
+  style: null,
 };
-
-BpkThemeProvider.propTypes = propTypes;
-BpkThemeProvider.defaultProps = defaultProps;
 
 export default BpkThemeProvider;

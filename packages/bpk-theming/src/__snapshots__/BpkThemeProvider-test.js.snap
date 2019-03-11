@@ -3,10 +3,13 @@
 exports[`BpkThemeProvider should correctly flatten the themeAttribute prop 1`] = `
 <div
   style={
-    Object {
-      "--bpk-background": "black",
-      "--bpk-color": "rgb(255, 255, 255)",
-    }
+    Array [
+      null,
+      Object {
+        "--bpk-background": "black",
+        "--bpk-color": "rgb(255, 255, 255)",
+      },
+    ]
   }
 >
   <p>
@@ -18,9 +21,12 @@ exports[`BpkThemeProvider should correctly flatten the themeAttribute prop 1`] =
 exports[`BpkThemeProvider should render correctly 1`] = `
 <div
   style={
-    Object {
-      "--bpk-color": "rgb(255, 255, 255)",
-    }
+    Array [
+      null,
+      Object {
+        "--bpk-color": "rgb(255, 255, 255)",
+      },
+    ]
   }
 >
   <p>
@@ -33,9 +39,31 @@ exports[`BpkThemeProvider should render correctly with arbitrary props 1`] = `
 <div
   id="arbitrary"
   style={
-    Object {
-      "--bpk-color": "rgb(255, 255, 255)",
-    }
+    Array [
+      null,
+      Object {
+        "--bpk-color": "rgb(255, 255, 255)",
+      },
+    ]
+  }
+>
+  <p>
+    Lorem Ipsum
+  </p>
+</div>
+`;
+
+exports[`BpkThemeProvider should render correctly with arbitrary user defined style 1`] = `
+<div
+  style={
+    Array [
+      Object {
+        "content": "user defined",
+      },
+      Object {
+        "--bpk-color": "rgb(255, 255, 255)",
+      },
+    ]
   }
 >
   <p>
@@ -47,9 +75,12 @@ exports[`BpkThemeProvider should render correctly with arbitrary props 1`] = `
 exports[`BpkThemeProvider should render correctly with custom component 1`] = `
 <span
   style={
-    Object {
-      "--bpk-color": "rgb(255, 255, 255)",
-    }
+    Array [
+      null,
+      Object {
+        "--bpk-color": "rgb(255, 255, 255)",
+      },
+    ]
   }
 >
   <p>
@@ -61,9 +92,12 @@ exports[`BpkThemeProvider should render correctly with custom component 1`] = `
 exports[`BpkThemeProvider should render correctly with custom component function 1`] = `
 <span
   style={
-    Object {
-      "--bpk-color": "rgb(255, 255, 255)",
-    }
+    Array [
+      null,
+      Object {
+        "--bpk-color": "rgb(255, 255, 255)",
+      },
+    ]
   }
 >
   <p>
@@ -75,9 +109,12 @@ exports[`BpkThemeProvider should render correctly with custom component function
 exports[`BpkThemeProvider should render correctly with custom native component 1`] = `
 <header
   style={
-    Object {
-      "--bpk-color": "rgb(255, 255, 255)",
-    }
+    Array [
+      null,
+      Object {
+        "--bpk-color": "rgb(255, 255, 255)",
+      },
+    ]
   }
 >
   <p>
@@ -88,7 +125,12 @@ exports[`BpkThemeProvider should render correctly with custom native component 1
 
 exports[`BpkThemeProvider should render without theming when theme is missing attributes 1`] = `
 <div
-  style={Object {}}
+  style={
+    Array [
+      null,
+      Object {},
+    ]
+  }
 >
   <p>
     Lorem Ipsum
@@ -99,9 +141,12 @@ exports[`BpkThemeProvider should render without theming when theme is missing at
 exports[`BpkThemeProvider should strip out extraneous theme attributes 1`] = `
 <div
   style={
-    Object {
-      "--bpk-color": "rgb(255, 255, 255)",
-    }
+    Array [
+      null,
+      Object {
+        "--bpk-color": "rgb(255, 255, 255)",
+      },
+    ]
   }
 >
   <p>
