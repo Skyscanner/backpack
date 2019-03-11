@@ -76,7 +76,7 @@ class BpkThemeProvider extends Component {
     const style = createStyle(theme, dedupedThemeAttributes);
 
     return (
-      <WrapperComponent style={[userStyle, style]} {...rest}>
+      <WrapperComponent style={Object.assign(userStyle || {}, style)} {...rest}>
         {children}
       </WrapperComponent>
     );

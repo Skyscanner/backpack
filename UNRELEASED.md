@@ -1,3 +1,7 @@
 # Unreleased
 
-_Nothing yet..._
+**Fixed:**
+
+ - bpk-theming:
+   - Fixed bug that caused bpk-theming to break webpages Firefox
+
