@@ -40,7 +40,7 @@
 # 2019-02-21 Add mixin for primary color use
 
 **Added:**
-- bpk-mixins:
+- bpk-mixins: 17.14.2 => 17.15.0
   - Added a mixin for primary colour: `bpk-apply-primary-color-to`.
     ```scss
     @import '~bpk-mixins';
