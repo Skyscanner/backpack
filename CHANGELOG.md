@@ -2,6 +2,12 @@
 
 [Unreleased changes](./UNRELEASED.md).
 
+# 2019-03-11 Fix for style spreading in BpkThemingProvider
+
+**Fixed:**
+- bpk-theming: 1.2.1 => 1.2.2
+  - Fix bug introduced in previous release. Styles are now spread correctly.
+
 # 2019-03-11 BpkThemingProvider now accepts `style` prop
 
 **Fixed:**
