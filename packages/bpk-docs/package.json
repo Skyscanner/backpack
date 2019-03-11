@@ -1,6 +1,6 @@
 {
   "name": "bpk-docs",
-  "version": "0.0.356",
+  "version": "0.0.357",
   "main": "index.js",
   "description": "Backpack documentation site.",
   "repository": {
@@ -78,7 +78,7 @@
     "bpk-react-utils": "^2.7.3",
     "bpk-stylesheets": "^3.2.155",
     "bpk-svgs": "^6.4.1",
-    "bpk-theming": "^1.2.0",
+    "bpk-theming": "^1.2.1",
     "bpk-tokens": "^27.4.9",
     "date-fns": "^1.17.0",
     "es6-promise": "^4.2.4",
