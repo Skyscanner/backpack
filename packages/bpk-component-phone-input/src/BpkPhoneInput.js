@@ -22,6 +22,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { cssModules } from 'bpk-react-utils';
 import BpkInput, { INPUT_TYPES } from 'bpk-component-input';
+import BpkFieldset from 'bpk-component-fieldset';
 import BpkSelect from 'bpk-component-select';
 
 import STYLES from './BpkPhoneInput.scss';
@@ -33,12 +34,14 @@ export type Props = {
   dialingCodeProps: {
     id: string,
     name: string,
+    label: string,
     className?: string,
     wrapperClassName?: string,
   },
   dialingCodes: Array<{ code: string, description: string }>,
   id: string,
   name: string,
+  label: string,
   onChange: (SyntheticInputEvent<HTMLElement>) => mixed,
   onDialingCodeChange: (SyntheticInputEvent<HTMLElement>) => mixed,
   value: string,
@@ -60,6 +63,7 @@ const BpkPhoneInput = (props: Props) => {
     id,
     className,
     name,
+    label,
     disabled,
     onChange,
     onDialingCodeChange,
@@ -84,36 +88,39 @@ const BpkPhoneInput = (props: Props) => {
       {...wrapperProps}
       className={getClassName('bpk-phone-input', wrapperProps.className)}
     >
-      <BpkSelect
-        {...commonProps}
-        {...dialingCodeProps}
-        wrapperClassName={getClassName(
-          'bpk-phone-input__dialing-code-wrapper',
-          dialingCodeProps.wrapperClassName,
-        )}
-        className={getClassName(
-          'bpk-phone-input__dialing-code',
-          dialingCodeProps.className,
-        )}
-        value={dialingCode}
-        onChange={onDialingCodeChange}
+      <BpkFieldset
+        label={dialingCodeProps.label}
+        className={getClassName('bpk-phone-input__dialing-code-wrapper')}
       >
-        {dialingCodes.map(({ code, description, ...extraDialingProps }) => (
-          <option key={code} value={code} {...extraDialingProps}>
-            {description}
-          </option>
-        ))}
-      </BpkSelect>
-      <BpkInput
-        {...commonProps}
-        {...rest}
-        id={id}
-        name={name}
-        className={getClassName('bpk-phone-input__phone-number', className)}
-        value={value}
-        type={INPUT_TYPES.number}
-        onChange={onChange}
-      />
+        <BpkSelect
+          {...commonProps}
+          {...dialingCodeProps}
+          wrapperClassName={getClassName(dialingCodeProps.wrapperClassName)}
+          value={dialingCode}
+          onChange={onDialingCodeChange}
+        >
+          {dialingCodes.map(({ code, description, ...extraDialingProps }) => (
+            <option key={code} value={code} {...extraDialingProps}>
+              {description}
+            </option>
+          ))}
+        </BpkSelect>
+      </BpkFieldset>
+      <BpkFieldset
+        label={label}
+        className={getClassName('bpk-phone-input__phone-number')}
+      >
+        <BpkInput
+          {...commonProps}
+          {...rest}
+          id={id}
+          name={name}
+          value={value}
+          type={INPUT_TYPES.number}
+          onChange={onChange}
+          className={getClassName(className)}
+        />
+      </BpkFieldset>
     </span>
   );
 };
@@ -123,12 +130,14 @@ BpkPhoneInput.propTypes = {
   dialingCodeProps: PropTypes.shape({
     id: PropTypes.string,
     name: PropTypes.string,
+    label: PropTypes.string,
   }).isRequired,
   dialingCodes: PropTypes.arrayOf(
     PropTypes.shape({ code: PropTypes.string, description: PropTypes.string }),
   ).isRequired,
   id: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
+  label: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
   onDialingCodeChange: PropTypes.func.isRequired,
   value: PropTypes.string.isRequired,

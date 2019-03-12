@@ -84,7 +84,6 @@ class StoryContainer extends Component<
 
     return (
       <BpkFieldSet
-        label="Telephone"
         validationMessage={validationMessage}
         description={description}
         disabled={!!disabled}
@@ -93,6 +92,7 @@ class StoryContainer extends Component<
         <BpkPhoneInput
           id="phone-input-id"
           name="Telephone input"
+          label="Telephone number"
           placeholder="Telephone number"
           disabled={disabled}
           valid={value && validNumber ? validNumber === value : null}
@@ -108,6 +108,7 @@ class StoryContainer extends Component<
           dialingCodeProps={{
             id: 'dialing-code',
             name: 'Dialing code',
+            label: 'Dialing code',
             'aria-label': 'Dialing code',
             image: getFlag(dialingCode),
           }}

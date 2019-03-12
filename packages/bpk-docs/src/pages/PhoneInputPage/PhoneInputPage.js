@@ -71,6 +71,7 @@ class StoryContainer extends Component<Props, State> {
       <BpkPhoneInput
         id="phone-input-id"
         name="Telephone input"
+        label="Telephone number"
         placeholder="Telephone number"
         large={this.props.large}
         onChange={this.onChange}
@@ -84,6 +85,7 @@ class StoryContainer extends Component<Props, State> {
         dialingCodeProps={{
           id: 'dialing-code',
           name: 'Dialing code',
+          label: 'Dialing code',
           'aria-label': 'Dialing code',
           image: getFlag(this.state.dialingCode),
         }}
