@@ -88,7 +88,10 @@ const BpkPhoneInput = (props: Props) => {
       {...wrapperProps}
       className={getClassName('bpk-phone-input', wrapperProps.className)}
     >
-      <BpkFieldset label={dialingCodeProps.label}>
+      <BpkFieldset
+        label={dialingCodeProps.label}
+        className={getClassName('bpk-phone-input__dialing-code')}
+      >
         <BpkSelect
           {...commonProps}
           {...dialingCodeProps}

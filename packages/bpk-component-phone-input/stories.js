@@ -26,8 +26,10 @@ import BpkImage from 'bpk-component-image';
 import BpkPhoneInput from './index';
 
 const DIALING_CODE_TO_ID_MAP = {
+  '1': 'us',
   '44': 'uk',
   '55': 'br',
+  '998': 'uz',
 };
 
 const getFlag = dialingCode => {
@@ -112,8 +114,10 @@ class StoryContainer extends Component<
           value={value}
           dialingCode={dialingCode}
           dialingCodes={[
+            { code: '1', description: '+1' },
             { code: '44', description: '+44' },
             { code: '55', description: '+55' },
+            { code: '998', description: '+998' },
           ]}
           dialingCodeProps={{
             id: 'dialing-code',

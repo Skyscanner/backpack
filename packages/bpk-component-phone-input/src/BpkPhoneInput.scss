@@ -23,11 +23,15 @@
 
   &__dialing-code,
   &__dialing-code-wrapper {
-    width: auto;
+    width: 9rem;
+    white-space: nowrap;
+    overflow: hidden;
   }
 
   &__phone-number {
     flex-grow: 1;
+    white-space: nowrap;
+    overflow: hidden;
 
     @include bpk-margin-leading($bpk-spacing-sm);
   }

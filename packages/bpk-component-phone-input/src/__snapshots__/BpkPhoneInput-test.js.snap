@@ -5,7 +5,7 @@ exports[`BpkPhoneInput should render correctly 1`] = `
   className="bpk-phone-input"
 >
   <fieldset
-    className="bpk-fieldset"
+    className="bpk-fieldset bpk-phone-input__dialing-code"
   >
     <label
       className="bpk-label"
@@ -65,7 +65,7 @@ exports[`BpkPhoneInput should render correctly with a "disabled" attribute 1`] =
   className="bpk-phone-input"
 >
   <fieldset
-    className="bpk-fieldset"
+    className="bpk-fieldset bpk-phone-input__dialing-code"
   >
     <label
       className="bpk-label"
@@ -125,7 +125,7 @@ exports[`BpkPhoneInput should render correctly with a "large" attribute 1`] = `
   className="bpk-phone-input"
 >
   <fieldset
-    className="bpk-fieldset"
+    className="bpk-fieldset bpk-phone-input__dialing-code"
   >
     <label
       className="bpk-label"
@@ -185,7 +185,7 @@ exports[`BpkPhoneInput should render correctly with a "valid" attribute 1`] = `
   className="bpk-phone-input"
 >
   <fieldset
-    className="bpk-fieldset"
+    className="bpk-fieldset bpk-phone-input__dialing-code"
   >
     <label
       className="bpk-label"
@@ -246,7 +246,7 @@ exports[`BpkPhoneInput should render correctly with a "wrapperProps" attribute 1
   className="bpk-phone-input container"
 >
   <fieldset
-    className="bpk-fieldset"
+    className="bpk-fieldset bpk-phone-input__dialing-code"
   >
     <label
       className="bpk-label"
@@ -306,7 +306,7 @@ exports[`BpkPhoneInput should render correctly with a dialing code image attribu
   className="bpk-phone-input"
 >
   <fieldset
-    className="bpk-fieldset"
+    className="bpk-fieldset bpk-phone-input__dialing-code"
   >
     <label
       className="bpk-label"
