@@ -43,6 +43,7 @@ type Props = {
   description: ?string,
   disabled: boolean,
   required: ?boolean,
+  useLongLabels: boolean,
 };
 
 class StoryContainer extends Component<
@@ -56,6 +57,7 @@ class StoryContainer extends Component<
     description: null,
     disabled: false,
     required: false,
+    useLongLabels: false,
   };
 
   constructor(props: Props) {
@@ -79,8 +81,17 @@ class StoryContainer extends Component<
       description,
       disabled,
       required,
+      useLongLabels,
     } = this.props;
     const { value, dialingCode } = this.state;
+
+    let dialingCodeLabel = 'Dialing code';
+    let phoneNumberLabel = 'Telephone number';
+
+    if (useLongLabels) {
+      dialingCodeLabel = dialingCodeLabel.repeat(2);
+      phoneNumberLabel = phoneNumberLabel.repeat(2);
+    }
 
     return (
       <BpkFieldSet
@@ -92,7 +103,7 @@ class StoryContainer extends Component<
         <BpkPhoneInput
           id="phone-input-id"
           name="Telephone input"
-          label="Telephone number"
+          label={phoneNumberLabel}
           disabled={disabled}
           valid={value && validNumber ? validNumber === value : null}
           large={large}
@@ -107,7 +118,7 @@ class StoryContainer extends Component<
           dialingCodeProps={{
             id: 'dialing-code',
             name: 'Dialing code',
-            label: 'Dialing code',
+            label: `${dialingCodeLabel}`,
             'aria-label': 'Dialing code',
             image: getFlag(dialingCode),
           }}
@@ -128,4 +139,5 @@ storiesOf('bpk-component-phone-input', module)
     />
   ))
   .add('Disabled', () => <StoryContainer disabled />)
-  .add('Required', () => <StoryContainer required />);
+  .add('Required', () => <StoryContainer required />)
+  .add('Double length labels', () => <StoryContainer useLongLabels />);
