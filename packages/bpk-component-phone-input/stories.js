@@ -93,7 +93,6 @@ class StoryContainer extends Component<
           id="phone-input-id"
           name="Telephone input"
           label="Telephone number"
-          placeholder="Telephone number"
           disabled={disabled}
           valid={value && validNumber ? validNumber === value : null}
           large={large}

@@ -41,7 +41,6 @@ const defaultProps = {
   id: 'phone-input-id',
   name: 'Telephone input',
   label: 'Telephone number',
-  placeholder: 'Telephone number',
   value: '1234',
   dialingCode: '44',
   className: 'fancy-input',

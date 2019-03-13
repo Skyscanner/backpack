@@ -72,7 +72,6 @@ class StoryContainer extends Component<Props, State> {
         id="phone-input-id"
         name="Telephone input"
         label="Telephone number"
-        placeholder="Telephone number"
         large={this.props.large}
         onChange={this.onChange}
         onDialingCodeChange={this.onDialingCodeChange}

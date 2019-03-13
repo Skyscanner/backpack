@@ -47,7 +47,6 @@ export default class extends Component {
         id="phone-input-id"
         name="Telephone input"
         label="Telephone number"
-        placeholder="Telephone number"
         onChange={this.onChange}
         onDialingCodeChange={this.onDialingCodeChange}
         value={this.state.phoneNumber}
