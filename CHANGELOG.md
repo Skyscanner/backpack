@@ -6,7 +6,7 @@
 
 **Breaking:**
 
-- bpk-component-phone-input:
+- bpk-component-phone-input: 1.0.58 => 2.0.0
   - Add labels for dialing code and telephone number as they are preferred over placeholders per UX guidelines.
 
 # 2019-03-11 Fix for style spreading in BpkThemingProvider
