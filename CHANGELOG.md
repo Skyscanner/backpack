@@ -2,6 +2,13 @@
 
 [Unreleased changes](./UNRELEASED.md).
 
+# 2019-03-14 Replace phone input placeholder with labels
+
+**Breaking:**
+
+- bpk-component-phone-input:
+  - Add labels for dialing code and telephone number as they are preferred over placeholders per UX guidelines.
+
 # 2019-03-11 Fix for style spreading in BpkThemingProvider
 
 **Fixed:**
