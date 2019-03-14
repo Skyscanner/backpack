@@ -1,6 +1,6 @@
 {
   "name": "bpk-docs",
-  "version": "0.0.358",
+  "version": "0.0.359",
   "main": "index.js",
   "description": "Backpack documentation site.",
   "repository": {
@@ -55,7 +55,7 @@
     "bpk-component-nudger": "^1.0.116",
     "bpk-component-pagination": "^1.0.80",
     "bpk-component-panel": "^1.0.110",
-    "bpk-component-phone-input": "^1.0.58",
+    "bpk-component-phone-input": "^2.0.0",
     "bpk-component-popover": "^2.2.16",
     "bpk-component-progress": "^1.0.116",
     "bpk-component-radio": "^1.2.76",
