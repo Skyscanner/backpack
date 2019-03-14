@@ -4,59 +4,49 @@ exports[`BpkPhoneInput should render correctly 1`] = `
 <span
   className="bpk-phone-input"
 >
-  <fieldset
-    className="bpk-fieldset bpk-phone-input__dialing-code"
+  <label
+    className="bpk-label bpk-phone-input__dialing-code-label"
+    htmlFor="dialing-code"
   >
-    <label
-      className="bpk-label"
-      htmlFor="dialing-code"
-    >
-      Dialing code
-    </label>
-    <select
-      aria-invalid={false}
-      aria-required={false}
-      className="bpk-select dialing-code"
-      disabled={false}
-      id="dialing-code"
-      label="Dialing code"
-      name="Dialing code"
-      onChange={[Function]}
+    Dialing code
+  </label>
+  <select
+    aria-invalid={false}
+    className="bpk-select bpk-phone-input__dialing-code dialing-code"
+    disabled={false}
+    id="dialing-code"
+    label="Dialing code"
+    name="Dialing code"
+    onChange={[Function]}
+    value="44"
+  >
+    <option
       value="44"
     >
-      <option
-        value="44"
-      >
-        +44
-      </option>
-      <option
-        value="55"
-      >
-        +55
-      </option>
-    </select>
-  </fieldset>
-  <fieldset
-    className="bpk-fieldset bpk-phone-input__phone-number"
-  >
-    <label
-      className="bpk-label"
-      htmlFor="phone-input-id"
+      +44
+    </option>
+    <option
+      value="55"
     >
-      Telephone number
-    </label>
-    <input
-      aria-invalid={false}
-      aria-required={false}
-      className="bpk-input fancy-input"
-      disabled={false}
-      id="phone-input-id"
-      name="Telephone input"
-      onChange={[Function]}
-      type="number"
-      value="1234"
-    />
-  </fieldset>
+      +55
+    </option>
+  </select>
+  <label
+    className="bpk-label bpk-phone-input__phone-number-label"
+    htmlFor="phone-input-id"
+  >
+    Telephone number
+  </label>
+  <input
+    aria-invalid={false}
+    className="bpk-input bpk-phone-input__phone-number fancy-input"
+    disabled={false}
+    id="phone-input-id"
+    name="Telephone input"
+    onChange={[Function]}
+    type="number"
+    value="1234"
+  />
 </span>
 `;
 
@@ -64,119 +54,99 @@ exports[`BpkPhoneInput should render correctly with a "disabled" attribute 1`] =
 <span
   className="bpk-phone-input"
 >
-  <fieldset
-    className="bpk-fieldset bpk-phone-input__dialing-code"
+  <label
+    className="bpk-label bpk-label--disabled bpk-phone-input__dialing-code-label"
+    htmlFor="dialing-code"
   >
-    <label
-      className="bpk-label"
-      htmlFor="dialing-code"
-    >
-      Dialing code
-    </label>
-    <select
-      aria-invalid={false}
-      aria-required={false}
-      className="bpk-select dialing-code"
-      disabled={false}
-      id="dialing-code"
-      label="Dialing code"
-      name="Dialing code"
-      onChange={[Function]}
+    Dialing code
+  </label>
+  <select
+    aria-invalid={false}
+    className="bpk-select bpk-phone-input__dialing-code dialing-code"
+    disabled={true}
+    id="dialing-code"
+    label="Dialing code"
+    name="Dialing code"
+    onChange={[Function]}
+    value="44"
+  >
+    <option
       value="44"
     >
-      <option
-        value="44"
-      >
-        +44
-      </option>
-      <option
-        value="55"
-      >
-        +55
-      </option>
-    </select>
-  </fieldset>
-  <fieldset
-    className="bpk-fieldset bpk-phone-input__phone-number"
-  >
-    <label
-      className="bpk-label"
-      htmlFor="phone-input-id"
+      +44
+    </option>
+    <option
+      value="55"
     >
-      Telephone number
-    </label>
-    <input
-      aria-invalid={false}
-      aria-required={false}
-      className="bpk-input fancy-input"
-      disabled={false}
-      id="phone-input-id"
-      name="Telephone input"
-      onChange={[Function]}
-      type="number"
-      value="1234"
-    />
-  </fieldset>
+      +55
+    </option>
+  </select>
+  <label
+    className="bpk-label bpk-label--disabled bpk-phone-input__phone-number-label"
+    htmlFor="phone-input-id"
+  >
+    Telephone number
+  </label>
+  <input
+    aria-invalid={false}
+    className="bpk-input bpk-phone-input__phone-number fancy-input"
+    disabled={true}
+    id="phone-input-id"
+    name="Telephone input"
+    onChange={[Function]}
+    type="number"
+    value="1234"
+  />
 </span>
 `;
 
 exports[`BpkPhoneInput should render correctly with a "large" attribute 1`] = `
 <span
-  className="bpk-phone-input"
+  className="bpk-phone-input bpk-phone-input--large"
 >
-  <fieldset
-    className="bpk-fieldset bpk-phone-input__dialing-code"
+  <label
+    className="bpk-label bpk-phone-input__dialing-code-label"
+    htmlFor="dialing-code"
   >
-    <label
-      className="bpk-label"
-      htmlFor="dialing-code"
-    >
-      Dialing code
-    </label>
-    <select
-      aria-invalid={false}
-      aria-required={false}
-      className="bpk-select bpk-select--large dialing-code"
-      disabled={false}
-      id="dialing-code"
-      label="Dialing code"
-      name="Dialing code"
-      onChange={[Function]}
+    Dialing code
+  </label>
+  <select
+    aria-invalid={false}
+    className="bpk-select bpk-select--large bpk-phone-input__dialing-code dialing-code"
+    disabled={false}
+    id="dialing-code"
+    label="Dialing code"
+    name="Dialing code"
+    onChange={[Function]}
+    value="44"
+  >
+    <option
       value="44"
     >
-      <option
-        value="44"
-      >
-        +44
-      </option>
-      <option
-        value="55"
-      >
-        +55
-      </option>
-    </select>
-  </fieldset>
-  <fieldset
-    className="bpk-fieldset bpk-phone-input__phone-number"
-  >
-    <label
-      className="bpk-label"
-      htmlFor="phone-input-id"
+      +44
+    </option>
+    <option
+      value="55"
     >
-      Telephone number
-    </label>
-    <input
-      aria-invalid={false}
-      aria-required={false}
-      className="bpk-input bpk-input--large fancy-input"
-      disabled={false}
-      id="phone-input-id"
-      name="Telephone input"
-      onChange={[Function]}
-      type="number"
-      value="1234"
-    />
-  </fieldset>
+      +55
+    </option>
+  </select>
+  <label
+    className="bpk-label bpk-phone-input__phone-number-label"
+    htmlFor="phone-input-id"
+  >
+    Telephone number
+  </label>
+  <input
+    aria-invalid={false}
+    className="bpk-input bpk-input--large bpk-phone-input__phone-number fancy-input"
+    disabled={false}
+    id="phone-input-id"
+    name="Telephone input"
+    onChange={[Function]}
+    type="number"
+    value="1234"
+  />
 </span>
 `;
 
@@ -184,59 +154,49 @@ exports[`BpkPhoneInput should render correctly with a "valid" attribute 1`] = `
 <span
   className="bpk-phone-input"
 >
-  <fieldset
-    className="bpk-fieldset bpk-phone-input__dialing-code"
+  <label
+    className="bpk-label bpk-phone-input__dialing-code-label"
+    htmlFor="dialing-code"
   >
-    <label
-      className="bpk-label"
-      htmlFor="dialing-code"
-    >
-      Dialing code
-    </label>
-    <select
-      aria-invalid={false}
-      aria-required={false}
-      className="bpk-select dialing-code"
-      disabled={false}
-      id="dialing-code"
-      label="Dialing code"
-      name="Dialing code"
-      onChange={[Function]}
+    Dialing code
+  </label>
+  <select
+    aria-invalid={false}
+    className="bpk-select bpk-phone-input__dialing-code dialing-code"
+    disabled={false}
+    id="dialing-code"
+    label="Dialing code"
+    name="Dialing code"
+    onChange={[Function]}
+    value="44"
+  >
+    <option
       value="44"
     >
-      <option
-        value="44"
-      >
-        +44
-      </option>
-      <option
-        value="55"
-      >
-        +55
-      </option>
-    </select>
-  </fieldset>
-  <fieldset
-    className="bpk-fieldset bpk-phone-input__phone-number"
-  >
-    <label
-      className="bpk-label"
-      htmlFor="phone-input-id"
+      +44
+    </option>
+    <option
+      value="55"
     >
-      Telephone number
-    </label>
-    <input
-      aria-invalid={false}
-      aria-required={false}
-      className="bpk-input bpk-input--valid fancy-input"
-      disabled={false}
-      id="phone-input-id"
-      name="Telephone input"
-      onChange={[Function]}
-      type="number"
-      value="1234"
-    />
-  </fieldset>
+      +55
+    </option>
+  </select>
+  <label
+    className="bpk-label bpk-phone-input__phone-number-label"
+    htmlFor="phone-input-id"
+  >
+    Telephone number
+  </label>
+  <input
+    aria-invalid={false}
+    className="bpk-input bpk-input--valid bpk-phone-input__phone-number fancy-input"
+    disabled={false}
+    id="phone-input-id"
+    name="Telephone input"
+    onChange={[Function]}
+    type="number"
+    value="1234"
+  />
 </span>
 `;
 
@@ -245,19 +205,71 @@ exports[`BpkPhoneInput should render correctly with a "wrapperProps" attribute 1
   aria-label="container"
   className="bpk-phone-input container"
 >
-  <fieldset
-    className="bpk-fieldset bpk-phone-input__dialing-code"
+  <label
+    className="bpk-label bpk-phone-input__dialing-code-label"
+    htmlFor="dialing-code"
   >
-    <label
-      className="bpk-label"
-      htmlFor="dialing-code"
+    Dialing code
+  </label>
+  <select
+    aria-invalid={false}
+    className="bpk-select bpk-phone-input__dialing-code dialing-code"
+    disabled={false}
+    id="dialing-code"
+    label="Dialing code"
+    name="Dialing code"
+    onChange={[Function]}
+    value="44"
+  >
+    <option
+      value="44"
     >
-      Dialing code
-    </label>
+      +44
+    </option>
+    <option
+      value="55"
+    >
+      +55
+    </option>
+  </select>
+  <label
+    className="bpk-label bpk-phone-input__phone-number-label"
+    htmlFor="phone-input-id"
+  >
+    Telephone number
+  </label>
+  <input
+    aria-invalid={false}
+    className="bpk-input bpk-phone-input__phone-number fancy-input"
+    disabled={false}
+    id="phone-input-id"
+    name="Telephone input"
+    onChange={[Function]}
+    type="number"
+    value="1234"
+  />
+</span>
+`;
+
+exports[`BpkPhoneInput should render correctly with a dialing code image attribute 1`] = `
+<span
+  className="bpk-phone-input"
+>
+  <label
+    className="bpk-label bpk-phone-input__dialing-code-label"
+    htmlFor="dialing-code"
+  >
+    Dialing code
+  </label>
+  <div
+    className="bpk-select-wrapper dialing-wrapper"
+  >
+    <span
+      className="bpk-select-wrapper__image"
+    />
     <select
       aria-invalid={false}
-      aria-required={false}
-      className="bpk-select dialing-code"
+      className="bpk-select bpk-select--with-image bpk-phone-input__dialing-code dialing-code"
       disabled={false}
       id="dialing-code"
       label="Dialing code"
@@ -276,94 +288,22 @@ exports[`BpkPhoneInput should render correctly with a "wrapperProps" attribute 1
         +55
       </option>
     </select>
-  </fieldset>
-  <fieldset
-    className="bpk-fieldset bpk-phone-input__phone-number"
+  </div>
+  <label
+    className="bpk-label bpk-phone-input__phone-number-label"
+    htmlFor="phone-input-id"
   >
-    <label
-      className="bpk-label"
-      htmlFor="phone-input-id"
-    >
-      Telephone number
-    </label>
-    <input
-      aria-invalid={false}
-      aria-required={false}
-      className="bpk-input fancy-input"
-      disabled={false}
-      id="phone-input-id"
-      name="Telephone input"
-      onChange={[Function]}
-      type="number"
-      value="1234"
-    />
-  </fieldset>
-</span>
-`;
-
-exports[`BpkPhoneInput should render correctly with a dialing code image attribute 1`] = `
-<span
-  className="bpk-phone-input"
->
-  <fieldset
-    className="bpk-fieldset bpk-phone-input__dialing-code"
-  >
-    <label
-      className="bpk-label"
-      htmlFor="dialing-code"
-    >
-      Dialing code
-    </label>
-    <div
-      className="bpk-select-wrapper dialing-wrapper"
-    >
-      <span
-        className="bpk-select-wrapper__image"
-      />
-      <select
-        aria-invalid={false}
-        aria-required={false}
-        className="bpk-select bpk-select--with-image dialing-code"
-        disabled={false}
-        id="dialing-code"
-        label="Dialing code"
-        name="Dialing code"
-        onChange={[Function]}
-        value="44"
-      >
-        <option
-          value="44"
-        >
-          +44
-        </option>
-        <option
-          value="55"
-        >
-          +55
-        </option>
-      </select>
-    </div>
-  </fieldset>
-  <fieldset
-    className="bpk-fieldset bpk-phone-input__phone-number"
-  >
-    <label
-      className="bpk-label"
-      htmlFor="phone-input-id"
-    >
-      Telephone number
-    </label>
-    <input
-      aria-invalid={false}
-      aria-required={false}
-      className="bpk-input fancy-input"
-      disabled={false}
-      id="phone-input-id"
-      name="Telephone input"
-      onChange={[Function]}
-      type="number"
-      value="1234"
-    />
-  </fieldset>
+    Telephone number
+  </label>
+  <input
+    aria-invalid={false}
+    className="bpk-input bpk-phone-input__phone-number fancy-input"
+    disabled={false}
+    id="phone-input-id"
+    name="Telephone input"
+    onChange={[Function]}
+    type="number"
+    value="1234"
+  />
 </span>
 `;
