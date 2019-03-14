@@ -30,24 +30,23 @@ const getFlag = dialingCode => {
 export default class extends Component {
   constructor(props) {
     super(props);
-    this.state = { dialingCode: '44', phoneNumber: '' }
+    this.state = { dialingCode: '44', phoneNumber: '' };
   }
 
-  onChange = (evt) => {
+  onChange = evt => {
     this.setState({ phoneNumber: evt.target.value });
-  }
+  };
 
-  onDialingCodeChange = (evt) => {
+  onDialingCodeChange = evt => {
     this.setState({ dialingCode: evt.target.value });
-  }
-
+  };
 
   render() {
     return (
       <BpkPhoneInput
         id="phone-input-id"
         name="Telephone input"
-        placeholder="Telephone number"
+        label="Telephone number"
         onChange={this.onChange}
         onDialingCodeChange={this.onDialingCodeChange}
         value={this.state.phoneNumber}
@@ -59,36 +58,38 @@ export default class extends Component {
         dialingCodeProps={{
           id: 'dialing-code',
           name: 'Dialing code',
+          label: 'Dialing code',
           'aria-label': 'Dialing code',
-          image: getFlag(this.state.dialingCode)
+          image: getFlag(this.state.dialingCode),
         }}
       />
-    )
+    );
   }
 }
 ```
 
 ## Props
 
-| Property              | PropType                                              | Required   | Default Value    |
-| --------------------- | ----------------------------------------------------- | ---------- | ---------------- |
-| dialingCode           | string                                                | true       | -                |
-| dialingCodeProps      | shape({ id: string, name: string })                   | true       | -                |
-| dialingCodes          | arrayOf(shape({ code: string, description: string })) | true       | -                |
-| id                    | string                                                | true       | -                |
-| name                  | string                                                | true       | -                |
-| onChange              | func                                                  | true       | -                |
-| onDialingCodeChange   | func                                                  | true       | -                |
-| value                 | string                                                | true       | -                |
-| className             | string                                                | false      | null             |
-| disabled              | boolean                                               | false      | false            |
-| large                 | boolean                                               | false      | false            |
-| valid                 | boolean                                               | false      | null             |
-| wrapperProps          | object                                                | false      | {}               |
+| Property            | PropType                                              | Required | Default Value |
+| ------------------- | ----------------------------------------------------- | -------- | ------------- |
+| dialingCode         | string                                                | true     | -             |
+| dialingCodeProps    | shape({ id: string, name: string, label: string })    | true     | -             |
+| dialingCodes        | arrayOf(shape({ code: string, description: string })) | true     | -             |
+| id                  | string                                                | true     | -             |
+| name                | string                                                | true     | -             |
+| label               | string                                                | true     | -             |
+| onChange            | func                                                  | true     | -             |
+| onDialingCodeChange | func                                                  | true     | -             |
+| value               | string                                                | true     | -             |
+| className           | string                                                | false    | null          |
+| disabled            | boolean                                               | false    | false         |
+| large               | boolean                                               | false    | false         |
+| valid               | boolean                                               | false    | null          |
+| wrapperProps        | object                                                | false    | {}            |
 
 ### dialingCodeProps
 
-Note that `id` and `name` are required but more properties can be provided, e.g. `dialingCodeProps={{ id: 'id', name: 'name', className: 'some-class' }}`. All
+Note that `id`, `name` and `label` are required but more properties can be provided, e.g. `dialingCodeProps={{ id: 'id', name: 'name', label: 'label', className: 'some-class' }}`. All
 properties will be forwarded to the underlying `BpkSelect` component.
 
 ### dialingCodes

@@ -26,8 +26,10 @@ import BpkImage from 'bpk-component-image';
 import BpkPhoneInput from './index';
 
 const DIALING_CODE_TO_ID_MAP = {
+  '1': 'us',
   '44': 'uk',
   '55': 'br',
+  '998': 'uz',
 };
 
 const getFlag = dialingCode => {
@@ -43,6 +45,7 @@ type Props = {
   description: ?string,
   disabled: boolean,
   required: ?boolean,
+  useLongLabels: boolean,
 };
 
 class StoryContainer extends Component<
@@ -56,6 +59,7 @@ class StoryContainer extends Component<
     description: null,
     disabled: false,
     required: false,
+    useLongLabels: false,
   };
 
   constructor(props: Props) {
@@ -79,12 +83,20 @@ class StoryContainer extends Component<
       description,
       disabled,
       required,
+      useLongLabels,
     } = this.props;
     const { value, dialingCode } = this.state;
 
+    let dialingCodeLabel = 'Dialing code';
+    let phoneNumberLabel = 'Telephone number';
+
+    if (useLongLabels) {
+      dialingCodeLabel = dialingCodeLabel.repeat(2);
+      phoneNumberLabel = phoneNumberLabel.repeat(2);
+    }
+
     return (
       <BpkFieldSet
-        label="Telephone"
         validationMessage={validationMessage}
         description={description}
         disabled={!!disabled}
@@ -93,7 +105,7 @@ class StoryContainer extends Component<
         <BpkPhoneInput
           id="phone-input-id"
           name="Telephone input"
-          placeholder="Telephone number"
+          label={phoneNumberLabel}
           disabled={disabled}
           valid={value && validNumber ? validNumber === value : null}
           large={large}
@@ -102,12 +114,15 @@ class StoryContainer extends Component<
           value={value}
           dialingCode={dialingCode}
           dialingCodes={[
+            { code: '1', description: '+1' },
             { code: '44', description: '+44' },
             { code: '55', description: '+55' },
+            { code: '998', description: '+998' },
           ]}
           dialingCodeProps={{
             id: 'dialing-code',
             name: 'Dialing code',
+            label: `${dialingCodeLabel}`,
             'aria-label': 'Dialing code',
             image: getFlag(dialingCode),
           }}
@@ -128,4 +143,5 @@ storiesOf('bpk-component-phone-input', module)
     />
   ))
   .add('Disabled', () => <StoryContainer disabled />)
-  .add('Required', () => <StoryContainer required />);
+  .add('Required', () => <StoryContainer required />)
+  .add('Double length labels', () => <StoryContainer useLongLabels />);

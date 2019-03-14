@@ -27,6 +27,7 @@ import BpkPhoneInput from './BpkPhoneInput';
 const dialingCodeProps = {
   id: 'dialing-code',
   name: 'Dialing code',
+  label: 'Dialing code',
   className: 'dialing-code',
   wrapperClassName: 'dialing-wrapper',
 };
@@ -39,7 +40,7 @@ const dialingCodes = [
 const defaultProps = {
   id: 'phone-input-id',
   name: 'Telephone input',
-  placeholder: 'Telephone number',
+  label: 'Telephone number',
   value: '1234',
   dialingCode: '44',
   className: 'fancy-input',

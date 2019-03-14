@@ -15,20 +15,42 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 @import '~bpk-mixins/index';
 
 .bpk-phone-input {
-  display: flex;
+  display: grid;
+  grid-template-rows: auto auto;
+  grid-template-columns: max-content auto;
+  grid-template-areas:
+    'dialingCodeLabel numberLabel'
+    'dialingCode number';
+  grid-column-gap: $bpk-spacing-sm;
 
-  &__dialing-code,
-  &__dialing-code-wrapper {
-    width: auto;
+  @include bpk-breakpoint-mobile {
+    grid-template-columns: 9 * $bpk-spacing-sm auto;
   }
 
-  &__phone-number {
-    flex-grow: 1;
+  &--large {
+    @include bpk-breakpoint-mobile {
+      grid-template-columns: 10 * $bpk-spacing-sm auto;
+    }
+  }
 
-    @include bpk-margin-leading($bpk-spacing-sm);
+  &__dialing-code-label {
+    grid-area: dialingCodeLabel;
+    align-self: end;
+  }
+
+  &__dialing-code {
+    grid-area: dialingCode;
+  }
+
+  &__phone-number-label {
+    grid-area: numberLabel;
+    align-self: end;
+  }
+
+  &__phone-number-code {
+    grid-area: number;
   }
 }
