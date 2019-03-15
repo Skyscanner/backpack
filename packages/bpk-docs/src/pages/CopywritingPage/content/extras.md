@@ -32,6 +32,6 @@ We've talked a lot about being useful, and that means not leaving people with to
 * Are the popular perceptions of it true?
 * What does it look like? Lots of skyscrapers? Or more historic buildings? Industrial? Green? Etc
 * How big or small is it, and how easy or hard is it to get around?
-* What are some of the standout regions (for a country) or neighborhoods (for a city)?
+* What are some of the standout regions (for a country) or neighbourhoods (for a city)?
 * What are the major attractions?
 * What are some of your favourite things to do there?

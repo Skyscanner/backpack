@@ -43,4 +43,4 @@ const App = () => (
 
 #### popperModifiers
 
-Please refer to the [documentation](https://github.com/FezVrasta/popper.js/blob/v1.12.9/docs/_includes/popper-documentation.md#modifiers) for the underlying positioning library "popper.js". You can achieve various behaviours such as allowing the tooltip to overflow the viewport etc.
+Please refer to the [documentation](https://github.com/FezVrasta/popper.js/blob/v1.12.9/docs/_includes/popper-documentation.md#modifiers) for the underlying positioning library "Popper.js". You can achieve various behaviours such as allowing the tooltip to overflow the viewport etc.

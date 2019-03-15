@@ -47,9 +47,9 @@ export default () => (
 
 ### withGoogleMapsScript
 
-`withGoogleMapsScript` is a HOC that loads the Google Maps Javascript, then loads the map. This is useful for when you don't already have the Google Maps Javascript loaded.
+`withGoogleMapsScript` is a HOC that loads the Google Maps JavaScript, then loads the map. This is useful for when you don't already have the Google Maps JavaScript loaded.
 
-If you intend to include multiple maps on one page, it's better to load the Google Maps Javascript elsewhere and not use this HOC, as it downloads the script every time it's used.
+If you intend to include multiple maps on one page, it's better to load the Google Maps JavaScript elsewhere and not use this HOC, as it downloads the script every time it's used.
 
 ```js
 import React from 'react';

@@ -11,7 +11,7 @@ npm install bpk-react-utils --save-dev
 ## Portal.js
 
 Render's children into a new component tree and appends it to `document.body`. Useful for Modals, Popovers, Tooltips etc where
-it's necessary in overcoming z-index issues when absolutely positioning elemtents.
+it's necessary in overcoming z-index issues when absolutely positioning elements.
 
 ### Usage
 
@@ -73,9 +73,9 @@ class MyComponent extends Component {
 | target                | oneOf([function, node]) | false    | null          |
 | closeOnEscPressed     | bool                    | false    | true          |
 
-## cssModules.js
+## `cssModules.js`
 
-A helpful utility which permits backwards compatibility with hard coded classes and [css-modules](https://github.com/css-modules/css-modules).
+A helpful utility which permits backwards compatibility with hard coded classes and [CSS modules](https://github.com/css-modules/css-modules).
 
 ### Usage
 
@@ -96,7 +96,7 @@ const MyComponent = (props) => (
 );
 ```
 
-With css modules:
+With CSS modules:
 
 ```html
 <div class="_35WloynrPDta8fhSfoHEgE">
@@ -106,7 +106,7 @@ With css modules:
 </div>
 ```
 
-Without css modules:
+Without CSS modules:
 
 ```html
 <div class="MyComponent">
@@ -134,7 +134,7 @@ const MyComponent = (props) => (
 
 Will result in `MyComponent MyComponent--disabled` if `props.disabled` is true or `MyComponent` otherwise.
 
-## TransitionInitialMount.js
+## `TransitionInitialMount.js`
 
 A wrapper around `react-transition-group` which makes it easy to transition a
 components initial mount. All you need to provide is two class names and a timeout.

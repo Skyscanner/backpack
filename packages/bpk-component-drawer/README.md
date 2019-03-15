@@ -58,7 +58,7 @@ class App extends Component {
 }
 ```
 
-> **Note:** In order to "hide" your application from screenreaders whilst the drawer is open you need to let it know what
+> **Note:** In order to "hide" your application from screen readers whilst the drawer is open you need to let it know what
 > the root element for your application is by returning it's DOM node via the function passed to the
 > `getApplicationElement` prop (see the example above). The `pagewrap` element id is a convention we use internally at Skyscanner. In most cases it should "just work".
 

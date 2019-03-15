@@ -1,6 +1,6 @@
 # bpk-tokens
 
-> Design tokens for colors, spacing, font, etc.
+> Design tokens for colours, spacing, font, etc.
 
 ## Installation
 

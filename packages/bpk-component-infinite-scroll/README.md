@@ -71,7 +71,7 @@ export default () => (
 
 ## DataSource
 
-`DataSource` is a class used by the InfiniteScroll component to fetch items
+`DataSource` is a class used by the BpkInfiniteScroll component to fetch items
 and listen for changes in the data and react to it by reloading the current items
 in the list.
 

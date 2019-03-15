@@ -49,7 +49,7 @@ export default () => (
 | className                               | string                                | false    | null             |
 | leadingScrollIndicatorClassName         | string                                | false    | null             |
 | trailingScrollIndicatorClassName        | string                                | false    | null             |
-| [outlierPercentage](#outlierpercentage) | number                                | false    | null             |
+| [`outlierPercentage`](#outlierpercentage) | number                                | false    | null             |
 | showGridlines                           | bool                                  | false    | false            |
 | xAxisMargin                             | number                                | false    | 3                |
 | xAxisTickValue                          | func                                  | false    | identity         |
@@ -58,11 +58,11 @@ export default () => (
 | yAxisMargin                             | number                                | false    | 2.625            |
 | yAxisTickValue                          | func                                  | false    | identity         |
 | yAxisNumTicks                           | number                                | false    | null             |
-| [onBarClick](#onbarclick)               | func                                  | false    | null             |
-| [onBarHover](#onbarhover)               | func                                  | false    | null             |
-| [onBarFocus](#onbarfocus)               | func                                  | false    | null             |
-| [getBarLabel](#getbarlabel)             | func                                  | false    | See prop details |
-| [getBarSelection](#getbarselection)     | func                                  | false    | See prop details |
+| [`onBarClick`](#onbarclick)               | func                                  | false    | null             |
+| [`onBarHover`](#onbarhover)               | func                                  | false    | null             |
+| [`onBarFocus`](#onbarfocus)               | func                                  | false    | null             |
+| [`getBarLabel`](#getbarlabel)             | func                                  | false    | See prop details |
+| [`getBarSelection`](#getbarselection)     | func                                  | false    | See prop details |
 | BarComponent                            | func                                  | false    | BpkBarchartBar   |
 | disableDataTable                        | bool                                  | false    | false            |
 
@@ -122,11 +122,11 @@ The key in each data point that holds the value for the x axis of that data poin
 
 The key in each data point that holds the value for the y axis of that data point.
 
-#### outlierPercentage
+#### `outlierPercentage`
 
 Values that are `outlierPercentage` percent above the mean of the whole dataset are considered outliers and rendered cut off instead of at their full height.
 
-#### onBarClick
+#### `onBarClick`
 
 ```javascript
 const onBarClick = (event, {
@@ -136,7 +136,7 @@ const onBarClick = (event, {
 }
 ```
 
-#### onBarHover
+#### `onBarHover`
 
 ```javascript
 const onBarHover = (event, {
@@ -146,7 +146,7 @@ const onBarHover = (event, {
 }
 ```
 
-#### onBarFocus
+#### `onBarFocus`
 
 ```javascript
 const onBarFocus = (event, {
@@ -156,7 +156,7 @@ const onBarFocus = (event, {
 }
 ```
 
-#### getBarLabel
+#### `getBarLabel`
 
 By default the following function is used:
 
@@ -166,7 +166,7 @@ By default the following function is used:
 }
 ```
 
-#### getBarSelection
+#### `getBarSelection`
 
 Must be a function which returns true based on the `point` argument:
 

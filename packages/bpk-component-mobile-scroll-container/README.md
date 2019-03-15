@@ -40,7 +40,7 @@ export default () => (
 );
 ```
 
-*MyComponent.scss:*
+*`MyComponent.scss`:*
 ```scss
 @import '~bpk-mixins/index';
 

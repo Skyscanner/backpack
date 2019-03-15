@@ -73,7 +73,7 @@ For more information on some these props, check the BpkCalendar documentation.
 > **Note:** Because this component uses a modal on mobile viewports, you need to let it know what
 > the root element of your application is by returning it's DOM node via the function passed to the
 > `getApplicationElement` prop (see the example above) - this is to "hide" your application from
-> screenreaders whilst the datepicker is open. The `pagewrap` element id is a convention we use internally at Skyscanner. In most cases it should "just work".
+> screen readers whilst the datepicker is open. The `pagewrap` element id is a convention we use internally at Skyscanner. In most cases it should "just work".
 
 | Property              | PropType        | Required | Default Value         |
 | --------------------- | --------------- | -------- | --------------------- |
@@ -92,7 +92,7 @@ For more information on some these props, check the BpkCalendar documentation.
 | inputProps            | object          | false    | {}                    |
 | markOutsideDays       | bool            | false    | true (\*)             |
 | markToday             | bool            | false    | true (\*)             |
-| maxDate               | Date            | false    | new Date() + 1yr (\*) |
+| maxDate               | Date            | false    | new Date() + 1 year (\*) |
 | minDate               | Date            | false    | new Date() (\*)       |
 | onDateSelect          | func            | false    | null                  |
 | showWeekendSeparator  | bool            | false    | true (\*)             |

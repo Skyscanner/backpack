@@ -34,14 +34,14 @@ const BoxWithScrim = withScrim(Box);
 
 ### Props
 
-| Property              | PropType | Required | Default Value                                                                  |
-| --------------------- | -------- | -------- | ------------------------------------------------------------------------------ |
-| onClose               | func     | true     | See prop details                                                               |
-| getApplicationElement | func     | true     | -                                                                              |
-| isIphone              | bool     | false    | /iPhone/i.test(typeof window !== 'undefined' ? window.navigator.platform : '') |
-| containerClassName    | string   | false    | ''                                                                             |
-| closeOnScrimClick     | bool     | false    | true                                                                           |
-| dark                  | bool     | false    | false                                                                          |
+| Property              | PropType | Required | Default Value                                                                    |
+| --------------------- | -------- | -------- | -------------------------------------------------------------------------------- |
+| onClose               | func     | true     | See prop details                                                                 |
+| getApplicationElement | func     | true     | -                                                                                |
+| isIphone              | bool     | false    | `/iPhone/i.test(typeof window !== 'undefined' ? window.navigator.platform : '')` |
+| containerClassName    | string   | false    | ''                                                                               |
+| closeOnScrimClick     | bool     | false    | true                                                                             |
+| dark                  | bool     | false    | false                                                                            |
 
 ### Prop Details
 
