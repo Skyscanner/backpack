@@ -21,6 +21,7 @@ import Helmet from 'react-helmet';
 import isString from 'lodash/isString';
 import PropTypes from 'prop-types';
 import React, { Children } from 'react';
+import ReactDOMServer from 'react-dom/server';
 import BpkContentContainer from 'bpk-component-content-container';
 import { cssModules } from 'bpk-react-utils';
 
@@ -46,13 +47,13 @@ const renderer = new marked.Renderer();
 renderer.table = function(header, body) {
   if (body) body = '<tbody>' + body + '</tbody>';
 
-  return (
-    '<div id="react-mount" style="overflow: scroll;width: 100%;"><table style="width: auto;">\n' +
-    '<thead>\n' +
-    header +
-    '</thead>\n' +
-    body +
-    '</table></div>\n'
+  return ReactDOMServer.renderToString(
+    <div style={{ overflow: 'scroll', width: '100%' }}>
+      <table style={{ width: 'auto' }}>
+        <thead>{header}</thead>
+        {body}
+      </table>
+    </div>,
   );
 };
 
