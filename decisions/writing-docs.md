@@ -18,7 +18,7 @@ _e.g. 'Bar chart’ over ‘Bar Charts’._
 * Keep descriptions to no more than 100 words.
 * Do not talk about the configurations.
 * Keep the descriptions platform agnostic unless the component is strictly for
-one platform and will never apply to others eg. Touchable Native Feedback is
+one platform and will never apply to others e.g. Touchable Native Feedback is
 strictly for Android.
 * Should you need to reference the component name mid sentence, use lower case.
 
