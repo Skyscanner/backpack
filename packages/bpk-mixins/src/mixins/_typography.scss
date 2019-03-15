@@ -591,7 +591,6 @@
 
 @mixin bpk-table__cell {
   padding: $bpk-spacing-sm;
-  overflow: auto;
 }
 
 /// Table head cell. Modifies the bpk-table__cell mixin.

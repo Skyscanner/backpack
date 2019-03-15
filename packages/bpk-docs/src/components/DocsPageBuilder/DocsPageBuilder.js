@@ -43,6 +43,14 @@ const getClassName = cssModules(STYLES);
 
 const renderer = new marked.Renderer();
 
+renderer.table = function(header, body) {
+  if (body) body = '<tbody>' + body + '</tbody>';
+
+  return (
+    '<table>\n' + '<thead>\n' + header + '</thead>\n' + body + '</table>\n'
+  );
+};
+
 const toNodes = children => {
   if (!children) {
     return null;
