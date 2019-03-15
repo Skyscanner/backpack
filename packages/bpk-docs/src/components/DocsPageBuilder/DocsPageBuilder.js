@@ -47,7 +47,12 @@ renderer.table = function(header, body) {
   if (body) body = '<tbody>' + body + '</tbody>';
 
   return (
-    '<table>\n' + '<thead>\n' + header + '</thead>\n' + body + '</table>\n'
+    '<div id="react-mount" style="overflow: scroll;width: 100%;"><table style="width: auto;">\n' +
+    '<thead>\n' +
+    header +
+    '</thead>\n' +
+    body +
+    '</table></div>\n'
   );
 };
 
