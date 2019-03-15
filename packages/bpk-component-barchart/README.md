@@ -49,7 +49,7 @@ export default () => (
 | className                               | string                                | false    | null             |
 | leadingScrollIndicatorClassName         | string                                | false    | null             |
 | trailingScrollIndicatorClassName        | string                                | false    | null             |
-| [`outlierPercentage`](#outlierpercentage) | number                                | false    | null             |
+| [outlierPercentage](#outlierpercentage) | number                                | false    | null             |
 | showGridlines                           | bool                                  | false    | false            |
 | xAxisMargin                             | number                                | false    | 3                |
 | xAxisTickValue                          | func                                  | false    | identity         |
@@ -58,11 +58,11 @@ export default () => (
 | yAxisMargin                             | number                                | false    | 2.625            |
 | yAxisTickValue                          | func                                  | false    | identity         |
 | yAxisNumTicks                           | number                                | false    | null             |
-| [`onBarClick`](#onbarclick)               | func                                  | false    | null             |
-| [`onBarHover`](#onbarhover)               | func                                  | false    | null             |
-| [`onBarFocus`](#onbarfocus)               | func                                  | false    | null             |
-| [`getBarLabel`](#getbarlabel)             | func                                  | false    | See prop details |
-| [`getBarSelection`](#getbarselection)     | func                                  | false    | See prop details |
+| [onBarClick](#onbarclick)               | func                                  | false    | null             |
+| [onBarHover](#onbarhover)               | func                                  | false    | null             |
+| [onBarFocus](#onbarfocus)               | func                                  | false    | null             |
+| [getBarLabel](#getbarlabel)             | func                                  | false    | See prop details |
+| [getBarSelection](#getbarselection)     | func                                  | false    | See prop details |
 | BarComponent                            | func                                  | false    | BpkBarchartBar   |
 | disableDataTable                        | bool                                  | false    | false            |
 

@@ -703,3 +703,9 @@ BADGE_TYPES.light
 BADGE_TYPES.inverse
 BADGE_TYPES.outline
 BarComponent
+outlierPercentage
+onBarClick
+onBarHover
+onBarFocus
+getBarLabel
+getBarSelection
