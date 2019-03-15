@@ -39,23 +39,9 @@ import ComponentVideos from './ComponentVideos';
 import ComponentScreenshots from './ComponentScreenshots';
 import STYLES from './DocsPageBuilder.scss';
 import PlatformSwitchingContent from './PlatformSwitchingContent';
+import renderer from './BpkMarkdown';
 
 const getClassName = cssModules(STYLES);
-
-const renderer = new marked.Renderer();
-
-renderer.table = function(header, body) {
-  if (body) body = '<tbody>' + body + '</tbody>';
-
-  return ReactDOMServer.renderToString(
-    <div style={{ overflow: 'scroll', width: '100%' }}>
-      <table style={{ width: 'auto' }}>
-        <thead>{header}</thead>
-        {body}
-      </table>
-    </div>,
-  );
-};
 
 const toNodes = children => {
   if (!children) {
@@ -112,6 +98,7 @@ const ComponentExample = (component, registerPlatformSwitchingContent) => {
           {component.title} readme
         </Heading>,
         <BpkContentContainer
+          id="md-container"
           dangerouslySetInnerHTML={{
             __html: markdownToHTML(component.readme, `${component.id}-`),
           }}
