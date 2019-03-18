@@ -44,6 +44,7 @@ type Props = {
   arrowClassName: ?string,
   large: ?boolean,
   onClick: ?(event: SyntheticEvent<>) => mixed,
+  buttonProps: ?{ [string]: any },
 };
 
 const BpkMapMarker = (props: Props) => {
@@ -55,6 +56,7 @@ const BpkMapMarker = (props: Props) => {
     large,
     onClick,
     type,
+    buttonProps,
     ...rest
   } = props;
 
@@ -74,6 +76,7 @@ const BpkMapMarker = (props: Props) => {
         type="button"
         className={getClassName('bpk-map-marker__wrapper')}
         onClick={onClick}
+        {...buttonProps}
       >
         <div className={classNames}>{icon}</div>
         <div className={arrowClassNames}>
@@ -92,6 +95,7 @@ BpkMapMarker.propTypes = {
   large: PropTypes.bool,
   onClick: PropTypes.func,
   type: PropTypes.oneOf(Object.keys(MARKER_TYPES)),
+  buttonProps: PropTypes.object, // eslint-disable-line react/forbid-prop-types
 };
 
 BpkMapMarker.defaultProps = {
@@ -100,6 +104,7 @@ BpkMapMarker.defaultProps = {
   large: false,
   onClick: null,
   type: MARKER_TYPES.primary,
+  buttonProps: null,
 };
 
 export default BpkMapMarker;

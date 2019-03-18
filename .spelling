@@ -431,6 +431,7 @@ keydown
 keyup
 iconDisabled
 rel
+buttonProps
 
 autoScrollToSelected
 leadingScrollIndicatorClassName

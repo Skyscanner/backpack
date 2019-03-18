@@ -64,4 +64,15 @@ describe('BpkMapMarker', () => {
     );
     expect(toJson(tree)).toMatchSnapshot();
   });
+
+  it('should render correctly with a "buttonProps" attribute', () => {
+    const tree = shallow(
+      <BpkMapMarker
+        position={position}
+        icon={icon}
+        buttonProps={{ testId: 'arbitrary value' }}
+      />,
+    );
+    expect(toJson(tree)).toMatchSnapshot();
+  });
 });

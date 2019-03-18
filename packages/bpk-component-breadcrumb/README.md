@@ -46,4 +46,4 @@ export default class App extends Component {
 | children           | node                       | true     | -             |
 | href               | string                     | false    | null          |
 | active             | bool                       | false    | false         |
-| linkProps          | object                     | false    | {}            |
+| linkProps          | object                     | false    | null          |

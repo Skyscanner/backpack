@@ -83,7 +83,7 @@ BpkBreadcrumbItem.defaultProps = {
   active: false,
   href: null,
   className: null,
-  linkProps: {},
+  linkProps: null,
 };
 
 export default BpkBreadcrumbItem;
