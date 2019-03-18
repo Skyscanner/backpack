@@ -69,7 +69,7 @@ export default () => (
 ```
 
 ### withLoadingBehavior
-`withLoadingBehavior` is a HOC which provides `loading` state for `BpkImage`. This allows the component to have different behavior before and after loading completes.
+`withLoadingBehavior` is a HOC which provides `loading` state for `BpkImage`. This allows the component to have different behaviour before and after loading completes.
 When the `loading` prop is set true, a spinner will be displayed. When this changes to false, the spinner will fade away and the loaded image and content will fade into view.
 
 ```js

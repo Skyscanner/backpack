@@ -122,11 +122,11 @@ The key in each data point that holds the value for the x axis of that data poin
 
 The key in each data point that holds the value for the y axis of that data point.
 
-#### outlierPercentage
+#### `outlierPercentage`
 
 Values that are `outlierPercentage` percent above the mean of the whole dataset are considered outliers and rendered cut off instead of at their full height.
 
-#### onBarClick
+#### `onBarClick`
 
 ```javascript
 const onBarClick = (event, {
@@ -136,7 +136,7 @@ const onBarClick = (event, {
 }
 ```
 
-#### onBarHover
+#### `onBarHover`
 
 ```javascript
 const onBarHover = (event, {
@@ -146,7 +146,7 @@ const onBarHover = (event, {
 }
 ```
 
-#### onBarFocus
+#### `onBarFocus`
 
 ```javascript
 const onBarFocus = (event, {
@@ -156,7 +156,7 @@ const onBarFocus = (event, {
 }
 ```
 
-#### getBarLabel
+#### `getBarLabel`
 
 By default the following function is used:
 
@@ -166,7 +166,7 @@ By default the following function is used:
 }
 ```
 
-#### getBarSelection
+#### `getBarSelection`
 
 Must be a function which returns true based on the `point` argument:
 

@@ -10,7 +10,7 @@ Backpack starts with design, and all changes or additions should be previously a
 
 ## Quality
 
-Backpack is inteded to reduce work when implementing Skyscanner UI and should be of high quality. While it's expected that implementing UI as part of Backpack will take more time and effort than the equivalent work outside of Backpack, the results empower everyone to go faster.
+Backpack is intended to reduce work when implementing Skyscanner UI and should be of high quality. While it's expected that implementing UI as part of Backpack will take more time and effort than the equivalent work outside of Backpack, the results empower everyone to go faster.
 
 All changes to Backpack should
 

@@ -25,7 +25,7 @@ export default () => (
 );
 ```
 
-*icons.scss:*
+*`icons.scss`:*
 ```scss
 @import '~bpk-mixins';
 

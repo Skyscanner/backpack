@@ -7,15 +7,15 @@
 **Breaking:**
 
 - bpk-component-phone-input: 1.0.58 => 2.0.0
-  - Add labels for dialing code and telephone number as they are preferred over placeholders per UX guidelines.
+  - Add labels for dialling code and telephone number as they are preferred over placeholders per UX guidelines.
 
-# 2019-03-11 Fix for style spreading in BpkThemingProvider
+# 2019-03-11 Fix for style spreading in BpkThemeProvider
 
 **Fixed:**
 - bpk-theming: 1.2.1 => 1.2.2
   - Fix bug introduced in previous release. Styles are now spread correctly.
 
-# 2019-03-11 BpkThemingProvider now accepts `style` prop
+# 2019-03-11 BpkThemeProvider now accepts `style` prop
 
 **Fixed:**
 - bpk-theming: 1.2.0 => 1.2.1
@@ -30,11 +30,11 @@
     </BpkThemeProvider>,
     ```
 
-# 2019-03-08 New prop for BpkThemingProvider
+# 2019-03-08 New prop for BpkThemeProvider
 
 **Added:**
 - bpk-theming: 1.1.28 => 1.2.0
-  - Added `component` prop to allow defining the element used to wrap all childrens.
+  - Added `component` prop to allow defining the element used to wrap all children.
 
 # 2019-02-22 New `eco-leaf` icon
 
@@ -42,7 +42,7 @@
 - bpk-component-icon: 3.26.3 => 3.27.0
 - bpk-mixins: 17.15.0 => 17.16.0
 - bpk-svgs: 6.3.2 => 6.4.0
-  - New 'eco-leaf' icon added.
+  - New '`eco-leaf`' icon added.
 
 # 2019-02-21 Add mixin for primary color use
 
@@ -235,7 +235,7 @@
 
 **Added:**
  - react-native-bpk-component-card:
-   - Added `cornerStyle` prop which can be `sm` (4pt, default) or `lg` (24pt).
+   - Added `cornerStyle` prop which can be `sm` (`4pt`, default) or `lg` (`24pt`).
 
  - react-native-bpk-component-touchable-overlay:
    - Added support for 'lg' border radius.
@@ -270,7 +270,7 @@
 **Changed**
 
 - bpk-component-badge: 1.1.43 => 1.1.44
-  - Badges containing icons are now slightly taller (20px instead of 18px) and the icon inside will be resized and positioned to fit better. See https://backpack.github.io/components/badge?platform=web#with-icons
+  - Badges containing icons are now slightly taller (`20px` instead of `18px`) and the icon inside will be resized and positioned to fit better. See https://backpack.github.io/components/badge?platform=web#with-icons
 
 
 # 2018-11-16 - Change elevation tokens
@@ -386,27 +386,27 @@
 **Fixed:**
 
 - react-native-bpk-component-button: 7.1.22 => 7.1.23
-  - Fixed ripple effect for Android and react native 0.57.x
+  - Fixed ripple effect for Android and React Native `0.57.x`
 
 **Added:**
 
 - react-native-bpk-component-text: 2.1.55 => 2.2.0
   - Added `weight` prop to control font weight. `emphasize` is now deprecated and will be removed in a future version. Use `weight="emphasized"` to emphasise text from now on.
 
-# 2018-10-24 - Icons renamed and new prop for InfiniteScroll
+# 2018-10-24 - Icons renamed and new prop for BpkInfiniteScroll
 
 **Breaking:**
 
 - bpk-svgs: 5.19.4 => 6.0.0
   - Icons renamed:
-  - bws--call-back => call-back
-  - bws--end-call => end-call
-  - bws--keypad => keypad
-  - bws--mute => mute
-  - bws--phone-call => phone-call
-  - bws--send-message => send-message
-  - bws--un-mute => unmute
-  - send-message icon replaced with new version
+  - `bws--call-back` => `call-back`
+  - `bws--end-call` => `end-call`
+  - `bws--keypad` => `keypad`
+  - `bws--mute` => `mute`
+  - `bws--phone-call` => `phone-call`
+  - `bws--send-message` => `send-message`
+  - `bws--un-mute` => `unmute`
+  - `send-message` icon replaced with new version
 
 **Added:**
 
@@ -425,13 +425,13 @@
 - react-native-bpk-component-icon: 1.10.8 => 1.10.9
 - react-native-bpk-component-navigation-bar: 2.0.41 => 2.0.42
   - New icons added:
-  - bws--call-back
-  - bws--end-call
-  - bws--keypad
-  - bws--mute
-  - bws--phone-call
-  - bws--send-message
-  - bws--un-mute
+  - `bws--call-back`
+  - `bws--end-call`
+  - `bws--keypad`
+  - `bws--mute`
+  - `bws--phone-call`
+  - `bws--send-message`
+  - `bws--un-mute`
 
 # 2018-10-12 - Fix Infinite Scroll problem on IE11
 
@@ -449,9 +449,9 @@
 
 **Fixed:**
  - bpk-component-progress 1.0.90 => 1.0.91:
-   - Changed non-stepped progress bar to have rounded corners to match RN bpk progress bar
+   - Changed non-stepped progress bar to have rounded corners to match RN Backpack progress bar
 
-# 2018-10-05 - Fix more React Bative dynamic text issues
+# 2018-10-05 - Fix more React Native dynamic text issues
 
 **Added:**
 
@@ -518,7 +518,7 @@
  - bpk-component-scrollable-calendar: 0.0.14 => 0.1.0
    - Introduced React Virtualized to improve performance.
  - bpk-tokens: 27.0.0 => 27.1.0
-   - Added spacingNone (0px) to the available spacings
+   - Added `spacingNone` (`0px`) to the available spacings
  - react-native-bpk-component-image: 1.0.2 => 1.1.0
    - Ability to add a custom image component e.g. `imageComponent={CustomImage}`.
 
@@ -528,11 +528,11 @@
 - bpk-component-icon: 3.23.3 => 3.23.4
   - Republished as previous publish partially failed
 
-# 2018-09-13 - Move svgs to bpk-svgs dist
+# 2018-09-13 - Move SVGs to bpk-svgs dist
 
 **Added:**
 - bpk-svgs: 5.18.11 => 5.19.0
-  - The source svgs are now available in `dist` under `dists/svgs`.
+  - The source SVGs are now available in `dist` under `dists/svgs`.
 
 # 2018-09-06 - Fixed RN icon component for iOS
 
@@ -569,7 +569,7 @@
 **Breaking:**
 
 - bpk-component-router-link: 1.0.77 => 2.0.0
-  - upgraded react router from 2.x to 4.x
+  - upgraded react router from `2.x` to `4.x`
 
 **Fixed:**
 
@@ -582,7 +582,7 @@
 - bpk-stylesheets: 3.2.122 => 3.2.123
   - Reverted previous breaking change to base stylesheet.
 
-# 2018-08-22 - Fixed native phone imput prop types
+# 2018-08-22 - Fixed native phone input prop types
 
 **Fixed:**
 - react-native-bpk-component-phone-input: 1.0.34 => 1.0.35
@@ -629,7 +629,7 @@
 
 **Fixed:**
  - bpk-component-datepicker: 8.0.43 => 8.1.0
-  - Fixed issue with DST transition during midnight in Safari that would cause some days in the BRT timezone not to render.
+  - Fixed issue with DST transition during midnight in Safari that would cause some days in the BRT time zone not to render.
 
 # 2018-07-24 - Added icon account--add
 
@@ -693,7 +693,7 @@
 # 2018-07-19 - Update react-native-dash dependency
 
 - react-native-bpk-component-card: 1.2.31 => 1.2.32
-  - Update `react-native-dash` depedency to latest(0.0.9).
+  - Update `react-native-dash` dependency to latest(0.0.9).
 
 # 2018-07-18 - New native button abilities and a bug fix
 
@@ -751,7 +751,7 @@
 **Fixed:**
 
 - react-native-bpk-component-navigation-bar: 2.0.15 => 2.0.16
-  - Update this.theme on componentDidUpdate for RN navigation bar
+  - Update `this.theme` on `componentDidUpdate` for RN navigation bar
 
 # 2018-07-02 - New native chip component and web map enhancement
 
@@ -777,7 +777,7 @@
 **Fixed:**
 
 - bpk-scrim-utils: 3.2.1 => 3.2.2
-  - Fixed incorrect propType for `dark` prop.
+  - Fixed incorrect prop type for `dark` prop.
 
 - bpk-component-calendar: 4.2.35 => 4.2.36
   - Fixed calendar to work with different font sizes.
@@ -795,7 +795,7 @@
 **Fixed:**
 
 - react-native-bpk-component-badge: 1.0.11 => 1.0.12
-  - Adjusted height to 20pt/dp for Android and iOS.
+  - Adjusted height to `20pt/dp` for Android and iOS.
 
 # 2018-06-22 - Update dependency and title for navigation bar
 
@@ -824,17 +824,17 @@
 **Added:**
 
 - react-native-bpk-styles: 1.0.9 => 1.1.0
-  - Added defintitions for the Skyscanner primary gradient. `react-native-bpk-styles` now has a peer depedency on `react-native-linear-gradient`.
+  - Added definitions for the Skyscanner primary gradient. `react-native-bpk-styles` now has a peer dependency on `react-native-linear-gradient`.
 
 **Fixed:**
 
 - bpk-component-navigation-bar: 1.2.3 => 1.2.4
   - `title` now accepts strings, in addition to elements
 
-# 2018-06-19 - Native text font-weight fix for iOS 11 + RN 0.55.X
+# 2018-06-19 - Native text font-weight fix for iOS 11 + RN `0.55.X`
 
 - react-native-bpk-component-text: 2.1.38 => 2.1.39
-  - An iOS 11 + React Native 0.55.X specific fix to render font-weight correctly. Affects text styles `xs`, `sm`, `base`, `lg`, `xl` when they are `emphasize`'d and `xxl` regardless of emphasis.
+  - An iOS 11 + React Native `0.55.X` specific fix to render font-weight correctly. Affects text styles `xs`, `sm`, `base`, `lg`, `xl` when they are `emphasize`'d and `xxl` regardless of emphasis.
   - Added flow types
 
 # 2018-06-19 - Introduce native carousel component.
@@ -848,7 +848,7 @@
 - react-native-bpk-component-carousel-indicator: 1.0.0
   - Introducing the React Native carousel indicator component.
 
-# 2018-06-14 - Introduce breadcrumb component and infinite scroll, plus fixing invalid text combination for xxl on iOS.
+# 2018-06-14 - Introduce breadcrumb component and infinite scroll, plus fixing invalid text combination for `xxl` on iOS.
 
 **Added:**
 
@@ -862,7 +862,7 @@
 **Fixed:**
 
 - react-native-bpk-component-text: 2.1.37 => 2.1.38
-  - In addition to issuing a prop warning when using emphasize in combination with xxl on iOS now nothing actually happens.
+  - In addition to issuing a prop warning when using emphasize in combination with `xxl` on iOS now nothing actually happens.
 
 # 2018-06-08 - Introduce native map component, plus fixed display issues with native select and phone input.
 
@@ -875,7 +875,7 @@
 
 - react-native-bpk-component-phone-input: 1.0.17 => 1.0.18
 
-  - Fixed dialing code select display issue.
+  - Fixed dialling code select display issue.
 
 - react-native-bpk-component-select: 1.0.2 => 1.0.3
   - Fixed display issue when squashed in a flex container.
@@ -895,7 +895,7 @@
 
 - bpk-component-breakpoint: 1.0.63 => 1.1.0
 
-  - Change `children` proptype to `oneOfType(node, func)` (added `node`).
+  - Change `children` prop type to `oneOfType(node, func)` (added `node`).
 
 - bpk-component-phone-input: 0.0.0 => 1.0.0
 
@@ -1006,7 +1006,7 @@
 
 **Fixed:**
 
-- bpk-navigation-bar: 1.1.0 => 1.1.1
+- `bpk-navigation-bar`: 1.1.0 => 1.1.1
   - fixed BpkNavigationBarButtonLink export in the index file.
 
 # 2018-05-03 - Navigation bar theming and new props for scrollable components
@@ -1054,10 +1054,10 @@
 
 - react-native-bpk-component-banner-alert: 3.0.6 => 4.0.0
 
-  - Default height of Android banner alert has changed from 52dp to 48dp
+  - Default height of Android banner alert has changed from `52dp` to `48dp`
 
 - react-native-bpk-component-button-link: 2.0.6 => 3.0.0
-  - Default height of button links on both iOS and Android is now 32pt/dp. Default height of large button links on iOS is now 36pt.
+  - Default height of button links on both iOS and Android is now `32pt/dp`. Default height of large button links on iOS is now `36pt`.
   - Overflowing text will not wrap and instead result in ellipses.
 
 # 2018-04-25 - Added icons for identity and profile settings
@@ -1088,7 +1088,7 @@
 - react-native-bpk-component-star-rating: 1.0.19 => 1.0.20
 - react-native-bpk-component-text-input: 2.2.9 => 2.2.10
 
-  - Android icons are now vertically centered within bounding box (large at 24dp and small at 16dp)
+  - Android icons are now vertically centred within bounding box (large at `24dp` and small at `16dp`)
 
 - react-native-bpk-component-button: 6.0.6 => 6.0.7
 - react-native-bpk-component-nudger: 1.0.11 => 1.0.12
@@ -1155,7 +1155,7 @@
   - The `Portal` component now preserves context in it's `children` prop.
 
 - bpk-stylesheets: 3.2.100 => 3.2.101
-  - Prevent globals (`.hidden`, `.clearfix`) from being scoped by css modules.
+  - Prevent globals (`.hidden`, `.clearfix`) from being scoped by CSS modules.
 
 ## 2018-04-09 - Token output now sorted alphabetically
 
@@ -1169,7 +1169,7 @@
 **Fixed:**
 
 - bpk-component-input: 3.3.11 => 3.3.12
-  - The uppercase keys in `INPUT_TYPES` are now deprecated use lowercase instead. e.g `INPUT_TYPES.EMAIL` -> `INPUT_TYPES.email`.
+  - The uppercase keys in `INPUT_TYPES` are now deprecated use lower case instead. e.g `INPUT_TYPES.EMAIL` -> `INPUT_TYPES.email`.
 
 ## 2018-04-04 - New flask icon
 
@@ -1196,7 +1196,7 @@
 - react-native-bpk-component-banner-alert: 2.1.14 => 3.0.0
 
   - Major refactor
-  - `ALERT_TYPES` keys are now all lowercase i.e: `ALERT_TYPES.success` instead of `ALERT_TYPES.SUCCESS`
+  - `ALERT_TYPES` keys are now all lower case i.e: `ALERT_TYPES.success` instead of `ALERT_TYPES.SUCCESS`
 
 - react-native-bpk-component-button-link: 1.1.7 => 2.0.0
   - Android ripple is no longer constrained to the boundaries of the button link, please use the `borderlessBackground` prop for this
@@ -1220,7 +1220,7 @@
 **Fixed:**
 
 - react-native-bpk-component-banner-alert: 2.1.14
-  - Fixed devDependencies that should be dependencies.
+  - Fixed dev dependencies that should be dependencies.
 
 ## 2018-03-27 - React Native horizontal nav visual breaking change
 
@@ -1262,7 +1262,7 @@
 
 - react-native-bpk-component-navigation-bar: 1.0.0 => 1.0.2
   - `navigationBarStatusBarStyle` is now not supported on iOS.
-  - New chevron style for `BpkNavigationBarBackButtonIOS` that better alings with iOS.
+  - New chevron style for `BpkNavigationBarBackButtonIOS` that better aligns with iOS.
   - Support user provided `style` prop.
 
 ## 2018-03-19 - Native Navigation Bars
@@ -1375,7 +1375,7 @@
 - react-native-bpk-component-button-link: 1.0.0 => 1.0.1
 - react-native-bpk-component-button: 4.3.8 => 4.3.9
 - react-native-bpk-component-card: 1.2.10 => 1.2.11
-- react-native-bpk-component-button-horizontal-nav: 2.0.20 => 2.0.21
+- react-native-bpk-component-horizontal-nav: 2.0.20 => 2.0.21
   - Changed every usage of `TouchableNativeFeedback` to `BpkTouchableNativeFeedback`, since it was crashing in Android pre-Lollipop.
 
 ## 2018-03-06 - New native link component, new native badge component, plus enhancements for native text input and web badge components
@@ -1533,7 +1533,7 @@
 - bpk-component-dialog: 1.0.0 => 1.0.1
   - Fixed appearance in Safari for iOS.
 
-## 2018-01-30 - New dialog component, clearable inputs, alternate links and fullscreen modals!
+## 2018-01-30 - New dialog component, clearable inputs, alternate links and full-screen modals!
 
 **Added:**
 
@@ -1551,7 +1551,7 @@
   - The `white` prop has been deprecated in favour of `alternate` in `BpkLink` and `BpkButtonLink`
 
 - bpk-component-modal: 1.5.2 => 1.6.0
-  - New `fullScreen` prop as an accompanyment to `fullScreenOnMobile`. When true, it trumps the mobile prop.
+  - New `fullScreen` prop as an accompaniment to `fullScreenOnMobile`. When true, it trumps the mobile prop.
 
 ## 2018-01-24 - Fieldset descriptions
 
@@ -1623,7 +1623,7 @@
 - bpk-component-popover: 1.3.4 => 2.0.0
 - bpk-component-tooltip: 2.0.35 => 3.0.0
 
-  - Swapped out tether positioning library in favour of popper.js
+  - Swapped out tether positioning library in favour of Popper.js
   - Removed `tetherOptions` prop
   - Added `placement` prop, accepts either `top`, `right`, `bottom` or `left`
 
@@ -1633,7 +1633,7 @@
 
 - bpk-component-banner-alert: 1.6.4 => 2.0.0
   - Removed `dismissable` property in favour of `BpkBannerAlertDismissable`.
-  - A banner alert with `children` will no longer be auotmatically expandable. Use the newly introduced `BpkBannerAlertExpandable` component instead.
+  - A banner alert with `children` will no longer be automatically expandable. Use the newly introduced `BpkBannerAlertExpandable` component instead.
   - The `ariaLive` prop has been removed from `BpkBannerAlert`.
   - `hideAfter` in `withBannerAlertState` is no longer valid for expandable banner alerts.
   - See the [migration guide](packages/bpk-component-banner-alert/docs/migrating-from-v1-to-v2.md).
@@ -1712,7 +1712,7 @@
 - bpk-component-banner-alert: 1.5.2 => 1.6.0
 
   - `withBannerAlertState` HOC, see https://backpack.github.io/components/web/banner-alerts/#withBannerAlertState
-  - `bannerClassName` prop added to allow stlying to be applied to the internal banner rather than the outer container. See https://backpack.github.io/components/web/banner-alerts/#props
+  - `bannerClassName` prop added to allow styling to be applied to the internal banner rather than the outer container. See https://backpack.github.io/components/web/banner-alerts/#props
 
 - bpk-component-modal: 1.2.0 => 1.3.0
   - The full screen behaviour on mobile can now be turned off by setting `fullScreenOnMobile` to false
@@ -1754,7 +1754,7 @@
 **Fixed:**
 
 - bpk-component-banner-alert: 1.5.0 => 1.5.1
-  - fix missing dependecy
+  - fix missing dependency
 
 ## 2017-12-12 - Pagination and native star rating components
 
@@ -1785,7 +1785,7 @@
 - bpk-component-slider: 1.0.7 => 1.1.0
   - Slider now supports theming.
 
-## 2017-12-05 - More theming support - modals, popovers, datepickers, checkboxes and radio buttons!
+## 2017-12-05 - More theming support - modals, popovers, date pickers, checkboxes and radio buttons!
 
 **Added:**
 
@@ -1799,7 +1799,7 @@
 
 - bpk-component-datepicker: 7.1.32 => 7.2.0
 
-  - Datepickers now support theming.
+  - Date pickers now support theming.
 
 - bpk-react-utils: 2.3.8 => 2.4.0
 
@@ -1833,7 +1833,7 @@
 - bpk-component-drawer: 1.0.0
   - A new component which creates a drawer that slides into view from the side of the screen
 
-## 2017-11-28 - Add support for refs in react-native-bpk-component-input
+## 2017-11-28 - Add support for refs in react-native-bpk-component-text-input
 
 **Added:**
 
@@ -1857,9 +1857,9 @@
   - bpk-component-button
   - bpk-component-horizontal-nav
   - bpk-component-link
-  - bpk-component-nudgers
+  - bpk-component-nudger
   - bpk-component-progress
-  - bpk-component-spinners
+  - bpk-component-spinner
 - bpk-theming: 1.0.0
   - New web theming utility, see https://backpack.github.io/components/utilities/theming
 - bpk-component-theme-toggle: 1.0.0
@@ -1895,7 +1895,7 @@
   - `innerStyle` prop enables the ability to customise inner container styling
   - `withDivider` HOC, see https://backpack.github.io/components/native/cards/#with-divider
 
-## 2017-11-21 - Improved image positoning, dependency upgrades and interface clarifications
+## 2017-11-21 - Improved image positioning, dependency upgrades and interface clarifications
 
 **Breaking:**
 
@@ -1917,7 +1917,7 @@
 
 - bpk-component-button: 1.6.71 => 1.6.72
 
-  - Svg's fill colour is automatically set to text colour.
+  - SVGs fill colour is automatically set to text colour.
 
 - bpk-component-banner-alert: 1.3.8 => 1.4.0
 
@@ -1995,14 +1995,14 @@
 **Added:**
 
 - bpk-component-slider: 1.0.0
-  - New slider component, ses https://backpack.github.io/components/web/sliders
+  - New slider component, see https://backpack.github.io/components/web/sliders
 
 **Fixed:**
 
 - bpk-component-input: 3.2.36 => 3.2.37
   - Expose BpkInput underlying DOM node ref to parent components.
 
-## 2017-11-06 - Internet explorer compat and other bugfixes
+## 2017-11-06 - Internet explorer compatibility and other bugfixes
 
 **Fixed:**
 
@@ -2014,7 +2014,7 @@
 - react-native-bpk-component-banner-alert: 1.1.5 => 1.1.6
 
   - Fix icon color of success alert.
-  - User style now takes precedence over encapsualted style.
+  - User style now takes precedence over encapsulated style.
 
 - bpk-animate-height: 1.0.30 => 1.0.31
 - bpk-component-accordion: 1.1.37 => 1.1.38
@@ -2050,7 +2050,7 @@
 
 - bpk-component-icon: 3.14.4 => 3.14.5
 - bpk-svgs: 5.11.4 => 5.11.5
-  - React svgs are now functional components as opposed to class components
+  - React SVGs are now functional components as opposed to class components
   - **NOTE:** If you have backpack icon components in your snapshots tests you will see some snapshot failures as a
     result of this change. To minimise against such failures in the future, shallow rendering should be used. In this
     particular example using shallow rendering would have resulted in `Component` showing up instead of `SVG`.
@@ -2095,7 +2095,7 @@
 **Changed:**
 
 - bpk-component-breakpoint: 1.0.25 => 1.0.26
-- Upgraded react-responsive to v3.0.0 to fix propType warning.
+- Upgraded react-responsive to `v3.0.0` to fix prop type warning.
 
 ### 2017-10-18 - New neutral configuration for native and web banner alerts
 
@@ -2259,12 +2259,12 @@
 - react-native-bpk-component-icon 0.0.1 => 0.0.2
   - New icon component, see https://backpack.github.io/components/native/icons/
 
-## 2017-09-29 - Update tokens types value and add ttf icon font
+## 2017-09-29 - Update tokens types value and add TTF icon font
 
 **Fixed:**
 
 - bpk-tokens:
-  - Fixed various `type` values for web, ios and android tokens e.g:
+  - Fixed various `type` values for web, iOS and android tokens e.g:
     - `LINE_HEIGHT_XS`'s type was `font-size` but is now `size`
     - `FONT_SIZE_XS`'s type was `size` but is now `font-size`
     - etc
@@ -2272,7 +2272,7 @@
 **Added:**
 
 - bpk-svgs:
-  - Added ttf icon font
+  - Added TTF icon font
 
 ## 2017-09-27 - Image loading spinner will now be removed from DOM after fading
 
@@ -2367,7 +2367,7 @@
 **Fixed:**
 
 - react-native-bpk-component-text: 2.0.0 => 2.1.0
-  - Default color is now gray700
+  - Default color is now `gray700`
   - Passing in a StyleSheet style prop is now supported
 
 ## 2017-09-12 - New React Native Text component
@@ -2377,7 +2377,7 @@
 **Breaking:**
 
 - bpk-tokens: 25.0.0 => 26.0.0
-  - Removed ios and android letter spacing tokens
+  - Removed iOS and android letter spacing tokens
 
 **Added:**
 
@@ -2455,7 +2455,7 @@
   - Fixed issue where lazy-loading HOC would not detect scrolling within a div
   - Image background color will now be removed after the image is shown
 
-## 2017-08-30 - Calendars/Datepickers can now set initally focused date / month
+## 2017-08-30 - Calendars/Date pickers can now set initially focused date / month
 
 **Added:**
 
@@ -2507,7 +2507,7 @@
 - bpk-component-star-rating: 1.0.8 => 1.0.9
   - Import `wrapDisplayName` from bpk-react-utils instead of directly from recompose
 
-## 2017-08-17 - New icons, customisable table rows, and common.js output for React Native
+## 2017-08-17 - New icons, customisable table rows, and CommonJS output for React Native
 
 **Added:**
 
@@ -2516,7 +2516,7 @@
 - bpk-svgs: 5.6.2 => 5.7.0
   - added 1 new icon (cloakroom)
 - bpk-tokens: 24.1.0 => 24.2.0
-  - Added common js output for React Native. `bpk-tokens/tokens/{platform}/base.react.native.common.js`
+  - Added common JS output for React Native. `bpk-tokens/tokens/{platform}/base.react.native.common.js`
 
 **Fixed:**
 
@@ -2540,7 +2540,7 @@
 - bpk-tokens: 24.0.1 => 24.1.0
   - Remove unused output formats for iOS and Android which aren't relevant when the platform is web.
 
-## 2017-08-11 - Blockquote design changes and new props for banners
+## 2017-08-11 - BpkBlockQuote design changes and new props for banners
 
 **Added:**
 
@@ -2564,19 +2564,19 @@
 
 - bpk-component-popover: 1.2.7 => 1.2.8
   - Fixed a bug where an on mouse down event starting inside the popover and ending outside the popover would incorrectly close the popover.
-  - Fixed issues with mouse interaction in Safari on iOS which caused scrolling behavior to incorrectly close portal elements.
+  - Fixed issues with mouse interaction in Safari on iOS which caused scrolling behaviour to incorrectly close portal elements.
 - bpk-component-modal: 1.1.11 => 1.1.12
   - Fixed issue where clicking below the content in a full-screen modal caused it to incorrectly close.
-  - Made touch-interaction consistent with `Portal` behavior.
+  - Made touch-interaction consistent with `Portal` behaviour.
 
-## 2017-08-03 - New icons, mobile friendly barcharts, and more styling options for tooltips
+## 2017-08-03 - New icons, mobile friendly bar charts, and more styling options for tooltips
 
 **Breaking:**
 
 - bpk-component-tooltip: 1.2.3 => 2.0.0
   - The `className` prop has been renamed to `portalClassName`.
 - bpk-component-barchart: 1.0.6 => 2.0.0
-  - Increased the tappable area of barchart bars by default
+  - Increased the tappable area of bar chart bars by default
   - Added new prop `padding` in BpkBarchartBar to support this behaviour
 
 **Added:**
@@ -2649,7 +2649,7 @@
 
 - bpk-mixins: 16.0.0 => 16.1.0
 
-  - Added BEM `bpk-text--XX` mixins for text styles. These are similar but subtley different to existing
+  - Added BEM `bpk-text--XX` mixins for text styles. These are similar but subtly different to existing
     `bpk-text-XX` mixins
   - By default, use the BEM-style mixins:
 
@@ -2660,7 +2660,7 @@
     }
     ```
 
-  - If you want the text style but need to apply custom margin, use the `bpk-text-xx` standalone mixins:
+  - If you want the text style but need to apply custom margin, use the `bpk-text-xx` stand-alone mixins:
 
     ```scss
     .my-component {
@@ -2684,7 +2684,7 @@
   - `withAlignment` HOC uses wrapping `span` to prevent overriding the style of an aligned component
 
 - bpk-component-breakpoint: 1.0.2 => 1.0.3
-  - Unpinned `react-responsive` to ^v1.3.2 as the breaking change released in v1.3.2 has been resolved
+  - Unpinned `react-responsive` to `^1.3.2` as the breaking change released in `1.3.2` has been resolved
 
 ## 2017-07-28 - New Text component and mixins
 
@@ -2693,7 +2693,7 @@
 - bpk-mixins: 15.7.1 => 16.0.0
 
   - Text mixins (`bpk-text-base`, `bpk-text-lg` etc.) now set letter-spacing and font-weight explicitly. This means you
-    cannot set `font-weight` anymore before including the mixin. Instead, use the new `bpk-text-bold` mixin to bolden
+    cannot set `font-weight` any more before including the mixin. Instead, use the new `bpk-text-bold` mixin to embolden
     text:
 
     ```scss
@@ -2723,7 +2723,7 @@
 
 - bpk-mixins: 15.7.1 => 16.0.0
 
-  - New `bpk-text-xs` mixin in addition to the existing text styles (sm, base, lg, xl, xxl)
+  - New `bpk-text-xs` mixin in addition to the existing text styles (`sm`, `base`, `lg`, `xl`, `xxl`)
 
 - bpk-tokens: 23.3.1 => 24.0.0
 
@@ -2743,13 +2743,13 @@
 
 **No change:**
 
-- All packages have moved to Github for development
+- All packages have moved to GitHub for development
 
 **Fixed:**
 
 - bpk-component-icon: 3.9.0 => 3.9.1
   - Ensure icons are precisely aligned to the grid
-  - Scale the accessibility icon to fit the grid (20px)
+  - Scale the accessibility icon to fit the grid (`20px`)
   - Center the close-circle and tick-circle icons in the middle of their container
   - Fix missing glyph on the information--language-alert icon
 
@@ -2758,7 +2758,7 @@
 **Fixed:**
 
 - bpk-component-barchart: 1.0.2 => 1.0.3
-  - Fixed a bug where in Chrome navigating a barchart using the keyboard would oveflow and hide half the bars.
+  - Fixed a bug where in Chrome navigating a bar chart using the keyboard would overflow and hide half the bars.
 
 ## 2017-07-17 - Version stabilisation, Fix for Tooltip z-index, HOC for alignment, Fix for modal close bug
 
@@ -2789,7 +2789,7 @@
 - bpk-component-textarea: 0.1.5 => 1.0.0
 - bpk-component-ticket: 0.1.6 => 1.0.0
 - bpk-tether: 0.0.4 => 1.0.0
-  - The packages have been stablised at 1.0.0, but there are no breaking changes.
+  - The packages have been stabilised at 1.0.0, but there are no breaking changes.
 
 **Added:**
 
@@ -2823,7 +2823,7 @@
 
 - bpk-component-breakpoint: 0.1.27 => 0.1.28
 - bpk-component-datepicker: 7.0.5 => 7.0.6
-  - Pinned `react-responsive` to v1.3.0 as a breaking change was released in v1.3.2
+  - Pinned `react-responsive` to `v.1.3.0` as a breaking change was released in `v1.3.2`
 
 ## 2017-07-14 - Selectable bar chart
 
@@ -2867,7 +2867,7 @@
 - bpk-component-horizontal-nav: 1.0.4 => 1.0.5
   - Add tab and tablist roles for use by accessibility tools
 
-## 2017-07-10 - Add `source` arg to popover's `onClose`
+## 2017-07-10 - Add `source` argument to popover's `onClose`
 
 **Added:**
 
@@ -2898,7 +2898,7 @@
 **Fixed:**
 
 - bpk-component-datepicker: 7.0.0 => 7.0.1
-  - When there is no date set, do not pupulate "aria-label" with "Thursday, 1st January 1970"
+  - When there is no date set, do not populate "aria-label" with "Thursday, 1st January 1970"
 
 ## 2017-06-30 - onMonthChange callback structure
 
@@ -2915,7 +2915,7 @@
 
 - bpk-mixins: 15.6.0 => 15.6.1
 - bpk-tokens: 23.2.1 => 23.2.2
-  - Fix syntax bug in "tablet-only" sass variables & mixins
+  - Fix syntax bug in "tablet-only" Sass variables & mixins
 
 ## 2017-06-27 - Small checkbox labels and fix for popover crash
 
@@ -3034,7 +3034,7 @@
 - bpk-component-ticket: 0.0.21 => 0.1.0
 - bpk-component-tooltip: 1.0.1 => 1.1.0
 - bpk-mixins: 15.4.0 => 15.5.0
-  - Added suppport for CSS Modules.
+  - Added support for CSS Modules.
 
 ## 2017-06-20 - New icons (onsen, language, language-alert, language-question and airline-multiple)
 
@@ -3058,8 +3058,8 @@
 **Added:**
 
 - bpk-component-panel: 0.0.0 => 0.0.2
-- bpk-mixins: 15.2.1 => 15.3.1
-- bpk-tokens: 23.1.0 => 23.2.1
+- bpk-mixins: 23.1.0 => 23.2.1
+- bpk-tokens: 15.2.1 => 15.3.1
   - New panel component (https://backpack.github.io/components/atoms/panels)
 
 :warning: `bpk-tokens@15.3.0`, and `bpk-mixins@23.2.0` were broken due to a previous bad release. Because many packages depend on these versions make sure you're not depending either of them.
@@ -3098,7 +3098,7 @@
 **Fixed:**
 
 - bpk-component-button: 1.6.25 => 1.6.26
-  - Removed the dependency on `bpk-react-utils` to debloat the button for non tree-shaking consumers
+  - Removed the dependency on `bpk-react-utils` to reduce bloat for the button for non tree-shaking consumers
 
 ## 2017-05-23 - Autosuggest suggestion values can now accept elements
 
@@ -3140,7 +3140,7 @@
 **Fixed:**
 
 - bpk-component-popover: 1.0.41 => 1.0.42
-  - Popover now has a zindex on par with autosuggest
+  - Popover now has a z-index on par with autosuggest
 
 ## 2017-05-16 - Release new major version of bpk-mixins
 
@@ -3175,8 +3175,8 @@
 **Fixed:**
 
 - bpk-component-router-link: 0.1.76 => 0.1.77
-- bpk-component-mixins: 14.1.0 => 14.1.1
-  - Fixed router link actve + visited color
+- bpk-mixins: 14.1.0 => 14.1.1
+  - Fixed router link active + visited color
   - Arbitrary props can now be passed through
 
 ## 2017-05-09 - Improved calendar performance
@@ -3192,7 +3192,7 @@
 **Breaking:**
 
 - bpk-component-label: 2.0.45 => 3.0.0
-  - The `label` prop has been deprecated in favor of `children`
+  - The `label` prop has been deprecated in favour of `children`
   - i.e. `<BpkLabel>My label</BpkLabel>` instead of `<BpkLabel label="My label" />`
 
 **Added:**
@@ -3216,7 +3216,7 @@
   - h1, h2, h3 and h4 heading styles are bumped one level down on mobile
   - i.e. h1 -> h2, h2 -> h3 etc
   - H4, H5 and H6 headings are now bold.
-  - Consolidated hX margin top/bottom tokens
+  - Consolidated `hX` margin top/bottom tokens
     - i.e. `H1_MARGIN_TOP` -> `HEADING_MARGIN_TOP` & `H3_MARGIN_BOTTOM` -> `HEADING_MARGIN_BOTTOM`
 
 **Added:**
@@ -3253,7 +3253,7 @@
 - bpk-component-spinner: 1.0.57 => 2.0.0
   - Removed `bpk-tokens` dependency which dramatically reduces component bloat
   - Removed explicit `fill` attribute, this is now applied via CSS class
-  - Arbitrary props are now passed through to the svg
+  - Arbitrary props are now passed through to the SVG
 
 **Added:**
 
@@ -3345,9 +3345,9 @@
 
 - bpk-component-checkbox: 0.1.8 => 1.0.0
 - bpk-component-radio: 0.0.62 => 0.0.63
-  - Updated checkbox and radio checked svgs to use BLUE_700 color
+  - Updated checkbox and radio checked SVGs to use `BLUE_700` color
 
-## 2017-04-20 (1) - Unified colors for hover, active and selected states
+## 2017-04-20 (1) - Unified colours for hover, active and selected states
 
 **Fixed:**
 
@@ -3356,9 +3356,9 @@
 - bpk-component-horizontal-nav: 0.0.3 => 0.0.4
 - bpk-mixins: 12.0.0 => 12.0.1
 - bpk-tokens: 20.0.0 => 20.0.1
-  - Unified colors for hover, active and selected states
+  - Unified colours for hover, active and selected states
 
-## 2017-04-20 (1) - Fixed datepicker prop passthrough to input
+## 2017-04-20 (1) - Fixed datepicker prop pass through to input
 
 **Fixed:**
 
@@ -3496,7 +3496,7 @@
 
 - bpk-component-popover: 1.0.24 => 1.0.25
 - bpk-react-utils: 1.3.2 => 1.3.3
-  - Added the ability to pass a function which returns a dom element to target prop
+  - Added the ability to pass a function which returns a DOM element to target prop
 
 ## 2017-03-30 - Added new call to action button
 
@@ -3527,7 +3527,7 @@
 - bpk-component-radio: 0.0.54 => 0.0.55
 - bpk-mixins: 11.0.1 => 11.0.2
 - bpk-svgs: 5.1.2 => 5.1.3
-  - Fixing disabled states of checkboxes and radio buttons so that they render better on gray-50 backgrounds.
+  - Fixing disabled states of checkboxes and radio buttons so that they render better on `gray-50` backgrounds.
 
 ## 2017-03-27 (2) - New progress bar component
 
@@ -3602,12 +3602,12 @@
 - bpk-svgs: 5.0.5 => 5.1.0
   - Add more flexible `bpk-icon` mixin to include icons of any color
 
-## 2017-03-14 - Fixed overzealous proptype warning in icon components
+## 2017-03-14 - Fixed overzealous prop type warning in icon components
 
 **Fixed:**
 
 - bpk-component-icon: 3.3.12 => 3.3.13
-  - Relaxed `className` propType in internal component
+  - Relaxed `className` prop type in internal component
 
 ## 2017-03-13 (2) - Fixed icon alignment on large buttons
 
@@ -3654,9 +3654,9 @@
   - The Portal component now accepts a `targetRef` callback for the parent component to receive a ref to the portal's
     target
 - bpk-tether: 0.0.1
-  - New packages to provide a wrapper around tether and related utils
+  - New packages to provide a wrapper around tether and related utilities
 
-## 2017-03-03 (2) - Fixed datauri based icons in stock andoid browser
+## 2017-03-03 (2) - Fixed datauri based icons in stock Android browser
 
 **Fixed:**
 
@@ -3747,7 +3747,7 @@
 **Fixed:**
 
 - bpk-tokens: 18.0.0 => 18.0.1
-  - Increased opacity of shadow sm
+  - Increased opacity of small shadow
 
 ## 2017-02-27 - Deprecated logo components
 
@@ -3819,7 +3819,7 @@
 - bpk-component-popover: 1.0.2 => 1.0.3
 - bpk-react-utils: 1.2.0 => 1.2.1
   - Removed more traces of `react/lib` in the components above (bye bye `react-addons-css-transition-group`)
-  - Fixed issue with users of webpack externals and bloated bundles
+  - Fixed issue with users of Webpack externals and bloated bundles
 
 ## 2017-02-17 Improved autosuggest input options & `:visited` link styles
 
@@ -3848,7 +3848,7 @@
 - bpk-component-datepicker:
 - bpk-component-calendar:
   - Separates blocked/focused/selected/outside/today logic from `modifiers` logic. Modifiers now create classes like
-    `bpk-calendar-date-modifier--MYMODIFIER` (was `bpk-calendar-date--MYMODIFIER`). This means you cannot mess anymore
+    `bpk-calendar-date-modifier--MYMODIFIER` (was `bpk-calendar-date--MYMODIFIER`). This means you cannot mess any more
     with core functionality of the calendar/datepicker.
   - Removes (previously broken) support for blocked dates (except for a min/max date range)
 
@@ -3943,7 +3943,7 @@
   - Now accepts a `target` prop - helpful for avoiding wrapper divs
 
 - bpk-react-utils: 1.1.0 => 1.2.0
-  - Added `TransitionInitialMount` to help with css transitions (from `bpk-component-modal`)
+  - Added `TransitionInitialMount` to help with CSS transitions (from `bpk-component-modal`)
 
 ## 2017-02-02 - New Pin icon and calendar/datepicker fixes
 
@@ -3982,11 +3982,11 @@
 
 - bpk-component-input: 1.0.14 => 2.0.0
 
-  - Props `placeholder` and `onChange` are no longer required and are not explicitly listed in propTypes anymore
+  - Props `placeholder` and `onChange` are no longer required and are not explicitly listed in prop types any more
 
 - bpk-react-utils: 0.1.0 => 1.0.0
   - deprecated `toPortalChild`
-  - `react` & `react-dom` are now peer deps
+  - `react` & `react-dom` are now peer dependencies
 
 **Added:**
 
@@ -3996,7 +3996,7 @@
 **Fixed:**
 
 - bpk-component-modal: 0.3.9 => 0.3.10
-  - Swapped `react-portal` in favor of `bpk-react-utils` implementation
+  - Swapped `react-portal` in favour of `bpk-react-utils` implementation
 
 **The following packages received a patch bump due to the dependency changes above:**
 
@@ -4064,7 +4064,7 @@
   - `onClose` called twice
   - Now consumes `bpk-component-close-button`
 
-## 2017-01-11 - Custom classNames and arbitraty props for bpk-component-link
+## 2017-01-11 - Custom classNames and arbitrary props for bpk-component-link
 
 **Added:**
 
@@ -4079,26 +4079,26 @@
 - bpk-component-rtl-toggle: 0.0.25 => 0.0.26
 - bpk-docs: 0.0.54 => 0.0.55
 
-## 2017-01-10 - Added inline styling and css module support for button & autosuggest
+## 2017-01-10 - Added inline styling and CSS module support for button & autosuggest
 
 **Added:**
 
 - bpk-react-utils: 0.0.0 => 0.0.1
 
-  - A new package to house backpack react component utilities, starting with a css module helper
+  - A new package to house backpack react component utilities, starting with a CSS module helper
 
 - bpk-component-autosuggest: 1.0.11 => 1.1.0
 - bpk-component-button: 1.4.4 => 1.5.0
 
   - Added dependency on `bpk-react-utils`
-  - Added css module support
+  - Added CSS module support
 
 - bpk-component-button: 1.4.4 => 1.5.0
 
   - All additional/custom props are now passed through to `<button>` tag, including `style`
 
 - bpk-mixins: 6.7.1 => 6.8.0
-  - Added css module support (workaround for global `.bpk-no-touch-support` class)
+  - Added CSS module support (workaround for global `.bpk-no-touch-support` class)
 
 ## 2016-12-22 - Work around React regression in BpkButton
 
@@ -4112,13 +4112,13 @@
 - bpk-component-modal: 0.3.3 => 0.3.4
 - bpk-docs: 0.0.52 => 0.0.53
 
-## 2016-12-21 - Updated yellow colors
+## 2016-12-21 - Updated yellow colours
 
 **Breaking:**
 
 - bpk-tokens: 17.0.0 => 17.0.1
 - bpk-mixins: 6.7.0 => 6.7.1
-  - updated tokens for yellow colors to make it a bit easier to read when used for text e.g. colour coded prices on month view.
+  - updated tokens for yellow colours to make it a bit easier to read when used for text e.g. colour coded prices on month view.
 
 ## 2016-12-15 - Added toilets icon and added travelpro tokens
 
@@ -4133,13 +4133,13 @@
 - bpk-tokens: 16.1.0 => 17.0.0
   - added travelpro tokens
 
-## 2016-12-12 - Added power icon and tidied up segoe flag from base stylesheet
+## 2016-12-12 - Added power icon and tidied up Segoe flag from base stylesheet
 
 **Breaking:**
 
 - bpk-stylesheets: 3.0.2 => 3.1.0
 - bpk-tokens: 16.0.0 => 16.1.0
-  - Removed all traces of segoe, including `FONT_FAMILY_SEGOE` and `.font-family-segoe`
+  - Removed all traces of Segoe, including `FONT_FAMILY_SEGOE` and `.font-family-segoe`
   - Only bumped minor because we are certain that scaffold was the only consumer of this
 
 **Added:**
@@ -4155,7 +4155,7 @@
 
 - bpk-component-modal: 0.2.0 => 0.3.0
 
-  - Removed aria-describedby attribute from modal, so screenreader does not read whole dialog contents
+  - Removed aria-describedby attribute from modal, so screen reader does not read whole dialog contents
 
 - bpk-component-button: 1.3.0 => 1.4.0
 
@@ -4265,7 +4265,7 @@
 - bpk-component-label: 1.0.2 => 2.0.0
 - bpk-component-select: 0.0.20 => 1.0.0
 
-  - We are opting for a prop "passthrough" approach, which means any additional props passed to these components
+  - We are opting for a prop "pass through" approach, which means any additional props passed to these components
     will be rendered i.e. the backpack component wont swallow it up
   - This means that consumers can now add custom `className` props - they will be added to classes already supplied
     by backpack
@@ -4275,7 +4275,7 @@
 - bpk-mixins: 6.1.1 => 6.2.0
 - bpk-tokens: 14.0.0 => 14.1.0
   - Inputs & selects can now be made `large` & `docked` for one line search forms
-  - Sass mixin api is as follows:
+  - Sass mixin API is as follows:
     - `@include bpk-input--docked-first-child;`, `@include bpk-input--docked-last-child;` and
       `@include bpk-input--docked-middle-child;` are available for fine grained control
     - `@include bpk-input--docked;` is available as a combo of the above which uses pseudo selectors behind the scenes
@@ -4314,7 +4314,7 @@
 - bpk-component-label: 0.0.17 => 1.0.0
 - bpk-mixins: 5.6.1 => 6.0.0
 - bpk-tokens: 12.5.0 => 13.0.0
-  - Changed default label color to gray-700 instead of gray-300
+  - Changed default label color to `gray-700` instead of `gray-300`
 
 **Added:**
 
@@ -4353,7 +4353,7 @@
 **Breaking:**
 
 - bpk-stylesheets: 1.0.14 => 2.0.0
-  - Added small javascript utility to add feature detection classes to html element
+  - Added small JavaScript utility to add feature detection classes to html element
   - Consumers now have to include `/node_modules/bpk-stylesheets/base.js` as well as `/node_modules/bpk-stylesheets/base.css`
     on the page.
   - Default module export is now uncompiled `/index.js` which contains both script and style, with `/base.css` & `/base.js`
@@ -4428,7 +4428,7 @@
 - bpk-component-card: 0.0.2 => 0.0.3
 - bpk-component-code: 0.0.14 => 0.0.15
 - bpk-component-list: 0.0.34 => 0.0.35
-  - Added missing "required" proptypes
+  - Added missing "required" prop types
 
 ## 2016-09-27 - Card flicker on safari fix
 
@@ -4503,34 +4503,34 @@ on it.
 
 - bpk-svgs: 1.0.4 => 2.0.0
 
-  - Added `width` & `height` to icon svgs
-  - Generating react components for each svg
-    using [react-svg-loader cli](https://github.com/boopathi/react-svg-loader#cli).
+  - Added `width` & `height` to icon SVGs
+  - Generating react components for each SVG
+    using [react-svg-loader CLI](https://github.com/boopathi/react-svg-loader#cli).
 
 - bpk-component-spinner: 0.2.12 => 1.0.0
 
   - We now expose three components `BpkSpinner`, `BpkLargeSpinner`, `BpkExtraLargeSpinner`
-  - No need for raw-loader anymore
+  - No need for raw-loader any more
 
 - bpk-component-logo: 0.2.8 => 1.0.0
 
   - We now expose five components `BpkInlineLogo`, `BpkCloudLogo`, `BpkStackedLogo`, `BpkTianxunLogo`, `BpkTianxunStackedLogo`
-  - No need for raw-loader anymore
+  - No need for raw-loader any more
 
 - bpk-component-icon: 0.2.12 => 1.0.0
   - We now expose hundreds of components (generated in bpk-svgs)
-  - No need for raw-loader anymore
+  - No need for raw-loader any more
   - Alignment to buttons is supported using higher order components (HOC)
 
 **Added:**
 
 - bpk-tokens: 12.0.0 => 12.1.0
-  - Surfaced SPACING_MD (18px) as a token
+  - Surfaced `SPACING_MD` (`18px`) as a token
 
 **Fixed:**
 
 - bpk-mixins: 5.0.0 => 5.0.1
-  - No fundamental api changes but a lot of the handling for inline svgs has been removed.
+  - No fundamental API changes but a lot of the handling for inline SVGs has been removed.
 
 ## 2016-09-14 - Autosuggest tweaks
 

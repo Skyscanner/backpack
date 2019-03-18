@@ -19,7 +19,7 @@ export default () => (
 );
 ```
 
-## HoC usage
+## HOC usage
 
 ```js
 import React from 'react';
@@ -27,3 +27,4 @@ import { updateOnThemeChange } from 'bpk-component-theme-toggle';
 import BpkThemeProvider from 'bpk-theming';
 
 const EnhancedThemeProvider = updateOnThemeChange(BpkThemeProvider);
+```

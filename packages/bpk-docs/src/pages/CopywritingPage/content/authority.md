@@ -4,4 +4,4 @@ Sure, we can sort of figure out what a place looks like and where the hot restau
 
 We want to help people have the best trip ever. We can't do that with guesswork. Do we want to send someone to that dodgy neighbourhood, because the hotel website made it look nicer? No. We patted ourselves on the back already! We want to be heroes.
 
-Ps: Not to sound too much like teacher, but it's a good idea to check spellings. We could give someone the most amazing recommendation, but if we spell it wrong, that's what they'll remember, and it makes people trust us less.
+PS: Not to sound too much like teacher, but it's a good idea to check spellings. We could give someone the most amazing recommendation, but if we spell it wrong, that's what they'll remember, and it makes people trust us less.

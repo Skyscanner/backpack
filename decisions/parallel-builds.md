@@ -10,7 +10,7 @@ Travis CI has a beta feature to launch jobs in parallel, cutting down the amount
 When it came down to make the PoC production ready, some issues were found:
 
 - Caching
-  - Our monorepo relies on Lerna to create symlinks to the different packages, unfortunately symlinks are not cached by travis so the command `npm run bootstrap` needs to run in every parallel job. It takes roughly 120 seconds to complete, so each parallel job has 2 minutes of overhead.
+  - Our monorepo relies on Lerna to create symlinks to the different packages, unfortunately symlinks are not cached by Travis so the command `npm run bootstrap` needs to run in every parallel job. It takes roughly 120 seconds to complete, so each parallel job has 2 minutes of overhead.
 - Docs site
   - When building and testing the docs site, all the tests needs to pass. So, this step cannot run in parallel and needs to wait for the other jobs to finish before starting.
 

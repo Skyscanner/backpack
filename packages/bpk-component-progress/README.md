@@ -49,7 +49,7 @@ const Steps = () => (
 | onComplete               | func                          | false    | null          |
 | onCompleteTransitionEnd  | func                          | false    | null          |
 | stepped                  | bool                          | false    | false         |
-| stepColor                | string                        | false    | colorWhite    |
+| stepColor                | string                        | false    | `colorWhite`    |
 
 ## Theme props
 

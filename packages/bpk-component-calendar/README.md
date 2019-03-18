@@ -162,7 +162,7 @@ withCalendarState(composeCalendar(
 | initiallyFocusedDate  | Date                 | false               | null             |
 | markOutsideDays       | bool                 | false               | true             |
 | markToday             | bool                 | false               | true             |
-| maxDate               | Date                 | false               | new Date() + 1yr |
+| maxDate               | Date                 | false               | new Date() + 1 year |
 | minDate               | Date                 | false               | new Date()       |
 | onDateSelect          | func                 | false               | null             |
 | onMonthChange         | func                 | false               | null             |
@@ -221,7 +221,7 @@ The BpkCalendarGrid component displays a month as a table.
 | isKeyboardFocusable   | bool                 | false    | true             |
 | markOutsideDays       | bool                 | false    | true             |
 | markToday             | bool                 | false    | true             |
-| maxDate               | Date                 | false    | new Date() + 1yr |
+| maxDate               | Date                 | false    | new Date() + 1 year |
 | minDate               | Date                 | false    | new Date()       |
 | onDateClick           | func                 | false    | null             |
 | onDateKeyDown         | func                 | false    | null             |
@@ -299,7 +299,7 @@ const formatDateFull = date => format(date, 'dddd, Do MMMM YYYY');
 
 A function to format a human-readable month, for example: "January 2018":
 
-If you just need to quickly prototype, use the following from [date-fns](https://date-fns.org/docs/format#usage):
+If you just need to quickly prototype, use the following from [`date-fns`](https://date-fns.org/docs/format#usage):
 
 ```js
 import format from 'date-fns/format';

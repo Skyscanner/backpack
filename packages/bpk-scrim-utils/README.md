@@ -28,20 +28,20 @@ const BoxWithScrim = withScrim(Box);
 * `isIphone` can be used to apply iPhone only styles or behaviour, as it has different scrolling behaviour
 
 `containerClassName` can be used to apply styles to the full-screen container into which the enriched component is inserted
-(eg. `display: flex` or `display: grid`)
+(e.g. `display: flex` or `display: grid`)
 
 > **Note:** the `pagewrap` element id is a convention we use internally at Skyscanner. In most cases it should "just work".
 
 ### Props
 
-| Property              | PropType | Required | Default Value                                                                  |
-| --------------------- | -------- | -------- | ------------------------------------------------------------------------------ |
-| onClose               | func     | true     | See prop details                                                               |
-| getApplicationElement | func     | true     | -                                                                              |
-| isIphone              | bool     | false    | /iPhone/i.test(typeof window !== 'undefined' ? window.navigator.platform : '') |
-| containerClassName    | string   | false    | ''                                                                             |
-| closeOnScrimClick     | bool     | false    | true                                                                           |
-| dark                  | bool     | false    | false                                                                          |
+| Property              | PropType | Required | Default Value                                                                    |
+| --------------------- | -------- | -------- | -------------------------------------------------------------------------------- |
+| onClose               | func     | true     | See prop details                                                                 |
+| getApplicationElement | func     | true     | -                                                                                |
+| isIphone              | bool     | false    | `/iPhone/i.test(typeof window !== 'undefined' ? window.navigator.platform : '')` |
+| containerClassName    | string   | false    | ''                                                                               |
+| closeOnScrimClick     | bool     | false    | true                                                                             |
+| dark                  | bool     | false    | false                                                                            |
 
 ### Prop Details
 
