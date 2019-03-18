@@ -18,19 +18,32 @@
 
 @import '~bpk-mixins/index';
 
-.my-component {
-  display: flex;
+.bpkdocs-markdown-renderer {
+  &__table {
+    // Disabling as we need `!important` to override the baremetal HTML styling
+    /* stylelint-disable-next-line declaration-no-important */
+    width: auto !important;
+  }
 
-  &__item {
-    display: flex;
-    min-width: $bpk-spacing-xxl * 5;
-    height: $bpk-spacing-xxl * 5;
-    justify-content: center;
-    align-items: center;
-    background-color: $bpk-color-gray-50;
+  &__mobile-scroll-indicator {
+    &--trailing {
+      &--odd {
+        @include bpk-scroll-indicator-right($bpk-color-gray-100);
+      }
 
-    &--alternate {
-      background-color: $bpk-color-gray-100;
+      &--even {
+        @include bpk-scroll-indicator-right($bpk-color-gray-50);
+      }
+    }
+
+    &--leading {
+      &--odd {
+        @include bpk-scroll-indicator-left($bpk-color-gray-100);
+      }
+
+      &--even {
+        @include bpk-scroll-indicator-left($bpk-color-gray-50);
+      }
     }
   }
 }

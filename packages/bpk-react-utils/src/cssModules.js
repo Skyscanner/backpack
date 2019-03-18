@@ -16,12 +16,11 @@
  * limitations under the License.
  */
 
-export default (styles = {}) => (...classNames) => {
-  return classNames.reduce((className, currentClass) => {
+export default (styles = {}) => (...classNames) =>
+  classNames.reduce((className, currentClass) => {
     if (currentClass && typeof currentClass === 'string') {
       const realName = styles[currentClass] || currentClass;
       return className ? `${className} ${realName}` : realName;
     }
     return className;
   }, '');
-};

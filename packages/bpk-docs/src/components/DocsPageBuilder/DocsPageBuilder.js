@@ -16,12 +16,10 @@
  * limitations under the License.
  */
 
-import marked from 'marked';
 import Helmet from 'react-helmet';
 import isString from 'lodash/isString';
 import PropTypes from 'prop-types';
 import React, { Children } from 'react';
-import ReactDOMServer from 'react-dom/server';
 import BpkContentContainer from 'bpk-component-content-container';
 import { cssModules } from 'bpk-react-utils';
 
@@ -39,7 +37,7 @@ import ComponentVideos from './ComponentVideos';
 import ComponentScreenshots from './ComponentScreenshots';
 import STYLES from './DocsPageBuilder.scss';
 import PlatformSwitchingContent from './PlatformSwitchingContent';
-import renderer from './BpkMarkdown';
+import BpkMarkdownRenderer from './BpkMarkdownRenderer';
 
 const getClassName = cssModules(STYLES);
 
@@ -50,17 +48,15 @@ const toNodes = children => {
 
   return isString(children) ? [<Paragraph>{children}</Paragraph>] : children;
 };
-const markdownToHTML = (readmeString, headerPrefix = '') =>
-  marked(
-    readmeString
-      .replace(/^#.*$/m, '') // remove first h1
-      .replace(/^>.*$/m, '') // remove first blockquote
-      .replace(/^#### /gm, '##### ') // replace h4 with h5
-      .replace(/^### /gm, '#### ') // replace h3 with h4
-      .replace(/^## /gm, '### ') // replace h2 with h3
-      .replace(/^# /gm, '## '), // replace h1 with h2
-    { renderer, headerPrefix },
-  );
+
+const getMarkdownString = readmeString =>
+  readmeString
+    .replace(/^#.*$/m, '') // remove first h1
+    .replace(/^>.*$/m, '') // remove first blockquote
+    .replace(/^#### /gm, '##### ') // replace h4 with h5
+    .replace(/^### /gm, '#### ') // replace h3 with h4
+    .replace(/^## /gm, '### ') // replace h2 with h3
+    .replace(/^# /gm, '## '); // replace h1 with h2
 
 const toSassdocLink = createFromType('sass');
 const toIosDocLink = createFromType('ios');
@@ -97,14 +93,9 @@ const ComponentExample = (component, registerPlatformSwitchingContent) => {
         <Heading id={`${component.id}-readme`} level="h2">
           {component.title} readme
         </Heading>,
-        <BpkContentContainer
-          id="md-container"
-          dangerouslySetInnerHTML={{
-            __html: markdownToHTML(component.readme, `${component.id}-`),
-          }}
-          bareHtml
-          alternate
-        />,
+        <BpkContentContainer id="md-container" bareHtml alternate>
+          <BpkMarkdownRenderer source={getMarkdownString(component.readme)} />
+        </BpkContentContainer>,
       ])
     : null;
 
@@ -175,18 +166,25 @@ const CustomSection = section => [
         <Heading id="readme" level="h2">
           Readme
         </Heading>,
-        <BpkContentContainer
-          dangerouslySetInnerHTML={{
-            __html: markdownToHTML(section.readme, `${section.id}-`),
-          }}
-          bareHtml
-          alternate
-        />,
+        <BpkContentContainer id="md-container" bareHtml alternate>
+          <BpkMarkdownRenderer source={getMarkdownString(section.readme)} />
+        </BpkContentContainer>,
       ])
     : null,
 ];
 
 const DocsPageBuilder = props => {
+  let readmeLandsOnEven = true;
+  if (props.tokenMap) {
+    readmeLandsOnEven = !readmeLandsOnEven;
+  }
+  if (props.usageTable) {
+    readmeLandsOnEven = !readmeLandsOnEven;
+  }
+  if (props.components.length % 2 === 1) {
+    readmeLandsOnEven = !readmeLandsOnEven;
+  }
+
   const tokenSwitcher = (
     <TokenSwitcher
       className={getClassName('bpkdocs-content-page__token-switcher')}
@@ -228,13 +226,12 @@ const DocsPageBuilder = props => {
           <Heading id="readme" level="h2">
             Readme
           </Heading>,
-          <BpkContentContainer
-            dangerouslySetInnerHTML={{
-              __html: markdownToHTML(props.readme),
-            }}
-            bareHtml
-            alternate
-          />,
+          <BpkContentContainer id="md-container" bareHtml alternate>
+            <BpkMarkdownRenderer
+              oddAlternatingSection={readmeLandsOnEven}
+              source={getMarkdownString(props.readme)}
+            />
+          </BpkContentContainer>,
         ])
       : null,
     props.customSections &&
