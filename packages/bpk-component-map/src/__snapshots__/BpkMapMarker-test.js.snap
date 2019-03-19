@@ -30,6 +30,37 @@ exports[`BpkMapMarker should render correctly with a "arrowClassName" attribute 
 </BpkBasicMapMarker>
 `;
 
+exports[`BpkMapMarker should render correctly with a "buttonProps" attribute 1`] = `
+<BpkBasicMapMarker
+  position={
+    Object {
+      "latitude": 41.386947,
+      "longitude": 2.170048,
+    }
+  }
+>
+  <button
+    className="bpk-map-marker__wrapper"
+    onClick={null}
+    testId="arbitrary value"
+    type="button"
+  >
+    <div
+      className="bpk-map-marker bpk-map-marker--primary"
+    >
+      <span>
+        Icon
+      </span>
+    </div>
+    <div
+      className="bpk-map-marker__arrow"
+    >
+      <Component />
+    </div>
+  </button>
+</BpkBasicMapMarker>
+`;
+
 exports[`BpkMapMarker should render correctly with a "className" attribute 1`] = `
 <BpkBasicMapMarker
   position={
