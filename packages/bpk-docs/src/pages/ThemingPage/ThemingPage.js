@@ -32,16 +32,22 @@ import {
   ACCORDION,
   BARCHART,
   BLOCKQUOTE,
+  BREADCRUMB,
   BUTTON,
   CALENDAR,
   DATEPICKER,
   DRAWER,
+  FLAT_LIST,
   HORIZONTAL_NAV,
   LINK,
   MODAL,
   NAVIGATION_BAR,
   NUDGER,
+  PAGINATION,
+  POPOVER,
   PROGRESS,
+  SCROLLABLE_CALENDAR,
+  SECTION_LIST,
   SLIDER,
   SPINNER,
   SWITCH,
@@ -58,13 +64,25 @@ const nativeBlurb = [
       <BpkRouterLink to={BUTTON}>Button</BpkRouterLink>
     </BpkListItem>
     <BpkListItem>
-      <BpkRouterLink to={LINK}>Link</BpkRouterLink>
+      <BpkRouterLink to={FLAT_LIST}>Flat list</BpkRouterLink>
     </BpkListItem>
     <BpkListItem>
       <BpkRouterLink to={HORIZONTAL_NAV}>Horizontal navigation</BpkRouterLink>
     </BpkListItem>
     <BpkListItem>
+      <BpkRouterLink to={LINK}>Link</BpkRouterLink>
+    </BpkListItem>
+    <BpkListItem>
       <BpkRouterLink to={NAVIGATION_BAR}>Navigation bar</BpkRouterLink>
+    </BpkListItem>
+    <BpkListItem>
+      <BpkRouterLink to={NUDGER}>Nudger</BpkRouterLink>
+    </BpkListItem>
+    <BpkListItem>
+      <BpkRouterLink to={PROGRESS}>Progress</BpkRouterLink>
+    </BpkListItem>
+    <BpkListItem>
+      <BpkRouterLink to={SECTION_LIST}>Section list</BpkRouterLink>
     </BpkListItem>
     <BpkListItem>
       <BpkRouterLink to={SPINNER}>Spinner</BpkRouterLink>
@@ -85,10 +103,13 @@ const webBlurb = [
       <BpkRouterLink to={BARCHART}>Bar chart</BpkRouterLink>
     </BpkListItem>
     <BpkListItem>
-      <BpkRouterLink to={BLOCKQUOTE}>Blockquotes</BpkRouterLink>
+      <BpkRouterLink to={BLOCKQUOTE}>Blockquote</BpkRouterLink>
     </BpkListItem>
     <BpkListItem>
-      <BpkRouterLink to={`${BUTTON}?platform=web`}>Button</BpkRouterLink>
+      <BpkRouterLink to={BREADCRUMB}>Breadcrumb</BpkRouterLink>
+    </BpkListItem>
+    <BpkListItem>
+      <BpkRouterLink to={BUTTON}>Button</BpkRouterLink>
     </BpkListItem>
     <BpkListItem>
       <BpkRouterLink to={CALENDAR}>Calendar</BpkRouterLink>
@@ -100,39 +121,49 @@ const webBlurb = [
       <BpkRouterLink to={DRAWER}>Drawer</BpkRouterLink>
     </BpkListItem>
     <BpkListItem>
-      <BpkRouterLink to={`${HORIZONTAL_NAV}?platform=web`}>
-        Horizontal navigation
-      </BpkRouterLink>
+      <BpkRouterLink to={HORIZONTAL_NAV}>Horizontal navigation</BpkRouterLink>
+    </BpkListItem>
+    <BpkListItem>
+      <BpkRouterLink to={LINK}>Link</BpkRouterLink>
     </BpkListItem>
     <BpkListItem>
       <BpkRouterLink to={MODAL}>Modal</BpkRouterLink>
     </BpkListItem>
     <BpkListItem>
-      <BpkRouterLink to={`${LINK}?platform=web`}>Link</BpkRouterLink>
+      <BpkRouterLink to={NAVIGATION_BAR}>Navigation bar</BpkRouterLink>
     </BpkListItem>
     <BpkListItem>
-      <BpkRouterLink to={`${NUDGER}?platform=web`}>Nudgers</BpkRouterLink>
+      <BpkRouterLink to={NUDGER}>Nudgers</BpkRouterLink>
     </BpkListItem>
     <BpkListItem>
-      <BpkRouterLink to={`${PROGRESS}?platform=web`}>
-        Progress bar
+      <BpkRouterLink to={PAGINATION}>Pagination</BpkRouterLink>
+    </BpkListItem>
+    <BpkListItem>
+      <BpkRouterLink to={POPOVER}>Popover</BpkRouterLink>
+    </BpkListItem>
+    <BpkListItem>
+      <BpkRouterLink to={PROGRESS}>Progress bar</BpkRouterLink>
+    </BpkListItem>
+    <BpkListItem>
+      <BpkRouterLink to={SCROLLABLE_CALENDAR}>
+        Scrollable calendar
       </BpkRouterLink>
-    </BpkListItem>
-    <BpkListItem>
-      <BpkRouterLink to={`${SPINNER}?platform=web`}>Spinner</BpkRouterLink>
     </BpkListItem>
     <BpkListItem>
       <BpkRouterLink to={SLIDER}>Slider</BpkRouterLink>
     </BpkListItem>
+    <BpkListItem>
+      <BpkRouterLink to={SPINNER}>Spinner</BpkRouterLink>
+    </BpkListItem>
   </BpkList>,
   <BpkBlockquote>
-    <strong>Note:</strong> Backpack&#39;s theming is based on{' '}
+    <strong>Note:</strong> Backpack&#39;s theming is based on
     <BpkLink href={CSS_VARIABLES_URL} blank>
       CSS Variables
-    </BpkLink>{' '}
+    </BpkLink>
     and thus will not be supported in some browsers. In these cases Backpack
     components will gracefully degrade to the default Skyscanner theme. For an
-    overview of this check{' '}
+    overview of this check
     <BpkLink href="https://caniuse.com/#feat=css-variables" blank>
       caniuse
     </BpkLink>
