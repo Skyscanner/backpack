@@ -11,5 +11,5 @@ npm install bpk-stylesheets --save-dev
 ## Usage
 
 ```scss
-@import '~bpk-stylesheets/base';
+@import '~bpk-stylesheets';
 ```

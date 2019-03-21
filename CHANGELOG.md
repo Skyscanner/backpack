@@ -2,6 +2,12 @@
 
 [Unreleased changes](./UNRELEASED.md).
 
+# 2019-03-21 Fix for non-global class inside global class
+
+**Fixed:**
+- bpk-stylesheets: 3.2.155 => 3.2.156
+  - Added ":global" for inner global class.
+
 # 2019-03-14 Replace phone input placeholder with labels
 
 **Breaking:**

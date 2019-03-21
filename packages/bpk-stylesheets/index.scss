@@ -60,7 +60,7 @@ body {
 :global(.visually-hidden) {
   @include bpk-visually-hidden;
 
-  &.focusable {
+  :global(&.focusable) {
     @include bpk-visually-hidden--focusable;
   }
 }
@@ -74,3 +74,4 @@ body {
 }
 
 /* stylelint-enable */
+ 
