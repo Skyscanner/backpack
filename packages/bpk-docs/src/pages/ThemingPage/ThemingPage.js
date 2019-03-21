@@ -26,6 +26,8 @@ import webReadme from 'bpk-theming/README.md';
 import nativeReadme from '../../../../../backpack-react-native/packages/react-native-bpk-theming/README.md';
 import Paragraph from '../../components/Paragraph';
 import IntroBlurb from '../../components/IntroBlurb';
+import Android from '../AndroidThemingPage';
+import IOS from '../IOSThemingPage';
 import DocsPageBuilder from '../../components/DocsPageBuilder';
 import DocsPageWrapper from '../../components/DocsPageWrapper';
 import {
@@ -216,6 +218,8 @@ const ThemingPage = () => (
     blurb={blurb}
     webSubpage={<WebThemingPage wrapped />}
     nativeSubpage={<NativeThemingPage wrapped />}
+    iosSubpage={<IOS wrapped />}
+    androidSubpage={<Android wrapped />}
   />
 );
 
