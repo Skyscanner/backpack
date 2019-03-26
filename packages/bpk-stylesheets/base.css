@@ -1709,15 +1709,16 @@ body {
   border: 0;
   overflow: hidden;
   clip: rect(0 0 0 0); }
-  .visuallyhidden.focusable:active, .visuallyhidden.focusable:focus,
-  .visually-hidden.focusable:active,
-  .visually-hidden.focusable:focus {
-    position: static;
-    width: auto;
-    height: auto;
-    margin: 0;
-    overflow: visible;
-    clip: auto; }
+
+.visuallyhidden.focusable:active, .visuallyhidden.focusable:focus,
+.visually-hidden.focusable:active,
+.visually-hidden.focusable:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  clip: auto; }
 
 .invisible {
   visibility: hidden; }
