@@ -59,10 +59,11 @@ body {
 :global(.visuallyhidden),
 :global(.visually-hidden) {
   @include bpk-visually-hidden;
+}
 
-  &.focusable {
-    @include bpk-visually-hidden--focusable;
-  }
+:global(.visuallyhidden.focusable),
+:global(.visually-hidden.focusable) {
+  @include bpk-visually-hidden--focusable;
 }
 
 :global(.invisible) {
