@@ -2,6 +2,16 @@
 
 [Unreleased changes](./UNRELEASED.md).
 
+# 2019-03-27 New `buttonProps` on map component
+
+**Added:**
+- bpk-component-map: 2.1.3 => 2.2.0
+  - Added the prop `buttonProps` to `BpkMapMarker` to allow sending arbitrary props to the button element.
+
+**Fixed:**
+- bpk-stylesheets: 3.2.155 => 3.2.156
+  - Changed inner class of global class to be global itself.
+
 # 2019-03-14 Replace phone input placeholder with labels
 
 **Breaking:**
