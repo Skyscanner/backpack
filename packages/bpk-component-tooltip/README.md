@@ -38,6 +38,7 @@ const App = () => (
 | portalStyle           | object                                    | false    | null          |
 | portalClassName       | string                                    | false    | null          |
 | popperModifiers       | object                                    | false    | null          |
+| renderTarget          | func                                      | false    | null          |
 
 ### Prop Details
 

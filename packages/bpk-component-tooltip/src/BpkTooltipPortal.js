@@ -49,6 +49,7 @@ export type Props = {
   padded: boolean,
   portalStyle: ?Object, // eslint-disable-line react/forbid-prop-types
   portalClassName: ?string,
+  renderTarget: ?() => HTMLElement,
   popperModifiers: ?Object,
 };
 
@@ -70,6 +71,7 @@ class BpkTooltipPortal extends Component<Props, State> {
     padded: PropTypes.bool,
     portalStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
     portalClassName: PropTypes.string,
+    renderTarget: PropTypes.func,
     popperModifiers: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   };
 
@@ -80,6 +82,7 @@ class BpkTooltipPortal extends Component<Props, State> {
     padded: true,
     portalStyle: null,
     portalClassName: null,
+    renderTarget: null,
     popperModifiers: null,
   };
 
@@ -156,6 +159,7 @@ class BpkTooltipPortal extends Component<Props, State> {
       hideOnTouchDevices,
       portalClassName,
       portalStyle,
+      renderTarget,
       popperModifiers,
       ...rest
     } = this.props;
@@ -177,6 +181,7 @@ class BpkTooltipPortal extends Component<Props, State> {
         onOpen={this.onOpen}
         onClose={this.closeTooltip}
         style={portalStyle}
+        renderTarget={renderTarget}
         className={classNames.join(' ')}
       >
         <BpkTooltip padded={padded} {...rest}>
