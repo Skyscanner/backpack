@@ -35,6 +35,7 @@
   padding: $bpk-badge-padding-y $bpk-badge-padding-x;
   align-items: center;
   background-color: $bpk-badge-background-color;
+  color: $bpk-font-color-base;
 
   @include bpk-border-radius-xs;
   @include bpk-text;
