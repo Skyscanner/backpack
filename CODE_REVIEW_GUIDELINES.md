@@ -20,6 +20,7 @@ All changes to Backpack should
 + Expose a _delightful_ API surface.
 + Have high test coverage.
 + Match the design.
++ Support RTL.
 + Have considered accessibility and through the API encourage consumers to build accessible products. e.g. Making `accessibilityLabel` required rather than optional.
 + Support theming when appropriate.
 + Feature good examples.
