@@ -23,6 +23,7 @@ import iosScreenshotSingle from '../../../../../backpack-react-native/packages/r
 import iosScreenshotMultiple from '../../../../../backpack-react-native/packages/react-native-bpk-component-calendar/screenshots/ios/multiple.png';
 import iosScreenshotRange from '../../../../../backpack-react-native/packages/react-native-bpk-component-calendar/screenshots/ios/range.png';
 import androidScreenshotRange from '../../../../../backpack-react-native/packages/react-native-bpk-component-calendar/screenshots/android/range.png';
+import androidScreenshotSingle from '../../../../../backpack-react-native/packages/react-native-bpk-component-calendar/screenshots/android/single.png';
 import androidEmpty from '../../static/android_empty.svg';
 import DocsPageBuilder from '../../components/DocsPageBuilder';
 
@@ -43,7 +44,7 @@ const components = [
         title: 'Android',
         width: 1080,
         height: 1920,
-        src: `/${androidEmpty}`,
+        src: `/${androidScreenshotSingle}`,
         altText: 'Android Calendar Component',
         subText: '(Google Pixel emulator)',
       },
