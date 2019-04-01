@@ -35,6 +35,7 @@ type BpkBackgroundImageProps = {
   loading: boolean,
   src: string,
   width: number,
+  altText: string,
   className: ?string,
   onLoad: ?() => mixed,
   style: ?{}, // eslint-disable-line react/forbid-prop-types
@@ -91,6 +92,7 @@ class BpkBackgroundImage extends Component<BpkBackgroundImageProps> {
       src,
       imageStyle,
       style,
+      altText,
     } = this.props;
 
     const aspectRatio = width / height;
@@ -145,7 +147,10 @@ class BpkBackgroundImage extends Component<BpkBackgroundImageProps> {
             </noscript>
           )}
           {!loading && (
-            <div className={getClassName('bpk-background-image__content')}>
+            <div
+              alt={altText}
+              className={getClassName('bpk-background-image__content')}
+            >
               {children}
             </div>
           )}
@@ -159,6 +164,7 @@ BpkBackgroundImage.propTypes = {
   height: PropTypes.number.isRequired,
   src: PropTypes.string.isRequired,
   width: PropTypes.number.isRequired,
+  altText: PropTypes.string.isRequired,
   className: PropTypes.string,
   inView: PropTypes.bool,
   loading: PropTypes.bool,

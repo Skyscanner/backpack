@@ -34,6 +34,7 @@ describe('BpkBackgroundImage', () => {
             height: '20rem',
           }}
           src="./path/to/image.jpg"
+          altText="Default alt text"
         >
           <div
             style={{
@@ -60,6 +61,7 @@ describe('BpkBackgroundImage', () => {
           }}
           className="userland-classname"
           src="./path/to/image.jpg"
+          altText="Default alt text"
         />,
       )
       .toJSON();
@@ -86,6 +88,7 @@ describe('BpkBackgroundImage', () => {
             backgroundPosition: '50% 50%',
           }}
           src="./path/to/image.jpg"
+          altText="Default alt text"
         />,
       )
       .toJSON();
@@ -111,6 +114,21 @@ describe('BpkBackgroundImage', () => {
             backgroundPosition: '50% 50%',
           }}
           src="./path/to/image.jpg"
+          altText="Default alt text"
+        />,
+      )
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('should use userland altText', () => {
+    const tree = renderer
+      .create(
+        <BpkBackgroundImage
+          width={612}
+          height={408}
+          src="./path/to/image.jpg"
+          altText="A happy image of something nice."
         />,
       )
       .toJSON();

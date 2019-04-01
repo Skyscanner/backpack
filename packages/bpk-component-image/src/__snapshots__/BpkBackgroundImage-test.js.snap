@@ -28,6 +28,7 @@ exports[`BpkBackgroundImage should accept userland className 1`] = `
       }
     />
     <div
+      alt="Default alt text"
       className="bpk-background-image__content"
     />
   </div>
@@ -67,6 +68,7 @@ exports[`BpkBackgroundImage should have inView behavior 1`] = `
       }
     />
     <div
+      alt="Default alt text"
       className="bpk-background-image__content"
     />
   </div>
@@ -224,6 +226,7 @@ exports[`BpkBackgroundImage should render correctly 1`] = `
       }
     />
     <div
+      alt="Default alt text"
       className="bpk-background-image__content"
     >
       <div
@@ -236,6 +239,36 @@ exports[`BpkBackgroundImage should render correctly 1`] = `
         }
       />
     </div>
+  </div>
+</div>
+`;
+
+exports[`BpkBackgroundImage should use userland altText 1`] = `
+<div
+  className={null}
+  style={Object {}}
+>
+  <div
+    className="bpk-background-image bpk-background-image--no-background"
+    style={
+      Object {
+        "height": 0,
+        "paddingBottom": "66.66666666666667%",
+      }
+    }
+  >
+    <div
+      className="bpk-background-image__img bpk-background-image__img--shown"
+      style={
+        Object {
+          "backgroundImage": "url(./path/to/image.jpg)",
+        }
+      }
+    />
+    <div
+      alt="A happy image of something nice."
+      className="bpk-background-image__content"
+    />
   </div>
 </div>
 `;
