@@ -21,7 +21,6 @@
 import React, { type Node } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
-import marked from 'marked';
 import BpkAnimateHeight from 'bpk-animate-height';
 import BpkButton from 'bpk-component-button';
 import BpkContentContainer from 'bpk-component-content-container';
@@ -32,22 +31,21 @@ import { withButtonAlignment } from 'bpk-component-icon';
 import HeroSection from '../HeroSection';
 import Heading from '../Heading';
 import AlternatingPageContent from '../AlternatingPageContent';
+import BpkMarkdownRenderer from '../DocsPageBuilder/BpkMarkdownRenderer';
 
 import STYLES from './InfoPageBuilder.scss';
 
 const getClassName = cssModules(STYLES);
-const renderer = new marked.Renderer();
 const AlignedChevronDownIcon = withButtonAlignment(ChevronDownIcon);
 
-const markdownToHTML = (input: string): string =>
-  marked(
-    input
-      .replace(/^#### /gm, '##### ') // replace h4 with h5
-      .replace(/^### /gm, '#### ') // replace h3 with h4
-      .replace(/^## /gm, '### ') // replace h2 with h3
-      .replace(/^# /gm, '## '), // replace h1 with h2
-    { renderer },
-  );
+const getMarkdownString = readmeString =>
+  readmeString
+    .replace(/^#.*$/m, '') // remove first h1
+    .replace(/^>.*$/m, '') // remove first blockquote
+    .replace(/^#### /gm, '##### ') // replace h4 with h5
+    .replace(/^### /gm, '#### ') // replace h3 with h4
+    .replace(/^## /gm, '### ') // replace h2 with h3
+    .replace(/^# /gm, '## '); // replace h1 with h2
 
 type SectionType = {
   id: string,
@@ -122,10 +120,11 @@ class Section extends React.Component<SectionProps, { expanded: boolean }> {
         {markdown && (
           <BpkAnimateHeight height={expanded ? 'auto' : 0} duration={200}>
             <BpkContentContainer
-              dangerouslySetInnerHTML={{ __html: markdownToHTML(markdown) }}
               bareHtml
               className={getClassName('bpk-docs-info-page__section')}
-            />
+            >
+              <BpkMarkdownRenderer source={getMarkdownString(markdown)} />
+            </BpkContentContainer>
           </BpkAnimateHeight>
         )}
         {content && (
