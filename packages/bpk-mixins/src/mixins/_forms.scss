@@ -110,7 +110,7 @@
   padding-right: $bpk-spacing-base;
   border-color: $bpk-color-red-500;
   background: $bpk-color-red-500 url(map-get($bpk-icons-sm, exclamation-circle-red-500)) no-repeat right $bpk-spacing-sm center;
-  background-color: rgba($bpk-color-red-500, .2);
+  background-color: rgba($bpk-color-red-500, .1);
   background-size: $bpk-spacing-md $bpk-spacing-md;
 
   @include bpk-rtl {
