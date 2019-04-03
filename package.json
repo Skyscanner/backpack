@@ -64,6 +64,9 @@
     ],
     "*.scss": [
       "stylelint --syntax scss"
+    ],
+    "*.md": [
+      "mdspell -r --en-gb --ignore-acronyms --ignore-numbers --no-suggestions"
     ]
   },
   "repository": {
