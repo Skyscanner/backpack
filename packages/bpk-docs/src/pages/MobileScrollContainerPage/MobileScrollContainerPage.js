@@ -38,7 +38,7 @@ const components = [
 const blurb = [
   <IntroBlurb>
     The mobile scroll container component will hide overflowing content in fixed
-    with situations and will enable horizontal scrolling.
+    width situations and will enable horizontal scrolling.
   </IntroBlurb>,
 ];
 
