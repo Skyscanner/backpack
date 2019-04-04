@@ -9,7 +9,9 @@
   - Added a default font colour to badges to prevent the badge colour changing due to cascading styles.
 
 **Breaking:**
-- bpk-mixins, bpk-component-input, bpk-component-fieldset:
+- bpk-mixins:
+- bpk-component-input: 
+- bpk-component-fieldset:
     - `_forms.scss`:
         - Added `border-color` to `bpk-input--invalid` mixin for input fields to highlight red when there is an error on the input.
         - Updated `background` to `bpk-input--invalid` mixin for fields to change the color from white to red.
