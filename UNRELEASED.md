@@ -15,3 +15,5 @@
     - `_forms.scss`:
         - Added `border-color` to `bpk-input--invalid` mixin for input fields to highlight red when there is an error on the input.
         - Updated `background` to `bpk-input--invalid` mixin for fields to change the color from white to red.
+
+**Note**: The API hasn't changed, it's only breaking because it's a major visual change.
