@@ -2,6 +2,24 @@
 
 [Unreleased changes](./UNRELEASED.md).
 
+# 2019-04-04 New design for invalid input
+
+**Breaking:**
+- bpk-component-input: 3.3.69 => 4.0.0
+  - `_forms.scss`:
+      - Added `border-color` to `bpk-input--invalid` mixin for input fields to highlight red when there is an error on the input.
+      - Updated `background` to `bpk-input--invalid` mixin for fields to change the color from white to red.
+
+**Note**: The API hasn't changed, it's only breaking because it's a major visual change.
+
+**Added:**
+- bpk-component-tooltip: 3.1.64 => 3.1.65
+  - Added the prop `renderTarget` to `BpkTooltipPortal` to allow rendering it inside any DOM element.
+
+**Fixed:**
+- bpk-component-badge: 1.1.62 => 1.1.63
+  - Added a default font colour to badges to prevent the badge colour changing due to cascading styles.
+
 # 2019-03-27 New `buttonProps` on map component
 
 **Added:**
