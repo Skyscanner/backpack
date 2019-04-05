@@ -25,6 +25,10 @@
     width: auto !important;
   }
 
+  &__mobile-scroll-container {
+    margin-bottom: $bpk-spacing-sm;
+  }
+
   &__mobile-scroll-indicator {
     &--trailing {
       &--dark {
