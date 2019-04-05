@@ -25,6 +25,11 @@
     @include bpk-form-validation__container;
   }
 
+  &__icon {
+    padding-right: $bpk-icon-size-lg;
+    background: url(map-get($bpk-icons-sm, exclamation-circle-red-500)) no-repeat left;
+  }
+
   &--appear {
     @include bpk-form-validation--appear;
   }

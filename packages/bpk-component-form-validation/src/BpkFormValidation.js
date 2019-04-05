@@ -55,6 +55,7 @@ const BpkFormValidation = props => {
     >
       <div className={getClassName('bpk-form-validation__container')}>
         <div className={classNames.join(' ')} {...rest}>
+          <span className={getClassName('bpk-form-validation__icon')} />
           {children}
         </div>
       </div>

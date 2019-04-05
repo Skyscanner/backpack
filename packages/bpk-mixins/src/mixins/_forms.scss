@@ -689,29 +689,10 @@
 
 @mixin bpk-form-validation {
   position: relative;
-  margin: $bpk-form-validation-margin;
-  padding: $bpk-form-validation-padding-y $bpk-form-validation-padding-x;
   transform: translateY(-#{$bpk-spacing-sm});
   transition: opacity $bpk-duration-sm ease-in-out, transform $bpk-duration-sm ease-in-out;
-  background-color: $bpk-form-validation-background-color;
-  color: $bpk-form-validation-color;
+  color: $bpk-color-red-500;
   opacity: 0;
-
-  @include bpk-border-radius-sm;
-
-  &::after {
-    position: absolute;
-    bottom: 100%;
-    left: 50%;
-    content: ' ';
-    width: 0;
-    height: 0;
-    margin-left: -#{$bpk-form-validation-arrow-size};
-    border: solid transparent;
-    border-width: $bpk-form-validation-arrow-size;
-    border-bottom-color: $bpk-form-validation-background-color;
-    pointer-events: none;
-  }
 }
 
 /// Form validation transition state. Modifies the bpk-form-validation mixin.
@@ -764,9 +745,10 @@
 ///   .selector {
 ///     @include bpk-form-validation__container();
 ///   }
-
+//
 @mixin bpk-form-validation__container {
   padding-top: $bpk-form-validation-arrow-size;
+  font-size: $bpk-text-sm-font-size;
 }
 
 /// Form textarea.
