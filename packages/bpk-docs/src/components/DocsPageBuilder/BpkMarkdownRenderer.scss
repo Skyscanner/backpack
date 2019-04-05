@@ -20,9 +20,16 @@
 
 .bpkdocs-markdown-renderer {
   &__table {
-    // Disabling as we need `!important` to override the baremetal HTML styling
-    /* stylelint-disable-next-line declaration-no-important */
+    // Using `!important` as we need to override the baremetal HTML styling, which takes precedence.
+    /* stylelint-disable declaration-no-important */
     width: auto !important;
+    // Applying a custom border to the table as the `bpk-border` mixin using box-shadow has side-effects
+    // when used inside a scroll container. This is due to the box-shadow not being measured as part of the
+    // width of the child element.
+    /* stylelint-disable-next-line unit-blacklist */
+    border: solid 1px $bpk-color-gray-300;
+    box-shadow: none !important;
+    /* stylelint-enable */
   }
 
   &__mobile-scroll-container {
