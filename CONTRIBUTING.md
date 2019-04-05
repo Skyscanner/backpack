@@ -245,6 +245,10 @@ said, from time to time it's good to update the submodules to point to a newer c
 
 To do the above run `npm run submodules:update` and then `git push origin master`.
 
+Sometimes you may encounter an error when running `npm test` or running linting, that states an error of `module not found`. This issue can be related to the submodules not being cloned when working with the codebase.
+
+If this issue occurs run `git submodule update --init --recursive` which will clone all the submodules to your local codebase.
+
 ## And finally..
 
 If you have any questions at all, don't hesitate to get in touch. We love to talk all things Backpack and we look forward to seeing your contribution!
