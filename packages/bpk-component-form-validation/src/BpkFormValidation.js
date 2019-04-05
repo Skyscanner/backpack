@@ -20,10 +20,13 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import AnimateHeight from 'bpk-animate-height';
 import { cssModules } from 'bpk-react-utils';
+import BpkSmallExclamationIcon from 'bpk-component-icon/sm/exclamation-circle';
+import { withButtonAlignment } from 'bpk-component-icon';
 
 import STYLES from './bpk-form-validation.scss';
 
 const getClassName = cssModules(STYLES);
+const AlignedExclamationIcon = withButtonAlignment(BpkSmallExclamationIcon);
 
 const BpkFormValidation = props => {
   const classNames = [getClassName('bpk-form-validation')];
@@ -55,7 +58,9 @@ const BpkFormValidation = props => {
     >
       <div className={getClassName('bpk-form-validation__container')}>
         <div className={classNames.join(' ')} {...rest}>
-          <span className={getClassName('bpk-form-validation__icon')} />
+          <AlignedExclamationIcon
+            className={getClassName('bpk-form-validation__icon')}
+          />
           {children}
         </div>
       </div>
