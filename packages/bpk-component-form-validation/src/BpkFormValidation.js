@@ -20,13 +20,20 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import AnimateHeight from 'bpk-animate-height';
 import { cssModules } from 'bpk-react-utils';
+import BpkSmallExclamationIcon from 'bpk-component-icon/sm/exclamation-circle';
+import { withAlignment } from 'bpk-component-icon';
+import { lineHeightBase, iconSizeSm } from 'bpk-tokens/tokens/base.es6';
 
 import STYLES from './bpk-form-validation.scss';
 
 const getClassName = cssModules(STYLES);
+const AlignedExclamationIcon = withAlignment(
+  BpkSmallExclamationIcon,
+  lineHeightBase,
+  iconSizeSm,
+);
 
 const BpkFormValidation = props => {
-  const classNames = [getClassName('bpk-form-validation')];
   const {
     children,
     expanded,
@@ -36,15 +43,12 @@ const BpkFormValidation = props => {
     ...rest
   } = props;
 
-  if (expanded) {
-    classNames.push(getClassName('bpk-form-validation--appear'));
-  }
-  if (isCheckbox) {
-    classNames.push(getClassName('bpk-form-validation--is-checkbox'));
-  }
-  if (className) {
-    classNames.push(className);
-  }
+  const classNames = getClassName(
+    'bpk-form-validation',
+    expanded && 'bpk-form-validation--appear',
+    isCheckbox && 'bpk-form-validation--is-checkbox',
+    className,
+  );
 
   return (
     <AnimateHeight
@@ -54,7 +58,10 @@ const BpkFormValidation = props => {
       {...containerProps}
     >
       <div className={getClassName('bpk-form-validation__container')}>
-        <div className={classNames.join(' ')} {...rest}>
+        <div className={classNames} {...rest}>
+          <AlignedExclamationIcon
+            className={getClassName('bpk-form-validation__icon')}
+          />
           {children}
         </div>
       </div>

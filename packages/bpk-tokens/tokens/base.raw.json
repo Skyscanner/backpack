@@ -1763,6 +1763,7 @@
       "category": "forms",
       "value": ".375rem",
       "type": "size",
+      "deprecated": true,
       "originalValue": "{!SPACING_XS}",
       "name": "FORM_VALIDATION_ARROW_SIZE"
     },
@@ -1770,6 +1771,7 @@
       "category": "forms",
       "value": "rgb(255, 84, 82)",
       "type": "color",
+      "deprecated": true,
       "originalValue": "{!RED_500}",
       "name": "FORM_VALIDATION_BACKGROUND_COLOR"
     },
@@ -1777,20 +1779,22 @@
       "category": "forms",
       "value": "1.5rem",
       "type": "size",
+      "deprecated": true,
       "originalValue": "{!SPACING_BASE}",
       "name": "FORM_VALIDATION_CHECKBOX_ARROW_LEFT"
     },
     "FORM_VALIDATION_COLOR": {
       "category": "forms",
-      "value": "rgb(255, 255, 255)",
+      "value": "rgb(255, 84, 82)",
       "type": "color",
-      "originalValue": "{!WHITE}",
+      "originalValue": "{!RED_500}",
       "name": "FORM_VALIDATION_COLOR"
     },
     "FORM_VALIDATION_MARGIN": {
       "category": "forms",
       "value": "0",
       "type": "size",
+      "deprecated": true,
       "originalValue": "0",
       "name": "FORM_VALIDATION_MARGIN"
     },
@@ -1798,6 +1802,7 @@
       "category": "forms",
       "value": ".75rem",
       "type": "size",
+      "deprecated": true,
       "originalValue": "{!SPACING_SM}",
       "name": "FORM_VALIDATION_PADDING_X"
     },
@@ -1805,6 +1810,7 @@
       "category": "forms",
       "value": ".375rem",
       "type": "size",
+      "deprecated": true,
       "originalValue": "{!SPACING_XS}",
       "name": "FORM_VALIDATION_PADDING_Y"
     },

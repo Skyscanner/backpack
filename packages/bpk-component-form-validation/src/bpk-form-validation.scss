@@ -25,6 +25,12 @@
     @include bpk-form-validation__container;
   }
 
+  &__icon {
+    fill: $bpk-color-red-500;
+
+    @include bpk-margin-trailing($bpk-spacing-xs);
+  }
+
   &--appear {
     @include bpk-form-validation--appear;
   }
