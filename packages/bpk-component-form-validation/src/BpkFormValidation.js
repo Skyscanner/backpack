@@ -34,7 +34,6 @@ const AlignedExclamationIcon = withAlignment(
 );
 
 const BpkFormValidation = props => {
-  const classNames = [getClassName('bpk-form-validation')];
   const {
     children,
     expanded,
@@ -44,15 +43,12 @@ const BpkFormValidation = props => {
     ...rest
   } = props;
 
-  if (expanded) {
-    classNames.push(getClassName('bpk-form-validation--appear'));
-  }
-  if (isCheckbox) {
-    classNames.push(getClassName('bpk-form-validation--is-checkbox'));
-  }
-  if (className) {
-    classNames.push(className);
-  }
+  const classNames = getClassName(
+    'bpk-form-validation',
+    expanded && 'bpk-form-validation--appear',
+    isCheckbox && 'bpk-form-validation--is-checkbox',
+    className,
+  );
 
   return (
     <AnimateHeight
@@ -62,7 +58,7 @@ const BpkFormValidation = props => {
       {...containerProps}
     >
       <div className={getClassName('bpk-form-validation__container')}>
-        <div className={classNames.join(' ')} {...rest}>
+        <div className={classNames} {...rest}>
           <AlignedExclamationIcon
             className={getClassName('bpk-form-validation__icon')}
           />
