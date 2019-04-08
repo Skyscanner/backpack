@@ -696,12 +696,46 @@ const components = [
       </BpkParagraph>,
     ],
     examples: [
+      <InputContainer
+        FormComponent={BpkInput}
+        id="input_invalid"
+        name="input_invalid"
+        value="Edinbrvgh"
+        placeholder="Country, city or airport"
+        onChange={() => null}
+        valid={false}
+      />,
       <BpkFormValidation id="form_validation" expanded>
-        Please enter a name
+        Please enter a valid name
       </BpkFormValidation>,
       <br />,
+      <InputContainer
+        FormComponent={BpkSelect}
+        id="select_invalid"
+        name="select_invalid"
+        value=""
+        onChange={() => null}
+        valid={false}
+      >
+        <option value="" hidden>
+          Please select...
+        </option>
+        <option value="economy">Economy</option>
+        <option value="premium_economy">Premium Economy</option>
+        <option value="business">Business class</option>
+        <option value="first">First class</option>
+      </InputContainer>,
       <BpkFormValidation id="form_validation" expanded isCheckbox>
-        This is required
+        This option is required
+      </BpkFormValidation>,
+      <br />,
+      <InputContainer
+        FormComponent={BpkCheckbox}
+        name="checkbox"
+        label="Apples"
+      />,
+      <BpkFormValidation id="form_validation" expanded isCheckbox>
+        This checkbox is required
       </BpkFormValidation>,
     ],
     readme: validationReadme,
