@@ -3,7 +3,8 @@
 **Breaking**
 - bpk-component-form-validation
   - Refreshed the design of invalid inputs. See https://backpack.github.io/components/form?platform=web#validation
-- bpk-mixins
-  - As part of the validation updates a number of mixins have been modified to remove unused components
+- bpk-tokens
+  - Updated `FORM_VALIDATION_COLOR` to red 500
+  - Deprecated `FORM_VALIDATION_MARGIN`, `FORM_VALIDATION_PADDING_Y`, `FORM_VALIDATION_PADDING_X`, `FORM_VALIDATION_BACKGROUND_COLOR`, `FORM_VALIDATION_ARROW_SIZE`, `FORM_VALIDATION_CHECKBOX_ARROW_LEFT` on web
 
 **Note**: The API hasn't changed, it's only breaking because it's a major visual change.
