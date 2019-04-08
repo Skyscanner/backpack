@@ -230,7 +230,7 @@ module.exports = {
   formValidationArrowSize: ".375rem",
   formValidationBackgroundColor: "rgb(255, 84, 82)",
   formValidationCheckboxArrowLeft: "1.5rem",
-  formValidationColor: "rgb(255, 255, 255)",
+  formValidationColor: "rgb(255, 84, 82)",
   formValidationMargin: "0",
   formValidationPaddingX: ".75rem",
   formValidationPaddingY: ".375rem",

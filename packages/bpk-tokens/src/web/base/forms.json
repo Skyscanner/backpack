@@ -132,31 +132,37 @@
     },
     "FORM_VALIDATION_MARGIN": {
       "value": "0",
-      "type": "size"
+      "type": "size",
+      "deprecated": true
     },
     "FORM_VALIDATION_PADDING_Y": {
       "value": "{!SPACING_XS}",
-      "type": "size"
+      "type": "size",
+      "deprecated": true
     },
     "FORM_VALIDATION_PADDING_X": {
       "value": "{!SPACING_SM}",
-      "type": "size"
+      "type": "size",
+      "deprecated": true
     },
     "FORM_VALIDATION_BACKGROUND_COLOR": {
       "value": "{!RED_500}",
-      "type": "color"
+      "type": "color",
+      "deprecated": true
     },
     "FORM_VALIDATION_COLOR": {
-      "value": "{!WHITE}",
+      "value": "{!RED_500}",
       "type": "color"
     },
     "FORM_VALIDATION_ARROW_SIZE": {
       "value": "{!SPACING_XS}",
-      "type": "size"
+      "type": "size",
+      "deprecated": true
     },
     "FORM_VALIDATION_CHECKBOX_ARROW_LEFT": {
       "value": "{!SPACING_BASE}",
-      "type": "size"
+      "type": "size",
+      "deprecated": true
     },
     "TEXTAREA_MIN_HEIGHT": {
       "value": "{!SPACING_XXL} * 2",

@@ -691,7 +691,7 @@
   position: relative;
   transform: translateY(-#{$bpk-spacing-sm});
   transition: opacity $bpk-duration-sm ease-in-out, transform $bpk-duration-sm ease-in-out;
-  color: $bpk-color-red-500;
+  color: $bpk-form-validation-background-color;
   opacity: 0;
 }
 
@@ -728,15 +728,6 @@
 
 @mixin bpk-form-validation--is-checkbox {
   display: inline-block;
-
-  &::after {
-    left: $bpk-form-validation-checkbox-arrow-left + $bpk-form-validation-arrow-size;
-
-    @include bpk-rtl {
-      right: $bpk-form-validation-checkbox-arrow-left;
-      left: 0;
-    }
-  }
 }
 
 /// Form validation container.
