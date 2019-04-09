@@ -71,6 +71,7 @@ const BpkSelect = (props: Props) => {
         dockedLast && 'bpk-select--docked-last',
         image && 'bpk-select--with-image',
         image && large && 'bpk-select--with-image-large',
+        isInvalid && 'bpk-select--invalid',
         className,
       )}
       disabled={disabled}
