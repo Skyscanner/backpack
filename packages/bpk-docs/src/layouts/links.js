@@ -157,7 +157,7 @@ const ComponentsLinks = [
         id: 'CALENDAR',
         route: routes.CALENDAR,
         children: 'Calendar',
-        tags: ['web'],
+        tags: ['web', 'native'],
       },
       {
         id: 'DATEPICKER',
