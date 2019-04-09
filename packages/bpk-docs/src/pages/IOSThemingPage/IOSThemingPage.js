@@ -22,7 +22,7 @@ import { BpkList, BpkListItem } from 'bpk-component-list';
 
 import readme from '../../../../../backpack-ios/Backpack/Theme/README.md';
 import DocsPageBuilder from '../../components/DocsPageBuilder';
-import { SWITCH } from '../../constants/routes';
+import { SPINNER, SWITCH } from '../../constants/routes';
 import Paragraph from '../../components/Paragraph';
 
 const components = [];
@@ -30,6 +30,9 @@ const components = [];
 const blurb = [
   <Paragraph>The following iOS components are themeable:</Paragraph>,
   <BpkList>
+    <BpkListItem>
+      <BpkRouterLink to={SPINNER}>Spinner</BpkRouterLink>
+    </BpkListItem>
     <BpkListItem>
       <BpkRouterLink to={SWITCH}>Switch</BpkRouterLink>
     </BpkListItem>
