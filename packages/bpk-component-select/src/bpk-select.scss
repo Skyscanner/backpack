@@ -76,6 +76,10 @@
       padding-left: $bpk-spacing-xxl + $bpk-spacing-xs !important; /* stylelint-disable-line declaration-no-important */
     }
   }
+
+  &--invalid {
+    @include bpk-select--invalid;
+  }
 }
 
 $select-image-width: 18 * $bpk-one-pixel-rem;
