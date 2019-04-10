@@ -2,14 +2,22 @@
 
 [Unreleased changes](./UNRELEASED.md).
 
+# 2019-04-10 New icon for price alerts
+
+**Changed**
+- bpk-component-icon: 3.27.5 => 3.27.6
+- bpk-mixins: 17.17.0 => 17.17.1
+- bpk-svgs: 6.4.3 => 6.4.4
+  - Updated `alert--active`, `alert--add`, `alert--expired`, `alert--remove`, `price-alerts` icons
+
 # 2019-04-10 New design for invalid select
 
-Added:
-- bpk-mixins
+**Added**:
+- bpk-mixins: 17.16.4 => 17.17.0
   - Added `bpk-select--invalid` mixin.
 
-Changed:
-- bpk-component-select
+**Changed**:
+- bpk-component-select: 2.2.51 => 2.2.52
   - Invalid `BpkSelect`s now have a red border and background to match the style of invalid `BpkInput`s.
 
 **Note**: The API hasn't changed, it's only breaking because it's a major visual change.
