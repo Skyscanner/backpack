@@ -2,6 +2,18 @@
 
 [Unreleased changes](./UNRELEASED.md).
 
+# 2019-04-10 New design for invalid select
+
+Added:
+- bpk-mixins
+  - Added `bpk-select--invalid` mixin.
+
+Changed:
+- bpk-component-select
+  - Invalid `BpkSelect`s now have a red border and background to match the style of invalid `BpkInput`s.
+
+**Note**: The API hasn't changed, it's only breaking because it's a major visual change.
+
 # 2019-04-08 New design for validation messages
 
 **Breaking**
