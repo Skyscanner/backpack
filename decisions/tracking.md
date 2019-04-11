@@ -25,4 +25,4 @@ For Android the value for `letterSpacing` is calculated as
 
 It does not produce 100% accurate results but the results are more maintainable and work independent of screen resolution than using pre-calculated values.
 
-This [Sketch file](tracking-android.md) can be used to verify any changes to the values by changing the device screenshot.
+This [Sketch file](tracking-android.sketch) can be used to verify any changes to the values by changing the device screenshot.
