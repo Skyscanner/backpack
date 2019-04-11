@@ -31,7 +31,7 @@ const ClearButtonIcon = withButtonAlignment(ClearIcon);
 
 type Props = {
   label: string,
-  onClick: (SyntheticEvent<HTMLButtonElement>) => mixed,
+  onClick: (SyntheticInputEvent<HTMLButtonElement>) => mixed,
   className: ?string,
 };
 

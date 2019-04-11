@@ -28,7 +28,7 @@ exports[`BpkInput should render correctly with "clearButtonMode=always" attribut
 >
   <input
     aria-invalid={false}
-    className="bpk-input bpk-input--clearable"
+    className="bpk-input bpk-input--clearable bpk-input--persistent-clearable"
     id="test"
     name="test"
     type="text"

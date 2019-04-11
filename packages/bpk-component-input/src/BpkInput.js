@@ -49,6 +49,7 @@ const BpkInput = (props: Props) => {
     onClear,
     valid,
     value,
+    name,
     ...rest
   } = props;
 
@@ -113,6 +114,7 @@ const BpkInput = (props: Props) => {
       }}
       aria-invalid={isInvalid}
       value={value}
+      name={name}
       {...rest}
     />
   );
@@ -129,6 +131,7 @@ const BpkInput = (props: Props) => {
               ref.focus();
             }
             if (onClear) {
+              e.target.name = name;
               onClear(e);
             }
           }}

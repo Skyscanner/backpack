@@ -91,12 +91,7 @@ describe('BpkInput', () => {
     jest.spyOn(console, 'error').mockImplementation(() => jest.fn());
     const tree = renderer
       .create(
-        <BpkInput
-          id="test"
-          name="test"
-          value=""
-          clearButtonMode="whileEditing"
-        />,
+        <BpkInput id="test" name="test" value="" clearButtonMode="always" />,
       )
       .toJSON();
     expect(tree).toMatchSnapshot();
@@ -196,5 +191,28 @@ describe('BpkInput', () => {
       .at(0)
       .instance();
     expect(input).toEqual(inputRef);
+  });
+
+  it('should call "onClear" when clearing', () => {
+    const onClear = jest.fn();
+
+    const name = 'field_name';
+
+    const wrapper = mount(
+      <BpkInput
+        id="test"
+        name={name}
+        value="value"
+        clearButtonMode="always"
+        onClear={onClear}
+        clearButtonLabel="clear"
+      />,
+    );
+
+    wrapper.find('BpkClearButton').simulate('click');
+
+    expect(onClear).toHaveBeenCalledWith(
+      expect.objectContaining({ target: expect.objectContaining({ name }) }),
+    );
   });
 });
