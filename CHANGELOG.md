@@ -2,6 +2,12 @@
 
 [Unreleased changes](./UNRELEASED.md).
 
+# 2019-04-11
+
+**Added:**
+- bpk-component-input:
+  - When calling `onClear`, provide input `name` in the event.
+
 # 2019-04-10 New icon for price alerts
 
 **Changed**
