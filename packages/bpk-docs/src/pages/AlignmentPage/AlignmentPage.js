@@ -76,7 +76,7 @@ const components = [
       <CodeBlock>
         {`import LongArrowRightIconSm from 'bpk-component-icon/sm/long-arrow-right';
 import { withAlignment } from 'bpk-component-icon';
-import { lineHeightBase, iconSizeSm } from 'bpk-tokens/tokens/base.es6';
+import { lineHeightBase, iconSizeSm, colors } from 'bpk-tokens/tokens/base.es6';
 import BpkText from 'bpk-component-text';
 
 const AlignedArrow = withAlignment(
@@ -109,7 +109,7 @@ const AlignedArrow = withAlignment(
       <CodeBlock>
         {`import LongArrowRightIcon from 'bpk-component-icon/lg/long-arrow-right';
 import { withAlignment } from 'bpk-component-icon';
-import { lineHeightLg, iconSizeLg } from 'bpk-tokens/tokens/base.es6';
+import { lineHeightLg, iconSizeLg, colors } from 'bpk-tokens/tokens/base.es6';
 import BpkText from 'bpk-component-text';
 
 const AlignedArrow = withAlignment(
@@ -142,7 +142,7 @@ const AlignedArrow = withAlignment(
       <CodeBlock>
         {`import AwardIcon from 'bpk-component-icon/lg/award';
 import { withAlignment } from 'bpk-component-icon';
-import { iconSizeLg, lineHeightBase } from 'bpk-tokens/tokens/base.es6';
+import { iconSizeLg, lineHeightBase, colors } from 'bpk-tokens/tokens/base.es6';
 import BpkText from 'bpk-component-text';
 
 const AlignedSpan = withAlignment(
@@ -177,7 +177,7 @@ const AlignedSpan = withAlignment(
       <CodeBlock>
         {`import AwardIcon from 'bpk-component-icon/lg/award';
 import { withAlignment } from 'bpk-component-icon';
-import { iconSizeLg, lineHeightSm } from 'bpk-tokens/tokens/base.es6';
+import { iconSizeLg, lineHeightSm, colors } from 'bpk-tokens/tokens/base.es6';
 import BpkText from 'bpk-component-text';
 
 const AlignedSpanSmall = withAlignment(
@@ -213,6 +213,7 @@ const AlignedSpanSmall = withAlignment(
       <CodeBlock>
         {`import LongArrowRightIconSm from 'bpk-component-icon/sm/long-arrow-right';
 import { withButtonAlignment } from 'bpk-component-icon';
+import { colors } from 'bpk-tokens/tokens/base.es6';
 
 const AlignedArrow = withButtonAlignment(LongArrowRightIconSm);
 
