@@ -66,6 +66,9 @@ const nativeBlurb = [
       <BpkRouterLink to={BUTTON}>Button</BpkRouterLink>
     </BpkListItem>
     <BpkListItem>
+      <BpkRouterLink to={CALENDAR}>Calendar</BpkRouterLink>
+    </BpkListItem>
+    <BpkListItem>
       <BpkRouterLink to={FLAT_LIST}>Flat list</BpkRouterLink>
     </BpkListItem>
     <BpkListItem>
