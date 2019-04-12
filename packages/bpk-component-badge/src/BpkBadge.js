@@ -22,7 +22,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { cssModules } from 'bpk-react-utils';
 
-import STYLES from './bpk-badge.scss';
+import STYLES from './BpkBadge.scss';
 
 export const BADGE_TYPES = {
   warning: 'warning',

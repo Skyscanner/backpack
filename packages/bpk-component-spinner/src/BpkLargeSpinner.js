@@ -21,7 +21,7 @@ import React from 'react';
 import { cssModules } from 'bpk-react-utils';
 import LgSpinner from 'bpk-svgs/dist/js/spinners/lg';
 
-import STYLES from './bpk-spinner.scss';
+import STYLES from './BpkSpinner.scss';
 import SPINNER_TYPES from './spinnerTypes';
 
 const getClassName = cssModules(STYLES);

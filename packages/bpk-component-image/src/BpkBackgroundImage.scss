@@ -17,7 +17,7 @@
  */
 
 @import '~bpk-mixins/index';
-@import './bpk-image.scss';
+@import './BpkImage.scss';
 
 .bpk-background-image {
   @include bpk-image;

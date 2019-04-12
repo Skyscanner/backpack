@@ -21,7 +21,7 @@ import React from 'react';
 import { cssModules } from 'bpk-react-utils';
 import { BpkButtonLink } from 'bpk-component-link';
 
-import STYLES from './bpk-grid-toggle.scss';
+import STYLES from './BpkGridToggle.scss';
 
 const getClassName = cssModules(STYLES);
 

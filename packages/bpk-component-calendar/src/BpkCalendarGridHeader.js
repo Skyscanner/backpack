@@ -26,7 +26,7 @@ import {
   getLastDayOfWeekend,
   orderDaysOfWeek,
 } from './date-utils';
-import STYLES from './bpk-calendar-grid-header.scss';
+import STYLES from './BpkCalendarGridHeader.scss';
 
 const getClassName = cssModules(STYLES);
 

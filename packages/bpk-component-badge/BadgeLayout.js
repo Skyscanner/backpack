@@ -22,7 +22,7 @@ import PropTypes from 'prop-types';
 import React, { type Node, Children } from 'react';
 import { cssModules } from 'bpk-react-utils';
 
-import STYLES from './badge-layout.scss';
+import STYLES from './BpkBadgeLayout.scss';
 
 import { BADGE_TYPES } from './index';
 

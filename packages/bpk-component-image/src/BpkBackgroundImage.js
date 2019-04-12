@@ -24,7 +24,7 @@ import { BpkSpinner } from 'bpk-component-spinner';
 import CSSTransition from 'react-transition-group/CSSTransition';
 import { animations } from 'bpk-tokens/tokens/base.es6';
 
-import STYLES from './bpk-background-image.scss';
+import STYLES from './BpkBackgroundImage.scss';
 
 const getClassName = cssModules(STYLES);
 

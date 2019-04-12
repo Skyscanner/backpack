@@ -22,7 +22,7 @@ import { Portal, cssModules } from 'bpk-react-utils';
 import { withScrim } from 'bpk-scrim-utils';
 
 import BpkDrawerContent from './BpkDrawerContent';
-import STYLES from './bpk-drawer.scss';
+import STYLES from './BpkDrawer.scss';
 
 const getClassName = cssModules(STYLES);
 
