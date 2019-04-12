@@ -24,7 +24,7 @@ import BpkAnimateHeight from 'bpk-animate-height';
 import { durationSm } from 'bpk-tokens/tokens/base.es6';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 
-import STYLES from './animate-and-fade.scss';
+import STYLES from './BpkAnimateAndFade.scss';
 
 const getClassName = cssModules(STYLES);
 

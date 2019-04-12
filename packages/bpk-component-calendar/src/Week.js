@@ -35,7 +35,7 @@ import {
   isWithinRange,
 } from './date-utils';
 import CustomPropTypes from './custom-proptypes';
-import STYLES from './bpk-calendar-grid.scss';
+import STYLES from './BpkCalendarGrid.scss';
 
 const getClassName = cssModules(STYLES);
 

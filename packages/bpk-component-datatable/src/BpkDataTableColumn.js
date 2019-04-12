@@ -21,7 +21,7 @@ import { Column } from 'react-virtualized';
 import { cssModules } from 'bpk-react-utils';
 
 import bpkHeaderRenderer from './bpkHeaderRenderer';
-import STYLES from './bpk-data-table-column.scss';
+import STYLES from './BpkDataTableColumn.scss';
 
 const getClassName = cssModules(STYLES);
 
