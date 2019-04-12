@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-textarea",
-  "version": "1.0.115",
+  "version": "1.0.116",
   "description": "Backpack textarea component.",
   "main": "index.js",
   "repository": {

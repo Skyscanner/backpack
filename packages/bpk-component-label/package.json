@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-label",
-  "version": "3.2.121",
+  "version": "3.2.122",
   "description": "Backpack label component.",
   "main": "index.js",
   "repository": {

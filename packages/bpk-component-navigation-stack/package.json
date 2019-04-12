@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-navigation-stack",
-  "version": "1.0.59",
+  "version": "1.0.60",
   "description": "Backpack navigation stack component.",
   "main": "index.js",
   "repository": {
@@ -20,9 +20,9 @@
     "react-transition-group": "^2.5.3"
   },
   "devDependencies": {
-    "bpk-component-button": "^2.1.53",
-    "bpk-component-icon": "^3.27.6",
-    "bpk-component-navigation-bar": "^1.2.56",
-    "bpk-component-rtl-toggle": "^1.1.71"
+    "bpk-component-button": "^2.1.54",
+    "bpk-component-icon": "^3.27.7",
+    "bpk-component-navigation-bar": "^1.2.57",
+    "bpk-component-rtl-toggle": "^1.1.72"
   }
 }
