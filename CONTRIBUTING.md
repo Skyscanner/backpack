@@ -74,6 +74,16 @@ We recommend that you install [a plugin to your editor](https://eslint.org/docs/
 
 ## Getting started
 
+### Getting the code
+
+You should pull code down using the following command
+
+```
+git clone --recursive https://github.com/YOUR_USERNAME/Backpack.git
+```
+
+The `--recursive` option is needed to retrieve the Git submodules we use.
+
 ### Install dependencies
 
 Run `npm install` to install dependencies from npm.
