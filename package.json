@@ -79,7 +79,7 @@
     "@storybook/addon-actions": "^5.0.8",
     "@storybook/addon-knobs": "^5.0.8",
     "@storybook/addon-links": "^5.0.8",
-    "@storybook/react": "^3.4.11",
+    "@storybook/react": "^5.0.8",
     "autoprefixer": "^9.4.7",
     "babel-core": "^6.26.3",
     "babel-jest": "^23.6.0",
