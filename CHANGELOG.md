@@ -2,10 +2,19 @@
 
 [Unreleased changes](./UNRELEASED.md).
 
+# 2019-04-17 Added new validation to textarea component
+
+**Added:**
+- bpk-component-textarea: 1.0.116 => 1.1.0 
+  - Added `valid` prop to textarea component for handling incorrect input.
+
+- bpk-mixins: 17.17.1 => 17.18.0
+  - Added `bpk-textarea--invalid` mixin.
+
 # 2019-04-11
 
 **Added:**
-- bpk-component-input:
+- bpk-component-input: 4.0.3 => 4.1.0
   - When calling `onClear`, provide input `name` in the event.
 
 # 2019-04-10 New icon for price alerts
