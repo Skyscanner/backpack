@@ -561,6 +561,18 @@ const components = [
         />
       </form>,
       <form className={formClassName}>
+        <BpkLabel htmlFor="textarea_invalid">Invalid Textarea</BpkLabel>
+        <InputContainer
+          FormComponent={BpkTextarea}
+          id="textarea_invalid"
+          name="textarea_invalid"
+          value="@ 123 {\ hi"
+          placeholder="@ 123 {\ hi"
+          onChange={() => null}
+          valid={false}
+        />
+      </form>,
+      <form className={formClassName}>
         <BpkLabel htmlFor="textarea_placeholder">
           Textarea (placeholder)
         </BpkLabel>
@@ -739,6 +751,20 @@ const components = [
         />
         <BpkFormValidation id="form_validation" expanded isCheckbox>
           This checkbox is required
+        </BpkFormValidation>
+      </form>,
+      <form className={formClassName}>
+        <InputContainer
+          FormComponent={BpkTextarea}
+          id="textarea"
+          name="textarea"
+          value="@text 123 /}"
+          placeholder="@text 123 /}"
+          onChange={() => null}
+          valid={false}
+        />
+        <BpkFormValidation id="form_validation" expanded>
+          Please enter valid input
         </BpkFormValidation>
       </form>,
     ],

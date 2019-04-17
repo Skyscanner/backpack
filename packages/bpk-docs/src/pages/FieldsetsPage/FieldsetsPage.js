@@ -22,6 +22,7 @@ import BpkSelect from 'bpk-component-select';
 import BpkCheckbox from 'bpk-component-checkbox';
 import BpkFieldset from 'bpk-component-fieldset';
 import BpkRouterLink from 'bpk-component-router-link';
+import BpkTextarea from 'bpk-component-textarea';
 import readme from 'bpk-component-fieldset/README.md';
 import PropTypes from 'prop-types';
 import React, { cloneElement, Component } from 'react';
@@ -309,6 +310,26 @@ const components = [
           id="terms_conditions_checkbox"
           name="terms_conditions"
           label="I accept the terms & conditions"
+        />
+      </FieldsetContainer>,
+    ],
+  },
+  {
+    id: 'textareas',
+    title: 'Textareas',
+    examples: [
+      <FieldsetContainer
+        label="Additional Information"
+        validationMessage="Please enter any other details you may need."
+        validStates={[true, false]}
+        description="Please ensure if you have additional requirements they are entered here"
+      >
+        <BpkTextarea
+          id="textarea"
+          name="textarea"
+          value={null}
+          placeholder={null}
+          onChange={() => null}
         />
       </FieldsetContainer>,
     ],

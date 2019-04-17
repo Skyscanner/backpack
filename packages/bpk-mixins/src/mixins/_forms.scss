@@ -797,3 +797,23 @@
     display: none;
   }
 }
+
+/// Invalid form input. Modifies the bpk-textarea mixin.
+///
+/// @require {mixin} bpk-textarea
+///
+/// @example scss
+///   .selector {
+///     @include bpk-textarea();
+///     @include bpk-textarea--invalid();
+///   }
+
+@mixin bpk-textarea--invalid {
+  border-color: $bpk-color-red-500;
+  background: $bpk-color-red-50 url(map-get($bpk-icons-sm, exclamation-circle-red-500)) no-repeat right $bpk-spacing-sm center;
+
+  @include bpk-rtl {
+    padding-right: $bpk-input-padding-x;
+    background-position: left $bpk-spacing-sm center;
+  }
+}
