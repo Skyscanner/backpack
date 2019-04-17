@@ -4,5 +4,5 @@
 - bpk-component-textarea:
   - Added `valid` prop to textarea component for handling incorrect input
 
-- Bpk-mixins:
+- bpk-mixins:
   - Added `bpk-textarea--invalid` mixin
