@@ -20,4 +20,8 @@
 
 .bpk-textarea {
   @include bpk-textarea;
+
+  &--invalid {
+    @include bpk-textarea--invalid;
+  }
 }
