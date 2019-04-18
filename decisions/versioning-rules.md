@@ -9,7 +9,7 @@
 When we release Backpack packages, we use [semver](https://semver.org/) to ensure that changes made don't cause unexpected issues. The following reasoning should be followed.
 
 ### Major
-For Major releases these would be changes that do the following:
+A change is `major` if:
 - If changes are not backwards compatible.
 - Breaking changes to components such as updating the API or visual changes.
 - Changes to tokens such as changes to colours or changes to values such as padding/margins.
