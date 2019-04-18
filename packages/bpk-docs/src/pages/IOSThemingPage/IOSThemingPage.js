@@ -22,7 +22,7 @@ import { BpkList, BpkListItem } from 'bpk-component-list';
 
 import readme from '../../../../../backpack-ios/Backpack/Theme/README.md';
 import DocsPageBuilder from '../../components/DocsPageBuilder';
-import { BUTTON, SPINNER, SWITCH } from '../../constants/routes';
+import { BUTTON, CHIP, SPINNER, SWITCH } from '../../constants/routes';
 import Paragraph from '../../components/Paragraph';
 
 const components = [];
@@ -32,6 +32,9 @@ const blurb = [
   <BpkList>
     <BpkListItem>
       <BpkRouterLink to={BUTTON}>Button (primary only)</BpkRouterLink>
+    </BpkListItem>
+    <BpkListItem>
+      <BpkRouterLink to={CHIP}>Chip</BpkRouterLink>
     </BpkListItem>
     <BpkListItem>
       <BpkRouterLink to={SPINNER}>Spinner</BpkRouterLink>
