@@ -17,7 +17,7 @@ A change is `major` if:
 - Adding new functionality to a component.
 
 ### Minor
-For Minor releases these would be changes that do the following:
+A change is `minor` if:
 - Changes where the updates are only in the Backpack component itself and not used publicly.
 - Added new functionality to a component that didn't exist before and are not mandatory meaning there would be no impact on release.
 - Adding a new icon that is not in used yet.
