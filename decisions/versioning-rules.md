@@ -2,9 +2,6 @@
 
 # Versioning approach for component releases
 
-## TL;DR
-<!-- Only if long enough to merit one. -->
-
 ## Decision
 When we release Backpack packages, we use [semver](https://semver.org/) to ensure that changes made don't cause unexpected issues. The following reasoning should be followed.
 
@@ -24,6 +21,7 @@ A change is `minor` if:
 - Adding a new component to the Backpack library.
 
 ### Patch
+A change is `patch` if:
 - Only a dependency that a component uses needs an upgrade to improve functionality in the component.
 - Bug fixes.
 - Quality fixes such as `flow`, `eslint` or `prettier`.
