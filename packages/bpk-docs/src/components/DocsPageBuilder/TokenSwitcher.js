@@ -80,6 +80,7 @@ class TokenSwitcher extends Component {
   componentDidMount() {
     const selectedPlatform = getPlatformFromLocalStorage();
     if (platforms[selectedPlatform]) {
+      onSwitch(this.id, selectedPlatform);
       this.setState({ selectedPlatform });
     }
   }
