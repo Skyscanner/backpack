@@ -27,4 +27,4 @@ A change is `patch` if:
 - Quality fixes such as `flow`, `eslint` or `prettier`.
 
 ## Thinking
-[You can find out more about the benefits of semver on semver.org](https://semver.org/#why-use-semantic-versioning)
+[You can find out more about the benefits of `semver` on `semver.org`](https://semver.org/#why-use-semantic-versioning)
