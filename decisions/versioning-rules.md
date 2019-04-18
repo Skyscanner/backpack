@@ -29,4 +29,4 @@ A change is `minor` if:
 - Quality fixes such as `flow`, `eslint` or `prettier`.
 
 ## Thinking
-The thinking behind this will align contributors on how to decide a release version for component development.
+[You can find out more about the benefits of semver on semver.org](https://semver.org/#why-use-semantic-versioning)
