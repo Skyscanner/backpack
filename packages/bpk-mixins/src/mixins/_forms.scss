@@ -774,6 +774,7 @@
 @mixin bpk-textarea {
   display: inline-block;
   width: 100%;
+  max-width: 100%;
   min-height: $bpk-textarea-min-height;
   padding: $bpk-input-padding-y $bpk-input-padding-x;
   border: $bpk-input-border;
