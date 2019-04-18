@@ -6,7 +6,7 @@
 <!-- Only if long enough to merit one. -->
 
 ## Decision
-When a new Backpack component is to be released the approach is to use semver to manage versions which are based on the types of changes that have been made to each component. To ensure that changes made don't cause unexpected outages or issues throughout the applications the following reasoning should be followed.
+When we release Backpack packages, we use [semver](https://semver.org/) to ensure that changes made don't cause unexpected issues. The following reasoning should be followed.
 
 ### Major
 For Major releases these would be changes that do the following:
