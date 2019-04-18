@@ -31,7 +31,7 @@ const blurb = [
   <Paragraph>The following iOS components are themeable:</Paragraph>,
   <BpkList>
     <BpkListItem>
-      <BpkRouterLink to={BUTTON}>Button (primary only)</BpkRouterLink>
+      <BpkRouterLink to={BUTTON}>Button (primary and link only)</BpkRouterLink>
     </BpkListItem>
     <BpkListItem>
       <BpkRouterLink to={CHIP}>Chip</BpkRouterLink>
