@@ -7,7 +7,7 @@ When we release Backpack packages, we use [semver](https://semver.org/) to ensur
 
 ### Major
 A change is `major` if:
-- If changes are not backwards compatible.
+- Changes are not backwards compatible.
 - Breaking changes to components such as updating the API or visual changes.
 - Changes to tokens such as changes to colours or changes to values such as padding/margins.
 - Deprecation to tokens, components or API.
