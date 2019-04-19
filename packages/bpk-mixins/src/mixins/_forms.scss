@@ -440,7 +440,7 @@
 
 @mixin bpk-select--invalid {
   padding-right: $bpk-spacing-base;
-  border-color: $bpk-color-red-500;
+  border-color: $bpk-color-red-500 !important; /* stylelint-disable-line declaration-no-important */
   background: $bpk-color-red-50 url(map-get($bpk-icons-sm, arrow-down-gray-700)) no-repeat right $bpk-spacing-sm center;
   background-size: $bpk-spacing-md $bpk-spacing-md;
 
