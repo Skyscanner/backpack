@@ -47,6 +47,7 @@
 
   &:disabled {
     border-color: $bpk-input-disabled-border-color;
+    background: $bpk-input-background;
     color: $bpk-input-disabled-color;
     cursor: not-allowed;
   }
@@ -325,7 +326,7 @@
 
   &:disabled {
     border-color: $bpk-select-disabled-border-color;
-    background-image: url(map-get($bpk-icons-sm, arrow-down-gray-300));
+    background: $bpk-color-white url(map-get($bpk-icons-sm, arrow-down-gray-300)) no-repeat right $bpk-spacing-sm center;
     color: $bpk-select-disabled-color;
     cursor: not-allowed;
   }
@@ -790,6 +791,7 @@
 
   &:disabled {
     border-color: $bpk-input-disabled-border-color;
+    background: $bpk-input-background;
     color: $bpk-input-disabled-color;
     cursor: not-allowed;
   }

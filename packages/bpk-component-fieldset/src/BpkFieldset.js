@@ -122,7 +122,7 @@ const BpkFieldset = (props: Props) => {
           {description}
         </span>
       )}
-      {validationMessage && (
+      {!disabled && validationMessage && (
         <BpkFormValidation
           id={validationMessageId}
           expanded={isInvalid}
