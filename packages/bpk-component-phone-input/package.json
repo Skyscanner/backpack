@@ -25,5 +25,6 @@
   "devDependencies": {
     "bpk-component-fieldset": "^1.1.83",
     "bpk-component-image": "^2.1.27"
-  }
+  },
+  "gitHead": "edd14f16dc571cc009d908c3c8f7d27a428b6de8"
 }

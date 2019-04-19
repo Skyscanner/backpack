@@ -17,5 +17,6 @@
     "bpk-react-utils": "^2.7.4",
     "bpk-svgs": "^6.4.4",
     "prop-types": "^15.6.2"
-  }
+  },
+  "gitHead": "edd14f16dc571cc009d908c3c8f7d27a428b6de8"
 }

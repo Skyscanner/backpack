@@ -23,5 +23,6 @@
     "bpk-component-mobile-scroll-container": "^1.1.60",
     "bpk-component-text": "^1.0.115",
     "bpk-tokens": "^27.5.0"
-  }
+  },
+  "gitHead": "edd14f16dc571cc009d908c3c8f7d27a428b6de8"
 }

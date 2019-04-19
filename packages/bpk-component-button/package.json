@@ -15,5 +15,6 @@
   "dependencies": {
     "bpk-mixins": "^17.18.1",
     "prop-types": "^15.6.2"
-  }
+  },
+  "gitHead": "edd14f16dc571cc009d908c3c8f7d27a428b6de8"
 }

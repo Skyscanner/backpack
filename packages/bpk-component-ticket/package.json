@@ -20,5 +20,6 @@
   "devDependencies": {
     "bpk-component-button": "^2.1.56",
     "bpk-component-icon": "^3.27.9"
-  }
+  },
+  "gitHead": "edd14f16dc571cc009d908c3c8f7d27a428b6de8"
 }

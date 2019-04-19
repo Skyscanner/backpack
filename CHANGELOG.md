@@ -2,10 +2,25 @@
 
 [Unreleased changes](./UNRELEASED.md).
 
+# 2019-04-19 Fixed small input styling bugs
+
+**Fixed:**
+
+- bpk-component-fieldset:
+- bpk-component-input:
+- bpk-component-select:
+- bpk-component-textarea:
+- bpk-mixins:
+  - Fixed bug that caused wrong background color when `valid` and `disabled` prop were used together
+
+ - bpk-mixins:
+ - bpk-component-textarea:
+   - Set `max-width` property to provide a more predictable experience when a user resizes the component in their browser.
+
 # 2019-04-17 Added new validation to textarea component
 
 **Added:**
-- bpk-component-textarea: 1.0.116 => 1.1.0 
+- bpk-component-textarea: 1.0.116 => 1.1.0
   - Added `valid` prop to textarea component for handling incorrect input.
 
 - bpk-mixins: 17.17.1 => 17.18.0

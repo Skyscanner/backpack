@@ -22,5 +22,6 @@
     "bpk-component-button": "^2.1.56",
     "bpk-component-table": "^1.1.60",
     "bpk-tokens": "^27.5.0"
-  }
+  },
+  "gitHead": "edd14f16dc571cc009d908c3c8f7d27a428b6de8"
 }

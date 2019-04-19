@@ -20,5 +20,6 @@
   },
   "devDependencies": {
     "bpk-component-table": "^1.1.60"
-  }
+  },
+  "gitHead": "edd14f16dc571cc009d908c3c8f7d27a428b6de8"
 }
