@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-radio",
-  "version": "1.2.82",
+  "version": "1.2.83",
   "description": "Backpack radio button component.",
   "main": "index.js",
   "repository": {
@@ -13,7 +13,7 @@
     "react": "^15.0.0 || ^16.0.0"
   },
   "dependencies": {
-    "bpk-mixins": "^17.18.0",
+    "bpk-mixins": "^17.18.1",
     "bpk-react-utils": "^2.7.4",
     "prop-types": "^15.6.2"
   },
