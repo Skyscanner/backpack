@@ -178,6 +178,7 @@ BpkDatepicker.propTypes = {
   id: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   getApplicationElement: PropTypes.func.isRequired,
+  weekStartsOn: PropTypes.number.isRequired,
   // Optional
   date: PropTypes.instanceOf(Date),
   dateModifiers: CustomPropTypes.DateModifiers,
@@ -189,7 +190,6 @@ BpkDatepicker.propTypes = {
   onDateSelect: PropTypes.func,
   onMonthChange: PropTypes.func,
   showWeekendSeparator: PropTypes.bool,
-  weekStartsOn: PropTypes.number,
   initiallyFocusedDate: PropTypes.instanceOf(Date),
   renderTarget: PropTypes.func,
 };
@@ -205,7 +205,6 @@ BpkDatepicker.defaultProps = {
   onDateSelect: null,
   onMonthChange: null,
   showWeekendSeparator: BpkCalendar.defaultProps.showWeekendSeparator,
-  weekStartsOn: BpkCalendar.defaultProps.weekStartsOn,
   initiallyFocusedDate: null,
   renderTarget: null,
 };

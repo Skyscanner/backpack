@@ -117,6 +117,7 @@ class ReturnDatepicker extends Component {
             id="depart"
             closeButtonText="Close"
             daysOfWeek={weekDays}
+            weekStartsOn={1}
             changeMonthLabel="Change month"
             title="Departure date"
             getApplicationElement={() =>
@@ -145,6 +146,7 @@ class ReturnDatepicker extends Component {
             id="return"
             closeButtonText="Close"
             daysOfWeek={weekDays}
+            weekStartsOn={1}
             changeMonthLabel="Change month"
             title="Return date"
             getApplicationElement={() =>
@@ -183,6 +185,7 @@ storiesOf('bpk-component-datepicker', module)
         id="myDatepicker"
         closeButtonText="Close"
         daysOfWeek={weekDays}
+        weekStartsOn={1}
         changeMonthLabel="Change month"
         title="Departure date"
         formatDate={formatDate}
@@ -198,6 +201,7 @@ storiesOf('bpk-component-datepicker', module)
         id="myDatepicker"
         closeButtonText="Close"
         daysOfWeek={weekDays}
+        weekStartsOn={1}
         changeMonthLabel="Change month"
         title="Departure date"
         formatDate={formatDate}
@@ -214,6 +218,7 @@ storiesOf('bpk-component-datepicker', module)
         id="myDatepicker"
         closeButtonText="Close"
         daysOfWeek={weekDays}
+        weekStartsOn={1}
         changeMonthLabel="Change month"
         title="Departure date"
         formatDate={formatDate}
@@ -228,6 +233,7 @@ storiesOf('bpk-component-datepicker', module)
         id="myDatepicker"
         closeButtonText="Close"
         daysOfWeek={weekDays}
+        weekStartsOn={1}
         changeMonthLabel="Change month"
         title="Departure date"
         formatDate={formatDate}

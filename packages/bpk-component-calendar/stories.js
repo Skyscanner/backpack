@@ -116,6 +116,7 @@ storiesOf('bpk-component-calendar', module)
       formatMonth={formatMonth}
       formatDateFull={formatDateFull}
       daysOfWeek={weekDays}
+      weekStartsOn={1}
       changeMonthLabel="Change month"
     />
   ))
@@ -125,6 +126,7 @@ storiesOf('bpk-component-calendar', module)
       formatMonth={formatMonth}
       formatDateFull={formatDateFull}
       daysOfWeek={weekDays}
+      weekStartsOn={1}
       changeMonthLabel="Change month"
       minDate={new Date(2011, 1, 1)}
       selectTodaysDate={false}
@@ -137,6 +139,7 @@ storiesOf('bpk-component-calendar', module)
       formatMonth={formatMonth}
       formatDateFull={formatDateFull}
       daysOfWeek={weekDays}
+      weekStartsOn={1}
       changeMonthLabel="Change month"
       showWeekendSeparator={false}
     />
@@ -147,8 +150,8 @@ storiesOf('bpk-component-calendar', module)
       formatMonth={formatMonth}
       formatDateFull={formatDateFull}
       daysOfWeek={weekDays}
-      changeMonthLabel="Change month"
       weekStartsOn={0}
+      changeMonthLabel="Change month"
     />
   ))
   .add('Calendar - Honest weekend', () => (
@@ -157,6 +160,7 @@ storiesOf('bpk-component-calendar', module)
       formatMonth={formatMonth}
       formatDateFull={formatDateFull}
       daysOfWeek={weekDaysMoreWeekend}
+      weekStartsOn={1}
       changeMonthLabel="Change month"
     />
   ))
@@ -166,8 +170,8 @@ storiesOf('bpk-component-calendar', module)
       formatMonth={formatMonthArabic}
       formatDateFull={formatDateFullArabic}
       daysOfWeek={weekDaysArabic}
-      changeMonthLabel="Change month"
       weekStartsOn={6}
+      changeMonthLabel="Change month"
     />
   ))
   .add('Calendar - ja-JP locale', () => (
@@ -176,8 +180,8 @@ storiesOf('bpk-component-calendar', module)
       formatMonth={formatMonthJapanese}
       formatDateFull={formatDateFullJapanese}
       daysOfWeek={weekDaysJapanese}
-      changeMonthLabel="Change month"
       weekStartsOn={0}
+      changeMonthLabel="Change month"
     />
   ))
   .add('Calendar - Specify min/max date', () => (
@@ -186,6 +190,7 @@ storiesOf('bpk-component-calendar', module)
       formatMonth={formatMonth}
       formatDateFull={formatDateFull}
       daysOfWeek={weekDays}
+      weekStartsOn={1}
       changeMonthLabel="Change month"
       minDate={new Date(2020, 4, 15)}
       maxDate={new Date(2020, 5, 15)}
@@ -197,6 +202,7 @@ storiesOf('bpk-component-calendar', module)
       formatMonth={formatMonth}
       formatDateFull={formatDateFull}
       daysOfWeek={weekDays}
+      weekStartsOn={1}
       changeMonthLabel="Change month"
       markToday={false}
     />
@@ -207,11 +213,12 @@ storiesOf('bpk-component-calendar', module)
       formatMonth={formatMonth}
       formatDateFull={formatDateFull}
       daysOfWeek={weekDays}
+      weekStartsOn={1}
       changeMonthLabel="Change month"
       markOutsideDays={false}
     />
   ))
-  .add('Custom composed calendar', () => <MonthViewCalendar />)
+  .add('Custom composed calendar', () => <MonthViewCalendar weekStartsOn={1} />)
   .add('Custom composed calendar (Safary DST bug)', () => (
     <div>
       <p>

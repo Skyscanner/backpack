@@ -75,6 +75,7 @@ const components = [
         formatDateFull={formatDateFull}
         formatMonth={formatMonth}
         daysOfWeek={weekDays}
+        weekStartsOn={1}
         changeMonthLabel="Change month"
         title="Select date"
         getApplicationElement={() => document.getElementById('pagewrap')}

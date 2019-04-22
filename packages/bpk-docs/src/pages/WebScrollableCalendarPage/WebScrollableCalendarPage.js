@@ -84,6 +84,7 @@ const components = [
         formatMonth={formatMonth}
         formatDateFull={formatDateFull}
         daysOfWeek={weekDays}
+        weekStartsOn={1}
         markToday={false}
         selectTodaysDate
         minDate={DateUtils.addDays(new Date(), -1)}
@@ -100,6 +101,7 @@ const components = [
         formatMonth={formatMonthArabic}
         formatDateFull={formatDateFullArabic}
         daysOfWeek={weekDaysArabic}
+        weekStartsOn={1}
         markToday={false}
         selectTodaysDate
         minDate={DateUtils.addDays(new Date(), -1)}
