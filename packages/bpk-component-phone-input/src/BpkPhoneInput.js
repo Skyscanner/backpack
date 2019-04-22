@@ -83,6 +83,10 @@ const BpkPhoneInput = (props: Props) => {
     disabled: !!disabled,
   };
 
+  // This sizeConstant determines what the multiplier for the field should be
+  let sizeMultiplier = 5;
+  if (large) sizeMultiplier = 7;
+
   return (
     <span
       {...wrapperProps}
@@ -109,6 +113,11 @@ const BpkPhoneInput = (props: Props) => {
         wrapperClassName={getClassName(dialingCodeProps.wrapperClassName)}
         value={dialingCode}
         onChange={onDialingCodeChange}
+        style={{
+          width: `${sizeMultiplier *
+            dialingCodes.find(e => e.code === dialingCode).description.length +
+            100}px`,
+        }}
       >
         {dialingCodes.map(({ code, description, ...extraDialingProps }) => (
           <option key={code} value={code} {...extraDialingProps}>

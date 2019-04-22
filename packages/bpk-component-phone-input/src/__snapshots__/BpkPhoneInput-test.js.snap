@@ -18,6 +18,11 @@ exports[`BpkPhoneInput should render correctly 1`] = `
     label="Dialing code"
     name="Dialing code"
     onChange={[Function]}
+    style={
+      Object {
+        "width": "115px",
+      }
+    }
     value="44"
   >
     <option
@@ -68,6 +73,11 @@ exports[`BpkPhoneInput should render correctly with a "disabled" attribute 1`] =
     label="Dialing code"
     name="Dialing code"
     onChange={[Function]}
+    style={
+      Object {
+        "width": "115px",
+      }
+    }
     value="44"
   >
     <option
@@ -118,6 +128,11 @@ exports[`BpkPhoneInput should render correctly with a "large" attribute 1`] = `
     label="Dialing code"
     name="Dialing code"
     onChange={[Function]}
+    style={
+      Object {
+        "width": "121px",
+      }
+    }
     value="44"
   >
     <option
@@ -168,6 +183,11 @@ exports[`BpkPhoneInput should render correctly with a "valid" attribute 1`] = `
     label="Dialing code"
     name="Dialing code"
     onChange={[Function]}
+    style={
+      Object {
+        "width": "115px",
+      }
+    }
     value="44"
   >
     <option
@@ -219,6 +239,11 @@ exports[`BpkPhoneInput should render correctly with a "wrapperProps" attribute 1
     label="Dialing code"
     name="Dialing code"
     onChange={[Function]}
+    style={
+      Object {
+        "width": "115px",
+      }
+    }
     value="44"
   >
     <option
@@ -275,6 +300,11 @@ exports[`BpkPhoneInput should render correctly with a dialing code image attribu
       label="Dialing code"
       name="Dialing code"
       onChange={[Function]}
+      style={
+        Object {
+          "width": "115px",
+        }
+      }
       value="44"
     >
       <option

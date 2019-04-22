@@ -27,6 +27,7 @@ import BpkPhoneInput from './index';
 
 const DIALING_CODE_TO_ID_MAP = {
   '1': 'us',
+  '2': 'ca',
   '44': 'uk',
   '55': 'br',
   '998': 'uz',
@@ -115,6 +116,7 @@ class StoryContainer extends Component<
           dialingCode={dialingCode}
           dialingCodes={[
             { code: '1', description: '+1 (US)' },
+            { code: '2', description: '+1 (CA)' },
             { code: '44', description: '+44 (UK)' },
             { code: '55', description: '+55' },
             { code: '998', description: '+998' },

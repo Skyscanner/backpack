@@ -29,6 +29,8 @@ import IntroBlurb from '../../components/IntroBlurb';
 import NativePhoneInput from '../NativePhoneInputPage';
 
 const DIALING_CODE_TO_ID_MAP = {
+  '1': 'us',
+  '2': 'ca',
   '44': 'uk',
   '55': 'br',
 };
@@ -78,6 +80,8 @@ class StoryContainer extends Component<Props, State> {
         value={this.state.value}
         dialingCode={this.state.dialingCode}
         dialingCodes={[
+          { code: '1', description: '+1 (US)' },
+          { code: '2', description: '+1 (CA)' },
           { code: '44', description: '+44' },
           { code: '55', description: '+55' },
         ]}
