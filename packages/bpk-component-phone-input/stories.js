@@ -114,8 +114,8 @@ class StoryContainer extends Component<
           value={value}
           dialingCode={dialingCode}
           dialingCodes={[
-            { code: '1', description: '+1' },
-            { code: '44', description: '+44' },
+            { code: '1', description: '+1 (US)' },
+            { code: '44', description: '+44 (UK)' },
             { code: '55', description: '+55' },
             { code: '998', description: '+998' },
           ]}

@@ -27,12 +27,12 @@
   grid-column-gap: $bpk-spacing-sm;
 
   @include bpk-breakpoint-mobile {
-    grid-template-columns: 9 * $bpk-spacing-sm auto;
+    grid-template-columns: max-content auto;
   }
 
   &--large {
     @include bpk-breakpoint-mobile {
-      grid-template-columns: 10 * $bpk-spacing-sm auto;
+      grid-template-columns: max-content auto;
     }
   }
 
