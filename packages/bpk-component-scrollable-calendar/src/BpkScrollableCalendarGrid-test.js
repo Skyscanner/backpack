@@ -38,6 +38,7 @@ describe('BpkCalendarScrollGrid', () => {
           formatDateFull={formatDateFull}
           DateComponent={BpkCalendarScrollDate}
           daysOfWeek={weekDays}
+          weekStartsOn={1}
         />,
       )
       .toJSON();
