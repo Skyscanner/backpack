@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-/* @flow */
+/* @flow strict */
 
 import themeAttributes from './src/themeAttributes';
 import BpkModal, { type Props, propTypes, defaultProps } from './src/BpkModal';

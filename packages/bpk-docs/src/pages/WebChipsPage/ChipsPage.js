@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-/* @flow */
+/* @flow strict */
 
 import React, { Component } from 'react';
 import BpkChip from 'bpk-component-chip';

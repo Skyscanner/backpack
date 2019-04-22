@@ -15,7 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* @flow */
+/* @flow strict */
 
 import React, { Component } from 'react';
 import { NavLink as RouterNavLink } from 'react-router-dom';

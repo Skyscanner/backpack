@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-/* @flow */
+/* @flow strict */
 
 import BpkChip, { type Props } from './src/BpkChip';
 

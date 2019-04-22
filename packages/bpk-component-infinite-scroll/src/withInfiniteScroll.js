@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-/* @flow */
+/* @flow strict */
 
 import React, { Component, type Element, type ComponentType } from 'react';
 import PropTypes from 'prop-types';

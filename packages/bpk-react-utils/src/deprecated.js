@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-/* @flow */
+/* @flow strict */
 import { type PropType } from 'prop-types';
 
 const deprecated = (propType: PropType, alternativeSuggestion: string) => (

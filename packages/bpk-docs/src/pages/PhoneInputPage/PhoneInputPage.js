@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-/* @flow */
+/* @flow strict */
 
 import React, { Component } from 'react';
 import BpkPhoneInput from 'bpk-component-phone-input';

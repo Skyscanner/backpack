@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-/* @flow */
+/* @flow strict */
 
 // eslint-disable-next-line import/prefer-default-export
 export const onClosePropType = (

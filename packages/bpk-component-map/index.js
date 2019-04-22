@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-/* @flow */
+/* @flow strict */
 
 import BpkMap from './src/BpkMap';
 import BpkMapMarker, {

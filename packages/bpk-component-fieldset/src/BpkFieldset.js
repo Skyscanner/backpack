@@ -15,7 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* @flow */
+/* @flow strict */
 
 import PropTypes from 'prop-types';
 import React, { cloneElement, type Element } from 'react';

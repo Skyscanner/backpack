@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-/* @flow */
+/* @flow strict */
 
 import BpkModal from 'bpk-component-modal';
 import { cssModules } from 'bpk-react-utils';
