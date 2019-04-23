@@ -2,6 +2,11 @@
 
 [Unreleased changes](./UNRELEASED.md).
 
+# 2019-04-23 Added strict Flow typing
+
+**Updated:**
+- For all packages that utilise `Flow` the `strict` annotation has been added.
+
 # 2019-04-19 Fixed small input styling bugs
 
 **Fixed:**
