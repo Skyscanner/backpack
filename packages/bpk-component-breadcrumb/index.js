@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-/* @flow */
+/* @flow strict */
 
 import BpkBreadcrumb, {
   type Props as BpkBreadcrumbProps,

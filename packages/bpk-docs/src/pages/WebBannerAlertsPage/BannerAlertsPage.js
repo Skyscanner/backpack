@@ -15,7 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* @flow */
+/* @flow strict */
 
 import React, { Component, type Node } from 'react';
 import { durationSm, fontWeightBold } from 'bpk-tokens/tokens/base.es6';

@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-/* @flow */
+/* @flow strict */
 
 import Popper from '@skyscanner/popper.js';
 import PropTypes from 'prop-types';
