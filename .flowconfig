@@ -18,5 +18,9 @@ emoji=true
 module.file_ext=.js
 module.file_ext=.json
 
+suppress_comment=\\(.\\|\n\\)*\\$FlowFixMe
+suppress_comment=\\(.\\|\n\\)*\\$ExpectError
+include_warnings=true
+
 [strict]
 unsafe-getters-setters
