@@ -37,6 +37,10 @@
   &--secondary {
     @include bpk-themeable-property(background-color, --bpk-map-marker-secondary-background-color, $bpk-color-blue-500);
   }
+  
+  &--tertiary {
+    @include bpk-themeable-property(background-color, --bpk-map-marker-secondary-background-color, $bpk-color-grey-700);
+  }
 
   &--large {
     width: $bpk-spacing-xxl;
