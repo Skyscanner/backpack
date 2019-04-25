@@ -39,7 +39,7 @@
   }
   
   &--tertiary {
-    @include bpk-themeable-property(background-color, --bpk-map-marker-secondary-background-color, $bpk-color-grey-700);
+    @include bpk-themeable-property(background-color, --bpk-map-marker-tertiary-background-color, $bpk-color-grey-700);
   }
 
   &--large {
