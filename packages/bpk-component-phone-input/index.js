@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-/* @flow */
+/* @flow strict */
 
 import BpkPhoneInput, {
   type Props as BpkPhoneInputProps,

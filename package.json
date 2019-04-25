@@ -22,7 +22,7 @@
     "jest:update": "jest --updateSnapshot",
     "jest:watch": "jest --watch",
     "jest": "TZ=Europe/London jest --coverage",
-    "flow": "flow",
+    "flow": "flow --max-warnings 0",
     "flow-typed": "flow-typed",
     "build:tokens": "lerna run tokens --scope bpk-tokens",
     "build:svgs": "lerna run svgs --scope bpk-svgs",

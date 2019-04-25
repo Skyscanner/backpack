@@ -16,9 +16,14 @@
  * limitations under the License.
  */
 
-/* @flow */
+/* @flow strict */
 
-import React, { Component, type Element, type ComponentType } from 'react';
+import React, {
+  Component,
+  type Element,
+  type Config,
+  type AbstractComponent,
+} from 'react';
 import PropTypes from 'prop-types';
 import { cssModules } from 'bpk-react-utils';
 import omit from 'lodash/omit';
@@ -86,9 +91,11 @@ const defaultProps = {
   seeMoreAfter: null,
 };
 
-const withInfiniteScroll = (
-  ComponentToExtend: ComponentType<ExtendedProps>,
-): ComponentType<Props> =>
+type PropsWithDefault = Config<Props, typeof defaultProps>;
+
+const withInfiniteScroll = <T: ExtendedProps>(
+  ComponentToExtend: AbstractComponent<T>,
+): AbstractComponent<PropsWithDefault & $Diff<T, ExtendedProps>> =>
   class WithInfiniteScroll extends Component<Props, State> {
     handleIntersection: IntersectionObserverCallback;
 

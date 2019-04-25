@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-/* @flow */
+/* @flow strict */
 
 import * as routes from '../constants/routes';
 import ComponentsImage from '../static/components_hero.jpg';

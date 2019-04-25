@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-/* @flow */
+/* @flow strict */
 
 import BpkPopoverPortal, { type Props } from './src/BpkPopoverPortal';
 import themeAttributes from './src/themeAttributes';

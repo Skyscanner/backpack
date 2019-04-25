@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-/* @flow */
+/* @flow strict */
 
 import BpkTooltipPortal, { type Props } from './src/BpkTooltipPortal';
 

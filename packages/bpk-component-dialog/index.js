@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-/* @flow */
+/* @flow strict */
 
 import BpkDialog, { type Props } from './src/BpkDialog';
 import themeAttributes from './src/themeAttributes';

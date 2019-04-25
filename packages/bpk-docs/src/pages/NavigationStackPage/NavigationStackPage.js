@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-/* @flow */
+/* @flow strict */
 
 import React from 'react';
 import navigationStackReadme from 'bpk-component-navigation-stack/README.md';

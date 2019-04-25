@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-/* @flow */
+/* @flow strict */
 
 // Uses https://github.com/rexxars/react-markdown
 
