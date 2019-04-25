@@ -4,7 +4,7 @@
 - bpk-component-calendar:
 - bpk-component-datepicker:
 - bpk-component-scrollable-calendar:
-  - Updated to make `weekStartsOn` required prop for field to assist with localisation
+  - `weekStartsOn` is now required, to assist with localisation.
 
 > Place your changes below this line.
 
