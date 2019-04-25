@@ -51,6 +51,7 @@ export default class App extends Component {
         formatMonth={formatMonth}
         formatDateFull={formatDateFull}
         daysOfWeek={daysOfWeek}
+        weekStartsOn={1}
         date={this.state.selectedDate}
         // Subtract one day from today's date to make today selectable by default
         minDate={DateUtils.addDays(new Date(), -1)}

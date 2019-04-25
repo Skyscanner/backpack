@@ -48,6 +48,7 @@ export default class App extends Component {
       <BpkDatepicker
         id="datepicker"
         daysOfWeek={daysOfWeek}
+        weekStartsOn={1}
         changeMonthLabel="Change month"
         closeButtonText="Close"
         title="Departure date"
@@ -83,6 +84,7 @@ For more information on some these props, check the BpkCalendar documentation.
 | id                    | string          | true     | -                     |
 | getApplicationElement | func            | true     | -                     |
 | daysOfWeek            | arrayOf(object) | true     | -                     |
+| weekStartsOn          | number          | true     | -                     |
 | formatDate            | func            | true     | -                     |
 | formatDateFull        | func            | true     | -                     |
 | formatMonth           | func            | true     | -                     |
@@ -96,7 +98,6 @@ For more information on some these props, check the BpkCalendar documentation.
 | minDate               | Date            | false    | new Date() (\*)       |
 | onDateSelect          | func            | false    | null                  |
 | showWeekendSeparator  | bool            | false    | true (\*)             |
-| weekStartsOn          | number          | false    | 1 (\*)                |
 | initiallyFocusedDate  | Date            | false    | null                  |
 | renderTarget          | func            | false    | null                  |
 

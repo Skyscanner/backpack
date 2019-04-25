@@ -141,6 +141,7 @@ const composeCalendar = (Nav, GridHeader, Grid, CalendarDate) => {
     maxDate: PropTypes.instanceOf(Date).isRequired,
     minDate: PropTypes.instanceOf(Date).isRequired,
     month: PropTypes.instanceOf(Date).isRequired,
+    weekStartsOn: PropTypes.number.isRequired,
     // Optional
     className: PropTypes.string,
     dateModifiers: CustomPropTypes.DateModifiers,
@@ -154,7 +155,6 @@ const composeCalendar = (Nav, GridHeader, Grid, CalendarDate) => {
     preventKeyboardFocus: PropTypes.bool,
     selectedDate: PropTypes.instanceOf(Date),
     showWeekendSeparator: PropTypes.bool,
-    weekStartsOn: PropTypes.number,
     gridClassName: PropTypes.string,
     /* eslint-disable react/forbid-prop-types */
     navProps: PropTypes.object,
@@ -178,7 +178,6 @@ const composeCalendar = (Nav, GridHeader, Grid, CalendarDate) => {
     preventKeyboardFocus: false,
     selectedDate: null,
     showWeekendSeparator: true,
-    weekStartsOn: 1,
     gridClassName: null,
     navProps: null,
     headerProps: null,

@@ -120,6 +120,7 @@ const components = [
           formatDateFull={formatDateFull}
           daysOfWeek={weekDays}
           changeMonthLabel="Change month"
+          weekStartsOn={1}
         />
       </BpkMobileScrollContainer>,
     ],
