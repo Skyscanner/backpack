@@ -2,6 +2,20 @@
 
 [Unreleased changes](./UNRELEASED.md).
 
+# 2019-04-25 Breaking changes for Calendar and flow fixes for Infinite Scroll
+
+**Breaking:**
+- bpk-component-calendar: 4.5.18 => 5.0.0
+- bpk-component-datepicker: 8.1.54 => 9.0.0
+- bpk-component-scrollable-calendar: 0.1.41 => 1.0.0
+  - `weekStartsOn` is now required, to assist with localisation.
+
+**Fixed:**
+
+- bpk-component-infinite-scroll: 2.2.19 => 2.2.20
+  - Fixed flow definition.
+
+
 # 2019-04-23 Added strict Flow typing
 
 **Updated:**

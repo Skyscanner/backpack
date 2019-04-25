@@ -1,17 +1,6 @@
 # Unreleased
 
-**Breaking:**
-- bpk-component-calendar:
-- bpk-component-datepicker:
-- bpk-component-scrollable-calendar:
-  - `weekStartsOn` is now required, to assist with localisation.
-
 > Place your changes below this line.
-
-**Fixed:**
-
-- bpk-component-infinite-scroll:
-  - Fixed flow definition.
 
 ## How to write a good changelog entry
 
