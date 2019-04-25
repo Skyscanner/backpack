@@ -52,6 +52,10 @@
     }
   }
 
+  &--tertiary {
+    @include bpk-themeable-property(background-color, --bpk-map-marker-tertiary-background-color, $bpk-color-gray-700);
+  }
+
   &--large {
     width: $bpk-spacing-xxl;
     height: $bpk-spacing-xxl;

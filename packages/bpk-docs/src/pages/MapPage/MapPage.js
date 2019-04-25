@@ -29,6 +29,7 @@ import { cssModules } from 'bpk-react-utils';
 import LandmarkIconLg from 'bpk-component-icon/lg/landmark';
 import BusIconSm from 'bpk-component-icon/sm/bus';
 import FoodIconSm from 'bpk-component-icon/sm/food';
+import LeisureIconSm from 'bpk-component-icon/sm/leisure';
 import { withRtlSupport } from 'bpk-component-icon';
 import mapReadme from 'bpk-component-map/README.md';
 
@@ -44,6 +45,7 @@ import STYLES from './MapPage.scss';
 const AlignedLandmarkIconLg = withRtlSupport(LandmarkIconLg);
 const AlignedBusIconSm = withRtlSupport(BusIconSm);
 const AlignedFoodIconSm = withRtlSupport(FoodIconSm);
+const AlignedLeisureIconLg = withRtlSupport(LeisureIconSm);
 
 const BpkMapWithScript = withGoogleMapsScript(BpkMap);
 const API_KEY = process.env.GOOGLE_MAPS_API_KEY || '';
@@ -107,7 +109,7 @@ class StatefulBpkMapMarkers extends Component<{}, { selected: number }> {
         />
         <BpkMapMarker
           selected={this.state.selected === 3}
-          type={MARKER_TYPES.secondary}
+          type={MARKER_TYPES.tertiary}
           icon={<AlignedFoodIconSm />}
           position={{
             latitude: 35.6605,
