@@ -32,10 +32,24 @@
 
   &--primary {
     @include bpk-themeable-property(background-color, --bpk-map-marker-primary-background-color, $bpk-color-green-700);
+
+    &-selected {
+      background-color: $bpk-color-white;
+
+      @include bpk-themeable-property(border-color, --bpk-map-marker-primary-background-color, $bpk-color-green-700);
+      @include bpk-themeable-property(color, --bpk-map-marker-primary-background-color, $bpk-color-green-700);
+    }
   }
 
   &--secondary {
     @include bpk-themeable-property(background-color, --bpk-map-marker-secondary-background-color, $bpk-color-blue-500);
+
+    &-selected {
+      background-color: $bpk-color-white;
+
+      @include bpk-themeable-property(border-color, --bpk-map-marker-secondary-background-color, $bpk-color-blue-500);
+      @include bpk-themeable-property(color, --bpk-map-marker-secondary-background-color, $bpk-color-blue-500);
+    }
   }
 
   &--large {
@@ -62,9 +76,18 @@
     position: absolute;
     // This is needed to correctly position the arrow
     bottom: -7px; // stylelint-disable-line unit-blacklist
+    color: $bpk-color-white;
 
     svg {
-      fill: $bpk-color-white;
+      fill: currentColor;
+    }
+
+    &--primary-selected {
+      @include bpk-themeable-property(color, --bpk-map-marker-primary-background-color, $bpk-color-green-700);
+    }
+
+    &--secondary-selected {
+      @include bpk-themeable-property(color, --bpk-map-marker-secondary-background-color, $bpk-color-blue-500);
     }
   }
 

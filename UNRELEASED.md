@@ -2,6 +2,9 @@
 
 > Place your changes below this line.
 
+- `bpk-component-map`:
+  - Added `selected` prop for when markers are selected or highlighted. See https://backpack.github.io/components/map?platform=web#map-markers.
+
 ## How to write a good changelog entry
 
 1. Add 'Breaking', 'Added' or 'Fixed' in bold depending on if the change will be major, minor or patch according to [semver](semver.org).

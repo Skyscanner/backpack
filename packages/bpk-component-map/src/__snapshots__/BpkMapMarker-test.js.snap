@@ -121,6 +121,36 @@ exports[`BpkMapMarker should render correctly with a "large" attribute 1`] = `
 </BpkBasicMapMarker>
 `;
 
+exports[`BpkMapMarker should render correctly with a "selected" attribute 1`] = `
+<BpkBasicMapMarker
+  position={
+    Object {
+      "latitude": 41.386947,
+      "longitude": 2.170048,
+    }
+  }
+>
+  <button
+    className="bpk-map-marker__wrapper"
+    onClick={null}
+    type="button"
+  >
+    <div
+      className="bpk-map-marker bpk-map-marker--primary bpk-map-marker--primary-selected"
+    >
+      <span>
+        Icon
+      </span>
+    </div>
+    <div
+      className="bpk-map-marker__arrow bpk-map-marker__arrow--primary-selected"
+    >
+      <Component />
+    </div>
+  </button>
+</BpkBasicMapMarker>
+`;
+
 exports[`BpkMapMarker should render properly 1`] = `
 <BpkBasicMapMarker
   position={
