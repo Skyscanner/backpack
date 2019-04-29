@@ -36,6 +36,14 @@ export default () => (
       onClick={() => {}}
       large
     />
+    <BpkMapMarker
+      icon={<AlignedLandmarkIconLg />}
+      type={MARKER_TYPES.primary}
+      position={{ latitude: 27.9881, longitude: 86.925 }}
+      onClick={() => {}}
+      large
+      selected
+    />
     <BpkOverlayView position={{ latitude: 27.9881, longitude: 86.925 }}>
       <BpkText>Shibuya Crossing</BpkText>
     </BpkOverlayView>
@@ -111,6 +119,7 @@ When using `withGoogleMapsScript`, some additional props are available:
 | className        | string                                       | false                    | null                 |
 | large            | bool                                         | false                    | false                |
 | onClick          | func                                         | false                    | null                 |
+| selected         | bool                                         | false                    | false                |
 | type             | oneOf('primary', 'secondary')                | false                    | MARKER_TYPES.primary |
 | buttonProps      | object                                       | false                    | null                 |
 

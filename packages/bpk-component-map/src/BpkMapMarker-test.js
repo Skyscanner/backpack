@@ -43,6 +43,13 @@ describe('BpkMapMarker', () => {
     expect(toJson(tree)).toMatchSnapshot();
   });
 
+  it('should render correctly with a "selected" attribute', () => {
+    const tree = shallow(
+      <BpkMapMarker position={position} icon={icon} selected />,
+    );
+    expect(toJson(tree)).toMatchSnapshot();
+  });
+
   it('should render correctly with a "className" attribute', () => {
     const tree = shallow(
       <BpkMapMarker
