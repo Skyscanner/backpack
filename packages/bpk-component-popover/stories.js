@@ -99,9 +99,27 @@ class PopoverContainer extends Component<Props, State> {
   };
 
   render() {
-    const { targetFunction, changeProps, id, ...rest } = this.props;
+    const {
+      targetFunction,
+      changeProps,
+      id,
+      onButtonClick,
+      ...rest
+    } = this.props;
     let target = null;
-    let openButton = <BpkButton onClick={this.openPopover}> Open </BpkButton>;
+    let openButton = (
+      <BpkButton
+        onClick={() => {
+          this.openPopover();
+          if (onButtonClick) {
+            onButtonClick();
+          }
+        }}
+      >
+        {' '}
+        Open{' '}
+      </BpkButton>
+    );
 
     if (targetFunction != null) {
       target = targetFunction;
@@ -185,6 +203,21 @@ storiesOf('bpk-component-popover', module)
       <PopoverContainer
         id="my-popover"
         targetFunction={() => document.getElementById('attachElement')}
+      />
+    </Spacer>
+  ))
+  .add('Attach to external element which unmounts', () => (
+    <Spacer>
+      <div id="attachElement">Pop over attached here</div>
+      <p>&nbsp; </p>
+      <PopoverContainer
+        id="my-popover"
+        targetFunction={() => document.getElementById('attachElement')}
+        onButtonClick={() => {
+          setTimeout(() => {
+            document.getElementById('attachElement').remove();
+          }, 1000);
+        }}
       />
     </Spacer>
   ))
