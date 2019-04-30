@@ -4,6 +4,11 @@
 
 - `bpk-component-map`:
   - Added `selected` prop for when markers are selected or highlighted. See https://backpack.github.io/components/map?platform=web#map-markers.
+- `bpk-component-autosuggest`:
+- `bpk-component-datepicker`:
+- `bpk-component-popover`:
+- `bpk-react-utils`:
+  - Fixed issue that caused tests to error if a portal's render target is removed from the DOM before the portal is unmounted
 
 ## How to write a good changelog entry
 

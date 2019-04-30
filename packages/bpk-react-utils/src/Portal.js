@@ -210,7 +210,11 @@ class Portal extends Component {
     }
 
     unmountComponentAtNode(this.portalElement);
-    this.getRenderTarget().removeChild(this.portalElement);
+
+    const renderTarget = this.getRenderTarget();
+    if (renderTarget) {
+      renderTarget.removeChild(this.portalElement);
+    }
 
     document.removeEventListener('touchstart', this.onDocumentMouseDown);
     document.removeEventListener('touchmove', this.onDocumentMouseMove);
