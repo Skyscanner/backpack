@@ -2,6 +2,17 @@
 
 [Unreleased changes](./UNRELEASED.md).
 
+# 2019-04-30 Bug fixes, and a new selected state for map markers
+
+ - bpk-component-map: 2.2.8 => 2.3.0
+  - Added `selected` prop for when markers are selected or highlighted. See https://backpack.github.io/components/map?platform=web#map-markers.
+
+ - bpk-component-autosuggest: 3.0.147 => 3.0.148
+ - bpk-component-datepicker: 9.0.0 => 9.0.1
+ - bpk-component-popover: 2.2.25 => 2.2.26
+ - bpk-react-utils: 2.7.5 => 2.7.6
+  - Fixed issue that caused tests to error if a portal's render target is removed from the DOM before the portal is unmounted
+
 # 2019-04-25 Breaking changes for Calendar and flow fixes for Infinite Scroll
 
 **Breaking:**
