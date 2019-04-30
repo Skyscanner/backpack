@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-infinite-scroll",
-  "version": "2.2.20",
+  "version": "2.2.21",
   "description": "Backpack infinite scroll component.",
   "main": "index.js",
   "repository": {
@@ -13,15 +13,15 @@
     "react": "^15.0.0 || ^16.0.0"
   },
   "dependencies": {
-    "bpk-mixins": "^17.18.2",
-    "bpk-react-utils": "^2.7.5",
+    "bpk-mixins": "^17.18.3",
+    "bpk-react-utils": "^2.7.6",
     "intersection-observer": "^0.5.0",
     "prop-types": "^15.6.2"
   },
   "devDependencies": {
-    "bpk-component-button": "^2.1.57",
-    "bpk-component-card": "^1.1.70",
-    "bpk-component-spinner": "^2.2.87"
+    "bpk-component-button": "^2.1.58",
+    "bpk-component-card": "^1.1.71",
+    "bpk-component-spinner": "^2.2.88"
   },
   "gitHead": "edd14f16dc571cc009d908c3c8f7d27a428b6de8"
 }
