@@ -1,10 +1,6 @@
 # Unreleased
 
 > Place your changes below this line.
-**Fixed:**
-
-- `bpk-component-popover`:
-  - Fixed target and renderTarget types to support being passed references created via `createRef`.
 
 ## How to write a good changelog entry
 
