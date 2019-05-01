@@ -224,6 +224,7 @@ PropType
 PropTypes
 ref
 refs
+createRef
 SectionList
 SyntheticEvent
 TextInput

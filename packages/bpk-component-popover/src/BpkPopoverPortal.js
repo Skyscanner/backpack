@@ -37,12 +37,12 @@ const getClassName = cssModules(STYLES);
 
 export type Props = {
   ...$Exact<PopoverProps>,
-  target: (() => HTMLElement) | Node,
+  target: (() => null | HTMLElement) | Node,
   isOpen: boolean,
   placement: ?('top' | 'right' | 'bottom' | 'left'),
   portalStyle: ?Object,
   portalClassName: ?string,
-  renderTarget: ?() => HTMLElement,
+  renderTarget: ?() => null | HTMLElement,
   popperModifiers: ?Object,
 };
 
