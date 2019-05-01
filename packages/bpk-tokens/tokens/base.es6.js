@@ -65,14 +65,21 @@ export const buttonBorderRadius = "1.125rem";
 export const buttonBorderRadiusLg = "1.3125rem";
 export const buttonBoxShadow = "none";
 export const buttonColor = "rgb(255, 255, 255)";
+export const buttonDestructiveActiveBackgroundColor = "rgb(255, 255, 255)";
+export const buttonDestructiveActiveBorderColor = "rgb(255, 84, 82)";
 export const buttonDestructiveActiveBoxShadow = "0 0 0 3px #ff5452 inset";
 export const buttonDestructiveActiveColor = "rgb(255, 84, 82)";
+export const buttonDestructiveBackgroundColor = "rgb(255, 255, 255)";
+export const buttonDestructiveBorderColor = "rgb(230, 228, 235)";
 export const buttonDestructiveBoxShadow = "0 0 0 2px #E6E4EB inset";
 export const buttonDestructiveColor = "rgb(255, 84, 82)";
 export const buttonDestructiveDisabledBackgroundColor = "rgb(230, 228, 235)";
 export const buttonDestructiveDisabledBackgroundImage = "none";
 export const buttonDestructiveDisabledBoxShadow = "none";
 export const buttonDestructiveDisabledColor = "rgb(178, 174, 189)";
+export const buttonDestructiveHoverBackgroundColor = "rgb(255, 255, 255)";
+export const buttonDestructiveHoverBackgroundImage = "none";
+export const buttonDestructiveHoverBorderColor = "rgb(255, 84, 82)";
 export const buttonDestructiveHoverBoxShadow = "0 0 0 2px #ff5452 inset";
 export const buttonDestructiveHoverColor = "rgb(255, 84, 82)";
 export const buttonDisabledBackgroundColor = "rgb(230, 228, 235)";
@@ -434,14 +441,21 @@ buttonBorderRadius,
 buttonBorderRadiusLg,
 buttonBoxShadow,
 buttonColor,
+buttonDestructiveActiveBackgroundColor,
+buttonDestructiveActiveBorderColor,
 buttonDestructiveActiveBoxShadow,
 buttonDestructiveActiveColor,
+buttonDestructiveBackgroundColor,
+buttonDestructiveBorderColor,
 buttonDestructiveBoxShadow,
 buttonDestructiveColor,
 buttonDestructiveDisabledBackgroundColor,
 buttonDestructiveDisabledBackgroundImage,
 buttonDestructiveDisabledBoxShadow,
 buttonDestructiveDisabledColor,
+buttonDestructiveHoverBackgroundColor,
+buttonDestructiveHoverBackgroundImage,
+buttonDestructiveHoverBorderColor,
 buttonDestructiveHoverBoxShadow,
 buttonDestructiveHoverColor,
 buttonDisabledBackgroundColor,

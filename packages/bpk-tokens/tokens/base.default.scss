@@ -114,9 +114,17 @@ $bpk-button-box-shadow: none !default;
 /// @group buttons
 $bpk-button-color: rgb(255, 255, 255) !default;
 /// @group buttons
+$bpk-button-destructive-active-background-color: rgb(255, 255, 255) !default;
+/// @group buttons
+$bpk-button-destructive-active-border-color: rgb(255, 84, 82) !default;
+/// @group buttons
 $bpk-button-destructive-active-box-shadow: 0 0 0 3px #ff5452 inset !default;
 /// @group buttons
 $bpk-button-destructive-active-color: rgb(255, 84, 82) !default;
+/// @group buttons
+$bpk-button-destructive-background-color: rgb(255, 255, 255) !default;
+/// @group buttons
+$bpk-button-destructive-border-color: rgb(230, 228, 235) !default;
 /// @group buttons
 $bpk-button-destructive-box-shadow: 0 0 0 2px #E6E4EB inset !default;
 /// @group buttons
@@ -129,6 +137,12 @@ $bpk-button-destructive-disabled-background-image: none !default;
 $bpk-button-destructive-disabled-box-shadow: none !default;
 /// @group buttons
 $bpk-button-destructive-disabled-color: rgb(178, 174, 189) !default;
+/// @group buttons
+$bpk-button-destructive-hover-background-color: rgb(255, 255, 255) !default;
+/// @group buttons
+$bpk-button-destructive-hover-background-image: none !default;
+/// @group buttons
+$bpk-button-destructive-hover-border-color: rgb(255, 84, 82) !default;
 /// @group buttons
 $bpk-button-destructive-hover-box-shadow: 0 0 0 2px #ff5452 inset !default;
 /// @group buttons

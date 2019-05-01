@@ -152,17 +152,28 @@
 ///   }
 
 @mixin bpk-button--destructive {
-  color: $bpk-button-destructive-color;
-  box-shadow: $bpk-button-destructive-box-shadow;
+  @include bpk-themeable-property(color, --bpk-button-destructive-text-color, $bpk-button-destructive-color);
+  @include bpk-themeable-property(background-color, --bpk-button-destructive-background-color, $bpk-button-destructive-background-color);
+  @include bpk-border-lg($bpk-button-destructive-border-color);
+  @include bpk-border-lg(var(--bpk-button-destructive-border-color, $bpk-button-destructive-border-color));
 
   @include bpk-hover {
-    color: $bpk-button-destructive-hover-color;
+    background-image: $bpk-button-destructive-hover-background-image;
     box-shadow: $bpk-button-destructive-hover-box-shadow;
+
+    @include bpk-themeable-property(color, --bpk-button-destructive-hover-text-color, $bpk-button-destructive-hover-color);
+    @include bpk-themeable-property(background-color, --bpk-button-destructive-hover-background-color, $bpk-button-destructive-hover-background-color);
+    @include bpk-border-lg($bpk-button-destructive-hover-border-color);
+    @include bpk-border-lg(var(--bpk-button-destructive-hover-border-color, $bpk-button-destructive-hover-border-color));
   }
 
   &:active {
-    color: $bpk-button-destructive-active-color;
     box-shadow: $bpk-button-destructive-active-box-shadow;
+
+    @include bpk-themeable-property(color, --bpk-button-destructive-active-text-color, $bpk-button-destructive-active-color);
+    @include bpk-themeable-property(background-color, --bpk-button-destructive-active-background-color, $bpk-button-destructive-active-background-color);
+    @include bpk-border-xl($bpk-button-destructive-active-border-color);
+    @include bpk-border-xl(var(--bpk-button-destructive-active-border-color, $bpk-button-destructive-active-border-color));
   }
 
   &:disabled {

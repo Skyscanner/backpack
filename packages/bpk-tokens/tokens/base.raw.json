@@ -633,6 +633,20 @@
       "originalValue": "{!WHITE}",
       "name": "BUTTON_COLOR"
     },
+    "BUTTON_DESTRUCTIVE_ACTIVE_BACKGROUND_COLOR": {
+      "category": "buttons",
+      "value": "rgb(255, 255, 255)",
+      "type": "color",
+      "originalValue": "{!WHITE}",
+      "name": "BUTTON_DESTRUCTIVE_ACTIVE_BACKGROUND_COLOR"
+    },
+    "BUTTON_DESTRUCTIVE_ACTIVE_BORDER_COLOR": {
+      "category": "buttons",
+      "value": "rgb(255, 84, 82)",
+      "type": "color",
+      "originalValue": "{!RED_500}",
+      "name": "BUTTON_DESTRUCTIVE_ACTIVE_BORDER_COLOR"
+    },
     "BUTTON_DESTRUCTIVE_ACTIVE_BOX_SHADOW": {
       "category": "buttons",
       "value": "0 0 0 3px #ff5452 inset",
@@ -646,6 +660,20 @@
       "type": "color",
       "originalValue": "{!RED_500}",
       "name": "BUTTON_DESTRUCTIVE_ACTIVE_COLOR"
+    },
+    "BUTTON_DESTRUCTIVE_BACKGROUND_COLOR": {
+      "category": "buttons",
+      "value": "rgb(255, 255, 255)",
+      "type": "color",
+      "originalValue": "{!WHITE}",
+      "name": "BUTTON_DESTRUCTIVE_BACKGROUND_COLOR"
+    },
+    "BUTTON_DESTRUCTIVE_BORDER_COLOR": {
+      "category": "buttons",
+      "value": "rgb(230, 228, 235)",
+      "type": "color",
+      "originalValue": "{!GRAY_100}",
+      "name": "BUTTON_DESTRUCTIVE_BORDER_COLOR"
     },
     "BUTTON_DESTRUCTIVE_BOX_SHADOW": {
       "category": "buttons",
@@ -688,6 +716,27 @@
       "type": "color",
       "originalValue": "{!GRAY_300}",
       "name": "BUTTON_DESTRUCTIVE_DISABLED_COLOR"
+    },
+    "BUTTON_DESTRUCTIVE_HOVER_BACKGROUND_COLOR": {
+      "category": "buttons",
+      "value": "rgb(255, 255, 255)",
+      "type": "color",
+      "originalValue": "{!WHITE}",
+      "name": "BUTTON_DESTRUCTIVE_HOVER_BACKGROUND_COLOR"
+    },
+    "BUTTON_DESTRUCTIVE_HOVER_BACKGROUND_IMAGE": {
+      "category": "buttons",
+      "value": "none",
+      "type": "background-image",
+      "originalValue": "none",
+      "name": "BUTTON_DESTRUCTIVE_HOVER_BACKGROUND_IMAGE"
+    },
+    "BUTTON_DESTRUCTIVE_HOVER_BORDER_COLOR": {
+      "category": "buttons",
+      "value": "rgb(255, 84, 82)",
+      "type": "color",
+      "originalValue": "{!RED_500}",
+      "name": "BUTTON_DESTRUCTIVE_HOVER_BORDER_COLOR"
     },
     "BUTTON_DESTRUCTIVE_HOVER_BOX_SHADOW": {
       "category": "buttons",
@@ -2956,14 +3005,21 @@
     "BUTTON_BORDER_RADIUS_LG",
     "BUTTON_BOX_SHADOW",
     "BUTTON_COLOR",
+    "BUTTON_DESTRUCTIVE_ACTIVE_BACKGROUND_COLOR",
+    "BUTTON_DESTRUCTIVE_ACTIVE_BORDER_COLOR",
     "BUTTON_DESTRUCTIVE_ACTIVE_BOX_SHADOW",
     "BUTTON_DESTRUCTIVE_ACTIVE_COLOR",
+    "BUTTON_DESTRUCTIVE_BACKGROUND_COLOR",
+    "BUTTON_DESTRUCTIVE_BORDER_COLOR",
     "BUTTON_DESTRUCTIVE_BOX_SHADOW",
     "BUTTON_DESTRUCTIVE_COLOR",
     "BUTTON_DESTRUCTIVE_DISABLED_BACKGROUND_COLOR",
     "BUTTON_DESTRUCTIVE_DISABLED_BACKGROUND_IMAGE",
     "BUTTON_DESTRUCTIVE_DISABLED_BOX_SHADOW",
     "BUTTON_DESTRUCTIVE_DISABLED_COLOR",
+    "BUTTON_DESTRUCTIVE_HOVER_BACKGROUND_COLOR",
+    "BUTTON_DESTRUCTIVE_HOVER_BACKGROUND_IMAGE",
+    "BUTTON_DESTRUCTIVE_HOVER_BORDER_COLOR",
     "BUTTON_DESTRUCTIVE_HOVER_BOX_SHADOW",
     "BUTTON_DESTRUCTIVE_HOVER_COLOR",
     "BUTTON_DISABLED_BACKGROUND_COLOR",
