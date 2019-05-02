@@ -25,7 +25,7 @@ import {
   primaryThemeAttributes,
   secondaryThemeAttributes,
   featuredThemeAttributes,
-  destructiveThemeAttributes
+  destructiveThemeAttributes,
 } from '../packages/bpk-component-button';
 import { themeAttributes as calendarThemeAttributes } from '../packages/bpk-component-calendar';
 import { themeAttributes as checkboxThemeAttributes } from '../packages/bpk-component-checkbox';
