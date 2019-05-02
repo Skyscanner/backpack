@@ -60,6 +60,7 @@ exports[`BpkCalendarScrollGridList should render correctly with "showWeekendSepa
         "formatMonth": [Function],
         "maxDate": 2011-02-15T00:00:00.000Z,
         "minDate": 2010-02-14T00:00:00.000Z,
+        "month": 2010-02-15T00:00:00.000Z,
         "showWeekendSeparator": false,
         "weekStartsOn": 0,
       }
@@ -143,6 +144,7 @@ exports[`BpkCalendarScrollGridList should render correctly with a "dateModifiers
         "formatMonth": [Function],
         "maxDate": 2011-02-15T00:00:00.000Z,
         "minDate": 2010-02-14T00:00:00.000Z,
+        "month": 2010-02-15T00:00:00.000Z,
         "showWeekendSeparator": true,
         "weekStartsOn": 1,
       }
@@ -223,6 +225,7 @@ exports[`BpkCalendarScrollGridList should render correctly with a custom date co
         "formatMonth": [Function],
         "maxDate": 2011-02-15T00:00:00.000Z,
         "minDate": 2010-02-14T00:00:00.000Z,
+        "month": 2010-02-15T00:00:00.000Z,
         "showWeekendSeparator": true,
         "weekStartsOn": 1,
       }
@@ -303,6 +306,7 @@ exports[`BpkCalendarScrollGridList should render correctly with a different "wee
         "formatMonth": [Function],
         "maxDate": 2011-02-15T00:00:00.000Z,
         "minDate": 2010-02-14T00:00:00.000Z,
+        "month": 2010-02-15T00:00:00.000Z,
         "showWeekendSeparator": true,
         "weekStartsOn": 3,
       }
@@ -383,6 +387,8 @@ exports[`BpkCalendarScrollGridList should render correctly with no optional prop
         "formatMonth": [Function],
         "maxDate": 2011-02-15T00:00:00.000Z,
         "minDate": 2010-02-14T00:00:00.000Z,
+        "month": 2010-02-15T00:00:00.000Z,
+        "weekStartsOn": 0,
       }
     }
     height={270}

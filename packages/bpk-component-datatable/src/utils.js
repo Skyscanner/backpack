@@ -21,3 +21,13 @@ export const hasClassName = (node, className) => {
   const nodeClassName = node.getAttribute('class');
   return nodeClassName && nodeClassName.split(' ').indexOf(className) !== -1;
 };
+
+export const remToPx = value => {
+  let parsed = null;
+
+  if (/rem$/.test(value)) {
+    parsed = parseFloat(value.replace(/rem/, '')) * 16;
+  }
+
+  return parsed || null;
+};

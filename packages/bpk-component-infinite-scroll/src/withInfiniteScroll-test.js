@@ -204,18 +204,6 @@ describe('withInfiniteScroll', () => {
     expect(currentOptions).toEqual({ threshold: 0.99 });
   });
 
-  it('should create the IntersectionObserver with a 0.99 threshold if the prop is set with an invalid value', () => {
-    mount(
-      <InfiniteList
-        dataSource={new ArrayDataSource(elementsArray)}
-        renderLoadingComponent={() => <span>Loading</span>}
-        loaderIntersectionTrigger="invalid"
-      />,
-    );
-
-    expect(currentOptions).toEqual({ threshold: 0.99 });
-  });
-
   it('should pass extra props to the decorated component', () => {
     const tree = mount(
       <InfiniteList

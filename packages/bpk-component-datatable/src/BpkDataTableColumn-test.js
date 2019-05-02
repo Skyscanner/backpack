@@ -22,8 +22,13 @@ import { spacingSm } from 'bpk-tokens/tokens/base.es6';
 
 import BpkDataTableColumn from './BpkDataTableColumn';
 import bpkHeaderRenderer from './bpkHeaderRenderer';
+import { remToPx } from './utils';
 
-const defaultProps = { label: 'Name', dataKey: 'name', width: spacingSm };
+const defaultProps = {
+  label: 'Name',
+  dataKey: 'name',
+  width: remToPx(spacingSm),
+};
 
 describe('BpkDataTableColumn', () => {
   it('has the same propTypes as react-virtualized Column', () => {

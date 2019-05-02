@@ -66,6 +66,7 @@ describe('BpkDatepicker', () => {
           minDate={new Date(2010, 1, 15)}
           maxDate={new Date(2010, 2, 15)}
           date={new Date(2010, 1, 15)}
+          weekStartsOn={1}
         />,
       )
       .toJSON();
@@ -90,6 +91,7 @@ describe('BpkDatepicker', () => {
         minDate={new Date(2010, 1, 15)}
         maxDate={new Date(2010, 2, 15)}
         date={new Date(2010, 1, 15)}
+        weekStartsOn={1}
       />,
     );
 
@@ -142,6 +144,7 @@ describe('BpkDatepicker', () => {
         minDate={new Date(2010, 1, 15)}
         maxDate={new Date(2010, 2, 15)}
         date={new Date(2010, 1, 15)}
+        weekStartsOn={1}
       />,
     );
 
@@ -170,6 +173,7 @@ describe('BpkDatepicker', () => {
         minDate={new Date(2010, 1, 15)}
         maxDate={new Date(2010, 2, 15)}
         date={new Date(2010, 1, 15)}
+        weekStartsOn={1}
       />,
     );
 
