@@ -808,6 +808,13 @@
       "originalValue": "{!WHITE}",
       "name": "BUTTON_FEATURED_ACTIVE_COLOR"
     },
+    "BUTTON_FEATURED_BACKGROUND_COLOR": {
+      "category": "buttons",
+      "value": "rgb(250, 72, 138)",
+      "type": "color",
+      "originalValue": "{!PINK_500}",
+      "name": "BUTTON_FEATURED_BACKGROUND_COLOR"
+    },
     "BUTTON_FEATURED_BACKGROUND_IMAGE": {
       "category": "buttons",
       "value": "linear-gradient(-180deg, #FA488A 0%, #D92B6B 100%)",
@@ -3066,6 +3073,7 @@
     "BUTTON_FEATURED_ACTIVE_BACKGROUND_IMAGE",
     "BUTTON_FEATURED_ACTIVE_BOX_SHADOW",
     "BUTTON_FEATURED_ACTIVE_COLOR",
+    "BUTTON_FEATURED_BACKGROUND_COLOR",
     "BUTTON_FEATURED_BACKGROUND_IMAGE",
     "BUTTON_FEATURED_COLOR",
     "BUTTON_FEATURED_DISABLED_BACKGROUND_COLOR",

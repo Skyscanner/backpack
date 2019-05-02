@@ -90,6 +90,7 @@ export const buttonFeaturedActiveBackgroundColor = "rgb(197, 15, 82)";
 export const buttonFeaturedActiveBackgroundImage = "none";
 export const buttonFeaturedActiveBoxShadow = "none";
 export const buttonFeaturedActiveColor = "rgb(255, 255, 255)";
+export const buttonFeaturedBackgroundColor = "rgb(250, 72, 138)";
 export const buttonFeaturedBackgroundImage = "linear-gradient(-180deg, #FA488A 0%, #D92B6B 100%)";
 export const buttonFeaturedColor = "rgb(255, 255, 255)";
 export const buttonFeaturedDisabledBackgroundColor = "rgb(230, 228, 235)";
@@ -471,6 +472,7 @@ buttonFeaturedActiveBackgroundColor,
 buttonFeaturedActiveBackgroundImage,
 buttonFeaturedActiveBoxShadow,
 buttonFeaturedActiveColor,
+buttonFeaturedBackgroundColor,
 buttonFeaturedBackgroundImage,
 buttonFeaturedColor,
 buttonFeaturedDisabledBackgroundColor,

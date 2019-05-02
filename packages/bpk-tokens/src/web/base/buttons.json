@@ -339,6 +339,10 @@
       "type": "background-image",
       "deprecated": true
     },
+    "BUTTON_FEATURED_BACKGROUND_COLOR": {
+      "value": "{!PINK_500}",
+      "type": "color"
+    },
     "BUTTON_FEATURED_GRADIENT_START_COLOR": {
       "value": "{!PINK_500}",
       "type": "color"

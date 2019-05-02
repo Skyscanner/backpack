@@ -92,6 +92,7 @@ module.exports = {
   buttonFeaturedActiveBackgroundImage: "none",
   buttonFeaturedActiveBoxShadow: "none",
   buttonFeaturedActiveColor: "rgb(255, 255, 255)",
+  buttonFeaturedBackgroundColor: "rgb(250, 72, 138)",
   buttonFeaturedBackgroundImage: "linear-gradient(-180deg, #FA488A 0%, #D92B6B 100%)",
   buttonFeaturedColor: "rgb(255, 255, 255)",
   buttonFeaturedDisabledBackgroundColor: "rgb(230, 228, 235)",
