@@ -2,10 +2,22 @@
 
 [Unreleased changes](./UNRELEASED.md).
 
+# 2019-05-01 Bug fixes
+
+**Fixed:**
+
+- bpk-component-datepicker: 9.0.1 => 9.0.2
+- bpk-component-popover: 2.2.26 => 2.2.27
+  - Fixed target and renderTarget types to support being passed references created via `createRef`.
+
 # 2019-04-30 Bug fixes, and a new selected state for map markers
+
+**Added:**
 
 - bpk-component-map: 2.2.8 => 2.3.0
   - Added `selected` prop for when markers are selected or highlighted. See https://backpack.github.io/components/map?platform=web#map-markers.
+
+**Fixed:**
 
 - bpk-component-autosuggest: 3.0.147 => 3.0.148
 - bpk-component-datepicker: 9.0.0 => 9.0.1
