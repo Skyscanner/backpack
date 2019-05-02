@@ -24,6 +24,7 @@ import fs from 'fs';
 
 import { includes } from 'lodash';
 import { danger, fail, warn, message } from 'danger';
+import { commonFileWarnings } from 'danger-plugin-toolbox';
 
 import * as meta from './meta.json';
 
@@ -130,4 +131,9 @@ markdown.forEach(path => {
         }
       });
     });
+});
+
+commonFileWarnings('test.log', {
+  msg:
+    'The build logs contain these warnings (check the build output in Travis for more details):',
 });

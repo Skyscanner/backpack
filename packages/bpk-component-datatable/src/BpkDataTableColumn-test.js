@@ -18,16 +18,14 @@
 
 import React from 'react';
 import { Column } from 'react-virtualized';
-import { spacingSm } from 'bpk-tokens/tokens/base.es6';
 
 import BpkDataTableColumn from './BpkDataTableColumn';
 import bpkHeaderRenderer from './bpkHeaderRenderer';
-import { remToPx } from './utils';
 
 const defaultProps = {
   label: 'Name',
   dataKey: 'name',
-  width: remToPx(spacingSm),
+  width: 12, // eslint-disable-line backpack/use-tokens
 };
 
 describe('BpkDataTableColumn', () => {

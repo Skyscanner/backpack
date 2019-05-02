@@ -32,10 +32,10 @@ const BpkChartMargin = props => {
 BpkChartMargin.propTypes = {
   children: PropTypes.node.isRequired,
   margin: PropTypes.shape({
-    top: PropTypes.number,
-    bottom: PropTypes.number,
-    left: PropTypes.number,
-    right: PropTypes.number,
+    top: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+    bottom: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+    left: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+    right: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   }).isRequired,
 };
 

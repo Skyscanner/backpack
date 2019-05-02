@@ -20,15 +20,13 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import { spacingSm } from 'bpk-tokens/tokens/base.es6';
 
-import { remToPx } from './utils';
 import BpkChartMargin from './BpkChartMargin';
 
-const spacing = remToPx(spacingSm);
 const margin = {
-  top: spacing,
-  right: spacing,
-  bottom: spacing,
-  left: spacing,
+  top: spacingSm,
+  right: spacingSm,
+  bottom: spacingSm,
+  left: spacingSm,
 };
 
 describe('BpkChartMargin', () => {
