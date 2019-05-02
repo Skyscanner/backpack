@@ -336,7 +336,16 @@
     },
     "BUTTON_FEATURED_BACKGROUND_IMAGE": {
       "value": "linear-gradient(-180deg, {!PINK_500} 0%, {!PINK_600} 100%)",
-      "type": "background-image"
+      "type": "background-image",
+      "deprecated": true
+    },
+    "BUTTON_FEATURED_GRADIENT_START_COLOR": {
+      "value": "{!PINK_500}",
+      "type": "color"
+    },
+    "BUTTON_FEATURED_GRADIENT_END_COLOR": {
+      "value": "{!PINK_600}",
+      "type": "color"
     },
     "BUTTON_FEATURED_COLOR": {
       "value": "{!WHITE}",
@@ -354,6 +363,10 @@
       "value": "{!PINK_600}",
       "type": "color"
     },
+    "BUTTON_FEATURED_HOVER_BACKGROUND_IMAGE": {
+      "value": "none",
+      "type": "background-image"
+    },
     "BUTTON_FEATURED_ACTIVE_BACKGROUND_COLOR": {
       "value": "{!PINK_700}",
       "type": "color"
@@ -361,6 +374,14 @@
     "BUTTON_FEATURED_ACTIVE_BACKGROUND_IMAGE": {
       "value": "none",
       "type": "background-image"
+    },
+    "BUTTON_FEATURED_ACTIVE_BOX_SHADOW": {
+      "value": "none",
+      "type": "box-shadow"
+    },
+    "BUTTON_FEATURED_HOVER_BOX_SHADOW": {
+      "value": "none",
+      "type": "box-shadow"
     },
     "BUTTON_FEATURED_DISABLED_BACKGROUND_COLOR": {
       "value": "{!GRAY_100}",

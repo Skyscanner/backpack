@@ -88,12 +88,17 @@ export const buttonDisabledBoxShadow = "none";
 export const buttonDisabledColor = "rgb(178, 174, 189)";
 export const buttonFeaturedActiveBackgroundColor = "rgb(197, 15, 82)";
 export const buttonFeaturedActiveBackgroundImage = "none";
+export const buttonFeaturedActiveBoxShadow = "none";
 export const buttonFeaturedActiveColor = "rgb(255, 255, 255)";
 export const buttonFeaturedBackgroundImage = "linear-gradient(-180deg, #FA488A 0%, #D92B6B 100%)";
 export const buttonFeaturedColor = "rgb(255, 255, 255)";
 export const buttonFeaturedDisabledBackgroundColor = "rgb(230, 228, 235)";
 export const buttonFeaturedDisabledBackgroundImage = "none";
+export const buttonFeaturedGradientEndColor = "rgb(217, 43, 107)";
+export const buttonFeaturedGradientStartColor = "rgb(250, 72, 138)";
 export const buttonFeaturedHoverBackgroundColor = "rgb(217, 43, 107)";
+export const buttonFeaturedHoverBackgroundImage = "none";
+export const buttonFeaturedHoverBoxShadow = "none";
 export const buttonFeaturedHoverColor = "rgb(255, 255, 255)";
 export const buttonFontSize = "1rem";
 export const buttonFontWeight = "700";
@@ -464,12 +469,17 @@ buttonDisabledBoxShadow,
 buttonDisabledColor,
 buttonFeaturedActiveBackgroundColor,
 buttonFeaturedActiveBackgroundImage,
+buttonFeaturedActiveBoxShadow,
 buttonFeaturedActiveColor,
 buttonFeaturedBackgroundImage,
 buttonFeaturedColor,
 buttonFeaturedDisabledBackgroundColor,
 buttonFeaturedDisabledBackgroundImage,
+buttonFeaturedGradientEndColor,
+buttonFeaturedGradientStartColor,
 buttonFeaturedHoverBackgroundColor,
+buttonFeaturedHoverBackgroundImage,
+buttonFeaturedHoverBoxShadow,
 buttonFeaturedHoverColor,
 buttonFontSize,
 buttonFontWeight,
