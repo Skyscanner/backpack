@@ -20,14 +20,14 @@ import React, { Component } from 'react';
 import BpkDatepicker from 'bpk-component-datepicker';
 import BpkRouterLink from 'bpk-component-router-link';
 import datepickerReadme from 'bpk-component-datepicker/README.md';
+import format from 'date-fns/format';
+import { weekDays } from 'bpk-component-calendar/test-utils';
 
 import * as ROUTES from '../../constants/routes';
 import DocsPageBuilder from '../../components/DocsPageBuilder';
 import DocsPageWrapper from '../../components/DocsPageWrapper';
-import format from '../../../../bpk-component-calendar/node_modules/date-fns/format';
 import Paragraph from '../../components/Paragraph';
 import IntroBlurb from '../../components/IntroBlurb';
-import { weekDays } from '../../../../bpk-component-calendar/test-utils';
 
 const formatDate = date => format(date, 'DD/MM/YYYY');
 const formatMonth = date => format(date, 'MMMM YYYY');
