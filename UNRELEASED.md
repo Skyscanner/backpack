@@ -2,19 +2,19 @@
 
 > Place your changes below this line.
 
-**Breaking:**
-- `bpk-tokens`:
-  - Deprecated `BUTTON_FEATURED_BACKGROUND_IMAGE` to allow theming as no longer required.
-
 **Added:**
 - `bpk-tokens`:
   - Added new tokens for destructive and featured buttons to allow theming.
-- `bpk-mixins`:
-  - Changed destructive and featured button mixins to allow for theming to be applied.
 - `bpk-component-theme-toggle`:
   - Added theming properties to apply theme.
 - `bpk-component-button`:
   - Added theme attributes for destructive and featured buttons.
+
+**Changed:**
+- `bpk-tokens`:
+  - Deprecated `BUTTON_FEATURED_BACKGROUND_IMAGE` to allow theming as no longer required.
+- `bpk-mixins`:
+  - Changed destructive and featured button mixins to allow for theming to be applied.
 
 ## How to write a good changelog entry
 
