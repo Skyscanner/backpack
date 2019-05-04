@@ -16,8 +16,10 @@
  * limitations under the License.
  */
 
+/* @flow strict */
+
 import PropTypes from 'prop-types';
-import React from 'react';
+import React, { type Node } from 'react';
 import { cssModules } from 'bpk-react-utils';
 
 import STYLES from './BpkText.scss';
@@ -31,7 +33,15 @@ TEXT_STYLES.forEach(textStyle => {
   classes[textStyle] = getClassName(`bpk-text--${textStyle}`);
 });
 
-const BpkText = props => {
+type Props = {
+  children: Node,
+  textStyle: 'xs' | 'sm' | 'base' | 'lg' | 'xl' | 'xxl',
+  tagName: 'span' | 'p' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6',
+  className: ?string,
+  bold: boolean,
+};
+
+const BpkText = (props: Props) => {
   const {
     bold,
     className,
