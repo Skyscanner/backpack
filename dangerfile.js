@@ -61,10 +61,8 @@ if (componentIntroduced) {
 
 // If any of the packages have changed, the UNRELEASED log should have been updated.
 const unreleasedModified = includes(modifiedFiles, 'UNRELEASED.md');
-const packagesModified = fileChanges.some(
-  filePath =>
-    filePath.startsWith('packages/') &&
-    !filePath.startsWith('packages/bpk-docs/'),
+const packagesModified = fileChanges.some(filePath =>
+  filePath.startsWith('packages/'),
 );
 if (packagesModified && !unreleasedModified && !declaredTrivial) {
   warn(

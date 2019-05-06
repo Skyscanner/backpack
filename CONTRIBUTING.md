@@ -161,13 +161,7 @@ Take a look at some of the mixin source files to see how to annotate your Sass t
 
 #### Backpack documentation
 
-When adding documentation for a new component:
-
- * Add the new dependency in `packages/bpk-docs/package.json` and run `npm run bootstrap` to install it.
- * Add routes for your new component in `packages/bpk-docs/src/constants/Routes.js` and `packages/bpk-docs/src/constants/redirect-routes.js`.
- * Add new link in `packages/bpk-docs/src/layouts/links.js`.
-
- For help writing documentation, see Skyscanner's [copywriting guide](https://backpack.github.io/style-guide/copywriting) and Backpack's [guide for writing docs](/decisions/writing-docs.md).
+For documentation changes, please see our [Backpack docs repo](http://github.com/Skyscanner/backpack-docs).
 
 ## How to
 
@@ -195,26 +189,6 @@ Bear in mind that small, incremental pull requests are likely to be reviewed fas
 `npm test` will pick up any files that end in `-test.js`, so you don't need to do anything to make Jest pick them up.
 
 You can also run the tests in 'watch mode', which means the process will continually run and run tests every time files change. Use `npm run jest:watch` to do this.
-
-</details>
-
-<details>
-<summary>Run the documentation site</summary>
-
-The Backpack documentation is a standalone client-side app. Each package has its own page, which you can find and edit in the `bpk-docs` package under `src/pages`.
-
-The “page” modules themselves contain introductory blurbs and examples for the respective component. They also import the component’s README, which you should have created as part of your component.
-
-You can run the docs app locally using:
-
-```sh
-npm run build
-npm run docs
-```
-
-And loading [http://localhost:8080](http://localhost:8080).
-
-The web Map component page requires an environment variable named `GOOGLE_MAPS_API_KEY`. During builds, this is set by Travis.
 
 </details>
 
@@ -247,19 +221,6 @@ Be aware that if `bpk-tokens` has changed, *all* packages in the repository will
 When a component is released for the first time on npm, remember to add the component to the Skyscanner organisation through the [npm UI](https://www.npmjs.com/settings/skyscanner/teams/team/backpack/access).
 
 </details>
-
-## Submodules
-
-`backpack-android`, `backpack-ios` and `backpack-react-native` folders are git submodules used solely for documentation. They shouldn't be directly used for anything else.
-
-The documentation build will ensure the local submodules are up to date before using it so there is no need to do any git command directly. That being
-said, from time to time it's good to update the submodules to point to a newer commit so fewer changes will be pulled before each doc build.
-
-To do the above run `npm run submodules:update` and then `git push origin master`.
-
-Sometimes you may encounter an error when running `npm test` or running linting, that states an error of `module not found`. This issue can be related to the submodules not being cloned when working with the codebase.
-
-If this issue occurs run `git submodule update --init --recursive` which will clone all the submodules to your local codebase.
 
 ## And finally..
 
