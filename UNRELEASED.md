@@ -2,10 +2,6 @@
 
 > Place your changes below this line.
 
-**Added:**
-- `bpk-component-map`:
-  - Added `plain` to `MARKER_TYPES` for use with `BpkMapMarker` component.
-
 
 ## How to write a good changelog entry
 
