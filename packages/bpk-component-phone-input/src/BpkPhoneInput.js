@@ -83,15 +83,16 @@ const BpkPhoneInput = (props: Props) => {
     disabled: !!disabled,
   };
 
-  // This function get the size value of the dialingCode to resize the field correctly
-  function dcChange(codeList: typeof dialingCodes) {
-    const dialogCode = codeList.find(e => e.code === dialingCode);
-    if (dialogCode) return dialogCode.description.length;
-    return 1;
-  }
   // This sizeConstant determines what the multiplier for the field should be
   let sizeMultiplier = 5;
   if (large) sizeMultiplier = 7;
+
+  // This function get the size value of the dialingCode to resize the field correctly
+  function dcChange() {
+    const dialogCode = dialingCodes.find(e => e.code === dialingCode);
+    if (dialogCode) return sizeMultiplier * dialogCode.description.length + 100;
+    return sizeMultiplier + 100;
+  }
 
   return (
     <span
@@ -120,7 +121,7 @@ const BpkPhoneInput = (props: Props) => {
         value={dialingCode}
         onChange={onDialingCodeChange}
         style={{
-          width: `${sizeMultiplier * dcChange(dialingCodes) + 100}px`,
+          width: `${dcChange()}px`,
         }}
       >
         {dialingCodes.map(({ code, description, ...extraDialingProps }) => (
