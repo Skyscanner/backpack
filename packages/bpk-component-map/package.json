@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-map",
-  "version": "2.3.1",
+  "version": "2.4.0",
   "description": "Backpack map component.",
   "main": "index.js",
   "repository": {
