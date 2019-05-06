@@ -109,8 +109,8 @@ class StatefulBpkMapMarkers extends Component<{}, { selected: number }> {
         />
         <BpkMapMarker
           selected={this.state.selected === 3}
-          type={MARKER_TYPES.tertiary}
-          icon={<AlignedFoodIconSm />}
+          type={MARKER_TYPES.plain}
+          icon={<AlignedLeisureIconLg />}
           position={{
             latitude: 35.6605,
             longitude: 139.704041,

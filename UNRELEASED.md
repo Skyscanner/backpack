@@ -4,7 +4,7 @@
 
 **Added:**
 - `bpk-component-map`:
-  - Added `tertiary` to `MARKER_TYPES` for use with `BpkMapMarker` component.
+  - Added `plain` to `MARKER_TYPES` for use with `BpkMapMarker` component.
 
 
 ## How to write a good changelog entry
