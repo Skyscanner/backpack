@@ -3,6 +3,7 @@
 .vscode
 .sass-cache
 /dist
+/dist-storybook
 /coverage
 /packages/bpk-component-icon/*/
 !/packages/bpk-component-icon/src

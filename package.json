@@ -27,7 +27,7 @@
     "build:tokens": "lerna run tokens --scope bpk-tokens",
     "build:svgs": "lerna run svgs --scope bpk-svgs",
     "build": "npm run build:tokens && npm run build:svgs && lerna run build",
-    "storybook:dist": "build-storybook -c .storybook -o dist/storybook",
+    "storybook:dist": "build-storybook -c .storybook -o dist-storybook",
     "storybook": "start-storybook -p 9001",
     "sassdoc": "sassdoc {packages/bpk-mixins/src/**/*,packages/bpk-svgs/dist/*,packages/bpk-tokens/tokens/base.default}.scss -d dist/sassdoc -v --strict",
     "docs": "npm run submodules:pull && BPK_BUILT_AT=$( date -u +%s ) webpack-dev-server --open",
