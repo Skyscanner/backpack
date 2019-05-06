@@ -2,6 +2,24 @@
 
 [Unreleased changes](./UNRELEASED.md).
 
+# 2019-05-06 Theming support for Featured and Destructive buttons, and Flow updates for Text
+
+**Added:**
+- `bpk-tokens`: 27.5.0 => 27.6.0
+  - Added new tokens for destructive and featured buttons to allow theming.
+- `bpk-component-theme-toggle`: 1.0.96 => 1.0.97
+  - Added theming properties to apply theme.
+- `bpk-component-button`: 2.1.58 => 2.2.0
+  - Added theme attributes for destructive and featured buttons.
+- `bpk-component-text`: 1.0.117 => 1.0.118
+  - Added flow types for `BpkText` props.
+
+**Changed:**
+- `bpk-tokens`: 27.5.0 => 27.6.0
+  - Deprecated `BUTTON_FEATURED_BACKGROUND_IMAGE` to allow theming as no longer required.
+- `bpk-mixins`: 17.18.3 => 17.19.0
+  - Changed destructive and featured button mixins to allow for theming to be applied.
+
 # 2019-05-01 Bug fixes
 
 **Fixed:**
