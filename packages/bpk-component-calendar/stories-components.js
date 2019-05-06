@@ -231,7 +231,7 @@ MonthViewCalendar.propTypes = {
   maxDate: PropTypes.instanceOf(Date),
   departureDate: PropTypes.instanceOf(Date),
   returnDate: PropTypes.instanceOf(Date),
-  weekStartsOn: PropTypes.number,
+  weekStartsOn: PropTypes.number.isRequired,
 };
 
 MonthViewCalendar.defaultProps = {
@@ -239,7 +239,6 @@ MonthViewCalendar.defaultProps = {
   maxDate: startOfDay(addMonths(new Date(), 12)),
   departureDate: startOfDay(addDays(new Date(), 1)),
   returnDate: startOfDay(addDays(new Date(), 4)),
-  weekStartsOn: 1,
 };
 
 export default MonthViewCalendar;

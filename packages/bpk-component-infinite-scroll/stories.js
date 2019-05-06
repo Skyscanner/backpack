@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+/* @flow strict */
+
 import React from 'react';
 import PropTypes from 'prop-types';
 import { storiesOf, action } from '@storybook/react';
@@ -25,14 +27,19 @@ import { BpkSpinner, SPINNER_TYPES } from 'bpk-component-spinner';
 
 import withInfiniteScroll, { ArrayDataSource, DataSource } from './index';
 
-const elementsArray = [];
+const elementsArray: Array<any> = [];
 
 for (let i = 0; i < 100; i += 1) {
   elementsArray.push(`Element ${i}`);
 }
 
-const List = ({ elements }) => (
-  <div>
+type ListProps = {
+  elements: Array<any>,
+  'aria-label': ?string, // defined just to test flow definition with extra props
+};
+
+const List = ({ elements, ...rest }: ListProps) => (
+  <div {...rest}>
     {elements.map(element => (
       <BpkCard
         style={{
@@ -49,6 +56,11 @@ const List = ({ elements }) => (
 
 List.propTypes = {
   elements: PropTypes.arrayOf(PropTypes.any).isRequired,
+  'aria-label': PropTypes.string.isRequired,
+};
+
+List.defaultProps = {
+  'aria-label': null,
 };
 
 const InfiniteList = withInfiniteScroll(List);
@@ -62,6 +74,8 @@ class DelayedDataSource extends ArrayDataSource {
 }
 
 class InfiniteDataSource extends DataSource {
+  elements: Array<any>;
+
   constructor() {
     super();
     this.elements = [];
@@ -95,6 +109,7 @@ storiesOf('bpk-component-infinite-scroll', module)
       dataSource={new ArrayDataSource(elementsArray)}
       onScrollFinished={action('scroll finished')}
       onScroll={action('onScroll')}
+      aria-label="Inifinite list"
     />
   ))
   .add('Stopping after 5 scrolls', () => (

@@ -60,6 +60,7 @@ export default class App extends Component {
           formatMonth={formatMonth}
           formatDateFull={formatDateFull}
           daysOfWeek={daysOfWeek}
+          weekStartsOn={1}
           changeMonthLabel="Change month"
           date={this.state.selectedDate}
         />
@@ -155,6 +156,7 @@ withCalendarState(composeCalendar(
 | formatDateFull        | func                 | true                | -                |
 | formatMonth           | func                 | true                | -                |
 | id                    | string               | true                | -                |
+| weekStartsOn          | number               | true                | -                |
 | changeMonthLabel      | string               | if Nav !== null     | -                |
 | className             | string               | false               | null             |
 | fixedWidth            | bool                 | false               | true             |
@@ -168,7 +170,6 @@ withCalendarState(composeCalendar(
 | onMonthChange         | func                 | false               | null             |
 | selectedDate          | Date                 | false               | null             |
 | showWeekendSeparator  | bool                 | false               | true             |
-| weekStartsOn          | number               | false               | 1                |
 | navProps              | object               | false               | null             |
 | headerProps           | object               | false               | null             |
 | gridProps             | object               | false               | null             |
@@ -217,6 +218,7 @@ The BpkCalendarGrid component displays a month as a table.
 | formatDateFull        | func                 | true     | -                |
 | formatMonth           | func                 | true     | -                |
 | month                 | Date                 | true     | -                |
+| weekStartsOn          | number               | true     | -                |
 | focusedDate           | Date                 | false    | null             |
 | isKeyboardFocusable   | bool                 | false    | true             |
 | markOutsideDays       | bool                 | false    | true             |
@@ -228,7 +230,6 @@ The BpkCalendarGrid component displays a month as a table.
 | preventKeyboardFocus  | bool                 | false    | false            |
 | selectedDate          | Date                 | false    | null             |
 | showWeekendSeparator  | bool                 | false    | true             |
-| weekStartsOn          | number               | false    | 1                |
 
 ### BpkCalendarDate
 

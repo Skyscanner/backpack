@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-/* @flow */
+/* @flow strict */
 
 import React from 'react';
 import mobileScrollContainerReadme from 'bpk-component-mobile-scroll-container/README.md';

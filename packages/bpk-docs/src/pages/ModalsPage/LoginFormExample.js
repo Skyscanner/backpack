@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-/* @flow */
+/* @flow strict */
 
 import BpkLabel from 'bpk-component-label';
 import BpkButton from 'bpk-component-button';

@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-/* @flow */
+/* @flow strict */
 
 import React, { type Element } from 'react';
 import { mount } from 'enzyme';

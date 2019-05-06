@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-/* @flow */
+/* @flow strict */
 
 import React, { Component, type Node } from 'react';
 import BpkModal from 'bpk-component-modal';

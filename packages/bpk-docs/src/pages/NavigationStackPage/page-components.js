@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-/* @flow */
+/* @flow strict */
 
 import React, { type Element, type Node } from 'react';
 import ArrowIcon from 'bpk-component-icon/sm/long-arrow-left';

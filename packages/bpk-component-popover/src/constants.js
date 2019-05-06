@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-/* @flow */
+/* @flow strict */
 
 export const ARROW_ID = 'js-bpk-popover-arrow';
 

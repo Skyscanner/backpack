@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-/* @flow */
+/* @flow strict */
 
 import { BpkButtonLink } from 'bpk-component-link';
 import PropTypes from 'prop-types';

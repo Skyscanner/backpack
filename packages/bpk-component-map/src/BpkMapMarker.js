@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-/* @flow */
+/* @flow strict */
 
 import React, { type Node } from 'react';
 import PropTypes from 'prop-types';
@@ -39,6 +39,7 @@ export type MarkerType = $Keys<typeof MARKER_TYPES>;
 type Props = {
   icon: Node,
   position: LatLong,
+  selected: boolean,
   type: MarkerType,
   className: ?string,
   arrowClassName: ?string,
@@ -54,6 +55,7 @@ const BpkMapMarker = (props: Props) => {
     className,
     arrowClassName,
     large,
+    selected,
     onClick,
     type,
     buttonProps,
@@ -65,10 +67,15 @@ const BpkMapMarker = (props: Props) => {
     `bpk-map-marker--${type}`,
     onClick && 'bpk-map-marker--dynamic',
     large && 'bpk-map-marker--large',
+    selected && `bpk-map-marker--${type}-selected`,
     className,
   );
 
-  const arrowClassNames = getClassName('bpk-map-marker__arrow', arrowClassName);
+  const arrowClassNames = getClassName(
+    'bpk-map-marker__arrow',
+    selected && `bpk-map-marker__arrow--${type}-selected`,
+    arrowClassName,
+  );
 
   return (
     <BpkBasicMapMarker position={position} {...rest}>
@@ -90,10 +97,11 @@ const BpkMapMarker = (props: Props) => {
 BpkMapMarker.propTypes = {
   icon: PropTypes.node.isRequired,
   position: LatLongPropType.isRequired,
-  className: PropTypes.string,
   arrowClassName: PropTypes.string,
+  className: PropTypes.string,
   large: PropTypes.bool,
   onClick: PropTypes.func,
+  selected: PropTypes.bool,
   type: PropTypes.oneOf(Object.keys(MARKER_TYPES)),
   buttonProps: PropTypes.object, // eslint-disable-line react/forbid-prop-types
 };
@@ -103,6 +111,7 @@ BpkMapMarker.defaultProps = {
   arrowClassName: null,
   large: false,
   onClick: null,
+  selected: false,
   type: MARKER_TYPES.primary,
   buttonProps: null,
 };

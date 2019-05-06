@@ -21,13 +21,6 @@ export default () => (
     width={816}
     height={544}
     src="./path/to/image_1640.jpg"
-    srcSet={`./path/to/image_320px.jpg 320w,
-      ./path/to/image_640px.jpg 640w,
-      ./path/to/image_1640px.jpg 1640w,
-      ./path/to/image_3200px.jpg 3200w`}]
-    sizes={`(min-width: ${breakpointDesktop}) 48rem,
-      (min-width: ${breakpointTablet}) calc(100vw - 18rem),
-      calc(100vw - 4.5rem)`}
   />
 );
 ```
@@ -57,13 +50,6 @@ export default () => (
     width={816}
     height={544}
     src="./path/to/image_1640.jpg"
-    srcSet={`./path/to/image_320px.jpg 320w,
-      ./path/to/image_640px.jpg 640w,
-      ./path/to/image_1640px.jpg 1640w,
-      ./path/to/image_3200px.jpg 3200w`}
-    sizes={`(min-width: ${breakpointDesktop}) 48rem,
-      (min-width: ${breakpointTablet}) calc(100vw - 18rem),
-      calc(100vw - 4.5rem)`}
   />
 );
 ```
@@ -86,13 +72,6 @@ export default () => (
       width={816}
       height={544}
       src="./path/to/image_1640.jpg"
-      srcSet={`./path/to/image_320px.jpg 320w,
-        ./path/to/image_640px.jpg 640w,
-        ./path/to/image_1640px.jpg 1640w,
-        ./path/to/image_3200px.jpg 3200w`}
-      sizes={`(min-width: ${breakpointDesktop}) 48rem,
-        (min-width: ${breakpointTablet}) calc(100vw - 18rem),
-        calc(100vw - 4.5rem)`}
     />
     <FadingBackgroundImage
       altText="image description"
@@ -126,13 +105,6 @@ export default () => (
     width={816}
     height={544}
     src="./path/to/image_1640.jpg"
-    srcSet={`./path/to/image_320px.jpg 320w,
-      ./path/to/image_640px.jpg 640w,
-      ./path/to/image_1640px.jpg 1640w,
-      ./path/to/image_3200px.jpg 3200w`}
-    sizes={`(min-width: ${breakpointDesktop}) 48rem,
-      (min-width: ${breakpointTablet}) calc(100vw - 18rem),
-      calc(100vw - 4.5rem)`}
   />
 );
 ```
@@ -149,6 +121,7 @@ export default () => (
 | inView           | bool      | false    | true                |
 | loading          | bool      | false    | false               |
 | onLoad           | func      | false    | null                |
+| style            | object    | false    | {}                  |
 
 ## BpkBackgroundImage
 
@@ -158,7 +131,6 @@ The background image component is useful for setting background images in CSS th
 
 | Property         | PropType  | Required | Default Value       |
 | ---------------- | --------- | -------- | ------------------- |
-| altText          | string    | true     | -                   |
 | height           | number    | true     | -                   |
 | src              | string    | true     | -                   |
 | width            | number    | true     | -                   |
@@ -166,4 +138,5 @@ The background image component is useful for setting background images in CSS th
 | inView           | bool      | false    | true                |
 | loading          | bool      | false    | false               |
 | onLoad           | func      | false    | null                |
+| style            | object    | false    | {}                  |
 | imageStyle       | object    | false    | {}                  |

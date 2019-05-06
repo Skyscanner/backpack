@@ -183,6 +183,8 @@ For anything non-trivial, we strongly recommend speaking to somebody from Backpa
 5. Submit a [pull request](https://github.com/Skyscanner/backpack/pulls).
 6. Notify someone in Backpack squad or drop a note in #backpack.
 
+Don't forget to update [`UNRELEASED.md`](UNRELEASED.md) for any user-facing changes.
+
 Bear in mind that small, incremental pull requests are likely to be reviewed faster.
 
 </details>

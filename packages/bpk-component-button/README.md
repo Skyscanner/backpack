@@ -75,3 +75,26 @@ Secondary:
 * `buttonSecondaryBackgroundColor`
 * `buttonSecondaryHoverBackgroundColor`
 * `buttonSecondaryActiveBackgroundColor`
+
+Featured:
+
+* `buttonFeaturedTextColor`
+* `buttonFeaturedHoverTextColor`
+* `buttonFeaturedActiveTextColor`
+* `buttonFeaturedGradientStartColor`
+* `buttonFeaturedGradientEndColor`
+* `buttonFeaturedBackgroundColor`
+* `buttonFeaturedHoverBackgroundColor`
+* `buttonFeaturedActiveBackgroundColor`
+
+Destructive:
+
+* `buttonDestructiveTextColor`
+* `buttonDestructiveHoverTextColor`
+* `buttonDestructiveActiveTextColor`
+* `buttonDestructiveBorderColor`
+* `buttonDestructiveHoverBorderColor`
+* `buttonDestructiveActiveBorderColor`
+* `buttonDestructiveBackgroundColor`
+* `buttonDestructiveHoverBackgroundColor`
+* `buttonDestructiveActiveBackgroundColor`

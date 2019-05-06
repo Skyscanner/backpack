@@ -121,6 +121,29 @@ describe('Portal', () => {
     expect(document.body.lastChild.textContent).toEqual('Not a portal');
   });
 
+  it('should not remove portal children if render target no longer exists', () => {
+    const div = document.createElement('div');
+    div.id = 'render-target';
+    document.body.appendChild(div);
+
+    const portal = mount(
+      <Portal
+        isOpen
+        renderTarget={() => document.getElementById('render-target')}
+      >
+        <div>My portal content</div>
+      </Portal>,
+    );
+
+    expect(document.body.lastChild.textContent).toEqual('My portal content');
+
+    document.body.removeChild(div);
+
+    expect(() => {
+      portal.setProps({ isOpen: false }).update();
+    }).not.toThrow();
+  });
+
   it('should call the onClose handler on click outside', () => {
     const onCloseSpy = jest.fn();
 

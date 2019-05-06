@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-/* @flow */
+/* @flow strict */
 
 class DataSource<T = any> {
   listeners: Array<() => mixed>;

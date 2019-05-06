@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-/* @flow */
+/* @flow strict */
 
 import React from 'react';
 import { shallow } from 'enzyme';
@@ -39,6 +39,13 @@ describe('BpkMapMarker', () => {
   it('should render correctly with a "large" attribute', () => {
     const tree = shallow(
       <BpkMapMarker position={position} icon={icon} large />,
+    );
+    expect(toJson(tree)).toMatchSnapshot();
+  });
+
+  it('should render correctly with a "selected" attribute', () => {
+    const tree = shallow(
+      <BpkMapMarker position={position} icon={icon} selected />,
     );
     expect(toJson(tree)).toMatchSnapshot();
   });

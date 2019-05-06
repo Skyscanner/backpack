@@ -16,9 +16,9 @@
  * limitations under the License.
  */
 
-/* @flow */
+/* @flow strict */
 
-import React from 'react';
+import React, { Component, Fragment } from 'react';
 import BpkMap, {
   withGoogleMapsScript,
   BpkMapMarker,
@@ -27,7 +27,7 @@ import BpkMap, {
 } from 'bpk-component-map';
 import { cssModules } from 'bpk-react-utils';
 import LandmarkIconLg from 'bpk-component-icon/lg/landmark';
-import BusIconLg from 'bpk-component-icon/lg/bus';
+import BusIconSm from 'bpk-component-icon/sm/bus';
 import FoodIconSm from 'bpk-component-icon/sm/food';
 import { withRtlSupport } from 'bpk-component-icon';
 import mapReadme from 'bpk-component-map/README.md';
@@ -42,7 +42,7 @@ import IntroBlurb from '../../components/IntroBlurb';
 import STYLES from './MapPage.scss';
 
 const AlignedLandmarkIconLg = withRtlSupport(LandmarkIconLg);
-const AlignedBusIconLg = withRtlSupport(BusIconLg);
+const AlignedBusIconSm = withRtlSupport(BusIconSm);
 const AlignedFoodIconSm = withRtlSupport(FoodIconSm);
 
 const BpkMapWithScript = withGoogleMapsScript(BpkMap);
@@ -56,6 +56,71 @@ const COORDINATES: BpkMapLatLong = {
   latitude: 35.661777,
   longitude: 139.704051,
 };
+
+class StatefulBpkMapMarkers extends Component<{}, { selected: number }> {
+  constructor() {
+    super();
+    this.state = { selected: 0 };
+  }
+
+  selectMarker = selected => {
+    this.setState({ selected });
+  };
+
+  render() {
+    return (
+      <Fragment>
+        <BpkMapMarker
+          selected={this.state.selected === 0}
+          icon={<AlignedBusIconSm />}
+          position={{
+            latitude: 35.661777,
+            longitude: 139.704051,
+          }}
+          onClick={() => {
+            this.selectMarker(0);
+          }}
+        />
+        <BpkMapMarker
+          selected={this.state.selected === 1}
+          large
+          icon={<AlignedLandmarkIconLg />}
+          position={{
+            latitude: 35.6625,
+            longitude: 139.705051,
+          }}
+          onClick={() => {
+            this.selectMarker(1);
+          }}
+        />
+        <BpkMapMarker
+          selected={this.state.selected === 2}
+          type={MARKER_TYPES.secondary}
+          icon={<AlignedFoodIconSm />}
+          position={{
+            latitude: 35.6615,
+            longitude: 139.705051,
+          }}
+          onClick={() => {
+            this.selectMarker(2);
+          }}
+        />
+        <BpkMapMarker
+          selected={this.state.selected === 3}
+          type={MARKER_TYPES.secondary}
+          icon={<AlignedFoodIconSm />}
+          position={{
+            latitude: 35.6605,
+            longitude: 139.704041,
+          }}
+          onClick={() => {
+            this.selectMarker(3);
+          }}
+        />
+      </Fragment>
+    );
+  }
+}
 
 const components = [
   {
@@ -79,39 +144,7 @@ const components = [
     examples: [
       <div className={getClassName('bpkdocs-map-page__map')}>
         <BpkMapWithScript googleMapURL={MAP_URL} zoom={17} center={COORDINATES}>
-          <BpkMapMarker
-            large
-            icon={<AlignedBusIconLg />}
-            position={{
-              latitude: 35.661777,
-              longitude: 139.704051,
-            }}
-            onClick={() => {
-              alert('Beep beep!');
-            }}
-          />
-          <BpkMapMarker
-            large
-            icon={<AlignedLandmarkIconLg />}
-            position={{
-              latitude: 35.6625,
-              longitude: 139.705051,
-            }}
-            onClick={() => {
-              alert('Interesting!');
-            }}
-          />
-          <BpkMapMarker
-            type={MARKER_TYPES.secondary}
-            icon={<AlignedFoodIconSm />}
-            position={{
-              latitude: 35.6615,
-              longitude: 139.705051,
-            }}
-            onClick={() => {
-              alert('Yum!');
-            }}
-          />
+          <StatefulBpkMapMarkers />
         </BpkMapWithScript>
       </div>,
     ],

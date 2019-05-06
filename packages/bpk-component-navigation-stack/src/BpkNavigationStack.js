@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-/* @flow */
+/* @flow strict */
 
 import { cssModules } from 'bpk-react-utils';
 import React, { Children, type Element } from 'react';

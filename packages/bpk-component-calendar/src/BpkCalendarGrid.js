@@ -160,6 +160,7 @@ export const propTypes = {
   formatDateFull: PropTypes.func.isRequired,
   formatMonth: PropTypes.func.isRequired,
   month: PropTypes.instanceOf(Date).isRequired,
+  weekStartsOn: PropTypes.number.isRequired,
   // Optional
   className: PropTypes.string,
   cellClassName: PropTypes.string,
@@ -177,7 +178,6 @@ export const propTypes = {
   selectionEnd: PropTypes.instanceOf(Date),
   selectionStart: PropTypes.instanceOf(Date),
   showWeekendSeparator: PropTypes.bool,
-  weekStartsOn: PropTypes.number,
   ignoreOutsideDate: PropTypes.bool,
   dateProps: PropTypes.object, // eslint-disable-line react/forbid-prop-types
 };
@@ -200,7 +200,6 @@ BpkCalendarGrid.defaultProps = {
   selectionEnd: null,
   selectionStart: null,
   showWeekendSeparator: true,
-  weekStartsOn: 1,
   ignoreOutsideDate: false,
   dateProps: null,
   cellClassName: null,

@@ -16,13 +16,20 @@
  * limitations under the License.
  */
 
-/* @flow */
+/* @flow strict */
 
 import BpkButton from './src/BpkButton';
 import {
   primaryThemeAttributes,
   secondaryThemeAttributes,
+  featuredThemeAttributes,
+  destructiveThemeAttributes,
 } from './src/themeAttributes';
 
-export { primaryThemeAttributes, secondaryThemeAttributes };
+export {
+  primaryThemeAttributes,
+  secondaryThemeAttributes,
+  featuredThemeAttributes,
+  destructiveThemeAttributes,
+};
 export default BpkButton;

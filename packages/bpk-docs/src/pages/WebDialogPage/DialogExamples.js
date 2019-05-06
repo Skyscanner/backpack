@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-/* @flow */
+/* @flow strict */
 /* eslint-disable react/no-multi-comp */
 
 import PropTypes from 'prop-types';

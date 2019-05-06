@@ -24,6 +24,8 @@ import { themeAttributes as blockquoteThemeAttributes } from '../packages/bpk-co
 import {
   primaryThemeAttributes,
   secondaryThemeAttributes,
+  featuredThemeAttributes,
+  destructiveThemeAttributes,
 } from '../packages/bpk-component-button';
 import { themeAttributes as calendarThemeAttributes } from '../packages/bpk-component-calendar';
 import { themeAttributes as checkboxThemeAttributes } from '../packages/bpk-component-checkbox';
@@ -54,6 +56,8 @@ export default [
   ...blockquoteThemeAttributes,
   ...primaryThemeAttributes,
   ...secondaryThemeAttributes,
+  ...featuredThemeAttributes,
+  ...destructiveThemeAttributes,
   ...calendarThemeAttributes,
   ...checkboxThemeAttributes,
   ...datepickerThemeAttributes,

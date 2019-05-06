@@ -2,6 +2,66 @@
 
 [Unreleased changes](./UNRELEASED.md).
 
+# 2019-05-06 Theming support for Featured and Destructive buttons, and Flow updates for Text
+
+**Added:**
+- `bpk-tokens`: 27.5.0 => 27.6.0
+  - Added new tokens for destructive and featured buttons to allow theming.
+- `bpk-component-theme-toggle`: 1.0.96 => 1.0.97
+  - Added theming properties to apply theme.
+- `bpk-component-button`: 2.1.58 => 2.2.0
+  - Added theme attributes for destructive and featured buttons.
+- `bpk-component-text`: 1.0.117 => 1.0.118
+  - Added flow types for `BpkText` props.
+
+**Changed:**
+- `bpk-tokens`: 27.5.0 => 27.6.0
+  - Deprecated `BUTTON_FEATURED_BACKGROUND_IMAGE` to allow theming as no longer required.
+- `bpk-mixins`: 17.18.3 => 17.19.0
+  - Changed destructive and featured button mixins to allow for theming to be applied.
+
+# 2019-05-01 Bug fixes
+
+**Fixed:**
+
+- bpk-component-datepicker: 9.0.1 => 9.0.2
+- bpk-component-popover: 2.2.26 => 2.2.27
+  - Fixed target and renderTarget types to support being passed references created via `createRef`.
+
+# 2019-04-30 Bug fixes, and a new selected state for map markers
+
+**Added:**
+
+- bpk-component-map: 2.2.8 => 2.3.0
+  - Added `selected` prop for when markers are selected or highlighted. See https://backpack.github.io/components/map?platform=web#map-markers.
+
+**Fixed:**
+
+- bpk-component-autosuggest: 3.0.147 => 3.0.148
+- bpk-component-datepicker: 9.0.0 => 9.0.1
+- bpk-component-popover: 2.2.25 => 2.2.26
+- bpk-react-utils: 2.7.5 => 2.7.6
+  - Fixed issue that caused tests to error if a portal's render target is removed from the DOM before the portal is unmounted
+
+# 2019-04-25 Breaking changes for Calendar and flow fixes for Infinite Scroll
+
+**Breaking:**
+- bpk-component-calendar: 4.5.18 => 5.0.0
+- bpk-component-datepicker: 8.1.54 => 9.0.0
+- bpk-component-scrollable-calendar: 0.1.41 => 1.0.0
+  - `weekStartsOn` is now required, to assist with localisation.
+
+**Fixed:**
+
+- bpk-component-infinite-scroll: 2.2.19 => 2.2.20
+  - Fixed flow definition.
+
+
+# 2019-04-23 Added strict Flow typing
+
+**Updated:**
+- For all packages that utilise `Flow` the `strict` annotation has been added.
+
 # 2019-04-19 Fixed small input styling bugs
 
 **Fixed:**

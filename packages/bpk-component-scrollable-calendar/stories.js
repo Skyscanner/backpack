@@ -203,6 +203,7 @@ storiesOf('bpk-component-scrollable-calendar', module)
       formatMonth={formatMonth}
       formatDateFull={formatDateFull}
       daysOfWeek={weekDays}
+      weekStartsOn={1}
       showWeekendSeparator={false}
       selectTodaysDate
       minDate={DateUtils.addDays(new Date(), -1)}
@@ -227,6 +228,7 @@ storiesOf('bpk-component-scrollable-calendar', module)
       formatMonth={formatMonth}
       formatDateFull={formatDateFull}
       daysOfWeek={weekDaysMoreWeekend}
+      weekStartsOn={1}
       selectTodaysDate
       minDate={DateUtils.addDays(new Date(), -1)}
       maxDate={DateUtils.addMonths(new Date(), 12)}
@@ -262,6 +264,7 @@ storiesOf('bpk-component-scrollable-calendar', module)
       formatMonth={formatMonth}
       formatDateFull={formatDateFull}
       daysOfWeek={weekDays}
+      weekStartsOn={1}
       selectTodaysDate
       minDate={new Date(2020, 4, 15)}
       maxDate={new Date(2020, 5, 15)}
@@ -273,6 +276,7 @@ storiesOf('bpk-component-scrollable-calendar', module)
       formatMonth={formatMonth}
       formatDateFull={formatDateFull}
       daysOfWeek={weekDays}
+      weekStartsOn={1}
       markToday={false}
       selectTodaysDate
       minDate={DateUtils.addDays(new Date(), -1)}
