@@ -39,7 +39,32 @@ export const secondaryThemeAttributes = [
   'buttonSecondaryActiveBackgroundColor',
 ];
 
+export const featuredThemeAttributes = [
+  'buttonFeaturedTextColor',
+  'buttonFeaturedHoverTextColor',
+  'buttonFeaturedActiveTextColor',
+  'buttonFeaturedGradientStartColor',
+  'buttonFeaturedGradientEndColor',
+  'buttonFeaturedBackgroundColor',
+  'buttonFeaturedHoverBackgroundColor',
+  'buttonFeaturedActiveBackgroundColor',
+];
+
+export const destructiveThemeAttributes = [
+  'buttonDestructiveTextColor',
+  'buttonDestructiveHoverTextColor',
+  'buttonDestructiveActiveTextColor',
+  'buttonDestructiveBorderColor',
+  'buttonDestructiveHoverBorderColor',
+  'buttonDestructiveActiveBorderColor',
+  'buttonDestructiveBackgroundColor',
+  'buttonDestructiveHoverBackgroundColor',
+  'buttonDestructiveActiveBackgroundColor',
+];
+
 export default {
   primaryThemeAttributes,
   secondaryThemeAttributes,
+  featuredThemeAttributes,
+  destructiveThemeAttributes,
 };

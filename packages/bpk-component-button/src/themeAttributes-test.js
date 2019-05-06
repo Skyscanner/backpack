@@ -19,6 +19,8 @@
 import {
   primaryThemeAttributes,
   secondaryThemeAttributes,
+  destructiveThemeAttributes,
+  featuredThemeAttributes,
 } from './themeAttributes';
 
 describe('themeAttributes', () => {
@@ -46,6 +48,33 @@ describe('themeAttributes', () => {
       'buttonSecondaryBackgroundColor',
       'buttonSecondaryHoverBackgroundColor',
       'buttonSecondaryActiveBackgroundColor',
+    ]);
+  });
+
+  it('should export the correct destructive theme attributes', () => {
+    expect(destructiveThemeAttributes).toEqual([
+      'buttonDestructiveTextColor',
+      'buttonDestructiveHoverTextColor',
+      'buttonDestructiveActiveTextColor',
+      'buttonDestructiveBorderColor',
+      'buttonDestructiveHoverBorderColor',
+      'buttonDestructiveActiveBorderColor',
+      'buttonDestructiveBackgroundColor',
+      'buttonDestructiveHoverBackgroundColor',
+      'buttonDestructiveActiveBackgroundColor',
+    ]);
+  });
+
+  it('should export the correct featured theme attributes', () => {
+    expect(featuredThemeAttributes).toEqual([
+      'buttonFeaturedTextColor',
+      'buttonFeaturedHoverTextColor',
+      'buttonFeaturedActiveTextColor',
+      'buttonFeaturedGradientStartColor',
+      'buttonFeaturedGradientEndColor',
+      'buttonFeaturedBackgroundColor',
+      'buttonFeaturedHoverBackgroundColor',
+      'buttonFeaturedActiveBackgroundColor',
     ]);
   });
 });
