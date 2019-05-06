@@ -1,5 +1,3 @@
-<!-- Copy this to make your own decisions. -->
-
 # Versioning approach for component releases
 
 ## Decision
