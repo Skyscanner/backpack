@@ -20,7 +20,7 @@ exports[`BpkPhoneInput should render correctly 1`] = `
     onChange={[Function]}
     style={
       Object {
-        "width": "115px",
+        "width": "118px",
       }
     }
     value="44"
@@ -75,7 +75,7 @@ exports[`BpkPhoneInput should render correctly with a "disabled" attribute 1`] =
     onChange={[Function]}
     style={
       Object {
-        "width": "115px",
+        "width": "118px",
       }
     }
     value="44"
@@ -130,7 +130,7 @@ exports[`BpkPhoneInput should render correctly with a "large" attribute 1`] = `
     onChange={[Function]}
     style={
       Object {
-        "width": "121px",
+        "width": "124px",
       }
     }
     value="44"
@@ -185,7 +185,7 @@ exports[`BpkPhoneInput should render correctly with a "valid" attribute 1`] = `
     onChange={[Function]}
     style={
       Object {
-        "width": "115px",
+        "width": "118px",
       }
     }
     value="44"
@@ -241,7 +241,7 @@ exports[`BpkPhoneInput should render correctly with a "wrapperProps" attribute 1
     onChange={[Function]}
     style={
       Object {
-        "width": "115px",
+        "width": "118px",
       }
     }
     value="44"
@@ -302,7 +302,7 @@ exports[`BpkPhoneInput should render correctly with a dialing code image attribu
       onChange={[Function]}
       style={
         Object {
-          "width": "115px",
+          "width": "118px",
         }
       }
       value="44"

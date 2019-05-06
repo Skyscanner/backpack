@@ -58,6 +58,20 @@ type CommonProps = {
   valid: ?boolean,
 };
 
+// This function get the size value of the dialingCode to resize the field correctly
+const widthForDialingCode = (large, dialingCodes, selectedDialingCode) => {
+  // This sizeConstant is an average character size for each size of field
+  const averageLetterSize = large ? 8 : 6;
+  const foundDialogCode = dialingCodes.find(
+    e => e.code === selectedDialingCode,
+  );
+  if (foundDialogCode && foundDialogCode.description) {
+    // Here we calculate the width for the field (N.B 100 is an assumed padding value)
+    return averageLetterSize * foundDialogCode.description.length + 100;
+  }
+  return averageLetterSize + 100;
+};
+
 const BpkPhoneInput = (props: Props) => {
   const {
     id,
@@ -82,17 +96,6 @@ const BpkPhoneInput = (props: Props) => {
     large: !!large,
     disabled: !!disabled,
   };
-
-  // This sizeConstant determines what the multiplier for the field should be
-  let sizeMultiplier = 5;
-  if (large) sizeMultiplier = 7;
-
-  // This function get the size value of the dialingCode to resize the field correctly
-  function dcChange() {
-    const dialogCode = dialingCodes.find(e => e.code === dialingCode);
-    if (dialogCode) return sizeMultiplier * dialogCode.description.length + 100;
-    return sizeMultiplier + 100;
-  }
 
   return (
     <span
@@ -121,7 +124,7 @@ const BpkPhoneInput = (props: Props) => {
         value={dialingCode}
         onChange={onDialingCodeChange}
         style={{
-          width: `${dcChange()}px`,
+          width: `${widthForDialingCode(large, dialingCodes, dialingCode)}px`,
         }}
       >
         {dialingCodes.map(({ code, description, ...extraDialingProps }) => (
