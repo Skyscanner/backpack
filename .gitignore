@@ -4,6 +4,7 @@
 .sass-cache
 /dist
 /dist-storybook
+/dist-sassdoc
 /coverage
 /packages/bpk-component-icon/*/
 !/packages/bpk-component-icon/src
