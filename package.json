@@ -29,7 +29,7 @@
     "build": "npm run build:tokens && npm run build:svgs && lerna run build",
     "storybook:dist": "build-storybook -c .storybook -o dist-storybook",
     "storybook": "start-storybook -p 9001",
-    "sassdoc": "sassdoc {packages/bpk-mixins/src/**/*,packages/bpk-svgs/dist/*,packages/bpk-tokens/tokens/base.default}.scss -d dist/sassdoc -v --strict",
+    "sassdoc": "sassdoc {packages/bpk-mixins/src/**/*,packages/bpk-svgs/dist/*,packages/bpk-tokens/tokens/base.default}.scss -d dist-sassdoc -v --strict",
     "docs": "npm run submodules:pull && BPK_BUILT_AT=$( date -u +%s ) webpack-dev-server --open",
     "docs:dist": "npm run submodules:pull && npm run clean:dist && NODE_ENV=production BPK_BUILT_AT=$( date -u +%s ) webpack --progress --display=minimal --bail && npm run sassdoc",
     "start": "npm run build && npm run storybook",
