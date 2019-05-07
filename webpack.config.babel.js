@@ -23,13 +23,10 @@ import webpack from 'webpack';
 import WrapperPlugin from 'wrapper-webpack-plugin';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import StaticSiteGeneratorPlugin from 'static-site-generator-webpack-plugin';
-import CopyWebpackPlugin from 'copy-webpack-plugin';
 
 import postCssPlugins from './scripts/webpack/postCssPlugins';
 import sassFunctions from './packages/bpk-mixins/sass-functions';
-import * as ROUTES from './packages/bpk-docs/src/constants/routes';
 import { blockComment as licenseHeader } from './packages/bpk-tokens/formatters/license-header';
-import redirects from './packages/bpk-docs/src/constants/redirect-routes';
 
 const {
   NODE_ENV,
@@ -42,10 +39,7 @@ const useCssModules = ENABLE_CSS_MODULES !== 'false';
 const isProduction = NODE_ENV === 'production';
 
 const staticSiteGeneratorConfig = {
-  paths: [
-    ...Object.keys(ROUTES).map(key => ROUTES[key]),
-    ...Object.keys(redirects),
-  ],
+  paths: [],
 };
 
 const sassOptions = {
@@ -57,7 +51,7 @@ const sassOptions = {
 
 const config = {
   entry: {
-    docs: './packages/bpk-docs/src/index.js',
+    docs: './index.js',
   },
 
   output: {
@@ -230,9 +224,6 @@ if (isProduction) {
         warnings: false,
       },
     }),
-    new CopyWebpackPlugin([
-      { from: 'packages/bpk-docs/src/README.md', to: 'README.md' },
-    ]),
   );
 }
 
