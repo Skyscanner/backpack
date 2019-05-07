@@ -25,6 +25,7 @@ export const primaryThemeAttributes = [
   'buttonPrimaryBackgroundColor',
   'buttonPrimaryHoverBackgroundColor',
   'buttonPrimaryActiveBackgroundColor',
+  'buttonPrimaryBorderRadius',
 ];
 
 export const secondaryThemeAttributes = [
@@ -37,6 +38,7 @@ export const secondaryThemeAttributes = [
   'buttonSecondaryBackgroundColor',
   'buttonSecondaryHoverBackgroundColor',
   'buttonSecondaryActiveBackgroundColor',
+  'buttonSecondaryBorderRadius',
 ];
 
 export const featuredThemeAttributes = [
@@ -48,6 +50,7 @@ export const featuredThemeAttributes = [
   'buttonFeaturedBackgroundColor',
   'buttonFeaturedHoverBackgroundColor',
   'buttonFeaturedActiveBackgroundColor',
+  'buttonFeaturedBorderRadius',
 ];
 
 export const destructiveThemeAttributes = [
@@ -60,6 +63,7 @@ export const destructiveThemeAttributes = [
   'buttonDestructiveBackgroundColor',
   'buttonDestructiveHoverBackgroundColor',
   'buttonDestructiveActiveBackgroundColor',
+  'buttonDestructiveBorderRadius',
 ];
 
 export default {
