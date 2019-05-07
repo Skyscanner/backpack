@@ -72,6 +72,9 @@ const BpkButton = (props: Props) => {
 
   if (secondary) {
     classNames.push(getClassName('bpk-button--secondary'));
+    if (large) {
+      classNames.push(getClassName('bpk-button--secondary--large'));
+    }
   }
   if (destructive) {
     classNames.push(getClassName('bpk-button--destructive'));

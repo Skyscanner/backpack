@@ -70,9 +70,9 @@ export const buttonDestructiveActiveBorderColor = "rgb(255, 84, 82)";
 export const buttonDestructiveActiveBoxShadow = "0 0 0 3px #ff5452 inset";
 export const buttonDestructiveActiveColor = "rgb(255, 84, 82)";
 export const buttonDestructiveBackgroundColor = "rgb(255, 255, 255)";
+export const buttonDestructiveBorderColor = "rgb(230, 228, 235)";
 export const buttonDestructiveBorderRadius = "1.125rem";
 export const buttonDestructiveBorderRadiusLg = "1.3125rem";
-export const buttonDestructiveBorderColor = "rgb(230, 228, 235)";
 export const buttonDestructiveBoxShadow = "0 0 0 2px #E6E4EB inset";
 export const buttonDestructiveColor = "rgb(255, 84, 82)";
 export const buttonDestructiveDisabledBackgroundColor = "rgb(230, 228, 235)";
@@ -129,9 +129,9 @@ export const buttonSecondaryActiveBoxShadow = "0 0 0 3px #00b2d6 inset";
 export const buttonSecondaryActiveColor = "rgb(0, 178, 214)";
 export const buttonSecondaryBackgroundColor = "rgb(255, 255, 255)";
 export const buttonSecondaryBackgroundImage = "none";
+export const buttonSecondaryBorderColor = "rgb(230, 228, 235)";
 export const buttonSecondaryBorderRadius = "1.125rem";
 export const buttonSecondaryBorderRadiusLg = "1.3125rem";
-export const buttonSecondaryBorderColor = "rgb(230, 228, 235)";
 export const buttonSecondaryBoxShadow = "0 0 0 2px #E6E4EB inset";
 export const buttonSecondaryColor = "rgb(0, 178, 214)";
 export const buttonSecondaryDisabledBackgroundColor = "rgb(230, 228, 235)";
@@ -458,9 +458,9 @@ buttonDestructiveActiveBorderColor,
 buttonDestructiveActiveBoxShadow,
 buttonDestructiveActiveColor,
 buttonDestructiveBackgroundColor,
+buttonDestructiveBorderColor,
 buttonDestructiveBorderRadius,
 buttonDestructiveBorderRadiusLg,
-buttonDestructiveBorderColor,
 buttonDestructiveBoxShadow,
 buttonDestructiveColor,
 buttonDestructiveDisabledBackgroundColor,
@@ -478,12 +478,12 @@ buttonDisabledBoxShadow,
 buttonDisabledColor,
 buttonFeaturedActiveBackgroundColor,
 buttonFeaturedActiveBackgroundImage,
-buttonFeaturedBorderRadius,
-buttonFeaturedBorderRadiusLg,
 buttonFeaturedActiveBoxShadow,
 buttonFeaturedActiveColor,
 buttonFeaturedBackgroundColor,
 buttonFeaturedBackgroundImage,
+buttonFeaturedBorderRadius,
+buttonFeaturedBorderRadiusLg,
 buttonFeaturedColor,
 buttonFeaturedDisabledBackgroundColor,
 buttonFeaturedDisabledBackgroundImage,
@@ -517,9 +517,9 @@ buttonSecondaryActiveBoxShadow,
 buttonSecondaryActiveColor,
 buttonSecondaryBackgroundColor,
 buttonSecondaryBackgroundImage,
+buttonSecondaryBorderColor,
 buttonSecondaryBorderRadius,
 buttonSecondaryBorderRadiusLg,
-buttonSecondaryBorderColor,
 buttonSecondaryBoxShadow,
 buttonSecondaryColor,
 buttonSecondaryDisabledBackgroundColor,

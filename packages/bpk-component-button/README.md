@@ -64,6 +64,7 @@ Primary:
 * `buttonPrimaryHoverBackgroundColor`
 * `buttonPrimaryActiveBackgroundColor`
 * `buttonPrimaryBorderRadius` (Optional)
+* `buttonPrimaryBorderRadiusLg` (Optional)
 
 Secondary:
 
@@ -77,6 +78,7 @@ Secondary:
 * `buttonSecondaryHoverBackgroundColor`
 * `buttonSecondaryActiveBackgroundColor`
 * `buttonSecondaryBorderRadius` (Optional)
+* `buttonSecondaryBorderRadiusLg` (Optional)
 
 Featured:
 
@@ -89,6 +91,7 @@ Featured:
 * `buttonFeaturedHoverBackgroundColor`
 * `buttonFeaturedActiveBackgroundColor`
 * `buttonFeaturedBorderRadius` (Optional)
+* `buttonFeaturedBorderRadiusLg` (Optional)
 
 Destructive:
 
@@ -102,3 +105,4 @@ Destructive:
 * `buttonDestructiveHoverBackgroundColor`
 * `buttonDestructiveActiveBackgroundColor`
 * `buttonDestructiveBorderRadius` (Optional)
+* `buttonDestructiveBorderRadiusLg` (Optional)

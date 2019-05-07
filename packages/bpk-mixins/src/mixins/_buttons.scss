@@ -88,7 +88,7 @@
 
 @mixin bpk-button--large {
   padding: $bpk-button-large-padding-y $bpk-button-large-padding-x;
-  border-radius: $bpk-button-border-radius-lg;
+  //@include bpk-themeable-property(border-radius, --bpk-button-primary-border-radius-lg, $bpk-button-border-radius-lg);
   font-size: $bpk-button-large-font-size;
   line-height: $bpk-button-large-line-height;
 }
@@ -111,6 +111,10 @@
   @include bpk-border-lg($bpk-button-secondary-border-color);
   @include bpk-border-lg(var(--bpk-button-secondary-border-color, $bpk-button-secondary-border-color));
   @include bpk-themeable-property(border-radius, --bpk-button-secondary-border-radius, $bpk-button-secondary-border-radius);
+
+  &--large {
+    @include bpk-themeable-property(border-radius, --bpk-button-secondary-border-radius-lg, $bpk-button-secondary-border-radius-lg) ;
+  }
 
   @include bpk-hover {
     background-image: $bpk-button-secondary-hover-background-image;
@@ -158,6 +162,10 @@
   @include bpk-border-lg($bpk-button-destructive-border-color);
   @include bpk-border-lg(var(--bpk-button-destructive-border-color, $bpk-button-destructive-border-color));
   @include bpk-themeable-property(border-radius, --bpk-button-destructive-border-radius, $bpk-button-destructive-border-radius);
+
+  &--large {
+    @include bpk-themeable-property(border-radius, --bpk-button-destructive-border-radius-lg, $bpk-button-destructive-border-radius-lg);
+  }
 
   @include bpk-hover {
     background-image: $bpk-button-destructive-hover-background-image;
@@ -303,6 +311,10 @@
   @include bpk-themeable-property(color, --bpk-button-featured-text-color, $bpk-button-featured-color);
   @include bpk-themeable-property(background-color, --bpk-button-featured-background-color, $bpk-button-featured-background-color);
   @include bpk-themeable-property(border-radius, --bpk-button-featured-border-radius, $bpk-button-featured-border-radius);
+
+  &--large {
+    @include bpk-themeable-property(border-radius, --bpk-button-featured-border-radius-lg, $bpk-button-featured-border-radius-lg);
+  }
 
   @include bpk-hover {
     background-image: $bpk-button-featured-hover-background-image;

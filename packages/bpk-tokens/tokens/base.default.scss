@@ -124,11 +124,11 @@ $bpk-button-destructive-active-color: rgb(255, 84, 82) !default;
 /// @group buttons
 $bpk-button-destructive-background-color: rgb(255, 255, 255) !default;
 /// @group buttons
+$bpk-button-destructive-border-color: rgb(230, 228, 235) !default;
+/// @group buttons
 $bpk-button-destructive-border-radius: 1.125rem !default;
 /// @group buttons
 $bpk-button-destructive-border-radius-lg: 1.3125rem !default;
-/// @group buttons
-$bpk-button-destructive-border-color: rgb(230, 228, 235) !default;
 /// @group buttons
 $bpk-button-destructive-box-shadow: 0 0 0 2px #E6E4EB inset !default;
 /// @group buttons
@@ -232,10 +232,6 @@ $bpk-button-secondary-active-background-color: rgb(255, 255, 255) !default;
 /// @group buttons
 $bpk-button-secondary-active-background-image: none !default;
 /// @group buttons
-$bpk-button-secondary-border-radius: 1.125rem !default;
-/// @group buttons
-$bpk-button-secondary-border-radius-lg: 1.3125rem !default;
-/// @group buttons
 $bpk-button-secondary-active-border-color: rgb(0, 178, 214) !default;
 /// @group buttons
 $bpk-button-secondary-active-box-shadow: 0 0 0 3px #00b2d6 inset !default;
@@ -247,6 +243,10 @@ $bpk-button-secondary-background-color: rgb(255, 255, 255) !default;
 $bpk-button-secondary-background-image: none !default;
 /// @group buttons
 $bpk-button-secondary-border-color: rgb(230, 228, 235) !default;
+/// @group buttons
+$bpk-button-secondary-border-radius: 1.125rem !default;
+/// @group buttons
+$bpk-button-secondary-border-radius-lg: 1.3125rem !default;
 /// @group buttons
 $bpk-button-secondary-box-shadow: 0 0 0 2px #E6E4EB inset !default;
 /// @group buttons

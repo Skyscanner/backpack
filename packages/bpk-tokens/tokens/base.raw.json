@@ -668,6 +668,13 @@
       "originalValue": "{!WHITE}",
       "name": "BUTTON_DESTRUCTIVE_BACKGROUND_COLOR"
     },
+    "BUTTON_DESTRUCTIVE_BORDER_COLOR": {
+      "category": "buttons",
+      "value": "rgb(230, 228, 235)",
+      "type": "color",
+      "originalValue": "{!GRAY_100}",
+      "name": "BUTTON_DESTRUCTIVE_BORDER_COLOR"
+    },
     "BUTTON_DESTRUCTIVE_BORDER_RADIUS": {
       "category": "buttons",
       "value": "1.125rem",
@@ -681,13 +688,6 @@
       "type": "size",
       "originalValue": "{!BORDER_RADIUS_PILL_LG}",
       "name": "BUTTON_DESTRUCTIVE_BORDER_RADIUS_LG"
-    },
-    "BUTTON_DESTRUCTIVE_BORDER_COLOR": {
-      "category": "buttons",
-      "value": "rgb(230, 228, 235)",
-      "type": "color",
-      "originalValue": "{!GRAY_100}",
-      "name": "BUTTON_DESTRUCTIVE_BORDER_COLOR"
     },
     "BUTTON_DESTRUCTIVE_BOX_SHADOW": {
       "category": "buttons",
@@ -1083,6 +1083,13 @@
       "originalValue": "none",
       "name": "BUTTON_SECONDARY_BACKGROUND_IMAGE"
     },
+    "BUTTON_SECONDARY_BORDER_COLOR": {
+      "category": "buttons",
+      "value": "rgb(230, 228, 235)",
+      "type": "color",
+      "originalValue": "{!GRAY_100}",
+      "name": "BUTTON_SECONDARY_BORDER_COLOR"
+    },
     "BUTTON_SECONDARY_BORDER_RADIUS": {
       "category": "buttons",
       "value": "1.125rem",
@@ -1096,13 +1103,6 @@
       "type": "size",
       "originalValue": "{!BORDER_RADIUS_PILL_LG}",
       "name": "BUTTON_SECONDARY_BORDER_RADIUS_LG"
-    },
-    "BUTTON_SECONDARY_BORDER_COLOR": {
-      "category": "buttons",
-      "value": "rgb(230, 228, 235)",
-      "type": "color",
-      "originalValue": "{!GRAY_100}",
-      "name": "BUTTON_SECONDARY_BORDER_COLOR"
     },
     "BUTTON_SECONDARY_BOX_SHADOW": {
       "category": "buttons",
@@ -3095,9 +3095,9 @@
     "BUTTON_DESTRUCTIVE_ACTIVE_BOX_SHADOW",
     "BUTTON_DESTRUCTIVE_ACTIVE_COLOR",
     "BUTTON_DESTRUCTIVE_BACKGROUND_COLOR",
+    "BUTTON_DESTRUCTIVE_BORDER_COLOR",
     "BUTTON_DESTRUCTIVE_BORDER_RADIUS",
     "BUTTON_DESTRUCTIVE_BORDER_RADIUS_LG",
-    "BUTTON_DESTRUCTIVE_BORDER_COLOR",
     "BUTTON_DESTRUCTIVE_BOX_SHADOW",
     "BUTTON_DESTRUCTIVE_COLOR",
     "BUTTON_DESTRUCTIVE_DISABLED_BACKGROUND_COLOR",
@@ -3154,9 +3154,9 @@
     "BUTTON_SECONDARY_ACTIVE_COLOR",
     "BUTTON_SECONDARY_BACKGROUND_COLOR",
     "BUTTON_SECONDARY_BACKGROUND_IMAGE",
+    "BUTTON_SECONDARY_BORDER_COLOR",
     "BUTTON_SECONDARY_BORDER_RADIUS",
     "BUTTON_SECONDARY_BORDER_RADIUS_LG",
-    "BUTTON_SECONDARY_BORDER_COLOR",
     "BUTTON_SECONDARY_BOX_SHADOW",
     "BUTTON_SECONDARY_COLOR",
     "BUTTON_SECONDARY_DISABLED_BACKGROUND_COLOR",
