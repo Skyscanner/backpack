@@ -2,7 +2,6 @@
 .idea
 .vscode
 .sass-cache
-/dist
 /dist-storybook
 /dist-sassdoc
 /coverage
