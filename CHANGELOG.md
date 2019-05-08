@@ -2,6 +2,12 @@
 
 [Unreleased changes](./UNRELEASED.md).
 
+# 2019-05-06 - New map marker type
+
+**Added:**
+- `bpk-component-map`: 2.3.1 => 2.4.0
+  - Added `plain` to `MARKER_TYPES` for use with `BpkMapMarker` component.
+
 # 2019-05-06 Theming support for Featured and Destructive buttons, and Flow updates for Text
 
 **Added:**

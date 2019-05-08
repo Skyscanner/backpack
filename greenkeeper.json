@@ -71,7 +71,6 @@
         "packages/bpk-component-ticket/package.json",
         "packages/bpk-component-tile/package.json",
         "packages/bpk-component-tooltip/package.json",
-        "packages/bpk-docs/package.json",
         "packages/bpk-mixins/package.json",
         "packages/bpk-react-utils/package.json",
         "packages/bpk-scrim-utils/package.json",

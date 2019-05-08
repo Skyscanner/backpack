@@ -120,7 +120,7 @@ When using `withGoogleMapsScript`, some additional props are available:
 | large            | bool                                         | false                    | false                |
 | onClick          | func                                         | false                    | null                 |
 | selected         | bool                                         | false                    | false                |
-| type             | oneOf('primary', 'secondary')                | false                    | MARKER_TYPES.primary |
+| type             | oneOf('primary', 'secondary', 'plain')       | false                    | MARKER_TYPES.primary |
 | buttonProps      | object                                       | false                    | null                 |
 
 ### BpkOverlayView
@@ -139,3 +139,7 @@ Primary markers:
 Secondary markers:
 
 * `mapMarkerSecondaryBackgroundColor`
+
+Plain markers:
+
+* `mapMarkerPlainBackgroundColor`
