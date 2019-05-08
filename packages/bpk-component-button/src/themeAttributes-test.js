@@ -34,6 +34,8 @@ describe('themeAttributes', () => {
       'buttonPrimaryBackgroundColor',
       'buttonPrimaryHoverBackgroundColor',
       'buttonPrimaryActiveBackgroundColor',
+      'buttonPrimaryBorderRadius',
+      'buttonPrimaryBorderRadiusLg',
     ]);
   });
 
@@ -48,6 +50,8 @@ describe('themeAttributes', () => {
       'buttonSecondaryBackgroundColor',
       'buttonSecondaryHoverBackgroundColor',
       'buttonSecondaryActiveBackgroundColor',
+      'buttonSecondaryBorderRadius',
+      'buttonSecondaryBorderRadiusLg',
     ]);
   });
 
@@ -62,6 +66,8 @@ describe('themeAttributes', () => {
       'buttonDestructiveBackgroundColor',
       'buttonDestructiveHoverBackgroundColor',
       'buttonDestructiveActiveBackgroundColor',
+      'buttonDestructiveBorderRadius',
+      'buttonDestructiveBorderRadiusLg',
     ]);
   });
 
@@ -75,6 +81,8 @@ describe('themeAttributes', () => {
       'buttonFeaturedBackgroundColor',
       'buttonFeaturedHoverBackgroundColor',
       'buttonFeaturedActiveBackgroundColor',
+      'buttonFeaturedBorderRadius',
+      'buttonFeaturedBorderRadiusLg',
     ]);
   });
 });

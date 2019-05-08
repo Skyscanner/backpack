@@ -88,9 +88,10 @@
 
 @mixin bpk-button--large {
   padding: $bpk-button-large-padding-y $bpk-button-large-padding-x;
-  //@include bpk-themeable-property(border-radius, --bpk-button-primary-border-radius-lg, $bpk-button-border-radius-lg);
   font-size: $bpk-button-large-font-size;
   line-height: $bpk-button-large-line-height;
+
+  @include bpk-themeable-property(border-radius, --bpk-button-primary-border-radius-lg, $bpk-button-border-radius-lg);
 }
 
 /// Secondary button. Modifies the bpk-button mixin.
@@ -112,10 +113,6 @@
   @include bpk-border-lg(var(--bpk-button-secondary-border-color, $bpk-button-secondary-border-color));
   @include bpk-themeable-property(border-radius, --bpk-button-secondary-border-radius, $bpk-button-secondary-border-radius);
 
-  &--large {
-    @include bpk-themeable-property(border-radius, --bpk-button-secondary-border-radius-lg, $bpk-button-secondary-border-radius-lg) ;
-  }
-
   @include bpk-hover {
     background-image: $bpk-button-secondary-hover-background-image;
     box-shadow: $bpk-button-secondary-hover-box-shadow;
@@ -124,6 +121,10 @@
     @include bpk-themeable-property(background-color, --bpk-button-secondary-hover-background-color, $bpk-button-secondary-hover-background-color);
     @include bpk-border-lg($bpk-button-secondary-hover-border-color);
     @include bpk-border-lg(var(--bpk-button-secondary-hover-border-color, $bpk-button-secondary-hover-border-color));
+  }
+
+  &--large {
+    @include bpk-themeable-property(border-radius, --bpk-button-secondary-border-radius-lg, $bpk-button-secondary-border-radius-lg) ;
   }
 
   &:active {
@@ -163,10 +164,6 @@
   @include bpk-border-lg(var(--bpk-button-destructive-border-color, $bpk-button-destructive-border-color));
   @include bpk-themeable-property(border-radius, --bpk-button-destructive-border-radius, $bpk-button-destructive-border-radius);
 
-  &--large {
-    @include bpk-themeable-property(border-radius, --bpk-button-destructive-border-radius-lg, $bpk-button-destructive-border-radius-lg);
-  }
-
   @include bpk-hover {
     background-image: $bpk-button-destructive-hover-background-image;
     box-shadow: $bpk-button-destructive-hover-box-shadow;
@@ -175,6 +172,10 @@
     @include bpk-themeable-property(background-color, --bpk-button-destructive-hover-background-color, $bpk-button-destructive-hover-background-color);
     @include bpk-border-lg($bpk-button-destructive-hover-border-color);
     @include bpk-border-lg(var(--bpk-button-destructive-hover-border-color, $bpk-button-destructive-hover-border-color));
+  }
+
+  &--large {
+    @include bpk-themeable-property(border-radius, --bpk-button-destructive-border-radius-lg, $bpk-button-destructive-border-radius-lg);
   }
 
   &:active {
@@ -312,16 +313,16 @@
   @include bpk-themeable-property(background-color, --bpk-button-featured-background-color, $bpk-button-featured-background-color);
   @include bpk-themeable-property(border-radius, --bpk-button-featured-border-radius, $bpk-button-featured-border-radius);
 
-  &--large {
-    @include bpk-themeable-property(border-radius, --bpk-button-featured-border-radius-lg, $bpk-button-featured-border-radius-lg);
-  }
-
   @include bpk-hover {
     background-image: $bpk-button-featured-hover-background-image;
     box-shadow: $bpk-button-featured-hover-box-shadow;
 
     @include bpk-themeable-property(color, --bpk-button-featured-hover-text-color, $bpk-button-featured-hover-color);
     @include bpk-themeable-property(background-color, --bpk-button-featured-hover-background-color, $bpk-button-featured-hover-background-color);
+  }
+
+  &--large {
+    @include bpk-themeable-property(border-radius, --bpk-button-featured-border-radius-lg, $bpk-button-featured-border-radius-lg);
   }
 
   &:active {

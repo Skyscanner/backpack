@@ -30,6 +30,8 @@ describe('themeAttributes', () => {
       'buttonSecondaryBackgroundColor',
       'buttonSecondaryHoverBackgroundColor',
       'buttonSecondaryActiveBackgroundColor',
+      'buttonSecondaryBorderRadius',
+      'buttonSecondaryBorderRadiusLg',
     ]);
   });
 });

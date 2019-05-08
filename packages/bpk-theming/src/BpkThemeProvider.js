@@ -110,7 +110,7 @@ const themeAttributesPropType = (props, propName, componentName) => {
   const errors = [];
   if (missingThemeAttributes.length > 0) {
     errors.push(
-      `${componentName}: Partial theming has been applied due to some missing components, the theme prop must include \`${themeAttributes.join(
+      `${componentName}: Partial theming has been applied due to some missing components, the theme prop should include \`${themeAttributes.join(
         ', ',
       )}\` (missing \`${missingThemeAttributes.join(', ')}\`)`,
     ); // eslint-disable-line max-len

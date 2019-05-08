@@ -2,7 +2,7 @@
 
 exports[`BpkLoadingButton should add only bpk specific classes if className prop is set to empty string 1`] = `
 <button
-  className="bpk-button bpk-button--secondary bpk-button--large"
+  className="bpk-button bpk-button--secondary bpk-button--large bpk-button--secondary--large"
   disabled={false}
   onClick={null}
   type="button"
@@ -82,7 +82,7 @@ exports[`BpkLoadingButton should render correctly 1`] = `
 
 exports[`BpkLoadingButton should render correctly with "large" and "destructive" attributes 1`] = `
 <button
-  className="bpk-button bpk-button--destructive bpk-button--large"
+  className="bpk-button bpk-button--destructive bpk-button--large bpk-button--destructive--large"
   disabled={false}
   onClick={null}
   type="button"
@@ -162,7 +162,7 @@ exports[`BpkLoadingButton should render correctly with "large" and "disabled" at
 
 exports[`BpkLoadingButton should render correctly with "large" and "featured" attributes 1`] = `
 <button
-  className="bpk-button bpk-button--large bpk-button--featured"
+  className="bpk-button bpk-button--featured bpk-button--large bpk-button--featured--large"
   disabled={false}
   onClick={null}
   type="button"
@@ -381,7 +381,7 @@ exports[`BpkLoadingButton should render correctly with "large" and "loading" att
 
 exports[`BpkLoadingButton should render correctly with "large" and "secondary" attributes 1`] = `
 <button
-  className="bpk-button bpk-button--secondary bpk-button--large"
+  className="bpk-button bpk-button--secondary bpk-button--large bpk-button--secondary--large"
   disabled={false}
   onClick={null}
   type="button"
@@ -958,7 +958,7 @@ exports[`BpkLoadingButton should render correctly with a "secondary" attribute 1
 
 exports[`BpkLoadingButton should respect the class names entered as a string 1`] = `
 <button
-  className="bpk-button bpk-button--secondary bpk-button--large custom-class-1 custom-class-2"
+  className="bpk-button bpk-button--secondary bpk-button--large bpk-button--secondary--large custom-class-1 custom-class-2"
   disabled={false}
   onClick={null}
   type="button"

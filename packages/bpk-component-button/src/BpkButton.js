@@ -72,22 +72,27 @@ const BpkButton = (props: Props) => {
 
   if (secondary) {
     classNames.push(getClassName('bpk-button--secondary'));
-    if (large) {
-      classNames.push(getClassName('bpk-button--secondary--large'));
-    }
   }
   if (destructive) {
     classNames.push(getClassName('bpk-button--destructive'));
   }
+  if (featured) {
+    classNames.push(getClassName('bpk-button--featured'));
+  }
   if (large) {
     classNames.push(getClassName('bpk-button--large'));
+    if (secondary) {
+      classNames.push(getClassName('bpk-button--secondary--large'));
+    } else if (destructive) {
+      classNames.push(getClassName('bpk-button--destructive--large'));
+    } else if (featured) {
+      classNames.push(getClassName('bpk-button--featured--large'));
+    }
   }
   if (link) {
     classNames.push(getClassName('bpk-button--link'));
   }
-  if (featured) {
-    classNames.push(getClassName('bpk-button--featured'));
-  }
+
   if (iconOnly) {
     classNames.push(
       getClassName(
