@@ -23,7 +23,6 @@ exports[`BpkCalendarNav should disable inputs when disabled 1`] = `
             "width": "1.5rem",
           }
         }
-        viewBox="0 0 24 24"
         width="24"
         xmlns="http://www.w3.org/2000/svg"
       >
@@ -87,7 +86,6 @@ exports[`BpkCalendarNav should disable inputs when disabled 1`] = `
             "width": "1.5rem",
           }
         }
-        viewBox="0 0 24 24"
         width="24"
         xmlns="http://www.w3.org/2000/svg"
       >
@@ -128,7 +126,6 @@ exports[`BpkCalendarNav should render correctly 1`] = `
             "width": "1.5rem",
           }
         }
-        viewBox="0 0 24 24"
         width="24"
         xmlns="http://www.w3.org/2000/svg"
       >
@@ -192,7 +189,6 @@ exports[`BpkCalendarNav should render correctly 1`] = `
             "width": "1.5rem",
           }
         }
-        viewBox="0 0 24 24"
         width="24"
         xmlns="http://www.w3.org/2000/svg"
       >

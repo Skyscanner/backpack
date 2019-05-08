@@ -157,7 +157,6 @@ exports[`BpkAutosuggestSuggestion should render correctly with all available att
         "width": "1.5rem",
       }
     }
-    viewBox="0 0 24 24"
     width="24"
     xmlns="http://www.w3.org/2000/svg"
   >
@@ -200,7 +199,6 @@ exports[`BpkAutosuggestSuggestion should render correctly with an "icon" attribu
         "width": "1.5rem",
       }
     }
-    viewBox="0 0 24 24"
     width="24"
     xmlns="http://www.w3.org/2000/svg"
   >

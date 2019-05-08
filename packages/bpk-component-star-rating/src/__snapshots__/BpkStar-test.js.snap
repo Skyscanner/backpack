@@ -30,7 +30,6 @@ exports[`BpkStar should render correctly with a large empty star 1`] = `
       "width": "1.5rem",
     }
   }
-  viewBox="0 0 24 24"
   width="24"
   xmlns="http://www.w3.org/2000/svg"
 >
@@ -50,7 +49,6 @@ exports[`BpkStar should render correctly with a large full star 1`] = `
       "width": "1.5rem",
     }
   }
-  viewBox="0 0 24 24"
   width="24"
   xmlns="http://www.w3.org/2000/svg"
 >
@@ -73,7 +71,6 @@ exports[`BpkStar should render correctly with a large half star 1`] = `
         "width": "1.5rem",
       }
     }
-    viewBox="0 0 24 24"
     width="24"
     xmlns="http://www.w3.org/2000/svg"
   >
@@ -90,7 +87,6 @@ exports[`BpkStar should render correctly with a large half star 1`] = `
         "width": "1.5rem",
       }
     }
-    viewBox="0 0 24 24"
     width="24"
     xmlns="http://www.w3.org/2000/svg"
   >
