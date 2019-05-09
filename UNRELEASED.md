@@ -5,6 +5,8 @@
 **Added:**
 - `bpk-component-button`:
   - Added new theming prop for `border-radius` on buttons.
+- bpk-component-map:
+  - New `greedyGestureHandling` prop for enforcing one-finger pan and zoom on touch devices.
 
 ## How to write a good changelog entry
 

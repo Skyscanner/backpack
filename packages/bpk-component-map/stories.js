@@ -88,6 +88,12 @@ storiesOf('bpk-component-map', module)
       showControls={false}
     />
   ))
+  .add('Greedy gesture handling', () => (
+    <StoryMap
+      center={{ latitude: 55.944357, longitude: -3.1967116 }}
+      greedyGestureHandling
+    />
+  ))
   .add('With onZoom and onRegionChange callbacks', () => (
     <StoryMap
       center={{ latitude: 55.944357, longitude: -3.1967116 }}

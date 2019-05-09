@@ -39,6 +39,7 @@ export type MapRef = ?{
 };
 
 type Props = {
+  greedyGestureHandling: boolean,
   panEnabled: boolean,
   showControls: boolean,
   zoom: number,
@@ -56,6 +57,7 @@ const BpkMap = withGoogleMap((props: Props) => {
   const {
     bounds,
     children,
+    greedyGestureHandling,
     mapRef,
     onRegionChange,
     onZoom,
@@ -68,6 +70,14 @@ const BpkMap = withGoogleMap((props: Props) => {
 
   if (!bounds && !center) {
     throw new Error('BpkMap: Provide either `bounds` or `center` props.');
+  }
+
+  // https://developers.google.com/maps/documentation/javascript/reference/map#MapOptions.gestureHandling
+  let gestureHandling = 'auto';
+  if (!panEnabled) {
+    gestureHandling = 'none';
+  } else if (greedyGestureHandling) {
+    gestureHandling = 'greedy';
   }
 
   return (
@@ -96,7 +106,7 @@ const BpkMap = withGoogleMap((props: Props) => {
       }
       zoom={zoom}
       options={{
-        gestureHandling: panEnabled ? 'auto' : 'none',
+        gestureHandling,
         disableDefaultUI: !showControls,
         mapTypeControl: false,
         streetViewControl: false,
@@ -129,6 +139,7 @@ BpkMap.propTypes = {
   center: LatLongPropType,
   children: PropTypes.node,
   containerElement: PropTypes.node,
+  greedyGestureHandling: PropTypes.bool,
   mapElement: PropTypes.node,
   mapRef: PropTypes.func,
   onRegionChange: PropTypes.func,
@@ -143,6 +154,7 @@ BpkMap.defaultProps = {
   center: null,
   children: null,
   containerElement: <div style={{ height: '100%' }} />,
+  greedyGestureHandling: false,
   mapElement: <div style={{ height: '100%' }} />,
   mapRef: null,
   onRegionChange: null,
