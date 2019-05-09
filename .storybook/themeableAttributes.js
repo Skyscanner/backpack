@@ -22,6 +22,7 @@ import { themeAttributes as accordionThemeAttributes } from '../packages/bpk-com
 import { themeAttributes as barchartThemeAttributes } from '../packages/bpk-component-barchart';
 import { themeAttributes as blockquoteThemeAttributes } from '../packages/bpk-component-blockquote';
 import {
+  buttonThemeAttributes,
   primaryThemeAttributes,
   secondaryThemeAttributes,
   featuredThemeAttributes,
@@ -54,6 +55,7 @@ export default [
   ...accordionThemeAttributes,
   ...barchartThemeAttributes,
   ...blockquoteThemeAttributes,
+  ...buttonThemeAttributes,
   ...primaryThemeAttributes,
   ...secondaryThemeAttributes,
   ...featuredThemeAttributes,

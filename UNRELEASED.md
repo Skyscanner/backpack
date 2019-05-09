@@ -2,6 +2,18 @@
 
 > Place your changes below this line.
 
+**Added:**
+- `bpk-component-button`:
+  - Added new theming prop for `border-radius` on buttons. There will no be one `border-radius` for all button types regardless of size.
+- `bpk-component-theme-toggle`:
+  - Added theming properties to apply `border-radius` theme to buttons.
+
+ **Changed:**
+- `bpk-mixins`:
+  - Changed `border-radius` on `_buttons.scss` to allow theming for button types.
+- `bpk-theming`:
+  - Removed the check that would not apply theming if all theme attributes were not provided. This will enable partial theming to be applied.
+  - Updated the warning message to tell users that partial theming has been applied and also show which props are missing.
 
 ## How to write a good changelog entry
 

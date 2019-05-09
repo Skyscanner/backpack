@@ -53,7 +53,7 @@ export default () => (
 
 ## Theme Props
 
-Primary:
+### Primary:
 
 * `buttonPrimaryTextColor`
 * `buttonPrimaryHoverTextColor`
@@ -64,7 +64,7 @@ Primary:
 * `buttonPrimaryHoverBackgroundColor`
 * `buttonPrimaryActiveBackgroundColor`
 
-Secondary:
+### Secondary:
 
 * `buttonSecondaryTextColor`
 * `buttonSecondaryHoverTextColor`
@@ -76,7 +76,7 @@ Secondary:
 * `buttonSecondaryHoverBackgroundColor`
 * `buttonSecondaryActiveBackgroundColor`
 
-Featured:
+### Featured:
 
 * `buttonFeaturedTextColor`
 * `buttonFeaturedHoverTextColor`
@@ -87,7 +87,7 @@ Featured:
 * `buttonFeaturedHoverBackgroundColor`
 * `buttonFeaturedActiveBackgroundColor`
 
-Destructive:
+### Destructive:
 
 * `buttonDestructiveTextColor`
 * `buttonDestructiveHoverTextColor`
@@ -98,3 +98,6 @@ Destructive:
 * `buttonDestructiveBackgroundColor`
 * `buttonDestructiveHoverBackgroundColor`
 * `buttonDestructiveActiveBackgroundColor`
+
+### All button types:
+* `buttonBorderRadius` (Optional)

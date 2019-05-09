@@ -188,7 +188,7 @@ describe('BpkThemeProvider', () => {
         )
         .toString(),
     ).toEqual(
-      'Error: BpkThemeProvider: To apply theming, the theme prop must include `one` (missing `one`)',
+      'Error: BpkThemeProvider: Partial theming has been applied due to some missing components, the theme prop should include `one` (missing `one`)',
     ); // eslint-disable-line max-len
   });
 

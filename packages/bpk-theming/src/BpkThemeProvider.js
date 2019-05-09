@@ -35,7 +35,7 @@ const createStyle = (theme, themeAttributes) => {
     return {};
   }
   const flattenedThemeAttributes = [].concat(...themeAttributes);
-  let style = {};
+  const style = {};
   const missingThemeAttributes = [];
   flattenedThemeAttributes.forEach(attribute => {
     if (theme[attribute]) {
@@ -49,10 +49,6 @@ const createStyle = (theme, themeAttributes) => {
       missingThemeAttributes.push(attribute);
     }
   });
-
-  if (missingThemeAttributes.length > 0) {
-    style = {};
-  }
 
   return style;
 };
@@ -114,7 +110,7 @@ const themeAttributesPropType = (props, propName, componentName) => {
   const errors = [];
   if (missingThemeAttributes.length > 0) {
     errors.push(
-      `${componentName}: To apply theming, the theme prop must include \`${themeAttributes.join(
+      `${componentName}: Partial theming has been applied due to some missing components, the theme prop should include \`${themeAttributes.join(
         ', ',
       )}\` (missing \`${missingThemeAttributes.join(', ')}\`)`,
     ); // eslint-disable-line max-len
