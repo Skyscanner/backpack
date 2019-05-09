@@ -34,6 +34,7 @@
     @include bpk-themeable-property(background-color, --bpk-map-marker-primary-background-color, $bpk-color-green-700);
 
     &-selected {
+      z-index: 1;
       background-color: $bpk-color-white;
 
       @include bpk-themeable-property(border-color, --bpk-map-marker-primary-background-color, $bpk-color-green-700);
@@ -45,6 +46,7 @@
     @include bpk-themeable-property(background-color, --bpk-map-marker-secondary-background-color, $bpk-color-blue-500);
 
     &-selected {
+      z-index: 1;
       background-color: $bpk-color-white;
 
       @include bpk-themeable-property(border-color, --bpk-map-marker-secondary-background-color, $bpk-color-blue-500);
@@ -56,6 +58,7 @@
     @include bpk-themeable-property(background-color, --bpk-map-marker-plain-background-color, $bpk-color-gray-700);
 
     &-selected {
+      z-index: 1;
       background-color: $bpk-color-white;
 
       @include bpk-themeable-property(border-color, --bpk-map-marker-plain-background-color, $bpk-color-gray-700);
@@ -94,14 +97,20 @@
     }
 
     &--primary-selected {
+      z-index: 1;
+
       @include bpk-themeable-property(color, --bpk-map-marker-primary-background-color, $bpk-color-green-700);
     }
 
     &--secondary-selected {
+      z-index: 1;
+
       @include bpk-themeable-property(color, --bpk-map-marker-secondary-background-color, $bpk-color-blue-500);
     }
 
     &--plain-selected {
+      z-index: 1;
+
       @include bpk-themeable-property(color, --bpk-map-marker-plain-background-color, $bpk-color-gray-700);
     }
   }
