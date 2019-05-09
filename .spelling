@@ -710,3 +710,4 @@ onBarHover
 onBarFocus
 getBarLabel
 getBarSelection
+greedyGestureHandling
