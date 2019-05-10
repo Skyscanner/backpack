@@ -15,7 +15,7 @@
   "dependencies": {
     "bpk-mixins": "^17.19.1",
     "bpk-react-utils": "^2.7.6",
-    "intersection-observer": "^0.5.0",
+    "intersection-observer": "^0.7.0",
     "prop-types": "^15.6.2"
   },
   "devDependencies": {
