@@ -5,10 +5,10 @@
 # 2019-06-09 - New theme props for buttons and a new map prop
 
 **Added:**
-- `bpk-component-button`:
+- `bpk-component-button`: 2.2.0 => 2.3.0
   - Added new theming prop for `border-radius` on buttons.
 
-- `bpk-component-map`:
+- `bpk-component-map`: 2.4.0 => 2.5.0
   - New `greedyGestureHandling` prop for enforcing one-finger pan and zoom on touch devices.
 
 # 2019-05-06 - New map marker type
