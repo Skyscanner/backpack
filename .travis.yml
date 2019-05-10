@@ -35,10 +35,10 @@ deploy:
   github_token: $DEPLOY_TOKEN
   on:
     branch: master
-  local_dir: dist-storybook
+  local_dir: dist-sassdoc
   skip_cleanup: true
   detect_encoding: true
-  repo: backpack/storybook
+  repo: backpack/sassdoc
   target-branch: master
   verbose: true
 
@@ -48,10 +48,10 @@ deploy:
   github_token: $DEPLOY_TOKEN
   on:
     branch: master
-  local_dir: dist-sassdoc
+  local_dir: dist-storybook
   skip_cleanup: true
   detect_encoding: true
-  repo: backpack/sassdoc
+  repo: backpack/storybook
   target-branch: master
   verbose: true
 
