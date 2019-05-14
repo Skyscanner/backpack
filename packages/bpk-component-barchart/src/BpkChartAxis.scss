@@ -21,16 +21,14 @@
 .bpk-chart {
   &__axis-tick {
     &-text {
-      fill: $bpk-color-gray-500;
-
+      @include bpk-apply-gray-500-to(fill);
       @include bpk-text;
       @include bpk-text--sm;
     }
   }
 
   &__axis-label {
-    fill: $bpk-color-gray-500;
-
+    @include bpk-apply-gray-500-to(fill);
     @include bpk-text;
     @include bpk-text--sm;
   }

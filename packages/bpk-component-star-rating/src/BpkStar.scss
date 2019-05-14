@@ -27,7 +27,8 @@
 .bpk-star {
   display: inline-block;
   vertical-align: text-bottom;
-  fill: $bpk-color-gray-100;
+
+  @include bpk-apply-gray-100-to(fill);
 
   &--large {
     @include large-star;

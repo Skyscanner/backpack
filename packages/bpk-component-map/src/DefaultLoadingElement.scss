@@ -24,5 +24,6 @@
   justify-content: center;
   align-items: center;
   flex: 1;
-  background-color: $bpk-color-gray-100;
+
+  @include bpk-apply-gray-100-to(background-color);
 }

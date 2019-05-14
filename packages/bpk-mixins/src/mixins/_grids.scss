@@ -52,7 +52,7 @@
 ///   }
 
 @mixin bpk-grid__container--debug {
-  background-color: $bpk-color-gray-50;
+  @include bpk-apply-gray-50-to(background-color);
 }
 
 /// Container will use the width of the parent element. Modifies the bpk-grid__container mixin.

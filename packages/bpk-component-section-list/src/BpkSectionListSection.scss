@@ -28,6 +28,7 @@
     min-height: $bpk-spacing-xl;
     padding: $bpk-spacing-xs $bpk-spacing-sm;
     align-items: center;
-    background-color: $bpk-color-gray-100;
+
+    @include bpk-apply-gray-100-to(background-color);
   }
 }

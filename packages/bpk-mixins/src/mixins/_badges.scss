@@ -158,7 +158,7 @@
 ///   }
 
 @mixin bpk-badge--light {
-  background-color: $bpk-color-gray-50;
+  @include bpk-apply-gray-50-to(background-color);
 }
 
 /// Inverse badge. Modifies the bpk-badge mixin.

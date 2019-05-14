@@ -44,6 +44,13 @@ const generateTheme = ({
 
   primaryColor: primaryColor500,
 
+  gray50: 'pink',
+  gray100: 'purple',
+  gray300: '#F28494',
+  gray500: 'orange',
+  gray700: 'magenta',
+  gray900: 'cyan',
+
   accordionActiveColor: primaryColor700,
   accordionColor: primaryColor500,
   accordionHoverColor: primaryColor600,
@@ -165,6 +172,12 @@ const londonTheme = {
   secondaryColor500: '#013A76',
   secondaryColor600: '#002F61',
   secondaryColor700: '#00254B',
+  colorGray50: 'pink',
+  colorGray100: 'purple',
+  colorGray300: 'green',
+  colorGray500: 'orange',
+  colorGray700: 'magenta',
+  colorGray900: 'cyan',
   borderRadius: '0rem',
   docsSidebarBackground: '#013A76',
   docsSidebarLink: '#6889AB',
