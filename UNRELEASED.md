@@ -2,6 +2,14 @@
 
 > Place your changes below this line.
 
+**Added:**
+
+- bpk-component-icon:
+- bpk-svgs:
+- bpk-mixins:
+  - New `heart--outline` icon.
+  - New `heart` icon update to be aligned.
+
 ## How to write a good changelog entry
 
 1. Add 'Breaking', 'Added' or 'Fixed' in bold depending on if the change will be major, minor or patch according to [semver](semver.org).
