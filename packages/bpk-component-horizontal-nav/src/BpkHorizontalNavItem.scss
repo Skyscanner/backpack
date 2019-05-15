@@ -43,6 +43,7 @@
     @include bpk-themeable-property(color, --bpk-horizontal-nav-link-color, $bpk-horizontal-nav-link-color);
 
     @include bpk-hover {
+      @include bpk-border-bottom-xl($bpk-color-gray-100);
       @include bpk-border-bottom-xl(var(--bpk-color-gray-100, $bpk-color-gray-100));
       @include bpk-themeable-property(color, --bpk-horizontal-nav-link-hover-color, $bpk-horizontal-nav-link-hover-color);
     }

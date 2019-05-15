@@ -19,5 +19,7 @@
 @import '~bpk-mixins/index';
 
 .bpk-airline-logo {
+  fill: $bpk-color-gray-700;
+
   @include bpk-themeable-property(fill, --bpk-navigation-bar-title-color, var(--bpk-color-gray-700, $bpk-color-gray-700));
 }

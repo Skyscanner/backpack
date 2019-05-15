@@ -75,6 +75,7 @@
     padding: $bpk-modal-header-padding;
     justify-content: space-between;
 
+    @include bpk-border-botoom-sm($bpk-color-gray-100);
     @include bpk-border-bottom-sm(var(--bpk-color-gray-100, $bpk-color-gray-100));
   }
 

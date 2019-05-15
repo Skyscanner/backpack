@@ -22,6 +22,7 @@
   padding: $bpk-one-pixel-rem $bpk-one-pixel-rem $bpk-spacing-xxl * 2;
 
   @include bpk-apply-gray-50-to(background-color);
+  @include bpk-border-sm($bpk-color-gray-50);
   @include bpk-border-sm(var(--bpk-color-gray-50, $bpk-color-gray-50));
 
   > * {

@@ -21,6 +21,7 @@
 .bpk-navigation-stack-story-wrapper {
   max-width: $bpk-spacing-xxl * 8;
 
+  @include bpk-border-sm($bpk-color-gray-100, '');
   @include bpk-border-sm(var(--bpk-color-gray-100, $bpk-color-gray-100), '');
 }
 
