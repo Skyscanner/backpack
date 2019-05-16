@@ -2,6 +2,12 @@
 
 [Unreleased changes](./UNRELEASED.md).
 
+# 2019-05-16 - Map marker brought forward when selected
+
+**Changed:**
+- bpk-component-map: 2.5.2 => 2.5.3
+  - Selected map markers now have `z-index: 1`.
+
 # 2019-05-16 - Gray theming utility
 
 **Added:**
