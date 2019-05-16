@@ -2,6 +2,12 @@
 
 [Unreleased changes](./UNRELEASED.md).
 
+# 2019-05-16 - Gray theming utility
+
+**Added:**
+- bpk-mixins: 17.20.0 => 17.21.0
+  - New mixins to apply gray theming to gray colours via the theme props `colorGray50`, `colorGray100`, `colorGray300`, `colorGray500`, `colorGray700`, `colorGray900`.
+
 # 2019-05-15 - New heart icon style.
 
 **Added:**
