@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-pagination",
-  "version": "1.0.92",
+  "version": "1.0.94",
   "description": "Backpack pagination component.",
   "main": "index.js",
   "repository": {
@@ -13,13 +13,13 @@
     "react": "^15.0.0 || ^16.0.0"
   },
   "dependencies": {
-    "bpk-component-button": "^2.3.0",
-    "bpk-mixins": "^17.19.1",
+    "bpk-component-button": "^2.3.2",
+    "bpk-mixins": "^17.21.0",
     "bpk-react-utils": "^2.7.6",
     "prop-types": "^15.6.2"
   },
   "devDependencies": {
-    "bpk-component-icon": "^3.27.13"
+    "bpk-component-icon": "^3.28.1"
   },
   "gitHead": "edd14f16dc571cc009d908c3c8f7d27a428b6de8"
 }

@@ -2,7 +2,23 @@
 
 [Unreleased changes](./UNRELEASED.md).
 
-# 2019-06-09 - New theme props for buttons and a new map prop
+# 2019-05-16 - Gray theming utility
+
+**Added:**
+- bpk-mixins: 17.20.0 => 17.21.0
+  - New mixins to apply gray theming to gray colours via the theme props `colorGray50`, `colorGray100`, `colorGray300`, `colorGray500`, `colorGray700`, `colorGray900`.
+
+# 2019-05-15 - New heart icon style.
+
+**Added:**
+
+- bpk-component-icon: 3.27.13 => 3.28.0
+- bpk-svgs: 6.4.6 => 6.4.7
+- bpk-mixins: 17.19.1 => 17.20.0
+  - New `heart--outline` icon.
+  - `heart` icon update to be aligned to the new style.
+
+# 2019-05-09 - New theme props for buttons and a new map prop
 
 **Added:**
 - `bpk-component-button`: 2.2.0 => 2.3.0

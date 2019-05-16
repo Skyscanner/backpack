@@ -1,6 +1,6 @@
 {
   "name": "bpk-theming",
-  "version": "1.2.5",
+  "version": "1.2.6",
   "main": "index.js",
   "description": "Backpack theming utlities.",
   "repository": {
