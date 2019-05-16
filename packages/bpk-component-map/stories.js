@@ -17,7 +17,7 @@
  */
 /* @flow strict */
 
-import React from 'react';
+import React, { type ElementProps } from 'react';
 import PropTypes from 'prop-types';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
@@ -64,29 +64,35 @@ StoryMap.defaultProps = {
   language: '',
 };
 
-type Props = {
-  onClick: ?(event: SyntheticEvent<>) => void,
-};
+type Props = ElementProps<typeof BpkMapMarker>;
 
 type State = {
   selected: boolean,
 };
 
 class StatefulBpkMapMarker extends React.Component<Props, State> {
+  static defaultProps = {
+    className: null,
+    arrowClassName: null,
+    large: false,
+    onClick: null,
+    selected: false,
+    type: MARKER_TYPES.primary,
+    buttonProps: null,
+  };
+
   constructor(props) {
     super(props);
     this.state = {
       selected: false,
     };
-
-    this.onClick = this.onClick.bind(this);
   }
 
-  onClick() {
+  onClick = () => {
     this.setState(prevState => ({
       selected: !prevState.selected,
     }));
-  }
+  };
 
   render() {
     const { onClick, ...rest } = this.props;
@@ -96,21 +102,12 @@ class StatefulBpkMapMarker extends React.Component<Props, State> {
         selected={this.state.selected}
         onClick={() => {
           this.onClick();
-          onClick();
         }}
         {...rest}
       />
     );
   }
 }
-
-StatefulBpkMapMarker.propTypes = {
-  onClick: PropTypes.func,
-};
-
-StatefulBpkMapMarker.defaultProps = {
-  onClick: null,
-};
 
 const onZoom = level => {
   action(`Zoom changed to ${level}`);
