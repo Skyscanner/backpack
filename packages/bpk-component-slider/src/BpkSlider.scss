@@ -34,11 +34,12 @@ $slider-control-inset-size: 20 * $bpk-one-pixel-rem;
     height: $bpk-spacing-lg;
     justify-content: center;
     align-items: center;
-    border: $bpk-one-pixel-rem solid $bpk-color-gray-100;
+    border: $bpk-one-pixel-rem solid;
     border-radius: $bpk-border-radius-pill;
     background-color: $bpk-color-white;
     cursor: pointer;
 
+    @include bpk-apply-gray-100-to(border-color);
     @include bpk-box-shadow-sm;
 
     &::after {
@@ -71,7 +72,8 @@ $slider-control-inset-size: 20 * $bpk-one-pixel-rem;
     top: calc(50% - (#{$bpk-spacing-xs} / 2));
     height: $bpk-spacing-xs;
     border-radius: $bpk-border-radius-sm;
-    background-color: $bpk-color-gray-100;
+
+    @include bpk-apply-gray-100-to(background-color);
   }
 
   // stylelint-disable-next-line selector-attribute-quotes
@@ -82,7 +84,7 @@ $slider-control-inset-size: 20 * $bpk-one-pixel-rem;
   &--range {
     // stylelint-disable-next-line selector-attribute-quotes
     > div[class$='0'] {
-      background-color: $bpk-color-gray-100;
+      @include bpk-apply-gray-100-to(background-color);
     }
     // stylelint-disable-next-line selector-attribute-quotes
     > div[class$='1'] {

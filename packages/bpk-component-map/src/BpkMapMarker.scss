@@ -53,13 +53,17 @@
   }
 
   &--plain {
-    @include bpk-themeable-property(background-color, --bpk-map-marker-plain-background-color, $bpk-color-gray-700);
+    background-color: $bpk-color-gray-700; // For IE
+
+    @include bpk-themeable-property(background-color, --bpk-map-marker-plain-background-color, var(--bpk-color-gray-700, $bpk-color-gray-700));
 
     &-selected {
+      border-color: $bpk-color-gray-700;
       background-color: $bpk-color-white;
+      color: $bpk-color-gray-700;
 
-      @include bpk-themeable-property(border-color, --bpk-map-marker-plain-background-color, $bpk-color-gray-700);
-      @include bpk-themeable-property(color, --bpk-map-marker-plain-background-color, $bpk-color-gray-700);
+      @include bpk-themeable-property(border-color, --bpk-map-marker-plain-background-color, var(--bpk-color-gray-700, $bpk-color-gray-700));
+      @include bpk-themeable-property(color, --bpk-map-marker-plain-background-color, var(--bpk-color-gray-700, $bpk-color-gray-700));
     }
   }
 
@@ -102,7 +106,9 @@
     }
 
     &--plain-selected {
-      @include bpk-themeable-property(color, --bpk-map-marker-plain-background-color, $bpk-color-gray-700);
+      color: $bpk-color-gray-700;
+
+      @include bpk-themeable-property(color, --bpk-map-marker-plain-background-color, var(--bpk-color-gray-700, $bpk-color-gray-700));
     }
   }
 

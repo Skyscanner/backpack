@@ -22,8 +22,9 @@
   position: relative;
   height: $bpk-spacing-sm;
   border-radius: $bpk-border-radius-sm;
-  background-color: $bpk-color-gray-100;
   overflow: hidden;
+
+  @include bpk-apply-gray-100-to(background-color);
 
   &--small {
     height: $bpk-spacing-xs;

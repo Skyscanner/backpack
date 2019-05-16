@@ -567,6 +567,7 @@
   table-layout: fixed;
 
   @include bpk-border-sm($bpk-color-gray-100, '');
+  @include bpk-border-sm(var(--bpk-color-gray-100, $bpk-color-gray-100), '');
 }
 
 /// Alternate table style.
@@ -580,6 +581,7 @@
 
 @mixin bpk-table--alternate {
   @include bpk-border-sm($bpk-color-gray-300, '');
+  @include bpk-border-sm(var(--bpk-color-gray-300, $bpk-color-gray-300), '');
 }
 
 /// Table cell.
@@ -604,9 +606,10 @@
 ///   }
 
 @mixin bpk-table__cell--head {
-  background-color: $bpk-color-gray-50;
   font-weight: normal;
   text-align: left;
+
+  @include bpk-apply-gray-50-to(background-color);
 
   @include bpk-rtl {
     text-align: right;
@@ -644,14 +647,14 @@
 @mixin bpk-code {
   display: inline;
   padding: 0 $bpk-spacing-xs;
-  background-color: $bpk-color-gray-50;
-  color: $bpk-color-gray-700;
   text-align: left;
   text-shadow: 0 $bpk-one-pixel-rem $bpk-color-white;
   white-space: nowrap;
   vertical-align: bottom;
 
   @include bpk-border-radius-xs;
+  @include bpk-apply-gray-50-to(background-color);
+  @include bpk-apply-gray-700-to(color);
 
   @include bpk-rtl {
     direction: ltr;
@@ -705,8 +708,8 @@
 @mixin bpk-code__pre {
   margin: 0 0 $bpk-spacing-sm;
   padding: $bpk-spacing-base;
-  background-color: $bpk-color-gray-50;
 
+  @include bpk-apply-gray-50-to(background-color);
   @include bpk-border-radius-xs;
 }
 
@@ -722,6 +725,7 @@
   background-color: transparent;
 
   @include bpk-border-sm($bpk-color-gray-300);
+  @include bpk-border-sm(var(--bpk-color-gray-300, $bpk-color-gray-300));
 }
 
 /// Blockquote.
@@ -734,8 +738,9 @@
 @mixin bpk-blockquote {
   margin: 0 0 $bpk-spacing-sm 0;
   padding: $bpk-spacing-xs $bpk-spacing-xs $bpk-spacing-xs $bpk-spacing-md;
-  color: $bpk-color-gray-500;
 
+  @include bpk-apply-gray-500-to(color);
+  @include bpk-apply-gray-50-to(background-color);
   @include bpk-border-left-lg($bpk-color-blue-500);
   @include bpk-border-left-lg(var(--bpk-blockquote-bar-color, $bpk-color-blue-500));
 

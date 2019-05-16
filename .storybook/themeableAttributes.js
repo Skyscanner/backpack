@@ -51,6 +51,17 @@ import { themeAttributes as sliderThemeAttributes } from '../packages/bpk-compon
 import { themeAttributes as spinnerThemeAttributes } from '../packages/bpk-component-spinner';
 import { themeAttributes as navigationBarThemeAttributes } from '../packages/bpk-component-navigation-bar';
 
+const storybookAttributes = [
+  'primaryColor',
+  'colorGray50',
+  'colorGray100',
+  'colorGray300',
+  'colorGray500',
+  'colorGray700',
+  'colorGray900',
+  'themeName',
+];
+
 export default [
   ...accordionThemeAttributes,
   ...barchartThemeAttributes,
@@ -78,4 +89,5 @@ export default [
   ...navigationBarThemeAttributes,
   ...primaryMarkerThemeAttributes,
   ...secondaryMarkerThemeAttributes,
+  ...storybookAttributes,
 ];
