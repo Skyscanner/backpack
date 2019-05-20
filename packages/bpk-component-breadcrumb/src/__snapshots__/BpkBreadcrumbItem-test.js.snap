@@ -22,7 +22,6 @@ exports[`BpkBreadcrumbItem should render correctly 1`] = `
         "width": "1.5rem",
       }
     }
-    viewBox="0 0 24 24"
     width="24"
     xmlns="http://www.w3.org/2000/svg"
   >
@@ -68,7 +67,6 @@ exports[`BpkBreadcrumbItem should render correctly with a custom class name 1`] 
         "width": "1.5rem",
       }
     }
-    viewBox="0 0 24 24"
     width="24"
     xmlns="http://www.w3.org/2000/svg"
   >
@@ -102,7 +100,6 @@ exports[`BpkBreadcrumbItem should render correctly with arbitrary props 1`] = `
         "width": "1.5rem",
       }
     }
-    viewBox="0 0 24 24"
     width="24"
     xmlns="http://www.w3.org/2000/svg"
   >
@@ -136,7 +133,6 @@ exports[`BpkBreadcrumbItem should render correctly with with "linkProps" attribu
         "width": "1.5rem",
       }
     }
-    viewBox="0 0 24 24"
     width="24"
     xmlns="http://www.w3.org/2000/svg"
   >
