@@ -174,7 +174,7 @@ storiesOf('bpk-component-map', module)
         large
         position={{ latitude: 55.943, longitude: -3.1937116 }}
         onClick={() => {
-          alert('Marker clicked');
+          alert('Marker clicked'); // eslint-disable-line no-alert
         }}
         icon={<AlignedBusIconLg />}
       />
