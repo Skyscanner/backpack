@@ -24,7 +24,7 @@ All changes to Backpack should
 + Have considered accessibility and through the API encourage consumers to build accessible products. e.g. Making `accessibilityLabel` required rather than optional.
 + Support theming when appropriate.
 + Feature good examples.
-+ Follow [SemVer](https://semver.org/) erring on the side of one too many breaking changes rather than shipping something breaking as a minor or patch.
++ Follow [Semantic Versioning (SemVer)](https://semver.org/), erring on the side of too many breaking changes rather than shipping something breaking as a minor or patch.
 + Have considered extreme cases such as users with larger text or smaller devices.
 + Be well documented.
 + Be closed for modification of look and feel.
