@@ -4,7 +4,6 @@ exports[`BpkExtraLargeSpinner should render correctly 1`] = `
 <svg
   className="bpk-spinner bpk-spinner--extra-large bpk-spinner--dark"
   height="36"
-  viewBox="0 0 36 36"
   width="36"
   xmlns="http://www.w3.org/2000/svg"
 >
@@ -90,7 +89,6 @@ exports[`BpkExtraLargeSpinner should render correctly with a "className" attribu
 <svg
   className="bpk-spinner bpk-spinner--extra-large bpk-spinner--dark my-custom-class"
   height="36"
-  viewBox="0 0 36 36"
   width="36"
   xmlns="http://www.w3.org/2000/svg"
 >
@@ -176,7 +174,6 @@ exports[`BpkExtraLargeSpinner should render correctly with type as light 1`] = `
 <svg
   className="bpk-spinner bpk-spinner--extra-large bpk-spinner--light"
   height="36"
-  viewBox="0 0 36 36"
   width="36"
   xmlns="http://www.w3.org/2000/svg"
 >
@@ -262,7 +259,6 @@ exports[`BpkExtraLargeSpinner should render correctly with type as primary 1`] =
 <svg
   className="bpk-spinner bpk-spinner--extra-large bpk-spinner--primary"
   height="36"
-  viewBox="0 0 36 36"
   width="36"
   xmlns="http://www.w3.org/2000/svg"
 >
