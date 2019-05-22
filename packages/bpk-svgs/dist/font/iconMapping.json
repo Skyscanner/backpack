@@ -72,6 +72,7 @@
     "family": "EAB8",
     "fast-track": "EA3E",
     "fast-train": "EA3F",
+    "filter": "EACD",
     "flag": "EA40",
     "flask": "EAAC",
     "flight": "EA41",
@@ -195,5 +196,8 @@
     "weather": "EAA8",
     "wifi": "EAA9",
     "window--reduce": "EAAA",
-    "window": "EAAB"
+    "window": "EAAB",
+    "world--amer": "EACE",
+    "world--apac": "EACF",
+    "world--emea": "EAD0"
 }
