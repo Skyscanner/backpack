@@ -79,6 +79,7 @@
   "family": 60088,
   "fast-track": 59966,
   "fast-train": 59967,
+  "filter": 60109,
   "flag": 59968,
   "flask": 60076,
   "flight": 59969,
@@ -202,5 +203,8 @@
   "weather": 60072,
   "wifi": 60073,
   "window": 60075,
-  "window--reduce": 60074
+  "window--reduce": 60074,
+  "world--amer": 60110,
+  "world--apac": 60111,
+  "world--emea": 60112
 }

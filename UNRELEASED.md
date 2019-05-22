@@ -2,6 +2,17 @@
 
 > Place your changes below this line.
 
+**Added:**
+
+- bpk-component-icon:
+- bpk-svgs:
+- bpk-mixins:
+  - Updated `family` icon
+  - Added `filter` icon
+  - Added `world--amer` icon
+  - Added `world--apac` icon
+  - Added `world--emea` icon
+
 ## How to write a good changelog entry
 
 1. Add 'Breaking', 'Added' or 'Fixed' in bold depending on if the change will be major, minor or patch according to [semver](semver.org).
