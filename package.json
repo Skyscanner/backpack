@@ -34,6 +34,7 @@
     "generate-changelogs": "node scripts/release-process/generate-changelogs.js",
     "upcoming-changes": "node scripts/release-process/upcoming-changes.js",
     "check-bpk-dependencies": "node scripts/npm/check-bpk-dependencies.js",
+    "add-svgs": "node scripts/npm/add-svgs.js",
     "fix-bpk-dependencies": "node scripts/npm/check-bpk-dependencies.js --fix",
     "test": "npm run lint && npm run check-bpk-dependencies && npm run jest && npm run flow && npm run spellcheck",
     "check-owners": "npm whoami && ( node scripts/npm/get-owners.js | grep -E $(npm whoami) ) && node scripts/npm/check-owners.js",

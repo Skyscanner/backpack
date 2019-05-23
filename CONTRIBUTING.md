@@ -113,6 +113,18 @@ We use [Storybook](https://storybook.js.org/) for our development environment.
 
 Run `npm start` to start the storybook server, then go to [http://localhost:9001](http://localhost:9001) in a web browser to view it.
 
+## Adding icons
+
+If you want to add icons, they should first be approved by [Chris](https://skyscanner.slack.com/messages/D6BU4R0V8) as he "owns" Skyscanner icons.
+
+Once they're signed off, you can [raise a request](https://bit.ly/backpack-request) and attach the SVG files. If you're feeling heroic and want to make the PR yourself, we have a nifty script to add them to the codebase. Just run
+```
+npm run add-svgs && npm run build
+```
+
+The first command will prompt you for which SVGs to add. The second will re-generate all icon-related assets.
+
+
 ## Adding a new component
 
 If you want to add a new component, we will need the following:
