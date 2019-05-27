@@ -26,5 +26,6 @@
     "bpk-component-fieldset": "^1.1.89",
     "bpk-component-image": "^2.1.33"
   },
-  "gitHead": "edd14f16dc571cc009d908c3c8f7d27a428b6de8"
+  "gitHead": "edd14f16dc571cc009d908c3c8f7d27a428b6de8",
+  "sideEffects": false
 }

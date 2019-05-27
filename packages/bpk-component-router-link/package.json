@@ -18,5 +18,6 @@
     "bpk-react-utils": "^2.7.6",
     "prop-types": "^15.6.2"
   },
-  "gitHead": "edd14f16dc571cc009d908c3c8f7d27a428b6de8"
+  "gitHead": "edd14f16dc571cc009d908c3c8f7d27a428b6de8",
+  "sideEffects": false
 }
