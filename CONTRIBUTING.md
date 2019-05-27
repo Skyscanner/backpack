@@ -79,10 +79,8 @@ We recommend that you install [a plugin to your editor](https://eslint.org/docs/
 You should pull code down using the following command
 
 ```
-git clone --recursive https://github.com/YOUR_USERNAME/Backpack.git
+git clone https://github.com/YOUR_USERNAME/Backpack.git
 ```
-
-The `--recursive` option is needed to retrieve the Git submodules we use.
 
 ### Install dependencies
 
@@ -217,7 +215,7 @@ You can also run the tests in 'watch mode', which means the process will continu
 <details>
 <summary>Publish packages (Backpack squad members only)</summary>
 
-- Update the [unreleased changelog](/unreleased.md) with every package that has changed, separating out breaking changes (*major*), additions (*minor*) and fixes (*patch*) changes (you should see examples of this in previous entries of the [changelog](/changelog.md)).
+- Update the [unreleased changelog](/unreleased.md) with every package that has changed, separating out breaking changes (*major*), additions (*minor*) and fixes (*patch*) changes (you should see examples of this in previous entries of the [changelog](/changelog.md). If you need more details on classification please checkout the [versioning decision](/decisions/versioning-rules.md)).
   - Some useful commands for determining "what's changed?":
     - `npm run lerna updated`
     - `npm run lerna diff <package-name>`
