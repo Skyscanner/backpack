@@ -2,6 +2,95 @@
 
 [Unreleased changes](./UNRELEASED.md).
 
+# 2019-05-28 Improved code-splitting across all components plus some new icons (filter, family and word)
+
+**Added:**
+
+- bpk-component-icon: 3.28.1 => 3.29.0
+- bpk-mixins: 17.21.0 => 17.22.0
+- bpk-svgs: 6.5.1 => 6.6.0
+  - Updated `family` icon
+  - Added `filter` icon
+  - Added `world--amer` icon
+  - Added `world--apac` icon
+  - Added `world--emea` icon
+
+**Fixed:**
+
+- bpk-animate-height: 1.1.97 => 1.1.98
+- bpk-component-accordion: 1.2.84 => 1.2.85
+- bpk-component-autosuggest: 3.0.152 => 3.0.153
+- bpk-component-badge: 1.1.75 => 1.1.76
+- bpk-component-banner-alert: 2.0.88 => 2.0.89
+- bpk-component-barchart: 2.3.66 => 2.3.67
+- bpk-component-blockquote: 1.1.118 => 1.1.119
+- bpk-component-breadcrumb: 1.0.65 => 1.0.66
+- bpk-component-breakpoint: 1.1.60 => 1.1.61
+- bpk-component-button: 2.3.2 => 2.3.3
+- bpk-component-calendar: 5.0.5 => 5.0.6
+- bpk-component-card: 1.1.75 => 1.1.76
+- bpk-component-checkbox: 1.4.91 => 1.4.92
+- bpk-component-chip: 2.0.80 => 2.0.81
+- bpk-component-close-button: 1.0.127 => 1.0.128
+- bpk-component-code: 1.1.65 => 1.1.66
+- bpk-component-content-container: 1.3.66 => 1.3.67
+- bpk-component-datatable: 0.1.81 => 0.1.82
+- bpk-component-datepicker: 9.0.6 => 9.0.7
+- bpk-component-description-list: 1.0.87 => 1.0.88
+- bpk-component-dialog: 1.1.54 => 1.1.55
+- bpk-component-drawer: 1.2.81 => 1.2.82
+- bpk-component-fieldset: 1.1.89 => 1.1.90
+- bpk-component-form-validation: 2.0.11 => 2.0.12
+- bpk-component-grid-toggle: 1.1.80 => 1.1.81
+- bpk-component-grid: 1.1.131 => 1.1.132
+- bpk-component-heading: 2.1.131 => 2.1.132
+- bpk-component-horizontal-nav: 2.4.17 => 2.4.18
+- bpk-component-icon: 3.28.1 => 3.29.0
+- bpk-component-image: 2.1.33 => 2.1.34
+- bpk-component-input: 4.1.9 => 4.1.10
+- bpk-component-label: 3.2.130 => 3.2.131
+- bpk-component-link: 1.2.61 => 1.2.62
+- bpk-component-list: 1.1.101 => 1.1.102
+- bpk-component-loading-button: 2.0.85 => 2.0.86
+- bpk-component-map: 2.5.3 => 2.5.4
+- bpk-component-mobile-scroll-container: 1.1.66 => 1.1.67
+- bpk-component-modal: 1.8.54 => 1.8.55
+- bpk-component-navigation-bar: 1.2.65 => 1.2.66
+- bpk-component-navigation-stack: 1.0.68 => 1.0.69
+- bpk-component-nudger: 1.0.130 => 1.0.131
+- bpk-component-pagination: 1.0.94 => 1.0.95
+- bpk-component-panel: 1.0.124 => 1.0.125
+- bpk-component-paragraph: 1.0.124 => 1.0.125
+- bpk-component-phone-input: 2.0.15 => 2.0.16
+- bpk-component-popover: 2.2.31 => 2.2.32
+- bpk-component-progress: 1.0.130 => 1.0.131
+- bpk-component-radio: 1.2.89 => 1.2.90
+- bpk-component-router-link: 2.0.46 => 2.0.47
+- bpk-component-rtl-toggle: 1.1.80 => 1.1.81
+- bpk-component-scrollable-calendar: 1.0.5 => 1.0.6
+- bpk-component-section-list: 1.0.64 => 1.0.65
+- bpk-component-select: 2.2.62 => 2.2.63
+- bpk-component-slider: 1.1.93 => 1.1.94
+- bpk-component-spinner: 2.2.92 => 2.2.93
+- bpk-component-star-rating: 1.0.126 => 1.0.127
+- bpk-component-table: 1.1.66 => 1.1.67
+- bpk-component-text: 1.0.121 => 1.0.122
+- bpk-component-textarea: 1.1.7 => 1.1.8
+- bpk-component-theme-toggle: 1.0.100 => 1.0.101
+- bpk-component-ticket: 1.2.56 => 1.2.57
+- bpk-component-tooltip: 3.1.76 => 3.1.77
+- bpk-mixins: 17.21.0 => 17.22.0
+- bpk-react-utils: 2.7.6 => 2.7.7
+- bpk-scrim-utils: 3.2.59 => 3.2.60
+- bpk-stylesheets: 3.2.168 => 3.2.169
+- bpk-svgs: 6.5.1 => 6.6.0
+- bpk-theming: 1.2.6 => 1.2.7
+- bpk-tokens: 27.6.0 => 27.6.1
+  - Added `"sideEffects: false,` Webpack hint to each component's `package.json`. This improves tree-shaking, see https://webpack.js.org/guides/tree-shaking/#mark-the-file-as-side-effect-free.
+
+- bpk-component-infinite-scroll: 2.2.25 => 2.2.26
+  - Marked `./src/intersection-observer.js` as having side effects.
+
 # 2019-05-16 - Map marker brought forward when selected
 
 **Changed:**
