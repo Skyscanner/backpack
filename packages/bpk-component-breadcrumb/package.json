@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-breadcrumb",
-  "version": "1.0.65",
+  "version": "1.0.66",
   "description": "Backpack breadcrumb component.",
   "main": "index.js",
   "repository": {
@@ -13,11 +13,11 @@
     "react": "^15.0.0 || ^16.0.0"
   },
   "dependencies": {
-    "bpk-component-icon": "^3.28.1",
-    "bpk-component-link": "^1.2.61",
-    "bpk-component-text": "^1.0.121",
-    "bpk-mixins": "^17.21.0",
-    "bpk-react-utils": "^2.7.6",
+    "bpk-component-icon": "^3.29.0",
+    "bpk-component-link": "^1.2.62",
+    "bpk-component-text": "^1.0.122",
+    "bpk-mixins": "^17.22.0",
+    "bpk-react-utils": "^2.7.7",
     "prop-types": "^15.6.2"
   },
   "gitHead": "edd14f16dc571cc009d908c3c8f7d27a428b6de8",
