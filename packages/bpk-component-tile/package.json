@@ -20,5 +20,6 @@
   },
   "devDependencies": {
     "bpk-react-utils": "^2.7.6"
-  }
+  },
+  "sideEffects": false
 }
