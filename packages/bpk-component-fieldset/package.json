@@ -24,6 +24,5 @@
     "bpk-component-input": "^4.1.10",
     "bpk-component-select": "^2.2.63"
   },
-  "gitHead": "edd14f16dc571cc009d908c3c8f7d27a428b6de8",
-  "sideEffects": false
+  "gitHead": "edd14f16dc571cc009d908c3c8f7d27a428b6de8"
 }

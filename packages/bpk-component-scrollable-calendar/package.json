@@ -20,6 +20,5 @@
     "prop-types": "^15.5.8",
     "react-window": "^1.5.0"
   },
-  "gitHead": "edd14f16dc571cc009d908c3c8f7d27a428b6de8",
-  "sideEffects": false
+  "gitHead": "edd14f16dc571cc009d908c3c8f7d27a428b6de8"
 }
