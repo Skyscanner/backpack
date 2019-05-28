@@ -15,6 +15,5 @@
   "dependencies": {
     "bpk-tokens": "^27.6.1",
     "prop-types": "^15.6.2"
-  },
-  "sideEffects": false
+  }
 }

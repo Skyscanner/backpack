@@ -27,6 +27,5 @@
     "bpk-component-button": "^2.3.3",
     "bpk-component-content-container": "^1.3.67"
   },
-  "gitHead": "edd14f16dc571cc009d908c3c8f7d27a428b6de8",
-  "sideEffects": false
+  "gitHead": "edd14f16dc571cc009d908c3c8f7d27a428b6de8"
 }

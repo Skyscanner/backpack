@@ -23,6 +23,5 @@
     "bpk-component-icon": "^3.29.0",
     "bpk-tokens": "^27.6.1"
   },
-  "gitHead": "edd14f16dc571cc009d908c3c8f7d27a428b6de8",
-  "sideEffects": false
+  "gitHead": "edd14f16dc571cc009d908c3c8f7d27a428b6de8"
 }

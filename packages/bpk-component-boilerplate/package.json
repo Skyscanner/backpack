@@ -16,6 +16,5 @@
   "dependencies": {
     "bpk-react-utils": "^2.7.7",
     "prop-types": "^15.5.8"
-  },
-  "sideEffects": false
+  }
 }

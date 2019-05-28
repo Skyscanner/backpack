@@ -22,6 +22,5 @@
     "bpk-component-text": "^1.0.122",
     "bpk-tokens": "^27.6.1"
   },
-  "gitHead": "edd14f16dc571cc009d908c3c8f7d27a428b6de8",
-  "sideEffects": false
+  "gitHead": "edd14f16dc571cc009d908c3c8f7d27a428b6de8"
 }

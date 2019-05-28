@@ -23,8 +23,5 @@
     "bpk-component-card": "^1.1.76",
     "bpk-component-spinner": "^2.2.93"
   },
-  "gitHead": "edd14f16dc571cc009d908c3c8f7d27a428b6de8",
-  "sideEffects": [
-    "./src/intersection-observer.js"
-  ]
+  "gitHead": "edd14f16dc571cc009d908c3c8f7d27a428b6de8"
 }

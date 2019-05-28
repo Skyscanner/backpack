@@ -18,6 +18,5 @@
     "prop-types": "^15.6.2",
     "react-transition-group": "^2.5.3",
     "recompose": "^0.30.0"
-  },
-  "sideEffects": false
+  }
 }
