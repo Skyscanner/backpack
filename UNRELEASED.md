@@ -45,7 +45,6 @@
 - bpk-component-horizontal-nav:
 - bpk-component-icon:
 - bpk-component-image:
-- bpk-component-infinite-scroll:
 - bpk-component-input:
 - bpk-component-label:
 - bpk-component-link:
@@ -83,6 +82,9 @@
 - bpk-theming:
 - bpk-tokens:
   - Added `"sideEffects: false,` Webpack hint to each component's `package.json`. This improves tree-shaking, see https://webpack.js.org/guides/tree-shaking/#mark-the-file-as-side-effect-free.
+
+- bpk-component-infinite-scroll:
+  - Marked `./src/intersection-observer.js` as having side effects.
 
 ## How to write a good changelog entry
 
