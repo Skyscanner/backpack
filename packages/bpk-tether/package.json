@@ -11,6 +11,5 @@
   "license": "Apache-2.0",
   "dependencies": {
     "tether": "^1.4.0"
-  },
-  "sideEffects": false
+  }
 }
