@@ -2,6 +2,83 @@
 
 [Unreleased changes](./UNRELEASED.md).
 
+# 2019-05-28 Reverted code-splitting changes across components
+
+**Fixed:**
+  - bpk-animate-height: 1.1.98 => 1.1.99
+  - bpk-component-accordion: 1.2.85 => 1.2.86
+  - bpk-component-autosuggest: 3.0.153 => 3.0.154
+  - bpk-component-badge: 1.1.76 => 1.1.77
+  - bpk-component-banner-alert: 2.0.89 => 2.0.90
+  - bpk-component-barchart: 2.3.67 => 2.3.68
+  - bpk-component-blockquote: 1.1.119 => 1.1.120
+  - bpk-component-boilerplate: 0.0.19 => 0.0.20 (private)
+  - bpk-component-breadcrumb: 1.0.66 => 1.0.67
+  - bpk-component-breakpoint: 1.1.61 => 1.1.62
+  - bpk-component-button: 2.3.3 => 2.3.4
+  - bpk-component-calendar: 5.0.6 => 5.0.7
+  - bpk-component-card: 1.1.76 => 1.1.77
+  - bpk-component-checkbox: 1.4.92 => 1.4.93
+  - bpk-component-chip: 2.0.81 => 2.0.82
+  - bpk-component-close-button: 1.0.128 => 1.0.129
+  - bpk-component-code: 1.1.66 => 1.1.67
+  - bpk-component-content-container: 1.3.67 => 1.3.68
+  - bpk-component-datatable: 0.1.82 => 0.1.83
+  - bpk-component-datepicker: 9.0.7 => 9.0.8
+  - bpk-component-description-list: 1.0.88 => 1.0.89
+  - bpk-component-dialog: 1.1.55 => 1.1.56
+  - bpk-component-drawer: 1.2.82 => 1.2.83
+  - bpk-component-fieldset: 1.1.90 => 1.1.91
+  - bpk-component-form-validation: 2.0.12 => 2.0.13
+  - bpk-component-grid-toggle: 1.1.81 => 1.1.82
+  - bpk-component-grid: 1.1.132 => 1.1.133
+  - bpk-component-heading: 2.1.132 => 2.1.133
+  - bpk-component-horizontal-nav: 2.4.18 => 2.4.19
+  - bpk-component-icon: 3.29.0 => 3.29.1
+  - bpk-component-image: 2.1.34 => 2.1.35
+  - bpk-component-infinite-scroll: 2.2.26 => 2.2.27
+  - bpk-component-input: 4.1.10 => 4.1.11
+  - bpk-component-label: 3.2.131 => 3.2.132
+  - bpk-component-link: 1.2.62 => 1.2.63
+  - bpk-component-list: 1.1.102 => 1.1.103
+  - bpk-component-loading-button: 2.0.86 => 2.0.87
+  - bpk-component-map: 2.5.4 => 2.5.5
+  - bpk-component-mobile-scroll-container: 1.1.67 => 1.1.68
+  - bpk-component-modal: 1.8.55 => 1.8.56
+  - bpk-component-navigation-bar: 1.2.66 => 1.2.67
+  - bpk-component-navigation-stack: 1.0.69 => 1.0.70
+  - bpk-component-nudger: 1.0.131 => 1.0.132
+  - bpk-component-pagination: 1.0.95 => 1.0.96
+  - bpk-component-panel: 1.0.125 => 1.0.126
+  - bpk-component-paragraph: 1.0.125 => 1.0.126
+  - bpk-component-phone-input: 2.0.16 => 2.0.17
+  - bpk-component-popover: 2.2.32 => 2.2.33
+  - bpk-component-progress: 1.0.131 => 1.0.132
+  - bpk-component-radio: 1.2.90 => 1.2.91
+  - bpk-component-router-link: 2.0.47 => 2.0.48
+  - bpk-component-rtl-toggle: 1.1.81 => 1.1.82
+  - bpk-component-scrollable-calendar: 1.0.6 => 1.0.7
+  - bpk-component-section-list: 1.0.65 => 1.0.66
+  - bpk-component-select: 2.2.63 => 2.2.64
+  - bpk-component-slider: 1.1.94 => 1.1.95
+  - bpk-component-spinner: 2.2.93 => 2.2.94
+  - bpk-component-star-rating: 1.0.127 => 1.0.128
+  - bpk-component-table: 1.1.67 => 1.1.68
+  - bpk-component-text: 1.0.122 => 1.0.123
+  - bpk-component-textarea: 1.1.8 => 1.1.9
+  - bpk-component-theme-toggle: 1.0.101 => 1.0.102
+  - bpk-component-ticket: 1.2.57 => 1.2.58
+  - bpk-component-tile: 0.0.132 => 0.0.133 (private)
+  - bpk-component-tooltip: 3.1.77 => 3.1.78
+  - bpk-mixins: 17.22.0 => 17.22.1
+  - bpk-react-utils: 2.7.7 => 2.7.8
+  - bpk-scrim-utils: 3.2.60 => 3.2.61
+  - bpk-stylesheets: 3.2.169 => 3.2.170
+  - bpk-svgs: 6.6.0 => 6.6.1
+  - bpk-theming: 1.2.7 => 1.2.8
+  - bpk-tokens: 27.6.1 => 27.6.2
+    - Reverted `"sideEffects: false,` changes.
+
 # 2019-05-28 Improved code-splitting across all components plus some new icons (filter, family and word)
 
 **Added:**
