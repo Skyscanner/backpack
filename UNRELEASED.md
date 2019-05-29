@@ -1,6 +1,10 @@
 # Unreleased
 
 > Place your changes below this line.
+**Fixed:**
+
+- `bpk-component-checkbox`:
+  - Fixed issue that caused screen-readers to read and select checkbox labels twice.
 
 ## How to write a good changelog entry
 

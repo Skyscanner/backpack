@@ -5,6 +5,7 @@ exports[`BpkCheckbox should render correctly 1`] = `
   className="bpk-checkbox"
 >
   <input
+    aria-label="Prefer directs"
     className="bpk-checkbox__input"
     disabled={false}
     name="checkbox"
@@ -28,6 +29,7 @@ exports[`BpkCheckbox should render correctly 1`] = `
     />
   </svg>
   <span
+    aria-hidden="true"
     className="bpk-checkbox__label"
   >
     Prefer directs
@@ -40,6 +42,7 @@ exports[`BpkCheckbox should render correctly with a small label 1`] = `
   className="bpk-checkbox"
 >
   <input
+    aria-label="Prefer directs"
     className="bpk-checkbox__input"
     disabled={false}
     name="checkbox"
@@ -63,6 +66,7 @@ exports[`BpkCheckbox should render correctly with a small label 1`] = `
     />
   </svg>
   <span
+    aria-hidden="true"
     className="bpk-checkbox__label bpk-checkbox__label--small"
   >
     Prefer directs
@@ -75,6 +79,7 @@ exports[`BpkCheckbox should render correctly with checked attribute 1`] = `
   className="bpk-checkbox"
 >
   <input
+    aria-label="Prefer directs"
     checked={true}
     className="bpk-checkbox__input"
     disabled={false}
@@ -99,6 +104,7 @@ exports[`BpkCheckbox should render correctly with checked attribute 1`] = `
     />
   </svg>
   <span
+    aria-hidden="true"
     className="bpk-checkbox__label"
   >
     Prefer directs
@@ -111,6 +117,7 @@ exports[`BpkCheckbox should render correctly with disabled attribute 1`] = `
   className="bpk-checkbox bpk-checkbox--disabled"
 >
   <input
+    aria-label="Prefer directs"
     className="bpk-checkbox__input"
     disabled={true}
     name="checkbox"
@@ -134,6 +141,7 @@ exports[`BpkCheckbox should render correctly with disabled attribute 1`] = `
     />
   </svg>
   <span
+    aria-hidden="true"
     className="bpk-checkbox__label"
   >
     Prefer directs
@@ -146,6 +154,7 @@ exports[`BpkCheckbox should render correctly with id attribute 1`] = `
   className="bpk-checkbox"
 >
   <input
+    aria-label="Prefer directs"
     className="bpk-checkbox__input"
     disabled={false}
     id="checkbox"
@@ -170,6 +179,7 @@ exports[`BpkCheckbox should render correctly with id attribute 1`] = `
     />
   </svg>
   <span
+    aria-hidden="true"
     className="bpk-checkbox__label"
   >
     Prefer directs
@@ -182,6 +192,7 @@ exports[`BpkCheckbox should render correctly with required attribute 1`] = `
   className="bpk-checkbox"
 >
   <input
+    aria-label="Prefer directs"
     className="bpk-checkbox__input"
     disabled={false}
     name="checkbox"
@@ -205,6 +216,7 @@ exports[`BpkCheckbox should render correctly with required attribute 1`] = `
     />
   </svg>
   <span
+    aria-hidden="true"
     className="bpk-checkbox__label"
   >
     Prefer directs
@@ -222,6 +234,7 @@ exports[`BpkCheckbox should render correctly with value attribute 1`] = `
   className="bpk-checkbox"
 >
   <input
+    aria-label="Prefer directs"
     className="bpk-checkbox__input"
     disabled={false}
     name="checkbox"
@@ -246,6 +259,7 @@ exports[`BpkCheckbox should render correctly with value attribute 1`] = `
     />
   </svg>
   <span
+    aria-hidden="true"
     className="bpk-checkbox__label"
   >
     Prefer directs
@@ -258,6 +272,7 @@ exports[`BpkCheckbox should render correctly with white attribute 1`] = `
   className="bpk-checkbox bpk-checkbox--white"
 >
   <input
+    aria-label="Prefer directs"
     className="bpk-checkbox__input"
     disabled={false}
     name="checkbox"
@@ -281,6 +296,7 @@ exports[`BpkCheckbox should render correctly with white attribute 1`] = `
     />
   </svg>
   <span
+    aria-hidden="true"
     className="bpk-checkbox__label"
   >
     Prefer directs
