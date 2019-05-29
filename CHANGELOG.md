@@ -2,6 +2,13 @@
 
 [Unreleased changes](./UNRELEASED.md).
 
+# 2019-05-29 Checkbox improvements for screen readers
+
+**Fixed:**
+
+- bpk-component-checkbox: 1.4.93 => 1.4.94
+  - Fixed issue that caused screen-readers to read and select checkbox labels twice.
+
 # 2019-05-28 Reverted code-splitting changes across components
 
 **Fixed:**
