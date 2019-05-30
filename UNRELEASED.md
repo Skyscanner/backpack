@@ -1,10 +1,6 @@
 # Unreleased
 
 > Place your changes below this line.
-**Fixed:**
-
-- bpk-component-radio:
-  - Fixed an issue that caused screen readers to select and read the label twice.
 
 ## How to write a good changelog entry
 

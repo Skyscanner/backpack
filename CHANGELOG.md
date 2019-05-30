@@ -2,6 +2,13 @@
 
 [Unreleased changes](./UNRELEASED.md).
 
+# 2019-05-30 Radio button improvements for screen readers
+
+**Fixed:**
+
+- bpk-component-radio:
+  - Fixed an issue that caused screen readers to select and read the label twice.
+
 # 2019-05-29 Checkbox improvements for screen readers
 
 **Fixed:**
