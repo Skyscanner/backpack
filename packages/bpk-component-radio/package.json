@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-radio",
-  "version": "1.2.91",
+  "version": "1.2.92",
   "description": "Backpack radio button component.",
   "main": "index.js",
   "repository": {
