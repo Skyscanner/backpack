@@ -45,10 +45,11 @@ const BpkRadio = props => {
         className={getClassName('bpk-radio__input')}
         name={name}
         disabled={disabled}
+        aria-label={label}
         {...rest}
       />
       <div className={getClassName('bpk-radio__circle')} />
-      {label}
+      <span aria-hidden="true">{label}</span>
     </label>
   );
 };
