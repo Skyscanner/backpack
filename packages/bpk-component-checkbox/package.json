@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-checkbox",
-  "version": "1.4.94",
+  "version": "1.4.95",
   "description": "Backpack checkbox component.",
   "main": "index.js",
   "repository": {
@@ -13,8 +13,8 @@
     "react": "^15.0.0 || ^16.0.0"
   },
   "dependencies": {
-    "bpk-component-icon": "^3.29.1",
-    "bpk-mixins": "^17.22.1",
+    "bpk-component-icon": "^3.30.0",
+    "bpk-mixins": "^17.23.0",
     "bpk-react-utils": "^2.7.8",
     "prop-types": "^15.6.2"
   },
