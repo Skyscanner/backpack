@@ -2,6 +2,15 @@
 
 [Unreleased changes](./UNRELEASED.md).
 
+# 2019-05-31 Added trend icons
+
+**Added:**
+
+- bpk-component-icon: 3.29.1 => 3.30.0
+- bpk-svgs: 6.6.1 => 6.7.0
+- bpk-mixins: 17.22.1 => 17.23.0
+  - Added `trend--steady`, `trend--down` and `trend--will-rise` icons
+
 # 2019-05-30 Radio button improvements for screen readers
 
 **Fixed:**
