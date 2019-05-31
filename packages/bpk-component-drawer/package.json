@@ -27,5 +27,9 @@
     "bpk-component-button": "^2.3.5",
     "bpk-component-text": "^1.0.124"
   },
-  "gitHead": "94c737cc11d819f87c993fb3e43ef81d0151135a"
+  "gitHead": "94c737cc11d819f87c993fb3e43ef81d0151135a",
+  "sideEffects": [
+    "*.css",
+    "*.scss"
+  ]
 }

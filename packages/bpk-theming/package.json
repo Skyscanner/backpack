@@ -15,5 +15,9 @@
   "dependencies": {
     "bpk-tokens": "^27.6.2",
     "prop-types": "^15.6.2"
-  }
+  },
+  "sideEffects": [
+    "*.css",
+    "*.scss"
+  ]
 }

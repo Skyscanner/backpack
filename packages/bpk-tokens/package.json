@@ -14,5 +14,9 @@
   "license": "Apache-2.0",
   "dependencies": {
     "color": "^3.0.0"
-  }
+  },
+  "sideEffects": [
+    "*.css",
+    "*.scss"
+  ]
 }
