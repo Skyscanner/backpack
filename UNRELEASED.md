@@ -1,6 +1,12 @@
 # Unreleased
 
 > Place your changes below this line.
+**Added:**
+
+- bpk-component-icon:
+- bpk-svgs:
+- bpk-mixins:
+  - Added `trend--steady`, `trend--down` and `trend--will-rise` icons
 
 ## How to write a good changelog entry
 
