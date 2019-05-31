@@ -104,6 +104,7 @@ class BpkDatepicker extends Component {
         onChange={() => null}
         onOpen={this.onOpen}
         isOpen={this.state.isOpen}
+        readOnly
         {...inputProps}
       />
     );

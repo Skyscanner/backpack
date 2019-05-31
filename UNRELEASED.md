@@ -1,6 +1,10 @@
 # Unreleased
 
 > Place your changes below this line.
+**Added:**
+
+- bpk-component-datepicker:
+  - Add `readOnly` to input field by default.
 
 ## How to write a good changelog entry
 
