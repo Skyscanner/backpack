@@ -2,6 +2,13 @@
 
 [Unreleased changes](./UNRELEASED.md).
 
+# 2019-06-03 Changed date-picker input to be `readOnly`
+
+**Fixed:**
+
+- bpk-component-datepicker: 9.0.9 => 9.0.10
+  - Add `readOnly` to input field by default.
+
 # 2019-05-31 Added trend icons
 
 **Added:**
