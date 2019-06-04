@@ -2,6 +2,14 @@
 
 [Unreleased changes](./UNRELEASED.md).
 
+# 2019-06-04 Fix thickness of heart outline icon
+
+**Fixed:**
+- bpk-component-icon: 3.30.1 => 3.30.2
+- bpk-mixins: 17.23.1 => 17.23.2
+- bpk-svgs: 6.7.1 => 6.7.2
+  - Fixed border of `heart--outline` icon.
+
 # 2019-06-03 Changed date-picker input to be `readOnly`
 
 **Fixed:**
