@@ -106,7 +106,7 @@
     "gulp-cli": "^2.0.0",
     "gulp-clone": "^2.0.1",
     "gulp-concat": "^2.6.1",
-    "gulp-iconfont": "^9.2.0",
+    "gulp-iconfont": "^10.0.3",
     "gulp-jsonlint": "^1.2.2",
     "gulp-rename": "^1.4.0",
     "gulp-svgmin": "^2.2.0",
