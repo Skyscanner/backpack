@@ -1,6 +1,12 @@
 # Unreleased
 
 > Place your changes below this line.
+**Fixed:**
+
+- bpk-component-icon:
+- bpk-svgs:
+- bpk-mixins:
+  - Fixed border of `heart--outline` icon.
 
 ## How to write a good changelog entry
 
