@@ -2,6 +2,14 @@
 
 [Unreleased changes](./UNRELEASED.md).
 
+# 2019-06-05 New smiley face icons
+
+**Added**
+- bpk-component-icon: 3.30.2 => 3.30.3
+- bpk-mixins: 17.23.2 => 17.23.3
+- bpk-svgs: 6.7.2 => 6.7.3
+  - Added new smiley icons `face--blank`, `face--happy`, `face--sad`.
+
 # 2019-06-04 Fix thickness of heart outline icon
 
 **Fixed:**
