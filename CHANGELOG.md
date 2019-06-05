@@ -2,6 +2,14 @@
 
 [Unreleased changes](./UNRELEASED.md).
 
+# 2019-06-05 Fixed stroke width of icons
+
+**Added**
+- bpk-component-icon: 3.30.3 => 3.30.4
+- bpk-mixins: 17.23.3 => 17.23.4
+- bpk-svgs: 6.7.3 => 6.7.4
+  - Fixed stroke width of `heart`, `heart--outline`, `world--emea`, `world--apac` and `world--amer`.
+
 # 2019-06-05 New smiley face icons
 
 **Added**
