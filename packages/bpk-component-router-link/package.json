@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-router-link",
-  "version": "2.0.51",
+  "version": "2.0.52",
   "description": "Backpack link component.",
   "main": "index.js",
   "repository": {
@@ -14,7 +14,7 @@
     "react-router-dom": "^4.3.1"
   },
   "dependencies": {
-    "bpk-mixins": "^17.23.2",
+    "bpk-mixins": "^17.23.3",
     "bpk-react-utils": "^2.7.8",
     "prop-types": "^15.6.2"
   },
