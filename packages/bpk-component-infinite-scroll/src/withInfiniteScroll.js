@@ -170,10 +170,12 @@ const withInfiniteScroll = <T: ExtendedProps>(
     }
 
     updateData = () => {
-      const { index } = this.state;
-      this.props.dataSource.fetchItems(0, index).then(updatedElements => {
+      this.fetchItems({
+        index: this.state.index,
+        elementsPerScroll: this.props.elementsPerScroll,
+      }).then(newState => {
         this.setState({
-          elementsToRender: updatedElements,
+          ...newState,
         });
       });
     };
