@@ -2,6 +2,11 @@
 
 > Place your changes below this line.
 
+**Added:**
+
+- bpk-component-banner-alert:
+  - New `customBannerIcon` prop for showing a custom banner icon.
+
 ## How to write a good changelog entry
 
 1. Add 'Breaking', 'Added' or 'Fixed' in bold depending on if the change will be major, minor or patch according to [semver](semver.org).
@@ -24,9 +29,6 @@ See [`CHANGELOG.md`](CHANGELOG.md) for real-world examples of good changelog ent
 
 - bpk-component-infinity-gauntlet:
   - New `timeStone` prop for controlling time. See &lt;link to docs site&gt;.
-  
-- bpk-component-banner-alert:
-  - New `customBannerIcon` prop for showing a custom banner icon.
 
 **Fixed:**
 
