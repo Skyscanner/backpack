@@ -17,7 +17,7 @@
  */
 /* @flow strict */
 import PropTypes from 'prop-types';
-import { type Node } from 'react';
+import { type Node, type StatelessFunctionalComponent } from 'react';
 
 export const ALERT_TYPES = {
   SUCCESS: 'success',
@@ -35,7 +35,7 @@ export type CommonProps = {
   animateOnLeave: boolean,
   show: boolean,
   bannerClassName: ?string,
-  showBannerIcon: boolean,
+  customBannerIcon: ?StatelessFunctionalComponent<any>,
 };
 
 export type OnExpandToggleHandler = ?(boolean) => void;
@@ -54,7 +54,7 @@ export const COMMON_PROP_TYPES = {
   animateOnLeave: PropTypes.bool,
   show: PropTypes.bool,
   bannerClassName: PropTypes.string,
-  showBannerIcon: PropTypes.bool,
+  customBannerIcon: PropTypes.func,
 };
 
 export const COMMON_DEFAULT_PROPS = {
@@ -62,5 +62,5 @@ export const COMMON_DEFAULT_PROPS = {
   animateOnLeave: false,
   show: true,
   bannerClassName: null,
-  showBannerIcon: true,
+  customBannerIcon: null,
 };

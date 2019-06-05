@@ -21,6 +21,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { fontWeightBold } from 'bpk-tokens/tokens/base.es6';
+import CurrencyIcon from 'bpk-component-icon/sm/currency';
 
 import BpkBannerAlert, {
   ALERT_TYPES,
@@ -115,10 +116,10 @@ storiesOf('bpk-component-banner-alert', module)
       dismissButtonLabel="Dismiss"
     />
   ))
-  .add('Success without icon', () => (
+  .add('Success with custom icon', () => (
     <BpkBannerAlert
       message={message}
       type={ALERT_TYPES.SUCCESS}
-      showBannerIcon={false}
+      customBannerIcon={CurrencyIcon}
     />
   ));

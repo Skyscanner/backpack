@@ -22,7 +22,7 @@
  */
 
 import PropTypes from 'prop-types';
-import React, { type Node } from 'react';
+import React, { type Node, type StatelessFunctionalComponent } from 'react';
 import { withButtonAlignment } from 'bpk-component-icon';
 import BpkAnimateHeight from 'bpk-animate-height';
 import BpkCloseButton from 'bpk-component-close-button';
@@ -58,23 +58,32 @@ export const CONFIGURATION = {
   EXPANDABLE: 'expandable',
 };
 
-const getIconForType = (type: AlertTypeValue) => {
-  const map: { [AlertTypeValue]: Node } = {
+const getIconForType = (
+  type: AlertTypeValue,
+  CustomIcon: ?StatelessFunctionalComponent<any>,
+) => {
+  const classMap: { [AlertTypeValue]: string } = {
+    [ALERT_TYPES.SUCCESS]: getClassName('bpk-banner-alert__success-icon'),
+    [ALERT_TYPES.WARN]: getClassName('bpk-banner-alert__warn-icon'),
+    [ALERT_TYPES.ERROR]: getClassName('bpk-banner-alert__error-icon'),
+    [ALERT_TYPES.NEUTRAL]: getClassName('bpk-banner-alert__neutral-icon'),
+  };
+
+  const componentMap: { [AlertTypeValue]: Node } = {
     [ALERT_TYPES.SUCCESS]: (
-      <SuccessIcon className={getClassName('bpk-banner-alert__success-icon')} />
+      <SuccessIcon className={classMap[ALERT_TYPES.SUCCESS]} />
     ),
-    [ALERT_TYPES.WARN]: (
-      <WarnIcon className={getClassName('bpk-banner-alert__warn-icon')} />
-    ),
-    [ALERT_TYPES.ERROR]: (
-      <ErrorIcon className={getClassName('bpk-banner-alert__error-icon')} />
-    ),
+    [ALERT_TYPES.WARN]: <WarnIcon className={classMap[ALERT_TYPES.WARN]} />,
+    [ALERT_TYPES.ERROR]: <ErrorIcon className={classMap[ALERT_TYPES.ERROR]} />,
     [ALERT_TYPES.NEUTRAL]: (
-      <NeutralIcon className={getClassName('bpk-banner-alert__neutral-icon')} />
+      <NeutralIcon className={classMap[ALERT_TYPES.NEUTRAL]} />
     ),
   };
 
-  return map[type];
+  return (
+    (CustomIcon && <CustomIcon className={classMap[type]} />) ||
+    componentMap[type]
+  );
 };
 
 type ToggleButtonProps = {
@@ -131,10 +140,9 @@ const BpkBannerAlertInner = (props: Props) => {
     toggleButtonLabel,
     expanded,
     onExpandToggle,
-    showBannerIcon,
+    customBannerIcon,
     ...rest
   } = props;
-
   const onBannerExpandToggle = () => {
     if (props.onExpandToggle) {
       props.onExpandToggle(!expanded);
@@ -151,6 +159,8 @@ const BpkBannerAlertInner = (props: Props) => {
   const dismissable = configuration === CONFIGURATION.DISMISSABLE;
   const showChildren = isExpandable && expanded;
   const ariaRoles = ['alert'];
+
+  const CustomIcon = customBannerIcon && withButtonAlignment(customBannerIcon);
 
   const headerClassNames = [getClassName('bpk-banner-alert__header')];
   const sectionClassNames = [
@@ -187,14 +197,10 @@ const BpkBannerAlertInner = (props: Props) => {
           className={headerClassNames.join(' ')}
           onClick={onBannerExpandToggle}
         >
-          {showBannerIcon && (
-            <React.Fragment>
-              <span className={getClassName('bpk-banner-alert__icon')}>
-                {getIconForType(type)}
-              </span>
-              &nbsp;
-            </React.Fragment>
-          )}
+          <span className={getClassName('bpk-banner-alert__icon')}>
+            {getIconForType(type, CustomIcon)}
+          </span>
+          &nbsp;
           <span className={getClassName('bpk-banner-alert__message')}>
             {message}
           </span>

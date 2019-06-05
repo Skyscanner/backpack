@@ -26,7 +26,7 @@ See [`CHANGELOG.md`](CHANGELOG.md) for real-world examples of good changelog ent
   - New `timeStone` prop for controlling time. See &lt;link to docs site&gt;.
   
 - bpk-component-banner-alert:
-  - New `showIcon` prop for showing/hiding banner type icon.
+  - New `customBannerIcon` prop for showing a custom banner icon.
 
 **Fixed:**
 

@@ -241,7 +241,7 @@ animateOnEnter
 animateOnLeave
 animationDuration
 bannerStyle
-showBannerIcon
+customBannerIcon
 BarChart
 beforeClose
 borderRadius

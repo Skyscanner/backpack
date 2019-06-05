@@ -6,13 +6,13 @@ exports[`BpkBannerAlert should render correctly 1`] = `
   animateOnLeave={false}
   bannerClassName={null}
   configuration="none"
+  customBannerIcon={null}
   dismissButtonLabel={null}
   expanded={false}
   message="Lorem ipsum dolor sit amet, consectetuer adipiscing elit."
   onDismiss={null}
   onExpandToggle={null}
   show={true}
-  showBannerIcon={true}
   toggleButtonLabel={null}
   type="success"
 />
@@ -24,13 +24,13 @@ exports[`BpkBannerAlert should render correctly hidden 1`] = `
   animateOnLeave={false}
   bannerClassName={null}
   configuration="none"
+  customBannerIcon={null}
   dismissButtonLabel={null}
   expanded={false}
   message="Lorem ipsum dolor sit amet, consectetuer adipiscing elit."
   onDismiss={null}
   onExpandToggle={null}
   show={false}
-  showBannerIcon={true}
   toggleButtonLabel={null}
   type="success"
 />
@@ -42,13 +42,13 @@ exports[`BpkBannerAlert should render correctly with custom bannerClassName 1`] 
   animateOnLeave={false}
   bannerClassName="custom-banner-class-name"
   configuration="none"
+  customBannerIcon={null}
   dismissButtonLabel={null}
   expanded={false}
   message="Lorem ipsum dolor sit amet, consectetuer adipiscing elit."
   onDismiss={null}
   onExpandToggle={null}
   show={true}
-  showBannerIcon={true}
   toggleButtonLabel={null}
   type="success"
 />
