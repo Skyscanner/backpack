@@ -192,4 +192,17 @@ describe('BpkBannerAlertInner', () => {
       .toJSON();
     expect(tree).toMatchSnapshot();
   });
+
+  it('should render correctly with "type" attribute equal to "error" without an icon', () => {
+    const tree = renderer
+      .create(
+        <BpkBannerAlertInner
+          type={ALERT_TYPES.ERROR}
+          message={message}
+          showBannerIcon={false}
+        />,
+      )
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 });

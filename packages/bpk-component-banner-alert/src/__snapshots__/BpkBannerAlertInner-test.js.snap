@@ -94,6 +94,67 @@ exports[`BpkBannerAlertInner should render correctly with "type" attribute equal
 </div>
 `;
 
+exports[`BpkBannerAlertInner should render correctly with "type" attribute equal to "error" without an icon 1`] = `
+<div
+  className={null}
+  onTransitionEnd={[Function]}
+  style={
+    Object {
+      "MozTransition": "height 200ms ease ",
+      "OTransition": "height 200ms ease ",
+      "WebkitTransition": "height 200ms ease ",
+      "height": "auto",
+      "msTransition": "height 200ms ease ",
+      "overflow": "visible",
+      "transition": "height 200ms ease ",
+    }
+  }
+>
+  <div>
+    <div
+      onTransitionEnd={[Function]}
+    >
+      <section
+        className="bpk-banner-alert bpk-banner-alert--error"
+      >
+        <header
+          className="bpk-banner-alert__header"
+          onClick={[Function]}
+          role="alert"
+        >
+          <span
+            className="bpk-banner-alert__message"
+          >
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+          </span>
+           
+        </header>
+        <div
+          onTransitionEnd={[Function]}
+          style={
+            Object {
+              "MozTransition": "height 200ms ease ",
+              "OTransition": "height 200ms ease ",
+              "WebkitTransition": "height 200ms ease ",
+              "height": 0,
+              "msTransition": "height 200ms ease ",
+              "overflow": "hidden",
+              "transition": "height 200ms ease ",
+            }
+          }
+        >
+          <div>
+            <div
+              className="bpk-banner-alert__children-container"
+            />
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`BpkBannerAlertInner should render correctly with "type" attribute equal to "success" 1`] = `
 <div
   className={null}

@@ -12,6 +12,7 @@ exports[`BpkBannerAlertExpandable should render correctly 1`] = `
   onDismiss={null}
   onExpandToggle={[Function]}
   show={true}
+  showBannerIcon={true}
   toggleButtonLabel="Show details"
   type="success"
 >
@@ -33,6 +34,7 @@ exports[`BpkBannerAlertExpandable should render correctly expanded 1`] = `
   onDismiss={null}
   onExpandToggle={[Function]}
   show={true}
+  showBannerIcon={true}
   toggleButtonLabel="Show details"
   type="success"
 >

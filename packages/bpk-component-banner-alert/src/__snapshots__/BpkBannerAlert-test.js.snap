@@ -12,6 +12,7 @@ exports[`BpkBannerAlert should render correctly 1`] = `
   onDismiss={null}
   onExpandToggle={null}
   show={true}
+  showBannerIcon={true}
   toggleButtonLabel={null}
   type="success"
 />
@@ -29,6 +30,7 @@ exports[`BpkBannerAlert should render correctly hidden 1`] = `
   onDismiss={null}
   onExpandToggle={null}
   show={false}
+  showBannerIcon={true}
   toggleButtonLabel={null}
   type="success"
 />
@@ -46,6 +48,7 @@ exports[`BpkBannerAlert should render correctly with custom bannerClassName 1`] 
   onDismiss={null}
   onExpandToggle={null}
   show={true}
+  showBannerIcon={true}
   toggleButtonLabel={null}
   type="success"
 />

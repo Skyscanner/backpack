@@ -114,4 +114,11 @@ storiesOf('bpk-component-banner-alert', module)
       type={ALERT_TYPES.SUCCESS}
       dismissButtonLabel="Dismiss"
     />
+  ))
+  .add('Success without icon', () => (
+    <BpkBannerAlert
+      message={message}
+      type={ALERT_TYPES.SUCCESS}
+      showBannerIcon={false}
+    />
   ));

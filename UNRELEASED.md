@@ -24,6 +24,9 @@ See [`CHANGELOG.md`](CHANGELOG.md) for real-world examples of good changelog ent
 
 - bpk-component-infinity-gauntlet:
   - New `timeStone` prop for controlling time. See &lt;link to docs site&gt;.
+  
+- bpk-component-banner-alert:
+  - New `showIcon` prop for showing/hiding banner type icon.
 
 **Fixed:**
 

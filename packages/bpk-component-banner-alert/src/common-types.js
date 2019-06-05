@@ -35,6 +35,7 @@ export type CommonProps = {
   animateOnLeave: boolean,
   show: boolean,
   bannerClassName: ?string,
+  showBannerIcon: boolean,
 };
 
 export type OnExpandToggleHandler = ?(boolean) => void;
@@ -53,6 +54,7 @@ export const COMMON_PROP_TYPES = {
   animateOnLeave: PropTypes.bool,
   show: PropTypes.bool,
   bannerClassName: PropTypes.string,
+  showBannerIcon: PropTypes.bool,
 };
 
 export const COMMON_DEFAULT_PROPS = {
@@ -60,4 +62,5 @@ export const COMMON_DEFAULT_PROPS = {
   animateOnLeave: false,
   show: true,
   bannerClassName: null,
+  showBannerIcon: true,
 };

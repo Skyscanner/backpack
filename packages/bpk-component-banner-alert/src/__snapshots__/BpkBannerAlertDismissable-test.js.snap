@@ -12,6 +12,7 @@ exports[`BpkBannerAlertDismissable should render correctly 1`] = `
   onDismiss={[Function]}
   onExpandToggle={null}
   show={true}
+  showBannerIcon={true}
   toggleButtonLabel={null}
   type="success"
 />

@@ -11,6 +11,7 @@ exports[`withBannerAlertState(BpkBannerAlertDismissable) should render correctly
   onDismiss={[Function]}
   onExpandToggle={[Function]}
   show={true}
+  showBannerIcon={true}
   type="success"
 />
 `;
@@ -25,6 +26,7 @@ exports[`withBannerAlertState(BpkBannerAlertExpandable) should render correctly 
   onDismiss={[Function]}
   onExpandToggle={[Function]}
   show={true}
+  showBannerIcon={true}
   toggleButtonLabel="View more"
   type="success"
 >
@@ -47,6 +49,7 @@ exports[`withBannerAlertState(BpkBannerAlertExpandable) should render correctly 
   onDismiss={[Function]}
   onExpandToggle={[Function]}
   show={true}
+  showBannerIcon={true}
   toggleButtonLabel="View more"
   type="success"
 >
