@@ -46,10 +46,6 @@ import STYLES from './BpkBannerAlert.scss';
 
 const getClassName = cssModules(STYLES);
 
-const NeutralIcon = withButtonAlignment(InfoCircleIcon);
-const WarnIcon = withButtonAlignment(InfoCircleIcon);
-const ErrorIcon = withButtonAlignment(InfoCircleIcon);
-const SuccessIcon = withButtonAlignment(TickCircleIcon);
 const ExpandIcon = withButtonAlignment(ChevronDownIcon);
 
 export const CONFIGURATION = {
@@ -68,22 +64,17 @@ const getIconForType = (
     [ALERT_TYPES.ERROR]: getClassName('bpk-banner-alert__error-icon'),
     [ALERT_TYPES.NEUTRAL]: getClassName('bpk-banner-alert__neutral-icon'),
   };
-
+  const className = classMap[type];
   const componentMap: { [AlertTypeValue]: Node } = {
-    [ALERT_TYPES.SUCCESS]: (
-      <SuccessIcon className={classMap[ALERT_TYPES.SUCCESS]} />
-    ),
-    [ALERT_TYPES.WARN]: <WarnIcon className={classMap[ALERT_TYPES.WARN]} />,
-    [ALERT_TYPES.ERROR]: <ErrorIcon className={classMap[ALERT_TYPES.ERROR]} />,
-    [ALERT_TYPES.NEUTRAL]: (
-      <NeutralIcon className={classMap[ALERT_TYPES.NEUTRAL]} />
-    ),
+    [ALERT_TYPES.SUCCESS]: TickCircleIcon,
+    [ALERT_TYPES.WARN]: InfoCircleIcon,
+    [ALERT_TYPES.ERROR]: InfoCircleIcon,
+    [ALERT_TYPES.NEUTRAL]: InfoCircleIcon,
   };
+  const Icon = CustomIcon || componentMap[type];
+  const AlignedIcon = withButtonAlignment(Icon);
 
-  return (
-    (CustomIcon && <CustomIcon className={classMap[type]} />) ||
-    componentMap[type]
-  );
+  return <AlignedIcon className={className} />;
 };
 
 type ToggleButtonProps = {
@@ -160,8 +151,6 @@ const BpkBannerAlertInner = (props: Props) => {
   const showChildren = isExpandable && expanded;
   const ariaRoles = ['alert'];
 
-  const CustomIcon = customBannerIcon && withButtonAlignment(customBannerIcon);
-
   const headerClassNames = [getClassName('bpk-banner-alert__header')];
   const sectionClassNames = [
     'bpk-banner-alert',
@@ -198,7 +187,7 @@ const BpkBannerAlertInner = (props: Props) => {
           onClick={onBannerExpandToggle}
         >
           <span className={getClassName('bpk-banner-alert__icon')}>
-            {getIconForType(type, CustomIcon)}
+            {getIconForType(type, customBannerIcon)}
           </span>
           &nbsp;
           <span className={getClassName('bpk-banner-alert__message')}>
