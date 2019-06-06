@@ -171,12 +171,16 @@ const withInfiniteScroll = <T: ExtendedProps>(
 
     updateData = () => {
       const { index } = this.state;
+      // This means updateData was called before any data was loaded, e.g.
+      // An ArrayDataSource initialized empty and then changed latter on via `updateData`
+      // In this case we want to load new data and not just replace the old one.
+      // "See More After" should also be computed again in this case.
+      const isFirstLoad = index < this.props.elementsPerScroll;
       this.fetchItems({
         index: 0,
-        elementsPerScroll:
-          index > this.props.elementsPerScroll
-            ? index
-            : this.props.elementsPerScroll,
+        elementsPerScroll: isFirstLoad ? this.props.elementsPerScroll : index,
+        elementsToRender: [],
+        computeShowSeeMore: isFirstLoad,
       }).then(newState => {
         this.setState({
           ...newState,
@@ -186,11 +190,17 @@ const withInfiniteScroll = <T: ExtendedProps>(
 
     fetchItems(config) {
       const { onScrollFinished, seeMoreAfter } = this.props;
-      const { index, elementsPerScroll, elementsToRender } = extend(
+      const {
+        index,
+        elementsPerScroll,
+        elementsToRender,
+        computeShowSeeMore,
+      } = extend(
         {
           index: this.state.index,
           elementsPerScroll: this.props.elementsPerScroll,
           elementsToRender: this.state.elementsToRender,
+          computeShowSeeMore: true,
         },
         config,
       );
@@ -203,7 +213,9 @@ const withInfiniteScroll = <T: ExtendedProps>(
             return {
               index: nextIndex,
               elementsToRender: (elementsToRender || []).concat(nextElements),
-              showSeeMore: seeMoreAfter === index / elementsPerScroll,
+              showSeeMore: computeShowSeeMore
+                ? seeMoreAfter === index / elementsPerScroll
+                : this.state.showSeeMore,
               isListFinished: false,
             };
           }
