@@ -2,6 +2,18 @@
 
 [Unreleased changes](./UNRELEASED.md).
 
+# 2019-06-06 Allow any `BpkIcon` to be shown in banner alerts, and fix for infinite-scroll
+
+**Fixed:**
+
+- bpk-component-infinite-scroll:
+  - Fixed updating data when array data source is initialised empty.
+
+**Added:**
+
+- bpk-component-banner-alert:
+  - New `icon` prop for showing a custom banner icon.
+
 # 2019-06-05 Fixed stroke width of icons
 
 **Added**

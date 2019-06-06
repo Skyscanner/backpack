@@ -106,8 +106,8 @@ const BannerAlertExpandableState = withBannerAlertState(BpkBannerAlertExpandable
 | animateOnEnter     | bool                   | false    | false         |
 | animateOnLeave     | bool                   | false    | false         |
 | bannerClassName    | string                 | false    | null          |
-| show               | bool                   | false    | true          |
 | icon               | BpkIcon                | false    | null          |
+| show               | bool                   | false    | true          |
 
 ### BpkBannerAlertDismissable
 
@@ -119,9 +119,9 @@ const BannerAlertExpandableState = withBannerAlertState(BpkBannerAlertExpandable
 | animateOnLeave     | bool                   | false    | false         |
 | bannerClassName    | string                 | false    | null          |
 | dismissButtonLabel | string                 | false    | null          |
+| icon               | BpkIcon                | false    | null          |
 | onDismiss          | func                   | false    | null          |
 | show               | bool                   | false    | true          |
-| icon               | BpkIcon                | false    | null          |
 
 ### BpkBannerAlertExpandable
 
@@ -132,11 +132,11 @@ const BannerAlertExpandableState = withBannerAlertState(BpkBannerAlertExpandable
 | animateOnEnter     | bool                   | false    | false         |
 | animateOnLeave     | bool                   | false    | false         |
 | bannerClassName    | string                 | false    | null          |
-| show               | bool                   | false    | true          |
 | expanded           | bool                   | false    | false         |
-| toggleButtonLabel  | string                 | false    | null          |
-| onExpandToggle     | func                   | false    | null          |
 | icon               | BpkIcon                | false    | null          |
+| onExpandToggle     | func                   | false    | null          |
+| show               | bool                   | false    | true          |
+| toggleButtonLabel  | string                 | false    | null          |
 
 ### withBannerAlertState(BpkBannerAlert)
 
