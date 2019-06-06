@@ -50,26 +50,13 @@ export type Props = {
   large: boolean,
   valid: ?boolean,
   wrapperProps: { [string]: any },
+  flagOnly: ?boolean,
 };
 
 type CommonProps = {
   large: boolean,
   disabled: boolean,
   valid: ?boolean,
-};
-
-// This function get the size value of the dialingCode to resize the field correctly
-const widthForDialingCode = (large, dialingCodes, selectedDialingCode) => {
-  // This sizeConstant is an average character size for each size of field
-  const averageLetterSize = large ? 8 : 6;
-  const foundDialingCode = dialingCodes.find(
-    e => e.code === selectedDialingCode,
-  );
-  if (foundDialingCode && foundDialingCode.description) {
-    // Here we calculate the width for the field (N.B 100 is an assumed padding value)
-    return averageLetterSize * foundDialingCode.description.length + 100;
-  }
-  return averageLetterSize + 100;
 };
 
 const BpkPhoneInput = (props: Props) => {
@@ -88,6 +75,7 @@ const BpkPhoneInput = (props: Props) => {
     dialingCodes,
     dialingCodeProps,
     wrapperProps,
+    flagOnly,
     ...rest
   } = props;
 
@@ -96,6 +84,17 @@ const BpkPhoneInput = (props: Props) => {
     large: !!large,
     disabled: !!disabled,
   };
+
+  let phoneDisplayValue;
+
+  if (flagOnly) {
+    if (value.startsWith('+')) {
+      if (value.startsWith(`+${dialingCode}`)) phoneDisplayValue = value;
+      else phoneDisplayValue = `+${dialingCode} ${value.split(' ')[1]}`;
+    } else {
+      phoneDisplayValue = `+${dialingCode} ${value}`;
+    }
+  } else phoneDisplayValue = value;
 
   return (
     <span
@@ -123,9 +122,7 @@ const BpkPhoneInput = (props: Props) => {
         wrapperClassName={getClassName(dialingCodeProps.wrapperClassName)}
         value={dialingCode}
         onChange={onDialingCodeChange}
-        style={{
-          width: `${widthForDialingCode(large, dialingCodes, dialingCode)}px`,
-        }}
+        flagOnly={flagOnly}
       >
         {dialingCodes.map(({ code, description, ...extraDialingProps }) => (
           <option key={code} value={code} {...extraDialingProps}>
@@ -145,8 +142,8 @@ const BpkPhoneInput = (props: Props) => {
         {...rest}
         id={id}
         name={name}
-        value={value}
-        type={INPUT_TYPES.number}
+        value={phoneDisplayValue}
+        type={INPUT_TYPES.tel}
         onChange={onChange}
         className={getClassName('bpk-phone-input__phone-number', className)}
       />
@@ -175,6 +172,7 @@ BpkPhoneInput.propTypes = {
   large: PropTypes.bool,
   valid: PropTypes.bool,
   wrapperProps: PropTypes.object, // eslint-disable-line react/forbid-prop-types
+  flagOnly: PropTypes.bool,
 };
 
 BpkPhoneInput.defaultProps = {
@@ -183,6 +181,7 @@ BpkPhoneInput.defaultProps = {
   large: false,
   valid: null,
   wrapperProps: {},
+  flagOnly: false,
 };
 
 export default BpkPhoneInput;

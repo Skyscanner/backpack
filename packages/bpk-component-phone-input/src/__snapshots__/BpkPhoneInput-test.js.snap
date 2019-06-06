@@ -49,7 +49,7 @@ exports[`BpkPhoneInput should render correctly 1`] = `
     id="phone-input-id"
     name="Telephone input"
     onChange={[Function]}
-    type="number"
+    type="tel"
     value="1234"
   />
 </span>
@@ -104,7 +104,7 @@ exports[`BpkPhoneInput should render correctly with a "disabled" attribute 1`] =
     id="phone-input-id"
     name="Telephone input"
     onChange={[Function]}
-    type="number"
+    type="tel"
     value="1234"
   />
 </span>
@@ -159,7 +159,7 @@ exports[`BpkPhoneInput should render correctly with a "large" attribute 1`] = `
     id="phone-input-id"
     name="Telephone input"
     onChange={[Function]}
-    type="number"
+    type="tel"
     value="1234"
   />
 </span>
@@ -214,7 +214,7 @@ exports[`BpkPhoneInput should render correctly with a "valid" attribute 1`] = `
     id="phone-input-id"
     name="Telephone input"
     onChange={[Function]}
-    type="number"
+    type="tel"
     value="1234"
   />
 </span>
@@ -270,7 +270,7 @@ exports[`BpkPhoneInput should render correctly with a "wrapperProps" attribute 1
     id="phone-input-id"
     name="Telephone input"
     onChange={[Function]}
-    type="number"
+    type="tel"
     value="1234"
   />
 </span>
@@ -332,8 +332,58 @@ exports[`BpkPhoneInput should render correctly with a dialing code image attribu
     id="phone-input-id"
     name="Telephone input"
     onChange={[Function]}
-    type="number"
+    type="tel"
     value="1234"
+  />
+</span>
+`;
+
+exports[`BpkPhoneInput should render correctly with a the flag only attribute 1`] = `
+<span
+  className="bpk-phone-input"
+>
+  <label
+    className="bpk-label bpk-phone-input__dialing-code-label"
+    htmlFor="dialing-code"
+  >
+    Dialing code
+  </label>
+  <select
+    aria-invalid={false}
+    className="bpk-select bpk-select--flag-only bpk-phone-input__dialing-code dialing-code"
+    disabled={false}
+    id="dialing-code"
+    label="Dialing code"
+    name="Dialing code"
+    onChange={[Function]}
+    value="44"
+  >
+    <option
+      value="44"
+    >
+      +44
+    </option>
+    <option
+      value="55"
+    >
+      +55
+    </option>
+  </select>
+  <label
+    className="bpk-label bpk-phone-input__phone-number-label"
+    htmlFor="phone-input-id"
+  >
+    Telephone number
+  </label>
+  <input
+    aria-invalid={false}
+    className="bpk-input bpk-phone-input__phone-number fancy-input"
+    disabled={false}
+    id="phone-input-id"
+    name="Telephone input"
+    onChange={[Function]}
+    type="tel"
+    value="+44 1234"
   />
 </span>
 `;
