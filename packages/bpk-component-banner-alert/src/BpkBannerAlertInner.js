@@ -131,7 +131,7 @@ const BpkBannerAlertInner = (props: Props) => {
     toggleButtonLabel,
     expanded,
     onExpandToggle,
-    customBannerIcon,
+    icon,
     ...rest
   } = props;
   const onBannerExpandToggle = () => {
@@ -187,7 +187,7 @@ const BpkBannerAlertInner = (props: Props) => {
           onClick={onBannerExpandToggle}
         >
           <span className={getClassName('bpk-banner-alert__icon')}>
-            {getIconForType(type, customBannerIcon)}
+            {getIconForType(type, icon)}
           </span>
           &nbsp;
           <span className={getClassName('bpk-banner-alert__message')}>

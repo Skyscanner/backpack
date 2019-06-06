@@ -5,7 +5,7 @@
 **Added:**
 
 - bpk-component-banner-alert:
-  - New `customBannerIcon` prop for showing a custom banner icon.
+  - New `icon` prop for showing a custom banner icon.
 
 ## How to write a good changelog entry
 

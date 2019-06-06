@@ -5,9 +5,9 @@ exports[`withBannerAlertState(BpkBannerAlertDismissable) should render correctly
   animateOnEnter={false}
   animateOnLeave={false}
   bannerClassName={null}
-  customBannerIcon={null}
   dismissButtonLabel="Dismiss"
   expanded={false}
+  icon={null}
   message="Lorem ipsum dolor sit amet, consectetuer adipiscing elit."
   onDismiss={[Function]}
   onExpandToggle={[Function]}
@@ -21,8 +21,8 @@ exports[`withBannerAlertState(BpkBannerAlertExpandable) should render correctly 
   animateOnEnter={false}
   animateOnLeave={false}
   bannerClassName={null}
-  customBannerIcon={null}
   expanded={false}
+  icon={null}
   message="Lorem ipsum dolor sit amet, consectetuer adipiscing elit."
   onDismiss={[Function]}
   onExpandToggle={[Function]}
@@ -44,8 +44,8 @@ exports[`withBannerAlertState(BpkBannerAlertExpandable) should render correctly 
   animateOnEnter={false}
   animateOnLeave={false}
   bannerClassName={null}
-  customBannerIcon={null}
   expanded={true}
+  icon={null}
   message="Lorem ipsum dolor sit amet, consectetuer adipiscing elit."
   onDismiss={[Function]}
   onExpandToggle={[Function]}

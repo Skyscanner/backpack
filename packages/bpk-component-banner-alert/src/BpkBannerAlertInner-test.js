@@ -194,13 +194,13 @@ describe('BpkBannerAlertInner', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  it('should render correctly with "type" attribute equal to "error" and "customBannerIcon" equal to CurrencyIcon', () => {
+  it('should render correctly with "type" attribute equal to "error" and "icon" equal to CurrencyIcon', () => {
     const tree = renderer
       .create(
         <BpkBannerAlertInner
           type={ALERT_TYPES.ERROR}
           message={message}
-          customBannerIcon={CurrencyIcon}
+          icon={CurrencyIcon}
         />,
       )
       .toJSON();

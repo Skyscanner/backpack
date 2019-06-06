@@ -94,7 +94,7 @@ exports[`BpkBannerAlertInner should render correctly with "type" attribute equal
 </div>
 `;
 
-exports[`BpkBannerAlertInner should render correctly with "type" attribute equal to "error" and "customBannerIcon" equal to CurrencyIcon 1`] = `
+exports[`BpkBannerAlertInner should render correctly with "type" attribute equal to "error" and "icon" equal to CurrencyIcon 1`] = `
 <div
   className={null}
   onTransitionEnd={[Function]}

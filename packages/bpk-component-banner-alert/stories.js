@@ -120,6 +120,6 @@ storiesOf('bpk-component-banner-alert', module)
     <BpkBannerAlert
       message={message}
       type={ALERT_TYPES.SUCCESS}
-      customBannerIcon={CurrencyIcon}
+      icon={CurrencyIcon}
     />
   ));
