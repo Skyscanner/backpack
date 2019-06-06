@@ -22,7 +22,7 @@
  */
 
 import PropTypes from 'prop-types';
-import React, { type Node } from 'react';
+import React, { type Node, type StatelessFunctionalComponent } from 'react';
 import { withButtonAlignment } from 'bpk-component-icon';
 import BpkAnimateHeight from 'bpk-animate-height';
 import BpkCloseButton from 'bpk-component-close-button';
@@ -46,10 +46,6 @@ import STYLES from './BpkBannerAlert.scss';
 
 const getClassName = cssModules(STYLES);
 
-const NeutralIcon = withButtonAlignment(InfoCircleIcon);
-const WarnIcon = withButtonAlignment(InfoCircleIcon);
-const ErrorIcon = withButtonAlignment(InfoCircleIcon);
-const SuccessIcon = withButtonAlignment(TickCircleIcon);
 const ExpandIcon = withButtonAlignment(ChevronDownIcon);
 
 export const CONFIGURATION = {
@@ -58,23 +54,27 @@ export const CONFIGURATION = {
   EXPANDABLE: 'expandable',
 };
 
-const getIconForType = (type: AlertTypeValue) => {
-  const map: { [AlertTypeValue]: Node } = {
-    [ALERT_TYPES.SUCCESS]: (
-      <SuccessIcon className={getClassName('bpk-banner-alert__success-icon')} />
-    ),
-    [ALERT_TYPES.WARN]: (
-      <WarnIcon className={getClassName('bpk-banner-alert__warn-icon')} />
-    ),
-    [ALERT_TYPES.ERROR]: (
-      <ErrorIcon className={getClassName('bpk-banner-alert__error-icon')} />
-    ),
-    [ALERT_TYPES.NEUTRAL]: (
-      <NeutralIcon className={getClassName('bpk-banner-alert__neutral-icon')} />
-    ),
+const getIconForType = (
+  type: AlertTypeValue,
+  CustomIcon: ?StatelessFunctionalComponent<any>,
+) => {
+  const classMap: { [AlertTypeValue]: string } = {
+    [ALERT_TYPES.SUCCESS]: getClassName('bpk-banner-alert__success-icon'),
+    [ALERT_TYPES.WARN]: getClassName('bpk-banner-alert__warn-icon'),
+    [ALERT_TYPES.ERROR]: getClassName('bpk-banner-alert__error-icon'),
+    [ALERT_TYPES.NEUTRAL]: getClassName('bpk-banner-alert__neutral-icon'),
   };
+  const className = classMap[type];
+  const componentMap: { [AlertTypeValue]: Node } = {
+    [ALERT_TYPES.SUCCESS]: TickCircleIcon,
+    [ALERT_TYPES.WARN]: InfoCircleIcon,
+    [ALERT_TYPES.ERROR]: InfoCircleIcon,
+    [ALERT_TYPES.NEUTRAL]: InfoCircleIcon,
+  };
+  const Icon = CustomIcon || componentMap[type];
+  const AlignedIcon = withButtonAlignment(Icon);
 
-  return map[type];
+  return <AlignedIcon className={className} />;
 };
 
 type ToggleButtonProps = {
@@ -131,9 +131,9 @@ const BpkBannerAlertInner = (props: Props) => {
     toggleButtonLabel,
     expanded,
     onExpandToggle,
+    icon,
     ...rest
   } = props;
-
   const onBannerExpandToggle = () => {
     if (props.onExpandToggle) {
       props.onExpandToggle(!expanded);
@@ -187,7 +187,7 @@ const BpkBannerAlertInner = (props: Props) => {
           onClick={onBannerExpandToggle}
         >
           <span className={getClassName('bpk-banner-alert__icon')}>
-            {getIconForType(type)}
+            {getIconForType(type, icon)}
           </span>
           &nbsp;
           <span className={getClassName('bpk-banner-alert__message')}>

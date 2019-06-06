@@ -19,6 +19,7 @@
 
 import React from 'react';
 import renderer from 'react-test-renderer';
+import CurrencyIcon from 'bpk-component-icon/sm/currency';
 
 import BpkBannerAlertInner, { CONFIGURATION } from './BpkBannerAlertInner';
 import { ALERT_TYPES } from './common-types';
@@ -187,6 +188,19 @@ describe('BpkBannerAlertInner', () => {
           configuration={CONFIGURATION.DISMISSABLE}
           dismissButtonLabel="Dismiss"
           animateOnLeave
+        />,
+      )
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('should render correctly with "type" attribute equal to "error" and "icon" equal to CurrencyIcon', () => {
+    const tree = renderer
+      .create(
+        <BpkBannerAlertInner
+          type={ALERT_TYPES.ERROR}
+          message={message}
+          icon={CurrencyIcon}
         />,
       )
       .toJSON();

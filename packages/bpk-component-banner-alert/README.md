@@ -107,6 +107,7 @@ const BannerAlertExpandableState = withBannerAlertState(BpkBannerAlertExpandable
 | animateOnLeave     | bool                   | false    | false         |
 | bannerClassName    | string                 | false    | null          |
 | show               | bool                   | false    | true          |
+| icon               | BpkIcon                | false    | null          |
 
 ### BpkBannerAlertDismissable
 
@@ -120,6 +121,7 @@ const BannerAlertExpandableState = withBannerAlertState(BpkBannerAlertExpandable
 | dismissButtonLabel | string                 | false    | null          |
 | onDismiss          | func                   | false    | null          |
 | show               | bool                   | false    | true          |
+| icon               | BpkIcon                | false    | null          |
 
 ### BpkBannerAlertExpandable
 
@@ -134,6 +136,7 @@ const BannerAlertExpandableState = withBannerAlertState(BpkBannerAlertExpandable
 | expanded           | bool                   | false    | false         |
 | toggleButtonLabel  | string                 | false    | null          |
 | onExpandToggle     | func                   | false    | null          |
+| icon               | BpkIcon                | false    | null          |
 
 ### withBannerAlertState(BpkBannerAlert)
 
