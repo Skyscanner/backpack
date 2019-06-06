@@ -21,6 +21,10 @@
 .bpk-select {
   @include bpk-select;
 
+  &--flag-only {
+    width: 1rem;
+  }
+
   &--large {
     @include bpk-select--large;
   }
