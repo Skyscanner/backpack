@@ -65,9 +65,9 @@ const widthForDialingCode = (large, dialingCodes, selectedDialingCode) => {
   const foundDialingCode = dialingCodes.find(
     e => e.code === selectedDialingCode,
   );
-  if (foundDialogCode && foundDialogCode.description) {
+  if (foundDialingCode && foundDialingCode.description) {
     // Here we calculate the width for the field (N.B 100 is an assumed padding value)
-    return averageLetterSize * foundDialogCode.description.length + 100;
+    return averageLetterSize * foundDialingCode.description.length + 100;
   }
   return averageLetterSize + 100;
 };
