@@ -62,7 +62,7 @@ type CommonProps = {
 const widthForDialingCode = (large, dialingCodes, selectedDialingCode) => {
   // This sizeConstant is an average character size for each size of field
   const averageLetterSize = large ? 8 : 6;
-  const foundDialogCode = dialingCodes.find(
+  const foundDialingCode = dialingCodes.find(
     e => e.code === selectedDialingCode,
   );
   if (foundDialogCode && foundDialogCode.description) {
