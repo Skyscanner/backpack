@@ -2,10 +2,6 @@
 
 > Place your changes below this line.
 
-**Changed:**
-- bpk-component-phone-input
-  - Updated the styling for mobile breakpoints to allow for full descriptions of dialling code
-  
 ## How to write a good changelog entry
 
 1. Add 'Breaking', 'Added' or 'Fixed' in bold depending on if the change will be major, minor or patch according to [semver](semver.org).
