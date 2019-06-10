@@ -24,6 +24,7 @@ import fs from 'fs';
 
 import { includes } from 'lodash';
 import { danger, fail, warn, message } from 'danger';
+import { commonFileWarnings } from 'danger-plugin-toolbox';
 
 import * as meta from './meta.json';
 
@@ -61,10 +62,8 @@ if (componentIntroduced) {
 
 // If any of the packages have changed, the UNRELEASED log should have been updated.
 const unreleasedModified = includes(modifiedFiles, 'UNRELEASED.md');
-const packagesModified = fileChanges.some(
-  filePath =>
-    filePath.startsWith('packages/') &&
-    !filePath.startsWith('packages/bpk-docs/'),
+const packagesModified = fileChanges.some(filePath =>
+  filePath.startsWith('packages/'),
 );
 if (packagesModified && !unreleasedModified && !declaredTrivial) {
   warn(
@@ -132,4 +131,9 @@ markdown.forEach(path => {
         }
       });
     });
+});
+
+commonFileWarnings('test.log', {
+  msg:
+    'The build logs contain these warnings (check the build output in Travis for more details):',
 });

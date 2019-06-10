@@ -22,16 +22,17 @@
   padding: 0;
   border: 0;
   background-color: transparent;
-  color: $bpk-color-gray-500;
   cursor: pointer;
   appearance: none;
 
+  @include bpk-apply-gray-500-to(color);
+
   @include bpk-hover {
-    color: $bpk-color-gray-700;
+    @include bpk-apply-gray-700-to(color);
   }
 
   &:active {
-    color: $bpk-color-gray-900;
+    @include bpk-apply-gray-900-to(color);
   }
 
   &__icon {

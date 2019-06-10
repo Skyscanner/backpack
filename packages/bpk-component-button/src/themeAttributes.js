@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+export const buttonThemeAttributes = ['buttonBorderRadius'];
+
 export const primaryThemeAttributes = [
   'buttonPrimaryTextColor',
   'buttonPrimaryHoverTextColor',
@@ -63,6 +65,7 @@ export const destructiveThemeAttributes = [
 ];
 
 export default {
+  buttonThemeAttributes,
   primaryThemeAttributes,
   secondaryThemeAttributes,
   featuredThemeAttributes,

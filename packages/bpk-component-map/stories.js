@@ -17,7 +17,7 @@
  */
 /* @flow strict */
 
-import React from 'react';
+import React, { type ElementProps } from 'react';
 import PropTypes from 'prop-types';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
@@ -64,6 +64,51 @@ StoryMap.defaultProps = {
   language: '',
 };
 
+type Props = ElementProps<typeof BpkMapMarker>;
+
+type State = {
+  selected: boolean,
+};
+
+class StatefulBpkMapMarker extends React.Component<Props, State> {
+  static defaultProps = {
+    className: null,
+    arrowClassName: null,
+    large: false,
+    onClick: null,
+    selected: false,
+    type: MARKER_TYPES.primary,
+    buttonProps: null,
+  };
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      selected: false,
+    };
+  }
+
+  onClick = () => {
+    this.setState(prevState => ({
+      selected: !prevState.selected,
+    }));
+  };
+
+  render() {
+    const { onClick, ...rest } = this.props;
+
+    return (
+      <BpkMapMarker
+        selected={this.state.selected}
+        onClick={() => {
+          this.onClick();
+        }}
+        {...rest}
+      />
+    );
+  }
+}
+
 const onZoom = level => {
   action(`Zoom changed to ${level}`);
 };
@@ -86,6 +131,12 @@ storiesOf('bpk-component-map', module)
       center={{ latitude: 55.944357, longitude: -3.1967116 }}
       panEnabled={false}
       showControls={false}
+    />
+  ))
+  .add('Greedy gesture handling', () => (
+    <StoryMap
+      center={{ latitude: 55.944357, longitude: -3.1967116 }}
+      greedyGestureHandling
     />
   ))
   .add('With onZoom and onRegionChange callbacks', () => (
@@ -123,7 +174,7 @@ storiesOf('bpk-component-map', module)
         large
         position={{ latitude: 55.943, longitude: -3.1937116 }}
         onClick={() => {
-          alert('Marker clicked');
+          alert('Marker clicked'); // eslint-disable-line no-alert
         }}
         icon={<AlignedBusIconLg />}
       />
@@ -131,6 +182,20 @@ storiesOf('bpk-component-map', module)
         position={{ latitude: 55.942, longitude: -3.2018116 }}
         type={MARKER_TYPES.secondary}
         icon={<AlignedFoodIconSm />}
+      />
+    </StoryMap>
+  ))
+  .add('Overlapping markers', () => (
+    <StoryMap center={{ latitude: 55.944357, longitude: -3.1967116 }}>
+      <StatefulBpkMapMarker
+        large
+        position={{ latitude: 55.9441, longitude: -3.196 }}
+        icon={<AlignedLandmarkIconLg />}
+      />
+      <StatefulBpkMapMarker
+        large
+        position={{ latitude: 55.9446, longitude: -3.197 }}
+        icon={<AlignedBusIconLg />}
       />
     </StoryMap>
   ));

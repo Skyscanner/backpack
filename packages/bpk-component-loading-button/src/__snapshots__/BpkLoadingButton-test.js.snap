@@ -28,7 +28,6 @@ exports[`BpkLoadingButton should add only bpk specific classes if className prop
           "width": "1.5rem",
         }
       }
-      viewBox="0 0 24 24"
       width="24"
       xmlns="http://www.w3.org/2000/svg"
     >
@@ -108,7 +107,6 @@ exports[`BpkLoadingButton should render correctly with "large" and "destructive"
           "width": "1.5rem",
         }
       }
-      viewBox="0 0 24 24"
       width="24"
       xmlns="http://www.w3.org/2000/svg"
     >
@@ -148,7 +146,6 @@ exports[`BpkLoadingButton should render correctly with "large" and "disabled" at
           "width": "1.5rem",
         }
       }
-      viewBox="0 0 24 24"
       width="24"
       xmlns="http://www.w3.org/2000/svg"
     >
@@ -162,7 +159,7 @@ exports[`BpkLoadingButton should render correctly with "large" and "disabled" at
 
 exports[`BpkLoadingButton should render correctly with "large" and "featured" attributes 1`] = `
 <button
-  className="bpk-button bpk-button--large bpk-button--featured"
+  className="bpk-button bpk-button--featured bpk-button--large"
   disabled={false}
   onClick={null}
   type="button"
@@ -188,7 +185,6 @@ exports[`BpkLoadingButton should render correctly with "large" and "featured" at
           "width": "1.5rem",
         }
       }
-      viewBox="0 0 24 24"
       width="24"
       xmlns="http://www.w3.org/2000/svg"
     >
@@ -232,7 +228,6 @@ exports[`BpkLoadingButton should render correctly with "large" and "iconOnly" at
           "width": "1.5rem",
         }
       }
-      viewBox="0 0 24 24"
       width="24"
       xmlns="http://www.w3.org/2000/svg"
     >
@@ -272,7 +267,6 @@ exports[`BpkLoadingButton should render correctly with "large" and "link" attrib
           "width": "1.5rem",
         }
       }
-      viewBox="0 0 24 24"
       width="24"
       xmlns="http://www.w3.org/2000/svg"
     >
@@ -296,7 +290,6 @@ exports[`BpkLoadingButton should render correctly with "large" and "loading" att
   <svg
     className="bpk-spinner bpk-spinner--large bpk-spinner--dark bpk-spinner--align-to-large-button"
     height="24"
-    viewBox="0 0 24 24"
     width="24"
     xmlns="http://www.w3.org/2000/svg"
   >
@@ -407,7 +400,6 @@ exports[`BpkLoadingButton should render correctly with "large" and "secondary" a
           "width": "1.5rem",
         }
       }
-      viewBox="0 0 24 24"
       width="24"
       xmlns="http://www.w3.org/2000/svg"
     >
@@ -769,7 +761,6 @@ exports[`BpkLoadingButton should render correctly with a "large" attribute 1`] =
           "width": "1.5rem",
         }
       }
-      viewBox="0 0 24 24"
       width="24"
       xmlns="http://www.w3.org/2000/svg"
     >
@@ -833,7 +824,6 @@ exports[`BpkLoadingButton should render correctly with a "loading" attribute 1`]
   <svg
     className="bpk-spinner bpk-spinner--dark bpk-spinner--align-to-button"
     height="18"
-    viewBox="0 0 18 18"
     width="18"
     xmlns="http://www.w3.org/2000/svg"
   >
@@ -984,7 +974,6 @@ exports[`BpkLoadingButton should respect the class names entered as a string 1`]
           "width": "1.5rem",
         }
       }
-      viewBox="0 0 24 24"
       width="24"
       xmlns="http://www.w3.org/2000/svg"
     >

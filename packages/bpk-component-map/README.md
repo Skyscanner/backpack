@@ -85,18 +85,19 @@ export default () => (
 
 ### BpkMap
 
-| Property	       | PropType                                                          | Required                 | Default Value                    |
-| ---------------- | ----------------------------------------------------------------- | ------------------------ | -------------------------------- |
-| bounds           | shape({north: number, east: number, south: number, west: number}) | false                    | null                             |
-| center           | shape({latitude: number, longitude: number})                      | false                    | null                             |
-| containerElement | node                                                              | false                    | <div style={{height: '100%'}} /> |
-| mapElement       | node                                                              | false                    | <div style={{height: '100%'}} /> |
-| mapRef           | func                                                              | false                    | null                             |
-| onRegionChange   | func                                                              | false                    | null                             |
-| onZoom           | func                                                              | false                    | null                             |
-| panEnabled       | bool                                                              | false                    | true                             |
-| showControls     | bool                                                              | false                    | true                             |
-| zoom             | number                                                            | false                    | 15                               |
+| Property	            | PropType                                                          | Required                 | Default Value                    |
+| --------------------- | ----------------------------------------------------------------- | ------------------------ | -------------------------------- |
+| bounds                | shape({north: number, east: number, south: number, west: number}) | false                    | null                             |
+| center                | shape({latitude: number, longitude: number})                      | false                    | null                             |
+| containerElement      | node                                                              | false                    | <div style={{height: '100%'}} /> |
+| greedyGestureHandling | bool                                                              | false                    | false                            |
+| mapElement            | node                                                              | false                    | <div style={{height: '100%'}} /> |
+| mapRef                | func                                                              | false                    | null                             |
+| onRegionChange        | func                                                              | false                    | null                             |
+| onZoom                | func                                                              | false                    | null                             |
+| panEnabled            | bool                                                              | false                    | true                             |
+| showControls          | bool                                                              | false                    | true                             |
+| zoom                  | number                                                            | false                    | 15                               |
 
 Note: One of `bounds` and `center` must be provided.
 
@@ -120,7 +121,7 @@ When using `withGoogleMapsScript`, some additional props are available:
 | large            | bool                                         | false                    | false                |
 | onClick          | func                                         | false                    | null                 |
 | selected         | bool                                         | false                    | false                |
-| type             | oneOf('primary', 'secondary')                | false                    | MARKER_TYPES.primary |
+| type             | oneOf('primary', 'secondary', 'plain')       | false                    | MARKER_TYPES.primary |
 | buttonProps      | object                                       | false                    | null                 |
 
 ### BpkOverlayView
@@ -139,3 +140,7 @@ Primary markers:
 Secondary markers:
 
 * `mapMarkerSecondaryBackgroundColor`
+
+Plain markers:
+
+* `mapMarkerPlainBackgroundColor`

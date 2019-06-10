@@ -32,6 +32,7 @@ const getClassName = cssModules(STYLES);
 export const MARKER_TYPES = {
   primary: 'primary',
   secondary: 'secondary',
+  plain: 'plain',
 };
 
 export type MarkerType = $Keys<typeof MARKER_TYPES>;

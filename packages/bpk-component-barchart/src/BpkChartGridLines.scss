@@ -21,6 +21,7 @@
 .bpk-chart {
   &__grid-line {
     shape-rendering: crispEdges;
-    stroke: $bpk-color-gray-100;
+
+    @include bpk-apply-gray-100-to(stroke);
   }
 }

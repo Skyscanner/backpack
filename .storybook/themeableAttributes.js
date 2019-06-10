@@ -22,6 +22,7 @@ import { themeAttributes as accordionThemeAttributes } from '../packages/bpk-com
 import { themeAttributes as barchartThemeAttributes } from '../packages/bpk-component-barchart';
 import { themeAttributes as blockquoteThemeAttributes } from '../packages/bpk-component-blockquote';
 import {
+  buttonThemeAttributes,
   primaryThemeAttributes,
   secondaryThemeAttributes,
   featuredThemeAttributes,
@@ -50,10 +51,22 @@ import { themeAttributes as sliderThemeAttributes } from '../packages/bpk-compon
 import { themeAttributes as spinnerThemeAttributes } from '../packages/bpk-component-spinner';
 import { themeAttributes as navigationBarThemeAttributes } from '../packages/bpk-component-navigation-bar';
 
+const storybookAttributes = [
+  'primaryColor',
+  'colorGray50',
+  'colorGray100',
+  'colorGray300',
+  'colorGray500',
+  'colorGray700',
+  'colorGray900',
+  'themeName',
+];
+
 export default [
   ...accordionThemeAttributes,
   ...barchartThemeAttributes,
   ...blockquoteThemeAttributes,
+  ...buttonThemeAttributes,
   ...primaryThemeAttributes,
   ...secondaryThemeAttributes,
   ...featuredThemeAttributes,
@@ -76,4 +89,5 @@ export default [
   ...navigationBarThemeAttributes,
   ...primaryMarkerThemeAttributes,
   ...secondaryMarkerThemeAttributes,
+  ...storybookAttributes,
 ];

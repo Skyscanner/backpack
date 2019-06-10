@@ -29,7 +29,6 @@ exports[`BpkPaginationNudger should display backward nudger 1`] = `
             "width": "1.5rem",
           }
         }
-        viewBox="0 0 24 24"
         width="24"
         xmlns="http://www.w3.org/2000/svg"
       >
@@ -76,7 +75,6 @@ exports[`BpkPaginationNudger should display forward nudger 1`] = `
             "width": "1.5rem",
           }
         }
-        viewBox="0 0 24 24"
         width="24"
         xmlns="http://www.w3.org/2000/svg"
       >

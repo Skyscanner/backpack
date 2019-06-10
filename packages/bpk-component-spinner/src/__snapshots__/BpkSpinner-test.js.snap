@@ -4,7 +4,6 @@ exports[`BpkSpinner should render correctly 1`] = `
 <svg
   className="bpk-spinner bpk-spinner--dark"
   height="18"
-  viewBox="0 0 18 18"
   width="18"
   xmlns="http://www.w3.org/2000/svg"
 >
@@ -90,7 +89,6 @@ exports[`BpkSpinner should render correctly with a "alignToButton" attribute 1`]
 <svg
   className="bpk-spinner bpk-spinner--dark bpk-spinner--align-to-button"
   height="18"
-  viewBox="0 0 18 18"
   width="18"
   xmlns="http://www.w3.org/2000/svg"
 >
@@ -176,7 +174,6 @@ exports[`BpkSpinner should render correctly with a "className" attribute 1`] = `
 <svg
   className="bpk-spinner bpk-spinner--dark my-custom-class"
   height="18"
-  viewBox="0 0 18 18"
   width="18"
   xmlns="http://www.w3.org/2000/svg"
 >
@@ -262,7 +259,6 @@ exports[`BpkSpinner should render correctly with type as light 1`] = `
 <svg
   className="bpk-spinner bpk-spinner--light"
   height="18"
-  viewBox="0 0 18 18"
   width="18"
   xmlns="http://www.w3.org/2000/svg"
 >
@@ -348,7 +344,6 @@ exports[`BpkSpinner should render correctly with type as primary 1`] = `
 <svg
   className="bpk-spinner bpk-spinner--primary"
   height="18"
-  viewBox="0 0 18 18"
   width="18"
   xmlns="http://www.w3.org/2000/svg"
 >

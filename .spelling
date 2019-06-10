@@ -554,16 +554,18 @@ bpk-component-form-validation
 bpk-component-grid
 bpk-component-grid-toggle
 bpk-component-heading
+bpk-component-horcrux
 bpk-component-horizontal-nav
 bpk-component-icon
 bpk-component-image
 bpk-component-infinite-scroll
+bpk-component-infinity-gauntlet
 bpk-component-input
 bpk-component-label
 bpk-component-link
 bpk-component-list
-bpk-component-logo
 bpk-component-loading-button
+bpk-component-logo
 bpk-component-map
 bpk-component-mobile-scroll-container
 bpk-component-modal
@@ -710,3 +712,4 @@ onBarHover
 onBarFocus
 getBarLabel
 getBarSelection
+greedyGestureHandling

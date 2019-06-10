@@ -76,15 +76,16 @@ const BpkButton = (props: Props) => {
   if (destructive) {
     classNames.push(getClassName('bpk-button--destructive'));
   }
+  if (featured) {
+    classNames.push(getClassName('bpk-button--featured'));
+  }
   if (large) {
     classNames.push(getClassName('bpk-button--large'));
   }
   if (link) {
     classNames.push(getClassName('bpk-button--link'));
   }
-  if (featured) {
-    classNames.push(getClassName('bpk-button--featured'));
-  }
+
   if (iconOnly) {
     classNames.push(
       getClassName(

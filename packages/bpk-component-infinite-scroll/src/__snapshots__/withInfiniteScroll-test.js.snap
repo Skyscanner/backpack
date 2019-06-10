@@ -247,6 +247,80 @@ exports[`withInfiniteScroll should refresh data when data changes 2`] = `
 </WithInfiniteScroll>
 `;
 
+exports[`withInfiniteScroll should refresh data when data changes from an empty Array 1`] = `
+<WithInfiniteScroll
+  dataSource={
+    ArrayDataSource {
+      "elements": Array [],
+      "fetchItems": [Function],
+      "listeners": Array [
+        [Function],
+      ],
+    }
+  }
+  elementsPerScroll={5}
+  initiallyLoadedElements={5}
+  loaderIntersectionTrigger="full"
+  onScroll={null}
+  onScrollFinished={null}
+  renderLoadingComponent={null}
+  renderSeeMoreComponent={null}
+  seeMoreAfter={null}
+>
+  <div>
+    <List
+      elements={Array []}
+    >
+      <div
+        id="list"
+      />
+    </List>
+    <div
+      className="bpk-sentinel"
+    />
+  </div>
+</WithInfiniteScroll>
+`;
+
+exports[`withInfiniteScroll should refresh data when data changes from an empty Array 2`] = `
+<WithInfiniteScroll
+  dataSource={
+    ArrayDataSource {
+      "elements": Array [
+        1,
+        2,
+        3,
+      ],
+      "fetchItems": [Function],
+      "listeners": Array [
+        [Function],
+      ],
+    }
+  }
+  elementsPerScroll={5}
+  initiallyLoadedElements={5}
+  loaderIntersectionTrigger="full"
+  onScroll={null}
+  onScrollFinished={null}
+  renderLoadingComponent={null}
+  renderSeeMoreComponent={null}
+  seeMoreAfter={null}
+>
+  <div>
+    <List
+      elements={Array []}
+    >
+      <div
+        id="list"
+      />
+    </List>
+    <div
+      className="bpk-sentinel"
+    />
+  </div>
+</WithInfiniteScroll>
+`;
+
 exports[`withInfiniteScroll should render correctly when no more elements 1`] = `
 <WithInfiniteScroll
   dataSource={

@@ -18,6 +18,7 @@
 
 import React from 'react';
 import renderer from 'react-test-renderer';
+import CustomCloseIcon from 'bpk-component-icon/sm/close-circle';
 
 import BpkCloseButton from './BpkCloseButton';
 
@@ -35,7 +36,7 @@ describe('BpkCloseButton', () => {
         <BpkCloseButton
           label="Close"
           onClick={() => null}
-          customIcon="BpkIcon"
+          customIcon={CustomCloseIcon}
         />,
       )
       .toJSON();

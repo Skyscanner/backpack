@@ -2,6 +2,275 @@
 
 [Unreleased changes](./UNRELEASED.md).
 
+# 2019-06-06 Allow any `BpkIcon` to be shown in banner alerts, and fix for infinite-scroll
+
+**Fixed:**
+
+- bpk-component-infinite-scroll:
+  - Fixed updating data when array data source is initialised empty.
+
+**Added:**
+
+- bpk-component-banner-alert:
+  - New `icon` prop for showing a custom banner icon.
+
+# 2019-06-05 Fixed stroke width of icons
+
+**Added**
+- bpk-component-icon: 3.30.3 => 3.30.4
+- bpk-mixins: 17.23.3 => 17.23.4
+- bpk-svgs: 6.7.3 => 6.7.4
+  - Fixed stroke width of `heart`, `heart--outline`, `world--emea`, `world--apac` and `world--amer`.
+
+# 2019-06-05 New smiley face icons
+
+**Added**
+- bpk-component-icon: 3.30.2 => 3.30.3
+- bpk-mixins: 17.23.2 => 17.23.3
+- bpk-svgs: 6.7.2 => 6.7.3
+  - Added new smiley icons `face--blank`, `face--happy`, `face--sad`.
+
+# 2019-06-04 Fix thickness of heart outline icon
+
+**Fixed:**
+- bpk-component-icon: 3.30.1 => 3.30.2
+- bpk-mixins: 17.23.1 => 17.23.2
+- bpk-svgs: 6.7.1 => 6.7.2
+  - Fixed border of `heart--outline` icon.
+
+# 2019-06-03 Changed date-picker input to be `readOnly`
+
+**Fixed:**
+
+- bpk-component-datepicker: 9.0.9 => 9.0.10
+  - Add `readOnly` to input field by default.
+
+# 2019-05-31 Added trend icons
+
+**Added:**
+
+- bpk-component-icon: 3.29.1 => 3.30.0
+- bpk-svgs: 6.6.1 => 6.7.0
+- bpk-mixins: 17.22.1 => 17.23.0
+  - Added `trend--steady`, `trend--down` and `trend--will-rise` icons
+
+# 2019-05-30 Radio button improvements for screen readers
+
+**Fixed:**
+
+- bpk-component-radio:
+  - Fixed an issue that caused screen readers to select and read the label twice.
+
+# 2019-05-29 Checkbox improvements for screen readers
+
+**Fixed:**
+
+- bpk-component-checkbox: 1.4.93 => 1.4.94
+  - Fixed issue that caused screen-readers to read and select checkbox labels twice.
+
+# 2019-05-28 Reverted code-splitting changes across components
+
+**Fixed:**
+  - bpk-animate-height: 1.1.98 => 1.1.99
+  - bpk-component-accordion: 1.2.85 => 1.2.86
+  - bpk-component-autosuggest: 3.0.153 => 3.0.154
+  - bpk-component-badge: 1.1.76 => 1.1.77
+  - bpk-component-banner-alert: 2.0.89 => 2.0.90
+  - bpk-component-barchart: 2.3.67 => 2.3.68
+  - bpk-component-blockquote: 1.1.119 => 1.1.120
+  - bpk-component-boilerplate: 0.0.19 => 0.0.20 (private)
+  - bpk-component-breadcrumb: 1.0.66 => 1.0.67
+  - bpk-component-breakpoint: 1.1.61 => 1.1.62
+  - bpk-component-button: 2.3.3 => 2.3.4
+  - bpk-component-calendar: 5.0.6 => 5.0.7
+  - bpk-component-card: 1.1.76 => 1.1.77
+  - bpk-component-checkbox: 1.4.92 => 1.4.93
+  - bpk-component-chip: 2.0.81 => 2.0.82
+  - bpk-component-close-button: 1.0.128 => 1.0.129
+  - bpk-component-code: 1.1.66 => 1.1.67
+  - bpk-component-content-container: 1.3.67 => 1.3.68
+  - bpk-component-datatable: 0.1.82 => 0.1.83
+  - bpk-component-datepicker: 9.0.7 => 9.0.8
+  - bpk-component-description-list: 1.0.88 => 1.0.89
+  - bpk-component-dialog: 1.1.55 => 1.1.56
+  - bpk-component-drawer: 1.2.82 => 1.2.83
+  - bpk-component-fieldset: 1.1.90 => 1.1.91
+  - bpk-component-form-validation: 2.0.12 => 2.0.13
+  - bpk-component-grid-toggle: 1.1.81 => 1.1.82
+  - bpk-component-grid: 1.1.132 => 1.1.133
+  - bpk-component-heading: 2.1.132 => 2.1.133
+  - bpk-component-horizontal-nav: 2.4.18 => 2.4.19
+  - bpk-component-icon: 3.29.0 => 3.29.1
+  - bpk-component-image: 2.1.34 => 2.1.35
+  - bpk-component-infinite-scroll: 2.2.26 => 2.2.27
+  - bpk-component-input: 4.1.10 => 4.1.11
+  - bpk-component-label: 3.2.131 => 3.2.132
+  - bpk-component-link: 1.2.62 => 1.2.63
+  - bpk-component-list: 1.1.102 => 1.1.103
+  - bpk-component-loading-button: 2.0.86 => 2.0.87
+  - bpk-component-map: 2.5.4 => 2.5.5
+  - bpk-component-mobile-scroll-container: 1.1.67 => 1.1.68
+  - bpk-component-modal: 1.8.55 => 1.8.56
+  - bpk-component-navigation-bar: 1.2.66 => 1.2.67
+  - bpk-component-navigation-stack: 1.0.69 => 1.0.70
+  - bpk-component-nudger: 1.0.131 => 1.0.132
+  - bpk-component-pagination: 1.0.95 => 1.0.96
+  - bpk-component-panel: 1.0.125 => 1.0.126
+  - bpk-component-paragraph: 1.0.125 => 1.0.126
+  - bpk-component-phone-input: 2.0.16 => 2.0.17
+  - bpk-component-popover: 2.2.32 => 2.2.33
+  - bpk-component-progress: 1.0.131 => 1.0.132
+  - bpk-component-radio: 1.2.90 => 1.2.91
+  - bpk-component-router-link: 2.0.47 => 2.0.48
+  - bpk-component-rtl-toggle: 1.1.81 => 1.1.82
+  - bpk-component-scrollable-calendar: 1.0.6 => 1.0.7
+  - bpk-component-section-list: 1.0.65 => 1.0.66
+  - bpk-component-select: 2.2.63 => 2.2.64
+  - bpk-component-slider: 1.1.94 => 1.1.95
+  - bpk-component-spinner: 2.2.93 => 2.2.94
+  - bpk-component-star-rating: 1.0.127 => 1.0.128
+  - bpk-component-table: 1.1.67 => 1.1.68
+  - bpk-component-text: 1.0.122 => 1.0.123
+  - bpk-component-textarea: 1.1.8 => 1.1.9
+  - bpk-component-theme-toggle: 1.0.101 => 1.0.102
+  - bpk-component-ticket: 1.2.57 => 1.2.58
+  - bpk-component-tile: 0.0.132 => 0.0.133 (private)
+  - bpk-component-tooltip: 3.1.77 => 3.1.78
+  - bpk-mixins: 17.22.0 => 17.22.1
+  - bpk-react-utils: 2.7.7 => 2.7.8
+  - bpk-scrim-utils: 3.2.60 => 3.2.61
+  - bpk-stylesheets: 3.2.169 => 3.2.170
+  - bpk-svgs: 6.6.0 => 6.6.1
+  - bpk-theming: 1.2.7 => 1.2.8
+  - bpk-tokens: 27.6.1 => 27.6.2
+    - Reverted `"sideEffects: false,` changes.
+
+# 2019-05-28 Improved code-splitting across all components plus some new icons (filter, family and word)
+
+**Added:**
+
+- bpk-component-icon: 3.28.1 => 3.29.0
+- bpk-mixins: 17.21.0 => 17.22.0
+- bpk-svgs: 6.5.1 => 6.6.0
+  - Updated `family` icon
+  - Added `filter` icon
+  - Added `world--amer` icon
+  - Added `world--apac` icon
+  - Added `world--emea` icon
+
+**Fixed:**
+
+- bpk-animate-height: 1.1.97 => 1.1.98
+- bpk-component-accordion: 1.2.84 => 1.2.85
+- bpk-component-autosuggest: 3.0.152 => 3.0.153
+- bpk-component-badge: 1.1.75 => 1.1.76
+- bpk-component-banner-alert: 2.0.88 => 2.0.89
+- bpk-component-barchart: 2.3.66 => 2.3.67
+- bpk-component-blockquote: 1.1.118 => 1.1.119
+- bpk-component-breadcrumb: 1.0.65 => 1.0.66
+- bpk-component-breakpoint: 1.1.60 => 1.1.61
+- bpk-component-button: 2.3.2 => 2.3.3
+- bpk-component-calendar: 5.0.5 => 5.0.6
+- bpk-component-card: 1.1.75 => 1.1.76
+- bpk-component-checkbox: 1.4.91 => 1.4.92
+- bpk-component-chip: 2.0.80 => 2.0.81
+- bpk-component-close-button: 1.0.127 => 1.0.128
+- bpk-component-code: 1.1.65 => 1.1.66
+- bpk-component-content-container: 1.3.66 => 1.3.67
+- bpk-component-datatable: 0.1.81 => 0.1.82
+- bpk-component-datepicker: 9.0.6 => 9.0.7
+- bpk-component-description-list: 1.0.87 => 1.0.88
+- bpk-component-dialog: 1.1.54 => 1.1.55
+- bpk-component-drawer: 1.2.81 => 1.2.82
+- bpk-component-fieldset: 1.1.89 => 1.1.90
+- bpk-component-form-validation: 2.0.11 => 2.0.12
+- bpk-component-grid-toggle: 1.1.80 => 1.1.81
+- bpk-component-grid: 1.1.131 => 1.1.132
+- bpk-component-heading: 2.1.131 => 2.1.132
+- bpk-component-horizontal-nav: 2.4.17 => 2.4.18
+- bpk-component-icon: 3.28.1 => 3.29.0
+- bpk-component-image: 2.1.33 => 2.1.34
+- bpk-component-input: 4.1.9 => 4.1.10
+- bpk-component-label: 3.2.130 => 3.2.131
+- bpk-component-link: 1.2.61 => 1.2.62
+- bpk-component-list: 1.1.101 => 1.1.102
+- bpk-component-loading-button: 2.0.85 => 2.0.86
+- bpk-component-map: 2.5.3 => 2.5.4
+- bpk-component-mobile-scroll-container: 1.1.66 => 1.1.67
+- bpk-component-modal: 1.8.54 => 1.8.55
+- bpk-component-navigation-bar: 1.2.65 => 1.2.66
+- bpk-component-navigation-stack: 1.0.68 => 1.0.69
+- bpk-component-nudger: 1.0.130 => 1.0.131
+- bpk-component-pagination: 1.0.94 => 1.0.95
+- bpk-component-panel: 1.0.124 => 1.0.125
+- bpk-component-paragraph: 1.0.124 => 1.0.125
+- bpk-component-phone-input: 2.0.15 => 2.0.16
+- bpk-component-popover: 2.2.31 => 2.2.32
+- bpk-component-progress: 1.0.130 => 1.0.131
+- bpk-component-radio: 1.2.89 => 1.2.90
+- bpk-component-router-link: 2.0.46 => 2.0.47
+- bpk-component-rtl-toggle: 1.1.80 => 1.1.81
+- bpk-component-scrollable-calendar: 1.0.5 => 1.0.6
+- bpk-component-section-list: 1.0.64 => 1.0.65
+- bpk-component-select: 2.2.62 => 2.2.63
+- bpk-component-slider: 1.1.93 => 1.1.94
+- bpk-component-spinner: 2.2.92 => 2.2.93
+- bpk-component-star-rating: 1.0.126 => 1.0.127
+- bpk-component-table: 1.1.66 => 1.1.67
+- bpk-component-text: 1.0.121 => 1.0.122
+- bpk-component-textarea: 1.1.7 => 1.1.8
+- bpk-component-theme-toggle: 1.0.100 => 1.0.101
+- bpk-component-ticket: 1.2.56 => 1.2.57
+- bpk-component-tooltip: 3.1.76 => 3.1.77
+- bpk-mixins: 17.21.0 => 17.22.0
+- bpk-react-utils: 2.7.6 => 2.7.7
+- bpk-scrim-utils: 3.2.59 => 3.2.60
+- bpk-stylesheets: 3.2.168 => 3.2.169
+- bpk-svgs: 6.5.1 => 6.6.0
+- bpk-theming: 1.2.6 => 1.2.7
+- bpk-tokens: 27.6.0 => 27.6.1
+  - Added `"sideEffects: false,` Webpack hint to each component's `package.json`. This improves tree-shaking, see https://webpack.js.org/guides/tree-shaking/#mark-the-file-as-side-effect-free.
+
+- bpk-component-infinite-scroll: 2.2.25 => 2.2.26
+  - Marked `./src/intersection-observer.js` as having side effects.
+
+# 2019-05-16 - Map marker brought forward when selected
+
+**Changed:**
+- bpk-component-map: 2.5.2 => 2.5.3
+  - Selected map markers now have `z-index: 1`.
+
+# 2019-05-16 - Gray theming utility
+
+**Added:**
+- bpk-mixins: 17.20.0 => 17.21.0
+  - New mixins to apply gray theming to gray colours via the theme props `colorGray50`, `colorGray100`, `colorGray300`, `colorGray500`, `colorGray700`, `colorGray900`.
+
+# 2019-05-15 - New heart icon style.
+
+**Added:**
+
+- bpk-component-icon: 3.27.13 => 3.28.0
+- bpk-svgs: 6.4.6 => 6.4.7
+- bpk-mixins: 17.19.1 => 17.20.0
+  - New `heart--outline` icon.
+  - `heart` icon update to be aligned to the new style.
+
+# 2019-05-09 - New theme props for buttons and a new map prop
+
+**Added:**
+- `bpk-component-button`: 2.2.0 => 2.3.0
+  - Added new theming prop for `border-radius` on buttons.
+
+- `bpk-component-map`: 2.4.0 => 2.5.0
+  - New `greedyGestureHandling` prop for enforcing one-finger pan and zoom on touch devices.
+
+# 2019-05-06 - New map marker type
+
+**Added:**
+- `bpk-component-map`: 2.3.1 => 2.4.0
+  - Added `plain` to `MARKER_TYPES` for use with `BpkMapMarker` component.
+
 # 2019-05-06 Theming support for Featured and Destructive buttons, and Flow updates for Text
 
 **Added:**

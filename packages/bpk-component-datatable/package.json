@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-datatable",
-  "version": "0.1.78",
+  "version": "0.1.89",
   "description": "Backpack datatable component.",
   "main": "index.js",
   "repository": {
@@ -13,15 +13,15 @@
     "react": "^15.0.0 || ^16.0.0"
   },
   "dependencies": {
-    "bpk-component-icon": "^3.27.12",
-    "bpk-mixins": "^17.19.0",
-    "bpk-react-utils": "^2.7.6",
+    "bpk-component-icon": "^3.30.5",
+    "bpk-mixins": "^17.23.5",
+    "bpk-react-utils": "^2.7.8",
     "lodash": "^4.17.10",
     "prop-types": "^15.6.2",
     "react-virtualized": "^9.20.1"
   },
   "devDependencies": {
-    "bpk-tokens": "^27.6.0"
+    "bpk-tokens": "^27.6.2"
   },
-  "gitHead": "edd14f16dc571cc009d908c3c8f7d27a428b6de8"
+  "gitHead": "3244054e73b5e966c2ca795f496d8e29b6a5fff4"
 }

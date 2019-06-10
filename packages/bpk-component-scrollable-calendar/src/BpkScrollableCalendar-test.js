@@ -26,12 +26,14 @@ import { weekDays, formatDateFull, formatMonth } from '../test-utils';
 import BpkScrollableCalendar from './BpkScrollableCalendar';
 
 const testDate = new Date(2010, 1, 15);
+const id = 'scrollableCalendar';
 
 describe('BpkScrollableCalendar', () => {
   it('should render correctly', () => {
     const shallowRenderer = Shallow.createRenderer();
     const tree = shallowRenderer.render(
       <BpkScrollableCalendar
+        id={id}
         weekStartsOn={1}
         daysOfWeek={weekDays}
         formatMonth={formatMonth}
@@ -49,6 +51,7 @@ describe('BpkScrollableCalendar', () => {
     const shallowRenderer = Shallow.createRenderer();
     const tree = shallowRenderer.render(
       <BpkScrollableCalendar
+        id={id}
         weekStartsOn={1}
         daysOfWeek={weekDays}
         formatMonth={formatMonth}
@@ -67,6 +70,7 @@ describe('BpkScrollableCalendar', () => {
     const shallowRenderer = Shallow.createRenderer();
     const tree = shallowRenderer.render(
       <BpkScrollableCalendar
+        id={id}
         weekStartsOn={1}
         daysOfWeek={weekDays}
         formatMonth={formatMonth}

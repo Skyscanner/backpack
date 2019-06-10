@@ -17,6 +17,7 @@
  */
 
 import {
+  buttonThemeAttributes,
   primaryThemeAttributes,
   secondaryThemeAttributes,
   destructiveThemeAttributes,
@@ -24,6 +25,10 @@ import {
 } from './themeAttributes';
 
 describe('themeAttributes', () => {
+  it('should export the correct general theme attributes', () => {
+    expect(buttonThemeAttributes).toEqual(['buttonBorderRadius']);
+  });
+
   it('should export the correct primary theme attributes', () => {
     expect(primaryThemeAttributes).toEqual([
       'buttonPrimaryTextColor',

@@ -12,12 +12,13 @@ install:
 script:
   - set -e
   - ./scripts/check-pristine-state package-lock.json
+  - (set -o pipefail; npm test |& tee test.log);
   - npm run danger
-  - npm test
-  - npm run docs:dist
   - if [ "$TRAVIS_BRANCH" == 'master' ] && [ "$TRAVIS_PULL_REQUEST" == 'false' ]; then npm run storybook:dist; fi
-  - test -e dist/index.html
-  - test -e dist/sassdoc/index.html
+  - if [ "$TRAVIS_BRANCH" == 'master' ] && [ "$TRAVIS_PULL_REQUEST" == 'false' ]; then npm run sassdoc; fi
+
+after_script:
+  - 'if [ "$TRAVIS_BRANCH" == master ] && [ "$TRAVIS_PULL_REQUEST" == false ]; then curl -s -X POST -H "Content-Type: application/json" -H "Accept: application/json" -H "Travis-API-Version: 3" -H "Authorization: token $TRAVIS_API_KEY" -d "{\"request\": {\"branch\":\"master\"}}" https://api.travis-ci.org/repo/Skyscanner%2Fbackpack-docs/requests; fi'
 
 cache:
   directories:
@@ -29,17 +30,28 @@ branches:
     - /^greenkeeper/.*$/
 
 deploy:
-  provider: pages
-  skip_cleanup: true
-  github_token: $DEPLOY_TOKEN
-  on:
-    branch: master
-  local_dir: dist/
-  skip_cleanup: true
-  detect_encoding: true
-  repo: backpack/backpack.github.io
-  target-branch: master
-  verbose: true
+  - provider: pages
+    skip_cleanup: true
+    github_token: $DEPLOY_TOKEN
+    on:
+      branch: master
+    local_dir: dist-sassdoc
+    skip_cleanup: true
+    detect_encoding: true
+    repo: backpack/sassdoc
+    target-branch: master
+    verbose: true
+  - provider: pages
+    skip_cleanup: true
+    github_token: $DEPLOY_TOKEN
+    on:
+      branch: master
+    local_dir: dist-storybook
+    skip_cleanup: true
+    detect_encoding: true
+    repo: backpack/storybook
+    target-branch: master
+    verbose: true
 
 notifications:
   slack:

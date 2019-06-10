@@ -60,13 +60,14 @@ const BpkCheckbox = props => {
         className={getClassName('bpk-checkbox__input')}
         name={name}
         disabled={disabled}
+        aria-label={label}
         {...rest}
       />
       <Tick
         className={getClassName('bpk-checkbox__icon')}
         style={{ width: spacingSm, height: spacingSm }}
       />
-      <span className={labelClassNames.join(' ')}>
+      <span className={labelClassNames.join(' ')} aria-hidden="true">
         {label}
         {required && (
           <span className={getClassName('bpk-checkbox__asterisk')}>*</span>

@@ -39,10 +39,9 @@ const createStyle = (theme, themeAttributes) => {
   const missingThemeAttributes = [];
   flattenedThemeAttributes.forEach(attribute => {
     if (theme[attribute]) {
-      const cssName = attribute.replace(
-        /([A-Z])/g,
-        variable => `-${variable.toLowerCase()}`,
-      );
+      const cssName = attribute
+        .replace(/([A-Z])/g, variable => `-${variable.toLowerCase()}`)
+        .replace(/([0-9])/, variable => `-${variable.toLowerCase()}`);
       const value = theme[attribute];
       style[`--bpk-${cssName}`] = value;
     } else {

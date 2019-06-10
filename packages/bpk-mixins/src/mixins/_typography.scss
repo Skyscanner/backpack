@@ -567,6 +567,7 @@
   table-layout: fixed;
 
   @include bpk-border-sm($bpk-color-gray-100, '');
+  @include bpk-border-sm(var(--bpk-color-gray-100, $bpk-color-gray-100), '');
 }
 
 /// Alternate table style.
@@ -580,6 +581,7 @@
 
 @mixin bpk-table--alternate {
   @include bpk-border-sm($bpk-color-gray-300, '');
+  @include bpk-border-sm(var(--bpk-color-gray-300, $bpk-color-gray-300), '');
 }
 
 /// Table cell.
@@ -604,9 +606,10 @@
 ///   }
 
 @mixin bpk-table__cell--head {
-  background-color: $bpk-color-gray-50;
   font-weight: normal;
   text-align: left;
+
+  @include bpk-apply-gray-50-to(background-color);
 
   @include bpk-rtl {
     text-align: right;
@@ -644,14 +647,14 @@
 @mixin bpk-code {
   display: inline;
   padding: 0 $bpk-spacing-xs;
-  background-color: $bpk-color-gray-50;
-  color: $bpk-color-gray-700;
   text-align: left;
   text-shadow: 0 $bpk-one-pixel-rem $bpk-color-white;
   white-space: nowrap;
   vertical-align: bottom;
 
   @include bpk-border-radius-xs;
+  @include bpk-apply-gray-50-to(background-color);
+  @include bpk-apply-gray-700-to(color);
 
   @include bpk-rtl {
     direction: ltr;
@@ -705,8 +708,8 @@
 @mixin bpk-code__pre {
   margin: 0 0 $bpk-spacing-sm;
   padding: $bpk-spacing-base;
-  background-color: $bpk-color-gray-50;
 
+  @include bpk-apply-gray-50-to(background-color);
   @include bpk-border-radius-xs;
 }
 
@@ -722,6 +725,7 @@
   background-color: transparent;
 
   @include bpk-border-sm($bpk-color-gray-300);
+  @include bpk-border-sm(var(--bpk-color-gray-300, $bpk-color-gray-300));
 }
 
 /// Blockquote.
@@ -734,8 +738,9 @@
 @mixin bpk-blockquote {
   margin: 0 0 $bpk-spacing-sm 0;
   padding: $bpk-spacing-xs $bpk-spacing-xs $bpk-spacing-xs $bpk-spacing-md;
-  color: $bpk-color-gray-500;
 
+  @include bpk-apply-gray-500-to(color);
+  @include bpk-apply-gray-50-to(background-color);
   @include bpk-border-left-lg($bpk-color-blue-500);
   @include bpk-border-left-lg(var(--bpk-blockquote-bar-color, $bpk-color-blue-500));
 
@@ -774,6 +779,7 @@
 ///     @include bpk-content-container();
 ///   }
 
+/* stylelint-disable selector-max-type */
 @mixin bpk-content-container {
   h1,
   h2,
@@ -782,6 +788,7 @@
     @include bpk-content-heading;
   }
 }
+/* stylelint-enable */
 
 /// Content container for bare html. Modifies the bpk-content-container mixin.
 ///
@@ -794,7 +801,7 @@
 ///   }
 
 @mixin bpk-content-container--bare-html {
-  h1 {
+  h1 { /* stylelint-disable-line selector-max-type */
     margin-top: 0;
     margin-bottom: $bpk-spacing-sm;
 
@@ -805,7 +812,7 @@
     }
   }
 
-  h2 {
+  h2 { /* stylelint-disable-line selector-max-type */
     margin-top: 0;
     margin-bottom: $bpk-spacing-sm;
 
@@ -816,7 +823,7 @@
     }
   }
 
-  h3 {
+  h3 { /* stylelint-disable-line selector-max-type */
     margin-top: 0;
     margin-bottom: $bpk-spacing-sm;
 
@@ -828,7 +835,7 @@
     }
   }
 
-  h4 {
+  h4 { /* stylelint-disable-line selector-max-type */
     margin-top: 0;
     margin-bottom: $bpk-spacing-sm;
 
@@ -840,7 +847,7 @@
     }
   }
 
-  h5 {
+  h5 { /* stylelint-disable-line selector-max-type */
     margin-top: 0;
     margin-bottom: $bpk-spacing-sm;
 
@@ -852,7 +859,7 @@
     }
   }
 
-  h6 {
+  h6 { /* stylelint-disable-line selector-max-type */
     margin-top: 0;
     margin-bottom: $bpk-spacing-sm;
 
@@ -864,17 +871,18 @@
     }
   }
 
-  a {
+  a { /* stylelint-disable-line selector-max-type */
     @include bpk-link;
   }
 
-  p {
+  p { /* stylelint-disable-line selector-max-type */
     margin-top: 0;
     margin-bottom: $bpk-spacing-sm;
 
     @include bpk-text-base;
   }
 
+  /* stylelint-disable selector-max-type */
   ul,
   ol {
     @include bpk-list;
@@ -918,6 +926,7 @@
     @include bpk-blockquote;
   }
 }
+/* stylelint-enable */
 
 /// Content container for bare html with alternate style
 ///
@@ -932,14 +941,14 @@
 ///   }
 
 @mixin bpk-content-container--bare-html-alternate {
-  code {
+  code { /* stylelint-disable-line selector-max-type */
     @include bpk-code--alternate;
   }
 
   pre {
     @include bpk-code__pre--alternate;
 
-    > code {
+    > code { /* stylelint-disable-line selector-max-type */
       @include bpk-code--block;
     }
   }
@@ -947,7 +956,7 @@
   table {
     @include bpk-table--alternate;
 
-    th {
+    th { /* stylelint-disable-line selector-max-type */
       @include bpk-table__cell--head-alternate;
     }
   }

@@ -20,6 +20,7 @@
 
 import BpkButton from './src/BpkButton';
 import {
+  buttonThemeAttributes,
   primaryThemeAttributes,
   secondaryThemeAttributes,
   featuredThemeAttributes,
@@ -27,6 +28,7 @@ import {
 } from './src/themeAttributes';
 
 export {
+  buttonThemeAttributes,
   primaryThemeAttributes,
   secondaryThemeAttributes,
   featuredThemeAttributes,
