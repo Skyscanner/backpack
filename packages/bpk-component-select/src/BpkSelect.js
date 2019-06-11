@@ -39,7 +39,7 @@ export type Props = {
   large: boolean,
   valid: ?boolean,
   wrapperClassName: ?string,
-  flagOnly: ?boolean,
+  imageOnly: ?boolean,
 };
 
 const BpkSelect = (props: Props) => {
@@ -54,7 +54,7 @@ const BpkSelect = (props: Props) => {
     large,
     valid,
     wrapperClassName,
-    flagOnly,
+    imageOnly,
     ...rest
   } = props;
 
@@ -74,7 +74,7 @@ const BpkSelect = (props: Props) => {
         image && 'bpk-select--with-image',
         image && large && 'bpk-select--with-image-large',
         isInvalid && 'bpk-select--invalid',
-        flagOnly && 'bpk-select--flag-only',
+        imageOnly && 'bpk-select--image-only',
         className,
       )}
       disabled={disabled}
@@ -115,7 +115,7 @@ BpkSelect.propTypes = {
   large: PropTypes.bool,
   valid: PropTypes.bool,
   wrapperClassName: PropTypes.string,
-  flagOnly: PropTypes.bool,
+  imageOnly: PropTypes.bool,
 };
 
 BpkSelect.defaultProps = {
@@ -129,7 +129,7 @@ BpkSelect.defaultProps = {
   large: false,
   valid: null,
   wrapperClassName: null,
-  flagOnly: false,
+  imageOnly: false,
 };
 
 export default BpkSelect;

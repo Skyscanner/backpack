@@ -350,7 +350,7 @@ exports[`BpkPhoneInput should render correctly with a the flag only attribute 1`
   </label>
   <select
     aria-invalid={false}
-    className="bpk-select bpk-select--flag-only bpk-phone-input__dialing-code dialing-code"
+    className="bpk-select bpk-select--image-only bpk-phone-input__dialing-code dialing-code"
     disabled={false}
     id="dialing-code"
     label="Dialing code"
@@ -383,7 +383,7 @@ exports[`BpkPhoneInput should render correctly with a the flag only attribute 1`
     name="Telephone input"
     onChange={[Function]}
     type="tel"
-    value="+44 1234"
+    value="1234"
   />
 </span>
 `;
