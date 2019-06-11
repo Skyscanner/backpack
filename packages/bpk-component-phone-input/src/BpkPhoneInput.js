@@ -105,10 +105,14 @@ const BpkPhoneInput = (props: Props) => {
 
   if (countryCodeMask) {
     if (value.startsWith('+')) {
-      if (value.startsWith(`+${dialingCode}`)) {
+      if (value.startsWith(`+${dialingCode} `)) {
         phoneDisplayValue = value;
       } else {
-        phoneDisplayValue = `+${dialingCode} ${value.split(' ')[1]}`;
+        const phoneValue = value.split(' ')[1];
+
+        phoneDisplayValue = phoneValue
+          ? `+${dialingCode} ${phoneValue}`
+          : `+${dialingCode} `;
       }
     } else {
       phoneDisplayValue = `+${dialingCode} ${value}`;
