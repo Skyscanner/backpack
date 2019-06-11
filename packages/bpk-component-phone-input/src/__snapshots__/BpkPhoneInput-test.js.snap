@@ -356,6 +356,11 @@ exports[`BpkPhoneInput should render correctly with a the flag only attribute 1`
     label="Dialing code"
     name="Dialing code"
     onChange={[Function]}
+    style={
+      Object {
+        "width": "118px",
+      }
+    }
     value="44"
   >
     <option
