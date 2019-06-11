@@ -60,6 +60,20 @@ type CommonProps = {
   valid: ?boolean,
 };
 
+// This function get the size value of the dialingCode to resize the field correctly
+const widthForDialingCode = (large, dialingCodes, selectedDialingCode) => {
+  // This sizeConstant is an average character size for each size of field
+  const averageLetterSize = large ? 8 : 6;
+  const foundDialingCode = dialingCodes.find(
+    e => e.code === selectedDialingCode,
+  );
+  if (foundDialingCode && foundDialingCode.description) {
+    // Here we calculate the width for the field (N.B 100 is an assumed padding value)
+    return averageLetterSize * foundDialingCode.description.length + 100;
+  }
+  return averageLetterSize + 100;
+};
+
 const BpkPhoneInput = (props: Props) => {
   const {
     id,
@@ -91,8 +105,11 @@ const BpkPhoneInput = (props: Props) => {
 
   if (countryCodeMask) {
     if (value.startsWith('+')) {
-      if (value.startsWith(`+${dialingCode}`)) phoneDisplayValue = value;
-      else phoneDisplayValue = `+${dialingCode} ${value.split(' ')[1]}`;
+      if (value.startsWith(`+${dialingCode}`)) {
+        phoneDisplayValue = value;
+      } else {
+        phoneDisplayValue = `+${dialingCode} ${value.split(' ')[1]}`;
+      }
     } else {
       phoneDisplayValue = `+${dialingCode} ${value}`;
     }
@@ -125,6 +142,17 @@ const BpkPhoneInput = (props: Props) => {
         value={dialingCode}
         onChange={onDialingCodeChange}
         imageOnly={flagOnly}
+        style={
+          !flagOnly
+            ? {
+                width: `${widthForDialingCode(
+                  large,
+                  dialingCodes,
+                  dialingCode,
+                )}px`,
+              }
+            : null
+        }
       >
         {dialingCodes.map(({ code, description, ...extraDialingProps }) => (
           <option key={code} value={code} {...extraDialingProps}>

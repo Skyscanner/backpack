@@ -22,7 +22,7 @@
   @include bpk-select;
 
   &--image-only {
-    width: 1rem;
+    width: $bpk-one-pixel-rem;
   }
 
   &--large {
