@@ -2,6 +2,12 @@
 
 [Unreleased changes](./UNRELEASED.md).
 
+# 2019-06-10 - Fixed `BpkPhoneInput` to allow field to dynamically resize.
+
+**Changed:**
+- bpk-component-phone-input: 2.0.24 => 3.0.0
+  - Updated the component to resize based on select input.
+
 # 2019-06-06 Allow any `BpkIcon` to be shown in banner alerts, and fix for infinite-scroll
 
 **Fixed:**
