@@ -5,6 +5,7 @@ exports[`BpkRadio should render correctly 1`] = `
   className="bpk-radio"
 >
   <input
+    aria-label="Direct"
     className="bpk-radio__input"
     disabled={false}
     name="radio"
@@ -13,7 +14,11 @@ exports[`BpkRadio should render correctly 1`] = `
   <div
     className="bpk-radio__circle"
   />
-  Direct
+  <span
+    aria-hidden="true"
+  >
+    Direct
+  </span>
 </label>
 `;
 
@@ -22,6 +27,7 @@ exports[`BpkRadio should render correctly with checked attribute 1`] = `
   className="bpk-radio"
 >
   <input
+    aria-label="Direct"
     checked={true}
     className="bpk-radio__input"
     disabled={false}
@@ -31,7 +37,11 @@ exports[`BpkRadio should render correctly with checked attribute 1`] = `
   <div
     className="bpk-radio__circle"
   />
-  Direct
+  <span
+    aria-hidden="true"
+  >
+    Direct
+  </span>
 </label>
 `;
 
@@ -40,6 +50,7 @@ exports[`BpkRadio should render correctly with disabled attribute 1`] = `
   className="bpk-radio bpk-radio--disabled"
 >
   <input
+    aria-label="Direct"
     className="bpk-radio__input"
     disabled={true}
     name="radio"
@@ -48,7 +59,11 @@ exports[`BpkRadio should render correctly with disabled attribute 1`] = `
   <div
     className="bpk-radio__circle"
   />
-  Direct
+  <span
+    aria-hidden="true"
+  >
+    Direct
+  </span>
 </label>
 `;
 
@@ -57,6 +72,7 @@ exports[`BpkRadio should render correctly with id attribute 1`] = `
   className="bpk-radio"
 >
   <input
+    aria-label="Direct"
     className="bpk-radio__input"
     disabled={false}
     id="radio"
@@ -66,7 +82,11 @@ exports[`BpkRadio should render correctly with id attribute 1`] = `
   <div
     className="bpk-radio__circle"
   />
-  Direct
+  <span
+    aria-hidden="true"
+  >
+    Direct
+  </span>
 </label>
 `;
 
@@ -75,6 +95,7 @@ exports[`BpkRadio should render correctly with value attribute 1`] = `
   className="bpk-radio"
 >
   <input
+    aria-label="Direct"
     className="bpk-radio__input"
     disabled={false}
     name="radio"
@@ -84,7 +105,11 @@ exports[`BpkRadio should render correctly with value attribute 1`] = `
   <div
     className="bpk-radio__circle"
   />
-  Direct
+  <span
+    aria-hidden="true"
+  >
+    Direct
+  </span>
 </label>
 `;
 
@@ -93,6 +118,7 @@ exports[`BpkRadio should render correctly with white attribute 1`] = `
   className="bpk-radio bpk-radio--white"
 >
   <input
+    aria-label="Direct"
     className="bpk-radio__input"
     disabled={false}
     name="radio"
@@ -101,6 +127,10 @@ exports[`BpkRadio should render correctly with white attribute 1`] = `
   <div
     className="bpk-radio__circle"
   />
-  Direct
+  <span
+    aria-hidden="true"
+  >
+    Direct
+  </span>
 </label>
 `;
