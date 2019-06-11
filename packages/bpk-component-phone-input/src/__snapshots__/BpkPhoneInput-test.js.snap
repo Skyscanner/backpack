@@ -350,17 +350,13 @@ exports[`BpkPhoneInput should render correctly with a the flag only attribute 1`
   </label>
   <select
     aria-invalid={false}
-    className="bpk-select bpk-select--image-only bpk-phone-input__dialing-code dialing-code"
+    className="bpk-select bpk-phone-input__dialing-code dialing-code"
     disabled={false}
     id="dialing-code"
     label="Dialing code"
     name="Dialing code"
     onChange={[Function]}
-    style={
-      Object {
-        "width": "118px",
-      }
-    }
+    style={null}
     value="44"
   >
     <option
