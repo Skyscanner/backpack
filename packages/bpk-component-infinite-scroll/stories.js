@@ -163,4 +163,31 @@ storiesOf('bpk-component-infinite-scroll', module)
         <InfiniteList dataSource={dataSource} />
       </div>
     );
+  })
+  .add('Force update data - Empty array and see more after', () => {
+    const dataSource = new ArrayDataSource([]);
+    return (
+      <div>
+        <BpkButton
+          onClick={() => {
+            const newElements = [];
+            const k = Math.floor(Math.random() * 10);
+            for (let i = 0; i < 100; i = 1) {
+              newElements.push(`Element ${k} ${i}`);
+            }
+            dataSource.updateData(newElements);
+          }}
+        >
+          Update items
+        </BpkButton>
+        <InfiniteList
+          dataSource={dataSource}
+          seeMoreAfter={0}
+          elementsPerScroll={5}
+          renderSeeMoreComponent={({ onSeeMoreClick }) => (
+            <BpkButton onClick={onSeeMoreClick}>See more</BpkButton>
+          )}
+        />
+      </div>
+    );
   });

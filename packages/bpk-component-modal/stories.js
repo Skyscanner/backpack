@@ -96,6 +96,8 @@ const content = [
 class ModalContainer extends Component<
   {
     children: Node,
+    buttonLabel: ?string,
+    wrapperProps: ?Object,
   },
   {
     isOpen: boolean,
@@ -103,6 +105,13 @@ class ModalContainer extends Component<
 > {
   static propTypes = {
     children: PropTypes.node.isRequired,
+    buttonLabel: PropTypes.string,
+    wrapperProps: PropTypes.object, // eslint-disable-line react/forbid-prop-types
+  };
+
+  static defaultProps = {
+    buttonLabel: null,
+    wrapperProps: null,
   };
 
   constructor() {
@@ -126,12 +135,14 @@ class ModalContainer extends Component<
   };
 
   render() {
-    const { children, ...rest } = this.props;
+    const { children, wrapperProps, buttonLabel, ...rest } = this.props;
 
     return (
-      <div id="modal-container">
+      <div id="modal-container" {...wrapperProps}>
         <div id="pagewrap">
-          <BpkButton onClick={this.onOpen}>Open modal</BpkButton>
+          <BpkButton onClick={this.onOpen}>
+            {buttonLabel || 'Open modal'}
+          </BpkButton>
           <BpkModal
             id="my-modal"
             className="my-classname"
@@ -188,6 +199,22 @@ storiesOf('bpk-component-modal', module)
   .add('Full screen overflowing', () => (
     <ModalContainer title="Modal title" closeLabel="Close modal" fullScreen>
       {React.Children.toArray(content)}
+    </ModalContainer>
+  ))
+  .add('Nested', () => (
+    <ModalContainer title="Modal title" closeLabel="Close modal" fullScreen>
+      This is a full-screen modal. You can put anything you want in here,
+      including other modals!
+      <ModalContainer
+        title="Modal title"
+        closeLabel="Close modal"
+        wrapperProps={{ id: 'inner-modal-container' }}
+        buttonLabel="Open another modal from this modal"
+        id="inner-modal"
+        renderTarget={() => document.getElementById('inner-modal-container')}
+      >
+        This is a default modal. You can put anything you want in here.
+      </ModalContainer>
     </ModalContainer>
   ))
   .add('No header', () => (

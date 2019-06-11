@@ -2,6 +2,78 @@
 
 [Unreleased changes](./UNRELEASED.md).
 
+# 2019-06-10 - Fixed `BpkPhoneInput` to allow field to dynamically resize.
+
+**Changed:**
+- bpk-component-phone-input: 2.0.24 => 3.0.0
+  - Updated the component to resize based on select input.
+
+# 2019-06-06 Allow any `BpkIcon` to be shown in banner alerts, and fix for infinite-scroll
+
+**Fixed:**
+
+- bpk-component-infinite-scroll:
+  - Fixed updating data when array data source is initialised empty.
+
+**Added:**
+
+- bpk-component-banner-alert:
+  - New `icon` prop for showing a custom banner icon.
+
+# 2019-06-05 Fixed stroke width of icons
+
+**Added**
+- bpk-component-icon: 3.30.3 => 3.30.4
+- bpk-mixins: 17.23.3 => 17.23.4
+- bpk-svgs: 6.7.3 => 6.7.4
+  - Fixed stroke width of `heart`, `heart--outline`, `world--emea`, `world--apac` and `world--amer`.
+
+# 2019-06-05 New smiley face icons
+
+**Added**
+- bpk-component-icon: 3.30.2 => 3.30.3
+- bpk-mixins: 17.23.2 => 17.23.3
+- bpk-svgs: 6.7.2 => 6.7.3
+  - Added new smiley icons `face--blank`, `face--happy`, `face--sad`.
+
+# 2019-06-04 Fix thickness of heart outline icon
+
+**Fixed:**
+- bpk-component-icon: 3.30.1 => 3.30.2
+- bpk-mixins: 17.23.1 => 17.23.2
+- bpk-svgs: 6.7.1 => 6.7.2
+  - Fixed border of `heart--outline` icon.
+
+# 2019-06-03 Changed date-picker input to be `readOnly`
+
+**Fixed:**
+
+- bpk-component-datepicker: 9.0.9 => 9.0.10
+  - Add `readOnly` to input field by default.
+
+# 2019-05-31 Added trend icons
+
+**Added:**
+
+- bpk-component-icon: 3.29.1 => 3.30.0
+- bpk-svgs: 6.6.1 => 6.7.0
+- bpk-mixins: 17.22.1 => 17.23.0
+  - Added `trend--steady`, `trend--down` and `trend--will-rise` icons
+
+# 2019-05-30 Radio button improvements for screen readers
+
+**Fixed:**
+
+- bpk-component-radio:
+  - Fixed an issue that caused screen readers to select and read the label twice.
+
+# 2019-05-29 Checkbox improvements for screen readers
+
+**Fixed:**
+
+- bpk-component-checkbox: 1.4.93 => 1.4.94
+  - Fixed issue that caused screen-readers to read and select checkbox labels twice.
+
 # 2019-05-28 Reverted code-splitting changes across components
 
 **Fixed:**

@@ -1,6 +1,6 @@
 {
   "name": "bpk-svgs",
-  "version": "6.6.1",
+  "version": "6.7.6",
   "description": "Backpack's library of SVG's.",
   "main": "_index.scss",
   "scripts": {
@@ -14,5 +14,6 @@
   "license": "Apache-2.0",
   "devDependencies": {
     "bpk-tokens": "^27.6.2"
-  }
+  },
+  "gitHead": "3244054e73b5e966c2ca795f496d8e29b6a5fff4"
 }
