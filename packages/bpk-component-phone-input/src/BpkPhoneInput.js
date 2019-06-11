@@ -113,7 +113,9 @@ const BpkPhoneInput = (props: Props) => {
     } else {
       phoneDisplayValue = `+${dialingCode} ${value}`;
     }
-  } else phoneDisplayValue = value;
+  } else {
+    phoneDisplayValue = value;
+  }
 
   return (
     <span
