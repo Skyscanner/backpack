@@ -51,6 +51,7 @@ export type Props = {
   valid: ?boolean,
   wrapperProps: { [string]: any },
   flagOnly: ?boolean,
+  countryCodeMask: ?boolean,
 };
 
 type CommonProps = {
@@ -76,6 +77,7 @@ const BpkPhoneInput = (props: Props) => {
     dialingCodeProps,
     wrapperProps,
     flagOnly,
+    countryCodeMask,
     ...rest
   } = props;
 
@@ -87,7 +89,7 @@ const BpkPhoneInput = (props: Props) => {
 
   let phoneDisplayValue;
 
-  if (flagOnly) {
+  if (countryCodeMask) {
     if (value.startsWith('+')) {
       if (value.startsWith(`+${dialingCode}`)) phoneDisplayValue = value;
       else phoneDisplayValue = `+${dialingCode} ${value.split(' ')[1]}`;
@@ -122,7 +124,7 @@ const BpkPhoneInput = (props: Props) => {
         wrapperClassName={getClassName(dialingCodeProps.wrapperClassName)}
         value={dialingCode}
         onChange={onDialingCodeChange}
-        flagOnly={flagOnly}
+        imageOnly={flagOnly}
       >
         {dialingCodes.map(({ code, description, ...extraDialingProps }) => (
           <option key={code} value={code} {...extraDialingProps}>
@@ -173,6 +175,7 @@ BpkPhoneInput.propTypes = {
   valid: PropTypes.bool,
   wrapperProps: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   flagOnly: PropTypes.bool,
+  countryCodeMask: PropTypes.bool,
 };
 
 BpkPhoneInput.defaultProps = {
@@ -182,6 +185,7 @@ BpkPhoneInput.defaultProps = {
   valid: null,
   wrapperProps: {},
   flagOnly: false,
+  countryCodeMask: false,
 };
 
 export default BpkPhoneInput;
