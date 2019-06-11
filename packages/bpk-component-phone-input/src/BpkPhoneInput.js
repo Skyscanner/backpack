@@ -105,8 +105,11 @@ const BpkPhoneInput = (props: Props) => {
 
   if (countryCodeMask) {
     if (value.startsWith('+')) {
-      if (value.startsWith(`+${dialingCode}`)) phoneDisplayValue = value;
-      else phoneDisplayValue = `+${dialingCode} ${value.split(' ')[1]}`;
+      if (value.startsWith(`+${dialingCode}`)) {
+        phoneDisplayValue = value;
+      } else {
+        phoneDisplayValue = `+${dialingCode} ${value.split(' ')[1]}`;
+      }
     } else {
       phoneDisplayValue = `+${dialingCode} ${value}`;
     }
@@ -139,9 +142,17 @@ const BpkPhoneInput = (props: Props) => {
         value={dialingCode}
         onChange={onDialingCodeChange}
         imageOnly={flagOnly}
-        style={{
-          width: `${widthForDialingCode(large, dialingCodes, dialingCode)}px`,
-        }}
+        style={
+          !flagOnly
+            ? {
+                width: `${widthForDialingCode(
+                  large,
+                  dialingCodes,
+                  dialingCode,
+                )}px`,
+              }
+            : null
+        }
       >
         {dialingCodes.map(({ code, description, ...extraDialingProps }) => (
           <option key={code} value={code} {...extraDialingProps}>
