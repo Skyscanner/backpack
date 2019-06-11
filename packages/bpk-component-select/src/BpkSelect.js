@@ -74,7 +74,7 @@ const BpkSelect = (props: Props) => {
         image && 'bpk-select--with-image',
         image && large && 'bpk-select--with-image-large',
         isInvalid && 'bpk-select--invalid',
-        imageOnly && 'bpk-select--image-only',
+        image && imageOnly && 'bpk-select--image-only',
         className,
       )}
       disabled={disabled}
