@@ -2,6 +2,11 @@
 
 > Place your changes below this line.
 
+**Changed:**
+- bpk-component-phone-input: 3.0.0 => 3.1.0
+- bpk-component-select: 2.2.71 => 2.3.0
+  - Rollback the changes made for the phone input
+
 ## How to write a good changelog entry
 
 1. Add 'Breaking', 'Added' or 'Fixed' in bold depending on if the change will be major, minor or patch according to [semver](semver.org).
