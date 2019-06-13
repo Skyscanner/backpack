@@ -50,8 +50,6 @@ export type Props = {
   large: boolean,
   valid: ?boolean,
   wrapperProps: { [string]: any },
-  flagOnly: ?boolean,
-  countryCodeMask: ?boolean,
 };
 
 type CommonProps = {
@@ -90,8 +88,6 @@ const BpkPhoneInput = (props: Props) => {
     dialingCodes,
     dialingCodeProps,
     wrapperProps,
-    flagOnly,
-    countryCodeMask,
     ...rest
   } = props;
 
@@ -100,26 +96,6 @@ const BpkPhoneInput = (props: Props) => {
     large: !!large,
     disabled: !!disabled,
   };
-
-  let phoneDisplayValue;
-
-  if (countryCodeMask) {
-    if (value.startsWith('+')) {
-      if (value.startsWith(`+${dialingCode} `)) {
-        phoneDisplayValue = value;
-      } else {
-        const phoneValue = value.split(' ')[1];
-
-        phoneDisplayValue = phoneValue
-          ? `+${dialingCode} ${phoneValue}`
-          : `+${dialingCode} `;
-      }
-    } else {
-      phoneDisplayValue = `+${dialingCode} ${value}`;
-    }
-  } else {
-    phoneDisplayValue = value;
-  }
 
   return (
     <span
@@ -147,18 +123,9 @@ const BpkPhoneInput = (props: Props) => {
         wrapperClassName={getClassName(dialingCodeProps.wrapperClassName)}
         value={dialingCode}
         onChange={onDialingCodeChange}
-        imageOnly={flagOnly}
-        style={
-          !flagOnly
-            ? {
-                width: `${widthForDialingCode(
-                  large,
-                  dialingCodes,
-                  dialingCode,
-                )}px`,
-              }
-            : null
-        }
+        style={{
+          width: `${widthForDialingCode(large, dialingCodes, dialingCode)}px`,
+        }}
       >
         {dialingCodes.map(({ code, description, ...extraDialingProps }) => (
           <option key={code} value={code} {...extraDialingProps}>
@@ -178,8 +145,8 @@ const BpkPhoneInput = (props: Props) => {
         {...rest}
         id={id}
         name={name}
-        value={phoneDisplayValue}
-        type={INPUT_TYPES.tel}
+        value={value}
+        type={INPUT_TYPES.number}
         onChange={onChange}
         className={getClassName('bpk-phone-input__phone-number', className)}
       />
@@ -208,8 +175,6 @@ BpkPhoneInput.propTypes = {
   large: PropTypes.bool,
   valid: PropTypes.bool,
   wrapperProps: PropTypes.object, // eslint-disable-line react/forbid-prop-types
-  flagOnly: PropTypes.bool,
-  countryCodeMask: PropTypes.bool,
 };
 
 BpkPhoneInput.defaultProps = {
@@ -218,8 +183,6 @@ BpkPhoneInput.defaultProps = {
   large: false,
   valid: null,
   wrapperProps: {},
-  flagOnly: false,
-  countryCodeMask: false,
 };
 
 export default BpkPhoneInput;

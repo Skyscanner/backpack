@@ -47,8 +47,6 @@ type Props = {
   disabled: boolean,
   required: ?boolean,
   useLongLabels: boolean,
-  flagOnly: ?boolean,
-  countryCodeMask: ?boolean,
 };
 
 class StoryContainer extends Component<
@@ -63,8 +61,6 @@ class StoryContainer extends Component<
     disabled: false,
     required: false,
     useLongLabels: false,
-    flagOnly: false,
-    countryCodeMask: false,
   };
 
   constructor(props: Props) {
@@ -89,8 +85,6 @@ class StoryContainer extends Component<
       disabled,
       required,
       useLongLabels,
-      flagOnly,
-      countryCodeMask,
     } = this.props;
     const { value, dialingCode } = this.state;
 
@@ -134,8 +128,6 @@ class StoryContainer extends Component<
             'aria-label': 'Dialing code',
             image: getFlag(dialingCode),
           }}
-          flagOnly={flagOnly}
-          countryCodeMask={countryCodeMask}
         />
       </BpkFieldSet>
     );
@@ -154,10 +146,4 @@ storiesOf('bpk-component-phone-input', module)
   ))
   .add('Disabled', () => <StoryContainer disabled />)
   .add('Required', () => <StoryContainer required />)
-  .add('Double length labels', () => <StoryContainer useLongLabels />)
-  .add('Flag only displayed in the country code selector', () => (
-    <StoryContainer flagOnly />
-  ))
-  .add('Country code input mask on phone input', () => (
-    <StoryContainer countryCodeMask />
-  ));
+  .add('Double length labels', () => <StoryContainer useLongLabels />);
