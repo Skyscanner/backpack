@@ -21,6 +21,10 @@
 .bpk-select {
   @include bpk-select;
 
+  &--image-only {
+    width: $bpk-one-pixel-rem;
+  }
+
   &--large {
     @include bpk-select--large;
   }
