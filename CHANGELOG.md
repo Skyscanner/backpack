@@ -2,6 +2,13 @@
 
 [Unreleased changes](./UNRELEASED.md).
 
+# 2019-06-13 - `BpkPhoneInput` removed flag only and input code display
+
+**Fixed:**
+- bpk-component-phone-input: 3.1.0 => 3.1.1
+- bpk-component-select: 2.3.0 => 2.3.1
+  - Rollback the changes made for the phone input and removed new props
+
 # 2019-06-11 - `BpkPhoneInput` flag only and input code display
 
 **Changed:**
