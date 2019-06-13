@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-drawer",
-  "version": "1.2.90",
+  "version": "1.2.91-alpha.9+a2924f2f3",
   "description": "Backpack drawer component.",
   "main": "index.js",
   "repository": {
@@ -13,19 +13,19 @@
     "react": "^15.4.0 || ^16.0.0"
   },
   "dependencies": {
-    "bpk-component-close-button": "^1.0.136",
-    "bpk-component-icon": "^3.30.6",
-    "bpk-component-link": "^1.2.70",
-    "bpk-mixins": "^17.23.6",
+    "bpk-component-close-button": "^1.0.137-alpha.9+a2924f2f3",
+    "bpk-component-icon": "^3.30.7-alpha.9+a2924f2f3",
+    "bpk-component-link": "^1.2.71-alpha.9+a2924f2f3",
+    "bpk-mixins": "^17.23.7-alpha.9+a2924f2f3",
     "bpk-react-utils": "^2.7.8",
-    "bpk-scrim-utils": "^3.2.68",
+    "bpk-scrim-utils": "^3.2.69-alpha.9+a2924f2f3",
     "bpk-tokens": "^27.6.2",
     "prop-types": "^15.6.2",
     "react-transition-group": "^2.5.3"
   },
   "devDependencies": {
-    "bpk-component-button": "^2.3.11",
-    "bpk-component-text": "^1.0.130"
+    "bpk-component-button": "^2.3.12-alpha.9+a2924f2f3",
+    "bpk-component-text": "^1.0.131-alpha.9+a2924f2f3"
   },
-  "gitHead": "3244054e73b5e966c2ca795f496d8e29b6a5fff4"
+  "gitHead": "a2924f2f390c01bb7b3ac1b3b77a3050e3d9253b"
 }
