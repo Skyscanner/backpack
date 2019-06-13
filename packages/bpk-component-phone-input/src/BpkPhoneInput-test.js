@@ -101,6 +101,13 @@ describe('BpkPhoneInput', () => {
     expect(tree).toMatchSnapshot();
   });
 
+  it('should render correctly with a the flag only attribute', () => {
+    const tree = renderer
+      .create(<BpkPhoneInput {...defaultProps} flagOnly />)
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
   it('should call "onChange" when phone number changes', () => {
     const onChange = jest.fn();
     const tree = shallow(
