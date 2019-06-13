@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-select",
-  "version": "2.3.0",
+  "version": "2.3.1",
   "description": "Backpack select component.",
   "main": "index.js",
   "repository": {
