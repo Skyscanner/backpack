@@ -36,12 +36,32 @@
 /******/ 	// define getter function for harmony exports
 /******/ 	__webpack_require__.d = function(exports, name, getter) {
 /******/ 		if(!__webpack_require__.o(exports, name)) {
-/******/ 			Object.defineProperty(exports, name, {
-/******/ 				configurable: false,
-/******/ 				enumerable: true,
-/******/ 				get: getter
-/******/ 			});
+/******/ 			Object.defineProperty(exports, name, { enumerable: true, get: getter });
 /******/ 		}
+/******/ 	};
+/******/
+/******/ 	// define __esModule on exports
+/******/ 	__webpack_require__.r = function(exports) {
+/******/ 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 		}
+/******/ 		Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 	};
+/******/
+/******/ 	// create a fake namespace object
+/******/ 	// mode & 1: value is a module id, require it
+/******/ 	// mode & 2: merge all properties of value into the ns
+/******/ 	// mode & 4: return value when already ns object
+/******/ 	// mode & 8|1: behave like require
+/******/ 	__webpack_require__.t = function(value, mode) {
+/******/ 		if(mode & 1) value = __webpack_require__(value);
+/******/ 		if(mode & 8) return value;
+/******/ 		if((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;
+/******/ 		var ns = Object.create(null);
+/******/ 		__webpack_require__.r(ns);
+/******/ 		Object.defineProperty(ns, 'default', { enumerable: true, value: value });
+/******/ 		if(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));
+/******/ 		return ns;
 /******/ 	};
 /******/
 /******/ 	// getDefaultExport function for compatibility with non-harmony modules
@@ -59,58 +79,34 @@
 /******/ 	// __webpack_public_path__
 /******/ 	__webpack_require__.p = "";
 /******/
+/******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ 	return __webpack_require__(__webpack_require__.s = "./index.js");
 /******/ })
 /************************************************************************/
-/******/ ([
-/* 0 */
+/******/ ({
+
+/***/ "./index.js":
+/*!******************!*\
+  !*** ./index.js ***!
+  \******************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-
-
-__webpack_require__(1);
-
-(function () {
-  if (typeof document === 'undefined') {
-    return;
-  }
-
-  var classNames = [];
-
-  // touch support
-  classNames.push('ontouchstart' in window || window.DocumentTouch && document instanceof DocumentTouch // eslint-disable-line
-  ? 'touch-support' : 'no-touch-support');
-
-  // add more feature tests here...
-
-  document.documentElement.className += ' ' + classNames.map(function (className) {
-    return 'bpk-' + className;
-  }).join(' ');
-})(); /*
-       * Backpack - Skyscanner's Design System
-       *
-       * Copyright 2016-2019 Skyscanner Ltd
-       *
-       * Licensed under the Apache License, Version 2.0 (the "License");
-       * you may not use this file except in compliance with the License.
-       * You may obtain a copy of the License at
-       *
-       *   http://www.apache.org/licenses/LICENSE-2.0
-       *
-       * Unless required by applicable law or agreed to in writing, software
-       * distributed under the License is distributed on an "AS IS" BASIS,
-       * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-       * See the License for the specific language governing permissions and
-       * limitations under the License.
-       */
+eval("\n\n__webpack_require__(/*! ./index.scss */ \"./index.scss\");\n\n(function () {\n  if (typeof document === 'undefined') {\n    return;\n  }\n\n  var classNames = [];\n\n  // touch support\n  classNames.push('ontouchstart' in window || window.DocumentTouch && document instanceof DocumentTouch // eslint-disable-line\n  ? 'touch-support' : 'no-touch-support');\n\n  // add more feature tests here...\n\n  document.documentElement.className += ' ' + classNames.map(function (className) {\n    return 'bpk-' + className;\n  }).join(' ');\n})(); /*\n       * Backpack - Skyscanner's Design System\n       *\n       * Copyright 2016-2019 Skyscanner Ltd\n       *\n       * Licensed under the Apache License, Version 2.0 (the \"License\");\n       * you may not use this file except in compliance with the License.\n       * You may obtain a copy of the License at\n       *\n       *   http://www.apache.org/licenses/LICENSE-2.0\n       *\n       * Unless required by applicable law or agreed to in writing, software\n       * distributed under the License is distributed on an \"AS IS\" BASIS,\n       * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n       * See the License for the specific language governing permissions and\n       * limitations under the License.\n       */\n\n//# sourceURL=webpack:///./index.js?");
 
 /***/ }),
-/* 1 */
-/***/ (function(module, exports) {
 
-// removed by extract-text-webpack-plugin
+/***/ "./index.scss":
+/*!********************!*\
+  !*** ./index.scss ***!
+  \********************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("// extracted by mini-css-extract-plugin\n\n//# sourceURL=webpack:///./index.scss?");
 
 /***/ })
-/******/ ]);
+
+/******/ });
