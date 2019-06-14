@@ -186,3 +186,41 @@ commonFileWarnings('test.log', {
   msg:
     'The build logs contain these warnings (check the build output in Travis for more details):',
 });
+
+// Test, please remove.
+
+const createPRToOtherRepo = async () => {
+  const fileContents = {
+    'shaun-test.md': 'Here is some test content that should create a new file.',
+    'README.md':
+      'Here is some test content that should update an existing file.',
+  };
+
+  return danger.github.utils.createOrUpdatePR(
+    {
+      title: '[Danger] Test PR',
+      body: `This is a test of generating PRs on other repos automatically using Danger.
+
+        If you can see this, it worked!
+
+        ## Testing if it works with Markdown
+
+        ![test](${thanksGifs[0]})
+        `,
+      owner: 'skyscanner',
+      repo: 'backpack-ios',
+      baseBranch: 'master',
+      newBranchName: 'danger-test',
+      commitMessage: '[No JIRA] Test PR from Danger',
+    },
+    fileContents,
+  );
+};
+
+const someResponseWhoKnowsWhat = createPRToOtherRepo();
+try {
+  message(someResponseWhoKnowsWhat);
+  message(JSON.stringify(someResponseWhoKnowsWhat));
+} catch (err) {
+  message(err);
+}
