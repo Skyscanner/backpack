@@ -12,6 +12,11 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.jsx?$/,
+        use: ['babel-loader'],
+        exclude: /node_modules\/(?!bpk-).*/,
+      },
+      {
         test: /\.scss$/,
         use: [
           {
@@ -43,6 +48,29 @@ module.exports = {
                   )
                 : '',
               functions: sassFunctions,
+            },
+          },
+        ],
+      },
+      {
+        test: /\.css$/,
+        exclude: /base\.scss$/,
+        use: [
+          {
+            loader: 'style-loader',
+          },
+          {
+            loader: 'css-loader',
+            options: {
+              importLoaders: 1,
+              modules: useCssModules,
+              localIdentName: '[local]-[hash:base64:5]',
+            },
+          },
+          {
+            loader: 'postcss-loader',
+            options: {
+              plugins: postCssPlugins,
             },
           },
         ],

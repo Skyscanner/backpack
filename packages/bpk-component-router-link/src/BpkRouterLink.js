@@ -21,7 +21,7 @@ import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
 import { cssModules } from 'bpk-react-utils';
 
-import STYLES from './BpkRouterLink.scss';
+import STYLES from './BpkRouterLink.css';
 
 const getClassName = cssModules(STYLES);
 

@@ -21,7 +21,7 @@ import BpkInput from 'bpk-component-input';
 import Autosuggest from 'react-autosuggest';
 import { cssModules } from 'bpk-react-utils';
 
-import STYLES from './BpkAutosuggest.scss';
+import STYLES from './BpkAutosuggest.css';
 
 const getClassName = cssModules(STYLES);
 

@@ -2,6 +2,21 @@
 
 [Unreleased changes](./UNRELEASED.md).
 
+# 2019-06-13 - `BpkPhoneInput` removed flag only and input code display
+
+**Fixed:**
+- bpk-component-phone-input: 3.1.0 => 3.1.1
+- bpk-component-select: 2.3.0 => 2.3.1
+  - Rollback the changes made for the phone input and removed new props
+
+# 2019-06-11 - `BpkPhoneInput` flag only and input code display
+
+**Changed:**
+- bpk-component-phone-input: 3.0.0 => 3.1.0
+  - Added new optional props `flagOnly` and `countryCodeMask` to change how the field can be displayed.
+- bpk-component-select: 2.2.71 => 2.3.0
+  - Updated the component to add new optional prop `imageOnly` to allow only images to be displayed in the select field.
+
 # 2019-06-10 - Fixed `BpkPhoneInput` to allow field to dynamically resize.
 
 **Changed:**

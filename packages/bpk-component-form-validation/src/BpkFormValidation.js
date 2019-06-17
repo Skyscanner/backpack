@@ -24,7 +24,7 @@ import BpkSmallExclamationIcon from 'bpk-component-icon/sm/exclamation-circle';
 import { withAlignment } from 'bpk-component-icon';
 import { lineHeightBase, iconSizeSm } from 'bpk-tokens/tokens/base.es6';
 
-import STYLES from './BpkFormValidation.scss';
+import STYLES from './BpkFormValidation.css';
 
 const getClassName = cssModules(STYLES);
 const AlignedExclamationIcon = withAlignment(

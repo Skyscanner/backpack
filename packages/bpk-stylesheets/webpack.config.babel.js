@@ -17,17 +17,21 @@
  */
 
 import WrapperPlugin from 'wrapper-webpack-plugin';
-import ExtractTextPlugin from 'extract-text-webpack-plugin';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import { blockComment as licenseHeader } from 'bpk-tokens/formatters/license-header';
 
 import postCssPlugins from '../../scripts/webpack/postCssPlugins';
 
+const path = require('path');
+
 module.exports = {
+  mode: 'development',
   entry: {
     base: './index.js',
   },
 
   output: {
+    path: path.resolve(__dirname, ''),
     filename: 'base.js',
   },
 
@@ -40,48 +44,48 @@ module.exports = {
       },
       {
         test: /\.scss$/,
-        use: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
-          use: [
-            {
-              loader: 'css-loader',
-              options: {
-                minimize: true,
-                importLoaders: 1,
-              },
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader,
+          },
+          {
+            loader: 'css-loader',
+            options: {
+              minimize: true,
+              importLoaders: 1,
             },
-            {
-              loader: 'postcss-loader',
-              options: {
-                plugins: postCssPlugins,
-              },
+          },
+          {
+            loader: 'postcss-loader',
+            options: {
+              plugins: postCssPlugins,
             },
-            {
-              loader: 'sass-loader',
-            },
-          ],
-        }),
+          },
+          {
+            loader: 'sass-loader',
+          },
+        ],
       },
       {
         test: /\.css$/,
-        use: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
-          use: [
-            {
-              loader: 'css-loader',
-              options: {
-                minimize: true,
-                importLoaders: 1,
-              },
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader,
+          },
+          {
+            loader: 'css-loader',
+            options: {
+              minimize: true,
+              importLoaders: 1,
             },
-            {
-              loader: 'postcss-loader',
-              options: {
-                plugins: postCssPlugins,
-              },
+          },
+          {
+            loader: 'postcss-loader',
+            options: {
+              plugins: postCssPlugins,
             },
-          ],
-        }),
+          },
+        ],
       },
     ],
   },
@@ -91,7 +95,7 @@ module.exports = {
       test: /\.css$/,
       header: licenseHeader,
     }),
-    new ExtractTextPlugin({
+    new MiniCssExtractPlugin({
       filename: 'base.css',
     }),
   ],

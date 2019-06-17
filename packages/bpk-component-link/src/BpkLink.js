@@ -23,7 +23,7 @@ import { cssModules } from 'bpk-react-utils';
 import themeAttributes, {
   linkAlternateThemeAttributes,
 } from './themeAttributes';
-import STYLES from './BpkLink.scss';
+import STYLES from './BpkLink.css';
 
 const getClassName = cssModules(STYLES);
 

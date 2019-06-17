@@ -21,7 +21,7 @@
 import React from 'react';
 import { cssModules } from 'bpk-react-utils';
 
-import STYLES from './AirlineLogo.scss';
+import STYLES from './AirlineLogo.css';
 
 const getClassNames = cssModules(STYLES);
 
