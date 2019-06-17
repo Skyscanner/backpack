@@ -107,6 +107,9 @@ const BpkPhoneInput = (props: Props) => {
     if (value.startsWith('+')) {
       if (value.startsWith(`+${dialingCode} `)) {
         phoneDisplayValue = value;
+      } else if (value.charAt(`+${dialingCode}`.length) !== ' ') {
+        const phoneNumber = value.slice(`+${dialingCode}`.length);
+        phoneDisplayValue = `+${dialingCode} ${phoneNumber}`;
       } else {
         const phoneValue = value.split(' ')[1];
 
@@ -114,6 +117,8 @@ const BpkPhoneInput = (props: Props) => {
           ? `+${dialingCode} ${phoneValue}`
           : `+${dialingCode} `;
       }
+    } else if (value.includes(dialingCode)) {
+      phoneDisplayValue = `+${value}`;
     } else {
       phoneDisplayValue = `+${dialingCode} ${value}`;
     }

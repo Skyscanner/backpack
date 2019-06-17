@@ -23,6 +23,10 @@
 
   &--image-only {
     width: $bpk-one-pixel-rem;
+
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+      width: 4rem;
+    }
   }
 
   &--large {
