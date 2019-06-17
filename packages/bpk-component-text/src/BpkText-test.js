@@ -63,6 +63,21 @@ describe('BpkText', () => {
     expect(tree).toMatchSnapshot();
   });
 
+  it('should render correctly with tageName="text", inside an svg', () => {
+    const tree = renderer
+      .create(
+        <svg>
+          <BpkText tagName="text">
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
+            commodo ligula eget dolor. Aenean massa. Cum sociis natoque
+            penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+          </BpkText>
+        </svg>,
+      )
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
   it('should pass down unknown props', () => {
     const tree = renderer
       .create(

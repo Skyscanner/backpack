@@ -36,7 +36,7 @@ TEXT_STYLES.forEach(textStyle => {
 type Props = {
   children: Node,
   textStyle: 'xs' | 'sm' | 'base' | 'lg' | 'xl' | 'xxl',
-  tagName: 'span' | 'p' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6',
+  tagName: 'span' | 'p' | 'text' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6',
   className: ?string,
   bold: boolean,
 };
@@ -69,7 +69,17 @@ const BpkText = (props: Props) => {
 BpkText.propTypes = {
   children: PropTypes.node.isRequired,
   textStyle: PropTypes.oneOf(TEXT_STYLES),
-  tagName: PropTypes.oneOf(['span', 'p', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6']),
+  tagName: PropTypes.oneOf([
+    'span',
+    'p',
+    'text',
+    'h1',
+    'h2',
+    'h3',
+    'h4',
+    'h5',
+    'h6',
+  ]),
   className: PropTypes.string,
   bold: PropTypes.bool,
 };

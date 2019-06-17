@@ -90,4 +90,21 @@ storiesOf('bpk-component-text', module)
       The man jumped over the shark tank. That was very{' '}
       <BpkText bold>bold</BpkText> indeed.
     </BpkText>
+  ))
+  .add('using in a SVG', () => (
+    <svg viewBox="0 0 100 100" height="200" xmlns="http://www.w3.org/2000/svg">
+      <BpkText tagName="text" x={20} y={25}>
+        I&#39;m in a
+      </BpkText>
+      <BpkText
+        tagName="text"
+        x={40}
+        y={40}
+        fill="red"
+        transform="rotate(-10 50 100)"
+        bold
+      >
+        SVG
+      </BpkText>
+    </svg>
   ));
