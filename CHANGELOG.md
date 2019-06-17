@@ -1,12 +1,6 @@
 # Backpack changelog
 
 [Unreleased changes](./UNRELEASED.md).
-# 2019-06-17 - `BpkText` new tagName option `text`
-
-**Changed:**
-- bpk-component-text: 1.0.130 => 1.0.131
-  - Added new supported tagName option `text` for using Backpack text component within SVG elements.
-
 # 2019-06-13 - `BpkPhoneInput` removed flag only and input code display
 
 **Fixed:**

@@ -1,6 +1,11 @@
 # Unreleased
 
 > Place your changes below this line.
+# 2019-06-17 - `BpkText` new tagName option `text`
+
+**Changed:**
+- bpk-component-text:
+  - Added new supported tagName option `text` for using Backpack text component within SVG elements.
 
 ## How to write a good changelog entry
 
