@@ -5,7 +5,7 @@
 
 **Changed:**
 - bpk-component-text:
-  - Added new supported tagName option `text` for using Backpack text component within SVG elements.
+  - Added new supported tagName option `text` to support text elements.
 
 ## How to write a good changelog entry
 
