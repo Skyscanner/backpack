@@ -2,6 +2,12 @@
 
 [Unreleased changes](./UNRELEASED.md).
 
+# 2019-06-17 - Added new `tagName` to `BpkText` component
+
+**Changed:**
+- bpk-component-text: 1.0.130 => 1.0.131
+  - Added new supported tagName option `text` to support text elements.
+
 # 2019-06-13 - `BpkPhoneInput` removed flag only and input code display
 
 **Fixed:**
