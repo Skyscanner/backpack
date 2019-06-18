@@ -111,17 +111,18 @@ export default () => (
 
 ## Props
 
-| Property         | PropType  | Required | Default Value       |
-| ---------------- | --------- | -------- | ------------------- |
-| altText          | string    | true     | -                   |
-| height           | number    | true     | -                   |
-| src              | string    | true     | -                   |
-| width            | number    | true     | -                   |
-| className        | string    | false    | null                |
-| inView           | bool      | false    | true                |
-| loading          | bool      | false    | false               |
-| onLoad           | func      | false    | null                |
-| style            | object    | false    | {}                  |
+| Property                     | PropType  | Required | Default Value       |
+| ---------------------------- | --------- | -------- | ------------------- |
+| altText                      | string    | true     | -                   |
+| height                       | number    | true     | -                   |
+| src                          | string    | true     | -                   |
+| width                        | number    | true     | -                   |
+| className                    | string    | false    | null                |
+| inView                       | bool      | false    | true                |
+| loading                      | bool      | false    | false               |
+| onLoad                       | func      | false    | null                |
+| style                        | object    | false    | {}                  |
+| suppressHydrationWarnings    | bool      | false    | false               |
 
 ## BpkBackgroundImage
 
