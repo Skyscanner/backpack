@@ -2,6 +2,12 @@
 
 [Unreleased changes](./UNRELEASED.md).
 
+# 2019-06-18 - Fix for lazy loaded image hydration warnings
+
+**Added:**
+- bpk-component-image: 1.0.130 => 1.0.131
+  - New prop `suppressHydrationWarning` on `BpkImage` which can be used to suppress hydration warnings for lazy loaded images.
+
 # 2019-06-17 - Added new `tagName` to `BpkText` component
 
 **Changed:**
