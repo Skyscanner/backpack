@@ -1,7 +1,6 @@
 # Unreleased
 
 > Place your changes below this line.
-# 2019-06-17 - `BpkText` new tagName option `text`
 
 ## How to write a good changelog entry
 
