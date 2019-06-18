@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-drawer",
-  "version": "1.2.91",
+  "version": "1.2.92",
   "description": "Backpack drawer component.",
   "main": "index.js",
   "repository": {
@@ -25,7 +25,7 @@
   },
   "devDependencies": {
     "bpk-component-button": "^2.3.11",
-    "bpk-component-text": "^1.0.131"
+    "bpk-component-text": "^1.1.0"
   },
   "gitHead": "3244054e73b5e966c2ca795f496d8e29b6a5fff4"
 }

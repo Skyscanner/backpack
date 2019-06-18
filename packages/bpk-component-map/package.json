@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-map",
-  "version": "2.5.13",
+  "version": "2.5.14",
   "description": "Backpack map component.",
   "main": "index.js",
   "repository": {
@@ -21,7 +21,7 @@
   },
   "devDependencies": {
     "bpk-component-icon": "^3.30.6",
-    "bpk-component-text": "^1.0.131",
+    "bpk-component-text": "^1.1.0",
     "prop-types": "^15.5.8"
   },
   "gitHead": "3244054e73b5e966c2ca795f496d8e29b6a5fff4"

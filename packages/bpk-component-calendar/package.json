@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-calendar",
-  "version": "5.0.17",
+  "version": "5.0.18",
   "description": "Backpack calendar component.",
   "main": "index.js",
   "repository": {
@@ -23,7 +23,7 @@
   },
   "devDependencies": {
     "bpk-component-button": "^2.3.11",
-    "bpk-component-text": "^1.0.131"
+    "bpk-component-text": "^1.1.0"
   },
   "gitHead": "3244054e73b5e966c2ca795f496d8e29b6a5fff4"
 }
