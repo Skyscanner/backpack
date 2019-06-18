@@ -24,6 +24,12 @@ const fs = require('fs');
 const util = require('util');
 const https = require('https');
 
+const cliProgress = require('cli-progress');
+
+const bar = new cliProgress.Bar({}, cliProgress.Presets.shades_classic);
+
+let packagesDataFetched = 0;
+
 const readdir = util.promisify(fs.readdir);
 
 const meta = require('../../meta.json');
@@ -31,6 +37,11 @@ const meta = require('../../meta.json');
 let failures = false;
 
 const owners = meta.maintainers.map(maintainer => maintainer.npm).sort();
+
+const packageDone = () => {
+  packagesDataFetched += 1;
+  bar.update(packagesDataFetched);
+};
 
 const getPackageMaintainers = pkg =>
   new Promise((resolve, reject) => {
@@ -45,12 +56,14 @@ const getPackageMaintainers = pkg =>
         const pkgData = JSON.parse(body);
 
         if (pkgData.maintainers) {
+          packageDone();
           resolve({
             name: pkg,
             maintainers: pkgData.maintainers.map(m => m.name),
             new: false,
           });
         } else {
+          packageDone();
           resolve({
             name: pkg,
             new: true,
@@ -87,14 +100,30 @@ console.log(`Maintainers are:\n  ${owners.join('\n  ')}\n`);
 
 readdir('packages/')
   .then(packages => packages.filter(i => !i.startsWith('.')))
+  .then(packages => {
+    bar.start(packages.length, 0);
+    return packages;
+  })
   .then(packages => Promise.all(packages.map(getPackageMaintainers)))
   .then(maintainers => maintainers.forEach(verifyMaintainers))
   .then(() => {
+    bar.stop();
     if (failures) {
       console.log(
         '\nPlease fix your maintainer list before publishing. Link: https://www.npmjs.com/settings/skyscanner/teams/team/backpack/access',
       );
+      process.exit(1);
     } else {
       console.log('\nAll good 👍');
+      process.exit(0);
     }
+  })
+  .catch(error => {
+    console.error(
+      'An unknown error occured. Please check your network connection and try again.',
+    );
+    if (error) {
+      console.error(error);
+    }
+    process.exit(1);
   });
