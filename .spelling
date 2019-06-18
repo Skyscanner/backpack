@@ -337,7 +337,7 @@ stubClassName
 stubProps
 stubStyle
 subtitleView
-supressHydrationWarnings
+suppressHydrationWarnings
 textProps
 textStyle
 themeAttributes
