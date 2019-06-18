@@ -38,6 +38,7 @@ type BpkImageProps = {
   className: ?string,
   onLoad: ?() => mixed,
   style: ?{}, // eslint-disable-line react/forbid-prop-types
+  suppressHydrationWarning: boolean,
 };
 
 type ImageProps = {
