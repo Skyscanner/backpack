@@ -38,6 +38,7 @@ type BpkImageProps = {
   className: ?string,
   onLoad: ?() => mixed,
   style: ?{}, // eslint-disable-line react/forbid-prop-types
+  suppressHydrationWarning: boolean,
 };
 
 type ImageProps = {
@@ -144,6 +145,7 @@ class BpkImage extends Component<BpkImageProps> {
           }}
           style={{ height: 0, paddingBottom: aspectRatioPc }}
           className={classNames.join(' ')}
+          suppressHydrationWarning={this.props.suppressHydrationWarning}
         >
           {/*
             Image needs to come before the spinner to avoid a problem where
@@ -200,6 +202,7 @@ BpkImage.propTypes = {
   loading: PropTypes.bool,
   onLoad: PropTypes.func,
   style: PropTypes.object, // eslint-disable-line react/forbid-prop-types
+  suppressHydrationWarning: PropTypes.bool,
 };
 
 BpkImage.defaultProps = {
@@ -208,6 +211,7 @@ BpkImage.defaultProps = {
   loading: false,
   onLoad: null,
   style: {},
+  suppressHydrationWarning: false,
 };
 
 export default BpkImage;
