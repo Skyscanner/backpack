@@ -101,26 +101,30 @@ const BpkPhoneInput = (props: Props) => {
     disabled: !!disabled,
   };
 
+  const dialingCodeText = dialingCodes.find(
+    dialCodeItem => dialCodeItem.code === dialingCode,
+  ).dialingCode;
+
   let phoneDisplayValue;
 
   if (countryCodeMask) {
     if (value.startsWith('+')) {
-      if (value.startsWith(`+${dialingCode} `)) {
+      if (value.startsWith(`+${dialingCodeText} `)) {
         phoneDisplayValue = value;
-      } else if (value.charAt(`+${dialingCode}`.length) !== ' ') {
-        const phoneNumber = value.slice(`+${dialingCode}`.length);
-        phoneDisplayValue = `+${dialingCode} ${phoneNumber}`;
+      } else if (value.charAt(`+${dialingCodeText}`.length) !== ' ') {
+        const phoneNumber = value.slice(`+${dialingCodeText}`.length);
+        phoneDisplayValue = `+${dialingCodeText} ${phoneNumber}`;
       } else {
         const phoneValue = value.split(' ')[1];
 
         phoneDisplayValue = phoneValue
-          ? `+${dialingCode} ${phoneValue}`
-          : `+${dialingCode} `;
+          ? `+${dialingCodeText} ${phoneValue}`
+          : `+${dialingCodeText} `;
       }
-    } else if (value.includes(dialingCode)) {
+    } else if (value.includes(dialingCodeText)) {
       phoneDisplayValue = `+${value}`;
     } else {
-      phoneDisplayValue = `+${dialingCode} ${value}`;
+      phoneDisplayValue = `+${dialingCodeText} ${value}`;
     }
   } else {
     phoneDisplayValue = value;
