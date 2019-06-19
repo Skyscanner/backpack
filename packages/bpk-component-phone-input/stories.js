@@ -120,14 +120,14 @@ class StoryContainer extends Component<
           onChange={this.onChange}
           onDialingCodeChange={this.onDialingCodeChange}
           value={value}
-          dialingCode={dialingCode}
+          dialingCodeId={dialingCode}
           dialingCodes={[
-            { code: '1', description: '+1 (US)', dialingCode: '1' },
-            { code: '2', description: '+1 (CA)', dialingCode: '1' },
-            { code: '44', description: '+44 (UK)', dialingCode: '44' },
-            { code: '55', description: '+55', dialingCode: '55' },
-            { code: '998', description: '+998', dialingCode: '998' },
-            { code: '9', dialingCode: '54', description: '+54 (AR)' },
+            { id: '1', description: '+1 (US)', code: '1' },
+            { id: '2', description: '+1 (CA)', code: '1' },
+            { id: '44', description: '+44 (UK)', code: '44' },
+            { id: '55', description: '+55', code: '55' },
+            { id: '998', description: '+998', code: '998' },
+            { id: '9', description: '+54 (AR)', code: '54' },
           ]}
           dialingCodeProps={{
             id: 'dialing-code',
