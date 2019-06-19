@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-button",
-  "version": "2.3.11",
+  "version": "2.3.12-alpha.37+52cc24b6a",
   "description": "Backpack button component.",
   "main": "index.js",
   "repository": {
@@ -13,8 +13,8 @@
     "react": "^15.0.0 || ^16.0.0"
   },
   "dependencies": {
-    "bpk-mixins": "^17.23.6",
+    "bpk-mixins": "^17.23.7-alpha.37+52cc24b6a",
     "prop-types": "^15.6.2"
   },
-  "gitHead": "3244054e73b5e966c2ca795f496d8e29b6a5fff4"
+  "gitHead": "52cc24b6ae2aeba01e38adf36cb73daef8278431"
 }

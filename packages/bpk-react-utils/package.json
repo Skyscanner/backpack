@@ -1,6 +1,6 @@
 {
   "name": "bpk-react-utils",
-  "version": "2.7.8",
+  "version": "2.7.9-alpha.72+52cc24b6a",
   "description": "Utilities for Backpack's React components.",
   "main": "index.js",
   "repository": {
@@ -18,5 +18,6 @@
     "prop-types": "^15.6.2",
     "react-transition-group": "^2.5.3",
     "recompose": "^0.30.0"
-  }
+  },
+  "gitHead": "52cc24b6ae2aeba01e38adf36cb73daef8278431"
 }
