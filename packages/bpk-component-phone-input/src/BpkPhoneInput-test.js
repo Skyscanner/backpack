@@ -33,8 +33,8 @@ const dialingCodeProps = {
 };
 
 const dialingCodes = [
-  { code: '44', description: '+44' },
-  { code: '55', description: '+55' },
+  { id: '1', code: '44', description: '+44' },
+  { id: '2', code: '55', description: '+55' },
 ];
 
 const defaultProps = {
@@ -42,7 +42,7 @@ const defaultProps = {
   name: 'Telephone input',
   label: 'Telephone number',
   value: '1234',
-  dialingCode: '44',
+  dialingCodeId: '1',
   className: 'fancy-input',
   onChange: () => {},
   onDialingCodeChange: () => {},
