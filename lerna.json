@@ -6,7 +6,14 @@
       "ignore": ["bpk-tether"]
     },
     "publish": {
-      "ignoreChanges": ["bpk-tether", "package-lock.json"],
+      "ignoreChanges": [
+        "bpk-tether",
+        "package-lock.json",
+        "UNRELEASED.yaml",
+        "CHANGELOG.md",
+        "**/package.json",
+        "**package-lock.json"
+      ],
       "allowBranch": "master"
     }
   }
