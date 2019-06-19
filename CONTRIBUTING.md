@@ -209,16 +209,14 @@ You can also run the tests in 'watch mode', which means the process will continu
 <details>
 <summary>Publish packages (Backpack squad members only)</summary>
 
-- Update the [unreleased changelog](/unreleased.md) with every package that has changed, separating out breaking changes (*major*), additions (*minor*) and fixes (*patch*) changes (you should see examples of this in previous entries of the [changelog](/changelog.md). If you need more details on classification please checkout the [versioning decision](/decisions/versioning-rules.md)).
+- Update the [unreleased changelog](/unreleased.yaml) with every package that has changed, separating out `BRAKING`, `ADDED` and `FIXED` changes (there are examples at the bottom of the file). If you need more details on classification please checkout the [versioning decision](/decisions/versioning-rules.md)).
   - Some useful commands for determining "what's changed?":
     - `npm run lerna updated`
     - `npm run lerna diff <package-name>`
 - Make sure you are an owner of the npm packages (speak to a member of the Backpack squad).
-- **Run `npm run release`** (this will run `lerna publish`). Do not run `npm publish`.
-- You’ll be asked to specify a new version for every package that has changed. Options are *patch*, *minor* or *major*. These should directly align to the entries you put in the [unreleased changelog](/unreleased.md) in step 1.
-- You’ll be asked at the end to confirm. Note you can still exit without making these changes.
-- Move entries from [unreleased.md](/unreleased.md) to the [changelog](/changelog.md). Update the package versions for the new changes, and group them under a title with today’s date and a brief summary of what has changed.
-- Commit and push to master.
+- **Run `npm run release`** (this will run several checks and then `lerna publish`). Do not run `npm publish`.
+- You’ll be asked to confirm the new versions and descriptions for every package that has changed.
+- If you need to make changes you can exit without confirming and no changes will be made.
 
 Be aware that if `bpk-tokens` has changed, *all* packages in the repository will be updated as they all depend on `bpk-tokens`. Changing an existing token is almost always worth a "major" release, whereas adding a new token is usually a "minor" release.
 
