@@ -26,7 +26,7 @@ import BpkButton from 'bpk-component-button';
 import ArrowRightIcon from 'bpk-component-icon/sm/long-arrow-right';
 import { withButtonAlignment, withRtlSupport } from 'bpk-component-icon';
 
-import STYLES from './stories.scss';
+import STYLES from './stories.css';
 
 import BpkTicket from './index';
 

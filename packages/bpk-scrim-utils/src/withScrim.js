@@ -31,7 +31,7 @@ import {
   unfixBody,
   unlockScroll,
 } from './scroll-utils';
-import STYLES from './bpk-scrim-content.scss';
+import STYLES from './bpk-scrim-content.css';
 import { onClosePropType } from './customPropTypes';
 
 const getClassName = cssModules(STYLES);

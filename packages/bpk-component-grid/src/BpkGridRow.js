@@ -20,7 +20,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { cssModules } from 'bpk-react-utils';
 
-import STYLES from './BpkGridRow.scss';
+import STYLES from './BpkGridRow.css';
 
 const getClassName = cssModules(STYLES);
 

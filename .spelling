@@ -714,3 +714,5 @@ onBarFocus
 getBarLabel
 getBarSelection
 greedyGestureHandling
+ariaLabel
+props.label

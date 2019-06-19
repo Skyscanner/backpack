@@ -2,6 +2,13 @@
 
 [Unreleased changes](./UNRELEASED.md).
 
+# 2019-06-19 - Added `ariaLabel` prop to `BpkRadio` component
+
+**Added:**
+- bpk-component-radio: 1.2.99 => 1.3.0
+  - New `ariaLabel` prop for manually setting the `aria-label`. Defaults to `props.label`.
+
+
 # 2019-06-18 - Added optional hydration warning suppression to lazy loaded images
 
 **Added:**
