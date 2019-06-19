@@ -31,6 +31,7 @@ const DIALING_CODE_TO_ID_MAP = {
   '44': 'uk',
   '55': 'br',
   '998': 'uz',
+  '9': 'ar',
 };
 
 const getFlag = dialingCode => {
@@ -121,11 +122,12 @@ class StoryContainer extends Component<
           value={value}
           dialingCode={dialingCode}
           dialingCodes={[
-            { code: '1', description: '+1 (US)' },
-            { code: '2', description: '+1 (CA)' },
-            { code: '44', description: '+44 (UK)' },
-            { code: '55', description: '+55' },
-            { code: '998', description: '+998' },
+            { code: '1', description: '+1 (US)', dialingCode: '1' },
+            { code: '2', description: '+1 (CA)', dialingCode: '1' },
+            { code: '44', description: '+44 (UK)', dialingCode: '44' },
+            { code: '55', description: '+55', dialingCode: '55' },
+            { code: '998', description: '+998', dialingCode: '998' },
+            { code: '9', dialingCode: '54', description: '+54 (AR)' },
           ]}
           dialingCodeProps={{
             id: 'dialing-code',
