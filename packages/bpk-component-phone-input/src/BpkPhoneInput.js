@@ -25,7 +25,7 @@ import BpkInput, { INPUT_TYPES } from 'bpk-component-input';
 import BpkLabel from 'bpk-component-label';
 import BpkSelect from 'bpk-component-select';
 
-import STYLES from './BpkPhoneInput.scss';
+import STYLES from './BpkPhoneInput.css';
 
 const getClassName = cssModules(STYLES);
 
@@ -165,7 +165,7 @@ const BpkPhoneInput = (props: Props) => {
         }
       >
         {dialingCodes.map(
-          ({ id: codeId, description, ...extraDialingProps }) => (
+          ({ id: codeId, description, code, ...extraDialingProps }) => (
             <option key={codeId} value={codeId} {...extraDialingProps}>
               {description}
             </option>
