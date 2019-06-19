@@ -21,7 +21,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { cssModules } from 'bpk-react-utils';
 
-import STYLES from './BpkPaginationPage.scss';
+import STYLES from './BpkPaginationPage.css';
 
 const getClassName = cssModules(STYLES);
 

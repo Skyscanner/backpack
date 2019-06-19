@@ -23,7 +23,7 @@ import debounce from 'lodash.debounce';
 import React, { Component, type Node } from 'react';
 import { cssModules } from 'bpk-react-utils';
 
-import STYLES from './BpkMobileScrollContainer.scss';
+import STYLES from './BpkMobileScrollContainer.css';
 
 const getClassName = cssModules(STYLES);
 

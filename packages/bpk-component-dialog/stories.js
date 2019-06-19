@@ -25,7 +25,7 @@ import BpkButton from 'bpk-component-button';
 import { storiesOf } from '@storybook/react';
 import { cssModules, withDefaultProps } from 'bpk-react-utils';
 
-import STYLES from './stories.scss';
+import STYLES from './stories.css';
 
 import BpkDialog from './index';
 

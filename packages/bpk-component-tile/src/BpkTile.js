@@ -22,7 +22,7 @@ import { cssModules } from 'bpk-react-utils';
 import { withRtlSupport, withButtonAlignment } from 'bpk-component-icon';
 import ArrowRightIcon from 'bpk-component-icon/sm/arrow-right';
 
-import STYLES from './BpkTile.scss';
+import STYLES from './BpkTile.css';
 
 const getClassName = cssModules(STYLES);
 const RtlArrowRightIcon = withRtlSupport(withButtonAlignment(ArrowRightIcon));

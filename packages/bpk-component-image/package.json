@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-image",
-  "version": "2.2.0",
+  "version": "2.2.1",
   "description": "Backpack image component.",
   "main": "index.js",
   "repository": {
@@ -21,7 +21,7 @@
   },
   "devDependencies": {
     "bpk-component-mobile-scroll-container": "^1.1.75",
-    "bpk-component-text": "^1.1.0",
+    "bpk-component-text": "^1.1.1",
     "bpk-tokens": "^27.6.2"
   },
   "gitHead": "ae19ac287b6f4ffb1ca7eb825b9193d186844695"
