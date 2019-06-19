@@ -26,6 +26,7 @@
     "flow-typed": "flow-typed",
     "build:tokens": "lerna run tokens --scope bpk-tokens",
     "build:svgs": "lerna run svgs --scope bpk-svgs",
+    "build:stylesheets": "lerna run build --scope bpk-stylesheets",
     "build": "npm run build:tokens && npm run build:svgs && lerna run build",
     "storybook:dist": "build-storybook -c .storybook -o dist-storybook",
     "storybook": "start-storybook -p 9001",

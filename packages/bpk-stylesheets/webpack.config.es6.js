@@ -38,9 +38,9 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        loader: 'babel-loader',
+        test: /\.jsx?$/,
+        use: ['babel-loader'],
+        exclude: /node_modules\/(?!bpk-).*/,
       },
       {
         test: /\.scss$/,

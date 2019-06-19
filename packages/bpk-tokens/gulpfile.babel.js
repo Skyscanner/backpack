@@ -46,10 +46,6 @@ import {
   bpkReactNativeCommonJsAndroid,
 } from './formatters/bpk.react.native.common.js';
 
-require('@babel/register')({
-  rootMode: 'upward',
-});
-
 const PLATFORM_FORMATS = {
   web: ['scss', 'default.scss', 'raw.json', 'common.js', 'es6.js'],
   ios: [
