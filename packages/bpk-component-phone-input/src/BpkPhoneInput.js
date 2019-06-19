@@ -30,7 +30,7 @@ import STYLES from './BpkPhoneInput.scss';
 const getClassName = cssModules(STYLES);
 
 export type Props = {
-  dialingCode: string,
+  dialingCodeId: string,
   dialingCodeProps: {
     id: string,
     name: string,
@@ -38,7 +38,7 @@ export type Props = {
     className?: string,
     wrapperClassName?: string,
   },
-  dialingCodes: Array<{ code: string, description: string }>,
+  dialingCodes: Array<{ id: string, code: string, description: string }>,
   id: string,
   name: string,
   label: string,
@@ -61,12 +61,9 @@ type CommonProps = {
 };
 
 // This function get the size value of the dialingCode to resize the field correctly
-const widthForDialingCode = (large, dialingCodes, selectedDialingCode) => {
+const widthForDialingCode = (large, foundDialingCode) => {
   // This sizeConstant is an average character size for each size of field
   const averageLetterSize = large ? 8 : 6;
-  const foundDialingCode = dialingCodes.find(
-    e => e.code === selectedDialingCode,
-  );
   if (foundDialingCode && foundDialingCode.description) {
     // Here we calculate the width for the field (N.B 100 is an assumed padding value)
     return averageLetterSize * foundDialingCode.description.length + 100;
@@ -86,7 +83,7 @@ const BpkPhoneInput = (props: Props) => {
     valid,
     value,
     large,
-    dialingCode,
+    dialingCodeId,
     dialingCodes,
     dialingCodeProps,
     wrapperProps,
@@ -101,9 +98,15 @@ const BpkPhoneInput = (props: Props) => {
     disabled: !!disabled,
   };
 
-  const dialingCodeText = dialingCodes.find(
-    dialCodeItem => dialCodeItem.code === dialingCode,
-  ).dialingCode;
+  let dialingCodeText = '';
+
+  const foundDialingCode = dialingCodes.find(
+    dialCodeItem => dialCodeItem.id === dialingCodeId,
+  );
+
+  if (foundDialingCode) {
+    dialingCodeText = foundDialingCode.code;
+  }
 
   let phoneDisplayValue;
 
@@ -154,26 +157,24 @@ const BpkPhoneInput = (props: Props) => {
           dialingCodeProps.className,
         )}
         wrapperClassName={getClassName(dialingCodeProps.wrapperClassName)}
-        value={dialingCode}
+        value={dialingCodeId}
         onChange={onDialingCodeChange}
         imageOnly={flagOnly}
         style={
           !flagOnly
             ? {
-                width: `${widthForDialingCode(
-                  large,
-                  dialingCodes,
-                  dialingCode,
-                )}px`,
+                width: `${widthForDialingCode(large, foundDialingCode)}px`,
               }
             : null
         }
       >
-        {dialingCodes.map(({ code, description, ...extraDialingProps }) => (
-          <option key={code} value={code} {...extraDialingProps}>
-            {description}
-          </option>
-        ))}
+        {dialingCodes.map(
+          ({ id: codeId, description, ...extraDialingProps }) => (
+            <option key={codeId} value={codeId} {...extraDialingProps}>
+              {description}
+            </option>
+          ),
+        )}
       </BpkSelect>
       <BpkLabel
         htmlFor={id}
@@ -197,14 +198,18 @@ const BpkPhoneInput = (props: Props) => {
 };
 
 BpkPhoneInput.propTypes = {
-  dialingCode: PropTypes.string.isRequired,
+  dialingCodeId: PropTypes.string.isRequired,
   dialingCodeProps: PropTypes.shape({
     id: PropTypes.string,
     name: PropTypes.string,
     label: PropTypes.string,
   }).isRequired,
   dialingCodes: PropTypes.arrayOf(
-    PropTypes.shape({ code: PropTypes.string, description: PropTypes.string }),
+    PropTypes.shape({
+      code: PropTypes.string,
+      description: PropTypes.string,
+      id: PropTypes.string,
+    }),
   ).isRequired,
   id: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
