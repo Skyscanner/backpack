@@ -4,4 +4,9 @@ module.exports = {
     '@babel/plugin-proposal-object-rest-spread',
     '@babel/plugin-proposal-class-properties',
   ],
+  // ignore: [/packages\/bpk-stylesheets\/node_modules\/(?!bpk)/],
+  include: path => {
+    console.log(path);
+    return true;
+  },
 };

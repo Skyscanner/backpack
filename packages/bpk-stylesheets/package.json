@@ -4,7 +4,7 @@
   "description": "Backpack's stylesheets.",
   "main": "index.js",
   "scripts": {
-    "build": "webpack --mode=development"
+    "build": "node build.js"
   },
   "repository": {
     "type": "git",
