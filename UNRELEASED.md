@@ -2,20 +2,6 @@
 
 > Place your changes below this line.
 
-# 2019-06-25 New icons
-
-**Added:**
-- bpk-component-icon:
-- bpk-mixins:
-- bpk-svgs:
-  - New `paid`, `star-outline` icons added.
-
-**Updated:**
-- bpk-component-icon:
-- bpk-mixins:
-- bpk-svgs:
-  - Updated `meal`, `bar`, `star`, `star-half` `media` icons.
-
 ## How to write a good changelog entry
 
 1. Add 'Breaking', 'Added' or 'Fixed' in bold depending on if the change will be major, minor or patch according to [semver](semver.org).

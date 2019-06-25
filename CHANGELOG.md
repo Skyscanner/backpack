@@ -2,6 +2,20 @@
 
 [Unreleased changes](./UNRELEASED.md).
 
+# 2019-06-25 New icons
+
+**Added:**
+- bpk-component-icon:
+- bpk-mixins:
+- bpk-svgs:
+  - New `paid`, `star-outline` icons added.
+
+**Updated:**
+- bpk-component-icon:
+- bpk-mixins:
+- bpk-svgs:
+  - Updated `meal`, `bar`, `star`, `star-half` `media` icons.
+
 # 2019-06-19 - Added `ariaLabel` prop to `BpkRadio` component
 
 **Added:**
