@@ -14,7 +14,7 @@
 - bpk-component-icon:
 - bpk-mixins:
 - bpk-svgs:
-  - Updated `meal`, `bar`, `star`, `media` icons.
+  - Updated `meal`, `bar`, `star`, `star-half` `media` icons.
 
 ## How to write a good changelog entry
 
