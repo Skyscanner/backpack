@@ -25,6 +25,7 @@ exports[`withInfiniteScroll renders correctly with different initial and onScrol
       "listeners": Array [
         [Function],
       ],
+      "triggerListeners": undefined,
     }
   }
   elementsPerScroll={2}
@@ -65,6 +66,7 @@ exports[`withInfiniteScroll renders items after the first render 1`] = `
       "listeners": Array [
         [Function],
       ],
+      "triggerListeners": undefined,
     }
   }
   elementsPerScroll={5}
@@ -140,6 +142,7 @@ exports[`withInfiniteScroll should pass extra props to the decorated component 1
       "listeners": Array [
         [Function],
       ],
+      "triggerListeners": undefined,
     }
   }
   elementsPerScroll={5}
@@ -178,10 +181,24 @@ exports[`withInfiniteScroll should refresh data when data changes 1`] = `
         "Element 3",
         "Element 4",
       ],
-      "fetchItems": [Function],
+      "fetchItems": [MockFunction] {
+        "calls": Array [
+          Array [
+            0,
+            5,
+          ],
+        ],
+        "results": Array [
+          Object {
+            "type": "return",
+            "value": Promise {},
+          },
+        ],
+      },
       "listeners": Array [
         [Function],
       ],
+      "triggerListeners": undefined,
     }
   }
   elementsPerScroll={5}
@@ -252,10 +269,24 @@ exports[`withInfiniteScroll should refresh data when data changes from an empty 
   dataSource={
     ArrayDataSource {
       "elements": Array [],
-      "fetchItems": [Function],
+      "fetchItems": [MockFunction] {
+        "calls": Array [
+          Array [
+            0,
+            5,
+          ],
+        ],
+        "results": Array [
+          Object {
+            "type": "return",
+            "value": Promise {},
+          },
+        ],
+      },
       "listeners": Array [
         [Function],
       ],
+      "triggerListeners": undefined,
     }
   }
   elementsPerScroll={5}
@@ -335,6 +366,7 @@ exports[`withInfiniteScroll should render correctly when no more elements 1`] = 
       "listeners": Array [
         [Function],
       ],
+      "triggerListeners": undefined,
     }
   }
   elementsPerScroll={5}
@@ -406,6 +438,7 @@ exports[`withInfiniteScroll should render correctly with a "loaderIntersectionTr
       "listeners": Array [
         [Function],
       ],
+      "triggerListeners": undefined,
     }
   }
   elementsPerScroll={5}
@@ -450,6 +483,7 @@ exports[`withInfiniteScroll should render correctly with a "renderLoadingCompone
       "listeners": Array [
         [Function],
       ],
+      "triggerListeners": undefined,
     }
   }
   elementsPerScroll={5}
@@ -494,6 +528,7 @@ exports[`withInfiniteScroll should render correctly with a "renderSeeMoreCompone
       "listeners": Array [
         [Function],
       ],
+      "triggerListeners": undefined,
     }
   }
   elementsPerScroll={1}
@@ -547,6 +582,7 @@ exports[`withInfiniteScroll should render correctly with an "elementsPerScroll" 
       "listeners": Array [
         [Function],
       ],
+      "triggerListeners": undefined,
     }
   }
   elementsPerScroll={1}

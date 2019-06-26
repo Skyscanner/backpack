@@ -2,7 +2,6 @@
 
 exports[`BpkDataTable should render correctly with a custom className 1`] = `
 <div
-  className={undefined}
   style={
     Object {
       "overflow": "visible",
@@ -12,7 +11,6 @@ exports[`BpkDataTable should render correctly with a custom className 1`] = `
 >
   <div
     className="ReactVirtualized__Table bpk-data-table custom-data-table"
-    id={undefined}
     role="grid"
     style={Object {}}
   >
@@ -32,7 +30,6 @@ exports[`BpkDataTable should render correctly with a custom className 1`] = `
         aria-label="Name"
         aria-sort="ascending"
         className="ReactVirtualized__Table__headerColumn bpk-data-table__header-column"
-        id={undefined}
         onClick={[Function]}
         onKeyDown={[Function]}
         role="columnheader"
@@ -92,9 +89,7 @@ exports[`BpkDataTable should render correctly with a custom className 1`] = `
       </div>
       <div
         aria-label="Description"
-        aria-sort={undefined}
         className="ReactVirtualized__Table__headerColumn bpk-data-table__header-column"
-        id={undefined}
         onClick={[Function]}
         onKeyDown={[Function]}
         role="columnheader"
@@ -154,9 +149,7 @@ exports[`BpkDataTable should render correctly with a custom className 1`] = `
       </div>
       <div
         aria-label="Bla"
-        aria-sort={undefined}
         className="ReactVirtualized__Table__headerColumn bpk-data-table__header-column"
-        id={undefined}
         onClick={[Function]}
         onKeyDown={[Function]}
         role="columnheader"
@@ -219,7 +212,6 @@ exports[`BpkDataTable should render correctly with a custom className 1`] = `
       aria-label="grid"
       aria-readonly={true}
       className="ReactVirtualized__Grid ReactVirtualized__Table__Grid"
-      id={undefined}
       onScroll={[Function]}
       role="rowgroup"
       style={
@@ -244,7 +236,6 @@ exports[`BpkDataTable should render correctly with a custom className 1`] = `
 exports[`BpkDataTable should render correctly with a specified width 1`] = `
 <div
   className="ReactVirtualized__Table bpk-data-table"
-  id={undefined}
   role="grid"
   style={Object {}}
 >
@@ -264,7 +255,6 @@ exports[`BpkDataTable should render correctly with a specified width 1`] = `
       aria-label="Name"
       aria-sort="ascending"
       className="ReactVirtualized__Table__headerColumn bpk-data-table__header-column"
-      id={undefined}
       onClick={[Function]}
       onKeyDown={[Function]}
       role="columnheader"
@@ -324,9 +314,7 @@ exports[`BpkDataTable should render correctly with a specified width 1`] = `
     </div>
     <div
       aria-label="Description"
-      aria-sort={undefined}
       className="ReactVirtualized__Table__headerColumn bpk-data-table__header-column"
-      id={undefined}
       onClick={[Function]}
       onKeyDown={[Function]}
       role="columnheader"
@@ -386,9 +374,7 @@ exports[`BpkDataTable should render correctly with a specified width 1`] = `
     </div>
     <div
       aria-label="Bla"
-      aria-sort={undefined}
       className="ReactVirtualized__Table__headerColumn bpk-data-table__header-column"
-      id={undefined}
       onClick={[Function]}
       onKeyDown={[Function]}
       role="columnheader"
@@ -451,7 +437,6 @@ exports[`BpkDataTable should render correctly with a specified width 1`] = `
     aria-label="grid"
     aria-readonly={true}
     className="ReactVirtualized__Grid ReactVirtualized__Table__Grid"
-    id={undefined}
     onScroll={[Function]}
     role="rowgroup"
     style={
@@ -503,7 +488,6 @@ exports[`BpkDataTable should render correctly with a specified width 1`] = `
         tabIndex={0}
       >
         <div
-          aria-describedby={undefined}
           className="ReactVirtualized__Table__rowColumn bpk-data-table-column"
           role="gridcell"
           style={
@@ -519,7 +503,6 @@ exports[`BpkDataTable should render correctly with a specified width 1`] = `
           Jose
         </div>
         <div
-          aria-describedby={undefined}
           className="ReactVirtualized__Table__rowColumn bpk-data-table-column"
           role="gridcell"
           style={
@@ -535,7 +518,6 @@ exports[`BpkDataTable should render correctly with a specified width 1`] = `
           Software Engineer
         </div>
         <div
-          aria-describedby={undefined}
           className="ReactVirtualized__Table__rowColumn bpk-data-table-column"
           role="gridcell"
           style={
@@ -570,7 +552,6 @@ exports[`BpkDataTable should render correctly with a specified width 1`] = `
         tabIndex={0}
       >
         <div
-          aria-describedby={undefined}
           className="ReactVirtualized__Table__rowColumn bpk-data-table-column"
           role="gridcell"
           style={
@@ -586,7 +567,6 @@ exports[`BpkDataTable should render correctly with a specified width 1`] = `
           Rolf
         </div>
         <div
-          aria-describedby={undefined}
           className="ReactVirtualized__Table__rowColumn bpk-data-table-column"
           role="gridcell"
           style={
@@ -602,7 +582,6 @@ exports[`BpkDataTable should render correctly with a specified width 1`] = `
           Some guy
         </div>
         <div
-          aria-describedby={undefined}
           className="ReactVirtualized__Table__rowColumn bpk-data-table-column"
           role="gridcell"
           style={
@@ -625,7 +604,6 @@ exports[`BpkDataTable should render correctly with a specified width 1`] = `
 
 exports[`BpkDataTable should render correctly with multiple columns 1`] = `
 <div
-  className={undefined}
   style={
     Object {
       "overflow": "visible",
@@ -635,7 +613,6 @@ exports[`BpkDataTable should render correctly with multiple columns 1`] = `
 >
   <div
     className="ReactVirtualized__Table bpk-data-table"
-    id={undefined}
     role="grid"
     style={Object {}}
   >
@@ -655,7 +632,6 @@ exports[`BpkDataTable should render correctly with multiple columns 1`] = `
         aria-label="Name"
         aria-sort="ascending"
         className="ReactVirtualized__Table__headerColumn bpk-data-table__header-column"
-        id={undefined}
         onClick={[Function]}
         onKeyDown={[Function]}
         role="columnheader"
@@ -715,9 +691,7 @@ exports[`BpkDataTable should render correctly with multiple columns 1`] = `
       </div>
       <div
         aria-label="Description"
-        aria-sort={undefined}
         className="ReactVirtualized__Table__headerColumn bpk-data-table__header-column"
-        id={undefined}
         onClick={[Function]}
         onKeyDown={[Function]}
         role="columnheader"
@@ -777,9 +751,7 @@ exports[`BpkDataTable should render correctly with multiple columns 1`] = `
       </div>
       <div
         aria-label="Bla"
-        aria-sort={undefined}
         className="ReactVirtualized__Table__headerColumn bpk-data-table__header-column"
-        id={undefined}
         onClick={[Function]}
         onKeyDown={[Function]}
         role="columnheader"
@@ -842,7 +814,6 @@ exports[`BpkDataTable should render correctly with multiple columns 1`] = `
       aria-label="grid"
       aria-readonly={true}
       className="ReactVirtualized__Grid ReactVirtualized__Table__Grid"
-      id={undefined}
       onScroll={[Function]}
       role="rowgroup"
       style={
@@ -866,7 +837,6 @@ exports[`BpkDataTable should render correctly with multiple columns 1`] = `
 
 exports[`BpkDataTable should render correctly with no data; only headers 1`] = `
 <div
-  className={undefined}
   style={
     Object {
       "overflow": "visible",
@@ -876,7 +846,6 @@ exports[`BpkDataTable should render correctly with no data; only headers 1`] = `
 >
   <div
     className="ReactVirtualized__Table bpk-data-table"
-    id={undefined}
     role="grid"
     style={Object {}}
   >
@@ -896,7 +865,6 @@ exports[`BpkDataTable should render correctly with no data; only headers 1`] = `
         aria-label="Name"
         aria-sort="ascending"
         className="ReactVirtualized__Table__headerColumn bpk-data-table__header-column"
-        id={undefined}
         onClick={[Function]}
         onKeyDown={[Function]}
         role="columnheader"
@@ -956,9 +924,7 @@ exports[`BpkDataTable should render correctly with no data; only headers 1`] = `
       </div>
       <div
         aria-label="Description"
-        aria-sort={undefined}
         className="ReactVirtualized__Table__headerColumn bpk-data-table__header-column"
-        id={undefined}
         onClick={[Function]}
         onKeyDown={[Function]}
         role="columnheader"
@@ -1018,9 +984,7 @@ exports[`BpkDataTable should render correctly with no data; only headers 1`] = `
       </div>
       <div
         aria-label="Bla"
-        aria-sort={undefined}
         className="ReactVirtualized__Table__headerColumn bpk-data-table__header-column"
-        id={undefined}
         onClick={[Function]}
         onKeyDown={[Function]}
         role="columnheader"
@@ -1083,7 +1047,6 @@ exports[`BpkDataTable should render correctly with no data; only headers 1`] = `
       aria-label="grid"
       aria-readonly={true}
       className="ReactVirtualized__Grid ReactVirtualized__Table__Grid"
-      id={undefined}
       onScroll={[Function]}
       role="rowgroup"
       style={
