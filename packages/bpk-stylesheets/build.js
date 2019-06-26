@@ -18,4 +18,12 @@ const webpack = require('webpack');
 
 const config = require('./webpack.config.babel.js');
 
-webpack(config);
+/* eslint-disable no-console */
+webpack(config, (err, stats) => {
+  if (err || stats.hasErrors()) {
+    console.error(err);
+  } else {
+    console.log(stats.toString());
+  }
+});
+/* eslint-enable */

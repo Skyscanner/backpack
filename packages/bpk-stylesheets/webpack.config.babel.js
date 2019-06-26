@@ -25,7 +25,7 @@ import postCssPlugins from '../../scripts/webpack/postCssPlugins';
 const path = require('path');
 
 module.exports = {
-  mode: 'production',
+  mode: 'development',
   entry: {
     base: './index.js',
   },
@@ -41,9 +41,6 @@ module.exports = {
         test: /\.js$/,
         exclude: /node_modules/,
         loader: 'babel-loader',
-        options: {
-          rootMode: 'upward',
-        },
       },
       {
         test: /\.scss$/,
