@@ -165,7 +165,7 @@ const BpkPhoneInput = (props: Props) => {
         }
       >
         {dialingCodes.map(
-          ({ id: codeId, description, code, ...extraDialingProps }) => (
+          ({ id: codeId, description, ...extraDialingProps }) => (
             <option key={codeId} value={codeId} {...extraDialingProps}>
               {description}
             </option>
