@@ -20,7 +20,8 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import { storiesOf, action } from '@storybook/react';
+import { storiesOf } from '@storybook/react';
+import { action } from '@storybook/addon-actions';
 import BpkButton from 'bpk-component-button';
 import BpkCard from 'bpk-component-card';
 import { BpkSpinner, SPINNER_TYPES } from 'bpk-component-spinner';
