@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-table",
-  "version": "1.1.76",
+  "version": "1.1.77",
   "description": "Backpack table component.",
   "main": "index.js",
   "repository": {

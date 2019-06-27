@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-input",
-  "version": "4.1.22",
+  "version": "4.1.23",
   "description": "Backpack input component.",
   "main": "index.js",
   "repository": {

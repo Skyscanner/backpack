@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-navigation-stack",
-  "version": "1.0.81",
+  "version": "1.0.82",
   "description": "Backpack navigation stack component.",
   "main": "index.js",
   "repository": {

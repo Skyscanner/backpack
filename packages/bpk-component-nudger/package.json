@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-nudger",
-  "version": "1.0.140",
+  "version": "1.0.141",
   "description": "Backpack nudger component.",
   "main": "index.js",
   "repository": {

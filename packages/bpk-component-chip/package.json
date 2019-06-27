@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-chip",
-  "version": "2.0.90",
+  "version": "2.0.91",
   "description": "Backpack chip component.",
   "main": "index.js",
   "repository": {

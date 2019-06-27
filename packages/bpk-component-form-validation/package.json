@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-form-validation",
-  "version": "2.0.21",
+  "version": "2.0.22",
   "description": "Backpack form-validation component.",
   "main": "index.js",
   "repository": {

@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-theme-toggle",
-  "version": "1.0.112",
+  "version": "1.0.113",
   "description": "Backpack theme toggle component.",
   "main": "index.js",
   "repository": {

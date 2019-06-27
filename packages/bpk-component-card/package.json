@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-card",
-  "version": "1.1.85",
+  "version": "1.1.86",
   "description": "Backpack card component.",
   "main": "index.js",
   "repository": {
