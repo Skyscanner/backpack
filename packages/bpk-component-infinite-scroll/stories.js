@@ -173,7 +173,7 @@ storiesOf('bpk-component-infinite-scroll', module)
           onClick={() => {
             const newElements = [];
             const k = Math.floor(Math.random() * 10);
-            for (let i = 0; i < 100; i = 1) {
+            for (let i = 0; i < 100; i += 1) {
               newElements.push(`Element ${k} ${i}`);
             }
             dataSource.updateData(newElements);
