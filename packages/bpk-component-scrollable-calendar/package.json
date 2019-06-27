@@ -13,10 +13,10 @@
     "react": "^15.0.0 || ^16.0.0"
   },
   "dependencies": {
-    "bpk-component-calendar": "^5.0.20",
-    "bpk-component-text": "^1.1.2",
-    "bpk-mixins": "^17.24.0",
-    "bpk-react-utils": "^2.7.8",
+    "bpk-component-calendar": "^5.0.21",
+    "bpk-component-text": "^1.1.3",
+    "bpk-mixins": "^17.24.1",
+    "bpk-react-utils": "^2.7.9",
     "prop-types": "^15.5.8",
     "react-window": "^1.5.0"
   },

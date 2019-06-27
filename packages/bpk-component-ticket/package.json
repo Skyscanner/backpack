@@ -13,13 +13,13 @@
     "react": "^15.0.0 || ^16.0.0"
   },
   "dependencies": {
-    "bpk-mixins": "^17.24.0",
-    "bpk-react-utils": "^2.7.8",
+    "bpk-mixins": "^17.24.1",
+    "bpk-react-utils": "^2.7.9",
     "prop-types": "^15.6.2"
   },
   "devDependencies": {
-    "bpk-component-button": "^2.3.12",
-    "bpk-component-icon": "^3.31.0"
+    "bpk-component-button": "^2.3.13",
+    "bpk-component-icon": "^3.31.1"
   },
   "gitHead": "2442745ec57ceff0b7265f99145c65e83ac35396"
 }

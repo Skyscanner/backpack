@@ -13,16 +13,16 @@
     "react": "^15.0.0 || ^16.0.0"
   },
   "dependencies": {
-    "bpk-component-spinner": "^2.2.102",
-    "bpk-mixins": "^17.24.0",
-    "bpk-react-utils": "^2.7.8",
+    "bpk-component-spinner": "^2.2.103",
+    "bpk-mixins": "^17.24.1",
+    "bpk-react-utils": "^2.7.9",
     "prop-types": "^15.6.2",
     "react-transition-group": "^2.5.3"
   },
   "devDependencies": {
-    "bpk-component-mobile-scroll-container": "^1.1.76",
-    "bpk-component-text": "^1.1.2",
-    "bpk-tokens": "^27.6.2"
+    "bpk-component-mobile-scroll-container": "^1.1.77",
+    "bpk-component-text": "^1.1.3",
+    "bpk-tokens": "^27.6.3"
   },
   "gitHead": "2442745ec57ceff0b7265f99145c65e83ac35396"
 }

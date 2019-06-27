@@ -13,16 +13,16 @@
     "react": "^15.0.0 || ^16.0.0"
   },
   "dependencies": {
-    "bpk-component-form-validation": "^2.0.21",
-    "bpk-component-label": "^3.2.140",
-    "bpk-mixins": "^17.24.0",
-    "bpk-react-utils": "^2.7.8",
+    "bpk-component-form-validation": "^2.0.22",
+    "bpk-component-label": "^3.2.141",
+    "bpk-mixins": "^17.24.1",
+    "bpk-react-utils": "^2.7.9",
     "prop-types": "^15.6.2"
   },
   "devDependencies": {
-    "bpk-component-checkbox": "^1.4.102",
-    "bpk-component-input": "^4.1.22",
-    "bpk-component-select": "^2.3.2"
+    "bpk-component-checkbox": "^1.4.103",
+    "bpk-component-input": "^4.1.23",
+    "bpk-component-select": "^2.3.3"
   },
   "gitHead": "2442745ec57ceff0b7265f99145c65e83ac35396"
 }
