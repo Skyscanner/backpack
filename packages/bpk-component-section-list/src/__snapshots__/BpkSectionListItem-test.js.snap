@@ -46,7 +46,7 @@ exports[`BpkSectionListItem should render correctly with a custom className 1`] 
 exports[`BpkSectionListItem should render correctly with an "onClick" prop 1`] = `
 <button
   className="bpk-section-list-item bpk-section-list-item--interactive"
-  onClick={[Function]}
+  onClick={[MockFunction]}
   type="button"
 >
   Hello world
