@@ -49,9 +49,9 @@ class DataSource<T = any> {
     return false;
   }
 
-  triggerListeners(...args: Array<any>): void {
+  triggerListeners = (...args: Array<any>): void => {
     this.listeners.forEach(cb => cb(...args));
-  }
+  };
 }
 
 export class ArrayDataSource<T = any> extends DataSource<T> {
