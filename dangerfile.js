@@ -201,7 +201,7 @@ const createPRToOtherRepo = async () => {
 
         ![test](${thanksGifs[0]})
         `,
-      owner: 'skyscanner',
+      owner: 'Skyscanner',
       repo: 'backpack-ios',
       baseBranch: 'master',
       newBranchName: 'danger-test',
