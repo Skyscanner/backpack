@@ -111,7 +111,6 @@ const BpkPhoneInput = (props: Props) => {
   let phoneDisplayValue;
 
   if (countryCodeMask) {
-
     phoneDisplayValue = `+${dialingCodeText} ${value}`;
   } else {
     phoneDisplayValue = value;
@@ -197,7 +196,6 @@ const BpkPhoneInput = (props: Props) => {
         name={name}
         value={phoneDisplayValue}
         type={INPUT_TYPES.tel}
-
         onChange={countryCodeMask ? phoneNumberOnChange : onChange}
         className={getClassName('bpk-phone-input__phone-number', className)}
       />
