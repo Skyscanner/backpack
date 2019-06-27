@@ -68,7 +68,6 @@ exports[`BpkCalendarScrollGridList should render correctly with "showWeekendSepa
     height={270}
     initialScrollOffset={0}
     itemCount={13}
-    itemData={undefined}
     itemSize={[Function]}
     overscanCount={1}
     rowCount={13}
@@ -152,7 +151,6 @@ exports[`BpkCalendarScrollGridList should render correctly with a "dateModifiers
     height={270}
     initialScrollOffset={0}
     itemCount={13}
-    itemData={undefined}
     itemSize={[Function]}
     overscanCount={1}
     rowCount={13}
@@ -233,7 +231,6 @@ exports[`BpkCalendarScrollGridList should render correctly with a custom date co
     height={270}
     initialScrollOffset={0}
     itemCount={13}
-    itemData={undefined}
     itemSize={[Function]}
     overscanCount={1}
     rowCount={13}
@@ -314,7 +311,6 @@ exports[`BpkCalendarScrollGridList should render correctly with a different "wee
     height={270}
     initialScrollOffset={0}
     itemCount={13}
-    itemData={undefined}
     itemSize={[Function]}
     overscanCount={1}
     rowCount={13}
@@ -394,7 +390,6 @@ exports[`BpkCalendarScrollGridList should render correctly with no optional prop
     height={270}
     initialScrollOffset={0}
     itemCount={13}
-    itemData={undefined}
     itemSize={[Function]}
     overscanCount={1}
     rowCount={13}

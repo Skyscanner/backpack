@@ -20,7 +20,8 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import { storiesOf, action } from '@storybook/react';
+import { storiesOf } from '@storybook/react';
+import { action } from '@storybook/addon-actions';
 import BpkButton from 'bpk-component-button';
 import BpkCard from 'bpk-component-card';
 import { BpkSpinner, SPINNER_TYPES } from 'bpk-component-spinner';
@@ -172,7 +173,7 @@ storiesOf('bpk-component-infinite-scroll', module)
           onClick={() => {
             const newElements = [];
             const k = Math.floor(Math.random() * 10);
-            for (let i = 0; i < 100; i = 1) {
+            for (let i = 0; i < 100; i += 1) {
               newElements.push(`Element ${k} ${i}`);
             }
             dataSource.updateData(newElements);

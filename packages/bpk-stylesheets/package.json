@@ -1,10 +1,10 @@
 {
   "name": "bpk-stylesheets",
-  "version": "3.2.178",
+  "version": "3.2.180",
   "description": "Backpack's stylesheets.",
   "main": "index.js",
   "scripts": {
-    "build": "webpack"
+    "build": "node build.js"
   },
   "repository": {
     "type": "git",
@@ -13,9 +13,9 @@
   "author": "Backpack Design System <backpack@skyscanner.net>",
   "license": "Apache-2.0",
   "dependencies": {
-    "bpk-mixins": "^17.23.6",
-    "bpk-tokens": "^27.6.2",
+    "bpk-mixins": "^17.24.1",
+    "bpk-tokens": "^27.6.3",
     "normalize.css": "4.2.0"
   },
-  "gitHead": "3244054e73b5e966c2ca795f496d8e29b6a5fff4"
+  "gitHead": "2442745ec57ceff0b7265f99145c65e83ac35396"
 }

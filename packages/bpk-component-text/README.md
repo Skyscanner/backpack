@@ -61,6 +61,6 @@ export default () => (
 | --------- | ---------------------------------------- | -------- | ------------- |
 | children  | -                                        | true     | -             |
 | textStyle | 'xs', 'sm', 'base', 'lg', 'xl', 'xxl'    | false    | 'base'        |
-| tagName   | 'span', 'p', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6' | false    | 'span'        |
+| tagName   | 'span', 'p', 'text', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6' | false    | 'span'        |
 | className | string                                   | false    | null          |
 | bold      | bool                                     | false    | false         |
