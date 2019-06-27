@@ -28,10 +28,10 @@ import BpkPhoneInput from './index';
 const DIALING_CODE_TO_ID_MAP = {
   '1': 'us',
   '2': 'ca',
-  '44': 'uk',
-  '55': 'br',
-  '998': 'uz',
-  '9': 'ar',
+  '3': 'uk',
+  '4': 'br',
+  '5': 'uz',
+  '6': 'ar',
 };
 
 const getFlag = dialingCode => {
@@ -70,7 +70,7 @@ class StoryContainer extends Component<
 
   constructor(props: Props) {
     super(props);
-    this.state = { dialingCode: '44', value: '' };
+    this.state = { dialingCode: '1', value: '' };
   }
 
   onChange = (e: SyntheticInputEvent<HTMLElement>) => {
@@ -124,10 +124,10 @@ class StoryContainer extends Component<
           dialingCodes={[
             { id: '1', description: '+1 (US)', code: '1' },
             { id: '2', description: '+1 (CA)', code: '1' },
-            { id: '44', description: '+44 (UK)', code: '44' },
-            { id: '55', description: '+55', code: '55' },
-            { id: '998', description: '+998', code: '998' },
-            { id: '9', description: '+54 (AR)', code: '54' },
+            { id: '3', description: '+44 (UK)', code: '44' },
+            { id: '4', description: '+55', code: '55' },
+            { id: '5', description: '+998', code: '998' },
+            { id: '6', description: '+54 (AR)', code: '54' },
           ]}
           dialingCodeProps={{
             id: 'dialing-code',
