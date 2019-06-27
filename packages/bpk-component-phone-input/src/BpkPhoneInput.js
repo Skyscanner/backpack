@@ -111,27 +111,31 @@ const BpkPhoneInput = (props: Props) => {
   let phoneDisplayValue;
 
   if (countryCodeMask) {
-    if (value.startsWith('+')) {
-      if (value.startsWith(`+${dialingCodeText} `)) {
-        phoneDisplayValue = value;
-      } else if (value.charAt(`+${dialingCodeText}`.length) !== ' ') {
-        const phoneNumber = value.slice(`+${dialingCodeText}`.length);
-        phoneDisplayValue = `+${dialingCodeText} ${phoneNumber}`;
-      } else {
-        const phoneValue = value.split(' ')[1];
-
-        phoneDisplayValue = phoneValue
-          ? `+${dialingCodeText} ${phoneValue}`
-          : `+${dialingCodeText} `;
-      }
-    } else if (value.includes(dialingCodeText)) {
-      phoneDisplayValue = `+${value}`;
-    } else {
-      phoneDisplayValue = `+${dialingCodeText} ${value}`;
-    }
+    phoneDisplayValue = `+${dialingCodeText} ${value}`;
   } else {
     phoneDisplayValue = value;
   }
+
+  const phoneNumberOnChange = formFieldEvt => {
+    let { value: phoneValueWithCode } = formFieldEvt.target;
+    const { name: fieldPath } = formFieldEvt.target;
+
+    if (phoneValueWithCode.charAt(`+${dialingCodeText}`.length) !== ' ') {
+      const number = phoneValueWithCode.slice(`+${dialingCodeText}`.length);
+      phoneValueWithCode = `+${dialingCodeText} ${number}`;
+    }
+
+    const phoneNumber = phoneValueWithCode.split(' ')[1] || '';
+
+    const passThroughEvent = {
+      target: {
+        value: phoneNumber,
+        name: fieldPath,
+      },
+    };
+
+    onChange(passThroughEvent);
+  };
 
   return (
     <span
@@ -190,7 +194,7 @@ const BpkPhoneInput = (props: Props) => {
         name={name}
         value={phoneDisplayValue}
         type={INPUT_TYPES.tel}
-        onChange={onChange}
+        onChange={countryCodeMask ? phoneNumberOnChange : onChange}
         className={getClassName('bpk-phone-input__phone-number', className)}
       />
     </span>
