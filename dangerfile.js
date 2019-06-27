@@ -104,7 +104,7 @@ if (componentChangedOrCreated) {
   - [ ] Safari (iOS)
   - [ ] Chrome (Android)
   - [ ] Chrome (Desktop)
-  - [ ] Firefox (Deesktop)
+  - [ ] Firefox (Desktop)
   `);
 }
 

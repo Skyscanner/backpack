@@ -37,6 +37,14 @@ exports[`BpkText should render correctly with tageName="h1", textStyle="xxl" 1`]
 </h1>
 `;
 
+exports[`BpkText should render correctly with tageName="text" 1`] = `
+<text
+  className="bpk-text bpk-text--base"
+>
+  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+</text>
+`;
+
 exports[`BpkText should render correctly with textStyle="base" 1`] = `
 <span
   className="bpk-text bpk-text--base"

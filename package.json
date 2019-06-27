@@ -92,6 +92,7 @@
     "core-js": "^3.0.0",
     "css-loader": "^1.0.0",
     "danger": "^6.1.13",
+    "danger-plugin-toolbox": "^1.13.0",
     "del": "^4.0.0",
     "enzyme": "^3.8.0",
     "enzyme-adapter-react-16": "^1.9.1",
