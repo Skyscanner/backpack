@@ -212,7 +212,9 @@ const processUnreleasedYaml = yaml => {
     entries.forEach((e, eIndex) => {
       const entryKeys = Object.keys(e);
       entryKeys.forEach(ek => {
-        console.log(`entryKeys`, entryKeys);
+        if (verbose) {
+          console.log(`entryKeys`, entryKeys);
+        }
         const changes = entries[eIndex][ek];
         const newResult = {
           name: ek,
@@ -342,7 +344,7 @@ const updatePackageJsonFiles = changes => {
 const createGitTags = changes => {
   changes.forEach(c => {
     const tagMessage = `${c.name}@${c.newVersion}`;
-    console.log(`git tag -a ${tagMessage} -m ${tagMessage}`);
+    execSync(`git tag -a ${tagMessage} -m ${tagMessage}`);
   });
 };
 
@@ -360,7 +362,10 @@ const performPublish = (changes, changeSummary) => {
   if (!testing) {
     execSync(`git add . && git commit -m "Publish" --no-verify`);
     createGitTags(changes);
+    execSync(`npx lerna publish from-package`);
     execSync(`git add . && git commit --amend --no-edit --no-verify`);
+    execSync(`git push`);
+    execSync(`git push --tags`);
   }
   logOk(`All good 👍`);
   printOutSlackUpdate(changes, changeSummary, publishTitle);
