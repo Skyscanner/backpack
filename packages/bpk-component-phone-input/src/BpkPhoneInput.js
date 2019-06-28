@@ -124,13 +124,9 @@ const BpkPhoneInput = (props: Props) => {
       phoneValueWithCode = `+${dialingCodeText} ${number}`;
     }
 
-    const phoneNumber = phoneValueWithCode.split(' ')[1] || '';
-    const passThroughEvent = {
-      ...formFieldEvt,
-    };
-    passThroughEvent.target.value = phoneNumber;
-
-    onChange(passThroughEvent);
+    /* eslint-disable no-param-reassign */
+    formFieldEvt.target.value = phoneValueWithCode.split(' ')[1] || '';
+    onChange(formFieldEvt);
   };
 
   return (
