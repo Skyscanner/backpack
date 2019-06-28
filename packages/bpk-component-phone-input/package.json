@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-phone-input",
-  "version": "3.1.4",
+  "version": "3.1.5-alpha.9+52cc24b6a",
   "description": "Backpack phone input component.",
   "main": "index.js",
   "repository": {
@@ -13,18 +13,18 @@
     "react": "^15.4.0 || ^16.0.0"
   },
   "dependencies": {
-    "bpk-component-input": "^4.1.21",
-    "bpk-component-label": "^3.2.139",
-    "bpk-component-select": "^2.3.1",
-    "bpk-component-text": "^1.1.1",
-    "bpk-mixins": "^17.23.6",
-    "bpk-react-utils": "^2.7.8",
-    "bpk-tokens": "^27.6.2",
+    "bpk-component-input": "^4.1.22-alpha.9+52cc24b6a",
+    "bpk-component-label": "^3.2.140-alpha.37+52cc24b6a",
+    "bpk-component-select": "^2.3.2-alpha.29+52cc24b6a",
+    "bpk-component-text": "^1.1.2-alpha.9+52cc24b6a",
+    "bpk-mixins": "^17.23.7-alpha.37+52cc24b6a",
+    "bpk-react-utils": "^2.7.9-alpha.72+52cc24b6a",
+    "bpk-tokens": "^27.6.3-alpha.72+52cc24b6a",
     "prop-types": "^15.6.2"
   },
   "devDependencies": {
-    "bpk-component-fieldset": "^1.1.104",
-    "bpk-component-image": "^2.2.1"
+    "bpk-component-fieldset": "^1.1.105-alpha.9+52cc24b6a",
+    "bpk-component-image": "^2.2.2-alpha.9+52cc24b6a"
   },
-  "gitHead": "ae19ac287b6f4ffb1ca7eb825b9193d186844695"
+  "gitHead": "52cc24b6ae2aeba01e38adf36cb73daef8278431"
 }

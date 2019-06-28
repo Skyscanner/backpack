@@ -23,15 +23,15 @@ exports[`BpkPhoneInput should render correctly 1`] = `
         "width": "118px",
       }
     }
-    value="44"
+    value="1"
   >
     <option
-      value="44"
+      value="1"
     >
       +44
     </option>
     <option
-      value="55"
+      value="2"
     >
       +55
     </option>
@@ -78,15 +78,15 @@ exports[`BpkPhoneInput should render correctly with a "disabled" attribute 1`] =
         "width": "118px",
       }
     }
-    value="44"
+    value="1"
   >
     <option
-      value="44"
+      value="1"
     >
       +44
     </option>
     <option
-      value="55"
+      value="2"
     >
       +55
     </option>
@@ -133,15 +133,15 @@ exports[`BpkPhoneInput should render correctly with a "large" attribute 1`] = `
         "width": "124px",
       }
     }
-    value="44"
+    value="1"
   >
     <option
-      value="44"
+      value="1"
     >
       +44
     </option>
     <option
-      value="55"
+      value="2"
     >
       +55
     </option>
@@ -188,15 +188,15 @@ exports[`BpkPhoneInput should render correctly with a "valid" attribute 1`] = `
         "width": "118px",
       }
     }
-    value="44"
+    value="1"
   >
     <option
-      value="44"
+      value="1"
     >
       +44
     </option>
     <option
-      value="55"
+      value="2"
     >
       +55
     </option>
@@ -244,15 +244,15 @@ exports[`BpkPhoneInput should render correctly with a "wrapperProps" attribute 1
         "width": "118px",
       }
     }
-    value="44"
+    value="1"
   >
     <option
-      value="44"
+      value="1"
     >
       +44
     </option>
     <option
-      value="55"
+      value="2"
     >
       +55
     </option>
@@ -305,15 +305,15 @@ exports[`BpkPhoneInput should render correctly with a dialing code image attribu
           "width": "118px",
         }
       }
-      value="44"
+      value="1"
     >
       <option
-        value="44"
+        value="1"
       >
         +44
       </option>
       <option
-        value="55"
+        value="2"
       >
         +55
       </option>
@@ -357,15 +357,15 @@ exports[`BpkPhoneInput should render correctly with a the flag only attribute 1`
     name="Dialing code"
     onChange={[Function]}
     style={null}
-    value="44"
+    value="1"
   >
     <option
-      value="44"
+      value="1"
     >
       +44
     </option>
     <option
-      value="55"
+      value="2"
     >
       +55
     </option>

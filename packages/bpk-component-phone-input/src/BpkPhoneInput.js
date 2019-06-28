@@ -25,7 +25,7 @@ import BpkInput, { INPUT_TYPES } from 'bpk-component-input';
 import BpkLabel from 'bpk-component-label';
 import BpkSelect from 'bpk-component-select';
 
-import STYLES from './BpkPhoneInput.scss';
+import STYLES from './BpkPhoneInput.css';
 
 const getClassName = cssModules(STYLES);
 
@@ -125,7 +125,6 @@ const BpkPhoneInput = (props: Props) => {
     }
 
     const phoneNumber = phoneValueWithCode.split(' ')[1] || '';
-
     const passThroughEvent = {
       ...formFieldEvt,
     };
