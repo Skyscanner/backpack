@@ -358,11 +358,8 @@ const performPublish = (changes, changeSummary) => {
   execSync(`npm run fix-bpk-dependencies`);
   if (!testing) {
     execSync(`git add . && git commit -m "Publish" --no-verify`);
-    execSync(`npx lerna publish from-package`);
     createGitTags(changes);
     execSync(`git add . && git commit --amend --no-edit --no-verify`);
-    execSync(`git push`);
-    execSync(`git push --tags`);
   }
   logOk(`All good 👍`);
   printOutSlackUpdate(changes, changeSummary, publishTitle);

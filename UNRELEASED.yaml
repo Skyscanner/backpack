@@ -1,6 +1,9 @@
 # Unreleased
 
 > Place your changes below this line.
+BREAKING:
+  - bpk-component-card:
+    - Breaking stuff for fun
 
 > Place your changes above this line.
 

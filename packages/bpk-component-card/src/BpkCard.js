@@ -21,14 +21,13 @@ import React from 'react';
 import { cssModules } from 'bpk-react-utils';
 
 import STYLES from './BpkCard.scss';
-
 const getClassName = cssModules(STYLES);
 
 const BpkCard = props => {
   const classNames = [getClassName('bpk-card')];
   const { children, className, href, padded, blank, ...rest } = props;
 
-  if (padded) {
+  if (href && padded) {
     classNames.push(getClassName('bpk-card--padded'));
   }
   if (className) {
