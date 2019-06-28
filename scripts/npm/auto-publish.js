@@ -209,10 +209,11 @@ const processUnreleasedYaml = yaml => {
   const yamlKeys = Object.keys(yaml);
   yamlKeys.forEach(k => {
     const entries = yaml[k];
-    entries.forEach(e => {
+    entries.forEach((e, eIndex) => {
       const entryKeys = Object.keys(e);
       entryKeys.forEach(ek => {
-        const changes = entries[0][ek];
+        console.log(`entryKeys`, entryKeys);
+        const changes = entries[eIndex][ek];
         const newResult = {
           name: ek,
           mode: getModeFromYamlSection(k),
