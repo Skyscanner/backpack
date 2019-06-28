@@ -47,9 +47,5 @@
 
   &--appear-active {
     opacity: $bpk-scrim-opacity;
-
-    @include bpk-breakpoint-mobile {
-      opacity: $bpk-scrim-mobile-opacity;
-    }
   }
 }
