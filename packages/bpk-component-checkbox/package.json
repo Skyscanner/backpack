@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-checkbox",
-  "version": "1.4.103",
+  "version": "1.4.104",
   "description": "Backpack checkbox component.",
   "main": "index.js",
   "repository": {
@@ -21,5 +21,5 @@
   "devDependencies": {
     "bpk-tokens": "^27.6.3"
   },
-  "gitHead": "2442745ec57ceff0b7265f99145c65e83ac35396"
+  "gitHead": "f54882a37a540cd879c9d37b82fd52c5662f553d"
 }

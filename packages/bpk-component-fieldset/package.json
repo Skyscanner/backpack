@@ -20,7 +20,7 @@
     "prop-types": "^15.6.2"
   },
   "devDependencies": {
-    "bpk-component-checkbox": "^1.4.103",
+    "bpk-component-checkbox": "^1.4.104",
     "bpk-component-input": "^4.1.23",
     "bpk-component-select": "^2.3.3"
   },
