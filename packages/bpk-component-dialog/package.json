@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-dialog",
-  "version": "1.1.68",
+  "version": "1.1.69",
   "description": "Backpack dialog component.",
   "main": "index.js",
   "repository": {
@@ -13,7 +13,7 @@
     "react": "^15.4.0 || ^16.0.0"
   },
   "dependencies": {
-    "bpk-component-modal": "^1.8.68",
+    "bpk-component-modal": "^1.8.69",
     "prop-types": "^15.6.2"
   },
   "devDependencies": {
