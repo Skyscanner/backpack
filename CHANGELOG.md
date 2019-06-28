@@ -1,6 +1,6 @@
 # Backpack changelog
 
-[Unreleased changes](./UNRELEASED.md).
+[Unreleased changes](./UNRELEASED.yaml).
 
 # 2019-06-25 New icons
 
