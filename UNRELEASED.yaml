@@ -1,12 +1,6 @@
 # Unreleased
 
 > Place your changes below this line.
-FIXED:
-  - bpk-component-dialog:
-    - Fixed an issue that caused the scrim to initially be shown at full opacity when initially rendered.
-
-  - bpk-component-modal:
-    - Fixed an issue that caused the scrim to initially be shown at full opacity when initially rendered.
 
 > Place your changes above this line.
 

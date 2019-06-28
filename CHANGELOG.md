@@ -2,6 +2,17 @@
 
 [Unreleased changes](./UNRELEASED.yaml).
 
+2019-06-28 - Bug fix for mobile modal and dialog scrims
+
+**Fixed:**
+
+ - bpk-component-dialog: 1.1.68 => 1.1.69
+   - Fixed an issue that caused the scrim to initially be shown at full opacity when initially rendered.
+
+ - bpk-component-modal: 1.8.68 => 1.8.69
+   - Fixed an issue that caused the scrim to initially be shown at full opacity when initially rendered.
+
+
 # 2019-06-25 New icons
 
 **Added:**
