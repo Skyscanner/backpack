@@ -24,3 +24,8 @@
 #   FIXED:
 #     - bpk-component-horcrux:
 #       - Fixed issue where `BpkHorcrux` would occasionally possess the living.
+
+
+FIXED:
+- react-native-bpk-component-button
+  - `iconOnly` buttons no longer apply `borderRadius` from theming and are always circular.
