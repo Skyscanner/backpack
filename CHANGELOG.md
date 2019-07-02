@@ -2,6 +2,14 @@
 
 [Unreleased changes](./UNRELEASED.yaml).
 
+2019-07-02 - `iconOnly` buttons always circular
+
+**Fixed:**
+
+ - bpk-component-button: 2.3.13 => 2.3.14
+   - `iconOnly` buttons no longer apply `borderRadius` from theming and are always circular.
+
+
 2019-06-28 - Bug fix for mobile modal and dialog scrims
 
 **Fixed:**

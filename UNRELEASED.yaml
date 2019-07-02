@@ -24,8 +24,3 @@
 #   FIXED:
 #     - bpk-component-horcrux:
 #       - Fixed issue where `BpkHorcrux` would occasionally possess the living.
-
-
-FIXED:
-- bpk-component-button:
-  - `iconOnly` buttons no longer apply `borderRadius` from theming and are always circular.

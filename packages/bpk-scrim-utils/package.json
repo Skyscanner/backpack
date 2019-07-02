@@ -1,6 +1,6 @@
 {
   "name": "bpk-scrim-utils",
-  "version": "3.2.71",
+  "version": "3.2.72",
   "description": "Higher order component that adds an overlay behind components and manages scroll states.",
   "main": "index.js",
   "repository": {
@@ -15,5 +15,5 @@
     "bpk-mixins": "^17.24.1",
     "bpk-react-utils": "^2.7.9"
   },
-  "gitHead": "7ced1c573531e38661ef8b5fd2d447ec4f3a3f4c"
+  "gitHead": "fb7562139a39e5147255304bc55b2eca99009f3c"
 }
