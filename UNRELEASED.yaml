@@ -27,5 +27,5 @@
 
 
 FIXED:
-- react-native-bpk-component-button
+- bpk-component-button:
   - `iconOnly` buttons no longer apply `borderRadius` from theming and are always circular.
