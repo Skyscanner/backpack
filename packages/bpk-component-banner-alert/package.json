@@ -20,7 +20,7 @@
     "bpk-react-utils": "^2.7.9",
     "bpk-tokens": "^27.6.3",
     "prop-types": "^15.6.2",
-    "react-transition-group": "^2.5.3"
+    "react-transition-group": "^4.2.1"
   },
   "gitHead": "fb7562139a39e5147255304bc55b2eca99009f3c"
 }
