@@ -125,17 +125,21 @@ const printOutSlackUpdate = (changes, changeSummary, publishTitle) => {
 };
 
 const generateChangelogSection = (publishTitle, changes) => {
+  const completeChanges = changes.filter(
+    c => c.name && c.releaseMode && c.description,
+  );
+  if (completeChanges.length === 0) {
+    return null;
+  }
   let section = `# ${publishTitle}`;
   let currentMode = null;
-  changes.forEach(c => {
-    if (c.name && c.releaseMode && c.description) {
-      if (c.releaseMode !== currentMode) {
-        currentMode = c.releaseMode;
-        section += `\n\n${getTitleForMode(c.releaseMode)}`;
-      }
-      section += `\n\n - ${c.name}: ${c.currentVersion} => ${c.newVersion}\n`;
-      section += formatDescription(c.description);
+  completeChanges.forEach(c => {
+    if (c.releaseMode !== currentMode) {
+      currentMode = c.releaseMode;
+      section += `\n\n${getTitleForMode(c.releaseMode)}`;
     }
+    section += `\n\n - ${c.name}: ${c.currentVersion} => ${c.newVersion}\n`;
+    section += formatDescription(c.description);
   });
   section += '\n\n';
   return section;
@@ -156,7 +160,9 @@ const performPublish = (changes, changeSummary) => {
     logVerbose(`newChangelogEntry`);
     logVerbose(newChangelogEntry);
   }
-  addChangelogEntry(newChangelogEntry);
+  if (newChangelogEntry) {
+    addChangelogEntry(newChangelogEntry);
+  }
   resetUnreleased();
   updatePackageJsonFiles(changes);
   execSync(`npm run fix-bpk-dependencies`);
