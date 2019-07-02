@@ -224,12 +224,11 @@ const processUnreleasedYaml = yaml => {
 const parseUnreleasedFile = currentPackageMeta => {
   const unreleasedContent = fs.readFileSync(UNRELEASED_PATH).toString();
   assert(unreleasedContent, `Failed to read ${UNRELEASED_PATH}`);
-  const unreleasedYaml = YAML.parse(unreleasedContent);
+  const unreleasedYaml = YAML.parse(unreleasedContent) || [];
   if (verbose) {
     logVerbose(`unreleasedYaml`);
     logVerbose(YAML.stringify(unreleasedYaml));
   }
-  assert(unreleasedYaml, `Failed to parse ${UNRELEASED_PATH}`);
   assert(
     validateUnreleasedEntries(unreleasedYaml, currentPackageMeta),
     `${UNRELEASED_PATH} is not valid. Please fix it and try again.`,
