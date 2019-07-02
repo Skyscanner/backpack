@@ -70,16 +70,14 @@ const assert = (condition, message) => {
 
 const getLernaChanges = () => {
   const lernaChanges = JSON.parse(
-    execSync(`npm run lerna -- changed -l --json`).toString(),
+    execSync(`npx lerna changed -l --json`).toString(),
   );
   assert(lernaChanges, 'Could not retrieve lerna changes.');
   return lernaChanges.map(c => c.name);
 };
 
 const getCurrentPackageMeta = () => {
-  const packages = JSON.parse(
-    execSync(`npm run lerna -- ls -l --json`).toString(),
-  );
+  const packages = JSON.parse(execSync(`npx lerna ls -l --json`).toString());
   assert(packages && packages.map, 'Failed to get current package meta');
   return packages.map(p => ({
     name: p.name,
