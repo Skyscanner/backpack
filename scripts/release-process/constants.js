@@ -20,6 +20,7 @@ const SLACK_PLATFORM_EMOJIS = `:backpack: :safari: :firefox_quantum: :chrome:`;
 const PLATFORM = 'web';
 const REPO = 'backpack';
 
+const GIT_HASH_REGEX = /[A-Za-z0-9]*/i;
 const YES_REGEX = /Y(es)?/i;
 const YES_NO_REGEX = /Y(es)?|N(o)?/i;
 const CHANGELOG_PATH = 'CHANGELOG.md';
@@ -37,6 +38,7 @@ const YAML_SECTION_MAJOR = 'BREAKING';
 
 module.exports = {
   CHANGELOG_PATH,
+  GIT_HASH_REGEX,
   PLATFORM,
   RELEASE_MODE_MAJOR,
   RELEASE_MODE_MINOR,
@@ -54,3 +56,4 @@ module.exports = {
   YES_NO_REGEX,
   YES_REGEX,
 };
+

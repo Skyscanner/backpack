@@ -130,10 +130,15 @@ const updatePackageJsonFiles = changes => {
   });
 };
 
-const createGitTags = changes => {
+const createGitTags = (changes, commitHash = '') => {
   changes.forEach(c => {
     const tagMessage = `${c.name}@${c.newVersion}`;
-    execSync(`git tag -a ${tagMessage} -m ${tagMessage}`);
+    const command = `git tag -a ${tagMessage} ${commitHash} -m ${tagMessage}`;
+    if (testing) {
+      logOk(command);
+    } else {
+      execSync(`git tag -a ${tagMessage} -m ${tagMessage}`);
+    }
   });
 };
 
@@ -288,3 +293,4 @@ module.exports = {
   verbose,
   testing,
 };
+
