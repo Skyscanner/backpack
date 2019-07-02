@@ -95,7 +95,7 @@
     "css-loader": "^1.0.0",
     "danger": "^9.0.1",
     "danger-plugin-toolbox": "^1.13.0",
-    "del": "^4.0.0",
+    "del": "^5.0.0",
     "enzyme": "^3.8.0",
     "enzyme-adapter-react-16": "^1.9.1",
     "enzyme-to-json": "^3.3.5",
