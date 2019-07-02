@@ -125,7 +125,7 @@ const printOutSlackUpdate = (changes, changeSummary, publishTitle) => {
 };
 
 const generateChangelogSection = (publishTitle, changes) => {
-  let section = `${publishTitle}`;
+  let section = `# ${publishTitle}`;
   let currentMode = null;
   changes.forEach(c => {
     if (c.name && c.releaseMode && c.description) {

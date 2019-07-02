@@ -2,7 +2,7 @@
 
 [Unreleased changes](./UNRELEASED.yaml).
 
-2019-07-02 - `iconOnly` buttons always circular
+# 2019-07-02 - `iconOnly` buttons always circular
 
 **Fixed:**
 
