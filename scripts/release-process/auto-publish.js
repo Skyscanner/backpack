@@ -162,7 +162,7 @@ const performPublish = (changes, changeSummary) => {
   execSync(`npm run fix-bpk-dependencies`);
   if (!testing) {
     execSync(`git add . && git commit -m "Publish" --no-verify`);
-    execSync(`npx lerna publish from-package`);
+    execSync(`npm run lerna -- publish from-package`);
     execSync(`git add . && git commit --amend --no-edit --no-verify`);
     createGitTags(changes);
     execSync(`git push`);
