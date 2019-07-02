@@ -293,4 +293,3 @@ module.exports = {
   verbose,
   testing,
 };
-

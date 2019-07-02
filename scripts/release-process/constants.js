@@ -56,4 +56,3 @@ module.exports = {
   YES_NO_REGEX,
   YES_REGEX,
 };
-
