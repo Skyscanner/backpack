@@ -117,7 +117,7 @@
     "gulp-rename": "^1.4.0",
     "gulp-svgmin": "^2.2.0",
     "gulp-theo": "^2.0.0",
-    "husky": "^2.0.0",
+    "husky": "^3.0.0",
     "jest": "^24.8.0",
     "js-yaml": "^3.13.1",
     "lerna": "^3.15.0",
