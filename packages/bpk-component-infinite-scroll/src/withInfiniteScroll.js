@@ -154,11 +154,7 @@ const withInfiniteScroll = <T: ExtendedProps>(
           index: 0,
           elementsPerScroll: this.props.elementsPerScroll,
           elementsToRender: [],
-        }).then(newState => {
-          this.setState({
-            ...newState,
-          });
-        });
+        }).then(newState => this.setStateAfterDsUpdate(newState));
       }
     }
 
@@ -167,6 +163,15 @@ const withInfiniteScroll = <T: ExtendedProps>(
       if (this.sentinel) {
         this.observer.unobserve(this.sentinel);
       }
+    }
+
+    setStateAfterDsUpdate(newState: State) {
+      const { isListFinished } = newState;
+      this.setState({
+        ...newState,
+        elementsToRender: isListFinished ? [] : newState.elementsToRender,
+        index: isListFinished ? 0 : newState.index,
+      });
     }
 
     updateData = () => {
@@ -181,14 +186,10 @@ const withInfiniteScroll = <T: ExtendedProps>(
         elementsPerScroll: isFirstLoad ? this.props.elementsPerScroll : index,
         elementsToRender: [],
         computeShowSeeMore: isFirstLoad,
-      }).then(newState => {
-        this.setState({
-          ...newState,
-        });
-      });
+      }).then(newState => this.setStateAfterDsUpdate(newState));
     };
 
-    fetchItems(config) {
+    fetchItems(config): Promise<$Shape<State>> {
       const { onScrollFinished, seeMoreAfter } = this.props;
       const {
         index,
