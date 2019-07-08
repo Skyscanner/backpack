@@ -2,6 +2,17 @@
 
 [Unreleased changes](./UNRELEASED.yaml).
 
+# 2019-07-08 - Fix for phone input clicks not being registered
+
+**Fixed:**
+
+ - bpk-component-phone-input: 3.1.8 => 3.1.9
+   - Fixed issue which meant clicking on an image inside a `BpkSelect` would not open the select menu.
+
+ - bpk-component-select: 2.3.3 => 2.3.4
+   - Fixed issue which meant clicking on an image inside a `BpkSelect` would not open the select menu.
+
+
 # 2019-07-02 - `iconOnly` buttons always circular
 
 **Fixed:**
