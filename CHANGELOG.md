@@ -2,6 +2,13 @@
 
 [Unreleased changes](./UNRELEASED.yaml).
 
+# 2019-07-08 - Fix infinite scroll update with empty lists
+
+**Fixed::**
+
+- bpk-component-infinite-scroll:
+  - Updating data to an empty array will now refresh the list
+
 # 2019-07-08 - Fix for phone input clicks not being registered
 
 **Fixed:**
