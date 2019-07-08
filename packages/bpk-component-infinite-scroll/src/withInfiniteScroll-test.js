@@ -25,6 +25,14 @@ import toJson from 'enzyme-to-json';
 import withInfiniteScroll from './withInfiniteScroll';
 import { ArrayDataSource } from './DataSource';
 
+const nextTick = () => new Promise(res => setImmediate(res));
+const mockDataSource = data => {
+  const myDs = new ArrayDataSource(data);
+  const mockFetch = myDs.fetchItems.bind(myDs);
+  myDs.fetchItems = jest.fn((...args) => mockFetch(...args));
+  return myDs;
+};
+
 describe('withInfiniteScroll', () => {
   const elementsArray = [];
 
@@ -250,10 +258,7 @@ describe('withInfiniteScroll', () => {
   });
 
   it('should fetch more items when see more is clicked', async () => {
-    const myDs = new ArrayDataSource(elementsArray);
-
-    const mockFetch = myDs.fetchItems.bind(myDs);
-    myDs.fetchItems = jest.fn((...args) => mockFetch(...args));
+    const myDs = mockDataSource(elementsArray);
 
     const tree = mount(
       <InfiniteList
@@ -277,15 +282,13 @@ describe('withInfiniteScroll', () => {
   });
 
   it('should refresh data when data changes', async () => {
-    const myDs = new ArrayDataSource(elementsArray);
-
-    const mockFetch = myDs.fetchItems.bind(myDs);
-    myDs.fetchItems = jest.fn((...args) => mockFetch(...args));
+    const myDs = mockDataSource(elementsArray);
 
     const tree = mount(<InfiniteList dataSource={myDs} />);
+    await nextTick();
 
-    expect(toJson(tree)).toMatchSnapshot();
     myDs.updateData([1, 2, 3]);
+    await nextTick();
     tree.update();
 
     expect(myDs.fetchItems).toHaveBeenCalledTimes(2);
@@ -293,18 +296,102 @@ describe('withInfiniteScroll', () => {
   });
 
   it('should refresh data when data changes from an empty Array', async () => {
-    const myDs = new ArrayDataSource([]);
-
-    const mockFetch = myDs.fetchItems.bind(myDs);
-    myDs.fetchItems = jest.fn((...args) => mockFetch(...args));
+    const myDs = mockDataSource(elementsArray);
 
     const tree = mount(<InfiniteList dataSource={myDs} />);
+    await nextTick();
 
-    expect(toJson(tree)).toMatchSnapshot();
     myDs.updateData([1, 2, 3]);
+    await nextTick();
     tree.update();
 
     expect(myDs.fetchItems).toHaveBeenCalledTimes(2);
+    expect(toJson(tree)).toMatchSnapshot();
+  });
+
+  it('should finish the list when array changes to empty', async () => {
+    const myDs = mockDataSource(elementsArray);
+
+    const onFinished = jest.fn();
+
+    const tree = mount(
+      <InfiniteList
+        dataSource={myDs}
+        seeMoreAfter={0}
+        elementsPerScroll={1}
+        onScrollFinished={onFinished}
+      />,
+    );
+    await nextTick();
+
+    myDs.updateData([]);
+    await nextTick();
+    tree.update();
+
+    expect(myDs.fetchItems).toHaveBeenCalledTimes(2);
+    expect(onFinished).toHaveBeenCalled();
+    expect(toJson(tree)).toMatchSnapshot();
+  });
+
+  it('should refresh when data source changes', async () => {
+    const myDs = mockDataSource(elementsArray);
+
+    const tree = mount(<InfiniteList dataSource={myDs} />);
+    await nextTick();
+
+    const newDs = mockDataSource([1, 2, 3]);
+
+    tree.setProps({ dataSource: newDs });
+    await nextTick();
+    tree.update();
+
+    expect(myDs.fetchItems).toHaveBeenCalled();
+    expect(newDs.fetchItems).toHaveBeenCalled();
+    expect(toJson(tree)).toMatchSnapshot();
+  });
+
+  it('should refresh data when data source changes from an empty data source', async () => {
+    const myDs = mockDataSource([]);
+
+    const tree = mount(<InfiniteList dataSource={myDs} />);
+    await nextTick();
+
+    const newDs = mockDataSource([1, 2, 3]);
+
+    tree.setProps({ dataSource: newDs });
+    await nextTick();
+    tree.update();
+
+    expect(myDs.fetchItems).toHaveBeenCalled();
+    expect(newDs.fetchItems).toHaveBeenCalled();
+    expect(toJson(tree)).toMatchSnapshot();
+  });
+
+  it('should finish the list when data source changes to an empty data source', async () => {
+    const myDs = mockDataSource(elementsArray);
+
+    const onFinished = jest.fn();
+
+    const tree = mount(
+      <InfiniteList
+        dataSource={myDs}
+        seeMoreAfter={0}
+        elementsPerScroll={1}
+        onScrollFinished={onFinished}
+      />,
+    );
+    await nextTick();
+    tree.update();
+
+    const newDs = mockDataSource([]);
+
+    tree.setProps({ dataSource: newDs });
+    await nextTick();
+    tree.update();
+
+    expect(myDs.fetchItems).toHaveBeenCalled();
+    expect(newDs.fetchItems).toHaveBeenCalled();
+    expect(onFinished).toHaveBeenCalled();
     expect(toJson(tree)).toMatchSnapshot();
   });
 });

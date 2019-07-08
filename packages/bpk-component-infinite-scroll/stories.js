@@ -191,4 +191,33 @@ storiesOf('bpk-component-infinite-scroll', module)
         />
       </div>
     );
+  })
+  .add('Force update data - From non empty to empty', () => {
+    const dataSource = new ArrayDataSource(elementsArray);
+    return (
+      <div>
+        <BpkButton
+          onClick={() => {
+            dataSource.updateData([]);
+          }}
+        >
+          Clear data
+        </BpkButton>
+        <BpkButton
+          onClick={() => {
+            dataSource.updateData(elementsArray);
+          }}
+        >
+          Add data
+        </BpkButton>
+        <InfiniteList
+          dataSource={dataSource}
+          seeMoreAfter={0}
+          elementsPerScroll={5}
+          renderSeeMoreComponent={({ onSeeMoreClick }) => (
+            <BpkButton onClick={onSeeMoreClick}>See more</BpkButton>
+          )}
+        />
+      </div>
+    );
   });
