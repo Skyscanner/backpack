@@ -22,6 +22,57 @@ exports[`BpkRadio should render correctly 1`] = `
 </label>
 `;
 
+exports[`BpkRadio should render correctly when label is a node 1`] = `
+<label
+  className="bpk-radio"
+>
+  <input
+    aria-label={
+      <span>
+        Direct
+      </span>
+    }
+    className="bpk-radio__input"
+    disabled={false}
+    name="radio"
+    type="radio"
+  />
+  <div
+    className="bpk-radio__circle"
+  />
+  <span
+    aria-hidden="true"
+  >
+    <span>
+      Direct
+    </span>
+  </span>
+</label>
+`;
+
+exports[`BpkRadio should render correctly with ariaLabel attribute 1`] = `
+<label
+  className="bpk-radio"
+>
+  <input
+    aria-label="Is this direct"
+    className="bpk-radio__input"
+    disabled={false}
+    id="radio"
+    name="radio"
+    type="radio"
+  />
+  <div
+    className="bpk-radio__circle"
+  />
+  <span
+    aria-hidden="true"
+  >
+    Direct
+  </span>
+</label>
+`;
+
 exports[`BpkRadio should render correctly with checked attribute 1`] = `
 <label
   className="bpk-radio"

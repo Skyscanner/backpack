@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-fieldset",
-  "version": "1.1.103",
+  "version": "1.1.108",
   "description": "Backpack fieldset component.",
   "main": "index.js",
   "repository": {
@@ -13,16 +13,16 @@
     "react": "^15.0.0 || ^16.0.0"
   },
   "dependencies": {
-    "bpk-component-form-validation": "^2.0.20",
-    "bpk-component-label": "^3.2.139",
-    "bpk-mixins": "^17.23.6",
-    "bpk-react-utils": "^2.7.8",
+    "bpk-component-form-validation": "^2.0.23",
+    "bpk-component-label": "^3.2.141",
+    "bpk-mixins": "^17.24.1",
+    "bpk-react-utils": "^2.7.9",
     "prop-types": "^15.6.2"
   },
   "devDependencies": {
-    "bpk-component-checkbox": "^1.4.101",
-    "bpk-component-input": "^4.1.20",
-    "bpk-component-select": "^2.3.1"
+    "bpk-component-checkbox": "^1.4.106",
+    "bpk-component-input": "^4.1.23",
+    "bpk-component-select": "^2.3.3"
   },
-  "gitHead": "ae19ac287b6f4ffb1ca7eb825b9193d186844695"
+  "gitHead": "fb7562139a39e5147255304bc55b2eca99009f3c"
 }

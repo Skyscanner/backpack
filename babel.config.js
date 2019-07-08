@@ -16,28 +16,21 @@
  * limitations under the License.
  */
 
-const templateChanges = (changes, title) => {
-  if (!changes) {
-    return '';
-  }
-
-  return `**${title}**
-${changes.map(change => `- ${change}`).join('\n')}`;
+module.exports = {
+  presets: [
+    [
+      '@babel/preset-env',
+      {
+        targets: {
+          node: 'current',
+        },
+      },
+    ],
+    '@babel/preset-react',
+    '@babel/preset-flow',
+  ],
+  plugins: [
+    '@babel/plugin-proposal-object-rest-spread',
+    '@babel/plugin-proposal-class-properties',
+  ],
 };
-
-const templateRelese = release => `## ${
-  release.version
-} - ${release.date.toLocaleDateString('en-GB')}
-
-${[
-  templateChanges(release.changes.major, 'Breaking'),
-  templateChanges(release.changes.minor, 'Added'),
-  templateChanges(release.changes.patch, 'Fixed'),
-]
-  .filter(x => x)
-  .join('\n')}
-`;
-
-module.exports = (parsedChangelog, packageName) => `# ${packageName}
-
-${parsedChangelog.releases.map(templateRelese).join('\n')}`;
