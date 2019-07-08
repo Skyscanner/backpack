@@ -166,6 +166,10 @@ const withInfiniteScroll = <T: ExtendedProps>(
     }
 
     setStateAfterDsUpdate(newState: State) {
+      // After a data source update (calling updateData in the data source or changing the dataSource prop)
+      // all visible data is fetched again (from 0 to current index) to update the list with the new data.
+      // If after this call `isListFinished` is true, it means the new data source has no items and we need to
+      // reset the list, which we do by setting `elementsToRender` to `[]` and `index` to `0`
       const { isListFinished } = newState;
       this.setState({
         ...newState,
