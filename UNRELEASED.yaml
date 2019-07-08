@@ -24,3 +24,9 @@
 #   FIXED:
 #     - bpk-component-horcrux:
 #       - Fixed issue where `BpkHorcrux` would occasionally possess the living.
+FIXED:
+  - bpk-component-select:
+    - Fixed issue which meant clicking on an image inside a `BpkSelect` would not open the select menu.
+
+  - bpk-component-phone-input:
+    - Fixed issue which meant clicking on an image inside a `BpkSelect` would not open the select menu.
