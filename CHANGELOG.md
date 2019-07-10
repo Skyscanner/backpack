@@ -2,6 +2,14 @@
 
 [Unreleased changes](./UNRELEASED.yaml).
 
+# 2019-07-10 - New `yAxisDomain` prop
+
+**Added:**
+
+ - bpk-component-barchart: 2.3.81 => 2.4.0
+   - New `yAxisDomain` prop to set a custom y axis domain.
+
+
 # 2019-07-08 - Fix infinite scroll update with empty lists
 
 **Fixed::**
