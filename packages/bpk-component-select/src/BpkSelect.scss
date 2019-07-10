@@ -104,6 +104,7 @@ $select-image-large-height: 22 * $bpk-one-pixel-rem;
     left: $bpk-spacing-sm;
     width: $select-image-width;
     height: $select-image-height;
+    pointer-events: none;
 
     @include bpk-rtl {
       right: $bpk-spacing-sm;
