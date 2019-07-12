@@ -2,6 +2,14 @@
 
 [Unreleased changes](./UNRELEASED.yaml).
 
+# 2019-07-12 - New `flight-landing`, `flight-takeoff` and `aircraft` icons.
+
+**Added:**
+
+ - bpk-svgs: 6.8.1 => 6.9.0
+   - New `flight-landing`, `flight-takeoff` and `aircraft` icons.
+
+
 # 2019-07-10 - New `yAxisDomain` prop
 
 **Added:**
