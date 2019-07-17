@@ -30,7 +30,7 @@ import STYLES from './BpkPhoneInput.css';
 const getClassName = cssModules(STYLES);
 
 export type Props = {
-  dialingCode: string,
+  dialingCodeId: string,
   dialingCodeProps: {
     id: string,
     name: string,
@@ -38,7 +38,7 @@ export type Props = {
     className?: string,
     wrapperClassName?: string,
   },
-  dialingCodes: Array<{ code: string, description: string }>,
+  dialingCodes: Array<{ id: string, code: string, description: string }>,
   id: string,
   name: string,
   label: string,
@@ -50,6 +50,8 @@ export type Props = {
   large: boolean,
   valid: ?boolean,
   wrapperProps: { [string]: any },
+  flagOnly: ?boolean,
+  countryCodeMask: ?boolean,
 };
 
 type CommonProps = {
@@ -59,12 +61,9 @@ type CommonProps = {
 };
 
 // This function get the size value of the dialingCode to resize the field correctly
-const widthForDialingCode = (large, dialingCodes, selectedDialingCode) => {
+const widthForDialingCode = (large, foundDialingCode) => {
   // This sizeConstant is an average character size for each size of field
   const averageLetterSize = large ? 8 : 6;
-  const foundDialingCode = dialingCodes.find(
-    e => e.code === selectedDialingCode,
-  );
   if (foundDialingCode && foundDialingCode.description) {
     // Here we calculate the width for the field (N.B 100 is an assumed padding value)
     return averageLetterSize * foundDialingCode.description.length + 100;
@@ -84,10 +83,12 @@ const BpkPhoneInput = (props: Props) => {
     valid,
     value,
     large,
-    dialingCode,
+    dialingCodeId,
     dialingCodes,
     dialingCodeProps,
     wrapperProps,
+    flagOnly,
+    countryCodeMask,
     ...rest
   } = props;
 
@@ -95,6 +96,37 @@ const BpkPhoneInput = (props: Props) => {
     valid,
     large: !!large,
     disabled: !!disabled,
+  };
+
+  let dialingCodeText = '';
+
+  const foundDialingCode = dialingCodes.find(
+    dialCodeItem => dialCodeItem.id === dialingCodeId,
+  );
+
+  if (foundDialingCode) {
+    dialingCodeText = foundDialingCode.code;
+  }
+
+  let phoneDisplayValue;
+
+  if (countryCodeMask) {
+    phoneDisplayValue = `+${dialingCodeText} ${value}`;
+  } else {
+    phoneDisplayValue = value;
+  }
+
+  const phoneNumberOnChange = formFieldEvt => {
+    let { value: phoneValueWithCode } = formFieldEvt.target;
+
+    if (phoneValueWithCode.charAt(`+${dialingCodeText}`.length) !== ' ') {
+      const number = phoneValueWithCode.slice(`+${dialingCodeText}`.length);
+      phoneValueWithCode = `+${dialingCodeText} ${number}`;
+    }
+
+    /* eslint-disable no-param-reassign */
+    formFieldEvt.target.value = phoneValueWithCode.split(' ')[1] || '';
+    onChange(formFieldEvt);
   };
 
   return (
@@ -121,17 +153,24 @@ const BpkPhoneInput = (props: Props) => {
           dialingCodeProps.className,
         )}
         wrapperClassName={getClassName(dialingCodeProps.wrapperClassName)}
-        value={dialingCode}
+        value={dialingCodeId}
         onChange={onDialingCodeChange}
-        style={{
-          width: `${widthForDialingCode(large, dialingCodes, dialingCode)}px`,
-        }}
+        imageOnly={flagOnly}
+        style={
+          !flagOnly
+            ? {
+                width: `${widthForDialingCode(large, foundDialingCode)}px`,
+              }
+            : null
+        }
       >
-        {dialingCodes.map(({ code, description, ...extraDialingProps }) => (
-          <option key={code} value={code} {...extraDialingProps}>
-            {description}
-          </option>
-        ))}
+        {dialingCodes.map(
+          ({ id: codeId, description, ...extraDialingProps }) => (
+            <option key={codeId} value={codeId} {...extraDialingProps}>
+              {description}
+            </option>
+          ),
+        )}
       </BpkSelect>
       <BpkLabel
         htmlFor={id}
@@ -145,9 +184,9 @@ const BpkPhoneInput = (props: Props) => {
         {...rest}
         id={id}
         name={name}
-        value={value}
-        type={INPUT_TYPES.number}
-        onChange={onChange}
+        value={phoneDisplayValue}
+        type={INPUT_TYPES.tel}
+        onChange={countryCodeMask ? phoneNumberOnChange : onChange}
         className={getClassName('bpk-phone-input__phone-number', className)}
       />
     </span>
@@ -155,14 +194,18 @@ const BpkPhoneInput = (props: Props) => {
 };
 
 BpkPhoneInput.propTypes = {
-  dialingCode: PropTypes.string.isRequired,
+  dialingCodeId: PropTypes.string.isRequired,
   dialingCodeProps: PropTypes.shape({
     id: PropTypes.string,
     name: PropTypes.string,
     label: PropTypes.string,
   }).isRequired,
   dialingCodes: PropTypes.arrayOf(
-    PropTypes.shape({ code: PropTypes.string, description: PropTypes.string }),
+    PropTypes.shape({
+      code: PropTypes.string,
+      description: PropTypes.string,
+      id: PropTypes.string,
+    }),
   ).isRequired,
   id: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
@@ -175,6 +218,8 @@ BpkPhoneInput.propTypes = {
   large: PropTypes.bool,
   valid: PropTypes.bool,
   wrapperProps: PropTypes.object, // eslint-disable-line react/forbid-prop-types
+  flagOnly: PropTypes.bool,
+  countryCodeMask: PropTypes.bool,
 };
 
 BpkPhoneInput.defaultProps = {
@@ -183,6 +228,8 @@ BpkPhoneInput.defaultProps = {
   large: false,
   valid: null,
   wrapperProps: {},
+  flagOnly: false,
+  countryCodeMask: false,
 };
 
 export default BpkPhoneInput;

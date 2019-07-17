@@ -15,5 +15,6 @@
   "dependencies": {
     "bpk-tokens": "^27.6.3",
     "prop-types": "^15.6.2"
-  }
+  },
+  "gitHead": "52cc24b6ae2aeba01e38adf36cb73daef8278431"
 }

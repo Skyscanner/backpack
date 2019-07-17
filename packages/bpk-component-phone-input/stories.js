@@ -28,9 +28,10 @@ import BpkPhoneInput from './index';
 const DIALING_CODE_TO_ID_MAP = {
   '1': 'us',
   '2': 'ca',
-  '44': 'uk',
-  '55': 'br',
-  '998': 'uz',
+  '3': 'uk',
+  '4': 'br',
+  '5': 'uz',
+  '6': 'ar',
 };
 
 const getFlag = dialingCode => {
@@ -47,6 +48,8 @@ type Props = {
   disabled: boolean,
   required: ?boolean,
   useLongLabels: boolean,
+  flagOnly: ?boolean,
+  countryCodeMask: ?boolean,
 };
 
 class StoryContainer extends Component<
@@ -61,11 +64,13 @@ class StoryContainer extends Component<
     disabled: false,
     required: false,
     useLongLabels: false,
+    flagOnly: false,
+    countryCodeMask: false,
   };
 
   constructor(props: Props) {
     super(props);
-    this.state = { dialingCode: '44', value: '' };
+    this.state = { dialingCode: '1', value: '' };
   }
 
   onChange = (e: SyntheticInputEvent<HTMLElement>) => {
@@ -85,6 +90,8 @@ class StoryContainer extends Component<
       disabled,
       required,
       useLongLabels,
+      flagOnly,
+      countryCodeMask,
     } = this.props;
     const { value, dialingCode } = this.state;
 
@@ -113,13 +120,14 @@ class StoryContainer extends Component<
           onChange={this.onChange}
           onDialingCodeChange={this.onDialingCodeChange}
           value={value}
-          dialingCode={dialingCode}
+          dialingCodeId={dialingCode}
           dialingCodes={[
-            { code: '1', description: '+1 (US)' },
-            { code: '2', description: '+1 (CA)' },
-            { code: '44', description: '+44 (UK)' },
-            { code: '55', description: '+55' },
-            { code: '998', description: '+998' },
+            { id: '1', description: '+1 (US)', code: '1' },
+            { id: '2', description: '+1 (CA)', code: '1' },
+            { id: '3', description: '+44 (UK)', code: '44' },
+            { id: '4', description: '+55', code: '55' },
+            { id: '5', description: '+998', code: '998' },
+            { id: '6', description: '+54 (AR)', code: '54' },
           ]}
           dialingCodeProps={{
             id: 'dialing-code',
@@ -128,6 +136,8 @@ class StoryContainer extends Component<
             'aria-label': 'Dialing code',
             image: getFlag(dialingCode),
           }}
+          flagOnly={flagOnly}
+          countryCodeMask={countryCodeMask}
         />
       </BpkFieldSet>
     );
@@ -146,4 +156,10 @@ storiesOf('bpk-component-phone-input', module)
   ))
   .add('Disabled', () => <StoryContainer disabled />)
   .add('Required', () => <StoryContainer required />)
-  .add('Double length labels', () => <StoryContainer useLongLabels />);
+  .add('Double length labels', () => <StoryContainer useLongLabels />)
+  .add('Flag only displayed in the country code selector', () => (
+    <StoryContainer flagOnly />
+  ))
+  .add('Country code input mask on phone input', () => (
+    <StoryContainer countryCodeMask />
+  ));
