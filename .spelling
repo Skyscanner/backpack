@@ -488,6 +488,7 @@ xAxisTickEvery
 yAxisMargin
 yAxisTickValue
 yAxisNumTicks
+yAxisDomain
 withAccordionItemState
 
 BpkAccordion

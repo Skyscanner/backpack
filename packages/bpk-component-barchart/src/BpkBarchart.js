@@ -109,6 +109,7 @@ class BpkBarchart extends Component {
       yAxisLabel,
       yAxisTickValue,
       yAxisNumTicks,
+      yAxisDomain,
       onBarClick,
       onBarHover,
       onBarFocus,
@@ -143,7 +144,7 @@ class BpkBarchart extends Component {
     this.xScale.rangeRound([0, width]);
     this.xScale.domain(transformedData.map(d => d[xScaleDataKey]));
     this.yScale.rangeRound([height, 0]);
-    this.yScale.domain([0, maxYValue]);
+    this.yScale.domain([yAxisDomain[0] || 0, yAxisDomain[1] || maxYValue]);
 
     return (
       <BpkMobileScrollContainer
@@ -246,6 +247,7 @@ BpkBarchart.propTypes = {
   yAxisMargin: PropTypes.number,
   yAxisTickValue: PropTypes.func,
   yAxisNumTicks: PropTypes.number,
+  yAxisDomain: PropTypes.arrayOf(PropTypes.number),
   onBarClick: PropTypes.func,
   onBarHover: PropTypes.func,
   onBarFocus: PropTypes.func,
@@ -269,6 +271,7 @@ BpkBarchart.defaultProps = {
   yAxisMargin: 4 * lineHeight + spacing,
   yAxisTickValue: identity,
   yAxisNumTicks: null,
+  yAxisDomain: [null, null],
   onBarClick: null,
   onBarHover: null,
   onBarFocus: null,

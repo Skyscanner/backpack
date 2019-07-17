@@ -202,4 +202,19 @@ describe('BpkBarchart', () => {
     );
     expect(toJson(tree)).toMatchSnapshot();
   });
+  it('should render correctly with "yAxisDomain" prop', () => {
+    const tree = shallow(
+      <BpkBarchart
+        xScaleDataKey="month"
+        yScaleDataKey="price"
+        xAxisLabel="Month"
+        yAxisLabel="Average price (£)"
+        initialWidth={size}
+        initialHeight={size}
+        data={prices}
+        yAxisDomain={[null, 100]}
+      />,
+    );
+    expect(toJson(tree)).toMatchSnapshot();
+  });
 });

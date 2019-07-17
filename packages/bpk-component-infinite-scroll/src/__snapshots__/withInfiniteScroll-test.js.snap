@@ -127,6 +127,138 @@ exports[`withInfiniteScroll renders items after the first render 1`] = `
 </WithInfiniteScroll>
 `;
 
+exports[`withInfiniteScroll should finish the list when array changes to empty 1`] = `
+<WithInfiniteScroll
+  dataSource={
+    ArrayDataSource {
+      "elements": Array [],
+      "fetchItems": [MockFunction] {
+        "calls": Array [
+          Array [
+            0,
+            5,
+          ],
+          Array [
+            0,
+            5,
+          ],
+        ],
+        "results": Array [
+          Object {
+            "type": "return",
+            "value": Promise {},
+          },
+          Object {
+            "type": "return",
+            "value": Promise {},
+          },
+        ],
+      },
+      "listeners": Array [
+        [Function],
+      ],
+      "triggerListeners": [Function],
+    }
+  }
+  elementsPerScroll={1}
+  initiallyLoadedElements={5}
+  loaderIntersectionTrigger="full"
+  onScroll={null}
+  onScrollFinished={
+    [MockFunction] {
+      "calls": Array [
+        Array [
+          Object {
+            "totalNumberElements": 0,
+          },
+        ],
+      ],
+      "results": Array [
+        Object {
+          "type": "return",
+          "value": undefined,
+        },
+      ],
+    }
+  }
+  renderLoadingComponent={null}
+  renderSeeMoreComponent={null}
+  seeMoreAfter={0}
+>
+  <div>
+    <List
+      elements={Array []}
+    >
+      <div
+        id="list"
+      />
+    </List>
+  </div>
+</WithInfiniteScroll>
+`;
+
+exports[`withInfiniteScroll should finish the list when data source changes to an empty data source 1`] = `
+<WithInfiniteScroll
+  dataSource={
+    ArrayDataSource {
+      "elements": Array [],
+      "fetchItems": [MockFunction] {
+        "calls": Array [
+          Array [
+            0,
+            1,
+          ],
+        ],
+        "results": Array [
+          Object {
+            "type": "return",
+            "value": Promise {},
+          },
+        ],
+      },
+      "listeners": Array [
+        [Function],
+      ],
+      "triggerListeners": [Function],
+    }
+  }
+  elementsPerScroll={1}
+  initiallyLoadedElements={5}
+  loaderIntersectionTrigger="full"
+  onScroll={null}
+  onScrollFinished={
+    [MockFunction] {
+      "calls": Array [
+        Array [
+          Object {
+            "totalNumberElements": 0,
+          },
+        ],
+      ],
+      "results": Array [
+        Object {
+          "type": "return",
+          "value": undefined,
+        },
+      ],
+    }
+  }
+  renderLoadingComponent={null}
+  renderSeeMoreComponent={null}
+  seeMoreAfter={0}
+>
+  <div>
+    <List
+      elements={Array []}
+    >
+      <div
+        id="list"
+      />
+    </List>
+  </div>
+</WithInfiniteScroll>
+`;
+
 exports[`withInfiniteScroll should pass extra props to the decorated component 1`] = `
 <WithInfiniteScroll
   aria-label="Test"
@@ -175,61 +307,6 @@ exports[`withInfiniteScroll should refresh data when data changes 1`] = `
   dataSource={
     ArrayDataSource {
       "elements": Array [
-        "Element 0",
-        "Element 1",
-        "Element 2",
-        "Element 3",
-        "Element 4",
-      ],
-      "fetchItems": [MockFunction] {
-        "calls": Array [
-          Array [
-            0,
-            5,
-          ],
-        ],
-        "results": Array [
-          Object {
-            "type": "return",
-            "value": Promise {},
-          },
-        ],
-      },
-      "listeners": Array [
-        [Function],
-      ],
-      "triggerListeners": [Function],
-    }
-  }
-  elementsPerScroll={5}
-  initiallyLoadedElements={5}
-  loaderIntersectionTrigger="full"
-  onScroll={null}
-  onScrollFinished={null}
-  renderLoadingComponent={null}
-  renderSeeMoreComponent={null}
-  seeMoreAfter={null}
->
-  <div>
-    <List
-      elements={Array []}
-    >
-      <div
-        id="list"
-      />
-    </List>
-    <div
-      className="bpk-sentinel"
-    />
-  </div>
-</WithInfiniteScroll>
-`;
-
-exports[`withInfiniteScroll should refresh data when data changes 2`] = `
-<WithInfiniteScroll
-  dataSource={
-    ArrayDataSource {
-      "elements": Array [
         1,
         2,
         3,
@@ -273,11 +350,33 @@ exports[`withInfiniteScroll should refresh data when data changes 2`] = `
 >
   <div>
     <List
-      elements={Array []}
+      elements={
+        Array [
+          1,
+          2,
+          3,
+        ]
+      }
     >
       <div
         id="list"
-      />
+      >
+        <div
+          key="1"
+        >
+          1
+        </div>
+        <div
+          key="2"
+        >
+          2
+        </div>
+        <div
+          key="3"
+        >
+          3
+        </div>
+      </div>
     </List>
     <div
       className="bpk-sentinel"
@@ -290,55 +389,6 @@ exports[`withInfiniteScroll should refresh data when data changes from an empty 
 <WithInfiniteScroll
   dataSource={
     ArrayDataSource {
-      "elements": Array [],
-      "fetchItems": [MockFunction] {
-        "calls": Array [
-          Array [
-            0,
-            5,
-          ],
-        ],
-        "results": Array [
-          Object {
-            "type": "return",
-            "value": Promise {},
-          },
-        ],
-      },
-      "listeners": Array [
-        [Function],
-      ],
-      "triggerListeners": [Function],
-    }
-  }
-  elementsPerScroll={5}
-  initiallyLoadedElements={5}
-  loaderIntersectionTrigger="full"
-  onScroll={null}
-  onScrollFinished={null}
-  renderLoadingComponent={null}
-  renderSeeMoreComponent={null}
-  seeMoreAfter={null}
->
-  <div>
-    <List
-      elements={Array []}
-    >
-      <div
-        id="list"
-      />
-    </List>
-    <div
-      className="bpk-sentinel"
-    />
-  </div>
-</WithInfiniteScroll>
-`;
-
-exports[`withInfiniteScroll should refresh data when data changes from an empty Array 2`] = `
-<WithInfiniteScroll
-  dataSource={
-    ArrayDataSource {
       "elements": Array [
         1,
         2,
@@ -383,11 +433,183 @@ exports[`withInfiniteScroll should refresh data when data changes from an empty 
 >
   <div>
     <List
-      elements={Array []}
+      elements={
+        Array [
+          1,
+          2,
+          3,
+        ]
+      }
     >
       <div
         id="list"
-      />
+      >
+        <div
+          key="1"
+        >
+          1
+        </div>
+        <div
+          key="2"
+        >
+          2
+        </div>
+        <div
+          key="3"
+        >
+          3
+        </div>
+      </div>
+    </List>
+    <div
+      className="bpk-sentinel"
+    />
+  </div>
+</WithInfiniteScroll>
+`;
+
+exports[`withInfiniteScroll should refresh data when data source changes from an empty data source 1`] = `
+<WithInfiniteScroll
+  dataSource={
+    ArrayDataSource {
+      "elements": Array [
+        1,
+        2,
+        3,
+      ],
+      "fetchItems": [MockFunction] {
+        "calls": Array [
+          Array [
+            0,
+            5,
+          ],
+        ],
+        "results": Array [
+          Object {
+            "type": "return",
+            "value": Promise {},
+          },
+        ],
+      },
+      "listeners": Array [
+        [Function],
+      ],
+      "triggerListeners": [Function],
+    }
+  }
+  elementsPerScroll={5}
+  initiallyLoadedElements={5}
+  loaderIntersectionTrigger="full"
+  onScroll={null}
+  onScrollFinished={null}
+  renderLoadingComponent={null}
+  renderSeeMoreComponent={null}
+  seeMoreAfter={null}
+>
+  <div>
+    <List
+      elements={
+        Array [
+          1,
+          2,
+          3,
+        ]
+      }
+    >
+      <div
+        id="list"
+      >
+        <div
+          key="1"
+        >
+          1
+        </div>
+        <div
+          key="2"
+        >
+          2
+        </div>
+        <div
+          key="3"
+        >
+          3
+        </div>
+      </div>
+    </List>
+    <div
+      className="bpk-sentinel"
+    />
+  </div>
+</WithInfiniteScroll>
+`;
+
+exports[`withInfiniteScroll should refresh when data source changes 1`] = `
+<WithInfiniteScroll
+  dataSource={
+    ArrayDataSource {
+      "elements": Array [
+        1,
+        2,
+        3,
+      ],
+      "fetchItems": [MockFunction] {
+        "calls": Array [
+          Array [
+            0,
+            5,
+          ],
+        ],
+        "results": Array [
+          Object {
+            "type": "return",
+            "value": Promise {},
+          },
+        ],
+      },
+      "listeners": Array [
+        [Function],
+      ],
+      "triggerListeners": [Function],
+    }
+  }
+  elementsPerScroll={5}
+  initiallyLoadedElements={5}
+  loaderIntersectionTrigger="full"
+  onScroll={null}
+  onScrollFinished={null}
+  renderLoadingComponent={null}
+  renderSeeMoreComponent={null}
+  seeMoreAfter={null}
+>
+  <div>
+    <List
+      elements={
+        Array [
+          1,
+          2,
+          3,
+        ]
+      }
+    >
+      <div
+        id="list"
+      >
+        <div
+          key="1"
+        >
+          1
+        </div>
+        <div
+          key="2"
+        >
+          2
+        </div>
+        <div
+          key="3"
+        >
+          3
+        </div>
+      </div>
     </List>
     <div
       className="bpk-sentinel"
