@@ -105,9 +105,13 @@ readdir('packages/')
     return packages;
   })
   .then(packages => Promise.all(packages.map(getPackageMaintainers)))
+  .then(packages => {
+    bar.stop();
+    console.log('');
+    return packages;
+  })
   .then(maintainers => maintainers.forEach(verifyMaintainers))
   .then(() => {
-    bar.stop();
     if (failures) {
       console.log(
         '\nPlease fix your maintainer list before publishing. Link: https://www.npmjs.com/settings/skyscanner/teams/team/backpack/access',

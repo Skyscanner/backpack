@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-datepicker",
-  "version": "9.0.21-alpha.9+52cc24b6a",
+  "version": "9.0.26",
   "description": "Backpack datepicker component.",
   "main": "index.js",
   "repository": {
@@ -13,14 +13,14 @@
     "react": "^15.0.0 || ^16.0.0"
   },
   "dependencies": {
-    "bpk-component-breakpoint": "^1.1.70-alpha.37+52cc24b6a",
-    "bpk-component-calendar": "^5.0.20-alpha.9+52cc24b6a",
-    "bpk-component-input": "^4.1.22-alpha.9+52cc24b6a",
-    "bpk-component-modal": "^1.8.67-alpha.9+52cc24b6a",
-    "bpk-component-popover": "^2.2.44-alpha.9+52cc24b6a",
-    "bpk-mixins": "^17.23.7-alpha.37+52cc24b6a",
-    "bpk-react-utils": "^2.7.9-alpha.72+52cc24b6a",
+    "bpk-component-breakpoint": "^1.1.72",
+    "bpk-component-calendar": "^5.0.24",
+    "bpk-component-input": "^4.1.24",
+    "bpk-component-modal": "^1.8.71",
+    "bpk-component-popover": "^2.2.47",
+    "bpk-mixins": "^17.24.2",
+    "bpk-react-utils": "^2.7.9",
     "prop-types": "^15.6.2"
   },
-  "gitHead": "52cc24b6ae2aeba01e38adf36cb73daef8278431"
+  "gitHead": "fb7562139a39e5147255304bc55b2eca99009f3c"
 }

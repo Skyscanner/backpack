@@ -25,7 +25,7 @@ const priceData = [
 export default () => (
   <BpkBarchart
     xAxisLabel="Weekday"
-    yAxislabel="Price (£)"
+    yAxisLabel="Price (£)"
     xScaleDataKey="day"
     yScaleDataKey="price"
     initialWidth={500}
@@ -37,34 +37,35 @@ export default () => (
 
 ### Props
 
-| Property                                | PropType                              | Required | Default Value    |
-| --------------------------------------- | ------------------------------------- | -------- | ---------------- |
-| [data](#data)                           | custom(validates usage of scale keys) | true     | -                |
-| [xScaleDataKey](#xscaledatakey)         | string                                | true     | -                |
-| [yScaleDataKey](#yscaledatakey)         | string                                | true     | -                |
-| xAxisLabel                              | string                                | true     | -                |
-| yAxisLabel                              | string                                | true     | -                |
-| initialWidth                            | number                                | true     | -                |
-| initialHeight                           | number                                | true     | -                |
-| className                               | string                                | false    | null             |
-| leadingScrollIndicatorClassName         | string                                | false    | null             |
-| trailingScrollIndicatorClassName        | string                                | false    | null             |
-| [outlierPercentage](#outlierpercentage) | number                                | false    | null             |
-| showGridlines                           | bool                                  | false    | false            |
-| xAxisMargin                             | number                                | false    | 3                |
-| xAxisTickValue                          | func                                  | false    | identity         |
-| xAxisTickOffset                         | number                                | false    | 0                |
-| xAxisTickEvery                          | number                                | false    | 1                |
-| yAxisMargin                             | number                                | false    | 2.625            |
-| yAxisTickValue                          | func                                  | false    | identity         |
-| yAxisNumTicks                           | number                                | false    | null             |
-| [onBarClick](#onbarclick)               | func                                  | false    | null             |
-| [onBarHover](#onbarhover)               | func                                  | false    | null             |
-| [onBarFocus](#onbarfocus)               | func                                  | false    | null             |
-| [getBarLabel](#getbarlabel)             | func                                  | false    | See prop details |
-| [getBarSelection](#getbarselection)     | func                                  | false    | See prop details |
-| BarComponent                            | func                                  | false    | BpkBarchartBar   |
-| disableDataTable                        | bool                                  | false    | false            |
+| Property                                | PropType                              | Required | Default Value           |
+| --------------------------------------- | ------------------------------------- | -------- | ----------------------- |
+| [data](#data)                           | custom(validates usage of scale keys) | true     | -                       |
+| [xScaleDataKey](#xscaledatakey)         | string                                | true     | -                       |
+| [yScaleDataKey](#yscaledatakey)         | string                                | true     | -                       |
+| xAxisLabel                              | string                                | true     | -                       |
+| yAxisLabel                              | string                                | true     | -                       |
+| initialWidth                            | number                                | true     | -                       |
+| initialHeight                           | number                                | true     | -                       |
+| className                               | string                                | false    | null                    |
+| leadingScrollIndicatorClassName         | string                                | false    | null                    |
+| trailingScrollIndicatorClassName        | string                                | false    | null                    |
+| [outlierPercentage](#outlierpercentage) | number                                | false    | null                    |
+| showGridlines                           | bool                                  | false    | false                   |
+| xAxisMargin                             | number                                | false    | 3                       |
+| xAxisTickValue                          | func                                  | false    | identity                |
+| xAxisTickOffset                         | number                                | false    | 0                       |
+| xAxisTickEvery                          | number                                | false    | 1                       |
+| yAxisMargin                             | number                                | false    | 2.625                   |
+| yAxisTickValue                          | func                                  | false    | identity                |
+| yAxisNumTicks                           | number                                | false    | null                    |
+| yAxisDomain                             | array                                 | false    | Calculated by component |
+| [onBarClick](#onbarclick)               | func                                  | false    | null                    |
+| [onBarHover](#onbarhover)               | func                                  | false    | null                    |
+| [onBarFocus](#onbarfocus)               | func                                  | false    | null                    |
+| [getBarLabel](#getbarlabel)             | func                                  | false    | See prop details        |
+| [getBarSelection](#getbarselection)     | func                                  | false    | See prop details        |
+| BarComponent                            | func                                  | false    | BpkBarchartBar          |
+| disableDataTable                        | bool                                  | false    | false                   |
 
 ### Theme Props
 
@@ -121,6 +122,17 @@ The key in each data point that holds the value for the x axis of that data poin
 #### yScaleDataKey
 
 The key in each data point that holds the value for the y axis of that data point.
+
+#### yAxisDomain
+
+Override the default y axis domain.  This is an array with two elements, the lower then upper domain.  If either value is set to `null` the default value is used instead.
+
+```javascript
+<BpkBarchart
+  ...
+  yAxisDomain={[null, 100]} // The y axis will go from 0 (the default) to 100.
+/>
+```
 
 #### `outlierPercentage`
 

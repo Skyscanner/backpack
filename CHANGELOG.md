@@ -1,6 +1,73 @@
 # Backpack changelog
 
-[Unreleased changes](./UNRELEASED.md).
+[Unreleased changes](./UNRELEASED.yaml).
+
+# 2019-07-12 - New `flight-landing`, `flight-takeoff` and `aircraft` icons.
+
+**Added:**
+
+ - bpk-svgs: 6.8.1 => 6.9.0
+   - New `flight-landing`, `flight-takeoff` and `aircraft` icons.
+
+
+# 2019-07-10 - New `yAxisDomain` prop
+
+**Added:**
+
+ - bpk-component-barchart: 2.3.81 => 2.4.0
+   - New `yAxisDomain` prop to set a custom y axis domain.
+
+
+# 2019-07-08 - Fix infinite scroll update with empty lists
+
+**Fixed::**
+
+- bpk-component-infinite-scroll:
+  - Updating data to an empty array will now refresh the list
+
+# 2019-07-08 - Fix for phone input clicks not being registered
+
+**Fixed:**
+
+ - bpk-component-phone-input: 3.1.8 => 3.1.9
+   - Fixed issue which meant clicking on an image inside a `BpkSelect` would not open the select menu.
+
+ - bpk-component-select: 2.3.3 => 2.3.4
+   - Fixed issue which meant clicking on an image inside a `BpkSelect` would not open the select menu.
+
+
+# 2019-07-02 - `iconOnly` buttons always circular
+
+**Fixed:**
+
+ - bpk-component-button: 2.3.13 => 2.3.14
+   - `iconOnly` buttons no longer apply `borderRadius` from theming and are always circular.
+
+
+2019-06-28 - Bug fix for mobile modal and dialog scrims
+
+**Fixed:**
+
+ - bpk-component-dialog: 1.1.68 => 1.1.69
+   - Fixed an issue that caused the scrim to initially be shown at full opacity when initially rendered.
+
+ - bpk-component-modal: 1.8.68 => 1.8.69
+   - Fixed an issue that caused the scrim to initially be shown at full opacity when initially rendered.
+
+
+# 2019-06-25 New icons
+
+**Added:**
+- bpk-component-icon:
+- bpk-mixins:
+- bpk-svgs:
+  - New `paid`, `star-outline` icons added.
+
+**Updated:**
+- bpk-component-icon:
+- bpk-mixins:
+- bpk-svgs:
+  - Updated `meal`, `bar`, `star`, `star-half` `media` icons.
 
 # 2019-06-19 - Added `ariaLabel` prop to `BpkRadio` component
 
