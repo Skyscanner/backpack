@@ -41,10 +41,11 @@ type Props = {
   submit: boolean,
   secondary: boolean,
   destructive: boolean,
+  featured: boolean,
+  outline: boolean,
   large: boolean,
   link: boolean,
   iconOnly: boolean,
-  featured: boolean,
   blank: boolean,
   rel: ?string,
 };
@@ -60,6 +61,7 @@ const BpkButton = (props: Props) => {
     secondary,
     destructive,
     featured,
+    outline,
     large,
     link,
     iconOnly,
@@ -78,6 +80,9 @@ const BpkButton = (props: Props) => {
   }
   if (featured) {
     classNames.push(getClassName('bpk-button--featured'));
+  }
+  if (outline) {
+    classNames.push(getClassName('bpk-button--outline'));
   }
   if (large) {
     classNames.push(getClassName('bpk-button--large'));
@@ -153,10 +158,11 @@ BpkButton.propTypes = {
   submit: PropTypes.bool,
   secondary: PropTypes.bool,
   destructive: PropTypes.bool,
+  featured: PropTypes.bool,
+  outline: PropTypes.bool,
   large: PropTypes.bool,
   link: PropTypes.bool,
   iconOnly: PropTypes.bool,
-  featured: PropTypes.bool,
   blank: PropTypes.bool,
   rel: PropTypes.string,
 };
@@ -169,10 +175,11 @@ BpkButton.defaultProps = {
   submit: false,
   secondary: false,
   destructive: false,
+  featured: false,
+  outline: false,
   large: false,
   link: false,
   iconOnly: false,
-  featured: false,
   blank: false,
   rel: null,
 };

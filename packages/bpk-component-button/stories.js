@@ -30,6 +30,8 @@ import {
 import SmallLongArrowRightIcon from '../bpk-component-icon/sm/long-arrow-right';
 import LargeLongArrowRightIcon from '../bpk-component-icon/lg/long-arrow-right';
 
+import STYLES from './BpkButtonStory.scss';
+
 import BpkButton from './index';
 
 const AlignedSmallLongArrowRightIcon = withButtonAlignment(
@@ -38,6 +40,11 @@ const AlignedSmallLongArrowRightIcon = withButtonAlignment(
 const AlignedLargeLongArrowRightIcon = withLargeButtonAlignment(
   withRtlSupport(LargeLongArrowRightIcon),
 );
+
+const cssModules = (styles = {}) => className =>
+  styles[className] ? styles[className] : className;
+
+const getClassName = cssModules(STYLES);
 
 storiesOf('bpk-component-button', module)
   .add('Primary', () => (
@@ -158,6 +165,49 @@ storiesOf('bpk-component-button', module)
       >
         Disabled
       </BpkButton>
+    </div>
+  ))
+  .add('Outline', () => (
+    <div className={getClassName('bpk-outline-layout')}>
+      &nbsp;
+      <BpkButton outline onClick={action('outline button clicked')}>
+        Button
+      </BpkButton>
+      &nbsp;
+      <BpkButton outline disabled onClick={action('THIS SHOULD NOT HAPPEN')}>
+        Disabled
+      </BpkButton>
+      &nbsp;
+      <BpkButton outline large onClick={action('outline button clicked')}>
+        Button
+      </BpkButton>
+      &nbsp;
+      <BpkButton
+        outline
+        large
+        disabled
+        onClick={action('THIS SHOULD NOT HAPPEN')}
+      >
+        Disabled
+      </BpkButton>
+      &nbsp;
+      <BpkButton
+        iconOnly
+        outline
+        onClick={action('iconOnly button outline clicked')}
+      >
+        <AlignedSmallLongArrowRightIcon />
+      </BpkButton>
+      &nbsp;
+      <BpkButton
+        iconOnly
+        large
+        outline
+        onClick={action('large iconOnly button outline clicked')}
+      >
+        <AlignedLargeLongArrowRightIcon />
+      </BpkButton>
+      &nbsp;
     </div>
   ))
   .add('Icon-only button', () => (

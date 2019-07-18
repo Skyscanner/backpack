@@ -16,24 +16,16 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+/*
+ * The purpose of this file is purley to allow the outline button
+ * story to have a solid background for viewing and testing. Otherwise
+ * it puts the white button on white background
+*/
+@import '~bpk-mixins/index';
 
-import BpkButton from './src/BpkButton';
-import {
-  buttonThemeAttributes,
-  primaryThemeAttributes,
-  secondaryThemeAttributes,
-  featuredThemeAttributes,
-  destructiveThemeAttributes,
-  outlineThemeAttributes,
-} from './src/themeAttributes';
+.bpk-outline-layout {
+  min-height: 2.625rem;
+  padding: 1.5rem;
 
-export {
-  buttonThemeAttributes,
-  primaryThemeAttributes,
-  secondaryThemeAttributes,
-  featuredThemeAttributes,
-  destructiveThemeAttributes,
-  outlineThemeAttributes,
-};
-export default BpkButton;
+  @include bpk-themeable-property(background-color, --bpk-button-featured-background-color, $bpk-button-featured-background-color);
+}
