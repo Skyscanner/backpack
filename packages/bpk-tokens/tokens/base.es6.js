@@ -115,6 +115,19 @@ export const buttonLargePaddingX = "1.5rem";
 export const buttonLargePaddingXIconOnly = ".5625rem";
 export const buttonLargePaddingY = ".375rem";
 export const buttonLineHeight = "1.5rem";
+export const buttonOutlineActiveBackgroundColor = "rgba(0, 0, 0, 0)";
+export const buttonOutlineActiveBorderColor = "rgb(255, 255, 255)";
+export const buttonOutlineBackgroundColor = "rgba(0, 0, 0, 0)";
+export const buttonOutlineBackgroundImage = "none";
+export const buttonOutlineBorderColor = "rgb(255, 255, 255)";
+export const buttonOutlineColor = "rgb(255, 255, 255)";
+export const buttonOutlineDisabledBackgroundColor = "rgb(230, 228, 235)";
+export const buttonOutlineDisabledBackgroundImage = "none";
+export const buttonOutlineDisabledBoxShadow = "none";
+export const buttonOutlineDisabledColor = "rgb(178, 174, 189)";
+export const buttonOutlineHoverBackgroundColor = "rgba(0, 0, 0, 0)";
+export const buttonOutlineHoverBorderColor = "rgb(255, 255, 255)";
+export const buttonOutlineHoverBorderOpacity = "0.5";
 export const buttonPaddingX = "1.125rem";
 export const buttonPaddingXIconOnly = ".5625rem";
 export const buttonPaddingY = ".375rem";
@@ -497,6 +510,19 @@ buttonLargePaddingX,
 buttonLargePaddingXIconOnly,
 buttonLargePaddingY,
 buttonLineHeight,
+buttonOutlineActiveBackgroundColor,
+buttonOutlineActiveBorderColor,
+buttonOutlineBackgroundColor,
+buttonOutlineBackgroundImage,
+buttonOutlineBorderColor,
+buttonOutlineColor,
+buttonOutlineDisabledBackgroundColor,
+buttonOutlineDisabledBackgroundImage,
+buttonOutlineDisabledBoxShadow,
+buttonOutlineDisabledColor,
+buttonOutlineHoverBackgroundColor,
+buttonOutlineHoverBorderColor,
+buttonOutlineHoverBorderOpacity,
 buttonPaddingX,
 buttonPaddingXIconOnly,
 buttonPaddingY,

@@ -18,47 +18,10 @@
 
 @import '~bpk-mixins/index';
 
-.bpk-button {
-  @include bpk-button;
+.bpk-button-story-wrapper {
+  padding: $bpk-spacing-xs 0;
+}
 
-  &--large {
-    @include bpk-button--large;
-  }
-
-  &--secondary {
-    @include bpk-button--secondary;
-  }
-
-  &--featured {
-    @include bpk-button--featured;
-  }
-
-  &--destructive {
-    @include bpk-button--secondary;
-    @include bpk-button--destructive;
-  }
-
-  &--outline {
-    @include bpk-button--outline;
-  }
-
-  &--link {
-    @include bpk-button--link;
-  }
-
-  &--icon-only {
-    border-radius: $bpk-button-border-radius;
-
-    @include bpk-button--icon-only;
-  }
-
-  &--large-icon-only {
-    border-radius: $bpk-button-border-radius-lg;
-
-    @include bpk-button--large-icon-only;
-  }
-
-  svg {
-    fill: currentColor;
-  }
+.bpk-outline-layout {
+  background-color: $bpk-color-blue-500;
 }

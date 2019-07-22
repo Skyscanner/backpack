@@ -185,6 +185,44 @@
   }
 }
 
+/// Outline button. Modifies the bpk-button & bpk-button--secondary mixins.
+///
+/// @require {mixin} bpk-button
+/// @require {mixin} bpk-button--secondary
+///
+/// @example scss
+///   .selector {
+///     @include bpk-button();
+///     @include bpk-button--outline();
+///   }
+
+@mixin bpk-button--outline {
+  background-color: $bpk-button-outline-background-color;
+  background-image: $bpk-button-outline-background-image;
+  color: $bpk-button-outline-color;
+
+  @include bpk-border-lg($bpk-button-outline-border-color);
+
+  @include bpk-hover {
+    background-color: $bpk-button-outline-hover-background-color;
+
+    @include bpk-border-lg(rgba($bpk-button-outline-hover-border-color, $bpk-button-outline-hover-border-opacity));
+  }
+
+  &:active {
+    background-color: $bpk-button-outline-active-background-color;
+
+    @include bpk-border-xl($bpk-button-outline-active-border-color);
+  }
+
+  &:disabled {
+    background-color: $bpk-button-outline-disabled-background-color;
+    background-image: $bpk-button-outline-disabled-background-image;
+    color: $bpk-button-outline-disabled-color;
+    box-shadow: $bpk-button-outline-disabled-box-shadow;
+  }
+}
+
 /// Selected button. Modifies the bpk-button mixin.
 ///
 /// @require {mixin} bpk-button
