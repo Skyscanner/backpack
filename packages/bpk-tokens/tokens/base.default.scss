@@ -214,6 +214,32 @@ $bpk-button-large-padding-y: .375rem !default;
 /// @group buttons
 $bpk-button-line-height: 1.5rem !default;
 /// @group buttons
+$bpk-button-outline-active-background-color: rgba(0, 0, 0, 0) !default;
+/// @group buttons
+$bpk-button-outline-active-border-color: rgb(255, 255, 255) !default;
+/// @group buttons
+$bpk-button-outline-background-color: rgba(0, 0, 0, 0) !default;
+/// @group buttons
+$bpk-button-outline-background-image: none !default;
+/// @group buttons
+$bpk-button-outline-border-color: rgb(255, 255, 255) !default;
+/// @group buttons
+$bpk-button-outline-color: rgb(255, 255, 255) !default;
+/// @group buttons
+$bpk-button-outline-disabled-background-color: rgb(230, 228, 235) !default;
+/// @group buttons
+$bpk-button-outline-disabled-background-image: none !default;
+/// @group buttons
+$bpk-button-outline-disabled-box-shadow: none !default;
+/// @group buttons
+$bpk-button-outline-disabled-color: rgb(178, 174, 189) !default;
+/// @group buttons
+$bpk-button-outline-hover-background-color: rgba(0, 0, 0, 0) !default;
+/// @group buttons
+$bpk-button-outline-hover-border-color: rgb(255, 255, 255) !default;
+/// @group buttons
+$bpk-button-outline-hover-border-opacity: 0.5 !default;
+/// @group buttons
 $bpk-button-padding-x: 1.125rem !default;
 /// @group buttons
 $bpk-button-padding-x-icon-only: .5625rem !default;

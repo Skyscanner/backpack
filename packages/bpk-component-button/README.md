@@ -24,6 +24,7 @@ export default () => (
     <BpkButton large>Large primary</BpkButton>
     <BpkButton secondary>Secondary</BpkButton>
     <BpkButton link>Link</BpkButton>
+    <BpkButton outline>Link</BpkButton>
     <BpkButton iconOnly>
       <AlignedArrowIcon />
       <span className="visually-hidden">Search</span>
@@ -37,19 +38,20 @@ export default () => (
 | Property    | PropType | Required | Default Value |
 | ----------- | -------- | -------- | ------------- |
 | children    | -        | true     | -             |
-| href        | string   | false    | null          |
+| blank       | bool     | false    | false         |
 | className   | string   | false    | null          |
 | disabled    | bool     | false    | false         |
-| submit      | bool     | false    | false         |
-| secondary   | bool     | false    | false         |
 | destructive | bool     | false    | false         |
+| featured    | bool     | false    | false         |
+| href        | string   | false    | null          |
+| iconOnly    | bool     | false    | false         |
 | large       | bool     | false    | false         |
 | link        | bool     | false    | false         |
-| featured    | bool     | false    | false         |
-| iconOnly    | bool     | false    | false         |
 | onClick     | func     | false    | null          |
-| blank       | bool     | false    | false         |
+| outline     | bool     | false    | false         |
 | rel         | string   | false    | null          |
+| secondary   | bool     | false    | false         |
+| submit      | bool     | false    | false         |
 
 ## Theme Props
 

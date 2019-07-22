@@ -39,7 +39,6 @@
   }
 
   &--outline {
-    @include bpk-button--secondary;
     @include bpk-button--outline;
   }
 

@@ -69,6 +69,13 @@ describe('BpkButton', () => {
     expect(tree).toMatchSnapshot();
   });
 
+  it('should render correctly with an "outline" attribute', () => {
+    const tree = renderer
+      .create(<BpkButton outline>My button</BpkButton>)
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
   it('should render correctly with an "iconOnly" attribute', () => {
     const tree = renderer
       .create(<BpkButton iconOnly>My button</BpkButton>)

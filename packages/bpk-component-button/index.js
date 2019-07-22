@@ -25,7 +25,6 @@ import {
   secondaryThemeAttributes,
   featuredThemeAttributes,
   destructiveThemeAttributes,
-  outlineThemeAttributes,
 } from './src/themeAttributes';
 
 export {
@@ -34,6 +33,5 @@ export {
   secondaryThemeAttributes,
   featuredThemeAttributes,
   destructiveThemeAttributes,
-  outlineThemeAttributes,
 };
 export default BpkButton;

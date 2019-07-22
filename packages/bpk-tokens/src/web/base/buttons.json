@@ -214,6 +214,58 @@
       "value": "none",
       "type": "box-shadow"
     },
+    "BUTTON_OUTLINE_COLOR": {
+      "value": "{!WHITE}",
+      "type": "color"
+    },
+    "BUTTON_OUTLINE_BACKGROUND_COLOR": {
+      "value": "transparent",
+      "type": "color"
+    },
+    "BUTTON_OUTLINE_BACKGROUND_IMAGE": {
+      "value": "none",
+      "type": "background-image"
+    },
+    "BUTTON_OUTLINE_BORDER_COLOR": {
+      "value": "{!WHITE}",
+      "type": "color"
+    },
+    "BUTTON_OUTLINE_HOVER_BACKGROUND_COLOR": {
+      "value": "transparent",
+      "type": "color"
+    },
+    "BUTTON_OUTLINE_HOVER_BORDER_COLOR": {
+      "value": "{!WHITE}",
+      "type": "color"
+    },
+    "BUTTON_OUTLINE_HOVER_BORDER_OPACITY": {
+      "value": "0.5",
+      "type": "number"
+    },
+    "BUTTON_OUTLINE_ACTIVE_BACKGROUND_COLOR": {
+      "value": "transparent",
+      "type": "color"
+    },
+    "BUTTON_OUTLINE_ACTIVE_BORDER_COLOR": {
+      "value": "{!WHITE}",
+      "type": "color"
+    },
+    "BUTTON_OUTLINE_DISABLED_BACKGROUND_COLOR": {
+      "value": "{!GRAY_100}",
+      "type": "color"
+    },
+    "BUTTON_OUTLINE_DISABLED_BACKGROUND_IMAGE": {
+      "value": "none",
+      "type": "background-image"
+    },
+    "BUTTON_OUTLINE_DISABLED_COLOR": {
+      "value": "{!GRAY_300}",
+      "type": "color"
+    },
+    "BUTTON_OUTLINE_DISABLED_BOX_SHADOW": {
+      "value": "none",
+      "type": "box-shadow"
+    },
     "BUTTON_DESTRUCTIVE_COLOR": {
       "value": "{!RED_500}",
       "type": "color"

@@ -64,23 +64,10 @@ export const destructiveThemeAttributes = [
   'buttonDestructiveActiveBackgroundColor',
 ];
 
-export const outlineThemeAttributes = [
-  'buttonOutlineTextColor',
-  'buttonOutlineHoverTextColor',
-  'buttonOutlineActiveTextColor',
-  'buttonOutlineBorderColor',
-  'buttonOutlineHoverBorderColor',
-  'buttonOutlineActiveBorderColor',
-  'buttonOutlineBackgroundColor',
-  'buttonOutlineHoverBackgroundColor',
-  'buttonOutlineActiveBackgroundColor',
-];
-
 export default {
   buttonThemeAttributes,
   primaryThemeAttributes,
   secondaryThemeAttributes,
   featuredThemeAttributes,
   destructiveThemeAttributes,
-  outlineThemeAttributes,
 };

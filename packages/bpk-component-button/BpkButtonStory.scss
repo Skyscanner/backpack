@@ -16,16 +16,12 @@
  * limitations under the License.
  */
 
-/*
- * The purpose of this file is purley to allow the outline button
- * story to have a solid background for viewing and testing. Otherwise
- * it puts the white button on white background
-*/
 @import '~bpk-mixins/index';
 
-.bpk-outline-layout {
-  min-height: 2.625rem;
-  padding: 1.5rem;
+.bpk-button-story-wrapper {
+  padding: $bpk-spacing-xs 0;
+}
 
-  @include bpk-themeable-property(background-color, --bpk-button-featured-background-color, $bpk-button-featured-background-color);
+.bpk-outline-layout {
+  background-color: $bpk-color-blue-500;
 }
