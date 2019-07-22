@@ -24,7 +24,7 @@ export default () => (
     <BpkButton large>Large primary</BpkButton>
     <BpkButton secondary>Secondary</BpkButton>
     <BpkButton link>Link</BpkButton>
-    <BpkButton outline>Link</BpkButton>
+    <BpkButton outline>Outline</BpkButton>
     <BpkButton iconOnly>
       <AlignedArrowIcon />
       <span className="visually-hidden">Search</span>
