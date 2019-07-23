@@ -2,6 +2,14 @@
 
 [Unreleased changes](./UNRELEASED.yaml).
 
+# 2019-07-23 - New trips icon
+
+**Fixed:**
+
+ - bpk-svgs: 6.9.1 => 6.9.2
+   - Replaced the `trips` icon.
+
+
 # 2019-07-23 - New outline button type
 
 **Added:**
