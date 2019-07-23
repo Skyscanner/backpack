@@ -20,8 +20,13 @@ import React, { Component } from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import BpkLabel from 'bpk-component-label';
+import { cssModules } from 'bpk-react-utils';
+
+import STYLES from './BpkNudgerStory.scss';
 
 import BpkNudger from './index';
+
+const getClassName = cssModules(STYLES);
 
 class NudgerContainer extends Component {
   constructor() {
@@ -88,4 +93,18 @@ storiesOf('bpk-component-nudger', module)
       increaseButtonLabel="Increase"
     />
   ))
-  .add('Stateful example', () => <NudgerContainer />);
+  .add('Stateful example', () => <NudgerContainer />)
+  .add('Outline nudger', () => (
+    <div className={getClassName('bpk-nudger-outline')}>
+      <BpkNudger
+        id="outline-nudger"
+        min={1}
+        max={99}
+        value={3}
+        onChange={action('change')}
+        decreaseButtonLabel="Decrease"
+        increaseButtonLabel="Increase"
+        buttonType="outline"
+      />
+    </div>
+  ));

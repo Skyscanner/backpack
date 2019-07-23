@@ -24,3 +24,7 @@
 #   FIXED:
 #     - bpk-component-horcrux:
 #       - Fixed issue where `BpkHorcrux` would occasionally possess the living.
+
+ADDED:
+ - bpk-component-nudger:
+  - New prop `buttonType` that allows for creating outline Nudgers with the outline button type and using white text within the input.

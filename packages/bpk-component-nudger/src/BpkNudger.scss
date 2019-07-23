@@ -34,5 +34,10 @@
     line-height: $bpk-button-line-height;
     text-align: center;
     vertical-align: middle;
+
+    &--outline {
+      background-color: transparent;
+      color: $bpk-color-white;
+    }
   }
 }
