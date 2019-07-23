@@ -2,6 +2,14 @@
 
 [Unreleased changes](./UNRELEASED.yaml).
 
+# 2019-07-23 - New outline button type
+
+**Added:**
+
+ - bpk-component-button: 2.3.15 => 2.4.0
+   - New `outline` prop for creating outline buttons. See https://backpack.github.io/components/button?platform=web#outline
+
+
 # 2019-07-12 - New `flight-landing`, `flight-takeoff` and `aircraft` icons.
 
 **Added:**
