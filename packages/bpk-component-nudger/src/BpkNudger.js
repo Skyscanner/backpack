@@ -114,7 +114,7 @@ BpkNudger.propTypes = {
   value: PropTypes.number.isRequired,
   onChange: PropTypes.func.isRequired,
   className: PropTypes.string,
-  buttonType: PropTypes.string,
+  buttonType: PropTypes.oneOf(['secondary', 'outline']),
 };
 
 BpkNudger.defaultProps = {
