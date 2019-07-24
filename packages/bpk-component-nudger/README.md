@@ -59,6 +59,7 @@ class App extends Component {
 | onChange              | func                          | true     | -             |
 | value                 | number                        | true     | -             |
 | className             | string                        | false    | null          |
+| buttonType            | oneOf('secondary', 'outline') | false    | secondary     |
 
 ## Theme Props
 

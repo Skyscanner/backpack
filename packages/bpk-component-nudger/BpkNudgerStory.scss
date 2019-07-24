@@ -18,26 +18,7 @@
 
 @import '~bpk-mixins/index';
 
-.bpk-nudger {
-  &__button {
-    position: relative;
-  }
-
-  &__input {
-    $size: $bpk-button-line-height + ($bpk-button-padding-y * 2);
-
-    display: inline-block;
-    width: $size;
-    padding: $bpk-button-padding-y 0;
-    border: none;
-    font-size: $bpk-font-size-lg;
-    line-height: $bpk-button-line-height;
-    text-align: center;
-    vertical-align: middle;
-
-    &--outline {
-      background-color: transparent;
-      color: $bpk-color-white;
-    }
-  }
+.bpk-nudger-outline {
+  padding: $bpk-spacing-xs;
+  background-color: $bpk-color-blue-500;
 }

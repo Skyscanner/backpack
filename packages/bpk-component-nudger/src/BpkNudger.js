@@ -42,6 +42,7 @@ const BpkNudger = props => {
     className,
     increaseButtonLabel,
     decreaseButtonLabel,
+    buttonType,
   } = props;
   const classNames = [getClassName('bpk-nudger')];
   if (className) {
@@ -61,10 +62,16 @@ const BpkNudger = props => {
     plusIconClassNames.push(getClassName('bpk-nudger__icon--disabled'));
   }
 
+  const inputStyles = [getClassName('bpk-nudger__input')];
+  if (buttonType === 'outline') {
+    inputStyles.push(getClassName('bpk-nudger__input--outline'));
+  }
+
   return (
     <div className={classNames.join(' ')}>
       <BpkButton
-        secondary
+        secondary={buttonType === 'secondary'}
+        outline={buttonType === 'outline'}
         iconOnly
         onClick={() => onChange(clamp(adjustedValue - 1, min, max))}
         disabled={decreaseDisabled}
@@ -80,10 +87,11 @@ const BpkNudger = props => {
         readOnly
         value={adjustedValue}
         id={id}
-        className={getClassName('bpk-nudger__input')}
+        className={inputStyles.join(' ')}
       />
       <BpkButton
-        secondary
+        secondary={buttonType === 'secondary'}
+        outline={buttonType === 'outline'}
         iconOnly
         onClick={() => onChange(clamp(adjustedValue + 1, min, max))}
         disabled={increaseDisabled}
@@ -106,10 +114,12 @@ BpkNudger.propTypes = {
   value: PropTypes.number.isRequired,
   onChange: PropTypes.func.isRequired,
   className: PropTypes.string,
+  buttonType: PropTypes.oneOf(['secondary', 'outline']),
 };
 
 BpkNudger.defaultProps = {
   className: null,
+  buttonType: 'secondary',
 };
 
 export default BpkNudger;

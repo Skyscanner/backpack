@@ -39,6 +39,24 @@ describe('BpkNudger', () => {
     expect(tree).toMatchSnapshot();
   });
 
+  it('should render as an outline nudger correctly', () => {
+    const tree = renderer
+      .create(
+        <BpkNudger
+          id="nudger"
+          min={1}
+          max={9}
+          value={2}
+          onChange={() => null}
+          decreaseButtonLabel="Decrease"
+          increaseButtonLabel="Increase"
+          buttonType="outline"
+        />,
+      )
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
   it('should render correctly with a "className" attribute', () => {
     const tree = renderer
       .create(

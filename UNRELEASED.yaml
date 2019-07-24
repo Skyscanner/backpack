@@ -24,3 +24,7 @@
 #   FIXED:
 #     - bpk-component-horcrux:
 #       - Fixed issue where `BpkHorcrux` would occasionally possess the living.
+
+ADDED:
+ - bpk-component-nudger:
+  - New `buttonType` prop for changing the button type used in the nudger.

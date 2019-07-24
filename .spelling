@@ -245,6 +245,7 @@ BarChart
 beforeClose
 borderRadius
 borderlessBackground
+buttonType
 centerLeading
 centerTrailing
 clearButtonMode
