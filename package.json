@@ -39,7 +39,7 @@
     "check-owners": "npm whoami && ( node scripts/npm/get-owners.js | grep -E $(npm whoami) ) && node scripts/npm/check-owners.js",
     "check-pristine": "node scripts/check-pristine-state",
     "publish": "npm run check-pristine && npm run check-owners && npm run build && git pull --rebase && flow stop && npm run test && lerna publish",
-    "publish:improved": "npm run check-pristine && npm run check-owners && npm run build && git pull --rebase && flow stop && npm run test && node scripts/release-process/auto-publish.js",
+    "publish:testing-do-not-use-not-ready-yet": "npm run check-pristine && npm run check-owners && npm run build && git pull --rebase && flow stop && npm run test && node scripts/release-process/auto-publish.js",
     "release": "npm run publish",
     "danger": "danger ci",
     "prettier": "prettier --config .prettierrc --write \"**/*.js\"",
