@@ -6,7 +6,7 @@
 
 **Added:**
  - bpk-component-nudger: 1.0.145 => 1.1.0 
-  - New `buttonType` prop for changing the button type used in the nudger.
+    - New `buttonType` prop for changing the button type used in the nudger.
 
 # 2019-07-23 - New trips icon
 
