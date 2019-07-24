@@ -27,4 +27,4 @@
 
 ADDED:
  - bpk-component-nudger:
-  - New prop `buttonType` that allows for creating outline Nudgers with the outline button type and using white text within the input.
+  - New `buttonType` prop for changing the button type used in the nudger.
