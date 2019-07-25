@@ -1,7 +1,4 @@
 # UNRELEASED:
-FIXED:
-  - bpk-component-button:
-    - Fixed issue where `BpkButton` would ignore disabled prop when href prop is provided.
 
 # How to write a good changelog entry:
 #
