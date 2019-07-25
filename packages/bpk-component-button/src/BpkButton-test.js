@@ -148,4 +148,15 @@ describe('BpkButton', () => {
       .toJSON();
     expect(tree).toMatchSnapshot();
   });
+
+  it('should render correctly with "disabled" and "href" attributes', () => {
+    const tree = renderer
+      .create(
+        <BpkButton href="#" disabled>
+          My button
+        </BpkButton>,
+      )
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 });

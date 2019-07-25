@@ -107,7 +107,7 @@ const BpkButton = (props: Props) => {
   const target = blank ? '_blank' : null;
   const rel = blank ? propRel || 'noopener noreferrer' : propRel;
 
-  if (href) {
+  if (!disabled && href) {
     return (
       <a
         href={href}
