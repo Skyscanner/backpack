@@ -10,7 +10,7 @@ npm install bpk-component-nudger --save-dev
 
 ## Usage
 
-### Default `BpkNudger`
+### `BpkNudger`
 
 ```js
 import React, { Component } from 'react';
