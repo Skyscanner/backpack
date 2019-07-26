@@ -24,10 +24,7 @@
   }
 
   &__input {
-    $size: $bpk-button-line-height + ($bpk-button-padding-y * 2);
-
     display: inline-block;
-    width: $size;
     padding: $bpk-button-padding-y 0;
     border: none;
     font-size: $bpk-font-size-lg;
@@ -38,6 +35,12 @@
     &--outline {
       background-color: transparent;
       color: $bpk-color-white;
+    }
+
+    &--numeric {
+      $size: $bpk-button-line-height + ($bpk-button-padding-y * 2);
+
+      width: $size;
     }
   }
 }
