@@ -43,8 +43,8 @@ type Props<T> = {
   ...$Exact<CommonProps<T>>,
   inputClassName: ?string,
   formatValue: T => string,
-  incrementValue: T => any,
-  decrementValue: T => any,
+  incrementValue: T => mixed,
+  decrementValue: T => mixed,
   compareValues: (T, T) => number,
 };
 
@@ -130,11 +130,14 @@ const BpkConfigurableNudger = <T>(props: Props<T>) => {
 
 BpkConfigurableNudger.propTypes = {
   ...COMMON_PROP_TYPES,
-  inputClassName: PropTypes.string,
+  compareValues: PropTypes.func.isRequired,
+  decrementValue: PropTypes.func.isRequired,
   formatValue: PropTypes.PropTypes.func.isRequired,
   incrementValue: PropTypes.func.isRequired,
-  decrementValue: PropTypes.func.isRequired,
-  compareValues: PropTypes.func.isRequired,
+  max: PropTypes.any.isRequired,
+  min: PropTypes.any.isRequired,
+  value: PropTypes.any.isRequired,
+  inputClassName: PropTypes.string,
 };
 
 BpkConfigurableNudger.defaultProps = {

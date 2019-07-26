@@ -19,6 +19,7 @@
 /* @flow strict */
 
 import React from 'react';
+import PropTypes from 'prop-types';
 import { cssModules } from 'bpk-react-utils';
 
 import BpkConfigurableNudger from './BpkConfigurableNudger';
@@ -55,7 +56,12 @@ const BpkNudger = (props: Props) => {
   );
 };
 
-BpkNudger.propTypes = COMMON_PROP_TYPES;
+BpkNudger.propTypes = {
+  ...COMMON_PROP_TYPES,
+  max: PropTypes.number.isRequired,
+  min: PropTypes.number.isRequired,
+  value: PropTypes.number.isRequired,
+};
 
 BpkNudger.defaultProps = COMMON_DEFAULT_PROPS;
 
