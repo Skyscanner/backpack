@@ -49,7 +49,7 @@ class App extends Component {
 }
 ```
 
-### Configurable `BpkConfigurableNudger`
+### `BpkConfigurableNudger`
 
 ```js
 import React, { Component } from 'react';
@@ -69,25 +69,24 @@ class App extends Component {
     this.setState({ value });
   };
 
-  compareValues = (a, b): number => {
-    const options = ['economy', 'premium', 'business', 'first'];
-    const [aIndex, bIndex] = [options.indexOf(a), options.indexOf(b)];
+  const options = ['economy', 'premium', 'business', 'first'];
+
+  compareValues = (value1, value2) => {
+    const [aIndex, bIndex] = [options.indexOf(value1), options.indexOf(value2)];
     return aIndex - bIndex;
   };
 
-  incrementValue = (a): string => {
-    const options = ['economy', 'premium', 'business', 'first'];
-    const [aIndex] = [options.indexOf(a) + 1];
+  incrementValue = currentValue => {
+    const [aIndex] = [options.indexOf(currentValue) + 1];
     return options[aIndex];
   };
 
-  decrementValue = (a): string => {
-    const options = ['economy', 'premium', 'business', 'first'];
-    const [aIndex] = [options.indexOf(a) - 1];
+  decrementValue = currentValue => {
+    const [aIndex] = [options.indexOf(currentValue) - 1];
     return options[aIndex];
   };
 
-  formatValue = (a): string => a.toString();
+  formatValue = currentValue => currentValue.toString();
 
   render() {
     return (
@@ -105,7 +104,6 @@ class App extends Component {
           incrementValue={this.incrementValue}
           decrementValue={this.decrementValue}
           formatValue={this.formatValue}
-          inputClassName={getClassName('bpk-nudger-configurable')}
         />
       </div>
     );

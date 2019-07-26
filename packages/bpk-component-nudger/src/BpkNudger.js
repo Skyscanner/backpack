@@ -36,17 +36,7 @@ type Props = {
 const getClassName = cssModules(STYLES);
 
 const BpkNudger = (props: Props) => {
-  const {
-    id,
-    min,
-    max,
-    value,
-    onChange,
-    className,
-    increaseButtonLabel,
-    decreaseButtonLabel,
-    buttonType,
-  } = props;
+  const { ...rest } = props;
 
   const compareValues = (a: number, b: number): number => a - b;
   const incrementValue = (a: number): number => a + 1;
@@ -55,20 +45,12 @@ const BpkNudger = (props: Props) => {
 
   return (
     <BpkConfigurableNudger
-      id={id}
-      min={min}
-      max={max}
-      value={value}
-      onChange={onChange}
-      className={className}
       inputClassName={getClassName('bpk-nudger__input--numeric')}
-      increaseButtonLabel={increaseButtonLabel}
-      decreaseButtonLabel={decreaseButtonLabel}
-      buttonType={buttonType}
       compareValues={compareValues}
       incrementValue={incrementValue}
       decrementValue={decrementValue}
       formatValue={formatValue}
+      {...rest}
     />
   );
 };
