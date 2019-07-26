@@ -24,6 +24,9 @@
 #   FIXED:
 #     - bpk-component-horcrux:
 #       - Fixed issue where `BpkHorcrux` would occasionally possess the living.
+BREAKING:
+  - bpk-component-ticket:
+    - The dashed line has been replaced with a solid line of the same colour and weight. This is a visually breaking change only.
 FIXED:
   - bpk-component-map:
     - Fixed typo in the example propsp in the component readme
