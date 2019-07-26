@@ -72,7 +72,7 @@ export default () => (
     googleMapURL={MAP_URL}
     zoom={15}
     center={{
-      latitide: 27.9881,
+      latitude: 27.9881,
       longitude: 86.925,
     }}
     showControls={false}
