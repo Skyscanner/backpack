@@ -7,7 +7,7 @@ exports[`BpkNudger should render as a configurable nudger correctly 1`] = `
   <button
     aria-controls="nudger"
     className="bpk-button bpk-button--secondary bpk-button--icon-only bpk-nudger__button"
-    disabled={true}
+    disabled={false}
     onClick={[Function]}
     title="Decrease"
     type="button"
@@ -23,7 +23,7 @@ exports[`BpkNudger should render as a configurable nudger correctly 1`] = `
       }
     >
       <svg
-        className="bpk-nudger__icon bpk-nudger__icon--disabled"
+        className="bpk-nudger__icon"
         height="18"
         style={
           Object {
@@ -47,12 +47,12 @@ exports[`BpkNudger should render as a configurable nudger correctly 1`] = `
     id="nudger"
     readOnly={true}
     type="text"
-    value={null}
+    value="premium"
   />
   <button
     aria-controls="nudger"
     className="bpk-button bpk-button--secondary bpk-button--icon-only bpk-nudger__button"
-    disabled={true}
+    disabled={false}
     onClick={[Function]}
     title="Increase"
     type="button"
@@ -68,7 +68,7 @@ exports[`BpkNudger should render as a configurable nudger correctly 1`] = `
       }
     >
       <svg
-        className="bpk-nudger__icon bpk-nudger__icon--disabled"
+        className="bpk-nudger__icon"
         height="18"
         style={
           Object {
