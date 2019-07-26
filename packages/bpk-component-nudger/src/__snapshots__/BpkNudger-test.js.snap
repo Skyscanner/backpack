@@ -136,7 +136,7 @@ exports[`BpkNudger should render as an outline nudger correctly 1`] = `
     id="nudger"
     readOnly={true}
     type="text"
-    value={2}
+    value="2"
   />
   <button
     aria-controls="nudger"
@@ -225,7 +225,7 @@ exports[`BpkNudger should render correctly 1`] = `
     id="nudger"
     readOnly={true}
     type="text"
-    value={2}
+    value="2"
   />
   <button
     aria-controls="nudger"
@@ -314,7 +314,7 @@ exports[`BpkNudger should render correctly with a "className" attribute 1`] = `
     id="nudger"
     readOnly={true}
     type="text"
-    value={2}
+    value="2"
   />
   <button
     aria-controls="nudger"
@@ -403,7 +403,7 @@ exports[`BpkNudger should render correctly with a value < min 1`] = `
     id="nudger"
     readOnly={true}
     type="text"
-    value={0}
+    value="0"
   />
   <button
     aria-controls="nudger"
@@ -492,7 +492,7 @@ exports[`BpkNudger should render correctly with a value = max 1`] = `
     id="nudger"
     readOnly={true}
     type="text"
-    value={9}
+    value="9"
   />
   <button
     aria-controls="nudger"
@@ -581,7 +581,7 @@ exports[`BpkNudger should render correctly with a value = min 1`] = `
     id="nudger"
     readOnly={true}
     type="text"
-    value={1}
+    value="1"
   />
   <button
     aria-controls="nudger"
@@ -670,7 +670,7 @@ exports[`BpkNudger should render correctly with a value > max 1`] = `
     id="nudger"
     readOnly={true}
     type="text"
-    value={10}
+    value="10"
   />
   <button
     aria-controls="nudger"

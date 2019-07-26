@@ -42,10 +42,10 @@ const AlignedPlusIcon = withButtonAlignment(PlusIcon);
 type Props = {
   ...$Exact<CommonProps>,
   inputClassName: ?string,
-  formatValue: <T>(T) => T,
-  incrementValue: <T>(T) => T,
-  decrementValue: <T>(T) => T,
-  compareValues: <T>(a: T, b: T) => number,
+  formatValue: (a: any) => string,
+  incrementValue: (a: any) => any,
+  decrementValue: (a: any) => any,
+  compareValues: (a: any, b: any) => number,
 };
 
 const BpkConfigurableNudger = (props: Props) => {

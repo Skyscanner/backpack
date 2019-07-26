@@ -18,21 +18,17 @@
 
 /* @flow strict */
 
-import PropTypes from 'prop-types';
 import React from 'react';
 
 import BpkConfigurableNudger from './BpkConfigurableNudger';
+import {
+  type CommonProps,
+  COMMON_DEFAULT_PROPS,
+  COMMON_PROP_TYPES,
+} from './common-types';
 
 type Props = {
-  id: string,
-  min: number,
-  max: number,
-  value: number,
-  onChange: <T>(T) => void,
-  className: ?string,
-  increaseButtonLabel: string,
-  decreaseButtonLabel: string,
-  buttonType: string,
+  ...$Exact<CommonProps>,
 };
 
 const BpkNudger = (props: Props) => {
@@ -51,7 +47,7 @@ const BpkNudger = (props: Props) => {
   const compareValues = (a: number, b: number): number => a - b;
   const incrementValue = (a: number): number => a + 1;
   const decrementValue = (a: number): number => a - 1;
-  const formatValue = (a: number): number => a;
+  const formatValue = (a: number): string => a.toString();
 
   return (
     <BpkConfigurableNudger
@@ -72,21 +68,8 @@ const BpkNudger = (props: Props) => {
   );
 };
 
-BpkNudger.propTypes = {
-  id: PropTypes.string.isRequired,
-  decreaseButtonLabel: PropTypes.string.isRequired,
-  increaseButtonLabel: PropTypes.string.isRequired,
-  max: PropTypes.number.isRequired,
-  min: PropTypes.number.isRequired,
-  value: PropTypes.number.isRequired,
-  onChange: PropTypes.func.isRequired,
-  className: PropTypes.string,
-  buttonType: PropTypes.oneOf(['secondary', 'outline']),
-};
+BpkNudger.propTypes = COMMON_PROP_TYPES;
 
-BpkNudger.defaultProps = {
-  className: null,
-  buttonType: 'secondary',
-};
+BpkNudger.defaultProps = COMMON_DEFAULT_PROPS;
 
 export default BpkNudger;
