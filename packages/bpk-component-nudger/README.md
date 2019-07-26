@@ -56,6 +56,25 @@ import React, { Component } from 'react';
 import BpkLabel from 'bpk-component-label';
 import { BpkConfigurableNudger } from 'bpk-component-nudger';
 
+const options = ['economy', 'premium', 'business', 'first'];
+
+const compareValues = (value1, value2) => {
+    const [aIndex, bIndex] = [options.indexOf(value1), options.indexOf(value2)];
+    return aIndex - bIndex;
+  };
+
+const incrementValue = currentValue => {
+    const [aIndex] = [options.indexOf(currentValue) + 1];
+    return options[aIndex];
+  };
+
+const decrementValue = currentValue => {
+    const [aIndex] = [options.indexOf(currentValue) - 1];
+    return options[aIndex];
+  };
+
+const formatValue = currentValue => currentValue.toString();
+
 class App extends Component {
   constructor() {
     super();
@@ -69,25 +88,6 @@ class App extends Component {
     this.setState({ value });
   };
 
-  const options = ['economy', 'premium', 'business', 'first'];
-
-  compareValues = (value1, value2) => {
-    const [aIndex, bIndex] = [options.indexOf(value1), options.indexOf(value2)];
-    return aIndex - bIndex;
-  };
-
-  incrementValue = currentValue => {
-    const [aIndex] = [options.indexOf(currentValue) + 1];
-    return options[aIndex];
-  };
-
-  decrementValue = currentValue => {
-    const [aIndex] = [options.indexOf(currentValue) - 1];
-    return options[aIndex];
-  };
-
-  formatValue = currentValue => currentValue.toString();
-
   render() {
     return (
       <div>
@@ -100,10 +100,10 @@ class App extends Component {
           onChange={this.handleChange}
           decreaseButtonLabel="Decrease"
           increaseButtonLabel="Increase"
-          compareValues={this.compareValues}
-          incrementValue={this.incrementValue}
-          decrementValue={this.decrementValue}
-          formatValue={this.formatValue}
+          compareValues={compareValues}
+          incrementValue={incrementValue}
+          decrementValue={decrementValue}
+          formatValue={formatValue}
         />
       </div>
     );
@@ -145,6 +145,20 @@ class App extends Component {
 | className           | string                        | false    | null          |
 | inputClassName      | string                        | false    | null          |
 | buttonType          | oneOf('secondary', 'outline') | false    | secondary     |
+
+### `compareValues`
+
+A comparator function similar to [Array.prototype.sort()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort#Description) for comparing two values in your data set.
+
+The function is used to take either the min or max value provided and compare it to the current value to determine if the value can be incremented or decremented.
+
+### `incrementValue` & `decrementValue`
+
+Functions that handle the incrementing or decrementing of the current selected value.
+
+### `formatValue`
+
+A simple function that will allow you to set the format of the display value e.g. local dates or times.
 
 ## Theme Props
 

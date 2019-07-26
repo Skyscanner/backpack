@@ -30,11 +30,7 @@ import BpkNudger, { BpkConfigurableNudger } from './index';
 
 const getClassName = cssModules(STYLES);
 
-type State = {
-  value: any,
-};
-
-class NudgerContainer extends Component<{}, State> {
+class NudgerContainer extends Component<{}, { value: number }> {
   constructor() {
     super();
 
@@ -65,8 +61,28 @@ class NudgerContainer extends Component<{}, State> {
   }
 }
 
+const compareValues = (a, b): number => {
+  const options = ['economy', 'premium', 'business', 'first'];
+  const [aIndex, bIndex] = [options.indexOf(a), options.indexOf(b)];
+  return aIndex - bIndex;
+};
+
+const incrementValue = (a): string => {
+  const options = ['economy', 'premium', 'business', 'first'];
+  const [aIndex] = [options.indexOf(a) + 1];
+  return options[aIndex];
+};
+
+const decrementValue = (a): string => {
+  const options = ['economy', 'premium', 'business', 'first'];
+  const [aIndex] = [options.indexOf(a) - 1];
+  return options[aIndex];
+};
+
+const formatValue = (a): string => a.toString();
+
 // eslint-disable-next-line react/no-multi-comp
-class ConfigurableNudgerContainer extends Component<{}, State> {
+class ConfigurableNudgerContainer extends Component<{}, { value: string }> {
   constructor() {
     super();
 
@@ -78,26 +94,6 @@ class ConfigurableNudgerContainer extends Component<{}, State> {
   handleChange = value => {
     this.setState({ value });
   };
-
-  compareValues = (a, b): number => {
-    const options = ['economy', 'premium', 'business', 'first'];
-    const [aIndex, bIndex] = [options.indexOf(a), options.indexOf(b)];
-    return aIndex - bIndex;
-  };
-
-  incrementValue = (a): string => {
-    const options = ['economy', 'premium', 'business', 'first'];
-    const [aIndex] = [options.indexOf(a) + 1];
-    return options[aIndex];
-  };
-
-  decrementValue = (a): string => {
-    const options = ['economy', 'premium', 'business', 'first'];
-    const [aIndex] = [options.indexOf(a) - 1];
-    return options[aIndex];
-  };
-
-  formatValue = (a): string => a.toString();
 
   render() {
     return (
@@ -111,10 +107,10 @@ class ConfigurableNudgerContainer extends Component<{}, State> {
           onChange={this.handleChange}
           decreaseButtonLabel="Decrease"
           increaseButtonLabel="Increase"
-          compareValues={this.compareValues}
-          incrementValue={this.incrementValue}
-          decrementValue={this.decrementValue}
-          formatValue={this.formatValue}
+          compareValues={compareValues}
+          incrementValue={incrementValue}
+          decrementValue={decrementValue}
+          formatValue={formatValue}
           inputClassName={getClassName('bpk-nudger-configurable')}
         />
       </div>
@@ -157,6 +153,7 @@ storiesOf('bpk-component-nudger', module)
     />
   ))
   .add('Stateful example', () => <NudgerContainer />)
+  .add('Configurable nudger', () => <ConfigurableNudgerContainer />)
   .add('Outline nudger', () => (
     <div className={getClassName('bpk-nudger-outline')}>
       <BpkNudger
@@ -170,5 +167,4 @@ storiesOf('bpk-component-nudger', module)
         buttonType="outline"
       />
     </div>
-  ))
-  .add('Configurable nudger', () => <ConfigurableNudgerContainer />);
+  ));
