@@ -19,6 +19,7 @@
 /* @flow strict */
 
 import React from 'react';
+import { cssModules } from 'bpk-react-utils';
 
 import BpkConfigurableNudger from './BpkConfigurableNudger';
 import {
@@ -26,10 +27,13 @@ import {
   COMMON_DEFAULT_PROPS,
   COMMON_PROP_TYPES,
 } from './common-types';
+import STYLES from './BpkNudger.scss';
 
 type Props = {
   ...$Exact<CommonProps>,
 };
+
+const getClassName = cssModules(STYLES);
 
 const BpkNudger = (props: Props) => {
   const {
@@ -57,6 +61,7 @@ const BpkNudger = (props: Props) => {
       value={value}
       onChange={onChange}
       className={className}
+      inputClassName={getClassName('bpk-nudger__input--numeric')}
       increaseButtonLabel={increaseButtonLabel}
       decreaseButtonLabel={decreaseButtonLabel}
       buttonType={buttonType}

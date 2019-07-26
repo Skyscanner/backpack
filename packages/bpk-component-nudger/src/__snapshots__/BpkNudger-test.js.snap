@@ -132,7 +132,7 @@ exports[`BpkNudger should render as an outline nudger correctly 1`] = `
   </button>
   <input
     aria-live="assertive"
-    className="bpk-nudger__input bpk-nudger__input--outline"
+    className="bpk-nudger__input bpk-nudger__input--numeric bpk-nudger__input--outline"
     id="nudger"
     readOnly={true}
     type="text"
@@ -221,7 +221,7 @@ exports[`BpkNudger should render correctly 1`] = `
   </button>
   <input
     aria-live="assertive"
-    className="bpk-nudger__input"
+    className="bpk-nudger__input bpk-nudger__input--numeric"
     id="nudger"
     readOnly={true}
     type="text"
@@ -310,7 +310,7 @@ exports[`BpkNudger should render correctly with a "className" attribute 1`] = `
   </button>
   <input
     aria-live="assertive"
-    className="bpk-nudger__input"
+    className="bpk-nudger__input bpk-nudger__input--numeric"
     id="nudger"
     readOnly={true}
     type="text"
@@ -399,7 +399,7 @@ exports[`BpkNudger should render correctly with a value < min 1`] = `
   </button>
   <input
     aria-live="assertive"
-    className="bpk-nudger__input"
+    className="bpk-nudger__input bpk-nudger__input--numeric"
     id="nudger"
     readOnly={true}
     type="text"
@@ -488,7 +488,7 @@ exports[`BpkNudger should render correctly with a value = max 1`] = `
   </button>
   <input
     aria-live="assertive"
-    className="bpk-nudger__input"
+    className="bpk-nudger__input bpk-nudger__input--numeric"
     id="nudger"
     readOnly={true}
     type="text"
@@ -577,7 +577,7 @@ exports[`BpkNudger should render correctly with a value = min 1`] = `
   </button>
   <input
     aria-live="assertive"
-    className="bpk-nudger__input"
+    className="bpk-nudger__input bpk-nudger__input--numeric"
     id="nudger"
     readOnly={true}
     type="text"
@@ -666,7 +666,7 @@ exports[`BpkNudger should render correctly with a value > max 1`] = `
   </button>
   <input
     aria-live="assertive"
-    className="bpk-nudger__input"
+    className="bpk-nudger__input bpk-nudger__input--numeric"
     id="nudger"
     readOnly={true}
     type="text"
