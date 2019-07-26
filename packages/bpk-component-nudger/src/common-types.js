@@ -15,15 +15,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 /* @flow strict */
-
 import PropTypes from 'prop-types';
-import React from 'react';
 
-import BpkConfigurableNudger from './BpkConfigurableNudger';
-
-type Props = {
+export type CommonProps = {
   id: string,
   min: number,
   max: number,
@@ -35,44 +30,7 @@ type Props = {
   buttonType: string,
 };
 
-const BpkNudger = (props: Props) => {
-  const {
-    id,
-    min,
-    max,
-    value,
-    onChange,
-    className,
-    increaseButtonLabel,
-    decreaseButtonLabel,
-    buttonType,
-  } = props;
-
-  const compareValues = (a: number, b: number): number => a - b;
-  const incrementValue = (a: number): number => a + 1;
-  const decrementValue = (a: number): number => a - 1;
-  const formatValue = (a: number): number => a;
-
-  return (
-    <BpkConfigurableNudger
-      id={id}
-      min={min}
-      max={max}
-      value={value}
-      onChange={onChange}
-      className={className}
-      increaseButtonLabel={increaseButtonLabel}
-      decreaseButtonLabel={decreaseButtonLabel}
-      buttonType={buttonType}
-      compareValues={compareValues}
-      incrementValue={incrementValue}
-      decrementValue={decrementValue}
-      formatValue={formatValue}
-    />
-  );
-};
-
-BpkNudger.propTypes = {
+export const COMMON_PROP_TYPES = {
   id: PropTypes.string.isRequired,
   decreaseButtonLabel: PropTypes.string.isRequired,
   increaseButtonLabel: PropTypes.string.isRequired,
@@ -84,9 +42,7 @@ BpkNudger.propTypes = {
   buttonType: PropTypes.oneOf(['secondary', 'outline']),
 };
 
-BpkNudger.defaultProps = {
+export const COMMON_DEFAULT_PROPS = {
   className: null,
   buttonType: 'secondary',
 };
-
-export default BpkNudger;
