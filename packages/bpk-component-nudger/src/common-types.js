@@ -18,11 +18,11 @@
 /* @flow strict */
 import PropTypes from 'prop-types';
 
-export type CommonProps = {
+export type CommonProps<T> = {
   id: string,
-  min: number,
-  max: number,
-  value: number,
+  min: T,
+  max: T,
+  value: T,
   onChange: <T>(T) => void,
   className: ?string,
   increaseButtonLabel: string,

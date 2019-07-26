@@ -39,16 +39,16 @@ const getClassName = cssModules(STYLES);
 const AlignedMinusIcon = withButtonAlignment(MinusIcon);
 const AlignedPlusIcon = withButtonAlignment(PlusIcon);
 
-type Props = {
-  ...$Exact<CommonProps>,
+type Props<T> = {
+  ...$Exact<CommonProps<T>>,
   inputClassName: ?string,
-  formatValue: (a: any) => string,
-  incrementValue: (a: any) => any,
-  decrementValue: (a: any) => any,
-  compareValues: (a: any, b: any) => number,
+  formatValue: T => string,
+  incrementValue: T => any,
+  decrementValue: T => any,
+  compareValues: (T, T) => number,
 };
 
-const BpkConfigurableNudger = (props: Props) => {
+const BpkConfigurableNudger = <T>(props: Props<T>) => {
   const {
     id,
     min,

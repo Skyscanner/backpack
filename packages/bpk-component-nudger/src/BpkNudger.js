@@ -30,7 +30,7 @@ import {
 import STYLES from './BpkNudger.scss';
 
 type Props = {
-  ...$Exact<CommonProps>,
+  ...$Exact<CommonProps<number>>,
 };
 
 const getClassName = cssModules(STYLES);
