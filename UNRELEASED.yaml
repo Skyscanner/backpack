@@ -27,4 +27,4 @@
 
 ADDED:
   - bpk-component-nudger:
-    - Created new `BpkConfigurableNudger` component that allow the nudger to be configured to different types such as dates, text, etc.
+    - Created new `BpkConfigurableNudger` component that allow the nudger to be configured to use different types such as dates, text, etc.
