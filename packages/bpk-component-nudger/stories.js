@@ -61,22 +61,27 @@ class NudgerContainer extends Component<{}, { value: number }> {
   }
 }
 
+const options = ['economy', 'premium', 'business', 'first'];
 const compareValues = (a, b): number => {
-  const options = ['economy', 'premium', 'business', 'first'];
   const [aIndex, bIndex] = [options.indexOf(a), options.indexOf(b)];
   return aIndex - bIndex;
 };
 
 const incrementValue = (a): string => {
-  const options = ['economy', 'premium', 'business', 'first'];
-  const [aIndex] = [options.indexOf(a) + 1];
-  return options[aIndex];
+  const currentIndex = options.indexOf(a);
+  const newIndex = currentIndex + 1;
+  if (currentIndex === -1 || newIndex >= options.length) {
+    return a;
+  }
+  return options[newIndex];
 };
 
 const decrementValue = (a): string => {
-  const options = ['economy', 'premium', 'business', 'first'];
-  const [aIndex] = [options.indexOf(a) - 1];
-  return options[aIndex];
+  const index = options.indexOf(a) - 1;
+  if (index < 0) {
+    return a;
+  }
+  return options[index];
 };
 
 const formatValue = (a): string => a.toString();

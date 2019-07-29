@@ -91,7 +91,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <BpkLabel htmlFor="my-nudger">Number of passengers</BpkLabel>
+        <BpkLabel htmlFor="nudger">Number of passengers</BpkLabel>
         <BpkConfigurableNudger
           id="nudger"
           min="economy"
@@ -148,9 +148,15 @@ class App extends Component {
 
 ### `compareValues`
 
-A comparator function similar to [Array.prototype.sort()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort#Description) for comparing two values in your data set.
+A comparator function similar to [Array.prototype.sort](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort#Description) for comparing two values in your data set.
 
 The function is used to take either the min or max value provided and compare it to the current value to determine if the value can be incremented or decremented.
+
+The `compareValues` requires two input values `currentValue` and `compareValue` (which will be the `min` or `max` value provided) function should return the following given each scenario.
+Given `currentValue` and `compareValue`:
+If it returns a negative number it means `currentValue` < `compareValue` so will disable the `-` button
+If it returns zero it means `currentValue` = `compareValue`
+If it returns a positive number it means `currentValue` > `compareValue` so will disable the `+` button
 
 ### `incrementValue` & `decrementValue`
 

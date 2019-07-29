@@ -35,14 +35,13 @@ type Props = {
 };
 
 const getClassName = cssModules(STYLES);
+const compareValues = (a: number, b: number): number => a - b;
+const incrementValue = (currentValue: number): number => currentValue + 1;
+const decrementValue = (currentValue: number): number => currentValue - 1;
+const formatValue = (currentValue: number): string => currentValue.toString();
 
 const BpkNudger = (props: Props) => {
   const { ...rest } = props;
-
-  const compareValues = (a: number, b: number): number => a - b;
-  const incrementValue = (currentValue: number): number => currentValue + 1;
-  const decrementValue = (currentValue: number): number => currentValue - 1;
-  const formatValue = (currentValue: number): string => currentValue.toString();
 
   return (
     <BpkConfigurableNudger
