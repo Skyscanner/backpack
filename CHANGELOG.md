@@ -2,6 +2,20 @@
 
 [Unreleased changes](./UNRELEASED.yaml).
 
+# 2019-07-26 - Update ticket line appearance
+
+**Breaking:**
+
+ - bpk-component-ticket: 1.2.73 => 2.0.0
+   - The dashed line has been replaced with a solid line of the same colour and weight. This is a visually breaking change only.
+
+
+# 2019-07-25 - Fix button when disabled and href supplied.
+
+**Fixed:**
+  - bpk-component-button: 2.4.2 => 2.4.3
+    - Fixed issue where `BpkButton` would ignore disabled prop when href prop is provided.
+
 # 2019-07-24 - Ability to change nudger button type.
 
 **Added:**
