@@ -372,7 +372,7 @@ gulp.task('copy-svgs', () =>
 
 gulp.task('create-metadata', () =>
   gulp
-    .src('src/**/*.svg')
+    .src('src/icons/*.svg')
     .pipe(metadata())
     .pipe(gulp.dest('dist')),
 );

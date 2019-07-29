@@ -22,11 +22,30 @@ import { flow } from 'lodash';
 import through from 'through2';
 import Vinyl from 'vinyl';
 
-import autoMirror from './automirror';
+import withAutoMirror from './automirror';
 
-const addMetadata = flow(autoMirror());
+type MetadataItem = {
+  autoMirror: boolean,
+};
 
-const createMetadata = () => {
+type Metadata = {
+  [string]: MetadataItem,
+};
+
+type MetadataModifier = (
+  icon: string,
+  data: $Shape<MetadataItem>,
+) => $Shape<MetadataItem>;
+
+// Add all modifiers here
+const iconModifiers = [withAutoMirror()];
+
+const wrapWithIcon = (icon: string, modifiers: Array<MetadataModifier>) =>
+  modifiers.map(modifier => data => modifier(icon, data));
+
+const withIcon = (icon: string) => flow(wrapWithIcon(icon, iconModifiers));
+
+const createMetadata = (): Metadata => {
   const metadata = {};
 
   const bufferContents = (file, enc, cb) => {
@@ -36,7 +55,8 @@ const createMetadata = () => {
     }
 
     const icon = file.stem; // filename without suffix
-    metadata[icon] = addMetadata({ icon, data: {} }).data;
+    const addMetadata = withIcon(icon);
+    metadata[icon] = addMetadata({});
     cb();
   };
 
@@ -54,3 +74,4 @@ const createMetadata = () => {
 };
 
 export default createMetadata;
+export type { Metadata, MetadataItem, MetadataModifier };
