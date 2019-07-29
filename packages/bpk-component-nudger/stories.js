@@ -98,7 +98,7 @@ class ConfigurableNudgerContainer extends Component<{}, { value: string }> {
   render() {
     return (
       <div>
-        <BpkLabel htmlFor="my-nudger">Traveller Class</BpkLabel>
+        <BpkLabel htmlFor="nudger">Traveller Class</BpkLabel>
         <BpkConfigurableNudger
           id="nudger"
           min="economy"
