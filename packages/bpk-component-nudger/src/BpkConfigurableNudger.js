@@ -43,8 +43,8 @@ type Props<T> = {
   ...$Exact<CommonProps<T>>,
   inputClassName: ?string,
   formatValue: T => string,
-  incrementValue: T => mixed,
-  decrementValue: T => mixed,
+  incrementValue: T => T,
+  decrementValue: T => T,
   compareValues: (T, T) => number,
 };
 

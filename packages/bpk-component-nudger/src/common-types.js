@@ -23,7 +23,7 @@ export type CommonProps<T> = {
   min: T,
   max: T,
   value: T,
-  onChange: <T>(T) => void,
+  onChange: T => void,
   className: ?string,
   increaseButtonLabel: string,
   decreaseButtonLabel: string,
