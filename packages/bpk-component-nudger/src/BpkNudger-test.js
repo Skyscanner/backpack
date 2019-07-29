@@ -19,7 +19,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 
-import BpkConfigurableNudger from './BpkConfigurableNudger';
 import BpkNudger from './BpkNudger';
 
 describe('BpkNudger', () => {
@@ -52,27 +51,6 @@ describe('BpkNudger', () => {
           decreaseButtonLabel="Decrease"
           increaseButtonLabel="Increase"
           buttonType="outline"
-        />,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
-  });
-
-  it('should render as a configurable nudger correctly', () => {
-    const tree = renderer
-      .create(
-        <BpkConfigurableNudger
-          id="nudger"
-          min={1}
-          max={9}
-          value={2}
-          onChange={() => null}
-          decreaseButtonLabel="Decrease"
-          increaseButtonLabel="Increase"
-          compareValues={() => null}
-          incrementValue={() => null}
-          decrementValue={() => null}
-          formatValue={() => null}
         />,
       )
       .toJSON();

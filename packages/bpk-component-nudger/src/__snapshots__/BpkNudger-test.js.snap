@@ -1,94 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`BpkNudger should render as a configurable nudger correctly 1`] = `
-<div
-  className="bpk-nudger"
->
-  <button
-    aria-controls="nudger"
-    className="bpk-button bpk-button--secondary bpk-button--icon-only bpk-nudger__button"
-    disabled={true}
-    onClick={[Function]}
-    title="Decrease"
-    type="button"
-  >
-    <span
-      style={
-        Object {
-          "display": "inline-block",
-          "lineHeight": "1.125rem",
-          "marginTop": "0.1875rem",
-          "verticalAlign": "top",
-        }
-      }
-    >
-      <svg
-        className="bpk-nudger__icon bpk-nudger__icon--disabled"
-        height="18"
-        style={
-          Object {
-            "height": "1.125rem",
-            "width": "1.125rem",
-          }
-        }
-        viewBox="0 0 24 24"
-        width="18"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M19 10a2 2 0 1 1 0 4H5a2 2 0 1 1 0-4h14z"
-        />
-      </svg>
-    </span>
-  </button>
-  <input
-    aria-live="assertive"
-    className="bpk-nudger__input"
-    id="nudger"
-    readOnly={true}
-    type="text"
-    value={null}
-  />
-  <button
-    aria-controls="nudger"
-    className="bpk-button bpk-button--secondary bpk-button--icon-only bpk-nudger__button"
-    disabled={true}
-    onClick={[Function]}
-    title="Increase"
-    type="button"
-  >
-    <span
-      style={
-        Object {
-          "display": "inline-block",
-          "lineHeight": "1.125rem",
-          "marginTop": "0.1875rem",
-          "verticalAlign": "top",
-        }
-      }
-    >
-      <svg
-        className="bpk-nudger__icon bpk-nudger__icon--disabled"
-        height="18"
-        style={
-          Object {
-            "height": "1.125rem",
-            "width": "1.125rem",
-          }
-        }
-        viewBox="0 0 24 24"
-        width="18"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M10 10V5a2 2 0 1 1 4 0v5h5a2 2 0 1 1 0 4h-5v5a2 2 0 1 1-4 0v-5H5a2 2 0 1 1 0-4h5z"
-        />
-      </svg>
-    </span>
-  </button>
-</div>
-`;
-
 exports[`BpkNudger should render as an outline nudger correctly 1`] = `
 <div
   className="bpk-nudger"
@@ -132,11 +43,11 @@ exports[`BpkNudger should render as an outline nudger correctly 1`] = `
   </button>
   <input
     aria-live="assertive"
-    className="bpk-nudger__input bpk-nudger__input--numeric bpk-nudger__input--outline"
+    className="bpk-nudger__input bpk-nudger__input--outline"
     id="nudger"
     readOnly={true}
     type="text"
-    value="2"
+    value={2}
   />
   <button
     aria-controls="nudger"
@@ -221,11 +132,11 @@ exports[`BpkNudger should render correctly 1`] = `
   </button>
   <input
     aria-live="assertive"
-    className="bpk-nudger__input bpk-nudger__input--numeric"
+    className="bpk-nudger__input"
     id="nudger"
     readOnly={true}
     type="text"
-    value="2"
+    value={2}
   />
   <button
     aria-controls="nudger"
@@ -310,11 +221,11 @@ exports[`BpkNudger should render correctly with a "className" attribute 1`] = `
   </button>
   <input
     aria-live="assertive"
-    className="bpk-nudger__input bpk-nudger__input--numeric"
+    className="bpk-nudger__input"
     id="nudger"
     readOnly={true}
     type="text"
-    value="2"
+    value={2}
   />
   <button
     aria-controls="nudger"
@@ -399,11 +310,11 @@ exports[`BpkNudger should render correctly with a value < min 1`] = `
   </button>
   <input
     aria-live="assertive"
-    className="bpk-nudger__input bpk-nudger__input--numeric"
+    className="bpk-nudger__input"
     id="nudger"
     readOnly={true}
     type="text"
-    value="0"
+    value={1}
   />
   <button
     aria-controls="nudger"
@@ -488,11 +399,11 @@ exports[`BpkNudger should render correctly with a value = max 1`] = `
   </button>
   <input
     aria-live="assertive"
-    className="bpk-nudger__input bpk-nudger__input--numeric"
+    className="bpk-nudger__input"
     id="nudger"
     readOnly={true}
     type="text"
-    value="9"
+    value={9}
   />
   <button
     aria-controls="nudger"
@@ -577,11 +488,11 @@ exports[`BpkNudger should render correctly with a value = min 1`] = `
   </button>
   <input
     aria-live="assertive"
-    className="bpk-nudger__input bpk-nudger__input--numeric"
+    className="bpk-nudger__input"
     id="nudger"
     readOnly={true}
     type="text"
-    value="1"
+    value={1}
   />
   <button
     aria-controls="nudger"
@@ -666,11 +577,11 @@ exports[`BpkNudger should render correctly with a value > max 1`] = `
   </button>
   <input
     aria-live="assertive"
-    className="bpk-nudger__input bpk-nudger__input--numeric"
+    className="bpk-nudger__input"
     id="nudger"
     readOnly={true}
     type="text"
-    value="10"
+    value={9}
   />
   <button
     aria-controls="nudger"

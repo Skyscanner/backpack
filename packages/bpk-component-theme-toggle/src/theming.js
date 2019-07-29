@@ -137,6 +137,8 @@ const generateTheme = ({
 
   progressBarFillColor: primaryColor500,
 
+  flareBoxBackgroundColor: primaryColor500,
+
   calendarDateTextColor: primaryColor500,
   calendarDateTextHoverColor: calendarDayHoverColor,
   calendarDateTextActiveColor: calendarDayActiveColor,

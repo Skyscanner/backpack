@@ -63,9 +63,6 @@ BpkModal
 
 BpkNavigationBarButtonLink
 
-BpkNudger
-BpkConfigurableNudger
-
 BpkPanel
 
 BpkPhoneNumberInput
@@ -256,7 +253,6 @@ closeOnEscPressed
 closeOnScrimClick
 collapseDelay
 color
-compareValues
 containerClassName
 cornerStyle
 CORNER_STYLES.sm
@@ -264,7 +260,6 @@ CORNER_STYLES.lg
 DataSource
 dateProps
 decreaseButtonLabel
-decrementValue
 dialingCode
 dialingCodes
 dismissable
@@ -275,7 +270,6 @@ dockedLast
 doneLabel
 expandDelay
 fillStyle
-formatValue
 getApplicationElement
 getArrowPositionCallback
 getStarLabel
@@ -288,9 +282,7 @@ iconAlignment
 iconOnly
 imageComponent
 increaseButtonLabel
-incrementValue
 innerStyle
-inputClassName
 inputRef
 inView
 isIphone

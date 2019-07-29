@@ -16,26 +16,23 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
+import PropTypes from 'prop-types';
 import React from 'react';
+import BpkButton from 'bpk-component-button';
+import { withButtonAlignment } from 'bpk-component-icon';
+import MinusIcon from 'bpk-component-icon/sm/minus';
+import PlusIcon from 'bpk-component-icon/sm/plus';
 import { cssModules } from 'bpk-react-utils';
+import clamp from 'lodash.clamp';
 
-import BpkConfigurableNudger from './BpkConfigurableNudger';
-import {
-  type CommonProps,
-  COMMON_DEFAULT_PROPS,
-  COMMON_PROP_TYPES,
-} from './common-types';
 import STYLES from './BpkNudger.scss';
-
-type Props = {
-  ...$Exact<CommonProps>,
-};
 
 const getClassName = cssModules(STYLES);
 
-const BpkNudger = (props: Props) => {
+const AlignedMinusIcon = withButtonAlignment(MinusIcon);
+const AlignedPlusIcon = withButtonAlignment(PlusIcon);
+
+const BpkNudger = props => {
   const {
     id,
     min,
@@ -47,34 +44,82 @@ const BpkNudger = (props: Props) => {
     decreaseButtonLabel,
     buttonType,
   } = props;
+  const classNames = [getClassName('bpk-nudger')];
+  if (className) {
+    classNames.push(className);
+  }
 
-  const compareValues = (a: number, b: number): number => a - b;
-  const incrementValue = (a: number): number => a + 1;
-  const decrementValue = (a: number): number => a - 1;
-  const formatValue = (a: number): string => a.toString();
+  const adjustedValue = Math.floor(clamp(value, min, max));
+  const decreaseDisabled = adjustedValue <= min;
+  const increaseDisabled = adjustedValue >= max;
+
+  const minusIconClassNames = [getClassName('bpk-nudger__icon')];
+  if (decreaseDisabled) {
+    minusIconClassNames.push(getClassName('bpk-nudger__icon--disabled'));
+  }
+  const plusIconClassNames = [getClassName('bpk-nudger__icon')];
+  if (increaseDisabled) {
+    plusIconClassNames.push(getClassName('bpk-nudger__icon--disabled'));
+  }
+
+  const inputStyles = [getClassName('bpk-nudger__input')];
+  if (buttonType === 'outline') {
+    inputStyles.push(getClassName('bpk-nudger__input--outline'));
+  }
 
   return (
-    <BpkConfigurableNudger
-      id={id}
-      min={min}
-      max={max}
-      value={value}
-      onChange={onChange}
-      className={className}
-      inputClassName={getClassName('bpk-nudger__input--numeric')}
-      increaseButtonLabel={increaseButtonLabel}
-      decreaseButtonLabel={decreaseButtonLabel}
-      buttonType={buttonType}
-      compareValues={compareValues}
-      incrementValue={incrementValue}
-      decrementValue={decrementValue}
-      formatValue={formatValue}
-    />
+    <div className={classNames.join(' ')}>
+      <BpkButton
+        secondary={buttonType === 'secondary'}
+        outline={buttonType === 'outline'}
+        iconOnly
+        onClick={() => onChange(clamp(adjustedValue - 1, min, max))}
+        disabled={decreaseDisabled}
+        title={decreaseButtonLabel}
+        aria-controls={id}
+        className={getClassName('bpk-nudger__button')}
+      >
+        <AlignedMinusIcon className={minusIconClassNames.join(' ')} />
+      </BpkButton>
+      <input
+        type="text"
+        aria-live="assertive"
+        readOnly
+        value={adjustedValue}
+        id={id}
+        className={inputStyles.join(' ')}
+      />
+      <BpkButton
+        secondary={buttonType === 'secondary'}
+        outline={buttonType === 'outline'}
+        iconOnly
+        onClick={() => onChange(clamp(adjustedValue + 1, min, max))}
+        disabled={increaseDisabled}
+        title={increaseButtonLabel}
+        aria-controls={id}
+        className={getClassName('bpk-nudger__button')}
+      >
+        <AlignedPlusIcon className={plusIconClassNames.join(' ')} />
+      </BpkButton>
+    </div>
   );
 };
 
-BpkNudger.propTypes = COMMON_PROP_TYPES;
+BpkNudger.propTypes = {
+  id: PropTypes.string.isRequired,
+  decreaseButtonLabel: PropTypes.string.isRequired,
+  increaseButtonLabel: PropTypes.string.isRequired,
+  max: PropTypes.number.isRequired,
+  min: PropTypes.number.isRequired,
+  value: PropTypes.number.isRequired,
+  onChange: PropTypes.func.isRequired,
+  className: PropTypes.string,
+  buttonType: PropTypes.oneOf(['secondary', 'outline']),
+};
 
-BpkNudger.defaultProps = COMMON_DEFAULT_PROPS;
+BpkNudger.defaultProps = {
+  className: null,
+  buttonType: 'secondary',
+};
 
 export default BpkNudger;

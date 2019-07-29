@@ -24,7 +24,6 @@
 #   FIXED:
 #     - bpk-component-horcrux:
 #       - Fixed issue where `BpkHorcrux` would occasionally possess the living.
-
-ADDED:
-  - bpk-component-nudger:
-    - Created new `BpkConfigurableNudger` component that allow the nudger to be configured to different types such as dates, text, etc.
+FIXED:
+  - bpk-component-map:
+    - Fixed typo in the example props in the component readme
