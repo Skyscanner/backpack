@@ -62,12 +62,12 @@ class NudgerContainer extends Component<{}, { value: number }> {
 }
 
 const options = ['economy', 'premium', 'business', 'first'];
-const compareValues = (a, b): number => {
+const compareValues = (a: string, b: string): number => {
   const [aIndex, bIndex] = [options.indexOf(a), options.indexOf(b)];
   return aIndex - bIndex;
 };
 
-const incrementValue = (a): string => {
+const incrementValue = (a: string): string => {
   const currentIndex = options.indexOf(a);
   const newIndex = currentIndex + 1;
   if (currentIndex === -1 || newIndex >= options.length) {
@@ -76,7 +76,7 @@ const incrementValue = (a): string => {
   return options[newIndex];
 };
 
-const decrementValue = (a): string => {
+const decrementValue = (a: string): string => {
   const index = options.indexOf(a) - 1;
   if (index < 0) {
     return a;
@@ -84,7 +84,7 @@ const decrementValue = (a): string => {
   return options[index];
 };
 
-const formatValue = (a): string => a.toString();
+const formatValue = (a: string): string => a.toString();
 
 // eslint-disable-next-line react/no-multi-comp
 class ConfigurableNudgerContainer extends Component<{}, { value: string }> {

@@ -148,19 +148,14 @@ class App extends Component {
 
 ### `compareValues`
 
-A comparator function similar to [Array.prototype.sort](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort#Description) for comparing two values in your data set.
+Given `a` and `b`:
+- If `a` is less than `b` then `compareValues(a, b)` should return a value less than `0`
+- If  `a` and `b` are equal then `compareValues(a, b)` should return exactly `0`
+- If `a` is greater than `b` then `compareValues(a, b)` should return a value greater than `0`
 
-The function is used to take either the min or max value provided and compare it to the current value to determine if the value can be incremented or decremented.
+We use this along with the `min` and `max` values to determine when we should disable the increment and decrement buttons. This is inspired by the `compareFunction` in [Array.prototype.sort](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort#Description)
 
-`compareValues` requires two input values: `currentValue` and `compareValue` (which will be the `min` or `max` value provided). It so return one of the following given each scenario:
-
-* If `currentValue < compareValue`, return a negative number.
-* If `currentValue == compareValue`, return zero.
-* If `currentValue > compareValue`, return a positive number.
-Given `currentValue` and `compareValue`:
-If it returns a negative number it means `currentValue` < `compareValue` so will disable the `-` button
-If it returns zero it means `currentValue` = `compareValue`
-If it returns a positive number it means `currentValue` > `compareValue` so will disable the `+` button
+For integer numbers the following is a correct implementation `const compareValues = (a: number, b: number): number => a - b;`
 
 ### `incrementValue` & `decrementValue`
 
