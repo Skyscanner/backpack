@@ -152,7 +152,11 @@ A comparator function similar to [Array.prototype.sort](https://developer.mozill
 
 The function is used to take either the min or max value provided and compare it to the current value to determine if the value can be incremented or decremented.
 
-The `compareValues` requires two input values `currentValue` and `compareValue` (which will be the `min` or `max` value provided) function should return the following given each scenario.
+`compareValues` requires two input values: `currentValue` and `compareValue` (which will be the `min` or `max` value provided). It so return one of the following given each scenario:
+
+* If `currentValue < compareValue`, return a negative number.
+* If `currentValue == compareValue`, return zero.
+* If `currentValue > compareValue`, return a positive number.
 Given `currentValue` and `compareValue`:
 If it returns a negative number it means `currentValue` < `compareValue` so will disable the `-` button
 If it returns zero it means `currentValue` = `compareValue`
