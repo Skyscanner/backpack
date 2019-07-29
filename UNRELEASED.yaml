@@ -24,3 +24,6 @@
 #   FIXED:
 #     - bpk-component-horcrux:
 #       - Fixed issue where `BpkHorcrux` would occasionally possess the living.
+FIXED:
+  - bpk-component-map:
+    - Fixed typo in the example props in the component readme
