@@ -51,20 +51,12 @@ type Props = {
 const BpkButton = (props: Props) => {
   const {
     children,
-    href,
-    className,
-    onClick,
-    disabled,
-    submit,
     secondary,
     destructive,
     featured,
     outline,
     large,
     link,
-    iconOnly,
-    blank,
-    rel: propRel,
     ...rest
   } = props;
 
@@ -83,7 +75,7 @@ const BpkButton = (props: Props) => {
   if (link) {
     return <BpkButtonLink {...rest}>{children}</BpkButtonLink>;
   }
-  return <BpkButtonPrimary>{children}</BpkButtonPrimary>;
+  return <BpkButtonPrimary {...rest}>{children}</BpkButtonPrimary>;
 };
 
 BpkButton.propTypes = {
