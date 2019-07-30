@@ -21,16 +21,14 @@
 import React, { type Node } from 'react';
 import PropTypes from 'prop-types';
 
-import STYLES from './BpkButton.scss';
-
-// This was originally depended upon from the bpk-react-utils package, however
-// we decided to inline it in this particular component so as not to bloat the
-// the bundles of consumers who are not yet on webpack 2
-// We'll revisit this again soon.
-const cssModules = (styles = {}) => className =>
-  styles[className] ? styles[className] : className;
-
-const getClassName = cssModules(STYLES);
+import {
+  BpkButtonPrimary,
+  BpkButtonSecondary,
+  BpkButtonDestructive,
+  BpkButtonLink,
+  BpkButtonFeatured,
+  BpkButtonOutline,
+} from '../index';
 
 type Props = {
   children: Node,
@@ -70,83 +68,22 @@ const BpkButton = (props: Props) => {
     ...rest
   } = props;
 
-  const classNames = [getClassName('bpk-button')];
-
   if (secondary) {
-    classNames.push(getClassName('bpk-button--secondary'));
+    return <BpkButtonSecondary {...rest}>{children}</BpkButtonSecondary>;
   }
   if (destructive) {
-    classNames.push(getClassName('bpk-button--destructive'));
+    return <BpkButtonDestructive {...rest}>{children}</BpkButtonDestructive>;
   }
   if (featured) {
-    classNames.push(getClassName('bpk-button--featured'));
+    return <BpkButtonFeatured {...rest}>{children}</BpkButtonFeatured>;
   }
   if (outline) {
-    classNames.push(getClassName('bpk-button--outline'));
-  }
-  if (large) {
-    classNames.push(getClassName('bpk-button--large'));
+    return <BpkButtonOutline {...rest}>{children}</BpkButtonOutline>;
   }
   if (link) {
-    classNames.push(getClassName('bpk-button--link'));
+    return <BpkButtonLink {...rest}>{children}</BpkButtonLink>;
   }
-
-  if (iconOnly) {
-    classNames.push(
-      getClassName(
-        large ? 'bpk-button--large-icon-only' : 'bpk-button--icon-only',
-      ),
-    );
-  }
-  if (className) {
-    classNames.push(className);
-  }
-
-  const classNameFinal = classNames.join(' ');
-
-  const target = blank ? '_blank' : null;
-  const rel = blank ? propRel || 'noopener noreferrer' : propRel;
-
-  if (!disabled && href) {
-    return (
-      <a
-        href={href}
-        className={classNameFinal}
-        onClick={onClick}
-        target={target}
-        rel={rel}
-        {...rest}
-      >
-        {children}
-      </a>
-    );
-  }
-
-  // Due to React bug in Chrome, the onClick event fires even if the button is disabled.
-  // Pull request is being worked on (as of 2016-12-22): https://github.com/facebook/react/pull/8329
-  const onClickWrapper = onClick
-    ? (...args) => {
-        if (!disabled) {
-          onClick(...args);
-        }
-      }
-    : null;
-
-  const buttonType = submit ? 'submit' : 'button';
-
-  /* eslint-disable react/button-has-type */
-  return (
-    <button
-      type={buttonType}
-      disabled={disabled}
-      className={classNameFinal}
-      onClick={onClickWrapper}
-      {...rest}
-    >
-      {children}
-    </button>
-  );
-  /* eslint-enable */
+  return <BpkButtonPrimary>{children}</BpkButtonPrimary>;
 };
 
 BpkButton.propTypes = {

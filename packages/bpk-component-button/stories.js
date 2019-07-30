@@ -32,7 +32,7 @@ import LargeLongArrowRightIcon from '../bpk-component-icon/lg/long-arrow-right';
 
 import STYLES from './BpkButtonStory.scss';
 
-import {
+import BpkButton, {
   BpkButtonPrimary,
   BpkButtonSecondary,
   BpkButtonDestructive,
@@ -112,6 +112,25 @@ const wrapButton = Component => {
 };
 
 storiesOf('bpk-component-button', module)
+  .add('Button (Primary)', () => wrapButton(BpkButton)())
+  .add('Button (Secondary)', () =>
+    wrapButton(BpkButton)({ className: '', secondary: true }),
+  )
+  .add('Button (Destructive)', () =>
+    wrapButton(BpkButton)({ className: '', destructive: true }),
+  )
+  .add('Button (Link)', () =>
+    wrapButton(BpkButton)({ className: '', link: true }),
+  )
+  .add('Button (Featured)', () =>
+    wrapButton(BpkButton)({ className: '', featured: true }),
+  )
+  .add('Button (Outline)', () =>
+    wrapButton(BpkButton)({
+      className: getClassName('bpk-outline-layout'),
+      outline: true,
+    }),
+  )
   .add('Primary', () => wrapButton(BpkButtonPrimary)())
   .add('Secondary', () => wrapButton(BpkButtonSecondary)())
   .add('Destructive', () => wrapButton(BpkButtonDestructive)())
