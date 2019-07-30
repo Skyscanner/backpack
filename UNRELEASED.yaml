@@ -24,11 +24,3 @@
 #   FIXED:
 #     - bpk-component-horcrux:
 #       - Fixed issue where `BpkHorcrux` would occasionally possess the living.
-
-ADDED:
-  - bpk-component-nudger:
-    - Added `BpkConfigurableNudger`, which is more flexible than the existing `BpkNudger` and works with any data.
-
-FIXED:
-  - bpk-component-map:
-    - Fixed typo in the example props in the component readme

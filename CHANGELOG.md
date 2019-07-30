@@ -2,6 +2,14 @@
 
 [Unreleased changes](./UNRELEASED.yaml).
 
+# 2019-07-30 - New flexible nudger variant
+
+**Added:**
+
+ - bpk-component-nudger: 1.1.3 => 1.2.0
+   - Added `BpkConfigurableNudger`, which is more flexible than the existing `BpkNudger` and works with any data.
+
+
 # 2019-07-26 - Update ticket line appearance
 
 **Breaking:**
