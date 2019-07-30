@@ -32,7 +32,14 @@ import LargeLongArrowRightIcon from '../bpk-component-icon/lg/long-arrow-right';
 
 import STYLES from './BpkButtonStory.scss';
 
-import BpkButton from './index';
+import {
+  BpkButtonPrimary,
+  BpkButtonSecondary,
+  BpkButtonDestructive,
+  BpkButtonLink,
+  BpkButtonFeatured,
+  BpkButtonOutline,
+} from './index';
 
 const AlignedSmallLongArrowRightIcon = withButtonAlignment(
   withRtlSupport(SmallLongArrowRightIcon),
@@ -46,80 +53,97 @@ const cssModules = (styles = {}) => className =>
 
 const getClassName = cssModules(STYLES);
 
-const ButtonStory = ({ className, ...rest }: { className: ?string }) => (
-  <div
-    className={[getClassName('bpk-button-story-wrapper'), className].join(' ')}
-  >
-    &nbsp;
-    <BpkButton onClick={action('button clicked')} {...rest}>
-      Button
-    </BpkButton>
-    &nbsp;
-    <BpkButton disabled onClick={action('THIS SHOULD NOT HAPPEN')} {...rest}>
-      Disabled
-    </BpkButton>
-    &nbsp;
-    <BpkButton large onClick={action('large button clicked')} {...rest}>
-      Button
-    </BpkButton>
-    &nbsp;
-    <BpkButton
-      large
-      disabled
-      onClick={action('THIS SHOULD NOT HAPPEN')}
-      {...rest}
-    >
-      Disabled
-    </BpkButton>
-    &nbsp;
-    <BpkButton iconOnly onClick={action('iconOnly button clicked')} {...rest}>
-      <AlignedSmallLongArrowRightIcon />
-    </BpkButton>
-    &nbsp;
-    <BpkButton
-      iconOnly
-      large
-      onClick={action('large iconOnly button clicked')}
-      {...rest}
-    >
-      <AlignedLargeLongArrowRightIcon />
-    </BpkButton>
-    &nbsp;
-  </div>
-);
+const wrapButton = Component => {
+  function wrapComponent({ className, ...rest } = { className: '' }) {
+    return (
+      <div
+        className={[getClassName('bpk-button-story-wrapper'), className].join(
+          ' ',
+        )}
+      >
+        &nbsp;
+        <Component onClick={action('button clicked')} {...rest}>
+          Button
+        </Component>
+        &nbsp;
+        <Component
+          disabled
+          onClick={action('THIS SHOULD NOT HAPPEN')}
+          {...rest}
+        >
+          Disabled
+        </Component>
+        &nbsp;
+        <Component large onClick={action('large button clicked')} {...rest}>
+          Button
+        </Component>
+        &nbsp;
+        <Component
+          large
+          disabled
+          onClick={action('THIS SHOULD NOT HAPPEN')}
+          {...rest}
+        >
+          Disabled
+        </Component>
+        &nbsp;
+        <Component
+          iconOnly
+          onClick={action('iconOnly button clicked')}
+          {...rest}
+        >
+          <AlignedSmallLongArrowRightIcon />
+        </Component>
+        &nbsp;
+        <Component
+          iconOnly
+          large
+          onClick={action('large iconOnly button clicked')}
+          {...rest}
+        >
+          <AlignedLargeLongArrowRightIcon />
+        </Component>
+        &nbsp;
+      </div>
+    );
+  }
 
-ButtonStory.defaultProps = { className: null };
+  return wrapComponent;
+};
 
 storiesOf('bpk-component-button', module)
-  .add('Primary', () => <ButtonStory primary />)
-  .add('Secondary', () => <ButtonStory secondary />)
-  .add('Destructive', () => <ButtonStory destructive />)
-  .add('Link button', () => <ButtonStory link />)
-  .add('Featured', () => <ButtonStory featured />)
-  .add('Outline', () => (
-    <ButtonStory outline className={getClassName('bpk-outline-layout')} />
-  ))
+  .add('Primary', () => wrapButton(BpkButtonPrimary)())
+  .add('Secondary', () => wrapButton(BpkButtonSecondary)())
+  .add('Destructive', () => wrapButton(BpkButtonDestructive)())
+  .add('Link', () => wrapButton(BpkButtonLink)())
+  .add('Featured', () => wrapButton(BpkButtonFeatured)())
+  .add('Outline', () =>
+    wrapButton(BpkButtonOutline)({
+      className: getClassName('bpk-outline-layout'),
+    }),
+  )
   .add('Mixture', () => (
     <div>
-      <ButtonStory primary />
-      <ButtonStory secondary />
-      <ButtonStory destructive />
-      <ButtonStory link />
-      <ButtonStory featured />
-      <ButtonStory outline className={getClassName('bpk-outline-layout')} />
+      {wrapButton(BpkButtonPrimary)()}
+      {wrapButton(BpkButtonSecondary)()}
+      {wrapButton(BpkButtonDestructive)()}
+      {wrapButton(BpkButtonLink)()}
+      {wrapButton(BpkButtonFeatured)()}
+      {wrapButton(BpkButtonOutline)({
+        className: getClassName('bpk-outline-layout'),
+      })}
     </div>
   ))
   .add('Anchor tags', () => (
     <div>
-      <ButtonStory primary href="#" />
-      <ButtonStory secondary href="#" />
-      <ButtonStory destructive href="#" />
-      <ButtonStory link href="#" />
-      <ButtonStory featured href="#" />
-      <ButtonStory
-        outline
-        className={getClassName('bpk-outline-layout')}
-        href="#"
-      />
+      {wrapButton(BpkButtonPrimary)({ className: '', href: '#' })}
+      {wrapButton(BpkButtonSecondary)({ className: '', href: '#' })}
+      {wrapButton(BpkButtonDestructive)({ className: '', href: '#' })}
+      {wrapButton(BpkButtonLink)({ className: '', href: '#' })}
+      {wrapButton(BpkButtonFeatured)({ className: '', href: '#' })}
+      {wrapButton(BpkButtonOutline)({
+        className: getClassName('bpk-outline-layout'),
+        href: '#',
+      })}
     </div>
   ));

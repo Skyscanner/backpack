@@ -37,6 +37,7 @@
   border: 0;
   background-image: linear-gradient(-180deg, $bpk-button-gradient-start-color 0%, $bpk-button-gradient-end-color 100%);
   background-image: linear-gradient(-180deg, var(--bpk-button-primary-gradient-start-color, $bpk-button-gradient-start-color) 0%, var(--bpk-button-primary-gradient-end-color, $bpk-button-gradient-end-color) 100%);
+  font-size: $bpk-button-font-size;
   font-weight: $bpk-button-font-weight;
   line-height: $bpk-button-line-height;
   text-align: $bpk-button-text-align;
@@ -46,25 +47,17 @@
   vertical-align: middle;
   user-select: none;
 
-  @include bpk-themeable-property(color, --bpk-button-primary-text-color, $bpk-button-color);
-  @include bpk-themeable-property(background-color, --bpk-button-primary-background-color, $bpk-button-background-color);
   @include bpk-themeable-property(border-radius, --bpk-button-border-radius, $bpk-button-border-radius);
   @include bpk-themeable-property(font-size, --bpk-button-font-size, $bpk-button-font-size);
 
   @include bpk-hover {
     background-image: $bpk-button-hover-background-image;
     box-shadow: $bpk-button-hover-box-shadow;
-
-    @include bpk-themeable-property(color, --bpk-button-primary-hover-text-color, $bpk-button-hover-color);
-    @include bpk-themeable-property(background-color, --bpk-button-primary-hover-background-color, $bpk-button-hover-background-color);
   }
 
   &:active {
     background-image: $bpk-button-active-background-image;
     box-shadow: $bpk-button-active-box-shadow;
-
-    @include bpk-themeable-property(color, --bpk-button-primary-active-text-color, $bpk-button-active-color);
-    @include bpk-themeable-property(background-color, --bpk-button-primary-active-background-color, $bpk-button-active-background-color);
   }
 
   &:disabled {
@@ -73,6 +66,34 @@
     color: $bpk-button-disabled-color;
     box-shadow: $bpk-button-disabled-box-shadow;
     cursor: not-allowed;
+  }
+}
+
+/// Primary button. Modifies the bpk-button mixin.
+///
+/// @require {mixin} bpk-button
+///
+/// @example scss
+///   .selector {
+///     @include bpk-button();
+///     @include bpk-button--primary();
+///   }
+
+@mixin bpk-button--primary {
+  background-image: linear-gradient(-180deg, $bpk-button-gradient-start-color 0%, $bpk-button-gradient-end-color 100%);
+  background-image: linear-gradient(-180deg, var(--bpk-button-primary-gradient-start-color, $bpk-button-gradient-start-color) 0%, var(--bpk-button-primary-gradient-end-color, $bpk-button-gradient-end-color) 100%);
+
+  @include bpk-themeable-property(color, --bpk-button-primary-text-color, $bpk-button-color);
+  @include bpk-themeable-property(background-color, --bpk-button-primary-background-color, $bpk-button-background-color);
+
+  @include bpk-hover {
+    @include bpk-themeable-property(color, --bpk-button-primary-hover-text-color, $bpk-button-hover-color);
+    @include bpk-themeable-property(background-color, --bpk-button-primary-hover-background-color, $bpk-button-hover-background-color);
+  }
+
+  &:active {
+    @include bpk-themeable-property(color, --bpk-button-primary-active-text-color, $bpk-button-active-color);
+    @include bpk-themeable-property(background-color, --bpk-button-primary-active-background-color, $bpk-button-active-background-color);
   }
 }
 
