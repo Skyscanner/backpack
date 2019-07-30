@@ -21,6 +21,7 @@
 import React from 'react';
 
 import { type Props, defaultProps, propTypes } from './common-types';
+import COMMON_STYLES from './common.scss';
 import STYLES from './BpkButtonSecondary.scss';
 
 // This was originally depended upon from the bpk-react-utils package, however
@@ -30,6 +31,7 @@ import STYLES from './BpkButtonSecondary.scss';
 const cssModules = (styles = {}) => className =>
   styles[className] ? styles[className] : className;
 
+const getCommonClassName = cssModules(COMMON_STYLES);
 const getClassName = cssModules(STYLES);
 
 const BpkButtonSecondary = (props: Props) => {
@@ -47,11 +49,14 @@ const BpkButtonSecondary = (props: Props) => {
     ...rest
   } = props;
 
-  const classNames = [getClassName('bpk-button--secondary')];
+  const classNames = [
+    getCommonClassName('bpk-button'),
+    getClassName('bpk-button--secondary'),
+  ];
 
   if (iconOnly) {
     classNames.push(
-      getClassName(
+      getCommonClassName(
         large ? 'bpk-button--large-icon-only' : 'bpk-button--icon-only',
       ),
     );

@@ -1,0 +1,25 @@
+@import '~bpk-mixins/index';
+
+.bpk-button {
+  @include bpk-button;
+
+  &--large {
+    @include bpk-button--large;
+  }
+
+  &--icon-only {
+    border-radius: $bpk-button-border-radius;
+
+    @include bpk-button--icon-only;
+  }
+
+  &--large-icon-only {
+    border-radius: $bpk-button-border-radius-lg;
+
+    @include bpk-button--large-icon-only;
+  }
+
+  svg {
+    fill: currentColor;
+  }
+}
