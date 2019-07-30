@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+/* @flow strict */
+
 import React, { Component } from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
@@ -24,11 +26,11 @@ import { cssModules } from 'bpk-react-utils';
 
 import STYLES from './BpkNudgerStory.scss';
 
-import BpkNudger from './index';
+import BpkNudger, { BpkConfigurableNudger } from './index';
 
 const getClassName = cssModules(STYLES);
 
-class NudgerContainer extends Component {
+class NudgerContainer extends Component<{}, { value: number }> {
   constructor() {
     super();
 
@@ -53,6 +55,68 @@ class NudgerContainer extends Component {
           onChange={this.handleChange}
           decreaseButtonLabel="Decrease"
           increaseButtonLabel="Increase"
+        />
+      </div>
+    );
+  }
+}
+
+const options = ['economy', 'premium', 'business', 'first'];
+const compareValues = (a: string, b: string): number => {
+  const [aIndex, bIndex] = [options.indexOf(a), options.indexOf(b)];
+  return aIndex - bIndex;
+};
+
+const incrementValue = (a: string): string => {
+  const currentIndex = options.indexOf(a);
+  const newIndex = currentIndex + 1;
+  if (currentIndex === -1 || newIndex >= options.length) {
+    return a;
+  }
+  return options[newIndex];
+};
+
+const decrementValue = (a: string): string => {
+  const index = options.indexOf(a) - 1;
+  if (index < 0) {
+    return a;
+  }
+  return options[index];
+};
+
+const formatValue = (a: string): string => a.toString();
+
+// eslint-disable-next-line react/no-multi-comp
+class ConfigurableNudgerContainer extends Component<{}, { value: string }> {
+  constructor() {
+    super();
+
+    this.state = {
+      value: 'premium',
+    };
+  }
+
+  handleChange = value => {
+    this.setState({ value });
+  };
+
+  render() {
+    return (
+      <div>
+        <BpkLabel htmlFor="nudger">Traveller Class</BpkLabel>
+        <BpkConfigurableNudger
+          id="nudger"
+          min="economy"
+          max="first"
+          value={this.state.value}
+          onChange={this.handleChange}
+          decreaseButtonLabel="Decrease"
+          increaseButtonLabel="Increase"
+          compareValues={compareValues}
+          incrementValue={incrementValue}
+          decrementValue={decrementValue}
+          formatValue={formatValue}
+          inputClassName={getClassName('bpk-nudger-configurable')}
         />
       </div>
     );
@@ -94,6 +158,7 @@ storiesOf('bpk-component-nudger', module)
     />
   ))
   .add('Stateful example', () => <NudgerContainer />)
+  .add('Configurable nudger', () => <ConfigurableNudgerContainer />)
   .add('Outline nudger', () => (
     <div className={getClassName('bpk-nudger-outline')}>
       <BpkNudger
