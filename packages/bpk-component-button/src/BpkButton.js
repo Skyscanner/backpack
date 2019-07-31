@@ -55,7 +55,6 @@ const BpkButton = (props: Props) => {
     destructive,
     featured,
     outline,
-    large,
     link,
     ...rest
   } = props;

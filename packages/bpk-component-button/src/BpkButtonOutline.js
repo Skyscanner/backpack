@@ -21,8 +21,8 @@
 import React from 'react';
 
 import { type Props, defaultProps, propTypes } from './common-types';
-import COMMON_STYLES from './common.scss';
 import STYLES from './BpkButtonOutline.scss';
+import BpkButtonBase from './BpkButtonBase';
 
 // This was originally depended upon from the bpk-react-utils package, however
 // we decided to inline it in this particular component so as not to bloat the
@@ -31,85 +31,22 @@ import STYLES from './BpkButtonOutline.scss';
 const cssModules = (styles = {}) => className =>
   styles[className] ? styles[className] : className;
 
-const getCommonClassName = cssModules(COMMON_STYLES);
 const getClassName = cssModules(STYLES);
 
 const BpkButtonOutline = (props: Props) => {
-  const {
-    children,
-    href,
-    className,
-    onClick,
-    disabled,
-    submit,
-    large,
-    iconOnly,
-    blank,
-    rel: propRel,
-    ...rest
-  } = props;
+  const { className, ...rest } = props;
 
-  const classNames = [
-    getCommonClassName('bpk-button'),
-    getClassName('bpk-button--outline'),
-  ];
+  const classNames = [getClassName('bpk-button--outline')];
 
-  if (iconOnly) {
-    classNames.push(
-      getCommonClassName(
-        large ? 'bpk-button--large-icon-only' : 'bpk-button--icon-only',
-      ),
-    );
+  if (className) {
+    classNames.push(className);
   }
+  const classNamesFinal = classNames.join(' ');
 
-  const classNameFinal = classNames.join(' ');
-
-  const target = blank ? '_blank' : null;
-  const rel = blank ? propRel || 'noopener noreferrer' : propRel;
-
-  if (!disabled && href) {
-    return (
-      <a
-        href={href}
-        className={classNameFinal}
-        onClick={onClick}
-        target={target}
-        rel={rel}
-        {...rest}
-      >
-        {children}
-      </a>
-    );
-  }
-
-  // Due to React bug in Chrome, the onClick event fires even if the button is disabled.
-  // Pull request is being worked on (as of 2016-12-22): https://github.com/facebook/react/pull/8329
-  const onClickWrapper = onClick
-    ? (...args) => {
-        if (!disabled) {
-          onClick(...args);
-        }
-      }
-    : null;
-
-  const buttonType = submit ? 'submit' : 'button';
-
-  /* eslint-disable react/button-has-type */
-  return (
-    <button
-      type={buttonType}
-      disabled={disabled}
-      className={classNameFinal}
-      onClick={onClickWrapper}
-      {...rest}
-    >
-      {children}
-    </button>
-  );
-  /* eslint-enable */
+  return <BpkButtonBase className={classNamesFinal} {...rest} />;
 };
 
-BpkButtonOutline.propTypes = { ...propTypes };
-BpkButtonOutline.defaultProps = { ...defaultProps };
+BpkButtonOutline.propTypes = propTypes;
+BpkButtonOutline.defaultProps = defaultProps;
 
 export default BpkButtonOutline;
