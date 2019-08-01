@@ -18,6 +18,8 @@
 
 import DataSource, { ArrayDataSource } from './DataSource';
 
+require('babel-polyfill'); // This resolves the issue 'ReferenceError: regeneratorRuntime is not defined'
+
 const withCommonTests = (createNewInstance, extraTests) => {
   let dataSource;
 

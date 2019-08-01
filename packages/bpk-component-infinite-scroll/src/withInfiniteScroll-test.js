@@ -25,6 +25,8 @@ import toJson from 'enzyme-to-json';
 import withInfiniteScroll from './withInfiniteScroll';
 import { ArrayDataSource } from './DataSource';
 
+require('babel-polyfill'); // This resolves the issue 'ReferenceError: regeneratorRuntime is not defined'
+
 const nextTick = () => new Promise(res => setImmediate(res));
 const mockDataSource = data => {
   const myDs = new ArrayDataSource(data);
