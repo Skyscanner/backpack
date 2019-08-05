@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+import 'babel-polyfill';
+
 import WrapperPlugin from 'wrapper-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import { blockComment as licenseHeader } from 'bpk-tokens/formatters/license-header';
@@ -41,6 +43,18 @@ module.exports = {
         test: /\.js$/,
         exclude: /node_modules/,
         loader: 'babel-loader',
+        options: {
+          presets: [
+            [
+              '@babel/preset-env',
+              {
+                debug: true,
+                useBuiltIns: 'usage',
+                targets: { browsers: ['ie >= 11'] },
+              },
+            ],
+          ],
+        },
       },
       {
         test: /\.scss$/,
