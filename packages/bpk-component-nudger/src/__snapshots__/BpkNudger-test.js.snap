@@ -6,7 +6,7 @@ exports[`BpkNudger should render as a configurable nudger correctly 1`] = `
 >
   <button
     aria-controls="nudger"
-    className="bpk-button bpk-button--secondary bpk-button--icon-only bpk-nudger__button"
+    className="bpk-button bpk-button--icon-only bpk-button--secondary bpk-nudger__button"
     disabled={false}
     onClick={[Function]}
     title="Decrease"
@@ -51,7 +51,7 @@ exports[`BpkNudger should render as a configurable nudger correctly 1`] = `
   />
   <button
     aria-controls="nudger"
-    className="bpk-button bpk-button--secondary bpk-button--icon-only bpk-nudger__button"
+    className="bpk-button bpk-button--icon-only bpk-button--secondary bpk-nudger__button"
     disabled={false}
     onClick={[Function]}
     title="Increase"
