@@ -182,7 +182,7 @@ export const propTypes = {
   dateProps: PropTypes.object, // eslint-disable-line react/forbid-prop-types
 };
 
-BpkCalendarGrid.propTypes = propTypes;
+BpkCalendarGrid.propTypes = { ...propTypes };
 
 BpkCalendarGrid.defaultProps = {
   className: null,

@@ -21,15 +21,8 @@
 import React from 'react';
 
 import { type Props, defaultProps, propTypes } from './common-types';
-import BpkButtonBase from './BpkButtonBase';
+import BpkButtonBase, { cssModules } from './BpkButtonBase';
 import STYLES from './BpkButtonSecondary.scss';
-
-// This was originally depended upon from the bpk-react-utils package, however
-// we decided to inline it in this particular component so as not to bloat the
-// the bundles of consumers who are not yet on webpack 2
-// We'll revisit this again soon.
-const cssModules = (styles = {}) => className =>
-  styles[className] ? styles[className] : className;
 
 const getClassName = cssModules(STYLES);
 
@@ -46,7 +39,7 @@ const BpkButtonSecondary = (props: Props) => {
   return <BpkButtonBase className={classNamesFinal} {...rest} />;
 };
 
-BpkButtonSecondary.propTypes = propTypes;
-BpkButtonSecondary.defaultProps = defaultProps;
+BpkButtonSecondary.propTypes = { ...propTypes };
+BpkButtonSecondary.defaultProps = { ...defaultProps };
 
 export default BpkButtonSecondary;

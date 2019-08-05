@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`BpkButtonPrimary should add only bpk specific classes if className prop is set to empty string 1`] = `
+exports[`ButtonToTest should add only bpk specific classes if className prop is set to empty string 1`] = `
 <button
   className="bpk-button bpk-button--large bpk-button--primary"
   disabled={false}
@@ -11,7 +11,7 @@ exports[`BpkButtonPrimary should add only bpk specific classes if className prop
 </button>
 `;
 
-exports[`BpkButtonPrimary should render correctly 1`] = `
+exports[`ButtonToTest should render correctly 1`] = `
 <button
   className="bpk-button bpk-button--primary"
   disabled={false}
@@ -22,7 +22,7 @@ exports[`BpkButtonPrimary should render correctly 1`] = `
 </button>
 `;
 
-exports[`BpkButtonPrimary should render correctly with "blank" and "rel" attributes 1`] = `
+exports[`ButtonToTest should render correctly with "blank" and "rel" attributes 1`] = `
 <a
   className="bpk-button bpk-button--primary"
   href="#"
@@ -34,7 +34,7 @@ exports[`BpkButtonPrimary should render correctly with "blank" and "rel" attribu
 </a>
 `;
 
-exports[`BpkButtonPrimary should render correctly with "blank" attribute 1`] = `
+exports[`ButtonToTest should render correctly with "blank" attribute 1`] = `
 <a
   className="bpk-button bpk-button--primary"
   href="#"
@@ -46,7 +46,7 @@ exports[`BpkButtonPrimary should render correctly with "blank" attribute 1`] = `
 </a>
 `;
 
-exports[`BpkButtonPrimary should render correctly with "disabled" and "href" attributes 1`] = `
+exports[`ButtonToTest should render correctly with "disabled" and "href" attributes 1`] = `
 <button
   className="bpk-button bpk-button--primary"
   disabled={true}
@@ -57,7 +57,7 @@ exports[`BpkButtonPrimary should render correctly with "disabled" and "href" att
 </button>
 `;
 
-exports[`BpkButtonPrimary should render correctly with "rel" attribute 1`] = `
+exports[`ButtonToTest should render correctly with "rel" attribute 1`] = `
 <a
   className="bpk-button bpk-button--primary"
   href="#"
@@ -69,7 +69,7 @@ exports[`BpkButtonPrimary should render correctly with "rel" attribute 1`] = `
 </a>
 `;
 
-exports[`BpkButtonPrimary should render correctly with a "disabled" attribute 1`] = `
+exports[`ButtonToTest should render correctly with a "disabled" attribute 1`] = `
 <button
   className="bpk-button bpk-button--primary"
   disabled={true}
@@ -80,7 +80,7 @@ exports[`BpkButtonPrimary should render correctly with a "disabled" attribute 1`
 </button>
 `;
 
-exports[`BpkButtonPrimary should render correctly with a "href" attribute 1`] = `
+exports[`ButtonToTest should render correctly with a "href" attribute 1`] = `
 <a
   className="bpk-button bpk-button--primary"
   href="#"
@@ -92,7 +92,7 @@ exports[`BpkButtonPrimary should render correctly with a "href" attribute 1`] = 
 </a>
 `;
 
-exports[`BpkButtonPrimary should render correctly with a "large" attribute 1`] = `
+exports[`ButtonToTest should render correctly with a "large" attribute 1`] = `
 <button
   className="bpk-button bpk-button--large bpk-button--primary"
   disabled={false}
@@ -103,7 +103,7 @@ exports[`BpkButtonPrimary should render correctly with a "large" attribute 1`] =
 </button>
 `;
 
-exports[`BpkButtonPrimary should render correctly with an "iconOnly" attribute 1`] = `
+exports[`ButtonToTest should render correctly with an "iconOnly" attribute 1`] = `
 <button
   className="bpk-button bpk-button--icon-only bpk-button--primary"
   disabled={false}
@@ -114,7 +114,7 @@ exports[`BpkButtonPrimary should render correctly with an "iconOnly" attribute 1
 </button>
 `;
 
-exports[`BpkButtonPrimary should respect the class names entered as a string 1`] = `
+exports[`ButtonToTest should respect the class names entered as a string 1`] = `
 <button
   className="bpk-button bpk-button--large bpk-button--primary custom-class-1 custom-class-2"
   disabled={false}

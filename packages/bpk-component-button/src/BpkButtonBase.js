@@ -27,7 +27,7 @@ import COMMON_STYLES from './common.scss';
 // we decided to inline it in this particular component so as not to bloat the
 // the bundles of consumers who are not yet on webpack 2
 // We'll revisit this again soon.
-const cssModules = (styles = {}) => className =>
+const cssModules = (styles: {} = {}) => (className: string) =>
   styles[className] ? styles[className] : className;
 
 const getCommonClassName = cssModules(COMMON_STYLES);
@@ -111,7 +111,8 @@ const BpkButton = (props: Props) => {
   /* eslint-enable */
 };
 
-BpkButton.propTypes = propTypes;
-BpkButton.defaultProps = defaultProps;
+BpkButton.propTypes = { ...propTypes };
+BpkButton.defaultProps = { ...defaultProps };
 
 export default BpkButton;
+export { cssModules };

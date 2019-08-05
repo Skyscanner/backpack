@@ -159,7 +159,7 @@ export const propTypes = {
   preventKeyboardFocus: PropTypes.bool,
 };
 
-BpkCalendarDate.propTypes = propTypes;
+BpkCalendarDate.propTypes = { ...propTypes };
 
 BpkCalendarDate.defaultProps = {
   className: null,
