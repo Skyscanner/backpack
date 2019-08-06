@@ -31,7 +31,7 @@
       "type": "size"
     },
     "INPUT_BORDER": {
-      "value": "solid {!ONE_PIXEL_REM} {!GRAY_100}",
+      "value": "solid {!ONE_PIXEL_REM} {!GRAY_300}",
       "type": "border"
     },
     "INPUT_BORDER_RADIUS": {
@@ -91,7 +91,7 @@
       "type": "size"
     },
     "SELECT_BORDER": {
-      "value": "solid {!ONE_PIXEL_REM} {!GRAY_100}",
+      "value": "solid {!ONE_PIXEL_REM} {!GRAY_300}",
       "type": "border"
     },
     "SELECT_BORDER_RADIUS": {
