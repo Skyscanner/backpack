@@ -24,3 +24,9 @@
 #   FIXED:
 #     - bpk-component-horcrux:
 #       - Fixed issue where `BpkHorcrux` would occasionally possess the living.
+
+FIXED:
+  - bpk-tokens:
+    - Changed `$bpk-input-border` and `$bpk-select-border` to use `gray300` from `gray100`
+  - bpk-svgs:
+    - Changed border colours of `radio` and `checkbox` svgs to use `gray300` from `gray100`

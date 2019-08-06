@@ -2230,9 +2230,9 @@
     },
     "INPUT_BORDER": {
       "category": "forms",
-      "value": "solid .0625rem #E6E4EB",
+      "value": "solid .0625rem #B2AEBD",
       "type": "border",
-      "originalValue": "solid {!ONE_PIXEL_REM} {!GRAY_100}",
+      "originalValue": "solid {!ONE_PIXEL_REM} {!GRAY_300}",
       "name": "INPUT_BORDER"
     },
     "INPUT_BORDER_RADIUS": {
@@ -2719,9 +2719,9 @@
     },
     "SELECT_BORDER": {
       "category": "forms",
-      "value": "solid .0625rem #E6E4EB",
+      "value": "solid .0625rem #B2AEBD",
       "type": "border",
-      "originalValue": "solid {!ONE_PIXEL_REM} {!GRAY_100}",
+      "originalValue": "solid {!ONE_PIXEL_REM} {!GRAY_300}",
       "name": "SELECT_BORDER"
     },
     "SELECT_BORDER_RADIUS": {
