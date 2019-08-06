@@ -18,7 +18,7 @@
 
 /* @flow strict */
 
-import React from 'react';
+import React, { Component } from 'react';
 import { cssModules } from 'bpk-react-utils';
 
 import BpkClearButton from './BpkClearButton';
@@ -30,121 +30,143 @@ import {
   CLEAR_BUTTON_MODES,
 } from './common-types';
 
-const getClassName = cssModules(STYLES);
-
-const BpkInput = (props: Props) => {
-  const classNames = [getClassName('bpk-input')];
-  const containerClassNames = [getClassName('bpk-input__container')];
-  const clearButtonClassNames = [getClassName('bpk-input__clear-button')];
-  const {
-    className,
-    clearButtonMode,
-    clearButtonLabel,
-    docked,
-    dockedFirst,
-    dockedLast,
-    dockedMiddle,
-    inputRef,
-    large,
-    onClear,
-    valid,
-    value,
-    name,
-    ...rest
-  } = props;
-
-  // Used as a ref for focussing the input when cleared.
-  let ref = null;
-
-  // Explicit check for false primitive value as undefined is
-  // treated as neither valid nor invalid
-  const isInvalid = valid === false;
-
-  const clearable =
-    clearButtonMode && clearButtonMode !== CLEAR_BUTTON_MODES.never;
-
-  if (valid) {
-    classNames.push(getClassName('bpk-input--valid'));
-  } else if (isInvalid) {
-    classNames.push(getClassName('bpk-input--invalid'));
-  }
-
-  if (large) {
-    classNames.push(getClassName('bpk-input--large'));
-    clearButtonClassNames.push(getClassName('bpk-input__clear-button--large'));
-  }
-  if (clearable) {
-    classNames.push(getClassName('bpk-input--clearable'));
-    if (clearButtonMode === CLEAR_BUTTON_MODES.always) {
-      classNames.push(getClassName('bpk-input--persistent-clearable'));
-      clearButtonClassNames.push(
-        getClassName('bpk-input__clear-button--persistent'),
-      );
-    }
-  }
-
-  if (docked) {
-    classNames.push(getClassName('bpk-input--docked'));
-  }
-  if (dockedFirst) {
-    classNames.push(getClassName('bpk-input--docked-first'));
-  }
-  if (dockedMiddle) {
-    classNames.push(getClassName('bpk-input--docked-middle'));
-  }
-  if (dockedLast) {
-    classNames.push(getClassName('bpk-input--docked-last'));
-  }
-  if (className) {
-    if (clearable) {
-      containerClassNames.push(className);
-    } else {
-      classNames.push(className);
-    }
-  }
-
-  const renderedInput = (
-    <input
-      className={classNames.join(' ')}
-      ref={input => {
-        ref = input;
-        if (inputRef) {
-          inputRef(input);
-        }
-      }}
-      aria-invalid={isInvalid}
-      value={value}
-      name={name}
-      {...rest}
-    />
-  );
-
-  return clearable ? (
-    <div className={containerClassNames.join(' ')}>
-      {renderedInput}
-      {value.length > 0 && (
-        <BpkClearButton
-          tabIndex="-1"
-          label={clearButtonLabel || ''}
-          onClick={e => {
-            if (ref) {
-              ref.focus();
-            }
-            if (onClear) {
-              e.target.name = name;
-              onClear(e);
-            }
-          }}
-          className={clearButtonClassNames.join(' ')}
-        />
-      )}
-    </div>
-  ) : (
-    renderedInput
-  );
+type State = {
+  persistClearButton: boolean,
 };
 
-BpkInput.propTypes = { ...propTypes };
-BpkInput.defaultProps = { ...defaultProps };
+const getClassName = cssModules(STYLES);
+
+class BpkInput extends Component<Props, State> {
+  static propTypes = propTypes;
+
+  static defaultProps = defaultProps;
+
+  constructor(props: Props) {
+    super(props);
+
+    this.state = { persistClearButton: false };
+  }
+
+  render() {
+    const classNames = [getClassName('bpk-input')];
+    const containerClassNames = [getClassName('bpk-input__container')];
+    const clearButtonClassNames = [getClassName('bpk-input__clear-button')];
+    const {
+      className,
+      clearButtonMode,
+      clearButtonLabel,
+      docked,
+      dockedFirst,
+      dockedLast,
+      dockedMiddle,
+      inputRef,
+      large,
+      onClear,
+      valid,
+      value,
+      name,
+      ...rest
+    } = this.props;
+
+    // Used as a ref for focussing the input when cleared.
+    let ref = null;
+
+    // Explicit check for false primitive value as undefined is
+    // treated as neither valid nor invalid
+    const isInvalid = valid === false;
+
+    const clearable =
+      clearButtonMode && clearButtonMode !== CLEAR_BUTTON_MODES.never;
+
+    if (valid) {
+      classNames.push(getClassName('bpk-input--valid'));
+    } else if (isInvalid) {
+      classNames.push(getClassName('bpk-input--invalid'));
+    }
+
+    if (large) {
+      classNames.push(getClassName('bpk-input--large'));
+      clearButtonClassNames.push(
+        getClassName('bpk-input__clear-button--large'),
+      );
+    }
+    if (clearable) {
+      classNames.push(getClassName('bpk-input--clearable'));
+      if (
+        clearButtonMode === CLEAR_BUTTON_MODES.always ||
+        this.state.persistClearButton
+      ) {
+        classNames.push(getClassName('bpk-input--persistent-clearable'));
+        clearButtonClassNames.push(
+          getClassName('bpk-input__clear-button--persistent'),
+        );
+      }
+    }
+
+    if (docked) {
+      classNames.push(getClassName('bpk-input--docked'));
+    }
+    if (dockedFirst) {
+      classNames.push(getClassName('bpk-input--docked-first'));
+    }
+    if (dockedMiddle) {
+      classNames.push(getClassName('bpk-input--docked-middle'));
+    }
+    if (dockedLast) {
+      classNames.push(getClassName('bpk-input--docked-last'));
+    }
+    if (className) {
+      if (clearable) {
+        containerClassNames.push(className);
+      } else {
+        classNames.push(className);
+      }
+    }
+
+    const renderedInput = (
+      <input
+        className={classNames.join(' ')}
+        ref={input => {
+          ref = input;
+          if (inputRef) {
+            inputRef(input);
+          }
+        }}
+        aria-invalid={isInvalid}
+        value={value}
+        name={name}
+        {...rest}
+      />
+    );
+
+    return clearable ? (
+      <div className={containerClassNames.join(' ')}>
+        {renderedInput}
+        {value.length > 0 && (
+          <BpkClearButton
+            tabIndex="-1"
+            label={clearButtonLabel || ''}
+            onMouseDown={() => {
+              this.setState({ persistClearButton: true });
+            }}
+            onClick={e => {
+              if (ref) {
+                ref.focus();
+              }
+              if (onClear) {
+                e.target.name = name;
+                onClear(e);
+                this.setState({ persistClearButton: false });
+              }
+            }}
+            className={clearButtonClassNames.join(' ')}
+          />
+        )}
+      </div>
+    ) : (
+      renderedInput
+    );
+  }
+}
 
 export default BpkInput;
