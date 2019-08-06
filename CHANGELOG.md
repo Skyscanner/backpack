@@ -2,6 +2,14 @@
 
 [Unreleased changes](./UNRELEASED.yaml).
 
+# 2019-08-06 - Updated form element border colours
+
+**Fixed:**
+  - bpk-tokens: 27.6.5 => 27.6.6
+    - Changed `$bpk-input-border` and `$bpk-select-border` to use `gray300` from `gray100`
+  - bpk-svgs: 6.9.5 => 6.9.6
+    - Changed border colours of `radio` and `checkbox` `svgs` to use `gray300` from `gray100`
+
 # 2019-07-30 - New flexible nudger variant
 
 **Added:**
