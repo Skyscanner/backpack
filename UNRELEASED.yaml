@@ -1,4 +1,7 @@
 # UNRELEASED:
+FIXED:
+  - bpk-component-text-input:
+    - Fixed clear button in `whileEditing` so that it cannot be clicked when not visible.
 
 # How to write a good changelog entry:
 #
