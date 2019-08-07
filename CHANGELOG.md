@@ -2,6 +2,14 @@
 
 [Unreleased changes](./UNRELEASED.yaml).
 
+# 2019-08-07 - Input bug fix
+
+**Fixed:**
+
+ - bpk-component-input: 4.1.30 => 4.1.31
+   - Fixed clear button in `whileEditing` so that it cannot be clicked when not visible.
+
+
 # 2019-08-06 - Updated form element border colours
 
 **Fixed:**
