@@ -139,6 +139,13 @@ class BpkInput extends Component<Props, State> {
       />
     );
 
+    // When we mouseDown, we should persist the clear button.
+    // If we don't do this, then for `clearableWhileEditing` mode the mouseDown on the button will cause the input to lose focus,
+    // which will hide the button. The `onClick` event cannot complete if the button is removed from the DOM but mouseUp!
+    const onMouseDown = () => {
+      this.setState({ persistClearButton: true });
+    };
+
     return clearable ? (
       <div className={containerClassNames.join(' ')}>
         {renderedInput}
@@ -146,9 +153,7 @@ class BpkInput extends Component<Props, State> {
           <BpkClearButton
             tabIndex="-1"
             label={clearButtonLabel || ''}
-            onMouseDown={() => {
-              this.setState({ persistClearButton: true });
-            }}
+            onMouseDown={onMouseDown}
             onClick={e => {
               if (ref) {
                 ref.focus();
