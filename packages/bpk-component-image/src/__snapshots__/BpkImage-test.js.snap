@@ -60,6 +60,32 @@ exports[`BpkImage should accept userland styling 1`] = `
 </div>
 `;
 
+exports[`BpkImage should apply borderRadius 1`] = `
+<div
+  className={null}
+  style={Object {}}
+>
+  <div
+    className="bpk-image bpk-image--no-background bpk-image--borderRadius-sm"
+    style={
+      Object {
+        "height": 0,
+        "paddingBottom": "66.66666666666667%",
+      }
+    }
+    suppressHydrationWarning={false}
+  >
+    <img
+      alt="image description"
+      className="bpk-image__img"
+      onLoad={[Function]}
+      src="./path/to/image.jpg"
+      suppressHydrationWarning={false}
+    />
+  </div>
+</div>
+`;
+
 exports[`BpkImage should call onLoadCallback 1`] = `
 <img
   alt="image description"

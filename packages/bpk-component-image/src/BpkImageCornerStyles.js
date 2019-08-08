@@ -16,17 +16,8 @@
  * limitations under the License.
  */
 
-import BpkImage from './src/BpkImage';
-import BpkBackgroundImage from './src/BpkBackgroundImage';
-import withLazyLoading from './src/withLazyLoading';
-import withLoadingBehavior from './src/withLoadingBehavior';
-import CORNER_STYLES from './src/BpkImageCornerStyles';
+/* @flow */
 
-export default BpkImage;
+const CORNER_STYLES = { sm: 'sm' };
 
-export {
-  BpkBackgroundImage,
-  withLazyLoading,
-  withLoadingBehavior,
-  CORNER_STYLES,
-};
+export default CORNER_STYLES;

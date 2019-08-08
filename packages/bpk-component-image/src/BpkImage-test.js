@@ -24,6 +24,7 @@ import * as BREAKPOINTS from 'bpk-tokens/tokens/breakpoints.es6';
 import { spacingSm } from 'bpk-tokens/tokens/base.es6';
 
 import BpkImage from './BpkImage';
+import CORNER_STYLES from './BpkImageCornerStyles';
 
 describe('BpkImage', () => {
   it('should render correctly', () => {
@@ -157,6 +158,22 @@ describe('BpkImage', () => {
           src="./path/to/image_1640.jpg"
           srcSet={srcSet}
           sizes={sizes}
+        />,
+      )
+      .toJSON();
+
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('should apply borderRadius', () => {
+    const tree = renderer
+      .create(
+        <BpkImage
+          altText="image description"
+          width={816}
+          height={544}
+          src="./path/to/image.jpg"
+          borderRadiusStyle={CORNER_STYLES.sm}
         />,
       )
       .toJSON();
