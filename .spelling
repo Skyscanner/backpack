@@ -248,6 +248,8 @@ BarChart
 beforeClose
 borderRadius
 borderRadiusStyle
+BORDER_RADIUS_STYLES
+BORDER_RADIUS_STYLES.none
 borderlessBackground
 buttonType
 centerLeading
@@ -260,7 +262,6 @@ color
 compareValues
 containerClassName
 cornerStyle
-CORNER_STYLES
 CORNER_STYLES.sm
 CORNER_STYLES.lg
 DataSource

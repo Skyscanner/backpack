@@ -18,6 +18,6 @@
 
 /* @flow */
 
-const CORNER_STYLES = { sm: 'sm' };
+const BORDER_RADIUS_STYLES = { none: null, sm: 'sm' };
 
-export default CORNER_STYLES;
+export default BORDER_RADIUS_STYLES;

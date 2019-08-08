@@ -25,7 +25,7 @@ import CSSTransition from 'react-transition-group/CSSTransition';
 import { animations } from 'bpk-tokens/tokens/base.es6';
 
 import STYLES from './BpkImage.scss';
-import CORNER_STYLES from './BpkImageCornerStyles';
+import BORDER_RADIUS_STYLES from './BpkImageCornerStyles';
 
 const getClassName = cssModules(STYLES);
 
@@ -140,7 +140,7 @@ class BpkImage extends Component<BpkImageProps> {
     if (borderRadiusStyle) {
       classNames.push(
         getClassName(
-          `bpk-image--borderRadius-${CORNER_STYLES[borderRadiusStyle]}`,
+          `bpk-image--border-radius-${BORDER_RADIUS_STYLES[borderRadiusStyle]}`,
         ),
       );
     }
@@ -208,7 +208,7 @@ BpkImage.propTypes = {
   height: PropTypes.number.isRequired,
   src: PropTypes.string.isRequired,
   width: PropTypes.number.isRequired,
-  borderRadiusStyle: PropTypes.oneOf(Object.keys(CORNER_STYLES)),
+  borderRadiusStyle: PropTypes.oneOf(Object.keys(BORDER_RADIUS_STYLES)),
   className: PropTypes.string,
   inView: PropTypes.bool,
   loading: PropTypes.bool,
@@ -218,7 +218,7 @@ BpkImage.propTypes = {
 };
 
 BpkImage.defaultProps = {
-  borderRadiusStyle: null,
+  borderRadiusStyle: BORDER_RADIUS_STYLES.none,
   className: null,
   inView: true,
   loading: false,
