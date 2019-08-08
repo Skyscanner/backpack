@@ -26,6 +26,7 @@ import BpkImage, {
   BpkBackgroundImage,
   withLazyLoading,
   withLoadingBehavior,
+  BORDER_RADIUS_STYLES,
 } from './index';
 
 const image =
@@ -51,6 +52,16 @@ storiesOf('bpk-component-image', module)
       height={408}
       style={{ width: imageWidth, height: imageHeight }}
       src={image}
+    />
+  ))
+  .add('With Border Radius', () => (
+    <BpkImage
+      altText="image"
+      width={612}
+      height={408}
+      style={{ width: imageWidth, height: imageHeight }}
+      src={image}
+      borderRadiusStyle={BORDER_RADIUS_STYLES.sm}
     />
   ))
   .add('Full Width', () => (

@@ -16,17 +16,8 @@
  * limitations under the License.
  */
 
-import BpkImage from './src/BpkImage';
-import BpkBackgroundImage from './src/BpkBackgroundImage';
-import withLazyLoading from './src/withLazyLoading';
-import withLoadingBehavior from './src/withLoadingBehavior';
-import BORDER_RADIUS_STYLES from './src/BpkImageBorderRadiusStyles';
+/* @flow */
 
-export default BpkImage;
+const BORDER_RADIUS_STYLES = { none: 'none', sm: 'sm' };
 
-export {
-  BpkBackgroundImage,
-  withLazyLoading,
-  withLoadingBehavior,
-  BORDER_RADIUS_STYLES,
-};
+export default BORDER_RADIUS_STYLES;
