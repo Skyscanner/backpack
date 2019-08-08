@@ -2,6 +2,14 @@
 
 [Unreleased changes](./UNRELEASED.yaml).
 
+# 2019-08-08 - New `borderRadiusStyle` prop for `BpkImage`
+
+**Added:**
+
+ - bpk-component-image: 2.2.12 => 2.3.0
+   - New `borderRadiusStyle` prop for adding rounded corners to images.
+
+
 # 2019-08-07 - Input bug fix
 
 **Fixed:**

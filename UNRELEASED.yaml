@@ -24,7 +24,3 @@
 #   FIXED:
 #     - bpk-component-horcrux:
 #       - Fixed issue where `BpkHorcrux` would occasionally possess the living.
-
-ADDED:
-  - bpk-component-image:
-    - New `borderRadiusStyle` prop for adding rounded corners to images.
