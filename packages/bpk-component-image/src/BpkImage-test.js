@@ -24,7 +24,7 @@ import * as BREAKPOINTS from 'bpk-tokens/tokens/breakpoints.es6';
 import { spacingSm } from 'bpk-tokens/tokens/base.es6';
 
 import BpkImage from './BpkImage';
-import BORDER_RADIUS_STYLES from './BpkImageCornerStyles';
+import BORDER_RADIUS_STYLES from './BpkImageBorderRadiusStyles';
 
 describe('BpkImage', () => {
   it('should render correctly', () => {

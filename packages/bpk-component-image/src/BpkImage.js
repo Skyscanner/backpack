@@ -25,7 +25,7 @@ import CSSTransition from 'react-transition-group/CSSTransition';
 import { animations } from 'bpk-tokens/tokens/base.es6';
 
 import STYLES from './BpkImage.scss';
-import BORDER_RADIUS_STYLES from './BpkImageCornerStyles';
+import BORDER_RADIUS_STYLES from './BpkImageBorderRadiusStyles';
 
 const getClassName = cssModules(STYLES);
 
@@ -36,7 +36,7 @@ type BpkImageProps = {
   loading: boolean,
   src: string,
   width: number,
-  borderRadiusStyle: ?$Keys<typeof CORNER_STYLES>,
+  borderRadiusStyle: $Keys<typeof BORDER_RADIUS_STYLES>,
   className: ?string,
   onLoad: ?() => mixed,
   style: ?{}, // eslint-disable-line react/forbid-prop-types
@@ -137,7 +137,7 @@ class BpkImage extends Component<BpkImageProps> {
       classNames.push(getClassName('bpk-image--no-background'));
     }
 
-    if (borderRadiusStyle) {
+    if (borderRadiusStyle !== BORDER_RADIUS_STYLES.none) {
       classNames.push(
         getClassName(
           `bpk-image--border-radius-${BORDER_RADIUS_STYLES[borderRadiusStyle]}`,

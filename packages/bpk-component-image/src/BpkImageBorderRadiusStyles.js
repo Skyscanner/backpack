@@ -18,6 +18,6 @@
 
 /* @flow */
 
-const BORDER_RADIUS_STYLES = { none: null, sm: 'sm' };
+const BORDER_RADIUS_STYLES = { none: 'none', sm: 'sm' };
 
 export default BORDER_RADIUS_STYLES;
