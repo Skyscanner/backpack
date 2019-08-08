@@ -167,12 +167,15 @@ const performPublish = (changes, changeSummary) => {
   updatePackageJsonFiles(changes);
   execSync(`npm run fix-bpk-dependencies`);
   if (!testing) {
+    // Not everyone uses Krypton, so we'll only disable codesigning if they do!
+    execSync(`kr codesign off || true`);
     execSync(`git add . && git commit -m "Publish" --no-verify`);
     execSync(`npm run lerna -- publish from-package --ignore-scripts || true`);
     execSync(`git add . && git commit --amend --no-edit --no-verify`);
     createGitTags(changes);
     execSync(`git push`);
     execSync(`git push --tags`);
+    execSync(`kr codesign on || true`);
   }
   logOk(`All good 👍`);
   printOutSlackUpdate(changes, changeSummary, publishTitle);
