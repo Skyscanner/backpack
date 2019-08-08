@@ -13,8 +13,18 @@ module.exports = {
     rules: [
       {
         test: /\.jsx?$/,
-        use: ['babel-loader'],
         exclude: /node_modules\/(?!bpk-).*/,
+        loader: 'babel-loader',
+        options: {
+          presets: [
+            [
+              '@babel/preset-env',
+              {
+                targets: { browsers: ['ie >= 11'] },
+              },
+            ],
+          ],
+        },
       },
       {
         test: /\.scss$/,
