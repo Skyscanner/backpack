@@ -12,7 +12,6 @@ native-android--forward
 policy
 share
 star-half
-swap
 swap--horizontal
 swap--vertical
 trend
