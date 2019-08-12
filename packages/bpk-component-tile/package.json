@@ -14,8 +14,8 @@
     "react": "^15.0.0 || ^16.0.0"
   },
   "dependencies": {
-    "bpk-component-icon": "^3.31.8",
-    "bpk-mixins": "^17.24.8",
+    "bpk-component-icon": "^4.0.0",
+    "bpk-mixins": "^18.0.0",
     "prop-types": "^15.6.2"
   },
   "devDependencies": {

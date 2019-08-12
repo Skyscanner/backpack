@@ -2,6 +2,20 @@
 
 [Unreleased changes](./UNRELEASED.yaml).
 
+# 2019-08-12 - Added vertical swap icon
+
+**Breaking:**
+
+ - bpk-component-icon: 3.31.8 => 4.0.0
+   - `swap` icon renamed `swap--horizontal`.
+
+ - bpk-mixins: 17.24.8 => 18.0.0
+   - `swap` icon renamed `swap--horizontal`.
+
+ - bpk-svgs: 6.9.6 => 7.0.0
+   - `swap` icon renamed `swap--horizontal`.
+
+
 # 2019-08-08 - New `borderRadiusStyle` prop for `BpkImage`
 
 **Added:**
