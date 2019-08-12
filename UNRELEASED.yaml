@@ -1,4 +1,23 @@
 # UNRELEASED:
+BREAKING:
+  - bpk-component-icon:
+    - `swap` icon renamed `swap--horizontal`.
+
+  - bpk-mixins:
+    - `swap` icon renamed `swap--horizontal`.
+
+  - bpk-svgs:
+    - `swap` icon renamed `swap--horizontal`.
+
+ADDED:
+  - bpk-component-icon:
+    - New `swap--vertical` icon.
+
+  - bpk-mixins:
+    - New `swap--vertical` icon.
+
+  - bpk-svgs:
+    - New `swap--vertical` icon.
 
 # How to write a good changelog entry:
 #
