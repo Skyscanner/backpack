@@ -20,9 +20,9 @@
 /// @group autosuggest
 $bpk-autosuggest-list-background-color: rgb(255, 255, 255) !default;
 /// @group autosuggest
-$bpk-autosuggest-list-item-active-background-color: rgb(230, 228, 235) !default;
+$bpk-autosuggest-list-item-active-background-color: rgb(221, 221, 229) !default;
 /// @group autosuggest
-$bpk-autosuggest-list-item-highlighted-background-color: rgb(243, 242, 245) !default;
+$bpk-autosuggest-list-item-highlighted-background-color: rgb(241, 242, 248) !default;
 /// @group badges
 $bpk-badge-background-color: rgb(255, 187, 0) !default;
 /// @group badges
@@ -34,7 +34,7 @@ $bpk-badge-padding-y: 0 !default;
 /// @group notifications
 $bpk-banner-alert-background-color: rgb(255, 255, 255) !default;
 /// @group notifications
-$bpk-banner-alert-children-color: rgb(129, 123, 143) !default;
+$bpk-banner-alert-children-color: rgb(104, 105, 127) !default;
 /// @group notifications
 $bpk-banner-alert-children-padding-x: .75rem !default;
 /// @group notifications
@@ -42,17 +42,17 @@ $bpk-banner-alert-children-padding-y: .375rem !default;
 /// @group notifications
 $bpk-banner-alert-error-color: rgb(255, 84, 82) !default;
 /// @group notifications
-$bpk-banner-alert-expand-icon-fill: rgb(82, 76, 97) !default;
+$bpk-banner-alert-expand-icon-fill: rgb(68, 69, 96) !default;
 /// @group notifications
-$bpk-banner-alert-header-expandable-active-background-color: rgb(230, 228, 235) !default;
+$bpk-banner-alert-header-expandable-active-background-color: rgb(221, 221, 229) !default;
 /// @group notifications
-$bpk-banner-alert-header-expandable-hover-background-color: rgb(243, 242, 245) !default;
+$bpk-banner-alert-header-expandable-hover-background-color: rgb(241, 242, 248) !default;
 /// @group notifications
 $bpk-banner-alert-header-padding-x: .75rem !default;
 /// @group notifications
 $bpk-banner-alert-header-padding-y: .375rem !default;
 /// @group notifications
-$bpk-banner-alert-neutral-color: rgb(129, 123, 143) !default;
+$bpk-banner-alert-neutral-color: rgb(104, 105, 127) !default;
 /// @group notifications
 $bpk-banner-alert-success-color: rgb(0, 215, 117) !default;
 /// @group notifications
@@ -124,19 +124,19 @@ $bpk-button-destructive-active-color: rgb(255, 84, 82) !default;
 /// @group buttons
 $bpk-button-destructive-background-color: rgb(255, 255, 255) !default;
 /// @group buttons
-$bpk-button-destructive-border-color: rgb(230, 228, 235) !default;
+$bpk-button-destructive-border-color: rgb(221, 221, 229) !default;
 /// @group buttons
-$bpk-button-destructive-box-shadow: 0 0 0 2px #E6E4EB inset !default;
+$bpk-button-destructive-box-shadow: 0 0 0 2px #DDDDE5 inset !default;
 /// @group buttons
 $bpk-button-destructive-color: rgb(255, 84, 82) !default;
 /// @group buttons
-$bpk-button-destructive-disabled-background-color: rgb(230, 228, 235) !default;
+$bpk-button-destructive-disabled-background-color: rgb(221, 221, 229) !default;
 /// @group buttons
 $bpk-button-destructive-disabled-background-image: none !default;
 /// @group buttons
 $bpk-button-destructive-disabled-box-shadow: none !default;
 /// @group buttons
-$bpk-button-destructive-disabled-color: rgb(178, 174, 189) !default;
+$bpk-button-destructive-disabled-color: rgb(178, 178, 191) !default;
 /// @group buttons
 $bpk-button-destructive-hover-background-color: rgb(255, 255, 255) !default;
 /// @group buttons
@@ -148,13 +148,13 @@ $bpk-button-destructive-hover-box-shadow: 0 0 0 2px #ff5452 inset !default;
 /// @group buttons
 $bpk-button-destructive-hover-color: rgb(255, 84, 82) !default;
 /// @group buttons
-$bpk-button-disabled-background-color: rgb(230, 228, 235) !default;
+$bpk-button-disabled-background-color: rgb(221, 221, 229) !default;
 /// @group buttons
 $bpk-button-disabled-background-image: none !default;
 /// @group buttons
 $bpk-button-disabled-box-shadow: none !default;
 /// @group buttons
-$bpk-button-disabled-color: rgb(178, 174, 189) !default;
+$bpk-button-disabled-color: rgb(178, 178, 191) !default;
 /// @group buttons
 $bpk-button-featured-active-background-color: rgb(197, 15, 82) !default;
 /// @group buttons
@@ -170,7 +170,7 @@ $bpk-button-featured-background-image: linear-gradient(-180deg, #FA488A 0%, #D92
 /// @group buttons
 $bpk-button-featured-color: rgb(255, 255, 255) !default;
 /// @group buttons
-$bpk-button-featured-disabled-background-color: rgb(230, 228, 235) !default;
+$bpk-button-featured-disabled-background-color: rgb(221, 221, 229) !default;
 /// @group buttons
 $bpk-button-featured-disabled-background-image: none !default;
 /// @group buttons
@@ -226,13 +226,13 @@ $bpk-button-outline-border-color: rgb(255, 255, 255) !default;
 /// @group buttons
 $bpk-button-outline-color: rgb(255, 255, 255) !default;
 /// @group buttons
-$bpk-button-outline-disabled-background-color: rgb(230, 228, 235) !default;
+$bpk-button-outline-disabled-background-color: rgb(221, 221, 229) !default;
 /// @group buttons
 $bpk-button-outline-disabled-background-image: none !default;
 /// @group buttons
 $bpk-button-outline-disabled-box-shadow: none !default;
 /// @group buttons
-$bpk-button-outline-disabled-color: rgb(178, 174, 189) !default;
+$bpk-button-outline-disabled-color: rgb(178, 178, 191) !default;
 /// @group buttons
 $bpk-button-outline-hover-background-color: rgba(0, 0, 0, 0) !default;
 /// @group buttons
@@ -260,19 +260,19 @@ $bpk-button-secondary-background-color: rgb(255, 255, 255) !default;
 /// @group buttons
 $bpk-button-secondary-background-image: none !default;
 /// @group buttons
-$bpk-button-secondary-border-color: rgb(230, 228, 235) !default;
+$bpk-button-secondary-border-color: rgb(221, 221, 229) !default;
 /// @group buttons
-$bpk-button-secondary-box-shadow: 0 0 0 2px #E6E4EB inset !default;
+$bpk-button-secondary-box-shadow: 0 0 0 2px #DDDDE5 inset !default;
 /// @group buttons
 $bpk-button-secondary-color: rgb(0, 178, 214) !default;
 /// @group buttons
-$bpk-button-secondary-disabled-background-color: rgb(230, 228, 235) !default;
+$bpk-button-secondary-disabled-background-color: rgb(221, 221, 229) !default;
 /// @group buttons
 $bpk-button-secondary-disabled-background-image: none !default;
 /// @group buttons
 $bpk-button-secondary-disabled-box-shadow: none !default;
 /// @group buttons
-$bpk-button-secondary-disabled-color: rgb(178, 174, 189) !default;
+$bpk-button-secondary-disabled-color: rgb(178, 178, 191) !default;
 /// @group buttons
 $bpk-button-secondary-hover-background-color: rgb(255, 255, 255) !default;
 /// @group buttons
@@ -312,9 +312,9 @@ $bpk-button-selected-hover-color: rgb(255, 255, 255) !default;
 /// @group buttons
 $bpk-button-text-align: center !default;
 /// @group calendar
-$bpk-calendar-day-active-background-color: rgb(230, 228, 235) !default;
+$bpk-calendar-day-active-background-color: rgb(221, 221, 229) !default;
 /// @group calendar
-$bpk-calendar-day-active-color: rgb(37, 32, 51) !default;
+$bpk-calendar-day-active-color: rgb(17, 18, 54) !default;
 /// @group calendar
 $bpk-calendar-day-background-color: rgb(255, 255, 255) !default;
 /// @group calendar
@@ -322,15 +322,15 @@ $bpk-calendar-day-color: rgb(0, 178, 214) !default;
 /// @group calendar
 $bpk-calendar-day-disabled-background-color: rgb(255, 255, 255) !default;
 /// @group calendar
-$bpk-calendar-day-disabled-color: rgb(230, 228, 235) !default;
+$bpk-calendar-day-disabled-color: rgb(221, 221, 229) !default;
 /// @group calendar
-$bpk-calendar-day-hover-background-color: rgb(243, 242, 245) !default;
+$bpk-calendar-day-hover-background-color: rgb(241, 242, 248) !default;
 /// @group calendar
-$bpk-calendar-day-hover-color: rgb(82, 76, 97) !default;
+$bpk-calendar-day-hover-color: rgb(68, 69, 96) !default;
 /// @group calendar
 $bpk-calendar-day-outside-background-color: rgb(255, 255, 255) !default;
 /// @group calendar
-$bpk-calendar-day-outside-color: rgb(178, 174, 189) !default;
+$bpk-calendar-day-outside-color: rgb(178, 178, 191) !default;
 /// @group calendar
 $bpk-calendar-day-selected-background-color: rgb(0, 140, 168) !default;
 /// @group calendar
@@ -342,7 +342,7 @@ $bpk-calendar-day-spacing: .375rem !default;
 /// @group calendar
 $bpk-calendar-nav-icon-active-fill: rgb(0, 140, 168) !default;
 /// @group calendar
-$bpk-calendar-nav-icon-disabled-fill: rgb(230, 228, 235) !default;
+$bpk-calendar-nav-icon-disabled-fill: rgb(221, 221, 229) !default;
 /// @group calendar
 $bpk-calendar-nav-icon-fill: rgb(0, 178, 214) !default;
 /// @group calendar
@@ -352,7 +352,7 @@ $bpk-calendar-padding: .75rem !default;
 /// @group cards
 $bpk-card-background-color: rgb(255, 255, 255) !default;
 /// @group cards
-$bpk-card-color: rgb(82, 76, 97) !default;
+$bpk-card-color: rgb(68, 69, 96) !default;
 /// @group cards
 $bpk-card-padding: .75rem !default;
 /// @group forms
@@ -378,25 +378,25 @@ $bpk-color-blue-800: rgb(0, 117, 140) !default;
 /// @group colors
 $bpk-color-blue-900: rgb(0, 85, 103) !default;
 /// @group colors
-$bpk-color-gray-100: rgb(230, 228, 235) !default;
+$bpk-color-gray-100: rgb(221, 221, 229) !default;
 /// @group colors
-$bpk-color-gray-200: rgb(204, 201, 212) !default;
+$bpk-color-gray-200: rgb(205, 205, 215) !default;
 /// @group colors
-$bpk-color-gray-300: rgb(178, 174, 189) !default;
+$bpk-color-gray-300: rgb(178, 178, 191) !default;
 /// @group colors
-$bpk-color-gray-400: rgb(154, 149, 167) !default;
+$bpk-color-gray-400: rgb(143, 144, 160) !default;
 /// @group colors
-$bpk-color-gray-50: rgb(243, 242, 245) !default;
+$bpk-color-gray-50: rgb(241, 242, 248) !default;
 /// @group colors
-$bpk-color-gray-500: rgb(129, 123, 143) !default;
+$bpk-color-gray-500: rgb(104, 105, 127) !default;
 /// @group colors
 $bpk-color-gray-600: rgb(105, 97, 121) !default;
 /// @group colors
-$bpk-color-gray-700: rgb(82, 76, 97) !default;
+$bpk-color-gray-700: rgb(68, 69, 96) !default;
 /// @group colors
 $bpk-color-gray-800: rgb(59, 52, 75) !default;
 /// @group colors
-$bpk-color-gray-900: rgb(37, 32, 51) !default;
+$bpk-color-gray-900: rgb(17, 18, 54) !default;
 /// @group colors
 $bpk-color-green-100: rgb(203, 245, 226) !default;
 /// @group colors
@@ -468,7 +468,7 @@ $bpk-duration-sm: 200ms !default;
 /// @group animations
 $bpk-duration-xs: 50ms !default;
 /// @group text-colors
-$bpk-font-color-base: rgb(82, 76, 97) !default;
+$bpk-font-color-base: rgb(68, 69, 96) !default;
 /// @group typesettings
 $bpk-font-family-base: -apple-system, BlinkMacSystemFont, 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', 'Arial', sans-serif !default;
 /// @group typesettings
@@ -552,9 +552,9 @@ $bpk-heading-margin-top: 0 !default;
 /// @group horizontal-nav
 $bpk-horizontal-nav-bar-selected-color: rgb(0, 178, 214) !default;
 /// @group horizontal-nav
-$bpk-horizontal-nav-link-active-color: rgb(37, 32, 51) !default;
+$bpk-horizontal-nav-link-active-color: rgb(17, 18, 54) !default;
 /// @group horizontal-nav
-$bpk-horizontal-nav-link-color: rgb(82, 76, 97) !default;
+$bpk-horizontal-nav-link-color: rgb(68, 69, 96) !default;
 /// @group horizontal-nav
 $bpk-horizontal-nav-link-hover-color: rgb(59, 52, 75) !default;
 /// @group horizontal-nav
@@ -566,17 +566,17 @@ $bpk-icon-size-sm: 1.125rem !default;
 /// @group forms
 $bpk-input-background: #ffffff !default;
 /// @group forms
-$bpk-input-border: solid .0625rem #B2AEBD !default;
+$bpk-input-border: solid .0625rem #B2B2BF !default;
 /// @group forms
 $bpk-input-border-radius: .1875rem !default;
 /// @group forms
 $bpk-input-border-width: .0625rem !default;
 /// @group forms
-$bpk-input-color: rgb(82, 76, 97) !default;
+$bpk-input-color: rgb(68, 69, 96) !default;
 /// @group forms
-$bpk-input-disabled-border-color: rgb(243, 242, 245) !default;
+$bpk-input-disabled-border-color: rgb(241, 242, 248) !default;
 /// @group forms
-$bpk-input-disabled-color: rgb(178, 174, 189) !default;
+$bpk-input-disabled-color: rgb(178, 178, 191) !default;
 /// @group forms
 $bpk-input-height: 2.250rem !default;
 /// @group forms
@@ -586,13 +586,13 @@ $bpk-input-padding-x: .75rem !default;
 /// @group forms
 $bpk-input-padding-y: .375rem !default;
 /// @group forms
-$bpk-input-placeholder-color: rgb(129, 123, 143) !default;
+$bpk-input-placeholder-color: rgb(104, 105, 127) !default;
 /// @group forms
 $bpk-input-placeholder-font-style: italic !default;
 /// @group forms
-$bpk-label-color: rgb(82, 76, 97) !default;
+$bpk-label-color: rgb(68, 69, 96) !default;
 /// @group forms
-$bpk-label-disabled-color: rgb(178, 174, 189) !default;
+$bpk-label-disabled-color: rgb(178, 178, 191) !default;
 /// @group forms
 $bpk-label-font-size: .75rem !default;
 /// @group forms
@@ -608,9 +608,9 @@ $bpk-line-height-xl: 2.625rem !default;
 /// @group typesettings
 $bpk-line-height-xxl: 3.375rem !default;
 /// @group text-colors
-$bpk-link-active-color: rgb(37, 32, 51) !default;
+$bpk-link-active-color: rgb(17, 18, 54) !default;
 /// @group text-colors
-$bpk-link-alternate-active-color: rgb(230, 228, 235) !default;
+$bpk-link-alternate-active-color: rgb(221, 221, 229) !default;
 /// @group text-colors
 $bpk-link-alternate-color: rgb(255, 255, 255) !default;
 /// @group text-colors
@@ -620,7 +620,7 @@ $bpk-link-alternate-visited-color: rgb(255, 255, 255) !default;
 /// @group text-colors
 $bpk-link-color: rgb(0, 178, 214) !default;
 /// @group text-colors
-$bpk-link-hover-color: rgb(82, 76, 97) !default;
+$bpk-link-hover-color: rgb(68, 69, 96) !default;
 /// @group text-decorations
 $bpk-link-hover-text-decoration: underline !default;
 /// @group text-decorations
@@ -628,7 +628,7 @@ $bpk-link-text-decoration: none !default;
 /// @group text-colors
 $bpk-link-visited-color: rgb(0, 140, 168) !default;
 /// @group text-colors
-$bpk-link-white-active-color: rgb(230, 228, 235) !default;
+$bpk-link-white-active-color: rgb(221, 221, 229) !default;
 /// @group text-colors
 $bpk-link-white-color: rgb(255, 255, 255) !default;
 /// @group text-colors
@@ -650,9 +650,9 @@ $bpk-list-nested-margin-top: 0 !default;
 /// @group modals
 $bpk-modal-background-color: rgb(255, 255, 255) !default;
 /// @group modals
-$bpk-modal-close-icon-fill: rgb(129, 123, 143) !default;
+$bpk-modal-close-icon-fill: rgb(104, 105, 127) !default;
 /// @group modals
-$bpk-modal-close-icon-hover-fill: rgb(82, 76, 97) !default;
+$bpk-modal-close-icon-hover-fill: rgb(68, 69, 96) !default;
 /// @group modals
 $bpk-modal-content-padding: .75rem !default;
 /// @group modals
@@ -664,7 +664,7 @@ $bpk-modal-max-width: 32.25rem !default;
 /// @group modals
 $bpk-modal-opacity: 1 !default;
 /// @group modals
-$bpk-modal-scrim-background-color: rgb(178, 174, 189) !default;
+$bpk-modal-scrim-background-color: rgb(178, 178, 191) !default;
 /// @group modals
 $bpk-modal-scrim-initial-opacity: 0 !default;
 /// @group modals
@@ -678,7 +678,7 @@ $bpk-one-pixel-rem: .0625rem !default;
 /// @group panels
 $bpk-panel-background-color: rgb(255, 255, 255) !default;
 /// @group panels
-$bpk-panel-border-color: rgb(230, 228, 235) !default;
+$bpk-panel-border-color: rgb(221, 221, 229) !default;
 /// @group panels
 $bpk-panel-padding: .75rem !default;
 /// @group colors
@@ -692,9 +692,9 @@ $bpk-radio-checked-circle-color: rgb(0, 140, 168) !default;
 /// @group forms
 $bpk-required-color: rgb(255, 84, 82) !default;
 /// @group scrims
-$bpk-scrim-background-color: rgb(178, 174, 189) !default;
+$bpk-scrim-background-color: rgb(178, 178, 191) !default;
 /// @group scrims
-$bpk-scrim-dark-background-color: rgb(37, 32, 51) !default;
+$bpk-scrim-dark-background-color: rgb(17, 18, 54) !default;
 /// @group scrims
 $bpk-scrim-dark-opacity: .95 !default;
 /// @group scrims
@@ -704,17 +704,17 @@ $bpk-scrim-mobile-opacity: 1 !default;
 /// @group scrims
 $bpk-scrim-opacity: .7 !default;
 /// @group forms
-$bpk-select-border: solid .0625rem #B2AEBD !default;
+$bpk-select-border: solid .0625rem #B2B2BF !default;
 /// @group forms
 $bpk-select-border-radius: .1875rem !default;
 /// @group forms
 $bpk-select-border-width: .0625rem !default;
 /// @group forms
-$bpk-select-color: rgb(82, 76, 97) !default;
+$bpk-select-color: rgb(68, 69, 96) !default;
 /// @group forms
-$bpk-select-disabled-border-color: rgb(243, 242, 245) !default;
+$bpk-select-disabled-border-color: rgb(241, 242, 248) !default;
 /// @group forms
-$bpk-select-disabled-color: rgb(178, 174, 189) !default;
+$bpk-select-disabled-color: rgb(178, 178, 191) !default;
 /// @group forms
 $bpk-select-height: 2.250rem !default;
 /// @group forms

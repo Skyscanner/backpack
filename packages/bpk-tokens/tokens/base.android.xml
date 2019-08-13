@@ -47,16 +47,16 @@
   <color name="COLOR_BLUE_700" category="colors">#ff008ca8</color>
   <color name="COLOR_BLUE_800" category="colors">#ff00758c</color>
   <color name="COLOR_BLUE_900" category="colors">#ff005567</color>
-  <color name="COLOR_GRAY_100" category="colors">#ffe6e4eb</color>
-  <color name="COLOR_GRAY_200" category="colors">#ffccc9d4</color>
-  <color name="COLOR_GRAY_300" category="colors">#ffb2aebd</color>
-  <color name="COLOR_GRAY_400" category="colors">#ff9a95a7</color>
-  <color name="COLOR_GRAY_50" category="colors">#fff3f2f5</color>
-  <color name="COLOR_GRAY_500" category="colors">#ff817b8f</color>
+  <color name="COLOR_GRAY_100" category="colors">#ffdddde5</color>
+  <color name="COLOR_GRAY_200" category="colors">#ffcdcdd7</color>
+  <color name="COLOR_GRAY_300" category="colors">#ffb2b2bf</color>
+  <color name="COLOR_GRAY_400" category="colors">#ff8f90a0</color>
+  <color name="COLOR_GRAY_50" category="colors">#fff1f2f8</color>
+  <color name="COLOR_GRAY_500" category="colors">#ff68697f</color>
   <color name="COLOR_GRAY_600" category="colors">#ff696179</color>
-  <color name="COLOR_GRAY_700" category="colors">#ff524c61</color>
+  <color name="COLOR_GRAY_700" category="colors">#ff444560</color>
   <color name="COLOR_GRAY_800" category="colors">#ff3b344b</color>
-  <color name="COLOR_GRAY_900" category="colors">#ff252033</color>
+  <color name="COLOR_GRAY_900" category="colors">#ff111236</color>
   <color name="COLOR_GREEN_100" category="colors">#ffcbf5e2</color>
   <color name="COLOR_GREEN_200" category="colors">#ffafedd1</color>
   <color name="COLOR_GREEN_300" category="colors">#ff80e8b9</color>

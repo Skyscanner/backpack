@@ -20,9 +20,9 @@
 /// @group autosuggest
 $bpk-autosuggest-list-background-color: rgb(255, 255, 255);
 /// @group autosuggest
-$bpk-autosuggest-list-item-active-background-color: rgb(230, 228, 235);
+$bpk-autosuggest-list-item-active-background-color: rgb(221, 221, 229);
 /// @group autosuggest
-$bpk-autosuggest-list-item-highlighted-background-color: rgb(243, 242, 245);
+$bpk-autosuggest-list-item-highlighted-background-color: rgb(241, 242, 248);
 /// @group badges
 $bpk-badge-background-color: rgb(255, 187, 0);
 /// @group badges
@@ -34,7 +34,7 @@ $bpk-badge-padding-y: 0;
 /// @group notifications
 $bpk-banner-alert-background-color: rgb(255, 255, 255);
 /// @group notifications
-$bpk-banner-alert-children-color: rgb(129, 123, 143);
+$bpk-banner-alert-children-color: rgb(104, 105, 127);
 /// @group notifications
 $bpk-banner-alert-children-padding-x: .75rem;
 /// @group notifications
@@ -42,17 +42,17 @@ $bpk-banner-alert-children-padding-y: .375rem;
 /// @group notifications
 $bpk-banner-alert-error-color: rgb(255, 84, 82);
 /// @group notifications
-$bpk-banner-alert-expand-icon-fill: rgb(82, 76, 97);
+$bpk-banner-alert-expand-icon-fill: rgb(68, 69, 96);
 /// @group notifications
-$bpk-banner-alert-header-expandable-active-background-color: rgb(230, 228, 235);
+$bpk-banner-alert-header-expandable-active-background-color: rgb(221, 221, 229);
 /// @group notifications
-$bpk-banner-alert-header-expandable-hover-background-color: rgb(243, 242, 245);
+$bpk-banner-alert-header-expandable-hover-background-color: rgb(241, 242, 248);
 /// @group notifications
 $bpk-banner-alert-header-padding-x: .75rem;
 /// @group notifications
 $bpk-banner-alert-header-padding-y: .375rem;
 /// @group notifications
-$bpk-banner-alert-neutral-color: rgb(129, 123, 143);
+$bpk-banner-alert-neutral-color: rgb(104, 105, 127);
 /// @group notifications
 $bpk-banner-alert-success-color: rgb(0, 215, 117);
 /// @group notifications
@@ -124,19 +124,19 @@ $bpk-button-destructive-active-color: rgb(255, 84, 82);
 /// @group buttons
 $bpk-button-destructive-background-color: rgb(255, 255, 255);
 /// @group buttons
-$bpk-button-destructive-border-color: rgb(230, 228, 235);
+$bpk-button-destructive-border-color: rgb(221, 221, 229);
 /// @group buttons
-$bpk-button-destructive-box-shadow: 0 0 0 2px #E6E4EB inset;
+$bpk-button-destructive-box-shadow: 0 0 0 2px #DDDDE5 inset;
 /// @group buttons
 $bpk-button-destructive-color: rgb(255, 84, 82);
 /// @group buttons
-$bpk-button-destructive-disabled-background-color: rgb(230, 228, 235);
+$bpk-button-destructive-disabled-background-color: rgb(221, 221, 229);
 /// @group buttons
 $bpk-button-destructive-disabled-background-image: none;
 /// @group buttons
 $bpk-button-destructive-disabled-box-shadow: none;
 /// @group buttons
-$bpk-button-destructive-disabled-color: rgb(178, 174, 189);
+$bpk-button-destructive-disabled-color: rgb(178, 178, 191);
 /// @group buttons
 $bpk-button-destructive-hover-background-color: rgb(255, 255, 255);
 /// @group buttons
@@ -148,13 +148,13 @@ $bpk-button-destructive-hover-box-shadow: 0 0 0 2px #ff5452 inset;
 /// @group buttons
 $bpk-button-destructive-hover-color: rgb(255, 84, 82);
 /// @group buttons
-$bpk-button-disabled-background-color: rgb(230, 228, 235);
+$bpk-button-disabled-background-color: rgb(221, 221, 229);
 /// @group buttons
 $bpk-button-disabled-background-image: none;
 /// @group buttons
 $bpk-button-disabled-box-shadow: none;
 /// @group buttons
-$bpk-button-disabled-color: rgb(178, 174, 189);
+$bpk-button-disabled-color: rgb(178, 178, 191);
 /// @group buttons
 $bpk-button-featured-active-background-color: rgb(197, 15, 82);
 /// @group buttons
@@ -170,7 +170,7 @@ $bpk-button-featured-background-image: linear-gradient(-180deg, #FA488A 0%, #D92
 /// @group buttons
 $bpk-button-featured-color: rgb(255, 255, 255);
 /// @group buttons
-$bpk-button-featured-disabled-background-color: rgb(230, 228, 235);
+$bpk-button-featured-disabled-background-color: rgb(221, 221, 229);
 /// @group buttons
 $bpk-button-featured-disabled-background-image: none;
 /// @group buttons
@@ -226,13 +226,13 @@ $bpk-button-outline-border-color: rgb(255, 255, 255);
 /// @group buttons
 $bpk-button-outline-color: rgb(255, 255, 255);
 /// @group buttons
-$bpk-button-outline-disabled-background-color: rgb(230, 228, 235);
+$bpk-button-outline-disabled-background-color: rgb(221, 221, 229);
 /// @group buttons
 $bpk-button-outline-disabled-background-image: none;
 /// @group buttons
 $bpk-button-outline-disabled-box-shadow: none;
 /// @group buttons
-$bpk-button-outline-disabled-color: rgb(178, 174, 189);
+$bpk-button-outline-disabled-color: rgb(178, 178, 191);
 /// @group buttons
 $bpk-button-outline-hover-background-color: rgba(0, 0, 0, 0);
 /// @group buttons
@@ -260,19 +260,19 @@ $bpk-button-secondary-background-color: rgb(255, 255, 255);
 /// @group buttons
 $bpk-button-secondary-background-image: none;
 /// @group buttons
-$bpk-button-secondary-border-color: rgb(230, 228, 235);
+$bpk-button-secondary-border-color: rgb(221, 221, 229);
 /// @group buttons
-$bpk-button-secondary-box-shadow: 0 0 0 2px #E6E4EB inset;
+$bpk-button-secondary-box-shadow: 0 0 0 2px #DDDDE5 inset;
 /// @group buttons
 $bpk-button-secondary-color: rgb(0, 178, 214);
 /// @group buttons
-$bpk-button-secondary-disabled-background-color: rgb(230, 228, 235);
+$bpk-button-secondary-disabled-background-color: rgb(221, 221, 229);
 /// @group buttons
 $bpk-button-secondary-disabled-background-image: none;
 /// @group buttons
 $bpk-button-secondary-disabled-box-shadow: none;
 /// @group buttons
-$bpk-button-secondary-disabled-color: rgb(178, 174, 189);
+$bpk-button-secondary-disabled-color: rgb(178, 178, 191);
 /// @group buttons
 $bpk-button-secondary-hover-background-color: rgb(255, 255, 255);
 /// @group buttons
@@ -312,9 +312,9 @@ $bpk-button-selected-hover-color: rgb(255, 255, 255);
 /// @group buttons
 $bpk-button-text-align: center;
 /// @group calendar
-$bpk-calendar-day-active-background-color: rgb(230, 228, 235);
+$bpk-calendar-day-active-background-color: rgb(221, 221, 229);
 /// @group calendar
-$bpk-calendar-day-active-color: rgb(37, 32, 51);
+$bpk-calendar-day-active-color: rgb(17, 18, 54);
 /// @group calendar
 $bpk-calendar-day-background-color: rgb(255, 255, 255);
 /// @group calendar
@@ -322,15 +322,15 @@ $bpk-calendar-day-color: rgb(0, 178, 214);
 /// @group calendar
 $bpk-calendar-day-disabled-background-color: rgb(255, 255, 255);
 /// @group calendar
-$bpk-calendar-day-disabled-color: rgb(230, 228, 235);
+$bpk-calendar-day-disabled-color: rgb(221, 221, 229);
 /// @group calendar
-$bpk-calendar-day-hover-background-color: rgb(243, 242, 245);
+$bpk-calendar-day-hover-background-color: rgb(241, 242, 248);
 /// @group calendar
-$bpk-calendar-day-hover-color: rgb(82, 76, 97);
+$bpk-calendar-day-hover-color: rgb(68, 69, 96);
 /// @group calendar
 $bpk-calendar-day-outside-background-color: rgb(255, 255, 255);
 /// @group calendar
-$bpk-calendar-day-outside-color: rgb(178, 174, 189);
+$bpk-calendar-day-outside-color: rgb(178, 178, 191);
 /// @group calendar
 $bpk-calendar-day-selected-background-color: rgb(0, 140, 168);
 /// @group calendar
@@ -342,7 +342,7 @@ $bpk-calendar-day-spacing: .375rem;
 /// @group calendar
 $bpk-calendar-nav-icon-active-fill: rgb(0, 140, 168);
 /// @group calendar
-$bpk-calendar-nav-icon-disabled-fill: rgb(230, 228, 235);
+$bpk-calendar-nav-icon-disabled-fill: rgb(221, 221, 229);
 /// @group calendar
 $bpk-calendar-nav-icon-fill: rgb(0, 178, 214);
 /// @group calendar
@@ -352,7 +352,7 @@ $bpk-calendar-padding: .75rem;
 /// @group cards
 $bpk-card-background-color: rgb(255, 255, 255);
 /// @group cards
-$bpk-card-color: rgb(82, 76, 97);
+$bpk-card-color: rgb(68, 69, 96);
 /// @group cards
 $bpk-card-padding: .75rem;
 /// @group forms
@@ -378,25 +378,25 @@ $bpk-color-blue-800: rgb(0, 117, 140);
 /// @group colors
 $bpk-color-blue-900: rgb(0, 85, 103);
 /// @group colors
-$bpk-color-gray-100: rgb(230, 228, 235);
+$bpk-color-gray-100: rgb(221, 221, 229);
 /// @group colors
-$bpk-color-gray-200: rgb(204, 201, 212);
+$bpk-color-gray-200: rgb(205, 205, 215);
 /// @group colors
-$bpk-color-gray-300: rgb(178, 174, 189);
+$bpk-color-gray-300: rgb(178, 178, 191);
 /// @group colors
-$bpk-color-gray-400: rgb(154, 149, 167);
+$bpk-color-gray-400: rgb(143, 144, 160);
 /// @group colors
-$bpk-color-gray-50: rgb(243, 242, 245);
+$bpk-color-gray-50: rgb(241, 242, 248);
 /// @group colors
-$bpk-color-gray-500: rgb(129, 123, 143);
+$bpk-color-gray-500: rgb(104, 105, 127);
 /// @group colors
 $bpk-color-gray-600: rgb(105, 97, 121);
 /// @group colors
-$bpk-color-gray-700: rgb(82, 76, 97);
+$bpk-color-gray-700: rgb(68, 69, 96);
 /// @group colors
 $bpk-color-gray-800: rgb(59, 52, 75);
 /// @group colors
-$bpk-color-gray-900: rgb(37, 32, 51);
+$bpk-color-gray-900: rgb(17, 18, 54);
 /// @group colors
 $bpk-color-green-100: rgb(203, 245, 226);
 /// @group colors
@@ -468,7 +468,7 @@ $bpk-duration-sm: 200ms;
 /// @group animations
 $bpk-duration-xs: 50ms;
 /// @group text-colors
-$bpk-font-color-base: rgb(82, 76, 97);
+$bpk-font-color-base: rgb(68, 69, 96);
 /// @group typesettings
 $bpk-font-family-base: -apple-system, BlinkMacSystemFont, 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', 'Arial', sans-serif;
 /// @group typesettings
@@ -552,9 +552,9 @@ $bpk-heading-margin-top: 0;
 /// @group horizontal-nav
 $bpk-horizontal-nav-bar-selected-color: rgb(0, 178, 214);
 /// @group horizontal-nav
-$bpk-horizontal-nav-link-active-color: rgb(37, 32, 51);
+$bpk-horizontal-nav-link-active-color: rgb(17, 18, 54);
 /// @group horizontal-nav
-$bpk-horizontal-nav-link-color: rgb(82, 76, 97);
+$bpk-horizontal-nav-link-color: rgb(68, 69, 96);
 /// @group horizontal-nav
 $bpk-horizontal-nav-link-hover-color: rgb(59, 52, 75);
 /// @group horizontal-nav
@@ -566,17 +566,17 @@ $bpk-icon-size-sm: 1.125rem;
 /// @group forms
 $bpk-input-background: #ffffff;
 /// @group forms
-$bpk-input-border: solid .0625rem #B2AEBD;
+$bpk-input-border: solid .0625rem #B2B2BF;
 /// @group forms
 $bpk-input-border-radius: .1875rem;
 /// @group forms
 $bpk-input-border-width: .0625rem;
 /// @group forms
-$bpk-input-color: rgb(82, 76, 97);
+$bpk-input-color: rgb(68, 69, 96);
 /// @group forms
-$bpk-input-disabled-border-color: rgb(243, 242, 245);
+$bpk-input-disabled-border-color: rgb(241, 242, 248);
 /// @group forms
-$bpk-input-disabled-color: rgb(178, 174, 189);
+$bpk-input-disabled-color: rgb(178, 178, 191);
 /// @group forms
 $bpk-input-height: 2.250rem;
 /// @group forms
@@ -586,13 +586,13 @@ $bpk-input-padding-x: .75rem;
 /// @group forms
 $bpk-input-padding-y: .375rem;
 /// @group forms
-$bpk-input-placeholder-color: rgb(129, 123, 143);
+$bpk-input-placeholder-color: rgb(104, 105, 127);
 /// @group forms
 $bpk-input-placeholder-font-style: italic;
 /// @group forms
-$bpk-label-color: rgb(82, 76, 97);
+$bpk-label-color: rgb(68, 69, 96);
 /// @group forms
-$bpk-label-disabled-color: rgb(178, 174, 189);
+$bpk-label-disabled-color: rgb(178, 178, 191);
 /// @group forms
 $bpk-label-font-size: .75rem;
 /// @group forms
@@ -608,9 +608,9 @@ $bpk-line-height-xl: 2.625rem;
 /// @group typesettings
 $bpk-line-height-xxl: 3.375rem;
 /// @group text-colors
-$bpk-link-active-color: rgb(37, 32, 51);
+$bpk-link-active-color: rgb(17, 18, 54);
 /// @group text-colors
-$bpk-link-alternate-active-color: rgb(230, 228, 235);
+$bpk-link-alternate-active-color: rgb(221, 221, 229);
 /// @group text-colors
 $bpk-link-alternate-color: rgb(255, 255, 255);
 /// @group text-colors
@@ -620,7 +620,7 @@ $bpk-link-alternate-visited-color: rgb(255, 255, 255);
 /// @group text-colors
 $bpk-link-color: rgb(0, 178, 214);
 /// @group text-colors
-$bpk-link-hover-color: rgb(82, 76, 97);
+$bpk-link-hover-color: rgb(68, 69, 96);
 /// @group text-decorations
 $bpk-link-hover-text-decoration: underline;
 /// @group text-decorations
@@ -628,7 +628,7 @@ $bpk-link-text-decoration: none;
 /// @group text-colors
 $bpk-link-visited-color: rgb(0, 140, 168);
 /// @group text-colors
-$bpk-link-white-active-color: rgb(230, 228, 235);
+$bpk-link-white-active-color: rgb(221, 221, 229);
 /// @group text-colors
 $bpk-link-white-color: rgb(255, 255, 255);
 /// @group text-colors
@@ -650,9 +650,9 @@ $bpk-list-nested-margin-top: 0;
 /// @group modals
 $bpk-modal-background-color: rgb(255, 255, 255);
 /// @group modals
-$bpk-modal-close-icon-fill: rgb(129, 123, 143);
+$bpk-modal-close-icon-fill: rgb(104, 105, 127);
 /// @group modals
-$bpk-modal-close-icon-hover-fill: rgb(82, 76, 97);
+$bpk-modal-close-icon-hover-fill: rgb(68, 69, 96);
 /// @group modals
 $bpk-modal-content-padding: .75rem;
 /// @group modals
@@ -664,7 +664,7 @@ $bpk-modal-max-width: 32.25rem;
 /// @group modals
 $bpk-modal-opacity: 1;
 /// @group modals
-$bpk-modal-scrim-background-color: rgb(178, 174, 189);
+$bpk-modal-scrim-background-color: rgb(178, 178, 191);
 /// @group modals
 $bpk-modal-scrim-initial-opacity: 0;
 /// @group modals
@@ -678,7 +678,7 @@ $bpk-one-pixel-rem: .0625rem;
 /// @group panels
 $bpk-panel-background-color: rgb(255, 255, 255);
 /// @group panels
-$bpk-panel-border-color: rgb(230, 228, 235);
+$bpk-panel-border-color: rgb(221, 221, 229);
 /// @group panels
 $bpk-panel-padding: .75rem;
 /// @group colors
@@ -692,9 +692,9 @@ $bpk-radio-checked-circle-color: rgb(0, 140, 168);
 /// @group forms
 $bpk-required-color: rgb(255, 84, 82);
 /// @group scrims
-$bpk-scrim-background-color: rgb(178, 174, 189);
+$bpk-scrim-background-color: rgb(178, 178, 191);
 /// @group scrims
-$bpk-scrim-dark-background-color: rgb(37, 32, 51);
+$bpk-scrim-dark-background-color: rgb(17, 18, 54);
 /// @group scrims
 $bpk-scrim-dark-opacity: .95;
 /// @group scrims
@@ -704,17 +704,17 @@ $bpk-scrim-mobile-opacity: 1;
 /// @group scrims
 $bpk-scrim-opacity: .7;
 /// @group forms
-$bpk-select-border: solid .0625rem #B2AEBD;
+$bpk-select-border: solid .0625rem #B2B2BF;
 /// @group forms
 $bpk-select-border-radius: .1875rem;
 /// @group forms
 $bpk-select-border-width: .0625rem;
 /// @group forms
-$bpk-select-color: rgb(82, 76, 97);
+$bpk-select-color: rgb(68, 69, 96);
 /// @group forms
-$bpk-select-disabled-border-color: rgb(243, 242, 245);
+$bpk-select-disabled-border-color: rgb(241, 242, 248);
 /// @group forms
-$bpk-select-disabled-color: rgb(178, 174, 189);
+$bpk-select-disabled-color: rgb(178, 178, 191);
 /// @group forms
 $bpk-select-height: 2.250rem;
 /// @group forms
