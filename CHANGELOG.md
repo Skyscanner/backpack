@@ -2,6 +2,17 @@
 
 [Unreleased changes](./UNRELEASED.yaml).
 
+# 2019-08-12 - Added vertical swap icon
+
+**Breaking:**
+
+ - bpk-component-icon: 3.31.8 => 4.0.0
+ - bpk-mixins: 17.24.8 => 18.0.0
+ - bpk-svgs: 6.9.6 => 7.0.0
+   - `swap` icon renamed `swap--horizontal`.
+   - New `swap--vertical` icon.
+
+
 # 2019-08-08 - New `borderRadiusStyle` prop for `BpkImage`
 
 **Added:**
@@ -51,7 +62,7 @@
 # 2019-07-24 - Ability to change nudger button type.
 
 **Added:**
- - bpk-component-nudger: 1.0.145 => 1.1.0 
+ - bpk-component-nudger: 1.0.145 => 1.1.0
     - New `buttonType` prop for changing the button type used in the nudger.
 
 # 2019-07-23 - New trips icon
