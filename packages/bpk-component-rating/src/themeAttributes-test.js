@@ -15,10 +15,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* @flow strict */
 
-import BpkRating from './src/BpkRating';
-import themeAttributes from './src/themeAttributes';
+import { themeAttributes } from '../index';
 
-export default BpkRating;
-export { themeAttributes };
+describe('rating component themeAttributes', () => {
+  it('exports the expected attributes', () => {
+    expect(themeAttributes).toEqual([
+      'ratingHighColor',
+      'ratingMediumColor',
+      'ratingLowColor',
+    ]);
+  });
+});

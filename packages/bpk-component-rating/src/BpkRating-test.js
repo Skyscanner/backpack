@@ -20,7 +20,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 
-import BpkRating from './BpkRating';
+import BpkRating from '../index';
 
 describe('BpkRating', () => {
   it('should render correctly', () => {

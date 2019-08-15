@@ -36,14 +36,14 @@
   }
 
   &--high-rating {
-    @include bpk-themeable-property( background-color, --bpk-rating-high, $bpk-color-green-600 );
+    @include bpk-themeable-property( background-color, --bpk-rating-high-color, $bpk-color-green-600 );
   }
 
   &--medium-rating {
-    @include bpk-themeable-property( background-color, --bpk-rating-medium, $bpk-color-yellow-600 );
+    @include bpk-themeable-property( background-color, --bpk-rating-medium-color, $bpk-color-yellow-600 );
   }
 
   &--low-rating {
-    @include bpk-themeable-property( background-color, --bpk-rating-low, $bpk-color-red-600 );
+    @include bpk-themeable-property( background-color, --bpk-rating-low-color, $bpk-color-red-600 );
   }
 }

@@ -15,10 +15,5 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* @flow strict */
 
-import BpkRating from './src/BpkRating';
-import themeAttributes from './src/themeAttributes';
-
-export default BpkRating;
-export { themeAttributes };
+export default ['ratingHighColor', 'ratingMediumColor', 'ratingLowColor'];
