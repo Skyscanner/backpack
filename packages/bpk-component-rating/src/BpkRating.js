@@ -56,18 +56,20 @@ const BpkRating = (props: Props) => {
       <div className={classNames} aria-label={ariaLabel}>
         <BpkText
           textStyle="base"
-          tagName="p"
+          tagName="span"
           className={scoreStyles.join(' ')}
           aria-hidden="true"
         >
           <strong>{value}</strong>
         </BpkText>
-        <BpkText textStyle="base" tagName="p" aria-hidden="true">
-          <strong>{title}</strong>
-        </BpkText>
-        <BpkText textStyle="xs" tagName="p" aria-hidden="true">
-          {subtitle}
-        </BpkText>
+        <div className={getClassName('bpk-rating--text')}>
+          <BpkText textStyle="base" tagName="p" aria-hidden="true">
+            <strong>{title}</strong>
+          </BpkText>
+          <BpkText textStyle="xs" tagName="p" aria-hidden="true">
+            {subtitle}
+          </BpkText>
+        </div>
       </div>
     </div>
   );

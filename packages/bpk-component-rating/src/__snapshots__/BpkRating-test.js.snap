@@ -3,49 +3,35 @@
 exports[`BpkRating should render correctly 1`] = `
 <div>
   <div
+    aria-label="6.7 Average might recommend"
     className="bpk-rating"
   >
-    <p
+    <span
       aria-hidden="true"
-      className="bpk-text bpk-text--base bpk-rating--base-rating bpk-rating--low-rating"
+      className="bpk-text bpk-text--base bpk-rating--base-rating bpk-rating--medium-rating"
     >
-      <strong />
-    </p>
-    <p
-      aria-hidden="true"
-      className="bpk-text bpk-text--base"
+      <strong>
+        6.7
+      </strong>
+    </span>
+    <div
+      className="bpk-rating--text"
     >
-      <strong />
-    </p>
-    <p
-      aria-hidden="true"
-      className="bpk-text bpk-text--xs"
-    />
-  </div>
-</div>
-`;
-
-exports[`BpkRating should support arbitrary props 1`] = `
-<div>
-  <div
-    className="bpk-rating"
-  >
-    <p
-      aria-hidden="true"
-      className="bpk-text bpk-text--base bpk-rating--base-rating bpk-rating--low-rating"
-    >
-      <strong />
-    </p>
-    <p
-      aria-hidden="true"
-      className="bpk-text bpk-text--base"
-    >
-      <strong />
-    </p>
-    <p
-      aria-hidden="true"
-      className="bpk-text bpk-text--xs"
-    />
+      <p
+        aria-hidden="true"
+        className="bpk-text bpk-text--base"
+      >
+        <strong>
+          Average
+        </strong>
+      </p>
+      <p
+        aria-hidden="true"
+        className="bpk-text bpk-text--xs"
+      >
+        Might recommend
+      </p>
+    </div>
   </div>
 </div>
 `;
@@ -53,24 +39,35 @@ exports[`BpkRating should support arbitrary props 1`] = `
 exports[`BpkRating should support custom class names 1`] = `
 <div>
   <div
+    aria-label="6.7 Average might recommend"
     className="bpk-rating custom-classname"
   >
-    <p
+    <span
       aria-hidden="true"
-      className="bpk-text bpk-text--base bpk-rating--base-rating bpk-rating--low-rating"
+      className="bpk-text bpk-text--base bpk-rating--base-rating bpk-rating--medium-rating"
     >
-      <strong />
-    </p>
-    <p
-      aria-hidden="true"
-      className="bpk-text bpk-text--base"
+      <strong>
+        6.7
+      </strong>
+    </span>
+    <div
+      className="bpk-rating--text"
     >
-      <strong />
-    </p>
-    <p
-      aria-hidden="true"
-      className="bpk-text bpk-text--xs"
-    />
+      <p
+        aria-hidden="true"
+        className="bpk-text bpk-text--base"
+      >
+        <strong>
+          Average
+        </strong>
+      </p>
+      <p
+        aria-hidden="true"
+        className="bpk-text bpk-text--xs"
+      >
+        Might recommend
+      </p>
+    </div>
   </div>
 </div>
 `;

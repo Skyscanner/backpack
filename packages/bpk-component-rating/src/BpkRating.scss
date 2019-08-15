@@ -19,22 +19,20 @@
 @import '~bpk-mixins';
 
 .bpk-rating {
-  display: grid;
-  grid-template-rows: auto;
-  grid-template-columns: max-content auto;
-  grid-auto-flow: column;
-  grid-column-gap: $bpk-spacing-sm;
+  display: flex;
 
   &--base-rating {
     width: $bpk-spacing-sm * 4;
     height: $bpk-spacing-sm * 4;
     padding: $bpk-spacing-sm;
-    grid-column: 1;
-    grid-row: 1 / 3;
     border-radius: $bpk-text-xl-line-height; // Create a border-radius of this size
     color: $bpk-color-white;
     text-align: center;
     vertical-align: middle;
+  }
+
+  &--text {
+    padding-left: $bpk-spacing-sm;
   }
 
   &--high-rating {
