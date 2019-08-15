@@ -1,26 +1,76 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`BpkRating should render correctly 1`] = `
-<div
-  className="bpk-rating"
->
-  I am an example component.
+<div>
+  <div
+    className="bpk-rating"
+  >
+    <p
+      aria-hidden="true"
+      className="bpk-text bpk-text--base bpk-rating--base-rating bpk-rating--low-rating"
+    >
+      <strong />
+    </p>
+    <p
+      aria-hidden="true"
+      className="bpk-text bpk-text--base"
+    >
+      <strong />
+    </p>
+    <p
+      aria-hidden="true"
+      className="bpk-text bpk-text--xs"
+    />
+  </div>
 </div>
 `;
 
 exports[`BpkRating should support arbitrary props 1`] = `
-<div
-  className="bpk-rating"
-  testID="123"
->
-  I am an example component.
+<div>
+  <div
+    className="bpk-rating"
+  >
+    <p
+      aria-hidden="true"
+      className="bpk-text bpk-text--base bpk-rating--base-rating bpk-rating--low-rating"
+    >
+      <strong />
+    </p>
+    <p
+      aria-hidden="true"
+      className="bpk-text bpk-text--base"
+    >
+      <strong />
+    </p>
+    <p
+      aria-hidden="true"
+      className="bpk-text bpk-text--xs"
+    />
+  </div>
 </div>
 `;
 
 exports[`BpkRating should support custom class names 1`] = `
-<div
-  className="bpk-rating custom-classname"
->
-  I am an example component.
+<div>
+  <div
+    className="bpk-rating custom-classname"
+  >
+    <p
+      aria-hidden="true"
+      className="bpk-text bpk-text--base bpk-rating--base-rating bpk-rating--low-rating"
+    >
+      <strong />
+    </p>
+    <p
+      aria-hidden="true"
+      className="bpk-text bpk-text--base"
+    >
+      <strong />
+    </p>
+    <p
+      aria-hidden="true"
+      className="bpk-text bpk-text--xs"
+    />
+  </div>
 </div>
 `;
