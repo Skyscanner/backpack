@@ -2668,6 +2668,13 @@
       "originalValue": "{!BLUE_700}",
       "name": "RADIO_CHECKED_CIRCLE_COLOR"
     },
+    "RATINGS_BASE_BORDER_RADIUS": {
+      "category": "ratings",
+      "value": "2.625rem",
+      "type": "size",
+      "originalValue": "2.625rem",
+      "name": "RATINGS_BASE_BORDER_RADIUS"
+    },
     "REQUIRED_COLOR": {
       "category": "forms",
       "value": "rgb(255, 84, 82)",
@@ -3427,6 +3434,7 @@
     "P_MARGIN_BOTTOM",
     "P_MARGIN_TOP",
     "RADIO_CHECKED_CIRCLE_COLOR",
+    "RATINGS_BASE_BORDER_RADIUS",
     "REQUIRED_COLOR",
     "SCRIM_BACKGROUND_COLOR",
     "SCRIM_DARK_BACKGROUND_COLOR",

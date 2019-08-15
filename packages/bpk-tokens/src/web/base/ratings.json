@@ -1,0 +1,14 @@
+{
+  "imports": [
+    "./aliases.json"
+  ],
+  "global": {
+    "category": "ratings"
+  },
+  "props": {
+    "RATINGS_BASE_BORDER_RADIUS": {
+      "value": "2.625rem",
+      "type": "size"
+    }
+  }
+}

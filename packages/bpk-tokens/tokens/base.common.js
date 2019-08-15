@@ -355,6 +355,7 @@ module.exports = {
   pMarginBottom: ".75rem",
   pMarginTop: "0",
   radioCheckedCircleColor: "rgb(0, 140, 168)",
+  ratingsBaseBorderRadius: "2.625rem",
   requiredColor: "rgb(255, 84, 82)",
   scrimBackgroundColor: "rgb(178, 174, 189)",
   scrimDarkBackgroundColor: "rgb(37, 32, 51)",
