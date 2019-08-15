@@ -101,6 +101,7 @@ configure(() => {
   require('./../packages/bpk-component-popover/stories');
   require('./../packages/bpk-component-progress/stories');
   require('./../packages/bpk-component-radio/stories');
+  require('./../packages/bpk-component-rating/stories');
   require('./../packages/bpk-component-router-link/stories');
   require('./../packages/bpk-component-rtl-toggle/stories');
   require('./../packages/bpk-component-scrollable-calendar/stories');

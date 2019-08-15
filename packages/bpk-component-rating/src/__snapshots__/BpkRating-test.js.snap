@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BpkRating should render correctly 1`] = `
+<div
+  className="bpk-rating"
+>
+  I am an example component.
+</div>
+`;
+
+exports[`BpkRating should support arbitrary props 1`] = `
+<div
+  className="bpk-rating"
+  testID="123"
+>
+  I am an example component.
+</div>
+`;
+
+exports[`BpkRating should support custom class names 1`] = `
+<div
+  className="bpk-rating custom-classname"
+>
+  I am an example component.
+</div>
+`;
