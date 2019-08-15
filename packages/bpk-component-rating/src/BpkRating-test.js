@@ -24,19 +24,31 @@ import BpkRating from './BpkRating';
 
 describe('BpkRating', () => {
   it('should render correctly', () => {
-    const tree = renderer.create(<BpkRating />).toJSON();
+    const tree = renderer
+      .create(
+        <BpkRating
+          ariaLabel="6.7 Average might recommend"
+          title="Average"
+          subtitle="Might recommend"
+          value={6.7}
+        />,
+      )
+      .toJSON();
     expect(tree).toMatchSnapshot();
   });
 
   it('should support custom class names', () => {
     const tree = renderer
-      .create(<BpkRating className="custom-classname" />)
+      .create(
+        <BpkRating
+          ariaLabel="6.7 Average might recommend"
+          title="Average"
+          subtitle="Might recommend"
+          value={6.7}
+          className="custom-classname"
+        />,
+      )
       .toJSON();
-    expect(tree).toMatchSnapshot();
-  });
-
-  it('should support arbitrary props', () => {
-    const tree = renderer.create(<BpkRating testID="123" />).toJSON();
     expect(tree).toMatchSnapshot();
   });
 });
