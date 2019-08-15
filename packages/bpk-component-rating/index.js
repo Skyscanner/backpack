@@ -18,7 +18,5 @@
 /* @flow strict */
 
 import BpkRating from './src/BpkRating';
-import BpkRatingSizes from './src/BpkRatingSizes';
 
 export default BpkRating;
-export { BpkRatingSizes };
