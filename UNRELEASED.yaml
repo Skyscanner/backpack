@@ -24,9 +24,3 @@
 #   FIXED:
 #     - bpk-component-horcrux:
 #       - Fixed issue where `BpkHorcrux` would occasionally possess the living.
-
-CHANGED:
-  - bpk-tokens:
-    - Updated gray colours `gray50`, `gray100`, `gray200`, `gray300`, `gray400`, `gray500`, `gray700`, `gray900`
-    - Deprecated `gray600` and `gray800` please update as these will be removed in the future. 
-      - For these tokens please use either one token above or below your current value to suit your needs.
