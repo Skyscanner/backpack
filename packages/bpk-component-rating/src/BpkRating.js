@@ -45,11 +45,7 @@ const BpkRating = (props: Props) => {
   const classNames = getClassName('bpk-rating', className);
   // const scoreStyles = [getClassName(`bpk-rating--${size}-rating`)]; TODO: make use of this when we add sizes
   const scoreStyles = [getClassName('bpk-rating--base-rating')];
-  let adjustedValue = Number(value).toFixed(1);
-
-  if (adjustedValue > MAX_VALUE || adjustedValue < MIN_VALUE) {
-    adjustedValue = clamp(adjustedValue, MIN_VALUE, MAX_VALUE);
-  }
+  let adjustedValue = value;
 
   if (adjustedValue >= HIGH_RATING_THRESHOLD) {
     scoreStyles.push(getClassName('bpk-rating--high-rating'));
@@ -57,6 +53,12 @@ const BpkRating = (props: Props) => {
     scoreStyles.push(getClassName('bpk-rating--medium-rating'));
   } else {
     scoreStyles.push(getClassName('bpk-rating--low-rating'));
+  }
+
+  if (adjustedValue > MAX_VALUE || adjustedValue < MIN_VALUE) {
+    adjustedValue = clamp(adjustedValue, MIN_VALUE, MAX_VALUE);
+  } else {
+    adjustedValue = value.toFixed(1);
   }
 
   return (

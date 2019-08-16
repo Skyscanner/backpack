@@ -11,7 +11,7 @@
       "type": "color"
     },
     "CARD_COLOR": {
-      "value": "{!GRAY_700}",
+      "value": "{!GRAY_900}",
       "type": "color"
     },
     "CARD_PADDING": {

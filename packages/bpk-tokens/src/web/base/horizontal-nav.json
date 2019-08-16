@@ -8,7 +8,7 @@
   },
   "props": {
     "HORIZONTAL_NAV_LINK_COLOR": {
-      "value": "{!GRAY_700}"
+      "value": "{!GRAY_900}"
     },
     "HORIZONTAL_NAV_LINK_HOVER_COLOR": {
       "value": "{!GRAY_800}"
