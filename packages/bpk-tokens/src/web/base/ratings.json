@@ -6,8 +6,12 @@
     "category": "ratings"
   },
   "props": {
-    "RATINGS_BASE_BORDER_RADIUS": {
-      "value": "2.625rem",
+    "RATING_BASE_WIDTH" : {
+      "value": "{!SPACING_SM} * 4",
+      "type": "size"
+    },
+    "RATING_BASE_HEIGHT" : {
+      "value": "{!SPACING_SM} * 4",
       "type": "size"
     }
   }

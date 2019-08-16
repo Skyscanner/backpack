@@ -22,28 +22,31 @@
   display: flex;
 
   &--base-rating {
-    width: $bpk-spacing-sm * 4;
-    height: $bpk-spacing-sm * 4;
+    width: $bpk-rating-base-width;
+    height: $bpk-rating-base-height;
     padding: $bpk-spacing-sm;
-    border-radius: $bpk-ratings-base-border-radius;
+    border-radius: 50%;
     color: $bpk-color-white;
     text-align: center;
     vertical-align: middle;
   }
 
-  &--text {
+  &__text {
+    display: flex;
     padding-left: $bpk-spacing-sm;
+    flex-direction: column;
+    text-align: left;
   }
 
   &--high-rating {
-    @include bpk-themeable-property( background-color, --bpk-rating-high-color, $bpk-color-green-600 );
+    @include bpk-themeable-property(background-color, --bpk-rating-high-color, $bpk-color-green-600);
   }
 
   &--medium-rating {
-    @include bpk-themeable-property( background-color, --bpk-rating-medium-color, $bpk-color-yellow-600 );
+    @include bpk-themeable-property(background-color, --bpk-rating-medium-color, $bpk-color-yellow-600);
   }
 
   &--low-rating {
-    @include bpk-themeable-property( background-color, --bpk-rating-low-color, $bpk-color-red-600 );
+    @include bpk-themeable-property(background-color, --bpk-rating-low-color, $bpk-color-red-600);
   }
 }

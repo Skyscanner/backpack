@@ -38,7 +38,7 @@ export type Props = {
   className: ?string,
 };
 const BpkRating = (props: Props) => {
-  const { ariaLabel, title, subtitle, value, className } = props;
+  const { ariaLabel, title, subtitle, value, className, ...rest } = props;
   const classNames = getClassName('bpk-rating', className);
   // const scoreStyles = [getClassName(`bpk-rating--${size}-rating`)]; TODO: make use of this when we add sizes
   const scoreStyles = [getClassName('bpk-rating--base-rating')];
@@ -52,24 +52,22 @@ const BpkRating = (props: Props) => {
   }
 
   return (
-    <div>
-      <div className={classNames} aria-label={ariaLabel}>
-        <BpkText
-          textStyle="base"
-          tagName="span"
-          className={scoreStyles.join(' ')}
-          aria-hidden="true"
-        >
-          <strong>{value}</strong>
+    <div className={classNames} aria-label={ariaLabel} {...rest}>
+      <BpkText
+        textStyle="base"
+        tagName="span"
+        className={scoreStyles.join(' ')}
+        aria-hidden="true"
+      >
+        <strong>{value}</strong>
+      </BpkText>
+      <div className={getClassName('bpk-rating__text')}>
+        <BpkText textStyle="base" tagName="span" aria-hidden="true">
+          <strong>{title}</strong>
         </BpkText>
-        <div className={getClassName('bpk-rating--text')}>
-          <BpkText textStyle="base" tagName="p" aria-hidden="true">
-            <strong>{title}</strong>
-          </BpkText>
-          <BpkText textStyle="xs" tagName="p" aria-hidden="true">
-            {subtitle}
-          </BpkText>
-        </div>
+        <BpkText textStyle="xs" tagName="span" aria-hidden="true">
+          {subtitle}
+        </BpkText>
       </div>
     </div>
   );

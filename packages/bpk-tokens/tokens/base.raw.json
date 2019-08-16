@@ -2668,12 +2668,19 @@
       "originalValue": "{!BLUE_700}",
       "name": "RADIO_CHECKED_CIRCLE_COLOR"
     },
-    "RATINGS_BASE_BORDER_RADIUS": {
+    "RATING_BASE_HEIGHT": {
       "category": "ratings",
-      "value": "2.625rem",
+      "value": ".75rem * 4",
       "type": "size",
-      "originalValue": "2.625rem",
-      "name": "RATINGS_BASE_BORDER_RADIUS"
+      "originalValue": "{!SPACING_SM} * 4",
+      "name": "RATING_BASE_HEIGHT"
+    },
+    "RATING_BASE_WIDTH": {
+      "category": "ratings",
+      "value": ".75rem * 4",
+      "type": "size",
+      "originalValue": "{!SPACING_SM} * 4",
+      "name": "RATING_BASE_WIDTH"
     },
     "REQUIRED_COLOR": {
       "category": "forms",
@@ -3434,7 +3441,8 @@
     "P_MARGIN_BOTTOM",
     "P_MARGIN_TOP",
     "RADIO_CHECKED_CIRCLE_COLOR",
-    "RATINGS_BASE_BORDER_RADIUS",
+    "RATING_BASE_HEIGHT",
+    "RATING_BASE_WIDTH",
     "REQUIRED_COLOR",
     "SCRIM_BACKGROUND_COLOR",
     "SCRIM_DARK_BACKGROUND_COLOR",

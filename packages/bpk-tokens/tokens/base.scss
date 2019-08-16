@@ -690,7 +690,9 @@ $bpk-p-margin-top: 0;
 /// @group forms
 $bpk-radio-checked-circle-color: rgb(0, 140, 168);
 /// @group ratings
-$bpk-ratings-base-border-radius: 2.625rem;
+$bpk-rating-base-height: .75rem * 4;
+/// @group ratings
+$bpk-rating-base-width: .75rem * 4;
 /// @group forms
 $bpk-required-color: rgb(255, 84, 82);
 /// @group scrims
