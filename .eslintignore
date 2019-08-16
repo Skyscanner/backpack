@@ -1,6 +1,8 @@
 node_modules
 flow-typed
 dist
+dist-sassdoc
+dist-storybook
 coverage
 /packages/bpk-stylesheets/base.js
 /packages/bpk-component-icon/*/
