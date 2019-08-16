@@ -2,6 +2,16 @@
 
 [Unreleased changes](./UNRELEASED.yaml).
 
+# 2019-08-16 - Updated `gray` colours
+
+**Changed**:
+  - bpk-stylesheets: 3.2.188 => 3.3.0
+  - bpk-svgs: 7.0.0 => 7.1.0
+  - bpk-tokens: 27.6.6 => 27.7.0
+    - Updated gray colours `gray50`, `gray100`, `gray200`, `gray300`, `gray400`, `gray500`, `gray700`, `gray900`
+    - Deprecated `gray600` and `gray800` please update as these will be removed in the future. 
+      - For these tokens please use either one token above or below your current value to suit your needs.
+
 # 2019-08-12 - Added vertical swap icon
 
 **Breaking:**
