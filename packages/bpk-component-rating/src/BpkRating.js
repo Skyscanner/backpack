@@ -19,6 +19,7 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
+import clamp from 'lodash.clamp';
 import { cssModules } from 'bpk-react-utils';
 import BpkText from 'bpk-component-text';
 
@@ -28,6 +29,8 @@ import STYLES from './BpkRating.scss';
 const getClassName = cssModules(STYLES);
 const MEDIUM_RATING_THRESHOLD = 6;
 const HIGH_RATING_THRESHOLD = 8;
+const MAX_VALUE = 10;
+const MIN_VALUE = 0;
 
 export type Props = {
   ariaLabel: string,
@@ -42,10 +45,15 @@ const BpkRating = (props: Props) => {
   const classNames = getClassName('bpk-rating', className);
   // const scoreStyles = [getClassName(`bpk-rating--${size}-rating`)]; TODO: make use of this when we add sizes
   const scoreStyles = [getClassName('bpk-rating--base-rating')];
+  let adjustedValue = Number(value).toFixed(1);
 
-  if (value >= HIGH_RATING_THRESHOLD) {
+  if (adjustedValue > MAX_VALUE || adjustedValue < MIN_VALUE) {
+    adjustedValue = clamp(adjustedValue, MIN_VALUE, MAX_VALUE);
+  }
+
+  if (adjustedValue >= HIGH_RATING_THRESHOLD) {
     scoreStyles.push(getClassName('bpk-rating--high-rating'));
-  } else if (value >= MEDIUM_RATING_THRESHOLD) {
+  } else if (adjustedValue >= MEDIUM_RATING_THRESHOLD) {
     scoreStyles.push(getClassName('bpk-rating--medium-rating'));
   } else {
     scoreStyles.push(getClassName('bpk-rating--low-rating'));
@@ -59,7 +67,7 @@ const BpkRating = (props: Props) => {
         className={scoreStyles.join(' ')}
         aria-hidden="true"
       >
-        <strong>{value}</strong>
+        <strong>{adjustedValue}</strong>
       </BpkText>
       <div className={getClassName('bpk-rating__text')}>
         <BpkText textStyle="base" tagName="span" aria-hidden="true">

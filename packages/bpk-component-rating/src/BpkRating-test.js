@@ -51,4 +51,49 @@ describe('BpkRating', () => {
       .toJSON();
     expect(tree).toMatchSnapshot();
   });
+
+  it('should render with 0 if value is below 0', () => {
+    const tree = renderer
+      .create(
+        <BpkRating
+          ariaLabel="-1.3 Low bad option"
+          title="Low"
+          subtitle="Bad option"
+          value={-1.3}
+          className="custom-classname"
+        />,
+      )
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('should render with 10 if value is below 15', () => {
+    const tree = renderer
+      .create(
+        <BpkRating
+          ariaLabel="15 Amazing brilliant"
+          title="Amazing"
+          subtitle="Brilliant"
+          value={15}
+          className="custom-classname"
+        />,
+      )
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('should render with 9.0 if value is below 9', () => {
+    const tree = renderer
+      .create(
+        <BpkRating
+          ariaLabel="9 Amazing brilliant"
+          title="Amazing"
+          subtitle="Brilliant"
+          value={9}
+          className="custom-classname"
+        />,
+      )
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 });
