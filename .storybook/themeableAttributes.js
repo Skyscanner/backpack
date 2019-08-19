@@ -47,6 +47,7 @@ import { themeAttributes as paginationThemeAttributes } from '../packages/bpk-co
 import { themeAttributes as popoverThemeAttributes } from '../packages/bpk-component-popover';
 import { themeAttributes as progressThemeAttributes } from '../packages/bpk-component-progress';
 import { themeAttributes as radioThemeAttributes } from '../packages/bpk-component-radio';
+import { themeAttributes as ratingThemeAttributes } from '../packages/bpk-component-rating';
 import { themeAttributes as sliderThemeAttributes } from '../packages/bpk-component-slider';
 import { themeAttributes as spinnerThemeAttributes } from '../packages/bpk-component-spinner';
 import { themeAttributes as navigationBarThemeAttributes } from '../packages/bpk-component-navigation-bar';
@@ -84,6 +85,7 @@ export default [
   ...popoverThemeAttributes,
   ...progressThemeAttributes,
   ...radioThemeAttributes,
+  ...ratingThemeAttributes,
   ...sliderThemeAttributes,
   ...spinnerThemeAttributes,
   ...navigationBarThemeAttributes,

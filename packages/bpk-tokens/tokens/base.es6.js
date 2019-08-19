@@ -353,6 +353,8 @@ export const primaryGradient = "linear-gradient(135deg, #00b2d6 0%, #02DDD8 100%
 export const pMarginBottom = ".75rem";
 export const pMarginTop = "0";
 export const radioCheckedCircleColor = "rgb(0, 140, 168)";
+export const ratingBaseHeight = ".75rem * 4";
+export const ratingBaseWidth = ".75rem * 4";
 export const requiredColor = "rgb(255, 84, 82)";
 export const scrimBackgroundColor = "rgb(178, 178, 191)";
 export const scrimDarkBackgroundColor = "rgb(17, 18, 54)";
@@ -791,6 +793,10 @@ borderRadiusPill,
 borderRadiusPillLg,
 borderRadiusSm,
 borderRadiusXs,
+};
+export const ratings = {
+ratingBaseHeight,
+ratingBaseWidth,
 };
 export const scrims = {
 scrimBackgroundColor,

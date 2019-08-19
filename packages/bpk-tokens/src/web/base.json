@@ -18,6 +18,7 @@
     "./base/scrims.json",
     "./base/notifications.json",
     "./base/panels.json",
+    "./base/ratings.json",
     "./base/spacing.json",
     "./base/states.json",
     "./base/typography.json",

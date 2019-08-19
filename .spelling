@@ -73,6 +73,8 @@ BpkPhoneNumberInput
 BpkPicker
 BpkPickerItem
 
+BpkRating
+
 BpkScrollableCalendarDate
 BpkScrollableCalendarGrid
 
@@ -593,6 +595,7 @@ bpk-component-phone-input
 bpk-component-popover
 bpk-component-progress
 bpk-component-radio
+bpk-component-rating
 bpk-component-router-link
 bpk-component-rtl-toggle
 bpk-component-scrollable-calendar

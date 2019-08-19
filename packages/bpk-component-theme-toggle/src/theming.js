@@ -151,6 +151,10 @@ const generateTheme = ({
   checkboxCheckedColor: primaryColor700,
   radioCheckedColor: primaryColor700,
 
+  ratingHighColor: primaryColor500,
+  ratingMediumColor: secondaryColor500,
+  ratingLowColor: gray500,
+
   mapMarkerPrimaryBackgroundColor: primaryColor700,
   mapMarkerSecondaryBackgroundColor: secondaryColor700,
 
