@@ -1,6 +1,5 @@
 {
   "name": "bpk-component-rating",
-  "private": true,
   "version": "0.0.1",
   "description": "Backpack rating component.",
   "main": "index.js",
