@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "bpk-component-tile",
-  "version": "0.0.146",
+  "version": "0.0.147",
   "description": "Backpack card component.",
   "main": "index.js",
   "repository": {
@@ -14,8 +14,8 @@
     "react": "^15.0.0 || ^16.0.0"
   },
   "dependencies": {
-    "bpk-component-icon": "^4.0.1",
-    "bpk-mixins": "^18.0.1",
+    "bpk-component-icon": "^4.0.2",
+    "bpk-mixins": "^18.0.2",
     "prop-types": "^15.6.2"
   },
   "devDependencies": {
