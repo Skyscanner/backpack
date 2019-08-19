@@ -55,7 +55,7 @@ const BpkRating = (props: Props) => {
     scoreStyles.push(getClassName('bpk-rating--low-rating'));
   }
 
-  if (adjustedValue > MAX_VALUE || adjustedValue < MIN_VALUE) {
+  if (adjustedValue >= MAX_VALUE || adjustedValue <= MIN_VALUE) {
     adjustedValue = clamp(adjustedValue, MIN_VALUE, MAX_VALUE);
   } else {
     adjustedValue = value.toFixed(1);

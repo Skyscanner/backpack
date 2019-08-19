@@ -52,7 +52,49 @@ describe('BpkRating', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  it('should render with 0 if value is below 0', () => {
+  it('should render a low score rating component', () => {
+    const tree = renderer
+      .create(
+        <BpkRating
+          ariaLabel="1.3 Low bad option"
+          title="Low"
+          subtitle="Bad option"
+          value={1.3}
+        />,
+      )
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('should render a medium score rating component', () => {
+    const tree = renderer
+      .create(
+        <BpkRating
+          ariaLabel="7 Average it's ok at best"
+          title="Average"
+          subtitle="It's ok at best"
+          value={7}
+        />,
+      )
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('should render a high score rating component', () => {
+    const tree = renderer
+      .create(
+        <BpkRating
+          ariaLabel="9 Amazing best thing since sliced bread"
+          title="Amazing"
+          subtitle="Best thing since sliced bread"
+          value={9}
+        />,
+      )
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('should correctly handling values lower than 0', () => {
     const tree = renderer
       .create(
         <BpkRating
@@ -67,7 +109,7 @@ describe('BpkRating', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  it('should render with 10 if value is below 15', () => {
+  it('should correctly handling values higher than 10', () => {
     const tree = renderer
       .create(
         <BpkRating
@@ -75,21 +117,6 @@ describe('BpkRating', () => {
           title="Amazing"
           subtitle="Brilliant"
           value={15}
-          className="custom-classname"
-        />,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
-  });
-
-  it('should render with 9.0 if value is below 9', () => {
-    const tree = renderer
-      .create(
-        <BpkRating
-          ariaLabel="9 Amazing brilliant"
-          title="Amazing"
-          subtitle="Brilliant"
-          value={9}
           className="custom-classname"
         />,
       )
