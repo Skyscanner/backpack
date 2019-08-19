@@ -2,6 +2,16 @@
 
 [Unreleased changes](./UNRELEASED.yaml).
 
+# 2019-08-19 - Rating component added.
+
+**Added:**
+  - bpk-component-rating: 1.0.0
+    - Introducing the rating component.
+  - bpk-tokens: 27.7.0 => 27.8.0
+    - Tokens for supporting rating component.
+  - bpk-component-theme-toggle: 1.0.123 => 1.1.0
+    - Theme attributes to support rating component.
+
 # 2019-08-16 - Updated `gray` colours
 
 **Changed**:
