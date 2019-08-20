@@ -33,3 +33,9 @@ export default () => (
 | subtitle  | string   | true     | -             |
 | value     | number   | true     | -             |
 | className | string   | false    | null          |
+
+## Theme props
+
+* `ratingHighColor`
+* `ratingMediumColor`
+* `ratingLowColor`
