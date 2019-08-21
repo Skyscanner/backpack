@@ -19,5 +19,6 @@
 @import '~bpk-mixins/index';
 
 .bpk-button--destructive {
+  @include bpk-button--secondary;
   @include bpk-button--destructive;
 }
