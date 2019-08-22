@@ -21,23 +21,11 @@
 import React from 'react';
 
 import { type Props, defaultProps, propTypes } from './common-types';
-import BpkButtonBase, { cssModules } from './BpkButtonBase';
-import STYLES from './BpkButtonPrimary.scss';
+import BpkButtonBase from './BpkButtonBase';
 
-const getClassName = cssModules(STYLES);
-
-const BpkButtonPrimary = (props: Props) => {
-  const { className, ...rest } = props;
-
-  const classNames = [getClassName('bpk-button--primary')];
-
-  if (className) {
-    classNames.push(className);
-  }
-  const classNamesFinal = classNames.join(' ');
-
-  return <BpkButtonBase className={classNamesFinal} {...rest} />;
-};
+// TODO: BpkButtonBase has the primary button style as it wasn't removed to
+// avoid a breaking change in the mixin. Review after this is tested.
+const BpkButtonPrimary = (props: Props) => <BpkButtonBase {...props} />;
 
 BpkButtonPrimary.propTypes = { ...propTypes };
 BpkButtonPrimary.defaultProps = { ...defaultProps };
