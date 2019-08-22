@@ -13,7 +13,7 @@ exports[`BpkButton should add only bpk specific classes if className prop is set
 
 exports[`BpkButton should render correctly 1`] = `
 <button
-  className="bpk-button bpk-button--primary"
+  className="bpk-button"
   disabled={false}
   onClick={null}
   type="button"
@@ -24,7 +24,7 @@ exports[`BpkButton should render correctly 1`] = `
 
 exports[`BpkButton should render correctly with "blank" and "rel" attributes 1`] = `
 <a
-  className="bpk-button bpk-button--primary"
+  className="bpk-button"
   href="#"
   onClick={null}
   rel="rel-overwrite"
@@ -36,7 +36,7 @@ exports[`BpkButton should render correctly with "blank" and "rel" attributes 1`]
 
 exports[`BpkButton should render correctly with "blank" attribute 1`] = `
 <a
-  className="bpk-button bpk-button--primary"
+  className="bpk-button"
   href="#"
   onClick={null}
   rel="noopener noreferrer"
@@ -48,7 +48,7 @@ exports[`BpkButton should render correctly with "blank" attribute 1`] = `
 
 exports[`BpkButton should render correctly with "disabled" and "href" attributes 1`] = `
 <button
-  className="bpk-button bpk-button--primary"
+  className="bpk-button"
   disabled={true}
   onClick={null}
   type="button"
@@ -70,7 +70,7 @@ exports[`BpkButton should render correctly with "large" and "secondary" attribut
 
 exports[`BpkButton should render correctly with "rel" attribute 1`] = `
 <a
-  className="bpk-button bpk-button--primary"
+  className="bpk-button"
   href="#"
   onClick={null}
   rel="rel-attr"
@@ -93,7 +93,7 @@ exports[`BpkButton should render correctly with a "destructive" attribute 1`] = 
 
 exports[`BpkButton should render correctly with a "disabled" attribute 1`] = `
 <button
-  className="bpk-button bpk-button--primary"
+  className="bpk-button"
   disabled={true}
   onClick={null}
   type="button"
@@ -104,7 +104,7 @@ exports[`BpkButton should render correctly with a "disabled" attribute 1`] = `
 
 exports[`BpkButton should render correctly with a "href" attribute 1`] = `
 <a
-  className="bpk-button bpk-button--primary"
+  className="bpk-button"
   href="#"
   onClick={null}
   rel={null}
@@ -116,7 +116,7 @@ exports[`BpkButton should render correctly with a "href" attribute 1`] = `
 
 exports[`BpkButton should render correctly with a "large" attribute 1`] = `
 <button
-  className="bpk-button bpk-button--large bpk-button--primary"
+  className="bpk-button bpk-button--large"
   disabled={false}
   onClick={null}
   type="button"
@@ -149,7 +149,7 @@ exports[`BpkButton should render correctly with a "secondary" attribute 1`] = `
 
 exports[`BpkButton should render correctly with an "iconOnly" attribute 1`] = `
 <button
-  className="bpk-button bpk-button--icon-only bpk-button--primary"
+  className="bpk-button bpk-button--icon-only"
   disabled={false}
   onClick={null}
   type="button"

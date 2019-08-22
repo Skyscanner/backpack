@@ -2,7 +2,7 @@
 
 exports[`ButtonToTest should add only bpk specific classes if className prop is set to empty string 1`] = `
 <button
-  className="bpk-button bpk-button--large bpk-button--primary"
+  className="bpk-button bpk-button--large"
   disabled={false}
   onClick={null}
   type="button"
@@ -13,7 +13,7 @@ exports[`ButtonToTest should add only bpk specific classes if className prop is 
 
 exports[`ButtonToTest should render correctly 1`] = `
 <button
-  className="bpk-button bpk-button--primary"
+  className="bpk-button"
   disabled={false}
   onClick={null}
   type="button"
@@ -24,7 +24,7 @@ exports[`ButtonToTest should render correctly 1`] = `
 
 exports[`ButtonToTest should render correctly with "blank" and "rel" attributes 1`] = `
 <a
-  className="bpk-button bpk-button--primary"
+  className="bpk-button"
   href="#"
   onClick={null}
   rel="rel-overwrite"
@@ -36,7 +36,7 @@ exports[`ButtonToTest should render correctly with "blank" and "rel" attributes 
 
 exports[`ButtonToTest should render correctly with "blank" attribute 1`] = `
 <a
-  className="bpk-button bpk-button--primary"
+  className="bpk-button"
   href="#"
   onClick={null}
   rel="noopener noreferrer"
@@ -48,7 +48,7 @@ exports[`ButtonToTest should render correctly with "blank" attribute 1`] = `
 
 exports[`ButtonToTest should render correctly with "disabled" and "href" attributes 1`] = `
 <button
-  className="bpk-button bpk-button--primary"
+  className="bpk-button"
   disabled={true}
   onClick={null}
   type="button"
@@ -59,7 +59,7 @@ exports[`ButtonToTest should render correctly with "disabled" and "href" attribu
 
 exports[`ButtonToTest should render correctly with "rel" attribute 1`] = `
 <a
-  className="bpk-button bpk-button--primary"
+  className="bpk-button"
   href="#"
   onClick={null}
   rel="rel-attr"
@@ -71,7 +71,7 @@ exports[`ButtonToTest should render correctly with "rel" attribute 1`] = `
 
 exports[`ButtonToTest should render correctly with a "disabled" attribute 1`] = `
 <button
-  className="bpk-button bpk-button--primary"
+  className="bpk-button"
   disabled={true}
   onClick={null}
   type="button"
@@ -82,7 +82,7 @@ exports[`ButtonToTest should render correctly with a "disabled" attribute 1`] = 
 
 exports[`ButtonToTest should render correctly with a "href" attribute 1`] = `
 <a
-  className="bpk-button bpk-button--primary"
+  className="bpk-button"
   href="#"
   onClick={null}
   rel={null}
@@ -94,7 +94,7 @@ exports[`ButtonToTest should render correctly with a "href" attribute 1`] = `
 
 exports[`ButtonToTest should render correctly with a "large" attribute 1`] = `
 <button
-  className="bpk-button bpk-button--large bpk-button--primary"
+  className="bpk-button bpk-button--large"
   disabled={false}
   onClick={null}
   type="button"
@@ -105,7 +105,7 @@ exports[`ButtonToTest should render correctly with a "large" attribute 1`] = `
 
 exports[`ButtonToTest should render correctly with an "iconOnly" attribute 1`] = `
 <button
-  className="bpk-button bpk-button--icon-only bpk-button--primary"
+  className="bpk-button bpk-button--icon-only"
   disabled={false}
   onClick={null}
   type="button"
@@ -116,7 +116,7 @@ exports[`ButtonToTest should render correctly with an "iconOnly" attribute 1`] =
 
 exports[`ButtonToTest should respect the class names entered as a string 1`] = `
 <button
-  className="bpk-button bpk-button--large bpk-button--primary custom-class-1 custom-class-2"
+  className="bpk-button bpk-button--large custom-class-1 custom-class-2"
   disabled={false}
   onClick={null}
   secondary={true}
