@@ -5,11 +5,6 @@ ADDED:
     - Added sub-components for each button type to reduce the amount of unused CSS and JS included.
     - Buttons can be used in the same way, or the sub-components can be imported directly, e.g. `import BpkButtonFeatured from 'bpk-component-button';`
 
-BREAKING:
-  - bpk-mixins
-    - bpk-button no longer includes the primary button styling by default.
-    - To include bpk-primary styling on your buttons you will have to explicitly add both bpk-button and bpk-button-primary.
-
 # How to write a good changelog entry:
 #
 #   1. Add 'BREAKING', 'ADDED' OR 'FIXED' depending on if the change will be major, minor or patch according to [semver.org](semver.org).
