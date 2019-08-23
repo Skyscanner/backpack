@@ -17,9 +17,11 @@
 #       - Replaced `charmeleon` icon with new `charizard` icon. To upgrade, replace your references to `charmeleon` with `charizard`.
 #       - Upgraded `fire` dependency to `3.0.0`.
 #
-#   ADDED:
-#     - bpk-component-infinity-gauntlet:
-#       - New `timeStone` prop for controlling time. See <link to docs site>.
+ADDED:
+  - bpk-tokens:
+    - Added new token for font weight black (equivalent to 900).
+  - bpk-mixins:
+    - Added new mixins for font weight black
 #
 #   FIXED:
 #     - bpk-component-horcrux:
