@@ -390,6 +390,8 @@ module.exports = {
   textBaseFontWeight: "400",
   textBaseLetterSpacing: "normal",
   textBaseLineHeight: "1.5rem",
+  textColorPrimaryLight: "rgb(17, 18, 54)",
+  textColorSecondaryLight: "rgb(68, 69, 96)",
   textLgFontSize: "1.5rem",
   textLgFontWeight: "400",
   textLgLetterSpacing: "normal",

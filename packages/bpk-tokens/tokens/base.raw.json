@@ -2915,6 +2915,20 @@
       "originalValue": "{!SPACING_BASE}",
       "name": "TEXT_BASE_LINE_HEIGHT"
     },
+    "TEXT_COLOR_PRIMARY_LIGHT": {
+      "value": "rgb(17, 18, 54)",
+      "type": "color",
+      "category": "text-colors",
+      "originalValue": "{!GRAY_900}",
+      "name": "TEXT_COLOR_PRIMARY_LIGHT"
+    },
+    "TEXT_COLOR_SECONDARY_LIGHT": {
+      "value": "rgb(68, 69, 96)",
+      "type": "color",
+      "category": "text-colors",
+      "originalValue": "{!GRAY_700}",
+      "name": "TEXT_COLOR_SECONDARY_LIGHT"
+    },
     "TEXT_LG_FONT_SIZE": {
       "value": "1.5rem",
       "type": "font-size",
@@ -3478,6 +3492,8 @@
     "TEXT_BASE_FONT_WEIGHT",
     "TEXT_BASE_LETTER_SPACING",
     "TEXT_BASE_LINE_HEIGHT",
+    "TEXT_COLOR_PRIMARY_LIGHT",
+    "TEXT_COLOR_SECONDARY_LIGHT",
     "TEXT_LG_FONT_SIZE",
     "TEXT_LG_FONT_WEIGHT",
     "TEXT_LG_LETTER_SPACING",

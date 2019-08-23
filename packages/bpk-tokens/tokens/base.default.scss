@@ -759,6 +759,10 @@ $bpk-text-base-font-weight: 400 !default;
 $bpk-text-base-letter-spacing: normal !default;
 /// @group line-heights
 $bpk-text-base-line-height: 1.5rem !default;
+/// @group text-colors
+$bpk-text-color-primary-light: rgb(17, 18, 54) !default;
+/// @group text-colors
+$bpk-text-color-secondary-light: rgb(68, 69, 96) !default;
 /// @group font-sizes
 $bpk-text-lg-font-size: 1.5rem !default;
 /// @group font-weights

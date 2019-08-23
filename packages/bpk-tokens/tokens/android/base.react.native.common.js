@@ -143,6 +143,8 @@ module.exports = {
   textCapsFontSize: 10,
   textCapsFontWeight: "400",
   textCapsLetterSpacing: 0.4,
+  textColorPrimaryLight: "rgb(17, 18, 54)",
+  textColorSecondaryLight: "rgb(68, 69, 96)",
   textEmphasizedFontWeight: "500",
   textLgFontSize: 20,
   textLgFontWeight: "400",
