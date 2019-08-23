@@ -20,8 +20,6 @@
 ADDED:
   - bpk-tokens:
     - Added new token for font weight black (equivalent to 900).
-  - bpk-mixins:
-    - Added new mixins for font weight black
 #
 #   FIXED:
 #     - bpk-component-horcrux:
