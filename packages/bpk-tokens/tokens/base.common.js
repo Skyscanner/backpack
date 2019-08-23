@@ -252,6 +252,7 @@ module.exports = {
   fontSizeSm: ".75rem",
   fontSizeXl: "1.75rem",
   fontSizeXxl: "2.625rem",
+  fontWeightBlack: "900",
   fontWeightBold: "700",
   formValidationArrowSize: ".375rem",
   formValidationBackgroundColor: "rgb(255, 84, 82)",

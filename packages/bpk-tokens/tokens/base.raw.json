@@ -90,6 +90,9 @@
     "FONT_SIZE_XXL": {
       "value": "2.625rem"
     },
+    "FONT_WEIGHT_BLACK": {
+      "value": "900"
+    },
     "FONT_WEIGHT_BOLD": {
       "value": "700"
     },
@@ -1937,6 +1940,13 @@
       "originalValue": "{!FONT_SIZE_XXL}",
       "name": "FONT_SIZE_XXL"
     },
+    "FONT_WEIGHT_BLACK": {
+      "value": "900",
+      "type": "string",
+      "category": "font-weights",
+      "originalValue": "{!FONT_WEIGHT_BLACK}",
+      "name": "FONT_WEIGHT_BLACK"
+    },
     "FONT_WEIGHT_BOLD": {
       "value": "700",
       "type": "string",
@@ -3354,6 +3364,7 @@
     "FONT_SIZE_SM",
     "FONT_SIZE_XL",
     "FONT_SIZE_XXL",
+    "FONT_WEIGHT_BLACK",
     "FONT_WEIGHT_BOLD",
     "FORM_VALIDATION_ARROW_SIZE",
     "FORM_VALIDATION_BACKGROUND_COLOR",

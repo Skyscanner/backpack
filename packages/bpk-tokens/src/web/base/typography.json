@@ -83,6 +83,11 @@
       "type": "string",
       "category": "font-weights"
     },
+    "FONT_WEIGHT_BLACK": {
+      "value": "{!FONT_WEIGHT_BLACK}",
+      "type": "string",
+      "category": "font-weights"
+    },
     "H6_FONT_SIZE": {
       "value": "{!FONT_SIZE_SM}",
       "type": "font-size",
