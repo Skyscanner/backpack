@@ -1,7 +1,4 @@
 # UNRELEASED:
-ADDED:
-  - bpk-component-button:
-    - New optional `buttonFontSize` theme attribute.
 
 # How to write a good changelog entry:
 #

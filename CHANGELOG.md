@@ -2,6 +2,14 @@
 
 [Unreleased changes](./UNRELEASED.yaml).
 
+# 2019-08-23 - Enable font-size theming in button
+
+**Added:**
+
+ - bpk-component-button: 2.4.9 => 2.5.0
+   - New optional `buttonFontSize` theme attribute.
+
+
 # 2019-08-19 - Rating component added.
 
 **Added:**

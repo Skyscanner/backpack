@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-phone-input",
-  "version": "3.1.22",
+  "version": "3.1.23",
   "description": "Backpack phone input component.",
   "main": "index.js",
   "repository": {
@@ -13,18 +13,18 @@
     "react": "^15.4.0 || ^16.0.0"
   },
   "dependencies": {
-    "bpk-component-input": "^4.1.34",
-    "bpk-component-label": "^3.2.151",
-    "bpk-component-select": "^2.3.14",
-    "bpk-component-text": "^1.1.13",
-    "bpk-mixins": "^18.0.2",
+    "bpk-component-input": "^4.1.35",
+    "bpk-component-label": "^3.2.152",
+    "bpk-component-select": "^2.3.15",
+    "bpk-component-text": "^1.1.14",
+    "bpk-mixins": "^18.0.3",
     "bpk-react-utils": "^2.7.9",
     "bpk-tokens": "^27.8.0",
     "prop-types": "^15.6.2"
   },
   "devDependencies": {
-    "bpk-component-fieldset": "^1.1.121",
-    "bpk-component-image": "^2.3.3"
+    "bpk-component-fieldset": "^1.1.122",
+    "bpk-component-image": "^2.3.4"
   },
   "gitHead": "89937077229bec18515ef53bf12f3f395696b625"
 }
