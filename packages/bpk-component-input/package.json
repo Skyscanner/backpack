@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-input",
-  "version": "4.1.35",
+  "version": "4.1.36",
   "description": "Backpack input component.",
   "main": "index.js",
   "repository": {
@@ -13,13 +13,13 @@
     "react": "^15.0.0 || ^16.0.0"
   },
   "dependencies": {
-    "bpk-component-icon": "^4.0.3",
-    "bpk-mixins": "^18.0.3",
+    "bpk-component-icon": "^4.0.4",
+    "bpk-mixins": "^18.0.4",
     "bpk-react-utils": "^2.7.9",
     "prop-types": "^15.6.2"
   },
   "devDependencies": {
-    "bpk-component-text": "^1.1.14"
+    "bpk-component-text": "^1.1.15"
   },
   "gitHead": "89937077229bec18515ef53bf12f3f395696b625"
 }
