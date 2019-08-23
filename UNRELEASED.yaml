@@ -1,5 +1,8 @@
 # UNRELEASED:
 # How to write a good changelog entry:
+ADDED:
+  - bpk-tokens:
+    - Correct name for semantic text color names.
 #
 #   1. Add 'BREAKING', 'ADDED' OR 'FIXED' depending on if the change will be major, minor or patch according to semver.org.
 #   2. Add the package name.

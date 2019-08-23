@@ -1217,6 +1217,7 @@
     },
     "TEXT_COLOR_PRIMARY_LIGHT": {
       "value": "#111236ff",
+      "deprecated": true,
       "type": "color",
       "category": "text-colors",
       "originalValue": "{!GRAY_900}",
@@ -1224,6 +1225,7 @@
     },
     "TEXT_COLOR_SECONDARY_LIGHT": {
       "value": "#444560ff",
+      "deprecated": true,
       "type": "color",
       "category": "text-colors",
       "originalValue": "{!GRAY_700}",
@@ -1264,6 +1266,20 @@
       "deprecated": true,
       "originalValue": "{!LINE_HEIGHT_LG}",
       "name": "TEXT_LG_LINE_HEIGHT"
+    },
+    "TEXT_PRIMARY_LIGHT_COLOR": {
+      "value": "#111236ff",
+      "type": "color",
+      "category": "text-colors",
+      "originalValue": "{!GRAY_900}",
+      "name": "TEXT_PRIMARY_LIGHT_COLOR"
+    },
+    "TEXT_SECONDARY_LIGHT_COLOR": {
+      "value": "#444560ff",
+      "type": "color",
+      "category": "text-colors",
+      "originalValue": "{!GRAY_700}",
+      "name": "TEXT_SECONDARY_LIGHT_COLOR"
     },
     "TEXT_SM_FONT_SIZE": {
       "value": "14",
@@ -1535,6 +1551,8 @@
     "TEXT_LG_FONT_WEIGHT",
     "TEXT_LG_LETTER_SPACING",
     "TEXT_LG_LINE_HEIGHT",
+    "TEXT_PRIMARY_LIGHT_COLOR",
+    "TEXT_SECONDARY_LIGHT_COLOR",
     "TEXT_SM_FONT_SIZE",
     "TEXT_SM_FONT_WEIGHT",
     "TEXT_SM_LETTER_SPACING",

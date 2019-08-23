@@ -148,6 +148,8 @@ export const textLgFontSize = 20;
 export const textLgFontWeight = "400";
 export const textLgLetterSpacing = -0.4;
 export const textLgLineHeight = 23;
+export const textPrimaryLightColor = "rgb(17, 18, 54)";
+export const textSecondaryLightColor = "rgb(68, 69, 96)";
 export const textSmFontSize = 14;
 export const textSmFontWeight = "400";
 export const textSmLetterSpacing = 0;
@@ -323,6 +325,8 @@ spacingXxl,
 export const textColors = {
 textColorPrimaryLight,
 textColorSecondaryLight,
+textPrimaryLightColor,
+textSecondaryLightColor,
 };
 export const typesettings = {
 fontFamily,

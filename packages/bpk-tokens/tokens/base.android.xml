@@ -151,6 +151,8 @@
   <property name="TEXT_LG_FONT_WEIGHT" category="font-weights">400</property>
   <property name="TEXT_LG_LETTER_SPACING" category="letter-spacings">-0.02</property>
   <property name="TEXT_LG_LINE_HEIGHT" category="line-heights">23dp</property>
+  <color name="TEXT_PRIMARY_LIGHT_COLOR" category="text-colors">#ff111236</color>
+  <color name="TEXT_SECONDARY_LIGHT_COLOR" category="text-colors">#ff444560</color>
   <property name="TEXT_SM_FONT_SIZE" category="font-sizes">14sp</property>
   <property name="TEXT_SM_FONT_WEIGHT" category="font-weights">400</property>
   <property name="TEXT_SM_LETTER_SPACING" category="letter-spacings">0</property>

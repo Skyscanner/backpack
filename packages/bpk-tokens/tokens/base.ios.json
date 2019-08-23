@@ -927,6 +927,7 @@
     },
     {
       "value": "#111236ff",
+      "deprecated": true,
       "type": "color",
       "category": "text-colors",
       "originalValue": "{!GRAY_900}",
@@ -934,6 +935,7 @@
     },
     {
       "value": "#444560ff",
+      "deprecated": true,
       "type": "color",
       "category": "text-colors",
       "originalValue": "{!GRAY_700}",
@@ -981,6 +983,20 @@
       "deprecated": true,
       "originalValue": "{!LINE_HEIGHT_LG}",
       "name": "textLgLineHeight"
+    },
+    {
+      "value": "#111236ff",
+      "type": "color",
+      "category": "text-colors",
+      "originalValue": "{!GRAY_900}",
+      "name": "textPrimaryLightColor"
+    },
+    {
+      "value": "#444560ff",
+      "type": "color",
+      "category": "text-colors",
+      "originalValue": "{!GRAY_700}",
+      "name": "textSecondaryLightColor"
     },
     {
       "value": "14",
