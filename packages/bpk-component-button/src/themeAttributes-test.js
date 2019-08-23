@@ -26,7 +26,10 @@ import {
 
 describe('themeAttributes', () => {
   it('should export the correct general theme attributes', () => {
-    expect(buttonThemeAttributes).toEqual(['buttonBorderRadius']);
+    expect(buttonThemeAttributes).toEqual([
+      'buttonBorderRadius',
+      'buttonFontSize',
+    ]);
   });
 
   it('should export the correct primary theme attributes', () => {
