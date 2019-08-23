@@ -1,8 +1,4 @@
 # UNRELEASED:
-ADDED:
-  - bpk-tokens:
-    - Added new tokens for text primary and secondary color in light mode UIs.
-
 # How to write a good changelog entry:
 #
 #   1. Add 'BREAKING', 'ADDED' OR 'FIXED' depending on if the change will be major, minor or patch according to semver.org.
@@ -20,9 +16,9 @@ ADDED:
 #       - Replaced `charmeleon` icon with new `charizard` icon. To upgrade, replace your references to `charmeleon` with `charizard`.
 #       - Upgraded `fire` dependency to `3.0.0`.
 #
-ADDED:
-  - bpk-tokens:
-    - Added new token for font weight black (equivalent to 900).
+#   ADDED:
+#     - bpk-component-infinity-gauntlet:
+#       - New `timeStone` prop for controlling time. See <link to docs site>.
 #
 #   FIXED:
 #     - bpk-component-horcrux:

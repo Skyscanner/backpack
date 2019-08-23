@@ -2,6 +2,14 @@
 
 [Unreleased changes](./UNRELEASED.yaml).
 
+# 2019-08-23 - Text token changes
+
+**Added:**
+
+- bpk-tokens: 27.8.0 => 27.9.0
+  - Added new tokens for text primary and secondary color in light mode UIs.
+  - Added new token for font weight black (equivalent to 900).
+
 # 2019-08-23 - Enable font-size theming in button
 
 **Added:**
@@ -29,7 +37,7 @@
     - Updated `svg borders` to utilise updated gray color.
   - bpk-tokens: 27.6.6 => 27.7.0
     - Updated gray colours `gray50`, `gray100`, `gray200`, `gray300`, `gray400`, `gray500`, `gray700`, `gray900`
-    - Deprecated `gray600` and `gray800` please update as these will be removed in the future. 
+    - Deprecated `gray600` and `gray800` please update as these will be removed in the future.
       - For these tokens please use either one token above or below your current value to suit your needs.
 
 # 2019-08-12 - Added vertical swap icon
