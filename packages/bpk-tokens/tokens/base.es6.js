@@ -250,6 +250,7 @@ export const fontSizeRoot = "100%";
 export const fontSizeSm = ".75rem";
 export const fontSizeXl = "1.75rem";
 export const fontSizeXxl = "2.625rem";
+export const fontWeightBlack = "900";
 export const fontWeightBold = "700";
 export const formValidationArrowSize = ".375rem";
 export const formValidationBackgroundColor = "rgb(255, 84, 82)";
@@ -658,6 +659,7 @@ textXsFontSize,
 textXxlFontSize,
 };
 export const fontWeights = {
+fontWeightBlack,
 fontWeightBold,
 h1FontWeight,
 h2FontWeight,
