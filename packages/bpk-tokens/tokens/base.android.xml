@@ -144,6 +144,8 @@
   <property name="TEXT_CAPS_FONT_SIZE" category="font-sizes">10sp</property>
   <property name="TEXT_CAPS_FONT_WEIGHT" category="font-weights">400</property>
   <property name="TEXT_CAPS_LETTER_SPACING" category="letter-spacings">0.04</property>
+  <color name="TEXT_COLOR_PRIMARY_LIGHT" category="text-colors">#ff111236</color>
+  <color name="TEXT_COLOR_SECONDARY_LIGHT" category="text-colors">#ff444560</color>
   <property name="TEXT_EMPHASIZED_FONT_WEIGHT" category="font-weights">500</property>
   <property name="TEXT_LG_FONT_SIZE" category="font-sizes">20sp</property>
   <property name="TEXT_LG_FONT_WEIGHT" category="font-weights">400</property>

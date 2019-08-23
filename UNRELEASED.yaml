@@ -1,4 +1,7 @@
 # UNRELEASED:
+ADDED:
+  - bpk-tokens:
+    - Added new tokens for text primary and secondary color in light mode UIs.
 
 # How to write a good changelog entry:
 #

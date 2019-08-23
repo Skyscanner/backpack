@@ -388,6 +388,8 @@ export const textBaseFontSize = "1rem";
 export const textBaseFontWeight = "400";
 export const textBaseLetterSpacing = "normal";
 export const textBaseLineHeight = "1.5rem";
+export const textColorPrimaryLight = "rgb(17, 18, 54)";
+export const textColorSecondaryLight = "rgb(68, 69, 96)";
 export const textLgFontSize = "1.5rem";
 export const textLgFontWeight = "400";
 export const textLgLetterSpacing = "normal";
@@ -845,6 +847,8 @@ linkWhiteActiveColor,
 linkWhiteColor,
 linkWhiteHoverColor,
 linkWhiteVisitedColor,
+textColorPrimaryLight,
+textColorSecondaryLight,
 };
 export const textDecorations = {
 linkHoverTextDecoration,

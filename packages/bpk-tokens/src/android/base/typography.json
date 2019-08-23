@@ -18,6 +18,16 @@
       "type": "font",
       "category": "typesettings"
     },
+    "TEXT_COLOR_PRIMARY_LIGHT": {
+      "value": "{!GRAY_900}",
+      "type": "color",
+      "category": "text-colors"
+    },
+    "TEXT_COLOR_SECONDARY_LIGHT": {
+      "value": "{!GRAY_700}",
+      "type": "color",
+      "category": "text-colors"
+    },
     "FONT_SIZE_CAPS": {
       "value": "{!FONT_SIZE_CAPS}",
       "type": "font-size",

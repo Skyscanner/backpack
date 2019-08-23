@@ -13,6 +13,16 @@
       "type": "color",
       "category": "text-colors"
     },
+    "TEXT_COLOR_PRIMARY_LIGHT": {
+      "value": "{!GRAY_900}",
+      "type": "color",
+      "category": "text-colors"
+    },
+    "TEXT_COLOR_SECONDARY_LIGHT": {
+      "value": "{!GRAY_700}",
+      "type": "color",
+      "category": "text-colors"
+    },
     "LINE_HEIGHT_SM": {
       "value": "{!SPACING_MD}",
       "type": "size",
