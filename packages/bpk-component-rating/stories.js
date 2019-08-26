@@ -22,27 +22,82 @@ import { storiesOf } from '@storybook/react';
 
 import BpkRating from './index';
 
-storiesOf('bpk-component-rating', module).add('All ratings', () => (
-  <div>
-    <BpkRating
-      ariaLabel="9 Excellent would recommend"
-      title="Excellent"
-      subtitle="This place was amazing"
-      value={9}
-    />
-    <br />
-    <BpkRating
-      ariaLabel="6.7 Average might recommend"
-      title="Average"
-      subtitle="Might recommend"
-      value={6.7}
-    />
-    <br />
-    <BpkRating
-      ariaLabel="2.3 Bad avoid here"
-      title="Bad"
-      subtitle="Avoid here"
-      value={2.3}
-    />
-  </div>
-));
+storiesOf('bpk-component-rating', module)
+  .add('Default', () => (
+    <div>
+      <BpkRating
+        ariaLabel="9 Excellent would recommend"
+        title="Excellent"
+        subtitle="This place was amazing"
+        value={9}
+      />
+      <br />
+      <BpkRating
+        ariaLabel="6.7 Average might recommend"
+        title="Average"
+        subtitle="Might recommend"
+        value={6.7}
+      />
+      <br />
+      <BpkRating
+        ariaLabel="2.3 Bad avoid here"
+        title="Bad"
+        subtitle="Avoid here"
+        value={2.3}
+      />
+    </div>
+  ))
+  .add('Large size ratings', () => (
+    <div>
+      <BpkRating
+        ariaLabel="9 Excellent would recommend"
+        title="Excellent"
+        subtitle="This place was amazing"
+        value={9}
+        size="lg"
+      />
+      <br />
+      <BpkRating
+        ariaLabel="6.7 Average might recommend"
+        title="Average"
+        subtitle="Might recommend"
+        value={6.7}
+        size="lg"
+      />
+      <br />
+      <BpkRating
+        ariaLabel="2.3 Bad avoid here"
+        title="Bad"
+        subtitle="Avoid here"
+        value={2.3}
+        size="lg"
+      />
+    </div>
+  ))
+  .add('Small size ratings', () => (
+    <div>
+      <BpkRating
+        ariaLabel="9 Excellent would recommend"
+        title="Excellent"
+        subtitle="This place was amazing"
+        value={9}
+        size="sm"
+      />
+      <br />
+      <BpkRating
+        ariaLabel="6.7 Average might recommend"
+        title="Average"
+        subtitle="Might recommend"
+        value={6.7}
+        size="sm"
+      />
+      <br />
+      <BpkRating
+        ariaLabel="2.3 Bad avoid here"
+        title="Bad"
+        subtitle="Avoid here"
+        value={2.3}
+        size="sm"
+      />
+    </div>
+  ));

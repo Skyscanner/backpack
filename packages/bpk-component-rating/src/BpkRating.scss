@@ -21,32 +21,62 @@
 .bpk-rating {
   display: flex;
 
-  &--base-rating {
-    width: $bpk-rating-base-width;
-    height: $bpk-rating-base-height;
-    padding: $bpk-spacing-sm;
+  &--component {
+    justify-content: center;
+    align-items: center;
     border-radius: 50%;
     color: $bpk-color-white;
-    text-align: center;
-    vertical-align: middle;
+  }
+
+  &--base-rating {
+    display: flex;
+    width: $bpk-rating-base-width;
+    height: $bpk-rating-base-height;
+  }
+
+  &--lg-rating {
+    display: flex;
+    width: 3.75rem;
+    height: 3.75rem;
+    font-size: $bpk-font-size-lg;
+  }
+
+  &--sm-rating {
+    display: flex;
+    width: 2.25rem;
+    height: 2.25rem;
+    font-size: $bpk-font-size-sm;
   }
 
   &__text {
     display: flex;
     padding-left: $bpk-spacing-sm;
     flex-direction: column;
+    justify-content: center;
     text-align: left;
   }
 
   &--high-rating {
-    @include bpk-themeable-property(background-color, --bpk-rating-high-color, $bpk-color-green-600);
+    @include bpk-themeable-property(
+      background-color,
+      --bpk-rating-high-color,
+      $bpk-color-green-600
+    );
   }
 
   &--medium-rating {
-    @include bpk-themeable-property(background-color, --bpk-rating-medium-color, $bpk-color-yellow-600);
+    @include bpk-themeable-property(
+      background-color,
+      --bpk-rating-medium-color,
+      $bpk-color-yellow-600
+    );
   }
 
   &--low-rating {
-    @include bpk-themeable-property(background-color, --bpk-rating-low-color, $bpk-color-red-600);
+    @include bpk-themeable-property(
+      background-color,
+      --bpk-rating-low-color,
+      $bpk-color-red-600
+    );
   }
 }
