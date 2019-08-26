@@ -2927,6 +2927,7 @@
     },
     "TEXT_COLOR_PRIMARY_LIGHT": {
       "value": "rgb(17, 18, 54)",
+      "deprecated": true,
       "type": "color",
       "category": "text-colors",
       "originalValue": "{!GRAY_900}",
@@ -2934,6 +2935,7 @@
     },
     "TEXT_COLOR_SECONDARY_LIGHT": {
       "value": "rgb(68, 69, 96)",
+      "deprecated": true,
       "type": "color",
       "category": "text-colors",
       "originalValue": "{!GRAY_700}",
@@ -2966,6 +2968,20 @@
       "category": "line-heights",
       "originalValue": "{!SPACING_LG}",
       "name": "TEXT_LG_LINE_HEIGHT"
+    },
+    "TEXT_PRIMARY_LIGHT_COLOR": {
+      "value": "rgb(17, 18, 54)",
+      "type": "color",
+      "category": "text-colors",
+      "originalValue": "{!GRAY_900}",
+      "name": "TEXT_PRIMARY_LIGHT_COLOR"
+    },
+    "TEXT_SECONDARY_LIGHT_COLOR": {
+      "value": "rgb(68, 69, 96)",
+      "type": "color",
+      "category": "text-colors",
+      "originalValue": "{!GRAY_700}",
+      "name": "TEXT_SECONDARY_LIGHT_COLOR"
     },
     "TEXT_SM_FONT_SIZE": {
       "value": ".75rem",
@@ -3509,6 +3525,8 @@
     "TEXT_LG_FONT_WEIGHT",
     "TEXT_LG_LETTER_SPACING",
     "TEXT_LG_LINE_HEIGHT",
+    "TEXT_PRIMARY_LIGHT_COLOR",
+    "TEXT_SECONDARY_LIGHT_COLOR",
     "TEXT_SM_FONT_SIZE",
     "TEXT_SM_FONT_WEIGHT",
     "TEXT_SM_LETTER_SPACING",
