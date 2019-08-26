@@ -2,6 +2,12 @@
 
 [Unreleased changes](./UNRELEASED.yaml).
 
+# 2018-08-26 - Fix token changes
+
+**Fixed:**
+- bpk-tokens: 27.9.0 => 27.9.2
+  - Correct name for semantic text color names, previously published names have been deprecated.
+
 # 2019-08-23 - Text token changes
 
 **Added:**
