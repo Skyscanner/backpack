@@ -1,6 +1,6 @@
 {
   "name": "bpk-theming",
-  "version": "1.2.17",
+  "version": "1.2.18",
   "main": "index.js",
   "description": "Backpack theming utlities.",
   "repository": {
@@ -13,7 +13,7 @@
     "react": "^15.0.0 || ^16.0.0"
   },
   "dependencies": {
-    "bpk-tokens": "^27.9.2",
+    "bpk-tokens": "^27.9.3",
     "prop-types": "^15.6.2"
   },
   "gitHead": "b7b3ff1122e0be9384d5e8f8ed6de54fdddfb3dc"
