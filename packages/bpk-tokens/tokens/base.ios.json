@@ -926,22 +926,6 @@
       "name": "textCapsLetterSpacing"
     },
     {
-      "value": "#111236ff",
-      "deprecated": true,
-      "type": "color",
-      "category": "text-colors",
-      "originalValue": "{!GRAY_900}",
-      "name": "textColorPrimaryLight"
-    },
-    {
-      "value": "#444560ff",
-      "deprecated": true,
-      "type": "color",
-      "category": "text-colors",
-      "originalValue": "{!GRAY_700}",
-      "name": "textColorSecondaryLight"
-    },
-    {
       "value": "600",
       "type": "string",
       "category": "font-weights",

@@ -1,24 +1,10 @@
 {
-  "imports": [
-    "./aliases.json"
-  ],
+  "imports": ["./aliases.json"],
   "props": {
     "FONT_FAMILY": {
       "value": "{!FONT_FAMILY}",
       "type": "font",
       "category": "typesettings"
-    },
-    "TEXT_COLOR_PRIMARY_LIGHT": {
-      "value": "{!GRAY_900}",
-      "deprecated": true,
-      "type": "color",
-      "category": "text-colors"
-    },
-    "TEXT_COLOR_SECONDARY_LIGHT": {
-      "value": "{!GRAY_700}",
-      "deprecated": true,
-      "type": "color",
-      "category": "text-colors"
     },
     "TEXT_PRIMARY_LIGHT_COLOR": {
       "value": "{!GRAY_900}",

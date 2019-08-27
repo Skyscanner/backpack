@@ -1248,22 +1248,6 @@
       "originalValue": "{!LETTER_SPACING_CAPS}",
       "name": "TEXT_CAPS_LETTER_SPACING"
     },
-    "TEXT_COLOR_PRIMARY_LIGHT": {
-      "value": "#111236ff",
-      "deprecated": true,
-      "type": "color",
-      "category": "text-colors",
-      "originalValue": "{!GRAY_900}",
-      "name": "TEXT_COLOR_PRIMARY_LIGHT"
-    },
-    "TEXT_COLOR_SECONDARY_LIGHT": {
-      "value": "#444560ff",
-      "deprecated": true,
-      "type": "color",
-      "category": "text-colors",
-      "originalValue": "{!GRAY_700}",
-      "name": "TEXT_COLOR_SECONDARY_LIGHT"
-    },
     "TEXT_EMPHASIZED_FONT_WEIGHT": {
       "value": "600",
       "type": "string",
@@ -1621,8 +1605,6 @@
     "TEXT_CAPS_FONT_SIZE",
     "TEXT_CAPS_FONT_WEIGHT",
     "TEXT_CAPS_LETTER_SPACING",
-    "TEXT_COLOR_PRIMARY_LIGHT",
-    "TEXT_COLOR_SECONDARY_LIGHT",
     "TEXT_EMPHASIZED_FONT_WEIGHT",
     "TEXT_HEAVY_FONT_WEIGHT",
     "TEXT_LG_FONT_SIZE",
