@@ -148,8 +148,6 @@ export const textBaseLineHeight = 19;
 export const textCapsFontSize = 10;
 export const textCapsFontWeight = "400";
 export const textCapsLetterSpacing = 0.28;
-export const textColorPrimaryLight = "rgb(17, 18, 54)";
-export const textColorSecondaryLight = "rgb(68, 69, 96)";
 export const textEmphasizedFontWeight = "600";
 export const textHeavyFontWeight = "800";
 export const textLgFontSize = 20;
@@ -345,8 +343,6 @@ spacingXl,
 spacingXxl,
 };
 export const textColors = {
-textColorPrimaryLight,
-textColorSecondaryLight,
 textPrimaryLightColor,
 textSecondaryLightColor,
 };

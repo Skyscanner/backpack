@@ -2,6 +2,12 @@
 
 [Unreleased changes](./UNRELEASED.yaml).
 
+# 2018-08-27 - Remove unreleased deprecated tokens
+
+**Fixed:**
+- bpk-tokens: 27.9.2 => 27.9.3
+  - Removed unreleased deprecated tokens
+
 # 2018-08-26 - Fix token changes
 
 **Fixed:**
