@@ -71,6 +71,15 @@ describe('BpkRadio', () => {
     expect(tree).toMatchSnapshot();
   });
 
+  it('should render correctly when invalid', () => {
+    const tree = renderer
+      .create(
+        <BpkRadio name="radio" label="Direct" value="my-value" valid={false} />,
+      )
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
   it('should render correctly with ariaLabel attribute', () => {
     const tree = renderer
       .create(

@@ -53,6 +53,15 @@ storiesOf('bpk-component-radio', module)
       onChange={action('radio changed')}
     />
   ))
+  .add('Invalid', () => (
+    <BpkRadio
+      id="invalid"
+      name="invalid"
+      label="Return"
+      onChange={action('radio changed')}
+      valid={false}
+    />
+  ))
   .add('White (Checked)', () => (
     <div style={{ backgroundColor: colorGray700, padding: spacingBase }}>
       <BpkRadio
@@ -72,6 +81,18 @@ storiesOf('bpk-component-radio', module)
         name="unchecked"
         label="Return"
         onChange={action('radio changed')}
+        white
+      />
+    </div>
+  ))
+  .add('White (Invalid)', () => (
+    <div style={{ backgroundColor: colorGray700, padding: spacingBase }}>
+      <BpkRadio
+        id="invalid"
+        name="invalid"
+        label="Return"
+        onChange={action('radio changed')}
+        valid={false}
         white
       />
     </div>

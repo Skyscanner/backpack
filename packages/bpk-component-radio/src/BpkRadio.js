@@ -26,13 +26,31 @@ const getClassName = cssModules(STYLES);
 
 const BpkRadio = props => {
   const classNames = [getClassName('bpk-radio')];
-  const { ariaLabel, name, label, disabled, white, className, ...rest } = props;
+  const {
+    ariaLabel,
+    name,
+    label,
+    disabled,
+    white,
+    className,
+    valid,
+    ...rest
+  } = props;
+
+  // Explicit check for false primitive value as undefined is
+  // treated as neither valid nor invalid
+  const isInvalid = valid === false;
 
   if (white) {
     classNames.push(getClassName('bpk-radio--white'));
   }
   if (disabled) {
     classNames.push(getClassName('bpk-radio--disabled'));
+  }
+  if (valid) {
+    classNames.push(getClassName('bpk-radio--valid'));
+  } else if (isInvalid) {
+    classNames.push(getClassName('bpk-radio--invalid'));
   }
   if (className) {
     classNames.push(className);
@@ -46,6 +64,7 @@ const BpkRadio = props => {
         name={name}
         disabled={disabled}
         aria-label={ariaLabel || label}
+        aria-invalid={isInvalid}
         {...rest}
       />
       <div className={getClassName('bpk-radio__circle')} />
@@ -61,6 +80,7 @@ BpkRadio.propTypes = {
   disabled: PropTypes.bool,
   white: PropTypes.bool,
   className: PropTypes.string,
+  valid: PropTypes.bool,
 };
 
 BpkRadio.defaultProps = {
@@ -68,6 +88,7 @@ BpkRadio.defaultProps = {
   disabled: false,
   white: false,
   className: null,
+  valid: null,
 };
 
 export default BpkRadio;
