@@ -45,6 +45,25 @@ storiesOf('bpk-component-checkbox', module)
       onChange={action('checkbox changed')}
     />
   ))
+  .add('Invalid (Checked)', () => (
+    <BpkCheckbox
+      id="checked"
+      name="checked"
+      label="Prefer directs"
+      onChange={action('checkbox changed')}
+      valid={false}
+      checked
+    />
+  ))
+  .add('Invalid (Unchecked)', () => (
+    <BpkCheckbox
+      id="unchecked"
+      name="unchecked"
+      label="Prefer directs"
+      onChange={action('checkbox changed')}
+      valid={false}
+    />
+  ))
   .add('Multi line', () => (
     <BpkCheckbox
       id="multi_line"

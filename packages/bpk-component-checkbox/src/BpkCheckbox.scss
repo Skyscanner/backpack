@@ -37,6 +37,10 @@
     @include bpk-checkbox--disabled;
   }
 
+  &--invalid {
+    @include bpk-checkbox--invalid;
+  }
+
   &__input {
     @include bpk-checkbox__input;
 

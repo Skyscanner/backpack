@@ -59,6 +59,15 @@ describe('BpkCheckbox', () => {
     expect(tree).toMatchSnapshot();
   });
 
+  it('should render correctly with valid=false attribute', () => {
+    const tree = renderer
+      .create(
+        <BpkCheckbox name="checkbox" label="Prefer directs" valid={false} />,
+      )
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
   it('should render correctly with required attribute', () => {
     const tree = renderer
       .create(<BpkCheckbox name="checkbox" label="Prefer directs" required />)

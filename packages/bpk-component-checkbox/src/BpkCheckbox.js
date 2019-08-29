@@ -37,8 +37,13 @@ const BpkCheckbox = props => {
     white,
     className,
     smallLabel,
+    valid,
     ...rest
   } = props;
+
+  // Explicit check for false primitive value as undefined is
+  // treated as neither valid nor invalid
+  const isInvalid = valid === false;
 
   if (white) {
     classNames.push(getClassName('bpk-checkbox--white'));
@@ -48,6 +53,9 @@ const BpkCheckbox = props => {
   }
   if (smallLabel) {
     labelClassNames.push(getClassName('bpk-checkbox__label--small'));
+  }
+  if (isInvalid) {
+    classNames.push(getClassName('bpk-checkbox--invalid'));
   }
   if (className) {
     classNames.push(className);
@@ -61,6 +69,7 @@ const BpkCheckbox = props => {
         name={name}
         disabled={disabled}
         aria-label={label}
+        aria-invalid={isInvalid}
         {...rest}
       />
       <Tick
@@ -85,6 +94,7 @@ BpkCheckbox.propTypes = {
   white: PropTypes.bool,
   className: PropTypes.string,
   smallLabel: PropTypes.bool,
+  valid: PropTypes.bool,
 };
 
 BpkCheckbox.defaultProps = {
@@ -93,6 +103,7 @@ BpkCheckbox.defaultProps = {
   white: false,
   className: null,
   smallLabel: false,
+  valid: null,
 };
 
 export default BpkCheckbox;

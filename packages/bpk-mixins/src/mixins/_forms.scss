@@ -527,6 +527,22 @@
   cursor: not-allowed;
 }
 
+/// Invalid form checkbox. Modifies the bpk-checkbox mixin.
+///
+/// @require {mixin} bpk-checkbox
+///
+/// @example scss
+///   .selector {
+///     @include bpk-checkbox();
+///     @include bpk-checkbox--invalid();
+///   }
+
+@mixin bpk-checkbox--invalid {
+  input[type=checkbox] {
+    background: url(map-get($bpk-elements, checkbox-invalid)) no-repeat;
+  }
+}
+
 /// Form checkbox input.
 ///
 /// @example scss
