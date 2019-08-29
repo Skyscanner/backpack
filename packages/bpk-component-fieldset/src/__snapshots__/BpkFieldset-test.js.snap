@@ -57,6 +57,7 @@ exports[`BpkFieldset should render correctly with checkbox component 1`] = `
     className="bpk-checkbox"
   >
     <input
+      aria-invalid={false}
       aria-label="I accept the terms and conditions"
       className="bpk-checkbox__input"
       disabled={false}
@@ -154,6 +155,7 @@ exports[`BpkFieldset should render correctly with checkbox component and "requir
     className="bpk-checkbox"
   >
     <input
+      aria-invalid={false}
       aria-label="I accept the terms and conditions"
       className="bpk-checkbox__input"
       disabled={false}
