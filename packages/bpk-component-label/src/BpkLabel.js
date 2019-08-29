@@ -31,10 +31,19 @@ export type Props = {
   disabled: boolean,
   required: boolean,
   white: boolean,
+  invalid: boolean,
 };
 
 const BpkLabel = (props: Props) => {
-  const { children, required, white, disabled, className, ...rest } = props;
+  const {
+    children,
+    required,
+    white,
+    disabled,
+    className,
+    invalid,
+    ...rest
+  } = props;
   const classNames = [getClassName('bpk-label')];
 
   if (white) {
@@ -42,6 +51,9 @@ const BpkLabel = (props: Props) => {
   }
   if (disabled) {
     classNames.push(getClassName('bpk-label--disabled'));
+  }
+  if (invalid) {
+    classNames.push(getClassName('bpk-label--invalid'));
   }
   if (className) {
     classNames.push(className);
@@ -63,6 +75,7 @@ BpkLabel.propTypes = {
   disabled: PropTypes.bool,
   required: PropTypes.bool,
   white: PropTypes.bool,
+  invalid: PropTypes.bool,
 };
 
 BpkLabel.defaultProps = {
@@ -70,6 +83,7 @@ BpkLabel.defaultProps = {
   disabled: false,
   required: false,
   white: false,
+  invalid: false,
 };
 
 export default BpkLabel;

@@ -25,6 +25,10 @@
     @include bpk-label--white;
   }
 
+  &--invalid {
+    @include bpk-label--invalid;
+  }
+
   &--disabled {
     @include bpk-label--disabled;
   }

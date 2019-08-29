@@ -689,6 +689,20 @@
   color: $bpk-color-white;
 }
 
+/// Invalid form label. Modifies the bpk-label mixin.
+///
+/// @require {mixin} bpk-label
+///
+/// @example scss
+///   .selector {
+///     @include bpk-label();
+///     @include bpk-label--invalid();
+///   }
+
+@mixin bpk-label--invalid {
+  color: $bpk-color-red-500;
+}
+
 /// Disabled form label. Modifies the bpk-label mixin.
 ///
 /// @require {mixin} bpk-label
