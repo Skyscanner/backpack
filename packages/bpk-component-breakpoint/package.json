@@ -15,7 +15,7 @@
   "dependencies": {
     "bpk-mixins": "^18.0.8",
     "prop-types": "^15.6.2",
-    "react-responsive": "^5.0.0"
+    "react-responsive": "^8.0.0"
   },
   "devDependencies": {
     "bpk-tokens": "^27.9.4"
