@@ -54,4 +54,14 @@ storiesOf('bpk-component-textarea', module)
       placeholder="Please enter some text"
       disabled
     />
+  ))
+  .add('Invalid', () => (
+    <BpkTextarea
+      id="disabled"
+      name="disabled"
+      value=""
+      onChange={action('input changed')}
+      placeholder="Please enter some text"
+      valid={false}
+    />
   ));
