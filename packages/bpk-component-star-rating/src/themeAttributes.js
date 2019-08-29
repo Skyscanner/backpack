@@ -16,19 +16,4 @@
  * limitations under the License.
  */
 
-import BpkStar, { STAR_TYPES } from './src/BpkStar';
-import BpkInteractiveStar from './src/BpkInteractiveStar';
-import BpkStarRating from './src/BpkStarRating';
-import BpkInteractiveStarRating from './src/BpkInteractiveStarRating';
-import withInteractiveStarRatingState from './src/withInteractiveStarRatingState';
-import themeAttributes from './src/themeAttributes';
-
-export {
-  BpkStar,
-  STAR_TYPES,
-  BpkInteractiveStar,
-  BpkInteractiveStarRating,
-  withInteractiveStarRatingState,
-  themeAttributes,
-};
-export default BpkStarRating;
+export default ['starRatingFilledColor'];
