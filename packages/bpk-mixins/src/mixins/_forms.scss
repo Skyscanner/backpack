@@ -617,6 +617,22 @@
   color: $bpk-color-white;
 }
 
+/// Invalid radio button. Modifies the bpk-radio mixin.
+///
+/// @require {mixin} bpk-radio
+///
+/// @example scss
+///   .selector {
+///     @include bpk-radio();
+///     @include bpk-radio--invalid();
+///   }
+
+@mixin bpk-radio--invalid {
+  input[type=radio] {
+    background: url(map-get($bpk-elements, radio-invalid)) no-repeat;
+  }
+}
+
 /// Form radio input.
 ///
 /// @example scss

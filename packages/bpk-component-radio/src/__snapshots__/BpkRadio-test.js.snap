@@ -5,6 +5,7 @@ exports[`BpkRadio should render correctly 1`] = `
   className="bpk-radio"
 >
   <input
+    aria-invalid={false}
     aria-label="Direct"
     className="bpk-radio__input"
     disabled={false}
@@ -22,11 +23,36 @@ exports[`BpkRadio should render correctly 1`] = `
 </label>
 `;
 
+exports[`BpkRadio should render correctly when invalid 1`] = `
+<label
+  className="bpk-radio bpk-radio--invalid"
+>
+  <input
+    aria-invalid={true}
+    aria-label="Direct"
+    className="bpk-radio__input"
+    disabled={false}
+    name="radio"
+    type="radio"
+    value="my-value"
+  />
+  <div
+    className="bpk-radio__circle"
+  />
+  <span
+    aria-hidden="true"
+  >
+    Direct
+  </span>
+</label>
+`;
+
 exports[`BpkRadio should render correctly when label is a node 1`] = `
 <label
   className="bpk-radio"
 >
   <input
+    aria-invalid={false}
     aria-label={
       <span>
         Direct
@@ -55,6 +81,7 @@ exports[`BpkRadio should render correctly with ariaLabel attribute 1`] = `
   className="bpk-radio"
 >
   <input
+    aria-invalid={false}
     aria-label="Is this direct"
     className="bpk-radio__input"
     disabled={false}
@@ -78,6 +105,7 @@ exports[`BpkRadio should render correctly with checked attribute 1`] = `
   className="bpk-radio"
 >
   <input
+    aria-invalid={false}
     aria-label="Direct"
     checked={true}
     className="bpk-radio__input"
@@ -101,6 +129,7 @@ exports[`BpkRadio should render correctly with disabled attribute 1`] = `
   className="bpk-radio bpk-radio--disabled"
 >
   <input
+    aria-invalid={false}
     aria-label="Direct"
     className="bpk-radio__input"
     disabled={true}
@@ -123,6 +152,7 @@ exports[`BpkRadio should render correctly with id attribute 1`] = `
   className="bpk-radio"
 >
   <input
+    aria-invalid={false}
     aria-label="Direct"
     className="bpk-radio__input"
     disabled={false}
@@ -146,6 +176,7 @@ exports[`BpkRadio should render correctly with value attribute 1`] = `
   className="bpk-radio"
 >
   <input
+    aria-invalid={false}
     aria-label="Direct"
     className="bpk-radio__input"
     disabled={false}
@@ -169,6 +200,7 @@ exports[`BpkRadio should render correctly with white attribute 1`] = `
   className="bpk-radio bpk-radio--white"
 >
   <input
+    aria-invalid={false}
     aria-label="Direct"
     className="bpk-radio__input"
     disabled={false}

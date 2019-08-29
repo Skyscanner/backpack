@@ -32,9 +32,7 @@ $bpk-radio-circle-size: $bpk-one-pixel-rem * 10;
   }
 
   &--invalid {
-    input {
-      background: url(map-get($bpk-elements, radio-invalid)) no-repeat;
-    }
+    @include bpk-radio--invalid;
   }
 
   &__input {

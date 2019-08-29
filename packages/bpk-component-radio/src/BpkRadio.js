@@ -47,9 +47,7 @@ const BpkRadio = props => {
   if (disabled) {
     classNames.push(getClassName('bpk-radio--disabled'));
   }
-  if (valid) {
-    classNames.push(getClassName('bpk-radio--valid'));
-  } else if (isInvalid) {
+  if (isInvalid) {
     classNames.push(getClassName('bpk-radio--invalid'));
   }
   if (className) {
