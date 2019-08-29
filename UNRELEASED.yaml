@@ -23,3 +23,7 @@
 #   FIXED:
 #     - bpk-component-horcrux:
 #       - Fixed issue where `BpkHorcrux` would occasionally possess the living.
+
+ADDED:
+  - bpk-component-star-rating:
+    - Added new theming prop `starRatingFilledColor` to allow the star colour to be changed.
