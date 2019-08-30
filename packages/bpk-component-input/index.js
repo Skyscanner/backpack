@@ -26,6 +26,7 @@ import {
   INPUT_TYPES as TYPES,
   type Props,
 } from './src/common-types';
+import themeAttributes from './src/themeAttributes';
 
 export default BpkInput;
 
@@ -40,4 +41,10 @@ const DEPRECATED_INPUT_TYPES = {
 
 export type BpkInputProps = Props;
 export const INPUT_TYPES = { ...DEPRECATED_INPUT_TYPES, ...TYPES };
-export { propTypes, defaultProps, withOpenEvents, CLEAR_BUTTON_MODES };
+export {
+  propTypes,
+  defaultProps,
+  withOpenEvents,
+  CLEAR_BUTTON_MODES,
+  themeAttributes,
+};

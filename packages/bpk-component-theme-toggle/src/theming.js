@@ -110,6 +110,11 @@ const generateTheme = ({
   buttonDestructiveHoverBackgroundColor: colorWhite,
   buttonDestructiveActiveBackgroundColor: colorWhite,
 
+  inputValidIconColor: secondaryColor500,
+  inputInvalidIconColor: primaryColor500,
+  inputInvalidBorderColor: primaryColor300,
+  inputInvalidBackgroundColor: primaryColor600,
+
   linkColor: primaryColor300,
   linkHoverColor: primaryColor500,
   linkActiveColor: primaryColor600,
