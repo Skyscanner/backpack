@@ -33,11 +33,6 @@ describe('BpkLabel', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  it('should render correctly with "invalid" attribute', () => {
-    const tree = renderer.create(<BpkLabel invalid>Origin</BpkLabel>).toJSON();
-    expect(tree).toMatchSnapshot();
-  });
-
   it('should render correctly with a "required" attribute', () => {
     const tree = renderer.create(<BpkLabel required>Origin</BpkLabel>).toJSON();
     expect(tree).toMatchSnapshot();

@@ -30,11 +30,8 @@ ADDED:
   - bpk-mixins:
       - Updating invalid mixins for input, select and textarea input mixins to have white background
       - Adding bpk-checkbox--invalid and bpk-radio--invalid to use their respective invalid svgs
-      - Adding bpk-label--invalid mixin to make invalid labels red
   - bpk-component-checkbox:
       - Added valid property to support invalid state of checkboxes
-  - bpk-component-label:
-      - Added invalid property to support invalid state of an input label
   - bpk-component-radio:
       - Added valid property to support invalid state of radio button
 

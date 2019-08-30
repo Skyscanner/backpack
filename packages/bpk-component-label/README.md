@@ -27,4 +27,3 @@ export default () => (
 | disabled  | bool     | false    | false         |
 | required  | bool     | false    | false         |
 | white     | bool     | false    | false         |
-| invalid   | bool     | false    | false         |
