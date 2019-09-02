@@ -102,6 +102,10 @@ const BpkFieldset = (props: Props) => {
 
   const clonedChildren = cloneElement(children, childrenProps);
 
+  if (isInvalid) {
+    classNames.push(getClassName('bpk-fieldset--invalid'));
+  }
+
   if (className) {
     classNames.push(className);
   }
