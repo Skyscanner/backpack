@@ -18,5 +18,8 @@
     "bpk-svgs": "^7.1.6",
     "prop-types": "^15.6.2"
   },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
   "gitHead": "30b387cc6dc4e2717370c0a07e725fa71a2f447c"
 }

@@ -24,5 +24,8 @@
     "bpk-component-input": "^4.1.40",
     "bpk-component-select": "^2.3.20"
   },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
   "gitHead": "30b387cc6dc4e2717370c0a07e725fa71a2f447c"
 }

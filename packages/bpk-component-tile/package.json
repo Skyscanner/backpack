@@ -20,5 +20,8 @@
   },
   "devDependencies": {
     "bpk-react-utils": "^2.7.9"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
   }
 }

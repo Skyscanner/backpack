@@ -22,5 +22,8 @@
     "bpk-component-text": "^1.1.19",
     "bpk-tokens": "^27.9.4"
   },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
   "gitHead": "30b387cc6dc4e2717370c0a07e725fa71a2f447c"
 }
