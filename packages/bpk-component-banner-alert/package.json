@@ -22,5 +22,8 @@
     "prop-types": "^15.6.2",
     "react-transition-group": "^2.5.3"
   },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
   "gitHead": "30b387cc6dc4e2717370c0a07e725fa71a2f447c"
 }

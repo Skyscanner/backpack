@@ -16,5 +16,8 @@
   "dependencies": {
     "bpk-react-utils": "^2.7.9",
     "prop-types": "^15.5.8"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
   }
 }
