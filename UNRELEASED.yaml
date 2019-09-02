@@ -23,3 +23,7 @@
 #   FIXED:
 #     - bpk-component-horcrux:
 #       - Fixed issue where `BpkHorcrux` would occasionally possess the living.
+
+FIXED:
+- bpk-component-pagination
+  - Fixed pagination buttons to no longer apply borderRadius from `BpkButton` and are always circular.
