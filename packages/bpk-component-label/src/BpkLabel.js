@@ -31,7 +31,6 @@ export type Props = {
   disabled: boolean,
   required: boolean,
   white: boolean,
-  invalid: boolean,
 };
 
 const BpkLabel = (props: Props) => {
