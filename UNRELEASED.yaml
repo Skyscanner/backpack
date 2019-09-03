@@ -23,3 +23,13 @@
 #   FIXED:
 #     - bpk-component-horcrux:
 #       - Fixed issue where `BpkHorcrux` would occasionally possess the living.
+
+FIXED:
+- bpk-component-fieldset:
+- bpk-component-form-validation:
+- bpk-component-input:
+- bpk-component-select:
+- bpk-component-textarea:
+- bpk-component-theme-toggle:
+- bpk-mixins:
+  - Added theming support for invalid state for inputs
