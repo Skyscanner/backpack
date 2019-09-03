@@ -26,4 +26,4 @@
 
 FIXED:
 - bpk-component-pagination
-  - Fixed pagination buttons to no longer apply borderRadius from `BpkButton` and are always circular.
+  - Pagination buttons are now always circular regardless of theming.
