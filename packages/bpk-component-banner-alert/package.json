@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-banner-alert",
-  "version": "2.1.2-alpha.37+52cc24b6a",
+  "version": "2.1.22",
   "description": "Backpack banner alert component.",
   "main": "index.js",
   "repository": {
@@ -13,14 +13,17 @@
     "react": "^15.0.0 || ^16.0.0"
   },
   "dependencies": {
-    "bpk-animate-height": "^1.1.107-alpha.37+52cc24b6a",
-    "bpk-component-close-button": "^1.0.137-alpha.37+52cc24b6a",
-    "bpk-component-icon": "^3.30.7-alpha.37+52cc24b6a",
-    "bpk-mixins": "^17.23.7-alpha.37+52cc24b6a",
-    "bpk-react-utils": "^2.7.9-alpha.72+52cc24b6a",
-    "bpk-tokens": "^27.6.3-alpha.72+52cc24b6a",
+    "bpk-animate-height": "^1.1.127",
+    "bpk-component-close-button": "^1.0.155",
+    "bpk-component-icon": "^4.0.9",
+    "bpk-mixins": "^18.0.9",
+    "bpk-react-utils": "^2.7.10",
+    "bpk-tokens": "^27.9.5",
     "prop-types": "^15.6.2",
     "react-transition-group": "^2.5.3"
   },
-  "gitHead": "52cc24b6ae2aeba01e38adf36cb73daef8278431"
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "gitHead": "30b387cc6dc4e2717370c0a07e725fa71a2f447c"
 }

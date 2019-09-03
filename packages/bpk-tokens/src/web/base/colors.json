@@ -59,12 +59,14 @@
       "value": "{!GRAY_500}"
     },
     "COLOR_GRAY_600": {
+      "deprecated": true,
       "value": "{!GRAY_600}"
     },
     "COLOR_GRAY_700": {
       "value": "{!GRAY_700}"
     },
     "COLOR_GRAY_800": {
+      "deprecated": true,
       "value": "{!GRAY_800}"
     },
     "COLOR_GRAY_900": {

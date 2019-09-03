@@ -31,7 +31,7 @@
       "type": "size"
     },
     "INPUT_BORDER": {
-      "value": "solid {!ONE_PIXEL_REM} {!GRAY_100}",
+      "value": "solid {!ONE_PIXEL_REM} {!GRAY_300}",
       "type": "border"
     },
     "INPUT_BORDER_RADIUS": {
@@ -43,7 +43,7 @@
       "type": "background"
     },
     "INPUT_COLOR": {
-      "value": "{!GRAY_700}",
+      "value": "{!GRAY_900}",
       "type": "color"
     },
     "INPUT_PLACEHOLDER_COLOR": {
@@ -91,7 +91,7 @@
       "type": "size"
     },
     "SELECT_BORDER": {
-      "value": "solid {!ONE_PIXEL_REM} {!GRAY_100}",
+      "value": "solid {!ONE_PIXEL_REM} {!GRAY_300}",
       "type": "border"
     },
     "SELECT_BORDER_RADIUS": {
@@ -99,7 +99,7 @@
       "type": "radius"
     },
     "SELECT_COLOR": {
-      "value": "{!GRAY_700}",
+      "value": "{!GRAY_900}",
       "type": "color"
     },
     "SELECT_DISABLED_BORDER_COLOR": {
@@ -115,7 +115,7 @@
       "type": "size"
     },
     "LABEL_COLOR": {
-      "value": "{!GRAY_700}",
+      "value": "{!GRAY_900}",
       "type": "color"
     },
     "LABEL_DISABLED_COLOR": {

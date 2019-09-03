@@ -30,6 +30,8 @@ import {
 import SmallLongArrowRightIcon from '../bpk-component-icon/sm/long-arrow-right';
 import LargeLongArrowRightIcon from '../bpk-component-icon/lg/long-arrow-right';
 
+import STYLES from './BpkButtonStory.scss';
+
 import BpkButton from './index';
 
 const AlignedSmallLongArrowRightIcon = withButtonAlignment(
@@ -39,321 +41,85 @@ const AlignedLargeLongArrowRightIcon = withLargeButtonAlignment(
   withRtlSupport(LargeLongArrowRightIcon),
 );
 
+const cssModules = (styles = {}) => className =>
+  styles[className] ? styles[className] : className;
+
+const getClassName = cssModules(STYLES);
+
+const ButtonStory = ({ className, ...rest }: { className: ?string }) => (
+  <div
+    className={[getClassName('bpk-button-story-wrapper'), className].join(' ')}
+  >
+    &nbsp;
+    <BpkButton onClick={action('button clicked')} {...rest}>
+      Button
+    </BpkButton>
+    &nbsp;
+    <BpkButton disabled onClick={action('THIS SHOULD NOT HAPPEN')} {...rest}>
+      Disabled
+    </BpkButton>
+    &nbsp;
+    <BpkButton large onClick={action('large button clicked')} {...rest}>
+      Button
+    </BpkButton>
+    &nbsp;
+    <BpkButton
+      large
+      disabled
+      onClick={action('THIS SHOULD NOT HAPPEN')}
+      {...rest}
+    >
+      Disabled
+    </BpkButton>
+    &nbsp;
+    <BpkButton iconOnly onClick={action('iconOnly button clicked')} {...rest}>
+      <AlignedSmallLongArrowRightIcon />
+    </BpkButton>
+    &nbsp;
+    <BpkButton
+      iconOnly
+      large
+      onClick={action('large iconOnly button clicked')}
+      {...rest}
+    >
+      <AlignedLargeLongArrowRightIcon />
+    </BpkButton>
+    &nbsp;
+  </div>
+);
+
+ButtonStory.defaultProps = { className: null };
+
 storiesOf('bpk-component-button', module)
-  .add('Primary', () => (
-    <div>
-      &nbsp;<BpkButton onClick={action('primary clicked')}>Button</BpkButton>
-      &nbsp;
-      <BpkButton disabled onClick={action('THIS SHOULD NOT HAPPEN')}>
-        Disabled
-      </BpkButton>
-      &nbsp;
-      <BpkButton large onClick={action('large primary clicked')}>
-        Button
-      </BpkButton>
-      &nbsp;
-      <BpkButton large disabled onClick={action('THIS SHOULD NOT HAPPEN')}>
-        Disabled
-      </BpkButton>
-    </div>
-  ))
-  .add('Secondary', () => (
-    <div>
-      &nbsp;
-      <BpkButton secondary onClick={action('secondary clicked')}>
-        Button
-      </BpkButton>
-      &nbsp;
-      <BpkButton secondary disabled onClick={action('THIS SHOULD NOT HAPPEN')}>
-        Disabled
-      </BpkButton>
-      &nbsp;
-      <BpkButton secondary large onClick={action('large secondary clicked')}>
-        Button
-      </BpkButton>
-      &nbsp;
-      <BpkButton
-        secondary
-        large
-        disabled
-        onClick={action('THIS SHOULD NOT HAPPEN')}
-      >
-        Disabled
-      </BpkButton>
-    </div>
-  ))
-  .add('Destructive', () => (
-    <div>
-      &nbsp;
-      <BpkButton destructive onClick={action('destructive clicked')}>
-        Button
-      </BpkButton>
-      &nbsp;
-      <BpkButton
-        destructive
-        disabled
-        onClick={action('THIS SHOULD NOT HAPPEN')}
-      >
-        Disabled
-      </BpkButton>
-      &nbsp;
-      <BpkButton
-        destructive
-        large
-        onClick={action('large destructive clicked')}
-      >
-        Button
-      </BpkButton>
-      &nbsp;
-      <BpkButton
-        destructive
-        large
-        disabled
-        onClick={action('THIS SHOULD NOT HAPPEN')}
-      >
-        Disabled
-      </BpkButton>
-    </div>
-  ))
-  .add('Link button', () => (
-    <div>
-      &nbsp;
-      <BpkButton link onClick={action('link button clicked')}>
-        Button
-      </BpkButton>
-      &nbsp;
-      <BpkButton link disabled onClick={action('THIS SHOULD NOT HAPPEN')}>
-        Disabled
-      </BpkButton>
-      &nbsp;
-      <BpkButton link large onClick={action('large link button clicked')}>
-        Button
-      </BpkButton>
-      &nbsp;
-      <BpkButton link large disabled onClick={action('THIS SHOULD NOT HAPPEN')}>
-        Disabled
-      </BpkButton>
-    </div>
-  ))
-  .add('Featured', () => (
-    <div>
-      &nbsp;
-      <BpkButton featured onClick={action('featured button clicked')}>
-        Button
-      </BpkButton>
-      &nbsp;
-      <BpkButton featured disabled onClick={action('THIS SHOULD NOT HAPPEN')}>
-        Disabled
-      </BpkButton>
-      &nbsp;
-      <BpkButton featured large onClick={action('featured button clicked')}>
-        Button
-      </BpkButton>
-      &nbsp;
-      <BpkButton
-        featured
-        large
-        disabled
-        onClick={action('THIS SHOULD NOT HAPPEN')}
-      >
-        Disabled
-      </BpkButton>
-    </div>
-  ))
-  .add('Icon-only button', () => (
-    <div>
-      <div>
-        <BpkButton iconOnly onClick={action('iconOnly button clicked')}>
-          <AlignedSmallLongArrowRightIcon />
-        </BpkButton>
-        &nbsp;
-        <BpkButton
-          iconOnly
-          secondary
-          onClick={action('iconOnly button secondary clicked')}
-        >
-          <AlignedSmallLongArrowRightIcon />
-        </BpkButton>
-        &nbsp;
-        <BpkButton
-          iconOnly
-          destructive
-          onClick={action('iconOnly button destructive clicked')}
-        >
-          <AlignedSmallLongArrowRightIcon />
-        </BpkButton>
-        &nbsp;
-        <BpkButton iconOnly disabled onClick={action('THIS SHOULD NOT HAPPEN')}>
-          <AlignedSmallLongArrowRightIcon />
-        </BpkButton>
-        &nbsp;
-        <BpkButton
-          iconOnly
-          featured
-          onClick={action('iconOnly button featured clicked')}
-        >
-          <AlignedSmallLongArrowRightIcon />
-        </BpkButton>
-        &nbsp;
-      </div>
-      <div>
-        <BpkButton
-          iconOnly
-          large
-          onClick={action('large iconOnly button clicked')}
-        >
-          <AlignedLargeLongArrowRightIcon />
-        </BpkButton>
-        &nbsp;
-        <BpkButton
-          iconOnly
-          large
-          secondary
-          onClick={action('large iconOnly button secondary clicked')}
-        >
-          <AlignedLargeLongArrowRightIcon />
-        </BpkButton>
-        &nbsp;
-        <BpkButton
-          iconOnly
-          large
-          destructive
-          onClick={action('large iconOnly button destructive clicked')}
-        >
-          <AlignedLargeLongArrowRightIcon />
-        </BpkButton>
-        &nbsp;
-        <BpkButton
-          iconOnly
-          large
-          disabled
-          onClick={action('THIS SHOULD NOT HAPPEN')}
-        >
-          <AlignedLargeLongArrowRightIcon />
-        </BpkButton>
-        &nbsp;
-        <BpkButton
-          iconOnly
-          large
-          featured
-          onClick={action('large iconOnly button featured clicked')}
-        >
-          <AlignedLargeLongArrowRightIcon />
-        </BpkButton>
-        &nbsp;
-      </div>
-    </div>
+  .add('Primary', () => <ButtonStory primary />)
+  .add('Secondary', () => <ButtonStory secondary />)
+  .add('Destructive', () => <ButtonStory destructive />)
+  .add('Link button', () => <ButtonStory link />)
+  .add('Featured', () => <ButtonStory featured />)
+  .add('Outline', () => (
+    <ButtonStory outline className={getClassName('bpk-outline-layout')} />
   ))
   .add('Mixture', () => (
     <div>
-      &nbsp;
-      <BpkButton onClick={action('primary button clicked')}>Button</BpkButton>
-      &nbsp;
-      <BpkButton secondary onClick={action('secondary button clicked')}>
-        Button
-      </BpkButton>
-      &nbsp;
-      <BpkButton destructive onClick={action('destructive button clicked')}>
-        Button
-      </BpkButton>
-      &nbsp;
-      <BpkButton link onClick={action('link button clicked')}>
-        Button
-      </BpkButton>
-      &nbsp;
-      <BpkButton featured onClick={action('featured button clicked')}>
-        Button
-      </BpkButton>
-      &nbsp;
-      <BpkButton large onClick={action('primary button clicked')}>
-        Button
-      </BpkButton>
-      &nbsp;
-      <BpkButton large secondary onClick={action('secondary button clicked')}>
-        Button
-      </BpkButton>
-      &nbsp;
-      <BpkButton
-        large
-        destructive
-        onClick={action('destructive button clicked')}
-      >
-        Button
-      </BpkButton>
-      &nbsp;
-      <BpkButton large link onClick={action('link button clicked')}>
-        Button
-      </BpkButton>
-      &nbsp;
-      <BpkButton large featured onClick={action('featured button clicked')}>
-        Button
-      </BpkButton>
+      <ButtonStory primary />
+      <ButtonStory secondary />
+      <ButtonStory destructive />
+      <ButtonStory link />
+      <ButtonStory featured />
+      <ButtonStory outline className={getClassName('bpk-outline-layout')} />
     </div>
   ))
   .add('Anchor tags', () => (
     <div>
-      &nbsp;
-      <BpkButton href="#" onClick={action('primary anchor clicked')}>
-        Button
-      </BpkButton>
-      &nbsp;
-      <BpkButton
+      <ButtonStory primary href="#" />
+      <ButtonStory secondary href="#" />
+      <ButtonStory destructive href="#" />
+      <ButtonStory link href="#" />
+      <ButtonStory featured href="#" />
+      <ButtonStory
+        outline
+        className={getClassName('bpk-outline-layout')}
         href="#"
-        secondary
-        onClick={action('secondary anchor clicked')}
-      >
-        Button
-      </BpkButton>
-      &nbsp;
-      <BpkButton
-        href="#"
-        destructive
-        onClick={action('destructive anchor clicked')}
-      >
-        Button
-      </BpkButton>
-      &nbsp;
-      <BpkButton href="#" link onClick={action('link anchor clicked')}>
-        Button
-      </BpkButton>
-      &nbsp;
-      <BpkButton href="#" featured onClick={action('featured anchor clicked')}>
-        Button
-      </BpkButton>
-      &nbsp;
-      <BpkButton href="#" large onClick={action('primary anchor clicked')}>
-        Button
-      </BpkButton>
-      &nbsp;
-      <BpkButton
-        href="#"
-        large
-        secondary
-        onClick={action('secondary anchor clicked')}
-      >
-        Button
-      </BpkButton>
-      &nbsp;
-      <BpkButton
-        href="#"
-        large
-        destructive
-        onClick={action('destructive anchor clicked')}
-      >
-        Button
-      </BpkButton>
-      &nbsp;
-      <BpkButton href="#" large link onClick={action('link anchor clicked')}>
-        Button
-      </BpkButton>
-      &nbsp;
-      <BpkButton
-        href="#"
-        large
-        featured
-        onClick={action('featured anchor clicked')}
-      >
-        Button
-      </BpkButton>
+      />
     </div>
   ));

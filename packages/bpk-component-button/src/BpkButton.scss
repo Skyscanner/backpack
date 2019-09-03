@@ -38,15 +38,23 @@
     @include bpk-button--destructive;
   }
 
+  &--outline {
+    @include bpk-button--outline;
+  }
+
   &--link {
     @include bpk-button--link;
   }
 
   &--icon-only {
+    border-radius: $bpk-button-border-radius;
+
     @include bpk-button--icon-only;
   }
 
   &--large-icon-only {
+    border-radius: $bpk-button-border-radius-lg;
+
     @include bpk-button--large-icon-only;
   }
 

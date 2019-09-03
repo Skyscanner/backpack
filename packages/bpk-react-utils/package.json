@@ -1,6 +1,6 @@
 {
   "name": "bpk-react-utils",
-  "version": "2.7.9-alpha.72+52cc24b6a",
+  "version": "2.7.10",
   "description": "Utilities for Backpack's React components.",
   "main": "index.js",
   "repository": {
@@ -19,5 +19,7 @@
     "react-transition-group": "^2.5.3",
     "recompose": "^0.30.0"
   },
-  "gitHead": "52cc24b6ae2aeba01e38adf36cb73daef8278431"
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  }
 }

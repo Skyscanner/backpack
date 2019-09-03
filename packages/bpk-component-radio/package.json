@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-radio",
-  "version": "1.3.1-alpha.9+52cc24b6a",
+  "version": "1.3.22",
   "description": "Backpack radio button component.",
   "main": "index.js",
   "repository": {
@@ -13,12 +13,15 @@
     "react": "^15.0.0 || ^16.0.0"
   },
   "dependencies": {
-    "bpk-mixins": "^17.23.7-alpha.37+52cc24b6a",
-    "bpk-react-utils": "^2.7.9-alpha.72+52cc24b6a",
+    "bpk-mixins": "^18.0.9",
+    "bpk-react-utils": "^2.7.10",
     "prop-types": "^15.6.2"
   },
   "devDependencies": {
-    "bpk-tokens": "^27.6.3-alpha.72+52cc24b6a"
+    "bpk-tokens": "^27.9.5"
   },
-  "gitHead": "52cc24b6ae2aeba01e38adf36cb73daef8278431"
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "gitHead": "30b387cc6dc4e2717370c0a07e725fa71a2f447c"
 }

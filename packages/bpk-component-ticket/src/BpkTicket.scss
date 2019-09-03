@@ -157,7 +157,7 @@
 
     &--horizontal {
       height: $bpk-one-pixel-rem * 2;
-      background-image: url(map-get($bpk-elements, card-dash-horizontal));
+      background-image: linear-gradient($bpk-color-gray-100, $bpk-color-gray-100);
       background-repeat: repeat-x;
       background-position: 0 50%;
       background-size: 8 * $bpk-one-pixel-rem 2 * $bpk-one-pixel-rem;
@@ -167,7 +167,7 @@
       height: $notch-size * 2;
       margin: auto $notch-size;
       padding: 0 $notch-size;
-      background-image: url(map-get($bpk-elements, card-dash-horizontal));
+      background-image: linear-gradient($bpk-color-gray-100, $bpk-color-gray-100);
       background-repeat: repeat-x;
       background-position: 0 50%;
       background-size: 8 * $bpk-one-pixel-rem 2 * $bpk-one-pixel-rem;
@@ -175,7 +175,7 @@
 
     &--vertical {
       width: $bpk-one-pixel-rem * 2;
-      background-image: url(map-get($bpk-elements, card-dash-vertical));
+      background-image: linear-gradient($bpk-color-gray-100, $bpk-color-gray-100);
       background-repeat: repeat-y;
       background-position: 50% 0;
       background-size: 2 * $bpk-one-pixel-rem 8 * $bpk-one-pixel-rem;
@@ -185,7 +185,7 @@
       width: $notch-size * 2;
       margin: $notch-size auto;
       padding: $notch-size 0;
-      background-image: url(map-get($bpk-elements, card-dash-vertical));
+      background-image: linear-gradient($bpk-color-gray-100, $bpk-color-gray-100);
       background-repeat: repeat-y;
       background-position: 50% 0;
       background-size: 2 * $bpk-one-pixel-rem 8 * $bpk-one-pixel-rem;
@@ -194,7 +194,7 @@
     &--fallback {
       display: table-cell;
       width: 2 * $bpk-one-pixel-rem;
-      background-image: url(map-get($bpk-elements, card-dash-vertical));
+      background-image: linear-gradient($bpk-color-gray-100, $bpk-color-gray-100);
       background-repeat: repeat-y;
       background-position: 50% 0;
       background-size: 2 * $bpk-one-pixel-rem 8 * $bpk-one-pixel-rem;

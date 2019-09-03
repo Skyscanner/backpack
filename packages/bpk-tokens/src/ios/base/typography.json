@@ -1,12 +1,20 @@
 {
-  "imports": [
-    "./aliases.json"
-  ],
+  "imports": ["./aliases.json"],
   "props": {
     "FONT_FAMILY": {
       "value": "{!FONT_FAMILY}",
       "type": "font",
       "category": "typesettings"
+    },
+    "TEXT_PRIMARY_LIGHT_COLOR": {
+      "value": "{!GRAY_900}",
+      "type": "color",
+      "category": "text-colors"
+    },
+    "TEXT_SECONDARY_LIGHT_COLOR": {
+      "value": "{!GRAY_700}",
+      "type": "color",
+      "category": "text-colors"
     },
     "FONT_SIZE_CAPS": {
       "value": "{!FONT_SIZE_CAPS}",

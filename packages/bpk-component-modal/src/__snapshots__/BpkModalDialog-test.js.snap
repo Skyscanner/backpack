@@ -21,7 +21,7 @@ exports[`BpkModalDialog should render correctly 1`] = `
     <button
       aria-label="Close"
       className="bpk-close-button bpk-modal__close-button"
-      onClick={[Function]}
+      onClick={[MockFunction]}
       title="Close"
       type="button"
     >
@@ -73,7 +73,7 @@ exports[`BpkModalDialog should render correctly when is iPhone 1`] = `
     <button
       aria-label="Close"
       className="bpk-close-button bpk-modal__close-button"
-      onClick={[Function]}
+      onClick={[MockFunction]}
       title="Close"
       type="button"
     >
@@ -125,7 +125,7 @@ exports[`BpkModalDialog should render correctly when it does not fills the scree
     <button
       aria-label="Close"
       className="bpk-close-button bpk-modal__close-button"
-      onClick={[Function]}
+      onClick={[MockFunction]}
       title="Close"
       type="button"
     >
@@ -177,7 +177,7 @@ exports[`BpkModalDialog should render correctly when it has a className 1`] = `
     <button
       aria-label="Close"
       className="bpk-close-button bpk-modal__close-button"
-      onClick={[Function]}
+      onClick={[MockFunction]}
       title="Close"
       type="button"
     >
@@ -229,7 +229,7 @@ exports[`BpkModalDialog should render correctly when it is fullscreen 1`] = `
     <button
       aria-label="Close"
       className="bpk-close-button bpk-modal__close-button"
-      onClick={[Function]}
+      onClick={[MockFunction]}
       title="Close"
       type="button"
     >
@@ -281,7 +281,7 @@ exports[`BpkModalDialog should render correctly with a custom content classname 
     <button
       aria-label="Close"
       className="bpk-close-button bpk-modal__close-button"
-      onClick={[Function]}
+      onClick={[MockFunction]}
       title="Close"
       type="button"
     >
@@ -332,7 +332,7 @@ exports[`BpkModalDialog should render correctly with closeText prop 1`] = `
      
     <button
       className="bpk-link"
-      onClick={[Function]}
+      onClick={[MockFunction]}
       type="button"
     >
       Dismiss
@@ -367,7 +367,7 @@ exports[`BpkModalDialog should render correctly with no padding 1`] = `
     <button
       aria-label="Close"
       className="bpk-close-button bpk-modal__close-button"
-      onClick={[Function]}
+      onClick={[MockFunction]}
       title="Close"
       type="button"
     >
@@ -419,7 +419,7 @@ exports[`BpkModalDialog should render correctly with wide prop 1`] = `
     <button
       aria-label="Close"
       className="bpk-close-button bpk-modal__close-button"
-      onClick={[Function]}
+      onClick={[MockFunction]}
       title="Close"
       type="button"
     >

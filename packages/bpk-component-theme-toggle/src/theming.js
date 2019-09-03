@@ -40,6 +40,7 @@ const generateTheme = ({
   gray700,
   gray900,
   borderRadius,
+  fontSize,
   docsSidebarBackground,
   docsSidebarLink,
   docsSidebarLinkBorder,
@@ -69,6 +70,7 @@ const generateTheme = ({
   blockquoteBarColor: primaryColor500,
 
   buttonBorderRadius: borderRadius,
+  buttonFontSize: fontSize,
 
   buttonPrimaryTextColor: colorWhite,
   buttonPrimaryHoverTextColor: colorWhite,
@@ -128,6 +130,8 @@ const generateTheme = ({
 
   spinnerPrimaryColor: primaryColor500,
 
+  starRatingFilledColor: primaryColor500,
+
   sliderBarColor: primaryColor500,
 
   paginationNudgerActiveColor: primaryColor500,
@@ -150,6 +154,10 @@ const generateTheme = ({
 
   checkboxCheckedColor: primaryColor700,
   radioCheckedColor: primaryColor700,
+
+  ratingHighColor: primaryColor500,
+  ratingMediumColor: secondaryColor500,
+  ratingLowColor: gray500,
 
   mapMarkerPrimaryBackgroundColor: primaryColor700,
   mapMarkerSecondaryBackgroundColor: secondaryColor700,
@@ -185,6 +193,7 @@ const londonTheme = {
   gray700: '#4B5458',
   gray900: '#0B1A22',
   borderRadius: '0rem',
+  fontSize: '1.2rem',
   docsSidebarBackground: '#013A76',
   docsSidebarLink: '#6889AB',
   docsSidebarLinkBorder: '#6889AB',
@@ -208,6 +217,7 @@ const hongKongTheme = {
   gray700: '#4B5458',
   gray900: '#0B1A22',
   borderRadius: '100rem',
+  fontSize: '1.2rem',
   docsSidebarBackground: '#4C4C4C',
   docsSidebarLink: '#686868',
   docsSidebarLinkBorder: '#686868',
@@ -231,6 +241,7 @@ const dohaTheme = {
   gray700: '#4B5458',
   gray900: '#0B1A22',
   borderRadius: '0rem',
+  fontSize: '1.2rem',
   docsSidebarBackground: '#5E072C',
   docsSidebarLink: '#BF3671',
   docsSidebarLinkBorder: '#BF3671',

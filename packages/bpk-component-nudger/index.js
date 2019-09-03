@@ -17,7 +17,8 @@
  */
 
 import BpkNudger from './src/BpkNudger';
+import BpkConfigurableNudger from './src/BpkConfigurableNudger';
 import themeAttributes from './src/themeAttributes';
 
 export default BpkNudger;
-export { themeAttributes };
+export { themeAttributes, BpkConfigurableNudger };

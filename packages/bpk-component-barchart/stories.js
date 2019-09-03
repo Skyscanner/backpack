@@ -279,4 +279,34 @@ storiesOf('bpk-component-barchart', module)
       yAxisLabel="Average Price (£)"
       showGridlines
     />
+  ))
+  .add('Custom yAxisDomain', () => (
+    <div>
+      <Heading>Domain (0 - 800)</Heading>
+      <RtlBarchart
+        initialWidth={500}
+        initialHeight={300}
+        data={data.prices}
+        xScaleDataKey="month"
+        yScaleDataKey="price"
+        style={{
+          maxWidth: '580px',
+        }}
+        showGridlines
+        yAxisDomain={[0, 800]}
+      />
+      <Heading>Domain (300 - null)</Heading>
+      <RtlBarchart
+        initialWidth={500}
+        initialHeight={300}
+        data={data.prices}
+        xScaleDataKey="month"
+        yScaleDataKey="price"
+        style={{
+          maxWidth: '580px',
+        }}
+        showGridlines
+        yAxisDomain={[300, null]}
+      />
+    </div>
   ));

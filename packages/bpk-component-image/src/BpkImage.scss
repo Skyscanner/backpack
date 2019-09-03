@@ -83,4 +83,8 @@
   &--no-background {
     @include bpk-image--no-background;
   }
+
+  &--border-radius-sm {
+    @include bpk-border-radius-sm;
+  }
 }

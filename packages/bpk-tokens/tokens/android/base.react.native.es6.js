@@ -44,16 +44,16 @@ export const colorBlue600 = "rgb(0, 157, 189)";
 export const colorBlue700 = "rgb(0, 140, 168)";
 export const colorBlue800 = "rgb(0, 117, 140)";
 export const colorBlue900 = "rgb(0, 85, 103)";
-export const colorGray100 = "rgb(230, 228, 235)";
-export const colorGray200 = "rgb(204, 201, 212)";
-export const colorGray300 = "rgb(178, 174, 189)";
-export const colorGray400 = "rgb(154, 149, 167)";
-export const colorGray50 = "rgb(243, 242, 245)";
-export const colorGray500 = "rgb(129, 123, 143)";
+export const colorGray100 = "rgb(221, 221, 229)";
+export const colorGray200 = "rgb(205, 205, 215)";
+export const colorGray300 = "rgb(178, 178, 191)";
+export const colorGray400 = "rgb(143, 144, 160)";
+export const colorGray50 = "rgb(241, 242, 248)";
+export const colorGray500 = "rgb(104, 105, 127)";
 export const colorGray600 = "rgb(105, 97, 121)";
-export const colorGray700 = "rgb(82, 76, 97)";
+export const colorGray700 = "rgb(68, 69, 96)";
 export const colorGray800 = "rgb(59, 52, 75)";
-export const colorGray900 = "rgb(37, 32, 51)";
+export const colorGray900 = "rgb(17, 18, 54)";
 export const colorGreen100 = "rgb(203, 245, 226)";
 export const colorGreen200 = "rgb(175, 237, 209)";
 export const colorGreen300 = "rgb(128, 232, 185)";
@@ -146,6 +146,8 @@ export const textLgFontSize = 20;
 export const textLgFontWeight = "400";
 export const textLgLetterSpacing = -0.4;
 export const textLgLineHeight = 23;
+export const textPrimaryLightColor = "rgb(17, 18, 54)";
+export const textSecondaryLightColor = "rgb(68, 69, 96)";
 export const textSmFontSize = 14;
 export const textSmFontWeight = "400";
 export const textSmLetterSpacing = 0;
@@ -317,6 +319,10 @@ spacingNone,
 spacingSm,
 spacingXl,
 spacingXxl,
+};
+export const textColors = {
+textPrimaryLightColor,
+textSecondaryLightColor,
 };
 export const typesettings = {
 fontFamily,

@@ -1,6 +1,214 @@
 # Backpack changelog
 
-[Unreleased changes](./UNRELEASED.md).
+[Unreleased changes](./UNRELEASED.yaml).
+
+# 2019-09-03 - `BpkPagination` buttons are always circular
+
+**Fixed:**
+- bpk-component-pagination: 1.0.123 => 1.0.124
+  - Pagination buttons are now always circular regardless of theming.
+
+# 2019-08-29 - Theming support for `BpkStarRating` component.
+
+**Added:**
+  - bpk-component-star-rating: 1.0.152 => 1.1.0
+    - Added new theming prop `starRatingFilledColor` to allow the star colour to be changed.
+
+# 2019-08-27 - Remove unreleased deprecated tokens
+
+**Fixed:**
+- bpk-tokens: 27.9.2 => 27.9.3
+  - Removed unreleased deprecated tokens
+
+# 2019-08-26 - Fix token changes
+
+**Fixed:**
+- bpk-tokens: 27.9.0 => 27.9.2
+  - Correct name for semantic text color names, previously published names have been deprecated.
+
+# 2019-08-23 - Text token changes
+
+**Added:**
+
+- bpk-tokens: 27.8.0 => 27.9.0
+  - Added new tokens for text primary and secondary color in light mode UIs.
+  - Added new token for font weight black (equivalent to 900).
+
+# 2019-08-23 - Enable font-size theming in button
+
+**Added:**
+
+ - bpk-component-button: 2.4.9 => 2.5.0
+   - New optional `buttonFontSize` theme attribute.
+
+
+# 2019-08-19 - Rating component added.
+
+**Added:**
+  - bpk-component-rating: 1.0.0
+    - Introducing the rating component.
+  - bpk-tokens: 27.7.0 => 27.8.0
+    - Tokens for supporting rating component.
+  - bpk-component-theme-toggle: 1.0.123 => 1.1.0
+    - Theme attributes to support rating component.
+
+# 2019-08-16 - Updated `gray` colours
+
+**Changed**:
+  - bpk-stylesheets: 3.2.188 => 3.3.0
+    - Updated `color` on `body` to reflect the updated gray color.
+  - bpk-svgs: 7.0.0 => 7.1.0
+    - Updated `svg borders` to utilise updated gray color.
+  - bpk-tokens: 27.6.6 => 27.7.0
+    - Updated gray colours `gray50`, `gray100`, `gray200`, `gray300`, `gray400`, `gray500`, `gray700`, `gray900`
+    - Deprecated `gray600` and `gray800` please update as these will be removed in the future.
+      - For these tokens please use either one token above or below your current value to suit your needs.
+
+# 2019-08-12 - Added vertical swap icon
+
+**Breaking:**
+
+ - bpk-component-icon: 3.31.8 => 4.0.0
+ - bpk-mixins: 17.24.8 => 18.0.0
+ - bpk-svgs: 6.9.6 => 7.0.0
+   - `swap` icon renamed `swap--horizontal`.
+   - New `swap--vertical` icon.
+
+
+# 2019-08-08 - New `borderRadiusStyle` prop for `BpkImage`
+
+**Added:**
+
+ - bpk-component-image: 2.2.12 => 2.3.0
+   - New `borderRadiusStyle` prop for adding rounded corners to images.
+
+
+# 2019-08-07 - Input bug fix
+
+**Fixed:**
+
+ - bpk-component-input: 4.1.30 => 4.1.31
+   - Fixed clear button in `whileEditing` so that it cannot be clicked when not visible.
+
+
+# 2019-08-06 - Updated form element border colours
+
+**Fixed:**
+  - bpk-tokens: 27.6.5 => 27.6.6
+    - Changed `$bpk-input-border` and `$bpk-select-border` to use `gray300` from `gray100`
+  - bpk-svgs: 6.9.5 => 6.9.6
+    - Changed border colours of `radio` and `checkbox` `svgs` to use `gray300` from `gray100`
+
+# 2019-07-30 - New flexible nudger variant
+
+**Added:**
+
+ - bpk-component-nudger: 1.1.3 => 1.2.0
+   - Added `BpkConfigurableNudger`, which is more flexible than the existing `BpkNudger` and works with any data.
+
+
+# 2019-07-26 - Update ticket line appearance
+
+**Breaking:**
+
+ - bpk-component-ticket: 1.2.73 => 2.0.0
+   - The dashed line has been replaced with a solid line of the same colour and weight. This is a visually breaking change only.
+
+
+# 2019-07-25 - Fix button when disabled and href supplied.
+
+**Fixed:**
+  - bpk-component-button: 2.4.2 => 2.4.3
+    - Fixed issue where `BpkButton` would ignore disabled prop when href prop is provided.
+
+# 2019-07-24 - Ability to change nudger button type.
+
+**Added:**
+ - bpk-component-nudger: 1.0.145 => 1.1.0
+    - New `buttonType` prop for changing the button type used in the nudger.
+
+# 2019-07-23 - New trips icon
+
+**Fixed:**
+
+ - bpk-svgs: 6.9.1 => 6.9.2
+   - Replaced the `trips` icon.
+
+
+# 2019-07-23 - New outline button type
+
+**Added:**
+
+ - bpk-component-button: 2.3.15 => 2.4.0
+   - New `outline` prop for creating outline buttons. See https://backpack.github.io/components/button?platform=web#outline
+
+
+# 2019-07-12 - New `flight-landing`, `flight-takeoff` and `aircraft` icons.
+
+**Added:**
+
+ - bpk-svgs: 6.8.1 => 6.9.0
+   - New `flight-landing`, `flight-takeoff` and `aircraft` icons.
+
+
+# 2019-07-10 - New `yAxisDomain` prop
+
+**Added:**
+
+ - bpk-component-barchart: 2.3.81 => 2.4.0
+   - New `yAxisDomain` prop to set a custom y axis domain.
+
+
+# 2019-07-08 - Fix infinite scroll update with empty lists
+
+**Fixed::**
+
+- bpk-component-infinite-scroll:
+  - Updating data to an empty array will now refresh the list
+
+# 2019-07-08 - Fix for phone input clicks not being registered
+
+**Fixed:**
+
+ - bpk-component-phone-input: 3.1.8 => 3.1.9
+   - Fixed issue which meant clicking on an image inside a `BpkSelect` would not open the select menu.
+
+ - bpk-component-select: 2.3.3 => 2.3.4
+   - Fixed issue which meant clicking on an image inside a `BpkSelect` would not open the select menu.
+
+
+# 2019-07-02 - `iconOnly` buttons always circular
+
+**Fixed:**
+
+ - bpk-component-button: 2.3.13 => 2.3.14
+   - `iconOnly` buttons no longer apply `borderRadius` from theming and are always circular.
+
+
+2019-06-28 - Bug fix for mobile modal and dialog scrims
+
+**Fixed:**
+
+ - bpk-component-dialog: 1.1.68 => 1.1.69
+   - Fixed an issue that caused the scrim to initially be shown at full opacity when initially rendered.
+
+ - bpk-component-modal: 1.8.68 => 1.8.69
+   - Fixed an issue that caused the scrim to initially be shown at full opacity when initially rendered.
+
+
+# 2019-06-25 New icons
+
+**Added:**
+- bpk-component-icon:
+- bpk-mixins:
+- bpk-svgs:
+  - New `paid`, `star-outline` icons added.
+
+**Updated:**
+- bpk-component-icon:
+- bpk-mixins:
+- bpk-svgs:
+  - Updated `meal`, `bar`, `star`, `star-half` `media` icons.
 
 # 2019-06-19 - Added `ariaLabel` prop to `BpkRadio` component
 

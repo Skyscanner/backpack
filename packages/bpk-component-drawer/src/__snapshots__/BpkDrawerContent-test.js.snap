@@ -21,7 +21,7 @@ exports[`BpkDrawerContent should render correctly 1`] = `
     <button
       aria-label="Close"
       className="bpk-close-button bpk-drawer__close-button"
-      onClick={[Function]}
+      onClick={[MockFunction]}
       title="Close"
       type="button"
     >
@@ -73,7 +73,7 @@ exports[`BpkDrawerContent should render correctly when it has a className 1`] = 
     <button
       aria-label="Close"
       className="bpk-close-button bpk-drawer__close-button"
-      onClick={[Function]}
+      onClick={[MockFunction]}
       title="Close"
       type="button"
     >
@@ -125,7 +125,7 @@ exports[`BpkDrawerContent should render correctly when it has a contentClassName
     <button
       aria-label="Close"
       className="bpk-close-button bpk-drawer__close-button"
-      onClick={[Function]}
+      onClick={[MockFunction]}
       title="Close"
       type="button"
     >
@@ -178,7 +178,7 @@ exports[`BpkDrawerContent should render correctly with arbitrary attributes 1`] 
     <button
       aria-label="Close"
       className="bpk-close-button bpk-drawer__close-button"
-      onClick={[Function]}
+      onClick={[MockFunction]}
       title="Close"
       type="button"
     >
@@ -230,7 +230,7 @@ exports[`BpkDrawerContent should render correctly with hideTitle 1`] = `
     <button
       aria-label="Close"
       className="bpk-close-button bpk-drawer__close-button"
-      onClick={[Function]}
+      onClick={[MockFunction]}
       title="Close"
       type="button"
     >

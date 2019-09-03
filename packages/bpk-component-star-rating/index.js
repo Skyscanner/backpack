@@ -21,6 +21,7 @@ import BpkInteractiveStar from './src/BpkInteractiveStar';
 import BpkStarRating from './src/BpkStarRating';
 import BpkInteractiveStarRating from './src/BpkInteractiveStarRating';
 import withInteractiveStarRatingState from './src/withInteractiveStarRatingState';
+import themeAttributes from './src/themeAttributes';
 
 export {
   BpkStar,
@@ -28,5 +29,6 @@ export {
   BpkInteractiveStar,
   BpkInteractiveStarRating,
   withInteractiveStarRatingState,
+  themeAttributes,
 };
 export default BpkStarRating;

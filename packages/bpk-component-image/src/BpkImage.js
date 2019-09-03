@@ -25,6 +25,7 @@ import CSSTransition from 'react-transition-group/CSSTransition';
 import { animations } from 'bpk-tokens/tokens/base.es6';
 
 import STYLES from './BpkImage.css';
+import BORDER_RADIUS_STYLES from './BpkImageBorderRadiusStyles';
 
 const getClassName = cssModules(STYLES);
 
@@ -35,6 +36,7 @@ type BpkImageProps = {
   loading: boolean,
   src: string,
   width: number,
+  borderRadiusStyle: $Keys<typeof BORDER_RADIUS_STYLES>,
   className: ?string,
   onLoad: ?() => mixed,
   style: ?{}, // eslint-disable-line react/forbid-prop-types
@@ -117,6 +119,7 @@ class BpkImage extends Component<BpkImageProps> {
       width,
       height,
       altText,
+      borderRadiusStyle,
       className,
       inView,
       loading,
@@ -132,6 +135,14 @@ class BpkImage extends Component<BpkImageProps> {
 
     if (!loading) {
       classNames.push(getClassName('bpk-image--no-background'));
+    }
+
+    if (borderRadiusStyle !== BORDER_RADIUS_STYLES.none) {
+      classNames.push(
+        getClassName(
+          `bpk-image--border-radius-${BORDER_RADIUS_STYLES[borderRadiusStyle]}`,
+        ),
+      );
     }
 
     // wraps a div with maxWidth and maxHeight set iff full-width is no required.
@@ -197,6 +208,7 @@ BpkImage.propTypes = {
   height: PropTypes.number.isRequired,
   src: PropTypes.string.isRequired,
   width: PropTypes.number.isRequired,
+  borderRadiusStyle: PropTypes.oneOf(Object.keys(BORDER_RADIUS_STYLES)),
   className: PropTypes.string,
   inView: PropTypes.bool,
   loading: PropTypes.bool,
@@ -206,6 +218,7 @@ BpkImage.propTypes = {
 };
 
 BpkImage.defaultProps = {
+  borderRadiusStyle: BORDER_RADIUS_STYLES.none,
   className: null,
   inView: true,
   loading: false,

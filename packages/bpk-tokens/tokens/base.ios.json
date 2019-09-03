@@ -192,48 +192,49 @@
     {
       "type": "color",
       "category": "colors",
-      "value": "#e6e4ebff",
+      "value": "#dddde5ff",
       "originalValue": "{!GRAY_100}",
       "name": "colorGray100"
     },
     {
       "type": "color",
       "category": "colors",
-      "value": "#ccc9d4ff",
+      "value": "#cdcdd7ff",
       "originalValue": "{!GRAY_200}",
       "name": "colorGray200"
     },
     {
       "type": "color",
       "category": "colors",
-      "value": "#b2aebdff",
+      "value": "#b2b2bfff",
       "originalValue": "{!GRAY_300}",
       "name": "colorGray300"
     },
     {
       "type": "color",
       "category": "colors",
-      "value": "#9a95a7ff",
+      "value": "#8f90a0ff",
       "originalValue": "{!GRAY_400}",
       "name": "colorGray400"
     },
     {
       "type": "color",
       "category": "colors",
-      "value": "#f3f2f5ff",
+      "value": "#f1f2f8ff",
       "originalValue": "{!GRAY_50}",
       "name": "colorGray50"
     },
     {
       "type": "color",
       "category": "colors",
-      "value": "#817b8fff",
+      "value": "#68697fff",
       "originalValue": "{!GRAY_500}",
       "name": "colorGray500"
     },
     {
       "type": "color",
       "category": "colors",
+      "deprecated": true,
       "value": "#696179ff",
       "originalValue": "{!GRAY_600}",
       "name": "colorGray600"
@@ -241,13 +242,14 @@
     {
       "type": "color",
       "category": "colors",
-      "value": "#524c61ff",
+      "value": "#444560ff",
       "originalValue": "{!GRAY_700}",
       "name": "colorGray700"
     },
     {
       "type": "color",
       "category": "colors",
+      "deprecated": true,
       "value": "#3b344bff",
       "originalValue": "{!GRAY_800}",
       "name": "colorGray800"
@@ -255,7 +257,7 @@
     {
       "type": "color",
       "category": "colors",
-      "value": "#252033ff",
+      "value": "#111236ff",
       "originalValue": "{!GRAY_900}",
       "name": "colorGray900"
     },
@@ -715,7 +717,7 @@
       "name": "lineHeightXxl"
     },
     {
-      "value": "#252033ff",
+      "value": "#111236ff",
       "type": "color",
       "category": "box-shadows",
       "originalValue": "{!GRAY_900}",
@@ -750,7 +752,7 @@
       "name": "shadowLgRadius"
     },
     {
-      "value": "#252033ff",
+      "value": "#111236ff",
       "type": "color",
       "category": "box-shadows",
       "originalValue": "{!GRAY_900}",
@@ -785,7 +787,7 @@
       "name": "shadowSmRadius"
     },
     {
-      "value": "#252033ff",
+      "value": "#111236ff",
       "type": "color",
       "category": "box-shadows",
       "deprecated": true,
@@ -967,6 +969,20 @@
       "name": "textLgLineHeight"
     },
     {
+      "value": "#111236ff",
+      "type": "color",
+      "category": "text-colors",
+      "originalValue": "{!GRAY_900}",
+      "name": "textPrimaryLightColor"
+    },
+    {
+      "value": "#444560ff",
+      "type": "color",
+      "category": "text-colors",
+      "originalValue": "{!GRAY_700}",
+      "name": "textSecondaryLightColor"
+    },
+    {
       "value": "14",
       "type": "font-size",
       "category": "font-sizes",
@@ -1105,7 +1121,7 @@
     },
     {
       "category": "touchables",
-      "value": "#252033ff",
+      "value": "#111236ff",
       "type": "color",
       "originalValue": "{!GRAY_900}",
       "name": "touchableOverlayColor"
@@ -1119,7 +1135,7 @@
     },
     {
       "category": "touchables",
-      "value": "#252033ff",
+      "value": "#111236ff",
       "type": "color",
       "deprecated": true,
       "originalValue": "{!GRAY_900}",

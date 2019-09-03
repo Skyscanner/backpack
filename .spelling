@@ -63,12 +63,17 @@ BpkModal
 
 BpkNavigationBarButtonLink
 
+BpkNudger
+BpkConfigurableNudger
+
 BpkPanel
 
 BpkPhoneNumberInput
 
 BpkPicker
 BpkPickerItem
+
+BpkRating
 
 BpkScrollableCalendarDate
 BpkScrollableCalendarGrid
@@ -192,6 +197,7 @@ textarea
 Themeability
 themeable
 TTF
+UIs
 uncompiled
 z-index
 
@@ -244,7 +250,11 @@ bannerStyle
 BarChart
 beforeClose
 borderRadius
+borderRadiusStyle
+BORDER_RADIUS_STYLES
+BORDER_RADIUS_STYLES.none
 borderlessBackground
+buttonType
 centerLeading
 centerTrailing
 clearButtonMode
@@ -252,6 +262,7 @@ closeOnEscPressed
 closeOnScrimClick
 collapseDelay
 color
+compareValues
 containerClassName
 cornerStyle
 CORNER_STYLES.sm
@@ -259,6 +270,7 @@ CORNER_STYLES.lg
 DataSource
 dateProps
 decreaseButtonLabel
+decrementValue
 dialingCode
 dialingCodes
 dismissable
@@ -269,6 +281,7 @@ dockedLast
 doneLabel
 expandDelay
 fillStyle
+formatValue
 getApplicationElement
 getArrowPositionCallback
 getStarLabel
@@ -281,7 +294,9 @@ iconAlignment
 iconOnly
 imageComponent
 increaseButtonLabel
+incrementValue
 innerStyle
+inputClassName
 inputRef
 inView
 isIphone
@@ -488,6 +503,7 @@ xAxisTickEvery
 yAxisMargin
 yAxisTickValue
 yAxisNumTicks
+yAxisDomain
 withAccordionItemState
 
 BpkAccordion
@@ -580,6 +596,7 @@ bpk-component-phone-input
 bpk-component-popover
 bpk-component-progress
 bpk-component-radio
+bpk-component-rating
 bpk-component-router-link
 bpk-component-rtl-toggle
 bpk-component-scrollable-calendar
@@ -667,6 +684,7 @@ Udaipur
 
 20s
 62kb
+Array.prototype.sort
 artifacts
 Blergh
 downtown
