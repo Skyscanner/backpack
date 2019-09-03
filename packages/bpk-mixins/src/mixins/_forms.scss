@@ -108,8 +108,9 @@
 ///   }
 
 @mixin bpk-input--invalid {
+  @include bpk-themeable-property(border-color, --bpk-input-border-color, $bpk-color-red-500);
+
   padding-right: $bpk-spacing-base;
-  border-color: $bpk-color-red-500;
   background: $bpk-color-white url(map-get($bpk-icons-sm, exclamation-circle-red-500)) no-repeat right $bpk-spacing-sm center;
   background-size: $bpk-spacing-md $bpk-spacing-md;
 
@@ -744,10 +745,10 @@
 ///   }
 
 @mixin bpk-form-validation {
+  @include bpk-themeable-property(color, --bpk-form-validation-text-color, $bpk-form-validation-background-color);
   position: relative;
   transform: translateY(-#{$bpk-spacing-sm});
   transition: opacity $bpk-duration-sm ease-in-out, transform $bpk-duration-sm ease-in-out;
-  color: $bpk-form-validation-background-color;
   opacity: 0;
 }
 

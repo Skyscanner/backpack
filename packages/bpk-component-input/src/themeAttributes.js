@@ -16,9 +16,4 @@
  * limitations under the License.
  */
 
-export default [
-  'inputValidIconColor',
-  'inputInvalidIconColor',
-  'inputInvalidBorderColor',
-  'inputInvalidBackgroundColor',
-];
+export default ['inputInvalidBorderColor', 'inputInvalidBackgroundColor'];

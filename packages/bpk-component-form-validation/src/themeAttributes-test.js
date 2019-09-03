@@ -16,26 +16,13 @@
  * limitations under the License.
  */
 
-@import '~bpk-mixins/index';
+import themeAttributes from './themeAttributes';
 
-.bpk-form-validation {
-  @include bpk-form-validation;
-
-  &__container {
-    @include bpk-form-validation__container;
-  }
-
-  &__icon {
-
-    @include bpk-themeable-property(fill, --bpk-form-validation-icon-fill, $bpk-color-red-500);
-    @include bpk-margin-trailing($bpk-spacing-xs);
-  }
-
-  &--appear {
-    @include bpk-form-validation--appear;
-  }
-
-  &--is-checkbox {
-    @include bpk-form-validation--is-checkbox;
-  }
-}
+describe('themeAttributes', () => {
+  it('exports the expected themeAttributes', () => {
+    expect(themeAttributes).toEqual([
+      'formValidationIconFill',
+      'formValidationTextColor',
+    ]);
+  });
+});

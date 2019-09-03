@@ -32,6 +32,7 @@ import { themeAttributes as calendarThemeAttributes } from '../packages/bpk-comp
 import { themeAttributes as checkboxThemeAttributes } from '../packages/bpk-component-checkbox';
 import { themeAttributes as datepickerThemeAttributes } from '../packages/bpk-component-datepicker';
 import { themeAttributes as drawerThemeAttributes } from '../packages/bpk-component-drawer';
+import { themeAttributes as formValidationThemeAttributes } from '../packages/bpk-component-form-validation';
 import { themeAttributes as horizontalNavThemeAttributes } from '../packages/bpk-component-horizontal-nav';
 import { themeAttributes as inputThemeAttributes } from '../packages/bpk-component-input';
 
@@ -79,6 +80,7 @@ export default [
   ...checkboxThemeAttributes,
   ...datepickerThemeAttributes,
   ...drawerThemeAttributes,
+  ...formValidationThemeAttributes,
   ...horizontalNavThemeAttributes,
   ...inputThemeAttributes,
   ...linkThemeAttributes,

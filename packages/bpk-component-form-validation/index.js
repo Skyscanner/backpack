@@ -17,5 +17,7 @@
  */
 
 import BpkFormValidation from './src/BpkFormValidation';
+import themeAttributes from './src/themeAttributes';
 
 export default BpkFormValidation;
+export { themeAttributes };
