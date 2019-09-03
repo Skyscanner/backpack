@@ -30,8 +30,8 @@
     @include bpk-text--xs;
   }
 
-  &--invalid {
-    label {
+  &__label {
+    &--invalid {
       color: $bpk-form-validation-color;
     }
   }
