@@ -26,10 +26,10 @@ exports[`BpkFieldset should render correctly when disabled with input component 
 
 exports[`BpkFieldset should render correctly when disabled with input component and "valid" attribute equal to false 1`] = `
 <fieldset
-  className="bpk-fieldset bpk-fieldset--invalid"
+  className="bpk-fieldset"
 >
   <label
-    className="bpk-label bpk-label--disabled"
+    className="bpk-label bpk-label--disabled bpk-fieldset__label--invalid"
     htmlFor="name_input"
   >
     Name
@@ -659,10 +659,10 @@ exports[`BpkFieldset should render correctly with input component and "valid" at
 
 exports[`BpkFieldset should render correctly with input component and "valid" attribute equal to false 1`] = `
 <fieldset
-  className="bpk-fieldset bpk-fieldset--invalid"
+  className="bpk-fieldset"
 >
   <label
-    className="bpk-label"
+    className="bpk-label bpk-fieldset__label--invalid"
     htmlFor="name_input"
   >
     Name
