@@ -71,6 +71,7 @@ const BpkFieldset = (props: Props) => {
   }
 
   const classNames = [getClassName('bpk-fieldset')];
+  const labelClassNames = [getClassName('bpk-fieldset__label')];
   const validationMessageId = `${childId}_validation_message`;
   const descriptionId = `${childId}_description`;
 
@@ -102,13 +103,8 @@ const BpkFieldset = (props: Props) => {
 
   const clonedChildren = cloneElement(children, childrenProps);
 
-  const labelProps = {
-    htmlFor: childId,
-    required,
-    disabled,
-  };
   if (isInvalid) {
-    labelProps.className = getClassName('bpk-fieldset__label--invalid');
+    labelClassNames.push(getClassName('bpk-fieldset__label--invalid'));
   }
 
   if (className) {
@@ -117,7 +113,16 @@ const BpkFieldset = (props: Props) => {
 
   return (
     <fieldset className={classNames.join(' ')} {...rest}>
-      {!isCheckbox && <BpkLabel {...labelProps}>{label}</BpkLabel>}
+      {!isCheckbox && (
+        <BpkLabel
+          htmlFor={childId}
+          required={required}
+          disabled={disabled}
+          className={labelClassNames.join(' ')}
+        >
+          {label}
+        </BpkLabel>
+      )}
       {clonedChildren}
       {description && (
         <span
