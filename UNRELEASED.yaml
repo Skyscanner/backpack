@@ -23,6 +23,3 @@
 #   FIXED:
 #     - bpk-component-horcrux:
 #       - Fixed issue where `BpkHorcrux` would occasionally possess the living.
-ADDED:
-  - bpk-svgs:
-    - Added `single-booking` icon.

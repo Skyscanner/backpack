@@ -2,6 +2,12 @@
 
 [Unreleased changes](./UNRELEASED.yaml).
 
+# 2019-09-03 - New icon
+
+**Added:**
+ - bpk-svgs:
+   - Added `single-booking` icon.
+
 # 2019-09-03 - Invalid states for more input types
 
 **Added:**
