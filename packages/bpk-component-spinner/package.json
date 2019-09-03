@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-spinner",
-  "version": "2.2.120",
+  "version": "2.2.121",
   "description": "Backpack spinner components.",
   "main": "index.js",
   "repository": {
@@ -13,9 +13,9 @@
     "react": "^15.0.0 || ^16.0.0"
   },
   "dependencies": {
-    "bpk-mixins": "^18.0.9",
+    "bpk-mixins": "^18.0.10",
     "bpk-react-utils": "^2.7.10",
-    "bpk-svgs": "^7.1.7",
+    "bpk-svgs": "^7.1.8",
     "prop-types": "^15.6.2"
   },
   "publishConfig": {
