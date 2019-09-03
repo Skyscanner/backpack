@@ -32,7 +32,7 @@
 
   &__label {
     &--invalid {
-      color: $bpk-form-validation-color;
+      @include bpk-themeable-property(color, --bpk-fieldset-label-text-color, $bpk-form-validation-color);
     }
   }
 }

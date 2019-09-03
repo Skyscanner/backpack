@@ -20,11 +20,6 @@ import themeAttributes from './themeAttributes';
 
 describe('themeAttributes', () => {
   it('exports the expected themeAttributes', () => {
-    expect(themeAttributes).toEqual([
-      'inputValidIconColor',
-      'inputInvalidIconColor',
-      'inputInvalidBorderColor',
-      'inputInvalidBackgroundColor',
-    ]);
+    expect(themeAttributes).toEqual(['inputInvalidBorderColor']);
   });
 });
