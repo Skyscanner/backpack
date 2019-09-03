@@ -191,5 +191,8 @@
       "webpack-dev-server",
       "wrapper-webpack-plugin"
     ]
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
   }
 }

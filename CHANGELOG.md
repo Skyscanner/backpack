@@ -2,13 +2,25 @@
 
 [Unreleased changes](./UNRELEASED.yaml).
 
-# 2018-08-27 - Remove unreleased deprecated tokens
+# 2019-09-03 - `BpkPagination` buttons are always circular
+
+**Fixed:**
+- bpk-component-pagination: 1.0.123 => 1.0.124
+  - Pagination buttons are now always circular regardless of theming.
+
+# 2019-08-29 - Theming support for `BpkStarRating` component.
+
+**Added:**
+  - bpk-component-star-rating: 1.0.152 => 1.1.0
+    - Added new theming prop `starRatingFilledColor` to allow the star colour to be changed.
+
+# 2019-08-27 - Remove unreleased deprecated tokens
 
 **Fixed:**
 - bpk-tokens: 27.9.2 => 27.9.3
   - Removed unreleased deprecated tokens
 
-# 2018-08-26 - Fix token changes
+# 2019-08-26 - Fix token changes
 
 **Fixed:**
 - bpk-tokens: 27.9.0 => 27.9.2

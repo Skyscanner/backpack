@@ -36,4 +36,3 @@ ADDED:
       - Adding styling to the form label when invalid
   - bpk-component-radio:
       - Added valid property to support invalid state of radio button
-

@@ -130,6 +130,8 @@ const generateTheme = ({
 
   spinnerPrimaryColor: primaryColor500,
 
+  starRatingFilledColor: primaryColor500,
+
   sliderBarColor: primaryColor500,
 
   paginationNudgerActiveColor: primaryColor500,

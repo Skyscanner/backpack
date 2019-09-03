@@ -1,6 +1,6 @@
 {
   "name": "bpk-tokens",
-  "version": "27.9.3",
+  "version": "27.9.5",
   "description": "Backpack design tokens for colors, spacing, font, etc.",
   "main": "index.js",
   "scripts": {
@@ -14,6 +14,9 @@
   "license": "Apache-2.0",
   "dependencies": {
     "color": "^3.0.0"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
   },
   "gitHead": "30b387cc6dc4e2717370c0a07e725fa71a2f447c"
 }
