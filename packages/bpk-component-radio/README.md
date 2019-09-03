@@ -33,6 +33,7 @@ export default () => (
 | ariaLabel | string   | false    | props.label   |
 | disabled  | bool     | false    | false         |
 | white     | bool     | false    | false         |
+| valid     | bool     | false    | null          |
 
 ## Theme Props
 

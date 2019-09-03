@@ -29,7 +29,7 @@ exports[`BpkFieldset should render correctly when disabled with input component 
   className="bpk-fieldset"
 >
   <label
-    className="bpk-label bpk-label--disabled"
+    className="bpk-label bpk-label--disabled bpk-fieldset__label--invalid"
     htmlFor="name_input"
   >
     Name
@@ -57,6 +57,7 @@ exports[`BpkFieldset should render correctly with checkbox component 1`] = `
     className="bpk-checkbox"
   >
     <input
+      aria-invalid={false}
       aria-label="I accept the terms and conditions"
       className="bpk-checkbox__input"
       disabled={false}
@@ -154,6 +155,7 @@ exports[`BpkFieldset should render correctly with checkbox component and "requir
     className="bpk-checkbox"
   >
     <input
+      aria-invalid={false}
       aria-label="I accept the terms and conditions"
       className="bpk-checkbox__input"
       disabled={false}
@@ -660,7 +662,7 @@ exports[`BpkFieldset should render correctly with input component and "valid" at
   className="bpk-fieldset"
 >
   <label
-    className="bpk-label"
+    className="bpk-label bpk-fieldset__label--invalid"
     htmlFor="name_input"
   >
     Name

@@ -110,7 +110,7 @@
 @mixin bpk-input--invalid {
   padding-right: $bpk-spacing-base;
   border-color: $bpk-color-red-500;
-  background: $bpk-color-red-50 url(map-get($bpk-icons-sm, exclamation-circle-red-500)) no-repeat right $bpk-spacing-sm center;
+  background: $bpk-color-white url(map-get($bpk-icons-sm, exclamation-circle-red-500)) no-repeat right $bpk-spacing-sm center;
   background-size: $bpk-spacing-md $bpk-spacing-md;
 
   @include bpk-rtl {
@@ -442,7 +442,7 @@
 @mixin bpk-select--invalid {
   padding-right: $bpk-spacing-base;
   border-color: $bpk-color-red-500;
-  background: $bpk-color-red-50 url(map-get($bpk-icons-sm, arrow-down-gray-700)) no-repeat right $bpk-spacing-sm center;
+  background: $bpk-color-white url(map-get($bpk-icons-sm, arrow-down-gray-700)) no-repeat right $bpk-spacing-sm center;
   background-size: $bpk-spacing-md $bpk-spacing-md;
 
   @include bpk-rtl {
@@ -525,6 +525,22 @@
 @mixin bpk-checkbox--disabled {
   color: $bpk-label-disabled-color;
   cursor: not-allowed;
+}
+
+/// Invalid form checkbox. Modifies the bpk-checkbox mixin.
+///
+/// @require {mixin} bpk-checkbox
+///
+/// @example scss
+///   .selector {
+///     @include bpk-checkbox();
+///     @include bpk-checkbox--invalid();
+///   }
+
+@mixin bpk-checkbox--invalid {
+  input[type=checkbox] {
+    background: url(map-get($bpk-elements, checkbox-invalid)) no-repeat;
+  }
 }
 
 /// Form checkbox input.
@@ -615,6 +631,22 @@
 
 @mixin bpk-radio--white {
   color: $bpk-color-white;
+}
+
+/// Invalid radio button. Modifies the bpk-radio mixin.
+///
+/// @require {mixin} bpk-radio
+///
+/// @example scss
+///   .selector {
+///     @include bpk-radio();
+///     @include bpk-radio--invalid();
+///   }
+
+@mixin bpk-radio--invalid {
+  input[type=radio] {
+    background: url(map-get($bpk-elements, radio-invalid)) no-repeat;
+  }
 }
 
 /// Form radio input.
@@ -813,7 +845,7 @@
 
 @mixin bpk-textarea--invalid {
   border-color: $bpk-color-red-500;
-  background: $bpk-color-red-50 url(map-get($bpk-icons-sm, exclamation-circle-red-500)) no-repeat right $bpk-spacing-sm center;
+  background: $bpk-color-white url(map-get($bpk-icons-sm, exclamation-circle-red-500)) no-repeat right $bpk-spacing-sm center;
 
   @include bpk-rtl {
     padding-right: $bpk-input-padding-x;

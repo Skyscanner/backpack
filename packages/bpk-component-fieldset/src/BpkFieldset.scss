@@ -29,4 +29,10 @@
     @include bpk-apply-gray-500-to(color);
     @include bpk-text--xs;
   }
+
+  &__label {
+    &--invalid {
+      color: $bpk-form-validation-color;
+    }
+  }
 }

@@ -28,4 +28,9 @@ storiesOf('bpk-component-label', module)
     <BpkLabel htmlFor="origin" required>
       Origin
     </BpkLabel>
+  ))
+  .add('Invalid required', () => (
+    <BpkLabel htmlFor="origin" required invalid>
+      Origin
+    </BpkLabel>
   ));
