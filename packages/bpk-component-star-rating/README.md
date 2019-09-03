@@ -92,3 +92,7 @@ export default () => (
 | onClick      | func              | true     | -             |
 | onMouseEnter | func              | true     | -             |
 | selected     | bool              | false    | false         |
+
+## Theme Props
+
+* `starRatingFilledColor`

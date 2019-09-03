@@ -50,6 +50,7 @@ import { themeAttributes as radioThemeAttributes } from '../packages/bpk-compone
 import { themeAttributes as ratingThemeAttributes } from '../packages/bpk-component-rating';
 import { themeAttributes as sliderThemeAttributes } from '../packages/bpk-component-slider';
 import { themeAttributes as spinnerThemeAttributes } from '../packages/bpk-component-spinner';
+import { themeAttributes as starRatingThemeAttributes } from '../packages/bpk-component-star-rating';
 import { themeAttributes as navigationBarThemeAttributes } from '../packages/bpk-component-navigation-bar';
 
 const storybookAttributes = [
@@ -88,6 +89,7 @@ export default [
   ...ratingThemeAttributes,
   ...sliderThemeAttributes,
   ...spinnerThemeAttributes,
+  ...starRatingThemeAttributes,
   ...navigationBarThemeAttributes,
   ...primaryMarkerThemeAttributes,
   ...secondaryMarkerThemeAttributes,
