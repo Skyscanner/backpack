@@ -24,6 +24,3 @@
 #     - bpk-component-horcrux:
 #       - Fixed issue where `BpkHorcrux` would occasionally possess the living.
 
-FIXED:
-- bpk-component-pagination
-  - Pagination buttons are now always circular regardless of theming.

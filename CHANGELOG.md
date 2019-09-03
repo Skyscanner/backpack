@@ -2,6 +2,12 @@
 
 [Unreleased changes](./UNRELEASED.yaml).
 
+# 2019-09-03 - `BpkPagination` buttons are always circular
+
+**Fixed:**
+- bpk-component-pagination: 1.0.123 => 1.0.124
+  - Pagination buttons are now always circular regardless of theming.
+
 # 2019-08-29 - Theming support for `BpkStarRating` component.
 
 **Added:**
