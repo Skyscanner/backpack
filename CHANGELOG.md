@@ -2,6 +2,22 @@
 
 [Unreleased changes](./UNRELEASED.yaml).
 
+# 2019-09-04 - Theming support for `BpkBadge`, `BpkBannerAlert` and form fields.
+
+**Added:**
+  - bpk-component-badge: 1.1.106 => 1.2.0
+    - Added new theming props `badgeBackgroundColor`, `badgeSuccessBackgroundColor`, `badgeDestructiveBackgroundColor` to support theming.
+  - bpk-component-banner-alert: 2.1.24 => 2.2.0
+    - Added new theming props `bannerAlertSuccessColor`, `bannerAlertWarnColor`, `bannerAlertErrorColor` to support theming.
+  - bpk-component-fieldset: 1.1.130 => 1.2.0
+  - bpk-component-form-validation: 2.0.43 => 2.1.0
+  - bpk-component-input: 4.1.43 => 4.2.0
+  - bpk-component-select: 2.3.23 => 2.4.0
+  - bpk-component-textarea: 1.1.37 => 1.2.0
+  - bpk-component-theme-toggle: 1.1.9 => 1.2.0
+  - bpk-mixins: 18.0.11 => 18.1.0
+    - Added theming support for invalid state for inputs
+
 # 2019-09-03 - New icon
 
 **Added:**
