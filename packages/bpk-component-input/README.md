@@ -47,13 +47,6 @@ export default () => (
 | onClear          | func                       | if clearable={true} | null                     |
 | valid            | bool                       | false               | null                     |
 
-## Theme Props
-
-* `inputValidIconColor`
-* `inputInvalidIconColor`
-* `inputInvalidBorderColor`
-* `inputInvalidBackgroundColor`
-
 Additionally, all native `<input />` attributes such as `placeholder` and `onChange` are supported.
 
 **Note:** When `clearButtonMode` is set to `always`, validity icons will not appear.
