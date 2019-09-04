@@ -15,20 +15,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* @flow strict */
 
-import BpkBannerAlert from './src/BpkBannerAlert';
-import BpkBannerAlertDismissable from './src/BpkBannerAlertDismissable';
-import BpkBannerAlertExpandable from './src/BpkBannerAlertExpandable';
-import { ALERT_TYPES } from './src/common-types';
-import withBannerAlertState from './src/withBannerAlertState';
-import themeAttributes from './src/themeAttributes';
+import { themeAttributes } from '../index';
 
-export {
-  ALERT_TYPES,
-  BpkBannerAlertDismissable,
-  BpkBannerAlertExpandable,
-  withBannerAlertState,
-  themeAttributes,
-};
-export default BpkBannerAlert;
+describe('rating component themeAttributes', () => {
+  it('exports the expected attributes', () => {
+    expect(themeAttributes).toEqual([
+      'bannerAlertSuccessColor',
+      'bannerAlertWarnColor',
+      'bannerAlertErrorColor',
+    ]);
+  });
+});

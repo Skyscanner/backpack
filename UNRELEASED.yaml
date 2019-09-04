@@ -24,6 +24,10 @@
 #     - bpk-component-horcrux:
 #       - Fixed issue where `BpkHorcrux` would occasionally possess the living.
 
+ADDED:
+  - bpk-component-banner-alert:
+    - Added new theming props `bannerAlertSuccessColor`, `bannerAlertWarnColor`, `bannerAlertErrorColor` to support theming.
+
 FIXED:
 - bpk-component-fieldset:
 - bpk-component-form-validation:
@@ -33,3 +37,4 @@ FIXED:
 - bpk-component-theme-toggle:
 - bpk-mixins:
   - Added theming support for invalid state for inputs
+
