@@ -65,6 +65,7 @@ const generateTheme = ({
   badgeBackgroundColor: primaryColor500,
   badgeSuccessBackgroundColor: secondaryColor500,
   badgeDestructiveBackgroundColor: gray500,
+
   bannerAlertSuccessColor: secondaryColor500,
   bannerAlertWarnColor: 'orange',
   bannerAlertErrorColor: primaryColor500,
