@@ -19,6 +19,7 @@
 /* @flow */
 
 import { themeAttributes as accordionThemeAttributes } from '../packages/bpk-component-accordion';
+import { themeAttributes as badgeThemeAttributes } from '../packages/bpk-component-badge';
 import { themeAttributes as barchartThemeAttributes } from '../packages/bpk-component-barchart';
 import { themeAttributes as blockquoteThemeAttributes } from '../packages/bpk-component-blockquote';
 import {
@@ -66,6 +67,7 @@ const storybookAttributes = [
 
 export default [
   ...accordionThemeAttributes,
+  ...badgeThemeAttributes,
   ...barchartThemeAttributes,
   ...blockquoteThemeAttributes,
   ...buttonThemeAttributes,

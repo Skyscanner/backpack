@@ -62,6 +62,10 @@ const generateTheme = ({
   accordionColor: primaryColor500,
   accordionHoverColor: primaryColor600,
 
+  badgeBackgroundColor: primaryColor500,
+  badgeSuccessBackgroundColor: secondaryColor500,
+  badgeDestructiveBackgroundColor: gray500,
+
   barchartBarBackgroundColor: primaryColor300,
   barchartBarHoverBackgroundColor: primaryColor500,
   barchartBarActiveBackgroundColor: primaryColor600,
