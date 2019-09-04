@@ -30,8 +30,6 @@ import {
 } from './common-types';
 import STYLES from './BpkNudger.css';
 
-const getClassName = cssModules(STYLES);
-
 type Props = {
   ...$Exact<CommonProps<number>>,
 };
