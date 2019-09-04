@@ -114,6 +114,13 @@ const generateTheme = ({
   buttonDestructiveHoverBackgroundColor: colorWhite,
   buttonDestructiveActiveBackgroundColor: colorWhite,
 
+  fieldsetLabelTextColor: secondaryColor500,
+
+  formValidationIconFill: secondaryColor500,
+  formValidationTextColor: secondaryColor500,
+
+  inputInvalidBorderColor: secondaryColor500,
+
   linkColor: primaryColor300,
   linkHoverColor: primaryColor500,
   linkActiveColor: primaryColor600,
@@ -132,11 +139,15 @@ const generateTheme = ({
   horizontalNavLinkHoverColor,
   horizontalNavLinkActiveColor,
 
+  selectInvalidBorderColor: secondaryColor500,
+
   spinnerPrimaryColor: primaryColor500,
 
   starRatingFilledColor: primaryColor500,
 
   sliderBarColor: primaryColor500,
+
+  textareaInvalidBorderColor: secondaryColor500,
 
   paginationNudgerActiveColor: primaryColor500,
   paginationNudgerColor: primaryColor500,

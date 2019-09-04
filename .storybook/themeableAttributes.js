@@ -33,7 +33,10 @@ import { themeAttributes as calendarThemeAttributes } from '../packages/bpk-comp
 import { themeAttributes as checkboxThemeAttributes } from '../packages/bpk-component-checkbox';
 import { themeAttributes as datepickerThemeAttributes } from '../packages/bpk-component-datepicker';
 import { themeAttributes as drawerThemeAttributes } from '../packages/bpk-component-drawer';
+import { themeAttributes as fieldsetThemeAttributes } from '../packages/bpk-component-fieldset';
+import { themeAttributes as formValidationThemeAttributes } from '../packages/bpk-component-form-validation';
 import { themeAttributes as horizontalNavThemeAttributes } from '../packages/bpk-component-horizontal-nav';
+import { themeAttributes as inputThemeAttributes } from '../packages/bpk-component-input';
 import {
   linkAlternateThemeAttributes,
   themeAttributes as linkThemeAttributes,
@@ -49,9 +52,11 @@ import { themeAttributes as popoverThemeAttributes } from '../packages/bpk-compo
 import { themeAttributes as progressThemeAttributes } from '../packages/bpk-component-progress';
 import { themeAttributes as radioThemeAttributes } from '../packages/bpk-component-radio';
 import { themeAttributes as ratingThemeAttributes } from '../packages/bpk-component-rating';
+import { themeAttributes as selectThemeAttributes } from '../packages/bpk-component-select';
 import { themeAttributes as sliderThemeAttributes } from '../packages/bpk-component-slider';
 import { themeAttributes as spinnerThemeAttributes } from '../packages/bpk-component-spinner';
 import { themeAttributes as starRatingThemeAttributes } from '../packages/bpk-component-star-rating';
+import { themeAttributes as textareaThemeAttributes } from '../packages/bpk-component-textarea';
 import { themeAttributes as navigationBarThemeAttributes } from '../packages/bpk-component-navigation-bar';
 
 const storybookAttributes = [
@@ -79,7 +84,10 @@ export default [
   ...checkboxThemeAttributes,
   ...datepickerThemeAttributes,
   ...drawerThemeAttributes,
+  ...fieldsetThemeAttributes,
+  ...formValidationThemeAttributes,
   ...horizontalNavThemeAttributes,
+  ...inputThemeAttributes,
   ...linkThemeAttributes,
   ...linkAlternateThemeAttributes,
   ...modalThemeAttributes,
@@ -89,9 +97,11 @@ export default [
   ...progressThemeAttributes,
   ...radioThemeAttributes,
   ...ratingThemeAttributes,
+  ...selectThemeAttributes,
   ...sliderThemeAttributes,
   ...spinnerThemeAttributes,
   ...starRatingThemeAttributes,
+  ...textareaThemeAttributes,
   ...navigationBarThemeAttributes,
   ...primaryMarkerThemeAttributes,
   ...secondaryMarkerThemeAttributes,
