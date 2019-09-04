@@ -26,8 +26,7 @@
   }
 
   &__icon {
-    fill: $bpk-color-red-500;
-
+    @include bpk-themeable-property(fill, --bpk-form-validation-icon-fill, $bpk-color-red-500);
     @include bpk-margin-trailing($bpk-spacing-xs);
   }
 

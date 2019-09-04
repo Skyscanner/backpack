@@ -15,12 +15,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* @flow strict */
 
-import BpkSelect, { type Props } from './src/BpkSelect';
-import themeAttributes from './src/themeAttributes';
+import { themeAttributes } from '../index';
 
-export type BpkSelectProps = Props;
-
-export default BpkSelect;
-export { themeAttributes };
+describe('rating component themeAttributes', () => {
+  it('exports the expected attributes', () => {
+    expect(themeAttributes).toEqual([
+      'bannerAlertSuccessColor',
+      'bannerAlertWarnColor',
+      'bannerAlertErrorColor',
+    ]);
+  });
+});
