@@ -62,6 +62,10 @@ const generateTheme = ({
   accordionColor: primaryColor500,
   accordionHoverColor: primaryColor600,
 
+  bannerAlertSuccessColor: secondaryColor500,
+  bannerAlertWarnColor: 'orange',
+  bannerAlertErrorColor: primaryColor500,
+
   barchartBarBackgroundColor: primaryColor300,
   barchartBarHoverBackgroundColor: primaryColor500,
   barchartBarActiveBackgroundColor: primaryColor600,
