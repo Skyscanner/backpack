@@ -15,12 +15,5 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* @flow strict */
 
-import BpkSelect, { type Props } from './src/BpkSelect';
-import themeAttributes from './src/themeAttributes';
-
-export type BpkSelectProps = Props;
-
-export default BpkSelect;
-export { themeAttributes };
+export default ['formValidationIconFill', 'formValidationTextColor'];
