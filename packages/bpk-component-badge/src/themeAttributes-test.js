@@ -16,11 +16,14 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+import { themeAttributes } from '../index';
 
-import component, { BADGE_TYPES, type Props } from './src/BpkBadge';
-import themeAttributes from './src/themeAttributes';
-
-export type BpkBadgeProps = Props;
-export default component;
-export { BADGE_TYPES, themeAttributes };
+describe('rating component themeAttributes', () => {
+  it('exports the expected attributes', () => {
+    expect(themeAttributes).toEqual([
+      'badgeBackgroundColor',
+      'badgeSuccessBackgroundColor',
+      'badgeDestructiveBackgroundColor',
+    ]);
+  });
+});
