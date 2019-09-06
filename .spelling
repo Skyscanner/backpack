@@ -332,6 +332,8 @@ portalStyle
 props.message
 props.title
 ratingLabel
+RATING_SIZES
+RATING_SIZES.base
 renderFlag
 renderTarget
 selectedDates

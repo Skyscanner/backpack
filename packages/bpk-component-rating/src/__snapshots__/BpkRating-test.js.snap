@@ -102,6 +102,40 @@ exports[`BpkRating should render a high score rating component 1`] = `
 </div>
 `;
 
+exports[`BpkRating should render a large rating component 1`] = `
+<div
+  aria-label="9 Excellent would recommend"
+  className="bpk-rating"
+>
+  <span
+    aria-hidden="true"
+    className="bpk-text bpk-text--base bpk-rating--component bpk-rating--lg-rating bpk-rating--high-rating"
+  >
+    <strong>
+      9.0
+    </strong>
+  </span>
+  <div
+    className="bpk-rating__text"
+  >
+    <span
+      aria-hidden="true"
+      className="bpk-text bpk-text--lg"
+    >
+      <strong>
+        Excellent
+      </strong>
+    </span>
+    <span
+      aria-hidden="true"
+      className="bpk-text bpk-text--base"
+    >
+      This place was amazing
+    </span>
+  </div>
+</div>
+`;
+
 exports[`BpkRating should render a low score rating component 1`] = `
 <div
   aria-label="1.3 Low bad option"
@@ -165,6 +199,40 @@ exports[`BpkRating should render a medium score rating component 1`] = `
       className="bpk-text bpk-text--sm"
     >
       It's ok at best
+    </span>
+  </div>
+</div>
+`;
+
+exports[`BpkRating should render a small rating component 1`] = `
+<div
+  aria-label="9 Excellent would recommend"
+  className="bpk-rating"
+>
+  <span
+    aria-hidden="true"
+    className="bpk-text bpk-text--base bpk-rating--component bpk-rating--sm-rating bpk-rating--high-rating"
+  >
+    <strong>
+      9.0
+    </strong>
+  </span>
+  <div
+    className="bpk-rating__text"
+  >
+    <span
+      aria-hidden="true"
+      className="bpk-text bpk-text--sm"
+    >
+      <strong>
+        Excellent
+      </strong>
+    </span>
+    <span
+      aria-hidden="true"
+      className="bpk-text bpk-text--sm"
+    >
+      This place was amazing
     </span>
   </div>
 </div>

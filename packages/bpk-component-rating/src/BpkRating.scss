@@ -36,15 +36,15 @@
 
   &--lg-rating {
     display: flex;
-    width: 3.75rem;
-    height: 3.75rem;
+    width: $bpk-rating-lg-width;
+    height: $bpk-rating-lg-height;
     font-size: $bpk-font-size-lg;
   }
 
   &--sm-rating {
     display: flex;
-    width: 2.25rem;
-    height: 2.25rem;
+    width: $bpk-rating-sm-width;
+    height: $bpk-rating-sm-width;
     font-size: $bpk-font-size-sm;
   }
 
@@ -57,26 +57,14 @@
   }
 
   &--high-rating {
-    @include bpk-themeable-property(
-      background-color,
-      --bpk-rating-high-color,
-      $bpk-color-green-600
-    );
+    @include bpk-themeable-property(background-color, --bpk-rating-high-color, $bpk-color-green-600);
   }
 
   &--medium-rating {
-    @include bpk-themeable-property(
-      background-color,
-      --bpk-rating-medium-color,
-      $bpk-color-yellow-600
-    );
+    @include bpk-themeable-property(background-color, --bpk-rating-medium-color, $bpk-color-yellow-600);
   }
 
   &--low-rating {
-    @include bpk-themeable-property(
-      background-color,
-      --bpk-rating-low-color,
-      $bpk-color-red-600
-    );
+    @include bpk-themeable-property(background-color, --bpk-rating-low-color, $bpk-color-red-600);
   }
 }

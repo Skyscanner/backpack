@@ -2686,30 +2686,30 @@
     },
     "RATING_LG_HEIGHT": {
       "category": "ratings",
-      "value": ".75rem * 4",
+      "value": "1.875rem * 2",
       "type": "size",
-      "originalValue": "{!SPACING_SM} * 4",
+      "originalValue": "{!SPACING_LG} * 2",
       "name": "RATING_LG_HEIGHT"
     },
     "RATING_LG_WIDTH": {
       "category": "ratings",
-      "value": ".75rem * 4",
+      "value": "1.875rem * 2",
       "type": "size",
-      "originalValue": "{!SPACING_SM} * 4",
+      "originalValue": "{!SPACING_LG} * 2",
       "name": "RATING_LG_WIDTH"
     },
     "RATING_SM_HEIGHT": {
       "category": "ratings",
-      "value": ".75rem * 4",
+      "value": ".75rem * 3",
       "type": "size",
-      "originalValue": "{!SPACING_SM} * 4",
+      "originalValue": "{!SPACING_SM} * 3",
       "name": "RATING_SM_HEIGHT"
     },
     "RATING_SM_WIDTH": {
       "category": "ratings",
-      "value": ".75rem * 4",
+      "value": ".75rem * 3",
       "type": "size",
-      "originalValue": "{!SPACING_SM} * 4",
+      "originalValue": "{!SPACING_SM} * 3",
       "name": "RATING_SM_WIDTH"
     },
     "REQUIRED_COLOR": {
