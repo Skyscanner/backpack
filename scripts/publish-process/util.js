@@ -20,14 +20,23 @@
 
 const fs = require('fs');
 const { execSync } = require('child_process');
+const readline = require('readline');
 
 const colors = require('colors');
 const YAML = require('yaml');
+const semver = require('semver');
 
+const { enableKrypton, disableKrypton } = require('./krypton');
 const {
   RELEASE_MODE_MAJOR,
-  RELEASE_MODE_MINOR,
+  CHANGELOG_PATH,
+  PLATFORM,
   RELEASE_MODE_PATCH,
+  REPO,
+  SLACK_PLATFORM_EMOJIS,
+  YES_NO_REGEX,
+  YES_REGEX,
+  RELEASE_MODE_MINOR,
   TITLE_MAJOR,
   TITLE_MINOR,
   TITLE_PATCH,
@@ -134,10 +143,14 @@ const createGitTags = (changes, commitHash = '') => {
   changes.forEach(c => {
     const tagMessage = `${c.name}@${c.newVersion}`;
     const command = `git tag -a ${tagMessage} ${commitHash} -m ${tagMessage}`;
+    if (verbose) {
+      logVerbose(`executing command: ${command}`);
+    }
     if (testing) {
       logOk(command);
     } else {
-      execSync(`git tag -a ${tagMessage} -m ${tagMessage}`);
+      // If the tag already exists we need not worry
+      execSync(`git tag -a ${tagMessage} -m ${tagMessage} || true`);
     }
   });
 };
@@ -270,6 +283,196 @@ const printOutChangeSummary = changes => {
   }
 };
 
+const applyNewVersions = (
+  currentPackageMeta,
+  documentedChanges,
+  lernaChanges,
+) => {
+  let result = currentPackageMeta.filter(p => lernaChanges.includes(p.name));
+  result = result.map(p => {
+    const pkg = JSON.parse(JSON.stringify(p));
+    const correspondingChange = documentedChanges.find(
+      r => r.name === pkg.name,
+    );
+    let releaseMode = RELEASE_MODE_PATCH;
+    if (correspondingChange) {
+      if (correspondingChange.mode) {
+        releaseMode = correspondingChange.mode;
+      }
+      if (correspondingChange.description) {
+        pkg.description = correspondingChange.description;
+      }
+    }
+    pkg.releaseMode = releaseMode;
+    assert(
+      semver.valid(pkg.currentVersion),
+      `Package ${pkg.name} has invalid version ${pkg.currentVersion}`,
+    );
+    pkg.newVersion = semver.inc(pkg.currentVersion, releaseMode);
+    return pkg;
+  });
+  return result;
+};
+
+const printOutSlackUpdate = (changes, changeSummary, publishTitle) => {
+  const publishTitleURL = publishTitle
+    .toLowerCase()
+    .split(' ')
+    .join('-')
+    .split('`')
+    .join('');
+
+  let slackUpdate = `${SLACK_PLATFORM_EMOJIS} ${changeSummary}\n`;
+
+  changes.forEach(c => {
+    if (c.name && c.description && c.name.includes(`bpk-component-`)) {
+      const componentName = c.name.split(`bpk-component-`)[1];
+      slackUpdate += `:information_source: https://backpack.github.io/components/${componentName}/?platform=${PLATFORM}\n`;
+    }
+  });
+  slackUpdate += `:clipboard: https://github.com/Skyscanner/${REPO}/blob/master/${CHANGELOG_PATH}#${publishTitleURL}`;
+
+  execSync(`echo "${slackUpdate}" | pbcopy`);
+  logOk(
+    `\nNow paste this message in #backpack:\n${slackUpdate}. FYI it's already on your clipboard 😉`,
+  );
+};
+
+const generateChangelogSection = (publishTitle, changes) => {
+  const completeChanges = changes.filter(
+    c => c.name && c.releaseMode && c.description,
+  );
+  if (completeChanges.length === 0) {
+    return null;
+  }
+  let section = `# ${publishTitle}`;
+  let currentMode = null;
+  completeChanges.forEach(c => {
+    if (c.releaseMode !== currentMode) {
+      currentMode = c.releaseMode;
+      section += `\n\n${getTitleForMode(c.releaseMode)}`;
+    }
+    section += `\n\n - ${c.name}: ${c.currentVersion} => ${c.newVersion}\n`;
+    section += formatDescription(c.description);
+  });
+  section += '\n\n';
+  return section;
+};
+
+const addChangelogEntry = changelogEntry => {
+  const changelogContent = fs.readFileSync(CHANGELOG_PATH).toString();
+  const newContent = changelogContent.split('\n');
+  arrayInsert(newContent, 4, changelogEntry);
+
+  fs.writeFileSync(CHANGELOG_PATH, newContent.join('\n'), 'utf8');
+};
+
+const updateChangelog = (changes, changeSummary) => {
+  const publishTitle = `${getDate()} - ${changeSummary}`;
+  const newChangelogEntry = generateChangelogSection(publishTitle, changes);
+  if (verbose) {
+    logVerbose(`newChangelogEntry`);
+    logVerbose(newChangelogEntry || 'null');
+  }
+  if (newChangelogEntry) {
+    addChangelogEntry(newChangelogEntry);
+  }
+  resetUnreleased();
+  return publishTitle;
+};
+
+const publishPackageToNPM = packageName =>
+  new Promise(resolve => {
+    execSync(`(cd packages/${packageName} && npm publish)`);
+    resolve();
+  });
+
+const publishPackagesToNPM = changes =>
+  new Promise(resolve => {
+    const tasks = changes.map(c => publishPackageToNPM(c.name));
+
+    Promise.all(tasks).then(result => {
+      resolve(result);
+    });
+  });
+
+const generateCommitMessage = changes => {
+  let result = `Publish`;
+  if (changes.length > 0) {
+    result += '\n';
+  }
+  changes.forEach(c => {
+    result += `\n - ${c.name}@${c.newVersion}`;
+  });
+  return result;
+};
+
+const performPublish = async (changes, changeSummary) => {
+  const publishTitle = updateChangelog(changes, changeSummary);
+  const commitMessage = generateCommitMessage(changes);
+  updatePackageJsonFiles(changes);
+  execSync(`npm run fix-bpk-dependencies`);
+  if (!testing) {
+    disableKrypton();
+    execSync(`git add . && git commit -m "${commitMessage}" --no-verify`);
+    await publishPackagesToNPM(changes);
+    execSync(`git add . && git commit --amend --no-edit --no-verify`);
+    createGitTags(changes);
+    execSync(`git push`);
+    execSync(`git push --tags`);
+    enableKrypton();
+  }
+  logOk(`All good 👍`);
+  printOutSlackUpdate(changes, changeSummary, publishTitle);
+  process.exit(0);
+};
+
+const cancelPublish = () => {
+  logOk(`Nothing has been changed!`);
+  logOk(`See you later 👋`);
+  process.exit(0);
+};
+
+const getConfirmation = () =>
+  new Promise(resolve => {
+    const rl = readline.createInterface({
+      input: process.stdin,
+      output: process.stdout,
+    });
+
+    rl.question(
+      'PLEASE CONFIRM THAT THE ABOVE CHANGES ARE CORRECT AND YOU WOULD LIKE TO CONTINUE\nEnter Y(es) or N(o)\n',
+      answer => {
+        if (!answer.match(YES_NO_REGEX)) {
+          rl.close();
+          resolve(getConfirmation());
+          return;
+        }
+
+        let result = false;
+        if (answer.match(YES_REGEX)) {
+          result = true;
+        }
+
+        rl.close();
+        resolve(result);
+      },
+    );
+  });
+
+const getChangeSummary = () =>
+  new Promise(resolve => {
+    const rl = readline.createInterface({
+      input: process.stdin,
+      output: process.stdout,
+    });
+
+    rl.question('Please summarise the changes you are publishing\n', answer => {
+      rl.close();
+      resolve(answer);
+    });
+  });
+
 module.exports = {
   arrayInsert,
   assert,
@@ -285,10 +488,17 @@ module.exports = {
   logOk,
   logVerbose,
   logWarn,
+  performPublish,
   parseUnreleasedFile,
   processUnreleasedYaml,
   resetUnreleased,
   updatePackageJsonFiles,
   verbose,
   testing,
+  applyNewVersions,
+  getChangeSummary,
+  getConfirmation,
+  generateCommitMessage,
+  generateChangelogSection,
+  cancelPublish,
 };
