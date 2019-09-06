@@ -148,7 +148,7 @@ if (lockFileUpdated) {
 const unlicensedFiles = createdFiles.filter(filePath => {
   // Applies to js, css, scss and sh files that are not located in dist or flow-typed folders.
   if (
-    filePath.match(/\.(js|css|scss|sh)$/) &&
+    filePath.match(/\.(js|scss|sh)$/) &&
     !filePath.includes('dist/') &&
     !filePath.includes('flow-typed/')
   ) {
