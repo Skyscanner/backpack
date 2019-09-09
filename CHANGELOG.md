@@ -2,6 +2,14 @@
 
 [Unreleased changes](./UNRELEASED.yaml).
 
+# 2019-09-09 - Fix for missing export
+
+**Fixed:**
+
+ - bpk-component-rating: 1.1.0 => 1.1.1
+   - Fixed issue where `RATING_SIZES` was not being exported.
+
+
 # 2019-09-09 - New `size` prop to support `large` and `small` rating components
 
 **Added:**
