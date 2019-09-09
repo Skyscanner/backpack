@@ -44,7 +44,7 @@ const BpkRating = (props: Props) => {
   const { ariaLabel, title, subtitle, value, className, size, ...rest } = props;
   const classNames = getClassName('bpk-rating', className);
   const scoreStyles = [
-    getClassName('bpk-rating--component', `bpk-rating--${size}-rating`),
+    getClassName('bpk-rating__component', `bpk-rating--${size}-rating`),
   ];
 
   let adjustedValue = value;
