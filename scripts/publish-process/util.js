@@ -19,7 +19,7 @@
 /* eslint-disable no-console */
 
 const fs = require('fs');
-const { execSync } = require('child_process');
+const { exec, execSync } = require('child_process');
 const readline = require('readline');
 
 const colors = require('colors');
@@ -383,8 +383,9 @@ const updateChangelog = (changes, changeSummary) => {
 
 const publishPackageToNPM = packageName =>
   new Promise(resolve => {
-    execSync(`(cd packages/${packageName} && npm publish)`);
-    resolve();
+    exec(`(cd packages/${packageName} && npm publish)`, null, () => {
+      resolve();
+    });
   });
 
 const publishPackagesToNPM = changes =>
