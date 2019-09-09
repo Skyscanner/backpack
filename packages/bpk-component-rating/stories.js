@@ -20,7 +20,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import BpkRating from './index';
+import BpkRating, { RATING_SIZES } from './index';
 
 storiesOf('bpk-component-rating', module)
   .add('Default', () => (
@@ -54,7 +54,7 @@ storiesOf('bpk-component-rating', module)
         title="Excellent"
         subtitle="This place was amazing"
         value={9}
-        size="lg"
+        size={RATING_SIZES.lg}
       />
       <br />
       <BpkRating
@@ -62,7 +62,7 @@ storiesOf('bpk-component-rating', module)
         title="Average"
         subtitle="Might recommend"
         value={6.7}
-        size="lg"
+        size={RATING_SIZES.lg}
       />
       <br />
       <BpkRating
@@ -70,7 +70,7 @@ storiesOf('bpk-component-rating', module)
         title="Bad"
         subtitle="Avoid here"
         value={2.3}
-        size="lg"
+        size={RATING_SIZES.lg}
       />
     </div>
   ))
@@ -81,7 +81,7 @@ storiesOf('bpk-component-rating', module)
         title="Excellent"
         subtitle="This place was amazing"
         value={9}
-        size="sm"
+        size={RATING_SIZES.sm}
       />
       <br />
       <BpkRating
@@ -89,7 +89,7 @@ storiesOf('bpk-component-rating', module)
         title="Average"
         subtitle="Might recommend"
         value={6.7}
-        size="sm"
+        size={RATING_SIZES.sm}
       />
       <br />
       <BpkRating
@@ -97,7 +97,7 @@ storiesOf('bpk-component-rating', module)
         title="Bad"
         subtitle="Avoid here"
         value={2.3}
-        size="sm"
+        size={RATING_SIZES.sm}
       />
     </div>
   ));
