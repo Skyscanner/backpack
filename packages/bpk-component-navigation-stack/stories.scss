@@ -22,17 +22,15 @@
   max-width: $bpk-spacing-xxl * 8;
 
   @include bpk-border-sm($bpk-color-gray-100, '');
-  @include bpk-border-sm(var(--bpk-color-gray-100, $bpk-color-gray-100), '');
 }
 
 .bpk-navigation-stack-view {
   min-height: $bpk-spacing-xxl * 12;
   flex: 1;
-
-  @include bpk-apply-gray-100-to(background-color);
+  background-color: $bpk-color-gray-100;
 
   &--alternate {
-    @include bpk-apply-gray-50-to(background-color);
+    background-color: $bpk-color-gray-50;
   }
 
   &--no-nav-bar {

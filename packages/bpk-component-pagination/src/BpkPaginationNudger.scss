@@ -42,9 +42,8 @@
     }
 
     &:disabled {
+      color: $bpk-color-gray-100;
       cursor: not-allowed;
-
-      @include bpk-apply-gray-100-to(color);
     }
 
     .bpk-pagination-nudger__icon {

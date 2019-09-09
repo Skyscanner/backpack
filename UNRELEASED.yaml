@@ -24,3 +24,7 @@
 #   FIXED:
 #     - bpk-component-horcrux:
 #       - Fixed issue where `BpkHorcrux` would occasionally possess the living.
+
+BREAKING:
+  - bpk-mixins:
+    - Removed gray theming mixins due to gray colors being fixed.

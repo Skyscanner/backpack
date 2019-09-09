@@ -60,16 +60,7 @@ import { themeAttributes as starRatingThemeAttributes } from '../packages/bpk-co
 import { themeAttributes as textareaThemeAttributes } from '../packages/bpk-component-textarea';
 import { themeAttributes as navigationBarThemeAttributes } from '../packages/bpk-component-navigation-bar';
 
-const storybookAttributes = [
-  'primaryColor',
-  'colorGray50',
-  'colorGray100',
-  'colorGray300',
-  'colorGray500',
-  'colorGray700',
-  'colorGray900',
-  'themeName',
-];
+const storybookAttributes = ['primaryColor', 'themeName'];
 
 export default [
   ...accordionThemeAttributes,

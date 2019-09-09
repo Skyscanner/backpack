@@ -52,11 +52,10 @@
 
 .bpk-data-table-column__sort-icon {
   display: block;
-
-  @include bpk-apply-gray-300-to(fill);
+  fill: $bpk-color-gray-300;
 
   &:hover {
-    @include bpk-apply-gray-500-to(fill);
+    fill: $bpk-color-gray-500;
   }
 
   &--selected {
