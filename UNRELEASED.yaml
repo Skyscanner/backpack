@@ -1,4 +1,5 @@
 # UNRELEASED:
+
 # How to write a good changelog entry:
 #
 #   1. Add 'BREAKING', 'ADDED' OR 'FIXED' depending on if the change will be major, minor or patch according to semver.org.
@@ -23,9 +24,3 @@
 #   FIXED:
 #     - bpk-component-horcrux:
 #       - Fixed issue where `BpkHorcrux` would occasionally possess the living.
-
-ADDED:
-  - bpk-component-rating:
-    - Added new `size` prop to support multiple rating component sizes.
-  - bpk-tokens:
-    - Added new tokens for `BpkRating` component

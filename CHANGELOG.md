@@ -2,6 +2,17 @@
 
 [Unreleased changes](./UNRELEASED.yaml).
 
+# 2019-09-09 - New `size` prop to support `large` and `small` rating components
+
+**Added:**
+
+ - bpk-component-rating: 1.0.10 => 1.1.0
+   - Added new `size` prop to support multiple rating component sizes.
+
+ - bpk-tokens: 27.9.5 => 27.10.0
+   - Added new tokens for `BpkRating` component
+
+
 # 2019-09-04 - Theming support for `BpkBadge`, `BpkBannerAlert` and form fields.
 
 **Added:**
