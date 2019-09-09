@@ -2694,6 +2694,34 @@
       "originalValue": "{!SPACING_SM} * 4",
       "name": "RATING_BASE_WIDTH"
     },
+    "RATING_LG_HEIGHT": {
+      "category": "ratings",
+      "value": "1.875rem * 2",
+      "type": "size",
+      "originalValue": "{!SPACING_LG} * 2",
+      "name": "RATING_LG_HEIGHT"
+    },
+    "RATING_LG_WIDTH": {
+      "category": "ratings",
+      "value": "1.875rem * 2",
+      "type": "size",
+      "originalValue": "{!SPACING_LG} * 2",
+      "name": "RATING_LG_WIDTH"
+    },
+    "RATING_SM_HEIGHT": {
+      "category": "ratings",
+      "value": ".75rem * 3",
+      "type": "size",
+      "originalValue": "{!SPACING_SM} * 3",
+      "name": "RATING_SM_HEIGHT"
+    },
+    "RATING_SM_WIDTH": {
+      "category": "ratings",
+      "value": ".75rem * 3",
+      "type": "size",
+      "originalValue": "{!SPACING_SM} * 3",
+      "name": "RATING_SM_WIDTH"
+    },
     "REQUIRED_COLOR": {
       "category": "forms",
       "value": "rgb(255, 84, 82)",
@@ -3486,6 +3514,10 @@
     "RADIO_CHECKED_CIRCLE_COLOR",
     "RATING_BASE_HEIGHT",
     "RATING_BASE_WIDTH",
+    "RATING_LG_HEIGHT",
+    "RATING_LG_WIDTH",
+    "RATING_SM_HEIGHT",
+    "RATING_SM_WIDTH",
     "REQUIRED_COLOR",
     "SCRIM_BACKGROUND_COLOR",
     "SCRIM_DARK_BACKGROUND_COLOR",

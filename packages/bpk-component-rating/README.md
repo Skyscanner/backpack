@@ -26,13 +26,14 @@ export default () => (
 
 ## Props
 
-| Property  | PropType | Required | Default Value |
-| --------- | -------- | -------- | ------------- |
-| ariaLabel | string   | true     | -             |
-| title     | string   | true     | -             |
-| subtitle  | string   | true     | -             |
-| value     | number   | true     | -             |
-| className | string   | false    | null          |
+| Property  | PropType              | Required | Default Value     |
+| --------- | --------------------- | -------- | ----------------- |
+| ariaLabel | string                | true     | -                 |
+| title     | string                | true     | -                 |
+| subtitle  | string                | true     | -                 |
+| value     | number                | true     | -                 |
+| className | string                | false    | null              |
+| size      | oneOf(RATING_SIZES)   | false    | RATING_SIZES.base |
 
 ## Theme props
 

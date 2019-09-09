@@ -24,7 +24,7 @@ import { cssModules } from 'bpk-react-utils';
 import BpkText from 'bpk-component-text';
 
 import STYLES from './BpkRating.scss';
-// import RATING_SIZES from './BpkRatingSizes'; TODO: make use of this
+import RATING_SIZES from './BpkRatingSizes';
 
 const getClassName = cssModules(STYLES);
 const MEDIUM_RATING_THRESHOLD = 6;
@@ -36,15 +36,17 @@ export type Props = {
   ariaLabel: string,
   title: string,
   subtitle: string,
-  // size: string, TODO: make use of this
+  size: string,
   value: number,
   className: ?string,
 };
 const BpkRating = (props: Props) => {
-  const { ariaLabel, title, subtitle, value, className, ...rest } = props;
+  const { ariaLabel, title, subtitle, value, className, size, ...rest } = props;
   const classNames = getClassName('bpk-rating', className);
-  // const scoreStyles = [getClassName(`bpk-rating--${size}-rating`)]; TODO: make use of this when we add sizes
-  const scoreStyles = [getClassName('bpk-rating--base-rating')];
+  const scoreStyles = [
+    getClassName('bpk-rating__component', `bpk-rating--${size}-rating`),
+  ];
+
   let adjustedValue = value;
 
   if (adjustedValue >= HIGH_RATING_THRESHOLD) {
@@ -72,10 +74,18 @@ const BpkRating = (props: Props) => {
         <strong>{adjustedValue}</strong>
       </BpkText>
       <div className={getClassName('bpk-rating__text')}>
-        <BpkText textStyle="base" tagName="span" aria-hidden="true">
+        <BpkText
+          textStyle={RATING_SIZES[size]}
+          tagName="span"
+          aria-hidden="true"
+        >
           <strong>{title}</strong>
         </BpkText>
-        <BpkText textStyle="xs" tagName="span" aria-hidden="true">
+        <BpkText
+          textStyle={size === RATING_SIZES.lg ? 'base' : 'sm'}
+          tagName="span"
+          aria-hidden="true"
+        >
           {subtitle}
         </BpkText>
       </div>
@@ -89,12 +99,12 @@ BpkRating.propTypes = {
   subtitle: PropTypes.string.isRequired,
   value: PropTypes.number.isRequired,
   className: PropTypes.string,
-  // size: PropTypes.oneOf(Object.keys(RATING_SIZES)), TODO: make use of this
+  size: PropTypes.oneOf(Object.keys(RATING_SIZES)),
 };
 
 BpkRating.defaultProps = {
   className: null,
-  // size: RATING_SIZES.base, TODO: make use of this.
+  size: RATING_SIZES.base,
 };
 
 export default BpkRating;

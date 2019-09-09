@@ -123,4 +123,34 @@ describe('BpkRating', () => {
       .toJSON();
     expect(tree).toMatchSnapshot();
   });
+
+  it('should render a small rating component', () => {
+    const tree = renderer
+      .create(
+        <BpkRating
+          ariaLabel="9 Excellent would recommend"
+          title="Excellent"
+          subtitle="This place was amazing"
+          value={9}
+          size="sm"
+        />,
+      )
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('should render a large rating component', () => {
+    const tree = renderer
+      .create(
+        <BpkRating
+          ariaLabel="9 Excellent would recommend"
+          title="Excellent"
+          subtitle="This place was amazing"
+          value={9}
+          size="lg"
+        />,
+      )
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 });

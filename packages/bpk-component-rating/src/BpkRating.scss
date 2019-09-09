@@ -21,20 +21,38 @@
 .bpk-rating {
   display: flex;
 
-  &--base-rating {
-    width: $bpk-rating-base-width;
-    height: $bpk-rating-base-height;
-    padding: $bpk-spacing-sm;
+  &__component {
+    justify-content: center;
+    align-items: center;
     border-radius: 50%;
     color: $bpk-color-white;
-    text-align: center;
-    vertical-align: middle;
+  }
+
+  &--base-rating {
+    display: flex;
+    width: $bpk-rating-base-width;
+    height: $bpk-rating-base-height;
+  }
+
+  &--lg-rating {
+    display: flex;
+    width: $bpk-rating-lg-width;
+    height: $bpk-rating-lg-height;
+    font-size: $bpk-font-size-lg;
+  }
+
+  &--sm-rating {
+    display: flex;
+    width: $bpk-rating-sm-width;
+    height: $bpk-rating-sm-width;
+    font-size: $bpk-font-size-sm;
   }
 
   &__text {
     display: flex;
     padding-left: $bpk-spacing-sm;
     flex-direction: column;
+    justify-content: center;
     text-align: left;
   }
 
