@@ -25,6 +25,16 @@ const readline = require('readline');
 const colors = require('colors');
 const YAML = require('yaml');
 const semver = require('semver');
+const cliProgress = require('cli-progress');
+
+const bar = new cliProgress.Bar({}, cliProgress.Presets.shades_classic);
+
+let packagesPublished = 0;
+
+const publishDone = () => {
+  packagesPublished += 1;
+  bar.update(packagesPublished);
+};
 
 const { enableKrypton, disableKrypton } = require('./krypton');
 const {
@@ -384,15 +394,18 @@ const updateChangelog = (changes, changeSummary) => {
 const publishPackageToNPM = packageName =>
   new Promise(resolve => {
     exec(`(cd packages/${packageName} && npm publish)`, null, () => {
+      publishDone();
       resolve();
     });
   });
 
 const publishPackagesToNPM = changes =>
   new Promise(resolve => {
+    bar.start(changes.length, 0);
     const tasks = changes.map(c => publishPackageToNPM(c.name));
 
     Promise.all(tasks).then(result => {
+      bar.stop();
       resolve(result);
     });
   });
