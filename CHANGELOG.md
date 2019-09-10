@@ -7,8 +7,8 @@
 **Fixed:**
 
  - bpk-mixins: 18.1.1 => 18.1.2
-   - Deprecated gray theming mixins due to gray colors being fixed.
-   - Components that utilsed the gray theming mixins will now directly use the gray colors.
+   - Deprecated gray theming mixins due to gray colours being fixed.
+   - Components that utilised the gray theming mixins will now directly use the gray colours.
 
 
 # 2019-09-09 - Fix for missing export
