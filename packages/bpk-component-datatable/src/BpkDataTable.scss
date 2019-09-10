@@ -48,24 +48,20 @@ $bpk-border-size-datatable: $bpk-border-size-xl * 2;
     display: flex;
     flex-direction: row;
     align-items: center;
-    border: $bpk-border-size-sm solid;
+    border: $bpk-border-size-sm solid $bpk-color-gray-50;
     border-bottom: none;
     outline-offset: -(4 * $bpk-one-pixel-rem);
+    color: $bpk-color-gray-700;
     font-weight: normal;
 
-    @include bpk-apply-gray-50-to(border-color);
-    @include bpk-apply-gray-700-to(color);
-
     &:last-child {
-      border-bottom: $bpk-border-size-sm solid;
-
-      @include bpk-apply-gray-50-to(border-bottom-color);
+      border-bottom: $bpk-border-size-sm solid $bpk-color-gray-50;
     }
 
     &:not(.bpk-data-table__header-row):hover {
+      background-color: $bpk-color-gray-50;
       cursor: pointer;
 
-      @include bpk-apply-gray-50-to(background-color);
       @include bpk-datatable-border-left;
 
       @include bpk-rtl {
@@ -74,7 +70,8 @@ $bpk-border-size-datatable: $bpk-border-size-xl * 2;
     }
 
     &--selected {
-      @include bpk-apply-gray-100-to(background-color);
+      background-color: $bpk-color-gray-100;
+
       @include bpk-datatable-border-left;
 
       @include bpk-rtl {

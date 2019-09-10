@@ -30,7 +30,7 @@
   }
 
   &--dark {
-    @include bpk-apply-gray-700-to(fill);
+    fill: $bpk-color-gray-700;
   }
 
   &--large {

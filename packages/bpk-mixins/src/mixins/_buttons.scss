@@ -288,9 +288,8 @@
 
   &:disabled {
     background: none;
+    color: $bpk-color-gray-300;
     text-decoration: none;
-
-    @include bpk-apply-gray-300-to(color);
   }
 }
 

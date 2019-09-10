@@ -206,6 +206,8 @@
 ///     @include bpk-apply-gray-50-to(color);
 ///   }
 @mixin bpk-apply-gray-50-to($property) {
+  @warn 'bpk-apply-gray-50-to is deprecated and will be removed';
+
   @include bpk-themeable-property($property, --bpk-color-gray-50, $bpk-color-gray-50);
 }
 
@@ -218,6 +220,8 @@
 ///     @include bpk-apply-gray-100-to(color);
 ///   }
 @mixin bpk-apply-gray-100-to($property) {
+  @warn 'bpk-apply-gray-100-to is deprecated and will be removed';
+
   @include bpk-themeable-property($property, --bpk-color-gray-100, $bpk-color-gray-100);
 }
 
@@ -230,6 +234,8 @@
 ///     @include bpk-apply-gray-300-to(color);
 ///   }
 @mixin bpk-apply-gray-300-to($property) {
+  @warn 'bpk-apply-gray-300-to is deprecated and will be removed';
+
   @include bpk-themeable-property($property, --bpk-color-gray-300, $bpk-color-gray-300);
 }
 
@@ -242,6 +248,8 @@
 ///     @include bpk-apply-gray-500-to(color);
 ///   }
 @mixin bpk-apply-gray-500-to($property) {
+  @warn 'bpk-apply-gray-500-to is deprecated and will be removed';
+
   @include bpk-themeable-property($property, --bpk-color-gray-500, $bpk-color-gray-500);
 }
 
@@ -254,6 +262,8 @@
 ///     @include bpk-apply-gray-700-to(color);
 ///   }
 @mixin bpk-apply-gray-700-to($property) {
+  @warn 'bpk-apply-gray-700-to is deprecated and will be removed';
+
   @include bpk-themeable-property($property, --bpk-color-gray-700, $bpk-color-gray-700);
 }
 
@@ -266,6 +276,8 @@
 ///     @include bpk-apply-gray-900-to(color);
 ///   }
 @mixin bpk-apply-gray-900-to($property) {
+  @warn 'bpk-apply-gray-900-to is deprecated and will be removed';
+
   @include bpk-themeable-property($property, --bpk-color-gray-900, $bpk-color-gray-900);
 }
 

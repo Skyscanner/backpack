@@ -97,7 +97,6 @@ $arrow-size: $bpk-spacing-sm;
     justify-content: space-between;
 
     @include bpk-border-sm($bpk-color-gray-100);
-    @include bpk-border-bottom-sm(var(--bpk-color-gray-100, $bpk-color-gray-100));
   }
 
   &__label {
@@ -117,7 +116,6 @@ $arrow-size: $bpk-spacing-sm;
     text-align: right;
 
     @include bpk-border-top-sm($bpk-color-gray-100);
-    @include bpk-border-top-sm(var(--bpk-color-gray-100, $bpk-color-gray-100));
 
     @include bpk-rtl {
       text-align: left;

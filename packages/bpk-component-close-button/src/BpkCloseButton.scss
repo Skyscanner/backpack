@@ -23,18 +23,18 @@
   padding: 0;
   border: 0;
   background-color: transparent;
+  color: $bpk-color-gray-500;
   cursor: pointer;
   appearance: none;
 
-  @include bpk-apply-gray-500-to(color);
   @include bpk-touch-tappable;
 
   @include bpk-hover {
-    @include bpk-apply-gray-700-to(color);
+    color: $bpk-color-gray-700;
   }
 
   &:active {
-    @include bpk-apply-gray-900-to(color);
+    color: $bpk-color-gray-900;
   }
 
   &__icon {
