@@ -2,6 +2,15 @@
 
 [Unreleased changes](./UNRELEASED.yaml).
 
+# 2019-09-10 - Deprecated gray theming mixins and removed gray theming from components
+
+**Fixed:**
+
+ - bpk-mixins: 18.1.1 => 18.1.2
+   - Deprecated gray theming mixins due to gray colors being fixed.
+   - Components that utilsed the gray theming mixins will now directly use the gray colors.
+
+
 # 2019-09-09 - Fix for missing export
 
 **Fixed:**

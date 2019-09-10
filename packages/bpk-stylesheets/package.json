@@ -1,6 +1,6 @@
 {
   "name": "bpk-stylesheets",
-  "version": "3.3.12",
+  "version": "3.3.13",
   "description": "Backpack's stylesheets.",
   "main": "index.js",
   "scripts": {
@@ -13,12 +13,12 @@
   "author": "Backpack Design System <backpack@skyscanner.net>",
   "license": "Apache-2.0",
   "dependencies": {
-    "bpk-mixins": "^18.1.1",
+    "bpk-mixins": "^18.1.2",
     "bpk-tokens": "^27.10.0",
     "normalize.css": "4.2.0"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
-  "gitHead": "3f637cfb96814a93d4ffeec3088e92e98c96f4b7"
+  "gitHead": "fc845ae54bd96784c98924539c56abf617dbbbd7"
 }

@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-icon",
-  "version": "4.1.2",
+  "version": "4.1.3",
   "description": "Backpack icon components.",
   "main": "index.js",
   "scripts": {
@@ -16,7 +16,7 @@
     "react": "^15.0.0 || ^16.0.0"
   },
   "dependencies": {
-    "bpk-mixins": "^18.1.1",
+    "bpk-mixins": "^18.1.2",
     "bpk-react-utils": "^2.7.10",
     "bpk-svgs": "^7.2.2",
     "bpk-tokens": "^27.10.0",
@@ -25,5 +25,5 @@
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
-  "gitHead": "3f637cfb96814a93d4ffeec3088e92e98c96f4b7"
+  "gitHead": "fc845ae54bd96784c98924539c56abf617dbbbd7"
 }
