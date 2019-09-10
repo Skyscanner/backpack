@@ -709,6 +709,24 @@
   line-height: $bpk-label-line-height;
 }
 
+/// Invalid form label. Modifies the bpk-label mixin.
+///
+/// @require {mixin} bpk-label
+///
+/// @example scss
+///   .selector {
+///     @include bpk-label();
+///     @include bpk-label--invalid();
+///   }
+
+@mixin bpk-label--invalid {
+  @include bpk-themeable-property(
+    color,
+    --bpk-form-validation-text-color,
+    $bpk-form-validation-color
+  );
+}
+
 /// White form label. Modifies the bpk-label mixin.
 ///
 /// @require {mixin} bpk-label

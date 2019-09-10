@@ -29,10 +29,4 @@
 
     @include bpk-text--xs;
   }
-
-  &__label {
-    &--invalid {
-      @include bpk-themeable-property(color, --bpk-fieldset-label-text-color, $bpk-form-validation-color);
-    }
-  }
 }
