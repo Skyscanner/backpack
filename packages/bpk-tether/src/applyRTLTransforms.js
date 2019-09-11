@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import getScriptDirection from './getScriptDirection';
+import { isRTL } from 'bpk-react-utils';
 
 const tryFlipAttachmentString = value => {
   if (value.indexOf('right') !== -1) {
@@ -27,19 +27,18 @@ const tryFlipAttachmentString = value => {
 };
 
 const transform = tetherOptions => {
-  const isRTL = getScriptDirection() === 'rtl';
   const { attachment, targetAttachment, ...rest } = tetherOptions;
 
   const options = {};
 
   if (attachment) {
-    options.attachment = isRTL
+    options.attachment = isRTL()
       ? tryFlipAttachmentString(attachment)
       : attachment;
   }
 
   if (targetAttachment) {
-    options.targetAttachment = isRTL
+    options.targetAttachment = isRTL()
       ? tryFlipAttachmentString(targetAttachment)
       : targetAttachment;
   }
@@ -48,4 +47,3 @@ const transform = tetherOptions => {
 };
 
 export default transform;
-export { getScriptDirection };

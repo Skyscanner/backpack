@@ -18,12 +18,11 @@
 
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import { cssModules } from 'bpk-react-utils';
+import { cssModules, isRTL } from 'bpk-react-utils';
 
 import {
   getCalendarGridWidth,
   getTransformStyles,
-  getScriptDirection,
   isTransitionEndSupported,
 } from './utils';
 import {
@@ -78,7 +77,7 @@ class BpkCalendarGridTransition extends Component {
     const hasMonthChanged = !isSameMonth(this.props.month, nextProps.month);
 
     if (hasMonthChanged) {
-      const reverse = getScriptDirection() === 'rtl';
+      const reverse = isRTL();
 
       if (differenceInCalendarMonths(nextProps.month, this.props.month) === 1) {
         // Transition to next month

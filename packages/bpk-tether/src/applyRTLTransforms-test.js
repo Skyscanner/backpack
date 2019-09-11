@@ -18,7 +18,10 @@
 
 import applyRTLTransforms from './applyRTLTransforms';
 
-jest.mock('./getScriptDirection', () => jest.fn());
+jest.mock('bpk-react-utils', () => ({
+  ...jest.requireActual('bpk-react-utils'),
+  isRTL: jest.fn(),
+}));
 
 describe('applyRTLTransforms', () => {
   it('should clone given object', () => {
@@ -30,7 +33,7 @@ describe('applyRTLTransforms', () => {
   });
 
   it('should transform "left" to "right" on "attachment" property when script direction is "rtl"', () => {
-    require('./getScriptDirection').mockReturnValueOnce('rtl'); // eslint-disable-line global-require
+    require('bpk-react-utils').isRTL.mockReturnValueOnce(true); // eslint-disable-line global-require
     const original = { attachment: 'middle left' };
     const result = applyRTLTransforms(original);
 
@@ -38,7 +41,7 @@ describe('applyRTLTransforms', () => {
   });
 
   it('should transform "right" to "left" on "attachment" property when script direction is "rtl"', () => {
-    require('./getScriptDirection').mockReturnValueOnce('rtl'); // eslint-disable-line global-require
+    require('bpk-react-utils').isRTL.mockReturnValueOnce(true); // eslint-disable-line global-require
     const original = { attachment: 'middle right' };
     const result = applyRTLTransforms(original);
 
@@ -46,7 +49,7 @@ describe('applyRTLTransforms', () => {
   });
 
   it('should not transform "left" to "right" on "attachment" property when script direction isnt "rtl"', () => {
-    require('./getScriptDirection').mockReturnValueOnce('ltr'); // eslint-disable-line global-require
+    require('bpk-react-utils').isRTL.mockReturnValueOnce(false); // eslint-disable-line global-require
     const original = { attachment: 'middle left' };
     const result = applyRTLTransforms(original);
 
@@ -54,7 +57,7 @@ describe('applyRTLTransforms', () => {
   });
 
   it('should not transform "right" to "left" on "attachment" property when script direction isnt "rtl"', () => {
-    require('./getScriptDirection').mockReturnValueOnce('ltr'); // eslint-disable-line global-require
+    require('bpk-react-utils').isRTL.mockReturnValueOnce(false); // eslint-disable-line global-require
     const original = { attachment: 'middle right' };
     const result = applyRTLTransforms(original);
 
@@ -62,7 +65,7 @@ describe('applyRTLTransforms', () => {
   });
 
   it('should transform "left" to "right" on "targetAttachment" property when script direction is "rtl"', () => {
-    require('./getScriptDirection').mockReturnValueOnce('rtl'); // eslint-disable-line global-require
+    require('bpk-react-utils').isRTL.mockReturnValueOnce(true); // eslint-disable-line global-require
     const original = { targetAttachment: 'middle left' };
     const result = applyRTLTransforms(original);
 
@@ -70,7 +73,7 @@ describe('applyRTLTransforms', () => {
   });
 
   it('should transform "right" to "left" on "targetAttachment" property when script direction is "rtl"', () => {
-    require('./getScriptDirection').mockReturnValueOnce('rtl'); // eslint-disable-line global-require
+    require('bpk-react-utils').isRTL.mockReturnValueOnce(true); // eslint-disable-line global-require
     const original = { targetAttachment: 'middle right' };
     const result = applyRTLTransforms(original);
 
@@ -78,7 +81,7 @@ describe('applyRTLTransforms', () => {
   });
 
   it('should not transform "left" to "right" on "targetAttachment" property when script direction isnt "rtl"', () => {
-    require('./getScriptDirection').mockReturnValueOnce('ltr'); // eslint-disable-line global-require
+    require('bpk-react-utils').isRTL.mockReturnValueOnce(false); // eslint-disable-line global-require
     const original = { targetAttachment: 'middle left' };
     const result = applyRTLTransforms(original);
 
@@ -86,7 +89,7 @@ describe('applyRTLTransforms', () => {
   });
 
   it('should not transform "right" to "left" on "targetAttachment" property when script direction isnt "rtl"', () => {
-    require('./getScriptDirection').mockReturnValueOnce('ltr'); // eslint-disable-line global-require
+    require('bpk-react-utils').isRTL.mockReturnValueOnce(false); // eslint-disable-line global-require
     const original = { targetAttachment: 'middle right' };
     const result = applyRTLTransforms(original);
 
