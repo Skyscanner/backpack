@@ -38,6 +38,24 @@ describe('BpkLabel', () => {
     expect(tree).toMatchSnapshot();
   });
 
+  it('should render correctly with "valid" attribute false', () => {
+    const tree = renderer
+      .create(<BpkLabel valid={false}>Origin</BpkLabel>)
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('should render correctly with "valid" attribute false and "required" attributes', () => {
+    const tree = renderer
+      .create(
+        <BpkLabel required valid={false}>
+          Origin
+        </BpkLabel>,
+      )
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
   it('should render correctly with a "className" attribute', () => {
     const tree = renderer
       .create(<BpkLabel className="test">Origin</BpkLabel>)

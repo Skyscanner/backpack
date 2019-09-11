@@ -8,6 +8,27 @@ exports[`BpkLabel should render correctly 1`] = `
 </label>
 `;
 
+exports[`BpkLabel should render correctly with "valid" attribute false 1`] = `
+<label
+  className="bpk-label bpk-label--invalid"
+>
+  Origin
+</label>
+`;
+
+exports[`BpkLabel should render correctly with "valid" attribute false and "required" attributes 1`] = `
+<label
+  className="bpk-label bpk-label--invalid"
+>
+  Origin
+  <span
+    className="bpk-label__asterisk"
+  >
+    *
+  </span>
+</label>
+`;
+
 exports[`BpkLabel should render correctly with a "className" attribute 1`] = `
 <label
   className="bpk-label test"

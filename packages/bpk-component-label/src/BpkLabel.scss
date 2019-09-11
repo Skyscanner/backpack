@@ -29,7 +29,15 @@
     @include bpk-label--disabled;
   }
 
+  &--invalid {
+    @include bpk-label--invalid;
+  }
+
   &__asterisk {
-    color: $bpk-required-color;
+    @include bpk-themeable-property(
+      color,
+      --bpk-form-validation-text-color,
+      $bpk-form-validation-color
+    );
   }
 }

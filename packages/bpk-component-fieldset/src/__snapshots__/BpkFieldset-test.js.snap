@@ -5,7 +5,7 @@ exports[`BpkFieldset should render correctly when disabled with input component 
   className="bpk-fieldset"
 >
   <label
-    className="bpk-label bpk-label--disabled bpk-fieldset__label"
+    className="bpk-label bpk-label--disabled"
     htmlFor="name_input"
   >
     Name
@@ -29,7 +29,7 @@ exports[`BpkFieldset should render correctly when disabled with input component 
   className="bpk-fieldset"
 >
   <label
-    className="bpk-label bpk-label--disabled bpk-fieldset__label bpk-fieldset__label--invalid"
+    className="bpk-label bpk-label--disabled bpk-label--invalid"
     htmlFor="name_input"
   >
     Name
@@ -255,7 +255,7 @@ exports[`BpkFieldset should render correctly with input component 1`] = `
   className="bpk-fieldset"
 >
   <label
-    className="bpk-label bpk-fieldset__label"
+    className="bpk-label"
     htmlFor="name_input"
   >
     Name
@@ -334,7 +334,7 @@ exports[`BpkFieldset should render correctly with input component and "descripti
   className="bpk-fieldset"
 >
   <label
-    className="bpk-label bpk-fieldset__label"
+    className="bpk-label"
     htmlFor="name_input"
   >
     Name
@@ -420,7 +420,7 @@ exports[`BpkFieldset should render correctly with input component and "disabled"
   className="bpk-fieldset"
 >
   <label
-    className="bpk-label bpk-fieldset__label"
+    className="bpk-label"
     htmlFor="name_input"
   >
     Name
@@ -499,7 +499,7 @@ exports[`BpkFieldset should render correctly with input component and "required"
   className="bpk-fieldset"
 >
   <label
-    className="bpk-label bpk-fieldset__label"
+    className="bpk-label"
     htmlFor="name_input"
   >
     Name
@@ -583,7 +583,7 @@ exports[`BpkFieldset should render correctly with input component and "valid" at
   className="bpk-fieldset"
 >
   <label
-    className="bpk-label bpk-fieldset__label"
+    className="bpk-label"
     htmlFor="name_input"
   >
     Name
@@ -662,7 +662,7 @@ exports[`BpkFieldset should render correctly with input component and "valid" at
   className="bpk-fieldset"
 >
   <label
-    className="bpk-label bpk-fieldset__label bpk-fieldset__label--invalid"
+    className="bpk-label bpk-label--invalid"
     htmlFor="name_input"
   >
     Name
@@ -742,7 +742,7 @@ exports[`BpkFieldset should render correctly with select component 1`] = `
   className="bpk-fieldset"
 >
   <label
-    className="bpk-label bpk-fieldset__label"
+    className="bpk-label"
     htmlFor="fruits_select"
   >
     Fruits
@@ -846,7 +846,7 @@ exports[`BpkFieldset should render correctly with select component and "required
   className="bpk-fieldset"
 >
   <label
-    className="bpk-label bpk-fieldset__label"
+    className="bpk-label"
     htmlFor="fruits_select"
   >
     Fruits

@@ -71,15 +71,14 @@ const BpkFieldset = (props: Props) => {
   }
 
   const classNames = [getClassName('bpk-fieldset')];
-  const labelClassNames = [getClassName('bpk-fieldset__label')];
   const validationMessageId = `${childId}_validation_message`;
   const descriptionId = `${childId}_description`;
 
+  const isValid = isCheckbox ? valid : children.props.valid;
+
   // Explicit check for false primitive value as undefined is
   // treated as neither valid nor invalid
-  const isInvalid = isCheckbox
-    ? valid === false
-    : children.props.valid === false;
+  const isInvalid = isValid === false;
 
   const childrenProps: {
     required?: boolean,
@@ -103,10 +102,6 @@ const BpkFieldset = (props: Props) => {
 
   const clonedChildren = cloneElement(children, childrenProps);
 
-  if (isInvalid) {
-    labelClassNames.push(getClassName('bpk-fieldset__label--invalid'));
-  }
-
   if (className) {
     classNames.push(className);
   }
@@ -118,7 +113,7 @@ const BpkFieldset = (props: Props) => {
           htmlFor={childId}
           required={required}
           disabled={disabled}
-          className={labelClassNames.join(' ')}
+          valid={isValid}
         >
           {label}
         </BpkLabel>
