@@ -49,7 +49,7 @@ module.exports = {
           {
             loader: 'sass-loader',
             options: {
-              data: BPK_TOKENS
+              prependData: BPK_TOKENS
                 ? fs.readFileSync(
                     path.join(
                       rootDir,
@@ -57,7 +57,9 @@ module.exports = {
                     ),
                   )
                 : '',
-              functions: sassFunctions,
+              sassOptions: {
+                functions: sassFunctions,
+              },
             },
           },
         ],
