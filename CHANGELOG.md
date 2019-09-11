@@ -2,6 +2,24 @@
 
 [Unreleased changes](./UNRELEASED.yaml).
 
+# 2019-09-11 - Fixed scroll container bug in RTL
+
+**Added:**
+
+ - bpk-component-label: 3.2.163 => 3.3.0
+   - New `valid` prop to help render the label for an invalid field.
+
+**Fixed:**
+
+ - bpk-component-mobile-scroll-container: 1.1.102 => 1.1.103
+   - Fixed an issue that caused the left/right indicators to be shown incorrectly in RTL.
+
+**Added:**
+
+ - bpk-react-utils: 2.7.10 => 2.8.0
+   - Added a new `isRTL` helper method.
+
+
 # 2019-09-10 - Deprecated gray theming mixins and removed gray theming from components
 
 **Fixed:**

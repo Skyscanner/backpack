@@ -14,12 +14,12 @@
     "react": "^15.0.0 || ^16.0.0"
   },
   "dependencies": {
-    "bpk-component-icon": "^4.1.3",
-    "bpk-mixins": "^18.1.2",
+    "bpk-component-icon": "^4.1.4",
+    "bpk-mixins": "^18.1.3",
     "prop-types": "^15.6.2"
   },
   "devDependencies": {
-    "bpk-react-utils": "^2.7.10"
+    "bpk-react-utils": "^2.8.0"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"

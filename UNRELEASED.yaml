@@ -1,16 +1,5 @@
 # UNRELEASED:
 
-ADDED:
-  - bpk-component-label:
-    - New `valid` prop to help render the label for an invalid field.
-
-  - bpk-react-utils:
-    - Added a new `isRTL` helper method.
-
-FIXED:
-  - bpk-component-mobile-scroll-container:
-    - Fixed an issue that caused the left/right indicators to be shown incorrectly in RTL.
-
 # How to write a good changelog entry:
 #
 #   1. Add 'BREAKING', 'ADDED' OR 'FIXED' depending on if the change will be major, minor or patch according to semver.org.
