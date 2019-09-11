@@ -16,18 +16,7 @@
  * limitations under the License.
  */
 
-const DIRECTIONS = {
-  LTR: 'ltr',
-  RTL: 'rtl',
-};
-
-const getDirection = () =>
-  (
-    (typeof document !== 'undefined' && document.documentElement.dir) ||
-    DIRECTIONS.LTR
-  ).toLowerCase();
-
-const isRTL = () => getDirection() === DIRECTIONS.RTL;
+import { isRTL } from 'bpk-react-utils';
 
 const rtlConditionalValue = (ltrValue, rtlValue) =>
   isRTL() ? rtlValue : ltrValue;

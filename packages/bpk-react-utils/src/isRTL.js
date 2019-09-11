@@ -16,9 +16,21 @@
  * limitations under the License.
  */
 
-const getScriptDirection = () => {
-  const html = document.querySelector('html');
-  return window.getComputedStyle(html, null).getPropertyValue('direction');
+/* @flow strict */
+
+const DIRECTIONS = {
+  LTR: 'ltr',
+  RTL: 'rtl',
 };
 
-export default getScriptDirection;
+const getDirection = () =>
+  (
+    (typeof document !== 'undefined' &&
+      document.documentElement !== null &&
+      document.documentElement.getAttribute('dir')) ||
+    DIRECTIONS.LTR
+  ).toLowerCase();
+
+const isRTL = () => getDirection() === DIRECTIONS.RTL;
+
+export default isRTL;

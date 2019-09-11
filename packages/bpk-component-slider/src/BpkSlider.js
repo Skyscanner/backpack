@@ -19,23 +19,15 @@
 import React from 'react';
 import Slider from 'react-slider';
 import PropTypes from 'prop-types';
-import { cssModules } from 'bpk-react-utils';
+import { cssModules, isRTL } from 'bpk-react-utils';
 
 import STYLES from './BpkSlider.scss';
 
 const getClassName = cssModules(STYLES);
 
-const getScriptDirection = () => {
-  if (typeof document === 'undefined') {
-    return null;
-  }
-  const html = document.querySelector('html');
-  return window.getComputedStyle(html, null).getPropertyValue('direction');
-};
-
 const BpkSlider = props => {
   const { large, className, ...rest } = props;
-  const invert = getScriptDirection() === 'rtl';
+  const invert = isRTL();
   const classNames = [getClassName('bpk-slider')];
   const handleClassNames = [getClassName('bpk-slider__handle')];
   const barClassNames = [getClassName('bpk-slider__bar')];

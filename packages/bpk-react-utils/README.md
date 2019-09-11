@@ -181,3 +181,20 @@ const MyComponent = (props) => (
 | appearClassName       | string   | true     | -             |
 | appearActiveClassName | string   | true     | -             |
 | transitionTimeout     | number   | true     | -             |
+
+## `isRTL`
+
+Returns true if the browser is showing content right-to-left.
+
+### Usage
+
+```js
+import React from 'react';
+import { isRTL } from 'bpk-react-utils';
+
+if (isRTL()) {
+  // do RTL stuff
+} else {
+  // do LTR stuff
+}
+```

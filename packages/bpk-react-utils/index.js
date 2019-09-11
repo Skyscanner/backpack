@@ -23,6 +23,7 @@ import TransitionInitialMount from './src/TransitionInitialMount';
 import cssModules from './src/cssModules';
 import deprecated from './src/deprecated';
 import withDefaultProps from './src/withDefaultProps';
+import isRTL from './src/isRTL';
 
 export {
   Portal,
@@ -31,6 +32,7 @@ export {
   deprecated,
   withDefaultProps,
   wrapDisplayName,
+  isRTL,
 };
 export default {
   Portal,
@@ -39,4 +41,5 @@ export default {
   deprecated,
   withDefaultProps,
   wrapDisplayName,
+  isRTL,
 };

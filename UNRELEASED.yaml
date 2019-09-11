@@ -24,3 +24,7 @@
 #   FIXED:
 #     - bpk-component-horcrux:
 #       - Fixed issue where `BpkHorcrux` would occasionally possess the living.
+
+ADDED:
+  - bpk-react-utils:
+    - Added a new `isRTL` helper method.
