@@ -21,7 +21,7 @@
 import PropTypes from 'prop-types';
 import debounce from 'lodash.debounce';
 import React, { Component, type Node } from 'react';
-import { cssModules } from 'bpk-react-utils';
+import { cssModules, isRTL } from 'bpk-react-utils';
 
 import STYLES from './BpkMobileScrollContainer.scss';
 
@@ -51,21 +51,28 @@ const computeScrollIndicatorClassName = (
   const classNames = [];
   const { scrollLeft, scrollWidth, offsetWidth } = scrollerEl;
 
-  if (scrollLeft > 0) {
+  const rtl = isRTL();
+  const scrollValue = rtl ? -scrollLeft : scrollLeft;
+  const showLeadingIndicator = scrollValue > 0;
+  const showTrailingIndicator = scrollValue < scrollWidth - offsetWidth;
+  const showLeftIndicator = rtl ? showTrailingIndicator : showLeadingIndicator;
+  const showRightIndicator = rtl ? showLeadingIndicator : showTrailingIndicator;
+
+  if (showLeftIndicator) {
     classNames.push(
       getClassName('bpk-mobile-scroll-container--left-indicator'),
     );
-    if (leadingIndicatorClassName) {
-      classNames.push(leadingIndicatorClassName);
-    }
   }
-  if (scrollLeft < scrollWidth - offsetWidth) {
+  if (showRightIndicator) {
     classNames.push(
       getClassName('bpk-mobile-scroll-container--right-indicator'),
     );
-    if (trailingIndicatorClassName) {
-      classNames.push(trailingIndicatorClassName);
-    }
+  }
+  if (showLeadingIndicator && leadingIndicatorClassName) {
+    classNames.push(leadingIndicatorClassName);
+  }
+  if (showTrailingIndicator && trailingIndicatorClassName) {
+    classNames.push(trailingIndicatorClassName);
   }
 
   return classNames;
