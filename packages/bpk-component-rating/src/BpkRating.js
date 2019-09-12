@@ -42,7 +42,7 @@ export type Props = {
 };
 const BpkRating = (props: Props) => {
   const { ariaLabel, title, subtitle, value, className, size, ...rest } = props;
-  const classNames = getClassName('bpk-rating', className);
+  const classNames = [getClassName('bpk-rating'), className];
   const scoreStyles = [
     getClassName('bpk-rating__component', `bpk-rating--${size}-rating`),
   ];
@@ -63,8 +63,17 @@ const BpkRating = (props: Props) => {
     adjustedValue = value.toFixed(1);
   }
 
+  const vertical = false;
+  const textStyles = [getClassName('bpk-rating__text')];
+  if (vertical) {
+    classNames.push(getClassName('bpk-rating--vertical'));
+    console.log('Vert');
+  } else {
+    textStyles.push(getClassName('bpk-rating__text--horizontal'));
+  }
+
   return (
-    <div className={classNames} aria-label={ariaLabel} {...rest}>
+    <div className={classNames.join(' ')} aria-label={ariaLabel} {...rest}>
       <BpkText
         textStyle="base"
         tagName="span"
@@ -73,8 +82,9 @@ const BpkRating = (props: Props) => {
       >
         <strong>{adjustedValue}</strong>
       </BpkText>
-      <div className={getClassName('bpk-rating__text')}>
+      <div className={textStyles.join(' ')}>
         <BpkText
+          className={getClassName('bpk-dummy')}
           textStyle={RATING_SIZES[size]}
           tagName="span"
           aria-hidden="true"
@@ -82,6 +92,7 @@ const BpkRating = (props: Props) => {
           <strong>{title}</strong>
         </BpkText>
         <BpkText
+          className={getClassName('bpk-dummy')}
           textStyle={size === RATING_SIZES.lg ? 'base' : 'sm'}
           tagName="span"
           aria-hidden="true"

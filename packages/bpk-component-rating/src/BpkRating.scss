@@ -21,6 +21,11 @@
 .bpk-rating {
   display: flex;
 
+  &--vertical {
+    flex-direction: column;
+    width: 5rem;
+  }
+
   &__component {
     justify-content: center;
     align-items: center;
@@ -50,21 +55,38 @@
 
   &__text {
     display: flex;
-    padding-left: $bpk-spacing-sm;
     flex-direction: column;
     justify-content: center;
-    text-align: left;
+    align-self: center;
+
+    &--horizontal {
+      text-align: left;
+      padding-left: $bpk-spacing-sm;
+    }
+
+    &--vertical {
+      align-self: center;
+      text-align: center;
+    }
   }
 
   &--high-rating {
+    align-self: center;
     @include bpk-themeable-property(background-color, --bpk-rating-high-color, $bpk-color-green-600);
   }
 
   &--medium-rating {
+    align-self: center;
     @include bpk-themeable-property(background-color, --bpk-rating-medium-color, $bpk-color-yellow-600);
   }
 
   &--low-rating {
+    align-self: center;
     @include bpk-themeable-property(background-color, --bpk-rating-low-color, $bpk-color-red-600);
   }
+}
+
+.bpk-dummy {
+  align-self: center;
+  text-align: center;
 }
