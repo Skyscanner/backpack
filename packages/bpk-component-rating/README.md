@@ -32,7 +32,7 @@ export default () => (
 | value     | number                | true     | -                 |
 | className | string                | false    | null              |
 | size      | oneOf(RATING_SIZES)   | false    | RATING_SIZES.base |
-| subtitle  | string                | false    | -                 |
+| subtitle  | string                | false    | null              |
 | vertical  | boolean               | false    | false             |
 
 ## Theme props

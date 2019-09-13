@@ -80,10 +80,6 @@ const BpkRating = (props: Props) => {
     textStyles.push(getClassName('bpk-rating__text--horizontal'));
   }
 
-  // if(!subtitle) {
-
-  // }
-
   if (adjustedValue >= MAX_VALUE || adjustedValue <= MIN_VALUE) {
     adjustedValue = clamp(adjustedValue, MIN_VALUE, MAX_VALUE);
   } else {

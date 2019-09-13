@@ -27,4 +27,4 @@
 
 ADDED:
   - bpk-component-rating:
-    - Made `subtitle` prop optional to support title only variant of rating component.
+    - Made `subtitle` prop optional to support title-only variant of rating component.
