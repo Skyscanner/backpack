@@ -19,8 +19,13 @@
 
 import React from 'react';
 import { storiesOf } from '@storybook/react';
+import { cssModules } from 'bpk-react-utils';
+
+import STYLES from './stories.scss';
 
 import BpkRating, { RATING_SIZES } from './index';
+
+const getClassName = cssModules(STYLES);
 
 storiesOf('bpk-component-rating', module)
   .add('Default', () => (
@@ -44,6 +49,36 @@ storiesOf('bpk-component-rating', module)
         title="Bad"
         subtitle="Avoid here"
         value={2.3}
+      />
+    </div>
+  ))
+  .add('Vertical', () => (
+    <div>
+      <BpkRating
+        className={getClassName('bpk-rating-story')}
+        ariaLabel="9 Excellent would recommend"
+        title="Excellent"
+        subtitle="This place was amazing"
+        value={9}
+        vertical
+      />
+      <br />
+      <BpkRating
+        className={getClassName('bpk-rating-story')}
+        ariaLabel="6.7 Average might recommend"
+        title="Average"
+        subtitle="Might recommend"
+        value={6.7}
+        vertical
+      />
+      <br />
+      <BpkRating
+        className={getClassName('bpk-rating-story')}
+        ariaLabel="2.3 Bad avoid here"
+        title="Bad"
+        subtitle="Avoid here"
+        value={2.3}
+        vertical
       />
     </div>
   ))
@@ -74,6 +109,39 @@ storiesOf('bpk-component-rating', module)
       />
     </div>
   ))
+  .add('Large vertical ratings', () => (
+    <div>
+      <BpkRating
+        className={getClassName('bpk-rating-story')}
+        ariaLabel="9 Excellent would recommend"
+        title="Excellent"
+        subtitle="This place was amazing"
+        value={9}
+        size={RATING_SIZES.lg}
+        vertical
+      />
+      <br />
+      <BpkRating
+        className={getClassName('bpk-rating-story')}
+        ariaLabel="6.7 Average might recommend"
+        title="Average"
+        subtitle="Might recommend"
+        value={6.7}
+        size={RATING_SIZES.lg}
+        vertical
+      />
+      <br />
+      <BpkRating
+        className={getClassName('bpk-rating-story')}
+        ariaLabel="2.3 Bad avoid here"
+        title="Bad"
+        subtitle="Avoid here"
+        value={2.3}
+        size={RATING_SIZES.lg}
+        vertical
+      />
+    </div>
+  ))
   .add('Small size ratings', () => (
     <div>
       <BpkRating
@@ -98,6 +166,39 @@ storiesOf('bpk-component-rating', module)
         subtitle="Avoid here"
         value={2.3}
         size={RATING_SIZES.sm}
+      />
+    </div>
+  ))
+  .add('Small vertical ratings', () => (
+    <div>
+      <BpkRating
+        className={getClassName('bpk-rating-story')}
+        ariaLabel="9 Excellent would recommend"
+        title="Excellent"
+        subtitle="This place was amazing"
+        value={9}
+        size={RATING_SIZES.sm}
+        vertical
+      />
+      <br />
+      <BpkRating
+        className={getClassName('bpk-rating-story')}
+        ariaLabel="6.7 Average might recommend"
+        title="Average"
+        subtitle="Might recommend"
+        value={6.7}
+        size={RATING_SIZES.sm}
+        vertical
+      />
+      <br />
+      <BpkRating
+        className={getClassName('bpk-rating-story')}
+        ariaLabel="2.3 Bad avoid here"
+        title="Bad"
+        subtitle="Avoid here"
+        value={2.3}
+        size={RATING_SIZES.sm}
+        vertical
       />
     </div>
   ));

@@ -21,6 +21,10 @@
 .bpk-rating {
   display: flex;
 
+  &--vertical {
+    flex-direction: column;
+  }
+
   &__component {
     justify-content: center;
     align-items: center;
@@ -48,23 +52,39 @@
     font-size: $bpk-font-size-sm;
   }
 
-  &__text {
+  &__text--container {
     display: flex;
-    padding-left: $bpk-spacing-sm;
     flex-direction: column;
     justify-content: center;
-    text-align: left;
+  }
+
+  &__text {
+    &--horizontal {
+      padding-left: $bpk-spacing-sm;
+      text-align: left;
+    }
+
+    &--vertical {
+      align-self: center;
+      text-align: center;
+    }
   }
 
   &--high-rating {
+    align-self: center;
+
     @include bpk-themeable-property(background-color, --bpk-rating-high-color, $bpk-color-green-600);
   }
 
   &--medium-rating {
+    align-self: center;
+
     @include bpk-themeable-property(background-color, --bpk-rating-medium-color, $bpk-color-yellow-600);
   }
 
   &--low-rating {
+    align-self: center;
+
     @include bpk-themeable-property(background-color, --bpk-rating-low-color, $bpk-color-red-600);
   }
 }

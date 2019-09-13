@@ -39,13 +39,24 @@ export type Props = {
   size: string,
   value: number,
   className: ?string,
+  vertical: boolean,
 };
 const BpkRating = (props: Props) => {
-  const { ariaLabel, title, subtitle, value, className, size, ...rest } = props;
-  const classNames = getClassName('bpk-rating', className);
+  const {
+    ariaLabel,
+    title,
+    subtitle,
+    value,
+    className,
+    size,
+    vertical,
+    ...rest
+  } = props;
+  const classNames = [getClassName('bpk-rating', className)];
   const scoreStyles = [
     getClassName('bpk-rating__component', `bpk-rating--${size}-rating`),
   ];
+  const textStyles = [getClassName('bpk-rating__text')];
 
   let adjustedValue = value;
 
@@ -57,6 +68,13 @@ const BpkRating = (props: Props) => {
     scoreStyles.push(getClassName('bpk-rating--low-rating'));
   }
 
+  if (vertical) {
+    classNames.push(getClassName('bpk-rating--vertical'));
+    textStyles.push(getClassName('bpk-rating__text--vertical'));
+  } else {
+    textStyles.push(getClassName('bpk-rating__text--horizontal'));
+  }
+
   if (adjustedValue >= MAX_VALUE || adjustedValue <= MIN_VALUE) {
     adjustedValue = clamp(adjustedValue, MIN_VALUE, MAX_VALUE);
   } else {
@@ -64,7 +82,7 @@ const BpkRating = (props: Props) => {
   }
 
   return (
-    <div className={classNames} aria-label={ariaLabel} {...rest}>
+    <div className={classNames.join(' ')} aria-label={ariaLabel} {...rest}>
       <BpkText
         textStyle="base"
         tagName="span"
@@ -73,8 +91,9 @@ const BpkRating = (props: Props) => {
       >
         <strong>{adjustedValue}</strong>
       </BpkText>
-      <div className={getClassName('bpk-rating__text')}>
+      <div className={getClassName('bpk-rating__text--container')}>
         <BpkText
+          className={textStyles.join(' ')}
           textStyle={RATING_SIZES[size]}
           tagName="span"
           aria-hidden="true"
@@ -82,6 +101,7 @@ const BpkRating = (props: Props) => {
           <strong>{title}</strong>
         </BpkText>
         <BpkText
+          className={textStyles.join(' ')}
           textStyle={size === RATING_SIZES.lg ? 'base' : 'sm'}
           tagName="span"
           aria-hidden="true"
@@ -100,11 +120,13 @@ BpkRating.propTypes = {
   value: PropTypes.number.isRequired,
   className: PropTypes.string,
   size: PropTypes.oneOf(Object.keys(RATING_SIZES)),
+  vertical: PropTypes.bool,
 };
 
 BpkRating.defaultProps = {
   className: null,
   size: RATING_SIZES.base,
+  vertical: false,
 };
 
 export default BpkRating;

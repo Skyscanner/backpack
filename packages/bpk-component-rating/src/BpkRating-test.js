@@ -37,6 +37,21 @@ describe('BpkRating', () => {
     expect(tree).toMatchSnapshot();
   });
 
+  it('should render vertical rating correctly', () => {
+    const tree = renderer
+      .create(
+        <BpkRating
+          ariaLabel="6.7 Average might recommend"
+          title="Average"
+          subtitle="Might recommend"
+          value={6.7}
+          vertical
+        />,
+      )
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
   it('should support custom class names', () => {
     const tree = renderer
       .create(
