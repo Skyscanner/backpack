@@ -34,6 +34,7 @@ export default () => (
 | value     | number                | true     | -                 |
 | className | string                | false    | null              |
 | size      | oneOf(RATING_SIZES)   | false    | RATING_SIZES.base |
+| vertical  | boolean               | false    | false             |
 
 ## Theme props
 

@@ -24,3 +24,7 @@
 #   FIXED:
 #     - bpk-component-horcrux:
 #       - Fixed issue where `BpkHorcrux` would occasionally possess the living.
+
+ADDED:
+  - bpk-component-rating:
+    - Added new `vertical` prop to allow support for vertical orientation.
