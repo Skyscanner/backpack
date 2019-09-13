@@ -56,6 +56,7 @@ const BpkRating = (props: Props) => {
   const scoreStyles = [
     getClassName('bpk-rating__component', `bpk-rating--${size}-rating`),
   ];
+  const textWrapperStyles = [getClassName('bpk-rating__text-wrapper')];
   const textStyles = [getClassName('bpk-rating__text')];
 
   let adjustedValue = value;
@@ -70,8 +71,12 @@ const BpkRating = (props: Props) => {
 
   if (vertical) {
     classNames.push(getClassName('bpk-rating--vertical'));
+    textWrapperStyles.push(getClassName('bpk-rating__text-wrapper--vertical'));
     textStyles.push(getClassName('bpk-rating__text--vertical'));
   } else {
+    textWrapperStyles.push(
+      getClassName('bpk-rating__text-wrapper--horizontal'),
+    );
     textStyles.push(getClassName('bpk-rating__text--horizontal'));
   }
 
@@ -91,7 +96,7 @@ const BpkRating = (props: Props) => {
       >
         <strong>{adjustedValue}</strong>
       </BpkText>
-      <div className={getClassName('bpk-rating__text-wrapper')}>
+      <div className={textWrapperStyles.join(' ')}>
         <BpkText
           className={textStyles.join(' ')}
           textStyle={RATING_SIZES[size]}

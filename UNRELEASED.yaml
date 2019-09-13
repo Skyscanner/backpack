@@ -24,3 +24,7 @@
 #   FIXED:
 #     - bpk-component-horcrux:
 #       - Fixed issue where `BpkHorcrux` would occasionally possess the living.
+
+FIXED:
+  - bpk-component-rating:
+    - Fixed spacing issue with vertical variant.
