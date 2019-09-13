@@ -56,11 +56,18 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+
+    &--horizontal {
+      padding-left: $bpk-spacing-sm;
+    }
+
+    &--vertical {
+      padding-top: $bpk-spacing-xs;
+    }
   }
 
   &__text {
     &--horizontal {
-      padding-left: $bpk-spacing-sm;
       text-align: left;
     }
 
