@@ -14,7 +14,7 @@ exports[`BpkRating should correctly handling values higher than 10 1`] = `
     </strong>
   </span>
   <div
-    className="bpk-rating__text-container"
+    className="bpk-rating__text-wrapper"
   >
     <span
       aria-hidden="true"
@@ -48,7 +48,7 @@ exports[`BpkRating should correctly handling values lower than 0 1`] = `
     </strong>
   </span>
   <div
-    className="bpk-rating__text-container"
+    className="bpk-rating__text-wrapper"
   >
     <span
       aria-hidden="true"
@@ -82,7 +82,7 @@ exports[`BpkRating should render a high score rating component 1`] = `
     </strong>
   </span>
   <div
-    className="bpk-rating__text-container"
+    className="bpk-rating__text-wrapper"
   >
     <span
       aria-hidden="true"
@@ -116,7 +116,7 @@ exports[`BpkRating should render a large rating component 1`] = `
     </strong>
   </span>
   <div
-    className="bpk-rating__text-container"
+    className="bpk-rating__text-wrapper"
   >
     <span
       aria-hidden="true"
@@ -150,7 +150,7 @@ exports[`BpkRating should render a low score rating component 1`] = `
     </strong>
   </span>
   <div
-    className="bpk-rating__text-container"
+    className="bpk-rating__text-wrapper"
   >
     <span
       aria-hidden="true"
@@ -184,7 +184,7 @@ exports[`BpkRating should render a medium score rating component 1`] = `
     </strong>
   </span>
   <div
-    className="bpk-rating__text-container"
+    className="bpk-rating__text-wrapper"
   >
     <span
       aria-hidden="true"
@@ -218,7 +218,7 @@ exports[`BpkRating should render a small rating component 1`] = `
     </strong>
   </span>
   <div
-    className="bpk-rating__text-container"
+    className="bpk-rating__text-wrapper"
   >
     <span
       aria-hidden="true"
@@ -252,7 +252,7 @@ exports[`BpkRating should render correctly 1`] = `
     </strong>
   </span>
   <div
-    className="bpk-rating__text-container"
+    className="bpk-rating__text-wrapper"
   >
     <span
       aria-hidden="true"
@@ -286,7 +286,7 @@ exports[`BpkRating should render vertical rating correctly 1`] = `
     </strong>
   </span>
   <div
-    className="bpk-rating__text-container"
+    className="bpk-rating__text-wrapper"
   >
     <span
       aria-hidden="true"
@@ -320,7 +320,7 @@ exports[`BpkRating should support custom class names 1`] = `
     </strong>
   </span>
   <div
-    className="bpk-rating__text-container"
+    className="bpk-rating__text-wrapper"
   >
     <span
       aria-hidden="true"

@@ -91,7 +91,7 @@ const BpkRating = (props: Props) => {
       >
         <strong>{adjustedValue}</strong>
       </BpkText>
-      <div className={getClassName('bpk-rating__text-container')}>
+      <div className={getClassName('bpk-rating__text-wrapper')}>
         <BpkText
           className={textStyles.join(' ')}
           textStyle={RATING_SIZES[size]}
