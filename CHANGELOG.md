@@ -2,6 +2,14 @@
 
 [Unreleased changes](./UNRELEASED.yaml).
 
+# 2019-09-13 - BpkRating title-only support
+
+**Added:**
+
+ - bpk-component-rating: 1.2.1 => 1.3.0
+   - Made `subtitle` prop optional to support title-only variant of rating component.
+
+
 # 2019-09-13 - Fixed BpkRating vertical spacing
 
 **Fixed:**
