@@ -2,6 +2,14 @@
 
 [Unreleased changes](./UNRELEASED.yaml).
 
+# 2019-09-13 - BpkRating vertical layout support
+
+**Added:**
+
+ - bpk-component-rating: 1.1.3 => 1.2.0
+   - Added new `vertical` prop to allow support for vertical orientation.
+
+
 # 2019-09-11 - Fixed scroll container bug in RTL
 
 **Added:**
