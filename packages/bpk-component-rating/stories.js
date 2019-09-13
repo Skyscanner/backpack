@@ -201,4 +201,53 @@ storiesOf('bpk-component-rating', module)
         vertical
       />
     </div>
+  ))
+  .add('Title only ratings', () => (
+    <div>
+      <BpkRating
+        ariaLabel="9 Excellent would recommend"
+        title="Excellent"
+        value={9}
+        size={RATING_SIZES.sm}
+      />
+      <br />
+      <BpkRating
+        ariaLabel="6.7 Average might recommend"
+        title="Average"
+        value={6.7}
+      />
+      <br />
+      <BpkRating
+        ariaLabel="2.3 Bad avoid here"
+        title="Bad"
+        value={2.3}
+        size={RATING_SIZES.lg}
+      />
+      <br />
+      <BpkRating
+        className={getClassName('bpk-rating-story')}
+        ariaLabel="9 Excellent would recommend"
+        title="Excellent"
+        value={9}
+        size={RATING_SIZES.sm}
+        vertical
+      />
+      <br />
+      <BpkRating
+        className={getClassName('bpk-rating-story')}
+        ariaLabel="6.7 Average might recommend"
+        title="Average"
+        value={6.7}
+        vertical
+      />
+      <br />
+      <BpkRating
+        className={getClassName('bpk-rating-story')}
+        ariaLabel="2.3 Bad avoid here"
+        title="Bad"
+        value={2.3}
+        size={RATING_SIZES.lg}
+        vertical
+      />
+    </div>
   ));

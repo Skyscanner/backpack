@@ -35,7 +35,7 @@ const MIN_VALUE = 0;
 export type Props = {
   ariaLabel: string,
   title: string,
-  subtitle: string,
+  subtitle: ?string,
   size: string,
   value: number,
   className: ?string,
@@ -105,14 +105,16 @@ const BpkRating = (props: Props) => {
         >
           <strong>{title}</strong>
         </BpkText>
-        <BpkText
-          className={textStyles.join(' ')}
-          textStyle={size === RATING_SIZES.lg ? 'base' : 'sm'}
-          tagName="span"
-          aria-hidden="true"
-        >
-          {subtitle}
-        </BpkText>
+        {subtitle && (
+          <BpkText
+            className={textStyles.join(' ')}
+            textStyle={size === RATING_SIZES.lg ? 'base' : 'sm'}
+            tagName="span"
+            aria-hidden="true"
+          >
+            {subtitle}
+          </BpkText>
+        )}
       </div>
     </div>
   );
@@ -121,16 +123,17 @@ const BpkRating = (props: Props) => {
 BpkRating.propTypes = {
   ariaLabel: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
-  subtitle: PropTypes.string.isRequired,
   value: PropTypes.number.isRequired,
   className: PropTypes.string,
   size: PropTypes.oneOf(Object.keys(RATING_SIZES)),
+  subtitle: PropTypes.string,
   vertical: PropTypes.bool,
 };
 
 BpkRating.defaultProps = {
   className: null,
   size: RATING_SIZES.base,
+  subtitle: null,
   vertical: false,
 };
 

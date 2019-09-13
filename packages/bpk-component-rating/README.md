@@ -18,7 +18,6 @@ export default () => (
   <BpkRating
     ariaLabel="9 Excellent would recommend"
     title="Excellent"
-    subtitle="Would recommend"
     value={9}
   />
 );
@@ -30,10 +29,10 @@ export default () => (
 | --------- | --------------------- | -------- | ----------------- |
 | ariaLabel | string                | true     | -                 |
 | title     | string                | true     | -                 |
-| subtitle  | string                | true     | -                 |
 | value     | number                | true     | -                 |
 | className | string                | false    | null              |
 | size      | oneOf(RATING_SIZES)   | false    | RATING_SIZES.base |
+| subtitle  | string                | false    | null              |
 | vertical  | boolean               | false    | false             |
 
 ## Theme props
