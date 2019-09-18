@@ -44,8 +44,8 @@
     "danger": "danger ci",
     "prettier": "prettier --config .prettierrc --write \"**/*.js\"",
     "create-component": "node scripts/npm/create-component.js",
-    "spellcheck": "mdspell -r --en-gb --ignore-acronyms --ignore-numbers --no-suggestions '*.md' '**/*.md' '!**/node_modules/**/*.md' '!backpack-react-native/**/*.md' '!backpack-ios/**/*.md'  '!backpack-android/**/*.md'",
-    "spellcheck:interactive": "mdspell --en-gb --ignore-acronyms --no-suggestions --ignore-numbers '*.md' '**/*.md' '!**/node_modules/**/*.md' '!backpack-react-native/**/*.md' '!backpack-ios/**/*.md'  '!backpack-android/**/*.md'"
+    "spellcheck": "mdspell -r --en-gb --ignore-acronyms --ignore-numbers --no-suggestions 'UNRELEASED.yaml' '*.md' '**/*.md' '!**/node_modules/**/*.md'",
+    "spellcheck:interactive": "mdspell --en-gb --ignore-acronyms --no-suggestions --ignore-numbers 'UNRELEASED.yaml' '*.md' '**/*.md' '!**/node_modules/**/*.md'"
   },
   "husky": {
     "hooks": {

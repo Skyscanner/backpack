@@ -8,7 +8,7 @@
 
  - bpk-component-button: 2.5.12 => 2.5.13
  - bpk-mixins: 18.1.3 => 18.1.4
-   - Moved `icon-only` border radius scss to mixins to always apply when using mixins directly.
+   - Moved `icon-only` border radius `scss` to mixins to always apply when using mixins directly.
 
  - bpk-component-popover: 2.2.70 => 2.2.71
  - bpk-component-tooltip: 3.1.113 => 3.1.114
