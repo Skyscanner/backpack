@@ -305,6 +305,7 @@
 
 @mixin bpk-button--icon-only {
   padding: $bpk-button-padding-y $bpk-button-padding-x-icon-only;
+  border-radius: $bpk-button-border-radius;
 }
 
 /// Large icon-only button. Modifies the bpk-button & bpk-button--large mixins.
@@ -321,6 +322,7 @@
 
 @mixin bpk-button--large-icon-only {
   padding: $bpk-button-large-padding-y $bpk-button-large-padding-x-icon-only;
+  border-radius: $bpk-button-border-radius-lg;
 }
 
 /// Featured button. Modifies the bpk-button

@@ -24,3 +24,8 @@
 #   FIXED:
 #     - bpk-component-horcrux:
 #       - Fixed issue where `BpkHorcrux` would occasionally possess the living.
+
+FIXED:
+  - bpk-component-button:
+  - bpk-component-mixins:
+    - Moved `icon-only` border radius scss to mixins to always apply when using mixins directly.
