@@ -1,16 +1,5 @@
 # UNRELEASED:
-FIXED:
-  - bpk-component-popover:
-    - Fixed issue that sometimes causes blurry rendering in Safari and Chrome.
 
-  - bpk-component-tooltip:
-    - Fixed issue that sometimes causes blurry rendering in Safari and Chrome.
-
-  - bpk-component-button:
-    - Moved `icon-only` border radius scss to mixins to always apply when using mixins directly.
-
-  - bpk-component-mixins:
-    - Moved `icon-only` border radius scss to mixins to always apply when using mixins directly.
 # How to write a good changelog entry:
 #
 #   1. Add 'BREAKING', 'ADDED' OR 'FIXED' depending on if the change will be major, minor or patch according to semver.org.

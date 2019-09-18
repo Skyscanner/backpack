@@ -2,6 +2,20 @@
 
 [Unreleased changes](./UNRELEASED.yaml).
 
+# 2019-09-18 - Fix blurred popovers and include button border radii in mixins
+
+**Fixed:**
+
+ - bpk-component-button: 2.5.12 => 2.5.13
+   - Moved `icon-only` border radius scss to mixins to always apply when using mixins directly.
+
+ - bpk-component-popover: 2.2.70 => 2.2.71
+   - Fixed issue that sometimes causes blurry rendering in Safari and Chrome.
+
+ - bpk-component-tooltip: 3.1.113 => 3.1.114
+   - Fixed issue that sometimes causes blurry rendering in Safari and Chrome.
+
+
 # 2019-09-13 - BpkRating title-only support
 
 **Added:**
