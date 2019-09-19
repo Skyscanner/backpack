@@ -2,7 +2,7 @@
 
 # How to write a good changelog entry:
 #
-#   1. Add 'BREAKING', 'ADDED' OR 'FIXED' depending on if the change will be major, minor or patch according to [semver.org](semver.org).
+#   1. Add 'BREAKING', 'ADDED' OR 'FIXED' depending on if the change will be major, minor or patch according to semver.org.
 #   2. Add the package name.
 #   3. Detail the changes. Write with the consumer in mind, what do they need to know. If it's patch, tell them what's changed. If it's minor, tell them what you've added and what it does for them. If it's breaking, tell them what they need to change. Link to examples on the [Backpack docs site](backpack.github.io) where possible.
 #
@@ -10,7 +10,7 @@
 #
 # Example of a good changelog entry: >
 #
-#   See `CHANGELOG.md` for real-world examples of good changelog descriptions.
+#   See CHANGELOG.md for real-world examples of good changelog descriptions.
 #
 #   BREAKING:
 #     - bpk-svgs:
@@ -24,7 +24,3 @@
 #   FIXED:
 #     - bpk-component-horcrux:
 #       - Fixed issue where `BpkHorcrux` would occasionally possess the living.
-
-FIXED:
-  - bpk-tokens:
-    - `$bpk-border-radius-xs` value now `4px` to be consistent across platforms.

@@ -2,6 +2,14 @@
 
 [Unreleased changes](./UNRELEASED.yaml).
 
+# 2019-09-19 - Border Radius XS value uses 4px
+
+**Fixed:**
+
+ - bpk-tokens: 27.10.0 => 27.10.1
+   - `$bpk-border-radius-xs` value now `4px` to be consistent across platforms.
+
+
 # 2019-09-18 - Fix blurred popovers and include button border radii in mixins
 
 **Fixed:**
