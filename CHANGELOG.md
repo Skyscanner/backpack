@@ -2,7 +2,7 @@
 
 [Unreleased changes](./UNRELEASED.yaml).
 
-# 2019-09-19 - Border Radius XS value uses 4px
+# 2019-09-19 - Border Radius XS value uses `4px`
 
 **Fixed:**
 
