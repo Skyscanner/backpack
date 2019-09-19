@@ -11,8 +11,8 @@ exports[`BpkBarchartBar should render as an outlier 1`] = `
   <rect
     className="bpk-barchart-bar__rect bpk-barchart-bar__rect--outlier"
     height={100}
-    rx={3}
-    ry={3}
+    rx={4}
+    ry={4}
     width={20}
     x={0}
     y={0}
@@ -40,8 +40,8 @@ exports[`BpkBarchartBar should render as aria-pressed if onClick present and sel
   <rect
     className="bpk-barchart-bar__rect"
     height={100}
-    rx={3}
-    ry={3}
+    rx={4}
+    ry={4}
     width={20}
     x={0}
     y={0}
@@ -73,8 +73,8 @@ exports[`BpkBarchartBar should render as selected 1`] = `
   <rect
     className="bpk-barchart-bar__rect"
     height={100}
-    rx={3}
-    ry={3}
+    rx={4}
+    ry={4}
     width={20}
     x={0}
     y={0}
@@ -102,8 +102,8 @@ exports[`BpkBarchartBar should render correctly 1`] = `
   <rect
     className="bpk-barchart-bar__rect"
     height={100}
-    rx={3}
-    ry={3}
+    rx={4}
+    ry={4}
     width={20}
     x={0}
     y={0}
@@ -131,8 +131,8 @@ exports[`BpkBarchartBar should render with "padding" prop 1`] = `
   <rect
     className="bpk-barchart-bar__rect"
     height={100}
-    rx={3}
-    ry={3}
+    rx={4}
+    ry={4}
     width={16}
     x={2}
     y={0}
@@ -160,8 +160,8 @@ exports[`BpkBarchartBar should render with an onClick handler 1`] = `
   <rect
     className="bpk-barchart-bar__rect"
     height={100}
-    rx={3}
-    ry={3}
+    rx={4}
+    ry={4}
     width={20}
     x={0}
     y={0}
@@ -193,8 +193,8 @@ exports[`BpkBarchartBar should render with an onHover handler 1`] = `
   <rect
     className="bpk-barchart-bar__rect"
     height={100}
-    rx={3}
-    ry={3}
+    rx={4}
+    ry={4}
     width={20}
     x={0}
     y={0}

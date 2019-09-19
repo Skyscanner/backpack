@@ -49,7 +49,7 @@
       "value": ".375rem"
     },
     "BORDER_RADIUS_XS": {
-      "value": ".1875rem"
+      "value": ".25rem"
     },
     "BORDER_SIZE_LG": {
       "value": "2px"
@@ -462,7 +462,7 @@
     },
     "BORDER_RADIUS_XS": {
       "type": "size",
-      "value": ".1875rem",
+      "value": ".25rem",
       "category": "radii",
       "originalValue": "{!BORDER_RADIUS_XS}",
       "name": "BORDER_RADIUS_XS"
@@ -2249,7 +2249,7 @@
     },
     "INPUT_BORDER_RADIUS": {
       "category": "forms",
-      "value": ".1875rem",
+      "value": ".25rem",
       "type": "radius",
       "originalValue": "{!BORDER_RADIUS_XS}",
       "name": "INPUT_BORDER_RADIUS"
@@ -2780,7 +2780,7 @@
     },
     "SELECT_BORDER_RADIUS": {
       "category": "forms",
-      "value": ".1875rem",
+      "value": ".25rem",
       "type": "radius",
       "originalValue": "{!BORDER_RADIUS_XS}",
       "name": "SELECT_BORDER_RADIUS"

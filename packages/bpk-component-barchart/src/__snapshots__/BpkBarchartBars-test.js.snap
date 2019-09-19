@@ -4,7 +4,7 @@ exports[`BpkBarchartBars should render correctly 1`] = `
 <g>
   <BpkBarchartBar
     className={null}
-    height={143}
+    height={144}
     key="bar0"
     label="Jan - 305"
     onClick={null}
@@ -15,11 +15,11 @@ exports[`BpkBarchartBars should render correctly 1`] = `
     selected={false}
     width={200}
     x={5.511811023622045}
-    y={17}
+    y={16}
   />
   <BpkBarchartBar
     className={null}
-    height={143}
+    height={144}
     key="bar1"
     label="Feb - 348"
     onClick={null}
@@ -30,11 +30,11 @@ exports[`BpkBarchartBars should render correctly 1`] = `
     selected={false}
     width={200}
     x={21.259842519685037}
-    y={17}
+    y={16}
   />
   <BpkBarchartBar
     className={null}
-    height={143}
+    height={144}
     key="bar2"
     label="Mar - 418"
     onClick={null}
@@ -45,11 +45,11 @@ exports[`BpkBarchartBars should render correctly 1`] = `
     selected={false}
     width={200}
     x={37.00787401574803}
-    y={17}
+    y={16}
   />
   <BpkBarchartBar
     className={null}
-    height={143}
+    height={144}
     key="bar3"
     label="Apr - 448"
     onClick={null}
@@ -60,11 +60,11 @@ exports[`BpkBarchartBars should render correctly 1`] = `
     selected={false}
     width={200}
     x={52.75590551181102}
-    y={17}
+    y={16}
   />
   <BpkBarchartBar
     className={null}
-    height={143}
+    height={144}
     key="bar4"
     label="May - 344"
     onClick={null}
@@ -75,11 +75,11 @@ exports[`BpkBarchartBars should render correctly 1`] = `
     selected={false}
     width={200}
     x={68.50393700787401}
-    y={17}
+    y={16}
   />
   <BpkBarchartBar
     className={null}
-    height={143}
+    height={144}
     key="bar5"
     label="Jun - 322"
     onClick={null}
@@ -90,11 +90,11 @@ exports[`BpkBarchartBars should render correctly 1`] = `
     selected={false}
     width={200}
     x={84.25196850393701}
-    y={17}
+    y={16}
   />
   <BpkBarchartBar
     className={null}
-    height={143}
+    height={144}
     key="bar6"
     label="Jul - 340"
     onClick={null}
@@ -105,11 +105,11 @@ exports[`BpkBarchartBars should render correctly 1`] = `
     selected={false}
     width={200}
     x={100}
-    y={17}
+    y={16}
   />
   <BpkBarchartBar
     className={null}
-    height={143}
+    height={144}
     key="bar7"
     label="Aug - 327"
     onClick={null}
@@ -120,11 +120,11 @@ exports[`BpkBarchartBars should render correctly 1`] = `
     selected={false}
     width={200}
     x={115.74803149606299}
-    y={17}
+    y={16}
   />
   <BpkBarchartBar
     className={null}
-    height={143}
+    height={144}
     key="bar8"
     label="Sep - 444"
     onClick={null}
@@ -135,11 +135,11 @@ exports[`BpkBarchartBars should render correctly 1`] = `
     selected={false}
     width={200}
     x={131.49606299212599}
-    y={17}
+    y={16}
   />
   <BpkBarchartBar
     className={null}
-    height={143}
+    height={144}
     key="bar9"
     label="Oct - 422"
     onClick={null}
@@ -150,11 +150,11 @@ exports[`BpkBarchartBars should render correctly 1`] = `
     selected={false}
     width={200}
     x={147.24409448818898}
-    y={17}
+    y={16}
   />
   <BpkBarchartBar
     className={null}
-    height={143}
+    height={144}
     key="bar10"
     label="Nov - 344"
     onClick={null}
@@ -165,11 +165,11 @@ exports[`BpkBarchartBars should render correctly 1`] = `
     selected={false}
     width={200}
     x={162.99212598425197}
-    y={17}
+    y={16}
   />
   <BpkBarchartBar
     className={null}
-    height={143}
+    height={144}
     key="bar11"
     label="Dec - 301"
     onClick={null}
@@ -180,7 +180,7 @@ exports[`BpkBarchartBars should render correctly 1`] = `
     selected={false}
     width={200}
     x={178.74015748031496}
-    y={17}
+    y={16}
   />
 </g>
 `;
@@ -189,7 +189,7 @@ exports[`BpkBarchartBars should render correctly with "getBarSelection" prop 1`]
 <g>
   <BpkBarchartBar
     className={null}
-    height={143}
+    height={144}
     key="bar0"
     label="Jan - 305"
     onClick={null}
@@ -200,11 +200,11 @@ exports[`BpkBarchartBars should render correctly with "getBarSelection" prop 1`]
     selected={false}
     width={200}
     x={5.511811023622045}
-    y={17}
+    y={16}
   />
   <BpkBarchartBar
     className={null}
-    height={143}
+    height={144}
     key="bar1"
     label="Feb - 348"
     onClick={null}
@@ -215,11 +215,11 @@ exports[`BpkBarchartBars should render correctly with "getBarSelection" prop 1`]
     selected={false}
     width={200}
     x={21.259842519685037}
-    y={17}
+    y={16}
   />
   <BpkBarchartBar
     className={null}
-    height={143}
+    height={144}
     key="bar2"
     label="Mar - 418"
     onClick={null}
@@ -230,11 +230,11 @@ exports[`BpkBarchartBars should render correctly with "getBarSelection" prop 1`]
     selected={true}
     width={200}
     x={37.00787401574803}
-    y={17}
+    y={16}
   />
   <BpkBarchartBar
     className={null}
-    height={143}
+    height={144}
     key="bar3"
     label="Apr - 448"
     onClick={null}
@@ -245,11 +245,11 @@ exports[`BpkBarchartBars should render correctly with "getBarSelection" prop 1`]
     selected={false}
     width={200}
     x={52.75590551181102}
-    y={17}
+    y={16}
   />
   <BpkBarchartBar
     className={null}
-    height={143}
+    height={144}
     key="bar4"
     label="May - 344"
     onClick={null}
@@ -260,11 +260,11 @@ exports[`BpkBarchartBars should render correctly with "getBarSelection" prop 1`]
     selected={false}
     width={200}
     x={68.50393700787401}
-    y={17}
+    y={16}
   />
   <BpkBarchartBar
     className={null}
-    height={143}
+    height={144}
     key="bar5"
     label="Jun - 322"
     onClick={null}
@@ -275,11 +275,11 @@ exports[`BpkBarchartBars should render correctly with "getBarSelection" prop 1`]
     selected={false}
     width={200}
     x={84.25196850393701}
-    y={17}
+    y={16}
   />
   <BpkBarchartBar
     className={null}
-    height={143}
+    height={144}
     key="bar6"
     label="Jul - 340"
     onClick={null}
@@ -290,11 +290,11 @@ exports[`BpkBarchartBars should render correctly with "getBarSelection" prop 1`]
     selected={false}
     width={200}
     x={100}
-    y={17}
+    y={16}
   />
   <BpkBarchartBar
     className={null}
-    height={143}
+    height={144}
     key="bar7"
     label="Aug - 327"
     onClick={null}
@@ -305,11 +305,11 @@ exports[`BpkBarchartBars should render correctly with "getBarSelection" prop 1`]
     selected={false}
     width={200}
     x={115.74803149606299}
-    y={17}
+    y={16}
   />
   <BpkBarchartBar
     className={null}
-    height={143}
+    height={144}
     key="bar8"
     label="Sep - 444"
     onClick={null}
@@ -320,11 +320,11 @@ exports[`BpkBarchartBars should render correctly with "getBarSelection" prop 1`]
     selected={false}
     width={200}
     x={131.49606299212599}
-    y={17}
+    y={16}
   />
   <BpkBarchartBar
     className={null}
-    height={143}
+    height={144}
     key="bar9"
     label="Oct - 422"
     onClick={null}
@@ -335,11 +335,11 @@ exports[`BpkBarchartBars should render correctly with "getBarSelection" prop 1`]
     selected={false}
     width={200}
     x={147.24409448818898}
-    y={17}
+    y={16}
   />
   <BpkBarchartBar
     className={null}
-    height={143}
+    height={144}
     key="bar10"
     label="Nov - 344"
     onClick={null}
@@ -350,11 +350,11 @@ exports[`BpkBarchartBars should render correctly with "getBarSelection" prop 1`]
     selected={false}
     width={200}
     x={162.99212598425197}
-    y={17}
+    y={16}
   />
   <BpkBarchartBar
     className={null}
-    height={143}
+    height={144}
     key="bar11"
     label="Dec - 301"
     onClick={null}
@@ -365,7 +365,7 @@ exports[`BpkBarchartBars should render correctly with "getBarSelection" prop 1`]
     selected={false}
     width={200}
     x={178.74015748031496}
-    y={17}
+    y={16}
   />
 </g>
 `;
@@ -374,7 +374,7 @@ exports[`BpkBarchartBars should render correctly with "onBarClick" prop 1`] = `
 <g>
   <BpkBarchartBar
     className={null}
-    height={143}
+    height={144}
     key="bar0"
     label="Jan - 305"
     onClick={[Function]}
@@ -385,11 +385,11 @@ exports[`BpkBarchartBars should render correctly with "onBarClick" prop 1`] = `
     selected={false}
     width={200}
     x={5.511811023622045}
-    y={17}
+    y={16}
   />
   <BpkBarchartBar
     className={null}
-    height={143}
+    height={144}
     key="bar1"
     label="Feb - 348"
     onClick={[Function]}
@@ -400,11 +400,11 @@ exports[`BpkBarchartBars should render correctly with "onBarClick" prop 1`] = `
     selected={false}
     width={200}
     x={21.259842519685037}
-    y={17}
+    y={16}
   />
   <BpkBarchartBar
     className={null}
-    height={143}
+    height={144}
     key="bar2"
     label="Mar - 418"
     onClick={[Function]}
@@ -415,11 +415,11 @@ exports[`BpkBarchartBars should render correctly with "onBarClick" prop 1`] = `
     selected={false}
     width={200}
     x={37.00787401574803}
-    y={17}
+    y={16}
   />
   <BpkBarchartBar
     className={null}
-    height={143}
+    height={144}
     key="bar3"
     label="Apr - 448"
     onClick={[Function]}
@@ -430,11 +430,11 @@ exports[`BpkBarchartBars should render correctly with "onBarClick" prop 1`] = `
     selected={false}
     width={200}
     x={52.75590551181102}
-    y={17}
+    y={16}
   />
   <BpkBarchartBar
     className={null}
-    height={143}
+    height={144}
     key="bar4"
     label="May - 344"
     onClick={[Function]}
@@ -445,11 +445,11 @@ exports[`BpkBarchartBars should render correctly with "onBarClick" prop 1`] = `
     selected={false}
     width={200}
     x={68.50393700787401}
-    y={17}
+    y={16}
   />
   <BpkBarchartBar
     className={null}
-    height={143}
+    height={144}
     key="bar5"
     label="Jun - 322"
     onClick={[Function]}
@@ -460,11 +460,11 @@ exports[`BpkBarchartBars should render correctly with "onBarClick" prop 1`] = `
     selected={false}
     width={200}
     x={84.25196850393701}
-    y={17}
+    y={16}
   />
   <BpkBarchartBar
     className={null}
-    height={143}
+    height={144}
     key="bar6"
     label="Jul - 340"
     onClick={[Function]}
@@ -475,11 +475,11 @@ exports[`BpkBarchartBars should render correctly with "onBarClick" prop 1`] = `
     selected={false}
     width={200}
     x={100}
-    y={17}
+    y={16}
   />
   <BpkBarchartBar
     className={null}
-    height={143}
+    height={144}
     key="bar7"
     label="Aug - 327"
     onClick={[Function]}
@@ -490,11 +490,11 @@ exports[`BpkBarchartBars should render correctly with "onBarClick" prop 1`] = `
     selected={false}
     width={200}
     x={115.74803149606299}
-    y={17}
+    y={16}
   />
   <BpkBarchartBar
     className={null}
-    height={143}
+    height={144}
     key="bar8"
     label="Sep - 444"
     onClick={[Function]}
@@ -505,11 +505,11 @@ exports[`BpkBarchartBars should render correctly with "onBarClick" prop 1`] = `
     selected={false}
     width={200}
     x={131.49606299212599}
-    y={17}
+    y={16}
   />
   <BpkBarchartBar
     className={null}
-    height={143}
+    height={144}
     key="bar9"
     label="Oct - 422"
     onClick={[Function]}
@@ -520,11 +520,11 @@ exports[`BpkBarchartBars should render correctly with "onBarClick" prop 1`] = `
     selected={false}
     width={200}
     x={147.24409448818898}
-    y={17}
+    y={16}
   />
   <BpkBarchartBar
     className={null}
-    height={143}
+    height={144}
     key="bar10"
     label="Nov - 344"
     onClick={[Function]}
@@ -535,11 +535,11 @@ exports[`BpkBarchartBars should render correctly with "onBarClick" prop 1`] = `
     selected={false}
     width={200}
     x={162.99212598425197}
-    y={17}
+    y={16}
   />
   <BpkBarchartBar
     className={null}
-    height={143}
+    height={144}
     key="bar11"
     label="Dec - 301"
     onClick={[Function]}
@@ -550,7 +550,7 @@ exports[`BpkBarchartBars should render correctly with "onBarClick" prop 1`] = `
     selected={false}
     width={200}
     x={178.74015748031496}
-    y={17}
+    y={16}
   />
 </g>
 `;
@@ -559,7 +559,7 @@ exports[`BpkBarchartBars should render correctly with "onBarFocus" prop 1`] = `
 <g>
   <BpkBarchartBar
     className={null}
-    height={143}
+    height={144}
     key="bar0"
     label="Jan - 305"
     onClick={null}
@@ -570,11 +570,11 @@ exports[`BpkBarchartBars should render correctly with "onBarFocus" prop 1`] = `
     selected={false}
     width={200}
     x={5.511811023622045}
-    y={17}
+    y={16}
   />
   <BpkBarchartBar
     className={null}
-    height={143}
+    height={144}
     key="bar1"
     label="Feb - 348"
     onClick={null}
@@ -585,11 +585,11 @@ exports[`BpkBarchartBars should render correctly with "onBarFocus" prop 1`] = `
     selected={false}
     width={200}
     x={21.259842519685037}
-    y={17}
+    y={16}
   />
   <BpkBarchartBar
     className={null}
-    height={143}
+    height={144}
     key="bar2"
     label="Mar - 418"
     onClick={null}
@@ -600,11 +600,11 @@ exports[`BpkBarchartBars should render correctly with "onBarFocus" prop 1`] = `
     selected={false}
     width={200}
     x={37.00787401574803}
-    y={17}
+    y={16}
   />
   <BpkBarchartBar
     className={null}
-    height={143}
+    height={144}
     key="bar3"
     label="Apr - 448"
     onClick={null}
@@ -615,11 +615,11 @@ exports[`BpkBarchartBars should render correctly with "onBarFocus" prop 1`] = `
     selected={false}
     width={200}
     x={52.75590551181102}
-    y={17}
+    y={16}
   />
   <BpkBarchartBar
     className={null}
-    height={143}
+    height={144}
     key="bar4"
     label="May - 344"
     onClick={null}
@@ -630,11 +630,11 @@ exports[`BpkBarchartBars should render correctly with "onBarFocus" prop 1`] = `
     selected={false}
     width={200}
     x={68.50393700787401}
-    y={17}
+    y={16}
   />
   <BpkBarchartBar
     className={null}
-    height={143}
+    height={144}
     key="bar5"
     label="Jun - 322"
     onClick={null}
@@ -645,11 +645,11 @@ exports[`BpkBarchartBars should render correctly with "onBarFocus" prop 1`] = `
     selected={false}
     width={200}
     x={84.25196850393701}
-    y={17}
+    y={16}
   />
   <BpkBarchartBar
     className={null}
-    height={143}
+    height={144}
     key="bar6"
     label="Jul - 340"
     onClick={null}
@@ -660,11 +660,11 @@ exports[`BpkBarchartBars should render correctly with "onBarFocus" prop 1`] = `
     selected={false}
     width={200}
     x={100}
-    y={17}
+    y={16}
   />
   <BpkBarchartBar
     className={null}
-    height={143}
+    height={144}
     key="bar7"
     label="Aug - 327"
     onClick={null}
@@ -675,11 +675,11 @@ exports[`BpkBarchartBars should render correctly with "onBarFocus" prop 1`] = `
     selected={false}
     width={200}
     x={115.74803149606299}
-    y={17}
+    y={16}
   />
   <BpkBarchartBar
     className={null}
-    height={143}
+    height={144}
     key="bar8"
     label="Sep - 444"
     onClick={null}
@@ -690,11 +690,11 @@ exports[`BpkBarchartBars should render correctly with "onBarFocus" prop 1`] = `
     selected={false}
     width={200}
     x={131.49606299212599}
-    y={17}
+    y={16}
   />
   <BpkBarchartBar
     className={null}
-    height={143}
+    height={144}
     key="bar9"
     label="Oct - 422"
     onClick={null}
@@ -705,11 +705,11 @@ exports[`BpkBarchartBars should render correctly with "onBarFocus" prop 1`] = `
     selected={false}
     width={200}
     x={147.24409448818898}
-    y={17}
+    y={16}
   />
   <BpkBarchartBar
     className={null}
-    height={143}
+    height={144}
     key="bar10"
     label="Nov - 344"
     onClick={null}
@@ -720,11 +720,11 @@ exports[`BpkBarchartBars should render correctly with "onBarFocus" prop 1`] = `
     selected={false}
     width={200}
     x={162.99212598425197}
-    y={17}
+    y={16}
   />
   <BpkBarchartBar
     className={null}
-    height={143}
+    height={144}
     key="bar11"
     label="Dec - 301"
     onClick={null}
@@ -735,7 +735,7 @@ exports[`BpkBarchartBars should render correctly with "onBarFocus" prop 1`] = `
     selected={false}
     width={200}
     x={178.74015748031496}
-    y={17}
+    y={16}
   />
 </g>
 `;
@@ -744,7 +744,7 @@ exports[`BpkBarchartBars should render correctly with "onBarHover" prop 1`] = `
 <g>
   <BpkBarchartBar
     className={null}
-    height={143}
+    height={144}
     key="bar0"
     label="Jan - 305"
     onClick={null}
@@ -755,11 +755,11 @@ exports[`BpkBarchartBars should render correctly with "onBarHover" prop 1`] = `
     selected={false}
     width={200}
     x={5.511811023622045}
-    y={17}
+    y={16}
   />
   <BpkBarchartBar
     className={null}
-    height={143}
+    height={144}
     key="bar1"
     label="Feb - 348"
     onClick={null}
@@ -770,11 +770,11 @@ exports[`BpkBarchartBars should render correctly with "onBarHover" prop 1`] = `
     selected={false}
     width={200}
     x={21.259842519685037}
-    y={17}
+    y={16}
   />
   <BpkBarchartBar
     className={null}
-    height={143}
+    height={144}
     key="bar2"
     label="Mar - 418"
     onClick={null}
@@ -785,11 +785,11 @@ exports[`BpkBarchartBars should render correctly with "onBarHover" prop 1`] = `
     selected={false}
     width={200}
     x={37.00787401574803}
-    y={17}
+    y={16}
   />
   <BpkBarchartBar
     className={null}
-    height={143}
+    height={144}
     key="bar3"
     label="Apr - 448"
     onClick={null}
@@ -800,11 +800,11 @@ exports[`BpkBarchartBars should render correctly with "onBarHover" prop 1`] = `
     selected={false}
     width={200}
     x={52.75590551181102}
-    y={17}
+    y={16}
   />
   <BpkBarchartBar
     className={null}
-    height={143}
+    height={144}
     key="bar4"
     label="May - 344"
     onClick={null}
@@ -815,11 +815,11 @@ exports[`BpkBarchartBars should render correctly with "onBarHover" prop 1`] = `
     selected={false}
     width={200}
     x={68.50393700787401}
-    y={17}
+    y={16}
   />
   <BpkBarchartBar
     className={null}
-    height={143}
+    height={144}
     key="bar5"
     label="Jun - 322"
     onClick={null}
@@ -830,11 +830,11 @@ exports[`BpkBarchartBars should render correctly with "onBarHover" prop 1`] = `
     selected={false}
     width={200}
     x={84.25196850393701}
-    y={17}
+    y={16}
   />
   <BpkBarchartBar
     className={null}
-    height={143}
+    height={144}
     key="bar6"
     label="Jul - 340"
     onClick={null}
@@ -845,11 +845,11 @@ exports[`BpkBarchartBars should render correctly with "onBarHover" prop 1`] = `
     selected={false}
     width={200}
     x={100}
-    y={17}
+    y={16}
   />
   <BpkBarchartBar
     className={null}
-    height={143}
+    height={144}
     key="bar7"
     label="Aug - 327"
     onClick={null}
@@ -860,11 +860,11 @@ exports[`BpkBarchartBars should render correctly with "onBarHover" prop 1`] = `
     selected={false}
     width={200}
     x={115.74803149606299}
-    y={17}
+    y={16}
   />
   <BpkBarchartBar
     className={null}
-    height={143}
+    height={144}
     key="bar8"
     label="Sep - 444"
     onClick={null}
@@ -875,11 +875,11 @@ exports[`BpkBarchartBars should render correctly with "onBarHover" prop 1`] = `
     selected={false}
     width={200}
     x={131.49606299212599}
-    y={17}
+    y={16}
   />
   <BpkBarchartBar
     className={null}
-    height={143}
+    height={144}
     key="bar9"
     label="Oct - 422"
     onClick={null}
@@ -890,11 +890,11 @@ exports[`BpkBarchartBars should render correctly with "onBarHover" prop 1`] = `
     selected={false}
     width={200}
     x={147.24409448818898}
-    y={17}
+    y={16}
   />
   <BpkBarchartBar
     className={null}
-    height={143}
+    height={144}
     key="bar10"
     label="Nov - 344"
     onClick={null}
@@ -905,11 +905,11 @@ exports[`BpkBarchartBars should render correctly with "onBarHover" prop 1`] = `
     selected={false}
     width={200}
     x={162.99212598425197}
-    y={17}
+    y={16}
   />
   <BpkBarchartBar
     className={null}
-    height={143}
+    height={144}
     key="bar11"
     label="Dec - 301"
     onClick={null}
@@ -920,7 +920,7 @@ exports[`BpkBarchartBars should render correctly with "onBarHover" prop 1`] = `
     selected={false}
     width={200}
     x={178.74015748031496}
-    y={17}
+    y={16}
   />
 </g>
 `;
@@ -929,7 +929,7 @@ exports[`BpkBarchartBars should render correctly with "padding" prop 1`] = `
 <g>
   <BpkBarchartBar
     className={null}
-    height={143}
+    height={144}
     key="bar0"
     label="Jan - 305"
     onClick={null}
@@ -940,11 +940,11 @@ exports[`BpkBarchartBars should render correctly with "padding" prop 1`] = `
     selected={false}
     width={200}
     x={5.511811023622045}
-    y={17}
+    y={16}
   />
   <BpkBarchartBar
     className={null}
-    height={143}
+    height={144}
     key="bar1"
     label="Feb - 348"
     onClick={null}
@@ -955,11 +955,11 @@ exports[`BpkBarchartBars should render correctly with "padding" prop 1`] = `
     selected={false}
     width={200}
     x={21.259842519685037}
-    y={17}
+    y={16}
   />
   <BpkBarchartBar
     className={null}
-    height={143}
+    height={144}
     key="bar2"
     label="Mar - 418"
     onClick={null}
@@ -970,11 +970,11 @@ exports[`BpkBarchartBars should render correctly with "padding" prop 1`] = `
     selected={false}
     width={200}
     x={37.00787401574803}
-    y={17}
+    y={16}
   />
   <BpkBarchartBar
     className={null}
-    height={143}
+    height={144}
     key="bar3"
     label="Apr - 448"
     onClick={null}
@@ -985,11 +985,11 @@ exports[`BpkBarchartBars should render correctly with "padding" prop 1`] = `
     selected={false}
     width={200}
     x={52.75590551181102}
-    y={17}
+    y={16}
   />
   <BpkBarchartBar
     className={null}
-    height={143}
+    height={144}
     key="bar4"
     label="May - 344"
     onClick={null}
@@ -1000,11 +1000,11 @@ exports[`BpkBarchartBars should render correctly with "padding" prop 1`] = `
     selected={false}
     width={200}
     x={68.50393700787401}
-    y={17}
+    y={16}
   />
   <BpkBarchartBar
     className={null}
-    height={143}
+    height={144}
     key="bar5"
     label="Jun - 322"
     onClick={null}
@@ -1015,11 +1015,11 @@ exports[`BpkBarchartBars should render correctly with "padding" prop 1`] = `
     selected={false}
     width={200}
     x={84.25196850393701}
-    y={17}
+    y={16}
   />
   <BpkBarchartBar
     className={null}
-    height={143}
+    height={144}
     key="bar6"
     label="Jul - 340"
     onClick={null}
@@ -1030,11 +1030,11 @@ exports[`BpkBarchartBars should render correctly with "padding" prop 1`] = `
     selected={false}
     width={200}
     x={100}
-    y={17}
+    y={16}
   />
   <BpkBarchartBar
     className={null}
-    height={143}
+    height={144}
     key="bar7"
     label="Aug - 327"
     onClick={null}
@@ -1045,11 +1045,11 @@ exports[`BpkBarchartBars should render correctly with "padding" prop 1`] = `
     selected={false}
     width={200}
     x={115.74803149606299}
-    y={17}
+    y={16}
   />
   <BpkBarchartBar
     className={null}
-    height={143}
+    height={144}
     key="bar8"
     label="Sep - 444"
     onClick={null}
@@ -1060,11 +1060,11 @@ exports[`BpkBarchartBars should render correctly with "padding" prop 1`] = `
     selected={false}
     width={200}
     x={131.49606299212599}
-    y={17}
+    y={16}
   />
   <BpkBarchartBar
     className={null}
-    height={143}
+    height={144}
     key="bar9"
     label="Oct - 422"
     onClick={null}
@@ -1075,11 +1075,11 @@ exports[`BpkBarchartBars should render correctly with "padding" prop 1`] = `
     selected={false}
     width={200}
     x={147.24409448818898}
-    y={17}
+    y={16}
   />
   <BpkBarchartBar
     className={null}
-    height={143}
+    height={144}
     key="bar10"
     label="Nov - 344"
     onClick={null}
@@ -1090,11 +1090,11 @@ exports[`BpkBarchartBars should render correctly with "padding" prop 1`] = `
     selected={false}
     width={200}
     x={162.99212598425197}
-    y={17}
+    y={16}
   />
   <BpkBarchartBar
     className={null}
-    height={143}
+    height={144}
     key="bar11"
     label="Dec - 301"
     onClick={null}
@@ -1105,7 +1105,7 @@ exports[`BpkBarchartBars should render correctly with "padding" prop 1`] = `
     selected={false}
     width={200}
     x={178.74015748031496}
-    y={17}
+    y={16}
   />
 </g>
 `;
@@ -1114,7 +1114,7 @@ exports[`BpkBarchartBars should render with "rounded" prop set to "false" 1`] = 
 <g>
   <BpkBarchartBar
     className={null}
-    height={143}
+    height={144}
     key="bar0"
     label="Jan - 305"
     onClick={null}
@@ -1126,11 +1126,11 @@ exports[`BpkBarchartBars should render with "rounded" prop set to "false" 1`] = 
     selected={false}
     width={200}
     x={5.511811023622045}
-    y={17}
+    y={16}
   />
   <BpkBarchartBar
     className={null}
-    height={143}
+    height={144}
     key="bar1"
     label="Feb - 348"
     onClick={null}
@@ -1142,11 +1142,11 @@ exports[`BpkBarchartBars should render with "rounded" prop set to "false" 1`] = 
     selected={false}
     width={200}
     x={21.259842519685037}
-    y={17}
+    y={16}
   />
   <BpkBarchartBar
     className={null}
-    height={143}
+    height={144}
     key="bar2"
     label="Mar - 418"
     onClick={null}
@@ -1158,11 +1158,11 @@ exports[`BpkBarchartBars should render with "rounded" prop set to "false" 1`] = 
     selected={false}
     width={200}
     x={37.00787401574803}
-    y={17}
+    y={16}
   />
   <BpkBarchartBar
     className={null}
-    height={143}
+    height={144}
     key="bar3"
     label="Apr - 448"
     onClick={null}
@@ -1174,11 +1174,11 @@ exports[`BpkBarchartBars should render with "rounded" prop set to "false" 1`] = 
     selected={false}
     width={200}
     x={52.75590551181102}
-    y={17}
+    y={16}
   />
   <BpkBarchartBar
     className={null}
-    height={143}
+    height={144}
     key="bar4"
     label="May - 344"
     onClick={null}
@@ -1190,11 +1190,11 @@ exports[`BpkBarchartBars should render with "rounded" prop set to "false" 1`] = 
     selected={false}
     width={200}
     x={68.50393700787401}
-    y={17}
+    y={16}
   />
   <BpkBarchartBar
     className={null}
-    height={143}
+    height={144}
     key="bar5"
     label="Jun - 322"
     onClick={null}
@@ -1206,11 +1206,11 @@ exports[`BpkBarchartBars should render with "rounded" prop set to "false" 1`] = 
     selected={false}
     width={200}
     x={84.25196850393701}
-    y={17}
+    y={16}
   />
   <BpkBarchartBar
     className={null}
-    height={143}
+    height={144}
     key="bar6"
     label="Jul - 340"
     onClick={null}
@@ -1222,11 +1222,11 @@ exports[`BpkBarchartBars should render with "rounded" prop set to "false" 1`] = 
     selected={false}
     width={200}
     x={100}
-    y={17}
+    y={16}
   />
   <BpkBarchartBar
     className={null}
-    height={143}
+    height={144}
     key="bar7"
     label="Aug - 327"
     onClick={null}
@@ -1238,11 +1238,11 @@ exports[`BpkBarchartBars should render with "rounded" prop set to "false" 1`] = 
     selected={false}
     width={200}
     x={115.74803149606299}
-    y={17}
+    y={16}
   />
   <BpkBarchartBar
     className={null}
-    height={143}
+    height={144}
     key="bar8"
     label="Sep - 444"
     onClick={null}
@@ -1254,11 +1254,11 @@ exports[`BpkBarchartBars should render with "rounded" prop set to "false" 1`] = 
     selected={false}
     width={200}
     x={131.49606299212599}
-    y={17}
+    y={16}
   />
   <BpkBarchartBar
     className={null}
-    height={143}
+    height={144}
     key="bar9"
     label="Oct - 422"
     onClick={null}
@@ -1270,11 +1270,11 @@ exports[`BpkBarchartBars should render with "rounded" prop set to "false" 1`] = 
     selected={false}
     width={200}
     x={147.24409448818898}
-    y={17}
+    y={16}
   />
   <BpkBarchartBar
     className={null}
-    height={143}
+    height={144}
     key="bar10"
     label="Nov - 344"
     onClick={null}
@@ -1286,11 +1286,11 @@ exports[`BpkBarchartBars should render with "rounded" prop set to "false" 1`] = 
     selected={false}
     width={200}
     x={162.99212598425197}
-    y={17}
+    y={16}
   />
   <BpkBarchartBar
     className={null}
-    height={143}
+    height={144}
     key="bar11"
     label="Dec - 301"
     onClick={null}
@@ -1302,7 +1302,7 @@ exports[`BpkBarchartBars should render with "rounded" prop set to "false" 1`] = 
     selected={false}
     width={200}
     x={178.74015748031496}
-    y={17}
+    y={16}
   />
 </g>
 `;
