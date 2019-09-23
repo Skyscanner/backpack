@@ -457,6 +457,8 @@ leadingScrollIndicatorClassName
 trailingScrollIndicatorClassName
 bottomMargin
 mobileWidth
+flareProps
+showPointer
 tabletWidth
 mobileOffset
 tabletOffset
@@ -570,6 +572,7 @@ bpk-component-description-list
 bpk-component-dialog
 bpk-component-drawer
 bpk-component-fieldset
+bpk-component-flare
 bpk-component-form-validation
 bpk-component-grid
 bpk-component-grid-toggle

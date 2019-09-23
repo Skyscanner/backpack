@@ -1643,6 +1643,27 @@
       "originalValue": "50ms",
       "name": "DURATION_XS"
     },
+    "FLARE_CORNER_RADIUS": {
+      "type": "size",
+      "category": "flare",
+      "value": "1.3125rem",
+      "originalValue": "{!BORDER_RADIUS_PILL_LG}",
+      "name": "FLARE_CORNER_RADIUS"
+    },
+    "FLARE_HEIGHT_DESKTOP": {
+      "type": "size",
+      "category": "flare",
+      "value": "1.5rem",
+      "originalValue": "{!SPACING_BASE}",
+      "name": "FLARE_HEIGHT_DESKTOP"
+    },
+    "FLARE_HEIGHT_MOBILE": {
+      "type": "size",
+      "category": "flare",
+      "value": "1.125rem",
+      "originalValue": "{!SPACING_MD}",
+      "name": "FLARE_HEIGHT_MOBILE"
+    },
     "FONT_COLOR_BASE": {
       "value": "rgb(17, 18, 54)",
       "type": "color",
@@ -3026,6 +3047,9 @@
     "DURATION_BASE",
     "DURATION_SM",
     "DURATION_XS",
+    "FLARE_CORNER_RADIUS",
+    "FLARE_HEIGHT_DESKTOP",
+    "FLARE_HEIGHT_MOBILE",
     "FONT_COLOR_BASE",
     "FONT_FAMILY_BASE",
     "FONT_SIZE_BASE",
