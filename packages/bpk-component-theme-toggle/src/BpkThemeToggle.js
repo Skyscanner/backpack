@@ -45,6 +45,7 @@ class BpkThemeToggle extends React.Component {
   }
 
   componentDidMount() {
+    this.handleChange({ target: { value: 'Azure' } });
     document.addEventListener('keydown', this.handleKeyDown);
   }
 
