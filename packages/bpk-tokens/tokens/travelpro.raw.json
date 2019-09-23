@@ -1,5 +1,8 @@
 {
   "aliases": {
+    "ABISKO": {
+      "value": "#5a489b"
+    },
     "ANIMATION_DURATION_BASE": {
       "value": "400ms"
     },
@@ -8,6 +11,9 @@
     },
     "ANIMATION_DURATION_XS": {
       "value": "50ms"
+    },
+    "BAGAN": {
+      "value": "#ffebd0"
     },
     "BLACK": {
       "value": "#000000"
@@ -84,6 +90,9 @@
     "BREAKPOINT_TABLET": {
       "value": "50.25rem"
     },
+    "BUNOL": {
+      "value": "#ff7b59"
+    },
     "CLEAR": {
       "value": "#F0F0F0"
     },
@@ -92,6 +101,9 @@
     },
     "DUSK": {
       "value": "#686B75"
+    },
+    "ERFOUD": {
+      "value": "#ffb54d"
     },
     "FIRE": {
       "value": "#CC4400"
@@ -119,6 +131,9 @@
     },
     "FONT_WEIGHT_BOLD": {
       "value": "700"
+    },
+    "GLENCOE": {
+      "value": "#73cec6"
     },
     "GRASS": {
       "value": "#66CC00"
@@ -183,11 +198,26 @@
     "GREEN_900": {
       "value": "#006638"
     },
+    "HARBOUR": {
+      "value": "#f6dde1"
+    },
+    "HILLIER": {
+      "value": "#e18b96"
+    },
+    "KOLKATA": {
+      "value": "#ff9400"
+    },
     "MIDNIGHT": {
       "value": "#232429"
     },
     "MIST": {
       "value": "#C5CDCD"
+    },
+    "MONTEVERDE": {
+      "value": "#00a698"
+    },
+    "NARA": {
+      "value": "#ffe7e0"
     },
     "ONE_PIXEL_REM": {
       "value": ".0625rem"
@@ -200,6 +230,12 @@
     },
     "OVERCAST_TWENTY_PERCENT": {
       "value": "rgba(0,187,204,0.2)"
+    },
+    "PANJIN": {
+      "value": "#d1435b"
+    },
+    "PETRA": {
+      "value": "#ffab95"
     },
     "PINK_100": {
       "value": "#FFBFD7"
@@ -270,8 +306,32 @@
     "RED_900": {
       "value": "#a80300"
     },
+    "SEGANO": {
+      "value": "#d0eeec"
+    },
     "SKY": {
       "value": "#00DDEE"
+    },
+    "SKY_BLUE": {
+      "value": "#0770e3"
+    },
+    "SKY_BLUE_SHADE_01": {
+      "value": "#084eb2"
+    },
+    "SKY_BLUE_SHADE_02": {
+      "value": "#042759"
+    },
+    "SKY_BLUE_SHADE_03": {
+      "value": "#02122c"
+    },
+    "SKY_BLUE_TINT_01": {
+      "value": "#6d9feb"
+    },
+    "SKY_BLUE_TINT_02": {
+      "value": "#9dc0f2"
+    },
+    "SKY_BLUE_TINT_03": {
+      "value": "#cddff8"
     },
     "SPACING_BASE": {
       "value": "1.5rem"
@@ -312,8 +372,14 @@
     "THUNDER": {
       "value": "#3E4048"
     },
+    "TOCHIGI": {
+      "value": "#e1ddec"
+    },
     "TURBULENCE": {
       "value": "#4D5059"
+    },
+    "VALENSOLE": {
+      "value": "#a59bc8"
     },
     "WEED": {
       "value": "#22AA00"

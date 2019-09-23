@@ -1,5 +1,8 @@
 {
   "aliases": {
+    "ABISKO": {
+      "value": "#5a489b"
+    },
     "ANIMATION_DURATION_BASE": {
       "value": "400ms"
     },
@@ -8,6 +11,9 @@
     },
     "ANIMATION_DURATION_XS": {
       "value": "50ms"
+    },
+    "BAGAN": {
+      "value": "#ffebd0"
     },
     "BLUE_100": {
       "value": "#cbeef5"
@@ -75,6 +81,12 @@
     "BREAKPOINT_TABLET": {
       "value": "50.25rem"
     },
+    "BUNOL": {
+      "value": "#ff7b59"
+    },
+    "ERFOUD": {
+      "value": "#ffb54d"
+    },
     "FONT_SIZE_BASE": {
       "value": "1rem"
     },
@@ -95,6 +107,9 @@
     },
     "FONT_WEIGHT_BOLD": {
       "value": "700"
+    },
+    "GLENCOE": {
+      "value": "#73cec6"
     },
     "GRAY_100": {
       "value": "#DDDDE5"
@@ -156,8 +171,29 @@
     "GREEN_900": {
       "value": "#006638"
     },
+    "HARBOUR": {
+      "value": "#f6dde1"
+    },
+    "HILLIER": {
+      "value": "#e18b96"
+    },
+    "KOLKATA": {
+      "value": "#ff9400"
+    },
+    "MONTEVERDE": {
+      "value": "#00a698"
+    },
+    "NARA": {
+      "value": "#ffe7e0"
+    },
     "ONE_PIXEL_REM": {
       "value": ".0625rem"
+    },
+    "PANJIN": {
+      "value": "#d1435b"
+    },
+    "PETRA": {
+      "value": "#ffab95"
     },
     "PINK_100": {
       "value": "#FFBFD7"
@@ -222,6 +258,30 @@
     "RED_900": {
       "value": "#a80300"
     },
+    "SEGANO": {
+      "value": "#d0eeec"
+    },
+    "SKY_BLUE": {
+      "value": "#0770e3"
+    },
+    "SKY_BLUE_SHADE_01": {
+      "value": "#084eb2"
+    },
+    "SKY_BLUE_SHADE_02": {
+      "value": "#042759"
+    },
+    "SKY_BLUE_SHADE_03": {
+      "value": "#02122c"
+    },
+    "SKY_BLUE_TINT_01": {
+      "value": "#6d9feb"
+    },
+    "SKY_BLUE_TINT_02": {
+      "value": "#9dc0f2"
+    },
+    "SKY_BLUE_TINT_03": {
+      "value": "#cddff8"
+    },
     "SPACING_BASE": {
       "value": "1.5rem"
     },
@@ -245,6 +305,12 @@
     },
     "SPACING_XXL": {
       "value": "2.625rem"
+    },
+    "TOCHIGI": {
+      "value": "#e1ddec"
+    },
+    "VALENSOLE": {
+      "value": "#a59bc8"
     },
     "WHITE": {
       "value": "#ffffff"
