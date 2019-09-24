@@ -187,6 +187,8 @@ export const cardBackgroundColor = "rgb(255, 255, 255)";
 export const cardColor = "rgb(17, 18, 54)";
 export const cardPadding = ".75rem";
 export const checkboxCheckedTickColor = "rgb(0, 140, 168)";
+export const colorAbisko = "rgb(90, 72, 155)";
+export const colorBagan = "rgb(255, 235, 208)";
 export const colorBlue100 = "rgb(203, 238, 245)";
 export const colorBlue200 = "rgb(176, 228, 238)";
 export const colorBlue300 = "rgb(127, 215, 232)";
@@ -197,6 +199,9 @@ export const colorBlue600 = "rgb(0, 157, 189)";
 export const colorBlue700 = "rgb(0, 140, 168)";
 export const colorBlue800 = "rgb(0, 117, 140)";
 export const colorBlue900 = "rgb(0, 85, 103)";
+export const colorBunol = "rgb(255, 123, 89)";
+export const colorErfoud = "rgb(255, 181, 77)";
+export const colorGlencoe = "rgb(115, 206, 198)";
 export const colorGray100 = "rgb(221, 221, 229)";
 export const colorGray200 = "rgb(205, 205, 215)";
 export const colorGray300 = "rgb(178, 178, 191)";
@@ -217,6 +222,13 @@ export const colorGreen600 = "rgb(0, 189, 104)";
 export const colorGreen700 = "rgb(0, 168, 93)";
 export const colorGreen800 = "rgb(0, 140, 77)";
 export const colorGreen900 = "rgb(0, 102, 56)";
+export const colorHarbour = "rgb(246, 221, 225)";
+export const colorHillier = "rgb(225, 139, 150)";
+export const colorKolkata = "rgb(255, 148, 0)";
+export const colorMonteverde = "rgb(0, 166, 152)";
+export const colorNara = "rgb(255, 231, 224)";
+export const colorPanjin = "rgb(209, 67, 91)";
+export const colorPetra = "rgb(255, 171, 149)";
 export const colorPrimaryGradientLight = "rgb(2, 221, 216)";
 export const colorRed100 = "rgb(255, 214, 213)";
 export const colorRed200 = "rgb(255, 187, 186)";
@@ -228,6 +240,18 @@ export const colorRed600 = "rgb(235, 66, 63)";
 export const colorRed700 = "rgb(222, 50, 47)";
 export const colorRed800 = "rgb(204, 31, 29)";
 export const colorRed900 = "rgb(168, 3, 0)";
+export const colorSegano = "rgb(208, 238, 236)";
+export const colorSkyBlue = "rgb(7, 112, 227)";
+export const colorSkyBlueShade01 = "rgb(8, 78, 178)";
+export const colorSkyBlueShade02 = "rgb(4, 39, 89)";
+export const colorSkyBlueShade03 = "rgb(2, 18, 44)";
+export const colorSkyBlueTint01 = "rgb(109, 159, 235)";
+export const colorSkyBlueTint02 = "rgb(157, 192, 242)";
+export const colorSkyBlueTint03 = "rgb(205, 223, 248)";
+export const colorSystemGreen = "rgb(0, 166, 152)";
+export const colorSystemRed = "rgb(209, 67, 91)";
+export const colorTochigi = "rgb(225, 221, 236)";
+export const colorValensole = "rgb(165, 155, 200)";
 export const colorWhite = "rgb(255, 255, 255)";
 export const colorYellow100 = "rgb(255, 243, 207)";
 export const colorYellow200 = "rgb(255, 236, 184)";
@@ -598,6 +622,8 @@ cardColor,
 cardPadding,
 };
 export const colors = {
+colorAbisko,
+colorBagan,
 colorBlue100,
 colorBlue200,
 colorBlue300,
@@ -608,6 +634,9 @@ colorBlue600,
 colorBlue700,
 colorBlue800,
 colorBlue900,
+colorBunol,
+colorErfoud,
+colorGlencoe,
 colorGray100,
 colorGray200,
 colorGray300,
@@ -628,6 +657,13 @@ colorGreen600,
 colorGreen700,
 colorGreen800,
 colorGreen900,
+colorHarbour,
+colorHillier,
+colorKolkata,
+colorMonteverde,
+colorNara,
+colorPanjin,
+colorPetra,
 colorPrimaryGradientLight,
 colorRed100,
 colorRed200,
@@ -639,6 +675,18 @@ colorRed600,
 colorRed700,
 colorRed800,
 colorRed900,
+colorSegano,
+colorSkyBlue,
+colorSkyBlueShade01,
+colorSkyBlueShade02,
+colorSkyBlueShade03,
+colorSkyBlueTint01,
+colorSkyBlueTint02,
+colorSkyBlueTint03,
+colorSystemGreen,
+colorSystemRed,
+colorTochigi,
+colorValensole,
 colorWhite,
 colorYellow100,
 colorYellow200,

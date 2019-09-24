@@ -37,6 +37,8 @@
   <property name="CAROUSEL_INDICATOR_DOT_SIZE_BASE" category="carousel-indicator-dots">6dp</property>
   <property name="CAROUSEL_INDICATOR_DOT_SIZE_MD" category="carousel-indicator-dots">4dp</property>
   <property name="CAROUSEL_INDICATOR_DOT_SIZE_SM" category="carousel-indicator-dots">2dp</property>
+  <color name="COLOR_ABISKO" category="colors">#ff5a489b</color>
+  <color name="COLOR_BAGAN" category="colors">#ffffebd0</color>
   <color name="COLOR_BLUE_100" category="colors">#ffcbeef5</color>
   <color name="COLOR_BLUE_200" category="colors">#ffb0e4ee</color>
   <color name="COLOR_BLUE_300" category="colors">#ff7fd7e8</color>
@@ -47,6 +49,9 @@
   <color name="COLOR_BLUE_700" category="colors">#ff008ca8</color>
   <color name="COLOR_BLUE_800" category="colors">#ff00758c</color>
   <color name="COLOR_BLUE_900" category="colors">#ff005567</color>
+  <color name="COLOR_BUNOL" category="colors">#ffff7b59</color>
+  <color name="COLOR_ERFOUD" category="colors">#ffffb54d</color>
+  <color name="COLOR_GLENCOE" category="colors">#ff73cec6</color>
   <color name="COLOR_GRAY_100" category="colors">#ffdddde5</color>
   <color name="COLOR_GRAY_200" category="colors">#ffcdcdd7</color>
   <color name="COLOR_GRAY_300" category="colors">#ffb2b2bf</color>
@@ -67,6 +72,13 @@
   <color name="COLOR_GREEN_700" category="colors">#ff00a85d</color>
   <color name="COLOR_GREEN_800" category="colors">#ff008c4d</color>
   <color name="COLOR_GREEN_900" category="colors">#ff006638</color>
+  <color name="COLOR_HARBOUR" category="colors">#fff6dde1</color>
+  <color name="COLOR_HILLIER" category="colors">#ffe18b96</color>
+  <color name="COLOR_KOLKATA" category="colors">#ffff9400</color>
+  <color name="COLOR_MONTEVERDE" category="colors">#ff00a698</color>
+  <color name="COLOR_NARA" category="colors">#ffffe7e0</color>
+  <color name="COLOR_PANJIN" category="colors">#ffd1435b</color>
+  <color name="COLOR_PETRA" category="colors">#ffffab95</color>
   <color name="COLOR_PINK_100" category="colors">#ffffbfd7</color>
   <color name="COLOR_PINK_200" category="colors">#ffff94bb</color>
   <color name="COLOR_PINK_300" category="colors">#ffff73a6</color>
@@ -88,6 +100,18 @@
   <color name="COLOR_RED_700" category="colors">#ffde322f</color>
   <color name="COLOR_RED_800" category="colors">#ffcc1f1d</color>
   <color name="COLOR_RED_900" category="colors">#ffa80300</color>
+  <color name="COLOR_SEGANO" category="colors">#ffd0eeec</color>
+  <color name="COLOR_SKY_BLUE" category="colors">#ff0770e3</color>
+  <color name="COLOR_SKY_BLUE_SHADE_01" category="colors">#ff084eb2</color>
+  <color name="COLOR_SKY_BLUE_SHADE_02" category="colors">#ff042759</color>
+  <color name="COLOR_SKY_BLUE_SHADE_03" category="colors">#ff02122c</color>
+  <color name="COLOR_SKY_BLUE_TINT_01" category="colors">#ff6d9feb</color>
+  <color name="COLOR_SKY_BLUE_TINT_02" category="colors">#ff9dc0f2</color>
+  <color name="COLOR_SKY_BLUE_TINT_03" category="colors">#ffcddff8</color>
+  <color name="COLOR_SYSTEM_GREEN" category="colors">#ff00a698</color>
+  <color name="COLOR_SYSTEM_RED" category="colors">#ffd1435b</color>
+  <color name="COLOR_TOCHIGI" category="colors">#ffe1ddec</color>
+  <color name="COLOR_VALENSOLE" category="colors">#ffa59bc8</color>
   <color name="COLOR_WHITE" category="colors">#ffffffff</color>
   <color name="COLOR_YELLOW_100" category="colors">#fffff3cf</color>
   <color name="COLOR_YELLOW_200" category="colors">#ffffecb8</color>

@@ -122,6 +122,20 @@
     {
       "type": "color",
       "category": "colors",
+      "value": "#5a489bff",
+      "originalValue": "{!ABISKO}",
+      "name": "colorAbisko"
+    },
+    {
+      "type": "color",
+      "category": "colors",
+      "value": "#ffebd0ff",
+      "originalValue": "{!BAGAN}",
+      "name": "colorBagan"
+    },
+    {
+      "type": "color",
+      "category": "colors",
       "value": "#cbeef5ff",
       "originalValue": "{!BLUE_100}",
       "name": "colorBlue100"
@@ -188,6 +202,27 @@
       "value": "#005567ff",
       "originalValue": "{!BLUE_900}",
       "name": "colorBlue900"
+    },
+    {
+      "type": "color",
+      "category": "colors",
+      "value": "#ff7b59ff",
+      "originalValue": "{!BUNOL}",
+      "name": "colorBunol"
+    },
+    {
+      "type": "color",
+      "category": "colors",
+      "value": "#ffb54dff",
+      "originalValue": "{!ERFOUD}",
+      "name": "colorErfoud"
+    },
+    {
+      "type": "color",
+      "category": "colors",
+      "value": "#73cec6ff",
+      "originalValue": "{!GLENCOE}",
+      "name": "colorGlencoe"
     },
     {
       "type": "color",
@@ -330,6 +365,55 @@
       "value": "#006638ff",
       "originalValue": "{!GREEN_900}",
       "name": "colorGreen900"
+    },
+    {
+      "type": "color",
+      "category": "colors",
+      "value": "#f6dde1ff",
+      "originalValue": "{!HARBOUR}",
+      "name": "colorHarbour"
+    },
+    {
+      "type": "color",
+      "category": "colors",
+      "value": "#e18b96ff",
+      "originalValue": "{!HILLIER}",
+      "name": "colorHillier"
+    },
+    {
+      "type": "color",
+      "category": "colors",
+      "value": "#ff9400ff",
+      "originalValue": "{!KOLKATA}",
+      "name": "colorKolkata"
+    },
+    {
+      "type": "color",
+      "category": "colors",
+      "value": "#00a698ff",
+      "originalValue": "{!MONTEVERDE}",
+      "name": "colorMonteverde"
+    },
+    {
+      "type": "color",
+      "category": "colors",
+      "value": "#ffe7e0ff",
+      "originalValue": "{!NARA}",
+      "name": "colorNara"
+    },
+    {
+      "type": "color",
+      "category": "colors",
+      "value": "#d1435bff",
+      "originalValue": "{!PANJIN}",
+      "name": "colorPanjin"
+    },
+    {
+      "type": "color",
+      "category": "colors",
+      "value": "#ffab95ff",
+      "originalValue": "{!PETRA}",
+      "name": "colorPetra"
     },
     {
       "type": "color",
@@ -477,6 +561,90 @@
       "value": "#a80300ff",
       "originalValue": "{!RED_900}",
       "name": "colorRed900"
+    },
+    {
+      "type": "color",
+      "category": "colors",
+      "value": "#d0eeecff",
+      "originalValue": "{!SEGANO}",
+      "name": "colorSegano"
+    },
+    {
+      "type": "color",
+      "category": "colors",
+      "value": "#0770e3ff",
+      "originalValue": "{!SKY_BLUE}",
+      "name": "colorSkyBlue"
+    },
+    {
+      "type": "color",
+      "category": "colors",
+      "value": "#084eb2ff",
+      "originalValue": "{!SKY_BLUE_SHADE_01}",
+      "name": "colorSkyBlueShade01"
+    },
+    {
+      "type": "color",
+      "category": "colors",
+      "value": "#042759ff",
+      "originalValue": "{!SKY_BLUE_SHADE_02}",
+      "name": "colorSkyBlueShade02"
+    },
+    {
+      "type": "color",
+      "category": "colors",
+      "value": "#02122cff",
+      "originalValue": "{!SKY_BLUE_SHADE_03}",
+      "name": "colorSkyBlueShade03"
+    },
+    {
+      "type": "color",
+      "category": "colors",
+      "value": "#6d9febff",
+      "originalValue": "{!SKY_BLUE_TINT_01}",
+      "name": "colorSkyBlueTint01"
+    },
+    {
+      "type": "color",
+      "category": "colors",
+      "value": "#9dc0f2ff",
+      "originalValue": "{!SKY_BLUE_TINT_02}",
+      "name": "colorSkyBlueTint02"
+    },
+    {
+      "type": "color",
+      "category": "colors",
+      "value": "#cddff8ff",
+      "originalValue": "{!SKY_BLUE_TINT_03}",
+      "name": "colorSkyBlueTint03"
+    },
+    {
+      "type": "color",
+      "category": "colors",
+      "value": "#00a698ff",
+      "originalValue": "{!MONTEVERDE}",
+      "name": "colorSystemGreen"
+    },
+    {
+      "type": "color",
+      "category": "colors",
+      "value": "#d1435bff",
+      "originalValue": "{!PANJIN}",
+      "name": "colorSystemRed"
+    },
+    {
+      "type": "color",
+      "category": "colors",
+      "value": "#e1ddecff",
+      "originalValue": "{!TOCHIGI}",
+      "name": "colorTochigi"
+    },
+    {
+      "type": "color",
+      "category": "colors",
+      "value": "#a59bc8ff",
+      "originalValue": "{!VALENSOLE}",
+      "name": "colorValensole"
     },
     {
       "type": "color",

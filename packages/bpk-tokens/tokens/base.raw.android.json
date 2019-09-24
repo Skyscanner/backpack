@@ -1,5 +1,8 @@
 {
   "aliases": {
+    "ABISKO": {
+      "value": "#5a489b"
+    },
     "ANIMATION_DURATION_BASE": {
       "value": "400ms"
     },
@@ -8,6 +11,9 @@
     },
     "ANIMATION_DURATION_XS": {
       "value": "50ms"
+    },
+    "BAGAN": {
+      "value": "#ffebd0"
     },
     "BLUE_100": {
       "value": "#cbeef5"
@@ -57,6 +63,9 @@
     "BORDER_SIZE_XL": {
       "value": 3
     },
+    "BUNOL": {
+      "value": "#ff7b59"
+    },
     "CAROUSEL_INDICATOR_DOT_SIZE_BASE": {
       "value": 6
     },
@@ -83,6 +92,9 @@
     },
     "ELEVATION_XXL": {
       "value": 24
+    },
+    "ERFOUD": {
+      "value": "#ffb54d"
     },
     "FONT_FAMILY": {
       "value": "\"sans-serif\""
@@ -122,6 +134,9 @@
     },
     "FONT_WEIGHT_REGULAR": {
       "value": "400"
+    },
+    "GLENCOE": {
+      "value": "#73cec6"
     },
     "GRAY_100": {
       "value": "#DDDDE5"
@@ -183,6 +198,15 @@
     "GREEN_900": {
       "value": "#006638"
     },
+    "HARBOUR": {
+      "value": "#f6dde1"
+    },
+    "HILLIER": {
+      "value": "#e18b96"
+    },
+    "KOLKATA": {
+      "value": "#ff9400"
+    },
     "LETTER_SPACING_BASE": {
       "value": -0.2
     },
@@ -224,6 +248,18 @@
     },
     "LINE_HEIGHT_XXL": {
       "value": 42
+    },
+    "MONTEVERDE": {
+      "value": "#00a698"
+    },
+    "NARA": {
+      "value": "#ffe7e0"
+    },
+    "PANJIN": {
+      "value": "#d1435b"
+    },
+    "PETRA": {
+      "value": "#ffab95"
     },
     "PINK_100": {
       "value": "#FFBFD7"
@@ -288,6 +324,30 @@
     "RED_900": {
       "value": "#a80300"
     },
+    "SEGANO": {
+      "value": "#d0eeec"
+    },
+    "SKY_BLUE": {
+      "value": "#0770e3"
+    },
+    "SKY_BLUE_SHADE_01": {
+      "value": "#084eb2"
+    },
+    "SKY_BLUE_SHADE_02": {
+      "value": "#042759"
+    },
+    "SKY_BLUE_SHADE_03": {
+      "value": "#02122c"
+    },
+    "SKY_BLUE_TINT_01": {
+      "value": "#6d9feb"
+    },
+    "SKY_BLUE_TINT_02": {
+      "value": "#9dc0f2"
+    },
+    "SKY_BLUE_TINT_03": {
+      "value": "#cddff8"
+    },
     "SPACING_BASE": {
       "value": 16
     },
@@ -308,6 +368,12 @@
     },
     "SPACING_XXL": {
       "value": 40
+    },
+    "TOCHIGI": {
+      "value": "#e1ddec"
+    },
+    "VALENSOLE": {
+      "value": "#a59bc8"
     },
     "WHITE": {
       "value": "#ffffff"
@@ -463,6 +529,20 @@
       "originalValue": "{!CAROUSEL_INDICATOR_DOT_SIZE_SM}",
       "name": "CAROUSEL_INDICATOR_DOT_SIZE_SM"
     },
+    "COLOR_ABISKO": {
+      "type": "color",
+      "category": "colors",
+      "value": "#5a489bff",
+      "originalValue": "{!ABISKO}",
+      "name": "COLOR_ABISKO"
+    },
+    "COLOR_BAGAN": {
+      "type": "color",
+      "category": "colors",
+      "value": "#ffebd0ff",
+      "originalValue": "{!BAGAN}",
+      "name": "COLOR_BAGAN"
+    },
     "COLOR_BLUE_100": {
       "type": "color",
       "category": "colors",
@@ -532,6 +612,27 @@
       "value": "#005567ff",
       "originalValue": "{!BLUE_900}",
       "name": "COLOR_BLUE_900"
+    },
+    "COLOR_BUNOL": {
+      "type": "color",
+      "category": "colors",
+      "value": "#ff7b59ff",
+      "originalValue": "{!BUNOL}",
+      "name": "COLOR_BUNOL"
+    },
+    "COLOR_ERFOUD": {
+      "type": "color",
+      "category": "colors",
+      "value": "#ffb54dff",
+      "originalValue": "{!ERFOUD}",
+      "name": "COLOR_ERFOUD"
+    },
+    "COLOR_GLENCOE": {
+      "type": "color",
+      "category": "colors",
+      "value": "#73cec6ff",
+      "originalValue": "{!GLENCOE}",
+      "name": "COLOR_GLENCOE"
     },
     "COLOR_GRAY_100": {
       "type": "color",
@@ -674,6 +775,55 @@
       "value": "#006638ff",
       "originalValue": "{!GREEN_900}",
       "name": "COLOR_GREEN_900"
+    },
+    "COLOR_HARBOUR": {
+      "type": "color",
+      "category": "colors",
+      "value": "#f6dde1ff",
+      "originalValue": "{!HARBOUR}",
+      "name": "COLOR_HARBOUR"
+    },
+    "COLOR_HILLIER": {
+      "type": "color",
+      "category": "colors",
+      "value": "#e18b96ff",
+      "originalValue": "{!HILLIER}",
+      "name": "COLOR_HILLIER"
+    },
+    "COLOR_KOLKATA": {
+      "type": "color",
+      "category": "colors",
+      "value": "#ff9400ff",
+      "originalValue": "{!KOLKATA}",
+      "name": "COLOR_KOLKATA"
+    },
+    "COLOR_MONTEVERDE": {
+      "type": "color",
+      "category": "colors",
+      "value": "#00a698ff",
+      "originalValue": "{!MONTEVERDE}",
+      "name": "COLOR_MONTEVERDE"
+    },
+    "COLOR_NARA": {
+      "type": "color",
+      "category": "colors",
+      "value": "#ffe7e0ff",
+      "originalValue": "{!NARA}",
+      "name": "COLOR_NARA"
+    },
+    "COLOR_PANJIN": {
+      "type": "color",
+      "category": "colors",
+      "value": "#d1435bff",
+      "originalValue": "{!PANJIN}",
+      "name": "COLOR_PANJIN"
+    },
+    "COLOR_PETRA": {
+      "type": "color",
+      "category": "colors",
+      "value": "#ffab95ff",
+      "originalValue": "{!PETRA}",
+      "name": "COLOR_PETRA"
     },
     "COLOR_PINK_100": {
       "type": "color",
@@ -821,6 +971,90 @@
       "value": "#a80300ff",
       "originalValue": "{!RED_900}",
       "name": "COLOR_RED_900"
+    },
+    "COLOR_SEGANO": {
+      "type": "color",
+      "category": "colors",
+      "value": "#d0eeecff",
+      "originalValue": "{!SEGANO}",
+      "name": "COLOR_SEGANO"
+    },
+    "COLOR_SKY_BLUE": {
+      "type": "color",
+      "category": "colors",
+      "value": "#0770e3ff",
+      "originalValue": "{!SKY_BLUE}",
+      "name": "COLOR_SKY_BLUE"
+    },
+    "COLOR_SKY_BLUE_SHADE_01": {
+      "type": "color",
+      "category": "colors",
+      "value": "#084eb2ff",
+      "originalValue": "{!SKY_BLUE_SHADE_01}",
+      "name": "COLOR_SKY_BLUE_SHADE_01"
+    },
+    "COLOR_SKY_BLUE_SHADE_02": {
+      "type": "color",
+      "category": "colors",
+      "value": "#042759ff",
+      "originalValue": "{!SKY_BLUE_SHADE_02}",
+      "name": "COLOR_SKY_BLUE_SHADE_02"
+    },
+    "COLOR_SKY_BLUE_SHADE_03": {
+      "type": "color",
+      "category": "colors",
+      "value": "#02122cff",
+      "originalValue": "{!SKY_BLUE_SHADE_03}",
+      "name": "COLOR_SKY_BLUE_SHADE_03"
+    },
+    "COLOR_SKY_BLUE_TINT_01": {
+      "type": "color",
+      "category": "colors",
+      "value": "#6d9febff",
+      "originalValue": "{!SKY_BLUE_TINT_01}",
+      "name": "COLOR_SKY_BLUE_TINT_01"
+    },
+    "COLOR_SKY_BLUE_TINT_02": {
+      "type": "color",
+      "category": "colors",
+      "value": "#9dc0f2ff",
+      "originalValue": "{!SKY_BLUE_TINT_02}",
+      "name": "COLOR_SKY_BLUE_TINT_02"
+    },
+    "COLOR_SKY_BLUE_TINT_03": {
+      "type": "color",
+      "category": "colors",
+      "value": "#cddff8ff",
+      "originalValue": "{!SKY_BLUE_TINT_03}",
+      "name": "COLOR_SKY_BLUE_TINT_03"
+    },
+    "COLOR_SYSTEM_GREEN": {
+      "type": "color",
+      "category": "colors",
+      "value": "#00a698ff",
+      "originalValue": "{!MONTEVERDE}",
+      "name": "COLOR_SYSTEM_GREEN"
+    },
+    "COLOR_SYSTEM_RED": {
+      "type": "color",
+      "category": "colors",
+      "value": "#d1435bff",
+      "originalValue": "{!PANJIN}",
+      "name": "COLOR_SYSTEM_RED"
+    },
+    "COLOR_TOCHIGI": {
+      "type": "color",
+      "category": "colors",
+      "value": "#e1ddecff",
+      "originalValue": "{!TOCHIGI}",
+      "name": "COLOR_TOCHIGI"
+    },
+    "COLOR_VALENSOLE": {
+      "type": "color",
+      "category": "colors",
+      "value": "#a59bc8ff",
+      "originalValue": "{!VALENSOLE}",
+      "name": "COLOR_VALENSOLE"
     },
     "COLOR_WHITE": {
       "type": "color",
@@ -1421,6 +1655,8 @@
     "CAROUSEL_INDICATOR_DOT_SIZE_BASE",
     "CAROUSEL_INDICATOR_DOT_SIZE_MD",
     "CAROUSEL_INDICATOR_DOT_SIZE_SM",
+    "COLOR_ABISKO",
+    "COLOR_BAGAN",
     "COLOR_BLUE_100",
     "COLOR_BLUE_200",
     "COLOR_BLUE_300",
@@ -1431,6 +1667,9 @@
     "COLOR_BLUE_700",
     "COLOR_BLUE_800",
     "COLOR_BLUE_900",
+    "COLOR_BUNOL",
+    "COLOR_ERFOUD",
+    "COLOR_GLENCOE",
     "COLOR_GRAY_100",
     "COLOR_GRAY_200",
     "COLOR_GRAY_300",
@@ -1451,6 +1690,13 @@
     "COLOR_GREEN_700",
     "COLOR_GREEN_800",
     "COLOR_GREEN_900",
+    "COLOR_HARBOUR",
+    "COLOR_HILLIER",
+    "COLOR_KOLKATA",
+    "COLOR_MONTEVERDE",
+    "COLOR_NARA",
+    "COLOR_PANJIN",
+    "COLOR_PETRA",
     "COLOR_PINK_100",
     "COLOR_PINK_200",
     "COLOR_PINK_300",
@@ -1472,6 +1718,18 @@
     "COLOR_RED_700",
     "COLOR_RED_800",
     "COLOR_RED_900",
+    "COLOR_SEGANO",
+    "COLOR_SKY_BLUE",
+    "COLOR_SKY_BLUE_SHADE_01",
+    "COLOR_SKY_BLUE_SHADE_02",
+    "COLOR_SKY_BLUE_SHADE_03",
+    "COLOR_SKY_BLUE_TINT_01",
+    "COLOR_SKY_BLUE_TINT_02",
+    "COLOR_SKY_BLUE_TINT_03",
+    "COLOR_SYSTEM_GREEN",
+    "COLOR_SYSTEM_RED",
+    "COLOR_TOCHIGI",
+    "COLOR_VALENSOLE",
     "COLOR_WHITE",
     "COLOR_YELLOW_100",
     "COLOR_YELLOW_200",
