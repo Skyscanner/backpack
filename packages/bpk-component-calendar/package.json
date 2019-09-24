@@ -18,7 +18,7 @@
     "bpk-mixins": "^18.1.6",
     "bpk-react-utils": "^2.8.0",
     "bpk-tokens": "^27.11.0",
-    "date-fns": "^1.29.0",
+    "date-fns": "^2.3.0",
     "prop-types": "^15.6.2"
   },
   "devDependencies": {
