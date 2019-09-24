@@ -2,6 +2,14 @@
 
 [Unreleased changes](./UNRELEASED.yaml).
 
+# 2019-09-24 - New brand colours
+
+**Added:**
+
+ - bpk-tokens: 27.10.1 => 27.11.0
+   - NEW BRAND COLOURS ADDED 🎉
+
+
 # 2019-09-19 - Border Radius XS value uses `4px`
 
 **Fixed:**

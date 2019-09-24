@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-scrollable-calendar",
-  "version": "1.0.49",
+  "version": "1.0.50",
   "description": "Backpack scrollable calendar component.",
   "main": "index.js",
   "repository": {
@@ -13,9 +13,9 @@
     "react": "^15.0.0 || ^16.0.0"
   },
   "dependencies": {
-    "bpk-component-calendar": "^5.0.49",
-    "bpk-component-text": "^1.1.28",
-    "bpk-mixins": "^18.1.5",
+    "bpk-component-calendar": "^5.0.50",
+    "bpk-component-text": "^1.1.29",
+    "bpk-mixins": "^18.1.6",
     "bpk-react-utils": "^2.8.0",
     "prop-types": "^15.5.8",
     "react-window": "^1.5.0"
