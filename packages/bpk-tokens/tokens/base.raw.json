@@ -1443,6 +1443,20 @@
       "originalValue": "{!GRAY_100}",
       "name": "CALENDAR_DAY_DISABLED_COLOR"
     },
+    "CALENDAR_DAY_FOCUSED_BORDER_COLOR": {
+      "category": "calendar",
+      "value": "rgb(7, 112, 227)",
+      "type": "color",
+      "originalValue": "{!SKY_BLUE}",
+      "name": "CALENDAR_DAY_FOCUSED_BORDER_COLOR"
+    },
+    "CALENDAR_DAY_FOCUSED_COLOR": {
+      "category": "calendar",
+      "value": "rgb(7, 112, 227)",
+      "type": "color",
+      "originalValue": "{!SKY_BLUE}",
+      "name": "CALENDAR_DAY_FOCUSED_COLOR"
+    },
     "CALENDAR_DAY_HOVER_BACKGROUND_COLOR": {
       "category": "calendar",
       "value": "rgb(241, 242, 248)",
@@ -1474,9 +1488,9 @@
     },
     "CALENDAR_DAY_SELECTED_BACKGROUND_COLOR": {
       "category": "calendar",
-      "value": "rgb(0, 140, 168)",
+      "value": "rgb(8, 78, 178)",
       "type": "color",
-      "originalValue": "{!BLUE_700}",
+      "originalValue": "{!SKY_BLUE_SHADE_01}",
       "name": "CALENDAR_DAY_SELECTED_BACKGROUND_COLOR"
     },
     "CALENDAR_DAY_SELECTED_COLOR": {
@@ -3562,6 +3576,8 @@
     "CALENDAR_DAY_COLOR",
     "CALENDAR_DAY_DISABLED_BACKGROUND_COLOR",
     "CALENDAR_DAY_DISABLED_COLOR",
+    "CALENDAR_DAY_FOCUSED_BORDER_COLOR",
+    "CALENDAR_DAY_FOCUSED_COLOR",
     "CALENDAR_DAY_HOVER_BACKGROUND_COLOR",
     "CALENDAR_DAY_HOVER_COLOR",
     "CALENDAR_DAY_OUTSIDE_BACKGROUND_COLOR",

@@ -32,7 +32,15 @@
       "type": "color"
     },
     "CALENDAR_DAY_SELECTED_BACKGROUND_COLOR": {
-      "value": "{!BLUE_700}",
+      "value": "{!SKY_BLUE_SHADE_01}",
+      "type": "color"
+    },
+    "CALENDAR_DAY_FOCUSED_COLOR": {
+      "value": "{!SKY_BLUE}",
+      "type": "color"
+    },
+    "CALENDAR_DAY_FOCUSED_BORDER_COLOR": {
+      "value": "{!SKY_BLUE}",
       "type": "color"
     },
     "CALENDAR_DAY_HOVER_COLOR": {
