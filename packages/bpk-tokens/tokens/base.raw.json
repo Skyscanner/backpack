@@ -2212,10 +2212,10 @@
     },
     "FORM_VALIDATION_BACKGROUND_COLOR": {
       "category": "forms",
-      "value": "rgb(255, 84, 82)",
+      "value": "rgb(209, 67, 91)",
       "type": "color",
       "deprecated": true,
-      "originalValue": "{!RED_500}",
+      "originalValue": "{!PANJIN}",
       "name": "FORM_VALIDATION_BACKGROUND_COLOR"
     },
     "FORM_VALIDATION_CHECKBOX_ARROW_LEFT": {
@@ -2228,9 +2228,9 @@
     },
     "FORM_VALIDATION_COLOR": {
       "category": "forms",
-      "value": "rgb(255, 84, 82)",
+      "value": "rgb(209, 67, 91)",
       "type": "color",
-      "originalValue": "{!RED_500}",
+      "originalValue": "{!PANJIN}",
       "name": "FORM_VALIDATION_COLOR"
     },
     "FORM_VALIDATION_MARGIN": {
@@ -2435,8 +2435,8 @@
     "HORIZONTAL_NAV_BAR_SELECTED_COLOR": {
       "type": "color",
       "category": "horizontal-nav",
-      "value": "rgb(0, 178, 214)",
-      "originalValue": "{!BLUE_500}",
+      "value": "rgb(7, 112, 227)",
+      "originalValue": "{!SKY_BLUE}",
       "name": "HORIZONTAL_NAV_BAR_SELECTED_COLOR"
     },
     "HORIZONTAL_NAV_LINK_ACTIVE_COLOR": {
@@ -2449,22 +2449,22 @@
     "HORIZONTAL_NAV_LINK_COLOR": {
       "type": "color",
       "category": "horizontal-nav",
-      "value": "rgb(17, 18, 54)",
-      "originalValue": "{!GRAY_900}",
+      "value": "rgb(104, 105, 127)",
+      "originalValue": "{!GRAY_500}",
       "name": "HORIZONTAL_NAV_LINK_COLOR"
     },
     "HORIZONTAL_NAV_LINK_HOVER_COLOR": {
       "type": "color",
       "category": "horizontal-nav",
-      "value": "rgb(59, 52, 75)",
-      "originalValue": "{!GRAY_800}",
+      "value": "rgb(68, 69, 96)",
+      "originalValue": "{!GRAY_700}",
       "name": "HORIZONTAL_NAV_LINK_HOVER_COLOR"
     },
     "HORIZONTAL_NAV_LINK_SELECTED_COLOR": {
       "type": "color",
       "category": "horizontal-nav",
-      "value": "rgb(0, 178, 214)",
-      "originalValue": "{!BLUE_500}",
+      "value": "rgb(7, 112, 227)",
+      "originalValue": "{!SKY_BLUE}",
       "name": "HORIZONTAL_NAV_LINK_SELECTED_COLOR"
     },
     "ICON_SIZE_LG": {

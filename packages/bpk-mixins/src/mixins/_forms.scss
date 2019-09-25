@@ -87,7 +87,7 @@
 
 @mixin bpk-input--valid {
   padding-right: $bpk-spacing-base;
-  background: $bpk-color-white url(map-get($bpk-icons-sm, tick-green-500)) no-repeat right $bpk-spacing-sm center;
+  background: $bpk-color-white url(map-get($bpk-icons-sm, tick-monteverde)) no-repeat right $bpk-spacing-sm center;
   background-size: $bpk-spacing-md $bpk-spacing-md;
 
   @include bpk-rtl {
@@ -109,10 +109,10 @@
 
 @mixin bpk-input--invalid {
   padding-right: $bpk-spacing-base;
-  background: $bpk-color-white url(map-get($bpk-icons-sm, exclamation-circle-red-500)) no-repeat right $bpk-spacing-sm center;
+  background: $bpk-color-white url(map-get($bpk-icons-sm, exclamation-circle-panjin)) no-repeat right $bpk-spacing-sm center;
   background-size: $bpk-spacing-md $bpk-spacing-md;
 
-  @include bpk-themeable-property(border-color, --bpk-input-invalid-border-color, $bpk-color-red-500);
+  @include bpk-themeable-property(border-color, --bpk-input-invalid-border-color, $bpk-form-validation-color);
 
   @include bpk-rtl {
     padding-right: $bpk-input-padding-x;
@@ -445,7 +445,7 @@
   background: $bpk-color-white url(map-get($bpk-icons-sm, arrow-down-gray-700)) no-repeat right $bpk-spacing-sm center;
   background-size: $bpk-spacing-md $bpk-spacing-md;
 
-  @include bpk-themeable-property(border-color, --bpk-select-invalid-border-color, $bpk-color-red-500);
+  @include bpk-themeable-property(border-color, --bpk-select-invalid-border-color, $bpk-form-validation-color);
 
   @include bpk-rtl {
     padding-right: $bpk-input-padding-x;
@@ -769,7 +769,7 @@
   transition: opacity $bpk-duration-sm ease-in-out, transform $bpk-duration-sm ease-in-out;
   opacity: 0;
 
-  @include bpk-themeable-property(color, --bpk-form-validation-text-color, $bpk-form-validation-background-color);
+  @include bpk-themeable-property(color, --bpk-form-validation-text-color, $bpk-form-validation-color);
 }
 
 /// Form validation transition state. Modifies the bpk-form-validation mixin.
@@ -865,9 +865,9 @@
 ///   }
 
 @mixin bpk-textarea--invalid {
-  background: $bpk-color-white url(map-get($bpk-icons-sm, exclamation-circle-red-500)) no-repeat right $bpk-spacing-sm center;
+  background: $bpk-color-white url(map-get($bpk-icons-sm, exclamation-circle-panjin)) no-repeat right $bpk-spacing-sm center;
 
-  @include bpk-themeable-property(border-color, --bpk-textarea-invalid-border-color, $bpk-color-red-500);
+  @include bpk-themeable-property(border-color, --bpk-textarea-invalid-border-color, $bpk-form-validation-color);
 
   @include bpk-rtl {
     padding-right: $bpk-input-padding-x;
