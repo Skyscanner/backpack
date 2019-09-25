@@ -146,12 +146,12 @@
       "deprecated": true
     },
     "FORM_VALIDATION_BACKGROUND_COLOR": {
-      "value": "{!RED_500}",
+      "value": "{!PANJIN}",
       "type": "color",
       "deprecated": true
     },
     "FORM_VALIDATION_COLOR": {
-      "value": "{!RED_500}",
+      "value": "{!PANJIN}",
       "type": "color"
     },
     "FORM_VALIDATION_ARROW_SIZE": {
@@ -169,7 +169,7 @@
       "type": "size"
     },
     "REQUIRED_COLOR": {
-      "value": "{!RED_500}",
+      "value": "{!PANJIN}",
       "type": "color"
     }
   }

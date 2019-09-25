@@ -2198,10 +2198,10 @@
     },
     "FORM_VALIDATION_BACKGROUND_COLOR": {
       "category": "forms",
-      "value": "rgb(255, 84, 82)",
+      "value": "rgb(209, 67, 91)",
       "type": "color",
       "deprecated": true,
-      "originalValue": "{!RED_500}",
+      "originalValue": "{!PANJIN}",
       "name": "FORM_VALIDATION_BACKGROUND_COLOR"
     },
     "FORM_VALIDATION_CHECKBOX_ARROW_LEFT": {
@@ -2214,9 +2214,9 @@
     },
     "FORM_VALIDATION_COLOR": {
       "category": "forms",
-      "value": "rgb(255, 84, 82)",
+      "value": "rgb(209, 67, 91)",
       "type": "color",
-      "originalValue": "{!RED_500}",
+      "originalValue": "{!PANJIN}",
       "name": "FORM_VALIDATION_COLOR"
     },
     "FORM_VALIDATION_MARGIN": {
@@ -2958,9 +2958,9 @@
     },
     "REQUIRED_COLOR": {
       "category": "forms",
-      "value": "rgb(255, 84, 82)",
+      "value": "rgb(209, 67, 91)",
       "type": "color",
-      "originalValue": "{!RED_500}",
+      "originalValue": "{!PANJIN}",
       "name": "REQUIRED_COLOR"
     },
     "SCRIM_BACKGROUND_COLOR": {
