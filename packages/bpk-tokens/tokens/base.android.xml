@@ -108,6 +108,14 @@
   <color name="COLOR_SKY_BLUE_TINT_01" category="colors">#ff6d9feb</color>
   <color name="COLOR_SKY_BLUE_TINT_02" category="colors">#ff9dc0f2</color>
   <color name="COLOR_SKY_BLUE_TINT_03" category="colors">#ffcddff8</color>
+  <color name="COLOR_SKY_GRAY" category="colors">#ff111236</color>
+  <color name="COLOR_SKY_GRAY_TINT_01" category="colors">#ff444560</color>
+  <color name="COLOR_SKY_GRAY_TINT_02" category="colors">#ff68697f</color>
+  <color name="COLOR_SKY_GRAY_TINT_03" category="colors">#ff8f90a0</color>
+  <color name="COLOR_SKY_GRAY_TINT_04" category="colors">#ffb2b2bf</color>
+  <color name="COLOR_SKY_GRAY_TINT_05" category="colors">#ffcdcdd7</color>
+  <color name="COLOR_SKY_GRAY_TINT_06" category="colors">#ffdddde5</color>
+  <color name="COLOR_SKY_GRAY_TINT_07" category="colors">#fff1f2f8</color>
   <color name="COLOR_SYSTEM_GREEN" category="colors">#ff00a698</color>
   <color name="COLOR_SYSTEM_RED" category="colors">#ffd1435b</color>
   <color name="COLOR_TOCHIGI" category="colors">#ffe1ddec</color>

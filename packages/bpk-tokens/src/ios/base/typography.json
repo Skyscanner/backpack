@@ -7,12 +7,12 @@
       "category": "typesettings"
     },
     "TEXT_PRIMARY_LIGHT_COLOR": {
-      "value": "{!GRAY_900}",
+      "value": "{!SKY_GRAY}",
       "type": "color",
       "category": "text-colors"
     },
     "TEXT_SECONDARY_LIGHT_COLOR": {
-      "value": "{!GRAY_700}",
+      "value": "{!SKY_GRAY_TINT_01}",
       "type": "color",
       "category": "text-colors"
     },
