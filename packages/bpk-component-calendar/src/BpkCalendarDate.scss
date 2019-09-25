@@ -64,7 +64,7 @@
   }
 
   &--focused:not(:disabled):not(.bpk-calendar-date--selected) {
-    box-shadow: 0 0 0 2px $bpk-state-selected-background-color inset;
+    box-shadow: 0 0 0 2px $bpk-color-sky-blue inset;
     box-shadow: 0 0 0 2px var(--bpk-calendar-date-focused-border-color, $bpk-color-sky-blue) inset;
 
     @include bpk-themeable-property(color, --bpk-calendar-date-text-focus-color, $bpk-color-sky-blue);
