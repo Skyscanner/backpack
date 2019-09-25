@@ -90,10 +90,22 @@
 /*!******************!*\
   !*** ./index.js ***!
   \******************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-eval("throw new Error(\"Module build failed (from /Users/olivercurtis/Documents/Backpack/backpack/node_modules/babel-loader/lib/index.js):\\nTypeError: (0 , _repeat(...).default) is not a function\\n    at Generator._getIndent (/Users/olivercurtis/Documents/Backpack/backpack/node_modules/@babel/core/node_modules/@babel/generator/lib/printer.js:242:34)\\n    at Generator._printComment (/Users/olivercurtis/Documents/Backpack/backpack/node_modules/@babel/core/node_modules/@babel/generator/lib/printer.js:474:40)\\n    at Generator._printComments (/Users/olivercurtis/Documents/Backpack/backpack/node_modules/@babel/core/node_modules/@babel/generator/lib/printer.js:489:12)\\n    at Generator._printTrailingComments (/Users/olivercurtis/Documents/Backpack/backpack/node_modules/@babel/core/node_modules/@babel/generator/lib/printer.js:396:10)\\n    at Generator.print (/Users/olivercurtis/Documents/Backpack/backpack/node_modules/@babel/core/node_modules/@babel/generator/lib/printer.js:302:10)\\n    at Generator.printJoin (/Users/olivercurtis/Documents/Backpack/backpack/node_modules/@babel/core/node_modules/@babel/generator/lib/printer.js:362:12)\\n    at Generator.printSequence (/Users/olivercurtis/Documents/Backpack/backpack/node_modules/@babel/core/node_modules/@babel/generator/lib/printer.js:414:17)\\n    at Generator.Program (/Users/olivercurtis/Documents/Backpack/backpack/node_modules/@babel/core/node_modules/@babel/generator/lib/generators/base.js:27:8)\\n    at withSource (/Users/olivercurtis/Documents/Backpack/backpack/node_modules/@babel/core/node_modules/@babel/generator/lib/printer.js:299:19)\\n    at Buffer.withSource (/Users/olivercurtis/Documents/Backpack/backpack/node_modules/@babel/core/node_modules/@babel/generator/lib/buffer.js:191:5)\");\n\n//# sourceURL=webpack:///./index.js?");
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _index_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index.scss */ \"./index.scss\");\n/* harmony import */ var _index_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_index_scss__WEBPACK_IMPORTED_MODULE_0__);\n/*\n * Backpack - Skyscanner's Design System\n *\n * Copyright 2016-2019 Skyscanner Ltd\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *   http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n\n\n(() => {\n  if (typeof document === 'undefined') {\n    return;\n  }\n\n  const classNames = []; // touch support\n\n  classNames.push('ontouchstart' in window || window.DocumentTouch && document instanceof DocumentTouch // eslint-disable-line\n  ? 'touch-support' : 'no-touch-support'); // add more feature tests here...\n\n  document.documentElement.className += ` ${classNames.map(className => `bpk-${className}`).join(' ')}`;\n})();\n\n//# sourceURL=webpack:///./index.js?");
+
+/***/ }),
+
+/***/ "./index.scss":
+/*!********************!*\
+  !*** ./index.scss ***!
+  \********************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("// extracted by mini-css-extract-plugin\n\n//# sourceURL=webpack:///./index.scss?");
 
 /***/ })
 
