@@ -24,7 +24,7 @@ $bpk-autosuggest-list-item-active-background-color: rgb(221, 221, 229) !default;
 /// @group autosuggest
 $bpk-autosuggest-list-item-highlighted-background-color: rgb(241, 242, 248) !default;
 /// @group badges
-$bpk-badge-background-color: rgb(255, 187, 0) !default;
+$bpk-badge-background-color: rgb(255, 181, 77) !default;
 /// @group badges
 $bpk-badge-centered-vertical-align: text-bottom !default;
 /// @group badges
@@ -40,7 +40,7 @@ $bpk-banner-alert-children-padding-x: .75rem !default;
 /// @group notifications
 $bpk-banner-alert-children-padding-y: .375rem !default;
 /// @group notifications
-$bpk-banner-alert-error-color: rgb(255, 84, 82) !default;
+$bpk-banner-alert-error-color: rgb(209, 67, 91) !default;
 /// @group notifications
 $bpk-banner-alert-expand-icon-fill: rgb(68, 69, 96) !default;
 /// @group notifications
@@ -54,9 +54,9 @@ $bpk-banner-alert-header-padding-y: .375rem !default;
 /// @group notifications
 $bpk-banner-alert-neutral-color: rgb(104, 105, 127) !default;
 /// @group notifications
-$bpk-banner-alert-success-color: rgb(0, 215, 117) !default;
+$bpk-banner-alert-success-color: rgb(0, 166, 152) !default;
 /// @group notifications
-$bpk-banner-alert-warn-color: rgb(255, 187, 0) !default;
+$bpk-banner-alert-warn-color: rgb(255, 181, 77) !default;
 /// @group radii
 $bpk-border-radius-pill: 1.125rem !default;
 /// @group radii
@@ -318,11 +318,15 @@ $bpk-calendar-day-active-color: rgb(17, 18, 54) !default;
 /// @group calendar
 $bpk-calendar-day-background-color: rgb(255, 255, 255) !default;
 /// @group calendar
-$bpk-calendar-day-color: rgb(0, 178, 214) !default;
+$bpk-calendar-day-color: rgb(7, 112, 227) !default;
 /// @group calendar
 $bpk-calendar-day-disabled-background-color: rgb(255, 255, 255) !default;
 /// @group calendar
 $bpk-calendar-day-disabled-color: rgb(221, 221, 229) !default;
+/// @group calendar
+$bpk-calendar-day-focused-border-color: rgb(7, 112, 227) !default;
+/// @group calendar
+$bpk-calendar-day-focused-color: rgb(7, 112, 227) !default;
 /// @group calendar
 $bpk-calendar-day-hover-background-color: rgb(241, 242, 248) !default;
 /// @group calendar
@@ -332,7 +336,7 @@ $bpk-calendar-day-outside-background-color: rgb(255, 255, 255) !default;
 /// @group calendar
 $bpk-calendar-day-outside-color: rgb(178, 178, 191) !default;
 /// @group calendar
-$bpk-calendar-day-selected-background-color: rgb(0, 140, 168) !default;
+$bpk-calendar-day-selected-background-color: rgb(8, 78, 178) !default;
 /// @group calendar
 $bpk-calendar-day-selected-color: rgb(255, 255, 255) !default;
 /// @group calendar
@@ -340,13 +344,13 @@ $bpk-calendar-day-size: 2.250rem !default;
 /// @group calendar
 $bpk-calendar-day-spacing: .375rem !default;
 /// @group calendar
-$bpk-calendar-nav-icon-active-fill: rgb(0, 140, 168) !default;
+$bpk-calendar-nav-icon-active-fill: rgb(4, 39, 89) !default;
 /// @group calendar
 $bpk-calendar-nav-icon-disabled-fill: rgb(221, 221, 229) !default;
 /// @group calendar
-$bpk-calendar-nav-icon-fill: rgb(0, 178, 214) !default;
+$bpk-calendar-nav-icon-fill: rgb(7, 112, 227) !default;
 /// @group calendar
-$bpk-calendar-nav-icon-hover-fill: rgb(0, 157, 189) !default;
+$bpk-calendar-nav-icon-hover-fill: rgb(8, 78, 178) !default;
 /// @group calendar
 $bpk-calendar-padding: .75rem !default;
 /// @group cards
@@ -356,7 +360,7 @@ $bpk-card-color: rgb(17, 18, 54) !default;
 /// @group cards
 $bpk-card-padding: .75rem !default;
 /// @group forms
-$bpk-checkbox-checked-tick-color: rgb(0, 140, 168) !default;
+$bpk-checkbox-checked-tick-color: rgb(7, 112, 227) !default;
 /// @group colors
 $bpk-color-abisko: rgb(90, 72, 155) !default;
 /// @group colors
@@ -752,7 +756,7 @@ $bpk-rating-sm-height: .75rem * 3 !default;
 /// @group ratings
 $bpk-rating-sm-width: .75rem * 3 !default;
 /// @group forms
-$bpk-required-color: rgb(255, 84, 82) !default;
+$bpk-required-color: rgb(209, 67, 91) !default;
 /// @group scrims
 $bpk-scrim-background-color: rgb(178, 178, 191) !default;
 /// @group scrims
@@ -806,7 +810,7 @@ $bpk-spacing-xs: .375rem !default;
 /// @group spacings
 $bpk-spacing-xxl: 2.625rem !default;
 /// @group states
-$bpk-state-selected-background-color: rgb(0, 140, 168) !default;
+$bpk-state-selected-background-color: rgb(8, 78, 178) !default;
 /// @group forms
 $bpk-textarea-min-height: 2.625rem * 2 !default;
 /// @group font-sizes

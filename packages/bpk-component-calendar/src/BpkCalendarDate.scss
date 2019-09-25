@@ -59,15 +59,15 @@
     font-weight: bold;
     cursor: default;
 
-    @include bpk-themeable-property(background-color, --bpk-calendar-date-selected-background-color, $bpk-state-selected-background-color);
+    @include bpk-themeable-property(background-color, --bpk-calendar-date-selected-background-color, $bpk-calendar-day-selected-background-color);
     @include bpk-themeable-property(color, --bpk-calendar-date-text-selected-color, $bpk-calendar-day-selected-color);
   }
 
   &--focused:not(:disabled):not(.bpk-calendar-date--selected) {
-    box-shadow: 0 0 0 2px $bpk-state-selected-background-color inset;
-    box-shadow: 0 0 0 2px var(--bpk-calendar-date-focused-border-color, $bpk-state-selected-background-color) inset;
+    box-shadow: 0 0 0 2px $bpk-calendar-day-focused-border-color inset;
+    box-shadow: 0 0 0 2px var(--bpk-calendar-date-focused-border-color, $bpk-calendar-day-focused-border-color) inset;
 
-    @include bpk-themeable-property(color, --bpk-calendar-date-text-focus-color, $bpk-state-selected-background-color);
+    @include bpk-themeable-property(color, --bpk-calendar-date-text-focus-color, $bpk-calendar-day-focused-color);
   }
 
   &:disabled {

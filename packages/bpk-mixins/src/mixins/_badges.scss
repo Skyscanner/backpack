@@ -129,7 +129,7 @@
 ///   }
 
 @mixin bpk-badge--success {
-  @include bpk-themeable-property(background-color, --bpk-badge-success-background-color, $bpk-color-green-500);
+  @include bpk-themeable-property(background-color, --bpk-badge-success-background-color, $bpk-color-monteverde);
 }
 
 /// Destructive badge. Modifies the bpk-badge mixin.
@@ -145,7 +145,7 @@
 @mixin bpk-badge--destructive {
   color: $bpk-color-white;
 
-  @include bpk-themeable-property(background-color, --bpk-badge-destructive-background-color, $bpk-color-red-500);
+  @include bpk-themeable-property(background-color, --bpk-badge-destructive-background-color, $bpk-color-panjin);
 }
 
 /// Light badge. Modifies the bpk-badge mixin.

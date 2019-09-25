@@ -8,7 +8,7 @@
   },
   "props": {
     "STATE_SELECTED_BACKGROUND_COLOR": {
-      "value": "{!BLUE_700}"
+      "value": "{!SKY_BLUE_SHADE_01}"
     }
   }
 }

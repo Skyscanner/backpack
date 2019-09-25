@@ -20,7 +20,7 @@
 export const autosuggestListBackgroundColor = "rgb(255, 255, 255)";
 export const autosuggestListItemActiveBackgroundColor = "rgb(221, 221, 229)";
 export const autosuggestListItemHighlightedBackgroundColor = "rgb(241, 242, 248)";
-export const badgeBackgroundColor = "rgb(255, 187, 0)";
+export const badgeBackgroundColor = "rgb(255, 181, 77)";
 export const badgeCenteredVerticalAlign = "text-bottom";
 export const badgePaddingX = ".375rem";
 export const badgePaddingY = "0";
@@ -28,15 +28,15 @@ export const bannerAlertBackgroundColor = "rgb(255, 255, 255)";
 export const bannerAlertChildrenColor = "rgb(104, 105, 127)";
 export const bannerAlertChildrenPaddingX = ".75rem";
 export const bannerAlertChildrenPaddingY = ".375rem";
-export const bannerAlertErrorColor = "rgb(255, 84, 82)";
+export const bannerAlertErrorColor = "rgb(209, 67, 91)";
 export const bannerAlertExpandIconFill = "rgb(68, 69, 96)";
 export const bannerAlertHeaderExpandableActiveBackgroundColor = "rgb(221, 221, 229)";
 export const bannerAlertHeaderExpandableHoverBackgroundColor = "rgb(241, 242, 248)";
 export const bannerAlertHeaderPaddingX = ".75rem";
 export const bannerAlertHeaderPaddingY = ".375rem";
 export const bannerAlertNeutralColor = "rgb(104, 105, 127)";
-export const bannerAlertSuccessColor = "rgb(0, 215, 117)";
-export const bannerAlertWarnColor = "rgb(255, 187, 0)";
+export const bannerAlertSuccessColor = "rgb(0, 166, 152)";
+export const bannerAlertWarnColor = "rgb(255, 181, 77)";
 export const borderRadiusPill = "1.125rem";
 export const borderRadiusPillLg = "1.3125rem";
 export const borderRadiusSm = ".375rem";
@@ -167,26 +167,28 @@ export const buttonTextAlign = "center";
 export const calendarDayActiveBackgroundColor = "rgb(221, 221, 229)";
 export const calendarDayActiveColor = "rgb(17, 18, 54)";
 export const calendarDayBackgroundColor = "rgb(255, 255, 255)";
-export const calendarDayColor = "rgb(0, 178, 214)";
+export const calendarDayColor = "rgb(7, 112, 227)";
 export const calendarDayDisabledBackgroundColor = "rgb(255, 255, 255)";
 export const calendarDayDisabledColor = "rgb(221, 221, 229)";
+export const calendarDayFocusedBorderColor = "rgb(7, 112, 227)";
+export const calendarDayFocusedColor = "rgb(7, 112, 227)";
 export const calendarDayHoverBackgroundColor = "rgb(241, 242, 248)";
 export const calendarDayHoverColor = "rgb(68, 69, 96)";
 export const calendarDayOutsideBackgroundColor = "rgb(255, 255, 255)";
 export const calendarDayOutsideColor = "rgb(178, 178, 191)";
-export const calendarDaySelectedBackgroundColor = "rgb(0, 140, 168)";
+export const calendarDaySelectedBackgroundColor = "rgb(8, 78, 178)";
 export const calendarDaySelectedColor = "rgb(255, 255, 255)";
 export const calendarDaySize = "2.250rem";
 export const calendarDaySpacing = ".375rem";
-export const calendarNavIconActiveFill = "rgb(0, 140, 168)";
+export const calendarNavIconActiveFill = "rgb(4, 39, 89)";
 export const calendarNavIconDisabledFill = "rgb(221, 221, 229)";
-export const calendarNavIconFill = "rgb(0, 178, 214)";
-export const calendarNavIconHoverFill = "rgb(0, 157, 189)";
+export const calendarNavIconFill = "rgb(7, 112, 227)";
+export const calendarNavIconHoverFill = "rgb(8, 78, 178)";
 export const calendarPadding = ".75rem";
 export const cardBackgroundColor = "rgb(255, 255, 255)";
 export const cardColor = "rgb(17, 18, 54)";
 export const cardPadding = ".75rem";
-export const checkboxCheckedTickColor = "rgb(0, 140, 168)";
+export const checkboxCheckedTickColor = "rgb(7, 112, 227)";
 export const colorAbisko = "rgb(90, 72, 155)";
 export const colorBagan = "rgb(255, 235, 208)";
 export const colorBlue100 = "rgb(203, 238, 245)";
@@ -384,7 +386,7 @@ export const ratingLgHeight = "1.875rem * 2";
 export const ratingLgWidth = "1.875rem * 2";
 export const ratingSmHeight = ".75rem * 3";
 export const ratingSmWidth = ".75rem * 3";
-export const requiredColor = "rgb(255, 84, 82)";
+export const requiredColor = "rgb(209, 67, 91)";
 export const scrimBackgroundColor = "rgb(178, 178, 191)";
 export const scrimDarkBackgroundColor = "rgb(17, 18, 54)";
 export const scrimDarkOpacity = ".95";
@@ -411,7 +413,7 @@ export const spacingSm = ".75rem";
 export const spacingXl = "2.250rem";
 export const spacingXs = ".375rem";
 export const spacingXxl = "2.625rem";
-export const stateSelectedBackgroundColor = "rgb(0, 140, 168)";
+export const stateSelectedBackgroundColor = "rgb(8, 78, 178)";
 export const textareaMinHeight = "2.625rem * 2";
 export const textBaseFontSize = "1rem";
 export const textBaseFontWeight = "400";
@@ -602,6 +604,8 @@ calendarDayBackgroundColor,
 calendarDayColor,
 calendarDayDisabledBackgroundColor,
 calendarDayDisabledColor,
+calendarDayFocusedBorderColor,
+calendarDayFocusedColor,
 calendarDayHoverBackgroundColor,
 calendarDayHoverColor,
 calendarDayOutsideBackgroundColor,

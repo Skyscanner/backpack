@@ -27,15 +27,15 @@
       "type": "color"
     },
     "BANNER_ALERT_SUCCESS_COLOR": {
-      "value": "{!GREEN_500}",
+      "value": "{!MONTEVERDE}",
       "type": "color"
     },
     "BANNER_ALERT_WARN_COLOR": {
-      "value": "{!YELLOW_500}",
+      "value": "{!ERFOUD}",
       "type": "color"
     },
     "BANNER_ALERT_ERROR_COLOR": {
-      "value": "{!RED_500}",
+      "value": "{!PANJIN}",
       "type": "color"
     },
     "BANNER_ALERT_NEUTRAL_COLOR": {

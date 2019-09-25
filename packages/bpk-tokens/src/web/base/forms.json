@@ -7,7 +7,7 @@
   },
   "props": {
     "CHECKBOX_CHECKED_TICK_COLOR": {
-      "value": "{!BLUE_700}",
+      "value": "{!SKY_BLUE}",
       "type": "color"
     },
     "RADIO_CHECKED_CIRCLE_COLOR": {
@@ -169,7 +169,7 @@
       "type": "size"
     },
     "REQUIRED_COLOR": {
-      "value": "{!RED_500}",
+      "value": "{!PANJIN}",
       "type": "color"
     }
   }
