@@ -2903,8 +2903,8 @@
     "PRIMARY_GRADIENT": {
       "type": "background-image",
       "category": "colors",
-      "value": "linear-gradient(135deg, #00b2d6 0%, #02DDD8 100%)",
-      "originalValue": "linear-gradient(135deg, {!BLUE_500} 0%, {!PRIMARY_GRADIENT_LIGHT} 100%)",
+      "value": "linear-gradient(135deg, #0770e3 0%, #0770e3 100%)",
+      "originalValue": "linear-gradient(135deg, {!SKY_BLUE} 0%, {!SKY_BLUE} 100%)",
       "name": "PRIMARY_GRADIENT"
     },
     "P_MARGIN_BOTTOM": {
