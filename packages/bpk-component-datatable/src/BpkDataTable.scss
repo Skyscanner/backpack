@@ -21,11 +21,11 @@
 $bpk-border-size-datatable: $bpk-border-size-xl * 2;
 
 @mixin bpk-datatable-border-left() {
-  @include _bpk-border-left($bpk-border-size-datatable, $bpk-color-blue-500, inset);
+  @include _bpk-border-left($bpk-border-size-datatable, $bpk-color-sky-blue, inset);
 }
 
 @mixin bpk-datatable-border-right() {
-  @include _bpk-border-right($bpk-border-size-datatable, $bpk-color-blue-500, inset);
+  @include _bpk-border-right($bpk-border-size-datatable, $bpk-color-sky-blue, inset);
 }
 
 .bpk-data-table {
