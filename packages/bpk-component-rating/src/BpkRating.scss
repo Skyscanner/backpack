@@ -80,18 +80,18 @@
   &--high-rating {
     align-self: center;
 
-    @include bpk-themeable-property(background-color, --bpk-rating-high-color, $bpk-color-green-600);
+    @include bpk-themeable-property(background-color, --bpk-rating-high-color, $bpk-color-monteverde);
   }
 
   &--medium-rating {
     align-self: center;
 
-    @include bpk-themeable-property(background-color, --bpk-rating-medium-color, $bpk-color-yellow-600);
+    @include bpk-themeable-property(background-color, --bpk-rating-medium-color, $bpk-color-kolkata);
   }
 
   &--low-rating {
     align-self: center;
 
-    @include bpk-themeable-property(background-color, --bpk-rating-low-color, $bpk-color-red-600);
+    @include bpk-themeable-property(background-color, --bpk-rating-low-color, $bpk-color-panjin);
   }
 }

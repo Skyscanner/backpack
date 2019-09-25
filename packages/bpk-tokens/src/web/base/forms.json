@@ -11,7 +11,7 @@
       "type": "color"
     },
     "RADIO_CHECKED_CIRCLE_COLOR": {
-      "value": "{!BLUE_700}",
+      "value": "{!SKY_BLUE}",
       "type": "color"
     },
     "INPUT_HEIGHT": {

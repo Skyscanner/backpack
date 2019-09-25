@@ -31,18 +31,18 @@
   box-shadow: $bpk-button-selected-box-shadow;
   cursor: auto;
 
-  @include bpk-themeable-property(background-color, --bpk-pagination-selected-background-color, $bpk-color-blue-700);
-  @include bpk-border-lg($bpk-color-blue-700);
-  @include bpk-border-lg(var(--bpk-pagination-selected-background-color, $bpk-color-blue-700));
+  @include bpk-themeable-property(background-color, --bpk-pagination-selected-background-color, $bpk-color-sky-blue-shade-02);
+  @include bpk-border-lg($bpk-color-sky-blue-shade-02);
+  @include bpk-border-lg(var(--bpk-pagination-selected-background-color, $bpk-color-sky-blue-shade-02));
 
   @include bpk-hover {
     background-image: $bpk-button-selected-hover-background-image;
     color: $bpk-button-selected-hover-color;
     box-shadow: $bpk-button-selected-hover-box-shadow;
 
-    @include bpk-themeable-property(background-color, --bpk-pagination-selected-background-color, $bpk-color-blue-700);
-    @include bpk-border-lg($bpk-color-blue-700);
-    @include bpk-border-lg(var(--bpk-pagination-selected-background-color, $bpk-color-blue-700));
+    @include bpk-themeable-property(background-color, --bpk-pagination-selected-background-color, $bpk-color-sky-blue-shade-02);
+    @include bpk-border-lg($bpk-color-sky-blue-shade-02);
+    @include bpk-border-lg(var(--bpk-pagination-selected-background-color, $bpk-color-sky-blue-shade-02));
   }
 
   &:active {
@@ -50,9 +50,9 @@
     color: $bpk-button-selected-active-color;
     box-shadow: $bpk-button-selected-active-box-shadow;
 
-    @include bpk-themeable-property(background-color, --bpk-pagination-selected-background-color, $bpk-color-blue-700);
-    @include bpk-border-lg($bpk-color-blue-700);
-    @include bpk-border-lg(var(--bpk-pagination-selected-background-color, $bpk-color-blue-700));
+    @include bpk-themeable-property(background-color, --bpk-pagination-selected-background-color, $bpk-color-sky-blue-shade-02);
+    @include bpk-border-lg($bpk-color-sky-blue-shade-02);
+    @include bpk-border-lg(var(--bpk-pagination-selected-background-color, $bpk-color-sky-blue-shade-02));
   }
 
   &:disabled {

@@ -43,7 +43,7 @@
   }
 
   &--filled {
-    @include bpk-themeable-property(fill, --bpk-star-rating-filled-color, $bpk-color-yellow-500);
+    @include bpk-themeable-property(fill, --bpk-star-rating-filled-color, $bpk-color-erfoud);
   }
 
   &__container {

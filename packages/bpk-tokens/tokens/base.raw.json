@@ -2636,10 +2636,10 @@
       "name": "LINE_HEIGHT_XXL"
     },
     "LINK_ACTIVE_COLOR": {
-      "value": "rgb(17, 18, 54)",
+      "value": "rgb(4, 39, 89)",
       "type": "color",
       "category": "text-colors",
-      "originalValue": "{!GRAY_900}",
+      "originalValue": "{!SKY_BLUE_SHADE_02}",
       "name": "LINK_ACTIVE_COLOR"
     },
     "LINK_ALTERNATE_ACTIVE_COLOR": {
@@ -2671,17 +2671,17 @@
       "name": "LINK_ALTERNATE_VISITED_COLOR"
     },
     "LINK_COLOR": {
-      "value": "rgb(0, 178, 214)",
+      "value": "rgb(7, 112, 227)",
       "type": "color",
       "category": "text-colors",
-      "originalValue": "{!BLUE_500}",
+      "originalValue": "{!SKY_BLUE}",
       "name": "LINK_COLOR"
     },
     "LINK_HOVER_COLOR": {
-      "value": "rgb(68, 69, 96)",
+      "value": "rgb(8, 78, 178)",
       "type": "color",
       "category": "text-colors",
-      "originalValue": "{!GRAY_700}",
+      "originalValue": "{!SKY_BLUE_SHADE_01}",
       "name": "LINK_HOVER_COLOR"
     },
     "LINK_HOVER_TEXT_DECORATION": {
@@ -2699,10 +2699,10 @@
       "name": "LINK_TEXT_DECORATION"
     },
     "LINK_VISITED_COLOR": {
-      "value": "rgb(0, 140, 168)",
+      "value": "rgb(7, 112, 227)",
       "type": "color",
       "category": "text-colors",
-      "originalValue": "{!BLUE_700}",
+      "originalValue": "{!SKY_BLUE}",
       "name": "LINK_VISITED_COLOR"
     },
     "LINK_WHITE_ACTIVE_COLOR": {
@@ -2923,9 +2923,9 @@
     },
     "RADIO_CHECKED_CIRCLE_COLOR": {
       "category": "forms",
-      "value": "rgb(0, 140, 168)",
+      "value": "rgb(7, 112, 227)",
       "type": "color",
-      "originalValue": "{!BLUE_700}",
+      "originalValue": "{!SKY_BLUE}",
       "name": "RADIO_CHECKED_CIRCLE_COLOR"
     },
     "RATING_BASE_HEIGHT": {
