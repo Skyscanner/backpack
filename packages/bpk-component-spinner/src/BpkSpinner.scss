@@ -22,7 +22,7 @@
   @include bpk-spinner;
 
   &--primary {
-    @include bpk-themeable-property(fill, --bpk-spinner-primary-color, $bpk-color-blue-500);
+    @include bpk-themeable-property(fill, --bpk-spinner-primary-color, $bpk-color-sky-blue);
   }
 
   &--light {

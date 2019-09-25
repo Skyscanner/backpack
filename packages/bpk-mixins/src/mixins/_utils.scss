@@ -194,7 +194,7 @@
 ///     @include bpk-apply-primary-color-to(color);
 ///   }
 @mixin bpk-apply-primary-color-to($property) {
-  @include bpk-themeable-property($property, --bpk-primary-color, $bpk-color-blue-500);
+  @include bpk-themeable-property($property, --bpk-primary-color, $bpk-color-sky-blue);
 }
 
 /// Create a property that uses the Backpack primary color gray-50.

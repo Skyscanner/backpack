@@ -246,7 +246,7 @@
       "category": "spacings"
     },
     "LINK_COLOR": {
-      "value": "{!BLUE_500}",
+      "value": "{!SKY_BLUE}",
       "type": "color",
       "category": "text-colors"
     },
@@ -256,7 +256,7 @@
       "category": "text-decorations"
     },
     "LINK_HOVER_COLOR": {
-      "value": "{!GRAY_700}",
+      "value": "{!SKY_BLUE_SHADE_01}",
       "type": "color",
       "category": "text-colors"
     },
@@ -266,12 +266,12 @@
       "category": "text-decorations"
     },
     "LINK_ACTIVE_COLOR": {
-      "value": "{!GRAY_900}",
+      "value": "{!SKY_BLUE_SHADE_02}",
       "type": "color",
       "category": "text-colors"
     },
     "LINK_VISITED_COLOR": {
-      "value": "{!BLUE_700}",
+      "value": "{!SKY_BLUE}",
       "type": "color",
       "category": "text-colors"
     },
