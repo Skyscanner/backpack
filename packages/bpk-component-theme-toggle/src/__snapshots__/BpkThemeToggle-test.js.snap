@@ -15,7 +15,7 @@ exports[`BpkThemeToggle should render correctly 1`] = `
     id="theme-select"
     name="theme-select"
     onChange={[Function]}
-    value=""
+    value="Azure"
   >
     <option
       hidden={true}
