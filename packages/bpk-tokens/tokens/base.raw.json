@@ -1558,9 +1558,9 @@
     },
     "CHECKBOX_CHECKED_TICK_COLOR": {
       "category": "forms",
-      "value": "rgb(0, 140, 168)",
+      "value": "rgb(7, 112, 227)",
       "type": "color",
-      "originalValue": "{!BLUE_700}",
+      "originalValue": "{!SKY_BLUE}",
       "name": "CHECKBOX_CHECKED_TICK_COLOR"
     },
     "COLOR_ABISKO": {
@@ -2958,9 +2958,9 @@
     },
     "REQUIRED_COLOR": {
       "category": "forms",
-      "value": "rgb(255, 84, 82)",
+      "value": "rgb(209, 67, 91)",
       "type": "color",
-      "originalValue": "{!RED_500}",
+      "originalValue": "{!PANJIN}",
       "name": "REQUIRED_COLOR"
     },
     "SCRIM_BACKGROUND_COLOR": {
