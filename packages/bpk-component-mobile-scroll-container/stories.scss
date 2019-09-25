@@ -20,10 +20,10 @@
 
 .bpk-stories-mobile-scroll-container {
   &__leading-indicator {
-    @include bpk-scroll-indicator-left($bpk-color-blue-500);
+    @include bpk-scroll-indicator-left($bpk-color-sky-blue);
   }
 
   &__trailing-indicator {
-    @include bpk-scroll-indicator-right($bpk-color-blue-500);
+    @include bpk-scroll-indicator-right($bpk-color-sky-blue);
   }
 }

@@ -28,11 +28,11 @@
   }
 
   &__chart--small {
-    @include bpk-icon(chart, $bpk-color-green-500, small);
+    @include bpk-icon(chart, $bpk-color-monteverde, small);
   }
 
   &__chart--large {
-    @include bpk-icon(chart, $bpk-color-green-500, large);
+    @include bpk-icon(chart, $bpk-color-monteverde, large);
   }
 }
 
@@ -42,7 +42,7 @@
     background-color: $bpk-color-gray-100;
 
     @include bpk-breakpoint-mobile {
-      background-color: $bpk-color-green-500;
+      background-color: $bpk-color-monteverde;
     }
   }
 
@@ -51,7 +51,7 @@
     background-color: $bpk-color-gray-100;
 
     @include bpk-breakpoint-tablet {
-      background-color: $bpk-color-green-500;
+      background-color: $bpk-color-monteverde;
     }
   }
 
@@ -60,7 +60,7 @@
     background-color: $bpk-color-gray-100;
 
     @include bpk-breakpoint-tablet-only {
-      background-color: $bpk-color-green-500;
+      background-color: $bpk-color-monteverde;
     }
   }
 
@@ -69,7 +69,7 @@
     background-color: $bpk-color-gray-100;
 
     @include bpk-breakpoint-above-mobile {
-      background-color: $bpk-color-green-500;
+      background-color: $bpk-color-monteverde;
     }
   }
 
@@ -78,7 +78,7 @@
     background-color: $bpk-color-gray-100;
 
     @include bpk-breakpoint-above-tablet {
-      background-color: $bpk-color-green-500;
+      background-color: $bpk-color-monteverde;
     }
   }
 }
