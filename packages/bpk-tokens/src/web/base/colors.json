@@ -1,7 +1,5 @@
 {
-  "imports": [
-    "./aliases.json"
-  ],
+  "imports": ["./aliases.json"],
   "global": {
     "type": "color",
     "category": "colors"
@@ -82,52 +80,92 @@
     "COLOR_SKY_BLUE_TINT_03": {
       "value": "{!SKY_BLUE_TINT_03}"
     },
+    "COLOR_SKY_GRAY_TINT_07": {
+      "value": "{!SKY_GRAY_TINT_07}"
+    },
+    "COLOR_SKY_GRAY_TINT_06": {
+      "value": "{!SKY_GRAY_TINT_06}"
+    },
+    "COLOR_SKY_GRAY_TINT_05": {
+      "value": "{!SKY_GRAY_TINT_05}"
+    },
+    "COLOR_SKY_GRAY_TINT_04": {
+      "value": "{!SKY_GRAY_TINT_04}"
+    },
+    "COLOR_SKY_GRAY_TINT_03": {
+      "value": "{!SKY_GRAY_TINT_03}"
+    },
+    "COLOR_SKY_GRAY_TINT_02": {
+      "value": "{!SKY_GRAY_TINT_02}"
+    },
+    "COLOR_SKY_GRAY_TINT_01": {
+      "value": "{!SKY_GRAY_TINT_01}"
+    },
+    "COLOR_SKY_GRAY": {
+      "value": "{!SKY_GRAY}"
+    },
     "COLOR_BLUE_50": {
+      "deprecated": true,
       "value": "{!BLUE_50}"
     },
     "COLOR_BLUE_100": {
+      "deprecated": true,
       "value": "{!BLUE_100}"
     },
     "COLOR_BLUE_200": {
+      "deprecated": true,
       "value": "{!BLUE_200}"
     },
     "COLOR_BLUE_300": {
+      "deprecated": true,
       "value": "{!BLUE_300}"
     },
     "COLOR_BLUE_400": {
+      "deprecated": true,
       "value": "{!BLUE_400}"
     },
     "COLOR_BLUE_500": {
+      "deprecated": true,
       "value": "{!BLUE_500}"
     },
     "COLOR_BLUE_600": {
+      "deprecated": true,
       "value": "{!BLUE_600}"
     },
     "COLOR_BLUE_700": {
+      "deprecated": true,
       "value": "{!BLUE_700}"
     },
     "COLOR_BLUE_800": {
+      "deprecated": true,
       "value": "{!BLUE_800}"
     },
     "COLOR_BLUE_900": {
+      "deprecated": true,
       "value": "{!BLUE_900}"
     },
     "COLOR_GRAY_50": {
+      "deprecated": true,
       "value": "{!GRAY_50}"
     },
     "COLOR_GRAY_100": {
+      "deprecated": true,
       "value": "{!GRAY_100}"
     },
     "COLOR_GRAY_200": {
+      "deprecated": true,
       "value": "{!GRAY_200}"
     },
     "COLOR_GRAY_300": {
+      "deprecated": true,
       "value": "{!GRAY_300}"
     },
     "COLOR_GRAY_400": {
+      "deprecated": true,
       "value": "{!GRAY_400}"
     },
     "COLOR_GRAY_500": {
+      "deprecated": true,
       "value": "{!GRAY_500}"
     },
     "COLOR_GRAY_600": {
@@ -135,6 +173,7 @@
       "value": "{!GRAY_600}"
     },
     "COLOR_GRAY_700": {
+      "deprecated": true,
       "value": "{!GRAY_700}"
     },
     "COLOR_GRAY_800": {
@@ -142,96 +181,127 @@
       "value": "{!GRAY_800}"
     },
     "COLOR_GRAY_900": {
+      "deprecated": true,
       "value": "{!GRAY_900}"
     },
     "COLOR_GREEN_50": {
+      "deprecated": true,
       "value": "{!GREEN_50}"
     },
     "COLOR_GREEN_100": {
+      "deprecated": true,
       "value": "{!GREEN_100}"
     },
     "COLOR_GREEN_200": {
+      "deprecated": true,
       "value": "{!GREEN_200}"
     },
     "COLOR_GREEN_300": {
+      "deprecated": true,
       "value": "{!GREEN_300}"
     },
     "COLOR_GREEN_400": {
+      "deprecated": true,
       "value": "{!GREEN_400}"
     },
     "COLOR_GREEN_500": {
+      "deprecated": true,
       "value": "{!GREEN_500}"
     },
     "COLOR_GREEN_600": {
+      "deprecated": true,
       "value": "{!GREEN_600}"
     },
     "COLOR_GREEN_700": {
+      "deprecated": true,
       "value": "{!GREEN_700}"
     },
     "COLOR_GREEN_800": {
+      "deprecated": true,
       "value": "{!GREEN_800}"
     },
     "COLOR_GREEN_900": {
+      "deprecated": true,
       "value": "{!GREEN_900}"
     },
     "COLOR_RED_50": {
+      "deprecated": true,
       "value": "{!RED_50}"
     },
     "COLOR_RED_100": {
+      "deprecated": true,
       "value": "{!RED_100}"
     },
     "COLOR_RED_200": {
+      "deprecated": true,
       "value": "{!RED_200}"
     },
     "COLOR_RED_300": {
+      "deprecated": true,
       "value": "{!RED_300}"
     },
     "COLOR_RED_400": {
+      "deprecated": true,
       "value": "{!RED_400}"
     },
     "COLOR_RED_500": {
+      "deprecated": true,
       "value": "{!RED_500}"
     },
     "COLOR_RED_600": {
+      "deprecated": true,
       "value": "{!RED_600}"
     },
     "COLOR_RED_700": {
+      "deprecated": true,
       "value": "{!RED_700}"
     },
     "COLOR_RED_800": {
+      "deprecated": true,
       "value": "{!RED_800}"
     },
     "COLOR_RED_900": {
+      "deprecated": true,
       "value": "{!RED_900}"
     },
     "COLOR_YELLOW_50": {
+      "deprecated": true,
       "value": "{!YELLOW_50}"
     },
     "COLOR_YELLOW_100": {
+      "deprecated": true,
       "value": "{!YELLOW_100}"
     },
     "COLOR_YELLOW_200": {
+      "deprecated": true,
       "value": "{!YELLOW_200}"
     },
     "COLOR_YELLOW_300": {
+      "deprecated": true,
       "value": "{!YELLOW_300}"
     },
     "COLOR_YELLOW_400": {
+      "deprecated": true,
       "value": "{!YELLOW_400}"
     },
     "COLOR_YELLOW_500": {
+      "deprecated": true,
       "value": "{!YELLOW_500}"
     },
     "COLOR_YELLOW_600": {
+      "deprecated": true,
       "value": "{!YELLOW_600}"
     },
     "COLOR_YELLOW_700": {
+      "deprecated": true,
       "value": "{!YELLOW_700}"
     },
     "COLOR_YELLOW_800": {
+      "deprecated": true,
       "value": "{!YELLOW_800}"
     },
     "COLOR_YELLOW_900": {
+      "deprecated": true,
       "value": "{!YELLOW_900}"
     },
     "PRIMARY_GRADIENT": {

@@ -61,7 +61,6 @@
   <color name="COLOR_GRAY_600" category="colors">#ff696179</color>
   <color name="COLOR_GRAY_700" category="colors">#ff444560</color>
   <color name="COLOR_GRAY_800" category="colors">#ff3b344b</color>
-  <color name="COLOR_GRAY_900" category="colors">#ff111236</color>
   <color name="COLOR_GREEN_100" category="colors">#ffcbf5e2</color>
   <color name="COLOR_GREEN_200" category="colors">#ffafedd1</color>
   <color name="COLOR_GREEN_300" category="colors">#ff80e8b9</color>
@@ -108,6 +107,7 @@
   <color name="COLOR_SKY_BLUE_TINT_01" category="colors">#ff6d9feb</color>
   <color name="COLOR_SKY_BLUE_TINT_02" category="colors">#ff9dc0f2</color>
   <color name="COLOR_SKY_BLUE_TINT_03" category="colors">#ffcddff8</color>
+  <color name="COLOR_SKY_GRAY" category="colors">#ff111236</color>
   <color name="COLOR_SYSTEM_GREEN" category="colors">#ff00a698</color>
   <color name="COLOR_SYSTEM_RED" category="colors">#ffd1435b</color>
   <color name="COLOR_TOCHIGI" category="colors">#ffe1ddec</color>

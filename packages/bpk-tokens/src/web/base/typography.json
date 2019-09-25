@@ -9,12 +9,12 @@
       "category": "typesettings"
     },
     "FONT_COLOR_BASE": {
-      "value": "{!GRAY_900}",
+      "value": "{!SKY_GRAY}",
       "type": "color",
       "category": "text-colors"
     },
     "TEXT_COLOR_PRIMARY_LIGHT": {
-      "value": "{!GRAY_900}",
+      "value": "{!SKY_GRAY}",
       "deprecated": true,
       "type": "color",
       "category": "text-colors"
@@ -26,7 +26,7 @@
       "category": "text-colors"
     },
     "TEXT_PRIMARY_LIGHT_COLOR": {
-      "value": "{!GRAY_900}",
+      "value": "{!SKY_GRAY}",
       "type": "color",
       "category": "text-colors"
     },

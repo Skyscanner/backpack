@@ -4,7 +4,7 @@
   ],
   "props": {
     "SHADOW_SM_COLOR": {
-      "value": "{!GRAY_900}",
+      "value": "{!SKY_GRAY}",
       "type": "color",
       "category": "box-shadows"
     },
@@ -29,7 +29,7 @@
       "category": "box-shadows"
     },
     "SHADOW_LG_COLOR": {
-      "value": "{!GRAY_900}",
+      "value": "{!SKY_GRAY}",
       "type": "color",
       "category": "box-shadows"
     },
@@ -54,7 +54,7 @@
       "category": "box-shadows"
     },
     "SHADOW_XL_COLOR": {
-      "value": "{!GRAY_900}",
+      "value": "{!SKY_GRAY}",
       "type": "color",
       "category": "box-shadows",
       "deprecated": true

@@ -292,13 +292,6 @@
     {
       "type": "color",
       "category": "colors",
-      "value": "#111236ff",
-      "originalValue": "{!GRAY_900}",
-      "name": "colorGray900"
-    },
-    {
-      "type": "color",
-      "category": "colors",
       "value": "#cbf5e2ff",
       "originalValue": "{!GREEN_100}",
       "name": "colorGreen100"
@@ -621,6 +614,13 @@
     {
       "type": "color",
       "category": "colors",
+      "value": "#111236ff",
+      "originalValue": "{!SKY_GRAY}",
+      "name": "colorSkyGray"
+    },
+    {
+      "type": "color",
+      "category": "colors",
       "value": "#00a698ff",
       "originalValue": "{!MONTEVERDE}",
       "name": "colorSystemGreen"
@@ -888,7 +888,7 @@
       "value": "#111236ff",
       "type": "color",
       "category": "box-shadows",
-      "originalValue": "{!GRAY_900}",
+      "originalValue": "{!SKY_GRAY}",
       "name": "shadowLgColor"
     },
     {
@@ -923,7 +923,7 @@
       "value": "#111236ff",
       "type": "color",
       "category": "box-shadows",
-      "originalValue": "{!GRAY_900}",
+      "originalValue": "{!SKY_GRAY}",
       "name": "shadowSmColor"
     },
     {
@@ -959,7 +959,7 @@
       "type": "color",
       "category": "box-shadows",
       "deprecated": true,
-      "originalValue": "{!GRAY_900}",
+      "originalValue": "{!SKY_GRAY}",
       "name": "shadowXlColor"
     },
     {
@@ -1140,7 +1140,7 @@
       "value": "#111236ff",
       "type": "color",
       "category": "text-colors",
-      "originalValue": "{!GRAY_900}",
+      "originalValue": "{!SKY_GRAY}",
       "name": "textPrimaryLightColor"
     },
     {
@@ -1291,7 +1291,7 @@
       "category": "touchables",
       "value": "#111236ff",
       "type": "color",
-      "originalValue": "{!GRAY_900}",
+      "originalValue": "{!SKY_GRAY}",
       "name": "touchableOverlayColor"
     },
     {
@@ -1306,7 +1306,7 @@
       "value": "#111236ff",
       "type": "color",
       "deprecated": true,
-      "originalValue": "{!GRAY_900}",
+      "originalValue": "{!SKY_GRAY}",
       "name": "underlayColor"
     },
     {

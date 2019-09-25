@@ -17,7 +17,7 @@
       "category": "typesettings"
     },
     "TEXT_PRIMARY_LIGHT_COLOR": {
-      "value": "{!GRAY_900}",
+      "value": "{!SKY_GRAY}",
       "type": "color",
       "category": "text-colors"
     },

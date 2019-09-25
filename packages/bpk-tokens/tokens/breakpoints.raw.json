@@ -282,6 +282,30 @@
     "SKY_BLUE_TINT_03": {
       "value": "#cddff8"
     },
+    "SKY_GRAY": {
+      "value": "#111236"
+    },
+    "SKY_GRAY_TINT_01": {
+      "value": "#444560"
+    },
+    "SKY_GRAY_TINT_02": {
+      "value": "#68697F"
+    },
+    "SKY_GRAY_TINT_03": {
+      "value": "#8f90a0"
+    },
+    "SKY_GRAY_TINT_04": {
+      "value": "#B2B2BF"
+    },
+    "SKY_GRAY_TINT_05": {
+      "value": "#CDCDD7"
+    },
+    "SKY_GRAY_TINT_06": {
+      "value": "#DDDDE5"
+    },
+    "SKY_GRAY_TINT_07": {
+      "value": "#F1F2F8"
+    },
     "SPACING_BASE": {
       "value": "1.5rem"
     },

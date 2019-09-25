@@ -141,8 +141,8 @@
       "deprecated": true,
       "value": "{!GRAY_800}"
     },
-    "COLOR_GRAY_900": {
-      "value": "{!GRAY_900}"
+    "COLOR_SKY_GRAY": {
+      "value": "{!SKY_GRAY}"
     },
     "COLOR_GREEN_50": {
       "value": "{!GREEN_50}"

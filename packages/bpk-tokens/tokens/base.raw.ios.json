@@ -327,6 +327,30 @@
     "SKY_BLUE_TINT_03": {
       "value": "#cddff8"
     },
+    "SKY_GRAY": {
+      "value": "#111236"
+    },
+    "SKY_GRAY_TINT_01": {
+      "value": "#444560"
+    },
+    "SKY_GRAY_TINT_02": {
+      "value": "#68697F"
+    },
+    "SKY_GRAY_TINT_03": {
+      "value": "#8f90a0"
+    },
+    "SKY_GRAY_TINT_04": {
+      "value": "#B2B2BF"
+    },
+    "SKY_GRAY_TINT_05": {
+      "value": "#CDCDD7"
+    },
+    "SKY_GRAY_TINT_06": {
+      "value": "#DDDDE5"
+    },
+    "SKY_GRAY_TINT_07": {
+      "value": "#F1F2F8"
+    },
     "SPACING_BASE": {
       "value": 16
     },
@@ -678,13 +702,6 @@
       "originalValue": "{!GRAY_800}",
       "name": "COLOR_GRAY_800"
     },
-    "COLOR_GRAY_900": {
-      "type": "color",
-      "category": "colors",
-      "value": "#111236ff",
-      "originalValue": "{!GRAY_900}",
-      "name": "COLOR_GRAY_900"
-    },
     "COLOR_GREEN_100": {
       "type": "color",
       "category": "colors",
@@ -1007,6 +1024,13 @@
       "originalValue": "{!SKY_BLUE_TINT_03}",
       "name": "COLOR_SKY_BLUE_TINT_03"
     },
+    "COLOR_SKY_GRAY": {
+      "type": "color",
+      "category": "colors",
+      "value": "#111236ff",
+      "originalValue": "{!SKY_GRAY}",
+      "name": "COLOR_SKY_GRAY"
+    },
     "COLOR_SYSTEM_GREEN": {
       "type": "color",
       "category": "colors",
@@ -1277,7 +1301,7 @@
       "value": "#111236ff",
       "type": "color",
       "category": "box-shadows",
-      "originalValue": "{!GRAY_900}",
+      "originalValue": "{!SKY_GRAY}",
       "name": "SHADOW_LG_COLOR"
     },
     "SHADOW_LG_OFFSET_HEIGHT": {
@@ -1312,7 +1336,7 @@
       "value": "#111236ff",
       "type": "color",
       "category": "box-shadows",
-      "originalValue": "{!GRAY_900}",
+      "originalValue": "{!SKY_GRAY}",
       "name": "SHADOW_SM_COLOR"
     },
     "SHADOW_SM_OFFSET_HEIGHT": {
@@ -1348,7 +1372,7 @@
       "type": "color",
       "category": "box-shadows",
       "deprecated": true,
-      "originalValue": "{!GRAY_900}",
+      "originalValue": "{!SKY_GRAY}",
       "name": "SHADOW_XL_COLOR"
     },
     "SHADOW_XL_OFFSET_HEIGHT": {
@@ -1529,7 +1553,7 @@
       "value": "#111236ff",
       "type": "color",
       "category": "text-colors",
-      "originalValue": "{!GRAY_900}",
+      "originalValue": "{!SKY_GRAY}",
       "name": "TEXT_PRIMARY_LIGHT_COLOR"
     },
     "TEXT_SECONDARY_LIGHT_COLOR": {
@@ -1680,7 +1704,7 @@
       "category": "touchables",
       "value": "#111236ff",
       "type": "color",
-      "originalValue": "{!GRAY_900}",
+      "originalValue": "{!SKY_GRAY}",
       "name": "TOUCHABLE_OVERLAY_COLOR"
     },
     "TOUCHABLE_OVERLAY_OPACITY": {
@@ -1695,7 +1719,7 @@
       "value": "#111236ff",
       "type": "color",
       "deprecated": true,
-      "originalValue": "{!GRAY_900}",
+      "originalValue": "{!SKY_GRAY}",
       "name": "UNDERLAY_COLOR"
     },
     "UNDERLAY_OPACITY": {
@@ -1749,7 +1773,6 @@
     "COLOR_GRAY_600",
     "COLOR_GRAY_700",
     "COLOR_GRAY_800",
-    "COLOR_GRAY_900",
     "COLOR_GREEN_100",
     "COLOR_GREEN_200",
     "COLOR_GREEN_300",
@@ -1796,6 +1819,7 @@
     "COLOR_SKY_BLUE_TINT_01",
     "COLOR_SKY_BLUE_TINT_02",
     "COLOR_SKY_BLUE_TINT_03",
+    "COLOR_SKY_GRAY",
     "COLOR_SYSTEM_GREEN",
     "COLOR_SYSTEM_RED",
     "COLOR_TOCHIGI",

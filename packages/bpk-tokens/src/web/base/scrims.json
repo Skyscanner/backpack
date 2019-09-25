@@ -23,7 +23,7 @@
       "type": "number"
     },
     "SCRIM_DARK_BACKGROUND_COLOR": {
-      "value": "{!GRAY_900}",
+      "value": "{!SKY_GRAY}",
       "type": "color"
     },
     "SCRIM_DARK_OPACITY": {

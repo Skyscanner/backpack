@@ -58,7 +58,6 @@ export const colorGray500 = "rgb(104, 105, 127)";
 export const colorGray600 = "rgb(105, 97, 121)";
 export const colorGray700 = "rgb(68, 69, 96)";
 export const colorGray800 = "rgb(59, 52, 75)";
-export const colorGray900 = "rgb(17, 18, 54)";
 export const colorGreen100 = "rgb(203, 245, 226)";
 export const colorGreen200 = "rgb(175, 237, 209)";
 export const colorGreen300 = "rgb(128, 232, 185)";
@@ -105,6 +104,7 @@ export const colorSkyBlueShade03 = "rgb(2, 18, 44)";
 export const colorSkyBlueTint01 = "rgb(109, 159, 235)";
 export const colorSkyBlueTint02 = "rgb(157, 192, 242)";
 export const colorSkyBlueTint03 = "rgb(205, 223, 248)";
+export const colorSkyGray = "rgb(17, 18, 54)";
 export const colorSystemGreen = "rgb(0, 166, 152)";
 export const colorSystemRed = "rgb(209, 67, 91)";
 export const colorTochigi = "rgb(225, 221, 236)";
@@ -231,7 +231,6 @@ colorGray500,
 colorGray600,
 colorGray700,
 colorGray800,
-colorGray900,
 colorGreen100,
 colorGreen200,
 colorGreen300,
@@ -278,6 +277,7 @@ colorSkyBlueShade03,
 colorSkyBlueTint01,
 colorSkyBlueTint02,
 colorSkyBlueTint03,
+colorSkyGray,
 colorSystemGreen,
 colorSystemRed,
 colorTochigi,

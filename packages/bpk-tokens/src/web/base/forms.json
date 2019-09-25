@@ -43,7 +43,7 @@
       "type": "background"
     },
     "INPUT_COLOR": {
-      "value": "{!GRAY_900}",
+      "value": "{!SKY_GRAY}",
       "type": "color"
     },
     "INPUT_PLACEHOLDER_COLOR": {
@@ -99,7 +99,7 @@
       "type": "radius"
     },
     "SELECT_COLOR": {
-      "value": "{!GRAY_900}",
+      "value": "{!SKY_GRAY}",
       "type": "color"
     },
     "SELECT_DISABLED_BORDER_COLOR": {
@@ -115,7 +115,7 @@
       "type": "size"
     },
     "LABEL_COLOR": {
-      "value": "{!GRAY_900}",
+      "value": "{!SKY_GRAY}",
       "type": "color"
     },
     "LABEL_DISABLED_COLOR": {
