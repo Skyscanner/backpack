@@ -388,9 +388,9 @@
     },
     "BADGE_BACKGROUND_COLOR": {
       "category": "badges",
-      "value": "rgb(255, 187, 0)",
+      "value": "rgb(255, 181, 77)",
       "type": "color",
-      "originalValue": "{!YELLOW_500}",
+      "originalValue": "{!ERFOUD}",
       "name": "BADGE_BACKGROUND_COLOR"
     },
     "BADGE_CENTERED_VERTICAL_ALIGN": {
@@ -444,9 +444,9 @@
     },
     "BANNER_ALERT_ERROR_COLOR": {
       "category": "notifications",
-      "value": "rgb(255, 84, 82)",
+      "value": "rgb(209, 67, 91)",
       "type": "color",
-      "originalValue": "{!RED_500}",
+      "originalValue": "{!PANJIN}",
       "name": "BANNER_ALERT_ERROR_COLOR"
     },
     "BANNER_ALERT_EXPAND_ICON_FILL": {
@@ -493,16 +493,16 @@
     },
     "BANNER_ALERT_SUCCESS_COLOR": {
       "category": "notifications",
-      "value": "rgb(0, 215, 117)",
+      "value": "rgb(0, 166, 152)",
       "type": "color",
-      "originalValue": "{!GREEN_500}",
+      "originalValue": "{!MONTEVERDE}",
       "name": "BANNER_ALERT_SUCCESS_COLOR"
     },
     "BANNER_ALERT_WARN_COLOR": {
       "category": "notifications",
-      "value": "rgb(255, 187, 0)",
+      "value": "rgb(255, 181, 77)",
       "type": "color",
-      "originalValue": "{!YELLOW_500}",
+      "originalValue": "{!ERFOUD}",
       "name": "BANNER_ALERT_WARN_COLOR"
     },
     "BORDER_RADIUS_PILL": {
@@ -1423,9 +1423,9 @@
     },
     "CALENDAR_DAY_COLOR": {
       "category": "calendar",
-      "value": "rgb(0, 178, 214)",
+      "value": "rgb(7, 112, 227)",
       "type": "color",
-      "originalValue": "{!BLUE_500}",
+      "originalValue": "{!SKY_BLUE}",
       "name": "CALENDAR_DAY_COLOR"
     },
     "CALENDAR_DAY_DISABLED_BACKGROUND_COLOR": {
@@ -1502,9 +1502,9 @@
     },
     "CALENDAR_NAV_ICON_ACTIVE_FILL": {
       "category": "calendar",
-      "value": "rgb(0, 140, 168)",
+      "value": "rgb(4, 39, 89)",
       "type": "color",
-      "originalValue": "{!BLUE_700}",
+      "originalValue": "{!SKY_BLUE_SHADE_02}",
       "name": "CALENDAR_NAV_ICON_ACTIVE_FILL"
     },
     "CALENDAR_NAV_ICON_DISABLED_FILL": {
@@ -1516,16 +1516,16 @@
     },
     "CALENDAR_NAV_ICON_FILL": {
       "category": "calendar",
-      "value": "rgb(0, 178, 214)",
+      "value": "rgb(7, 112, 227)",
       "type": "color",
-      "originalValue": "{!BLUE_500}",
+      "originalValue": "{!SKY_BLUE}",
       "name": "CALENDAR_NAV_ICON_FILL"
     },
     "CALENDAR_NAV_ICON_HOVER_FILL": {
       "category": "calendar",
-      "value": "rgb(0, 157, 189)",
+      "value": "rgb(8, 78, 178)",
       "type": "color",
-      "originalValue": "{!BLUE_600}",
+      "originalValue": "{!SKY_BLUE_SHADE_01}",
       "name": "CALENDAR_NAV_ICON_HOVER_FILL"
     },
     "CALENDAR_PADDING": {
@@ -3148,8 +3148,8 @@
     "STATE_SELECTED_BACKGROUND_COLOR": {
       "type": "color",
       "category": "states",
-      "value": "rgb(0, 140, 168)",
-      "originalValue": "{!BLUE_700}",
+      "value": "rgb(8, 78, 178)",
+      "originalValue": "{!SKY_BLUE_SHADE_01}",
       "name": "STATE_SELECTED_BACKGROUND_COLOR"
     },
     "TEXTAREA_MIN_HEIGHT": {

@@ -19,7 +19,7 @@
       "type": "size"
     },
     "CALENDAR_DAY_COLOR": {
-      "value": "{!BLUE_500}",
+      "value": "{!SKY_BLUE}",
       "type": "color"
     },
     "CALENDAR_DAY_BACKGROUND_COLOR": {
@@ -70,15 +70,15 @@
       "deprecated": true
     },
     "CALENDAR_NAV_ICON_FILL": {
-      "value": "{!BLUE_500}",
+      "value": "{!SKY_BLUE}",
       "type": "color"
     },
     "CALENDAR_NAV_ICON_HOVER_FILL": {
-      "value": "{!BLUE_600}",
+      "value": "{!SKY_BLUE_SHADE_01}",
       "type": "color"
     },
     "CALENDAR_NAV_ICON_ACTIVE_FILL": {
-      "value": "{!BLUE_700}",
+      "value": "{!SKY_BLUE_SHADE_02}",
       "type": "color"
     },
     "CALENDAR_NAV_ICON_DISABLED_FILL": {

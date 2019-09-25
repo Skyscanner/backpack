@@ -24,7 +24,7 @@ $bpk-autosuggest-list-item-active-background-color: rgb(221, 221, 229);
 /// @group autosuggest
 $bpk-autosuggest-list-item-highlighted-background-color: rgb(241, 242, 248);
 /// @group badges
-$bpk-badge-background-color: rgb(255, 187, 0);
+$bpk-badge-background-color: rgb(255, 181, 77);
 /// @group badges
 $bpk-badge-centered-vertical-align: text-bottom;
 /// @group badges
@@ -40,7 +40,7 @@ $bpk-banner-alert-children-padding-x: .75rem;
 /// @group notifications
 $bpk-banner-alert-children-padding-y: .375rem;
 /// @group notifications
-$bpk-banner-alert-error-color: rgb(255, 84, 82);
+$bpk-banner-alert-error-color: rgb(209, 67, 91);
 /// @group notifications
 $bpk-banner-alert-expand-icon-fill: rgb(68, 69, 96);
 /// @group notifications
@@ -54,9 +54,9 @@ $bpk-banner-alert-header-padding-y: .375rem;
 /// @group notifications
 $bpk-banner-alert-neutral-color: rgb(104, 105, 127);
 /// @group notifications
-$bpk-banner-alert-success-color: rgb(0, 215, 117);
+$bpk-banner-alert-success-color: rgb(0, 166, 152);
 /// @group notifications
-$bpk-banner-alert-warn-color: rgb(255, 187, 0);
+$bpk-banner-alert-warn-color: rgb(255, 181, 77);
 /// @group radii
 $bpk-border-radius-pill: 1.125rem;
 /// @group radii
@@ -318,7 +318,7 @@ $bpk-calendar-day-active-color: rgb(17, 18, 54);
 /// @group calendar
 $bpk-calendar-day-background-color: rgb(255, 255, 255);
 /// @group calendar
-$bpk-calendar-day-color: rgb(0, 178, 214);
+$bpk-calendar-day-color: rgb(7, 112, 227);
 /// @group calendar
 $bpk-calendar-day-disabled-background-color: rgb(255, 255, 255);
 /// @group calendar
@@ -340,13 +340,13 @@ $bpk-calendar-day-size: 2.250rem;
 /// @group calendar
 $bpk-calendar-day-spacing: .375rem;
 /// @group calendar
-$bpk-calendar-nav-icon-active-fill: rgb(0, 140, 168);
+$bpk-calendar-nav-icon-active-fill: rgb(4, 39, 89);
 /// @group calendar
 $bpk-calendar-nav-icon-disabled-fill: rgb(221, 221, 229);
 /// @group calendar
-$bpk-calendar-nav-icon-fill: rgb(0, 178, 214);
+$bpk-calendar-nav-icon-fill: rgb(7, 112, 227);
 /// @group calendar
-$bpk-calendar-nav-icon-hover-fill: rgb(0, 157, 189);
+$bpk-calendar-nav-icon-hover-fill: rgb(8, 78, 178);
 /// @group calendar
 $bpk-calendar-padding: .75rem;
 /// @group cards
@@ -806,7 +806,7 @@ $bpk-spacing-xs: .375rem;
 /// @group spacings
 $bpk-spacing-xxl: 2.625rem;
 /// @group states
-$bpk-state-selected-background-color: rgb(0, 140, 168);
+$bpk-state-selected-background-color: rgb(8, 78, 178);
 /// @group forms
 $bpk-textarea-min-height: 2.625rem * 2;
 /// @group font-sizes
