@@ -589,46 +589,6 @@
       "name": "shadowSmRadius"
     },
     {
-      "value": "#111236ff",
-      "type": "color",
-      "category": "box-shadows",
-      "deprecated": true,
-      "originalValue": "{!SKY_GRAY}",
-      "name": "shadowXlColor"
-    },
-    {
-      "value": 12,
-      "type": "size",
-      "category": "box-shadows",
-      "deprecated": true,
-      "originalValue": 12,
-      "name": "shadowXlOffsetHeight"
-    },
-    {
-      "value": 0,
-      "type": "size",
-      "category": "box-shadows",
-      "deprecated": true,
-      "originalValue": 0,
-      "name": "shadowXlOffsetWidth"
-    },
-    {
-      "value": 0.2,
-      "type": "size",
-      "category": "box-shadows",
-      "deprecated": true,
-      "originalValue": 0.2,
-      "name": "shadowXlOpacity"
-    },
-    {
-      "value": 50,
-      "type": "size",
-      "category": "box-shadows",
-      "deprecated": true,
-      "originalValue": 50,
-      "name": "shadowXlRadius"
-    },
-    {
       "type": "size",
       "category": "spacings",
       "value": "16",
@@ -699,14 +659,6 @@
       "name": "textBaseLetterSpacing"
     },
     {
-      "value": "19",
-      "type": "size",
-      "category": "line-heights",
-      "deprecated": true,
-      "originalValue": "{!LINE_HEIGHT_BASE}",
-      "name": "textBaseLineHeight"
-    },
-    {
       "value": "10",
       "type": "font-size",
       "category": "font-sizes",
@@ -763,14 +715,6 @@
       "name": "textLgLetterSpacing"
     },
     {
-      "value": "24",
-      "type": "size",
-      "category": "line-heights",
-      "deprecated": true,
-      "originalValue": "{!LINE_HEIGHT_LG}",
-      "name": "textLgLineHeight"
-    },
-    {
       "value": "#111236ff",
       "type": "color",
       "category": "text-colors",
@@ -806,14 +750,6 @@
       "name": "textSmLetterSpacing"
     },
     {
-      "value": "17",
-      "type": "size",
-      "category": "line-heights",
-      "deprecated": true,
-      "originalValue": "{!LINE_HEIGHT_SM}",
-      "name": "textSmLineHeight"
-    },
-    {
       "value": "24",
       "type": "font-size",
       "category": "font-sizes",
@@ -833,14 +769,6 @@
       "category": "letter-spacings",
       "originalValue": "{!LETTER_SPACING_XL}",
       "name": "textXlLetterSpacing"
-    },
-    {
-      "value": "29",
-      "type": "size",
-      "category": "line-heights",
-      "deprecated": true,
-      "originalValue": "{!LINE_HEIGHT_XL}",
-      "name": "textXlLineHeight"
     },
     {
       "value": "12",
@@ -864,14 +792,6 @@
       "name": "textXsLetterSpacing"
     },
     {
-      "value": "14",
-      "type": "size",
-      "category": "line-heights",
-      "deprecated": true,
-      "originalValue": "{!LINE_HEIGHT_XS}",
-      "name": "textXsLineHeight"
-    },
-    {
       "value": "30",
       "type": "font-size",
       "category": "font-sizes",
@@ -891,14 +811,6 @@
       "category": "letter-spacings",
       "originalValue": "{!LETTER_SPACING_XXL}",
       "name": "textXxlLetterSpacing"
-    },
-    {
-      "value": "43",
-      "type": "size",
-      "category": "line-heights",
-      "deprecated": true,
-      "originalValue": "{!LINE_HEIGHT_XXL}",
-      "name": "textXxlLineHeight"
     },
     {
       "value": "36",
@@ -934,14 +846,6 @@
       "type": "number",
       "originalValue": "0.15",
       "name": "touchableOverlayOpacity"
-    },
-    {
-      "category": "touchables",
-      "value": "#111236ff",
-      "type": "color",
-      "deprecated": true,
-      "originalValue": "{!SKY_GRAY}",
-      "name": "underlayColor"
     },
     {
       "category": "touchables",

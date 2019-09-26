@@ -109,7 +109,6 @@ export const spacingXxl = 40;
 export const textBaseFontSize = 16;
 export const textBaseFontWeight = "400";
 export const textBaseLetterSpacing = -0.2;
-export const textBaseLineHeight = 19;
 export const textCapsFontSize = 10;
 export const textCapsFontWeight = "400";
 export const textCapsLetterSpacing = 0.4;
@@ -117,25 +116,20 @@ export const textEmphasizedFontWeight = "500";
 export const textLgFontSize = 20;
 export const textLgFontWeight = "400";
 export const textLgLetterSpacing = -0.4;
-export const textLgLineHeight = 23;
 export const textPrimaryLightColor = "rgb(17, 18, 54)";
 export const textSecondaryLightColor = "rgb(68, 69, 96)";
 export const textSmFontSize = 14;
 export const textSmFontWeight = "400";
 export const textSmLetterSpacing = 0;
-export const textSmLineHeight = 16;
 export const textXlFontSize = 24;
 export const textXlFontWeight = "400";
 export const textXlLetterSpacing = -0.6;
-export const textXlLineHeight = 28;
 export const textXsFontSize = 12;
 export const textXsFontWeight = "400";
 export const textXsLetterSpacing = 0;
-export const textXsLineHeight = 14;
 export const textXxlFontSize = 30;
 export const textXxlFontWeight = "400";
 export const textXxlLetterSpacing = -0.8;
-export const textXxlLineHeight = 42;
 export const textXxxlFontSize = 36;
 export const textXxxlFontWeight = "400";
 export const textXxxlLetterSpacing = -1;
@@ -236,14 +230,6 @@ textXlLetterSpacing,
 textXsLetterSpacing,
 textXxlLetterSpacing,
 textXxxlLetterSpacing,
-};
-export const lineHeights = {
-textBaseLineHeight,
-textLgLineHeight,
-textSmLineHeight,
-textXlLineHeight,
-textXsLineHeight,
-textXxlLineHeight,
 };
 export const radii = {
 borderRadiusLg,

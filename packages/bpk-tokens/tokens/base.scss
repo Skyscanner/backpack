@@ -104,11 +104,7 @@ $bpk-button-active-color: rgb(255, 255, 255);
 /// @group buttons
 $bpk-button-background-color: rgb(0, 166, 152);
 /// @group buttons
-$bpk-button-background-image: #00a698;
-/// @group buttons
 $bpk-button-border-radius: .25rem;
-/// @group buttons
-$bpk-button-border-radius-lg: .25rem;
 /// @group buttons
 $bpk-button-box-shadow: none;
 /// @group buttons
@@ -166,17 +162,11 @@ $bpk-button-featured-active-color: rgb(255, 255, 255);
 /// @group buttons
 $bpk-button-featured-background-color: rgb(7, 112, 227);
 /// @group buttons
-$bpk-button-featured-background-image: #0770e3;
-/// @group buttons
 $bpk-button-featured-color: rgb(255, 255, 255);
 /// @group buttons
 $bpk-button-featured-disabled-background-color: rgb(221, 221, 229);
 /// @group buttons
 $bpk-button-featured-disabled-background-image: none;
-/// @group buttons
-$bpk-button-featured-gradient-end-color: rgb(7, 112, 227);
-/// @group buttons
-$bpk-button-featured-gradient-start-color: rgb(7, 112, 227);
 /// @group buttons
 $bpk-button-featured-hover-background-color: rgb(8, 78, 178);
 /// @group buttons
@@ -256,8 +246,6 @@ $bpk-button-secondary-active-background-image: none;
 /// @group buttons
 $bpk-button-secondary-active-border-color: rgb(8, 78, 178);
 /// @group buttons
-$bpk-button-secondary-active-box-shadow: 0 0 0 3px #084eb2 inset;
-/// @group buttons
 $bpk-button-secondary-active-color: rgb(8, 78, 178);
 /// @group buttons
 $bpk-button-secondary-background-color: rgb(255, 255, 255);
@@ -265,8 +253,6 @@ $bpk-button-secondary-background-color: rgb(255, 255, 255);
 $bpk-button-secondary-background-image: none;
 /// @group buttons
 $bpk-button-secondary-border-color: rgb(221, 221, 229);
-/// @group buttons
-$bpk-button-secondary-box-shadow: 0 0 0 2px #DDDDE5 inset;
 /// @group buttons
 $bpk-button-secondary-color: rgb(7, 112, 227);
 /// @group buttons
@@ -283,8 +269,6 @@ $bpk-button-secondary-hover-background-color: rgb(255, 255, 255);
 $bpk-button-secondary-hover-background-image: none;
 /// @group buttons
 $bpk-button-secondary-hover-border-color: rgb(7, 112, 227);
-/// @group buttons
-$bpk-button-secondary-hover-box-shadow: 0 0 0 2px #0770e3 inset;
 /// @group buttons
 $bpk-button-secondary-hover-color: rgb(7, 112, 227);
 /// @group buttons
@@ -320,11 +304,7 @@ $bpk-calendar-day-active-background-color: rgb(221, 221, 229);
 /// @group calendar
 $bpk-calendar-day-active-color: rgb(17, 18, 54);
 /// @group calendar
-$bpk-calendar-day-background-color: rgb(255, 255, 255);
-/// @group calendar
 $bpk-calendar-day-color: rgb(7, 112, 227);
-/// @group calendar
-$bpk-calendar-day-disabled-background-color: rgb(255, 255, 255);
 /// @group calendar
 $bpk-calendar-day-disabled-color: rgb(221, 221, 229);
 /// @group calendar
@@ -335,8 +315,6 @@ $bpk-calendar-day-focused-color: rgb(7, 112, 227);
 $bpk-calendar-day-hover-background-color: rgb(241, 242, 248);
 /// @group calendar
 $bpk-calendar-day-hover-color: rgb(68, 69, 96);
-/// @group calendar
-$bpk-calendar-day-outside-background-color: rgb(255, 255, 255);
 /// @group calendar
 $bpk-calendar-day-outside-color: rgb(178, 178, 191);
 /// @group calendar
@@ -462,17 +440,7 @@ $bpk-font-weight-bold: 700;
 /// @group forms
 $bpk-form-validation-arrow-size: .375rem;
 /// @group forms
-$bpk-form-validation-background-color: rgb(209, 67, 91);
-/// @group forms
-$bpk-form-validation-checkbox-arrow-left: 1.5rem;
-/// @group forms
 $bpk-form-validation-color: rgb(209, 67, 91);
-/// @group forms
-$bpk-form-validation-margin: 0;
-/// @group forms
-$bpk-form-validation-padding-x: .75rem;
-/// @group forms
-$bpk-form-validation-padding-y: .375rem;
 /// @group grids
 $bpk-grid-columns: 12;
 /// @group grids
@@ -624,10 +592,6 @@ $bpk-list-nested-margin-top: 0;
 /// @group modals
 $bpk-modal-background-color: rgb(255, 255, 255);
 /// @group modals
-$bpk-modal-close-icon-fill: rgb(104, 105, 127);
-/// @group modals
-$bpk-modal-close-icon-hover-fill: rgb(68, 69, 96);
-/// @group modals
 $bpk-modal-content-padding: .75rem;
 /// @group modals
 $bpk-modal-header-padding: .75rem;
@@ -637,14 +601,6 @@ $bpk-modal-initial-opacity: 0;
 $bpk-modal-max-width: 32.25rem;
 /// @group modals
 $bpk-modal-opacity: 1;
-/// @group modals
-$bpk-modal-scrim-background-color: rgb(178, 178, 191);
-/// @group modals
-$bpk-modal-scrim-initial-opacity: 0;
-/// @group modals
-$bpk-modal-scrim-mobile-opacity: 1;
-/// @group modals
-$bpk-modal-scrim-opacity: .7;
 /// @group modals
 $bpk-modal-wide-max-width: 50.25rem;
 /// @group spacings
@@ -741,10 +697,6 @@ $bpk-text-base-font-weight: 400;
 $bpk-text-base-letter-spacing: normal;
 /// @group line-heights
 $bpk-text-base-line-height: 1.5rem;
-/// @group text-colors
-$bpk-text-color-primary-light: rgb(17, 18, 54);
-/// @group text-colors
-$bpk-text-color-secondary-light: rgb(68, 69, 96);
 /// @group font-sizes
 $bpk-text-lg-font-size: 1.5rem;
 /// @group font-weights
@@ -795,8 +747,6 @@ $bpk-zindex-autosuggest: 900;
 $bpk-zindex-drawer: 1100;
 /// @group z-indices
 $bpk-zindex-modal: 1100;
-/// @group z-indices
-$bpk-zindex-modal-scrim: 1000;
 /// @group z-indices
 $bpk-zindex-popover: 900;
 /// @group z-indices

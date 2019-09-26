@@ -130,37 +130,12 @@
       "value": "{!SPACING_MD}",
       "type": "number"
     },
-    "FORM_VALIDATION_MARGIN": {
-      "value": "0",
-      "type": "size",
-      "deprecated": true
-    },
-    "FORM_VALIDATION_PADDING_Y": {
-      "value": "{!SPACING_XS}",
-      "type": "size",
-      "deprecated": true
-    },
-    "FORM_VALIDATION_PADDING_X": {
-      "value": "{!SPACING_SM}",
-      "type": "size",
-      "deprecated": true
-    },
-    "FORM_VALIDATION_BACKGROUND_COLOR": {
-      "value": "{!PANJIN}",
-      "type": "color",
-      "deprecated": true
-    },
     "FORM_VALIDATION_COLOR": {
       "value": "{!PANJIN}",
       "type": "color"
     },
     "FORM_VALIDATION_ARROW_SIZE": {
       "value": "{!SPACING_XS}",
-      "type": "size",
-      "deprecated": true
-    },
-    "FORM_VALIDATION_CHECKBOX_ARROW_LEFT": {
-      "value": "{!SPACING_BASE}",
       "type": "size",
       "deprecated": true
     },

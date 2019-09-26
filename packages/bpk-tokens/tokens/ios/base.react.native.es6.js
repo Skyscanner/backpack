@@ -101,11 +101,6 @@ export const shadowSmOffsetHeight = 1;
 export const shadowSmOffsetWidth = 0;
 export const shadowSmOpacity = 0.15;
 export const shadowSmRadius = 3;
-export const shadowXlColor = "rgb(17, 18, 54)";
-export const shadowXlOffsetHeight = 12;
-export const shadowXlOffsetWidth = 0;
-export const shadowXlOpacity = 0.2;
-export const shadowXlRadius = 50;
 export const spacingBase = 16;
 export const spacingLg = 24;
 export const spacingMd = 8;
@@ -116,7 +111,6 @@ export const spacingXxl = 40;
 export const textBaseFontSize = 16;
 export const textBaseFontWeight = "400";
 export const textBaseLetterSpacing = 0.12;
-export const textBaseLineHeight = 19;
 export const textCapsFontSize = 10;
 export const textCapsFontWeight = "400";
 export const textCapsLetterSpacing = 0.28;
@@ -125,31 +119,25 @@ export const textHeavyFontWeight = "800";
 export const textLgFontSize = 20;
 export const textLgFontWeight = "400";
 export const textLgLetterSpacing = null;
-export const textLgLineHeight = 24;
 export const textPrimaryLightColor = "rgb(17, 18, 54)";
 export const textSecondaryLightColor = "rgb(68, 69, 96)";
 export const textSmFontSize = 14;
 export const textSmFontWeight = "400";
 export const textSmLetterSpacing = 0.154;
-export const textSmLineHeight = 17;
 export const textXlFontSize = 24;
 export const textXlFontWeight = "400";
 export const textXlLetterSpacing = null;
-export const textXlLineHeight = 29;
 export const textXsFontSize = 12;
 export const textXsFontWeight = "400";
 export const textXsLetterSpacing = 0;
-export const textXsLineHeight = 14;
 export const textXxlFontSize = 30;
 export const textXxlFontWeight = "400";
 export const textXxlLetterSpacing = null;
-export const textXxlLineHeight = 43;
 export const textXxxlFontSize = 36;
 export const textXxxlFontWeight = "400";
 export const textXxxlLetterSpacing = null;
 export const touchableOverlayColor = "rgb(17, 18, 54)";
 export const touchableOverlayOpacity = 0.15;
-export const underlayColor = "rgb(17, 18, 54)";
 export const underlayOpacity = 0.15;
 export const animations = {
 animationDurationBase,
@@ -172,11 +160,6 @@ shadowSmOffsetHeight,
 shadowSmOffsetWidth,
 shadowSmOpacity,
 shadowSmRadius,
-shadowXlColor,
-shadowXlOffsetHeight,
-shadowXlOffsetWidth,
-shadowXlOpacity,
-shadowXlRadius,
 };
 export const carouselIndicatorDots = {
 carouselIndicatorDotSizeBase,
@@ -259,14 +242,6 @@ textXsLetterSpacing,
 textXxlLetterSpacing,
 textXxxlLetterSpacing,
 };
-export const lineHeights = {
-textBaseLineHeight,
-textLgLineHeight,
-textSmLineHeight,
-textXlLineHeight,
-textXsLineHeight,
-textXxlLineHeight,
-};
 export const radii = {
 borderRadiusLg,
 borderRadiusPill,
@@ -293,7 +268,6 @@ textSecondaryLightColor,
 export const touchables = {
 touchableOverlayColor,
 touchableOverlayOpacity,
-underlayColor,
 underlayOpacity,
 };
 export const typesettings = {

@@ -513,28 +513,12 @@
       "originalValue": "{!MONTEVERDE}",
       "name": "BUTTON_BACKGROUND_COLOR"
     },
-    "BUTTON_BACKGROUND_IMAGE": {
-      "category": "buttons",
-      "value": "#00a698",
-      "type": "background-image",
-      "deprecated": true,
-      "originalValue": "{!MONTEVERDE}",
-      "name": "BUTTON_BACKGROUND_IMAGE"
-    },
     "BUTTON_BORDER_RADIUS": {
       "category": "buttons",
       "value": ".25rem",
       "type": "size",
       "originalValue": "{!BORDER_RADIUS_XS}",
       "name": "BUTTON_BORDER_RADIUS"
-    },
-    "BUTTON_BORDER_RADIUS_LG": {
-      "category": "buttons",
-      "value": ".25rem",
-      "type": "size",
-      "deprecated": true,
-      "originalValue": "{!BORDER_RADIUS_XS}",
-      "name": "BUTTON_BORDER_RADIUS_LG"
     },
     "BUTTON_BOX_SHADOW": {
       "category": "buttons",
@@ -732,14 +716,6 @@
       "originalValue": "{!SKY_BLUE}",
       "name": "BUTTON_FEATURED_BACKGROUND_COLOR"
     },
-    "BUTTON_FEATURED_BACKGROUND_IMAGE": {
-      "category": "buttons",
-      "value": "#0770e3",
-      "type": "background-image",
-      "deprecated": true,
-      "originalValue": "{!SKY_BLUE}",
-      "name": "BUTTON_FEATURED_BACKGROUND_IMAGE"
-    },
     "BUTTON_FEATURED_COLOR": {
       "category": "buttons",
       "value": "rgb(255, 255, 255)",
@@ -760,22 +736,6 @@
       "type": "background-image",
       "originalValue": "none",
       "name": "BUTTON_FEATURED_DISABLED_BACKGROUND_IMAGE"
-    },
-    "BUTTON_FEATURED_GRADIENT_END_COLOR": {
-      "category": "buttons",
-      "value": "rgb(7, 112, 227)",
-      "type": "color",
-      "deprecated": true,
-      "originalValue": "{!SKY_BLUE}",
-      "name": "BUTTON_FEATURED_GRADIENT_END_COLOR"
-    },
-    "BUTTON_FEATURED_GRADIENT_START_COLOR": {
-      "category": "buttons",
-      "value": "rgb(7, 112, 227)",
-      "type": "color",
-      "deprecated": true,
-      "originalValue": "{!SKY_BLUE}",
-      "name": "BUTTON_FEATURED_GRADIENT_START_COLOR"
     },
     "BUTTON_FEATURED_HOVER_BACKGROUND_COLOR": {
       "category": "buttons",
@@ -1050,14 +1010,6 @@
       "originalValue": "{!SKY_BLUE_SHADE_01}",
       "name": "BUTTON_SECONDARY_ACTIVE_BORDER_COLOR"
     },
-    "BUTTON_SECONDARY_ACTIVE_BOX_SHADOW": {
-      "category": "buttons",
-      "value": "0 0 0 3px #084eb2 inset",
-      "type": "box-shadow",
-      "deprecated": true,
-      "originalValue": "0 0 0 3px {!SKY_BLUE_SHADE_01} inset",
-      "name": "BUTTON_SECONDARY_ACTIVE_BOX_SHADOW"
-    },
     "BUTTON_SECONDARY_ACTIVE_COLOR": {
       "category": "buttons",
       "value": "rgb(8, 78, 178)",
@@ -1085,14 +1037,6 @@
       "type": "color",
       "originalValue": "{!SKY_GRAY_TINT_06}",
       "name": "BUTTON_SECONDARY_BORDER_COLOR"
-    },
-    "BUTTON_SECONDARY_BOX_SHADOW": {
-      "category": "buttons",
-      "value": "0 0 0 2px #DDDDE5 inset",
-      "type": "box-shadow",
-      "deprecated": true,
-      "originalValue": "0 0 0 2px {!SKY_GRAY_TINT_06} inset",
-      "name": "BUTTON_SECONDARY_BOX_SHADOW"
     },
     "BUTTON_SECONDARY_COLOR": {
       "category": "buttons",
@@ -1149,14 +1093,6 @@
       "type": "color",
       "originalValue": "{!SKY_BLUE}",
       "name": "BUTTON_SECONDARY_HOVER_BORDER_COLOR"
-    },
-    "BUTTON_SECONDARY_HOVER_BOX_SHADOW": {
-      "category": "buttons",
-      "value": "0 0 0 2px #0770e3 inset",
-      "type": "box-shadow",
-      "deprecated": true,
-      "originalValue": "0 0 0 2px {!SKY_BLUE} inset",
-      "name": "BUTTON_SECONDARY_HOVER_BOX_SHADOW"
     },
     "BUTTON_SECONDARY_HOVER_COLOR": {
       "category": "buttons",
@@ -1277,28 +1213,12 @@
       "originalValue": "{!SKY_GRAY}",
       "name": "CALENDAR_DAY_ACTIVE_COLOR"
     },
-    "CALENDAR_DAY_BACKGROUND_COLOR": {
-      "category": "calendar",
-      "value": "rgb(255, 255, 255)",
-      "type": "color",
-      "deprecated": true,
-      "originalValue": "{!WHITE}",
-      "name": "CALENDAR_DAY_BACKGROUND_COLOR"
-    },
     "CALENDAR_DAY_COLOR": {
       "category": "calendar",
       "value": "rgb(7, 112, 227)",
       "type": "color",
       "originalValue": "{!SKY_BLUE}",
       "name": "CALENDAR_DAY_COLOR"
-    },
-    "CALENDAR_DAY_DISABLED_BACKGROUND_COLOR": {
-      "category": "calendar",
-      "value": "rgb(255, 255, 255)",
-      "type": "color",
-      "deprecated": true,
-      "originalValue": "{!WHITE}",
-      "name": "CALENDAR_DAY_DISABLED_BACKGROUND_COLOR"
     },
     "CALENDAR_DAY_DISABLED_COLOR": {
       "category": "calendar",
@@ -1334,14 +1254,6 @@
       "type": "color",
       "originalValue": "{!SKY_GRAY_TINT_01}",
       "name": "CALENDAR_DAY_HOVER_COLOR"
-    },
-    "CALENDAR_DAY_OUTSIDE_BACKGROUND_COLOR": {
-      "category": "calendar",
-      "value": "rgb(255, 255, 255)",
-      "type": "color",
-      "deprecated": true,
-      "originalValue": "{!WHITE}",
-      "name": "CALENDAR_DAY_OUTSIDE_BACKGROUND_COLOR"
     },
     "CALENDAR_DAY_OUTSIDE_COLOR": {
       "category": "calendar",
@@ -1778,52 +1690,12 @@
       "originalValue": "{!SPACING_XS}",
       "name": "FORM_VALIDATION_ARROW_SIZE"
     },
-    "FORM_VALIDATION_BACKGROUND_COLOR": {
-      "category": "forms",
-      "value": "rgb(209, 67, 91)",
-      "type": "color",
-      "deprecated": true,
-      "originalValue": "{!PANJIN}",
-      "name": "FORM_VALIDATION_BACKGROUND_COLOR"
-    },
-    "FORM_VALIDATION_CHECKBOX_ARROW_LEFT": {
-      "category": "forms",
-      "value": "1.5rem",
-      "type": "size",
-      "deprecated": true,
-      "originalValue": "{!SPACING_BASE}",
-      "name": "FORM_VALIDATION_CHECKBOX_ARROW_LEFT"
-    },
     "FORM_VALIDATION_COLOR": {
       "category": "forms",
       "value": "rgb(209, 67, 91)",
       "type": "color",
       "originalValue": "{!PANJIN}",
       "name": "FORM_VALIDATION_COLOR"
-    },
-    "FORM_VALIDATION_MARGIN": {
-      "category": "forms",
-      "value": "0",
-      "type": "size",
-      "deprecated": true,
-      "originalValue": "0",
-      "name": "FORM_VALIDATION_MARGIN"
-    },
-    "FORM_VALIDATION_PADDING_X": {
-      "category": "forms",
-      "value": ".75rem",
-      "type": "size",
-      "deprecated": true,
-      "originalValue": "{!SPACING_SM}",
-      "name": "FORM_VALIDATION_PADDING_X"
-    },
-    "FORM_VALIDATION_PADDING_Y": {
-      "category": "forms",
-      "value": ".375rem",
-      "type": "size",
-      "deprecated": true,
-      "originalValue": "{!SPACING_XS}",
-      "name": "FORM_VALIDATION_PADDING_Y"
     },
     "GRID_COLUMNS": {
       "category": "grids",
@@ -2350,22 +2222,6 @@
       "originalValue": "{!WHITE}",
       "name": "MODAL_BACKGROUND_COLOR"
     },
-    "MODAL_CLOSE_ICON_FILL": {
-      "category": "modals",
-      "value": "rgb(104, 105, 127)",
-      "type": "color",
-      "deprecated": true,
-      "originalValue": "{!SKY_GRAY_TINT_02}",
-      "name": "MODAL_CLOSE_ICON_FILL"
-    },
-    "MODAL_CLOSE_ICON_HOVER_FILL": {
-      "category": "modals",
-      "value": "rgb(68, 69, 96)",
-      "type": "color",
-      "deprecated": true,
-      "originalValue": "{!SKY_GRAY_TINT_01}",
-      "name": "MODAL_CLOSE_ICON_HOVER_FILL"
-    },
     "MODAL_CONTENT_PADDING": {
       "category": "modals",
       "value": ".75rem",
@@ -2400,38 +2256,6 @@
       "type": "number",
       "originalValue": "1",
       "name": "MODAL_OPACITY"
-    },
-    "MODAL_SCRIM_BACKGROUND_COLOR": {
-      "category": "modals",
-      "value": "rgb(178, 178, 191)",
-      "type": "color",
-      "deprecated": true,
-      "originalValue": "{!SKY_GRAY_TINT_04}",
-      "name": "MODAL_SCRIM_BACKGROUND_COLOR"
-    },
-    "MODAL_SCRIM_INITIAL_OPACITY": {
-      "category": "modals",
-      "value": "0",
-      "type": "number",
-      "deprecated": true,
-      "originalValue": "0",
-      "name": "MODAL_SCRIM_INITIAL_OPACITY"
-    },
-    "MODAL_SCRIM_MOBILE_OPACITY": {
-      "category": "modals",
-      "value": "1",
-      "type": "number",
-      "deprecated": true,
-      "originalValue": "1",
-      "name": "MODAL_SCRIM_MOBILE_OPACITY"
-    },
-    "MODAL_SCRIM_OPACITY": {
-      "category": "modals",
-      "value": ".7",
-      "type": "number",
-      "deprecated": true,
-      "originalValue": ".7",
-      "name": "MODAL_SCRIM_OPACITY"
     },
     "MODAL_WIDE_MAX_WIDTH": {
       "category": "modals",
@@ -2769,22 +2593,6 @@
       "originalValue": "{!SPACING_BASE}",
       "name": "TEXT_BASE_LINE_HEIGHT"
     },
-    "TEXT_COLOR_PRIMARY_LIGHT": {
-      "value": "rgb(17, 18, 54)",
-      "deprecated": true,
-      "type": "color",
-      "category": "text-colors",
-      "originalValue": "{!SKY_GRAY}",
-      "name": "TEXT_COLOR_PRIMARY_LIGHT"
-    },
-    "TEXT_COLOR_SECONDARY_LIGHT": {
-      "value": "rgb(68, 69, 96)",
-      "deprecated": true,
-      "type": "color",
-      "category": "text-colors",
-      "originalValue": "{!SKY_GRAY_TINT_01}",
-      "name": "TEXT_COLOR_SECONDARY_LIGHT"
-    },
     "TEXT_LG_FONT_SIZE": {
       "value": "1.5rem",
       "type": "font-size",
@@ -2960,14 +2768,6 @@
       "originalValue": "{!ZINDEX_MODAL}",
       "name": "ZINDEX_MODAL"
     },
-    "ZINDEX_MODAL_SCRIM": {
-      "type": "number",
-      "category": "z-indices",
-      "value": "1000",
-      "deprecated": true,
-      "originalValue": "{!ZINDEX_SCRIM}",
-      "name": "ZINDEX_MODAL_SCRIM"
-    },
     "ZINDEX_POPOVER": {
       "type": "number",
       "category": "z-indices",
@@ -3034,9 +2834,7 @@
     "BUTTON_ACTIVE_BOX_SHADOW",
     "BUTTON_ACTIVE_COLOR",
     "BUTTON_BACKGROUND_COLOR",
-    "BUTTON_BACKGROUND_IMAGE",
     "BUTTON_BORDER_RADIUS",
-    "BUTTON_BORDER_RADIUS_LG",
     "BUTTON_BOX_SHADOW",
     "BUTTON_COLOR",
     "BUTTON_DESTRUCTIVE_ACTIVE_BACKGROUND_COLOR",
@@ -3065,12 +2863,9 @@
     "BUTTON_FEATURED_ACTIVE_BOX_SHADOW",
     "BUTTON_FEATURED_ACTIVE_COLOR",
     "BUTTON_FEATURED_BACKGROUND_COLOR",
-    "BUTTON_FEATURED_BACKGROUND_IMAGE",
     "BUTTON_FEATURED_COLOR",
     "BUTTON_FEATURED_DISABLED_BACKGROUND_COLOR",
     "BUTTON_FEATURED_DISABLED_BACKGROUND_IMAGE",
-    "BUTTON_FEATURED_GRADIENT_END_COLOR",
-    "BUTTON_FEATURED_GRADIENT_START_COLOR",
     "BUTTON_FEATURED_HOVER_BACKGROUND_COLOR",
     "BUTTON_FEATURED_HOVER_BACKGROUND_IMAGE",
     "BUTTON_FEATURED_HOVER_BOX_SHADOW",
@@ -3110,12 +2905,10 @@
     "BUTTON_SECONDARY_ACTIVE_BACKGROUND_COLOR",
     "BUTTON_SECONDARY_ACTIVE_BACKGROUND_IMAGE",
     "BUTTON_SECONDARY_ACTIVE_BORDER_COLOR",
-    "BUTTON_SECONDARY_ACTIVE_BOX_SHADOW",
     "BUTTON_SECONDARY_ACTIVE_COLOR",
     "BUTTON_SECONDARY_BACKGROUND_COLOR",
     "BUTTON_SECONDARY_BACKGROUND_IMAGE",
     "BUTTON_SECONDARY_BORDER_COLOR",
-    "BUTTON_SECONDARY_BOX_SHADOW",
     "BUTTON_SECONDARY_COLOR",
     "BUTTON_SECONDARY_DISABLED_BACKGROUND_COLOR",
     "BUTTON_SECONDARY_DISABLED_BACKGROUND_IMAGE",
@@ -3124,7 +2917,6 @@
     "BUTTON_SECONDARY_HOVER_BACKGROUND_COLOR",
     "BUTTON_SECONDARY_HOVER_BACKGROUND_IMAGE",
     "BUTTON_SECONDARY_HOVER_BORDER_COLOR",
-    "BUTTON_SECONDARY_HOVER_BOX_SHADOW",
     "BUTTON_SECONDARY_HOVER_COLOR",
     "BUTTON_SELECTED_ACTIVE_BACKGROUND_COLOR",
     "BUTTON_SELECTED_ACTIVE_BACKGROUND_IMAGE",
@@ -3142,15 +2934,12 @@
     "BUTTON_TEXT_ALIGN",
     "CALENDAR_DAY_ACTIVE_BACKGROUND_COLOR",
     "CALENDAR_DAY_ACTIVE_COLOR",
-    "CALENDAR_DAY_BACKGROUND_COLOR",
     "CALENDAR_DAY_COLOR",
-    "CALENDAR_DAY_DISABLED_BACKGROUND_COLOR",
     "CALENDAR_DAY_DISABLED_COLOR",
     "CALENDAR_DAY_FOCUSED_BORDER_COLOR",
     "CALENDAR_DAY_FOCUSED_COLOR",
     "CALENDAR_DAY_HOVER_BACKGROUND_COLOR",
     "CALENDAR_DAY_HOVER_COLOR",
-    "CALENDAR_DAY_OUTSIDE_BACKGROUND_COLOR",
     "CALENDAR_DAY_OUTSIDE_COLOR",
     "CALENDAR_DAY_SELECTED_BACKGROUND_COLOR",
     "CALENDAR_DAY_SELECTED_COLOR",
@@ -3213,12 +3002,7 @@
     "FONT_WEIGHT_BLACK",
     "FONT_WEIGHT_BOLD",
     "FORM_VALIDATION_ARROW_SIZE",
-    "FORM_VALIDATION_BACKGROUND_COLOR",
-    "FORM_VALIDATION_CHECKBOX_ARROW_LEFT",
     "FORM_VALIDATION_COLOR",
-    "FORM_VALIDATION_MARGIN",
-    "FORM_VALIDATION_PADDING_X",
-    "FORM_VALIDATION_PADDING_Y",
     "GRID_COLUMNS",
     "GRID_CONTAINER_MOBILE_PADDING",
     "GRID_CONTAINER_PADDING",
@@ -3294,17 +3078,11 @@
     "LIST_NESTED_MARGIN_BOTTOM",
     "LIST_NESTED_MARGIN_TOP",
     "MODAL_BACKGROUND_COLOR",
-    "MODAL_CLOSE_ICON_FILL",
-    "MODAL_CLOSE_ICON_HOVER_FILL",
     "MODAL_CONTENT_PADDING",
     "MODAL_HEADER_PADDING",
     "MODAL_INITIAL_OPACITY",
     "MODAL_MAX_WIDTH",
     "MODAL_OPACITY",
-    "MODAL_SCRIM_BACKGROUND_COLOR",
-    "MODAL_SCRIM_INITIAL_OPACITY",
-    "MODAL_SCRIM_MOBILE_OPACITY",
-    "MODAL_SCRIM_OPACITY",
     "MODAL_WIDE_MAX_WIDTH",
     "ONE_PIXEL_REM",
     "PANEL_BACKGROUND_COLOR",
@@ -3353,8 +3131,6 @@
     "TEXT_BASE_FONT_WEIGHT",
     "TEXT_BASE_LETTER_SPACING",
     "TEXT_BASE_LINE_HEIGHT",
-    "TEXT_COLOR_PRIMARY_LIGHT",
-    "TEXT_COLOR_SECONDARY_LIGHT",
     "TEXT_LG_FONT_SIZE",
     "TEXT_LG_FONT_WEIGHT",
     "TEXT_LG_LETTER_SPACING",
@@ -3380,7 +3156,6 @@
     "ZINDEX_AUTOSUGGEST",
     "ZINDEX_DRAWER",
     "ZINDEX_MODAL",
-    "ZINDEX_MODAL_SCRIM",
     "ZINDEX_POPOVER",
     "ZINDEX_SCRIM",
     "ZINDEX_TOOLTIP"

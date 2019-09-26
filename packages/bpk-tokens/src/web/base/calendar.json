@@ -22,11 +22,6 @@
       "value": "{!SKY_BLUE}",
       "type": "color"
     },
-    "CALENDAR_DAY_BACKGROUND_COLOR": {
-      "value": "{!WHITE}",
-      "type": "color",
-      "deprecated": true
-    },
     "CALENDAR_DAY_SELECTED_COLOR": {
       "value": "{!WHITE}",
       "type": "color"
@@ -63,19 +58,9 @@
       "value": "{!SKY_GRAY_TINT_06}",
       "type": "color"
     },
-    "CALENDAR_DAY_DISABLED_BACKGROUND_COLOR": {
-      "value": "{!WHITE}",
-      "type": "color",
-      "deprecated": true
-    },
     "CALENDAR_DAY_OUTSIDE_COLOR": {
       "value": "{!SKY_GRAY_TINT_04}",
       "type": "color"
-    },
-    "CALENDAR_DAY_OUTSIDE_BACKGROUND_COLOR": {
-      "value": "{!WHITE}",
-      "type": "color",
-      "deprecated": true
     },
     "CALENDAR_NAV_ICON_FILL": {
       "value": "{!SKY_BLUE}",

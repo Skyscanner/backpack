@@ -60,9 +60,7 @@ export const buttonActiveBackgroundImage = "none";
 export const buttonActiveBoxShadow = "none";
 export const buttonActiveColor = "rgb(255, 255, 255)";
 export const buttonBackgroundColor = "rgb(0, 166, 152)";
-export const buttonBackgroundImage = "#00a698";
 export const buttonBorderRadius = ".25rem";
-export const buttonBorderRadiusLg = ".25rem";
 export const buttonBoxShadow = "none";
 export const buttonColor = "rgb(255, 255, 255)";
 export const buttonDestructiveActiveBackgroundColor = "rgb(255, 255, 255)";
@@ -91,12 +89,9 @@ export const buttonFeaturedActiveBackgroundImage = "none";
 export const buttonFeaturedActiveBoxShadow = "none";
 export const buttonFeaturedActiveColor = "rgb(255, 255, 255)";
 export const buttonFeaturedBackgroundColor = "rgb(7, 112, 227)";
-export const buttonFeaturedBackgroundImage = "#0770e3";
 export const buttonFeaturedColor = "rgb(255, 255, 255)";
 export const buttonFeaturedDisabledBackgroundColor = "rgb(221, 221, 229)";
 export const buttonFeaturedDisabledBackgroundImage = "none";
-export const buttonFeaturedGradientEndColor = "rgb(7, 112, 227)";
-export const buttonFeaturedGradientStartColor = "rgb(7, 112, 227)";
 export const buttonFeaturedHoverBackgroundColor = "rgb(8, 78, 178)";
 export const buttonFeaturedHoverBackgroundImage = "none";
 export const buttonFeaturedHoverBoxShadow = "none";
@@ -136,12 +131,10 @@ export const buttonPaddingY = ".375rem";
 export const buttonSecondaryActiveBackgroundColor = "rgb(255, 255, 255)";
 export const buttonSecondaryActiveBackgroundImage = "none";
 export const buttonSecondaryActiveBorderColor = "rgb(8, 78, 178)";
-export const buttonSecondaryActiveBoxShadow = "0 0 0 3px #084eb2 inset";
 export const buttonSecondaryActiveColor = "rgb(8, 78, 178)";
 export const buttonSecondaryBackgroundColor = "rgb(255, 255, 255)";
 export const buttonSecondaryBackgroundImage = "none";
 export const buttonSecondaryBorderColor = "rgb(221, 221, 229)";
-export const buttonSecondaryBoxShadow = "0 0 0 2px #DDDDE5 inset";
 export const buttonSecondaryColor = "rgb(7, 112, 227)";
 export const buttonSecondaryDisabledBackgroundColor = "rgb(221, 221, 229)";
 export const buttonSecondaryDisabledBackgroundImage = "none";
@@ -150,7 +143,6 @@ export const buttonSecondaryDisabledColor = "rgb(178, 178, 191)";
 export const buttonSecondaryHoverBackgroundColor = "rgb(255, 255, 255)";
 export const buttonSecondaryHoverBackgroundImage = "none";
 export const buttonSecondaryHoverBorderColor = "rgb(7, 112, 227)";
-export const buttonSecondaryHoverBoxShadow = "0 0 0 2px #0770e3 inset";
 export const buttonSecondaryHoverColor = "rgb(7, 112, 227)";
 export const buttonSelectedActiveBackgroundColor = "rgb(4, 39, 89)";
 export const buttonSelectedActiveBackgroundImage = "none";
@@ -168,15 +160,12 @@ export const buttonSelectedHoverColor = "rgb(255, 255, 255)";
 export const buttonTextAlign = "center";
 export const calendarDayActiveBackgroundColor = "rgb(221, 221, 229)";
 export const calendarDayActiveColor = "rgb(17, 18, 54)";
-export const calendarDayBackgroundColor = "rgb(255, 255, 255)";
 export const calendarDayColor = "rgb(7, 112, 227)";
-export const calendarDayDisabledBackgroundColor = "rgb(255, 255, 255)";
 export const calendarDayDisabledColor = "rgb(221, 221, 229)";
 export const calendarDayFocusedBorderColor = "rgb(7, 112, 227)";
 export const calendarDayFocusedColor = "rgb(7, 112, 227)";
 export const calendarDayHoverBackgroundColor = "rgb(241, 242, 248)";
 export const calendarDayHoverColor = "rgb(68, 69, 96)";
-export const calendarDayOutsideBackgroundColor = "rgb(255, 255, 255)";
 export const calendarDayOutsideColor = "rgb(178, 178, 191)";
 export const calendarDaySelectedBackgroundColor = "rgb(8, 78, 178)";
 export const calendarDaySelectedColor = "rgb(255, 255, 255)";
@@ -239,12 +228,7 @@ export const fontSizeXxl = "2.625rem";
 export const fontWeightBlack = "900";
 export const fontWeightBold = "700";
 export const formValidationArrowSize = ".375rem";
-export const formValidationBackgroundColor = "rgb(209, 67, 91)";
-export const formValidationCheckboxArrowLeft = "1.5rem";
 export const formValidationColor = "rgb(209, 67, 91)";
-export const formValidationMargin = "0";
-export const formValidationPaddingX = ".75rem";
-export const formValidationPaddingY = ".375rem";
 export const gridColumns = "12";
 export const gridContainerMobilePadding = ".75rem";
 export const gridContainerPadding = "1.5rem";
@@ -320,17 +304,11 @@ export const listMarginTop = "0";
 export const listNestedMarginBottom = "0";
 export const listNestedMarginTop = "0";
 export const modalBackgroundColor = "rgb(255, 255, 255)";
-export const modalCloseIconFill = "rgb(104, 105, 127)";
-export const modalCloseIconHoverFill = "rgb(68, 69, 96)";
 export const modalContentPadding = ".75rem";
 export const modalHeaderPadding = ".75rem";
 export const modalInitialOpacity = "0";
 export const modalMaxWidth = "32.25rem";
 export const modalOpacity = "1";
-export const modalScrimBackgroundColor = "rgb(178, 178, 191)";
-export const modalScrimInitialOpacity = "0";
-export const modalScrimMobileOpacity = "1";
-export const modalScrimOpacity = ".7";
 export const modalWideMaxWidth = "50.25rem";
 export const onePixelRem = ".0625rem";
 export const panelBackgroundColor = "rgb(255, 255, 255)";
@@ -379,8 +357,6 @@ export const textBaseFontSize = "1rem";
 export const textBaseFontWeight = "400";
 export const textBaseLetterSpacing = "normal";
 export const textBaseLineHeight = "1.5rem";
-export const textColorPrimaryLight = "rgb(17, 18, 54)";
-export const textColorSecondaryLight = "rgb(68, 69, 96)";
 export const textLgFontSize = "1.5rem";
 export const textLgFontWeight = "400";
 export const textLgLetterSpacing = "normal";
@@ -406,7 +382,6 @@ export const textXxlLineHeight = "3.375rem";
 export const zindexAutosuggest = "900";
 export const zindexDrawer = "1100";
 export const zindexModal = "1100";
-export const zindexModalScrim = "1000";
 export const zindexPopover = "900";
 export const zindexScrim = "1000";
 export const zindexTooltip = "900";
@@ -452,9 +427,7 @@ buttonActiveBackgroundImage,
 buttonActiveBoxShadow,
 buttonActiveColor,
 buttonBackgroundColor,
-buttonBackgroundImage,
 buttonBorderRadius,
-buttonBorderRadiusLg,
 buttonBoxShadow,
 buttonColor,
 buttonDestructiveActiveBackgroundColor,
@@ -483,12 +456,9 @@ buttonFeaturedActiveBackgroundImage,
 buttonFeaturedActiveBoxShadow,
 buttonFeaturedActiveColor,
 buttonFeaturedBackgroundColor,
-buttonFeaturedBackgroundImage,
 buttonFeaturedColor,
 buttonFeaturedDisabledBackgroundColor,
 buttonFeaturedDisabledBackgroundImage,
-buttonFeaturedGradientEndColor,
-buttonFeaturedGradientStartColor,
 buttonFeaturedHoverBackgroundColor,
 buttonFeaturedHoverBackgroundImage,
 buttonFeaturedHoverBoxShadow,
@@ -527,12 +497,10 @@ buttonPaddingY,
 buttonSecondaryActiveBackgroundColor,
 buttonSecondaryActiveBackgroundImage,
 buttonSecondaryActiveBorderColor,
-buttonSecondaryActiveBoxShadow,
 buttonSecondaryActiveColor,
 buttonSecondaryBackgroundColor,
 buttonSecondaryBackgroundImage,
 buttonSecondaryBorderColor,
-buttonSecondaryBoxShadow,
 buttonSecondaryColor,
 buttonSecondaryDisabledBackgroundColor,
 buttonSecondaryDisabledBackgroundImage,
@@ -541,7 +509,6 @@ buttonSecondaryDisabledColor,
 buttonSecondaryHoverBackgroundColor,
 buttonSecondaryHoverBackgroundImage,
 buttonSecondaryHoverBorderColor,
-buttonSecondaryHoverBoxShadow,
 buttonSecondaryHoverColor,
 buttonSelectedActiveBackgroundColor,
 buttonSelectedActiveBackgroundImage,
@@ -561,15 +528,12 @@ buttonTextAlign,
 export const calendar = {
 calendarDayActiveBackgroundColor,
 calendarDayActiveColor,
-calendarDayBackgroundColor,
 calendarDayColor,
-calendarDayDisabledBackgroundColor,
 calendarDayDisabledColor,
 calendarDayFocusedBorderColor,
 calendarDayFocusedColor,
 calendarDayHoverBackgroundColor,
 calendarDayHoverColor,
-calendarDayOutsideBackgroundColor,
 calendarDayOutsideColor,
 calendarDaySelectedBackgroundColor,
 calendarDaySelectedColor,
@@ -657,12 +621,7 @@ textXxlFontWeight,
 export const forms = {
 checkboxCheckedTickColor,
 formValidationArrowSize,
-formValidationBackgroundColor,
-formValidationCheckboxArrowLeft,
 formValidationColor,
-formValidationMargin,
-formValidationPaddingX,
-formValidationPaddingY,
 inputBackground,
 inputBorder,
 inputBorderRadius,
@@ -737,17 +696,11 @@ textXxlLineHeight,
 };
 export const modals = {
 modalBackgroundColor,
-modalCloseIconFill,
-modalCloseIconHoverFill,
 modalContentPadding,
 modalHeaderPadding,
 modalInitialOpacity,
 modalMaxWidth,
 modalOpacity,
-modalScrimBackgroundColor,
-modalScrimInitialOpacity,
-modalScrimMobileOpacity,
-modalScrimOpacity,
 modalWideMaxWidth,
 };
 export const notifications = {
@@ -831,8 +784,6 @@ linkWhiteActiveColor,
 linkWhiteColor,
 linkWhiteHoverColor,
 linkWhiteVisitedColor,
-textColorPrimaryLight,
-textColorSecondaryLight,
 textPrimaryLightColor,
 textSecondaryLightColor,
 };
@@ -858,7 +809,6 @@ export const zIndices = {
 zindexAutosuggest,
 zindexDrawer,
 zindexModal,
-zindexModalScrim,
 zindexPopover,
 zindexScrim,
 zindexTooltip,

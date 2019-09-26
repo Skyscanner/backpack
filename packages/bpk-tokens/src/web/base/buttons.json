@@ -30,19 +30,9 @@
       "value": "{!BORDER_RADIUS_XS}",
       "type": "size"
     },
-    "BUTTON_BORDER_RADIUS_LG": {
-      "value": "{!BORDER_RADIUS_XS}",
-      "type": "size",
-      "deprecated": true
-    },
     "BUTTON_BACKGROUND_COLOR": {
       "value": "{!MONTEVERDE}",
       "type": "color"
-    },
-    "BUTTON_BACKGROUND_IMAGE": {
-      "value": "{!MONTEVERDE}",
-      "type": "background-image",
-      "deprecated": true
     },
     "BUTTON_GRADIENT_START_COLOR": {
       "value": "{!MONTEVERDE}",
@@ -191,21 +181,6 @@
     "BUTTON_SECONDARY_DISABLED_COLOR": {
       "value": "{!SKY_GRAY_TINT_04}",
       "type": "color"
-    },
-    "BUTTON_SECONDARY_BOX_SHADOW": {
-      "value": "0 0 0 2px {!SKY_GRAY_TINT_06} inset",
-      "type": "box-shadow",
-      "deprecated": true
-    },
-    "BUTTON_SECONDARY_HOVER_BOX_SHADOW": {
-      "value": "0 0 0 2px {!SKY_BLUE} inset",
-      "type": "box-shadow",
-      "deprecated": true
-    },
-    "BUTTON_SECONDARY_ACTIVE_BOX_SHADOW": {
-      "value": "0 0 0 3px {!SKY_BLUE_SHADE_01} inset",
-      "type": "box-shadow",
-      "deprecated": true
     },
     "BUTTON_SECONDARY_BORDER_COLOR": {
       "value": "{!SKY_GRAY_TINT_06}",
@@ -395,24 +370,9 @@
       "value": "none",
       "type": "box-shadow"
     },
-    "BUTTON_FEATURED_BACKGROUND_IMAGE": {
-      "value": "{!SKY_BLUE}",
-      "type": "background-image",
-      "deprecated": true
-    },
     "BUTTON_FEATURED_BACKGROUND_COLOR": {
       "value": "{!SKY_BLUE}",
       "type": "color"
-    },
-    "BUTTON_FEATURED_GRADIENT_START_COLOR": {
-      "value": "{!SKY_BLUE}",
-      "type": "color",
-      "deprecated": true
-    },
-    "BUTTON_FEATURED_GRADIENT_END_COLOR": {
-      "value": "{!SKY_BLUE}",
-      "type": "color",
-      "deprecated": true
     },
     "BUTTON_FEATURED_COLOR": {
       "value": "{!WHITE}",
