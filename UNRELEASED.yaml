@@ -24,3 +24,145 @@
 #   FIXED:
 #     - bpk-component-horcrux:
 #       - Fixed issue where `BpkHorcrux` would occasionally possess the living.
+
+BREAKING:
+  - bpk-animate-height:
+    - Removed ol brand colours
+  - bpk-component-accordion:
+    - Removed ol brand colours
+  - bpk-component-autosuggest:
+    - Removed ol brand colours
+  - bpk-component-badge:
+    - Removed ol brand colours
+  - bpk-component-banner-alert:
+    - Removed ol brand colours
+  - bpk-component-barchart:
+    - Removed ol brand colours
+  - bpk-component-blockquote:
+    - Removed ol brand colours
+  - bpk-component-breadcrumb:
+    - Removed ol brand colours
+  - bpk-component-breakpoint:
+    - Removed ol brand colours
+  - bpk-component-button:
+    - Removed ol brand colours
+  - bpk-component-calendar:
+    - Removed ol brand colours
+  - bpk-component-card:
+    - Removed ol brand colours
+  - bpk-component-checkbox:
+    - Removed ol brand colours
+  - bpk-component-chip:
+    - Removed ol brand colours
+  - bpk-component-close-button:
+    - Removed ol brand colours
+  - bpk-component-code:
+    - Removed ol brand colours
+  - bpk-component-content-container:
+    - Removed ol brand colours
+  - bpk-component-datatable:
+    - Removed ol brand colours
+  - bpk-component-datepicker:
+    - Removed ol brand colours
+  - bpk-component-description-list:
+    - Removed ol brand colours
+  - bpk-component-dialog:
+    - Removed ol brand colours
+  - bpk-component-drawer:
+    - Removed ol brand colours
+  - bpk-component-fieldset:
+    - Removed ol brand colours
+  - bpk-component-form-validation:
+    - Removed ol brand colours
+  - bpk-component-grid-toggle:
+    - Removed ol brand colours
+  - bpk-component-grid:
+    - Removed ol brand colours
+  - bpk-component-heading:
+    - Removed ol brand colours
+  - bpk-component-horizontal-nav:
+    - Removed ol brand colours
+  - bpk-component-icon:
+    - Removed ol brand colours
+  - bpk-component-image:
+    - Removed ol brand colours
+  - bpk-component-infinite-scroll:
+    - Removed ol brand colours
+  - bpk-component-input:
+    - Removed ol brand colours
+  - bpk-component-label:
+    - Removed ol brand colours
+  - bpk-component-link:
+    - Removed ol brand colours
+  - bpk-component-list:
+    - Removed ol brand colours
+  - bpk-component-loading-button:
+    - Removed ol brand colours
+  - bpk-component-map:
+    - Removed ol brand colours
+  - bpk-component-mobile-scroll-container:
+    - Removed ol brand colours
+  - bpk-component-modal:
+    - Removed ol brand colours
+  - bpk-component-navigation-bar:
+    - Removed ol brand colours
+  - bpk-component-navigation-stack:
+    - Removed ol brand colours
+  - bpk-component-nudger:
+    - Removed ol brand colours
+  - bpk-component-pagination:
+    - Removed ol brand colours
+  - bpk-component-panel:
+    - Removed ol brand colours
+  - bpk-component-paragraph:
+    - Removed ol brand colours
+  - bpk-component-phone-input:
+    - Removed ol brand colours
+  - bpk-component-popover:
+    - Removed ol brand colours
+  - bpk-component-progress:
+    - Removed ol brand colours
+  - bpk-component-radio:
+    - Removed ol brand colours
+  - bpk-component-rating:
+    - Removed ol brand colours
+  - bpk-component-router-link:
+    - Removed ol brand colours
+  - bpk-component-rtl-toggle:
+    - Removed ol brand colours
+  - bpk-component-scrollable-calendar:
+    - Removed ol brand colours
+  - bpk-component-section-list:
+    - Removed ol brand colours
+  - bpk-component-select:
+    - Removed ol brand colours
+  - bpk-component-slider:
+    - Removed ol brand colours
+  - bpk-component-spinner:
+    - Removed ol brand colours
+  - bpk-component-star-rating:
+    - Removed ol brand colours
+  - bpk-component-table:
+    - Removed ol brand colours
+  - bpk-component-text:
+    - Removed ol brand colours
+  - bpk-component-textarea:
+    - Removed ol brand colours
+  - bpk-component-theme-toggle:
+    - Removed ol brand colours
+  - bpk-component-ticket:
+    - Removed ol brand colours
+  - bpk-component-tooltip:
+    - Removed ol brand colours
+  - bpk-mixins:
+    - Removed ol brand colours
+  - bpk-scrim-utils:
+    - Removed ol brand colours
+  - bpk-stylesheets:
+    - Removed ol brand colours
+  - bpk-svgs:
+    - Removed ol brand colours
+  - bpk-theming:
+    - Removed ol brand colours
+  - bpk-tokens:
+    - Removed ol brand colours

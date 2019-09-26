@@ -6,26 +6,6 @@
     "category": "modals"
   },
   "props": {
-    "MODAL_SCRIM_BACKGROUND_COLOR": {
-      "value": "{!SKY_GRAY_TINT_04}",
-      "type": "color",
-      "deprecated": true
-    },
-    "MODAL_SCRIM_INITIAL_OPACITY": {
-      "value": "0",
-      "type": "number",
-      "deprecated": true
-    },
-    "MODAL_SCRIM_OPACITY": {
-      "value": ".7",
-      "type": "number",
-      "deprecated": true
-    },
-    "MODAL_SCRIM_MOBILE_OPACITY": {
-      "value": "1",
-      "type": "number",
-      "deprecated": true
-    },
     "MODAL_BACKGROUND_COLOR": {
       "value": "{!WHITE}",
       "type": "color"
@@ -49,16 +29,6 @@
     "MODAL_HEADER_PADDING": {
       "value": "{!SPACING_SM}",
       "type": "size"
-    },
-    "MODAL_CLOSE_ICON_FILL": {
-      "value": "{!SKY_GRAY_TINT_02}",
-      "type": "color",
-      "deprecated": true
-    },
-    "MODAL_CLOSE_ICON_HOVER_FILL": {
-      "value": "{!SKY_GRAY_TINT_01}",
-      "type": "color",
-      "deprecated": true
     },
     "MODAL_CONTENT_PADDING": {
       "value": "{!SPACING_SM}",
