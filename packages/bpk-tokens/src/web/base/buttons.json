@@ -40,7 +40,7 @@
       "type": "color"
     },
     "BUTTON_BACKGROUND_IMAGE": {
-      "value": "linear-gradient(-180deg, {!MONTEVERDE} 0%, {!MONTEVERDE} 100%)",
+      "value": "{!MONTEVERDE}",
       "type": "background-image",
       "deprecated": true
     },
