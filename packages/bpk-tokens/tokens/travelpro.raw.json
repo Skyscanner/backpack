@@ -93,6 +93,9 @@
     "BUNOL": {
       "value": "#ff7b59"
     },
+    "BUTTON_FONT_SIZE": {
+      "value": "1.1875rem"
+    },
     "CLEAR": {
       "value": "#F0F0F0"
     },

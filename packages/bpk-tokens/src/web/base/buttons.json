@@ -406,11 +406,13 @@
     },
     "BUTTON_FEATURED_GRADIENT_START_COLOR": {
       "value": "{!SKY_BLUE}",
-      "type": "color"
+      "type": "color",
+      "deprecated": true
     },
     "BUTTON_FEATURED_GRADIENT_END_COLOR": {
       "value": "{!SKY_BLUE}",
-      "type": "color"
+      "type": "color",
+      "deprecated": true
     },
     "BUTTON_FEATURED_COLOR": {
       "value": "{!WHITE}",

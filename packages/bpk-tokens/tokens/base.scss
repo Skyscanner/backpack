@@ -104,7 +104,7 @@ $bpk-button-active-color: rgb(255, 255, 255);
 /// @group buttons
 $bpk-button-background-color: rgb(0, 166, 152);
 /// @group buttons
-$bpk-button-background-image: linear-gradient(-180deg, #00a698 0%, #00a698 100%);
+$bpk-button-background-image: #00a698;
 /// @group buttons
 $bpk-button-border-radius: .25rem;
 /// @group buttons
@@ -124,7 +124,7 @@ $bpk-button-destructive-active-color: rgb(209, 67, 91);
 /// @group buttons
 $bpk-button-destructive-background-color: rgb(255, 255, 255);
 /// @group buttons
-$bpk-button-destructive-border-color: rgb(178, 178, 191);
+$bpk-button-destructive-border-color: rgb(221, 221, 229);
 /// @group buttons
 $bpk-button-destructive-box-shadow: 0 0 0 2px #DDDDE5 inset;
 /// @group buttons
@@ -166,7 +166,7 @@ $bpk-button-featured-active-color: rgb(255, 255, 255);
 /// @group buttons
 $bpk-button-featured-background-color: rgb(7, 112, 227);
 /// @group buttons
-$bpk-button-featured-background-image: linear-gradient(-180deg, #0770e3 0%, #0770e3 100%);
+$bpk-button-featured-background-image: #0770e3;
 /// @group buttons
 $bpk-button-featured-color: rgb(255, 255, 255);
 /// @group buttons
@@ -185,8 +185,8 @@ $bpk-button-featured-hover-background-image: none;
 $bpk-button-featured-hover-box-shadow: none;
 /// @group buttons
 $bpk-button-featured-hover-color: rgb(255, 255, 255);
-/// @group buttons
-$bpk-button-font-size: 1.1875rem ;
+/// @group font-sizes
+$bpk-button-font-size: 1.1875rem;
 /// @group buttons
 $bpk-button-font-weight: 700;
 /// @group buttons
@@ -298,7 +298,7 @@ $bpk-button-selected-active-color: rgb(255, 255, 255);
 /// @group buttons
 $bpk-button-selected-background-color: rgb(7, 112, 227);
 /// @group buttons
-$bpk-button-selected-background-image: linear-gradient(-180deg, #084eb2 0%, #084eb2 100%);
+$bpk-button-selected-background-image: #084eb2;
 /// @group buttons
 $bpk-button-selected-box-shadow: none;
 /// @group buttons

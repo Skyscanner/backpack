@@ -60,7 +60,7 @@ export const buttonActiveBackgroundImage = "none";
 export const buttonActiveBoxShadow = "none";
 export const buttonActiveColor = "rgb(255, 255, 255)";
 export const buttonBackgroundColor = "rgb(0, 166, 152)";
-export const buttonBackgroundImage = "linear-gradient(-180deg, #00a698 0%, #00a698 100%)";
+export const buttonBackgroundImage = "#00a698";
 export const buttonBorderRadius = ".25rem";
 export const buttonBorderRadiusLg = ".25rem";
 export const buttonBoxShadow = "none";
@@ -70,7 +70,7 @@ export const buttonDestructiveActiveBorderColor = "rgb(209, 67, 91)";
 export const buttonDestructiveActiveBoxShadow = "0 0 0 3px #d1435b inset";
 export const buttonDestructiveActiveColor = "rgb(209, 67, 91)";
 export const buttonDestructiveBackgroundColor = "rgb(255, 255, 255)";
-export const buttonDestructiveBorderColor = "rgb(178, 178, 191)";
+export const buttonDestructiveBorderColor = "rgb(221, 221, 229)";
 export const buttonDestructiveBoxShadow = "0 0 0 2px #DDDDE5 inset";
 export const buttonDestructiveColor = "rgb(209, 67, 91)";
 export const buttonDestructiveDisabledBackgroundColor = "rgb(221, 221, 229)";
@@ -91,7 +91,7 @@ export const buttonFeaturedActiveBackgroundImage = "none";
 export const buttonFeaturedActiveBoxShadow = "none";
 export const buttonFeaturedActiveColor = "rgb(255, 255, 255)";
 export const buttonFeaturedBackgroundColor = "rgb(7, 112, 227)";
-export const buttonFeaturedBackgroundImage = "linear-gradient(-180deg, #0770e3 0%, #0770e3 100%)";
+export const buttonFeaturedBackgroundImage = "#0770e3";
 export const buttonFeaturedColor = "rgb(255, 255, 255)";
 export const buttonFeaturedDisabledBackgroundColor = "rgb(221, 221, 229)";
 export const buttonFeaturedDisabledBackgroundImage = "none";
@@ -101,7 +101,7 @@ export const buttonFeaturedHoverBackgroundColor = "rgb(8, 78, 178)";
 export const buttonFeaturedHoverBackgroundImage = "none";
 export const buttonFeaturedHoverBoxShadow = "none";
 export const buttonFeaturedHoverColor = "rgb(255, 255, 255)";
-export const buttonFontSize = "1.1875rem ";
+export const buttonFontSize = "1.1875rem";
 export const buttonFontWeight = "700";
 export const buttonGradientEndColor = "rgb(0, 166, 152)";
 export const buttonGradientStartColor = "rgb(0, 166, 152)";
@@ -157,7 +157,7 @@ export const buttonSelectedActiveBackgroundImage = "none";
 export const buttonSelectedActiveBoxShadow = "none";
 export const buttonSelectedActiveColor = "rgb(255, 255, 255)";
 export const buttonSelectedBackgroundColor = "rgb(7, 112, 227)";
-export const buttonSelectedBackgroundImage = "linear-gradient(-180deg, #084eb2 0%, #084eb2 100%)";
+export const buttonSelectedBackgroundImage = "#084eb2";
 export const buttonSelectedBoxShadow = "none";
 export const buttonSelectedColor = "rgb(255, 255, 255)";
 export const buttonSelectedDisabledBoxShadow = "none";
@@ -543,7 +543,6 @@ buttonFeaturedHoverBackgroundColor,
 buttonFeaturedHoverBackgroundImage,
 buttonFeaturedHoverBoxShadow,
 buttonFeaturedHoverColor,
-buttonFontSize,
 buttonFontWeight,
 buttonGradientEndColor,
 buttonGradientStartColor,
@@ -725,6 +724,7 @@ colorYellow900,
 primaryGradient,
 };
 export const fontSizes = {
+buttonFontSize,
 h1FontSize,
 h2FontSize,
 h3FontSize,

@@ -4,6 +4,7 @@
     "../../common/base/colors.json"
   ],
   "aliases": {
+    "BUTTON_FONT_SIZE": "1.1875rem",
     "FONT_SIZE_SM": ".75rem",
     "FONT_SIZE_BASE": "1rem",
     "FONT_SIZE_LG": "1.5rem",

@@ -84,6 +84,9 @@
     "BUNOL": {
       "value": "#ff7b59"
     },
+    "BUTTON_FONT_SIZE": {
+      "value": "1.1875rem"
+    },
     "ERFOUD": {
       "value": "#ffb54d"
     },
@@ -692,10 +695,10 @@
     },
     "BUTTON_BACKGROUND_IMAGE": {
       "category": "buttons",
-      "value": "linear-gradient(-180deg, #00a698 0%, #00a698 100%)",
+      "value": "#00a698",
       "type": "background-image",
       "deprecated": true,
-      "originalValue": "linear-gradient(-180deg, {!MONTEVERDE} 0%, {!MONTEVERDE} 100%)",
+      "originalValue": "{!MONTEVERDE}",
       "name": "BUTTON_BACKGROUND_IMAGE"
     },
     "BUTTON_BORDER_RADIUS": {
@@ -764,7 +767,7 @@
     },
     "BUTTON_DESTRUCTIVE_BORDER_COLOR": {
       "category": "buttons",
-      "value": "rgb(178, 178, 191)",
+      "value": "rgb(221, 221, 229)",
       "type": "color",
       "originalValue": "{!SKY_GRAY_TINT_06}",
       "name": "BUTTON_DESTRUCTIVE_BORDER_COLOR"
@@ -911,10 +914,10 @@
     },
     "BUTTON_FEATURED_BACKGROUND_IMAGE": {
       "category": "buttons",
-      "value": "linear-gradient(-180deg, #0770e3 0%, #0770e3 100%)",
+      "value": "#0770e3",
       "type": "background-image",
       "deprecated": true,
-      "originalValue": "linear-gradient(-180deg, {!SKY_BLUE} 0%, {!SKY_BLUE} 100%)",
+      "originalValue": "{!SKY_BLUE}",
       "name": "BUTTON_FEATURED_BACKGROUND_IMAGE"
     },
     "BUTTON_FEATURED_COLOR": {
@@ -942,6 +945,7 @@
       "category": "buttons",
       "value": "rgb(7, 112, 227)",
       "type": "color",
+      "deprecated": true,
       "originalValue": "{!SKY_BLUE}",
       "name": "BUTTON_FEATURED_GRADIENT_END_COLOR"
     },
@@ -949,6 +953,7 @@
       "category": "buttons",
       "value": "rgb(7, 112, 227)",
       "type": "color",
+      "deprecated": true,
       "originalValue": "{!SKY_BLUE}",
       "name": "BUTTON_FEATURED_GRADIENT_START_COLOR"
     },
@@ -981,10 +986,10 @@
       "name": "BUTTON_FEATURED_HOVER_COLOR"
     },
     "BUTTON_FONT_SIZE": {
-      "category": "buttons",
-      "value": "1.1875rem ",
-      "type": "size",
-      "originalValue": "1.1875rem ",
+      "value": "1.1875rem",
+      "type": "font-size",
+      "category": "font-sizes",
+      "originalValue": "{!BUTTON_FONT_SIZE}",
       "name": "BUTTON_FONT_SIZE"
     },
     "BUTTON_FONT_WEIGHT": {
@@ -1377,9 +1382,9 @@
     },
     "BUTTON_SELECTED_BACKGROUND_IMAGE": {
       "category": "buttons",
-      "value": "linear-gradient(-180deg, #084eb2 0%, #084eb2 100%)",
+      "value": "#084eb2",
       "type": "background-image",
-      "originalValue": "linear-gradient(-180deg, {!SKY_BLUE_SHADE_01} 0%, {!SKY_BLUE_SHADE_01} 100%)",
+      "originalValue": "{!SKY_BLUE_SHADE_01}",
       "name": "BUTTON_SELECTED_BACKGROUND_IMAGE"
     },
     "BUTTON_SELECTED_BOX_SHADOW": {
