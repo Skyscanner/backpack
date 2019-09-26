@@ -53,10 +53,10 @@ export default () => (
     height: $bpk-spacing-xxl * 5;
     justify-content: center;
     align-items: center;
-    background-color: $bpk-color-gray-50;
+    background-color: $bpk-color-sky-gray-tint-07;
 
     &--alternate {
-      background-color: $bpk-color-gray-100;
+      background-color: $bpk-color-sky-gray-tint-06;
     }
   }
 }

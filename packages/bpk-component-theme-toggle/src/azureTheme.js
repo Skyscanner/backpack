@@ -17,12 +17,12 @@
  */
 
 import {
-  colorGray50,
-  colorGray100,
-  colorGray300,
-  colorGray500,
-  colorGray700,
-  colorGray900,
+  colorSkyGrayTint07,
+  colorSkyGrayTint06,
+  colorSkyGrayTint04,
+  colorSkyGrayTint02,
+  colorSkyGrayTint01,
+  colorSkyGray,
 } from 'bpk-tokens/tokens/base.es6';
 
 const BRAND_COLORS = {
@@ -170,12 +170,12 @@ const azureTheme = {
   docsSidebarLinkBorder: BRAND_COLORS.skyGrayTint07,
   docsSidebarSelectedArrowColor: 'rgb(254,183,158)',
   primaryColor: BRAND_COLORS.skyBlue,
-  colorGray50,
-  colorGray100,
-  colorGray300,
-  colorGray500,
-  colorGray700,
-  colorGray900,
+  colorSkyGrayTint07,
+  colorSkyGrayTint06,
+  colorSkyGrayTint04,
+  colorSkyGrayTint02,
+  colorSkyGrayTint01,
+  colorSkyGray,
 
   ratingHighColor: BRAND_COLORS.monteverde,
   ratingMediumColor: BRAND_COLORS.kolkata,

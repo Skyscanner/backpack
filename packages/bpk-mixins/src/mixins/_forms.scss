@@ -308,7 +308,7 @@
   padding: $bpk-select-padding-top $bpk-select-padding-right $bpk-select-padding-bottom $bpk-select-padding-left;
   border: $bpk-select-border;
   border-radius: $bpk-select-border-radius;
-  background: $bpk-color-white url(map-get($bpk-icons-sm, arrow-down-gray-700)) no-repeat right $bpk-spacing-sm center;
+  background: $bpk-color-white url(map-get($bpk-icons-sm, arrow-down-sky-gray-tint-01)) no-repeat right $bpk-spacing-sm center;
   background-size: $bpk-spacing-md $bpk-spacing-md;
   color: $bpk-select-color;
   line-height: $bpk-line-height-base - (2 * $bpk-select-border-width);
@@ -327,7 +327,7 @@
 
   &:disabled {
     border-color: $bpk-select-disabled-border-color;
-    background: $bpk-color-white url(map-get($bpk-icons-sm, arrow-down-gray-300)) no-repeat right $bpk-spacing-sm center;
+    background: $bpk-color-white url(map-get($bpk-icons-sm, arrow-down-sky-gray-tint-04)) no-repeat right $bpk-spacing-sm center;
     color: $bpk-select-disabled-color;
     cursor: not-allowed;
   }
@@ -442,7 +442,7 @@
 
 @mixin bpk-select--invalid {
   padding-right: $bpk-spacing-base;
-  background: $bpk-color-white url(map-get($bpk-icons-sm, arrow-down-gray-700)) no-repeat right $bpk-spacing-sm center;
+  background: $bpk-color-white url(map-get($bpk-icons-sm, arrow-down-sky-gray-tint-01)) no-repeat right $bpk-spacing-sm center;
   background-size: $bpk-spacing-md $bpk-spacing-md;
 
   @include bpk-themeable-property(border-color, --bpk-select-invalid-border-color, $bpk-form-validation-color);

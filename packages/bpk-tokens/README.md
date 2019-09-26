@@ -33,7 +33,7 @@ console.log(spacingBase);
 // Whole token categories
 import { colors } from 'bpk-tokens/tokens/base.react.native';
 
-console.log(colors.colorGray700);
+console.log(colors.colorSkyGrayTint01);
 
 // All tokens
 import * as tokens from 'bpk-tokens/tokens/base.react.native';
@@ -52,7 +52,7 @@ console.log(spacingBase);
 // Whole token categories
 import { colors } from 'bpk-tokens/tokens/base.es6';
 
-console.log(colors.colorGray700);
+console.log(colors.colorSkyGrayTint01);
 
 // All tokens
 import * as tokens from 'bpk-tokens/tokens/base.es6';
@@ -79,10 +79,10 @@ console.log(tokens);
 It is possible to add opacity to Backpack color tokens as follows:
 
 ```js
-import { colorBlue500 } from 'bpk-tokens/tokens/base.react.native';
+import { colorSkyBlue } from 'bpk-tokens/tokens/base.react.native';
 import { setOpacity } from 'bpk-tokens';
 
-const transparentBlue500 = setOpacity(colorBlue500, 0.7);
+const transparentBlue500 = setOpacity(colorSkyBlue, 0.7);
 
 console.log(transparentBlue500);
 ```

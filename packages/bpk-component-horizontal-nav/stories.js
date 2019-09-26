@@ -23,7 +23,7 @@ import {
   spacingXs,
   spacingSm,
   onePixelRem,
-  colorGray100,
+  colorSkyGrayTint06,
 } from 'bpk-tokens/tokens/base.es6';
 
 import STYLES from './stories.scss';
@@ -43,7 +43,7 @@ const Separator = () => (
         display: 'flex',
         height: '100%',
         paddingRight: onePixelRem,
-        backgroundColor: colorGray100,
+        backgroundColor: colorSkyGrayTint06,
       }}
     />
   </span>

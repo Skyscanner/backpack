@@ -21,16 +21,16 @@
 .bpk-navigation-stack-story-wrapper {
   max-width: $bpk-spacing-xxl * 8;
 
-  @include bpk-border-sm($bpk-color-gray-100, '');
+  @include bpk-border-sm($bpk-color-sky-gray-tint-06, '');
 }
 
 .bpk-navigation-stack-view {
   min-height: $bpk-spacing-xxl * 12;
   flex: 1;
-  background-color: $bpk-color-gray-100;
+  background-color: $bpk-color-sky-gray-tint-06;
 
   &--alternate {
-    background-color: $bpk-color-gray-50;
+    background-color: $bpk-color-sky-gray-tint-07;
   }
 
   &--no-nav-bar {

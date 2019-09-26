@@ -19,7 +19,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { colorGray700, spacingBase } from 'bpk-tokens/tokens/base.es6';
+import { colorSkyGrayTint01, spacingBase } from 'bpk-tokens/tokens/base.es6';
 
 import BpkLink, { BpkButtonLink } from './index';
 
@@ -43,7 +43,7 @@ storiesOf('bpk-component-link', module)
     </div>
   ))
   .add('Example (alternate)', () => (
-    <div style={{ backgroundColor: colorGray700, padding: spacingBase }}>
+    <div style={{ backgroundColor: colorSkyGrayTint01, padding: spacingBase }}>
       <BpkLink href="#" onClick={action('#1 clicked')} alternate>
         Link #1
       </BpkLink>
@@ -54,7 +54,7 @@ storiesOf('bpk-component-link', module)
     </div>
   ))
   .add('Example (alternate + buttons)', () => (
-    <div style={{ backgroundColor: colorGray700, padding: spacingBase }}>
+    <div style={{ backgroundColor: colorSkyGrayTint01, padding: spacingBase }}>
       <BpkButtonLink onClick={action('#1 clicked')} alternate>
         Link #1
       </BpkButtonLink>
