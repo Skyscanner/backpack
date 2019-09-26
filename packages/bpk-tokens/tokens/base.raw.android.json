@@ -324,7 +324,7 @@
     "RED_900": {
       "value": "#a80300"
     },
-    "SEGANO": {
+    "SAGANO": {
       "value": "#d0eeec"
     },
     "SKY_BLUE": {
@@ -1034,12 +1034,12 @@
       "originalValue": "{!RED_900}",
       "name": "COLOR_RED_900"
     },
-    "COLOR_SEGANO": {
+    "COLOR_SAGANO": {
       "type": "color",
       "category": "colors",
       "value": "#d0eeecff",
-      "originalValue": "{!SEGANO}",
-      "name": "COLOR_SEGANO"
+      "originalValue": "{!SAGANO}",
+      "name": "COLOR_SAGANO"
     },
     "COLOR_SKY_BLUE": {
       "type": "color",
@@ -1846,7 +1846,7 @@
     "COLOR_RED_700",
     "COLOR_RED_800",
     "COLOR_RED_900",
-    "COLOR_SEGANO",
+    "COLOR_SAGANO",
     "COLOR_SKY_BLUE",
     "COLOR_SKY_BLUE_SHADE_01",
     "COLOR_SKY_BLUE_SHADE_02",

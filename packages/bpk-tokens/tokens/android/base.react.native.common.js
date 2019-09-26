@@ -99,7 +99,7 @@ module.exports = {
   colorRed700: "rgb(222, 50, 47)",
   colorRed800: "rgb(204, 31, 29)",
   colorRed900: "rgb(168, 3, 0)",
-  colorSegano: "rgb(208, 238, 236)",
+  colorSagano: "rgb(208, 238, 236)",
   colorSkyBlue: "rgb(7, 112, 227)",
   colorSkyBlueShade01: "rgb(8, 78, 178)",
   colorSkyBlueShade02: "rgb(4, 39, 89)",

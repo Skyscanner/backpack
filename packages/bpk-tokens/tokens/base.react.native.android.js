@@ -97,7 +97,7 @@ export const colorRed600 = "rgb(235, 66, 63)";
 export const colorRed700 = "rgb(222, 50, 47)";
 export const colorRed800 = "rgb(204, 31, 29)";
 export const colorRed900 = "rgb(168, 3, 0)";
-export const colorSegano = "rgb(208, 238, 236)";
+export const colorSagano = "rgb(208, 238, 236)";
 export const colorSkyBlue = "rgb(7, 112, 227)";
 export const colorSkyBlueShade01 = "rgb(8, 78, 178)";
 export const colorSkyBlueShade02 = "rgb(4, 39, 89)";
@@ -278,7 +278,7 @@ colorRed600,
 colorRed700,
 colorRed800,
 colorRed900,
-colorSegano,
+colorSagano,
 colorSkyBlue,
 colorSkyBlueShade01,
 colorSkyBlueShade02,

@@ -24,3 +24,6 @@
 #   FIXED:
 #     - bpk-component-horcrux:
 #       - Fixed issue where `BpkHorcrux` would occasionally possess the living.
+BREAKING:
+  - bpk-tokens:
+    - Renamed `segano` to `sagano`.
