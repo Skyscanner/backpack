@@ -661,6 +661,7 @@
     "COLOR_GRAY_100": {
       "type": "color",
       "category": "colors",
+      "deprecated": true,
       "value": "#dddde5ff",
       "originalValue": "{!GRAY_100}",
       "name": "COLOR_GRAY_100"
@@ -668,6 +669,7 @@
     "COLOR_GRAY_200": {
       "type": "color",
       "category": "colors",
+      "deprecated": true,
       "value": "#cdcdd7ff",
       "originalValue": "{!GRAY_200}",
       "name": "COLOR_GRAY_200"
@@ -675,6 +677,7 @@
     "COLOR_GRAY_300": {
       "type": "color",
       "category": "colors",
+      "deprecated": true,
       "value": "#b2b2bfff",
       "originalValue": "{!GRAY_300}",
       "name": "COLOR_GRAY_300"
@@ -682,6 +685,7 @@
     "COLOR_GRAY_400": {
       "type": "color",
       "category": "colors",
+      "deprecated": true,
       "value": "#8f90a0ff",
       "originalValue": "{!GRAY_400}",
       "name": "COLOR_GRAY_400"
@@ -689,6 +693,7 @@
     "COLOR_GRAY_50": {
       "type": "color",
       "category": "colors",
+      "deprecated": true,
       "value": "#f1f2f8ff",
       "originalValue": "{!GRAY_50}",
       "name": "COLOR_GRAY_50"
@@ -696,6 +701,7 @@
     "COLOR_GRAY_500": {
       "type": "color",
       "category": "colors",
+      "deprecated": true,
       "value": "#68697fff",
       "originalValue": "{!GRAY_500}",
       "name": "COLOR_GRAY_500"
@@ -711,6 +717,7 @@
     "COLOR_GRAY_700": {
       "type": "color",
       "category": "colors",
+      "deprecated": true,
       "value": "#444560ff",
       "originalValue": "{!GRAY_700}",
       "name": "COLOR_GRAY_700"
@@ -726,6 +733,7 @@
     "COLOR_GRAY_900": {
       "type": "color",
       "category": "colors",
+      "deprecated": true,
       "value": "#111236ff",
       "originalValue": "{!GRAY_900}",
       "name": "COLOR_GRAY_900"
@@ -733,6 +741,7 @@
     "COLOR_GREEN_100": {
       "type": "color",
       "category": "colors",
+      "deprecated": true,
       "value": "#cbf5e2ff",
       "originalValue": "{!GREEN_100}",
       "name": "COLOR_GREEN_100"
@@ -740,6 +749,7 @@
     "COLOR_GREEN_200": {
       "type": "color",
       "category": "colors",
+      "deprecated": true,
       "value": "#afedd1ff",
       "originalValue": "{!GREEN_200}",
       "name": "COLOR_GREEN_200"
@@ -747,6 +757,7 @@
     "COLOR_GREEN_300": {
       "type": "color",
       "category": "colors",
+      "deprecated": true,
       "value": "#80e8b9ff",
       "originalValue": "{!GREEN_300}",
       "name": "COLOR_GREEN_300"
@@ -754,6 +765,7 @@
     "COLOR_GREEN_400": {
       "type": "color",
       "category": "colors",
+      "deprecated": true,
       "value": "#40de97ff",
       "originalValue": "{!GREEN_400}",
       "name": "COLOR_GREEN_400"
@@ -761,6 +773,7 @@
     "COLOR_GREEN_50": {
       "type": "color",
       "category": "colors",
+      "deprecated": true,
       "value": "#dff7ecff",
       "originalValue": "{!GREEN_50}",
       "name": "COLOR_GREEN_50"
@@ -768,6 +781,7 @@
     "COLOR_GREEN_500": {
       "type": "color",
       "category": "colors",
+      "deprecated": true,
       "value": "#00d775ff",
       "originalValue": "{!GREEN_500}",
       "name": "COLOR_GREEN_500"
@@ -775,6 +789,7 @@
     "COLOR_GREEN_600": {
       "type": "color",
       "category": "colors",
+      "deprecated": true,
       "value": "#00bd68ff",
       "originalValue": "{!GREEN_600}",
       "name": "COLOR_GREEN_600"
@@ -782,6 +797,7 @@
     "COLOR_GREEN_700": {
       "type": "color",
       "category": "colors",
+      "deprecated": true,
       "value": "#00a85dff",
       "originalValue": "{!GREEN_700}",
       "name": "COLOR_GREEN_700"
@@ -789,6 +805,7 @@
     "COLOR_GREEN_800": {
       "type": "color",
       "category": "colors",
+      "deprecated": true,
       "value": "#008c4dff",
       "originalValue": "{!GREEN_800}",
       "name": "COLOR_GREEN_800"
@@ -796,6 +813,7 @@
     "COLOR_GREEN_900": {
       "type": "color",
       "category": "colors",
+      "deprecated": true,
       "value": "#006638ff",
       "originalValue": "{!GREEN_900}",
       "name": "COLOR_GREEN_900"
@@ -852,6 +870,7 @@
     "COLOR_PINK_100": {
       "type": "color",
       "category": "colors",
+      "deprecated": true,
       "value": "#ffbfd7ff",
       "originalValue": "{!PINK_100}",
       "name": "COLOR_PINK_100"
@@ -859,6 +878,7 @@
     "COLOR_PINK_200": {
       "type": "color",
       "category": "colors",
+      "deprecated": true,
       "value": "#ff94bbff",
       "originalValue": "{!PINK_200}",
       "name": "COLOR_PINK_200"
@@ -866,6 +886,7 @@
     "COLOR_PINK_300": {
       "type": "color",
       "category": "colors",
+      "deprecated": true,
       "value": "#ff73a6ff",
       "originalValue": "{!PINK_300}",
       "name": "COLOR_PINK_300"
@@ -873,6 +894,7 @@
     "COLOR_PINK_400": {
       "type": "color",
       "category": "colors",
+      "deprecated": true,
       "value": "#ff619bff",
       "originalValue": "{!PINK_400}",
       "name": "COLOR_PINK_400"
@@ -880,6 +902,7 @@
     "COLOR_PINK_50": {
       "type": "color",
       "category": "colors",
+      "deprecated": true,
       "value": "#fde4edff",
       "originalValue": "{!PINK_50}",
       "name": "COLOR_PINK_50"
@@ -887,6 +910,7 @@
     "COLOR_PINK_500": {
       "type": "color",
       "category": "colors",
+      "deprecated": true,
       "value": "#fa488aff",
       "originalValue": "{!PINK_500}",
       "name": "COLOR_PINK_500"
@@ -894,6 +918,7 @@
     "COLOR_PINK_600": {
       "type": "color",
       "category": "colors",
+      "deprecated": true,
       "value": "#d92b6bff",
       "originalValue": "{!PINK_600}",
       "name": "COLOR_PINK_600"
@@ -901,6 +926,7 @@
     "COLOR_PINK_700": {
       "type": "color",
       "category": "colors",
+      "deprecated": true,
       "value": "#c50f52ff",
       "originalValue": "{!PINK_700}",
       "name": "COLOR_PINK_700"
@@ -908,6 +934,7 @@
     "COLOR_PINK_800": {
       "type": "color",
       "category": "colors",
+      "deprecated": true,
       "value": "#b00c48ff",
       "originalValue": "{!PINK_800}",
       "name": "COLOR_PINK_800"
@@ -915,6 +942,7 @@
     "COLOR_PINK_900": {
       "type": "color",
       "category": "colors",
+      "deprecated": true,
       "value": "#94053aff",
       "originalValue": "{!PINK_900}",
       "name": "COLOR_PINK_900"
@@ -922,13 +950,14 @@
     "COLOR_PRIMARY_GRADIENT_LIGHT": {
       "type": "color",
       "category": "colors",
-      "value": "#02ddd8ff",
-      "originalValue": "{!PRIMARY_GRADIENT_LIGHT}",
+      "value": "#0770e3ff",
+      "originalValue": "{!SKY_BLUE}",
       "name": "COLOR_PRIMARY_GRADIENT_LIGHT"
     },
     "COLOR_RED_100": {
       "type": "color",
       "category": "colors",
+      "deprecated": true,
       "value": "#ffd6d5ff",
       "originalValue": "{!RED_100}",
       "name": "COLOR_RED_100"
@@ -936,6 +965,7 @@
     "COLOR_RED_200": {
       "type": "color",
       "category": "colors",
+      "deprecated": true,
       "value": "#ffbbbaff",
       "originalValue": "{!RED_200}",
       "name": "COLOR_RED_200"
@@ -943,6 +973,7 @@
     "COLOR_RED_300": {
       "type": "color",
       "category": "colors",
+      "deprecated": true,
       "value": "#ff9694ff",
       "originalValue": "{!RED_300}",
       "name": "COLOR_RED_300"
@@ -950,6 +981,7 @@
     "COLOR_RED_400": {
       "type": "color",
       "category": "colors",
+      "deprecated": true,
       "value": "#fe7471ff",
       "originalValue": "{!RED_400}",
       "name": "COLOR_RED_400"
@@ -957,6 +989,7 @@
     "COLOR_RED_50": {
       "type": "color",
       "category": "colors",
+      "deprecated": true,
       "value": "#fcf2f2ff",
       "originalValue": "{!RED_50}",
       "name": "COLOR_RED_50"
@@ -964,6 +997,7 @@
     "COLOR_RED_500": {
       "type": "color",
       "category": "colors",
+      "deprecated": true,
       "value": "#ff5452ff",
       "originalValue": "{!RED_500}",
       "name": "COLOR_RED_500"
@@ -971,6 +1005,7 @@
     "COLOR_RED_600": {
       "type": "color",
       "category": "colors",
+      "deprecated": true,
       "value": "#eb423fff",
       "originalValue": "{!RED_600}",
       "name": "COLOR_RED_600"
@@ -978,6 +1013,7 @@
     "COLOR_RED_700": {
       "type": "color",
       "category": "colors",
+      "deprecated": true,
       "value": "#de322fff",
       "originalValue": "{!RED_700}",
       "name": "COLOR_RED_700"
@@ -985,6 +1021,7 @@
     "COLOR_RED_800": {
       "type": "color",
       "category": "colors",
+      "deprecated": true,
       "value": "#cc1f1dff",
       "originalValue": "{!RED_800}",
       "name": "COLOR_RED_800"
@@ -992,6 +1029,7 @@
     "COLOR_RED_900": {
       "type": "color",
       "category": "colors",
+      "deprecated": true,
       "value": "#a80300ff",
       "originalValue": "{!RED_900}",
       "name": "COLOR_RED_900"
@@ -1146,6 +1184,7 @@
     "COLOR_YELLOW_100": {
       "type": "color",
       "category": "colors",
+      "deprecated": true,
       "value": "#fff3cfff",
       "originalValue": "{!YELLOW_100}",
       "name": "COLOR_YELLOW_100"
@@ -1153,6 +1192,7 @@
     "COLOR_YELLOW_200": {
       "type": "color",
       "category": "colors",
+      "deprecated": true,
       "value": "#ffecb8ff",
       "originalValue": "{!YELLOW_200}",
       "name": "COLOR_YELLOW_200"
@@ -1160,6 +1200,7 @@
     "COLOR_YELLOW_300": {
       "type": "color",
       "category": "colors",
+      "deprecated": true,
       "value": "#ffe18cff",
       "originalValue": "{!YELLOW_300}",
       "name": "COLOR_YELLOW_300"
@@ -1167,6 +1208,7 @@
     "COLOR_YELLOW_400": {
       "type": "color",
       "category": "colors",
+      "deprecated": true,
       "value": "#ffcf4aff",
       "originalValue": "{!YELLOW_400}",
       "name": "COLOR_YELLOW_400"
@@ -1174,6 +1216,7 @@
     "COLOR_YELLOW_50": {
       "type": "color",
       "category": "colors",
+      "deprecated": true,
       "value": "#fff9e6ff",
       "originalValue": "{!YELLOW_50}",
       "name": "COLOR_YELLOW_50"
@@ -1181,6 +1224,7 @@
     "COLOR_YELLOW_500": {
       "type": "color",
       "category": "colors",
+      "deprecated": true,
       "value": "#ffbb00ff",
       "originalValue": "{!YELLOW_500}",
       "name": "COLOR_YELLOW_500"
@@ -1188,6 +1232,7 @@
     "COLOR_YELLOW_600": {
       "type": "color",
       "category": "colors",
+      "deprecated": true,
       "value": "#f0b000ff",
       "originalValue": "{!YELLOW_600}",
       "name": "COLOR_YELLOW_600"
@@ -1195,6 +1240,7 @@
     "COLOR_YELLOW_700": {
       "type": "color",
       "category": "colors",
+      "deprecated": true,
       "value": "#e1a500ff",
       "originalValue": "{!YELLOW_700}",
       "name": "COLOR_YELLOW_700"
@@ -1202,6 +1248,7 @@
     "COLOR_YELLOW_800": {
       "type": "color",
       "category": "colors",
+      "deprecated": true,
       "value": "#c28e00ff",
       "originalValue": "{!YELLOW_800}",
       "name": "COLOR_YELLOW_800"
@@ -1209,6 +1256,7 @@
     "COLOR_YELLOW_900": {
       "type": "color",
       "category": "colors",
+      "deprecated": true,
       "value": "#9c7200ff",
       "originalValue": "{!YELLOW_900}",
       "name": "COLOR_YELLOW_900"
