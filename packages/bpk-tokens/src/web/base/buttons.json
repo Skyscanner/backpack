@@ -348,7 +348,7 @@
       "type": "color"
     },
     "BUTTON_SELECTED_BACKGROUND_IMAGE": {
-      "value": "linear-gradient(-180deg, {!SKY_BLUE_SHADE_01} 0%, {!SKY_BLUE_SHADE_01} 100%)",
+      "value": "{!SKY_BLUE_SHADE_01}",
       "type": "background-image"
     },
     "BUTTON_SELECTED_HOVER_BACKGROUND_COLOR": {
