@@ -2,6 +2,14 @@
 
 [Unreleased changes](./UNRELEASED.yaml).
 
+# 2019-09-26 - Fixed spelling of colour token
+
+**Breaking:**
+
+ - bpk-tokens: 27.12.0 => 28.0.0
+   - Renamed `segano` to `sagano`.
+
+
 # 2019-09-26 - New brand colours
 
 **Added:**
