@@ -54,7 +54,7 @@ const BRAND_COLORS = {
   // Greens
   monteverde: '#00A698',
   glencoe: '#73CEC6',
-  sagano: '#D0EEEC',
+  segano: '#D0EEEC',
   buttonPrimaryHoverBackgroundColor: '#00887D', // Don't use outside of buttons
   buttonPrimaryActiveBackgroundColor: '#006A61', // Don't use outside of buttons
 
