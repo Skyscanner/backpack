@@ -24,3 +24,145 @@
 #   FIXED:
 #     - bpk-component-horcrux:
 #       - Fixed issue where `BpkHorcrux` would occasionally possess the living.
+
+ADDED:
+  - bpk-animate-height:
+    - Added new brand colours
+  - bpk-component-accordion:
+    - Added new brand colours
+  - bpk-component-autosuggest:
+    - Added new brand colours
+  - bpk-component-badge:
+    - Added new brand colours
+  - bpk-component-banner-alert:
+    - Added new brand colours
+  - bpk-component-barchart: 
+    - Added new brand colours
+  - bpk-component-blockquote:
+    - Added new brand colours
+  - bpk-component-breadcrumb:
+    - Added new brand colours
+  - bpk-component-breakpoint:
+    - Added new brand colours
+  - bpk-component-button:
+    - Added new brand colours
+  - bpk-component-calendar:
+    - Added new brand colours
+  - bpk-component-card:
+    - Added new brand colours
+  - bpk-component-checkbox:
+    - Added new brand colours
+  - bpk-component-chip:
+    - Added new brand colours
+  - bpk-component-close-button:
+    - Added new brand colours
+  - bpk-component-code:
+    - Added new brand colours
+  - bpk-component-content-container:
+    - Added new brand colours
+  - bpk-component-datatable:
+    - Added new brand colours
+  - bpk-component-datepicker:
+    - Added new brand colours
+  - bpk-component-description-list:
+    - Added new brand colours
+  - bpk-component-dialog:
+    - Added new brand colours
+  - bpk-component-drawer:
+    - Added new brand colours
+  - bpk-component-fieldset:
+    - Added new brand colours
+  - bpk-component-form-validation:
+    - Added new brand colours
+  - bpk-component-grid-toggle:
+    - Added new brand colours
+  - bpk-component-grid:
+    - Added new brand colours
+  - bpk-component-heading:
+    - Added new brand colours
+  - bpk-component-horizontal-nav:
+    - Added new brand colours
+  - bpk-component-icon:
+    - Added new brand colours
+  - bpk-component-image:
+    - Added new brand colours
+  - bpk-component-infinite-scroll:
+    - Added new brand colours
+  - bpk-component-input:
+    - Added new brand colours
+  - bpk-component-label:
+    - Added new brand colours
+  - bpk-component-link:
+    - Added new brand colours
+  - bpk-component-list:
+    - Added new brand colours
+  - bpk-component-loading-button:
+    - Added new brand colours
+  - bpk-component-map:
+    - Added new brand colours
+  - bpk-component-mobile-scroll-container:
+    - Added new brand colours
+  - bpk-component-modal:
+    - Added new brand colours
+  - bpk-component-navigation-bar:
+    - Added new brand colours
+  - bpk-component-navigation-stack:
+    - Added new brand colours
+  - bpk-component-nudger:
+    - Added new brand colours
+  - bpk-component-pagination:
+    - Added new brand colours
+  - bpk-component-panel:
+    - Added new brand colours
+  - bpk-component-paragraph:
+    - Added new brand colours
+  - bpk-component-phone-input:
+    - Added new brand colours
+  - bpk-component-popover:
+    - Added new brand colours
+  - bpk-component-progress:
+    - Added new brand colours
+  - bpk-component-radio:
+    - Added new brand colours
+  - bpk-component-rating:
+    - Added new brand colours
+  - bpk-component-router-link:
+    - Added new brand colours
+  - bpk-component-rtl-toggle:
+    - Added new brand colours
+  - bpk-component-scrollable-calendar:
+    - Added new brand colours
+  - bpk-component-section-list:
+    - Added new brand colours
+  - bpk-component-select:
+    - Added new brand colours
+  - bpk-component-slider:
+    - Added new brand colours
+  - bpk-component-spinner:
+    - Added new brand colours
+  - bpk-component-star-rating:
+    - Added new brand colours
+  - bpk-component-table:
+    - Added new brand colours
+  - bpk-component-text:
+    - Added new brand colours
+  - bpk-component-textarea:
+    - Added new brand colours
+  - bpk-component-theme-toggle:
+    - Added new brand colours
+  - bpk-component-ticket:
+    - Added new brand colours
+  - bpk-component-tooltip:
+    - Added new brand colours
+  - bpk-mixins:
+    - Added new brand colours
+  - bpk-scrim-utils:
+    - Added new brand colours
+  - bpk-stylesheets:
+    - Added new brand colours
+  - bpk-svgs:
+    - Added new brand colours
+  - bpk-theming:
+    - Added new brand colours
+  - bpk-tokens:
+    - Added new brand colours
