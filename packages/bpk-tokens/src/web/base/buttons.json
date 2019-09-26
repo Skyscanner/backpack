@@ -18,33 +18,42 @@
       "value": ".5625rem",
       "type": "size"
     },
-    "BUTTON_BORDER_RADIUS": {
+    "BUTTON_ICON_BORDER_RADIUS": {
       "value": "{!BORDER_RADIUS_PILL}",
       "type": "size"
     },
-    "BUTTON_BORDER_RADIUS_LG": {
+    "BUTTON_ICON_BORDER_RADIUS_LG": {
       "value": "{!BORDER_RADIUS_PILL_LG}",
       "type": "size"
     },
+    "BUTTON_BORDER_RADIUS": {
+      "value": "{!BORDER_RADIUS_XS}",
+      "type": "size"
+    },
+    "BUTTON_BORDER_RADIUS_LG": {
+      "value": "{!BORDER_RADIUS_XS}",
+      "type": "size",
+      "deprecated": true
+    },
     "BUTTON_BACKGROUND_COLOR": {
-      "value": "{!GREEN_500}",
+      "value": "{!MONTEVERDE}",
       "type": "color"
     },
     "BUTTON_BACKGROUND_IMAGE": {
-      "value": "linear-gradient(-180deg, {!GREEN_500} 0%, {!GREEN_600} 100%)",
+      "value": "{!MONTEVERDE}",
       "type": "background-image",
       "deprecated": true
     },
     "BUTTON_GRADIENT_START_COLOR": {
-      "value": "{!GREEN_500}",
+      "value": "{!MONTEVERDE}",
       "type": "color"
     },
     "BUTTON_GRADIENT_END_COLOR": {
-      "value": "{!GREEN_600}",
+      "value": "{!MONTEVERDE}",
       "type": "color"
     },
     "BUTTON_HOVER_BACKGROUND_COLOR": {
-      "value": "{!GREEN_600}",
+      "value": "#00887D",
       "type": "color"
     },
     "BUTTON_HOVER_BACKGROUND_IMAGE": {
@@ -52,7 +61,7 @@
       "type": "background-image"
     },
     "BUTTON_ACTIVE_BACKGROUND_COLOR": {
-      "value": "{!GREEN_700}",
+      "value": "#006A61",
       "type": "color"
     },
     "BUTTON_ACTIVE_BACKGROUND_IMAGE": {
@@ -100,7 +109,7 @@
       "type": "color"
     },
     "BUTTON_FONT_SIZE": {
-      "value": "{!FONT_SIZE_BASE}",
+      "value": "!{BUTTON_FONT_SIZE}",
       "type": "size"
     },
     "BUTTON_FONT_WEIGHT": {
@@ -168,15 +177,15 @@
       "type": "background-image"
     },
     "BUTTON_SECONDARY_COLOR": {
-      "value": "{!BLUE_500}",
+      "value": "{!SKY_BLUE}",
       "type": "color"
     },
     "BUTTON_SECONDARY_HOVER_COLOR": {
-      "value": "{!BLUE_500}",
+      "value": "{!SKY_BLUE}",
       "type": "color"
     },
     "BUTTON_SECONDARY_ACTIVE_COLOR": {
-      "value": "{!BLUE_500}",
+      "value": "{!SKY_BLUE_SHADE_01}",
       "type": "color"
     },
     "BUTTON_SECONDARY_DISABLED_COLOR": {
@@ -189,12 +198,12 @@
       "deprecated": true
     },
     "BUTTON_SECONDARY_HOVER_BOX_SHADOW": {
-      "value": "0 0 0 2px {!BLUE_500} inset",
+      "value": "0 0 0 2px {!SKY_BLUE} inset",
       "type": "box-shadow",
       "deprecated": true
     },
     "BUTTON_SECONDARY_ACTIVE_BOX_SHADOW": {
-      "value": "0 0 0 3px {!BLUE_500} inset",
+      "value": "0 0 0 3px {!SKY_BLUE_SHADE_01} inset",
       "type": "box-shadow",
       "deprecated": true
     },
@@ -203,11 +212,11 @@
       "type": "color"
     },
     "BUTTON_SECONDARY_HOVER_BORDER_COLOR": {
-      "value": "{!BLUE_500}",
+      "value": "{!SKY_BLUE}",
       "type": "color"
     },
     "BUTTON_SECONDARY_ACTIVE_BORDER_COLOR": {
-      "value": "{!BLUE_500}",
+      "value": "{!SKY_BLUE_SHADE_01}",
       "type": "color"
     },
     "BUTTON_SECONDARY_DISABLED_BOX_SHADOW": {
@@ -267,7 +276,7 @@
       "type": "box-shadow"
     },
     "BUTTON_DESTRUCTIVE_COLOR": {
-      "value": "{!RED_500}",
+      "value": "{!PANJIN}",
       "type": "color"
     },
     "BUTTON_DESTRUCTIVE_BACKGROUND_COLOR": {
@@ -283,7 +292,7 @@
       "type": "box-shadow"
     },
     "BUTTON_DESTRUCTIVE_HOVER_COLOR": {
-      "value": "{!RED_500}",
+      "value": "{!PANJIN}",
       "type": "color"
     },
     "BUTTON_DESTRUCTIVE_HOVER_BACKGROUND_COLOR": {
@@ -295,15 +304,15 @@
       "type": "background-image"
     },
     "BUTTON_DESTRUCTIVE_HOVER_BORDER_COLOR": {
-      "value": "{!RED_500}",
+      "value": "{!PANJIN}",
       "type": "color"
     },
     "BUTTON_DESTRUCTIVE_HOVER_BOX_SHADOW": {
-      "value": "0 0 0 2px {!RED_500} inset",
+      "value": "0 0 0 2px {!PANJIN} inset",
       "type": "box-shadow"
     },
     "BUTTON_DESTRUCTIVE_ACTIVE_COLOR": {
-      "value": "{!RED_500}",
+      "value": "{!PANJIN}",
       "type": "color"
     },
     "BUTTON_DESTRUCTIVE_ACTIVE_BACKGROUND_COLOR": {
@@ -311,11 +320,11 @@
       "type": "color"
     },
     "BUTTON_DESTRUCTIVE_ACTIVE_BORDER_COLOR": {
-      "value": "{!RED_500}",
+      "value": "{!PANJIN}",
       "type": "color"
     },
     "BUTTON_DESTRUCTIVE_ACTIVE_BOX_SHADOW": {
-      "value": "0 0 0 3px {!RED_500} inset",
+      "value": "0 0 0 3px {!PANJIN} inset",
       "type": "box-shadow"
     },
     "BUTTON_DESTRUCTIVE_DISABLED_BACKGROUND_COLOR": {
@@ -335,15 +344,15 @@
       "type": "box-shadow"
     },
     "BUTTON_SELECTED_BACKGROUND_COLOR": {
-      "value": "{!BLUE_500}",
+      "value": "{!SKY_BLUE}",
       "type": "color"
     },
     "BUTTON_SELECTED_BACKGROUND_IMAGE": {
-      "value": "linear-gradient(-180deg, {!BLUE_600} 0%, {!BLUE_700} 100%)",
+      "value": "{!SKY_BLUE_SHADE_01}",
       "type": "background-image"
     },
     "BUTTON_SELECTED_HOVER_BACKGROUND_COLOR": {
-      "value": "{!BLUE_700}",
+      "value": "{!SKY_BLUE_SHADE_01}",
       "type": "color"
     },
     "BUTTON_SELECTED_HOVER_BACKGROUND_IMAGE": {
@@ -351,7 +360,7 @@
       "type": "background-image"
     },
     "BUTTON_SELECTED_ACTIVE_BACKGROUND_COLOR": {
-      "value": "{!BLUE_800}",
+      "value": "{!SKY_BLUE_SHADE_02}",
       "type": "color"
     },
     "BUTTON_SELECTED_ACTIVE_BACKGROUND_IMAGE": {
@@ -387,21 +396,23 @@
       "type": "box-shadow"
     },
     "BUTTON_FEATURED_BACKGROUND_IMAGE": {
-      "value": "linear-gradient(-180deg, {!PINK_500} 0%, {!PINK_600} 100%)",
+      "value": "{!SKY_BLUE}",
       "type": "background-image",
       "deprecated": true
     },
     "BUTTON_FEATURED_BACKGROUND_COLOR": {
-      "value": "{!PINK_500}",
+      "value": "{!SKY_BLUE}",
       "type": "color"
     },
     "BUTTON_FEATURED_GRADIENT_START_COLOR": {
-      "value": "{!PINK_500}",
-      "type": "color"
+      "value": "{!SKY_BLUE}",
+      "type": "color",
+      "deprecated": true
     },
     "BUTTON_FEATURED_GRADIENT_END_COLOR": {
-      "value": "{!PINK_600}",
-      "type": "color"
+      "value": "{!SKY_BLUE}",
+      "type": "color",
+      "deprecated": true
     },
     "BUTTON_FEATURED_COLOR": {
       "value": "{!WHITE}",
@@ -416,7 +427,7 @@
       "type": "color"
     },
     "BUTTON_FEATURED_HOVER_BACKGROUND_COLOR": {
-      "value": "{!PINK_600}",
+      "value": "{!SKY_BLUE_SHADE_01}",
       "type": "color"
     },
     "BUTTON_FEATURED_HOVER_BACKGROUND_IMAGE": {
@@ -424,7 +435,7 @@
       "type": "background-image"
     },
     "BUTTON_FEATURED_ACTIVE_BACKGROUND_COLOR": {
-      "value": "{!PINK_700}",
+      "value": "{!SKY_BLUE_SHADE_02}",
       "type": "color"
     },
     "BUTTON_FEATURED_ACTIVE_BACKGROUND_IMAGE": {

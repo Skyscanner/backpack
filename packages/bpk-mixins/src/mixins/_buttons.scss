@@ -91,7 +91,7 @@
   font-size: $bpk-button-large-font-size;
   line-height: $bpk-button-large-line-height;
 
-  @include bpk-themeable-property(border-radius, --bpk-button-border-radius, $bpk-button-border-radius-lg);
+  @include bpk-themeable-property(border-radius, --bpk-button-border-radius, $bpk-button-border-radius);
 }
 
 /// Secondary button. Modifies the bpk-button mixin.
@@ -305,7 +305,7 @@
 
 @mixin bpk-button--icon-only {
   padding: $bpk-button-padding-y $bpk-button-padding-x-icon-only;
-  border-radius: $bpk-button-border-radius;
+  border-radius: $bpk-button-icon-border-radius;
 }
 
 /// Large icon-only button. Modifies the bpk-button & bpk-button--large mixins.
@@ -322,7 +322,7 @@
 
 @mixin bpk-button--large-icon-only {
   padding: $bpk-button-large-padding-y $bpk-button-large-padding-x-icon-only;
-  border-radius: $bpk-button-border-radius-lg;
+  border-radius: $bpk-button-icon-border-radius-lg;
 }
 
 /// Featured button. Modifies the bpk-button
@@ -337,7 +337,8 @@
 ///   }
 
 @mixin bpk-button--featured {
-  background-image: linear-gradient(-180deg, var(--bpk-button-featured-gradient-start-color, $bpk-button-featured-gradient-start-color) 0%, var(--bpk-button-featured-gradient-end-color, $bpk-button-featured-gradient-end-color) 100%);
+  background-image: $bpk-button-featured-background-image;
+  background-image: linear-gradient(-180deg, var(--bpk-button-featured-gradient-start-color, $bpk-button-featured-background-image) 0%, var(--bpk-button-featured-gradient-end-color, $bpk-button-featured-background-image) 100%);
 
   @include bpk-themeable-property(color, --bpk-button-featured-text-color, $bpk-button-featured-color);
   @include bpk-themeable-property(background-color, --bpk-button-featured-background-color, $bpk-button-featured-background-color);

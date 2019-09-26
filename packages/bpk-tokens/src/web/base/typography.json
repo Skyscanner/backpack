@@ -100,6 +100,11 @@
       "type": "string",
       "category": "font-weights"
     },
+    "BUTTON_FONT_SIZE": {
+      "value": "{!BUTTON_FONT_SIZE}",
+      "type": "font-size",
+      "category": "font-sizes"
+    },
     "H6_FONT_SIZE": {
       "value": "{!FONT_SIZE_SM}",
       "type": "font-size",

@@ -94,7 +94,7 @@ $bpk-breakpoint-query-tablet-only: "(min-width: 32.3125rem) and (max-width: 50.2
 /// @group breakpoints
 $bpk-breakpoint-tablet: 50.25rem !default;
 /// @group buttons
-$bpk-button-active-background-color: rgb(0, 168, 93) !default;
+$bpk-button-active-background-color: rgb(0, 106, 97) !default;
 /// @group buttons
 $bpk-button-active-background-image: none !default;
 /// @group buttons
@@ -102,13 +102,13 @@ $bpk-button-active-box-shadow: none !default;
 /// @group buttons
 $bpk-button-active-color: rgb(255, 255, 255) !default;
 /// @group buttons
-$bpk-button-background-color: rgb(0, 215, 117) !default;
+$bpk-button-background-color: rgb(0, 166, 152) !default;
 /// @group buttons
-$bpk-button-background-image: linear-gradient(-180deg, #00d775 0%, #00bd68 100%) !default;
+$bpk-button-background-image: #00a698 !default;
 /// @group buttons
-$bpk-button-border-radius: 1.125rem !default;
+$bpk-button-border-radius: .25rem !default;
 /// @group buttons
-$bpk-button-border-radius-lg: 1.3125rem !default;
+$bpk-button-border-radius-lg: .25rem !default;
 /// @group buttons
 $bpk-button-box-shadow: none !default;
 /// @group buttons
@@ -116,11 +116,11 @@ $bpk-button-color: rgb(255, 255, 255) !default;
 /// @group buttons
 $bpk-button-destructive-active-background-color: rgb(255, 255, 255) !default;
 /// @group buttons
-$bpk-button-destructive-active-border-color: rgb(255, 84, 82) !default;
+$bpk-button-destructive-active-border-color: rgb(209, 67, 91) !default;
 /// @group buttons
-$bpk-button-destructive-active-box-shadow: 0 0 0 3px #ff5452 inset !default;
+$bpk-button-destructive-active-box-shadow: 0 0 0 3px #d1435b inset !default;
 /// @group buttons
-$bpk-button-destructive-active-color: rgb(255, 84, 82) !default;
+$bpk-button-destructive-active-color: rgb(209, 67, 91) !default;
 /// @group buttons
 $bpk-button-destructive-background-color: rgb(255, 255, 255) !default;
 /// @group buttons
@@ -128,7 +128,7 @@ $bpk-button-destructive-border-color: rgb(221, 221, 229) !default;
 /// @group buttons
 $bpk-button-destructive-box-shadow: 0 0 0 2px #DDDDE5 inset !default;
 /// @group buttons
-$bpk-button-destructive-color: rgb(255, 84, 82) !default;
+$bpk-button-destructive-color: rgb(209, 67, 91) !default;
 /// @group buttons
 $bpk-button-destructive-disabled-background-color: rgb(221, 221, 229) !default;
 /// @group buttons
@@ -142,11 +142,11 @@ $bpk-button-destructive-hover-background-color: rgb(255, 255, 255) !default;
 /// @group buttons
 $bpk-button-destructive-hover-background-image: none !default;
 /// @group buttons
-$bpk-button-destructive-hover-border-color: rgb(255, 84, 82) !default;
+$bpk-button-destructive-hover-border-color: rgb(209, 67, 91) !default;
 /// @group buttons
-$bpk-button-destructive-hover-box-shadow: 0 0 0 2px #ff5452 inset !default;
+$bpk-button-destructive-hover-box-shadow: 0 0 0 2px #d1435b inset !default;
 /// @group buttons
-$bpk-button-destructive-hover-color: rgb(255, 84, 82) !default;
+$bpk-button-destructive-hover-color: rgb(209, 67, 91) !default;
 /// @group buttons
 $bpk-button-disabled-background-color: rgb(221, 221, 229) !default;
 /// @group buttons
@@ -156,7 +156,7 @@ $bpk-button-disabled-box-shadow: none !default;
 /// @group buttons
 $bpk-button-disabled-color: rgb(178, 178, 191) !default;
 /// @group buttons
-$bpk-button-featured-active-background-color: rgb(197, 15, 82) !default;
+$bpk-button-featured-active-background-color: rgb(4, 39, 89) !default;
 /// @group buttons
 $bpk-button-featured-active-background-image: none !default;
 /// @group buttons
@@ -164,9 +164,9 @@ $bpk-button-featured-active-box-shadow: none !default;
 /// @group buttons
 $bpk-button-featured-active-color: rgb(255, 255, 255) !default;
 /// @group buttons
-$bpk-button-featured-background-color: rgb(250, 72, 138) !default;
+$bpk-button-featured-background-color: rgb(7, 112, 227) !default;
 /// @group buttons
-$bpk-button-featured-background-image: linear-gradient(-180deg, #FA488A 0%, #D92B6B 100%) !default;
+$bpk-button-featured-background-image: #0770e3 !default;
 /// @group buttons
 $bpk-button-featured-color: rgb(255, 255, 255) !default;
 /// @group buttons
@@ -174,33 +174,37 @@ $bpk-button-featured-disabled-background-color: rgb(221, 221, 229) !default;
 /// @group buttons
 $bpk-button-featured-disabled-background-image: none !default;
 /// @group buttons
-$bpk-button-featured-gradient-end-color: rgb(217, 43, 107) !default;
+$bpk-button-featured-gradient-end-color: rgb(7, 112, 227) !default;
 /// @group buttons
-$bpk-button-featured-gradient-start-color: rgb(250, 72, 138) !default;
+$bpk-button-featured-gradient-start-color: rgb(7, 112, 227) !default;
 /// @group buttons
-$bpk-button-featured-hover-background-color: rgb(217, 43, 107) !default;
+$bpk-button-featured-hover-background-color: rgb(8, 78, 178) !default;
 /// @group buttons
 $bpk-button-featured-hover-background-image: none !default;
 /// @group buttons
 $bpk-button-featured-hover-box-shadow: none !default;
 /// @group buttons
 $bpk-button-featured-hover-color: rgb(255, 255, 255) !default;
-/// @group buttons
-$bpk-button-font-size: 1rem !default;
+/// @group font-sizes
+$bpk-button-font-size: 1.1875rem !default;
 /// @group buttons
 $bpk-button-font-weight: 700 !default;
 /// @group buttons
-$bpk-button-gradient-end-color: rgb(0, 189, 104) !default;
+$bpk-button-gradient-end-color: rgb(0, 166, 152) !default;
 /// @group buttons
-$bpk-button-gradient-start-color: rgb(0, 215, 117) !default;
+$bpk-button-gradient-start-color: rgb(0, 166, 152) !default;
 /// @group buttons
-$bpk-button-hover-background-color: rgb(0, 189, 104) !default;
+$bpk-button-hover-background-color: rgb(0, 136, 125) !default;
 /// @group buttons
 $bpk-button-hover-background-image: none !default;
 /// @group buttons
 $bpk-button-hover-box-shadow: none !default;
 /// @group buttons
 $bpk-button-hover-color: rgb(255, 255, 255) !default;
+/// @group buttons
+$bpk-button-icon-border-radius: 1.125rem !default;
+/// @group buttons
+$bpk-button-icon-border-radius-lg: 1.3125rem !default;
 /// @group buttons
 $bpk-button-large-font-size: 1.5rem !default;
 /// @group buttons
@@ -250,11 +254,11 @@ $bpk-button-secondary-active-background-color: rgb(255, 255, 255) !default;
 /// @group buttons
 $bpk-button-secondary-active-background-image: none !default;
 /// @group buttons
-$bpk-button-secondary-active-border-color: rgb(0, 178, 214) !default;
+$bpk-button-secondary-active-border-color: rgb(8, 78, 178) !default;
 /// @group buttons
-$bpk-button-secondary-active-box-shadow: 0 0 0 3px #00b2d6 inset !default;
+$bpk-button-secondary-active-box-shadow: 0 0 0 3px #084eb2 inset !default;
 /// @group buttons
-$bpk-button-secondary-active-color: rgb(0, 178, 214) !default;
+$bpk-button-secondary-active-color: rgb(8, 78, 178) !default;
 /// @group buttons
 $bpk-button-secondary-background-color: rgb(255, 255, 255) !default;
 /// @group buttons
@@ -264,7 +268,7 @@ $bpk-button-secondary-border-color: rgb(221, 221, 229) !default;
 /// @group buttons
 $bpk-button-secondary-box-shadow: 0 0 0 2px #DDDDE5 inset !default;
 /// @group buttons
-$bpk-button-secondary-color: rgb(0, 178, 214) !default;
+$bpk-button-secondary-color: rgb(7, 112, 227) !default;
 /// @group buttons
 $bpk-button-secondary-disabled-background-color: rgb(221, 221, 229) !default;
 /// @group buttons
@@ -278,13 +282,13 @@ $bpk-button-secondary-hover-background-color: rgb(255, 255, 255) !default;
 /// @group buttons
 $bpk-button-secondary-hover-background-image: none !default;
 /// @group buttons
-$bpk-button-secondary-hover-border-color: rgb(0, 178, 214) !default;
+$bpk-button-secondary-hover-border-color: rgb(7, 112, 227) !default;
 /// @group buttons
-$bpk-button-secondary-hover-box-shadow: 0 0 0 2px #00b2d6 inset !default;
+$bpk-button-secondary-hover-box-shadow: 0 0 0 2px #0770e3 inset !default;
 /// @group buttons
-$bpk-button-secondary-hover-color: rgb(0, 178, 214) !default;
+$bpk-button-secondary-hover-color: rgb(7, 112, 227) !default;
 /// @group buttons
-$bpk-button-selected-active-background-color: rgb(0, 117, 140) !default;
+$bpk-button-selected-active-background-color: rgb(4, 39, 89) !default;
 /// @group buttons
 $bpk-button-selected-active-background-image: none !default;
 /// @group buttons
@@ -292,9 +296,9 @@ $bpk-button-selected-active-box-shadow: none !default;
 /// @group buttons
 $bpk-button-selected-active-color: rgb(255, 255, 255) !default;
 /// @group buttons
-$bpk-button-selected-background-color: rgb(0, 178, 214) !default;
+$bpk-button-selected-background-color: rgb(7, 112, 227) !default;
 /// @group buttons
-$bpk-button-selected-background-image: linear-gradient(-180deg, #009dbd 0%, #008ca8 100%) !default;
+$bpk-button-selected-background-image: #084eb2 !default;
 /// @group buttons
 $bpk-button-selected-box-shadow: none !default;
 /// @group buttons
@@ -302,7 +306,7 @@ $bpk-button-selected-color: rgb(255, 255, 255) !default;
 /// @group buttons
 $bpk-button-selected-disabled-box-shadow: none !default;
 /// @group buttons
-$bpk-button-selected-hover-background-color: rgb(0, 140, 168) !default;
+$bpk-button-selected-hover-background-color: rgb(8, 78, 178) !default;
 /// @group buttons
 $bpk-button-selected-hover-background-image: none !default;
 /// @group buttons
