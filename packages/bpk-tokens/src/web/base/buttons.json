@@ -109,7 +109,7 @@
       "type": "color"
     },
     "BUTTON_FONT_SIZE": {
-      "value": "1.1875rem ",
+      "value": "!{BUTTON_FONT_SIZE}",
       "type": "size"
     },
     "BUTTON_FONT_WEIGHT": {
