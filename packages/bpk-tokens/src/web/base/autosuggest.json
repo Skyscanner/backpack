@@ -11,11 +11,11 @@
       "type": "color"
     },
     "AUTOSUGGEST_LIST_ITEM_ACTIVE_BACKGROUND_COLOR": {
-      "value": "{!GRAY_100}",
+      "value": "{!SKY_GRAY_TINT_06}",
       "type": "color"
     },
     "AUTOSUGGEST_LIST_ITEM_HIGHLIGHTED_BACKGROUND_COLOR": {
-      "value": "{!GRAY_50}",
+      "value": "{!SKY_GRAY_TINT_07}",
       "type": "color"
     }
   }

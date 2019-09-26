@@ -282,6 +282,30 @@
     "SKY_BLUE_TINT_03": {
       "value": "#cddff8"
     },
+    "SKY_GRAY": {
+      "value": "#111236"
+    },
+    "SKY_GRAY_TINT_01": {
+      "value": "#444560"
+    },
+    "SKY_GRAY_TINT_02": {
+      "value": "#68697F"
+    },
+    "SKY_GRAY_TINT_03": {
+      "value": "#8f90a0"
+    },
+    "SKY_GRAY_TINT_04": {
+      "value": "#B2B2BF"
+    },
+    "SKY_GRAY_TINT_05": {
+      "value": "#CDCDD7"
+    },
+    "SKY_GRAY_TINT_06": {
+      "value": "#DDDDE5"
+    },
+    "SKY_GRAY_TINT_07": {
+      "value": "#F1F2F8"
+    },
     "SPACING_BASE": {
       "value": "1.5rem"
     },
@@ -376,14 +400,14 @@
       "category": "autosuggest",
       "value": "rgb(221, 221, 229)",
       "type": "color",
-      "originalValue": "{!GRAY_100}",
+      "originalValue": "{!SKY_GRAY_TINT_06}",
       "name": "AUTOSUGGEST_LIST_ITEM_ACTIVE_BACKGROUND_COLOR"
     },
     "AUTOSUGGEST_LIST_ITEM_HIGHLIGHTED_BACKGROUND_COLOR": {
       "category": "autosuggest",
       "value": "rgb(241, 242, 248)",
       "type": "color",
-      "originalValue": "{!GRAY_50}",
+      "originalValue": "{!SKY_GRAY_TINT_07}",
       "name": "AUTOSUGGEST_LIST_ITEM_HIGHLIGHTED_BACKGROUND_COLOR"
     },
     "BADGE_BACKGROUND_COLOR": {
@@ -425,7 +449,7 @@
       "category": "notifications",
       "value": "rgb(104, 105, 127)",
       "type": "color",
-      "originalValue": "{!GRAY_500}",
+      "originalValue": "{!SKY_GRAY_TINT_02}",
       "name": "BANNER_ALERT_CHILDREN_COLOR"
     },
     "BANNER_ALERT_CHILDREN_PADDING_X": {
@@ -453,21 +477,21 @@
       "category": "notifications",
       "value": "rgb(68, 69, 96)",
       "type": "color",
-      "originalValue": "{!GRAY_700}",
+      "originalValue": "{!SKY_GRAY_TINT_01}",
       "name": "BANNER_ALERT_EXPAND_ICON_FILL"
     },
     "BANNER_ALERT_HEADER_EXPANDABLE_ACTIVE_BACKGROUND_COLOR": {
       "category": "notifications",
       "value": "rgb(221, 221, 229)",
       "type": "color",
-      "originalValue": "{!GRAY_100}",
+      "originalValue": "{!SKY_GRAY_TINT_06}",
       "name": "BANNER_ALERT_HEADER_EXPANDABLE_ACTIVE_BACKGROUND_COLOR"
     },
     "BANNER_ALERT_HEADER_EXPANDABLE_HOVER_BACKGROUND_COLOR": {
       "category": "notifications",
       "value": "rgb(241, 242, 248)",
       "type": "color",
-      "originalValue": "{!GRAY_50}",
+      "originalValue": "{!SKY_GRAY_TINT_07}",
       "name": "BANNER_ALERT_HEADER_EXPANDABLE_HOVER_BACKGROUND_COLOR"
     },
     "BANNER_ALERT_HEADER_PADDING_X": {
@@ -488,7 +512,7 @@
       "category": "notifications",
       "value": "rgb(104, 105, 127)",
       "type": "color",
-      "originalValue": "{!GRAY_500}",
+      "originalValue": "{!SKY_GRAY_TINT_02}",
       "name": "BANNER_ALERT_NEUTRAL_COLOR"
     },
     "BANNER_ALERT_SUCCESS_COLOR": {
@@ -741,14 +765,14 @@
       "category": "buttons",
       "value": "rgb(221, 221, 229)",
       "type": "color",
-      "originalValue": "{!GRAY_100}",
+      "originalValue": "{!SKY_GRAY_TINT_06}",
       "name": "BUTTON_DESTRUCTIVE_BORDER_COLOR"
     },
     "BUTTON_DESTRUCTIVE_BOX_SHADOW": {
       "category": "buttons",
       "value": "0 0 0 2px #DDDDE5 inset",
       "type": "box-shadow",
-      "originalValue": "0 0 0 2px {!GRAY_100} inset",
+      "originalValue": "0 0 0 2px {!SKY_GRAY_TINT_06} inset",
       "name": "BUTTON_DESTRUCTIVE_BOX_SHADOW"
     },
     "BUTTON_DESTRUCTIVE_COLOR": {
@@ -762,7 +786,7 @@
       "category": "buttons",
       "value": "rgb(221, 221, 229)",
       "type": "color",
-      "originalValue": "{!GRAY_100}",
+      "originalValue": "{!SKY_GRAY_TINT_06}",
       "name": "BUTTON_DESTRUCTIVE_DISABLED_BACKGROUND_COLOR"
     },
     "BUTTON_DESTRUCTIVE_DISABLED_BACKGROUND_IMAGE": {
@@ -783,7 +807,7 @@
       "category": "buttons",
       "value": "rgb(178, 178, 191)",
       "type": "color",
-      "originalValue": "{!GRAY_300}",
+      "originalValue": "{!SKY_GRAY_TINT_04}",
       "name": "BUTTON_DESTRUCTIVE_DISABLED_COLOR"
     },
     "BUTTON_DESTRUCTIVE_HOVER_BACKGROUND_COLOR": {
@@ -825,7 +849,7 @@
       "category": "buttons",
       "value": "rgb(221, 221, 229)",
       "type": "color",
-      "originalValue": "{!GRAY_100}",
+      "originalValue": "{!SKY_GRAY_TINT_06}",
       "name": "BUTTON_DISABLED_BACKGROUND_COLOR"
     },
     "BUTTON_DISABLED_BACKGROUND_IMAGE": {
@@ -846,7 +870,7 @@
       "category": "buttons",
       "value": "rgb(178, 178, 191)",
       "type": "color",
-      "originalValue": "{!GRAY_300}",
+      "originalValue": "{!SKY_GRAY_TINT_04}",
       "name": "BUTTON_DISABLED_COLOR"
     },
     "BUTTON_FEATURED_ACTIVE_BACKGROUND_COLOR": {
@@ -903,7 +927,7 @@
       "category": "buttons",
       "value": "rgb(221, 221, 229)",
       "type": "color",
-      "originalValue": "{!GRAY_100}",
+      "originalValue": "{!SKY_GRAY_TINT_06}",
       "name": "BUTTON_FEATURED_DISABLED_BACKGROUND_COLOR"
     },
     "BUTTON_FEATURED_DISABLED_BACKGROUND_IMAGE": {
@@ -1099,7 +1123,7 @@
       "category": "buttons",
       "value": "rgb(221, 221, 229)",
       "type": "color",
-      "originalValue": "{!GRAY_100}",
+      "originalValue": "{!SKY_GRAY_TINT_06}",
       "name": "BUTTON_OUTLINE_DISABLED_BACKGROUND_COLOR"
     },
     "BUTTON_OUTLINE_DISABLED_BACKGROUND_IMAGE": {
@@ -1120,7 +1144,7 @@
       "category": "buttons",
       "value": "rgb(178, 178, 191)",
       "type": "color",
-      "originalValue": "{!GRAY_300}",
+      "originalValue": "{!SKY_GRAY_TINT_04}",
       "name": "BUTTON_OUTLINE_DISABLED_COLOR"
     },
     "BUTTON_OUTLINE_HOVER_BACKGROUND_COLOR": {
@@ -1219,7 +1243,7 @@
       "category": "buttons",
       "value": "rgb(221, 221, 229)",
       "type": "color",
-      "originalValue": "{!GRAY_100}",
+      "originalValue": "{!SKY_GRAY_TINT_06}",
       "name": "BUTTON_SECONDARY_BORDER_COLOR"
     },
     "BUTTON_SECONDARY_BOX_SHADOW": {
@@ -1227,7 +1251,7 @@
       "value": "0 0 0 2px #DDDDE5 inset",
       "type": "box-shadow",
       "deprecated": true,
-      "originalValue": "0 0 0 2px {!GRAY_100} inset",
+      "originalValue": "0 0 0 2px {!SKY_GRAY_TINT_06} inset",
       "name": "BUTTON_SECONDARY_BOX_SHADOW"
     },
     "BUTTON_SECONDARY_COLOR": {
@@ -1241,7 +1265,7 @@
       "category": "buttons",
       "value": "rgb(221, 221, 229)",
       "type": "color",
-      "originalValue": "{!GRAY_100}",
+      "originalValue": "{!SKY_GRAY_TINT_06}",
       "name": "BUTTON_SECONDARY_DISABLED_BACKGROUND_COLOR"
     },
     "BUTTON_SECONDARY_DISABLED_BACKGROUND_IMAGE": {
@@ -1262,7 +1286,7 @@
       "category": "buttons",
       "value": "rgb(178, 178, 191)",
       "type": "color",
-      "originalValue": "{!GRAY_300}",
+      "originalValue": "{!SKY_GRAY_TINT_04}",
       "name": "BUTTON_SECONDARY_DISABLED_COLOR"
     },
     "BUTTON_SECONDARY_HOVER_BACKGROUND_COLOR": {
@@ -1403,14 +1427,14 @@
       "category": "calendar",
       "value": "rgb(221, 221, 229)",
       "type": "color",
-      "originalValue": "{!GRAY_100}",
+      "originalValue": "{!SKY_GRAY_TINT_06}",
       "name": "CALENDAR_DAY_ACTIVE_BACKGROUND_COLOR"
     },
     "CALENDAR_DAY_ACTIVE_COLOR": {
       "category": "calendar",
       "value": "rgb(17, 18, 54)",
       "type": "color",
-      "originalValue": "{!GRAY_900}",
+      "originalValue": "{!SKY_GRAY}",
       "name": "CALENDAR_DAY_ACTIVE_COLOR"
     },
     "CALENDAR_DAY_BACKGROUND_COLOR": {
@@ -1440,7 +1464,7 @@
       "category": "calendar",
       "value": "rgb(221, 221, 229)",
       "type": "color",
-      "originalValue": "{!GRAY_100}",
+      "originalValue": "{!SKY_GRAY_TINT_06}",
       "name": "CALENDAR_DAY_DISABLED_COLOR"
     },
     "CALENDAR_DAY_FOCUSED_BORDER_COLOR": {
@@ -1461,14 +1485,14 @@
       "category": "calendar",
       "value": "rgb(241, 242, 248)",
       "type": "color",
-      "originalValue": "{!GRAY_50}",
+      "originalValue": "{!SKY_GRAY_TINT_07}",
       "name": "CALENDAR_DAY_HOVER_BACKGROUND_COLOR"
     },
     "CALENDAR_DAY_HOVER_COLOR": {
       "category": "calendar",
       "value": "rgb(68, 69, 96)",
       "type": "color",
-      "originalValue": "{!GRAY_700}",
+      "originalValue": "{!SKY_GRAY_TINT_01}",
       "name": "CALENDAR_DAY_HOVER_COLOR"
     },
     "CALENDAR_DAY_OUTSIDE_BACKGROUND_COLOR": {
@@ -1483,7 +1507,7 @@
       "category": "calendar",
       "value": "rgb(178, 178, 191)",
       "type": "color",
-      "originalValue": "{!GRAY_300}",
+      "originalValue": "{!SKY_GRAY_TINT_04}",
       "name": "CALENDAR_DAY_OUTSIDE_COLOR"
     },
     "CALENDAR_DAY_SELECTED_BACKGROUND_COLOR": {
@@ -1525,7 +1549,7 @@
       "category": "calendar",
       "value": "rgb(221, 221, 229)",
       "type": "color",
-      "originalValue": "{!GRAY_100}",
+      "originalValue": "{!SKY_GRAY_TINT_06}",
       "name": "CALENDAR_NAV_ICON_DISABLED_FILL"
     },
     "CALENDAR_NAV_ICON_FILL": {
@@ -1560,7 +1584,7 @@
       "category": "cards",
       "value": "rgb(17, 18, 54)",
       "type": "color",
-      "originalValue": "{!GRAY_900}",
+      "originalValue": "{!SKY_GRAY}",
       "name": "CARD_COLOR"
     },
     "CARD_PADDING": {
@@ -2006,6 +2030,62 @@
       "originalValue": "{!SKY_BLUE_TINT_03}",
       "name": "COLOR_SKY_BLUE_TINT_03"
     },
+    "COLOR_SKY_GRAY": {
+      "type": "color",
+      "category": "colors",
+      "value": "rgb(17, 18, 54)",
+      "originalValue": "{!SKY_GRAY}",
+      "name": "COLOR_SKY_GRAY"
+    },
+    "COLOR_SKY_GRAY_TINT_01": {
+      "type": "color",
+      "category": "colors",
+      "value": "rgb(68, 69, 96)",
+      "originalValue": "{!SKY_GRAY_TINT_01}",
+      "name": "COLOR_SKY_GRAY_TINT_01"
+    },
+    "COLOR_SKY_GRAY_TINT_02": {
+      "type": "color",
+      "category": "colors",
+      "value": "rgb(104, 105, 127)",
+      "originalValue": "{!SKY_GRAY_TINT_02}",
+      "name": "COLOR_SKY_GRAY_TINT_02"
+    },
+    "COLOR_SKY_GRAY_TINT_03": {
+      "type": "color",
+      "category": "colors",
+      "value": "rgb(143, 144, 160)",
+      "originalValue": "{!SKY_GRAY_TINT_03}",
+      "name": "COLOR_SKY_GRAY_TINT_03"
+    },
+    "COLOR_SKY_GRAY_TINT_04": {
+      "type": "color",
+      "category": "colors",
+      "value": "rgb(178, 178, 191)",
+      "originalValue": "{!SKY_GRAY_TINT_04}",
+      "name": "COLOR_SKY_GRAY_TINT_04"
+    },
+    "COLOR_SKY_GRAY_TINT_05": {
+      "type": "color",
+      "category": "colors",
+      "value": "rgb(205, 205, 215)",
+      "originalValue": "{!SKY_GRAY_TINT_05}",
+      "name": "COLOR_SKY_GRAY_TINT_05"
+    },
+    "COLOR_SKY_GRAY_TINT_06": {
+      "type": "color",
+      "category": "colors",
+      "value": "rgb(221, 221, 229)",
+      "originalValue": "{!SKY_GRAY_TINT_06}",
+      "name": "COLOR_SKY_GRAY_TINT_06"
+    },
+    "COLOR_SKY_GRAY_TINT_07": {
+      "type": "color",
+      "category": "colors",
+      "value": "rgb(241, 242, 248)",
+      "originalValue": "{!SKY_GRAY_TINT_07}",
+      "name": "COLOR_SKY_GRAY_TINT_07"
+    },
     "COLOR_SYSTEM_GREEN": {
       "type": "color",
       "category": "colors",
@@ -2136,7 +2216,7 @@
       "value": "rgb(17, 18, 54)",
       "type": "color",
       "category": "text-colors",
-      "originalValue": "{!GRAY_900}",
+      "originalValue": "{!SKY_GRAY}",
       "name": "FONT_COLOR_BASE"
     },
     "FONT_FAMILY_BASE": {
@@ -2443,21 +2523,21 @@
       "type": "color",
       "category": "horizontal-nav",
       "value": "rgb(17, 18, 54)",
-      "originalValue": "{!GRAY_900}",
+      "originalValue": "{!SKY_GRAY}",
       "name": "HORIZONTAL_NAV_LINK_ACTIVE_COLOR"
     },
     "HORIZONTAL_NAV_LINK_COLOR": {
       "type": "color",
       "category": "horizontal-nav",
       "value": "rgb(104, 105, 127)",
-      "originalValue": "{!GRAY_500}",
+      "originalValue": "{!SKY_GRAY_TINT_02}",
       "name": "HORIZONTAL_NAV_LINK_COLOR"
     },
     "HORIZONTAL_NAV_LINK_HOVER_COLOR": {
       "type": "color",
       "category": "horizontal-nav",
       "value": "rgb(68, 69, 96)",
-      "originalValue": "{!GRAY_700}",
+      "originalValue": "{!SKY_GRAY_TINT_01}",
       "name": "HORIZONTAL_NAV_LINK_HOVER_COLOR"
     },
     "HORIZONTAL_NAV_LINK_SELECTED_COLOR": {
@@ -2492,7 +2572,7 @@
       "category": "forms",
       "value": "solid .0625rem #B2B2BF",
       "type": "border",
-      "originalValue": "solid {!ONE_PIXEL_REM} {!GRAY_300}",
+      "originalValue": "solid {!ONE_PIXEL_REM} {!SKY_GRAY_TINT_04}",
       "name": "INPUT_BORDER"
     },
     "INPUT_BORDER_RADIUS": {
@@ -2513,21 +2593,21 @@
       "category": "forms",
       "value": "rgb(17, 18, 54)",
       "type": "color",
-      "originalValue": "{!GRAY_900}",
+      "originalValue": "{!SKY_GRAY}",
       "name": "INPUT_COLOR"
     },
     "INPUT_DISABLED_BORDER_COLOR": {
       "category": "forms",
       "value": "rgb(241, 242, 248)",
       "type": "color",
-      "originalValue": "{!GRAY_50}",
+      "originalValue": "{!SKY_GRAY_TINT_07}",
       "name": "INPUT_DISABLED_BORDER_COLOR"
     },
     "INPUT_DISABLED_COLOR": {
       "category": "forms",
       "value": "rgb(178, 178, 191)",
       "type": "color",
-      "originalValue": "{!GRAY_300}",
+      "originalValue": "{!SKY_GRAY_TINT_04}",
       "name": "INPUT_DISABLED_COLOR"
     },
     "INPUT_HEIGHT": {
@@ -2562,7 +2642,7 @@
       "category": "forms",
       "value": "rgb(104, 105, 127)",
       "type": "color",
-      "originalValue": "{!GRAY_500}",
+      "originalValue": "{!SKY_GRAY_TINT_02}",
       "name": "INPUT_PLACEHOLDER_COLOR"
     },
     "INPUT_PLACEHOLDER_FONT_STYLE": {
@@ -2576,14 +2656,14 @@
       "category": "forms",
       "value": "rgb(17, 18, 54)",
       "type": "color",
-      "originalValue": "{!GRAY_900}",
+      "originalValue": "{!SKY_GRAY}",
       "name": "LABEL_COLOR"
     },
     "LABEL_DISABLED_COLOR": {
       "category": "forms",
       "value": "rgb(178, 178, 191)",
       "type": "color",
-      "originalValue": "{!GRAY_300}",
+      "originalValue": "{!SKY_GRAY_TINT_04}",
       "name": "LABEL_DISABLED_COLOR"
     },
     "LABEL_FONT_SIZE": {
@@ -2646,7 +2726,7 @@
       "value": "rgb(221, 221, 229)",
       "type": "color",
       "category": "text-colors",
-      "originalValue": "{!GRAY_100}",
+      "originalValue": "{!SKY_GRAY_TINT_06}",
       "name": "LINK_ALTERNATE_ACTIVE_COLOR"
     },
     "LINK_ALTERNATE_COLOR": {
@@ -2709,7 +2789,7 @@
       "value": "rgb(221, 221, 229)",
       "type": "color",
       "category": "text-colors",
-      "originalValue": "{!GRAY_100}",
+      "originalValue": "{!SKY_GRAY_TINT_06}",
       "name": "LINK_WHITE_ACTIVE_COLOR"
     },
     "LINK_WHITE_COLOR": {
@@ -2787,7 +2867,7 @@
       "value": "rgb(104, 105, 127)",
       "type": "color",
       "deprecated": true,
-      "originalValue": "{!GRAY_500}",
+      "originalValue": "{!SKY_GRAY_TINT_02}",
       "name": "MODAL_CLOSE_ICON_FILL"
     },
     "MODAL_CLOSE_ICON_HOVER_FILL": {
@@ -2795,7 +2875,7 @@
       "value": "rgb(68, 69, 96)",
       "type": "color",
       "deprecated": true,
-      "originalValue": "{!GRAY_700}",
+      "originalValue": "{!SKY_GRAY_TINT_01}",
       "name": "MODAL_CLOSE_ICON_HOVER_FILL"
     },
     "MODAL_CONTENT_PADDING": {
@@ -2838,7 +2918,7 @@
       "value": "rgb(178, 178, 191)",
       "type": "color",
       "deprecated": true,
-      "originalValue": "{!GRAY_300}",
+      "originalValue": "{!SKY_GRAY_TINT_04}",
       "name": "MODAL_SCRIM_BACKGROUND_COLOR"
     },
     "MODAL_SCRIM_INITIAL_OPACITY": {
@@ -2890,7 +2970,7 @@
       "category": "panels",
       "value": "rgb(221, 221, 229)",
       "type": "color",
-      "originalValue": "{!GRAY_100}",
+      "originalValue": "{!SKY_GRAY_TINT_06}",
       "name": "PANEL_BORDER_COLOR"
     },
     "PANEL_PADDING": {
@@ -2981,14 +3061,14 @@
       "category": "scrims",
       "value": "rgb(178, 178, 191)",
       "type": "color",
-      "originalValue": "{!GRAY_300}",
+      "originalValue": "{!SKY_GRAY_TINT_04}",
       "name": "SCRIM_BACKGROUND_COLOR"
     },
     "SCRIM_DARK_BACKGROUND_COLOR": {
       "category": "scrims",
       "value": "rgb(17, 18, 54)",
       "type": "color",
-      "originalValue": "{!GRAY_900}",
+      "originalValue": "{!SKY_GRAY}",
       "name": "SCRIM_DARK_BACKGROUND_COLOR"
     },
     "SCRIM_DARK_OPACITY": {
@@ -3023,7 +3103,7 @@
       "category": "forms",
       "value": "solid .0625rem #B2B2BF",
       "type": "border",
-      "originalValue": "solid {!ONE_PIXEL_REM} {!GRAY_300}",
+      "originalValue": "solid {!ONE_PIXEL_REM} {!SKY_GRAY_TINT_04}",
       "name": "SELECT_BORDER"
     },
     "SELECT_BORDER_RADIUS": {
@@ -3044,21 +3124,21 @@
       "category": "forms",
       "value": "rgb(17, 18, 54)",
       "type": "color",
-      "originalValue": "{!GRAY_900}",
+      "originalValue": "{!SKY_GRAY}",
       "name": "SELECT_COLOR"
     },
     "SELECT_DISABLED_BORDER_COLOR": {
       "category": "forms",
       "value": "rgb(241, 242, 248)",
       "type": "color",
-      "originalValue": "{!GRAY_50}",
+      "originalValue": "{!SKY_GRAY_TINT_07}",
       "name": "SELECT_DISABLED_BORDER_COLOR"
     },
     "SELECT_DISABLED_COLOR": {
       "category": "forms",
       "value": "rgb(178, 178, 191)",
       "type": "color",
-      "originalValue": "{!GRAY_300}",
+      "originalValue": "{!SKY_GRAY_TINT_04}",
       "name": "SELECT_DISABLED_COLOR"
     },
     "SELECT_HEIGHT": {
@@ -3206,7 +3286,7 @@
       "deprecated": true,
       "type": "color",
       "category": "text-colors",
-      "originalValue": "{!GRAY_900}",
+      "originalValue": "{!SKY_GRAY}",
       "name": "TEXT_COLOR_PRIMARY_LIGHT"
     },
     "TEXT_COLOR_SECONDARY_LIGHT": {
@@ -3214,7 +3294,7 @@
       "deprecated": true,
       "type": "color",
       "category": "text-colors",
-      "originalValue": "{!GRAY_700}",
+      "originalValue": "{!SKY_GRAY_TINT_01}",
       "name": "TEXT_COLOR_SECONDARY_LIGHT"
     },
     "TEXT_LG_FONT_SIZE": {
@@ -3249,14 +3329,14 @@
       "value": "rgb(17, 18, 54)",
       "type": "color",
       "category": "text-colors",
-      "originalValue": "{!GRAY_900}",
+      "originalValue": "{!SKY_GRAY}",
       "name": "TEXT_PRIMARY_LIGHT_COLOR"
     },
     "TEXT_SECONDARY_LIGHT_COLOR": {
       "value": "rgb(68, 69, 96)",
       "type": "color",
       "category": "text-colors",
-      "originalValue": "{!GRAY_700}",
+      "originalValue": "{!SKY_GRAY_TINT_01}",
       "name": "TEXT_SECONDARY_LIGHT_COLOR"
     },
     "TEXT_SM_FONT_SIZE": {
@@ -3656,6 +3736,14 @@
     "COLOR_SKY_BLUE_TINT_01",
     "COLOR_SKY_BLUE_TINT_02",
     "COLOR_SKY_BLUE_TINT_03",
+    "COLOR_SKY_GRAY",
+    "COLOR_SKY_GRAY_TINT_01",
+    "COLOR_SKY_GRAY_TINT_02",
+    "COLOR_SKY_GRAY_TINT_03",
+    "COLOR_SKY_GRAY_TINT_04",
+    "COLOR_SKY_GRAY_TINT_05",
+    "COLOR_SKY_GRAY_TINT_06",
+    "COLOR_SKY_GRAY_TINT_07",
     "COLOR_SYSTEM_GREEN",
     "COLOR_SYSTEM_RED",
     "COLOR_TOCHIGI",

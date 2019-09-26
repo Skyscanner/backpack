@@ -621,6 +621,62 @@
     {
       "type": "color",
       "category": "colors",
+      "value": "#111236ff",
+      "originalValue": "{!SKY_GRAY}",
+      "name": "colorSkyGray"
+    },
+    {
+      "type": "color",
+      "category": "colors",
+      "value": "#444560ff",
+      "originalValue": "{!SKY_GRAY_TINT_01}",
+      "name": "colorSkyGrayTint01"
+    },
+    {
+      "type": "color",
+      "category": "colors",
+      "value": "#68697fff",
+      "originalValue": "{!SKY_GRAY_TINT_02}",
+      "name": "colorSkyGrayTint02"
+    },
+    {
+      "type": "color",
+      "category": "colors",
+      "value": "#8f90a0ff",
+      "originalValue": "{!SKY_GRAY_TINT_03}",
+      "name": "colorSkyGrayTint03"
+    },
+    {
+      "type": "color",
+      "category": "colors",
+      "value": "#b2b2bfff",
+      "originalValue": "{!SKY_GRAY_TINT_04}",
+      "name": "colorSkyGrayTint04"
+    },
+    {
+      "type": "color",
+      "category": "colors",
+      "value": "#cdcdd7ff",
+      "originalValue": "{!SKY_GRAY_TINT_05}",
+      "name": "colorSkyGrayTint05"
+    },
+    {
+      "type": "color",
+      "category": "colors",
+      "value": "#dddde5ff",
+      "originalValue": "{!SKY_GRAY_TINT_06}",
+      "name": "colorSkyGrayTint06"
+    },
+    {
+      "type": "color",
+      "category": "colors",
+      "value": "#f1f2f8ff",
+      "originalValue": "{!SKY_GRAY_TINT_07}",
+      "name": "colorSkyGrayTint07"
+    },
+    {
+      "type": "color",
+      "category": "colors",
       "value": "#00a698ff",
       "originalValue": "{!MONTEVERDE}",
       "name": "colorSystemGreen"
@@ -888,7 +944,7 @@
       "value": "#111236ff",
       "type": "color",
       "category": "box-shadows",
-      "originalValue": "{!GRAY_900}",
+      "originalValue": "{!SKY_GRAY}",
       "name": "shadowLgColor"
     },
     {
@@ -923,7 +979,7 @@
       "value": "#111236ff",
       "type": "color",
       "category": "box-shadows",
-      "originalValue": "{!GRAY_900}",
+      "originalValue": "{!SKY_GRAY}",
       "name": "shadowSmColor"
     },
     {
@@ -959,7 +1015,7 @@
       "type": "color",
       "category": "box-shadows",
       "deprecated": true,
-      "originalValue": "{!GRAY_900}",
+      "originalValue": "{!SKY_GRAY}",
       "name": "shadowXlColor"
     },
     {
@@ -1140,14 +1196,14 @@
       "value": "#111236ff",
       "type": "color",
       "category": "text-colors",
-      "originalValue": "{!GRAY_900}",
+      "originalValue": "{!SKY_GRAY}",
       "name": "textPrimaryLightColor"
     },
     {
       "value": "#444560ff",
       "type": "color",
       "category": "text-colors",
-      "originalValue": "{!GRAY_700}",
+      "originalValue": "{!SKY_GRAY_TINT_01}",
       "name": "textSecondaryLightColor"
     },
     {
@@ -1291,7 +1347,7 @@
       "category": "touchables",
       "value": "#111236ff",
       "type": "color",
-      "originalValue": "{!GRAY_900}",
+      "originalValue": "{!SKY_GRAY}",
       "name": "touchableOverlayColor"
     },
     {
@@ -1306,7 +1362,7 @@
       "value": "#111236ff",
       "type": "color",
       "deprecated": true,
-      "originalValue": "{!GRAY_900}",
+      "originalValue": "{!SKY_GRAY}",
       "name": "underlayColor"
     },
     {
