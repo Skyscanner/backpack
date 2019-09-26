@@ -50,7 +50,7 @@ storiesOf('bpk-component-icon', module)
         const Icon = sm[icon];
         return (
           <BpkListItem key={icon}>
-            <Icon fill={colors.colorGray700} /> <span>{icon}</span>
+            <Icon fill={colors.colorSkyGrayTint01} /> <span>{icon}</span>
           </BpkListItem>
         );
       })}
@@ -62,7 +62,7 @@ storiesOf('bpk-component-icon', module)
         const Icon = lg[icon];
         return (
           <BpkListItem key={icon}>
-            <Icon fill={colors.colorGray700} /> <span>{icon}</span>
+            <Icon fill={colors.colorSkyGrayTint01} /> <span>{icon}</span>
           </BpkListItem>
         );
       })}
