@@ -227,6 +227,7 @@
     {
       "type": "color",
       "category": "colors",
+      "deprecated": true,
       "value": "#dddde5ff",
       "originalValue": "{!GRAY_100}",
       "name": "colorGray100"
@@ -234,6 +235,7 @@
     {
       "type": "color",
       "category": "colors",
+      "deprecated": true,
       "value": "#cdcdd7ff",
       "originalValue": "{!GRAY_200}",
       "name": "colorGray200"
@@ -241,6 +243,7 @@
     {
       "type": "color",
       "category": "colors",
+      "deprecated": true,
       "value": "#b2b2bfff",
       "originalValue": "{!GRAY_300}",
       "name": "colorGray300"
@@ -248,6 +251,7 @@
     {
       "type": "color",
       "category": "colors",
+      "deprecated": true,
       "value": "#8f90a0ff",
       "originalValue": "{!GRAY_400}",
       "name": "colorGray400"
@@ -255,6 +259,7 @@
     {
       "type": "color",
       "category": "colors",
+      "deprecated": true,
       "value": "#f1f2f8ff",
       "originalValue": "{!GRAY_50}",
       "name": "colorGray50"
@@ -262,6 +267,7 @@
     {
       "type": "color",
       "category": "colors",
+      "deprecated": true,
       "value": "#68697fff",
       "originalValue": "{!GRAY_500}",
       "name": "colorGray500"
@@ -277,6 +283,7 @@
     {
       "type": "color",
       "category": "colors",
+      "deprecated": true,
       "value": "#444560ff",
       "originalValue": "{!GRAY_700}",
       "name": "colorGray700"
@@ -292,6 +299,7 @@
     {
       "type": "color",
       "category": "colors",
+      "deprecated": true,
       "value": "#111236ff",
       "originalValue": "{!GRAY_900}",
       "name": "colorGray900"
@@ -299,6 +307,7 @@
     {
       "type": "color",
       "category": "colors",
+      "deprecated": true,
       "value": "#cbf5e2ff",
       "originalValue": "{!GREEN_100}",
       "name": "colorGreen100"
@@ -306,6 +315,7 @@
     {
       "type": "color",
       "category": "colors",
+      "deprecated": true,
       "value": "#afedd1ff",
       "originalValue": "{!GREEN_200}",
       "name": "colorGreen200"
@@ -313,6 +323,7 @@
     {
       "type": "color",
       "category": "colors",
+      "deprecated": true,
       "value": "#80e8b9ff",
       "originalValue": "{!GREEN_300}",
       "name": "colorGreen300"
@@ -320,6 +331,7 @@
     {
       "type": "color",
       "category": "colors",
+      "deprecated": true,
       "value": "#40de97ff",
       "originalValue": "{!GREEN_400}",
       "name": "colorGreen400"
@@ -327,6 +339,7 @@
     {
       "type": "color",
       "category": "colors",
+      "deprecated": true,
       "value": "#dff7ecff",
       "originalValue": "{!GREEN_50}",
       "name": "colorGreen50"
@@ -334,6 +347,7 @@
     {
       "type": "color",
       "category": "colors",
+      "deprecated": true,
       "value": "#00d775ff",
       "originalValue": "{!GREEN_500}",
       "name": "colorGreen500"
@@ -341,6 +355,7 @@
     {
       "type": "color",
       "category": "colors",
+      "deprecated": true,
       "value": "#00bd68ff",
       "originalValue": "{!GREEN_600}",
       "name": "colorGreen600"
@@ -348,6 +363,7 @@
     {
       "type": "color",
       "category": "colors",
+      "deprecated": true,
       "value": "#00a85dff",
       "originalValue": "{!GREEN_700}",
       "name": "colorGreen700"
@@ -355,6 +371,7 @@
     {
       "type": "color",
       "category": "colors",
+      "deprecated": true,
       "value": "#008c4dff",
       "originalValue": "{!GREEN_800}",
       "name": "colorGreen800"
@@ -362,6 +379,7 @@
     {
       "type": "color",
       "category": "colors",
+      "deprecated": true,
       "value": "#006638ff",
       "originalValue": "{!GREEN_900}",
       "name": "colorGreen900"
@@ -418,6 +436,7 @@
     {
       "type": "color",
       "category": "colors",
+      "deprecated": true,
       "value": "#ffbfd7ff",
       "originalValue": "{!PINK_100}",
       "name": "colorPink100"
@@ -425,6 +444,7 @@
     {
       "type": "color",
       "category": "colors",
+      "deprecated": true,
       "value": "#ff94bbff",
       "originalValue": "{!PINK_200}",
       "name": "colorPink200"
@@ -432,6 +452,7 @@
     {
       "type": "color",
       "category": "colors",
+      "deprecated": true,
       "value": "#ff73a6ff",
       "originalValue": "{!PINK_300}",
       "name": "colorPink300"
@@ -439,6 +460,7 @@
     {
       "type": "color",
       "category": "colors",
+      "deprecated": true,
       "value": "#ff619bff",
       "originalValue": "{!PINK_400}",
       "name": "colorPink400"
@@ -446,6 +468,7 @@
     {
       "type": "color",
       "category": "colors",
+      "deprecated": true,
       "value": "#fde4edff",
       "originalValue": "{!PINK_50}",
       "name": "colorPink50"
@@ -453,6 +476,7 @@
     {
       "type": "color",
       "category": "colors",
+      "deprecated": true,
       "value": "#fa488aff",
       "originalValue": "{!PINK_500}",
       "name": "colorPink500"
@@ -460,6 +484,7 @@
     {
       "type": "color",
       "category": "colors",
+      "deprecated": true,
       "value": "#d92b6bff",
       "originalValue": "{!PINK_600}",
       "name": "colorPink600"
@@ -467,6 +492,7 @@
     {
       "type": "color",
       "category": "colors",
+      "deprecated": true,
       "value": "#c50f52ff",
       "originalValue": "{!PINK_700}",
       "name": "colorPink700"
@@ -474,6 +500,7 @@
     {
       "type": "color",
       "category": "colors",
+      "deprecated": true,
       "value": "#b00c48ff",
       "originalValue": "{!PINK_800}",
       "name": "colorPink800"
@@ -481,6 +508,7 @@
     {
       "type": "color",
       "category": "colors",
+      "deprecated": true,
       "value": "#94053aff",
       "originalValue": "{!PINK_900}",
       "name": "colorPink900"
@@ -488,13 +516,14 @@
     {
       "type": "color",
       "category": "colors",
-      "value": "#02ddd8ff",
-      "originalValue": "{!PRIMARY_GRADIENT_LIGHT}",
+      "value": "#0770e3ff",
+      "originalValue": "{!SKY_BLUE}",
       "name": "colorPrimaryGradientLight"
     },
     {
       "type": "color",
       "category": "colors",
+      "deprecated": true,
       "value": "#ffd6d5ff",
       "originalValue": "{!RED_100}",
       "name": "colorRed100"
@@ -502,6 +531,7 @@
     {
       "type": "color",
       "category": "colors",
+      "deprecated": true,
       "value": "#ffbbbaff",
       "originalValue": "{!RED_200}",
       "name": "colorRed200"
@@ -509,6 +539,7 @@
     {
       "type": "color",
       "category": "colors",
+      "deprecated": true,
       "value": "#ff9694ff",
       "originalValue": "{!RED_300}",
       "name": "colorRed300"
@@ -516,6 +547,7 @@
     {
       "type": "color",
       "category": "colors",
+      "deprecated": true,
       "value": "#fe7471ff",
       "originalValue": "{!RED_400}",
       "name": "colorRed400"
@@ -523,6 +555,7 @@
     {
       "type": "color",
       "category": "colors",
+      "deprecated": true,
       "value": "#fcf2f2ff",
       "originalValue": "{!RED_50}",
       "name": "colorRed50"
@@ -530,6 +563,7 @@
     {
       "type": "color",
       "category": "colors",
+      "deprecated": true,
       "value": "#ff5452ff",
       "originalValue": "{!RED_500}",
       "name": "colorRed500"
@@ -537,6 +571,7 @@
     {
       "type": "color",
       "category": "colors",
+      "deprecated": true,
       "value": "#eb423fff",
       "originalValue": "{!RED_600}",
       "name": "colorRed600"
@@ -544,6 +579,7 @@
     {
       "type": "color",
       "category": "colors",
+      "deprecated": true,
       "value": "#de322fff",
       "originalValue": "{!RED_700}",
       "name": "colorRed700"
@@ -551,6 +587,7 @@
     {
       "type": "color",
       "category": "colors",
+      "deprecated": true,
       "value": "#cc1f1dff",
       "originalValue": "{!RED_800}",
       "name": "colorRed800"
@@ -558,6 +595,7 @@
     {
       "type": "color",
       "category": "colors",
+      "deprecated": true,
       "value": "#a80300ff",
       "originalValue": "{!RED_900}",
       "name": "colorRed900"
@@ -712,6 +750,7 @@
     {
       "type": "color",
       "category": "colors",
+      "deprecated": true,
       "value": "#fff3cfff",
       "originalValue": "{!YELLOW_100}",
       "name": "colorYellow100"
@@ -719,6 +758,7 @@
     {
       "type": "color",
       "category": "colors",
+      "deprecated": true,
       "value": "#ffecb8ff",
       "originalValue": "{!YELLOW_200}",
       "name": "colorYellow200"
@@ -726,6 +766,7 @@
     {
       "type": "color",
       "category": "colors",
+      "deprecated": true,
       "value": "#ffe18cff",
       "originalValue": "{!YELLOW_300}",
       "name": "colorYellow300"
@@ -733,6 +774,7 @@
     {
       "type": "color",
       "category": "colors",
+      "deprecated": true,
       "value": "#ffcf4aff",
       "originalValue": "{!YELLOW_400}",
       "name": "colorYellow400"
@@ -740,6 +782,7 @@
     {
       "type": "color",
       "category": "colors",
+      "deprecated": true,
       "value": "#fff9e6ff",
       "originalValue": "{!YELLOW_50}",
       "name": "colorYellow50"
@@ -747,6 +790,7 @@
     {
       "type": "color",
       "category": "colors",
+      "deprecated": true,
       "value": "#ffbb00ff",
       "originalValue": "{!YELLOW_500}",
       "name": "colorYellow500"
@@ -754,6 +798,7 @@
     {
       "type": "color",
       "category": "colors",
+      "deprecated": true,
       "value": "#f0b000ff",
       "originalValue": "{!YELLOW_600}",
       "name": "colorYellow600"
@@ -761,6 +806,7 @@
     {
       "type": "color",
       "category": "colors",
+      "deprecated": true,
       "value": "#e1a500ff",
       "originalValue": "{!YELLOW_700}",
       "name": "colorYellow700"
@@ -768,6 +814,7 @@
     {
       "type": "color",
       "category": "colors",
+      "deprecated": true,
       "value": "#c28e00ff",
       "originalValue": "{!YELLOW_800}",
       "name": "colorYellow800"
@@ -775,6 +822,7 @@
     {
       "type": "color",
       "category": "colors",
+      "deprecated": true,
       "value": "#9c7200ff",
       "originalValue": "{!YELLOW_900}",
       "name": "colorYellow900"
