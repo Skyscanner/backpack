@@ -26,8 +26,6 @@ import {
   colorWhite,
 } from 'bpk-tokens/tokens/base.es6';
 
-import azureTheme from './azureTheme';
-
 const generateTheme = ({
   primaryColor300,
   primaryColor500,
@@ -239,7 +237,6 @@ const dohaTheme = {
 };
 
 const bpkCustomThemes = {
-  Azure: azureTheme,
   London: generateTheme(londonTheme),
   'Hong Kong': generateTheme(hongKongTheme),
   Doha: generateTheme(dohaTheme),
