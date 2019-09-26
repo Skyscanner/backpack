@@ -2,6 +2,222 @@
 
 [Unreleased changes](./UNRELEASED.yaml).
 
+# 2019-09-26 - New brand colours
+
+**Added:**
+
+ - bpk-animate-height: 1.1.136 => 1.2.0
+   - Added new brand colours
+
+ - bpk-component-accordion: 1.2.125 => 1.3.0
+   - Added new brand colours
+
+ - bpk-component-autosuggest: 3.0.194 => 3.1.0
+   - Added new brand colours
+
+ - bpk-component-badge: 1.2.6 => 1.3.0
+   - Added new brand colours
+
+ - bpk-component-banner-alert: 2.2.6 => 2.3.0
+   - Added new brand colours
+
+ - bpk-component-barchart: 2.4.28 => 2.5.0
+   - Added new brand colours
+
+ - bpk-component-blockquote: 1.1.155 => 1.2.0
+   - Added new brand colours
+
+ - bpk-component-breadcrumb: 1.0.105 => 1.1.0
+   - Added new brand colours
+
+ - bpk-component-breakpoint: 1.1.97 => 1.2.0
+   - Added new brand colours
+
+ - bpk-component-button: 2.5.15 => 2.6.0
+   - Added new brand colours
+
+ - bpk-component-calendar: 5.0.50 => 5.1.0
+   - Added new brand colours
+
+ - bpk-component-card: 1.1.112 => 1.2.0
+   - Added new brand colours
+
+ - bpk-component-checkbox: 1.5.8 => 1.6.0
+   - Added new brand colours
+
+ - bpk-component-chip: 2.0.117 => 2.1.0
+   - Added new brand colours
+
+ - bpk-component-close-button: 1.0.164 => 1.1.0
+   - Added new brand colours
+
+ - bpk-component-code: 1.1.102 => 1.2.0
+   - Added new brand colours
+
+ - bpk-component-content-container: 1.3.103 => 1.4.0
+   - Added new brand colours
+
+ - bpk-component-datatable: 0.1.118 => 0.2.0
+   - Added new brand colours
+
+ - bpk-component-datepicker: 9.0.53 => 9.1.0
+   - Added new brand colours
+
+ - bpk-component-description-list: 1.0.124 => 1.1.0
+   - Added new brand colours
+
+ - bpk-component-dialog: 1.1.97 => 1.2.0
+   - Added new brand colours
+
+ - bpk-component-drawer: 1.2.124 => 1.3.0
+   - Added new brand colours
+
+ - bpk-component-fieldset: 1.2.6 => 1.3.0
+   - Added new brand colours
+
+ - bpk-component-form-validation: 2.1.6 => 2.2.0
+   - Added new brand colours
+
+ - bpk-component-grid-toggle: 1.1.117 => 1.2.0
+   - Added new brand colours
+
+ - bpk-component-grid: 1.1.168 => 1.2.0
+   - Added new brand colours
+
+ - bpk-component-heading: 2.1.168 => 2.2.0
+   - Added new brand colours
+
+ - bpk-component-horizontal-nav: 2.4.57 => 2.5.0
+   - Added new brand colours
+
+ - bpk-component-icon: 4.1.7 => 4.2.0
+   - Added new brand colours
+
+ - bpk-component-image: 2.3.19 => 2.4.0
+   - Added new brand colours
+
+ - bpk-component-infinite-scroll: 2.2.65 => 2.3.0
+   - Added new brand colours
+
+ - bpk-component-input: 4.2.6 => 4.3.0
+   - Added new brand colours
+
+ - bpk-component-label: 3.3.3 => 3.4.0
+   - Added new brand colours
+
+ - bpk-component-link: 1.2.98 => 1.3.0
+   - Added new brand colours
+
+ - bpk-component-list: 1.1.138 => 1.2.0
+   - Added new brand colours
+
+ - bpk-component-loading-button: 2.0.124 => 2.1.0
+   - Added new brand colours
+
+ - bpk-component-map: 2.5.43 => 2.6.0
+   - Added new brand colours
+
+ - bpk-component-mobile-scroll-container: 1.1.106 => 1.2.0
+   - Added new brand colours
+
+ - bpk-component-modal: 1.8.97 => 1.9.0
+   - Added new brand colours
+
+ - bpk-component-navigation-bar: 1.2.105 => 1.3.0
+   - Added new brand colours
+
+ - bpk-component-navigation-stack: 1.0.110 => 1.1.0
+   - Added new brand colours
+
+ - bpk-component-nudger: 1.2.20 => 1.3.0
+   - Added new brand colours
+
+ - bpk-component-pagination: 1.0.133 => 1.1.0
+   - Added new brand colours
+
+ - bpk-component-panel: 1.0.161 => 1.1.0
+   - Added new brand colours
+
+ - bpk-component-paragraph: 1.0.161 => 1.1.0
+   - Added new brand colours
+
+ - bpk-component-phone-input: 3.1.38 => 3.2.0
+   - Added new brand colours
+
+ - bpk-component-popover: 2.2.73 => 2.3.0
+   - Added new brand colours
+
+ - bpk-component-progress: 1.0.169 => 1.1.0
+   - Added new brand colours
+
+ - bpk-component-radio: 1.4.8 => 1.5.0
+   - Added new brand colours
+
+ - bpk-component-rating: 1.3.3 => 1.4.0
+   - Added new brand colours
+
+ - bpk-component-router-link: 2.0.83 => 2.1.0
+   - Added new brand colours
+
+ - bpk-component-rtl-toggle: 1.1.117 => 1.2.0
+   - Added new brand colours
+
+ - bpk-component-scrollable-calendar: 1.0.50 => 1.1.0
+   - Added new brand colours
+
+ - bpk-component-section-list: 1.0.104 => 1.1.0
+   - Added new brand colours
+
+ - bpk-component-select: 2.4.6 => 2.5.0
+   - Added new brand colours
+
+ - bpk-component-slider: 1.1.131 => 1.2.0
+   - Added new brand colours
+
+ - bpk-component-spinner: 2.2.129 => 2.3.0
+   - Added new brand colours
+
+ - bpk-component-star-rating: 1.1.10 => 1.2.0
+   - Added new brand colours
+
+ - bpk-component-table: 1.1.103 => 1.2.0
+   - Added new brand colours
+
+ - bpk-component-text: 1.1.29 => 1.2.0
+   - Added new brand colours
+
+ - bpk-component-textarea: 1.2.6 => 1.3.0
+   - Added new brand colours
+
+ - bpk-component-theme-toggle: 1.2.6 => 1.3.0
+   - Added new brand colours
+
+ - bpk-component-ticket: 2.0.22 => 2.1.0
+   - Added new brand colours
+
+ - bpk-component-tooltip: 3.1.116 => 3.2.0
+   - Added new brand colours
+
+ - bpk-mixins: 18.1.6 => 18.2.0
+   - Added new brand colours
+
+ - bpk-scrim-utils: 3.2.98 => 3.3.0
+   - Added new brand colours
+
+ - bpk-stylesheets: 3.3.17 => 3.4.0
+   - Added new brand colours
+
+ - bpk-svgs: 7.2.4 => 7.3.0
+   - Added new brand colours
+
+ - bpk-theming: 1.2.23 => 1.3.0
+   - Added new brand colours
+
+ - bpk-tokens: 27.11.0 => 27.12.0
+   - Added new brand colours
+   - Deprecated all the old brand colours
+
+
 # 2019-09-24 - New brand colours
 
 **Added:**
