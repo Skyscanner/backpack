@@ -396,7 +396,7 @@
       "type": "box-shadow"
     },
     "BUTTON_FEATURED_BACKGROUND_IMAGE": {
-      "value": "linear-gradient(-180deg, {!SKY_BLUE} 0%, {!SKY_BLUE} 100%)",
+      "value": "{!SKY_BLUE}",
       "type": "background-image",
       "deprecated": true
     },
