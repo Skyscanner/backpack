@@ -82,6 +82,30 @@
     "COLOR_SKY_BLUE_TINT_03": {
       "value": "{!SKY_BLUE_TINT_03}"
     },
+    "COLOR_SKY_GRAY_TINT_07": {
+      "value": "{!SKY_GRAY_TINT_07}"
+    },
+    "COLOR_SKY_GRAY_TINT_06": {
+      "value": "{!SKY_GRAY_TINT_06}"
+    },
+    "COLOR_SKY_GRAY_TINT_05": {
+      "value": "{!SKY_GRAY_TINT_05}"
+    },
+    "COLOR_SKY_GRAY_TINT_04": {
+      "value": "{!SKY_GRAY_TINT_04}"
+    },
+    "COLOR_SKY_GRAY_TINT_03": {
+      "value": "{!SKY_GRAY_TINT_03}"
+    },
+    "COLOR_SKY_GRAY_TINT_02": {
+      "value": "{!SKY_GRAY_TINT_02}"
+    },
+    "COLOR_SKY_GRAY_TINT_01": {
+      "value": "{!SKY_GRAY_TINT_01}"
+    },
+    "COLOR_SKY_GRAY": {
+      "value": "{!SKY_GRAY}"
+    },
     "COLOR_BLUE_50": {
       "value": "{!BLUE_50}"
     },
@@ -235,7 +259,7 @@
       "value": "{!YELLOW_900}"
     },
     "PRIMARY_GRADIENT": {
-      "value": "linear-gradient(135deg, {!BLUE_500} 0%, {!PRIMARY_GRADIENT_LIGHT} 100%)",
+      "value": "linear-gradient(135deg, {!SKY_BLUE} 0%, {!SKY_BLUE} 100%)",
       "type": "background-image"
     },
     "COLOR_PRIMARY_GRADIENT_LIGHT": {

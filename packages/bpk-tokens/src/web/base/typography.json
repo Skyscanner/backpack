@@ -9,29 +9,29 @@
       "category": "typesettings"
     },
     "FONT_COLOR_BASE": {
-      "value": "{!GRAY_900}",
+      "value": "{!SKY_GRAY}",
       "type": "color",
       "category": "text-colors"
     },
     "TEXT_COLOR_PRIMARY_LIGHT": {
-      "value": "{!GRAY_900}",
+      "value": "{!SKY_GRAY}",
       "deprecated": true,
       "type": "color",
       "category": "text-colors"
     },
     "TEXT_COLOR_SECONDARY_LIGHT": {
-      "value": "{!GRAY_700}",
+      "value": "{!SKY_GRAY_TINT_01}",
       "deprecated": true,
       "type": "color",
       "category": "text-colors"
     },
     "TEXT_PRIMARY_LIGHT_COLOR": {
-      "value": "{!GRAY_900}",
+      "value": "{!SKY_GRAY}",
       "type": "color",
       "category": "text-colors"
     },
     "TEXT_SECONDARY_LIGHT_COLOR": {
-      "value": "{!GRAY_700}",
+      "value": "{!SKY_GRAY_TINT_01}",
       "type": "color",
       "category": "text-colors"
     },
@@ -286,7 +286,7 @@
       "category": "text-colors"
     },
     "LINK_WHITE_ACTIVE_COLOR": {
-      "value": "{!GRAY_100}",
+      "value": "{!SKY_GRAY_TINT_06}",
       "type": "color",
       "category": "text-colors"
     },
@@ -306,7 +306,7 @@
       "category": "text-colors"
     },
     "LINK_ALTERNATE_ACTIVE_COLOR": {
-      "value": "{!GRAY_100}",
+      "value": "{!SKY_GRAY_TINT_06}",
       "type": "color",
       "category": "text-colors"
     },

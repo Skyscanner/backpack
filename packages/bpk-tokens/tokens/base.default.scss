@@ -488,6 +488,22 @@ $bpk-color-sky-blue-tint-02: rgb(157, 192, 242) !default;
 /// @group colors
 $bpk-color-sky-blue-tint-03: rgb(205, 223, 248) !default;
 /// @group colors
+$bpk-color-sky-gray: rgb(17, 18, 54) !default;
+/// @group colors
+$bpk-color-sky-gray-tint-01: rgb(68, 69, 96) !default;
+/// @group colors
+$bpk-color-sky-gray-tint-02: rgb(104, 105, 127) !default;
+/// @group colors
+$bpk-color-sky-gray-tint-03: rgb(143, 144, 160) !default;
+/// @group colors
+$bpk-color-sky-gray-tint-04: rgb(178, 178, 191) !default;
+/// @group colors
+$bpk-color-sky-gray-tint-05: rgb(205, 205, 215) !default;
+/// @group colors
+$bpk-color-sky-gray-tint-06: rgb(221, 221, 229) !default;
+/// @group colors
+$bpk-color-sky-gray-tint-07: rgb(241, 242, 248) !default;
+/// @group colors
 $bpk-color-system-green: rgb(0, 166, 152) !default;
 /// @group colors
 $bpk-color-system-red: rgb(209, 67, 91) !default;
@@ -740,7 +756,7 @@ $bpk-panel-border-color: rgb(221, 221, 229) !default;
 /// @group panels
 $bpk-panel-padding: .75rem !default;
 /// @group colors
-$bpk-primary-gradient: linear-gradient(135deg, #00b2d6 0%, #02DDD8 100%) !default;
+$bpk-primary-gradient: linear-gradient(135deg, #0770e3 0%, #0770e3 100%) !default;
 /// @group spacings
 $bpk-p-margin-bottom: .75rem !default;
 /// @group spacings

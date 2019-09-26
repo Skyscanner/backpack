@@ -1,7 +1,5 @@
 {
-  "imports": [
-    "./aliases.json"
-  ],
+  "imports": ["./aliases.json"],
   "global": {
     "type": "color",
     "category": "colors"
@@ -111,6 +109,30 @@
     },
     "COLOR_BLUE_900": {
       "value": "{!BLUE_900}"
+    },
+    "COLOR_SKY_GRAY_TINT_07": {
+      "value": "{!SKY_GRAY_TINT_07}"
+    },
+    "COLOR_SKY_GRAY_TINT_06": {
+      "value": "{!SKY_GRAY_TINT_06}"
+    },
+    "COLOR_SKY_GRAY_TINT_05": {
+      "value": "{!SKY_GRAY_TINT_05}"
+    },
+    "COLOR_SKY_GRAY_TINT_04": {
+      "value": "{!SKY_GRAY_TINT_04}"
+    },
+    "COLOR_SKY_GRAY_TINT_03": {
+      "value": "{!SKY_GRAY_TINT_03}"
+    },
+    "COLOR_SKY_GRAY_TINT_02": {
+      "value": "{!SKY_GRAY_TINT_02}"
+    },
+    "COLOR_SKY_GRAY_TINT_01": {
+      "value": "{!SKY_GRAY_TINT_01}"
+    },
+    "COLOR_SKY_GRAY": {
+      "value": "{!SKY_GRAY}"
     },
     "COLOR_GRAY_50": {
       "value": "{!GRAY_50}"
