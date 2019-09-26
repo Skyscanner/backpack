@@ -24,10 +24,10 @@ import BpkButton from 'bpk-component-button';
 import addMonths from 'date-fns/add_months';
 import {
   colorWhite,
-  colorRed500,
-  colorGray100,
-  colorGray300,
-  colorGreen500,
+  colorPanjin,
+  colorSkyGrayTint06,
+  colorSkyGrayTint04,
+  colorMonteverde,
 } from 'bpk-tokens/tokens/base.es6';
 
 import { withButtonAlignment, withRtlSupport } from '../bpk-component-icon';
@@ -122,16 +122,16 @@ const MyCalendarDate = props => {
   const cx = {
     textAlign: 'center',
     fontSize: '0.8em',
-    color: props.isOutside || props.isBlocked ? colorGray100 : 'inherit',
-    backgroundColor: props.isSelected ? colorGray300 : 'inherit',
+    color: props.isOutside || props.isBlocked ? colorSkyGrayTint06 : 'inherit',
+    backgroundColor: props.isSelected ? colorSkyGrayTint04 : 'inherit',
   };
   const priceCx = {
-    color: colorRed500,
+    color: colorPanjin,
   };
   const day = props.date.getDate();
   const price = props.prices[day - 1];
   if (price < 100) {
-    priceCx.color = colorGreen500;
+    priceCx.color = colorMonteverde;
   }
   return (
     <div style={cx}>
@@ -198,7 +198,7 @@ class MonthViewCalendar extends Component {
           style={{
             flexShrink: 1,
             margin: '0 2rem',
-            borderRight: `1px solid ${colorGray100}`,
+            borderRight: `1px solid ${colorSkyGrayTint06}`,
           }}
         />
         <MyReturnCalendar

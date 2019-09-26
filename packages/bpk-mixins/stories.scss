@@ -20,11 +20,11 @@
 
 .bpk-icon {
   &-sm__chart {
-    @include bpk-icon-sm(chart-green-500);
+    @include bpk-icon-sm(chart-monteverde);
   }
 
   &-lg__chart {
-    @include bpk-icon-lg(chart-green-500);
+    @include bpk-icon-lg(chart-monteverde);
   }
 
   &__chart--small {
@@ -39,7 +39,7 @@
 .bpk-breakpoint {
   &-mobile {
     padding: $bpk-spacing-base;
-    background-color: $bpk-color-gray-100;
+    background-color: $bpk-color-sky-gray-tint-06;
 
     @include bpk-breakpoint-mobile {
       background-color: $bpk-color-monteverde;
@@ -48,7 +48,7 @@
 
   &-tablet {
     padding: $bpk-spacing-base;
-    background-color: $bpk-color-gray-100;
+    background-color: $bpk-color-sky-gray-tint-06;
 
     @include bpk-breakpoint-tablet {
       background-color: $bpk-color-monteverde;
@@ -57,7 +57,7 @@
 
   &-tablet-only {
     padding: $bpk-spacing-base;
-    background-color: $bpk-color-gray-100;
+    background-color: $bpk-color-sky-gray-tint-06;
 
     @include bpk-breakpoint-tablet-only {
       background-color: $bpk-color-monteverde;
@@ -66,7 +66,7 @@
 
   &-above-mobile {
     padding: $bpk-spacing-base;
-    background-color: $bpk-color-gray-100;
+    background-color: $bpk-color-sky-gray-tint-06;
 
     @include bpk-breakpoint-above-mobile {
       background-color: $bpk-color-monteverde;
@@ -75,7 +75,7 @@
 
   &-above-tablet {
     padding: $bpk-spacing-base;
-    background-color: $bpk-color-gray-100;
+    background-color: $bpk-color-sky-gray-tint-06;
 
     @include bpk-breakpoint-above-tablet {
       background-color: $bpk-color-monteverde;

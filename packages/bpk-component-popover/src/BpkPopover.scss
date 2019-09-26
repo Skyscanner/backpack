@@ -96,7 +96,7 @@ $arrow-size: $bpk-spacing-sm;
     padding: $bpk-modal-header-padding;
     justify-content: space-between;
 
-    @include bpk-border-sm($bpk-color-gray-100);
+    @include bpk-border-sm($bpk-color-sky-gray-tint-06);
   }
 
   &__label {
@@ -115,7 +115,7 @@ $arrow-size: $bpk-spacing-sm;
     padding: $bpk-spacing-xs $bpk-spacing-sm;
     text-align: right;
 
-    @include bpk-border-top-sm($bpk-color-gray-100);
+    @include bpk-border-top-sm($bpk-color-sky-gray-tint-06);
 
     @include bpk-rtl {
       text-align: left;
