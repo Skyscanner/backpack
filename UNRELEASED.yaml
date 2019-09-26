@@ -36,7 +36,7 @@ ADDED:
     - Added new brand colours
   - bpk-component-banner-alert:
     - Added new brand colours
-  - bpk-component-barchart: 
+  - bpk-component-barchart:
     - Added new brand colours
   - bpk-component-blockquote:
     - Added new brand colours
@@ -166,3 +166,4 @@ ADDED:
     - Added new brand colours
   - bpk-tokens:
     - Added new brand colours
+    - Deprecated all the old brand colours
