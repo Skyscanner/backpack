@@ -378,7 +378,7 @@ module.exports = {
   panelBackgroundColor: "rgb(255, 255, 255)",
   panelBorderColor: "rgb(221, 221, 229)",
   panelPadding: ".75rem",
-  primaryGradient: "linear-gradient(135deg, #00b2d6 0%, #02DDD8 100%)",
+  primaryGradient: "linear-gradient(135deg, #0770e3 0%, #0770e3 100%)",
   pMarginBottom: ".75rem",
   pMarginTop: "0",
   radioCheckedCircleColor: "rgb(7, 112, 227)",

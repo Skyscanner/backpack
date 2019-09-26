@@ -481,16 +481,16 @@
     },
     "BUTTON_DESTRUCTIVE_ACTIVE_BOX_SHADOW": {
       "category": "buttons",
-      "value": "0 0 0 3px #ff5452 inset",
+      "value": "0 0 0 3px #d1435b inset",
       "type": "box-shadow",
-      "originalValue": "0 0 0 3px {!RED_500} inset",
+      "originalValue": "0 0 0 3px {!PANJIN} inset",
       "name": "BUTTON_DESTRUCTIVE_ACTIVE_BOX_SHADOW"
     },
     "BUTTON_DESTRUCTIVE_ACTIVE_COLOR": {
       "category": "buttons",
-      "value": "rgb(255, 84, 82)",
+      "value": "rgb(209, 67, 91)",
       "type": "color",
-      "originalValue": "{!RED_500}",
+      "originalValue": "{!PANJIN}",
       "name": "BUTTON_DESTRUCTIVE_ACTIVE_COLOR"
     },
     "BUTTON_DESTRUCTIVE_BOX_SHADOW": {
