@@ -15,7 +15,7 @@ exports[`BpkThemeToggle should render correctly 1`] = `
     id="theme-select"
     name="theme-select"
     onChange={[Function]}
-    value="Azure"
+    value=""
   >
     <option
       hidden={true}
@@ -27,11 +27,6 @@ exports[`BpkThemeToggle should render correctly 1`] = `
       value="skyscanner"
     >
       None
-    </option>
-    <option
-      value="Azure"
-    >
-      Azure
     </option>
     <option
       value="London"
