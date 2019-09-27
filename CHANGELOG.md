@@ -2,6 +2,14 @@
 
 [Unreleased changes](./UNRELEASED.yaml).
 
+# 2019-09-27 - Fixed pagination issue
+
+**Fixed:**
+
+ - bpk-component-pagination: 1.1.1 => 1.1.2
+   - Fixed issue where pagination buttons were not circular
+
+
 # 2019-09-26 - Fixed spelling of colour token
 
 **Breaking:**

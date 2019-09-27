@@ -24,6 +24,3 @@
 #   FIXED:
 #     - bpk-component-horcrux:
 #       - Fixed issue where `BpkHorcrux` would occasionally possess the living.
-FIXED:
-  - bpk-component-pagination:
-    - Fixed issue where pagination buttons were not circular
