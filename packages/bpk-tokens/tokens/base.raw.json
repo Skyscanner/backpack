@@ -15,36 +15,6 @@
     "BAGAN": {
       "value": "#ffebd0"
     },
-    "BLUE_100": {
-      "value": "#cbeef5"
-    },
-    "BLUE_200": {
-      "value": "#b0e4ee"
-    },
-    "BLUE_300": {
-      "value": "#7fd7e8"
-    },
-    "BLUE_400": {
-      "value": "#40c4df"
-    },
-    "BLUE_50": {
-      "value": "#e1f4f8"
-    },
-    "BLUE_500": {
-      "value": "#00b2d6"
-    },
-    "BLUE_600": {
-      "value": "#009dbd"
-    },
-    "BLUE_700": {
-      "value": "#008ca8"
-    },
-    "BLUE_800": {
-      "value": "#00758c"
-    },
-    "BLUE_900": {
-      "value": "#005567"
-    },
     "BORDER_RADIUS_PILL": {
       "value": "1.125rem"
     },
@@ -114,66 +84,6 @@
     "GLENCOE": {
       "value": "#73cec6"
     },
-    "GRAY_100": {
-      "value": "#DDDDE5"
-    },
-    "GRAY_200": {
-      "value": "#CDCDD7"
-    },
-    "GRAY_300": {
-      "value": "#B2B2BF"
-    },
-    "GRAY_400": {
-      "value": "#8f90a0"
-    },
-    "GRAY_50": {
-      "value": "#F1F2F8"
-    },
-    "GRAY_500": {
-      "value": "#68697F"
-    },
-    "GRAY_600": {
-      "value": "#696179"
-    },
-    "GRAY_700": {
-      "value": "#444560"
-    },
-    "GRAY_800": {
-      "value": "#3B344B"
-    },
-    "GRAY_900": {
-      "value": "#111236"
-    },
-    "GREEN_100": {
-      "value": "#cbf5e2"
-    },
-    "GREEN_200": {
-      "value": "#afedd1"
-    },
-    "GREEN_300": {
-      "value": "#80e8b9"
-    },
-    "GREEN_400": {
-      "value": "#40de97"
-    },
-    "GREEN_50": {
-      "value": "#dff7ec"
-    },
-    "GREEN_500": {
-      "value": "#00d775"
-    },
-    "GREEN_600": {
-      "value": "#00bd68"
-    },
-    "GREEN_700": {
-      "value": "#00a85d"
-    },
-    "GREEN_800": {
-      "value": "#008c4d"
-    },
-    "GREEN_900": {
-      "value": "#006638"
-    },
     "HARBOUR": {
       "value": "#f6dde1"
     },
@@ -198,68 +108,8 @@
     "PETRA": {
       "value": "#ffab95"
     },
-    "PINK_100": {
-      "value": "#FFBFD7"
-    },
-    "PINK_200": {
-      "value": "#FF94BB"
-    },
-    "PINK_300": {
-      "value": "#FF73A6"
-    },
-    "PINK_400": {
-      "value": "#FF619B"
-    },
-    "PINK_50": {
-      "value": "#FDE4ED"
-    },
-    "PINK_500": {
-      "value": "#FA488A"
-    },
-    "PINK_600": {
-      "value": "#D92B6B"
-    },
-    "PINK_700": {
-      "value": "#C50F52"
-    },
-    "PINK_800": {
-      "value": "#B00C48"
-    },
-    "PINK_900": {
-      "value": "#94053A"
-    },
     "PRIMARY_GRADIENT_LIGHT": {
       "value": "#02DDD8"
-    },
-    "RED_100": {
-      "value": "#ffd6d5"
-    },
-    "RED_200": {
-      "value": "#ffbbba"
-    },
-    "RED_300": {
-      "value": "#ff9694"
-    },
-    "RED_400": {
-      "value": "#fe7471"
-    },
-    "RED_50": {
-      "value": "#fcf2f2"
-    },
-    "RED_500": {
-      "value": "#ff5452"
-    },
-    "RED_600": {
-      "value": "#eb423f"
-    },
-    "RED_700": {
-      "value": "#de322f"
-    },
-    "RED_800": {
-      "value": "#cc1f1d"
-    },
-    "RED_900": {
-      "value": "#a80300"
     },
     "SAGANO": {
       "value": "#d0eeec"
@@ -341,36 +191,6 @@
     },
     "WHITE": {
       "value": "#ffffff"
-    },
-    "YELLOW_100": {
-      "value": "#FFF3CF"
-    },
-    "YELLOW_200": {
-      "value": "#FFECB8"
-    },
-    "YELLOW_300": {
-      "value": "#FFE18C"
-    },
-    "YELLOW_400": {
-      "value": "#FFCF4A"
-    },
-    "YELLOW_50": {
-      "value": "#FFF9E6"
-    },
-    "YELLOW_500": {
-      "value": "#FFBB00"
-    },
-    "YELLOW_600": {
-      "value": "#F0B000"
-    },
-    "YELLOW_700": {
-      "value": "#E1A500"
-    },
-    "YELLOW_800": {
-      "value": "#C28E00"
-    },
-    "YELLOW_900": {
-      "value": "#9C7200"
     },
     "ZINDEX_AUTOSUGGEST": {
       "value": "900"
@@ -693,28 +513,12 @@
       "originalValue": "{!MONTEVERDE}",
       "name": "BUTTON_BACKGROUND_COLOR"
     },
-    "BUTTON_BACKGROUND_IMAGE": {
-      "category": "buttons",
-      "value": "#00a698",
-      "type": "background-image",
-      "deprecated": true,
-      "originalValue": "{!MONTEVERDE}",
-      "name": "BUTTON_BACKGROUND_IMAGE"
-    },
     "BUTTON_BORDER_RADIUS": {
       "category": "buttons",
       "value": ".25rem",
       "type": "size",
       "originalValue": "{!BORDER_RADIUS_XS}",
       "name": "BUTTON_BORDER_RADIUS"
-    },
-    "BUTTON_BORDER_RADIUS_LG": {
-      "category": "buttons",
-      "value": ".25rem",
-      "type": "size",
-      "deprecated": true,
-      "originalValue": "{!BORDER_RADIUS_XS}",
-      "name": "BUTTON_BORDER_RADIUS_LG"
     },
     "BUTTON_BOX_SHADOW": {
       "category": "buttons",
@@ -916,7 +720,6 @@
       "category": "buttons",
       "value": "#0770e3",
       "type": "background-image",
-      "deprecated": true,
       "originalValue": "{!SKY_BLUE}",
       "name": "BUTTON_FEATURED_BACKGROUND_IMAGE"
     },
@@ -940,22 +743,6 @@
       "type": "background-image",
       "originalValue": "none",
       "name": "BUTTON_FEATURED_DISABLED_BACKGROUND_IMAGE"
-    },
-    "BUTTON_FEATURED_GRADIENT_END_COLOR": {
-      "category": "buttons",
-      "value": "rgb(7, 112, 227)",
-      "type": "color",
-      "deprecated": true,
-      "originalValue": "{!SKY_BLUE}",
-      "name": "BUTTON_FEATURED_GRADIENT_END_COLOR"
-    },
-    "BUTTON_FEATURED_GRADIENT_START_COLOR": {
-      "category": "buttons",
-      "value": "rgb(7, 112, 227)",
-      "type": "color",
-      "deprecated": true,
-      "originalValue": "{!SKY_BLUE}",
-      "name": "BUTTON_FEATURED_GRADIENT_START_COLOR"
     },
     "BUTTON_FEATURED_HOVER_BACKGROUND_COLOR": {
       "category": "buttons",
@@ -1457,28 +1244,12 @@
       "originalValue": "{!SKY_GRAY}",
       "name": "CALENDAR_DAY_ACTIVE_COLOR"
     },
-    "CALENDAR_DAY_BACKGROUND_COLOR": {
-      "category": "calendar",
-      "value": "rgb(255, 255, 255)",
-      "type": "color",
-      "deprecated": true,
-      "originalValue": "{!WHITE}",
-      "name": "CALENDAR_DAY_BACKGROUND_COLOR"
-    },
     "CALENDAR_DAY_COLOR": {
       "category": "calendar",
       "value": "rgb(7, 112, 227)",
       "type": "color",
       "originalValue": "{!SKY_BLUE}",
       "name": "CALENDAR_DAY_COLOR"
-    },
-    "CALENDAR_DAY_DISABLED_BACKGROUND_COLOR": {
-      "category": "calendar",
-      "value": "rgb(255, 255, 255)",
-      "type": "color",
-      "deprecated": true,
-      "originalValue": "{!WHITE}",
-      "name": "CALENDAR_DAY_DISABLED_BACKGROUND_COLOR"
     },
     "CALENDAR_DAY_DISABLED_COLOR": {
       "category": "calendar",
@@ -1514,14 +1285,6 @@
       "type": "color",
       "originalValue": "{!SKY_GRAY_TINT_01}",
       "name": "CALENDAR_DAY_HOVER_COLOR"
-    },
-    "CALENDAR_DAY_OUTSIDE_BACKGROUND_COLOR": {
-      "category": "calendar",
-      "value": "rgb(255, 255, 255)",
-      "type": "color",
-      "deprecated": true,
-      "originalValue": "{!WHITE}",
-      "name": "CALENDAR_DAY_OUTSIDE_BACKGROUND_COLOR"
     },
     "CALENDAR_DAY_OUTSIDE_COLOR": {
       "category": "calendar",
@@ -1635,86 +1398,6 @@
       "originalValue": "{!BAGAN}",
       "name": "COLOR_BAGAN"
     },
-    "COLOR_BLUE_100": {
-      "type": "color",
-      "category": "colors",
-      "deprecated": true,
-      "value": "rgb(203, 238, 245)",
-      "originalValue": "{!BLUE_100}",
-      "name": "COLOR_BLUE_100"
-    },
-    "COLOR_BLUE_200": {
-      "type": "color",
-      "category": "colors",
-      "deprecated": true,
-      "value": "rgb(176, 228, 238)",
-      "originalValue": "{!BLUE_200}",
-      "name": "COLOR_BLUE_200"
-    },
-    "COLOR_BLUE_300": {
-      "type": "color",
-      "category": "colors",
-      "deprecated": true,
-      "value": "rgb(127, 215, 232)",
-      "originalValue": "{!BLUE_300}",
-      "name": "COLOR_BLUE_300"
-    },
-    "COLOR_BLUE_400": {
-      "type": "color",
-      "category": "colors",
-      "deprecated": true,
-      "value": "rgb(64, 196, 223)",
-      "originalValue": "{!BLUE_400}",
-      "name": "COLOR_BLUE_400"
-    },
-    "COLOR_BLUE_50": {
-      "type": "color",
-      "category": "colors",
-      "deprecated": true,
-      "value": "rgb(225, 244, 248)",
-      "originalValue": "{!BLUE_50}",
-      "name": "COLOR_BLUE_50"
-    },
-    "COLOR_BLUE_500": {
-      "type": "color",
-      "category": "colors",
-      "deprecated": true,
-      "value": "rgb(0, 178, 214)",
-      "originalValue": "{!BLUE_500}",
-      "name": "COLOR_BLUE_500"
-    },
-    "COLOR_BLUE_600": {
-      "type": "color",
-      "category": "colors",
-      "deprecated": true,
-      "value": "rgb(0, 157, 189)",
-      "originalValue": "{!BLUE_600}",
-      "name": "COLOR_BLUE_600"
-    },
-    "COLOR_BLUE_700": {
-      "type": "color",
-      "category": "colors",
-      "deprecated": true,
-      "value": "rgb(0, 140, 168)",
-      "originalValue": "{!BLUE_700}",
-      "name": "COLOR_BLUE_700"
-    },
-    "COLOR_BLUE_800": {
-      "type": "color",
-      "category": "colors",
-      "deprecated": true,
-      "value": "rgb(0, 117, 140)",
-      "originalValue": "{!BLUE_800}",
-      "name": "COLOR_BLUE_800"
-    },
-    "COLOR_BLUE_900": {
-      "type": "color",
-      "category": "colors",
-      "deprecated": true,
-      "value": "rgb(0, 85, 103)",
-      "originalValue": "{!BLUE_900}",
-      "name": "COLOR_BLUE_900"
-    },
     "COLOR_BUNOL": {
       "type": "color",
       "category": "colors",
@@ -1735,166 +1418,6 @@
       "value": "rgb(115, 206, 198)",
       "originalValue": "{!GLENCOE}",
       "name": "COLOR_GLENCOE"
-    },
-    "COLOR_GRAY_100": {
-      "type": "color",
-      "category": "colors",
-      "deprecated": true,
-      "value": "rgb(221, 221, 229)",
-      "originalValue": "{!GRAY_100}",
-      "name": "COLOR_GRAY_100"
-    },
-    "COLOR_GRAY_200": {
-      "type": "color",
-      "category": "colors",
-      "deprecated": true,
-      "value": "rgb(205, 205, 215)",
-      "originalValue": "{!GRAY_200}",
-      "name": "COLOR_GRAY_200"
-    },
-    "COLOR_GRAY_300": {
-      "type": "color",
-      "category": "colors",
-      "deprecated": true,
-      "value": "rgb(178, 178, 191)",
-      "originalValue": "{!GRAY_300}",
-      "name": "COLOR_GRAY_300"
-    },
-    "COLOR_GRAY_400": {
-      "type": "color",
-      "category": "colors",
-      "deprecated": true,
-      "value": "rgb(143, 144, 160)",
-      "originalValue": "{!GRAY_400}",
-      "name": "COLOR_GRAY_400"
-    },
-    "COLOR_GRAY_50": {
-      "type": "color",
-      "category": "colors",
-      "deprecated": true,
-      "value": "rgb(241, 242, 248)",
-      "originalValue": "{!GRAY_50}",
-      "name": "COLOR_GRAY_50"
-    },
-    "COLOR_GRAY_500": {
-      "type": "color",
-      "category": "colors",
-      "deprecated": true,
-      "value": "rgb(104, 105, 127)",
-      "originalValue": "{!GRAY_500}",
-      "name": "COLOR_GRAY_500"
-    },
-    "COLOR_GRAY_600": {
-      "type": "color",
-      "category": "colors",
-      "deprecated": true,
-      "value": "rgb(105, 97, 121)",
-      "originalValue": "{!GRAY_600}",
-      "name": "COLOR_GRAY_600"
-    },
-    "COLOR_GRAY_700": {
-      "type": "color",
-      "category": "colors",
-      "deprecated": true,
-      "value": "rgb(68, 69, 96)",
-      "originalValue": "{!GRAY_700}",
-      "name": "COLOR_GRAY_700"
-    },
-    "COLOR_GRAY_800": {
-      "type": "color",
-      "category": "colors",
-      "deprecated": true,
-      "value": "rgb(59, 52, 75)",
-      "originalValue": "{!GRAY_800}",
-      "name": "COLOR_GRAY_800"
-    },
-    "COLOR_GRAY_900": {
-      "type": "color",
-      "category": "colors",
-      "deprecated": true,
-      "value": "rgb(17, 18, 54)",
-      "originalValue": "{!GRAY_900}",
-      "name": "COLOR_GRAY_900"
-    },
-    "COLOR_GREEN_100": {
-      "type": "color",
-      "category": "colors",
-      "deprecated": true,
-      "value": "rgb(203, 245, 226)",
-      "originalValue": "{!GREEN_100}",
-      "name": "COLOR_GREEN_100"
-    },
-    "COLOR_GREEN_200": {
-      "type": "color",
-      "category": "colors",
-      "deprecated": true,
-      "value": "rgb(175, 237, 209)",
-      "originalValue": "{!GREEN_200}",
-      "name": "COLOR_GREEN_200"
-    },
-    "COLOR_GREEN_300": {
-      "type": "color",
-      "category": "colors",
-      "deprecated": true,
-      "value": "rgb(128, 232, 185)",
-      "originalValue": "{!GREEN_300}",
-      "name": "COLOR_GREEN_300"
-    },
-    "COLOR_GREEN_400": {
-      "type": "color",
-      "category": "colors",
-      "deprecated": true,
-      "value": "rgb(64, 222, 151)",
-      "originalValue": "{!GREEN_400}",
-      "name": "COLOR_GREEN_400"
-    },
-    "COLOR_GREEN_50": {
-      "type": "color",
-      "category": "colors",
-      "deprecated": true,
-      "value": "rgb(223, 247, 236)",
-      "originalValue": "{!GREEN_50}",
-      "name": "COLOR_GREEN_50"
-    },
-    "COLOR_GREEN_500": {
-      "type": "color",
-      "category": "colors",
-      "deprecated": true,
-      "value": "rgb(0, 215, 117)",
-      "originalValue": "{!GREEN_500}",
-      "name": "COLOR_GREEN_500"
-    },
-    "COLOR_GREEN_600": {
-      "type": "color",
-      "category": "colors",
-      "deprecated": true,
-      "value": "rgb(0, 189, 104)",
-      "originalValue": "{!GREEN_600}",
-      "name": "COLOR_GREEN_600"
-    },
-    "COLOR_GREEN_700": {
-      "type": "color",
-      "category": "colors",
-      "deprecated": true,
-      "value": "rgb(0, 168, 93)",
-      "originalValue": "{!GREEN_700}",
-      "name": "COLOR_GREEN_700"
-    },
-    "COLOR_GREEN_800": {
-      "type": "color",
-      "category": "colors",
-      "deprecated": true,
-      "value": "rgb(0, 140, 77)",
-      "originalValue": "{!GREEN_800}",
-      "name": "COLOR_GREEN_800"
-    },
-    "COLOR_GREEN_900": {
-      "type": "color",
-      "category": "colors",
-      "deprecated": true,
-      "value": "rgb(0, 102, 56)",
-      "originalValue": "{!GREEN_900}",
-      "name": "COLOR_GREEN_900"
     },
     "COLOR_HARBOUR": {
       "type": "color",
@@ -1951,86 +1474,6 @@
       "value": "rgb(7, 112, 227)",
       "originalValue": "{!SKY_BLUE}",
       "name": "COLOR_PRIMARY_GRADIENT_LIGHT"
-    },
-    "COLOR_RED_100": {
-      "type": "color",
-      "category": "colors",
-      "deprecated": true,
-      "value": "rgb(255, 214, 213)",
-      "originalValue": "{!RED_100}",
-      "name": "COLOR_RED_100"
-    },
-    "COLOR_RED_200": {
-      "type": "color",
-      "category": "colors",
-      "deprecated": true,
-      "value": "rgb(255, 187, 186)",
-      "originalValue": "{!RED_200}",
-      "name": "COLOR_RED_200"
-    },
-    "COLOR_RED_300": {
-      "type": "color",
-      "category": "colors",
-      "deprecated": true,
-      "value": "rgb(255, 150, 148)",
-      "originalValue": "{!RED_300}",
-      "name": "COLOR_RED_300"
-    },
-    "COLOR_RED_400": {
-      "type": "color",
-      "category": "colors",
-      "deprecated": true,
-      "value": "rgb(254, 116, 113)",
-      "originalValue": "{!RED_400}",
-      "name": "COLOR_RED_400"
-    },
-    "COLOR_RED_50": {
-      "type": "color",
-      "category": "colors",
-      "deprecated": true,
-      "value": "rgb(252, 242, 242)",
-      "originalValue": "{!RED_50}",
-      "name": "COLOR_RED_50"
-    },
-    "COLOR_RED_500": {
-      "type": "color",
-      "category": "colors",
-      "deprecated": true,
-      "value": "rgb(255, 84, 82)",
-      "originalValue": "{!RED_500}",
-      "name": "COLOR_RED_500"
-    },
-    "COLOR_RED_600": {
-      "type": "color",
-      "category": "colors",
-      "deprecated": true,
-      "value": "rgb(235, 66, 63)",
-      "originalValue": "{!RED_600}",
-      "name": "COLOR_RED_600"
-    },
-    "COLOR_RED_700": {
-      "type": "color",
-      "category": "colors",
-      "deprecated": true,
-      "value": "rgb(222, 50, 47)",
-      "originalValue": "{!RED_700}",
-      "name": "COLOR_RED_700"
-    },
-    "COLOR_RED_800": {
-      "type": "color",
-      "category": "colors",
-      "deprecated": true,
-      "value": "rgb(204, 31, 29)",
-      "originalValue": "{!RED_800}",
-      "name": "COLOR_RED_800"
-    },
-    "COLOR_RED_900": {
-      "type": "color",
-      "category": "colors",
-      "deprecated": true,
-      "value": "rgb(168, 3, 0)",
-      "originalValue": "{!RED_900}",
-      "name": "COLOR_RED_900"
     },
     "COLOR_SAGANO": {
       "type": "color",
@@ -2179,86 +1622,6 @@
       "originalValue": "{!WHITE}",
       "name": "COLOR_WHITE"
     },
-    "COLOR_YELLOW_100": {
-      "type": "color",
-      "category": "colors",
-      "deprecated": true,
-      "value": "rgb(255, 243, 207)",
-      "originalValue": "{!YELLOW_100}",
-      "name": "COLOR_YELLOW_100"
-    },
-    "COLOR_YELLOW_200": {
-      "type": "color",
-      "category": "colors",
-      "deprecated": true,
-      "value": "rgb(255, 236, 184)",
-      "originalValue": "{!YELLOW_200}",
-      "name": "COLOR_YELLOW_200"
-    },
-    "COLOR_YELLOW_300": {
-      "type": "color",
-      "category": "colors",
-      "deprecated": true,
-      "value": "rgb(255, 225, 140)",
-      "originalValue": "{!YELLOW_300}",
-      "name": "COLOR_YELLOW_300"
-    },
-    "COLOR_YELLOW_400": {
-      "type": "color",
-      "category": "colors",
-      "deprecated": true,
-      "value": "rgb(255, 207, 74)",
-      "originalValue": "{!YELLOW_400}",
-      "name": "COLOR_YELLOW_400"
-    },
-    "COLOR_YELLOW_50": {
-      "type": "color",
-      "category": "colors",
-      "deprecated": true,
-      "value": "rgb(255, 249, 230)",
-      "originalValue": "{!YELLOW_50}",
-      "name": "COLOR_YELLOW_50"
-    },
-    "COLOR_YELLOW_500": {
-      "type": "color",
-      "category": "colors",
-      "deprecated": true,
-      "value": "rgb(255, 187, 0)",
-      "originalValue": "{!YELLOW_500}",
-      "name": "COLOR_YELLOW_500"
-    },
-    "COLOR_YELLOW_600": {
-      "type": "color",
-      "category": "colors",
-      "deprecated": true,
-      "value": "rgb(240, 176, 0)",
-      "originalValue": "{!YELLOW_600}",
-      "name": "COLOR_YELLOW_600"
-    },
-    "COLOR_YELLOW_700": {
-      "type": "color",
-      "category": "colors",
-      "deprecated": true,
-      "value": "rgb(225, 165, 0)",
-      "originalValue": "{!YELLOW_700}",
-      "name": "COLOR_YELLOW_700"
-    },
-    "COLOR_YELLOW_800": {
-      "type": "color",
-      "category": "colors",
-      "deprecated": true,
-      "value": "rgb(194, 142, 0)",
-      "originalValue": "{!YELLOW_800}",
-      "name": "COLOR_YELLOW_800"
-    },
-    "COLOR_YELLOW_900": {
-      "type": "color",
-      "category": "colors",
-      "deprecated": true,
-      "value": "rgb(156, 114, 0)",
-      "originalValue": "{!YELLOW_900}",
-      "name": "COLOR_YELLOW_900"
-    },
     "DURATION_BASE": {
       "type": "time",
       "category": "animations",
@@ -2358,52 +1721,12 @@
       "originalValue": "{!SPACING_XS}",
       "name": "FORM_VALIDATION_ARROW_SIZE"
     },
-    "FORM_VALIDATION_BACKGROUND_COLOR": {
-      "category": "forms",
-      "value": "rgb(209, 67, 91)",
-      "type": "color",
-      "deprecated": true,
-      "originalValue": "{!PANJIN}",
-      "name": "FORM_VALIDATION_BACKGROUND_COLOR"
-    },
-    "FORM_VALIDATION_CHECKBOX_ARROW_LEFT": {
-      "category": "forms",
-      "value": "1.5rem",
-      "type": "size",
-      "deprecated": true,
-      "originalValue": "{!SPACING_BASE}",
-      "name": "FORM_VALIDATION_CHECKBOX_ARROW_LEFT"
-    },
     "FORM_VALIDATION_COLOR": {
       "category": "forms",
       "value": "rgb(209, 67, 91)",
       "type": "color",
       "originalValue": "{!PANJIN}",
       "name": "FORM_VALIDATION_COLOR"
-    },
-    "FORM_VALIDATION_MARGIN": {
-      "category": "forms",
-      "value": "0",
-      "type": "size",
-      "deprecated": true,
-      "originalValue": "0",
-      "name": "FORM_VALIDATION_MARGIN"
-    },
-    "FORM_VALIDATION_PADDING_X": {
-      "category": "forms",
-      "value": ".75rem",
-      "type": "size",
-      "deprecated": true,
-      "originalValue": "{!SPACING_SM}",
-      "name": "FORM_VALIDATION_PADDING_X"
-    },
-    "FORM_VALIDATION_PADDING_Y": {
-      "category": "forms",
-      "value": ".375rem",
-      "type": "size",
-      "deprecated": true,
-      "originalValue": "{!SPACING_XS}",
-      "name": "FORM_VALIDATION_PADDING_Y"
     },
     "GRID_COLUMNS": {
       "category": "grids",
@@ -2930,22 +2253,6 @@
       "originalValue": "{!WHITE}",
       "name": "MODAL_BACKGROUND_COLOR"
     },
-    "MODAL_CLOSE_ICON_FILL": {
-      "category": "modals",
-      "value": "rgb(104, 105, 127)",
-      "type": "color",
-      "deprecated": true,
-      "originalValue": "{!SKY_GRAY_TINT_02}",
-      "name": "MODAL_CLOSE_ICON_FILL"
-    },
-    "MODAL_CLOSE_ICON_HOVER_FILL": {
-      "category": "modals",
-      "value": "rgb(68, 69, 96)",
-      "type": "color",
-      "deprecated": true,
-      "originalValue": "{!SKY_GRAY_TINT_01}",
-      "name": "MODAL_CLOSE_ICON_HOVER_FILL"
-    },
     "MODAL_CONTENT_PADDING": {
       "category": "modals",
       "value": ".75rem",
@@ -2980,38 +2287,6 @@
       "type": "number",
       "originalValue": "1",
       "name": "MODAL_OPACITY"
-    },
-    "MODAL_SCRIM_BACKGROUND_COLOR": {
-      "category": "modals",
-      "value": "rgb(178, 178, 191)",
-      "type": "color",
-      "deprecated": true,
-      "originalValue": "{!SKY_GRAY_TINT_04}",
-      "name": "MODAL_SCRIM_BACKGROUND_COLOR"
-    },
-    "MODAL_SCRIM_INITIAL_OPACITY": {
-      "category": "modals",
-      "value": "0",
-      "type": "number",
-      "deprecated": true,
-      "originalValue": "0",
-      "name": "MODAL_SCRIM_INITIAL_OPACITY"
-    },
-    "MODAL_SCRIM_MOBILE_OPACITY": {
-      "category": "modals",
-      "value": "1",
-      "type": "number",
-      "deprecated": true,
-      "originalValue": "1",
-      "name": "MODAL_SCRIM_MOBILE_OPACITY"
-    },
-    "MODAL_SCRIM_OPACITY": {
-      "category": "modals",
-      "value": ".7",
-      "type": "number",
-      "deprecated": true,
-      "originalValue": ".7",
-      "name": "MODAL_SCRIM_OPACITY"
     },
     "MODAL_WIDE_MAX_WIDTH": {
       "category": "modals",
@@ -3349,22 +2624,6 @@
       "originalValue": "{!SPACING_BASE}",
       "name": "TEXT_BASE_LINE_HEIGHT"
     },
-    "TEXT_COLOR_PRIMARY_LIGHT": {
-      "value": "rgb(17, 18, 54)",
-      "deprecated": true,
-      "type": "color",
-      "category": "text-colors",
-      "originalValue": "{!SKY_GRAY}",
-      "name": "TEXT_COLOR_PRIMARY_LIGHT"
-    },
-    "TEXT_COLOR_SECONDARY_LIGHT": {
-      "value": "rgb(68, 69, 96)",
-      "deprecated": true,
-      "type": "color",
-      "category": "text-colors",
-      "originalValue": "{!SKY_GRAY_TINT_01}",
-      "name": "TEXT_COLOR_SECONDARY_LIGHT"
-    },
     "TEXT_LG_FONT_SIZE": {
       "value": "1.5rem",
       "type": "font-size",
@@ -3540,14 +2799,6 @@
       "originalValue": "{!ZINDEX_MODAL}",
       "name": "ZINDEX_MODAL"
     },
-    "ZINDEX_MODAL_SCRIM": {
-      "type": "number",
-      "category": "z-indices",
-      "value": "1000",
-      "deprecated": true,
-      "originalValue": "{!ZINDEX_SCRIM}",
-      "name": "ZINDEX_MODAL_SCRIM"
-    },
     "ZINDEX_POPOVER": {
       "type": "number",
       "category": "z-indices",
@@ -3614,9 +2865,7 @@
     "BUTTON_ACTIVE_BOX_SHADOW",
     "BUTTON_ACTIVE_COLOR",
     "BUTTON_BACKGROUND_COLOR",
-    "BUTTON_BACKGROUND_IMAGE",
     "BUTTON_BORDER_RADIUS",
-    "BUTTON_BORDER_RADIUS_LG",
     "BUTTON_BOX_SHADOW",
     "BUTTON_COLOR",
     "BUTTON_DESTRUCTIVE_ACTIVE_BACKGROUND_COLOR",
@@ -3649,8 +2898,6 @@
     "BUTTON_FEATURED_COLOR",
     "BUTTON_FEATURED_DISABLED_BACKGROUND_COLOR",
     "BUTTON_FEATURED_DISABLED_BACKGROUND_IMAGE",
-    "BUTTON_FEATURED_GRADIENT_END_COLOR",
-    "BUTTON_FEATURED_GRADIENT_START_COLOR",
     "BUTTON_FEATURED_HOVER_BACKGROUND_COLOR",
     "BUTTON_FEATURED_HOVER_BACKGROUND_IMAGE",
     "BUTTON_FEATURED_HOVER_BOX_SHADOW",
@@ -3722,15 +2969,12 @@
     "BUTTON_TEXT_ALIGN",
     "CALENDAR_DAY_ACTIVE_BACKGROUND_COLOR",
     "CALENDAR_DAY_ACTIVE_COLOR",
-    "CALENDAR_DAY_BACKGROUND_COLOR",
     "CALENDAR_DAY_COLOR",
-    "CALENDAR_DAY_DISABLED_BACKGROUND_COLOR",
     "CALENDAR_DAY_DISABLED_COLOR",
     "CALENDAR_DAY_FOCUSED_BORDER_COLOR",
     "CALENDAR_DAY_FOCUSED_COLOR",
     "CALENDAR_DAY_HOVER_BACKGROUND_COLOR",
     "CALENDAR_DAY_HOVER_COLOR",
-    "CALENDAR_DAY_OUTSIDE_BACKGROUND_COLOR",
     "CALENDAR_DAY_OUTSIDE_COLOR",
     "CALENDAR_DAY_SELECTED_BACKGROUND_COLOR",
     "CALENDAR_DAY_SELECTED_COLOR",
@@ -3747,39 +2991,9 @@
     "CHECKBOX_CHECKED_TICK_COLOR",
     "COLOR_ABISKO",
     "COLOR_BAGAN",
-    "COLOR_BLUE_100",
-    "COLOR_BLUE_200",
-    "COLOR_BLUE_300",
-    "COLOR_BLUE_400",
-    "COLOR_BLUE_50",
-    "COLOR_BLUE_500",
-    "COLOR_BLUE_600",
-    "COLOR_BLUE_700",
-    "COLOR_BLUE_800",
-    "COLOR_BLUE_900",
     "COLOR_BUNOL",
     "COLOR_ERFOUD",
     "COLOR_GLENCOE",
-    "COLOR_GRAY_100",
-    "COLOR_GRAY_200",
-    "COLOR_GRAY_300",
-    "COLOR_GRAY_400",
-    "COLOR_GRAY_50",
-    "COLOR_GRAY_500",
-    "COLOR_GRAY_600",
-    "COLOR_GRAY_700",
-    "COLOR_GRAY_800",
-    "COLOR_GRAY_900",
-    "COLOR_GREEN_100",
-    "COLOR_GREEN_200",
-    "COLOR_GREEN_300",
-    "COLOR_GREEN_400",
-    "COLOR_GREEN_50",
-    "COLOR_GREEN_500",
-    "COLOR_GREEN_600",
-    "COLOR_GREEN_700",
-    "COLOR_GREEN_800",
-    "COLOR_GREEN_900",
     "COLOR_HARBOUR",
     "COLOR_HILLIER",
     "COLOR_KOLKATA",
@@ -3788,16 +3002,6 @@
     "COLOR_PANJIN",
     "COLOR_PETRA",
     "COLOR_PRIMARY_GRADIENT_LIGHT",
-    "COLOR_RED_100",
-    "COLOR_RED_200",
-    "COLOR_RED_300",
-    "COLOR_RED_400",
-    "COLOR_RED_50",
-    "COLOR_RED_500",
-    "COLOR_RED_600",
-    "COLOR_RED_700",
-    "COLOR_RED_800",
-    "COLOR_RED_900",
     "COLOR_SAGANO",
     "COLOR_SKY_BLUE",
     "COLOR_SKY_BLUE_SHADE_01",
@@ -3819,16 +3023,6 @@
     "COLOR_TOCHIGI",
     "COLOR_VALENSOLE",
     "COLOR_WHITE",
-    "COLOR_YELLOW_100",
-    "COLOR_YELLOW_200",
-    "COLOR_YELLOW_300",
-    "COLOR_YELLOW_400",
-    "COLOR_YELLOW_50",
-    "COLOR_YELLOW_500",
-    "COLOR_YELLOW_600",
-    "COLOR_YELLOW_700",
-    "COLOR_YELLOW_800",
-    "COLOR_YELLOW_900",
     "DURATION_BASE",
     "DURATION_SM",
     "DURATION_XS",
@@ -3843,12 +3037,7 @@
     "FONT_WEIGHT_BLACK",
     "FONT_WEIGHT_BOLD",
     "FORM_VALIDATION_ARROW_SIZE",
-    "FORM_VALIDATION_BACKGROUND_COLOR",
-    "FORM_VALIDATION_CHECKBOX_ARROW_LEFT",
     "FORM_VALIDATION_COLOR",
-    "FORM_VALIDATION_MARGIN",
-    "FORM_VALIDATION_PADDING_X",
-    "FORM_VALIDATION_PADDING_Y",
     "GRID_COLUMNS",
     "GRID_CONTAINER_MOBILE_PADDING",
     "GRID_CONTAINER_PADDING",
@@ -3924,17 +3113,11 @@
     "LIST_NESTED_MARGIN_BOTTOM",
     "LIST_NESTED_MARGIN_TOP",
     "MODAL_BACKGROUND_COLOR",
-    "MODAL_CLOSE_ICON_FILL",
-    "MODAL_CLOSE_ICON_HOVER_FILL",
     "MODAL_CONTENT_PADDING",
     "MODAL_HEADER_PADDING",
     "MODAL_INITIAL_OPACITY",
     "MODAL_MAX_WIDTH",
     "MODAL_OPACITY",
-    "MODAL_SCRIM_BACKGROUND_COLOR",
-    "MODAL_SCRIM_INITIAL_OPACITY",
-    "MODAL_SCRIM_MOBILE_OPACITY",
-    "MODAL_SCRIM_OPACITY",
     "MODAL_WIDE_MAX_WIDTH",
     "ONE_PIXEL_REM",
     "PANEL_BACKGROUND_COLOR",
@@ -3983,8 +3166,6 @@
     "TEXT_BASE_FONT_WEIGHT",
     "TEXT_BASE_LETTER_SPACING",
     "TEXT_BASE_LINE_HEIGHT",
-    "TEXT_COLOR_PRIMARY_LIGHT",
-    "TEXT_COLOR_SECONDARY_LIGHT",
     "TEXT_LG_FONT_SIZE",
     "TEXT_LG_FONT_WEIGHT",
     "TEXT_LG_LETTER_SPACING",
@@ -4010,7 +3191,6 @@
     "ZINDEX_AUTOSUGGEST",
     "ZINDEX_DRAWER",
     "ZINDEX_MODAL",
-    "ZINDEX_MODAL_SCRIM",
     "ZINDEX_POPOVER",
     "ZINDEX_SCRIM",
     "ZINDEX_TOOLTIP"

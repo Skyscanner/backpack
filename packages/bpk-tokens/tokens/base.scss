@@ -104,11 +104,7 @@ $bpk-button-active-color: rgb(255, 255, 255);
 /// @group buttons
 $bpk-button-background-color: rgb(0, 166, 152);
 /// @group buttons
-$bpk-button-background-image: #00a698;
-/// @group buttons
 $bpk-button-border-radius: .25rem;
-/// @group buttons
-$bpk-button-border-radius-lg: .25rem;
 /// @group buttons
 $bpk-button-box-shadow: none;
 /// @group buttons
@@ -173,10 +169,6 @@ $bpk-button-featured-color: rgb(255, 255, 255);
 $bpk-button-featured-disabled-background-color: rgb(221, 221, 229);
 /// @group buttons
 $bpk-button-featured-disabled-background-image: none;
-/// @group buttons
-$bpk-button-featured-gradient-end-color: rgb(7, 112, 227);
-/// @group buttons
-$bpk-button-featured-gradient-start-color: rgb(7, 112, 227);
 /// @group buttons
 $bpk-button-featured-hover-background-color: rgb(8, 78, 178);
 /// @group buttons
@@ -320,11 +312,7 @@ $bpk-calendar-day-active-background-color: rgb(221, 221, 229);
 /// @group calendar
 $bpk-calendar-day-active-color: rgb(17, 18, 54);
 /// @group calendar
-$bpk-calendar-day-background-color: rgb(255, 255, 255);
-/// @group calendar
 $bpk-calendar-day-color: rgb(7, 112, 227);
-/// @group calendar
-$bpk-calendar-day-disabled-background-color: rgb(255, 255, 255);
 /// @group calendar
 $bpk-calendar-day-disabled-color: rgb(221, 221, 229);
 /// @group calendar
@@ -335,8 +323,6 @@ $bpk-calendar-day-focused-color: rgb(7, 112, 227);
 $bpk-calendar-day-hover-background-color: rgb(241, 242, 248);
 /// @group calendar
 $bpk-calendar-day-hover-color: rgb(68, 69, 96);
-/// @group calendar
-$bpk-calendar-day-outside-background-color: rgb(255, 255, 255);
 /// @group calendar
 $bpk-calendar-day-outside-color: rgb(178, 178, 191);
 /// @group calendar
@@ -370,71 +356,11 @@ $bpk-color-abisko: rgb(90, 72, 155);
 /// @group colors
 $bpk-color-bagan: rgb(255, 235, 208);
 /// @group colors
-$bpk-color-blue-100: rgb(203, 238, 245);
-/// @group colors
-$bpk-color-blue-200: rgb(176, 228, 238);
-/// @group colors
-$bpk-color-blue-300: rgb(127, 215, 232);
-/// @group colors
-$bpk-color-blue-400: rgb(64, 196, 223);
-/// @group colors
-$bpk-color-blue-50: rgb(225, 244, 248);
-/// @group colors
-$bpk-color-blue-500: rgb(0, 178, 214);
-/// @group colors
-$bpk-color-blue-600: rgb(0, 157, 189);
-/// @group colors
-$bpk-color-blue-700: rgb(0, 140, 168);
-/// @group colors
-$bpk-color-blue-800: rgb(0, 117, 140);
-/// @group colors
-$bpk-color-blue-900: rgb(0, 85, 103);
-/// @group colors
 $bpk-color-bunol: rgb(255, 123, 89);
 /// @group colors
 $bpk-color-erfoud: rgb(255, 181, 77);
 /// @group colors
 $bpk-color-glencoe: rgb(115, 206, 198);
-/// @group colors
-$bpk-color-gray-100: rgb(221, 221, 229);
-/// @group colors
-$bpk-color-gray-200: rgb(205, 205, 215);
-/// @group colors
-$bpk-color-gray-300: rgb(178, 178, 191);
-/// @group colors
-$bpk-color-gray-400: rgb(143, 144, 160);
-/// @group colors
-$bpk-color-gray-50: rgb(241, 242, 248);
-/// @group colors
-$bpk-color-gray-500: rgb(104, 105, 127);
-/// @group colors
-$bpk-color-gray-600: rgb(105, 97, 121);
-/// @group colors
-$bpk-color-gray-700: rgb(68, 69, 96);
-/// @group colors
-$bpk-color-gray-800: rgb(59, 52, 75);
-/// @group colors
-$bpk-color-gray-900: rgb(17, 18, 54);
-/// @group colors
-$bpk-color-green-100: rgb(203, 245, 226);
-/// @group colors
-$bpk-color-green-200: rgb(175, 237, 209);
-/// @group colors
-$bpk-color-green-300: rgb(128, 232, 185);
-/// @group colors
-$bpk-color-green-400: rgb(64, 222, 151);
-/// @group colors
-$bpk-color-green-50: rgb(223, 247, 236);
-/// @group colors
-$bpk-color-green-500: rgb(0, 215, 117);
-/// @group colors
-$bpk-color-green-600: rgb(0, 189, 104);
-/// @group colors
-$bpk-color-green-700: rgb(0, 168, 93);
-/// @group colors
-$bpk-color-green-800: rgb(0, 140, 77);
-/// @group colors
-$bpk-color-green-900: rgb(0, 102, 56);
 /// @group colors
 $bpk-color-harbour: rgb(246, 221, 225);
 /// @group colors
@@ -451,26 +377,6 @@ $bpk-color-panjin: rgb(209, 67, 91);
 $bpk-color-petra: rgb(255, 171, 149);
 /// @group colors
 $bpk-color-primary-gradient-light: rgb(7, 112, 227);
-/// @group colors
-$bpk-color-red-100: rgb(255, 214, 213);
-/// @group colors
-$bpk-color-red-200: rgb(255, 187, 186);
-/// @group colors
-$bpk-color-red-300: rgb(255, 150, 148);
-/// @group colors
-$bpk-color-red-400: rgb(254, 116, 113);
-/// @group colors
-$bpk-color-red-50: rgb(252, 242, 242);
-/// @group colors
-$bpk-color-red-500: rgb(255, 84, 82);
-/// @group colors
-$bpk-color-red-600: rgb(235, 66, 63);
-/// @group colors
-$bpk-color-red-700: rgb(222, 50, 47);
-/// @group colors
-$bpk-color-red-800: rgb(204, 31, 29);
-/// @group colors
-$bpk-color-red-900: rgb(168, 3, 0);
 /// @group colors
 $bpk-color-sagano: rgb(208, 238, 236);
 /// @group colors
@@ -513,26 +419,6 @@ $bpk-color-tochigi: rgb(225, 221, 236);
 $bpk-color-valensole: rgb(165, 155, 200);
 /// @group colors
 $bpk-color-white: rgb(255, 255, 255);
-/// @group colors
-$bpk-color-yellow-100: rgb(255, 243, 207);
-/// @group colors
-$bpk-color-yellow-200: rgb(255, 236, 184);
-/// @group colors
-$bpk-color-yellow-300: rgb(255, 225, 140);
-/// @group colors
-$bpk-color-yellow-400: rgb(255, 207, 74);
-/// @group colors
-$bpk-color-yellow-50: rgb(255, 249, 230);
-/// @group colors
-$bpk-color-yellow-500: rgb(255, 187, 0);
-/// @group colors
-$bpk-color-yellow-600: rgb(240, 176, 0);
-/// @group colors
-$bpk-color-yellow-700: rgb(225, 165, 0);
-/// @group colors
-$bpk-color-yellow-800: rgb(194, 142, 0);
-/// @group colors
-$bpk-color-yellow-900: rgb(156, 114, 0);
 /// @group animations
 $bpk-duration-base: 400ms;
 /// @group animations
@@ -562,17 +448,7 @@ $bpk-font-weight-bold: 700;
 /// @group forms
 $bpk-form-validation-arrow-size: .375rem;
 /// @group forms
-$bpk-form-validation-background-color: rgb(209, 67, 91);
-/// @group forms
-$bpk-form-validation-checkbox-arrow-left: 1.5rem;
-/// @group forms
 $bpk-form-validation-color: rgb(209, 67, 91);
-/// @group forms
-$bpk-form-validation-margin: 0;
-/// @group forms
-$bpk-form-validation-padding-x: .75rem;
-/// @group forms
-$bpk-form-validation-padding-y: .375rem;
 /// @group grids
 $bpk-grid-columns: 12;
 /// @group grids
@@ -724,10 +600,6 @@ $bpk-list-nested-margin-top: 0;
 /// @group modals
 $bpk-modal-background-color: rgb(255, 255, 255);
 /// @group modals
-$bpk-modal-close-icon-fill: rgb(104, 105, 127);
-/// @group modals
-$bpk-modal-close-icon-hover-fill: rgb(68, 69, 96);
-/// @group modals
 $bpk-modal-content-padding: .75rem;
 /// @group modals
 $bpk-modal-header-padding: .75rem;
@@ -737,14 +609,6 @@ $bpk-modal-initial-opacity: 0;
 $bpk-modal-max-width: 32.25rem;
 /// @group modals
 $bpk-modal-opacity: 1;
-/// @group modals
-$bpk-modal-scrim-background-color: rgb(178, 178, 191);
-/// @group modals
-$bpk-modal-scrim-initial-opacity: 0;
-/// @group modals
-$bpk-modal-scrim-mobile-opacity: 1;
-/// @group modals
-$bpk-modal-scrim-opacity: .7;
 /// @group modals
 $bpk-modal-wide-max-width: 50.25rem;
 /// @group spacings
@@ -841,10 +705,6 @@ $bpk-text-base-font-weight: 400;
 $bpk-text-base-letter-spacing: normal;
 /// @group line-heights
 $bpk-text-base-line-height: 1.5rem;
-/// @group text-colors
-$bpk-text-color-primary-light: rgb(17, 18, 54);
-/// @group text-colors
-$bpk-text-color-secondary-light: rgb(68, 69, 96);
 /// @group font-sizes
 $bpk-text-lg-font-size: 1.5rem;
 /// @group font-weights
@@ -895,8 +755,6 @@ $bpk-zindex-autosuggest: 900;
 $bpk-zindex-drawer: 1100;
 /// @group z-indices
 $bpk-zindex-modal: 1100;
-/// @group z-indices
-$bpk-zindex-modal-scrim: 1000;
 /// @group z-indices
 $bpk-zindex-popover: 900;
 /// @group z-indices

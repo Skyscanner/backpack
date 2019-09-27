@@ -13,18 +13,6 @@
       "type": "color",
       "category": "text-colors"
     },
-    "TEXT_COLOR_PRIMARY_LIGHT": {
-      "value": "{!SKY_GRAY}",
-      "deprecated": true,
-      "type": "color",
-      "category": "text-colors"
-    },
-    "TEXT_COLOR_SECONDARY_LIGHT": {
-      "value": "{!SKY_GRAY_TINT_01}",
-      "deprecated": true,
-      "type": "color",
-      "category": "text-colors"
-    },
     "TEXT_PRIMARY_LIGHT_COLOR": {
       "value": "{!SKY_GRAY}",
       "type": "color",

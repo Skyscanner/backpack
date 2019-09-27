@@ -156,12 +156,6 @@
       "type": "string",
       "category": "font-weights"
     },
-    "TEXT_XS_LINE_HEIGHT": {
-      "value": "{!LINE_HEIGHT_XS}",
-      "type": "size",
-      "category": "line-heights",
-      "deprecated": true
-    },
     "TEXT_SM_LETTER_SPACING": {
       "value": "{!LETTER_SPACING_SM}",
       "type": "letter-spacing",
@@ -176,12 +170,6 @@
       "value": "{!FONT_WEIGHT_NORMAL}",
       "type": "string",
       "category": "font-weights"
-    },
-    "TEXT_SM_LINE_HEIGHT": {
-      "value": "{!LINE_HEIGHT_SM}",
-      "type": "size",
-      "category": "line-heights",
-      "deprecated": true
     },
     "TEXT_BASE_LETTER_SPACING": {
       "value": "{!LETTER_SPACING_BASE}",
@@ -198,12 +186,6 @@
       "type": "string",
       "category": "font-weights"
     },
-    "TEXT_BASE_LINE_HEIGHT": {
-      "value": "{!LINE_HEIGHT_BASE}",
-      "type": "size",
-      "category": "line-heights",
-      "deprecated": true
-    },
     "TEXT_LG_LETTER_SPACING": {
       "value": "{!LETTER_SPACING_LG}",
       "type": "letter-spacing",
@@ -218,12 +200,6 @@
       "value": "{!FONT_WEIGHT_NORMAL}",
       "type": "string",
       "category": "font-weights"
-    },
-    "TEXT_LG_LINE_HEIGHT": {
-      "value": "{!LINE_HEIGHT_LG}",
-      "type": "size",
-      "category": "line-heights",
-      "deprecated": true
     },
     "TEXT_XL_LETTER_SPACING": {
       "value": "{!LETTER_SPACING_XL}",
@@ -240,12 +216,6 @@
       "type": "string",
       "category": "font-weights"
     },
-    "TEXT_XL_LINE_HEIGHT": {
-      "value": "{!LINE_HEIGHT_XL}",
-      "type": "size",
-      "category": "line-heights",
-      "deprecated": true
-    },
     "TEXT_XXL_LETTER_SPACING": {
       "value": "{!LETTER_SPACING_XXL}",
       "type": "letter-spacing",
@@ -260,12 +230,6 @@
       "value": "{!FONT_WEIGHT_NORMAL}",
       "type": "string",
       "category": "font-weights"
-    },
-    "TEXT_XXL_LINE_HEIGHT": {
-      "value": "{!LINE_HEIGHT_XXL}",
-      "type": "size",
-      "category": "line-heights",
-      "deprecated": true
     },
     "TEXT_XXXL_LETTER_SPACING": {
       "value": "{!LETTER_SPACING_XXXL}",
