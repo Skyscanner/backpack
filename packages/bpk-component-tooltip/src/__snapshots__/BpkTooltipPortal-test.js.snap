@@ -114,7 +114,7 @@ exports[`BpkTooltipPortal should render correctly with custom portal style 1`] =
   renderTarget={null}
   style={
     Object {
-      "color": "rgb(255, 84, 82)",
+      "color": "rgb(209, 67, 91)",
     }
   }
   target={

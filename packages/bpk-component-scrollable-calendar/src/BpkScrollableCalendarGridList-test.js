@@ -21,7 +21,7 @@ import React from 'react';
 import Shallow from 'react-test-renderer/shallow';
 import isWeekend from 'date-fns/is_weekend';
 import { DateUtils } from 'bpk-component-calendar';
-import { colorRed500 } from 'bpk-tokens/tokens/base.es6';
+import { colorPanjin } from 'bpk-tokens/tokens/base.es6';
 
 import { weekDays, formatDateFull, formatMonth } from '../test-utils';
 
@@ -110,7 +110,7 @@ describe('BpkCalendarScrollGridList', () => {
     const shallowRenderer = Shallow.createRenderer();
     const MyCustomDate = props => {
       const cx = {
-        backgroundColor: colorRed500,
+        backgroundColor: colorPanjin,
         width: '50%',
         height: '50%',
         borderRadius: '5rem',

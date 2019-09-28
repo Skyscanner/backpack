@@ -24,3 +24,145 @@
 #   FIXED:
 #     - bpk-component-horcrux:
 #       - Fixed issue where `BpkHorcrux` would occasionally possess the living.
+
+FIXED:
+  - bpk-animate-height:
+    - Updated all tokens to use new brand colours
+  - bpk-component-accordion:
+    - Updated all tokens to use new brand colours
+  - bpk-component-autosuggest:
+    - Updated all tokens to use new brand colours
+  - bpk-component-badge:
+    - Updated all tokens to use new brand colours
+  - bpk-component-banner-alert:
+    - Updated all tokens to use new brand colours
+  - bpk-component-barchart:
+    - Updated all tokens to use new brand colours
+  - bpk-component-blockquote:
+    - Updated all tokens to use new brand colours
+  - bpk-component-breadcrumb:
+    - Updated all tokens to use new brand colours
+  - bpk-component-breakpoint:
+    - Updated all tokens to use new brand colours
+  - bpk-component-button:
+    - Updated all tokens to use new brand colours
+  - bpk-component-calendar:
+    - Updated all tokens to use new brand colours
+  - bpk-component-card:
+    - Updated all tokens to use new brand colours
+  - bpk-component-checkbox:
+    - Updated all tokens to use new brand colours
+  - bpk-component-chip:
+    - Updated all tokens to use new brand colours
+  - bpk-component-close-button:
+    - Updated all tokens to use new brand colours
+  - bpk-component-code:
+    - Updated all tokens to use new brand colours
+  - bpk-component-content-container:
+    - Updated all tokens to use new brand colours
+  - bpk-component-datatable:
+    - Updated all tokens to use new brand colours
+  - bpk-component-datepicker:
+    - Updated all tokens to use new brand colours
+  - bpk-component-description-list:
+    - Updated all tokens to use new brand colours
+  - bpk-component-dialog:
+    - Updated all tokens to use new brand colours
+  - bpk-component-drawer:
+    - Updated all tokens to use new brand colours
+  - bpk-component-fieldset:
+    - Updated all tokens to use new brand colours
+  - bpk-component-form-validation:
+    - Updated all tokens to use new brand colours
+  - bpk-component-grid-toggle:
+    - Updated all tokens to use new brand colours
+  - bpk-component-grid:
+    - Updated all tokens to use new brand colours
+  - bpk-component-heading:
+    - Updated all tokens to use new brand colours
+  - bpk-component-horizontal-nav:
+    - Updated all tokens to use new brand colours
+  - bpk-component-icon:
+    - Updated all tokens to use new brand colours
+  - bpk-component-image:
+    - Updated all tokens to use new brand colours
+  - bpk-component-infinite-scroll:
+    - Updated all tokens to use new brand colours
+  - bpk-component-input:
+    - Updated all tokens to use new brand colours
+  - bpk-component-label:
+    - Updated all tokens to use new brand colours
+  - bpk-component-link:
+    - Updated all tokens to use new brand colours
+  - bpk-component-list:
+    - Updated all tokens to use new brand colours
+  - bpk-component-loading-button:
+    - Updated all tokens to use new brand colours
+  - bpk-component-map:
+    - Updated all tokens to use new brand colours
+  - bpk-component-mobile-scroll-container:
+    - Updated all tokens to use new brand colours
+  - bpk-component-modal:
+    - Updated all tokens to use new brand colours
+  - bpk-component-navigation-bar:
+    - Updated all tokens to use new brand colours
+  - bpk-component-navigation-stack:
+    - Updated all tokens to use new brand colours
+  - bpk-component-nudger:
+    - Updated all tokens to use new brand colours
+  - bpk-component-pagination:
+    - Updated all tokens to use new brand colours
+  - bpk-component-panel:
+    - Updated all tokens to use new brand colours
+  - bpk-component-paragraph:
+    - Updated all tokens to use new brand colours
+  - bpk-component-phone-input:
+    - Updated all tokens to use new brand colours
+  - bpk-component-popover:
+    - Updated all tokens to use new brand colours
+  - bpk-component-progress:
+    - Updated all tokens to use new brand colours
+  - bpk-component-radio:
+    - Updated all tokens to use new brand colours
+  - bpk-component-rating:
+    - Updated all tokens to use new brand colours
+  - bpk-component-router-link:
+    - Updated all tokens to use new brand colours
+  - bpk-component-rtl-toggle:
+    - Updated all tokens to use new brand colours
+  - bpk-component-scrollable-calendar:
+    - Updated all tokens to use new brand colours
+  - bpk-component-section-list:
+    - Updated all tokens to use new brand colours
+  - bpk-component-select:
+    - Updated all tokens to use new brand colours
+  - bpk-component-slider:
+    - Updated all tokens to use new brand colours
+  - bpk-component-spinner:
+    - Updated all tokens to use new brand colours
+  - bpk-component-star-rating:
+    - Updated all tokens to use new brand colours
+  - bpk-component-table:
+    - Updated all tokens to use new brand colours
+  - bpk-component-text:
+    - Updated all tokens to use new brand colours
+  - bpk-component-textarea:
+    - Updated all tokens to use new brand colours
+  - bpk-component-theme-toggle:
+    - Updated all tokens to use new brand colours
+  - bpk-component-ticket:
+    - Updated all tokens to use new brand colours
+  - bpk-component-tooltip:
+    - Updated all tokens to use new brand colours
+  - bpk-mixins:
+    - Updated all tokens to use new brand colours
+  - bpk-scrim-utils:
+    - Updated all tokens to use new brand colours
+  - bpk-stylesheets:
+    - Updated all tokens to use new brand colours
+  - bpk-svgs:
+    - Updated all tokens to use new brand colours
+  - bpk-theming:
+    - Updated all tokens to use new brand colours
+  - bpk-tokens:
+    - Updated all tokens to use new brand colours

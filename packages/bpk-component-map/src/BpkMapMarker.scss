@@ -55,14 +55,14 @@
   }
 
   &--plain {
-    @include bpk-themeable-property(background-color, --bpk-map-marker-plain-background-color, $bpk-color-gray-700);
+    @include bpk-themeable-property(background-color, --bpk-map-marker-plain-background-color, $bpk-color-sky-gray-tint-01);
 
     &-selected {
       z-index: 1;
       background-color: $bpk-color-white;
 
-      @include bpk-themeable-property(border-color, --bpk-map-marker-plain-background-color, $bpk-color-gray-700);
-      @include bpk-themeable-property(color, --bpk-map-marker-plain-background-color, $bpk-color-gray-700);
+      @include bpk-themeable-property(border-color, --bpk-map-marker-plain-background-color, $bpk-color-sky-gray-tint-01);
+      @include bpk-themeable-property(color, --bpk-map-marker-plain-background-color, $bpk-color-sky-gray-tint-01);
     }
   }
 
@@ -111,7 +111,7 @@
     &--plain-selected {
       z-index: 1;
 
-      @include bpk-themeable-property(color, --bpk-map-marker-plain-background-color, $bpk-color-gray-700);
+      @include bpk-themeable-property(color, --bpk-map-marker-plain-background-color, $bpk-color-sky-gray-tint-01);
     }
   }
 

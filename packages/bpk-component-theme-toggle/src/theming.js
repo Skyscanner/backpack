@@ -21,8 +21,8 @@ import {
   horizontalNavLinkActiveColor,
   calendarDayHoverColor,
   calendarDayActiveColor,
-  colorGray100,
-  colorGray500,
+  colorSkyGrayTint06,
+  colorSkyGrayTint02,
   colorWhite,
 } from 'bpk-tokens/tokens/base.es6';
 
@@ -52,7 +52,7 @@ const generateTheme = ({
 
   badgeBackgroundColor: primaryColor500,
   badgeSuccessBackgroundColor: secondaryColor500,
-  badgeDestructiveBackgroundColor: colorGray500,
+  badgeDestructiveBackgroundColor: colorSkyGrayTint02,
 
   bannerAlertSuccessColor: secondaryColor500,
   bannerAlertWarnColor: 'orange',
@@ -80,7 +80,7 @@ const generateTheme = ({
   buttonSecondaryTextColor: primaryColor500,
   buttonSecondaryHoverTextColor: primaryColor600,
   buttonSecondaryActiveTextColor: primaryColor700,
-  buttonSecondaryBorderColor: colorGray100,
+  buttonSecondaryBorderColor: colorSkyGrayTint06,
   buttonSecondaryHoverBorderColor: primaryColor600,
   buttonSecondaryActiveBorderColor: primaryColor700,
   buttonSecondaryBackgroundColor: colorWhite,
@@ -99,7 +99,7 @@ const generateTheme = ({
   buttonDestructiveTextColor: secondaryColor500,
   buttonDestructiveHoverTextColor: secondaryColor600,
   buttonDestructiveActiveTextColor: secondaryColor700,
-  buttonDestructiveBorderColor: colorGray100,
+  buttonDestructiveBorderColor: colorSkyGrayTint06,
   buttonDestructiveHoverBorderColor: secondaryColor500,
   buttonDestructiveActiveBorderColor: secondaryColor500,
   buttonDestructiveBackgroundColor: colorWhite,
@@ -120,7 +120,7 @@ const generateTheme = ({
 
   linkAlternateColor: colorWhite,
   linkAlternateHoverColor: colorWhite,
-  linkAlternateActiveColor: colorGray100,
+  linkAlternateActiveColor: colorSkyGrayTint06,
   linkAlternateVisitedColor: colorWhite,
 
   horizontalNavBarSelectedColor: primaryColor500,
@@ -162,7 +162,7 @@ const generateTheme = ({
 
   ratingHighColor: primaryColor500,
   ratingMediumColor: secondaryColor500,
-  ratingLowColor: colorGray500,
+  ratingLowColor: colorSkyGrayTint02,
 
   mapMarkerPrimaryBackgroundColor: primaryColor700,
   mapMarkerSecondaryBackgroundColor: secondaryColor700,
