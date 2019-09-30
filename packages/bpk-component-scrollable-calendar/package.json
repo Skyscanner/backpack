@@ -17,6 +17,7 @@
     "bpk-component-text": "^1.2.2",
     "bpk-mixins": "^18.2.2",
     "bpk-react-utils": "^2.8.0",
+    "bpk-tokens": "^28.0.1",
     "prop-types": "^15.5.8",
     "react-window": "^1.5.0"
   },
