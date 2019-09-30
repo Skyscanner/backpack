@@ -2,6 +2,221 @@
 
 [Unreleased changes](./UNRELEASED.yaml).
 
+# 2019-09-30 - Removed the old brand
+
+**Breaking:**
+
+ - bpk-animate-height: 1.2.2 => 2.0.0
+   - Removed the old brand
+
+ - bpk-component-accordion: 1.3.2 => 2.0.0
+   - Removed the old brand
+
+ - bpk-component-autosuggest: 3.1.2 => 4.0.0
+   - Removed the old brand
+
+ - bpk-component-badge: 1.3.2 => 2.0.0
+   - Removed the old brand
+
+ - bpk-component-banner-alert: 2.3.2 => 3.0.0
+   - Removed the old brand
+
+ - bpk-component-barchart: 2.5.2 => 3.0.0
+   - Removed the old brand
+
+ - bpk-component-blockquote: 1.2.2 => 2.0.0
+   - Removed the old brand
+
+ - bpk-component-breadcrumb: 1.1.2 => 2.0.0
+   - Removed the old brand
+
+ - bpk-component-breakpoint: 1.2.2 => 2.0.0
+   - Removed the old brand
+
+ - bpk-component-button: 2.6.2 => 3.0.0
+   - Removed the old brand
+
+ - bpk-component-calendar: 5.1.2 => 6.0.0
+   - Removed the old brand
+
+ - bpk-component-card: 1.2.2 => 2.0.0
+   - Removed the old brand
+
+ - bpk-component-checkbox: 1.6.2 => 2.0.0
+   - Removed the old brand
+
+ - bpk-component-chip: 2.1.2 => 3.0.0
+   - Removed the old brand
+
+ - bpk-component-close-button: 1.1.2 => 2.0.0
+   - Removed the old brand
+
+ - bpk-component-code: 1.2.2 => 2.0.0
+   - Removed the old brand
+
+ - bpk-component-content-container: 1.4.2 => 2.0.0
+   - Removed the old brand
+
+ - bpk-component-datatable: 0.2.2 => 1.0.0
+   - Removed the old brand
+
+ - bpk-component-datepicker: 9.1.2 => 10.0.0
+   - Removed the old brand
+
+ - bpk-component-description-list: 1.1.2 => 2.0.0
+   - Removed the old brand
+
+ - bpk-component-dialog: 1.2.2 => 2.0.0
+   - Removed the old brand
+
+ - bpk-component-drawer: 1.3.2 => 2.0.0
+   - Removed the old brand
+
+ - bpk-component-fieldset: 1.3.2 => 2.0.0
+   - Removed the old brand
+
+ - bpk-component-form-validation: 2.2.2 => 3.0.0
+   - Removed the old brand
+
+ - bpk-component-grid-toggle: 1.2.2 => 2.0.0
+   - Removed the old brand
+
+ - bpk-component-grid: 1.2.2 => 2.0.0
+   - Removed the old brand
+
+ - bpk-component-heading: 2.2.2 => 3.0.0
+   - Removed the old brand
+
+ - bpk-component-horizontal-nav: 2.5.2 => 3.0.0
+   - Removed the old brand
+
+ - bpk-component-icon: 4.2.2 => 5.0.0
+   - Removed the old brand
+
+ - bpk-component-image: 2.4.2 => 3.0.0
+   - Removed the old brand
+
+ - bpk-component-infinite-scroll: 2.3.2 => 3.0.0
+   - Removed the old brand
+
+ - bpk-component-input: 4.3.2 => 5.0.0
+   - Removed the old brand
+
+ - bpk-component-label: 3.4.2 => 4.0.0
+   - Removed the old brand
+
+ - bpk-component-link: 1.3.2 => 2.0.0
+   - Removed the old brand
+
+ - bpk-component-list: 1.2.2 => 2.0.0
+   - Removed the old brand
+
+ - bpk-component-loading-button: 2.1.2 => 3.0.0
+   - Removed the old brand
+
+ - bpk-component-map: 2.6.2 => 3.0.0
+   - Removed the old brand
+
+ - bpk-component-mobile-scroll-container: 1.2.2 => 2.0.0
+   - Removed the old brand
+
+ - bpk-component-modal: 1.9.2 => 2.0.0
+   - Removed the old brand
+
+ - bpk-component-navigation-bar: 1.3.2 => 2.0.0
+   - Removed the old brand
+
+ - bpk-component-navigation-stack: 1.1.2 => 2.0.0
+   - Removed the old brand
+
+ - bpk-component-nudger: 1.3.2 => 2.0.0
+   - Removed the old brand
+
+ - bpk-component-pagination: 1.1.2 => 2.0.0
+   - Removed the old brand
+
+ - bpk-component-panel: 1.1.2 => 2.0.0
+   - Removed the old brand
+
+ - bpk-component-paragraph: 1.1.2 => 2.0.0
+   - Removed the old brand
+
+ - bpk-component-phone-input: 3.2.2 => 4.0.0
+   - Removed the old brand
+
+ - bpk-component-popover: 2.3.2 => 3.0.0
+   - Removed the old brand
+
+ - bpk-component-progress: 1.1.2 => 2.0.0
+   - Removed the old brand
+
+ - bpk-component-radio: 1.5.2 => 2.0.0
+   - Removed the old brand
+
+ - bpk-component-rating: 1.4.2 => 2.0.0
+   - Removed the old brand
+
+ - bpk-component-router-link: 2.1.2 => 3.0.0
+   - Removed the old brand
+
+ - bpk-component-rtl-toggle: 1.2.2 => 2.0.0
+   - Removed the old brand
+
+ - bpk-component-scrollable-calendar: 1.1.2 => 2.0.0
+   - Removed the old brand
+
+ - bpk-component-section-list: 1.1.2 => 2.0.0
+   - Removed the old brand
+
+ - bpk-component-select: 2.5.2 => 3.0.0
+   - Removed the old brand
+
+ - bpk-component-slider: 1.2.2 => 2.0.0
+   - Removed the old brand
+
+ - bpk-component-spinner: 2.3.2 => 3.0.0
+   - Removed the old brand
+
+ - bpk-component-star-rating: 1.2.2 => 2.0.0
+   - Removed the old brand
+
+ - bpk-component-table: 1.2.2 => 2.0.0
+   - Removed the old brand
+
+ - bpk-component-text: 1.2.2 => 2.0.0
+   - Removed the old brand
+
+ - bpk-component-textarea: 1.3.2 => 2.0.0
+   - Removed the old brand
+
+ - bpk-component-theme-toggle: 1.3.2 => 2.0.0
+   - Removed the old brand
+
+ - bpk-component-ticket: 2.1.2 => 3.0.0
+   - Removed the old brand
+
+ - bpk-component-tooltip: 3.2.2 => 4.0.0
+   - Removed the old brand
+
+ - bpk-mixins: 18.2.2 => 19.0.0
+   - Removed the old brand
+
+ - bpk-scrim-utils: 3.3.2 => 4.0.0
+   - Removed the old brand
+
+ - bpk-stylesheets: 3.4.2 => 4.0.0
+   - Removed the old brand
+
+ - bpk-svgs: 7.3.2 => 8.0.0
+   - Removed the old brand
+
+ - bpk-theming: 1.3.2 => 2.0.0
+   - Removed the old brand
+
+ - bpk-tokens: 28.0.1 => 29.0.0
+   - Removed the old brand
+
+
 # 2019-09-27 - Fixed pagination issue
 
 **Fixed:**
