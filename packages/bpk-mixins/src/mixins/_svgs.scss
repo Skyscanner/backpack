@@ -93,7 +93,7 @@
 ///
 /// @example scss
 ///   .selector {
-///     @include bpk-icon(flight, $bpk-color-gray-500, large);
+///     @include bpk-icon(flight, $bpk-color-sky-gray-tint-02, large);
 ///   }
 
 @mixin bpk-icon($icon, $color, $size: small) {
@@ -138,7 +138,7 @@
 ///
 /// @example scss
 ///   .selector {
-///     @include bpk-icon-sm(flight-gray-500);
+///     @include bpk-icon-sm(flight-sky-gray-tint-02);
 ///   }
 ///
 /// @deprecated Use bpk-icon instead
@@ -153,7 +153,7 @@
 ///
 /// @example scss
 ///   .selector {
-///     @include bpk-icon-lg(flight-gray-500);
+///     @include bpk-icon-lg(flight-sky-gray-tint-02);
 ///   }
 ///
 /// @deprecated Use bpk-icon instead
@@ -168,7 +168,7 @@
 ///
 /// @example scss
 ///   .selector {
-///     @include bpk-icon-sm(flight-gray-500);
+///     @include bpk-icon-sm(flight-sky-gray-tint-02);
 ///     @include bpk-icon-sm--align-to-button();
 ///   }
 
@@ -182,7 +182,7 @@
 ///
 /// @example scss
 ///   .selector {
-///     @include bpk-icon-lg(flight-gray-500);
+///     @include bpk-icon-lg(flight-sky-gray-tint-02);
 ///     @include bpk-icon-lg--align-to-large-button();
 ///   }
 
@@ -197,7 +197,7 @@
 ///
 /// @example scss
 ///   .selector {
-///     @include bpk-icon-sm(flight-gray-500);
+///     @include bpk-icon-sm(flight-sky-gray-tint-02);
 ///     @include bpk-icon--rtl-support();
 ///   }
 
@@ -213,7 +213,7 @@
 ///
 /// @example scss
 ///   .selector {
-///     @include bpk-spinner(spinner-gray-500);
+///     @include bpk-spinner(spinner-sky-gray-tint-02);
 ///   }
 
 @mixin bpk-spinner($spinner: '') {
@@ -235,7 +235,7 @@
 ///
 /// @example scss
 ///   .selector {
-///     @include bpk-spinner(spinner-gray-500);
+///     @include bpk-spinner(spinner-sky-gray-tint-02);
 ///     @include bpk-spinner--lg();
 ///   }
 
@@ -250,7 +250,7 @@
 ///
 /// @example scss
 ///   .selector {
-///     @include bpk-spinner(spinner-gray-500);
+///     @include bpk-spinner(spinner-sky-gray-tint-02);
 ///     @include bpk-spinner--xl();
 ///   }
 

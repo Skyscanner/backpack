@@ -48,18 +48,18 @@ $bpk-border-size-datatable: $bpk-border-size-xl * 2;
     display: flex;
     flex-direction: row;
     align-items: center;
-    border: $bpk-border-size-sm solid $bpk-color-gray-50;
+    border: $bpk-border-size-sm solid $bpk-color-sky-gray-tint-07;
     border-bottom: none;
     outline-offset: -(4 * $bpk-one-pixel-rem);
-    color: $bpk-color-gray-700;
+    color: $bpk-color-sky-gray-tint-01;
     font-weight: normal;
 
     &:last-child {
-      border-bottom: $bpk-border-size-sm solid $bpk-color-gray-50;
+      border-bottom: $bpk-border-size-sm solid $bpk-color-sky-gray-tint-07;
     }
 
     &:not(.bpk-data-table__header-row):hover {
-      background-color: $bpk-color-gray-50;
+      background-color: $bpk-color-sky-gray-tint-07;
       cursor: pointer;
 
       @include bpk-datatable-border-left;
@@ -70,7 +70,7 @@ $bpk-border-size-datatable: $bpk-border-size-xl * 2;
     }
 
     &--selected {
-      background-color: $bpk-color-gray-100;
+      background-color: $bpk-color-sky-gray-tint-06;
 
       @include bpk-datatable-border-left;
 

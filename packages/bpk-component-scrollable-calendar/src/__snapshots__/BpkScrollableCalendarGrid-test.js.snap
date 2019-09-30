@@ -1752,7 +1752,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a custom date compon
           <div
             style={
               Object {
-                "backgroundColor": "rgb(255, 84, 82)",
+                "backgroundColor": "rgb(209, 67, 91)",
                 "borderRadius": "5rem",
                 "height": "50%",
                 "margin": "25%",
@@ -1768,7 +1768,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a custom date compon
           <div
             style={
               Object {
-                "backgroundColor": "rgb(255, 84, 82)",
+                "backgroundColor": "rgb(209, 67, 91)",
                 "borderRadius": "5rem",
                 "height": "50%",
                 "margin": "25%",
@@ -1784,7 +1784,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a custom date compon
           <div
             style={
               Object {
-                "backgroundColor": "rgb(255, 84, 82)",
+                "backgroundColor": "rgb(209, 67, 91)",
                 "borderRadius": "5rem",
                 "height": "50%",
                 "margin": "25%",
@@ -1800,7 +1800,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a custom date compon
           <div
             style={
               Object {
-                "backgroundColor": "rgb(255, 84, 82)",
+                "backgroundColor": "rgb(209, 67, 91)",
                 "borderRadius": "5rem",
                 "height": "50%",
                 "margin": "25%",
@@ -1816,7 +1816,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a custom date compon
           <div
             style={
               Object {
-                "backgroundColor": "rgb(255, 84, 82)",
+                "backgroundColor": "rgb(209, 67, 91)",
                 "borderRadius": "5rem",
                 "height": "50%",
                 "margin": "25%",
@@ -1868,7 +1868,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a custom date compon
           <div
             style={
               Object {
-                "backgroundColor": "rgb(255, 84, 82)",
+                "backgroundColor": "rgb(209, 67, 91)",
                 "borderRadius": "5rem",
                 "height": "50%",
                 "margin": "25%",
@@ -1884,7 +1884,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a custom date compon
           <div
             style={
               Object {
-                "backgroundColor": "rgb(255, 84, 82)",
+                "backgroundColor": "rgb(209, 67, 91)",
                 "borderRadius": "5rem",
                 "height": "50%",
                 "margin": "25%",
@@ -1900,7 +1900,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a custom date compon
           <div
             style={
               Object {
-                "backgroundColor": "rgb(255, 84, 82)",
+                "backgroundColor": "rgb(209, 67, 91)",
                 "borderRadius": "5rem",
                 "height": "50%",
                 "margin": "25%",
@@ -1916,7 +1916,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a custom date compon
           <div
             style={
               Object {
-                "backgroundColor": "rgb(255, 84, 82)",
+                "backgroundColor": "rgb(209, 67, 91)",
                 "borderRadius": "5rem",
                 "height": "50%",
                 "margin": "25%",
@@ -1932,7 +1932,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a custom date compon
           <div
             style={
               Object {
-                "backgroundColor": "rgb(255, 84, 82)",
+                "backgroundColor": "rgb(209, 67, 91)",
                 "borderRadius": "5rem",
                 "height": "50%",
                 "margin": "25%",
@@ -1984,7 +1984,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a custom date compon
           <div
             style={
               Object {
-                "backgroundColor": "rgb(255, 84, 82)",
+                "backgroundColor": "rgb(209, 67, 91)",
                 "borderRadius": "5rem",
                 "height": "50%",
                 "margin": "25%",
@@ -2000,7 +2000,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a custom date compon
           <div
             style={
               Object {
-                "backgroundColor": "rgb(255, 84, 82)",
+                "backgroundColor": "rgb(209, 67, 91)",
                 "borderRadius": "5rem",
                 "height": "50%",
                 "margin": "25%",
@@ -2016,7 +2016,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a custom date compon
           <div
             style={
               Object {
-                "backgroundColor": "rgb(255, 84, 82)",
+                "backgroundColor": "rgb(209, 67, 91)",
                 "borderRadius": "5rem",
                 "height": "50%",
                 "margin": "25%",
@@ -2032,7 +2032,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a custom date compon
           <div
             style={
               Object {
-                "backgroundColor": "rgb(255, 84, 82)",
+                "backgroundColor": "rgb(209, 67, 91)",
                 "borderRadius": "5rem",
                 "height": "50%",
                 "margin": "25%",
@@ -2048,7 +2048,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a custom date compon
           <div
             style={
               Object {
-                "backgroundColor": "rgb(255, 84, 82)",
+                "backgroundColor": "rgb(209, 67, 91)",
                 "borderRadius": "5rem",
                 "height": "50%",
                 "margin": "25%",
@@ -2100,7 +2100,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a custom date compon
           <div
             style={
               Object {
-                "backgroundColor": "rgb(255, 84, 82)",
+                "backgroundColor": "rgb(209, 67, 91)",
                 "borderRadius": "5rem",
                 "height": "50%",
                 "margin": "25%",
@@ -2116,7 +2116,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a custom date compon
           <div
             style={
               Object {
-                "backgroundColor": "rgb(255, 84, 82)",
+                "backgroundColor": "rgb(209, 67, 91)",
                 "borderRadius": "5rem",
                 "height": "50%",
                 "margin": "25%",
@@ -2132,7 +2132,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a custom date compon
           <div
             style={
               Object {
-                "backgroundColor": "rgb(255, 84, 82)",
+                "backgroundColor": "rgb(209, 67, 91)",
                 "borderRadius": "5rem",
                 "height": "50%",
                 "margin": "25%",
@@ -2148,7 +2148,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a custom date compon
           <div
             style={
               Object {
-                "backgroundColor": "rgb(255, 84, 82)",
+                "backgroundColor": "rgb(209, 67, 91)",
                 "borderRadius": "5rem",
                 "height": "50%",
                 "margin": "25%",
@@ -2164,123 +2164,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a custom date compon
           <div
             style={
               Object {
-                "backgroundColor": "rgb(255, 84, 82)",
-                "borderRadius": "5rem",
-                "height": "50%",
-                "margin": "25%",
-                "width": "50%",
-              }
-            }
-          />
-        </td>
-        <td
-          aria-hidden={false}
-          className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-start"
-        >
-          <div
-            style={
-              Object {
-                "backgroundColor": "rgb(0, 215, 117)",
-                "borderRadius": "5rem",
-                "height": "50%",
-                "margin": "25%",
-                "width": "50%",
-              }
-            }
-          />
-        </td>
-        <td
-          aria-hidden={false}
-          className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-end"
-        >
-          <div
-            style={
-              Object {
-                "backgroundColor": "rgb(0, 215, 117)",
-                "borderRadius": "5rem",
-                "height": "50%",
-                "margin": "25%",
-                "width": "50%",
-              }
-            }
-          />
-        </td>
-      </tr>
-      <tr
-        className="bpk-calendar-grid__week"
-      >
-        <td
-          aria-hidden={false}
-          className="bpk-calendar-grid__date"
-        >
-          <div
-            style={
-              Object {
-                "backgroundColor": "rgb(255, 84, 82)",
-                "borderRadius": "5rem",
-                "height": "50%",
-                "margin": "25%",
-                "width": "50%",
-              }
-            }
-          />
-        </td>
-        <td
-          aria-hidden={false}
-          className="bpk-calendar-grid__date"
-        >
-          <div
-            style={
-              Object {
-                "backgroundColor": "rgb(255, 84, 82)",
-                "borderRadius": "5rem",
-                "height": "50%",
-                "margin": "25%",
-                "width": "50%",
-              }
-            }
-          />
-        </td>
-        <td
-          aria-hidden={false}
-          className="bpk-calendar-grid__date"
-        >
-          <div
-            style={
-              Object {
-                "backgroundColor": "rgb(255, 84, 82)",
-                "borderRadius": "5rem",
-                "height": "50%",
-                "margin": "25%",
-                "width": "50%",
-              }
-            }
-          />
-        </td>
-        <td
-          aria-hidden={false}
-          className="bpk-calendar-grid__date"
-        >
-          <div
-            style={
-              Object {
-                "backgroundColor": "rgb(255, 84, 82)",
-                "borderRadius": "5rem",
-                "height": "50%",
-                "margin": "25%",
-                "width": "50%",
-              }
-            }
-          />
-        </td>
-        <td
-          aria-hidden={false}
-          className="bpk-calendar-grid__date"
-        >
-          <div
-            style={
-              Object {
-                "backgroundColor": "rgb(255, 84, 82)",
+                "backgroundColor": "rgb(209, 67, 91)",
                 "borderRadius": "5rem",
                 "height": "50%",
                 "margin": "25%",
@@ -2332,7 +2216,123 @@ exports[`BpkCalendarScrollGrid should render correctly with a custom date compon
           <div
             style={
               Object {
-                "backgroundColor": "rgb(255, 84, 82)",
+                "backgroundColor": "rgb(209, 67, 91)",
+                "borderRadius": "5rem",
+                "height": "50%",
+                "margin": "25%",
+                "width": "50%",
+              }
+            }
+          />
+        </td>
+        <td
+          aria-hidden={false}
+          className="bpk-calendar-grid__date"
+        >
+          <div
+            style={
+              Object {
+                "backgroundColor": "rgb(209, 67, 91)",
+                "borderRadius": "5rem",
+                "height": "50%",
+                "margin": "25%",
+                "width": "50%",
+              }
+            }
+          />
+        </td>
+        <td
+          aria-hidden={false}
+          className="bpk-calendar-grid__date"
+        >
+          <div
+            style={
+              Object {
+                "backgroundColor": "rgb(209, 67, 91)",
+                "borderRadius": "5rem",
+                "height": "50%",
+                "margin": "25%",
+                "width": "50%",
+              }
+            }
+          />
+        </td>
+        <td
+          aria-hidden={false}
+          className="bpk-calendar-grid__date"
+        >
+          <div
+            style={
+              Object {
+                "backgroundColor": "rgb(209, 67, 91)",
+                "borderRadius": "5rem",
+                "height": "50%",
+                "margin": "25%",
+                "width": "50%",
+              }
+            }
+          />
+        </td>
+        <td
+          aria-hidden={false}
+          className="bpk-calendar-grid__date"
+        >
+          <div
+            style={
+              Object {
+                "backgroundColor": "rgb(209, 67, 91)",
+                "borderRadius": "5rem",
+                "height": "50%",
+                "margin": "25%",
+                "width": "50%",
+              }
+            }
+          />
+        </td>
+        <td
+          aria-hidden={false}
+          className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-start"
+        >
+          <div
+            style={
+              Object {
+                "backgroundColor": "rgb(0, 215, 117)",
+                "borderRadius": "5rem",
+                "height": "50%",
+                "margin": "25%",
+                "width": "50%",
+              }
+            }
+          />
+        </td>
+        <td
+          aria-hidden={false}
+          className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-end"
+        >
+          <div
+            style={
+              Object {
+                "backgroundColor": "rgb(0, 215, 117)",
+                "borderRadius": "5rem",
+                "height": "50%",
+                "margin": "25%",
+                "width": "50%",
+              }
+            }
+          />
+        </td>
+      </tr>
+      <tr
+        className="bpk-calendar-grid__week"
+      >
+        <td
+          aria-hidden={false}
+          className="bpk-calendar-grid__date"
+        >
+          <div
+            style={
+              Object {
+                "backgroundColor": "rgb(209, 67, 91)",
                 "borderRadius": "5rem",
                 "height": "50%",
                 "margin": "25%",
@@ -2348,7 +2348,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a custom date compon
           <div
             style={
               Object {
-                "backgroundColor": "rgb(255, 84, 82)",
+                "backgroundColor": "rgb(209, 67, 91)",
                 "borderRadius": "5rem",
                 "height": "50%",
                 "margin": "25%",
@@ -2364,7 +2364,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a custom date compon
           <div
             style={
               Object {
-                "backgroundColor": "rgb(255, 84, 82)",
+                "backgroundColor": "rgb(209, 67, 91)",
                 "borderRadius": "5rem",
                 "height": "50%",
                 "margin": "25%",
@@ -2380,7 +2380,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a custom date compon
           <div
             style={
               Object {
-                "backgroundColor": "rgb(255, 84, 82)",
+                "backgroundColor": "rgb(209, 67, 91)",
                 "borderRadius": "5rem",
                 "height": "50%",
                 "margin": "25%",
@@ -2396,7 +2396,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a custom date compon
           <div
             style={
               Object {
-                "backgroundColor": "rgb(255, 84, 82)",
+                "backgroundColor": "rgb(209, 67, 91)",
                 "borderRadius": "5rem",
                 "height": "50%",
                 "margin": "25%",
