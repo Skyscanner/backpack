@@ -221,6 +221,9 @@ export const colorWhite = "rgb(255, 255, 255)";
 export const durationBase = "400ms";
 export const durationSm = "200ms";
 export const durationXs = "50ms";
+export const flareCornerRadius = "1.3125rem";
+export const flareHeightDesktop = "1.5rem";
+export const flareHeightMobile = "1.125rem";
 export const fontColorBase = "rgb(17, 18, 54)";
 export const fontFamilyBase = "-apple-system, BlinkMacSystemFont, 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', 'Arial', sans-serif";
 export const fontSizeBase = "1rem";
@@ -594,6 +597,11 @@ colorTochigi,
 colorValensole,
 colorWhite,
 primaryGradient,
+};
+export const flare = {
+flareCornerRadius,
+flareHeightDesktop,
+flareHeightMobile,
 };
 export const fontSizes = {
 buttonFontSize,
