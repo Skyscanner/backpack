@@ -2,6 +2,12 @@
 
 [Unreleased changes](./UNRELEASED.yaml).
 
+# 2019-10-01
+
+**Added:**
+  - bpk-component-flare: 1.0.0
+    - New `BpkFlareBar` and `BpkContentBubble` components.
+
 # 2019-09-30 - Removed the old brand
 
 **Breaking:**
