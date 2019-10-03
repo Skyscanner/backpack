@@ -2,6 +2,14 @@
 
 [Unreleased changes](./UNRELEASED.yaml).
 
+# 2019-10-03 - Add wallet icon
+
+**Added:**
+
+ - bpk-svgs: 8.0.2 => 8.1.0
+   - Added new `wallet` icon.
+
+
 # 2019-10-01
 
 **Added:**
