@@ -207,6 +207,7 @@
     "upgrade": "EAA5",
     "use-location": "EAA6",
     "view": "EAA7",
+    "wallet": "EAE0",
     "weather": "EAA8",
     "wifi": "EAA9",
     "window--reduce": "EAAA",
