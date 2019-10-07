@@ -96,6 +96,17 @@ describe('BpkStarRating', () => {
     expect(toJson(tree)).toMatchSnapshot();
   });
 
+  it('should render correctly with "rounding" attribute', () => {
+    const tree = shallow(
+      <BpkStarRating
+        ratingLabel={(r, m) => `Rated ${r} out of ${m} stars`}
+        rating={3.4}
+        rounding={n => Math.round(n * 2) / 2}
+      />,
+    );
+    expect(toJson(tree)).toMatchSnapshot();
+  });
+
   describe('getTypeByRating()', () => {
     it('should be a function', () => {
       expect(typeof getTypeByRating === 'function').toBe(true);
@@ -118,16 +129,6 @@ describe('BpkStarRating', () => {
       expect(getTypeByRating(1, 0.5)).toBe(STAR_TYPES.HALF);
       expect(getTypeByRating(1, 0.9)).toBe(STAR_TYPES.HALF);
       expect(getTypeByRating(1, 1)).not.toBe(STAR_TYPES.HALF);
-    });
-
-    it('should round to the nearest half star if roundRating is true', () => {
-      expect(getTypeByRating(1, 0, true)).toBe(STAR_TYPES.EMPTY);
-      expect(getTypeByRating(1, 0.2, true)).toBe(STAR_TYPES.EMPTY);
-      expect(getTypeByRating(1, 0.25, true)).toBe(STAR_TYPES.HALF);
-      expect(getTypeByRating(1, 0.5, true)).toBe(STAR_TYPES.HALF);
-      expect(getTypeByRating(1, 0.7, true)).toBe(STAR_TYPES.HALF);
-      expect(getTypeByRating(1, 0.75, true)).toBe(STAR_TYPES.FULL);
-      expect(getTypeByRating(1, 1, true)).toBe(STAR_TYPES.FULL);
     });
   });
 });

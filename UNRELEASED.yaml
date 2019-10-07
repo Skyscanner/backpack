@@ -27,4 +27,4 @@
 
 ADDED:
   - bpk-component-star-rating
-    - Added `roundRating` prop to control rounding behaviour.
+    - Added `rounding` prop to control rounding behaviour.

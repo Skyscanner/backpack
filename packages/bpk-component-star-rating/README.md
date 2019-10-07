@@ -51,7 +51,7 @@ export default () => (
 | large          | bool                    | false    | false         |
 | maxRating      | number                  | false    | 5             |
 | rating         | number                  | false    | 0             |
-| roundRating    | bool                    | false    | false         |
+| rounding       | func                    | false    | n => n        |
 
 ### BpkStar
 
