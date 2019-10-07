@@ -45,6 +45,7 @@ const generateTheme = ({
   themeName,
 
   primaryColor: primaryColor500,
+  logoFillColor: primaryColor500,
 
   accordionActiveColor: primaryColor700,
   accordionColor: primaryColor500,
