@@ -25,13 +25,16 @@ import STYLES from './BpkStarRating.scss';
 
 const getClassName = cssModules(STYLES);
 
-export const getTypeByRating = (starNumber, rating) => {
+export const getTypeByRating = (starNumber, rating, roundRating) => {
   if (starNumber <= rating) {
     return STAR_TYPES.FULL;
   }
 
   const rest = rating - (starNumber - 1);
-  if (rest >= 0.5 && rest < 1) {
+  if (roundRating && rest >= 0.75) {
+    return STAR_TYPES.FULL;
+  }
+  if (rest >= (roundRating ? 0.25 : 0.5) && rest < 1) {
     return STAR_TYPES.HALF;
   }
 
@@ -39,7 +42,15 @@ export const getTypeByRating = (starNumber, rating) => {
 };
 
 const BpkStarRating = props => {
-  const { rating, ratingLabel, maxRating, large, className, ...rest } = props;
+  const {
+    rating,
+    ratingLabel,
+    maxRating,
+    large,
+    className,
+    roundRating,
+    ...rest
+  } = props;
 
   const stars = [];
   const classNames = [getClassName('bpk-star-rating')];
@@ -51,7 +62,7 @@ const BpkStarRating = props => {
   }
 
   for (let starNumber = 1; starNumber <= maxRating; starNumber += 1) {
-    const type = getTypeByRating(starNumber, currentRating);
+    const type = getTypeByRating(starNumber, currentRating, roundRating);
 
     stars.push(
       <BpkStar key={`star-${starNumber}`} type={type} large={large} />,
@@ -77,6 +88,7 @@ BpkStarRating.propTypes = {
   large: PropTypes.bool,
   maxRating: PropTypes.number,
   rating: PropTypes.number,
+  roundRating: PropTypes.bool,
 };
 
 BpkStarRating.defaultProps = {
@@ -84,6 +96,7 @@ BpkStarRating.defaultProps = {
   large: false,
   maxRating: 5,
   rating: 0,
+  roundRating: false,
 };
 
 export default BpkStarRating;

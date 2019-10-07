@@ -116,11 +116,25 @@ storiesOf('bpk-component-star-rating', module)
       <StarRating rating={3.3} large />
     </div>
   ))
-  .add('3.7 Stars', () => (
+  .add('3.8 Stars', () => (
     <div>
-      <StarRating rating={3.7} />
+      <StarRating rating={3.8} />
       <br />
-      <StarRating rating={3.7} large />
+      <StarRating rating={3.8} large />
+    </div>
+  ))
+  .add('3.3 Stars Rounded', () => (
+    <div>
+      <StarRating rating={3.3} roundRating />
+      <br />
+      <StarRating rating={3.3} large roundRating />
+    </div>
+  ))
+  .add('3.8 Stars Rounded', () => (
+    <div>
+      <StarRating rating={3.8} roundRating />
+      <br />
+      <StarRating rating={3.8} large roundRating />
     </div>
   ))
   .add('Interactive', () => (
