@@ -38,6 +38,12 @@ export const getTypeByRating = (starNumber, rating) => {
   return STAR_TYPES.EMPTY;
 };
 
+export const ROUNDING_TYPES = {
+  down: n => Math.floor(n * 2) / 2,
+  up: n => Math.ceil(n * 2) / 2,
+  nearest: n => Math.round(n * 2) / 2,
+};
+
 const BpkStarRating = props => {
   const {
     rating,
@@ -85,7 +91,11 @@ BpkStarRating.propTypes = {
   large: PropTypes.bool,
   maxRating: PropTypes.number,
   rating: PropTypes.number,
-  rounding: PropTypes.func,
+  rounding: PropTypes.oneOf([
+    ROUNDING_TYPES.down,
+    ROUNDING_TYPES.up,
+    ROUNDING_TYPES.nearest,
+  ]),
 };
 
 BpkStarRating.defaultProps = {
@@ -93,7 +103,7 @@ BpkStarRating.defaultProps = {
   large: false,
   maxRating: 5,
   rating: 0,
-  rounding: n => n,
+  rounding: ROUNDING_TYPES.down,
 };
 
 export default BpkStarRating;

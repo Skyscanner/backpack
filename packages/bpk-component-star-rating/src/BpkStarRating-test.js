@@ -20,7 +20,10 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
 
-import BpkStarRating, { getTypeByRating } from './BpkStarRating';
+import BpkStarRating, {
+  getTypeByRating,
+  ROUNDING_TYPES,
+} from './BpkStarRating';
 import { STAR_TYPES } from './BpkStar';
 
 describe('BpkStarRating', () => {
@@ -101,7 +104,7 @@ describe('BpkStarRating', () => {
       <BpkStarRating
         ratingLabel={(r, m) => `Rated ${r} out of ${m} stars`}
         rating={3.4}
-        rounding={n => Math.round(n * 2) / 2}
+        rounding={ROUNDING_TYPES.nearest}
       />,
     );
     expect(toJson(tree)).toMatchSnapshot();
