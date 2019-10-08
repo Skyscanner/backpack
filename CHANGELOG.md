@@ -2,6 +2,14 @@
 
 [Unreleased changes](./UNRELEASED.yaml).
 
+# 2019-10-08 - Added new 'rounding' prop to BpkStarRating
+
+**Added:**
+
+ - bpk-component-star-rating: 2.0.3 => 2.1.0
+   - Added `rounding` prop to control rounding behaviour.
+
+
 # 2019-10-03 - Add wallet icon
 
 **Added:**
