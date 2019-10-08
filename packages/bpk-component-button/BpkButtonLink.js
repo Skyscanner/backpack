@@ -1,3 +1,1 @@
-import BpkButtonLink from './src/BpkButtonLink';
-
-export default BpkButtonLink;
+export { default } from './src/BpkButtonLink';

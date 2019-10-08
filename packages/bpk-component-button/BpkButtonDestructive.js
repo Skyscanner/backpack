@@ -1,3 +1,1 @@
-import BpkButtonDestructive from './src/BpkButtonDestructive';
-
-export default BpkButtonDestructive;
+export { default } from './src/BpkButtonDestructive';

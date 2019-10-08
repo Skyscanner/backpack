@@ -1,3 +1,1 @@
-import BpkButtonFeatured from './src/BpkButtonFeatured';
-
-export default BpkButtonFeatured;
+export { default } from './src/BpkButtonFeatured';

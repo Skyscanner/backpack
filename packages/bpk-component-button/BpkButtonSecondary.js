@@ -1,3 +1,1 @@
-import BpkButtonSecondary from './src/BpkButtonSecondary';
-
-export default BpkButtonSecondary;
+export { default } from './src/BpkButtonSecondary';

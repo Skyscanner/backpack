@@ -1,3 +1,1 @@
-import BpkButtonOutline from './src/BpkButtonOutline';
-
-export default BpkButtonOutline;
+export { default } from './src/BpkButtonOutline';

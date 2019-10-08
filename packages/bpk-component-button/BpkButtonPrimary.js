@@ -1,3 +1,1 @@
-import BpkButtonPrimary from './src/BpkButtonPrimary';
-
-export default BpkButtonPrimary;
+export { default } from './src/BpkButtonPrimary';
