@@ -741,6 +741,5 @@ greedyGestureHandling
 ariaLabel
 props.label
 semver.org
- - packages/bpk-component-star-rating/README.md
 ROUNDING_TYPES
 ROUNDING_TYPES.down
