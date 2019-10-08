@@ -44,13 +44,14 @@ export default () => (
 
 ### BpkStarRating
 
-| Property       | PropType                | Required | Default Value |
-| -------------- | ----------------------- | -------- | ------------- |
-| ratingLabel    | oneOfType(string, func) | true     | -             |
-| className      | string                  | false    | null          |
-| large          | bool                    | false    | false         |
-| maxRating      | number                  | false    | 5             |
-| rating         | number                  | false    | 0             |
+| Property       | PropType                | Required | Default Value       |
+| -------------- | ----------------------- | -------- | ------------------- |
+| ratingLabel    | oneOfType(string, func) | true     | -                   |
+| className      | string                  | false    | null                |
+| large          | bool                    | false    | false               |
+| maxRating      | number                  | false    | 5                   |
+| rating         | number                  | false    | 0                   |
+| rounding       | oneOf(ROUNDING_TYPES)   | false    | ROUNDING_TYPES.down |
 
 ### BpkStar
 

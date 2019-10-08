@@ -741,3 +741,5 @@ greedyGestureHandling
 ariaLabel
 props.label
 semver.org
+ROUNDING_TYPES
+ROUNDING_TYPES.down
