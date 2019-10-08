@@ -26,5 +26,5 @@
 #       - Fixed issue where `BpkHorcrux` would occasionally possess the living.
 
 ADDED:
-  - bpk-component-star-rating
+  - bpk-component-star-rating:
     - Added `rounding` prop to control rounding behaviour.
