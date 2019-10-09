@@ -34,7 +34,7 @@
   }
 
   &--large-icon-only {
-    border-radius: $bpk-button-border-radius-lg;
+    border-radius: $bpk-button-border-radius;
 
     @include bpk-button--large-icon-only;
   }
