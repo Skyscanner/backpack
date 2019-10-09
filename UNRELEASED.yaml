@@ -29,3 +29,7 @@
 ADDED:
   - bpk-component-accordion:
     - Added Support for setting `tagName` to `BpkAccordionItem`
+  - bpk-component-modal:
+    - Added new prop `accessoryView` to allow support for left hand side interaction.
+  - bpk-component-navigation-bar:
+    - Modified `BpkNavigationBarButtonLink` to accept and render children.
