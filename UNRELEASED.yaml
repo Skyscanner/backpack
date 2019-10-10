@@ -24,3 +24,8 @@
 #   FIXED:
 #     - bpk-component-horcrux:
 #       - Fixed issue where `BpkHorcrux` would occasionally possess the living.
+
+
+ADDED:
+  - bpk-component-accordion:
+    - Added Support for setting `tagName` to `BpkAccordionItem`
