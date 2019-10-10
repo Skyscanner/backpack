@@ -2,6 +2,14 @@
 
 [Unreleased changes](./UNRELEASED.yaml).
 
+# 2019-10-10 - Add new icons
+
+**Added:**
+
+ - bpk-svgs: 8.1.0 => 8.2.0
+   - Added `document-csv`, `document-pdf`, and `print` icons
+
+
 # 2019-10-08 - Added new 'rounding' prop to BpkStarRating
 
 **Added:**
