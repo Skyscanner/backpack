@@ -1,0 +1,34 @@
+{
+  "imports": [
+    "./aliases.json"
+  ],
+  "global": {
+    "category": "ratings"
+  },
+  "props": {
+    "RATING_BASE_WIDTH" : {
+      "value": "{!SPACING_SM} * 4",
+      "type": "size"
+    },
+    "RATING_BASE_HEIGHT" : {
+      "value": "{!SPACING_SM} * 4",
+      "type": "size"
+    },
+    "RATING_SM_WIDTH" : {
+      "value": "{!SPACING_SM} * 3",
+      "type": "size"
+    },
+    "RATING_SM_HEIGHT" : {
+      "value": "{!SPACING_SM} * 3",
+      "type": "size"
+    },
+    "RATING_LG_WIDTH" : {
+      "value": "{!SPACING_LG} * 2",
+      "type": "size"
+    },
+    "RATING_LG_HEIGHT" : {
+      "value": "{!SPACING_LG} * 2",
+      "type": "size"
+    }
+  }
+}

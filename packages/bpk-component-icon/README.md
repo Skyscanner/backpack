@@ -34,7 +34,7 @@ export default () => (
 }
 
 .abc-icon__a11y {
-  fill: $bpk-color-blue-500;
+  fill: $bpk-color-sky-blue;
 }
 ```
 

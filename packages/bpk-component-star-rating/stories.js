@@ -31,7 +31,7 @@ import {
 import BpkInteractiveStarRating from './src/BpkInteractiveStarRating';
 import withInteractiveStarRatingState from './src/withInteractiveStarRatingState';
 
-import BpkStarRating, { BpkStar, STAR_TYPES } from './index';
+import BpkStarRating, { BpkStar, STAR_TYPES, ROUNDING_TYPES } from './index';
 
 const InteractiveStarRating = withInteractiveStarRatingState(
   BpkInteractiveStarRating,
@@ -116,11 +116,25 @@ storiesOf('bpk-component-star-rating', module)
       <StarRating rating={3.3} large />
     </div>
   ))
-  .add('3.7 Stars', () => (
+  .add('3.8 Stars', () => (
     <div>
-      <StarRating rating={3.7} />
+      <StarRating rating={3.8} />
       <br />
-      <StarRating rating={3.7} large />
+      <StarRating rating={3.8} large />
+    </div>
+  ))
+  .add('3.3 Stars Rounded', () => (
+    <div>
+      <StarRating rating={3.3} rounding={ROUNDING_TYPES.nearest} />
+      <br />
+      <StarRating rating={3.3} large rounding={ROUNDING_TYPES.nearest} />
+    </div>
+  ))
+  .add('3.8 Stars Rounded', () => (
+    <div>
+      <StarRating rating={3.8} rounding={ROUNDING_TYPES.nearest} />
+      <br />
+      <StarRating rating={3.8} large rounding={ROUNDING_TYPES.nearest} />
     </div>
   ))
   .add('Interactive', () => (

@@ -1,6 +1,6 @@
 {
   "name": "bpk-svgs",
-  "version": "6.7.6",
+  "version": "8.1.0",
   "description": "Backpack's library of SVG's.",
   "main": "_index.scss",
   "scripts": {
@@ -13,7 +13,10 @@
   "author": "Backpack Design System <backpack@skyscanner.net>",
   "license": "Apache-2.0",
   "devDependencies": {
-    "bpk-tokens": "^27.6.2"
+    "bpk-tokens": "^29.0.2"
   },
-  "gitHead": "3244054e73b5e966c2ca795f496d8e29b6a5fff4"
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "gitHead": "67b335e771ad6bf3d6f4d5a36b6745c625758aff"
 }

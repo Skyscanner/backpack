@@ -25,5 +25,6 @@ export default () => (
 | --------- | -------- | -------- | ------------- |
 | children  | node     | true     | -             |
 | disabled  | bool     | false    | false         |
+| invalid   | bool     | false    | false         |
 | required  | bool     | false    | false         |
 | white     | bool     | false    | false         |

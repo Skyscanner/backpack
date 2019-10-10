@@ -46,6 +46,17 @@ exports[`BpkButton should render correctly with "blank" attribute 1`] = `
 </a>
 `;
 
+exports[`BpkButton should render correctly with "disabled" and "href" attributes 1`] = `
+<button
+  className="bpk-button"
+  disabled={true}
+  onClick={null}
+  type="button"
+>
+  My button
+</button>
+`;
+
 exports[`BpkButton should render correctly with "large" and "secondary" attributes 1`] = `
 <button
   className="bpk-button bpk-button--secondary bpk-button--large"
@@ -139,6 +150,17 @@ exports[`BpkButton should render correctly with a "secondary" attribute 1`] = `
 exports[`BpkButton should render correctly with an "iconOnly" attribute 1`] = `
 <button
   className="bpk-button bpk-button--icon-only"
+  disabled={false}
+  onClick={null}
+  type="button"
+>
+  My button
+</button>
+`;
+
+exports[`BpkButton should render correctly with an "outline" attribute 1`] = `
+<button
+  className="bpk-button bpk-button--outline"
   disabled={false}
   onClick={null}
   type="button"

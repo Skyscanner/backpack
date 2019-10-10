@@ -30,7 +30,8 @@
   }
 
   &__small {
-    @include bpk-apply-gray-500-to(color);
+    color: $bpk-color-sky-gray-tint-02;
+
     @include bpk-text;
     @include bpk-text--sm;
   }

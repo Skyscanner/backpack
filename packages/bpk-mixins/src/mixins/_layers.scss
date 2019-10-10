@@ -32,10 +32,9 @@
 ///   }
 
 @mixin bpk-layer {
-  border: $bpk-one-pixel-rem solid;
+  border: $bpk-one-pixel-rem solid $bpk-color-sky-gray-tint-06;
   background-color: $bpk-color-white;
 
-  @include bpk-apply-gray-100-to(border-color);
   @include bpk-border-radius-sm;
   @include bpk-box-shadow-lg;
 }
@@ -83,8 +82,7 @@
   &::before {
     top: -($arrow-size + $bpk-one-pixel-rem);
     margin-left: -$bpk-one-pixel-rem;
-
-    @include bpk-apply-gray-100-to(border-bottom-color);
+    border-bottom-color: $bpk-color-sky-gray-tint-06;
 
     @include bpk-rtl {
       margin-right: -$bpk-one-pixel-rem;
@@ -114,8 +112,7 @@
   &::before {
     right: -($arrow-size + $bpk-one-pixel-rem);
     margin-top: -$bpk-one-pixel-rem;
-
-    @include bpk-apply-gray-100-to(border-left-color);
+    border-left-color: $bpk-color-sky-gray-tint-06;
   }
 
   &::after {
@@ -140,8 +137,7 @@
   &::before {
     bottom: -($arrow-size + $bpk-one-pixel-rem);
     margin-left: -$bpk-one-pixel-rem;
-
-    @include bpk-apply-gray-100-to(border-top-color);
+    border-top-color: $bpk-color-sky-gray-tint-06;
 
     @include bpk-rtl {
       margin-right: -$bpk-one-pixel-rem;
@@ -171,8 +167,7 @@
   &::before {
     left: -($arrow-size + $bpk-one-pixel-rem);
     margin-top: -$bpk-one-pixel-rem;
-
-    @include bpk-apply-gray-100-to(border-right-color);
+    border-right-color: $bpk-color-sky-gray-tint-06;
   }
 
   &::after {

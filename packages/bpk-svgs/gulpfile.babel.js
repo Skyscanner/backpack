@@ -35,6 +35,7 @@ import iconfont from 'gulp-iconfont';
 import svg2react from './tasks/svg2react';
 import svg2datauri, { sassMap, svg2sassvar } from './tasks/svg2datauri';
 import getIconFontMetadataProvider from './tasks/getIconFontMetadataProvider';
+import metadata from './tasks/metadata';
 
 const remToPx = value => {
   let parsed = null;
@@ -369,9 +370,19 @@ gulp.task('copy-svgs', () =>
     .pipe(gulp.dest('dist/svgs')),
 );
 
+gulp.task('create-metadata', () =>
+  gulp
+    .src('src/icons/*.svg')
+    .pipe(metadata())
+    .pipe(gulp.dest('dist')),
+);
+
 const allIcons = gulp.series(
   'icons-common',
   gulp.parallel('icons-sm', 'icons-lg', 'icons-font', 'copy-svgs'),
 );
 
-gulp.task('default', gulp.parallel('elements', 'spinners', allIcons));
+gulp.task(
+  'default',
+  gulp.parallel('elements', 'spinners', allIcons, 'create-metadata'),
+);

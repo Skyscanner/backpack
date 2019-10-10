@@ -19,70 +19,63 @@
       "type": "size"
     },
     "CALENDAR_DAY_COLOR": {
-      "value": "{!BLUE_500}",
+      "value": "{!SKY_BLUE}",
       "type": "color"
-    },
-    "CALENDAR_DAY_BACKGROUND_COLOR": {
-      "value": "{!WHITE}",
-      "type": "color",
-      "deprecated": true
     },
     "CALENDAR_DAY_SELECTED_COLOR": {
       "value": "{!WHITE}",
       "type": "color"
     },
     "CALENDAR_DAY_SELECTED_BACKGROUND_COLOR": {
-      "value": "{!BLUE_700}",
+      "value": "{!SKY_BLUE_SHADE_01}",
+      "type": "color"
+    },
+    "CALENDAR_DAY_FOCUSED_COLOR": {
+      "value": "{!SKY_BLUE}",
+      "type": "color"
+    },
+    "CALENDAR_DAY_FOCUSED_BORDER_COLOR": {
+      "value": "{!SKY_BLUE}",
       "type": "color"
     },
     "CALENDAR_DAY_HOVER_COLOR": {
-      "value": "{!GRAY_700}",
+      "value": "{!SKY_GRAY_TINT_01}",
       "type": "color"
     },
     "CALENDAR_DAY_HOVER_BACKGROUND_COLOR": {
-      "value": "{!GRAY_50}",
+      "value": "{!SKY_GRAY_TINT_07}",
       "type": "color"
     },
     "CALENDAR_DAY_ACTIVE_COLOR": {
-      "value": "{!GRAY_900}",
+      "value": "{!SKY_GRAY}",
       "type": "color"
     },
     "CALENDAR_DAY_ACTIVE_BACKGROUND_COLOR": {
-      "value": "{!GRAY_100}",
+      "value": "{!SKY_GRAY_TINT_06}",
       "type": "color"
     },
     "CALENDAR_DAY_DISABLED_COLOR": {
-      "value": "{!GRAY_100}",
+      "value": "{!SKY_GRAY_TINT_06}",
       "type": "color"
-    },
-    "CALENDAR_DAY_DISABLED_BACKGROUND_COLOR": {
-      "value": "{!WHITE}",
-      "type": "color",
-      "deprecated": true
     },
     "CALENDAR_DAY_OUTSIDE_COLOR": {
-      "value": "{!GRAY_300}",
+      "value": "{!SKY_GRAY_TINT_04}",
       "type": "color"
     },
-    "CALENDAR_DAY_OUTSIDE_BACKGROUND_COLOR": {
-      "value": "{!WHITE}",
-      "type": "color",
-      "deprecated": true
-    },
     "CALENDAR_NAV_ICON_FILL": {
-      "value": "{!BLUE_500}",
+      "value": "{!SKY_BLUE}",
       "type": "color"
     },
     "CALENDAR_NAV_ICON_HOVER_FILL": {
-      "value": "{!BLUE_600}",
+      "value": "{!SKY_BLUE_SHADE_01}",
       "type": "color"
     },
     "CALENDAR_NAV_ICON_ACTIVE_FILL": {
-      "value": "{!BLUE_700}",
+      "value": "{!SKY_BLUE_SHADE_02}",
       "type": "color"
     },
     "CALENDAR_NAV_ICON_DISABLED_FILL": {
-      "value": "{!GRAY_100}",
+      "value": "{!SKY_GRAY_TINT_06}",
       "type": "color"
     }
   }

@@ -18,14 +18,13 @@
 
 /* @flow strict */
 
-import { cssModules } from 'bpk-react-utils';
+import { cssModules, isRTL } from 'bpk-react-utils';
 import React, { Children, type Element } from 'react';
 import PropTypes from 'prop-types';
 import { durationSm } from 'bpk-tokens/tokens/base.es6';
 import { TransitionGroup, Transition } from 'react-transition-group';
 import debounce from 'lodash/debounce';
 
-import { isRTL } from './utils';
 import STYLES from './BpkNavigationStack.scss';
 
 const getClassName = cssModules(STYLES);

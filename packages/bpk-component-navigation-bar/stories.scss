@@ -20,10 +20,9 @@
 
 .bpk-navigation-bar-story {
   padding: $bpk-one-pixel-rem $bpk-one-pixel-rem $bpk-spacing-xxl * 2;
+  background-color: $bpk-color-sky-gray-tint-07;
 
-  @include bpk-apply-gray-50-to(background-color);
-  @include bpk-border-sm($bpk-color-gray-50);
-  @include bpk-border-sm(var(--bpk-color-gray-50, $bpk-color-gray-50));
+  @include bpk-border-sm($bpk-color-sky-gray-tint-07);
 
   > * {
     margin-bottom: $bpk-spacing-md;

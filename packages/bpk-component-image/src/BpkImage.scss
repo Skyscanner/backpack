@@ -61,10 +61,9 @@
   display: block;
   max-width: 100%;
   transition: background-color $bpk-duration-base ease-in-out;
+  background-color: $bpk-color-sky-gray-tint-06;
   overflow: hidden;
   transition-delay: $bpk-duration-base;
-
-  @include bpk-apply-gray-100-to(background-color);
 }
 
 .bpk-image {
@@ -82,5 +81,9 @@
 
   &--no-background {
     @include bpk-image--no-background;
+  }
+
+  &--border-radius-sm {
+    @include bpk-border-radius-sm;
   }
 }

@@ -87,7 +87,7 @@
 
 @mixin bpk-input--valid {
   padding-right: $bpk-spacing-base;
-  background: $bpk-color-white url(map-get($bpk-icons-sm, tick-green-500)) no-repeat right $bpk-spacing-sm center;
+  background: $bpk-color-white url(map-get($bpk-icons-sm, tick-monteverde)) no-repeat right $bpk-spacing-sm center;
   background-size: $bpk-spacing-md $bpk-spacing-md;
 
   @include bpk-rtl {
@@ -109,9 +109,10 @@
 
 @mixin bpk-input--invalid {
   padding-right: $bpk-spacing-base;
-  border-color: $bpk-color-red-500;
-  background: $bpk-color-red-50 url(map-get($bpk-icons-sm, exclamation-circle-red-500)) no-repeat right $bpk-spacing-sm center;
+  background: $bpk-color-white url(map-get($bpk-icons-sm, exclamation-circle-panjin)) no-repeat right $bpk-spacing-sm center;
   background-size: $bpk-spacing-md $bpk-spacing-md;
+
+  @include bpk-themeable-property(border-color, --bpk-input-invalid-border-color, $bpk-form-validation-color);
 
   @include bpk-rtl {
     padding-right: $bpk-input-padding-x;
@@ -307,7 +308,7 @@
   padding: $bpk-select-padding-top $bpk-select-padding-right $bpk-select-padding-bottom $bpk-select-padding-left;
   border: $bpk-select-border;
   border-radius: $bpk-select-border-radius;
-  background: $bpk-color-white url(map-get($bpk-icons-sm, arrow-down-gray-700)) no-repeat right $bpk-spacing-sm center;
+  background: $bpk-color-white url(map-get($bpk-icons-sm, arrow-down-sky-gray-tint-01)) no-repeat right $bpk-spacing-sm center;
   background-size: $bpk-spacing-md $bpk-spacing-md;
   color: $bpk-select-color;
   line-height: $bpk-line-height-base - (2 * $bpk-select-border-width);
@@ -326,7 +327,7 @@
 
   &:disabled {
     border-color: $bpk-select-disabled-border-color;
-    background: $bpk-color-white url(map-get($bpk-icons-sm, arrow-down-gray-300)) no-repeat right $bpk-spacing-sm center;
+    background: $bpk-color-white url(map-get($bpk-icons-sm, arrow-down-sky-gray-tint-04)) no-repeat right $bpk-spacing-sm center;
     color: $bpk-select-disabled-color;
     cursor: not-allowed;
   }
@@ -441,9 +442,10 @@
 
 @mixin bpk-select--invalid {
   padding-right: $bpk-spacing-base;
-  border-color: $bpk-color-red-500;
-  background: $bpk-color-red-50 url(map-get($bpk-icons-sm, arrow-down-gray-700)) no-repeat right $bpk-spacing-sm center;
+  background: $bpk-color-white url(map-get($bpk-icons-sm, arrow-down-sky-gray-tint-01)) no-repeat right $bpk-spacing-sm center;
   background-size: $bpk-spacing-md $bpk-spacing-md;
+
+  @include bpk-themeable-property(border-color, --bpk-select-invalid-border-color, $bpk-form-validation-color);
 
   @include bpk-rtl {
     padding-right: $bpk-input-padding-x;
@@ -525,6 +527,22 @@
 @mixin bpk-checkbox--disabled {
   color: $bpk-label-disabled-color;
   cursor: not-allowed;
+}
+
+/// Invalid form checkbox. Modifies the bpk-checkbox mixin.
+///
+/// @require {mixin} bpk-checkbox
+///
+/// @example scss
+///   .selector {
+///     @include bpk-checkbox();
+///     @include bpk-checkbox--invalid();
+///   }
+
+@mixin bpk-checkbox--invalid {
+  input[type=checkbox] {
+    background: url(map-get($bpk-elements, checkbox-invalid)) no-repeat;
+  }
 }
 
 /// Form checkbox input.
@@ -617,6 +635,22 @@
   color: $bpk-color-white;
 }
 
+/// Invalid radio button. Modifies the bpk-radio mixin.
+///
+/// @require {mixin} bpk-radio
+///
+/// @example scss
+///   .selector {
+///     @include bpk-radio();
+///     @include bpk-radio--invalid();
+///   }
+
+@mixin bpk-radio--invalid {
+  input[type=radio] {
+    background: url(map-get($bpk-elements, radio-invalid)) no-repeat;
+  }
+}
+
 /// Form radio input.
 ///
 /// @example scss
@@ -675,6 +709,24 @@
   line-height: $bpk-label-line-height;
 }
 
+/// Invalid form label. Modifies the bpk-label mixin.
+///
+/// @require {mixin} bpk-label
+///
+/// @example scss
+///   .selector {
+///     @include bpk-label();
+///     @include bpk-label--invalid();
+///   }
+
+@mixin bpk-label--invalid {
+  @include bpk-themeable-property(
+    color,
+    --bpk-form-validation-text-color,
+    $bpk-form-validation-color
+  );
+}
+
 /// White form label. Modifies the bpk-label mixin.
 ///
 /// @require {mixin} bpk-label
@@ -715,8 +767,9 @@
   position: relative;
   transform: translateY(-#{$bpk-spacing-sm});
   transition: opacity $bpk-duration-sm ease-in-out, transform $bpk-duration-sm ease-in-out;
-  color: $bpk-form-validation-background-color;
   opacity: 0;
+
+  @include bpk-themeable-property(color, --bpk-form-validation-text-color, $bpk-form-validation-color);
 }
 
 /// Form validation transition state. Modifies the bpk-form-validation mixin.
@@ -812,8 +865,9 @@
 ///   }
 
 @mixin bpk-textarea--invalid {
-  border-color: $bpk-color-red-500;
-  background: $bpk-color-red-50 url(map-get($bpk-icons-sm, exclamation-circle-red-500)) no-repeat right $bpk-spacing-sm center;
+  background: $bpk-color-white url(map-get($bpk-icons-sm, exclamation-circle-panjin)) no-repeat right $bpk-spacing-sm center;
+
+  @include bpk-themeable-property(border-color, --bpk-textarea-invalid-border-color, $bpk-form-validation-color);
 
   @include bpk-rtl {
     padding-right: $bpk-input-padding-x;

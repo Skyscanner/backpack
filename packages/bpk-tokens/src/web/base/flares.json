@@ -1,0 +1,18 @@
+{
+  "imports": ["./aliases.json"],
+  "global": {
+    "type": "size",
+    "category": "flare"
+  },
+  "props": {
+    "FLARE_HEIGHT_DESKTOP": {
+      "value": "{!SPACING_BASE}"
+    },
+    "FLARE_HEIGHT_MOBILE": {
+      "value": "{!SPACING_MD}"
+    },
+    "FLARE_CORNER_RADIUS": {
+      "value": "{!BORDER_RADIUS_PILL_LG}"
+    }
+  }
+}

@@ -9,7 +9,17 @@
       "category": "typesettings"
     },
     "FONT_COLOR_BASE": {
-      "value": "{!GRAY_700}",
+      "value": "{!SKY_GRAY}",
+      "type": "color",
+      "category": "text-colors"
+    },
+    "TEXT_PRIMARY_LIGHT_COLOR": {
+      "value": "{!SKY_GRAY}",
+      "type": "color",
+      "category": "text-colors"
+    },
+    "TEXT_SECONDARY_LIGHT_COLOR": {
+      "value": "{!SKY_GRAY_TINT_01}",
       "type": "color",
       "category": "text-colors"
     },
@@ -72,6 +82,16 @@
       "value": "{!FONT_WEIGHT_BOLD}",
       "type": "string",
       "category": "font-weights"
+    },
+    "FONT_WEIGHT_BLACK": {
+      "value": "{!FONT_WEIGHT_BLACK}",
+      "type": "string",
+      "category": "font-weights"
+    },
+    "BUTTON_FONT_SIZE": {
+      "value": "{!BUTTON_FONT_SIZE}",
+      "type": "font-size",
+      "category": "font-sizes"
     },
     "H6_FONT_SIZE": {
       "value": "{!FONT_SIZE_SM}",
@@ -219,7 +239,7 @@
       "category": "spacings"
     },
     "LINK_COLOR": {
-      "value": "{!BLUE_500}",
+      "value": "{!SKY_BLUE}",
       "type": "color",
       "category": "text-colors"
     },
@@ -229,7 +249,7 @@
       "category": "text-decorations"
     },
     "LINK_HOVER_COLOR": {
-      "value": "{!GRAY_700}",
+      "value": "{!SKY_BLUE_SHADE_01}",
       "type": "color",
       "category": "text-colors"
     },
@@ -239,12 +259,12 @@
       "category": "text-decorations"
     },
     "LINK_ACTIVE_COLOR": {
-      "value": "{!GRAY_900}",
+      "value": "{!SKY_BLUE_SHADE_02}",
       "type": "color",
       "category": "text-colors"
     },
     "LINK_VISITED_COLOR": {
-      "value": "{!BLUE_700}",
+      "value": "{!SKY_BLUE}",
       "type": "color",
       "category": "text-colors"
     },
@@ -259,7 +279,7 @@
       "category": "text-colors"
     },
     "LINK_WHITE_ACTIVE_COLOR": {
-      "value": "{!GRAY_100}",
+      "value": "{!SKY_GRAY_TINT_06}",
       "type": "color",
       "category": "text-colors"
     },
@@ -279,7 +299,7 @@
       "category": "text-colors"
     },
     "LINK_ALTERNATE_ACTIVE_COLOR": {
-      "value": "{!GRAY_100}",
+      "value": "{!SKY_GRAY_TINT_06}",
       "type": "color",
       "category": "text-colors"
     },

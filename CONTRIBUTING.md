@@ -115,13 +115,7 @@ Run `npm start` to start the storybook server, then go to [http://localhost:9001
 
 If you want to add icons, they should first be approved by [Chris](https://skyscanner.slack.com/messages/D6BU4R0V8) as he "owns" Skyscanner icons.
 
-Once they're signed off, you can [raise a request](https://bit.ly/backpack-request) and attach the SVG files. If you're feeling heroic and want to make the PR yourself, we have a nifty script to add them to the codebase. Just run
-```
-npm run add-svgs && npm run build
-```
-
-The first command will prompt you for which SVGs to add. The second will re-generate all icon-related assets.
-
+Once they're signed off, you can [raise a request](https://bit.ly/backpack-request) and attach the SVG files. If you're feeling heroic and want to make the PR yourself, just copy the correctly named SVG files to `./packages/bpk-svgs/src/icons/` and then run `npm run build`.
 
 ## Adding a new component
 
@@ -187,7 +181,7 @@ For anything non-trivial, we strongly recommend speaking to somebody from Backpa
 5. Submit a [pull request](https://github.com/Skyscanner/backpack/pulls).
 6. Notify someone in Backpack squad or drop a note in #backpack.
 
-Don't forget to update [`UNRELEASED.md`](UNRELEASED.md) for any user-facing changes.
+Don't forget to update [`UNRELEASED.yaml`](UNRELEASED.yaml) for any user-facing changes.
 
 Bear in mind that small, incremental pull requests are likely to be reviewed faster.
 
@@ -215,16 +209,14 @@ You can also run the tests in 'watch mode', which means the process will continu
 <details>
 <summary>Publish packages (Backpack squad members only)</summary>
 
-- Update the [unreleased changelog](/unreleased.md) with every package that has changed, separating out breaking changes (*major*), additions (*minor*) and fixes (*patch*) changes (you should see examples of this in previous entries of the [changelog](/changelog.md). If you need more details on classification please checkout the [versioning decision](/decisions/versioning-rules.md)).
+- Update the [unreleased changelog](/unreleased.yaml) with every package that has changed, separating out `BRAKING`, `ADDED` and `FIXED` changes (there are examples at the bottom of the file). If you need more details on classification please checkout the [versioning decision](/decisions/versioning-rules.md)).
   - Some useful commands for determining "what's changed?":
     - `npm run lerna updated`
     - `npm run lerna diff <package-name>`
 - Make sure you are an owner of the npm packages (speak to a member of the Backpack squad).
-- **Run `npm run release`** (this will run `lerna publish`). Do not run `npm publish`.
-- You’ll be asked to specify a new version for every package that has changed. Options are *patch*, *minor* or *major*. These should directly align to the entries you put in the [unreleased changelog](/unreleased.md) in step 1.
-- You’ll be asked at the end to confirm. Note you can still exit without making these changes.
-- Move entries from [unreleased.md](/unreleased.md) to the [changelog](/changelog.md). Update the package versions for the new changes, and group them under a title with today’s date and a brief summary of what has changed.
-- Commit and push to master.
+- **Run `npm run release`** (this will run several checks and then `lerna publish`). Do not run `npm publish`.
+- You’ll be asked to confirm the new versions and descriptions for every package that has changed.
+- If you need to make changes you can exit without confirming and no changes will be made.
 
 Be aware that if `bpk-tokens` has changed, *all* packages in the repository will be updated as they all depend on `bpk-tokens`. Changing an existing token is almost always worth a "major" release, whereas adding a new token is usually a "minor" release.
 

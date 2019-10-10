@@ -28,7 +28,8 @@
     justify-content: center;
 
     &--light {
-      @include bpk-apply-gray-700-to(background-color);
+      background-color: $bpk-color-sky-gray-tint-01;
+
       @include bpk-border-radius-xs;
     }
   }

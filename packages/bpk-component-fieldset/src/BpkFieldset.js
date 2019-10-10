@@ -74,11 +74,11 @@ const BpkFieldset = (props: Props) => {
   const validationMessageId = `${childId}_validation_message`;
   const descriptionId = `${childId}_description`;
 
+  const isValid = isCheckbox ? valid : children.props.valid;
+
   // Explicit check for false primitive value as undefined is
   // treated as neither valid nor invalid
-  const isInvalid = isCheckbox
-    ? valid === false
-    : children.props.valid === false;
+  const isInvalid = isValid === false;
 
   const childrenProps: {
     required?: boolean,
@@ -109,7 +109,12 @@ const BpkFieldset = (props: Props) => {
   return (
     <fieldset className={classNames.join(' ')} {...rest}>
       {!isCheckbox && (
-        <BpkLabel htmlFor={childId} required={required} disabled={disabled}>
+        <BpkLabel
+          htmlFor={childId}
+          required={required}
+          disabled={disabled}
+          valid={isValid}
+        >
           {label}
         </BpkLabel>
       )}

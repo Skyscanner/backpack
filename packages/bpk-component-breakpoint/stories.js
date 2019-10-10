@@ -21,8 +21,8 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import {
   spacingBase,
-  colorGreen500,
-  colorGray100,
+  colorMonteverde,
+  colorSkyGrayTint06,
 } from 'bpk-tokens/tokens/base.es6';
 
 import BpkBreakpoint, { BREAKPOINTS } from './index';
@@ -30,7 +30,7 @@ import BpkBreakpoint, { BREAKPOINTS } from './index';
 const MediaQueryStatus = props => {
   const style = {
     padding: spacingBase,
-    backgroundColor: props.isActive ? colorGreen500 : colorGray100,
+    backgroundColor: props.isActive ? colorMonteverde : colorSkyGrayTint06,
   };
 
   return <div style={style}>{props.children}</div>;

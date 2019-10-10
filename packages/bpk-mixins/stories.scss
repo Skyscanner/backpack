@@ -20,70 +20,65 @@
 
 .bpk-icon {
   &-sm__chart {
-    @include bpk-icon-sm(chart-green-500);
+    @include bpk-icon-sm(chart-monteverde);
   }
 
   &-lg__chart {
-    @include bpk-icon-lg(chart-green-500);
+    @include bpk-icon-lg(chart-monteverde);
   }
 
   &__chart--small {
-    @include bpk-icon(chart, $bpk-color-green-500, small);
+    @include bpk-icon(chart, $bpk-color-monteverde, small);
   }
 
   &__chart--large {
-    @include bpk-icon(chart, $bpk-color-green-500, large);
+    @include bpk-icon(chart, $bpk-color-monteverde, large);
   }
 }
 
 .bpk-breakpoint {
   &-mobile {
     padding: $bpk-spacing-base;
-
-    @include bpk-apply-gray-100-to(background-color);
+    background-color: $bpk-color-sky-gray-tint-06;
 
     @include bpk-breakpoint-mobile {
-      background-color: $bpk-color-green-500;
+      background-color: $bpk-color-monteverde;
     }
   }
 
   &-tablet {
     padding: $bpk-spacing-base;
-
-    @include bpk-apply-gray-100-to(background-color);
+    background-color: $bpk-color-sky-gray-tint-06;
 
     @include bpk-breakpoint-tablet {
-      background-color: $bpk-color-green-500;
+      background-color: $bpk-color-monteverde;
     }
   }
 
   &-tablet-only {
     padding: $bpk-spacing-base;
-
-    @include bpk-apply-gray-100-to(background-color);
+    background-color: $bpk-color-sky-gray-tint-06;
 
     @include bpk-breakpoint-tablet-only {
-      background-color: $bpk-color-green-500;
+      background-color: $bpk-color-monteverde;
     }
   }
 
   &-above-mobile {
     padding: $bpk-spacing-base;
-
-    @include bpk-apply-gray-100-to(background-color);
+    background-color: $bpk-color-sky-gray-tint-06;
 
     @include bpk-breakpoint-above-mobile {
-      background-color: $bpk-color-green-500;
+      background-color: $bpk-color-monteverde;
     }
   }
 
   &-above-tablet {
     padding: $bpk-spacing-base;
-
-    @include bpk-apply-gray-100-to(background-color);
+    background-color: $bpk-color-sky-gray-tint-06;
 
     @include bpk-breakpoint-above-tablet {
-      background-color: $bpk-color-green-500;
+      background-color: $bpk-color-monteverde;
     }
   }
 }

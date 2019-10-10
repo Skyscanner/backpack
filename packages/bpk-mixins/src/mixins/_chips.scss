@@ -19,8 +19,8 @@
 @mixin bpk-chip {
   display: inline-block;
   padding: $bpk-spacing-xs $bpk-spacing-sm;
+  background-color: $bpk-color-sky-gray-tint-06;
 
-  @include bpk-apply-gray-100-to(background-color);
   @include bpk-border-radius-sm;
 }
 
@@ -29,8 +29,7 @@
   margin-top: 0;
   margin-right: $bpk-spacing-xs;
   margin-bottom: 0;
-
-  @include bpk-apply-gray-700-to(color);
+  color: $bpk-color-sky-gray-tint-01;
 
   @include bpk-rtl {
     margin-right: 0;

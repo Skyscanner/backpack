@@ -22,9 +22,8 @@
   position: relative;
   height: $bpk-spacing-sm;
   border-radius: $bpk-border-radius-sm;
+  background-color: $bpk-color-sky-gray-tint-06;
   overflow: hidden;
-
-  @include bpk-apply-gray-100-to(background-color);
 
   &--small {
     height: $bpk-spacing-xs;
@@ -42,7 +41,7 @@
     transition: width $bpk-duration-base ease-in-out;
     border-radius: $bpk-border-radius-sm;
 
-    @include bpk-themeable-property(background-color, --bpk-progress-bar-fill-color, $bpk-color-green-500);
+    @include bpk-themeable-property(background-color, --bpk-progress-bar-fill-color, $bpk-color-sky-blue);
 
     &--stepped {
       border-radius: 0;

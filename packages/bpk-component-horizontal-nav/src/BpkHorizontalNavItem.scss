@@ -43,25 +43,22 @@
     @include bpk-themeable-property(color, --bpk-horizontal-nav-link-color, $bpk-horizontal-nav-link-color);
 
     @include bpk-hover {
-      @include bpk-border-bottom-xl($bpk-color-gray-100);
-      @include bpk-border-bottom-xl(var(--bpk-color-gray-100, $bpk-color-gray-100));
+      @include bpk-border-bottom-xl($bpk-color-sky-gray-tint-06);
       @include bpk-themeable-property(color, --bpk-horizontal-nav-link-hover-color, $bpk-horizontal-nav-link-hover-color);
     }
 
     &:active {
-      @include bpk-border-bottom-xl($bpk-color-gray-200);
+      @include bpk-border-bottom-xl($bpk-color-sky-gray-tint-05);
       @include bpk-themeable-property(color, --bpk-horizontal-nav-link-active-color, $bpk-horizontal-nav-link-active-color);
     }
 
     &--disabled {
+      color: $bpk-color-sky-gray-tint-06;
       cursor: not-allowed;
 
-      @include bpk-apply-gray-100-to(color);
-
       &:active {
+        color: $bpk-color-sky-gray-tint-06;
         box-shadow: unset;
-
-        @include bpk-apply-gray-100-to(color);
       }
     }
 

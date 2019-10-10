@@ -20,7 +20,10 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
 
-import BpkStarRating, { getTypeByRating } from './BpkStarRating';
+import BpkStarRating, {
+  getTypeByRating,
+  ROUNDING_TYPES,
+} from './BpkStarRating';
 import { STAR_TYPES } from './BpkStar';
 
 describe('BpkStarRating', () => {
@@ -91,6 +94,17 @@ describe('BpkStarRating', () => {
         ratingLabel={(r, m) => `Rated ${r} out of ${m} stars`}
         rating={5}
         maxRating={8}
+      />,
+    );
+    expect(toJson(tree)).toMatchSnapshot();
+  });
+
+  it('should render correctly with "rounding" attribute', () => {
+    const tree = shallow(
+      <BpkStarRating
+        ratingLabel={(r, m) => `Rated ${r} out of ${m} stars`}
+        rating={3.4}
+        rounding={ROUNDING_TYPES.nearest}
       />,
     );
     expect(toJson(tree)).toMatchSnapshot();

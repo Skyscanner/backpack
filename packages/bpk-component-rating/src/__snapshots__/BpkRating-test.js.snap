@@ -1,0 +1,369 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BpkRating should correctly handling values higher than 10 1`] = `
+<div
+  aria-label="15 Amazing brilliant"
+  className="bpk-rating custom-classname"
+>
+  <span
+    aria-hidden="true"
+    className="bpk-text bpk-text--base bpk-rating__component bpk-rating--base-rating bpk-rating--high-rating"
+  >
+    <strong>
+      10
+    </strong>
+  </span>
+  <div
+    className="bpk-rating__text-wrapper bpk-rating__text-wrapper--horizontal"
+  >
+    <span
+      aria-hidden="true"
+      className="bpk-text bpk-text--base bpk-rating__text bpk-rating__text--horizontal"
+    >
+      <strong>
+        Amazing
+      </strong>
+    </span>
+    <span
+      aria-hidden="true"
+      className="bpk-text bpk-text--sm bpk-rating__text bpk-rating__text--horizontal"
+    >
+      Brilliant
+    </span>
+  </div>
+</div>
+`;
+
+exports[`BpkRating should correctly handling values lower than 0 1`] = `
+<div
+  aria-label="-1.3 Low bad option"
+  className="bpk-rating custom-classname"
+>
+  <span
+    aria-hidden="true"
+    className="bpk-text bpk-text--base bpk-rating__component bpk-rating--base-rating bpk-rating--low-rating"
+  >
+    <strong>
+      0
+    </strong>
+  </span>
+  <div
+    className="bpk-rating__text-wrapper bpk-rating__text-wrapper--horizontal"
+  >
+    <span
+      aria-hidden="true"
+      className="bpk-text bpk-text--base bpk-rating__text bpk-rating__text--horizontal"
+    >
+      <strong>
+        Low
+      </strong>
+    </span>
+    <span
+      aria-hidden="true"
+      className="bpk-text bpk-text--sm bpk-rating__text bpk-rating__text--horizontal"
+    >
+      Bad option
+    </span>
+  </div>
+</div>
+`;
+
+exports[`BpkRating should render a high score rating component 1`] = `
+<div
+  aria-label="9 Amazing best thing since sliced bread"
+  className="bpk-rating"
+>
+  <span
+    aria-hidden="true"
+    className="bpk-text bpk-text--base bpk-rating__component bpk-rating--base-rating bpk-rating--high-rating"
+  >
+    <strong>
+      9.0
+    </strong>
+  </span>
+  <div
+    className="bpk-rating__text-wrapper bpk-rating__text-wrapper--horizontal"
+  >
+    <span
+      aria-hidden="true"
+      className="bpk-text bpk-text--base bpk-rating__text bpk-rating__text--horizontal"
+    >
+      <strong>
+        Amazing
+      </strong>
+    </span>
+    <span
+      aria-hidden="true"
+      className="bpk-text bpk-text--sm bpk-rating__text bpk-rating__text--horizontal"
+    >
+      Best thing since sliced bread
+    </span>
+  </div>
+</div>
+`;
+
+exports[`BpkRating should render a large rating component 1`] = `
+<div
+  aria-label="9 Excellent would recommend"
+  className="bpk-rating"
+>
+  <span
+    aria-hidden="true"
+    className="bpk-text bpk-text--base bpk-rating__component bpk-rating--lg-rating bpk-rating--high-rating"
+  >
+    <strong>
+      9.0
+    </strong>
+  </span>
+  <div
+    className="bpk-rating__text-wrapper bpk-rating__text-wrapper--horizontal"
+  >
+    <span
+      aria-hidden="true"
+      className="bpk-text bpk-text--lg bpk-rating__text bpk-rating__text--horizontal"
+    >
+      <strong>
+        Excellent
+      </strong>
+    </span>
+    <span
+      aria-hidden="true"
+      className="bpk-text bpk-text--base bpk-rating__text bpk-rating__text--horizontal"
+    >
+      This place was amazing
+    </span>
+  </div>
+</div>
+`;
+
+exports[`BpkRating should render a low score rating component 1`] = `
+<div
+  aria-label="1.3 Low bad option"
+  className="bpk-rating"
+>
+  <span
+    aria-hidden="true"
+    className="bpk-text bpk-text--base bpk-rating__component bpk-rating--base-rating bpk-rating--low-rating"
+  >
+    <strong>
+      1.3
+    </strong>
+  </span>
+  <div
+    className="bpk-rating__text-wrapper bpk-rating__text-wrapper--horizontal"
+  >
+    <span
+      aria-hidden="true"
+      className="bpk-text bpk-text--base bpk-rating__text bpk-rating__text--horizontal"
+    >
+      <strong>
+        Low
+      </strong>
+    </span>
+    <span
+      aria-hidden="true"
+      className="bpk-text bpk-text--sm bpk-rating__text bpk-rating__text--horizontal"
+    >
+      Bad option
+    </span>
+  </div>
+</div>
+`;
+
+exports[`BpkRating should render a medium score rating component 1`] = `
+<div
+  aria-label="7 Average it's ok at best"
+  className="bpk-rating"
+>
+  <span
+    aria-hidden="true"
+    className="bpk-text bpk-text--base bpk-rating__component bpk-rating--base-rating bpk-rating--medium-rating"
+  >
+    <strong>
+      7.0
+    </strong>
+  </span>
+  <div
+    className="bpk-rating__text-wrapper bpk-rating__text-wrapper--horizontal"
+  >
+    <span
+      aria-hidden="true"
+      className="bpk-text bpk-text--base bpk-rating__text bpk-rating__text--horizontal"
+    >
+      <strong>
+        Average
+      </strong>
+    </span>
+    <span
+      aria-hidden="true"
+      className="bpk-text bpk-text--sm bpk-rating__text bpk-rating__text--horizontal"
+    >
+      It's ok at best
+    </span>
+  </div>
+</div>
+`;
+
+exports[`BpkRating should render a small rating component 1`] = `
+<div
+  aria-label="9 Excellent would recommend"
+  className="bpk-rating"
+>
+  <span
+    aria-hidden="true"
+    className="bpk-text bpk-text--base bpk-rating__component bpk-rating--sm-rating bpk-rating--high-rating"
+  >
+    <strong>
+      9.0
+    </strong>
+  </span>
+  <div
+    className="bpk-rating__text-wrapper bpk-rating__text-wrapper--horizontal"
+  >
+    <span
+      aria-hidden="true"
+      className="bpk-text bpk-text--sm bpk-rating__text bpk-rating__text--horizontal"
+    >
+      <strong>
+        Excellent
+      </strong>
+    </span>
+    <span
+      aria-hidden="true"
+      className="bpk-text bpk-text--sm bpk-rating__text bpk-rating__text--horizontal"
+    >
+      This place was amazing
+    </span>
+  </div>
+</div>
+`;
+
+exports[`BpkRating should render correctly 1`] = `
+<div
+  aria-label="6.7 Average might recommend"
+  className="bpk-rating"
+>
+  <span
+    aria-hidden="true"
+    className="bpk-text bpk-text--base bpk-rating__component bpk-rating--base-rating bpk-rating--medium-rating"
+  >
+    <strong>
+      6.7
+    </strong>
+  </span>
+  <div
+    className="bpk-rating__text-wrapper bpk-rating__text-wrapper--horizontal"
+  >
+    <span
+      aria-hidden="true"
+      className="bpk-text bpk-text--base bpk-rating__text bpk-rating__text--horizontal"
+    >
+      <strong>
+        Average
+      </strong>
+    </span>
+    <span
+      aria-hidden="true"
+      className="bpk-text bpk-text--sm bpk-rating__text bpk-rating__text--horizontal"
+    >
+      Might recommend
+    </span>
+  </div>
+</div>
+`;
+
+exports[`BpkRating should render title only correctly 1`] = `
+<div
+  aria-label="6.7 Average might recommend"
+  className="bpk-rating"
+>
+  <span
+    aria-hidden="true"
+    className="bpk-text bpk-text--base bpk-rating__component bpk-rating--base-rating bpk-rating--medium-rating"
+  >
+    <strong>
+      6.7
+    </strong>
+  </span>
+  <div
+    className="bpk-rating__text-wrapper bpk-rating__text-wrapper--horizontal"
+  >
+    <span
+      aria-hidden="true"
+      className="bpk-text bpk-text--base bpk-rating__text bpk-rating__text--horizontal"
+    >
+      <strong>
+        Average
+      </strong>
+    </span>
+  </div>
+</div>
+`;
+
+exports[`BpkRating should render vertical rating correctly 1`] = `
+<div
+  aria-label="6.7 Average might recommend"
+  className="bpk-rating bpk-rating--vertical"
+>
+  <span
+    aria-hidden="true"
+    className="bpk-text bpk-text--base bpk-rating__component bpk-rating--base-rating bpk-rating--medium-rating"
+  >
+    <strong>
+      6.7
+    </strong>
+  </span>
+  <div
+    className="bpk-rating__text-wrapper bpk-rating__text-wrapper--vertical"
+  >
+    <span
+      aria-hidden="true"
+      className="bpk-text bpk-text--base bpk-rating__text bpk-rating__text--vertical"
+    >
+      <strong>
+        Average
+      </strong>
+    </span>
+    <span
+      aria-hidden="true"
+      className="bpk-text bpk-text--sm bpk-rating__text bpk-rating__text--vertical"
+    >
+      Might recommend
+    </span>
+  </div>
+</div>
+`;
+
+exports[`BpkRating should support custom class names 1`] = `
+<div
+  aria-label="6.7 Average might recommend"
+  className="bpk-rating custom-classname"
+>
+  <span
+    aria-hidden="true"
+    className="bpk-text bpk-text--base bpk-rating__component bpk-rating--base-rating bpk-rating--medium-rating"
+  >
+    <strong>
+      6.7
+    </strong>
+  </span>
+  <div
+    className="bpk-rating__text-wrapper bpk-rating__text-wrapper--horizontal"
+  >
+    <span
+      aria-hidden="true"
+      className="bpk-text bpk-text--base bpk-rating__text bpk-rating__text--horizontal"
+    >
+      <strong>
+        Average
+      </strong>
+    </span>
+    <span
+      aria-hidden="true"
+      className="bpk-text bpk-text--sm bpk-rating__text bpk-rating__text--horizontal"
+    >
+      Might recommend
+    </span>
+  </div>
+</div>
+`;

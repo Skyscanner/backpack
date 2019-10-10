@@ -132,6 +132,44 @@ exports[`BpkStarRating should render correctly with "maxRating" attribute 1`] = 
 </div>
 `;
 
+exports[`BpkStarRating should render correctly with "rounding" attribute 1`] = `
+<div
+  aria-label="Rated 3.4 out of 5 stars"
+  className="bpk-star-rating"
+>
+  <withRtlSupport(BpkStar)
+    className={null}
+    key="star-1"
+    large={false}
+    type="full"
+  />
+  <withRtlSupport(BpkStar)
+    className={null}
+    key="star-2"
+    large={false}
+    type="full"
+  />
+  <withRtlSupport(BpkStar)
+    className={null}
+    key="star-3"
+    large={false}
+    type="full"
+  />
+  <withRtlSupport(BpkStar)
+    className={null}
+    key="star-4"
+    large={false}
+    type="half"
+  />
+  <withRtlSupport(BpkStar)
+    className={null}
+    key="star-5"
+    large={false}
+    type="empty"
+  />
+</div>
+`;
+
 exports[`BpkStarRating should render correctly with 0 stars 1`] = `
 <div
   aria-label="Rated 0 out of 5 stars"

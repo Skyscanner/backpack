@@ -26,12 +26,12 @@
   }
 
   &__clear-button {
-    opacity: 0;
+    display: none;
 
     @include bpk-input__clear-button;
 
     &--persistent {
-      opacity: 1;
+      display: inherit;
     }
   }
 
@@ -52,7 +52,7 @@
 
     // Display the clear button when a clearable input is focused.
     &:focus + .bpk-input__clear-button {
-      opacity: 1;
+      display: inherit;
     }
   }
 

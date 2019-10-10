@@ -6,18 +6,13 @@
     "category": "touchables"
   },
   "props": {
-    "UNDERLAY_COLOR": {
-      "value": "{!GRAY_900}",
-      "type": "color",
-      "deprecated": true
-    },
     "UNDERLAY_OPACITY": {
       "value": "0.15",
       "type": "number",
       "deprecated": true
     },
     "TOUCHABLE_OVERLAY_COLOR": {
-      "value": "{!GRAY_900}",
+      "value": "{!SKY_GRAY}",
       "type": "color"
     },
     "TOUCHABLE_OVERLAY_OPACITY": {

@@ -2100,7 +2100,7 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
         <div
           style={
             Object {
-              "backgroundColor": "rgb(255, 84, 82)",
+              "backgroundColor": "rgb(209, 67, 91)",
               "borderRadius": "5rem",
               "height": "50%",
               "margin": "25%",
@@ -2116,7 +2116,7 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
         <div
           style={
             Object {
-              "backgroundColor": "rgb(255, 84, 82)",
+              "backgroundColor": "rgb(209, 67, 91)",
               "borderRadius": "5rem",
               "height": "50%",
               "margin": "25%",
@@ -2132,7 +2132,7 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
         <div
           style={
             Object {
-              "backgroundColor": "rgb(255, 84, 82)",
+              "backgroundColor": "rgb(209, 67, 91)",
               "borderRadius": "5rem",
               "height": "50%",
               "margin": "25%",
@@ -2148,7 +2148,7 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
         <div
           style={
             Object {
-              "backgroundColor": "rgb(255, 84, 82)",
+              "backgroundColor": "rgb(209, 67, 91)",
               "borderRadius": "5rem",
               "height": "50%",
               "margin": "25%",
@@ -2164,7 +2164,7 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
         <div
           style={
             Object {
-              "backgroundColor": "rgb(255, 84, 82)",
+              "backgroundColor": "rgb(209, 67, 91)",
               "borderRadius": "5rem",
               "height": "50%",
               "margin": "25%",
@@ -2180,7 +2180,7 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
         <div
           style={
             Object {
-              "backgroundColor": "rgb(0, 215, 117)",
+              "backgroundColor": "rgb(0, 166, 152)",
               "borderRadius": "5rem",
               "height": "50%",
               "margin": "25%",
@@ -2196,7 +2196,7 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
         <div
           style={
             Object {
-              "backgroundColor": "rgb(0, 215, 117)",
+              "backgroundColor": "rgb(0, 166, 152)",
               "borderRadius": "5rem",
               "height": "50%",
               "margin": "25%",
@@ -2216,7 +2216,7 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
         <div
           style={
             Object {
-              "backgroundColor": "rgb(255, 84, 82)",
+              "backgroundColor": "rgb(209, 67, 91)",
               "borderRadius": "5rem",
               "height": "50%",
               "margin": "25%",
@@ -2232,7 +2232,7 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
         <div
           style={
             Object {
-              "backgroundColor": "rgb(255, 84, 82)",
+              "backgroundColor": "rgb(209, 67, 91)",
               "borderRadius": "5rem",
               "height": "50%",
               "margin": "25%",
@@ -2248,7 +2248,7 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
         <div
           style={
             Object {
-              "backgroundColor": "rgb(255, 84, 82)",
+              "backgroundColor": "rgb(209, 67, 91)",
               "borderRadius": "5rem",
               "height": "50%",
               "margin": "25%",
@@ -2264,7 +2264,7 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
         <div
           style={
             Object {
-              "backgroundColor": "rgb(255, 84, 82)",
+              "backgroundColor": "rgb(209, 67, 91)",
               "borderRadius": "5rem",
               "height": "50%",
               "margin": "25%",
@@ -2280,7 +2280,7 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
         <div
           style={
             Object {
-              "backgroundColor": "rgb(255, 84, 82)",
+              "backgroundColor": "rgb(209, 67, 91)",
               "borderRadius": "5rem",
               "height": "50%",
               "margin": "25%",
@@ -2296,7 +2296,7 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
         <div
           style={
             Object {
-              "backgroundColor": "rgb(0, 215, 117)",
+              "backgroundColor": "rgb(0, 166, 152)",
               "borderRadius": "5rem",
               "height": "50%",
               "margin": "25%",
@@ -2312,7 +2312,7 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
         <div
           style={
             Object {
-              "backgroundColor": "rgb(0, 215, 117)",
+              "backgroundColor": "rgb(0, 166, 152)",
               "borderRadius": "5rem",
               "height": "50%",
               "margin": "25%",
@@ -2332,7 +2332,7 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
         <div
           style={
             Object {
-              "backgroundColor": "rgb(255, 84, 82)",
+              "backgroundColor": "rgb(209, 67, 91)",
               "borderRadius": "5rem",
               "height": "50%",
               "margin": "25%",
@@ -2348,7 +2348,7 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
         <div
           style={
             Object {
-              "backgroundColor": "rgb(255, 84, 82)",
+              "backgroundColor": "rgb(209, 67, 91)",
               "borderRadius": "5rem",
               "height": "50%",
               "margin": "25%",
@@ -2364,7 +2364,7 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
         <div
           style={
             Object {
-              "backgroundColor": "rgb(255, 84, 82)",
+              "backgroundColor": "rgb(209, 67, 91)",
               "borderRadius": "5rem",
               "height": "50%",
               "margin": "25%",
@@ -2380,7 +2380,7 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
         <div
           style={
             Object {
-              "backgroundColor": "rgb(255, 84, 82)",
+              "backgroundColor": "rgb(209, 67, 91)",
               "borderRadius": "5rem",
               "height": "50%",
               "margin": "25%",
@@ -2396,7 +2396,7 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
         <div
           style={
             Object {
-              "backgroundColor": "rgb(255, 84, 82)",
+              "backgroundColor": "rgb(209, 67, 91)",
               "borderRadius": "5rem",
               "height": "50%",
               "margin": "25%",
@@ -2412,7 +2412,7 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
         <div
           style={
             Object {
-              "backgroundColor": "rgb(0, 215, 117)",
+              "backgroundColor": "rgb(0, 166, 152)",
               "borderRadius": "5rem",
               "height": "50%",
               "margin": "25%",
@@ -2428,7 +2428,7 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
         <div
           style={
             Object {
-              "backgroundColor": "rgb(0, 215, 117)",
+              "backgroundColor": "rgb(0, 166, 152)",
               "borderRadius": "5rem",
               "height": "50%",
               "margin": "25%",
@@ -2448,7 +2448,7 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
         <div
           style={
             Object {
-              "backgroundColor": "rgb(255, 84, 82)",
+              "backgroundColor": "rgb(209, 67, 91)",
               "borderRadius": "5rem",
               "height": "50%",
               "margin": "25%",
@@ -2464,7 +2464,7 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
         <div
           style={
             Object {
-              "backgroundColor": "rgb(255, 84, 82)",
+              "backgroundColor": "rgb(209, 67, 91)",
               "borderRadius": "5rem",
               "height": "50%",
               "margin": "25%",
@@ -2480,7 +2480,7 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
         <div
           style={
             Object {
-              "backgroundColor": "rgb(255, 84, 82)",
+              "backgroundColor": "rgb(209, 67, 91)",
               "borderRadius": "5rem",
               "height": "50%",
               "margin": "25%",
@@ -2496,7 +2496,7 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
         <div
           style={
             Object {
-              "backgroundColor": "rgb(255, 84, 82)",
+              "backgroundColor": "rgb(209, 67, 91)",
               "borderRadius": "5rem",
               "height": "50%",
               "margin": "25%",
@@ -2512,7 +2512,7 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
         <div
           style={
             Object {
-              "backgroundColor": "rgb(255, 84, 82)",
+              "backgroundColor": "rgb(209, 67, 91)",
               "borderRadius": "5rem",
               "height": "50%",
               "margin": "25%",
@@ -2528,7 +2528,7 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
         <div
           style={
             Object {
-              "backgroundColor": "rgb(0, 215, 117)",
+              "backgroundColor": "rgb(0, 166, 152)",
               "borderRadius": "5rem",
               "height": "50%",
               "margin": "25%",
@@ -2544,7 +2544,7 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
         <div
           style={
             Object {
-              "backgroundColor": "rgb(0, 215, 117)",
+              "backgroundColor": "rgb(0, 166, 152)",
               "borderRadius": "5rem",
               "height": "50%",
               "margin": "25%",
@@ -2564,7 +2564,7 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
         <div
           style={
             Object {
-              "backgroundColor": "rgb(255, 84, 82)",
+              "backgroundColor": "rgb(209, 67, 91)",
               "borderRadius": "5rem",
               "height": "50%",
               "margin": "25%",
@@ -2580,7 +2580,7 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
         <div
           style={
             Object {
-              "backgroundColor": "rgb(255, 84, 82)",
+              "backgroundColor": "rgb(209, 67, 91)",
               "borderRadius": "5rem",
               "height": "50%",
               "margin": "25%",
@@ -2596,7 +2596,7 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
         <div
           style={
             Object {
-              "backgroundColor": "rgb(255, 84, 82)",
+              "backgroundColor": "rgb(209, 67, 91)",
               "borderRadius": "5rem",
               "height": "50%",
               "margin": "25%",
@@ -2612,7 +2612,7 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
         <div
           style={
             Object {
-              "backgroundColor": "rgb(255, 84, 82)",
+              "backgroundColor": "rgb(209, 67, 91)",
               "borderRadius": "5rem",
               "height": "50%",
               "margin": "25%",
@@ -2628,7 +2628,7 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
         <div
           style={
             Object {
-              "backgroundColor": "rgb(255, 84, 82)",
+              "backgroundColor": "rgb(209, 67, 91)",
               "borderRadius": "5rem",
               "height": "50%",
               "margin": "25%",
@@ -2644,7 +2644,7 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
         <div
           style={
             Object {
-              "backgroundColor": "rgb(0, 215, 117)",
+              "backgroundColor": "rgb(0, 166, 152)",
               "borderRadius": "5rem",
               "height": "50%",
               "margin": "25%",
@@ -2660,7 +2660,7 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
         <div
           style={
             Object {
-              "backgroundColor": "rgb(0, 215, 117)",
+              "backgroundColor": "rgb(0, 166, 152)",
               "borderRadius": "5rem",
               "height": "50%",
               "margin": "25%",
@@ -2680,7 +2680,7 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
         <div
           style={
             Object {
-              "backgroundColor": "rgb(255, 84, 82)",
+              "backgroundColor": "rgb(209, 67, 91)",
               "borderRadius": "5rem",
               "height": "50%",
               "margin": "25%",
@@ -2696,7 +2696,7 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
         <div
           style={
             Object {
-              "backgroundColor": "rgb(255, 84, 82)",
+              "backgroundColor": "rgb(209, 67, 91)",
               "borderRadius": "5rem",
               "height": "50%",
               "margin": "25%",
@@ -2712,7 +2712,7 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
         <div
           style={
             Object {
-              "backgroundColor": "rgb(255, 84, 82)",
+              "backgroundColor": "rgb(209, 67, 91)",
               "borderRadius": "5rem",
               "height": "50%",
               "margin": "25%",
@@ -2728,7 +2728,7 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
         <div
           style={
             Object {
-              "backgroundColor": "rgb(255, 84, 82)",
+              "backgroundColor": "rgb(209, 67, 91)",
               "borderRadius": "5rem",
               "height": "50%",
               "margin": "25%",
@@ -2744,7 +2744,7 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
         <div
           style={
             Object {
-              "backgroundColor": "rgb(255, 84, 82)",
+              "backgroundColor": "rgb(209, 67, 91)",
               "borderRadius": "5rem",
               "height": "50%",
               "margin": "25%",
@@ -2760,7 +2760,7 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
         <div
           style={
             Object {
-              "backgroundColor": "rgb(0, 215, 117)",
+              "backgroundColor": "rgb(0, 166, 152)",
               "borderRadius": "5rem",
               "height": "50%",
               "margin": "25%",
@@ -2776,7 +2776,7 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
         <div
           style={
             Object {
-              "backgroundColor": "rgb(0, 215, 117)",
+              "backgroundColor": "rgb(0, 166, 152)",
               "borderRadius": "5rem",
               "height": "50%",
               "margin": "25%",

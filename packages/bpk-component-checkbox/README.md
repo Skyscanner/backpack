@@ -34,6 +34,7 @@ export default () => (
 | disabled   | bool     | false    | false         |
 | white      | bool     | false    | false         |
 | smallLabel | bool     | false    | false         |
+| valid      | bool     | false    | null          |
 
 ## Theme Props
 

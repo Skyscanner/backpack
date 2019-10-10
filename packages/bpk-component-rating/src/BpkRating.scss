@@ -1,0 +1,97 @@
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016-2019 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+@import '~bpk-mixins';
+
+.bpk-rating {
+  display: flex;
+
+  &--vertical {
+    flex-direction: column;
+  }
+
+  &__component {
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    color: $bpk-color-white;
+  }
+
+  &--base-rating {
+    display: flex;
+    width: $bpk-rating-base-width;
+    height: $bpk-rating-base-height;
+  }
+
+  &--lg-rating {
+    display: flex;
+    width: $bpk-rating-lg-width;
+    height: $bpk-rating-lg-height;
+    font-size: $bpk-font-size-lg;
+  }
+
+  &--sm-rating {
+    display: flex;
+    width: $bpk-rating-sm-width;
+    height: $bpk-rating-sm-width;
+    font-size: $bpk-font-size-sm;
+  }
+
+  &__text-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    &--horizontal {
+      padding-left: $bpk-spacing-sm;
+    }
+
+    &--vertical {
+      padding-top: $bpk-spacing-xs;
+    }
+  }
+
+  &__text {
+    &--horizontal {
+      text-align: left;
+    }
+
+    &--vertical {
+      align-self: center;
+      text-align: center;
+    }
+  }
+
+  &--high-rating {
+    align-self: center;
+
+    @include bpk-themeable-property(background-color, --bpk-rating-high-color, $bpk-color-monteverde);
+  }
+
+  &--medium-rating {
+    align-self: center;
+
+    @include bpk-themeable-property(background-color, --bpk-rating-medium-color, $bpk-color-kolkata);
+  }
+
+  &--low-rating {
+    align-self: center;
+
+    @include bpk-themeable-property(background-color, --bpk-rating-low-color, $bpk-color-panjin);
+  }
+}

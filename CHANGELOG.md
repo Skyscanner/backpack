@@ -1,6 +1,843 @@
 # Backpack changelog
 
-[Unreleased changes](./UNRELEASED.md).
+[Unreleased changes](./UNRELEASED.yaml).
+
+# 2019-10-08 - Added new 'rounding' prop to BpkStarRating
+
+**Added:**
+
+ - bpk-component-star-rating: 2.0.3 => 2.1.0
+   - Added `rounding` prop to control rounding behaviour.
+
+
+# 2019-10-03 - Add wallet icon
+
+**Added:**
+
+ - bpk-svgs: 8.0.2 => 8.1.0
+   - Added new `wallet` icon.
+
+
+# 2019-10-01
+
+**Added:**
+  - bpk-component-flare: 1.0.0
+    - New `BpkFlareBar` and `BpkContentBubble` components.
+
+# 2019-09-30 - Removed the old brand
+
+**Breaking:**
+
+ - bpk-animate-height: 1.2.2 => 2.0.0
+   - Removed the old brand
+
+ - bpk-component-accordion: 1.3.2 => 2.0.0
+   - Removed the old brand
+
+ - bpk-component-autosuggest: 3.1.2 => 4.0.0
+   - Removed the old brand
+
+ - bpk-component-badge: 1.3.2 => 2.0.0
+   - Removed the old brand
+
+ - bpk-component-banner-alert: 2.3.2 => 3.0.0
+   - Removed the old brand
+
+ - bpk-component-barchart: 2.5.2 => 3.0.0
+   - Removed the old brand
+
+ - bpk-component-blockquote: 1.2.2 => 2.0.0
+   - Removed the old brand
+
+ - bpk-component-breadcrumb: 1.1.2 => 2.0.0
+   - Removed the old brand
+
+ - bpk-component-breakpoint: 1.2.2 => 2.0.0
+   - Removed the old brand
+
+ - bpk-component-button: 2.6.2 => 3.0.0
+   - Removed the old brand
+
+ - bpk-component-calendar: 5.1.2 => 6.0.0
+   - Removed the old brand
+
+ - bpk-component-card: 1.2.2 => 2.0.0
+   - Removed the old brand
+
+ - bpk-component-checkbox: 1.6.2 => 2.0.0
+   - Removed the old brand
+
+ - bpk-component-chip: 2.1.2 => 3.0.0
+   - Removed the old brand
+
+ - bpk-component-close-button: 1.1.2 => 2.0.0
+   - Removed the old brand
+
+ - bpk-component-code: 1.2.2 => 2.0.0
+   - Removed the old brand
+
+ - bpk-component-content-container: 1.4.2 => 2.0.0
+   - Removed the old brand
+
+ - bpk-component-datatable: 0.2.2 => 1.0.0
+   - Removed the old brand
+
+ - bpk-component-datepicker: 9.1.2 => 10.0.0
+   - Removed the old brand
+
+ - bpk-component-description-list: 1.1.2 => 2.0.0
+   - Removed the old brand
+
+ - bpk-component-dialog: 1.2.2 => 2.0.0
+   - Removed the old brand
+
+ - bpk-component-drawer: 1.3.2 => 2.0.0
+   - Removed the old brand
+
+ - bpk-component-fieldset: 1.3.2 => 2.0.0
+   - Removed the old brand
+
+ - bpk-component-form-validation: 2.2.2 => 3.0.0
+   - Removed the old brand
+
+ - bpk-component-grid-toggle: 1.2.2 => 2.0.0
+   - Removed the old brand
+
+ - bpk-component-grid: 1.2.2 => 2.0.0
+   - Removed the old brand
+
+ - bpk-component-heading: 2.2.2 => 3.0.0
+   - Removed the old brand
+
+ - bpk-component-horizontal-nav: 2.5.2 => 3.0.0
+   - Removed the old brand
+
+ - bpk-component-icon: 4.2.2 => 5.0.0
+   - Removed the old brand
+
+ - bpk-component-image: 2.4.2 => 3.0.0
+   - Removed the old brand
+
+ - bpk-component-infinite-scroll: 2.3.2 => 3.0.0
+   - Removed the old brand
+
+ - bpk-component-input: 4.3.2 => 5.0.0
+   - Removed the old brand
+
+ - bpk-component-label: 3.4.2 => 4.0.0
+   - Removed the old brand
+
+ - bpk-component-link: 1.3.2 => 2.0.0
+   - Removed the old brand
+
+ - bpk-component-list: 1.2.2 => 2.0.0
+   - Removed the old brand
+
+ - bpk-component-loading-button: 2.1.2 => 3.0.0
+   - Removed the old brand
+
+ - bpk-component-map: 2.6.2 => 3.0.0
+   - Removed the old brand
+
+ - bpk-component-mobile-scroll-container: 1.2.2 => 2.0.0
+   - Removed the old brand
+
+ - bpk-component-modal: 1.9.2 => 2.0.0
+   - Removed the old brand
+
+ - bpk-component-navigation-bar: 1.3.2 => 2.0.0
+   - Removed the old brand
+
+ - bpk-component-navigation-stack: 1.1.2 => 2.0.0
+   - Removed the old brand
+
+ - bpk-component-nudger: 1.3.2 => 2.0.0
+   - Removed the old brand
+
+ - bpk-component-pagination: 1.1.2 => 2.0.0
+   - Removed the old brand
+
+ - bpk-component-panel: 1.1.2 => 2.0.0
+   - Removed the old brand
+
+ - bpk-component-paragraph: 1.1.2 => 2.0.0
+   - Removed the old brand
+
+ - bpk-component-phone-input: 3.2.2 => 4.0.0
+   - Removed the old brand
+
+ - bpk-component-popover: 2.3.2 => 3.0.0
+   - Removed the old brand
+
+ - bpk-component-progress: 1.1.2 => 2.0.0
+   - Removed the old brand
+
+ - bpk-component-radio: 1.5.2 => 2.0.0
+   - Removed the old brand
+
+ - bpk-component-rating: 1.4.2 => 2.0.0
+   - Removed the old brand
+
+ - bpk-component-router-link: 2.1.2 => 3.0.0
+   - Removed the old brand
+
+ - bpk-component-rtl-toggle: 1.2.2 => 2.0.0
+   - Removed the old brand
+
+ - bpk-component-scrollable-calendar: 1.1.2 => 2.0.0
+   - Removed the old brand
+
+ - bpk-component-section-list: 1.1.2 => 2.0.0
+   - Removed the old brand
+
+ - bpk-component-select: 2.5.2 => 3.0.0
+   - Removed the old brand
+
+ - bpk-component-slider: 1.2.2 => 2.0.0
+   - Removed the old brand
+
+ - bpk-component-spinner: 2.3.2 => 3.0.0
+   - Removed the old brand
+
+ - bpk-component-star-rating: 1.2.2 => 2.0.0
+   - Removed the old brand
+
+ - bpk-component-table: 1.2.2 => 2.0.0
+   - Removed the old brand
+
+ - bpk-component-text: 1.2.2 => 2.0.0
+   - Removed the old brand
+
+ - bpk-component-textarea: 1.3.2 => 2.0.0
+   - Removed the old brand
+
+ - bpk-component-theme-toggle: 1.3.2 => 2.0.0
+   - Removed the old brand
+
+ - bpk-component-ticket: 2.1.2 => 3.0.0
+   - Removed the old brand
+
+ - bpk-component-tooltip: 3.2.2 => 4.0.0
+   - Removed the old brand
+
+ - bpk-mixins: 18.2.2 => 19.0.0
+   - Removed the old brand
+
+ - bpk-scrim-utils: 3.3.2 => 4.0.0
+   - Removed the old brand
+
+ - bpk-stylesheets: 3.4.2 => 4.0.0
+   - Removed the old brand
+
+ - bpk-svgs: 7.3.2 => 8.0.0
+   - Removed the old brand
+
+ - bpk-theming: 1.3.2 => 2.0.0
+   - Removed the old brand
+
+ - bpk-tokens: 28.0.1 => 29.0.0
+   - Removed the old brand
+
+
+# 2019-09-27 - Fixed pagination issue
+
+**Fixed:**
+
+ - bpk-component-pagination: 1.1.1 => 1.1.2
+   - Fixed issue where pagination buttons were not circular
+
+
+# 2019-09-26 - Fixed spelling of colour token
+
+**Breaking:**
+
+ - bpk-tokens: 27.12.0 => 28.0.0
+   - Renamed `segano` to `sagano`.
+
+
+# 2019-09-26 - New brand colours
+
+**Added:**
+
+ - bpk-animate-height: 1.1.136 => 1.2.0
+   - Added new brand colours
+
+ - bpk-component-accordion: 1.2.125 => 1.3.0
+   - Added new brand colours
+
+ - bpk-component-autosuggest: 3.0.194 => 3.1.0
+   - Added new brand colours
+
+ - bpk-component-badge: 1.2.6 => 1.3.0
+   - Added new brand colours
+
+ - bpk-component-banner-alert: 2.2.6 => 2.3.0
+   - Added new brand colours
+
+ - bpk-component-barchart: 2.4.28 => 2.5.0
+   - Added new brand colours
+
+ - bpk-component-blockquote: 1.1.155 => 1.2.0
+   - Added new brand colours
+
+ - bpk-component-breadcrumb: 1.0.105 => 1.1.0
+   - Added new brand colours
+
+ - bpk-component-breakpoint: 1.1.97 => 1.2.0
+   - Added new brand colours
+
+ - bpk-component-button: 2.5.15 => 2.6.0
+   - Added new brand colours
+
+ - bpk-component-calendar: 5.0.50 => 5.1.0
+   - Added new brand colours
+
+ - bpk-component-card: 1.1.112 => 1.2.0
+   - Added new brand colours
+
+ - bpk-component-checkbox: 1.5.8 => 1.6.0
+   - Added new brand colours
+
+ - bpk-component-chip: 2.0.117 => 2.1.0
+   - Added new brand colours
+
+ - bpk-component-close-button: 1.0.164 => 1.1.0
+   - Added new brand colours
+
+ - bpk-component-code: 1.1.102 => 1.2.0
+   - Added new brand colours
+
+ - bpk-component-content-container: 1.3.103 => 1.4.0
+   - Added new brand colours
+
+ - bpk-component-datatable: 0.1.118 => 0.2.0
+   - Added new brand colours
+
+ - bpk-component-datepicker: 9.0.53 => 9.1.0
+   - Added new brand colours
+
+ - bpk-component-description-list: 1.0.124 => 1.1.0
+   - Added new brand colours
+
+ - bpk-component-dialog: 1.1.97 => 1.2.0
+   - Added new brand colours
+
+ - bpk-component-drawer: 1.2.124 => 1.3.0
+   - Added new brand colours
+
+ - bpk-component-fieldset: 1.2.6 => 1.3.0
+   - Added new brand colours
+
+ - bpk-component-form-validation: 2.1.6 => 2.2.0
+   - Added new brand colours
+
+ - bpk-component-grid-toggle: 1.1.117 => 1.2.0
+   - Added new brand colours
+
+ - bpk-component-grid: 1.1.168 => 1.2.0
+   - Added new brand colours
+
+ - bpk-component-heading: 2.1.168 => 2.2.0
+   - Added new brand colours
+
+ - bpk-component-horizontal-nav: 2.4.57 => 2.5.0
+   - Added new brand colours
+
+ - bpk-component-icon: 4.1.7 => 4.2.0
+   - Added new brand colours
+
+ - bpk-component-image: 2.3.19 => 2.4.0
+   - Added new brand colours
+
+ - bpk-component-infinite-scroll: 2.2.65 => 2.3.0
+   - Added new brand colours
+
+ - bpk-component-input: 4.2.6 => 4.3.0
+   - Added new brand colours
+
+ - bpk-component-label: 3.3.3 => 3.4.0
+   - Added new brand colours
+
+ - bpk-component-link: 1.2.98 => 1.3.0
+   - Added new brand colours
+
+ - bpk-component-list: 1.1.138 => 1.2.0
+   - Added new brand colours
+
+ - bpk-component-loading-button: 2.0.124 => 2.1.0
+   - Added new brand colours
+
+ - bpk-component-map: 2.5.43 => 2.6.0
+   - Added new brand colours
+
+ - bpk-component-mobile-scroll-container: 1.1.106 => 1.2.0
+   - Added new brand colours
+
+ - bpk-component-modal: 1.8.97 => 1.9.0
+   - Added new brand colours
+
+ - bpk-component-navigation-bar: 1.2.105 => 1.3.0
+   - Added new brand colours
+
+ - bpk-component-navigation-stack: 1.0.110 => 1.1.0
+   - Added new brand colours
+
+ - bpk-component-nudger: 1.2.20 => 1.3.0
+   - Added new brand colours
+
+ - bpk-component-pagination: 1.0.133 => 1.1.0
+   - Added new brand colours
+
+ - bpk-component-panel: 1.0.161 => 1.1.0
+   - Added new brand colours
+
+ - bpk-component-paragraph: 1.0.161 => 1.1.0
+   - Added new brand colours
+
+ - bpk-component-phone-input: 3.1.38 => 3.2.0
+   - Added new brand colours
+
+ - bpk-component-popover: 2.2.73 => 2.3.0
+   - Added new brand colours
+
+ - bpk-component-progress: 1.0.169 => 1.1.0
+   - Added new brand colours
+
+ - bpk-component-radio: 1.4.8 => 1.5.0
+   - Added new brand colours
+
+ - bpk-component-rating: 1.3.3 => 1.4.0
+   - Added new brand colours
+
+ - bpk-component-router-link: 2.0.83 => 2.1.0
+   - Added new brand colours
+
+ - bpk-component-rtl-toggle: 1.1.117 => 1.2.0
+   - Added new brand colours
+
+ - bpk-component-scrollable-calendar: 1.0.50 => 1.1.0
+   - Added new brand colours
+
+ - bpk-component-section-list: 1.0.104 => 1.1.0
+   - Added new brand colours
+
+ - bpk-component-select: 2.4.6 => 2.5.0
+   - Added new brand colours
+
+ - bpk-component-slider: 1.1.131 => 1.2.0
+   - Added new brand colours
+
+ - bpk-component-spinner: 2.2.129 => 2.3.0
+   - Added new brand colours
+
+ - bpk-component-star-rating: 1.1.10 => 1.2.0
+   - Added new brand colours
+
+ - bpk-component-table: 1.1.103 => 1.2.0
+   - Added new brand colours
+
+ - bpk-component-text: 1.1.29 => 1.2.0
+   - Added new brand colours
+
+ - bpk-component-textarea: 1.2.6 => 1.3.0
+   - Added new brand colours
+
+ - bpk-component-theme-toggle: 1.2.6 => 1.3.0
+   - Added new brand colours
+
+ - bpk-component-ticket: 2.0.22 => 2.1.0
+   - Added new brand colours
+
+ - bpk-component-tooltip: 3.1.116 => 3.2.0
+   - Added new brand colours
+
+ - bpk-mixins: 18.1.6 => 18.2.0
+   - Added new brand colours
+
+ - bpk-scrim-utils: 3.2.98 => 3.3.0
+   - Added new brand colours
+
+ - bpk-stylesheets: 3.3.17 => 3.4.0
+   - Added new brand colours
+
+ - bpk-svgs: 7.2.4 => 7.3.0
+   - Added new brand colours
+
+ - bpk-theming: 1.2.23 => 1.3.0
+   - Added new brand colours
+
+ - bpk-tokens: 27.11.0 => 27.12.0
+   - Added new brand colours
+   - Deprecated all the old brand colours
+
+
+# 2019-09-24 - New brand colours
+
+**Added:**
+
+ - bpk-tokens: 27.10.1 => 27.11.0
+   - NEW BRAND COLOURS ADDED 🎉
+
+
+# 2019-09-19 - Border Radius XS value uses `4px`
+
+**Fixed:**
+
+ - bpk-tokens: 27.10.0 => 27.10.1
+   - `$bpk-border-radius-xs` value now `4px` to be consistent across platforms.
+
+
+# 2019-09-18 - Fix blurred popovers and include button border radii in mixins
+
+**Fixed:**
+
+ - bpk-component-button: 2.5.12 => 2.5.13
+ - bpk-mixins: 18.1.3 => 18.1.4
+   - Moved `icon-only` border radius `scss` to mixins to always apply when using mixins directly.
+
+ - bpk-component-popover: 2.2.70 => 2.2.71
+ - bpk-component-tooltip: 3.1.113 => 3.1.114
+   - Fixed issue that sometimes causes blurry rendering in Safari and Chrome.
+
+
+# 2019-09-13 - BpkRating title-only support
+
+**Added:**
+
+ - bpk-component-rating: 1.2.1 => 1.3.0
+   - Made `subtitle` prop optional to support title-only variant of rating component.
+
+
+# 2019-09-13 - Fixed BpkRating vertical spacing
+
+**Fixed:**
+
+ - bpk-component-rating: 1.2.0 => 1.2.1
+   - Fixed spacing issue with vertical variant.
+
+
+# 2019-09-13 - BpkRating vertical layout support
+
+**Added:**
+
+ - bpk-component-rating: 1.1.3 => 1.2.0
+   - Added new `vertical` prop to allow support for vertical orientation.
+
+
+# 2019-09-11 - Fixed scroll container bug in RTL
+
+**Added:**
+
+ - bpk-component-label: 3.2.163 => 3.3.0
+   - New `valid` prop to help render the label for an invalid field.
+
+**Fixed:**
+
+ - bpk-component-mobile-scroll-container: 1.1.102 => 1.1.103
+   - Fixed an issue that caused the left/right indicators to be shown incorrectly in RTL.
+
+**Added:**
+
+ - bpk-react-utils: 2.7.10 => 2.8.0
+   - Added a new `isRTL` helper method.
+
+
+# 2019-09-10 - Deprecated gray theming mixins and removed gray theming from components
+
+**Fixed:**
+
+ - bpk-mixins: 18.1.1 => 18.1.2
+   - Deprecated gray theming mixins due to gray colours being fixed.
+   - Components that utilised the gray theming mixins will now directly use the gray colours.
+
+
+# 2019-09-09 - Fix for missing export
+
+**Fixed:**
+
+ - bpk-component-rating: 1.1.0 => 1.1.1
+   - Fixed issue where `RATING_SIZES` was not being exported.
+
+
+# 2019-09-09 - New `size` prop to support `large` and `small` rating components
+
+**Added:**
+
+ - bpk-component-rating: 1.0.10 => 1.1.0
+   - Added new `size` prop to support multiple rating component sizes.
+
+ - bpk-tokens: 27.9.5 => 27.10.0
+   - Added new tokens for `BpkRating` component
+
+
+# 2019-09-04 - Theming support for `BpkBadge`, `BpkBannerAlert` and form fields.
+
+**Added:**
+  - bpk-component-badge: 1.1.106 => 1.2.0
+    - Added new theming props `badgeBackgroundColor`, `badgeSuccessBackgroundColor`, `badgeDestructiveBackgroundColor` to support theming.
+  - bpk-component-banner-alert: 2.1.24 => 2.2.0
+    - Added new theming props `bannerAlertSuccessColor`, `bannerAlertWarnColor`, `bannerAlertErrorColor` to support theming.
+  - bpk-component-fieldset: 1.1.130 => 1.2.0
+  - bpk-component-form-validation: 2.0.43 => 2.1.0
+  - bpk-component-input: 4.1.43 => 4.2.0
+  - bpk-component-select: 2.3.23 => 2.4.0
+  - bpk-component-textarea: 1.1.37 => 1.2.0
+  - bpk-component-theme-toggle: 1.1.9 => 1.2.0
+  - bpk-mixins: 18.0.11 => 18.1.0
+    - Added theming support for invalid state for inputs
+
+# 2019-09-03 - New icon
+
+**Added:**
+ - bpk-svgs:
+   - Added `single-booking` icon.
+
+# 2019-09-03 - Invalid states for more input types
+
+**Added:**
+ - bpk-svgs:
+   - Adding `radio-invalid.svg` for a red outline radio button.
+   - Adding `checkbox-invalid.svg` for a red outline checkbox.
+
+ - bpk-mixins:
+   - Updating invalid mixins for input, select and textarea input mixins to have white background.
+   - Adding `bpk-checkbox--invalid` and `bpk-radio--invalid` to use their respective invalid SVGs
+
+ - bpk-component-checkbox:
+   - Added valid property to support invalid state of checkboxes.
+
+ - bpk-component-fieldset:
+   - Adding styling to the form label when invalid.
+
+ - bpk-component-radio:
+   - Added valid property to support invalid state of radio buttons.
+
+# 2019-09-03 - `BpkPagination` buttons are always circular
+
+**Fixed:**
+- bpk-component-pagination: 1.0.123 => 1.0.124
+  - Pagination buttons are now always circular regardless of theming.
+
+# 2019-08-29 - Theming support for `BpkStarRating` component.
+
+**Added:**
+  - bpk-component-star-rating: 1.0.152 => 1.1.0
+    - Added new theming prop `starRatingFilledColor` to allow the star colour to be changed.
+
+# 2019-08-27 - Remove unreleased deprecated tokens
+
+**Fixed:**
+- bpk-tokens: 27.9.2 => 27.9.3
+  - Removed unreleased deprecated tokens
+
+# 2019-08-26 - Fix token changes
+
+**Fixed:**
+- bpk-tokens: 27.9.0 => 27.9.2
+  - Correct name for semantic text color names, previously published names have been deprecated.
+
+# 2019-08-23 - Text token changes
+
+**Added:**
+
+- bpk-tokens: 27.8.0 => 27.9.0
+  - Added new tokens for text primary and secondary color in light mode UIs.
+  - Added new token for font weight black (equivalent to 900).
+
+# 2019-08-23 - Enable font-size theming in button
+
+**Added:**
+
+ - bpk-component-button: 2.4.9 => 2.5.0
+   - New optional `buttonFontSize` theme attribute.
+
+
+# 2019-08-19 - Rating component added.
+
+**Added:**
+  - bpk-component-rating: 1.0.0
+    - Introducing the rating component.
+  - bpk-tokens: 27.7.0 => 27.8.0
+    - Tokens for supporting rating component.
+  - bpk-component-theme-toggle: 1.0.123 => 1.1.0
+    - Theme attributes to support rating component.
+
+# 2019-08-16 - Updated `gray` colours
+
+**Changed**:
+  - bpk-stylesheets: 3.2.188 => 3.3.0
+    - Updated `color` on `body` to reflect the updated gray color.
+  - bpk-svgs: 7.0.0 => 7.1.0
+    - Updated `svg borders` to utilise updated gray color.
+  - bpk-tokens: 27.6.6 => 27.7.0
+    - Updated gray colours `gray50`, `gray100`, `gray200`, `gray300`, `gray400`, `gray500`, `gray700`, `gray900`
+    - Deprecated `gray600` and `gray800` please update as these will be removed in the future.
+      - For these tokens please use either one token above or below your current value to suit your needs.
+
+# 2019-08-12 - Added vertical swap icon
+
+**Breaking:**
+
+ - bpk-component-icon: 3.31.8 => 4.0.0
+ - bpk-mixins: 17.24.8 => 18.0.0
+ - bpk-svgs: 6.9.6 => 7.0.0
+   - `swap` icon renamed `swap--horizontal`.
+   - New `swap--vertical` icon.
+
+
+# 2019-08-08 - New `borderRadiusStyle` prop for `BpkImage`
+
+**Added:**
+
+ - bpk-component-image: 2.2.12 => 2.3.0
+   - New `borderRadiusStyle` prop for adding rounded corners to images.
+
+
+# 2019-08-07 - Input bug fix
+
+**Fixed:**
+
+ - bpk-component-input: 4.1.30 => 4.1.31
+   - Fixed clear button in `whileEditing` so that it cannot be clicked when not visible.
+
+
+# 2019-08-06 - Updated form element border colours
+
+**Fixed:**
+  - bpk-tokens: 27.6.5 => 27.6.6
+    - Changed `$bpk-input-border` and `$bpk-select-border` to use `gray300` from `gray100`
+  - bpk-svgs: 6.9.5 => 6.9.6
+    - Changed border colours of `radio` and `checkbox` `svgs` to use `gray300` from `gray100`
+
+# 2019-07-30 - New flexible nudger variant
+
+**Added:**
+
+ - bpk-component-nudger: 1.1.3 => 1.2.0
+   - Added `BpkConfigurableNudger`, which is more flexible than the existing `BpkNudger` and works with any data.
+
+
+# 2019-07-26 - Update ticket line appearance
+
+**Breaking:**
+
+ - bpk-component-ticket: 1.2.73 => 2.0.0
+   - The dashed line has been replaced with a solid line of the same colour and weight. This is a visually breaking change only.
+
+
+# 2019-07-25 - Fix button when disabled and href supplied.
+
+**Fixed:**
+  - bpk-component-button: 2.4.2 => 2.4.3
+    - Fixed issue where `BpkButton` would ignore disabled prop when href prop is provided.
+
+# 2019-07-24 - Ability to change nudger button type.
+
+**Added:**
+ - bpk-component-nudger: 1.0.145 => 1.1.0
+    - New `buttonType` prop for changing the button type used in the nudger.
+
+# 2019-07-23 - New trips icon
+
+**Fixed:**
+
+ - bpk-svgs: 6.9.1 => 6.9.2
+   - Replaced the `trips` icon.
+
+
+# 2019-07-23 - New outline button type
+
+**Added:**
+
+ - bpk-component-button: 2.3.15 => 2.4.0
+   - New `outline` prop for creating outline buttons. See https://backpack.github.io/components/button?platform=web#outline
+
+
+# 2019-07-12 - New `flight-landing`, `flight-takeoff` and `aircraft` icons.
+
+**Added:**
+
+ - bpk-svgs: 6.8.1 => 6.9.0
+   - New `flight-landing`, `flight-takeoff` and `aircraft` icons.
+
+
+# 2019-07-10 - New `yAxisDomain` prop
+
+**Added:**
+
+ - bpk-component-barchart: 2.3.81 => 2.4.0
+   - New `yAxisDomain` prop to set a custom y axis domain.
+
+
+# 2019-07-08 - Fix infinite scroll update with empty lists
+
+**Fixed::**
+
+- bpk-component-infinite-scroll:
+  - Updating data to an empty array will now refresh the list
+
+# 2019-07-08 - Fix for phone input clicks not being registered
+
+**Fixed:**
+
+ - bpk-component-phone-input: 3.1.8 => 3.1.9
+   - Fixed issue which meant clicking on an image inside a `BpkSelect` would not open the select menu.
+
+ - bpk-component-select: 2.3.3 => 2.3.4
+   - Fixed issue which meant clicking on an image inside a `BpkSelect` would not open the select menu.
+
+
+# 2019-07-02 - `iconOnly` buttons always circular
+
+**Fixed:**
+
+ - bpk-component-button: 2.3.13 => 2.3.14
+   - `iconOnly` buttons no longer apply `borderRadius` from theming and are always circular.
+
+
+2019-06-28 - Bug fix for mobile modal and dialog scrims
+
+**Fixed:**
+
+ - bpk-component-dialog: 1.1.68 => 1.1.69
+   - Fixed an issue that caused the scrim to initially be shown at full opacity when initially rendered.
+
+ - bpk-component-modal: 1.8.68 => 1.8.69
+   - Fixed an issue that caused the scrim to initially be shown at full opacity when initially rendered.
+
+
+# 2019-06-25 New icons
+
+**Added:**
+- bpk-component-icon:
+- bpk-mixins:
+- bpk-svgs:
+  - New `paid`, `star-outline` icons added.
+
+**Updated:**
+- bpk-component-icon:
+- bpk-mixins:
+- bpk-svgs:
+  - Updated `meal`, `bar`, `star`, `star-half` `media` icons.
+
+# 2019-06-19 - Added `ariaLabel` prop to `BpkRadio` component
+
+**Added:**
+- bpk-component-radio: 1.2.99 => 1.3.0
+  - New `ariaLabel` prop for manually setting the `aria-label`. Defaults to `props.label`.
+
+
+# 2019-06-18 - Added optional hydration warning suppression to lazy loaded images
+
+**Added:**
+- bpk-component-image: 2.1.43 => 2.2.0
+  - New prop `suppressHydrationWarning` on `BpkImage` which can be used to suppress hydration warnings for lazy loaded images.
+
+# 2019-06-17 - Added new `tagName` to `BpkText` component
+
+**Changed:**
+- bpk-component-text: 1.0.130 => 1.0.131
+  - Added new supported tagName option `text` to support text elements.
 
 # 2019-06-13 - `BpkPhoneInput` removed flag only and input code display
 

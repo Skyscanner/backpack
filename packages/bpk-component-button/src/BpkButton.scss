@@ -38,6 +38,10 @@
     @include bpk-button--destructive;
   }
 
+  &--outline {
+    @include bpk-button--outline;
+  }
+
   &--link {
     @include bpk-button--link;
   }

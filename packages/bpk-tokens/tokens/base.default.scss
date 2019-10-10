@@ -20,11 +20,11 @@
 /// @group autosuggest
 $bpk-autosuggest-list-background-color: rgb(255, 255, 255) !default;
 /// @group autosuggest
-$bpk-autosuggest-list-item-active-background-color: rgb(230, 228, 235) !default;
+$bpk-autosuggest-list-item-active-background-color: rgb(221, 221, 229) !default;
 /// @group autosuggest
-$bpk-autosuggest-list-item-highlighted-background-color: rgb(243, 242, 245) !default;
+$bpk-autosuggest-list-item-highlighted-background-color: rgb(241, 242, 248) !default;
 /// @group badges
-$bpk-badge-background-color: rgb(255, 187, 0) !default;
+$bpk-badge-background-color: rgb(255, 181, 77) !default;
 /// @group badges
 $bpk-badge-centered-vertical-align: text-bottom !default;
 /// @group badges
@@ -34,29 +34,29 @@ $bpk-badge-padding-y: 0 !default;
 /// @group notifications
 $bpk-banner-alert-background-color: rgb(255, 255, 255) !default;
 /// @group notifications
-$bpk-banner-alert-children-color: rgb(129, 123, 143) !default;
+$bpk-banner-alert-children-color: rgb(104, 105, 127) !default;
 /// @group notifications
 $bpk-banner-alert-children-padding-x: .75rem !default;
 /// @group notifications
 $bpk-banner-alert-children-padding-y: .375rem !default;
 /// @group notifications
-$bpk-banner-alert-error-color: rgb(255, 84, 82) !default;
+$bpk-banner-alert-error-color: rgb(209, 67, 91) !default;
 /// @group notifications
-$bpk-banner-alert-expand-icon-fill: rgb(82, 76, 97) !default;
+$bpk-banner-alert-expand-icon-fill: rgb(68, 69, 96) !default;
 /// @group notifications
-$bpk-banner-alert-header-expandable-active-background-color: rgb(230, 228, 235) !default;
+$bpk-banner-alert-header-expandable-active-background-color: rgb(221, 221, 229) !default;
 /// @group notifications
-$bpk-banner-alert-header-expandable-hover-background-color: rgb(243, 242, 245) !default;
+$bpk-banner-alert-header-expandable-hover-background-color: rgb(241, 242, 248) !default;
 /// @group notifications
 $bpk-banner-alert-header-padding-x: .75rem !default;
 /// @group notifications
 $bpk-banner-alert-header-padding-y: .375rem !default;
 /// @group notifications
-$bpk-banner-alert-neutral-color: rgb(129, 123, 143) !default;
+$bpk-banner-alert-neutral-color: rgb(104, 105, 127) !default;
 /// @group notifications
-$bpk-banner-alert-success-color: rgb(0, 215, 117) !default;
+$bpk-banner-alert-success-color: rgb(0, 166, 152) !default;
 /// @group notifications
-$bpk-banner-alert-warn-color: rgb(255, 187, 0) !default;
+$bpk-banner-alert-warn-color: rgb(255, 181, 77) !default;
 /// @group radii
 $bpk-border-radius-pill: 1.125rem !default;
 /// @group radii
@@ -64,7 +64,7 @@ $bpk-border-radius-pill-lg: 1.3125rem !default;
 /// @group radii
 $bpk-border-radius-sm: .375rem !default;
 /// @group radii
-$bpk-border-radius-xs: .1875rem !default;
+$bpk-border-radius-xs: .25rem !default;
 /// @group borders
 $bpk-border-size-lg: 2px !default;
 /// @group borders
@@ -94,7 +94,7 @@ $bpk-breakpoint-query-tablet-only: "(min-width: 32.3125rem) and (max-width: 50.2
 /// @group breakpoints
 $bpk-breakpoint-tablet: 50.25rem !default;
 /// @group buttons
-$bpk-button-active-background-color: rgb(0, 168, 93) !default;
+$bpk-button-active-background-color: rgb(0, 106, 97) !default;
 /// @group buttons
 $bpk-button-active-background-image: none !default;
 /// @group buttons
@@ -102,13 +102,9 @@ $bpk-button-active-box-shadow: none !default;
 /// @group buttons
 $bpk-button-active-color: rgb(255, 255, 255) !default;
 /// @group buttons
-$bpk-button-background-color: rgb(0, 215, 117) !default;
+$bpk-button-background-color: rgb(0, 166, 152) !default;
 /// @group buttons
-$bpk-button-background-image: linear-gradient(-180deg, #00d775 0%, #00bd68 100%) !default;
-/// @group buttons
-$bpk-button-border-radius: 1.125rem !default;
-/// @group buttons
-$bpk-button-border-radius-lg: 1.3125rem !default;
+$bpk-button-border-radius: .25rem !default;
 /// @group buttons
 $bpk-button-box-shadow: none !default;
 /// @group buttons
@@ -116,47 +112,47 @@ $bpk-button-color: rgb(255, 255, 255) !default;
 /// @group buttons
 $bpk-button-destructive-active-background-color: rgb(255, 255, 255) !default;
 /// @group buttons
-$bpk-button-destructive-active-border-color: rgb(255, 84, 82) !default;
+$bpk-button-destructive-active-border-color: rgb(209, 67, 91) !default;
 /// @group buttons
-$bpk-button-destructive-active-box-shadow: 0 0 0 3px #ff5452 inset !default;
+$bpk-button-destructive-active-box-shadow: 0 0 0 3px #d1435b inset !default;
 /// @group buttons
-$bpk-button-destructive-active-color: rgb(255, 84, 82) !default;
+$bpk-button-destructive-active-color: rgb(209, 67, 91) !default;
 /// @group buttons
 $bpk-button-destructive-background-color: rgb(255, 255, 255) !default;
 /// @group buttons
-$bpk-button-destructive-border-color: rgb(230, 228, 235) !default;
+$bpk-button-destructive-border-color: rgb(221, 221, 229) !default;
 /// @group buttons
-$bpk-button-destructive-box-shadow: 0 0 0 2px #E6E4EB inset !default;
+$bpk-button-destructive-box-shadow: 0 0 0 2px #DDDDE5 inset !default;
 /// @group buttons
-$bpk-button-destructive-color: rgb(255, 84, 82) !default;
+$bpk-button-destructive-color: rgb(209, 67, 91) !default;
 /// @group buttons
-$bpk-button-destructive-disabled-background-color: rgb(230, 228, 235) !default;
+$bpk-button-destructive-disabled-background-color: rgb(221, 221, 229) !default;
 /// @group buttons
 $bpk-button-destructive-disabled-background-image: none !default;
 /// @group buttons
 $bpk-button-destructive-disabled-box-shadow: none !default;
 /// @group buttons
-$bpk-button-destructive-disabled-color: rgb(178, 174, 189) !default;
+$bpk-button-destructive-disabled-color: rgb(178, 178, 191) !default;
 /// @group buttons
 $bpk-button-destructive-hover-background-color: rgb(255, 255, 255) !default;
 /// @group buttons
 $bpk-button-destructive-hover-background-image: none !default;
 /// @group buttons
-$bpk-button-destructive-hover-border-color: rgb(255, 84, 82) !default;
+$bpk-button-destructive-hover-border-color: rgb(209, 67, 91) !default;
 /// @group buttons
-$bpk-button-destructive-hover-box-shadow: 0 0 0 2px #ff5452 inset !default;
+$bpk-button-destructive-hover-box-shadow: 0 0 0 2px #d1435b inset !default;
 /// @group buttons
-$bpk-button-destructive-hover-color: rgb(255, 84, 82) !default;
+$bpk-button-destructive-hover-color: rgb(209, 67, 91) !default;
 /// @group buttons
-$bpk-button-disabled-background-color: rgb(230, 228, 235) !default;
+$bpk-button-disabled-background-color: rgb(221, 221, 229) !default;
 /// @group buttons
 $bpk-button-disabled-background-image: none !default;
 /// @group buttons
 $bpk-button-disabled-box-shadow: none !default;
 /// @group buttons
-$bpk-button-disabled-color: rgb(178, 174, 189) !default;
+$bpk-button-disabled-color: rgb(178, 178, 191) !default;
 /// @group buttons
-$bpk-button-featured-active-background-color: rgb(197, 15, 82) !default;
+$bpk-button-featured-active-background-color: rgb(4, 39, 89) !default;
 /// @group buttons
 $bpk-button-featured-active-background-image: none !default;
 /// @group buttons
@@ -164,43 +160,43 @@ $bpk-button-featured-active-box-shadow: none !default;
 /// @group buttons
 $bpk-button-featured-active-color: rgb(255, 255, 255) !default;
 /// @group buttons
-$bpk-button-featured-background-color: rgb(250, 72, 138) !default;
+$bpk-button-featured-background-color: rgb(7, 112, 227) !default;
 /// @group buttons
-$bpk-button-featured-background-image: linear-gradient(-180deg, #FA488A 0%, #D92B6B 100%) !default;
+$bpk-button-featured-background-image: #0770e3 !default;
 /// @group buttons
 $bpk-button-featured-color: rgb(255, 255, 255) !default;
 /// @group buttons
-$bpk-button-featured-disabled-background-color: rgb(230, 228, 235) !default;
+$bpk-button-featured-disabled-background-color: rgb(221, 221, 229) !default;
 /// @group buttons
 $bpk-button-featured-disabled-background-image: none !default;
 /// @group buttons
-$bpk-button-featured-gradient-end-color: rgb(217, 43, 107) !default;
-/// @group buttons
-$bpk-button-featured-gradient-start-color: rgb(250, 72, 138) !default;
-/// @group buttons
-$bpk-button-featured-hover-background-color: rgb(217, 43, 107) !default;
+$bpk-button-featured-hover-background-color: rgb(8, 78, 178) !default;
 /// @group buttons
 $bpk-button-featured-hover-background-image: none !default;
 /// @group buttons
 $bpk-button-featured-hover-box-shadow: none !default;
 /// @group buttons
 $bpk-button-featured-hover-color: rgb(255, 255, 255) !default;
-/// @group buttons
-$bpk-button-font-size: 1rem !default;
+/// @group font-sizes
+$bpk-button-font-size: 1.1875rem !default;
 /// @group buttons
 $bpk-button-font-weight: 700 !default;
 /// @group buttons
-$bpk-button-gradient-end-color: rgb(0, 189, 104) !default;
+$bpk-button-gradient-end-color: rgb(0, 166, 152) !default;
 /// @group buttons
-$bpk-button-gradient-start-color: rgb(0, 215, 117) !default;
+$bpk-button-gradient-start-color: rgb(0, 166, 152) !default;
 /// @group buttons
-$bpk-button-hover-background-color: rgb(0, 189, 104) !default;
+$bpk-button-hover-background-color: rgb(0, 136, 125) !default;
 /// @group buttons
 $bpk-button-hover-background-image: none !default;
 /// @group buttons
 $bpk-button-hover-box-shadow: none !default;
 /// @group buttons
 $bpk-button-hover-color: rgb(255, 255, 255) !default;
+/// @group buttons
+$bpk-button-icon-border-radius: 1.125rem !default;
+/// @group buttons
+$bpk-button-icon-border-radius-lg: 1.3125rem !default;
 /// @group buttons
 $bpk-button-large-font-size: 1.5rem !default;
 /// @group buttons
@@ -214,6 +210,32 @@ $bpk-button-large-padding-y: .375rem !default;
 /// @group buttons
 $bpk-button-line-height: 1.5rem !default;
 /// @group buttons
+$bpk-button-outline-active-background-color: rgba(0, 0, 0, 0) !default;
+/// @group buttons
+$bpk-button-outline-active-border-color: rgb(255, 255, 255) !default;
+/// @group buttons
+$bpk-button-outline-background-color: rgba(0, 0, 0, 0) !default;
+/// @group buttons
+$bpk-button-outline-background-image: none !default;
+/// @group buttons
+$bpk-button-outline-border-color: rgb(255, 255, 255) !default;
+/// @group buttons
+$bpk-button-outline-color: rgb(255, 255, 255) !default;
+/// @group buttons
+$bpk-button-outline-disabled-background-color: rgb(221, 221, 229) !default;
+/// @group buttons
+$bpk-button-outline-disabled-background-image: none !default;
+/// @group buttons
+$bpk-button-outline-disabled-box-shadow: none !default;
+/// @group buttons
+$bpk-button-outline-disabled-color: rgb(178, 178, 191) !default;
+/// @group buttons
+$bpk-button-outline-hover-background-color: rgba(0, 0, 0, 0) !default;
+/// @group buttons
+$bpk-button-outline-hover-border-color: rgb(255, 255, 255) !default;
+/// @group buttons
+$bpk-button-outline-hover-border-opacity: 0.5 !default;
+/// @group buttons
 $bpk-button-padding-x: 1.125rem !default;
 /// @group buttons
 $bpk-button-padding-x-icon-only: .5625rem !default;
@@ -224,41 +246,41 @@ $bpk-button-secondary-active-background-color: rgb(255, 255, 255) !default;
 /// @group buttons
 $bpk-button-secondary-active-background-image: none !default;
 /// @group buttons
-$bpk-button-secondary-active-border-color: rgb(0, 178, 214) !default;
+$bpk-button-secondary-active-border-color: rgb(8, 78, 178) !default;
 /// @group buttons
-$bpk-button-secondary-active-box-shadow: 0 0 0 3px #00b2d6 inset !default;
+$bpk-button-secondary-active-box-shadow: 0 0 0 3px #084eb2 inset !default;
 /// @group buttons
-$bpk-button-secondary-active-color: rgb(0, 178, 214) !default;
+$bpk-button-secondary-active-color: rgb(8, 78, 178) !default;
 /// @group buttons
 $bpk-button-secondary-background-color: rgb(255, 255, 255) !default;
 /// @group buttons
 $bpk-button-secondary-background-image: none !default;
 /// @group buttons
-$bpk-button-secondary-border-color: rgb(230, 228, 235) !default;
+$bpk-button-secondary-border-color: rgb(221, 221, 229) !default;
 /// @group buttons
-$bpk-button-secondary-box-shadow: 0 0 0 2px #E6E4EB inset !default;
+$bpk-button-secondary-box-shadow: 0 0 0 2px #DDDDE5 inset !default;
 /// @group buttons
-$bpk-button-secondary-color: rgb(0, 178, 214) !default;
+$bpk-button-secondary-color: rgb(7, 112, 227) !default;
 /// @group buttons
-$bpk-button-secondary-disabled-background-color: rgb(230, 228, 235) !default;
+$bpk-button-secondary-disabled-background-color: rgb(221, 221, 229) !default;
 /// @group buttons
 $bpk-button-secondary-disabled-background-image: none !default;
 /// @group buttons
 $bpk-button-secondary-disabled-box-shadow: none !default;
 /// @group buttons
-$bpk-button-secondary-disabled-color: rgb(178, 174, 189) !default;
+$bpk-button-secondary-disabled-color: rgb(178, 178, 191) !default;
 /// @group buttons
 $bpk-button-secondary-hover-background-color: rgb(255, 255, 255) !default;
 /// @group buttons
 $bpk-button-secondary-hover-background-image: none !default;
 /// @group buttons
-$bpk-button-secondary-hover-border-color: rgb(0, 178, 214) !default;
+$bpk-button-secondary-hover-border-color: rgb(7, 112, 227) !default;
 /// @group buttons
-$bpk-button-secondary-hover-box-shadow: 0 0 0 2px #00b2d6 inset !default;
+$bpk-button-secondary-hover-box-shadow: 0 0 0 2px #0770e3 inset !default;
 /// @group buttons
-$bpk-button-secondary-hover-color: rgb(0, 178, 214) !default;
+$bpk-button-secondary-hover-color: rgb(7, 112, 227) !default;
 /// @group buttons
-$bpk-button-selected-active-background-color: rgb(0, 117, 140) !default;
+$bpk-button-selected-active-background-color: rgb(4, 39, 89) !default;
 /// @group buttons
 $bpk-button-selected-active-background-image: none !default;
 /// @group buttons
@@ -266,9 +288,9 @@ $bpk-button-selected-active-box-shadow: none !default;
 /// @group buttons
 $bpk-button-selected-active-color: rgb(255, 255, 255) !default;
 /// @group buttons
-$bpk-button-selected-background-color: rgb(0, 178, 214) !default;
+$bpk-button-selected-background-color: rgb(7, 112, 227) !default;
 /// @group buttons
-$bpk-button-selected-background-image: linear-gradient(-180deg, #009dbd 0%, #008ca8 100%) !default;
+$bpk-button-selected-background-image: #084eb2 !default;
 /// @group buttons
 $bpk-button-selected-box-shadow: none !default;
 /// @group buttons
@@ -276,7 +298,7 @@ $bpk-button-selected-color: rgb(255, 255, 255) !default;
 /// @group buttons
 $bpk-button-selected-disabled-box-shadow: none !default;
 /// @group buttons
-$bpk-button-selected-hover-background-color: rgb(0, 140, 168) !default;
+$bpk-button-selected-hover-background-color: rgb(8, 78, 178) !default;
 /// @group buttons
 $bpk-button-selected-hover-background-image: none !default;
 /// @group buttons
@@ -286,27 +308,25 @@ $bpk-button-selected-hover-color: rgb(255, 255, 255) !default;
 /// @group buttons
 $bpk-button-text-align: center !default;
 /// @group calendar
-$bpk-calendar-day-active-background-color: rgb(230, 228, 235) !default;
+$bpk-calendar-day-active-background-color: rgb(221, 221, 229) !default;
 /// @group calendar
-$bpk-calendar-day-active-color: rgb(37, 32, 51) !default;
+$bpk-calendar-day-active-color: rgb(17, 18, 54) !default;
 /// @group calendar
-$bpk-calendar-day-background-color: rgb(255, 255, 255) !default;
+$bpk-calendar-day-color: rgb(7, 112, 227) !default;
 /// @group calendar
-$bpk-calendar-day-color: rgb(0, 178, 214) !default;
+$bpk-calendar-day-disabled-color: rgb(221, 221, 229) !default;
 /// @group calendar
-$bpk-calendar-day-disabled-background-color: rgb(255, 255, 255) !default;
+$bpk-calendar-day-focused-border-color: rgb(7, 112, 227) !default;
 /// @group calendar
-$bpk-calendar-day-disabled-color: rgb(230, 228, 235) !default;
+$bpk-calendar-day-focused-color: rgb(7, 112, 227) !default;
 /// @group calendar
-$bpk-calendar-day-hover-background-color: rgb(243, 242, 245) !default;
+$bpk-calendar-day-hover-background-color: rgb(241, 242, 248) !default;
 /// @group calendar
-$bpk-calendar-day-hover-color: rgb(82, 76, 97) !default;
+$bpk-calendar-day-hover-color: rgb(68, 69, 96) !default;
 /// @group calendar
-$bpk-calendar-day-outside-background-color: rgb(255, 255, 255) !default;
+$bpk-calendar-day-outside-color: rgb(178, 178, 191) !default;
 /// @group calendar
-$bpk-calendar-day-outside-color: rgb(178, 174, 189) !default;
-/// @group calendar
-$bpk-calendar-day-selected-background-color: rgb(0, 140, 168) !default;
+$bpk-calendar-day-selected-background-color: rgb(8, 78, 178) !default;
 /// @group calendar
 $bpk-calendar-day-selected-color: rgb(255, 255, 255) !default;
 /// @group calendar
@@ -314,135 +334,105 @@ $bpk-calendar-day-size: 2.250rem !default;
 /// @group calendar
 $bpk-calendar-day-spacing: .375rem !default;
 /// @group calendar
-$bpk-calendar-nav-icon-active-fill: rgb(0, 140, 168) !default;
+$bpk-calendar-nav-icon-active-fill: rgb(4, 39, 89) !default;
 /// @group calendar
-$bpk-calendar-nav-icon-disabled-fill: rgb(230, 228, 235) !default;
+$bpk-calendar-nav-icon-disabled-fill: rgb(221, 221, 229) !default;
 /// @group calendar
-$bpk-calendar-nav-icon-fill: rgb(0, 178, 214) !default;
+$bpk-calendar-nav-icon-fill: rgb(7, 112, 227) !default;
 /// @group calendar
-$bpk-calendar-nav-icon-hover-fill: rgb(0, 157, 189) !default;
+$bpk-calendar-nav-icon-hover-fill: rgb(8, 78, 178) !default;
 /// @group calendar
 $bpk-calendar-padding: .75rem !default;
 /// @group cards
 $bpk-card-background-color: rgb(255, 255, 255) !default;
 /// @group cards
-$bpk-card-color: rgb(82, 76, 97) !default;
+$bpk-card-color: rgb(17, 18, 54) !default;
 /// @group cards
 $bpk-card-padding: .75rem !default;
 /// @group forms
-$bpk-checkbox-checked-tick-color: rgb(0, 140, 168) !default;
+$bpk-checkbox-checked-tick-color: rgb(7, 112, 227) !default;
 /// @group colors
-$bpk-color-blue-100: rgb(203, 238, 245) !default;
+$bpk-color-abisko: rgb(90, 72, 155) !default;
 /// @group colors
-$bpk-color-blue-200: rgb(176, 228, 238) !default;
+$bpk-color-bagan: rgb(255, 235, 208) !default;
 /// @group colors
-$bpk-color-blue-300: rgb(127, 215, 232) !default;
+$bpk-color-bunol: rgb(255, 123, 89) !default;
 /// @group colors
-$bpk-color-blue-400: rgb(64, 196, 223) !default;
+$bpk-color-erfoud: rgb(255, 181, 77) !default;
 /// @group colors
-$bpk-color-blue-50: rgb(225, 244, 248) !default;
+$bpk-color-glencoe: rgb(115, 206, 198) !default;
 /// @group colors
-$bpk-color-blue-500: rgb(0, 178, 214) !default;
+$bpk-color-harbour: rgb(246, 221, 225) !default;
 /// @group colors
-$bpk-color-blue-600: rgb(0, 157, 189) !default;
+$bpk-color-hillier: rgb(225, 139, 150) !default;
 /// @group colors
-$bpk-color-blue-700: rgb(0, 140, 168) !default;
+$bpk-color-kolkata: rgb(255, 148, 0) !default;
 /// @group colors
-$bpk-color-blue-800: rgb(0, 117, 140) !default;
+$bpk-color-monteverde: rgb(0, 166, 152) !default;
 /// @group colors
-$bpk-color-blue-900: rgb(0, 85, 103) !default;
+$bpk-color-nara: rgb(255, 231, 224) !default;
 /// @group colors
-$bpk-color-gray-100: rgb(230, 228, 235) !default;
+$bpk-color-panjin: rgb(209, 67, 91) !default;
 /// @group colors
-$bpk-color-gray-200: rgb(204, 201, 212) !default;
+$bpk-color-petra: rgb(255, 171, 149) !default;
 /// @group colors
-$bpk-color-gray-300: rgb(178, 174, 189) !default;
+$bpk-color-primary-gradient-light: rgb(7, 112, 227) !default;
 /// @group colors
-$bpk-color-gray-400: rgb(154, 149, 167) !default;
+$bpk-color-sagano: rgb(208, 238, 236) !default;
 /// @group colors
-$bpk-color-gray-50: rgb(243, 242, 245) !default;
+$bpk-color-sky-blue: rgb(7, 112, 227) !default;
 /// @group colors
-$bpk-color-gray-500: rgb(129, 123, 143) !default;
+$bpk-color-sky-blue-shade-01: rgb(8, 78, 178) !default;
 /// @group colors
-$bpk-color-gray-600: rgb(105, 97, 121) !default;
+$bpk-color-sky-blue-shade-02: rgb(4, 39, 89) !default;
 /// @group colors
-$bpk-color-gray-700: rgb(82, 76, 97) !default;
+$bpk-color-sky-blue-shade-03: rgb(2, 18, 44) !default;
 /// @group colors
-$bpk-color-gray-800: rgb(59, 52, 75) !default;
+$bpk-color-sky-blue-tint-01: rgb(109, 159, 235) !default;
 /// @group colors
-$bpk-color-gray-900: rgb(37, 32, 51) !default;
+$bpk-color-sky-blue-tint-02: rgb(157, 192, 242) !default;
 /// @group colors
-$bpk-color-green-100: rgb(203, 245, 226) !default;
+$bpk-color-sky-blue-tint-03: rgb(205, 223, 248) !default;
 /// @group colors
-$bpk-color-green-200: rgb(175, 237, 209) !default;
+$bpk-color-sky-gray: rgb(17, 18, 54) !default;
 /// @group colors
-$bpk-color-green-300: rgb(128, 232, 185) !default;
+$bpk-color-sky-gray-tint-01: rgb(68, 69, 96) !default;
 /// @group colors
-$bpk-color-green-400: rgb(64, 222, 151) !default;
+$bpk-color-sky-gray-tint-02: rgb(104, 105, 127) !default;
 /// @group colors
-$bpk-color-green-50: rgb(223, 247, 236) !default;
+$bpk-color-sky-gray-tint-03: rgb(143, 144, 160) !default;
 /// @group colors
-$bpk-color-green-500: rgb(0, 215, 117) !default;
+$bpk-color-sky-gray-tint-04: rgb(178, 178, 191) !default;
 /// @group colors
-$bpk-color-green-600: rgb(0, 189, 104) !default;
+$bpk-color-sky-gray-tint-05: rgb(205, 205, 215) !default;
 /// @group colors
-$bpk-color-green-700: rgb(0, 168, 93) !default;
+$bpk-color-sky-gray-tint-06: rgb(221, 221, 229) !default;
 /// @group colors
-$bpk-color-green-800: rgb(0, 140, 77) !default;
+$bpk-color-sky-gray-tint-07: rgb(241, 242, 248) !default;
 /// @group colors
-$bpk-color-green-900: rgb(0, 102, 56) !default;
+$bpk-color-system-green: rgb(0, 166, 152) !default;
 /// @group colors
-$bpk-color-primary-gradient-light: rgb(2, 221, 216) !default;
+$bpk-color-system-red: rgb(209, 67, 91) !default;
 /// @group colors
-$bpk-color-red-100: rgb(255, 214, 213) !default;
+$bpk-color-tochigi: rgb(225, 221, 236) !default;
 /// @group colors
-$bpk-color-red-200: rgb(255, 187, 186) !default;
-/// @group colors
-$bpk-color-red-300: rgb(255, 150, 148) !default;
-/// @group colors
-$bpk-color-red-400: rgb(254, 116, 113) !default;
-/// @group colors
-$bpk-color-red-50: rgb(252, 242, 242) !default;
-/// @group colors
-$bpk-color-red-500: rgb(255, 84, 82) !default;
-/// @group colors
-$bpk-color-red-600: rgb(235, 66, 63) !default;
-/// @group colors
-$bpk-color-red-700: rgb(222, 50, 47) !default;
-/// @group colors
-$bpk-color-red-800: rgb(204, 31, 29) !default;
-/// @group colors
-$bpk-color-red-900: rgb(168, 3, 0) !default;
+$bpk-color-valensole: rgb(165, 155, 200) !default;
 /// @group colors
 $bpk-color-white: rgb(255, 255, 255) !default;
-/// @group colors
-$bpk-color-yellow-100: rgb(255, 243, 207) !default;
-/// @group colors
-$bpk-color-yellow-200: rgb(255, 236, 184) !default;
-/// @group colors
-$bpk-color-yellow-300: rgb(255, 225, 140) !default;
-/// @group colors
-$bpk-color-yellow-400: rgb(255, 207, 74) !default;
-/// @group colors
-$bpk-color-yellow-50: rgb(255, 249, 230) !default;
-/// @group colors
-$bpk-color-yellow-500: rgb(255, 187, 0) !default;
-/// @group colors
-$bpk-color-yellow-600: rgb(240, 176, 0) !default;
-/// @group colors
-$bpk-color-yellow-700: rgb(225, 165, 0) !default;
-/// @group colors
-$bpk-color-yellow-800: rgb(194, 142, 0) !default;
-/// @group colors
-$bpk-color-yellow-900: rgb(156, 114, 0) !default;
 /// @group animations
 $bpk-duration-base: 400ms !default;
 /// @group animations
 $bpk-duration-sm: 200ms !default;
 /// @group animations
 $bpk-duration-xs: 50ms !default;
+/// @group flare
+$bpk-flare-corner-radius: 1.3125rem !default;
+/// @group flare
+$bpk-flare-height-desktop: 1.5rem !default;
+/// @group flare
+$bpk-flare-height-mobile: 1.125rem !default;
 /// @group text-colors
-$bpk-font-color-base: rgb(82, 76, 97) !default;
+$bpk-font-color-base: rgb(17, 18, 54) !default;
 /// @group typesettings
 $bpk-font-family-base: -apple-system, BlinkMacSystemFont, 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', 'Arial', sans-serif !default;
 /// @group typesettings
@@ -458,21 +448,13 @@ $bpk-font-size-xl: 1.75rem !default;
 /// @group typesettings
 $bpk-font-size-xxl: 2.625rem !default;
 /// @group font-weights
+$bpk-font-weight-black: 900 !default;
+/// @group font-weights
 $bpk-font-weight-bold: 700 !default;
 /// @group forms
 $bpk-form-validation-arrow-size: .375rem !default;
 /// @group forms
-$bpk-form-validation-background-color: rgb(255, 84, 82) !default;
-/// @group forms
-$bpk-form-validation-checkbox-arrow-left: 1.5rem !default;
-/// @group forms
-$bpk-form-validation-color: rgb(255, 84, 82) !default;
-/// @group forms
-$bpk-form-validation-margin: 0 !default;
-/// @group forms
-$bpk-form-validation-padding-x: .75rem !default;
-/// @group forms
-$bpk-form-validation-padding-y: .375rem !default;
+$bpk-form-validation-color: rgb(209, 67, 91) !default;
 /// @group grids
 $bpk-grid-columns: 12 !default;
 /// @group grids
@@ -524,15 +506,15 @@ $bpk-heading-margin-bottom: .75rem !default;
 /// @group spacings
 $bpk-heading-margin-top: 0 !default;
 /// @group horizontal-nav
-$bpk-horizontal-nav-bar-selected-color: rgb(0, 178, 214) !default;
+$bpk-horizontal-nav-bar-selected-color: rgb(7, 112, 227) !default;
 /// @group horizontal-nav
-$bpk-horizontal-nav-link-active-color: rgb(37, 32, 51) !default;
+$bpk-horizontal-nav-link-active-color: rgb(17, 18, 54) !default;
 /// @group horizontal-nav
-$bpk-horizontal-nav-link-color: rgb(82, 76, 97) !default;
+$bpk-horizontal-nav-link-color: rgb(104, 105, 127) !default;
 /// @group horizontal-nav
-$bpk-horizontal-nav-link-hover-color: rgb(59, 52, 75) !default;
+$bpk-horizontal-nav-link-hover-color: rgb(68, 69, 96) !default;
 /// @group horizontal-nav
-$bpk-horizontal-nav-link-selected-color: rgb(0, 178, 214) !default;
+$bpk-horizontal-nav-link-selected-color: rgb(7, 112, 227) !default;
 /// @group icons
 $bpk-icon-size-lg: 1.5rem !default;
 /// @group icons
@@ -540,17 +522,17 @@ $bpk-icon-size-sm: 1.125rem !default;
 /// @group forms
 $bpk-input-background: #ffffff !default;
 /// @group forms
-$bpk-input-border: solid .0625rem #E6E4EB !default;
+$bpk-input-border: solid .0625rem #B2B2BF !default;
 /// @group forms
-$bpk-input-border-radius: .1875rem !default;
+$bpk-input-border-radius: .25rem !default;
 /// @group forms
 $bpk-input-border-width: .0625rem !default;
 /// @group forms
-$bpk-input-color: rgb(82, 76, 97) !default;
+$bpk-input-color: rgb(17, 18, 54) !default;
 /// @group forms
-$bpk-input-disabled-border-color: rgb(243, 242, 245) !default;
+$bpk-input-disabled-border-color: rgb(241, 242, 248) !default;
 /// @group forms
-$bpk-input-disabled-color: rgb(178, 174, 189) !default;
+$bpk-input-disabled-color: rgb(178, 178, 191) !default;
 /// @group forms
 $bpk-input-height: 2.250rem !default;
 /// @group forms
@@ -560,13 +542,13 @@ $bpk-input-padding-x: .75rem !default;
 /// @group forms
 $bpk-input-padding-y: .375rem !default;
 /// @group forms
-$bpk-input-placeholder-color: rgb(129, 123, 143) !default;
+$bpk-input-placeholder-color: rgb(104, 105, 127) !default;
 /// @group forms
 $bpk-input-placeholder-font-style: italic !default;
 /// @group forms
-$bpk-label-color: rgb(82, 76, 97) !default;
+$bpk-label-color: rgb(17, 18, 54) !default;
 /// @group forms
-$bpk-label-disabled-color: rgb(178, 174, 189) !default;
+$bpk-label-disabled-color: rgb(178, 178, 191) !default;
 /// @group forms
 $bpk-label-font-size: .75rem !default;
 /// @group forms
@@ -582,9 +564,9 @@ $bpk-line-height-xl: 2.625rem !default;
 /// @group typesettings
 $bpk-line-height-xxl: 3.375rem !default;
 /// @group text-colors
-$bpk-link-active-color: rgb(37, 32, 51) !default;
+$bpk-link-active-color: rgb(4, 39, 89) !default;
 /// @group text-colors
-$bpk-link-alternate-active-color: rgb(230, 228, 235) !default;
+$bpk-link-alternate-active-color: rgb(221, 221, 229) !default;
 /// @group text-colors
 $bpk-link-alternate-color: rgb(255, 255, 255) !default;
 /// @group text-colors
@@ -592,17 +574,17 @@ $bpk-link-alternate-hover-color: rgb(255, 255, 255) !default;
 /// @group text-colors
 $bpk-link-alternate-visited-color: rgb(255, 255, 255) !default;
 /// @group text-colors
-$bpk-link-color: rgb(0, 178, 214) !default;
+$bpk-link-color: rgb(7, 112, 227) !default;
 /// @group text-colors
-$bpk-link-hover-color: rgb(82, 76, 97) !default;
+$bpk-link-hover-color: rgb(8, 78, 178) !default;
 /// @group text-decorations
 $bpk-link-hover-text-decoration: underline !default;
 /// @group text-decorations
 $bpk-link-text-decoration: none !default;
 /// @group text-colors
-$bpk-link-visited-color: rgb(0, 140, 168) !default;
+$bpk-link-visited-color: rgb(7, 112, 227) !default;
 /// @group text-colors
-$bpk-link-white-active-color: rgb(230, 228, 235) !default;
+$bpk-link-white-active-color: rgb(221, 221, 229) !default;
 /// @group text-colors
 $bpk-link-white-color: rgb(255, 255, 255) !default;
 /// @group text-colors
@@ -624,10 +606,6 @@ $bpk-list-nested-margin-top: 0 !default;
 /// @group modals
 $bpk-modal-background-color: rgb(255, 255, 255) !default;
 /// @group modals
-$bpk-modal-close-icon-fill: rgb(129, 123, 143) !default;
-/// @group modals
-$bpk-modal-close-icon-hover-fill: rgb(82, 76, 97) !default;
-/// @group modals
 $bpk-modal-content-padding: .75rem !default;
 /// @group modals
 $bpk-modal-header-padding: .75rem !default;
@@ -638,37 +616,41 @@ $bpk-modal-max-width: 32.25rem !default;
 /// @group modals
 $bpk-modal-opacity: 1 !default;
 /// @group modals
-$bpk-modal-scrim-background-color: rgb(178, 174, 189) !default;
-/// @group modals
-$bpk-modal-scrim-initial-opacity: 0 !default;
-/// @group modals
-$bpk-modal-scrim-mobile-opacity: 1 !default;
-/// @group modals
-$bpk-modal-scrim-opacity: .7 !default;
-/// @group modals
 $bpk-modal-wide-max-width: 50.25rem !default;
 /// @group spacings
 $bpk-one-pixel-rem: .0625rem !default;
 /// @group panels
 $bpk-panel-background-color: rgb(255, 255, 255) !default;
 /// @group panels
-$bpk-panel-border-color: rgb(230, 228, 235) !default;
+$bpk-panel-border-color: rgb(221, 221, 229) !default;
 /// @group panels
 $bpk-panel-padding: .75rem !default;
 /// @group colors
-$bpk-primary-gradient: linear-gradient(135deg, #00b2d6 0%, #02DDD8 100%) !default;
+$bpk-primary-gradient: #0770e3 !default;
 /// @group spacings
 $bpk-p-margin-bottom: .75rem !default;
 /// @group spacings
 $bpk-p-margin-top: 0 !default;
 /// @group forms
-$bpk-radio-checked-circle-color: rgb(0, 140, 168) !default;
+$bpk-radio-checked-circle-color: rgb(7, 112, 227) !default;
+/// @group ratings
+$bpk-rating-base-height: .75rem * 4 !default;
+/// @group ratings
+$bpk-rating-base-width: .75rem * 4 !default;
+/// @group ratings
+$bpk-rating-lg-height: 1.875rem * 2 !default;
+/// @group ratings
+$bpk-rating-lg-width: 1.875rem * 2 !default;
+/// @group ratings
+$bpk-rating-sm-height: .75rem * 3 !default;
+/// @group ratings
+$bpk-rating-sm-width: .75rem * 3 !default;
 /// @group forms
-$bpk-required-color: rgb(255, 84, 82) !default;
+$bpk-required-color: rgb(209, 67, 91) !default;
 /// @group scrims
-$bpk-scrim-background-color: rgb(178, 174, 189) !default;
+$bpk-scrim-background-color: rgb(178, 178, 191) !default;
 /// @group scrims
-$bpk-scrim-dark-background-color: rgb(37, 32, 51) !default;
+$bpk-scrim-dark-background-color: rgb(17, 18, 54) !default;
 /// @group scrims
 $bpk-scrim-dark-opacity: .95 !default;
 /// @group scrims
@@ -678,17 +660,17 @@ $bpk-scrim-mobile-opacity: 1 !default;
 /// @group scrims
 $bpk-scrim-opacity: .7 !default;
 /// @group forms
-$bpk-select-border: solid .0625rem #E6E4EB !default;
+$bpk-select-border: solid .0625rem #B2B2BF !default;
 /// @group forms
-$bpk-select-border-radius: .1875rem !default;
+$bpk-select-border-radius: .25rem !default;
 /// @group forms
 $bpk-select-border-width: .0625rem !default;
 /// @group forms
-$bpk-select-color: rgb(82, 76, 97) !default;
+$bpk-select-color: rgb(17, 18, 54) !default;
 /// @group forms
-$bpk-select-disabled-border-color: rgb(243, 242, 245) !default;
+$bpk-select-disabled-border-color: rgb(241, 242, 248) !default;
 /// @group forms
-$bpk-select-disabled-color: rgb(178, 174, 189) !default;
+$bpk-select-disabled-color: rgb(178, 178, 191) !default;
 /// @group forms
 $bpk-select-height: 2.250rem !default;
 /// @group forms
@@ -718,7 +700,7 @@ $bpk-spacing-xs: .375rem !default;
 /// @group spacings
 $bpk-spacing-xxl: 2.625rem !default;
 /// @group states
-$bpk-state-selected-background-color: rgb(0, 140, 168) !default;
+$bpk-state-selected-background-color: rgb(8, 78, 178) !default;
 /// @group forms
 $bpk-textarea-min-height: 2.625rem * 2 !default;
 /// @group font-sizes
@@ -737,6 +719,10 @@ $bpk-text-lg-font-weight: 400 !default;
 $bpk-text-lg-letter-spacing: normal !default;
 /// @group line-heights
 $bpk-text-lg-line-height: 1.875rem !default;
+/// @group text-colors
+$bpk-text-primary-light-color: rgb(17, 18, 54) !default;
+/// @group text-colors
+$bpk-text-secondary-light-color: rgb(68, 69, 96) !default;
 /// @group font-sizes
 $bpk-text-sm-font-size: .75rem !default;
 /// @group font-weights
@@ -775,8 +761,6 @@ $bpk-zindex-autosuggest: 900 !default;
 $bpk-zindex-drawer: 1100 !default;
 /// @group z-indices
 $bpk-zindex-modal: 1100 !default;
-/// @group z-indices
-$bpk-zindex-modal-scrim: 1000 !default;
 /// @group z-indices
 $bpk-zindex-popover: 900 !default;
 /// @group z-indices

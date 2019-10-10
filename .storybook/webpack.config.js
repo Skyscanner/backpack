@@ -13,8 +13,40 @@ module.exports = {
     rules: [
       {
         test: /\.jsx?$/,
-        use: ['babel-loader'],
         exclude: /node_modules\/(?!bpk-).*/,
+        loader: 'babel-loader',
+        options: {
+          presets: [
+            [
+              '@babel/preset-env',
+              {
+                targets: { browsers: ['ie >= 11'] },
+              },
+            ],
+          ],
+        },
+      },
+      {
+        test: /\.css/,
+        use: [
+          {
+            loader: 'style-loader',
+          },
+          {
+            loader: 'css-loader',
+            options: {
+              importLoaders: 1,
+              modules: useCssModules,
+              localIdentName: '[local]-[hash:base64:5]',
+            },
+          },
+          {
+            loader: 'postcss-loader',
+            options: {
+              plugins: postCssPlugins,
+            },
+          },
+        ],
       },
       {
         test: /\.scss$/,
@@ -39,7 +71,7 @@ module.exports = {
           {
             loader: 'sass-loader',
             options: {
-              data: BPK_TOKENS
+              prependData: BPK_TOKENS
                 ? fs.readFileSync(
                     path.join(
                       rootDir,
@@ -47,7 +79,9 @@ module.exports = {
                     ),
                   )
                 : '',
-              functions: sassFunctions,
+              sassOptions: {
+                functions: sassFunctions,
+              },
             },
           },
         ],

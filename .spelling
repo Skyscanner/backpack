@@ -63,12 +63,17 @@ BpkModal
 
 BpkNavigationBarButtonLink
 
+BpkNudger
+BpkConfigurableNudger
+
 BpkPanel
 
 BpkPhoneNumberInput
 
 BpkPicker
 BpkPickerItem
+
+BpkRating
 
 BpkScrollableCalendarDate
 BpkScrollableCalendarGrid
@@ -162,6 +167,7 @@ h5
 h6
 href
 iff
+isRTL
 IntersectionObserver
 JS
 keystore
@@ -192,6 +198,7 @@ textarea
 Themeability
 themeable
 TTF
+UIs
 uncompiled
 z-index
 
@@ -244,7 +251,11 @@ bannerStyle
 BarChart
 beforeClose
 borderRadius
+borderRadiusStyle
+BORDER_RADIUS_STYLES
+BORDER_RADIUS_STYLES.none
 borderlessBackground
+buttonType
 centerLeading
 centerTrailing
 clearButtonMode
@@ -252,6 +263,7 @@ closeOnEscPressed
 closeOnScrimClick
 collapseDelay
 color
+compareValues
 containerClassName
 cornerStyle
 CORNER_STYLES.sm
@@ -259,6 +271,7 @@ CORNER_STYLES.lg
 DataSource
 dateProps
 decreaseButtonLabel
+decrementValue
 dialingCode
 dialingCodes
 dismissable
@@ -269,6 +282,7 @@ dockedLast
 doneLabel
 expandDelay
 fillStyle
+formatValue
 getApplicationElement
 getArrowPositionCallback
 getStarLabel
@@ -281,7 +295,9 @@ iconAlignment
 iconOnly
 imageComponent
 increaseButtonLabel
+incrementValue
 innerStyle
+inputClassName
 inputRef
 inView
 isIphone
@@ -318,6 +334,8 @@ portalStyle
 props.message
 props.title
 ratingLabel
+RATING_SIZES
+RATING_SIZES.base
 renderFlag
 renderTarget
 selectedDates
@@ -337,6 +355,7 @@ stubClassName
 stubProps
 stubStyle
 subtitleView
+suppressHydrationWarnings
 textProps
 textStyle
 themeAttributes
@@ -438,6 +457,8 @@ leadingScrollIndicatorClassName
 trailingScrollIndicatorClassName
 bottomMargin
 mobileWidth
+flareProps
+showPointer
 tabletWidth
 mobileOffset
 tabletOffset
@@ -487,6 +508,7 @@ xAxisTickEvery
 yAxisMargin
 yAxisTickValue
 yAxisNumTicks
+yAxisDomain
 withAccordionItemState
 
 BpkAccordion
@@ -550,6 +572,7 @@ bpk-component-description-list
 bpk-component-dialog
 bpk-component-drawer
 bpk-component-fieldset
+bpk-component-flare
 bpk-component-form-validation
 bpk-component-grid
 bpk-component-grid-toggle
@@ -579,6 +602,7 @@ bpk-component-phone-input
 bpk-component-popover
 bpk-component-progress
 bpk-component-radio
+bpk-component-rating
 bpk-component-router-link
 bpk-component-rtl-toggle
 bpk-component-scrollable-calendar
@@ -666,6 +690,7 @@ Udaipur
 
 20s
 62kb
+Array.prototype.sort
 artifacts
 Blergh
 downtown
@@ -713,3 +738,8 @@ onBarFocus
 getBarLabel
 getBarSelection
 greedyGestureHandling
+ariaLabel
+props.label
+semver.org
+ROUNDING_TYPES
+ROUNDING_TYPES.down

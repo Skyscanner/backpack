@@ -1,0 +1,60 @@
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016-2019 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+@import '~bpk-mixins';
+
+.bpk-content-bubble {
+  &__pointer {
+    width: 100%;
+    align-items: flex-end;
+    align-self: flex-end;
+  }
+
+  &__wrapper {
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    background-repeat: no-repeat;
+    background-position: 50% 60%;
+    background-size: cover;
+
+    &--rounded {
+      border-radius: $bpk-flare-corner-radius;
+
+      &--with-pointer {
+        border-radius: $bpk-flare-corner-radius $bpk-flare-corner-radius 0 0;
+      }
+    }
+  }
+
+  &__container {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+  }
+
+  &__content-wrapper {
+    display: flex;
+    // flex-direction is required because IE doesn't cope well with
+    // flex-row when the parent is flex-col
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1 1 auto;
+  }
+}

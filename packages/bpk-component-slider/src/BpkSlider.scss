@@ -34,12 +34,11 @@ $slider-control-inset-size: 20 * $bpk-one-pixel-rem;
     height: $bpk-spacing-lg;
     justify-content: center;
     align-items: center;
-    border: $bpk-one-pixel-rem solid;
+    border: $bpk-one-pixel-rem solid $bpk-color-sky-gray-tint-06;
     border-radius: $bpk-border-radius-pill;
     background-color: $bpk-color-white;
     cursor: pointer;
 
-    @include bpk-apply-gray-100-to(border-color);
     @include bpk-box-shadow-sm;
 
     &::after {
@@ -48,7 +47,7 @@ $slider-control-inset-size: 20 * $bpk-one-pixel-rem;
       width: $slider-control-inset-size;
       height: $slider-control-inset-size;
       border-radius: $bpk-border-radius-pill;
-      box-shadow: inset 0 0 0 $bpk-one-pixel-rem $bpk-color-gray-200;
+      box-shadow: inset 0 0 0 $bpk-one-pixel-rem $bpk-color-sky-gray-tint-05;
     }
 
     &--active {
@@ -72,23 +71,22 @@ $slider-control-inset-size: 20 * $bpk-one-pixel-rem;
     top: calc(50% - (#{$bpk-spacing-xs} / 2));
     height: $bpk-spacing-xs;
     border-radius: $bpk-border-radius-sm;
-
-    @include bpk-apply-gray-100-to(background-color);
+    background-color: $bpk-color-sky-gray-tint-06;
   }
 
   // stylelint-disable-next-line selector-attribute-quotes
   > div[class$='0'] {
-    @include bpk-themeable-property(background-color, --bpk-slider-bar-color, $bpk-color-blue-500);
+    @include bpk-themeable-property(background-color, --bpk-slider-bar-color, $bpk-color-sky-blue-shade-03);
   }
 
   &--range {
     // stylelint-disable-next-line selector-attribute-quotes
     > div[class$='0'] {
-      @include bpk-apply-gray-100-to(background-color);
+      background-color: $bpk-color-sky-gray-tint-06;
     }
     // stylelint-disable-next-line selector-attribute-quotes
     > div[class$='1'] {
-      @include bpk-themeable-property(background-color, --bpk-slider-bar-color, $bpk-color-blue-500);
+      @include bpk-themeable-property(background-color, --bpk-slider-bar-color, $bpk-color-sky-blue-shade-03);
     }
   }
 }

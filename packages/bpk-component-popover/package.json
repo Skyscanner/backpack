@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-popover",
-  "version": "2.2.40",
+  "version": "3.0.3",
   "description": "Backpack popover component.",
   "main": "index.js",
   "repository": {
@@ -16,16 +16,19 @@
     "@skyscanner/popper.js": "^1.12.9-beta.1",
     "a11y-focus-scope": "^1.1.3",
     "a11y-focus-store": "^1.0.0",
-    "bpk-component-close-button": "^1.0.136",
-    "bpk-component-link": "^1.2.70",
-    "bpk-component-text": "^1.0.130",
-    "bpk-mixins": "^17.23.6",
-    "bpk-react-utils": "^2.7.8",
+    "bpk-component-close-button": "^2.0.3",
+    "bpk-component-link": "^2.0.3",
+    "bpk-component-text": "^2.0.3",
+    "bpk-mixins": "^19.0.3",
+    "bpk-react-utils": "^2.8.0",
     "prop-types": "^15.6.2"
   },
   "devDependencies": {
-    "bpk-component-button": "^2.3.11",
-    "bpk-component-content-container": "^1.3.75"
+    "bpk-component-button": "^3.0.3",
+    "bpk-component-content-container": "^2.0.3"
   },
-  "gitHead": "3244054e73b5e966c2ca795f496d8e29b6a5fff4"
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "gitHead": "67b335e771ad6bf3d6f4d5a36b6745c625758aff"
 }

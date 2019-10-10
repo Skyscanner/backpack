@@ -105,18 +105,18 @@ if (componentChangedOrCreated) {
   - [ ] Safari (iOS)
   - [ ] Chrome (Android)
   - [ ] Chrome (Desktop)
-  - [ ] Firefox (Deesktop)
+  - [ ] Firefox (Desktop)
   `);
 }
 
 // If any of the packages have changed, the UNRELEASED log should have been updated.
-const unreleasedModified = includes(modifiedFiles, 'UNRELEASED.md');
+const unreleasedModified = includes(modifiedFiles, 'UNRELEASED.yaml');
 const packagesModified = fileChanges.some(filePath =>
   filePath.startsWith('packages/'),
 );
 if (packagesModified && !unreleasedModified && !declaredTrivial) {
   warn(
-    "One or more packages have changed, but `UNRELEASED.md` wasn't updated.",
+    "One or more packages have changed, but `UNRELEASED.yaml` wasn't updated.",
   );
 }
 
@@ -148,7 +148,7 @@ if (lockFileUpdated) {
 const unlicensedFiles = createdFiles.filter(filePath => {
   // Applies to js, css, scss and sh files that are not located in dist or flow-typed folders.
   if (
-    filePath.match(/\.(js|css|scss|sh)$/) &&
+    filePath.match(/\.(js|scss|sh)$/) &&
     !filePath.includes('dist/') &&
     !filePath.includes('flow-typed/')
   ) {

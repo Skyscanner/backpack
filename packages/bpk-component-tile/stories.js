@@ -28,7 +28,7 @@ storiesOf('bpk-component-tile', module)
     <BpkTile
       heading="Using icons in code."
       imageSource="https://www.w3schools.com/css/trolltunga.jpg"
-      backgroundColor={colors.colorGreen500}
+      backgroundColor={colors.colorMonteverde}
       dark
     />
   ))
@@ -36,7 +36,7 @@ storiesOf('bpk-component-tile', module)
     <BpkTile
       heading="Using icons in sketch."
       imageSource="https://www.w3schools.com/css/trolltunga.jpg"
-      backgroundColor={colors.colorRed500}
+      backgroundColor={colors.colorPanjin}
     />
   ))
   .add('Illustration', () => (
@@ -57,6 +57,6 @@ storiesOf('bpk-component-tile', module)
     <BpkTile
       heading="Illustration guidelines and best practices"
       imageSource="https://www.w3schools.com/css/trolltunga.jpg"
-      backgroundColor={colors.colorYellow500}
+      backgroundColor={colors.colorKolkata}
     />
   ));

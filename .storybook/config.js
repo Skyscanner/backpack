@@ -75,6 +75,7 @@ configure(() => {
   require('./../packages/bpk-component-dialog/stories');
   require('./../packages/bpk-component-drawer/stories');
   require('./../packages/bpk-component-fieldset/stories');
+  require('./../packages/bpk-component-flare/stories');
   require('./../packages/bpk-component-form-validation/stories');
   require('./../packages/bpk-component-grid-toggle/stories');
   require('./../packages/bpk-component-grid/stories');
@@ -101,6 +102,7 @@ configure(() => {
   require('./../packages/bpk-component-popover/stories');
   require('./../packages/bpk-component-progress/stories');
   require('./../packages/bpk-component-radio/stories');
+  require('./../packages/bpk-component-rating/stories');
   require('./../packages/bpk-component-router-link/stories');
   require('./../packages/bpk-component-rtl-toggle/stories');
   require('./../packages/bpk-component-scrollable-calendar/stories');

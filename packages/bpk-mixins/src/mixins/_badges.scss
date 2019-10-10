@@ -34,9 +34,9 @@
   display: inline-flex;
   padding: $bpk-badge-padding-y $bpk-badge-padding-x;
   align-items: center;
-  background-color: $bpk-badge-background-color;
   color: $bpk-font-color-base;
 
+  @include bpk-themeable-property(background-color, --bpk-badge-background-color, $bpk-badge-background-color);
   @include bpk-border-radius-xs;
   @include bpk-text;
   @include bpk-text--sm;
@@ -129,7 +129,7 @@
 ///   }
 
 @mixin bpk-badge--success {
-  background-color: $bpk-color-green-500;
+  @include bpk-themeable-property(background-color, --bpk-badge-success-background-color, $bpk-color-monteverde);
 }
 
 /// Destructive badge. Modifies the bpk-badge mixin.
@@ -143,8 +143,9 @@
 ///   }
 
 @mixin bpk-badge--destructive {
-  background-color: $bpk-color-red-500;
   color: $bpk-color-white;
+
+  @include bpk-themeable-property(background-color, --bpk-badge-destructive-background-color, $bpk-color-panjin);
 }
 
 /// Light badge. Modifies the bpk-badge mixin.
@@ -158,7 +159,7 @@
 ///   }
 
 @mixin bpk-badge--light {
-  @include bpk-apply-gray-50-to(background-color);
+  background-color: $bpk-color-sky-gray-tint-07;
 }
 
 /// Inverse badge. Modifies the bpk-badge mixin.

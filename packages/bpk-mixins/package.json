@@ -1,6 +1,6 @@
 {
   "name": "bpk-mixins",
-  "version": "17.23.6",
+  "version": "19.0.3",
   "description": "Sass mixins and variables for Backpack.",
   "main": "_index.scss",
   "repository": {
@@ -10,14 +10,17 @@
   "author": "Backpack Design System <backpack@skyscanner.net>",
   "license": "Apache-2.0",
   "dependencies": {
-    "bpk-svgs": "^6.7.6",
-    "bpk-tokens": "^27.6.2"
+    "bpk-svgs": "^8.1.0",
+    "bpk-tokens": "^29.0.2"
   },
   "devDependencies": {
-    "bpk-react-utils": "^2.7.8"
+    "bpk-react-utils": "^2.8.0"
   },
   "peerDependencies": {
     "node-sass": "^4.1.1"
   },
-  "gitHead": "3244054e73b5e966c2ca795f496d8e29b6a5fff4"
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "gitHead": "67b335e771ad6bf3d6f4d5a36b6745c625758aff"
 }

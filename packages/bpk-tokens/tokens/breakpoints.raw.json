@@ -1,5 +1,8 @@
 {
   "aliases": {
+    "ABISKO": {
+      "value": "#5a489b"
+    },
     "ANIMATION_DURATION_BASE": {
       "value": "400ms"
     },
@@ -9,35 +12,8 @@
     "ANIMATION_DURATION_XS": {
       "value": "50ms"
     },
-    "BLUE_100": {
-      "value": "#cbeef5"
-    },
-    "BLUE_200": {
-      "value": "#b0e4ee"
-    },
-    "BLUE_300": {
-      "value": "#7fd7e8"
-    },
-    "BLUE_400": {
-      "value": "#40c4df"
-    },
-    "BLUE_50": {
-      "value": "#e1f4f8"
-    },
-    "BLUE_500": {
-      "value": "#00b2d6"
-    },
-    "BLUE_600": {
-      "value": "#009dbd"
-    },
-    "BLUE_700": {
-      "value": "#008ca8"
-    },
-    "BLUE_800": {
-      "value": "#00758c"
-    },
-    "BLUE_900": {
-      "value": "#005567"
+    "BAGAN": {
+      "value": "#ffebd0"
     },
     "BORDER_RADIUS_PILL": {
       "value": "1.125rem"
@@ -49,7 +25,7 @@
       "value": ".375rem"
     },
     "BORDER_RADIUS_XS": {
-      "value": ".1875rem"
+      "value": ".25rem"
     },
     "BORDER_SIZE_LG": {
       "value": "2px"
@@ -75,6 +51,15 @@
     "BREAKPOINT_TABLET": {
       "value": "50.25rem"
     },
+    "BUNOL": {
+      "value": "#ff7b59"
+    },
+    "BUTTON_FONT_SIZE": {
+      "value": "1.1875rem"
+    },
+    "ERFOUD": {
+      "value": "#ffb54d"
+    },
     "FONT_SIZE_BASE": {
       "value": "1rem"
     },
@@ -90,134 +75,89 @@
     "FONT_SIZE_XXL": {
       "value": "2.625rem"
     },
+    "FONT_WEIGHT_BLACK": {
+      "value": "900"
+    },
     "FONT_WEIGHT_BOLD": {
       "value": "700"
     },
-    "GRAY_100": {
-      "value": "#E6E4EB"
+    "GLENCOE": {
+      "value": "#73cec6"
     },
-    "GRAY_200": {
-      "value": "#CCC9D4"
+    "HARBOUR": {
+      "value": "#f6dde1"
     },
-    "GRAY_300": {
-      "value": "#B2AEBD"
+    "HILLIER": {
+      "value": "#e18b96"
     },
-    "GRAY_400": {
-      "value": "#9A95A7"
+    "KOLKATA": {
+      "value": "#ff9400"
     },
-    "GRAY_50": {
-      "value": "#F3F2F5"
+    "MONTEVERDE": {
+      "value": "#00a698"
     },
-    "GRAY_500": {
-      "value": "#817B8F"
-    },
-    "GRAY_600": {
-      "value": "#696179"
-    },
-    "GRAY_700": {
-      "value": "#524C61"
-    },
-    "GRAY_800": {
-      "value": "#3B344B"
-    },
-    "GRAY_900": {
-      "value": "#252033"
-    },
-    "GREEN_100": {
-      "value": "#cbf5e2"
-    },
-    "GREEN_200": {
-      "value": "#afedd1"
-    },
-    "GREEN_300": {
-      "value": "#80e8b9"
-    },
-    "GREEN_400": {
-      "value": "#40de97"
-    },
-    "GREEN_50": {
-      "value": "#dff7ec"
-    },
-    "GREEN_500": {
-      "value": "#00d775"
-    },
-    "GREEN_600": {
-      "value": "#00bd68"
-    },
-    "GREEN_700": {
-      "value": "#00a85d"
-    },
-    "GREEN_800": {
-      "value": "#008c4d"
-    },
-    "GREEN_900": {
-      "value": "#006638"
+    "NARA": {
+      "value": "#ffe7e0"
     },
     "ONE_PIXEL_REM": {
       "value": ".0625rem"
     },
-    "PINK_100": {
-      "value": "#FFBFD7"
+    "PANJIN": {
+      "value": "#d1435b"
     },
-    "PINK_200": {
-      "value": "#FF94BB"
-    },
-    "PINK_300": {
-      "value": "#FF73A6"
-    },
-    "PINK_400": {
-      "value": "#FF619B"
-    },
-    "PINK_50": {
-      "value": "#FDE4ED"
-    },
-    "PINK_500": {
-      "value": "#FA488A"
-    },
-    "PINK_600": {
-      "value": "#D92B6B"
-    },
-    "PINK_700": {
-      "value": "#C50F52"
-    },
-    "PINK_800": {
-      "value": "#B00C48"
-    },
-    "PINK_900": {
-      "value": "#94053A"
+    "PETRA": {
+      "value": "#ffab95"
     },
     "PRIMARY_GRADIENT_LIGHT": {
       "value": "#02DDD8"
     },
-    "RED_100": {
-      "value": "#ffd6d5"
+    "SAGANO": {
+      "value": "#d0eeec"
     },
-    "RED_200": {
-      "value": "#ffbbba"
+    "SKY_BLUE": {
+      "value": "#0770e3"
     },
-    "RED_300": {
-      "value": "#ff9694"
+    "SKY_BLUE_SHADE_01": {
+      "value": "#084eb2"
     },
-    "RED_400": {
-      "value": "#fe7471"
+    "SKY_BLUE_SHADE_02": {
+      "value": "#042759"
     },
-    "RED_50": {
-      "value": "#fcf2f2"
+    "SKY_BLUE_SHADE_03": {
+      "value": "#02122c"
     },
-    "RED_500": {
-      "value": "#ff5452"
+    "SKY_BLUE_TINT_01": {
+      "value": "#6d9feb"
     },
-    "RED_600": {
-      "value": "#eb423f"
+    "SKY_BLUE_TINT_02": {
+      "value": "#9dc0f2"
     },
-    "RED_700": {
-      "value": "#de322f"
+    "SKY_BLUE_TINT_03": {
+      "value": "#cddff8"
     },
-    "RED_800": {
-      "value": "#cc1f1d"
+    "SKY_GRAY": {
+      "value": "#111236"
     },
-    "RED_900": {
-      "value": "#a80300"
+    "SKY_GRAY_TINT_01": {
+      "value": "#444560"
+    },
+    "SKY_GRAY_TINT_02": {
+      "value": "#68697F"
+    },
+    "SKY_GRAY_TINT_03": {
+      "value": "#8f90a0"
+    },
+    "SKY_GRAY_TINT_04": {
+      "value": "#B2B2BF"
+    },
+    "SKY_GRAY_TINT_05": {
+      "value": "#CDCDD7"
+    },
+    "SKY_GRAY_TINT_06": {
+      "value": "#DDDDE5"
+    },
+    "SKY_GRAY_TINT_07": {
+      "value": "#F1F2F8"
     },
     "SPACING_BASE": {
       "value": "1.5rem"
@@ -243,38 +183,14 @@
     "SPACING_XXL": {
       "value": "2.625rem"
     },
+    "TOCHIGI": {
+      "value": "#e1ddec"
+    },
+    "VALENSOLE": {
+      "value": "#a59bc8"
+    },
     "WHITE": {
       "value": "#ffffff"
-    },
-    "YELLOW_100": {
-      "value": "#FFF3CF"
-    },
-    "YELLOW_200": {
-      "value": "#FFECB8"
-    },
-    "YELLOW_300": {
-      "value": "#FFE18C"
-    },
-    "YELLOW_400": {
-      "value": "#FFCF4A"
-    },
-    "YELLOW_50": {
-      "value": "#FFF9E6"
-    },
-    "YELLOW_500": {
-      "value": "#FFBB00"
-    },
-    "YELLOW_600": {
-      "value": "#F0B000"
-    },
-    "YELLOW_700": {
-      "value": "#E1A500"
-    },
-    "YELLOW_800": {
-      "value": "#C28E00"
-    },
-    "YELLOW_900": {
-      "value": "#9C7200"
     },
     "ZINDEX_AUTOSUGGEST": {
       "value": "900"

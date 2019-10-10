@@ -109,6 +109,8 @@ class BpkPopoverPortal extends Component<Props> {
       this.popper = null;
     }
 
+    // Note that GPU acceleration should be disabled otherwise Popper will use `translate3d`
+    // which can cause blurriness in Safari and Chrome.
     if (!this.popper) {
       this.popper = new Popper(targetElement, popoverElement, {
         placement: this.props.placement,
@@ -121,6 +123,9 @@ class BpkPopoverPortal extends Component<Props> {
         },
         modifiers: {
           ...this.props.popperModifiers,
+          computeStyle: {
+            gpuAcceleration: false,
+          },
           arrow: {
             element: `#${ARROW_ID}`,
           },

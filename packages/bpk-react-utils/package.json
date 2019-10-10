@@ -1,6 +1,6 @@
 {
   "name": "bpk-react-utils",
-  "version": "2.7.8",
+  "version": "2.8.0",
   "description": "Utilities for Backpack's React components.",
   "main": "index.js",
   "repository": {
@@ -18,5 +18,8 @@
     "prop-types": "^15.6.2",
     "react-transition-group": "^2.5.3",
     "recompose": "^0.30.0"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
   }
 }

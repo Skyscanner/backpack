@@ -21,7 +21,7 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import { mount } from 'enzyme';
 import isWeekend from 'date-fns/is_weekend';
-import { colorGreen500, colorRed500 } from 'bpk-tokens/tokens/base.es6';
+import { colorMonteverde, colorPanjin } from 'bpk-tokens/tokens/base.es6';
 
 import { weekDays, formatDateFull, formatMonth } from '../test-utils';
 
@@ -87,14 +87,14 @@ describe('BpkCalendarGrid', () => {
   it('should render correctly with a custom date component', () => {
     const MyCustomDate = props => {
       const cx = {
-        backgroundColor: colorRed500,
+        backgroundColor: colorPanjin,
         width: '50%',
         height: '50%',
         borderRadius: '5rem',
         margin: '25%',
       };
       if (isWeekend(props.date)) {
-        cx.backgroundColor = colorGreen500;
+        cx.backgroundColor = colorMonteverde;
       }
       return <div style={cx} />;
     };

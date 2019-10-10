@@ -27,8 +27,7 @@
 .bpk-star {
   display: inline-block;
   vertical-align: text-bottom;
-
-  @include bpk-apply-gray-100-to(fill);
+  fill: $bpk-color-sky-gray-tint-06;
 
   &--large {
     @include large-star;
@@ -44,7 +43,7 @@
   }
 
   &--filled {
-    fill: $bpk-color-yellow-500;
+    @include bpk-themeable-property(fill, --bpk-star-rating-filled-color, $bpk-color-erfoud);
   }
 
   &__container {

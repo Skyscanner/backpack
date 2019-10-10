@@ -21,7 +21,8 @@ import {
   horizontalNavLinkActiveColor,
   calendarDayHoverColor,
   calendarDayActiveColor,
-  colorGray100,
+  colorSkyGrayTint06,
+  colorSkyGrayTint02,
   colorWhite,
 } from 'bpk-tokens/tokens/base.es6';
 
@@ -33,13 +34,8 @@ const generateTheme = ({
   secondaryColor500,
   secondaryColor600,
   secondaryColor700,
-  gray50,
-  gray100,
-  gray300,
-  gray500,
-  gray700,
-  gray900,
   borderRadius,
+  fontSize,
   docsSidebarBackground,
   docsSidebarLink,
   docsSidebarLinkBorder,
@@ -49,17 +45,19 @@ const generateTheme = ({
   themeName,
 
   primaryColor: primaryColor500,
-
-  colorGray50: gray50,
-  colorGray100: gray100,
-  colorGray300: gray300,
-  colorGray500: gray500,
-  colorGray700: gray700,
-  colorGray900: gray900,
+  logoFillColor: primaryColor500,
 
   accordionActiveColor: primaryColor700,
   accordionColor: primaryColor500,
   accordionHoverColor: primaryColor600,
+
+  badgeBackgroundColor: primaryColor500,
+  badgeSuccessBackgroundColor: secondaryColor500,
+  badgeDestructiveBackgroundColor: colorSkyGrayTint02,
+
+  bannerAlertSuccessColor: secondaryColor500,
+  bannerAlertWarnColor: 'orange',
+  bannerAlertErrorColor: primaryColor500,
 
   barchartBarBackgroundColor: primaryColor300,
   barchartBarHoverBackgroundColor: primaryColor500,
@@ -69,6 +67,7 @@ const generateTheme = ({
   blockquoteBarColor: primaryColor500,
 
   buttonBorderRadius: borderRadius,
+  buttonFontSize: fontSize,
 
   buttonPrimaryTextColor: colorWhite,
   buttonPrimaryHoverTextColor: colorWhite,
@@ -82,7 +81,7 @@ const generateTheme = ({
   buttonSecondaryTextColor: primaryColor500,
   buttonSecondaryHoverTextColor: primaryColor600,
   buttonSecondaryActiveTextColor: primaryColor700,
-  buttonSecondaryBorderColor: colorGray100,
+  buttonSecondaryBorderColor: colorSkyGrayTint06,
   buttonSecondaryHoverBorderColor: primaryColor600,
   buttonSecondaryActiveBorderColor: primaryColor700,
   buttonSecondaryBackgroundColor: colorWhite,
@@ -101,12 +100,19 @@ const generateTheme = ({
   buttonDestructiveTextColor: secondaryColor500,
   buttonDestructiveHoverTextColor: secondaryColor600,
   buttonDestructiveActiveTextColor: secondaryColor700,
-  buttonDestructiveBorderColor: colorGray100,
+  buttonDestructiveBorderColor: colorSkyGrayTint06,
   buttonDestructiveHoverBorderColor: secondaryColor500,
   buttonDestructiveActiveBorderColor: secondaryColor500,
   buttonDestructiveBackgroundColor: colorWhite,
   buttonDestructiveHoverBackgroundColor: colorWhite,
   buttonDestructiveActiveBackgroundColor: colorWhite,
+
+  fieldsetLabelTextColor: secondaryColor500,
+
+  formValidationIconFill: secondaryColor500,
+  formValidationTextColor: secondaryColor500,
+
+  inputInvalidBorderColor: secondaryColor500,
 
   linkColor: primaryColor300,
   linkHoverColor: primaryColor500,
@@ -115,10 +121,8 @@ const generateTheme = ({
 
   linkAlternateColor: colorWhite,
   linkAlternateHoverColor: colorWhite,
-  linkAlternateActiveColor: colorGray100,
+  linkAlternateActiveColor: colorSkyGrayTint06,
   linkAlternateVisitedColor: colorWhite,
-
-  logoFillColor: primaryColor500,
 
   horizontalNavBarSelectedColor: primaryColor500,
   horizontalNavLinkSelectedColor: primaryColor500,
@@ -126,9 +130,15 @@ const generateTheme = ({
   horizontalNavLinkHoverColor,
   horizontalNavLinkActiveColor,
 
+  selectInvalidBorderColor: secondaryColor500,
+
   spinnerPrimaryColor: primaryColor500,
 
+  starRatingFilledColor: primaryColor500,
+
   sliderBarColor: primaryColor500,
+
+  textareaInvalidBorderColor: secondaryColor500,
 
   paginationNudgerActiveColor: primaryColor500,
   paginationNudgerColor: primaryColor500,
@@ -150,6 +160,10 @@ const generateTheme = ({
 
   checkboxCheckedColor: primaryColor700,
   radioCheckedColor: primaryColor700,
+
+  ratingHighColor: primaryColor500,
+  ratingMediumColor: secondaryColor500,
+  ratingLowColor: colorSkyGrayTint02,
 
   mapMarkerPrimaryBackgroundColor: primaryColor700,
   mapMarkerSecondaryBackgroundColor: secondaryColor700,
@@ -178,13 +192,8 @@ const londonTheme = {
   secondaryColor500: '#013A76',
   secondaryColor600: '#002F61',
   secondaryColor700: '#00254B',
-  gray50: '#F1F3F3',
-  gray100: '#DCDFE0',
-  gray300: '#B3BABD',
-  gray500: '#657176',
-  gray700: '#4B5458',
-  gray900: '#0B1A22',
   borderRadius: '0rem',
+  fontSize: '1.2rem',
   docsSidebarBackground: '#013A76',
   docsSidebarLink: '#6889AB',
   docsSidebarLinkBorder: '#6889AB',
@@ -201,13 +210,8 @@ const hongKongTheme = {
   secondaryColor500: '#4C4C4C',
   secondaryColor600: '#3C3C3C',
   secondaryColor700: '#2A2A2A',
-  gray50: '#F1F3F3',
-  gray100: '#DCDFE0',
-  gray300: '#B3BABD',
-  gray500: '#657176',
-  gray700: '#4B5458',
-  gray900: '#0B1A22',
   borderRadius: '100rem',
+  fontSize: '1.2rem',
   docsSidebarBackground: '#4C4C4C',
   docsSidebarLink: '#686868',
   docsSidebarLinkBorder: '#686868',
@@ -224,13 +228,8 @@ const dohaTheme = {
   secondaryColor500: '#ffc107',
   secondaryColor600: '#ffb300',
   secondaryColor700: '#ffa000',
-  gray50: '#F1F3F3',
-  gray100: '#DCDFE0',
-  gray300: '#B3BABD',
-  gray500: '#657176',
-  gray700: '#4B5458',
-  gray900: '#0B1A22',
   borderRadius: '0rem',
+  fontSize: '1.2rem',
   docsSidebarBackground: '#5E072C',
   docsSidebarLink: '#BF3671',
   docsSidebarLinkBorder: '#BF3671',

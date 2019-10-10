@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-list",
-  "version": "1.1.110",
+  "version": "2.0.3",
   "description": "Backpack list component.",
   "main": "index.js",
   "repository": {
@@ -13,9 +13,12 @@
     "react": "^15.0.0 || ^16.0.0"
   },
   "dependencies": {
-    "bpk-mixins": "^17.23.6",
-    "bpk-react-utils": "^2.7.8",
+    "bpk-mixins": "^19.0.3",
+    "bpk-react-utils": "^2.8.0",
     "prop-types": "^15.6.2"
   },
-  "gitHead": "3244054e73b5e966c2ca795f496d8e29b6a5fff4"
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "gitHead": "67b335e771ad6bf3d6f4d5a36b6745c625758aff"
 }

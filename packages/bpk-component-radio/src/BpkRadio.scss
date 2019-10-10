@@ -31,6 +31,10 @@ $bpk-radio-circle-size: $bpk-one-pixel-rem * 10;
     @include bpk-radio--disabled;
   }
 
+  &--invalid {
+    @include bpk-radio--invalid;
+  }
+
   &__input {
     @include bpk-radio__input;
 

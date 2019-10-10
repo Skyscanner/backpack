@@ -6,15 +6,15 @@ exports[`BpkScrim render should render correctly 1`] = `
 >
   <div
     className="bpk-scrim"
-    onMouseDown={[Function]}
-    onTouchStart={[Function]}
+    onMouseDown={[MockFunction]}
+    onTouchStart={[MockFunction]}
     role="presentation"
   />
   <TestComponent
     dialogRef={[Function]}
     isIpad={false}
     isIphone={false}
-    onClose={[Function]}
+    onClose={[MockFunction]}
   />
 </div>
 `;
@@ -25,15 +25,15 @@ exports[`BpkScrim render should render correctly when is iPhone 1`] = `
 >
   <div
     className="bpk-scrim"
-    onMouseDown={[Function]}
-    onTouchStart={[Function]}
+    onMouseDown={[MockFunction]}
+    onTouchStart={[MockFunction]}
     role="presentation"
   />
   <TestComponent
     dialogRef={[Function]}
     isIpad={false}
     isIphone={true}
-    onClose={[Function]}
+    onClose={[MockFunction]}
   />
 </div>
 `;
@@ -52,7 +52,7 @@ exports[`BpkScrim render should render correctly with closeOnScrimClick as false
     dialogRef={[Function]}
     isIpad={false}
     isIphone={false}
-    onClose={[Function]}
+    onClose={[MockFunction]}
   />
 </div>
 `;
@@ -63,15 +63,15 @@ exports[`BpkScrim render should render correctly with containerClassName 1`] = `
 >
   <div
     className="bpk-scrim"
-    onMouseDown={[Function]}
-    onTouchStart={[Function]}
+    onMouseDown={[MockFunction]}
+    onTouchStart={[MockFunction]}
     role="presentation"
   />
   <TestComponent
     dialogRef={[Function]}
     isIpad={false}
     isIphone={false}
-    onClose={[Function]}
+    onClose={[MockFunction]}
   />
 </div>
 `;

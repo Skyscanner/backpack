@@ -154,11 +154,7 @@ const withInfiniteScroll = <T: ExtendedProps>(
           index: 0,
           elementsPerScroll: this.props.elementsPerScroll,
           elementsToRender: [],
-        }).then(newState => {
-          this.setState({
-            ...newState,
-          });
-        });
+        }).then(newState => this.setStateAfterDsUpdate(newState));
       }
     }
 
@@ -167,6 +163,19 @@ const withInfiniteScroll = <T: ExtendedProps>(
       if (this.sentinel) {
         this.observer.unobserve(this.sentinel);
       }
+    }
+
+    setStateAfterDsUpdate(newState: State) {
+      // After a data source update (calling updateData in the data source or changing the dataSource prop)
+      // all visible data is fetched again (from 0 to current index) to update the list with the new data.
+      // If after this call `isListFinished` is true, it means the new data source has no items and we need to
+      // reset the list, which we do by setting `elementsToRender` to `[]` and `index` to `0`
+      const { isListFinished } = newState;
+      this.setState({
+        ...newState,
+        elementsToRender: isListFinished ? [] : newState.elementsToRender,
+        index: isListFinished ? 0 : newState.index,
+      });
     }
 
     updateData = () => {
@@ -181,14 +190,10 @@ const withInfiniteScroll = <T: ExtendedProps>(
         elementsPerScroll: isFirstLoad ? this.props.elementsPerScroll : index,
         elementsToRender: [],
         computeShowSeeMore: isFirstLoad,
-      }).then(newState => {
-        this.setState({
-          ...newState,
-        });
-      });
+      }).then(newState => this.setStateAfterDsUpdate(newState));
     };
 
-    fetchItems(config) {
+    fetchItems(config): Promise<$Shape<State>> {
       const { onScrollFinished, seeMoreAfter } = this.props;
       const {
         index,

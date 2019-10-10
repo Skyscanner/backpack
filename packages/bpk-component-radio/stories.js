@@ -19,7 +19,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { colorGray700, spacingBase } from 'bpk-tokens/tokens/base.es6';
+import { colorSkyGrayTint01, spacingBase } from 'bpk-tokens/tokens/base.es6';
 
 import BpkRadio from './index';
 
@@ -53,8 +53,17 @@ storiesOf('bpk-component-radio', module)
       onChange={action('radio changed')}
     />
   ))
+  .add('Invalid', () => (
+    <BpkRadio
+      id="invalid"
+      name="invalid"
+      label="Return"
+      onChange={action('radio changed')}
+      valid={false}
+    />
+  ))
   .add('White (Checked)', () => (
-    <div style={{ backgroundColor: colorGray700, padding: spacingBase }}>
+    <div style={{ backgroundColor: colorSkyGrayTint01, padding: spacingBase }}>
       <BpkRadio
         id="checked"
         name="checked"
@@ -66,12 +75,24 @@ storiesOf('bpk-component-radio', module)
     </div>
   ))
   .add('White (Unchecked)', () => (
-    <div style={{ backgroundColor: colorGray700, padding: spacingBase }}>
+    <div style={{ backgroundColor: colorSkyGrayTint01, padding: spacingBase }}>
       <BpkRadio
         id="unchecked"
         name="unchecked"
         label="Return"
         onChange={action('radio changed')}
+        white
+      />
+    </div>
+  ))
+  .add('White (Invalid)', () => (
+    <div style={{ backgroundColor: colorSkyGrayTint01, padding: spacingBase }}>
+      <BpkRadio
+        id="invalid"
+        name="invalid"
+        label="Return"
+        onChange={action('radio changed')}
+        valid={false}
         white
       />
     </div>

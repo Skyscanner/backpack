@@ -30,8 +30,10 @@ export default () => (
 | --------- | -------- | -------- | ------------- |
 | name      | string   | true     | -             |
 | label     | node     | true     | -             |
-| white     | bool     | false    | false         |
+| ariaLabel | string   | false    | props.label   |
 | disabled  | bool     | false    | false         |
+| white     | bool     | false    | false         |
+| valid     | bool     | false    | null          |
 
 ## Theme Props
 

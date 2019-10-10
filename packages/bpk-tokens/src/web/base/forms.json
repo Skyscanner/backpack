@@ -7,11 +7,11 @@
   },
   "props": {
     "CHECKBOX_CHECKED_TICK_COLOR": {
-      "value": "{!BLUE_700}",
+      "value": "{!SKY_BLUE}",
       "type": "color"
     },
     "RADIO_CHECKED_CIRCLE_COLOR": {
-      "value": "{!BLUE_700}",
+      "value": "{!SKY_BLUE}",
       "type": "color"
     },
     "INPUT_HEIGHT": {
@@ -31,7 +31,7 @@
       "type": "size"
     },
     "INPUT_BORDER": {
-      "value": "solid {!ONE_PIXEL_REM} {!GRAY_100}",
+      "value": "solid {!ONE_PIXEL_REM} {!SKY_GRAY_TINT_04}",
       "type": "border"
     },
     "INPUT_BORDER_RADIUS": {
@@ -43,11 +43,11 @@
       "type": "background"
     },
     "INPUT_COLOR": {
-      "value": "{!GRAY_700}",
+      "value": "{!SKY_GRAY}",
       "type": "color"
     },
     "INPUT_PLACEHOLDER_COLOR": {
-      "value": "{!GRAY_500}",
+      "value": "{!SKY_GRAY_TINT_02}",
       "type": "color"
     },
     "INPUT_PLACEHOLDER_FONT_STYLE": {
@@ -55,11 +55,11 @@
       "type": "font-syle"
     },
     "INPUT_DISABLED_BORDER_COLOR": {
-      "value": "{!GRAY_50}",
+      "value": "{!SKY_GRAY_TINT_07}",
       "type": "color"
     },
     "INPUT_DISABLED_COLOR": {
-      "value": "{!GRAY_300}",
+      "value": "{!SKY_GRAY_TINT_04}",
       "type": "color"
     },
     "INPUT_LARGE_HEIGHT": {
@@ -91,7 +91,7 @@
       "type": "size"
     },
     "SELECT_BORDER": {
-      "value": "solid {!ONE_PIXEL_REM} {!GRAY_100}",
+      "value": "solid {!ONE_PIXEL_REM} {!SKY_GRAY_TINT_04}",
       "type": "border"
     },
     "SELECT_BORDER_RADIUS": {
@@ -99,15 +99,15 @@
       "type": "radius"
     },
     "SELECT_COLOR": {
-      "value": "{!GRAY_700}",
+      "value": "{!SKY_GRAY}",
       "type": "color"
     },
     "SELECT_DISABLED_BORDER_COLOR": {
-      "value": "{!GRAY_50}",
+      "value": "{!SKY_GRAY_TINT_07}",
       "type": "color"
     },
     "SELECT_DISABLED_COLOR": {
-      "value": "{!GRAY_300}",
+      "value": "{!SKY_GRAY_TINT_04}",
       "type": "color"
     },
     "SELECT_LARGE_HEIGHT": {
@@ -115,11 +115,11 @@
       "type": "size"
     },
     "LABEL_COLOR": {
-      "value": "{!GRAY_700}",
+      "value": "{!SKY_GRAY}",
       "type": "color"
     },
     "LABEL_DISABLED_COLOR": {
-      "value": "{!GRAY_300}",
+      "value": "{!SKY_GRAY_TINT_04}",
       "type": "color"
     },
     "LABEL_FONT_SIZE": {
@@ -130,37 +130,12 @@
       "value": "{!SPACING_MD}",
       "type": "number"
     },
-    "FORM_VALIDATION_MARGIN": {
-      "value": "0",
-      "type": "size",
-      "deprecated": true
-    },
-    "FORM_VALIDATION_PADDING_Y": {
-      "value": "{!SPACING_XS}",
-      "type": "size",
-      "deprecated": true
-    },
-    "FORM_VALIDATION_PADDING_X": {
-      "value": "{!SPACING_SM}",
-      "type": "size",
-      "deprecated": true
-    },
-    "FORM_VALIDATION_BACKGROUND_COLOR": {
-      "value": "{!RED_500}",
-      "type": "color",
-      "deprecated": true
-    },
     "FORM_VALIDATION_COLOR": {
-      "value": "{!RED_500}",
+      "value": "{!PANJIN}",
       "type": "color"
     },
     "FORM_VALIDATION_ARROW_SIZE": {
       "value": "{!SPACING_XS}",
-      "type": "size",
-      "deprecated": true
-    },
-    "FORM_VALIDATION_CHECKBOX_ARROW_LEFT": {
-      "value": "{!SPACING_BASE}",
       "type": "size",
       "deprecated": true
     },
@@ -169,7 +144,7 @@
       "type": "size"
     },
     "REQUIRED_COLOR": {
-      "value": "{!RED_500}",
+      "value": "{!PANJIN}",
       "type": "color"
     }
   }

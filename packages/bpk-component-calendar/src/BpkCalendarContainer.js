@@ -18,6 +18,7 @@
 
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
+import { isRTL } from 'bpk-react-utils';
 
 import BpkCalendarNav from './BpkCalendarNav';
 import BpkCalendarGrid from './BpkCalendarGrid';
@@ -36,7 +37,6 @@ import {
   startOfDay,
   startOfMonth,
 } from './date-utils';
-import { getScriptDirection } from './utils';
 
 const TransitioningBpkCalendarGrid = addCalendarGridTransition(BpkCalendarGrid);
 
@@ -154,7 +154,7 @@ const withCalendarState = Calendar => {
 
     handleDateKeyDown = event => {
       event.persist();
-      const reverse = getScriptDirection() === 'rtl' ? -1 : 1;
+      const reverse = isRTL() ? -1 : 1;
       const { focusedDate } = this.state;
       const source = 'GRID';
       let preventDefault = true;

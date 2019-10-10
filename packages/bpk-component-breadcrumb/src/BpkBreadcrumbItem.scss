@@ -27,12 +27,11 @@
   }
 
   &__active-item {
-    @include bpk-apply-gray-700-to(color);
+    color: $bpk-color-sky-gray-tint-01;
   }
 
   &__arrow {
     margin: 0 $bpk-spacing-md;
-
-    @include bpk-apply-gray-300-to(fill);
+    fill: $bpk-color-sky-gray-tint-04;
   }
 }

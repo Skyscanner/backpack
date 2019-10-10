@@ -18,7 +18,9 @@
 /* @flow strict */
 
 import BpkSelect, { type Props } from './src/BpkSelect';
+import themeAttributes from './src/themeAttributes';
 
 export type BpkSelectProps = Props;
 
 export default BpkSelect;
+export { themeAttributes };

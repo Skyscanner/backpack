@@ -116,10 +116,15 @@ class BpkTooltipPortal extends Component<Props, State> {
   }
 
   onOpen = (tooltipElement: HTMLElement, targetElement: HTMLElement) => {
+    // Note that GPU acceleration should be disabled otherwise Popper will use `translate3d`
+    // which can cause blurriness in Safari and Chrome.
     this.popper = new Popper(targetElement, tooltipElement, {
       placement: this.props.placement,
       modifiers: {
         ...this.props.popperModifiers,
+        computeStyle: {
+          gpuAcceleration: false,
+        },
         arrow: {
           element: `#${ARROW_ID}`,
         },

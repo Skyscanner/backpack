@@ -25,15 +25,15 @@
   @include bpk-border-radius-sm;
 
   &--success {
-    @include bpk-border-sm($bpk-banner-alert-success-color, '');
+    @include bpk-border-sm(var(--bpk-banner-alert-success-color, $bpk-banner-alert-success-color), '');
   }
 
   &--warn {
-    @include bpk-border-sm($bpk-banner-alert-warn-color, '');
+    @include bpk-border-sm(var(--bpk-banner-alert-warn-color, $bpk-banner-alert-warn-color), '');
   }
 
   &--error {
-    @include bpk-border-sm($bpk-banner-alert-error-color, '');
+    @include bpk-border-sm(var(--bpk-banner-alert-error-color, $bpk-banner-alert-error-color), '');
   }
 
   &--neutral {
@@ -70,15 +70,15 @@
   }
 
   &__success-icon {
-    fill: $bpk-banner-alert-success-color;
+    @include bpk-themeable-property(fill, --bpk-banner-alert-success-color, $bpk-banner-alert-success-color);
   }
 
   &__warn-icon {
-    fill: $bpk-banner-alert-warn-color;
+    @include bpk-themeable-property(fill, --bpk-banner-alert-warn-color, $bpk-banner-alert-warn-color);
   }
 
   &__error-icon {
-    fill: $bpk-banner-alert-error-color;
+    @include bpk-themeable-property(fill, --bpk-banner-alert-error-color, $bpk-banner-alert-error-color);
   }
 
   &__neutral-icon {
