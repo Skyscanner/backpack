@@ -219,10 +219,14 @@ storiesOf('bpk-component-accordion', module)
   ))
   .add('Custom', () => (
     <BpkAccordion>
-      <BpkAccordionItem id="stops" title="Stops" expanded>
+      <BpkAccordionItem id="stops" title="Stops" tagName="h3" expanded>
         <StopsContent />
       </BpkAccordionItem>
-      <BpkAccordionItem id="departure-times" title="Departure times">
+      <BpkAccordionItem
+        id="departure-times"
+        title="Departure times"
+        tagName="h2"
+      >
         <AirlinesContent />
       </BpkAccordionItem>
       <BpkAccordionItem id="journey-duration" title="Journey duration" expanded>
