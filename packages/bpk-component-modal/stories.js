@@ -19,15 +19,20 @@
 /* @flow strict */
 
 import PropTypes from 'prop-types';
-import React, { type Node, Component } from 'react';
+import React, { type Node, Component, type Element } from 'react';
 import { storiesOf } from '@storybook/react';
 import { cssModules, withDefaultProps } from 'bpk-react-utils';
 import BpkButton from 'bpk-component-button';
+import { BpkNavigationBarButtonLink } from 'bpk-component-navigation-bar';
+import { withButtonAlignment, withRtlSupport } from 'bpk-component-icon';
+import ArrowIcon from 'bpk-component-icon/sm/long-arrow-left';
 import BpkText from 'bpk-component-text';
 
 import STYLES from './stories.scss';
 
 import BpkModal from './index';
+
+const ArrowIconWithRtl = withButtonAlignment(withRtlSupport(ArrowIcon));
 
 const getClassName = cssModules(STYLES);
 
@@ -96,6 +101,7 @@ const content = [
 class ModalContainer extends Component<
   {
     children: Node,
+    accessoryView: ?Element<any>,
     buttonLabel: ?string,
     wrapperProps: ?Object,
   },
@@ -105,11 +111,13 @@ class ModalContainer extends Component<
 > {
   static propTypes = {
     children: PropTypes.node.isRequired,
+    accessoryView: PropTypes.func,
     buttonLabel: PropTypes.string,
     wrapperProps: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   };
 
   static defaultProps = {
+    accessoryView: null,
     buttonLabel: null,
     wrapperProps: null,
   };
@@ -135,7 +143,13 @@ class ModalContainer extends Component<
   };
 
   render() {
-    const { children, wrapperProps, buttonLabel, ...rest } = this.props;
+    const {
+      children,
+      wrapperProps,
+      buttonLabel,
+      accessoryView,
+      ...rest
+    } = this.props;
 
     return (
       <div id="modal-container" {...wrapperProps}>
@@ -150,6 +164,7 @@ class ModalContainer extends Component<
             onClose={this.onClose}
             getApplicationElement={() => document.getElementById('pagewrap')}
             renderTarget={() => document.getElementById('modal-container')}
+            accessoryView={accessoryView}
             {...rest}
           >
             {children}
@@ -229,5 +244,26 @@ storiesOf('bpk-component-modal', module)
   .add('No padding', () => (
     <ModalContainer title="Modal title" closeLabel="Close modal" padded={false}>
       This is a default modal. You can put anything you want in here.
+    </ModalContainer>
+  ))
+  .add('With accessory view', () => (
+    <ModalContainer
+      title="Modal title"
+      closeLabel="Close modal"
+      accessoryView={
+        <BpkNavigationBarButtonLink
+          label="Close"
+          onClick={() => {}}
+          className={getClassName('bpk-modal__leading-button')}
+        >
+          <div>
+            <ArrowIconWithRtl />
+            <BpkText>Back to results</BpkText>
+          </div>
+        </BpkNavigationBarButtonLink>
+      }
+    >
+      The left hand button is intentally not functional. You can put anything
+      you want in here.
     </ModalContainer>
   ));

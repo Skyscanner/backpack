@@ -14,6 +14,7 @@
   },
   "dependencies": {
     "bpk-component-close-button": "^2.0.4",
+    "bpk-component-navigation-bar": "^2.0.4",
     "bpk-component-icon": "^5.0.4",
     "bpk-component-link": "^2.0.4",
     "bpk-mixins": "^19.0.4",
@@ -23,7 +24,8 @@
   },
   "devDependencies": {
     "bpk-component-button": "^3.0.4",
-    "bpk-component-text": "^2.0.4"
+    "bpk-component-text": "^2.0.4",
+    "bpk-component-icon": "^5.0.4"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
