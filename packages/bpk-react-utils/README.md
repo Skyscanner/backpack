@@ -73,6 +73,24 @@ class MyComponent extends Component {
 | target                | oneOf([function, node]) | false    | null          |
 | closeOnEscPressed     | bool                    | false    | true          |
 
+## `changeFavicon`
+
+A helpful utility which allows us to change a site favicon at runtime - useful for overriding the browser cached icon.
+
+It should work in IE 11, Edge, FF, and Chrome
+
+### Usage
+
+```js
+import { changeFavicon } from 'bpk-react-utils';
+
+...
+
+componentDidMount () {
+  changeFavicon('https://skyscanner.net/favicon.ico');
+}
+```
+
 ## `cssModules.js`
 
 A helpful utility which permits backwards compatibility with hard coded classes and [CSS modules](https://github.com/css-modules/css-modules).

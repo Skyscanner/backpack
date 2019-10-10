@@ -24,10 +24,12 @@ import cssModules from './src/cssModules';
 import deprecated from './src/deprecated';
 import withDefaultProps from './src/withDefaultProps';
 import isRTL from './src/isRTL';
+import changeFavicon from './src/changeFavicon';
 
 export {
   Portal,
   TransitionInitialMount,
+  changeFavicon,
   cssModules,
   deprecated,
   withDefaultProps,
@@ -37,6 +39,7 @@ export {
 export default {
   Portal,
   TransitionInitialMount,
+  changeFavicon,
   cssModules,
   deprecated,
   withDefaultProps,
