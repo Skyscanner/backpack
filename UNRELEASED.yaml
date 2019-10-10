@@ -1,9 +1,5 @@
 # UNRELEASED:
 
-ADDED:
-  - bpk-svgs:
-    - Added `document-csv`, `document-pdf`, and `print` icons
-
 # How to write a good changelog entry:
 #
 #   1. Add 'BREAKING', 'ADDED' OR 'FIXED' depending on if the change will be major, minor or patch according to [semver.org](semver.org).
