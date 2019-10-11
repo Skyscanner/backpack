@@ -24,3 +24,8 @@
 #   FIXED:
 #     - bpk-component-horcrux:
 #       - Fixed issue where `BpkHorcrux` would occasionally possess the living.
+
+
+FIXED:
+  - bpk-component-accordion:
+    - Fixed a11y errors for `BpkAccordionItem` component.

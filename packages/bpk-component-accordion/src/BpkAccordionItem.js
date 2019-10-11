@@ -45,14 +45,13 @@ const BpkAccordionItem = props => {
     );
   }
 
-  const titleId = `${id}_title`;
   const contentId = `${id}_content`;
 
   return (
     <div id={id} {...rest}>
       <dt
-        role="heading"
         aria-level="3"
+        aria-labelledby={id}
         className={getClassName('bpk-accordion__title')}
       >
         <button
@@ -76,16 +75,15 @@ const BpkAccordionItem = props => {
           </span>
         </button>
       </dt>
-      <AnimateHeight duration={200} height={expanded ? 'auto' : 0}>
-        <dd
-          id={contentId}
-          role="region"
-          aria-labelledby={titleId}
-          className={getClassName('bpk-accordion__content-container')}
-        >
+      <dd
+        id={contentId}
+        aria-labelledby={contentId}
+        className={getClassName('bpk-accordion__content-container')}
+      >
+        <AnimateHeight duration={200} height={expanded ? 'auto' : 0}>
           {children}
-        </dd>
-      </AnimateHeight>
+        </AnimateHeight>
+      </dd>
     </div>
   );
 };
