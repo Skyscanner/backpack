@@ -2,6 +2,20 @@
 
 [Unreleased changes](./UNRELEASED.yaml).
 
+# 2019-10-11 - Added accessory view options to Modal
+
+**Added:**
+
+ - bpk-component-accordion: 2.0.4 => 2.1.0
+   - Added Support for setting `tagName` to `BpkAccordionItem`
+
+ - bpk-component-modal: 2.0.4 => 2.1.0
+   - Added new prop `accessoryView` to allow support for left hand side interaction.
+
+ - bpk-component-navigation-bar: 2.0.4 => 2.1.0
+   - Modified `BpkNavigationBarButtonLink` to accept and render children.
+
+
 # 2019-10-10 - Add new icons
 
 **Added:**

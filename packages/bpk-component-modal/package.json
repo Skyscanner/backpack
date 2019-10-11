@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-modal",
-  "version": "2.0.4",
+  "version": "2.1.0",
   "description": "Backpack modal component.",
   "main": "index.js",
   "repository": {
@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "bpk-component-close-button": "^2.0.4",
-    "bpk-component-navigation-bar": "^2.0.4",
+    "bpk-component-navigation-bar": "^2.1.0",
     "bpk-component-icon": "^5.0.4",
     "bpk-component-link": "^2.0.4",
     "bpk-mixins": "^19.0.4",
