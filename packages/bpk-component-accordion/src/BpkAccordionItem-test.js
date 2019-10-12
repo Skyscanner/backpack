@@ -44,6 +44,21 @@ describe('BpkAccordionItem', () => {
     expect(tree).toMatchSnapshot();
   });
 
+  it('should render correctly with "tagName" prop set', () => {
+    const tree = renderer
+      .create(
+        <BpkAccordionItem
+          id="my-accordion"
+          title="My accordion item"
+          tagName="h3"
+        >
+          My accordion content
+        </BpkAccordionItem>,
+      )
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
   it('should render correctly with "className" prop', () => {
     const tree = renderer
       .create(
