@@ -20,7 +20,6 @@
 
 import React from 'react';
 import renderer from 'react-test-renderer';
-import { BpkNavigationBarButtonLink } from 'bpk-component-navigation-bar';
 
 import BpkModalDialog from './BpkModalDialog';
 
@@ -185,34 +184,6 @@ describe('BpkModalDialog', () => {
           onClose={jest.fn()}
           isIphone={false}
           contentClassName="my-classname"
-        >
-          Modal content
-        </BpkModalDialog>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
-  });
-
-  it('should render correctly with an accessory view', () => {
-    const tree = renderer
-      .create(
-        <BpkModalDialog
-          id="my-modal"
-          title="Modal title"
-          closeLabel="Close"
-          dialogRef={jest.fn()}
-          onClose={jest.fn()}
-          isIphone={false}
-          contentClassName="my-classname"
-          accessoryView={
-            <BpkNavigationBarButtonLink
-              label="Close"
-              onClick={jest.fn()}
-              className="bpk-modal__leading-button"
-            >
-              <div>Testing</div>
-            </BpkNavigationBarButtonLink>
-          }
         >
           Modal content
         </BpkModalDialog>,

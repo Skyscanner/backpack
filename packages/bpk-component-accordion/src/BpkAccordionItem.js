@@ -21,7 +21,6 @@ import React from 'react';
 import AnimateHeight from 'bpk-animate-height';
 import { withButtonAlignment } from 'bpk-component-icon';
 import ChevronDownIcon from 'bpk-component-icon/sm/chevron-down';
-import BpkText from 'bpk-component-text';
 import { cssModules } from 'bpk-react-utils';
 
 import STYLES from './BpkAccordionItem.scss';
@@ -32,7 +31,7 @@ const ExpandIcon = withButtonAlignment(ChevronDownIcon);
 
 const BpkAccordionItem = props => {
   const iconClassNames = [getClassName('bpk-accordion__item-expand-icon')];
-  const { id, title, children, expanded, onClick, tagName, ...rest } = props;
+  const { id, title, children, expanded, onClick, ...rest } = props;
 
   // if this component is passed initiallyExpanded, this makes sure it doesn't
   // end up on the node. Not ideal as our container component shouldn't be passing
@@ -63,13 +62,9 @@ const BpkAccordionItem = props => {
           className={getClassName('bpk-accordion__toggle-button')}
         >
           <span className={getClassName('bpk-accordion__flex-container')}>
-            <BpkText
-              textStyle="base"
-              tagName={tagName}
-              className={getClassName('bpk-accordion__title-text')}
-            >
+            <span className={getClassName('bpk-accordion__title-text')}>
               {title}
-            </BpkText>
+            </span>
             <span className={getClassName('bpk-accordion__icon-wrapper')}>
               <ExpandIcon className={iconClassNames.join(' ')} />
             </span>
@@ -93,14 +88,12 @@ const BpkAccordionItem = props => {
 BpkAccordionItem.propTypes = {
   id: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
-  tagName: PropTypes.string,
   children: PropTypes.node.isRequired,
   expanded: PropTypes.bool,
   onClick: PropTypes.func,
 };
 
 BpkAccordionItem.defaultProps = {
-  tagName: 'span',
   expanded: false,
   onClick: () => null,
 };

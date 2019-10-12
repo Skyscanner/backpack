@@ -20,9 +20,8 @@
 
 import { BpkButtonLink } from 'bpk-component-link';
 import PropTypes from 'prop-types';
-import React, { type Node, type Element } from 'react';
+import React, { type Node } from 'react';
 import BpkCloseButton from 'bpk-component-close-button';
-import BpkNavigationBar from 'bpk-component-navigation-bar';
 import { TransitionInitialMount, cssModules } from 'bpk-react-utils';
 
 import STYLES from './BpkModalDialog.scss';
@@ -46,16 +45,11 @@ export type Props = {
   title: ?string,
   closeLabel: ?string,
   closeText: ?string,
-  accessoryView: ?Element<any>,
 };
 
 const BpkModalDialog = (props: Props) => {
   const classNames = [getClassName('bpk-modal')];
   const contentClassNames = [getClassName('bpk-modal__content')];
-  const navigationStyles = [
-    getClassName('bpk-modal__navigation'),
-    !props.accessoryView && getClassName('bpk-modal__header--title-only'),
-  ];
 
   if (props.wide) {
     classNames.push(getClassName('bpk-modal--wide'));
@@ -79,7 +73,6 @@ const BpkModalDialog = (props: Props) => {
   }
 
   const headingId = `bpk-modal-heading-${props.id}`;
-  const navigationId = `bpk-modal-navigation-${props.id}`;
 
   /* eslint-disable jsx-a11y/no-static-element-interactions,jsx-a11y/no-noninteractive-element-interactions */
   return (
@@ -98,32 +91,21 @@ const BpkModalDialog = (props: Props) => {
       >
         {props.showHeader && (
           <header className={getClassName('bpk-modal__header')}>
-            <BpkNavigationBar
-              id={navigationId}
-              className={navigationStyles.join(' ')}
-              title={
-                <h2
-                  id={headingId}
-                  className={getClassName('bpk-modal__heading')}
-                >
-                  {props.title}
-                </h2>
-              }
-              leadingButton={props.accessoryView}
-              trailingButton={
-                props.closeText ? (
-                  <BpkButtonLink onClick={props.onClose}>
-                    {props.closeText}
-                  </BpkButtonLink>
-                ) : (
-                  <BpkCloseButton
-                    className={getClassName('bpk-modal__close-button')}
-                    label={props.closeLabel}
-                    onClick={props.onClose}
-                  />
-                )
-              }
-            />
+            <h2 id={headingId} className={getClassName('bpk-modal__heading')}>
+              {props.title}
+            </h2>
+            &nbsp;
+            {props.closeText ? (
+              <BpkButtonLink onClick={props.onClose}>
+                {props.closeText}
+              </BpkButtonLink>
+            ) : (
+              <BpkCloseButton
+                className={getClassName('bpk-modal__close-button')}
+                label={props.closeLabel}
+                onClick={props.onClose}
+              />
+            )}
           </header>
         )}
         <div className={contentClassNames.join(' ')}>{props.children}</div>
@@ -149,7 +131,6 @@ export const propTypes = {
   fullScreenOnMobile: PropTypes.bool,
   fullScreen: PropTypes.bool,
   padded: PropTypes.bool,
-  accesoryView: PropTypes.func,
 };
 
 export const defaultProps = {
@@ -164,7 +145,6 @@ export const defaultProps = {
   fullScreenOnMobile: true,
   fullScreen: false,
   padded: true,
-  accessoryView: null,
 };
 
 BpkModalDialog.propTypes = { ...propTypes };

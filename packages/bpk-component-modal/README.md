@@ -14,7 +14,6 @@ npm install bpk-component-modal --save-dev
 import React, { Component } from 'react';
 import BpkModal from 'bpk-component-modal';
 import BpkButton from 'bpk-component-button';
-import { BpkNavigationBarButtonLink } from 'bpk-component-navigation-bar';
 
 class App extends Component {
   constructor() {
@@ -51,17 +50,6 @@ class App extends Component {
           closeLabel="Close modal"
           getApplicationElement={() => document.getElementById('pagewrap')}
           renderTarget={() => document.getElementById('modal-container')}
-          accessoryView={
-            <BpkNavigationBarButtonLink
-              label="Close"
-              onClick={this.onClose}
-              className={getClassName('bpk-modal__leading-button')}
-            >
-              <div>
-                Back to results
-              </div>
-            </BpkNavigationBarButtonLink>
-          }
         >
           This is a modal. You can put anything you want in here.
         </BpkModal>
@@ -88,7 +76,6 @@ class App extends Component {
 | onClose               | func     | true     | -             |
 | getApplicationElement | func     | true     | -             |
 | title                 | string   | true     | -             |
-| accessoryView         | node     | false    | null          |
 | className             | string   | false    | null          |
 | contentClassName      | string   | false    | null          |
 | closeLabel            | string   | false    | null          |
@@ -101,10 +88,6 @@ class App extends Component {
 | showHeader            | bool     | false    | true          |
 | closeOnEscPressed     | bool     | false    | true          |
 | padded                | bool     | false    | true          |
-
-## `accessoryView`
-
-The accessory view allows for icons and actions to be placed in front of the main title inside the modal header. To be used with `BpkNavigationBarButtonLink`
 
 ## Theme Props
 

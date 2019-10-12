@@ -21,18 +21,3 @@
 .bpk-modal-paragraph {
   margin-bottom: $bpk-spacing-xs;
 }
-
-.bpk-modal__leading-button {
-  float: left;
-  color: $bpk-color-sky-blue;
-  fill: $bpk-color-sky-blue;
-
-  @include bpk-rtl {
-    float: right;
-  }
-
-  :hover {
-    color: $bpk-color-sky-blue-shade-01;
-    fill: $bpk-color-sky-blue-shade-01;
-  }
-}

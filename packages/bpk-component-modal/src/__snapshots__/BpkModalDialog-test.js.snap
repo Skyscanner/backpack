@@ -11,42 +11,38 @@ exports[`BpkModalDialog should render correctly 1`] = `
   <header
     className="bpk-modal__header"
   >
-    <nav
-      aria-labelledby="bpk-modal-navigation-my-modal-bpk-navigation-bar-title"
-      className="bpk-navigation-bar bpk-modal__navigation bpk-modal__header--title-only"
+    <h2
+      className="bpk-modal__heading"
+      id="bpk-modal-heading-my-modal"
     >
-      <h2
-        className="bpk-modal__heading"
-        id="bpk-modal-heading-my-modal"
-      >
-        Modal title
-      </h2>
-      <button
-        aria-label="Close"
-        className="bpk-close-button bpk-modal__close-button bpk-navigation-bar__trailing-item"
-        onClick={[MockFunction]}
-        title="Close"
-        type="button"
-      >
-        <svg
-          className="bpk-close-button__icon"
-          height="18"
-          style={
-            Object {
-              "height": "1.125rem",
-              "width": "1.125rem",
-            }
+      Modal title
+    </h2>
+     
+    <button
+      aria-label="Close"
+      className="bpk-close-button bpk-modal__close-button"
+      onClick={[MockFunction]}
+      title="Close"
+      type="button"
+    >
+      <svg
+        className="bpk-close-button__icon"
+        height="18"
+        style={
+          Object {
+            "height": "1.125rem",
+            "width": "1.125rem",
           }
-          viewBox="0 0 24 24"
-          width="18"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M12 9.172l4.243-4.243a2 2 0 1 1 2.828 2.828L14.828 12l4.243 4.243a2 2 0 1 1-2.828 2.828L12 14.828l-4.243 4.243a2 2 0 1 1-2.828-2.828L9.172 12 4.929 7.757A2 2 0 1 1 7.757 4.93L12 9.172z"
-          />
-        </svg>
-      </button>
-    </nav>
+        }
+        viewBox="0 0 24 24"
+        width="18"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M12 9.172l4.243-4.243a2 2 0 1 1 2.828 2.828L14.828 12l4.243 4.243a2 2 0 1 1-2.828 2.828L12 14.828l-4.243 4.243a2 2 0 1 1-2.828-2.828L9.172 12 4.929 7.757A2 2 0 1 1 7.757 4.93L12 9.172z"
+        />
+      </svg>
+    </button>
   </header>
   <div
     className="bpk-modal__content bpk-modal__content--padded"
@@ -67,42 +63,38 @@ exports[`BpkModalDialog should render correctly when is iPhone 1`] = `
   <header
     className="bpk-modal__header"
   >
-    <nav
-      aria-labelledby="bpk-modal-navigation-my-modal-bpk-navigation-bar-title"
-      className="bpk-navigation-bar bpk-modal__navigation bpk-modal__header--title-only"
+    <h2
+      className="bpk-modal__heading"
+      id="bpk-modal-heading-my-modal"
     >
-      <h2
-        className="bpk-modal__heading"
-        id="bpk-modal-heading-my-modal"
-      >
-        Modal title
-      </h2>
-      <button
-        aria-label="Close"
-        className="bpk-close-button bpk-modal__close-button bpk-navigation-bar__trailing-item"
-        onClick={[MockFunction]}
-        title="Close"
-        type="button"
-      >
-        <svg
-          className="bpk-close-button__icon"
-          height="18"
-          style={
-            Object {
-              "height": "1.125rem",
-              "width": "1.125rem",
-            }
+      Modal title
+    </h2>
+     
+    <button
+      aria-label="Close"
+      className="bpk-close-button bpk-modal__close-button"
+      onClick={[MockFunction]}
+      title="Close"
+      type="button"
+    >
+      <svg
+        className="bpk-close-button__icon"
+        height="18"
+        style={
+          Object {
+            "height": "1.125rem",
+            "width": "1.125rem",
           }
-          viewBox="0 0 24 24"
-          width="18"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M12 9.172l4.243-4.243a2 2 0 1 1 2.828 2.828L14.828 12l4.243 4.243a2 2 0 1 1-2.828 2.828L12 14.828l-4.243 4.243a2 2 0 1 1-2.828-2.828L9.172 12 4.929 7.757A2 2 0 1 1 7.757 4.93L12 9.172z"
-          />
-        </svg>
-      </button>
-    </nav>
+        }
+        viewBox="0 0 24 24"
+        width="18"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M12 9.172l4.243-4.243a2 2 0 1 1 2.828 2.828L14.828 12l4.243 4.243a2 2 0 1 1-2.828 2.828L12 14.828l-4.243 4.243a2 2 0 1 1-2.828-2.828L9.172 12 4.929 7.757A2 2 0 1 1 7.757 4.93L12 9.172z"
+        />
+      </svg>
+    </button>
   </header>
   <div
     className="bpk-modal__content bpk-modal__content--padded"
@@ -123,42 +115,38 @@ exports[`BpkModalDialog should render correctly when it does not fills the scree
   <header
     className="bpk-modal__header"
   >
-    <nav
-      aria-labelledby="bpk-modal-navigation-my-modal-bpk-navigation-bar-title"
-      className="bpk-navigation-bar bpk-modal__navigation bpk-modal__header--title-only"
+    <h2
+      className="bpk-modal__heading"
+      id="bpk-modal-heading-my-modal"
     >
-      <h2
-        className="bpk-modal__heading"
-        id="bpk-modal-heading-my-modal"
-      >
-        Modal title
-      </h2>
-      <button
-        aria-label="Close"
-        className="bpk-close-button bpk-modal__close-button bpk-navigation-bar__trailing-item"
-        onClick={[MockFunction]}
-        title="Close"
-        type="button"
-      >
-        <svg
-          className="bpk-close-button__icon"
-          height="18"
-          style={
-            Object {
-              "height": "1.125rem",
-              "width": "1.125rem",
-            }
+      Modal title
+    </h2>
+     
+    <button
+      aria-label="Close"
+      className="bpk-close-button bpk-modal__close-button"
+      onClick={[MockFunction]}
+      title="Close"
+      type="button"
+    >
+      <svg
+        className="bpk-close-button__icon"
+        height="18"
+        style={
+          Object {
+            "height": "1.125rem",
+            "width": "1.125rem",
           }
-          viewBox="0 0 24 24"
-          width="18"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M12 9.172l4.243-4.243a2 2 0 1 1 2.828 2.828L14.828 12l4.243 4.243a2 2 0 1 1-2.828 2.828L12 14.828l-4.243 4.243a2 2 0 1 1-2.828-2.828L9.172 12 4.929 7.757A2 2 0 1 1 7.757 4.93L12 9.172z"
-          />
-        </svg>
-      </button>
-    </nav>
+        }
+        viewBox="0 0 24 24"
+        width="18"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M12 9.172l4.243-4.243a2 2 0 1 1 2.828 2.828L14.828 12l4.243 4.243a2 2 0 1 1-2.828 2.828L12 14.828l-4.243 4.243a2 2 0 1 1-2.828-2.828L9.172 12 4.929 7.757A2 2 0 1 1 7.757 4.93L12 9.172z"
+        />
+      </svg>
+    </button>
   </header>
   <div
     className="bpk-modal__content bpk-modal__content--padded"
@@ -179,42 +167,38 @@ exports[`BpkModalDialog should render correctly when it has a className 1`] = `
   <header
     className="bpk-modal__header"
   >
-    <nav
-      aria-labelledby="bpk-modal-navigation-my-modal-bpk-navigation-bar-title"
-      className="bpk-navigation-bar bpk-modal__navigation bpk-modal__header--title-only"
+    <h2
+      className="bpk-modal__heading"
+      id="bpk-modal-heading-my-modal"
     >
-      <h2
-        className="bpk-modal__heading"
-        id="bpk-modal-heading-my-modal"
-      >
-        Modal title
-      </h2>
-      <button
-        aria-label="Close"
-        className="bpk-close-button bpk-modal__close-button bpk-navigation-bar__trailing-item"
-        onClick={[MockFunction]}
-        title="Close"
-        type="button"
-      >
-        <svg
-          className="bpk-close-button__icon"
-          height="18"
-          style={
-            Object {
-              "height": "1.125rem",
-              "width": "1.125rem",
-            }
+      Modal title
+    </h2>
+     
+    <button
+      aria-label="Close"
+      className="bpk-close-button bpk-modal__close-button"
+      onClick={[MockFunction]}
+      title="Close"
+      type="button"
+    >
+      <svg
+        className="bpk-close-button__icon"
+        height="18"
+        style={
+          Object {
+            "height": "1.125rem",
+            "width": "1.125rem",
           }
-          viewBox="0 0 24 24"
-          width="18"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M12 9.172l4.243-4.243a2 2 0 1 1 2.828 2.828L14.828 12l4.243 4.243a2 2 0 1 1-2.828 2.828L12 14.828l-4.243 4.243a2 2 0 1 1-2.828-2.828L9.172 12 4.929 7.757A2 2 0 1 1 7.757 4.93L12 9.172z"
-          />
-        </svg>
-      </button>
-    </nav>
+        }
+        viewBox="0 0 24 24"
+        width="18"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M12 9.172l4.243-4.243a2 2 0 1 1 2.828 2.828L14.828 12l4.243 4.243a2 2 0 1 1-2.828 2.828L12 14.828l-4.243 4.243a2 2 0 1 1-2.828-2.828L9.172 12 4.929 7.757A2 2 0 1 1 7.757 4.93L12 9.172z"
+        />
+      </svg>
+    </button>
   </header>
   <div
     className="bpk-modal__content bpk-modal__content--padded"
@@ -235,42 +219,38 @@ exports[`BpkModalDialog should render correctly when it is fullscreen 1`] = `
   <header
     className="bpk-modal__header"
   >
-    <nav
-      aria-labelledby="bpk-modal-navigation-my-modal-bpk-navigation-bar-title"
-      className="bpk-navigation-bar bpk-modal__navigation bpk-modal__header--title-only"
+    <h2
+      className="bpk-modal__heading"
+      id="bpk-modal-heading-my-modal"
     >
-      <h2
-        className="bpk-modal__heading"
-        id="bpk-modal-heading-my-modal"
-      >
-        Modal title
-      </h2>
-      <button
-        aria-label="Close"
-        className="bpk-close-button bpk-modal__close-button bpk-navigation-bar__trailing-item"
-        onClick={[MockFunction]}
-        title="Close"
-        type="button"
-      >
-        <svg
-          className="bpk-close-button__icon"
-          height="18"
-          style={
-            Object {
-              "height": "1.125rem",
-              "width": "1.125rem",
-            }
+      Modal title
+    </h2>
+     
+    <button
+      aria-label="Close"
+      className="bpk-close-button bpk-modal__close-button"
+      onClick={[MockFunction]}
+      title="Close"
+      type="button"
+    >
+      <svg
+        className="bpk-close-button__icon"
+        height="18"
+        style={
+          Object {
+            "height": "1.125rem",
+            "width": "1.125rem",
           }
-          viewBox="0 0 24 24"
-          width="18"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M12 9.172l4.243-4.243a2 2 0 1 1 2.828 2.828L14.828 12l4.243 4.243a2 2 0 1 1-2.828 2.828L12 14.828l-4.243 4.243a2 2 0 1 1-2.828-2.828L9.172 12 4.929 7.757A2 2 0 1 1 7.757 4.93L12 9.172z"
-          />
-        </svg>
-      </button>
-    </nav>
+        }
+        viewBox="0 0 24 24"
+        width="18"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M12 9.172l4.243-4.243a2 2 0 1 1 2.828 2.828L14.828 12l4.243 4.243a2 2 0 1 1-2.828 2.828L12 14.828l-4.243 4.243a2 2 0 1 1-2.828-2.828L9.172 12 4.929 7.757A2 2 0 1 1 7.757 4.93L12 9.172z"
+        />
+      </svg>
+    </button>
   </header>
   <div
     className="bpk-modal__content bpk-modal__content--padded"
@@ -291,108 +271,38 @@ exports[`BpkModalDialog should render correctly with a custom content classname 
   <header
     className="bpk-modal__header"
   >
-    <nav
-      aria-labelledby="bpk-modal-navigation-my-modal-bpk-navigation-bar-title"
-      className="bpk-navigation-bar bpk-modal__navigation bpk-modal__header--title-only"
+    <h2
+      className="bpk-modal__heading"
+      id="bpk-modal-heading-my-modal"
     >
-      <h2
-        className="bpk-modal__heading"
-        id="bpk-modal-heading-my-modal"
-      >
-        Modal title
-      </h2>
-      <button
-        aria-label="Close"
-        className="bpk-close-button bpk-modal__close-button bpk-navigation-bar__trailing-item"
-        onClick={[MockFunction]}
-        title="Close"
-        type="button"
-      >
-        <svg
-          className="bpk-close-button__icon"
-          height="18"
-          style={
-            Object {
-              "height": "1.125rem",
-              "width": "1.125rem",
-            }
-          }
-          viewBox="0 0 24 24"
-          width="18"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M12 9.172l4.243-4.243a2 2 0 1 1 2.828 2.828L14.828 12l4.243 4.243a2 2 0 1 1-2.828 2.828L12 14.828l-4.243 4.243a2 2 0 1 1-2.828-2.828L9.172 12 4.929 7.757A2 2 0 1 1 7.757 4.93L12 9.172z"
-          />
-        </svg>
-      </button>
-    </nav>
-  </header>
-  <div
-    className="bpk-modal__content bpk-modal__content--padded my-classname"
-  >
-    Modal content
-  </div>
-</section>
-`;
-
-exports[`BpkModalDialog should render correctly with an accessory view 1`] = `
-<section
-  aria-labelledby="bpk-modal-heading-my-modal"
-  className="bpk-modal bpk-modal--full-screen-mobile"
-  id="my-modal"
-  role="dialog"
-  tabIndex="-1"
->
-  <header
-    className="bpk-modal__header"
-  >
-    <nav
-      aria-labelledby="bpk-modal-navigation-my-modal-bpk-navigation-bar-title"
-      className="bpk-navigation-bar bpk-modal__navigation false"
+      Modal title
+    </h2>
+     
+    <button
+      aria-label="Close"
+      className="bpk-close-button bpk-modal__close-button"
+      onClick={[MockFunction]}
+      title="Close"
+      type="button"
     >
-      <button
-        className="bpk-link bpk-navigation-bar-button-link bpk-modal__leading-button bpk-navigation-bar__leading-item"
-        label="Close"
-        onClick={[MockFunction]}
-        type="button"
-      >
-        <div>
-          Testing
-        </div>
-      </button>
-      <h2
-        className="bpk-modal__heading"
-        id="bpk-modal-heading-my-modal"
-      >
-        Modal title
-      </h2>
-      <button
-        aria-label="Close"
-        className="bpk-close-button bpk-modal__close-button bpk-navigation-bar__trailing-item"
-        onClick={[MockFunction]}
-        title="Close"
-        type="button"
-      >
-        <svg
-          className="bpk-close-button__icon"
-          height="18"
-          style={
-            Object {
-              "height": "1.125rem",
-              "width": "1.125rem",
-            }
+      <svg
+        className="bpk-close-button__icon"
+        height="18"
+        style={
+          Object {
+            "height": "1.125rem",
+            "width": "1.125rem",
           }
-          viewBox="0 0 24 24"
-          width="18"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M12 9.172l4.243-4.243a2 2 0 1 1 2.828 2.828L14.828 12l4.243 4.243a2 2 0 1 1-2.828 2.828L12 14.828l-4.243 4.243a2 2 0 1 1-2.828-2.828L9.172 12 4.929 7.757A2 2 0 1 1 7.757 4.93L12 9.172z"
-          />
-        </svg>
-      </button>
-    </nav>
+        }
+        viewBox="0 0 24 24"
+        width="18"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M12 9.172l4.243-4.243a2 2 0 1 1 2.828 2.828L14.828 12l4.243 4.243a2 2 0 1 1-2.828 2.828L12 14.828l-4.243 4.243a2 2 0 1 1-2.828-2.828L9.172 12 4.929 7.757A2 2 0 1 1 7.757 4.93L12 9.172z"
+        />
+      </svg>
+    </button>
   </header>
   <div
     className="bpk-modal__content bpk-modal__content--padded my-classname"
@@ -413,24 +323,20 @@ exports[`BpkModalDialog should render correctly with closeText prop 1`] = `
   <header
     className="bpk-modal__header"
   >
-    <nav
-      aria-labelledby="bpk-modal-navigation-my-modal-bpk-navigation-bar-title"
-      className="bpk-navigation-bar bpk-modal__navigation bpk-modal__header--title-only"
+    <h2
+      className="bpk-modal__heading"
+      id="bpk-modal-heading-my-modal"
     >
-      <h2
-        className="bpk-modal__heading"
-        id="bpk-modal-heading-my-modal"
-      >
-        Modal title
-      </h2>
-      <button
-        className="bpk-link bpk-navigation-bar__trailing-item"
-        onClick={[MockFunction]}
-        type="button"
-      >
-        Dismiss
-      </button>
-    </nav>
+      Modal title
+    </h2>
+     
+    <button
+      className="bpk-link"
+      onClick={[MockFunction]}
+      type="button"
+    >
+      Dismiss
+    </button>
   </header>
   <div
     className="bpk-modal__content bpk-modal__content--padded"
@@ -451,42 +357,38 @@ exports[`BpkModalDialog should render correctly with no padding 1`] = `
   <header
     className="bpk-modal__header"
   >
-    <nav
-      aria-labelledby="bpk-modal-navigation-my-modal-bpk-navigation-bar-title"
-      className="bpk-navigation-bar bpk-modal__navigation bpk-modal__header--title-only"
+    <h2
+      className="bpk-modal__heading"
+      id="bpk-modal-heading-my-modal"
     >
-      <h2
-        className="bpk-modal__heading"
-        id="bpk-modal-heading-my-modal"
-      >
-        Modal title
-      </h2>
-      <button
-        aria-label="Close"
-        className="bpk-close-button bpk-modal__close-button bpk-navigation-bar__trailing-item"
-        onClick={[MockFunction]}
-        title="Close"
-        type="button"
-      >
-        <svg
-          className="bpk-close-button__icon"
-          height="18"
-          style={
-            Object {
-              "height": "1.125rem",
-              "width": "1.125rem",
-            }
+      Modal title
+    </h2>
+     
+    <button
+      aria-label="Close"
+      className="bpk-close-button bpk-modal__close-button"
+      onClick={[MockFunction]}
+      title="Close"
+      type="button"
+    >
+      <svg
+        className="bpk-close-button__icon"
+        height="18"
+        style={
+          Object {
+            "height": "1.125rem",
+            "width": "1.125rem",
           }
-          viewBox="0 0 24 24"
-          width="18"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M12 9.172l4.243-4.243a2 2 0 1 1 2.828 2.828L14.828 12l4.243 4.243a2 2 0 1 1-2.828 2.828L12 14.828l-4.243 4.243a2 2 0 1 1-2.828-2.828L9.172 12 4.929 7.757A2 2 0 1 1 7.757 4.93L12 9.172z"
-          />
-        </svg>
-      </button>
-    </nav>
+        }
+        viewBox="0 0 24 24"
+        width="18"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M12 9.172l4.243-4.243a2 2 0 1 1 2.828 2.828L14.828 12l4.243 4.243a2 2 0 1 1-2.828 2.828L12 14.828l-4.243 4.243a2 2 0 1 1-2.828-2.828L9.172 12 4.929 7.757A2 2 0 1 1 7.757 4.93L12 9.172z"
+        />
+      </svg>
+    </button>
   </header>
   <div
     className="bpk-modal__content"
@@ -507,42 +409,38 @@ exports[`BpkModalDialog should render correctly with wide prop 1`] = `
   <header
     className="bpk-modal__header"
   >
-    <nav
-      aria-labelledby="bpk-modal-navigation-my-modal-bpk-navigation-bar-title"
-      className="bpk-navigation-bar bpk-modal__navigation bpk-modal__header--title-only"
+    <h2
+      className="bpk-modal__heading"
+      id="bpk-modal-heading-my-modal"
     >
-      <h2
-        className="bpk-modal__heading"
-        id="bpk-modal-heading-my-modal"
-      >
-        Modal title
-      </h2>
-      <button
-        aria-label="Close"
-        className="bpk-close-button bpk-modal__close-button bpk-navigation-bar__trailing-item"
-        onClick={[MockFunction]}
-        title="Close"
-        type="button"
-      >
-        <svg
-          className="bpk-close-button__icon"
-          height="18"
-          style={
-            Object {
-              "height": "1.125rem",
-              "width": "1.125rem",
-            }
+      Modal title
+    </h2>
+     
+    <button
+      aria-label="Close"
+      className="bpk-close-button bpk-modal__close-button"
+      onClick={[MockFunction]}
+      title="Close"
+      type="button"
+    >
+      <svg
+        className="bpk-close-button__icon"
+        height="18"
+        style={
+          Object {
+            "height": "1.125rem",
+            "width": "1.125rem",
           }
-          viewBox="0 0 24 24"
-          width="18"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M12 9.172l4.243-4.243a2 2 0 1 1 2.828 2.828L14.828 12l4.243 4.243a2 2 0 1 1-2.828 2.828L12 14.828l-4.243 4.243a2 2 0 1 1-2.828-2.828L9.172 12 4.929 7.757A2 2 0 1 1 7.757 4.93L12 9.172z"
-          />
-        </svg>
-      </button>
-    </nav>
+        }
+        viewBox="0 0 24 24"
+        width="18"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M12 9.172l4.243-4.243a2 2 0 1 1 2.828 2.828L14.828 12l4.243 4.243a2 2 0 1 1-2.828 2.828L12 14.828l-4.243 4.243a2 2 0 1 1-2.828-2.828L9.172 12 4.929 7.757A2 2 0 1 1 7.757 4.93L12 9.172z"
+        />
+      </svg>
+    </button>
   </header>
   <div
     className="bpk-modal__content bpk-modal__content--padded"

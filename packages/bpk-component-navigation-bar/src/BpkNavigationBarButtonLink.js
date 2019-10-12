@@ -34,17 +34,11 @@ export type Props = {
   className: ?string,
 };
 
-const BpkNavigationBarButtonLink = ({
-  className,
-  children,
-  ...rest
-}: Props) => (
+const BpkNavigationBarButtonLink = ({ className, ...rest }: Props) => (
   <BpkButtonLink
     className={getClassName('bpk-navigation-bar-button-link', className)}
     {...rest}
-  >
-    {children}
-  </BpkButtonLink>
+  />
 );
 
 BpkNavigationBarButtonLink.propTypes = {

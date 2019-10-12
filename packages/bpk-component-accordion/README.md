@@ -78,7 +78,6 @@ export default () => (
 | children | node     | true     | -             |
 | expanded | bool     | false    | false         |
 | onClick  | func     | false    | () => null    |
-| tagName  | string   | false    | span          |
 
 ### withSingleItemAccordionState(BpkAccordion)
 
