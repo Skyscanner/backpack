@@ -5,9 +5,9 @@ exports[`withAccordionItemState(BpkAccordionItem) should render correctly 1`] = 
   id="my-accordion"
 >
   <dt
+    aria-labelledby="my-accordion"
     aria-level="3"
     className="bpk-accordion__title"
-    role="heading"
   >
     <button
       aria-controls="my-accordion_content"
@@ -20,7 +20,7 @@ exports[`withAccordionItemState(BpkAccordionItem) should render correctly 1`] = 
         className="bpk-accordion__flex-container"
       >
         <span
-          className="bpk-text bpk-text--base bpk-accordion__title-text"
+          className="bpk-text  bpk-accordion__title-text"
         >
           My accordion item
         </span>
@@ -59,31 +59,30 @@ exports[`withAccordionItemState(BpkAccordionItem) should render correctly 1`] = 
       </span>
     </button>
   </dt>
-  <div
-    onTransitionEnd={[Function]}
-    style={
-      Object {
-        "MozTransition": "height 200ms ease ",
-        "OTransition": "height 200ms ease ",
-        "WebkitTransition": "height 200ms ease ",
-        "height": 0,
-        "msTransition": "height 200ms ease ",
-        "overflow": "hidden",
-        "transition": "height 200ms ease ",
-      }
-    }
+  <dd
+    aria-labelledby="my-accordion_content"
+    className="bpk-accordion__content-container"
+    id="my-accordion_content"
   >
-    <div>
-      <dd
-        aria-labelledby="my-accordion_title"
-        className="bpk-accordion__content-container"
-        id="my-accordion_content"
-        role="region"
-      >
+    <div
+      onTransitionEnd={[Function]}
+      style={
+        Object {
+          "MozTransition": "height 200ms ease ",
+          "OTransition": "height 200ms ease ",
+          "WebkitTransition": "height 200ms ease ",
+          "height": 0,
+          "msTransition": "height 200ms ease ",
+          "overflow": "hidden",
+          "transition": "height 200ms ease ",
+        }
+      }
+    >
+      <div>
         My accordion content
-      </dd>
+      </div>
     </div>
-  </div>
+  </dd>
 </div>
 `;
 
@@ -92,9 +91,9 @@ exports[`withAccordionItemState(BpkAccordionItem) should render correctly with "
   id="my-accordion"
 >
   <dt
+    aria-labelledby="my-accordion"
     aria-level="3"
     className="bpk-accordion__title"
-    role="heading"
   >
     <button
       aria-controls="my-accordion_content"
@@ -107,7 +106,7 @@ exports[`withAccordionItemState(BpkAccordionItem) should render correctly with "
         className="bpk-accordion__flex-container"
       >
         <span
-          className="bpk-text bpk-text--base bpk-accordion__title-text"
+          className="bpk-text  bpk-accordion__title-text"
         >
           My accordion item
         </span>
@@ -146,31 +145,30 @@ exports[`withAccordionItemState(BpkAccordionItem) should render correctly with "
       </span>
     </button>
   </dt>
-  <div
-    onTransitionEnd={[Function]}
-    style={
-      Object {
-        "MozTransition": "height 200ms ease ",
-        "OTransition": "height 200ms ease ",
-        "WebkitTransition": "height 200ms ease ",
-        "height": 0,
-        "msTransition": "height 200ms ease ",
-        "overflow": "hidden",
-        "transition": "height 200ms ease ",
-      }
-    }
+  <dd
+    aria-labelledby="my-accordion_content"
+    className="bpk-accordion__content-container"
+    id="my-accordion_content"
   >
-    <div>
-      <dd
-        aria-labelledby="my-accordion_title"
-        className="bpk-accordion__content-container"
-        id="my-accordion_content"
-        role="region"
-      >
+    <div
+      onTransitionEnd={[Function]}
+      style={
+        Object {
+          "MozTransition": "height 200ms ease ",
+          "OTransition": "height 200ms ease ",
+          "WebkitTransition": "height 200ms ease ",
+          "height": 0,
+          "msTransition": "height 200ms ease ",
+          "overflow": "hidden",
+          "transition": "height 200ms ease ",
+        }
+      }
+    >
+      <div>
         My accordion content
-      </dd>
+      </div>
     </div>
-  </div>
+  </dd>
 </div>
 `;
 
@@ -179,9 +177,9 @@ exports[`withAccordionItemState(BpkAccordionItem) should render correctly with "
   id="my-accordion"
 >
   <dt
+    aria-labelledby="my-accordion"
     aria-level="3"
     className="bpk-accordion__title"
-    role="heading"
   >
     <button
       aria-controls="my-accordion_content"
@@ -194,7 +192,7 @@ exports[`withAccordionItemState(BpkAccordionItem) should render correctly with "
         className="bpk-accordion__flex-container"
       >
         <span
-          className="bpk-text bpk-text--base bpk-accordion__title-text"
+          className="bpk-text  bpk-accordion__title-text"
         >
           My accordion item
         </span>
@@ -233,30 +231,29 @@ exports[`withAccordionItemState(BpkAccordionItem) should render correctly with "
       </span>
     </button>
   </dt>
-  <div
-    onTransitionEnd={[Function]}
-    style={
-      Object {
-        "MozTransition": "height 200ms ease ",
-        "OTransition": "height 200ms ease ",
-        "WebkitTransition": "height 200ms ease ",
-        "height": "auto",
-        "msTransition": "height 200ms ease ",
-        "overflow": "visible",
-        "transition": "height 200ms ease ",
-      }
-    }
+  <dd
+    aria-labelledby="my-accordion_content"
+    className="bpk-accordion__content-container"
+    id="my-accordion_content"
   >
-    <div>
-      <dd
-        aria-labelledby="my-accordion_title"
-        className="bpk-accordion__content-container"
-        id="my-accordion_content"
-        role="region"
-      >
+    <div
+      onTransitionEnd={[Function]}
+      style={
+        Object {
+          "MozTransition": "height 200ms ease ",
+          "OTransition": "height 200ms ease ",
+          "WebkitTransition": "height 200ms ease ",
+          "height": "auto",
+          "msTransition": "height 200ms ease ",
+          "overflow": "visible",
+          "transition": "height 200ms ease ",
+        }
+      }
+    >
+      <div>
         My accordion content
-      </dd>
+      </div>
     </div>
-  </div>
+  </dd>
 </div>
 `;

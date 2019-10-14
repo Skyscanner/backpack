@@ -32,7 +32,16 @@ const ExpandIcon = withButtonAlignment(ChevronDownIcon);
 
 const BpkAccordionItem = props => {
   const iconClassNames = [getClassName('bpk-accordion__item-expand-icon')];
-  const { id, title, children, expanded, onClick, tagName, ...rest } = props;
+  const {
+    id,
+    title,
+    children,
+    expanded,
+    onClick,
+    tagName,
+    textStyle,
+    ...rest
+  } = props;
 
   // if this component is passed initiallyExpanded, this makes sure it doesn't
   // end up on the node. Not ideal as our container component shouldn't be passing
@@ -45,14 +54,13 @@ const BpkAccordionItem = props => {
     );
   }
 
-  const titleId = `${id}_title`;
   const contentId = `${id}_content`;
 
   return (
     <div id={id} {...rest}>
       <dt
-        role="heading"
         aria-level="3"
+        aria-labelledby={id}
         className={getClassName('bpk-accordion__title')}
       >
         <button
@@ -64,7 +72,7 @@ const BpkAccordionItem = props => {
         >
           <span className={getClassName('bpk-accordion__flex-container')}>
             <BpkText
-              textStyle="base"
+              textStyle={textStyle}
               tagName={tagName}
               className={getClassName('bpk-accordion__title-text')}
             >
@@ -76,16 +84,15 @@ const BpkAccordionItem = props => {
           </span>
         </button>
       </dt>
-      <AnimateHeight duration={200} height={expanded ? 'auto' : 0}>
-        <dd
-          id={contentId}
-          role="region"
-          aria-labelledby={titleId}
-          className={getClassName('bpk-accordion__content-container')}
-        >
+      <dd
+        id={contentId}
+        aria-labelledby={contentId}
+        className={getClassName('bpk-accordion__content-container')}
+      >
+        <AnimateHeight duration={200} height={expanded ? 'auto' : 0}>
           {children}
-        </dd>
-      </AnimateHeight>
+        </AnimateHeight>
+      </dd>
     </div>
   );
 };
@@ -94,6 +101,7 @@ BpkAccordionItem.propTypes = {
   id: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   tagName: PropTypes.string,
+  textStyle: PropTypes.string,
   children: PropTypes.node.isRequired,
   expanded: PropTypes.bool,
   onClick: PropTypes.func,
@@ -101,6 +109,7 @@ BpkAccordionItem.propTypes = {
 
 BpkAccordionItem.defaultProps = {
   tagName: 'span',
+  textStyle: 'bsae',
   expanded: false,
   onClick: () => null,
 };
