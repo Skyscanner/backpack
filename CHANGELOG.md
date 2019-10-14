@@ -2,6 +2,14 @@
 
 [Unreleased changes](./UNRELEASED.yaml).
 
+# 2019-10-14 - Accessibility improvements to the Accordion
+
+**Fixed:**
+
+ - bpk-component-accordion: 2.1.0 => 2.1.1
+   - Fixed a11y errors for `BpkAccordionItem` component.
+
+
 # 2019-10-11 - Added accessory view options to Modal
 
 **Added:**
