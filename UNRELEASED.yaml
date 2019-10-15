@@ -24,3 +24,7 @@
 #   FIXED:
 #     - bpk-component-horcrux:
 #       - Fixed issue where `BpkHorcrux` would occasionally possess the living.
+
+FIXED:
+  - bpk-component-text:
+    - Fixed the default `textStyle` prop.

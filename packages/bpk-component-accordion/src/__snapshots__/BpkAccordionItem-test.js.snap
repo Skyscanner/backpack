@@ -20,7 +20,7 @@ exports[`BpkAccordionItem should not render an "initiallyExpanded" attribute on 
         className="bpk-accordion__flex-container"
       >
         <span
-          className="bpk-text  bpk-accordion__title-text"
+          className="bpk-text bpk-text--base bpk-accordion__title-text"
         >
           My accordion item
         </span>
@@ -106,7 +106,7 @@ exports[`BpkAccordionItem should render correctly 1`] = `
         className="bpk-accordion__flex-container"
       >
         <span
-          className="bpk-text  bpk-accordion__title-text"
+          className="bpk-text bpk-text--base bpk-accordion__title-text"
         >
           My accordion item
         </span>
@@ -193,7 +193,7 @@ exports[`BpkAccordionItem should render correctly with "className" prop 1`] = `
         className="bpk-accordion__flex-container"
       >
         <span
-          className="bpk-text  bpk-accordion__title-text"
+          className="bpk-text bpk-text--base bpk-accordion__title-text"
         >
           My accordion item
         </span>
@@ -279,7 +279,7 @@ exports[`BpkAccordionItem should render correctly with "expanded" prop 1`] = `
         className="bpk-accordion__flex-container"
       >
         <span
-          className="bpk-text  bpk-accordion__title-text"
+          className="bpk-text bpk-text--base bpk-accordion__title-text"
         >
           My accordion item
         </span>
@@ -365,7 +365,7 @@ exports[`BpkAccordionItem should render correctly with "tagName" prop set 1`] = 
         className="bpk-accordion__flex-container"
       >
         <h3
-          className="bpk-text  bpk-accordion__title-text"
+          className="bpk-text bpk-text--base bpk-accordion__title-text"
         >
           My accordion item
         </h3>
