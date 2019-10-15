@@ -35,12 +35,12 @@ export type Props = {
   autoScrollToSelected: boolean,
 };
 
-const getLeft = (ref: ?Element): number => {
+const getPos = (ref: ?Element): ?{ left: number, right: number } => {
   if (!ref) {
-    return 0;
+    return null;
   }
   const pos = ref.getBoundingClientRect();
-  return pos.left;
+  return pos;
 };
 
 class BpkHorizontalNav extends Component<Props> {
@@ -71,6 +71,14 @@ class BpkHorizontalNav extends Component<Props> {
   }
 
   componentDidMount = () => {
+    this.scrollSelectedIntoView(false);
+  };
+
+  componentDidUpdate() {
+    this.scrollSelectedIntoView(true);
+  }
+
+  scrollSelectedIntoView = (useSmoothScroll: boolean) => {
     if (
       !this.props.autoScrollToSelected ||
       !this.scrollRef ||
@@ -85,10 +93,45 @@ class BpkHorizontalNav extends Component<Props> {
       this.selectedItemRef,
     ): any): Element);
 
-    const scrollValue = getLeft(selectedItemRef) - getLeft(this.scrollRef);
+    if (!this.scrollRef) {
+      return;
+    }
 
-    if (this.scrollRef) {
-      this.scrollRef.scrollLeft = scrollValue;
+    const selectedItemPos = getPos(selectedItemRef);
+    if (!selectedItemPos) {
+      return;
+    }
+
+    const scrollPos = getPos(this.scrollRef);
+    if (!scrollPos) {
+      return;
+    }
+
+    // We only need to carry out a scroll if the element is not already fully within the scroll view
+    const needsScroll =
+      selectedItemPos.left < scrollPos.left ||
+      selectedItemPos.right > scrollPos.right;
+
+    if (!needsScroll) {
+      return;
+    }
+
+    const scrollAdjustment = selectedItemPos.left - scrollPos.left;
+    // Some browsers don't support smooth scrolling, so in those cases we must fall back to simply setting `scrollLeft`
+    if (
+      // $FlowFixMe - we've already checked that `this.scrollRef` is defined
+      this.scrollRef.scroll &&
+      typeof this.scrollRef.scroll === 'function' &&
+      useSmoothScroll
+    ) {
+      // $FlowFixMe - we've already checked that `this.scrollRef.scroll` is a function
+      this.scrollRef.scroll({
+        left: scrollAdjustment,
+        behavior: 'smooth',
+      });
+    } else {
+      // $FlowFixMe - we've already checked that `this.scrollRef` is defined
+      this.scrollRef.scrollLeft = scrollAdjustment;
     }
   };
 

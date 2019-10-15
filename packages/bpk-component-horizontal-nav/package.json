@@ -19,6 +19,7 @@
     "prop-types": "^15.6.2"
   },
   "devDependencies": {
+    "bpk-component-text": "^2.0.4",
     "bpk-tokens": "^29.0.2"
   },
   "publishConfig": {
