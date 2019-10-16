@@ -1,4 +1,8 @@
-# UNRELEASED:
+#UNRELEASED:
+
+FIXED:
+  - bpk-component-horizontal-nav:
+    - When a new item is selected, it will now be scrolled into view if `autoScrollToSelected` is true.
 
 # How to write a good changelog entry:
 #

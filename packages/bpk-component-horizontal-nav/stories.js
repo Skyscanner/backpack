@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import React from 'react';
+import React, { Fragment } from 'react';
 import { storiesOf } from '@storybook/react';
 import { cssModules } from 'bpk-react-utils';
 import {
@@ -25,6 +25,7 @@ import {
   onePixelRem,
   colorSkyGrayTint06,
 } from 'bpk-tokens/tokens/base.es6';
+import BpkText from 'bpk-component-text';
 
 import STYLES from './stories.scss';
 
@@ -58,15 +59,20 @@ storiesOf('bpk-component-horizontal-nav', module)
     </BpkHorizontalNav>
   ))
   .add('Scroll to selected element', () => (
-    <div
-      className={getClassName('bpk-horizontal-nav-stories__narrow-container')}
-    >
-      <BpkHorizontalNav autoScrollToSelected>
-        <BpkHorizontalNavItem>Flights</BpkHorizontalNavItem>
-        <BpkHorizontalNavItem>Hotels</BpkHorizontalNavItem>
-        <BpkHorizontalNavItem selected>Car hire</BpkHorizontalNavItem>
-      </BpkHorizontalNav>
-    </div>
+    <Fragment>
+      <BpkText>
+        Note - this story works best when viewing the storybook frame alone
+      </BpkText>
+      <div
+        className={getClassName('bpk-horizontal-nav-stories__narrow-container')}
+      >
+        <BpkHorizontalNav autoScrollToSelected>
+          <BpkHorizontalNavItem>Flights</BpkHorizontalNavItem>
+          <BpkHorizontalNavItem>Hotels</BpkHorizontalNavItem>
+          <BpkHorizontalNavItem selected>Car hire</BpkHorizontalNavItem>
+        </BpkHorizontalNav>
+      </div>
+    </Fragment>
   ))
   .add('Using custom scroll colors', () => (
     <BpkHorizontalNav
