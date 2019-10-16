@@ -109,7 +109,7 @@ BpkAccordionItem.propTypes = {
 
 BpkAccordionItem.defaultProps = {
   tagName: 'span',
-  textStyle: 'bsae',
+  textStyle: 'base',
   expanded: false,
   onClick: () => null,
 };
