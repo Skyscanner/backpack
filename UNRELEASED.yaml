@@ -1,8 +1,4 @@
-#UNRELEASED:
-
-FIXED:
-  - bpk-component-horizontal-nav:
-    - When a new item is selected, it will now be scrolled into view if `autoScrollToSelected` is true.
+# UNRELEASED:
 
 # How to write a good changelog entry:
 #
@@ -28,7 +24,3 @@ FIXED:
 #   FIXED:
 #     - bpk-component-horcrux:
 #       - Fixed issue where `BpkHorcrux` would occasionally possess the living.
-
-FIXED:
-  - bpk-component-text:
-    - Fixed the default `textStyle` prop.

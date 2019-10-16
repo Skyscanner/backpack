@@ -2,6 +2,14 @@
 
 [Unreleased changes](./UNRELEASED.yaml).
 
+# 2019-10-16 - Horizontal nav scroll improvements
+
+**Fixed:**
+
+ - bpk-component-horizontal-nav: 3.0.4 => 3.0.5
+   - When a new item is selected, it will now be scrolled into view if `autoScrollToSelected` is true.
+
+
 # 2019-10-14 - Accessibility improvements to the Accordion
 
 **Fixed:**
