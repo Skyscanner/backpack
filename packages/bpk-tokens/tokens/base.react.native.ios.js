@@ -119,7 +119,9 @@ export const textHeavyFontWeight = "800";
 export const textLgFontSize = 20;
 export const textLgFontWeight = "400";
 export const textLgLetterSpacing = null;
+export const textPrimaryDarkColor = "rgb(255, 255, 255)";
 export const textPrimaryLightColor = "rgb(17, 18, 54)";
+export const textSecondaryDarkColor = "rgb(255, 255, 255)";
 export const textSecondaryLightColor = "rgb(68, 69, 96)";
 export const textSmFontSize = 14;
 export const textSmFontWeight = "400";
@@ -262,7 +264,9 @@ spacingXl,
 spacingXxl,
 };
 export const textColors = {
+textPrimaryDarkColor,
 textPrimaryLightColor,
+textSecondaryDarkColor,
 textSecondaryLightColor,
 };
 export const touchables = {

@@ -715,11 +715,25 @@
       "name": "textLgLetterSpacing"
     },
     {
+      "value": "#ffffffff",
+      "type": "color",
+      "category": "text-colors",
+      "originalValue": "{!WHITE}",
+      "name": "textPrimaryDarkColor"
+    },
+    {
       "value": "#111236ff",
       "type": "color",
       "category": "text-colors",
       "originalValue": "{!SKY_GRAY}",
       "name": "textPrimaryLightColor"
+    },
+    {
+      "value": "#ffffffff",
+      "type": "color",
+      "category": "text-colors",
+      "originalValue": "{!WHITE}",
+      "name": "textSecondaryDarkColor"
     },
     {
       "value": "#444560ff",

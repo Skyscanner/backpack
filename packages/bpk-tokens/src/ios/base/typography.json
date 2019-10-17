@@ -16,6 +16,16 @@
       "type": "color",
       "category": "text-colors"
     },
+    "TEXT_PRIMARY_DARK_COLOR": {
+      "value": "{!WHITE}",
+      "type": "color",
+      "category": "text-colors"
+    },
+    "TEXT_SECONDARY_DARK_COLOR": {
+      "value": "{!WHITE}",
+      "type": "color",
+      "category": "text-colors"
+    },
     "FONT_SIZE_CAPS": {
       "value": "{!FONT_SIZE_CAPS}",
       "type": "font-size",
