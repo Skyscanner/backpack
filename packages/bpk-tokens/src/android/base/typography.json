@@ -21,8 +21,18 @@
       "type": "color",
       "category": "text-colors"
     },
+    "TEXT_PRIMARY_DARK_COLOR": {
+      "value": "{!WHITE}",
+      "type": "color",
+      "category": "text-colors"
+    },
     "TEXT_SECONDARY_LIGHT_COLOR": {
       "value": "{!SKY_GRAY_TINT_01}",
+      "type": "color",
+      "category": "text-colors"
+    },
+    "TEXT_SECONDARY_DARK_COLOR": {
+      "value": "{!WHITE}",
       "type": "color",
       "category": "text-colors"
     },
