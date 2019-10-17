@@ -251,6 +251,24 @@
     },
     "WHITE": {
       "value": "#ffffff"
+    },
+    "TEXT_PRIMARY_COLOR": {
+      "value": "#111236ff",
+      "type": "color",
+      "category": "text-colors",
+      "originalValue": "{!SKY_GRAY}",
+      "name": "TEXT_PRIMARY_COLOR",
+      "darkValue": "#ffffffff",
+      "originalDarkValue": "{!WHITE}"
+    },
+    "TEXT_SECONDARY_COLOR": {
+      "value": "#444560ff",
+      "type": "color",
+      "category": "text-colors",
+      "originalValue": "{!SKY_GRAY_TINT_01}",
+      "name": "TEXT_SECONDARY_COLOR",
+      "darkValue": "#ffffffff",
+      "originalDarkValue": "{!WHITE}"
     }
   },
   "props": {
@@ -1199,6 +1217,8 @@
     "TEXT_XXL_LETTER_SPACING",
     "TEXT_XXXL_FONT_SIZE",
     "TEXT_XXXL_FONT_WEIGHT",
-    "TEXT_XXXL_LETTER_SPACING"
+    "TEXT_XXXL_LETTER_SPACING",
+    "TEXT_PRIMARY_COLOR",
+    "TEXT_SECONDARY_COLOR"
   ]
 }
