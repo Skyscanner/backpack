@@ -5,6 +5,12 @@
     "category": "colors"
   },
   "props": {
+    "PRIMARY_LIGHT_COLOR": {
+      "value": "{!SKY_BLUE}"
+    },
+    "SECONDARY_DARK_COLOR": {
+      "value": "{!SKY_BLUE_TINT_01}"
+    },
     "BACKGROUND_LIGHT_COLOR": {
       "value": "{!WHITE}"
     },

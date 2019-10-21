@@ -819,6 +819,20 @@
       "originalValue": "{!LINE_HEIGHT_XXL}",
       "name": "LINE_HEIGHT_XXL"
     },
+    "PRIMARY_LIGHT_COLOR": {
+      "type": "color",
+      "category": "colors",
+      "value": "#0770e3ff",
+      "originalValue": "{!SKY_BLUE}",
+      "name": "PRIMARY_LIGHT_COLOR"
+    },
+    "SECONDARY_DARK_COLOR": {
+      "type": "color",
+      "category": "colors",
+      "value": "#6d9febff",
+      "originalValue": "{!SKY_BLUE_TINT_01}",
+      "name": "SECONDARY_DARK_COLOR"
+    },
     "SHADOW_LG_COLOR": {
       "value": "#111236ff",
       "type": "color",
@@ -1276,6 +1290,8 @@
     "LINE_HEIGHT_XL",
     "LINE_HEIGHT_XS",
     "LINE_HEIGHT_XXL",
+    "PRIMARY_LIGHT_COLOR",
+    "SECONDARY_DARK_COLOR",
     "SHADOW_LG_COLOR",
     "SHADOW_LG_OFFSET_HEIGHT",
     "SHADOW_LG_OFFSET_WIDTH",
