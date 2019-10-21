@@ -15,6 +15,15 @@
     "BAGAN": {
       "value": "#ffebd0"
     },
+    "BLACK": {
+      "value": "#000000"
+    },
+    "BLACK_TINT_01": {
+      "value": "#1D1B20"
+    },
+    "BLACK_TINT_02": {
+      "value": "#2C2C2E"
+    },
     "BORDER_RADIUS_LG": {
       "value": 24
     },
@@ -253,6 +262,20 @@
       "category": "animations",
       "originalValue": "{!ANIMATION_DURATION_XS}",
       "name": "ANIMATION_DURATION_XS"
+    },
+    "BACKGROUND_DARK_COLOR": {
+      "type": "color",
+      "category": "colors",
+      "value": "#000000ff",
+      "originalValue": "{!BLACK}",
+      "name": "BACKGROUND_DARK_COLOR"
+    },
+    "BACKGROUND_LIGHT_COLOR": {
+      "type": "color",
+      "category": "colors",
+      "value": "#ffffffff",
+      "originalValue": "{!WHITE}",
+      "name": "BACKGROUND_LIGHT_COLOR"
     },
     "BORDER_RADIUS_LG": {
       "type": "size",
@@ -961,18 +984,32 @@
       "originalValue": "{!SKY_GRAY}",
       "name": "TEXT_PRIMARY_LIGHT_COLOR"
     },
-    "TEXT_SECONDARY_DARK_COLOR": {
-      "value": "#ffffffff",
+    "TEXT_QUATERNARY_DARK_COLOR": {
+      "value": "#cdcdd7ff",
       "type": "color",
       "category": "text-colors",
-      "originalValue": "{!WHITE}",
+      "originalValue": "{!SKY_GRAY_TINT_05}",
+      "name": "TEXT_QUATERNARY_DARK_COLOR"
+    },
+    "TEXT_QUATERNARY_LIGHT_COLOR": {
+      "value": "#8f90a0ff",
+      "type": "color",
+      "category": "text-colors",
+      "originalValue": "{!SKY_GRAY_TINT_03}",
+      "name": "TEXT_QUATERNARY_LIGHT_COLOR"
+    },
+    "TEXT_SECONDARY_DARK_COLOR": {
+      "value": "#8f90a0ff",
+      "type": "color",
+      "category": "text-colors",
+      "originalValue": "{!SKY_GRAY_TINT_03}",
       "name": "TEXT_SECONDARY_DARK_COLOR"
     },
     "TEXT_SECONDARY_LIGHT_COLOR": {
-      "value": "#444560ff",
+      "value": "#68697fff",
       "type": "color",
       "category": "text-colors",
-      "originalValue": "{!SKY_GRAY_TINT_01}",
+      "originalValue": "{!SKY_GRAY_TINT_02}",
       "name": "TEXT_SECONDARY_LIGHT_COLOR"
     },
     "TEXT_SM_FONT_SIZE": {
@@ -995,6 +1032,20 @@
       "category": "letter-spacings",
       "originalValue": "{!LETTER_SPACING_SM}",
       "name": "TEXT_SM_LETTER_SPACING"
+    },
+    "TEXT_TERTIARY_DARK_COLOR": {
+      "value": "#b2b2bfff",
+      "type": "color",
+      "category": "text-colors",
+      "originalValue": "{!SKY_GRAY_TINT_04}",
+      "name": "TEXT_TERTIARY_DARK_COLOR"
+    },
+    "TEXT_TERTIARY_LIGHT_COLOR": {
+      "value": "#8f90a0ff",
+      "type": "color",
+      "category": "text-colors",
+      "originalValue": "{!SKY_GRAY_TINT_03}",
+      "name": "TEXT_TERTIARY_LIGHT_COLOR"
     },
     "TEXT_XL_FONT_SIZE": {
       "value": "24",
@@ -1107,6 +1158,8 @@
     "ANIMATION_DURATION_BASE",
     "ANIMATION_DURATION_SM",
     "ANIMATION_DURATION_XS",
+    "BACKGROUND_DARK_COLOR",
+    "BACKGROUND_LIGHT_COLOR",
     "BORDER_RADIUS_LG",
     "BORDER_RADIUS_PILL",
     "BORDER_RADIUS_SM",
@@ -1208,11 +1261,15 @@
     "TEXT_LG_LETTER_SPACING",
     "TEXT_PRIMARY_DARK_COLOR",
     "TEXT_PRIMARY_LIGHT_COLOR",
+    "TEXT_QUATERNARY_DARK_COLOR",
+    "TEXT_QUATERNARY_LIGHT_COLOR",
     "TEXT_SECONDARY_DARK_COLOR",
     "TEXT_SECONDARY_LIGHT_COLOR",
     "TEXT_SM_FONT_SIZE",
     "TEXT_SM_FONT_WEIGHT",
     "TEXT_SM_LETTER_SPACING",
+    "TEXT_TERTIARY_DARK_COLOR",
+    "TEXT_TERTIARY_LIGHT_COLOR",
     "TEXT_XL_FONT_SIZE",
     "TEXT_XL_FONT_WEIGHT",
     "TEXT_XL_LETTER_SPACING",

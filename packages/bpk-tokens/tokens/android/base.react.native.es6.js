@@ -20,6 +20,8 @@
 export const animationDurationBase = 400;
 export const animationDurationSm = 200;
 export const animationDurationXs = 50;
+export const backgroundDarkColor = "rgb(0, 0, 0)";
+export const backgroundLightColor = "rgb(255, 255, 255)";
 export const borderRadiusLg = 24;
 export const borderRadiusPill = 40;
 export const borderRadiusSm = 4;
@@ -118,11 +120,15 @@ export const textLgFontWeight = "400";
 export const textLgLetterSpacing = -0.4;
 export const textPrimaryDarkColor = "rgb(255, 255, 255)";
 export const textPrimaryLightColor = "rgb(17, 18, 54)";
-export const textSecondaryDarkColor = "rgb(255, 255, 255)";
-export const textSecondaryLightColor = "rgb(68, 69, 96)";
+export const textQuaternaryDarkColor = "rgb(205, 205, 215)";
+export const textQuaternaryLightColor = "rgb(143, 144, 160)";
+export const textSecondaryDarkColor = "rgb(143, 144, 160)";
+export const textSecondaryLightColor = "rgb(104, 105, 127)";
 export const textSmFontSize = 14;
 export const textSmFontWeight = "400";
 export const textSmLetterSpacing = 0;
+export const textTertiaryDarkColor = "rgb(178, 178, 191)";
+export const textTertiaryLightColor = "rgb(143, 144, 160)";
 export const textXlFontSize = 24;
 export const textXlFontWeight = "400";
 export const textXlLetterSpacing = -0.6;
@@ -151,6 +157,8 @@ carouselIndicatorDotSizeMd,
 carouselIndicatorDotSizeSm,
 };
 export const colors = {
+backgroundDarkColor,
+backgroundLightColor,
 colorAbisko,
 colorBagan,
 colorBunol,
@@ -255,8 +263,12 @@ spacingXxl,
 export const textColors = {
 textPrimaryDarkColor,
 textPrimaryLightColor,
+textQuaternaryDarkColor,
+textQuaternaryLightColor,
 textSecondaryDarkColor,
 textSecondaryLightColor,
+textTertiaryDarkColor,
+textTertiaryLightColor,
 };
 export const typesettings = {
 fontFamily,

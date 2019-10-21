@@ -24,3 +24,6 @@
 #   FIXED:
 #     - bpk-component-horcrux:
 #       - Fixed issue where `BpkHorcrux` would occasionally possess the living.
+ADDED:
+  - bpk-tokens:
+    - New background and text color tokens for iOS and Android.
