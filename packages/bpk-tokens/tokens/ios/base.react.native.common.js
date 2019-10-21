@@ -22,6 +22,8 @@ module.exports = {
   animationDurationBase: 400,
   animationDurationSm: 200,
   animationDurationXs: 50,
+  backgroundDarkColor: "rgb(17, 18, 54)",
+  backgroundLightColor: "rgb(255, 255, 255)",
   borderRadiusLg: 24,
   borderRadiusPill: 40,
   borderRadiusSm: 4,

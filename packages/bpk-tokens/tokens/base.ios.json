@@ -22,6 +22,20 @@
       "name": "animationDurationXs"
     },
     {
+      "type": "color",
+      "category": "colors",
+      "value": "#111236ff",
+      "originalValue": "{!SKY_GRAY}",
+      "name": "backgroundDarkColor"
+    },
+    {
+      "type": "color",
+      "category": "colors",
+      "value": "#ffffffff",
+      "originalValue": "{!WHITE}",
+      "name": "backgroundLightColor"
+    },
+    {
       "type": "size",
       "value": "24",
       "category": "radii",

@@ -5,6 +5,12 @@
     "category": "colors"
   },
   "props": {
+    "BACKGROUND_LIGHT_COLOR": {
+      "value": "{!WHITE}"
+    },
+    "BACKGROUND_DARK_COLOR": {
+      "value": "{!SKY_GRAY}"
+    },
     "COLOR_WHITE": {
       "value": "{!WHITE}"
     },

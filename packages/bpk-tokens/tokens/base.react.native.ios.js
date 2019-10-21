@@ -20,6 +20,8 @@
 export const animationDurationBase = 400;
 export const animationDurationSm = 200;
 export const animationDurationXs = 50;
+export const backgroundDarkColor = "rgb(17, 18, 54)";
+export const backgroundLightColor = "rgb(255, 255, 255)";
 export const borderRadiusLg = 24;
 export const borderRadiusPill = 40;
 export const borderRadiusSm = 4;
@@ -169,6 +171,8 @@ carouselIndicatorDotSizeMd,
 carouselIndicatorDotSizeSm,
 };
 export const colors = {
+backgroundDarkColor,
+backgroundLightColor,
 colorAbisko,
 colorBagan,
 colorBunol,
