@@ -4,6 +4,14 @@
 
 # 2019-10-21 - 
 
+**Added:**
+
+ - bpk-tokens: 29.0.4 => 29.1.0
+   - New background and text color tokens for iOS and Android.
+
+
+# 2019-10-21 - 
+
 **Fixed:**
 
  - bpk-svgs: 8.2.1 => 8.2.2
