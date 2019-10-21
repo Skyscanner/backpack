@@ -912,6 +912,15 @@
       "name": "underlayOpacity"
     },
     {
+      "type": "color",
+      "category": "colors",
+      "value": "#ffffffff",
+      "originalValue": "{!WHITE}",
+      "name": "backgroundColor",
+      "darkValue": "#000000ff",
+      "originalDarkValue": "{!BLACK}"
+    },
+    {
       "value": "#111236ff",
       "type": "color",
       "category": "text-colors",
@@ -921,13 +930,31 @@
       "originalDarkValue": "{!WHITE}"
     },
     {
-      "value": "#444560ff",
+      "value": "#8f90a0ff",
       "type": "color",
       "category": "text-colors",
-      "originalValue": "{!SKY_GRAY_TINT_01}",
+      "originalValue": "{!SKY_GRAY_TINT_03}",
+      "name": "textQuaternaryColor",
+      "darkValue": "#cdcdd7ff",
+      "originalDarkValue": "{!SKY_GRAY_TINT_05}"
+    },
+    {
+      "value": "#68697fff",
+      "type": "color",
+      "category": "text-colors",
+      "originalValue": "{!SKY_GRAY_TINT_02}",
       "name": "textSecondaryColor",
-      "darkValue": "#ffffffff",
-      "originalDarkValue": "{!WHITE}"
+      "darkValue": "#8f90a0ff",
+      "originalDarkValue": "{!SKY_GRAY_TINT_03}"
+    },
+    {
+      "value": "#8f90a0ff",
+      "type": "color",
+      "category": "text-colors",
+      "originalValue": "{!SKY_GRAY_TINT_03}",
+      "name": "textTertiaryColor",
+      "darkValue": "#b2b2bfff",
+      "originalDarkValue": "{!SKY_GRAY_TINT_04}"
     }
   ]
 }

@@ -261,6 +261,15 @@
     "WHITE": {
       "value": "#ffffff"
     },
+    "BACKGROUND_COLOR": {
+      "type": "color",
+      "category": "colors",
+      "value": "#ffffffff",
+      "originalValue": "{!WHITE}",
+      "name": "BACKGROUND_COLOR",
+      "darkValue": "#000000ff",
+      "originalDarkValue": "{!BLACK}"
+    },
     "TEXT_PRIMARY_COLOR": {
       "value": "#111236ff",
       "type": "color",
@@ -270,14 +279,32 @@
       "darkValue": "#ffffffff",
       "originalDarkValue": "{!WHITE}"
     },
-    "TEXT_SECONDARY_COLOR": {
-      "value": "#444560ff",
+    "TEXT_QUATERNARY_COLOR": {
+      "value": "#8f90a0ff",
       "type": "color",
       "category": "text-colors",
-      "originalValue": "{!SKY_GRAY_TINT_01}",
+      "originalValue": "{!SKY_GRAY_TINT_03}",
+      "name": "TEXT_QUATERNARY_COLOR",
+      "darkValue": "#cdcdd7ff",
+      "originalDarkValue": "{!SKY_GRAY_TINT_05}"
+    },
+    "TEXT_SECONDARY_COLOR": {
+      "value": "#68697fff",
+      "type": "color",
+      "category": "text-colors",
+      "originalValue": "{!SKY_GRAY_TINT_02}",
       "name": "TEXT_SECONDARY_COLOR",
-      "darkValue": "#ffffffff",
-      "originalDarkValue": "{!WHITE}"
+      "darkValue": "#8f90a0ff",
+      "originalDarkValue": "{!SKY_GRAY_TINT_03}"
+    },
+    "TEXT_TERTIARY_COLOR": {
+      "value": "#8f90a0ff",
+      "type": "color",
+      "category": "text-colors",
+      "originalValue": "{!SKY_GRAY_TINT_03}",
+      "name": "TEXT_TERTIARY_COLOR",
+      "darkValue": "#b2b2bfff",
+      "originalDarkValue": "{!SKY_GRAY_TINT_04}"
     }
   },
   "props": {
@@ -1275,7 +1302,10 @@
     "TEXT_XXXL_FONT_SIZE",
     "TEXT_XXXL_FONT_WEIGHT",
     "TEXT_XXXL_LETTER_SPACING",
+    "BACKGROUND_COLOR",
     "TEXT_PRIMARY_COLOR",
-    "TEXT_SECONDARY_COLOR"
+    "TEXT_QUATERNARY_COLOR",
+    "TEXT_SECONDARY_COLOR",
+    "TEXT_TERTIARY_COLOR"
   ]
 }
