@@ -22,6 +22,20 @@
       "name": "animationDurationXs"
     },
     {
+      "type": "color",
+      "category": "colors",
+      "value": "#000000ff",
+      "originalValue": "{!BLACK}",
+      "name": "backgroundDarkColor"
+    },
+    {
+      "type": "color",
+      "category": "colors",
+      "value": "#ffffffff",
+      "originalValue": "{!WHITE}",
+      "name": "backgroundLightColor"
+    },
+    {
       "type": "size",
       "value": "24",
       "category": "radii",
@@ -729,17 +743,31 @@
       "name": "textPrimaryLightColor"
     },
     {
-      "value": "#ffffffff",
+      "value": "#cdcdd7ff",
       "type": "color",
       "category": "text-colors",
-      "originalValue": "{!WHITE}",
+      "originalValue": "{!SKY_GRAY_TINT_05}",
+      "name": "textQuaternaryDarkColor"
+    },
+    {
+      "value": "#8f90a0ff",
+      "type": "color",
+      "category": "text-colors",
+      "originalValue": "{!SKY_GRAY_TINT_03}",
+      "name": "textQuaternaryLightColor"
+    },
+    {
+      "value": "#8f90a0ff",
+      "type": "color",
+      "category": "text-colors",
+      "originalValue": "{!SKY_GRAY_TINT_03}",
       "name": "textSecondaryDarkColor"
     },
     {
-      "value": "#444560ff",
+      "value": "#68697fff",
       "type": "color",
       "category": "text-colors",
-      "originalValue": "{!SKY_GRAY_TINT_01}",
+      "originalValue": "{!SKY_GRAY_TINT_02}",
       "name": "textSecondaryLightColor"
     },
     {
@@ -762,6 +790,20 @@
       "category": "letter-spacings",
       "originalValue": "{!LETTER_SPACING_SM}",
       "name": "textSmLetterSpacing"
+    },
+    {
+      "value": "#b2b2bfff",
+      "type": "color",
+      "category": "text-colors",
+      "originalValue": "{!SKY_GRAY_TINT_04}",
+      "name": "textTertiaryDarkColor"
+    },
+    {
+      "value": "#8f90a0ff",
+      "type": "color",
+      "category": "text-colors",
+      "originalValue": "{!SKY_GRAY_TINT_03}",
+      "name": "textTertiaryLightColor"
     },
     {
       "value": "24",

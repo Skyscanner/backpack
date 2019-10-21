@@ -15,6 +15,15 @@
     "BAGAN": {
       "value": "#ffebd0"
     },
+    "BLACK": {
+      "value": "#000000"
+    },
+    "BLACK_TINT_01": {
+      "value": "#1D1B20"
+    },
+    "BLACK_TINT_02": {
+      "value": "#2C2C2E"
+    },
     "BORDER_RADIUS_PILL": {
       "value": "1.125rem"
     },

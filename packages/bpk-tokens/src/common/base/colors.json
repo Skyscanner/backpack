@@ -31,6 +31,9 @@
     "SKY_GRAY_TINT_02": "#68697F",
     "SKY_GRAY_TINT_01": "#444560",
     "SKY_GRAY": "#111236",
+    "BLACK": "#000000",
+    "BLACK_TINT_01": "#1D1B20",
+    "BLACK_TINT_02": "#2C2C2E",
     "PRIMARY_GRADIENT_LIGHT": "#02DDD8"
   }
 }

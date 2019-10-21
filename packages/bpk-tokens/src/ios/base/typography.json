@@ -12,7 +12,17 @@
       "category": "text-colors"
     },
     "TEXT_SECONDARY_LIGHT_COLOR": {
-      "value": "{!SKY_GRAY_TINT_01}",
+      "value": "{!SKY_GRAY_TINT_02}",
+      "type": "color",
+      "category": "text-colors"
+    },
+    "TEXT_TERTIARY_LIGHT_COLOR": {
+      "value": "{!SKY_GRAY_TINT_03}",
+      "type": "color",
+      "category": "text-colors"
+    },
+    "TEXT_QUATERNARY_LIGHT_COLOR": {
+      "value": "{!SKY_GRAY_TINT_03}",
       "type": "color",
       "category": "text-colors"
     },
@@ -22,7 +32,17 @@
       "category": "text-colors"
     },
     "TEXT_SECONDARY_DARK_COLOR": {
-      "value": "{!WHITE}",
+      "value": "{!SKY_GRAY_TINT_03}",
+      "type": "color",
+      "category": "text-colors"
+    },
+    "TEXT_TERTIARY_DARK_COLOR": {
+      "value": "{!SKY_GRAY_TINT_04}",
+      "type": "color",
+      "category": "text-colors"
+    },
+    "TEXT_QUATERNARY_DARK_COLOR": {
+      "value": "{!SKY_GRAY_TINT_05}",
       "type": "color",
       "category": "text-colors"
     },

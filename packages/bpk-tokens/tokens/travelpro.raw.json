@@ -21,6 +21,12 @@
     "BLACK_FIFTY_PERCENT": {
       "value": "rgba(0,0,0,0.5)"
     },
+    "BLACK_TINT_01": {
+      "value": "#1D1B20"
+    },
+    "BLACK_TINT_02": {
+      "value": "#2C2C2E"
+    },
     "BLOOD": {
       "value": "#C5000E"
     },
