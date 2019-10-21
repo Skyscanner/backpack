@@ -27,6 +27,7 @@ import { flatten } from 'lodash';
 import gulpMerge from 'merge2';
 import jsonLint from 'gulp-jsonlint';
 
+import transformDarkValues from './src/transformDarkValues';
 import bpkScss from './formatters/bpk.scss';
 import bpkEs6Js from './formatters/bpk.es6.js';
 import bpkIosJson from './formatters/bpk.ios.json';
@@ -122,6 +123,8 @@ const createTokens = done => {
           format: { type: format },
         }),
       )
+      .on('error', done)
+      .pipe(transformDarkValues())
       .on('error', done)
       .pipe(gulp.dest(path.resolve(__dirname, outputPath)))
       .on('error', done)

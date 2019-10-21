@@ -910,6 +910,24 @@
       "deprecated": true,
       "originalValue": "0.15",
       "name": "underlayOpacity"
+    },
+    {
+      "value": "#111236ff",
+      "type": "color",
+      "category": "text-colors",
+      "originalValue": "{!SKY_GRAY}",
+      "name": "textPrimaryColor",
+      "darkValue": "#ffffffff",
+      "originalDarkValue": "{!WHITE}"
+    },
+    {
+      "value": "#444560ff",
+      "type": "color",
+      "category": "text-colors",
+      "originalValue": "{!SKY_GRAY_TINT_01}",
+      "name": "textSecondaryColor",
+      "darkValue": "#ffffffff",
+      "originalDarkValue": "{!WHITE}"
     }
   ]
 }
