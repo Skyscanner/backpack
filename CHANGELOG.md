@@ -2,6 +2,14 @@
 
 [Unreleased changes](./UNRELEASED.yaml).
 
+# 2019-10-21 - 
+
+**Fixed:**
+
+ - bpk-svgs: 8.2.1 => 8.2.2
+   - Updated the 3 verticals icons (`cars`, `flight`, `hotels`).
+
+
 # 2019-10-16 - Horizontal nav scroll improvements
 
 **Fixed:**
