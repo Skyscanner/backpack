@@ -18,6 +18,7 @@
 
 /* eslint-disable no-console */
 
+const path = require('path');
 const fs = require('fs');
 const { exec, execSync } = require('child_process');
 const readline = require('readline');
@@ -391,21 +392,47 @@ const updateChangelog = (changes, changeSummary) => {
   return publishTitle;
 };
 
-const publishPackageToNPM = packageName =>
+const publishPackageToNPM = (packageName, tag) =>
   new Promise(resolve => {
-    exec(`(cd packages/${packageName} && npm publish)`, null, () => {
+    const tagArg = tag ? ` --tag ${tag}` : '';
+    exec(`(cd packages/${packageName} && npm publish${tagArg})`, null, () => {
       publishDone();
       resolve();
     });
   });
 
-const publishPackagesToNPM = changes =>
+const publishPackagesToNPM = (changes, tag) =>
   new Promise(resolve => {
     bar.start(changes.length, 0);
-    const tasks = changes.map(c => publishPackageToNPM(c.name));
+    const tasks = changes.map(c => publishPackageToNPM(c.name, tag));
 
     Promise.all(tasks).then(result => {
       bar.stop();
+      resolve(result);
+    });
+  });
+
+const appendToPackageVersion = (c, text) =>
+  new Promise(resolve => {
+    const packageJsonFilePath = path.join(c.path, 'package.json');
+    const appendedVersion = `${c.currentVersion}-${text}`;
+    const packageJsonData = JSON.parse(
+      fs.readFileSync(packageJsonFilePath).toString(),
+    );
+    packageJsonData.version = appendedVersion;
+    fs.writeFileSync(
+      packageJsonFilePath,
+      `${JSON.stringify(packageJsonData, null, '  ')}\n`,
+    );
+
+    resolve();
+  });
+
+const appendToPackageVersions = (changes, text) =>
+  new Promise(resolve => {
+    const tasks = changes.map(c => appendToPackageVersion(c, text));
+
+    Promise.all(tasks).then(result => {
       resolve(result);
     });
   });
@@ -429,7 +456,7 @@ const performPublish = async (changes, changeSummary) => {
   if (!testing) {
     disableKrypton();
     execSync(`git add . && git commit -m "${commitMessage}" --no-verify`);
-    await publishPackagesToNPM(changes);
+    await publishPackagesToNPM(changes, null);
     execSync(`git add . && git commit --amend --no-edit --no-verify`);
     createGitTags(changes);
     execSync(`git push`);
@@ -515,4 +542,6 @@ module.exports = {
   generateCommitMessage,
   generateChangelogSection,
   cancelPublish,
+  appendToPackageVersions,
+  publishPackagesToNPM,
 };
