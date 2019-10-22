@@ -24,7 +24,7 @@
   },
   "devDependencies": {
     "bpk-component-button": "^3.1.0",
-    "bpk-component-icon": "^5.0.8",
+    "bpk-component-icon": "^5.0.9",
     "bpk-component-text": "^2.0.9"
   },
   "publishConfig": {
