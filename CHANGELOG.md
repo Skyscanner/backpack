@@ -2,6 +2,14 @@
 
 [Unreleased changes](./UNRELEASED.yaml).
 
+# 2019-10-22 - 
+
+**Fixed:**
+
+ - bpk-tokens: 29.1.0 => 29.1.1
+   - Fixed an issue that caused the dynamic tokens to be exported incorrectly.
+
+
 # 2019-10-21 - 
 
 **Added:**

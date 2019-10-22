@@ -1,9 +1,5 @@
 # UNRELEASED:
 
-FIXED:
-  - bpk-tokens:
-    - Fixed an issue that caused the dynamic tokens to be exported incorrectly.
-
 # How to write a good changelog entry:
 #
 #   1. Add 'BREAKING', 'ADDED' OR 'FIXED' depending on if the change will be major, minor or patch according to [semver.org](semver.org).
