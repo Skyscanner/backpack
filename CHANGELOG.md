@@ -2,7 +2,15 @@
 
 [Unreleased changes](./UNRELEASED.yaml).
 
-# 2019-10-22 - 
+# 2019-10-22 - Add individual exports for buttons
+
+**Added:**
+
+  - bpk-component-button
+    - Added sub-components for each button type to reduce the amount of unused CSS and JS included.
+    - Buttons can be used in the same way, or the sub-components can be imported directly, e.g. `import BpkButtonFeatured from 'bpk-component-button/BpkButtonFeatured';`
+
+# 2019-10-22
 
 **Fixed:**
 
@@ -10,7 +18,7 @@
    - Fixed an issue that caused the dynamic tokens to be exported incorrectly.
 
 
-# 2019-10-21 - 
+# 2019-10-21
 
 **Added:**
 
@@ -18,7 +26,7 @@
    - New background and text color tokens for iOS and Android.
 
 
-# 2019-10-21 - 
+# 2019-10-21
 
 **Fixed:**
 
