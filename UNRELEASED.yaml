@@ -1,9 +1,8 @@
 # UNRELEASED:
 
-ADDED:
+FIXED:
   - bpk-tokens:
-    - Light and dark mode tokens are now combined into dynamic tokens.
-
+    - Fixed an issue that caused the dynamic tokens to be exported incorrectly.
 
 # How to write a good changelog entry:
 #
