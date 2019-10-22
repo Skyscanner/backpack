@@ -1,0 +1,127 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ButtonToTest should add only bpk specific classes if className prop is set to empty string 1`] = `
+<button
+  className="bpk-button bpk-button--large bpk-button--featured"
+  disabled={false}
+  onClick={null}
+  type="button"
+>
+  My button
+</button>
+`;
+
+exports[`ButtonToTest should render correctly 1`] = `
+<button
+  className="bpk-button bpk-button--featured"
+  disabled={false}
+  onClick={null}
+  type="button"
+>
+  My button
+</button>
+`;
+
+exports[`ButtonToTest should render correctly with "blank" and "rel" attributes 1`] = `
+<a
+  className="bpk-button bpk-button--featured"
+  href="#"
+  onClick={null}
+  rel="rel-overwrite"
+  target="_blank"
+>
+  My button
+</a>
+`;
+
+exports[`ButtonToTest should render correctly with "blank" attribute 1`] = `
+<a
+  className="bpk-button bpk-button--featured"
+  href="#"
+  onClick={null}
+  rel="noopener noreferrer"
+  target="_blank"
+>
+  My button
+</a>
+`;
+
+exports[`ButtonToTest should render correctly with "disabled" and "href" attributes 1`] = `
+<button
+  className="bpk-button bpk-button--featured"
+  disabled={true}
+  onClick={null}
+  type="button"
+>
+  My button
+</button>
+`;
+
+exports[`ButtonToTest should render correctly with "rel" attribute 1`] = `
+<a
+  className="bpk-button bpk-button--featured"
+  href="#"
+  onClick={null}
+  rel="rel-attr"
+  target={null}
+>
+  My button
+</a>
+`;
+
+exports[`ButtonToTest should render correctly with a "disabled" attribute 1`] = `
+<button
+  className="bpk-button bpk-button--featured"
+  disabled={true}
+  onClick={null}
+  type="button"
+>
+  My button
+</button>
+`;
+
+exports[`ButtonToTest should render correctly with a "href" attribute 1`] = `
+<a
+  className="bpk-button bpk-button--featured"
+  href="#"
+  onClick={null}
+  rel={null}
+  target={null}
+>
+  My button
+</a>
+`;
+
+exports[`ButtonToTest should render correctly with a "large" attribute 1`] = `
+<button
+  className="bpk-button bpk-button--large bpk-button--featured"
+  disabled={false}
+  onClick={null}
+  type="button"
+>
+  My button
+</button>
+`;
+
+exports[`ButtonToTest should render correctly with an "iconOnly" attribute 1`] = `
+<button
+  className="bpk-button bpk-button--icon-only bpk-button--featured"
+  disabled={false}
+  onClick={null}
+  type="button"
+>
+  My button
+</button>
+`;
+
+exports[`ButtonToTest should respect the class names entered as a string 1`] = `
+<button
+  className="bpk-button bpk-button--large bpk-button--featured custom-class-1 custom-class-2"
+  disabled={false}
+  onClick={null}
+  secondary={true}
+  type="button"
+>
+  My button
+</button>
+`;

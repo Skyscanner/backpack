@@ -18,98 +18,45 @@
 
 /* @flow strict */
 
-import React, { type Node } from 'react';
+import { type Node } from 'react';
 import PropTypes from 'prop-types';
 
-import {
-  BpkButtonPrimary,
-  BpkButtonSecondary,
-  BpkButtonDestructive,
-  BpkButtonLink,
-  BpkButtonFeatured,
-  BpkButtonOutline,
-} from '../index';
-
-type Props = {
+export type Props = {
   children: Node,
   href: ?string,
   className: ?string,
   disabled: boolean,
   onClick: ?(event: SyntheticEvent<>) => mixed,
   submit: boolean,
-  secondary: boolean,
-  destructive: boolean,
-  featured: boolean,
-  outline: boolean,
   large: boolean,
-  link: boolean,
   iconOnly: boolean,
   blank: boolean,
   rel: ?string,
 };
 
-const BpkButton = (props: Props) => {
-  const {
-    children,
-    secondary,
-    destructive,
-    featured,
-    outline,
-    link,
-    ...rest
-  } = props;
-
-  if (secondary) {
-    return <BpkButtonSecondary {...rest}>{children}</BpkButtonSecondary>;
-  }
-  if (destructive) {
-    return <BpkButtonDestructive {...rest}>{children}</BpkButtonDestructive>;
-  }
-  if (featured) {
-    return <BpkButtonFeatured {...rest}>{children}</BpkButtonFeatured>;
-  }
-  if (outline) {
-    return <BpkButtonOutline {...rest}>{children}</BpkButtonOutline>;
-  }
-  if (link) {
-    return <BpkButtonLink {...rest}>{children}</BpkButtonLink>;
-  }
-  return <BpkButtonPrimary {...rest}>{children}</BpkButtonPrimary>;
-};
-
-BpkButton.propTypes = {
+const propTypes = {
   children: PropTypes.node.isRequired,
   href: PropTypes.string,
   className: PropTypes.string,
   disabled: PropTypes.bool,
   onClick: PropTypes.func,
   submit: PropTypes.bool,
-  secondary: PropTypes.bool,
-  destructive: PropTypes.bool,
-  featured: PropTypes.bool,
-  outline: PropTypes.bool,
   large: PropTypes.bool,
-  link: PropTypes.bool,
   iconOnly: PropTypes.bool,
   blank: PropTypes.bool,
   rel: PropTypes.string,
 };
 
-BpkButton.defaultProps = {
+const defaultProps = {
   href: null,
   className: null,
   disabled: false,
   onClick: null,
   submit: false,
-  secondary: false,
-  destructive: false,
-  featured: false,
-  outline: false,
   large: false,
-  link: false,
   iconOnly: false,
   blank: false,
   rel: null,
 };
 
-export default BpkButton;
+export { propTypes, defaultProps };

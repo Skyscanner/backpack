@@ -37,6 +37,7 @@
   border: 0;
   background-image: linear-gradient(-180deg, $bpk-button-gradient-start-color 0%, $bpk-button-gradient-end-color 100%);
   background-image: linear-gradient(-180deg, var(--bpk-button-primary-gradient-start-color, $bpk-button-gradient-start-color) 0%, var(--bpk-button-primary-gradient-end-color, $bpk-button-gradient-end-color) 100%);
+  font-size: $bpk-button-font-size;
   font-weight: $bpk-button-font-weight;
   line-height: $bpk-button-line-height;
   text-align: $bpk-button-text-align;

@@ -6,7 +6,7 @@ exports[`BpkNudger should render as a configurable nudger correctly 1`] = `
 >
   <button
     aria-controls="nudger"
-    className="bpk-button bpk-button--secondary bpk-button--icon-only bpk-nudger__button"
+    className="bpk-button bpk-button--icon-only bpk-button--secondary bpk-nudger__button"
     disabled={false}
     onClick={[Function]}
     title="Decrease"
@@ -51,7 +51,7 @@ exports[`BpkNudger should render as a configurable nudger correctly 1`] = `
   />
   <button
     aria-controls="nudger"
-    className="bpk-button bpk-button--secondary bpk-button--icon-only bpk-nudger__button"
+    className="bpk-button bpk-button--icon-only bpk-button--secondary bpk-nudger__button"
     disabled={false}
     onClick={[Function]}
     title="Increase"
@@ -95,7 +95,7 @@ exports[`BpkNudger should render as an outline nudger correctly 1`] = `
 >
   <button
     aria-controls="nudger"
-    className="bpk-button bpk-button--outline bpk-button--icon-only bpk-nudger__button"
+    className="bpk-button bpk-button--icon-only bpk-button--outline bpk-nudger__button"
     disabled={false}
     onClick={[Function]}
     title="Decrease"
@@ -140,7 +140,7 @@ exports[`BpkNudger should render as an outline nudger correctly 1`] = `
   />
   <button
     aria-controls="nudger"
-    className="bpk-button bpk-button--outline bpk-button--icon-only bpk-nudger__button"
+    className="bpk-button bpk-button--icon-only bpk-button--outline bpk-nudger__button"
     disabled={false}
     onClick={[Function]}
     title="Increase"
@@ -184,7 +184,7 @@ exports[`BpkNudger should render correctly 1`] = `
 >
   <button
     aria-controls="nudger"
-    className="bpk-button bpk-button--secondary bpk-button--icon-only bpk-nudger__button"
+    className="bpk-button bpk-button--icon-only bpk-button--secondary bpk-nudger__button"
     disabled={false}
     onClick={[Function]}
     title="Decrease"
@@ -229,7 +229,7 @@ exports[`BpkNudger should render correctly 1`] = `
   />
   <button
     aria-controls="nudger"
-    className="bpk-button bpk-button--secondary bpk-button--icon-only bpk-nudger__button"
+    className="bpk-button bpk-button--icon-only bpk-button--secondary bpk-nudger__button"
     disabled={false}
     onClick={[Function]}
     title="Increase"
@@ -273,7 +273,7 @@ exports[`BpkNudger should render correctly with a "className" attribute 1`] = `
 >
   <button
     aria-controls="nudger"
-    className="bpk-button bpk-button--secondary bpk-button--icon-only bpk-nudger__button"
+    className="bpk-button bpk-button--icon-only bpk-button--secondary bpk-nudger__button"
     disabled={false}
     onClick={[Function]}
     title="Decrease"
@@ -318,7 +318,7 @@ exports[`BpkNudger should render correctly with a "className" attribute 1`] = `
   />
   <button
     aria-controls="nudger"
-    className="bpk-button bpk-button--secondary bpk-button--icon-only bpk-nudger__button"
+    className="bpk-button bpk-button--icon-only bpk-button--secondary bpk-nudger__button"
     disabled={false}
     onClick={[Function]}
     title="Increase"
@@ -362,7 +362,7 @@ exports[`BpkNudger should render correctly with a value < min 1`] = `
 >
   <button
     aria-controls="nudger"
-    className="bpk-button bpk-button--secondary bpk-button--icon-only bpk-nudger__button"
+    className="bpk-button bpk-button--icon-only bpk-button--secondary bpk-nudger__button"
     disabled={true}
     onClick={[Function]}
     title="Decrease"
@@ -407,7 +407,7 @@ exports[`BpkNudger should render correctly with a value < min 1`] = `
   />
   <button
     aria-controls="nudger"
-    className="bpk-button bpk-button--secondary bpk-button--icon-only bpk-nudger__button"
+    className="bpk-button bpk-button--icon-only bpk-button--secondary bpk-nudger__button"
     disabled={false}
     onClick={[Function]}
     title="Increase"
@@ -451,7 +451,7 @@ exports[`BpkNudger should render correctly with a value = max 1`] = `
 >
   <button
     aria-controls="nudger"
-    className="bpk-button bpk-button--secondary bpk-button--icon-only bpk-nudger__button"
+    className="bpk-button bpk-button--icon-only bpk-button--secondary bpk-nudger__button"
     disabled={false}
     onClick={[Function]}
     title="Decrease"
@@ -496,7 +496,7 @@ exports[`BpkNudger should render correctly with a value = max 1`] = `
   />
   <button
     aria-controls="nudger"
-    className="bpk-button bpk-button--secondary bpk-button--icon-only bpk-nudger__button"
+    className="bpk-button bpk-button--icon-only bpk-button--secondary bpk-nudger__button"
     disabled={true}
     onClick={[Function]}
     title="Increase"
@@ -540,7 +540,7 @@ exports[`BpkNudger should render correctly with a value = min 1`] = `
 >
   <button
     aria-controls="nudger"
-    className="bpk-button bpk-button--secondary bpk-button--icon-only bpk-nudger__button"
+    className="bpk-button bpk-button--icon-only bpk-button--secondary bpk-nudger__button"
     disabled={true}
     onClick={[Function]}
     title="Decrease"
@@ -585,7 +585,7 @@ exports[`BpkNudger should render correctly with a value = min 1`] = `
   />
   <button
     aria-controls="nudger"
-    className="bpk-button bpk-button--secondary bpk-button--icon-only bpk-nudger__button"
+    className="bpk-button bpk-button--icon-only bpk-button--secondary bpk-nudger__button"
     disabled={false}
     onClick={[Function]}
     title="Increase"
@@ -629,7 +629,7 @@ exports[`BpkNudger should render correctly with a value > max 1`] = `
 >
   <button
     aria-controls="nudger"
-    className="bpk-button bpk-button--secondary bpk-button--icon-only bpk-nudger__button"
+    className="bpk-button bpk-button--icon-only bpk-button--secondary bpk-nudger__button"
     disabled={false}
     onClick={[Function]}
     title="Decrease"
@@ -674,7 +674,7 @@ exports[`BpkNudger should render correctly with a value > max 1`] = `
   />
   <button
     aria-controls="nudger"
-    className="bpk-button bpk-button--secondary bpk-button--icon-only bpk-nudger__button"
+    className="bpk-button bpk-button--icon-only bpk-button--secondary bpk-nudger__button"
     disabled={true}
     onClick={[Function]}
     title="Increase"
