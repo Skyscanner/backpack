@@ -103,6 +103,8 @@ module.exports = {
   lineHeightXl: 28,
   lineHeightXs: 14,
   lineHeightXxl: 42,
+  primaryLightColor: "rgb(7, 112, 227)",
+  secondaryDarkColor: "rgb(109, 159, 235)",
   spacingBase: 16,
   spacingLg: 24,
   spacingMd: 8,

@@ -104,6 +104,8 @@
   <property name="LINE_HEIGHT_XL" category="typesettings">28dp</property>
   <property name="LINE_HEIGHT_XS" category="typesettings">14dp</property>
   <property name="LINE_HEIGHT_XXL" category="typesettings">42dp</property>
+  <color name="PRIMARY_LIGHT_COLOR" category="colors">#ff0770e3</color>
+  <color name="SECONDARY_DARK_COLOR" category="colors">#ff6d9feb</color>
   <property name="SPACING_BASE" category="spacings">16dp</property>
   <property name="SPACING_LG" category="spacings">24dp</property>
   <property name="SPACING_MD" category="spacings">8dp</property>
