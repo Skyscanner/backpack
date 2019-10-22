@@ -100,7 +100,7 @@ const mergeJsonDynamicColours = str => {
     return str;
   }
 
-  if (!obj.properties && !obj.aliases) {
+  if (!obj.properties && !obj.props) {
     return str;
   }
 
@@ -119,7 +119,7 @@ const mergeJsonDynamicColours = str => {
     const merge = propsMerges[mKey];
     const mergeResult = performMerge(mKey, merge);
     if (mergeResult) {
-      obj.aliases[mKey] = mergeResult;
+      obj.props[mKey] = mergeResult;
       obj.propKeys.push(mKey);
     }
   });
