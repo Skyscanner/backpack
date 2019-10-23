@@ -95,6 +95,7 @@ export default () => (
 | mapRef                | func                                                              | false                    | null                             |
 | onRegionChange        | func                                                              | false                    | null                             |
 | onZoom                | func                                                              | false                    | null                             |
+| onTilesLoaded         | func                                                              | false                    | null                             |    
 | panEnabled            | bool                                                              | false                    | true                             |
 | showControls          | bool                                                              | false                    | true                             |
 | zoom                  | number                                                            | false                    | 15                               |
