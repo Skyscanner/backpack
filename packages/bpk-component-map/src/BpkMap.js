@@ -51,6 +51,7 @@ type Props = {
   mapRef: ?(MapRef) => mixed,
   onRegionChange: ?(Bounds, LatLong) => mixed,
   onZoom: ?(number) => mixed,
+  onTilesLoaded: ?() => void,
 };
 
 const BpkMap = withGoogleMap((props: Props) => {
@@ -59,6 +60,7 @@ const BpkMap = withGoogleMap((props: Props) => {
     children,
     greedyGestureHandling,
     mapRef,
+    onTilesLoaded,
     onRegionChange,
     onZoom,
     center,
@@ -121,6 +123,11 @@ const BpkMap = withGoogleMap((props: Props) => {
       onZoomChanged={() => {
         if (ref && onZoom) {
           onZoom(ref.getZoom());
+        }
+      }}
+      onTilesLoaded={() => {
+        if (onTilesLoaded) {
+          onTilesLoaded();
         }
       }}
     >
