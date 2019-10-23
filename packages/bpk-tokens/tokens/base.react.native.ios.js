@@ -22,6 +22,10 @@ export const animationDurationSm = 200;
 export const animationDurationXs = 50;
 export const backgroundDarkColor = "rgb(0, 0, 0)";
 export const backgroundLightColor = "rgb(255, 255, 255)";
+export const backgroundSecondaryDarkColor = "rgb(29, 27, 32)";
+export const backgroundSecondaryLightColor = "rgb(241, 242, 248)";
+export const backgroundTertiaryDarkColor = "rgb(44, 44, 46)";
+export const backgroundTertiaryLightColor = "rgb(255, 255, 255)";
 export const borderRadiusLg = 24;
 export const borderRadiusPill = 40;
 export const borderRadiusSm = 4;
@@ -179,6 +183,10 @@ carouselIndicatorDotSizeSm,
 export const colors = {
 backgroundDarkColor,
 backgroundLightColor,
+backgroundSecondaryDarkColor,
+backgroundSecondaryLightColor,
+backgroundTertiaryDarkColor,
+backgroundTertiaryLightColor,
 colorAbisko,
 colorBagan,
 colorBunol,
