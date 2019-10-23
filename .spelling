@@ -425,6 +425,7 @@ mapElement
 mapRef
 onRegionChange
 onZoom
+onTilesLoaded
 panEnabled
 showControls
 withGoogleMapsScript
