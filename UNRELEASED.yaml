@@ -24,3 +24,7 @@
 #   FIXED:
 #     - bpk-component-horcrux:
 #       - Fixed issue where `BpkHorcrux` would occasionally possess the living.
+
+   ADDED:
+     - bpk-component-map:
+       - New `onTilesLoaded` prop to access callback function from underlying library.
