@@ -2,6 +2,14 @@
 
 [Unreleased changes](./UNRELEASED.yaml).
 
+# 2019-10-23 - Expose more underlying library props
+
+**Added:**
+
+ - bpk-component-map: 3.0.10 => 3.1.0
+   - New `onTilesLoaded` prop to access callback function from underlying library.
+
+
 # 2019-10-23 - 
 
 **Added:**
