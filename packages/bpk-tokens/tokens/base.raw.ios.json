@@ -277,6 +277,48 @@
       "originalValue": "{!WHITE}",
       "name": "BACKGROUND_LIGHT_COLOR"
     },
+    "BACKGROUND_PRIMARY_DARK_COLOR": {
+      "type": "color",
+      "category": "colors",
+      "value": "#000000ff",
+      "originalValue": "{!BLACK}",
+      "name": "BACKGROUND_PRIMARY_DARK_COLOR"
+    },
+    "BACKGROUND_PRIMARY_LIGHT_COLOR": {
+      "type": "color",
+      "category": "colors",
+      "value": "#ffffffff",
+      "originalValue": "{!WHITE}",
+      "name": "BACKGROUND_PRIMARY_LIGHT_COLOR"
+    },
+    "BACKGROUND_SECONDARY_DARK_COLOR": {
+      "type": "color",
+      "category": "colors",
+      "value": "#1d1b20ff",
+      "originalValue": "{!BLACK_TINT_01}",
+      "name": "BACKGROUND_SECONDARY_DARK_COLOR"
+    },
+    "BACKGROUND_SECONDARY_LIGHT_COLOR": {
+      "type": "color",
+      "category": "colors",
+      "value": "#f1f2f8ff",
+      "originalValue": "{!SKY_GRAY_TINT_07}",
+      "name": "BACKGROUND_SECONDARY_LIGHT_COLOR"
+    },
+    "BACKGROUND_TERTIARY_DARK_COLOR": {
+      "type": "color",
+      "category": "colors",
+      "value": "#2c2c2eff",
+      "originalValue": "{!BLACK_TINT_02}",
+      "name": "BACKGROUND_TERTIARY_DARK_COLOR"
+    },
+    "BACKGROUND_TERTIARY_LIGHT_COLOR": {
+      "type": "color",
+      "category": "colors",
+      "value": "#ffffffff",
+      "originalValue": "{!WHITE}",
+      "name": "BACKGROUND_TERTIARY_LIGHT_COLOR"
+    },
     "BORDER_RADIUS_LG": {
       "type": "size",
       "value": "24",
@@ -1176,6 +1218,33 @@
       "darkValue": "#000000ff",
       "originalDarkValue": "{!BLACK}"
     },
+    "BACKGROUND_PRIMARY_COLOR": {
+      "type": "color",
+      "category": "colors",
+      "value": "#ffffffff",
+      "originalValue": "{!WHITE}",
+      "name": "BACKGROUND_PRIMARY_COLOR",
+      "darkValue": "#000000ff",
+      "originalDarkValue": "{!BLACK}"
+    },
+    "BACKGROUND_SECONDARY_COLOR": {
+      "type": "color",
+      "category": "colors",
+      "value": "#f1f2f8ff",
+      "originalValue": "{!SKY_GRAY_TINT_07}",
+      "name": "BACKGROUND_SECONDARY_COLOR",
+      "darkValue": "#1d1b20ff",
+      "originalDarkValue": "{!BLACK_TINT_01}"
+    },
+    "BACKGROUND_TERTIARY_COLOR": {
+      "type": "color",
+      "category": "colors",
+      "value": "#ffffffff",
+      "originalValue": "{!WHITE}",
+      "name": "BACKGROUND_TERTIARY_COLOR",
+      "darkValue": "#2c2c2eff",
+      "originalDarkValue": "{!BLACK_TINT_02}"
+    },
     "TEXT_PRIMARY_COLOR": {
       "value": "#111236ff",
       "type": "color",
@@ -1219,6 +1288,12 @@
     "ANIMATION_DURATION_XS",
     "BACKGROUND_DARK_COLOR",
     "BACKGROUND_LIGHT_COLOR",
+    "BACKGROUND_PRIMARY_DARK_COLOR",
+    "BACKGROUND_PRIMARY_LIGHT_COLOR",
+    "BACKGROUND_SECONDARY_DARK_COLOR",
+    "BACKGROUND_SECONDARY_LIGHT_COLOR",
+    "BACKGROUND_TERTIARY_DARK_COLOR",
+    "BACKGROUND_TERTIARY_LIGHT_COLOR",
     "BORDER_RADIUS_LG",
     "BORDER_RADIUS_PILL",
     "BORDER_RADIUS_SM",
@@ -1347,6 +1422,9 @@
     "TOUCHABLE_OVERLAY_OPACITY",
     "UNDERLAY_OPACITY",
     "BACKGROUND_COLOR",
+    "BACKGROUND_PRIMARY_COLOR",
+    "BACKGROUND_SECONDARY_COLOR",
+    "BACKGROUND_TERTIARY_COLOR",
     "TEXT_PRIMARY_COLOR",
     "TEXT_QUATERNARY_COLOR",
     "TEXT_SECONDARY_COLOR",
