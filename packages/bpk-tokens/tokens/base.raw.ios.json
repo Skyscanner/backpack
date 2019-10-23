@@ -277,20 +277,6 @@
       "originalValue": "{!WHITE}",
       "name": "BACKGROUND_LIGHT_COLOR"
     },
-    "BACKGROUND_PRIMARY_DARK_COLOR": {
-      "type": "color",
-      "category": "colors",
-      "value": "#000000ff",
-      "originalValue": "{!BLACK}",
-      "name": "BACKGROUND_PRIMARY_DARK_COLOR"
-    },
-    "BACKGROUND_PRIMARY_LIGHT_COLOR": {
-      "type": "color",
-      "category": "colors",
-      "value": "#ffffffff",
-      "originalValue": "{!WHITE}",
-      "name": "BACKGROUND_PRIMARY_LIGHT_COLOR"
-    },
     "BACKGROUND_SECONDARY_DARK_COLOR": {
       "type": "color",
       "category": "colors",
@@ -1218,15 +1204,6 @@
       "darkValue": "#000000ff",
       "originalDarkValue": "{!BLACK}"
     },
-    "BACKGROUND_PRIMARY_COLOR": {
-      "type": "color",
-      "category": "colors",
-      "value": "#ffffffff",
-      "originalValue": "{!WHITE}",
-      "name": "BACKGROUND_PRIMARY_COLOR",
-      "darkValue": "#000000ff",
-      "originalDarkValue": "{!BLACK}"
-    },
     "BACKGROUND_SECONDARY_COLOR": {
       "type": "color",
       "category": "colors",
@@ -1288,8 +1265,6 @@
     "ANIMATION_DURATION_XS",
     "BACKGROUND_DARK_COLOR",
     "BACKGROUND_LIGHT_COLOR",
-    "BACKGROUND_PRIMARY_DARK_COLOR",
-    "BACKGROUND_PRIMARY_LIGHT_COLOR",
     "BACKGROUND_SECONDARY_DARK_COLOR",
     "BACKGROUND_SECONDARY_LIGHT_COLOR",
     "BACKGROUND_TERTIARY_DARK_COLOR",
@@ -1422,7 +1397,6 @@
     "TOUCHABLE_OVERLAY_OPACITY",
     "UNDERLAY_OPACITY",
     "BACKGROUND_COLOR",
-    "BACKGROUND_PRIMARY_COLOR",
     "BACKGROUND_SECONDARY_COLOR",
     "BACKGROUND_TERTIARY_COLOR",
     "TEXT_PRIMARY_COLOR",

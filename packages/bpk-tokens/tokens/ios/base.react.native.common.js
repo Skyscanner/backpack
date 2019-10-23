@@ -24,8 +24,6 @@ module.exports = {
   animationDurationXs: 50,
   backgroundDarkColor: "rgb(0, 0, 0)",
   backgroundLightColor: "rgb(255, 255, 255)",
-  backgroundPrimaryDarkColor: "rgb(0, 0, 0)",
-  backgroundPrimaryLightColor: "rgb(255, 255, 255)",
   backgroundSecondaryDarkColor: "rgb(29, 27, 32)",
   backgroundSecondaryLightColor: "rgb(241, 242, 248)",
   backgroundTertiaryDarkColor: "rgb(44, 44, 46)",
