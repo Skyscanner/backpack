@@ -146,6 +146,23 @@ storiesOf('bpk-component-map', module)
       onRegionChange={onRegionChange}
     />
   ))
+  .add('With onTilesLoaded', () => (
+    <StoryMap
+      center={{ latitude: 55.944357, longitude: -3.1967116 }}
+      onTilesLoaded={() => console.log('Tiles loaded')}
+    >
+      <StatefulBpkMapMarker
+        large
+        position={{ latitude: 55.9441, longitude: -3.196 }}
+        icon={<AlignedLandmarkIconLg />}
+      />
+      <StatefulBpkMapMarker
+        large
+        position={{ latitude: 55.9446, longitude: -3.197 }}
+        icon={<AlignedBusIconLg />}
+      />
+    </StoryMap>
+  ))
   .add('With a bounding box', () => (
     <StoryMap
       bounds={{
