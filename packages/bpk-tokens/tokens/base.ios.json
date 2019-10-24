@@ -591,6 +591,13 @@
     {
       "type": "color",
       "category": "colors",
+      "value": "#6d9febff",
+      "originalValue": "{!SKY_BLUE_TINT_01}",
+      "name": "primaryDarkColor"
+    },
+    {
+      "type": "color",
+      "category": "colors",
       "value": "#0770e3ff",
       "originalValue": "{!SKY_BLUE}",
       "name": "primaryLightColor"
@@ -1007,6 +1014,15 @@
       "name": "backgroundTertiaryColor",
       "darkValue": "#2c2c2eff",
       "originalDarkValue": "{!BLACK_TINT_02}"
+    },
+    {
+      "type": "color",
+      "category": "colors",
+      "value": "#0770e3ff",
+      "originalValue": "{!SKY_BLUE}",
+      "name": "primaryColor",
+      "darkValue": "#6d9febff",
+      "originalDarkValue": "{!SKY_BLUE_TINT_01}"
     },
     {
       "value": "#111236ff",
