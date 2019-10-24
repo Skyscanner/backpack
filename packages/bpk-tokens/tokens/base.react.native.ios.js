@@ -42,6 +42,10 @@ export const carouselIndicatorDotSizeMd = 4;
 export const carouselIndicatorDotSizeSm = 2;
 export const colorAbisko = "rgb(90, 72, 155)";
 export const colorBagan = "rgb(255, 235, 208)";
+export const colorBlack = "rgb(0, 0, 0)";
+export const colorBlackTint01 = "rgb(29, 27, 32)";
+export const colorBlackTint02 = "rgb(44, 44, 46)";
+export const colorBlackTint03 = "rgb(99, 99, 102)";
 export const colorBunol = "rgb(255, 123, 89)";
 export const colorErfoud = "rgb(255, 181, 77)";
 export const colorGlencoe = "rgb(115, 206, 198)";
@@ -189,6 +193,10 @@ backgroundTertiaryDarkColor,
 backgroundTertiaryLightColor,
 colorAbisko,
 colorBagan,
+colorBlack,
+colorBlackTint01,
+colorBlackTint02,
+colorBlackTint03,
 colorBunol,
 colorErfoud,
 colorGlencoe,

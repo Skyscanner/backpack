@@ -118,6 +118,18 @@
     },
     "COLOR_PRIMARY_GRADIENT_LIGHT": {
       "value": "{!SKY_BLUE}"
+    },
+    "COLOR_BLACK": {
+      "value": "{!BLACK}"
+    },
+    "COLOR_BLACK_TINT_01": {
+      "value": "{!BLACK_TINT_01}"
+    },
+    "COLOR_BLACK_TINT_02": {
+      "value": "{!BLACK_TINT_02}"
+    },
+    "COLOR_BLACK_TINT_03": {
+      "value": "{!BLACK_TINT_03}"
     }
   }
 }

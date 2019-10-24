@@ -41,6 +41,10 @@
   <property name="CAROUSEL_INDICATOR_DOT_SIZE_SM" category="carousel-indicator-dots">2dp</property>
   <color name="COLOR_ABISKO" category="colors">#ff5a489b</color>
   <color name="COLOR_BAGAN" category="colors">#ffffebd0</color>
+  <color name="COLOR_BLACK" category="colors">#ff000000</color>
+  <color name="COLOR_BLACK_TINT_01" category="colors">#ff1d1b20</color>
+  <color name="COLOR_BLACK_TINT_02" category="colors">#ff2c2c2e</color>
+  <color name="COLOR_BLACK_TINT_03" category="colors">#ff636366</color>
   <color name="COLOR_BUNOL" category="colors">#ffff7b59</color>
   <color name="COLOR_ERFOUD" category="colors">#ffffb54d</color>
   <color name="COLOR_GLENCOE" category="colors">#ff73cec6</color>
