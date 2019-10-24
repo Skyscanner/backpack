@@ -882,6 +882,13 @@
       "originalValue": "{!LINE_HEIGHT_XXL}",
       "name": "LINE_HEIGHT_XXL"
     },
+    "PRIMARY_DARK_COLOR": {
+      "type": "color",
+      "category": "colors",
+      "value": "#6d9febff",
+      "originalValue": "{!SKY_BLUE_TINT_01}",
+      "name": "PRIMARY_DARK_COLOR"
+    },
     "PRIMARY_LIGHT_COLOR": {
       "type": "color",
       "category": "colors",
@@ -1185,6 +1192,15 @@
       "darkValue": "#000000ff",
       "originalDarkValue": "{!BLACK}"
     },
+    "PRIMARY_COLOR": {
+      "type": "color",
+      "category": "colors",
+      "value": "#0770e3ff",
+      "originalValue": "{!SKY_BLUE}",
+      "name": "PRIMARY_COLOR",
+      "darkValue": "#6d9febff",
+      "originalDarkValue": "{!SKY_BLUE_TINT_01}"
+    },
     "TEXT_PRIMARY_COLOR": {
       "value": "#111236ff",
       "type": "color",
@@ -1311,6 +1327,7 @@
     "LINE_HEIGHT_XL",
     "LINE_HEIGHT_XS",
     "LINE_HEIGHT_XXL",
+    "PRIMARY_DARK_COLOR",
     "PRIMARY_LIGHT_COLOR",
     "SECONDARY_DARK_COLOR",
     "SPACING_BASE",
@@ -1354,6 +1371,7 @@
     "TEXT_XXXL_FONT_WEIGHT",
     "TEXT_XXXL_LETTER_SPACING",
     "BACKGROUND_COLOR",
+    "PRIMARY_COLOR",
     "TEXT_PRIMARY_COLOR",
     "TEXT_QUATERNARY_COLOR",
     "TEXT_SECONDARY_COLOR",

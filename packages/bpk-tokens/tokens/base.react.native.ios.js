@@ -101,6 +101,7 @@ export const lineHeightSm = 17;
 export const lineHeightXl = 29;
 export const lineHeightXs = 14;
 export const lineHeightXxl = 43;
+export const primaryDarkColor = "rgb(109, 159, 235)";
 export const primaryLightColor = "rgb(7, 112, 227)";
 export const secondaryDarkColor = "rgb(109, 159, 235)";
 export const shadowLgColor = "rgb(17, 18, 54)";
@@ -229,6 +230,7 @@ colorSystemRed,
 colorTochigi,
 colorValensole,
 colorWhite,
+primaryDarkColor,
 primaryLightColor,
 secondaryDarkColor,
 };
