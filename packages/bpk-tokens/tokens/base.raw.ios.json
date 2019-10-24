@@ -24,6 +24,9 @@
     "BLACK_TINT_02": {
       "value": "#2C2C2E"
     },
+    "BLACK_TINT_03": {
+      "value": "#636366"
+    },
     "BORDER_RADIUS_LG": {
       "value": 24
     },
@@ -416,6 +419,34 @@
       "value": "#ffebd0ff",
       "originalValue": "{!BAGAN}",
       "name": "COLOR_BAGAN"
+    },
+    "COLOR_BLACK": {
+      "type": "color",
+      "category": "colors",
+      "value": "#000000ff",
+      "originalValue": "{!BLACK}",
+      "name": "COLOR_BLACK"
+    },
+    "COLOR_BLACK_TINT_01": {
+      "type": "color",
+      "category": "colors",
+      "value": "#1d1b20ff",
+      "originalValue": "{!BLACK_TINT_01}",
+      "name": "COLOR_BLACK_TINT_01"
+    },
+    "COLOR_BLACK_TINT_02": {
+      "type": "color",
+      "category": "colors",
+      "value": "#2c2c2eff",
+      "originalValue": "{!BLACK_TINT_02}",
+      "name": "COLOR_BLACK_TINT_02"
+    },
+    "COLOR_BLACK_TINT_03": {
+      "type": "color",
+      "category": "colors",
+      "value": "#636366ff",
+      "originalValue": "{!BLACK_TINT_03}",
+      "name": "COLOR_BLACK_TINT_03"
     },
     "COLOR_BUNOL": {
       "type": "color",
@@ -1285,6 +1316,10 @@
     "CAROUSEL_INDICATOR_DOT_SIZE_SM",
     "COLOR_ABISKO",
     "COLOR_BAGAN",
+    "COLOR_BLACK",
+    "COLOR_BLACK_TINT_01",
+    "COLOR_BLACK_TINT_02",
+    "COLOR_BLACK_TINT_03",
     "COLOR_BUNOL",
     "COLOR_ERFOUD",
     "COLOR_GLENCOE",

@@ -178,6 +178,34 @@
     {
       "type": "color",
       "category": "colors",
+      "value": "#000000ff",
+      "originalValue": "{!BLACK}",
+      "name": "colorBlack"
+    },
+    {
+      "type": "color",
+      "category": "colors",
+      "value": "#1d1b20ff",
+      "originalValue": "{!BLACK_TINT_01}",
+      "name": "colorBlackTint01"
+    },
+    {
+      "type": "color",
+      "category": "colors",
+      "value": "#2c2c2eff",
+      "originalValue": "{!BLACK_TINT_02}",
+      "name": "colorBlackTint02"
+    },
+    {
+      "type": "color",
+      "category": "colors",
+      "value": "#636366ff",
+      "originalValue": "{!BLACK_TINT_03}",
+      "name": "colorBlackTint03"
+    },
+    {
+      "type": "color",
+      "category": "colors",
       "value": "#ff7b59ff",
       "originalValue": "{!BUNOL}",
       "name": "colorBunol"
