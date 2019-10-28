@@ -301,6 +301,34 @@
       "originalValue": "{!WHITE}",
       "name": "BACKGROUND_LIGHT_COLOR"
     },
+    "BACKGROUND_SECONDARY_DARK_COLOR": {
+      "type": "color",
+      "category": "colors",
+      "value": "#1d1b20ff",
+      "originalValue": "{!BLACK_TINT_01}",
+      "name": "BACKGROUND_SECONDARY_DARK_COLOR"
+    },
+    "BACKGROUND_SECONDARY_LIGHT_COLOR": {
+      "type": "color",
+      "category": "colors",
+      "value": "#f1f2f8ff",
+      "originalValue": "{!SKY_GRAY_TINT_07}",
+      "name": "BACKGROUND_SECONDARY_LIGHT_COLOR"
+    },
+    "BACKGROUND_TERTIARY_DARK_COLOR": {
+      "type": "color",
+      "category": "colors",
+      "value": "#2c2c2eff",
+      "originalValue": "{!BLACK_TINT_02}",
+      "name": "BACKGROUND_TERTIARY_DARK_COLOR"
+    },
+    "BACKGROUND_TERTIARY_LIGHT_COLOR": {
+      "type": "color",
+      "category": "colors",
+      "value": "#ffffffff",
+      "originalValue": "{!WHITE}",
+      "name": "BACKGROUND_TERTIARY_LIGHT_COLOR"
+    },
     "BORDER_RADIUS_LG": {
       "type": "size",
       "value": "24",
@@ -1192,6 +1220,24 @@
       "darkValue": "#000000ff",
       "originalDarkValue": "{!BLACK}"
     },
+    "BACKGROUND_SECONDARY_COLOR": {
+      "type": "color",
+      "category": "colors",
+      "value": "#f1f2f8ff",
+      "originalValue": "{!SKY_GRAY_TINT_07}",
+      "name": "BACKGROUND_SECONDARY_COLOR",
+      "darkValue": "#1d1b20ff",
+      "originalDarkValue": "{!BLACK_TINT_01}"
+    },
+    "BACKGROUND_TERTIARY_COLOR": {
+      "type": "color",
+      "category": "colors",
+      "value": "#ffffffff",
+      "originalValue": "{!WHITE}",
+      "name": "BACKGROUND_TERTIARY_COLOR",
+      "darkValue": "#2c2c2eff",
+      "originalDarkValue": "{!BLACK_TINT_02}"
+    },
     "PRIMARY_COLOR": {
       "type": "color",
       "category": "colors",
@@ -1244,6 +1290,10 @@
     "ANIMATION_DURATION_XS",
     "BACKGROUND_DARK_COLOR",
     "BACKGROUND_LIGHT_COLOR",
+    "BACKGROUND_SECONDARY_DARK_COLOR",
+    "BACKGROUND_SECONDARY_LIGHT_COLOR",
+    "BACKGROUND_TERTIARY_DARK_COLOR",
+    "BACKGROUND_TERTIARY_LIGHT_COLOR",
     "BORDER_RADIUS_LG",
     "BORDER_RADIUS_PILL",
     "BORDER_RADIUS_SM",
@@ -1371,6 +1421,8 @@
     "TEXT_XXXL_FONT_WEIGHT",
     "TEXT_XXXL_LETTER_SPACING",
     "BACKGROUND_COLOR",
+    "BACKGROUND_SECONDARY_COLOR",
+    "BACKGROUND_TERTIARY_COLOR",
     "PRIMARY_COLOR",
     "TEXT_PRIMARY_COLOR",
     "TEXT_QUATERNARY_COLOR",

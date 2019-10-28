@@ -20,6 +20,18 @@
     "BACKGROUND_DARK_COLOR": {
       "value": "{!BLACK}"
     },
+    "BACKGROUND_SECONDARY_LIGHT_COLOR": {
+      "value": "{!SKY_GRAY_TINT_07}"
+    },
+    "BACKGROUND_SECONDARY_DARK_COLOR": {
+      "value": "{!BLACK_TINT_01}"
+    },
+    "BACKGROUND_TERTIARY_LIGHT_COLOR": {
+      "value": "{!WHITE}"
+    },
+    "BACKGROUND_TERTIARY_DARK_COLOR": {
+      "value": "{!BLACK_TINT_02}"
+    },
     "COLOR_WHITE": {
       "value": "{!WHITE}"
     },

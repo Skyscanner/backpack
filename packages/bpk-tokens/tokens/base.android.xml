@@ -25,6 +25,10 @@
   <property name="ANIMATION_DURATION_XS" category="animations">50ms</property>
   <color name="BACKGROUND_DARK_COLOR" category="colors">#ff000000</color>
   <color name="BACKGROUND_LIGHT_COLOR" category="colors">#ffffffff</color>
+  <color name="BACKGROUND_SECONDARY_DARK_COLOR" category="colors">#ff1d1b20</color>
+  <color name="BACKGROUND_SECONDARY_LIGHT_COLOR" category="colors">#fff1f2f8</color>
+  <color name="BACKGROUND_TERTIARY_DARK_COLOR" category="colors">#ff2c2c2e</color>
+  <color name="BACKGROUND_TERTIARY_LIGHT_COLOR" category="colors">#ffffffff</color>
   <property name="BORDER_RADIUS_LG" category="radii">24dp</property>
   <property name="BORDER_RADIUS_PILL" category="radii">40dp</property>
   <property name="BORDER_RADIUS_SM" category="radii">4dp</property>
