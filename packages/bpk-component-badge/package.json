@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-badge",
-  "version": "2.0.12",
+  "version": "2.0.13",
   "description": "Backpack badge component.",
   "main": "index.js",
   "repository": {
@@ -13,13 +13,13 @@
     "react": "^15.0.0 || ^16.0.0"
   },
   "dependencies": {
-    "bpk-mixins": "^19.0.12",
+    "bpk-mixins": "^19.0.13",
     "bpk-react-utils": "^2.8.0",
     "prop-types": "^15.6.2"
   },
   "devDependencies": {
-    "bpk-component-icon": "^5.0.12",
-    "bpk-tokens": "^29.2.2"
+    "bpk-component-icon": "^5.0.13",
+    "bpk-tokens": "^29.2.3"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
