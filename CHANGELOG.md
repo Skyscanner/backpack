@@ -2,6 +2,14 @@
 
 [Unreleased changes](./UNRELEASED.yaml).
 
+# 2019-10-29 - Upgrade dependencies
+
+**Fixed:**
+
+ - bpk-component-slider: 2.0.13 => 2.0.14
+   - Bumped `react-slider` dependency to latest version.
+
+
 # 2019-10-23 - Expose more underlying library props
 
 **Added:**
