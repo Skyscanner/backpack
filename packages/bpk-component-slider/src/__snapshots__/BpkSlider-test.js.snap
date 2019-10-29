@@ -34,6 +34,7 @@ exports[`BpkSlider should render correctly 1`] = `
     }
   />
   <div
+    aria-orientation="horizontal"
     aria-valuemax={100}
     aria-valuemin={0}
     aria-valuenow={25}
@@ -89,6 +90,7 @@ exports[`BpkSlider should render correctly with a "className" attribute 1`] = `
     }
   />
   <div
+    aria-orientation="horizontal"
     aria-valuemax={100}
     aria-valuemin={0}
     aria-valuenow={25}
@@ -144,6 +146,7 @@ exports[`BpkSlider should render correctly with a "large" attribute 1`] = `
     }
   />
   <div
+    aria-orientation="horizontal"
     aria-valuemax={9}
     aria-valuemin={0}
     aria-valuenow={2}
@@ -199,6 +202,7 @@ exports[`BpkSlider should render correctly with a "step" attribute 1`] = `
     }
   />
   <div
+    aria-orientation="horizontal"
     aria-valuemax={100}
     aria-valuemin={0}
     aria-valuenow={0}
@@ -265,6 +269,7 @@ exports[`BpkSlider should render correctly with a minimum distance between contr
     }
   />
   <div
+    aria-orientation="horizontal"
     aria-valuemax={100}
     aria-valuemin={0}
     aria-valuenow={10}
@@ -284,6 +289,7 @@ exports[`BpkSlider should render correctly with a minimum distance between contr
     tabIndex={0}
   />
   <div
+    aria-orientation="horizontal"
     aria-valuemax={100}
     aria-valuemin={0}
     aria-valuenow={90}
@@ -350,6 +356,7 @@ exports[`BpkSlider should render correctly with a range of values 1`] = `
     }
   />
   <div
+    aria-orientation="horizontal"
     aria-valuemax={100}
     aria-valuemin={0}
     aria-valuenow={10}
@@ -369,6 +376,7 @@ exports[`BpkSlider should render correctly with a range of values 1`] = `
     tabIndex={0}
   />
   <div
+    aria-orientation="horizontal"
     aria-valuemax={100}
     aria-valuemin={0}
     aria-valuenow={90}
