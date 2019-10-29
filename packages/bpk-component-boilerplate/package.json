@@ -1,7 +1,7 @@
 {
   "name": "bpk-component-boilerplate",
   "private": true,
-  "version": "0.0.25",
+  "version": "0.0.26",
   "description": "Backpack boilerplate component.",
   "main": "index.js",
   "repository": {
@@ -14,8 +14,8 @@
     "react": "^15.0.0 || ^16.0.0"
   },
   "dependencies": {
-    "bpk-mixins": "^19.0.14",
-    "bpk-react-utils": "^2.8.1",
+    "bpk-mixins": "^19.0.15",
+    "bpk-react-utils": "^2.8.2",
     "prop-types": "^15.5.8"
   },
   "publishConfig": {
