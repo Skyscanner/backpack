@@ -29,8 +29,8 @@ const BpkSlider = props => {
   const { large, className, ...rest } = props;
   const invert = isRTL();
   const classNames = [getClassName('bpk-slider')];
-  const handleClassNames = [getClassName('bpk-slider__handle')];
-  const barClassNames = [getClassName('bpk-slider__bar')];
+  const thumbClassNames = [getClassName('bpk-slider__handle')];
+  const trackClassNames = [getClassName('bpk-slider__bar')];
 
   const isRange = (rest.value || rest.defaultValue || []).length > 1;
 
@@ -42,18 +42,18 @@ const BpkSlider = props => {
   }
   if (large) {
     classNames.push(getClassName('bpk-slider--large'));
-    handleClassNames.push(getClassName('bpk-slider__handle--large'));
+    thumbClassNames.push(getClassName('bpk-slider__handle--large'));
   }
 
   return (
     <Slider
       {...rest}
-      withBars
+      withTracks
       invert={invert}
       className={classNames.join(' ')}
-      handleClassName={handleClassNames.join(' ')}
-      handleActiveClassName={getClassName('bpk-slider__handle--active')}
-      barClassName={barClassNames.join(' ')}
+      thumbClassName={thumbClassNames.join(' ')}
+      thumbActiveClassName={getClassName('bpk-slider__handle--active')}
+      trackClassName={trackClassNames.join(' ')}
     />
   );
 };
