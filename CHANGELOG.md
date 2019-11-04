@@ -2,6 +2,13 @@
 
 [Unreleased changes](./UNRELEASED.yaml).
 
+# 2019-11-04 - Add RN semantic tokens 
+
+**Added:**
+
+- bpk-tokens: 29.2.6 => 29.3.0
+  - Added new semantic tokens for RN.
+
 # 2019-10-29 - Upgrade dependencies
 
 **Fixed:**
