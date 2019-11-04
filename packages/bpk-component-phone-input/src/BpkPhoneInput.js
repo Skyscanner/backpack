@@ -38,7 +38,11 @@ export type Props = {
     className?: string,
     wrapperClassName?: string,
   },
-  dialingCodes: Array<{ code: string, description: string }>,
+  dialingCodes: Array<{
+    code: string,
+    description: string,
+    numberPrefix: ?string,
+  }>,
   id: string,
   name: string,
   label: string,
@@ -47,6 +51,7 @@ export type Props = {
   value: string,
   className: ?string,
   disabled: boolean,
+  dialingCodeMask: boolean,
   large: boolean,
   valid: ?boolean,
   wrapperProps: { [string]: any },
@@ -87,6 +92,7 @@ const BpkPhoneInput = (props: Props) => {
     dialingCode,
     dialingCodes,
     dialingCodeProps,
+    dialingCodeMask,
     wrapperProps,
     ...rest
   } = props;
@@ -95,6 +101,51 @@ const BpkPhoneInput = (props: Props) => {
     valid,
     large: !!large,
     disabled: !!disabled,
+  };
+
+  const dialingCodeDefinition = dialingCodes.find(
+    dialingCodeDef => dialingCodeDef.code === dialingCode,
+  );
+  if (!dialingCodeDefinition) {
+    throw new Error(
+      `BpkPhoneInput: A valid value must be provided for the "dialingCode" prop. The provided value for "dialingCode" (${dialingCode}) does not match any definitions in the "dialingCodes" prop`,
+    );
+  }
+
+  const { numberPrefix } = dialingCodeDefinition;
+
+  let displayValue = value;
+
+  if (dialingCodeMask && numberPrefix) {
+    displayValue = `${numberPrefix} ${value}`;
+  }
+
+  const handleChange = e => {
+    if (!onChange) {
+      return;
+    }
+
+    if (!dialingCodeMask) {
+      onChange(e);
+      return;
+    }
+
+    if (!numberPrefix) {
+      onChange(e);
+    }
+
+    if (numberPrefix) {
+      let { value: newValue } = e.target;
+
+      if (newValue.indexOf(`${numberPrefix} `) > -1) {
+        const number = newValue.slice(numberPrefix.length + 1);
+        newValue = number;
+      }
+
+      // eslint-disable-next-line no-param-reassign
+      e.target.value = newValue;
+    }
+    onChange(e);
   };
 
   return (
@@ -145,9 +196,9 @@ const BpkPhoneInput = (props: Props) => {
         {...rest}
         id={id}
         name={name}
-        value={value}
-        type={INPUT_TYPES.number}
-        onChange={onChange}
+        value={displayValue}
+        type={INPUT_TYPES.tel}
+        onChange={handleChange}
         className={getClassName('bpk-phone-input__phone-number', className)}
       />
     </span>
@@ -171,6 +222,7 @@ BpkPhoneInput.propTypes = {
   onDialingCodeChange: PropTypes.func.isRequired,
   value: PropTypes.string.isRequired,
   className: PropTypes.string,
+  dialingCodeMask: PropTypes.bool,
   disabled: PropTypes.bool,
   large: PropTypes.bool,
   valid: PropTypes.bool,
@@ -180,6 +232,7 @@ BpkPhoneInput.propTypes = {
 BpkPhoneInput.defaultProps = {
   className: null,
   disabled: false,
+  dialingCodeMask: false,
   large: false,
   valid: null,
   wrapperProps: {},

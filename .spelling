@@ -272,8 +272,10 @@ DataSource
 dateProps
 decreaseButtonLabel
 decrementValue
+dialing
 dialingCode
 dialingCodes
+dialingCodeMask
 dismissable
 dismissButtonLabel
 dockedFirst
