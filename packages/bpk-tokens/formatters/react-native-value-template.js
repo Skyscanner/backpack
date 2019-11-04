@@ -23,7 +23,7 @@ export default function formatValue(value, type) {
         const { value: currValue, type: currType } = value[tokenKey];
         return `${parsed} ${tokenKey}: ${formatValue(currValue, currType)},\n`;
       }, '');
-      formattedValue = `{\n${parsedValues}};`;
+      formattedValue = `{\n${parsedValues}}`;
       break;
     }
     default:

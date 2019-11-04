@@ -23,19 +23,19 @@ export const animationDurationXs = 50;
 export const backgroundColor = {
  light: "rgb(255, 255, 255)",
  dark: "rgb(0, 0, 0)",
-};;
+};
 export const backgroundDarkColor = "rgb(0, 0, 0)";
 export const backgroundLightColor = "rgb(255, 255, 255)";
 export const backgroundSecondaryColor = {
  dark: "rgb(29, 27, 32)",
  light: "rgb(241, 242, 248)",
-};;
+};
 export const backgroundSecondaryDarkColor = "rgb(29, 27, 32)";
 export const backgroundSecondaryLightColor = "rgb(241, 242, 248)";
 export const backgroundTertiaryColor = {
  dark: "rgb(44, 44, 46)",
  light: "rgb(255, 255, 255)",
-};;
+};
 export const backgroundTertiaryDarkColor = "rgb(44, 44, 46)";
 export const backgroundTertiaryLightColor = "rgb(255, 255, 255)";
 export const borderRadiusLg = 24;
@@ -116,12 +116,12 @@ export const lineHeightXxl = 43;
 export const primaryColor = {
  dark: "rgb(109, 159, 235)",
  light: "rgb(7, 112, 227)",
-};;
+};
 export const primaryDarkColor = "rgb(109, 159, 235)";
 export const primaryLightColor = "rgb(7, 112, 227)";
 export const secondaryColor = {
  dark: "rgb(109, 159, 235)",
-};;
+};
 export const secondaryDarkColor = "rgb(109, 159, 235)";
 export const shadowLgColor = "rgb(17, 18, 54)";
 export const shadowLgOffsetHeight = 4;
@@ -154,19 +154,19 @@ export const textLgLetterSpacing = null;
 export const textPrimaryColor = {
  dark: "rgb(255, 255, 255)",
  light: "rgb(17, 18, 54)",
-};;
+};
 export const textPrimaryDarkColor = "rgb(255, 255, 255)";
 export const textPrimaryLightColor = "rgb(17, 18, 54)";
 export const textQuaternaryColor = {
  dark: "rgb(205, 205, 215)",
  light: "rgb(143, 144, 160)",
-};;
+};
 export const textQuaternaryDarkColor = "rgb(205, 205, 215)";
 export const textQuaternaryLightColor = "rgb(143, 144, 160)";
 export const textSecondaryColor = {
  dark: "rgb(143, 144, 160)",
  light: "rgb(104, 105, 127)",
-};;
+};
 export const textSecondaryDarkColor = "rgb(143, 144, 160)";
 export const textSecondaryLightColor = "rgb(104, 105, 127)";
 export const textSmFontSize = 14;
@@ -175,7 +175,7 @@ export const textSmLetterSpacing = 0.154;
 export const textTertiaryColor = {
  dark: "rgb(178, 178, 191)",
  light: "rgb(143, 144, 160)",
-};;
+};
 export const textTertiaryDarkColor = "rgb(178, 178, 191)";
 export const textTertiaryLightColor = "rgb(143, 144, 160)";
 export const textXlFontSize = 24;
