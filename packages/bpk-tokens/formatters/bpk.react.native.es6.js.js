@@ -23,6 +23,8 @@ import adjustTypography from './adjust-typography';
 import { blockComment } from './license-header';
 import valueTemplate from './react-native-value-template';
 
+const SEMANTIC_TOKEN_REGEX = /(.*)_(LIGHT|DARK)_(.*)/;
+
 const tokenTemplate = ({ name, value, type }) =>
   `export const ${_.camelCase(name)} = ${valueTemplate(value, type)};`;
 
@@ -33,8 +35,36 @@ export const categoryTemplate = (
 ${_.map(props, prop => `${_.camelCase(prop.name)},`).join('\n')}
 };`;
 
+const extractSemanticTokens = allTokens =>
+  Object.keys(allTokens).reduce((semanticTokens, tokenKey) => {
+    const token = allTokens[tokenKey];
+    const match = token.name.match(SEMANTIC_TOKEN_REGEX);
+    if (match) {
+      // E.g. for backgroundLightColor this will be backgroundColor
+      const key = `${match[1]}_${match[3]}`;
+      const semanticToken = semanticTokens[key] || {
+        name: key,
+        type: 'semantic',
+        value: {},
+        category: `semantic${_.capitalize(token.category)}`,
+      };
+      // This will be light or dark
+      const variation = match[2].toLowerCase();
+      semanticToken.value[variation] = { ...token };
+      semanticTokens[key] = semanticToken; // eslint-disable-line
+    }
+    return semanticTokens;
+  }, {});
+
 const bpkReactNativeEs6Js = (result, platform = 'other') => {
-  const { props } = sortTokens(result.toJS());
+  const baseTokens = result.toJS();
+  const semanticTokens = extractSemanticTokens(baseTokens.props);
+  const allTokens = {
+    ...baseTokens,
+    props: { ...baseTokens.props, ...semanticTokens },
+  };
+
+  const { props } = sortTokens(allTokens);
 
   const categories = _(props)
     .map(prop => prop.category)
