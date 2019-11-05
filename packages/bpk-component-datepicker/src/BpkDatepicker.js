@@ -23,7 +23,10 @@ import { cssModules } from 'bpk-react-utils';
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import BpkBreakpoint, { BREAKPOINTS } from 'bpk-component-breakpoint';
-import BpkCalendar, { CustomPropTypes } from 'bpk-component-calendar';
+import BpkCalendar, {
+  CustomPropTypes,
+  BpkCalendarDate,
+} from 'bpk-component-calendar';
 
 import STYLES from './BpkDatepicker.scss';
 
@@ -66,6 +69,7 @@ class BpkDatepicker extends Component {
       changeMonthLabel,
       closeButtonText,
       date,
+      DateComponent,
       dateModifiers,
       daysOfWeek,
       formatDate,
@@ -114,6 +118,7 @@ class BpkDatepicker extends Component {
         className={getClassName('bpk-datepicker__calendar')}
         changeMonthLabel={changeMonthLabel}
         date={date}
+        DateComponent={DateComponent}
         dateModifiers={dateModifiers}
         daysOfWeek={daysOfWeek}
         formatDateFull={formatDateFull}
@@ -182,6 +187,7 @@ BpkDatepicker.propTypes = {
   weekStartsOn: PropTypes.number.isRequired,
   // Optional
   date: PropTypes.instanceOf(Date),
+  DateComponent: PropTypes.func,
   dateModifiers: CustomPropTypes.DateModifiers,
   inputProps: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   markOutsideDays: PropTypes.bool,
@@ -197,6 +203,7 @@ BpkDatepicker.propTypes = {
 
 BpkDatepicker.defaultProps = {
   date: null,
+  DateComponent: BpkCalendarDate,
   dateModifiers: BpkCalendar.defaultProps.dateModifiers,
   inputProps: {},
   markOutsideDays: BpkCalendar.defaultProps.markOutsideDays,
