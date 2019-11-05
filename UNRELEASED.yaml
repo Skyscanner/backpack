@@ -24,7 +24,3 @@
 #   FIXED:
 #     - bpk-component-horcrux:
 #       - Fixed issue where `BpkHorcrux` would occasionally possess the living.
-
-FIXED:
-  - bpk-component-datepicker:
-    - Fixed missing documented prop `DateComponent`.

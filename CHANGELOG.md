@@ -2,6 +2,14 @@
 
 [Unreleased changes](./UNRELEASED.yaml).
 
+# 2019-11-05 - Fixed missing documented prop
+
+**Fixed:**
+
+ - bpk-component-datepicker: 10.0.18 => 10.0.19
+   - Fixed missing documented prop `DateComponent`.
+
+
 # 2019-11-04 - Add RN semantic tokens 
 
 **Added:**
