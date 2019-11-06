@@ -1,5 +1,9 @@
 # UNRELEASED:
 
+ADDED:
+  - bpk-component-phone-input:
+    - New `dialingCodeMask` prop, which will mean that the dialing code is displayed in the phone number text input.
+
 # How to write a good changelog entry:
 #
 #   1. Add 'BREAKING', 'ADDED' OR 'FIXED' depending on if the change will be major, minor or patch according to [semver.org](semver.org).

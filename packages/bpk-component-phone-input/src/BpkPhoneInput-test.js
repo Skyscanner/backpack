@@ -33,8 +33,8 @@ const dialingCodeProps = {
 };
 
 const dialingCodes = [
-  { code: '44', description: '+44' },
-  { code: '55', description: '+55' },
+  { code: '44', description: '+44', numberPrefix: '+44' },
+  { code: '55', description: '+55', numberPrefix: '+55' },
 ];
 
 const defaultProps = {
@@ -59,6 +59,13 @@ describe('BpkPhoneInput', () => {
   it('should render correctly with a "large" attribute', () => {
     const tree = renderer
       .create(<BpkPhoneInput {...defaultProps} large />)
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('should render correctly with the "dialingCodeMask" attribute', () => {
+    const tree = renderer
+      .create(<BpkPhoneInput {...defaultProps} dialingCodeMask />)
       .toJSON();
     expect(tree).toMatchSnapshot();
   });
@@ -122,5 +129,14 @@ describe('BpkPhoneInput', () => {
     const evt = { target: { value: '99' } };
     tree.find(BpkSelect).simulate('change', evt);
     expect(onDialingCodeChange).toHaveBeenCalledWith(evt);
+  });
+
+  it('should error if the selected dialing code has no corresponding data', () => {
+    // eslint-disable-next-line max-len
+    expect(() =>
+      shallow(<BpkPhoneInput {...defaultProps} dialingCode="00_non" />),
+    ).toThrow(
+      'BpkPhoneInput: A valid value must be provided for the "dialingCode" prop. The provided value for "dialingCode" (00_non) does not match any definitions in the "dialingCodes" prop',
+    );
   });
 });

@@ -26,11 +26,11 @@ import BpkImage from 'bpk-component-image';
 import BpkPhoneInput from './index';
 
 const DIALING_CODE_TO_ID_MAP = {
-  '1': 'us',
-  '2': 'ca',
-  '44': 'uk',
-  '55': 'br',
-  '998': 'uz',
+  '1_us': 'us',
+  '1_ca': 'ca',
+  '44_uk': 'uk',
+  '55_br': 'br',
+  '998_uz': 'uz',
 };
 
 const getFlag = dialingCode => {
@@ -45,6 +45,7 @@ type Props = {
   validNumber: ?string,
   description: ?string,
   disabled: boolean,
+  dialingCodeMask: boolean,
   required: ?boolean,
   useLongLabels: boolean,
 };
@@ -54,18 +55,19 @@ class StoryContainer extends Component<
   { dialingCode: string, value: string },
 > {
   static defaultProps = {
-    large: false,
-    validationMessage: null,
-    validNumber: null,
     description: null,
+    dialingCodeMask: false,
     disabled: false,
+    large: false,
     required: false,
     useLongLabels: false,
+    validNumber: null,
+    validationMessage: null,
   };
 
   constructor(props: Props) {
     super(props);
-    this.state = { dialingCode: '44', value: '' };
+    this.state = { dialingCode: '44_uk', value: '' };
   }
 
   onChange = (e: SyntheticInputEvent<HTMLElement>) => {
@@ -81,6 +83,7 @@ class StoryContainer extends Component<
       large,
       validNumber,
       validationMessage,
+      dialingCodeMask,
       description,
       disabled,
       required,
@@ -110,16 +113,17 @@ class StoryContainer extends Component<
           disabled={disabled}
           valid={value && validNumber ? validNumber === value : null}
           large={large}
+          dialingCodeMask={dialingCodeMask}
           onChange={this.onChange}
           onDialingCodeChange={this.onDialingCodeChange}
           value={value}
           dialingCode={dialingCode}
           dialingCodes={[
-            { code: '1', description: '+1 (US)' },
-            { code: '2', description: '+1 (CA)' },
-            { code: '44', description: '+44 (UK)' },
-            { code: '55', description: '+55' },
-            { code: '998', description: '+998' },
+            { code: '1_us', description: '+1 (US)', numberPrefix: '+1' },
+            { code: '1_ca', description: '+1 (CA)', numberPrefix: '+1' },
+            { code: '44_uk', description: '+44 (UK)', numberPrefix: '+44' },
+            { code: '55_br', description: '+55 (BR)', numberPrefix: '+55' },
+            { code: '998_uz', description: '+998 (UZ)', numberPrefix: '+998' },
           ]}
           dialingCodeProps={{
             id: 'dialing-code',
@@ -144,6 +148,7 @@ storiesOf('bpk-component-phone-input', module)
       description="Enter 0123456789"
     />
   ))
+  .add('With dialing code mask', () => <StoryContainer dialingCodeMask />)
   .add('Disabled', () => <StoryContainer disabled />)
   .add('Required', () => <StoryContainer required />)
   .add('Double length labels', () => <StoryContainer useLongLabels />);

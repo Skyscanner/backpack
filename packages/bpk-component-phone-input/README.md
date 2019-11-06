@@ -82,6 +82,7 @@ export default class extends Component {
 | onDialingCodeChange | func                                                  | true     | -             |
 | value               | string                                                | true     | -             |
 | className           | string                                                | false    | null          |
+| dialingCodeMask     | boolean                                               | false    | null          |
 | disabled            | boolean                                               | false    | false         |
 | large               | boolean                                               | false    | false         |
 | valid               | boolean                                               | false    | null          |
@@ -96,3 +97,4 @@ properties will be forwarded to the underlying `BpkSelect` component.
 
 The same is true for `dialingCodes`. Each object **must** have a `code` and `description`, but can have more properties and those
 will be forwarded the the `option` element they represent.
+Note that, when using the `dialingCodeMask` option, all `dialingCodes` values must have a `numberPrefix` attribute.
