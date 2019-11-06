@@ -2,6 +2,14 @@
 
 [Unreleased changes](./UNRELEASED.yaml).
 
+# 2019-11-06 - 
+
+**Added:**
+
+ - bpk-component-phone-input: 4.0.17 => 4.1.0
+   - New `dialingCodeMask` prop, which will mean that the dialing code is displayed in the phone number text input.
+
+
 # 2019-11-05 - Fixed missing documented prop
 
 **Fixed:**

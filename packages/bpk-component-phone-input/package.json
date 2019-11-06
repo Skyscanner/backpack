@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-phone-input",
-  "version": "4.0.17",
+  "version": "4.1.0",
   "description": "Backpack phone input component.",
   "main": "index.js",
   "repository": {
