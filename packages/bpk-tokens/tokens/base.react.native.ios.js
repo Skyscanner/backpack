@@ -107,12 +107,18 @@ export const letterSpacingXl = null;
 export const letterSpacingXs = 0;
 export const letterSpacingXxl = null;
 export const letterSpacingXxxl = null;
+export const lineColor = {
+ dark: "rgb(68, 69, 96)",
+ light: "rgb(205, 205, 215)",
+};
+export const lineDarkColor = "rgb(68, 69, 96)";
 export const lineHeightBase = 19;
 export const lineHeightLg = 24;
 export const lineHeightSm = 17;
 export const lineHeightXl = 29;
 export const lineHeightXs = 14;
 export const lineHeightXxl = 43;
+export const lineLightColor = "rgb(205, 205, 215)";
 export const primaryColor = {
  dark: "rgb(109, 159, 235)",
  light: "rgb(7, 112, 227)",
@@ -265,6 +271,8 @@ colorSystemRed,
 colorTochigi,
 colorValensole,
 colorWhite,
+lineDarkColor,
+lineLightColor,
 primaryDarkColor,
 primaryLightColor,
 secondaryDarkColor,
@@ -318,6 +326,7 @@ export const semanticColors = {
 backgroundColor,
 backgroundSecondaryColor,
 backgroundTertiaryColor,
+lineColor,
 primaryColor,
 secondaryColor,
 };

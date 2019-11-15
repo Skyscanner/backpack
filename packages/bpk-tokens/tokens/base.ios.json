@@ -547,6 +547,13 @@
       "name": "letterSpacingXxxl"
     },
     {
+      "type": "color",
+      "category": "colors",
+      "value": "#444560ff",
+      "originalValue": "{!SKY_GRAY_TINT_01}",
+      "name": "lineDarkColor"
+    },
+    {
       "value": "19",
       "type": "size",
       "category": "typesettings",
@@ -587,6 +594,13 @@
       "category": "typesettings",
       "originalValue": "{!LINE_HEIGHT_XXL}",
       "name": "lineHeightXxl"
+    },
+    {
+      "type": "color",
+      "category": "colors",
+      "value": "#cdcdd7ff",
+      "originalValue": "{!SKY_GRAY_TINT_05}",
+      "name": "lineLightColor"
     },
     {
       "type": "color",
@@ -1014,6 +1028,15 @@
       "name": "backgroundTertiaryColor",
       "darkValue": "#2c2c2eff",
       "originalDarkValue": "{!BLACK_TINT_02}"
+    },
+    {
+      "type": "color",
+      "category": "colors",
+      "value": "#cdcdd7ff",
+      "originalValue": "{!SKY_GRAY_TINT_05}",
+      "name": "lineColor",
+      "darkValue": "#444560ff",
+      "originalDarkValue": "{!SKY_GRAY_TINT_01}"
     },
     {
       "type": "color",
