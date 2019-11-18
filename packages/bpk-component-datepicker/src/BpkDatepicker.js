@@ -23,10 +23,7 @@ import { cssModules } from 'bpk-react-utils';
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import BpkBreakpoint, { BREAKPOINTS } from 'bpk-component-breakpoint';
-import BpkCalendar, {
-  CustomPropTypes,
-  BpkCalendarDate,
-} from 'bpk-component-calendar';
+import BpkCalendar, { CustomPropTypes } from 'bpk-component-calendar';
 
 import STYLES from './BpkDatepicker.scss';
 
@@ -67,9 +64,9 @@ class BpkDatepicker extends Component {
   render() {
     const {
       changeMonthLabel,
+      calendarComponent: Calendar,
       closeButtonText,
       date,
-      DateComponent,
       dateModifiers,
       daysOfWeek,
       formatDate,
@@ -113,28 +110,27 @@ class BpkDatepicker extends Component {
       />
     );
 
-    const calendarComponent = (
-      <BpkCalendar
-        className={getClassName('bpk-datepicker__calendar')}
-        changeMonthLabel={changeMonthLabel}
-        date={date}
-        DateComponent={DateComponent}
-        dateModifiers={dateModifiers}
-        daysOfWeek={daysOfWeek}
-        formatDateFull={formatDateFull}
-        formatMonth={formatMonth}
-        id={`${id}-calendar`}
-        markOutsideDays={markOutsideDays}
-        markToday={markToday}
-        maxDate={maxDate}
-        minDate={minDate}
-        onDateSelect={this.handleDateSelect}
-        onMonthChange={onMonthChange}
-        showWeekendSeparator={showWeekendSeparator}
-        weekStartsOn={weekStartsOn}
-        initiallyFocusedDate={initiallyFocusedDate}
-      />
-    );
+    const calendarProps = {
+      id: `${id}-calendar`,
+      className: getClassName('bpk-datepicker__calendar'),
+      changeMonthLabel,
+      date,
+      dateModifiers,
+      daysOfWeek,
+      formatDateFull,
+      formatMonth,
+      markOutsideDays,
+      markToday,
+      maxDate,
+      minDate,
+      onDateSelect: this.handleDateSelect,
+      onMonthChange,
+      showWeekendSeparator,
+      weekStartsOn,
+      initiallyFocusedDate,
+    };
+
+    const calendar = <Calendar {...calendarProps} />;
 
     return (
       <BpkBreakpoint query={BREAKPOINTS.MOBILE}>
@@ -150,7 +146,7 @@ class BpkDatepicker extends Component {
               closeLabel={closeButtonText}
               getApplicationElement={getApplicationElement}
             >
-              {calendarComponent}
+              {calendar}
             </BpkModal>
           ) : (
             <BpkPopover
@@ -164,7 +160,7 @@ class BpkDatepicker extends Component {
               tabIndex={0}
               {...rest}
             >
-              {calendarComponent}
+              {calendar}
             </BpkPopover>
           )
         }
@@ -186,8 +182,8 @@ BpkDatepicker.propTypes = {
   getApplicationElement: PropTypes.func.isRequired,
   weekStartsOn: PropTypes.number.isRequired,
   // Optional
+  calendarComponent: PropTypes.oneOfType([PropTypes.node, PropTypes.func]),
   date: PropTypes.instanceOf(Date),
-  DateComponent: PropTypes.func,
   dateModifiers: CustomPropTypes.DateModifiers,
   inputProps: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   markOutsideDays: PropTypes.bool,
@@ -202,8 +198,8 @@ BpkDatepicker.propTypes = {
 };
 
 BpkDatepicker.defaultProps = {
+  calendarComponent: BpkCalendar,
   date: null,
-  DateComponent: BpkCalendarDate,
   dateModifiers: BpkCalendar.defaultProps.dateModifiers,
   inputProps: {},
   markOutsideDays: BpkCalendar.defaultProps.markOutsideDays,

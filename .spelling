@@ -456,6 +456,7 @@ rel
 buttonProps
 
 autoScrollToSelected
+calendarComponent
 leadingScrollIndicatorClassName
 trailingScrollIndicatorClassName
 bottomMargin

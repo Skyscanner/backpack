@@ -21,8 +21,7 @@ import React, { Component } from 'react';
 import { isRTL } from 'bpk-react-utils';
 
 import BpkCalendarNav from './BpkCalendarNav';
-import BpkCalendarGrid from './BpkCalendarGrid';
-import { addCalendarGridTransition } from './BpkCalendarGridTransition';
+import { BpkCalendarGridWithTransition } from './BpkCalendarGrid';
 import BpkCalendarGridHeader from './BpkCalendarGridHeader';
 import BpkCalendarDate from './BpkCalendarDate';
 import composeCalendar from './composeCalendar';
@@ -37,8 +36,6 @@ import {
   startOfDay,
   startOfMonth,
 } from './date-utils';
-
-const TransitioningBpkCalendarGrid = addCalendarGridTransition(BpkCalendarGrid);
 
 const focusedDateHasChanged = (currentProps, nextProps) => {
   const rawNextSelectedDate = nextProps.selectedDate || nextProps.date;
@@ -293,7 +290,7 @@ export default withCalendarState(
   composeCalendar(
     BpkCalendarNav,
     BpkCalendarGridHeader,
-    TransitioningBpkCalendarGrid,
+    BpkCalendarGridWithTransition,
     BpkCalendarDate,
   ),
 );
