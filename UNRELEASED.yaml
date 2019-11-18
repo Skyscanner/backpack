@@ -24,11 +24,3 @@
 #   FIXED:
 #     - bpk-component-horcrux:
 #       - Fixed issue where `BpkHorcrux` would occasionally possess the living.
-
-FIXED:
-  - bpk-mixins:
-    - Upgraded `node-sass` to `4.12.0`
-
-ADDED:
-  - bpk-tokens:
-    - Added `lineColor` dynamic color for iOS and Android

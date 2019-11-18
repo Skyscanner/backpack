@@ -2,6 +2,19 @@
 
 [Unreleased changes](./UNRELEASED.yaml).
 
+# 2019-11-18 - Added dynamic line colour
+
+**Fixed:**
+
+ - bpk-mixins: 19.0.17 => 19.0.18
+   - Upgraded `node-sass` to `4.12.0`
+
+**Added:**
+
+ - bpk-tokens: 29.3.0 => 29.4.0
+   - Added `lineColor` dynamic color for iOS and Android
+
+
 # 2019-11-06 - 
 
 **Added:**
