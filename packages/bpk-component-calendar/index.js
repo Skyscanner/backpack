@@ -21,6 +21,7 @@ import BpkCalendarContainer, {
 } from './src/BpkCalendarContainer';
 import BpkCalendarGrid, {
   propTypes as BpkCalendarGridPropTypes,
+  BpkCalendarGridWithTransition,
 } from './src/BpkCalendarGrid';
 import BpkCalendarGridHeader from './src/BpkCalendarGridHeader';
 import BpkCalendarNav from './src/BpkCalendarNav';
@@ -46,4 +47,5 @@ export {
   themeAttributes,
   BpkCalendarDatePropTypes,
   BpkCalendarGridPropTypes,
+  BpkCalendarGridWithTransition,
 };

@@ -64,6 +64,52 @@ export default class App extends Component {
 }
 ```
 
+By default `BpkCalendar` is used but the calendar component is fully configurable through the `calendarComponent` prop.
+
+```js
+import React, { Component } from 'react';
+import BpkDatepicker from 'bpk-component-datepicker';
+import {
+  BpkCalendarNav,
+  BpkCalendarGridHeader,
+  BpkCalendarGridWithTransition,
+  BpkCalendarDate,
+  withCalendarState,
+  composeCalendar,
+} from 'bpk-component-calendar';
+import { colorSagano } from 'bpk-tokens/tokens/base.es6';
+
+const ColoredCalendarDate = props =>
+  <BpkCalendarDate {...props} style={{ backgroundColor: colorSagano }} />;
+
+const CalendarWithColoredDates = withCalendarState(
+  composeCalendar(
+    BpkCalendarNav,
+    BpkCalendarGridHeader,
+    BpkCalendarGridWithTransition,
+    ColoredCalendarDate,
+  ),
+);
+
+const CustomPicker = () => (
+  <BpkDatepicker
+    id="datepicker"
+    calendarComponent={CalendarWithColoredDates}
+    daysOfWeek={daysOfWeek}
+    weekStartsOn={1}
+    changeMonthLabel="Change month"
+    closeButtonText="Close"
+    title="Departure date"
+    getApplicationElement={() => document.getElementById('pagewrap')}
+    formatDate={formatDate}
+    formatMonth={formatMonth}
+    formatDateFull={formatDateFull}
+    onDateSelect={this.handleDateSelect}
+    date={this.state.selectedDate}
+  />
+);
+```
+
 > **Theming:** In order to theme the modal, a `renderTarget` needs to be supplied as a function which returns a DOM node
 > in the scope of a `BpkThemeProvider`.
 
@@ -76,30 +122,30 @@ For more information on some these props, check the BpkCalendar documentation.
 > `getApplicationElement` prop (see the example above) - this is to "hide" your application from
 > screen readers whilst the datepicker is open. The `pagewrap` element id is a convention we use internally at Skyscanner. In most cases it should "just work".
 
-| Property              | PropType        | Required | Default Value         |
-| --------------------- | --------------- | -------- | --------------------- |
-| changeMonthLabel      | string          | true     | -                     |
-| closeButtonText       | string          | true     | -                     |
-| title                 | string          | true     | -                     |
-| id                    | string          | true     | -                     |
-| getApplicationElement | func            | true     | -                     |
-| daysOfWeek            | arrayOf(object) | true     | -                     |
-| weekStartsOn          | number          | true     | -                     |
-| formatDate            | func            | true     | -                     |
-| formatDateFull        | func            | true     | -                     |
-| formatMonth           | func            | true     | -                     |
-| date                  | Date            | false    | null                  |
-| DateComponent         | func            | false    | BpkCalendarDate (\*)  |
-| dateModifiers         | object          | false    | {} (\*)               |
-| inputProps            | object          | false    | {}                    |
-| markOutsideDays       | bool            | false    | true (\*)             |
-| markToday             | bool            | false    | true (\*)             |
-| maxDate               | Date            | false    | new Date() + 1 year (\*) |
-| minDate               | Date            | false    | new Date() (\*)       |
-| onDateSelect          | func            | false    | null                  |
-| showWeekendSeparator  | bool            | false    | true (\*)             |
-| initiallyFocusedDate  | Date            | false    | null                  |
-| renderTarget          | func            | false    | null                  |
+| Property              | PropType              | Required | Default Value                       |
+| --------------------- | --------------------- | -------- | ----------------------------------- |
+| changeMonthLabel      | string                | true     | -                                   |
+| closeButtonText       | string                | true     | -                                   |
+| title                 | string                | true     | -                                   |
+| id                    | string                | true     | -                                   |
+| getApplicationElement | func                  | true     | -                                   |
+| daysOfWeek            | arrayOf(object)       | true     | -                                   |
+| weekStartsOn          | number                | true     | -                                   |
+| formatDate            | func                  | true     | -                                   |
+| formatDateFull        | func                  | true     | -                                   |
+| formatMonth           | func                  | true     | -                                   |
+| calendarComponent     | oneOfType(func, node) | false    | BpkCalendar                         |
+| date                  | Date                  | false    | null                                |
+| dateModifiers         | object                | false    | {} (\*)                             |
+| inputProps            | object                | false    | {}                                  |
+| markOutsideDays       | bool                  | false    | true (\*)                           |
+| markToday             | bool                  | false    | true (\*)                           |
+| maxDate               | Date                  | false    | new Date() + 1 year (\*)            |
+| minDate               | Date                  | false    | new Date() (\*)                     |
+| onDateSelect          | func                  | false    | null                                |
+| showWeekendSeparator  | bool                  | false    | true (\*)                           |
+| initiallyFocusedDate  | Date                  | false    | null                                |
+| renderTarget          | func                  | false    | null                                |
 
 > (\*) Default value is defined on child component
 

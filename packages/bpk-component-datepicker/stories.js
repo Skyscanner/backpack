@@ -18,8 +18,15 @@
 
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { memoize } from 'lodash';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
+import {
+  colorSagano,
+  colorBagan,
+  colorPetra,
+  colorSkyGray,
+} from 'bpk-tokens/tokens/base.es6';
 import {
   weekDays,
   formatMonth,
@@ -32,6 +39,14 @@ import {
   addDays,
   startOfDay,
 } from 'bpk-component-calendar/src/date-utils';
+import {
+  BpkCalendarNav,
+  BpkCalendarGridHeader,
+  BpkCalendarGridWithTransition,
+  BpkCalendarDate,
+  withCalendarState,
+  composeCalendar,
+} from 'bpk-component-calendar';
 
 import BpkDatepicker from './index';
 
@@ -95,6 +110,30 @@ CalendarContainer.propTypes = {
 
 CalendarContainer.defaultProps = {
   date: null,
+};
+
+const getBackgroundForDate = memoize(
+  () => [colorSagano, colorBagan, colorPetra][parseInt(Math.random() * 3, 10)],
+);
+
+const ColoredCalendarDate = props => {
+  let style = {};
+
+  if (!props.isFocused && !props.isOutside && !props.isBlocked) {
+    style = {
+      backgroundColor: getBackgroundForDate(props.date.getTime()), // stylelint-disable
+      color: colorSkyGray,
+    };
+  }
+
+  return <BpkCalendarDate {...props} style={style} />;
+};
+
+ColoredCalendarDate.propTypes = {
+  isFocused: PropTypes.bool.isRequired,
+  isOutside: PropTypes.bool.isRequired,
+  isBlocked: PropTypes.bool.isRequired,
+  date: PropTypes.object.isRequired, // eslint-disable-line
 };
 
 class ReturnDatepicker extends Component {
@@ -243,4 +282,31 @@ storiesOf('bpk-component-datepicker', module)
       />
     </div>
   ))
-  .add('Depart & Return', () => <ReturnDatepicker />);
+  .add('Depart & Return', () => <ReturnDatepicker />)
+  .add('Custon calendar component', () => {
+    const CalendarWithColoredDates = withCalendarState(
+      composeCalendar(
+        BpkCalendarNav,
+        BpkCalendarGridHeader,
+        BpkCalendarGridWithTransition,
+        ColoredCalendarDate,
+      ),
+    );
+
+    return (
+      <div id="application-element">
+        <CalendarContainer
+          id="myDatepicker"
+          closeButtonText="Close"
+          daysOfWeek={weekDays}
+          weekStartsOn={1}
+          changeMonthLabel="Change month"
+          title="Departure date"
+          formatDate={formatDate}
+          formatMonth={formatMonth}
+          formatDateFull={formatDateFull}
+          calendarComponent={CalendarWithColoredDates}
+        />
+      </div>
+    );
+  });
