@@ -2,6 +2,19 @@
 
 [Unreleased changes](./UNRELEASED.yaml).
 
+# 2019-11-19 - Added new `calendarComponent` prop to datepicker
+
+**Added:**
+
+- bpk-component-calendar: 6.0.18 => 6.1.0
+  - Added export for `BpkCalendarGridWithTransition`
+
+**Breaking:**
+
+- bpk-component-datepicker: 10.0.20 => 11.0.0
+  - Removed invalid `DateComponent` prop.
+  - Added new `calendarComponent` prop
+
 # 2019-11-18 - Added dynamic line colour
 
 **Fixed:**
