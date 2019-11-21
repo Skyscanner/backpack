@@ -69,4 +69,13 @@ describe('BpkChip', () => {
     );
     expect(toJson(tree)).toMatchSnapshot();
   });
+
+  it('should render correctly when not "dismissible"', () => {
+    const tree = shallow(
+      <BpkChip onClose={() => null} closeLabel="Close" dismissible={false}>
+        This is a Chip!
+      </BpkChip>,
+    );
+    expect(toJson(tree)).toMatchSnapshot();
+  });
 });

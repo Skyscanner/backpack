@@ -24,8 +24,14 @@ import { action } from '@storybook/addon-actions';
 
 import BpkChip from './index';
 
-storiesOf('bpk-component-chip', module).add('Default', () => (
-  <BpkChip onClose={action('Chip closing!')} closeLabel="Close">
-    This is a chip!
-  </BpkChip>
-));
+storiesOf('bpk-component-chip', module)
+  .add('Default', () => (
+    <BpkChip onClose={action('Chip closing!')} closeLabel="Close">
+      This is a chip!
+    </BpkChip>
+  ))
+  .add('Non-dimissible', () => (
+    <BpkChip onClose={() => null} closeLabel="Close" dismissible={false}>
+      This is a non-dismissible chip!
+    </BpkChip>
+  ));
