@@ -2,6 +2,14 @@
 
 [Unreleased changes](./UNRELEASED.yaml).
 
+# 2019-11-21 - 
+
+**Added:**
+
+ - bpk-component-chip: 3.0.18 => 3.1.0
+   - New `dismissible` prop that hides the close button when `false`.
+
+
 # 2019-11-19 - Added new `calendarComponent` prop to datepicker
 
 **Added:**
