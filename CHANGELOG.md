@@ -2,7 +2,7 @@
 
 [Unreleased changes](./UNRELEASED.yaml).
 
-# 2019-11-21 - 
+# 2019-11-21 - New `dismissible` prop for `BpkChip`
 
 **Added:**
 
@@ -36,7 +36,7 @@
    - Added `lineColor` dynamic color for iOS and Android
 
 
-# 2019-11-06 - 
+# 2019-11-06 -
 
 **Added:**
 
@@ -52,7 +52,7 @@
    - Fixed missing documented prop `DateComponent`.
 
 
-# 2019-11-04 - Add RN semantic tokens 
+# 2019-11-04 - Add RN semantic tokens
 
 **Added:**
 
@@ -75,7 +75,7 @@
    - New `onTilesLoaded` prop to access callback function from underlying library.
 
 
-# 2019-10-23 - 
+# 2019-10-23 -
 
 **Added:**
 
