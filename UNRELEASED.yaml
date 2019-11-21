@@ -24,3 +24,7 @@
 #   FIXED:
 #     - bpk-component-horcrux:
 #       - Fixed issue where `BpkHorcrux` would occasionally possess the living.
+
+ADDED:
+  - bpk-component-chip:
+    - New `dismissible` prop that hides the close button when `false`.

@@ -50,14 +50,14 @@ Conventions and squad decisions are kept in the [decisions folder](/decisions). 
 
 Backpack is developed using Node, using the following versions:
 
-* `LTS/Carbon` (Node ^8.12.0)
-* `^6.4.1` (npm)
+* `LTS/Erbium` (Node ^12.13.0)
+* `^6.12.0` (npm)
 
 This is enforced using a pre-install hook that calls out to [ensure-node-env](https://github.com/Skyscanner/ensure-node-env).
 
 If you use [nvm](https://github.com/creationix/nvm) or [nave](https://github.com/isaacs/nave) to manage your Node environment, Backpack has built-in support for these. Just run `nvm use` or `nave auto` to install the correct Node version.
 
-To install npm, use `npm install --global npm@^6.4.1`.
+To install npm, use `npm install --global npm@^6.12.0`.
 
 
 ### Android, iOS and React Native
@@ -209,7 +209,7 @@ You can also run the tests in 'watch mode', which means the process will continu
 <details>
 <summary>Publish packages (Backpack squad members only)</summary>
 
-- Update the [unreleased changelog](/unreleased.yaml) with every package that has changed, separating out `BRAKING`, `ADDED` and `FIXED` changes (there are examples at the bottom of the file). If you need more details on classification please checkout the [versioning decision](/decisions/versioning-rules.md)).
+- Update the [unreleased changelog](/UNRELEASED.yaml) with every package that has changed, separating out `BRAKING`, `ADDED` and `FIXED` changes (there are examples at the bottom of the file). If you need more details on classification please checkout the [versioning decision](/decisions/versioning-rules.md)).
   - Some useful commands for determining "what's changed?":
     - `npm run lerna updated`
     - `npm run lerna diff <package-name>`

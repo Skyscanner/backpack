@@ -26,9 +26,10 @@ export default () => (
 
 ## Props
 
-| Property   | PropType                | Required | Default Value |
-| ---------- | ----------------------- | -------- | ------------- |
-| children   | node                    | true     | -             |
-| onClose    | func                    | true     | -             |
-| closeLabel | oneOfType(string, func) | true     | -             |
-| className  | string                  | false    | null          |
+| Property    | PropType                | Required | Default Value |
+| ----------- | ----------------------- | -------- | ------------- |
+| children    | node                    | true     | -             |
+| onClose     | func                    | true     | -             |
+| closeLabel  | oneOfType(string, func) | true     | -             |
+| className   | string                  | false    | null          |
+| dismissible | bool                    | false    | true          |

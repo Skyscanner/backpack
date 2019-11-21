@@ -18,6 +18,18 @@ exports[`BpkChip should render correctly 1`] = `
 </div>
 `;
 
+exports[`BpkChip should render correctly when not "dismissible" 1`] = `
+<div
+  className="bpk-chip"
+>
+  <span
+    className="bpk-chip__label"
+  >
+    This is a Chip!
+  </span>
+</div>
+`;
+
 exports[`BpkChip should render correctly with a "className" attribute 1`] = `
 <div
   className="bpk-chip custom-class"

@@ -149,7 +149,7 @@ storiesOf('bpk-component-map', module)
   .add('With onTilesLoaded', () => (
     <StoryMap
       center={{ latitude: 55.944357, longitude: -3.1967116 }}
-      onTilesLoaded={() => console.log('Tiles loaded')}
+      onTilesLoaded={() => console.log('Tiles loaded')} // eslint-disable-line no-console
     >
       <StatefulBpkMapMarker
         large
