@@ -18,7 +18,6 @@
 
 import PropTypes from 'prop-types';
 import React from 'react';
-
 import { wrapDisplayName } from 'bpk-react-utils';
 
 export default (displayName, classNamesToAdd = []) => ComposedComponent => {
