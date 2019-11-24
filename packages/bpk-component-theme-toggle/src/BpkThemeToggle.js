@@ -17,6 +17,7 @@
  */
 
 import React from 'react';
+import Konami from 'konami';
 import BpkLabel from 'bpk-component-label';
 import BpkSelect from 'bpk-component-select';
 import { cssModules } from 'bpk-react-utils';
@@ -36,19 +37,6 @@ const setTheme = theme => {
   );
 };
 
-const KONAMI_CODE = [
-  'arrowup',
-  'arrowup',
-  'arrowdown',
-  'arrowdown',
-  'arrowleft',
-  'arrowright',
-  'arrowleft',
-  'arrowright',
-  'b',
-  'a',
-];
-
 class BpkThemeToggle extends React.Component {
   constructor(props) {
     super(props);
@@ -59,6 +47,9 @@ class BpkThemeToggle extends React.Component {
 
   componentDidMount() {
     document.addEventListener('keydown', this.handleKeyDown);
+    this.easterEgg = new Konami(() => {
+      this.konamiInterval = setInterval(this.cycleTheme, 200);
+    });
   }
 
   componentWillUnmount() {
@@ -69,29 +60,10 @@ class BpkThemeToggle extends React.Component {
     }
   }
 
-  checkKonami = key => {
-    this.setState(prevState => {
-      let keyPresses = prevState.keyPresses || [];
-      keyPresses.push(key);
-
-      if (keyPresses.length > KONAMI_CODE.length) {
-        keyPresses = keyPresses.slice(keyPresses.length - KONAMI_CODE.length);
-      }
-
-      if (JSON.stringify(keyPresses) === JSON.stringify(KONAMI_CODE)) {
-        keyPresses = [];
-        this.konamiInterval = setInterval(this.cycleTheme, 200);
-      }
-      return { keyPresses };
-    });
-  };
-
   handleKeyDown = e => {
     if (e.ctrlKey && e.metaKey && e.key.toLowerCase() === 't') {
       this.cycleTheme();
     }
-
-    this.checkKonami(e.key.toLowerCase());
   };
 
   handleChange = e => {
