@@ -18,7 +18,7 @@
 /* @flow strict */
 
 import PropTypes from 'prop-types';
-import React, { Component, Children, cloneElement } from 'react';
+import React, { Component } from 'react';
 import { cssModules } from 'bpk-react-utils';
 
 import BpkButton from '../../bpk-component-button';
@@ -42,8 +42,8 @@ export type Props = {
 
 type State = {
   position: number,
-  nextArrow: boolean,
-  prevArrow: boolean,
+  nextArrowDisabled: boolean,
+  prevArrowDisabled: boolean,
 };
 
 class BpkCarousel extends Component<Props, State> {
@@ -60,15 +60,15 @@ class BpkCarousel extends Component<Props, State> {
     super(props);
     this.state = {
       position: 0,
-      nextArrow: false,
-      prevArrow: true,
+      nextArrowDisabled: false,
+      prevArrowDisabled: true,
     };
   }
 
   getOrder(itemIndex) {
     const { position } = this.state;
     const { children } = this.props;
-    const numItems = children.length || 1;
+    const numItems = children.length;
     if (itemIndex - position < 0) {
       return numItems - Math.abs(itemIndex - position);
     }
@@ -79,28 +79,21 @@ class BpkCarousel extends Component<Props, State> {
     const { position } = this.state;
     const { children } = this.props;
     const numItems = children.length || 1;
-    this.state.prevArrow = false;
     this.doSliding(position === numItems - 1 ? 0 : position + 1);
   };
 
   prevSlide = () => {
     const { position } = this.state;
     const { children } = this.props;
-    const numItems = children.length;
-    this.state.nextArrow = false;
+    const numItems = children.length || 1;
     this.doSliding(position === 0 ? numItems - 1 : position - 1);
   };
 
   doSliding = position => {
-    if (position === this.props.children.length - 1) {
-      this.state.nextArrow = true;
-      this.state.prevArrow = false;
-    } else if (position === 0) {
-      this.state.nextArrow = false;
-      this.state.prevArrow = true;
-    }
     this.setState({
       position,
+      nextArrowDisabled: position === this.props.children.length - 1,
+      prevArrowDisabled: position === 0,
     });
   };
 
@@ -112,26 +105,21 @@ class BpkCarousel extends Component<Props, State> {
       children,
       ...rest
     } = this.props;
-    const { prevArrow, nextArrow } = this.state;
+    const { prevArrowDisabled, nextArrowDisabled } = this.state;
     const classNames = getClassName('bpk-carousel', className);
     const wrapperClassNames = getClassName(
       'bpk-carousel__wrapper',
       wrapperClassName,
     );
     const itemClassNames = getClassName('bpk-carousel__item', itemClassName);
-
-    const childrenWithProps = Children.map(children, child =>
-      cloneElement(child, {
-        numslides: children.length || 1,
-      }),
-    );
+    const normalisedChildren = Array.isArray(children) ? children : [children];
 
     return (
       <div className={classNames} {...rest}>
         <div>
           <BpkButton
             iconOnly
-            disabled={prevArrow}
+            disabled={prevArrowDisabled}
             onClick={() => this.prevSlide()}
           >
             <AlignedArrowLeft />
@@ -139,9 +127,10 @@ class BpkCarousel extends Component<Props, State> {
         </div>
         <div className={wrapperClassNames}>
           <div className={getClassName('bpk-carousel__container')}>
-            {childrenWithProps.map((child, index) => (
+            {normalisedChildren.map((child, index) => (
               <div
                 className={itemClassNames}
+                id={index}
                 style={{ order: `${this.getOrder(index)}` }}
               >
                 {child}
@@ -152,7 +141,7 @@ class BpkCarousel extends Component<Props, State> {
         <div>
           <BpkButton
             iconOnly
-            disabled={nextArrow}
+            disabled={nextArrowDisabled}
             onClick={() => this.nextSlide()}
           >
             <AlignedArrowRight />
@@ -174,7 +163,7 @@ BpkCarousel.defaultProps = {
   className: null,
   wrapperClassName: null,
   itemClassName: null,
-  children: null,
+  children: [],
 };
 
 export default BpkCarousel;
