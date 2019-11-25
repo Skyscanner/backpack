@@ -17,25 +17,26 @@
  */
 /* @flow strict */
 
-import React, { type Element, type ComponentType } from 'react';
-import PropTypes from 'prop-types';
+import React, { type AbstractComponent } from 'react';
 import { cssModules, wrapDisplayName } from 'bpk-react-utils';
 
 import STYLES from './withDescription.scss';
 
 const getClassName = cssModules(STYLES);
 
-export default function withDescription(Component: ComponentType<any>, description: string): ComponentType<any> {
-  const WithDescription = props => {
-    const { children, ...rest } = props;
-
-    return (
-      <span>
-        <Component {...rest}>{children}</Component>
-        <span className={getClassName('bpk-icon-description')}>{description}</span>
+// TODO: Fix flow config. This should receive the component config as a parametized type
+export default function withDescription(
+  Component: AbstractComponent<any>,
+  description: string,
+): AbstractComponent<any> {
+  const WithDescription = props => (
+    <span>
+      <Component {...props} />
+      <span className={getClassName('bpk-icon-description')}>
+        {description}
       </span>
-    );
-  };
+    </span>
+  );
 
   WithDescription.displayName = wrapDisplayName(Component, 'withDescription');
 

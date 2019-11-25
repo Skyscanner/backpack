@@ -19,9 +19,11 @@
 
 import React from 'react';
 import renderer from 'react-test-renderer';
+
 import withDescription from './withDescription';
 
-const Heart = props => <span>❤️</span>;
+// eslint-disable-next-line jsx-a11y/accessible-emoji
+const Heart = () => <span>❤️</span>;
 
 const DescribedHeart = withDescription(Heart, 'love');
 

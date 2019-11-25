@@ -19,9 +19,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import ReactShallowRenderer from 'react-test-renderer/shallow';
-import { shallow } from 'enzyme';
-import toJson from 'enzyme-to-json';
-import withAlignment from './withAlignment';
 import {
   lineHeightSm,
   lineHeightBase,
@@ -29,11 +26,10 @@ import {
   lineHeightXl,
   lineHeightXxl,
   iconSizeSm,
-  iconSizeBase,
   iconSizeLg,
-  iconSizeXl,
-  iconSizeXxl,
 } from 'bpk-tokens/tokens/base.es6';
+
+import withAlignment from './withAlignment';
 
 describe('withAlignment', () => {
   const lineHeights = [
@@ -46,8 +42,8 @@ describe('withAlignment', () => {
   const iconSizes = [iconSizeSm, iconSizeLg];
 
   it('should render correctly', () => {
-    for (var l = 0; l < lineHeights.length; l++) {
-      for (var i = 0; i < iconSizes.length; i++) {
+    for (let l = 0; l < lineHeights.length; l += 1) {
+      for (let i = 0; i < iconSizes.length; i += 1) {
         const MyComponent = props => (
           <div {...props}>
             test lineHeight {lineHeights[l]} and iconsSize {iconSizes[i]}
