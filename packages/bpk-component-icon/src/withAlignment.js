@@ -17,12 +17,10 @@
  */
 
 import React from 'react';
-import PropTypes from 'prop-types';
 import { wrapDisplayName } from 'bpk-react-utils';
 
 export default function withAlignment(Component, objectHeight, subjectHeight) {
   const WithAlignment = props => {
-    const { children, ...rest } = props;
     const objectHeightDecimal = `${objectHeight}`.replace('rem', '');
     const subjectHeightDecimal = `${subjectHeight}`.replace('rem', '');
     const marginTopCalculated = `${Math.max(
@@ -39,15 +37,12 @@ export default function withAlignment(Component, objectHeight, subjectHeight) {
           verticalAlign: 'top',
         }}
       >
-        <Component {...rest}>{children}</Component>
+        <Component {...props} />
       </span>
     );
   };
 
   WithAlignment.displayName = wrapDisplayName(Component, 'withAlignment');
-  WithAlignment.propTypes = {
-    children: PropTypes.node.isRequired,
-  };
 
   return WithAlignment;
 }
