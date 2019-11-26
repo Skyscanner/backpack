@@ -20,10 +20,9 @@
 
 .bpk-carousel {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
 
   &__wrapper {
-    width: 64.9375rem;
     margin: 0 .625rem;
     overflow: hidden;
   }
@@ -31,11 +30,12 @@
   &__container {
     display: flex;
     justify-content: space-between;
+    flex: 1 0;
+    transition: margin-left $bpk-duration-base;
   }
 
   &__item {
     margin-right: 1.25rem;
-    flex: 1 0;
 
     @include bpk-breakpoint-tablet {
       margin-right: .625rem;

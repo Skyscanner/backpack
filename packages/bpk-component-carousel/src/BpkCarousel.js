@@ -18,7 +18,7 @@
 /* @flow strict */
 
 import PropTypes from 'prop-types';
-import React, { Component } from 'react';
+import React, { Children, Component, createRef } from 'react';
 import { cssModules } from 'bpk-react-utils';
 
 import BpkButton from '../../bpk-component-button';
@@ -33,68 +33,85 @@ const AlignedArrowRight = withButtonAlignment(withRtlSupport(ArrowRightIcon));
 
 const getClassName = cssModules(STYLES);
 
-export type Props = {
+type Props = {
   className: ?string,
   wrapperClassName: ?string,
   itemClassName: ?string,
-  children: ?any,
+  children: Node,
 };
 
 type State = {
   position: number,
-  nextArrowDisabled: boolean,
-  prevArrowDisabled: boolean,
 };
 
 class BpkCarousel extends Component<Props, State> {
-  static propTypes = {
-    className: PropTypes.string,
-    children: PropTypes.node,
-  };
+  wrapperRef: Object;
 
-  static defaultProps = {
-    className: null,
-  };
+  firstItemRef: Object;
+
+  wrapperWidth: number;
+
+  itemWidth: number;
+
+  static defaultProps = {};
 
   constructor(props: Props) {
     super(props);
+
+    this.wrapperRef = createRef();
+    this.firstItemRef = createRef();
+
     this.state = {
       position: 0,
-      nextArrowDisabled: false,
-      prevArrowDisabled: true,
     };
   }
 
-  getOrder(itemIndex) {
-    const { position } = this.state;
-    const { children } = this.props;
-    const numItems = children.length;
-    if (itemIndex - position < 0) {
-      return numItems - Math.abs(itemIndex - position);
-    }
-    return itemIndex - position;
+  componentDidMount() {
+    this.wrapperWidth =
+      this.wrapperRef && this.wrapperRef.current
+        ? this.wrapperRef.current.offsetWidth
+        : 0;
+    console.log(`Wrapper width: ${this.wrapperWidth}`);
+    this.itemWidth =
+      this.firstItemRef && this.firstItemRef.current
+        ? this.firstItemRef.current.offsetWidth
+        : 0;
+    console.log(`Wrapper width: ${this.itemWidth}`);
   }
+
+  getTranslate = () => {
+    const { position } = this.state;
+    return `calc((-${this.itemWidth}px) * ${position})`;
+  };
 
   nextSlide = () => {
     const { position } = this.state;
     const { children } = this.props;
-    const numItems = children.length || 1;
-    this.doSliding(position === numItems - 1 ? 0 : position + 1);
+    const numItems = Children.count(children) || 1;
+    this.setState({
+      position: position === numItems - 1 ? 0 : position + 1,
+    });
   };
 
   prevSlide = () => {
     const { position } = this.state;
     const { children } = this.props;
-    const numItems = children.length || 1;
-    this.doSliding(position === 0 ? numItems - 1 : position - 1);
+    const numItems = Children.count(children) || 1;
+    this.setState({
+      position: position === 0 ? numItems - 1 : position - 1,
+    });
   };
 
-  doSliding = position => {
-    this.setState({
-      position,
-      nextArrowDisabled: position === this.props.children.length - 1,
-      prevArrowDisabled: position === 0,
-    });
+  isNextArrowDisabled = () => {
+    const { position } = this.state;
+    const { children } = this.props;
+    const itemsShown = Math.floor(this.wrapperWidth / this.itemWidth);
+    return position === Children.count(children) - itemsShown;
+  };
+
+  isPrevArrowDisabled = () => {
+    const { position } = this.state;
+    return position === 0;
   };
 
   render() {
@@ -105,35 +122,32 @@ class BpkCarousel extends Component<Props, State> {
       children,
       ...rest
     } = this.props;
-    const { prevArrowDisabled, nextArrowDisabled } = this.state;
     const classNames = getClassName('bpk-carousel', className);
     const wrapperClassNames = getClassName(
       'bpk-carousel__wrapper',
       wrapperClassName,
     );
     const itemClassNames = getClassName('bpk-carousel__item', itemClassName);
-    const normalisedChildren = Array.isArray(children) ? children : [children];
 
     return (
       <div className={classNames} {...rest}>
         <div>
           <BpkButton
             iconOnly
-            disabled={prevArrowDisabled}
+            disabled={this.isPrevArrowDisabled()}
             onClick={() => this.prevSlide()}
           >
             <AlignedArrowLeft />
           </BpkButton>
         </div>
-        <div className={wrapperClassNames}>
-          <div className={getClassName('bpk-carousel__container')}>
-            {normalisedChildren.map((child, index) => (
-              <div
-                className={itemClassNames}
-                id={index}
-                style={{ order: `${this.getOrder(index)}` }}
-              >
-                {child}
+        <div className={wrapperClassNames} ref={this.wrapperRef}>
+          <div
+            className={getClassName('bpk-carousel__container')}
+            style={{ marginLeft: `${this.getTranslate()}` }}
+          >
+            {Children.toArray(children).map((child, index) => (
+              <div ref={index === 0 ? this.firstItemRef : null}>
+                <div className={itemClassNames}>{child}</div>
               </div>
             ))}
           </div>
@@ -141,7 +155,7 @@ class BpkCarousel extends Component<Props, State> {
         <div>
           <BpkButton
             iconOnly
-            disabled={nextArrowDisabled}
+            disabled={this.isNextArrowDisabled()}
             onClick={() => this.nextSlide()}
           >
             <AlignedArrowRight />

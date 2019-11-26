@@ -46,47 +46,37 @@ exports[`BpkCarousel should render correctly 1`] = `
   >
     <div
       className="bpk-carousel__container"
+      style={
+        Object {
+          "marginLeft": "calc((-undefinedpx) * 0)",
+        }
+      }
     >
-      <div
-        className="bpk-carousel__item"
-        style={
-          Object {
-            "order": "0",
-          }
-        }
-      >
+      <div>
         <div
-          numslides={3}
+          className="bpk-carousel__item"
         >
-          Item 2
+          <div>
+            Item 2
+          </div>
         </div>
       </div>
-      <div
-        className="bpk-carousel__item"
-        style={
-          Object {
-            "order": "1",
-          }
-        }
-      >
+      <div>
         <div
-          numslides={3}
+          className="bpk-carousel__item"
         >
-          Item 3
+          <div>
+            Item 3
+          </div>
         </div>
       </div>
-      <div
-        className="bpk-carousel__item"
-        style={
-          Object {
-            "order": "2",
-          }
-        }
-      >
+      <div>
         <div
-          numslides={3}
+          className="bpk-carousel__item"
         >
-          Item 4
+          <div>
+            Item 4
+          </div>
         </div>
       </div>
     </div>
@@ -177,47 +167,37 @@ exports[`BpkCarousel should support custom class names 1`] = `
   >
     <div
       className="bpk-carousel__container"
+      style={
+        Object {
+          "marginLeft": "calc((-undefinedpx) * 0)",
+        }
+      }
     >
-      <div
-        className="bpk-carousel__item"
-        style={
-          Object {
-            "order": "0",
-          }
-        }
-      >
+      <div>
         <div
-          numslides={3}
+          className="bpk-carousel__item"
         >
-          Item 2
+          <div>
+            Item 2
+          </div>
         </div>
       </div>
-      <div
-        className="bpk-carousel__item"
-        style={
-          Object {
-            "order": "1",
-          }
-        }
-      >
+      <div>
         <div
-          numslides={3}
+          className="bpk-carousel__item"
         >
-          Item 3
+          <div>
+            Item 3
+          </div>
         </div>
       </div>
-      <div
-        className="bpk-carousel__item"
-        style={
-          Object {
-            "order": "2",
-          }
-        }
-      >
+      <div>
         <div
-          numslides={3}
+          className="bpk-carousel__item"
         >
-          Item 4
+          <div>
+            Item 4
+          </div>
         </div>
       </div>
     </div>

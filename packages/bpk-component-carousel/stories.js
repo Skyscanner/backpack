@@ -26,32 +26,69 @@ import BpkCarousel from './index';
 
 const getClassName = cssModules(STYLES);
 
-storiesOf('bpk-component-carousel', module).add('Default', () => (
-  <BpkCarousel>
+const carouselItems = Array(10)
+  .fill(0)
+  .map((_, index) => (
     <div className={getClassName('bpk-carousel-story__item')}>
-      Bacon ipsum dolor amet brisket leberkas landjaeger salami pork belly
-      turducken chuck drumstick cow. Strip steak spare ribs ham hock biltong,
-      frankfurter pancetta tri-tip landjaeger chicken beef porchetta leberkas
-      sirloin andouille burgdoggen. Fatback capicola pork belly short loin
-      picanha ham. T-bone pork chop pork loin bacon. Shankle venison hamburger
-      rump kevin spare ribs pork loin meatloaf salami pork pork chop ground
-      round tri-tip boudin landjaeger.
+      Item {index + 1}
     </div>
-    <div className={getClassName('bpk-carousel-story__item')}>Item 2</div>
-    <div className={getClassName('bpk-carousel-story__item')}>Item 3</div>
-    <div className={getClassName('bpk-carousel-story__item')}>Item 4</div>
+  ));
 
-    <div className={getClassName('bpk-carousel-story__item')}>
-      Bacon ipsum dolor amet brisket leberkas landjaeger salami pork belly
-      turducken chuck drumstick cow. Strip steak spare ribs ham hock biltong,
-      frankfurter pancetta tri-tip landjaeger chicken beef porchetta leberkas
-      sirloin andouille burgdoggen. Fatback capicola pork belly short loin
-      picanha ham. T-bone pork chop pork loin bacon. Shankle venison hamburger
-      rump kevin spare ribs pork loin meatloaf salami pork pork chop ground
-      round tri-tip boudin landjaeger.
-    </div>
-    <div className={getClassName('bpk-carousel-story__item')}>Item 6</div>
-    <div className={getClassName('bpk-carousel-story__item')}>Item 7</div>
-    <div className={getClassName('bpk-carousel-story__item')}>Item 8</div>
-  </BpkCarousel>
-));
+storiesOf('bpk-component-carousel', module)
+  .add('Default', () => <BpkCarousel>{carouselItems}</BpkCarousel>)
+  .add('Tall Carousel Items', () => (
+    <BpkCarousel>
+      <div className={getClassName('bpk-carousel-story__item')}>
+        Bacon ipsum dolor amet kielbasa tail burgdoggen hamburger jerky, alcatra
+        tongue flank spare ribs buffalo. Frankfurter picanha turkey pork loin
+        beef ribs doner rump salami corned beef pig short ribs ham hock alcatra
+        tongue filet mignon.
+      </div>
+      <div className={getClassName('bpk-carousel-story__item')}>
+        Short loin spare ribs burgdoggen pig cupim drumstick doner tail, corned
+        beef meatball tongue. Sirloin drumstick t-bone tri-tip brisket. Rump
+        swine drumstick spare ribs, meatloaf ham frankfurter corned beef cow
+        shank leberkas tail bresaola ribeye kielbasa.
+      </div>
+      <div className={getClassName('bpk-carousel-story__item')}>
+        Frankfurter shankle doner chuck, buffalo short loin cupim tongue tail
+        ground round chislic leberkas bacon. Flank capicola doner sirloin
+        tri-tip biltong. Burgdoggen buffalo ham hock short ribs jowl sausage
+        prosciutto alcatra bresaola landjaeger. Cupim tongue t-bone, tri-tip
+        chuck flank pastrami chicken picanha.
+      </div>
+      <div className={getClassName('bpk-carousel-story__item')}>
+        Frankfurter shankle doner chuck, buffalo short loin cupim tongue tail
+        ground round chislic leberkas bacon. Flank capicola doner sirloin
+        tri-tip biltong. Burgdoggen buffalo ham hock short ribs jowl sausage
+        prosciutto alcatra bresaola landjaeger. Cupim tongue t-bone, tri-tip
+        chuck flank pastrami chicken picanha.
+      </div>
+    </BpkCarousel>
+  ))
+  .add('Single Carousel Item', () => (
+    <BpkCarousel>
+      <div className={getClassName('bpk-carousel-story__item')}>
+        Bacon ipsum dolor amet kielbasa tail burgdoggen hamburger jerky, alcatra
+        tongue flank spare ribs buffalo. Frankfurter picanha turkey pork loin
+        beef ribs doner rump salami corned beef pig short ribs ham hock alcatra
+        tongue filet mignon.
+      </div>
+    </BpkCarousel>
+  ))
+  .add('Two Carousel Items', () => (
+    <BpkCarousel>
+      <div className={getClassName('bpk-carousel-story__item')}>
+        Bacon ipsum dolor amet kielbasa tail burgdoggen hamburger jerky, alcatra
+        tongue flank spare ribs buffalo. Frankfurter picanha turkey pork loin
+        beef ribs doner rump salami corned beef pig short ribs ham hock alcatra
+        tongue filet mignon.
+      </div>
+      <div className={getClassName('bpk-carousel-story__item')}>
+        Bacon ipsum dolor amet kielbasa tail burgdoggen hamburger jerky, alcatra
+        tongue flank spare ribs buffalo. Frankfurter picanha turkey pork loin
+        beef ribs doner rump salami corned beef pig short ribs ham hock alcatra
+        tongue filet mignon.
+      </div>
+    </BpkCarousel>
+  ));

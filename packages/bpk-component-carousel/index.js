@@ -17,7 +17,6 @@
  */
 /* @flow strict */
 
-import BpkCarousel, { type Props as BpkCarouselProps } from './src/BpkCarousel';
+import BpkCarousel from './src/BpkCarousel';
 
-export type { BpkCarouselProps };
 export default BpkCarousel;
