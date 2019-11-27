@@ -47,9 +47,9 @@ type State = {
 };
 
 class BpkCarousel extends Component<Props, State> {
-  wrapperRef: Object;
+  wrapperRef: { current: ?HTMLDivElement };
 
-  firstItemRef: Object;
+  firstItemRef: { current: ?HTMLElement };
 
   wrapperWidth: number;
 
