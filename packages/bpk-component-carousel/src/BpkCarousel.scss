@@ -34,10 +34,10 @@
   }
 
   &__item {
-    margin-right: 1.25rem;
+    margin-right: ($bpk-spacing-base / 6) * 5;
 
     @include bpk-breakpoint-tablet {
-      margin-right: .625rem;
+      margin-right: $bpk-spacing-lg / 3;
     }
   }
 }
