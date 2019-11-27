@@ -35,8 +35,6 @@ const getClassName = cssModules(STYLES);
 
 type Props = {
   className: ?string,
-  wrapperClassName: ?string,
-  itemClassName: ?string,
   children: Node,
 };
 
@@ -127,19 +125,8 @@ class BpkCarousel extends Component<Props, State> {
   };
 
   render() {
-    const {
-      className,
-      wrapperClassName,
-      itemClassName,
-      children,
-      ...rest
-    } = this.props;
+    const { className, children, ...rest } = this.props;
     const classNames = getClassName('bpk-carousel', className);
-    const wrapperClassNames = getClassName(
-      'bpk-carousel__wrapper',
-      wrapperClassName,
-    );
-    const itemClassNames = getClassName('bpk-carousel__item', itemClassName);
 
     return (
       <div className={classNames} {...rest}>
@@ -152,14 +139,19 @@ class BpkCarousel extends Component<Props, State> {
             <AlignedArrowLeft />
           </BpkButton>
         </div>
-        <div className={wrapperClassNames} ref={this.wrapperRef}>
+        <div
+          className={getClassName('bpk-carousel__wrapper')}
+          ref={this.wrapperRef}
+        >
           <div
             className={getClassName('bpk-carousel__container')}
             style={{ marginLeft: `${this.getTranslate()}` }}
           >
             {Children.toArray(children).map((child, index) => (
               <div ref={index === 0 ? this.firstItemRef : null}>
-                <div className={itemClassNames}>{child}</div>
+                <div className={getClassName('bpk-carousel__item')}>
+                  {child}
+                </div>
               </div>
             ))}
           </div>
@@ -180,15 +172,11 @@ class BpkCarousel extends Component<Props, State> {
 
 BpkCarousel.propTypes = {
   className: PropTypes.string,
-  wrapperClassName: PropTypes.string,
-  itemClassName: PropTypes.string,
   children: PropTypes.node,
 };
 
 BpkCarousel.defaultProps = {
   className: null,
-  wrapperClassName: null,
-  itemClassName: null,
   children: [],
 };
 
