@@ -48,7 +48,7 @@ exports[`BpkCarousel should render correctly 1`] = `
       className="bpk-carousel__container"
       style={
         Object {
-          "marginLeft": "calc((-undefinedpx) * 0)",
+          "marginLeft": "calc((-0px) * 0)",
         }
       }
     >
@@ -169,7 +169,7 @@ exports[`BpkCarousel should support custom class names 1`] = `
       className="bpk-carousel__container"
       style={
         Object {
-          "marginLeft": "calc((-undefinedpx) * 0)",
+          "marginLeft": "calc((-0px) * 0)",
         }
       }
     >

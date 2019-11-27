@@ -42,6 +42,8 @@ type Props = {
 
 type State = {
   position: number,
+  prevArrowDisabled: boolean,
+  nextArrowDisabled: boolean,
 };
 
 class BpkCarousel extends Component<Props, State> {
@@ -63,55 +65,65 @@ class BpkCarousel extends Component<Props, State> {
 
     this.state = {
       position: 0,
+      prevArrowDisabled: true,
+      nextArrowDisabled: false,
     };
   }
 
+  // Here we are getting the widths of elements to use when doing translations
   componentDidMount() {
+    const { position } = this.state;
+    const { children } = this.props;
     this.wrapperWidth =
       this.wrapperRef && this.wrapperRef.current
         ? this.wrapperRef.current.offsetWidth
         : 0;
-    console.log(`Wrapper width: ${this.wrapperWidth}`);
     this.itemWidth =
       this.firstItemRef && this.firstItemRef.current
         ? this.firstItemRef.current.offsetWidth
         : 0;
-    console.log(`Wrapper width: ${this.itemWidth}`);
+    const itemsShown = Math.floor(this.wrapperWidth / this.itemWidth);
+    this.setState({
+      nextArrowDisabled:
+        position === Children.count(children) - itemsShown ||
+        Children.count(children) === itemsShown,
+      prevArrowDisabled: position === 0,
+    });
   }
 
+  // Function to do the animation based on the item size that is moving
   getTranslate = () => {
     const { position } = this.state;
     return `calc((-${this.itemWidth}px) * ${position})`;
   };
 
+  // Function that will handle moving to the next slide
   nextSlide = () => {
     const { position } = this.state;
     const { children } = this.props;
     const numItems = Children.count(children) || 1;
-    this.setState({
-      position: position === numItems - 1 ? 0 : position + 1,
-    });
+    this.doSliding(position === numItems - 1 ? 0 : position + 1);
   };
 
+  // Function that will handle moving to the previous slide
   prevSlide = () => {
     const { position } = this.state;
     const { children } = this.props;
     const numItems = Children.count(children) || 1;
-    this.setState({
-      position: position === 0 ? numItems - 1 : position - 1,
-    });
+    this.doSliding(position === 0 ? numItems - 1 : position - 1);
   };
 
-  isNextArrowDisabled = () => {
-    const { position } = this.state;
+  // Handles the settings of the slider position and calculating if the bottons should be disabled
+  doSliding = (position: number) => {
     const { children } = this.props;
     const itemsShown = Math.floor(this.wrapperWidth / this.itemWidth);
-    return position === Children.count(children) - itemsShown;
-  };
-
-  isPrevArrowDisabled = () => {
-    const { position } = this.state;
-    return position === 0;
+    this.setState({
+      position,
+      nextArrowDisabled:
+        position === Children.count(children) - itemsShown ||
+        Children.count(children) === itemsShown,
+      prevArrowDisabled: position === 0,
+    });
   };
 
   render() {
@@ -134,7 +146,7 @@ class BpkCarousel extends Component<Props, State> {
         <div>
           <BpkButton
             iconOnly
-            disabled={this.isPrevArrowDisabled()}
+            disabled={this.state.prevArrowDisabled}
             onClick={() => this.prevSlide()}
           >
             <AlignedArrowLeft />
@@ -155,7 +167,7 @@ class BpkCarousel extends Component<Props, State> {
         <div>
           <BpkButton
             iconOnly
-            disabled={this.isNextArrowDisabled()}
+            disabled={this.state.nextArrowDisabled}
             onClick={() => this.nextSlide()}
           >
             <AlignedArrowRight />
