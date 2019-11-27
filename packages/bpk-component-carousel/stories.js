@@ -20,7 +20,7 @@ import React from 'react';
 import { cssModules } from 'bpk-react-utils';
 import { storiesOf } from '@storybook/react';
 
-import STYLES from './carousel.scss';
+import STYLES from './stories.scss';
 
 import BpkCarousel from './index';
 
