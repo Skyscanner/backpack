@@ -39,9 +39,5 @@
     @include bpk-breakpoint-tablet {
       margin-right: .625rem;
     }
-
-    @include bpk-breakpoint-mobile {
-      margin-right: 0;
-    }
   }
 }
