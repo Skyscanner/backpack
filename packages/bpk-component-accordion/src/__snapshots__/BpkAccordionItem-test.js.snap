@@ -430,3 +430,176 @@ exports[`BpkAccordionItem should render correctly with "tagName" prop set 1`] = 
   </dd>
 </div>
 `;
+
+exports[`BpkAccordionItem should render correctly with "tagName" prop set 2`] = `
+<div
+  bold={true}
+  id="my-accordion"
+>
+  <dt
+    aria-labelledby="my-accordion"
+    aria-level="3"
+    className="bpk-accordion__title"
+  >
+    <button
+      aria-controls="my-accordion_content"
+      aria-expanded={false}
+      className="bpk-accordion__toggle-button"
+      onClick={[Function]}
+      type="button"
+    >
+      <span
+        className="bpk-accordion__flex-container"
+      >
+        <span
+          className="bpk-text bpk-text--base bpk-accordion__title-text"
+        >
+          My accordion item
+        </span>
+        <span
+          className="bpk-accordion__icon-wrapper"
+        >
+          <span
+            style={
+              Object {
+                "display": "inline-block",
+                "lineHeight": "1.125rem",
+                "marginTop": "0.1875rem",
+                "verticalAlign": "top",
+              }
+            }
+          >
+            <svg
+              className="bpk-accordion__item-expand-icon"
+              height="18"
+              style={
+                Object {
+                  "height": "1.125rem",
+                  "width": "1.125rem",
+                }
+              }
+              viewBox="0 0 24 24"
+              width="18"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12 17.5l-7.2-6.4c-.6-.5-.7-1.5-.1-2.1.5-.6 1.5-.7 2.1-.1l5.2 4.6 5.2-4.6c.6-.6 1.6-.5 2.1.1s.5 1.6-.1 2.1L12 17.5z"
+              />
+            </svg>
+          </span>
+        </span>
+      </span>
+    </button>
+  </dt>
+  <dd
+    aria-labelledby="my-accordion_content"
+    className="bpk-accordion__content-container"
+    id="my-accordion_content"
+  >
+    <div
+      onTransitionEnd={[Function]}
+      style={
+        Object {
+          "MozTransition": "height 200ms ease ",
+          "OTransition": "height 200ms ease ",
+          "WebkitTransition": "height 200ms ease ",
+          "height": 0,
+          "msTransition": "height 200ms ease ",
+          "overflow": "hidden",
+          "transition": "height 200ms ease ",
+        }
+      }
+    >
+      <div>
+        My accordion content
+      </div>
+    </div>
+  </dd>
+</div>
+`;
+
+exports[`BpkAccordionItem should render correctly with "textStyle" prop set 1`] = `
+<div
+  id="my-accordion"
+>
+  <dt
+    aria-labelledby="my-accordion"
+    aria-level="3"
+    className="bpk-accordion__title"
+  >
+    <button
+      aria-controls="my-accordion_content"
+      aria-expanded={false}
+      className="bpk-accordion__toggle-button"
+      onClick={[Function]}
+      type="button"
+    >
+      <span
+        className="bpk-accordion__flex-container"
+      >
+        <span
+          className="bpk-text bpk-text--xl bpk-accordion__title-text"
+        >
+          My accordion item
+        </span>
+        <span
+          className="bpk-accordion__icon-wrapper"
+        >
+          <span
+            style={
+              Object {
+                "display": "inline-block",
+                "lineHeight": "1.125rem",
+                "marginTop": "0.1875rem",
+                "verticalAlign": "top",
+              }
+            }
+          >
+            <svg
+              className="bpk-accordion__item-expand-icon"
+              height="18"
+              style={
+                Object {
+                  "height": "1.125rem",
+                  "width": "1.125rem",
+                }
+              }
+              viewBox="0 0 24 24"
+              width="18"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12 17.5l-7.2-6.4c-.6-.5-.7-1.5-.1-2.1.5-.6 1.5-.7 2.1-.1l5.2 4.6 5.2-4.6c.6-.6 1.6-.5 2.1.1s.5 1.6-.1 2.1L12 17.5z"
+              />
+            </svg>
+          </span>
+        </span>
+      </span>
+    </button>
+  </dt>
+  <dd
+    aria-labelledby="my-accordion_content"
+    className="bpk-accordion__content-container"
+    id="my-accordion_content"
+  >
+    <div
+      onTransitionEnd={[Function]}
+      style={
+        Object {
+          "MozTransition": "height 200ms ease ",
+          "OTransition": "height 200ms ease ",
+          "WebkitTransition": "height 200ms ease ",
+          "height": 0,
+          "msTransition": "height 200ms ease ",
+          "overflow": "hidden",
+          "transition": "height 200ms ease ",
+        }
+      }
+    >
+      <div>
+        My accordion content
+      </div>
+    </div>
+  </dd>
+</div>
+`;

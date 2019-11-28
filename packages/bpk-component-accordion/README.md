@@ -71,14 +71,15 @@ export default () => (
 
 ### BpkAccordionItem
 
-| Property | PropType | Required | Default Value |
-| -------- | -------- | -------- | ------------- |
-| id       | string   | true     | -             |
-| title    | string   | true     | -             |
-| children | node     | true     | -             |
-| expanded | bool     | false    | false         |
-| onClick  | func     | false    | () => null    |
-| tagName  | string   | false    | span          |
+| Property  | PropType | Required | Default Value |
+| --------- | -------- | -------- | ------------- |
+| children  | node     | true     | -             |
+| id        | string   | true     | -             |
+| title     | string   | true     | -             |
+| expanded  | bool     | false    | false         |
+| onClick   | func     | false    | () => null    |
+| tagName   | string   | false    | span          |
+| textStyle | string   | false    | "base"        |
 
 ### withSingleItemAccordionState(BpkAccordion)
 

@@ -1,4 +1,7 @@
 # UNRELEASED:
+FIXED:
+  - bpk-component-accordion:
+    - Added missing prop to README
 
 # How to write a good changelog entry:
 #

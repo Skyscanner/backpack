@@ -233,4 +233,22 @@ storiesOf('bpk-component-accordion', module)
         <AirportsContent />
       </BpkAccordionItem>
     </BpkAccordion>
+  ))
+  .add('Custom title textStyle', () => (
+    <SingleItemAccordion>
+      <BpkAccordionItem
+        textStyle="lg"
+        id="stops"
+        title="Stops"
+        initiallyExpanded
+      >
+        <StopsContent />
+      </BpkAccordionItem>
+      <BpkAccordionItem textStyle="lg" id="airlines" title="Airlines">
+        <AirlinesContent />
+      </BpkAccordionItem>
+      <BpkAccordionItem textStyle="lg" id="airports" title="Airports">
+        <AirportsContent />
+      </BpkAccordionItem>
+    </SingleItemAccordion>
   ));
