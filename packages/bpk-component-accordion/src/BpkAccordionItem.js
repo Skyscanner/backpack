@@ -98,20 +98,20 @@ const BpkAccordionItem = props => {
 };
 
 BpkAccordionItem.propTypes = {
+  children: PropTypes.node.isRequired,
   id: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
-  tagName: PropTypes.string,
-  textStyle: PropTypes.string,
-  children: PropTypes.node.isRequired,
   expanded: PropTypes.bool,
   onClick: PropTypes.func,
+  tagName: PropTypes.string,
+  textStyle: PropTypes.string,
 };
 
 BpkAccordionItem.defaultProps = {
-  tagName: 'span',
-  textStyle: 'base',
   expanded: false,
   onClick: () => null,
+  tagName: 'span',
+  textStyle: 'base',
 };
 
 export default BpkAccordionItem;
