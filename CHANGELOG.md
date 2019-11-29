@@ -2,8 +2,21 @@
 
 [Unreleased changes](./UNRELEASED.yaml).
 
+# 2019-11-29 - Fixes for infinite scroll and autosuggest
+
+**Fixed:**
+
+- bpk-component-autosuggest: 4.0.19 => 4.0.20
+  - Expand suggestions to fit content when the content is wider than the input field.
+- bpk-component-accordion: 2.1.17 => 2.1.18
+  - Added missing prop to README
+- bpk-component-infinite-scroll: 3.0.18 => 3.0.19
+  - avoid redundant call to work out if data-source is exhausted
+
 # 2019-11-27 - New **BETA** `BpkCarousel` component
-**Added:
+
+**Added**:
+
   - bpk-component-carousel: 0.1.0
     - Added new Carousel component.
 

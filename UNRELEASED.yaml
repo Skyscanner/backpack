@@ -1,9 +1,4 @@
 # UNRELEASED:
-FIXED:
-  - bpk-component-accordion:
-    - Added missing prop to README
-  - bpk-component-infinite-scroll:
-    - avoid redundant call to work out if data-source is exhausted
 
 # How to write a good changelog entry:
 #
@@ -29,7 +24,3 @@ FIXED:
 #   FIXED:
 #     - bpk-component-horcrux:
 #       - Fixed issue where `BpkHorcrux` would occasionally possess the living.
-
-ADDED:
-  - bpk-component-autosuggest:
-    - Expand suggestions to fit content when the content is wider than the input field.
