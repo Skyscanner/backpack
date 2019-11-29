@@ -28,7 +28,11 @@ import BpkContentContainer from 'bpk-component-content-container';
 
 import STYLES from './stories.scss';
 
-import BpkPopover, { type BpkPopoverProps as PopoverProps } from './index';
+import BpkPopover, {
+  bpkPopoverPortalPropTypes,
+  bpkPopoverPortalDefaultProps,
+  type BpkPopoverProps as PopoverProps,
+} from './index';
 
 const getClassName = cssModules(STYLES);
 
@@ -38,8 +42,17 @@ const Paragraph = withDefaultProps(BpkText, {
   className: getClassName('bpk-popover-paragraph'),
 });
 
+type IgnoredPopoverProps = {
+  children: Node,
+  closeButtonText: string,
+  isOpen: boolean,
+  label: string,
+  onClose: (event: SyntheticEvent<>, props: { source: string }) => mixed,
+  target: (() => ?HTMLElement) | Node,
+};
+
 type Props = {
-  ...$Diff<PopoverProps, { children: Node }>,
+  ...$Diff<PopoverProps, IgnoredPopoverProps>,
   id: string,
   changeProps: boolean,
   targetFunction: ?() => ?HTMLElement,
@@ -53,12 +66,16 @@ type State = {
 
 class PopoverContainer extends Component<Props, State> {
   static propTypes = {
+    ...bpkPopoverPortalPropTypes,
+    className: PropTypes.string,
     id: PropTypes.string.isRequired,
     changeProps: PropTypes.bool,
     targetFunction: PropTypes.func,
   };
 
   static defaultProps = {
+    ...bpkPopoverPortalDefaultProps,
+    className: null,
     changeProps: false,
     targetFunction: null,
   };
