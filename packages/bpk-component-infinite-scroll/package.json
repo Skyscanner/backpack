@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-infinite-scroll",
-  "version": "3.0.18",
+  "version": "3.0.19",
   "description": "Backpack infinite scroll component.",
   "main": "index.js",
   "repository": {

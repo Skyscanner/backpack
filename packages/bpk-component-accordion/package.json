@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-accordion",
-  "version": "2.1.17",
+  "version": "2.1.18",
   "description": "Backpack accordion component.",
   "main": "index.js",
   "repository": {
