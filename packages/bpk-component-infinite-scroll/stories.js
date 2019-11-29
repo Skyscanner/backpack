@@ -220,4 +220,24 @@ storiesOf('bpk-component-infinite-scroll', module)
         />
       </div>
     );
-  });
+  })
+  .add(
+    'Infer datasource complete when less than request elements retruned by datasource',
+    () => {
+      const raiseLoadingAction = action('loading');
+      return (
+        <div>
+          <InfiniteList
+            dataSource={new DelayedDataSource(elementsArray)}
+            seeMoreAfter={20}
+            elementsPerScroll={7}
+            onScrollFinished={action('scroll finished')}
+            renderLoadingComponent={() => {
+              raiseLoadingAction();
+              return <div>Loading</div>;
+            }}
+          />
+        </div>
+      );
+    },
+  );
