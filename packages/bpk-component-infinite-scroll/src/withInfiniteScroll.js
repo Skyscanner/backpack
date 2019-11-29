@@ -193,48 +193,6 @@ const withInfiniteScroll = <T: ExtendedProps>(
       }).then(newState => this.setStateAfterDsUpdate(newState));
     };
 
-    fetchItemsX(config): Promise<$Shape<State>> {
-      const { onScrollFinished, seeMoreAfter } = this.props;
-      const {
-        index,
-        elementsPerScroll,
-        elementsToRender,
-        computeShowSeeMore,
-      } = extend(
-        {
-          index: this.state.index,
-          elementsPerScroll: this.props.elementsPerScroll,
-          elementsToRender: this.state.elementsToRender,
-          computeShowSeeMore: true,
-        },
-        config,
-      );
-
-      return this.props.dataSource
-        .fetchItems(index, elementsPerScroll)
-        .then(nextElements => {
-          if (nextElements && nextElements.length > 0) {
-            const nextIndex = index + elementsPerScroll;
-            return {
-              index: nextIndex,
-              elementsToRender: (elementsToRender || []).concat(nextElements),
-              showSeeMore: computeShowSeeMore
-                ? seeMoreAfter === index / elementsPerScroll
-                : this.state.showSeeMore,
-              isListFinished: false,
-            };
-          }
-          if (onScrollFinished) {
-            onScrollFinished({
-              totalNumberElements: elementsToRender.length,
-            });
-          }
-          return {
-            isListFinished: true,
-          };
-        });
-    }
-
     fetchItems(config): Promise<$Shape<State>> {
       const { onScrollFinished, seeMoreAfter } = this.props;
       const {
