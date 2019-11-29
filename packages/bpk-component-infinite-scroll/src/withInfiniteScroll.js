@@ -170,11 +170,11 @@ const withInfiniteScroll = <T: ExtendedProps>(
       // all visible data is fetched again (from 0 to current index) to update the list with the new data.
       // If after this call `isListFinished` is true, it means the new data source has no items and we need to
       // reset the list, which we do by setting `elementsToRender` to `[]` and `index` to `0`
-      const { isListFinished } = newState;
+      const { elementsToRender, index } = newState;
       this.setState({
         ...newState,
-        elementsToRender: isListFinished ? [] : newState.elementsToRender,
-        index: isListFinished ? 0 : newState.index,
+        elementsToRender: elementsToRender || [],
+        index: index || 0,
       });
     }
 
@@ -193,7 +193,7 @@ const withInfiniteScroll = <T: ExtendedProps>(
       }).then(newState => this.setStateAfterDsUpdate(newState));
     };
 
-    fetchItems(config): Promise<$Shape<State>> {
+    fetchItemsX(config): Promise<$Shape<State>> {
       const { onScrollFinished, seeMoreAfter } = this.props;
       const {
         index,
@@ -232,6 +232,49 @@ const withInfiniteScroll = <T: ExtendedProps>(
           return {
             isListFinished: true,
           };
+        });
+    }
+
+    fetchItems(config): Promise<$Shape<State>> {
+      const { onScrollFinished, seeMoreAfter } = this.props;
+      const {
+        index,
+        elementsPerScroll,
+        elementsToRender,
+        computeShowSeeMore,
+      } = extend(
+        {
+          index: this.state.index,
+          elementsPerScroll: this.props.elementsPerScroll,
+          elementsToRender: this.state.elementsToRender,
+          computeShowSeeMore: true,
+        },
+        config,
+      );
+
+      return this.props.dataSource
+        .fetchItems(index, elementsPerScroll)
+        .then(nextElements => {
+          let result = {
+            isListFinished: true,
+          };
+          if (nextElements && nextElements.length > 0) {
+            const nextIndex = index + elementsPerScroll;
+            result = {
+              index: nextIndex,
+              elementsToRender: (elementsToRender || []).concat(nextElements),
+              showSeeMore: computeShowSeeMore
+                ? seeMoreAfter === index / elementsPerScroll
+                : this.state.showSeeMore,
+              isListFinished: nextElements.length < elementsPerScroll,
+            };
+          }
+          if (onScrollFinished && result.isListFinished) {
+            onScrollFinished({
+              totalNumberElements: elementsToRender.length,
+            });
+          }
+          return result;
         });
     }
 

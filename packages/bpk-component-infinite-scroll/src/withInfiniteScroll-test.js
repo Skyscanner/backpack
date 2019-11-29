@@ -394,4 +394,25 @@ describe('withInfiniteScroll', () => {
     expect(onFinished).toHaveBeenCalled();
     expect(toJson(tree)).toMatchSnapshot();
   });
+
+  it('should finish the list when data source returns less than the number of elements requested', async () => {
+    const myDs = mockDataSource(elementsArray);
+
+    const onFinished = jest.fn();
+
+    const tree = mount(
+      <InfiniteList
+        dataSource={myDs}
+        elementsPerScroll={3}
+        initiallyLoadedElements={3}
+        onScrollFinished={onFinished}
+      />,
+    );
+    await intersect();
+    await intersect();
+
+    expect(myDs.fetchItems).toHaveBeenCalledTimes(3);
+    expect(onFinished).toHaveBeenCalled();
+    expect(toJson(tree)).toMatchSnapshot();
+  });
 });
