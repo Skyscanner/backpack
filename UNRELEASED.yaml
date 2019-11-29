@@ -2,6 +2,8 @@
 FIXED:
   - bpk-component-accordion:
     - Added missing prop to README
+  - bpk-component-infinite-scroll:
+    - avoid redundant call to work out if data-source is exhausted
 
 # How to write a good changelog entry:
 #

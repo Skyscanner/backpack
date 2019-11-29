@@ -259,6 +259,93 @@ exports[`withInfiniteScroll should finish the list when data source changes to a
 </WithInfiniteScroll>
 `;
 
+exports[`withInfiniteScroll should finish the list when data source returns less than the number of elements requested 1`] = `
+<WithInfiniteScroll
+  dataSource={
+    ArrayDataSource {
+      "elements": Array [
+        "Element 0",
+        "Element 1",
+        "Element 2",
+        "Element 3",
+        "Element 4",
+      ],
+      "fetchItems": [MockFunction] {
+        "calls": Array [
+          Array [
+            0,
+            3,
+          ],
+          Array [
+            0,
+            3,
+          ],
+          Array [
+            3,
+            3,
+          ],
+        ],
+        "results": Array [
+          Object {
+            "type": "return",
+            "value": Promise {},
+          },
+          Object {
+            "type": "return",
+            "value": Promise {},
+          },
+          Object {
+            "type": "return",
+            "value": Promise {},
+          },
+        ],
+      },
+      "listeners": Array [
+        [Function],
+      ],
+      "triggerListeners": [Function],
+    }
+  }
+  elementsPerScroll={3}
+  initiallyLoadedElements={3}
+  loaderIntersectionTrigger="full"
+  onScroll={null}
+  onScrollFinished={
+    [MockFunction] {
+      "calls": Array [
+        Array [
+          Object {
+            "totalNumberElements": 3,
+          },
+        ],
+      ],
+      "results": Array [
+        Object {
+          "type": "return",
+          "value": undefined,
+        },
+      ],
+    }
+  }
+  renderLoadingComponent={null}
+  renderSeeMoreComponent={null}
+  seeMoreAfter={null}
+>
+  <div>
+    <List
+      elements={Array []}
+    >
+      <div
+        id="list"
+      />
+    </List>
+    <div
+      className="bpk-sentinel"
+    />
+  </div>
+</WithInfiniteScroll>
+`;
+
 exports[`withInfiniteScroll should pass extra props to the decorated component 1`] = `
 <WithInfiniteScroll
   aria-label="Test"
@@ -378,9 +465,6 @@ exports[`withInfiniteScroll should refresh data when data changes 1`] = `
         </div>
       </div>
     </List>
-    <div
-      className="bpk-sentinel"
-    />
   </div>
 </WithInfiniteScroll>
 `;
@@ -461,9 +545,6 @@ exports[`withInfiniteScroll should refresh data when data changes from an empty 
         </div>
       </div>
     </List>
-    <div
-      className="bpk-sentinel"
-    />
   </div>
 </WithInfiniteScroll>
 `;
@@ -536,9 +617,6 @@ exports[`withInfiniteScroll should refresh data when data source changes from an
         </div>
       </div>
     </List>
-    <div
-      className="bpk-sentinel"
-    />
   </div>
 </WithInfiniteScroll>
 `;
@@ -611,9 +689,6 @@ exports[`withInfiniteScroll should refresh when data source changes 1`] = `
         </div>
       </div>
     </List>
-    <div
-      className="bpk-sentinel"
-    />
   </div>
 </WithInfiniteScroll>
 `;
