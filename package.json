@@ -106,7 +106,7 @@
     "eslint-plugin-flowtype": "^4.0.0",
     "eslint_d": "^8.0.0",
     "extract-text-webpack-plugin": "^3.0.2",
-    "flow-bin": "^0.98.0",
+    "flow-bin": "^0.111.0",
     "flow-typed": "^2.5.1",
     "globby": "^10.0.0",
     "gulp": "^4.0.2",

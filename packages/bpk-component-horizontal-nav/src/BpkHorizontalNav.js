@@ -124,7 +124,6 @@ class BpkHorizontalNav extends Component<Props> {
       typeof this.scrollRef.scroll === 'function' &&
       useSmoothScroll
     ) {
-      // $FlowFixMe - we've already checked that `this.scrollRef.scroll` is a function
       this.scrollRef.scroll({
         left: scrollAdjustment,
         behavior: 'smooth',

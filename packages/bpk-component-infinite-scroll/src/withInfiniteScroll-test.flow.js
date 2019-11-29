@@ -18,7 +18,7 @@
 
 /* @flow strict */
 
-import React from 'react';
+import React, { Component } from 'react';
 
 import withInfiniteScroll from './withInfiniteScroll';
 import { ArrayDataSource } from './DataSource';
@@ -35,13 +35,25 @@ type ListProps = {
   onClick?: ?() => void,
 };
 
-const List = ({ elements, ...rest }: ListProps) => (
-  <div id="list" {...rest}>
-    {elements.forEach(element => (
-      <div key={element}>{element}</div>
-    ))}
-  </div>
-);
+// We have to turn this into a function as the HOC ignores the props of a function
+// another approach could be to put these props in the HOC as they aren't passed through.
+/* eslint-disable react/prefer-stateless-function */
+class List extends Component<ListProps> {
+  static defaultProps: {
+    onClick: null,
+  };
+
+  render() {
+    const { elements, ...rest } = this.props;
+    return (
+      <div id="list" {...rest}>
+        {elements.forEach(element => (
+          <div key={element}>{element}</div>
+        ))}
+      </div>
+    );
+  }
+}
 
 List.defaultProps = {
   onClick: null,

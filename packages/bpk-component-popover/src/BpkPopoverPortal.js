@@ -46,31 +46,35 @@ export type Props = {
   popperModifiers: ?Object,
 };
 
+export const propTypes = {
+  ...popoverPropTypes,
+  target: PropTypes.oneOfType([PropTypes.func, PropTypes.node]).isRequired,
+  isOpen: PropTypes.bool.isRequired,
+  onClose: PropTypes.func.isRequired,
+  placement: PropTypes.oneOf(['top', 'right', 'bottom', 'left']),
+  portalStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
+  portalClassName: PropTypes.string,
+  renderTarget: PropTypes.func,
+  popperModifiers: PropTypes.object, // eslint-disable-line react/forbid-prop-types
+};
+
+export const defaultProps = {
+  ...popoverDefaultProps,
+  placement: 'bottom',
+  portalStyle: null,
+  portalClassName: null,
+  renderTarget: null,
+  popperModifiers: null,
+};
+
 class BpkPopoverPortal extends Component<Props> {
   popper: ?Popper;
 
   previousTargetElement: ?HTMLElement;
 
-  static propTypes = {
-    ...popoverPropTypes,
-    target: PropTypes.oneOfType([PropTypes.func, PropTypes.node]).isRequired,
-    isOpen: PropTypes.bool.isRequired,
-    onClose: PropTypes.func.isRequired,
-    placement: PropTypes.oneOf(['top', 'right', 'bottom', 'left']),
-    portalStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
-    portalClassName: PropTypes.string,
-    renderTarget: PropTypes.func,
-    popperModifiers: PropTypes.object, // eslint-disable-line react/forbid-prop-types
-  };
+  static propTypes = propTypes;
 
-  static defaultProps = {
-    ...popoverDefaultProps,
-    placement: 'bottom',
-    portalStyle: null,
-    portalClassName: null,
-    renderTarget: null,
-    popperModifiers: null,
-  };
+  static defaultProps = defaultProps;
 
   constructor() {
     super();

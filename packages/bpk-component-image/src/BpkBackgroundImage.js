@@ -38,7 +38,9 @@ type BpkBackgroundImageProps = {
   className: ?string,
   onLoad: ?() => mixed,
   style: ?{}, // eslint-disable-line react/forbid-prop-types
-  imageStyle: ?{}, // eslint-disable-line react/forbid-prop-types
+  imageStyle: ?{
+    backgroundImage: string,
+  }, // eslint-disable-line react/forbid-prop-types
 };
 
 class BpkBackgroundImage extends Component<BpkBackgroundImageProps> {
