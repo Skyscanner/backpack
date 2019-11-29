@@ -28,3 +28,6 @@ FIXED:
 #     - bpk-component-horcrux:
 #       - Fixed issue where `BpkHorcrux` would occasionally possess the living.
 
+ADDED:
+  - bpk-component-autosuggest:
+    - Expand suggestions to fit content when the content is wider than the input field.
