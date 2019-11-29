@@ -28,6 +28,3 @@ FIXED:
 #     - bpk-component-horcrux:
 #       - Fixed issue where `BpkHorcrux` would occasionally possess the living.
 
-ADDED:
-  - bpk-component-carousel:
-    - Added new Carousel component.

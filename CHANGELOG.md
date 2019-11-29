@@ -2,6 +2,11 @@
 
 [Unreleased changes](./UNRELEASED.yaml).
 
+# 2019-11-27 - New **BETA** `BpkCarousel` component
+**Added:
+  - bpk-component-carousel: 0.1.0
+    - Added new Carousel component.
+
 # 2019-11-21 - New `dismissible` prop for `BpkChip`
 
 **Added:**
