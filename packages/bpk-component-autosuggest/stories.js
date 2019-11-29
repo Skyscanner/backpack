@@ -218,4 +218,16 @@ storiesOf('bpk-component-autosuggest', module)
         />
       )}
     />
+  ))
+  .add('Small input', () => (
+    <div style={{ width: '80px' }}>
+      <AutosuggestExample
+        renderSuggestion={suggestion => (
+          <BpkAutosuggestSuggestion
+            value={getSuggestionValue(suggestion)}
+            indent={suggestion.indent}
+          />
+        )}
+      />
+    </div>
   ));
