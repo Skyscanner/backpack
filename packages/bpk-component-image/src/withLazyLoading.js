@@ -67,7 +67,6 @@ export default function withLazyLoading(
 
     componentDidMount(): void {
       documentRef.addEventListener('scroll', this.checkInView, {
-        capture: true,
         ...this.getPassiveArgs(),
       });
       documentRef.addEventListener('resize', this.checkInView);
@@ -89,13 +88,14 @@ export default function withLazyLoading(
       this.removeEventListeners();
     };
 
-    getPassiveArgs(): {} {
-      return this.supportsPassiveEvents() ? { passive: true } : {};
+    getPassiveArgs(): { capture: boolean } {
+      return this.supportsPassiveEvents()
+        ? { capture: true, passive: true }
+        : { capture: true };
     }
 
     removeEventListeners = (): void => {
       documentRef.removeEventListener('scroll', this.checkInView, {
-        capture: true,
         ...this.getPassiveArgs(),
       });
       documentRef.removeEventListener('resize', this.checkInView);
@@ -115,7 +115,6 @@ export default function withLazyLoading(
     supportsPassiveEvents = (): boolean => {
       let supportsPassiveOption = false;
       try {
-        // $FlowFixMe
         const opts = Object.defineProperty({}, 'passive', {
           // eslint-disable-next-line getter-return
           get() {
