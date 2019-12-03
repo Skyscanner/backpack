@@ -18,6 +18,7 @@
 
 @import '~normalize.css';
 @import '~bpk-mixins/index';
+@import './fonts.scss';
 
 // stylelint-disable-next-line selector-max-type
 html {
@@ -35,10 +36,8 @@ html {
 }
 
 /* stylelint-disable selector-class-pattern */
-
 body {
   color: $bpk-font-color-base;
-  font-family: $bpk-font-family-base;
   font-size: $bpk-font-size-base;
   line-height: $bpk-line-height-base;
 
@@ -50,6 +49,8 @@ body {
     -webkit-font-smoothing: antialiased;
   }
 }
+
+@include bpk-define-font-stack('https://js.skyscnr.com/sttc/bpk-fonts', $bpk-font-family-base);
 
 :global(.hidden),
 :global(.hide) {
