@@ -227,7 +227,7 @@ module.exports = {
   flareHeightDesktop: "1.5rem",
   flareHeightMobile: "1.125rem",
   fontColorBase: "rgb(17, 18, 54)",
-  fontFamilyBase: "-apple-system, BlinkMacSystemFont, 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', 'Arial', sans-serif",
+  fontFamilyBase: "'Skyscanner Relative', -apple-system, BlinkMacSystemFont, 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', 'Arial', sans-serif",
   fontSizeBase: "1rem",
   fontSizeLg: "1.5rem",
   fontSizeRoot: "100%",
