@@ -1676,33 +1676,6 @@ textarea {
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-html {
-  font-size: 100%;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box; }
-
-* {
-  -webkit-box-sizing: inherit;
-          box-sizing: inherit; }
-  *::before, *::after {
-    -webkit-box-sizing: inherit;
-            box-sizing: inherit; }
-
-/* stylelint-disable selector-class-pattern */
-body {
-  color: #111236;
-  font-family: -apple-system, BlinkMacSystemFont, "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Arial", sans-serif;
-  font-size: 1rem;
-  line-height: 1.5rem; }
-  body.scaffold-font-size {
-    font-size: 13px;
-    /* stylelint-disable-line unit-blacklist, scale-unlimited/declaration-strict-value */ }
-  body.enable-font-smoothing {
-    -webkit-font-smoothing: antialiased; }
-
-body {
-  font-family: "Skyscanner Relative", -apple-system, BlinkMacSystemFont, "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Arial", sans-serif; }
-
 @font-face {
   font-family: 'Skyscanner Relative';
   font-style: normal;
@@ -1750,6 +1723,30 @@ body {
   font-style: italic;
   font-weight: 900;
   src: url("https://js.skyscnr.com/sttc/bpk-fonts/SkyscannerRelative-BlackItalic-12389437.woff2") format("woff2"), url("https://js.skyscnr.com/sttc/bpk-fonts/SkyscannerRelative-BlackItalic-526401a4.woff") format("woff"), url("https://js.skyscnr.com/sttc/bpk-fonts/SkyscannerRelative-BlackItalic-a4bf3770.ttf") format("ttf"); }
+
+html {
+  font-size: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box; }
+
+* {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit; }
+  *::before, *::after {
+    -webkit-box-sizing: inherit;
+            box-sizing: inherit; }
+
+/* stylelint-disable selector-class-pattern */
+body {
+  color: #111236;
+  font-family: "Skyscanner Relative", -apple-system, BlinkMacSystemFont, "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Arial", sans-serif;
+  font-size: 1rem;
+  line-height: 1.5rem; }
+  body.scaffold-font-size {
+    font-size: 13px;
+    /* stylelint-disable-line unit-blacklist, scale-unlimited/declaration-strict-value */ }
+  body.enable-font-smoothing {
+    -webkit-font-smoothing: antialiased; }
 
 .hidden,
 .hide {
