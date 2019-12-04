@@ -2,6 +2,13 @@
 
 [Unreleased changes](./UNRELEASED.yaml).
 
+# 2019-12-04 - Added Skyscanner Relative to Backpack
+
+**Added:**
+  - bpk-tokens: 29.4.0 => 29.5.0
+  - bpk-stylesheets: 4.0.18 => 4.1.0
+    - Added 'Skyscanner Relative' to the base font family.
+
 # 2019-11-29 - Fixes for infinite scroll and autosuggest
 
 **Fixed:**

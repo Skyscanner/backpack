@@ -24,7 +24,3 @@
 #   FIXED:
 #     - bpk-component-horcrux:
 #       - Fixed issue where `BpkHorcrux` would occasionally possess the living.
-
-ADDED:
-  - bpk-stylesheets:
-    - Added 'Skyscanner Relative' to the base font family.
