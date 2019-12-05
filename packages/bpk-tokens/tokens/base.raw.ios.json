@@ -94,7 +94,7 @@
       "value": "400"
     },
     "FONT_WEIGHT_SEMIBOLD": {
-      "value": "600"
+      "value": "700"
     },
     "GLENCOE": {
       "value": "#73cec6"
@@ -1030,7 +1030,7 @@
       "name": "TEXT_CAPS_LETTER_SPACING"
     },
     "TEXT_EMPHASIZED_FONT_WEIGHT": {
-      "value": "600",
+      "value": "700",
       "type": "string",
       "category": "font-weights",
       "originalValue": "{!FONT_WEIGHT_SEMIBOLD}",
