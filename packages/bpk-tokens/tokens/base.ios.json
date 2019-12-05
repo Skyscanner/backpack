@@ -785,7 +785,7 @@
       "name": "textCapsLetterSpacing"
     },
     {
-      "value": "600",
+      "value": "700",
       "type": "string",
       "category": "font-weights",
       "originalValue": "{!FONT_WEIGHT_SEMIBOLD}",
