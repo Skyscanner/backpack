@@ -102,5 +102,4 @@ export default () => (
 * `buttonDestructiveActiveBackgroundColor`
 
 ### All button types:
-* `buttonBorderRadius` (Optional, doesn't apply when `iconOnly={true}`)
 * `buttonFontSize` (Optional)
