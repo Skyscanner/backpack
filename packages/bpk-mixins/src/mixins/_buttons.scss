@@ -35,6 +35,7 @@
   margin: 0;
   padding: $bpk-button-padding-y $bpk-button-padding-x;
   border: 0;
+  border-radius: $bpk-button-border-radius;
   background-image: linear-gradient(-180deg, $bpk-button-gradient-start-color 0%, $bpk-button-gradient-end-color 100%);
   background-image: linear-gradient(-180deg, var(--bpk-button-primary-gradient-start-color, $bpk-button-gradient-start-color) 0%, var(--bpk-button-primary-gradient-end-color, $bpk-button-gradient-end-color) 100%);
   font-size: $bpk-button-font-size;
@@ -49,7 +50,6 @@
 
   @include bpk-themeable-property(color, --bpk-button-primary-text-color, $bpk-button-color);
   @include bpk-themeable-property(background-color, --bpk-button-primary-background-color, $bpk-button-background-color);
-  @include bpk-themeable-property(border-radius, --bpk-button-border-radius, $bpk-button-border-radius);
   @include bpk-themeable-property(font-size, --bpk-button-font-size, $bpk-button-font-size);
 
   @include bpk-hover {
@@ -89,10 +89,9 @@
 
 @mixin bpk-button--large {
   padding: $bpk-button-large-padding-y $bpk-button-large-padding-x;
+  border-radius: $bpk-button-border-radius;
   font-size: $bpk-button-large-font-size;
   line-height: $bpk-button-large-line-height;
-
-  @include bpk-themeable-property(border-radius, --bpk-button-border-radius, $bpk-button-border-radius);
 }
 
 /// Secondary button. Modifies the bpk-button mixin.

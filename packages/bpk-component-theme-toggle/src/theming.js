@@ -34,7 +34,6 @@ const generateTheme = ({
   secondaryColor500,
   secondaryColor600,
   secondaryColor700,
-  borderRadius,
   fontSize,
   docsSidebarBackground,
   docsSidebarLink,
@@ -66,7 +65,6 @@ const generateTheme = ({
 
   blockquoteBarColor: primaryColor500,
 
-  buttonBorderRadius: borderRadius,
   buttonFontSize: fontSize,
 
   buttonPrimaryTextColor: colorWhite,
@@ -192,7 +190,6 @@ const londonTheme = {
   secondaryColor500: '#013A76',
   secondaryColor600: '#002F61',
   secondaryColor700: '#00254B',
-  borderRadius: '0rem',
   fontSize: '1.2rem',
   docsSidebarBackground: '#013A76',
   docsSidebarLink: '#6889AB',
@@ -210,7 +207,6 @@ const hongKongTheme = {
   secondaryColor500: '#4C4C4C',
   secondaryColor600: '#3C3C3C',
   secondaryColor700: '#2A2A2A',
-  borderRadius: '100rem',
   fontSize: '1.2rem',
   docsSidebarBackground: '#4C4C4C',
   docsSidebarLink: '#686868',
@@ -228,7 +224,6 @@ const dohaTheme = {
   secondaryColor500: '#ffc107',
   secondaryColor600: '#ffb300',
   secondaryColor700: '#ffa000',
-  borderRadius: '0rem',
   fontSize: '1.2rem',
   docsSidebarBackground: '#5E072C',
   docsSidebarLink: '#BF3671',
