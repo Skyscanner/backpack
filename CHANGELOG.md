@@ -2,6 +2,17 @@
 
 [Unreleased changes](./UNRELEASED.yaml).
 
+# 2019-12-06 - Removed `borderRadius` button theming attribute and updated `textEmphasizedFontWeight`
+
+**Fixed:**
+  - bpk-component-button: 3.1.11 => 3.1.12
+  - bpk-component-theme-toggle: 2.0.23 => 2.0.24
+  - bpk-mixins: 19.0.20 => 19.0.21
+    - Removed `borderRadius` theming attribute from `BpkButton`.
+
+  - bpk-tokens: 29.5.0 => 29.5.1
+    - Changed `textEmphasizedFontWeight` from `600` to `700`.
+
 # 2019-12-04 - Added Skyscanner Relative to Backpack
 
 **Added:**

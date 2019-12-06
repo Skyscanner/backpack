@@ -1,9 +1,5 @@
 # UNRELEASED:
 
-FIXED:
-  - bpk-tokens:
-    - Changed `textEmphasizedFontWeight` from `600` to `700`.
-
 # How to write a good changelog entry:
 #
 #   1. Add 'BREAKING', 'ADDED' OR 'FIXED' depending on if the change will be major, minor or patch according to [semver.org](semver.org).
@@ -28,9 +24,3 @@ FIXED:
 #   FIXED:
 #     - bpk-component-horcrux:
 #       - Fixed issue where `BpkHorcrux` would occasionally possess the living.
-
-FIXED:
-  - bpk-component-button:
-  - bpk-component-theme-toggle:
-  - bpk-mixins:
-    - Removed `borderRadius` theming attribute from `BpkButton`.
