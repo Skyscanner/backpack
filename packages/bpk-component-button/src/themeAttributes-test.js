@@ -16,11 +16,13 @@
  * limitations under the License.
  */
 
-import buttonThemeAttributes from './themeAttributesBase';
-import primaryThemeAttributes from './themeAttributesPrimary';
-import secondaryThemeAttributes from './themeAttributesSecondary';
-import destructiveThemeAttributes from './themeAttributesDestructive';
-import featuredThemeAttributes from './themeAttributesFeatured';
+import {
+  buttonThemeAttributes,
+  primaryThemeAttributes,
+  secondaryThemeAttributes,
+  destructiveThemeAttributes,
+  featuredThemeAttributes,
+} from './themeAttributes';
 
 describe('themeAttributes', () => {
   it('should export the correct general theme attributes', () => {
