@@ -25,13 +25,6 @@ import BpkButtonDestructive from './src/BpkButtonDestructive';
 import BpkButtonLink from './src/BpkButtonLink';
 import BpkButtonFeatured from './src/BpkButtonFeatured';
 import BpkButtonOutline from './src/BpkButtonOutline';
-import {
-  buttonThemeAttributes,
-  primaryThemeAttributes,
-  secondaryThemeAttributes,
-  featuredThemeAttributes,
-  destructiveThemeAttributes,
-} from './src/themeAttributes';
 
 export {
   buttonThemeAttributes,
@@ -39,7 +32,8 @@ export {
   secondaryThemeAttributes,
   featuredThemeAttributes,
   destructiveThemeAttributes,
-};
+} from './themeAttributes';
+
 export default BpkButton;
 
 export {
