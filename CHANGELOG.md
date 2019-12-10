@@ -2,6 +2,19 @@
 
 [Unreleased changes](./UNRELEASED.yaml).
 
+# 2019-12-10 - Updated nudger to import only the necessary button types.
+
+**Added**:
+
+- bpk-component-button
+  - Top level export for theme attributes. e.g `import themeAttributes from 'bpk-component-button/themeAttributes`.
+
+**Fixed**:
+
+- bpk-component-nudger
+  - Import only the required theme attributes and buttons from bpk-component-button. This reduces the amount of unused CSS and JS.
+
+
 # 2019-12-06 - Removed `borderRadius` button theming attribute and updated `textEmphasizedFontWeight`
 
 **Fixed:**
