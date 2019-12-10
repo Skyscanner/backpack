@@ -21,7 +21,8 @@
 
 import PropTypes from 'prop-types';
 import React from 'react';
-import BpkButton from 'bpk-component-button';
+import BpkButtonSecondary from 'bpk-component-button/BpkButtonSecondary';
+import BpkButtonOutline from 'bpk-component-button/BpkButtonOutline';
 import { withButtonAlignment } from 'bpk-component-icon';
 import MinusIcon from 'bpk-component-icon/sm/minus';
 import PlusIcon from 'bpk-component-icon/sm/plus';
@@ -90,9 +91,12 @@ const BpkConfigurableNudger = <T>(props: Props<T>) => {
     inputStyles.push(getClassName('bpk-nudger__input--outline'));
   }
 
+  const ButtonComponent =
+    buttonType === 'secondary' ? BpkButtonSecondary : BpkButtonOutline;
+
   return (
     <div className={classNames.join(' ')}>
-      <BpkButton
+      <ButtonComponent
         secondary={buttonType === 'secondary'}
         outline={buttonType === 'outline'}
         iconOnly
@@ -103,7 +107,7 @@ const BpkConfigurableNudger = <T>(props: Props<T>) => {
         className={getClassName('bpk-nudger__button')}
       >
         <AlignedMinusIcon className={minusIconClassNames.join(' ')} />
-      </BpkButton>
+      </ButtonComponent>
       <input
         type="text"
         aria-live="assertive"
@@ -112,7 +116,7 @@ const BpkConfigurableNudger = <T>(props: Props<T>) => {
         id={id}
         className={inputStyles.join(' ')}
       />
-      <BpkButton
+      <ButtonComponent
         secondary={buttonType === 'secondary'}
         outline={buttonType === 'outline'}
         iconOnly
@@ -123,7 +127,7 @@ const BpkConfigurableNudger = <T>(props: Props<T>) => {
         className={getClassName('bpk-nudger__button')}
       >
         <AlignedPlusIcon className={plusIconClassNames.join(' ')} />
-      </BpkButton>
+      </ButtonComponent>
     </div>
   );
 };

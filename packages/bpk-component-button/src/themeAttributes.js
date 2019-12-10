@@ -63,11 +63,3 @@ export const destructiveThemeAttributes = [
   'buttonDestructiveHoverBackgroundColor',
   'buttonDestructiveActiveBackgroundColor',
 ];
-
-export default {
-  buttonThemeAttributes,
-  primaryThemeAttributes,
-  secondaryThemeAttributes,
-  featuredThemeAttributes,
-  destructiveThemeAttributes,
-};

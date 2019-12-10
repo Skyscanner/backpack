@@ -24,3 +24,9 @@
 #   FIXED:
 #     - bpk-component-horcrux:
 #       - Fixed issue where `BpkHorcrux` would occasionally possess the living.
+
+ADDED:
+  - bpk-component-button
+    - Split out the theme attributes to get full effect of reducing unused CSS and JS.
+  - bpk-component-nudger
+    - Import only the required theme attributes and buttons from bpk-component-button. This reduces the amount of unused CSS and JS.

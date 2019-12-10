@@ -16,6 +16,12 @@
  * limitations under the License.
  */
 
-import { secondaryThemeAttributes as themeAttributes } from 'bpk-component-button/themeAttributes';
+/* @flow strict */
 
-export default themeAttributes;
+export {
+  buttonThemeAttributes,
+  primaryThemeAttributes,
+  secondaryThemeAttributes,
+  featuredThemeAttributes,
+  destructiveThemeAttributes,
+} from './src/themeAttributes';
