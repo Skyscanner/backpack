@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-popover",
-  "version": "3.0.22",
+  "version": "3.0.23",
   "description": "Backpack popover component.",
   "main": "index.js",
   "repository": {
@@ -24,7 +24,7 @@
     "prop-types": "^15.6.2"
   },
   "devDependencies": {
-    "bpk-component-button": "^3.1.12",
+    "bpk-component-button": "^3.2.0",
     "bpk-component-content-container": "^2.0.21"
   },
   "publishConfig": {

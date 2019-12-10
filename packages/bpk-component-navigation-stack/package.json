@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-navigation-stack",
-  "version": "2.0.23",
+  "version": "2.0.24",
   "description": "Backpack navigation stack component.",
   "main": "index.js",
   "repository": {
@@ -20,7 +20,7 @@
     "react-transition-group": "^2.5.3"
   },
   "devDependencies": {
-    "bpk-component-button": "^3.1.12",
+    "bpk-component-button": "^3.2.0",
     "bpk-component-icon": "^5.0.22",
     "bpk-component-navigation-bar": "^2.1.18",
     "bpk-component-rtl-toggle": "^2.0.21"
