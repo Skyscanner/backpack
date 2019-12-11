@@ -28,19 +28,14 @@ import { includes } from 'lodash';
 import { danger, fail, warn, message, markdown } from 'danger';
 import { commonFileWarnings } from 'danger-plugin-toolbox';
 
-import * as meta from './meta.json';
-
 const getRandomFromArray = arr => arr[Math.floor(Math.random() * arr.length)];
 
 const AVOID_EXACT_WORDS = [
   { word: 'react native', reason: 'Please use React Native with capitals' },
 ];
 
-const BACKPACK_SQUAD_MEMBERS = meta.maintainers.map(
-  maintainer => maintainer.github,
-);
 const author = danger.github.pr.user.login;
-const isPrExternal = !BACKPACK_SQUAD_MEMBERS.includes(author);
+const isPrExternal = true;
 
 const createdFiles = danger.git.created_files;
 const modifiedFiles = danger.git.modified_files;
