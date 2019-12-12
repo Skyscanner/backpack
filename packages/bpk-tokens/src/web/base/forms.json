@@ -123,7 +123,7 @@
       "type": "color"
     },
     "LABEL_FONT_SIZE": {
-      "value": "{!FONT_SIZE_SM}",
+      "value": "{!FONT_SIZE_XS}",
       "type": "size"
     },
     "LABEL_LINE_HEIGHT": {

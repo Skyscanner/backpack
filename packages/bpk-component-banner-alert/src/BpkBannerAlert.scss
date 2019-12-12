@@ -106,6 +106,6 @@
     color: $bpk-banner-alert-children-color;
 
     @include bpk-text;
-    @include bpk-text--sm;
+    @include bpk-text--xs;
   }
 }

@@ -39,7 +39,7 @@ import BpkBarchart, {
 const getClassName = cssModules(STYLES);
 
 const Heading = withDefaultProps(BpkText, {
-  textStyle: 'lg',
+  textStyle: 'xl',
   tagName: 'h1',
   className: getClassName('bpk-heading'),
 });

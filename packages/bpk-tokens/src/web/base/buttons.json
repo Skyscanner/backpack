@@ -127,7 +127,7 @@
       "type": "size"
     },
     "BUTTON_LARGE_FONT_SIZE": {
-      "value": "{!FONT_SIZE_LG}",
+      "value": "{!FONT_SIZE_XL}",
       "type": "size"
     },
     "BUTTON_LARGE_LINE_HEIGHT": {

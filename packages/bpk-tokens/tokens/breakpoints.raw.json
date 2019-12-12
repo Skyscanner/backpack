@@ -76,16 +76,28 @@
       "value": "1rem"
     },
     "FONT_SIZE_LG": {
-      "value": "1.5rem"
+      "value": "1.25rem"
     },
     "FONT_SIZE_SM": {
-      "value": ".75rem"
+      "value": ".875rem"
     },
     "FONT_SIZE_XL": {
-      "value": "1.75rem"
+      "value": "1.5rem"
+    },
+    "FONT_SIZE_XS": {
+      "value": ".75rem"
     },
     "FONT_SIZE_XXL": {
+      "value": "1.875rem"
+    },
+    "FONT_SIZE_XXXL": {
+      "value": "2.25rem"
+    },
+    "FONT_SIZE_XXXXL": {
       "value": "2.625rem"
+    },
+    "FONT_SIZE_XXXXXL": {
+      "value": "3.75rem"
     },
     "FONT_WEIGHT_BLACK": {
       "value": "900"

@@ -35,7 +35,10 @@ const st = {
   textAlign: 'center',
 };
 
-const Heading = withDefaultProps(BpkText, { textStyle: 'xxl', tagName: 'h1' });
+const Heading = withDefaultProps(BpkText, {
+  textStyle: 'xxxxl',
+  tagName: 'h1',
+});
 
 storiesOf('bpk-component-tooltip', module)
   .add('Default', () => (

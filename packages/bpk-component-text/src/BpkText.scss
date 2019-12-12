@@ -27,6 +27,18 @@
     @include bpk-text--xxl;
   }
 
+  &--xxxl {
+    @include bpk-text--xxxl;
+  }
+
+  &--xxxxl {
+    @include bpk-text--xxxxl;
+  }
+
+  &--xxxxxl {
+    @include bpk-text--xxxxxl;
+  }
+
   &--bold {
     @include bpk-text--bold;
   }
