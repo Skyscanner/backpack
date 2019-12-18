@@ -4,7 +4,7 @@
 
 # 2019-12-18 - Fixed width in `BpkAutoSuggest` component
 
-- bpk-component-autosuggest:
+- bpk-component-autosuggest: 4.0.23 => 4.0.24
   - Fixed an issue where a `BpkAutosuggest` paired to a wide input field did not fill the width of its container.
 
 
