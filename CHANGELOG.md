@@ -2,6 +2,12 @@
 
 [Unreleased changes](./UNRELEASED.yaml).
 
+# 2019-12-18 - Fixed width in `BpkAutoSuggest` component
+
+- bpk-component-autosuggest:
+  - Fixed an issue where a `BpkAutosuggest` paired to a wide input field did not fill the width of its container.
+
+
 # 2019-12-10 - Updated nudger to import only the necessary button types.
 
 **Added**:
