@@ -34,18 +34,18 @@
 
 @mixin _bpk-text-factory($font-size, $font-weight: false, $line-height: false, $letter-spacing: false) {
   font-size: $font-size;
-
-  @if ($line-height) {
-    line-height: $line-height;
-  }
+  line-height: auto;
+  // @if ($line-height) {
+  //   
+  // }
 
   @if ($font-weight) {
     font-weight: $font-weight;
   }
 
-  @if ($letter-spacing) {
-    letter-spacing: $letter-spacing;
-  }
+  // @if ($letter-spacing) {
+  //   letter-spacing: $letter-spacing;
+  // }
 }
 
 /// Text margin reset.

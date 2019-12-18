@@ -40,7 +40,7 @@
   background-image: linear-gradient(-180deg, var(--bpk-button-primary-gradient-start-color, $bpk-button-gradient-start-color) 0%, var(--bpk-button-primary-gradient-end-color, $bpk-button-gradient-end-color) 100%);
   font-size: $bpk-button-font-size;
   font-weight: $bpk-button-font-weight;
-  line-height: $bpk-button-line-height;
+  // line-height: $bpk-button-line-height;
   text-align: $bpk-button-text-align;
   text-decoration: none;
   box-shadow: $bpk-button-box-shadow;
@@ -91,7 +91,7 @@
   padding: $bpk-button-large-padding-y $bpk-button-large-padding-x;
   border-radius: $bpk-button-border-radius;
   font-size: $bpk-button-large-font-size;
-  line-height: $bpk-button-large-line-height;
+  // line-height: $bpk-button-large-line-height;
 }
 
 /// Secondary button. Modifies the bpk-button mixin.

@@ -105,6 +105,7 @@ $base-url: 'https://js.skyscnr.com/sttc/bpk-fonts';
 html {
   font-size: $bpk-font-size-root;
   box-sizing: border-box;
+  line-height: normal;
 }
 
 * {
@@ -121,7 +122,7 @@ body {
   color: $bpk-font-color-base;
   font-family: $bpk-font-family-base;
   font-size: $bpk-font-size-base;
-  line-height: $bpk-line-height-base;
+  line-height: auto;
 
   :global(&.scaffold-font-size) {
     font-size: 13px; /* stylelint-disable-line unit-blacklist, scale-unlimited/declaration-strict-value */
