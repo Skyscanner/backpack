@@ -63,7 +63,7 @@
   }
 
   &__suggestions-list {
-    width: fit-content;
+    min-width: fit-content;
     margin: 0;
     padding: 0;
     list-style: none;
