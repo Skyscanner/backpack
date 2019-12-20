@@ -554,7 +554,7 @@
 
 @mixin bpk-checkbox__input {
   position: absolute;
-  top: ($bpk-spacing-base - $bpk-spacing-md) / 2;
+  top: .175rem;
   left: 0;
   width: $bpk-spacing-md;
   height: $bpk-spacing-md;
@@ -660,7 +660,7 @@
 
 @mixin bpk-radio__input {
   position: absolute;
-  top: ($bpk-spacing-base - $bpk-spacing-md) / 2;
+  top: $bpk-spacing-sm / 5;
   left: 0;
   width: $bpk-spacing-md;
   height: $bpk-spacing-md;

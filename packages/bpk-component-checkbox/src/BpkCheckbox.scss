@@ -68,7 +68,7 @@
 
   &__icon {
     position: absolute;
-    top: ($bpk-spacing-base - $bpk-spacing-sm) / 2;
+    top: $bpk-spacing-xs;
     left: ($bpk-spacing-base - $bpk-spacing-sm) / 4;
     display: none;
     width: $bpk-spacing-sm;
