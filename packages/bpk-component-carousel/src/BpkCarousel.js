@@ -20,6 +20,7 @@
 import PropTypes from 'prop-types';
 import React, { Children, Component, createRef } from 'react';
 import { cssModules } from 'bpk-react-utils';
+import { Swipeable } from 'react-swipeable';
 
 import BpkButton from '../../bpk-component-button';
 import { withButtonAlignment, withRtlSupport } from '../../bpk-component-icon';
@@ -129,7 +130,12 @@ class BpkCarousel extends Component<Props, State> {
     const classNames = getClassName('bpk-carousel', className);
 
     return (
-      <div className={classNames} {...rest}>
+      <Swipeable
+        onSwipedLeft={this.nextSlide}
+        onSwipedRight={this.prevSlide}
+        className={classNames}
+        {...rest}
+      >
         <div>
           <BpkButton
             iconOnly
@@ -148,7 +154,10 @@ class BpkCarousel extends Component<Props, State> {
             style={{ marginLeft: `${this.getTranslate()}` }}
           >
             {Children.toArray(children).map((child, index) => (
-              <div ref={index === 0 ? this.firstItemRef : null}>
+              <div
+                ref={index === 0 ? this.firstItemRef : null}
+                key={index.toString()}
+              >
                 <div className={getClassName('bpk-carousel__item')}>
                   {child}
                 </div>
@@ -165,7 +174,7 @@ class BpkCarousel extends Component<Props, State> {
             <AlignedArrowRight />
           </BpkButton>
         </div>
-      </div>
+      </Swipeable>
     );
   }
 }

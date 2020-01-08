@@ -15,7 +15,8 @@
   "dependencies": {
     "bpk-mixins": "^19.0.21",
     "bpk-react-utils": "^2.8.3",
-    "prop-types": "^15.5.8"
+    "prop-types": "^15.5.8",
+    "react-swipeable": "^5.5.0"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
