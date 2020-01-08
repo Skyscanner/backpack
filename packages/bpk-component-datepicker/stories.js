@@ -234,6 +234,23 @@ storiesOf('bpk-component-datepicker', module)
       />
     </div>
   ))
+  .add('Open on first render', () => (
+    <div id="application-element">
+      <CalendarContainer
+        id="myDatepicker"
+        closeButtonText="Close"
+        daysOfWeek={weekDays}
+        weekStartsOn={1}
+        changeMonthLabel="Change month"
+        title="Departure date"
+        formatDate={formatDate}
+        formatMonth={formatMonth}
+        formatDateFull={formatDateFull}
+        date={new Date()}
+        isOpen
+      />
+    </div>
+  ))
   .add('Min date in the past', () => (
     <div id="application-element">
       <CalendarContainer

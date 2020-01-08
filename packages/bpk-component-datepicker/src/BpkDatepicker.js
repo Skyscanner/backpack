@@ -36,7 +36,7 @@ class BpkDatepicker extends Component {
     super(props);
 
     this.state = {
-      isOpen: false,
+      isOpen: props.isOpen,
     };
   }
 
@@ -195,6 +195,7 @@ BpkDatepicker.propTypes = {
   showWeekendSeparator: PropTypes.bool,
   initiallyFocusedDate: PropTypes.instanceOf(Date),
   renderTarget: PropTypes.func,
+  isOpen: PropTypes.bool,
 };
 
 BpkDatepicker.defaultProps = {
@@ -211,6 +212,7 @@ BpkDatepicker.defaultProps = {
   showWeekendSeparator: BpkCalendar.defaultProps.showWeekendSeparator,
   initiallyFocusedDate: null,
   renderTarget: null,
+  isOpen: false,
 };
 
 export default BpkDatepicker;
