@@ -146,6 +146,7 @@ For more information on some these props, check the BpkCalendar documentation.
 | showWeekendSeparator  | bool                  | false    | true (\*)                           |
 | initiallyFocusedDate  | Date                  | false    | null                                |
 | renderTarget          | func                  | false    | null                                |
+| isOpen                | bool                  | false    | false                               |
 
 > (\*) Default value is defined on child component
 
