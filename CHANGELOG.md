@@ -2,6 +2,14 @@
 
 [Unreleased changes](./UNRELEASED.yaml).
 
+# 2020-01-09 - Carousel swipe functionality and datepicker prop
+
+**Added:**
+  - bpk-component-carousel: 0.1.0 => 0.2.0
+    - Added swipe support. Users of touchscreens can now swipe the carousel to scroll it.
+  - bpk-component-datepicker: 11.0.5 => 11.1.0
+    - New `isOpen` prop for controlling whether the date picker should be open on its first render.
+
 # 2019-12-18 - Fixed width in `BpkAutoSuggest` component
 
 - bpk-component-autosuggest: 4.0.23 => 4.0.24

@@ -1,10 +1,5 @@
 # UNRELEASED:
 
-ADDED:
-  - bpk-component-carousel:
-    - Added swipe support. Users of touchscreens can now swipe the carousel to scroll it.
-  - bpk-component-datepicker:
-    - New `isOpen` prop for controlling whether the date picker should be open on its first render.
 
 # How to write a good changelog entry:
 #
