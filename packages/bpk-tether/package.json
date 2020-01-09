@@ -1,6 +1,6 @@
 {
   "name": "bpk-tether",
-  "version": "1.0.14",
+  "version": "1.0.15",
   "description": "Wrapper and utils for Tether.",
   "main": "index.js",
   "repository": {

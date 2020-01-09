@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-code",
-  "version": "2.0.21",
+  "version": "2.0.22",
   "description": "Backpack code component.",
   "main": "index.js",
   "repository": {
@@ -13,8 +13,8 @@
     "react": "^15.0.0 || ^16.0.0"
   },
   "dependencies": {
-    "bpk-mixins": "^19.0.21",
-    "bpk-react-utils": "^2.8.3",
+    "bpk-mixins": "^19.0.22",
+    "bpk-react-utils": "^2.8.4",
     "prop-types": "^15.6.2"
   },
   "publishConfig": {
