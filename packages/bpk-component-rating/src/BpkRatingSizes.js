@@ -18,6 +18,6 @@
 
 /* @flow */
 
-const RATING_SIZES = { sm: 'xs', base: 'sm', lg: 'xl' };
+const RATING_SIZES = { sm: 'sm', base: 'base', lg: 'lg' };
 
 export default RATING_SIZES;

@@ -59,6 +59,13 @@ const BpkRating = (props: Props) => {
   const textWrapperStyles = [getClassName('bpk-rating__text-wrapper')];
   const textStyles = [getClassName('bpk-rating__text')];
 
+  let textSize = 'sm';
+  if (size === RATING_SIZES.lg) {
+    textSize = 'xl';
+  } else if (size === RATING_SIZES.sm) {
+    textSize = 'xs';
+  }
+
   let adjustedValue = value;
 
   if (adjustedValue >= HIGH_RATING_THRESHOLD) {
@@ -89,7 +96,7 @@ const BpkRating = (props: Props) => {
   return (
     <div className={classNames.join(' ')} aria-label={ariaLabel} {...rest}>
       <BpkText
-        textStyle={size}
+        textStyle={textSize}
         tagName="span"
         className={scoreStyles.join(' ')}
         aria-hidden="true"
@@ -99,7 +106,7 @@ const BpkRating = (props: Props) => {
       <div className={textWrapperStyles.join(' ')}>
         <BpkText
           className={textStyles.join(' ')}
-          textStyle={size}
+          textStyle={textSize}
           tagName="span"
           aria-hidden="true"
         >
@@ -132,7 +139,7 @@ BpkRating.propTypes = {
 
 BpkRating.defaultProps = {
   className: null,
-  size: 'sm',
+  size: RATING_SIZES.base,
   subtitle: null,
   vertical: false,
 };

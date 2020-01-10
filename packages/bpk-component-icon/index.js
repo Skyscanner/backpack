@@ -17,10 +17,10 @@
  */
 
 import {
-  lineHeightBase,
   iconSizeSm,
-  lineHeightLg,
   iconSizeLg,
+  buttonLineHeight,
+  buttonLargeLineHeight,
 } from 'bpk-tokens/tokens/base.es6';
 
 import withAlignment from './src/withAlignment';
@@ -29,11 +29,11 @@ import withDescription from './src/withDescription';
 
 // Wrapper functions to provide backwards compatibility
 function withButtonAlignment(WrappedComponent) {
-  return withAlignment(WrappedComponent, lineHeightBase, iconSizeSm);
+  return withAlignment(WrappedComponent, buttonLineHeight, iconSizeSm);
 }
 
 function withLargeButtonAlignment(WrappedComponent) {
-  return withAlignment(WrappedComponent, lineHeightLg, iconSizeLg);
+  return withAlignment(WrappedComponent, buttonLargeLineHeight, iconSizeLg);
 }
 
 // alias to maintain backwards compat, can be deprecated in due course

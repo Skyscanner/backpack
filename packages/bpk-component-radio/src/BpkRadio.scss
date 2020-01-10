@@ -57,7 +57,7 @@ $bpk-radio-circle-size: $bpk-one-pixel-rem * 10;
 
   &__circle {
     position: absolute;
-    top: $bpk-spacing-xs;
+    top: ($bpk-spacing-base - $bpk-radio-circle-size) / 2;
     left: ($bpk-spacing-md - $bpk-radio-circle-size) / 2;
     display: none;
     width: $bpk-radio-circle-size;

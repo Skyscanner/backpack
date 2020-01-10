@@ -127,7 +127,7 @@
       "type": "size"
     },
     "LABEL_LINE_HEIGHT": {
-      "value": "{!SPACING_MD}",
+      "value": "{!FONT_LINE_HEIGHT_XS}",
       "type": "number"
     },
     "FORM_VALIDATION_COLOR": {

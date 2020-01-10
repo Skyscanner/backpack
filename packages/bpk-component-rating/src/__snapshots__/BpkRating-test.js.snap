@@ -7,7 +7,7 @@ exports[`BpkRating should correctly handling values higher than 10 1`] = `
 >
   <span
     aria-hidden="true"
-    className="bpk-text bpk-text--sm bpk-rating__component bpk-rating--sm-rating bpk-rating--high-rating"
+    className="bpk-text bpk-text--sm bpk-rating__component bpk-rating--base-rating bpk-rating--high-rating"
   >
     <strong>
       10
@@ -41,7 +41,7 @@ exports[`BpkRating should correctly handling values lower than 0 1`] = `
 >
   <span
     aria-hidden="true"
-    className="bpk-text bpk-text--sm bpk-rating__component bpk-rating--sm-rating bpk-rating--low-rating"
+    className="bpk-text bpk-text--sm bpk-rating__component bpk-rating--base-rating bpk-rating--low-rating"
   >
     <strong>
       0
@@ -75,7 +75,7 @@ exports[`BpkRating should render a high score rating component 1`] = `
 >
   <span
     aria-hidden="true"
-    className="bpk-text bpk-text--sm bpk-rating__component bpk-rating--sm-rating bpk-rating--high-rating"
+    className="bpk-text bpk-text--sm bpk-rating__component bpk-rating--base-rating bpk-rating--high-rating"
   >
     <strong>
       9.0
@@ -109,7 +109,7 @@ exports[`BpkRating should render a large rating component 1`] = `
 >
   <span
     aria-hidden="true"
-    className="bpk-text bpk-text--lg bpk-rating__component bpk-rating--lg-rating bpk-rating--high-rating"
+    className="bpk-text bpk-text--xl bpk-rating__component bpk-rating--lg-rating bpk-rating--high-rating"
   >
     <strong>
       9.0
@@ -120,7 +120,7 @@ exports[`BpkRating should render a large rating component 1`] = `
   >
     <span
       aria-hidden="true"
-      className="bpk-text bpk-text--lg bpk-rating__text bpk-rating__text--horizontal"
+      className="bpk-text bpk-text--xl bpk-rating__text bpk-rating__text--horizontal"
     >
       <strong>
         Excellent
@@ -128,7 +128,7 @@ exports[`BpkRating should render a large rating component 1`] = `
     </span>
     <span
       aria-hidden="true"
-      className="bpk-text bpk-text--xs bpk-rating__text bpk-rating__text--horizontal"
+      className="bpk-text bpk-text--sm bpk-rating__text bpk-rating__text--horizontal"
     >
       This place was amazing
     </span>
@@ -143,7 +143,7 @@ exports[`BpkRating should render a low score rating component 1`] = `
 >
   <span
     aria-hidden="true"
-    className="bpk-text bpk-text--sm bpk-rating__component bpk-rating--sm-rating bpk-rating--low-rating"
+    className="bpk-text bpk-text--sm bpk-rating__component bpk-rating--base-rating bpk-rating--low-rating"
   >
     <strong>
       1.3
@@ -177,7 +177,7 @@ exports[`BpkRating should render a medium score rating component 1`] = `
 >
   <span
     aria-hidden="true"
-    className="bpk-text bpk-text--sm bpk-rating__component bpk-rating--sm-rating bpk-rating--medium-rating"
+    className="bpk-text bpk-text--sm bpk-rating__component bpk-rating--base-rating bpk-rating--medium-rating"
   >
     <strong>
       7.0
@@ -211,7 +211,7 @@ exports[`BpkRating should render a small rating component 1`] = `
 >
   <span
     aria-hidden="true"
-    className="bpk-text bpk-text--sm bpk-rating__component bpk-rating--sm-rating bpk-rating--high-rating"
+    className="bpk-text bpk-text--xs bpk-rating__component bpk-rating--sm-rating bpk-rating--high-rating"
   >
     <strong>
       9.0
@@ -222,7 +222,7 @@ exports[`BpkRating should render a small rating component 1`] = `
   >
     <span
       aria-hidden="true"
-      className="bpk-text bpk-text--sm bpk-rating__text bpk-rating__text--horizontal"
+      className="bpk-text bpk-text--xs bpk-rating__text bpk-rating__text--horizontal"
     >
       <strong>
         Excellent
@@ -245,7 +245,7 @@ exports[`BpkRating should render correctly 1`] = `
 >
   <span
     aria-hidden="true"
-    className="bpk-text bpk-text--sm bpk-rating__component bpk-rating--sm-rating bpk-rating--medium-rating"
+    className="bpk-text bpk-text--sm bpk-rating__component bpk-rating--base-rating bpk-rating--medium-rating"
   >
     <strong>
       6.7
@@ -279,7 +279,7 @@ exports[`BpkRating should render title only correctly 1`] = `
 >
   <span
     aria-hidden="true"
-    className="bpk-text bpk-text--sm bpk-rating__component bpk-rating--sm-rating bpk-rating--medium-rating"
+    className="bpk-text bpk-text--sm bpk-rating__component bpk-rating--base-rating bpk-rating--medium-rating"
   >
     <strong>
       6.7
@@ -307,7 +307,7 @@ exports[`BpkRating should render vertical rating correctly 1`] = `
 >
   <span
     aria-hidden="true"
-    className="bpk-text bpk-text--sm bpk-rating__component bpk-rating--sm-rating bpk-rating--medium-rating"
+    className="bpk-text bpk-text--sm bpk-rating__component bpk-rating--base-rating bpk-rating--medium-rating"
   >
     <strong>
       6.7
@@ -341,7 +341,7 @@ exports[`BpkRating should support custom class names 1`] = `
 >
   <span
     aria-hidden="true"
-    className="bpk-text bpk-text--sm bpk-rating__component bpk-rating--sm-rating bpk-rating--medium-rating"
+    className="bpk-text bpk-text--sm bpk-rating__component bpk-rating--base-rating bpk-rating--medium-rating"
   >
     <strong>
       6.7

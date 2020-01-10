@@ -32,19 +32,19 @@
     color: $bpk-color-white;
   }
 
-  &--sm-rating {
+  &--base-rating {
     display: flex;
     width: $bpk-rating-base-width;
     height: $bpk-rating-base-height;
   }
 
-  &--xl-rating {
+  &--lg-rating {
     display: flex;
     width: $bpk-rating-lg-width;
     height: $bpk-rating-lg-height;
   }
 
-  &--xs-rating {
+  &--sm-rating {
     display: flex;
     width: $bpk-rating-sm-width;
     height: $bpk-rating-sm-width;

@@ -6,7 +6,7 @@ exports[`withAlignment should keep wrapped-component styling 1`] = `
     Object {
       "display": "inline-block",
       "lineHeight": "1.125rem",
-      "marginTop": "0.375rem",
+      "marginTop": "0.25rem",
       "verticalAlign": "top",
     }
   }
@@ -19,7 +19,7 @@ exports[`withAlignment should keep wrapped-component styling 1`] = `
     }
   >
     test lineHeight 
-    1.875rem
+    1.625rem
      and iconsSize 
     1.125rem
   </div>
@@ -72,14 +72,14 @@ exports[`withAlignment should render correctly 3`] = `
     Object {
       "display": "inline-block",
       "lineHeight": "1.125rem",
-      "marginTop": "0.1875rem",
+      "marginTop": "0.0625rem",
       "verticalAlign": "top",
     }
   }
 >
   <div>
     test lineHeight 
-    1.5rem
+    1.25rem
      and iconsSize 
     1.125rem
   </div>
@@ -99,7 +99,7 @@ exports[`withAlignment should render correctly 4`] = `
 >
   <div>
     test lineHeight 
-    1.5rem
+    1.25rem
      and iconsSize 
     1.5rem
   </div>
@@ -112,14 +112,14 @@ exports[`withAlignment should render correctly 5`] = `
     Object {
       "display": "inline-block",
       "lineHeight": "1.125rem",
-      "marginTop": "0.375rem",
+      "marginTop": "0.25rem",
       "verticalAlign": "top",
     }
   }
 >
   <div>
     test lineHeight 
-    1.875rem
+    1.625rem
      and iconsSize 
     1.125rem
   </div>
@@ -132,14 +132,14 @@ exports[`withAlignment should render correctly 6`] = `
     Object {
       "display": "inline-block",
       "lineHeight": "1.5rem",
-      "marginTop": "0.1875rem",
+      "marginTop": "0.0625rem",
       "verticalAlign": "top",
     }
   }
 >
   <div>
     test lineHeight 
-    1.875rem
+    1.625rem
      and iconsSize 
     1.5rem
   </div>
@@ -152,14 +152,14 @@ exports[`withAlignment should render correctly 7`] = `
     Object {
       "display": "inline-block",
       "lineHeight": "1.125rem",
-      "marginTop": "0.75rem",
+      "marginTop": "0.40625rem",
       "verticalAlign": "top",
     }
   }
 >
   <div>
     test lineHeight 
-    2.625rem
+    1.9375rem
      and iconsSize 
     1.125rem
   </div>
@@ -172,14 +172,14 @@ exports[`withAlignment should render correctly 8`] = `
     Object {
       "display": "inline-block",
       "lineHeight": "1.5rem",
-      "marginTop": "0.5625rem",
+      "marginTop": "0.21875rem",
       "verticalAlign": "top",
     }
   }
 >
   <div>
     test lineHeight 
-    2.625rem
+    1.9375rem
      and iconsSize 
     1.5rem
   </div>
@@ -192,14 +192,14 @@ exports[`withAlignment should render correctly 9`] = `
     Object {
       "display": "inline-block",
       "lineHeight": "1.125rem",
-      "marginTop": "1.125rem",
+      "marginTop": "0.65625rem",
       "verticalAlign": "top",
     }
   }
 >
   <div>
     test lineHeight 
-    3.375rem
+    2.4375rem
      and iconsSize 
     1.125rem
   </div>
@@ -212,14 +212,14 @@ exports[`withAlignment should render correctly 10`] = `
     Object {
       "display": "inline-block",
       "lineHeight": "1.5rem",
-      "marginTop": "0.9375rem",
+      "marginTop": "0.46875rem",
       "verticalAlign": "top",
     }
   }
 >
   <div>
     test lineHeight 
-    3.375rem
+    2.4375rem
      and iconsSize 
     1.5rem
   </div>

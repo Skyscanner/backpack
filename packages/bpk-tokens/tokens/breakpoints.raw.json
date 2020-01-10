@@ -72,6 +72,33 @@
     "ERFOUD": {
       "value": "#ffb54d"
     },
+    "FONT_LINE_HEIGHT_BASE": {
+      "value": "1.25rem"
+    },
+    "FONT_LINE_HEIGHT_LG": {
+      "value": "1.625rem"
+    },
+    "FONT_LINE_HEIGHT_SM": {
+      "value": "1.125rem"
+    },
+    "FONT_LINE_HEIGHT_XL": {
+      "value": "1.9375rem"
+    },
+    "FONT_LINE_HEIGHT_XS": {
+      "value": "1rem"
+    },
+    "FONT_LINE_HEIGHT_XXL": {
+      "value": "2.4375rem"
+    },
+    "FONT_LINE_HEIGHT_XXXL": {
+      "value": "2.9375rem"
+    },
+    "FONT_LINE_HEIGHT_XXXXL": {
+      "value": "3.4375rem"
+    },
+    "FONT_LINE_HEIGHT_XXXXXL": {
+      "value": "4.875rem"
+    },
     "FONT_SIZE_BASE": {
       "value": "1rem"
     },

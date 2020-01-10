@@ -32,7 +32,7 @@
 
 @mixin bpk-badge {
   display: inline-flex;
-  padding: .175rem $bpk-badge-padding-x;
+  padding: $bpk-badge-padding-y $bpk-badge-padding-x;
   align-items: center;
   color: $bpk-font-color-base;
 
