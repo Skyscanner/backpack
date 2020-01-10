@@ -92,6 +92,7 @@ class BpkDatepicker extends Component {
 
     // The following props are not used in render
     delete rest.onDateSelect;
+    delete rest.isOpen;
 
     const inputComponent = (
       <Input
