@@ -2,6 +2,13 @@
 
 [Unreleased changes](./UNRELEASED.yaml).
 
+# 2020-01-10 - Fix for datepicker `isOpen` prop
+
+**Fixed:**
+  - bpk-component-datepicker: 11.1.0 => 11.1.1
+    - Fixed popover with isOpen overridden from datepicker's props.
+
+
 # 2020-01-09 - Carousel swipe functionality and datepicker prop
 
 **Added:**

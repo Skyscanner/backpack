@@ -1,9 +1,5 @@
 # UNRELEASED:
 
-FIXED:
-  - bpk-component-datepicker:
-    - Fixed popover with isOpen overridden from datepicker's props.
-
 # How to write a good changelog entry:
 #
 #   1. Add 'BREAKING', 'ADDED' OR 'FIXED' depending on if the change will be major, minor or patch according to [semver.org](semver.org).
