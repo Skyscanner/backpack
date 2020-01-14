@@ -16,12 +16,14 @@
  * limitations under the License.
  */
 
+/* @flow strict */
+
 import React from 'react';
 import renderer from 'react-test-renderer';
 
 import withDefaultProps from './withDefaultProps';
 
-const TestComponent = 'TestComponent';
+const TestComponent = props => <div {...props} />;
 
 describe('withDefaultProps', () => {
   it('should render correctly', () => {
