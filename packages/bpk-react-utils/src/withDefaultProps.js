@@ -16,14 +16,28 @@
  * limitations under the License.
  */
 
+/* @flow strict */
+
 import PropTypes from 'prop-types';
-import React from 'react';
+import React, { type Node, type AbstractComponent } from 'react';
 import wrapDisplayName from 'recompose/wrapDisplayName';
 
-const withDefaultProps = (WrappedComponent, defaultProps) => {
+type Props = {
+  children: ?Node,
+  className: ?string,
+};
+
+type DefaultProps = {
+  className?: ?string,
+};
+
+const withDefaultProps = (
+  WrappedComponent: AbstractComponent<any>,
+  defaultProps: DefaultProps,
+) => {
   const { className: defaultClassName, ...defaultRest } = defaultProps;
 
-  const component = props => {
+  const component = (props: Props) => {
     const { children, className: innerClassName, ...rest } = props;
     const classNames = [];
 
