@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+/* @flow strict */
+
 import isRTL from './isRTL';
 
 describe('isRTL undefined', () => {
@@ -36,12 +38,20 @@ describe('isRTL document defined', () => {
     writable: false,
   });
   it('should return true when documentElement direction attribute is `ltr`', () => {
-    document.documentElement.getAttribute.mockReturnValue('ltr');
+    // eslint-disable-next-line prefer-destructuring
+    const documentElement: ?HTMLElement = document.documentElement;
+    if (documentElement) {
+      documentElement.getAttribute.mockReturnValue('ltr');
+    }
     expect(isRTL()).toBe(false);
   });
 
   it('should return true when documentElement direction attribute is `rtl`', () => {
-    document.documentElement.getAttribute.mockReturnValue('rtl');
+    // eslint-disable-next-line prefer-destructuring
+    const documentElement: ?HTMLElement = document.documentElement;
+    if (documentElement) {
+      documentElement.getAttribute.mockReturnValue('rtl');
+    }
     expect(isRTL()).toBe(true);
   });
 });
