@@ -412,6 +412,20 @@ const publishPackagesToNPM = (changes, tag) =>
     });
   });
 
+const updateDependencies = dependencies => {
+  if (!dependencies) {
+    return;
+  }
+
+  Object.keys(dependencies).forEach(d => {
+    if (d.match('bpk-*')) {
+      const version = dependencies[d];
+      // eslint-disable-next-line no-param-reassign
+      dependencies[d] = `${version.split('-')[0]}-css.0`;
+    }
+  });
+};
+
 const appendToPackageVersion = (c, text) =>
   new Promise(resolve => {
     const packageJsonFilePath = path.join(c.path, 'package.json');
@@ -420,6 +434,10 @@ const appendToPackageVersion = (c, text) =>
       fs.readFileSync(packageJsonFilePath).toString(),
     );
     packageJsonData.version = appendedVersion;
+
+    updateDependencies(packageJsonData.dependencies);
+    updateDependencies(packageJsonData.devDependencies);
+
     fs.writeFileSync(
       packageJsonFilePath,
       `${JSON.stringify(packageJsonData, null, '  ')}\n`,
