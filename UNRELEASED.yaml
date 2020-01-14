@@ -2,7 +2,7 @@
 
 ADDED:
   - bpk-react-utils:
-    - Added Flow types to `withDefaultProps`.
+    - Added Flow types to `withDefaultProps` and `cssModules`.
 
 # How to write a good changelog entry:
 #
