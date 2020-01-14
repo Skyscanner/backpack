@@ -16,7 +16,11 @@
  * limitations under the License.
  */
 
-export default (styles = {}) => (...classNames) =>
+/* @flow strict */
+
+export default (styles: {} = {}) => (
+  ...classNames: Array<?string | ?boolean | ?number | ?{}>
+) =>
   classNames.reduce((className, currentClass) => {
     if (currentClass && typeof currentClass === 'string') {
       const realName = styles[currentClass] || currentClass;
