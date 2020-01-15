@@ -52,7 +52,10 @@ const BpkClearButton = (props: Props) => {
       className={classNames.join(' ')}
       {...rest}
     >
-      <ClearButtonIcon className={getClassName('bpk-clear-button__icon')} />
+      <ClearButtonIcon
+        focusable="false" // prevents focus on IE11
+        className={getClassName('bpk-clear-button__icon')}
+      />
     </button>
   );
 };

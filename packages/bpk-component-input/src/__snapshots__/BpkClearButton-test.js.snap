@@ -20,6 +20,7 @@ exports[`BpkClearButton should render correctly 1`] = `
   >
     <svg
       className="bpk-clear-button__icon"
+      focusable="false"
       height="18"
       style={
         Object {
@@ -59,6 +60,7 @@ exports[`BpkClearButton should render correctly with a custom class 1`] = `
   >
     <svg
       className="bpk-clear-button__icon"
+      focusable="false"
       height="18"
       style={
         Object {
