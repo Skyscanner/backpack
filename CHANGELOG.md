@@ -2,6 +2,14 @@
 
 [Unreleased changes](./UNRELEASED.yaml).
 
+# 2020-01-17 - New dynamic background tokens for iOS and Android
+
+**Added:**
+
+ - bpk-tokens: 29.5.2 => 29.6.0
+   - Added alternative background primary and secondary colours for iOS and Android.
+
+
 # 2020-01-17 - New flow typing and IE11 fixes
 
 **Added:**
