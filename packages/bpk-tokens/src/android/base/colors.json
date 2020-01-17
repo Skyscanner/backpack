@@ -26,10 +26,22 @@
     "BACKGROUND_DARK_COLOR": {
       "value": "{!BLACK}"
     },
+    "BACKGROUND_ALTERNATIVE_LIGHT_COLOR": {
+      "value": "{!SKY_GRAY_TINT_07}"
+    },
+    "BACKGROUND_ALTERNATIVE_DARK_COLOR": {
+      "value": "{!BLACK}"
+    },
     "BACKGROUND_SECONDARY_LIGHT_COLOR": {
       "value": "{!SKY_GRAY_TINT_07}"
     },
     "BACKGROUND_SECONDARY_DARK_COLOR": {
+      "value": "{!BLACK_TINT_01}"
+    },
+    "BACKGROUND_ALTERNATIVE_SECONDARY_LIGHT_COLOR": {
+      "value": "{!WHITE}"
+    },
+    "BACKGROUND_ALTERNATIVE_SECONDARY_DARK_COLOR": {
       "value": "{!BLACK_TINT_01}"
     },
     "BACKGROUND_TERTIARY_LIGHT_COLOR": {
