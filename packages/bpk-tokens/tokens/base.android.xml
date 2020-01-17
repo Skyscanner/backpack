@@ -23,6 +23,10 @@
   <property name="ANIMATION_DURATION_BASE" category="animations">400ms</property>
   <property name="ANIMATION_DURATION_SM" category="animations">200ms</property>
   <property name="ANIMATION_DURATION_XS" category="animations">50ms</property>
+  <color name="BACKGROUND_ALTERNATIVE_DARK_COLOR" category="colors">#ff000000</color>
+  <color name="BACKGROUND_ALTERNATIVE_LIGHT_COLOR" category="colors">#fff1f2f8</color>
+  <color name="BACKGROUND_ALTERNATIVE_SECONDARY_DARK_COLOR" category="colors">#ff1d1b20</color>
+  <color name="BACKGROUND_ALTERNATIVE_SECONDARY_LIGHT_COLOR" category="colors">#ffffffff</color>
   <color name="BACKGROUND_DARK_COLOR" category="colors">#ff000000</color>
   <color name="BACKGROUND_LIGHT_COLOR" category="colors">#ffffffff</color>
   <color name="BACKGROUND_SECONDARY_DARK_COLOR" category="colors">#ff1d1b20</color>

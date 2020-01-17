@@ -266,6 +266,34 @@
       "originalValue": "{!ANIMATION_DURATION_XS}",
       "name": "ANIMATION_DURATION_XS"
     },
+    "BACKGROUND_ALTERNATIVE_DARK_COLOR": {
+      "type": "color",
+      "category": "colors",
+      "value": "#000000ff",
+      "originalValue": "{!BLACK}",
+      "name": "BACKGROUND_ALTERNATIVE_DARK_COLOR"
+    },
+    "BACKGROUND_ALTERNATIVE_LIGHT_COLOR": {
+      "type": "color",
+      "category": "colors",
+      "value": "#f1f2f8ff",
+      "originalValue": "{!SKY_GRAY_TINT_07}",
+      "name": "BACKGROUND_ALTERNATIVE_LIGHT_COLOR"
+    },
+    "BACKGROUND_ALTERNATIVE_SECONDARY_DARK_COLOR": {
+      "type": "color",
+      "category": "colors",
+      "value": "#1d1b20ff",
+      "originalValue": "{!BLACK_TINT_01}",
+      "name": "BACKGROUND_ALTERNATIVE_SECONDARY_DARK_COLOR"
+    },
+    "BACKGROUND_ALTERNATIVE_SECONDARY_LIGHT_COLOR": {
+      "type": "color",
+      "category": "colors",
+      "value": "#ffffffff",
+      "originalValue": "{!WHITE}",
+      "name": "BACKGROUND_ALTERNATIVE_SECONDARY_LIGHT_COLOR"
+    },
     "BACKGROUND_DARK_COLOR": {
       "type": "color",
       "category": "colors",
@@ -1247,6 +1275,24 @@
       "originalValue": "0.15",
       "name": "UNDERLAY_OPACITY"
     },
+    "BACKGROUND_ALTERNATIVE_COLOR": {
+      "type": "color",
+      "category": "colors",
+      "value": "#f1f2f8ff",
+      "originalValue": "{!SKY_GRAY_TINT_07}",
+      "name": "BACKGROUND_ALTERNATIVE_COLOR",
+      "darkValue": "#000000ff",
+      "originalDarkValue": "{!BLACK}"
+    },
+    "BACKGROUND_ALTERNATIVE_SECONDARY_COLOR": {
+      "type": "color",
+      "category": "colors",
+      "value": "#ffffffff",
+      "originalValue": "{!WHITE}",
+      "name": "BACKGROUND_ALTERNATIVE_SECONDARY_COLOR",
+      "darkValue": "#1d1b20ff",
+      "originalDarkValue": "{!BLACK_TINT_01}"
+    },
     "BACKGROUND_COLOR": {
       "type": "color",
       "category": "colors",
@@ -1333,6 +1379,10 @@
     "ANIMATION_DURATION_BASE",
     "ANIMATION_DURATION_SM",
     "ANIMATION_DURATION_XS",
+    "BACKGROUND_ALTERNATIVE_DARK_COLOR",
+    "BACKGROUND_ALTERNATIVE_LIGHT_COLOR",
+    "BACKGROUND_ALTERNATIVE_SECONDARY_DARK_COLOR",
+    "BACKGROUND_ALTERNATIVE_SECONDARY_LIGHT_COLOR",
     "BACKGROUND_DARK_COLOR",
     "BACKGROUND_LIGHT_COLOR",
     "BACKGROUND_SECONDARY_DARK_COLOR",
@@ -1473,6 +1523,8 @@
     "TOUCHABLE_OVERLAY_COLOR",
     "TOUCHABLE_OVERLAY_OPACITY",
     "UNDERLAY_OPACITY",
+    "BACKGROUND_ALTERNATIVE_COLOR",
+    "BACKGROUND_ALTERNATIVE_SECONDARY_COLOR",
     "BACKGROUND_COLOR",
     "BACKGROUND_SECONDARY_COLOR",
     "BACKGROUND_TERTIARY_COLOR",

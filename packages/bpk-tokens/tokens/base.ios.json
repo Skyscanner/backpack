@@ -26,6 +26,34 @@
       "category": "colors",
       "value": "#000000ff",
       "originalValue": "{!BLACK}",
+      "name": "backgroundAlternativeDarkColor"
+    },
+    {
+      "type": "color",
+      "category": "colors",
+      "value": "#f1f2f8ff",
+      "originalValue": "{!SKY_GRAY_TINT_07}",
+      "name": "backgroundAlternativeLightColor"
+    },
+    {
+      "type": "color",
+      "category": "colors",
+      "value": "#1d1b20ff",
+      "originalValue": "{!BLACK_TINT_01}",
+      "name": "backgroundAlternativeSecondaryDarkColor"
+    },
+    {
+      "type": "color",
+      "category": "colors",
+      "value": "#ffffffff",
+      "originalValue": "{!WHITE}",
+      "name": "backgroundAlternativeSecondaryLightColor"
+    },
+    {
+      "type": "color",
+      "category": "colors",
+      "value": "#000000ff",
+      "originalValue": "{!BLACK}",
       "name": "backgroundDarkColor"
     },
     {
@@ -1001,6 +1029,24 @@
       "deprecated": true,
       "originalValue": "0.15",
       "name": "underlayOpacity"
+    },
+    {
+      "type": "color",
+      "category": "colors",
+      "value": "#f1f2f8ff",
+      "originalValue": "{!SKY_GRAY_TINT_07}",
+      "name": "backgroundAlternativeColor",
+      "darkValue": "#000000ff",
+      "originalDarkValue": "{!BLACK}"
+    },
+    {
+      "type": "color",
+      "category": "colors",
+      "value": "#ffffffff",
+      "originalValue": "{!WHITE}",
+      "name": "backgroundAlternativeSecondaryColor",
+      "darkValue": "#1d1b20ff",
+      "originalDarkValue": "{!BLACK_TINT_01}"
     },
     {
       "type": "color",

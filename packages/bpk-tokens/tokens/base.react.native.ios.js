@@ -20,6 +20,18 @@
 export const animationDurationBase = 400;
 export const animationDurationSm = 200;
 export const animationDurationXs = 50;
+export const backgroundAlternativeColor = {
+ light: "rgb(241, 242, 248)",
+ dark: "rgb(0, 0, 0)",
+};
+export const backgroundAlternativeDarkColor = "rgb(0, 0, 0)";
+export const backgroundAlternativeLightColor = "rgb(241, 242, 248)";
+export const backgroundAlternativeSecondaryColor = {
+ dark: "rgb(29, 27, 32)",
+ light: "rgb(255, 255, 255)",
+};
+export const backgroundAlternativeSecondaryDarkColor = "rgb(29, 27, 32)";
+export const backgroundAlternativeSecondaryLightColor = "rgb(255, 255, 255)";
 export const backgroundColor = {
  light: "rgb(255, 255, 255)",
  dark: "rgb(0, 0, 0)",
@@ -227,6 +239,10 @@ carouselIndicatorDotSizeMd,
 carouselIndicatorDotSizeSm,
 };
 export const colors = {
+backgroundAlternativeDarkColor,
+backgroundAlternativeLightColor,
+backgroundAlternativeSecondaryDarkColor,
+backgroundAlternativeSecondaryLightColor,
 backgroundDarkColor,
 backgroundLightColor,
 backgroundSecondaryDarkColor,
@@ -323,6 +339,8 @@ borderRadiusPill,
 borderRadiusSm,
 };
 export const semanticColors = {
+backgroundAlternativeColor,
+backgroundAlternativeSecondaryColor,
 backgroundColor,
 backgroundSecondaryColor,
 backgroundTertiaryColor,
