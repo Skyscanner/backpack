@@ -2,6 +2,18 @@
 
 [Unreleased changes](./UNRELEASED.yaml).
 
+# 2020-01-17 - New flow typing and IE11 fixes
+
+**Added:**
+- bpk-react-utils: 2.8.4 => 2.9.0
+  - Added Flow types to `withDefaultProps` and `cssModules`.
+
+**Fixed:**
+- bpk-stylesheets: 4.1.3 => 4.1.4
+  - Fixed `bpk-stylesheets/base` to work with all supported browsers.
+- bpk-component-input: 5.0.23 => 5.0.24
+  - Fixed tab for clearable input.
+
 # 2020-01-10 - Fix for datepicker `isOpen` prop
 
 **Fixed:**
