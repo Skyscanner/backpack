@@ -2,7 +2,7 @@
 
 ADDED:
   - bpk-component-infinite-scroll:
-    - Move from using a div to React.Fragment as the root element.
+    - Move from using a div to React Fragment as the root element.
 
 
 # How to write a good changelog entry:
