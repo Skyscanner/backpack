@@ -1,14 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`withInfiniteScroll renders an empty list for the first render 1`] = `
-<div>
+Array [
+  "HIYA",
   <div
     id="list"
-  />
+  />,
   <div
     className="bpk-sentinel"
-  />
-</div>
+  />,
+]
 `;
 
 exports[`withInfiniteScroll renders correctly with different initial and onScroll numbers 1`] = `
@@ -37,18 +38,17 @@ exports[`withInfiniteScroll renders correctly with different initial and onScrol
   renderSeeMoreComponent={null}
   seeMoreAfter={null}
 >
-  <div>
-    <List
-      elements={Array []}
-    >
-      <div
-        id="list"
-      />
-    </List>
+  HIYA
+  <List
+    elements={Array []}
+  >
     <div
-      className="bpk-sentinel"
+      id="list"
     />
-  </div>
+  </List>
+  <div
+    className="bpk-sentinel"
+  />
 </WithInfiniteScroll>
 `;
 
@@ -78,52 +78,51 @@ exports[`withInfiniteScroll renders items after the first render 1`] = `
   renderSeeMoreComponent={null}
   seeMoreAfter={null}
 >
-  <div>
-    <List
-      elements={
-        Array [
-          "Element 0",
-          "Element 1",
-          "Element 2",
-          "Element 3",
-          "Element 4",
-        ]
-      }
+  HIYA
+  <List
+    elements={
+      Array [
+        "Element 0",
+        "Element 1",
+        "Element 2",
+        "Element 3",
+        "Element 4",
+      ]
+    }
+  >
+    <div
+      id="list"
     >
       <div
-        id="list"
+        key="Element 0"
       >
-        <div
-          key="Element 0"
-        >
-          Element 0
-        </div>
-        <div
-          key="Element 1"
-        >
-          Element 1
-        </div>
-        <div
-          key="Element 2"
-        >
-          Element 2
-        </div>
-        <div
-          key="Element 3"
-        >
-          Element 3
-        </div>
-        <div
-          key="Element 4"
-        >
-          Element 4
-        </div>
+        Element 0
       </div>
-    </List>
-    <div
-      className="bpk-sentinel"
-    />
-  </div>
+      <div
+        key="Element 1"
+      >
+        Element 1
+      </div>
+      <div
+        key="Element 2"
+      >
+        Element 2
+      </div>
+      <div
+        key="Element 3"
+      >
+        Element 3
+      </div>
+      <div
+        key="Element 4"
+      >
+        Element 4
+      </div>
+    </div>
+  </List>
+  <div
+    className="bpk-sentinel"
+  />
 </WithInfiniteScroll>
 `;
 
@@ -185,15 +184,14 @@ exports[`withInfiniteScroll should finish the list when array changes to empty 1
   renderSeeMoreComponent={null}
   seeMoreAfter={0}
 >
-  <div>
-    <List
-      elements={Array []}
-    >
-      <div
-        id="list"
-      />
-    </List>
-  </div>
+  HIYA
+  <List
+    elements={Array []}
+  >
+    <div
+      id="list"
+    />
+  </List>
 </WithInfiniteScroll>
 `;
 
@@ -247,15 +245,14 @@ exports[`withInfiniteScroll should finish the list when data source changes to a
   renderSeeMoreComponent={null}
   seeMoreAfter={0}
 >
-  <div>
-    <List
-      elements={Array []}
-    >
-      <div
-        id="list"
-      />
-    </List>
-  </div>
+  HIYA
+  <List
+    elements={Array []}
+  >
+    <div
+      id="list"
+    />
+  </List>
 </WithInfiniteScroll>
 `;
 
@@ -331,18 +328,17 @@ exports[`withInfiniteScroll should finish the list when data source returns less
   renderSeeMoreComponent={null}
   seeMoreAfter={null}
 >
-  <div>
-    <List
-      elements={Array []}
-    >
-      <div
-        id="list"
-      />
-    </List>
+  HIYA
+  <List
+    elements={Array []}
+  >
     <div
-      className="bpk-sentinel"
+      id="list"
     />
-  </div>
+  </List>
+  <div
+    className="bpk-sentinel"
+  />
 </WithInfiniteScroll>
 `;
 
@@ -373,19 +369,18 @@ exports[`withInfiniteScroll should pass extra props to the decorated component 1
   renderSeeMoreComponent={null}
   seeMoreAfter={null}
 >
-  <div>
-    <List
-      aria-label="Test"
-      elements={Array []}
-    >
-      <div
-        id="list"
-      />
-    </List>
+  HIYA
+  <List
+    aria-label="Test"
+    elements={Array []}
+  >
     <div
-      className="bpk-sentinel"
+      id="list"
     />
-  </div>
+  </List>
+  <div
+    className="bpk-sentinel"
+  />
 </WithInfiniteScroll>
 `;
 
@@ -435,37 +430,36 @@ exports[`withInfiniteScroll should refresh data when data changes 1`] = `
   renderSeeMoreComponent={null}
   seeMoreAfter={null}
 >
-  <div>
-    <List
-      elements={
-        Array [
-          1,
-          2,
-          3,
-        ]
-      }
+  HIYA
+  <List
+    elements={
+      Array [
+        1,
+        2,
+        3,
+      ]
+    }
+  >
+    <div
+      id="list"
     >
       <div
-        id="list"
+        key="1"
       >
-        <div
-          key="1"
-        >
-          1
-        </div>
-        <div
-          key="2"
-        >
-          2
-        </div>
-        <div
-          key="3"
-        >
-          3
-        </div>
+        1
       </div>
-    </List>
-  </div>
+      <div
+        key="2"
+      >
+        2
+      </div>
+      <div
+        key="3"
+      >
+        3
+      </div>
+    </div>
+  </List>
 </WithInfiniteScroll>
 `;
 
@@ -515,37 +509,36 @@ exports[`withInfiniteScroll should refresh data when data changes from an empty 
   renderSeeMoreComponent={null}
   seeMoreAfter={null}
 >
-  <div>
-    <List
-      elements={
-        Array [
-          1,
-          2,
-          3,
-        ]
-      }
+  HIYA
+  <List
+    elements={
+      Array [
+        1,
+        2,
+        3,
+      ]
+    }
+  >
+    <div
+      id="list"
     >
       <div
-        id="list"
+        key="1"
       >
-        <div
-          key="1"
-        >
-          1
-        </div>
-        <div
-          key="2"
-        >
-          2
-        </div>
-        <div
-          key="3"
-        >
-          3
-        </div>
+        1
       </div>
-    </List>
-  </div>
+      <div
+        key="2"
+      >
+        2
+      </div>
+      <div
+        key="3"
+      >
+        3
+      </div>
+    </div>
+  </List>
 </WithInfiniteScroll>
 `;
 
@@ -587,37 +580,36 @@ exports[`withInfiniteScroll should refresh data when data source changes from an
   renderSeeMoreComponent={null}
   seeMoreAfter={null}
 >
-  <div>
-    <List
-      elements={
-        Array [
-          1,
-          2,
-          3,
-        ]
-      }
+  HIYA
+  <List
+    elements={
+      Array [
+        1,
+        2,
+        3,
+      ]
+    }
+  >
+    <div
+      id="list"
     >
       <div
-        id="list"
+        key="1"
       >
-        <div
-          key="1"
-        >
-          1
-        </div>
-        <div
-          key="2"
-        >
-          2
-        </div>
-        <div
-          key="3"
-        >
-          3
-        </div>
+        1
       </div>
-    </List>
-  </div>
+      <div
+        key="2"
+      >
+        2
+      </div>
+      <div
+        key="3"
+      >
+        3
+      </div>
+    </div>
+  </List>
 </WithInfiniteScroll>
 `;
 
@@ -659,37 +651,36 @@ exports[`withInfiniteScroll should refresh when data source changes 1`] = `
   renderSeeMoreComponent={null}
   seeMoreAfter={null}
 >
-  <div>
-    <List
-      elements={
-        Array [
-          1,
-          2,
-          3,
-        ]
-      }
+  HIYA
+  <List
+    elements={
+      Array [
+        1,
+        2,
+        3,
+      ]
+    }
+  >
+    <div
+      id="list"
     >
       <div
-        id="list"
+        key="1"
       >
-        <div
-          key="1"
-        >
-          1
-        </div>
-        <div
-          key="2"
-        >
-          2
-        </div>
-        <div
-          key="3"
-        >
-          3
-        </div>
+        1
       </div>
-    </List>
-  </div>
+      <div
+        key="2"
+      >
+        2
+      </div>
+      <div
+        key="3"
+      >
+        3
+      </div>
+    </div>
+  </List>
 </WithInfiniteScroll>
 `;
 
@@ -719,49 +710,48 @@ exports[`withInfiniteScroll should render correctly when no more elements 1`] = 
   renderSeeMoreComponent={null}
   seeMoreAfter={null}
 >
-  <div>
-    <List
-      elements={
-        Array [
-          "Element 0",
-          "Element 1",
-          "Element 2",
-          "Element 3",
-          "Element 4",
-        ]
-      }
+  HIYA
+  <List
+    elements={
+      Array [
+        "Element 0",
+        "Element 1",
+        "Element 2",
+        "Element 3",
+        "Element 4",
+      ]
+    }
+  >
+    <div
+      id="list"
     >
       <div
-        id="list"
+        key="Element 0"
       >
-        <div
-          key="Element 0"
-        >
-          Element 0
-        </div>
-        <div
-          key="Element 1"
-        >
-          Element 1
-        </div>
-        <div
-          key="Element 2"
-        >
-          Element 2
-        </div>
-        <div
-          key="Element 3"
-        >
-          Element 3
-        </div>
-        <div
-          key="Element 4"
-        >
-          Element 4
-        </div>
+        Element 0
       </div>
-    </List>
-  </div>
+      <div
+        key="Element 1"
+      >
+        Element 1
+      </div>
+      <div
+        key="Element 2"
+      >
+        Element 2
+      </div>
+      <div
+        key="Element 3"
+      >
+        Element 3
+      </div>
+      <div
+        key="Element 4"
+      >
+        Element 4
+      </div>
+    </div>
+  </List>
 </WithInfiniteScroll>
 `;
 
@@ -791,21 +781,20 @@ exports[`withInfiniteScroll should render correctly with a "loaderIntersectionTr
   renderSeeMoreComponent={null}
   seeMoreAfter={null}
 >
-  <div>
-    <List
-      elements={Array []}
-    >
-      <div
-        id="list"
-      />
-    </List>
+  HIYA
+  <List
+    elements={Array []}
+  >
     <div
-      className={null}
-    >
-      <span>
-        Loading
-      </span>
-    </div>
+      id="list"
+    />
+  </List>
+  <div
+    className={null}
+  >
+    <span>
+      Loading
+    </span>
   </div>
 </WithInfiniteScroll>
 `;
@@ -836,21 +825,20 @@ exports[`withInfiniteScroll should render correctly with a "renderLoadingCompone
   renderSeeMoreComponent={null}
   seeMoreAfter={null}
 >
-  <div>
-    <List
-      elements={Array []}
-    >
-      <div
-        id="list"
-      />
-    </List>
+  HIYA
+  <List
+    elements={Array []}
+  >
     <div
-      className={null}
-    >
-      <span>
-        Loading
-      </span>
-    </div>
+      id="list"
+    />
+  </List>
+  <div
+    className={null}
+  >
+    <span>
+      Loading
+    </span>
   </div>
 </WithInfiniteScroll>
 `;
@@ -881,31 +869,30 @@ exports[`withInfiniteScroll should render correctly with a "renderSeeMoreCompone
   renderSeeMoreComponent={[Function]}
   seeMoreAfter={0}
 >
-  <div>
-    <List
-      elements={
-        Array [
-          "Element 0",
-        ]
-      }
+  HIYA
+  <List
+    elements={
+      Array [
+        "Element 0",
+      ]
+    }
+  >
+    <div
+      id="list"
     >
       <div
-        id="list"
+        key="Element 0"
       >
-        <div
-          key="Element 0"
-        >
-          Element 0
-        </div>
+        Element 0
       </div>
-    </List>
-    <button
-      onClick={[Function]}
-      type="button"
-    >
-      see more
-    </button>
-  </div>
+    </div>
+  </List>
+  <button
+    onClick={[Function]}
+    type="button"
+  >
+    see more
+  </button>
 </WithInfiniteScroll>
 `;
 
@@ -935,27 +922,26 @@ exports[`withInfiniteScroll should render correctly with an "elementsPerScroll" 
   renderSeeMoreComponent={null}
   seeMoreAfter={null}
 >
-  <div>
-    <List
-      elements={
-        Array [
-          "Element 0",
-        ]
-      }
+  HIYA
+  <List
+    elements={
+      Array [
+        "Element 0",
+      ]
+    }
+  >
+    <div
+      id="list"
     >
       <div
-        id="list"
+        key="Element 0"
       >
-        <div
-          key="Element 0"
-        >
-          Element 0
-        </div>
+        Element 0
       </div>
-    </List>
-    <div
-      className="bpk-sentinel"
-    />
-  </div>
+    </div>
+  </List>
+  <div
+    className="bpk-sentinel"
+  />
 </WithInfiniteScroll>
 `;

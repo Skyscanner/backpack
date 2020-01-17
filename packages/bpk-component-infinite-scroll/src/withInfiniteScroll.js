@@ -20,6 +20,7 @@
 
 import React, {
   Component,
+  Fragment,
   type Element,
   type Config,
   type AbstractComponent,
@@ -290,10 +291,11 @@ const withInfiniteScroll = <T: ExtendedProps>(
       }
 
       return (
-        <div>
+        <Fragment>
+          HIYA
           <ComponentToExtend {...rest} elements={elementsToRender} />
           {loadingOrButton}
-        </div>
+        </Fragment>
       );
     }
   };
