@@ -7,6 +7,8 @@ ADDED:
 FIXED:
   - bpk-stylesheets:
     - Fixed `bpk-stylesheets/base` to work with all supported browsers.
+  - bpk-component-input:
+    - Fixed tab for clearable input.
 
 # How to write a good changelog entry:
 #
