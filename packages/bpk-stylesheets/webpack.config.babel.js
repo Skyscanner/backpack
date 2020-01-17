@@ -22,6 +22,8 @@ import { blockComment as licenseHeader } from 'bpk-tokens/formatters/license-hea
 
 import postCssPlugins from '../../scripts/webpack/postCssPlugins';
 
+import babelConfig from './base.babel.config';
+
 const path = require('path');
 
 module.exports = {
@@ -41,6 +43,7 @@ module.exports = {
         test: /\.js$/,
         exclude: /node_modules/,
         loader: 'babel-loader',
+        options: babelConfig,
       },
       {
         test: /\.scss$/,

@@ -4,7 +4,7 @@
   "description": "Backpack's stylesheets.",
   "main": "index.js",
   "scripts": {
-    "build": "node build.js"
+    "build": "node build"
   },
   "repository": {
     "type": "git",
