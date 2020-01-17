@@ -292,7 +292,6 @@ const withInfiniteScroll = <T: ExtendedProps>(
 
       return (
         <Fragment>
-          HIYA
           <ComponentToExtend {...rest} elements={elementsToRender} />
           {loadingOrButton}
         </Fragment>
