@@ -1,13 +1,5 @@
 # UNRELEASED:
 
-FIXED:
-  - bpk-tokens:
-     - `blackTint03` has been renamed `blackTint05`.
-     - `blackTint04`, `blackTint05` and `blackTint06` have been added.
-     - `lineColor` now uses `blackTint04` in dark mode.
-     - `textSecondary` now uses `blackTint06` in dark mode.
-     - `backgroundElevation01`, `backgroundElevation02` and `backgroundElevation03` values have been added for Android only.
-
 # How to write a good changelog entry:
 #
 #   1. Add 'BREAKING', 'ADDED' OR 'FIXED' depending on if the change will be major, minor or patch according to [semver.org](semver.org).

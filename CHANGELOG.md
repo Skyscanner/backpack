@@ -2,6 +2,18 @@
 
 [Unreleased changes](./UNRELEASED.yaml).
 
+# 2020-01-20 - New dark mode colour palette
+
+**Fixed:**
+
+ - bpk-tokens: 29.6.0 => 29.6.1
+   - `blackTint03` has been renamed `blackTint05`.
+   - `blackTint04`, `blackTint05` and `blackTint06` have been added.
+   - `lineColor` now uses `blackTint04` in dark mode.
+   - `textSecondary` now uses `blackTint06` in dark mode.
+   - `backgroundElevation01`, `backgroundElevation02` and `backgroundElevation03` values have been added for Android only.
+
+
 # 2020-01-17 - New dynamic background tokens for iOS and Android
 
 **Added:**
