@@ -50,6 +50,36 @@
     "BACKGROUND_TERTIARY_DARK_COLOR": {
       "value": "{!BLACK_TINT_02}"
     },
+    "BACKGROUND_ELEVATION_LIGHT_01": {
+      "value": "{!WHITE}",
+      "type": "color",
+      "category": "text-colors"
+    },
+    "BACKGROUND_ELEVATION_DARK_01": {
+      "value": "{!BLACK_TINT_01}",
+      "type": "color",
+      "category": "text-colors"
+    },
+    "BACKGROUND_ELEVATION_LIGHT_02": {
+      "value": "{!WHITE}",
+      "type": "color",
+      "category": "text-colors"
+    },
+    "BACKGROUND_ELEVATION_DARK_02": {
+      "value": "{!BLACK_TINT_02}",
+      "type": "color",
+      "category": "text-colors"
+    },
+    "BACKGROUND_ELEVATION_LIGHT_03": {
+      "value": "{!WHITE}",
+      "type": "color",
+      "category": "text-colors"
+    },
+    "BACKGROUND_ELEVATION_DARK_03": {
+      "value": "{!BLACK_TINT_03}",
+      "type": "color",
+      "category": "text-colors"
+    },
     "COLOR_WHITE": {
       "value": "{!WHITE}"
     },
@@ -163,6 +193,15 @@
     },
     "COLOR_BLACK_TINT_03": {
       "value": "{!BLACK_TINT_03}"
+    },
+    "COLOR_BLACK_TINT_04": {
+      "value": "{!BLACK_TINT_04}"
+    },
+    "COLOR_BLACK_TINT_05": {
+      "value": "{!BLACK_TINT_05}"
+    },
+    "COLOR_BLACK_TINT_06": {
+      "value": "{!BLACK_TINT_06}"
     }
   }
 }

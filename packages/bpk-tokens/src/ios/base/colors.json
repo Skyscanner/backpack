@@ -9,7 +9,7 @@
       "value": "{!SKY_GRAY_TINT_05}"
     },
     "LINE_DARK_COLOR": {
-      "value": "{!SKY_GRAY_TINT_01}"
+      "value": "{!BLACK_TINT_04}"
     },
     "PRIMARY_LIGHT_COLOR": {
       "value": "{!SKY_BLUE}"
@@ -163,6 +163,15 @@
     },
     "COLOR_BLACK_TINT_03": {
       "value": "{!BLACK_TINT_03}"
+    },
+    "COLOR_BLACK_TINT_04": {
+      "value": "{!BLACK_TINT_04}"
+    },
+    "COLOR_BLACK_TINT_05": {
+      "value": "{!BLACK_TINT_05}"
+    },
+    "COLOR_BLACK_TINT_06": {
+      "value": "{!BLACK_TINT_06}"
     }
   }
 }

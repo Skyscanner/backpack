@@ -227,9 +227,30 @@
     {
       "type": "color",
       "category": "colors",
-      "value": "#636366ff",
+      "value": "#3a3a3cff",
       "originalValue": "{!BLACK_TINT_03}",
       "name": "colorBlackTint03"
+    },
+    {
+      "type": "color",
+      "category": "colors",
+      "value": "#48484aff",
+      "originalValue": "{!BLACK_TINT_04}",
+      "name": "colorBlackTint04"
+    },
+    {
+      "type": "color",
+      "category": "colors",
+      "value": "#636366ff",
+      "originalValue": "{!BLACK_TINT_05}",
+      "name": "colorBlackTint05"
+    },
+    {
+      "type": "color",
+      "category": "colors",
+      "value": "#8e8e93ff",
+      "originalValue": "{!BLACK_TINT_06}",
+      "name": "colorBlackTint06"
     },
     {
       "type": "color",
@@ -577,8 +598,8 @@
     {
       "type": "color",
       "category": "colors",
-      "value": "#444560ff",
-      "originalValue": "{!SKY_GRAY_TINT_01}",
+      "value": "#48484aff",
+      "originalValue": "{!BLACK_TINT_04}",
       "name": "lineDarkColor"
     },
     {
@@ -862,10 +883,10 @@
       "name": "textPrimaryLightColor"
     },
     {
-      "value": "#cdcdd7ff",
+      "value": "#8e8e93ff",
       "type": "color",
       "category": "text-colors",
-      "originalValue": "{!SKY_GRAY_TINT_05}",
+      "originalValue": "{!BLACK_TINT_06}",
       "name": "textQuaternaryDarkColor"
     },
     {
@@ -876,10 +897,10 @@
       "name": "textQuaternaryLightColor"
     },
     {
-      "value": "#8f90a0ff",
+      "value": "#8e8e93ff",
       "type": "color",
       "category": "text-colors",
-      "originalValue": "{!SKY_GRAY_TINT_03}",
+      "originalValue": "{!BLACK_TINT_06}",
       "name": "textSecondaryDarkColor"
     },
     {
@@ -911,10 +932,10 @@
       "name": "textSmLetterSpacing"
     },
     {
-      "value": "#b2b2bfff",
+      "value": "#8e8e93ff",
       "type": "color",
       "category": "text-colors",
-      "originalValue": "{!SKY_GRAY_TINT_04}",
+      "originalValue": "{!BLACK_TINT_06}",
       "name": "textTertiaryDarkColor"
     },
     {
@@ -1081,8 +1102,8 @@
       "value": "#cdcdd7ff",
       "originalValue": "{!SKY_GRAY_TINT_05}",
       "name": "lineColor",
-      "darkValue": "#444560ff",
-      "originalDarkValue": "{!SKY_GRAY_TINT_01}"
+      "darkValue": "#48484aff",
+      "originalDarkValue": "{!BLACK_TINT_04}"
     },
     {
       "type": "color",
@@ -1108,8 +1129,8 @@
       "category": "text-colors",
       "originalValue": "{!SKY_GRAY_TINT_03}",
       "name": "textQuaternaryColor",
-      "darkValue": "#cdcdd7ff",
-      "originalDarkValue": "{!SKY_GRAY_TINT_05}"
+      "darkValue": "#8e8e93ff",
+      "originalDarkValue": "{!BLACK_TINT_06}"
     },
     {
       "value": "#68697fff",
@@ -1117,8 +1138,8 @@
       "category": "text-colors",
       "originalValue": "{!SKY_GRAY_TINT_02}",
       "name": "textSecondaryColor",
-      "darkValue": "#8f90a0ff",
-      "originalDarkValue": "{!SKY_GRAY_TINT_03}"
+      "darkValue": "#8e8e93ff",
+      "originalDarkValue": "{!BLACK_TINT_06}"
     },
     {
       "value": "#8f90a0ff",
@@ -1126,8 +1147,8 @@
       "category": "text-colors",
       "originalValue": "{!SKY_GRAY_TINT_03}",
       "name": "textTertiaryColor",
-      "darkValue": "#b2b2bfff",
-      "originalDarkValue": "{!SKY_GRAY_TINT_04}"
+      "darkValue": "#8e8e93ff",
+      "originalDarkValue": "{!BLACK_TINT_06}"
     }
   ]
 }
