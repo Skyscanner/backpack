@@ -28,6 +28,12 @@
   <color name="BACKGROUND_ALTERNATIVE_SECONDARY_DARK_COLOR" category="colors">#ff1d1b20</color>
   <color name="BACKGROUND_ALTERNATIVE_SECONDARY_LIGHT_COLOR" category="colors">#ffffffff</color>
   <color name="BACKGROUND_DARK_COLOR" category="colors">#ff000000</color>
+  <color name="BACKGROUND_ELEVATION_DARK_01" category="text-colors">#ff1d1b20</color>
+  <color name="BACKGROUND_ELEVATION_DARK_02" category="text-colors">#ff2c2c2e</color>
+  <color name="BACKGROUND_ELEVATION_DARK_03" category="text-colors">#ff3a3a3c</color>
+  <color name="BACKGROUND_ELEVATION_LIGHT_01" category="text-colors">#ffffffff</color>
+  <color name="BACKGROUND_ELEVATION_LIGHT_02" category="text-colors">#ffffffff</color>
+  <color name="BACKGROUND_ELEVATION_LIGHT_03" category="text-colors">#ffffffff</color>
   <color name="BACKGROUND_LIGHT_COLOR" category="colors">#ffffffff</color>
   <color name="BACKGROUND_SECONDARY_DARK_COLOR" category="colors">#ff1d1b20</color>
   <color name="BACKGROUND_SECONDARY_LIGHT_COLOR" category="colors">#fff1f2f8</color>
@@ -52,7 +58,10 @@
   <color name="COLOR_BLACK" category="colors">#ff000000</color>
   <color name="COLOR_BLACK_TINT_01" category="colors">#ff1d1b20</color>
   <color name="COLOR_BLACK_TINT_02" category="colors">#ff2c2c2e</color>
-  <color name="COLOR_BLACK_TINT_03" category="colors">#ff636366</color>
+  <color name="COLOR_BLACK_TINT_03" category="colors">#ff3a3a3c</color>
+  <color name="COLOR_BLACK_TINT_04" category="colors">#ff48484a</color>
+  <color name="COLOR_BLACK_TINT_05" category="colors">#ff636366</color>
+  <color name="COLOR_BLACK_TINT_06" category="colors">#ff8e8e93</color>
   <color name="COLOR_BUNOL" category="colors">#ffff7b59</color>
   <color name="COLOR_ERFOUD" category="colors">#ffffb54d</color>
   <color name="COLOR_GLENCOE" category="colors">#ff73cec6</color>
@@ -140,14 +149,14 @@
   <property name="TEXT_LG_LETTER_SPACING" category="letter-spacings">-0.02</property>
   <color name="TEXT_PRIMARY_DARK_COLOR" category="text-colors">#ffffffff</color>
   <color name="TEXT_PRIMARY_LIGHT_COLOR" category="text-colors">#ff111236</color>
-  <color name="TEXT_QUATERNARY_DARK_COLOR" category="text-colors">#ffcdcdd7</color>
+  <color name="TEXT_QUATERNARY_DARK_COLOR" category="text-colors">#ff8e8e93</color>
   <color name="TEXT_QUATERNARY_LIGHT_COLOR" category="text-colors">#ff8f90a0</color>
-  <color name="TEXT_SECONDARY_DARK_COLOR" category="text-colors">#ff8f90a0</color>
+  <color name="TEXT_SECONDARY_DARK_COLOR" category="text-colors">#ff8e8e93</color>
   <color name="TEXT_SECONDARY_LIGHT_COLOR" category="text-colors">#ff68697f</color>
   <property name="TEXT_SM_FONT_SIZE" category="font-sizes">14sp</property>
   <property name="TEXT_SM_FONT_WEIGHT" category="font-weights">400</property>
   <property name="TEXT_SM_LETTER_SPACING" category="letter-spacings">0</property>
-  <color name="TEXT_TERTIARY_DARK_COLOR" category="text-colors">#ffb2b2bf</color>
+  <color name="TEXT_TERTIARY_DARK_COLOR" category="text-colors">#ff8e8e93</color>
   <color name="TEXT_TERTIARY_LIGHT_COLOR" category="text-colors">#ff8f90a0</color>
   <property name="TEXT_XL_FONT_SIZE" category="font-sizes">24sp</property>
   <property name="TEXT_XL_FONT_WEIGHT" category="font-weights">400</property>

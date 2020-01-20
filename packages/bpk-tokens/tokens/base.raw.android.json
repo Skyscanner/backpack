@@ -25,7 +25,16 @@
       "value": "#2C2C2E"
     },
     "BLACK_TINT_03": {
+      "value": "#3A3A3C"
+    },
+    "BLACK_TINT_04": {
+      "value": "#48484A"
+    },
+    "BLACK_TINT_05": {
       "value": "#636366"
+    },
+    "BLACK_TINT_06": {
+      "value": "#8E8E93"
     },
     "BORDER_RADIUS_LG": {
       "value": 24
@@ -322,6 +331,48 @@
       "originalValue": "{!BLACK}",
       "name": "BACKGROUND_DARK_COLOR"
     },
+    "BACKGROUND_ELEVATION_DARK_01": {
+      "type": "color",
+      "category": "text-colors",
+      "value": "#1d1b20ff",
+      "originalValue": "{!BLACK_TINT_01}",
+      "name": "BACKGROUND_ELEVATION_DARK_01"
+    },
+    "BACKGROUND_ELEVATION_DARK_02": {
+      "type": "color",
+      "category": "text-colors",
+      "value": "#2c2c2eff",
+      "originalValue": "{!BLACK_TINT_02}",
+      "name": "BACKGROUND_ELEVATION_DARK_02"
+    },
+    "BACKGROUND_ELEVATION_DARK_03": {
+      "type": "color",
+      "category": "text-colors",
+      "value": "#3a3a3cff",
+      "originalValue": "{!BLACK_TINT_03}",
+      "name": "BACKGROUND_ELEVATION_DARK_03"
+    },
+    "BACKGROUND_ELEVATION_LIGHT_01": {
+      "type": "color",
+      "category": "text-colors",
+      "value": "#ffffffff",
+      "originalValue": "{!WHITE}",
+      "name": "BACKGROUND_ELEVATION_LIGHT_01"
+    },
+    "BACKGROUND_ELEVATION_LIGHT_02": {
+      "type": "color",
+      "category": "text-colors",
+      "value": "#ffffffff",
+      "originalValue": "{!WHITE}",
+      "name": "BACKGROUND_ELEVATION_LIGHT_02"
+    },
+    "BACKGROUND_ELEVATION_LIGHT_03": {
+      "type": "color",
+      "category": "text-colors",
+      "value": "#ffffffff",
+      "originalValue": "{!WHITE}",
+      "name": "BACKGROUND_ELEVATION_LIGHT_03"
+    },
     "BACKGROUND_LIGHT_COLOR": {
       "type": "color",
       "category": "colors",
@@ -493,9 +544,30 @@
     "COLOR_BLACK_TINT_03": {
       "type": "color",
       "category": "colors",
-      "value": "#636366ff",
+      "value": "#3a3a3cff",
       "originalValue": "{!BLACK_TINT_03}",
       "name": "COLOR_BLACK_TINT_03"
+    },
+    "COLOR_BLACK_TINT_04": {
+      "type": "color",
+      "category": "colors",
+      "value": "#48484aff",
+      "originalValue": "{!BLACK_TINT_04}",
+      "name": "COLOR_BLACK_TINT_04"
+    },
+    "COLOR_BLACK_TINT_05": {
+      "type": "color",
+      "category": "colors",
+      "value": "#636366ff",
+      "originalValue": "{!BLACK_TINT_05}",
+      "name": "COLOR_BLACK_TINT_05"
+    },
+    "COLOR_BLACK_TINT_06": {
+      "type": "color",
+      "category": "colors",
+      "value": "#8e8e93ff",
+      "originalValue": "{!BLACK_TINT_06}",
+      "name": "COLOR_BLACK_TINT_06"
     },
     "COLOR_BUNOL": {
       "type": "color",
@@ -1107,10 +1179,10 @@
       "name": "TEXT_PRIMARY_LIGHT_COLOR"
     },
     "TEXT_QUATERNARY_DARK_COLOR": {
-      "value": "#cdcdd7ff",
+      "value": "#8e8e93ff",
       "type": "color",
       "category": "text-colors",
-      "originalValue": "{!SKY_GRAY_TINT_05}",
+      "originalValue": "{!BLACK_TINT_06}",
       "name": "TEXT_QUATERNARY_DARK_COLOR"
     },
     "TEXT_QUATERNARY_LIGHT_COLOR": {
@@ -1121,10 +1193,10 @@
       "name": "TEXT_QUATERNARY_LIGHT_COLOR"
     },
     "TEXT_SECONDARY_DARK_COLOR": {
-      "value": "#8f90a0ff",
+      "value": "#8e8e93ff",
       "type": "color",
       "category": "text-colors",
-      "originalValue": "{!SKY_GRAY_TINT_03}",
+      "originalValue": "{!BLACK_TINT_06}",
       "name": "TEXT_SECONDARY_DARK_COLOR"
     },
     "TEXT_SECONDARY_LIGHT_COLOR": {
@@ -1156,10 +1228,10 @@
       "name": "TEXT_SM_LETTER_SPACING"
     },
     "TEXT_TERTIARY_DARK_COLOR": {
-      "value": "#b2b2bfff",
+      "value": "#8e8e93ff",
       "type": "color",
       "category": "text-colors",
-      "originalValue": "{!SKY_GRAY_TINT_04}",
+      "originalValue": "{!BLACK_TINT_06}",
       "name": "TEXT_TERTIARY_DARK_COLOR"
     },
     "TEXT_TERTIARY_LIGHT_COLOR": {
@@ -1331,8 +1403,8 @@
       "category": "text-colors",
       "originalValue": "{!SKY_GRAY_TINT_03}",
       "name": "TEXT_QUATERNARY_COLOR",
-      "darkValue": "#cdcdd7ff",
-      "originalDarkValue": "{!SKY_GRAY_TINT_05}"
+      "darkValue": "#8e8e93ff",
+      "originalDarkValue": "{!BLACK_TINT_06}"
     },
     "TEXT_SECONDARY_COLOR": {
       "value": "#68697fff",
@@ -1340,8 +1412,8 @@
       "category": "text-colors",
       "originalValue": "{!SKY_GRAY_TINT_02}",
       "name": "TEXT_SECONDARY_COLOR",
-      "darkValue": "#8f90a0ff",
-      "originalDarkValue": "{!SKY_GRAY_TINT_03}"
+      "darkValue": "#8e8e93ff",
+      "originalDarkValue": "{!BLACK_TINT_06}"
     },
     "TEXT_TERTIARY_COLOR": {
       "value": "#8f90a0ff",
@@ -1349,8 +1421,8 @@
       "category": "text-colors",
       "originalValue": "{!SKY_GRAY_TINT_03}",
       "name": "TEXT_TERTIARY_COLOR",
-      "darkValue": "#b2b2bfff",
-      "originalDarkValue": "{!SKY_GRAY_TINT_04}"
+      "darkValue": "#8e8e93ff",
+      "originalDarkValue": "{!BLACK_TINT_06}"
     }
   },
   "propKeys": [
@@ -1362,6 +1434,12 @@
     "BACKGROUND_ALTERNATIVE_SECONDARY_DARK_COLOR",
     "BACKGROUND_ALTERNATIVE_SECONDARY_LIGHT_COLOR",
     "BACKGROUND_DARK_COLOR",
+    "BACKGROUND_ELEVATION_DARK_01",
+    "BACKGROUND_ELEVATION_DARK_02",
+    "BACKGROUND_ELEVATION_DARK_03",
+    "BACKGROUND_ELEVATION_LIGHT_01",
+    "BACKGROUND_ELEVATION_LIGHT_02",
+    "BACKGROUND_ELEVATION_LIGHT_03",
     "BACKGROUND_LIGHT_COLOR",
     "BACKGROUND_SECONDARY_DARK_COLOR",
     "BACKGROUND_SECONDARY_LIGHT_COLOR",
@@ -1387,6 +1465,9 @@
     "COLOR_BLACK_TINT_01",
     "COLOR_BLACK_TINT_02",
     "COLOR_BLACK_TINT_03",
+    "COLOR_BLACK_TINT_04",
+    "COLOR_BLACK_TINT_05",
+    "COLOR_BLACK_TINT_06",
     "COLOR_BUNOL",
     "COLOR_ERFOUD",
     "COLOR_GLENCOE",
