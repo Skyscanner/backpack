@@ -37,6 +37,24 @@ export const backgroundColor = {
  dark: "rgb(0, 0, 0)",
 };
 export const backgroundDarkColor = "rgb(0, 0, 0)";
+export const backgroundElevation01Color = {
+ dark: "rgb(29, 27, 32)",
+ light: "rgb(255, 255, 255)",
+};
+export const backgroundElevation01DarkColor = "rgb(29, 27, 32)";
+export const backgroundElevation01LightColor = "rgb(255, 255, 255)";
+export const backgroundElevation02Color = {
+ dark: "rgb(44, 44, 46)",
+ light: "rgb(255, 255, 255)",
+};
+export const backgroundElevation02DarkColor = "rgb(44, 44, 46)";
+export const backgroundElevation02LightColor = "rgb(255, 255, 255)";
+export const backgroundElevation03Color = {
+ dark: "rgb(58, 58, 60)",
+ light: "rgb(255, 255, 255)",
+};
+export const backgroundElevation03DarkColor = "rgb(58, 58, 60)";
+export const backgroundElevation03LightColor = "rgb(255, 255, 255)";
 export const backgroundLightColor = "rgb(255, 255, 255)";
 export const backgroundSecondaryColor = {
  dark: "rgb(29, 27, 32)",
@@ -355,6 +373,9 @@ primaryColor,
 secondaryColor,
 };
 export const semanticTextColors = {
+backgroundElevation01Color,
+backgroundElevation02Color,
+backgroundElevation03Color,
 textPrimaryColor,
 textQuaternaryColor,
 textSecondaryColor,
@@ -375,6 +396,12 @@ spacingXl,
 spacingXxl,
 };
 export const textColors = {
+backgroundElevation01DarkColor,
+backgroundElevation01LightColor,
+backgroundElevation02DarkColor,
+backgroundElevation02LightColor,
+backgroundElevation03DarkColor,
+backgroundElevation03LightColor,
 textPrimaryDarkColor,
 textPrimaryLightColor,
 textQuaternaryDarkColor,
