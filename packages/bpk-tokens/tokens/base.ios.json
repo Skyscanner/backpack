@@ -58,6 +58,48 @@
     },
     {
       "type": "color",
+      "category": "text-colors",
+      "value": "#1d1b20ff",
+      "originalValue": "{!BLACK_TINT_01}",
+      "name": "backgroundElevation01DarkColor"
+    },
+    {
+      "type": "color",
+      "category": "text-colors",
+      "value": "#ffffffff",
+      "originalValue": "{!WHITE}",
+      "name": "backgroundElevation01LightColor"
+    },
+    {
+      "type": "color",
+      "category": "text-colors",
+      "value": "#2c2c2eff",
+      "originalValue": "{!BLACK_TINT_02}",
+      "name": "backgroundElevation02DarkColor"
+    },
+    {
+      "type": "color",
+      "category": "text-colors",
+      "value": "#ffffffff",
+      "originalValue": "{!WHITE}",
+      "name": "backgroundElevation02LightColor"
+    },
+    {
+      "type": "color",
+      "category": "text-colors",
+      "value": "#3a3a3cff",
+      "originalValue": "{!BLACK_TINT_03}",
+      "name": "backgroundElevation03DarkColor"
+    },
+    {
+      "type": "color",
+      "category": "text-colors",
+      "value": "#ffffffff",
+      "originalValue": "{!WHITE}",
+      "name": "backgroundElevation03LightColor"
+    },
+    {
+      "type": "color",
       "category": "colors",
       "value": "#ffffffff",
       "originalValue": "{!WHITE}",
@@ -1077,6 +1119,33 @@
       "name": "backgroundColor",
       "darkValue": "#000000ff",
       "originalDarkValue": "{!BLACK}"
+    },
+    {
+      "type": "color",
+      "category": "text-colors",
+      "value": "#ffffffff",
+      "originalValue": "{!WHITE}",
+      "name": "backgroundElevation01Color",
+      "darkValue": "#1d1b20ff",
+      "originalDarkValue": "{!BLACK_TINT_01}"
+    },
+    {
+      "type": "color",
+      "category": "text-colors",
+      "value": "#ffffffff",
+      "originalValue": "{!WHITE}",
+      "name": "backgroundElevation02Color",
+      "darkValue": "#2c2c2eff",
+      "originalDarkValue": "{!BLACK_TINT_02}"
+    },
+    {
+      "type": "color",
+      "category": "text-colors",
+      "value": "#ffffffff",
+      "originalValue": "{!WHITE}",
+      "name": "backgroundElevation03Color",
+      "darkValue": "#3a3a3cff",
+      "originalDarkValue": "{!BLACK_TINT_03}"
     },
     {
       "type": "color",

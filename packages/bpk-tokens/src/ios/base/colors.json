@@ -50,6 +50,36 @@
     "BACKGROUND_TERTIARY_DARK_COLOR": {
       "value": "{!BLACK_TINT_02}"
     },
+    "BACKGROUND_ELEVATION_01_LIGHT_COLOR": {
+      "value": "{!WHITE}",
+      "type": "color",
+      "category": "text-colors"
+    },
+    "BACKGROUND_ELEVATION_01_DARK_COLOR": {
+      "value": "{!BLACK_TINT_01}",
+      "type": "color",
+      "category": "text-colors"
+    },
+    "BACKGROUND_ELEVATION_02_LIGHT_COLOR": {
+      "value": "{!WHITE}",
+      "type": "color",
+      "category": "text-colors"
+    },
+    "BACKGROUND_ELEVATION_02_DARK_COLOR": {
+      "value": "{!BLACK_TINT_02}",
+      "type": "color",
+      "category": "text-colors"
+    },
+    "BACKGROUND_ELEVATION_03_LIGHT_COLOR": {
+      "value": "{!WHITE}",
+      "type": "color",
+      "category": "text-colors"
+    },
+    "BACKGROUND_ELEVATION_03_DARK_COLOR": {
+      "value": "{!BLACK_TINT_03}",
+      "type": "color",
+      "category": "text-colors"
+    },
     "COLOR_WHITE": {
       "value": "{!WHITE}"
     },
