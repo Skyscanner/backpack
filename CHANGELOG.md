@@ -2,6 +2,14 @@
 
 [Unreleased changes](./UNRELEASED.yaml).
 
+# 2020-01-21 - New iOS elevation tokens
+
+**Added:**
+
+ - bpk-tokens: 30.0.0 => 30.1.0
+   - Added new elevation tokens for iOS and React Native iOS
+
+
 # 2020-01-21 - Renamed elevation tokens for Android
 
 **Breaking:**
