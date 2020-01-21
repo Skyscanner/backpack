@@ -37,24 +37,24 @@ export const backgroundColor = {
  dark: "rgb(0, 0, 0)",
 };
 export const backgroundDarkColor = "rgb(0, 0, 0)";
-export const backgroundElevation01 = {
+export const backgroundElevation01Color = {
  dark: "rgb(29, 27, 32)",
  light: "rgb(255, 255, 255)",
 };
-export const backgroundElevation02 = {
+export const backgroundElevation01DarkColor = "rgb(29, 27, 32)";
+export const backgroundElevation01LightColor = "rgb(255, 255, 255)";
+export const backgroundElevation02Color = {
  dark: "rgb(44, 44, 46)",
  light: "rgb(255, 255, 255)",
 };
-export const backgroundElevation03 = {
+export const backgroundElevation02DarkColor = "rgb(44, 44, 46)";
+export const backgroundElevation02LightColor = "rgb(255, 255, 255)";
+export const backgroundElevation03Color = {
  dark: "rgb(58, 58, 60)",
  light: "rgb(255, 255, 255)",
 };
-export const backgroundElevationDark01 = "rgb(29, 27, 32)";
-export const backgroundElevationDark02 = "rgb(44, 44, 46)";
-export const backgroundElevationDark03 = "rgb(58, 58, 60)";
-export const backgroundElevationLight01 = "rgb(255, 255, 255)";
-export const backgroundElevationLight02 = "rgb(255, 255, 255)";
-export const backgroundElevationLight03 = "rgb(255, 255, 255)";
+export const backgroundElevation03DarkColor = "rgb(58, 58, 60)";
+export const backgroundElevation03LightColor = "rgb(255, 255, 255)";
 export const backgroundLightColor = "rgb(255, 255, 255)";
 export const backgroundSecondaryColor = {
  dark: "rgb(29, 27, 32)",
@@ -149,10 +149,10 @@ export const letterSpacingXs = 0;
 export const letterSpacingXxl = -0.8;
 export const letterSpacingXxxl = -1;
 export const lineColor = {
- dark: "rgb(68, 69, 96)",
+ dark: "rgb(72, 72, 74)",
  light: "rgb(205, 205, 215)",
 };
-export const lineDarkColor = "rgb(68, 69, 96)";
+export const lineDarkColor = "rgb(72, 72, 74)";
 export const lineHeightBase = 19;
 export const lineHeightLg = 23;
 export const lineHeightSm = 16;
@@ -362,9 +362,9 @@ primaryColor,
 secondaryColor,
 };
 export const semanticTextColors = {
-backgroundElevation01,
-backgroundElevation02,
-backgroundElevation03,
+backgroundElevation01Color,
+backgroundElevation02Color,
+backgroundElevation03Color,
 textPrimaryColor,
 textQuaternaryColor,
 textSecondaryColor,
@@ -385,12 +385,12 @@ spacingXl,
 spacingXxl,
 };
 export const textColors = {
-backgroundElevationDark01,
-backgroundElevationDark02,
-backgroundElevationDark03,
-backgroundElevationLight01,
-backgroundElevationLight02,
-backgroundElevationLight03,
+backgroundElevation01DarkColor,
+backgroundElevation01LightColor,
+backgroundElevation02DarkColor,
+backgroundElevation02LightColor,
+backgroundElevation03DarkColor,
+backgroundElevation03LightColor,
 textPrimaryDarkColor,
 textPrimaryLightColor,
 textQuaternaryDarkColor,
