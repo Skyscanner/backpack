@@ -2,6 +2,14 @@
 
 [Unreleased changes](./UNRELEASED.yaml).
 
+# 2020-01-21 - Renamed elevation tokens for Android
+
+**Breaking:**
+
+ - bpk-tokens: 29.6.1 => 30.0.0
+   - renamed android elevation tokens
+
+
 # 2020-01-20 - New dark mode colour palette
 
 **Fixed:**

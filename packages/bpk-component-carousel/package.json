@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-carousel",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "Backpack carousel component.",
   "main": "index.js",
   "repository": {
@@ -13,7 +13,7 @@
     "react": "^15.0.0 || ^16.0.0"
   },
   "dependencies": {
-    "bpk-mixins": "^19.0.25",
+    "bpk-mixins": "^19.0.26",
     "bpk-react-utils": "^2.9.0",
     "prop-types": "^15.5.8",
     "react-swipeable": "^5.5.0"
@@ -22,7 +22,7 @@
     "registry": "https://registry.npmjs.org/"
   },
   "devDependencies": {
-    "bpk-component-button": "^3.2.4",
-    "bpk-component-icon": "^5.0.26"
+    "bpk-component-button": "^3.2.5",
+    "bpk-component-icon": "^5.0.27"
   }
 }
