@@ -28,12 +28,12 @@
   <color name="BACKGROUND_ALTERNATIVE_SECONDARY_DARK_COLOR" category="colors">#ff1d1b20</color>
   <color name="BACKGROUND_ALTERNATIVE_SECONDARY_LIGHT_COLOR" category="colors">#ffffffff</color>
   <color name="BACKGROUND_DARK_COLOR" category="colors">#ff000000</color>
-  <color name="BACKGROUND_ELEVATION_DARK_01" category="text-colors">#ff1d1b20</color>
-  <color name="BACKGROUND_ELEVATION_DARK_02" category="text-colors">#ff2c2c2e</color>
-  <color name="BACKGROUND_ELEVATION_DARK_03" category="text-colors">#ff3a3a3c</color>
-  <color name="BACKGROUND_ELEVATION_LIGHT_01" category="text-colors">#ffffffff</color>
-  <color name="BACKGROUND_ELEVATION_LIGHT_02" category="text-colors">#ffffffff</color>
-  <color name="BACKGROUND_ELEVATION_LIGHT_03" category="text-colors">#ffffffff</color>
+  <color name="BACKGROUND_ELEVATION_01_DARK_COLOR" category="text-colors">#ff1d1b20</color>
+  <color name="BACKGROUND_ELEVATION_01_LIGHT_COLOR" category="text-colors">#ffffffff</color>
+  <color name="BACKGROUND_ELEVATION_02_DARK_COLOR" category="text-colors">#ff2c2c2e</color>
+  <color name="BACKGROUND_ELEVATION_02_LIGHT_COLOR" category="text-colors">#ffffffff</color>
+  <color name="BACKGROUND_ELEVATION_03_DARK_COLOR" category="text-colors">#ff3a3a3c</color>
+  <color name="BACKGROUND_ELEVATION_03_LIGHT_COLOR" category="text-colors">#ffffffff</color>
   <color name="BACKGROUND_LIGHT_COLOR" category="colors">#ffffffff</color>
   <color name="BACKGROUND_SECONDARY_DARK_COLOR" category="colors">#ff1d1b20</color>
   <color name="BACKGROUND_SECONDARY_LIGHT_COLOR" category="colors">#fff1f2f8</color>
@@ -119,7 +119,7 @@
   <property name="LETTER_SPACING_XS" category="letter-spacings">0</property>
   <property name="LETTER_SPACING_XXL" category="letter-spacings">-0.02666666666666667</property>
   <property name="LETTER_SPACING_XXXL" category="letter-spacings">-0.027777777777777776</property>
-  <color name="LINE_DARK_COLOR" category="colors">#ff444560</color>
+  <color name="LINE_DARK_COLOR" category="colors">#ff48484a</color>
   <property name="LINE_HEIGHT_BASE" category="typesettings">19dp</property>
   <property name="LINE_HEIGHT_LG" category="typesettings">23dp</property>
   <property name="LINE_HEIGHT_SM" category="typesettings">16dp</property>
