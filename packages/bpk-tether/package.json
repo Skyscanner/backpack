@@ -1,6 +1,6 @@
 {
   "name": "bpk-tether",
-  "version": "1.0.16",
+  "version": "1.0.17",
   "description": "Wrapper and utils for Tether.",
   "main": "index.js",
   "repository": {
@@ -15,5 +15,5 @@
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
-  "gitHead": "6dde68131ccdde6660da72686f2d6e5ce6659a32"
+  "gitHead": "6dea0c366b9237ca3a6df91c0f856594d30cc7d8"
 }

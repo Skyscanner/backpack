@@ -1,6 +1,6 @@
 {
   "name": "bpk-react-utils",
-  "version": "2.9.1",
+  "version": "2.9.2",
   "description": "Utilities for Backpack's React components.",
   "main": "index.js",
   "repository": {
@@ -22,5 +22,5 @@
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
-  "gitHead": "6dde68131ccdde6660da72686f2d6e5ce6659a32"
+  "gitHead": "6dea0c366b9237ca3a6df91c0f856594d30cc7d8"
 }
