@@ -164,6 +164,17 @@ storiesOf('bpk-component-calendar', module)
       changeMonthLabel="Change month"
     />
   ))
+  .add('Calendar - weekDayKey is nameNarrow', () => (
+    <CalendarContainer
+      id="myCalendar"
+      formatMonth={formatMonth}
+      formatDateFull={formatDateFull}
+      daysOfWeek={weekDays}
+      weekStartsOn={0}
+      changeMonthLabel="Change month"
+      weekDayKey="nameNarrow"
+    />
+  ))
   .add('Calendar - ar-AE locale', () => (
     <CalendarContainer
       id="myCalendar"
