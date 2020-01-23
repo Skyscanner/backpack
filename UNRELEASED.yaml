@@ -24,6 +24,3 @@
 #   FIXED:
 #     - bpk-component-horcrux:
 #       - Fixed issue where `BpkHorcrux` would occasionally possess the living.
-ADDED:
-    - bpk-component-calendar:
-        - Added support for `weekDayKey` in order to have different formats of week days.

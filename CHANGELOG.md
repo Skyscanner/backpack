@@ -2,6 +2,12 @@
 
 [Unreleased changes](./UNRELEASED.yaml).
 
+# 2020-01-21 - Add new week day format option to calendar
+
+**Added:**
+- bpk-component-calendar: 6.1.13 => 6.2.0
+  - Added support for `weekDayKey` in order to have different formats of week days.
+
 # 2020-01-21 - New iOS elevation tokens
 
 **Added:**
