@@ -25,6 +25,7 @@ const WeekDay = PropTypes.shape({
   isWeekend: PropTypes.bool,
 });
 
+const WeekDayKey = PropTypes.string;
 const DaysOfWeek = PropTypes.arrayOf(WeekDay);
 const DateModifiers = PropTypes.objectOf(PropTypes.func);
 const ReactComponent = PropTypes.oneOfType([PropTypes.string, PropTypes.func]);
@@ -34,4 +35,5 @@ export default {
   DaysOfWeek,
   ReactComponent,
   WeekDay,
+  WeekDayKey,
 };

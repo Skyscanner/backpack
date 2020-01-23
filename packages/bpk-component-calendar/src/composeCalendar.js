@@ -56,6 +56,7 @@ const composeCalendar = (Nav, GridHeader, Grid, CalendarDate) => {
       headerProps,
       gridProps,
       dateProps,
+      weekDayKey,
     } = props;
 
     if (className) {
@@ -101,6 +102,7 @@ const composeCalendar = (Nav, GridHeader, Grid, CalendarDate) => {
             daysOfWeek={daysOfWeek}
             showWeekendSeparator={showWeekendSeparator}
             weekStartsOn={weekStartsOn}
+            weekDayKey={weekDayKey}
             className={headerClasses.join(' ')}
             {...headerProps}
           />
@@ -156,6 +158,7 @@ const composeCalendar = (Nav, GridHeader, Grid, CalendarDate) => {
     selectedDate: PropTypes.instanceOf(Date),
     showWeekendSeparator: PropTypes.bool,
     gridClassName: PropTypes.string,
+    weekDayKey: PropTypes.string,
     /* eslint-disable react/forbid-prop-types */
     navProps: PropTypes.object,
     headerProps: PropTypes.object,
@@ -179,6 +182,7 @@ const composeCalendar = (Nav, GridHeader, Grid, CalendarDate) => {
     selectedDate: null,
     showWeekendSeparator: true,
     gridClassName: null,
+    weekDayKey: 'nameAbbr',
     navProps: null,
     headerProps: null,
     gridProps: null,

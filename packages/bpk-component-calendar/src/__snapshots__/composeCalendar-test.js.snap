@@ -22,46 +22,54 @@ exports[`composeCalendar should compose a nav, header, grid and date component c
           "isWeekend": true,
           "name": "Sunday",
           "nameAbbr": "Sun",
+          "nameNarrow": "S",
         },
         Object {
           "index": 1,
           "isWeekend": false,
           "name": "Monday",
           "nameAbbr": "Mon",
+          "nameNarrow": "M",
         },
         Object {
           "index": 2,
           "isWeekend": false,
           "name": "Tuesday",
           "nameAbbr": "Tue",
+          "nameNarrow": "T",
         },
         Object {
           "index": 3,
           "isWeekend": false,
           "name": "Wednesday",
           "nameAbbr": "Wed",
+          "nameNarrow": "W",
         },
         Object {
           "index": 4,
           "isWeekend": false,
           "name": "Thursday",
           "nameAbbr": "Thu",
+          "nameNarrow": "T",
         },
         Object {
           "index": 5,
           "isWeekend": false,
           "name": "Friday",
           "nameAbbr": "Fri",
+          "nameNarrow": "F",
         },
         Object {
           "index": 6,
           "isWeekend": true,
           "name": "Saturday",
           "nameAbbr": "Sat",
+          "nameNarrow": "S",
         },
       ]
     }
     showWeekendSeparator={true}
+    weekDayKey="nameAbbr"
     weekStartsOn={1}
   />
   <Grid
@@ -76,42 +84,49 @@ exports[`composeCalendar should compose a nav, header, grid and date component c
           "isWeekend": true,
           "name": "Sunday",
           "nameAbbr": "Sun",
+          "nameNarrow": "S",
         },
         Object {
           "index": 1,
           "isWeekend": false,
           "name": "Monday",
           "nameAbbr": "Mon",
+          "nameNarrow": "M",
         },
         Object {
           "index": 2,
           "isWeekend": false,
           "name": "Tuesday",
           "nameAbbr": "Tue",
+          "nameNarrow": "T",
         },
         Object {
           "index": 3,
           "isWeekend": false,
           "name": "Wednesday",
           "nameAbbr": "Wed",
+          "nameNarrow": "W",
         },
         Object {
           "index": 4,
           "isWeekend": false,
           "name": "Thursday",
           "nameAbbr": "Thu",
+          "nameNarrow": "T",
         },
         Object {
           "index": 5,
           "isWeekend": false,
           "name": "Friday",
           "nameAbbr": "Fri",
+          "nameNarrow": "F",
         },
         Object {
           "index": 6,
           "isWeekend": true,
           "name": "Saturday",
           "nameAbbr": "Sat",
+          "nameNarrow": "S",
         },
       ]
     }
@@ -170,46 +185,54 @@ exports[`composeCalendar should render with "fixedWidth" set to false 1`] = `
           "isWeekend": true,
           "name": "Sunday",
           "nameAbbr": "Sun",
+          "nameNarrow": "S",
         },
         Object {
           "index": 1,
           "isWeekend": false,
           "name": "Monday",
           "nameAbbr": "Mon",
+          "nameNarrow": "M",
         },
         Object {
           "index": 2,
           "isWeekend": false,
           "name": "Tuesday",
           "nameAbbr": "Tue",
+          "nameNarrow": "T",
         },
         Object {
           "index": 3,
           "isWeekend": false,
           "name": "Wednesday",
           "nameAbbr": "Wed",
+          "nameNarrow": "W",
         },
         Object {
           "index": 4,
           "isWeekend": false,
           "name": "Thursday",
           "nameAbbr": "Thu",
+          "nameNarrow": "T",
         },
         Object {
           "index": 5,
           "isWeekend": false,
           "name": "Friday",
           "nameAbbr": "Fri",
+          "nameNarrow": "F",
         },
         Object {
           "index": 6,
           "isWeekend": true,
           "name": "Saturday",
           "nameAbbr": "Sat",
+          "nameNarrow": "S",
         },
       ]
     }
     showWeekendSeparator={true}
+    weekDayKey="nameAbbr"
     weekStartsOn={1}
   />
   <Grid
@@ -224,42 +247,49 @@ exports[`composeCalendar should render with "fixedWidth" set to false 1`] = `
           "isWeekend": true,
           "name": "Sunday",
           "nameAbbr": "Sun",
+          "nameNarrow": "S",
         },
         Object {
           "index": 1,
           "isWeekend": false,
           "name": "Monday",
           "nameAbbr": "Mon",
+          "nameNarrow": "M",
         },
         Object {
           "index": 2,
           "isWeekend": false,
           "name": "Tuesday",
           "nameAbbr": "Tue",
+          "nameNarrow": "T",
         },
         Object {
           "index": 3,
           "isWeekend": false,
           "name": "Wednesday",
           "nameAbbr": "Wed",
+          "nameNarrow": "W",
         },
         Object {
           "index": 4,
           "isWeekend": false,
           "name": "Thursday",
           "nameAbbr": "Thu",
+          "nameNarrow": "T",
         },
         Object {
           "index": 5,
           "isWeekend": false,
           "name": "Friday",
           "nameAbbr": "Fri",
+          "nameNarrow": "F",
         },
         Object {
           "index": 6,
           "isWeekend": true,
           "name": "Saturday",
           "nameAbbr": "Sat",
+          "nameNarrow": "S",
         },
       ]
     }
@@ -303,46 +333,54 @@ exports[`composeCalendar should render with custom className prop correctly 1`] 
           "isWeekend": true,
           "name": "Sunday",
           "nameAbbr": "Sun",
+          "nameNarrow": "S",
         },
         Object {
           "index": 1,
           "isWeekend": false,
           "name": "Monday",
           "nameAbbr": "Mon",
+          "nameNarrow": "M",
         },
         Object {
           "index": 2,
           "isWeekend": false,
           "name": "Tuesday",
           "nameAbbr": "Tue",
+          "nameNarrow": "T",
         },
         Object {
           "index": 3,
           "isWeekend": false,
           "name": "Wednesday",
           "nameAbbr": "Wed",
+          "nameNarrow": "W",
         },
         Object {
           "index": 4,
           "isWeekend": false,
           "name": "Thursday",
           "nameAbbr": "Thu",
+          "nameNarrow": "T",
         },
         Object {
           "index": 5,
           "isWeekend": false,
           "name": "Friday",
           "nameAbbr": "Fri",
+          "nameNarrow": "F",
         },
         Object {
           "index": 6,
           "isWeekend": true,
           "name": "Saturday",
           "nameAbbr": "Sat",
+          "nameNarrow": "S",
         },
       ]
     }
     showWeekendSeparator={true}
+    weekDayKey="nameAbbr"
     weekStartsOn={1}
   />
   <Grid
@@ -357,42 +395,49 @@ exports[`composeCalendar should render with custom className prop correctly 1`] 
           "isWeekend": true,
           "name": "Sunday",
           "nameAbbr": "Sun",
+          "nameNarrow": "S",
         },
         Object {
           "index": 1,
           "isWeekend": false,
           "name": "Monday",
           "nameAbbr": "Mon",
+          "nameNarrow": "M",
         },
         Object {
           "index": 2,
           "isWeekend": false,
           "name": "Tuesday",
           "nameAbbr": "Tue",
+          "nameNarrow": "T",
         },
         Object {
           "index": 3,
           "isWeekend": false,
           "name": "Wednesday",
           "nameAbbr": "Wed",
+          "nameNarrow": "W",
         },
         Object {
           "index": 4,
           "isWeekend": false,
           "name": "Thursday",
           "nameAbbr": "Thu",
+          "nameNarrow": "T",
         },
         Object {
           "index": 5,
           "isWeekend": false,
           "name": "Friday",
           "nameAbbr": "Fri",
+          "nameNarrow": "F",
         },
         Object {
           "index": 6,
           "isWeekend": true,
           "name": "Saturday",
           "nameAbbr": "Sat",
+          "nameNarrow": "S",
         },
       ]
     }
@@ -439,42 +484,49 @@ exports[`composeCalendar should render without a header element 1`] = `
           "isWeekend": true,
           "name": "Sunday",
           "nameAbbr": "Sun",
+          "nameNarrow": "S",
         },
         Object {
           "index": 1,
           "isWeekend": false,
           "name": "Monday",
           "nameAbbr": "Mon",
+          "nameNarrow": "M",
         },
         Object {
           "index": 2,
           "isWeekend": false,
           "name": "Tuesday",
           "nameAbbr": "Tue",
+          "nameNarrow": "T",
         },
         Object {
           "index": 3,
           "isWeekend": false,
           "name": "Wednesday",
           "nameAbbr": "Wed",
+          "nameNarrow": "W",
         },
         Object {
           "index": 4,
           "isWeekend": false,
           "name": "Thursday",
           "nameAbbr": "Thu",
+          "nameNarrow": "T",
         },
         Object {
           "index": 5,
           "isWeekend": false,
           "name": "Friday",
           "nameAbbr": "Fri",
+          "nameNarrow": "F",
         },
         Object {
           "index": 6,
           "isWeekend": true,
           "name": "Saturday",
           "nameAbbr": "Sat",
+          "nameNarrow": "S",
         },
       ]
     }
@@ -512,42 +564,49 @@ exports[`composeCalendar should render without a nav or header element 1`] = `
           "isWeekend": true,
           "name": "Sunday",
           "nameAbbr": "Sun",
+          "nameNarrow": "S",
         },
         Object {
           "index": 1,
           "isWeekend": false,
           "name": "Monday",
           "nameAbbr": "Mon",
+          "nameNarrow": "M",
         },
         Object {
           "index": 2,
           "isWeekend": false,
           "name": "Tuesday",
           "nameAbbr": "Tue",
+          "nameNarrow": "T",
         },
         Object {
           "index": 3,
           "isWeekend": false,
           "name": "Wednesday",
           "nameAbbr": "Wed",
+          "nameNarrow": "W",
         },
         Object {
           "index": 4,
           "isWeekend": false,
           "name": "Thursday",
           "nameAbbr": "Thu",
+          "nameNarrow": "T",
         },
         Object {
           "index": 5,
           "isWeekend": false,
           "name": "Friday",
           "nameAbbr": "Fri",
+          "nameNarrow": "F",
         },
         Object {
           "index": 6,
           "isWeekend": true,
           "name": "Saturday",
           "nameAbbr": "Sat",
+          "nameNarrow": "S",
         },
       ]
     }

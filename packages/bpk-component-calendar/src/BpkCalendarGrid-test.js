@@ -149,4 +149,22 @@ describe('BpkCalendarGrid', () => {
     expect(onDateClick.mock.calls.length).toBe(2);
     expect(onDateClick.mock.calls[1][0]).toEqual(new Date(2016, 9, 6));
   });
+
+  it('should render correctly with "weekDayKey" attribute set to nameNarrow', () => {
+    const tree = renderer
+      .create(
+        <BpkCalendarGrid
+          month={new Date('2016-10')}
+          formatMonth={formatMonth}
+          formatDateFull={formatDateFull}
+          DateComponent={BpkCalendarDate}
+          daysOfWeek={weekDays}
+          weekStartsOn={0}
+          showWeekendSeparator={false}
+          weekDayKey="nameNarrow"
+        />,
+      )
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 });
