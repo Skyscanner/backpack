@@ -147,7 +147,6 @@
     "sass-loader": "^8.0.0",
     "sassdoc": "^2.7.0",
     "semver": "^6.0.0",
-    "static-site-generator-webpack-plugin": "github:skyscanner/static-site-generator-webpack-plugin#7bac616",
     "style-loader": "^1.0.0",
     "stylelint": "^11.0.0",
     "stylelint-config-skyscanner": "^2.0.0-beta.2",
