@@ -34,7 +34,7 @@ that can be used to push and pop views from the stack component.
 
 ```js
 import React from 'react';
-import BpkNavigationStack from 'bpk-component-navigation-stack';
+import BpkNavigationStack, { withNavigationStackState } from 'bpk-component-navigation-stack';
 
 const StatefulNavigationStack = withNavigationStackState(BpkNavigationStack);
 
