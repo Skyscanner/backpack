@@ -146,7 +146,7 @@
     "rimraf": "^3.0.1",
     "sass-loader": "^8.0.0",
     "sassdoc": "^2.7.0",
-    "semver": "^6.0.0",
+    "semver": "^7.0.0",
     "style-loader": "^1.0.0",
     "stylelint": "^11.0.0",
     "stylelint-config-skyscanner": "^2.0.0-beta.2",
