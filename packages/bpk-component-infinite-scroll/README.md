@@ -177,3 +177,5 @@ Updates the internal array and triggers all listeners.
 ### `seeMoreAfter`
 
 `seeMoreAfter` is how many scrolls should happen before a 'See more' button is displayed. This only happens once.
+
+To always show the 'See more' button, you can pass `-1` as this prop's value.

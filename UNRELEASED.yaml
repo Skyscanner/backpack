@@ -24,3 +24,7 @@
 #   FIXED:
 #     - bpk-component-horcrux:
 #       - Fixed issue where `BpkHorcrux` would occasionally possess the living.
+
+ADDED:
+  - bpk-component-infinite-scroll:
+    - Can now pass -1 to `seeMoreAfter` prop to have the `See more` button always show.
