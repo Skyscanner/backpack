@@ -62,6 +62,7 @@ export type State = {
   elementsToRender: Array<any>,
   isListFinished: boolean,
   showSeeMore: boolean,
+  alwaysShowSeeMore: boolean,
 };
 
 type ExtendedProps = {
@@ -119,6 +120,7 @@ const withInfiniteScroll = <T: ExtendedProps>(
         elementsToRender: [],
         isListFinished: false,
         showSeeMore: false,
+        alwaysShowSeeMore: props.seeMoreAfter === -1,
       };
 
       this.props.dataSource.onDataChange(this.updateData);
@@ -194,6 +196,21 @@ const withInfiniteScroll = <T: ExtendedProps>(
       }).then(newState => this.setStateAfterDsUpdate(newState));
     };
 
+    shouldShowSeeMore = (
+      computeShowSeeMore: boolean,
+      seeMoreAfter: ?number,
+      index: number,
+      elementsPerScroll: number,
+    ) => {
+      if (this.state.alwaysShowSeeMore) {
+        return true;
+      }
+      if (computeShowSeeMore) {
+        return seeMoreAfter === index / elementsPerScroll;
+      }
+      return this.state.showSeeMore;
+    };
+
     fetchItems(config): Promise<$Shape<State>> {
       const { onScrollFinished, seeMoreAfter } = this.props;
       const {
@@ -222,9 +239,12 @@ const withInfiniteScroll = <T: ExtendedProps>(
             result = {
               index: nextIndex,
               elementsToRender: (elementsToRender || []).concat(nextElements),
-              showSeeMore: computeShowSeeMore
-                ? seeMoreAfter === index / elementsPerScroll
-                : this.state.showSeeMore,
+              showSeeMore: this.shouldShowSeeMore(
+                computeShowSeeMore,
+                seeMoreAfter,
+                index,
+                elementsPerScroll,
+              ),
               isListFinished: nextElements.length < elementsPerScroll,
             };
           }

@@ -147,6 +147,34 @@ describe('withInfiniteScroll', () => {
     expect(toJson(tree)).toMatchSnapshot();
   });
 
+  it('should still show a "Show more" button after first click if set to always show', async () => {
+    const tree = mount(
+      <InfiniteList
+        dataSource={new ArrayDataSource(elementsArray)}
+        elementsPerScroll={2}
+        renderSeeMoreComponent={({ onSeeMoreClick }) => (
+          <button type="button" id="test-button" onClick={onSeeMoreClick}>
+            see more
+          </button>
+        )}
+        seeMoreAfter={-1}
+      />,
+    );
+
+    await intersect();
+    tree.update();
+
+    let button = tree.find('#test-button');
+    button.simulate('click');
+
+    await intersect();
+    tree.update();
+
+    button = tree.find('#test-button');
+    expect(button).toBeTruthy();
+    expect(toJson(tree)).toMatchSnapshot();
+  });
+
   it('should render correctly with a "renderLoadingComponent" attribute', () => {
     const tree = mount(
       <InfiniteList

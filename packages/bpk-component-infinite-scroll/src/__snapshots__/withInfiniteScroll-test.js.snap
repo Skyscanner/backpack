@@ -959,3 +959,76 @@ exports[`withInfiniteScroll should render correctly with an "elementsPerScroll" 
   </div>
 </WithInfiniteScroll>
 `;
+
+exports[`withInfiniteScroll should still show a "Show more" button after first click if set to always show 1`] = `
+<WithInfiniteScroll
+  dataSource={
+    ArrayDataSource {
+      "elements": Array [
+        "Element 0",
+        "Element 1",
+        "Element 2",
+        "Element 3",
+        "Element 4",
+      ],
+      "listeners": Array [
+        [Function],
+      ],
+      "triggerListeners": [Function],
+    }
+  }
+  elementsPerScroll={2}
+  initiallyLoadedElements={5}
+  loaderIntersectionTrigger="full"
+  onScroll={null}
+  onScrollFinished={null}
+  renderLoadingComponent={null}
+  renderSeeMoreComponent={[Function]}
+  seeMoreAfter={-1}
+>
+  <div>
+    <List
+      elements={
+        Array [
+          "Element 0",
+          "Element 1",
+          "Element 2",
+          "Element 3",
+        ]
+      }
+    >
+      <div
+        id="list"
+      >
+        <div
+          key="Element 0"
+        >
+          Element 0
+        </div>
+        <div
+          key="Element 1"
+        >
+          Element 1
+        </div>
+        <div
+          key="Element 2"
+        >
+          Element 2
+        </div>
+        <div
+          key="Element 3"
+        >
+          Element 3
+        </div>
+      </div>
+    </List>
+    <button
+      id="test-button"
+      onClick={[Function]}
+      type="button"
+    >
+      see more
+    </button>
+  </div>
+</WithInfiniteScroll>
+`;

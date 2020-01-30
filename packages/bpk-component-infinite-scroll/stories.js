@@ -122,6 +122,17 @@ storiesOf('bpk-component-infinite-scroll', module)
       )}
     />
   ))
+  .add('Stopping after every 5 scrolls', () => (
+    <InfiniteList
+      dataSource={new ArrayDataSource(elementsArray)}
+      initiallyLoadedElements={3}
+      elementsPerScroll={3}
+      seeMoreAfter={-1}
+      renderSeeMoreComponent={({ onSeeMoreClick }) => (
+        <BpkButton onClick={onSeeMoreClick}>See more</BpkButton>
+      )}
+    />
+  ))
   .add('Infinite list of elements', () => (
     <InfiniteList dataSource={new InfiniteDataSource()} />
   ))
