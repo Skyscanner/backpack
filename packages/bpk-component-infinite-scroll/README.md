@@ -8,7 +8,7 @@
 npm install bpk-component-infinite-scroll --save-dev
 ```
 
-## <a name="Usage"></a>Usage
+## Usage
 
 ```js
 import React from 'react';
