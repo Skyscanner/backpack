@@ -1,7 +1,7 @@
 /*
  * Backpack - Skyscanner's Design System
  *
- * Copyright 2016-2019 Skyscanner Ltd
+ * Copyright 2016-2020 Skyscanner Ltd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -71,6 +71,33 @@ describe('BpkDatepicker', () => {
       .toJSON();
 
     expect(tree).toMatchSnapshot();
+  });
+
+  it('should render correctly with datepicker open', () => {
+    const datepicker = mount(
+      <BpkDatepicker
+        id="myDatepicker"
+        closeButtonText="Close"
+        daysOfWeek={weekDays}
+        changeMonthLabel="Change month"
+        title="Departure date"
+        weekStartsOn={1}
+        getApplicationElement={() => document.createElement('div')}
+        formatDate={formatDate}
+        formatMonth={formatMonth}
+        formatDateFull={formatDateFull}
+        inputProps={inputProps}
+        minDate={new Date(2010, 1, 15)}
+        maxDate={new Date(2010, 2, 15)}
+        date={new Date(2010, 1, 15)}
+        isOpen
+      />,
+    );
+
+    expect(datepicker.state('isOpen')).toEqual(true);
+
+    datepicker.instance().onClose();
+    expect(datepicker.state('isOpen')).toEqual(false);
   });
 
   it('"readOnly" can be overriden in "inputProps"', () => {

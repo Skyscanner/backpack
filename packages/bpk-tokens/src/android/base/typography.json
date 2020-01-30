@@ -42,17 +42,17 @@
       "category": "text-colors"
     },
     "TEXT_SECONDARY_DARK_COLOR": {
-      "value": "{!SKY_GRAY_TINT_03}",
+      "value": "{!BLACK_TINT_06}",
       "type": "color",
       "category": "text-colors"
     },
     "TEXT_TERTIARY_DARK_COLOR": {
-      "value": "{!SKY_GRAY_TINT_04}",
+      "value": "{!BLACK_TINT_06}",
       "type": "color",
       "category": "text-colors"
     },
     "TEXT_QUATERNARY_DARK_COLOR": {
-      "value": "{!SKY_GRAY_TINT_05}",
+      "value": "{!BLACK_TINT_06}",
       "type": "color",
       "category": "text-colors"
     },

@@ -1,7 +1,7 @@
 /*
  * Backpack - Skyscanner's Design System
  *
- * Copyright 2016-2019 Skyscanner Ltd
+ * Copyright 2016-2020 Skyscanner Ltd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -36,7 +36,7 @@ class BpkDatepicker extends Component {
     super(props);
 
     this.state = {
-      isOpen: false,
+      isOpen: props.isOpen,
     };
   }
 
@@ -92,6 +92,7 @@ class BpkDatepicker extends Component {
 
     // The following props are not used in render
     delete rest.onDateSelect;
+    delete rest.isOpen;
 
     const inputComponent = (
       <Input
@@ -195,6 +196,7 @@ BpkDatepicker.propTypes = {
   showWeekendSeparator: PropTypes.bool,
   initiallyFocusedDate: PropTypes.instanceOf(Date),
   renderTarget: PropTypes.func,
+  isOpen: PropTypes.bool,
 };
 
 BpkDatepicker.defaultProps = {
@@ -211,6 +213,7 @@ BpkDatepicker.defaultProps = {
   showWeekendSeparator: BpkCalendar.defaultProps.showWeekendSeparator,
   initiallyFocusedDate: null,
   renderTarget: null,
+  isOpen: false,
 };
 
 export default BpkDatepicker;

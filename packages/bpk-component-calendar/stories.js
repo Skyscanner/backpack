@@ -1,7 +1,7 @@
 /*
  * Backpack - Skyscanner's Design System
  *
- * Copyright 2016-2019 Skyscanner Ltd
+ * Copyright 2016-2020 Skyscanner Ltd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -162,6 +162,17 @@ storiesOf('bpk-component-calendar', module)
       daysOfWeek={weekDaysMoreWeekend}
       weekStartsOn={1}
       changeMonthLabel="Change month"
+    />
+  ))
+  .add('Calendar - weekDayKey is nameNarrow', () => (
+    <CalendarContainer
+      id="myCalendar"
+      formatMonth={formatMonth}
+      formatDateFull={formatDateFull}
+      daysOfWeek={weekDays}
+      weekStartsOn={0}
+      changeMonthLabel="Change month"
+      weekDayKey="nameNarrow"
     />
   ))
   .add('Calendar - ar-AE locale', () => (

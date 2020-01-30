@@ -1,7 +1,7 @@
 /*
  * Backpack - Skyscanner's Design System
  *
- * Copyright 2016-2019 Skyscanner Ltd
+ * Copyright 2016-2020 Skyscanner Ltd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,6 +25,7 @@ const WeekDay = PropTypes.shape({
   isWeekend: PropTypes.bool,
 });
 
+const WeekDayKey = PropTypes.string;
 const DaysOfWeek = PropTypes.arrayOf(WeekDay);
 const DateModifiers = PropTypes.objectOf(PropTypes.func);
 const ReactComponent = PropTypes.oneOfType([PropTypes.string, PropTypes.func]);
@@ -34,4 +35,5 @@ export default {
   DaysOfWeek,
   ReactComponent,
   WeekDay,
+  WeekDayKey,
 };

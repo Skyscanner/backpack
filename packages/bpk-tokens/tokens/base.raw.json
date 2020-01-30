@@ -25,7 +25,16 @@
       "value": "#2C2C2E"
     },
     "BLACK_TINT_03": {
+      "value": "#3A3A3C"
+    },
+    "BLACK_TINT_04": {
+      "value": "#48484A"
+    },
+    "BLACK_TINT_05": {
       "value": "#636366"
+    },
+    "BLACK_TINT_06": {
+      "value": "#8E8E93"
     },
     "BORDER_RADIUS_PILL": {
       "value": "1.125rem"

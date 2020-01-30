@@ -2,6 +2,81 @@
 
 [Unreleased changes](./UNRELEASED.yaml).
 
+# 2020-01-21 - Add new week day format option to calendar
+
+**Added:**
+- bpk-component-calendar: 6.1.13 => 6.2.0
+  - Added support for `weekDayKey` in order to have different formats of week days.
+
+# 2020-01-21 - New iOS elevation tokens
+
+**Added:**
+
+ - bpk-tokens: 30.0.0 => 30.1.0
+   - Added new elevation tokens for iOS and React Native iOS
+
+
+# 2020-01-21 - Renamed elevation tokens for Android
+
+**Breaking:**
+
+ - bpk-tokens: 29.6.1 => 30.0.0
+   - renamed android elevation tokens
+
+
+# 2020-01-20 - New dark mode colour palette
+
+**Fixed:**
+
+ - bpk-tokens: 29.6.0 => 29.6.1
+   - `blackTint03` has been renamed `blackTint05`.
+   - `blackTint04`, `blackTint05` and `blackTint06` have been added.
+   - `lineColor` now uses `blackTint04` in dark mode.
+   - `textSecondary` now uses `blackTint06` in dark mode.
+   - `backgroundElevation01`, `backgroundElevation02` and `backgroundElevation03` values have been added for Android only.
+
+
+# 2020-01-17 - New dynamic background tokens for iOS and Android
+
+**Added:**
+
+ - bpk-tokens: 29.5.2 => 29.6.0
+   - Added alternative background primary and secondary colours for iOS and Android.
+
+
+# 2020-01-17 - New flow typing and IE11 fixes
+
+**Added:**
+- bpk-react-utils: 2.8.4 => 2.9.0
+  - Added Flow types to `withDefaultProps` and `cssModules`.
+
+**Fixed:**
+- bpk-stylesheets: 4.1.3 => 4.1.4
+  - Fixed `bpk-stylesheets/base` to work with all supported browsers.
+- bpk-component-input: 5.0.23 => 5.0.24
+  - Fixed tab for clearable input.
+
+# 2020-01-10 - Fix for datepicker `isOpen` prop
+
+**Fixed:**
+  - bpk-component-datepicker: 11.1.0 => 11.1.1
+    - Fixed popover with isOpen overridden from datepicker's props.
+
+
+# 2020-01-09 - Carousel swipe functionality and datepicker prop
+
+**Added:**
+  - bpk-component-carousel: 0.1.0 => 0.2.0
+    - Added swipe support. Users of touchscreens can now swipe the carousel to scroll it.
+  - bpk-component-datepicker: 11.0.5 => 11.1.0
+    - New `isOpen` prop for controlling whether the date picker should be open on its first render.
+
+# 2019-12-18 - Fixed width in `BpkAutoSuggest` component
+
+- bpk-component-autosuggest: 4.0.23 => 4.0.24
+  - Fixed an issue where a `BpkAutosuggest` paired to a wide input field did not fill the width of its container.
+
+
 # 2019-12-10 - Updated nudger to import only the necessary button types.
 
 **Added**:

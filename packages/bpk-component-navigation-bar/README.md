@@ -16,9 +16,8 @@ npm install bpk-component-navigation-bar --save-dev
 import React from 'react';
 import ArrowIcon from 'bpk-component-icon/sm/long-arrow-left';
 import { withRtlSupport } from 'bpk-component-icon';
-import { BpkButtonLink } from 'bpk-component-link';
 
-import BpkNavigationBar, { BpkNavigationBarIconButton } from 'bpk-component-navigation-bar';
+import BpkNavigationBar, { BpkNavigationBarIconButton, BpkNavigationBarButtonLink } from 'bpk-component-navigation-bar';
 
 const ArrowIconWithRtl = withRtlSupport(ArrowIcon);
 
@@ -33,7 +32,7 @@ export default () => (
       />
     }
     trailingButton={
-      <BpkButtonLink onClick={() => {}}>Done</BpkButtonLink>
+      <BpkNavigationBarButtonLink onClick={() => {}}>Done</BpkNavigationBarButtonLink>
     }
   />
 )

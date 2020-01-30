@@ -1,7 +1,7 @@
 /*
  * Backpack - Skyscanner's Design System
  *
- * Copyright 2016-2019 Skyscanner Ltd
+ * Copyright 2016-2020 Skyscanner Ltd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,7 +34,13 @@ const getClassName = cssModules(STYLES);
   WeekDay - table header cells such as "Mon", "Tue", "Wed"...
 */
 const WeekDay = props => {
-  const { weekDay, isFirstDayOfWeekend, isLastDayOfWeekend, Element } = props;
+  const {
+    weekDay,
+    weekDayKey,
+    isFirstDayOfWeekend,
+    isLastDayOfWeekend,
+    Element,
+  } = props;
   const classNames = [getClassName('bpk-calendar-header__weekday')];
 
   if (weekDay.isWeekend) {
@@ -54,7 +60,7 @@ const WeekDay = props => {
 
   return (
     <Element className={classNames.join(' ')} title={weekDay.name}>
-      <span aria-hidden="true">{weekDay.nameAbbr}</span>
+      <span aria-hidden="true">{weekDay[weekDayKey]}</span>
     </Element>
   );
 };
@@ -62,8 +68,13 @@ const WeekDay = props => {
 WeekDay.propTypes = {
   Element: CustomPropTypes.ReactComponent.isRequired,
   weekDay: CustomPropTypes.WeekDay.isRequired,
+  weekDayKey: CustomPropTypes.WeekDayKey,
   isFirstDayOfWeekend: PropTypes.bool.isRequired,
   isLastDayOfWeekend: PropTypes.bool.isRequired,
+};
+
+WeekDay.defaultProps = {
+  weekDayKey: 'nameAbbr',
 };
 
 class BpkCalendarGridHeader extends PureComponent {
@@ -72,6 +83,7 @@ class BpkCalendarGridHeader extends PureComponent {
       isTableHead,
       showWeekendSeparator,
       weekStartsOn,
+      weekDayKey,
       className,
     } = this.props;
 
@@ -100,6 +112,7 @@ class BpkCalendarGridHeader extends PureComponent {
               Element={Item}
               key={weekDay.index}
               weekDay={weekDay}
+              weekDayKey={weekDayKey}
               isFirstDayOfWeekend={
                 showWeekendSeparator && firstDayOfWeekendIndex === weekDay.index
               }
@@ -120,11 +133,13 @@ BpkCalendarGridHeader.propTypes = {
   weekStartsOn: PropTypes.number.isRequired,
   isTableHead: PropTypes.bool,
   className: PropTypes.string,
+  weekDayKey: CustomPropTypes.WeekDayKey,
 };
 
 BpkCalendarGridHeader.defaultProps = {
   isTableHead: false,
   className: null,
+  weekDayKey: 'nameAbbr',
 };
 
 export default BpkCalendarGridHeader;

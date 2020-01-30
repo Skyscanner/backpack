@@ -9,7 +9,7 @@
       "value": "{!SKY_GRAY_TINT_05}"
     },
     "LINE_DARK_COLOR": {
-      "value": "{!SKY_GRAY_TINT_01}"
+      "value": "{!BLACK_TINT_04}"
     },
     "PRIMARY_LIGHT_COLOR": {
       "value": "{!SKY_BLUE}"
@@ -26,10 +26,22 @@
     "BACKGROUND_DARK_COLOR": {
       "value": "{!BLACK}"
     },
+    "BACKGROUND_ALTERNATIVE_LIGHT_COLOR": {
+      "value": "{!SKY_GRAY_TINT_07}"
+    },
+    "BACKGROUND_ALTERNATIVE_DARK_COLOR": {
+      "value": "{!BLACK}"
+    },
     "BACKGROUND_SECONDARY_LIGHT_COLOR": {
       "value": "{!SKY_GRAY_TINT_07}"
     },
     "BACKGROUND_SECONDARY_DARK_COLOR": {
+      "value": "{!BLACK_TINT_01}"
+    },
+    "BACKGROUND_ALTERNATIVE_SECONDARY_LIGHT_COLOR": {
+      "value": "{!WHITE}"
+    },
+    "BACKGROUND_ALTERNATIVE_SECONDARY_DARK_COLOR": {
       "value": "{!BLACK_TINT_01}"
     },
     "BACKGROUND_TERTIARY_LIGHT_COLOR": {
@@ -37,6 +49,36 @@
     },
     "BACKGROUND_TERTIARY_DARK_COLOR": {
       "value": "{!BLACK_TINT_02}"
+    },
+    "BACKGROUND_ELEVATION_01_LIGHT_COLOR": {
+      "value": "{!WHITE}",
+      "type": "color",
+      "category": "text-colors"
+    },
+    "BACKGROUND_ELEVATION_01_DARK_COLOR": {
+      "value": "{!BLACK_TINT_01}",
+      "type": "color",
+      "category": "text-colors"
+    },
+    "BACKGROUND_ELEVATION_02_LIGHT_COLOR": {
+      "value": "{!WHITE}",
+      "type": "color",
+      "category": "text-colors"
+    },
+    "BACKGROUND_ELEVATION_02_DARK_COLOR": {
+      "value": "{!BLACK_TINT_02}",
+      "type": "color",
+      "category": "text-colors"
+    },
+    "BACKGROUND_ELEVATION_03_LIGHT_COLOR": {
+      "value": "{!WHITE}",
+      "type": "color",
+      "category": "text-colors"
+    },
+    "BACKGROUND_ELEVATION_03_DARK_COLOR": {
+      "value": "{!BLACK_TINT_03}",
+      "type": "color",
+      "category": "text-colors"
     },
     "COLOR_WHITE": {
       "value": "{!WHITE}"
@@ -151,6 +193,15 @@
     },
     "COLOR_BLACK_TINT_03": {
       "value": "{!BLACK_TINT_03}"
+    },
+    "COLOR_BLACK_TINT_04": {
+      "value": "{!BLACK_TINT_04}"
+    },
+    "COLOR_BLACK_TINT_05": {
+      "value": "{!BLACK_TINT_05}"
+    },
+    "COLOR_BLACK_TINT_06": {
+      "value": "{!BLACK_TINT_06}"
     }
   }
 }

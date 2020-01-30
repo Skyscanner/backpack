@@ -174,6 +174,7 @@ withCalendarState(composeCalendar(
 | headerProps           | object               | false               | null             |
 | gridProps             | object               | false               | null             |
 | dateProps             | object               | false               | null             |
+| weekDayKey            | string               | false               | nameAbbr         |
 
 Some of the more complex props and props for sub-components are detailed below.
 
@@ -206,6 +207,7 @@ in place while the rest of the grid transitions when changing months.
 | weekStartsOn          | number               | true     | -                |
 | showWeekendSeparator  | bool                 | false    | false            |
 | className             | string               | false    | null             |
+| weekDayKey            | string               | false    | nameAbbr         |
 
 ### BpkCalendarGrid
 
@@ -260,24 +262,31 @@ An array of objects describing the days of the week:
   {
     "name": "Sunday",
     "nameAbbr": "Sun",
+    "nameNarrow": "S",
     "index": 0,
     "isWeekend": true
   },
   {
     "name": "Monday",
     "nameAbbr": "Mon",
+    "nameNarrow": "M",
     "index": 1,
     "isWeekend": false
   },
   {
     "name": "Tuesday",
     "nameAbbr": "Tue",
+    "nameNarrow": "T",
     "index": 2,
     "isWeekend": false
   },
   ...
 ]
 ```
+
+#### weekDayKey
+
+Key to be used to pick the desired weekDay format from the `daysOfWeek` object, for example: `nameAbbr` or `nameNarrow`.
 
 #### fixedWidth
 

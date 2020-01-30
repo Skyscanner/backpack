@@ -16,21 +16,31 @@
  * limitations under the License.
  */
 
+/**
+ * Babel config used to create the `base.js` file.
+ */
 module.exports = {
   presets: [
     [
       '@babel/preset-env',
       {
         targets: {
-          node: 'current',
+          // Based on the list of supported browsers
+          browsers: [
+            'chrome >= 63',
+            'safari >= 10',
+            'ie >= 11',
+            'firefox >= 58',
+            'edge >= 16',
+            'samsung >= 6',
+          ],
         },
       },
     ],
-    '@babel/preset-react',
     '@babel/preset-flow',
   ],
-  plugins: [
-    '@babel/plugin-proposal-object-rest-spread',
-    '@babel/plugin-proposal-class-properties',
-  ],
+  // This tells babel not to include polyfills and assume it will be available during runtime,
+  // as a lib project this is what we want.
+  // In case we add code that requires polyfills we should document it.
+  plugins: ['@babel/plugin-transform-runtime'],
 };

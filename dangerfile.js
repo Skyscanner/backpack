@@ -2,7 +2,7 @@
  *
  * Backpack - Skyscanner's Design System
  *
- * Copyright 2016-2019 Skyscanner Ltd
+ * Copyright 2016-2020 Skyscanner Ltd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -111,8 +111,8 @@ if (componentChangedOrCreated) {
 
 // If any of the packages have changed, the UNRELEASED log should have been updated.
 const unreleasedModified = includes(modifiedFiles, 'UNRELEASED.yaml');
-const packagesModified = fileChanges.some(filePath =>
-  filePath.startsWith('packages/'),
+const packagesModified = fileChanges.some(
+  filePath => filePath.startsWith('packages/') && !filePath.endsWith('.md'),
 );
 if (packagesModified && !unreleasedModified && !declaredTrivial) {
   warn(

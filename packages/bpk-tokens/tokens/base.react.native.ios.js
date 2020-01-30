@@ -2,7 +2,7 @@
  * 
  * Backpack - Skyscanner's Design System
  * 
- * Copyright 2016-2019 Skyscanner Ltd
+ * Copyright 2016-2020 Skyscanner Ltd
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,11 +20,41 @@
 export const animationDurationBase = 400;
 export const animationDurationSm = 200;
 export const animationDurationXs = 50;
+export const backgroundAlternativeColor = {
+ light: "rgb(241, 242, 248)",
+ dark: "rgb(0, 0, 0)",
+};
+export const backgroundAlternativeDarkColor = "rgb(0, 0, 0)";
+export const backgroundAlternativeLightColor = "rgb(241, 242, 248)";
+export const backgroundAlternativeSecondaryColor = {
+ dark: "rgb(29, 27, 32)",
+ light: "rgb(255, 255, 255)",
+};
+export const backgroundAlternativeSecondaryDarkColor = "rgb(29, 27, 32)";
+export const backgroundAlternativeSecondaryLightColor = "rgb(255, 255, 255)";
 export const backgroundColor = {
  light: "rgb(255, 255, 255)",
  dark: "rgb(0, 0, 0)",
 };
 export const backgroundDarkColor = "rgb(0, 0, 0)";
+export const backgroundElevation01Color = {
+ dark: "rgb(29, 27, 32)",
+ light: "rgb(255, 255, 255)",
+};
+export const backgroundElevation01DarkColor = "rgb(29, 27, 32)";
+export const backgroundElevation01LightColor = "rgb(255, 255, 255)";
+export const backgroundElevation02Color = {
+ dark: "rgb(44, 44, 46)",
+ light: "rgb(255, 255, 255)",
+};
+export const backgroundElevation02DarkColor = "rgb(44, 44, 46)";
+export const backgroundElevation02LightColor = "rgb(255, 255, 255)";
+export const backgroundElevation03Color = {
+ dark: "rgb(58, 58, 60)",
+ light: "rgb(255, 255, 255)",
+};
+export const backgroundElevation03DarkColor = "rgb(58, 58, 60)";
+export const backgroundElevation03LightColor = "rgb(255, 255, 255)";
 export const backgroundLightColor = "rgb(255, 255, 255)";
 export const backgroundSecondaryColor = {
  dark: "rgb(29, 27, 32)",
@@ -57,7 +87,10 @@ export const colorBagan = "rgb(255, 235, 208)";
 export const colorBlack = "rgb(0, 0, 0)";
 export const colorBlackTint01 = "rgb(29, 27, 32)";
 export const colorBlackTint02 = "rgb(44, 44, 46)";
-export const colorBlackTint03 = "rgb(99, 99, 102)";
+export const colorBlackTint03 = "rgb(58, 58, 60)";
+export const colorBlackTint04 = "rgb(72, 72, 74)";
+export const colorBlackTint05 = "rgb(99, 99, 102)";
+export const colorBlackTint06 = "rgb(142, 142, 147)";
 export const colorBunol = "rgb(255, 123, 89)";
 export const colorErfoud = "rgb(255, 181, 77)";
 export const colorGlencoe = "rgb(115, 206, 198)";
@@ -108,10 +141,10 @@ export const letterSpacingXs = 0;
 export const letterSpacingXxl = null;
 export const letterSpacingXxxl = null;
 export const lineColor = {
- dark: "rgb(68, 69, 96)",
+ dark: "rgb(72, 72, 74)",
  light: "rgb(205, 205, 215)",
 };
-export const lineDarkColor = "rgb(68, 69, 96)";
+export const lineDarkColor = "rgb(72, 72, 74)";
 export const lineHeightBase = 19;
 export const lineHeightLg = 24;
 export const lineHeightSm = 17;
@@ -164,25 +197,25 @@ export const textPrimaryColor = {
 export const textPrimaryDarkColor = "rgb(255, 255, 255)";
 export const textPrimaryLightColor = "rgb(17, 18, 54)";
 export const textQuaternaryColor = {
- dark: "rgb(205, 205, 215)",
+ dark: "rgb(142, 142, 147)",
  light: "rgb(143, 144, 160)",
 };
-export const textQuaternaryDarkColor = "rgb(205, 205, 215)";
+export const textQuaternaryDarkColor = "rgb(142, 142, 147)";
 export const textQuaternaryLightColor = "rgb(143, 144, 160)";
 export const textSecondaryColor = {
- dark: "rgb(143, 144, 160)",
+ dark: "rgb(142, 142, 147)",
  light: "rgb(104, 105, 127)",
 };
-export const textSecondaryDarkColor = "rgb(143, 144, 160)";
+export const textSecondaryDarkColor = "rgb(142, 142, 147)";
 export const textSecondaryLightColor = "rgb(104, 105, 127)";
 export const textSmFontSize = 14;
 export const textSmFontWeight = "400";
 export const textSmLetterSpacing = 0.154;
 export const textTertiaryColor = {
- dark: "rgb(178, 178, 191)",
+ dark: "rgb(142, 142, 147)",
  light: "rgb(143, 144, 160)",
 };
-export const textTertiaryDarkColor = "rgb(178, 178, 191)";
+export const textTertiaryDarkColor = "rgb(142, 142, 147)";
 export const textTertiaryLightColor = "rgb(143, 144, 160)";
 export const textXlFontSize = 24;
 export const textXlFontWeight = "400";
@@ -227,6 +260,10 @@ carouselIndicatorDotSizeMd,
 carouselIndicatorDotSizeSm,
 };
 export const colors = {
+backgroundAlternativeDarkColor,
+backgroundAlternativeLightColor,
+backgroundAlternativeSecondaryDarkColor,
+backgroundAlternativeSecondaryLightColor,
 backgroundDarkColor,
 backgroundLightColor,
 backgroundSecondaryDarkColor,
@@ -239,6 +276,9 @@ colorBlack,
 colorBlackTint01,
 colorBlackTint02,
 colorBlackTint03,
+colorBlackTint04,
+colorBlackTint05,
+colorBlackTint06,
 colorBunol,
 colorErfoud,
 colorGlencoe,
@@ -323,6 +363,8 @@ borderRadiusPill,
 borderRadiusSm,
 };
 export const semanticColors = {
+backgroundAlternativeColor,
+backgroundAlternativeSecondaryColor,
 backgroundColor,
 backgroundSecondaryColor,
 backgroundTertiaryColor,
@@ -331,6 +373,9 @@ primaryColor,
 secondaryColor,
 };
 export const semanticTextColors = {
+backgroundElevation01Color,
+backgroundElevation02Color,
+backgroundElevation03Color,
 textPrimaryColor,
 textQuaternaryColor,
 textSecondaryColor,
@@ -351,6 +396,12 @@ spacingXl,
 spacingXxl,
 };
 export const textColors = {
+backgroundElevation01DarkColor,
+backgroundElevation01LightColor,
+backgroundElevation02DarkColor,
+backgroundElevation02LightColor,
+backgroundElevation03DarkColor,
+backgroundElevation03LightColor,
 textPrimaryDarkColor,
 textPrimaryLightColor,
 textQuaternaryDarkColor,

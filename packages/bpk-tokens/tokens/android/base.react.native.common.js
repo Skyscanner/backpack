@@ -2,7 +2,7 @@
  * 
  * Backpack - Skyscanner's Design System
  * 
- * Copyright 2016-2019 Skyscanner Ltd
+ * Copyright 2016-2020 Skyscanner Ltd
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +22,17 @@ module.exports = {
   animationDurationBase: 400,
   animationDurationSm: 200,
   animationDurationXs: 50,
+  backgroundAlternativeDarkColor: "rgb(0, 0, 0)",
+  backgroundAlternativeLightColor: "rgb(241, 242, 248)",
+  backgroundAlternativeSecondaryDarkColor: "rgb(29, 27, 32)",
+  backgroundAlternativeSecondaryLightColor: "rgb(255, 255, 255)",
   backgroundDarkColor: "rgb(0, 0, 0)",
+  backgroundElevation01DarkColor: "rgb(29, 27, 32)",
+  backgroundElevation01LightColor: "rgb(255, 255, 255)",
+  backgroundElevation02DarkColor: "rgb(44, 44, 46)",
+  backgroundElevation02LightColor: "rgb(255, 255, 255)",
+  backgroundElevation03DarkColor: "rgb(58, 58, 60)",
+  backgroundElevation03LightColor: "rgb(255, 255, 255)",
   backgroundLightColor: "rgb(255, 255, 255)",
   backgroundSecondaryDarkColor: "rgb(29, 27, 32)",
   backgroundSecondaryLightColor: "rgb(241, 242, 248)",
@@ -47,7 +57,10 @@ module.exports = {
   colorBlack: "rgb(0, 0, 0)",
   colorBlackTint01: "rgb(29, 27, 32)",
   colorBlackTint02: "rgb(44, 44, 46)",
-  colorBlackTint03: "rgb(99, 99, 102)",
+  colorBlackTint03: "rgb(58, 58, 60)",
+  colorBlackTint04: "rgb(72, 72, 74)",
+  colorBlackTint05: "rgb(99, 99, 102)",
+  colorBlackTint06: "rgb(142, 142, 147)",
   colorBunol: "rgb(255, 123, 89)",
   colorErfoud: "rgb(255, 181, 77)",
   colorGlencoe: "rgb(115, 206, 198)",
@@ -105,7 +118,7 @@ module.exports = {
   letterSpacingXs: 0,
   letterSpacingXxl: -0.8,
   letterSpacingXxxl: -1,
-  lineDarkColor: "rgb(68, 69, 96)",
+  lineDarkColor: "rgb(72, 72, 74)",
   lineHeightBase: 19,
   lineHeightLg: 23,
   lineHeightSm: 16,
@@ -135,14 +148,14 @@ module.exports = {
   textLgLetterSpacing: -0.4,
   textPrimaryDarkColor: "rgb(255, 255, 255)",
   textPrimaryLightColor: "rgb(17, 18, 54)",
-  textQuaternaryDarkColor: "rgb(205, 205, 215)",
+  textQuaternaryDarkColor: "rgb(142, 142, 147)",
   textQuaternaryLightColor: "rgb(143, 144, 160)",
-  textSecondaryDarkColor: "rgb(143, 144, 160)",
+  textSecondaryDarkColor: "rgb(142, 142, 147)",
   textSecondaryLightColor: "rgb(104, 105, 127)",
   textSmFontSize: 14,
   textSmFontWeight: "400",
   textSmLetterSpacing: 0,
-  textTertiaryDarkColor: "rgb(178, 178, 191)",
+  textTertiaryDarkColor: "rgb(142, 142, 147)",
   textTertiaryLightColor: "rgb(143, 144, 160)",
   textXlFontSize: 24,
   textXlFontWeight: "400",

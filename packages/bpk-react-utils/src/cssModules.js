@@ -1,7 +1,7 @@
 /*
  * Backpack - Skyscanner's Design System
  *
- * Copyright 2016-2019 Skyscanner Ltd
+ * Copyright 2016-2020 Skyscanner Ltd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,7 +16,11 @@
  * limitations under the License.
  */
 
-export default (styles = {}) => (...classNames) =>
+/* @flow strict */
+
+export default (styles: {} = {}) => (
+  ...classNames: Array<?string | ?boolean | ?number | ?{}>
+) =>
   classNames.reduce((className, currentClass) => {
     if (currentClass && typeof currentClass === 'string') {
       const realName = styles[currentClass] || currentClass;

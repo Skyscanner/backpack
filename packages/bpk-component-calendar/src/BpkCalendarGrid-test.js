@@ -1,7 +1,7 @@
 /*
  * Backpack - Skyscanner's Design System
  *
- * Copyright 2016-2019 Skyscanner Ltd
+ * Copyright 2016-2020 Skyscanner Ltd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -148,5 +148,23 @@ describe('BpkCalendarGrid', () => {
       .simulate('click');
     expect(onDateClick.mock.calls.length).toBe(2);
     expect(onDateClick.mock.calls[1][0]).toEqual(new Date(2016, 9, 6));
+  });
+
+  it('should render correctly with "weekDayKey" attribute set to nameNarrow', () => {
+    const tree = renderer
+      .create(
+        <BpkCalendarGrid
+          month={new Date('2016-10')}
+          formatMonth={formatMonth}
+          formatDateFull={formatDateFull}
+          DateComponent={BpkCalendarDate}
+          daysOfWeek={weekDays}
+          weekStartsOn={0}
+          showWeekendSeparator={false}
+          weekDayKey="nameNarrow"
+        />,
+      )
+      .toJSON();
+    expect(tree).toMatchSnapshot();
   });
 });

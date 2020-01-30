@@ -1,7 +1,7 @@
 /*
  * Backpack - Skyscanner's Design System
  *
- * Copyright 2016-2019 Skyscanner Ltd
+ * Copyright 2016-2020 Skyscanner Ltd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,6 +22,8 @@ import { blockComment as licenseHeader } from 'bpk-tokens/formatters/license-hea
 
 import postCssPlugins from '../../scripts/webpack/postCssPlugins';
 
+import babelConfig from './base.babel.config';
+
 const path = require('path');
 
 module.exports = {
@@ -41,6 +43,7 @@ module.exports = {
         test: /\.js$/,
         exclude: /node_modules/,
         loader: 'babel-loader',
+        options: babelConfig,
       },
       {
         test: /\.scss$/,

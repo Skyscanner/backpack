@@ -1,7 +1,7 @@
 /*
  * Backpack - Skyscanner's Design System
  *
- * Copyright 2016-2019 Skyscanner Ltd
+ * Copyright 2016-2020 Skyscanner Ltd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,12 +16,14 @@
  * limitations under the License.
  */
 
+/* @flow strict */
+
 import React from 'react';
 import renderer from 'react-test-renderer';
 
 import withDefaultProps from './withDefaultProps';
 
-const TestComponent = 'TestComponent';
+const TestComponent = props => <div {...props} />;
 
 describe('withDefaultProps', () => {
   it('should render correctly', () => {

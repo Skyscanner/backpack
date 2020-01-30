@@ -515,6 +515,8 @@ yAxisTickValue
 yAxisNumTicks
 yAxisDomain
 withAccordionItemState
+weekDayKey
+nameAbbr
 
 BpkAccordion
 BpkAccordionItem
