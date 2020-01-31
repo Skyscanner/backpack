@@ -32,15 +32,12 @@
 ///
 /// @access private
 
-@mixin _bpk-text-factory($font-size, $font-weight: false, $line-height: false, $letter-spacing: false) {
+@mixin _bpk-text-factory($font-size, $line-height, $font-weight: false, $letter-spacing: false) {
   font-size: $font-size;
+  line-height: $line-height;
 
   @if ($font-weight) {
     font-weight: $font-weight;
-  }
-
-  @if ($line-height) {
-    line-height: $line-height;
   }
 }
 
@@ -68,8 +65,8 @@
 @mixin bpk-text--xs {
   @include _bpk-text-factory(
     $bpk-text-xs-font-size,
-    $bpk-text-xs-font-weight,
     $bpk-text-xs-line-height,
+    $bpk-text-xs-font-weight,
     $bpk-text-xs-letter-spacing
   );
 }
@@ -98,8 +95,8 @@
 @mixin bpk-text--sm {
   @include _bpk-text-factory(
     $bpk-text-sm-font-size,
-    $bpk-text-sm-font-weight,
     $bpk-text-sm-line-height,
+    $bpk-text-sm-font-weight,
     $bpk-text-sm-letter-spacing
   );
 }
@@ -128,8 +125,8 @@
 @mixin bpk-text--base {
   @include _bpk-text-factory(
     $bpk-text-base-font-size,
-    $bpk-text-base-font-weight,
     $bpk-text-base-line-height,
+    $bpk-text-base-font-weight,
     $bpk-text-base-letter-spacing
   );
 }
@@ -158,8 +155,8 @@
 @mixin bpk-text--lg {
   @include _bpk-text-factory(
     $bpk-text-lg-font-size,
-    $bpk-text-lg-font-weight,
     $bpk-text-lg-line-height,
+    $bpk-text-lg-font-weight,
     $bpk-text-lg-letter-spacing
   );
 }
@@ -188,8 +185,8 @@
 @mixin bpk-text--xl {
   @include _bpk-text-factory(
     $bpk-text-xl-font-size,
-    $bpk-text-xl-font-weight,
     $bpk-text-xl-line-height,
+    $bpk-text-xl-font-weight,
     $bpk-text-xl-letter-spacing
   );
 }
@@ -218,8 +215,8 @@
 @mixin bpk-text--xxl {
   @include _bpk-text-factory(
     $bpk-text-xxl-font-size,
-    $bpk-text-xxl-font-weight,
     $bpk-text-xxl-line-height,
+    $bpk-text-xxl-font-weight,
     $bpk-text-xxl-letter-spacing
   );
 }
@@ -248,8 +245,8 @@
 @mixin bpk-text--xxxl {
   @include _bpk-text-factory(
     $bpk-text-xxxl-font-size,
-    $bpk-text-xxxl-font-weight,
-    $bpk-text-xxxl-line-height
+    $bpk-text-xxxl-line-height,
+    $bpk-text-xxxl-font-weight
   );
 }
 
@@ -277,8 +274,8 @@
 @mixin bpk-text--xxxxl {
   @include _bpk-text-factory(
     $bpk-text-xxxxl-font-size,
-    $bpk-text-xxxxl-font-weight,
-    $bpk-text-xxxxl-line-height
+    $bpk-text-xxxxl-line-height,
+    $bpk-text-xxxxl-font-weight
   );
 }
 
@@ -306,8 +303,8 @@
 @mixin bpk-text--xxxxxl {
   @include _bpk-text-factory(
     $bpk-text-xxxxxl-font-size,
-    $bpk-text-xxxxxl-font-weight,
-    $bpk-text-xxxxxl-line-height
+    $bpk-text-xxxxxl-line-height,
+    $bpk-text-xxxxxl-font-weight
   );
 }
 
@@ -357,10 +354,10 @@
   margin-top: $bpk-heading-margin-top;
   margin-bottom: $bpk-heading-margin-bottom;
 
-  @include _bpk-text-factory($bpk-h-1-font-size, $bpk-h-1-font-weight, $bpk-h-1-line-height);
+  @include _bpk-text-factory($bpk-h-1-font-size, $bpk-h-1-line-height, $bpk-h-1-font-weight);
 
   @include bpk-breakpoint-mobile {
-    @include _bpk-text-factory($bpk-h-2-font-size, $bpk-h-2-font-weight, $bpk-h-2-line-height);
+    @include _bpk-text-factory($bpk-h-2-font-size, $bpk-h-2-line-height, $bpk-h-2-font-weight);
   }
 }
 
@@ -375,10 +372,10 @@
   margin-top: $bpk-heading-margin-top;
   margin-bottom: $bpk-heading-margin-bottom;
 
-  @include _bpk-text-factory($bpk-h-2-font-size, $bpk-h-2-font-weight, $bpk-h-2-line-height);
+  @include _bpk-text-factory($bpk-h-2-font-size, $bpk-h-2-line-height, $bpk-h-2-font-weight);
 
   @include bpk-breakpoint-mobile {
-    @include _bpk-text-factory($bpk-h-3-font-size, $bpk-h-3-font-weight, $bpk-h-3-line-height);
+    @include _bpk-text-factory($bpk-h-3-font-size, $bpk-h-3-line-height, $bpk-h-3-font-weight);
   }
 }
 
@@ -393,10 +390,10 @@
   margin-top: $bpk-heading-margin-top;
   margin-bottom: $bpk-heading-margin-bottom;
 
-  @include _bpk-text-factory($bpk-h-3-font-size, $bpk-h-3-font-weight, $bpk-h-3-line-height);
+  @include _bpk-text-factory($bpk-h-3-font-size, $bpk-h-3-line-height, $bpk-h-3-font-weight);
 
   @include bpk-breakpoint-mobile {
-    @include _bpk-text-factory($bpk-h-4-font-size, $bpk-h-4-font-weight, $bpk-h-4-line-height);
+    @include _bpk-text-factory($bpk-h-4-font-size, $bpk-h-4-line-height, $bpk-h-4-font-weight);
   }
 }
 
@@ -411,10 +408,10 @@
   margin-top: $bpk-heading-margin-top;
   margin-bottom: $bpk-heading-margin-bottom;
 
-  @include _bpk-text-factory($bpk-h-4-font-size, $bpk-h-4-font-weight, $bpk-h-4-line-height);
+  @include _bpk-text-factory($bpk-h-4-font-size, $bpk-h-4-line-height, $bpk-h-4-font-weight);
 
   @include bpk-breakpoint-mobile {
-    @include _bpk-text-factory($bpk-h-5-font-size, $bpk-h-5-font-weight, $bpk-h-5-line-height);
+    @include _bpk-text-factory($bpk-h-5-font-size, $bpk-h-5-line-height, $bpk-h-5-font-weight);
   }
 }
 
@@ -429,7 +426,7 @@
   margin-top: $bpk-heading-margin-top;
   margin-bottom: $bpk-heading-margin-bottom;
 
-  @include _bpk-text-factory($bpk-h-5-font-size, $bpk-h-5-font-weight, $bpk-h-5-line-height);
+  @include _bpk-text-factory($bpk-h-5-font-size, $bpk-h-5-line-height, $bpk-h-5-font-weight);
 }
 
 /// Level 6 heading.
@@ -443,7 +440,7 @@
   margin-top: $bpk-heading-margin-top;
   margin-bottom: $bpk-heading-margin-bottom;
 
-  @include _bpk-text-factory($bpk-h-6-font-size, $bpk-h-6-font-weight, $bpk-h-6-line-height);
+  @include _bpk-text-factory($bpk-h-6-font-size, $bpk-h-6-line-height, $bpk-h-6-font-weight);
 }
 
 /// Remove bottom margin from heading. Modifies the various bpk-heading mixins.
