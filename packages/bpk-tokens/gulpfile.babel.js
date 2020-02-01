@@ -47,33 +47,41 @@ import {
   bpkReactNativeCommonJsAndroid,
 } from './formatters/bpk.react.native.common.js';
 
+const RAW_FORMATS = {
+  web: ['raw.json'],
+  ios: ['raw.ios.json'],
+  android: ['raw.android.json'],
+};
+
 const PLATFORM_FORMATS = {
-  web: ['scss', 'default.scss', 'raw.json', 'common.js', 'es6.js'],
+  web: ['scss', 'default.scss', 'common.js', 'es6.js'],
   ios: [
     'ios.json',
-    'raw.ios.json',
     'react.native.ios.js',
     { format: 'IOS_react.native.es6.js', nest: true },
     { format: 'IOS_react.native.common.js', nest: true },
   ],
   android: [
     'android.xml',
-    'raw.android.json',
     'react.native.android.js',
     { format: 'ANDROID_react.native.es6.js', nest: true },
     { format: 'ANDROID_react.native.common.js', nest: true },
   ],
 };
 
-const tokenSets = flatten(
-  Object.keys(PLATFORM_FORMATS).map(platform =>
-    PLATFORM_FORMATS[platform].map(format =>
-      typeof format !== 'string'
-        ? { platform, ...format }
-        : { platform, format },
+const createTokenSets = formats =>
+  flatten(
+    Object.keys(formats).map(platform =>
+      formats[platform].map(format =>
+        typeof format !== 'string'
+          ? { platform, ...format }
+          : { platform, format },
+      ),
     ),
-  ),
-);
+  );
+
+const rawTokenSets = createTokenSets(RAW_FORMATS);
+const platformTokenSets = createTokenSets(PLATFORM_FORMATS);
 
 theo.registerFormat('scss', bpkScss);
 theo.registerFormat('default.scss', bpkDefaultScss);
@@ -107,7 +115,7 @@ gulp.task('lint', () =>
     .pipe(jsonLint.failAfterError()),
 );
 
-const createTokens = done => {
+const createTokens = (tokenSets, done) => {
   const streams = tokenSets.map(({ platform, format, nest }) => {
     let outputPath = 'tokens';
 
@@ -147,6 +155,16 @@ const createTokens = done => {
   gulpMerge(streams).on('finish', done);
 };
 
-gulp.task('tokens', gulp.series(gulp.parallel('clean', 'lint'), createTokens));
+const createRawTokens = done => createTokens(rawTokenSets, done);
+const createPlatformTokens = done => createTokens(platformTokenSets, done);
+
+gulp.task('tokens:raw', createRawTokens);
+
+gulp.task('tokens:platform', createPlatformTokens);
+
+gulp.task(
+  'tokens',
+  gulp.series(gulp.parallel('clean', 'lint'), 'tokens:raw', 'tokens:platform'),
+);
 
 gulp.task('default', gulp.series('tokens'));

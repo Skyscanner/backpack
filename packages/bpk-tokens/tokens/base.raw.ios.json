@@ -961,13 +961,6 @@
       "originalValue": "{!SKY_BLUE}",
       "name": "PRIMARY_LIGHT_COLOR"
     },
-    "SECONDARY_DARK_COLOR": {
-      "type": "color",
-      "category": "colors",
-      "value": "#6d9febff",
-      "originalValue": "{!SKY_BLUE_TINT_01}",
-      "name": "SECONDARY_DARK_COLOR"
-    },
     "SHADOW_LG_COLOR": {
       "value": "#111236ff",
       "type": "color",
@@ -1576,7 +1569,6 @@
     "LINE_LIGHT_COLOR",
     "PRIMARY_DARK_COLOR",
     "PRIMARY_LIGHT_COLOR",
-    "SECONDARY_DARK_COLOR",
     "SHADOW_LG_COLOR",
     "SHADOW_LG_OFFSET_HEIGHT",
     "SHADOW_LG_OFFSET_WIDTH",

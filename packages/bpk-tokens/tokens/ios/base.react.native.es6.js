@@ -1,3 +1,4 @@
+// @flow
 /*
  * 
  * Backpack - Skyscanner's Design System
@@ -158,10 +159,6 @@ export const primaryColor = {
 };
 export const primaryDarkColor = "rgb(109, 159, 235)";
 export const primaryLightColor = "rgb(7, 112, 227)";
-export const secondaryColor = {
- dark: "rgb(109, 159, 235)",
-};
-export const secondaryDarkColor = "rgb(109, 159, 235)";
 export const shadowLgColor = "rgb(17, 18, 54)";
 export const shadowLgOffsetHeight = 4;
 export const shadowLgOffsetWidth = 0;
@@ -315,7 +312,6 @@ lineDarkColor,
 lineLightColor,
 primaryDarkColor,
 primaryLightColor,
-secondaryDarkColor,
 };
 export const fontSizes = {
 textBaseFontSize,
@@ -370,7 +366,6 @@ backgroundSecondaryColor,
 backgroundTertiaryColor,
 lineColor,
 primaryColor,
-secondaryColor,
 };
 export const semanticTextColors = {
 backgroundElevation01Color,
@@ -433,3 +428,12 @@ lineHeightXl,
 lineHeightXs,
 lineHeightXxl,
 };
+// Android only tokens
+export const elevationBase = undefined;
+export const elevationLg = undefined;
+export const elevationSm = undefined;
+export const elevationXl = undefined;
+export const elevationXs = undefined;
+export const elevationXxl = undefined;
+export const fontFamilyEmphasize = undefined;
+export const fontFamilyHeavy = undefined;
