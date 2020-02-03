@@ -2,6 +2,24 @@
 
 [Unreleased changes](./UNRELEASED.yaml).
 
+# 2020-02-03 - New web type scale updates.
+
+**Breaking:**
+  - bpk-tokens: 30.1.3 => 31.0.0
+    - Changed type scale values to align to native platforms.
+      - `SM` --> `XS`
+      - `LG` --> `XL`
+      - `XL` --> `XXL`
+    - Added new font sizes `$bpk-font-size-xxxl`, `$bpk-font-size-xxxxl`, `$bpk-font-size-xxxxl`
+    - Added new line height sizes `$bpk-line-height-xxxl`, `$bpk-line-height-size-xxxxl`, `$bpk-line-height-size-xxxxl`
+
+  - bpk-stylesheets: 4.1.11 => 5.0.0
+    - Default line height is now set to `1.3rem` which is the baseline height of the Relative font family.
+
+**Added:**
+  - bpk-mixins: 19.0.30 => 19.1.0
+    - Added new text mixins to support new font sizes
+
 # 2020-01-21 - Add new week day format option to calendar
 
 **Added:**
