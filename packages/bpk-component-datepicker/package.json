@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-datepicker",
-  "version": "11.1.9",
+  "version": "11.1.10",
   "description": "Backpack datepicker component.",
   "main": "index.js",
   "repository": {
@@ -13,17 +13,17 @@
     "react": "^15.0.0 || ^16.0.0"
   },
   "dependencies": {
-    "bpk-component-breakpoint": "^2.0.30",
-    "bpk-component-calendar": "^6.2.0",
-    "bpk-component-input": "^5.0.31",
-    "bpk-component-modal": "^2.1.29",
-    "bpk-component-popover": "^3.0.32",
-    "bpk-mixins": "^19.0.30",
+    "bpk-component-breakpoint": "^2.0.31",
+    "bpk-component-calendar": "^6.2.1",
+    "bpk-component-input": "^5.0.32",
+    "bpk-component-modal": "^2.1.30",
+    "bpk-component-popover": "^3.0.33",
+    "bpk-mixins": "^19.1.0",
     "bpk-react-utils": "^2.9.3",
     "prop-types": "^15.6.2"
   },
   "devDependencies": {
-    "bpk-tokens": "^30.1.3"
+    "bpk-tokens": "^31.0.0"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
