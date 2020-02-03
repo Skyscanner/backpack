@@ -2,17 +2,17 @@
 
 BREAKING:
   - bpk-tokens:
-    - Changed typescale values to align to native platforms.
+    - Changed type scale values to align to native platforms.
       - `SM` --> `XS`
       - `LG` --> `XL`
-      - `XL` --> `XXL` 
+      - `XL` --> `XXL`
     - Added new font sizes `$bpk-font-size-xxxl`, `$bpk-font-size-xxxxl`, `$bpk-font-size-xxxxl`
     - Added new line height sizes `$bpk-line-height-xxxl`, `$bpk-line-height-size-xxxxl`, `$bpk-line-height-size-xxxxl`
-  
+
   - bpk-mixins:
     - Added new text mixins to support new font sizes
     - Updated `_bpk-text-factory` to have a mandatory parameter `line-height`
-  
+
   - bpk-stylesheets:
     - Default line height is now set to `1.3rem` which is the baseline height of the Relative font family.
 
