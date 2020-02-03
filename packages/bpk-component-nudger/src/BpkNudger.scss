@@ -27,10 +27,11 @@
     display: inline-block;
     padding: $bpk-button-padding-y 0;
     border: none;
-    font-size: $bpk-font-size-lg;
-    line-height: $bpk-button-line-height;
     text-align: center;
     vertical-align: middle;
+
+    @include bpk-text;
+    @include bpk-text--xl;
 
     &--outline {
       background-color: transparent;

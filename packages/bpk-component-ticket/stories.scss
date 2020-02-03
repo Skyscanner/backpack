@@ -33,7 +33,7 @@
     color: $bpk-color-sky-gray-tint-02;
 
     @include bpk-text;
-    @include bpk-text--sm;
+    @include bpk-text--xs;
   }
 
   &__logo {
@@ -43,7 +43,7 @@
 
   &__price {
     @include bpk-text;
-    @include bpk-text--lg;
+    @include bpk-text--xl;
     @include bpk-text--bold;
   }
 
@@ -75,6 +75,6 @@
 
   &__time {
     @include bpk-text;
-    @include bpk-text--lg;
+    @include bpk-text--xl;
   }
 }

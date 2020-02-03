@@ -121,7 +121,7 @@ body {
   color: $bpk-font-color-base;
   font-family: $bpk-font-family-base;
   font-size: $bpk-font-size-base;
-  line-height: $bpk-line-height-base;
+  line-height: 1.3rem; /* stylelint-disable-line scale-unlimited/declaration-strict-value */
 
   :global(&.scaffold-font-size) {
     font-size: 13px; /* stylelint-disable-line unit-blacklist, scale-unlimited/declaration-strict-value */

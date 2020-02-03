@@ -24,7 +24,7 @@
       fill: $bpk-color-sky-gray-tint-02;
 
       @include bpk-text;
-      @include bpk-text--sm;
+      @include bpk-text--xs;
     }
   }
 
@@ -32,6 +32,6 @@
     fill: $bpk-color-sky-gray-tint-02;
 
     @include bpk-text;
-    @include bpk-text--sm;
+    @include bpk-text--xs;
   }
 }

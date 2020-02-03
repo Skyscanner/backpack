@@ -26,7 +26,17 @@ import STYLES from './BpkText.scss';
 
 const getClassName = cssModules(STYLES);
 
-const TEXT_STYLES = ['xs', 'sm', 'base', 'lg', 'xl', 'xxl'];
+const TEXT_STYLES = [
+  'xs',
+  'sm',
+  'base',
+  'lg',
+  'xl',
+  'xxl',
+  'xxxl',
+  'xxxxl',
+  'xxxxxl',
+];
 
 const classes = {};
 TEXT_STYLES.forEach(textStyle => {
@@ -35,7 +45,17 @@ TEXT_STYLES.forEach(textStyle => {
 
 type Props = {
   children: Node,
-  textStyle: 'xs' | 'sm' | 'base' | 'lg' | 'xl' | 'xxl',
+  // eslint-disable-next-line flowtype/space-after-type-colon
+  textStyle:
+    | 'xs'
+    | 'sm'
+    | 'base'
+    | 'lg'
+    | 'xl'
+    | 'xxl'
+    | 'xxxl'
+    | 'xxxxl'
+    | 'xxxxxl',
   tagName: 'span' | 'p' | 'text' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6',
   className: ?string,
   bold: boolean,

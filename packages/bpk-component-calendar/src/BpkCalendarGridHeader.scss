@@ -30,10 +30,11 @@
 
   &__week {
     display: table-row;
-    font-size: $bpk-font-size-sm;
-    line-height: $bpk-line-height-sm;
     list-style: none;
     text-align: center;
+
+    @include bpk-text;
+    @include bpk-text--xs;
   }
 
   &__weekday {

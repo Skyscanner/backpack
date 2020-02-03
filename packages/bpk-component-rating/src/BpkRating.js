@@ -36,7 +36,7 @@ export type Props = {
   ariaLabel: string,
   title: string,
   subtitle: ?string,
-  size: string,
+  size: $Values<typeof RATING_SIZES>,
   value: number,
   className: ?string,
   vertical: boolean,
@@ -58,6 +58,13 @@ const BpkRating = (props: Props) => {
   ];
   const textWrapperStyles = [getClassName('bpk-rating__text-wrapper')];
   const textStyles = [getClassName('bpk-rating__text')];
+
+  let textSize = 'sm';
+  if (size === RATING_SIZES.lg) {
+    textSize = 'xl';
+  } else if (size === RATING_SIZES.sm) {
+    textSize = 'xs';
+  }
 
   let adjustedValue = value;
 
@@ -89,7 +96,7 @@ const BpkRating = (props: Props) => {
   return (
     <div className={classNames.join(' ')} aria-label={ariaLabel} {...rest}>
       <BpkText
-        textStyle="base"
+        textStyle={textSize}
         tagName="span"
         className={scoreStyles.join(' ')}
         aria-hidden="true"
@@ -99,7 +106,7 @@ const BpkRating = (props: Props) => {
       <div className={textWrapperStyles.join(' ')}>
         <BpkText
           className={textStyles.join(' ')}
-          textStyle={RATING_SIZES[size]}
+          textStyle={textSize}
           tagName="span"
           aria-hidden="true"
         >
@@ -108,7 +115,7 @@ const BpkRating = (props: Props) => {
         {subtitle && (
           <BpkText
             className={textStyles.join(' ')}
-            textStyle={size === RATING_SIZES.lg ? 'base' : 'sm'}
+            textStyle={size === RATING_SIZES.lg ? 'sm' : 'xs'}
             tagName="span"
             aria-hidden="true"
           >

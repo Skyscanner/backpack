@@ -129,7 +129,7 @@
       vertical-align: top;
 
       @include bpk-text;
-      @include bpk-text--sm;
+      @include bpk-text--xs;
     }
 
     &-tertiary-label {
@@ -137,7 +137,7 @@
       vertical-align: top;
 
       @include bpk-text;
-      @include bpk-text--sm;
+      @include bpk-text--xs;
     }
   }
 }

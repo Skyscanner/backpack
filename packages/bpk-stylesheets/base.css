@@ -1741,7 +1741,8 @@ body {
   color: #111236;
   font-family: "Skyscanner Relative", -apple-system, BlinkMacSystemFont, "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Arial", sans-serif;
   font-size: 1rem;
-  line-height: 1.5rem; }
+  line-height: 1.3rem;
+  /* stylelint-disable-line scale-unlimited/declaration-strict-value */ }
   body.scaffold-font-size {
     font-size: 13px;
     /* stylelint-disable-line unit-blacklist, scale-unlimited/declaration-strict-value */ }

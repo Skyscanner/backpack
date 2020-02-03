@@ -39,7 +39,7 @@
   @include bpk-themeable-property(background-color, --bpk-badge-background-color, $bpk-badge-background-color);
   @include bpk-border-radius-xs;
   @include bpk-text;
-  @include bpk-text--sm;
+  @include bpk-text--xs;
 
   // // HACK: Icons have an inline style attribute setting the height and width.
   // // so the only way to override this in CSS is to use !important.

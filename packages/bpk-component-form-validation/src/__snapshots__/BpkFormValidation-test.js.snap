@@ -28,7 +28,7 @@ exports[`BpkFormValidation should render correctly 1`] = `
             Object {
               "display": "inline-block",
               "lineHeight": "1.125rem",
-              "marginTop": "0.1875rem",
+              "marginTop": "0.0625rem",
               "verticalAlign": "top",
             }
           }
@@ -86,7 +86,7 @@ exports[`BpkFormValidation should render correctly with "expanded" equal to fals
             Object {
               "display": "inline-block",
               "lineHeight": "1.125rem",
-              "marginTop": "0.1875rem",
+              "marginTop": "0.0625rem",
               "verticalAlign": "top",
             }
           }

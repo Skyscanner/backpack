@@ -497,7 +497,7 @@
 
 @mixin bpk-checkbox__label--small {
   @include bpk-text;
-  @include bpk-text--sm;
+  @include bpk-text--xs;
 }
 
 /// White label checkbox. Modifies the bpk-checkbox mixin.
@@ -815,7 +815,7 @@
 ///   }
 //
 @mixin bpk-form-validation__container {
-  font-size: $bpk-text-sm-font-size;
+  font-size: $bpk-text-xs-font-size;
 }
 
 /// Form textarea.

@@ -227,11 +227,15 @@ export const flareHeightMobile = "1.125rem";
 export const fontColorBase = "rgb(17, 18, 54)";
 export const fontFamilyBase = "'Skyscanner Relative', -apple-system, BlinkMacSystemFont, 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', 'Arial', sans-serif";
 export const fontSizeBase = "1rem";
-export const fontSizeLg = "1.5rem";
+export const fontSizeLg = "1.25rem";
 export const fontSizeRoot = "100%";
-export const fontSizeSm = ".75rem";
-export const fontSizeXl = "1.75rem";
-export const fontSizeXxl = "2.625rem";
+export const fontSizeSm = ".875rem";
+export const fontSizeXl = "1.5rem";
+export const fontSizeXs = ".75rem";
+export const fontSizeXxl = "1.875rem";
+export const fontSizeXxxl = "2.25rem";
+export const fontSizeXxxxl = "2.625rem";
+export const fontSizeXxxxxl = "3.75rem";
 export const fontWeightBlack = "900";
 export const fontWeightBold = "700";
 export const formValidationArrowSize = ".375rem";
@@ -242,22 +246,22 @@ export const gridContainerPadding = "1.5rem";
 export const gridGutter = "1.5rem";
 export const h1FontSize = "2.625rem";
 export const h1FontWeight = "400";
-export const h1LineHeight = "3.375rem";
-export const h2FontSize = "1.75rem";
+export const h1LineHeight = "2.9375rem";
+export const h2FontSize = "1.875rem";
 export const h2FontWeight = "400";
-export const h2LineHeight = "2.625rem";
+export const h2LineHeight = "2.4375rem";
 export const h3FontSize = "1.5rem";
 export const h3FontWeight = "400";
-export const h3LineHeight = "1.875rem";
+export const h3LineHeight = "1.9375rem";
 export const h4FontSize = "1rem";
 export const h4FontWeight = "700";
-export const h4LineHeight = "1.5rem";
+export const h4LineHeight = "1.25rem";
 export const h5FontSize = ".75rem";
 export const h5FontWeight = "700";
-export const h5LineHeight = "1.125rem";
+export const h5LineHeight = "1rem";
 export const h6FontSize = ".75rem";
 export const h6FontWeight = "700";
-export const h6LineHeight = "1.125rem";
+export const h6LineHeight = "1rem";
 export const headingContentMarginTop = "1.875rem";
 export const headingMarginBottom = ".75rem";
 export const headingMarginTop = "0";
@@ -284,12 +288,16 @@ export const inputPlaceholderFontStyle = "italic";
 export const labelColor = "rgb(17, 18, 54)";
 export const labelDisabledColor = "rgb(178, 178, 191)";
 export const labelFontSize = ".75rem";
-export const labelLineHeight = "1.125rem";
-export const lineHeightBase = "1.5rem";
-export const lineHeightLg = "1.875rem";
+export const labelLineHeight = "1rem";
+export const lineHeightBase = "1.25rem";
+export const lineHeightLg = "1.625rem";
 export const lineHeightSm = "1.125rem";
-export const lineHeightXl = "2.625rem";
-export const lineHeightXxl = "3.375rem";
+export const lineHeightXl = "1.9375rem";
+export const lineHeightXs = "1rem";
+export const lineHeightXxl = "2.4375rem";
+export const lineHeightXxxl = "2.9375rem";
+export const lineHeightXxxxl = "3.4375rem";
+export const lineHeightXxxxxl = "4.875rem";
 export const linkActiveColor = "rgb(4, 39, 89)";
 export const linkAlternateActiveColor = "rgb(221, 221, 229)";
 export const linkAlternateColor = "rgb(255, 255, 255)";
@@ -363,29 +371,38 @@ export const textareaMinHeight = "2.625rem * 2";
 export const textBaseFontSize = "1rem";
 export const textBaseFontWeight = "400";
 export const textBaseLetterSpacing = "normal";
-export const textBaseLineHeight = "1.5rem";
-export const textLgFontSize = "1.5rem";
+export const textBaseLineHeight = "1.25rem";
+export const textLgFontSize = "1.25rem";
 export const textLgFontWeight = "400";
 export const textLgLetterSpacing = "normal";
-export const textLgLineHeight = "1.875rem";
+export const textLgLineHeight = "1.625rem";
 export const textPrimaryLightColor = "rgb(17, 18, 54)";
 export const textSecondaryLightColor = "rgb(68, 69, 96)";
-export const textSmFontSize = ".75rem";
+export const textSmFontSize = ".875rem";
 export const textSmFontWeight = "400";
 export const textSmLetterSpacing = "normal";
 export const textSmLineHeight = "1.125rem";
-export const textXlFontSize = "1.75rem";
+export const textXlFontSize = "1.5rem";
 export const textXlFontWeight = "400";
 export const textXlLetterSpacing = "normal";
-export const textXlLineHeight = "2.625rem";
+export const textXlLineHeight = "1.9375rem";
 export const textXsFontSize = ".75rem";
 export const textXsFontWeight = "400";
 export const textXsLetterSpacing = "normal";
-export const textXsLineHeight = "1.125rem";
-export const textXxlFontSize = "2.625rem";
+export const textXsLineHeight = "1rem";
+export const textXxlFontSize = "1.875rem";
 export const textXxlFontWeight = "400";
 export const textXxlLetterSpacing = "normal";
-export const textXxlLineHeight = "3.375rem";
+export const textXxlLineHeight = "2.4375rem";
+export const textXxxlFontSize = "2.25rem";
+export const textXxxlFontWeight = "400";
+export const textXxxlLineHeight = "2.9375rem";
+export const textXxxxlFontSize = "2.625rem";
+export const textXxxxlFontWeight = "400";
+export const textXxxxlLineHeight = "3.4375rem";
+export const textXxxxxlFontSize = "3.75rem";
+export const textXxxxxlFontWeight = "400";
+export const textXxxxxlLineHeight = "4.875rem";
 export const zindexAutosuggest = "900";
 export const zindexDrawer = "1100";
 export const zindexModal = "1100";
@@ -617,6 +634,9 @@ textSmFontSize,
 textXlFontSize,
 textXsFontSize,
 textXxlFontSize,
+textXxxlFontSize,
+textXxxxlFontSize,
+textXxxxxlFontSize,
 };
 export const fontWeights = {
 fontWeightBlack,
@@ -633,6 +653,9 @@ textSmFontWeight,
 textXlFontWeight,
 textXsFontWeight,
 textXxlFontWeight,
+textXxxlFontWeight,
+textXxxxlFontWeight,
+textXxxxxlFontWeight,
 };
 export const forms = {
 checkboxCheckedTickColor,
@@ -709,6 +732,9 @@ textSmLineHeight,
 textXlLineHeight,
 textXsLineHeight,
 textXxlLineHeight,
+textXxxlLineHeight,
+textXxxxlLineHeight,
+textXxxxxlLineHeight,
 };
 export const modals = {
 modalBackgroundColor,
@@ -814,12 +840,20 @@ fontSizeLg,
 fontSizeRoot,
 fontSizeSm,
 fontSizeXl,
+fontSizeXs,
 fontSizeXxl,
+fontSizeXxxl,
+fontSizeXxxxl,
+fontSizeXxxxxl,
 lineHeightBase,
 lineHeightLg,
 lineHeightSm,
 lineHeightXl,
+lineHeightXs,
 lineHeightXxl,
+lineHeightXxxl,
+lineHeightXxxxl,
+lineHeightXxxxxl,
 };
 export const zIndices = {
 zindexAutosuggest,

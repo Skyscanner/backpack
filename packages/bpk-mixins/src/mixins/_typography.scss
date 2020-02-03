@@ -39,10 +39,6 @@
   @if ($font-weight) {
     font-weight: $font-weight;
   }
-
-  @if ($letter-spacing) {
-    letter-spacing: $letter-spacing;
-  }
 }
 
 /// Text margin reset.
@@ -236,6 +232,92 @@
   @include bpk-text--xxl;
 }
 
+/// Extra extra large text style
+///
+/// @require {mixin} bpk-text
+///
+/// @example scss
+///   .selector {
+///     @include bpk-text;
+///     @include bpk-text--xxxl;
+///   }
+
+@mixin bpk-text--xxxl {
+  @include _bpk-text-factory(
+    $bpk-text-xxxl-font-size,
+    $bpk-text-xxxl-line-height,
+    $bpk-text-xxxl-font-weight
+  );
+}
+
+/// Extra extra large text style (without margin reset)
+///
+/// @example scss
+///   .selector {
+///     @include bpk-text-xxxl;
+///   }
+
+@mixin bpk-text-xxxl {
+  @include bpk-text--xxxl;
+}
+
+/// Extra extra large text style
+///
+/// @require {mixin} bpk-text
+///
+/// @example scss
+///   .selector {
+///     @include bpk-text;
+///     @include bpk-text--xxxxl;
+///   }
+
+@mixin bpk-text--xxxxl {
+  @include _bpk-text-factory(
+    $bpk-text-xxxxl-font-size,
+    $bpk-text-xxxxl-line-height,
+    $bpk-text-xxxxl-font-weight
+  );
+}
+
+/// Extra extra large text style (without margin reset)
+///
+/// @example scss
+///   .selector {
+///     @include bpk-text-xxxxl;
+///   }
+
+@mixin bpk-text-xxxxl {
+  @include bpk-text--xxxxl;
+}
+
+/// Extra extra large text style
+///
+/// @require {mixin} bpk-text
+///
+/// @example scss
+///   .selector {
+///     @include bpk-text;
+///     @include bpk-text--xxxxxl;
+///   }
+
+@mixin bpk-text--xxxxxl {
+  @include _bpk-text-factory(
+    $bpk-text-xxxxxl-font-size,
+    $bpk-text-xxxxxl-line-height,
+    $bpk-text-xxxxxl-font-weight
+  );
+}
+
+/// Extra extra large text style (without margin reset)
+///
+/// @example scss
+///   .selector {
+///     @include bpk-text-xxxxxl;
+///   }
+
+@mixin bpk-text-xxxxxl {
+  @include bpk-text--xxxxxl;
+}
 /// Bold text style
 ///
 /// @require {mixin} bpk-text
@@ -271,14 +353,11 @@
 @mixin bpk-heading-1 {
   margin-top: $bpk-heading-margin-top;
   margin-bottom: $bpk-heading-margin-bottom;
-  font-weight: $bpk-h-1-font-weight;
 
-  @include _bpk-text-factory($bpk-h-1-font-size, $bpk-h-1-line-height);
+  @include _bpk-text-factory($bpk-h-1-font-size, $bpk-h-1-line-height, $bpk-h-1-font-weight);
 
   @include bpk-breakpoint-mobile {
-    font-weight: $bpk-h-2-font-weight;
-
-    @include _bpk-text-factory($bpk-h-2-font-size, $bpk-h-2-line-height);
+    @include _bpk-text-factory($bpk-h-2-font-size, $bpk-h-2-line-height, $bpk-h-2-font-weight);
   }
 }
 
@@ -292,14 +371,11 @@
 @mixin bpk-heading-2 {
   margin-top: $bpk-heading-margin-top;
   margin-bottom: $bpk-heading-margin-bottom;
-  font-weight: $bpk-h-2-font-weight;
 
-  @include _bpk-text-factory($bpk-h-2-font-size, $bpk-h-2-line-height);
+  @include _bpk-text-factory($bpk-h-2-font-size, $bpk-h-2-line-height, $bpk-h-2-font-weight);
 
   @include bpk-breakpoint-mobile {
-    font-weight: $bpk-h-3-font-weight;
-
-    @include _bpk-text-factory($bpk-h-3-font-size, $bpk-h-3-line-height);
+    @include _bpk-text-factory($bpk-h-3-font-size, $bpk-h-3-line-height, $bpk-h-3-font-weight);
   }
 }
 
@@ -313,14 +389,11 @@
 @mixin bpk-heading-3 {
   margin-top: $bpk-heading-margin-top;
   margin-bottom: $bpk-heading-margin-bottom;
-  font-weight: $bpk-h-3-font-weight;
 
-  @include _bpk-text-factory($bpk-h-3-font-size, $bpk-h-3-line-height);
+  @include _bpk-text-factory($bpk-h-3-font-size, $bpk-h-3-line-height, $bpk-h-3-font-weight);
 
   @include bpk-breakpoint-mobile {
-    font-weight: $bpk-h-4-font-weight;
-
-    @include _bpk-text-factory($bpk-h-4-font-size, $bpk-h-4-line-height);
+    @include _bpk-text-factory($bpk-h-4-font-size, $bpk-h-4-line-height, $bpk-h-4-font-weight);
   }
 }
 
@@ -334,14 +407,11 @@
 @mixin bpk-heading-4 {
   margin-top: $bpk-heading-margin-top;
   margin-bottom: $bpk-heading-margin-bottom;
-  font-weight: $bpk-h-4-font-weight;
 
-  @include _bpk-text-factory($bpk-h-4-font-size, $bpk-h-4-line-height);
+  @include _bpk-text-factory($bpk-h-4-font-size, $bpk-h-4-line-height, $bpk-h-4-font-weight);
 
   @include bpk-breakpoint-mobile {
-    font-weight: $bpk-h-5-font-weight;
-
-    @include _bpk-text-factory($bpk-h-5-font-size, $bpk-h-5-line-height);
+    @include _bpk-text-factory($bpk-h-5-font-size, $bpk-h-5-line-height, $bpk-h-5-font-weight);
   }
 }
 
@@ -355,9 +425,8 @@
 @mixin bpk-heading-5 {
   margin-top: $bpk-heading-margin-top;
   margin-bottom: $bpk-heading-margin-bottom;
-  font-weight: $bpk-h-5-font-weight;
 
-  @include _bpk-text-factory($bpk-h-5-font-size, $bpk-h-5-line-height);
+  @include _bpk-text-factory($bpk-h-5-font-size, $bpk-h-5-line-height, $bpk-h-5-font-weight);
 }
 
 /// Level 6 heading.
@@ -370,9 +439,8 @@
 @mixin bpk-heading-6 {
   margin-top: $bpk-heading-margin-top;
   margin-bottom: $bpk-heading-margin-bottom;
-  font-weight: $bpk-h-6-font-weight;
 
-  @include _bpk-text-factory($bpk-h-6-font-size, $bpk-h-6-line-height);
+  @include _bpk-text-factory($bpk-h-6-font-size, $bpk-h-6-line-height, $bpk-h-6-font-weight);
 }
 
 /// Remove bottom margin from heading. Modifies the various bpk-heading mixins.
@@ -801,10 +869,10 @@
     margin-top: 0;
     margin-bottom: $bpk-spacing-sm;
 
-    @include bpk-text-xxl;
+    @include bpk-text-xxxxl;
 
     @include bpk-breakpoint-mobile {
-      @include bpk-text-xl;
+      @include bpk-text-xxl;
     }
   }
 
@@ -812,10 +880,10 @@
     margin-top: 0;
     margin-bottom: $bpk-spacing-sm;
 
-    @include bpk-text-xl;
+    @include bpk-text-xxl;
 
     @include bpk-breakpoint-mobile {
-      @include bpk-text-lg;
+      @include bpk-text-xl;
     }
   }
 
@@ -823,7 +891,7 @@
     margin-top: 0;
     margin-bottom: $bpk-spacing-sm;
 
-    @include bpk-text-lg;
+    @include bpk-text-xl;
 
     @include bpk-breakpoint-mobile {
       @include bpk-text-base;
@@ -833,12 +901,12 @@
 
   h4 { /* stylelint-disable-line selector-max-type */
     margin-top: 0;
-    margin-bottom: $bpk-spacing-sm;
+    margin-bottom: $bpk-spacing-xs;
 
     @include bpk-text-base;
 
     @include bpk-breakpoint-mobile {
-      @include bpk-text-sm;
+      @include bpk-text-xs;
       @include bpk-text-bold;
     }
   }
@@ -847,7 +915,7 @@
     margin-top: 0;
     margin-bottom: $bpk-spacing-sm;
 
-    @include bpk-text-sm;
+    @include bpk-text-xs;
 
     @include bpk-breakpoint-mobile {
       @include bpk-text-xs;
@@ -859,7 +927,7 @@
     margin-top: 0;
     margin-bottom: $bpk-spacing-sm;
 
-    @include bpk-text-sm;
+    @include bpk-text-xs;
 
     @include bpk-breakpoint-mobile {
       @include bpk-text-xs;
@@ -873,7 +941,7 @@
 
   p { /* stylelint-disable-line selector-max-type */
     margin-top: 0;
-    margin-bottom: $bpk-spacing-sm;
+    margin-bottom: $bpk-spacing-xs;
 
     @include bpk-text-base;
   }
