@@ -60,7 +60,7 @@ export default () => (
 | Property  | PropType                                 | Required | Default Value |
 | --------- | ---------------------------------------- | -------- | ------------- |
 | children  | -                                        | true     | -             |
-| textStyle | 'xs', 'sm', 'base', 'lg', 'xl', 'xxl'    | false    | 'base'        |
+| textStyle | 'xs', 'sm', 'base', 'lg', 'xl', 'xxl', 'xxxl', 'xxxxl', 'xxxxxl'    | false    | 'base'        |
 | tagName   | 'span', 'p', 'text', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6' | false    | 'span'        |
 | className | string                                   | false    | null          |
 | bold      | bool                                     | false    | false         |
