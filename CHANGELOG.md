@@ -15,10 +15,19 @@
 
   - bpk-stylesheets: 4.1.11 => 5.0.0
     - Default line height is now set to `1.3rem` which is the baseline height of the Relative font family.
+  
+  - bpk-component-text: 2.0.31 => 3.0.0
+    -  Text sizes will now be different according to the token changes, which will require usage updates
+      - `SM` --> `XS`
+      - `LG` --> `XL`
+      - `XL` --> `XXL`
 
 **Added:**
   - bpk-mixins: 19.0.30 => 19.1.0
     - Added new text mixins to support new font sizes
+  
+  - bpk-component-text: 2.0.31 => 3.0.0
+    - Added support for new larger font sizes.
 
 # 2020-01-21 - Add new week day format option to calendar
 
