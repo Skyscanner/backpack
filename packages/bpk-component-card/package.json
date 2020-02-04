@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-card",
-  "version": "2.0.31",
+  "version": "2.0.32",
   "description": "Backpack card component.",
   "main": "index.js",
   "repository": {
@@ -13,7 +13,7 @@
     "react": "^15.0.0 || ^16.0.0"
   },
   "dependencies": {
-    "bpk-mixins": "^19.1.0",
+    "bpk-mixins": "^19.1.1",
     "bpk-react-utils": "^2.9.3",
     "prop-types": "^15.6.2"
   },
