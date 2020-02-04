@@ -38,11 +38,6 @@ const TEXT_STYLES = [
   'xxxxxl',
 ];
 
-const classes = {};
-TEXT_STYLES.forEach(textStyle => {
-  classes[textStyle] = getClassName(`bpk-text--${textStyle}`);
-});
-
 type Props = {
   children: Node,
   // eslint-disable-next-line flowtype/space-after-type-colon
@@ -70,17 +65,15 @@ const BpkText = (props: Props) => {
     textStyle,
     ...rest
   } = props;
-  const classNames = [getClassName('bpk-text'), classes[props.textStyle]];
-
-  if (bold) {
-    classNames.push(getClassName('bpk-text--bold'));
-  }
-  if (className) {
-    classNames.push(className);
-  }
+  const classNames = getClassName(
+    'bpk-text',
+    `bpk-text--${textStyle}`,
+    bold && 'bpk-text--bold',
+    className,
+  );
 
   return (
-    <TagName className={classNames.join(' ')} {...rest}>
+    <TagName className={classNames} {...rest}>
       {children}
     </TagName>
   );
