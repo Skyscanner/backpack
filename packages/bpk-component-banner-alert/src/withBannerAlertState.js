@@ -96,7 +96,7 @@ const withBannerAlertState = (WrappedComponent: ComponentType<any>) => {
       this.hideIntervalId = null;
     }
 
-    componentWillMount() {
+    componentDidMount() {
       const { hideAfter } = this.props;
 
       if (
