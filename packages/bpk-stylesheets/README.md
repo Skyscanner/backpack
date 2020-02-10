@@ -14,6 +14,12 @@ npm install bpk-stylesheets --save-dev
 @import '~bpk-stylesheets';
 ```
 
+By default font rendering is not included if you need to include Skyscanner Relative in your styles, import it using the following:
+
+```scss
+@import '~bpk-stylesheets/font';
+```
+
 ## Contributing
 
 Don't forget to rebuild and commit `base.js` after you make changes to this package.
