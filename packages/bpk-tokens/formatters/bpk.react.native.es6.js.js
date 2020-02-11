@@ -26,6 +26,10 @@ import adjustTypography from './adjust-typography';
 import { blockComment } from './license-header';
 import valueTemplate from './react-native-value-template';
 
+// The raw tokens are guaranteed to be generated at this point, we make sure they are done first in the gulpfile.
+// We do this because I could not find any way to make Theo provide both the Android and iOS tokens as arguments to this function, because Theo
+// merges all tokens we provide as input, and that will result in the function being always called with all tokens (iOS and Android),
+// which is no good for us here, we need to know which tokens are Android and iOS to add the proper flow annotations.
 const iosRawTokens = _.memoize(() =>
   JSON.parse(
     fs.readFileSync(path.join(__dirname, '../tokens/base.raw.ios.json')),
