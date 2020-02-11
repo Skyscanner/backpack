@@ -1,6 +1,11 @@
 # UNRELEASED:
 
 # How to write a good changelog entry:
+
+BREAKING:
+  - bpk-stylesheets:
+    - Removed Relative font rendering by default for consumer lightweight use.
+
 #
 #   1. Add 'BREAKING', 'ADDED' OR 'FIXED' depending on if the change will be major, minor or patch according to [semver.org](semver.org).
 #   2. Add the package name.
