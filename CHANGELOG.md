@@ -2,6 +2,12 @@
 
 [Unreleased changes](./UNRELEASED.yaml).
 
+# 2020-02-11 - Removed Relative font rendering by default.
+
+**Breaking:**
+  - bpk-stylesheets: 5.0.1 => 6.0.0
+    - Removed Relative font rendering by default for consumer lightweight use.
+
 # 2020-02-03 - New web type scale updates.
 
 **Breaking:**
