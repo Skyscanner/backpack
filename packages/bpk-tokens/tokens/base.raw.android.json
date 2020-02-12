@@ -1038,13 +1038,6 @@
       "originalValue": "{!SKY_BLUE}",
       "name": "PRIMARY_LIGHT_COLOR"
     },
-    "SECONDARY_DARK_COLOR": {
-      "type": "color",
-      "category": "colors",
-      "value": "#6d9febff",
-      "originalValue": "{!SKY_BLUE_TINT_01}",
-      "name": "SECONDARY_DARK_COLOR"
-    },
     "SPACING_BASE": {
       "type": "size",
       "category": "spacings",
@@ -1562,7 +1555,6 @@
     "LINE_LIGHT_COLOR",
     "PRIMARY_DARK_COLOR",
     "PRIMARY_LIGHT_COLOR",
-    "SECONDARY_DARK_COLOR",
     "SPACING_BASE",
     "SPACING_LG",
     "SPACING_MD",

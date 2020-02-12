@@ -71,7 +71,7 @@ const performMerge = (key, mergeDefinition) => {
     return null;
   }
 
-  const newObj = JSON.parse(JSON.stringify(mergeDefinition.light));
+  const newObj = { ...mergeDefinition.light };
   newObj.name = key;
   newObj.darkValue = mergeDefinition.dark.value;
   newObj.originalDarkValue = mergeDefinition.dark.originalValue;

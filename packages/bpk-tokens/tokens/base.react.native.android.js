@@ -1,3 +1,4 @@
+// @flow
 /*
  * 
  * Backpack - Skyscanner's Design System
@@ -166,10 +167,6 @@ export const primaryColor = {
 };
 export const primaryDarkColor = "rgb(109, 159, 235)";
 export const primaryLightColor = "rgb(7, 112, 227)";
-export const secondaryColor = {
- dark: "rgb(109, 159, 235)",
-};
-export const secondaryDarkColor = "rgb(109, 159, 235)";
 export const spacingBase = 16;
 export const spacingLg = 24;
 export const spacingMd = 8;
@@ -297,7 +294,6 @@ lineDarkColor,
 lineLightColor,
 primaryDarkColor,
 primaryLightColor,
-secondaryDarkColor,
 };
 export const elevation = {
 elevationBase,
@@ -359,7 +355,6 @@ backgroundSecondaryColor,
 backgroundTertiaryColor,
 lineColor,
 primaryColor,
-secondaryColor,
 };
 export const semanticTextColors = {
 backgroundElevation01Color,
@@ -419,3 +414,18 @@ lineHeightXl,
 lineHeightXs,
 lineHeightXxl,
 };
+// iOS only tokens
+export const shadowLgColor = undefined;
+export const shadowLgOffsetHeight = undefined;
+export const shadowLgOffsetWidth = undefined;
+export const shadowLgOpacity = undefined;
+export const shadowLgRadius = undefined;
+export const shadowSmColor = undefined;
+export const shadowSmOffsetHeight = undefined;
+export const shadowSmOffsetWidth = undefined;
+export const shadowSmOpacity = undefined;
+export const shadowSmRadius = undefined;
+export const textHeavyFontWeight = undefined;
+export const touchableOverlayColor = undefined;
+export const touchableOverlayOpacity = undefined;
+export const underlayOpacity = undefined;

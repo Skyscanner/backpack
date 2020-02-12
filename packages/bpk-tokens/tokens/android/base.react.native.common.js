@@ -128,7 +128,6 @@ module.exports = {
   lineLightColor: "rgb(205, 205, 215)",
   primaryDarkColor: "rgb(109, 159, 235)",
   primaryLightColor: "rgb(7, 112, 227)",
-  secondaryDarkColor: "rgb(109, 159, 235)",
   spacingBase: 16,
   spacingLg: 24,
   spacingMd: 8,
