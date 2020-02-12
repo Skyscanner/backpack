@@ -2,6 +2,14 @@
 
 [Unreleased changes](./UNRELEASED.yaml).
 
+# 2020-02-12 - Added flow to RN tokens.
+
+**Breaking:**
+
+- bpk-tokens:
+  - Added flow typing to RN tokens.
+  - Removed wrong `secondaryColor` and `secondaryDarkColor` from RN tokens.
+
 # 2020-02-11 - Removed Relative font rendering by default.
 
 **Breaking:**
