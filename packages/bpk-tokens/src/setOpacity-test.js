@@ -30,28 +30,24 @@ describe('setOpacity', () => {
   });
 
   it('should error if opacity > 1', () => {
-    // eslint-disable-next-line max-len
     expect(() => setOpacity('rgb(119, 67, 206)', 47)).toThrow(
       'Invalid arg `opacity` of value `47` supplied to `setOpacity`, expected a value between 0.0 and 1.0.',
     );
   });
 
   it('should error if opacity < 0', () => {
-    // eslint-disable-next-line max-len
     expect(() => setOpacity('rgb(119, 67, 206)', -12)).toThrow(
       'Invalid arg `opacity` of value `-12` supplied to `setOpacity`, expected a value between 0.0 and 1.0.',
     );
   });
 
   it('should error if opacity is wrong type', () => {
-    // eslint-disable-next-line max-len
     expect(() => setOpacity('rgb(119, 67, 206)', { opacity: 0.4 })).toThrow(
       'Invalid arg `opacity` of type `object` supplied to `setOpacity`, expected a numeric value between 0.0 and 1.0.',
     );
   });
 
   it('should error if opacity is null', () => {
-    // eslint-disable-next-line max-len
     expect(() => setOpacity('rgb(119, 67, 206)', null)).toThrow(
       'Invalid arg `opacity` of type `object` supplied to `setOpacity`, expected a numeric value between 0.0 and 1.0.',
     );

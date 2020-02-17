@@ -73,7 +73,7 @@ const extractSemanticTokens = allTokens => {
         // This will be light or dark
         const variation = match[2].toLowerCase();
         semanticToken.value[variation] = { ...token };
-        semanticTokens[key] = semanticToken; // eslint-disable-line
+        semanticTokens[key] = semanticToken; // eslint-disable-line no-param-reassign
       }
       return semanticTokens;
     },

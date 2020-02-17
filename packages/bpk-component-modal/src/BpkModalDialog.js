@@ -81,7 +81,6 @@ const BpkModalDialog = (props: Props) => {
   const headingId = `bpk-modal-heading-${props.id}`;
   const navigationId = `bpk-modal-navigation-${props.id}`;
 
-  /* eslint-disable jsx-a11y/no-static-element-interactions,jsx-a11y/no-noninteractive-element-interactions */
   return (
     <TransitionInitialMount
       appearClassName={getClassName('bpk-modal--appear')}
@@ -130,7 +129,6 @@ const BpkModalDialog = (props: Props) => {
       </section>
     </TransitionInitialMount>
   );
-  /* eslint-enable */
 };
 
 export const propTypes = {

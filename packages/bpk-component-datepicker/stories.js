@@ -71,7 +71,6 @@ const inputPropsWithEventHandlers = {
   large: true,
 };
 
-/* eslint-disable react/no-multi-comp */
 class CalendarContainer extends Component {
   constructor(props) {
     super(props);
@@ -133,7 +132,7 @@ ColoredCalendarDate.propTypes = {
   isFocused: PropTypes.bool.isRequired,
   isOutside: PropTypes.bool.isRequired,
   isBlocked: PropTypes.bool.isRequired,
-  date: PropTypes.object.isRequired, // eslint-disable-line
+  date: PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
 };
 
 class ReturnDatepicker extends Component {
@@ -215,7 +214,6 @@ class ReturnDatepicker extends Component {
     );
   }
 }
-/* eslint-enable react/no-multi-comp */
 
 storiesOf('bpk-component-datepicker', module)
   .add('Default', () => (

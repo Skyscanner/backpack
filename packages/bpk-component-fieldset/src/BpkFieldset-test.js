@@ -268,7 +268,7 @@ describe('BpkFieldset', () => {
   it('should reject label property when label is omitted', () => {
     expect(propTypes.label({}, 'label').toString()).toEqual(
       'Error: `label` is required when `isCheckbox` is false.',
-    ); // eslint-disable-line max-len
+    );
   });
 
   it('should accept no label property when label is omitted but isCheckbox is included', () => {

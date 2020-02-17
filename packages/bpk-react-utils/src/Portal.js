@@ -275,7 +275,7 @@ class Portal extends Component {
 Portal.propTypes = {
   children: PropTypes.node.isRequired,
   isOpen: PropTypes.bool.isRequired,
-  beforeClose: PropTypes.func, // eslint-disable-line react/no-unused-prop-types
+  beforeClose: PropTypes.func,
   className: PropTypes.string,
   onClose: PropTypes.func,
   onOpen: PropTypes.func,

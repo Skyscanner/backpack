@@ -20,12 +20,10 @@ import Color from 'color';
 
 const setOpacity = (colorToken, opacity) => {
   if (!parseFloat(opacity)) {
-    // eslint-disable-next-line max-len
     throw new Error(
       `Invalid arg \`opacity\` of type \`${typeof opacity}\` supplied to \`setOpacity\`, expected a numeric value between 0.0 and 1.0.`,
     );
   } else if (opacity > 1.0 || opacity < 0.0) {
-    // eslint-disable-next-line max-len
     throw new Error(
       `Invalid arg \`opacity\` of value \`${opacity}\` supplied to \`setOpacity\`, expected a value between 0.0 and 1.0.`,
     );

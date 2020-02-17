@@ -74,7 +74,7 @@ describe('BpkAccordionItem', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  it('should render correctly with "tagName" prop set', () => {
+  it('should render correctly with "bold" prop set', () => {
     const tree = renderer
       .create(
         <BpkAccordionItem id="my-accordion" title="My accordion item" bold>

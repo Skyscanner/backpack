@@ -69,7 +69,7 @@ describe('withBannerAlertState(BpkBannerAlertDismissable)', () => {
       .find(BpkCloseButton)
       .first()
       .simulate('click');
-    expect(onDismissMock).toBeCalled();
+    expect(onDismissMock).toHaveBeenCalled();
   });
 
   it('should call provided `onHide` when hidding automatically', () => {
@@ -88,7 +88,7 @@ describe('withBannerAlertState(BpkBannerAlertDismissable)', () => {
 
     jest.runAllTimers();
 
-    expect(onHideMock).toBeCalled();
+    expect(onHideMock).toHaveBeenCalled();
   });
 });
 
@@ -139,6 +139,6 @@ describe('withBannerAlertState(BpkBannerAlertExpandable)', () => {
       .find('button')
       .first()
       .simulate('click');
-    expect(onExpandMock).toBeCalled();
+    expect(onExpandMock).toHaveBeenCalled();
   });
 });

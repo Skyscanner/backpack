@@ -1,7 +1,7 @@
 {
   "parser": "babel-eslint",
   "extends": [
-    "skyscanner-with-prettier",
+    "skyscanner",
     "plugin:flowtype/recommended"
   ],
   "plugins": [

@@ -25,7 +25,6 @@ export type LatLong = {
   longitude: number,
 };
 
-// eslint-disable-next-line import/prefer-default-export
 export const LatLongPropType = PropTypes.shape({
   latitude: PropTypes.number.isRequired,
   longitude: PropTypes.number.isRequired,

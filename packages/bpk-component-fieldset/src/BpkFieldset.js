@@ -149,7 +149,7 @@ const labelPropType = (
   if (!label && !isCheckbox) {
     return new Error(
       `\`${propName}\` is required when \`isCheckbox\` is false.`,
-    ); // eslint-disable-line max-len
+    );
   }
   return false;
 };
@@ -163,7 +163,7 @@ export const propTypes = {
   className: PropTypes.string,
   validationMessage: PropTypes.string,
   isCheckbox: PropTypes.bool,
-  validationProps: PropTypes.object, // eslint-disable-line react/forbid-prop-types
+  validationProps: PropTypes.object,
   description: PropTypes.string,
 };
 

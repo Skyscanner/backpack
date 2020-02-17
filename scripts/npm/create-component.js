@@ -43,10 +43,7 @@ const schema = {
 };
 
 _.mixin({
-  pascalCase: _.flow(
-    _.camelCase,
-    _.upperFirst,
-  ),
+  pascalCase: _.flow(_.camelCase, _.upperFirst),
 });
 
 // Util to recursively make dirs

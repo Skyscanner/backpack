@@ -135,7 +135,7 @@ const snapshotsModified = fileChanges.some(filePath =>
 if (componentSourceFilesModified && !snapshotsModified) {
   warn(
     "Package source files (e.g. `packages/package-name/src/Component.js`) were updated, but snapshots weren't. Have you checked that the tests still pass?",
-  ); // eslint-disable-line max-len
+  );
 }
 
 // Ensure package-lock changes are intentional.

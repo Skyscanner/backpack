@@ -58,7 +58,7 @@ export const tokenTemplate = ({ name, value, type, category }) =>
   )} name="${name.toUpperCase()}" category="${category}">${valueTemplate(
     value,
     type,
-  )}</${tagName(type)}>`; // eslint-disable-line max-len
+  )}</${tagName(type)}>`;
 
 export default result => {
   const { props } = sortTokens(result.toJS());

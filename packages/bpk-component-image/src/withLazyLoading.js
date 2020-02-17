@@ -111,12 +111,10 @@ export default function withLazyLoading(
 
     // This function is taken from modernizr
     // See https://github.com/modernizr/modernizr
-    // eslint-disable-next-line
     supportsPassiveEvents = (): boolean => {
       let supportsPassiveOption = false;
       try {
         const opts = Object.defineProperty({}, 'passive', {
-          // eslint-disable-next-line getter-return
           get() {
             supportsPassiveOption = true;
             return supportsPassiveOption;

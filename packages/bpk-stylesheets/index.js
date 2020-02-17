@@ -28,7 +28,7 @@ import './index.scss';
   // touch support
   classNames.push(
     'ontouchstart' in window ||
-    (window.DocumentTouch && document instanceof DocumentTouch) // eslint-disable-line
+      (window.DocumentTouch && document instanceof DocumentTouch) // eslint-disable-line no-undef
       ? 'touch-support'
       : 'no-touch-support',
   );

@@ -28,9 +28,9 @@ const mapTemplate = (options = {}) =>
 const mapVariableTemplate = (options = {}) =>
   `${options.varname}: '${options.base64Data}',`;
 const colorOverride = color =>
-  `$1<style type="text/css">circle, ellipse, line, path, polygon, polyline, rect, text { fill: ${color} !important }</style>`; // eslint-disable-line
+  `$1<style type="text/css">circle, ellipse, line, path, polygon, polyline, rect, text { fill: ${color} !important }</style>`;
 const colorPlaceholder =
-  '$1<style type="text/css">circle, ellipse, line, path, polygon, polyline, rect, text { fill: $$$COLOR$$$ !important }</style>'; // eslint-disable-line
+  '$1<style type="text/css">circle, ellipse, line, path, polygon, polyline, rect, text { fill: $$$COLOR$$$ !important }</style>';
 
 const encodeSvg = (svgContents, color) => {
   const contents = color

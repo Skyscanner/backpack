@@ -86,7 +86,6 @@ const decrementValue = (a: string): string => {
 
 const formatValue = (a: string): string => a.toString();
 
-// eslint-disable-next-line react/no-multi-comp
 class ConfigurableNudgerContainer extends Component<{}, { value: string }> {
   constructor() {
     super();

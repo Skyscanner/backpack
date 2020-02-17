@@ -116,14 +116,14 @@ const themeAttributesPropType = (props, propName, componentName) => {
       `${componentName}: To apply theming, the theme prop must include \`${themeAttributes.join(
         ', ',
       )}\` (missing \`${missingThemeAttributes.join(', ')}\`)`,
-    ); // eslint-disable-line max-len
+    );
   }
   if (Object.keys(extraneousThemeAttributes).length > 0) {
     errors.push(
       `${componentName}: Extraneous theme attributes supplied: \`${Object.keys(
         extraneousThemeAttributes,
       ).join(', ')}\`.`,
-    ); // eslint-disable-line max-len
+    );
   }
   if (errors.length > 0) {
     return new Error(errors.join('\n'));
