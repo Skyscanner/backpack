@@ -52,7 +52,7 @@
     cursor: not-allowed;
   }
 
-  &[type=number] {
+  &[type='number'] {
     -moz-appearance: textfield; // stylelint-disable property-no-vendor-prefix
 
     &::-webkit-inner-spin-button,
@@ -61,9 +61,9 @@
     }
   }
 
-  &[type=number],
-  &[type=tel],
-  &[type=email] {
+  &[type='number'],
+  &[type='tel'],
+  &[type='email'] {
     @include bpk-rtl {
       text-align: right;
       direction: ltr;
@@ -87,7 +87,8 @@
 
 @mixin bpk-input--valid {
   padding-right: $bpk-spacing-base;
-  background: $bpk-color-white url(map-get($bpk-icons-sm, tick-monteverde)) no-repeat right $bpk-spacing-sm center;
+  background: $bpk-color-white url(map-get($bpk-icons-sm, tick-monteverde))
+    no-repeat right $bpk-spacing-sm center;
   background-size: $bpk-spacing-md $bpk-spacing-md;
 
   @include bpk-rtl {
@@ -109,10 +110,16 @@
 
 @mixin bpk-input--invalid {
   padding-right: $bpk-spacing-base;
-  background: $bpk-color-white url(map-get($bpk-icons-sm, exclamation-circle-panjin)) no-repeat right $bpk-spacing-sm center;
+  background: $bpk-color-white
+    url(map-get($bpk-icons-sm, exclamation-circle-panjin)) no-repeat right
+    $bpk-spacing-sm center;
   background-size: $bpk-spacing-md $bpk-spacing-md;
 
-  @include bpk-themeable-property(border-color, --bpk-input-invalid-border-color, $bpk-form-validation-color);
+  @include bpk-themeable-property(
+    border-color,
+    --bpk-input-invalid-border-color,
+    $bpk-form-validation-color
+  );
 
   @include bpk-rtl {
     padding-right: $bpk-input-padding-x;
@@ -305,10 +312,13 @@
   display: inline-block;
   width: 100%;
   height: $bpk-select-height;
-  padding: $bpk-select-padding-top $bpk-select-padding-right $bpk-select-padding-bottom $bpk-select-padding-left;
+  padding: $bpk-select-padding-top $bpk-select-padding-right
+    $bpk-select-padding-bottom $bpk-select-padding-left;
   border: $bpk-select-border;
   border-radius: $bpk-select-border-radius;
-  background: $bpk-color-white url(map-get($bpk-icons-sm, arrow-down-sky-gray-tint-01)) no-repeat right $bpk-spacing-sm center;
+  background: $bpk-color-white
+    url(map-get($bpk-icons-sm, arrow-down-sky-gray-tint-01)) no-repeat right
+    $bpk-spacing-sm center;
   background-size: $bpk-spacing-md $bpk-spacing-md;
   color: $bpk-select-color;
   line-height: $bpk-line-height-base - (2 * $bpk-select-border-width);
@@ -327,7 +337,9 @@
 
   &:disabled {
     border-color: $bpk-select-disabled-border-color;
-    background: $bpk-color-white url(map-get($bpk-icons-sm, arrow-down-sky-gray-tint-04)) no-repeat right $bpk-spacing-sm center;
+    background: $bpk-color-white
+      url(map-get($bpk-icons-sm, arrow-down-sky-gray-tint-04)) no-repeat right
+      $bpk-spacing-sm center;
     color: $bpk-select-disabled-color;
     cursor: not-allowed;
   }
@@ -442,10 +454,16 @@
 
 @mixin bpk-select--invalid {
   padding-right: $bpk-spacing-base;
-  background: $bpk-color-white url(map-get($bpk-icons-sm, arrow-down-sky-gray-tint-01)) no-repeat right $bpk-spacing-sm center;
+  background: $bpk-color-white
+    url(map-get($bpk-icons-sm, arrow-down-sky-gray-tint-01)) no-repeat right
+    $bpk-spacing-sm center;
   background-size: $bpk-spacing-md $bpk-spacing-md;
 
-  @include bpk-themeable-property(border-color, --bpk-select-invalid-border-color, $bpk-form-validation-color);
+  @include bpk-themeable-property(
+    border-color,
+    --bpk-select-invalid-border-color,
+    $bpk-form-validation-color
+  );
 
   @include bpk-rtl {
     padding-right: $bpk-input-padding-x;
@@ -540,7 +558,7 @@
 ///   }
 
 @mixin bpk-checkbox--invalid {
-  input[type=checkbox] {
+  input[type='checkbox'] {
     background: url(map-get($bpk-elements, checkbox-invalid)) no-repeat;
   }
 }
@@ -579,7 +597,8 @@
     background: url(map-get($bpk-elements, checkbox-checked)) no-repeat;
 
     &:disabled {
-      background: url(map-get($bpk-elements, checkbox-checked-disabled)) no-repeat;
+      background: url(map-get($bpk-elements, checkbox-checked-disabled))
+        no-repeat;
     }
   }
 
@@ -646,7 +665,7 @@
 ///   }
 
 @mixin bpk-radio--invalid {
-  input[type=radio] {
+  input[type='radio'] {
     background: url(map-get($bpk-elements, radio-invalid)) no-repeat;
   }
 }
@@ -766,10 +785,15 @@
 @mixin bpk-form-validation {
   position: relative;
   transform: translateY(-#{$bpk-spacing-sm});
-  transition: opacity $bpk-duration-sm ease-in-out, transform $bpk-duration-sm ease-in-out;
+  transition: opacity $bpk-duration-sm ease-in-out,
+    transform $bpk-duration-sm ease-in-out;
   opacity: 0;
 
-  @include bpk-themeable-property(color, --bpk-form-validation-text-color, $bpk-form-validation-color);
+  @include bpk-themeable-property(
+    color,
+    --bpk-form-validation-text-color,
+    $bpk-form-validation-color
+  );
 }
 
 /// Form validation transition state. Modifies the bpk-form-validation mixin.
@@ -865,9 +889,15 @@
 ///   }
 
 @mixin bpk-textarea--invalid {
-  background: $bpk-color-white url(map-get($bpk-icons-sm, exclamation-circle-panjin)) no-repeat right $bpk-spacing-sm center;
+  background: $bpk-color-white
+    url(map-get($bpk-icons-sm, exclamation-circle-panjin)) no-repeat right
+    $bpk-spacing-sm center;
 
-  @include bpk-themeable-property(border-color, --bpk-textarea-invalid-border-color, $bpk-form-validation-color);
+  @include bpk-themeable-property(
+    border-color,
+    --bpk-textarea-invalid-border-color,
+    $bpk-form-validation-color
+  );
 
   @include bpk-rtl {
     padding-right: $bpk-input-padding-x;

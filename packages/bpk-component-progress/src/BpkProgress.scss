@@ -41,7 +41,11 @@
     transition: width $bpk-duration-base ease-in-out;
     border-radius: $bpk-border-radius-sm;
 
-    @include bpk-themeable-property(background-color, --bpk-progress-bar-fill-color, $bpk-color-sky-blue);
+    @include bpk-themeable-property(
+      background-color,
+      --bpk-progress-bar-fill-color,
+      $bpk-color-sky-blue
+    );
 
     &--stepped {
       border-radius: 0;

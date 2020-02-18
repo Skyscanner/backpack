@@ -19,7 +19,7 @@
 @import '~bpk-mixins/index';
 
 .bpk-animate-and-fade {
-  $invisible: .01;
+  $invisible: 0.01;
 
   &--enter {
     transition: opacity $bpk-duration-sm ease-in-out;

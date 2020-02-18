@@ -26,7 +26,11 @@
   }
 
   &__icon {
-    @include bpk-themeable-property(fill, --bpk-form-validation-icon-fill, $bpk-form-validation-color);
+    @include bpk-themeable-property(
+      fill,
+      --bpk-form-validation-icon-fill,
+      $bpk-form-validation-color
+    );
     @include bpk-margin-trailing($bpk-spacing-xs);
   }
 

@@ -46,7 +46,8 @@ $bpk-radio-circle-size: $bpk-one-pixel-rem * 10;
       }
 
       &:disabled {
-        background: url(map-get($bpk-elements, radio-checked-disabled)) no-repeat;
+        background: url(map-get($bpk-elements, radio-checked-disabled))
+          no-repeat;
 
         + .bpk-radio__circle {
           display: none;
@@ -64,7 +65,11 @@ $bpk-radio-circle-size: $bpk-one-pixel-rem * 10;
     height: $bpk-radio-circle-size;
     border-radius: 50%;
 
-    @include bpk-themeable-property(background, --bpk-radio-checked-color, $bpk-radio-checked-circle-color);
+    @include bpk-themeable-property(
+      background,
+      --bpk-radio-checked-color,
+      $bpk-radio-checked-circle-color
+    );
 
     @include bpk-rtl {
       right: ($bpk-spacing-md - $bpk-radio-circle-size) / 2;

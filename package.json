@@ -16,6 +16,7 @@
     "clean:node_modules": "rm -rf node_modules",
     "clean": "npm run clean:dist && npm run clean:lerna && npm run clean:node_modules",
     "lint:scss": "stylelint 'packages/**/*.scss' --syntax scss",
+    "lint:scss:fix": "stylelint 'packages/**/*.scss' --syntax scss --fix",
     "lint:js": "eslint . .storybook --ext .js,.jsx",
     "lint:js:fix": "eslint . .storybook --ext .js,.jsx --fix",
     "lint": "npm run lint:js && npm run lint:scss",
@@ -62,7 +63,9 @@
       "git add"
     ],
     "*.scss": [
-      "stylelint --syntax scss"
+      "stylelint --syntax scss --fix",
+      "stylelint --syntax scss",
+      "git add"
     ],
     "*.md": [
       "mdspell -r --en-gb --ignore-acronyms --ignore-numbers --no-suggestions"
@@ -148,8 +151,7 @@
     "sassdoc": "^2.7.0",
     "semver": "^7.0.0",
     "style-loader": "^1.0.0",
-    "stylelint": "^11.0.0",
-    "stylelint-config-skyscanner": "^2.0.0-beta.2",
+    "stylelint-config-skyscanner": "^2.0.0-beta.8",
     "theo": "^8.1.3",
     "through2": "^3.0.1",
     "tinycolor2": "^1.4.1",

@@ -27,7 +27,7 @@
 ///   .selector {
 ///     @include bpk-margin-leading($bpk-spacing-sm);
 ///   }
-@mixin bpk-margin-leading($margin, $resetOppositeMargin:true) {
+@mixin bpk-margin-leading($margin, $resetOppositeMargin: true) {
   margin-left: $margin;
 
   @if $resetOppositeMargin {
@@ -54,7 +54,7 @@
 ///   .selector {
 ///     @include bpk-margin-trailing($bpk-spacing-sm);
 ///   }
-@mixin bpk-margin-trailing($margin, $resetOppositeMargin:true) {
+@mixin bpk-margin-trailing($margin, $resetOppositeMargin: true) {
   @if $resetOppositeMargin {
     margin-left: 0;
   }

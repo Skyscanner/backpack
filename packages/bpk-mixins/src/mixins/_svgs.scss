@@ -40,9 +40,11 @@
 @mixin _bpk-icon-factory($map, $size, $icon) {
   @if map_has_key($map, $icon) != true {
     $err: (
-      'Could not find "' + $icon + ': icon. Refer to '
-      + 'https://backpack.github.io/components/atoms/icons'
-      + ' when specifying icon names.'
+      'Could not find "' +
+        $icon +
+        '" icon. Refer to ' +
+        'https://backpack.github.io/components/atoms/icons' +
+        ' when specifying icon names.'
     );
 
     @error $err;
@@ -99,9 +101,9 @@
 @mixin bpk-icon($icon, $color, $size: small) {
   @if function-exists(encodebase64) != true {
     $err: (
-      'Could not find encodebase64 function. Refer to '
-      + 'https://backpack.github.io/sassdoc/#svgs-mixin-bpk-icon'
-      + ' on how to provide it to node-sass.'
+      'Could not find encodebase64 function. Refer to ' +
+        'https://backpack.github.io/sassdoc/#svgs-mixin-bpk-icon' +
+        ' on how to provide it to node-sass.'
     );
 
     @error $err;
@@ -111,9 +113,11 @@
 
   @if map_has_key($icon-map, $icon) != true {
     $err: (
-      'Could not find "' + $icon + '" icon. Refer to '
-      + 'https://backpack.github.io/components/atoms/icons'
-      + ' when specifying icon names.'
+      'Could not find "' +
+        $icon +
+        '" icon. Refer to ' +
+        'https://backpack.github.io/components/atoms/icons' +
+        ' when specifying icon names.'
     );
 
     @error $err;

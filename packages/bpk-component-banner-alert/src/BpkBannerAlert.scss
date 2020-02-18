@@ -25,15 +25,24 @@
   @include bpk-border-radius-sm;
 
   &--success {
-    @include bpk-border-sm(var(--bpk-banner-alert-success-color, $bpk-banner-alert-success-color), '');
+    @include bpk-border-sm(
+      var(--bpk-banner-alert-success-color, $bpk-banner-alert-success-color),
+      ''
+    );
   }
 
   &--warn {
-    @include bpk-border-sm(var(--bpk-banner-alert-warn-color, $bpk-banner-alert-warn-color), '');
+    @include bpk-border-sm(
+      var(--bpk-banner-alert-warn-color, $bpk-banner-alert-warn-color),
+      ''
+    );
   }
 
   &--error {
-    @include bpk-border-sm(var(--bpk-banner-alert-error-color, $bpk-banner-alert-error-color), '');
+    @include bpk-border-sm(
+      var(--bpk-banner-alert-error-color, $bpk-banner-alert-error-color),
+      ''
+    );
   }
 
   &--neutral {
@@ -42,7 +51,8 @@
 
   &__header {
     display: flex;
-    padding: $bpk-banner-alert-header-padding-y $bpk-banner-alert-header-padding-x;
+    padding: $bpk-banner-alert-header-padding-y
+      $bpk-banner-alert-header-padding-x;
     flex-direction: row;
 
     &--expandable {
@@ -70,15 +80,27 @@
   }
 
   &__success-icon {
-    @include bpk-themeable-property(fill, --bpk-banner-alert-success-color, $bpk-banner-alert-success-color);
+    @include bpk-themeable-property(
+      fill,
+      --bpk-banner-alert-success-color,
+      $bpk-banner-alert-success-color
+    );
   }
 
   &__warn-icon {
-    @include bpk-themeable-property(fill, --bpk-banner-alert-warn-color, $bpk-banner-alert-warn-color);
+    @include bpk-themeable-property(
+      fill,
+      --bpk-banner-alert-warn-color,
+      $bpk-banner-alert-warn-color
+    );
   }
 
   &__error-icon {
-    @include bpk-themeable-property(fill, --bpk-banner-alert-error-color, $bpk-banner-alert-error-color);
+    @include bpk-themeable-property(
+      fill,
+      --bpk-banner-alert-error-color,
+      $bpk-banner-alert-error-color
+    );
   }
 
   &__neutral-icon {
@@ -102,7 +124,8 @@
   }
 
   &__children-container {
-    padding: $bpk-banner-alert-children-padding-y $bpk-banner-alert-children-padding-x;
+    padding: $bpk-banner-alert-children-padding-y
+      $bpk-banner-alert-children-padding-x;
     color: $bpk-banner-alert-children-color;
 
     @include bpk-text;

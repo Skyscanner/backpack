@@ -36,7 +36,11 @@
   align-items: center;
   color: $bpk-font-color-base;
 
-  @include bpk-themeable-property(background-color, --bpk-badge-background-color, $bpk-badge-background-color);
+  @include bpk-themeable-property(
+    background-color,
+    --bpk-badge-background-color,
+    $bpk-badge-background-color
+  );
   @include bpk-border-radius-xs;
   @include bpk-text;
   @include bpk-text--xs;
@@ -129,7 +133,11 @@
 ///   }
 
 @mixin bpk-badge--success {
-  @include bpk-themeable-property(background-color, --bpk-badge-success-background-color, $bpk-color-monteverde);
+  @include bpk-themeable-property(
+    background-color,
+    --bpk-badge-success-background-color,
+    $bpk-color-monteverde
+  );
 }
 
 /// Destructive badge. Modifies the bpk-badge mixin.
@@ -145,7 +153,11 @@
 @mixin bpk-badge--destructive {
   color: $bpk-color-white;
 
-  @include bpk-themeable-property(background-color, --bpk-badge-destructive-background-color, $bpk-color-panjin);
+  @include bpk-themeable-property(
+    background-color,
+    --bpk-badge-destructive-background-color,
+    $bpk-color-panjin
+  );
 }
 
 /// Light badge. Modifies the bpk-badge mixin.
@@ -187,7 +199,7 @@
 ///   }
 
 @mixin bpk-badge--outline {
-  background-color: rgba($bpk-color-white, .2);
+  background-color: rgba($bpk-color-white, 0.2);
   color: $bpk-color-white;
   box-shadow: inset 0 0 0 $bpk-border-size-sm $bpk-color-white;
 }

@@ -31,38 +31,74 @@
   @include bpk-box-shadow-lg;
 
   &--primary {
-    @include bpk-themeable-property(background-color, --bpk-map-marker-primary-background-color, $bpk-color-sky-blue);
+    @include bpk-themeable-property(
+      background-color,
+      --bpk-map-marker-primary-background-color,
+      $bpk-color-sky-blue
+    );
 
     &-selected {
       z-index: 1;
       background-color: $bpk-color-white;
 
-      @include bpk-themeable-property(border-color, --bpk-map-marker-primary-background-color, $bpk-color-sky-blue);
-      @include bpk-themeable-property(color, --bpk-map-marker-primary-background-color, $bpk-color-sky-blue);
+      @include bpk-themeable-property(
+        border-color,
+        --bpk-map-marker-primary-background-color,
+        $bpk-color-sky-blue
+      );
+      @include bpk-themeable-property(
+        color,
+        --bpk-map-marker-primary-background-color,
+        $bpk-color-sky-blue
+      );
     }
   }
 
   &--secondary {
-    @include bpk-themeable-property(background-color, --bpk-map-marker-secondary-background-color, $bpk-color-sky-blue-shade-02);
+    @include bpk-themeable-property(
+      background-color,
+      --bpk-map-marker-secondary-background-color,
+      $bpk-color-sky-blue-shade-02
+    );
 
     &-selected {
       z-index: 1;
       background-color: $bpk-color-white;
 
-      @include bpk-themeable-property(border-color, --bpk-map-marker-secondary-background-color, $bpk-color-sky-blue-shade-02);
-      @include bpk-themeable-property(color, --bpk-map-marker-secondary-background-color, $bpk-color-sky-blue-shade-02);
+      @include bpk-themeable-property(
+        border-color,
+        --bpk-map-marker-secondary-background-color,
+        $bpk-color-sky-blue-shade-02
+      );
+      @include bpk-themeable-property(
+        color,
+        --bpk-map-marker-secondary-background-color,
+        $bpk-color-sky-blue-shade-02
+      );
     }
   }
 
   &--plain {
-    @include bpk-themeable-property(background-color, --bpk-map-marker-plain-background-color, $bpk-color-sky-gray-tint-01);
+    @include bpk-themeable-property(
+      background-color,
+      --bpk-map-marker-plain-background-color,
+      $bpk-color-sky-gray-tint-01
+    );
 
     &-selected {
       z-index: 1;
       background-color: $bpk-color-white;
 
-      @include bpk-themeable-property(border-color, --bpk-map-marker-plain-background-color, $bpk-color-sky-gray-tint-01);
-      @include bpk-themeable-property(color, --bpk-map-marker-plain-background-color, $bpk-color-sky-gray-tint-01);
+      @include bpk-themeable-property(
+        border-color,
+        --bpk-map-marker-plain-background-color,
+        $bpk-color-sky-gray-tint-01
+      );
+      @include bpk-themeable-property(
+        color,
+        --bpk-map-marker-plain-background-color,
+        $bpk-color-sky-gray-tint-01
+      );
     }
   }
 
@@ -99,19 +135,31 @@
     &--primary-selected {
       z-index: 1;
 
-      @include bpk-themeable-property(color, --bpk-map-marker-primary-background-color, $bpk-color-sky-blue);
+      @include bpk-themeable-property(
+        color,
+        --bpk-map-marker-primary-background-color,
+        $bpk-color-sky-blue
+      );
     }
 
     &--secondary-selected {
       z-index: 1;
 
-      @include bpk-themeable-property(color, --bpk-map-marker-secondary-background-color, $bpk-color-sky-blue-shade-02);
+      @include bpk-themeable-property(
+        color,
+        --bpk-map-marker-secondary-background-color,
+        $bpk-color-sky-blue-shade-02
+      );
     }
 
     &--plain-selected {
       z-index: 1;
 
-      @include bpk-themeable-property(color, --bpk-map-marker-plain-background-color, $bpk-color-sky-gray-tint-01);
+      @include bpk-themeable-property(
+        color,
+        --bpk-map-marker-plain-background-color,
+        $bpk-color-sky-gray-tint-01
+      );
     }
   }
 

@@ -19,9 +19,17 @@
 @import '~bpk-mixins';
 
 @keyframes star_dust {
-  0% { transform: scale(1); }
-  50% { transform: scale(.5); }
-  100% { transform: scale(1); }
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(0.5);
+  }
+
+  100% {
+    transform: scale(1);
+  }
 }
 
 .bpk-interactive-star {

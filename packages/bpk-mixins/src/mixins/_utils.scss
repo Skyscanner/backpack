@@ -117,7 +117,7 @@
 ///   }
 
 @mixin bpk-rtl {
-  html[dir=rtl] & {
+  html[dir='rtl'] & {
     @content;
   }
 }
@@ -194,7 +194,11 @@
 ///     @include bpk-apply-primary-color-to(color);
 ///   }
 @mixin bpk-apply-primary-color-to($property) {
-  @include bpk-themeable-property($property, --bpk-primary-color, $bpk-color-sky-blue);
+  @include bpk-themeable-property(
+    $property,
+    --bpk-primary-color,
+    $bpk-color-sky-blue
+  );
 }
 
 /// Replace part of a string with another string.
@@ -207,7 +211,12 @@
   $index: str-index($string, $search);
 
   @if $index {
-    @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+    @return str-slice($string, 1, $index - 1) + $replace +
+      str-replace(
+        str-slice($string, $index + str-length($search)),
+        $search,
+        $replace
+      );
   }
 
   @return $string;
@@ -229,7 +238,9 @@
 
   &::before {
     position: absolute;
+    /* stylelint-disable-next-line function-calc-no-invalid */
     top: calc((-#{$bpk-spacing-xxl} / 2) + 50%);
+    /* stylelint-disable-next-line function-calc-no-invalid */
     left: calc((-#{$bpk-spacing-xxl} / 2) + 50%);
     content: '';
     width: $bpk-spacing-xxl;
