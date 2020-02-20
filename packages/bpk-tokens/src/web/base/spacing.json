@@ -7,6 +7,9 @@
     "category": "spacings"
   },
   "props": {
+    "SPACING_XXS": {
+      "value": "{!SPACING_XXS}"
+    },
     "SPACING_XS": {
       "value": "{!SPACING_XS}"
     },

@@ -220,28 +220,31 @@
       "value": "#F1F2F8"
     },
     "SPACING_BASE": {
-      "value": "1.5rem"
+      "value": "2rem"
     },
     "SPACING_LG": {
-      "value": "1.875rem"
+      "value": "2.5rem"
     },
     "SPACING_MD": {
-      "value": "1.125rem"
+      "value": "1.5rem"
     },
     "SPACING_NONE": {
       "value": "0"
     },
     "SPACING_SM": {
-      "value": ".75rem"
+      "value": "1rem"
     },
     "SPACING_XL": {
-      "value": "2.250rem"
+      "value": "3rem"
     },
     "SPACING_XS": {
-      "value": ".375rem"
+      "value": ".5rem"
     },
     "SPACING_XXL": {
-      "value": "2.625rem"
+      "value": "3.5rem"
+    },
+    "SPACING_XXS": {
+      "value": ".25rem"
     },
     "TOCHIGI": {
       "value": "#e1ddec"

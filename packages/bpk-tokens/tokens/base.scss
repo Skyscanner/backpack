@@ -28,7 +28,7 @@ $bpk-badge-background-color: rgb(255, 181, 77);
 /// @group badges
 $bpk-badge-centered-vertical-align: text-bottom;
 /// @group badges
-$bpk-badge-padding-x: .375rem;
+$bpk-badge-padding-x: .5rem;
 /// @group badges
 $bpk-badge-padding-y: 0;
 /// @group notifications
@@ -36,9 +36,9 @@ $bpk-banner-alert-background-color: rgb(255, 255, 255);
 /// @group notifications
 $bpk-banner-alert-children-color: rgb(104, 105, 127);
 /// @group notifications
-$bpk-banner-alert-children-padding-x: .75rem;
+$bpk-banner-alert-children-padding-x: 1rem;
 /// @group notifications
-$bpk-banner-alert-children-padding-y: .375rem;
+$bpk-banner-alert-children-padding-y: .5rem;
 /// @group notifications
 $bpk-banner-alert-error-color: rgb(209, 67, 91);
 /// @group notifications
@@ -48,9 +48,9 @@ $bpk-banner-alert-header-expandable-active-background-color: rgb(221, 221, 229);
 /// @group notifications
 $bpk-banner-alert-header-expandable-hover-background-color: rgb(241, 242, 248);
 /// @group notifications
-$bpk-banner-alert-header-padding-x: .75rem;
+$bpk-banner-alert-header-padding-x: 1rem;
 /// @group notifications
-$bpk-banner-alert-header-padding-y: .375rem;
+$bpk-banner-alert-header-padding-y: .5rem;
 /// @group notifications
 $bpk-banner-alert-neutral-color: rgb(104, 105, 127);
 /// @group notifications
@@ -200,15 +200,15 @@ $bpk-button-icon-border-radius-lg: 1.3125rem;
 /// @group buttons
 $bpk-button-large-font-size: 1.5rem;
 /// @group buttons
-$bpk-button-large-line-height: 1.875rem;
+$bpk-button-large-line-height: 2.5rem;
 /// @group buttons
-$bpk-button-large-padding-x: 1.5rem;
+$bpk-button-large-padding-x: 2rem;
 /// @group buttons
 $bpk-button-large-padding-x-icon-only: .5625rem;
 /// @group buttons
-$bpk-button-large-padding-y: .375rem;
+$bpk-button-large-padding-y: .5rem;
 /// @group buttons
-$bpk-button-line-height: 1.5rem;
+$bpk-button-line-height: 2rem;
 /// @group buttons
 $bpk-button-outline-active-background-color: rgba(0, 0, 0, 0);
 /// @group buttons
@@ -236,11 +236,11 @@ $bpk-button-outline-hover-border-color: rgb(255, 255, 255);
 /// @group buttons
 $bpk-button-outline-hover-border-opacity: 0.5;
 /// @group buttons
-$bpk-button-padding-x: 1.125rem;
+$bpk-button-padding-x: 1.5rem;
 /// @group buttons
 $bpk-button-padding-x-icon-only: .5625rem;
 /// @group buttons
-$bpk-button-padding-y: .375rem;
+$bpk-button-padding-y: .5rem;
 /// @group buttons
 $bpk-button-secondary-active-background-color: rgb(255, 255, 255);
 /// @group buttons
@@ -330,9 +330,9 @@ $bpk-calendar-day-selected-background-color: rgb(8, 78, 178);
 /// @group calendar
 $bpk-calendar-day-selected-color: rgb(255, 255, 255);
 /// @group calendar
-$bpk-calendar-day-size: 2.250rem;
+$bpk-calendar-day-size: 3rem;
 /// @group calendar
-$bpk-calendar-day-spacing: .375rem;
+$bpk-calendar-day-spacing: .5rem;
 /// @group calendar
 $bpk-calendar-nav-icon-active-fill: rgb(4, 39, 89);
 /// @group calendar
@@ -342,13 +342,13 @@ $bpk-calendar-nav-icon-fill: rgb(7, 112, 227);
 /// @group calendar
 $bpk-calendar-nav-icon-hover-fill: rgb(8, 78, 178);
 /// @group calendar
-$bpk-calendar-padding: .75rem;
+$bpk-calendar-padding: 1rem;
 /// @group cards
 $bpk-card-background-color: rgb(255, 255, 255);
 /// @group cards
 $bpk-card-color: rgb(17, 18, 54);
 /// @group cards
-$bpk-card-padding: .75rem;
+$bpk-card-padding: 1rem;
 /// @group forms
 $bpk-checkbox-checked-tick-color: rgb(7, 112, 227);
 /// @group colors
@@ -428,9 +428,9 @@ $bpk-duration-xs: 50ms;
 /// @group flare
 $bpk-flare-corner-radius: 1.3125rem;
 /// @group flare
-$bpk-flare-height-desktop: 1.5rem;
+$bpk-flare-height-desktop: 2rem;
 /// @group flare
-$bpk-flare-height-mobile: 1.125rem;
+$bpk-flare-height-mobile: 1.5rem;
 /// @group text-colors
 $bpk-font-color-base: rgb(17, 18, 54);
 /// @group typesettings
@@ -460,17 +460,17 @@ $bpk-font-weight-black: 900;
 /// @group font-weights
 $bpk-font-weight-bold: 700;
 /// @group forms
-$bpk-form-validation-arrow-size: .375rem;
+$bpk-form-validation-arrow-size: .5rem;
 /// @group forms
 $bpk-form-validation-color: rgb(209, 67, 91);
 /// @group grids
 $bpk-grid-columns: 12;
 /// @group grids
-$bpk-grid-container-mobile-padding: .75rem;
+$bpk-grid-container-mobile-padding: 1rem;
 /// @group grids
-$bpk-grid-container-padding: 1.5rem;
+$bpk-grid-container-padding: 2rem;
 /// @group grids
-$bpk-grid-gutter: 1.5rem;
+$bpk-grid-gutter: 2rem;
 /// @group font-sizes
 $bpk-h-1-font-size: 2.625rem;
 /// @group font-weights
@@ -508,9 +508,9 @@ $bpk-h-6-font-weight: 700;
 /// @group line-heights
 $bpk-h-6-line-height: 1rem;
 /// @group spacings
-$bpk-heading-content-margin-top: 1.875rem;
+$bpk-heading-content-margin-top: 2.5rem;
 /// @group spacings
-$bpk-heading-margin-bottom: .75rem;
+$bpk-heading-margin-bottom: 1rem;
 /// @group spacings
 $bpk-heading-margin-top: 0;
 /// @group horizontal-nav
@@ -524,9 +524,9 @@ $bpk-horizontal-nav-link-hover-color: rgb(68, 69, 96);
 /// @group horizontal-nav
 $bpk-horizontal-nav-link-selected-color: rgb(7, 112, 227);
 /// @group icons
-$bpk-icon-size-lg: 1.5rem;
+$bpk-icon-size-lg: 2rem;
 /// @group icons
-$bpk-icon-size-sm: 1.125rem;
+$bpk-icon-size-sm: 1rem;
 /// @group forms
 $bpk-input-background: #ffffff;
 /// @group forms
@@ -542,13 +542,13 @@ $bpk-input-disabled-border-color: rgb(241, 242, 248);
 /// @group forms
 $bpk-input-disabled-color: rgb(178, 178, 191);
 /// @group forms
-$bpk-input-height: 2.250rem;
+$bpk-input-height: 3rem;
 /// @group forms
-$bpk-input-large-height: 2.625rem + .375rem;
+$bpk-input-large-height: 3.5rem + .5rem;
 /// @group forms
-$bpk-input-padding-x: .75rem;
+$bpk-input-padding-x: 1rem;
 /// @group forms
-$bpk-input-padding-y: .375rem;
+$bpk-input-padding-y: .5rem;
 /// @group forms
 $bpk-input-placeholder-color: rgb(104, 105, 127);
 /// @group forms
@@ -612,7 +612,7 @@ $bpk-list-item-margin-bottom: 0;
 /// @group spacings
 $bpk-list-item-margin-top: 0;
 /// @group spacings
-$bpk-list-margin-bottom: .75rem;
+$bpk-list-margin-bottom: 1rem;
 /// @group spacings
 $bpk-list-margin-top: 0;
 /// @group spacings
@@ -622,9 +622,9 @@ $bpk-list-nested-margin-top: 0;
 /// @group modals
 $bpk-modal-background-color: rgb(255, 255, 255);
 /// @group modals
-$bpk-modal-content-padding: .75rem;
+$bpk-modal-content-padding: 1rem;
 /// @group modals
-$bpk-modal-header-padding: .75rem;
+$bpk-modal-header-padding: 1rem;
 /// @group modals
 $bpk-modal-initial-opacity: 0;
 /// @group modals
@@ -640,27 +640,27 @@ $bpk-panel-background-color: rgb(255, 255, 255);
 /// @group panels
 $bpk-panel-border-color: rgb(221, 221, 229);
 /// @group panels
-$bpk-panel-padding: .75rem;
+$bpk-panel-padding: 1rem;
 /// @group colors
 $bpk-primary-gradient: #0770e3;
 /// @group spacings
-$bpk-p-margin-bottom: .75rem;
+$bpk-p-margin-bottom: 1rem;
 /// @group spacings
 $bpk-p-margin-top: 0;
 /// @group forms
 $bpk-radio-checked-circle-color: rgb(7, 112, 227);
 /// @group ratings
-$bpk-rating-base-height: .75rem * 4;
+$bpk-rating-base-height: 1rem * 4;
 /// @group ratings
-$bpk-rating-base-width: .75rem * 4;
+$bpk-rating-base-width: 1rem * 4;
 /// @group ratings
-$bpk-rating-lg-height: 1.875rem * 2;
+$bpk-rating-lg-height: 2.5rem * 2;
 /// @group ratings
-$bpk-rating-lg-width: 1.875rem * 2;
+$bpk-rating-lg-width: 2.5rem * 2;
 /// @group ratings
-$bpk-rating-sm-height: .75rem * 3;
+$bpk-rating-sm-height: 1rem * 3;
 /// @group ratings
-$bpk-rating-sm-width: .75rem * 3;
+$bpk-rating-sm-width: 1rem * 3;
 /// @group forms
 $bpk-required-color: rgb(209, 67, 91);
 /// @group scrims
@@ -688,37 +688,39 @@ $bpk-select-disabled-border-color: rgb(241, 242, 248);
 /// @group forms
 $bpk-select-disabled-color: rgb(178, 178, 191);
 /// @group forms
-$bpk-select-height: 2.250rem;
+$bpk-select-height: 3rem;
 /// @group forms
-$bpk-select-large-height: 2.625rem + .375rem;
+$bpk-select-large-height: 3.5rem + .5rem;
 /// @group forms
-$bpk-select-padding-bottom: .375rem;
+$bpk-select-padding-bottom: .5rem;
 /// @group forms
-$bpk-select-padding-left: .75rem;
+$bpk-select-padding-left: 1rem;
 /// @group forms
-$bpk-select-padding-right: 1.875rem;
+$bpk-select-padding-right: 2.5rem;
 /// @group forms
-$bpk-select-padding-top: .375rem;
+$bpk-select-padding-top: .5rem;
 /// @group spacings
-$bpk-spacing-base: 1.5rem;
+$bpk-spacing-base: 2rem;
 /// @group spacings
-$bpk-spacing-lg: 1.875rem;
+$bpk-spacing-lg: 2.5rem;
 /// @group spacings
-$bpk-spacing-md: 1.125rem;
+$bpk-spacing-md: 1.5rem;
 /// @group spacings
 $bpk-spacing-none: 0;
 /// @group spacings
-$bpk-spacing-sm: .75rem;
+$bpk-spacing-sm: 1rem;
 /// @group spacings
-$bpk-spacing-xl: 2.250rem;
+$bpk-spacing-xl: 3rem;
 /// @group spacings
-$bpk-spacing-xs: .375rem;
+$bpk-spacing-xs: .5rem;
 /// @group spacings
-$bpk-spacing-xxl: 2.625rem;
+$bpk-spacing-xxl: 3.5rem;
+/// @group spacings
+$bpk-spacing-xxs: .25rem;
 /// @group states
 $bpk-state-selected-background-color: rgb(8, 78, 178);
 /// @group forms
-$bpk-textarea-min-height: 2.625rem * 2;
+$bpk-textarea-min-height: 3.5rem * 2;
 /// @group font-sizes
 $bpk-text-base-font-size: 1rem;
 /// @group font-weights

@@ -220,28 +220,31 @@
       "value": "#F1F2F8"
     },
     "SPACING_BASE": {
-      "value": "1.5rem"
+      "value": "2rem"
     },
     "SPACING_LG": {
-      "value": "1.875rem"
+      "value": "2.5rem"
     },
     "SPACING_MD": {
-      "value": "1.125rem"
+      "value": "1.5rem"
     },
     "SPACING_NONE": {
       "value": "0"
     },
     "SPACING_SM": {
-      "value": ".75rem"
+      "value": "1rem"
     },
     "SPACING_XL": {
-      "value": "2.250rem"
+      "value": "3rem"
     },
     "SPACING_XS": {
-      "value": ".375rem"
+      "value": ".5rem"
     },
     "SPACING_XXL": {
-      "value": "2.625rem"
+      "value": "3.5rem"
+    },
+    "SPACING_XXS": {
+      "value": ".25rem"
     },
     "TOCHIGI": {
       "value": "#e1ddec"
@@ -309,7 +312,7 @@
     },
     "BADGE_PADDING_X": {
       "category": "badges",
-      "value": ".375rem",
+      "value": ".5rem",
       "type": "size",
       "originalValue": "{!SPACING_XS}",
       "name": "BADGE_PADDING_X"
@@ -337,14 +340,14 @@
     },
     "BANNER_ALERT_CHILDREN_PADDING_X": {
       "category": "notifications",
-      "value": ".75rem",
+      "value": "1rem",
       "type": "size",
       "originalValue": "{!SPACING_SM}",
       "name": "BANNER_ALERT_CHILDREN_PADDING_X"
     },
     "BANNER_ALERT_CHILDREN_PADDING_Y": {
       "category": "notifications",
-      "value": ".375rem",
+      "value": ".5rem",
       "type": "size",
       "originalValue": "{!SPACING_XS}",
       "name": "BANNER_ALERT_CHILDREN_PADDING_Y"
@@ -379,14 +382,14 @@
     },
     "BANNER_ALERT_HEADER_PADDING_X": {
       "category": "notifications",
-      "value": ".75rem",
+      "value": "1rem",
       "type": "size",
       "originalValue": "{!SPACING_SM}",
       "name": "BANNER_ALERT_HEADER_PADDING_X"
     },
     "BANNER_ALERT_HEADER_PADDING_Y": {
       "category": "notifications",
-      "value": ".375rem",
+      "value": ".5rem",
       "type": "size",
       "originalValue": "{!SPACING_XS}",
       "name": "BANNER_ALERT_HEADER_PADDING_Y"
@@ -911,14 +914,14 @@
     },
     "BUTTON_LARGE_LINE_HEIGHT": {
       "category": "buttons",
-      "value": "1.875rem",
+      "value": "2.5rem",
       "type": "number",
       "originalValue": "{!SPACING_LG}",
       "name": "BUTTON_LARGE_LINE_HEIGHT"
     },
     "BUTTON_LARGE_PADDING_X": {
       "category": "buttons",
-      "value": "1.5rem",
+      "value": "2rem",
       "type": "size",
       "originalValue": "{!SPACING_BASE}",
       "name": "BUTTON_LARGE_PADDING_X"
@@ -932,14 +935,14 @@
     },
     "BUTTON_LARGE_PADDING_Y": {
       "category": "buttons",
-      "value": ".375rem",
+      "value": ".5rem",
       "type": "size",
       "originalValue": "{!SPACING_XS}",
       "name": "BUTTON_LARGE_PADDING_Y"
     },
     "BUTTON_LINE_HEIGHT": {
       "category": "buttons",
-      "value": "1.5rem",
+      "value": "2rem",
       "type": "number",
       "originalValue": "{!SPACING_BASE}",
       "name": "BUTTON_LINE_HEIGHT"
@@ -1037,7 +1040,7 @@
     },
     "BUTTON_PADDING_X": {
       "category": "buttons",
-      "value": "1.125rem",
+      "value": "1.5rem",
       "type": "size",
       "originalValue": "{!SPACING_MD}",
       "name": "BUTTON_PADDING_X"
@@ -1051,7 +1054,7 @@
     },
     "BUTTON_PADDING_Y": {
       "category": "buttons",
-      "value": ".375rem",
+      "value": ".5rem",
       "type": "size",
       "originalValue": "{!SPACING_XS}",
       "name": "BUTTON_PADDING_Y"
@@ -1369,14 +1372,14 @@
     },
     "CALENDAR_DAY_SIZE": {
       "category": "calendar",
-      "value": "2.250rem",
+      "value": "3rem",
       "type": "size",
       "originalValue": "{!SPACING_XL}",
       "name": "CALENDAR_DAY_SIZE"
     },
     "CALENDAR_DAY_SPACING": {
       "category": "calendar",
-      "value": ".375rem",
+      "value": ".5rem",
       "type": "size",
       "originalValue": "{!SPACING_XS}",
       "name": "CALENDAR_DAY_SPACING"
@@ -1411,7 +1414,7 @@
     },
     "CALENDAR_PADDING": {
       "category": "calendar",
-      "value": ".75rem",
+      "value": "1rem",
       "type": "size",
       "originalValue": "{!SPACING_SM}",
       "name": "CALENDAR_PADDING"
@@ -1432,7 +1435,7 @@
     },
     "CARD_PADDING": {
       "category": "cards",
-      "value": ".75rem",
+      "value": "1rem",
       "type": "size",
       "originalValue": "{!SPACING_SM}",
       "name": "CARD_PADDING"
@@ -1713,14 +1716,14 @@
     "FLARE_HEIGHT_DESKTOP": {
       "type": "size",
       "category": "flare",
-      "value": "1.5rem",
+      "value": "2rem",
       "originalValue": "{!SPACING_BASE}",
       "name": "FLARE_HEIGHT_DESKTOP"
     },
     "FLARE_HEIGHT_MOBILE": {
       "type": "size",
       "category": "flare",
-      "value": "1.125rem",
+      "value": "1.5rem",
       "originalValue": "{!SPACING_MD}",
       "name": "FLARE_HEIGHT_MOBILE"
     },
@@ -1824,7 +1827,7 @@
     },
     "FORM_VALIDATION_ARROW_SIZE": {
       "category": "forms",
-      "value": ".375rem",
+      "value": ".5rem",
       "type": "size",
       "deprecated": true,
       "originalValue": "{!SPACING_XS}",
@@ -1846,21 +1849,21 @@
     },
     "GRID_CONTAINER_MOBILE_PADDING": {
       "category": "grids",
-      "value": ".75rem",
+      "value": "1rem",
       "type": "size",
       "originalValue": "{!SPACING_SM}",
       "name": "GRID_CONTAINER_MOBILE_PADDING"
     },
     "GRID_CONTAINER_PADDING": {
       "category": "grids",
-      "value": "1.5rem",
+      "value": "2rem",
       "type": "size",
       "originalValue": "{!SPACING_BASE}",
       "name": "GRID_CONTAINER_PADDING"
     },
     "GRID_GUTTER": {
       "category": "grids",
-      "value": "1.5rem",
+      "value": "2rem",
       "type": "size",
       "originalValue": "{!SPACING_BASE}",
       "name": "GRID_GUTTER"
@@ -1992,14 +1995,14 @@
       "name": "H6_LINE_HEIGHT"
     },
     "HEADING_CONTENT_MARGIN_TOP": {
-      "value": "1.875rem",
+      "value": "2.5rem",
       "type": "size",
       "category": "spacings",
       "originalValue": "{!SPACING_LG}",
       "name": "HEADING_CONTENT_MARGIN_TOP"
     },
     "HEADING_MARGIN_BOTTOM": {
-      "value": ".75rem",
+      "value": "1rem",
       "type": "size",
       "category": "spacings",
       "originalValue": "{!SPACING_SM}",
@@ -2050,15 +2053,15 @@
     "ICON_SIZE_LG": {
       "type": "size",
       "category": "icons",
-      "value": "1.5rem",
+      "value": "2rem",
       "originalValue": "{!SPACING_BASE}",
       "name": "ICON_SIZE_LG"
     },
     "ICON_SIZE_SM": {
       "type": "size",
       "category": "icons",
-      "value": "1.125rem",
-      "originalValue": "{!SPACING_MD}",
+      "value": "1rem",
+      "originalValue": "{!SPACING_SM}",
       "name": "ICON_SIZE_SM"
     },
     "INPUT_BACKGROUND": {
@@ -2112,28 +2115,28 @@
     },
     "INPUT_HEIGHT": {
       "category": "forms",
-      "value": "2.250rem",
+      "value": "3rem",
       "type": "size",
       "originalValue": "{!SPACING_XL}",
       "name": "INPUT_HEIGHT"
     },
     "INPUT_LARGE_HEIGHT": {
       "category": "forms",
-      "value": "2.625rem + .375rem",
+      "value": "3.5rem + .5rem",
       "type": "size",
       "originalValue": "{!SPACING_XXL} + {!SPACING_XS}",
       "name": "INPUT_LARGE_HEIGHT"
     },
     "INPUT_PADDING_X": {
       "category": "forms",
-      "value": ".75rem",
+      "value": "1rem",
       "type": "size",
       "originalValue": "{!SPACING_SM}",
       "name": "INPUT_PADDING_X"
     },
     "INPUT_PADDING_Y": {
       "category": "forms",
-      "value": ".375rem",
+      "value": ".5rem",
       "type": "size",
       "originalValue": "{!SPACING_XS}",
       "name": "INPUT_PADDING_Y"
@@ -2356,7 +2359,7 @@
       "name": "LIST_ITEM_MARGIN_TOP"
     },
     "LIST_MARGIN_BOTTOM": {
-      "value": ".75rem",
+      "value": "1rem",
       "type": "size",
       "category": "spacings",
       "originalValue": "{!SPACING_SM}",
@@ -2392,14 +2395,14 @@
     },
     "MODAL_CONTENT_PADDING": {
       "category": "modals",
-      "value": ".75rem",
+      "value": "1rem",
       "type": "size",
       "originalValue": "{!SPACING_SM}",
       "name": "MODAL_CONTENT_PADDING"
     },
     "MODAL_HEADER_PADDING": {
       "category": "modals",
-      "value": ".75rem",
+      "value": "1rem",
       "type": "size",
       "originalValue": "{!SPACING_SM}",
       "name": "MODAL_HEADER_PADDING"
@@ -2455,7 +2458,7 @@
     },
     "PANEL_PADDING": {
       "category": "panels",
-      "value": ".75rem",
+      "value": "1rem",
       "type": "size",
       "originalValue": "{!SPACING_SM}",
       "name": "PANEL_PADDING"
@@ -2468,7 +2471,7 @@
       "name": "PRIMARY_GRADIENT"
     },
     "P_MARGIN_BOTTOM": {
-      "value": ".75rem",
+      "value": "1rem",
       "type": "size",
       "category": "spacings",
       "originalValue": "{!SPACING_SM}",
@@ -2490,42 +2493,42 @@
     },
     "RATING_BASE_HEIGHT": {
       "category": "ratings",
-      "value": ".75rem * 4",
+      "value": "1rem * 4",
       "type": "size",
       "originalValue": "{!SPACING_SM} * 4",
       "name": "RATING_BASE_HEIGHT"
     },
     "RATING_BASE_WIDTH": {
       "category": "ratings",
-      "value": ".75rem * 4",
+      "value": "1rem * 4",
       "type": "size",
       "originalValue": "{!SPACING_SM} * 4",
       "name": "RATING_BASE_WIDTH"
     },
     "RATING_LG_HEIGHT": {
       "category": "ratings",
-      "value": "1.875rem * 2",
+      "value": "2.5rem * 2",
       "type": "size",
       "originalValue": "{!SPACING_LG} * 2",
       "name": "RATING_LG_HEIGHT"
     },
     "RATING_LG_WIDTH": {
       "category": "ratings",
-      "value": "1.875rem * 2",
+      "value": "2.5rem * 2",
       "type": "size",
       "originalValue": "{!SPACING_LG} * 2",
       "name": "RATING_LG_WIDTH"
     },
     "RATING_SM_HEIGHT": {
       "category": "ratings",
-      "value": ".75rem * 3",
+      "value": "1rem * 3",
       "type": "size",
       "originalValue": "{!SPACING_SM} * 3",
       "name": "RATING_SM_HEIGHT"
     },
     "RATING_SM_WIDTH": {
       "category": "ratings",
-      "value": ".75rem * 3",
+      "value": "1rem * 3",
       "type": "size",
       "originalValue": "{!SPACING_SM} * 3",
       "name": "RATING_SM_WIDTH"
@@ -2623,42 +2626,42 @@
     },
     "SELECT_HEIGHT": {
       "category": "forms",
-      "value": "2.250rem",
+      "value": "3rem",
       "type": "size",
       "originalValue": "{!SPACING_XL}",
       "name": "SELECT_HEIGHT"
     },
     "SELECT_LARGE_HEIGHT": {
       "category": "forms",
-      "value": "2.625rem + .375rem",
+      "value": "3.5rem + .5rem",
       "type": "size",
       "originalValue": "{!SPACING_XXL} + {!SPACING_XS}",
       "name": "SELECT_LARGE_HEIGHT"
     },
     "SELECT_PADDING_BOTTOM": {
       "category": "forms",
-      "value": ".375rem",
+      "value": ".5rem",
       "type": "size",
       "originalValue": "{!SPACING_XS}",
       "name": "SELECT_PADDING_BOTTOM"
     },
     "SELECT_PADDING_LEFT": {
       "category": "forms",
-      "value": ".75rem",
+      "value": "1rem",
       "type": "size",
       "originalValue": "{!SPACING_SM}",
       "name": "SELECT_PADDING_LEFT"
     },
     "SELECT_PADDING_RIGHT": {
       "category": "forms",
-      "value": "1.875rem",
+      "value": "2.5rem",
       "type": "size",
       "originalValue": "{!SPACING_LG}",
       "name": "SELECT_PADDING_RIGHT"
     },
     "SELECT_PADDING_TOP": {
       "category": "forms",
-      "value": ".375rem",
+      "value": ".5rem",
       "type": "size",
       "originalValue": "{!SPACING_XS}",
       "name": "SELECT_PADDING_TOP"
@@ -2666,21 +2669,21 @@
     "SPACING_BASE": {
       "type": "size",
       "category": "spacings",
-      "value": "1.5rem",
+      "value": "2rem",
       "originalValue": "{!SPACING_BASE}",
       "name": "SPACING_BASE"
     },
     "SPACING_LG": {
       "type": "size",
       "category": "spacings",
-      "value": "1.875rem",
+      "value": "2.5rem",
       "originalValue": "{!SPACING_LG}",
       "name": "SPACING_LG"
     },
     "SPACING_MD": {
       "type": "size",
       "category": "spacings",
-      "value": "1.125rem",
+      "value": "1.5rem",
       "originalValue": "{!SPACING_MD}",
       "name": "SPACING_MD"
     },
@@ -2694,30 +2697,37 @@
     "SPACING_SM": {
       "type": "size",
       "category": "spacings",
-      "value": ".75rem",
+      "value": "1rem",
       "originalValue": "{!SPACING_SM}",
       "name": "SPACING_SM"
     },
     "SPACING_XL": {
       "type": "size",
       "category": "spacings",
-      "value": "2.250rem",
+      "value": "3rem",
       "originalValue": "{!SPACING_XL}",
       "name": "SPACING_XL"
     },
     "SPACING_XS": {
       "type": "size",
       "category": "spacings",
-      "value": ".375rem",
+      "value": ".5rem",
       "originalValue": "{!SPACING_XS}",
       "name": "SPACING_XS"
     },
     "SPACING_XXL": {
       "type": "size",
       "category": "spacings",
-      "value": "2.625rem",
+      "value": "3.5rem",
       "originalValue": "{!SPACING_XXL}",
       "name": "SPACING_XXL"
+    },
+    "SPACING_XXS": {
+      "type": "size",
+      "category": "spacings",
+      "value": ".25rem",
+      "originalValue": "{!SPACING_XXS}",
+      "name": "SPACING_XXS"
     },
     "STATE_SELECTED_BACKGROUND_COLOR": {
       "type": "color",
@@ -2728,7 +2738,7 @@
     },
     "TEXTAREA_MIN_HEIGHT": {
       "category": "forms",
-      "value": "2.625rem * 2",
+      "value": "3.5rem * 2",
       "type": "size",
       "originalValue": "{!SPACING_XXL} * 2",
       "name": "TEXTAREA_MIN_HEIGHT"
@@ -3371,6 +3381,7 @@
     "SPACING_XL",
     "SPACING_XS",
     "SPACING_XXL",
+    "SPACING_XXS",
     "STATE_SELECTED_BACKGROUND_COLOR",
     "TEXTAREA_MIN_HEIGHT",
     "TEXT_BASE_FONT_SIZE",

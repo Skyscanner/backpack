@@ -28,7 +28,7 @@ $bpk-badge-background-color: rgb(255, 181, 77) !default;
 /// @group badges
 $bpk-badge-centered-vertical-align: text-bottom !default;
 /// @group badges
-$bpk-badge-padding-x: .375rem !default;
+$bpk-badge-padding-x: .5rem !default;
 /// @group badges
 $bpk-badge-padding-y: 0 !default;
 /// @group notifications
@@ -36,9 +36,9 @@ $bpk-banner-alert-background-color: rgb(255, 255, 255) !default;
 /// @group notifications
 $bpk-banner-alert-children-color: rgb(104, 105, 127) !default;
 /// @group notifications
-$bpk-banner-alert-children-padding-x: .75rem !default;
+$bpk-banner-alert-children-padding-x: 1rem !default;
 /// @group notifications
-$bpk-banner-alert-children-padding-y: .375rem !default;
+$bpk-banner-alert-children-padding-y: .5rem !default;
 /// @group notifications
 $bpk-banner-alert-error-color: rgb(209, 67, 91) !default;
 /// @group notifications
@@ -48,9 +48,9 @@ $bpk-banner-alert-header-expandable-active-background-color: rgb(221, 221, 229) 
 /// @group notifications
 $bpk-banner-alert-header-expandable-hover-background-color: rgb(241, 242, 248) !default;
 /// @group notifications
-$bpk-banner-alert-header-padding-x: .75rem !default;
+$bpk-banner-alert-header-padding-x: 1rem !default;
 /// @group notifications
-$bpk-banner-alert-header-padding-y: .375rem !default;
+$bpk-banner-alert-header-padding-y: .5rem !default;
 /// @group notifications
 $bpk-banner-alert-neutral-color: rgb(104, 105, 127) !default;
 /// @group notifications
@@ -200,15 +200,15 @@ $bpk-button-icon-border-radius-lg: 1.3125rem !default;
 /// @group buttons
 $bpk-button-large-font-size: 1.5rem !default;
 /// @group buttons
-$bpk-button-large-line-height: 1.875rem !default;
+$bpk-button-large-line-height: 2.5rem !default;
 /// @group buttons
-$bpk-button-large-padding-x: 1.5rem !default;
+$bpk-button-large-padding-x: 2rem !default;
 /// @group buttons
 $bpk-button-large-padding-x-icon-only: .5625rem !default;
 /// @group buttons
-$bpk-button-large-padding-y: .375rem !default;
+$bpk-button-large-padding-y: .5rem !default;
 /// @group buttons
-$bpk-button-line-height: 1.5rem !default;
+$bpk-button-line-height: 2rem !default;
 /// @group buttons
 $bpk-button-outline-active-background-color: rgba(0, 0, 0, 0) !default;
 /// @group buttons
@@ -236,11 +236,11 @@ $bpk-button-outline-hover-border-color: rgb(255, 255, 255) !default;
 /// @group buttons
 $bpk-button-outline-hover-border-opacity: 0.5 !default;
 /// @group buttons
-$bpk-button-padding-x: 1.125rem !default;
+$bpk-button-padding-x: 1.5rem !default;
 /// @group buttons
 $bpk-button-padding-x-icon-only: .5625rem !default;
 /// @group buttons
-$bpk-button-padding-y: .375rem !default;
+$bpk-button-padding-y: .5rem !default;
 /// @group buttons
 $bpk-button-secondary-active-background-color: rgb(255, 255, 255) !default;
 /// @group buttons
@@ -330,9 +330,9 @@ $bpk-calendar-day-selected-background-color: rgb(8, 78, 178) !default;
 /// @group calendar
 $bpk-calendar-day-selected-color: rgb(255, 255, 255) !default;
 /// @group calendar
-$bpk-calendar-day-size: 2.250rem !default;
+$bpk-calendar-day-size: 3rem !default;
 /// @group calendar
-$bpk-calendar-day-spacing: .375rem !default;
+$bpk-calendar-day-spacing: .5rem !default;
 /// @group calendar
 $bpk-calendar-nav-icon-active-fill: rgb(4, 39, 89) !default;
 /// @group calendar
@@ -342,13 +342,13 @@ $bpk-calendar-nav-icon-fill: rgb(7, 112, 227) !default;
 /// @group calendar
 $bpk-calendar-nav-icon-hover-fill: rgb(8, 78, 178) !default;
 /// @group calendar
-$bpk-calendar-padding: .75rem !default;
+$bpk-calendar-padding: 1rem !default;
 /// @group cards
 $bpk-card-background-color: rgb(255, 255, 255) !default;
 /// @group cards
 $bpk-card-color: rgb(17, 18, 54) !default;
 /// @group cards
-$bpk-card-padding: .75rem !default;
+$bpk-card-padding: 1rem !default;
 /// @group forms
 $bpk-checkbox-checked-tick-color: rgb(7, 112, 227) !default;
 /// @group colors
@@ -428,9 +428,9 @@ $bpk-duration-xs: 50ms !default;
 /// @group flare
 $bpk-flare-corner-radius: 1.3125rem !default;
 /// @group flare
-$bpk-flare-height-desktop: 1.5rem !default;
+$bpk-flare-height-desktop: 2rem !default;
 /// @group flare
-$bpk-flare-height-mobile: 1.125rem !default;
+$bpk-flare-height-mobile: 1.5rem !default;
 /// @group text-colors
 $bpk-font-color-base: rgb(17, 18, 54) !default;
 /// @group typesettings
@@ -460,17 +460,17 @@ $bpk-font-weight-black: 900 !default;
 /// @group font-weights
 $bpk-font-weight-bold: 700 !default;
 /// @group forms
-$bpk-form-validation-arrow-size: .375rem !default;
+$bpk-form-validation-arrow-size: .5rem !default;
 /// @group forms
 $bpk-form-validation-color: rgb(209, 67, 91) !default;
 /// @group grids
 $bpk-grid-columns: 12 !default;
 /// @group grids
-$bpk-grid-container-mobile-padding: .75rem !default;
+$bpk-grid-container-mobile-padding: 1rem !default;
 /// @group grids
-$bpk-grid-container-padding: 1.5rem !default;
+$bpk-grid-container-padding: 2rem !default;
 /// @group grids
-$bpk-grid-gutter: 1.5rem !default;
+$bpk-grid-gutter: 2rem !default;
 /// @group font-sizes
 $bpk-h-1-font-size: 2.625rem !default;
 /// @group font-weights
@@ -508,9 +508,9 @@ $bpk-h-6-font-weight: 700 !default;
 /// @group line-heights
 $bpk-h-6-line-height: 1rem !default;
 /// @group spacings
-$bpk-heading-content-margin-top: 1.875rem !default;
+$bpk-heading-content-margin-top: 2.5rem !default;
 /// @group spacings
-$bpk-heading-margin-bottom: .75rem !default;
+$bpk-heading-margin-bottom: 1rem !default;
 /// @group spacings
 $bpk-heading-margin-top: 0 !default;
 /// @group horizontal-nav
@@ -524,9 +524,9 @@ $bpk-horizontal-nav-link-hover-color: rgb(68, 69, 96) !default;
 /// @group horizontal-nav
 $bpk-horizontal-nav-link-selected-color: rgb(7, 112, 227) !default;
 /// @group icons
-$bpk-icon-size-lg: 1.5rem !default;
+$bpk-icon-size-lg: 2rem !default;
 /// @group icons
-$bpk-icon-size-sm: 1.125rem !default;
+$bpk-icon-size-sm: 1rem !default;
 /// @group forms
 $bpk-input-background: #ffffff !default;
 /// @group forms
@@ -542,13 +542,13 @@ $bpk-input-disabled-border-color: rgb(241, 242, 248) !default;
 /// @group forms
 $bpk-input-disabled-color: rgb(178, 178, 191) !default;
 /// @group forms
-$bpk-input-height: 2.250rem !default;
+$bpk-input-height: 3rem !default;
 /// @group forms
-$bpk-input-large-height: 2.625rem + .375rem !default;
+$bpk-input-large-height: 3.5rem + .5rem !default;
 /// @group forms
-$bpk-input-padding-x: .75rem !default;
+$bpk-input-padding-x: 1rem !default;
 /// @group forms
-$bpk-input-padding-y: .375rem !default;
+$bpk-input-padding-y: .5rem !default;
 /// @group forms
 $bpk-input-placeholder-color: rgb(104, 105, 127) !default;
 /// @group forms
@@ -612,7 +612,7 @@ $bpk-list-item-margin-bottom: 0 !default;
 /// @group spacings
 $bpk-list-item-margin-top: 0 !default;
 /// @group spacings
-$bpk-list-margin-bottom: .75rem !default;
+$bpk-list-margin-bottom: 1rem !default;
 /// @group spacings
 $bpk-list-margin-top: 0 !default;
 /// @group spacings
@@ -622,9 +622,9 @@ $bpk-list-nested-margin-top: 0 !default;
 /// @group modals
 $bpk-modal-background-color: rgb(255, 255, 255) !default;
 /// @group modals
-$bpk-modal-content-padding: .75rem !default;
+$bpk-modal-content-padding: 1rem !default;
 /// @group modals
-$bpk-modal-header-padding: .75rem !default;
+$bpk-modal-header-padding: 1rem !default;
 /// @group modals
 $bpk-modal-initial-opacity: 0 !default;
 /// @group modals
@@ -640,27 +640,27 @@ $bpk-panel-background-color: rgb(255, 255, 255) !default;
 /// @group panels
 $bpk-panel-border-color: rgb(221, 221, 229) !default;
 /// @group panels
-$bpk-panel-padding: .75rem !default;
+$bpk-panel-padding: 1rem !default;
 /// @group colors
 $bpk-primary-gradient: #0770e3 !default;
 /// @group spacings
-$bpk-p-margin-bottom: .75rem !default;
+$bpk-p-margin-bottom: 1rem !default;
 /// @group spacings
 $bpk-p-margin-top: 0 !default;
 /// @group forms
 $bpk-radio-checked-circle-color: rgb(7, 112, 227) !default;
 /// @group ratings
-$bpk-rating-base-height: .75rem * 4 !default;
+$bpk-rating-base-height: 1rem * 4 !default;
 /// @group ratings
-$bpk-rating-base-width: .75rem * 4 !default;
+$bpk-rating-base-width: 1rem * 4 !default;
 /// @group ratings
-$bpk-rating-lg-height: 1.875rem * 2 !default;
+$bpk-rating-lg-height: 2.5rem * 2 !default;
 /// @group ratings
-$bpk-rating-lg-width: 1.875rem * 2 !default;
+$bpk-rating-lg-width: 2.5rem * 2 !default;
 /// @group ratings
-$bpk-rating-sm-height: .75rem * 3 !default;
+$bpk-rating-sm-height: 1rem * 3 !default;
 /// @group ratings
-$bpk-rating-sm-width: .75rem * 3 !default;
+$bpk-rating-sm-width: 1rem * 3 !default;
 /// @group forms
 $bpk-required-color: rgb(209, 67, 91) !default;
 /// @group scrims
@@ -688,37 +688,39 @@ $bpk-select-disabled-border-color: rgb(241, 242, 248) !default;
 /// @group forms
 $bpk-select-disabled-color: rgb(178, 178, 191) !default;
 /// @group forms
-$bpk-select-height: 2.250rem !default;
+$bpk-select-height: 3rem !default;
 /// @group forms
-$bpk-select-large-height: 2.625rem + .375rem !default;
+$bpk-select-large-height: 3.5rem + .5rem !default;
 /// @group forms
-$bpk-select-padding-bottom: .375rem !default;
+$bpk-select-padding-bottom: .5rem !default;
 /// @group forms
-$bpk-select-padding-left: .75rem !default;
+$bpk-select-padding-left: 1rem !default;
 /// @group forms
-$bpk-select-padding-right: 1.875rem !default;
+$bpk-select-padding-right: 2.5rem !default;
 /// @group forms
-$bpk-select-padding-top: .375rem !default;
+$bpk-select-padding-top: .5rem !default;
 /// @group spacings
-$bpk-spacing-base: 1.5rem !default;
+$bpk-spacing-base: 2rem !default;
 /// @group spacings
-$bpk-spacing-lg: 1.875rem !default;
+$bpk-spacing-lg: 2.5rem !default;
 /// @group spacings
-$bpk-spacing-md: 1.125rem !default;
+$bpk-spacing-md: 1.5rem !default;
 /// @group spacings
 $bpk-spacing-none: 0 !default;
 /// @group spacings
-$bpk-spacing-sm: .75rem !default;
+$bpk-spacing-sm: 1rem !default;
 /// @group spacings
-$bpk-spacing-xl: 2.250rem !default;
+$bpk-spacing-xl: 3rem !default;
 /// @group spacings
-$bpk-spacing-xs: .375rem !default;
+$bpk-spacing-xs: .5rem !default;
 /// @group spacings
-$bpk-spacing-xxl: 2.625rem !default;
+$bpk-spacing-xxl: 3.5rem !default;
+/// @group spacings
+$bpk-spacing-xxs: .25rem !default;
 /// @group states
 $bpk-state-selected-background-color: rgb(8, 78, 178) !default;
 /// @group forms
-$bpk-textarea-min-height: 2.625rem * 2 !default;
+$bpk-textarea-min-height: 3.5rem * 2 !default;
 /// @group font-sizes
 $bpk-text-base-font-size: 1rem !default;
 /// @group font-weights
