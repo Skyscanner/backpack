@@ -43,3 +43,27 @@ exports[`BpkBreadcrumb should render correctly with arbitrary props 1`] = `
   </ol>
 </nav>
 `;
+
+exports[`BpkBreadcrumb should render correctly with schema meta data 1`] = `
+Array [
+  <script
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": "{\\"@context\\":\\"http://schema.org\\",\\"@type\\":\\"BreadcrumbList\\",\\"itemListElement\\":[{\\"@type\\":\\"ListItem\\",\\"position\\":1,\\"item\\":{\\"@id\\":\\"http://www.skyscanner.net\\",\\"name\\":\\"home\\"}},{\\"@type\\":\\"ListItem\\",\\"position\\":2,\\"item\\":{\\"@id\\":\\"http://www.skyscanner.net/hotels\\",\\"name\\":\\"hotels\\"}}]}",
+      }
+    }
+    type="application/ld+json"
+  />,
+  <nav
+    aria-label="My breadcrumbs"
+  >
+    <ol
+      className="bpk-breadcrumb"
+    >
+      <div>
+        Anything can go in here
+      </div>
+    </ol>
+  </nav>,
+]
+`;

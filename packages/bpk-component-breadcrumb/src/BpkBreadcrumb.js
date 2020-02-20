@@ -77,7 +77,7 @@ BpkBreadcrumb.propTypes = {
   children: PropTypes.node.isRequired,
   label: PropTypes.string.isRequired,
   schemaMetaData: PropTypes.arrayOf(
-    PropTypes.Shape({
+    PropTypes.shape({
       url: PropTypes.string.isRequired,
       label: PropTypes.string.isRequired,
     }),
