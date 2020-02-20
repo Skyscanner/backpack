@@ -26,24 +26,66 @@ import STYLES from './BpkBreadcrumb.scss';
 
 const getClassName = cssModules(STYLES);
 
-export type Props = {
-  children: Node,
+type SchemaMetaDataItem = {
+  url: string,
   label: string,
 };
 
+export type Props = {
+  children: Node,
+  schemaMetaData: ?(SchemaMetaDataItem[]),
+  label: string,
+};
+
+const buildMetaData = (schemaMetaData: SchemaMetaDataItem[]): string => {
+  const itemListElement = schemaMetaData.map((schemaMetaDataItem, index) => ({
+    '@type': 'ListItem',
+    position: index + 1,
+    item: {
+      '@id': schemaMetaDataItem.url,
+      name: schemaMetaDataItem.label,
+    },
+  }));
+
+  return JSON.stringify({
+    '@context': 'http://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement,
+  });
+};
+
 const BpkBreadcrumb = (props: Props) => {
-  const { children, label, ...rest } = props;
+  const { children, label, schemaMetaData, ...rest } = props;
 
   return (
-    <nav aria-label={label} {...rest}>
-      <ol className={getClassName('bpk-breadcrumb')}>{children}</ol>
-    </nav>
+    <React.Fragment>
+      {schemaMetaData && (
+        <script
+          type="application/ld+json"
+          // eslint-disable-next-line react/no-danger
+          dangerouslySetInnerHTML={buildMetaData(schemaMetaData)}
+        />
+      )}
+      <nav aria-label={label} {...rest}>
+        <ol className={getClassName('bpk-breadcrumb')}>{children}</ol>
+      </nav>
+    </React.Fragment>
   );
 };
 
 BpkBreadcrumb.propTypes = {
   children: PropTypes.node.isRequired,
   label: PropTypes.string.isRequired,
+  schemaMetaData: PropTypes.arrayOf(
+    PropTypes.Shape({
+      url: PropTypes.string.isRequired,
+      label: PropTypes.string.isRequired,
+    }),
+  ),
+};
+
+BpkBreadcrumb.defaultProps = {
+  schemaMetaData: null,
 };
 
 export default BpkBreadcrumb;
