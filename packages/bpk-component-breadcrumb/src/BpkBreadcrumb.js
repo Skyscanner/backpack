@@ -59,11 +59,11 @@ const BpkBreadcrumb = (props: Props) => {
 
   return (
     <React.Fragment>
-      {schemaMetaData && (
+      {Array.isArray(schemaMetaData) && (
         <script
           type="application/ld+json"
           // eslint-disable-next-line react/no-danger
-          dangerouslySetInnerHTML={buildMetaData(schemaMetaData)}
+          dangerouslySetInnerHTML={{ __html: buildMetaData(schemaMetaData) }}
         />
       )}
       <nav aria-label={label} {...rest}>
