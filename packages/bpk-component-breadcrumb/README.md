@@ -37,6 +37,8 @@ export default class App extends Component {
 | ------------------ | -------- | -------- | ------------- |
 | children           | node     | true     | -             |
 | label              | string   | true     | -             |
+| schemaMetaData     | array    | false    | null          |
+
 
 
 ### BpkBreadcrumbItem
