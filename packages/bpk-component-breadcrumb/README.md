@@ -29,6 +29,11 @@ export default class App extends Component {
 }
 
 ```
+
+## Schema Markup
+
+JSON-LD schema mark up can be added to improve the SEO of the component through the `schemaMetaData` property
+
 ## Props
 
 ### BpkBreadcrumb
