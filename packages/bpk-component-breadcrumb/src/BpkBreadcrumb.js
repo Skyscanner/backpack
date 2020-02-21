@@ -37,6 +37,11 @@ export type Props = {
   label: string,
 };
 
+/*
+  The google structured data reference for the stringified output of
+  the following function is here:
+  https://developers.google.com/search/docs/data-types/breadcrumb
+*/
 const buildMetaData = (schemaMetaData: SchemaMetaDataItem[]): string => {
   const itemListElement = schemaMetaData.map((schemaMetaDataItem, index) => ({
     '@type': 'ListItem',

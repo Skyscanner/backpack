@@ -30,19 +30,21 @@ export default class App extends Component {
 
 ```
 
-## Schema Markup
+## Structured Data
 
-JSON-LD schema mark up can be added to improve the SEO of the component through the `schemaMetaData` property
+[JSON-LD](https://json-ld.org/) schema mark up can be used to
+add [structured data](https://developers.google.com/search/docs/guides/intro-structured-data)
+to the component to improve the SEO of the component through the `schemaMetaData` property.
 
 ## Props
 
 ### BpkBreadcrumb
 
-| Property           | PropType | Required | Default Value |
-| ------------------ | -------- | -------- | ------------- |
-| children           | node     | true     | -             |
-| label              | string   | true     | -             |
-| schemaMetaData     | array    | false    | null          |
+| Property           | PropType                             | Required | Default Value |
+| ------------------ | ------------------------------------ | -------- | ------------- |
+| children           | node                                 | true     | -             |
+| label              | string                               | true     | -             |
+| schemaMetaData     | array({url: string, label: string})  | false    | null          |
 
 
 
