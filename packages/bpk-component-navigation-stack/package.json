@@ -22,7 +22,7 @@
   "devDependencies": {
     "bpk-component-button": "^3.2.13",
     "bpk-component-icon": "^5.0.35",
-    "bpk-component-navigation-bar": "^2.1.32",
+    "bpk-component-navigation-bar": "^2.1.31",
     "bpk-component-rtl-toggle": "^2.0.34"
   },
   "publishConfig": {
