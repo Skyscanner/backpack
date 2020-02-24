@@ -170,6 +170,7 @@ iff
 isRTL
 IntersectionObserver
 JS
+JSON-LD
 keystore
 Keystore
 linter
@@ -200,6 +201,7 @@ themeable
 TTF
 UIs
 uncompiled
+url
 z-index
 
 # a11y terms
@@ -455,6 +457,7 @@ keyup
 iconDisabled
 rel
 buttonProps
+schemaMetaData
 
 autoScrollToSelected
 calendarComponent

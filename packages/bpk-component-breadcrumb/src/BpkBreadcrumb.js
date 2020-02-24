@@ -26,24 +26,85 @@ import STYLES from './BpkBreadcrumb.scss';
 
 const getClassName = cssModules(STYLES);
 
-export type Props = {
-  children: Node,
+type SchemaMetaDataItem = {
+  url: string,
   label: string,
 };
 
-const BpkBreadcrumb = (props: Props) => {
-  const { children, label, ...rest } = props;
-
-  return (
-    <nav aria-label={label} {...rest}>
-      <ol className={getClassName('bpk-breadcrumb')}>{children}</ol>
-    </nav>
-  );
+export type Props = {
+  children: Node,
+  schemaMetaData: ?(SchemaMetaDataItem[]),
+  label: string,
 };
+
+/*
+  The google structured data reference for the stringified output of
+  the following function is here:
+  https://developers.google.com/search/docs/data-types/breadcrumb
+*/
+const buildMetaData = (schemaMetaData: SchemaMetaDataItem[]): string => {
+  const itemListElement = schemaMetaData.map((schemaMetaDataItem, index) => ({
+    '@type': 'ListItem',
+    position: index + 1,
+    item: {
+      '@id': schemaMetaDataItem.url,
+      name: schemaMetaDataItem.label,
+    },
+  }));
+
+  return JSON.stringify({
+    '@context': 'http://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement,
+  });
+};
+
+class BpkBreadcrumb extends React.Component<Props> {
+  metaData: ?string;
+
+  static defaultProps = {
+    schemaMetaData: null,
+  };
+
+  constructor(props: Props) {
+    super(props);
+
+    this.metaData = props.schemaMetaData && buildMetaData(props.schemaMetaData);
+  }
+
+  render() {
+    const { children, label, schemaMetaData, ...rest } = this.props;
+
+    return (
+      <React.Fragment>
+        {this.metaData && (
+          <script
+            type="application/ld+json"
+            // eslint-disable-next-line react/no-danger
+            dangerouslySetInnerHTML={{ __html: this.metaData }}
+          />
+        )}
+        <nav aria-label={label} {...rest}>
+          <ol className={getClassName('bpk-breadcrumb')}>{children}</ol>
+        </nav>
+      </React.Fragment>
+    );
+  }
+}
 
 BpkBreadcrumb.propTypes = {
   children: PropTypes.node.isRequired,
   label: PropTypes.string.isRequired,
+  schemaMetaData: PropTypes.arrayOf(
+    PropTypes.shape({
+      url: PropTypes.string.isRequired,
+      label: PropTypes.string.isRequired,
+    }),
+  ),
+};
+
+BpkBreadcrumb.defaultProps = {
+  schemaMetaData: null,
 };
 
 export default BpkBreadcrumb;

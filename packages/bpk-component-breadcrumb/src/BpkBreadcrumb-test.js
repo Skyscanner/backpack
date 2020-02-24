@@ -62,4 +62,26 @@ describe('BpkBreadcrumb', () => {
 
     expect(tree).toMatchSnapshot();
   });
+
+  it('should render correctly with schema meta data', () => {
+    const schemaMetaData = [
+      {
+        url: 'http://www.skyscanner.net',
+        label: 'home',
+      },
+      {
+        url: 'http://www.skyscanner.net/hotels',
+        label: 'hotels',
+      },
+    ];
+    const tree = renderer
+      .create(
+        <BpkBreadcrumb label="My breadcrumbs" schemaMetaData={schemaMetaData}>
+          <div>Anything can go in here</div>
+        </BpkBreadcrumb>,
+      )
+      .toJSON();
+
+    expect(tree).toMatchSnapshot();
+  });
 });
