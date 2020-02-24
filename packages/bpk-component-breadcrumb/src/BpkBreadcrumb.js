@@ -59,24 +59,38 @@ const buildMetaData = (schemaMetaData: SchemaMetaDataItem[]): string => {
   });
 };
 
-const BpkBreadcrumb = (props: Props) => {
-  const { children, label, schemaMetaData, ...rest } = props;
+class BpkBreadcrumb extends React.Component<Props> {
+  metaData: ?string;
 
-  return (
-    <React.Fragment>
-      {Array.isArray(schemaMetaData) && (
-        <script
-          type="application/ld+json"
-          // eslint-disable-next-line react/no-danger
-          dangerouslySetInnerHTML={{ __html: buildMetaData(schemaMetaData) }}
-        />
-      )}
-      <nav aria-label={label} {...rest}>
-        <ol className={getClassName('bpk-breadcrumb')}>{children}</ol>
-      </nav>
-    </React.Fragment>
-  );
-};
+  static defaultProps = {
+    schemaMetaData: null,
+  };
+
+  constructor(props: Props) {
+    super(props);
+
+    this.metaData = props.schemaMetaData && buildMetaData(props.schemaMetaData);
+  }
+
+  render() {
+    const { children, label, schemaMetaData, ...rest } = this.props;
+
+    return (
+      <React.Fragment>
+        {this.metaData && (
+          <script
+            type="application/ld+json"
+            // eslint-disable-next-line react/no-danger
+            dangerouslySetInnerHTML={{ __html: this.metaData }}
+          />
+        )}
+        <nav aria-label={label} {...rest}>
+          <ol className={getClassName('bpk-breadcrumb')}>{children}</ol>
+        </nav>
+      </React.Fragment>
+    );
+  }
+}
 
 BpkBreadcrumb.propTypes = {
   children: PropTypes.node.isRequired,
