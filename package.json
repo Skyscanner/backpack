@@ -59,13 +59,11 @@
   },
   "lint-staged": {
     "*.js": [
-      "eslint --fix",
-      "git add"
+      "eslint --fix"
     ],
     "*.scss": [
       "stylelint --syntax scss --fix",
-      "stylelint --syntax scss",
-      "git add"
+      "stylelint --syntax scss"
     ],
     "*.md": [
       "mdspell -r --en-gb --ignore-acronyms --ignore-numbers --no-suggestions"
