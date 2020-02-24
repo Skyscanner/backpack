@@ -16,7 +16,7 @@ import BpkDatepicker from 'bpk-component-datepicker';
 import format from 'date-fns/format';
 
 const formatDate = date => format(date, 'DD/MM/YYYY');
-const formatDateFull = date => format(date, 'dddd, Do MMMM YYYY');
+const formatDateFull = date => format(date, 'do MMMM YYYY');
 const formatMonth = date => format(date, 'MMMM YYYY');
 const daysOfWeek = [
   {
