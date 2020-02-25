@@ -2,6 +2,13 @@
 
 [Unreleased changes](./UNRELEASED.yaml).
 
+# 2020-02-25 - Supporting building schema markup in Breadcrumbs
+
+**Added:**
+
+- bpk-component-breadcrumb: 2.0.35 => 2.1.0
+  - Added support for building schema markup to the component
+
 # 2020-02-12 - Added flow to RN tokens.
 
 **Breaking:**
