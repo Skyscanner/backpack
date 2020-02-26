@@ -4,7 +4,8 @@
 Use these guidelines when writing docs for components:
 
 ### General
-* Use British English for docs, US English for code.
+
+* Use British English for docs, US English for APIs and code interfaces. Documentation comments should use British English except when referring to API interfaces which should be quoted verbatim.
 
 ### Titles
 * Use sentence case.
