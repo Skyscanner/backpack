@@ -76,7 +76,11 @@ $slider-control-inset-size: 20 * $bpk-one-pixel-rem;
 
   // stylelint-disable-next-line selector-attribute-quotes
   > div[class$='0'] {
-    @include bpk-themeable-property(background-color, --bpk-slider-bar-color, $bpk-color-sky-blue-shade-03);
+    @include bpk-themeable-property(
+      background-color,
+      --bpk-slider-bar-color,
+      $bpk-color-sky-blue-shade-03
+    );
   }
 
   &--range {
@@ -86,7 +90,11 @@ $slider-control-inset-size: 20 * $bpk-one-pixel-rem;
     }
     // stylelint-disable-next-line selector-attribute-quotes
     > div[class$='1'] {
-      @include bpk-themeable-property(background-color, --bpk-slider-bar-color, $bpk-color-sky-blue-shade-03);
+      @include bpk-themeable-property(
+        background-color,
+        --bpk-slider-bar-color,
+        $bpk-color-sky-blue-shade-03
+      );
     }
   }
 }

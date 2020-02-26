@@ -189,7 +189,7 @@ export const propTypes = {
   selectionStart: PropTypes.instanceOf(Date),
   showWeekendSeparator: PropTypes.bool,
   ignoreOutsideDate: PropTypes.bool,
-  dateProps: PropTypes.object, // eslint-disable-line react/forbid-prop-types
+  dateProps: PropTypes.object,
 };
 
 BpkCalendarGrid.propTypes = { ...propTypes };

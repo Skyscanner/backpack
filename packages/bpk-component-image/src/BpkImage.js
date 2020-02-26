@@ -39,7 +39,7 @@ type BpkImageProps = {
   borderRadiusStyle: $Keys<typeof BORDER_RADIUS_STYLES>,
   className: ?string,
   onLoad: ?() => mixed,
-  style: ?{}, // eslint-disable-line react/forbid-prop-types
+  style: ?{},
   suppressHydrationWarning: boolean,
 };
 
@@ -100,7 +100,6 @@ class Image extends Component<ImageProps> {
   }
 }
 
-// eslint-disable-next-line react/no-multi-comp
 class BpkImage extends Component<BpkImageProps> {
   onImageLoad: () => mixed;
 

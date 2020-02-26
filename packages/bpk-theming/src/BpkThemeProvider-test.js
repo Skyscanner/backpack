@@ -31,7 +31,7 @@ CustomComponentFunction.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
-// eslint-disable-next-line
+// eslint-disable-next-line react/prefer-stateless-function
 class CustomComponentClass extends React.Component {
   render() {
     const { children, ...rest } = this.props;
@@ -189,7 +189,7 @@ describe('BpkThemeProvider', () => {
         .toString(),
     ).toEqual(
       'Error: BpkThemeProvider: To apply theming, the theme prop must include `one` (missing `one`)',
-    ); // eslint-disable-line max-len
+    );
   });
 
   it('should warn about extraneous theme attributes', () => {
@@ -207,6 +207,6 @@ describe('BpkThemeProvider', () => {
         .toString(),
     ).toEqual(
       'Error: BpkThemeProvider: Extraneous theme attributes supplied: `two`.',
-    ); // eslint-disable-line max-len
+    );
   });
 });

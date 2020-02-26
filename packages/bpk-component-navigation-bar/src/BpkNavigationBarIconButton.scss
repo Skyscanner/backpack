@@ -19,13 +19,25 @@
 @import '~bpk-mixins/index';
 
 .bpk-navigation-bar-icon-button {
-  @include bpk-themeable-property(color, --bpk-navigation-bar-icon-button-color, $bpk-color-white);
+  @include bpk-themeable-property(
+    color,
+    --bpk-navigation-bar-icon-button-color,
+    $bpk-color-white
+  );
 
   @include bpk-hover {
-    @include bpk-themeable-property(color, --bpk-navigation-bar-icon-button-hover-color, $bpk-color-white);
+    @include bpk-themeable-property(
+      color,
+      --bpk-navigation-bar-icon-button-hover-color,
+      $bpk-color-white
+    );
   }
 
   &:active {
-    @include bpk-themeable-property(color, --bpk-navigation-bar-icon-button-active-color, $bpk-color-white);
+    @include bpk-themeable-property(
+      color,
+      --bpk-navigation-bar-icon-button-active-color,
+      $bpk-color-white
+    );
   }
 }

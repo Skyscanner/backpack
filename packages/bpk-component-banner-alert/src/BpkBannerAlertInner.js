@@ -169,7 +169,6 @@ const BpkBannerAlertInner = (props: Props) => {
   /* eslint-disable
     jsx-a11y/no-static-element-interactions,
     jsx-a11y/click-events-have-key-events,
-    jsx-a11y/no-noninteractive-element-interactions
     */
   // Disabling 'click-events-have-key-events and interactive-supports-focus' because header element is not focusable.
   // ToggleButton is focusable and works for this.

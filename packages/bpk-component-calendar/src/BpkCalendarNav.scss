@@ -46,14 +46,26 @@
     cursor: pointer;
     appearance: none;
 
-    @include bpk-themeable-property(color, --bpk-calendar-nudger-icon-color, $bpk-calendar-nav-icon-fill);
+    @include bpk-themeable-property(
+      color,
+      --bpk-calendar-nudger-icon-color,
+      $bpk-calendar-nav-icon-fill
+    );
 
     @include bpk-hover {
-      @include bpk-themeable-property(color, --bpk-calendar-nudger-icon-hover-color, $bpk-calendar-nav-icon-hover-fill);
+      @include bpk-themeable-property(
+        color,
+        --bpk-calendar-nudger-icon-hover-color,
+        $bpk-calendar-nav-icon-hover-fill
+      );
     }
 
     &:active {
-      @include bpk-themeable-property(color, --bpk-calendar-nudger-icon-active-color, $bpk-calendar-nav-icon-active-fill);
+      @include bpk-themeable-property(
+        color,
+        --bpk-calendar-nudger-icon-active-color,
+        $bpk-calendar-nav-icon-active-fill
+      );
     }
 
     .bpk-calendar-nav__icon {

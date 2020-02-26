@@ -142,7 +142,6 @@ const BpkPhoneInput = (props: Props) => {
         newValue = number;
       }
 
-      // eslint-disable-next-line no-param-reassign
       e.target.value = newValue;
     }
     onChange(e);
@@ -211,6 +210,8 @@ BpkPhoneInput.propTypes = {
     id: PropTypes.string,
     name: PropTypes.string,
     label: PropTypes.string,
+    className: PropTypes.string,
+    wrapperClassName: PropTypes.string,
   }).isRequired,
   dialingCodes: PropTypes.arrayOf(
     PropTypes.shape({ code: PropTypes.string, description: PropTypes.string }),

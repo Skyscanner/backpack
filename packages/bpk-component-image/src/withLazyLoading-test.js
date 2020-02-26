@@ -40,7 +40,7 @@ describe('withLazyLoading', () => {
     const lazyLoadedImage = shallow(<LazyLoadedImage />, {
       disableLifecycleMethods: true,
     });
-    expect(lazyLoadedImage.first().is(MockImageComponent));
+    expect(lazyLoadedImage.children().type()).toBe(MockImageComponent);
   });
 
   it('should add inView prop', () => {
@@ -48,10 +48,12 @@ describe('withLazyLoading', () => {
     const MockImageComponent = () => <div>Fake Image</div>;
     const LazyLoadedImage = withLazyLoading(MockImageComponent, documentMock);
 
-    const lazyLoadedImage = shallow(<LazyLoadedImage />, {
+    const lazyLoadedImage = mount(<LazyLoadedImage />, {
       disableLifecycleMethods: true,
     });
-    expect(lazyLoadedImage.hasOwnProperty('inView')); // eslint-disable-line no-prototype-builtins
+
+    const props = Object.keys(lazyLoadedImage.find(MockImageComponent).props());
+    expect(props).toEqual(expect.arrayContaining(['inView']));
   });
 
   it('scroll listener args should be correct when mounting', () => {

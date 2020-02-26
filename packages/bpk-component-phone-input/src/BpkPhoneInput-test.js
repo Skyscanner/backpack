@@ -132,7 +132,6 @@ describe('BpkPhoneInput', () => {
   });
 
   it('should error if the selected dialing code has no corresponding data', () => {
-    // eslint-disable-next-line max-len
     expect(() =>
       shallow(<BpkPhoneInput {...defaultProps} dialingCode="00_non" />),
     ).toThrow(

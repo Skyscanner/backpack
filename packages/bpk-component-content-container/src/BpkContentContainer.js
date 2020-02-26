@@ -50,7 +50,6 @@ const BpkContentContainer = props => {
     classNames.push(className);
   }
 
-  /* eslint-disable react/no-danger-with-children */
   return (
     <TagName
       className={classNames.join(' ')}
@@ -60,7 +59,6 @@ const BpkContentContainer = props => {
       {children}
     </TagName>
   );
-  /* eslint-enable */
 };
 
 BpkContentContainer.propTypes = {

@@ -46,7 +46,7 @@ export type Props = {
   children: Node,
   placement: 'top' | 'right' | 'bottom' | 'left' | 'auto',
   hideOnTouchDevices: boolean,
-  portalStyle: ?Object, // eslint-disable-line react/forbid-prop-types
+  portalStyle: ?Object,
   portalClassName: ?string,
   renderTarget: ?() => HTMLElement,
   popperModifiers: ?Object,

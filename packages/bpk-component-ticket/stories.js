@@ -174,3 +174,4 @@ storiesOf('bpk-component-ticket', module)
       ))}
     </div>
   ));
+/* eslint-enable react/no-array-index-key */

@@ -18,7 +18,7 @@
 
 /* @flow strict */
 
-import BpkButton from './src/BpkButton';
+import BpkButton from './src/BpkButton'; // eslint-disable-line import/no-cycle
 import BpkButtonPrimary from './src/BpkButtonPrimary';
 import BpkButtonSecondary from './src/BpkButtonSecondary';
 import BpkButtonDestructive from './src/BpkButtonDestructive';

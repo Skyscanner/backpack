@@ -23,47 +23,50 @@ $arrow-size: $bpk-spacing-xs;
 .bpk-tooltip-portal {
   z-index: $bpk-zindex-tooltip;
 
-  &[x-placement=top] {
+  &[x-placement='top'] {
     margin-bottom: $arrow-size;
   }
 
-  &[x-placement=right] {
+  &[x-placement='right'] {
     margin-left: $arrow-size;
   }
 
-  &[x-placement=bottom] {
+  &[x-placement='bottom'] {
     margin-top: $arrow-size;
   }
 
-  &[x-placement=left] {
+  &[x-placement='left'] {
     margin-right: $arrow-size;
   }
 }
 
 .bpk-tooltip {
-  transition: opacity $bpk-duration-sm ease-in-out, transform $bpk-duration-sm ease-in-out;
+  transition: opacity $bpk-duration-sm ease-in-out,
+    transform $bpk-duration-sm ease-in-out;
   outline: 0;
   opacity: 1;
 
   &--appear {
     opacity: 0;
 
-    .bpk-tooltip-portal[x-placement=top] &:not(.bpk-tooltip--appear-active) {
+    .bpk-tooltip-portal[x-placement='top'] &:not(.bpk-tooltip--appear-active) {
       transform: translate(0, -1rem);
       transition: none;
     }
 
-    .bpk-tooltip-portal[x-placement=right] &:not(.bpk-tooltip--appear-active) {
+    .bpk-tooltip-portal[x-placement='right']
+      &:not(.bpk-tooltip--appear-active) {
       transform: translate(1rem, 0);
       transition: none;
     }
 
-    .bpk-tooltip-portal[x-placement=bottom] &:not(.bpk-tooltip--appear-active) {
+    .bpk-tooltip-portal[x-placement='bottom']
+      &:not(.bpk-tooltip--appear-active) {
       transform: translate(0, 1rem);
       transition: none;
     }
 
-    .bpk-tooltip-portal[x-placement=left] &:not(.bpk-tooltip--appear-active) {
+    .bpk-tooltip-portal[x-placement='left'] &:not(.bpk-tooltip--appear-active) {
       transform: translate(-1rem, 0);
       transition: none;
     }
@@ -71,26 +74,27 @@ $arrow-size: $bpk-spacing-xs;
 
   &--appear-active {
     transform: translate(0, 0);
-    transition: opacity $bpk-duration-sm ease-in-out, transform $bpk-duration-sm ease-in-out;
+    transition: opacity $bpk-duration-sm ease-in-out,
+      transform $bpk-duration-sm ease-in-out;
     opacity: 1;
   }
 
   &__arrow {
     @include bpk-layer-arrow($arrow-size);
 
-    .bpk-tooltip-portal[x-placement=top] & {
+    .bpk-tooltip-portal[x-placement='top'] & {
       @include bpk-layer-arrow-bottom($arrow-size);
     }
 
-    .bpk-tooltip-portal[x-placement=right] & {
+    .bpk-tooltip-portal[x-placement='right'] & {
       @include bpk-layer-arrow-left($arrow-size);
     }
 
-    .bpk-tooltip-portal[x-placement=bottom] & {
+    .bpk-tooltip-portal[x-placement='bottom'] & {
       @include bpk-layer-arrow-top($arrow-size);
     }
 
-    .bpk-tooltip-portal[x-placement=left] & {
+    .bpk-tooltip-portal[x-placement='left'] & {
       @include bpk-layer-arrow-right($arrow-size);
     }
   }

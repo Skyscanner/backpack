@@ -21,6 +21,7 @@
 import React, { type Node } from 'react';
 import PropTypes from 'prop-types';
 
+// eslint-disable-next-line import/no-cycle
 import {
   BpkButtonPrimary,
   BpkButtonSecondary,

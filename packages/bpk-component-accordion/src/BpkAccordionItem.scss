@@ -32,18 +32,30 @@
     cursor: pointer;
     appearance: none;
 
-    @include bpk-themeable-property(color, --bpk-accordion-color, $bpk-color-sky-blue-shade-03);
+    @include bpk-themeable-property(
+      color,
+      --bpk-accordion-color,
+      $bpk-color-sky-blue-shade-03
+    );
 
     @include bpk-rtl {
       text-align: right;
     }
 
     @include bpk-hover {
-      @include bpk-themeable-property(color, --bpk-accordion-hover-color, $bpk-color-sky-blue-shade-03);
+      @include bpk-themeable-property(
+        color,
+        --bpk-accordion-hover-color,
+        $bpk-color-sky-blue-shade-03
+      );
     }
 
     &:active {
-      @include bpk-themeable-property(color, --bpk-accordion-active-color, $bpk-color-sky-blue-shade-03);
+      @include bpk-themeable-property(
+        color,
+        --bpk-accordion-active-color,
+        $bpk-color-sky-blue-shade-03
+      );
     }
   }
 
@@ -63,14 +75,26 @@
   }
 
   &__item-expand-icon {
-    @include bpk-themeable-property(fill, --bpk-accordion-color, $bpk-color-sky-blue-shade-03);
+    @include bpk-themeable-property(
+      fill,
+      --bpk-accordion-color,
+      $bpk-color-sky-blue-shade-03
+    );
 
     @include bpk-hover {
-      @include bpk-themeable-property(fill, --bpk-accordion-hover-color, $bpk-color-sky-blue-shade-03);
+      @include bpk-themeable-property(
+        fill,
+        --bpk-accordion-hover-color,
+        $bpk-color-sky-blue-shade-03
+      );
     }
 
     &:active {
-      @include bpk-themeable-property(fill, --bpk-accordion-active-color, $bpk-color-sky-blue-shade-03);
+      @include bpk-themeable-property(
+        fill,
+        --bpk-accordion-active-color,
+        $bpk-color-sky-blue-shade-03
+      );
     }
 
     &--flipped {

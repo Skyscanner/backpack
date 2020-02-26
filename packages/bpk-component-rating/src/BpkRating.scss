@@ -78,18 +78,30 @@
   &--high-rating {
     align-self: center;
 
-    @include bpk-themeable-property(background-color, --bpk-rating-high-color, $bpk-color-monteverde);
+    @include bpk-themeable-property(
+      background-color,
+      --bpk-rating-high-color,
+      $bpk-color-monteverde
+    );
   }
 
   &--medium-rating {
     align-self: center;
 
-    @include bpk-themeable-property(background-color, --bpk-rating-medium-color, $bpk-color-kolkata);
+    @include bpk-themeable-property(
+      background-color,
+      --bpk-rating-medium-color,
+      $bpk-color-kolkata
+    );
   }
 
   &--low-rating {
     align-self: center;
 
-    @include bpk-themeable-property(background-color, --bpk-rating-low-color, $bpk-color-panjin);
+    @include bpk-themeable-property(
+      background-color,
+      --bpk-rating-low-color,
+      $bpk-color-panjin
+    );
   }
 }

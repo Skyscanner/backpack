@@ -50,7 +50,11 @@
       + .bpk-checkbox__icon {
         display: block;
 
-        @include bpk-themeable-property(fill, --bpk-checkbox-checked-color, $bpk-checkbox-checked-tick-color);
+        @include bpk-themeable-property(
+          fill,
+          --bpk-checkbox-checked-color,
+          $bpk-checkbox-checked-tick-color
+        );
 
         // Disable for IE10/IE11 since background for the input doesn't work.
         @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {

@@ -65,8 +65,10 @@ describe('withInfiniteScroll', () => {
         intersect = async () => callback([{ isIntersecting: true }]);
         currentOptions = options;
       }
-      observe() {} // eslint-disable-line
-      unobserve() {} // eslint-disable-line
+
+      observe() {} // eslint-disable-line class-methods-use-this
+
+      unobserve() {} // eslint-disable-line class-methods-use-this
     };
   });
 

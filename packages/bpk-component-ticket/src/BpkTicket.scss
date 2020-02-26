@@ -157,7 +157,10 @@
 
     &--horizontal {
       height: $bpk-one-pixel-rem * 2;
-      background-image: linear-gradient($bpk-color-sky-gray-tint-06, $bpk-color-sky-gray-tint-06);
+      background-image: linear-gradient(
+        $bpk-color-sky-gray-tint-06,
+        $bpk-color-sky-gray-tint-06
+      );
       background-repeat: repeat-x;
       background-position: 0 50%;
       background-size: 8 * $bpk-one-pixel-rem 2 * $bpk-one-pixel-rem;
@@ -167,7 +170,10 @@
       height: $notch-size * 2;
       margin: auto $notch-size;
       padding: 0 $notch-size;
-      background-image: linear-gradient($bpk-color-sky-gray-tint-06, $bpk-color-sky-gray-tint-06);
+      background-image: linear-gradient(
+        $bpk-color-sky-gray-tint-06,
+        $bpk-color-sky-gray-tint-06
+      );
       background-repeat: repeat-x;
       background-position: 0 50%;
       background-size: 8 * $bpk-one-pixel-rem 2 * $bpk-one-pixel-rem;
@@ -175,7 +181,10 @@
 
     &--vertical {
       width: $bpk-one-pixel-rem * 2;
-      background-image: linear-gradient($bpk-color-sky-gray-tint-06, $bpk-color-sky-gray-tint-06);
+      background-image: linear-gradient(
+        $bpk-color-sky-gray-tint-06,
+        $bpk-color-sky-gray-tint-06
+      );
       background-repeat: repeat-y;
       background-position: 50% 0;
       background-size: 2 * $bpk-one-pixel-rem 8 * $bpk-one-pixel-rem;
@@ -185,7 +194,10 @@
       width: $notch-size * 2;
       margin: $notch-size auto;
       padding: $notch-size 0;
-      background-image: linear-gradient($bpk-color-sky-gray-tint-06, $bpk-color-sky-gray-tint-06);
+      background-image: linear-gradient(
+        $bpk-color-sky-gray-tint-06,
+        $bpk-color-sky-gray-tint-06
+      );
       background-repeat: repeat-y;
       background-position: 50% 0;
       background-size: 2 * $bpk-one-pixel-rem 8 * $bpk-one-pixel-rem;
@@ -194,7 +206,10 @@
     &--fallback {
       display: table-cell;
       width: 2 * $bpk-one-pixel-rem;
-      background-image: linear-gradient($bpk-color-sky-gray-tint-06, $bpk-color-sky-gray-tint-06);
+      background-image: linear-gradient(
+        $bpk-color-sky-gray-tint-06,
+        $bpk-color-sky-gray-tint-06
+      );
       background-repeat: repeat-y;
       background-position: 50% 0;
       background-size: 2 * $bpk-one-pixel-rem 8 * $bpk-one-pixel-rem;
@@ -213,7 +228,12 @@
       display: block;
       width: $notch-size * 4;
       height: $notch-size * 4;
-      transform: translate3d(0, 0, 0); // BPK-1011 fix rendering bug in safari 11
+      transform: translate3d(
+        0,
+        0,
+        0
+      ); // BPK-1011 fix rendering bug in safari 11
+
       border: $notch-size solid $bpk-color-white;
       border-radius: $notch-size * 2;
       box-shadow: $bpk-box-shadow-sm inset;

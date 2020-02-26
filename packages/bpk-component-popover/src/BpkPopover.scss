@@ -28,19 +28,19 @@ $arrow-size: $bpk-spacing-sm;
     margin-left: $bpk-spacing-sm;
   }
 
-  &[x-placement=top] {
+  &[x-placement='top'] {
     margin-bottom: $arrow-size;
   }
 
-  &[x-placement=right] {
+  &[x-placement='right'] {
     margin-left: $arrow-size;
   }
 
-  &[x-placement=bottom] {
+  &[x-placement='bottom'] {
     margin-top: $arrow-size;
   }
 
-  &[x-placement=left] {
+  &[x-placement='left'] {
     margin-right: $arrow-size;
   }
 }
@@ -68,19 +68,19 @@ $arrow-size: $bpk-spacing-sm;
   &__arrow {
     @include bpk-layer-arrow($arrow-size);
 
-    .bpk-popover-portal[x-placement=top] & {
+    .bpk-popover-portal[x-placement='top'] & {
       @include bpk-layer-arrow-bottom($arrow-size);
     }
 
-    .bpk-popover-portal[x-placement=right] & {
+    .bpk-popover-portal[x-placement='right'] & {
       @include bpk-layer-arrow-left($arrow-size);
     }
 
-    .bpk-popover-portal[x-placement=bottom] & {
+    .bpk-popover-portal[x-placement='bottom'] & {
       @include bpk-layer-arrow-top($arrow-size);
     }
 
-    .bpk-popover-portal[x-placement=left] & {
+    .bpk-popover-portal[x-placement='left'] & {
       @include bpk-layer-arrow-right($arrow-size);
     }
   }

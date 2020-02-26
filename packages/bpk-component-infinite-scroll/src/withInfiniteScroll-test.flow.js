@@ -54,6 +54,7 @@ class List extends Component<ListProps> {
     );
   }
 }
+/* eslint-enable react/prefer-stateless-function */
 
 List.defaultProps = {
   onClick: null,
@@ -86,8 +87,8 @@ const InfiniteList = withInfiniteScroll(List);
       elementsPerScroll={5}
       initiallyLoadedElements={1}
       loaderIntersectionTrigger="small"
-      onScroll={evt => {}} // eslint-disable-line
-      onScrollFinished={evt => {}} // eslint-disable-line
+      onScroll={evt => {}} // eslint-disable-line no-unused-vars
+      onScrollFinished={evt => {}} // eslint-disable-line no-unused-vars
       renderLoadingComponent={() => <div />}
       renderSeeMoreComponent={onClick => (
         <button type="button" onClick={onClick} />

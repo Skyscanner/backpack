@@ -21,7 +21,7 @@
 import fs from 'fs';
 import path from 'path';
 
-import { type MetadataModifier } from '.';
+import { type MetadataModifier } from '.'; // eslint-disable-line import/no-cycle
 
 const infoFile = path.join(__dirname, 'auto-mirrored-icons.txt');
 

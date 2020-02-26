@@ -265,9 +265,7 @@ const printOutChanges = (changes, logFn) => {
   logOk(`\n`);
   changes.forEach(c => {
     logFn(
-      `${c.releaseMode} change to package ${c.name}: ${c.currentVersion} => ${
-        c.newVersion
-      }`,
+      `${c.releaseMode} change to package ${c.name}: ${c.currentVersion} => ${c.newVersion}`,
     );
     logOk(`${formatDescription(c.description)}`);
     logOk(``);

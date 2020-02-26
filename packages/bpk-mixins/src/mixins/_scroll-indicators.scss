@@ -26,7 +26,7 @@
 ///
 /// @access private
 
-@mixin _bpk-scroll-indicator ($gradient-color, $direction: 'left') {
+@mixin _bpk-scroll-indicator($gradient-color, $direction: 'left') {
   $gradient-direction: if($direction == 'left', 90deg, 270deg);
 
   position: absolute;
@@ -36,7 +36,11 @@
   display: block;
   z-index: 1;
   width: $bpk-spacing-xl;
-  background-image: linear-gradient($gradient-direction, rgba($gradient-color, 1), rgba($gradient-color, 0));
+  background-image: linear-gradient(
+    $gradient-direction,
+    rgba($gradient-color, 1),
+    rgba($gradient-color, 0)
+  );
   pointer-events: none;
 
   @if $direction == 'left' {
@@ -53,7 +57,7 @@
 ///     @include bpk-scroll-indicator-left($bpk-color-grey-100);
 ///   }
 
-@mixin bpk-scroll-indicator-left ($gradient-color) {
+@mixin bpk-scroll-indicator-left($gradient-color) {
   &::before {
     @include _bpk-scroll-indicator($gradient-color, 'left');
   }
@@ -66,7 +70,7 @@
 ///     @include bpk-scroll-indicator-right($bpk-color-grey-100);
 ///   }
 
-@mixin bpk-scroll-indicator-right ($gradient-color) {
+@mixin bpk-scroll-indicator-right($gradient-color) {
   &::after {
     @include _bpk-scroll-indicator($gradient-color, 'right');
   }
