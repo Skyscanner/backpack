@@ -14,15 +14,15 @@ exports[`BpkCheckbox should render correctly 1`] = `
   />
   <svg
     className="bpk-checkbox__icon"
-    height="18"
+    height="16"
     style={
       Object {
-        "height": ".75rem",
-        "width": ".75rem",
+        "height": "1rem",
+        "width": "1rem",
       }
     }
     viewBox="0 0 24 24"
-    width="18"
+    width="16"
     xmlns="http://www.w3.org/2000/svg"
   >
     <path
@@ -52,15 +52,15 @@ exports[`BpkCheckbox should render correctly with a small label 1`] = `
   />
   <svg
     className="bpk-checkbox__icon"
-    height="18"
+    height="16"
     style={
       Object {
-        "height": ".75rem",
-        "width": ".75rem",
+        "height": "1rem",
+        "width": "1rem",
       }
     }
     viewBox="0 0 24 24"
-    width="18"
+    width="16"
     xmlns="http://www.w3.org/2000/svg"
   >
     <path
@@ -91,15 +91,15 @@ exports[`BpkCheckbox should render correctly with checked attribute 1`] = `
   />
   <svg
     className="bpk-checkbox__icon"
-    height="18"
+    height="16"
     style={
       Object {
-        "height": ".75rem",
-        "width": ".75rem",
+        "height": "1rem",
+        "width": "1rem",
       }
     }
     viewBox="0 0 24 24"
-    width="18"
+    width="16"
     xmlns="http://www.w3.org/2000/svg"
   >
     <path
@@ -129,15 +129,15 @@ exports[`BpkCheckbox should render correctly with disabled attribute 1`] = `
   />
   <svg
     className="bpk-checkbox__icon"
-    height="18"
+    height="16"
     style={
       Object {
-        "height": ".75rem",
-        "width": ".75rem",
+        "height": "1rem",
+        "width": "1rem",
       }
     }
     viewBox="0 0 24 24"
-    width="18"
+    width="16"
     xmlns="http://www.w3.org/2000/svg"
   >
     <path
@@ -168,15 +168,15 @@ exports[`BpkCheckbox should render correctly with id attribute 1`] = `
   />
   <svg
     className="bpk-checkbox__icon"
-    height="18"
+    height="16"
     style={
       Object {
-        "height": ".75rem",
-        "width": ".75rem",
+        "height": "1rem",
+        "width": "1rem",
       }
     }
     viewBox="0 0 24 24"
-    width="18"
+    width="16"
     xmlns="http://www.w3.org/2000/svg"
   >
     <path
@@ -206,15 +206,15 @@ exports[`BpkCheckbox should render correctly with required attribute 1`] = `
   />
   <svg
     className="bpk-checkbox__icon"
-    height="18"
+    height="16"
     style={
       Object {
-        "height": ".75rem",
-        "width": ".75rem",
+        "height": "1rem",
+        "width": "1rem",
       }
     }
     viewBox="0 0 24 24"
-    width="18"
+    width="16"
     xmlns="http://www.w3.org/2000/svg"
   >
     <path
@@ -249,15 +249,15 @@ exports[`BpkCheckbox should render correctly with valid=false attribute 1`] = `
   />
   <svg
     className="bpk-checkbox__icon"
-    height="18"
+    height="16"
     style={
       Object {
-        "height": ".75rem",
-        "width": ".75rem",
+        "height": "1rem",
+        "width": "1rem",
       }
     }
     viewBox="0 0 24 24"
-    width="18"
+    width="16"
     xmlns="http://www.w3.org/2000/svg"
   >
     <path
@@ -288,15 +288,15 @@ exports[`BpkCheckbox should render correctly with value attribute 1`] = `
   />
   <svg
     className="bpk-checkbox__icon"
-    height="18"
+    height="16"
     style={
       Object {
-        "height": ".75rem",
-        "width": ".75rem",
+        "height": "1rem",
+        "width": "1rem",
       }
     }
     viewBox="0 0 24 24"
-    width="18"
+    width="16"
     xmlns="http://www.w3.org/2000/svg"
   >
     <path
@@ -326,15 +326,15 @@ exports[`BpkCheckbox should render correctly with white attribute 1`] = `
   />
   <svg
     className="bpk-checkbox__icon"
-    height="18"
+    height="16"
     style={
       Object {
-        "height": ".75rem",
-        "width": ".75rem",
+        "height": "1rem",
+        "width": "1rem",
       }
     }
     viewBox="0 0 24 24"
-    width="18"
+    width="16"
     xmlns="http://www.w3.org/2000/svg"
   >
     <path

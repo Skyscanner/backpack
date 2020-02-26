@@ -77,10 +77,10 @@ exports[`BpkBarchart should render correctly 1`] = `
     <BpkChartMargin
       margin={
         Object {
-          "bottom": 48,
-          "left": 78,
+          "bottom": 52,
+          "left": 80,
           "right": 0,
-          "top": 6,
+          "top": 8,
         }
       }
     >
@@ -89,10 +89,10 @@ exports[`BpkBarchart should render correctly 1`] = `
         label="Average price (£)"
         margin={
           Object {
-            "bottom": 48,
-            "left": 78,
+            "bottom": 52,
+            "left": 80,
             "right": 0,
-            "top": 6,
+            "top": 8,
           }
         }
         numTicks={null}
@@ -108,10 +108,10 @@ exports[`BpkBarchart should render correctly 1`] = `
         label="Month"
         margin={
           Object {
-            "bottom": 48,
-            "left": 78,
+            "bottom": 52,
+            "left": 80,
             "right": 0,
-            "top": 6,
+            "top": 8,
           }
         }
         numTicks={null}
@@ -182,10 +182,10 @@ exports[`BpkBarchart should render correctly 1`] = `
         innerPadding={0.35}
         margin={
           Object {
-            "bottom": 48,
-            "left": 78,
+            "bottom": 52,
+            "left": 80,
             "right": 0,
-            "top": 6,
+            "top": 8,
           }
         }
         maxYValue={448}
@@ -280,10 +280,10 @@ exports[`BpkBarchart should render correctly with "className" prop 1`] = `
     <BpkChartMargin
       margin={
         Object {
-          "bottom": 48,
-          "left": 78,
+          "bottom": 52,
+          "left": 80,
           "right": 0,
-          "top": 6,
+          "top": 8,
         }
       }
     >
@@ -292,10 +292,10 @@ exports[`BpkBarchart should render correctly with "className" prop 1`] = `
         label="Average price (£)"
         margin={
           Object {
-            "bottom": 48,
-            "left": 78,
+            "bottom": 52,
+            "left": 80,
             "right": 0,
-            "top": 6,
+            "top": 8,
           }
         }
         numTicks={null}
@@ -311,10 +311,10 @@ exports[`BpkBarchart should render correctly with "className" prop 1`] = `
         label="Month"
         margin={
           Object {
-            "bottom": 48,
-            "left": 78,
+            "bottom": 52,
+            "left": 80,
             "right": 0,
-            "top": 6,
+            "top": 8,
           }
         }
         numTicks={null}
@@ -385,10 +385,10 @@ exports[`BpkBarchart should render correctly with "className" prop 1`] = `
         innerPadding={0.35}
         margin={
           Object {
-            "bottom": 48,
-            "left": 78,
+            "bottom": 52,
+            "left": 80,
             "right": 0,
-            "top": 6,
+            "top": 8,
           }
         }
         maxYValue={448}
@@ -483,10 +483,10 @@ exports[`BpkBarchart should render correctly with "leadingScrollIndicatorClassNa
     <BpkChartMargin
       margin={
         Object {
-          "bottom": 48,
-          "left": 78,
+          "bottom": 52,
+          "left": 80,
           "right": 0,
-          "top": 6,
+          "top": 8,
         }
       }
     >
@@ -495,10 +495,10 @@ exports[`BpkBarchart should render correctly with "leadingScrollIndicatorClassNa
         label="Average price (£)"
         margin={
           Object {
-            "bottom": 48,
-            "left": 78,
+            "bottom": 52,
+            "left": 80,
             "right": 0,
-            "top": 6,
+            "top": 8,
           }
         }
         numTicks={null}
@@ -514,10 +514,10 @@ exports[`BpkBarchart should render correctly with "leadingScrollIndicatorClassNa
         label="Month"
         margin={
           Object {
-            "bottom": 48,
-            "left": 78,
+            "bottom": 52,
+            "left": 80,
             "right": 0,
-            "top": 6,
+            "top": 8,
           }
         }
         numTicks={null}
@@ -588,10 +588,10 @@ exports[`BpkBarchart should render correctly with "leadingScrollIndicatorClassNa
         innerPadding={0.35}
         margin={
           Object {
-            "bottom": 48,
-            "left": 78,
+            "bottom": 52,
+            "left": 80,
             "right": 0,
-            "top": 6,
+            "top": 8,
           }
         }
         maxYValue={448}
@@ -686,10 +686,10 @@ exports[`BpkBarchart should render correctly with "trailingScrollIndicatorClassN
     <BpkChartMargin
       margin={
         Object {
-          "bottom": 48,
-          "left": 78,
+          "bottom": 52,
+          "left": 80,
           "right": 0,
-          "top": 6,
+          "top": 8,
         }
       }
     >
@@ -698,10 +698,10 @@ exports[`BpkBarchart should render correctly with "trailingScrollIndicatorClassN
         label="Average price (£)"
         margin={
           Object {
-            "bottom": 48,
-            "left": 78,
+            "bottom": 52,
+            "left": 80,
             "right": 0,
-            "top": 6,
+            "top": 8,
           }
         }
         numTicks={null}
@@ -717,10 +717,10 @@ exports[`BpkBarchart should render correctly with "trailingScrollIndicatorClassN
         label="Month"
         margin={
           Object {
-            "bottom": 48,
-            "left": 78,
+            "bottom": 52,
+            "left": 80,
             "right": 0,
-            "top": 6,
+            "top": 8,
           }
         }
         numTicks={null}
@@ -791,10 +791,10 @@ exports[`BpkBarchart should render correctly with "trailingScrollIndicatorClassN
         innerPadding={0.35}
         margin={
           Object {
-            "bottom": 48,
-            "left": 78,
+            "bottom": 52,
+            "left": 80,
             "right": 0,
-            "top": 6,
+            "top": 8,
           }
         }
         maxYValue={448}
@@ -889,10 +889,10 @@ exports[`BpkBarchart should render correctly with "yAxisDomain" prop 1`] = `
     <BpkChartMargin
       margin={
         Object {
-          "bottom": 48,
-          "left": 78,
+          "bottom": 52,
+          "left": 80,
           "right": 0,
-          "top": 6,
+          "top": 8,
         }
       }
     >
@@ -901,10 +901,10 @@ exports[`BpkBarchart should render correctly with "yAxisDomain" prop 1`] = `
         label="Average price (£)"
         margin={
           Object {
-            "bottom": 48,
-            "left": 78,
+            "bottom": 52,
+            "left": 80,
             "right": 0,
-            "top": 6,
+            "top": 8,
           }
         }
         numTicks={null}
@@ -920,10 +920,10 @@ exports[`BpkBarchart should render correctly with "yAxisDomain" prop 1`] = `
         label="Month"
         margin={
           Object {
-            "bottom": 48,
-            "left": 78,
+            "bottom": 52,
+            "left": 80,
             "right": 0,
-            "top": 6,
+            "top": 8,
           }
         }
         numTicks={null}
@@ -994,10 +994,10 @@ exports[`BpkBarchart should render correctly with "yAxisDomain" prop 1`] = `
         innerPadding={0.35}
         margin={
           Object {
-            "bottom": 48,
-            "left": 78,
+            "bottom": 52,
+            "left": 80,
             "right": 0,
-            "top": 6,
+            "top": 8,
           }
         }
         maxYValue={448}
@@ -1034,10 +1034,10 @@ exports[`BpkBarchart should render with "disableDataTable" prop 1`] = `
     <BpkChartMargin
       margin={
         Object {
-          "bottom": 48,
-          "left": 78,
+          "bottom": 52,
+          "left": 80,
           "right": 0,
-          "top": 6,
+          "top": 8,
         }
       }
     >
@@ -1046,10 +1046,10 @@ exports[`BpkBarchart should render with "disableDataTable" prop 1`] = `
         label="Average price (£)"
         margin={
           Object {
-            "bottom": 48,
-            "left": 78,
+            "bottom": 52,
+            "left": 80,
             "right": 0,
-            "top": 6,
+            "top": 8,
           }
         }
         numTicks={null}
@@ -1065,10 +1065,10 @@ exports[`BpkBarchart should render with "disableDataTable" prop 1`] = `
         label="Month"
         margin={
           Object {
-            "bottom": 48,
-            "left": 78,
+            "bottom": 52,
+            "left": 80,
             "right": 0,
-            "top": 6,
+            "top": 8,
           }
         }
         numTicks={null}
@@ -1139,10 +1139,10 @@ exports[`BpkBarchart should render with "disableDataTable" prop 1`] = `
         innerPadding={0.35}
         margin={
           Object {
-            "bottom": 48,
-            "left": 78,
+            "bottom": 52,
+            "left": 80,
             "right": 0,
-            "top": 6,
+            "top": 8,
           }
         }
         maxYValue={448}
@@ -1237,10 +1237,10 @@ exports[`BpkBarchart should render with "getBarLabel" prop 1`] = `
     <BpkChartMargin
       margin={
         Object {
-          "bottom": 48,
-          "left": 78,
+          "bottom": 52,
+          "left": 80,
           "right": 0,
-          "top": 6,
+          "top": 8,
         }
       }
     >
@@ -1249,10 +1249,10 @@ exports[`BpkBarchart should render with "getBarLabel" prop 1`] = `
         label="Average price (£)"
         margin={
           Object {
-            "bottom": 48,
-            "left": 78,
+            "bottom": 52,
+            "left": 80,
             "right": 0,
-            "top": 6,
+            "top": 8,
           }
         }
         numTicks={null}
@@ -1268,10 +1268,10 @@ exports[`BpkBarchart should render with "getBarLabel" prop 1`] = `
         label="Month"
         margin={
           Object {
-            "bottom": 48,
-            "left": 78,
+            "bottom": 52,
+            "left": 80,
             "right": 0,
-            "top": 6,
+            "top": 8,
           }
         }
         numTicks={null}
@@ -1342,10 +1342,10 @@ exports[`BpkBarchart should render with "getBarLabel" prop 1`] = `
         innerPadding={0.35}
         margin={
           Object {
-            "bottom": 48,
-            "left": 78,
+            "bottom": 52,
+            "left": 80,
             "right": 0,
-            "top": 6,
+            "top": 8,
           }
         }
         maxYValue={448}
@@ -1441,10 +1441,10 @@ exports[`BpkBarchart should render with "hideXAxisLabel" prop 1`] = `
     <BpkChartMargin
       margin={
         Object {
-          "bottom": 48,
-          "left": 78,
+          "bottom": 52,
+          "left": 80,
           "right": 0,
-          "top": 6,
+          "top": 8,
         }
       }
     >
@@ -1453,10 +1453,10 @@ exports[`BpkBarchart should render with "hideXAxisLabel" prop 1`] = `
         label="Average price (£)"
         margin={
           Object {
-            "bottom": 48,
-            "left": 78,
+            "bottom": 52,
+            "left": 80,
             "right": 0,
-            "top": 6,
+            "top": 8,
           }
         }
         numTicks={null}
@@ -1472,10 +1472,10 @@ exports[`BpkBarchart should render with "hideXAxisLabel" prop 1`] = `
         label="Month"
         margin={
           Object {
-            "bottom": 48,
-            "left": 78,
+            "bottom": 52,
+            "left": 80,
             "right": 0,
-            "top": 6,
+            "top": 8,
           }
         }
         numTicks={null}
@@ -1546,10 +1546,10 @@ exports[`BpkBarchart should render with "hideXAxisLabel" prop 1`] = `
         innerPadding={0.35}
         margin={
           Object {
-            "bottom": 48,
-            "left": 78,
+            "bottom": 52,
+            "left": 80,
             "right": 0,
-            "top": 6,
+            "top": 8,
           }
         }
         maxYValue={448}
@@ -1645,10 +1645,10 @@ exports[`BpkBarchart should render with "hideYAxisLabel" prop 1`] = `
     <BpkChartMargin
       margin={
         Object {
-          "bottom": 48,
-          "left": 78,
+          "bottom": 52,
+          "left": 80,
           "right": 0,
-          "top": 6,
+          "top": 8,
         }
       }
     >
@@ -1657,10 +1657,10 @@ exports[`BpkBarchart should render with "hideYAxisLabel" prop 1`] = `
         label="Average price (£)"
         margin={
           Object {
-            "bottom": 48,
-            "left": 78,
+            "bottom": 52,
+            "left": 80,
             "right": 0,
-            "top": 6,
+            "top": 8,
           }
         }
         numTicks={null}
@@ -1676,10 +1676,10 @@ exports[`BpkBarchart should render with "hideYAxisLabel" prop 1`] = `
         label="Month"
         margin={
           Object {
-            "bottom": 48,
-            "left": 78,
+            "bottom": 52,
+            "left": 80,
             "right": 0,
-            "top": 6,
+            "top": 8,
           }
         }
         numTicks={null}
@@ -1750,10 +1750,10 @@ exports[`BpkBarchart should render with "hideYAxisLabel" prop 1`] = `
         innerPadding={0.35}
         margin={
           Object {
-            "bottom": 48,
-            "left": 78,
+            "bottom": 52,
+            "left": 80,
             "right": 0,
-            "top": 6,
+            "top": 8,
           }
         }
         maxYValue={448}
@@ -1848,10 +1848,10 @@ exports[`BpkBarchart should render with "onBarClick" prop 1`] = `
     <BpkChartMargin
       margin={
         Object {
-          "bottom": 48,
-          "left": 78,
+          "bottom": 52,
+          "left": 80,
           "right": 0,
-          "top": 6,
+          "top": 8,
         }
       }
     >
@@ -1860,10 +1860,10 @@ exports[`BpkBarchart should render with "onBarClick" prop 1`] = `
         label="Average price (£)"
         margin={
           Object {
-            "bottom": 48,
-            "left": 78,
+            "bottom": 52,
+            "left": 80,
             "right": 0,
-            "top": 6,
+            "top": 8,
           }
         }
         numTicks={null}
@@ -1879,10 +1879,10 @@ exports[`BpkBarchart should render with "onBarClick" prop 1`] = `
         label="Month"
         margin={
           Object {
-            "bottom": 48,
-            "left": 78,
+            "bottom": 52,
+            "left": 80,
             "right": 0,
-            "top": 6,
+            "top": 8,
           }
         }
         numTicks={null}
@@ -1953,10 +1953,10 @@ exports[`BpkBarchart should render with "onBarClick" prop 1`] = `
         innerPadding={0.35}
         margin={
           Object {
-            "bottom": 48,
-            "left": 78,
+            "bottom": 52,
+            "left": 80,
             "right": 0,
-            "top": 6,
+            "top": 8,
           }
         }
         maxYValue={448}
@@ -2051,10 +2051,10 @@ exports[`BpkBarchart should render with "onBarHover" prop 1`] = `
     <BpkChartMargin
       margin={
         Object {
-          "bottom": 48,
-          "left": 78,
+          "bottom": 52,
+          "left": 80,
           "right": 0,
-          "top": 6,
+          "top": 8,
         }
       }
     >
@@ -2063,10 +2063,10 @@ exports[`BpkBarchart should render with "onBarHover" prop 1`] = `
         label="Average price (£)"
         margin={
           Object {
-            "bottom": 48,
-            "left": 78,
+            "bottom": 52,
+            "left": 80,
             "right": 0,
-            "top": 6,
+            "top": 8,
           }
         }
         numTicks={null}
@@ -2082,10 +2082,10 @@ exports[`BpkBarchart should render with "onBarHover" prop 1`] = `
         label="Month"
         margin={
           Object {
-            "bottom": 48,
-            "left": 78,
+            "bottom": 52,
+            "left": 80,
             "right": 0,
-            "top": 6,
+            "top": 8,
           }
         }
         numTicks={null}
@@ -2156,10 +2156,10 @@ exports[`BpkBarchart should render with "onBarHover" prop 1`] = `
         innerPadding={0.35}
         margin={
           Object {
-            "bottom": 48,
-            "left": 78,
+            "bottom": 52,
+            "left": 80,
             "right": 0,
-            "top": 6,
+            "top": 8,
           }
         }
         maxYValue={448}
@@ -2254,10 +2254,10 @@ exports[`BpkBarchart should render with "showGridlines" prop 1`] = `
     <BpkChartMargin
       margin={
         Object {
-          "bottom": 48,
-          "left": 78,
+          "bottom": 52,
+          "left": 80,
           "right": 0,
-          "top": 6,
+          "top": 8,
         }
       }
     >
@@ -2266,10 +2266,10 @@ exports[`BpkBarchart should render with "showGridlines" prop 1`] = `
         label="Average price (£)"
         margin={
           Object {
-            "bottom": 48,
-            "left": 78,
+            "bottom": 52,
+            "left": 80,
             "right": 0,
-            "top": 6,
+            "top": 8,
           }
         }
         numTicks={null}
@@ -2285,10 +2285,10 @@ exports[`BpkBarchart should render with "showGridlines" prop 1`] = `
         label="Month"
         margin={
           Object {
-            "bottom": 48,
-            "left": 78,
+            "bottom": 52,
+            "left": 80,
             "right": 0,
-            "top": 6,
+            "top": 8,
           }
         }
         numTicks={null}
@@ -2303,10 +2303,10 @@ exports[`BpkBarchart should render with "showGridlines" prop 1`] = `
         height={200}
         margin={
           Object {
-            "bottom": 48,
-            "left": 78,
+            "bottom": 52,
+            "left": 80,
             "right": 0,
-            "top": 6,
+            "top": 8,
           }
         }
         numTicks={null}
@@ -2376,10 +2376,10 @@ exports[`BpkBarchart should render with "showGridlines" prop 1`] = `
         innerPadding={0.35}
         margin={
           Object {
-            "bottom": 48,
-            "left": 78,
+            "bottom": 52,
+            "left": 80,
             "right": 0,
-            "top": 6,
+            "top": 8,
           }
         }
         maxYValue={448}

@@ -228,9 +228,9 @@ exports[`BpkBackgroundImage should render correctly 1`] = `
       <div
         style={
           Object {
-            "marginLeft": ".75rem",
+            "marginLeft": "1rem",
             "opacity": 0.7,
-            "paddingTop": ".75rem",
+            "paddingTop": "1rem",
           }
         }
       />

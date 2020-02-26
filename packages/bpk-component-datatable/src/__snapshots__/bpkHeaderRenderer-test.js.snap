@@ -24,15 +24,15 @@ exports[`bpkHeaderRenderer renders sort icon with down icon selected 1`] = `
   >
     <svg
       className="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--up bpk-icon--rtl-support"
-      height="18"
+      height="16"
       style={
         Object {
-          "height": "1.125rem",
-          "width": "1.125rem",
+          "height": "1rem",
+          "width": "1rem",
         }
       }
       viewBox="0 0 24 24"
-      width="18"
+      width="16"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
@@ -41,15 +41,15 @@ exports[`bpkHeaderRenderer renders sort icon with down icon selected 1`] = `
     </svg>
     <svg
       className="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--down bpk-data-table-column__sort-icon--selected bpk-icon--rtl-support"
-      height="18"
+      height="16"
       style={
         Object {
-          "height": "1.125rem",
-          "width": "1.125rem",
+          "height": "1rem",
+          "width": "1rem",
         }
       }
       viewBox="0 0 24 24"
-      width="18"
+      width="16"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
@@ -73,15 +73,15 @@ exports[`bpkHeaderRenderer renders sort icon with up icon selected 1`] = `
   >
     <svg
       className="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--up bpk-data-table-column__sort-icon--selected bpk-icon--rtl-support"
-      height="18"
+      height="16"
       style={
         Object {
-          "height": "1.125rem",
-          "width": "1.125rem",
+          "height": "1rem",
+          "width": "1rem",
         }
       }
       viewBox="0 0 24 24"
-      width="18"
+      width="16"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
@@ -90,15 +90,15 @@ exports[`bpkHeaderRenderer renders sort icon with up icon selected 1`] = `
     </svg>
     <svg
       className="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--down bpk-icon--rtl-support"
-      height="18"
+      height="16"
       style={
         Object {
-          "height": "1.125rem",
-          "width": "1.125rem",
+          "height": "1rem",
+          "width": "1rem",
         }
       }
       viewBox="0 0 24 24"
-      width="18"
+      width="16"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
@@ -122,15 +122,15 @@ exports[`bpkHeaderRenderer renders sort icons 1`] = `
   >
     <svg
       className="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--up bpk-icon--rtl-support"
-      height="18"
+      height="16"
       style={
         Object {
-          "height": "1.125rem",
-          "width": "1.125rem",
+          "height": "1rem",
+          "width": "1rem",
         }
       }
       viewBox="0 0 24 24"
-      width="18"
+      width="16"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
@@ -139,15 +139,15 @@ exports[`bpkHeaderRenderer renders sort icons 1`] = `
     </svg>
     <svg
       className="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--down bpk-icon--rtl-support"
-      height="18"
+      height="16"
       style={
         Object {
-          "height": "1.125rem",
-          "width": "1.125rem",
+          "height": "1rem",
+          "width": "1rem",
         }
       }
       viewBox="0 0 24 24"
-      width="18"
+      width="16"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
