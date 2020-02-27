@@ -2060,8 +2060,8 @@
     "ICON_SIZE_SM": {
       "type": "size",
       "category": "icons",
-      "value": "3.5rem / 3",
-      "originalValue": "{!SPACING_XXL} / 3",
+      "value": "1rem",
+      "originalValue": "{!SPACING_SM}",
       "name": "ICON_SIZE_SM"
     },
     "INPUT_BACKGROUND": {

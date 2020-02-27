@@ -8,7 +8,7 @@
   },
   "props": {
     "ICON_SIZE_SM": {
-      "value": "{!SPACING_XXL} / 3"
+      "value": "{!SPACING_SM}"
     },
     "ICON_SIZE_LG": {
       "value": "{!SPACING_MD}"
