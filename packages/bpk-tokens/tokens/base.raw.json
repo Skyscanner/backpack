@@ -2053,15 +2053,15 @@
     "ICON_SIZE_LG": {
       "type": "size",
       "category": "icons",
-      "value": "2rem",
-      "originalValue": "{!SPACING_BASE}",
+      "value": "1.5rem",
+      "originalValue": "{!SPACING_MD}",
       "name": "ICON_SIZE_LG"
     },
     "ICON_SIZE_SM": {
       "type": "size",
       "category": "icons",
-      "value": "1rem",
-      "originalValue": "{!SPACING_SM}",
+      "value": "1.125rem",
+      "originalValue": "1.125rem",
       "name": "ICON_SIZE_SM"
     },
     "INPUT_BACKGROUND": {

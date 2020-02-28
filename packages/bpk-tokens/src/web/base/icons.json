@@ -8,10 +8,10 @@
   },
   "props": {
     "ICON_SIZE_SM": {
-      "value": "{!SPACING_MD}"
+      "value": "1.125rem"
     },
     "ICON_SIZE_LG": {
-      "value": "{!SPACING_BASE}"
+      "value": "{!SPACING_MD}"
     }
   }
 }

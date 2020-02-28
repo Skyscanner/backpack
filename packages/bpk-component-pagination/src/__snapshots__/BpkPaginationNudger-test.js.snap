@@ -14,8 +14,8 @@ exports[`BpkPaginationNudger should display backward nudger 1`] = `
       style={
         Object {
           "display": "inline-block",
-          "lineHeight": "1rem",
-          "marginTop": "0.5rem",
+          "lineHeight": "1.125rem",
+          "marginTop": "0.4375rem",
           "verticalAlign": "top",
         }
       }
@@ -60,8 +60,8 @@ exports[`BpkPaginationNudger should display forward nudger 1`] = `
       style={
         Object {
           "display": "inline-block",
-          "lineHeight": "1rem",
-          "marginTop": "0.5rem",
+          "lineHeight": "1.125rem",
+          "marginTop": "0.4375rem",
           "verticalAlign": "top",
         }
       }

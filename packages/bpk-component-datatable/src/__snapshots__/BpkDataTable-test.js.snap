@@ -53,15 +53,15 @@ exports[`BpkDataTable should render correctly with a custom className 1`] = `
         >
           <svg
             className="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--up bpk-icon--rtl-support"
-            height="16"
+            height="18"
             style={
               Object {
-                "height": "1rem",
-                "width": "1rem",
+                "height": "1.125rem",
+                "width": "1.125rem",
               }
             }
             viewBox="0 0 24 24"
-            width="16"
+            width="18"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
@@ -70,15 +70,15 @@ exports[`BpkDataTable should render correctly with a custom className 1`] = `
           </svg>
           <svg
             className="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--down bpk-data-table-column__sort-icon--selected bpk-icon--rtl-support"
-            height="16"
+            height="18"
             style={
               Object {
-                "height": "1rem",
-                "width": "1rem",
+                "height": "1.125rem",
+                "width": "1.125rem",
               }
             }
             viewBox="0 0 24 24"
-            width="16"
+            width="18"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
@@ -113,15 +113,15 @@ exports[`BpkDataTable should render correctly with a custom className 1`] = `
         >
           <svg
             className="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--up bpk-icon--rtl-support"
-            height="16"
+            height="18"
             style={
               Object {
-                "height": "1rem",
-                "width": "1rem",
+                "height": "1.125rem",
+                "width": "1.125rem",
               }
             }
             viewBox="0 0 24 24"
-            width="16"
+            width="18"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
@@ -130,15 +130,15 @@ exports[`BpkDataTable should render correctly with a custom className 1`] = `
           </svg>
           <svg
             className="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--down bpk-icon--rtl-support"
-            height="16"
+            height="18"
             style={
               Object {
-                "height": "1rem",
-                "width": "1rem",
+                "height": "1.125rem",
+                "width": "1.125rem",
               }
             }
             viewBox="0 0 24 24"
-            width="16"
+            width="18"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
@@ -173,15 +173,15 @@ exports[`BpkDataTable should render correctly with a custom className 1`] = `
         >
           <svg
             className="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--up bpk-icon--rtl-support"
-            height="16"
+            height="18"
             style={
               Object {
-                "height": "1rem",
-                "width": "1rem",
+                "height": "1.125rem",
+                "width": "1.125rem",
               }
             }
             viewBox="0 0 24 24"
-            width="16"
+            width="18"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
@@ -190,15 +190,15 @@ exports[`BpkDataTable should render correctly with a custom className 1`] = `
           </svg>
           <svg
             className="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--down bpk-icon--rtl-support"
-            height="16"
+            height="18"
             style={
               Object {
-                "height": "1rem",
-                "width": "1rem",
+                "height": "1.125rem",
+                "width": "1.125rem",
               }
             }
             viewBox="0 0 24 24"
-            width="16"
+            width="18"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
@@ -278,15 +278,15 @@ exports[`BpkDataTable should render correctly with a specified width 1`] = `
       >
         <svg
           className="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--up bpk-icon--rtl-support"
-          height="16"
+          height="18"
           style={
             Object {
-              "height": "1rem",
-              "width": "1rem",
+              "height": "1.125rem",
+              "width": "1.125rem",
             }
           }
           viewBox="0 0 24 24"
-          width="16"
+          width="18"
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
@@ -295,15 +295,15 @@ exports[`BpkDataTable should render correctly with a specified width 1`] = `
         </svg>
         <svg
           className="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--down bpk-data-table-column__sort-icon--selected bpk-icon--rtl-support"
-          height="16"
+          height="18"
           style={
             Object {
-              "height": "1rem",
-              "width": "1rem",
+              "height": "1.125rem",
+              "width": "1.125rem",
             }
           }
           viewBox="0 0 24 24"
-          width="16"
+          width="18"
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
@@ -338,15 +338,15 @@ exports[`BpkDataTable should render correctly with a specified width 1`] = `
       >
         <svg
           className="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--up bpk-icon--rtl-support"
-          height="16"
+          height="18"
           style={
             Object {
-              "height": "1rem",
-              "width": "1rem",
+              "height": "1.125rem",
+              "width": "1.125rem",
             }
           }
           viewBox="0 0 24 24"
-          width="16"
+          width="18"
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
@@ -355,15 +355,15 @@ exports[`BpkDataTable should render correctly with a specified width 1`] = `
         </svg>
         <svg
           className="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--down bpk-icon--rtl-support"
-          height="16"
+          height="18"
           style={
             Object {
-              "height": "1rem",
-              "width": "1rem",
+              "height": "1.125rem",
+              "width": "1.125rem",
             }
           }
           viewBox="0 0 24 24"
-          width="16"
+          width="18"
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
@@ -398,15 +398,15 @@ exports[`BpkDataTable should render correctly with a specified width 1`] = `
       >
         <svg
           className="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--up bpk-icon--rtl-support"
-          height="16"
+          height="18"
           style={
             Object {
-              "height": "1rem",
-              "width": "1rem",
+              "height": "1.125rem",
+              "width": "1.125rem",
             }
           }
           viewBox="0 0 24 24"
-          width="16"
+          width="18"
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
@@ -415,15 +415,15 @@ exports[`BpkDataTable should render correctly with a specified width 1`] = `
         </svg>
         <svg
           className="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--down bpk-icon--rtl-support"
-          height="16"
+          height="18"
           style={
             Object {
-              "height": "1rem",
-              "width": "1rem",
+              "height": "1.125rem",
+              "width": "1.125rem",
             }
           }
           viewBox="0 0 24 24"
-          width="16"
+          width="18"
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
@@ -655,15 +655,15 @@ exports[`BpkDataTable should render correctly with multiple columns 1`] = `
         >
           <svg
             className="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--up bpk-icon--rtl-support"
-            height="16"
+            height="18"
             style={
               Object {
-                "height": "1rem",
-                "width": "1rem",
+                "height": "1.125rem",
+                "width": "1.125rem",
               }
             }
             viewBox="0 0 24 24"
-            width="16"
+            width="18"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
@@ -672,15 +672,15 @@ exports[`BpkDataTable should render correctly with multiple columns 1`] = `
           </svg>
           <svg
             className="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--down bpk-data-table-column__sort-icon--selected bpk-icon--rtl-support"
-            height="16"
+            height="18"
             style={
               Object {
-                "height": "1rem",
-                "width": "1rem",
+                "height": "1.125rem",
+                "width": "1.125rem",
               }
             }
             viewBox="0 0 24 24"
-            width="16"
+            width="18"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
@@ -715,15 +715,15 @@ exports[`BpkDataTable should render correctly with multiple columns 1`] = `
         >
           <svg
             className="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--up bpk-icon--rtl-support"
-            height="16"
+            height="18"
             style={
               Object {
-                "height": "1rem",
-                "width": "1rem",
+                "height": "1.125rem",
+                "width": "1.125rem",
               }
             }
             viewBox="0 0 24 24"
-            width="16"
+            width="18"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
@@ -732,15 +732,15 @@ exports[`BpkDataTable should render correctly with multiple columns 1`] = `
           </svg>
           <svg
             className="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--down bpk-icon--rtl-support"
-            height="16"
+            height="18"
             style={
               Object {
-                "height": "1rem",
-                "width": "1rem",
+                "height": "1.125rem",
+                "width": "1.125rem",
               }
             }
             viewBox="0 0 24 24"
-            width="16"
+            width="18"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
@@ -775,15 +775,15 @@ exports[`BpkDataTable should render correctly with multiple columns 1`] = `
         >
           <svg
             className="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--up bpk-icon--rtl-support"
-            height="16"
+            height="18"
             style={
               Object {
-                "height": "1rem",
-                "width": "1rem",
+                "height": "1.125rem",
+                "width": "1.125rem",
               }
             }
             viewBox="0 0 24 24"
-            width="16"
+            width="18"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
@@ -792,15 +792,15 @@ exports[`BpkDataTable should render correctly with multiple columns 1`] = `
           </svg>
           <svg
             className="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--down bpk-icon--rtl-support"
-            height="16"
+            height="18"
             style={
               Object {
-                "height": "1rem",
-                "width": "1rem",
+                "height": "1.125rem",
+                "width": "1.125rem",
               }
             }
             viewBox="0 0 24 24"
-            width="16"
+            width="18"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
@@ -888,15 +888,15 @@ exports[`BpkDataTable should render correctly with no data; only headers 1`] = `
         >
           <svg
             className="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--up bpk-icon--rtl-support"
-            height="16"
+            height="18"
             style={
               Object {
-                "height": "1rem",
-                "width": "1rem",
+                "height": "1.125rem",
+                "width": "1.125rem",
               }
             }
             viewBox="0 0 24 24"
-            width="16"
+            width="18"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
@@ -905,15 +905,15 @@ exports[`BpkDataTable should render correctly with no data; only headers 1`] = `
           </svg>
           <svg
             className="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--down bpk-data-table-column__sort-icon--selected bpk-icon--rtl-support"
-            height="16"
+            height="18"
             style={
               Object {
-                "height": "1rem",
-                "width": "1rem",
+                "height": "1.125rem",
+                "width": "1.125rem",
               }
             }
             viewBox="0 0 24 24"
-            width="16"
+            width="18"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
@@ -948,15 +948,15 @@ exports[`BpkDataTable should render correctly with no data; only headers 1`] = `
         >
           <svg
             className="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--up bpk-icon--rtl-support"
-            height="16"
+            height="18"
             style={
               Object {
-                "height": "1rem",
-                "width": "1rem",
+                "height": "1.125rem",
+                "width": "1.125rem",
               }
             }
             viewBox="0 0 24 24"
-            width="16"
+            width="18"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
@@ -965,15 +965,15 @@ exports[`BpkDataTable should render correctly with no data; only headers 1`] = `
           </svg>
           <svg
             className="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--down bpk-icon--rtl-support"
-            height="16"
+            height="18"
             style={
               Object {
-                "height": "1rem",
-                "width": "1rem",
+                "height": "1.125rem",
+                "width": "1.125rem",
               }
             }
             viewBox="0 0 24 24"
-            width="16"
+            width="18"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
@@ -1008,15 +1008,15 @@ exports[`BpkDataTable should render correctly with no data; only headers 1`] = `
         >
           <svg
             className="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--up bpk-icon--rtl-support"
-            height="16"
+            height="18"
             style={
               Object {
-                "height": "1rem",
-                "width": "1rem",
+                "height": "1.125rem",
+                "width": "1.125rem",
               }
             }
             viewBox="0 0 24 24"
-            width="16"
+            width="18"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
@@ -1025,15 +1025,15 @@ exports[`BpkDataTable should render correctly with no data; only headers 1`] = `
           </svg>
           <svg
             className="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--down bpk-icon--rtl-support"
-            height="16"
+            height="18"
             style={
               Object {
-                "height": "1rem",
-                "width": "1rem",
+                "height": "1.125rem",
+                "width": "1.125rem",
               }
             }
             viewBox="0 0 24 24"
-            width="16"
+            width="18"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path

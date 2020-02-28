@@ -2,6 +2,12 @@
 
 # How to write a good changelog entry:
 
+BREAKING:
+  - bpk-tokens:
+    - Updated icon tokens for small sizes
+  - bpk-svgs:
+    - Updated all the small icons to use the new spacing sizes
+
 #
 #   1. Add 'BREAKING', 'ADDED' OR 'FIXED' depending on if the change will be major, minor or patch according to [semver.org](semver.org).
 #   2. Add the package name.
