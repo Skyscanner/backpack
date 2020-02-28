@@ -2,7 +2,7 @@ import React from "react";
 export default (({
   styles = {},
   ...props
-}) => <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" style={{
-  width: "1.125rem",
-  height: "1.125rem"
+}) => <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" style={{
+  width: "1rem",
+  height: "1rem"
 }} {...props}><path d="M16.599 14.641l-3.762-3.945-5.695-.025L3.471 7" /><path d="M21.646 18.58l-1.571-5.865a.872.872 0 0 0-1.459-.391l-1.102 1.103-3.592-3.766a1.499 1.499 0 0 0-1.078-.465l-5.078-.023L4.532 5.94A1.5 1.5 0 0 0 2.41 8.061l3.67 3.67a1.5 1.5 0 0 0 1.054.44l5.057.022 3.2 3.356-1.069 1.068a.872.872 0 0 0 .391 1.459l5.864 1.57a.872.872 0 0 0 1.068-1.067z" /></svg>);
