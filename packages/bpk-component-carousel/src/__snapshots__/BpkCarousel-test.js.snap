@@ -16,7 +16,7 @@ exports[`BpkCarousel should render correctly 1`] = `
           Object {
             "display": "inline-block",
             "lineHeight": "1.125rem",
-            "marginTop": "0.4375rem",
+            "marginTop": "0.1875rem",
             "verticalAlign": "top",
           }
         }
@@ -93,7 +93,7 @@ exports[`BpkCarousel should render correctly 1`] = `
           Object {
             "display": "inline-block",
             "lineHeight": "1.125rem",
-            "marginTop": "0.4375rem",
+            "marginTop": "0.1875rem",
             "verticalAlign": "top",
           }
         }
@@ -137,7 +137,7 @@ exports[`BpkCarousel should support custom class names 1`] = `
           Object {
             "display": "inline-block",
             "lineHeight": "1.125rem",
-            "marginTop": "0.4375rem",
+            "marginTop": "0.1875rem",
             "verticalAlign": "top",
           }
         }
@@ -214,7 +214,7 @@ exports[`BpkCarousel should support custom class names 1`] = `
           Object {
             "display": "inline-block",
             "lineHeight": "1.125rem",
-            "marginTop": "0.4375rem",
+            "marginTop": "0.1875rem",
             "verticalAlign": "top",
           }
         }

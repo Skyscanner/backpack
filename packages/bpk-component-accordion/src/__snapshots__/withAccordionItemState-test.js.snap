@@ -32,7 +32,7 @@ exports[`withAccordionItemState(BpkAccordionItem) should render correctly 1`] = 
               Object {
                 "display": "inline-block",
                 "lineHeight": "1.125rem",
-                "marginTop": "0.4375rem",
+                "marginTop": "0.1875rem",
                 "verticalAlign": "top",
               }
             }
@@ -118,7 +118,7 @@ exports[`withAccordionItemState(BpkAccordionItem) should render correctly with "
               Object {
                 "display": "inline-block",
                 "lineHeight": "1.125rem",
-                "marginTop": "0.4375rem",
+                "marginTop": "0.1875rem",
                 "verticalAlign": "top",
               }
             }
@@ -204,7 +204,7 @@ exports[`withAccordionItemState(BpkAccordionItem) should render correctly with "
               Object {
                 "display": "inline-block",
                 "lineHeight": "1.125rem",
-                "marginTop": "0.4375rem",
+                "marginTop": "0.1875rem",
                 "verticalAlign": "top",
               }
             }
