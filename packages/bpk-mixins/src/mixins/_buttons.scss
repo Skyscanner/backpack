@@ -442,7 +442,8 @@
 ///   }
 
 @mixin bpk-button--large-icon-only {
-  padding: $bpk-button-large-padding-y $bpk-button-large-padding-x-icon-only;
+  padding: $bpk-button-large-padding-y
+    ($bpk-button-large-padding-x-icon-only * 3);
   border-radius: $bpk-button-icon-border-radius-lg;
 }
 

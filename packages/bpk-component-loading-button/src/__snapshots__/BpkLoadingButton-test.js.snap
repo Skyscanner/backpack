@@ -14,7 +14,7 @@ exports[`BpkLoadingButton should add only bpk specific classes if className prop
       Object {
         "display": "inline-block",
         "lineHeight": "1.5rem",
-        "marginTop": "0.5rem",
+        "marginTop": "0.25rem",
         "verticalAlign": "top",
       }
     }
@@ -53,7 +53,7 @@ exports[`BpkLoadingButton should render correctly 1`] = `
       Object {
         "display": "inline-block",
         "lineHeight": "1.125rem",
-        "marginTop": "0.4375rem",
+        "marginTop": "0.1875rem",
         "verticalAlign": "top",
       }
     }
@@ -93,7 +93,7 @@ exports[`BpkLoadingButton should render correctly with "large" and "destructive"
       Object {
         "display": "inline-block",
         "lineHeight": "1.5rem",
-        "marginTop": "0.5rem",
+        "marginTop": "0.25rem",
         "verticalAlign": "top",
       }
     }
@@ -132,7 +132,7 @@ exports[`BpkLoadingButton should render correctly with "large" and "disabled" at
       Object {
         "display": "inline-block",
         "lineHeight": "1.5rem",
-        "marginTop": "0.5rem",
+        "marginTop": "0.25rem",
         "verticalAlign": "top",
       }
     }
@@ -171,7 +171,7 @@ exports[`BpkLoadingButton should render correctly with "large" and "featured" at
       Object {
         "display": "inline-block",
         "lineHeight": "1.5rem",
-        "marginTop": "0.5rem",
+        "marginTop": "0.25rem",
         "verticalAlign": "top",
       }
     }
@@ -214,7 +214,7 @@ exports[`BpkLoadingButton should render correctly with "large" and "iconOnly" at
       Object {
         "display": "inline-block",
         "lineHeight": "1.5rem",
-        "marginTop": "0.5rem",
+        "marginTop": "0.25rem",
         "verticalAlign": "top",
       }
     }
@@ -253,7 +253,7 @@ exports[`BpkLoadingButton should render correctly with "large" and "link" attrib
       Object {
         "display": "inline-block",
         "lineHeight": "1.5rem",
-        "marginTop": "0.5rem",
+        "marginTop": "0.25rem",
         "verticalAlign": "top",
       }
     }
@@ -386,7 +386,7 @@ exports[`BpkLoadingButton should render correctly with "large" and "secondary" a
       Object {
         "display": "inline-block",
         "lineHeight": "1.5rem",
-        "marginTop": "0.5rem",
+        "marginTop": "0.25rem",
         "verticalAlign": "top",
       }
     }
@@ -425,7 +425,7 @@ exports[`BpkLoadingButton should render correctly with a "destructive" attribute
       Object {
         "display": "inline-block",
         "lineHeight": "1.125rem",
-        "marginTop": "0.4375rem",
+        "marginTop": "0.1875rem",
         "verticalAlign": "top",
       }
     }
@@ -465,7 +465,7 @@ exports[`BpkLoadingButton should render correctly with a "disabled" attribute 1`
       Object {
         "display": "inline-block",
         "lineHeight": "1.125rem",
-        "marginTop": "0.4375rem",
+        "marginTop": "0.1875rem",
         "verticalAlign": "top",
       }
     }
@@ -505,7 +505,7 @@ exports[`BpkLoadingButton should render correctly with a "featured" attribute 1`
       Object {
         "display": "inline-block",
         "lineHeight": "1.125rem",
-        "marginTop": "0.4375rem",
+        "marginTop": "0.1875rem",
         "verticalAlign": "top",
       }
     }
@@ -546,7 +546,7 @@ exports[`BpkLoadingButton should render correctly with a "href" attribute 1`] = 
       Object {
         "display": "inline-block",
         "lineHeight": "1.125rem",
-        "marginTop": "0.4375rem",
+        "marginTop": "0.1875rem",
         "verticalAlign": "top",
       }
     }
@@ -586,7 +586,7 @@ exports[`BpkLoadingButton should render correctly with a "icon" attribute 1`] = 
       Object {
         "display": "inline-block",
         "lineHeight": "1.125rem",
-        "marginTop": "0.4375rem",
+        "marginTop": "0.1875rem",
         "verticalAlign": "top",
       }
     }
@@ -625,7 +625,7 @@ exports[`BpkLoadingButton should render correctly with a "iconDisabled" attribut
       Object {
         "display": "inline-block",
         "lineHeight": "1.125rem",
-        "marginTop": "0.4375rem",
+        "marginTop": "0.1875rem",
         "verticalAlign": "top",
       }
     }
@@ -664,7 +664,7 @@ exports[`BpkLoadingButton should render correctly with a "iconLoading" attribute
       Object {
         "display": "inline-block",
         "lineHeight": "1.125rem",
-        "marginTop": "0.4375rem",
+        "marginTop": "0.1875rem",
         "verticalAlign": "top",
       }
     }
@@ -707,7 +707,7 @@ exports[`BpkLoadingButton should render correctly with a "iconOnly" attribute 1`
       Object {
         "display": "inline-block",
         "lineHeight": "1.125rem",
-        "marginTop": "0.4375rem",
+        "marginTop": "0.1875rem",
         "verticalAlign": "top",
       }
     }
@@ -747,7 +747,7 @@ exports[`BpkLoadingButton should render correctly with a "large" attribute 1`] =
       Object {
         "display": "inline-block",
         "lineHeight": "1.5rem",
-        "marginTop": "0.5rem",
+        "marginTop": "0.25rem",
         "verticalAlign": "top",
       }
     }
@@ -786,7 +786,7 @@ exports[`BpkLoadingButton should render correctly with a "link" attribute 1`] = 
       Object {
         "display": "inline-block",
         "lineHeight": "1.125rem",
-        "marginTop": "0.4375rem",
+        "marginTop": "0.1875rem",
         "verticalAlign": "top",
       }
     }
@@ -920,7 +920,7 @@ exports[`BpkLoadingButton should render correctly with a "secondary" attribute 1
       Object {
         "display": "inline-block",
         "lineHeight": "1.125rem",
-        "marginTop": "0.4375rem",
+        "marginTop": "0.1875rem",
         "verticalAlign": "top",
       }
     }
@@ -960,7 +960,7 @@ exports[`BpkLoadingButton should respect the class names entered as a string 1`]
       Object {
         "display": "inline-block",
         "lineHeight": "1.5rem",
-        "marginTop": "0.5rem",
+        "marginTop": "0.25rem",
         "verticalAlign": "top",
       }
     }

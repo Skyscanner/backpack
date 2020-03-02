@@ -893,16 +893,16 @@
     },
     "BUTTON_ICON_BORDER_RADIUS": {
       "category": "buttons",
-      "value": "1.125rem",
+      "value": "50%",
       "type": "size",
-      "originalValue": "{!BORDER_RADIUS_PILL}",
+      "originalValue": "50%",
       "name": "BUTTON_ICON_BORDER_RADIUS"
     },
     "BUTTON_ICON_BORDER_RADIUS_LG": {
       "category": "buttons",
-      "value": "1.3125rem",
+      "value": "50%",
       "type": "size",
-      "originalValue": "{!BORDER_RADIUS_PILL_LG}",
+      "originalValue": "50%",
       "name": "BUTTON_ICON_BORDER_RADIUS_LG"
     },
     "BUTTON_LARGE_FONT_SIZE": {
@@ -914,23 +914,23 @@
     },
     "BUTTON_LARGE_LINE_HEIGHT": {
       "category": "buttons",
-      "value": "2.5rem",
+      "value": "2rem",
       "type": "number",
-      "originalValue": "{!SPACING_LG}",
+      "originalValue": "{!SPACING_BASE}",
       "name": "BUTTON_LARGE_LINE_HEIGHT"
     },
     "BUTTON_LARGE_PADDING_X": {
       "category": "buttons",
-      "value": "2rem",
+      "value": "1.5rem",
       "type": "size",
-      "originalValue": "{!SPACING_BASE}",
+      "originalValue": "{!SPACING_MD}",
       "name": "BUTTON_LARGE_PADDING_X"
     },
     "BUTTON_LARGE_PADDING_X_ICON_ONLY": {
       "category": "buttons",
-      "value": ".5625rem",
+      "value": ".25rem",
       "type": "size",
-      "originalValue": ".5625rem",
+      "originalValue": "{!SPACING_XXS}",
       "name": "BUTTON_LARGE_PADDING_X_ICON_ONLY"
     },
     "BUTTON_LARGE_PADDING_Y": {
@@ -942,9 +942,9 @@
     },
     "BUTTON_LINE_HEIGHT": {
       "category": "buttons",
-      "value": "2rem",
+      "value": "1.5rem",
       "type": "number",
-      "originalValue": "{!SPACING_BASE}",
+      "originalValue": "{!SPACING_MD}",
       "name": "BUTTON_LINE_HEIGHT"
     },
     "BUTTON_OUTLINE_ACTIVE_BACKGROUND_COLOR": {
@@ -1040,16 +1040,16 @@
     },
     "BUTTON_PADDING_X": {
       "category": "buttons",
-      "value": "1.5rem",
+      "value": "1rem",
       "type": "size",
-      "originalValue": "{!SPACING_MD}",
+      "originalValue": "{!SPACING_SM}",
       "name": "BUTTON_PADDING_X"
     },
     "BUTTON_PADDING_X_ICON_ONLY": {
       "category": "buttons",
-      "value": ".5625rem",
+      "value": ".65rem",
       "type": "size",
-      "originalValue": ".5625rem",
+      "originalValue": ".65rem",
       "name": "BUTTON_PADDING_X_ICON_ONLY"
     },
     "BUTTON_PADDING_Y": {
