@@ -190,10 +190,10 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
       onTransitionEnd={[Function]}
       style={
         Object {
-          "MozTransform": "translateX(-24.5rem)",
-          "WebkitTransform": "translateX(-24.5rem)",
-          "msTransform": "translateX(-24.5rem)",
-          "transform": "translateX(-24.5rem)",
+          "MozTransform": "translateX(-17.5rem)",
+          "WebkitTransform": "translateX(-17.5rem)",
+          "msTransform": "translateX(-17.5rem)",
+          "transform": "translateX(-17.5rem)",
         }
       }
     >
@@ -2389,10 +2389,10 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
       onTransitionEnd={[Function]}
       style={
         Object {
-          "MozTransform": "translateX(-24.5rem)",
-          "WebkitTransform": "translateX(-24.5rem)",
-          "msTransform": "translateX(-24.5rem)",
-          "transform": "translateX(-24.5rem)",
+          "MozTransform": "translateX(-17.5rem)",
+          "WebkitTransform": "translateX(-17.5rem)",
+          "msTransform": "translateX(-17.5rem)",
+          "transform": "translateX(-17.5rem)",
         }
       }
     >

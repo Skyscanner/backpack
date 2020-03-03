@@ -8,6 +8,14 @@ BREAKING:
   - bpk-svgs:
     - Updated all the small icons to use the new spacing sizes
 
+FIXED:
+  - bpk-component-calendar:
+    - Aligning to the correct grid sizes
+  - bpk-component-datepicker:
+    - Aligning to the correct grid sizes
+  - bpk-component-scrollable-calendar:
+    - Aligning to the correct grid sizes
+
 #
 #   1. Add 'BREAKING', 'ADDED' OR 'FIXED' depending on if the change will be major, minor or patch according to [semver.org](semver.org).
 #   2. Add the package name.

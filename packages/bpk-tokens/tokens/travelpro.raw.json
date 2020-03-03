@@ -43,10 +43,10 @@
       "value": "#C5000E"
     },
     "BORDER_RADIUS_PILL": {
-      "value": "1.125rem"
+      "value": "50%"
     },
     "BORDER_RADIUS_PILL_LG": {
-      "value": "1.3125rem"
+      "value": "50%"
     },
     "BORDER_RADIUS_SM": {
       "value": ".375rem"

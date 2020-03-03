@@ -58,9 +58,9 @@ $bpk-banner-alert-success-color: rgb(0, 166, 152);
 /// @group notifications
 $bpk-banner-alert-warn-color: rgb(255, 181, 77);
 /// @group radii
-$bpk-border-radius-pill: 1.125rem;
+$bpk-border-radius-pill: 50%;
 /// @group radii
-$bpk-border-radius-pill-lg: 1.3125rem;
+$bpk-border-radius-pill-lg: 50%;
 /// @group radii
 $bpk-border-radius-sm: .375rem;
 /// @group radii
@@ -330,7 +330,7 @@ $bpk-calendar-day-selected-background-color: rgb(8, 78, 178);
 /// @group calendar
 $bpk-calendar-day-selected-color: rgb(255, 255, 255);
 /// @group calendar
-$bpk-calendar-day-size: 3rem;
+$bpk-calendar-day-size: 2rem;
 /// @group calendar
 $bpk-calendar-day-spacing: .5rem;
 /// @group calendar
@@ -426,7 +426,7 @@ $bpk-duration-sm: 200ms;
 /// @group animations
 $bpk-duration-xs: 50ms;
 /// @group flare
-$bpk-flare-corner-radius: 1.3125rem;
+$bpk-flare-corner-radius: 50%;
 /// @group flare
 $bpk-flare-height-desktop: 2rem;
 /// @group flare

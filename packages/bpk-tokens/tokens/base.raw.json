@@ -37,10 +37,10 @@
       "value": "#8E8E93"
     },
     "BORDER_RADIUS_PILL": {
-      "value": "1.125rem"
+      "value": "50%"
     },
     "BORDER_RADIUS_PILL_LG": {
-      "value": "1.3125rem"
+      "value": "50%"
     },
     "BORDER_RADIUS_SM": {
       "value": ".375rem"
@@ -417,14 +417,14 @@
     },
     "BORDER_RADIUS_PILL": {
       "type": "size",
-      "value": "1.125rem",
+      "value": "50%",
       "category": "radii",
       "originalValue": "{!BORDER_RADIUS_PILL}",
       "name": "BORDER_RADIUS_PILL"
     },
     "BORDER_RADIUS_PILL_LG": {
       "type": "size",
-      "value": "1.3125rem",
+      "value": "50%",
       "category": "radii",
       "originalValue": "{!BORDER_RADIUS_PILL_LG}",
       "name": "BORDER_RADIUS_PILL_LG"
@@ -1372,9 +1372,9 @@
     },
     "CALENDAR_DAY_SIZE": {
       "category": "calendar",
-      "value": "3rem",
+      "value": "2rem",
       "type": "size",
-      "originalValue": "{!SPACING_XL}",
+      "originalValue": "{!SPACING_BASE}",
       "name": "CALENDAR_DAY_SIZE"
     },
     "CALENDAR_DAY_SPACING": {
@@ -1709,7 +1709,7 @@
     "FLARE_CORNER_RADIUS": {
       "type": "size",
       "category": "flare",
-      "value": "1.3125rem",
+      "value": "50%",
       "originalValue": "{!BORDER_RADIUS_PILL_LG}",
       "name": "FLARE_CORNER_RADIUS"
     },

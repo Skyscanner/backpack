@@ -15,7 +15,7 @@
       "type": "size"
     },
     "CALENDAR_DAY_SIZE": {
-      "value": "{!SPACING_XL}",
+      "value": "{!SPACING_BASE}",
       "type": "size"
     },
     "CALENDAR_DAY_COLOR": {

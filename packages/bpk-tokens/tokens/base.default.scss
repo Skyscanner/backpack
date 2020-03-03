@@ -58,9 +58,9 @@ $bpk-banner-alert-success-color: rgb(0, 166, 152) !default;
 /// @group notifications
 $bpk-banner-alert-warn-color: rgb(255, 181, 77) !default;
 /// @group radii
-$bpk-border-radius-pill: 1.125rem !default;
+$bpk-border-radius-pill: 50% !default;
 /// @group radii
-$bpk-border-radius-pill-lg: 1.3125rem !default;
+$bpk-border-radius-pill-lg: 50% !default;
 /// @group radii
 $bpk-border-radius-sm: .375rem !default;
 /// @group radii
@@ -330,7 +330,7 @@ $bpk-calendar-day-selected-background-color: rgb(8, 78, 178) !default;
 /// @group calendar
 $bpk-calendar-day-selected-color: rgb(255, 255, 255) !default;
 /// @group calendar
-$bpk-calendar-day-size: 3rem !default;
+$bpk-calendar-day-size: 2rem !default;
 /// @group calendar
 $bpk-calendar-day-spacing: .5rem !default;
 /// @group calendar
@@ -426,7 +426,7 @@ $bpk-duration-sm: 200ms !default;
 /// @group animations
 $bpk-duration-xs: 50ms !default;
 /// @group flare
-$bpk-flare-corner-radius: 1.3125rem !default;
+$bpk-flare-corner-radius: 50% !default;
 /// @group flare
 $bpk-flare-height-desktop: 2rem !default;
 /// @group flare
