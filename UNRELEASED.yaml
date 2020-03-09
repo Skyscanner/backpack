@@ -1,4 +1,9 @@
 # UNRELEASED:
+
+ADDED:
+  - bpk-component-calendar:
+    - Added coloured calendar
+
 FIXED:
  - bpk-component-badge:
    - The `success` badge has been lightened to provide better contrast, and align to our mobile implementations.
