@@ -13,7 +13,7 @@
     "react": "^15.0.0 || ^16.0.0"
   },
   "dependencies": {
-    "bpk-animate-height": "^2.0.37",
+    "bpk-animate-height": "^2.0.36",
     "bpk-component-icon": "^5.0.37",
     "bpk-component-text": "^3.0.4",
     "bpk-mixins": "^19.1.5",
