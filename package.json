@@ -185,16 +185,6 @@
       }
     }
   },
-  "greenkeeper": {
-    "ignore": [
-      "danger",
-      "react",
-      "react-dom",
-      "react-test-renderer",
-      "webpack-dev-server",
-      "wrapper-webpack-plugin"
-    ]
-  },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   }
