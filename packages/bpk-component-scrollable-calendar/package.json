@@ -19,7 +19,7 @@
     "bpk-react-utils": "^2.9.4",
     "bpk-tokens": "^32.0.2",
     "prop-types": "^15.5.8",
-    "react-window": "^1.5.0"
+    "react-window": "^1.8.5"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
