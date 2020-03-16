@@ -60,6 +60,7 @@
   }
 
   &--outside {
+    background-color: transparent;
     color: $bpk-calendar-day-outside-color;
   }
 
@@ -99,7 +100,9 @@
     );
   }
 
-  &:disabled {
+  &:disabled,
+  &--blocked {
+    background-color: transparent;
     color: $bpk-calendar-day-disabled-color;
     cursor: not-allowed;
 

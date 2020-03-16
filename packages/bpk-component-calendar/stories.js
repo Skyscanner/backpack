@@ -35,6 +35,7 @@ import {
   weekDays,
 } from './test-utils';
 import MonthViewCalendar from './stories-components';
+import ColoredCalendar from './coloured-calendar-story';
 
 import BpkCalendar, {
   // BpkCalendarView,
@@ -246,4 +247,19 @@ storiesOf('bpk-component-calendar', module)
         weekStartsOn={0}
       />
     </div>
+  ))
+  .add('Custom colours', () => (
+    <ColoredCalendar
+      id="myCalendar"
+      formatMonth={formatMonth}
+      formatDateFull={formatDateFull}
+      daysOfWeek={weekDays}
+      month={new Date()}
+      weekStartsOn={1}
+      showWeekendSeparator
+      onDateSelect={date => {
+        this.setState({ date });
+        action('Selected day')(date);
+      }}
+    />
   ));

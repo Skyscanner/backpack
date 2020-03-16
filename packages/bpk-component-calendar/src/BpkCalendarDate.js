@@ -86,8 +86,10 @@ class BpkCalendarDate extends PureComponent {
       isToday,
       isKeyboardFocusable,
       className,
+      style,
       ...buttonProps
     } = this.props;
+
     const classNames = [getClassName('bpk-calendar-date')];
 
     Object.keys(modifiers).forEach(modifier => {
@@ -122,6 +124,7 @@ class BpkCalendarDate extends PureComponent {
     return (
       <button
         type="button"
+        style={style}
         className={classNames.join(' ')}
         aria-label={date.getDate()}
         disabled={isBlocked}
@@ -157,11 +160,12 @@ export const propTypes = {
   onClick: PropTypes.func,
   onDateKeyDown: PropTypes.func,
   preventKeyboardFocus: PropTypes.bool,
+  style: PropTypes.object,
 };
 
 BpkCalendarDate.propTypes = { ...propTypes };
 
-BpkCalendarDate.defaultProps = {
+export const defaultProps = {
   className: null,
   isBlocked: false,
   isFocused: false,
@@ -173,6 +177,11 @@ BpkCalendarDate.defaultProps = {
   onClick: null,
   onDateKeyDown: null,
   preventKeyboardFocus: true,
+  style: null,
+};
+
+BpkCalendarDate.defaultProps = {
+  ...defaultProps,
 };
 
 export default BpkCalendarDate;
