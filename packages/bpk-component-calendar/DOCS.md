@@ -20,4 +20,10 @@ Calendar components -
 
     - `Week` - This is a container that will take the `DateComponent` to display each of the dates in the calendar
 
-  - `BpkCalendarDate` - is each date cell that would be displayed inside the calendar grid. This would be used to customise how each date cell is displayed e.g. coloured or with special pricing displayed
+  - `BpkCalendarDate` - is each date cell that would be displayed inside the calendar grid. This would be used to customise how each date cell is displayed e.g. coloured or with special pricing displayed.
+
+  - `BpkColoredCalendarDate` - is each date cell that would be displayed inside the calendar grid with an out of the box coloured solution. It uses `CellTypes` to determine what the colour date cell is to be displayed.
+    - `CellType.positive` - sets the calendar cell to `Monteverde`
+    - `CellType.neutral` - sets the calendar cell to `Erfoud`
+    - `CellType.negative` - sets the calendar cell to `Panjin`
+    - `CellType.default` - sets the calendar cell to `Sky Gray Tint 02`

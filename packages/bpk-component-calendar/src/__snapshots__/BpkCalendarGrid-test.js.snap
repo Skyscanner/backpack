@@ -104,6 +104,7 @@ exports[`BpkCalendarGrid should render correctly with "showWeekendSeparator" att
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -125,6 +126,7 @@ exports[`BpkCalendarGrid should render correctly with "showWeekendSeparator" att
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -146,6 +148,7 @@ exports[`BpkCalendarGrid should render correctly with "showWeekendSeparator" att
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -167,6 +170,7 @@ exports[`BpkCalendarGrid should render correctly with "showWeekendSeparator" att
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -188,6 +192,7 @@ exports[`BpkCalendarGrid should render correctly with "showWeekendSeparator" att
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -209,6 +214,7 @@ exports[`BpkCalendarGrid should render correctly with "showWeekendSeparator" att
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -230,6 +236,7 @@ exports[`BpkCalendarGrid should render correctly with "showWeekendSeparator" att
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -255,6 +262,7 @@ exports[`BpkCalendarGrid should render correctly with "showWeekendSeparator" att
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -276,6 +284,7 @@ exports[`BpkCalendarGrid should render correctly with "showWeekendSeparator" att
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -297,6 +306,7 @@ exports[`BpkCalendarGrid should render correctly with "showWeekendSeparator" att
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -318,6 +328,7 @@ exports[`BpkCalendarGrid should render correctly with "showWeekendSeparator" att
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -339,6 +350,7 @@ exports[`BpkCalendarGrid should render correctly with "showWeekendSeparator" att
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -360,6 +372,7 @@ exports[`BpkCalendarGrid should render correctly with "showWeekendSeparator" att
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -381,6 +394,7 @@ exports[`BpkCalendarGrid should render correctly with "showWeekendSeparator" att
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -406,6 +420,7 @@ exports[`BpkCalendarGrid should render correctly with "showWeekendSeparator" att
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -427,6 +442,7 @@ exports[`BpkCalendarGrid should render correctly with "showWeekendSeparator" att
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -448,6 +464,7 @@ exports[`BpkCalendarGrid should render correctly with "showWeekendSeparator" att
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -469,6 +486,7 @@ exports[`BpkCalendarGrid should render correctly with "showWeekendSeparator" att
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -490,6 +508,7 @@ exports[`BpkCalendarGrid should render correctly with "showWeekendSeparator" att
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -511,6 +530,7 @@ exports[`BpkCalendarGrid should render correctly with "showWeekendSeparator" att
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -532,6 +552,7 @@ exports[`BpkCalendarGrid should render correctly with "showWeekendSeparator" att
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -557,6 +578,7 @@ exports[`BpkCalendarGrid should render correctly with "showWeekendSeparator" att
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -578,6 +600,7 @@ exports[`BpkCalendarGrid should render correctly with "showWeekendSeparator" att
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -599,6 +622,7 @@ exports[`BpkCalendarGrid should render correctly with "showWeekendSeparator" att
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -620,6 +644,7 @@ exports[`BpkCalendarGrid should render correctly with "showWeekendSeparator" att
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -641,6 +666,7 @@ exports[`BpkCalendarGrid should render correctly with "showWeekendSeparator" att
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -662,6 +688,7 @@ exports[`BpkCalendarGrid should render correctly with "showWeekendSeparator" att
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -683,6 +710,7 @@ exports[`BpkCalendarGrid should render correctly with "showWeekendSeparator" att
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -708,6 +736,7 @@ exports[`BpkCalendarGrid should render correctly with "showWeekendSeparator" att
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -729,6 +758,7 @@ exports[`BpkCalendarGrid should render correctly with "showWeekendSeparator" att
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -750,6 +780,7 @@ exports[`BpkCalendarGrid should render correctly with "showWeekendSeparator" att
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -771,6 +802,7 @@ exports[`BpkCalendarGrid should render correctly with "showWeekendSeparator" att
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -792,6 +824,7 @@ exports[`BpkCalendarGrid should render correctly with "showWeekendSeparator" att
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -813,6 +846,7 @@ exports[`BpkCalendarGrid should render correctly with "showWeekendSeparator" att
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -834,6 +868,7 @@ exports[`BpkCalendarGrid should render correctly with "showWeekendSeparator" att
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -859,6 +894,7 @@ exports[`BpkCalendarGrid should render correctly with "showWeekendSeparator" att
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -880,6 +916,7 @@ exports[`BpkCalendarGrid should render correctly with "showWeekendSeparator" att
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -901,6 +938,7 @@ exports[`BpkCalendarGrid should render correctly with "showWeekendSeparator" att
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -922,6 +960,7 @@ exports[`BpkCalendarGrid should render correctly with "showWeekendSeparator" att
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -943,6 +982,7 @@ exports[`BpkCalendarGrid should render correctly with "showWeekendSeparator" att
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -964,6 +1004,7 @@ exports[`BpkCalendarGrid should render correctly with "showWeekendSeparator" att
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -985,6 +1026,7 @@ exports[`BpkCalendarGrid should render correctly with "showWeekendSeparator" att
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -1104,6 +1146,7 @@ exports[`BpkCalendarGrid should render correctly with "weekDayKey" attribute set
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -1125,6 +1168,7 @@ exports[`BpkCalendarGrid should render correctly with "weekDayKey" attribute set
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -1146,6 +1190,7 @@ exports[`BpkCalendarGrid should render correctly with "weekDayKey" attribute set
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -1167,6 +1212,7 @@ exports[`BpkCalendarGrid should render correctly with "weekDayKey" attribute set
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -1188,6 +1234,7 @@ exports[`BpkCalendarGrid should render correctly with "weekDayKey" attribute set
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -1209,6 +1256,7 @@ exports[`BpkCalendarGrid should render correctly with "weekDayKey" attribute set
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -1230,6 +1278,7 @@ exports[`BpkCalendarGrid should render correctly with "weekDayKey" attribute set
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -1255,6 +1304,7 @@ exports[`BpkCalendarGrid should render correctly with "weekDayKey" attribute set
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -1276,6 +1326,7 @@ exports[`BpkCalendarGrid should render correctly with "weekDayKey" attribute set
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -1297,6 +1348,7 @@ exports[`BpkCalendarGrid should render correctly with "weekDayKey" attribute set
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -1318,6 +1370,7 @@ exports[`BpkCalendarGrid should render correctly with "weekDayKey" attribute set
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -1339,6 +1392,7 @@ exports[`BpkCalendarGrid should render correctly with "weekDayKey" attribute set
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -1360,6 +1414,7 @@ exports[`BpkCalendarGrid should render correctly with "weekDayKey" attribute set
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -1381,6 +1436,7 @@ exports[`BpkCalendarGrid should render correctly with "weekDayKey" attribute set
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -1406,6 +1462,7 @@ exports[`BpkCalendarGrid should render correctly with "weekDayKey" attribute set
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -1427,6 +1484,7 @@ exports[`BpkCalendarGrid should render correctly with "weekDayKey" attribute set
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -1448,6 +1506,7 @@ exports[`BpkCalendarGrid should render correctly with "weekDayKey" attribute set
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -1469,6 +1528,7 @@ exports[`BpkCalendarGrid should render correctly with "weekDayKey" attribute set
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -1490,6 +1550,7 @@ exports[`BpkCalendarGrid should render correctly with "weekDayKey" attribute set
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -1511,6 +1572,7 @@ exports[`BpkCalendarGrid should render correctly with "weekDayKey" attribute set
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -1532,6 +1594,7 @@ exports[`BpkCalendarGrid should render correctly with "weekDayKey" attribute set
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -1557,6 +1620,7 @@ exports[`BpkCalendarGrid should render correctly with "weekDayKey" attribute set
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -1578,6 +1642,7 @@ exports[`BpkCalendarGrid should render correctly with "weekDayKey" attribute set
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -1599,6 +1664,7 @@ exports[`BpkCalendarGrid should render correctly with "weekDayKey" attribute set
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -1620,6 +1686,7 @@ exports[`BpkCalendarGrid should render correctly with "weekDayKey" attribute set
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -1641,6 +1708,7 @@ exports[`BpkCalendarGrid should render correctly with "weekDayKey" attribute set
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -1662,6 +1730,7 @@ exports[`BpkCalendarGrid should render correctly with "weekDayKey" attribute set
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -1683,6 +1752,7 @@ exports[`BpkCalendarGrid should render correctly with "weekDayKey" attribute set
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -1708,6 +1778,7 @@ exports[`BpkCalendarGrid should render correctly with "weekDayKey" attribute set
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -1729,6 +1800,7 @@ exports[`BpkCalendarGrid should render correctly with "weekDayKey" attribute set
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -1750,6 +1822,7 @@ exports[`BpkCalendarGrid should render correctly with "weekDayKey" attribute set
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -1771,6 +1844,7 @@ exports[`BpkCalendarGrid should render correctly with "weekDayKey" attribute set
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -1792,6 +1866,7 @@ exports[`BpkCalendarGrid should render correctly with "weekDayKey" attribute set
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -1813,6 +1888,7 @@ exports[`BpkCalendarGrid should render correctly with "weekDayKey" attribute set
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -1834,6 +1910,7 @@ exports[`BpkCalendarGrid should render correctly with "weekDayKey" attribute set
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -1859,6 +1936,7 @@ exports[`BpkCalendarGrid should render correctly with "weekDayKey" attribute set
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -1880,6 +1958,7 @@ exports[`BpkCalendarGrid should render correctly with "weekDayKey" attribute set
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -1901,6 +1980,7 @@ exports[`BpkCalendarGrid should render correctly with "weekDayKey" attribute set
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -1922,6 +2002,7 @@ exports[`BpkCalendarGrid should render correctly with "weekDayKey" attribute set
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -1943,6 +2024,7 @@ exports[`BpkCalendarGrid should render correctly with "weekDayKey" attribute set
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -1964,6 +2046,7 @@ exports[`BpkCalendarGrid should render correctly with "weekDayKey" attribute set
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -1985,6 +2068,7 @@ exports[`BpkCalendarGrid should render correctly with "weekDayKey" attribute set
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -2104,6 +2188,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -2125,6 +2210,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -2146,6 +2232,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -2167,6 +2254,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -2188,6 +2276,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -2209,6 +2298,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -2230,6 +2320,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -2255,6 +2346,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -2276,6 +2368,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -2297,6 +2390,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -2318,6 +2412,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -2339,6 +2434,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -2360,6 +2456,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -2381,6 +2478,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -2406,6 +2504,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -2427,6 +2526,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -2448,6 +2548,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -2469,6 +2570,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -2490,6 +2592,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -2511,6 +2614,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -2532,6 +2636,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -2557,6 +2662,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -2578,6 +2684,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -2599,6 +2706,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -2620,6 +2728,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -2641,6 +2750,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -2662,6 +2772,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -2683,6 +2794,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -2708,6 +2820,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -2729,6 +2842,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -2750,6 +2864,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -2771,6 +2886,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -2792,6 +2908,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -2813,6 +2930,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -2834,6 +2952,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -2859,6 +2978,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -2880,6 +3000,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -2901,6 +3022,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -2922,6 +3044,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -2943,6 +3066,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -2964,6 +3088,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -2985,6 +3110,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -3894,6 +4020,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -3915,6 +4042,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -3936,6 +4064,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -3957,6 +4086,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -3978,6 +4108,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -3999,6 +4130,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -4020,6 +4152,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -4045,6 +4178,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -4066,6 +4200,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -4087,6 +4222,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -4108,6 +4244,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -4129,6 +4266,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -4150,6 +4288,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -4171,6 +4310,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -4196,6 +4336,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -4217,6 +4358,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -4238,6 +4380,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -4259,6 +4402,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -4280,6 +4424,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -4301,6 +4446,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -4322,6 +4468,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -4347,6 +4494,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -4368,6 +4516,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -4389,6 +4538,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -4410,6 +4560,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -4431,6 +4582,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -4452,6 +4604,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -4473,6 +4626,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -4498,6 +4652,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -4519,6 +4674,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -4540,6 +4696,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -4561,6 +4718,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -4582,6 +4740,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -4603,6 +4762,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -4624,6 +4784,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -4649,6 +4810,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -4670,6 +4832,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -4691,6 +4854,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -4712,6 +4876,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -4733,6 +4898,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -4754,6 +4920,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >
@@ -4775,6 +4942,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
           disabled={false}
           onClick={[Function]}
           onKeyDown={null}
+          style={null}
           tabIndex="-1"
           type="button"
         >

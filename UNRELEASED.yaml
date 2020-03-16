@@ -2,7 +2,7 @@
 
 ADDED:
   - bpk-component-calendar:
-    - Added coloured calendar
+    - Added the ability to use coloured calendar. Added a new `BpkColoredCalendar` component to allow default colour styling to the dates.
 
 FIXED:
  - bpk-component-badge:

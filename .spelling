@@ -23,6 +23,7 @@ BpkCalendarDate
 BpkCalendarDatePropTypes
 BpkCalendarView
 BpkCalendarGrid
+BpkColoredCalendarDate
 
 BpkCard
 
@@ -258,6 +259,11 @@ BORDER_RADIUS_STYLES
 BORDER_RADIUS_STYLES.none
 borderlessBackground
 buttonType
+cellType
+CellType.default
+CellType.positive
+CellType.neutral
+CellType.negative
 centerLeading
 centerTrailing
 clearButtonMode
