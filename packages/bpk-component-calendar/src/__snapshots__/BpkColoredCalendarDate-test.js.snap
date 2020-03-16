@@ -4,7 +4,7 @@ exports[`BpkColoredCalendarDate should pass props through to button 1`] = `
 <button
   aria-label="Nothing happened on this day in 2010"
   aria-pressed={false}
-  className="bpk-calendar-date bpk-colored-calendar-date"
+  className="bpk-calendar-date bpk-colored-calendar-date bpk-colored-calendar-date--default"
   disabled={false}
   onClick={[Function]}
   onKeyDown={null}
@@ -24,7 +24,7 @@ exports[`BpkColoredCalendarDate should render a disabled button 1`] = `
 <button
   aria-label={15}
   aria-pressed={false}
-  className="bpk-calendar-date bpk-colored-calendar-date"
+  className="bpk-calendar-date bpk-colored-calendar-date bpk-colored-calendar-date--default"
   disabled={true}
   onClick={[Function]}
   onKeyDown={null}
@@ -44,7 +44,7 @@ exports[`BpkColoredCalendarDate should render a focused button with tabIndex 1`]
 <button
   aria-label={15}
   aria-pressed={false}
-  className="bpk-calendar-date bpk-colored-calendar-date"
+  className="bpk-calendar-date bpk-colored-calendar-date bpk-colored-calendar-date--default"
   disabled={false}
   focused={true}
   onClick={[Function]}
@@ -61,11 +61,71 @@ exports[`BpkColoredCalendarDate should render a focused button with tabIndex 1`]
 </button>
 `;
 
-exports[`BpkColoredCalendarDate should render correctly 1`] = `
+exports[`BpkColoredCalendarDate should render correctly with default style 1`] = `
 <button
   aria-label={15}
   aria-pressed={false}
-  className="bpk-calendar-date bpk-colored-calendar-date"
+  className="bpk-calendar-date bpk-colored-calendar-date bpk-colored-calendar-date--default"
+  disabled={false}
+  onClick={[Function]}
+  onKeyDown={null}
+  style={null}
+  tabIndex="-1"
+  type="button"
+>
+  <span
+    aria-hidden="true"
+  >
+    15
+  </span>
+</button>
+`;
+
+exports[`BpkColoredCalendarDate should render correctly with negative style 1`] = `
+<button
+  aria-label={15}
+  aria-pressed={false}
+  className="bpk-calendar-date bpk-colored-calendar-date bpk-colored-calendar-date--negative"
+  disabled={false}
+  onClick={[Function]}
+  onKeyDown={null}
+  style={null}
+  tabIndex="-1"
+  type="button"
+>
+  <span
+    aria-hidden="true"
+  >
+    15
+  </span>
+</button>
+`;
+
+exports[`BpkColoredCalendarDate should render correctly with neutral style 1`] = `
+<button
+  aria-label={15}
+  aria-pressed={false}
+  className="bpk-calendar-date bpk-colored-calendar-date bpk-colored-calendar-date--neutral"
+  disabled={false}
+  onClick={[Function]}
+  onKeyDown={null}
+  style={null}
+  tabIndex="-1"
+  type="button"
+>
+  <span
+    aria-hidden="true"
+  >
+    15
+  </span>
+</button>
+`;
+
+exports[`BpkColoredCalendarDate should render correctly with positive style 1`] = `
+<button
+  aria-label={15}
+  aria-pressed={false}
+  className="bpk-calendar-date bpk-colored-calendar-date bpk-colored-calendar-date--positive"
   disabled={false}
   onClick={[Function]}
   onKeyDown={null}
@@ -85,7 +145,7 @@ exports[`BpkColoredCalendarDate should render with a click and keyDown handler 1
 <button
   aria-label={15}
   aria-pressed={false}
-  className="bpk-calendar-date bpk-colored-calendar-date"
+  className="bpk-calendar-date bpk-colored-calendar-date bpk-colored-calendar-date--default"
   disabled={false}
   onClick={[Function]}
   onKeyDown={[Function]}
@@ -105,7 +165,7 @@ exports[`BpkColoredCalendarDate should set a custom class 1`] = `
 <button
   aria-label={15}
   aria-pressed={false}
-  className="bpk-calendar-date bpk-colored-calendar-date"
+  className="bpk-calendar-date bpk-colored-calendar-date bpk-colored-calendar-date--default"
   disabled={false}
   onClick={[Function]}
   onKeyDown={null}

@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+/* @flow */
+
 import PropTypes from 'prop-types';
 import React from 'react';
 import { cssModules } from 'bpk-react-utils';
@@ -32,17 +34,22 @@ export const CellType = {
   positive: 'positive',
 };
 
-// TODO: Rename cellStyle to cellType
-const BpkColoredCalendarDate = props => {
-  const { cellType, ...rest } = props;
+type Props = {
+  cellType: String,
+  isFocused: boolean,
+  isSelected: boolean,
+};
+
+const BpkColoredCalendarDate = (props: Props) => {
+  const { cellType, isFocused, isSelected, ...rest } = props;
   const className = getClassName(
     'bpk-colored-calendar-date',
     cellType === CellType.default && 'bpk-colored-calendar-date--default',
     cellType === CellType.positive && 'bpk-colored-calendar-date--positive',
     cellType === CellType.neutral && 'bpk-colored-calendar-date--neutral',
     cellType === CellType.negative && 'bpk-colored-calendar-date--negative',
-    props.isFocused && 'bpk-colored-calendar-date--focused',
-    props.isSelected && 'bpk-colored-calendar-date--selected',
+    isFocused && 'bpk-colored-calendar-date--focused',
+    isSelected && 'bpk-colored-calendar-date--selected',
   );
 
   return <BpkCalendarDate {...rest} className={className} />;
@@ -50,7 +57,7 @@ const BpkColoredCalendarDate = props => {
 
 BpkColoredCalendarDate.propTypes = {
   ...propTypes,
-  cellType: PropTypes.string,
+  cellType: PropTypes.oneOf(Object.keys(CellType)),
 };
 BpkColoredCalendarDate.defaultProps = {
   ...defaultProps,
