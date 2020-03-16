@@ -78,10 +78,11 @@ const MyCalendarDate = props => {
   } else if (price < 60 && price <= 74) {
     cell = CellType.positive;
   }
-  return <BpkColoredCalendarDate cellStyle={cell} price={price} {...props} />;
+
+  return <BpkColoredCalendarDate cellType={cell} price={price} {...props} />;
 };
 
-const MyDepartCalendar = withCalendarState(
+const StatefulCalendar = withCalendarState(
   composeCalendar(null, BpkCalendarGridHeader, BpkCalendarGrid, MyCalendarDate),
 );
 
@@ -98,7 +99,7 @@ class ColoredCalendar extends Component {
 
   render() {
     return (
-      <MyDepartCalendar
+      <StatefulCalendar
         {...this.props}
         selectedDate={this.state.date}
         onDateSelect={date => {

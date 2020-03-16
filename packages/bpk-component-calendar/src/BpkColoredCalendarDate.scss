@@ -37,7 +37,7 @@
     background-color: $bpk-color-panjin;
   }
 
-  &--focused:not(:disabled):not(.bpk-calendar-date--selected) {
+  &--focused:not(:disabled):not(.bpk-colored-calendar-date--selected) {
     border: ($bpk-spacing-xs / 2) solid $bpk-calendar-day-focused-border-color;
     box-shadow: 0 0 0 1px $bpk-color-white inset;
   }
