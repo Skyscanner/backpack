@@ -260,10 +260,11 @@ BORDER_RADIUS_STYLES.none
 borderlessBackground
 buttonType
 cellType
-CellType.default
-CellType.positive
-CellType.neutral
-CellType.negative
+CELL_TYPES
+CELL_TYPES.default
+CELL_TYPES.positive
+CELL_TYPES.neutral
+CELL_TYPES.negative
 centerLeading
 centerTrailing
 clearButtonMode

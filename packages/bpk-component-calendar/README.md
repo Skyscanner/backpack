@@ -241,6 +241,7 @@ The BpkCalendarDate component is used to render the content of a cell
 | Property              | PropType             | Required | Default Value    |
 | --------------------- | -------------------- | -------- | ---------------- |
 | date                  | Date                 | true     | -                |
+| cellType              | oneOf(CELL_TYPES.default, CELL_TYPES.positive, CELL_TYPES.neutral, CELL_TYPES.negative)                     | false    | null             |
 | isBlocked             | bool                 | false    | false            |
 | isFocused             | bool                 | false    | false            |
 | isKeyboardFocusable   | bool                 | false    | true             |
@@ -252,23 +253,14 @@ The BpkCalendarDate component is used to render the content of a cell
 | preventKeyboardFocus  | bool                 | false    | true             |
 | style                 | object               | false    | null             |
 
-### BpkColoredCalendarDate
+#### `cellType` prop
 
-The BpkColoredCalendarDate component is used to render standard coloured variants of content of a cell (a single day) inside the calendar grid.
+This prop determines what the colour date cell is to be displayed.
 
-| Property              | PropType             | Required | Default Value    |
-| --------------------- | -------------------- | -------- | ---------------- |
-| see BpkCalendarDate props  | -                    | -        | -                |
-| cellType              | oneOf(CellType.default, CellType.positive, CellType.neutral, CellType.negative)                     | false    | null             |
-
-#### `CellType` prop
-
-This prop determines what the colour date cell is to be displayed. 
-
-- `CellType.positive` - sets the calendar cell to `Monteverde`
-- `CellType.neutral` - sets the calendar cell to `Erfoud`
-- `CellType.negative` - sets the calendar cell to `Panjin`
-- `CellType.default` - sets the calendar cell to `Sky Gray Tint 02`
+- `CELL_TYPES.positive` - sets the calendar cell to `Monteverde`
+- `CELL_TYPES.neutral` - sets the calendar cell to `Erfoud`
+- `CELL_TYPES.negative` - sets the calendar cell to `Panjin`
+- `CELL_TYPES.default` - sets the calendar cell to `Sky Gray Tint 02`
 
 ### Prop details
 
