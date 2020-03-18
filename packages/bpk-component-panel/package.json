@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-panel",
-  "version": "2.0.36",
+  "version": "2.0.37",
   "description": "Backpack panel component.",
   "main": "index.js",
   "repository": {
@@ -13,7 +13,7 @@
     "react": "^15.0.0 || ^16.0.0"
   },
   "dependencies": {
-    "bpk-mixins": "^19.1.5",
+    "bpk-mixins": "^19.1.6",
     "bpk-react-utils": "^2.9.4",
     "prop-types": "^15.6.2"
   },
