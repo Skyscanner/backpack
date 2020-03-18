@@ -6,6 +6,15 @@
 
 **Fixed:**
 
+- bpk-component-icon: 5.0.38 => 5.0.39
+- bpk-svgs: 8.2.30 => 8.2.31
+- bpk-mixins: 19.1.6 => 19.1.7
+  - Reduced the size of the new hotel icon to align it to other icons.
+
+# 2020-03-18
+
+**Fixed:**
+
 - bpk-component-badge: 2.0.27 => 2.0.38
   - The `success` badge has been lightened to provide better contrast, and align to our mobile implementations.
 
