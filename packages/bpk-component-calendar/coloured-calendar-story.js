@@ -25,8 +25,8 @@ import { action } from '@storybook/addon-actions';
 import {
   BpkCalendarGrid,
   BpkCalendarGridHeader,
-  BpkColoredCalendarDate,
-  CellType,
+  BpkCalendarDate,
+  CELL_TYPES,
   composeCalendar,
   withCalendarState,
 } from './index';
@@ -70,16 +70,16 @@ const MyCalendarDate = props => {
   const day = props.date.getDate();
   const price = prices[day - 1];
 
-  let cell = CellType.default;
+  let cell = CELL_TYPES.default;
   if (price >= 100) {
-    cell = CellType.negative;
+    cell = CELL_TYPES.negative;
   } else if (price >= 75) {
-    cell = CellType.neutral;
+    cell = CELL_TYPES.neutral;
   } else if (price < 60 && price <= 74) {
-    cell = CellType.positive;
+    cell = CELL_TYPES.positive;
   }
 
-  return <BpkColoredCalendarDate cellType={cell} price={price} {...props} />;
+  return <BpkCalendarDate cellType={cell} price={price} {...props} />;
 };
 
 const StatefulCalendar = withCalendarState(

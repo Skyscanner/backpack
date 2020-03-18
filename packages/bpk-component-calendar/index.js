@@ -26,9 +26,9 @@ import BpkCalendarGrid, {
 import BpkCalendarGridHeader from './src/BpkCalendarGridHeader';
 import BpkCalendarNav from './src/BpkCalendarNav';
 import BpkCalendarDate, {
+  CELL_TYPES,
   propTypes as BpkCalendarDatePropTypes,
 } from './src/BpkCalendarDate';
-import BpkColoredCalendarDate, { CellType } from './src/BpkColoredCalendarDate';
 import composeCalendar from './src/composeCalendar';
 import CustomPropTypes from './src/custom-proptypes';
 import * as DateUtils from './src/date-utils';
@@ -41,10 +41,9 @@ export {
   BpkCalendarGridHeader,
   BpkCalendarNav,
   BpkCalendarDate,
-  BpkColoredCalendarDate,
   CustomPropTypes,
   DateUtils,
-  CellType,
+  CELL_TYPES,
   composeCalendar,
   withCalendarState,
   themeAttributes,
