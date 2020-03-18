@@ -4,7 +4,7 @@ HOCs -
 
   - `withCalendarState` default export creates calendar using all our exports to construct component - which keeps track of the calendar state. In theory a custom state manager could be used for the calendar but would require a lot more effort to create and maintain from a consumer perspective.
 
-  - `compostCalendar` - takes 4 input components that can be customised outside of the default exports for custom calendar implementations. Which will then construct a calendar based on the inputs provided or exclude them if they are not passed.
+  - `composeCalendar` - takes 4 input components that can be customised outside of the default exports for custom calendar implementations. Which will then construct a calendar based on the inputs provided or exclude them if they are not passed.
     - `BpkCalendarNav`, `BpkCalenderGridHeader` - are optional components for rendering the calendar
     - `BpkCalendarGrid`, `BpkCalendarDate` - are required for creating the calendar component but can be customised to design requirements.
 
@@ -22,7 +22,7 @@ Calendar components -
 
   - `BpkCalendarDate` - is each date cell that would be displayed inside the calendar grid. This would be used to customise how each date cell is displayed e.g. coloured or with special pricing displayed.
 
-  - `BpkColoredCalendarDate` - is each date cell that would be displayed inside the calendar grid with an out of the box coloured solution. It uses `CELL_TYPESs` to determine what the colour date cell is to be displayed.
+  It has a `cellType` prop which can be used to set a custom colour. An exported `CELL_TYPES` object offers the following cell types:
     - `CELL_TYPES.positive` - sets the calendar cell to `Monteverde`
     - `CELL_TYPES.neutral` - sets the calendar cell to `Erfoud`
     - `CELL_TYPES.negative` - sets the calendar cell to `Panjin`

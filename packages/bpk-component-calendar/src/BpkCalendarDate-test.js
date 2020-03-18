@@ -149,20 +149,6 @@ describe('BpkCalendarDate', () => {
       expect(tree).toMatchSnapshot();
     });
 
-    it('should render with a click and keyDown handler', () => {
-      const tree = renderer
-        .create(
-          <BpkCalendarDate
-            cellType={CELL_TYPES.default}
-            date={new Date(2010, 1, 15)}
-            onClick={() => null}
-            onKeyDown={() => null}
-          />,
-        )
-        .toJSON();
-      expect(tree).toMatchSnapshot();
-    });
-
     it('should render a focused button with tabIndex', () => {
       const tree = renderer
         .create(
@@ -174,33 +160,6 @@ describe('BpkCalendarDate', () => {
           {
             createNodeMock,
           },
-        )
-        .toJSON();
-      expect(tree).toMatchSnapshot();
-    });
-
-    it('should pass props through to button', () => {
-      const tree = renderer
-        .create(
-          <BpkCalendarDate
-            cellType={CELL_TYPES.default}
-            date={new Date(2010, 1, 15)}
-            aria-label="Nothing happened on this day in 2010"
-          />,
-          { createNodeMock },
-        )
-        .toJSON();
-      expect(tree).toMatchSnapshot();
-    });
-
-    it('should set a custom class', () => {
-      const tree = renderer
-        .create(
-          <BpkCalendarDate
-            cellType={CELL_TYPES.default}
-            date={new Date(2010, 1, 15)}
-            className="userlandClassName"
-          />,
         )
         .toJSON();
       expect(tree).toMatchSnapshot();
