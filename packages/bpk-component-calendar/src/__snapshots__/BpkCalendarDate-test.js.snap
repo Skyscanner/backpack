@@ -1,5 +1,126 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`BpkCalendarDate cellType tests should render a disabled button 1`] = `
+<button
+  aria-label={15}
+  aria-pressed={false}
+  className="bpk-calendar-date bpk-calendar-date--colored bpk-calendar-date--colored-default"
+  disabled={true}
+  onClick={[Function]}
+  onKeyDown={null}
+  style={null}
+  tabIndex="-1"
+  type="button"
+>
+  <span
+    aria-hidden="true"
+  >
+    15
+  </span>
+</button>
+`;
+
+exports[`BpkCalendarDate cellType tests should render a focused button with tabIndex 1`] = `
+<button
+  aria-label={15}
+  aria-pressed={false}
+  className="bpk-calendar-date bpk-calendar-date--colored bpk-calendar-date--colored-default"
+  disabled={false}
+  focused={true}
+  onClick={[Function]}
+  onKeyDown={null}
+  style={null}
+  tabIndex="-1"
+  type="button"
+>
+  <span
+    aria-hidden="true"
+  >
+    15
+  </span>
+</button>
+`;
+
+exports[`BpkCalendarDate cellType tests should render correctly with default style 1`] = `
+<button
+  aria-label={15}
+  aria-pressed={false}
+  className="bpk-calendar-date bpk-calendar-date--colored bpk-calendar-date--colored-default"
+  disabled={false}
+  onClick={[Function]}
+  onKeyDown={null}
+  style={null}
+  tabIndex="-1"
+  type="button"
+>
+  <span
+    aria-hidden="true"
+  >
+    15
+  </span>
+</button>
+`;
+
+exports[`BpkCalendarDate cellType tests should render correctly with negative style 1`] = `
+<button
+  aria-label={15}
+  aria-pressed={false}
+  className="bpk-calendar-date bpk-calendar-date--colored bpk-calendar-date--colored-negative"
+  disabled={false}
+  onClick={[Function]}
+  onKeyDown={null}
+  style={null}
+  tabIndex="-1"
+  type="button"
+>
+  <span
+    aria-hidden="true"
+  >
+    15
+  </span>
+</button>
+`;
+
+exports[`BpkCalendarDate cellType tests should render correctly with neutral style 1`] = `
+<button
+  aria-label={15}
+  aria-pressed={false}
+  className="bpk-calendar-date bpk-calendar-date--colored bpk-calendar-date--colored-neutral"
+  disabled={false}
+  onClick={[Function]}
+  onKeyDown={null}
+  style={null}
+  tabIndex="-1"
+  type="button"
+>
+  <span
+    aria-hidden="true"
+  >
+    15
+  </span>
+</button>
+`;
+
+exports[`BpkCalendarDate cellType tests should render correctly with positive style 1`] = `
+<button
+  aria-label={15}
+  aria-pressed={false}
+  className="bpk-calendar-date bpk-calendar-date--colored bpk-calendar-date--colored-positive"
+  disabled={false}
+  onClick={[Function]}
+  onKeyDown={null}
+  style={null}
+  tabIndex="-1"
+  type="button"
+>
+  <span
+    aria-hidden="true"
+  >
+    15
+  </span>
+</button>
+`;
+
 exports[`BpkCalendarDate should pass props through to button 1`] = `
 <button
   aria-label="Nothing happened on this day in 2010"
@@ -8,6 +129,7 @@ exports[`BpkCalendarDate should pass props through to button 1`] = `
   disabled={false}
   onClick={[Function]}
   onKeyDown={null}
+  style={null}
   tabIndex="-1"
   type="button"
 >
@@ -27,6 +149,7 @@ exports[`BpkCalendarDate should render a disabled button 1`] = `
   disabled={true}
   onClick={[Function]}
   onKeyDown={null}
+  style={null}
   tabIndex="-1"
   type="button"
 >
@@ -47,6 +170,7 @@ exports[`BpkCalendarDate should render a focused button with tabIndex 1`] = `
   focused={true}
   onClick={[Function]}
   onKeyDown={null}
+  style={null}
   tabIndex="-1"
   type="button"
 >
@@ -66,6 +190,7 @@ exports[`BpkCalendarDate should render correctly 1`] = `
   disabled={false}
   onClick={[Function]}
   onKeyDown={null}
+  style={null}
   tabIndex="-1"
   type="button"
 >
@@ -85,6 +210,7 @@ exports[`BpkCalendarDate should render with a click and keyDown handler 1`] = `
   disabled={false}
   onClick={[Function]}
   onKeyDown={[Function]}
+  style={null}
   tabIndex="-1"
   type="button"
 >
@@ -104,6 +230,7 @@ exports[`BpkCalendarDate should set a custom class 1`] = `
   disabled={false}
   onClick={[Function]}
   onKeyDown={null}
+  style={null}
   tabIndex="-1"
   type="button"
 >

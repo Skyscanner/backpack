@@ -1,4 +1,9 @@
 # UNRELEASED:
+
+ADDED:
+  - bpk-component-calendar:
+    - Added the ability to use coloured calendar. Added a new `BpkColoredCalendar` component to allow default colour styling to the dates.
+
 # How to write a good changelog entry:
 #
 #   1. Add 'BREAKING', 'ADDED' OR 'FIXED' depending on if the change will be major, minor or patch according to [semver.org](semver.org).

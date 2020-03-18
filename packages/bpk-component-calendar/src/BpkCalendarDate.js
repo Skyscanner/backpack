@@ -25,6 +25,13 @@ import STYLES from './BpkCalendarDate.scss';
 
 const getClassName = cssModules(STYLES);
 
+export const CELL_TYPES = {
+  default: 'default',
+  negative: 'negative',
+  neutral: 'neutral',
+  positive: 'positive',
+};
+
 const navigatedByMonthNudger = () =>
   document.activeElement.id &&
   document.activeElement.id.indexOf('month_nudger') !== -1;
@@ -86,8 +93,11 @@ class BpkCalendarDate extends PureComponent {
       isToday,
       isKeyboardFocusable,
       className,
+      style,
+      cellType,
       ...buttonProps
     } = this.props;
+
     const classNames = [getClassName('bpk-calendar-date')];
 
     Object.keys(modifiers).forEach(modifier => {
@@ -97,6 +107,11 @@ class BpkCalendarDate extends PureComponent {
         );
       }
     });
+
+    if (cellType) {
+      classNames.push(getClassName(`bpk-calendar-date--colored`));
+      classNames.push(getClassName(`bpk-calendar-date--colored-${cellType}`));
+    }
 
     if (isFocused) {
       classNames.push(getClassName('bpk-calendar-date--focused'));
@@ -122,6 +137,7 @@ class BpkCalendarDate extends PureComponent {
     return (
       <button
         type="button"
+        style={style}
         className={classNames.join(' ')}
         aria-label={date.getDate()}
         disabled={isBlocked}
@@ -146,6 +162,7 @@ export const propTypes = {
   // Required
   date: PropTypes.instanceOf(Date).isRequired,
   // Optional
+  cellType: PropTypes.oneOf(Object.keys(CELL_TYPES)),
   className: PropTypes.string,
   isBlocked: PropTypes.bool,
   isFocused: PropTypes.bool,
@@ -157,12 +174,14 @@ export const propTypes = {
   onClick: PropTypes.func,
   onDateKeyDown: PropTypes.func,
   preventKeyboardFocus: PropTypes.bool,
+  style: PropTypes.object,
 };
 
 BpkCalendarDate.propTypes = { ...propTypes };
 
-BpkCalendarDate.defaultProps = {
+export const defaultProps = {
   className: null,
+  cellType: null,
   isBlocked: false,
   isFocused: false,
   isKeyboardFocusable: true,
@@ -173,6 +192,11 @@ BpkCalendarDate.defaultProps = {
   onClick: null,
   onDateKeyDown: null,
   preventKeyboardFocus: true,
+  style: null,
+};
+
+BpkCalendarDate.defaultProps = {
+  ...defaultProps,
 };
 
 export default BpkCalendarDate;

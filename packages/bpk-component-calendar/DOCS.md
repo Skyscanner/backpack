@@ -1,16 +1,16 @@
 Default export is `BpkCalendarContainer` - This provides an out of the box calendar.
 
-HOCs - 
-  
+HOCs -
+
   - `withCalendarState` default export creates calendar using all our exports to construct component - which keeps track of the calendar state. In theory a custom state manager could be used for the calendar but would require a lot more effort to create and maintain from a consumer perspective.
 
-  - `compostCalendar` - takes 4 input components that can be customised outside of the default exports for custom calendar implementations. Which will then construct a calendar based on the inputs provided or exclude them if they are not passed.
+  - `composeCalendar` - takes 4 input components that can be customised outside of the default exports for custom calendar implementations. Which will then construct a calendar based on the inputs provided or exclude them if they are not passed.
     - `BpkCalendarNav`, `BpkCalenderGridHeader` - are optional components for rendering the calendar
     - `BpkCalendarGrid`, `BpkCalendarDate` - are required for creating the calendar component but can be customised to design requirements.
 
   - `addCalendarGridTransition` - transitions the weeks grid when changing months, this works by hiding the current month and moving the next or previous month into view.
 
-Calendar components - 
+Calendar components -
 
   - `BpkCalendarNav` - component used to change the month that is being displayed by using buttons and a select box at the top of the component.
 
@@ -20,4 +20,10 @@ Calendar components -
 
     - `Week` - This is a container that will take the `DateComponent` to display each of the dates in the calendar
 
-  - `BpkCalendarDate` - is each date cell that would be displayed inside the calendar grid. This would be used to customise how each date cell is displayed e.g. coloured or with special pricing displayed
+  - `BpkCalendarDate` - is each date cell that would be displayed inside the calendar grid. This would be used to customise how each date cell is displayed e.g. coloured or with special pricing displayed.
+
+  It has a `cellType` prop which can be used to set a custom colour. An exported `CELL_TYPES` object offers the following cell types:
+    - `CELL_TYPES.positive` - sets the calendar cell to `Monteverde`
+    - `CELL_TYPES.neutral` - sets the calendar cell to `Erfoud`
+    - `CELL_TYPES.negative` - sets the calendar cell to `Panjin`
+    - `CELL_TYPES.default` - sets the calendar cell to `Sky Gray Tint 02`
