@@ -2,6 +2,18 @@
 
 [Unreleased changes](./UNRELEASED.yaml).
 
+# 2020-03-18
+
+**Fixed:**
+
+- bpk-component-badge: 2.0.27 => 2.0.38
+  - The `success` badge has been lightened to provide better contrast, and align to our mobile implementations.
+
+- bpk-component-icon: 5.0.37 => 5.0.38
+- bpk-svgs: 8.2.29 => 8.2.30
+- bpk-mixins: 19.1.5 => 19.1.6
+  - Updated `hotel` icon.
+
 # 2020-02-25 - Supporting building schema markup in Breadcrumbs
 
 **Added:**
@@ -36,7 +48,7 @@
 
   - bpk-stylesheets: 4.1.11 => 5.0.0
     - Default line height is now set to `1.3rem` which is the baseline height of the Relative font family.
-  
+
   - bpk-component-text: 2.0.31 => 3.0.0
     -  Text sizes will now be different according to the token changes, which will require usage updates
       - `SM` --> `XS`
@@ -46,7 +58,7 @@
 **Added:**
   - bpk-mixins: 19.0.30 => 19.1.0
     - Added new text mixins to support new font sizes
-  
+
   - bpk-component-text: 2.0.31 => 3.0.0
     - Added support for new larger font sizes.
 
