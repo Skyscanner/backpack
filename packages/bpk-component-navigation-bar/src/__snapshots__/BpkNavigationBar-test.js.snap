@@ -14,6 +14,20 @@ exports[`BpkNavigationBar should render correctly 1`] = `
 </nav>
 `;
 
+exports[`BpkNavigationBar should render correctly when sticky 1`] = `
+<nav
+  aria-labelledby="test-bpk-navigation-bar-title"
+  className="bpk-navigation-bar bpk-navigation-bar__sticky"
+>
+  <span
+    className="bpk-text bpk-text--base bpk-text--bold bpk-navigation-bar__title"
+    id="test-bpk-navigation-bar-title"
+  >
+    test
+  </span>
+</nav>
+`;
+
 exports[`BpkNavigationBar should render correctly with a "leadingButton" attribute 1`] = `
 <nav
   aria-labelledby="test-bpk-navigation-bar-title"

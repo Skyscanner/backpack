@@ -129,4 +129,53 @@ storiesOf('bpk-component-navigation-bar', module)
         }
       />
     </div>
-  ));
+  ))
+  .add('Sticky', () => {
+    const items = [];
+    for (let i = 0; i < 5; i += 1) {
+      items.push(
+        <li>Curabitur congue leo non viverra tristique</li>,
+        <li>Orci varius natoque penatibus</li>,
+        <li>Duis pellentesque dictum lectus</li>,
+        <li>Sit amet egestas velit gravida et</li>,
+        <li>Donec porttitor libero sem</li>,
+        <li>Id efficitur massa sagittis venenatis</li>,
+        <li>Interdum et malesuada fames ac ante</li>,
+        <li>Primis in faucibus</li>,
+        <li>In ullamcorper tristique lectus</li>,
+        <li>Class aptent taciti sociosqu</li>,
+        <li>Maecenas vitae diam posuere</li>,
+        <li>Donec mattis lorem ante ut eleifend</li>,
+        <li>Donec quis ex rhoncus dapibus</li>,
+        <li>Mauris bibendum accumsan tincidunt</li>,
+        <li>Pellentesque habitant morbi tristique senectus</li>,
+      );
+    }
+    return (
+      <div
+        className={getClassNames('bpk-navigation-bar-story')}
+        style={{ marginTop: '40px' }}
+      >
+        <BpkNavigationBar
+          id="test"
+          title="Sticky"
+          sticky
+          leadingButton={
+            <BpkNavigationBarIconButton
+              onClick={action('back clicked')}
+              icon={ArrowIconWithRtl}
+              label="back"
+            />
+          }
+          trailingButton={
+            <BpkNavigationBarIconButton
+              onClick={action('close clicked')}
+              icon={CloseIcon}
+              label="close"
+            />
+          }
+        />
+        <ul>{items}</ul>
+      </div>
+    );
+  });

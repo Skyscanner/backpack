@@ -33,6 +33,7 @@ export type Props = {
   className: ?string,
   leadingButton: ?Element<any>,
   trailingButton: ?Element<any>,
+  sticky: ?boolean,
 };
 
 const cloneWithClass = (elem: Element<any>, newStyle: string) => {
@@ -47,6 +48,7 @@ const BpkNavigationBar = (props: Props) => {
     className,
     leadingButton,
     trailingButton,
+    sticky,
     ...rest
   } = props;
 
@@ -55,7 +57,11 @@ const BpkNavigationBar = (props: Props) => {
   return (
     <nav
       aria-labelledby={titleId}
-      className={getClassNames('bpk-navigation-bar', className)}
+      className={getClassNames(
+        'bpk-navigation-bar',
+        sticky && 'bpk-navigation-bar__sticky',
+        className,
+      )}
       {...rest}
     >
       {leadingButton &&
@@ -82,12 +88,14 @@ BpkNavigationBar.propTypes = {
   className: PropTypes.string,
   leadingButton: PropTypes.element,
   trailingButton: PropTypes.element,
+  sticky: PropTypes.bool,
 };
 
 BpkNavigationBar.defaultProps = {
   className: null,
   leadingButton: null,
   trailingButton: null,
+  sticky: false,
 };
 
 export default BpkNavigationBar;

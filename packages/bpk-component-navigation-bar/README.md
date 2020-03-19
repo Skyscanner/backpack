@@ -47,6 +47,7 @@ export default () => (
 | className             | string   | false    | null             |
 | leadingButton         | element  | false    | null             |
 | trailingButton        | element  | false    | null             |
+| sticky                | bool     | false    | false            |
 
 #### Theme props
 
