@@ -118,4 +118,12 @@ describe('BpkNavigationBar', () => {
 
     expect(tree).toMatchSnapshot();
   });
+
+  it('should render correctly when sticky', () => {
+    const tree = renderer
+      .create(<BpkNavigationBar id="test" title="test" sticky />)
+      .toJSON();
+
+    expect(tree).toMatchSnapshot();
+  });
 });

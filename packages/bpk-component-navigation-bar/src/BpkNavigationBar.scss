@@ -63,4 +63,10 @@
       left: $bpk-spacing-sm;
     }
   }
+
+  &__sticky {
+    position: sticky;
+    top: 0;
+    z-index: $bpk-zindex-tooltip - 1; // Allow tooltips/modals/... to be displayed above the navigation bar
+  }
 }
