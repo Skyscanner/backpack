@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-icon",
-  "version": "5.0.39",
+  "version": "5.0.40",
   "description": "Backpack icon components.",
   "main": "index.js",
   "scripts": {
@@ -16,9 +16,9 @@
     "react": "^15.0.0 || ^16.0.0"
   },
   "dependencies": {
-    "bpk-mixins": "^19.1.7",
+    "bpk-mixins": "^19.1.8",
     "bpk-react-utils": "^2.9.4",
-    "bpk-svgs": "^8.2.31",
+    "bpk-svgs": "^8.2.32",
     "bpk-tokens": "^32.0.2",
     "prop-types": "^15.6.2"
   },
