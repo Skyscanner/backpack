@@ -81,7 +81,9 @@ const verifyMaintainers = data => {
     return;
   }
 
-  const sortedMaintainers = data.maintainers.sort();
+  const sortedMaintainers = data.maintainers
+    .filter(m => m !== 'mattface')
+    .sort();
 
   if (sortedMaintainers.join('') === owners.join('')) {
     console.log(`${data.name} ✔︎`);
