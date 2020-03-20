@@ -2,6 +2,15 @@
 
 [Unreleased changes](./UNRELEASED.yaml).
 
+# 2020-03-20 - Coloured calendar date support and `BpkNavigationBar` now has sticky support
+
+**Added:**
+  - bpk-component-calendar:
+    - Added the ability to use coloured calendar. Added a new `cellType` prop to allow default colour styling to the dates. 
+    - Added new `style` prop to custom styles of default `BpkCalendarDate` component.
+  - bpk-component-navigation-bar:
+    - Added `sticky` prop to `BpkNavigationBar` so it stays at the top when scrolling up.
+
 # 2020-03-18
 
 **Fixed:**
