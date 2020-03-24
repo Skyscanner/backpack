@@ -65,6 +65,8 @@ BpkNavigationBarButtonLink
 
 BpkNudger
 BpkConfigurableNudger
+BpkContentBubble
+BpkFlareBar
 
 BpkPanel
 
@@ -193,6 +195,7 @@ stylesheet
 stylesheets
 submodule
 submodules
+svgClassName
 SVGs
 tagName
 textarea
