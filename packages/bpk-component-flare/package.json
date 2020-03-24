@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-flare",
-  "version": "1.0.39",
+  "version": "1.0.40",
   "description": "Backpack FlareBar and ContentBubble component.",
   "main": "index.js",
   "repository": {
