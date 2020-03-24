@@ -2,6 +2,14 @@
 
 [Unreleased changes](./UNRELEASED.yaml).
 
+# 2020-03-24 - Fix for flare component
+
+**Fixed:**
+
+ - bpk-component-flare: 1.0.38 => 1.0.39
+   - Fixed an issue that causes the flare pointer left margin to be displayed incorrectly.
+
+
 # 2020-03-20 - Coloured calendar date support and `BpkNavigationBar` now has sticky support
 
 **Added:**
