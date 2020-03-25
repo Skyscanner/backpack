@@ -21,7 +21,7 @@
     "prop-types": "^15.6.2"
   },
   "devDependencies": {
-    "bpk-component-checkbox": "^2.0.41",
+    "bpk-component-checkbox": "^2.0.42",
     "bpk-tokens": "^32.0.2"
   },
   "publishConfig": {
