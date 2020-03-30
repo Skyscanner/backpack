@@ -2,6 +2,13 @@
 
 [Unreleased changes](./UNRELEASED.yaml).
 
+# 2020-03-30
+
+**Fixed:**
+  - bpk-component-icon:
+  - bpk-svgs:
+    - Aligned new hotels icon to the icon grid.
+
 # 2020-03-24 - Fix for flare component
 
 **Fixed:**
@@ -14,7 +21,7 @@
 
 **Added:**
   - bpk-component-calendar:
-    - Added the ability to use coloured calendar. Added a new `cellType` prop to allow default colour styling to the dates. 
+    - Added the ability to use coloured calendar. Added a new `cellType` prop to allow default colour styling to the dates.
     - Added new `style` prop to custom styles of default `BpkCalendarDate` component.
   - bpk-component-navigation-bar:
     - Added `sticky` prop to `BpkNavigationBar` so it stays at the top when scrolling up.
