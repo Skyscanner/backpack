@@ -84,7 +84,7 @@ class AnimateAndFade extends Component<Props, State> {
     }
   }
 
-  componentWillReceiveProps(nextProps: Props) {
+  UNSAFE_componentWillReceiveProps(nextProps: Props) {
     if (nextProps.show === this.props.show) {
       return;
     }

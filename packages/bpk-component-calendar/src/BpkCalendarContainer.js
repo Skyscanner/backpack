@@ -86,7 +86,7 @@ const withCalendarState = Calendar => {
       };
     }
 
-    componentWillReceiveProps(nextProps) {
+    UNSAFE_componentWillReceiveProps(nextProps) {
       // `date` is to be DEPRECATED in favour of `selectedDate`
       const rawNextSelectedDate = nextProps.selectedDate || nextProps.date;
 

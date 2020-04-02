@@ -1,5 +1,15 @@
 # UNRELEASED:
 
+ADDED:
+  - bpk-animate-height:
+  - bpk-component-banner-alert:
+  - bpk-component-calendar:
+  - bpk-component-datatable:
+  - bpk-component-drawer:
+  - bpk-component-image:
+  - bpk-react-utils:
+    - Rename `componentWillReceiveProps` to `UNSAFE_componentWillReceiveProps`.
+
 # How to write a good changelog entry:
 #
 #   1. Add 'BREAKING', 'ADDED' OR 'FIXED' depending on if the change will be major, minor or patch according to [semver.org](semver.org).

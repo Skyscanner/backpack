@@ -60,7 +60,7 @@ class BpkCalendarGrid extends Component {
     };
   }
 
-  componentWillReceiveProps(nextProps) {
+  UNSAFE_componentWillReceiveProps(nextProps) {
     // We cache expensive calculations (and identities) in state
     if (
       nextProps.daysOfWeek !== this.props.daysOfWeek ||
