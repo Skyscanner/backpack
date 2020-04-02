@@ -73,6 +73,32 @@ describe('BpkDatepicker', () => {
     expect(tree).toMatchSnapshot();
   });
 
+  it('should render correctly when not valid', () => {
+    const tree = renderer
+      .create(
+        <BpkDatepicker
+          valid={false}
+          id="myDatepicker"
+          closeButtonText="Close"
+          daysOfWeek={weekDays}
+          changeMonthLabel="Change month"
+          title="Departure date"
+          weekStartsOn={1}
+          getApplicationElement={() => document.createElement('div')}
+          formatDate={formatDate}
+          formatMonth={formatMonth}
+          formatDateFull={formatDateFull}
+          inputProps={inputProps}
+          minDate={new Date(2010, 1, 15)}
+          maxDate={new Date(2010, 2, 15)}
+          date={new Date(2010, 1, 15)}
+        />,
+      )
+      .toJSON();
+
+    expect(tree).toMatchSnapshot();
+  });
+
   it('should render correctly with datepicker open', () => {
     const datepicker = mount(
       <BpkDatepicker

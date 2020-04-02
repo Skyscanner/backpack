@@ -9,6 +9,8 @@ ADDED:
   - bpk-component-image:
   - bpk-react-utils:
     - Rename `componentWillReceiveProps` to `UNSAFE_componentWillReceiveProps`.
+  - bpk-component-datepicker:
+    - Add `valid` prop to `BpkDatepicker`.
 
 # How to write a good changelog entry:
 #
