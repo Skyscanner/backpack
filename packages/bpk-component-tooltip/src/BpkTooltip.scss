@@ -19,6 +19,7 @@
 @import '~bpk-mixins';
 
 $arrow-size: $bpk-spacing-xs;
+$dark-background-color: $bpk-color-sky-gray;
 
 .bpk-tooltip-portal {
   z-index: $bpk-zindex-tooltip;
@@ -97,6 +98,40 @@ $arrow-size: $bpk-spacing-xs;
     .bpk-tooltip-portal[x-placement='left'] & {
       @include bpk-layer-arrow-right($arrow-size);
     }
+
+    &--dark {
+      .bpk-tooltip-portal[x-placement='top'] & {
+        @include bpk-layer-arrow-bottom(
+          $arrow-size,
+          $dark-background-color,
+          $dark-background-color
+        );
+      }
+
+      .bpk-tooltip-portal[x-placement='right'] & {
+        @include bpk-layer-arrow-left(
+          $arrow-size,
+          $dark-background-color,
+          $dark-background-color
+        );
+      }
+
+      .bpk-tooltip-portal[x-placement='bottom'] & {
+        @include bpk-layer-arrow-top(
+          $arrow-size,
+          $dark-background-color,
+          $dark-background-color
+        );
+      }
+
+      .bpk-tooltip-portal[x-placement='left'] & {
+        @include bpk-layer-arrow-right(
+          $arrow-size,
+          $dark-background-color,
+          $dark-background-color
+        );
+      }
+    }
   }
 
   &__inner {
@@ -106,6 +141,12 @@ $arrow-size: $bpk-spacing-xs;
 
     &--padded {
       padding: $bpk-spacing-xs $bpk-spacing-sm;
+    }
+
+    &--dark {
+      color: $bpk-color-white;
+
+      @include bpk-layer($dark-background-color, $dark-background-color);
     }
   }
 }

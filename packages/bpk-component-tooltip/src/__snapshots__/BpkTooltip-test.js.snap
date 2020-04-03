@@ -59,3 +59,23 @@ exports[`BpkTooltip should render correctly with "padded" attribute equal to fal
   </div>
 </section>
 `;
+
+exports[`BpkTooltip should render correctly with type=dark 1`] = `
+<section
+  className="bpk-tooltip"
+  id="my-popover"
+  role="dialog"
+  tabIndex="-1"
+>
+  <span
+    className="bpk-tooltip__arrow bpk-tooltip__arrow--dark"
+    id="js-bpk-popover-arrow"
+    role="presentation"
+  />
+  <div
+    className="bpk-tooltip__inner bpk-tooltip__inner--dark bpk-tooltip__inner--padded"
+  >
+    My tooltip content
+  </div>
+</section>
+`;

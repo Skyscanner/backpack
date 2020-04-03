@@ -1,5 +1,8 @@
 # UNRELEASED:
 
+ADDED:
+  - bpk-component-tooltip:
+    - New `type` prop for creating dark tooltips. See https://backpack.github.io/components/tooltip?platform=web for an example.
 
 # How to write a good changelog entry:
 #
