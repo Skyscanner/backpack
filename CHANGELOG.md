@@ -2,6 +2,27 @@
 
 [Unreleased changes](./UNRELEASED.yaml).
 
+# 2020-04-03
+
+**Breaking:**
+
+The following changes are only breaking if you are on a version of React lower than 16.3.
+
+**If you're on React 16.3 or higher, these changes are not breaking.**
+
+  - bpk-animate-height: 2.0.43 => 3.0.0
+  - bpk-component-banner-alert: 3.0.44 => 4.0.0
+  - bpk-component-calendar: 6.3.3 => 7.0.0
+  - bpk-component-datatable: 1.0.43 => 2.0.0
+  - bpk-component-drawer: 2.0.44 => 3.0.0
+  - bpk-component-image: 3.0.43 => 4.0.0
+  - bpk-react-utils: 2.9.4 => 3.0.0
+    - Renamed `componentWillReceiveProps` to `UNSAFE_componentWillReceiveProps`.
+
+  **Added:**
+  - bpk-component-datepicker: 11.1.21 => 11.2.0
+    - Add `valid` prop to `BpkDatepicker`.
+
 # 2020-03-30
 
 **Fixed:**

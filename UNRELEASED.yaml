@@ -1,16 +1,5 @@
 # UNRELEASED:
 
-ADDED:
-  - bpk-animate-height:
-  - bpk-component-banner-alert:
-  - bpk-component-calendar:
-  - bpk-component-datatable:
-  - bpk-component-drawer:
-  - bpk-component-image:
-  - bpk-react-utils:
-    - Rename `componentWillReceiveProps` to `UNSAFE_componentWillReceiveProps`.
-  - bpk-component-datepicker:
-    - Add `valid` prop to `BpkDatepicker`.
 
 # How to write a good changelog entry:
 #
