@@ -63,7 +63,7 @@ class BpkBackgroundImage extends Component<BpkBackgroundImageProps> {
     }
   }
 
-  componentWillReceiveProps(newProps: BpkBackgroundImageProps) {
+  UNSAFE_componentWillReceiveProps(newProps: BpkBackgroundImageProps) {
     if (!this.props.inView && newProps.inView) {
       this.startImageLoad();
     }

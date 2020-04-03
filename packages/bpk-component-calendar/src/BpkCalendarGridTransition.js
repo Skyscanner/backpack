@@ -73,7 +73,7 @@ class BpkCalendarGridTransition extends Component {
     this.isTransitionEndSupported = isTransitionEndSupported();
   }
 
-  componentWillReceiveProps(nextProps) {
+  UNSAFE_componentWillReceiveProps(nextProps) {
     const hasMonthChanged = !isSameMonth(this.props.month, nextProps.month);
 
     if (hasMonthChanged) {

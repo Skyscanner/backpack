@@ -24,6 +24,7 @@ import BpkFlareBar from './BpkFlareBar';
 describe('BpkFlareBar', () => {
   it('should render correctly', () => {
     const tree = renderer.create(<BpkFlareBar />).toJSON();
+
     expect(tree).toMatchSnapshot();
   });
 
@@ -31,6 +32,7 @@ describe('BpkFlareBar', () => {
     const tree = renderer
       .create(<BpkFlareBar className="my-custom-class" />)
       .toJSON();
+
     expect(tree).toMatchSnapshot();
   });
 
@@ -38,11 +40,13 @@ describe('BpkFlareBar', () => {
     const tree = renderer
       .create(<BpkFlareBar svgClassName="my-custom-class" />)
       .toJSON();
+
     expect(tree).toMatchSnapshot();
   });
 
   it('should render correctly with "rounded" set to `false`', () => {
     const tree = renderer.create(<BpkFlareBar rounded={false} />).toJSON();
+
     expect(tree).toMatchSnapshot();
   });
 });

@@ -51,7 +51,7 @@ class AnimateHeight extends Component {
     }
   }
 
-  componentWillReceiveProps(nextProps) {
+  UNSAFE_componentWillReceiveProps(nextProps) {
     const { height } = this.props;
 
     // Check if 'height' prop has changed
