@@ -24,7 +24,21 @@ const fs = require('fs');
 const util = require('util');
 const https = require('https');
 
+const colors = require('colors');
 const cliProgress = require('cli-progress');
+
+// TODO remove this warning once NPM is more reliable or we move to
+// scoped packages and don't need the check at all.
+console.warn(
+  colors.yellow(
+    `
+Due to issues with NPM, this check often gets stuck between 90-99%.
+
+If this happens, please quit and restart.
+
+You may have to try a few times before it works. We're working on a more permanent solution.`,
+  ),
+);
 
 const bar = new cliProgress.Bar({}, cliProgress.Presets.shades_classic);
 
