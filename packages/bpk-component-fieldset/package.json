@@ -20,7 +20,9 @@
     "prop-types": "^15.6.2"
   },
   "devDependencies": {
+    "bpk-component-calendar": "^6.3.3",
     "bpk-component-checkbox": "^2.0.44",
+    "bpk-component-datepicker": "^11.1.21",
     "bpk-component-input": "^5.0.43",
     "bpk-component-select": "^3.0.42"
   },
