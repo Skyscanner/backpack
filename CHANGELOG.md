@@ -2,6 +2,12 @@
 
 [Unreleased changes](./UNRELEASED.yaml).
 
+# 2020-03-06
+
+**Added:**
+  - bpk-component-tooltip: 4.0.43 => 4.1.0
+    - New `type` prop for creating dark tooltips. See https://backpack.github.io/components/tooltip?platform=web for an example.
+
 # 2020-04-03
 
 **Breaking:**
