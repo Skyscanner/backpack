@@ -164,6 +164,7 @@ const withBannerAlertState = (WrappedComponent: ComponentType<any>) => {
           onDismiss={this.onDismiss}
           show={this.state.show}
           animateOnLeave={(hideAfter && hideAfter > 0) || animateOnLeave}
+          // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
           {...rest}
         >
           {children}

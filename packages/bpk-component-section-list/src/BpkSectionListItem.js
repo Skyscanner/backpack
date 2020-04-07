@@ -58,6 +58,7 @@ const BpkSectionListItem = (props: Props) => {
         target={target}
         onClick={onClick}
         className={classNames.join(' ')}
+        // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
         {...rest}
       >
         {children}
@@ -74,6 +75,7 @@ const BpkSectionListItem = (props: Props) => {
         type="button"
         onClick={onClick}
         className={classNames.join(' ')}
+        // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
         {...rest}
       >
         {children}
@@ -85,7 +87,11 @@ const BpkSectionListItem = (props: Props) => {
   }
 
   return (
-    <div className={classNames.join(' ')} {...rest}>
+    <div
+      className={classNames.join(' ')}
+      // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
+      {...rest}
+    >
       {children}
     </div>
   );

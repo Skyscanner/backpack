@@ -176,6 +176,7 @@ class BpkHorizontalNav extends Component<Props> {
         scrollerRef={ref => {
           this.scrollRef = ref;
         }}
+        // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
         {...rest}
       >
         <ul className={getClassName('bpk-horizontal-nav__list')}>{children}</ul>

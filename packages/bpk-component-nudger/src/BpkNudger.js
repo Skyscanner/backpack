@@ -50,6 +50,7 @@ const BpkNudger = (props: Props) => {
       incrementValue={incrementValue}
       decrementValue={decrementValue}
       formatValue={formatValue}
+      // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
       {...rest}
     />
   );

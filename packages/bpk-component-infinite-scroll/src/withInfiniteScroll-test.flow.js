@@ -46,7 +46,11 @@ class List extends Component<ListProps> {
   render() {
     const { elements, ...rest } = this.props;
     return (
-      <div id="list" {...rest}>
+      <div
+        id="list"
+        // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
+        {...rest}
+      >
         {elements.forEach(element => (
           <div key={element}>{element}</div>
         ))}

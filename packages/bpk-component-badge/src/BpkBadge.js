@@ -68,7 +68,13 @@ const BpkBadge = (props: Props) => {
     classNames.push(className);
   }
 
-  return <span className={classNames.join(' ')} {...rest} />;
+  return (
+    <span
+      className={classNames.join(' ')}
+      // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
+      {...rest}
+    />
+  );
 };
 
 BpkBadge.propTypes = {

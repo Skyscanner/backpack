@@ -18,7 +18,7 @@
 
 /* @flow strict */
 
-import React, { type Node, type Element, type ElementConfig } from 'react';
+import React, { type Node, type Element } from 'react';
 import PropTypes from 'prop-types';
 import { cssModules } from 'bpk-react-utils';
 import BpkText from 'bpk-component-text';
@@ -27,15 +27,14 @@ import STYLES from './BpkNavigationBar.scss';
 
 const getClassNames = cssModules(STYLES);
 
-export type Props = {|
-  ...$Exact<$Shape<HTMLDivElement>>,
+export type Props = {
   id: string,
   title: Node,
   className: ?string,
   leadingButton: ?Element<any>,
   trailingButton: ?Element<any>,
   sticky: ?boolean,
-|};
+};
 
 const cloneWithClass = (elem: Element<any>, newStyle: string) => {
   const className = getClassNames(elem.props.className, newStyle);
@@ -63,6 +62,7 @@ const BpkNavigationBar = (props: Props) => {
         sticky && 'bpk-navigation-bar__sticky',
         className,
       )}
+      // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
       {...rest}
     >
       {leadingButton &&

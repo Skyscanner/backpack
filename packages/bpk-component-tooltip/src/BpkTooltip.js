@@ -62,6 +62,7 @@ const BpkTooltip = (props: TooltipProps) => {
         tabIndex="-1"
         role="dialog"
         className={classNames}
+        // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
         {...rest}
       >
         <span id={ARROW_ID} className={arrowClassNames} role="presentation" />

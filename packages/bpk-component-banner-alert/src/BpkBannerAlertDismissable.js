@@ -35,7 +35,11 @@ type Props = {
 };
 
 const BpkBannerAlertDismissable = (props: Props) => (
-  <BpkBannerAlertInner configuration={CONFIGURATION.DISMISSABLE} {...props} />
+  <BpkBannerAlertInner
+    configuration={CONFIGURATION.DISMISSABLE}
+    // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
+    {...props}
+  />
 );
 
 BpkBannerAlertDismissable.propTypes = {

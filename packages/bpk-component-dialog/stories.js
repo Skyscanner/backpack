@@ -90,6 +90,7 @@ class DialogContainer extends Component<Props, State> {
           onClose={this.onClose}
           getApplicationElement={() => document.getElementById('pagewrap')}
           renderTarget={() => document.getElementById('dialog-container')}
+          // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
           {...this.props}
         >
           {this.props.children}

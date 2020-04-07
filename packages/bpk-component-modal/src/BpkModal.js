@@ -92,6 +92,7 @@ const BpkModal = (props: Props) => {
         closeOnScrimClick={closeOnScrimClick}
         containerClassName={containerClass.join(' ')}
         isIphone={isIphone}
+        // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
         {...rest}
       />
     </Portal>

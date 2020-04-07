@@ -39,6 +39,7 @@ const BpkNavigationBarIconButton = ({ icon, className, ...rest }: Props) => (
   <BpkIconButton
     customIcon={icon}
     className={getClassName('bpk-navigation-bar-icon-button', className)}
+    // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
     {...rest}
   />
 );

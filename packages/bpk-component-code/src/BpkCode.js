@@ -43,7 +43,11 @@ const BpkCode = (props: Props) => {
   }
 
   return (
-    <code className={classNames.join(' ')} {...rest}>
+    <code
+      className={classNames.join(' ')}
+      // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
+      {...rest}
+    >
       {children}
     </code>
   );

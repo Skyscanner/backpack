@@ -82,6 +82,7 @@ class BpkHorizontalNavItem extends Component<Props> {
         href={href}
         className={innerClassNames}
         aria-disabled={selected || disabled}
+        // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
         {...rest}
       >
         {children}
@@ -91,6 +92,7 @@ class BpkHorizontalNavItem extends Component<Props> {
         type="button"
         className={innerClassNames}
         disabled={selected || disabled}
+        // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
         {...rest}
       >
         {children}
