@@ -23,32 +23,33 @@ import React, { type Node } from 'react';
 import { TransitionInitialMount, cssModules } from 'bpk-react-utils';
 
 import STYLES from './BpkTooltip.scss';
-import { ARROW_ID } from './constants';
+import { ARROW_ID, TOOLTIP_TYPES } from './constants';
 
 const getClassName = cssModules(STYLES);
 
 export type TooltipProps = {
   id: string,
   children: Node,
-  className: ?string,
+  type: $Keys<typeof TOOLTIP_TYPES>,
   padded: boolean,
+  className: ?string,
 };
 
 const BpkTooltip = (props: TooltipProps) => {
-  const { id, children, className, padded, ...rest } = props;
+  const { id, children, className, padded, type, ...rest } = props;
 
-  const classNames = [getClassName('bpk-tooltip')];
-  const innerClassNames = [getClassName('bpk-tooltip__inner')];
+  const classNames = getClassName('bpk-tooltip', className);
 
-  // outer classNames
-  if (className) {
-    classNames.push(className);
-  }
+  const innerClassNames = getClassName(
+    'bpk-tooltip__inner',
+    type === TOOLTIP_TYPES.dark && 'bpk-tooltip__inner--dark',
+    padded && 'bpk-tooltip__inner--padded',
+  );
 
-  // inner classNames
-  if (padded) {
-    innerClassNames.push(getClassName('bpk-tooltip__inner--padded'));
-  }
+  const arrowClassNames = getClassName(
+    'bpk-tooltip__arrow',
+    type === TOOLTIP_TYPES.dark && 'bpk-tooltip__arrow--dark',
+  );
 
   return (
     <TransitionInitialMount
@@ -60,15 +61,11 @@ const BpkTooltip = (props: TooltipProps) => {
         id={id}
         tabIndex="-1"
         role="dialog"
-        className={classNames.join(' ')}
+        className={classNames}
         {...rest}
       >
-        <span
-          id={ARROW_ID}
-          className={getClassName('bpk-tooltip__arrow')}
-          role="presentation"
-        />
-        <div className={innerClassNames.join(' ')}>{children}</div>
+        <span id={ARROW_ID} className={arrowClassNames} role="presentation" />
+        <div className={innerClassNames}>{children}</div>
       </section>
     </TransitionInitialMount>
   );
@@ -79,11 +76,13 @@ export const propTypes = {
   children: PropTypes.node.isRequired,
   className: PropTypes.string,
   padded: PropTypes.bool,
+  type: PropTypes.oneOf(Object.keys(TOOLTIP_TYPES)),
 };
 
 export const defaultProps = {
   className: null,
   padded: true,
+  type: TOOLTIP_TYPES.light,
 };
 
 BpkTooltip.propTypes = { ...propTypes };

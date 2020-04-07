@@ -24,7 +24,7 @@ import { withDefaultProps } from 'bpk-react-utils';
 import BpkText from 'bpk-component-text';
 import { spacingSm, colorMonteverde } from 'bpk-tokens/tokens/base.es6';
 
-import BpkTooltip from './index';
+import BpkTooltip, { TOOLTIP_TYPES } from './index';
 
 const st = {
   display: 'flex',
@@ -44,6 +44,20 @@ storiesOf('bpk-component-tooltip', module)
   .add('Default', () => (
     <div style={st}>
       <BpkTooltip id="my-tooltip" target={<Heading>£295</Heading>}>
+        This is the cheapest price!
+        <span role="img" aria-label="Thumbs up">
+          👍
+        </span>
+      </BpkTooltip>
+    </div>
+  ))
+  .add('Dark', () => (
+    <div style={st}>
+      <BpkTooltip
+        type={TOOLTIP_TYPES.dark}
+        id="my-tooltip"
+        target={<Heading>£295</Heading>}
+      >
         This is the cheapest price!
         <span role="img" aria-label="Thumbs up">
           👍

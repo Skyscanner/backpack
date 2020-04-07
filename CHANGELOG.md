@@ -2,6 +2,40 @@
 
 [Unreleased changes](./UNRELEASED.yaml).
 
+# 2020-03-06
+
+**Added:**
+  - bpk-component-tooltip: 4.0.43 => 4.1.0
+    - New `type` prop for creating dark tooltips. See https://backpack.github.io/components/tooltip?platform=web for an example.
+
+# 2020-04-03
+
+**Breaking:**
+
+The following changes are only breaking if you are on a version of React lower than 16.3.
+
+**If you're on React 16.3 or higher, these changes are not breaking.**
+
+  - bpk-animate-height: 2.0.43 => 3.0.0
+  - bpk-component-banner-alert: 3.0.44 => 4.0.0
+  - bpk-component-calendar: 6.3.3 => 7.0.0
+  - bpk-component-datatable: 1.0.43 => 2.0.0
+  - bpk-component-drawer: 2.0.44 => 3.0.0
+  - bpk-component-image: 3.0.43 => 4.0.0
+  - bpk-react-utils: 2.9.4 => 3.0.0
+    - Renamed `componentWillReceiveProps` to `UNSAFE_componentWillReceiveProps`.
+
+  **Added:**
+  - bpk-component-datepicker: 11.1.21 => 11.2.0
+    - Add `valid` prop to `BpkDatepicker`.
+
+# 2020-03-30
+
+**Fixed:**
+  - bpk-component-icon:
+  - bpk-svgs:
+    - Aligned new hotels icon to the icon grid.
+
 # 2020-03-24 - Fix for flare component
 
 **Fixed:**
@@ -14,7 +48,7 @@
 
 **Added:**
   - bpk-component-calendar:
-    - Added the ability to use coloured calendar. Added a new `cellType` prop to allow default colour styling to the dates. 
+    - Added the ability to use coloured calendar. Added a new `cellType` prop to allow default colour styling to the dates.
     - Added new `style` prop to custom styles of default `BpkCalendarDate` component.
   - bpk-component-navigation-bar:
     - Added `sticky` prop to `BpkNavigationBar` so it stays at the top when scrolling up.

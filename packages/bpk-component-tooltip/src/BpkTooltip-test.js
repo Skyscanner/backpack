@@ -22,11 +22,24 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 
 import BpkTooltip from './BpkTooltip';
+import { TOOLTIP_TYPES } from './constants';
 
 describe('BpkTooltip', () => {
   it('should render correctly', () => {
     const tree = renderer
       .create(<BpkTooltip id="my-popover">My tooltip content</BpkTooltip>)
+      .toJSON();
+
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('should render correctly with type=dark', () => {
+    const tree = renderer
+      .create(
+        <BpkTooltip type={TOOLTIP_TYPES.dark} id="my-popover">
+          My tooltip content
+        </BpkTooltip>,
+      )
       .toJSON();
 
     expect(tree).toMatchSnapshot();

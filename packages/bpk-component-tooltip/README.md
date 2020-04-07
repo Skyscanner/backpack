@@ -27,18 +27,19 @@ const App = () => (
 
 ## Props
 
-| Property              | PropType                                  | Required | Default Value |
-| --------------------- | ----------------------------------------- | -------- | ------------- |
-| id                    | string                                    | true     | -             |
-| children              | node                                      | true     | -             |
-| target                | node                                      | true     | -             |
-| hideOnTouchDevices    | bool                                      | false    | true          |
-| placement             | oneOf(['top', 'right', 'bottom', 'left']) | false    | 'bottom'      |
-| padded                | bool                                      | false    | true          |
-| portalStyle           | object                                    | false    | null          |
-| portalClassName       | string                                    | false    | null          |
-| popperModifiers       | object                                    | false    | null          |
-| renderTarget          | func                                      | false    | null          |
+| Property              | PropType                                       | Required | Default Value       |
+| --------------------- | ---------------------------------------------- | -------- | ------------------- |
+| id                    | string                                         | true     | -                   |
+| children              | node                                           | true     | -                   |
+| target                | node                                           | true     | -                   |
+| hideOnTouchDevices    | bool                                           | false    | true                |
+| placement             | oneOf(['top', 'right', 'bottom', 'left'])      | false    | 'bottom'            |
+| padded                | bool                                           | false    | true                |
+| portalStyle           | object                                         | false    | null                |
+| portalClassName       | string                                         | false    | null                |
+| popperModifiers       | object                                         | false    | null                |
+| renderTarget          | func                                           | false    | null                |
+| type                  | oneOf(`TOOLTIP_TYPES.light`, `TOOLTIP_TYPES.dark`) | false    | `TOOLTIP_TYPES.light` |
 
 ### Prop Details
 

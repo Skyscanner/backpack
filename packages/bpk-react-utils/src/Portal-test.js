@@ -430,7 +430,7 @@ describe('Portal', () => {
       });
     });
 
-    describe('componentWillReceiveProps()', () => {
+    describe('UNSAFE_componentWillReceiveProps()', () => {
       it('should close the portal when isOpen is removed', () => {
         portal.setProps({ isOpen: false }).update();
         expect(closeSpy.mock.calls.length).toEqual(1);

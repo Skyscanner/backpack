@@ -324,4 +324,21 @@ storiesOf('bpk-component-datepicker', module)
         />
       </div>
     );
-  });
+  })
+  .add('Invalid', () => (
+    <div id="application-element">
+      <CalendarContainer
+        id="myDatepicker"
+        closeButtonText="Close"
+        daysOfWeek={weekDays}
+        weekStartsOn={1}
+        changeMonthLabel="Change month"
+        title="Departure date"
+        formatDate={formatDate}
+        formatMonth={formatMonth}
+        formatDateFull={formatDateFull}
+        date={new Date()}
+        valid={false}
+      />
+    </div>
+  ));

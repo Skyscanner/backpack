@@ -85,6 +85,7 @@ class BpkDatepicker extends Component {
       weekStartsOn,
       initiallyFocusedDate,
       renderTarget,
+      valid,
       ...rest
     } = this.props;
 
@@ -107,6 +108,7 @@ class BpkDatepicker extends Component {
         onOpen={this.onOpen}
         isOpen={this.state.isOpen}
         readOnly
+        valid={valid}
         {...inputProps}
       />
     );
@@ -197,6 +199,7 @@ BpkDatepicker.propTypes = {
   initiallyFocusedDate: PropTypes.instanceOf(Date),
   renderTarget: PropTypes.func,
   isOpen: PropTypes.bool,
+  valid: PropTypes.bool,
 };
 
 BpkDatepicker.defaultProps = {
@@ -214,6 +217,7 @@ BpkDatepicker.defaultProps = {
   initiallyFocusedDate: null,
   renderTarget: null,
   isOpen: false,
+  valid: null,
 };
 
 export default BpkDatepicker;

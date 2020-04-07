@@ -23,6 +23,13 @@ import BpkSelect from 'bpk-component-select';
 import BpkCheckbox from 'bpk-component-checkbox';
 import { storiesOf } from '@storybook/react';
 import BpkInput, { INPUT_TYPES } from 'bpk-component-input';
+import BpkDatepicker from 'bpk-component-datepicker';
+import {
+  weekDays,
+  formatMonth,
+  formatDateFull,
+} from 'bpk-component-calendar/test-utils';
+import { format } from 'bpk-component-calendar/src/date-utils';
 
 import BpkFieldset, {
   type BpkFieldsetProps,
@@ -30,14 +37,18 @@ import BpkFieldset, {
   defaultProps,
 } from './index';
 
+const formatDate = date => format(date, 'DD/MM/YYYY');
+
 type Props = {
   ...$Exact<BpkFieldsetProps>,
   validValue: string | boolean,
+  isDate: boolean,
 };
 
 type State = {
   value: string,
   checked: boolean,
+  valueDate: ?Date,
 };
 
 class FieldsetContainer extends Component<Props, State> {
@@ -45,11 +56,13 @@ class FieldsetContainer extends Component<Props, State> {
     ...propTypes,
     validValue: PropTypes.oneOfType([PropTypes.string, PropTypes.bool])
       .isRequired,
+    isDate: PropTypes.bool,
   };
 
   static defaultProps = {
     ...defaultProps,
     isCheckbox: false,
+    isDate: false,
   };
 
   constructor(props) {
@@ -58,6 +71,7 @@ class FieldsetContainer extends Component<Props, State> {
     this.state = {
       value: this.props.children.props.value,
       checked: false,
+      valueDate: null,
     };
   }
 
@@ -68,12 +82,22 @@ class FieldsetContainer extends Component<Props, State> {
     });
   };
 
+  onDateSelect = dt => {
+    this.setState({
+      valueDate: dt,
+    });
+  };
+
   render() {
-    const { children, validValue, isCheckbox, ...rest } = this.props;
+    const { children, validValue, isCheckbox, isDate, ...rest } = this.props;
 
     let isValid;
     if (isCheckbox) {
       isValid = this.state.checked === validValue;
+    } else if (isDate) {
+      isValid = this.state.valueDate
+        ? formatDate(this.state.valueDate) === validValue
+        : undefined;
     } else {
       isValid =
         this.state.value === '' ? undefined : this.state.value === validValue;
@@ -81,12 +105,13 @@ class FieldsetContainer extends Component<Props, State> {
 
     const dynamicChildrenProps = isCheckbox
       ? { checked: this.state.checked }
-      : { value: this.state.value, valid: isValid };
+      : { value: this.state.value, date: this.state.valueDate, valid: isValid };
 
     const dynamicFieldsetProps = isCheckbox ? { valid: isValid } : {};
 
     const clonedChildren = cloneElement(children, {
       onChange: this.onChange,
+      onDateSelect: this.onDateSelect,
       ...dynamicChildrenProps,
     });
 
@@ -161,6 +186,34 @@ storiesOf('bpk-component-fieldset', module)
       />
     </FieldsetContainer>
   ))
+  .add('DatePicker', () => {
+    const inputProps = { placeholder: 'Select the 10th' };
+    return (
+      <FieldsetContainer
+        label="Date"
+        validationMessage="Please select the 10th"
+        isDate
+        validValue="10/02/2010"
+      >
+        <BpkDatepicker
+          id="date_input"
+          name="date"
+          closeButtonText="Close"
+          daysOfWeek={weekDays}
+          changeMonthLabel="Change month"
+          title="Date"
+          weekStartsOn={1}
+          getApplicationElement={() => document.createElement('div')}
+          formatDate={formatDate}
+          formatMonth={formatMonth}
+          formatDateFull={formatDateFull}
+          inputProps={inputProps}
+          minDate={new Date(2010, 1, 8)}
+          maxDate={new Date(2010, 1, 28)}
+        />
+      </FieldsetContainer>
+    );
+  })
   .add('Required input', () => (
     <FieldsetContainer
       label="Name"

@@ -31,9 +31,12 @@
 ///     @include bpk-layer;
 ///   }
 
-@mixin bpk-layer {
-  border: $bpk-one-pixel-rem solid $bpk-color-sky-gray-tint-06;
-  background-color: $bpk-color-white;
+@mixin bpk-layer(
+  $background-color: $bpk-color-white,
+  $border-color: $bpk-color-sky-gray-tint-06
+) {
+  border: $bpk-one-pixel-rem solid $border-color;
+  background-color: $background-color;
 
   @include bpk-border-radius-sm;
   @include bpk-box-shadow-lg;
@@ -74,7 +77,11 @@
 ///     @include bpk-layer-arrow-top(1rem);
 ///   }
 
-@mixin bpk-layer-arrow-top($arrow-size) {
+@mixin bpk-layer-arrow-top(
+  $arrow-size,
+  $arrow-color: $bpk-color-white,
+  $border-color: $bpk-color-sky-gray-tint-06
+) {
   bottom: 100%;
   width: ($arrow-size * 2);
   height: $arrow-size;
@@ -82,7 +89,7 @@
   &::before {
     top: -($arrow-size + $bpk-one-pixel-rem);
     margin-left: -$bpk-one-pixel-rem;
-    border-bottom-color: $bpk-color-sky-gray-tint-06;
+    border-bottom-color: $border-color;
 
     @include bpk-rtl {
       margin-right: -$bpk-one-pixel-rem;
@@ -92,7 +99,7 @@
 
   &::after {
     top: -$arrow-size + $bpk-one-pixel-rem;
-    border-bottom-color: $bpk-color-white;
+    border-bottom-color: $arrow-color;
   }
 }
 
@@ -104,7 +111,11 @@
 ///     @include bpk-layer-arrow-right(1rem);
 ///   }
 
-@mixin bpk-layer-arrow-right($arrow-size) {
+@mixin bpk-layer-arrow-right(
+  $arrow-size,
+  $arrow-color: $bpk-color-white,
+  $border-color: $bpk-color-sky-gray-tint-06
+) {
   left: 100%;
   width: $arrow-size;
   height: ($arrow-size * 2);
@@ -112,12 +123,12 @@
   &::before {
     right: -($arrow-size + $bpk-one-pixel-rem);
     margin-top: -$bpk-one-pixel-rem;
-    border-left-color: $bpk-color-sky-gray-tint-06;
+    border-left-color: $border-color;
   }
 
   &::after {
     right: -$arrow-size + $bpk-one-pixel-rem;
-    border-left-color: $bpk-color-white;
+    border-left-color: $arrow-color;
   }
 }
 
@@ -129,7 +140,11 @@
 ///     @include bpk-layer-arrow-bottom(1rem);
 ///   }
 
-@mixin bpk-layer-arrow-bottom($arrow-size) {
+@mixin bpk-layer-arrow-bottom(
+  $arrow-size,
+  $arrow-color: $bpk-color-white,
+  $border-color: $bpk-color-sky-gray-tint-06
+) {
   top: 100%;
   width: ($arrow-size * 2);
   height: $arrow-size;
@@ -137,7 +152,7 @@
   &::before {
     bottom: -($arrow-size + $bpk-one-pixel-rem);
     margin-left: -$bpk-one-pixel-rem;
-    border-top-color: $bpk-color-sky-gray-tint-06;
+    border-top-color: $border-color;
 
     @include bpk-rtl {
       margin-right: -$bpk-one-pixel-rem;
@@ -147,7 +162,7 @@
 
   &::after {
     bottom: -$arrow-size + $bpk-one-pixel-rem;
-    border-top-color: $bpk-color-white;
+    border-top-color: $arrow-color;
   }
 }
 
@@ -159,7 +174,11 @@
 ///     @include bpk-layer-arrow-left(1rem);
 ///   }
 
-@mixin bpk-layer-arrow-left($arrow-size) {
+@mixin bpk-layer-arrow-left(
+  $arrow-size,
+  $arrow-color: $bpk-color-white,
+  $border-color: $bpk-color-sky-gray-tint-06
+) {
   right: 100%;
   width: $arrow-size;
   height: ($arrow-size * 2);
@@ -167,11 +186,11 @@
   &::before {
     left: -($arrow-size + $bpk-one-pixel-rem);
     margin-top: -$bpk-one-pixel-rem;
-    border-right-color: $bpk-color-sky-gray-tint-06;
+    border-right-color: $border-color;
   }
 
   &::after {
     left: -$arrow-size + $bpk-one-pixel-rem;
-    border-right-color: $bpk-color-white;
+    border-right-color: $arrow-color;
   }
 }

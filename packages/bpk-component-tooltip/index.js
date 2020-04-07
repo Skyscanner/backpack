@@ -19,7 +19,9 @@
 /* @flow strict */
 
 import BpkTooltipPortal, { type Props } from './src/BpkTooltipPortal';
+import { TOOLTIP_TYPES } from './src/constants';
 
 export type BpkTooltipPortalProps = Props;
 
 export default BpkTooltipPortal;
+export { TOOLTIP_TYPES };

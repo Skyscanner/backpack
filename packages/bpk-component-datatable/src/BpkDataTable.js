@@ -85,7 +85,7 @@ class BpkDataTable extends Component {
     };
   }
 
-  componentWillReceiveProps({ rows }) {
+  UNSAFE_componentWillReceiveProps({ rows }) {
     if (rows !== this.props.rows) {
       const { sortBy, sortDirection } = this.state;
       const sortedList = sortList({ sortBy, sortDirection, list: rows });

@@ -27,6 +27,7 @@ describe('BpkContentBubble', () => {
     const tree = renderer
       .create(<BpkContentBubble showPointer content={content} />)
       .toJSON();
+
     expect(tree).toMatchSnapshot();
   });
 
@@ -42,6 +43,7 @@ describe('BpkContentBubble', () => {
         />,
       )
       .toJSON();
+
     expect(tree).toMatchSnapshot();
   });
 
@@ -57,6 +59,7 @@ describe('BpkContentBubble', () => {
         />,
       )
       .toJSON();
+
     expect(tree).toMatchSnapshot();
   });
 
@@ -71,6 +74,7 @@ describe('BpkContentBubble', () => {
         />,
       )
       .toJSON();
+
     expect(tree).toMatchSnapshot();
   });
 });

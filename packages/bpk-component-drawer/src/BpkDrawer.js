@@ -37,7 +37,7 @@ class BpkDrawer extends Component {
     };
   }
 
-  componentWillReceiveProps(nextProps) {
+  UNSAFE_componentWillReceiveProps(nextProps) {
     if (!this.props.isOpen && nextProps.isOpen) {
       this.setState({ isDrawerShown: true });
     }
