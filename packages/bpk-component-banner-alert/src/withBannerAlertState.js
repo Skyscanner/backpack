@@ -158,13 +158,13 @@ const withBannerAlertState = (WrappedComponent: ComponentType<any>) => {
       } = this.props;
 
       return (
+        // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
         <WrappedComponent
           expanded={this.state.expanded}
           onExpandToggle={this.onExpandToggle}
           onDismiss={this.onDismiss}
           show={this.state.show}
           animateOnLeave={(hideAfter && hideAfter > 0) || animateOnLeave}
-          // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
           {...rest}
         >
           {children}

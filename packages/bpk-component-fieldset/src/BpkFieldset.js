@@ -62,8 +62,9 @@ const BpkFieldset = (props: Props) => {
 
   let childId: string = children.props.id;
   if (
-    // $FlowFixMe
+    // $FlowFixMe Flow is being dumb here and doesn't let us do this check, even though it's perfectly safe!
     children.props.inputProps &&
+    // $FlowFixMe
     children.props.inputProps.id &&
     typeof children.props.inputProps.id === 'string'
   ) {
@@ -107,11 +108,8 @@ const BpkFieldset = (props: Props) => {
   }
 
   return (
-    <fieldset
-      className={classNames.join(' ')}
-      // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
-      {...rest}
-    >
+    // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
+    <fieldset className={classNames.join(' ')} {...rest}>
       {!isCheckbox && (
         <BpkLabel
           htmlFor={childId}
@@ -132,11 +130,11 @@ const BpkFieldset = (props: Props) => {
         </span>
       )}
       {!disabled && validationMessage && (
+        // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
         <BpkFormValidation
           id={validationMessageId}
           expanded={isInvalid}
           isCheckbox={isCheckbox}
-          // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
           {...validationProps}
         >
           {validationMessage}

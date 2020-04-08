@@ -55,6 +55,7 @@ const BpkNavigationBar = (props: Props) => {
   const titleId = `${id}-bpk-navigation-bar-title`;
 
   return (
+    // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
     <nav
       aria-labelledby={titleId}
       className={getClassNames(
@@ -62,7 +63,6 @@ const BpkNavigationBar = (props: Props) => {
         sticky && 'bpk-navigation-bar__sticky',
         className,
       )}
-      // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
       {...rest}
     >
       {leadingButton &&

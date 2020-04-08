@@ -71,13 +71,13 @@ const BpkButton = (props: Props) => {
 
   if (!disabled && href) {
     return (
+      // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
       <a
         href={href}
         className={classNameFinal}
         onClick={onClick}
         target={target}
         rel={rel}
-        // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
         {...rest}
       >
         {children}
@@ -99,12 +99,12 @@ const BpkButton = (props: Props) => {
 
   /* eslint-disable react/button-has-type */
   return (
+    // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
     <button
       type={buttonType}
       disabled={disabled}
       className={classNameFinal}
       onClick={onClickWrapper}
-      // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
       {...rest}
     >
       {children}

@@ -161,11 +161,8 @@ export default function withLazyLoading(
           style={style}
           className={className}
         >
-          <Component
-            inView={this.state.inView}
-            // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
-            {...rest}
-          />
+          {/* $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'. */}
+          <Component inView={this.state.inView} {...rest} />
         </div>
       );
     }

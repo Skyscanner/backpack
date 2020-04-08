@@ -135,6 +135,7 @@ class PopoverContainer extends Component<Props, State> {
     return (
       <div id="popover-container">
         {openButton}
+        {/* $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'. */}
         <BpkPopover
           closeButtonText="Close"
           id={`my-popover-${id}`}
@@ -143,7 +144,6 @@ class PopoverContainer extends Component<Props, State> {
           onClose={this.closePopover}
           renderTarget={renderTarget}
           target={target}
-          // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
           {...rest}
         >
           <BpkContentContainer>

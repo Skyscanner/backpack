@@ -63,6 +63,7 @@ export const View = ({
   noNavBar: boolean,
   centered: boolean,
 }) => (
+  // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
   <section
     className={getClassName(
       'bpk-navigation-stack-view',
@@ -71,7 +72,6 @@ export const View = ({
       centered && 'bpk-navigation-stack-view--centered',
       className,
     )}
-    // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
     {...rest}
   >
     {children({ index, pushView, popView })}

@@ -78,21 +78,21 @@ class BpkHorizontalNavItem extends Component<Props> {
     );
 
     const clickableElement = href ? (
+      // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
       <a
         href={href}
         className={innerClassNames}
         aria-disabled={selected || disabled}
-        // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
         {...rest}
       >
         {children}
       </a>
     ) : (
+      // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
       <button
         type="button"
         className={innerClassNames}
         disabled={selected || disabled}
-        // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
         {...rest}
       >
         {children}

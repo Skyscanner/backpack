@@ -174,11 +174,8 @@ class BpkPopoverPortal extends Component<Props> {
         renderTarget={renderTarget}
         target={target}
       >
-        <BpkPopover
-          onClose={onClose}
-          // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
-          {...rest}
-        />
+        {/* $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'. */}
+        <BpkPopover onClose={onClose} {...rest} />
       </Portal>
     );
   }

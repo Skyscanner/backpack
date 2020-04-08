@@ -116,12 +116,8 @@ class FieldsetContainer extends Component<Props, State> {
     });
 
     return (
-      <BpkFieldset
-        isCheckbox={isCheckbox}
-        // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
-        {...rest}
-        {...dynamicFieldsetProps}
-      >
+      // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
+      <BpkFieldset isCheckbox={isCheckbox} {...rest} {...dynamicFieldsetProps}>
         {clonedChildren}
       </BpkFieldset>
     );

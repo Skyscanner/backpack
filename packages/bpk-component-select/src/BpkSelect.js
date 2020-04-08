@@ -61,6 +61,7 @@ const BpkSelect = (props: Props) => {
   const isInvalid = valid === false;
 
   const select = (
+    // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
     <select
       className={getClassName(
         'bpk-select',
@@ -76,7 +77,6 @@ const BpkSelect = (props: Props) => {
       )}
       disabled={disabled}
       aria-invalid={isInvalid}
-      // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
       {...rest}
     />
   );

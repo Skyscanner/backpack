@@ -37,11 +37,8 @@ const BpkButtonFeatured = (props: Props) => {
   const classNamesFinal = classNames.join(' ');
 
   return (
-    <BpkButtonBase
-      className={classNamesFinal}
-      // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
-      {...rest}
-    />
+    // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
+    <BpkButtonBase className={classNamesFinal} {...rest} />
   );
 };
 

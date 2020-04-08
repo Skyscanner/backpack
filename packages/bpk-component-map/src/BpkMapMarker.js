@@ -79,16 +79,13 @@ const BpkMapMarker = (props: Props) => {
   );
 
   return (
-    <BpkBasicMapMarker
-      position={position}
-      // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
-      {...rest}
-    >
+    // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
+    <BpkBasicMapMarker position={position} {...rest}>
+      {/* $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'. */}
       <button
         type="button"
         className={getClassName('bpk-map-marker__wrapper')}
         onClick={onClick}
-        // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
         {...buttonProps}
       >
         <div className={classNames}>{icon}</div>

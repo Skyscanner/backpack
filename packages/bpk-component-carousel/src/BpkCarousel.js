@@ -136,11 +136,11 @@ class BpkCarousel extends Component<Props, State> {
     const classNames = getClassName('bpk-carousel', className);
 
     return (
+      // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
       <Swipeable
         onSwipedLeft={this.nextSlide}
         onSwipedRight={this.prevSlide}
         className={classNames}
-        // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
         {...rest}
       >
         <div>
