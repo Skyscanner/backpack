@@ -27,7 +27,7 @@ import STYLES from './BpkChip.scss';
 
 const getClassName = cssModules(STYLES);
 
-export const CHIP_TYPE = {
+export const CHIP_TYPES = {
   neutral: 'neutral',
   primary: 'primary',
 };
@@ -38,7 +38,7 @@ export type Props = {
   closeLabel: ((children: Node) => string) | string,
   className: ?string,
   dismissible: ?boolean,
-  type: $Keys<typeof CHIP_TYPE>,
+  type: $Keys<typeof CHIP_TYPES>,
 };
 
 const BpkChip = (props: Props) => {
@@ -54,17 +54,17 @@ const BpkChip = (props: Props) => {
 
   const classNames = getClassName(
     'bpk-chip',
-    type === CHIP_TYPE.primary && 'bpk-chip--primary',
+    type === CHIP_TYPES.primary && 'bpk-chip--primary',
     className,
   );
 
   const labelClassNames = getClassName(
     'bpk-chip__label',
-    type === CHIP_TYPE.primary && 'bpk-chip__label--primary',
+    type === CHIP_TYPES.primary && 'bpk-chip__label--primary',
   );
 
   const iconClassNames = getClassName(
-    type === CHIP_TYPE.primary && 'bpk-chip--primary-icon',
+    type === CHIP_TYPES.primary && 'bpk-chip--primary-icon',
   );
 
   const label =
@@ -92,13 +92,13 @@ BpkChip.propTypes = {
     .isRequired,
   className: PropTypes.string,
   dismissible: PropTypes.bool,
-  type: PropTypes.oneOf(Object.keys(CHIP_TYPE)),
+  type: PropTypes.oneOf(Object.keys(CHIP_TYPES)),
 };
 
 BpkChip.defaultProps = {
   className: null,
   dismissible: true,
-  type: CHIP_TYPE.neutral,
+  type: CHIP_TYPES.neutral,
 };
 
 export default BpkChip;

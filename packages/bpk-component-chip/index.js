@@ -18,10 +18,10 @@
 
 /* @flow strict */
 
-import BpkChip, { type Props, CHIP_TYPE } from './src/BpkChip';
+import BpkChip, { type Props, CHIP_TYPES } from './src/BpkChip';
 
 export type BpkChipProps = Props;
 
-export { CHIP_TYPE };
+export { CHIP_TYPES };
 
 export default BpkChip;

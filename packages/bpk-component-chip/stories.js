@@ -22,7 +22,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 
-import BpkChip, { CHIP_TYPE } from './index';
+import BpkChip, { CHIP_TYPES } from './index';
 
 storiesOf('bpk-component-chip', module)
   .add('Default', () => (
@@ -34,7 +34,7 @@ storiesOf('bpk-component-chip', module)
     <BpkChip
       onClose={action('Chip closing!')}
       closeLabel="Close"
-      type={CHIP_TYPE.primary}
+      type={CHIP_TYPES.primary}
     >
       This is a chip!
     </BpkChip>
@@ -49,7 +49,7 @@ storiesOf('bpk-component-chip', module)
       onClose={() => null}
       closeLabel="Close"
       dismissible={false}
-      type={CHIP_TYPE.primary}
+      type={CHIP_TYPES.primary}
     >
       This is a chip!
     </BpkChip>
