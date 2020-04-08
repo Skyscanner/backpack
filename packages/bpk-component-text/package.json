@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-text",
-  "version": "3.0.12",
+  "version": "3.0.13",
   "description": "Backpack text component.",
   "main": "index.js",
   "repository": {
@@ -13,8 +13,8 @@
     "react": "^15.0.0 || ^16.0.0"
   },
   "dependencies": {
-    "bpk-mixins": "^19.1.13",
-    "bpk-react-utils": "^3.0.0",
+    "bpk-mixins": "^19.1.14",
+    "bpk-react-utils": "^3.0.1",
     "prop-types": "^15.6.2"
   },
   "publishConfig": {
