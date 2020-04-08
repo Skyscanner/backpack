@@ -10,7 +10,7 @@ exports[`BpkChip should render correctly 1`] = `
     This is a Chip!
   </span>
   <BpkCloseButton
-    className={null}
+    className=""
     customIcon={null}
     label="Close"
     onClick={[Function]}
@@ -40,7 +40,7 @@ exports[`BpkChip should render correctly with a "className" attribute 1`] = `
     This is a Chip!
   </span>
   <BpkCloseButton
-    className={null}
+    className=""
     customIcon={null}
     label="Close"
     onClick={[Function]}
@@ -58,7 +58,7 @@ exports[`BpkChip should render correctly with a "closeLabel" function attribute 
     This is a Chip!
   </span>
   <BpkCloseButton
-    className={null}
+    className=""
     customIcon={null}
     label="Custom close (this is a chip!)"
     onClick={[Function]}
@@ -76,10 +76,40 @@ exports[`BpkChip should render correctly with a "closeLabel" string attribute 1`
     This is a Chip!
   </span>
   <BpkCloseButton
-    className={null}
+    className=""
     customIcon={null}
     label="close it"
     onClick={[Function]}
   />
+</div>
+`;
+
+exports[`BpkChip should render primary correctly 1`] = `
+<div
+  className="bpk-chip bpk-chip--primary"
+>
+  <span
+    className="bpk-chip__label bpk-chip__label--primary"
+  >
+    This is a Chip!
+  </span>
+  <BpkCloseButton
+    className="bpk-chip--primary-icon"
+    customIcon={null}
+    label="Close"
+    onClick={[Function]}
+  />
+</div>
+`;
+
+exports[`BpkChip should render primary correctly when not "dismissible" 1`] = `
+<div
+  className="bpk-chip bpk-chip--primary"
+>
+  <span
+    className="bpk-chip__label bpk-chip__label--primary"
+  >
+    This is a Chip!
+  </span>
 </div>
 `;

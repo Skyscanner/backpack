@@ -24,4 +24,16 @@
   &__label {
     @include bpk-chip__label;
   }
+
+  &--primary-icon {
+    color: $bpk-color-white;
+
+    @include bpk-hover {
+      color: $bpk-color-sky-blue-tint-01;
+    }
+
+    &:active {
+      color: $bpk-color-sky-blue-tint-01;
+    }
+  }
 }
