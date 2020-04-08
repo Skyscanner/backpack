@@ -2,6 +2,12 @@
 
 [Unreleased changes](./UNRELEASED.yaml).
 
+# 2020-03-08
+
+**Fixed:**
+  - All components should now work with Flow 0.122. Previously errors appeared when using components that make use of `...rest`. See `decisions/flowfixme.md` for more context.
+
+
 # 2020-03-06
 
 **Added:**
