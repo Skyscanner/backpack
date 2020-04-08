@@ -163,8 +163,8 @@ const BpkPhoneInput = (props: Props) => {
       >
         {dialingCodeProps.label}
       </BpkLabel>
+      {/* $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'. */}
       <BpkSelect
-        // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
         {...commonProps}
         {...dialingCodeProps}
         className={getClassName(
@@ -179,12 +179,8 @@ const BpkPhoneInput = (props: Props) => {
         }}
       >
         {dialingCodes.map(({ code, description, ...extraDialingProps }) => (
-          <option
-            key={code}
-            value={code}
-            // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
-            {...extraDialingProps}
-          >
+          // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
+          <option key={code} value={code} {...extraDialingProps}>
             {description}
           </option>
         ))}
@@ -196,9 +192,9 @@ const BpkPhoneInput = (props: Props) => {
       >
         {label}
       </BpkLabel>
+      {/* $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'. */}
       <BpkInput
         {...commonProps}
-        // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
         {...rest}
         id={id}
         name={name}

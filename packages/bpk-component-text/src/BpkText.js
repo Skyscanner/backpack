@@ -73,11 +73,8 @@ const BpkText = (props: Props) => {
   );
 
   return (
-    <TagName
-      className={classNames}
-      // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
-      {...rest}
-    >
+    // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
+    <TagName className={classNames} {...rest}>
       {children}
     </TagName>
   );

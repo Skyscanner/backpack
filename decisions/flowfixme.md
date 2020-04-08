@@ -10,6 +10,6 @@ We decided to suppress these comments using the following comment:
 
 If you need to do this in future, add the same comment. Using this format will allow us to easily find and remove the suppression comments once a better solution is found.
 
-We should revisit this occasionally to see if we can remove the comments. The last time we attempted this was April 2020.
+We should revisit this occasionally to see if we can remove the comments. The last time we attempted this was April 2020. [This PR](https://github.com/facebook/flow/pull/7569), open as of April 8th, may fix the problem.
 
 In all other cases, you shouldn't opt out of Flow. If there's a legitimate bug in Flow and you have to opt out, add a comment to explain, linking to a GitHub issue where possible.

@@ -57,12 +57,12 @@ const BpkTooltip = (props: TooltipProps) => {
       appearActiveClassName={getClassName('bpk-tooltip--appear-active')}
       transitionTimeout={200}
     >
+      {/* $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'. */}
       <section
         id={id}
         tabIndex="-1"
         role="dialog"
         className={classNames}
-        // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
         {...rest}
       >
         <span id={ARROW_ID} className={arrowClassNames} role="presentation" />

@@ -151,24 +151,16 @@ const BpkTicket = (props: Props) => {
 
   if (href) {
     return (
-      <a
-        href={href}
-        className={classNames}
-        // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
-        {...rest}
-      >
+      // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
+      <a href={href} className={classNames} {...rest}>
         {contents}
       </a>
     );
   }
 
   return (
-    <div
-      role="button"
-      className={classNames}
-      // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
-      {...rest}
-    >
+    // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
+    <div role="button" className={classNames} {...rest}>
       {contents}
     </div>
   );

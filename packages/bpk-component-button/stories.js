@@ -69,56 +69,41 @@ const ButtonStory = ({
       )}
     >
       &nbsp;
-      <Wrapped
-        onClick={action('button clicked')}
-        // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
-        {...rest}
-      >
+      {/* $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'. */}
+      <Wrapped onClick={action('button clicked')} {...rest}>
         Button
       </Wrapped>
       &nbsp;
+      {/* $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'. */}
+      <Wrapped disabled onClick={action('THIS SHOULD NOT HAPPEN')} {...rest}>
+        Disabled
+      </Wrapped>
+      &nbsp;
+      {/* $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'. */}
+      <Wrapped large onClick={action('large button clicked')} {...rest}>
+        Button
+      </Wrapped>
+      &nbsp;
+      {/* $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'. */}
       <Wrapped
+        large
         disabled
         onClick={action('THIS SHOULD NOT HAPPEN')}
-        // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
         {...rest}
       >
         Disabled
       </Wrapped>
       &nbsp;
-      <Wrapped
-        large
-        onClick={action('large button clicked')}
-        // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
-        {...rest}
-      >
-        Button
-      </Wrapped>
-      &nbsp;
-      <Wrapped
-        large
-        disabled
-        onClick={action('THIS SHOULD NOT HAPPEN')}
-        // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
-        {...rest}
-      >
-        Disabled
-      </Wrapped>
-      &nbsp;
-      <Wrapped
-        iconOnly
-        onClick={action('iconOnly button clicked')}
-        // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
-        {...rest}
-      >
+      {/* $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'. */}
+      <Wrapped iconOnly onClick={action('iconOnly button clicked')} {...rest}>
         <AlignedSmallLongArrowRightIcon />
       </Wrapped>
       &nbsp;
+      {/* $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'. */}
       <Wrapped
         iconOnly
         large
         onClick={action('large iconOnly button clicked')}
-        // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
         {...rest}
       >
         <AlignedLargeLongArrowRightIcon />

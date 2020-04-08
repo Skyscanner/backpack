@@ -44,13 +44,13 @@ const BpkClearButton = (props: Props) => {
   }
 
   return (
+    // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
     <button
       type="button"
       title={label}
       onClick={onClick}
       aria-label={label}
       className={classNames.join(' ')}
-      // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
       {...rest}
     >
       <ClearButtonIcon

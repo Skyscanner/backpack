@@ -98,12 +98,12 @@ class StatefulBpkMapMarker extends React.Component<Props, State> {
     const { onClick, ...rest } = this.props;
 
     return (
+      // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
       <BpkMapMarker
         selected={this.state.selected}
         onClick={() => {
           this.onClick();
         }}
-        // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
         {...rest}
       />
     );

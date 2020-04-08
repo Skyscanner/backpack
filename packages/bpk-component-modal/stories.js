@@ -157,6 +157,7 @@ class ModalContainer extends Component<
           <BpkButton onClick={this.onOpen}>
             {buttonLabel || 'Open modal'}
           </BpkButton>
+          {/* $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'. */}
           <BpkModal
             id="my-modal"
             className="my-classname"
@@ -165,7 +166,6 @@ class ModalContainer extends Component<
             getApplicationElement={() => document.getElementById('pagewrap')}
             renderTarget={() => document.getElementById('modal-container')}
             accessoryView={accessoryView}
-            // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
             {...rest}
           >
             {children}

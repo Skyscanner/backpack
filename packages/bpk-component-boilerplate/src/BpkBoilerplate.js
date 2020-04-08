@@ -33,11 +33,8 @@ const BpkBoilerplate = (props: Props) => {
   const classNames = getClassName('bpk-boilerplate', className);
 
   return (
-    <div
-      className={classNames}
-      // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
-      {...rest}
-    >
+    // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
+    <div className={classNames} {...rest}>
       I am an example component.
     </div>
   );

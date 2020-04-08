@@ -173,11 +173,11 @@ const BpkBannerAlertInner = (props: Props) => {
   // Disabling 'click-events-have-key-events and interactive-supports-focus' because header element is not focusable.
   // ToggleButton is focusable and works for this.
   return (
+    // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
     <AnimateAndFade
       animateOnEnter={animateOnEnter}
       animateOnLeave={dismissable || animateOnLeave}
       show={show}
-      // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
       {...rest}
     >
       <section className={sectionClassNames.join(' ')}>
