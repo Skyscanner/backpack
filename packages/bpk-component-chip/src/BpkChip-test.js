@@ -22,12 +22,21 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
 
-import BpkChip from './BpkChip';
+import BpkChip, { CHIP_TYPE } from './BpkChip';
 
 describe('BpkChip', () => {
   it('should render correctly', () => {
     const tree = shallow(
       <BpkChip onClose={() => null} closeLabel="Close">
+        This is a Chip!
+      </BpkChip>,
+    );
+    expect(toJson(tree)).toMatchSnapshot();
+  });
+
+  it('should render primary correctly', () => {
+    const tree = shallow(
+      <BpkChip onClose={() => null} closeLabel="Close" type={CHIP_TYPE.primary}>
         This is a Chip!
       </BpkChip>,
     );
@@ -73,6 +82,20 @@ describe('BpkChip', () => {
   it('should render correctly when not "dismissible"', () => {
     const tree = shallow(
       <BpkChip onClose={() => null} closeLabel="Close" dismissible={false}>
+        This is a Chip!
+      </BpkChip>,
+    );
+    expect(toJson(tree)).toMatchSnapshot();
+  });
+
+  it('should render primary correctly when not "dismissible"', () => {
+    const tree = shallow(
+      <BpkChip
+        onClose={() => null}
+        closeLabel="Close"
+        dismissible={false}
+        type={CHIP_TYPE.primary}
+      >
         This is a Chip!
       </BpkChip>,
     );
