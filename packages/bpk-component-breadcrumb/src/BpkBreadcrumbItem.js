@@ -44,11 +44,16 @@ const BpkBreadcrumbItem = (props: Props) => {
   const { children, className, active, href, linkProps, ...rest } = props;
 
   return (
-    <li className={getClassName('bpk-breadcrumb-item', className)} {...rest}>
+    <li
+      className={getClassName('bpk-breadcrumb-item', className)}
+      // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
+      {...rest}
+    >
       {active ? (
         <BpkText
           className={getClassName('bpk-breadcrumb-item__active-item')}
           aria-current="page"
+          // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
           {...linkProps}
         >
           {children}
@@ -57,6 +62,7 @@ const BpkBreadcrumbItem = (props: Props) => {
         <BpkLink
           href={href}
           className={getClassName('bpk-breadcrumb-item__link')}
+          // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
           {...linkProps}
         >
           {children}

@@ -41,6 +41,7 @@ const BpkNavigationBarButtonLink = ({
 }: Props) => (
   <BpkButtonLink
     className={getClassName('bpk-navigation-bar-button-link', className)}
+    // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
     {...rest}
   >
     {children}

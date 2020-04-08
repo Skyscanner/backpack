@@ -135,6 +135,7 @@ class BpkInput extends Component<Props, State> {
         aria-invalid={isInvalid}
         value={value}
         name={name}
+        // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
         {...rest}
       />
     );

@@ -61,7 +61,11 @@ const BpkLabel = (props: Props) => {
   }
 
   return (
-    <label className={classNames.join(' ')} {...rest}>
+    <label
+      className={classNames.join(' ')}
+      // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
+      {...rest}
+    >
       {children}
       {required && (
         <span className={getClassName('bpk-label__asterisk')}>*</span>

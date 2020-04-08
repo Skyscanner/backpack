@@ -94,6 +94,7 @@ class Image extends Component<ImageProps> {
         alt={altText}
         onLoad={onImageLoad}
         ref={this.setImgRef}
+        // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
         {...rest}
       />
     );
@@ -171,6 +172,7 @@ class BpkImage extends Component<BpkImageProps> {
               hidden={loading}
               altText={altText}
               onImageLoad={this.onImageLoad}
+              // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
               {...rest}
             />
           )}
@@ -192,6 +194,7 @@ class BpkImage extends Component<BpkImageProps> {
               <Image // eslint-disable-line backpack/use-components
                 altText={altText}
                 onImageLoad={this.onImageLoad}
+                // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
                 {...rest}
               />
             </noscript>

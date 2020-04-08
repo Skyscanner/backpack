@@ -77,6 +77,7 @@ const BpkButton = (props: Props) => {
         onClick={onClick}
         target={target}
         rel={rel}
+        // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
         {...rest}
       >
         {children}
@@ -103,6 +104,7 @@ const BpkButton = (props: Props) => {
       disabled={disabled}
       className={classNameFinal}
       onClick={onClickWrapper}
+      // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
       {...rest}
     >
       {children}

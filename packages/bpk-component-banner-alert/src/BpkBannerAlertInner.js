@@ -177,6 +177,7 @@ const BpkBannerAlertInner = (props: Props) => {
       animateOnEnter={animateOnEnter}
       animateOnLeave={dismissable || animateOnLeave}
       show={show}
+      // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
       {...rest}
     >
       <section className={sectionClassNames.join(' ')}>

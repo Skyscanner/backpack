@@ -165,6 +165,7 @@ class ModalContainer extends Component<
             getApplicationElement={() => document.getElementById('pagewrap')}
             renderTarget={() => document.getElementById('modal-container')}
             accessoryView={accessoryView}
+            // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
             {...rest}
           >
             {children}

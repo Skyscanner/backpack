@@ -101,6 +101,7 @@ const BpkPopover = (props: Props) => {
         role="dialog"
         aria-labelledby={labelId}
         className={classNames.join(' ')}
+        // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
         {...rest}
       >
         <span

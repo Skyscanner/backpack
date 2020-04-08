@@ -94,7 +94,12 @@ const BpkRating = (props: Props) => {
   }
 
   return (
-    <div className={classNames.join(' ')} aria-label={ariaLabel} {...rest}>
+    <div
+      className={classNames.join(' ')}
+      aria-label={ariaLabel}
+      // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
+      {...rest}
+    >
       <BpkText
         textStyle={textSize}
         tagName="span"

@@ -140,6 +140,7 @@ class BpkCarousel extends Component<Props, State> {
         onSwipedLeft={this.nextSlide}
         onSwipedRight={this.prevSlide}
         className={classNames}
+        // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
         {...rest}
       >
         <div>

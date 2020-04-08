@@ -35,6 +35,7 @@ const BpkOverlayView = (props: Props) => {
     <OverlayView
       mapPaneName="overlayMouseTarget"
       position={{ lat: position.latitude, lng: position.longitude }}
+      // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
       {...rest}
     >
       {children}

@@ -54,7 +54,11 @@ const BpkChip = (props: Props) => {
     typeof closeLabel === 'function' ? closeLabel(children) : closeLabel;
 
   return (
-    <div className={classNames.join(' ')} {...rest}>
+    <div
+      className={classNames.join(' ')}
+      // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
+      {...rest}
+    >
       <span className={getClassName('bpk-chip__label')}>{children}</span>
       {dismissible && <BpkCloseButton label={label} onClick={onClose} />}
     </div>

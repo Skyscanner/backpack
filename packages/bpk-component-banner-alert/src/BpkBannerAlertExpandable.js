@@ -39,7 +39,11 @@ type Props = {
 const BpkBannerAlertExpandable = (props: Props) => {
   const { children, ...rest } = props;
   return (
-    <BpkBannerAlertInner configuration={CONFIGURATION.EXPANDABLE} {...rest}>
+    <BpkBannerAlertInner
+      configuration={CONFIGURATION.EXPANDABLE}
+      // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
+      {...rest}
+    >
       {children}
     </BpkBannerAlertInner>
   );

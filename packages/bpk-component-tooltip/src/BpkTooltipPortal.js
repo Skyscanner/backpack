@@ -186,7 +186,11 @@ class BpkTooltipPortal extends Component<Props, State> {
         renderTarget={renderTarget}
         className={classNames.join(' ')}
       >
-        <BpkTooltip padded={padded} {...rest}>
+        <BpkTooltip
+          padded={padded}
+          // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
+          {...rest}
+        >
           {children}
         </BpkTooltip>
       </Portal>

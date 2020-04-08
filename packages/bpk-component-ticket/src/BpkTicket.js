@@ -139,21 +139,36 @@ const BpkTicket = (props: Props) => {
       {withNotches && <div className={startNotchClassNames} />}
       {withNotches && <div className={endNotchClassNames} />}
     </div>,
-    <div key="stub" className={stubClassNames} {...stubProps}>
+    <div
+      key="stub"
+      className={stubClassNames}
+      // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
+      {...stubProps}
+    >
       {stubContent}
     </div>,
   ];
 
   if (href) {
     return (
-      <a href={href} className={classNames} {...rest}>
+      <a
+        href={href}
+        className={classNames}
+        // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
+        {...rest}
+      >
         {contents}
       </a>
     );
   }
 
   return (
-    <div role="button" className={classNames} {...rest}>
+    <div
+      role="button"
+      className={classNames}
+      // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
+      {...rest}
+    >
       {contents}
     </div>
   );

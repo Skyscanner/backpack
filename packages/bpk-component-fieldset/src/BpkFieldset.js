@@ -107,7 +107,11 @@ const BpkFieldset = (props: Props) => {
   }
 
   return (
-    <fieldset className={classNames.join(' ')} {...rest}>
+    <fieldset
+      className={classNames.join(' ')}
+      // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
+      {...rest}
+    >
       {!isCheckbox && (
         <BpkLabel
           htmlFor={childId}
@@ -132,6 +136,7 @@ const BpkFieldset = (props: Props) => {
           id={validationMessageId}
           expanded={isInvalid}
           isCheckbox={isCheckbox}
+          // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
           {...validationProps}
         >
           {validationMessage}

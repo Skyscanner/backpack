@@ -62,6 +62,7 @@ const BpkNavigationBar = (props: Props) => {
         sticky && 'bpk-navigation-bar__sticky',
         className,
       )}
+      // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
       {...rest}
     >
       {leadingButton &&

@@ -50,6 +50,7 @@ const BpkClearButton = (props: Props) => {
       onClick={onClick}
       aria-label={label}
       className={classNames.join(' ')}
+      // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
       {...rest}
     >
       <ClearButtonIcon

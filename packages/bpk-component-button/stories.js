@@ -69,15 +69,29 @@ const ButtonStory = ({
       )}
     >
       &nbsp;
-      <Wrapped onClick={action('button clicked')} {...rest}>
+      <Wrapped
+        onClick={action('button clicked')}
+        // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
+        {...rest}
+      >
         Button
       </Wrapped>
       &nbsp;
-      <Wrapped disabled onClick={action('THIS SHOULD NOT HAPPEN')} {...rest}>
+      <Wrapped
+        disabled
+        onClick={action('THIS SHOULD NOT HAPPEN')}
+        // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
+        {...rest}
+      >
         Disabled
       </Wrapped>
       &nbsp;
-      <Wrapped large onClick={action('large button clicked')} {...rest}>
+      <Wrapped
+        large
+        onClick={action('large button clicked')}
+        // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
+        {...rest}
+      >
         Button
       </Wrapped>
       &nbsp;
@@ -85,12 +99,18 @@ const ButtonStory = ({
         large
         disabled
         onClick={action('THIS SHOULD NOT HAPPEN')}
+        // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
         {...rest}
       >
         Disabled
       </Wrapped>
       &nbsp;
-      <Wrapped iconOnly onClick={action('iconOnly button clicked')} {...rest}>
+      <Wrapped
+        iconOnly
+        onClick={action('iconOnly button clicked')}
+        // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
+        {...rest}
+      >
         <AlignedSmallLongArrowRightIcon />
       </Wrapped>
       &nbsp;
@@ -98,6 +118,7 @@ const ButtonStory = ({
         iconOnly
         large
         onClick={action('large iconOnly button clicked')}
+        // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
         {...rest}
       >
         <AlignedLargeLongArrowRightIcon />
