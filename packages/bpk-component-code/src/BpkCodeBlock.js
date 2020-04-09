@@ -34,7 +34,7 @@ const BpkCodeBlock = (props: Props) => {
   const { children, alternate, className, ...rest } = props;
   const preClassNames = getClassName(
     'bpk-code__pre',
-    alternate && 'bpk-code__pre-alternate',
+    alternate && 'bpk-code__pre--alternate',
     className,
   );
 
