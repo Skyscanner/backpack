@@ -2,6 +2,12 @@
 
 [Unreleased changes](./UNRELEASED.yaml).
 
+# 2020-03-09 - New `primary` chip type.
+
+**Added:**
+  - bpk-component-chip: 3.1.28 => 3.2.0
+    - Added new `primary` style chip that can be created using `type` prop.
+
 # 2020-03-08
 
 **Fixed:**
