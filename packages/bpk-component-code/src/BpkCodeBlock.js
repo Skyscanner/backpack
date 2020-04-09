@@ -32,21 +32,18 @@ type Props = {
 };
 const BpkCodeBlock = (props: Props) => {
   const { children, alternate, className, ...rest } = props;
-  const preClassNames = [getClassName('bpk-code__pre')];
-  const codeClassNames = ['bpk-code', 'bpk-code--block'].map(getClassName);
+  const preClassNames = getClassName(
+    'bpk-code__pre',
+    alternate && 'bpk-code__pre--alternate',
+    className,
+  );
 
-  if (alternate) {
-    preClassNames.push(getClassName('bpk-code__pre--alternate'));
-  }
-
-  if (className) {
-    preClassNames.push(className);
-  }
+  const codeClassNames = getClassName('bpk-code', 'bpk-code--block');
 
   return (
     // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
-    <pre className={preClassNames.join(' ')} {...rest}>
-      <code className={codeClassNames.join(' ')}>{children}</code>
+    <pre className={preClassNames} {...rest}>
+      <code className={codeClassNames}>{children}</code>
     </pre>
   );
 };

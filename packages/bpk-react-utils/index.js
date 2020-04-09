@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+/* @flow strict */
+
 import wrapDisplayName from 'recompose/wrapDisplayName';
 
 import Portal from './src/Portal';

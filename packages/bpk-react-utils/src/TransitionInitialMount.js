@@ -16,21 +16,30 @@
  * limitations under the License.
  */
 
+/* @flow strict */
+
 import assign from 'object-assign';
 import PropTypes from 'prop-types';
-import React from 'react';
+import React, { type Node } from 'react';
 import CSSTransition from 'react-transition-group/CSSTransition';
 
 // Object.assign() is used unpolyfilled in react-transition-group.
 // It will use the native implementation if it's present and isn't buggy.
 Object.assign = assign;
 
+type Props = {
+  appearClassName: string,
+  appearActiveClassName: string,
+  transitionTimeout: number,
+  children: Node,
+};
+
 const TransitionInitialMount = ({
   appearClassName,
   appearActiveClassName,
   transitionTimeout,
   children,
-}) => (
+}: Props) => (
   <CSSTransition
     classNames={{
       appear: appearClassName,
