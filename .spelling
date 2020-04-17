@@ -26,6 +26,9 @@ BpkCalendarGrid
 
 BpkCard
 
+BpkCarousel
+BpkCarouselItem
+
 BpkChip
 BpkDismissibleChip
 
@@ -578,6 +581,7 @@ bpk-component-breakpoint
 bpk-component-button
 bpk-component-calendar
 bpk-component-card
+bpk-component-carousel
 bpk-component-checkbox
 bpk-component-chip
 bpk-component-close-button
