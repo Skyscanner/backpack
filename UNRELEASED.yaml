@@ -1,7 +1,11 @@
 # UNRELEASED:
 FIXED:
+
   - bpk-component-rating:
     - Fixed a couple of minor layout issues in RTL.
+
+  - bpk-component-star-rating:
+    - Fixed a bug that caused a strange animation when selecting a star rating in RTL mode.
 
 # How to write a good changelog entry:
 #

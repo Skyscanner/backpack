@@ -98,4 +98,5 @@ BpkStar.defaultProps = {
   large: false,
 };
 
+export const BpkStarNonRtl = BpkStar;
 export default withRtlSupport(BpkStar);
