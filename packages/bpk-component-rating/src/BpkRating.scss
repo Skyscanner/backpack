@@ -56,7 +56,12 @@
     justify-content: center;
 
     &--horizontal {
+      // We could use `padding-inline-start: $bpk-spacing-sm` here, but it's unsupported in IE
       padding-left: $bpk-spacing-sm;
+
+      @include bpk-rtl {
+        padding-right: $bpk-spacing-sm;
+      }
     }
 
     &--vertical {
@@ -66,7 +71,12 @@
 
   &__text {
     &--horizontal {
+      // We could use `text-align: start` here, but it's unsupported in IE
       text-align: left;
+
+      @include bpk-rtl {
+        text-align: right;
+      }
     }
 
     &--vertical {
