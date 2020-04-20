@@ -20,7 +20,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { cssModules } from 'bpk-react-utils';
 
-import BpkStar, { STAR_TYPES } from './BpkStar';
+import { BpkStarNonRtl, STAR_TYPES } from './BpkStar';
 import STYLES from './BpkInteractiveStar.scss';
 
 const getClassName = cssModules(STYLES);
@@ -44,6 +44,9 @@ const BpkInteractiveStar = props => {
     iconClassNames.push(getClassName('bpk-interactive-star__icon--selected'));
   }
 
+  // Note we use `BpkStarRatingNonRtl` here otherwise it already has `scaleX(-1)` applied in RTL.
+  // That causes the scale animation to be a bit over the top.
+
   return (
     <button
       aria-label={label}
@@ -53,7 +56,11 @@ const BpkInteractiveStar = props => {
       aria-pressed={selected}
       type="button"
     >
-      <BpkStar className={iconClassNames.join(' ')} type={type} {...rest} />
+      <BpkStarNonRtl
+        className={iconClassNames.join(' ')}
+        type={type}
+        {...rest}
+      />
     </button>
   );
 };
