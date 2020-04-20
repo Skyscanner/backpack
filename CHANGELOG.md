@@ -2,6 +2,16 @@
 
 [Unreleased changes](./UNRELEASED.yaml).
 
+# 2020-04-20 - RTL fixes
+
+**Fixed:**
+
+  - bpk-component-rating:
+    - Fixed a couple of minor layout issues in RTL.
+
+  - bpk-component-star-rating:
+    - Fixed a bug that caused a strange animation when selecting a star rating in RTL mode.
+
 # 2020-03-09 - New `primary` chip type.
 
 **Added:**
