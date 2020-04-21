@@ -44,6 +44,11 @@
     transform: translateX(-50%);
     fill: $bpk-color-white;
 
+    @include bpk-rtl {
+      margin-right: 50%;
+      transform: translateX(50%);
+    }
+
     @include bpk-breakpoint-mobile {
       height: $bpk-flare-height-mobile;
     }
