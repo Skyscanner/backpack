@@ -127,9 +127,7 @@ describe('BpkDatepicker', () => {
   });
 
   it('"readOnly" can be overriden in "inputProps"', () => {
-    const noReadOnlyInputProps = Object.assign({}, inputProps, {
-      readOnly: false,
-    });
+    const noReadOnlyInputProps = { ...inputProps, readOnly: false };
     const tree = renderer
       .create(
         <BpkDatepicker

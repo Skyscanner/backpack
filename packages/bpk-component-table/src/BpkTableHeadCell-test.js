@@ -33,7 +33,7 @@ describe('BpkTableHeadCell', () => {
     const tree = renderer
       .create(
         <BpkTableHeadCell alternate>
-          <th />
+          <th aria-label="a table header cell" />
         </BpkTableHeadCell>,
       )
       .toJSON();
@@ -44,7 +44,7 @@ describe('BpkTableHeadCell', () => {
     const tree = renderer
       .create(
         <BpkTableHeadCell className="my-custom-class">
-          <th />
+          <th aria-label="a table header cell" />
         </BpkTableHeadCell>,
       )
       .toJSON();
@@ -55,7 +55,7 @@ describe('BpkTableHeadCell', () => {
     const tree = renderer
       .create(
         <BpkTableHeadCell id="my-custom-id" data-foo="bar">
-          <th />
+          <th aria-label="a table header cell" />
         </BpkTableHeadCell>,
       )
       .toJSON();

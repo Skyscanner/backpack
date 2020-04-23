@@ -92,7 +92,7 @@ const InfiniteList = withInfiniteScroll(List);
       onScrollFinished={evt => {}} // eslint-disable-line no-unused-vars
       renderLoadingComponent={() => <div />}
       renderSeeMoreComponent={onClick => (
-        <button type="button" onClick={onClick} />
+        <button type="button" onClick={onClick} aria-label="button" />
       )}
       seeMoreAfter={5}
     />
