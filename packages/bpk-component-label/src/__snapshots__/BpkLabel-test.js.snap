@@ -57,3 +57,11 @@ exports[`BpkLabel should render correctly with a "white" attribute 1`] = `
   Origin
 </label>
 `;
+
+exports[`BpkLabel should render correctly without an asterisk when disabled and required 1`] = `
+<label
+  className="bpk-label bpk-label--disabled"
+>
+  Origin
+</label>
+`;

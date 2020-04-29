@@ -2,6 +2,10 @@
 FIXED:
   - bpk-component-flare:
     - Fixed an issue that caused the flare to disappear in RTL.
+  - bpk-component-checkbox:
+    - Fixed an issue where is a field was disabled and required it would show invalid state.
+  - bpk-component-label:
+    - Fixed an issue where is a field was disabled and required it would show invalid state. 
 
 # How to write a good changelog entry:
 #
