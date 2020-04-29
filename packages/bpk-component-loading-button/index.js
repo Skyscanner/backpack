@@ -16,6 +16,7 @@
  * limitations under the License.
  */
 
-import BpkLoadingButton from './src/BpkLoadingButton';
+import BpkLoadingButton, { ICON_POSITION } from './src/BpkLoadingButton';
 
 export default BpkLoadingButton;
+export { ICON_POSITION };
