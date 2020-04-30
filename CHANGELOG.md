@@ -18,10 +18,10 @@
 
 **Fixed:**
 
-  - bpk-component-rating:
+  - bpk-component-rating: 2.0.45 => 2.0.46
     - Fixed a couple of minor layout issues in RTL.
 
-  - bpk-component-star-rating:
+  - bpk-component-star-rating: 2.1.43 => 2.1.44
     - Fixed a bug that caused a strange animation when selecting a star rating in RTL mode.
 
 # 2020-03-09 - New `primary` chip type.
