@@ -27,13 +27,20 @@ import {
 import BaggageIconSm from 'bpk-component-icon/sm/baggage';
 import BaggageIconLg from 'bpk-component-icon/lg/baggage';
 
-import BpkLoadingButton from './index';
+import BpkLoadingButton, { ICON_POSITION } from './index';
 
 storiesOf('bpk-component-loading-button', module)
   .add('Primary', () => (
     <div>
       &nbsp;
       <BpkLoadingButton onClick={action('primary clicked')}>
+        Button
+      </BpkLoadingButton>
+      &nbsp;
+      <BpkLoadingButton
+        iconPosition={ICON_POSITION.LEADING}
+        onClick={action('primary leading clicked')}
+      >
         Button
       </BpkLoadingButton>
       &nbsp;
@@ -44,8 +51,24 @@ storiesOf('bpk-component-loading-button', module)
       <BpkLoadingButton loading onClick={action('THIS SHOULD NOT HAPPEN')}>
         Loading
       </BpkLoadingButton>
+      &nbsp;
+      <BpkLoadingButton
+        loading
+        iconPosition={ICON_POSITION.LEADING}
+        onClick={action('THIS SHOULD NOT HAPPEN')}
+      >
+        Loading
+      </BpkLoadingButton>
       &nbsp; &nbsp;
       <BpkLoadingButton large onClick={action('large primary clicked')}>
+        Button
+      </BpkLoadingButton>
+      &nbsp;
+      <BpkLoadingButton
+        iconPosition={ICON_POSITION.LEADING}
+        large
+        onClick={action('large primary clicked')}
+      >
         Button
       </BpkLoadingButton>
       &nbsp;
@@ -59,6 +82,15 @@ storiesOf('bpk-component-loading-button', module)
       &nbsp;
       <BpkLoadingButton
         large
+        loading
+        onClick={action('THIS SHOULD NOT HAPPEN')}
+      >
+        Loading
+      </BpkLoadingButton>
+      &nbsp;
+      <BpkLoadingButton
+        large
+        iconPosition={ICON_POSITION.LEADING}
         loading
         onClick={action('THIS SHOULD NOT HAPPEN')}
       >

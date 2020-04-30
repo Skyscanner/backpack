@@ -28,6 +28,11 @@ import {
 import ArrowIconSm from 'bpk-component-icon/sm/long-arrow-right';
 import ArrowIconLg from 'bpk-component-icon/lg/long-arrow-right';
 
+export const ICON_POSITION = {
+  LEADING: 'leading',
+  TRAILING: 'trailing',
+};
+
 const getPropsIcon = props => {
   const { disabled, loading, icon, iconDisabled, iconLoading } = props;
 
@@ -68,6 +73,7 @@ const BpkLoadingButton = props => {
     icon,
     iconDisabled,
     iconLoading,
+    iconPosition,
     ...rest
   } = props;
 
@@ -76,11 +82,16 @@ const BpkLoadingButton = props => {
   const spacer = iconOnly ? '' : '\u00A0';
   const buttonIcon = getPropsIcon(props) || getDefaultIcon(props);
 
+  let childElements = null;
+  if (iconPosition === ICON_POSITION.LEADING) {
+    childElements = [buttonIcon, spacer, children];
+  } else if (iconPosition === ICON_POSITION.TRAILING) {
+    childElements = [children, spacer, buttonIcon];
+  }
+
   return (
     <BpkButton iconOnly={iconOnly} disabled={showBtnDisabled} {...rest}>
-      {children}
-      {spacer}
-      {buttonIcon}
+      {childElements}
     </BpkButton>
   );
 };
@@ -95,6 +106,10 @@ BpkLoadingButton.propTypes = {
   loading: PropTypes.bool,
   iconOnly: PropTypes.bool,
   icon: PropTypes.element,
+  iconPosition: PropTypes.oneOf([
+    ICON_POSITION.LEADING,
+    ICON_POSITION.TRAILING,
+  ]),
   iconDisabled: PropTypes.element,
   iconLoading: PropTypes.element,
 };
@@ -108,6 +123,7 @@ BpkLoadingButton.defaultProps = {
   loading: false,
   iconOnly: false,
   icon: null,
+  iconPosition: ICON_POSITION.TRAILING,
   iconDisabled: null,
   iconLoading: null,
 };
