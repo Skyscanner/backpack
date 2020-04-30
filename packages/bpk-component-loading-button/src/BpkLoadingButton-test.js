@@ -21,7 +21,7 @@ import renderer from 'react-test-renderer';
 import { withButtonAlignment } from 'bpk-component-icon';
 import BaggageIcon from 'bpk-component-icon/sm/baggage';
 
-import BpkLoadingButton from './BpkLoadingButton';
+import BpkLoadingButton, { ICON_POSITION } from './BpkLoadingButton';
 
 describe('BpkLoadingButton', () => {
   it('should render correctly', () => {
@@ -62,6 +62,17 @@ describe('BpkLoadingButton', () => {
   it('should render correctly with a "featured" attribute', () => {
     const tree = renderer
       .create(<BpkLoadingButton featured>My button</BpkLoadingButton>)
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('should render correctly with a "iconPosition=leading" attribute', () => {
+    const tree = renderer
+      .create(
+        <BpkLoadingButton iconPosition={ICON_POSITION.LEADING} featured>
+          My button
+        </BpkLoadingButton>,
+      )
       .toJSON();
     expect(tree).toMatchSnapshot();
   });
