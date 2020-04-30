@@ -2,6 +2,18 @@
 
 [Unreleased changes](./UNRELEASED.yaml).
 
+# 2020-04-30
+
+**Added:**
+
+  - bpk-component-loading-button: 3.0.49 => 3.1.0
+    - Added a `iconPosition` prop which allows consumers to control whether the icon is shown on the leading or trailing side of the button.
+
+**Fixed:**
+
+  - bpk-component-flare: 1.0.47 => 1.0.48
+    - Fixed an issue that caused the flare to disappear in RTL.
+
 # 2020-04-20 - RTL fixes
 
 **Fixed:**

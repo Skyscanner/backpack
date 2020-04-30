@@ -1,11 +1,4 @@
 # UNRELEASED:
-ADDED:
-  - bpk-component-loading-button:
-    - Added a `iconPosition` prop which allows consumers to control whether the icon is shown on the leading or trailing side of the button.
-
-FIXED:
-  - bpk-component-flare:
-    - Fixed an issue that caused the flare to disappear in RTL.
 
 # How to write a good changelog entry:
 #
