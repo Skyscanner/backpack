@@ -2,6 +2,14 @@
 
 [Unreleased changes](./UNRELEASED.yaml).
 
+# 2020-05-01
+
+**Fixed:**
+  - bpk-component-checkbox: `2.0.49 => 2.0.50`
+  - bpk-component-label: `4.0.47 => 4.0.48`
+    - `disabled` now takes precedence over `invalid`, to prevent users seeing invalid labels they cannot edit.
+
+
 # 2020-04-30
 
 **Added:**
