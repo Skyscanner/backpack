@@ -19,8 +19,8 @@
 import Color from 'color';
 
 const setOpacity = (colorToken, opacity) => {
-  // Number properties compat is low, so we'll stick to the globals
-  // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/isNaN#Browser_compatibility
+  // IE11 doesn't support `Number.isNaN` so we must use the global.
+  // When IE11 support drops we can migrate.
   // eslint-disable-next-line no-restricted-globals
   if (isNaN(parseFloat(opacity))) {
     throw new Error(
