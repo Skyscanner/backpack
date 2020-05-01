@@ -78,7 +78,7 @@ const BpkCheckbox = props => {
       />
       <span className={labelClassNames.join(' ')} aria-hidden="true">
         {label}
-        {required && (
+        {!disabled && required && (
           <span className={getClassName('bpk-checkbox__asterisk')}>*</span>
         )}
       </span>

@@ -90,4 +90,18 @@ describe('BpkCheckbox', () => {
       .toJSON();
     expect(tree).toMatchSnapshot();
   });
+
+  it('should render as disabled when required and disabled', () => {
+    const tree = renderer
+      .create(
+        <BpkCheckbox
+          name="checkbox"
+          label="Prefer directs"
+          required
+          disabled
+        />,
+      )
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 });

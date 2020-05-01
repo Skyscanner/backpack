@@ -50,11 +50,11 @@ const BpkLabel = (props: Props) => {
   if (white) {
     classNames.push(getClassName('bpk-label--white'));
   }
-  if (disabled) {
-    classNames.push(getClassName('bpk-label--disabled'));
-  }
   if (invalid) {
     classNames.push(getClassName('bpk-label--invalid'));
+  }
+  if (disabled) {
+    classNames.push(getClassName('bpk-label--disabled'));
   }
   if (className) {
     classNames.push(className);
@@ -64,7 +64,7 @@ const BpkLabel = (props: Props) => {
     // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
     <label className={classNames.join(' ')} {...rest}>
       {children}
-      {required && (
+      {!disabled && required && (
         <span className={getClassName('bpk-label__asterisk')}>*</span>
       )}
     </label>
