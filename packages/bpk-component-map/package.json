@@ -17,7 +17,8 @@
     "bpk-mixins": "^19.1.16",
     "bpk-react-utils": "^3.0.2",
     "prop-types": "^15.5.8",
-    "react-google-maps": "^9.4.5"
+    "react-google-maps": "^9.4.5",
+    "snyk": "^1.316.1"
   },
   "devDependencies": {
     "bpk-component-icon": "^5.0.48",
@@ -27,5 +28,10 @@
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
-  "gitHead": "a83296474208d47385427e1057c9f4b13e670f5c"
+  "gitHead": "a83296474208d47385427e1057c9f4b13e670f5c",
+  "scripts": {
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
+  },
+  "snyk": true
 }
