@@ -18,7 +18,8 @@
     "bpk-react-utils": "^3.0.2",
     "lodash": "^4.17.12",
     "prop-types": "^15.6.2",
-    "react-virtualized": "^9.20.1"
+    "react-virtualized": "^9.20.1",
+    "snyk": "^1.316.1"
   },
   "devDependencies": {
     "bpk-tokens": "^32.0.2"
@@ -26,5 +27,10 @@
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
-  "gitHead": "a83296474208d47385427e1057c9f4b13e670f5c"
+  "gitHead": "a83296474208d47385427e1057c9f4b13e670f5c",
+  "scripts": {
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
+  },
+  "snyk": true
 }
