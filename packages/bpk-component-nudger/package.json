@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-nudger",
-  "version": "2.0.49",
+  "version": "2.0.50",
   "description": "Backpack nudger component.",
   "main": "index.js",
   "repository": {
@@ -22,7 +22,7 @@
     "prop-types": "^15.6.2"
   },
   "devDependencies": {
-    "bpk-component-label": "^4.0.47"
+    "bpk-component-label": "^4.0.48"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
