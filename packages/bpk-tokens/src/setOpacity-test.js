@@ -59,6 +59,10 @@ describe('setOpacity', () => {
     );
   });
 
+  it('should not error if opacity is 0', () => {
+    expect(() => setOpacity('#7743CE', 0)).not.toThrow();
+  });
+
   it('should default if color token is null', () => {
     expect(setOpacity(null, 0.5)).toEqual('rgba(0, 0, 0, 0.5)');
   });
