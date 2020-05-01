@@ -1,5 +1,9 @@
 # UNRELEASED:
 
+FIXED:
+  - bpk-tokens:
+    - Fixed a bug where passing `0` to `setOpacity` threw an error.
+
 # How to write a good changelog entry:
 #
 #   1. Add 'BREAKING', 'ADDED' OR 'FIXED' depending on if the change will be major, minor or patch according to [semver.org](semver.org).

@@ -19,7 +19,10 @@
 import Color from 'color';
 
 const setOpacity = (colorToken, opacity) => {
-  if (!parseFloat(opacity)) {
+  // Number properties compat is low, so we'll stick to the globals
+  // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/isNaN#Browser_compatibility
+  // eslint-disable-next-line no-restricted-globals
+  if (isNaN(parseFloat(opacity))) {
     throw new Error(
       `Invalid arg \`opacity\` of type \`${typeof opacity}\` supplied to \`setOpacity\`, expected a numeric value between 0.0 and 1.0.`,
     );
