@@ -1,13 +1,16 @@
 # UNRELEASED:
 
-FIXED:
-  - bpk-tokens:
-    - Fixed a bug where passing `0` to `setOpacity` threw an error.
-
 ADDED:
   - bpk-component-icon:
   - bpk-svgs:
     - Added new `account--name` icon to the icon grid.
+
+FIXED:
+  - bpk-tokens:
+    - Fixed a bug where passing `0` to `setOpacity` threw an error.
+  - bpk-component-autosuggest:
+    - Upgraded `react-autosuggest` to `10.0.1`.
+
 # How to write a good changelog entry:
 #
 #   1. Add 'BREAKING', 'ADDED' OR 'FIXED' depending on if the change will be major, minor or patch according to [semver.org](semver.org).
