@@ -11,6 +11,11 @@ FIXED:
   - bpk-component-autosuggest:
     - Upgraded `react-autosuggest` to `10.0.2`.
 
+BREAKING/ADDED:
+  - bpk-component-checkbox:
+    - Added indeterminate state support
+    - Updated Checkboxes to new design
+
 # How to write a good changelog entry:
 #
 #   1. Add 'BREAKING', 'ADDED' OR 'FIXED' depending on if the change will be major, minor or patch according to [semver.org](semver.org).

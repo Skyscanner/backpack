@@ -26,15 +26,20 @@ export default () => (
 
 ## Props
 
-| Property   | PropType | Required | Default Value |
-| ---------- | -------- | -------- | ------------- |
-| name       | string   | true     | -             |
-| label      | node     | true     | -             |
-| required   | bool     | false    | false         |
-| disabled   | bool     | false    | false         |
-| white      | bool     | false    | false         |
-| smallLabel | bool     | false    | false         |
-| valid      | bool     | false    | null          |
+| Property      | PropType | Required | Default Value |
+| ------------- | -------- | -------- | ------------- |
+| name          | string   | true     | -             |
+| label         | node     | true     | -             |
+| required      | bool     | false    | false         |
+| disabled      | bool     | false    | false         |
+| white         | bool     | false    | false         |
+| smallLabel    | bool     | false    | false         |
+| valid         | bool     | false    | null          |
+| indeterminate | bool     | false    | false         |
+
+## `indeterminate` prop
+
+This property is used to set the state of the checkbox to `indeterminate` which displays with a minus sign. This is used when there is checkbox group and the parent displays this state when not all children checkboxes are selected.
 
 ## Theme Props
 

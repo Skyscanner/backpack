@@ -45,6 +45,14 @@ storiesOf('bpk-component-checkbox', module)
       onChange={action('checkbox changed')}
     />
   ))
+  .add('Indeterminate', () => (
+    <BpkCheckbox
+      id="indeterminate"
+      name="indeterminate"
+      label="Prefer directs"
+      indeterminate
+    />
+  ))
   .add('Invalid', () => (
     <BpkCheckbox
       id="checked"
