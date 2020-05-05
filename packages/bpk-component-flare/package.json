@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-flare",
-  "version": "1.0.44",
+  "version": "1.0.49",
   "description": "Backpack FlareBar and ContentBubble component.",
   "main": "index.js",
   "repository": {
@@ -16,10 +16,10 @@
     "react": "^15.0.0 || ^16.0.0"
   },
   "dependencies": {
-    "bpk-component-label": "^4.0.44",
-    "bpk-component-text": "^3.0.12",
-    "bpk-mixins": "^19.1.13",
-    "bpk-react-utils": "^3.0.0",
+    "bpk-component-label": "^4.0.48",
+    "bpk-component-text": "^3.0.15",
+    "bpk-mixins": "^19.1.16",
+    "bpk-react-utils": "^3.0.2",
     "prop-types": "^15.6.2"
   },
   "publishConfig": {

@@ -49,6 +49,7 @@ const withDefaultProps = (
     }
 
     return (
+      // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
       <WrappedComponent
         className={classNames.join(' ')}
         {...defaultRest}

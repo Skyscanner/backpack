@@ -28,6 +28,7 @@ describe('withNavigationStackState', () => {
   const View = () => <div />;
 
   const Stack = ({ views, ...rest }: { views: Array<Element<any>> }) => (
+    // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
     <div className="parent" {...rest}>
       {views}
     </div>

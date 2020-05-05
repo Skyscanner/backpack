@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import BpkStar, { STAR_TYPES } from './src/BpkStar';
+import BpkStar, { BpkStarNonRtl, STAR_TYPES } from './src/BpkStar';
 import BpkInteractiveStar from './src/BpkInteractiveStar';
 import BpkStarRating, { ROUNDING_TYPES } from './src/BpkStarRating';
 import BpkInteractiveStarRating from './src/BpkInteractiveStarRating';
@@ -25,6 +25,7 @@ import themeAttributes from './src/themeAttributes';
 
 export {
   BpkStar,
+  BpkStarNonRtl,
   STAR_TYPES,
   ROUNDING_TYPES,
   BpkInteractiveStar,

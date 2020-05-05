@@ -44,6 +44,7 @@ const BpkNudger = (props: Props) => {
   const { ...rest } = props;
 
   return (
+    // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
     <BpkConfigurableNudger
       inputClassName={getClassName('bpk-nudger__input--numeric')}
       compareValues={compareValues}

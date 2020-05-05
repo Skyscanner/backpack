@@ -36,7 +36,10 @@ const BpkButtonLink = (props: Props) => {
   }
   const classNamesFinal = classNames.join(' ');
 
-  return <BpkButtonBase className={classNamesFinal} {...rest} />;
+  return (
+    // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
+    <BpkButtonBase className={classNamesFinal} {...rest} />
+  );
 };
 
 BpkButtonLink.propTypes = { ...propTypes };

@@ -44,8 +44,10 @@ const BpkBreadcrumbItem = (props: Props) => {
   const { children, className, active, href, linkProps, ...rest } = props;
 
   return (
+    // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
     <li className={getClassName('bpk-breadcrumb-item', className)} {...rest}>
       {active ? (
+        // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
         <BpkText
           className={getClassName('bpk-breadcrumb-item__active-item')}
           aria-current="page"
@@ -54,6 +56,7 @@ const BpkBreadcrumbItem = (props: Props) => {
           {children}
         </BpkText>
       ) : (
+        // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
         <BpkLink
           href={href}
           className={getClassName('bpk-breadcrumb-item__link')}

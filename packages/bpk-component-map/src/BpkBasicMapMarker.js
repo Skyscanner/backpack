@@ -38,6 +38,7 @@ const BpkBasicMapMarker = (props: Props) => {
   const { children, position, ...rest } = props;
 
   return (
+    // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
     <BpkOverlayView
       position={position}
       getPixelPositionOffset={getPixelPositionOffset}

@@ -56,6 +56,17 @@ describe('BpkLabel', () => {
     expect(tree).toMatchSnapshot();
   });
 
+  it('should render correctly without an asterisk when disabled and required', () => {
+    const tree = renderer
+      .create(
+        <BpkLabel disabled required>
+          Origin
+        </BpkLabel>,
+      )
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
   it('should render correctly with a "className" attribute', () => {
     const tree = renderer
       .create(<BpkLabel className="test">Origin</BpkLabel>)

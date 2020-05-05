@@ -93,7 +93,10 @@ export default (
         ? [this.state.views.map(view => cloneElement(view, callbacks)), {}]
         : [this.state.views, callbacks];
 
-      return <Stack views={views} {...optionalCallbacks} {...rest} />;
+      return (
+        // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
+        <Stack views={views} {...optionalCallbacks} {...rest} />
+      );
     }
   }
 

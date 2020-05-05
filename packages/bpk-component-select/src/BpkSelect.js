@@ -61,6 +61,7 @@ const BpkSelect = (props: Props) => {
   const isInvalid = valid === false;
 
   const select = (
+    // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
     <select
       className={getClassName(
         'bpk-select',

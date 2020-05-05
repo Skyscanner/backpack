@@ -36,7 +36,10 @@ const BpkButtonOutline = (props: Props) => {
   }
   const classNamesFinal = classNames.join(' ');
 
-  return <BpkButtonBase className={classNamesFinal} {...rest} />;
+  return (
+    // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
+    <BpkButtonBase className={classNamesFinal} {...rest} />
+  );
 };
 
 BpkButtonOutline.propTypes = { ...propTypes };

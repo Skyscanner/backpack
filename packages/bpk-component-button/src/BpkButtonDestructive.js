@@ -36,7 +36,10 @@ const BpkButtonDestructive = (props: Props) => {
   }
   const classNamesFinal = classNames.join(' ');
 
-  return <BpkButtonBase className={classNamesFinal} {...rest} />;
+  return (
+    // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
+    <BpkButtonBase className={classNamesFinal} {...rest} />
+  );
 };
 
 BpkButtonDestructive.propTypes = { ...propTypes };

@@ -95,6 +95,7 @@ const BpkPopover = (props: Props) => {
       appearActiveClassName={getClassName('bpk-popover--appear-active')}
       transitionTimeout={200}
     >
+      {/* $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'. */}
       <section
         id={id}
         tabIndex="-1"

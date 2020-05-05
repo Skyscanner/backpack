@@ -158,6 +158,7 @@ const withBannerAlertState = (WrappedComponent: ComponentType<any>) => {
       } = this.props;
 
       return (
+        // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
         <WrappedComponent
           expanded={this.state.expanded}
           onExpandToggle={this.onExpandToggle}

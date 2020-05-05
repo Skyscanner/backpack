@@ -22,6 +22,10 @@
   background-color: $bpk-color-sky-gray-tint-06;
 
   @include bpk-border-radius-sm;
+
+  &--primary {
+    background-color: $bpk-color-sky-blue;
+  }
 }
 
 @mixin bpk-chip__label {
@@ -34,5 +38,9 @@
   @include bpk-rtl {
     margin-right: 0;
     margin-left: $bpk-spacing-xs;
+  }
+
+  &--primary {
+    color: $bpk-color-white;
   }
 }

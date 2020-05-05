@@ -53,6 +53,7 @@ const BpkSectionListItem = (props: Props) => {
   if (href) {
     const target = blank ? '_blank' : null;
     return (
+      // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
       <a
         href={href}
         target={target}
@@ -70,6 +71,7 @@ const BpkSectionListItem = (props: Props) => {
 
   if (onClick) {
     return (
+      // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
       <button
         type="button"
         onClick={onClick}
@@ -85,6 +87,7 @@ const BpkSectionListItem = (props: Props) => {
   }
 
   return (
+    // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
     <div className={classNames.join(' ')} {...rest}>
       {children}
     </div>

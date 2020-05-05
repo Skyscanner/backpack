@@ -27,36 +27,60 @@ import STYLES from './BpkChip.scss';
 
 const getClassName = cssModules(STYLES);
 
+export const CHIP_TYPES = {
+  neutral: 'neutral',
+  primary: 'primary',
+};
+
 export type Props = {
   children: Node,
   onClose: (event: SyntheticEvent<>) => mixed,
   closeLabel: ((children: Node) => string) | string,
   className: ?string,
   dismissible: ?boolean,
+  type: $Keys<typeof CHIP_TYPES>,
 };
 
 const BpkChip = (props: Props) => {
-  const classNames = [getClassName('bpk-chip')];
   const {
     children,
     className,
     onClose,
     closeLabel,
     dismissible,
+    type,
     ...rest
   } = props;
 
-  if (className) {
-    classNames.push(className);
-  }
+  const classNames = getClassName(
+    'bpk-chip',
+    type === CHIP_TYPES.primary && 'bpk-chip--primary',
+    className,
+  );
+
+  const labelClassNames = getClassName(
+    'bpk-chip__label',
+    type === CHIP_TYPES.primary && 'bpk-chip__label--primary',
+  );
+
+  const iconClassNames = getClassName(
+    type === CHIP_TYPES.primary && 'bpk-chip--primary-icon',
+  );
 
   const label =
     typeof closeLabel === 'function' ? closeLabel(children) : closeLabel;
 
   return (
-    <div className={classNames.join(' ')} {...rest}>
-      <span className={getClassName('bpk-chip__label')}>{children}</span>
-      {dismissible && <BpkCloseButton label={label} onClick={onClose} />}
+    // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'
+    <div className={classNames} {...rest}>
+      <span className={labelClassNames}>{children}</span>
+      {dismissible && (
+        <BpkCloseButton
+          className={iconClassNames}
+          label={label}
+          onClick={onClose}
+        />
+      )}
     </div>
   );
 };
@@ -68,11 +92,13 @@ BpkChip.propTypes = {
     .isRequired,
   className: PropTypes.string,
   dismissible: PropTypes.bool,
+  type: PropTypes.oneOf(Object.keys(CHIP_TYPES)),
 };
 
 BpkChip.defaultProps = {
   className: null,
   dismissible: true,
+  type: CHIP_TYPES.neutral,
 };
 
 export default BpkChip;

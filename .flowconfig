@@ -1,5 +1,4 @@
 [ignore]
-<PROJECT_ROOT>/backpack-react-native/.*
 .*/node_modules/jsonlint/.*
 .*/node_modules/config-chain/test/broken.json
 

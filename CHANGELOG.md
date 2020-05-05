@@ -2,6 +2,48 @@
 
 [Unreleased changes](./UNRELEASED.yaml).
 
+# 2020-05-01
+
+**Fixed:**
+  - bpk-component-checkbox: `2.0.49 => 2.0.50`
+  - bpk-component-label: `4.0.47 => 4.0.48`
+    - `disabled` now takes precedence over `invalid`, to prevent users seeing invalid labels they cannot edit.
+
+
+# 2020-04-30
+
+**Added:**
+
+  - bpk-component-loading-button: 3.0.49 => 3.1.0
+    - Added a `iconPosition` prop which allows consumers to control whether the icon is shown on the leading or trailing side of the button.
+
+**Fixed:**
+
+  - bpk-component-flare: 1.0.47 => 1.0.48
+    - Fixed an issue that caused the flare to disappear in RTL.
+
+# 2020-04-20 - RTL fixes
+
+**Fixed:**
+
+  - bpk-component-rating: 2.0.45 => 2.0.46
+    - Fixed a couple of minor layout issues in RTL.
+
+  - bpk-component-star-rating: 2.1.43 => 2.1.44
+    - Fixed a bug that caused a strange animation when selecting a star rating in RTL mode.
+
+# 2020-03-09 - New `primary` chip type.
+
+**Added:**
+  - bpk-component-chip: 3.1.28 => 3.2.0
+    - Added new `primary` style chip that can be created using `type` prop.
+
+# 2020-03-08
+
+**Fixed:**
+  - All components should now work with Flow 0.122. Previously errors appeared when using components that make use of `...rest`. See `decisions/flowfixme.md` for more context.
+
+
 # 2020-03-06
 
 **Added:**
@@ -32,9 +74,10 @@ The following changes are only breaking if you are on a version of React lower t
 # 2020-03-30
 
 **Fixed:**
-  - bpk-component-icon:
-  - bpk-svgs:
-    - Aligned new hotels icon to the icon grid.
+  - bpk-component-icon: 5.0.42 => 5.0.43
+  - bpk-svgs: 8.2.34 => 8.2.35
+  - bpk-mixins: 19.1.10 => 19.1.11
+      - Aligned new hotels icon to the icon grid.
 
 # 2020-03-24 - Fix for flare component
 
@@ -47,32 +90,33 @@ The following changes are only breaking if you are on a version of React lower t
 # 2020-03-20 - Coloured calendar date support and `BpkNavigationBar` now has sticky support
 
 **Added:**
-  - bpk-component-calendar:
-    - Added the ability to use coloured calendar. Added a new `cellType` prop to allow default colour styling to the dates.
+  - bpk-component-calendar: 6.2.8 => 6.3.0
+  - Added the ability to use coloured calendar. Added a new `cellType` prop to allow default colour styling to the dates.
     - Added new `style` prop to custom styles of default `BpkCalendarDate` component.
-  - bpk-component-navigation-bar:
+
+  - bpk-component-navigation-bar: 2.1.36 => 2.2.0
     - Added `sticky` prop to `BpkNavigationBar` so it stays at the top when scrolling up.
 
 # 2020-03-18
 
 **Fixed:**
 
-- bpk-component-icon: 5.0.38 => 5.0.39
-- bpk-svgs: 8.2.30 => 8.2.31
-- bpk-mixins: 19.1.6 => 19.1.7
-  - Reduced the size of the new hotel icon to align it to other icons.
+  - bpk-component-icon: 5.0.38 => 5.0.39
+  - bpk-svgs: 8.2.30 => 8.2.31
+  - bpk-mixins: 19.1.6 => 19.1.7
+    - Reduced the size of the new hotel icon to align it to other icons.
 
 # 2020-03-18
 
 **Fixed:**
 
-- bpk-component-badge: 2.0.27 => 2.0.38
-  - The `success` badge has been lightened to provide better contrast, and align to our mobile implementations.
+  - bpk-component-badge: 2.0.27 => 2.0.38
+    - The `success` badge has been lightened to provide better contrast, and align to our mobile implementations.
 
-- bpk-component-icon: 5.0.37 => 5.0.38
-- bpk-svgs: 8.2.29 => 8.2.30
-- bpk-mixins: 19.1.5 => 19.1.6
-  - Updated `hotel` icon.
+  - bpk-component-icon: 5.0.37 => 5.0.38
+  - bpk-svgs: 8.2.29 => 8.2.30
+  - bpk-mixins: 19.1.5 => 19.1.6
+    - Updated `hotel` icon.
 
 # 2020-02-25 - Supporting building schema markup in Breadcrumbs
 
@@ -85,9 +129,9 @@ The following changes are only breaking if you are on a version of React lower t
 
 **Breaking:**
 
-- bpk-tokens:
-  - Added flow typing to RN tokens.
-  - Removed wrong `secondaryColor` and `secondaryDarkColor` from RN tokens.
+ - bpk-tokens: 31.0.2 => 32.0.0
+   - Added flow typing to RN tokens.
+   - Removed wrong `secondaryColor` and `secondaryDarkColor` from RN tokens.
 
 # 2020-02-11 - Removed Relative font rendering by default.
 
@@ -125,8 +169,8 @@ The following changes are only breaking if you are on a version of React lower t
 # 2020-01-21 - Add new week day format option to calendar
 
 **Added:**
-- bpk-component-calendar: 6.1.13 => 6.2.0
-  - Added support for `weekDayKey` in order to have different formats of week days.
+  - bpk-component-calendar: 6.1.13 => 6.2.0
+    - Added support for `weekDayKey` in order to have different formats of week days.
 
 # 2020-01-21 - New iOS elevation tokens
 
@@ -206,7 +250,7 @@ The following changes are only breaking if you are on a version of React lower t
 
 **Fixed**:
 
-- bpk-component-nudger
+- bpk-component-nudger: 20.0.37 => 2.0.38
   - Import only the required theme attributes and buttons from bpk-component-button. This reduces the amount of unused CSS and JS.
 
 

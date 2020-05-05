@@ -168,6 +168,7 @@ class BpkHorizontalNav extends Component<Props> {
     }
 
     return (
+      // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
       <BpkMobileScrollContainer
         innerContainerTagName="nav"
         className={classNames.join(' ')}

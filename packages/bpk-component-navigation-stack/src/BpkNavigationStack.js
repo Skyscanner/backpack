@@ -78,6 +78,7 @@ class BpkNavigationStack extends React.Component<Props, State> {
     const lastIndex = (views || []).length - 1;
 
     return (
+      // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
       <div
         className={getClassName('bpk-navigation-stack', className)}
         {...rest}
@@ -97,7 +98,7 @@ class BpkNavigationStack extends React.Component<Props, State> {
           {Children.map(views, (view, idx) => (
             <Transition
               in
-              // The order of these is unlikley to change...
+              // The order of these is unlikely to change...
               key={idx} // eslint-disable-line react/no-array-index-key
               timeout={parseInt(durationSm, 10)}
               unmountOnExit
