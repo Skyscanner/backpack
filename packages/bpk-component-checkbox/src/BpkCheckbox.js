@@ -69,8 +69,11 @@ const BpkCheckbox = props => {
         disabled={disabled}
         aria-label={label}
         aria-invalid={isInvalid}
-        // eslint-disable-next-line no-return-assign, no-param-reassign
-        ref={el => el && (el.indeterminate = indeterminate)}
+        ref={e => {
+          if (e) {
+            e.indeterminate = indeterminate;
+          }
+        }}
         {...rest}
       />
       <span className={labelClassNames.join(' ')} aria-hidden="true">
