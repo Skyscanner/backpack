@@ -2,6 +2,23 @@
 
 [Unreleased changes](./UNRELEASED.yaml).
 
+# 2020-05-06 - Additions and Fixes
+
+**Added:**
+  - bpk-component-icon: 5.0.48 => 5.1.0
+  - bpk-svgs: 8.2.36 => 8.3.0
+    - Added new `account--name` icon to the icon grid.
+  
+  - bpk-component-checkbox: 2.0.50 => 2.1.0
+    - Added `indeterminate` visual state support
+    - Updated Checkboxes to new designs
+
+**Fixed:**
+  - bpk-tokens: 32.0.2 => 32.0.3
+    - Fixed a bug where passing `0` to `setOpacity` threw an error.
+  - bpk-component-autosuggest: 4.0.50 => 4.0.51
+    - Upgraded `react-autosuggest` to `10.0.2`.
+
 # 2020-05-01
 
 **Fixed:**
