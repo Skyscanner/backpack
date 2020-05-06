@@ -149,6 +149,28 @@ exports[`BpkCheckbox should render correctly with indeterminate attribute 1`] = 
 </label>
 `;
 
+exports[`BpkCheckbox should render correctly with indeterminate state when both checked and indeterminate attributes 1`] = `
+<label
+  className="bpk-checkbox"
+>
+  <input
+    aria-invalid={false}
+    aria-label="Prefer directs"
+    checked={true}
+    className="bpk-checkbox__input"
+    disabled={false}
+    name="checkbox"
+    type="checkbox"
+  />
+  <span
+    aria-hidden="true"
+    className="bpk-checkbox__label"
+  >
+    Prefer directs
+  </span>
+</label>
+`;
+
 exports[`BpkCheckbox should render correctly with required attribute 1`] = `
 <label
   className="bpk-checkbox"
