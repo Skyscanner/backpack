@@ -19,8 +19,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import { cssModules } from 'bpk-react-utils';
-import { spacingSm } from 'bpk-tokens/tokens/base.es6';
-import Tick from 'bpk-component-icon/sm/tick';
 
 import STYLES from './BpkCheckbox.scss';
 
@@ -38,6 +36,7 @@ const BpkCheckbox = props => {
     className,
     smallLabel,
     valid,
+    indeterminate,
     ...rest
   } = props;
 
@@ -70,11 +69,12 @@ const BpkCheckbox = props => {
         disabled={disabled}
         aria-label={label}
         aria-invalid={isInvalid}
+        ref={e => {
+          if (e) {
+            e.indeterminate = indeterminate;
+          }
+        }}
         {...rest}
-      />
-      <Tick
-        className={getClassName('bpk-checkbox__icon')}
-        style={{ width: spacingSm, height: spacingSm }}
       />
       <span className={labelClassNames.join(' ')} aria-hidden="true">
         {label}
@@ -95,6 +95,7 @@ BpkCheckbox.propTypes = {
   className: PropTypes.string,
   smallLabel: PropTypes.bool,
   valid: PropTypes.bool,
+  indeterminate: PropTypes.bool,
 };
 
 BpkCheckbox.defaultProps = {
@@ -104,6 +105,7 @@ BpkCheckbox.defaultProps = {
   className: null,
   smallLabel: false,
   valid: null,
+  indeterminate: false,
 };
 
 export default BpkCheckbox;

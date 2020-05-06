@@ -4,6 +4,10 @@ ADDED:
   - bpk-component-icon:
   - bpk-svgs:
     - Added new `account--name` icon to the icon grid.
+  
+  - bpk-component-checkbox:
+    - Added indeterminate state support
+    - Updated Checkboxes to new design
 
 FIXED:
   - bpk-tokens:

@@ -45,52 +45,11 @@
     @include bpk-checkbox__input;
 
     &:checked {
-      background: url(map-get($bpk-elements, checkbox-normal)) no-repeat;
-
-      + .bpk-checkbox__icon {
-        display: block;
-
-        @include bpk-themeable-property(
-          fill,
-          --bpk-checkbox-checked-color,
-          $bpk-checkbox-checked-tick-color
-        );
-
-        // Disable for IE10/IE11 since background for the input doesn't work.
-        @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-          display: none;
-        }
-      }
-
-      &:disabled {
-        + .bpk-checkbox__icon {
-          display: none;
-        }
-      }
-    }
-  }
-
-  &__icon {
-    position: absolute;
-    top: ($bpk-spacing-base - $bpk-spacing-sm) / 2;
-    left: ($bpk-spacing-base - $bpk-spacing-sm) / 4;
-    display: none;
-    width: $bpk-spacing-sm;
-    height: $bpk-spacing-sm;
-    margin: 0;
-    padding: 0;
-    border: 0;
-    cursor: pointer;
-    vertical-align: text-bottom;
-    appearance: none;
-
-    @include bpk-rtl {
-      right: ($bpk-spacing-base - $bpk-spacing-sm) / 4;
-      left: auto;
+      background: url(map-get($bpk-elements, checkbox-checked)) no-repeat;
     }
 
-    @media screen\0 {
-      background: none !important; /* stylelint-disable-line declaration-no-important */
+    &:indeterminate {
+      background: url(map-get($bpk-elements, checkbox-indeterminate)) no-repeat;
     }
   }
 

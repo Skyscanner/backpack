@@ -91,6 +91,29 @@ describe('BpkCheckbox', () => {
     expect(tree).toMatchSnapshot();
   });
 
+  it('should render correctly with indeterminate attribute', () => {
+    const tree = renderer
+      .create(
+        <BpkCheckbox name="checkbox" label="Prefer directs" indeterminate />,
+      )
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('should render correctly with indeterminate state when both checked and indeterminate attributes', () => {
+    const tree = renderer
+      .create(
+        <BpkCheckbox
+          name="checkbox"
+          label="Prefer directs"
+          indeterminate
+          checked
+        />,
+      )
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
   it('should render as disabled when required and disabled', () => {
     const tree = renderer
       .create(
