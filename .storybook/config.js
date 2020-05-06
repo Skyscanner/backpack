@@ -111,6 +111,7 @@ configure(() => {
   require('./../packages/bpk-component-slider/stories');
   require('./../packages/bpk-component-spinner/stories');
   require('./../packages/bpk-component-star-rating/stories');
+require('./../packages/bpk-component-switch/stories');
   require('./../packages/bpk-component-table/stories');
   require('./../packages/bpk-component-text/stories');
   require('./../packages/bpk-component-textarea/stories');

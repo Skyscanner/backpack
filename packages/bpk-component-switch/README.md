@@ -1,0 +1,37 @@
+# bpk-component-switch
+
+> Backpack example component.
+
+## Installation
+
+```sh
+npm install bpk-component-switch --save-dev
+```
+
+## Usage
+
+```js
+import React from 'react';
+import BpkSwitch from 'bpk-component-code';
+
+export default () => (
+  <div>
+    <BpkSwitch label="Switched on" checked />
+    <BpkSwitch label="Turned off" />
+  </div>
+)
+```
+
+## Props
+
+| Property  | PropType | Required | Default Value |
+| --------- | -------- | -------- | ------------- |
+| label     | Node     | true     | -             |
+| className | string   | false    | null          |
+
+This component uses a hidden checkbox, so it supports all the same properties as it (for example `checked`).
+
+## Theme props
+
+* `switchCheckedColor`
+

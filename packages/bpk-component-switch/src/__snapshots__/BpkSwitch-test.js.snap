@@ -1,0 +1,87 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BpkSwitch should render correctly 1`] = `
+<label
+  className="bpk-switch"
+>
+  <input
+    className="bpk-switch__checkbox"
+    type="checkbox"
+  />
+  <span
+    aria-hidden={true}
+    className="bpk-switch__label"
+  >
+    Switch
+  </span>
+  <span
+    aria-hidden={true}
+    className="bpk-switch__switch"
+  />
+</label>
+`;
+
+exports[`BpkSwitch should render correctly when checked 1`] = `
+<label
+  className="bpk-switch"
+>
+  <input
+    checked={true}
+    className="bpk-switch__checkbox"
+    type="checkbox"
+  />
+  <span
+    aria-hidden={true}
+    className="bpk-switch__label"
+  >
+    Switch
+  </span>
+  <span
+    aria-hidden={true}
+    className="bpk-switch__switch"
+  />
+</label>
+`;
+
+exports[`BpkSwitch should support arbitrary props 1`] = `
+<label
+  className="bpk-switch"
+>
+  <input
+    className="bpk-switch__checkbox"
+    testID="123"
+    type="checkbox"
+  />
+  <span
+    aria-hidden={true}
+    className="bpk-switch__label"
+  >
+    Switch
+  </span>
+  <span
+    aria-hidden={true}
+    className="bpk-switch__switch"
+  />
+</label>
+`;
+
+exports[`BpkSwitch should support custom class names 1`] = `
+<label
+  className="bpk-switch custom-classname"
+>
+  <input
+    className="bpk-switch__checkbox"
+    type="checkbox"
+  />
+  <span
+    aria-hidden={true}
+    className="bpk-switch__label"
+  >
+    Switch
+  </span>
+  <span
+    aria-hidden={true}
+    className="bpk-switch__switch"
+  />
+</label>
+`;
