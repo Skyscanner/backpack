@@ -39,7 +39,7 @@ export default () => (
 
 ## `indeterminate` prop
 
-The indeterminate flag is only a visual clue, it does not affect the checked state of the checkbox. If `indeterminate` is flagged then the checkbox will be displayed with a minus sign in the box.  This is used when there is checkbox group and the parent displays this state when not all children checkboxes are selected.
+The indeterminate prop is only a visual clue, it does not affect the checked state of the checkbox. If `indeterminate` is flagged then the checkbox will be displayed with a minus sign in the box.  This is used when there is a checkbox group and the parent displays this state when not all child checkboxes are selected.
 
 ## Theme Props
 
