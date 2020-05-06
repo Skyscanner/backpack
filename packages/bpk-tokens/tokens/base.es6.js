@@ -35,6 +35,7 @@ export const bannerAlertHeaderExpandableHoverBackgroundColor = "rgb(241, 242, 24
 export const bannerAlertHeaderPaddingX = ".75rem";
 export const bannerAlertHeaderPaddingY = ".375rem";
 export const bannerAlertNeutralColor = "rgb(104, 105, 127)";
+export const bannerAlertPrimaryColor = "rgb(7, 112, 227)";
 export const bannerAlertSuccessColor = "rgb(0, 166, 152)";
 export const bannerAlertWarnColor = "rgb(255, 181, 77)";
 export const borderRadiusPill = "1.125rem";
@@ -757,6 +758,7 @@ bannerAlertHeaderExpandableHoverBackgroundColor,
 bannerAlertHeaderPaddingX,
 bannerAlertHeaderPaddingY,
 bannerAlertNeutralColor,
+bannerAlertPrimaryColor,
 bannerAlertSuccessColor,
 bannerAlertWarnColor,
 };

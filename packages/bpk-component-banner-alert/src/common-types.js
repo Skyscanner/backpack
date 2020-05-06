@@ -20,6 +20,7 @@ import PropTypes from 'prop-types';
 import { type Node, type StatelessFunctionalComponent } from 'react';
 
 export const ALERT_TYPES = {
+  PRIMARY: 'primary',
   SUCCESS: 'success',
   WARN: 'warn',
   ERROR: 'error',
@@ -44,6 +45,7 @@ export type OnHideHandler = ?() => void;
 
 export const COMMON_PROP_TYPES = {
   type: PropTypes.oneOf([
+    ALERT_TYPES.PRIMARY,
     ALERT_TYPES.SUCCESS,
     ALERT_TYPES.WARN,
     ALERT_TYPES.ERROR,

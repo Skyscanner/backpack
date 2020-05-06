@@ -147,6 +147,7 @@ const BannerAlertExpandableState = withBannerAlertState(BpkBannerAlertExpandable
 
 ## Theme Props
 
+* `bannerAlertPrimaryColor`
 * `bannerAlertSuccessColor`
 * `bannerAlertWarnColor`
 * `bannerAlertErrorColor`

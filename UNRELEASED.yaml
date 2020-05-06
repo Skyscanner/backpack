@@ -1,5 +1,11 @@
 # UNRELEASED:
 
+ADDED:
+  - bpk-component-banner-alert:
+    - Added new `primary` style to alert types
+  - bpk-tokens:
+    - Added new `primary` banner alert 
+
 # How to write a good changelog entry:
 #
 #   1. Add 'BREAKING', 'ADDED' OR 'FIXED' depending on if the change will be major, minor or patch according to [semver.org](semver.org).
