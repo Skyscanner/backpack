@@ -1,5 +1,10 @@
 # UNRELEASED:
 
+ADDED:
+  - bpk-svgs:
+  - bpk-component-icon:
+    - Added new `ticket-flexible` and `hotel-flexible` icons.
+
 FIXED:
   - bpk-component-switch:
     - Fixed an issue that causes `aria-labels` to not be present.
