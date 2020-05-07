@@ -158,6 +158,7 @@ const generateTheme = ({
 
   checkboxCheckedColor: primaryColor700,
   radioCheckedColor: primaryColor700,
+  switchCheckedColor: primaryColor700,
 
   ratingHighColor: primaryColor500,
   ratingMediumColor: secondaryColor500,

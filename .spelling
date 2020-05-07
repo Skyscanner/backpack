@@ -644,6 +644,7 @@ bpk-component-theme-toggle
 bpk-component-ticket
 bpk-component-tile
 bpk-component-tooltip
+bpk-component-switch
 bpk-docs
 bpk-mixins
 bpk-react-utils

@@ -1,6 +1,8 @@
 # UNRELEASED:
 
 ADDED:
+  - bpk-component-switch:
+    - New switch component.
   - bpk-component-banner-alert:
     - Added new `primary` style to alert types
   - bpk-tokens:
