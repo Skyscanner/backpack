@@ -2,13 +2,23 @@
 
 [Unreleased changes](./UNRELEASED.yaml).
 
+# 2020-05-07
+
+**Added:**
+  - bpk-component-switch:
+    - New switch component.
+  - bpk-component-banner-alert:
+    - Added new `primary` style to alert types.
+  - bpk-tokens:
+    - Added new `primary` banner alert.
+
 # 2020-05-06 - Additions and Fixes
 
 **Added:**
   - bpk-component-icon: 5.0.48 => 5.1.0
   - bpk-svgs: 8.2.36 => 8.3.0
     - Added new `account--name` icon to the icon grid.
-  
+
   - bpk-component-checkbox: 2.0.50 => 2.1.0
     - Added `indeterminate` visual state support
     - Updated Checkboxes to new designs
