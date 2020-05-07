@@ -38,7 +38,7 @@ const BpkSwitch = (props: Props) => {
       <input
         type="checkbox"
         className={getClassName('bpk-switch__checkbox')}
-        ariaLabel={label}
+        aria-label={label}
         {...rest}
       />
       <span aria-hidden className={getClassName('bpk-switch__label')}>

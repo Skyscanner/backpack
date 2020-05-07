@@ -5,6 +5,10 @@ ADDED:
   - bpk-component-icon:
     - Added new `ticket-flexible` and `hotel-flexible` icons.
 
+FIXED:
+  - bpk-component-switch:
+    - Fixed an issue that causes `aria-labels` to not be present.
+
 # How to write a good changelog entry:
 #
 #   1. Add 'BREAKING', 'ADDED' OR 'FIXED' depending on if the change will be major, minor or patch according to [semver.org](semver.org).
