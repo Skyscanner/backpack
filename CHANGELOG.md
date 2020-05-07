@@ -2,14 +2,27 @@
 
 [Unreleased changes](./UNRELEASED.yaml).
 
+# 2020-05-07 - New icons and switch fix
+
+**Added:**
+  - bpk-svgs: 8.3.1 => 8.4.0
+  - bpk-component-icon: 5.1.1 => 5.2.0
+    - Added new `ticket-flexible` and `hotel-flexible` icons.
+
+**Fixed:**
+  - bpk-component-switch: 1.0.0 => 1.0.1
+    - Fixed an issue that causes `aria-labels` to not be present.
+
 # 2020-05-07
 
 **Added:**
-  - bpk-component-switch:
+  - bpk-component-switch: 1.0.0
     - New switch component.
-  - bpk-component-banner-alert:
+
+  - bpk-component-banner-alert: 4.0.5 => 4.1.0
     - Added new `primary` style to alert types.
-  - bpk-tokens:
+
+  - bpk-tokens: 32.0.3 => 32.0.4
     - Added new `primary` banner alert.
 
 # 2020-05-06 - Additions and Fixes
