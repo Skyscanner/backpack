@@ -1,6 +1,5 @@
 {
   "name": "bpk-component-switch",
-  "private": true,
   "version": "0.0.51",
   "description": "Backpack switch component.",
   "main": "index.js",

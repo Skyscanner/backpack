@@ -1,6 +1,6 @@
 # bpk-component-switch
 
-> Backpack example component.
+> Backpack switch component.
 
 ## Installation
 
@@ -34,4 +34,3 @@ This component uses a hidden [`<input type="checkbox" />`](https://developer.moz
 ## Theme props
 
 * `switchCheckedColor`
-
