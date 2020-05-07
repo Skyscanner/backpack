@@ -5,6 +5,7 @@ exports[`BpkSwitch should render correctly 1`] = `
   className="bpk-switch"
 >
   <input
+    ariaLabel="Switch"
     className="bpk-switch__checkbox"
     type="checkbox"
   />
@@ -26,6 +27,7 @@ exports[`BpkSwitch should render correctly when checked 1`] = `
   className="bpk-switch"
 >
   <input
+    ariaLabel="Switch"
     checked={true}
     className="bpk-switch__checkbox"
     type="checkbox"
@@ -48,6 +50,7 @@ exports[`BpkSwitch should support arbitrary props 1`] = `
   className="bpk-switch"
 >
   <input
+    ariaLabel="Switch"
     className="bpk-switch__checkbox"
     testID="123"
     type="checkbox"
@@ -70,6 +73,7 @@ exports[`BpkSwitch should support custom class names 1`] = `
   className="bpk-switch custom-classname"
 >
   <input
+    ariaLabel="Switch"
     className="bpk-switch__checkbox"
     type="checkbox"
   />
