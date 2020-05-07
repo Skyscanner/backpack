@@ -31,13 +31,14 @@ export type Props = {
 };
 const BpkSwitch = (props: Props) => {
   const { className, label, ...rest } = props;
-  const classNames = getClassName('bpk-switch', className);
 
   return (
-    <label className={classNames}>
+    <label className={getClassName('bpk-switch', className)}>
+      {/* $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'. */}
       <input
         type="checkbox"
         className={getClassName('bpk-switch__checkbox')}
+        ariaLabel={label}
         {...rest}
       />
       <span aria-hidden className={getClassName('bpk-switch__label')}>

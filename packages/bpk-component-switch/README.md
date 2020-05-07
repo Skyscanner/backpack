@@ -12,7 +12,7 @@ npm install bpk-component-switch --save-dev
 
 ```js
 import React from 'react';
-import BpkSwitch from 'bpk-component-code';
+import BpkSwitch from 'bpk-component-switch';
 
 export default () => (
   <div>
@@ -29,7 +29,7 @@ export default () => (
 | label     | Node     | true     | -             |
 | className | string   | false    | null          |
 
-This component uses a hidden checkbox, so it supports all the same properties as it (for example `checked`).
+This component uses a hidden [`<input type="checkbox" />`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/checkbox), so it supports all the same properties as it (for example `checked`).
 
 ## Theme props
 
