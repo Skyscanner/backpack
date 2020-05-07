@@ -398,6 +398,13 @@
       "originalValue": "{!SKY_GRAY_TINT_02}",
       "name": "BANNER_ALERT_NEUTRAL_COLOR"
     },
+    "BANNER_ALERT_PRIMARY_COLOR": {
+      "category": "notifications",
+      "value": "rgb(7, 112, 227)",
+      "type": "color",
+      "originalValue": "{!SKY_BLUE}",
+      "name": "BANNER_ALERT_PRIMARY_COLOR"
+    },
     "BANNER_ALERT_SUCCESS_COLOR": {
       "category": "notifications",
       "value": "rgb(0, 166, 152)",
@@ -3040,6 +3047,7 @@
     "BANNER_ALERT_HEADER_PADDING_X",
     "BANNER_ALERT_HEADER_PADDING_Y",
     "BANNER_ALERT_NEUTRAL_COLOR",
+    "BANNER_ALERT_PRIMARY_COLOR",
     "BANNER_ALERT_SUCCESS_COLOR",
     "BANNER_ALERT_WARN_COLOR",
     "BORDER_RADIUS_PILL",
