@@ -27,6 +27,15 @@ import { ALERT_TYPES } from './common-types';
 const message = 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit.';
 
 describe('BpkBannerAlertInner', () => {
+  it('should render correctly with "type" attribute equal to "primary"', () => {
+    const tree = renderer
+      .create(
+        <BpkBannerAlertInner type={ALERT_TYPES.PRIMARY} message={message} />,
+      )
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
   it('should render correctly with "type" attribute equal to "success"', () => {
     const tree = renderer
       .create(
@@ -47,6 +56,15 @@ describe('BpkBannerAlertInner', () => {
     const tree = renderer
       .create(
         <BpkBannerAlertInner type={ALERT_TYPES.ERROR} message={message} />,
+      )
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('should render correctly with "type" attribute equal to "neutral"', () => {
+    const tree = renderer
+      .create(
+        <BpkBannerAlertInner type={ALERT_TYPES.NEUTRAL} message={message} />,
       )
       .toJSON();
     expect(tree).toMatchSnapshot();

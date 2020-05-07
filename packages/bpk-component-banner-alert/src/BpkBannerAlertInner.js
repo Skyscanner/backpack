@@ -59,6 +59,7 @@ const getIconForType = (
   CustomIcon: ?StatelessFunctionalComponent<any>,
 ) => {
   const classMap: { [AlertTypeValue]: string } = {
+    [ALERT_TYPES.PRIMARY]: getClassName('bpk-banner-alert__primary-icon'),
     [ALERT_TYPES.SUCCESS]: getClassName('bpk-banner-alert__success-icon'),
     [ALERT_TYPES.WARN]: getClassName('bpk-banner-alert__warn-icon'),
     [ALERT_TYPES.ERROR]: getClassName('bpk-banner-alert__error-icon'),
@@ -66,6 +67,7 @@ const getIconForType = (
   };
   const className = classMap[type];
   const componentMap: { [AlertTypeValue]: Node } = {
+    [ALERT_TYPES.PRIMARY]: InfoCircleIcon,
     [ALERT_TYPES.SUCCESS]: TickCircleIcon,
     [ALERT_TYPES.WARN]: InfoCircleIcon,
     [ALERT_TYPES.ERROR]: InfoCircleIcon,

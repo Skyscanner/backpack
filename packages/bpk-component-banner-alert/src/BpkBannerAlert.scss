@@ -24,6 +24,13 @@
 
   @include bpk-border-radius-sm;
 
+  &--primary {
+    @include bpk-border-sm(
+      var(--bpk-banner-alert-primary-color, $bpk-banner-alert-primary-color),
+      ''
+    );
+  }
+
   &--success {
     @include bpk-border-sm(
       var(--bpk-banner-alert-success-color, $bpk-banner-alert-success-color),
@@ -77,6 +84,14 @@
 
   &__message {
     flex-grow: 1;
+  }
+
+  &__primary-icon {
+    @include bpk-themeable-property(
+      fill,
+      --bpk-banner-alert-primary-color,
+      $bpk-banner-alert-primary-color
+    );
   }
 
   &__success-icon {

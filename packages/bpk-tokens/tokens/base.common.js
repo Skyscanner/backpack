@@ -37,6 +37,7 @@ module.exports = {
   bannerAlertHeaderPaddingX: ".75rem",
   bannerAlertHeaderPaddingY: ".375rem",
   bannerAlertNeutralColor: "rgb(104, 105, 127)",
+  bannerAlertPrimaryColor: "rgb(7, 112, 227)",
   bannerAlertSuccessColor: "rgb(0, 166, 152)",
   bannerAlertWarnColor: "rgb(255, 181, 77)",
   borderRadiusPill: "1.125rem",

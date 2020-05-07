@@ -1,8 +1,12 @@
 # UNRELEASED:
 
-  ADDED:
-     - bpk-component-switch:
-       - New switch component.
+ADDED:
+  - bpk-component-switch:
+    - New switch component.
+  - bpk-component-banner-alert:
+    - Added new `primary` style to alert types
+  - bpk-tokens:
+    - Added new `primary` banner alert 
 
 # How to write a good changelog entry:
 #
