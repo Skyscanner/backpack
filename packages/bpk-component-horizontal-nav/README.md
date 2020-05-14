@@ -70,6 +70,10 @@ export default class App extends Component {
 | leadingScrollIndicatorClassName   | string   | false    | null          |
 | trailingScrollIndicatorClassName  | string   | false    | null          |
 
+#### `autoScrollToSelected`
+
+Ensures that the selected item is within view when loaded on narrow-screened devices.
+
 ### BpkHorizontalNavItem
 
 | Property    | PropType | Required | Default Value |
