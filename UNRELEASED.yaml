@@ -1,4 +1,8 @@
 # UNRELEASED:
+FIXED:
+  - bpk-mixins:
+  - bpk-component-close-button:
+    - Fixed an issue that caused the focus indicator on the close button to appear very small.
 
 # How to write a good changelog entry:
 #
