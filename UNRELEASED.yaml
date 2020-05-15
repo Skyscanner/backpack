@@ -3,6 +3,8 @@ FIXED:
   - bpk-mixins:
   - bpk-component-close-button:
     - Fixed an issue that caused the focus indicator on the close button to appear very small.
+  - bpk-component-loading-button:
+    - Fixed `Each child in an array or iterator should have a unique "key" prop` warning.
 
 # How to write a good changelog entry:
 #
