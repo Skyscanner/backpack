@@ -82,16 +82,16 @@ const BpkLoadingButton = props => {
   const spacer = iconOnly ? '' : '\u00A0';
   const buttonIcon = getPropsIcon(props) || getDefaultIcon(props);
 
-  let childElements = null;
-  if (iconPosition === ICON_POSITION.LEADING) {
-    childElements = [buttonIcon, spacer, children];
-  } else if (iconPosition === ICON_POSITION.TRAILING) {
-    childElements = [children, spacer, buttonIcon];
-  }
+  const [child0, child1, child2] =
+    iconPosition === ICON_POSITION.LEADING
+      ? [buttonIcon, spacer, children]
+      : [children, spacer, buttonIcon];
 
   return (
     <BpkButton iconOnly={iconOnly} disabled={showBtnDisabled} {...rest}>
-      {childElements}
+      {child0}
+      {child1}
+      {child2}
     </BpkButton>
   );
 };
