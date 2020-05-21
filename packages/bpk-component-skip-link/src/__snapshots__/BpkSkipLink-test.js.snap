@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BpkSkipLink should render correctly 1`] = `
+<a
+  className="bpk-skip-link bpk-skip-link--hidden"
+  onBlur={[Function]}
+  onFocus={[Function]}
+/>
+`;
+
+exports[`BpkSkipLink should support arbitrary props 1`] = `
+<a
+  className="bpk-skip-link bpk-skip-link--hidden"
+  onBlur={[Function]}
+  onFocus={[Function]}
+  testID="123"
+/>
+`;
+
+exports[`BpkSkipLink should support custom class names 1`] = `
+<a
+  className="bpk-skip-link bpk-skip-link--hidden custom-classname"
+  onBlur={[Function]}
+  onFocus={[Function]}
+/>
+`;

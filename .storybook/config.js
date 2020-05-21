@@ -111,6 +111,7 @@ configure(() => {
   require('../packages/bpk-component-scrollable-calendar/stories');
   require('../packages/bpk-component-section-list/stories');
   require('../packages/bpk-component-select/stories');
+  require('../packages/bpk-component-skip-link/stories');
   require('../packages/bpk-component-slider/stories');
   require('../packages/bpk-component-spinner/stories');
   require('../packages/bpk-component-star-rating/stories');

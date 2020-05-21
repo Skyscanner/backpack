@@ -1,0 +1,1 @@
+@keyframes bpk-keyframe-spin{100%{transform:rotate(1turn)}}.bpk-skip-link{display:inline-block;padding:.75rem;transition:none;border-radius:.25rem;background-color:#d1435b;color:#fff;text-decoration:none;opacity:1;overflow:hidden}.bpk-skip-link--hidden{transition:opacity 200ms ease-in-out;opacity:0;pointer-events:none}
