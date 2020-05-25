@@ -356,6 +356,13 @@
       "originalValue": "{!PANJIN}",
       "name": "BANNER_ALERT_ERROR_COLOR"
     },
+    "BANNER_ALERT_EVENT_COLOR": {
+      "category": "notifications",
+      "value": "rgb(90, 72, 155)",
+      "type": "color",
+      "originalValue": "{!ABISKO}",
+      "name": "BANNER_ALERT_EVENT_COLOR"
+    },
     "BANNER_ALERT_EXPAND_ICON_FILL": {
       "category": "notifications",
       "value": "rgb(68, 69, 96)",
@@ -3041,6 +3048,7 @@
     "BANNER_ALERT_CHILDREN_PADDING_X",
     "BANNER_ALERT_CHILDREN_PADDING_Y",
     "BANNER_ALERT_ERROR_COLOR",
+    "BANNER_ALERT_EVENT_COLOR",
     "BANNER_ALERT_EXPAND_ICON_FILL",
     "BANNER_ALERT_HEADER_EXPANDABLE_ACTIVE_BACKGROUND_COLOR",
     "BANNER_ALERT_HEADER_EXPANDABLE_HOVER_BACKGROUND_COLOR",

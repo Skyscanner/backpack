@@ -95,6 +95,9 @@ storiesOf('bpk-component-banner-alert', module)
   .add('Error', () => (
     <BpkBannerAlert message={message} type={ALERT_TYPES.ERROR} />
   ))
+  .add('Event', () => (
+    <BpkBannerAlert message={message} type={ALERT_TYPES.EVENT} />
+  ))
   .add('Success (dismissable behaviour)', () => (
     <BpkBannerAlertDismissableState
       dismissButtonLabel="Dismiss"

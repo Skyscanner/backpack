@@ -56,6 +56,10 @@
     @include bpk-border-sm($bpk-banner-alert-neutral-color, '');
   }
 
+  &--event {
+    @include bpk-border-sm($bpk-banner-alert-event-color, '');
+  }
+
   &__header {
     display: flex;
     padding: $bpk-banner-alert-header-padding-y
@@ -120,6 +124,10 @@
 
   &__neutral-icon {
     fill: $bpk-banner-alert-neutral-color;
+  }
+
+  &__event-icon {
+    fill: $bpk-banner-alert-event-color;
   }
 
   &__toggle-button {

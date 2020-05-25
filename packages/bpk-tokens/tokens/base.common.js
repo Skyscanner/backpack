@@ -31,6 +31,7 @@ module.exports = {
   bannerAlertChildrenPaddingX: ".75rem",
   bannerAlertChildrenPaddingY: ".375rem",
   bannerAlertErrorColor: "rgb(209, 67, 91)",
+  bannerAlertEventColor: "rgb(90, 72, 155)",
   bannerAlertExpandIconFill: "rgb(68, 69, 96)",
   bannerAlertHeaderExpandableActiveBackgroundColor: "rgb(221, 221, 229)",
   bannerAlertHeaderExpandableHoverBackgroundColor: "rgb(241, 242, 248)",
