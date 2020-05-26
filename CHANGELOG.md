@@ -2,6 +2,21 @@
 
 [Unreleased changes](./UNRELEASED.yaml).
 
+# 2020-05-26 - New `event` style for Banner Alert and Switch. Component fixes
+
+**Added:**
+  - bpk-component-banner-alert: 4.1.1 => 4.2.0
+    - Added new `event` style to alert types.
+  - bpk-component-switch: 1.0.1 => 1.1.0
+    - Added new `event` style to switch types.
+
+**Fixed:**
+  - bpk-mixins: 19.1.19 => 19.1.20
+  - bpk-component-close-button: 2.0.51 => 2.0.52
+    - Fixed an issue that caused the focus indicator on the close button to appear very small.
+  - bpk-component-loading-button: 3.1.3 => 3.1.4
+    - Fixed `Each child in an array or iterator should have a unique "key" prop` warning.
+
 # 2020-05-07 - New icons and switch fix
 
 **Added:**
