@@ -20,8 +20,8 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import BpkSwitch from './index';
+import BpkSwitch, { SWITCH_TYPES } from './index';
 
-storiesOf('bpk-component-switch', module).add('Default', () => (
-  <BpkSwitch label="Backpack" />
-));
+storiesOf('bpk-component-switch', module)
+  .add('Default', () => <BpkSwitch label="Backpack" />)
+  .add('Event', () => <BpkSwitch label="Backpack" type={SWITCH_TYPES.event} />);

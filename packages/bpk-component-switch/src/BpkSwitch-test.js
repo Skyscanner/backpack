@@ -20,11 +20,18 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 
-import BpkSwitch from './BpkSwitch';
+import BpkSwitch, { SWITCH_TYPES } from './BpkSwitch';
 
 describe('BpkSwitch', () => {
   it('should render correctly', () => {
     const tree = renderer.create(<BpkSwitch label="Switch" />).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('should render event type', () => {
+    const tree = renderer
+      .create(<BpkSwitch label="Switch" type={SWITCH_TYPES.event} />)
+      .toJSON();
     expect(tree).toMatchSnapshot();
   });
 

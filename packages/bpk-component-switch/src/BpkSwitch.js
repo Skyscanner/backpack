@@ -25,12 +25,31 @@ import STYLES from './BpkSwitch.scss';
 
 const getClassName = cssModules(STYLES);
 
+export const SWITCH_TYPES = {
+  primary: 'primary',
+  event: 'event',
+};
+
+export type SwitchTypeValue = $Values<typeof SWITCH_TYPES>;
+
+const switchTypeClassNames = {
+  [SWITCH_TYPES.primary]: getClassName('bpk-switch__switch--primary'),
+  [SWITCH_TYPES.event]: getClassName('bpk-switch__switch--event'),
+};
+
 export type Props = {
   label: Node,
+  type: SwitchTypeValue,
   className: ?string,
 };
+
 const BpkSwitch = (props: Props) => {
-  const { className, label, ...rest } = props;
+  const { className, label, type, ...rest } = props;
+
+  const switchClassNames = [
+    getClassName('bpk-switch__switch'),
+    switchTypeClassNames[type],
+  ];
 
   return (
     <label className={getClassName('bpk-switch', className)}>
@@ -44,18 +63,20 @@ const BpkSwitch = (props: Props) => {
       <span aria-hidden className={getClassName('bpk-switch__label')}>
         {label}
       </span>
-      <span aria-hidden className={getClassName('bpk-switch__switch')} />
+      <span aria-hidden className={switchClassNames.join(' ')} />
     </label>
   );
 };
 
 BpkSwitch.propTypes = {
   label: PropTypes.node.isRequired,
+  type: PropTypes.oneOf([SWITCH_TYPES.primary, SWITCH_TYPES.event]),
   className: PropTypes.string,
 };
 
 BpkSwitch.defaultProps = {
   className: null,
+  type: SWITCH_TYPES.primary,
 };
 
 export default BpkSwitch;

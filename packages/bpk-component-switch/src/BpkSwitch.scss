@@ -18,7 +18,8 @@
 
 @import '~bpk-mixins/index';
 
-$on-color: $bpk-color-sky-blue;
+$primary-on-color: $bpk-color-sky-blue;
+$event-on-color: $bpk-color-abisko;
 $off-color: $bpk-color-sky-gray-tint-06;
 $handle-color: $bpk-color-white;
 
@@ -36,11 +37,17 @@ $border-width: $bpk-one-pixel-rem * 2;
     opacity: 0;
 
     &:checked ~ .bpk-switch__switch {
-      @include bpk-themeable-property(
-        background,
-        --bpk-switch-checked-color,
-        $on-color
-      );
+      &--primary {
+        @include bpk-themeable-property(
+          background,
+          --bpk-switch-checked-color,
+          $primary-on-color
+        );
+      }
+
+      &--event {
+        background: $event-on-color;
+      }
 
       &::before {
         left: ($width - $height) + $border-width;

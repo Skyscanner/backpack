@@ -24,6 +24,7 @@ import {
   colorSkyGrayTint06,
   colorSkyGrayTint02,
   colorWhite,
+  colorMonteverde,
 } from 'bpk-tokens/tokens/base.es6';
 
 const generateTheme = ({
@@ -54,6 +55,7 @@ const generateTheme = ({
   badgeSuccessBackgroundColor: secondaryColor500,
   badgeDestructiveBackgroundColor: colorSkyGrayTint02,
 
+  bannerAlertPrimaryColor: colorMonteverde,
   bannerAlertSuccessColor: secondaryColor500,
   bannerAlertWarnColor: 'orange',
   bannerAlertErrorColor: primaryColor500,

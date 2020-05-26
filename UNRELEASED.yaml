@@ -2,7 +2,9 @@
 
 ADDED:
   - bpk-component-banner-alert:
-    - - Added new `event` style to alert types.
+    - Added new `event` style to alert types.
+  - bpk-component-switch:
+    - Added new `event` style to switch types.
 
 FIXED:
   - bpk-mixins:
