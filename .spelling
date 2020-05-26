@@ -374,6 +374,8 @@ stubProps
 stubStyle
 subtitleView
 suppressHydrationWarnings
+SWITCH_TYPES.primary
+SWITCH_TYPES.event
 textProps
 textStyle
 themeAttributes
