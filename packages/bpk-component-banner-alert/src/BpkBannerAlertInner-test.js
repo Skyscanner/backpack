@@ -70,6 +70,15 @@ describe('BpkBannerAlertInner', () => {
     expect(tree).toMatchSnapshot();
   });
 
+  it('should render correctly with "type" attribute equal to "event"', () => {
+    const tree = renderer
+      .create(
+        <BpkBannerAlertInner type={ALERT_TYPES.EVENT} message={message} />,
+      )
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
   it('should render correctly with child nodes', () => {
     const tree = renderer
       .create(

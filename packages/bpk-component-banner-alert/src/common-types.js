@@ -25,6 +25,7 @@ export const ALERT_TYPES = {
   WARN: 'warn',
   ERROR: 'error',
   NEUTRAL: 'neutral',
+  EVENT: 'event',
 };
 
 export type AlertTypeValue = $Values<typeof ALERT_TYPES>;
@@ -50,6 +51,7 @@ export const COMMON_PROP_TYPES = {
     ALERT_TYPES.WARN,
     ALERT_TYPES.ERROR,
     ALERT_TYPES.NEUTRAL,
+    ALERT_TYPES.EVENT,
   ]).isRequired,
   message: PropTypes.node.isRequired,
   animateOnEnter: PropTypes.bool,

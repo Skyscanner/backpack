@@ -1,4 +1,9 @@
 # UNRELEASED:
+
+ADDED:
+  - bpk-component-banner-alert:
+    - - Added new `event` style to alert types.
+
 FIXED:
   - bpk-mixins:
   - bpk-component-close-button:

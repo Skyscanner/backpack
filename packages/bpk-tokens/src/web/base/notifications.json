@@ -46,6 +46,10 @@
       "value": "{!SKY_GRAY_TINT_02}",
       "type": "color"
     },
+    "BANNER_ALERT_EVENT_COLOR": {
+      "value": "{!ABISKO}",
+      "type": "color"
+    },
     "BANNER_ALERT_EXPAND_ICON_FILL": {
       "value": "{!SKY_GRAY_TINT_01}",
       "type": "color"
