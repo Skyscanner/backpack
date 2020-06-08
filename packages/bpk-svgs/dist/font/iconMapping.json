@@ -144,6 +144,8 @@
     "multiple-bookings": "EAE5",
     "music": "EA6F",
     "mute": "EAC3",
+    "native--ios-back": "EAE9",
+    "native--ios-forward": "EAEA",
     "native-android--back": "EA70",
     "native-android--close": "EA71",
     "native-android--forward": "EA72",

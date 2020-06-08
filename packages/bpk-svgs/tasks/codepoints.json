@@ -152,6 +152,8 @@
   "multiple-bookings": 60133,
   "music": 60015,
   "mute": 60099,
+  "native--ios-back": 60137,
+  "native--ios-forward": 60138,
   "native-android--back": 60016,
   "native-android--close": 60017,
   "native-android--forward": 60018,
