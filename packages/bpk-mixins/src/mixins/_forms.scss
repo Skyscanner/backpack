@@ -572,7 +572,7 @@
 
 @mixin bpk-checkbox__input {
   position: absolute;
-  top: ($bpk-spacing-base - $bpk-spacing-md) / 2;
+  top: $bpk-one-pixel-rem;
   left: 0;
   width: $bpk-spacing-md;
   height: $bpk-spacing-md;
