@@ -2,6 +2,12 @@
 
 [Unreleased changes](./UNRELEASED.yaml).
 
+# 2020-06-11 - Fixed checkbox alignment
+
+**Fixed:**
+  - bpk-component-checkbox: 2.1.3 => 2.1.4
+    - Fixed alignment issue for checkbox.
+
 # 2020-05-26 - New `event` style for Banner Alert and Switch. Component fixes
 
 **Added:**
