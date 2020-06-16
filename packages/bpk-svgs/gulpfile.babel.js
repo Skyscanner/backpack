@@ -175,10 +175,13 @@ gulp.task('icons-common', () =>
     .pipe(gulp.dest('src/icons')),
 );
 
-gulp.task('icons-sm', () => {
-  const svgs = gulp.src('src/icons/**/*.svg').pipe(chmod(0o644));
+const iconReactComponents = (size = 'lg') => {
+  const iconSize = size === 'sm' ? smallIconSize : largeIconSize;
+  const iconPxSize = size === 'sm' ? smallIconPxSize : largeIconPxSize;
 
-  const styleAttribute = `style="width:${smallIconSize};height:${smallIconSize}"`;
+  const svgs = gulp.src(`src/icons/**/*.svg`).pipe(chmod(0o644));
+
+  const styleAttribute = `style="width:${iconSize};height:${iconSize}"`;
 
   const react = svgs
     .pipe(clone())
@@ -187,7 +190,7 @@ gulp.task('icons-sm', () => {
         plugins: [
           {
             addAttributesToSVGElement: {
-              attribute: `width="${smallIconPxSize}" height="${smallIconPxSize}" ${styleAttribute}`,
+              attribute: `width="${iconPxSize}" height="${iconPxSize}" ${styleAttribute}`,
             },
           },
         ],
@@ -195,7 +198,7 @@ gulp.task('icons-sm', () => {
     )
     .pipe(svg2react())
     .pipe(rename({ extname: '.js' }))
-    .pipe(gulp.dest('dist/js/icons/sm'));
+    .pipe(gulp.dest(`dist/js/icons/${size}`));
 
   const datauri = svgs
     .pipe(clone())
@@ -204,15 +207,15 @@ gulp.task('icons-sm', () => {
         plugins: [
           {
             addAttributesToSVGElement: {
-              attribute: `width="${smallIconPxSize}" height="${smallIconPxSize}"`,
+              attribute: `width="${iconPxSize}" height="${iconPxSize}"`,
             },
           },
         ],
       }),
     )
     .pipe(svg2datauri({ colors }))
-    .pipe(concat('_icons-sm.scss'))
-    .pipe(sassMap('bpk-icons-sm'))
+    .pipe(concat(`_icons-${size}.scss`))
+    .pipe(sassMap(`bpk-icons-${size}`))
     .pipe(gulp.dest('dist/scss'));
 
   const rawDatauri = svgs
@@ -222,80 +225,21 @@ gulp.task('icons-sm', () => {
         plugins: [
           {
             addAttributesToSVGElement: {
-              attribute: `width="${smallIconPxSize}" height="${smallIconPxSize}"`,
+              attribute: `width="${iconPxSize}" height="${iconPxSize}"`,
             },
           },
         ],
       }),
     )
     .pipe(svg2sassvar())
-    .pipe(concat('_icons-no-color-sm.scss'))
-    .pipe(sassMap('bpk-icons-no-color-sm'))
+    .pipe(concat(`_icons-no-color-${size}.scss`))
+    .pipe(sassMap(`bpk-icons-no-color-${size}`))
     .pipe(gulp.dest('dist/scss'));
 
   return merge(react, datauri, rawDatauri);
-});
-
-gulp.task('icons-lg', () => {
-  const svgs = gulp.src('src/icons/**/*.svg').pipe(chmod(0o644));
-
-  const styleAttribute = `style="width:${largeIconSize};height:${largeIconSize}"`;
-
-  const react = svgs
-    .pipe(clone())
-    .pipe(
-      svgmin({
-        plugins: [
-          {
-            addAttributesToSVGElement: {
-              attribute: `width="${largeIconPxSize}" height="${largeIconPxSize}" ${styleAttribute}`,
-            },
-          },
-        ],
-      }),
-    )
-    .pipe(svg2react())
-    .pipe(rename({ extname: '.js' }))
-    .pipe(gulp.dest('dist/js/icons/lg'));
-
-  const datauri = svgs
-    .pipe(clone())
-    .pipe(
-      svgmin({
-        plugins: [
-          {
-            addAttributesToSVGElement: {
-              attribute: `width="${largeIconPxSize}" height="${largeIconPxSize}"`,
-            },
-          },
-        ],
-      }),
-    )
-    .pipe(svg2datauri({ colors }))
-    .pipe(concat('_icons-lg.scss'))
-    .pipe(sassMap('bpk-icons-lg'))
-    .pipe(gulp.dest('dist/scss'));
-
-  const rawDatauri = svgs
-    .pipe(clone())
-    .pipe(
-      svgmin({
-        plugins: [
-          {
-            addAttributesToSVGElement: {
-              attribute: `width="${largeIconPxSize}" height="${largeIconPxSize}"`,
-            },
-          },
-        ],
-      }),
-    )
-    .pipe(svg2sassvar())
-    .pipe(concat('_icons-no-color-lg.scss'))
-    .pipe(sassMap('bpk-icons-no-color-lg'))
-    .pipe(gulp.dest('dist/scss'));
-
-  return merge(react, datauri, rawDatauri);
-});
+};
+gulp.task('icons-sm', () => iconReactComponents('sm'));
+gulp.task('icons-lg', () => iconReactComponents('lg'));
 
 gulp.task('icons-font', () => {
   /* We generate two copies of the exact same font here because when we
