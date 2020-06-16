@@ -142,9 +142,9 @@ gulp.task('spinners', () => {
 /*
   ICONS
 */
-gulp.task('icons-common', () =>
+const optimiseSvgs = size =>
   gulp
-    .src('src/icons/**/*.svg')
+    .src(`src/icons/${size}/**/*.svg`)
     .pipe(chmod(0o644))
     .pipe(
       svgmin({
@@ -172,14 +172,15 @@ gulp.task('icons-common', () =>
         ],
       }),
     )
-    .pipe(gulp.dest('src/icons')),
-);
+    .pipe(gulp.dest(`src/icons/${size}`));
 
-const iconReactComponents = (size = 'lg') => {
+gulp.task('icons-common', () => merge(optimiseSvgs('sm'), optimiseSvgs('lg')));
+
+const iconReactComponents = size => {
   const iconSize = size === 'sm' ? smallIconSize : largeIconSize;
   const iconPxSize = size === 'sm' ? smallIconPxSize : largeIconPxSize;
 
-  const svgs = gulp.src(`src/icons/**/*.svg`).pipe(chmod(0o644));
+  const svgs = gulp.src(`src/icons/${size}/**/*.svg`).pipe(chmod(0o644));
 
   const styleAttribute = `style="width:${iconSize};height:${iconSize}"`;
 
@@ -238,8 +239,26 @@ const iconReactComponents = (size = 'lg') => {
 
   return merge(react, datauri, rawDatauri);
 };
-gulp.task('icons-sm', () => iconReactComponents('sm'));
-gulp.task('icons-lg', () => iconReactComponents('lg'));
+gulp.task('icons', () =>
+  merge(iconReactComponents('sm'), iconReactComponents('lg')),
+);
+
+gulp.task('prepare-for-icons-font', () =>
+  // This temporarily copies the SVGs to include in the font to `dist/font`.
+  // The font is built from the content of that directory
+  merge(
+    gulp
+      .src('src/icons/sm/*.svg')
+      .pipe(
+        rename(path => {
+          // eslint-disable-next-line no-param-reassign
+          path.basename += '-sm';
+        }),
+      )
+      .pipe(gulp.dest('dist/font')),
+    gulp.src('src/icons/lg/*.svg').pipe(gulp.dest('dist/font')),
+  ),
+);
 
 gulp.task('icons-font', () => {
   /* We generate two copies of the exact same font here because when we
@@ -251,9 +270,10 @@ gulp.task('icons-font', () => {
    * disk is not enough as UIKit uses the name at index 1 in
    * the name table of the font for uniqueness.
    */
+
   const generateFont = (name = 'BpkIcon') =>
     gulp
-      .src('src/icons/**/*.svg')
+      .src('dist/font/**/*.svg')
       .pipe(chmod(0o644))
       .pipe(
         iconfont({
@@ -307,6 +327,8 @@ gulp.task('icons-font', () => {
   return merge(...saveFonts, saveMapping);
 });
 
+gulp.task('clean-up-font-svgs', () => del('dist/font/*.svg'));
+
 gulp.task('copy-svgs', () =>
   gulp
     .src('src/**/*.svg')
@@ -316,14 +338,20 @@ gulp.task('copy-svgs', () =>
 
 gulp.task('create-metadata', () =>
   gulp
-    .src('src/icons/*.svg')
+    .src('src/icons/lg/*.svg')
     .pipe(metadata())
     .pipe(gulp.dest('dist')),
 );
 
+const iconFonts = gulp.series(
+  'prepare-for-icons-font',
+  'icons-font',
+  'clean-up-font-svgs',
+);
+
 const allIcons = gulp.series(
   'icons-common',
-  gulp.parallel('icons-sm', 'icons-lg', 'icons-font', 'copy-svgs'),
+  gulp.parallel('icons', iconFonts, 'copy-svgs'),
 );
 
 gulp.task(

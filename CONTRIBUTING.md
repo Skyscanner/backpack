@@ -59,7 +59,6 @@ If you use [nvm](https://github.com/creationix/nvm) or [nave](https://github.com
 
 To install npm, use `npm install --global npm@^6.12.0`.
 
-
 ### Android, iOS and React Native
 
 Backpack also supports React Native, plus native Android and iOS.
@@ -113,9 +112,9 @@ Run `npm start` to start the storybook server, then go to [http://localhost:9001
 
 ## Adding icons
 
-If you want to add icons, they should first be approved by [Chris](https://skyscanner.slack.com/messages/D6BU4R0V8) as he "owns" Skyscanner icons.
+If you want to add icons, please discuss them with us first.
 
-Once they're signed off, you can [raise a request](https://bit.ly/backpack-request) and attach the SVG files. If you're feeling heroic and want to make the PR yourself, just copy the correctly named SVG files to `./packages/bpk-svgs/src/icons/` and then run `npm run build`.
+Once they're signed off, you can [raise a request](https://bit.ly/backpack-request) and attach the SVG files. If you're feeling heroic and want to make the PR yourself, just copy the correctly named SVG files to the `lg` and `sm` directories in `./packages/bpk-svgs/src/icons/` and then run `npm run build`.
 
 ## Adding a new component
 
