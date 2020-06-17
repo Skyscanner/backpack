@@ -1,0 +1,216 @@
+# Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
+version: v1.15.0
+ignore: {}
+# patches apply the minimum changes required to fix a vulnerability
+patch:
+  'npm:debug:20170905':
+    - gulp-iconfont > gulp-spawn > plexer > debug:
+        patched: '2020-06-17T21:19:28.908Z'
+    - gulp-iconfont > gulp-svgicons2svgfont > svgicons2svgfont > debug:
+        patched: '2020-06-17T21:19:28.908Z'
+  'npm:extend:20180424':
+    - gulp-cli > liftoff > extend:
+        patched: '2020-06-17T21:19:28.908Z'
+    - gulp > gulp-cli > liftoff > extend:
+        patched: '2020-06-17T21:19:28.908Z'
+    - gulp > vinyl-fs > glob-stream > extend:
+        patched: '2020-06-17T21:19:28.908Z'
+    - markdown-spellcheck > inquirer > external-editor > extend:
+        patched: '2020-06-17T21:19:28.908Z'
+    - sassdoc > vinyl-fs > glob-stream > extend:
+        patched: '2020-06-17T21:19:28.908Z'
+    - stylelint-config-skyscanner > stylelint > postcss-markdown > remark > unified > extend:
+        patched: '2020-06-17T21:19:28.908Z'
+  SNYK-JS-HTTPSPROXYAGENT-469131:
+    - danger > https-proxy-agent:
+        patched: '2020-06-17T21:19:28.908Z'
+    - flow-typed > @octokit/rest > https-proxy-agent:
+        patched: '2020-06-17T21:19:28.908Z'
+    - lerna > @lerna/add > @evocateur/pacote > @evocateur/npm-registry-fetch > make-fetch-happen > https-proxy-agent:
+        patched: '2020-06-17T21:19:28.908Z'
+  SNYK-JS-LODASH-567746:
+    - lodash:
+        patched: '2020-06-17T21:19:28.908Z'
+    - '@storybook/react > lodash':
+        patched: '2020-06-17T21:19:28.908Z'
+    - node-sass > lodash:
+        patched: '2020-06-17T21:19:28.908Z'
+    - backpack-node-sass > lodash:
+        patched: '2020-06-17T21:19:28.908Z'
+    - enzyme-to-json > lodash:
+        patched: '2020-06-17T21:19:28.908Z'
+    - theo > lodash:
+        patched: '2020-06-17T21:19:28.908Z'
+    - '@storybook/addon-knobs > @storybook/client-api > lodash':
+        patched: '2020-06-17T21:19:28.908Z'
+    - '@storybook/addon-knobs > react-color > lodash':
+        patched: '2020-06-17T21:19:28.908Z'
+    - node-sass > sass-graph > lodash:
+        patched: '2020-06-17T21:19:28.908Z'
+    - backpack-node-sass > node-sass > lodash:
+        patched: '2020-06-17T21:19:28.908Z'
+    - enzyme > cheerio > lodash:
+        patched: '2020-06-17T21:19:28.908Z'
+    - eslint-config-skyscanner > eslint > lodash:
+        patched: '2020-06-17T21:19:28.908Z'
+    - eslint-config-skyscanner > eslint-plugin-backpack > lodash:
+        patched: '2020-06-17T21:19:28.908Z'
+    - eslint_d > eslint > lodash:
+        patched: '2020-06-17T21:19:28.908Z'
+    - extract-text-webpack-plugin > async > lodash:
+        patched: '2020-06-17T21:19:28.908Z'
+    - markdown-spellcheck > async > lodash:
+        patched: '2020-06-17T21:19:28.908Z'
+    - flow-typed > @octokit/rest > lodash:
+        patched: '2020-06-17T21:19:28.908Z'
+    - flow-typed > table > lodash:
+        patched: '2020-06-17T21:19:28.908Z'
+    - markdown-spellcheck > inquirer > lodash:
+        patched: '2020-06-17T21:19:28.908Z'
+    - webpack-dev-server > http-proxy-middleware > lodash:
+        patched: '2020-06-17T21:19:28.908Z'
+    - '@storybook/react > @storybook/core > @storybook/ui > lodash':
+        patched: '2020-06-17T21:19:28.908Z'
+    - '@storybook/addon-knobs > react-color > reactcss > lodash':
+        patched: '2020-06-17T21:19:28.908Z'
+    - '@storybook/react > @storybook/core > babel-preset-minify > lodash':
+        patched: '2020-06-17T21:19:28.908Z'
+    - node-sass > gaze > globule > lodash:
+        patched: '2020-06-17T21:19:28.908Z'
+    - backpack-node-sass > node-sass > sass-graph > lodash:
+        patched: '2020-06-17T21:19:28.908Z'
+    - eslint-config-skyscanner > eslint > inquirer > lodash:
+        patched: '2020-06-17T21:19:28.908Z'
+    - eslint_d > eslint > inquirer > lodash:
+        patched: '2020-06-17T21:19:28.908Z'
+    - eslint_d > eslint > table > lodash:
+        patched: '2020-06-17T21:19:28.908Z'
+    - gulp-iconfont > gulp-svg2ttf > svg2ttf > lodash:
+        patched: '2020-06-17T21:19:28.908Z'
+    - react-svg-loader > react-svg-core > @babel/core > lodash:
+        patched: '2020-06-17T21:19:28.908Z'
+    - stylelint-config-skyscanner > stylelint > postcss-reporter > lodash:
+        patched: '2020-06-17T21:19:28.908Z'
+    - '@storybook/react > @babel/plugin-transform-react-constant-elements > @babel/helper-annotate-as-pure > @babel/types > lodash':
+        patched: '2020-06-17T21:19:28.908Z'
+    - react-svg-loader > react-svg-core > @babel/core > @babel/generator > lodash:
+        patched: '2020-06-17T21:19:28.908Z'
+    - '@storybook/react > @storybook/core > babel-preset-minify > babel-plugin-minify-dead-code-elimination > lodash':
+        patched: '2020-06-17T21:19:28.908Z'
+    - backpack-node-sass > node-sass > gaze > globule > lodash:
+        patched: '2020-06-17T21:19:28.908Z'
+    - lerna > @lerna/add > @lerna/bootstrap > @lerna/command > lodash:
+        patched: '2020-06-17T21:19:28.908Z'
+    - '@babel/plugin-proposal-class-properties > @babel/helper-create-class-features-plugin > @babel/helper-replace-supers > @babel/traverse > @babel/generator > lodash':
+        patched: '2020-06-17T21:19:28.908Z'
+    - react-svg-loader > react-svg-core > @babel/core > @babel/helpers > @babel/traverse > lodash:
+        patched: '2020-06-17T21:19:28.908Z'
+    - babel-jest > @jest/transform > babel-plugin-istanbul > istanbul-lib-instrument > @babel/traverse > lodash:
+        patched: '2020-06-17T21:19:28.908Z'
+    - lerna > @lerna/changed > @lerna/version > @lerna/prompt > inquirer > lodash:
+        patched: '2020-06-17T21:19:28.908Z'
+    - lerna > @lerna/changed > @lerna/version > @lerna/conventional-commits > conventional-changelog-core > lodash:
+        patched: '2020-06-17T21:19:28.908Z'
+    - '@storybook/react > @storybook/core > @babel/plugin-proposal-class-properties > @babel/helper-create-class-features-plugin > @babel/helper-replace-supers > @babel/traverse > lodash':
+        patched: '2020-06-17T21:19:28.908Z'
+    - babel-jest > @jest/transform > babel-plugin-istanbul > istanbul-lib-instrument > @babel/generator > @babel/types > lodash:
+        patched: '2020-06-17T21:19:28.908Z'
+    - '@storybook/addon-actions > react-inspector > storybook-chromatic > jsdom > request-promise-native > request-promise-core > lodash':
+        patched: '2020-06-17T21:19:28.908Z'
+    - lerna > @lerna/changed > @lerna/version > @lerna/conventional-commits > conventional-changelog-core > conventional-changelog-writer > lodash:
+        patched: '2020-06-17T21:19:28.908Z'
+    - lerna > @lerna/changed > @lerna/version > @lerna/conventional-commits > conventional-changelog-core > conventional-commits-parser > lodash:
+        patched: '2020-06-17T21:19:28.908Z'
+    - '@storybook/react > @storybook/core > @babel/plugin-proposal-class-properties > @babel/helper-create-class-features-plugin > @babel/helper-replace-supers > @babel/traverse > @babel/generator > lodash':
+        patched: '2020-06-17T21:19:28.908Z'
+    - babel-jest > @jest/transform > babel-plugin-istanbul > istanbul-lib-instrument > @babel/traverse > @babel/helper-function-name > @babel/helper-get-function-arity > @babel/types > lodash:
+        patched: '2020-06-17T21:19:28.908Z'
+    - react-svg-loader > react-svg-core > @babel/core > @babel/helpers > @babel/traverse > @babel/helper-function-name > @babel/helper-get-function-arity > @babel/types > lodash:
+        patched: '2020-06-17T21:19:28.908Z'
+    - '@storybook/react > @storybook/core > @babel/preset-env > @babel/plugin-proposal-async-generator-functions > @babel/helper-remap-async-to-generator > @babel/helper-wrap-function > @babel/traverse > @babel/generator > lodash':
+        patched: '2020-06-17T21:19:28.908Z'
+    - '@storybook/react > @storybook/addons > @storybook/api > @storybook/theming > @emotion/core > @emotion/css > babel-plugin-emotion > @babel/helper-module-imports > @babel/types > lodash':
+        patched: '2020-06-17T21:19:28.908Z'
+    - '@storybook/react > @storybook/core > @babel/preset-env > @babel/plugin-proposal-async-generator-functions > @babel/helper-remap-async-to-generator > @babel/helper-wrap-function > @babel/traverse > @babel/generator > @babel/types > lodash':
+        patched: '2020-06-17T21:19:28.908Z'
+    - jest > jest-cli > @jest/core > @jest/reporters > @jest/environment > @jest/transform > babel-plugin-istanbul > istanbul-lib-instrument > @babel/traverse > lodash:
+        patched: '2020-06-17T21:19:28.908Z'
+    - jest > jest-cli > @jest/core > @jest/reporters > jest-runtime > jest-config > @jest/test-sequencer > jest-runner > jest-jasmine2 > @babel/traverse > lodash:
+        patched: '2020-06-17T21:19:28.908Z'
+    - jest > jest-cli > @jest/core > @jest/reporters > @jest/environment > @jest/transform > babel-plugin-istanbul > istanbul-lib-instrument > @babel/generator > @babel/types > lodash:
+        patched: '2020-06-17T21:19:28.908Z'
+    - jest > jest-cli > @jest/core > @jest/reporters > jest-runtime > jest-config > jest-environment-jsdom > jsdom > request-promise-native > request-promise-core > lodash:
+        patched: '2020-06-17T21:19:28.908Z'
+    - jest > jest-cli > @jest/core > @jest/reporters > jest-runtime > jest-config > @jest/test-sequencer > jest-runner > jest-jasmine2 > @babel/traverse > @babel/generator > lodash:
+        patched: '2020-06-17T21:19:28.908Z'
+    - jest > jest-cli > @jest/core > @jest/reporters > @jest/environment > @jest/transform > babel-plugin-istanbul > istanbul-lib-instrument > @babel/traverse > @babel/helper-function-name > @babel/helper-get-function-arity > @babel/types > lodash:
+        patched: '2020-06-17T21:19:28.908Z'
+    - jest > jest-cli > @jest/core > @jest/reporters > jest-runtime > jest-config > @jest/test-sequencer > jest-runner > jest-jasmine2 > @babel/traverse > @babel/generator > @babel/types > lodash:
+        patched: '2020-06-17T21:19:28.908Z'
+    - eslint-plugin-flowtype > lodash:
+        patched: '2020-06-17T21:19:28.908Z'
+    - '@storybook/react > babel-plugin-react-docgen > lodash':
+        patched: '2020-06-17T21:19:28.908Z'
+    - stylelint-config-skyscanner > stylelint > lodash:
+        patched: '2020-06-17T21:19:28.908Z'
+    - stylelint-config-skyscanner > stylelint-order > lodash:
+        patched: '2020-06-17T21:19:28.908Z'
+    - stylelint-config-skyscanner > stylelint-scss > lodash:
+        patched: '2020-06-17T21:19:28.908Z'
+    - babel-jest > @jest/transform > @babel/core > lodash:
+        patched: '2020-06-17T21:19:28.908Z'
+    - '@storybook/react > @storybook/core > html-webpack-plugin > lodash':
+        patched: '2020-06-17T21:19:28.908Z'
+    - '@storybook/react > @storybook/core > inquirer > lodash':
+        patched: '2020-06-17T21:19:28.908Z'
+    - eslint-config-skyscanner > babel-eslint > @babel/traverse > lodash:
+        patched: '2020-06-17T21:19:28.908Z'
+    - eslint-config-skyscanner > eslint > table > lodash:
+        patched: '2020-06-17T21:19:28.908Z'
+    - stylelint-config-skyscanner > stylelint > table > lodash:
+        patched: '2020-06-17T21:19:28.908Z'
+    - stylelint-config-skyscanner > stylelint-order > postcss-sorting > lodash:
+        patched: '2020-06-17T21:19:28.908Z'
+    - babel-jest > @jest/transform > @babel/core > @babel/generator > lodash:
+        patched: '2020-06-17T21:19:28.908Z'
+    - stylelint-config-skyscanner > stylelint > postcss-jsx > @babel/core > lodash:
+        patched: '2020-06-17T21:19:28.908Z'
+    - '@storybook/react > @storybook/addons > @storybook/api > telejson > lodash':
+        patched: '2020-06-17T21:19:28.908Z'
+    - '@storybook/react > @storybook/core > react-dev-utils > inquirer > lodash':
+        patched: '2020-06-17T21:19:28.908Z'
+    - eslint-config-skyscanner > babel-eslint > @babel/traverse > @babel/generator > lodash:
+        patched: '2020-06-17T21:19:28.908Z'
+    - babel-jest > @jest/transform > @babel/core > @babel/helpers > @babel/traverse > lodash:
+        patched: '2020-06-17T21:19:28.908Z'
+    - stylelint-config-skyscanner > stylelint > postcss-jsx > @babel/core > @babel/generator > lodash:
+        patched: '2020-06-17T21:19:28.908Z'
+    - eslint-config-skyscanner > babel-eslint > @babel/traverse > @babel/generator > @babel/types > lodash:
+        patched: '2020-06-17T21:19:28.908Z'
+    - stylelint-config-skyscanner > stylelint > postcss-jsx > @babel/core > @babel/helpers > @babel/traverse > lodash:
+        patched: '2020-06-17T21:19:28.908Z'
+    - react-svg-loader > react-svg-core > @babel/preset-react > @babel/plugin-transform-react-jsx > @babel/helper-builder-react-jsx > @babel/types > lodash:
+        patched: '2020-06-17T21:19:28.908Z'
+    - jest > jest-cli > @jest/core > @jest/reporters > @jest/environment > @jest/transform > @babel/core > lodash:
+        patched: '2020-06-17T21:19:28.908Z'
+    - jest > jest-cli > @jest/core > @jest/reporters > @jest/environment > @jest/transform > @babel/core > @babel/generator > lodash:
+        patched: '2020-06-17T21:19:28.908Z'
+    - jest > jest-cli > @jest/core > @jest/reporters > @jest/environment > @jest/transform > @babel/core > @babel/helpers > @babel/traverse > lodash:
+        patched: '2020-06-17T21:19:28.908Z'
+    - '@babel/register > lodash':
+        patched: '2020-06-17T21:19:28.908Z'
+    - '@babel/preset-env > @babel/plugin-transform-block-scoping > lodash':
+        patched: '2020-06-17T21:19:28.908Z'
+    - '@babel/preset-env > @babel/plugin-transform-modules-amd > @babel/helper-module-transforms > lodash':
+        patched: '2020-06-17T21:19:28.908Z'
+    - '@babel/preset-env > @babel/plugin-transform-classes > @babel/helper-replace-supers > @babel/traverse > lodash':
+        patched: '2020-06-17T21:19:28.908Z'
+    - '@storybook/react > @storybook/core > @babel/preset-env > @babel/plugin-transform-modules-amd > @babel/helper-module-transforms > lodash':
+        patched: '2020-06-17T21:19:28.908Z'
+    - '@storybook/react > @storybook/core > @babel/preset-env > @babel/plugin-transform-classes > @babel/helper-replace-supers > @babel/traverse > lodash':
+        patched: '2020-06-17T21:19:28.908Z'
+    - '@storybook/react > @storybook/core > @babel/preset-env > @babel/plugin-transform-classes > @babel/helper-replace-supers > @babel/traverse > @babel/generator > lodash':
+        patched: '2020-06-17T21:19:28.908Z'
+  'npm:ms:20170412':
+    - gulp-iconfont > gulp-spawn > plexer > debug > ms:
+        patched: '2020-06-17T21:19:28.908Z'
