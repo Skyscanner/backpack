@@ -2,6 +2,13 @@
 
 [Unreleased changes](./UNRELEASED.yaml).
 
+# 2020-06-18 - New icon
+
+**Added:**
+  - bpk-svgs: 8.4.1 => 8.5.0
+  - bpk-component-icon: 5.2.2 => 5.3.0
+    - Added new `logout` icon.
+
 # 2020-06-11 - Fixed checkbox alignment
 
 **Fixed:**
