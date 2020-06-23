@@ -68,11 +68,17 @@ export default class App extends Component {
 | autoScrollToSelected              | bool     | false    | false         |
 | className                         | string   | false    | null          |
 | leadingScrollIndicatorClassName   | string   | false    | null          |
+| showUnderline                     | bool     | false    | true          |
 | trailingScrollIndicatorClassName  | string   | false    | null          |
 
 #### `autoScrollToSelected`
 
 Ensures that the selected item is within view when loaded on narrow-screened devices.
+
+#### `showUnderline`
+
+When set to `false`, the bottom border on the component isn't included. This refers
+to the underline on the whole `BpkHorizontalNav`, not the line that appears under the selected item.
 
 ### BpkHorizontalNavItem
 

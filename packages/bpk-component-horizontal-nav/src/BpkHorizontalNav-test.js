@@ -62,6 +62,17 @@ describe('BpkHorizontalNav', () => {
     expect(tree).toMatchSnapshot();
   });
 
+  it('should render correctly with "showUnderline" set to false', () => {
+    const tree = renderer
+      .create(
+        <BpkHorizontalNav showUnderline={false}>
+          My nav content.
+        </BpkHorizontalNav>,
+      )
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
   it('should render correctly with arbitrary props', () => {
     const tree = renderer
       .create(

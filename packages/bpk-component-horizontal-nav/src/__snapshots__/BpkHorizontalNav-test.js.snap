@@ -2,6 +2,33 @@
 
 exports[`BpkHorizontalNav should render correctly 1`] = `
 <div
+  className="bpk-mobile-scroll-container bpk-horizontal-nav bpk-horizontal-nav--show-underline"
+  style={
+    Object {
+      "height": "auto",
+    }
+  }
+>
+  <div
+    className="bpk-mobile-scroll-container__scroller"
+    onScroll={[Function]}
+  >
+    <nav
+      className="bpk-mobile-scroll-container__inner"
+    >
+      <ul
+        className="bpk-horizontal-nav__list"
+        role="tablist"
+      >
+        My nav content.
+      </ul>
+    </nav>
+  </div>
+</div>
+`;
+
+exports[`BpkHorizontalNav should render correctly with "showUnderline" set to false 1`] = `
+<div
   className="bpk-mobile-scroll-container bpk-horizontal-nav"
   style={
     Object {
@@ -29,7 +56,7 @@ exports[`BpkHorizontalNav should render correctly 1`] = `
 
 exports[`BpkHorizontalNav should render correctly with arbitrary props 1`] = `
 <div
-  className="bpk-mobile-scroll-container bpk-horizontal-nav"
+  className="bpk-mobile-scroll-container bpk-horizontal-nav bpk-horizontal-nav--show-underline"
   data-arbitrary-1="arbirary-value-1"
   data-arbitrary-2="arbirary-value-2"
   style={
@@ -58,7 +85,7 @@ exports[`BpkHorizontalNav should render correctly with arbitrary props 1`] = `
 
 exports[`BpkHorizontalNav should render correctly with custom "className" prop 1`] = `
 <div
-  className="bpk-mobile-scroll-container bpk-horizontal-nav my-custom-class-name"
+  className="bpk-mobile-scroll-container bpk-horizontal-nav bpk-horizontal-nav--show-underline my-custom-class-name"
   style={
     Object {
       "height": "auto",
@@ -85,7 +112,7 @@ exports[`BpkHorizontalNav should render correctly with custom "className" prop 1
 
 exports[`BpkHorizontalNav should render correctly with custom "leadingScrollIndicatorClassName" prop 1`] = `
 <div
-  className="bpk-mobile-scroll-container bpk-horizontal-nav"
+  className="bpk-mobile-scroll-container bpk-horizontal-nav bpk-horizontal-nav--show-underline"
   style={
     Object {
       "height": "auto",
@@ -112,7 +139,7 @@ exports[`BpkHorizontalNav should render correctly with custom "leadingScrollIndi
 
 exports[`BpkHorizontalNav should render correctly with custom "trailingScrollIndicatorClassName" prop 1`] = `
 <div
-  className="bpk-mobile-scroll-container bpk-horizontal-nav"
+  className="bpk-mobile-scroll-container bpk-horizontal-nav bpk-horizontal-nav--show-underline"
   style={
     Object {
       "height": "auto",
