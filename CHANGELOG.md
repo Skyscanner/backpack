@@ -2,6 +2,12 @@
 
 [Unreleased changes](./UNRELEASED.yaml).
 
+# 2020-06-22 - `showUnderline` prop for `BpkHorizontalNav`
+
+**Added:**:
+  - bpk-component-horizontal-nav:
+    - Added `showUnderline` prop for controlling whether the underline under the component is displayed.
+
 # 2020-06-22 - Better accessibility for `BpkHorizontalNav`
 
 **Fixed:**
