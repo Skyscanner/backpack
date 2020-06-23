@@ -2,6 +2,16 @@
 
 [Unreleased changes](./UNRELEASED.yaml).
 
+# 2020-06-22 - Better accessibility for `BpkHorizontalNav`
+
+**Fixed:**
+  - bpk-component-horizontal-nav:
+    - Added `tablist` role to `BpkHorizontalNav` component for accessibility.
+
+**Changed:**
+  - All components
+    - Flow `0.127` is now supported.
+
 # 2020-06-18 - New icon
 
 **Added:**
