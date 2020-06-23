@@ -367,6 +367,7 @@ SELECTION_TYPES.multiple
 SELECTION_TYPES.range
 showIndicator
 showTitle
+showUnderline
 spaceAround
 STAR_TYPES
 stubClassName

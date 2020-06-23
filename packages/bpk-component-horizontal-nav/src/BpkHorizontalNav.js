@@ -28,11 +28,12 @@ import STYLES from './BpkHorizontalNav.scss';
 const getClassName = cssModules(STYLES);
 
 export type Props = {
+  autoScrollToSelected: boolean,
   children: Node,
+  showUnderline: boolean,
   className: ?string,
   leadingScrollIndicatorClassName: ?string,
   trailingScrollIndicatorClassName: ?string,
-  autoScrollToSelected: boolean,
 };
 
 const getPos = (ref: ?Element): ?{ left: number, right: number } => {
@@ -50,17 +51,19 @@ class BpkHorizontalNav extends Component<Props> {
 
   static propTypes = {
     children: PropTypes.node.isRequired,
+    autoScrollToSelected: PropTypes.bool,
     className: PropTypes.string,
     leadingScrollIndicatorClassName: PropTypes.string,
+    showUnderline: PropTypes.bool,
     trailingScrollIndicatorClassName: PropTypes.string,
-    autoScrollToSelected: PropTypes.bool,
   };
 
   static defaultProps = {
+    autoScrollToSelected: false,
     className: null,
     leadingScrollIndicatorClassName: null,
+    showUnderline: true,
     trailingScrollIndicatorClassName: null,
-    autoScrollToSelected: false,
   };
 
   constructor(props: Props) {
@@ -135,20 +138,21 @@ class BpkHorizontalNav extends Component<Props> {
   };
 
   render() {
-    const classNames = [getClassName('bpk-horizontal-nav')];
     const {
       children: rawChildren,
       className,
       autoScrollToSelected,
       leadingScrollIndicatorClassName,
       trailingScrollIndicatorClassName,
+      showUnderline,
       ...rest
     } = this.props;
 
-    // Outer classNames
-    if (className) {
-      classNames.push(className);
-    }
+    const classNames = getClassName(
+      'bpk-horizontal-nav',
+      showUnderline && 'bpk-horizontal-nav--show-underline',
+      className,
+    );
 
     let children = null;
     if (!autoScrollToSelected) {
@@ -171,7 +175,7 @@ class BpkHorizontalNav extends Component<Props> {
       // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
       <BpkMobileScrollContainer
         innerContainerTagName="nav"
-        className={classNames.join(' ')}
+        className={classNames}
         leadingIndicatorClassName={leadingScrollIndicatorClassName}
         trailingIndicatorClassName={trailingScrollIndicatorClassName}
         scrollerRef={ref => {

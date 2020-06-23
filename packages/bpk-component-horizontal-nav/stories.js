@@ -74,6 +74,13 @@ storiesOf('bpk-component-horizontal-nav', module)
       </div>
     </Fragment>
   ))
+  .add('Not underlined', () => (
+    <BpkHorizontalNav showUnderline={false}>
+      <BpkHorizontalNavItem>Flights</BpkHorizontalNavItem>
+      <BpkHorizontalNavItem selected>Hotels</BpkHorizontalNavItem>
+      <BpkHorizontalNavItem>Car hire</BpkHorizontalNavItem>
+    </BpkHorizontalNav>
+  ))
   .add('Using custom scroll colors', () => (
     <BpkHorizontalNav
       className={getClassName('bpk-horizontal-nav-custom-scrollers')}
