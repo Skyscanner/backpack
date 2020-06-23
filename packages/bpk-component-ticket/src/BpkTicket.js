@@ -139,12 +139,8 @@ const BpkTicket = (props: Props) => {
       {withNotches && <div className={startNotchClassNames} />}
       {withNotches && <div className={endNotchClassNames} />}
     </div>,
-    <div
-      key="stub"
-      className={stubClassNames}
-      // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
-      {...stubProps}
-    >
+    // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
+    <div key="stub" className={stubClassNames} {...stubProps}>
       {stubContent}
     </div>,
   ];
