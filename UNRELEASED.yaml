@@ -2,7 +2,7 @@
 
 FIXED:
   - bpk-component-horizontal-nav:
-    - Added `tablist` role to `BpkHorizontalNav` component for Accessibility
+    - Added `tablist` role to `BpkHorizontalNav` component for accessibility.
 
 # How to write a good changelog entry:
 #
