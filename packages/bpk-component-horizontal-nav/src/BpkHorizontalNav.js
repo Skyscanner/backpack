@@ -183,9 +183,12 @@ class BpkHorizontalNav extends Component<Props> {
         }}
         {...rest}
       >
-        <ul className={getClassName('bpk-horizontal-nav__list')} role="tablist">
+        <div
+          className={getClassName('bpk-horizontal-nav__list')}
+          role="tablist"
+        >
           {children}
-        </ul>
+        </div>
       </BpkMobileScrollContainer>
     );
   }
