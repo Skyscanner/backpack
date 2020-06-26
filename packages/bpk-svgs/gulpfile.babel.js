@@ -157,7 +157,6 @@ const optimiseSvgs = size =>
                 'class',
                 'data-name',
                 'fill',
-                'fill-rule',
                 'width',
                 'height',
                 'viewBox',
