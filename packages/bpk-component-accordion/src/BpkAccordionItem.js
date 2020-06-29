@@ -37,6 +37,7 @@ const BpkAccordionItem = props => {
     title,
     children,
     expanded,
+    icon,
     onClick,
     tagName,
     textStyle,
@@ -55,6 +56,11 @@ const BpkAccordionItem = props => {
   }
 
   const contentId = `${id}_content`;
+  const clonedIcon = icon
+    ? React.cloneElement(icon, {
+        className: getClassName('bpk-accordion__leading-icon'),
+      })
+    : null;
 
   return (
     <div id={id} {...rest}>
@@ -76,6 +82,7 @@ const BpkAccordionItem = props => {
               tagName={tagName}
               className={getClassName('bpk-accordion__title-text')}
             >
+              {clonedIcon}
               {title}
             </BpkText>
             <span className={getClassName('bpk-accordion__icon-wrapper')}>
@@ -102,6 +109,7 @@ BpkAccordionItem.propTypes = {
   id: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   expanded: PropTypes.bool,
+  icon: PropTypes.node,
   onClick: PropTypes.func,
   tagName: PropTypes.string,
   textStyle: PropTypes.string,
@@ -109,6 +117,7 @@ BpkAccordionItem.propTypes = {
 
 BpkAccordionItem.defaultProps = {
   expanded: false,
+  icon: null,
   onClick: () => null,
   tagName: 'span',
   textStyle: 'base',

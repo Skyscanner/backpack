@@ -74,6 +74,10 @@
     display: inline-block;
   }
 
+  &__leading-icon {
+    margin-right: $bpk-spacing-xs;
+  }
+
   &__item-expand-icon {
     @include bpk-themeable-property(
       fill,

@@ -60,6 +60,27 @@ export default () => (
 )
 ```
 
+### Displaying icons
+
+`BpkAccordionItem` supports the use of displaying icons alongside the title. To do this you will need to align your icon to the text using `withAlignment` and pass through the matching sizes for the icon you wish to use. For more information see [Alignment](https://backpack.github.io/components/alignment?platform=web)
+
+```js
+import React from 'react';
+import { BpkAccordion, BpkAccordionItem } from 'bpk-component-accordion';
+import { withAlignment } from 'bpk-component-icon';
+import StopsIcon from 'bpk-component-icon/sm/stops';
+import { lineHeightBase, iconSizeSm, colorPanjin } from 'bpk-tokens/tokens/base.es6';
+
+const AlignedStopsIcon = withAlignment(StopsIcon, lineHeightBase, iconSizeSm);
+
+<BpkAccordion>
+  <BpkAccordionItem id="stops" title="Stops" icon={<AlignedStopsIcon fill={colorPanjin}/>}>
+    My stops content.
+  </BpkAccordionItem>
+</BpkAccordion>
+
+```
+
 ## Props
 
 ### BpkAccordion
@@ -77,6 +98,7 @@ export default () => (
 | id        | string   | true     | -             |
 | title     | string   | true     | -             |
 | expanded  | bool     | false    | false         |
+| icon      | node     | false    | null          |
 | onClick   | func     | false    | () => null    |
 | tagName   | string   | false    | span          |
 | textStyle | string   | false    | "base"        |
