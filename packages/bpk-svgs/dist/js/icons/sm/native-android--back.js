@@ -5,4 +5,4 @@ export default (({
 }) => <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" style={{
   width: "1.125rem",
   height: "1.125rem"
-}} {...props}><path d="M20 11H7.8l5.6-5.6L12 4l-8 8 8 8 1.4-1.4L7.8 13H20z" /></svg>);
+}} {...props}><path fillRule="evenodd" d="M21 12a1.5 1.5 0 0 1-1.5 1.5H8.121l4.94 4.94a1.5 1.5 0 0 1-2.122 2.12L2.38 12l8.56-8.56a1.5 1.5 0 0 1 2.122 2.12L8.12 10.5H19.5A1.5 1.5 0 0 1 21 12z" clipRule="evenodd" /></svg>);

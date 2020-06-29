@@ -5,4 +5,4 @@ export default (({
 }) => <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" style={{
   width: "1.125rem",
   height: "1.125rem"
-}} {...props}><path d="M2 4h4.913c1.72 0 3.37.719 4.587 2v12l-1.9-1H2V4zm1 15h8l-2-1H3v1zm18-1h-6l-2 1h8v-1zm1-14v13h-7.6l-1.9 1V6c1.217-1.281 2.867-2 4.587-2H22zm-2 7h-5v1h5v-1zm0-2h-5v1h5V9zm0-2h-5v1h5V7z" /></svg>);
+}} {...props}><path fillRule="evenodd" d="M4.5 1.5a3 3 0 0 0-3 3v15a3 3 0 0 0 3 3H18a1.5 1.5 0 0 0 0-3H5.25a.75.75 0 0 1 0-1.5H19.5a3 3 0 0 0 3-3V4.5a3 3 0 0 0-3-3h-15zM6 8.25a.75.75 0 0 1 .75-.75h10.5a.75.75 0 0 1 0 1.5H6.75A.75.75 0 0 1 6 8.25zm.75 2.25a.75.75 0 0 0 0 1.5h10.5a.75.75 0 0 0 0-1.5H6.75z" clipRule="evenodd" /></svg>);
