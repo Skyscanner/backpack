@@ -2,14 +2,26 @@
 
 [Unreleased changes](./UNRELEASED.yaml).
 
+# 2020-06-30
+
+**Breaking**:
+  - bpk-component-icon: `7.0.0`
+  - bpk-svgs: `10.0.0`
+    - Fixed an issue with the large `minus` icon not rendering correctly.
+    - Fixed an issue where some of the large `gears--` icons were named incorrectly.
+
+**Added**:
+  - bpk-component-accordion: `2.1.58`
+    - Added new `icon` prop to allow icons to be displayed in the accordion title.
+
 # 2020-06-30 - New icon set
 
 **Breaking**:
 
 Note: There are no breaking code changes here — your existing code should work fine. This change is breaking because the icons have changed visually. When performing this upgrade, please take a close look at your screens and confirm everything looks alright. If you run into any problems adopting the new icons, contact #backpack.
 
-  - bpk-svgs:
-  - bpk-component-icon:
+  - bpk-svgs: `9.0.0`
+  - bpk-component-icon: `6.0.0`
       - Backpack's icon set has been refreshed with a fresh new look. Small icons are now more legible too. See https://backpack.github.io/components/icon?platform=design to see them in play.
       - Icon fonts now contain separate glyphs for small icons.
 

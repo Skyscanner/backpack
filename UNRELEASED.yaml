@@ -1,15 +1,5 @@
 # UNRELEASED:
 
-
-BREAKING:
-  - bpk-svgs:
-    - Fixed an issue with the large `minus` icon not rendering correctly.
-    - Fixed an issue where some of the large `gears--` icons were named incorrectly.
-
-ADDED:
-  - bpk-component-accordion
-    - Added new `icon` prop to allow icons to be displayed in the accordion title.
-
 # How to write a good changelog entry:
 #
 #   1. Add 'BREAKING', 'ADDED' OR 'FIXED' depending on if the change will be major, minor or patch according to [semver.org](semver.org).
