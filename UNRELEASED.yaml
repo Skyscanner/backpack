@@ -1,8 +1,13 @@
 # UNRELEASED:
 
+
 FIXED:
   - bpk-svgs:
     - Fixed an issue with the large `minus` icon not rendering correctly.
+
+ADDED:
+  - bpk-component-accordion
+    - Added new `icon` prop to allow icons to be displayed in the accordion title.
 
 # How to write a good changelog entry:
 #

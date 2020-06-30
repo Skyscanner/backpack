@@ -617,3 +617,108 @@ exports[`BpkAccordionItem should render correctly with "textStyle" prop set 1`] 
   </dd>
 </div>
 `;
+
+exports[`BpkAccordionItem should render correctly with an icon set 1`] = `
+<div
+  id="my-accordion"
+>
+  <dt
+    aria-labelledby="my-accordion"
+    aria-level="3"
+    className="bpk-accordion__title"
+  >
+    <button
+      aria-controls="my-accordion_content"
+      aria-expanded={false}
+      className="bpk-accordion__toggle-button"
+      onClick={[Function]}
+      type="button"
+    >
+      <span
+        className="bpk-accordion__flex-container"
+      >
+        <span
+          className="bpk-text bpk-text--base bpk-accordion__title-text"
+        >
+          <svg
+            className="bpk-accordion__leading-icon"
+            height="18"
+            style={
+              Object {
+                "height": "1.125rem",
+                "width": "1.125rem",
+              }
+            }
+            viewBox="0 0 24 24"
+            width="18"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M11.25 7.5a2.25 2.25 0 1 0 0-4.5 2.25 2.25 0 0 0 0 4.5zm-3.588-.866a1.5 1.5 0 0 1-.358 2.09C5.597 9.933 4.5 11.89 4.5 14.092V19.5a1.5 1.5 0 1 1-3 0v-5.41c0-3.227 1.614-6.076 4.071-7.814a1.5 1.5 0 0 1 2.091.358zm7.176 0a1.5 1.5 0 0 1 2.09-.359C19.387 8.014 21 10.864 21 14.091v1.788l.44-.44a1.5 1.5 0 0 1 2.12 2.122l-4.06 4.06-4.06-4.06a1.5 1.5 0 0 1 2.12-2.122l.44.44V14.09c0-2.201-1.097-4.159-2.804-5.366a1.5 1.5 0 0 1-.358-2.091z"
+            />
+          </svg>
+          My accordion item
+        </span>
+        <span
+          className="bpk-accordion__icon-wrapper"
+        >
+          <span
+            style={
+              Object {
+                "display": "inline-block",
+                "lineHeight": "1.125rem",
+                "marginTop": "0.1875rem",
+                "verticalAlign": "top",
+              }
+            }
+          >
+            <svg
+              className="bpk-accordion__item-expand-icon"
+              height="18"
+              style={
+                Object {
+                  "height": "1.125rem",
+                  "width": "1.125rem",
+                }
+              }
+              viewBox="0 0 24 24"
+              width="18"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                clipRule="evenodd"
+                d="M19.113 9.414c.526.47.506 1.52 0 2.008l-6.397 5.948a1 1 0 0 1-1.358.003l-6.532-6.011c-.526-.47-.369-1.46.138-1.948.507-.487 1.47-.573 1.997-.103l5.078 4.638 4.97-4.535c.506-.488 1.577-.47 2.104 0z"
+                fillRule="evenodd"
+              />
+            </svg>
+          </span>
+        </span>
+      </span>
+    </button>
+  </dt>
+  <dd
+    aria-labelledby="my-accordion_content"
+    className="bpk-accordion__content-container"
+    id="my-accordion_content"
+  >
+    <div
+      onTransitionEnd={[Function]}
+      style={
+        Object {
+          "MozTransition": "height 200ms ease ",
+          "OTransition": "height 200ms ease ",
+          "WebkitTransition": "height 200ms ease ",
+          "height": 0,
+          "msTransition": "height 200ms ease ",
+          "overflow": "hidden",
+          "transition": "height 200ms ease ",
+        }
+      }
+    >
+      <div>
+        My accordion content
+      </div>
+    </div>
+  </dd>
+</div>
+`;

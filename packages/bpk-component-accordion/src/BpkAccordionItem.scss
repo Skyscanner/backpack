@@ -74,6 +74,10 @@
     display: inline-block;
   }
 
+  &__leading-icon {
+    @include bpk-margin-trailing($bpk-spacing-xs, true);
+  }
+
   &__item-expand-icon {
     @include bpk-themeable-property(
       fill,
