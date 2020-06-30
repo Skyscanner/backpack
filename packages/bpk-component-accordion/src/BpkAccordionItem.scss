@@ -75,7 +75,7 @@
   }
 
   &__leading-icon {
-    margin-right: $bpk-spacing-xs;
+    @include bpk-margin-trailing($bpk-spacing-xs, true);
   }
 
   &__item-expand-icon {
