@@ -42,15 +42,10 @@ const BpkStar = props => {
     'bpk-star__container',
     'bpk-star__container--half-star',
   ].map(getClassName);
-  const halfIconClassNamesLeft = [
+  const halfIconClassNames = [
     'bpk-star',
     'bpk-star--half',
     'bpk-star--filled',
-  ].map(getClassName);
-  const halfIconClassNamesRight = [
-    'bpk-star',
-    'bpk-star--half',
-    'bpk-star--half-flipped',
   ].map(getClassName);
 
   let Icon = SmallIcon;
@@ -69,8 +64,7 @@ const BpkStar = props => {
     }
     return (
       <span className={containerClassNames.join(' ')} {...rest}>
-        <HalfIcon className={halfIconClassNamesLeft.join(' ')} />
-        <HalfIcon className={halfIconClassNamesRight.join(' ')} />
+        <HalfIcon className={halfIconClassNames.join(' ')} />
       </span>
     );
   }

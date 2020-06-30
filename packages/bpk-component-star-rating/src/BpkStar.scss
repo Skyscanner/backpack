@@ -38,10 +38,6 @@
     left: 0;
   }
 
-  &--half-flipped {
-    transform: scaleX(-1);
-  }
-
   &--filled {
     @include bpk-themeable-property(
       fill,
