@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-theme-toggle",
-  "version": "2.0.59",
+  "version": "2.0.60",
   "description": "Backpack theme toggle component.",
   "main": "index.js",
   "repository": {
@@ -13,9 +13,9 @@
     "react": "^15.0.0 || ^16.0.0"
   },
   "dependencies": {
-    "bpk-component-label": "^4.0.56",
-    "bpk-component-select": "^3.0.55",
-    "bpk-mixins": "^19.1.24",
+    "bpk-component-label": "^4.0.57",
+    "bpk-component-select": "^3.0.56",
+    "bpk-mixins": "^19.1.25",
     "bpk-react-utils": "^3.0.2",
     "bpk-tokens": "^32.0.5",
     "konami": "^1.6.2",
