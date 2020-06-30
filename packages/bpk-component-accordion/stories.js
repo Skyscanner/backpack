@@ -19,7 +19,16 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import BpkCheckbox from 'bpk-component-checkbox';
-import { spacingSm } from 'bpk-tokens/tokens/base.es6';
+import { withAlignment } from 'bpk-component-icon';
+import StopsIcon from 'bpk-component-icon/sm/stops';
+import TimeIcon from 'bpk-component-icon/sm/time';
+import {
+  colorMonteverde,
+  colorPanjin,
+  iconSizeSm,
+  lineHeightBase,
+  spacingSm,
+} from 'bpk-tokens/tokens/base.es6';
 
 import {
   BpkAccordion,
@@ -30,6 +39,9 @@ import {
 
 const SingleItemAccordion = withSingleItemAccordionState(BpkAccordion);
 const StatefulAccordionItem = withAccordionItemState(BpkAccordionItem);
+
+const AlignedStopsIcon = withAlignment(StopsIcon, lineHeightBase, iconSizeSm);
+const AlignedTimeIcon = withAlignment(TimeIcon, lineHeightBase, iconSizeSm);
 
 const CheckboxWrapper = props => (
   <div style={{ padding: `${spacingSm} 0` }} {...props} />
@@ -251,4 +263,28 @@ storiesOf('bpk-component-accordion', module)
         <AirportsContent />
       </BpkAccordionItem>
     </SingleItemAccordion>
+  ))
+  .add('With icons', () => (
+    <BpkAccordion>
+      <BpkAccordionItem
+        id="stops"
+        title="Stops"
+        tagName="h3"
+        expanded
+        icon={<AlignedStopsIcon fill={colorPanjin} />}
+      >
+        <StopsContent />
+      </BpkAccordionItem>
+      <BpkAccordionItem
+        id="departure-times"
+        title="Departure times"
+        tagName="h2"
+        icon={<AlignedTimeIcon fill={colorMonteverde} />}
+      >
+        <AirlinesContent />
+      </BpkAccordionItem>
+      <BpkAccordionItem id="journey-duration" title="Journey duration" expanded>
+        <AirportsContent />
+      </BpkAccordionItem>
+    </BpkAccordion>
   ));
