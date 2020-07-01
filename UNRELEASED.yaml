@@ -1,33 +1,5 @@
 # UNRELEASED:
 
-BREAKING:
-  - bpk-svgs:
-  - bpk-component-icon:
-    - Redesigned some icons:
-      - `star`, `star-outline` and `star-half` icon have a new design.
-    - Renamed some icons:
-      - `face-blank` is now `face--blank`.
-      - `face-happy` is now `face--happy`.
-      - `face-sad` is now `face--sad`.
-      - `un-mute` is now `unmute`.
-      - `weather-clear` is now `weather--clear`.
-      - `weather-cloudy` is now `weather--cloudy`.
-      - `weather-fog` is now `weather--fog`.
-      - `weather-partly-cloudy` is now `weather--partly-cloudy`.
-      - `weather-rain` is now `weather--rain`.
-      - `weather-snow` is now `weather--snow`.
-      - `weather-thunderstorm` is now `weather--thunderstorm`.
-      - `weather-tornado` is now `weather--tornado`.
-      - `weather-wind` is now `weather--wind`.
-   - Reinstated some icons that were accidentally removed in the previous releases:
-      - `swap--horizontal`
-      - `transmission-automatic`
-      - `transmission-manual`
-      - `social-like`
-
-  - bpk-component-star-rating:
-    - Updated component to use new star icons.
-
 # How to write a good changelog entry:
 #
 #   1. Add 'BREAKING', 'ADDED' OR 'FIXED' depending on if the change will be major, minor or patch according to [semver.org](semver.org).

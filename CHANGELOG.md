@@ -2,9 +2,47 @@
 
 [Unreleased changes](./UNRELEASED.yaml).
 
+# 2020-07-01 - More icon changes
+
+In `bpk-svgs 9.0.0` and `bpk-component-icon 6.0.0`, the new icon set was released. Some icons were inadvertently removed in this update. This update reinstates some of the missing ones — the remaining missing ones will be coming in the next update — and renamed some of the new icons to better fit our naming convention. It also introduces new star icons and updates the star rating component to use them.
+
+A detailed changelog is below:
+
+**Breaking:**
+  - bpk-svgs:
+  - bpk-component-icon:
+    - Renamed some icons:
+      - `face-blank` is now `face--blank`.
+      - `face-happy` is now `face--happy`.
+      - `face-sad` is now `face--sad`.
+      - `un-mute` is now `unmute`.
+      - `weather-clear` is now `weather--clear`.
+      - `weather-cloudy` is now `weather--cloudy`.
+      - `weather-fog` is now `weather--fog`.
+      - `weather-partly-cloudy` is now `weather--partly-cloudy`.
+      - `weather-rain` is now `weather--rain`.
+      - `weather-snow` is now `weather--snow`.
+      - `weather-thunderstorm` is now `weather--thunderstorm`.
+      - `weather-tornado` is now `weather--tornado`.
+      - `weather-wind` is now `weather--wind`.
+
+  **Changed:**
+  - bpk-svgs:
+  - bpk-component-icon:
+   - Reinstated some icons that were accidentally removed in the previous releases:
+      - `swap--horizontal`
+      - `transmission-automatic`
+      - `transmission-manual`
+      - `social-like`
+    - Redesigned some icons:
+      - `star`, `star-outline` and `star-half` icon have a new design.
+  - bpk-component-star-rating:
+    - Updated component to use new star icons.
+
+
 # 2020-06-30
 
-**Breaking**:
+**Breaking:**
   - bpk-component-icon: `7.0.0`
   - bpk-svgs: `10.0.0`
     - Fixed an issue with the large `minus` icon not rendering correctly.
