@@ -2,6 +2,15 @@
 
 [Unreleased changes](./UNRELEASED.yaml).
 
+# 2020-07-02
+
+**Added:**
+- bpk-component-icon: `8.1.0`
+- bpk-svgs: `11.1.0`
+  - Reinstated small version of `fast-track` icon, which was accidentally removed in `bpk-svgs 9.0.0` and `bpk-component-icon 6.0.0`.
+  - Added `clean-policy`, `cleaning-medical`, `ppe` and `social-distancing` icons.
+
+
 # 2020-07-01 - More icon changes
 
 In `bpk-svgs 9.0.0` and `bpk-component-icon 6.0.0`, the new icon set was released. Some icons were inadvertently removed in this update. This update reinstates some of the missing ones — the remaining missing ones will be coming in the next update — and renamed some of the new icons to better fit our naming convention. It also introduces new star icons and updates the star rating component to use them.

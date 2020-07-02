@@ -1,11 +1,5 @@
 # UNRELEASED:
 
-**Added:**
-- bpk-component-icon:
-- bpk-svgs:
-  - Reinstated small version of `fast-track` icon, which was accidentally removed in `bpk-svgs 9.0.0` and `bpk-component-icon 6.0.0`.
-  - Added `clean-policy`, `cleaning-medical`, `ppe` and `social-distancing` icons.
-
 # How to write a good changelog entry:
 #
 #   1. Add 'BREAKING', 'ADDED' OR 'FIXED' depending on if the change will be major, minor or patch according to [semver.org](semver.org).
