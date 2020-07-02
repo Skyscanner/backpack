@@ -18,7 +18,7 @@
 
 @import '~bpk-mixins/index';
 
-$bpk-radio-circle-size: $bpk-one-pixel-rem * 10;
+$bpk-radio-circle-size: ($bpk-spacing-sm / 3) * 2;
 
 .bpk-radio {
   @include bpk-radio;
@@ -36,14 +36,12 @@ $bpk-radio-circle-size: $bpk-one-pixel-rem * 10;
   }
 
   &__input {
+    top: $bpk-one-pixel-rem;
+
     @include bpk-radio__input;
 
     &:checked {
-      background: url(map-get($bpk-elements, radio-normal)) no-repeat;
-
-      + .bpk-radio__circle {
-        display: block;
-      }
+      background: url(map-get($bpk-elements, radio-checked)) no-repeat;
 
       &:disabled {
         background: url(map-get($bpk-elements, radio-checked-disabled))
@@ -58,8 +56,8 @@ $bpk-radio-circle-size: $bpk-one-pixel-rem * 10;
 
   &__circle {
     position: absolute;
-    top: ($bpk-spacing-base - $bpk-radio-circle-size) / 2;
-    left: ($bpk-spacing-md - $bpk-radio-circle-size) / 2;
+    top: $bpk-one-pixel-rem * 6;
+    left: $bpk-spacing-xs - $bpk-one-pixel-rem;
     display: none;
     width: $bpk-radio-circle-size;
     height: $bpk-radio-circle-size;

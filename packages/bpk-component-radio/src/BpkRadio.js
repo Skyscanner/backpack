@@ -65,7 +65,7 @@ const BpkRadio = props => {
         aria-invalid={isInvalid}
         {...rest}
       />
-      <div className={getClassName('bpk-radio__circle')} />
+      {/* <div className={getClassName('bpk-radio__circle')} /> */}
       <span aria-hidden="true">{label}</span>
     </label>
   );
