@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-star-rating",
-  "version": "2.1.56",
+  "version": "2.1.57",
   "description": "Backpack rating star component.",
   "main": "index.js",
   "repository": {
@@ -13,13 +13,13 @@
     "react": "^15.0.0 || ^16.0.0"
   },
   "dependencies": {
-    "bpk-component-icon": "^8.1.0",
-    "bpk-mixins": "^19.1.27",
+    "bpk-component-icon": "^8.1.1",
+    "bpk-mixins": "^19.1.28",
     "bpk-react-utils": "^3.0.2",
     "prop-types": "^15.6.2"
   },
   "devDependencies": {
-    "bpk-component-table": "^2.0.58"
+    "bpk-component-table": "^2.0.59"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
