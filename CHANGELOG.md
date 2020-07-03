@@ -2,6 +2,22 @@
 
 [Unreleased changes](./UNRELEASED.yaml).
 
+# 2020-07-03
+
+**Changed:**
+  - bpk-svgs: `11.1.1`
+  - bpk-component-icon: `8.1.1`
+   - Reinstated some icons that were accidentally removed in `bpk-svgs 9.0.0` and `bpk-component-icon 6.0.0`:
+      - `document-csv`
+      - `document-pdf`
+      - `grid-layout`
+      - `multiple-bookings`
+      - `print`
+      - `speaker`
+      - `swap--vertical`
+      - `ticket-flexible`
+      - `wallet`
+
 # 2020-07-02
 
 **Added:**
