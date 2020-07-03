@@ -1,5 +1,19 @@
 # UNRELEASED:
 
+**Changed:**
+  - bpk-svgs:
+  - bpk-component-icon:
+   - Reinstated some icons that were accidentally removed in `bpk-svgs 9.0.0` and `bpk-component-icon 6.0.0`:
+      - `document-csv`
+      - `document-pdf`
+      - `grid-layout`
+      - `multiple-bookings`
+      - `print`
+      - `speaker`
+      - `swap--vertical`
+      - `ticket-flexible`
+      - `wallet`
+
 # How to write a good changelog entry:
 #
 #   1. Add 'BREAKING', 'ADDED' OR 'FIXED' depending on if the change will be major, minor or patch according to [semver.org](semver.org).
