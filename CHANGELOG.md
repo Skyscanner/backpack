@@ -7,8 +7,8 @@
 As of this update, all icons that were accidentally removed in `bpk-svgs 9.0.0` and `bpk-component-icon 6.0.0` have been reinstated.
 
 **Changed:**
-  - bpk-svgs:
-  - bpk-component-icon:
+  - bpk-svgs: `11.1.2`
+  - bpk-component-icon: `8.1.2`
    - Reinstated `single-booking` icon.
 
 # 2020-07-03
