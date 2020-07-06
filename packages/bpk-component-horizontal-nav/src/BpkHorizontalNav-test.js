@@ -29,6 +29,19 @@ describe('BpkHorizontalNav', () => {
     expect(tree).toMatchSnapshot();
   });
 
+  it('should render correctly with "type" prop', () => {
+    const tree = renderer
+      .create(
+        <BpkHorizontalNav type="light">
+          <li>One</li>
+          <li>Two</li>
+          <li>Three</li>
+        </BpkHorizontalNav>,
+      )
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
   it('should render correctly with custom "className" prop', () => {
     const tree = renderer
       .create(

@@ -21,17 +21,19 @@ import React, { Component, type Node } from 'react';
 import PropTypes from 'prop-types';
 import { cssModules } from 'bpk-react-utils';
 
+import { HORIZONTAL_NAV_TYPES } from './BpkHorizontalNav';
 import STYLES from './BpkHorizontalNavItem.scss';
 
 const getClassName = cssModules(STYLES);
 
 export type Props = {
   children: Node,
+  disabled: boolean,
   selected: boolean,
   spaceAround: boolean,
-  disabled: boolean,
-  href: ?string,
+  type: $Keys<typeof HORIZONTAL_NAV_TYPES>,
   className: ?string,
+  href: ?string,
 };
 
 // In order to be able to access refs on the HorizontalNavItems, they need to be a fully defined
@@ -41,18 +43,20 @@ class BpkHorizontalNavItem extends Component<Props> {
   static propTypes = {
     children: PropTypes.node.isRequired,
     className: PropTypes.string,
+    disabled: PropTypes.bool,
+    href: PropTypes.string,
     selected: PropTypes.bool,
     spaceAround: PropTypes.bool,
-    href: PropTypes.string,
-    disabled: PropTypes.bool,
+    type: PropTypes.oneOf(Object.keys(HORIZONTAL_NAV_TYPES)),
   };
 
   static defaultProps = {
     className: null,
+    disabled: false,
+    href: null,
     selected: false,
     spaceAround: false,
-    href: null,
-    disabled: false,
+    type: HORIZONTAL_NAV_TYPES.default,
   };
 
   render() {
@@ -63,6 +67,7 @@ class BpkHorizontalNavItem extends Component<Props> {
       href,
       selected,
       spaceAround,
+      type,
       ...rest
     } = this.props;
 
@@ -72,8 +77,9 @@ class BpkHorizontalNavItem extends Component<Props> {
     );
     const innerClassNames = getClassName(
       'bpk-horizontal-nav__link',
-      selected && 'bpk-horizontal-nav__link--selected',
-      disabled && 'bpk-horizontal-nav__link--disabled',
+      `bpk-horizontal-nav__link--${type}`,
+      selected && `bpk-horizontal-nav__link--${type}-selected`,
+      disabled && `bpk-horizontal-nav__link--${type}-disabled`,
       className,
     );
 

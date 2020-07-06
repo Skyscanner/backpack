@@ -40,6 +40,13 @@ describe('BpkHorizontalNavItem', () => {
     expect(tree).toMatchSnapshot();
   });
 
+  it('should render correctly with "type" prop', () => {
+    const tree = renderer
+      .create(<BpkHorizontalNavItem type="light">One</BpkHorizontalNavItem>)
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
   it('should render correctly with an "href" prop', () => {
     const tree = renderer
       .create(

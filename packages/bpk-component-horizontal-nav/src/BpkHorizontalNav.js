@@ -27,10 +27,16 @@ import STYLES from './BpkHorizontalNav.scss';
 
 const getClassName = cssModules(STYLES);
 
+const HORIZONTAL_NAV_TYPES = {
+  default: 'default',
+  light: 'light',
+};
+
 export type Props = {
   autoScrollToSelected: boolean,
   children: Node,
   showUnderline: boolean,
+  type: $Keys<typeof HORIZONTAL_NAV_TYPES>,
   className: ?string,
   leadingScrollIndicatorClassName: ?string,
   trailingScrollIndicatorClassName: ?string,
@@ -56,6 +62,7 @@ class BpkHorizontalNav extends Component<Props> {
     leadingScrollIndicatorClassName: PropTypes.string,
     showUnderline: PropTypes.bool,
     trailingScrollIndicatorClassName: PropTypes.string,
+    type: PropTypes.oneOf(Object.keys(HORIZONTAL_NAV_TYPES)),
   };
 
   static defaultProps = {
@@ -64,6 +71,7 @@ class BpkHorizontalNav extends Component<Props> {
     leadingScrollIndicatorClassName: null,
     showUnderline: true,
     trailingScrollIndicatorClassName: null,
+    type: HORIZONTAL_NAV_TYPES.default,
   };
 
   constructor(props: Props) {
@@ -145,29 +153,40 @@ class BpkHorizontalNav extends Component<Props> {
       leadingScrollIndicatorClassName,
       trailingScrollIndicatorClassName,
       showUnderline,
+      type,
       ...rest
     } = this.props;
 
     const classNames = getClassName(
       'bpk-horizontal-nav',
-      showUnderline && 'bpk-horizontal-nav--show-underline',
+      showUnderline &&
+        type === HORIZONTAL_NAV_TYPES.default &&
+        'bpk-horizontal-nav--show-default-underline',
+      showUnderline &&
+        type === HORIZONTAL_NAV_TYPES.light &&
+        'bpk-horizontal-nav--show-light-underline',
       className,
     );
 
-    let children = null;
-    if (!autoScrollToSelected) {
-      children = rawChildren;
-    } else {
+    let children = rawChildren;
+
+    if (autoScrollToSelected || type === HORIZONTAL_NAV_TYPES.light) {
       children = React.Children.map(rawChildren, child => {
-        if (!child || !child.props || !child.props.selected) {
-          return child;
+        const childProps = {};
+
+        if (autoScrollToSelected) {
+          if (child && child.props && child.props.selected) {
+            childProps.ref = ref => {
+              this.selectedItemRef = ref;
+            };
+          }
         }
 
-        return React.cloneElement(child, {
-          ref: ref => {
-            this.selectedItemRef = ref;
-          },
-        });
+        if (type === HORIZONTAL_NAV_TYPES.light) {
+          childProps.type = HORIZONTAL_NAV_TYPES.light;
+        }
+
+        return React.cloneElement(child, childProps);
       });
     }
 
@@ -192,3 +211,4 @@ class BpkHorizontalNav extends Component<Props> {
 }
 
 export default BpkHorizontalNav;
+export { HORIZONTAL_NAV_TYPES };
