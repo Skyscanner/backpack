@@ -65,13 +65,13 @@ const InfiniteList = withInfiniteScroll(List);
 
 (() => (
   <React.Fragment>
-    {/* $ExpectError (aria-label is required) */}
+    {/* $FlowExpectedError[prop-missing] */}
     <InfiniteList dataSource={new ArrayDataSource([])} />
 
-    {/* $ExpectError (dataSource is required) */}
+    {/* $FlowExpectedError[prop-missing] */}
     <InfiniteList aria-label="infinite list" />
 
-    {/* $ExpectError (incompatible type) */}
+    {/* $FlowExpectedError[incompatible-type] */}
     <InfiniteList dataSource={new ArrayDataSource([])} aria-label={null} />
 
     {/* Test default props */}

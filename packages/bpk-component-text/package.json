@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-text",
-  "version": "3.0.20",
+  "version": "3.0.28",
   "description": "Backpack text component.",
   "main": "index.js",
   "repository": {
@@ -13,12 +13,12 @@
     "react": "^15.0.0 || ^16.0.0"
   },
   "dependencies": {
-    "bpk-mixins": "^19.1.21",
+    "bpk-mixins": "^19.1.29",
     "bpk-react-utils": "^3.0.2",
     "prop-types": "^15.6.2"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
-  "gitHead": "4c9429bff14afc0a3ccd684822c6b51eb366725b"
+  "gitHead": "ace52722a3d752ef1fed43eab155666d232ce21d"
 }

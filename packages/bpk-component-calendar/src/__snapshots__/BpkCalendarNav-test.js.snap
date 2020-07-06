@@ -27,7 +27,7 @@ exports[`BpkCalendarNav should disable inputs when disabled 1`] = `
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
-          d="M13.7 19.7L6.6 12l7.1-7.7c.6-.6 1.7-.2 1.7.7v14c0 .9-1.1 1.4-1.7.7z"
+          d="M16 17.293V6.707c0-1.454-1.638-2.24-2.701-1.296l-5.724 5.081a1.75 1.75 0 0 0-.049 2.547l5.724 5.505c1.049 1.009 2.75.235 2.75-1.251z"
         />
       </svg>
       <span
@@ -90,7 +90,7 @@ exports[`BpkCalendarNav should disable inputs when disabled 1`] = `
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
-          d="M9.9 19.7L17 12 9.9 4.4c-.7-.7-1.7-.2-1.7.7v14c0 .8 1 1.3 1.7.6z"
+          d="M7 17.293V6.707c0-1.454 1.638-2.24 2.701-1.296l5.724 5.081a1.75 1.75 0 0 1 .049 2.547L9.75 18.544C8.7 19.553 7 18.779 7 17.293z"
         />
       </svg>
       <span
@@ -130,7 +130,7 @@ exports[`BpkCalendarNav should render correctly 1`] = `
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
-          d="M13.7 19.7L6.6 12l7.1-7.7c.6-.6 1.7-.2 1.7.7v14c0 .9-1.1 1.4-1.7.7z"
+          d="M16 17.293V6.707c0-1.454-1.638-2.24-2.701-1.296l-5.724 5.081a1.75 1.75 0 0 0-.049 2.547l5.724 5.505c1.049 1.009 2.75.235 2.75-1.251z"
         />
       </svg>
       <span
@@ -193,7 +193,7 @@ exports[`BpkCalendarNav should render correctly 1`] = `
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
-          d="M9.9 19.7L17 12 9.9 4.4c-.7-.7-1.7-.2-1.7.7v14c0 .8 1 1.3 1.7.6z"
+          d="M7 17.293V6.707c0-1.454 1.638-2.24 2.701-1.296l5.724 5.081a1.75 1.75 0 0 1 .049 2.547L9.75 18.544C8.7 19.553 7 18.779 7 17.293z"
         />
       </svg>
       <span

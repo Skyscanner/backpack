@@ -18,6 +18,7 @@
 
 import React from 'react';
 import renderer from 'react-test-renderer';
+import StopsIcon from 'bpk-component-icon/sm/stops';
 
 import BpkAccordionItem from './BpkAccordionItem';
 
@@ -107,6 +108,21 @@ describe('BpkAccordionItem', () => {
           id="my-accordion"
           title="My accordion item"
           initiallyExpanded
+        >
+          My accordion content
+        </BpkAccordionItem>,
+      )
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('should render correctly with an icon set', () => {
+    const tree = renderer
+      .create(
+        <BpkAccordionItem
+          id="my-accordion"
+          title="My accordion item"
+          icon={<StopsIcon />}
         >
           My accordion content
         </BpkAccordionItem>,

@@ -20,6 +20,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import SmallIcon from 'bpk-component-icon/sm/star';
 import LargeIcon from 'bpk-component-icon/lg/star';
+import OutlineSmallIcon from 'bpk-component-icon/sm/star-outline';
+import OutlineLargeIcon from 'bpk-component-icon/lg/star-outline';
 import HalfSmallIcon from 'bpk-component-icon/sm/star-half';
 import HalfLargeIcon from 'bpk-component-icon/lg/star-half';
 import { withRtlSupport } from 'bpk-component-icon';
@@ -42,22 +44,19 @@ const BpkStar = props => {
     'bpk-star__container',
     'bpk-star__container--half-star',
   ].map(getClassName);
-  const halfIconClassNamesLeft = [
+  const halfIconClassNames = [
     'bpk-star',
     'bpk-star--half',
     'bpk-star--filled',
   ].map(getClassName);
-  const halfIconClassNamesRight = [
-    'bpk-star',
-    'bpk-star--half',
-    'bpk-star--half-flipped',
-  ].map(getClassName);
 
   let Icon = SmallIcon;
+  let OutlineIcon = OutlineSmallIcon;
   let HalfIcon = HalfSmallIcon;
 
   if (large) {
     Icon = LargeIcon;
+    OutlineIcon = OutlineLargeIcon;
     HalfIcon = HalfLargeIcon;
     iconClassNames.push(getClassName('bpk-star--large'));
     containerClassNames.push(getClassName('bpk-star__container--large'));
@@ -69,8 +68,7 @@ const BpkStar = props => {
     }
     return (
       <span className={containerClassNames.join(' ')} {...rest}>
-        <HalfIcon className={halfIconClassNamesLeft.join(' ')} />
-        <HalfIcon className={halfIconClassNamesRight.join(' ')} />
+        <HalfIcon className={halfIconClassNames.join(' ')} />
       </span>
     );
   }
@@ -83,7 +81,11 @@ const BpkStar = props => {
     iconClassNames.push(className);
   }
 
-  return <Icon className={iconClassNames.join(' ')} {...rest} />;
+  return type === STAR_TYPES.FULL ? (
+    <Icon className={iconClassNames.join(' ')} {...rest} />
+  ) : (
+    <OutlineIcon className={iconClassNames.join(' ')} {...rest} />
+  );
 };
 
 BpkStar.propTypes = {

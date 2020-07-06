@@ -2,6 +2,124 @@
 
 [Unreleased changes](./UNRELEASED.yaml).
 
+# 2020-07-03
+
+As of this update, all icons that were accidentally removed in `bpk-svgs 9.0.0` and `bpk-component-icon 6.0.0` have been reinstated.
+
+**Changed:**
+  - bpk-svgs: `11.1.2`
+  - bpk-component-icon: `8.1.2`
+   - Reinstated `single-booking` icon.
+
+# 2020-07-03
+
+**Changed:**
+  - bpk-svgs: `11.1.1`
+  - bpk-component-icon: `8.1.1`
+   - Reinstated some icons that were accidentally removed in `bpk-svgs 9.0.0` and `bpk-component-icon 6.0.0`:
+      - `document-csv`
+      - `document-pdf`
+      - `grid-layout`
+      - `multiple-bookings`
+      - `print`
+      - `speaker`
+      - `swap--vertical`
+      - `ticket-flexible`
+      - `wallet`
+
+# 2020-07-02
+
+**Added:**
+- bpk-component-icon: `8.1.0`
+- bpk-svgs: `11.1.0`
+  - Reinstated small version of `fast-track` icon, which was accidentally removed in `bpk-svgs 9.0.0` and `bpk-component-icon 6.0.0`.
+  - Added `clean-policy`, `cleaning-medical`, `ppe` and `social-distancing` icons.
+
+
+# 2020-07-01 - More icon changes
+
+In `bpk-svgs 9.0.0` and `bpk-component-icon 6.0.0`, the new icon set was released. Some icons were inadvertently removed in this update. This update reinstates some of the missing ones — the remaining missing ones will be coming in the next update — and renamed some of the new icons to better fit our naming convention. It also introduces new star icons and updates the star rating component to use them.
+
+A detailed changelog is below:
+
+**Breaking:**
+  - bpk-svgs:
+  - bpk-component-icon:
+    - Renamed some icons:
+      - `face-blank` is now `face--blank`.
+      - `face-happy` is now `face--happy`.
+      - `face-sad` is now `face--sad`.
+      - `un-mute` is now `unmute`.
+      - `weather-clear` is now `weather--clear`.
+      - `weather-cloudy` is now `weather--cloudy`.
+      - `weather-fog` is now `weather--fog`.
+      - `weather-partly-cloudy` is now `weather--partly-cloudy`.
+      - `weather-rain` is now `weather--rain`.
+      - `weather-snow` is now `weather--snow`.
+      - `weather-thunderstorm` is now `weather--thunderstorm`.
+      - `weather-tornado` is now `weather--tornado`.
+      - `weather-wind` is now `weather--wind`.
+
+  **Changed:**
+  - bpk-svgs:
+  - bpk-component-icon:
+   - Reinstated some icons that were accidentally removed in the previous releases:
+      - `swap--horizontal`
+      - `transmission-automatic`
+      - `transmission-manual`
+      - `social-like`
+    - Redesigned some icons:
+      - `star`, `star-outline` and `star-half` icon have a new design.
+  - bpk-component-star-rating:
+    - Updated component to use new star icons.
+
+
+# 2020-06-30
+
+**Breaking:**
+  - bpk-component-icon: `7.0.0`
+  - bpk-svgs: `10.0.0`
+    - Fixed an issue with the large `minus` icon not rendering correctly.
+    - Fixed an issue where some of the large `gears--` icons were named incorrectly.
+
+**Added**:
+  - bpk-component-accordion: `2.1.58`
+    - Added new `icon` prop to allow icons to be displayed in the accordion title.
+
+# 2020-06-30 - New icon set
+
+**Breaking**:
+
+Note: There are no breaking code changes here — your existing code should work fine. This change is breaking because the icons have changed visually. When performing this upgrade, please take a close look at your screens and confirm everything looks alright. If you run into any problems adopting the new icons, contact #backpack.
+
+  - bpk-svgs: `9.0.0`
+  - bpk-component-icon: `6.0.0`
+      - Backpack's icon set has been refreshed with a fresh new look. Small icons are now more legible too. See https://backpack.github.io/components/icon?platform=design to see them in play.
+      - Icon fonts now contain separate glyphs for small icons.
+
+# 2020-06-22 - `showUnderline` prop for `BpkHorizontalNav`
+
+**Added:**:
+  - bpk-component-horizontal-nav:
+    - Added `showUnderline` prop for controlling whether the underline under the component is displayed.
+
+# 2020-06-22 - Better accessibility for `BpkHorizontalNav`
+
+**Fixed:**
+  - bpk-component-horizontal-nav:
+    - Added `tablist` role to `BpkHorizontalNav` component for accessibility.
+
+**Changed:**
+  - All components
+    - Flow `0.127` is now supported.
+
+# 2020-06-18 - New icon
+
+**Added:**
+  - bpk-svgs: 8.4.1 => 8.5.0
+  - bpk-component-icon: 5.2.2 => 5.3.0
+    - Added new `logout` icon.
+
 # 2020-06-11 - Fixed checkbox alignment
 
 **Fixed:**
