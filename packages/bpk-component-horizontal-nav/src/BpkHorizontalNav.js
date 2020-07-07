@@ -159,12 +159,7 @@ class BpkHorizontalNav extends Component<Props> {
 
     const classNames = getClassName(
       'bpk-horizontal-nav',
-      showUnderline &&
-        type === HORIZONTAL_NAV_TYPES.default &&
-        'bpk-horizontal-nav--show-default-underline',
-      showUnderline &&
-        type === HORIZONTAL_NAV_TYPES.light &&
-        'bpk-horizontal-nav--show-light-underline',
+      showUnderline && `bpk-horizontal-nav--show-${type}-underline`,
       className,
     );
 
@@ -186,7 +181,7 @@ class BpkHorizontalNav extends Component<Props> {
           childProps.type = HORIZONTAL_NAV_TYPES.light;
         }
 
-        return React.cloneElement(child, childProps);
+        return child ? React.cloneElement(child, childProps) : null;
       });
     }
 
