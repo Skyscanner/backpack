@@ -40,65 +40,42 @@
     cursor: pointer;
     fill: currentColor;
 
-    @include bpk-themeable-property(
-      color,
-      --bpk-horizontal-nav-link-color,
-      $bpk-horizontal-nav-link-color
-    );
-
-    @include bpk-hover {
-      @include bpk-border-bottom-xl($bpk-color-sky-gray-tint-06);
+    &--default {
       @include bpk-themeable-property(
         color,
-        --bpk-horizontal-nav-link-hover-color,
-        $bpk-horizontal-nav-link-hover-color
-      );
-    }
-
-    &:active {
-      @include bpk-border-bottom-xl($bpk-color-sky-gray-tint-05);
-      @include bpk-themeable-property(
-        color,
-        --bpk-horizontal-nav-link-active-color,
-        $bpk-horizontal-nav-link-active-color
-      );
-    }
-
-    &--disabled {
-      color: $bpk-color-sky-gray-tint-06;
-      cursor: not-allowed;
-
-      &:active {
-        color: $bpk-color-sky-gray-tint-06;
-        box-shadow: unset;
-      }
-    }
-
-    &--selected {
-      @include bpk-border-bottom-xl($bpk-horizontal-nav-bar-selected-color);
-      @include bpk-border-bottom-xl(
-        var(
-          --bpk-horizontal-nav-bar-selected-color,
-          $bpk-horizontal-nav-bar-selected-color
-        )
-      );
-      @include bpk-themeable-property(
-        color,
-        --bpk-horizontal-nav-link-selected-color,
-        $bpk-horizontal-nav-link-selected-color
+        --bpk-horizontal-nav-link-color,
+        $bpk-horizontal-nav-link-color
       );
 
       @include bpk-hover {
-        @include bpk-border-bottom-xl($bpk-horizontal-nav-bar-selected-color);
-        @include bpk-border-bottom-xl(
-          var(
-            --bpk-horizontal-nav-bar-selected-color,
-            $bpk-horizontal-nav-bar-selected-color
-          )
+        @include bpk-border-bottom-xl($bpk-color-sky-gray-tint-06);
+        @include bpk-themeable-property(
+          color,
+          --bpk-horizontal-nav-link-hover-color,
+          $bpk-horizontal-nav-link-hover-color
         );
       }
 
       &:active {
+        @include bpk-border-bottom-xl($bpk-color-sky-gray-tint-05);
+        @include bpk-themeable-property(
+          color,
+          --bpk-horizontal-nav-link-active-color,
+          $bpk-horizontal-nav-link-active-color
+        );
+      }
+
+      &-disabled {
+        color: $bpk-color-sky-gray-tint-06;
+        cursor: not-allowed;
+
+        &:active {
+          color: $bpk-color-sky-gray-tint-06;
+          box-shadow: unset;
+        }
+      }
+
+      &-selected {
         @include bpk-border-bottom-xl($bpk-horizontal-nav-bar-selected-color);
         @include bpk-border-bottom-xl(
           var(
@@ -106,6 +83,67 @@
             $bpk-horizontal-nav-bar-selected-color
           )
         );
+        @include bpk-themeable-property(
+          color,
+          --bpk-horizontal-nav-link-selected-color,
+          $bpk-horizontal-nav-link-selected-color
+        );
+
+        @include bpk-hover {
+          @include bpk-border-bottom-xl($bpk-horizontal-nav-bar-selected-color);
+          @include bpk-border-bottom-xl(
+            var(
+              --bpk-horizontal-nav-bar-selected-color,
+              $bpk-horizontal-nav-bar-selected-color
+            )
+          );
+        }
+
+        &:active {
+          @include bpk-border-bottom-xl($bpk-horizontal-nav-bar-selected-color);
+          @include bpk-border-bottom-xl(
+            var(
+              --bpk-horizontal-nav-bar-selected-color,
+              $bpk-horizontal-nav-bar-selected-color
+            )
+          );
+        }
+      }
+    }
+
+    &--light {
+      color: $bpk-color-white;
+
+      @include bpk-hover {
+        @include bpk-border-bottom-xl($bpk-color-white);
+      }
+
+      &:active {
+        @include bpk-border-bottom-xl($bpk-color-white);
+      }
+
+      &-disabled {
+        color: $bpk-color-sky-gray-tint-06;
+        cursor: not-allowed;
+
+        &:active {
+          color: $bpk-color-sky-gray-tint-06;
+          box-shadow: unset;
+        }
+      }
+
+      &-selected {
+        color: $bpk-color-white;
+
+        @include bpk-border-bottom-xl($bpk-color-white);
+
+        @include bpk-hover {
+          @include bpk-border-bottom-xl($bpk-color-white);
+        }
+
+        &:active {
+          @include bpk-border-bottom-xl($bpk-color-white);
+        }
       }
     }
   }

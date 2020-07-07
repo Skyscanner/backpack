@@ -70,6 +70,7 @@ export default class App extends Component {
 | leadingScrollIndicatorClassName   | string   | false    | null          |
 | showUnderline                     | bool     | false    | true          |
 | trailingScrollIndicatorClassName  | string   | false    | null          |
+| type                              | oneOf('default', 'light') | false | 'default' |
 
 #### `autoScrollToSelected`
 

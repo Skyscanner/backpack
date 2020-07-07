@@ -29,7 +29,10 @@ import BpkText from 'bpk-component-text';
 
 import STYLES from './stories.scss';
 
-import BpkHorizontalNav, { BpkHorizontalNavItem } from './index';
+import BpkHorizontalNav, {
+  BpkHorizontalNavItem,
+  HORIZONTAL_NAV_TYPES,
+} from './index';
 
 const getClassName = cssModules(STYLES);
 
@@ -80,6 +83,19 @@ storiesOf('bpk-component-horizontal-nav', module)
       <BpkHorizontalNavItem selected>Hotels</BpkHorizontalNavItem>
       <BpkHorizontalNavItem>Car hire</BpkHorizontalNavItem>
     </BpkHorizontalNav>
+  ))
+  .add('Light appearance', () => (
+    <div
+      className={getClassName(
+        'bpk-horizontal-nav-stories__light-appearance-wrapper',
+      )}
+    >
+      <BpkHorizontalNav type={HORIZONTAL_NAV_TYPES.light}>
+        <BpkHorizontalNavItem>Flights</BpkHorizontalNavItem>
+        <BpkHorizontalNavItem selected>Hotels</BpkHorizontalNavItem>
+        <BpkHorizontalNavItem>Car hire</BpkHorizontalNavItem>
+      </BpkHorizontalNav>
+    </div>
   ))
   .add('Using custom scroll colors', () => (
     <BpkHorizontalNav

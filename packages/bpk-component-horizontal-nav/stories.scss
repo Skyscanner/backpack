@@ -38,4 +38,10 @@ $custom-color: $bpk-color-sagano;
     height: 10rem;
     border-right: 0.1rem lightgray solid;
   }
+
+  &__light-appearance-wrapper {
+    padding-top: $bpk-spacing-sm;
+    padding-bottom: $bpk-spacing-sm;
+    background-color: $bpk-color-abisko;
+  }
 }

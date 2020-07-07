@@ -18,6 +18,7 @@
 /* @flow strict */
 
 import BpkHorizontalNav, {
+  HORIZONTAL_NAV_TYPES,
   type Props as NavProps,
 } from './src/BpkHorizontalNav';
 import BpkHorizontalNavItem, {
@@ -27,5 +28,5 @@ import BpkHorizontalNavItem, {
 
 export type BpkHorizontalNavProps = NavProps;
 export type BpkHorizontalNavItemProps = ItemProps;
-export { BpkHorizontalNavItem, themeAttributes };
+export { HORIZONTAL_NAV_TYPES, BpkHorizontalNavItem, themeAttributes };
 export default BpkHorizontalNav;
