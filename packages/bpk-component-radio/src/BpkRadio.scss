@@ -18,7 +18,8 @@
 
 @import '~bpk-mixins/index';
 
-$bpk-radio-circle-size: $bpk-one-pixel-rem * 10;
+$bpk-radio-circle-size: $bpk-one-pixel-rem * 8;
+$bpk-radio-size: $bpk-spacing-base - ($bpk-one-pixel-rem * 4);
 
 .bpk-radio {
   @include bpk-radio;
@@ -39,18 +40,14 @@ $bpk-radio-circle-size: $bpk-one-pixel-rem * 10;
     @include bpk-radio__input;
 
     &:checked {
-      background: url(map-get($bpk-elements, radio-normal)) no-repeat;
-
       + .bpk-radio__circle {
         display: block;
       }
 
       &:disabled {
-        background: url(map-get($bpk-elements, radio-checked-disabled))
-          no-repeat;
-
         + .bpk-radio__circle {
-          display: none;
+          display: block;
+          background: $bpk-color-sky-gray-tint-04;
         }
       }
     }
@@ -58,8 +55,8 @@ $bpk-radio-circle-size: $bpk-one-pixel-rem * 10;
 
   &__circle {
     position: absolute;
-    top: ($bpk-spacing-base - $bpk-radio-circle-size) / 2;
-    left: ($bpk-spacing-md - $bpk-radio-circle-size) / 2;
+    top: $bpk-spacing-xs;
+    left: $bpk-spacing-xs;
     display: none;
     width: $bpk-radio-circle-size;
     height: $bpk-radio-circle-size;
@@ -72,7 +69,7 @@ $bpk-radio-circle-size: $bpk-one-pixel-rem * 10;
     );
 
     @include bpk-rtl {
-      right: ($bpk-spacing-md - $bpk-radio-circle-size) / 2;
+      right: $bpk-spacing-xs;
       left: auto;
     }
   }
