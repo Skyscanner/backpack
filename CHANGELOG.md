@@ -2,6 +2,12 @@
 
 [Unreleased changes](./UNRELEASED.yaml).
 
+# 2020-07-07
+
+**Added:**
+  - bpk-component-horizontal-nav: `3.2.0`
+    - Added a `type` prop. Set it to `light` to get an all-white appearance for when displaying over a dark background or an image.
+
 # 2020-07-03
 
 As of this update, all icons that were accidentally removed in `bpk-svgs 9.0.0` and `bpk-component-icon 6.0.0` have been reinstated.

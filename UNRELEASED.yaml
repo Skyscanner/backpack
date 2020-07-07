@@ -1,9 +1,5 @@
 # UNRELEASED:
 
-**Added:**
-  - bpk-component-horizontal-nav:
-    - Added a `type` prop. Set it to `light` to get an all-white appearance for when displaying over a dark background or an image.
-
 # How to write a good changelog entry:
 #
 #   1. Add 'BREAKING', 'ADDED' OR 'FIXED' depending on if the change will be major, minor or patch according to [semver.org](semver.org).
