@@ -1,11 +1,5 @@
 # UNRELEASED:
 
-**Added:**
-- bpk-component-icon:
-- bpk-svgs:
-  - Redesigned the `cars-flexible` icon.
-  - `cars-flexible`, `flight-flexible` and `hotel-flexible` are now available in the small icon set.
-
 # How to write a good changelog entry:
 #
 #   1. Add 'BREAKING', 'ADDED' OR 'FIXED' depending on if the change will be major, minor or patch according to [semver.org](semver.org).

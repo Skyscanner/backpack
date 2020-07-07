@@ -5,6 +5,12 @@
 # 2020-07-07
 
 **Added:**
+- bpk-component-icon: `8.2.0`
+- bpk-svgs: `11.2.0`
+  - Redesigned the `cars-flexible` icon.
+  - `cars-flexible`, `flight-flexible` and `hotel-flexible` are now available in the small icon set.
+
+**Added:**
   - bpk-component-horizontal-nav: `3.2.0`
     - Added a `type` prop. Set it to `light` to get an all-white appearance for when displaying over a dark background or an image.
 
