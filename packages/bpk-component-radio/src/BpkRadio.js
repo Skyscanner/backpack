@@ -46,7 +46,7 @@ const BpkRadio = props => {
       white && 'bpk-radio--white',
       disabled && 'bpk-radio--disabled',
       isInvalid && 'bpk-radio--invalid',
-      className && className,
+      className,
     ),
   ];
 
