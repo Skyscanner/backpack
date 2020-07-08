@@ -607,6 +607,16 @@
   }
 }
 
+/// Form radio button mixin. This is a reusable mixin to set border styles for the radio button.
+///
+/// @param {variable} $color
+///
+/// @access private
+@mixin _bpk-radio-border($color) {
+  border: $bpk-border-size-xl solid $color;
+  border-radius: $bpk-border-radius-pill;
+}
+
 /// Form radio button. Should be applied to containing label element.
 ///
 /// @example scss
@@ -652,6 +662,10 @@
 
 @mixin bpk-radio--white {
   color: $bpk-color-white;
+
+  input[type='radio'] {
+    background: $bpk-color-white;
+  }
 }
 
 /// Invalid radio button. Modifies the bpk-radio mixin.
@@ -666,7 +680,7 @@
 
 @mixin bpk-radio--invalid {
   input[type='radio'] {
-    background: url(map-get($bpk-elements, radio-invalid)) no-repeat;
+    @include _bpk-radio-border($bpk-color-panjin);
   }
 }
 
@@ -678,18 +692,20 @@
 ///   }
 
 @mixin bpk-radio__input {
+  $bpk-radio-size: $bpk-spacing-base - ($bpk-one-pixel-rem * 4);
+
   position: absolute;
-  top: ($bpk-spacing-base - $bpk-spacing-md) / 2;
+  top: 0;
   left: 0;
-  width: $bpk-spacing-md;
-  height: $bpk-spacing-md;
+  width: $bpk-radio-size;
+  height: $bpk-radio-size;
   margin: 0;
   padding: 0;
-  border: 0;
-  background: url(map-get($bpk-elements, radio-normal)) no-repeat;
   cursor: pointer;
   vertical-align: text-bottom;
   appearance: none;
+
+  @include _bpk-radio-border($bpk-color-sky-gray-tint-03);
 
   @include bpk-rtl {
     right: 0;
@@ -701,15 +717,19 @@
   }
 
   &:checked {
-    background: url(map-get($bpk-elements, radio-checked)) no-repeat;
+    @include bpk-themeable-property(
+      border-color,
+      --bpk-radio-checked-color,
+      $bpk-radio-checked-circle-color
+    );
 
     &:disabled {
-      background: url(map-get($bpk-elements, radio-checked-disabled)) no-repeat;
+      border-color: $bpk-color-sky-gray-tint-04;
     }
   }
 
   &:disabled {
-    background: url(map-get($bpk-elements, radio-disabled)) no-repeat;
+    border-color: $bpk-color-sky-gray-tint-04;
   }
 }
 

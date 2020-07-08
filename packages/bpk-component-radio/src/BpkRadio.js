@@ -25,7 +25,6 @@ import STYLES from './BpkRadio.scss';
 const getClassName = cssModules(STYLES);
 
 const BpkRadio = props => {
-  const classNames = [getClassName('bpk-radio')];
   const {
     ariaLabel,
     name,
@@ -41,18 +40,15 @@ const BpkRadio = props => {
   // treated as neither valid nor invalid
   const isInvalid = valid === false;
 
-  if (white) {
-    classNames.push(getClassName('bpk-radio--white'));
-  }
-  if (disabled) {
-    classNames.push(getClassName('bpk-radio--disabled'));
-  }
-  if (isInvalid) {
-    classNames.push(getClassName('bpk-radio--invalid'));
-  }
-  if (className) {
-    classNames.push(className);
-  }
+  const classNames = [
+    getClassName(
+      'bpk-radio',
+      white && 'bpk-radio--white',
+      disabled && 'bpk-radio--disabled',
+      isInvalid && 'bpk-radio--invalid',
+      className,
+    ),
+  ];
 
   return (
     <label className={classNames.join(' ')}>

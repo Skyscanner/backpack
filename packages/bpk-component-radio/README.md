@@ -38,3 +38,6 @@ export default () => (
 ## Theme Props
 
 + `radioCheckedColor`
+
+## Progressive enhancement
+On Internet Explorer 11, radio buttons have the standard built-in appearance.
