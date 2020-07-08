@@ -39,18 +39,131 @@
 
   &--invalid {
     @include bpk-checkbox--invalid;
+    input[type='checkbox'] {
+      background: none;
+      border: ($bpk-one-pixel-rem * 3) solid $bpk-color-panjin;
+      border-radius: 4px;
+
+      &:checked {
+        border: ($bpk-one-pixel-rem * 3) solid $bpk-color-sky-blue;
+
+        @include bpk-themeable-property(
+          background-color,
+          --bpk-checkbox-checked-color,
+          $bpk-color-sky-blue
+        );
+        @include bpk-themeable-property(
+          border-color,
+          --bpk-checkbox-checked-color,
+          $bpk-color-sky-blue
+        );
+      }
+    }
   }
 
   &__input {
     @include bpk-checkbox__input;
+    background: none;
+    border: ($bpk-one-pixel-rem * 3) solid $bpk-color-sky-gray-tint-03;
+    top: 0;
+    width: $bpk-spacing-base - ($bpk-one-pixel-rem * 4);
+    height: $bpk-spacing-base - ($bpk-one-pixel-rem * 4);
+    border-radius: 4px;
 
     &:checked {
-      background: url(map-get($bpk-elements, checkbox-checked)) no-repeat;
+      background: none;
+      border: ($bpk-one-pixel-rem * 3) solid $bpk-color-sky-blue;
+
+      @include bpk-themeable-property(
+        background-color,
+        --bpk-checkbox-checked-color,
+        $bpk-color-sky-blue
+      );
+      @include bpk-themeable-property(
+        border-color,
+        --bpk-checkbox-checked-color,
+        $bpk-color-sky-blue
+      );
+
+      + .bpk-checkbox__checkmark {
+        display: block;
+
+        // Disable for IE10/IE11 since background for the input doesn't work.
+        @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+          display: none;
+        }
+      }
+
+      &:disabled {
+        background-color: $bpk-color-white;
+        // + .bpk-checkbox__icon {
+        //   display: block;
+        //   fill: $bpk-color-sky-gray-tint-04;
+        // }
+      }
     }
 
     &:indeterminate {
-      background: url(map-get($bpk-elements, checkbox-indeterminate)) no-repeat;
+      background: none;
+      border: ($bpk-one-pixel-rem * 3) solid $bpk-color-sky-blue;
+
+      @include bpk-themeable-property(
+        background-color,
+        --bpk-checkbox-checked-color,
+        $bpk-color-sky-blue
+      );
+      @include bpk-themeable-property(
+        border-color,
+        --bpk-checkbox-checked-color,
+        $bpk-color-sky-blue
+      );
+
+      + .bpk-checkbox__indeterminate {
+        display: block;
+      }
     }
+  }
+
+  &__checkmark {
+    position: absolute;
+    left: 0;
+    display: none;
+    width: 22px;
+    height: 22px;
+    -ms-transform: rotate(45deg); /* IE 9 */
+    -webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
+    transform: rotate(45deg);
+
+    &-stem {
+      position: absolute;
+      width: 3px;
+      height: 10px;
+      background-color: $bpk-color-white;
+      left: 9px;
+      top: 5px;
+      border-radius: 2px;
+    }
+
+    &-kick {
+      position: absolute;
+      width: 7px;
+      height: 3px;
+      background-color: $bpk-color-white;
+      left: 5px;
+      top: 12px;
+      border-radius: 2px;
+    }
+  }
+
+  &__indeterminate {
+    display: none;
+    position: absolute;
+    width: 10px;
+    height: 3px;
+    background-color: $bpk-color-white;
+    left: 5px;
+    top: 8px;
+    border-radius: 2px;
   }
 
   &__asterisk {

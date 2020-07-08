@@ -19,14 +19,13 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import { cssModules } from 'bpk-react-utils';
+import Minus from 'bpk-component-icon/sm/minus';
 
 import STYLES from './BpkCheckbox.scss';
 
 const getClassName = cssModules(STYLES);
 
 const BpkCheckbox = props => {
-  const classNames = [getClassName('bpk-checkbox')];
-  const labelClassNames = [getClassName('bpk-checkbox__label')];
   const {
     name,
     label,
@@ -44,21 +43,17 @@ const BpkCheckbox = props => {
   // treated as neither valid nor invalid
   const isInvalid = valid === false;
 
-  if (white) {
-    classNames.push(getClassName('bpk-checkbox--white'));
-  }
-  if (disabled) {
-    classNames.push(getClassName('bpk-checkbox--disabled'));
-  }
-  if (smallLabel) {
-    labelClassNames.push(getClassName('bpk-checkbox__label--small'));
-  }
-  if (isInvalid) {
-    classNames.push(getClassName('bpk-checkbox--invalid'));
-  }
-  if (className) {
-    classNames.push(className);
-  }
+  const classNames = [
+    getClassName('bpk-checkbox'),
+    white && getClassName('bpk-checkbox--white'),
+    disabled && getClassName('bpk-checkbox--disabled'),
+    isInvalid && getClassName('bpk-checkbox--invalid'),
+    className && className,
+  ];
+  const labelClassNames = [
+    getClassName('bpk-checkbox__label'),
+    smallLabel && getClassName('bpk-checkbox__label--small'),
+  ];
 
   return (
     <label className={classNames.join(' ')}>
@@ -69,6 +64,7 @@ const BpkCheckbox = props => {
         disabled={disabled}
         aria-label={label}
         aria-invalid={isInvalid}
+        data-indeterminate={indeterminate}
         ref={e => {
           if (e) {
             e.indeterminate = indeterminate;
@@ -76,6 +72,15 @@ const BpkCheckbox = props => {
         }}
         {...rest}
       />
+
+      {/* {indeterminate ? ( */}
+      <div className={getClassName('bpk-checkbox__indeterminate')} />
+      {/* ) : ( */}
+      <span className={getClassName('bpk-checkbox__checkmark')}>
+        <div className={getClassName('bpk-checkbox__checkmark-stem')} />
+        <div className={getClassName('bpk-checkbox__checkmark-kick')} />
+      </span>
+      {/* )} */}
       <span className={labelClassNames.join(' ')} aria-hidden="true">
         {label}
         {!disabled && required && (
