@@ -2,6 +2,20 @@
 
 [Unreleased changes](./UNRELEASED.yaml).
 
+# 2020-07-09 - Refreshed Radio and Checkbox styles
+
+**Breaking:**
+- bpk-svgs: 11.2.0 => 12.0.0
+  - Removed the radio SVGs that were being used in the radio component as the component no longer uses them. This change is breaking only if you are using `bpk-radio--invalid` and `bpk-radio__input` mixins directly, otherwise if using `BpkRadio` component this major does not affect you.
+  - Removed the checkbox SVGs that were being used in the checkbox component as the component no longer uses them. This change is breaking only if you are using `bpk-checkbox--invalid` and `bpk-checkbox__input` mixins directly, otherwise if using `BpkCheckbox` component this major does not affect you.
+
+**Fixed:**
+- bpk-mixins: 19.1.30 => 19.1.31
+- bpk-component-radio: 2.0.61 => 2.0.62
+  - `BpkRadio` has a refreshed, modern appearance.
+- bpk-component-checkbox: 2.1.13 => 2.1.14
+  - `BpkCheckbox` has a refreshed modern appearance.
+
 # 2020-07-07
 
 **Added:**
