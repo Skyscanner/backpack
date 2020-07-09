@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import React from 'react';
+import React, { Component } from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { colorSkyGrayTint01, spacingBase } from 'bpk-tokens/tokens/base.es6';
@@ -27,29 +27,50 @@ const loremIpsum = `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Do
 quaerat temporibus ipsam, ut, ipsa, velit sed assumenda suscipit dolore quod similique delectus numquam neque!
 Nesciunt, voluptate, illo.`;
 
+class StatefulCheckbox extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      checked: false,
+    };
+  }
+
+  handleChange = () => {
+    this.setState(prevState => ({
+      checked: !prevState.checked,
+    }));
+    action(`Checkbox changed. Checked is now '${this.state.checked}'`);
+  };
+
+  render() {
+    return (
+      <div>
+        <BpkCheckbox
+          checked={this.state.checked}
+          onChange={this.handleChange}
+          {...this.props}
+        />
+      </div>
+    );
+  }
+}
+
 storiesOf('bpk-component-checkbox', module)
+  .add('Stateful Example', () => (
+    <StatefulCheckbox id="unchecked" name="unchecked" label="Press to toggle" />
+  ))
   .add('Checked', () => (
-    <BpkCheckbox
-      id="checked"
-      name="checked"
-      label="Prefer directs"
-      onChange={action('checkbox changed')}
-      checked
-    />
+    <BpkCheckbox id="checked" name="checked" label="Prefer directs" checked />
   ))
   .add('Unchecked', () => (
-    <BpkCheckbox
-      id="unchecked"
-      name="unchecked"
-      label="Prefer directs"
-      onChange={action('checkbox changed')}
-    />
+    <BpkCheckbox id="unchecked" name="unchecked" label="Prefer directs" />
   ))
   .add('Indeterminate', () => (
     <BpkCheckbox
       id="indeterminate"
       name="indeterminate"
       label="Prefer directs"
+      checked
       indeterminate
     />
   ))
@@ -58,8 +79,8 @@ storiesOf('bpk-component-checkbox', module)
       id="checked"
       name="checked"
       label="Prefer directs"
-      onChange={action('checkbox changed')}
       valid={false}
+      checked={false}
     />
   ))
   .add('Multi line', () => (
@@ -67,7 +88,7 @@ storiesOf('bpk-component-checkbox', module)
       id="multi_line"
       name="multi_line"
       label={loremIpsum}
-      onChange={action('checkbox changed')}
+      checked={false}
     />
   ))
   .add('White (Checked)', () => (
@@ -76,7 +97,6 @@ storiesOf('bpk-component-checkbox', module)
         id="white_checked"
         name="checked"
         label="Prefer directs"
-        onChange={action('checkbox changed')}
         white
         checked
       />
@@ -89,7 +109,7 @@ storiesOf('bpk-component-checkbox', module)
         name="unchecked"
         label="Prefer directs"
         white
-        onChange={action('checkbox changed')}
+        checked={false}
       />
     </div>
   ))
@@ -98,7 +118,6 @@ storiesOf('bpk-component-checkbox', module)
       id="disabled_checked"
       name="disabled_checked"
       label="Prefer directs"
-      onChange={action('checkbox changed')}
       checked
       disabled
     />
@@ -108,7 +127,6 @@ storiesOf('bpk-component-checkbox', module)
       id="disabled"
       name="disabled"
       label="Prefer directs"
-      onChange={action('checkbox changed')}
       disabled
     />
   ))
@@ -117,7 +135,6 @@ storiesOf('bpk-component-checkbox', module)
       id="required"
       name="required"
       label="Please accept the terms and conditions"
-      onChange={action('checkbox changed')}
       checked
       required
     />

@@ -559,7 +559,7 @@
 
 @mixin bpk-checkbox--invalid {
   input[type='checkbox'] {
-    background: url(map-get($bpk-elements, checkbox-invalid)) no-repeat;
+    border: ($bpk-one-pixel-rem * 3) solid $bpk-color-panjin;
   }
 }
 
@@ -572,14 +572,14 @@
 
 @mixin bpk-checkbox__input {
   position: absolute;
-  top: $bpk-one-pixel-rem;
+  top: 0;
   left: 0;
-  width: $bpk-spacing-md;
-  height: $bpk-spacing-md;
+  width: $bpk-spacing-base - ($bpk-one-pixel-rem * 4);
+  height: $bpk-spacing-base - ($bpk-one-pixel-rem * 4);
   margin: 0;
   padding: 0;
-  border: 0;
-  background: url(map-get($bpk-elements, checkbox-normal)) no-repeat;
+  border: ($bpk-one-pixel-rem * 3) solid $bpk-color-sky-gray-tint-03;
+  border-radius: ($bpk-one-pixel-rem * 4);
   cursor: pointer;
   vertical-align: text-bottom;
   appearance: none;
@@ -593,17 +593,27 @@
     background: none !important; /* stylelint-disable-line declaration-no-important */
   }
 
-  &:checked {
-    background: url(map-get($bpk-elements, checkbox-checked)) no-repeat;
+  &:checked,
+  &:indeterminate {
+    @include bpk-themeable-property(
+      background-color,
+      --bpk-checkbox-checked-color,
+      $bpk-color-sky-blue
+    );
+    @include bpk-themeable-property(
+      border-color,
+      --bpk-checkbox-checked-color,
+      $bpk-color-sky-blue
+    );
 
     &:disabled {
-      background: url(map-get($bpk-elements, checkbox-checked-disabled))
-        no-repeat;
+      border-color: $bpk-color-sky-gray-tint-04;
+      background: none;
     }
   }
 
   &:disabled {
-    background: url(map-get($bpk-elements, checkbox-disabled)) no-repeat;
+    border-color: $bpk-color-sky-gray-tint-04;
   }
 }
 

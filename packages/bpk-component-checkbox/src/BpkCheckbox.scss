@@ -44,12 +44,53 @@
   &__input {
     @include bpk-checkbox__input;
 
-    &:checked {
-      background: url(map-get($bpk-elements, checkbox-checked)) no-repeat;
+    &-checkmark {
+      &::before,
+      &::after {
+        position: absolute;
+        content: '';
+        transform: rotate(45deg);
+        border-radius: $bpk-border-size-lg;
+        background-color: $bpk-color-white;
+      }
+
+      &::before {
+        top: $bpk-spacing-xs + $bpk-one-pixel-rem;
+        left: 0;
+        width: $bpk-spacing-base / 3;
+        height: $bpk-spacing-xs / 2;
+      }
+
+      &::after {
+        top: $bpk-spacing-xs / 3;
+        left: $bpk-spacing-xs + $bpk-one-pixel-rem;
+        width: $bpk-spacing-xs / 2;
+        height: $bpk-spacing-sm - $bpk-one-pixel-rem;
+      }
+
+      &:disabled {
+        &::before,
+        &::after {
+          background-color: $bpk-color-sky-gray-tint-04;
+        }
+      }
     }
 
-    &:indeterminate {
-      background: url(map-get($bpk-elements, checkbox-indeterminate)) no-repeat;
+    &-indeterminate {
+      &::before {
+        position: absolute;
+        top: $bpk-spacing-xs - $bpk-one-pixel-rem;
+        left: $bpk-spacing-xs / 3;
+        content: '';
+        width: $bpk-spacing-lg / 3;
+        height: $bpk-spacing-xs / 2;
+        border-radius: $bpk-border-size-lg;
+        background-color: $bpk-color-white;
+      }
+    }
+
+    &-white {
+      background-color: $bpk-color-white;
     }
   }
 
