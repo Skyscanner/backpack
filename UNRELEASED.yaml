@@ -11,7 +11,7 @@ FIXED:
     - `BpkRadio` has a refreshed, modern appearance.
 
   - bpk-component-checkbox:
-    - `BpkChecbox` has a refreshed modern appearance..
+    - `BpkCheckbox` has a refreshed modern appearance.
 
 # How to write a good changelog entry:
 #
