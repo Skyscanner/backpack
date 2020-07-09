@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+/* @flow strict */
+
 import BpkNudger from './src/BpkNudger';
 import BpkConfigurableNudger from './src/BpkConfigurableNudger';
 import themeAttributes from './src/themeAttributes';
