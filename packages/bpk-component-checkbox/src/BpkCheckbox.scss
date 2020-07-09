@@ -39,112 +39,58 @@
 
   &--invalid {
     @include bpk-checkbox--invalid;
-    input[type='checkbox'] {
-      background: none;
-      border: ($bpk-one-pixel-rem * 3) solid $bpk-color-panjin;
-      border-radius: 4px;
-
-      &:checked {
-        border: ($bpk-one-pixel-rem * 3) solid $bpk-color-sky-blue;
-
-        @include bpk-themeable-property(
-          background-color,
-          --bpk-checkbox-checked-color,
-          $bpk-color-sky-blue
-        );
-        @include bpk-themeable-property(
-          border-color,
-          --bpk-checkbox-checked-color,
-          $bpk-color-sky-blue
-        );
-      }
-    }
   }
 
   &__input {
     @include bpk-checkbox__input;
-    background: none;
-    border: ($bpk-one-pixel-rem * 3) solid $bpk-color-sky-gray-tint-03;
-    top: 0;
-    width: $bpk-spacing-base - ($bpk-one-pixel-rem * 4);
-    height: $bpk-spacing-base - ($bpk-one-pixel-rem * 4);
-    border-radius: 4px;
 
-    &-white {
-      background-color: $bpk-color-white;
-    }
+    &-checkmark {
+      &::before,
+      &::after {
+        position: absolute;
+        content: '';
+        transform: rotate(45deg);
+        border-radius: $bpk-border-size-lg;
+        background-color: $bpk-color-white;
+      }
 
-    &:checked,
-    &:indeterminate {
-      background: none;
-      border: ($bpk-one-pixel-rem * 3) solid $bpk-color-sky-blue;
+      &::before {
+        top: $bpk-spacing-xs + $bpk-one-pixel-rem;
+        left: 0;
+        width: $bpk-spacing-base / 3;
+        height: $bpk-spacing-xs / 2;
+      }
 
-      @include bpk-themeable-property(
-        background-color,
-        --bpk-checkbox-checked-color,
-        $bpk-color-sky-blue
-      );
-      @include bpk-themeable-property(
-        border-color,
-        --bpk-checkbox-checked-color,
-        $bpk-color-sky-blue
-      );
+      &::after {
+        top: $bpk-spacing-xs / 3;
+        left: $bpk-spacing-xs + $bpk-one-pixel-rem;
+        width: $bpk-spacing-xs / 2;
+        height: $bpk-spacing-sm - $bpk-one-pixel-rem;
+      }
 
       &:disabled {
-        background: none;
-        border-color: $bpk-color-sky-gray-tint-04;
+        &::before,
+        &::after {
+          background-color: $bpk-color-sky-gray-tint-04;
+        }
       }
     }
 
-    &:disabled {
-      background: none;
-      border-color: $bpk-color-sky-gray-tint-04;
+    &-indeterminate {
+      &::before {
+        position: absolute;
+        top: $bpk-spacing-xs - $bpk-one-pixel-rem;
+        left: $bpk-spacing-xs / 3;
+        content: '';
+        width: $bpk-spacing-lg / 3;
+        height: $bpk-spacing-xs / 2;
+        border-radius: $bpk-border-size-lg;
+        background-color: $bpk-color-white;
+      }
     }
-  }
 
-  &__checkmark {
-
-    &::before, &::after {
-      position: absolute;
-      border-radius: $bpk-border-size-lg;
-      transform: rotate(45deg);
-      content: '';
+    &-white {
       background-color: $bpk-color-white;
-    }
-
-    &::before {
-      height: 3px;
-      width: 8px;
-      left: 0;
-      top: 7px;
-    }
-
-    &::after {
-      height: 11px;
-      width: 3px;
-      left: 7px;
-      top: 2px;
-    }
-
-    &:disabled {
-      &::before,
-      &::after {
-      background-color: $bpk-color-sky-gray-tint-04;
-    }
-
-    }
-  }
-
-  &__indeterminate {
-    &::before {
-      position: absolute;
-      height: 3px;
-      width: 10px;
-      background-color: $bpk-color-white;
-      content: '';
-      left: 2px;
-      top: 5px;
-      border-radius: $bpk-border-size-lg;
     }
   }
 

@@ -30,6 +30,7 @@ export default () => (
 | ------------- | -------- | -------- | ------------- |
 | name          | string   | true     | -             |
 | label         | node     | true     | -             |
+| checked       | bool     | false    | false         |
 | disabled      | bool     | false    | false         |
 | indeterminate | bool     | false    | false         |
 | required      | bool     | false    | false         |

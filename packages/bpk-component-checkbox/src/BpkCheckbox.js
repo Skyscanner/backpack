@@ -34,6 +34,7 @@ const BpkCheckbox = props => {
     className,
     smallLabel,
     valid,
+    checked,
     indeterminate,
     ...rest
   } = props;
@@ -42,34 +43,29 @@ const BpkCheckbox = props => {
   // treated as neither valid nor invalid
   const isInvalid = valid === false;
 
-  const classNames = [
-    getClassName('bpk-checkbox'),
-    white && getClassName('bpk-checkbox--white'),
-    disabled && getClassName('bpk-checkbox--disabled'),
-    isInvalid && getClassName('bpk-checkbox--invalid'),
-    className && className,
-  ];
-  const labelClassNames = [
-    getClassName('bpk-checkbox__label'),
-    smallLabel && getClassName('bpk-checkbox__label--small'),
-  ];
-
-  const inputClasses = [
-    getClassName(
-      'bpk-checkbox__input',
-      white && 'bpk-checkbox__input-white',
-      props.checked && 'bpk-checkbox__checkmark',
-      indeterminate && 'bpk-checkbox__indeterminate',
-    ),
-  ];
-
-  console.log('State:', props.checked);
+  const classNames = getClassName(
+    'bpk-checkbox',
+    white && 'bpk-checkbox--white',
+    disabled && 'bpk-checkbox--disabled',
+    isInvalid && 'bpk-checkbox--invalid',
+    className,
+  );
+  const labelClassNames = getClassName(
+    'bpk-checkbox__label',
+    smallLabel && 'bpk-checkbox__label--small',
+  );
+  const inputClasses = getClassName(
+    'bpk-checkbox__input',
+    white && 'bpk-checkbox__input-white',
+    checked && !indeterminate && 'bpk-checkbox__input-checkmark',
+    indeterminate && 'bpk-checkbox__input-indeterminate',
+  );
 
   return (
-    <label className={classNames.join(' ')}>
+    <label className={classNames}>
       <input
         type="checkbox"
-        className={inputClasses.join(' ')}
+        className={inputClasses}
         name={name}
         disabled={disabled}
         aria-label={label}
@@ -80,10 +76,11 @@ const BpkCheckbox = props => {
             e.indeterminate = indeterminate;
           }
         }}
+        checked={checked}
         {...rest}
       />
 
-      <span className={labelClassNames.join(' ')} aria-hidden="true">
+      <span className={labelClassNames} aria-hidden="true">
         {label}
         {!disabled && required && (
           <span className={getClassName('bpk-checkbox__asterisk')}>*</span>
@@ -102,6 +99,7 @@ BpkCheckbox.propTypes = {
   className: PropTypes.string,
   smallLabel: PropTypes.bool,
   valid: PropTypes.bool,
+  checked: PropTypes.bool,
   indeterminate: PropTypes.bool,
 };
 
@@ -112,6 +110,7 @@ BpkCheckbox.defaultProps = {
   className: null,
   smallLabel: false,
   valid: null,
+  checked: false,
   indeterminate: false,
 };
 

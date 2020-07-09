@@ -2,12 +2,16 @@
 
 BREAKING:
   - bpk-svgs:
-    - Removed the radio SVGs that were being used in the radio component as the radio component no longer uses them. This change is breaking only if you are using `bpk-radio--invalid` and `bpk-radio__input` mixins directly, otherwise if using `BpkRadio` component this major does not affect you.
+    - Removed the radio SVGs that were being used in the radio component as the component no longer uses them. This change is breaking only if you are using `bpk-radio--invalid` and `bpk-radio__input` mixins directly, otherwise if using `BpkRadio` component this major does not affect you.
+    - Removed the checkbox SVGs that were being used in the checkbox component as the component no longer uses them. This change is breaking only if you are using `bpk-checkbox--invalid` and `bpk-checkbox__input` mixins directly, otherwise if using `BpkCheckbox` component this major does not affect you.
 
 FIXED:
   - bpk-mixins:
   - bpk-component-radio:
     - `BpkRadio` has a refreshed, modern appearance.
+
+  - bpk-component-checkbox:
+    - `BpkChecbox` has a refreshed modern appearance..
 
 # How to write a good changelog entry:
 #
