@@ -19,7 +19,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import { cssModules } from 'bpk-react-utils';
-import Minus from 'bpk-component-icon/sm/minus';
 
 import STYLES from './BpkCheckbox.scss';
 
@@ -55,11 +54,22 @@ const BpkCheckbox = props => {
     smallLabel && getClassName('bpk-checkbox__label--small'),
   ];
 
+  const inputClasses = [
+    getClassName(
+      'bpk-checkbox__input',
+      white && 'bpk-checkbox__input-white',
+      props.checked && 'bpk-checkbox__checkmark',
+      indeterminate && 'bpk-checkbox__indeterminate',
+    ),
+  ];
+
+  console.log('State:', props.checked);
+
   return (
     <label className={classNames.join(' ')}>
       <input
         type="checkbox"
-        className={getClassName('bpk-checkbox__input')}
+        className={inputClasses.join(' ')}
         name={name}
         disabled={disabled}
         aria-label={label}
@@ -73,14 +83,6 @@ const BpkCheckbox = props => {
         {...rest}
       />
 
-      {/* {indeterminate ? ( */}
-      <div className={getClassName('bpk-checkbox__indeterminate')} />
-      {/* ) : ( */}
-      <span className={getClassName('bpk-checkbox__checkmark')}>
-        <div className={getClassName('bpk-checkbox__checkmark-stem')} />
-        <div className={getClassName('bpk-checkbox__checkmark-kick')} />
-      </span>
-      {/* )} */}
       <span className={labelClassNames.join(' ')} aria-hidden="true">
         {label}
         {!disabled && required && (

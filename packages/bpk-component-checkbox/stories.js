@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import React from 'react';
+import React, { Component } from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { colorSkyGrayTint01, spacingBase } from 'bpk-tokens/tokens/base.es6';
@@ -27,7 +27,90 @@ const loremIpsum = `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Do
 quaerat temporibus ipsam, ut, ipsa, velit sed assumenda suscipit dolore quod similique delectus numquam neque!
 Nesciunt, voluptate, illo.`;
 
+class StatefulCheckbox extends Component<
+  {
+    id: string,
+    name: string,
+    label: string,
+    white: boolean,
+    indeterminate: boolean,
+    checked: boolean,
+  },
+  { checked: boolean },
+> {
+  static defaultProps = {
+    white: false,
+    indeterminate: false,
+  };
+
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      checked: this.props.checked,
+      indeterminate: this.props.indeterminate,
+      count: 1,
+    };
+  }
+
+  handleChange = () => {
+    // this.setState({
+    //   checked: this.state.count === 1 && true,
+    // });
+
+    if (this.state.count === 2) {
+      console.log('1', this.state);
+      this.setState({
+        checked: true,
+        count: 3,
+      });
+      console.log('After 1', this.state);
+    } else if (this.state.count === 3) {
+      console.log('2', this.state);
+      this.setState({
+        checked: false,
+        indeterminate: true,
+        count: 1,
+      });
+      console.log('After 2', this.state);
+    } else {
+      console.log('3', this.state);
+      this.setState({
+        checked: false,
+        indeterminate: false,
+        count: 2,
+      });
+      console.log('After 3', this.state);
+    }
+  };
+
+  render() {
+    const { id, name, label, white, indeterminate, ...rest } = this.props;
+    return (
+      <div>
+        <BpkCheckbox
+          id={id}
+          name={name}
+          label={label}
+          onChange={this.handleChange}
+          checked={this.state.checked}
+          indeterminate={this.state.indeterminate}
+          {...rest}
+        />
+      </div>
+    );
+  }
+}
+
 storiesOf('bpk-component-checkbox', module)
+  .add('Stateful Example', () => (
+    <StatefulCheckbox
+      id="unchecked"
+      name="unchecked"
+      label="Prefer directs"
+      checked={false}
+    />
+  ))
   .add('Checked', () => (
     <BpkCheckbox
       id="checked"
@@ -43,6 +126,7 @@ storiesOf('bpk-component-checkbox', module)
       name="unchecked"
       label="Prefer directs"
       onChange={action('checkbox changed')}
+      checked={false}
     />
   ))
   .add('Indeterminate', () => (
@@ -50,6 +134,7 @@ storiesOf('bpk-component-checkbox', module)
       id="indeterminate"
       name="indeterminate"
       label="Prefer directs"
+      onChange={action('checkbox changed')}
       indeterminate
     />
   ))

@@ -70,39 +70,11 @@
     height: $bpk-spacing-base - ($bpk-one-pixel-rem * 4);
     border-radius: 4px;
 
-    &:checked {
-      background: none;
-      border: ($bpk-one-pixel-rem * 3) solid $bpk-color-sky-blue;
-
-      @include bpk-themeable-property(
-        background-color,
-        --bpk-checkbox-checked-color,
-        $bpk-color-sky-blue
-      );
-      @include bpk-themeable-property(
-        border-color,
-        --bpk-checkbox-checked-color,
-        $bpk-color-sky-blue
-      );
-
-      + .bpk-checkbox__checkmark {
-        display: block;
-
-        // Disable for IE10/IE11 since background for the input doesn't work.
-        @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-          display: none;
-        }
-      }
-
-      &:disabled {
-        background-color: $bpk-color-white;
-        // + .bpk-checkbox__icon {
-        //   display: block;
-        //   fill: $bpk-color-sky-gray-tint-04;
-        // }
-      }
+    &-white {
+      background-color: $bpk-color-white;
     }
 
+    &:checked,
     &:indeterminate {
       background: none;
       border: ($bpk-one-pixel-rem * 3) solid $bpk-color-sky-blue;
@@ -118,52 +90,67 @@
         $bpk-color-sky-blue
       );
 
-      + .bpk-checkbox__indeterminate {
-        display: block;
+      &:disabled {
+        background: none;
+        border-color: $bpk-color-sky-gray-tint-04;
       }
+    }
+
+    &:disabled {
+      background: none;
+      border-color: $bpk-color-sky-gray-tint-04;
     }
   }
 
   &__checkmark {
-    position: absolute;
-    left: 0;
-    display: none;
-    width: 22px;
-    height: 22px;
-    -ms-transform: rotate(45deg); /* IE 9 */
-    -webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
-    transform: rotate(45deg);
-
-    &-stem {
+    &::before {    
       position: absolute;
-      width: 3px;
-      height: 10px;
+      height: 3px;
+      width: 8px;
       background-color: $bpk-color-white;
-      left: 9px;
-      top: 5px;
-      border-radius: 2px;
+      content: '';
+      left: 0;
+      top: 7px;
+      border-radius: $bpk-border-size-lg;
+      transform: rotate(45deg);
+      -ms-transform: rotate(45deg); /* IE 9 */
+      -webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
     }
 
-    &-kick {
+    &::after {
       position: absolute;
-      width: 7px;
-      height: 3px;
+      height: 11px;
+      width: 3px;
       background-color: $bpk-color-white;
-      left: 5px;
-      top: 12px;
-      border-radius: 2px;
+      content: '';
+      left: 7px;
+      top: 2px;
+      border-radius: $bpk-border-size-lg;
+      transform: rotate(45deg);
+      -ms-transform: rotate(45deg); /* IE 9 */
+      -webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
+    }
+
+    &:disabled {
+      &::before, 
+      &::after {
+      background-color: $bpk-color-sky-gray-tint-04;
+    }
+
     }
   }
 
   &__indeterminate {
-    display: none;
-    position: absolute;
-    width: 10px;
-    height: 3px;
-    background-color: $bpk-color-white;
-    left: 5px;
-    top: 8px;
-    border-radius: 2px;
+    &::before {    
+      position: absolute;
+      height: 3px;
+      width: 10px;
+      background-color: $bpk-color-white;
+      content: '';
+      left: 2px;
+      top: 5px;
+      border-radius: $bpk-border-size-lg;
+    }
   }
 
   &__asterisk {
