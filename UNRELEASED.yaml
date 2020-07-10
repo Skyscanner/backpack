@@ -1,5 +1,10 @@
 # UNRELEASED:
 
+FIXED:
+  - bpk-svgs:
+  - bpk-component-spinner:
+    - The spinner has a fresh new design.
+
 # How to write a good changelog entry:
 #
 #   1. Add 'BREAKING', 'ADDED' OR 'FIXED' depending on if the change will be major, minor or patch according to [semver.org](semver.org).
