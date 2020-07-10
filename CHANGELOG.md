@@ -2,6 +2,13 @@
 
 [Unreleased changes](./UNRELEASED.yaml).
 
+# 2020-07-10
+
+**Changed**:
+  - bpk-svgs:
+  - bpk-component-spinner:
+    - The spinner has a fresh new design.
+
 # 2020-07-09 - Refreshed Radio and Checkbox styles
 
 **Breaking:**
