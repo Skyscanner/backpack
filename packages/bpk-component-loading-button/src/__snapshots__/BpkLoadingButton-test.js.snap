@@ -32,8 +32,7 @@ exports[`BpkLoadingButton should add only bpk specific classes if className prop
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
-        clipRule="evenodd"
-        d="M11.293 19.707a1 1 0 0 0 1.414 0l7-7a1 1 0 0 0 0-1.414l-7-7a1 1 0 1 0-1.414 1.414L16.586 11H5a1 1 0 1 0 0 2h11.586l-5.293 5.293a1 1 0 0 0 0 1.414z"
+        d="M11.293 19.713a1 1 0 0 0 1.414 0l7-7a1 1 0 0 0 0-1.414l-7-7a1 1 0 0 0-1.438 1.39l.024.024 5.293 5.293H5a1 1 0 0 0 0 2h11.586L11.293 18.3a1 1 0 0 0 0 1.414z"
         fillRule="evenodd"
       />
     </svg>
@@ -74,8 +73,7 @@ exports[`BpkLoadingButton should render correctly 1`] = `
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
-        clipRule="evenodd"
-        d="M3 12a1.5 1.5 0 0 0 1.5 1.5h11.379l-4.94 4.94a1.5 1.5 0 0 0 2.122 2.12L21.62 12l-8.56-8.56a1.5 1.5 0 0 0-2.122 2.12l4.94 4.94H4.5A1.5 1.5 0 0 0 3 12z"
+        d="M2.69 12a1.5 1.5 0 0 0 1.5 1.5h11.379l-4.94 4.94a1.5 1.5 0 0 0 2.122 2.12L21.31 12l-8.56-8.56a1.5 1.5 0 0 0-2.122 2.12l4.94 4.94H4.19a1.5 1.5 0 0 0-1.5 1.5z"
         fillRule="evenodd"
       />
     </svg>
@@ -115,8 +113,7 @@ exports[`BpkLoadingButton should render correctly with "large" and "destructive"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
-        clipRule="evenodd"
-        d="M11.293 19.707a1 1 0 0 0 1.414 0l7-7a1 1 0 0 0 0-1.414l-7-7a1 1 0 1 0-1.414 1.414L16.586 11H5a1 1 0 1 0 0 2h11.586l-5.293 5.293a1 1 0 0 0 0 1.414z"
+        d="M11.293 19.713a1 1 0 0 0 1.414 0l7-7a1 1 0 0 0 0-1.414l-7-7a1 1 0 0 0-1.438 1.39l.024.024 5.293 5.293H5a1 1 0 0 0 0 2h11.586L11.293 18.3a1 1 0 0 0 0 1.414z"
         fillRule="evenodd"
       />
     </svg>
@@ -156,8 +153,7 @@ exports[`BpkLoadingButton should render correctly with "large" and "disabled" at
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
-        clipRule="evenodd"
-        d="M11.293 19.707a1 1 0 0 0 1.414 0l7-7a1 1 0 0 0 0-1.414l-7-7a1 1 0 1 0-1.414 1.414L16.586 11H5a1 1 0 1 0 0 2h11.586l-5.293 5.293a1 1 0 0 0 0 1.414z"
+        d="M11.293 19.713a1 1 0 0 0 1.414 0l7-7a1 1 0 0 0 0-1.414l-7-7a1 1 0 0 0-1.438 1.39l.024.024 5.293 5.293H5a1 1 0 0 0 0 2h11.586L11.293 18.3a1 1 0 0 0 0 1.414z"
         fillRule="evenodd"
       />
     </svg>
@@ -197,8 +193,7 @@ exports[`BpkLoadingButton should render correctly with "large" and "featured" at
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
-        clipRule="evenodd"
-        d="M11.293 19.707a1 1 0 0 0 1.414 0l7-7a1 1 0 0 0 0-1.414l-7-7a1 1 0 1 0-1.414 1.414L16.586 11H5a1 1 0 1 0 0 2h11.586l-5.293 5.293a1 1 0 0 0 0 1.414z"
+        d="M11.293 19.713a1 1 0 0 0 1.414 0l7-7a1 1 0 0 0 0-1.414l-7-7a1 1 0 0 0-1.438 1.39l.024.024 5.293 5.293H5a1 1 0 0 0 0 2h11.586L11.293 18.3a1 1 0 0 0 0 1.414z"
         fillRule="evenodd"
       />
     </svg>
@@ -242,8 +237,7 @@ exports[`BpkLoadingButton should render correctly with "large" and "iconOnly" at
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
-        clipRule="evenodd"
-        d="M11.293 19.707a1 1 0 0 0 1.414 0l7-7a1 1 0 0 0 0-1.414l-7-7a1 1 0 1 0-1.414 1.414L16.586 11H5a1 1 0 1 0 0 2h11.586l-5.293 5.293a1 1 0 0 0 0 1.414z"
+        d="M11.293 19.713a1 1 0 0 0 1.414 0l7-7a1 1 0 0 0 0-1.414l-7-7a1 1 0 0 0-1.438 1.39l.024.024 5.293 5.293H5a1 1 0 0 0 0 2h11.586L11.293 18.3a1 1 0 0 0 0 1.414z"
         fillRule="evenodd"
       />
     </svg>
@@ -283,8 +277,7 @@ exports[`BpkLoadingButton should render correctly with "large" and "link" attrib
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
-        clipRule="evenodd"
-        d="M11.293 19.707a1 1 0 0 0 1.414 0l7-7a1 1 0 0 0 0-1.414l-7-7a1 1 0 1 0-1.414 1.414L16.586 11H5a1 1 0 1 0 0 2h11.586l-5.293 5.293a1 1 0 0 0 0 1.414z"
+        d="M11.293 19.713a1 1 0 0 0 1.414 0l7-7a1 1 0 0 0 0-1.414l-7-7a1 1 0 0 0-1.438 1.39l.024.024 5.293 5.293H5a1 1 0 0 0 0 2h11.586L11.293 18.3a1 1 0 0 0 0 1.414z"
         fillRule="evenodd"
       />
     </svg>
@@ -403,8 +396,7 @@ exports[`BpkLoadingButton should render correctly with "large" and "secondary" a
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
-        clipRule="evenodd"
-        d="M11.293 19.707a1 1 0 0 0 1.414 0l7-7a1 1 0 0 0 0-1.414l-7-7a1 1 0 1 0-1.414 1.414L16.586 11H5a1 1 0 1 0 0 2h11.586l-5.293 5.293a1 1 0 0 0 0 1.414z"
+        d="M11.293 19.713a1 1 0 0 0 1.414 0l7-7a1 1 0 0 0 0-1.414l-7-7a1 1 0 0 0-1.438 1.39l.024.024 5.293 5.293H5a1 1 0 0 0 0 2h11.586L11.293 18.3a1 1 0 0 0 0 1.414z"
         fillRule="evenodd"
       />
     </svg>
@@ -445,8 +437,7 @@ exports[`BpkLoadingButton should render correctly with a "destructive" attribute
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
-        clipRule="evenodd"
-        d="M3 12a1.5 1.5 0 0 0 1.5 1.5h11.379l-4.94 4.94a1.5 1.5 0 0 0 2.122 2.12L21.62 12l-8.56-8.56a1.5 1.5 0 0 0-2.122 2.12l4.94 4.94H4.5A1.5 1.5 0 0 0 3 12z"
+        d="M2.69 12a1.5 1.5 0 0 0 1.5 1.5h11.379l-4.94 4.94a1.5 1.5 0 0 0 2.122 2.12L21.31 12l-8.56-8.56a1.5 1.5 0 0 0-2.122 2.12l4.94 4.94H4.19a1.5 1.5 0 0 0-1.5 1.5z"
         fillRule="evenodd"
       />
     </svg>
@@ -487,8 +478,7 @@ exports[`BpkLoadingButton should render correctly with a "disabled" attribute 1`
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
-        clipRule="evenodd"
-        d="M3 12a1.5 1.5 0 0 0 1.5 1.5h11.379l-4.94 4.94a1.5 1.5 0 0 0 2.122 2.12L21.62 12l-8.56-8.56a1.5 1.5 0 0 0-2.122 2.12l4.94 4.94H4.5A1.5 1.5 0 0 0 3 12z"
+        d="M2.69 12a1.5 1.5 0 0 0 1.5 1.5h11.379l-4.94 4.94a1.5 1.5 0 0 0 2.122 2.12L21.31 12l-8.56-8.56a1.5 1.5 0 0 0-2.122 2.12l4.94 4.94H4.19a1.5 1.5 0 0 0-1.5 1.5z"
         fillRule="evenodd"
       />
     </svg>
@@ -529,8 +519,7 @@ exports[`BpkLoadingButton should render correctly with a "featured" attribute 1`
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
-        clipRule="evenodd"
-        d="M3 12a1.5 1.5 0 0 0 1.5 1.5h11.379l-4.94 4.94a1.5 1.5 0 0 0 2.122 2.12L21.62 12l-8.56-8.56a1.5 1.5 0 0 0-2.122 2.12l4.94 4.94H4.5A1.5 1.5 0 0 0 3 12z"
+        d="M2.69 12a1.5 1.5 0 0 0 1.5 1.5h11.379l-4.94 4.94a1.5 1.5 0 0 0 2.122 2.12L21.31 12l-8.56-8.56a1.5 1.5 0 0 0-2.122 2.12l4.94 4.94H4.19a1.5 1.5 0 0 0-1.5 1.5z"
         fillRule="evenodd"
       />
     </svg>
@@ -572,8 +561,7 @@ exports[`BpkLoadingButton should render correctly with a "href" attribute 1`] = 
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
-        clipRule="evenodd"
-        d="M3 12a1.5 1.5 0 0 0 1.5 1.5h11.379l-4.94 4.94a1.5 1.5 0 0 0 2.122 2.12L21.62 12l-8.56-8.56a1.5 1.5 0 0 0-2.122 2.12l4.94 4.94H4.5A1.5 1.5 0 0 0 3 12z"
+        d="M2.69 12a1.5 1.5 0 0 0 1.5 1.5h11.379l-4.94 4.94a1.5 1.5 0 0 0 2.122 2.12L21.31 12l-8.56-8.56a1.5 1.5 0 0 0-2.122 2.12l4.94 4.94H4.19a1.5 1.5 0 0 0-1.5 1.5z"
         fillRule="evenodd"
       />
     </svg>
@@ -613,8 +601,7 @@ exports[`BpkLoadingButton should render correctly with a "icon" attribute 1`] = 
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
-        clipRule="evenodd"
-        d="M12 1.5c-2.703 0-4.688 1.426-5.543 2.46C6.111 4.38 6 4.895 6 5.32v1.43a.75.75 0 0 1-.75.75H4.5a3 3 0 0 0-3 3v9a3 3 0 0 0 3 3h15a3 3 0 0 0 3-3v-9a3 3 0 0 0-3-3h-.75a.75.75 0 0 1-.75-.75V5.385c0-.514-.162-1.074-.555-1.5C16.547 2.914 14.693 1.5 12 1.5zm2.625 6c.207 0 .375-.224.375-.5v-.528c0-.274-.082-.539-.242-.71C14.208 5.176 13.276 4.5 12 4.5c-1.278 0-2.248.676-2.77 1.233-.155.164-.23.42-.23.684V7c0 .276.168.5.375.5h5.25z"
+        d="M12 1.5a7.388 7.388 0 0 0-5.543 2.46A2.138 2.138 0 0 0 6 5.32v1.43a.75.75 0 0 1-.75.75H4.5a3 3 0 0 0-3 3v9a3 3 0 0 0 3 3h15a3 3 0 0 0 3-3v-9a3 3 0 0 0-3-3h-.75a.75.75 0 0 1-.75-.75V5.385a2.21 2.21 0 0 0-.555-1.5A7.451 7.451 0 0 0 12 1.5zm2.625 6c.207 0 .375-.224.375-.5v-.528a1.048 1.048 0 0 0-.242-.71A3.793 3.793 0 0 0 12 4.5a3.862 3.862 0 0 0-2.77 1.233 1.002 1.002 0 0 0-.23.684V7c0 .276.168.5.375.5z"
         fillRule="evenodd"
       />
     </svg>
@@ -654,8 +641,7 @@ exports[`BpkLoadingButton should render correctly with a "iconDisabled" attribut
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
-        clipRule="evenodd"
-        d="M12 1.5c-2.703 0-4.688 1.426-5.543 2.46C6.111 4.38 6 4.895 6 5.32v1.43a.75.75 0 0 1-.75.75H4.5a3 3 0 0 0-3 3v9a3 3 0 0 0 3 3h15a3 3 0 0 0 3-3v-9a3 3 0 0 0-3-3h-.75a.75.75 0 0 1-.75-.75V5.385c0-.514-.162-1.074-.555-1.5C16.547 2.914 14.693 1.5 12 1.5zm2.625 6c.207 0 .375-.224.375-.5v-.528c0-.274-.082-.539-.242-.71C14.208 5.176 13.276 4.5 12 4.5c-1.278 0-2.248.676-2.77 1.233-.155.164-.23.42-.23.684V7c0 .276.168.5.375.5h5.25z"
+        d="M12 1.5a7.388 7.388 0 0 0-5.543 2.46A2.138 2.138 0 0 0 6 5.32v1.43a.75.75 0 0 1-.75.75H4.5a3 3 0 0 0-3 3v9a3 3 0 0 0 3 3h15a3 3 0 0 0 3-3v-9a3 3 0 0 0-3-3h-.75a.75.75 0 0 1-.75-.75V5.385a2.21 2.21 0 0 0-.555-1.5A7.451 7.451 0 0 0 12 1.5zm2.625 6c.207 0 .375-.224.375-.5v-.528a1.048 1.048 0 0 0-.242-.71A3.793 3.793 0 0 0 12 4.5a3.862 3.862 0 0 0-2.77 1.233 1.002 1.002 0 0 0-.23.684V7c0 .276.168.5.375.5z"
         fillRule="evenodd"
       />
     </svg>
@@ -695,8 +681,7 @@ exports[`BpkLoadingButton should render correctly with a "iconLoading" attribute
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
-        clipRule="evenodd"
-        d="M12 1.5c-2.703 0-4.688 1.426-5.543 2.46C6.111 4.38 6 4.895 6 5.32v1.43a.75.75 0 0 1-.75.75H4.5a3 3 0 0 0-3 3v9a3 3 0 0 0 3 3h15a3 3 0 0 0 3-3v-9a3 3 0 0 0-3-3h-.75a.75.75 0 0 1-.75-.75V5.385c0-.514-.162-1.074-.555-1.5C16.547 2.914 14.693 1.5 12 1.5zm2.625 6c.207 0 .375-.224.375-.5v-.528c0-.274-.082-.539-.242-.71C14.208 5.176 13.276 4.5 12 4.5c-1.278 0-2.248.676-2.77 1.233-.155.164-.23.42-.23.684V7c0 .276.168.5.375.5h5.25z"
+        d="M12 1.5a7.388 7.388 0 0 0-5.543 2.46A2.138 2.138 0 0 0 6 5.32v1.43a.75.75 0 0 1-.75.75H4.5a3 3 0 0 0-3 3v9a3 3 0 0 0 3 3h15a3 3 0 0 0 3-3v-9a3 3 0 0 0-3-3h-.75a.75.75 0 0 1-.75-.75V5.385a2.21 2.21 0 0 0-.555-1.5A7.451 7.451 0 0 0 12 1.5zm2.625 6c.207 0 .375-.224.375-.5v-.528a1.048 1.048 0 0 0-.242-.71A3.793 3.793 0 0 0 12 4.5a3.862 3.862 0 0 0-2.77 1.233 1.002 1.002 0 0 0-.23.684V7c0 .276.168.5.375.5z"
         fillRule="evenodd"
       />
     </svg>
@@ -741,8 +726,7 @@ exports[`BpkLoadingButton should render correctly with a "iconOnly" attribute 1`
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
-        clipRule="evenodd"
-        d="M3 12a1.5 1.5 0 0 0 1.5 1.5h11.379l-4.94 4.94a1.5 1.5 0 0 0 2.122 2.12L21.62 12l-8.56-8.56a1.5 1.5 0 0 0-2.122 2.12l4.94 4.94H4.5A1.5 1.5 0 0 0 3 12z"
+        d="M2.69 12a1.5 1.5 0 0 0 1.5 1.5h11.379l-4.94 4.94a1.5 1.5 0 0 0 2.122 2.12L21.31 12l-8.56-8.56a1.5 1.5 0 0 0-2.122 2.12l4.94 4.94H4.19a1.5 1.5 0 0 0-1.5 1.5z"
         fillRule="evenodd"
       />
     </svg>
@@ -781,8 +765,7 @@ exports[`BpkLoadingButton should render correctly with a "iconPosition=leading" 
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
-        clipRule="evenodd"
-        d="M3 12a1.5 1.5 0 0 0 1.5 1.5h11.379l-4.94 4.94a1.5 1.5 0 0 0 2.122 2.12L21.62 12l-8.56-8.56a1.5 1.5 0 0 0-2.122 2.12l4.94 4.94H4.5A1.5 1.5 0 0 0 3 12z"
+        d="M2.69 12a1.5 1.5 0 0 0 1.5 1.5h11.379l-4.94 4.94a1.5 1.5 0 0 0 2.122 2.12L21.31 12l-8.56-8.56a1.5 1.5 0 0 0-2.122 2.12l4.94 4.94H4.19a1.5 1.5 0 0 0-1.5 1.5z"
         fillRule="evenodd"
       />
     </svg>
@@ -824,8 +807,7 @@ exports[`BpkLoadingButton should render correctly with a "large" attribute 1`] =
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
-        clipRule="evenodd"
-        d="M11.293 19.707a1 1 0 0 0 1.414 0l7-7a1 1 0 0 0 0-1.414l-7-7a1 1 0 1 0-1.414 1.414L16.586 11H5a1 1 0 1 0 0 2h11.586l-5.293 5.293a1 1 0 0 0 0 1.414z"
+        d="M11.293 19.713a1 1 0 0 0 1.414 0l7-7a1 1 0 0 0 0-1.414l-7-7a1 1 0 0 0-1.438 1.39l.024.024 5.293 5.293H5a1 1 0 0 0 0 2h11.586L11.293 18.3a1 1 0 0 0 0 1.414z"
         fillRule="evenodd"
       />
     </svg>
@@ -866,8 +848,7 @@ exports[`BpkLoadingButton should render correctly with a "link" attribute 1`] = 
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
-        clipRule="evenodd"
-        d="M3 12a1.5 1.5 0 0 0 1.5 1.5h11.379l-4.94 4.94a1.5 1.5 0 0 0 2.122 2.12L21.62 12l-8.56-8.56a1.5 1.5 0 0 0-2.122 2.12l4.94 4.94H4.5A1.5 1.5 0 0 0 3 12z"
+        d="M2.69 12a1.5 1.5 0 0 0 1.5 1.5h11.379l-4.94 4.94a1.5 1.5 0 0 0 2.122 2.12L21.31 12l-8.56-8.56a1.5 1.5 0 0 0-2.122 2.12l4.94 4.94H4.19a1.5 1.5 0 0 0-1.5 1.5z"
         fillRule="evenodd"
       />
     </svg>
@@ -1032,8 +1013,7 @@ exports[`BpkLoadingButton should render correctly with a "secondary" attribute 1
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
-        clipRule="evenodd"
-        d="M3 12a1.5 1.5 0 0 0 1.5 1.5h11.379l-4.94 4.94a1.5 1.5 0 0 0 2.122 2.12L21.62 12l-8.56-8.56a1.5 1.5 0 0 0-2.122 2.12l4.94 4.94H4.5A1.5 1.5 0 0 0 3 12z"
+        d="M2.69 12a1.5 1.5 0 0 0 1.5 1.5h11.379l-4.94 4.94a1.5 1.5 0 0 0 2.122 2.12L21.31 12l-8.56-8.56a1.5 1.5 0 0 0-2.122 2.12l4.94 4.94H4.19a1.5 1.5 0 0 0-1.5 1.5z"
         fillRule="evenodd"
       />
     </svg>
@@ -1073,8 +1053,7 @@ exports[`BpkLoadingButton should respect the class names entered as a string 1`]
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
-        clipRule="evenodd"
-        d="M11.293 19.707a1 1 0 0 0 1.414 0l7-7a1 1 0 0 0 0-1.414l-7-7a1 1 0 1 0-1.414 1.414L16.586 11H5a1 1 0 1 0 0 2h11.586l-5.293 5.293a1 1 0 0 0 0 1.414z"
+        d="M11.293 19.713a1 1 0 0 0 1.414 0l7-7a1 1 0 0 0 0-1.414l-7-7a1 1 0 0 0-1.438 1.39l.024.024 5.293 5.293H5a1 1 0 0 0 0 2h11.586L11.293 18.3a1 1 0 0 0 0 1.414z"
         fillRule="evenodd"
       />
     </svg>
