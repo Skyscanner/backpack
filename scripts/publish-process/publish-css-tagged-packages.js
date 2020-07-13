@@ -29,7 +29,7 @@
 
 const {
   getCurrentPackageMeta,
-  appendToPackageVersions,
+  appendToPackageNames,
   publishPackagesToNPM,
   verbose,
   logVerbose,
@@ -44,11 +44,11 @@ const cli = async () => {
 
   // eslint-disable-next-line no-console
   console.log('Updating package versions...');
-  await appendToPackageVersions(currentPackageMeta, 'css.0');
+  await appendToPackageNames(currentPackageMeta, 'css');
   // eslint-disable-next-line no-console
   console.log('All good. 👍');
 
-  await publishPackagesToNPM(currentPackageMeta, 'css');
+  await publishPackagesToNPM(currentPackageMeta);
 };
 
 cli().then(null);
