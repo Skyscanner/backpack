@@ -2,11 +2,18 @@
 
 [Unreleased changes](./UNRELEASED.yaml).
 
+# 2020-07-13
+
+**Changed:**
+- bpk-component-icon: 8.2.2 => 8.2.3
+- bpk-svgs: 12.0.1 => 12.0.2
+  - All icons have been optimised, reducing their file size slightly.
+
 # 2020-07-10
 
 **Changed**:
-  - bpk-svgs:
-  - bpk-component-spinner:
+  - bpk-svgs: 12.0.0 => 12.0.1
+  - bpk-component-spinner: 3.0.63 => 3.0.64
     - The spinner has a fresh new design.
 
 # 2020-07-09 - Refreshed Radio and Checkbox styles
