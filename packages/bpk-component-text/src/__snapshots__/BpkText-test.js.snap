@@ -1,5 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`BpkText should not apply black styles when weight="black" and not an xl textStyle 1`] = `
+<span
+  className="bpk-text bpk-text--base"
+>
+  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+</span>
+`;
+
 exports[`BpkText should pass down unknown props 1`] = `
 <span
   className="bpk-text bpk-text--base"
@@ -21,7 +29,7 @@ exports[`BpkText should render correctly 1`] = `
 </span>
 `;
 
-exports[`BpkText should render correctly with \`bold\` 1`] = `
+exports[`BpkText should render correctly with deprecated \`bold\` prop 1`] = `
 <span
   className="bpk-text bpk-text--base bpk-text--bold"
 >
@@ -88,6 +96,78 @@ exports[`BpkText should render correctly with textStyle="xs" 1`] = `
 exports[`BpkText should render correctly with textStyle="xxl" 1`] = `
 <span
   className="bpk-text bpk-text--xxl"
+>
+  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+</span>
+`;
+
+exports[`BpkText should render correctly with textStyle="xxxl" 1`] = `
+<span
+  className="bpk-text bpk-text--xxxl"
+>
+  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+</span>
+`;
+
+exports[`BpkText should render correctly with textStyle="xxxxl" 1`] = `
+<span
+  className="bpk-text bpk-text--xxxxl"
+>
+  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+</span>
+`;
+
+exports[`BpkText should render correctly with textStyle="xxxxxl" 1`] = `
+<span
+  className="bpk-text bpk-text--xxxxxl"
+>
+  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+</span>
+`;
+
+exports[`BpkText should render correctly with weight="black" and supported textStyle="xl" 1`] = `
+<span
+  className="bpk-text bpk-text--xl bpk-text--black"
+>
+  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+</span>
+`;
+
+exports[`BpkText should render correctly with weight="black" and supported textStyle="xxl" 1`] = `
+<span
+  className="bpk-text bpk-text--xxl bpk-text--black"
+>
+  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+</span>
+`;
+
+exports[`BpkText should render correctly with weight="black" and supported textStyle="xxxl" 1`] = `
+<span
+  className="bpk-text bpk-text--xxxl bpk-text--black"
+>
+  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+</span>
+`;
+
+exports[`BpkText should render correctly with weight="black" and supported textStyle="xxxxl" 1`] = `
+<span
+  className="bpk-text bpk-text--xxxxl bpk-text--black"
+>
+  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+</span>
+`;
+
+exports[`BpkText should render correctly with weight="black" and supported textStyle="xxxxxl" 1`] = `
+<span
+  className="bpk-text bpk-text--xxxxxl bpk-text--black"
+>
+  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+</span>
+`;
+
+exports[`BpkText should render correctly with weight="bold" 1`] = `
+<span
+  className="bpk-text bpk-text--base bpk-text--bold"
 >
   Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
 </span>

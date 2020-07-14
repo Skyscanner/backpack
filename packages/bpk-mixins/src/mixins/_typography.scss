@@ -348,6 +348,31 @@
   @include bpk-text--bold;
 }
 
+/// Black text style
+///
+/// @require {mixin} bpk-text
+///
+/// @example scss
+///   .selector {
+///     @include bpk-text;
+///     @include bpk-text--black;
+///   }
+
+@mixin bpk-text--black {
+  font-weight: $bpk-font-weight-black;
+}
+
+/// Black text style (without margin reset)
+///
+/// @example scss
+///   .selector {
+///     @include bpk-text-heavy;
+///   }
+
+@mixin bpk-text-black {
+  @include bpk-text--black;
+}
+
 /// Level 1 heading.
 ///
 /// @example scss
