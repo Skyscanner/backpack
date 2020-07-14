@@ -2,6 +2,13 @@
 
 [Unreleased changes](./UNRELEASED.yaml).
 
+# 2020-07-14 - Updated `BpkText` API
+
+**Added:**
+  - bpk-component-text: 3.0.32 => 3.1.0
+    - Added `weight` prop to set the `bold` and `black` font on text components.
+    - Deprecated `bold` prop in favour of `weight`.
+
 # 2020-07-13
 
 **Changed:**
