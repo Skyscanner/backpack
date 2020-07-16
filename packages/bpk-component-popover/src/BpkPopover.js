@@ -20,7 +20,7 @@
 
 import PropTypes from 'prop-types';
 import React, { type Node } from 'react';
-import BpkText from 'bpk-component-text';
+import BpkText, { WEIGHT_STYLES } from 'bpk-component-text';
 import { BpkButtonLink } from 'bpk-component-link';
 import BpkCloseButton from 'bpk-component-close-button';
 import { TransitionInitialMount, cssModules } from 'bpk-react-utils';
@@ -111,7 +111,7 @@ const BpkPopover = (props: Props) => {
         />
         {labelAsTitle ? (
           <header className={getClassName('bpk-popover__header')}>
-            <BpkText tagName="h2" id={labelId} bold>
+            <BpkText tagName="h2" id={labelId} weight={WEIGHT_STYLES.bold}>
               {label}
             </BpkText>
             &nbsp;

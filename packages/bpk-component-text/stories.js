@@ -88,7 +88,7 @@ storiesOf('bpk-component-text', module)
   .add('bold', () => (
     <BpkText tagName="p">
       The man jumped over the shark tank. That was very{' '}
-      <BpkText bold>bold</BpkText> indeed.
+      <BpkText weight={WEIGHT_STYLES.bold}>bold</BpkText> indeed.
     </BpkText>
   ))
   .add('with weights', () => (
