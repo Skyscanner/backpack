@@ -120,7 +120,7 @@ BpkText.defaultProps = {
   textStyle: TEXT_STYLES.base,
   tagName: 'span',
   className: null,
-  bold: false,
+  bold: null,
   weight: WEIGHT_STYLES.regular,
 };
 
