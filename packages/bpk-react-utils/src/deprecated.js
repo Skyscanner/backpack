@@ -26,7 +26,7 @@ const deprecated = (propType: PropType, alternativeSuggestion: string) => (
   ...rest: [any]
 ) => {
   if (props[propName] != null) {
-    const message = `"${propName}" property of "${componentName}" has been deprecated. ${alternativeSuggestion}`;
+    const message = `Warning: "${propName}" property of "${componentName}" has been deprecated. ${alternativeSuggestion}`;
     // eslint-disable-next-line no-console
     console.warn(message);
   }
