@@ -152,6 +152,7 @@
 
 @mixin bpk-badge--destructive {
   color: $bpk-color-white;
+  fill: $bpk-color-white;
 
   @include bpk-themeable-property(
     background-color,
@@ -172,6 +173,7 @@
 
 @mixin bpk-badge--light {
   background-color: $bpk-color-sky-gray-tint-07;
+  fill: $bpk-color-sky-gray;
 }
 
 /// Inverse badge. Modifies the bpk-badge mixin.
@@ -186,6 +188,7 @@
 
 @mixin bpk-badge--inverse {
   background-color: $bpk-color-white;
+  fill: $bpk-color-sky-gray;
 }
 
 /// Outline badge. Modifies the bpk-badge mixin.
@@ -199,7 +202,8 @@
 ///   }
 
 @mixin bpk-badge--outline {
-  background-color: rgba($bpk-color-white, 0.2);
+  background-color: transparent;
   color: $bpk-color-white;
   box-shadow: inset 0 0 0 $bpk-border-size-sm $bpk-color-white;
+  fill: $bpk-color-white;
 }
