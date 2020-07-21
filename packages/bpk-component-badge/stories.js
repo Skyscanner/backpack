@@ -23,6 +23,8 @@ import { storiesOf } from '@storybook/react';
 import BpkSmallBeerIcon from 'bpk-component-icon/sm/beer';
 import BpkSmallFlightIcon from 'bpk-component-icon/sm/flight';
 import BpkSmallWeatherIcon from 'bpk-component-icon/sm/weather';
+import BpkSmallTickIcon from 'bpk-component-icon/sm/tick-circle';
+import BpkSmallCloseIcon from 'bpk-component-icon/sm/close-circle';
 
 import BadgeLayout from './BadgeLayout';
 
@@ -79,31 +81,88 @@ storiesOf('bpk-component-badge', module)
   ))
   .add('Warning (Default)', () => (
     <BadgeLayout>
-      <BpkBadge type={BADGE_TYPES.warning}>Promocionado</BpkBadge>
+      <BpkBadge type={BADGE_TYPES.warning}>Warning</BpkBadge>
+      &nbsp;
+      <BpkBadge type={BADGE_TYPES.warning}>
+        <BpkSmallTickIcon /> &nbsp;Warning
+      </BpkBadge>
+      &nbsp;
+      <BpkBadge type={BADGE_TYPES.warning}>
+        Warning&nbsp; <BpkSmallTickIcon />
+      </BpkBadge>
     </BadgeLayout>
   ))
   .add('Success', () => (
     <BadgeLayout>
-      <BpkBadge type={BADGE_TYPES.success}>Promocionado</BpkBadge>
+      <BpkBadge type={BADGE_TYPES.success}>Success</BpkBadge>
+      &nbsp;
+      <BpkBadge type={BADGE_TYPES.success}>
+        <BpkSmallTickIcon />
+        &nbsp;Success
+      </BpkBadge>
+      &nbsp;
+      <BpkBadge type={BADGE_TYPES.success}>
+        Success&nbsp;
+        <BpkSmallTickIcon />
+      </BpkBadge>
     </BadgeLayout>
   ))
   .add('Destructive', () => (
     <BadgeLayout>
-      <BpkBadge type={BADGE_TYPES.destructive}>Promocionado</BpkBadge>
+      <BpkBadge type={BADGE_TYPES.destructive}>Destructive</BpkBadge>
+      &nbsp;
+      <BpkBadge type={BADGE_TYPES.destructive}>
+        <BpkSmallCloseIcon />
+        &nbsp;Destructive
+      </BpkBadge>
+      &nbsp;
+      <BpkBadge type={BADGE_TYPES.destructive}>
+        Destructive&nbsp;
+        <BpkSmallCloseIcon />
+      </BpkBadge>
     </BadgeLayout>
   ))
   .add('Light', () => (
     <BadgeLayout>
-      <BpkBadge type={BADGE_TYPES.light}>Promocionado</BpkBadge>
+      <BpkBadge type={BADGE_TYPES.light}>Light</BpkBadge>
+      &nbsp;
+      <BpkBadge type={BADGE_TYPES.light}>
+        <BpkSmallTickIcon />
+        &nbsp;Light
+      </BpkBadge>
+      &nbsp;
+      <BpkBadge type={BADGE_TYPES.light}>
+        Light&nbsp;
+        <BpkSmallTickIcon />
+      </BpkBadge>
     </BadgeLayout>
   ))
   .add('Inverse', () => (
     <BadgeLayout>
-      <BpkBadge type={BADGE_TYPES.inverse}>Promocionado</BpkBadge>
+      <BpkBadge type={BADGE_TYPES.inverse}>Inverse</BpkBadge>
+      &nbsp;
+      <BpkBadge type={BADGE_TYPES.inverse}>
+        <BpkSmallTickIcon />
+        &nbsp;Inverse
+      </BpkBadge>
+      &nbsp;
+      <BpkBadge type={BADGE_TYPES.inverse}>
+        Inverse&nbsp;
+        <BpkSmallTickIcon />
+      </BpkBadge>
     </BadgeLayout>
   ))
   .add('Outline', () => (
     <BadgeLayout>
-      <BpkBadge type={BADGE_TYPES.outline}>Promocionado</BpkBadge>
+      <BpkBadge type={BADGE_TYPES.outline}>Outline</BpkBadge>
+      &nbsp;
+      <BpkBadge type={BADGE_TYPES.outline}>
+        <BpkSmallTickIcon />
+        &nbsp;Outline
+      </BpkBadge>
+      &nbsp;
+      <BpkBadge type={BADGE_TYPES.outline}>
+        Outline&nbsp; <BpkSmallTickIcon />
+      </BpkBadge>
     </BadgeLayout>
   ));
