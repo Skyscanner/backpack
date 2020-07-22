@@ -80,6 +80,17 @@ class BpkScrollableCalendarGridList extends React.Component {
     }
   };
 
+  componentWillUnmount = () => {
+    if (typeof document !== 'undefined') {
+      document.removeEventListener('resize', this.setComponentHeight);
+      document.removeEventListener(
+        'orientationchange',
+        this.setComponentHeight,
+      );
+      document.removeEventListener('fullscreenchange', this.setComponentHeight);
+    }
+  };
+
   getHtmlElement = () =>
     typeof document !== 'undefined' ? document.querySelector('html') : {};
 
