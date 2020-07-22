@@ -2,6 +2,15 @@
 
 [Unreleased changes](./UNRELEASED.yaml).
 
+# 2020-07-22 - Badge design tweaks and scrollable calendar changes
+
+**Changed:**
+  - bpk-component-badge: 2.0.67 => 2.0.68
+    - Tweaked design of badges.
+
+  - bpk-component-scrollable-calendar: 2.0.69 => 2.0.70
+    - Remove resize event listeners when the component is unmounted.
+
 # 2020-07-14 - Updated `BpkText` API
 
 **Added:**
