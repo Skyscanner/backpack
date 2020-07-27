@@ -2,6 +2,13 @@
 
 [Unreleased changes](./UNRELEASED.yaml).
 
+# 2020-07-27 - `xl` icons for native
+
+**Added:**
+
+ - bpk-svgs: 12.0.2 => 12.1.0
+   - Added `xl` star-rating icons for use on mobile native platforms.
+
 # 2020-07-22 - Badge design tweaks and scrollable calendar changes
 
 **Changed:**
