@@ -32,5 +32,6 @@ export default () => (
 | onClose     | func                    | true     | -             |
 | closeLabel  | oneOfType(string, func) | true     | -             |
 | className   | string                  | false    | null          |
+| disabled    | bool                    | false    | false         |
 | dismissible | bool                    | false    | true          |
-| type        | oneOf(`CHIP_TYPES.neutral`, `CHIP_TYPES.primary`)                    | false    | `CHIP_TYPES.neutral`          |
+| type        | oneOf(`CHIP_TYPES.light`, `CHIP_TYPES.neutral`, `CHIP_TYPES.primary`, `CHIP_TYPES.success`) | false    | `CHIP_TYPES.neutral`|

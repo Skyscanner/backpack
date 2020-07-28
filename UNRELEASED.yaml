@@ -1,5 +1,12 @@
 # UNRELEASED:
 
+**ADDED:**
+
+- bpk-component-chip:
+  - Chips have been redesigned to have a fresh new look.
+  - Added two new chip types — `success` and `light`.
+  - Added a new `disabled` prop.
+
 # How to write a good changelog entry:
 #
 #   1. Add 'BREAKING', 'ADDED' OR 'FIXED' depending on if the change will be major, minor or patch according to [semver.org](semver.org).
