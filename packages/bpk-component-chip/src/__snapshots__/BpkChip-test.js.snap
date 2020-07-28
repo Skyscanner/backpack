@@ -12,6 +12,7 @@ exports[`BpkChip should render correctly 1`] = `
   <BpkCloseButton
     className="bpk-chip__close-button"
     customIcon={null}
+    disabled={false}
     label="Close"
     onClick={[Function]}
   />
@@ -30,6 +31,7 @@ exports[`BpkChip should render correctly with a "className" attribute 1`] = `
   <BpkCloseButton
     className="bpk-chip__close-button"
     customIcon={null}
+    disabled={false}
     label="Close"
     onClick={[Function]}
   />
@@ -48,6 +50,7 @@ exports[`BpkChip should render correctly with a "closeLabel" function attribute 
   <BpkCloseButton
     className="bpk-chip__close-button"
     customIcon={null}
+    disabled={false}
     label="Custom close (this is a chip!)"
     onClick={[Function]}
   />
@@ -66,6 +69,7 @@ exports[`BpkChip should render correctly with a "closeLabel" string attribute 1`
   <BpkCloseButton
     className="bpk-chip__close-button"
     customIcon={null}
+    disabled={false}
     label="close it"
     onClick={[Function]}
   />
@@ -84,6 +88,7 @@ exports[`BpkChip should render correctly with type="light" 1`] = `
   <BpkCloseButton
     className="bpk-chip__close-button bpk-chip__close-button--light"
     customIcon={null}
+    disabled={false}
     label="Close"
     onClick={[Function]}
   />
@@ -92,16 +97,17 @@ exports[`BpkChip should render correctly with type="light" 1`] = `
 
 exports[`BpkChip should render correctly with type="light" and disabled 1`] = `
 <div
-  className="bpk-chip bpk-chip--light bpk-chip--disabled"
+  className="bpk-chip bpk-chip--disabled"
 >
   <span
-    className="bpk-chip__label bpk-chip__label--light bpk-chip__label--disabled"
+    className="bpk-chip__label bpk-chip__label--disabled"
   >
     This is a Chip!
   </span>
   <BpkCloseButton
-    className="bpk-chip__close-button bpk-chip__close-button--light bpk-chip__close-button--disabled"
+    className="bpk-chip__close-button bpk-chip__close-button--disabled"
     customIcon={null}
+    disabled={true}
     label="Close"
     onClick={[Function]}
   />
@@ -132,6 +138,7 @@ exports[`BpkChip should render correctly with type="neutral" 1`] = `
   <BpkCloseButton
     className="bpk-chip__close-button"
     customIcon={null}
+    disabled={false}
     label="Close"
     onClick={[Function]}
   />
@@ -150,6 +157,7 @@ exports[`BpkChip should render correctly with type="neutral" and disabled 1`] = 
   <BpkCloseButton
     className="bpk-chip__close-button bpk-chip__close-button--disabled"
     customIcon={null}
+    disabled={true}
     label="Close"
     onClick={[Function]}
   />
@@ -180,6 +188,7 @@ exports[`BpkChip should render correctly with type="primary" 1`] = `
   <BpkCloseButton
     className="bpk-chip__close-button bpk-chip__close-button--primary"
     customIcon={null}
+    disabled={false}
     label="Close"
     onClick={[Function]}
   />
@@ -188,16 +197,17 @@ exports[`BpkChip should render correctly with type="primary" 1`] = `
 
 exports[`BpkChip should render correctly with type="primary" and disabled 1`] = `
 <div
-  className="bpk-chip bpk-chip--primary bpk-chip--disabled"
+  className="bpk-chip bpk-chip--disabled"
 >
   <span
-    className="bpk-chip__label bpk-chip__label--primary bpk-chip__label--disabled"
+    className="bpk-chip__label bpk-chip__label--disabled"
   >
     This is a Chip!
   </span>
   <BpkCloseButton
-    className="bpk-chip__close-button bpk-chip__close-button--primary bpk-chip__close-button--disabled"
+    className="bpk-chip__close-button bpk-chip__close-button--disabled"
     customIcon={null}
+    disabled={true}
     label="Close"
     onClick={[Function]}
   />
@@ -228,6 +238,7 @@ exports[`BpkChip should render correctly with type="success" 1`] = `
   <BpkCloseButton
     className="bpk-chip__close-button bpk-chip__close-button--success"
     customIcon={null}
+    disabled={false}
     label="Close"
     onClick={[Function]}
   />
@@ -236,16 +247,17 @@ exports[`BpkChip should render correctly with type="success" 1`] = `
 
 exports[`BpkChip should render correctly with type="success" and disabled 1`] = `
 <div
-  className="bpk-chip bpk-chip--success bpk-chip--disabled"
+  className="bpk-chip bpk-chip--disabled"
 >
   <span
-    className="bpk-chip__label bpk-chip__label--success bpk-chip__label--disabled"
+    className="bpk-chip__label bpk-chip__label--disabled"
   >
     This is a Chip!
   </span>
   <BpkCloseButton
-    className="bpk-chip__close-button bpk-chip__close-button--success bpk-chip__close-button--disabled"
+    className="bpk-chip__close-button bpk-chip__close-button--disabled"
     customIcon={null}
+    disabled={true}
     label="Close"
     onClick={[Function]}
   />

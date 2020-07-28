@@ -6,7 +6,12 @@ ADDED:
     - Fixed A11y contrast issues with `high` and `medium` ratings.
     - Added new `pill` style rating which is set with the `RATING_TYPES` property.
 
-    # How to write a good changelog entry:
+  **Fixed:**
+
+  - bpk-component-chip:
+    - Fixed an issue where `disabled` chips could still be pressed and looked wrong.
+
+# How to write a good changelog entry:
 #
 #   1. Add 'BREAKING', 'ADDED' OR 'FIXED' depending on if the change will be major, minor or patch according to [semver.org](semver.org).
 #   2. Add the package name.

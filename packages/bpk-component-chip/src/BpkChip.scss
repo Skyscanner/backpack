@@ -29,7 +29,16 @@
     @include bpk-margin-leading($bpk-spacing-xs);
 
     &--disabled {
+      border: none;
       color: $bpk-color-sky-gray-tint-04;
+
+      @include bpk-hover {
+        color: $bpk-color-sky-gray-tint-04;
+      }
+
+      &:active {
+        color: $bpk-color-sky-gray-tint-04;
+      }
     }
 
     &--light {
