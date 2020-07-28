@@ -355,8 +355,8 @@ ratingLabel
 RATING_SIZES
 RATING_SIZES.base
 RATING_TYPES
-RATING_TYPES.DEFAULT
-RATING_TYPES.PILL
+RATING_TYPES.default
+RATING_TYPES.pill
 renderFlag
 renderTarget
 selectedDates

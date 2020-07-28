@@ -259,7 +259,7 @@ storiesOf('bpk-component-rating', module)
         subtitle="(4,000 reviews)"
         value={9}
         size={RATING_SIZES.sm}
-        type={RATING_TYPES.PILL}
+        type={RATING_TYPES.pill}
       />
       <br />
       <BpkRating
@@ -267,7 +267,7 @@ storiesOf('bpk-component-rating', module)
         title="Average"
         subtitle="(50 reviews)"
         value={6.7}
-        type={RATING_TYPES.PILL}
+        type={RATING_TYPES.pill}
       />
       <br />
       <BpkRating
@@ -276,7 +276,7 @@ storiesOf('bpk-component-rating', module)
         subtitle="(1,000 reviews)"
         value={2.3}
         size={RATING_SIZES.lg}
-        type={RATING_TYPES.PILL}
+        type={RATING_TYPES.pill}
       />
       <br />
     </div>
@@ -288,14 +288,14 @@ storiesOf('bpk-component-rating', module)
         title="Excellent"
         value={9}
         size={RATING_SIZES.sm}
-        type={RATING_TYPES.PILL}
+        type={RATING_TYPES.pill}
       />
       <br />
       <BpkRating
         ariaLabel="6.7 Average might recommend"
         title="Average"
         value={6.7}
-        type={RATING_TYPES.PILL}
+        type={RATING_TYPES.pill}
       />
       <br />
       <BpkRating
@@ -303,7 +303,7 @@ storiesOf('bpk-component-rating', module)
         title="Bad"
         value={2.3}
         size={RATING_SIZES.lg}
-        type={RATING_TYPES.PILL}
+        type={RATING_TYPES.pill}
       />
       <br />
     </div>
