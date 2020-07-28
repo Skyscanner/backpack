@@ -21,8 +21,8 @@ import {
   horizontalNavLinkActiveColor,
   calendarDayHoverColor,
   calendarDayActiveColor,
-  colorSkyGrayTint06,
   colorSkyGrayTint02,
+  colorSkyGrayTint06,
   colorWhite,
   colorMonteverde,
 } from 'bpk-tokens/tokens/base.es6';
@@ -162,7 +162,9 @@ const generateTheme = ({
   radioCheckedColor: primaryColor700,
   switchCheckedColor: primaryColor700,
 
+  ratingHighTextColor: 'black',
   ratingHighColor: primaryColor500,
+  ratingMediumTextColor: colorWhite,
   ratingMediumColor: secondaryColor500,
   ratingLowColor: colorSkyGrayTint02,
 

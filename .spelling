@@ -354,6 +354,9 @@ props.title
 ratingLabel
 RATING_SIZES
 RATING_SIZES.base
+RATING_TYPES
+RATING_TYPES.DEFAULT
+RATING_TYPES.PILL
 renderFlag
 renderTarget
 selectedDates
