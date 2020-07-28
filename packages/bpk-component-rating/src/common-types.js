@@ -18,6 +18,9 @@
 
 /* @flow */
 
-const RATING_SIZES = { sm: 'sm', base: 'base', lg: 'lg' };
+export const RATING_SIZES = { sm: 'sm', base: 'base', lg: 'lg' };
 
-export default RATING_SIZES;
+export const RATING_TYPES = {
+  DEFAULT: 'default',
+  PILL: 'pill',
+};

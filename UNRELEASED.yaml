@@ -1,6 +1,12 @@
 # UNRELEASED:
 
-# How to write a good changelog entry:
+ADDED:
+  - bpk-component-rating:
+    - Rating has been designed to have a fresh look.
+    - Fixed A11y contrast issues with `high` and `medium` ratings.
+    - Added new `pill` style rating which is set with the `pill` property.
+
+    # How to write a good changelog entry:
 #
 #   1. Add 'BREAKING', 'ADDED' OR 'FIXED' depending on if the change will be major, minor or patch according to [semver.org](semver.org).
 #   2. Add the package name.

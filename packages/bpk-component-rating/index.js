@@ -18,8 +18,8 @@
 /* @flow strict */
 
 import BpkRating from './src/BpkRating';
-import RATING_SIZES from './src/BpkRatingSizes';
+import { RATING_SIZES, RATING_TYPES } from './src/common-types';
 import themeAttributes from './src/themeAttributes';
 
 export default BpkRating;
-export { RATING_SIZES, themeAttributes };
+export { RATING_SIZES, RATING_TYPES, themeAttributes };

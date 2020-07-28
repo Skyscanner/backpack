@@ -21,10 +21,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import clamp from 'lodash.clamp';
 import { cssModules } from 'bpk-react-utils';
-import BpkText from 'bpk-component-text';
+import BpkText, { WEIGHT_STYLES } from 'bpk-component-text';
 
 import STYLES from './BpkRating.scss';
-import RATING_SIZES from './BpkRatingSizes';
+import { RATING_SIZES, RATING_TYPES } from './common-types';
 
 const getClassName = cssModules(STYLES);
 const MEDIUM_RATING_THRESHOLD = 6;
@@ -35,12 +35,14 @@ const MIN_VALUE = 0;
 export type Props = {
   ariaLabel: string,
   title: string,
-  subtitle: ?string,
-  size: $Values<typeof RATING_SIZES>,
   value: number,
   className: ?string,
+  size: $Values<typeof RATING_SIZES>,
+  subtitle: ?string,
+  type: $Values<typeof RATING_TYPES>,
   vertical: boolean,
 };
+
 const BpkRating = (props: Props) => {
   const {
     ariaLabel,
@@ -49,21 +51,26 @@ const BpkRating = (props: Props) => {
     value,
     className,
     size,
+    type,
     vertical,
     ...rest
   } = props;
   const classNames = [getClassName('bpk-rating', className)];
   const scoreStyles = [
-    getClassName('bpk-rating__component', `bpk-rating--${size}-rating`),
+    getClassName(
+      'bpk-rating__component',
+      `bpk-rating--${size}-rating`,
+      type === RATING_TYPES.PILL && `bpk-rating--${size}-pill`,
+    ),
   ];
   const textWrapperStyles = [getClassName('bpk-rating__text-wrapper')];
   const textStyles = [getClassName('bpk-rating__text')];
 
-  let textSize = 'sm';
+  let textSize = 'base';
   if (size === RATING_SIZES.lg) {
-    textSize = 'xl';
+    textSize = 'lg';
   } else if (size === RATING_SIZES.sm) {
-    textSize = 'xs';
+    textSize = 'sm';
   }
 
   let adjustedValue = value;
@@ -101,8 +108,9 @@ const BpkRating = (props: Props) => {
         tagName="span"
         className={scoreStyles.join(' ')}
         aria-hidden="true"
+        weight={WEIGHT_STYLES.bold}
       >
-        <strong>{adjustedValue}</strong>
+        {adjustedValue}
       </BpkText>
       <div className={textWrapperStyles.join(' ')}>
         <BpkText
@@ -111,9 +119,10 @@ const BpkRating = (props: Props) => {
           tagName="span"
           aria-hidden="true"
         >
-          <strong>{title}</strong>
+          <strong>{title}</strong>{' '}
+          {subtitle && type === RATING_TYPES.PILL && <span>{subtitle}</span>}
         </BpkText>
-        {subtitle && (
+        {subtitle && type !== RATING_TYPES.PILL && (
           <BpkText
             className={textStyles.join(' ')}
             textStyle={size === RATING_SIZES.lg ? 'sm' : 'xs'}
@@ -135,6 +144,7 @@ BpkRating.propTypes = {
   className: PropTypes.string,
   size: PropTypes.oneOf(Object.keys(RATING_SIZES)),
   subtitle: PropTypes.string,
+  type: PropTypes.oneOf(Object.keys(RATING_TYPES)),
   vertical: PropTypes.bool,
 };
 
@@ -142,6 +152,7 @@ BpkRating.defaultProps = {
   className: null,
   size: RATING_SIZES.base,
   subtitle: null,
+  type: RATING_TYPES.DEFAULT,
   vertical: false,
 };
 
