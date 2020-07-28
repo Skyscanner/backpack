@@ -25,15 +25,51 @@
     @include bpk-chip__label;
   }
 
-  &--primary-icon {
-    color: $bpk-color-white;
+  &__close-button {
+    @include bpk-margin-leading($bpk-spacing-xs);
 
-    @include bpk-hover {
-      color: $bpk-color-sky-blue-tint-01;
+    &--disabled {
+      color: $bpk-color-sky-gray-tint-04;
     }
 
-    &:active {
-      color: $bpk-color-sky-blue-tint-01;
+    &--light {
+      color: $bpk-color-sky-gray;
+
+      @include bpk-hover {
+        color: $bpk-color-sky-gray-tint-01;
+      }
+
+      &:active {
+        color: $bpk-color-sky-gray-tint-01;
+      }
     }
+
+    &--primary {
+      color: $bpk-color-white;
+
+      @include bpk-hover {
+        color: $bpk-color-sky-blue-tint-01;
+      }
+
+      &:active {
+        color: $bpk-color-sky-blue-tint-01;
+      }
+    }
+
+    &--success {
+      color: $bpk-color-sky-gray;
+
+      @include bpk-hover {
+        color: $bpk-color-sky-gray-tint-01;
+      }
+
+      &:active {
+        color: $bpk-color-sky-gray-tint-01;
+      }
+    }
+  }
+
+  &--disabled {
+    background-color: $bpk-color-sky-gray-tint-06;
   }
 }

@@ -21,36 +21,70 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
+import { cssModules } from 'bpk-react-utils';
+import BpkText from 'bpk-component-text';
+
+import STYLES from './stories.scss';
 
 import BpkChip, { CHIP_TYPES } from './index';
 
-storiesOf('bpk-component-chip', module)
-  .add('Default', () => (
-    <BpkChip onClose={action('Chip closing!')} closeLabel="Close">
-      This is a chip!
+const getClassName = cssModules(STYLES);
+
+const ChipsExample = ({ ...rest }) => (
+  <div className={getClassName('bpk-chip-stories__wrapper')}>
+    <BpkChip
+      onClose={action('Chip closing!')}
+      closeLabel="Close"
+      className={getClassName('bpk-chip-stories__chip')}
+      {...rest}
+    >
+      Neutral
     </BpkChip>
-  ))
-  .add('Primary', () => (
+    <BpkChip
+      onClose={action('Chip closing!')}
+      closeLabel="Close"
+      type={CHIP_TYPES.success}
+      className={getClassName('bpk-chip-stories__chip')}
+      {...rest}
+    >
+      Success
+    </BpkChip>
     <BpkChip
       onClose={action('Chip closing!')}
       closeLabel="Close"
       type={CHIP_TYPES.primary}
+      className={getClassName('bpk-chip-stories__chip')}
+      {...rest}
     >
-      This is a chip!
+      Primary
     </BpkChip>
-  ))
-  .add('Non-dimissible', () => (
-    <BpkChip onClose={() => null} closeLabel="Close" dismissible={false}>
-      This is a non-dismissible chip!
-    </BpkChip>
-  ))
-  .add('Primary Non-dimissible', () => (
     <BpkChip
-      onClose={() => null}
+      onClose={action('Chip closing!')}
       closeLabel="Close"
-      dismissible={false}
-      type={CHIP_TYPES.primary}
+      type={CHIP_TYPES.light}
+      className={getClassName('bpk-chip-stories__chip')}
+      {...rest}
     >
-      This is a chip!
+      Light
     </BpkChip>
-  ));
+    <BpkChip
+      onClose={action('Chip closing!')}
+      closeLabel="Close"
+      type={CHIP_TYPES.neutral}
+      disabled
+      className={getClassName('bpk-chip-stories__chip')}
+      {...rest}
+    >
+      Disabled
+    </BpkChip>
+  </div>
+);
+
+storiesOf('bpk-component-chip', module).add('Default', () => (
+  <div>
+    <BpkText>Dismissible</BpkText>
+    <ChipsExample />
+    <BpkText>Not dismissible</BpkText>
+    <ChipsExample dismissible={false} />
+  </div>
+));

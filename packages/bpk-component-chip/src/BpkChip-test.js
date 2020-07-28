@@ -34,17 +34,43 @@ describe('BpkChip', () => {
     expect(toJson(tree)).toMatchSnapshot();
   });
 
-  it('should render primary correctly', () => {
-    const tree = shallow(
-      <BpkChip
-        onClose={() => null}
-        closeLabel="Close"
-        type={CHIP_TYPES.primary}
-      >
-        This is a Chip!
-      </BpkChip>,
-    );
-    expect(toJson(tree)).toMatchSnapshot();
+  Object.keys(CHIP_TYPES).forEach(chipType => {
+    it(`should render correctly with type="${chipType}"`, () => {
+      const tree = shallow(
+        <BpkChip onClose={() => null} closeLabel="Close" type={chipType}>
+          This is a Chip!
+        </BpkChip>,
+      );
+      expect(toJson(tree)).toMatchSnapshot();
+    });
+
+    it(`should render correctly with type="${chipType}" and disabled`, () => {
+      const tree = shallow(
+        <BpkChip
+          onClose={() => null}
+          closeLabel="Close"
+          type={chipType}
+          disabled
+        >
+          This is a Chip!
+        </BpkChip>,
+      );
+      expect(toJson(tree)).toMatchSnapshot();
+    });
+
+    it(`should render correctly with type="${chipType}" and not dismissible`, () => {
+      const tree = shallow(
+        <BpkChip
+          onClose={() => null}
+          closeLabel="Close"
+          type={chipType}
+          dismissible={false}
+        >
+          This is a Chip!
+        </BpkChip>,
+      );
+      expect(toJson(tree)).toMatchSnapshot();
+    });
   });
 
   it('should render correctly with a "className" attribute', () => {
@@ -77,29 +103,6 @@ describe('BpkChip', () => {
   it('should render correctly with a "closeLabel" string attribute', () => {
     const tree = shallow(
       <BpkChip onClose={() => null} closeLabel="close it">
-        This is a Chip!
-      </BpkChip>,
-    );
-    expect(toJson(tree)).toMatchSnapshot();
-  });
-
-  it('should render correctly when not "dismissible"', () => {
-    const tree = shallow(
-      <BpkChip onClose={() => null} closeLabel="Close" dismissible={false}>
-        This is a Chip!
-      </BpkChip>,
-    );
-    expect(toJson(tree)).toMatchSnapshot();
-  });
-
-  it('should render primary correctly when not "dismissible"', () => {
-    const tree = shallow(
-      <BpkChip
-        onClose={() => null}
-        closeLabel="Close"
-        dismissible={false}
-        type={CHIP_TYPES.primary}
-      >
         This is a Chip!
       </BpkChip>,
     );
