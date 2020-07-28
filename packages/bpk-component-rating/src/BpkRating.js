@@ -60,7 +60,7 @@ const BpkRating = (props: Props) => {
     getClassName(
       'bpk-rating__component',
       `bpk-rating--${size}-rating`,
-      type === RATING_TYPES.PILL && `bpk-rating--${size}-pill`,
+      type === RATING_TYPES.pill && `bpk-rating--${size}-pill`,
     ),
   ];
   const textWrapperStyles = [getClassName('bpk-rating__text-wrapper')];
@@ -120,9 +120,9 @@ const BpkRating = (props: Props) => {
           aria-hidden="true"
         >
           <strong>{title}</strong>{' '}
-          {subtitle && type === RATING_TYPES.PILL && <span>{subtitle}</span>}
+          {subtitle && type === RATING_TYPES.pill && <span>{subtitle}</span>}
         </BpkText>
-        {subtitle && type !== RATING_TYPES.PILL && (
+        {subtitle && type !== RATING_TYPES.pill && (
           <BpkText
             className={textStyles.join(' ')}
             textStyle={size === RATING_SIZES.lg ? 'sm' : 'xs'}
@@ -144,7 +144,7 @@ BpkRating.propTypes = {
   className: PropTypes.string,
   size: PropTypes.oneOf(Object.keys(RATING_SIZES)),
   subtitle: PropTypes.string,
-  type: PropTypes.oneOf(Object.keys(RATING_TYPES)),
+  type: PropTypes.oneOf([RATING_TYPES.default, RATING_TYPES.pill]),
   vertical: PropTypes.bool,
 };
 
@@ -152,7 +152,7 @@ BpkRating.defaultProps = {
   className: null,
   size: RATING_SIZES.base,
   subtitle: null,
-  type: RATING_TYPES.DEFAULT,
+  type: RATING_TYPES.default,
   vertical: false,
 };
 

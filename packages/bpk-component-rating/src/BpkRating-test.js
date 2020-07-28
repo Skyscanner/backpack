@@ -189,7 +189,7 @@ describe('BpkRating', () => {
           ariaLabel="6.7 Average might recommend"
           title="Average"
           subtitle="Might recommend"
-          type={RATING_TYPES.PILL}
+          type={RATING_TYPES.pill}
           value={6.7}
         />,
       )
@@ -203,7 +203,7 @@ describe('BpkRating', () => {
         <BpkRating
           ariaLabel="6.7 Average might recommend"
           title="Average"
-          type={RATING_TYPES.PILL}
+          type={RATING_TYPES.pill}
           value={6.7}
         />,
       )

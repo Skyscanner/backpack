@@ -21,6 +21,6 @@
 export const RATING_SIZES = { sm: 'sm', base: 'base', lg: 'lg' };
 
 export const RATING_TYPES = {
-  DEFAULT: 'default',
-  PILL: 'pill',
+  default: 'default',
+  pill: 'pill',
 };
