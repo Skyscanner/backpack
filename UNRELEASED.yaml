@@ -2,9 +2,9 @@
 
 ADDED:
   - bpk-component-rating:
-    - Rating has been designed to have a fresh look.
+    - Rating has been redesigned to have a fresh look.
     - Fixed A11y contrast issues with `high` and `medium` ratings.
-    - Added new `pill` style rating which is set with the `pill` property.
+    - Added new `pill` style rating which is set with the `RATING_TYPES` property.
 
     # How to write a good changelog entry:
 #
