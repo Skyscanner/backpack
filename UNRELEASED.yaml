@@ -9,7 +9,7 @@ ADDED:
   **Fixed:**
 
   - bpk-component-chip:
-    - Fixed an issue where `disabled` chips were still pressable and looked wrong.
+    - Fixed an issue where `disabled` chips could still be pressed and looked wrong.
 
 # How to write a good changelog entry:
 #
