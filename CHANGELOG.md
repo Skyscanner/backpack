@@ -2,6 +2,15 @@
 
 [Unreleased changes](./UNRELEASED.yaml).
 
+# 2020-07-29
+
+**Added:**
+
+- bpk-component-chip: 3.3.0
+  - Chips have been redesigned to have a fresh new look.
+  - Added two new chip types — `success` and `light`.
+  - Added a new `disabled` prop.
+
 # 2020-07-27 - `xl` icons for native
 
 **Added:**
