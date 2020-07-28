@@ -38,34 +38,16 @@ const ChipsExample = ({ ...rest }) => (
       className={getClassName('bpk-chip-stories__chip')}
       {...rest}
     >
-      Neutral
+      Dismissible
     </BpkChip>
     <BpkChip
       onClose={action('Chip closing!')}
       closeLabel="Close"
-      type={CHIP_TYPES.success}
       className={getClassName('bpk-chip-stories__chip')}
+      dismissible={false}
       {...rest}
     >
-      Success
-    </BpkChip>
-    <BpkChip
-      onClose={action('Chip closing!')}
-      closeLabel="Close"
-      type={CHIP_TYPES.primary}
-      className={getClassName('bpk-chip-stories__chip')}
-      {...rest}
-    >
-      Primary
-    </BpkChip>
-    <BpkChip
-      onClose={action('Chip closing!')}
-      closeLabel="Close"
-      type={CHIP_TYPES.light}
-      className={getClassName('bpk-chip-stories__chip')}
-      {...rest}
-    >
-      Light
+      Not dismissible
     </BpkChip>
     <BpkChip
       onClose={action('Chip closing!')}
@@ -75,16 +57,29 @@ const ChipsExample = ({ ...rest }) => (
       className={getClassName('bpk-chip-stories__chip')}
       {...rest}
     >
-      Disabled
+      Dismissible and disabled
+    </BpkChip>
+    <BpkChip
+      onClose={action('Chip closing!')}
+      closeLabel="Close"
+      type={CHIP_TYPES.neutral}
+      disabled
+      dismissible={false}
+      className={getClassName('bpk-chip-stories__chip')}
+      {...rest}
+    >
+      Not dismissible and disabled
     </BpkChip>
   </div>
 );
 
 storiesOf('bpk-component-chip', module).add('Default', () => (
   <div>
-    <BpkText>Dismissible</BpkText>
-    <ChipsExample />
-    <BpkText>Not dismissible</BpkText>
-    <ChipsExample dismissible={false} />
+    {Object.keys(CHIP_TYPES).map(chipType => (
+      <>
+        <BpkText>{chipType}</BpkText>
+        <ChipsExample type={chipType} />
+      </>
+    ))}
   </div>
 ));

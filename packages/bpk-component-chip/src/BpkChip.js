@@ -58,26 +58,30 @@ const BpkChip = (props: Props) => {
 
   const classNames = getClassName(
     'bpk-chip',
-    type === CHIP_TYPES.primary && 'bpk-chip--primary',
-    type === CHIP_TYPES.success && 'bpk-chip--success',
-    type === CHIP_TYPES.light && 'bpk-chip--light',
+    !disabled && type === CHIP_TYPES.primary && 'bpk-chip--primary',
+    !disabled && type === CHIP_TYPES.success && 'bpk-chip--success',
+    !disabled && type === CHIP_TYPES.light && 'bpk-chip--light',
     disabled && 'bpk-chip--disabled',
     className,
   );
 
   const labelClassNames = getClassName(
     'bpk-chip__label',
-    type === CHIP_TYPES.primary && 'bpk-chip__label--primary',
-    type === CHIP_TYPES.success && 'bpk-chip__label--success',
-    type === CHIP_TYPES.light && 'bpk-chip__label--light',
+    !disabled && type === CHIP_TYPES.primary && 'bpk-chip__label--primary',
+    !disabled && type === CHIP_TYPES.success && 'bpk-chip__label--success',
+    !disabled && type === CHIP_TYPES.light && 'bpk-chip__label--light',
     disabled && 'bpk-chip__label--disabled',
   );
 
   const iconClassNames = getClassName(
     'bpk-chip__close-button',
-    type === CHIP_TYPES.primary && 'bpk-chip__close-button--primary',
-    type === CHIP_TYPES.success && 'bpk-chip__close-button--success',
-    type === CHIP_TYPES.light && 'bpk-chip__close-button--light',
+    !disabled &&
+      type === CHIP_TYPES.primary &&
+      'bpk-chip__close-button--primary',
+    !disabled &&
+      type === CHIP_TYPES.success &&
+      'bpk-chip__close-button--success',
+    !disabled && type === CHIP_TYPES.light && 'bpk-chip__close-button--light',
     disabled && 'bpk-chip__close-button--disabled',
   );
 
@@ -90,6 +94,7 @@ const BpkChip = (props: Props) => {
       <span className={labelClassNames}>{children}</span>
       {dismissible && (
         <BpkCloseButton
+          disabled={disabled}
           className={iconClassNames}
           label={label}
           onClick={onClose}
