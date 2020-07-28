@@ -23,7 +23,6 @@
   align-items: center;
   background-color: $bpk-color-sky-gray-tint-06;
 
-  @include bpk-text--sm;
   @include bpk-border-radius-pill;
 
   &--light {
