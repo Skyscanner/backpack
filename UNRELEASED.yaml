@@ -1,5 +1,10 @@
 # UNRELEASED:
 
+ADDED:
+  - bpk-svgs:
+    - Reinstating large native icons which were accidentally deleted.
+    - Updated small native icons to reflect the new style.
+
 # How to write a good changelog entry:
 #
 #   1. Add 'BREAKING', 'ADDED' OR 'FIXED' depending on if the change will be major, minor or patch according to [semver.org](semver.org).
