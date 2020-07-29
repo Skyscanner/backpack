@@ -2,17 +2,24 @@
 
 [Unreleased changes](./UNRELEASED.yaml).
 
+# 2020-07-29 - Reinstated native icons removed by accident
+
+**Added:**
+- bpk-svgs: 12.1.0 => 12.1.1
+  - Reinstating large native icons which were accidentally deleted.
+  - Updated small native icons to reflect the new style.
+
 # 2020-07-29 - Rating redesign and `BpkChip` disabled fix
 
 **Added:**
-  - bpk-component-rating: 2.0.69 => 2.1.0
-    - Rating has been redesigned to have a fresh look.
-    - Fixed A11y contrast issues with `high` and `medium` ratings.
-    - Added new `pill` style rating which is set with the `RATING_TYPES` property.
+- bpk-component-rating: 2.0.69 => 2.1.0
+  - Rating has been redesigned to have a fresh look.
+  - Fixed A11y contrast issues with `high` and `medium` ratings.
+  - Added new `pill` style rating which is set with the `RATING_TYPES` property.
 
 **Fixed:**
-  - bpk-component-chip: 3.3.0 => 3.3.1
-    - Fixed an issue where `disabled` chips could still be pressed and looked wrong.
+- bpk-component-chip: 3.3.0 => 3.3.1
+  - Fixed an issue where `disabled` chips could still be pressed and looked wrong.
 
 
 # 2020-07-28 - Chip redesign
