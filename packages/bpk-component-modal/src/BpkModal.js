@@ -123,7 +123,7 @@ export const defaultProps = {
   closeOnEscPressed: true,
 };
 
-BpkModal.propTypes = { ...propTypes };
+BpkModal.propTypes = { ...propTypes, onClose: PropTypes.func };
 BpkModal.defaultProps = { ...defaultProps, onClose: () => null };
 
 export default BpkModal;
