@@ -2,7 +2,20 @@
 
 [Unreleased changes](./UNRELEASED.yaml).
 
-# 2020-07-29
+# 2020-07-29 - Rating redesign and `BpkChip` disabled fix
+
+**Added:**
+  - bpk-component-rating: 2.0.69 => 2.1.0
+    - Rating has been redesigned to have a fresh look.
+    - Fixed A11y contrast issues with `high` and `medium` ratings.
+    - Added new `pill` style rating which is set with the `RATING_TYPES` property.
+
+**Fixed:**
+  - bpk-component-chip: 3.3.0 => 3.3.1
+    - Fixed an issue where `disabled` chips could still be pressed and looked wrong.
+
+
+# 2020-07-28 - Chip redesign
 
 **Added:**
 
