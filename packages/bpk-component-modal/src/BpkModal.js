@@ -124,6 +124,6 @@ export const defaultProps = {
 };
 
 BpkModal.propTypes = { ...propTypes };
-BpkModal.defaultProps = { ...defaultProps };
+BpkModal.defaultProps = { ...defaultProps, onClose: () => null };
 
 export default BpkModal;
