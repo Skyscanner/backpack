@@ -52,22 +52,3 @@ export const onClosePropType = (
 
   return null;
 };
-
-export const modalOnClosePropType = (
-  props: Object,
-  propName: string,
-  componentName: string,
-): ?Error => {
-  const onCloseValue = props[propName];
-
-  if (
-    (props.showHeader || props.closeOnScrimClick || props.closeOnEscPressed) &&
-    (!onCloseValue || typeof onCloseValue !== 'function')
-  ) {
-    return new Error(
-      `Invalid prop \`${propName}\` supplied to \`${componentName}\`. There must an onClose handler if showHeader, closeOnScrimClick or closeOnEscPressed is true.`,
-    );
-  }
-
-  return null;
-};

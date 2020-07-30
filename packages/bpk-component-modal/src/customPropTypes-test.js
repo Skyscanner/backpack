@@ -18,11 +18,7 @@
 
 /* @flow strict */
 
-import {
-  titlePropType,
-  onClosePropType,
-  modalOnClosePropType,
-} from './customPropTypes';
+import { titlePropType, onClosePropType } from './customPropTypes';
 
 describe('titlePropType', () => {
   it('should fail if show header is true and there is no title', () => {
@@ -80,51 +76,6 @@ describe('onClosePropType', () => {
   it('should be valid to pass no onClose if showHeader is false', () => {
     const result = onClosePropType(
       { showHeader: false },
-      'onClose',
-      'BpkModalDialog',
-    );
-
-    expect(result).toBeNull();
-  });
-});
-
-describe('modalOnClosePropType', () => {
-  it('should fail if closeOnEscPressed is true and there is no onClose', () => {
-    const result = modalOnClosePropType(
-      {
-        showHeader: false,
-        closeOnScrimClick: false,
-        closeOnEscPressed: true,
-      },
-      'onClose',
-      'BpkModalDialog',
-    );
-
-    expect(result).toEqual(expect.any(Error));
-  });
-
-  it('should return null for valid data', () => {
-    const result = modalOnClosePropType(
-      {
-        onClose: () => null,
-        showHeader: true,
-        closeOnScrimClick: true,
-        closeOnEscPressed: true,
-      },
-      'onClose',
-      'BpkModalDialog',
-    );
-
-    expect(result).toBeNull();
-  });
-
-  it('should be valid to pass no onClose if showHeader, closeOnScrimClick and closeOnEscPressed is false', () => {
-    const result = modalOnClosePropType(
-      {
-        showHeader: false,
-        closeOnScrimClick: false,
-        closeOnEscPressed: false,
-      },
       'onClose',
       'BpkModalDialog',
     );
