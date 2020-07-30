@@ -29,7 +29,6 @@ import BpkModalDialog, {
   defaultProps as modalDialogDefaultProps,
   type Props as ModalDialogProps,
 } from './BpkModalDialog';
-import { modalOnClosePropType } from './customPropTypes';
 
 const getClassName = cssModules(STYLES);
 const ScrimBpkModalDialog = withScrim(BpkModalDialog);
@@ -103,7 +102,7 @@ const { dialogRef, ...newModalDialogPropTypes } = modalDialogPropTypes;
 
 export const propTypes = {
   ...newModalDialogPropTypes,
-  onClose: modalOnClosePropType,
+  onClose: PropTypes.func,
   isIphone: PropTypes.bool,
   isOpen: PropTypes.bool.isRequired,
   renderTarget: PropTypes.func,
@@ -114,6 +113,7 @@ export const propTypes = {
 
 export const defaultProps = {
   ...modalDialogDefaultProps,
+  onClose: () => null,
   renderTarget: null,
   target: null,
   isIphone: /iPhone/i.test(
@@ -123,7 +123,7 @@ export const defaultProps = {
   closeOnEscPressed: true,
 };
 
-BpkModal.propTypes = { ...propTypes, onClose: PropTypes.func };
-BpkModal.defaultProps = { ...defaultProps, onClose: () => null };
+BpkModal.propTypes = { ...propTypes };
+BpkModal.defaultProps = { ...defaultProps };
 
 export default BpkModal;
