@@ -50,6 +50,7 @@ export type Props = {
   closeOnEscPressed: boolean,
   renderTarget: ?() => ?HTMLElement,
   target: ?((() => ?HTMLElement) | Element<any>),
+  onClose: (event: SyntheticEvent<>) => void | null,
 };
 
 const BpkModal = (props: Props) => {
