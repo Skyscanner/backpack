@@ -290,6 +290,7 @@ dialingCodes
 dialingCodeMask
 dismissable
 dismissButtonLabel
+toggleable
 dockedFirst
 dockedMiddle
 dockedLast
