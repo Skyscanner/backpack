@@ -6,7 +6,7 @@ exports[`BpkDismissibleChip should ignore setting a trailing accessory view, res
   className="bpk-chip bpk-chip--primary"
   disabled={false}
   onClick={[Function]}
-  role="checkbox"
+  role="button"
   title="Dismiss"
   type="button"
 >
@@ -40,7 +40,7 @@ exports[`BpkDismissibleChip should override setting selected={true}, resulting i
   className="bpk-chip bpk-chip--primary"
   disabled={false}
   onClick={[Function]}
-  role="checkbox"
+  role="button"
   title="Dismiss"
   type="button"
 >
@@ -74,7 +74,7 @@ exports[`BpkDismissibleChip should render correctly 1`] = `
   className="bpk-chip bpk-chip--primary"
   disabled={false}
   onClick={[Function]}
-  role="checkbox"
+  role="button"
   title="Dismiss"
   type="button"
 >
@@ -108,7 +108,7 @@ exports[`BpkDismissibleChip should render correctly with a "className" attribute
   className="bpk-chip bpk-chip--primary custom-class"
   disabled={false}
   onClick={[Function]}
-  role="checkbox"
+  role="button"
   title="Dismiss"
   type="button"
 >
@@ -142,7 +142,7 @@ exports[`BpkDismissibleChip should render correctly with type="light" 1`] = `
   className="bpk-chip bpk-chip--light"
   disabled={false}
   onClick={[Function]}
-  role="checkbox"
+  role="button"
   title="Dismiss"
   type="button"
 >
@@ -176,7 +176,7 @@ exports[`BpkDismissibleChip should render correctly with type="light" and a lead
   className="bpk-chip bpk-chip--light"
   disabled={false}
   onClick={[Function]}
-  role="checkbox"
+  role="button"
   title="Dismiss"
   type="button"
 >
@@ -217,7 +217,7 @@ exports[`BpkDismissibleChip should render correctly with type="light" and disabl
   className="bpk-chip bpk-chip--light bpk-chip--disabled"
   disabled={true}
   onClick={[Function]}
-  role="checkbox"
+  role="button"
   title="Dismiss"
   type="button"
 >
@@ -251,7 +251,7 @@ exports[`BpkDismissibleChip should render correctly with type="primary" 1`] = `
   className="bpk-chip bpk-chip--primary"
   disabled={false}
   onClick={[Function]}
-  role="checkbox"
+  role="button"
   title="Dismiss"
   type="button"
 >
@@ -285,7 +285,7 @@ exports[`BpkDismissibleChip should render correctly with type="primary" and a le
   className="bpk-chip bpk-chip--primary"
   disabled={false}
   onClick={[Function]}
-  role="checkbox"
+  role="button"
   title="Dismiss"
   type="button"
 >
@@ -326,7 +326,7 @@ exports[`BpkDismissibleChip should render correctly with type="primary" and disa
   className="bpk-chip bpk-chip--primary bpk-chip--disabled"
   disabled={true}
   onClick={[Function]}
-  role="checkbox"
+  role="button"
   title="Dismiss"
   type="button"
 >
@@ -360,7 +360,7 @@ exports[`BpkDismissibleChip should render correctly with type="success" 1`] = `
   className="bpk-chip bpk-chip--success"
   disabled={false}
   onClick={[Function]}
-  role="checkbox"
+  role="button"
   title="Dismiss"
   type="button"
 >
@@ -394,7 +394,7 @@ exports[`BpkDismissibleChip should render correctly with type="success" and a le
   className="bpk-chip bpk-chip--success"
   disabled={false}
   onClick={[Function]}
-  role="checkbox"
+  role="button"
   title="Dismiss"
   type="button"
 >
@@ -435,7 +435,7 @@ exports[`BpkDismissibleChip should render correctly with type="success" and disa
   className="bpk-chip bpk-chip--success bpk-chip--disabled"
   disabled={true}
   onClick={[Function]}
-  role="checkbox"
+  role="button"
   title="Dismiss"
   type="button"
 >

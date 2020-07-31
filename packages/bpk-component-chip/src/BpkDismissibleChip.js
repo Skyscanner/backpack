@@ -44,6 +44,7 @@ const BpkDismissibleChip = (props: Props) => {
       {...rest}
       trailingAccessoryView={<CloseIconSm />}
       selected={false}
+      role="button" // Override role="checkbox" because this chip is not selectable.
     />
   );
 };
