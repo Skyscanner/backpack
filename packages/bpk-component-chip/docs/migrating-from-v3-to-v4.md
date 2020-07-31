@@ -92,6 +92,7 @@ const MyComponent = () => {
   return (
     <BpkSelectableChip
       accessibilityLabel="Toggle"
+      selected={selected}
       onClick={() => { setSelected(!selected) }}
     >
       Chip
