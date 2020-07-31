@@ -417,7 +417,7 @@ const updateDependencies = dependencies => {
 
   Object.keys(dependencies).forEach(depName => {
     const depValue = dependencies[depName];
-    if (depName.match('bpk-*')) {
+    if (depName.match('bpk-*') && !depName.match('bpk-mixins')) {
       const newName = `${depName}-css`;
       dependencyList[newName] = depValue;
     } else {
@@ -431,6 +431,7 @@ const updateDependencies = dependencies => {
 
 const appendToPackageName = (c, text) =>
   new Promise(resolve => {
+    if (c.name.match('bpk-mixins')) resolve();
     const packageJsonFilePath = path.join(c.path, 'package.json');
     const appendedName = `${c.name}-${text}`;
     const packageJsonData = JSON.parse(
