@@ -22,37 +22,91 @@
   padding: 0 $bpk-spacing-md;
   align-items: center;
   border: none;
-  background-color: $bpk-color-sky-gray-tint-06;
-  color: $bpk-color-sky-gray;
 
   @include bpk-border-radius-pill;
 
   &--light {
     background-color: $bpk-color-white;
+    color: $bpk-color-sky-gray;
 
     @include bpk-border-sm($bpk-color-sky-gray-tint-03);
+
+    @include bpk-hover {
+      background-color: $bpk-color-sky-gray-tint-07;
+    }
+
+    &:active {
+      background-color: $bpk-color-sky-gray-tint-06;
+    }
 
     &-selected {
       background-color: $bpk-color-sky-blue;
       color: $bpk-color-white;
 
       @include bpk-border-sm(transparent);
+
+      @include bpk-hover {
+        background-color: $bpk-color-sky-blue-shade-01;
+      }
+
+      &:active {
+        background-color: $bpk-color-sky-blue-shade-02;
+      }
     }
   }
 
   &--primary {
+    background-color: $bpk-color-sky-gray-tint-06;
+    color: $bpk-color-sky-gray;
+
+    @include bpk-hover {
+      background-color: $bpk-color-sky-gray-tint-05;
+    }
+
+    &:active {
+      background-color: $bpk-color-sky-gray-tint-04;
+    }
+
     &-selected {
       background-color: $bpk-color-sky-blue;
       color: $bpk-color-white;
 
       @include bpk-border-sm(transparent);
+
+      @include bpk-hover {
+        background-color: $bpk-color-sky-blue-shade-01;
+      }
+
+      &:active {
+        background-color: $bpk-color-sky-blue-shade-02;
+      }
     }
   }
 
   &--success {
+    background-color: $bpk-color-sky-gray-tint-06;
+    color: $bpk-color-sky-gray;
+
+    @include bpk-hover {
+      background-color: $bpk-color-sky-gray-tint-05;
+    }
+
+    &:active {
+      background-color: $bpk-color-sky-gray-tint-04;
+    }
+
     &-selected {
       background-color: $bpk-color-glencoe;
       color: $bpk-color-sky-gray;
+
+      @include bpk-hover {
+        // There's no suitable token here, so we use darken.
+        background-color: darken($bpk-color-glencoe, 10%);
+      }
+
+      &:active {
+        background-color: $bpk-color-monteverde;
+      }
     }
   }
 
