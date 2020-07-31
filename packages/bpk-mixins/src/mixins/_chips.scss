@@ -21,7 +21,9 @@
   height: $bpk-spacing-xl;
   padding: 0 $bpk-spacing-md;
   align-items: center;
+  border: none;
   background-color: $bpk-color-sky-gray-tint-06;
+  color: $bpk-color-sky-gray;
 
   @include bpk-border-radius-pill;
 
@@ -29,36 +31,49 @@
     background-color: $bpk-color-white;
 
     @include bpk-border-sm($bpk-color-sky-gray-tint-03);
+
+    &-selected {
+      background-color: $bpk-color-sky-blue;
+      color: $bpk-color-white;
+
+      @include bpk-border-sm(transparent);
+    }
   }
 
   &--primary {
-    background-color: $bpk-color-sky-blue;
+    &-selected {
+      background-color: $bpk-color-sky-blue;
+      color: $bpk-color-white;
+
+      @include bpk-border-sm(transparent);
+    }
   }
 
   &--success {
-    background-color: $bpk-color-glencoe;
+    &-selected {
+      background-color: $bpk-color-glencoe;
+      color: $bpk-color-sky-gray;
+    }
   }
-}
-
-@mixin bpk-chip__label {
-  display: inline-block;
-  margin-top: 0;
-  margin-bottom: 0;
-  color: $bpk-color-sky-gray-tint-01;
 
   &--disabled {
-    color: $bpk-color-sky-gray-tint-04;
+    background-color: $bpk-color-sky-gray-tint-06;
+    color: $bpk-color-sky-gray-tint-05;
+
+    @include bpk-border-sm(transparent);
   }
 
-  &--light {
-    color: $bpk-color-sky-gray;
+  &__leading-accessory-view {
+    display: inline-flex;
+    fill: currentColor;
+
+    @include bpk-margin-trailing($bpk-spacing-xs);
   }
 
-  &--primary {
-    color: $bpk-color-white;
-  }
+  &__trailing-accessory-view {
+    display: inline-flex;
+    fill: currentColor;
 
-  &--success {
-    color: $bpk-color-sky-gray;
+    @include bpk-margin-leading($bpk-spacing-xs);
   }
 }

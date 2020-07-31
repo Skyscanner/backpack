@@ -1,0 +1,407 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BpkSelectableChip should render correctly 1`] = `
+<button
+  aria-checked={false}
+  className="bpk-chip bpk-chip--primary"
+  disabled={false}
+  onClick={[Function]}
+  role="checkbox"
+  title="Toggle"
+  type="button"
+>
+  Toggle me
+</button>
+`;
+
+exports[`BpkSelectableChip should render correctly with a "className" attribute 1`] = `
+<button
+  aria-checked={false}
+  className="bpk-chip bpk-chip--primary custom-class"
+  disabled={false}
+  onClick={[Function]}
+  role="checkbox"
+  title="Toggle"
+  type="button"
+>
+  Toggle me
+</button>
+`;
+
+exports[`BpkSelectableChip should render correctly with type="light" 1`] = `
+<button
+  aria-checked={false}
+  className="bpk-chip bpk-chip--light"
+  disabled={false}
+  onClick={[Function]}
+  role="checkbox"
+  title="Toggle"
+  type="button"
+>
+  Toggle me
+</button>
+`;
+
+exports[`BpkSelectableChip should render correctly with type="light" and a leading accessory view 1`] = `
+<button
+  aria-checked={false}
+  className="bpk-chip bpk-chip--light"
+  disabled={false}
+  onClick={[Function]}
+  role="checkbox"
+  title="Toggle"
+  type="button"
+>
+  <span
+    className="bpk-chip__leading-accessory-view"
+  >
+    <span>
+      Leading
+    </span>
+  </span>
+  Toggle me
+</button>
+`;
+
+exports[`BpkSelectableChip should render correctly with type="light" and a trailing accessory view 1`] = `
+<button
+  aria-checked={false}
+  className="bpk-chip bpk-chip--light"
+  disabled={false}
+  onClick={[Function]}
+  role="checkbox"
+  title="Toggle"
+  type="button"
+>
+  Toggle me
+  <span
+    className="bpk-chip__trailing-accessory-view"
+  >
+    <span>
+      Trailing
+    </span>
+  </span>
+</button>
+`;
+
+exports[`BpkSelectableChip should render correctly with type="light" and both a leading and trailing accessory view 1`] = `
+<button
+  aria-checked={false}
+  className="bpk-chip bpk-chip--light"
+  disabled={false}
+  onClick={[Function]}
+  role="checkbox"
+  title="Toggle"
+  type="button"
+>
+  <span
+    className="bpk-chip__leading-accessory-view"
+  >
+    <span>
+      Leading
+    </span>
+  </span>
+  Toggle me
+  <span
+    className="bpk-chip__trailing-accessory-view"
+  >
+    <span>
+      Trailing
+    </span>
+  </span>
+</button>
+`;
+
+exports[`BpkSelectableChip should render correctly with type="light" and disabled 1`] = `
+<button
+  aria-checked={false}
+  className="bpk-chip bpk-chip--light bpk-chip--disabled"
+  disabled={true}
+  onClick={[Function]}
+  role="checkbox"
+  title="Toggle"
+  type="button"
+>
+  Toggle me
+</button>
+`;
+
+exports[`BpkSelectableChip should render correctly with type="light" and selected 1`] = `
+<button
+  aria-checked={true}
+  className="bpk-chip bpk-chip--light bpk-chip--light-selected"
+  disabled={false}
+  onClick={[Function]}
+  role="checkbox"
+  title="Toggle"
+  type="button"
+>
+  Toggle me
+</button>
+`;
+
+exports[`BpkSelectableChip should render correctly with type="light", selected and disabled 1`] = `
+<button
+  aria-checked={true}
+  className="bpk-chip bpk-chip--light bpk-chip--disabled"
+  disabled={true}
+  onClick={[Function]}
+  role="checkbox"
+  title="Toggle"
+  type="button"
+>
+  Toggle me
+</button>
+`;
+
+exports[`BpkSelectableChip should render correctly with type="primary" 1`] = `
+<button
+  aria-checked={false}
+  className="bpk-chip bpk-chip--primary"
+  disabled={false}
+  onClick={[Function]}
+  role="checkbox"
+  title="Toggle"
+  type="button"
+>
+  Toggle me
+</button>
+`;
+
+exports[`BpkSelectableChip should render correctly with type="primary" and a leading accessory view 1`] = `
+<button
+  aria-checked={false}
+  className="bpk-chip bpk-chip--primary"
+  disabled={false}
+  onClick={[Function]}
+  role="checkbox"
+  title="Toggle"
+  type="button"
+>
+  <span
+    className="bpk-chip__leading-accessory-view"
+  >
+    <span>
+      Leading
+    </span>
+  </span>
+  Toggle me
+</button>
+`;
+
+exports[`BpkSelectableChip should render correctly with type="primary" and a trailing accessory view 1`] = `
+<button
+  aria-checked={false}
+  className="bpk-chip bpk-chip--primary"
+  disabled={false}
+  onClick={[Function]}
+  role="checkbox"
+  title="Toggle"
+  type="button"
+>
+  Toggle me
+  <span
+    className="bpk-chip__trailing-accessory-view"
+  >
+    <span>
+      Trailing
+    </span>
+  </span>
+</button>
+`;
+
+exports[`BpkSelectableChip should render correctly with type="primary" and both a leading and trailing accessory view 1`] = `
+<button
+  aria-checked={false}
+  className="bpk-chip bpk-chip--primary"
+  disabled={false}
+  onClick={[Function]}
+  role="checkbox"
+  title="Toggle"
+  type="button"
+>
+  <span
+    className="bpk-chip__leading-accessory-view"
+  >
+    <span>
+      Leading
+    </span>
+  </span>
+  Toggle me
+  <span
+    className="bpk-chip__trailing-accessory-view"
+  >
+    <span>
+      Trailing
+    </span>
+  </span>
+</button>
+`;
+
+exports[`BpkSelectableChip should render correctly with type="primary" and disabled 1`] = `
+<button
+  aria-checked={false}
+  className="bpk-chip bpk-chip--primary bpk-chip--disabled"
+  disabled={true}
+  onClick={[Function]}
+  role="checkbox"
+  title="Toggle"
+  type="button"
+>
+  Toggle me
+</button>
+`;
+
+exports[`BpkSelectableChip should render correctly with type="primary" and selected 1`] = `
+<button
+  aria-checked={true}
+  className="bpk-chip bpk-chip--primary bpk-chip--primary-selected"
+  disabled={false}
+  onClick={[Function]}
+  role="checkbox"
+  title="Toggle"
+  type="button"
+>
+  Toggle me
+</button>
+`;
+
+exports[`BpkSelectableChip should render correctly with type="primary", selected and disabled 1`] = `
+<button
+  aria-checked={true}
+  className="bpk-chip bpk-chip--primary bpk-chip--disabled"
+  disabled={true}
+  onClick={[Function]}
+  role="checkbox"
+  title="Toggle"
+  type="button"
+>
+  Toggle me
+</button>
+`;
+
+exports[`BpkSelectableChip should render correctly with type="success" 1`] = `
+<button
+  aria-checked={false}
+  className="bpk-chip bpk-chip--success"
+  disabled={false}
+  onClick={[Function]}
+  role="checkbox"
+  title="Toggle"
+  type="button"
+>
+  Toggle me
+</button>
+`;
+
+exports[`BpkSelectableChip should render correctly with type="success" and a leading accessory view 1`] = `
+<button
+  aria-checked={false}
+  className="bpk-chip bpk-chip--success"
+  disabled={false}
+  onClick={[Function]}
+  role="checkbox"
+  title="Toggle"
+  type="button"
+>
+  <span
+    className="bpk-chip__leading-accessory-view"
+  >
+    <span>
+      Leading
+    </span>
+  </span>
+  Toggle me
+</button>
+`;
+
+exports[`BpkSelectableChip should render correctly with type="success" and a trailing accessory view 1`] = `
+<button
+  aria-checked={false}
+  className="bpk-chip bpk-chip--success"
+  disabled={false}
+  onClick={[Function]}
+  role="checkbox"
+  title="Toggle"
+  type="button"
+>
+  Toggle me
+  <span
+    className="bpk-chip__trailing-accessory-view"
+  >
+    <span>
+      Trailing
+    </span>
+  </span>
+</button>
+`;
+
+exports[`BpkSelectableChip should render correctly with type="success" and both a leading and trailing accessory view 1`] = `
+<button
+  aria-checked={false}
+  className="bpk-chip bpk-chip--success"
+  disabled={false}
+  onClick={[Function]}
+  role="checkbox"
+  title="Toggle"
+  type="button"
+>
+  <span
+    className="bpk-chip__leading-accessory-view"
+  >
+    <span>
+      Leading
+    </span>
+  </span>
+  Toggle me
+  <span
+    className="bpk-chip__trailing-accessory-view"
+  >
+    <span>
+      Trailing
+    </span>
+  </span>
+</button>
+`;
+
+exports[`BpkSelectableChip should render correctly with type="success" and disabled 1`] = `
+<button
+  aria-checked={false}
+  className="bpk-chip bpk-chip--success bpk-chip--disabled"
+  disabled={true}
+  onClick={[Function]}
+  role="checkbox"
+  title="Toggle"
+  type="button"
+>
+  Toggle me
+</button>
+`;
+
+exports[`BpkSelectableChip should render correctly with type="success" and selected 1`] = `
+<button
+  aria-checked={true}
+  className="bpk-chip bpk-chip--success bpk-chip--success-selected"
+  disabled={false}
+  onClick={[Function]}
+  role="checkbox"
+  title="Toggle"
+  type="button"
+>
+  Toggle me
+</button>
+`;
+
+exports[`BpkSelectableChip should render correctly with type="success", selected and disabled 1`] = `
+<button
+  aria-checked={true}
+  className="bpk-chip bpk-chip--success bpk-chip--disabled"
+  disabled={true}
+  onClick={[Function]}
+  role="checkbox"
+  title="Toggle"
+  type="button"
+>
+  Toggle me
+</button>
+`;

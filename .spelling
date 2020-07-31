@@ -31,6 +31,7 @@ BpkCarouselItem
 
 BpkChip
 BpkDismissibleChip
+BpkSelectableChip
 
 BpkDialingCodeList
 
@@ -452,6 +453,8 @@ fullScreenOnMobile
 fullScreen
 showHeader
 leadingIndicatorClassName
+leadingAccessoryView
+trailingAccessoryView
 scrollerRef
 trailingIndicatorClassName
 googleMapURL
