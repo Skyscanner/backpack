@@ -58,7 +58,7 @@ const MyComponent = () => (
 
 Prior to `v4`, selectable/toggleable chips were something of a hack, by using a non-dismissible chip and changing the `type` prop from `neutral` to `primary` when the chip was pressed.
 
-Now, this is properly supported with a first-class API, and the component is correctly marked up with the correct accessibility role.
+Now, this is properly supported with a first-class API, and the component is marked up with the correct accessibility role.
 
 #### Original
 
@@ -85,7 +85,7 @@ const MyComponent = () => {
 
 ```jsx
 import React, { useState } from 'react';
-import BpkSelectableChip, { CHIP_TYPES } from 'bpk-component-chip';
+import BpkSelectableChip from 'bpk-component-chip';
 
 const MyComponent = () => {
   const [ selected, setSelected ] = useState(false);
