@@ -1,5 +1,10 @@
 # UNRELEASED:
 
+**Breaking:**
+
+- bpk-component-chip:
+  - The chip component has been completely rewritten to have a new look, a more modern API and support more use cases easily. See the [migration guide](https://github.com/Skyscanner/backpack/blob/master/packages/bpk-component-chip/MIGRATION-v3-to-v4.md) for more information.
+
 # How to write a good changelog entry:
 #
 #   1. Add 'BREAKING', 'ADDED' OR 'FIXED' depending on if the change will be major, minor or patch according to [semver.org](semver.org).
