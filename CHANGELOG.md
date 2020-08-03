@@ -5,14 +5,14 @@
 # 2020-08-03 - New chip component
 
 **Breaking:**
-- bpk-component-chip:
+- bpk-component-chip: 4.0.0
   - The chip component has been completely rewritten to have a new look, a more modern API and support more use cases easily. See the [migration guide](https://github.com/Skyscanner/backpack/blob/master/packages/bpk-component-chip/docs/migrating-from-v3-to-v4.md) for more information.
-- bpk-mixins:
+- bpk-mixins: 20.0.0
   - The `bpk-chip__label` mixin has been removed, as it's no longer used in the new chip implementation.
 
   **Fixed**:
-  - bpk-component-dialog
-  - bpk-component-modal
+  - bpk-component-dialog 2.0.75
+  - bpk-component-modal: 2.1.70
     - The onClose prop now defaults to a function as required by Portal within.
 
 
