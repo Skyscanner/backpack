@@ -17,30 +17,48 @@
  */
 
 @mixin bpk-chip {
-  display: inline-block;
-  padding: $bpk-spacing-xs $bpk-spacing-sm;
+  display: inline-flex;
+  height: $bpk-spacing-xl;
+  padding: 0 $bpk-spacing-md;
+  align-items: center;
   background-color: $bpk-color-sky-gray-tint-06;
 
-  @include bpk-border-radius-sm;
+  @include bpk-border-radius-pill;
+
+  &--light {
+    background-color: $bpk-color-white;
+
+    @include bpk-border-sm($bpk-color-sky-gray-tint-03);
+  }
 
   &--primary {
     background-color: $bpk-color-sky-blue;
+  }
+
+  &--success {
+    background-color: $bpk-color-glencoe;
   }
 }
 
 @mixin bpk-chip__label {
   display: inline-block;
   margin-top: 0;
-  margin-right: $bpk-spacing-xs;
   margin-bottom: 0;
   color: $bpk-color-sky-gray-tint-01;
 
-  @include bpk-rtl {
-    margin-right: 0;
-    margin-left: $bpk-spacing-xs;
+  &--disabled {
+    color: $bpk-color-sky-gray-tint-04;
+  }
+
+  &--light {
+    color: $bpk-color-sky-gray;
   }
 
   &--primary {
     color: $bpk-color-white;
+  }
+
+  &--success {
+    color: $bpk-color-sky-gray;
   }
 }

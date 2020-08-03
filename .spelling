@@ -354,6 +354,9 @@ props.title
 ratingLabel
 RATING_SIZES
 RATING_SIZES.base
+RATING_TYPES
+RATING_TYPES.default
+RATING_TYPES.pill
 renderFlag
 renderTarget
 selectedDates
@@ -377,6 +380,15 @@ subtitleView
 suppressHydrationWarnings
 SWITCH_TYPES.primary
 SWITCH_TYPES.event
+TEXT_STYLES.xs
+TEXT_STYLES.sm
+TEXT_STYLES.base
+TEXT_STYLES.lg
+TEXT_STYLES.xl
+TEXT_STYLES.xxl
+TEXT_STYLES.xxxl
+TEXT_STYLES.xxxxl
+TEXT_STYLES.xxxxxl
 textProps
 textStyle
 themeAttributes
@@ -387,6 +399,9 @@ TransitionInitialMount
 transitionTimeout
 uppercase
 validationMessage
+WEIGHT_STYLES.regular
+WEIGHT_STYLES.bold
+WEIGHT_STYLES.black
 withNotches
 withOpenEvents
 withRtlSupport

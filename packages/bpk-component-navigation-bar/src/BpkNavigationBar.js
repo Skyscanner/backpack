@@ -21,7 +21,7 @@
 import React, { type Node, type Element } from 'react';
 import PropTypes from 'prop-types';
 import { cssModules } from 'bpk-react-utils';
-import BpkText from 'bpk-component-text';
+import BpkText, { WEIGHT_STYLES } from 'bpk-component-text';
 
 import STYLES from './BpkNavigationBar.scss';
 
@@ -70,7 +70,7 @@ const BpkNavigationBar = (props: Props) => {
       {typeof title === 'string' ? (
         <BpkText
           id={titleId}
-          bold
+          weight={WEIGHT_STYLES.bold}
           className={getClassNames('bpk-navigation-bar__title')}
         >
           {title}

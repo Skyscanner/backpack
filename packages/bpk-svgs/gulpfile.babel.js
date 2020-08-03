@@ -256,6 +256,15 @@ gulp.task('prepare-for-icons-font', () =>
       )
       .pipe(gulp.dest('dist/font')),
     gulp.src('src/icons/lg/*.svg').pipe(gulp.dest('dist/font')),
+    gulp
+      .src('src/icons/xl/*.svg')
+      .pipe(
+        rename(path => {
+          // eslint-disable-next-line no-param-reassign
+          path.basename += '-xl';
+        }),
+      )
+      .pipe(gulp.dest('dist/font')),
   ),
 );
 
@@ -328,9 +337,10 @@ gulp.task('icons-font', () => {
 
 gulp.task('clean-up-font-svgs', () => del('dist/font/*.svg'));
 
+// copy-svgs ignores those in `xl` as we don't want to make them available to web consumers.
 gulp.task('copy-svgs', () =>
   gulp
-    .src('src/**/*.svg')
+    .src(['src/**/*.svg', '!src/icons/xl/*.svg'])
     .pipe(clone())
     .pipe(gulp.dest('dist/svgs')),
 );

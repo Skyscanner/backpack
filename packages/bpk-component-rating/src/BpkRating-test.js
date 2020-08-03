@@ -20,7 +20,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 
-import BpkRating from '../index';
+import BpkRating, { RATING_TYPES } from '../index';
 
 describe('BpkRating', () => {
   it('should render correctly', () => {
@@ -176,6 +176,35 @@ describe('BpkRating', () => {
           subtitle="This place was amazing"
           value={9}
           size="lg"
+        />,
+      )
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('should render correctly pill rating', () => {
+    const tree = renderer
+      .create(
+        <BpkRating
+          ariaLabel="6.7 Average might recommend"
+          title="Average"
+          subtitle="Might recommend"
+          type={RATING_TYPES.pill}
+          value={6.7}
+        />,
+      )
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('should render correctly title only pill rating', () => {
+    const tree = renderer
+      .create(
+        <BpkRating
+          ariaLabel="6.7 Average might recommend"
+          title="Average"
+          type={RATING_TYPES.pill}
+          value={6.7}
         />,
       )
       .toJSON();

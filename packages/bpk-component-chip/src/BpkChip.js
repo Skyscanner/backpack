@@ -29,42 +29,60 @@ const getClassName = cssModules(STYLES);
 
 export const CHIP_TYPES = {
   neutral: 'neutral',
+  light: 'light',
   primary: 'primary',
+  success: 'success',
 };
 
 export type Props = {
   children: Node,
-  onClose: (event: SyntheticEvent<>) => mixed,
   closeLabel: ((children: Node) => string) | string,
+  disabled: boolean,
+  onClose: (event: SyntheticEvent<>) => mixed,
+  type: $Keys<typeof CHIP_TYPES>,
   className: ?string,
   dismissible: ?boolean,
-  type: $Keys<typeof CHIP_TYPES>,
 };
 
 const BpkChip = (props: Props) => {
   const {
     children,
     className,
-    onClose,
     closeLabel,
+    disabled,
     dismissible,
+    onClose,
     type,
     ...rest
   } = props;
 
   const classNames = getClassName(
     'bpk-chip',
-    type === CHIP_TYPES.primary && 'bpk-chip--primary',
+    !disabled && type === CHIP_TYPES.primary && 'bpk-chip--primary',
+    !disabled && type === CHIP_TYPES.success && 'bpk-chip--success',
+    !disabled && type === CHIP_TYPES.light && 'bpk-chip--light',
+    disabled && 'bpk-chip--disabled',
     className,
   );
 
   const labelClassNames = getClassName(
     'bpk-chip__label',
-    type === CHIP_TYPES.primary && 'bpk-chip__label--primary',
+    !disabled && type === CHIP_TYPES.primary && 'bpk-chip__label--primary',
+    !disabled && type === CHIP_TYPES.success && 'bpk-chip__label--success',
+    !disabled && type === CHIP_TYPES.light && 'bpk-chip__label--light',
+    disabled && 'bpk-chip__label--disabled',
   );
 
   const iconClassNames = getClassName(
-    type === CHIP_TYPES.primary && 'bpk-chip--primary-icon',
+    'bpk-chip__close-button',
+    !disabled &&
+      type === CHIP_TYPES.primary &&
+      'bpk-chip__close-button--primary',
+    !disabled &&
+      type === CHIP_TYPES.success &&
+      'bpk-chip__close-button--success',
+    !disabled && type === CHIP_TYPES.light && 'bpk-chip__close-button--light',
+    disabled && 'bpk-chip__close-button--disabled',
   );
 
   const label =
@@ -76,6 +94,7 @@ const BpkChip = (props: Props) => {
       <span className={labelClassNames}>{children}</span>
       {dismissible && (
         <BpkCloseButton
+          disabled={disabled}
           className={iconClassNames}
           label={label}
           onClick={onClose}
@@ -91,12 +110,14 @@ BpkChip.propTypes = {
   closeLabel: PropTypes.oneOfType([PropTypes.func, PropTypes.string])
     .isRequired,
   className: PropTypes.string,
+  disabled: PropTypes.bool,
   dismissible: PropTypes.bool,
   type: PropTypes.oneOf(Object.keys(CHIP_TYPES)),
 };
 
 BpkChip.defaultProps = {
   className: null,
+  disabled: false,
   dismissible: true,
   type: CHIP_TYPES.neutral,
 };

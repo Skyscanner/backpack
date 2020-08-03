@@ -23,7 +23,7 @@ import { cssModules } from 'bpk-react-utils';
 
 import STYLES from './stories.scss';
 
-import BpkRating, { RATING_SIZES } from './index';
+import BpkRating, { RATING_SIZES, RATING_TYPES } from './index';
 
 const getClassName = cssModules(STYLES);
 
@@ -249,5 +249,62 @@ storiesOf('bpk-component-rating', module)
         size={RATING_SIZES.lg}
         vertical
       />
+    </div>
+  ))
+  .add('Pill ratings', () => (
+    <div>
+      <BpkRating
+        ariaLabel="9 Excellent would recommend"
+        title="Excellent"
+        subtitle="(4,000 reviews)"
+        value={9}
+        size={RATING_SIZES.sm}
+        type={RATING_TYPES.pill}
+      />
+      <br />
+      <BpkRating
+        ariaLabel="6.7 Average might recommend"
+        title="Average"
+        subtitle="(50 reviews)"
+        value={6.7}
+        type={RATING_TYPES.pill}
+      />
+      <br />
+      <BpkRating
+        ariaLabel="2.3 Bad avoid here"
+        title="Bad"
+        subtitle="(1,000 reviews)"
+        value={2.3}
+        size={RATING_SIZES.lg}
+        type={RATING_TYPES.pill}
+      />
+      <br />
+    </div>
+  ))
+  .add('Pill title only ratings', () => (
+    <div>
+      <BpkRating
+        ariaLabel="9 Excellent would recommend"
+        title="Excellent"
+        value={9}
+        size={RATING_SIZES.sm}
+        type={RATING_TYPES.pill}
+      />
+      <br />
+      <BpkRating
+        ariaLabel="6.7 Average might recommend"
+        title="Average"
+        value={6.7}
+        type={RATING_TYPES.pill}
+      />
+      <br />
+      <BpkRating
+        ariaLabel="2.3 Bad avoid here"
+        title="Bad"
+        value={2.3}
+        size={RATING_SIZES.lg}
+        type={RATING_TYPES.pill}
+      />
+      <br />
     </div>
   ));

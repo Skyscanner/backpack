@@ -10,23 +10,12 @@ exports[`BpkChip should render correctly 1`] = `
     This is a Chip!
   </span>
   <BpkCloseButton
-    className=""
+    className="bpk-chip__close-button"
     customIcon={null}
+    disabled={false}
     label="Close"
     onClick={[Function]}
   />
-</div>
-`;
-
-exports[`BpkChip should render correctly when not "dismissible" 1`] = `
-<div
-  className="bpk-chip"
->
-  <span
-    className="bpk-chip__label"
-  >
-    This is a Chip!
-  </span>
 </div>
 `;
 
@@ -40,8 +29,9 @@ exports[`BpkChip should render correctly with a "className" attribute 1`] = `
     This is a Chip!
   </span>
   <BpkCloseButton
-    className=""
+    className="bpk-chip__close-button"
     customIcon={null}
+    disabled={false}
     label="Close"
     onClick={[Function]}
   />
@@ -58,8 +48,9 @@ exports[`BpkChip should render correctly with a "closeLabel" function attribute 
     This is a Chip!
   </span>
   <BpkCloseButton
-    className=""
+    className="bpk-chip__close-button"
     customIcon={null}
+    disabled={false}
     label="Custom close (this is a chip!)"
     onClick={[Function]}
   />
@@ -76,15 +67,116 @@ exports[`BpkChip should render correctly with a "closeLabel" string attribute 1`
     This is a Chip!
   </span>
   <BpkCloseButton
-    className=""
+    className="bpk-chip__close-button"
     customIcon={null}
+    disabled={false}
     label="close it"
     onClick={[Function]}
   />
 </div>
 `;
 
-exports[`BpkChip should render primary correctly 1`] = `
+exports[`BpkChip should render correctly with type="light" 1`] = `
+<div
+  className="bpk-chip bpk-chip--light"
+>
+  <span
+    className="bpk-chip__label bpk-chip__label--light"
+  >
+    This is a Chip!
+  </span>
+  <BpkCloseButton
+    className="bpk-chip__close-button bpk-chip__close-button--light"
+    customIcon={null}
+    disabled={false}
+    label="Close"
+    onClick={[Function]}
+  />
+</div>
+`;
+
+exports[`BpkChip should render correctly with type="light" and disabled 1`] = `
+<div
+  className="bpk-chip bpk-chip--disabled"
+>
+  <span
+    className="bpk-chip__label bpk-chip__label--disabled"
+  >
+    This is a Chip!
+  </span>
+  <BpkCloseButton
+    className="bpk-chip__close-button bpk-chip__close-button--disabled"
+    customIcon={null}
+    disabled={true}
+    label="Close"
+    onClick={[Function]}
+  />
+</div>
+`;
+
+exports[`BpkChip should render correctly with type="light" and not dismissible 1`] = `
+<div
+  className="bpk-chip bpk-chip--light"
+>
+  <span
+    className="bpk-chip__label bpk-chip__label--light"
+  >
+    This is a Chip!
+  </span>
+</div>
+`;
+
+exports[`BpkChip should render correctly with type="neutral" 1`] = `
+<div
+  className="bpk-chip"
+>
+  <span
+    className="bpk-chip__label"
+  >
+    This is a Chip!
+  </span>
+  <BpkCloseButton
+    className="bpk-chip__close-button"
+    customIcon={null}
+    disabled={false}
+    label="Close"
+    onClick={[Function]}
+  />
+</div>
+`;
+
+exports[`BpkChip should render correctly with type="neutral" and disabled 1`] = `
+<div
+  className="bpk-chip bpk-chip--disabled"
+>
+  <span
+    className="bpk-chip__label bpk-chip__label--disabled"
+  >
+    This is a Chip!
+  </span>
+  <BpkCloseButton
+    className="bpk-chip__close-button bpk-chip__close-button--disabled"
+    customIcon={null}
+    disabled={true}
+    label="Close"
+    onClick={[Function]}
+  />
+</div>
+`;
+
+exports[`BpkChip should render correctly with type="neutral" and not dismissible 1`] = `
+<div
+  className="bpk-chip"
+>
+  <span
+    className="bpk-chip__label"
+  >
+    This is a Chip!
+  </span>
+</div>
+`;
+
+exports[`BpkChip should render correctly with type="primary" 1`] = `
 <div
   className="bpk-chip bpk-chip--primary"
 >
@@ -94,20 +186,90 @@ exports[`BpkChip should render primary correctly 1`] = `
     This is a Chip!
   </span>
   <BpkCloseButton
-    className="bpk-chip--primary-icon"
+    className="bpk-chip__close-button bpk-chip__close-button--primary"
     customIcon={null}
+    disabled={false}
     label="Close"
     onClick={[Function]}
   />
 </div>
 `;
 
-exports[`BpkChip should render primary correctly when not "dismissible" 1`] = `
+exports[`BpkChip should render correctly with type="primary" and disabled 1`] = `
+<div
+  className="bpk-chip bpk-chip--disabled"
+>
+  <span
+    className="bpk-chip__label bpk-chip__label--disabled"
+  >
+    This is a Chip!
+  </span>
+  <BpkCloseButton
+    className="bpk-chip__close-button bpk-chip__close-button--disabled"
+    customIcon={null}
+    disabled={true}
+    label="Close"
+    onClick={[Function]}
+  />
+</div>
+`;
+
+exports[`BpkChip should render correctly with type="primary" and not dismissible 1`] = `
 <div
   className="bpk-chip bpk-chip--primary"
 >
   <span
     className="bpk-chip__label bpk-chip__label--primary"
+  >
+    This is a Chip!
+  </span>
+</div>
+`;
+
+exports[`BpkChip should render correctly with type="success" 1`] = `
+<div
+  className="bpk-chip bpk-chip--success"
+>
+  <span
+    className="bpk-chip__label bpk-chip__label--success"
+  >
+    This is a Chip!
+  </span>
+  <BpkCloseButton
+    className="bpk-chip__close-button bpk-chip__close-button--success"
+    customIcon={null}
+    disabled={false}
+    label="Close"
+    onClick={[Function]}
+  />
+</div>
+`;
+
+exports[`BpkChip should render correctly with type="success" and disabled 1`] = `
+<div
+  className="bpk-chip bpk-chip--disabled"
+>
+  <span
+    className="bpk-chip__label bpk-chip__label--disabled"
+  >
+    This is a Chip!
+  </span>
+  <BpkCloseButton
+    className="bpk-chip__close-button bpk-chip__close-button--disabled"
+    customIcon={null}
+    disabled={true}
+    label="Close"
+    onClick={[Function]}
+  />
+</div>
+`;
+
+exports[`BpkChip should render correctly with type="success" and not dismissible 1`] = `
+<div
+  className="bpk-chip bpk-chip--success"
+>
+  <span
+    className="bpk-chip__label bpk-chip__label--success"
   >
     This is a Chip!
   </span>

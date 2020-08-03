@@ -22,7 +22,7 @@ import { withDefaultProps } from 'bpk-react-utils';
 
 import STYLE from './stories.scss';
 
-import BpkText from './index';
+import BpkText, { WEIGHT_STYLES } from './index';
 
 const Paragraph = withDefaultProps(BpkText, {
   textStyle: 'lg',
@@ -88,6 +88,24 @@ storiesOf('bpk-component-text', module)
   .add('bold', () => (
     <BpkText tagName="p">
       The man jumped over the shark tank. That was very{' '}
-      <BpkText bold>bold</BpkText> indeed.
+      <BpkText weight={WEIGHT_STYLES.bold}>bold</BpkText> indeed.
     </BpkText>
+  ))
+  .add('with weights', () => (
+    <div>
+      <BpkText tagName="p">
+        The man jumped over the shark tank. That was very brave indeed.
+      </BpkText>
+      <BpkText tagName="p">
+        The man jumped over the shark tank. That was very{' '}
+        <BpkText weight={WEIGHT_STYLES.bold}>bold</BpkText> indeed.
+      </BpkText>
+      <BpkText tagName="p">
+        The man jumped over the shark tank. That was a{' '}
+        <BpkText weight={WEIGHT_STYLES.black} textStyle="xl">
+          heavy
+        </BpkText>{' '}
+        shark.
+      </BpkText>
+    </div>
   ));

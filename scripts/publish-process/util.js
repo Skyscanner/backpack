@@ -390,19 +390,18 @@ const updateChangelog = (changes, changeSummary) => {
   return publishTitle;
 };
 
-const publishPackageToNPM = (packageName, tag) =>
+const publishPackageToNPM = packageName =>
   new Promise(resolve => {
-    const tagArg = tag ? ` --tag ${tag}` : '';
-    exec(`(cd packages/${packageName} && npm publish${tagArg})`, null, () => {
+    exec(`(cd packages/${packageName} && npm publish)`, null, () => {
       publishDone();
       resolve();
     });
   });
 
-const publishPackagesToNPM = (changes, tag) =>
+const publishPackagesToNPM = changes =>
   new Promise(resolve => {
     bar.start(changes.length, 0);
-    const tasks = changes.map(c => publishPackageToNPM(c.name, tag));
+    const tasks = changes.map(c => publishPackageToNPM(c.name));
 
     Promise.all(tasks).then(result => {
       bar.stop();
@@ -414,27 +413,37 @@ const updateDependencies = dependencies => {
   if (!dependencies) {
     return;
   }
+  const dependencyList = {};
 
-  Object.keys(dependencies).forEach(d => {
-    if (d.match('bpk-*')) {
-      const version = dependencies[d];
-      // eslint-disable-next-line no-param-reassign
-      dependencies[d] = `${version.split('-')[0]}-css.0`;
+  Object.keys(dependencies).forEach(depName => {
+    const depValue = dependencies[depName];
+    if (depName.match('bpk-*')) {
+      const newName = `${depName}-css`;
+      dependencyList[newName] = depValue;
+    } else {
+      dependencyList[depName] = depValue;
     }
   });
+
+  // eslint-disable-next-line consistent-return
+  return dependencyList;
 };
 
-const appendToPackageVersion = (c, text) =>
+const appendToPackageName = (c, text) =>
   new Promise(resolve => {
     const packageJsonFilePath = path.join(c.path, 'package.json');
-    const appendedVersion = `${c.currentVersion}-${text}`;
+    const appendedName = `${c.name}-${text}`;
     const packageJsonData = JSON.parse(
       fs.readFileSync(packageJsonFilePath).toString(),
     );
-    packageJsonData.version = appendedVersion;
+    packageJsonData.name = appendedName;
 
-    updateDependencies(packageJsonData.dependencies);
-    updateDependencies(packageJsonData.devDependencies);
+    packageJsonData.dependencies = updateDependencies(
+      packageJsonData.dependencies,
+    );
+    packageJsonData.devDependencies = updateDependencies(
+      packageJsonData.devDependencies,
+    );
 
     fs.writeFileSync(
       packageJsonFilePath,
@@ -444,9 +453,9 @@ const appendToPackageVersion = (c, text) =>
     resolve();
   });
 
-const appendToPackageVersions = (changes, text) =>
+const appendToPackageNames = (changes, text) =>
   new Promise(resolve => {
-    const tasks = changes.map(c => appendToPackageVersion(c, text));
+    const tasks = changes.map(c => appendToPackageName(c, text));
 
     Promise.all(tasks).then(result => {
       resolve(result);
@@ -472,7 +481,7 @@ const performPublish = async (changes, changeSummary) => {
   if (!testing) {
     disableKrypton();
     execSync(`git add . && git commit -m "${commitMessage}" --no-verify`);
-    await publishPackagesToNPM(changes, null);
+    await publishPackagesToNPM(changes);
     execSync(`git add . && git commit --amend --no-edit --no-verify`);
     createGitTags(changes);
     execSync(`git push`);
@@ -558,6 +567,6 @@ module.exports = {
   generateCommitMessage,
   generateChangelogSection,
   cancelPublish,
-  appendToPackageVersions,
+  appendToPackageNames,
   publishPackagesToNPM,
 };

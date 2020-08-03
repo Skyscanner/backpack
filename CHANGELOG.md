@@ -2,11 +2,70 @@
 
 [Unreleased changes](./UNRELEASED.yaml).
 
+# 2020-07-29 - Reinstated native icons removed by accident
+
+**Added:**
+- bpk-svgs: 12.1.0 => 12.1.1
+  - Reinstating large native icons which were accidentally deleted.
+  - Updated small native icons to reflect the new style.
+
+# 2020-07-29 - Rating redesign and `BpkChip` disabled fix
+
+**Added:**
+- bpk-component-rating: 2.0.69 => 2.1.0
+  - Rating has been redesigned to have a fresh look.
+  - Fixed A11y contrast issues with `high` and `medium` ratings.
+  - Added new `pill` style rating which is set with the `RATING_TYPES` property.
+
+**Fixed:**
+- bpk-component-chip: 3.3.0 => 3.3.1
+  - Fixed an issue where `disabled` chips could still be pressed and looked wrong.
+
+
+# 2020-07-28 - Chip redesign
+
+**Added:**
+
+- bpk-component-chip: 3.3.0
+  - Chips have been redesigned to have a fresh new look.
+  - Added two new chip types — `success` and `light`.
+  - Added a new `disabled` prop.
+
+# 2020-07-27 - `xl` icons for native
+
+**Added:**
+
+ - bpk-svgs: 12.0.2 => 12.1.0
+   - Added `xl` star-rating icons for use on mobile native platforms.
+
+# 2020-07-22 - Badge design tweaks and scrollable calendar changes
+
+**Changed:**
+  - bpk-component-badge: 2.0.67 => 2.0.68
+    - Tweaked design of badges.
+
+  - bpk-component-scrollable-calendar: 2.0.69 => 2.0.70
+    - Remove resize event listeners when the component is unmounted.
+
+# 2020-07-14 - Updated `BpkText` API
+
+**Added:**
+  - bpk-component-text: 3.0.32 => 3.1.0
+    - Added `weight` prop to set the `bold` and `black` font on text components.
+    - Deprecated `bold` prop in favour of `weight`.
+
+# 2020-07-13
+
+**Changed:**
+- bpk-component-icon: 8.2.2 => 8.2.3
+- bpk-svgs: 12.0.1 => 12.0.2
+  - All icons have been optimised, reducing their file size slightly.
+
 # 2020-07-10
 
 **Changed**:
-  - bpk-svgs:
-  - bpk-component-spinner:
+  - bpk-svgs: 12.0.0 => 12.0.1
+  - bpk-component-spinner: 3.0.63 => 3.0.64
     - The spinner has a fresh new design.
 
 # 2020-07-09 - Refreshed Radio and Checkbox styles

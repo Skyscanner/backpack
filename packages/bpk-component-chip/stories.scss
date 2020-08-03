@@ -16,8 +16,18 @@
  * limitations under the License.
  */
 
-/* @flow */
+@import '~bpk-mixins';
 
-const RATING_SIZES = { sm: 'sm', base: 'base', lg: 'lg' };
+$custom-color: $bpk-color-sagano;
 
-export default RATING_SIZES;
+.bpk-chip-stories {
+  &__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__chip {
+    margin-right: $bpk-spacing-xs;
+    margin-bottom: $bpk-spacing-sm;
+  }
+}

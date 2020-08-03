@@ -16,24 +16,11 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+/* @flow */
 
-// eslint-disable-next-line import/prefer-default-export
-export const onClosePropType = (
-  props: Object,
-  propName: string,
-  componentName: string,
-): ?Error => {
-  const onCloseValue = props[propName];
+export const RATING_SIZES = { sm: 'sm', base: 'base', lg: 'lg' };
 
-  if (
-    props.dismissible &&
-    (!onCloseValue || typeof onCloseValue !== 'function')
-  ) {
-    return new Error(
-      `Invalid prop \`${propName}\` supplied to \`${componentName}\`. There must be an onClose handler if dismissible is true.`,
-    );
-  }
-
-  return null;
+export const RATING_TYPES = {
+  default: 'default',
+  pill: 'pill',
 };

@@ -21,36 +21,65 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
+import { cssModules } from 'bpk-react-utils';
+import BpkText from 'bpk-component-text';
+
+import STYLES from './stories.scss';
 
 import BpkChip, { CHIP_TYPES } from './index';
 
-storiesOf('bpk-component-chip', module)
-  .add('Default', () => (
-    <BpkChip onClose={action('Chip closing!')} closeLabel="Close">
-      This is a chip!
-    </BpkChip>
-  ))
-  .add('Primary', () => (
+const getClassName = cssModules(STYLES);
+
+const ChipsExample = ({ ...rest }) => (
+  <div className={getClassName('bpk-chip-stories__wrapper')}>
     <BpkChip
       onClose={action('Chip closing!')}
       closeLabel="Close"
-      type={CHIP_TYPES.primary}
+      className={getClassName('bpk-chip-stories__chip')}
+      {...rest}
     >
-      This is a chip!
+      Dismissible
     </BpkChip>
-  ))
-  .add('Non-dimissible', () => (
-    <BpkChip onClose={() => null} closeLabel="Close" dismissible={false}>
-      This is a non-dismissible chip!
-    </BpkChip>
-  ))
-  .add('Primary Non-dimissible', () => (
     <BpkChip
-      onClose={() => null}
+      onClose={action('Chip closing!')}
       closeLabel="Close"
+      className={getClassName('bpk-chip-stories__chip')}
       dismissible={false}
-      type={CHIP_TYPES.primary}
+      {...rest}
     >
-      This is a chip!
+      Not dismissible
     </BpkChip>
-  ));
+    <BpkChip
+      onClose={action('Chip closing!')}
+      closeLabel="Close"
+      type={CHIP_TYPES.neutral}
+      disabled
+      className={getClassName('bpk-chip-stories__chip')}
+      {...rest}
+    >
+      Dismissible and disabled
+    </BpkChip>
+    <BpkChip
+      onClose={action('Chip closing!')}
+      closeLabel="Close"
+      type={CHIP_TYPES.neutral}
+      disabled
+      dismissible={false}
+      className={getClassName('bpk-chip-stories__chip')}
+      {...rest}
+    >
+      Not dismissible and disabled
+    </BpkChip>
+  </div>
+);
+
+storiesOf('bpk-component-chip', module).add('Default', () => (
+  <div>
+    {Object.keys(CHIP_TYPES).map(chipType => (
+      <>
+        <BpkText>{chipType}</BpkText>
+        <ChipsExample type={chipType} />
+      </>
+    ))}
+  </div>
+));

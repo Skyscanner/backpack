@@ -1,6 +1,6 @@
 {
   "name": "bpk-svgs",
-  "version": "12.0.1",
+  "version": "12.1.1",
   "description": "Backpack's library of SVG's.",
   "main": "_index.scss",
   "scripts": {
@@ -18,5 +18,5 @@
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
-  "gitHead": "ace52722a3d752ef1fed43eab155666d232ce21d"
+  "gitHead": "75ec9768d8af9d60430bcff20c18e092a9ece5ed"
 }

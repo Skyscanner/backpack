@@ -33,10 +33,13 @@ export default () => (
 | className | string                | false    | null              |
 | size      | oneOf(RATING_SIZES)   | false    | RATING_SIZES.base |
 | subtitle  | string                | false    | null              |
+| type      | oneOf(RATING_TYPES)   | false    | RATING_TYPES.default |
 | vertical  | boolean               | false    | false             |
 
 ## Theme props
 
 * `ratingHighColor`
+* `ratingHighTextColor`
 * `ratingMediumColor`
+* `ratingMediumTextColor`
 * `ratingLowColor`

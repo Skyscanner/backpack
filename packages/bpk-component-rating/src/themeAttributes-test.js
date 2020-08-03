@@ -22,7 +22,9 @@ describe('rating component themeAttributes', () => {
   it('exports the expected attributes', () => {
     expect(themeAttributes).toEqual([
       'ratingHighColor',
+      'ratingHighTextColor',
       'ratingMediumColor',
+      'ratingMediumTextColor',
       'ratingLowColor',
     ]);
   });

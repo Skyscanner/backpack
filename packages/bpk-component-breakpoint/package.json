@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-breakpoint",
-  "version": "2.0.63",
+  "version": "2.0.70",
   "description": "Backpack breakpoint component.",
   "main": "index.js",
   "repository": {
@@ -13,7 +13,7 @@
     "react": "^15.0.0 || ^16.0.0"
   },
   "dependencies": {
-    "bpk-mixins": "^19.1.32",
+    "bpk-mixins": "^19.1.39",
     "prop-types": "^15.6.2",
     "react-responsive": "^5.0.0"
   },
@@ -23,5 +23,5 @@
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
-  "gitHead": "ace52722a3d752ef1fed43eab155666d232ce21d"
+  "gitHead": "75ec9768d8af9d60430bcff20c18e092a9ece5ed"
 }

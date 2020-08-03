@@ -16,4 +16,10 @@
  * limitations under the License.
  */
 
-export default ['ratingHighColor', 'ratingMediumColor', 'ratingLowColor'];
+export default [
+  'ratingHighColor',
+  'ratingHighTextColor',
+  'ratingMediumColor',
+  'ratingMediumTextColor',
+  'ratingLowColor',
+];

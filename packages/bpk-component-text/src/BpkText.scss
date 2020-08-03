@@ -42,4 +42,8 @@
   &--bold {
     @include bpk-text--bold;
   }
+
+  &--black {
+    @include bpk-text--black;
+  }
 }

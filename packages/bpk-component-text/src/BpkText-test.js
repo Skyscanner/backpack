@@ -21,7 +21,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 
-import BpkText from './BpkText';
+import BpkText, { WEIGHT_STYLES } from './BpkText';
 
 describe('BpkText', () => {
   it('should render correctly', () => {
@@ -37,7 +37,9 @@ describe('BpkText', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  it('should render correctly with `bold`', () => {
+  it('should render correctly with deprecated `bold` prop', () => {
+    const consoleWarnFn = jest.fn();
+    jest.spyOn(console, 'warn').mockImplementation(consoleWarnFn);
     const tree = renderer
       .create(
         <BpkText bold>
@@ -48,6 +50,7 @@ describe('BpkText', () => {
       )
       .toJSON();
     expect(tree).toMatchSnapshot();
+    expect(consoleWarnFn.mock.calls.length).toBe(1);
   });
 
   it('should render correctly with tageName="h1", textStyle="xxl"', () => {
@@ -76,6 +79,47 @@ describe('BpkText', () => {
     expect(tree).toMatchSnapshot();
   });
 
+  it('should render correctly with weight="bold"', () => {
+    const tree = renderer
+      .create(
+        <BpkText weight={WEIGHT_STYLES.bold}>
+          Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
+          commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus
+          et magnis dis parturient montes, nascetur ridiculus mus.
+        </BpkText>,
+      )
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  ['xl', 'xxl', 'xxxl', 'xxxxl', 'xxxxxl'].forEach(textStyle => {
+    it(`should render correctly with weight="black" and supported textStyle="${textStyle}"`, () => {
+      const tree = renderer
+        .create(
+          <BpkText textStyle={textStyle} weight={WEIGHT_STYLES.black}>
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
+            commodo ligula eget dolor. Aenean massa. Cum sociis natoque
+            penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+          </BpkText>,
+        )
+        .toJSON();
+      expect(tree).toMatchSnapshot();
+    });
+  });
+
+  it('should not apply black styles when weight="black" and not an xl textStyle', () => {
+    const tree = renderer
+      .create(
+        <BpkText weight={WEIGHT_STYLES.black}>
+          Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
+          commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus
+          et magnis dis parturient montes, nascetur ridiculus mus.
+        </BpkText>,
+      )
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
   it('should pass down unknown props', () => {
     const tree = renderer
       .create(
@@ -90,18 +134,20 @@ describe('BpkText', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  ['xs', 'sm', 'base', 'lg', 'xl', 'xxl'].forEach(textStyle => {
-    it(`should render correctly with textStyle="${textStyle}"`, () => {
-      const tree = renderer
-        .create(
-          <BpkText textStyle={textStyle}>
-            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
-            commodo ligula eget dolor. Aenean massa. Cum sociis natoque
-            penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-          </BpkText>,
-        )
-        .toJSON();
-      expect(tree).toMatchSnapshot();
-    });
-  });
+  ['xs', 'sm', 'base', 'lg', 'xl', 'xxl', 'xxxl', 'xxxxl', 'xxxxxl'].forEach(
+    textStyle => {
+      it(`should render correctly with textStyle="${textStyle}"`, () => {
+        const tree = renderer
+          .create(
+            <BpkText textStyle={textStyle}>
+              Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
+              commodo ligula eget dolor. Aenean massa. Cum sociis natoque
+              penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+            </BpkText>,
+          )
+          .toJSON();
+        expect(tree).toMatchSnapshot();
+      });
+    },
+  );
 });

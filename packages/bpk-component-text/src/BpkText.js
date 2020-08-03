@@ -20,40 +20,53 @@
 
 import PropTypes from 'prop-types';
 import React, { type Node } from 'react';
-import { cssModules } from 'bpk-react-utils';
+import { cssModules, deprecated } from 'bpk-react-utils';
 
 import STYLES from './BpkText.scss';
 
 const getClassName = cssModules(STYLES);
 
-const TEXT_STYLES = [
-  'xs',
-  'sm',
-  'base',
-  'lg',
-  'xl',
-  'xxl',
-  'xxxl',
-  'xxxxl',
-  'xxxxxl',
-];
+export const TEXT_STYLES = {
+  xs: 'xs',
+  sm: 'sm',
+  base: 'base',
+  lg: 'lg',
+  xl: 'xl',
+  xxl: 'xxl',
+  xxxl: 'xxxl',
+  xxxxl: 'xxxxl',
+  xxxxxl: 'xxxxxl',
+};
+
+export const WEIGHT_STYLES = {
+  regular: 'regular',
+  bold: 'bold',
+  black: 'black',
+};
+
+export type Weight = $Keys<typeof WEIGHT_STYLES>;
+export type TextStyle = $Keys<typeof TEXT_STYLES>;
+
+const getWeight = (bold, weight, textStyle) => {
+  if (bold || weight === WEIGHT_STYLES.bold) {
+    return WEIGHT_STYLES.bold;
+  }
+
+  // Weight can only be black if textStyle is `xl`, `xxl` or `xxxl`.
+  if (weight === WEIGHT_STYLES.black && textStyle.match(/^x+l$/)) {
+    return WEIGHT_STYLES.black;
+  }
+
+  return null;
+};
 
 type Props = {
   children: Node,
-  // eslint-disable-next-line flowtype/space-after-type-colon
-  textStyle:
-    | 'xs'
-    | 'sm'
-    | 'base'
-    | 'lg'
-    | 'xl'
-    | 'xxl'
-    | 'xxxl'
-    | 'xxxxl'
-    | 'xxxxxl',
+  textStyle: TextStyle,
   tagName: 'span' | 'p' | 'text' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6',
   className: ?string,
-  bold: boolean,
+  bold: ?boolean,
+  weight: Weight,
 };
 
 const BpkText = (props: Props) => {
@@ -63,12 +76,16 @@ const BpkText = (props: Props) => {
     children,
     tagName: TagName,
     textStyle,
+    weight,
     ...rest
   } = props;
+
+  const validWeight = getWeight(bold, weight, textStyle);
+
   const classNames = getClassName(
     'bpk-text',
     `bpk-text--${textStyle}`,
-    bold && 'bpk-text--bold',
+    validWeight && `bpk-text--${validWeight}`,
     className,
   );
 
@@ -82,7 +99,7 @@ const BpkText = (props: Props) => {
 
 BpkText.propTypes = {
   children: PropTypes.node.isRequired,
-  textStyle: PropTypes.oneOf(TEXT_STYLES),
+  textStyle: PropTypes.oneOf(Object.keys(TEXT_STYLES)),
   tagName: PropTypes.oneOf([
     'span',
     'p',
@@ -95,14 +112,16 @@ BpkText.propTypes = {
     'h6',
   ]),
   className: PropTypes.string,
-  bold: PropTypes.bool,
+  bold: deprecated(PropTypes.bool, 'Use "weight" instead.'),
+  weight: PropTypes.oneOf(Object.keys(WEIGHT_STYLES)),
 };
 
 BpkText.defaultProps = {
-  textStyle: 'base',
+  textStyle: TEXT_STYLES.base,
   tagName: 'span',
   className: null,
-  bold: false,
+  bold: null,
+  weight: WEIGHT_STYLES.regular,
 };
 
 export default BpkText;
