@@ -40,7 +40,7 @@ export type Props = {
   fullScreen: boolean,
   padded: boolean,
   dialogRef: (ref: ?HTMLElement) => void,
-  onClose: ?(event: SyntheticEvent<>) => void,
+  onClose: (event: SyntheticEvent<>) => void,
   className: ?string,
   contentClassName: ?string,
   title: ?string,
@@ -152,7 +152,7 @@ export const propTypes = {
 
 export const defaultProps = {
   title: null,
-  onClose: null,
+  onClose: () => null,
   className: null,
   contentClassName: null,
   closeLabel: null,

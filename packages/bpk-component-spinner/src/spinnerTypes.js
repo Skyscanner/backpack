@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+/* @flow strict */
+
 export default {
   primary: 'primary',
   light: 'light',
