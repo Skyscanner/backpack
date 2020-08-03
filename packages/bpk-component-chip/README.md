@@ -12,26 +12,76 @@ npm install bpk-component-chip --save-dev
 
 ```js
 import React from 'react';
-import BpkChip from 'bpk-component-chip';
+import BpkSelectableChip, { BpkDismissibleChip, CHIP_TYPES } from 'bpk-component-chip';
+import BeachIconSm from 'bpk-component-icon/sm/beach';
 
 export default () => (
-  <BpkChip
-    closeLabel="Close"
-    onClose={event => console.log('Chip closing!', event)}
+
+  // Standard selectable chip.
+  <BpkSelectableChip
+    accessibilityLabel="Press to toggle chip"
+    selected={false}
+    onClick={() => { /* Use state to set 'selected={true}' */ }}
   >
-    This is a chip!
-  </BpkChip>
+    Toggle me
+  </BpkSelectableChip>
+
+  // Selectable chip with an icon.
+  <BpkSelectableChip
+    accessibilityLabel="Press to toggle chip"
+    selected={false}
+    onClick={() => { /* Use state to set 'selected={true}' */ }}
+    leadingAccessoryView={<BeachIconSm />}
+  >
+    Toggle me
+  </BpkSelectableChip>
+
+  // Standard dismissible chip.
+  <BpkDismissibleChip
+    accessibilityLabel="Press to dismiss chip"
+    onClick={() => { /* Use state to handle removing this chip. */ }}
+  >
+    Dismiss me
+  </BpkDismissibleChip>
+
+  // Dismissible chip with an icon.
+    <BpkDismissibleChip
+    accessibilityLabel="Press to dismiss chip"
+    onClick={() => { /* Use state to handle removing this chip. */ }}
+    leadingAccessoryView={<BeachIconSm />}
+  >
+    Dismiss me
+  </BpkDismissibleChip>
 );
 ```
 
 ## Props
 
-| Property    | PropType                | Required | Default Value |
-| ----------- | ----------------------- | -------- | ------------- |
-| children    | node                    | true     | -             |
-| onClose     | func                    | true     | -             |
-| closeLabel  | oneOfType(string, func) | true     | -             |
-| className   | string                  | false    | null          |
-| disabled    | bool                    | false    | false         |
-| dismissible | bool                    | false    | true          |
-| type        | oneOf(`CHIP_TYPES.light`, `CHIP_TYPES.neutral`, `CHIP_TYPES.primary`, `CHIP_TYPES.success`) | false    | `CHIP_TYPES.neutral`|
+### BpkSelectableChip
+
+| Property | PropType | Required | Default Value |
+| - | - | - | - |
+| accessibilityLabel | string | true | - |
+| children | node | true | - |
+| onClick | func | true | - |
+| className | string | false | null |
+| disabled | bool | false | false |
+| leadingAccessoryView | node | false | null |
+| selected | bool | false | false |
+| trailingAccessoryView | node | false | null |
+| type | oneOf(`CHIP_TYPES.light`, `CHIP_TYPES.primary`, `CHIP_TYPES.success`) |
+
+
+### BpkDismissibleChip
+
+Dismissible chips are selectable chips that have been preconfigured to have a 'close' icon trailing accessory view and cannot be selected, so they have the same props as `BpkSelectableChip`, minus `trailingAccessoryView` and `selected`.
+
+| Property | PropType | Required | Default Value |
+| - | - | - | - |
+| accessibilityLabel | string | true | - |
+| children | node | true | - |
+| onClick | func | true | - |
+| className | string | false | null |
+| disabled | bool | false | false |
+| leadingAccessoryView | node | false | null |
+| type | oneOf(`CHIP_TYPES.light`, `CHIP_TYPES.primary`, `CHIP_TYPES.success`) |

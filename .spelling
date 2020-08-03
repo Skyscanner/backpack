@@ -31,6 +31,7 @@ BpkCarouselItem
 
 BpkChip
 BpkDismissibleChip
+BpkSelectableChip
 
 BpkDialingCodeList
 
@@ -289,6 +290,7 @@ dialingCodes
 dialingCodeMask
 dismissable
 dismissButtonLabel
+toggleable
 dockedFirst
 dockedMiddle
 dockedLast
@@ -452,6 +454,8 @@ fullScreenOnMobile
 fullScreen
 showHeader
 leadingIndicatorClassName
+leadingAccessoryView
+trailingAccessoryView
 scrollerRef
 trailingIndicatorClassName
 googleMapURL

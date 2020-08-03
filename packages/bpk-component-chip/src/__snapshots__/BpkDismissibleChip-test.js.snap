@@ -1,0 +1,464 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BpkDismissibleChip should ignore setting a trailing accessory view, resulting in a close icon 1`] = `
+<button
+  aria-checked={false}
+  className="bpk-chip bpk-chip--primary"
+  disabled={false}
+  onClick={[Function]}
+  role="button"
+  title="Dismiss"
+  type="button"
+>
+  Dismiss me
+  <span
+    className="bpk-chip__trailing-accessory-view"
+  >
+    <svg
+      height="18"
+      style={
+        Object {
+          "height": "1.125rem",
+          "width": "1.125rem",
+        }
+      }
+      viewBox="0 0 24 24"
+      width="18"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M5.587 3.467a1.5 1.5 0 1 0-2.194 2.046q.036.038.074.074l6.438 6.44-6.44 6.44a1.5 1.5 0 0 0 2.122 2.12l6.44-6.438 6.44 6.44a1.5 1.5 0 0 0 2.12-2.122l-6.438-6.44 6.44-6.44a1.5 1.5 0 0 0-2.122-2.12l-6.44 6.438-6.44-6.44z"
+      />
+    </svg>
+  </span>
+</button>
+`;
+
+exports[`BpkDismissibleChip should override setting selected={true}, resulting in selected={false} 1`] = `
+<button
+  aria-checked={false}
+  className="bpk-chip bpk-chip--primary"
+  disabled={false}
+  onClick={[Function]}
+  role="button"
+  title="Dismiss"
+  type="button"
+>
+  Dismiss me
+  <span
+    className="bpk-chip__trailing-accessory-view"
+  >
+    <svg
+      height="18"
+      style={
+        Object {
+          "height": "1.125rem",
+          "width": "1.125rem",
+        }
+      }
+      viewBox="0 0 24 24"
+      width="18"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M5.587 3.467a1.5 1.5 0 1 0-2.194 2.046q.036.038.074.074l6.438 6.44-6.44 6.44a1.5 1.5 0 0 0 2.122 2.12l6.44-6.438 6.44 6.44a1.5 1.5 0 0 0 2.12-2.122l-6.438-6.44 6.44-6.44a1.5 1.5 0 0 0-2.122-2.12l-6.44 6.438-6.44-6.44z"
+      />
+    </svg>
+  </span>
+</button>
+`;
+
+exports[`BpkDismissibleChip should render correctly 1`] = `
+<button
+  aria-checked={false}
+  className="bpk-chip bpk-chip--primary"
+  disabled={false}
+  onClick={[Function]}
+  role="button"
+  title="Dismiss"
+  type="button"
+>
+  Dismiss me
+  <span
+    className="bpk-chip__trailing-accessory-view"
+  >
+    <svg
+      height="18"
+      style={
+        Object {
+          "height": "1.125rem",
+          "width": "1.125rem",
+        }
+      }
+      viewBox="0 0 24 24"
+      width="18"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M5.587 3.467a1.5 1.5 0 1 0-2.194 2.046q.036.038.074.074l6.438 6.44-6.44 6.44a1.5 1.5 0 0 0 2.122 2.12l6.44-6.438 6.44 6.44a1.5 1.5 0 0 0 2.12-2.122l-6.438-6.44 6.44-6.44a1.5 1.5 0 0 0-2.122-2.12l-6.44 6.438-6.44-6.44z"
+      />
+    </svg>
+  </span>
+</button>
+`;
+
+exports[`BpkDismissibleChip should render correctly with a "className" attribute 1`] = `
+<button
+  aria-checked={false}
+  className="bpk-chip bpk-chip--primary custom-class"
+  disabled={false}
+  onClick={[Function]}
+  role="button"
+  title="Dismiss"
+  type="button"
+>
+  Dismiss me
+  <span
+    className="bpk-chip__trailing-accessory-view"
+  >
+    <svg
+      height="18"
+      style={
+        Object {
+          "height": "1.125rem",
+          "width": "1.125rem",
+        }
+      }
+      viewBox="0 0 24 24"
+      width="18"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M5.587 3.467a1.5 1.5 0 1 0-2.194 2.046q.036.038.074.074l6.438 6.44-6.44 6.44a1.5 1.5 0 0 0 2.122 2.12l6.44-6.438 6.44 6.44a1.5 1.5 0 0 0 2.12-2.122l-6.438-6.44 6.44-6.44a1.5 1.5 0 0 0-2.122-2.12l-6.44 6.438-6.44-6.44z"
+      />
+    </svg>
+  </span>
+</button>
+`;
+
+exports[`BpkDismissibleChip should render correctly with type="light" 1`] = `
+<button
+  aria-checked={false}
+  className="bpk-chip bpk-chip--light"
+  disabled={false}
+  onClick={[Function]}
+  role="button"
+  title="Dismiss"
+  type="button"
+>
+  Dismiss me
+  <span
+    className="bpk-chip__trailing-accessory-view"
+  >
+    <svg
+      height="18"
+      style={
+        Object {
+          "height": "1.125rem",
+          "width": "1.125rem",
+        }
+      }
+      viewBox="0 0 24 24"
+      width="18"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M5.587 3.467a1.5 1.5 0 1 0-2.194 2.046q.036.038.074.074l6.438 6.44-6.44 6.44a1.5 1.5 0 0 0 2.122 2.12l6.44-6.438 6.44 6.44a1.5 1.5 0 0 0 2.12-2.122l-6.438-6.44 6.44-6.44a1.5 1.5 0 0 0-2.122-2.12l-6.44 6.438-6.44-6.44z"
+      />
+    </svg>
+  </span>
+</button>
+`;
+
+exports[`BpkDismissibleChip should render correctly with type="light" and a leading accessory view 1`] = `
+<button
+  aria-checked={false}
+  className="bpk-chip bpk-chip--light"
+  disabled={false}
+  onClick={[Function]}
+  role="button"
+  title="Dismiss"
+  type="button"
+>
+  <span
+    className="bpk-chip__leading-accessory-view"
+  >
+    <span>
+      Leading
+    </span>
+  </span>
+  Dismiss me
+  <span
+    className="bpk-chip__trailing-accessory-view"
+  >
+    <svg
+      height="18"
+      style={
+        Object {
+          "height": "1.125rem",
+          "width": "1.125rem",
+        }
+      }
+      viewBox="0 0 24 24"
+      width="18"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M5.587 3.467a1.5 1.5 0 1 0-2.194 2.046q.036.038.074.074l6.438 6.44-6.44 6.44a1.5 1.5 0 0 0 2.122 2.12l6.44-6.438 6.44 6.44a1.5 1.5 0 0 0 2.12-2.122l-6.438-6.44 6.44-6.44a1.5 1.5 0 0 0-2.122-2.12l-6.44 6.438-6.44-6.44z"
+      />
+    </svg>
+  </span>
+</button>
+`;
+
+exports[`BpkDismissibleChip should render correctly with type="light" and disabled 1`] = `
+<button
+  aria-checked={false}
+  className="bpk-chip bpk-chip--light bpk-chip--disabled"
+  disabled={true}
+  onClick={[Function]}
+  role="button"
+  title="Dismiss"
+  type="button"
+>
+  Dismiss me
+  <span
+    className="bpk-chip__trailing-accessory-view"
+  >
+    <svg
+      height="18"
+      style={
+        Object {
+          "height": "1.125rem",
+          "width": "1.125rem",
+        }
+      }
+      viewBox="0 0 24 24"
+      width="18"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M5.587 3.467a1.5 1.5 0 1 0-2.194 2.046q.036.038.074.074l6.438 6.44-6.44 6.44a1.5 1.5 0 0 0 2.122 2.12l6.44-6.438 6.44 6.44a1.5 1.5 0 0 0 2.12-2.122l-6.438-6.44 6.44-6.44a1.5 1.5 0 0 0-2.122-2.12l-6.44 6.438-6.44-6.44z"
+      />
+    </svg>
+  </span>
+</button>
+`;
+
+exports[`BpkDismissibleChip should render correctly with type="primary" 1`] = `
+<button
+  aria-checked={false}
+  className="bpk-chip bpk-chip--primary"
+  disabled={false}
+  onClick={[Function]}
+  role="button"
+  title="Dismiss"
+  type="button"
+>
+  Dismiss me
+  <span
+    className="bpk-chip__trailing-accessory-view"
+  >
+    <svg
+      height="18"
+      style={
+        Object {
+          "height": "1.125rem",
+          "width": "1.125rem",
+        }
+      }
+      viewBox="0 0 24 24"
+      width="18"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M5.587 3.467a1.5 1.5 0 1 0-2.194 2.046q.036.038.074.074l6.438 6.44-6.44 6.44a1.5 1.5 0 0 0 2.122 2.12l6.44-6.438 6.44 6.44a1.5 1.5 0 0 0 2.12-2.122l-6.438-6.44 6.44-6.44a1.5 1.5 0 0 0-2.122-2.12l-6.44 6.438-6.44-6.44z"
+      />
+    </svg>
+  </span>
+</button>
+`;
+
+exports[`BpkDismissibleChip should render correctly with type="primary" and a leading accessory view 1`] = `
+<button
+  aria-checked={false}
+  className="bpk-chip bpk-chip--primary"
+  disabled={false}
+  onClick={[Function]}
+  role="button"
+  title="Dismiss"
+  type="button"
+>
+  <span
+    className="bpk-chip__leading-accessory-view"
+  >
+    <span>
+      Leading
+    </span>
+  </span>
+  Dismiss me
+  <span
+    className="bpk-chip__trailing-accessory-view"
+  >
+    <svg
+      height="18"
+      style={
+        Object {
+          "height": "1.125rem",
+          "width": "1.125rem",
+        }
+      }
+      viewBox="0 0 24 24"
+      width="18"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M5.587 3.467a1.5 1.5 0 1 0-2.194 2.046q.036.038.074.074l6.438 6.44-6.44 6.44a1.5 1.5 0 0 0 2.122 2.12l6.44-6.438 6.44 6.44a1.5 1.5 0 0 0 2.12-2.122l-6.438-6.44 6.44-6.44a1.5 1.5 0 0 0-2.122-2.12l-6.44 6.438-6.44-6.44z"
+      />
+    </svg>
+  </span>
+</button>
+`;
+
+exports[`BpkDismissibleChip should render correctly with type="primary" and disabled 1`] = `
+<button
+  aria-checked={false}
+  className="bpk-chip bpk-chip--primary bpk-chip--disabled"
+  disabled={true}
+  onClick={[Function]}
+  role="button"
+  title="Dismiss"
+  type="button"
+>
+  Dismiss me
+  <span
+    className="bpk-chip__trailing-accessory-view"
+  >
+    <svg
+      height="18"
+      style={
+        Object {
+          "height": "1.125rem",
+          "width": "1.125rem",
+        }
+      }
+      viewBox="0 0 24 24"
+      width="18"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M5.587 3.467a1.5 1.5 0 1 0-2.194 2.046q.036.038.074.074l6.438 6.44-6.44 6.44a1.5 1.5 0 0 0 2.122 2.12l6.44-6.438 6.44 6.44a1.5 1.5 0 0 0 2.12-2.122l-6.438-6.44 6.44-6.44a1.5 1.5 0 0 0-2.122-2.12l-6.44 6.438-6.44-6.44z"
+      />
+    </svg>
+  </span>
+</button>
+`;
+
+exports[`BpkDismissibleChip should render correctly with type="success" 1`] = `
+<button
+  aria-checked={false}
+  className="bpk-chip bpk-chip--success"
+  disabled={false}
+  onClick={[Function]}
+  role="button"
+  title="Dismiss"
+  type="button"
+>
+  Dismiss me
+  <span
+    className="bpk-chip__trailing-accessory-view"
+  >
+    <svg
+      height="18"
+      style={
+        Object {
+          "height": "1.125rem",
+          "width": "1.125rem",
+        }
+      }
+      viewBox="0 0 24 24"
+      width="18"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M5.587 3.467a1.5 1.5 0 1 0-2.194 2.046q.036.038.074.074l6.438 6.44-6.44 6.44a1.5 1.5 0 0 0 2.122 2.12l6.44-6.438 6.44 6.44a1.5 1.5 0 0 0 2.12-2.122l-6.438-6.44 6.44-6.44a1.5 1.5 0 0 0-2.122-2.12l-6.44 6.438-6.44-6.44z"
+      />
+    </svg>
+  </span>
+</button>
+`;
+
+exports[`BpkDismissibleChip should render correctly with type="success" and a leading accessory view 1`] = `
+<button
+  aria-checked={false}
+  className="bpk-chip bpk-chip--success"
+  disabled={false}
+  onClick={[Function]}
+  role="button"
+  title="Dismiss"
+  type="button"
+>
+  <span
+    className="bpk-chip__leading-accessory-view"
+  >
+    <span>
+      Leading
+    </span>
+  </span>
+  Dismiss me
+  <span
+    className="bpk-chip__trailing-accessory-view"
+  >
+    <svg
+      height="18"
+      style={
+        Object {
+          "height": "1.125rem",
+          "width": "1.125rem",
+        }
+      }
+      viewBox="0 0 24 24"
+      width="18"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M5.587 3.467a1.5 1.5 0 1 0-2.194 2.046q.036.038.074.074l6.438 6.44-6.44 6.44a1.5 1.5 0 0 0 2.122 2.12l6.44-6.438 6.44 6.44a1.5 1.5 0 0 0 2.12-2.122l-6.438-6.44 6.44-6.44a1.5 1.5 0 0 0-2.122-2.12l-6.44 6.438-6.44-6.44z"
+      />
+    </svg>
+  </span>
+</button>
+`;
+
+exports[`BpkDismissibleChip should render correctly with type="success" and disabled 1`] = `
+<button
+  aria-checked={false}
+  className="bpk-chip bpk-chip--success bpk-chip--disabled"
+  disabled={true}
+  onClick={[Function]}
+  role="button"
+  title="Dismiss"
+  type="button"
+>
+  Dismiss me
+  <span
+    className="bpk-chip__trailing-accessory-view"
+  >
+    <svg
+      height="18"
+      style={
+        Object {
+          "height": "1.125rem",
+          "width": "1.125rem",
+        }
+      }
+      viewBox="0 0 24 24"
+      width="18"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M5.587 3.467a1.5 1.5 0 1 0-2.194 2.046q.036.038.074.074l6.438 6.44-6.44 6.44a1.5 1.5 0 0 0 2.122 2.12l6.44-6.438 6.44 6.44a1.5 1.5 0 0 0 2.12-2.122l-6.438-6.44 6.44-6.44a1.5 1.5 0 0 0-2.122-2.12l-6.44 6.438-6.44-6.44z"
+      />
+    </svg>
+  </span>
+</button>
+`;

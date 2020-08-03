@@ -19,66 +19,163 @@
 /* @flow strict */
 
 import React from 'react';
+import PropTypes from 'prop-types';
 import { storiesOf } from '@storybook/react';
-import { action } from '@storybook/addon-actions';
 import { cssModules } from 'bpk-react-utils';
-import BpkText from 'bpk-component-text';
+import BpkText, { TEXT_STYLES } from 'bpk-component-text';
+import BeachIconSm from 'bpk-component-icon/sm/beach';
+import CarWashIconSm from 'bpk-component-icon/sm/car-wash';
 
 import STYLES from './stories.scss';
+import { COMMON_PROP_TYPES, COMMON_DEFAULT_PROPS } from './src/commonTypes';
 
-import BpkChip, { CHIP_TYPES } from './index';
+import BpkSelectableChip, {
+  type BpkSelectableChipProps,
+  CHIP_TYPES,
+  BpkDismissibleChip,
+} from './index';
 
 const getClassName = cssModules(STYLES);
 
+/* ESLint is fighting with Prettier here, so I had to disable it. */
+/* eslint-disable flowtype/generic-spacing */
+type StatefulSelectableChipProps = $Diff<
+  BpkSelectableChipProps,
+  {
+    accessibilityLabel: string,
+    onClick: (event: SyntheticEvent<>) => mixed,
+  },
+>;
+/* eslint-enable */
+
+class StatefulSelectableChip extends React.Component<
+  StatefulSelectableChipProps,
+  { selected: boolean },
+> {
+  static propTypes = {
+    ...COMMON_PROP_TYPES,
+    selected: PropTypes.bool,
+    trailingAccessoryView: PropTypes.node,
+  };
+
+  static defaultProps = {
+    ...COMMON_DEFAULT_PROPS,
+    selected: false,
+    trailingAccessoryView: null,
+  };
+
+  constructor(props) {
+    super(props);
+    this.state = { selected: props.selected };
+  }
+
+  toggleSelected = () => {
+    this.setState(prevState => {
+      return { selected: !prevState.selected };
+    });
+  };
+
+  render() {
+    return (
+      <BpkSelectableChip
+        {...this.props}
+        accessibilityLabel="Toggle chip"
+        className={getClassName('bpk-chip-stories__chip')}
+        selected={this.state.selected}
+        onClick={this.toggleSelected}
+      />
+    );
+  }
+}
+
+class StatefulDismissibleChipsExample extends React.Component<
+  { type: $Keys<typeof CHIP_TYPES> },
+  { chips: Array<string> },
+> {
+  constructor() {
+    super();
+    this.state = { chips: ['One', 'Two', 'Three', 'Four'] };
+  }
+
+  removeChip = indexToRemove => {
+    this.setState(prevState => {
+      // I can't figure out how to fix this error, and as it is a non-consumer facing
+      // component I don't think it's worth investing time to fix it.
+      // $FlowFixMe
+      return prevState.chips.splice(indexToRemove, 1);
+    });
+  };
+
+  render() {
+    return (
+      <div>
+        {this.state.chips.map((chip, index) => (
+          <BpkDismissibleChip
+            {...this.props}
+            key={index.toString()}
+            onClick={() => {
+              this.removeChip(index);
+            }}
+            disabled={index === 3}
+            accessibilityLabel="Remove chip"
+            className={getClassName('bpk-chip-stories__chip')}
+          >
+            Chip {chip}
+          </BpkDismissibleChip>
+        ))}
+      </div>
+    );
+  }
+}
+
 const ChipsExample = ({ ...rest }) => (
-  <div className={getClassName('bpk-chip-stories__wrapper')}>
-    <BpkChip
-      onClose={action('Chip closing!')}
-      closeLabel="Close"
-      className={getClassName('bpk-chip-stories__chip')}
-      {...rest}
-    >
-      Dismissible
-    </BpkChip>
-    <BpkChip
-      onClose={action('Chip closing!')}
-      closeLabel="Close"
-      className={getClassName('bpk-chip-stories__chip')}
-      dismissible={false}
-      {...rest}
-    >
-      Not dismissible
-    </BpkChip>
-    <BpkChip
-      onClose={action('Chip closing!')}
-      closeLabel="Close"
-      type={CHIP_TYPES.neutral}
-      disabled
-      className={getClassName('bpk-chip-stories__chip')}
-      {...rest}
-    >
-      Dismissible and disabled
-    </BpkChip>
-    <BpkChip
-      onClose={action('Chip closing!')}
-      closeLabel="Close"
-      type={CHIP_TYPES.neutral}
-      disabled
-      dismissible={false}
-      className={getClassName('bpk-chip-stories__chip')}
-      {...rest}
-    >
-      Not dismissible and disabled
-    </BpkChip>
+  <div>
+    <div className={getClassName('bpk-chip-stories__wrapper')}>
+      <StatefulSelectableChip {...rest}>Not selected</StatefulSelectableChip>
+      <StatefulSelectableChip leadingAccessoryView={<BeachIconSm />} {...rest}>
+        Leading icon
+      </StatefulSelectableChip>
+      <StatefulSelectableChip
+        trailingAccessoryView={<CarWashIconSm />}
+        {...rest}
+      >
+        Trailing icon
+      </StatefulSelectableChip>
+      <StatefulSelectableChip
+        leadingAccessoryView={<BeachIconSm />}
+        trailingAccessoryView={<CarWashIconSm />}
+        {...rest}
+      >
+        Both icons
+      </StatefulSelectableChip>
+      <StatefulSelectableChip selected {...rest}>
+        Selected
+      </StatefulSelectableChip>
+      <StatefulSelectableChip disabled {...rest}>
+        Disabled
+      </StatefulSelectableChip>
+    </div>
   </div>
 );
 
 storiesOf('bpk-component-chip', module).add('Default', () => (
   <div>
+    <BpkText textStyle={TEXT_STYLES.lg} tagName="h2">
+      Selectable chips
+    </BpkText>
     {Object.keys(CHIP_TYPES).map(chipType => (
       <>
         <BpkText>{chipType}</BpkText>
         <ChipsExample type={chipType} />
+      </>
+    ))}
+    <BpkText textStyle={TEXT_STYLES.lg} tagName="h2">
+      Dismissible chips
+    </BpkText>
+    {Object.keys(CHIP_TYPES).map(chipType => (
+      <>
+        <BpkText>{chipType}</BpkText>
+        <StatefulDismissibleChipsExample type={chipType} />
       </>
     ))}
   </div>

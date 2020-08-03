@@ -16,18 +16,8 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+@import '~bpk-mixins/index';
 
-import BpkSelectableChip, {
-  type Props as SelectableProps,
-} from './src/BpkSelectableChip';
-import BpkDismissibleChip, {
-  type Props as DismissibleProps,
-} from './src/BpkDismissibleChip';
-import { CHIP_TYPES } from './src/commonTypes';
-
-export type BpkSelectableChipProps = SelectableProps;
-export type BpkDismissibleChipProps = DismissibleProps;
-
-export default BpkSelectableChip;
-export { BpkDismissibleChip, CHIP_TYPES };
+.bpk-chip {
+  @include bpk-chip;
+}
