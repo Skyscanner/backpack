@@ -29,7 +29,6 @@ import BpkModal, {
 } from 'bpk-component-modal';
 
 import STYLES from './BpkDialog.scss';
-import { onClosePropType } from './customPropTypes';
 
 const getClassName = cssModules(STYLES);
 
@@ -75,13 +74,13 @@ const {
 
 BpkDialog.propTypes = {
   ...newModalPropTypes,
-  onClose: onClosePropType,
+  onClose: PropTypes.func,
   dismissible: PropTypes.bool,
 };
 
 BpkDialog.defaultProps = {
   ...modalDefaultProps,
-  onClose: null,
+  onClose: () => null,
   dismissible: true,
 };
 
