@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-map",
-  "version": "3.1.63",
+  "version": "3.1.64",
   "description": "Backpack map component.",
   "main": "index.js",
   "repository": {
@@ -13,7 +13,7 @@
     "react": "^15.0.0 || ^16.0.0"
   },
   "dependencies": {
-    "bpk-component-spinner": "^3.0.71",
+    "bpk-component-spinner": "^3.1.0",
     "bpk-mixins": "^20.0.0",
     "bpk-react-utils": "^3.0.4",
     "prop-types": "^15.5.8",
