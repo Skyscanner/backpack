@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+/* @flow strict */
+
 import BpkLink from './src/BpkLink';
 import BpkButtonLink from './src/BpkButtonLink';
 import themeAttributes, {

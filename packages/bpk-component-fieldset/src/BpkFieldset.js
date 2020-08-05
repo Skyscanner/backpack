@@ -60,6 +60,7 @@ const BpkFieldset = (props: Props) => {
     return null;
   }
 
+  // $FlowFixMe
   let childId: string = children.props.id;
   if (
     // $FlowFixMe Flow is being dumb here and doesn't let us do this check, even though it's perfectly safe!

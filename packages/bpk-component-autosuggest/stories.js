@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+/* @flow strict */
+
 import PropTypes from 'prop-types';
 import React from 'react';
 import { storiesOf } from '@storybook/react';
@@ -94,7 +96,16 @@ const getSuggestions = value => {
 const getSuggestionValue = suggestion =>
   `${suggestion.name} (${suggestion.code})`;
 
-class AutosuggestExample extends React.Component {
+type State = {
+  value: string,
+  suggestions: Array<any>,
+};
+
+type Props = {
+  renderSuggestion: Function,
+};
+
+class AutosuggestExample extends React.Component<Props, State> {
   constructor() {
     super();
 

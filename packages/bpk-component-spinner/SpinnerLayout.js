@@ -15,8 +15,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
+/* @flow strict */
+
 import PropTypes from 'prop-types';
-import React, { Children } from 'react';
+import React, { Children, type Node } from 'react';
 import { cssModules } from 'bpk-react-utils';
 
 import STYLES from './SpinnerLayout.scss';
@@ -25,19 +28,26 @@ import { SPINNER_TYPES } from './index';
 
 const getClassName = cssModules(STYLES);
 
-const SpinnerLayout = ({ children }) => (
-  <div className={getClassName('bpk-spinner-layout')}>
-    {Children.map(children, child => {
-      const classNames = [getClassName('bpk-spinner-layout__spinner')];
+type Props = {
+  children: Node,
+};
 
-      if (child.props.type === SPINNER_TYPES.light) {
-        classNames.push(getClassName('bpk-spinner-layout__spinner--light'));
-      }
+const SpinnerLayout = (props: Props) => {
+  const { children } = props;
+  return (
+    <div className={getClassName('bpk-spinner-layout')}>
+      {Children.map(children, child => {
+        const classNames = [getClassName('bpk-spinner-layout__spinner')];
 
-      return <div className={classNames.join(' ')}>{child}</div>;
-    })}
-  </div>
-);
+        if (child.props.type === SPINNER_TYPES.light) {
+          classNames.push(getClassName('bpk-spinner-layout__spinner--light'));
+        }
+
+        return <div className={classNames.join(' ')}>{child}</div>;
+      })}
+    </div>
+  );
+};
 
 SpinnerLayout.propTypes = {
   children: PropTypes.node.isRequired,
