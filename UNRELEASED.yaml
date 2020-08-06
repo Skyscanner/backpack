@@ -1,9 +1,5 @@
 # UNRELEASED:
 
-ADDED:
-  - bpk-svgs:
-    - Fixed an issue with the `filter` icon that caused it to render incorrectly when used via the `BpkIcon` font.
-
 # How to write a good changelog entry:
 #
 #   1. Add 'BREAKING', 'ADDED' OR 'FIXED' depending on if the change will be major, minor or patch according to [semver.org](semver.org).

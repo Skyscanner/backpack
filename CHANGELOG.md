@@ -2,6 +2,12 @@
 
 [Unreleased changes](./UNRELEASED.yaml).
 
+# 2020-08-06
+
+**Fixed:**
+  - bpk-svgs:
+    - Fixed an issue with the `filter` icon that caused it to render incorrectly when used via the `BpkIcon` font.
+
 # 2020-08-05 - Added Flow support.
 
 **Added:**
