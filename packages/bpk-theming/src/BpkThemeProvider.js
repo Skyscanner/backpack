@@ -101,7 +101,7 @@ const themeAttributesPropType = (props, propName, componentName) => {
   }
 
   themeAttributes = [].concat(...themeAttributes);
-  const extraneousThemeAttributes = Object.assign({}, theme);
+  const extraneousThemeAttributes = { ...theme };
   const missingThemeAttributes = [];
   themeAttributes.forEach(attribute => {
     if (theme[attribute]) {
