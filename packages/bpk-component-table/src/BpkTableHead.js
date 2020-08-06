@@ -16,10 +16,14 @@
  * limitations under the License.
  */
 
-import PropTypes from 'prop-types';
-import React from 'react';
+/* @flow strict */
 
-const BpkTableHead = props => <thead {...props} />;
+import PropTypes from 'prop-types';
+import React, { type Node } from 'react';
+
+type Props = { children: Node };
+
+const BpkTableHead = (props: Props) => <thead {...props} />;
 
 BpkTableHead.propTypes = {
   children: PropTypes.node.isRequired,

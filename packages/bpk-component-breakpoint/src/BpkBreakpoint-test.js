@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+/* @flow strict */
+
 import React from 'react';
 import renderer from 'react-test-renderer';
 import { mount } from 'enzyme';
@@ -58,10 +60,10 @@ describe('BpkBreakpoint', () => {
   });
 
   describe('PropType validation', () => {
-    let errorOrWarningSpy = null;
+    let errorOrWarningSpy = jest.fn();
     let oldError = null;
     let oldWarning = null;
-    let BpkBreakpoint = null;
+    let BpkBreakpoint = require('./BpkBreakpoint').default; // eslint-disable-line global-require
 
     beforeEach(() => {
       jest.resetModules();

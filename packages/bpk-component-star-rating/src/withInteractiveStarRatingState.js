@@ -16,12 +16,33 @@
  * limitations under the License.
  */
 
+/* @flow strict */
+
 import PropTypes from 'prop-types';
-import React, { Component } from 'react';
+import React, { Component, type ComponentType } from 'react';
 import { wrapDisplayName } from 'bpk-react-utils';
 
-const withInteractiveStarRatingState = InteractiveStarRating => {
-  class EnhancedComponent extends Component {
+const withInteractiveStarRatingState = (
+  InteractiveStarRating: ComponentType<any>,
+) => {
+  type Props = {
+    onRatingSelect: (number, Function) => mixed,
+  };
+
+  type State = {
+    rating: number,
+    hoverRating: number,
+  };
+
+  class EnhancedComponent extends Component<Props, State> {
+    static propTypes = {
+      onRatingSelect: PropTypes.func,
+    };
+
+    static defaultProps = {
+      onRatingSelect: () => null,
+    };
+
     constructor() {
       super();
 
@@ -31,7 +52,7 @@ const withInteractiveStarRatingState = InteractiveStarRating => {
       };
     }
 
-    onRatingSelect = (rating, event) => {
+    onRatingSelect = (rating: number, event: Function) => {
       if (event) {
         event.persist();
       }
@@ -49,7 +70,7 @@ const withInteractiveStarRatingState = InteractiveStarRating => {
       this.setState(() => ({ hoverRating: 0 }));
     };
 
-    onRatingHover = hoverRating => {
+    onRatingHover = (hoverRating: number) => {
       this.setState(() => ({ hoverRating }));
     };
 
@@ -66,14 +87,6 @@ const withInteractiveStarRatingState = InteractiveStarRating => {
       );
     }
   }
-
-  EnhancedComponent.propTypes = {
-    onRatingSelect: PropTypes.func,
-  };
-
-  EnhancedComponent.defaultProps = {
-    onRatingSelect: () => null,
-  };
 
   EnhancedComponent.displayName = wrapDisplayName(
     EnhancedComponent,

@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+/* @flow strict */
+
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import BpkCheckbox from 'bpk-component-checkbox';

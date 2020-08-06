@@ -1,5 +1,15 @@
 # UNRELEASED:
 
+ADDED:
+  - bpk-component-accordion:
+  - bpk-component-breakpoint:
+  - bpk-component-paragraph:
+  - bpk-component-radio:
+  - bpk-component-star-rating:
+  - bpk-component-table:
+  - bpk-component-textarea:
+    - Added Flow.
+
 # How to write a good changelog entry:
 #
 #   1. Add 'BREAKING', 'ADDED' OR 'FIXED' depending on if the change will be major, minor or patch according to [semver.org](semver.org).

@@ -16,27 +16,28 @@
  * limitations under the License.
  */
 
+/* @flow strict */
+
 import PropTypes from 'prop-types';
-import React from 'react';
+import React, { type Node } from 'react';
 import { cssModules } from 'bpk-react-utils';
 
 import STYLES from './BpkTable.scss';
 
 const getClassName = cssModules(STYLES);
 
-const BpkTableHeadCell = props => {
+type Props = { children: Node, alternate: boolean, className: ?string };
+
+const BpkTableHeadCell = (props: Props) => {
   const { className, alternate, ...rest } = props;
 
-  const classNames = [
+  const classNames = getClassName(
     'bpk-table__cell',
     alternate ? 'bpk-table__cell--head-alternate' : 'bpk-table__cell--head',
-  ].map(getClassName);
+    className,
+  );
 
-  if (className) {
-    classNames.push(className);
-  }
-
-  return <th {...rest} className={classNames.join(' ')} />;
+  return <th {...rest} className={classNames} />;
 };
 
 BpkTableHeadCell.propTypes = {

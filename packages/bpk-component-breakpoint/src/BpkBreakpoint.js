@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+/* @flow strict */
+
 import PropTypes from 'prop-types';
 import React from 'react';
 import MediaQuery from 'react-responsive';
@@ -29,11 +31,18 @@ const BREAKPOINTS = {
   ABOVE_TABLET: TOKENS.breakpointQueryAboveTablet,
 };
 
-const BpkBreakpoint = props => (
-  <MediaQuery query={props.query}>{props.children}</MediaQuery>
-);
+type Props = {
+  children: Node | (() => mixed),
+  query: string | $Keys<typeof BREAKPOINTS>,
+  legacy: boolean,
+};
 
-const queryValidator = (props, ...rest) => {
+const BpkBreakpoint = (props: Props) => {
+  const { children, query } = props;
+  return <MediaQuery query={query}>{children}</MediaQuery>;
+};
+
+const queryValidator = (props: Props, ...rest) => {
   if (!props.legacy) {
     return PropTypes.oneOf(
       Object.keys(BREAKPOINTS).map(key => BREAKPOINTS[key]),

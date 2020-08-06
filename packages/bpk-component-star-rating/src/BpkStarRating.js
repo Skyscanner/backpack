@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+/* @flow strict */
+
 import React from 'react';
 import PropTypes from 'prop-types';
 import { cssModules } from 'bpk-react-utils';
@@ -25,7 +27,7 @@ import STYLES from './BpkStarRating.scss';
 
 const getClassName = cssModules(STYLES);
 
-export const getTypeByRating = (starNumber, rating) => {
+export const getTypeByRating = (starNumber: number, rating: number) => {
   if (starNumber <= rating) {
     return STAR_TYPES.FULL;
   }
@@ -39,12 +41,25 @@ export const getTypeByRating = (starNumber, rating) => {
 };
 
 export const ROUNDING_TYPES = {
-  down: n => Math.floor(n * 2) / 2,
-  up: n => Math.ceil(n * 2) / 2,
-  nearest: n => Math.round(n * 2) / 2,
+  down: (n: number) => Math.floor(n * 2) / 2,
+  up: (n: number) => Math.ceil(n * 2) / 2,
+  nearest: (n: number) => Math.round(n * 2) / 2,
 };
 
-const BpkStarRating = props => {
+type Props = {
+  ratingLabel: string | ((number, number) => mixed),
+  className: ?string,
+  large: boolean,
+  maxRating: number,
+  rating: number,
+  // eslint-disable-next-line flowtype/space-after-type-colon
+  rounding:
+    | typeof ROUNDING_TYPES.down
+    | typeof ROUNDING_TYPES.up
+    | typeof ROUNDING_TYPES.nearest,
+};
+
+const BpkStarRating = (props: Props) => {
   const {
     rating,
     ratingLabel,
