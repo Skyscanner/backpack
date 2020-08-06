@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-paragraph",
-  "version": "2.0.71",
+  "version": "2.0.72",
   "description": "Backpack paragraph component.",
   "main": "index.js",
   "repository": {
@@ -13,7 +13,7 @@
     "react": "^15.0.0 || ^16.0.0"
   },
   "dependencies": {
-    "bpk-mixins": "^20.0.0",
+    "bpk-mixins": "^20.0.1",
     "bpk-react-utils": "^3.0.4",
     "prop-types": "^15.6.2"
   },
