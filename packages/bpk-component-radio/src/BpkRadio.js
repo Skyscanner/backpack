@@ -52,7 +52,7 @@ const BpkRadio = props => {
 
   return (
     <label className={classNames.join(' ')}>
-      {/* Deciding to support this because this prop does often work with voiceover
+      {/* Deciding to support this because `aria-invalid` does often work with voiceover
       despite not being in the spec. */}
       {/* eslint-disable-next-line jsx-a11y/role-supports-aria-props */}
       <input
