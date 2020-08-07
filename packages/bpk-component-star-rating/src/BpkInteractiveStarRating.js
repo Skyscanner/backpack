@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+/* @flow strict */
+
 import React from 'react';
 import PropTypes from 'prop-types';
 import { cssModules } from 'bpk-react-utils';
@@ -26,7 +28,7 @@ import STYLES from './BpkStarRating.scss';
 
 const getClassName = cssModules(STYLES);
 
-export const getTypeByRating = (starNumber, rating) => {
+export const getTypeByRating = (starNumber: number, rating: number) => {
   if (starNumber > rating) {
     return STAR_TYPES.EMPTY;
   }
@@ -34,7 +36,20 @@ export const getTypeByRating = (starNumber, rating) => {
   return STAR_TYPES.FULL;
 };
 
-const BpkInteractiveStarRating = props => {
+type Props = {
+  getStarLabel: (number, number) => string,
+  id: string,
+  className: ?string,
+  hoverRating: number,
+  large: boolean,
+  maxRating: number,
+  onMouseLeave: () => mixed,
+  onRatingHover: (number, any) => mixed,
+  onRatingSelect: (number, any) => mixed,
+  rating: number,
+};
+
+const BpkInteractiveStarRating = (props: Props) => {
   const {
     className,
     getStarLabel,

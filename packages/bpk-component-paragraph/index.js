@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+/* @flow strict */
+
 import component from './src/BpkParagraph';
 
 export default component;

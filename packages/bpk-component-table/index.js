@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+/* @flow strict */
+
 import BpkTable from './src/BpkTable';
 import BpkTableHead from './src/BpkTableHead';
 import BpkTableBody from './src/BpkTableBody';

@@ -2,6 +2,18 @@
 
 [Unreleased changes](./UNRELEASED.yaml).
 
+# 2020-08-07
+
+**Added**:
+  - bpk-component-accordion: 2.1.77
+  - bpk-component-breakpoint: 2.00.74
+  - bpk-component-paragraph: 2.0.74
+  - bpk-component-radio: 2.0.74
+  - bpk-component-star-rating: 2.1.72
+  - bpk-component-table: 2.0.74
+  - bpk-component-textarea: 2.0.74
+    - Added Flow.
+
 # 2020-08-06
 
 **Fixed:**

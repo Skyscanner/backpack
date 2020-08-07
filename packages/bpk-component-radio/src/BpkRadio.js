@@ -16,15 +16,27 @@
  * limitations under the License.
  */
 
+/* @flow strict */
+
 import PropTypes from 'prop-types';
-import React from 'react';
+import React, { type Node } from 'react';
 import { cssModules } from 'bpk-react-utils';
 
 import STYLES from './BpkRadio.scss';
 
 const getClassName = cssModules(STYLES);
 
-const BpkRadio = props => {
+type Props = {
+  name: string,
+  label: Node,
+  ariaLabel: ?string,
+  className: ?string,
+  disabled: boolean,
+  white: boolean,
+  valid: ?boolean,
+};
+
+const BpkRadio = (props: Props) => {
   const {
     ariaLabel,
     name,
@@ -54,7 +66,8 @@ const BpkRadio = props => {
     <label className={classNames.join(' ')}>
       {/* Deciding to support this because `aria-invalid` does often work with voiceover
       despite not being in the spec. */}
-      {/* eslint-disable-next-line jsx-a11y/role-supports-aria-props */}
+      {/* eslint-disable jsx-a11y/role-supports-aria-props */}
+      {/* $FlowFixMe - inexact rest. See decisions/flowfixme.md */}
       <input
         type="radio"
         className={getClassName('bpk-radio__input')}
@@ -64,6 +77,7 @@ const BpkRadio = props => {
         aria-invalid={isInvalid}
         {...rest}
       />
+      {/* eslint-enable */}
       <div className={getClassName('bpk-radio__circle')} />
       <span aria-hidden="true">{label}</span>
     </label>
