@@ -64,6 +64,9 @@ const BpkRadio = (props: Props) => {
 
   return (
     <label className={classNames.join(' ')}>
+      {/* Deciding to support this because `aria-invalid` does often work with voiceover
+      despite not being in the spec. */}
+      {/* eslint-disable jsx-a11y/role-supports-aria-props */}
       {/* $FlowFixMe - inexact rest. See decisions/flowfixme.md */}
       <input
         type="radio"
@@ -74,6 +77,7 @@ const BpkRadio = (props: Props) => {
         aria-invalid={isInvalid}
         {...rest}
       />
+      {/* eslint-enable */}
       <div className={getClassName('bpk-radio__circle')} />
       <span aria-hidden="true">{label}</span>
     </label>

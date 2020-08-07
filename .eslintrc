@@ -24,6 +24,7 @@
     }
   },
   "rules": {
+    "backpack/use-components": "off",
     "prettier/prettier": "error",
     "react/jsx-filename-extension": "off",
     "import/no-extraneous-dependencies": "off",

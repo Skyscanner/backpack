@@ -12,7 +12,9 @@ exports[`BpkTableHeadCell should render correctly with "alternate" 1`] = `
 <th
   className="bpk-table__cell bpk-table__cell--head-alternate"
 >
-  <th />
+  <th>
+    Skyscanner
+  </th>
 </th>
 `;
 
@@ -22,7 +24,9 @@ exports[`BpkTableHeadCell should render correctly with arbitrary props 1`] = `
   data-foo="bar"
   id="my-custom-id"
 >
-  <th />
+  <th>
+    Skyscanner
+  </th>
 </th>
 `;
 
@@ -30,6 +34,8 @@ exports[`BpkTableHeadCell should render correctly with custom class 1`] = `
 <th
   className="bpk-table__cell bpk-table__cell--head my-custom-class"
 >
-  <th />
+  <th>
+    Skyscanner
+  </th>
 </th>
 `;
