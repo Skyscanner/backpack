@@ -19,7 +19,7 @@
 /* @flow strict */
 
 import PropTypes from 'prop-types';
-import React from 'react';
+import React, { type Node } from 'react';
 import MediaQuery from 'react-responsive';
 import TOKENS from 'bpk-tokens/tokens/breakpoints.common';
 
