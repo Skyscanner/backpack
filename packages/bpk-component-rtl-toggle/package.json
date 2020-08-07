@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-rtl-toggle",
-  "version": "2.0.74",
+  "version": "2.0.75",
   "description": "Backpack RTL toggle component.",
   "main": "index.js",
   "repository": {
@@ -13,7 +13,7 @@
     "react": "^15.0.0 || ^16.0.0"
   },
   "dependencies": {
-    "bpk-component-link": "^2.1.2",
+    "bpk-component-link": "^2.1.3",
     "bpk-react-utils": "^3.0.4",
     "prop-types": "^15.6.2"
   },
