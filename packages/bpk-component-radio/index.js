@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+/* @flow strict */
+
 import BpkRadio from './src/BpkRadio';
 import themeAttributes from './src/themeAttributes';
 

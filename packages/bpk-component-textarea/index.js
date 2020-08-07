@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+/* @flow strict */
+
 import BpkTextarea from './src/BpkTextarea';
 import themeAttributes from './src/themeAttributes';
 

@@ -16,8 +16,17 @@
  * limitations under the License.
  */
 
+/* @flow strict */
+
 import PropTypes from 'prop-types';
-import React, { Component, Children, cloneElement } from 'react';
+import React, {
+  Component,
+  Children,
+  cloneElement,
+  type Node,
+  type Element,
+  type ComponentType,
+} from 'react';
 import { wrapDisplayName } from 'bpk-react-utils';
 
 const getInitiallyExpanded = children => {
@@ -29,9 +38,19 @@ const getInitiallyExpanded = children => {
   return (result || {}).key || null;
 };
 
-const withSingleItemAccordionState = ComposedComponent => {
-  class WithSingleItemAccordionState extends Component {
-    constructor(props) {
+type Props = {
+  children: Node,
+};
+
+type State = {
+  expanded: ?string | ?number,
+};
+
+const withSingleItemAccordionState = (
+  ComposedComponent: ComponentType<any>,
+) => {
+  class WithSingleItemAccordionState extends Component<Props, State> {
+    constructor(props: Props) {
       super(props);
 
       this.state = {
@@ -39,11 +58,11 @@ const withSingleItemAccordionState = ComposedComponent => {
       };
     }
 
-    openAccordionItem = key => {
+    openAccordionItem = (key: ?string | ?number) => {
       this.setState({ expanded: key });
     };
 
-    renderAccordionItem = accordionItem => {
+    renderAccordionItem = (accordionItem: Element<any>) => {
       const expanded = this.state.expanded === accordionItem.key;
       const onClick = () => this.openAccordionItem(accordionItem.key);
 
