@@ -33,7 +33,7 @@ const BREAKPOINTS = {
 
 type Props = {
   children: Node | (() => mixed),
-  query: () => mixed,
+  query: string | $Values<typeof BREAKPOINTS>,
   legacy: boolean,
 };
 
