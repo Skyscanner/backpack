@@ -23,7 +23,7 @@
     "jest:update": "TZ=Etc/UTC jest --updateSnapshot",
     "jest:watch": "TZ=Etc/UTC jest --watch",
     "jest": "TZ=Etc/UTC jest --coverage",
-    "flow": "flow --max-warnings 0",
+    "flow": "flow stop && flow --max-warnings 0",
     "flow-typed": "flow-typed",
     "build:stylesheets": "lerna run build --scope bpk-stylesheets",
     "build:tokens": "lerna run tokens --scope bpk-tokens",
