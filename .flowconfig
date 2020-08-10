@@ -2,6 +2,12 @@
 .*/node_modules/jsonlint/.*
 .*/node_modules/config-chain/test/broken.json
 
+# These libraries show 'malformed' errors in the logs when starting
+# the Flow server, so we ignore them.
+.*/node_modules/map-or-similar/.*
+.*/node_modules/memoizerific/.*
+.*/node_modules/JSV/.*
+
 [include]
 
 [libs]
@@ -18,6 +24,10 @@ module.file_ext=.js
 module.file_ext=.json
 
 include_warnings=true
+
+# This line fixes a problem we were having:
+# https://github.com/facebook/flow/issues/7132
+sharedmemory.hash_table_pow=21
 
 [strict]
 unsafe-getters-setters
