@@ -2,7 +2,7 @@
 
 ## Decision
 
-When an NPM dependency has a native component, we use a peer-dependency instead of a direct dependency.
+When an NPM dependency has a native component, we use a peer dependency instead of a direct dependency.
 
 ## Thinking
 
@@ -12,4 +12,4 @@ If we specify such a dependency as a direct dependency of our library then consu
 
 If the consumer deviates from the version we specify, then it's possible that they would end up with multiple versions installed, which could lead to mismatches between the native and JS libraries.
 
-It's safer (and easier for us) to use peer-dependencies, as our library will then simply use what's made available to it by the consuming codebase.
+It's safer (and easier for us) to use peer dependencies, as our library will then simply use what's made available to it by the consuming codebase.
