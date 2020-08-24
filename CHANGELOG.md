@@ -2,6 +2,13 @@
 
 [Unreleased changes](./UNRELEASED.yaml).
 
+# 2020-08-24
+
+**Fixed:**
+  - bpk-svgs:
+    - Fixed an issue that causes the `translate` icon's dots to disappear sometimes.
+    - Reverted the `eco-leaf` icon to the previous design to align better with existing campaigns.
+
 # 2020-08-07
 
 **Added**:
