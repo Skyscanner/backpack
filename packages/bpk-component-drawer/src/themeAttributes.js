@@ -15,6 +15,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
+/* @flow strict */
+
 import { themeAttributes as linkAttributes } from 'bpk-component-link';
 
 export default [...linkAttributes];
