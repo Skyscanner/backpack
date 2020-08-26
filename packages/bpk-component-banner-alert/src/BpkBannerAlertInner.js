@@ -116,7 +116,7 @@ type Props = {
   onExpandToggle: OnExpandToggleHandler,
 
   // Only relevant when configuration == CONFIGURATION.DISMISSABLE
-  dismissButtonLabel: ?string,
+  dismissButtonLabel: string,
   onDismiss: OnDismissHandler,
 };
 
@@ -258,7 +258,7 @@ BpkBannerAlertInner.defaultProps = {
   onExpandToggle: null,
 
   // Only relevant when configuration == CONFIGURATION.DISMISSABLE
-  dismissButtonLabel: null,
+  dismissButtonLabel: '',
   onDismiss: null,
 };
 

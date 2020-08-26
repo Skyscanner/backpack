@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+/* @flow strict */
+
 import BpkProgress from './src/BpkProgress';
 import themeAttributes from './src/themeAttributes';
 

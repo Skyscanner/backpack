@@ -44,7 +44,7 @@ export type Props = {
   className: ?string,
   contentClassName: ?string,
   title: ?string,
-  closeLabel: ?string,
+  closeLabel: string,
   closeText: ?string,
   accessoryView: ?Element<any>,
 };
@@ -155,7 +155,7 @@ export const defaultProps = {
   onClose: () => null,
   className: null,
   contentClassName: null,
-  closeLabel: null,
+  closeLabel: '',
   closeText: null,
   wide: false,
   showHeader: true,
