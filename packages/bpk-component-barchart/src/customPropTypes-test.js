@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+/* @flow strict */
+
 import chartDataProp from './customPropTypes';
 
 const goodData = [
@@ -35,7 +37,7 @@ const badData = [
 describe('chartDataProp', () => {
   it('should fail if data is not an array', () => {
     const result = chartDataProp(
-      { data: {}, yScaleDataKey: 'price' },
+      { data: {}, xScaleDataKey: 'day', yScaleDataKey: 'price' },
       'data',
       'BpkBarchart',
     );

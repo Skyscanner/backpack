@@ -16,13 +16,18 @@
  * limitations under the License.
  */
 
+/* @flow strict */
+
 import isEqual from 'lodash/isEqual';
-import React, { Component } from 'react';
+import React, { Component, type ComponentType } from 'react';
 import { wrapDisplayName } from 'bpk-react-utils';
 
 // eslint-disable-next-line import/prefer-default-export
-export const withSelectedState = ComposedComponent => {
-  class WithSelectedState extends Component {
+export const withSelectedState = (ComposedComponent: ComponentType<any>) => {
+  type State = {
+    selectedPoint: ?any,
+  };
+  class WithSelectedState extends Component<{}, State> {
     constructor() {
       super();
 
@@ -31,13 +36,13 @@ export const withSelectedState = ComposedComponent => {
       };
     }
 
-    onBarClick = (e, { point }) => {
+    onBarClick = (e: SyntheticEvent<*>, { point }: { point: any }) => {
       this.setState({
         selectedPoint: point,
       });
     };
 
-    getBarSelection = point => isEqual(this.state.selectedPoint, point);
+    getBarSelection = (point: any) => isEqual(this.state.selectedPoint, point);
 
     render() {
       const { ...rest } = this.props;

@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+/* @flow strict */
+
 import React from 'react';
 import PropTypes from 'prop-types';
 import { borderRadiusXs } from 'bpk-tokens/tokens/base.es6';
@@ -42,7 +44,31 @@ const getBarHeight = (
 const isOutlier = (point, { yScaleDataKey, maxYValue }) =>
   point[yScaleDataKey] > maxYValue;
 
-const BpkBarchartBars = props => {
+type Props = {
+  data: Array<any>,
+  xScaleDataKey: string,
+  yScaleDataKey: string,
+  height: number,
+  xScale: Function,
+  yScale: Function,
+  maxYValue: number,
+  margin: {
+    top: number,
+    bottom: number,
+    left: number,
+    right: number,
+  },
+  getBarLabel: Function,
+  BarComponent: Function,
+  getBarSelection: Function,
+  outerPadding: number,
+  innerPadding: number,
+  onBarClick: Function,
+  onBarHover: Function,
+  onBarFocus: Function,
+};
+
+const BpkBarchartBars = (props: Props) => {
   const {
     outerPadding,
     innerPadding,
@@ -78,6 +104,7 @@ const BpkBarchartBars = props => {
         const outlier = isOutlier(point, props);
         const barHeight = getBarHeight(point, props);
         return (
+          // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
           <BarComponent
             key={`bar${i.toString()}`}
             x={x}

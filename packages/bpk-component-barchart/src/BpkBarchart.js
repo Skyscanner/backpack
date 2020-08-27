@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+/* @flow strict */
+
 import PropTypes from 'prop-types';
 import debounce from 'lodash.debounce';
 import React, { Component } from 'react';
@@ -45,17 +47,88 @@ const getClassName = cssModules(STYLES);
 const spacing = remToPx(spacingXs);
 const lineHeight = remToPx(lineHeightSm);
 
-const getMaxYValue = (dataPoints, yScaleDataKey, outlierPercentage) => {
+const getMaxYValue = (dataPoints: Function, outlierPercentage: ?number) => {
   const meanValue = dataPoints.reduce((d, t) => d + t, 0) / dataPoints.length;
   const maxYValue = Math.max(...dataPoints);
 
-  return outlierPercentage !== null
+  return outlierPercentage
     ? Math.min(maxYValue, meanValue * (outlierPercentage / 100) + meanValue)
     : maxYValue;
 };
 
-class BpkBarchart extends Component {
-  constructor(props) {
+type Props = {
+  data: any,
+  xScaleDataKey: string,
+  yScaleDataKey: string,
+  xAxisLabel: string,
+  yAxisLabel: string,
+  initialWidth: number,
+  initialHeight: number,
+  className: ?string,
+  leadingScrollIndicatorClassName: ?string,
+  trailingScrollIndicatorClassName: ?string,
+  outlierPercentage: ?number,
+  showGridlines: boolean,
+  xAxisMargin: number,
+  xAxisTickValue: Function,
+  xAxisTickOffset: number,
+  xAxisTickEvery: number,
+  yAxisMargin: number,
+  yAxisTickValue: Function,
+  yAxisNumTicks: ?number,
+  yAxisDomain: Array<?number>,
+  onBarClick: ?Function,
+  onBarHover: ?Function,
+  onBarFocus: ?Function,
+  getBarLabel: Function,
+  getBarSelection: Function,
+  BarComponent: Function,
+  disableDataTable: boolean,
+};
+
+type State = {
+  width: number,
+  height: number,
+};
+
+class BpkBarchart extends Component<Props, State> {
+  xScale: any;
+
+  yScale: any;
+
+  onWindowResize: any;
+
+  svgEl: any;
+
+  static defaultProps = {
+    data: null,
+    className: null,
+    leadingScrollIndicatorClassName: null,
+    trailingScrollIndicatorClassName: null,
+    outlierPercentage: null,
+    showGridlines: false,
+    xAxisMargin: 2 * (lineHeight + spacing),
+    xAxisTickValue: identity,
+    xAxisTickOffset: 0,
+    xAxisTickEvery: 1,
+    yAxisMargin: 4 * lineHeight + spacing,
+    yAxisTickValue: identity,
+    yAxisNumTicks: null,
+    yAxisDomain: [null, null],
+    onBarClick: null,
+    onBarHover: null,
+    onBarFocus: null,
+    getBarLabel: (
+      point: Array<*>,
+      xScaleDataKey: number,
+      yScaleDataKey: number,
+    ) => `${point[xScaleDataKey]} - ${point[yScaleDataKey]}`,
+    getBarSelection: () => false,
+    BarComponent: BpkBarchartBar,
+    disableDataTable: false,
+  };
+
+  constructor(props: Props) {
     super(props);
 
     this.state = {
@@ -137,7 +210,6 @@ class BpkBarchart extends Component {
     const height = this.state.height - margin.bottom - margin.top;
     const maxYValue = getMaxYValue(
       data.map(d => d[yScaleDataKey]),
-      yScaleDataKey,
       outlierPercentage,
     );
 
@@ -160,6 +232,7 @@ class BpkBarchart extends Component {
             yAxisLabel={yAxisLabel}
           />
         )}
+        {/* $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'. */}
         <svg
           xmlns="http://www.w3.org/2000/svg"
           className={classNames.join(' ')}
@@ -255,31 +328,6 @@ BpkBarchart.propTypes = {
   getBarSelection: PropTypes.func,
   BarComponent: PropTypes.func,
   disableDataTable: PropTypes.bool,
-};
-
-BpkBarchart.defaultProps = {
-  data: null,
-  className: null,
-  leadingScrollIndicatorClassName: null,
-  trailingScrollIndicatorClassName: null,
-  outlierPercentage: null,
-  showGridlines: false,
-  xAxisMargin: 2 * (lineHeight + spacing),
-  xAxisTickValue: identity,
-  xAxisTickOffset: 0,
-  xAxisTickEvery: 1,
-  yAxisMargin: 4 * lineHeight + spacing,
-  yAxisTickValue: identity,
-  yAxisNumTicks: null,
-  yAxisDomain: [null, null],
-  onBarClick: null,
-  onBarHover: null,
-  onBarFocus: null,
-  getBarLabel: (point, xScaleDataKey, yScaleDataKey) =>
-    `${point[xScaleDataKey]} - ${point[yScaleDataKey]}`,
-  getBarSelection: () => false,
-  BarComponent: BpkBarchartBar,
-  disableDataTable: false,
 };
 
 export default BpkBarchart;

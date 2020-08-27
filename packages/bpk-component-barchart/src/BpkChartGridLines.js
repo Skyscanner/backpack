@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+/* @flow strict */
+
 import React from 'react';
 import PropTypes from 'prop-types';
 import { cssModules } from 'bpk-react-utils';
@@ -26,7 +28,24 @@ import STYLES from './BpkChartGridLines.scss';
 
 const getClassName = cssModules(STYLES);
 
-const BpkChartGridLines = props => {
+type Props = {
+  width: number,
+  height: number,
+  margin: {
+    top: number,
+    bottom: number,
+    left: number,
+    right: number,
+  },
+
+  scale: Function,
+  orientation: string,
+  numTicks: ?number,
+  tickOffset: number,
+  tickEvery: number,
+};
+
+const BpkChartGridLines = (props: Props) => {
   const {
     orientation,
     scale,
@@ -60,6 +79,7 @@ const BpkChartGridLines = props => {
   };
 
   const toLine = (tick, i) => (
+    // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
     <line
       className={getClassName('bpk-chart__grid-line')}
       key={`${orientation}gridline${i.toString()}`}

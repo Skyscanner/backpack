@@ -16,24 +16,26 @@
  * limitations under the License.
  */
 
-const center = scale => {
+/* @flow strict */
+
+const center = (scale: Function) => {
   let offset = scale.bandwidth() / 2;
   if (scale.round()) {
     offset = Math.round(offset);
   }
-  return d => scale(d) + offset;
+  return (d: number) => scale(d) + offset;
 };
 
-const identity = x => x;
+const identity = (x: any) => x;
 
-const remToPx = value => {
-  let parsed = null;
+const remToPx = (value: string) => {
+  let parsed = 0;
 
   if (/rem$/.test(value)) {
     parsed = parseFloat(value.replace(/rem/, '')) * 16;
   }
 
-  return parsed || null;
+  return parsed;
 };
 
 export { center, identity, remToPx };
