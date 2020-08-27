@@ -96,7 +96,7 @@ class BpkBarchart extends Component<Props, State> {
 
   yScale: any;
 
-  onWindowResize: any;
+  onWindowResize: Function;
 
   svgEl: any;
 

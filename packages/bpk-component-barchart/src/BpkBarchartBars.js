@@ -63,9 +63,9 @@ type Props = {
   getBarSelection: Function,
   outerPadding: number,
   innerPadding: number,
-  onBarClick: Function,
-  onBarHover: Function,
-  onBarFocus: Function,
+  onBarClick: ?(any?: any, any?: any) => mixed,
+  onBarHover: ?(any?: any, any?: any) => mixed,
+  onBarFocus: ?(any?: any, any?: any) => mixed,
 };
 
 const BpkBarchartBars = (props: Props) => {

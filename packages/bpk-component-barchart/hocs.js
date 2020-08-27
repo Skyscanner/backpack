@@ -36,7 +36,7 @@ export const withSelectedState = (ComposedComponent: ComponentType<any>) => {
       };
     }
 
-    onBarClick = (e: SyntheticEvent<*>, { point }: { point: any }) => {
+    onBarClick = (e: SyntheticEvent<any>, { point }: { point: any }) => {
       this.setState({
         selectedPoint: point,
       });

@@ -28,7 +28,7 @@ import STYLES from './BpkChartDataTable.scss';
 const getClassName = cssModules(STYLES);
 
 type Props = {
-  data: any,
+  data: Array<any>,
   xScaleDataKey: string,
   yScaleDataKey: string,
   xAxisLabel: string,
