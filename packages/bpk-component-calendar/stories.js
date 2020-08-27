@@ -15,6 +15,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
+/* @flow strict */
+
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { storiesOf } from '@storybook/react';
@@ -45,8 +48,20 @@ import BpkCalendar, {
   BpkCalendarDate,
 } from './index';
 
-class CalendarContainer extends Component {
-  constructor(props) {
+type Props = {
+  selectTodaysDate: boolean,
+};
+
+type State = {
+  date: ?Date,
+};
+
+class CalendarContainer extends Component<Props, State> {
+  static defaultProps = {
+    selectTodaysDate: true,
+  };
+
+  constructor(props: Props) {
     super(props);
 
     const date = this.props.selectTodaysDate ? new Date() : null;
@@ -73,10 +88,6 @@ class CalendarContainer extends Component {
 
 CalendarContainer.propTypes = {
   selectTodaysDate: PropTypes.bool,
-};
-
-CalendarContainer.defaultProps = {
-  selectTodaysDate: true,
 };
 
 storiesOf('bpk-component-calendar', module)

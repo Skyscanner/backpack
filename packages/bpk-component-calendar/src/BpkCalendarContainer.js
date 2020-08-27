@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+/* @flow strict */
+
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { isRTL } from 'bpk-react-utils';
@@ -63,9 +65,36 @@ const determineFocusedDate = (
   return minDate;
 };
 
-const withCalendarState = Calendar => {
-  class BpkCalendarContainer extends Component {
-    constructor(props) {
+const withCalendarState = (Calendar: Function) => {
+  type Props = {
+    date: Date,
+    fixedWidth: boolean,
+    maxDate: Date,
+    minDate: Date,
+    onDateSelect: ?(Date) => mixed,
+    onMonthChange: ?(any, Object) => mixed,
+    selectedDate: ?Date,
+    initiallyFocusedDate: ?Date,
+  };
+
+  type State = {
+    focusedDate: any,
+    preventKeyboardFocus: boolean,
+  };
+
+  class BpkCalendarContainer extends Component<Props, State> {
+    static defaultProps = {
+      date: new Date(),
+      fixedWidth: true,
+      maxDate: addMonths(new Date(), 12),
+      minDate: new Date(),
+      onDateSelect: null,
+      onMonthChange: null,
+      selectedDate: null,
+      initiallyFocusedDate: null,
+    };
+
+    constructor(props: Props) {
       super(props);
 
       const minDate = startOfDay(this.props.minDate);
@@ -86,7 +115,7 @@ const withCalendarState = Calendar => {
       };
     }
 
-    UNSAFE_componentWillReceiveProps(nextProps) {
+    UNSAFE_componentWillReceiveProps(nextProps: Props) {
       // `date` is to be DEPRECATED in favour of `selectedDate`
       const rawNextSelectedDate = nextProps.selectedDate || nextProps.date;
 
@@ -99,7 +128,10 @@ const withCalendarState = Calendar => {
       }
     }
 
-    handleDateFocus = (event, { date, source }) => {
+    handleDateFocus = (
+      event: SyntheticEvent,
+      { date, source }: { date: Date, source: any },
+    ) => {
       const { onMonthChange } = this.props;
       const focusedDate = dateToBoundaries(
         date,
@@ -121,7 +153,7 @@ const withCalendarState = Calendar => {
       );
     };
 
-    handleDateSelect = date => {
+    handleDateSelect = (date: Date) => {
       const { onDateSelect } = this.props;
       const keyboardFocusState = { preventKeyboardFocus: false };
 
@@ -138,7 +170,10 @@ const withCalendarState = Calendar => {
       }
     };
 
-    handleMonthChange = (event, { month, source }) => {
+    handleMonthChange = (
+      event: SyntheticEvent,
+      { month, source }: { month: Date, source: any },
+    ) => {
       this.handleDateFocus(event, {
         date: setMonthYear(
           this.state.focusedDate,
@@ -149,7 +184,7 @@ const withCalendarState = Calendar => {
       });
     };
 
-    handleDateKeyDown = event => {
+    handleDateKeyDown = (event: SyntheticEvent) => {
       event.persist();
       const reverse = isRTL() ? -1 : 1;
       const { focusedDate } = this.state;
@@ -244,6 +279,7 @@ const withCalendarState = Calendar => {
       const month = startOfMonth(sanitisedFocusedDate);
 
       return (
+        // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
         <Calendar
           onDateClick={this.handleDateSelect}
           onDateKeyDown={this.handleDateKeyDown}
@@ -270,17 +306,6 @@ const withCalendarState = Calendar => {
     onMonthChange: PropTypes.func,
     selectedDate: PropTypes.instanceOf(Date),
     initiallyFocusedDate: PropTypes.instanceOf(Date),
-  };
-
-  BpkCalendarContainer.defaultProps = {
-    date: null,
-    fixedWidth: true,
-    maxDate: addMonths(new Date(), 12),
-    minDate: new Date(),
-    onDateSelect: null,
-    onMonthChange: null,
-    selectedDate: null,
-    initiallyFocusedDate: null,
   };
 
   return BpkCalendarContainer;

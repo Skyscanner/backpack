@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+/* @flow strict */
+
 import BpkInput, { withOpenEvents } from 'bpk-component-input';
 import BpkModal from 'bpk-component-modal';
 import BpkPopover from 'bpk-component-popover';
@@ -31,8 +33,58 @@ const getClassName = cssModules(STYLES);
 
 const Input = withOpenEvents(BpkInput);
 
-class BpkDatepicker extends Component {
-  constructor(props) {
+export type Props = {
+  changeMonthLabel: string,
+  closeButtonText: string,
+  daysOfWeek: CustomPropTypes.DaysOfWeek,
+  formatDate: Function,
+  formatDateFull: Function,
+  formatMonth: Function,
+  id: string,
+  title: string,
+  getApplicationElement: Function,
+  weekStartsOn: number,
+  calendarComponent: typeof BpkCalendar,
+  date: ?Date,
+  dateModifiers: CustomPropTypes.DateModifiers,
+  inputProps: Object,
+  markOutsideDays: boolean,
+  markToday: boolean,
+  maxDate: Date,
+  minDate: Date,
+  onDateSelect: ?Function,
+  onMonthChange: ?Function,
+  showWeekendSeparator: boolean,
+  initiallyFocusedDate: ?Date,
+  renderTarget: ?Function,
+  isOpen: boolean,
+  valid: ?boolean,
+};
+
+type State = {
+  isOpen: boolean,
+};
+
+class BpkDatepicker extends Component<Props, State> {
+  static defaultProps = {
+    calendarComponent: BpkCalendar,
+    date: null,
+    dateModifiers: BpkCalendar.defaultProps.dateModifiers,
+    inputProps: {},
+    markOutsideDays: BpkCalendar.defaultProps.markOutsideDays,
+    markToday: BpkCalendar.defaultProps.markToday,
+    maxDate: BpkCalendar.defaultProps.maxDate,
+    minDate: BpkCalendar.defaultProps.minDate,
+    onDateSelect: null,
+    onMonthChange: null,
+    showWeekendSeparator: BpkCalendar.defaultProps.showWeekendSeparator,
+    initiallyFocusedDate: null,
+    renderTarget: null,
+    isOpen: false,
+    valid: null,
+  };
+
+  constructor(props: Props) {
     super(props);
 
     this.state = {
@@ -52,7 +104,7 @@ class BpkDatepicker extends Component {
     });
   };
 
-  handleDateSelect = dateObj => {
+  handleDateSelect = (dateObj: any) => {
     this.setState({
       isOpen: false,
     });
@@ -93,6 +145,7 @@ class BpkDatepicker extends Component {
 
     // The following props are not used in render
     delete rest.onDateSelect;
+    // $FlowFixMe - see above.
     delete rest.isOpen;
 
     const inputComponent = (
@@ -152,6 +205,7 @@ class BpkDatepicker extends Component {
               {calendar}
             </BpkModal>
           ) : (
+            // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
             <BpkPopover
               id={`${id}-popover`}
               target={inputComponent}
@@ -200,24 +254,6 @@ BpkDatepicker.propTypes = {
   renderTarget: PropTypes.func,
   isOpen: PropTypes.bool,
   valid: PropTypes.bool,
-};
-
-BpkDatepicker.defaultProps = {
-  calendarComponent: BpkCalendar,
-  date: null,
-  dateModifiers: BpkCalendar.defaultProps.dateModifiers,
-  inputProps: {},
-  markOutsideDays: BpkCalendar.defaultProps.markOutsideDays,
-  markToday: BpkCalendar.defaultProps.markToday,
-  maxDate: BpkCalendar.defaultProps.maxDate,
-  minDate: BpkCalendar.defaultProps.minDate,
-  onDateSelect: null,
-  onMonthChange: null,
-  showWeekendSeparator: BpkCalendar.defaultProps.showWeekendSeparator,
-  initiallyFocusedDate: null,
-  renderTarget: null,
-  isOpen: false,
-  valid: null,
 };
 
 export default BpkDatepicker;

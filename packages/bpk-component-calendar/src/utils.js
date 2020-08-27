@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+/* @flow strict */
+
 import {
   calendarDaySize,
   calendarDaySpacing,
@@ -34,7 +36,7 @@ const splitToken = value => {
   return [parseFloat(val), unit];
 };
 
-export const getCalendarGridWidth = (multiplier = 1) => {
+export const getCalendarGridWidth = (multiplier: number = 1) => {
   const [sizeValue, sizeUnit] = splitToken(calendarDaySize);
   const [spacingValue, spacingUnit] = splitToken(calendarDaySpacing);
 
@@ -48,7 +50,7 @@ export const getCalendarGridWidth = (multiplier = 1) => {
   return `${width}${sizeUnit}`;
 };
 
-export const getTransformStyles = transformValue => {
+export const getTransformStyles = (transformValue: string | number) => {
   const transform = `translateX(${transformValue})`;
   return {
     transform,

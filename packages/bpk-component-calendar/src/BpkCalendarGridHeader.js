@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+/* @flow strict */
+
 import PropTypes from 'prop-types';
 import React, { PureComponent } from 'react';
 import { cssModules } from 'bpk-react-utils';
@@ -33,7 +35,16 @@ const getClassName = cssModules(STYLES);
 /*
   WeekDay - table header cells such as "Mon", "Tue", "Wed"...
 */
-const WeekDay = props => {
+
+type WeekDayProps = {
+  weekDay: CustomPropTypes.WeekDay,
+  weekDayKey: CustomPropTypes.WeekDayKey,
+  isFirstDayOfWeekend: boolean,
+  isLastDayOfWeekend: boolean,
+  Element: CustomPropTypes.ReactComponent,
+};
+
+const WeekDay = (props: WeekDayProps) => {
   const {
     weekDay,
     weekDayKey,
@@ -77,7 +88,22 @@ WeekDay.defaultProps = {
   weekDayKey: 'nameAbbr',
 };
 
-class BpkCalendarGridHeader extends PureComponent {
+type CalendarProps = {
+  showWeekendSeparator: boolean,
+  daysOfWeek: CustomPropTypes.DaysOfWeek,
+  weekStartsOn: number,
+  isTableHead: boolean,
+  className: ?string,
+  weekDayKey: CustomPropTypes.WeekDayKey,
+};
+
+class BpkCalendarGridHeader extends PureComponent<CalendarProps> {
+  static defaultProps = {
+    isTableHead: false,
+    className: null,
+    weekDayKey: 'nameAbbr',
+  };
+
   render() {
     const {
       isTableHead,
@@ -134,12 +160,6 @@ BpkCalendarGridHeader.propTypes = {
   isTableHead: PropTypes.bool,
   className: PropTypes.string,
   weekDayKey: CustomPropTypes.WeekDayKey,
-};
-
-BpkCalendarGridHeader.defaultProps = {
-  isTableHead: false,
-  className: null,
-  weekDayKey: 'nameAbbr',
 };
 
 export default BpkCalendarGridHeader;

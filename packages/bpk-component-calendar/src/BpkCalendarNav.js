@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+/* @flow strict */
+
 import PropTypes from 'prop-types';
 import React from 'react';
 import ArrowLeftIcon from 'bpk-component-icon/lg/arrow-left';
@@ -45,7 +47,18 @@ const changeMonth = ({ month, min, max, callback, source }) => event => {
   }
 };
 
-const BpkCalendarNav = props => {
+type Props = {
+  id: string,
+  month: Date,
+  minDate: Date,
+  maxDate: Date,
+  formatMonth: (date: Date) => any,
+  onMonthChange: Function,
+  changeMonthLabel: string,
+  disabled: boolean,
+};
+
+const BpkCalendarNav = (props: Props) => {
   const {
     id,
     month,

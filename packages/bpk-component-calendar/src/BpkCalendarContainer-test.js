@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+/* @flow strict */
+
 import React from 'react';
 import renderer from 'react-test-renderer';
 import { mount } from 'enzyme';
@@ -128,6 +130,8 @@ describe('BpkCalendarContainer', () => {
   it('should set state only once on date selection', () => {
     const setStateSpy = jest.fn();
     const oldSetState = BpkCalendarContainer.prototype.setState;
+
+    // $FlowFixMe
     BpkCalendarContainer.prototype.setState = setStateSpy;
 
     const calendar = mount(
@@ -152,6 +156,7 @@ describe('BpkCalendarContainer', () => {
     grid.prop('onDateClick')(new Date(2010, 1, 20));
     expect(setStateSpy.mock.calls.length).toBe(1);
 
+    // $FlowFixMe
     BpkCalendarContainer.prototype.setState = oldSetState;
   });
 

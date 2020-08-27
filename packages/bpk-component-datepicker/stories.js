@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+/* @flow strict */
+
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { memoize } from 'lodash';
@@ -48,7 +50,7 @@ import {
   composeCalendar,
 } from 'bpk-component-calendar';
 
-import BpkDatepicker from './index';
+import BpkDatepicker, { type DatePickerProps } from './index';
 
 const formatDate = date => format(date, 'DD/MM/YYYY');
 
@@ -71,8 +73,16 @@ const inputPropsWithEventHandlers = {
   large: true,
 };
 
-class CalendarContainer extends Component {
-  constructor(props) {
+type ContainerState = {
+  date: ?Date,
+};
+
+class CalendarContainer extends Component<DatePickerProps, ContainerState> {
+  static defaultProps = {
+    date: null,
+  };
+
+  constructor(props: DatePickerProps) {
     super(props);
 
     this.state = {
@@ -107,10 +117,6 @@ CalendarContainer.propTypes = {
   date: PropTypes.instanceOf(Date),
 };
 
-CalendarContainer.defaultProps = {
-  date: null,
-};
-
 const getBackgroundForDate = memoize(
   () => [colorSagano, colorBagan, colorPetra][parseInt(Math.random() * 3, 10)],
 );
@@ -135,7 +141,16 @@ ColoredCalendarDate.propTypes = {
   date: PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
 };
 
-class ReturnDatepicker extends Component {
+type ReturnDatepickerState = {
+  departDate: Date,
+  returnDate: Date,
+};
+
+class ReturnDatepicker extends Component<{}, ReturnDatepickerState> {
+  minDate: Date;
+
+  maxDate: Date;
+
   constructor() {
     super();
 

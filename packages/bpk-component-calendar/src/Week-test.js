@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+/* @flow strict */
+
 import React from 'react';
 import { shallow } from 'enzyme/build';
 import startOfDay from 'date-fns/start_of_day';

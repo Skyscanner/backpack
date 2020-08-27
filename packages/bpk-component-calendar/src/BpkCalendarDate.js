@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+/* @flow strict */
+
 import PropTypes from 'prop-types';
 import React, { PureComponent } from 'react';
 import { cssModules } from 'bpk-react-utils';
@@ -33,10 +35,50 @@ export const CELL_TYPES = {
 };
 
 const navigatedByMonthNudger = () =>
+  // $FlowFixMe - Ignoring this as activeElement can be null
   document.activeElement.id &&
   document.activeElement.id.indexOf('month_nudger') !== -1;
 
-class BpkCalendarDate extends PureComponent {
+type Props = {
+  date: Date,
+  cellType: ?$Keys<typeof CELL_TYPES>,
+  className: ?string,
+  isBlocked: boolean,
+  isFocused: boolean,
+  isKeyboardFocusable: boolean,
+  isOutside: boolean,
+  isSelected: boolean,
+  isToday: boolean,
+  modifiers: CustomPropTypes.DateModifiers,
+  onClick: ?(date: Date) => mixed,
+  onDateKeyDown: ?() => mixed,
+  preventKeyboardFocus: boolean,
+  style: ?Object,
+};
+
+export const defaultProps = {
+  className: null,
+  cellType: null,
+  isBlocked: false,
+  isFocused: false,
+  isKeyboardFocusable: true,
+  isOutside: false,
+  isSelected: false,
+  isToday: false,
+  modifiers: {},
+  onClick: null,
+  onDateKeyDown: null,
+  preventKeyboardFocus: true,
+  style: null,
+};
+
+class BpkCalendarDate extends PureComponent<Props> {
+  button: HTMLElement;
+
+  static defaultProps = {
+    ...defaultProps,
+  };
+
   componentDidMount() {
     if (!this.props.preventKeyboardFocus && this.props.isFocused) {
       // If we got here by clicking the nudger, don't focus this date
@@ -47,7 +89,7 @@ class BpkCalendarDate extends PureComponent {
     }
   }
 
-  componentDidUpdate(prevProps) {
+  componentDidUpdate(prevProps: Props) {
     if (
       !this.props.isKeyboardFocusable ||
       this.props.preventKeyboardFocus ||
@@ -76,7 +118,7 @@ class BpkCalendarDate extends PureComponent {
     }
   }
 
-  getButtonRef = button => {
+  getButtonRef = (button: HTMLElement) => {
     this.button = button;
   };
 
@@ -132,9 +174,11 @@ class BpkCalendarDate extends PureComponent {
       classNames.push(className);
     }
 
+    // $FlowFixMe - We do not want to needlessly spread to the div but still require this for functions
     delete buttonProps.preventKeyboardFocus;
 
     return (
+      // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
       <button
         type="button"
         style={style}
@@ -178,25 +222,5 @@ export const propTypes = {
 };
 
 BpkCalendarDate.propTypes = { ...propTypes };
-
-export const defaultProps = {
-  className: null,
-  cellType: null,
-  isBlocked: false,
-  isFocused: false,
-  isKeyboardFocusable: true,
-  isOutside: false,
-  isSelected: false,
-  isToday: false,
-  modifiers: {},
-  onClick: null,
-  onDateKeyDown: null,
-  preventKeyboardFocus: true,
-  style: null,
-};
-
-BpkCalendarDate.defaultProps = {
-  ...defaultProps,
-};
 
 export default BpkCalendarDate;

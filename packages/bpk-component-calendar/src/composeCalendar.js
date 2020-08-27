@@ -16,17 +16,58 @@
  * limitations under the License.
  */
 
+/* @flow strict */
+
 import PropTypes from 'prop-types';
 import React from 'react';
 import { cssModules } from 'bpk-react-utils';
 
 import CustomPropTypes from './custom-proptypes';
 import STYLES from './BpkCalendar.scss';
+import BpkCalendarNav from './BpkCalendarNav';
+import BpkCalendarGridHeader from './BpkCalendarGridHeader';
+import BpkCalendarGrid from './BpkCalendarGrid';
+import BpkCalendarDate from './BpkCalendarDate';
 
 const getClassName = cssModules(STYLES);
 
-const composeCalendar = (Nav, GridHeader, Grid, CalendarDate) => {
-  const BpkCalendar = props => {
+const composeCalendar = (
+  Nav: typeof BpkCalendarNav,
+  GridHeader: typeof BpkCalendarGridHeader,
+  Grid: typeof BpkCalendarGrid,
+  CalendarDate: typeof BpkCalendarDate,
+) => {
+  type Props = {
+    changeMonthLabel: string,
+    daysOfWeek: CustomPropTypes.DaysOfWeek,
+    formatDateFull: () => mixed,
+    formatMonth: () => mixed,
+    id: string,
+    maxDate: Date,
+    minDate: Date,
+    month: Date,
+    weekStartsOn: number,
+    className: string,
+    dateModifiers: CustomPropTypes.DateModifiers,
+    fixedWidth: boolean,
+    focusedDate: Date,
+    markOutsideDays: boolean,
+    markToday: boolean,
+    onMonthChange: () => mixed,
+    onDateClick: () => mixed,
+    onDateKeyDown: () => mixed,
+    preventKeyboardFocus: boolean,
+    selectedDate: Date,
+    showWeekendSeparator: boolean,
+    gridClassName: string,
+    weekDayKey: string,
+    navProps: Object,
+    headerProps: Object,
+    gridProps: Object,
+    dateProps: Object,
+  };
+
+  const BpkCalendar = (props: Props) => {
     const classNames = [getClassName('bpk-calendar')];
 
     const {

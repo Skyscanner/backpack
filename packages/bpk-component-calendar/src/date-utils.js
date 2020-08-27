@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+/* @flow strict */
+
 import startOfMonth from 'date-fns/start_of_month';
 import endOfMonth from 'date-fns/end_of_month';
 import lastDayOfMonth from 'date-fns/last_day_of_month';
@@ -37,6 +39,8 @@ import startOfDay from 'date-fns/start_of_day';
 import parse from 'date-fns/parse';
 import format from 'date-fns/format';
 
+import CustomPropTypes from './custom-proptypes';
+
 const ONE_MINUTE_IN_MS = 60 * 1000;
 const ONE_HOUR_IN_MS = 60 * ONE_MINUTE_IN_MS;
 
@@ -54,7 +58,7 @@ function utc(year, month, date) {
   return new Date(Date.UTC(year, month, date));
 }
 
-function daysInMonth(year, month) {
+function daysInMonth(year: number, month: number) {
   // Gets the last day of the month specified
   return new Date(year, month + 1, 0).getDate();
 }
@@ -89,7 +93,7 @@ function startOfWeek(year, month, day, weekStartsOn) {
   return [date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate()];
 }
 
-function getCalendarMonthWeeks(date, weekStartsOn) {
+function getCalendarMonthWeeks(date: Date, weekStartsOn: number) {
   let [year, month, day] = startOfWeek(
     date.getFullYear(),
     date.getMonth(),
@@ -110,7 +114,7 @@ function getCalendarMonthWeeks(date, weekStartsOn) {
   return weeksInMonth;
 }
 
-function getLastDayOfWeekend(daysOfWeek) {
+function getLastDayOfWeekend(daysOfWeek: CustomPropTypes.DaysOfWeek) {
   const weekend = daysOfWeek.map(day => day.isWeekend);
 
   if (weekend[0] && weekend[6]) {
@@ -120,7 +124,7 @@ function getLastDayOfWeekend(daysOfWeek) {
   return daysOfWeek[weekend.lastIndexOf(true)].index;
 }
 
-function getFirstDayOfWeekend(daysOfWeek) {
+function getFirstDayOfWeekend(daysOfWeek: CustomPropTypes.DaysOfWeek) {
   const weekend = daysOfWeek.map(day => day.isWeekend);
 
   if (weekend[0] && weekend[6]) {
@@ -130,7 +134,10 @@ function getFirstDayOfWeekend(daysOfWeek) {
   return daysOfWeek[weekend.indexOf(true)].index;
 }
 
-const orderDaysOfWeek = (daysOfWeek, weekStartsOn) => {
+const orderDaysOfWeek = (
+  daysOfWeek: CustomPropTypes.DaysOfWeek,
+  weekStartsOn: number,
+) => {
   // Sorted in [sun, mon, ..., sat]
   const sortedDaysOfWeek = daysOfWeek.slice().sort((a, b) => a.index - b.index);
   // Ordered according to weekStartsOn, e.g. [mon, tue, ..., sun]
@@ -141,14 +148,14 @@ const orderDaysOfWeek = (daysOfWeek, weekStartsOn) => {
 };
 
 /* Takes arbitrary dates and returns the beginning of the first and enf of the last month containing these dates  */
-function getMonthRange(from, to) {
+function getMonthRange(from: Date, to: Date) {
   return {
     min: startOfMonth(from),
     max: endOfMonth(to),
   };
 }
 
-function getMonthsInRange(from, to) {
+function getMonthsInRange(from: Date, to: Date) {
   const { min, max } = getMonthRange(from, to);
   let currentMonth = startOfMonth(from);
   const monthsInRange = [];
@@ -161,7 +168,7 @@ function getMonthsInRange(from, to) {
   return monthsInRange;
 }
 
-const dateToBoundaries = (date, minDate, maxDate) => {
+const dateToBoundaries = (date: Date, minDate: Date, maxDate: Date) => {
   if (isWithinRange(date, minDate, maxDate)) {
     return date;
   }
@@ -171,12 +178,12 @@ const dateToBoundaries = (date, minDate, maxDate) => {
   return maxDate;
 };
 
-const setMonthYear = (date, newMonth, newYear) =>
+const setMonthYear = (date: Date, newMonth: number, newYear: number) =>
   setYear(setMonth(date, newMonth), newYear);
 
 const parseIsoDate = parse;
-const formatIsoDate = date => format(date, 'YYYY-MM-DD');
-const formatIsoMonth = date => format(date, 'YYYY-MM');
+const formatIsoDate = (date: Date) => format(date, 'YYYY-MM-DD');
+const formatIsoMonth = (date: Date) => format(date, 'YYYY-MM');
 
 export {
   getCalendarMonthWeeks,

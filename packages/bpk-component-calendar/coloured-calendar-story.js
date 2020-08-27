@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+/* @flow strict */
+
 /* eslint-disable react/prop-types */
 
 import React, { Component } from 'react';
@@ -86,8 +88,20 @@ const StatefulCalendar = withCalendarState(
   composeCalendar(null, BpkCalendarGridHeader, BpkCalendarGrid, MyCalendarDate),
 );
 
-class ColoredCalendar extends Component {
-  constructor(props) {
+type Props = {
+  selectTodaysDate: boolean,
+};
+
+type State = {
+  date: ?Date,
+};
+
+class ColoredCalendar extends Component<Props, State> {
+  static defaultProps = {
+    selectTodaysDate: true,
+  };
+
+  constructor(props: Props) {
     super(props);
 
     const date = this.props.selectTodaysDate ? new Date() : null;
@@ -114,10 +128,6 @@ class ColoredCalendar extends Component {
 
 ColoredCalendar.propTypes = {
   selectTodaysDate: PropTypes.bool,
-};
-
-ColoredCalendar.defaultProps = {
-  selectTodaysDate: true,
 };
 
 export default ColoredCalendar;

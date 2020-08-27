@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+/* @flow strict */
+
 import BpkCalendarContainer, {
   withCalendarState,
 } from './src/BpkCalendarContainer';

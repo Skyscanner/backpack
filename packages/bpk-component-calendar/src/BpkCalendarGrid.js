@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+/* @flow strict */
+
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { cssModules } from 'bpk-react-utils';
@@ -46,8 +48,62 @@ const getClassName = cssModules(STYLES);
 /*
   BpkCalendarGrid - the grid representing a whole month
 */
-class BpkCalendarGrid extends Component {
-  constructor(props) {
+
+type Props = {
+  DateComponent: Function,
+  daysOfWeek: CustomPropTypes.DaysOfWeek,
+  formatDateFull: Function,
+  formatMonth: Function,
+  month: Date,
+  weekStartsOn: number,
+  className: ?string,
+  cellClassName: ?string,
+  dateModifiers: CustomPropTypes.DateModifiers,
+  focusedDate: Date,
+  isKeyboardFocusable: boolean,
+  markOutsideDays: boolean,
+  markToday: boolean,
+  maxDate: ?Date,
+  minDate: ?Date,
+  onDateClick: ?() => mixed,
+  onDateKeyDown: ?() => mixed,
+  preventKeyboardFocus: boolean,
+  selectedDate: Date,
+  selectionEnd: ?Date,
+  selectionStart: ?Date,
+  showWeekendSeparator: boolean,
+  ignoreOutsideDate: boolean,
+  dateProps: ?Object,
+};
+
+type State = {
+  calendarMonthWeeks: any,
+  daysOfWeek: any,
+};
+
+class BpkCalendarGrid extends Component<Props, State> {
+  static defaultProps = {
+    className: null,
+    dateModifiers: {},
+    focusedDate: null,
+    isKeyboardFocusable: true,
+    markOutsideDays: true,
+    markToday: true,
+    maxDate: null,
+    minDate: null,
+    onDateClick: null,
+    onDateKeyDown: null,
+    preventKeyboardFocus: false,
+    selectedDate: null,
+    selectionEnd: null,
+    selectionStart: null,
+    showWeekendSeparator: true,
+    ignoreOutsideDate: false,
+    dateProps: null,
+    cellClassName: null,
+  };
+
+  constructor(props: Props) {
     super(props);
 
     // We cache expensive calculations (and identities) in state
@@ -60,7 +116,7 @@ class BpkCalendarGrid extends Component {
     };
   }
 
-  UNSAFE_componentWillReceiveProps(nextProps) {
+  UNSAFE_componentWillReceiveProps(nextProps: Props) {
     // We cache expensive calculations (and identities) in state
     if (
       nextProps.daysOfWeek !== this.props.daysOfWeek ||

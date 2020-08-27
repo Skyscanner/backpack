@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+/* @flow strict */
+
 /* eslint-disable react/prop-types */
 
 import React, { Component } from 'react';
@@ -161,8 +163,28 @@ const MyReturnCalendar = withCalendarState(
   ),
 );
 
-class MonthViewCalendar extends Component {
-  constructor(props) {
+type Props = {
+  minDate: Date,
+  maxDate: Date,
+  departureDate: Date,
+  returnDate: Date,
+  weekStartsOn: number,
+};
+
+type State = {
+  departDate: Date,
+  returnDate: Date,
+};
+
+class MonthViewCalendar extends Component<Props, State> {
+  static defaultProps = {
+    minDate: startOfDay(new Date()),
+    maxDate: startOfDay(addMonths(new Date(), 12)),
+    departureDate: startOfDay(addDays(new Date(), 1)),
+    returnDate: startOfDay(addDays(new Date(), 4)),
+  };
+
+  constructor(props: Props) {
     super(props);
     this.state = {
       departDate: props.departureDate,
@@ -174,6 +196,7 @@ class MonthViewCalendar extends Component {
     const { maxDate, minDate, ...rest } = this.props;
     return (
       <div style={{ display: 'flex', justifyContent: 'space-around' }}>
+        {/* $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'. */}
         <MyDepartCalendar
           id="myCalendar"
           formatMonth={formatMonth}
@@ -201,6 +224,7 @@ class MonthViewCalendar extends Component {
             borderRight: `1px solid ${colorSkyGrayTint06}`,
           }}
         />
+        {/* $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'. */}
         <MyReturnCalendar
           id="myCalendar"
           formatMonth={formatMonth}
@@ -232,13 +256,6 @@ MonthViewCalendar.propTypes = {
   departureDate: PropTypes.instanceOf(Date),
   returnDate: PropTypes.instanceOf(Date),
   weekStartsOn: PropTypes.number.isRequired,
-};
-
-MonthViewCalendar.defaultProps = {
-  minDate: startOfDay(new Date()),
-  maxDate: startOfDay(addMonths(new Date(), 12)),
-  departureDate: startOfDay(addDays(new Date(), 1)),
-  returnDate: startOfDay(addDays(new Date(), 4)),
 };
 
 export default MonthViewCalendar;

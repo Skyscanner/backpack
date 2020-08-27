@@ -16,8 +16,10 @@
  * limitations under the License.
  */
 
+/* @flow strict */
+
 import PropTypes from 'prop-types';
-import React, { Component } from 'react';
+import React, { Component, type Element } from 'react';
 import { cssModules } from 'bpk-react-utils';
 import areRangesOverlapping from 'date-fns/are_ranges_overlapping';
 import dateMin from 'date-fns/min';
@@ -56,11 +58,50 @@ function or(total, bool) {
   return total || bool;
 }
 
+type WeekProps = {
+  DateComponent: Function,
+  dateModifiers: CustomPropTypes.DateModifiers,
+  dates: Function,
+  daysOfWeek: CustomPropTypes.DaysOfWeek,
+  formatDateFull: (Date: Date) => mixed,
+  preventKeyboardFocus: boolean,
+  showWeekendSeparator: boolean,
+  markToday: boolean,
+  markOutsideDays: boolean,
+  isKeyboardFocusable: boolean,
+  month: Date,
+  weekStartsOn: number,
+  focusedDate: Date,
+  maxDate: ?Date,
+  minDate: ?Date,
+  cellClassName: ?string,
+  onDateClick: ?() => mixed,
+  onDateKeyDown: ?() => mixed,
+  selectedDate: Date,
+  selectionEnd: ?Date,
+  selectionStart: ?Date,
+  ignoreOutsideDate: boolean,
+  dateProps: ?Object,
+};
 /*
   Week - table row containing a week full of DateContainer components
 */
-class Week extends Component {
-  shouldComponentUpdate(nextProps) {
+class Week extends Component<WeekProps> {
+  static defaultProps = {
+    cellClassName: null,
+    focusedDate: new Date(),
+    maxDate: new Date(),
+    minDate: new Date(),
+    onDateClick: null,
+    onDateKeyDown: null,
+    selectedDate: new Date(),
+    selectionEnd: new Date(),
+    selectionStart: new Date(),
+    ignoreOutsideDate: false,
+    dateProps: null,
+  };
+
+  shouldComponentUpdate(nextProps: WeekProps) {
     const shallowProps = [
       'DateComponent',
       'dateModifiers',
@@ -269,39 +310,29 @@ Week.propTypes = {
   dateProps: PropTypes.object, // eslint-disable-line react/forbid-prop-types
 };
 
-Week.defaultProps = {
-  cellClassName: null,
-  focusedDate: null,
-  maxDate: null,
-  minDate: null,
-  onDateClick: null,
-  onDateKeyDown: null,
-  selectedDate: null,
-  selectionEnd: null,
-  selectionStart: null,
-  ignoreOutsideDate: false,
-  dateProps: null,
-};
-
 /*
   DateContainer - one for each date in the grid; wraps the actual BpkCalendarDate (or custom) component
 */
-const DateContainer = props => {
-  const classNames = [getClassName('bpk-calendar-grid__date')];
+type DateContainerProps = {
+  children: Element<*>,
+  weekendStart: boolean,
+  weekendEnd: boolean,
+  isEmptyCell: boolean,
+  className: ?string,
+};
 
-  if (props.weekendStart) {
-    classNames.push(getClassName('bpk-calendar-grid__date--weekend-start'));
-  }
-  if (props.weekendEnd) {
-    classNames.push(getClassName('bpk-calendar-grid__date--weekend-end'));
-  }
-  if (props.className) {
-    classNames.push(props.className);
-  }
+const DateContainer = (props: DateContainerProps) => {
+  const { children, weekendStart, weekendEnd, isEmptyCell, className } = props;
+  const classNames = getClassName(
+    'bpk-calendar-grid__date',
+    weekendStart && 'bpk-calendar-grid__date--weekend-start',
+    weekendEnd && 'bpk-calendar-grid__date--weekend-end',
+    className,
+  );
 
   return (
-    <td aria-hidden={props.isEmptyCell} className={classNames.join(' ')}>
-      {props.children}
+    <td aria-hidden={isEmptyCell} className={classNames}>
+      {children}
     </td>
   );
 };

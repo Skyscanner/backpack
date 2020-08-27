@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+/* @flow strict */
+
 import { themeAttributes as calendarAttributes } from 'bpk-component-calendar';
 import { themeAttributes as modalAttributes } from 'bpk-component-modal';
 import { themeAttributes as popoverAttributes } from 'bpk-component-popover';
