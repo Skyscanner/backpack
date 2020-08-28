@@ -16,7 +16,7 @@
     "bpk-component-icon": "^8.2.14",
     "bpk-mixins": "^20.0.4",
     "bpk-react-utils": "^3.0.4",
-    "lodash": "^4.17.20",
+    "lodash": "^4.17.17",
     "prop-types": "^15.6.2",
     "react-virtualized": "^9.20.1"
   },
