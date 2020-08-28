@@ -1,20 +1,5 @@
 # UNRELEASED:
 
-ADDED:
-  - bpk-tokens:
-    - Added new `UIKit` aligned token aliases for corner radii and border width values.
-
-  - bpk-component-close-button:
-  - bpk-component-drawer:
-  - bpk-component-list:
-  - bpk-component-progress:
-    - Added Flow.
-
-FIXED:
-  - bpk-component-banner-alert:
-  - bpk-component-modal:
-    - Flow type fix.
-
 # How to write a good changelog entry:
 #
 #   1. Add 'BREAKING', 'ADDED' OR 'FIXED' depending on if the change will be major, minor or patch according to [semver.org](semver.org).

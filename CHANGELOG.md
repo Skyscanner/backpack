@@ -2,6 +2,23 @@
 
 [Unreleased changes](./UNRELEASED.yaml).
 
+# 2020-08-28
+
+**Added:**
+  - bpk-tokens:
+    - Added new `UIKit` aligned token aliases for corner radii and border width values.
+
+  - bpk-component-close-button:
+  - bpk-component-drawer:
+  - bpk-component-list:
+  - bpk-component-progress:
+    - Added Flow.
+
+**Fixed:**
+  - bpk-component-banner-alert:
+  - bpk-component-modal:
+    - Flow type fix.
+
 # 2020-08-24
 
 **Fixed:**
