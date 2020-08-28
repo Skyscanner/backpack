@@ -60,7 +60,7 @@ const BpkAccordionItem = (props: Props) => {
   // if this component is passed initiallyExpanded, this makes sure it doesn't
   // end up on the node. Not ideal as our container component shouldn't be passing
   // it, but the benefit of a better container api versus this was worth it
-  // $FlowFixMe - see above
+  // $FlowFixMe[prop-missing] - see above
   delete rest.initiallyExpanded;
 
   if (expanded) {
@@ -77,7 +77,7 @@ const BpkAccordionItem = (props: Props) => {
     : null;
 
   return (
-    // $FlowFixMe - inexact rest. See decisions/flowfixme.md
+    // $FlowFixMe[cannot-spread-inexact] - inexact rest. See decisions/flowfixme.md
     <div id={id} {...rest}>
       <dt
         aria-level="3"

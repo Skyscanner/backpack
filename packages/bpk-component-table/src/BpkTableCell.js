@@ -37,7 +37,7 @@ const BpkTableCell = (props: Props) => {
   const classNames = getClassName('bpk-table__cell', className);
 
   return (
-    // $FlowFixMe - inexact rest. See decisions/flowfixme.md
+    // $FlowFixMe[cannot-spread-inexact] - inexact rest. See decisions/flowfixme.md
     <td className={classNames} {...rest}>
       {props.children}
     </td>

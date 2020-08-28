@@ -101,7 +101,7 @@ class StatefulDismissibleChipsExample extends React.Component<
     this.setState(prevState => {
       // I can't figure out how to fix this error, and as it is a non-consumer facing
       // component I don't think it's worth investing time to fix it.
-      // $FlowFixMe
+      // $FlowFixMe[incompatible-shape]
       return prevState.chips.splice(indexToRemove, 1);
     });
   };

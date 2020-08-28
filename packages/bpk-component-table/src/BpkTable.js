@@ -42,7 +42,7 @@ const BpkTable = (props: Props) => {
   );
 
   return (
-    // $FlowFixMe - inexact rest. See decisions/flowfixme.md
+    // $FlowFixMe[cannot-spread-inexact] - inexact rest. See decisions/flowfixme.md
     <table className={classNames} {...rest}>
       {children}
     </table>

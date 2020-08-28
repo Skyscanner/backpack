@@ -26,6 +26,7 @@ import STYLES from './BpkLabel.scss';
 const getClassName = cssModules(STYLES);
 
 export type Props = {
+  // $FlowIssue[value-as-type] - Node is a type import from prop-types and is mishandled by Flow
   children: Node,
   className: ?string,
   disabled: boolean,
@@ -61,7 +62,7 @@ const BpkLabel = (props: Props) => {
   }
 
   return (
-    // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
+    // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
     <label className={classNames.join(' ')} {...rest}>
       {children}
       {!disabled && required && (

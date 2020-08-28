@@ -63,7 +63,7 @@ export const View = ({
   noNavBar: boolean,
   centered: boolean,
 }) => (
-  // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
+  // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
   <section
     className={getClassName(
       'bpk-navigation-stack-view',

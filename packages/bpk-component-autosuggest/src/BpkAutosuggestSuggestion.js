@@ -56,7 +56,7 @@ const BpkSuggestion = (props: Props) => {
   }
 
   return (
-    // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
+    // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
     <section className={classNames.join(' ')} {...rest}>
       {icon ? (
         <Icon className={getClassName('bpk-autosuggest__suggestion-icon')} />

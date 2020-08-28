@@ -84,7 +84,7 @@ class BpkBreadcrumb extends React.Component<Props> {
             dangerouslySetInnerHTML={{ __html: this.metaData }}
           />
         )}
-        {/* $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'. */}
+        {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
         <nav aria-label={label} {...rest}>
           <ol className={getClassName('bpk-breadcrumb')}>{children}</ol>
         </nav>

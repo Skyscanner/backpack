@@ -132,7 +132,7 @@ class DrawerContainer extends Component<Props, State> {
             malesuada auctor erat, vel pulvinar erat dignissim vitae.
           </Paragraph>
         </div>
-        {/* $FlowFixMe - inexact rest. See decisions/flowfixme.md  */}
+        {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See decisions/flowfixme.md  */}
         <BpkDrawer
           id="my-drawer"
           className="my-classname"

@@ -35,6 +35,7 @@ export type Props = {
   dockedFirst: boolean,
   dockedLast: boolean,
   dockedMiddle: boolean,
+  // $FlowIssue[value-as-type] - Node is a type import from prop-types and is mishandled by Flow
   image: ?Node,
   large: boolean,
   valid: ?boolean,
@@ -61,7 +62,7 @@ const BpkSelect = (props: Props) => {
   const isInvalid = valid === false;
 
   const select = (
-    // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
+    // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
     <select
       className={getClassName(
         'bpk-select',

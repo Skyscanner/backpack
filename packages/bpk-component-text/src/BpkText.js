@@ -90,7 +90,7 @@ const BpkText = (props: Props) => {
   );
 
   return (
-    // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
+    // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
     <TagName className={classNames} {...rest}>
       {children}
     </TagName>

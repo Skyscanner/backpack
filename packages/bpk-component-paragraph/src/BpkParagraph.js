@@ -39,7 +39,7 @@ const BpkParagraph = (props: Props) => {
     classNames.push(className);
   }
 
-  // $FlowFixMe - inexact rest. See decisions/flowfixme.md
+  // $FlowFixMe[cannot-spread-inexact] - inexact rest. See decisions/flowfixme.md
   return <p className={classNames.join(' ')} {...rest} />;
 };
 

@@ -60,12 +60,14 @@ const BpkFieldset = (props: Props) => {
     return null;
   }
 
-  // $FlowFixMe
+  // $FlowIgnore[prop-missing] - As children could be any element and might not have a value which is safe
   let childId: string = children.props.id;
   if (
-    // $FlowFixMe Flow is being dumb here and doesn't let us do this check, even though it's perfectly safe!
+    // Flow is being dumb here and doesn't let us do this check, even though it's perfectly safe!
+    // $FlowIgnore[prop-missing]
+    // $FlowIgnore[sketchy-null-mixed]
     children.props.inputProps &&
-    // $FlowFixMe
+    // $FlowIgnore[sketchy-null-mixed]
     children.props.inputProps.id &&
     typeof children.props.inputProps.id === 'string'
   ) {
@@ -109,7 +111,7 @@ const BpkFieldset = (props: Props) => {
   }
 
   return (
-    // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
+    // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
     <fieldset className={classNames.join(' ')} {...rest}>
       {!isCheckbox && (
         <BpkLabel
@@ -131,7 +133,7 @@ const BpkFieldset = (props: Props) => {
         </span>
       )}
       {!disabled && validationMessage && (
-        // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
+        // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
         <BpkFormValidation
           id={validationMessageId}
           expanded={isInvalid}

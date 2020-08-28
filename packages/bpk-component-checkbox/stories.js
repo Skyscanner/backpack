@@ -45,14 +45,14 @@ class StatefulCheckbox extends Component<{}, State> {
     this.setState(prevState => ({
       checked: !prevState.checked,
     }));
-    // $FlowFixMe - incompatible-type - ignoring as purely for storybook
+    // $FlowFixMe[incompatible-type] - ignoring as purely for storybook
     action(`Checkbox changed. Checked is now '${this.state.checked}'`);
   };
 
   render() {
     return (
       <div>
-        {/* $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'. */}
+        {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
         <BpkCheckbox
           checked={this.state.checked}
           onChange={this.handleChange}

@@ -53,7 +53,7 @@ const BpkSwitch = (props: Props) => {
 
   return (
     <label className={getClassName('bpk-switch', className)}>
-      {/* $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'. */}
+      {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
       <input
         type="checkbox"
         className={getClassName('bpk-switch__checkbox')}

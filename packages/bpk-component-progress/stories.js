@@ -50,12 +50,12 @@ class ProgressContainer extends Component<Props, State> {
   render() {
     const { steps, ...rest } = this.props;
 
-    // $FlowFixMe - Ignoring this as this is for an example container
+    // $FlowIgnore[prop-missing] - Ignoring this as this is for an example container
     delete rest.initialValue;
 
     return (
       <div>
-        {/* $FlowFixMe - inexact rest. See decisions/flowfixme.md */}
+        {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See decisions/flowfixme.md */}
         <BpkProgress
           min={0}
           max={100}
@@ -64,7 +64,7 @@ class ProgressContainer extends Component<Props, State> {
           {...rest}
         />
         <br />
-        {/* $FlowFixMe - inexact rest. See decisions/flowfixme.md */}
+        {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See decisions/flowfixme.md */}
         <BpkProgress
           min={0}
           max={100}

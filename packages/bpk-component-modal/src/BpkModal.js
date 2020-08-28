@@ -85,7 +85,7 @@ const BpkModal = (props: Props) => {
       renderTarget={renderTarget}
       closeOnEscPressed={closeOnEscPressed}
     >
-      {/* $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'. */}
+      {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
       <ScrimBpkModalDialog
         onClose={onClose}
         fullScreenOnMobile={fullScreenOnMobile}

@@ -157,7 +157,7 @@ class ModalContainer extends Component<
           <BpkButton onClick={this.onOpen}>
             {buttonLabel || 'Open modal'}
           </BpkButton>
-          {/* $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'. */}
+          {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
           <BpkModal
             id="my-modal"
             className="my-classname"

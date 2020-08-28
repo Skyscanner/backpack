@@ -101,7 +101,7 @@ const BpkRating = (props: Props) => {
   }
 
   return (
-    // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
+    // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
     <div className={classNames.join(' ')} aria-label={ariaLabel} {...rest}>
       <BpkText
         textStyle={textSize}
