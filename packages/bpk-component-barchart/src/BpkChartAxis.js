@@ -90,7 +90,7 @@ type Props = {
   scale: Function,
   label: ?Node,
   orientation: string,
-  tickValue: Function,
+  tickValue: (any, any) => any,
   numTicks: ?number,
   tickOffset: number,
   tickEvery: number,

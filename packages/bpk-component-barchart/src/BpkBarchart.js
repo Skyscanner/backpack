@@ -21,7 +21,12 @@
 import PropTypes from 'prop-types';
 import debounce from 'lodash.debounce';
 import React, { Component } from 'react';
-import { scaleLinear, scaleBand } from 'd3-scale';
+import {
+  scaleLinear,
+  scaleBand,
+  type ScaleBand,
+  type ScaleLinear,
+} from 'd3-scale';
 import { spacingXs, lineHeightSm } from 'bpk-tokens/tokens/base.es6';
 import { cssModules } from 'bpk-react-utils';
 import BpkMobileScrollContainer from 'bpk-component-mobile-scroll-container';
@@ -47,7 +52,10 @@ const getClassName = cssModules(STYLES);
 const spacing = remToPx(spacingXs);
 const lineHeight = remToPx(lineHeightSm);
 
-const getMaxYValue = (dataPoints: Function, outlierPercentage: ?number) => {
+const getMaxYValue = (
+  dataPoints: Array<number>,
+  outlierPercentage: ?number,
+) => {
   const meanValue = dataPoints.reduce((d, t) => d + t, 0) / dataPoints.length;
   const maxYValue = Math.max(...dataPoints);
 
@@ -57,7 +65,7 @@ const getMaxYValue = (dataPoints: Function, outlierPercentage: ?number) => {
 };
 
 type Props = {
-  data: any,
+  data: Array<any>,
   xScaleDataKey: string,
   yScaleDataKey: string,
   xAxisLabel: string,
@@ -70,19 +78,19 @@ type Props = {
   outlierPercentage: ?number,
   showGridlines: boolean,
   xAxisMargin: number,
-  xAxisTickValue: Function,
+  xAxisTickValue: () => mixed,
   xAxisTickOffset: number,
   xAxisTickEvery: number,
   yAxisMargin: number,
-  yAxisTickValue: Function,
+  yAxisTickValue: () => mixed,
   yAxisNumTicks: ?number,
   yAxisDomain: Array<?number>,
-  onBarClick: ?Function,
-  onBarHover: ?Function,
-  onBarFocus: ?Function,
-  getBarLabel: Function,
-  getBarSelection: Function,
-  BarComponent: Function,
+  onBarClick: ?() => mixed,
+  onBarHover: ?() => mixed,
+  onBarFocus: ?() => mixed,
+  getBarLabel: (any, string, string) => mixed,
+  getBarSelection: () => mixed,
+  BarComponent: typeof BpkBarchartBar,
   disableDataTable: boolean,
 };
 
@@ -92,16 +100,15 @@ type State = {
 };
 
 class BpkBarchart extends Component<Props, State> {
-  xScale: any;
+  xScale: ScaleBand;
 
-  yScale: any;
+  yScale: ScaleLinear;
 
-  onWindowResize: Function;
+  onWindowResize: () => mixed;
 
-  svgEl: any;
+  svgEl: ?Element;
 
   static defaultProps = {
-    data: null,
     className: null,
     leadingScrollIndicatorClassName: null,
     trailingScrollIndicatorClassName: null,
@@ -118,11 +125,8 @@ class BpkBarchart extends Component<Props, State> {
     onBarClick: null,
     onBarHover: null,
     onBarFocus: null,
-    getBarLabel: (
-      point: Array<*>,
-      xScaleDataKey: number,
-      yScaleDataKey: number,
-    ) => `${point[xScaleDataKey]} - ${point[yScaleDataKey]}`,
+    getBarLabel: (point: any, xScaleDataKey: string, yScaleDataKey: string) =>
+      `${point[xScaleDataKey]} - ${point[yScaleDataKey]}`,
     getBarSelection: () => false,
     BarComponent: BpkBarchartBar,
     disableDataTable: false,
@@ -300,7 +304,7 @@ class BpkBarchart extends Component<Props, State> {
 }
 
 BpkBarchart.propTypes = {
-  data: dataProp,
+  data: dataProp, // eslint-disable-line react/require-default-props
   xScaleDataKey: PropTypes.string.isRequired,
   yScaleDataKey: PropTypes.string.isRequired,
   xAxisLabel: PropTypes.string.isRequired,

@@ -22,6 +22,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { borderRadiusXs } from 'bpk-tokens/tokens/base.es6';
 
+import BpkBarchartBar from './BpkBarchartBar';
 import { remToPx } from './utils';
 
 const borderRadius = remToPx(borderRadiusXs);
@@ -58,9 +59,9 @@ type Props = {
     left: number,
     right: number,
   },
-  getBarLabel: Function,
-  BarComponent: Function,
-  getBarSelection: Function,
+  getBarLabel: (any, string, string) => mixed,
+  BarComponent: typeof BpkBarchartBar,
+  getBarSelection: (any: any) => mixed,
   outerPadding: number,
   innerPadding: number,
   onBarClick: ?(any?: any, any?: any) => mixed,
