@@ -391,6 +391,7 @@
       "type": "size",
       "value": "24",
       "category": "radii",
+      "deprecated": true,
       "originalValue": "{!BORDER_RADIUS_LG}",
       "name": "BORDER_RADIUS_LG"
     },
@@ -398,6 +399,7 @@
       "type": "size",
       "value": "40",
       "category": "radii",
+      "deprecated": true,
       "originalValue": "{!BORDER_RADIUS_PILL}",
       "name": "BORDER_RADIUS_PILL"
     },
@@ -405,6 +407,7 @@
       "type": "size",
       "value": "4",
       "category": "radii",
+      "deprecated": true,
       "originalValue": "{!BORDER_RADIUS_SM}",
       "name": "BORDER_RADIUS_SM"
     },
@@ -412,6 +415,7 @@
       "type": "size",
       "value": "2",
       "category": "borders",
+      "deprecated": true,
       "originalValue": "{!BORDER_SIZE_LG}",
       "name": "BORDER_SIZE_LG"
     },
@@ -419,6 +423,7 @@
       "type": "size",
       "value": "1",
       "category": "borders",
+      "deprecated": true,
       "originalValue": "{!BORDER_SIZE_SM}",
       "name": "BORDER_SIZE_SM"
     },
@@ -426,8 +431,30 @@
       "type": "size",
       "value": "3",
       "category": "borders",
+      "deprecated": true,
       "originalValue": "{!BORDER_SIZE_XL}",
       "name": "BORDER_SIZE_XL"
+    },
+    "BORDER_WIDTH_LG": {
+      "type": "size",
+      "value": "2",
+      "category": "borders",
+      "originalValue": "{!BORDER_SIZE_LG}",
+      "name": "BORDER_WIDTH_LG"
+    },
+    "BORDER_WIDTH_SM": {
+      "type": "size",
+      "value": "1",
+      "category": "borders",
+      "originalValue": "{!BORDER_SIZE_SM}",
+      "name": "BORDER_WIDTH_SM"
+    },
+    "BORDER_WIDTH_XL": {
+      "type": "size",
+      "value": "3",
+      "category": "borders",
+      "originalValue": "{!BORDER_SIZE_XL}",
+      "name": "BORDER_WIDTH_XL"
     },
     "BUTTON_BORDER_WIDTH": {
       "type": "size",
@@ -771,6 +798,27 @@
       "value": "#ffffffff",
       "originalValue": "{!WHITE}",
       "name": "COLOR_WHITE"
+    },
+    "CORNER_RADIUS_LG": {
+      "type": "size",
+      "value": "24",
+      "category": "radii",
+      "originalValue": "{!BORDER_RADIUS_LG}",
+      "name": "CORNER_RADIUS_LG"
+    },
+    "CORNER_RADIUS_PILL": {
+      "type": "size",
+      "value": "40",
+      "category": "radii",
+      "originalValue": "{!BORDER_RADIUS_PILL}",
+      "name": "CORNER_RADIUS_PILL"
+    },
+    "CORNER_RADIUS_SM": {
+      "type": "size",
+      "value": "4",
+      "category": "radii",
+      "originalValue": "{!BORDER_RADIUS_SM}",
+      "name": "CORNER_RADIUS_SM"
     },
     "FONT_FAMILY": {
       "value": "\"System\"",
@@ -1493,6 +1541,9 @@
     "BORDER_SIZE_LG",
     "BORDER_SIZE_SM",
     "BORDER_SIZE_XL",
+    "BORDER_WIDTH_LG",
+    "BORDER_WIDTH_SM",
+    "BORDER_WIDTH_XL",
     "BUTTON_BORDER_WIDTH",
     "BUTTON_HEIGHT",
     "BUTTON_LINE_HEIGHT_LARGE",
@@ -1542,6 +1593,9 @@
     "COLOR_TOCHIGI",
     "COLOR_VALENSOLE",
     "COLOR_WHITE",
+    "CORNER_RADIUS_LG",
+    "CORNER_RADIUS_PILL",
+    "CORNER_RADIUS_SM",
     "FONT_FAMILY",
     "FONT_SIZE_BASE",
     "FONT_SIZE_CAPS",
