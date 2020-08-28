@@ -43,7 +43,7 @@
     "check-owners": "npm whoami && ( node scripts/npm/get-owners.js | grep -E $(npm whoami) ) && node scripts/npm/check-owners.js",
     "check-pristine": "node scripts/check-pristine-state",
     "publish:css": "node ./scripts/publish-process/transform-js-scss-css-imports.js && node ./scripts/publish-process/transform-bpk-imports.js && node ./scripts/publish-process/publish-css-tagged-packages.js && git reset --hard HEAD",
-    "publish": "npm run check-pristine && npm run check-owners && npm run build && git pull --rebase && flow stop && npm run test && lerna publish && echo \"NOW PLEASE USE npm run publish:css\"",
+    "publish": "npm run check-pristine && npm run check-owners && npm run build && git pull --rebase && flow stop && npm run test && lerna publish && npm run publish:css",
     "publish:beta": "npm run check-pristine && npm run check-owners && npm run build && git pull --rebase && flow stop && npm run test && node scripts/publish-process/auto-publish.js && npm run publish:css",
     "release": "npm run publish",
     "danger": "danger ci",
