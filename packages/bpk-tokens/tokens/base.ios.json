@@ -137,6 +137,7 @@
       "type": "size",
       "value": "24",
       "category": "radii",
+      "deprecated": true,
       "originalValue": "{!BORDER_RADIUS_LG}",
       "name": "borderRadiusLg"
     },
@@ -144,6 +145,7 @@
       "type": "size",
       "value": "40",
       "category": "radii",
+      "deprecated": true,
       "originalValue": "{!BORDER_RADIUS_PILL}",
       "name": "borderRadiusPill"
     },
@@ -151,6 +153,7 @@
       "type": "size",
       "value": "4",
       "category": "radii",
+      "deprecated": true,
       "originalValue": "{!BORDER_RADIUS_SM}",
       "name": "borderRadiusSm"
     },
@@ -158,6 +161,7 @@
       "type": "size",
       "value": "2",
       "category": "borders",
+      "deprecated": true,
       "originalValue": "{!BORDER_SIZE_LG}",
       "name": "borderSizeLg"
     },
@@ -165,6 +169,7 @@
       "type": "size",
       "value": "1",
       "category": "borders",
+      "deprecated": true,
       "originalValue": "{!BORDER_SIZE_SM}",
       "name": "borderSizeSm"
     },
@@ -172,8 +177,30 @@
       "type": "size",
       "value": "3",
       "category": "borders",
+      "deprecated": true,
       "originalValue": "{!BORDER_SIZE_XL}",
       "name": "borderSizeXl"
+    },
+    {
+      "type": "size",
+      "value": "2",
+      "category": "borders",
+      "originalValue": "{!BORDER_SIZE_LG}",
+      "name": "borderWidthLg"
+    },
+    {
+      "type": "size",
+      "value": "1",
+      "category": "borders",
+      "originalValue": "{!BORDER_SIZE_SM}",
+      "name": "borderWidthSm"
+    },
+    {
+      "type": "size",
+      "value": "3",
+      "category": "borders",
+      "originalValue": "{!BORDER_SIZE_XL}",
+      "name": "borderWidthXl"
     },
     {
       "type": "size",
@@ -517,6 +544,27 @@
       "value": "#ffffffff",
       "originalValue": "{!WHITE}",
       "name": "colorWhite"
+    },
+    {
+      "type": "size",
+      "value": "24",
+      "category": "radii",
+      "originalValue": "{!BORDER_RADIUS_LG}",
+      "name": "cornerRadiusLg"
+    },
+    {
+      "type": "size",
+      "value": "40",
+      "category": "radii",
+      "originalValue": "{!BORDER_RADIUS_PILL}",
+      "name": "cornerRadiusPill"
+    },
+    {
+      "type": "size",
+      "value": "4",
+      "category": "radii",
+      "originalValue": "{!BORDER_RADIUS_SM}",
+      "name": "cornerRadiusSm"
     },
     {
       "value": "\"System\"",

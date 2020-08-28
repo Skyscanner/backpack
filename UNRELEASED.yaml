@@ -1,7 +1,10 @@
 # UNRELEASED:
 
 ADDED:
-  - bpk-component-close-button: 
+  - bpk-tokens:
+    - Added new `UIKit` aligned token aliases for corner radii and border width values.
+
+  - bpk-component-close-button:
   - bpk-component-drawer:
   - bpk-component-list:
   - bpk-component-progress:
