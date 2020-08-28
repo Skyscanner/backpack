@@ -18,6 +18,7 @@
 
 /* @flow strict */
 
+// Using Function here as scale refers to the d3-scale 3rd party library
 const center = (scale: Function) => {
   let offset = scale.bandwidth() / 2;
   if (scale.round()) {
@@ -26,6 +27,7 @@ const center = (scale: Function) => {
   return (d: number) => scale(d) + offset;
 };
 
+// Using any here as x can be any form see utils-test.js
 const identity = (x: any) => x;
 
 const remToPx = (value: string) => {

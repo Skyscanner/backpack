@@ -25,7 +25,7 @@ import { wrapDisplayName } from 'bpk-react-utils';
 // eslint-disable-next-line import/prefer-default-export
 export const withSelectedState = (ComposedComponent: ComponentType<any>) => {
   type State = {
-    selectedPoint: ?any,
+    selectedPoint: ?number,
   };
   class WithSelectedState extends Component<{}, State> {
     constructor() {
@@ -36,13 +36,14 @@ export const withSelectedState = (ComposedComponent: ComponentType<any>) => {
       };
     }
 
-    onBarClick = (e: SyntheticEvent<any>, { point }: { point: any }) => {
+    onBarClick = (e: SyntheticEvent<any>, { point }: { point: number }) => {
       this.setState({
         selectedPoint: point,
       });
     };
 
-    getBarSelection = (point: any) => isEqual(this.state.selectedPoint, point);
+    getBarSelection = (point: number) =>
+      isEqual(this.state.selectedPoint, point);
 
     render() {
       const { ...rest } = this.props;

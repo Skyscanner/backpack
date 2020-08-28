@@ -37,8 +37,7 @@ type Props = {
     left: number,
     right: number,
   },
-
-  scale: Function,
+  scale: Object,
   orientation: string,
   numTicks: ?number,
   tickOffset: number,

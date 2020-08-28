@@ -65,7 +65,7 @@ const getMaxYValue = (
 };
 
 type Props = {
-  data: Array<any>,
+  data: Array<any>, // We pass any here as the array can contain free form data depending on the user
   xScaleDataKey: string,
   yScaleDataKey: string,
   xAxisLabel: string,
@@ -88,7 +88,7 @@ type Props = {
   onBarClick: ?() => mixed,
   onBarHover: ?() => mixed,
   onBarFocus: ?() => mixed,
-  getBarLabel: (any, string, string) => mixed,
+  getBarLabel: (any, string, string) => ?string,
   getBarSelection: () => mixed,
   BarComponent: typeof BpkBarchartBar,
   disableDataTable: boolean,
@@ -125,6 +125,7 @@ class BpkBarchart extends Component<Props, State> {
     onBarClick: null,
     onBarHover: null,
     onBarFocus: null,
+    // Using type any here as xScaleDataKey or yScaleDataKey are strings and there is an issue that strings are not valid keys
     getBarLabel: (point: any, xScaleDataKey: string, yScaleDataKey: string) =>
       `${point[xScaleDataKey]} - ${point[yScaleDataKey]}`,
     getBarSelection: () => false,

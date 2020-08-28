@@ -87,7 +87,7 @@ type Props = {
     left: number,
     right: number,
   },
-  scale: Function,
+  scale: Object,
   label: ?Node,
   orientation: string,
   tickValue: (any, any) => any,

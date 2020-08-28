@@ -19,6 +19,7 @@
 /* @flow strict */
 
 import React from 'react';
+import { ScaleBand, ScaleLinear } from 'd3-scale';
 import PropTypes from 'prop-types';
 import { borderRadiusXs } from 'bpk-tokens/tokens/base.es6';
 
@@ -46,12 +47,12 @@ const isOutlier = (point, { yScaleDataKey, maxYValue }) =>
   point[yScaleDataKey] > maxYValue;
 
 type Props = {
-  data: Array<any>,
+  data: Array<any>, // We pass any here as the array can contain free form data depending on the user
   xScaleDataKey: string,
   yScaleDataKey: string,
   height: number,
-  xScale: Function,
-  yScale: Function,
+  xScale: ScaleBand,
+  yScale: ScaleLinear,
   maxYValue: number,
   margin: {
     top: number,
@@ -64,9 +65,9 @@ type Props = {
   getBarSelection: (any: any) => mixed,
   outerPadding: number,
   innerPadding: number,
-  onBarClick: ?(any?: any, any?: any) => mixed,
-  onBarHover: ?(any?: any, any?: any) => mixed,
-  onBarFocus: ?(any?: any, any?: any) => mixed,
+  onBarClick: ?(e: SyntheticEvent<any>, Object) => mixed,
+  onBarHover: ?(e: SyntheticEvent<any>, Object) => mixed,
+  onBarFocus: ?(e: SyntheticEvent<any>, Object) => mixed,
 };
 
 const BpkBarchartBars = (props: Props) => {

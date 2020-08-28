@@ -23,6 +23,7 @@ import { isRTL } from 'bpk-react-utils';
 const rtlConditionalValue = (ltrValue: number, rtlValue: number) =>
   isRTL() ? rtlValue : ltrValue;
 
+// Setting type as any as data which is passed to this function can be of any type
 const applyArrayRTLTransform = (arr: any) =>
   isRTL() ? arr.slice(0).reverse() : arr;
 
