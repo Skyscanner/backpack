@@ -19,7 +19,7 @@
 /* @flow strict */
 
 import React from 'react';
-import { ScaleBand, ScaleLinear } from 'd3-scale';
+import { scaleBand, scaleLinear } from 'd3-scale';
 import PropTypes from 'prop-types';
 import { borderRadiusXs } from 'bpk-tokens/tokens/base.es6';
 
@@ -51,8 +51,8 @@ type Props = {
   xScaleDataKey: string,
   yScaleDataKey: string,
   height: number,
-  xScale: ScaleBand,
-  yScale: ScaleLinear,
+  xScale: typeof scaleBand,
+  yScale: typeof scaleLinear,
   maxYValue: number,
   margin: {
     top: number,
@@ -106,7 +106,7 @@ const BpkBarchartBars = (props: Props) => {
         const outlier = isOutlier(point, props);
         const barHeight = getBarHeight(point, props);
         return (
-          // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
+          // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
           <BarComponent
             key={`bar${i.toString()}`}
             x={x}

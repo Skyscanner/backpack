@@ -95,7 +95,7 @@ const BpkBarchartBar = (props: Props) => {
   return (
     <g className={classNames} transform={`translate(${x}, ${y})`}>
       <title>{label}</title>
-      {/* $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'. */}
+      {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
       <rect
         className={rectClassNames}
         x={rectPadding}

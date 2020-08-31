@@ -78,7 +78,7 @@ const BpkChartGridLines = (props: Props) => {
   };
 
   const toLine = (tick, i) => (
-    // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
+    // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
     <line
       className={getClassName('bpk-chart__grid-line')}
       key={`${orientation}gridline${i.toString()}`}

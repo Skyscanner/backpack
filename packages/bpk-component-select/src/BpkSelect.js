@@ -17,8 +17,8 @@
  */
 /* @flow strict */
 
-import PropTypes, { type Node } from 'prop-types';
-import React from 'react';
+import PropTypes from 'prop-types';
+import React, { type Element } from 'react';
 import { cssModules } from 'bpk-react-utils';
 
 import STYLES from './BpkSelect.scss';
@@ -35,8 +35,7 @@ export type Props = {
   dockedFirst: boolean,
   dockedLast: boolean,
   dockedMiddle: boolean,
-  // $FlowIssue[value-as-type] - Node is a type import from prop-types and is mishandled by Flow
-  image: ?Node,
+  image: ?Element<any>,
   large: boolean,
   valid: ?boolean,
   wrapperClassName: ?string,

@@ -120,7 +120,7 @@ const BpkChartAxis = (props: Props) => {
     : scale.domain().filter((tick, i) => (i - tickOffset) % tickEvery === 0);
 
   return (
-    // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
+    // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
     <g
       className={getClassName('bpk-chart__axis')}
       {...containerProps}

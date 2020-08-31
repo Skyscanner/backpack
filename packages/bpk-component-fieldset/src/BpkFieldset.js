@@ -120,6 +120,7 @@ const BpkFieldset = (props: Props) => {
           disabled={disabled}
           valid={isValid}
         >
+          {/* $FlowIgnore[incompatible-type] - As this prop is only required when isCheckbox is false our labelPropType handles checking this is null or not. */}
           {label}
         </BpkLabel>
       )}

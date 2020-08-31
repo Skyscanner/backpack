@@ -17,8 +17,8 @@
  */
 /* @flow strict */
 
-import PropTypes, { type Node } from 'prop-types';
-import React from 'react';
+import PropTypes from 'prop-types';
+import React, { type Node } from 'react';
 import { cssModules } from 'bpk-react-utils';
 
 import STYLES from './BpkLabel.scss';
@@ -26,7 +26,6 @@ import STYLES from './BpkLabel.scss';
 const getClassName = cssModules(STYLES);
 
 export type Props = {
-  // $FlowIssue[value-as-type] - Node is a type import from prop-types and is mishandled by Flow
   children: Node,
   className: ?string,
   disabled: boolean,
