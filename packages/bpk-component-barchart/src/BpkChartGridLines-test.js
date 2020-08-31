@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+/* @flow strict */
+
 // TODO: remove this once we update the Chart implementation to accept values
 // other than pixels
 /* eslint-disable backpack/use-tokens */

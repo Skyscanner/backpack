@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+/* @flow strict */
+
 import { scaleBand } from 'd3-scale';
 
 import data from '../data.json';

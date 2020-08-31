@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+/* @flow strict */
+
 import BpkBarchart from './src/BpkBarchart';
 import BpkBarchartBars from './src/BpkBarchartBars';
 import BpkBarchartDefs from './src/BpkBarchartDefs';
