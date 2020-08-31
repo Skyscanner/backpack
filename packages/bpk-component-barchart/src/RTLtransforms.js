@@ -39,7 +39,7 @@ const applyMarginRTLTransform = (obj: objType) => {
     return obj;
   }
   const { left, right, ...rest } = obj;
-  // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
+  // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
   return {
     left: right,
     right: left,

@@ -82,7 +82,7 @@ class DialogContainer extends Component<Props, State> {
         <div id="pagewrap">
           <BpkButton onClick={this.onOpen}>Open dialog</BpkButton>
         </div>
-        {/* $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'. */}
+        {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
         <BpkDialog
           closeLabel="Close dialog"
           id="my-dialog"

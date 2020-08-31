@@ -68,7 +68,7 @@ export const defaultProps = {
 };
 
 class BpkPopoverPortal extends Component<Props> {
-  popper: ?Popper;
+  popper: ?typeof Popper;
 
   previousTargetElement: ?HTMLElement;
 
@@ -174,7 +174,7 @@ class BpkPopoverPortal extends Component<Props> {
         renderTarget={renderTarget}
         target={target}
       >
-        {/* $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'. */}
+        {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
         <BpkPopover onClose={onClose} {...rest} />
       </Portal>
     );

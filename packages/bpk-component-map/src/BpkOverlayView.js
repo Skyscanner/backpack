@@ -32,7 +32,7 @@ type Props = {
 const BpkOverlayView = (props: Props) => {
   const { children, position, ...rest } = props;
   return (
-    // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
+    // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
     <OverlayView
       mapPaneName="overlayMouseTarget"
       position={{ lat: position.latitude, lng: position.longitude }}

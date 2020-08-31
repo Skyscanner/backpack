@@ -81,7 +81,7 @@ class BpkDrawer extends Component<Props, State> {
         target={target}
         renderTarget={renderTarget}
       >
-        {/* $FlowFixMe - inexact rest. See decisions/flowfixme.md */}
+        {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See decisions/flowfixme.md */}
         <BpkScrimDrawerContent
           isDrawerShown={isDrawerShown}
           onClose={this.hide}

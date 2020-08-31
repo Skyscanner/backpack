@@ -79,9 +79,9 @@ const BpkMapMarker = (props: Props) => {
   );
 
   return (
-    // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
+    // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
     <BpkBasicMapMarker position={position} {...rest}>
-      {/* $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'. */}
+      {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
       <button
         type="button"
         className={getClassName('bpk-map-marker__wrapper')}

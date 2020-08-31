@@ -47,7 +47,7 @@ const BpkButtonLink = (props: Props) => {
   }
 
   return (
-    // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
+    // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
     <button
       type="button"
       className={classNames.join(' ')}

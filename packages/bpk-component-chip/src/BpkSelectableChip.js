@@ -59,7 +59,7 @@ const BpkSelectableChip = (props: Props) => {
   );
 
   return (
-    // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'
+    // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'
     <button
       aria-checked={selected}
       className={classNames}

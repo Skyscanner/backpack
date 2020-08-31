@@ -55,7 +55,7 @@ const BpkCard = (props: Props) => {
     }
 
     return (
-      // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
+      // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
       <a href={href} className={classNameFinal} {...blankProps} {...rest}>
         {children}
       </a>
@@ -63,7 +63,7 @@ const BpkCard = (props: Props) => {
   }
 
   return (
-    // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
+    // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
     <div role="button" className={classNameFinal} {...rest}>
       {children}
     </div>

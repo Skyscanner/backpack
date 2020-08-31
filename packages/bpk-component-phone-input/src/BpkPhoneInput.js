@@ -163,7 +163,7 @@ const BpkPhoneInput = (props: Props) => {
       >
         {dialingCodeProps.label}
       </BpkLabel>
-      {/* $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'. */}
+      {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
       <BpkSelect
         {...commonProps}
         {...dialingCodeProps}
@@ -179,7 +179,7 @@ const BpkPhoneInput = (props: Props) => {
         }}
       >
         {dialingCodes.map(({ code, description, ...extraDialingProps }) => (
-          // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
+          // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
           <option key={code} value={code} {...extraDialingProps}>
             {description}
           </option>
@@ -192,7 +192,7 @@ const BpkPhoneInput = (props: Props) => {
       >
         {label}
       </BpkLabel>
-      {/* $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'. */}
+      {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
       <BpkInput
         {...commonProps}
         {...rest}

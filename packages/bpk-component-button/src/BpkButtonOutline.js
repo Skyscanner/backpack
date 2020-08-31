@@ -37,7 +37,7 @@ const BpkButtonOutline = (props: Props) => {
   const classNamesFinal = classNames.join(' ');
 
   return (
-    // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
+    // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
     <BpkButtonBase className={classNamesFinal} {...rest} />
   );
 };

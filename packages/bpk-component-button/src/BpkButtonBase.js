@@ -71,7 +71,7 @@ const BpkButton = (props: Props) => {
 
   if (!disabled && href) {
     return (
-      // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
+      // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
       <a
         href={href}
         className={classNameFinal}
@@ -99,7 +99,7 @@ const BpkButton = (props: Props) => {
 
   /* eslint-disable react/button-has-type */
   return (
-    // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
+    // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
     <button
       type={buttonType}
       disabled={disabled}

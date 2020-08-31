@@ -34,7 +34,7 @@ const BpkAccordion = (props: Props) => {
   const classNames = getClassName('bpk-accordion', className);
 
   return (
-    // $FlowFixMe - inexact rest. See decisions/flowfixme.md
+    // $FlowFixMe[cannot-spread-inexact] - inexact rest. See decisions/flowfixme.md
     <dl className={classNames} {...rest}>
       {children}
     </dl>

@@ -21,12 +21,7 @@
 import PropTypes from 'prop-types';
 import debounce from 'lodash.debounce';
 import React, { Component } from 'react';
-import {
-  scaleLinear,
-  scaleBand,
-  type ScaleBand,
-  type ScaleLinear,
-} from 'd3-scale';
+import { scaleLinear, scaleBand } from 'd3-scale';
 import { spacingXs, lineHeightSm } from 'bpk-tokens/tokens/base.es6';
 import { cssModules } from 'bpk-react-utils';
 import BpkMobileScrollContainer from 'bpk-component-mobile-scroll-container';
@@ -100,9 +95,9 @@ type State = {
 };
 
 class BpkBarchart extends Component<Props, State> {
-  xScale: ScaleBand;
+  xScale: typeof scaleBand;
 
-  yScale: ScaleLinear;
+  yScale: typeof scaleLinear;
 
   onWindowResize: () => mixed;
 
@@ -237,7 +232,7 @@ class BpkBarchart extends Component<Props, State> {
             yAxisLabel={yAxisLabel}
           />
         )}
-        {/* $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'. */}
+        {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
         <svg
           xmlns="http://www.w3.org/2000/svg"
           className={classNames.join(' ')}

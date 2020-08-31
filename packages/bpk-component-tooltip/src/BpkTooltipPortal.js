@@ -57,7 +57,7 @@ type State = {
 };
 
 class BpkTooltipPortal extends Component<Props, State> {
-  popper: ?Popper;
+  popper: ?typeof Popper;
 
   targetRef: ?HTMLElement;
 
@@ -186,7 +186,7 @@ class BpkTooltipPortal extends Component<Props, State> {
         renderTarget={renderTarget}
         className={classNames.join(' ')}
       >
-        {/* $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'. */}
+        {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
         <BpkTooltip padded={padded} {...rest}>
           {children}
         </BpkTooltip>

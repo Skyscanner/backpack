@@ -17,8 +17,8 @@
  */
 /* @flow strict */
 
-import PropTypes, { type Node } from 'prop-types';
-import React from 'react';
+import PropTypes from 'prop-types';
+import React, { type Node } from 'react';
 import { cssModules } from 'bpk-react-utils';
 
 import STYLES from './BpkLabel.scss';
@@ -61,7 +61,7 @@ const BpkLabel = (props: Props) => {
   }
 
   return (
-    // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
+    // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
     <label className={classNames.join(' ')} {...rest}>
       {children}
       {!disabled && required && (

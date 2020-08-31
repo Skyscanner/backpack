@@ -94,7 +94,7 @@ export default (
         : [this.state.views, callbacks];
 
       return (
-        // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
+        // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
         <Stack views={views} {...optionalCallbacks} {...rest} />
       );
     }

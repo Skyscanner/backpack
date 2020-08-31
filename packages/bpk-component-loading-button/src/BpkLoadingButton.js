@@ -108,7 +108,7 @@ const BpkLoadingButton = (props: LoadingProps) => {
       : [children, spacer, buttonIcon];
 
   return (
-    // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
+    // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
     <BpkButton iconOnly={iconOnly} disabled={showBtnDisabled} {...rest}>
       {child0}
       {child1}

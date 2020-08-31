@@ -75,7 +75,7 @@ describe('BpkPopoverPortal', () => {
           id="my-popover"
           // Ignoring this warning because Flow doesn't yet support a secondary
           // argument for document.createElement.
-          // $FlowFixMe
+          // $FlowFixMe[incompatible-call]
           target={() => document.createElement('button', { type: 'button' })}
           isOpen={false}
           onClose={() => null}

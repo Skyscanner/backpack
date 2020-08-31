@@ -35,7 +35,7 @@ const BpkChartMargin = (props: Props) => {
   const { children, margin, ...rest } = props;
 
   return (
-    // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
+    // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
     <g transform={`translate(${margin.left}, ${margin.top})`} {...rest}>
       {children}
     </g>

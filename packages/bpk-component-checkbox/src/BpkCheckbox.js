@@ -78,7 +78,7 @@ const BpkCheckbox = (props: Props) => {
 
   return (
     <label className={classNames}>
-      {/* $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'. */}
+      {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
       <input
         type="checkbox"
         className={inputClasses}

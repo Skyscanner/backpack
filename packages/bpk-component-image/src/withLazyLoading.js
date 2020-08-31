@@ -33,7 +33,7 @@ type WithLazyLoadingState = {
 
 export default function withLazyLoading(
   Component: ComponentType<any>,
-  documentRef: window,
+  documentRef: typeof window,
 ): ComponentType<any> {
   class WithLazyLoading extends React.Component<
     WithLazyLoadingProps,
@@ -161,7 +161,7 @@ export default function withLazyLoading(
           style={style}
           className={className}
         >
-          {/* $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'. */}
+          {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
           <Component inView={this.state.inView} {...rest} />
         </div>
       );

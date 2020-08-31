@@ -71,7 +71,7 @@ const BpkInteractiveStar = (props: Props) => {
       aria-pressed={selected}
       type="button"
     >
-      {/* $FlowFixMe - inexact rest. See decisions/flowfixme.md */}
+      {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See decisions/flowfixme.md */}
       <BpkStarNonRtl className={iconClassNames} type={type} {...rest} />
     </button>
   );

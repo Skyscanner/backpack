@@ -67,7 +67,7 @@ const BpkRadio = (props: Props) => {
       {/* Deciding to support this because `aria-invalid` does often work with voiceover
       despite not being in the spec. */}
       {/* eslint-disable jsx-a11y/role-supports-aria-props */}
-      {/* $FlowFixMe - inexact rest. See decisions/flowfixme.md */}
+      {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See decisions/flowfixme.md */}
       <input
         type="radio"
         className={getClassName('bpk-radio__input')}

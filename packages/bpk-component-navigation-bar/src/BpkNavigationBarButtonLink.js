@@ -39,7 +39,7 @@ const BpkNavigationBarButtonLink = ({
   children,
   ...rest
 }: Props) => (
-  // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
+  // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
   <BpkButtonLink
     className={getClassName('bpk-navigation-bar-button-link', className)}
     {...rest}

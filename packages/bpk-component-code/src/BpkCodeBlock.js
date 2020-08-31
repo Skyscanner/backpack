@@ -41,7 +41,7 @@ const BpkCodeBlock = (props: Props) => {
   const codeClassNames = getClassName('bpk-code', 'bpk-code--block');
 
   return (
-    // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
+    // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
     <pre className={preClassNames} {...rest}>
       <code className={codeClassNames}>{children}</code>
     </pre>

@@ -55,8 +55,8 @@ type Props = {
   stepColor: string,
   small: boolean,
   className: ?string,
-  onComplete: () => mixed,
-  onCompleteTransitionEnd: () => mixed,
+  onComplete: ?() => mixed,
+  onCompleteTransitionEnd: ?() => mixed,
   getValueText: ?(number, number, number) => mixed,
 };
 
@@ -86,7 +86,11 @@ class BpkProgress extends Component<Props> {
 
   componentDidUpdate(previousProps: Props) {
     const { value, max } = this.props;
-    if (value >= max && value !== previousProps.value) {
+    if (
+      value >= max &&
+      value !== previousProps.value &&
+      this.props.onComplete
+    ) {
       this.props.onComplete();
 
       if (!isTransitionEndSupported() && this.props.onCompleteTransitionEnd) {
@@ -131,13 +135,11 @@ class BpkProgress extends Component<Props> {
     const percentage = 100 * (adjustedValue / (max - min));
     const numberOfSteps = stepped ? max - min - 1 : 0;
 
-    // $FlowFixMe - We do not want to needlessly spread to the div
     delete rest.onComplete;
-    // $FlowFixMe - We do not want to needlessly spread to the div
     delete rest.onCompleteTransitionEnd;
 
     return (
-      // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
+      // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
       <div
         className={classNames.join(' ')}
         role="progressbar"

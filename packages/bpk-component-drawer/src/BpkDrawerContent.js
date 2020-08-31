@@ -99,7 +99,7 @@ const BpkDrawerContent = (props: Props) => {
       onExited={onCloseAnimationComplete}
     >
       {status => (
-        // $FlowFixMe - inexact rest. See decisions/flowfixme.md
+        // $FlowFixMe[cannot-spread-inexact] - inexact rest. See decisions/flowfixme.md
         <section
           id={id}
           tabIndex="-1"
