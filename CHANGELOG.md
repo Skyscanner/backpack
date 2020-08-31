@@ -2,31 +2,40 @@
 
 [Unreleased changes](./UNRELEASED.yaml).
 
-# 2020-08-28
+# 2020-08-31 - Flow upgrades.
 
 **Added:**
-  - bpk-tokens:
-    - Added new `UIKit` aligned token aliases for corner radii and border width values.
-
-  - bpk-component-close-button:
-  - bpk-component-drawer:
-  - bpk-component-list:
-  - bpk-component-progress:
+  - bpk-component-barchart: 3.0.78 => 3.1.0
     - Added Flow.
 
 **Fixed:**
-  - bpk-component-banner-alert:
-  - bpk-component-modal:
-    - Flow type fix.
+  - Upgraded Flow to `0.132.0` and changed syntax for `FlowFixMe` suppressions in components.
 
-# 2020-08-24
+# 2020-08-28 - New iOS tokens and Flow support.
+
+**Added:**
+  - bpk-tokens: 32.0.5 => 32.1.0
+    - Added new `UIKit` aligned token aliases for corner radii and border width values.
+
+  - bpk-component-close-button: 2.0.76 => 2.0.77
+  - bpk-component-drawer: 3.0.33 => 3.0.34
+  - bpk-component-list: 3.0.75 => 3.0.76
+  - bpk-component-progress: 2.0.76 => 2.0.77
+    - Added Flow.
 
 **Fixed:**
-  - bpk-svgs:
+  - bpk-component-banner-alert: 4.2.24 => 4.2.25
+  - bpk-component-modal: 2.1.75 => 2.1.76
+    - Flow type fix.
+
+# 2020-08-24 - Icon fixes.
+
+**Fixed:**
+  - bpk-svgs: 12.1.5 => 12.1.6
     - Fixed an issue that causes the `translate` icon's dots to disappear sometimes.
     - Reverted the `eco-leaf` icon to the previous design to align better with existing campaigns.
 
-# 2020-08-07
+# 2020-08-07 - Added Flow support.
 
 **Added**:
   - bpk-component-accordion: 2.1.77
@@ -38,10 +47,10 @@
   - bpk-component-textarea: 2.0.74
     - Added Flow.
 
-# 2020-08-06
+# 2020-08-06 - `filter` icon fix.
 
 **Fixed:**
-  - bpk-svgs:
+  - bpk-svgs: 12.1.3 => 12.1.4
     - Fixed an issue with the `filter` icon that caused it to render incorrectly when used via the `BpkIcon` font.
 
 # 2020-08-05 - Added Flow support.
