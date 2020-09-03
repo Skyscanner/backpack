@@ -1,13 +1,7 @@
 # UNRELEASED:
 
-ADDED:
-  - bpk-component-map:
-    - Added `BpkPriceMarker` to display pricing markers on the map.
 
 # How to write a good changelog entry:
-BREAKING:
-  - All packages:
-      - Packages no longer support a peer-dependency of React 15
 #
 #   1. Add 'BREAKING', 'ADDED' OR 'FIXED' depending on if the change will be major, minor or patch according to [semver.org](semver.org).
 #   2. Add the package name.
