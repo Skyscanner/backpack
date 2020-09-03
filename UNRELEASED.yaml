@@ -1,5 +1,8 @@
 # UNRELEASED:
 
+BREAKING:
+  - bpk-tokens:
+      - Removed non-UIKit aligned iOS tokens
 
 # How to write a good changelog entry:
 #
