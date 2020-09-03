@@ -1,5 +1,7 @@
 # UNRELEASED:
 
+FIXED:
+  - Revert breaking React 15 dropping change.
 
 # How to write a good changelog entry:
 #
