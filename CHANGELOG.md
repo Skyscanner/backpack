@@ -2,6 +2,12 @@
 
 [Unreleased changes](./UNRELEASED.yaml).
 
+# 2020-09-03
+
+**Breaking**
+  - bpk-tokens:
+      - Removed non-UIKit aligned iOS tokens
+
 # 2020-09-03 - New `BpkPriceMarker` and drop support for React 15
 
 **Breaking**
