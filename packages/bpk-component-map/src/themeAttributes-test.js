@@ -19,6 +19,8 @@
 import {
   primaryMarkerThemeAttributes,
   secondaryMarkerThemeAttributes,
+  plainMarkerThemeAttributes,
+  priceMarkerThemeAttributes,
 } from './themeAttributes';
 
 describe('themeAttributes', () => {
@@ -31,6 +33,23 @@ describe('themeAttributes', () => {
   it('should export the correct secondary theme attributes', () => {
     expect(secondaryMarkerThemeAttributes).toEqual([
       'mapMarkerSecondaryBackgroundColor',
+    ]);
+  });
+
+  it('should export the correct plain theme attributes', () => {
+    expect(plainMarkerThemeAttributes).toEqual([
+      'mapMarkerPlainBackgroundColor',
+    ]);
+  });
+
+  it('should export the correct price marker theme attributes', () => {
+    expect(priceMarkerThemeAttributes).toEqual([
+      'priceMarkerBackgroundColor',
+      'priceMarkerSelectedBorderColor',
+      'priceMarkerSelectedColor',
+      'priceMarkerViewedBackgroundColor',
+      'priceMarkerViewedBorderColor',
+      'priceMarkerViewedColor',
     ]);
   });
 });

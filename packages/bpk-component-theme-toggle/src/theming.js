@@ -170,6 +170,16 @@ const generateTheme = ({
 
   mapMarkerPrimaryBackgroundColor: primaryColor700,
   mapMarkerSecondaryBackgroundColor: secondaryColor700,
+  mapMarkerPlainBackgroundColor: primaryColor700,
+
+  priceMarkerBackgroundColor: primaryColor700,
+
+  priceMarkerSelectedBorderColor: primaryColor700,
+  priceMarkerSelectedColor: primaryColor700,
+
+  priceMarkerViewedBackgroundColor: primaryColor300,
+  priceMarkerViewedBorderColor: primaryColor300,
+  priceMarkerViewedColor: colorWhite,
 
   navigationBarIconButtonColor: colorWhite,
   navigationBarIconButtonHoverColor: colorWhite,

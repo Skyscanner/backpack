@@ -15,7 +15,11 @@ import React from 'react';
 import BpkText from 'bpk-component-text';
 import { withRtlSupport } from 'bpk-component-icon';
 import LandmarkIconLg from 'bpk-component-icon/lg/landmark';
-import BpkMap, { BpkMapMarker, BpkOverlayView, MARKER_TYPES } from 'bpk-component-map';
+import BpkMap, {
+  BpkMapMarker,
+  BpkOverlayView,
+  MARKER_TYPES,
+} from 'bpk-component-map';
 
 const AlignedLandmarkIconLg = withRtlSupport(LandmarkIconLg);
 
@@ -51,6 +55,44 @@ export default () => (
 );
 ```
 
+### BpkPriceMarker
+
+Price markers are used to display clickable prices on a map.
+
+```js
+import React from 'react';
+import BpkMap, { BpkPriceMarker, PRICE_MARKER_STATUSES } from 'bpk-component-map';
+
+export default () => (
+  <BpkMap
+    zoom={15}
+    showControls={false}
+    panEnabled={false}
+    center={{
+      latitude: 27.9881,
+      longitude: 86.925,
+    }}
+  >
+    <BpkPriceMarker
+      label="£120"
+      position={{ latitude: 27.9881, longitude: 86.925 }}
+      onClick={() => {
+        console.log("Price marker pressed.")
+      }}
+      status={PRICE_MARKER_STATUSES.focused}
+    />
+    <BpkPriceMarker
+      label="£120"
+      position={{ latitude: 27.9881, longitude: 86.925 }}
+      onClick={() => {
+        console.log("Price marker pressed.")
+      }}
+      status={PRICE_MARKER_STATUSES.viewed}
+    />
+  </BpkMap>
+);
+```
+
 ## Accompanying HOCs
 
 ### withGoogleMapsScript
@@ -63,7 +105,8 @@ If you intend to include multiple maps on one page, it's better to load the Goog
 import React from 'react';
 import BpkMap, { withGoogleMapsScript } from 'bpk-component-map';
 
-const MAP_URL = 'https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places';
+const MAP_URL =
+  'https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places';
 
 const BpkMapWithScript = withGoogleMapsScript(BpkMap);
 
@@ -85,20 +128,20 @@ export default () => (
 
 ### BpkMap
 
-| Property	            | PropType                                                          | Required                 | Default Value                    |
-| --------------------- | ----------------------------------------------------------------- | ------------------------ | -------------------------------- |
-| bounds                | shape({north: number, east: number, south: number, west: number}) | false                    | null                             |
-| center                | shape({latitude: number, longitude: number})                      | false                    | null                             |
-| containerElement      | node                                                              | false                    | <div style={{height: '100%'}} /> |
-| greedyGestureHandling | bool                                                              | false                    | false                            |
-| mapElement            | node                                                              | false                    | <div style={{height: '100%'}} /> |
-| mapRef                | func                                                              | false                    | null                             |
-| onRegionChange        | func                                                              | false                    | null                             |
-| onZoom                | func                                                              | false                    | null                             |
-| onTilesLoaded         | func                                                              | false                    | null                             |    
-| panEnabled            | bool                                                              | false                    | true                             |
-| showControls          | bool                                                              | false                    | true                             |
-| zoom                  | number                                                            | false                    | 15                               |
+| Property              | PropType                                                          | Required | Default Value                    |
+| --------------------- | ----------------------------------------------------------------- | -------- | -------------------------------- |
+| bounds                | shape({north: number, east: number, south: number, west: number}) | false    | null                             |
+| center                | shape({latitude: number, longitude: number})                      | false    | null                             |
+| containerElement      | node                                                              | false    | <div style={{height: '100%'}} /> |
+| greedyGestureHandling | bool                                                              | false    | false                            |
+| mapElement            | node                                                              | false    | <div style={{height: '100%'}} /> |
+| mapRef                | func                                                              | false    | null                             |
+| onRegionChange        | func                                                              | false    | null                             |
+| onZoom                | func                                                              | false    | null                             |
+| onTilesLoaded         | func                                                              | false    | null                             |
+| panEnabled            | bool                                                              | false    | true                             |
+| showControls          | bool                                                              | false    | true                             |
+| zoom                  | number                                                            | false    | 15                               |
 
 Note: One of `bounds` and `center` must be provided.
 
@@ -106,42 +149,66 @@ Note: One of `bounds` and `center` must be provided.
 
 When using `withGoogleMapsScript`, some additional props are available:
 
-| Property	       | PropType                                     | Required                  | Default Value  |
-| ---------------- | -------------------------------------------- | ------------------------- | -------------- |
-| googleMapURL     | string                                       | true                      | -              |
-| loadingElement   | node                                         | false                     | BpkSpinner     |
+| Property       | PropType | Required | Default Value |
+| -------------- | -------- | -------- | ------------- |
+| googleMapURL   | string   | true     | -             |
+| loadingElement | node     | false    | BpkSpinner    |
 
 ### BpkMapMarker
 
-| Property	       | PropType                                     | Required                 | Default Value        |
-| ---------------- | -------------------------------------------- | ------------------------ | -------------------- |
-| icon             | node                                         | true                     | -                    |
-| position         | shape({latitude: number, longitude: number}) | true                     | -                    |
-| arrowClassName   | string                                       | false                    | null                 |
-| className        | string                                       | false                    | null                 |
-| large            | bool                                         | false                    | false                |
-| onClick          | func                                         | false                    | null                 |
-| selected         | bool                                         | false                    | false                |
-| type             | oneOf('primary', 'secondary', 'plain')       | false                    | MARKER_TYPES.primary |
-| buttonProps      | object                                       | false                    | null                 |
+| Property       | PropType                                     | Required | Default Value        |
+| -------------- | -------------------------------------------- | -------- | -------------------- |
+| icon           | node                                         | true     | -                    |
+| position       | shape({latitude: number, longitude: number}) | true     | -                    |
+| arrowClassName | string                                       | false    | null                 |
+| className      | string                                       | false    | null                 |
+| large          | bool                                         | false    | false                |
+| onClick        | func                                         | false    | null                 |
+| selected       | bool                                         | false    | false                |
+| type           | oneOf('primary', 'secondary', 'plain')       | false    | MARKER_TYPES.primary |
+| buttonProps    | object                                       | false    | null                 |
+
+### BpkPriceMarker
+
+| Property       | PropType                                     | Required | Default Value |
+| -------------- | -------------------------------------------- | -------- | ------------- |
+| label          | string                                       | true     | -             |
+| position       | shape({latitude: number, longitude: number}) | true     | -             |
+| arrowClassName | string                                       | false    | null          |
+| className      | string                                       | false    | null          |
+| disabled       | bool                                         | false    | false         |
+| onClick        | func                                         | false    | null          |
+| status         | oneOf(`PRICE_MARKER_STATUSES.default`, `PRICE_MARKER_STATUSES.focused`, `PRICE_MARKER_STATUSES.viewed`)                                        | false    | `PRICE_MARKER_STATUSES.default`             |
+| buttonProps    | object                                       | false    | null          |
 
 ### BpkOverlayView
 
-| Property	       | PropType                                     | Required                 | Default Value      |
-| ---------------- | -------------------------------------------- | ------------------------ | ------------------ |
-| children         | node                                         | true                     | -                  |
-| position         | shape({latitude: number, longitude: number}) | true                     | -                  |
+| Property | PropType                                     | Required | Default Value |
+| -------- | -------------------------------------------- | -------- | ------------- |
+| children | node                                         | true     | -             |
+| position | shape({latitude: number, longitude: number}) | true     | -             |
 
 ## Theme Props
 
 Primary markers:
 
-* `mapMarkerPrimaryBackgroundColor`
+- `mapMarkerPrimaryBackgroundColor`
 
 Secondary markers:
 
-* `mapMarkerSecondaryBackgroundColor`
+- `mapMarkerSecondaryBackgroundColor`
 
 Plain markers:
 
-* `mapMarkerPlainBackgroundColor`
+- `mapMarkerPlainBackgroundColor`
+
+Price markers:
+
+- `priceMarkerBackgroundColor`
+
+- `priceMarkerSelectedBorderColor`
+- `priceMarkerSelectedColor`
+
+- `priceMarkerViewedBackgroundColor`
+- `priceMarkerViewedBorderColor`
+- `priceMarkerViewedColor`

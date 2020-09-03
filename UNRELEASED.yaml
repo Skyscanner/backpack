@@ -1,5 +1,9 @@
 # UNRELEASED:
 
+ADDED:
+  - bpk-component-map:
+    - Added `BpkPriceMarker` to display pricing markers on the map.
+
 # How to write a good changelog entry:
 BREAKING:
   - All packages:

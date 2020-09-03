@@ -1,0 +1,143 @@
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016-2020 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+@import '~bpk-mixins';
+
+.bpk-price-marker {
+  display: flex;
+  padding: ($bpk-spacing-xs / 3) $bpk-spacing-sm;
+  justify-content: center;
+  align-items: center;
+  border: $bpk-border-size-xl solid;
+  border-radius: $bpk-border-radius-sm;
+
+  @include bpk-box-shadow-lg;
+
+  &--dynamic {
+    cursor: pointer;
+  }
+
+  &-default {
+    color: $bpk-color-white;
+
+    @include bpk-themeable-property(
+      border-color,
+      --bpk-price-marker-background-color,
+      $bpk-color-sky-blue
+    );
+    @include bpk-themeable-property(
+      background-color,
+      --bpk-price-marker-background-color,
+      $bpk-color-sky-blue
+    );
+  }
+
+  &-viewed {
+    @include bpk-themeable-property(
+      color,
+      --bpk-price-marker-viewed-color,
+      $bpk-color-sky-blue
+    );
+    @include bpk-themeable-property(
+      border-color,
+      --bpk-price-marker-viewed-border-color,
+      $bpk-color-sky-blue-tint-03
+    );
+    @include bpk-themeable-property(
+      background-color,
+      --bpk-price-marker-viewed-background-color,
+      $bpk-color-sky-blue-tint-03
+    );
+  }
+
+  &-focused {
+    z-index: 1;
+    padding: ($bpk-spacing-sm / 3) $bpk-spacing-sm;
+    background-color: $bpk-color-white;
+
+    @include bpk-themeable-property(
+      border-color,
+      --bpk-price-marker-selected-border-color,
+      $bpk-color-sky-blue
+    );
+    @include bpk-themeable-property(
+      color,
+      --bpk-price-marker-selected-color,
+      $bpk-color-sky-blue
+    );
+  }
+
+  &-disabled {
+    z-index: -1;
+    border-color: $bpk-color-sky-gray-tint-07;
+    background-color: $bpk-color-sky-gray-tint-07;
+    color: $bpk-color-sky-gray-tint-04;
+  }
+
+  &__wrapper {
+    position: relative;
+    display: flex;
+    // This is needed to correctly position the arrow
+    padding-bottom: 5px; // stylelint-disable-line unit-blacklist
+    flex-direction: column;
+    align-items: center;
+    border: none;
+    background: none;
+  }
+
+  &__arrow {
+    position: absolute;
+    // This is needed to correctly position the arrow
+    bottom: -$bpk-spacing-sm;
+
+    &-default {
+      @include bpk-themeable-property(
+        color,
+        --bpk-price-marker-background-color,
+        $bpk-color-sky-blue
+      );
+    }
+
+    &-viewed {
+      @include bpk-themeable-property(
+        color,
+        --bpk-price-marker-viewed-border-color,
+        $bpk-color-sky-blue-tint-03
+      );
+    }
+
+    &-focused {
+      z-index: 1;
+
+      @include bpk-themeable-property(
+        color,
+        --bpk-price-marker-selected-border-color,
+        $bpk-color-sky-blue
+      );
+    }
+
+    &-disabled {
+      z-index: -1;
+      color: $bpk-color-sky-gray-tint-07;
+    }
+
+    svg {
+      fill: currentColor;
+    }
+  }
+}
