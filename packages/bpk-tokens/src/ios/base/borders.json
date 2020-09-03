@@ -4,36 +4,6 @@
     "type": "size"
   },
   "props": {
-    "BORDER_SIZE_SM": {
-      "value": "{!BORDER_SIZE_SM}",
-      "category": "borders",
-      "deprecated": true
-    },
-    "BORDER_SIZE_LG": {
-      "value": "{!BORDER_SIZE_LG}",
-      "category": "borders",
-      "deprecated": true
-    },
-    "BORDER_SIZE_XL": {
-      "value": "{!BORDER_SIZE_XL}",
-      "category": "borders",
-      "deprecated": true
-    },
-    "BORDER_RADIUS_SM": {
-      "value": "{!BORDER_RADIUS_SM}",
-      "category": "radii",
-      "deprecated": true
-    },
-    "BORDER_RADIUS_LG": {
-      "value": "{!BORDER_RADIUS_LG}",
-      "category": "radii",
-      "deprecated": true
-    },
-    "BORDER_RADIUS_PILL": {
-      "value": "{!BORDER_RADIUS_PILL}",
-      "category": "radii",
-      "deprecated": true
-    },
     "BORDER_WIDTH_SM": {
       "value": "{!BORDER_SIZE_SM}",
       "category": "borders"
