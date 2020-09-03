@@ -33,7 +33,7 @@ import STYLES from './BpkPriceMarker.scss';
 
 const getClassName = cssModules(STYLES);
 
-export const MARKER_STATUSES = {
+export const PRICE_MARKER_STATUSES = {
   default: 'default',
   focused: 'focused',
   viewed: 'viewed',
@@ -47,7 +47,7 @@ type Props = {
   arrowClassName: ?string,
   onClick: ?(event: SyntheticEvent<>) => mixed,
   buttonProps: ?{ [string]: any },
-  status: $Keys<typeof MARKER_STATUSES>,
+  status: $Keys<typeof PRICE_MARKER_STATUSES>,
 };
 
 const BpkPriceMarker = (props: Props) => {
@@ -64,18 +64,18 @@ const BpkPriceMarker = (props: Props) => {
   } = props;
 
   const classNames = getClassName(
-    'bpk-map-marker',
-    `bpk-map-marker-${status}`,
-    onClick && 'bpk-map-marker--dynamic',
+    'bpk-price-marker',
+    `bpk-price-marker-${status}`,
+    onClick && 'bpk-price-marker--dynamic',
     className,
-    disabled && `bpk-map-marker-disabled`,
+    disabled && `bpk-price-marker-disabled`,
   );
 
   const arrowClassNames = getClassName(
-    'bpk-map-marker__arrow',
-    `bpk-map-marker__arrow-${status}`,
+    'bpk-price-marker__arrow',
+    `bpk-price-marker__arrow-${status}`,
     arrowClassName,
-    disabled && `bpk-map-marker__arrow-disabled`,
+    disabled && `bpk-price-marker__arrow-disabled`,
   );
 
   return (
@@ -84,7 +84,7 @@ const BpkPriceMarker = (props: Props) => {
       {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
       <button
         type="button"
-        className={getClassName('bpk-map-marker__wrapper')}
+        className={getClassName('bpk-price-marker__wrapper')}
         onClick={onClick}
         disabled={disabled}
         {...buttonProps}
@@ -93,7 +93,7 @@ const BpkPriceMarker = (props: Props) => {
           className={classNames}
           weight={WEIGHT_STYLES.bold}
           textStyle={
-            status === MARKER_STATUSES.focused
+            status === PRICE_MARKER_STATUSES.focused
               ? TEXT_STYLES.base
               : TEXT_STYLES.sm
           }
@@ -115,7 +115,7 @@ BpkPriceMarker.propTypes = {
   className: PropTypes.string,
   onClick: PropTypes.func,
   disabled: PropTypes.bool,
-  status: PropTypes.oneOf(Object.keys(MARKER_STATUSES)),
+  status: PropTypes.oneOf(Object.keys(PRICE_MARKER_STATUSES)),
   buttonProps: PropTypes.object, // eslint-disable-line react/forbid-prop-types
 };
 
@@ -124,7 +124,7 @@ BpkPriceMarker.defaultProps = {
   arrowClassName: null,
   onClick: null,
   disabled: false,
-  status: MARKER_STATUSES.default,
+  status: PRICE_MARKER_STATUSES.default,
   buttonProps: null,
 };
 

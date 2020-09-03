@@ -32,7 +32,7 @@ import BpkMap, {
   BpkMapMarker,
   BpkPriceMarker,
   MARKER_TYPES,
-  MARKER_STATUSES,
+  PRICE_MARKER_STATUSES,
   withGoogleMapsScript,
 } from './index';
 
@@ -160,8 +160,13 @@ type PriceMarkerState = {
   viewedVenues: Array<string>,
 };
 
-class StatefulBpkPriceMarker extends Component<{}, PriceMarkerState> {
-  static defaultProps = {};
+class StatefulBpkPriceMarker extends Component<
+  { action: () => mixed },
+  PriceMarkerState,
+> {
+  static defaultProps = {
+    action: () => null,
+  };
 
   constructor(props) {
     super(props);
@@ -173,12 +178,12 @@ class StatefulBpkPriceMarker extends Component<{}, PriceMarkerState> {
 
   getStatus = id => {
     if (this.state.selectedId === id) {
-      return MARKER_STATUSES.focused;
+      return PRICE_MARKER_STATUSES.focused;
     }
     if (this.state.viewedVenues.includes(id)) {
-      return MARKER_STATUSES.viewed;
+      return PRICE_MARKER_STATUSES.viewed;
     }
-    return MARKER_STATUSES.default;
+    return PRICE_MARKER_STATUSES.default;
   };
 
   selectVenue = id => {
@@ -196,10 +201,12 @@ class StatefulBpkPriceMarker extends Component<{}, PriceMarkerState> {
       >
         {venues.map(venue => (
           <BpkPriceMarker
+            id={venue.id}
             label={venue.price}
             position={{ latitude: venue.latitude, longitude: venue.longitude }}
             disabled={venue.disabled}
             onClick={() => {
+              this.props.action();
               this.selectVenue(venue.id);
             }}
             status={this.getStatus(venue.id)}
@@ -317,4 +324,6 @@ storiesOf('bpk-component-map', module)
       />
     </StoryMap>
   ))
-  .add('Stateful price markers', () => <StatefulBpkPriceMarker />);
+  .add('Price markers', () => (
+    <StatefulBpkPriceMarker action={action('Price marker clicked')} />
+  ));

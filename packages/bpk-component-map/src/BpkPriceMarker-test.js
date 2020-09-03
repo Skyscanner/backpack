@@ -22,7 +22,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
 
-import BpkPriceMarker, { MARKER_STATUSES } from './BpkPriceMarker';
+import BpkPriceMarker, { PRICE_MARKER_STATUSES } from './BpkPriceMarker';
 
 describe('BpkMapMarker', () => {
   const position = {
@@ -40,7 +40,7 @@ describe('BpkMapMarker', () => {
       <BpkPriceMarker
         label="£120"
         position={position}
-        status={MARKER_STATUSES.focused}
+        status={PRICE_MARKER_STATUSES.focused}
       />,
     );
     expect(toJson(tree)).toMatchSnapshot();
@@ -51,7 +51,7 @@ describe('BpkMapMarker', () => {
       <BpkPriceMarker
         label="£120"
         position={position}
-        status={MARKER_STATUSES.viewed}
+        status={PRICE_MARKER_STATUSES.viewed}
       />,
     );
     expect(toJson(tree)).toMatchSnapshot();

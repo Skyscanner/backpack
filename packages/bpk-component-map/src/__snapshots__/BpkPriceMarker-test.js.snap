@@ -10,14 +10,14 @@ exports[`BpkMapMarker should render correctly with "status" attribute as "focuse
   }
 >
   <button
-    className="bpk-map-marker__wrapper"
+    className="bpk-price-marker__wrapper"
     disabled={false}
     onClick={null}
     type="button"
   >
     <BpkText
       bold={null}
-      className="bpk-map-marker bpk-map-marker-focused"
+      className="bpk-price-marker bpk-price-marker-focused"
       tagName="span"
       textStyle="base"
       weight="bold"
@@ -25,7 +25,7 @@ exports[`BpkMapMarker should render correctly with "status" attribute as "focuse
       £120
     </BpkText>
     <div
-      className="bpk-map-marker__arrow bpk-map-marker__arrow-focused"
+      className="bpk-price-marker__arrow bpk-price-marker__arrow-focused"
     >
       <_default />
     </div>
@@ -43,14 +43,14 @@ exports[`BpkMapMarker should render correctly with "status" attribute as "viewed
   }
 >
   <button
-    className="bpk-map-marker__wrapper"
+    className="bpk-price-marker__wrapper"
     disabled={false}
     onClick={null}
     type="button"
   >
     <BpkText
       bold={null}
-      className="bpk-map-marker bpk-map-marker-viewed"
+      className="bpk-price-marker bpk-price-marker-viewed"
       tagName="span"
       textStyle="sm"
       weight="bold"
@@ -58,7 +58,7 @@ exports[`BpkMapMarker should render correctly with "status" attribute as "viewed
       £120
     </BpkText>
     <div
-      className="bpk-map-marker__arrow bpk-map-marker__arrow-viewed"
+      className="bpk-price-marker__arrow bpk-price-marker__arrow-viewed"
     >
       <_default />
     </div>
@@ -76,14 +76,14 @@ exports[`BpkMapMarker should render correctly with a "arrowClassName" attribute 
   }
 >
   <button
-    className="bpk-map-marker__wrapper"
+    className="bpk-price-marker__wrapper"
     disabled={false}
     onClick={null}
     type="button"
   >
     <BpkText
       bold={null}
-      className="bpk-map-marker bpk-map-marker-default"
+      className="bpk-price-marker bpk-price-marker-default"
       tagName="span"
       textStyle="sm"
       weight="bold"
@@ -91,7 +91,7 @@ exports[`BpkMapMarker should render correctly with a "arrowClassName" attribute 
       £120
     </BpkText>
     <div
-      className="bpk-map-marker__arrow bpk-map-marker__arrow-default custom-class-1 custom-class-2"
+      className="bpk-price-marker__arrow bpk-price-marker__arrow-default custom-class-1 custom-class-2"
     >
       <_default />
     </div>
@@ -109,7 +109,7 @@ exports[`BpkMapMarker should render correctly with a "buttonProps" attribute 1`]
   }
 >
   <button
-    className="bpk-map-marker__wrapper"
+    className="bpk-price-marker__wrapper"
     disabled={false}
     onClick={null}
     testId="arbitrary value"
@@ -117,7 +117,7 @@ exports[`BpkMapMarker should render correctly with a "buttonProps" attribute 1`]
   >
     <BpkText
       bold={null}
-      className="bpk-map-marker bpk-map-marker-default"
+      className="bpk-price-marker bpk-price-marker-default"
       tagName="span"
       textStyle="sm"
       weight="bold"
@@ -125,7 +125,7 @@ exports[`BpkMapMarker should render correctly with a "buttonProps" attribute 1`]
       £120
     </BpkText>
     <div
-      className="bpk-map-marker__arrow bpk-map-marker__arrow-default"
+      className="bpk-price-marker__arrow bpk-price-marker__arrow-default"
     >
       <_default />
     </div>
@@ -143,14 +143,14 @@ exports[`BpkMapMarker should render correctly with a "className" attribute 1`] =
   }
 >
   <button
-    className="bpk-map-marker__wrapper"
+    className="bpk-price-marker__wrapper"
     disabled={false}
     onClick={null}
     type="button"
   >
     <BpkText
       bold={null}
-      className="bpk-map-marker bpk-map-marker-default custom-class-1 custom-class-2"
+      className="bpk-price-marker bpk-price-marker-default custom-class-1 custom-class-2"
       tagName="span"
       textStyle="sm"
       weight="bold"
@@ -158,7 +158,7 @@ exports[`BpkMapMarker should render correctly with a "className" attribute 1`] =
       £120
     </BpkText>
     <div
-      className="bpk-map-marker__arrow bpk-map-marker__arrow-default"
+      className="bpk-price-marker__arrow bpk-price-marker__arrow-default"
     >
       <_default />
     </div>
@@ -176,14 +176,14 @@ exports[`BpkMapMarker should render correctly with a "disabled" attribute 1`] = 
   }
 >
   <button
-    className="bpk-map-marker__wrapper"
+    className="bpk-price-marker__wrapper"
     disabled={true}
     onClick={null}
     type="button"
   >
     <BpkText
       bold={null}
-      className="bpk-map-marker bpk-map-marker-default bpk-map-marker-disabled"
+      className="bpk-price-marker bpk-price-marker-default bpk-price-marker-disabled"
       tagName="span"
       textStyle="sm"
       weight="bold"
@@ -191,7 +191,7 @@ exports[`BpkMapMarker should render correctly with a "disabled" attribute 1`] = 
       Sold out
     </BpkText>
     <div
-      className="bpk-map-marker__arrow bpk-map-marker__arrow-default bpk-map-marker__arrow-disabled"
+      className="bpk-price-marker__arrow bpk-price-marker__arrow-default bpk-price-marker__arrow-disabled"
     >
       <_default />
     </div>
@@ -209,14 +209,14 @@ exports[`BpkMapMarker should render correctly with a "onClick" attribute 1`] = `
   }
 >
   <button
-    className="bpk-map-marker__wrapper"
+    className="bpk-price-marker__wrapper"
     disabled={false}
     onClick={[Function]}
     type="button"
   >
     <BpkText
       bold={null}
-      className="bpk-map-marker bpk-map-marker-default bpk-map-marker--dynamic"
+      className="bpk-price-marker bpk-price-marker-default bpk-price-marker--dynamic"
       tagName="span"
       textStyle="sm"
       weight="bold"
@@ -224,7 +224,7 @@ exports[`BpkMapMarker should render correctly with a "onClick" attribute 1`] = `
       £120
     </BpkText>
     <div
-      className="bpk-map-marker__arrow bpk-map-marker__arrow-default"
+      className="bpk-price-marker__arrow bpk-price-marker__arrow-default"
     >
       <_default />
     </div>
@@ -242,14 +242,14 @@ exports[`BpkMapMarker should render properly 1`] = `
   }
 >
   <button
-    className="bpk-map-marker__wrapper"
+    className="bpk-price-marker__wrapper"
     disabled={false}
     onClick={null}
     type="button"
   >
     <BpkText
       bold={null}
-      className="bpk-map-marker bpk-map-marker-default"
+      className="bpk-price-marker bpk-price-marker-default"
       tagName="span"
       textStyle="sm"
       weight="bold"
@@ -257,7 +257,7 @@ exports[`BpkMapMarker should render properly 1`] = `
       £120
     </BpkText>
     <div
-      className="bpk-map-marker__arrow bpk-map-marker__arrow-default"
+      className="bpk-price-marker__arrow bpk-price-marker__arrow-default"
     >
       <_default />
     </div>

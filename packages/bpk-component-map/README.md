@@ -61,7 +61,7 @@ Price markers are used to display clickable prices on a map.
 
 ```js
 import React from 'react';
-import BpkMap, { BpkPriceMarker, MARKER_STATUSES } from 'bpk-component-map';
+import BpkMap, { BpkPriceMarker, PRICE_MARKER_STATUSES } from 'bpk-component-map';
 
 export default () => (
   <BpkMap
@@ -79,7 +79,7 @@ export default () => (
       onClick={() => {
         console.log("Price marker pressed.")
       }}
-      status={MARKER_STATUSES.focused}
+      status={PRICE_MARKER_STATUSES.focused}
     />
     <BpkPriceMarker
       label="£120"
@@ -87,7 +87,7 @@ export default () => (
       onClick={() => {
         console.log("Price marker pressed.")
       }}
-      status={MARKER_STATUSES.viewed}
+      status={PRICE_MARKER_STATUSES.viewed}
     />
   </BpkMap>
 );
@@ -178,7 +178,7 @@ When using `withGoogleMapsScript`, some additional props are available:
 | className      | string                                       | false    | null          |
 | disabled       | bool                                         | false    | false         |
 | onClick        | func                                         | false    | null          |
-| status         | oneOf(`PRICE_MARKER_STATUSES.default`, `PRICE_MARKER_STATUSES.focused`, `PRICE_MARKER_STATUSES.viewed`)                                        | false    | `MARKER_STATUSES.default`             |
+| status         | oneOf(`PRICE_MARKER_STATUSES.default`, `PRICE_MARKER_STATUSES.focused`, `PRICE_MARKER_STATUSES.viewed`)                                        | false    | `PRICE_MARKER_STATUSES.default`             |
 | buttonProps    | object                                       | false    | null          |
 
 ### BpkOverlayView
