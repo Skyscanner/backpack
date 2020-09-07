@@ -50,6 +50,7 @@ addDecorator(story => (
     </div>
   </div>
 ));
+
 /* eslint-disable global-require */
 configure(() => {
   require('../packages/bpk-animate-height/stories');
