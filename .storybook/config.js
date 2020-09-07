@@ -16,7 +16,9 @@
  * limitations under the License.
  */
 import React from 'react';
-import { configure } from '@storybook/react';
+import { configure, addDecorator } from '@storybook/react';
+import { withKnobs } from '@storybook/addon-knobs';
+import { withA11y } from '@storybook/addon-a11y';
 
 import '../packages/bpk-stylesheets';
 import TOKENS from '../packages/bpk-tokens/tokens/base.common';
@@ -31,24 +33,24 @@ import themeableAttributes from './themeableAttributes';
 
 const EnhancedThemeProvider = updateOnThemeChange(BpkThemeProvider);
 
-/* eslint-disable import/prefer-default-export */
-export const decorations = [
-  story => (
-    <div style={{ padding: TOKENS.spacingBase }}>
-      <EnhancedThemeProvider themeAttributes={themeableAttributes}>
-        {story()}
-      </EnhancedThemeProvider>
-      <br />
-      <BpkGridToggle />
-      <br />
-      <BpkRtlToggle />
-      <br />
-      <div style={{ width: '10rem' }}>
-        <BpkThemeToggle />
-      </div>
+addDecorator(withA11y);
+addDecorator(withKnobs);
+addDecorator(story => (
+  <div style={{ padding: TOKENS.spacingBase }}>
+    <EnhancedThemeProvider themeAttributes={themeableAttributes}>
+      {story()}
+    </EnhancedThemeProvider>
+    <br />
+    <BpkGridToggle />
+    <br />
+    <BpkRtlToggle />
+    <br />
+    <div style={{ width: '10rem' }}>
+      <BpkThemeToggle />
     </div>
-  ),
-];
+  </div>
+));
+
 /* eslint-disable global-require */
 configure(() => {
   require('../packages/bpk-animate-height/stories');

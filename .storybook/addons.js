@@ -17,7 +17,7 @@
  */
 
 // TODO: addon-a11y breaks the calendar example
-import '@storybook/addon-a11y/preset';
-import '@storybook/addon-actions/preset';
-import '@storybook/addon-knobs/preset';
-import '@storybook/addon-viewport/preset';
+import '@storybook/addon-a11y/register';
+import '@storybook/addon-actions/register';
+import '@storybook/addon-knobs/register';
+import '@storybook/addon-viewport/register';
