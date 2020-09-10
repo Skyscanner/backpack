@@ -69,4 +69,10 @@ const BpkMapMarkerBackground = (props: Props) => {
   );
 };
 
+BpkMapMarkerBackground.defaultProps = {
+  disabled: false,
+  interactive: false,
+  selected: false,
+};
+
 export default BpkMapMarkerBackground;
