@@ -16,7 +16,7 @@ import BpkText from 'bpk-component-text';
 import { withRtlSupport } from 'bpk-component-icon';
 import LandmarkIconSm from 'bpk-component-icon/sm/landmark';
 import BpkMap, {
-  BpkMapMarker,
+  BpkIconMarker,
   BpkOverlayView,
 } from 'bpk-component-map';
 
@@ -32,18 +32,18 @@ export default () => (
       longitude: 86.925,
     }}
   >
-    <BpkMapMarker
+    <BpkIconMarker
       icon={<AlignedLandmarkIconSm />}
       position={{ latitude: 27.9881, longitude: 86.925 }}
       onClick={() => {}}
     />
-    <BpkMapMarker
+    <BpkIconMarker
       icon={<AlignedLandmarkIconSm />}
       position={{ latitude: 27.9881, longitude: 86.925 }}
       onClick={() => {}}
       selected
     />
-    <BpkMapMarker
+    <BpkIconMarker
       icon={<AlignedLandmarkIconSm />}
       position={{ latitude: 27.9881, longitude: 86.927 }}
       onClick={() => {}}
@@ -155,7 +155,7 @@ When using `withGoogleMapsScript`, some additional props are available:
 | googleMapURL   | string   | true     | -             |
 | loadingElement | node     | false    | BpkSpinner    |
 
-### BpkMapMarker
+### BpkIconMarker
 
 | Property       | PropType                                     | Required | Default Value        |
 | -------------- | -------------------------------------------- | -------- | -------------------- |
@@ -188,6 +188,13 @@ When using `withGoogleMapsScript`, some additional props are available:
 | position | shape({latitude: number, longitude: number}) | true     | -             |
 
 ## Theme Props
+
+Icon markers:
+
+- `iconMarkerDefaultBackgroundColor`
+- `iconMarkerDefaultSelectedColor`
+- `iconMarkerDefaultDisabledBackgroundColor`
+- `iconMarkerDefaultDisabledColor`
 
 Price markers:
 

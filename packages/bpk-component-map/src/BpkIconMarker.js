@@ -22,14 +22,14 @@ import React, { type Node } from 'react';
 import PropTypes from 'prop-types';
 import { cssModules } from 'bpk-react-utils';
 
-import BpkMapMarkerBackground from './BpkMapMarkerBackground';
+import BpkIconMarkerBackground from './BpkIconMarkerBackground';
 import { LatLongPropType, type LatLong } from './common-types';
 import BpkBasicMapMarker from './BpkBasicMapMarker';
-import STYLES from './BpkMapMarker.scss';
+import STYLES from './BpkIconMarker.scss';
 
 const getClassName = cssModules(STYLES);
 
-type Props = {
+export type Props = {
   icon: Node,
   position: LatLong,
   disabled: boolean,
@@ -39,7 +39,7 @@ type Props = {
   buttonProps: ?{ [string]: any },
 };
 
-const BpkMapMarker = (props: Props) => {
+const BpkIconMarker = (props: Props) => {
   const {
     icon,
     position,
@@ -52,16 +52,16 @@ const BpkMapMarker = (props: Props) => {
   } = props;
 
   const wrapperClassNames = getClassName(
-    'bpk-map-marker__wrapper',
-    selected && 'bpk-map-marker__wrapper--selected',
+    'bpk-icon-marker__wrapper',
+    selected && 'bpk-icon-marker__wrapper--selected',
     className,
   );
 
   const iconClassNames = getClassName(
-    'bpk-map-marker__icon',
-    onClick && !disabled && 'bpk-map-marker__icon--interactive',
-    disabled && 'bpk-map-marker__icon--disabled',
-    selected && 'bpk-map-marker__icon--selected',
+    'bpk-icon-marker__icon',
+    onClick && !disabled && 'bpk-icon-marker__icon--interactive',
+    disabled && 'bpk-icon-marker__icon--disabled',
+    selected && 'bpk-icon-marker__icon--selected',
   );
 
   return (
@@ -75,7 +75,7 @@ const BpkMapMarker = (props: Props) => {
         disabled={disabled}
         {...buttonProps}
       >
-        <BpkMapMarkerBackground
+        <BpkIconMarkerBackground
           disabled={disabled}
           interactive={onClick && !disabled}
           selected={selected}
@@ -86,7 +86,7 @@ const BpkMapMarker = (props: Props) => {
   );
 };
 
-BpkMapMarker.propTypes = {
+BpkIconMarker.propTypes = {
   icon: PropTypes.node.isRequired,
   position: LatLongPropType.isRequired,
   className: PropTypes.string,
@@ -96,7 +96,7 @@ BpkMapMarker.propTypes = {
   buttonProps: PropTypes.object, // eslint-disable-line react/forbid-prop-types
 };
 
-BpkMapMarker.defaultProps = {
+BpkIconMarker.defaultProps = {
   className: null,
   disabled: false,
   onClick: null,
@@ -104,4 +104,4 @@ BpkMapMarker.defaultProps = {
   buttonProps: null,
 };
 
-export default BpkMapMarker;
+export default BpkIconMarker;

@@ -569,7 +569,7 @@ BpkNavigationBar
 BpkNavigationBarIconButton
 BpkOverlayView
 BpkMap
-BpkMapMarker
+BpkIconMarker
 BpkPriceMarker
 BpkBackgroundImage
 BpkGridColumn

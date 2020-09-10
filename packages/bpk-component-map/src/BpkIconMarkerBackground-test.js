@@ -22,26 +22,26 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
 
-import BpkMapMarkerBackground from './BpkMapMarkerBackground';
+import BpkIconMarkerBackground from './BpkIconMarkerBackground';
 
-describe('BpkMapMarkerBackground', () => {
+describe('BpkIconMarkerBackground', () => {
   it('should render properly', () => {
-    const tree = shallow(<BpkMapMarkerBackground />);
+    const tree = shallow(<BpkIconMarkerBackground />);
     expect(toJson(tree)).toMatchSnapshot();
   });
 
   it('should render properly with "disabled"', () => {
-    const tree = shallow(<BpkMapMarkerBackground disabled />);
+    const tree = shallow(<BpkIconMarkerBackground disabled />);
     expect(toJson(tree)).toMatchSnapshot();
   });
 
   it('should render properly with "interactive"', () => {
-    const tree = shallow(<BpkMapMarkerBackground interactive />);
+    const tree = shallow(<BpkIconMarkerBackground interactive />);
     expect(toJson(tree)).toMatchSnapshot();
   });
 
   it('should render properly with "selected"', () => {
-    const tree = shallow(<BpkMapMarkerBackground selected />);
+    const tree = shallow(<BpkIconMarkerBackground selected />);
     expect(toJson(tree)).toMatchSnapshot();
   });
 });

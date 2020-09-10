@@ -26,7 +26,7 @@ $selected-marker-width: $bpk-spacing-lg;
 
 $icon-width: $bpk-icon-size-lg;
 
-.bpk-map-marker {
+.bpk-icon-marker {
   &__wrapper {
     position: relative;
     z-index: 1;
@@ -61,7 +61,11 @@ $icon-width: $bpk-icon-size-lg;
     }
 
     &--disabled {
-      color: $bpk-color-glencoe;
+      @include bpk-themeable-property(
+        color,
+        --bpk-icon-marker-default-disabled-color,
+        $bpk-color-monteverde
+      );
     }
 
     &--selected {
@@ -71,7 +75,12 @@ $icon-width: $bpk-icon-size-lg;
 
       top: $padding;
       left: $padding;
-      color: $bpk-color-monteverde;
+
+      @include bpk-themeable-property(
+        color,
+        --bpk-icon-marker-default-selected-color,
+        $bpk-color-monteverde
+      );
     }
   }
 }

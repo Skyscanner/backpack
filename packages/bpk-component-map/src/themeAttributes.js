@@ -16,13 +16,12 @@
  * limitations under the License.
  */
 
-export const primaryMarkerThemeAttributes = ['mapMarkerPrimaryBackgroundColor'];
-
-export const secondaryMarkerThemeAttributes = [
-  'mapMarkerSecondaryBackgroundColor',
+export const defaultIconMarkerThemeAttributes = [
+  'iconMarkerDefaultBackgroundColor',
+  'iconMarkerDefaultSelectedColor',
+  'iconMarkerDefaultDisabledColor',
+  'iconMarkerDefaultDisabledBackgroundColor',
 ];
-
-export const plainMarkerThemeAttributes = ['mapMarkerPlainBackgroundColor'];
 
 export const priceMarkerThemeAttributes = [
   'priceMarkerBackgroundColor',
@@ -34,8 +33,6 @@ export const priceMarkerThemeAttributes = [
 ];
 
 export default {
-  primaryMarkerThemeAttributes,
-  secondaryMarkerThemeAttributes,
-  plainMarkerThemeAttributes,
+  defaultIconMarkerThemeAttributes,
   priceMarkerThemeAttributes,
 };

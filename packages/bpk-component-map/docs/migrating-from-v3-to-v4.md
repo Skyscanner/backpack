@@ -1,6 +1,6 @@
 # Migrating from `v3` to `v4`
 
-`BpkMapMarker` has been completely rewritten to have a new look. **If you are not using `BpkMapMarker`, this change will not break anything for you and you can ignore this migration guide.**
+`BpkMapMarker` has been completely rewritten to have a new look and a new name — `BpkIconMarker`. **If you are not using `BpkMapMarker`, this change will not break anything for you and you can ignore this migration guide.**
 
 ## History and rationale
 
@@ -10,11 +10,13 @@ The original map marker component was added to suit the needs of one team at Sky
 
 ### TL;DR
 
+* `BpkMapMarker` is now `BpkIconMarker`.
 * The `large` prop has been removed.
 * A `disabled` prop has been added.
 * A `selected` prop has been added.
 * `arrowClassNames` has been removed, because there is no separate arrow element any more.
 * The `type` prop and the `MARKER_TYPES` object have been removed, there is now only one type of marker.
+* The themeable attributes exported have changed. Use `defaultIconMarkerThemeAttributes` to theme icon markers.
 
 ### Changing from `large` to `selected`
 
@@ -28,7 +30,7 @@ import { BpkMapMarker } from 'bpk-component-map';
 import BusIconSm from 'bpk-component-icon/sm/bus';
 
 const MyComponent = () => (
-  <MapMarker
+  <BpkMapMarker
     position={{ latitude: 35.661777, longitude: 139.704051 }}
     icon={<BusIconSm />}
     large={this.state.selected}
@@ -40,11 +42,11 @@ const MyComponent = () => (
 
 ```jsx
 import React from 'react';
-import { BpkMapMarker } from 'bpk-component-map';
+import { BpkIconMarker } from 'bpk-component-map';
 import BusIconSm from 'bpk-component-icon/sm/bus';
 
 const MyComponent = () => (
-  <MapMarker
+  <BpkIconMarker
     position={{ latitude: 35.661777, longitude: 139.704051 }}
     icon={<BusIconSm />}
     selected={this.state.selected}

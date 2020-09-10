@@ -18,22 +18,37 @@
 
 @import '~bpk-mixins';
 
-.bpk-map-marker-background {
+.bpk-icon-marker-background {
   position: absolute;
   top: 0;
   left: 0;
-  fill: $bpk-color-monteverde;
+
+  @include bpk-themeable-property(
+    fill,
+    --bpk-icon-marker-default-background-color,
+    $bpk-color-monteverde
+  );
 
   &--interactive {
     cursor: pointer;
   }
 
   &--disabled {
-    fill: $bpk-color-sagano;
+    @include bpk-themeable-property(
+      fill,
+      --bpk-icon-marker-default-disabled-background-color,
+      $bpk-color-sagano
+    );
   }
 
   &--selected {
     fill: $bpk-color-white;
     stroke: $bpk-color-monteverde;
+
+    @include bpk-themeable-property(
+      stroke,
+      --bpk-icon-marker-default-selected-color,
+      $bpk-color-monteverde
+    );
   }
 }

@@ -1,8 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`BpkMapMarkerBackground should render properly 1`] = `
+exports[`BpkIconMarkerBackground should render properly 1`] = `
 <svg
-  className="bpk-map-marker-background"
+  className="bpk-icon-marker-background"
   height="30"
   viewBox="4 3 24 30"
   width="24"
@@ -14,9 +14,9 @@ exports[`BpkMapMarkerBackground should render properly 1`] = `
 </svg>
 `;
 
-exports[`BpkMapMarkerBackground should render properly with "disabled" 1`] = `
+exports[`BpkIconMarkerBackground should render properly with "disabled" 1`] = `
 <svg
-  className="bpk-map-marker-background bpk-map-marker-background--disabled"
+  className="bpk-icon-marker-background bpk-icon-marker-background--disabled"
   height="30"
   viewBox="4 3 24 30"
   width="24"
@@ -28,9 +28,9 @@ exports[`BpkMapMarkerBackground should render properly with "disabled" 1`] = `
 </svg>
 `;
 
-exports[`BpkMapMarkerBackground should render properly with "interactive" 1`] = `
+exports[`BpkIconMarkerBackground should render properly with "interactive" 1`] = `
 <svg
-  className="bpk-map-marker-background bpk-map-marker-background--interactive"
+  className="bpk-icon-marker-background bpk-icon-marker-background--interactive"
   height="30"
   viewBox="4 3 24 30"
   width="24"
@@ -42,9 +42,9 @@ exports[`BpkMapMarkerBackground should render properly with "interactive" 1`] = 
 </svg>
 `;
 
-exports[`BpkMapMarkerBackground should render properly with "selected" 1`] = `
+exports[`BpkIconMarkerBackground should render properly with "selected" 1`] = `
 <svg
-  className="bpk-map-marker-background bpk-map-marker-background--selected"
+  className="bpk-icon-marker-background bpk-icon-marker-background--selected"
   height="36"
   viewBox="4 3 30 36"
   width="30"

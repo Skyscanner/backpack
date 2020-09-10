@@ -21,7 +21,7 @@
 import React from 'react';
 import { cssModules } from 'bpk-react-utils';
 
-import STYLES from './BpkMapMarkerBackground.scss';
+import STYLES from './BpkIconMarkerBackground.scss';
 
 const getClassName = cssModules(STYLES);
 
@@ -31,14 +31,14 @@ type Props = {
   selected: boolean,
 };
 
-const BpkMapMarkerBackground = (props: Props) => {
+const BpkIconMarkerBackground = (props: Props) => {
   const { disabled, interactive, selected, ...rest } = props;
 
   const classNames = getClassName(
-    'bpk-map-marker-background',
-    interactive && 'bpk-map-marker-background--interactive',
-    disabled && 'bpk-map-marker-background--disabled',
-    selected && 'bpk-map-marker-background--selected',
+    'bpk-icon-marker-background',
+    interactive && 'bpk-icon-marker-background--interactive',
+    disabled && 'bpk-icon-marker-background--disabled',
+    selected && 'bpk-icon-marker-background--selected',
   );
 
   if (selected) {
@@ -69,10 +69,10 @@ const BpkMapMarkerBackground = (props: Props) => {
   );
 };
 
-BpkMapMarkerBackground.defaultProps = {
+BpkIconMarkerBackground.defaultProps = {
   disabled: false,
   interactive: false,
   selected: false,
 };
 
-export default BpkMapMarkerBackground;
+export default BpkIconMarkerBackground;

@@ -29,7 +29,7 @@ import FoodIconSm from 'bpk-component-icon/sm/food';
 
 import BpkMap, {
   BpkOverlayView,
-  BpkMapMarker,
+  BpkIconMarker,
   BpkPriceMarker,
   PRICE_MARKER_STATUSES,
   withGoogleMapsScript,
@@ -175,7 +175,7 @@ class StatefulBpkPriceMarker extends Component<
   }
 }
 
-class StatefulBpkMapMarker extends Component<
+class StatefulBpkIconMarker extends Component<
   { action: () => mixed },
   { selectedId: string },
 > {
@@ -201,7 +201,7 @@ class StatefulBpkMapMarker extends Component<
         center={{ latitude: 35.661777, longitude: 139.704051 }}
       >
         {venues.map(venue => (
-          <BpkMapMarker
+          <BpkIconMarker
             position={{ latitude: venue.latitude, longitude: venue.longitude }}
             onClick={() => {
               this.props.action();
@@ -258,18 +258,7 @@ storiesOf('bpk-component-map', module)
     <StoryMap
       center={{ latitude: 55.944357, longitude: -3.1967116 }}
       onTilesLoaded={() => console.log('Tiles loaded')} // eslint-disable-line no-console
-    >
-      <StatefulBpkMapMarker
-        large
-        position={{ latitude: 55.9441, longitude: -3.196 }}
-        icon={<AlignedLandmarkIconSm />}
-      />
-      <StatefulBpkMapMarker
-        large
-        position={{ latitude: 55.9446, longitude: -3.197 }}
-        icon={<AlignedBusIconSm />}
-      />
-    </StoryMap>
+    />
   ))
   .add('With a bounding box', () => (
     <StoryMap
@@ -288,8 +277,8 @@ storiesOf('bpk-component-map', module)
       </BpkOverlayView>
     </StoryMap>
   ))
-  .add('Map markers', () => (
-    <StatefulBpkMapMarker action={action('Price marker clicked')} />
+  .add('Icon markers', () => (
+    <StatefulBpkIconMarker action={action('Price marker clicked')} />
   ))
   .add('Price markers', () => (
     <StatefulBpkPriceMarker action={action('Price marker clicked')} />
