@@ -36,16 +36,23 @@ describe('BpkMapMarker', () => {
     expect(toJson(tree)).toMatchSnapshot();
   });
 
-  it('should render correctly with a "large" attribute', () => {
+  it('should render correctly with a "selected" attribute', () => {
     const tree = shallow(
-      <BpkMapMarker position={position} icon={icon} large />,
+      <BpkMapMarker position={position} icon={icon} selected />,
     );
     expect(toJson(tree)).toMatchSnapshot();
   });
 
-  it('should render correctly with a "selected" attribute', () => {
+  it('should render correctly with a "disabled" attribute', () => {
     const tree = shallow(
-      <BpkMapMarker position={position} icon={icon} selected />,
+      <BpkMapMarker position={position} icon={icon} disabled />,
+    );
+    expect(toJson(tree)).toMatchSnapshot();
+  });
+
+  it('should render correctly with both a "selected" and "disabled" attribute (disabled takes precedence)', () => {
+    const tree = shallow(
+      <BpkMapMarker position={position} icon={icon} selected disabled />,
     );
     expect(toJson(tree)).toMatchSnapshot();
   });
@@ -56,17 +63,6 @@ describe('BpkMapMarker', () => {
         position={position}
         icon={icon}
         className="custom-class-1 custom-class-2"
-      />,
-    );
-    expect(toJson(tree)).toMatchSnapshot();
-  });
-
-  it('should render correctly with a "arrowClassName" attribute', () => {
-    const tree = shallow(
-      <BpkMapMarker
-        position={position}
-        icon={icon}
-        arrowClassName="custom-class-1 custom-class-2"
       />,
     );
     expect(toJson(tree)).toMatchSnapshot();

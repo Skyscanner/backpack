@@ -18,152 +18,60 @@
 
 @import '~bpk-mixins';
 
+// Matches the height and width of BpkMapMarkerBackground
+$marker-height: $bpk-spacing-lg;
+$marker-width: $bpk-spacing-base;
+$selected-marker-height: $bpk-spacing-xl;
+$selected-marker-width: $bpk-spacing-lg;
+
+$icon-width: $bpk-icon-size-lg;
+
 .bpk-map-marker {
-  display: flex;
-  width: $bpk-spacing-lg;
-  height: $bpk-spacing-lg;
-  justify-content: center;
-  align-items: center;
-  border: $bpk-border-size-xl solid $bpk-color-white;
-  border-radius: 50%;
-  color: $bpk-color-white;
-
-  @include bpk-box-shadow-lg;
-
-  &--primary {
-    @include bpk-themeable-property(
-      background-color,
-      --bpk-map-marker-primary-background-color,
-      $bpk-color-sky-blue
-    );
-
-    &-selected {
-      z-index: 1;
-      background-color: $bpk-color-white;
-
-      @include bpk-themeable-property(
-        border-color,
-        --bpk-map-marker-primary-background-color,
-        $bpk-color-sky-blue
-      );
-      @include bpk-themeable-property(
-        color,
-        --bpk-map-marker-primary-background-color,
-        $bpk-color-sky-blue
-      );
-    }
-  }
-
-  &--secondary {
-    @include bpk-themeable-property(
-      background-color,
-      --bpk-map-marker-secondary-background-color,
-      $bpk-color-sky-blue-shade-02
-    );
-
-    &-selected {
-      z-index: 1;
-      background-color: $bpk-color-white;
-
-      @include bpk-themeable-property(
-        border-color,
-        --bpk-map-marker-secondary-background-color,
-        $bpk-color-sky-blue-shade-02
-      );
-      @include bpk-themeable-property(
-        color,
-        --bpk-map-marker-secondary-background-color,
-        $bpk-color-sky-blue-shade-02
-      );
-    }
-  }
-
-  &--plain {
-    @include bpk-themeable-property(
-      background-color,
-      --bpk-map-marker-plain-background-color,
-      $bpk-color-sky-gray-tint-01
-    );
-
-    &-selected {
-      z-index: 1;
-      background-color: $bpk-color-white;
-
-      @include bpk-themeable-property(
-        border-color,
-        --bpk-map-marker-plain-background-color,
-        $bpk-color-sky-gray-tint-01
-      );
-      @include bpk-themeable-property(
-        color,
-        --bpk-map-marker-plain-background-color,
-        $bpk-color-sky-gray-tint-01
-      );
-    }
-  }
-
-  &--large {
-    width: $bpk-spacing-xxl;
-    height: $bpk-spacing-xxl;
-  }
-
-  &--dynamic {
-    cursor: pointer;
-  }
-
   &__wrapper {
     position: relative;
-    display: flex;
-    // This is needed to correctly position the arrow
-    padding-bottom: 5px; // stylelint-disable-line unit-blacklist
-    flex-direction: column;
-    align-items: center;
-    border: none;
-    background: none;
+    z-index: 1;
+    width: $marker-width;
+    height: $marker-height;
+    border: none; // Prevent default <button> styling.
+    background: none; // Prevent default <button> styling.
+
+    &--selected {
+      z-index: 2;
+      width: $selected-marker-width;
+      height: $selected-marker-height;
+    }
   }
 
-  &__arrow {
+  &__icon {
+    // This ensures that the icon is positioned exactly in the
+    // centre of the marker.
+    $padding: ($marker-width / 2) - ($bpk-icon-size-sm / 2);
+
     position: absolute;
-    // This is needed to correctly position the arrow
-    bottom: -7px; // stylelint-disable-line unit-blacklist
+    top: $padding;
+    left: $padding;
     color: $bpk-color-white;
 
-    svg {
+    > svg {
       fill: currentColor;
     }
 
-    &--primary-selected {
-      z-index: 1;
-
-      @include bpk-themeable-property(
-        color,
-        --bpk-map-marker-primary-background-color,
-        $bpk-color-sky-blue
-      );
+    &--interactive {
+      cursor: pointer;
     }
 
-    &--secondary-selected {
-      z-index: 1;
-
-      @include bpk-themeable-property(
-        color,
-        --bpk-map-marker-secondary-background-color,
-        $bpk-color-sky-blue-shade-02
-      );
+    &--disabled {
+      color: $bpk-color-glencoe;
     }
 
-    &--plain-selected {
-      z-index: 1;
+    &--selected {
+      // This ensures that the icon is positioned exactly in the
+      // centre of the marker.
+      $padding: ($selected-marker-width / 2) - ($bpk-icon-size-sm / 2);
 
-      @include bpk-themeable-property(
-        color,
-        --bpk-map-marker-plain-background-color,
-        $bpk-color-sky-gray-tint-01
-      );
+      top: $padding;
+      left: $padding;
+      color: $bpk-color-monteverde;
     }
-  }
-
-  svg {
-    fill: currentColor;
   }
 }

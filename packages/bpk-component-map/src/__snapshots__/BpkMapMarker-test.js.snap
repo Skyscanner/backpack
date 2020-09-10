@@ -1,35 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`BpkMapMarker should render correctly with a "arrowClassName" attribute 1`] = `
-<BpkBasicMapMarker
-  position={
-    Object {
-      "latitude": 41.386947,
-      "longitude": 2.170048,
-    }
-  }
->
-  <button
-    className="bpk-map-marker__wrapper"
-    onClick={null}
-    type="button"
-  >
-    <div
-      className="bpk-map-marker bpk-map-marker--primary"
-    >
-      <span>
-        Icon
-      </span>
-    </div>
-    <div
-      className="bpk-map-marker__arrow custom-class-1 custom-class-2"
-    >
-      <_default />
-    </div>
-  </button>
-</BpkBasicMapMarker>
-`;
-
 exports[`BpkMapMarker should render correctly with a "buttonProps" attribute 1`] = `
 <BpkBasicMapMarker
   position={
@@ -41,21 +11,22 @@ exports[`BpkMapMarker should render correctly with a "buttonProps" attribute 1`]
 >
   <button
     className="bpk-map-marker__wrapper"
+    disabled={false}
     onClick={null}
     testId="arbitrary value"
     type="button"
   >
+    <BpkMapMarkerBackground
+      disabled={false}
+      interactive={null}
+      selected={false}
+    />
     <div
-      className="bpk-map-marker bpk-map-marker--primary"
+      className="bpk-map-marker__icon"
     >
       <span>
         Icon
       </span>
-    </div>
-    <div
-      className="bpk-map-marker__arrow"
-    >
-      <_default />
     </div>
   </button>
 </BpkBasicMapMarker>
@@ -71,27 +42,28 @@ exports[`BpkMapMarker should render correctly with a "className" attribute 1`] =
   }
 >
   <button
-    className="bpk-map-marker__wrapper"
+    className="bpk-map-marker__wrapper custom-class-1 custom-class-2"
+    disabled={false}
     onClick={null}
     type="button"
   >
+    <BpkMapMarkerBackground
+      disabled={false}
+      interactive={null}
+      selected={false}
+    />
     <div
-      className="bpk-map-marker bpk-map-marker--primary custom-class-1 custom-class-2"
+      className="bpk-map-marker__icon"
     >
       <span>
         Icon
       </span>
     </div>
-    <div
-      className="bpk-map-marker__arrow"
-    >
-      <_default />
-    </div>
   </button>
 </BpkBasicMapMarker>
 `;
 
-exports[`BpkMapMarker should render correctly with a "large" attribute 1`] = `
+exports[`BpkMapMarker should render correctly with a "disabled" attribute 1`] = `
 <BpkBasicMapMarker
   position={
     Object {
@@ -102,20 +74,21 @@ exports[`BpkMapMarker should render correctly with a "large" attribute 1`] = `
 >
   <button
     className="bpk-map-marker__wrapper"
+    disabled={true}
     onClick={null}
     type="button"
   >
+    <BpkMapMarkerBackground
+      disabled={true}
+      interactive={null}
+      selected={false}
+    />
     <div
-      className="bpk-map-marker bpk-map-marker--primary bpk-map-marker--large"
+      className="bpk-map-marker__icon bpk-map-marker__icon--disabled"
     >
       <span>
         Icon
       </span>
-    </div>
-    <div
-      className="bpk-map-marker__arrow"
-    >
-      <_default />
     </div>
   </button>
 </BpkBasicMapMarker>
@@ -131,21 +104,53 @@ exports[`BpkMapMarker should render correctly with a "selected" attribute 1`] = 
   }
 >
   <button
-    className="bpk-map-marker__wrapper"
+    className="bpk-map-marker__wrapper bpk-map-marker__wrapper--selected"
+    disabled={false}
     onClick={null}
     type="button"
   >
+    <BpkMapMarkerBackground
+      disabled={false}
+      interactive={null}
+      selected={true}
+    />
     <div
-      className="bpk-map-marker bpk-map-marker--primary bpk-map-marker--primary-selected"
+      className="bpk-map-marker__icon bpk-map-marker__icon--selected"
     >
       <span>
         Icon
       </span>
     </div>
+  </button>
+</BpkBasicMapMarker>
+`;
+
+exports[`BpkMapMarker should render correctly with both a "selected" and "disabled" attribute (disabled takes precedence) 1`] = `
+<BpkBasicMapMarker
+  position={
+    Object {
+      "latitude": 41.386947,
+      "longitude": 2.170048,
+    }
+  }
+>
+  <button
+    className="bpk-map-marker__wrapper bpk-map-marker__wrapper--selected"
+    disabled={true}
+    onClick={null}
+    type="button"
+  >
+    <BpkMapMarkerBackground
+      disabled={true}
+      interactive={null}
+      selected={true}
+    />
     <div
-      className="bpk-map-marker__arrow bpk-map-marker__arrow--primary-selected"
+      className="bpk-map-marker__icon bpk-map-marker__icon--disabled bpk-map-marker__icon--selected"
     >
-      <_default />
+      <span>
+        Icon
+      </span>
     </div>
   </button>
 </BpkBasicMapMarker>
@@ -162,20 +167,21 @@ exports[`BpkMapMarker should render properly 1`] = `
 >
   <button
     className="bpk-map-marker__wrapper"
+    disabled={false}
     onClick={null}
     type="button"
   >
+    <BpkMapMarkerBackground
+      disabled={false}
+      interactive={null}
+      selected={false}
+    />
     <div
-      className="bpk-map-marker bpk-map-marker--primary"
+      className="bpk-map-marker__icon"
     >
       <span>
         Icon
       </span>
-    </div>
-    <div
-      className="bpk-map-marker__arrow"
-    >
-      <_default />
     </div>
   </button>
 </BpkBasicMapMarker>

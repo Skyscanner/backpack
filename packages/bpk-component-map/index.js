@@ -19,10 +19,7 @@
 /* @flow strict */
 
 import BpkMap from './src/BpkMap';
-import BpkMapMarker, {
-  MARKER_TYPES,
-  type MarkerType,
-} from './src/BpkMapMarker';
+import BpkMapMarker from './src/BpkMapMarker';
 import BpkPriceMarker, { PRICE_MARKER_STATUSES } from './src/BpkPriceMarker';
 import BpkOverlayView from './src/BpkOverlayView';
 import withGoogleMapsScript from './src/withGoogleMapsScript';
@@ -36,7 +33,6 @@ import {
 
 export default BpkMap;
 export type BpkMapLatLong = LatLong;
-export type BpkMapMarkerType = MarkerType;
 export {
   BpkMapMarker,
   BpkPriceMarker,
@@ -46,6 +42,5 @@ export {
   secondaryMarkerThemeAttributes,
   plainMarkerThemeAttributes,
   priceMarkerThemeAttributes,
-  MARKER_TYPES,
   PRICE_MARKER_STATUSES,
 };

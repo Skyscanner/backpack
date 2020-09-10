@@ -17,29 +17,28 @@
  */
 /* @flow strict */
 
-import React, { type ElementProps, Component } from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import BpkText from 'bpk-component-text';
 import { withRtlSupport } from 'bpk-component-icon';
-import LandmarkIconLg from 'bpk-component-icon/lg/landmark';
-import BusIconLg from 'bpk-component-icon/lg/bus';
+import LandmarkIconSm from 'bpk-component-icon/sm/landmark';
+import BusIconSm from 'bpk-component-icon/sm/bus';
 import FoodIconSm from 'bpk-component-icon/sm/food';
 
 import BpkMap, {
   BpkOverlayView,
   BpkMapMarker,
   BpkPriceMarker,
-  MARKER_TYPES,
   PRICE_MARKER_STATUSES,
   withGoogleMapsScript,
 } from './index';
 
 const BpkMapWithLoading = withGoogleMapsScript(BpkMap);
 
-const AlignedLandmarkIconLg = withRtlSupport(LandmarkIconLg);
-const AlignedBusIconLg = withRtlSupport(BusIconLg);
+const AlignedLandmarkIconSm = withRtlSupport(LandmarkIconSm);
+const AlignedBusIconSm = withRtlSupport(BusIconSm);
 const AlignedFoodIconSm = withRtlSupport(FoodIconSm);
 
 const StoryMap = props => {
@@ -66,68 +65,24 @@ StoryMap.defaultProps = {
   language: '',
 };
 
-type Props = ElementProps<typeof BpkMapMarker>;
-
-type State = {
-  selected: boolean,
-};
-
-class StatefulBpkMapMarker extends Component<Props, State> {
-  static defaultProps = {
-    className: null,
-    arrowClassName: null,
-    large: false,
-    onClick: null,
-    selected: false,
-    type: MARKER_TYPES.primary,
-    buttonProps: null,
-  };
-
-  constructor(props) {
-    super(props);
-    this.state = {
-      selected: false,
-    };
-  }
-
-  onClick = () => {
-    this.setState(prevState => ({
-      selected: !prevState.selected,
-    }));
-  };
-
-  render() {
-    const { onClick, ...rest } = this.props;
-
-    return (
-      // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
-      <BpkMapMarker
-        selected={this.state.selected}
-        onClick={() => {
-          this.onClick();
-        }}
-        {...rest}
-      />
-    );
-  }
-}
-
 const venues = [
   {
     id: '1',
     name: 'Hotel Monteverde',
     latitude: 35.68,
-    longitude: 139.69,
+    longitude: 139.694,
     price: '£48',
     disabled: false,
+    icon: <AlignedLandmarkIconSm />,
   },
   {
     id: '2',
     name: 'Abisko Inn & Suites',
-    latitude: 35.67,
-    longitude: 139.7,
+    latitude: 35.685,
+    longitude: 139.69,
     price: '£151',
     disabled: false,
+    icon: <AlignedBusIconSm />,
   },
   {
     id: '3',
@@ -136,6 +91,7 @@ const venues = [
     longitude: 139.71,
     price: '£62',
     disabled: false,
+    icon: <AlignedFoodIconSm />,
   },
   {
     id: '4',
@@ -144,6 +100,7 @@ const venues = [
     longitude: 139.7,
     price: '£342',
     disabled: false,
+    icon: <AlignedLandmarkIconSm />,
   },
   {
     id: '5',
@@ -152,6 +109,7 @@ const venues = [
     longitude: 139.72,
     price: 'Sold out',
     disabled: true,
+    icon: <AlignedBusIconSm />,
   },
 ];
 
@@ -217,6 +175,48 @@ class StatefulBpkPriceMarker extends Component<
   }
 }
 
+class StatefulBpkMapMarker extends Component<
+  { action: () => mixed },
+  { selectedId: string },
+> {
+  static defaultProps = {
+    action: () => null,
+  };
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      selectedId: '1',
+    };
+  }
+
+  selectVenue = id => {
+    this.setState({ selectedId: id });
+  };
+
+  render() {
+    return (
+      <StoryMap
+        zoom={12}
+        center={{ latitude: 35.661777, longitude: 139.704051 }}
+      >
+        {venues.map(venue => (
+          <BpkMapMarker
+            position={{ latitude: venue.latitude, longitude: venue.longitude }}
+            onClick={() => {
+              this.props.action();
+              this.selectVenue(venue.id);
+            }}
+            icon={venue.icon}
+            disabled={venue.disabled}
+            selected={this.state.selectedId === venue.id}
+          />
+        ))}
+      </StoryMap>
+    );
+  }
+}
+
 const onZoom = level => {
   action(`Zoom changed to ${level}`);
 };
@@ -262,12 +262,12 @@ storiesOf('bpk-component-map', module)
       <StatefulBpkMapMarker
         large
         position={{ latitude: 55.9441, longitude: -3.196 }}
-        icon={<AlignedLandmarkIconLg />}
+        icon={<AlignedLandmarkIconSm />}
       />
       <StatefulBpkMapMarker
         large
         position={{ latitude: 55.9446, longitude: -3.197 }}
-        icon={<AlignedBusIconLg />}
+        icon={<AlignedBusIconSm />}
       />
     </StoryMap>
   ))
@@ -288,41 +288,8 @@ storiesOf('bpk-component-map', module)
       </BpkOverlayView>
     </StoryMap>
   ))
-  .add('With BpkMapMarker', () => (
-    <StoryMap center={{ latitude: 55.944357, longitude: -3.1967116 }}>
-      <BpkMapMarker
-        large
-        position={{ latitude: 55.944, longitude: -3.1967116 }}
-        icon={<AlignedLandmarkIconLg />}
-      />
-      <BpkMapMarker
-        large
-        position={{ latitude: 55.943, longitude: -3.1937116 }}
-        onClick={() => {
-          alert('Marker clicked'); // eslint-disable-line no-alert
-        }}
-        icon={<AlignedBusIconLg />}
-      />
-      <BpkMapMarker
-        position={{ latitude: 55.942, longitude: -3.2018116 }}
-        type={MARKER_TYPES.secondary}
-        icon={<AlignedFoodIconSm />}
-      />
-    </StoryMap>
-  ))
-  .add('Overlapping markers', () => (
-    <StoryMap center={{ latitude: 55.944357, longitude: -3.1967116 }}>
-      <StatefulBpkMapMarker
-        large
-        position={{ latitude: 55.9441, longitude: -3.196 }}
-        icon={<AlignedLandmarkIconLg />}
-      />
-      <StatefulBpkMapMarker
-        large
-        position={{ latitude: 55.9446, longitude: -3.197 }}
-        icon={<AlignedBusIconLg />}
-      />
-    </StoryMap>
+  .add('Map markers', () => (
+    <StatefulBpkMapMarker action={action('Price marker clicked')} />
   ))
   .add('Price markers', () => (
     <StatefulBpkPriceMarker action={action('Price marker clicked')} />

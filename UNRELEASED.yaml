@@ -1,5 +1,9 @@
 # UNRELEASED:
 
+BREAKING:
+- bpk-component-map:
+  - `BpkMapMarker` has been rewritten to have a new look and suit more traveller needs. See the [migration guide](https://github.com/Skyscanner/backpack/blob/master/packages/bpk-component-map/docs/migrating-from-v3-to-v4.md) for more information.
+
 # How to write a good changelog entry:
 #
 #   1. Add 'BREAKING', 'ADDED' OR 'FIXED' depending on if the change will be major, minor or patch according to [semver.org](semver.org).
