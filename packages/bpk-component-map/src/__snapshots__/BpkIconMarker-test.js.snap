@@ -18,7 +18,7 @@ exports[`BpkIconMarker should render correctly with a "buttonProps" attribute 1`
   >
     <BpkIconMarkerBackground
       disabled={false}
-      interactive={null}
+      interactive={false}
       selected={false}
     />
     <div
@@ -49,7 +49,7 @@ exports[`BpkIconMarker should render correctly with a "className" attribute 1`] 
   >
     <BpkIconMarkerBackground
       disabled={false}
-      interactive={null}
+      interactive={false}
       selected={false}
     />
     <div
@@ -80,7 +80,7 @@ exports[`BpkIconMarker should render correctly with a "disabled" attribute 1`] =
   >
     <BpkIconMarkerBackground
       disabled={true}
-      interactive={null}
+      interactive={false}
       selected={false}
     />
     <div
@@ -111,7 +111,7 @@ exports[`BpkIconMarker should render correctly with a "selected" attribute 1`] =
   >
     <BpkIconMarkerBackground
       disabled={false}
-      interactive={null}
+      interactive={false}
       selected={true}
     />
     <div
@@ -142,7 +142,7 @@ exports[`BpkIconMarker should render correctly with both a "selected" and "disab
   >
     <BpkIconMarkerBackground
       disabled={true}
-      interactive={null}
+      interactive={false}
       selected={true}
     />
     <div
@@ -173,7 +173,7 @@ exports[`BpkIconMarker should render properly 1`] = `
   >
     <BpkIconMarkerBackground
       disabled={false}
-      interactive={null}
+      interactive={false}
       selected={false}
     />
     <div
