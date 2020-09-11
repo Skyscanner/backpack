@@ -77,7 +77,7 @@ const BpkIconMarker = (props: Props) => {
       >
         <BpkIconMarkerBackground
           disabled={disabled}
-          interactive={onClick && !disabled}
+          interactive={onClick !== null && !disabled}
           selected={selected}
         />
         <div className={iconClassNames}>{icon}</div>

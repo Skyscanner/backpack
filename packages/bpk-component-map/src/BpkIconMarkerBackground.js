@@ -43,6 +43,7 @@ const BpkIconMarkerBackground = (props: Props) => {
 
   if (selected) {
     return (
+      // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="30"
@@ -56,6 +57,7 @@ const BpkIconMarkerBackground = (props: Props) => {
     );
   }
   return (
+    // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="24"
