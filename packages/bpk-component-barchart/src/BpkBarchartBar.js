@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+/* @flow strict */
+
 import React from 'react';
 import PropTypes from 'prop-types';
 import { cssModules } from 'bpk-react-utils';
@@ -40,7 +42,22 @@ const handleKeyboardEvent = callback => event => {
 
 const borderRadius = remToPx(borderRadiusXs);
 
-const BpkBarchartBar = props => {
+type Props = {
+  height: number,
+  label: string,
+  width: number,
+  x: number,
+  y: number,
+  className: ?string,
+  onClick: ?(?any) => mixed,
+  onHover: ?() => mixed,
+  onFocus: ?() => mixed,
+  outlier: boolean,
+  padding: number,
+  selected: boolean,
+};
+
+const BpkBarchartBar = (props: Props) => {
   const {
     x,
     y,
@@ -57,34 +74,30 @@ const BpkBarchartBar = props => {
     ...rest
   } = props;
 
-  const classNames = [getClassName('bpk-barchart-bar')];
-  const rectClassNames = [getClassName('bpk-barchart-bar__rect')];
-  const tappableAreaClassNames = [
-    getClassName('bpk-barchart-bar__tappable-area'),
-  ];
-
-  if (className) {
-    classNames.push(className);
-  }
-  if (selected) {
-    classNames.push(getClassName('bpk-barchart-bar--selected'));
-  }
-  if (onClick || onHover) {
-    classNames.push(getClassName('bpk-barchart-bar--interactive'));
-  }
-  if (outlier) {
-    rectClassNames.push(getClassName('bpk-barchart-bar__rect--outlier'));
-  }
+  const classNames = getClassName(
+    'bpk-barchart-bar',
+    className,
+    selected && 'bpk-barchart-bar--selected',
+    (onClick || onHover) && 'bpk-barchart-bar--interactive',
+  );
+  const rectClassNames = getClassName(
+    'bpk-barchart-bar__rect',
+    outlier && 'bpk-barchart-bar__rect--outlier',
+  );
+  const tappableAreaClassNames = getClassName(
+    'bpk-barchart-bar__tappable-area',
+  );
 
   const isAriaPressed = !!(onClick && selected);
   const rectPadding = width * (padding / 2);
   const rectWidth = width * (1 - padding);
 
   return (
-    <g className={classNames.join(' ')} transform={`translate(${x}, ${y})`}>
+    <g className={classNames} transform={`translate(${x}, ${y})`}>
       <title>{label}</title>
+      {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
       <rect
-        className={rectClassNames.join(' ')}
+        className={rectClassNames}
         x={rectPadding}
         y={0}
         width={rectWidth}
@@ -94,7 +107,7 @@ const BpkBarchartBar = props => {
         {...rest}
       />
       <rect
-        className={tappableAreaClassNames.join(' ')}
+        className={tappableAreaClassNames}
         x={0}
         y={0}
         width={width}

@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+/* @flow strict */
+
 import React, { Component } from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
@@ -27,7 +29,11 @@ const loremIpsum = `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Do
 quaerat temporibus ipsam, ut, ipsa, velit sed assumenda suscipit dolore quod similique delectus numquam neque!
 Nesciunt, voluptate, illo.`;
 
-class StatefulCheckbox extends Component {
+type State = {
+  checked: boolean,
+};
+
+class StatefulCheckbox extends Component<{}, State> {
   constructor(props) {
     super(props);
     this.state = {
@@ -39,12 +45,14 @@ class StatefulCheckbox extends Component {
     this.setState(prevState => ({
       checked: !prevState.checked,
     }));
+    // $FlowFixMe[incompatible-type] - ignoring as purely for storybook
     action(`Checkbox changed. Checked is now '${this.state.checked}'`);
   };
 
   render() {
     return (
       <div>
+        {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
         <BpkCheckbox
           checked={this.state.checked}
           onChange={this.handleChange}

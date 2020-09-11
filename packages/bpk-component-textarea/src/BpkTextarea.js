@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+/* @flow strict */
+
 import PropTypes from 'prop-types';
 import React from 'react';
 import { cssModules } from 'bpk-react-utils';
@@ -24,7 +26,15 @@ import STYLES from './BpkTextarea.scss';
 
 const getClassName = cssModules(STYLES);
 
-const BpkTextarea = props => {
+type Props = {
+  id: string,
+  name: string,
+  value: string,
+  className: ?string,
+  valid: ?boolean,
+};
+
+const BpkTextarea = (props: Props) => {
   const { className, valid, ...rest } = props;
 
   // Explicit check for false primitive value as undefined is
@@ -32,6 +42,7 @@ const BpkTextarea = props => {
   const isInvalid = valid === false;
 
   return (
+    // $FlowFixMe[cannot-spread-inexact] - inexact rest. See decisions/flowfixme.md
     <textarea
       className={getClassName(
         'bpk-textarea',

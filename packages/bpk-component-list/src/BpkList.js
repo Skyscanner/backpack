@@ -16,23 +16,29 @@
  * limitations under the License.
  */
 
+/* @flow strict */
+
 import PropTypes from 'prop-types';
-import React from 'react';
+import React, { type Node } from 'react';
 import { cssModules } from 'bpk-react-utils';
 
 import STYLES from './BpkList.scss';
 
 const getClassName = cssModules(STYLES);
 
-const BpkList = props => {
-  const TagName = props.ordered ? 'ol' : 'ul';
-  const classNames = [getClassName('bpk-list')];
+type Props = {
+  children: Node,
+  ordered: boolean,
+  className: ?string,
+};
 
-  if (props.className) {
-    classNames.push(props.className);
-  }
+const BpkList = (props: Props) => {
+  const { children, ordered, className } = props;
 
-  return <TagName className={classNames.join(' ')}>{props.children}</TagName>;
+  const TagName: any = ordered ? 'ol' : 'ul';
+  const classNames: string = getClassName('bpk-list', className);
+
+  return <TagName className={classNames}>{children}</TagName>;
 };
 
 BpkList.propTypes = {

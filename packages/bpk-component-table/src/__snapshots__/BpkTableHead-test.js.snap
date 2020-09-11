@@ -2,7 +2,9 @@
 
 exports[`BpkTableHead should render correctly 1`] = `
 <thead>
-  <th />
+  <th>
+    Skyscanner
+  </th>
 </thead>
 `;
 
@@ -11,7 +13,9 @@ exports[`BpkTableHead should render correctly with arbitrary props 1`] = `
   data-foo="bar"
   id="my-custom-id"
 >
-  <th />
+  <th>
+    Skyscanner
+  </th>
 </thead>
 `;
 
@@ -19,6 +23,8 @@ exports[`BpkTableHead should render correctly with custom class 1`] = `
 <thead
   className="my-custom-class"
 >
-  <th />
+  <th>
+    Skyscanner
+  </th>
 </thead>
 `;

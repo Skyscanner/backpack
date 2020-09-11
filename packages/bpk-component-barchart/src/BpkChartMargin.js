@@ -16,13 +16,26 @@
  * limitations under the License.
  */
 
-import React from 'react';
+/* @flow strict */
+
+import React, { type Node } from 'react';
 import PropTypes from 'prop-types';
 
-const BpkChartMargin = props => {
+type Props = {
+  children: Node,
+  margin: {
+    top: number,
+    bottom: number,
+    left: number,
+    right: number,
+  },
+};
+
+const BpkChartMargin = (props: Props) => {
   const { children, margin, ...rest } = props;
 
   return (
+    // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
     <g transform={`translate(${margin.left}, ${margin.top})`} {...rest}>
       {children}
     </g>

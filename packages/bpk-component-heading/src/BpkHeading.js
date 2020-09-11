@@ -16,28 +16,40 @@
  * limitations under the License.
  */
 
+/* @flow strict */
+
 import PropTypes from 'prop-types';
-import React from 'react';
+import React, { type Node } from 'react';
 import { cssModules } from 'bpk-react-utils';
 
 import STYLES from './BpkHeading.scss';
 
 const getClassName = cssModules(STYLES);
 
-const BpkHeading = props => {
-  const classNames = [getClassName(`bpk-heading-${props.level}`)];
+type Props = {
+  children: Node,
+  level: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6',
+  className: ?string,
+  id: ?string,
+  bottomMargin: boolean,
+};
 
-  if (props.className) {
-    classNames.push(props.className);
+const BpkHeading = (props: Props) => {
+  const { children, level, className, id, bottomMargin } = props;
+  const classNames = [getClassName(`bpk-heading-${level}`)];
+  const Level = level;
+
+  if (className) {
+    classNames.push(className);
   }
-  if (!props.bottomMargin) {
+  if (!bottomMargin) {
     classNames.push(getClassName('bpk-heading--no-bottom-margin'));
   }
 
   return (
-    <props.level className={classNames.join(' ')} id={props.id}>
-      {props.children}
-    </props.level>
+    <Level className={classNames.join(' ')} id={id}>
+      {children}
+    </Level>
   );
 };
 

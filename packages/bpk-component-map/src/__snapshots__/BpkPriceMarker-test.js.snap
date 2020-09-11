@@ -1,0 +1,266 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BpkMapMarker should render correctly with "status" attribute as "focused"  1`] = `
+<BpkBasicMapMarker
+  position={
+    Object {
+      "latitude": 41.386947,
+      "longitude": 2.170048,
+    }
+  }
+>
+  <button
+    className="bpk-price-marker__wrapper"
+    disabled={false}
+    onClick={null}
+    type="button"
+  >
+    <BpkText
+      bold={null}
+      className="bpk-price-marker bpk-price-marker-focused"
+      tagName="span"
+      textStyle="base"
+      weight="bold"
+    >
+      £120
+    </BpkText>
+    <div
+      className="bpk-price-marker__arrow bpk-price-marker__arrow-focused"
+    >
+      <_default />
+    </div>
+  </button>
+</BpkBasicMapMarker>
+`;
+
+exports[`BpkMapMarker should render correctly with "status" attribute as "viewed"  1`] = `
+<BpkBasicMapMarker
+  position={
+    Object {
+      "latitude": 41.386947,
+      "longitude": 2.170048,
+    }
+  }
+>
+  <button
+    className="bpk-price-marker__wrapper"
+    disabled={false}
+    onClick={null}
+    type="button"
+  >
+    <BpkText
+      bold={null}
+      className="bpk-price-marker bpk-price-marker-viewed"
+      tagName="span"
+      textStyle="sm"
+      weight="bold"
+    >
+      £120
+    </BpkText>
+    <div
+      className="bpk-price-marker__arrow bpk-price-marker__arrow-viewed"
+    >
+      <_default />
+    </div>
+  </button>
+</BpkBasicMapMarker>
+`;
+
+exports[`BpkMapMarker should render correctly with a "arrowClassName" attribute 1`] = `
+<BpkBasicMapMarker
+  position={
+    Object {
+      "latitude": 41.386947,
+      "longitude": 2.170048,
+    }
+  }
+>
+  <button
+    className="bpk-price-marker__wrapper"
+    disabled={false}
+    onClick={null}
+    type="button"
+  >
+    <BpkText
+      bold={null}
+      className="bpk-price-marker bpk-price-marker-default"
+      tagName="span"
+      textStyle="sm"
+      weight="bold"
+    >
+      £120
+    </BpkText>
+    <div
+      className="bpk-price-marker__arrow bpk-price-marker__arrow-default custom-class-1 custom-class-2"
+    >
+      <_default />
+    </div>
+  </button>
+</BpkBasicMapMarker>
+`;
+
+exports[`BpkMapMarker should render correctly with a "buttonProps" attribute 1`] = `
+<BpkBasicMapMarker
+  position={
+    Object {
+      "latitude": 41.386947,
+      "longitude": 2.170048,
+    }
+  }
+>
+  <button
+    className="bpk-price-marker__wrapper"
+    disabled={false}
+    onClick={null}
+    testId="arbitrary value"
+    type="button"
+  >
+    <BpkText
+      bold={null}
+      className="bpk-price-marker bpk-price-marker-default"
+      tagName="span"
+      textStyle="sm"
+      weight="bold"
+    >
+      £120
+    </BpkText>
+    <div
+      className="bpk-price-marker__arrow bpk-price-marker__arrow-default"
+    >
+      <_default />
+    </div>
+  </button>
+</BpkBasicMapMarker>
+`;
+
+exports[`BpkMapMarker should render correctly with a "className" attribute 1`] = `
+<BpkBasicMapMarker
+  position={
+    Object {
+      "latitude": 41.386947,
+      "longitude": 2.170048,
+    }
+  }
+>
+  <button
+    className="bpk-price-marker__wrapper"
+    disabled={false}
+    onClick={null}
+    type="button"
+  >
+    <BpkText
+      bold={null}
+      className="bpk-price-marker bpk-price-marker-default custom-class-1 custom-class-2"
+      tagName="span"
+      textStyle="sm"
+      weight="bold"
+    >
+      £120
+    </BpkText>
+    <div
+      className="bpk-price-marker__arrow bpk-price-marker__arrow-default"
+    >
+      <_default />
+    </div>
+  </button>
+</BpkBasicMapMarker>
+`;
+
+exports[`BpkMapMarker should render correctly with a "disabled" attribute 1`] = `
+<BpkBasicMapMarker
+  position={
+    Object {
+      "latitude": 41.386947,
+      "longitude": 2.170048,
+    }
+  }
+>
+  <button
+    className="bpk-price-marker__wrapper"
+    disabled={true}
+    onClick={null}
+    type="button"
+  >
+    <BpkText
+      bold={null}
+      className="bpk-price-marker bpk-price-marker-default bpk-price-marker-disabled"
+      tagName="span"
+      textStyle="sm"
+      weight="bold"
+    >
+      Sold out
+    </BpkText>
+    <div
+      className="bpk-price-marker__arrow bpk-price-marker__arrow-default bpk-price-marker__arrow-disabled"
+    >
+      <_default />
+    </div>
+  </button>
+</BpkBasicMapMarker>
+`;
+
+exports[`BpkMapMarker should render correctly with a "onClick" attribute 1`] = `
+<BpkBasicMapMarker
+  position={
+    Object {
+      "latitude": 41.386947,
+      "longitude": 2.170048,
+    }
+  }
+>
+  <button
+    className="bpk-price-marker__wrapper"
+    disabled={false}
+    onClick={[Function]}
+    type="button"
+  >
+    <BpkText
+      bold={null}
+      className="bpk-price-marker bpk-price-marker-default bpk-price-marker--dynamic"
+      tagName="span"
+      textStyle="sm"
+      weight="bold"
+    >
+      £120
+    </BpkText>
+    <div
+      className="bpk-price-marker__arrow bpk-price-marker__arrow-default"
+    >
+      <_default />
+    </div>
+  </button>
+</BpkBasicMapMarker>
+`;
+
+exports[`BpkMapMarker should render properly 1`] = `
+<BpkBasicMapMarker
+  position={
+    Object {
+      "latitude": 41.386947,
+      "longitude": 2.170048,
+    }
+  }
+>
+  <button
+    className="bpk-price-marker__wrapper"
+    disabled={false}
+    onClick={null}
+    type="button"
+  >
+    <BpkText
+      bold={null}
+      className="bpk-price-marker bpk-price-marker-default"
+      tagName="span"
+      textStyle="sm"
+      weight="bold"
+    >
+      £120
+    </BpkText>
+    <div
+      className="bpk-price-marker__arrow bpk-price-marker__arrow-default"
+    >
+      <_default />
+    </div>
+  </button>
+</BpkBasicMapMarker>
+`;

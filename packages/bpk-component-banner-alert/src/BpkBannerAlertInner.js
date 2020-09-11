@@ -116,7 +116,7 @@ type Props = {
   onExpandToggle: OnExpandToggleHandler,
 
   // Only relevant when configuration == CONFIGURATION.DISMISSABLE
-  dismissButtonLabel: ?string,
+  dismissButtonLabel: string,
   onDismiss: OnDismissHandler,
 };
 
@@ -177,7 +177,7 @@ const BpkBannerAlertInner = (props: Props) => {
   // Disabling 'click-events-have-key-events and interactive-supports-focus' because header element is not focusable.
   // ToggleButton is focusable and works for this.
   return (
-    // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
+    // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
     <AnimateAndFade
       animateOnEnter={animateOnEnter}
       animateOnLeave={dismissable || animateOnLeave}
@@ -258,7 +258,7 @@ BpkBannerAlertInner.defaultProps = {
   onExpandToggle: null,
 
   // Only relevant when configuration == CONFIGURATION.DISMISSABLE
-  dismissButtonLabel: null,
+  dismissButtonLabel: '',
   onDismiss: null,
 };
 

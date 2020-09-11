@@ -78,7 +78,7 @@ class BpkNavigationStack extends React.Component<Props, State> {
     const lastIndex = (views || []).length - 1;
 
     return (
-      // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
+      // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
       <div
         className={getClassName('bpk-navigation-stack', className)}
         {...rest}

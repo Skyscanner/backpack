@@ -16,15 +16,22 @@
  * limitations under the License.
  */
 
+/* @flow strict */
+
 import PropTypes from 'prop-types';
-import React from 'react';
+import React, { type Node } from 'react';
 import { cssModules } from 'bpk-react-utils';
 
 import STYLES from './BpkParagraph.scss';
 
 const getClassName = cssModules(STYLES);
 
-const BpkParagraph = props => {
+type Props = {
+  children: Node,
+  className: ?string,
+};
+
+const BpkParagraph = (props: Props) => {
   const classNames = [getClassName('bpk-paragraph')];
   const { className, ...rest } = props;
 
@@ -32,6 +39,7 @@ const BpkParagraph = props => {
     classNames.push(className);
   }
 
+  // $FlowFixMe[cannot-spread-inexact] - inexact rest. See decisions/flowfixme.md
   return <p className={classNames.join(' ')} {...rest} />;
 };
 

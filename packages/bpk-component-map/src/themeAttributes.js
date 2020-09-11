@@ -22,7 +22,20 @@ export const secondaryMarkerThemeAttributes = [
   'mapMarkerSecondaryBackgroundColor',
 ];
 
+export const plainMarkerThemeAttributes = ['mapMarkerPlainBackgroundColor'];
+
+export const priceMarkerThemeAttributes = [
+  'priceMarkerBackgroundColor',
+  'priceMarkerSelectedBorderColor',
+  'priceMarkerSelectedColor',
+  'priceMarkerViewedBackgroundColor',
+  'priceMarkerViewedBorderColor',
+  'priceMarkerViewedColor',
+];
+
 export default {
   primaryMarkerThemeAttributes,
   secondaryMarkerThemeAttributes,
+  plainMarkerThemeAttributes,
+  priceMarkerThemeAttributes,
 };

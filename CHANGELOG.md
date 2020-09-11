@@ -2,6 +2,100 @@
 
 [Unreleased changes](./UNRELEASED.yaml).
 
+# 2020-09-03
+
+**Breaking**
+  - bpk-tokens:
+      - Removed non-UIKit aligned iOS tokens
+
+# 2020-09-03 - New `BpkPriceMarker` and drop support for React 15
+
+**Breaking**
+  - All packages:
+      - Packages no longer support a peer-dependency of React 15
+
+**Added:**
+  - bpk-component-map:
+    - Added `BpkPriceMarker` to display pricing markers on the map.
+
+# 2020-08-31 - Flow upgrades.
+
+**Added:**
+  - bpk-component-barchart: 3.0.78 => 3.1.0
+    - Added Flow.
+
+**Fixed:**
+  - Upgraded Flow to `0.132.0` and changed syntax for `FlowFixMe` suppressions in components.
+
+# 2020-08-28 - New iOS tokens and Flow support.
+
+**Added:**
+  - bpk-tokens: 32.0.5 => 32.1.0
+    - Added new `UIKit` aligned token aliases for corner radii and border width values.
+
+  - bpk-component-close-button: 2.0.76 => 2.0.77
+  - bpk-component-drawer: 3.0.33 => 3.0.34
+  - bpk-component-list: 3.0.75 => 3.0.76
+  - bpk-component-progress: 2.0.76 => 2.0.77
+    - Added Flow.
+
+**Fixed:**
+  - bpk-component-banner-alert: 4.2.24 => 4.2.25
+  - bpk-component-modal: 2.1.75 => 2.1.76
+    - Flow type fix.
+
+# 2020-08-24 - Icon fixes.
+
+**Fixed:**
+  - bpk-svgs: 12.1.5 => 12.1.6
+    - Fixed an issue that causes the `translate` icon's dots to disappear sometimes.
+    - Reverted the `eco-leaf` icon to the previous design to align better with existing campaigns.
+
+# 2020-08-07 - Added Flow support.
+
+**Added**:
+  - bpk-component-accordion: 2.1.77
+  - bpk-component-breakpoint: 2.00.74
+  - bpk-component-paragraph: 2.0.74
+  - bpk-component-radio: 2.0.74
+  - bpk-component-star-rating: 2.1.72
+  - bpk-component-table: 2.0.74
+  - bpk-component-textarea: 2.0.74
+    - Added Flow.
+
+# 2020-08-06 - `filter` icon fix.
+
+**Fixed:**
+  - bpk-svgs: 12.1.3 => 12.1.4
+    - Fixed an issue with the `filter` icon that caused it to render incorrectly when used via the `BpkIcon` font.
+
+# 2020-08-05 - Added Flow support.
+
+**Added:**
+  - bpk-component-autosuggest: 4.0.74 => 4.1.0
+  - bpk-component-card: 2.0.71 => 2.1.0
+  - bpk-component-checkbox: 2.1.23 => 2.2.0
+  - bpk-component-heading: 3.0.71 => 3.1.0
+  - bpk-component-link: 2.0.71 => 2.1.0
+  - bpk-component-loading-button: 3.1.24 => 3.2.0
+  - bpk-component-spinner: 3.0.71 => 3.1.0
+    - Added Flow.
+
+# 2020-08-03 - New chip component
+
+**Breaking:**
+- bpk-component-chip: 4.0.0
+  - The chip component has been completely rewritten to have a new look, a more modern API and support more use cases easily. See the [migration guide](https://github.com/Skyscanner/backpack/blob/master/packages/bpk-component-chip/docs/migrating-from-v3-to-v4.md) for more information.
+- bpk-mixins: 20.0.0
+  - The `bpk-chip__label` mixin has been removed, as it's no longer used in the new chip implementation.
+
+  **Fixed**:
+  - bpk-component-dialog 2.0.75
+  - bpk-component-modal: 2.1.70
+    - The onClose prop now defaults to a function as required by Portal within.
+
+
+
 # 2020-07-29 - Reinstated native icons removed by accident
 
 **Added:**

@@ -46,7 +46,7 @@ class List extends Component<ListProps> {
   render() {
     const { elements, ...rest } = this.props;
     return (
-      // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
+      // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
       <div id="list" {...rest}>
         {elements.forEach(element => (
           <div key={element}>{element}</div>
@@ -92,7 +92,9 @@ const InfiniteList = withInfiniteScroll(List);
       onScrollFinished={evt => {}} // eslint-disable-line no-unused-vars
       renderLoadingComponent={() => <div />}
       renderSeeMoreComponent={onClick => (
-        <button type="button" onClick={onClick} />
+        <button type="button" onClick={onClick}>
+          Button
+        </button>
       )}
       seeMoreAfter={5}
     />

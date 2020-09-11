@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+/* @flow strict */
+
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { colorWhite } from 'bpk-tokens/tokens/base.es6';
@@ -45,10 +47,50 @@ const renderSteps = (numberOfSteps, stepColor) => {
   return steps;
 };
 
-class BpkProgress extends Component {
-  componentDidUpdate(previousProps) {
+type Props = {
+  max: number,
+  min: number,
+  value: number,
+  stepped: boolean,
+  stepColor: string,
+  small: boolean,
+  className: ?string,
+  onComplete: ?() => mixed,
+  onCompleteTransitionEnd: ?() => mixed,
+  getValueText: ?(number, number, number) => mixed,
+};
+
+class BpkProgress extends Component<Props> {
+  static propTypes = {
+    max: PropTypes.number.isRequired,
+    min: PropTypes.number.isRequired,
+    value: PropTypes.number.isRequired,
+    stepped: PropTypes.bool,
+    stepColor: PropTypes.string,
+    small: PropTypes.bool,
+    className: PropTypes.string,
+    onComplete: PropTypes.func,
+    onCompleteTransitionEnd: PropTypes.func,
+    getValueText: PropTypes.func,
+  };
+
+  static defaultProps = {
+    className: null,
+    stepped: false,
+    stepColor: colorWhite,
+    small: false,
+    onComplete: () => null,
+    onCompleteTransitionEnd: () => null,
+    getValueText: null,
+  };
+
+  componentDidUpdate(previousProps: Props) {
     const { value, max } = this.props;
-    if (value >= max && value !== previousProps.value) {
+    if (
+      value >= max &&
+      value !== previousProps.value &&
+      this.props.onComplete
+    ) {
       this.props.onComplete();
 
       if (!isTransitionEndSupported() && this.props.onCompleteTransitionEnd) {
@@ -97,6 +139,7 @@ class BpkProgress extends Component {
     delete rest.onCompleteTransitionEnd;
 
     return (
+      // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
       <div
         className={classNames.join(' ')}
         role="progressbar"
@@ -117,28 +160,5 @@ class BpkProgress extends Component {
     );
   }
 }
-
-BpkProgress.propTypes = {
-  max: PropTypes.number.isRequired,
-  min: PropTypes.number.isRequired,
-  value: PropTypes.number.isRequired,
-  stepped: PropTypes.bool,
-  stepColor: PropTypes.string,
-  small: PropTypes.bool,
-  className: PropTypes.string,
-  onComplete: PropTypes.func,
-  onCompleteTransitionEnd: PropTypes.func,
-  getValueText: PropTypes.func,
-};
-
-BpkProgress.defaultProps = {
-  className: null,
-  stepped: false,
-  stepColor: colorWhite,
-  small: false,
-  onComplete: () => null,
-  onCompleteTransitionEnd: () => null,
-  getValueText: null,
-};
 
 export default BpkProgress;

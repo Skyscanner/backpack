@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+/* @flow strict */
+
 import PropTypes from 'prop-types';
 import React from 'react';
 import { cssModules } from 'bpk-react-utils';
@@ -24,7 +26,20 @@ import STYLES from './BpkCheckbox.scss';
 
 const getClassName = cssModules(STYLES);
 
-const BpkCheckbox = props => {
+type Props = {
+  name: string,
+  label: string,
+  required: boolean,
+  disabled: boolean,
+  white: boolean,
+  className: ?string,
+  smallLabel: boolean,
+  valid: ?boolean,
+  checked: boolean,
+  indeterminate: boolean,
+};
+
+const BpkCheckbox = (props: Props) => {
   const {
     name,
     label,
@@ -43,18 +58,18 @@ const BpkCheckbox = props => {
   // treated as neither valid nor invalid
   const isInvalid = valid === false;
 
-  const classNames = getClassName(
+  const classNames: string = getClassName(
     'bpk-checkbox',
     white && 'bpk-checkbox--white',
     disabled && 'bpk-checkbox--disabled',
     isInvalid && 'bpk-checkbox--invalid',
     className,
   );
-  const labelClassNames = getClassName(
+  const labelClassNames: string = getClassName(
     'bpk-checkbox__label',
     smallLabel && 'bpk-checkbox__label--small',
   );
-  const inputClasses = getClassName(
+  const inputClasses: string = getClassName(
     'bpk-checkbox__input',
     white && 'bpk-checkbox__input-white',
     checked && !indeterminate && 'bpk-checkbox__input-checkmark',
@@ -63,6 +78,7 @@ const BpkCheckbox = props => {
 
   return (
     <label className={classNames}>
+      {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
       <input
         type="checkbox"
         className={inputClasses}

@@ -16,24 +16,29 @@
  * limitations under the License.
  */
 
+/* @flow strict */
+
 import PropTypes from 'prop-types';
-import React from 'react';
+import React, { type Node } from 'react';
 import { cssModules } from 'bpk-react-utils';
 
 import STYLES from './BpkTable.scss';
 
 const getClassName = cssModules(STYLES);
 
-const BpkTableCell = props => {
-  const classNames = [getClassName('bpk-table__cell')];
+type Props = {
+  children: Node,
+  className: ?string,
+};
+
+const BpkTableCell = (props: Props) => {
   const { className, ...rest } = props;
 
-  if (className) {
-    classNames.push(className);
-  }
+  const classNames = getClassName('bpk-table__cell', className);
 
   return (
-    <td className={classNames.join(' ')} {...rest}>
+    // $FlowFixMe[cannot-spread-inexact] - inexact rest. See decisions/flowfixme.md
+    <td className={classNames} {...rest}>
       {props.children}
     </td>
   );

@@ -18,10 +18,16 @@
 
 /* @flow strict */
 
-import BpkChip, { type Props, CHIP_TYPES } from './src/BpkChip';
+import BpkSelectableChip, {
+  type Props as SelectableProps,
+} from './src/BpkSelectableChip';
+import BpkDismissibleChip, {
+  type Props as DismissibleProps,
+} from './src/BpkDismissibleChip';
+import { CHIP_TYPES } from './src/commonTypes';
 
-export type BpkChipProps = Props;
+export type BpkSelectableChipProps = SelectableProps;
+export type BpkDismissibleChipProps = DismissibleProps;
 
-export { CHIP_TYPES };
-
-export default BpkChip;
+export default BpkSelectableChip;
+export { BpkDismissibleChip, CHIP_TYPES };

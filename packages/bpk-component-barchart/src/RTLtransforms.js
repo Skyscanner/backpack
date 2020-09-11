@@ -16,18 +16,30 @@
  * limitations under the License.
  */
 
+/* @flow strict */
+
 import { isRTL } from 'bpk-react-utils';
 
-const rtlConditionalValue = (ltrValue, rtlValue) =>
+const rtlConditionalValue = (ltrValue: number, rtlValue: number) =>
   isRTL() ? rtlValue : ltrValue;
 
-const applyArrayRTLTransform = arr => (isRTL() ? arr.slice(0).reverse() : arr);
+// Setting type as any as data which is passed to this function can be of any type
+const applyArrayRTLTransform = (arr: any) =>
+  isRTL() ? arr.slice(0).reverse() : arr;
 
-const applyMarginRTLTransform = obj => {
+type objType = {
+  top: number,
+  left: number,
+  right: number,
+  bottom: number,
+};
+
+const applyMarginRTLTransform = (obj: objType) => {
   if (!isRTL()) {
     return obj;
   }
   const { left, right, ...rest } = obj;
+  // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
   return {
     left: right,
     right: left,

@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+/* @flow strict */
+
 import BpkList from './src/BpkList';
 import BpkListItem from './src/BpkListItem';
 

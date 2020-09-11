@@ -69,22 +69,22 @@ const ButtonStory = ({
       )}
     >
       &nbsp;
-      {/* $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'. */}
+      {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
       <Wrapped onClick={action('button clicked')} {...rest}>
         Button
       </Wrapped>
       &nbsp;
-      {/* $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'. */}
+      {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
       <Wrapped disabled onClick={action('THIS SHOULD NOT HAPPEN')} {...rest}>
         Disabled
       </Wrapped>
       &nbsp;
-      {/* $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'. */}
+      {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
       <Wrapped large onClick={action('large button clicked')} {...rest}>
         Button
       </Wrapped>
       &nbsp;
-      {/* $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'. */}
+      {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
       <Wrapped
         large
         disabled
@@ -94,12 +94,12 @@ const ButtonStory = ({
         Disabled
       </Wrapped>
       &nbsp;
-      {/* $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'. */}
+      {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
       <Wrapped iconOnly onClick={action('iconOnly button clicked')} {...rest}>
         <AlignedSmallLongArrowRightIcon />
       </Wrapped>
       &nbsp;
-      {/* $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'. */}
+      {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
       <Wrapped
         iconOnly
         large

@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+/* @flow strict */
+
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { Portal, cssModules } from 'bpk-react-utils';
@@ -28,7 +30,23 @@ const getClassName = cssModules(STYLES);
 
 const BpkScrimDrawerContent = withScrim(BpkDrawerContent);
 
-class BpkDrawer extends Component {
+type Props = {
+  isOpen: boolean,
+  onClose: () => mixed,
+  renderTarget: ?() => mixed,
+  target: ?any,
+};
+
+type State = {
+  isDrawerShown: boolean,
+};
+
+class BpkDrawer extends Component<Props, State> {
+  static defaultProps = {
+    renderTarget: null,
+    target: null,
+  };
+
   constructor() {
     super();
 
@@ -37,7 +55,7 @@ class BpkDrawer extends Component {
     };
   }
 
-  UNSAFE_componentWillReceiveProps(nextProps) {
+  UNSAFE_componentWillReceiveProps(nextProps: Props) {
     if (!this.props.isOpen && nextProps.isOpen) {
       this.setState({ isDrawerShown: true });
     }
@@ -63,6 +81,7 @@ class BpkDrawer extends Component {
         target={target}
         renderTarget={renderTarget}
       >
+        {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See decisions/flowfixme.md */}
         <BpkScrimDrawerContent
           isDrawerShown={isDrawerShown}
           onClose={this.hide}
@@ -80,11 +99,6 @@ BpkDrawer.propTypes = {
   onClose: PropTypes.func.isRequired,
   renderTarget: PropTypes.func,
   target: PropTypes.element,
-};
-
-BpkDrawer.defaultProps = {
-  renderTarget: null,
-  target: null,
 };
 
 export default BpkDrawer;

@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+/* @flow strict */
+
 import React from 'react';
 import renderer from 'react-test-renderer';
 import { spacingSm } from 'bpk-tokens/tokens/base.es6';

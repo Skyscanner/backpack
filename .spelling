@@ -31,6 +31,7 @@ BpkCarouselItem
 
 BpkChip
 BpkDismissibleChip
+BpkSelectableChip
 
 BpkDialingCodeList
 
@@ -203,6 +204,7 @@ Themeability
 themeable
 TTF
 UIs
+UIKit
 uncompiled
 url
 z-index
@@ -289,6 +291,7 @@ dialingCodes
 dialingCodeMask
 dismissable
 dismissButtonLabel
+toggleable
 dockedFirst
 dockedMiddle
 dockedLast
@@ -452,6 +455,8 @@ fullScreenOnMobile
 fullScreen
 showHeader
 leadingIndicatorClassName
+leadingAccessoryView
+trailingAccessoryView
 scrollerRef
 trailingIndicatorClassName
 googleMapURL
@@ -565,6 +570,7 @@ BpkNavigationBarIconButton
 BpkOverlayView
 BpkMap
 BpkMapMarker
+BpkPriceMarker
 BpkBackgroundImage
 BpkGridColumn
 BpkGridRow

@@ -84,7 +84,7 @@ class BpkHorizontalNavItem extends Component<Props> {
     );
 
     const clickableElement = href ? (
-      // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
+      // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
       <a
         href={href}
         className={innerClassNames}
@@ -96,7 +96,7 @@ class BpkHorizontalNavItem extends Component<Props> {
         {children}
       </a>
     ) : (
-      // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
+      // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
       <button
         type="button"
         className={innerClassNames}

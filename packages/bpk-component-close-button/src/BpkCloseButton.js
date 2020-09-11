@@ -16,8 +16,10 @@
  * limitations under the License.
  */
 
+/* @flow strict */
+
 import PropTypes from 'prop-types';
-import React from 'react';
+import React, { type StatelessFunctionalComponent } from 'react';
 import CloseIcon from 'bpk-component-icon/sm/close';
 import { cssModules } from 'bpk-react-utils';
 
@@ -25,7 +27,14 @@ import STYLES from './BpkCloseButton.scss';
 
 const getClassName = cssModules(STYLES);
 
-const BpkCloseButton = props => {
+type Props = {
+  label: string,
+  onClick: (event: SyntheticEvent<>) => mixed,
+  className: ?string,
+  customIcon: ?StatelessFunctionalComponent<any>,
+};
+
+const BpkCloseButton = (props: Props) => {
   const classNames = [getClassName('bpk-close-button')];
   const { label, onClick, className, customIcon, ...rest } = props;
   const Icon = customIcon || CloseIcon;
@@ -35,6 +44,7 @@ const BpkCloseButton = props => {
   }
 
   return (
+    // $FlowFixMe[cannot-spread-inexact] - inexact rest. See decisions/flowfixme.md
     <button
       type="button"
       title={label}

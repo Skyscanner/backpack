@@ -16,18 +16,28 @@
  * limitations under the License.
  */
 
+/* @flow strict */
+
 import PropTypes from 'prop-types';
-import React from 'react';
+import React, { type Node } from 'react';
 import { cssModules } from 'bpk-react-utils';
 
 import STYLES from './BpkCard.scss';
 
 const getClassName = cssModules(STYLES);
 
-const BpkCard = props => {
-  const classNames = [getClassName('bpk-card')];
+type Props = {
+  children: Node,
+  className: ?string,
+  href: ?string,
+  padded: boolean,
+  blank: boolean,
+};
+
+const BpkCard = (props: Props) => {
   const { children, className, href, padded, blank, ...rest } = props;
 
+  const classNames = [getClassName('bpk-card')];
   if (padded) {
     classNames.push(getClassName('bpk-card--padded'));
   }
@@ -45,6 +55,7 @@ const BpkCard = props => {
     }
 
     return (
+      // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
       <a href={href} className={classNameFinal} {...blankProps} {...rest}>
         {children}
       </a>
@@ -52,6 +63,7 @@ const BpkCard = props => {
   }
 
   return (
+    // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
     <div role="button" className={classNameFinal} {...rest}>
       {children}
     </div>

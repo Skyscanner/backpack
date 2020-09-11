@@ -5,7 +5,7 @@ When we tried to upgrade to Flow 0.112, all of our components that used `...rest
 We decided to suppress these comments using the following comment:
 
 ```
-// $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
+// $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
 ```
 
 If you need to do this in future, add the same comment. Using this format will allow us to easily find and remove the suppression comments once a better solution is found.

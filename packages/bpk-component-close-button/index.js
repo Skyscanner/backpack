@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+/* @flow strict */
+
 import BpkCloseButton from './src/BpkCloseButton';
 
 export default BpkCloseButton;

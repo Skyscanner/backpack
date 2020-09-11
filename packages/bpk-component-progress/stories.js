@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+/* @flow strict */
+
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { storiesOf } from '@storybook/react';
@@ -24,7 +26,15 @@ import BpkButton from 'bpk-component-button';
 
 import BpkProgress from './index';
 
-class ProgressContainer extends Component {
+type Props = {
+  steps: Array<number>,
+};
+
+type State = {
+  progress: number,
+};
+
+class ProgressContainer extends Component<Props, State> {
   constructor(props) {
     super();
 
@@ -40,10 +50,12 @@ class ProgressContainer extends Component {
   render() {
     const { steps, ...rest } = this.props;
 
+    // $FlowIgnore[prop-missing] - Ignoring this as this is for an example container
     delete rest.initialValue;
 
     return (
       <div>
+        {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See decisions/flowfixme.md */}
         <BpkProgress
           min={0}
           max={100}
@@ -52,6 +64,7 @@ class ProgressContainer extends Component {
           {...rest}
         />
         <br />
+        {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See decisions/flowfixme.md */}
         <BpkProgress
           min={0}
           max={100}

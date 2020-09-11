@@ -17,7 +17,7 @@
  */
 /* @flow strict */
 
-import React, { type ElementProps } from 'react';
+import React, { type ElementProps, Component } from 'react';
 import PropTypes from 'prop-types';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
@@ -30,7 +30,9 @@ import FoodIconSm from 'bpk-component-icon/sm/food';
 import BpkMap, {
   BpkOverlayView,
   BpkMapMarker,
+  BpkPriceMarker,
   MARKER_TYPES,
+  PRICE_MARKER_STATUSES,
   withGoogleMapsScript,
 } from './index';
 
@@ -70,7 +72,7 @@ type State = {
   selected: boolean,
 };
 
-class StatefulBpkMapMarker extends React.Component<Props, State> {
+class StatefulBpkMapMarker extends Component<Props, State> {
   static defaultProps = {
     className: null,
     arrowClassName: null,
@@ -98,7 +100,7 @@ class StatefulBpkMapMarker extends React.Component<Props, State> {
     const { onClick, ...rest } = this.props;
 
     return (
-      // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
+      // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
       <BpkMapMarker
         selected={this.state.selected}
         onClick={() => {
@@ -106,6 +108,111 @@ class StatefulBpkMapMarker extends React.Component<Props, State> {
         }}
         {...rest}
       />
+    );
+  }
+}
+
+const venues = [
+  {
+    id: '1',
+    name: 'Hotel Monteverde',
+    latitude: 35.68,
+    longitude: 139.69,
+    price: '£48',
+    disabled: false,
+  },
+  {
+    id: '2',
+    name: 'Abisko Inn & Suites',
+    latitude: 35.67,
+    longitude: 139.7,
+    price: '£151',
+    disabled: false,
+  },
+  {
+    id: '3',
+    name: 'The Panjin Lounge',
+    latitude: 35.65,
+    longitude: 139.71,
+    price: '£62',
+    disabled: false,
+  },
+  {
+    id: '4',
+    name: 'Nara Bed & Breakfast',
+    latitude: 35.63,
+    longitude: 139.7,
+    price: '£342',
+    disabled: false,
+  },
+  {
+    id: '5',
+    name: 'Kolkata Springs Hotel',
+    latitude: 35.635,
+    longitude: 139.72,
+    price: 'Sold out',
+    disabled: true,
+  },
+];
+
+type PriceMarkerState = {
+  selectedId: string,
+  viewedVenues: Array<string>,
+};
+
+class StatefulBpkPriceMarker extends Component<
+  { action: () => mixed },
+  PriceMarkerState,
+> {
+  static defaultProps = {
+    action: () => null,
+  };
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      selectedId: '1',
+      viewedVenues: ['1'],
+    };
+  }
+
+  getStatus = id => {
+    if (this.state.selectedId === id) {
+      return PRICE_MARKER_STATUSES.focused;
+    }
+    if (this.state.viewedVenues.includes(id)) {
+      return PRICE_MARKER_STATUSES.viewed;
+    }
+    return PRICE_MARKER_STATUSES.default;
+  };
+
+  selectVenue = id => {
+    this.setState(prevState => ({
+      selectedId: id,
+      viewedVenues: [...prevState.viewedVenues, id],
+    }));
+  };
+
+  render() {
+    return (
+      <StoryMap
+        zoom={12}
+        center={{ latitude: 35.661777, longitude: 139.704051 }}
+      >
+        {venues.map(venue => (
+          <BpkPriceMarker
+            id={venue.id}
+            label={venue.price}
+            position={{ latitude: venue.latitude, longitude: venue.longitude }}
+            disabled={venue.disabled}
+            onClick={() => {
+              this.props.action();
+              this.selectVenue(venue.id);
+            }}
+            status={this.getStatus(venue.id)}
+          />
+        ))}
+      </StoryMap>
     );
   }
 }
@@ -216,4 +323,7 @@ storiesOf('bpk-component-map', module)
         icon={<AlignedBusIconLg />}
       />
     </StoryMap>
+  ))
+  .add('Price markers', () => (
+    <StatefulBpkPriceMarker action={action('Price marker clicked')} />
   ));

@@ -16,7 +16,9 @@
  * limitations under the License.
  */
 
-import React from 'react';
+/* @flow strict */
+
+import React, { type Node } from 'react';
 import PropTypes from 'prop-types';
 import { cssModules } from 'bpk-react-utils';
 import { spacingXs, lineHeightSm } from 'bpk-tokens/tokens/base.es6';
@@ -76,7 +78,25 @@ const getAxisConfig = ({ orientation, margin, height, width, scale }) => {
   };
 };
 
-const BpkChartAxis = props => {
+type Props = {
+  height: number,
+  width: number,
+  margin: {
+    top: number,
+    bottom: number,
+    left: number,
+    right: number,
+  },
+  scale: Object,
+  label: ?Node,
+  orientation: string,
+  tickValue: (any, any) => any,
+  numTicks: ?number,
+  tickOffset: number,
+  tickEvery: number,
+};
+
+const BpkChartAxis = (props: Props) => {
   const {
     orientation,
     numTicks,
@@ -100,6 +120,7 @@ const BpkChartAxis = props => {
     : scale.domain().filter((tick, i) => (i - tickOffset) % tickEvery === 0);
 
   return (
+    // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
     <g
       className={getClassName('bpk-chart__axis')}
       {...containerProps}

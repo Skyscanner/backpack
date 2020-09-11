@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+/* @flow strict */
+
 import React from 'react';
 import BpkInput from 'bpk-component-input';
 import Autosuggest from 'react-autosuggest';
@@ -49,10 +51,16 @@ Autosuggest.defaultProps.theme = {
   sectionTitle: getClassName('bpk-autosuggest__section-title'),
 };
 
-Autosuggest.defaultProps.renderInputComponent = inputProps => {
+type Props = {
+  ref: (?HTMLInputElement) => mixed,
+  inputRef: (?HTMLInputElement) => mixed,
+  autoComplete: string,
+};
+Autosuggest.defaultProps.renderInputComponent = (inputProps: Props) => {
   const { ref, inputRef, autoComplete = 'off', ...rest } = inputProps;
 
   return (
+    // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
     <BpkInput
       inputRef={element => {
         ref(element);

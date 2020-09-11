@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+/* @flow strict */
+
 import React from 'react';
 import PropTypes from 'prop-types';
 import { cssModules } from 'bpk-react-utils';
@@ -25,7 +27,17 @@ import STYLES from './BpkInteractiveStar.scss';
 
 const getClassName = cssModules(STYLES);
 
-const BpkInteractiveStar = props => {
+type Props = {
+  label: string,
+  name: string,
+  onClick: () => mixed,
+  onMouseEnter: () => mixed,
+  type: typeof STAR_TYPES.EMPTY | typeof STAR_TYPES.FULL,
+  value: number,
+  selected: boolean,
+};
+
+const BpkInteractiveStar = (props: Props) => {
   const {
     selected,
     type,
@@ -36,13 +48,16 @@ const BpkInteractiveStar = props => {
     label,
     ...rest
   } = props;
-  const buttonClassNames = [getClassName('bpk-interactive-star')];
-  const iconClassNames = [getClassName('bpk-interactive-star__icon')];
 
-  if (selected) {
-    buttonClassNames.push(getClassName('bpk-interactive-star--selected'));
-    iconClassNames.push(getClassName('bpk-interactive-star__icon--selected'));
-  }
+  const buttonClassNames = getClassName(
+    'bpk-interactive-star',
+    selected && 'bpk-interactive-star--selected',
+  );
+
+  const iconClassNames = getClassName(
+    'bpk-interactive-star__icon',
+    selected && 'bpk-interactive-star__icon--selected',
+  );
 
   // Note we use `BpkStarRatingNonRtl` here otherwise it already has `scaleX(-1)` applied in RTL.
   // That causes the scale animation to be a bit over the top.
@@ -52,15 +67,12 @@ const BpkInteractiveStar = props => {
       aria-label={label}
       onClick={onClick}
       onMouseEnter={onMouseEnter}
-      className={buttonClassNames.join(' ')}
+      className={buttonClassNames}
       aria-pressed={selected}
       type="button"
     >
-      <BpkStarNonRtl
-        className={iconClassNames.join(' ')}
-        type={type}
-        {...rest}
-      />
+      {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See decisions/flowfixme.md */}
+      <BpkStarNonRtl className={iconClassNames} type={type} {...rest} />
     </button>
   );
 };

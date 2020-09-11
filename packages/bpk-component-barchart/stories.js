@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+/* @flow strict */
+
 import React from 'react';
 import { number } from 'prop-types';
 import { storiesOf } from '@storybook/react';

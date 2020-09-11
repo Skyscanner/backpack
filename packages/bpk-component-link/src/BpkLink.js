@@ -16,8 +16,10 @@
  * limitations under the License.
  */
 
+/* @flow strict */
+
 import PropTypes from 'prop-types';
-import React from 'react';
+import React, { type Node } from 'react';
 import { cssModules } from 'bpk-react-utils';
 
 import themeAttributes, {
@@ -27,7 +29,18 @@ import STYLES from './BpkLink.scss';
 
 const getClassName = cssModules(STYLES);
 
-const BpkLink = props => {
+type Props = {
+  children: Node,
+  href: ?string,
+  className: ?string,
+  onClick: ?(event: SyntheticEvent<>) => mixed,
+  blank: boolean,
+  rel: ?string,
+  alternate: boolean,
+  white: boolean,
+};
+
+const BpkLink = (props: Props) => {
   const {
     children,
     className,
@@ -53,6 +66,7 @@ const BpkLink = props => {
   }
 
   return (
+    // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
     <a
       className={classNames.join(' ')}
       href={href}

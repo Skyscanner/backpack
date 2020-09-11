@@ -47,7 +47,7 @@ describe('AnimateAndFade', () => {
     // Should be reinstated once the bug is fixed
     return;
     /* eslint-disable no-unreachable */
-    // $FlowFixMe
+    // $FlowFixMe[unreachable-code]
     const tree = renderer
       .create(
         <AnimateAndFade show animateOnEnter>
@@ -55,7 +55,7 @@ describe('AnimateAndFade', () => {
         </AnimateAndFade>,
       )
       .toJSON();
-    // $FlowFixMe
+    // $FlowFixMe[unreachable-code]
     expect(tree).toMatchSnapshot();
     /* eslint-enable */
   });

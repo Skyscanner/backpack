@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+/* @flow strict */
+
 import BpkBreakpoint, { BREAKPOINTS } from './src/BpkBreakpoint';
 
 export { BREAKPOINTS };

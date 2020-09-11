@@ -16,8 +16,10 @@
  * limitations under the License.
  */
 
+/* @flow strict */
+
 import PropTypes from 'prop-types';
-import React from 'react';
+import React, { type Node } from 'react';
 import Transition from 'react-transition-group/Transition';
 import { animations } from 'bpk-tokens/tokens/base.es6';
 import { cssModules } from 'bpk-react-utils';
@@ -28,7 +30,25 @@ import STYLES from './BpkDrawerContent.scss';
 
 const getClassName = cssModules(STYLES);
 
-const BpkDrawerContent = props => {
+type Props = {
+  children: Node,
+  dialogRef: () => mixed,
+  onCloseAnimationComplete: () => mixed,
+  onClose: () => mixed,
+  id: string,
+  title: string,
+  className: ?string,
+  contentClassName: ?string,
+  closeLabel: string,
+  closeText: ?string,
+  isDrawerShown: boolean,
+  hideTitle: boolean,
+  closeOnScrimClick: boolean,
+  isIphone: boolean,
+  isIpad: boolean,
+};
+
+const BpkDrawerContent = (props: Props) => {
   const {
     className,
     hideTitle,
@@ -79,6 +99,7 @@ const BpkDrawerContent = props => {
       onExited={onCloseAnimationComplete}
     >
       {status => (
+        // $FlowFixMe[cannot-spread-inexact] - inexact rest. See decisions/flowfixme.md
         <section
           id={id}
           tabIndex="-1"

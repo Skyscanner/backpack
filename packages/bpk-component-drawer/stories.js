@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+/* @flow strict */
+
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { storiesOf } from '@storybook/react';
@@ -35,7 +37,15 @@ const Paragraph = withDefaultProps(BpkText, {
   className: getClassName('bpk-drawer-paragraph'),
 });
 
-class DrawerContainer extends Component {
+type Props = {
+  buttonText: string,
+};
+
+type State = {
+  isOpen: boolean,
+};
+
+class DrawerContainer extends Component<Props, State> {
   constructor() {
     super();
 
@@ -122,6 +132,7 @@ class DrawerContainer extends Component {
             malesuada auctor erat, vel pulvinar erat dignissim vitae.
           </Paragraph>
         </div>
+        {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See decisions/flowfixme.md  */}
         <BpkDrawer
           id="my-drawer"
           className="my-classname"

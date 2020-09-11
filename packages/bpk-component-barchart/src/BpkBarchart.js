@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+/* @flow strict */
+
 import PropTypes from 'prop-types';
 import debounce from 'lodash.debounce';
 import React, { Component } from 'react';
@@ -45,17 +47,88 @@ const getClassName = cssModules(STYLES);
 const spacing = remToPx(spacingXs);
 const lineHeight = remToPx(lineHeightSm);
 
-const getMaxYValue = (dataPoints, yScaleDataKey, outlierPercentage) => {
+const getMaxYValue = (
+  dataPoints: Array<number>,
+  outlierPercentage: ?number,
+) => {
   const meanValue = dataPoints.reduce((d, t) => d + t, 0) / dataPoints.length;
   const maxYValue = Math.max(...dataPoints);
 
-  return outlierPercentage !== null
+  return outlierPercentage
     ? Math.min(maxYValue, meanValue * (outlierPercentage / 100) + meanValue)
     : maxYValue;
 };
 
-class BpkBarchart extends Component {
-  constructor(props) {
+type Props = {
+  data: Array<any>, // We pass any here as the array can contain free form data depending on the user
+  xScaleDataKey: string,
+  yScaleDataKey: string,
+  xAxisLabel: string,
+  yAxisLabel: string,
+  initialWidth: number,
+  initialHeight: number,
+  className: ?string,
+  leadingScrollIndicatorClassName: ?string,
+  trailingScrollIndicatorClassName: ?string,
+  outlierPercentage: ?number,
+  showGridlines: boolean,
+  xAxisMargin: number,
+  xAxisTickValue: () => mixed,
+  xAxisTickOffset: number,
+  xAxisTickEvery: number,
+  yAxisMargin: number,
+  yAxisTickValue: () => mixed,
+  yAxisNumTicks: ?number,
+  yAxisDomain: Array<?number>,
+  onBarClick: ?() => mixed,
+  onBarHover: ?() => mixed,
+  onBarFocus: ?() => mixed,
+  getBarLabel: (any, string, string) => ?string,
+  getBarSelection: () => mixed,
+  BarComponent: typeof BpkBarchartBar,
+  disableDataTable: boolean,
+};
+
+type State = {
+  width: number,
+  height: number,
+};
+
+class BpkBarchart extends Component<Props, State> {
+  xScale: typeof scaleBand;
+
+  yScale: typeof scaleLinear;
+
+  onWindowResize: () => mixed;
+
+  svgEl: ?Element;
+
+  static defaultProps = {
+    className: null,
+    leadingScrollIndicatorClassName: null,
+    trailingScrollIndicatorClassName: null,
+    outlierPercentage: null,
+    showGridlines: false,
+    xAxisMargin: 2 * (lineHeight + spacing),
+    xAxisTickValue: identity,
+    xAxisTickOffset: 0,
+    xAxisTickEvery: 1,
+    yAxisMargin: 4 * lineHeight + spacing,
+    yAxisTickValue: identity,
+    yAxisNumTicks: null,
+    yAxisDomain: [null, null],
+    onBarClick: null,
+    onBarHover: null,
+    onBarFocus: null,
+    // Using type any here as xScaleDataKey or yScaleDataKey are strings and there is an issue that strings are not valid keys
+    getBarLabel: (point: any, xScaleDataKey: string, yScaleDataKey: string) =>
+      `${point[xScaleDataKey]} - ${point[yScaleDataKey]}`,
+    getBarSelection: () => false,
+    BarComponent: BpkBarchartBar,
+    disableDataTable: false,
+  };
+
+  constructor(props: Props) {
     super(props);
 
     this.state = {
@@ -137,7 +210,6 @@ class BpkBarchart extends Component {
     const height = this.state.height - margin.bottom - margin.top;
     const maxYValue = getMaxYValue(
       data.map(d => d[yScaleDataKey]),
-      yScaleDataKey,
       outlierPercentage,
     );
 
@@ -160,6 +232,7 @@ class BpkBarchart extends Component {
             yAxisLabel={yAxisLabel}
           />
         )}
+        {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
         <svg
           xmlns="http://www.w3.org/2000/svg"
           className={classNames.join(' ')}
@@ -227,7 +300,7 @@ class BpkBarchart extends Component {
 }
 
 BpkBarchart.propTypes = {
-  data: dataProp,
+  data: dataProp, // eslint-disable-line react/require-default-props
   xScaleDataKey: PropTypes.string.isRequired,
   yScaleDataKey: PropTypes.string.isRequired,
   xAxisLabel: PropTypes.string.isRequired,
@@ -255,31 +328,6 @@ BpkBarchart.propTypes = {
   getBarSelection: PropTypes.func,
   BarComponent: PropTypes.func,
   disableDataTable: PropTypes.bool,
-};
-
-BpkBarchart.defaultProps = {
-  data: null,
-  className: null,
-  leadingScrollIndicatorClassName: null,
-  trailingScrollIndicatorClassName: null,
-  outlierPercentage: null,
-  showGridlines: false,
-  xAxisMargin: 2 * (lineHeight + spacing),
-  xAxisTickValue: identity,
-  xAxisTickOffset: 0,
-  xAxisTickEvery: 1,
-  yAxisMargin: 4 * lineHeight + spacing,
-  yAxisTickValue: identity,
-  yAxisNumTicks: null,
-  yAxisDomain: [null, null],
-  onBarClick: null,
-  onBarHover: null,
-  onBarFocus: null,
-  getBarLabel: (point, xScaleDataKey, yScaleDataKey) =>
-    `${point[xScaleDataKey]} - ${point[yScaleDataKey]}`,
-  getBarSelection: () => false,
-  BarComponent: BpkBarchartBar,
-  disableDataTable: false,
 };
 
 export default BpkBarchart;

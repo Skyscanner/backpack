@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+/* @flow strict */
+
 import React from 'react';
 import renderer from 'react-test-renderer';
 
@@ -33,7 +35,7 @@ describe('BpkTableHeadCell', () => {
     const tree = renderer
       .create(
         <BpkTableHeadCell alternate>
-          <th />
+          <th>Skyscanner</th>
         </BpkTableHeadCell>,
       )
       .toJSON();
@@ -44,7 +46,7 @@ describe('BpkTableHeadCell', () => {
     const tree = renderer
       .create(
         <BpkTableHeadCell className="my-custom-class">
-          <th />
+          <th>Skyscanner</th>
         </BpkTableHeadCell>,
       )
       .toJSON();
@@ -55,7 +57,7 @@ describe('BpkTableHeadCell', () => {
     const tree = renderer
       .create(
         <BpkTableHeadCell id="my-custom-id" data-foo="bar">
-          <th />
+          <th>Skyscanner</th>
         </BpkTableHeadCell>,
       )
       .toJSON();

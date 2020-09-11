@@ -89,7 +89,7 @@ class Image extends Component<ImageProps> {
     }
 
     return (
-      // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
+      // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
       <img
         className={imgClassNames.join(' ')}
         alt={altText}
@@ -168,8 +168,8 @@ class BpkImage extends Component<BpkImageProps> {
             which seems to be enough to fix it.
           */}
           {inView && (
-            // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
-            <Image // eslint-disable-line backpack/use-components
+            // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
+            <Image
               hidden={loading}
               altText={altText}
               onImageLoad={this.onImageLoad}
@@ -191,8 +191,8 @@ class BpkImage extends Component<BpkImageProps> {
           )}
           {typeof window === 'undefined' && (!inView || loading) && (
             <noscript>
-              {/* $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'. */}
-              <Image // eslint-disable-line backpack/use-components
+              {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
+              <Image
                 altText={altText}
                 onImageLoad={this.onImageLoad}
                 {...rest}

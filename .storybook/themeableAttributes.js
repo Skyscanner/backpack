@@ -45,6 +45,8 @@ import {
 import {
   primaryMarkerThemeAttributes,
   secondaryMarkerThemeAttributes,
+  plainMarkerThemeAttributes,
+  priceMarkerThemeAttributes,
 } from '../packages/bpk-component-map';
 import { themeAttributes as modalThemeAttributes } from '../packages/bpk-component-modal';
 import { themeAttributes as nudgerThemeAttributes } from '../packages/bpk-component-nudger';
@@ -100,5 +102,7 @@ export default [
   ...navigationBarThemeAttributes,
   ...primaryMarkerThemeAttributes,
   ...secondaryMarkerThemeAttributes,
+  ...plainMarkerThemeAttributes,
+  ...priceMarkerThemeAttributes,
   ...storybookAttributes,
 ];

@@ -17,8 +17,8 @@
  */
 /* @flow strict */
 
-import PropTypes, { type Node } from 'prop-types';
-import React from 'react';
+import PropTypes from 'prop-types';
+import React, { type Element } from 'react';
 import { cssModules } from 'bpk-react-utils';
 
 import STYLES from './BpkSelect.scss';
@@ -35,7 +35,7 @@ export type Props = {
   dockedFirst: boolean,
   dockedLast: boolean,
   dockedMiddle: boolean,
-  image: ?Node,
+  image: ?Element<any>,
   large: boolean,
   valid: ?boolean,
   wrapperClassName: ?string,
@@ -61,7 +61,7 @@ const BpkSelect = (props: Props) => {
   const isInvalid = valid === false;
 
   const select = (
-    // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
+    // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
     <select
       className={getClassName(
         'bpk-select',

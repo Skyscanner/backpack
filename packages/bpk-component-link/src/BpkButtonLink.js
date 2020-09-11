@@ -16,8 +16,10 @@
  * limitations under the License.
  */
 
+/* @flow strict */
+
 import PropTypes from 'prop-types';
-import React from 'react';
+import React, { type Node } from 'react';
 import { cssModules } from 'bpk-react-utils';
 
 import themeAttributes from './themeAttributes';
@@ -25,7 +27,15 @@ import STYLES from './BpkLink.scss';
 
 const getClassName = cssModules(STYLES);
 
-const BpkButtonLink = props => {
+type Props = {
+  children: Node,
+  className: ?string,
+  onClick: (event: SyntheticEvent<>) => mixed,
+  white: boolean,
+  alternate: boolean,
+};
+
+const BpkButtonLink = (props: Props) => {
   const { children, className, onClick, white, alternate, ...rest } = props;
   const classNames = [getClassName('bpk-link')];
 
@@ -37,6 +47,7 @@ const BpkButtonLink = props => {
   }
 
   return (
+    // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
     <button
       type="button"
       className={classNames.join(' ')}

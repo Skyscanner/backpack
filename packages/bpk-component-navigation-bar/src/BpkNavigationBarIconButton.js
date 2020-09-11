@@ -36,7 +36,7 @@ export type Props = {
 };
 
 const BpkNavigationBarIconButton = ({ icon, className, ...rest }: Props) => (
-  // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
+  // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
   <BpkIconButton
     customIcon={icon}
     className={getClassName('bpk-navigation-bar-icon-button', className)}

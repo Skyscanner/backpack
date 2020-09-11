@@ -16,15 +16,26 @@
  * limitations under the License.
  */
 
+/* @flow strict */
+
 import PropTypes from 'prop-types';
-import React from 'react';
+import React, { type Node } from 'react';
 import { cssModules } from 'bpk-react-utils';
 
 import STYLES from './BpkAutosuggest.scss';
 
 const getClassName = cssModules(STYLES);
 
-const BpkSuggestion = props => {
+type Props = {
+  value: Node,
+  indent: boolean,
+  className: ?string,
+  icon: Function,
+  subHeading: ?Node,
+  tertiaryLabel: ?string,
+};
+
+const BpkSuggestion = (props: Props) => {
   const classNames = [getClassName('bpk-autosuggest__suggestion')];
   const {
     indent,
@@ -45,6 +56,7 @@ const BpkSuggestion = props => {
   }
 
   return (
+    // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
     <section className={classNames.join(' ')} {...rest}>
       {icon ? (
         <Icon className={getClassName('bpk-autosuggest__suggestion-icon')} />

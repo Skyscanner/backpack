@@ -16,24 +16,26 @@
  * limitations under the License.
  */
 
+/* @flow strict */
+
 import PropTypes from 'prop-types';
-import React from 'react';
+import React, { type Node } from 'react';
 import { cssModules } from 'bpk-react-utils';
 
 import STYLES from './BpkAccordion.scss';
 
 const getClassName = cssModules(STYLES);
 
-const BpkAccordion = props => {
-  const classNames = [getClassName('bpk-accordion')];
+type Props = { children: Node, className: ?string };
+
+const BpkAccordion = (props: Props) => {
   const { children, className, ...rest } = props;
 
-  if (className) {
-    classNames.push(className);
-  }
+  const classNames = getClassName('bpk-accordion', className);
 
   return (
-    <dl className={classNames.join(' ')} {...rest}>
+    // $FlowFixMe[cannot-spread-inexact] - inexact rest. See decisions/flowfixme.md
+    <dl className={classNames} {...rest}>
       {children}
     </dl>
   );

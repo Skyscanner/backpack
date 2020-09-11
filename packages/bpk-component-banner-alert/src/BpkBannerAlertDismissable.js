@@ -35,7 +35,7 @@ type Props = {
 };
 
 const BpkBannerAlertDismissable = (props: Props) => (
-  // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
+  // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
   <BpkBannerAlertInner configuration={CONFIGURATION.DISMISSABLE} {...props} />
 );
 

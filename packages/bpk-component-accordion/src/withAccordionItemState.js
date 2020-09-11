@@ -16,13 +16,37 @@
  * limitations under the License.
  */
 
+/* @flow strict */
+
 import PropTypes from 'prop-types';
-import React, { Component } from 'react';
+import React, { Component, type ComponentType } from 'react';
 import { wrapDisplayName } from 'bpk-react-utils';
 
-const withAccordionItemState = ComposedComponent => {
-  class WithAccordionItemState extends Component {
-    constructor(props) {
+type Props = {
+  initiallyExpanded: boolean,
+  expanded: boolean,
+  onClick: ?() => mixed,
+};
+
+type State = {
+  expanded: boolean,
+};
+
+const withAccordionItemState = (ComposedComponent: ComponentType<any>) => {
+  class WithAccordionItemState extends Component<Props, State> {
+    static propTypes = {
+      initiallyExpanded: PropTypes.bool,
+      expanded: PropTypes.bool,
+      onClick: PropTypes.func,
+    };
+
+    static defaultProps = {
+      initiallyExpanded: false,
+      expanded: false,
+      onClick: null,
+    };
+
+    constructor(props: Props) {
       super(props);
 
       this.state = {
@@ -43,6 +67,7 @@ const withAccordionItemState = ComposedComponent => {
       const { initiallyExpanded, expanded, onClick, ...rest } = this.props;
 
       return (
+        // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
         <ComposedComponent
           expanded={this.state.expanded}
           onClick={this.onClick}
@@ -51,18 +76,6 @@ const withAccordionItemState = ComposedComponent => {
       );
     }
   }
-
-  WithAccordionItemState.propTypes = {
-    initiallyExpanded: PropTypes.bool,
-    expanded: PropTypes.bool,
-    onClick: PropTypes.func,
-  };
-
-  WithAccordionItemState.defaultProps = {
-    initiallyExpanded: false,
-    expanded: false,
-    onClick: null,
-  };
 
   WithAccordionItemState.displayName = wrapDisplayName(
     ComposedComponent,

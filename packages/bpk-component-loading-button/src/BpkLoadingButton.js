@@ -16,8 +16,10 @@
  * limitations under the License.
  */
 
+/* @flow strict */
+
 import PropTypes from 'prop-types';
-import React from 'react';
+import React, { type Node, type Element } from 'react';
 import BpkButton from 'bpk-component-button';
 import { BpkSpinner, BpkLargeSpinner } from 'bpk-component-spinner';
 import {
@@ -45,17 +47,19 @@ const getPropsIcon = props => {
   return icon;
 };
 
-const getSpinner = large =>
+const getSpinner = (large: boolean) =>
   large ? <BpkLargeSpinner alignToButton /> : <BpkSpinner alignToButton />;
 
-const getEnabledIcon = large => {
+const getEnabledIcon = (large: boolean) => {
   const AlignedIcon = large
     ? withLargeButtonAlignment(withRtlSupport(ArrowIconLg))
     : withButtonAlignment(withRtlSupport(ArrowIconSm));
   return <AlignedIcon />;
 };
 
-const getDefaultIcon = props => {
+type IconProps = { loading: boolean, large: boolean };
+
+const getDefaultIcon = (props: IconProps) => {
   const { loading, large } = props;
 
   if (loading) {
@@ -64,7 +68,23 @@ const getDefaultIcon = props => {
   return getEnabledIcon(large);
 };
 
-const BpkLoadingButton = props => {
+type LoadingProps = {
+  children: Node,
+  className: ?string,
+  disabled: boolean,
+  secondary: boolean,
+  destructive: boolean,
+  large: boolean,
+  link: boolean,
+  loading: boolean,
+  iconOnly: boolean,
+  icon: ?Element<any>,
+  iconPosition: string,
+  iconDisabled: ?Element<any>,
+  iconLoading: ?Element<any>,
+};
+
+const BpkLoadingButton = (props: LoadingProps) => {
   const {
     children,
     disabled,
@@ -88,6 +108,7 @@ const BpkLoadingButton = props => {
       : [children, spacer, buttonIcon];
 
   return (
+    // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
     <BpkButton iconOnly={iconOnly} disabled={showBtnDisabled} {...rest}>
       {child0}
       {child1}
@@ -119,6 +140,7 @@ BpkLoadingButton.defaultProps = {
   disabled: false,
   secondary: false,
   destructive: false,
+  large: false,
   link: false,
   loading: false,
   iconOnly: false,

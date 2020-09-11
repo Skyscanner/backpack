@@ -16,7 +16,14 @@
  * limitations under the License.
  */
 
-export default (props, propName, componentName) => {
+/* @flow strict */
+
+type Props = {
+  xScaleDataKey: string,
+  yScaleDataKey: string,
+};
+
+export default (props: Props, propName: string, componentName: string) => {
   const { xScaleDataKey, yScaleDataKey } = props;
   const data = props[propName];
   if (!Array.isArray(data)) {

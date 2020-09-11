@@ -40,11 +40,11 @@ export type Props = {
   fullScreen: boolean,
   padded: boolean,
   dialogRef: (ref: ?HTMLElement) => void,
-  onClose: ?(event: SyntheticEvent<>) => void,
+  onClose: (event: SyntheticEvent<>) => void,
   className: ?string,
   contentClassName: ?string,
   title: ?string,
-  closeLabel: ?string,
+  closeLabel: string,
   closeText: ?string,
   accessoryView: ?Element<any>,
 };
@@ -152,10 +152,10 @@ export const propTypes = {
 
 export const defaultProps = {
   title: null,
-  onClose: null,
+  onClose: () => null,
   className: null,
   contentClassName: null,
-  closeLabel: null,
+  closeLabel: '',
   closeText: null,
   wide: false,
   showHeader: true,

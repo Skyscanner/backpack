@@ -16,10 +16,14 @@
  * limitations under the License.
  */
 
+/* @flow strict */
+
 import React from 'react';
+import { scaleBand, scaleLinear } from 'd3-scale';
 import PropTypes from 'prop-types';
 import { borderRadiusXs } from 'bpk-tokens/tokens/base.es6';
 
+import BpkBarchartBar from './BpkBarchartBar';
 import { remToPx } from './utils';
 
 const borderRadius = remToPx(borderRadiusXs);
@@ -42,7 +46,31 @@ const getBarHeight = (
 const isOutlier = (point, { yScaleDataKey, maxYValue }) =>
   point[yScaleDataKey] > maxYValue;
 
-const BpkBarchartBars = props => {
+type Props = {
+  data: Array<any>, // We pass any here as the array can contain free form data depending on the user
+  xScaleDataKey: string,
+  yScaleDataKey: string,
+  height: number,
+  xScale: typeof scaleBand,
+  yScale: typeof scaleLinear,
+  maxYValue: number,
+  margin: {
+    top: number,
+    bottom: number,
+    left: number,
+    right: number,
+  },
+  getBarLabel: (any, string, string) => mixed,
+  BarComponent: typeof BpkBarchartBar,
+  getBarSelection: (any: any) => mixed,
+  outerPadding: number,
+  innerPadding: number,
+  onBarClick: ?(e: SyntheticEvent<any>, Object) => mixed,
+  onBarHover: ?(e: SyntheticEvent<any>, Object) => mixed,
+  onBarFocus: ?(e: SyntheticEvent<any>, Object) => mixed,
+};
+
+const BpkBarchartBars = (props: Props) => {
   const {
     outerPadding,
     innerPadding,
@@ -78,6 +106,7 @@ const BpkBarchartBars = props => {
         const outlier = isOutlier(point, props);
         const barHeight = getBarHeight(point, props);
         return (
+          // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
           <BarComponent
             key={`bar${i.toString()}`}
             x={x}

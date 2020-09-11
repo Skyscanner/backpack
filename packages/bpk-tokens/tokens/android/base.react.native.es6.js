@@ -415,6 +415,12 @@ lineHeightXs,
 lineHeightXxl,
 };
 // iOS only tokens
+export const borderWidthLg = undefined;
+export const borderWidthSm = undefined;
+export const borderWidthXl = undefined;
+export const cornerRadiusLg = undefined;
+export const cornerRadiusPill = undefined;
+export const cornerRadiusSm = undefined;
 export const shadowLgColor = undefined;
 export const shadowLgOffsetHeight = undefined;
 export const shadowLgOffsetWidth = undefined;

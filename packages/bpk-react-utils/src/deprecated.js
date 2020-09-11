@@ -19,6 +19,7 @@
 /* @flow strict */
 import { type PropType } from 'prop-types';
 
+// $FlowIssue[value-as-type] - PropType is imported as a type so is incorrectly reporting the PropType is not a valid type
 const deprecated = (propType: PropType, alternativeSuggestion: string) => (
   props: { [string]: any },
   propName: string,

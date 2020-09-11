@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+/* @flow strict */
+
 import React from 'react';
 import renderer from 'react-test-renderer';
 import CustomCloseIcon from 'bpk-component-icon/sm/close-circle';

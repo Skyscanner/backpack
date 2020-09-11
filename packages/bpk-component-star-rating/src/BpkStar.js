@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+/* @flow strict */
+
 import React from 'react';
 import PropTypes from 'prop-types';
 import SmallIcon from 'bpk-component-icon/sm/star';
@@ -37,18 +39,33 @@ export const STAR_TYPES = {
   FULL: 'full',
 };
 
-const BpkStar = props => {
+type Props = {
+  type: $Keys<typeof STAR_TYPES>,
+  className: ?string,
+  large: boolean,
+};
+
+const BpkStar = (props: Props) => {
   const { type, large, className, ...rest } = props;
-  const iconClassNames = [getClassName('bpk-star')];
-  const containerClassNames = [
+  const iconClassNames = getClassName(
+    'bpk-star',
+    large && 'bpk-star--large',
+    type === STAR_TYPES.FULL && 'bpk-star--filled',
+    className,
+  );
+
+  const containerClassNames = getClassName(
     'bpk-star__container',
     'bpk-star__container--half-star',
-  ].map(getClassName);
-  const halfIconClassNames = [
+    large && 'bpk-star__container--large',
+    className,
+  );
+
+  const halfIconClassNames = getClassName(
     'bpk-star',
     'bpk-star--half',
     'bpk-star--filled',
-  ].map(getClassName);
+  );
 
   let Icon = SmallIcon;
   let OutlineIcon = OutlineSmallIcon;
@@ -58,33 +75,23 @@ const BpkStar = props => {
     Icon = LargeIcon;
     OutlineIcon = OutlineLargeIcon;
     HalfIcon = HalfLargeIcon;
-    iconClassNames.push(getClassName('bpk-star--large'));
-    containerClassNames.push(getClassName('bpk-star__container--large'));
   }
 
   if (type === STAR_TYPES.HALF) {
-    if (className) {
-      containerClassNames.push(className);
-    }
     return (
-      <span className={containerClassNames.join(' ')} {...rest}>
-        <HalfIcon className={halfIconClassNames.join(' ')} />
+      // $FlowFixMe[cannot-spread-inexact] - inexact rest. See decisions/flowfixme.md
+      <span className={containerClassNames} {...rest}>
+        <HalfIcon className={halfIconClassNames} />
       </span>
     );
   }
 
-  if (type === STAR_TYPES.FULL) {
-    iconClassNames.push(getClassName('bpk-star--filled'));
-  }
-
-  if (className) {
-    iconClassNames.push(className);
-  }
-
   return type === STAR_TYPES.FULL ? (
-    <Icon className={iconClassNames.join(' ')} {...rest} />
+    // $FlowFixMe[cannot-spread-inexact] - inexact rest. See decisions/flowfixme.md
+    <Icon className={iconClassNames} {...rest} />
   ) : (
-    <OutlineIcon className={iconClassNames.join(' ')} {...rest} />
+    // $FlowFixMe[cannot-spread-inexact] - inexact rest. See decisions/flowfixme.md
+    <OutlineIcon className={iconClassNames} {...rest} />
   );
 };
 

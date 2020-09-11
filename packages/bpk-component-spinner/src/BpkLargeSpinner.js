@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+/* @flow strict */
+
 import PropTypes from 'prop-types';
 import React from 'react';
 import { cssModules } from 'bpk-react-utils';
@@ -26,23 +28,25 @@ import SPINNER_TYPES from './spinnerTypes';
 
 const getClassName = cssModules(STYLES);
 
-const BpkLargeSpinner = props => {
+type Props = {
+  type: $Keys<typeof SPINNER_TYPES>,
+  className: ?string,
+  alignToButton: boolean,
+};
+
+const BpkLargeSpinner = (props: Props) => {
   const { type, className, alignToButton, ...rest } = props;
 
-  const classNames = [
+  const classNames = getClassName(
     'bpk-spinner',
     'bpk-spinner--large',
     `bpk-spinner--${type}`,
-  ].map(getClassName);
+    alignToButton && 'bpk-spinner--align-to-large-button',
+    className,
+  );
 
-  if (alignToButton) {
-    classNames.push(getClassName('bpk-spinner--align-to-large-button'));
-  }
-  if (className) {
-    classNames.push(className);
-  }
-
-  return <LgSpinner className={classNames.join(' ')} {...rest} />;
+  // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
+  return <LgSpinner className={classNames} {...rest} />;
 };
 
 BpkLargeSpinner.propTypes = {

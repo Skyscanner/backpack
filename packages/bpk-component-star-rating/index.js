@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+/* @flow strict */
+
 import BpkStar, { BpkStarNonRtl, STAR_TYPES } from './src/BpkStar';
 import BpkInteractiveStar from './src/BpkInteractiveStar';
 import BpkStarRating, { ROUNDING_TYPES } from './src/BpkStarRating';
