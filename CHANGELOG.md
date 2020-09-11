@@ -2,6 +2,16 @@
 
 [Unreleased changes](./UNRELEASED.yaml).
 
+# 2020-09-11
+
+**Breaking**:
+- bpk-component-map: `4.0.0`
+  - `BpkMapMarker` has been replaced with `BpkIconMarker`. See the [migration guide](https://github.com/Skyscanner/backpack/blob/master/packages/bpk-component-map/docs/migrating-from-v3-to-v4.md) for more information.
+
+**Fixed**:
+  - bpk-component-horizontal-nav: `3.2.20`
+      - Fixed accessibility issues on the `BpkHorizontalNav` that prevented the component to be functional when using a screen reader to navigate.
+
 # 2020-09-03
 
 **Breaking**

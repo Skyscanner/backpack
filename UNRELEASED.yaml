@@ -1,18 +1,5 @@
 # UNRELEASED:
 
-
-BREAKING:
-- bpk-component-map:
-  - `BpkMapMarker` has been replaced with `BpkIconMarker`. See the [migration guide](https://github.com/Skyscanner/backpack/blob/master/packages/bpk-component-map/docs/migrating-from-v3-to-v4.md) for more information.
-
-FIXED:
-  - bpk-component-dialog:
-  - bpk-component-modal:
-    - onClose prop defaults to a function as required by Portal within
-  
-  - bpk-component-horizontal-nav:
-      - Fixed accessibility issues on the `BpkHorizontalNav` that prevented the component to be functional when using a screen reader to navigate.
-
 # How to write a good changelog entry:
 #
 #   1. Add 'BREAKING', 'ADDED' OR 'FIXED' depending on if the change will be major, minor or patch according to [semver.org](semver.org).
