@@ -152,6 +152,8 @@ Use `npm run create-component` to create a new skeleton React component. Once th
 
 We use [CSS Modules](https://github.com/css-modules/css-modules) along with [BEM](http://getbem.com/) to prevent collisions and accidental overwrites in CSS.
 
+To maintain React 16.4 compatibility, please do not use newer features of React such as Hooks.
+
 ### Documentation
 
 Our documentation consists of two parts: [Sassdoc](https://backpack.github.io/sassdoc/), which is automatically generated from the `bpk-mixin` sources, and the main [documentation](https://backpack.github.io).

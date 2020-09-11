@@ -16,12 +16,12 @@ exports[`BpkHorizontalNav should render correctly 1`] = `
     <nav
       className="bpk-mobile-scroll-container__inner"
     >
-      <ul
+      <div
         className="bpk-horizontal-nav__list"
         role="tablist"
       >
         My nav content.
-      </ul>
+      </div>
     </nav>
   </div>
 </div>
@@ -43,12 +43,12 @@ exports[`BpkHorizontalNav should render correctly with "showUnderline" set to fa
     <nav
       className="bpk-mobile-scroll-container__inner"
     >
-      <ul
+      <div
         className="bpk-horizontal-nav__list"
         role="tablist"
       >
         My nav content.
-      </ul>
+      </div>
     </nav>
   </div>
 </div>
@@ -70,7 +70,7 @@ exports[`BpkHorizontalNav should render correctly with "type" prop 1`] = `
     <nav
       className="bpk-mobile-scroll-container__inner"
     >
-      <ul
+      <div
         className="bpk-horizontal-nav__list"
         role="tablist"
       >
@@ -89,7 +89,7 @@ exports[`BpkHorizontalNav should render correctly with "type" prop 1`] = `
         >
           Three
         </li>
-      </ul>
+      </div>
     </nav>
   </div>
 </div>
@@ -113,12 +113,12 @@ exports[`BpkHorizontalNav should render correctly with arbitrary props 1`] = `
     <nav
       className="bpk-mobile-scroll-container__inner"
     >
-      <ul
+      <div
         className="bpk-horizontal-nav__list"
         role="tablist"
       >
         My nav content.
-      </ul>
+      </div>
     </nav>
   </div>
 </div>
@@ -140,12 +140,12 @@ exports[`BpkHorizontalNav should render correctly with custom "className" prop 1
     <nav
       className="bpk-mobile-scroll-container__inner"
     >
-      <ul
+      <div
         className="bpk-horizontal-nav__list"
         role="tablist"
       >
         My nav content.
-      </ul>
+      </div>
     </nav>
   </div>
 </div>
@@ -167,12 +167,12 @@ exports[`BpkHorizontalNav should render correctly with custom "leadingScrollIndi
     <nav
       className="bpk-mobile-scroll-container__inner"
     >
-      <ul
+      <div
         className="bpk-horizontal-nav__list"
         role="tablist"
       >
         My nav content.
-      </ul>
+      </div>
     </nav>
   </div>
 </div>
@@ -194,12 +194,12 @@ exports[`BpkHorizontalNav should render correctly with custom "trailingScrollInd
     <nav
       className="bpk-mobile-scroll-container__inner"
     >
-      <ul
+      <div
         className="bpk-horizontal-nav__list"
         role="tablist"
       >
         My nav content.
-      </ul>
+      </div>
     </nav>
   </div>
 </div>

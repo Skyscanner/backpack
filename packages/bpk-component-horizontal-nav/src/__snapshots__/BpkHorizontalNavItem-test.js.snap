@@ -1,131 +1,131 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`BpkHorizontalNavItem should render correctly 1`] = `
-<li
-  aria-selected="false"
+<div
   className="bpk-horizontal-nav__item"
-  role="tab"
 >
   <button
+    aria-selected="false"
     className="bpk-horizontal-nav__link bpk-horizontal-nav__link--default"
     disabled={false}
+    role="tab"
     type="button"
   >
     My nav item content
   </button>
-</li>
+</div>
 `;
 
 exports[`BpkHorizontalNavItem should render correctly with "disabled" prop 1`] = `
-<li
-  aria-selected="false"
+<div
   className="bpk-horizontal-nav__item"
-  role="tab"
 >
   <button
+    aria-selected="false"
     className="bpk-horizontal-nav__link bpk-horizontal-nav__link--default bpk-horizontal-nav__link--default-disabled"
     disabled={true}
+    role="tab"
     type="button"
   >
     My nav item content
   </button>
-</li>
+</div>
 `;
 
 exports[`BpkHorizontalNavItem should render correctly with "selected" prop 1`] = `
-<li
-  aria-selected="true"
+<div
   className="bpk-horizontal-nav__item"
-  role="tab"
 >
   <button
+    aria-selected="true"
     className="bpk-horizontal-nav__link bpk-horizontal-nav__link--default bpk-horizontal-nav__link--default-selected"
-    disabled={true}
+    disabled={false}
+    role="tab"
     type="button"
   >
     My nav item content
   </button>
-</li>
+</div>
 `;
 
 exports[`BpkHorizontalNavItem should render correctly with "spaceAround" prop 1`] = `
-<li
-  aria-selected="false"
+<div
   className="bpk-horizontal-nav__item bpk-horizontal-nav__item--space-around"
-  role="tab"
 >
   <button
+    aria-selected="false"
     className="bpk-horizontal-nav__link bpk-horizontal-nav__link--default"
     disabled={false}
+    role="tab"
     type="button"
   >
     My nav item content.
   </button>
-</li>
+</div>
 `;
 
 exports[`BpkHorizontalNavItem should render correctly with "type" prop 1`] = `
-<li
-  aria-selected="false"
+<div
   className="bpk-horizontal-nav__item"
-  role="tab"
 >
   <button
+    aria-selected="false"
     className="bpk-horizontal-nav__link bpk-horizontal-nav__link--light"
     disabled={false}
+    role="tab"
     type="button"
   >
     One
   </button>
-</li>
+</div>
 `;
 
 exports[`BpkHorizontalNavItem should render correctly with an "href" prop 1`] = `
-<li
-  aria-selected="false"
+<div
   className="bpk-horizontal-nav__item"
-  role="tab"
 >
   <a
     aria-disabled={false}
+    aria-selected="false"
     className="bpk-horizontal-nav__link bpk-horizontal-nav__link--default"
     href="#"
+    role="tab"
   >
     My nav item content
   </a>
-</li>
+</div>
 `;
 
 exports[`BpkHorizontalNavItem should render correctly with arbitrary props 1`] = `
-<li
-  aria-selected="false"
+<div
   className="bpk-horizontal-nav__item"
-  role="tab"
 >
   <button
+    aria-selected="false"
     className="bpk-horizontal-nav__link bpk-horizontal-nav__link--default"
     data-arbitrary-1="arbirary-value-1"
     data-arbitrary-2="arbirary-value-2"
     disabled={false}
+    role="tab"
     type="button"
   >
     My nav content.
   </button>
-</li>
+</div>
 `;
 
 exports[`BpkHorizontalNavItem should render correctly with custom "className" prop 1`] = `
-<li
-  aria-selected="false"
+<div
   className="bpk-horizontal-nav__item"
-  role="tab"
 >
   <button
+    aria-selected="false"
     className="bpk-horizontal-nav__link bpk-horizontal-nav__link--default my-custom-class"
     disabled={false}
+    role="tab"
     type="button"
   >
     My nav item content
   </button>
-</li>
+</div>
 `;
