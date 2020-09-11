@@ -168,9 +168,10 @@ const generateTheme = ({
   ratingMediumColor: secondaryColor500,
   ratingLowColor: colorSkyGrayTint02,
 
-  mapMarkerPrimaryBackgroundColor: primaryColor700,
-  mapMarkerSecondaryBackgroundColor: secondaryColor700,
-  mapMarkerPlainBackgroundColor: primaryColor700,
+  iconMarkerDefaultBackgroundColor: primaryColor500,
+  iconMarkerDefaultSelectedColor: primaryColor500,
+  iconMarkerDefaultDisabledColor: primaryColor700,
+  iconMarkerDefaultDisabledBackgroundColor: primaryColor300,
 
   priceMarkerBackgroundColor: primaryColor700,
 

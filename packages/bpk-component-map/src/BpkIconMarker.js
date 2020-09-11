@@ -21,61 +21,47 @@
 import React, { type Node } from 'react';
 import PropTypes from 'prop-types';
 import { cssModules } from 'bpk-react-utils';
-import ArrowDownIcon from 'bpk-component-icon/sm/arrow-down';
 
+import BpkIconMarkerBackground from './BpkIconMarkerBackground';
 import { LatLongPropType, type LatLong } from './common-types';
 import BpkBasicMapMarker from './BpkBasicMapMarker';
-import STYLES from './BpkMapMarker.scss';
+import STYLES from './BpkIconMarker.scss';
 
 const getClassName = cssModules(STYLES);
 
-export const MARKER_TYPES = {
-  primary: 'primary',
-  secondary: 'secondary',
-  plain: 'plain',
-};
-
-export type MarkerType = $Keys<typeof MARKER_TYPES>;
-
-type Props = {
+export type Props = {
   icon: Node,
   position: LatLong,
+  disabled: boolean,
   selected: boolean,
-  type: MarkerType,
   className: ?string,
-  arrowClassName: ?string,
-  large: ?boolean,
   onClick: ?(event: SyntheticEvent<>) => mixed,
   buttonProps: ?{ [string]: any },
 };
 
-const BpkMapMarker = (props: Props) => {
+const BpkIconMarker = (props: Props) => {
   const {
     icon,
     position,
     className,
-    arrowClassName,
-    large,
+    disabled,
     selected,
     onClick,
-    type,
     buttonProps,
     ...rest
   } = props;
 
-  const classNames = getClassName(
-    'bpk-map-marker',
-    `bpk-map-marker--${type}`,
-    onClick && 'bpk-map-marker--dynamic',
-    large && 'bpk-map-marker--large',
-    selected && `bpk-map-marker--${type}-selected`,
+  const wrapperClassNames = getClassName(
+    'bpk-icon-marker__wrapper',
+    selected && 'bpk-icon-marker__wrapper--selected',
     className,
   );
 
-  const arrowClassNames = getClassName(
-    'bpk-map-marker__arrow',
-    selected && `bpk-map-marker__arrow--${type}-selected`,
-    arrowClassName,
+  const iconClassNames = getClassName(
+    'bpk-icon-marker__icon',
+    onClick && !disabled && 'bpk-icon-marker__icon--interactive',
+    disabled && 'bpk-icon-marker__icon--disabled',
+    selected && 'bpk-icon-marker__icon--selected',
   );
 
   return (
@@ -84,39 +70,38 @@ const BpkMapMarker = (props: Props) => {
       {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
       <button
         type="button"
-        className={getClassName('bpk-map-marker__wrapper')}
+        className={wrapperClassNames}
         onClick={onClick}
+        disabled={disabled}
         {...buttonProps}
       >
-        <div className={classNames}>{icon}</div>
-        <div className={arrowClassNames}>
-          <ArrowDownIcon />
-        </div>
+        <BpkIconMarkerBackground
+          disabled={disabled}
+          interactive={onClick !== null && !disabled}
+          selected={selected}
+        />
+        <div className={iconClassNames}>{icon}</div>
       </button>
     </BpkBasicMapMarker>
   );
 };
 
-BpkMapMarker.propTypes = {
+BpkIconMarker.propTypes = {
   icon: PropTypes.node.isRequired,
   position: LatLongPropType.isRequired,
-  arrowClassName: PropTypes.string,
   className: PropTypes.string,
-  large: PropTypes.bool,
+  disabled: PropTypes.bool,
   onClick: PropTypes.func,
   selected: PropTypes.bool,
-  type: PropTypes.oneOf(Object.keys(MARKER_TYPES)),
   buttonProps: PropTypes.object, // eslint-disable-line react/forbid-prop-types
 };
 
-BpkMapMarker.defaultProps = {
+BpkIconMarker.defaultProps = {
   className: null,
-  arrowClassName: null,
-  large: false,
+  disabled: false,
   onClick: null,
   selected: false,
-  type: MARKER_TYPES.primary,
   buttonProps: null,
 };
 
-export default BpkMapMarker;
+export default BpkIconMarker;

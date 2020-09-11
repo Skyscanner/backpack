@@ -1,0 +1,188 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BpkIconMarker should render correctly with a "buttonProps" attribute 1`] = `
+<BpkBasicMapMarker
+  position={
+    Object {
+      "latitude": 41.386947,
+      "longitude": 2.170048,
+    }
+  }
+>
+  <button
+    className="bpk-icon-marker__wrapper"
+    disabled={false}
+    onClick={null}
+    testId="arbitrary value"
+    type="button"
+  >
+    <BpkIconMarkerBackground
+      disabled={false}
+      interactive={false}
+      selected={false}
+    />
+    <div
+      className="bpk-icon-marker__icon"
+    >
+      <span>
+        Icon
+      </span>
+    </div>
+  </button>
+</BpkBasicMapMarker>
+`;
+
+exports[`BpkIconMarker should render correctly with a "className" attribute 1`] = `
+<BpkBasicMapMarker
+  position={
+    Object {
+      "latitude": 41.386947,
+      "longitude": 2.170048,
+    }
+  }
+>
+  <button
+    className="bpk-icon-marker__wrapper custom-class-1 custom-class-2"
+    disabled={false}
+    onClick={null}
+    type="button"
+  >
+    <BpkIconMarkerBackground
+      disabled={false}
+      interactive={false}
+      selected={false}
+    />
+    <div
+      className="bpk-icon-marker__icon"
+    >
+      <span>
+        Icon
+      </span>
+    </div>
+  </button>
+</BpkBasicMapMarker>
+`;
+
+exports[`BpkIconMarker should render correctly with a "disabled" attribute 1`] = `
+<BpkBasicMapMarker
+  position={
+    Object {
+      "latitude": 41.386947,
+      "longitude": 2.170048,
+    }
+  }
+>
+  <button
+    className="bpk-icon-marker__wrapper"
+    disabled={true}
+    onClick={null}
+    type="button"
+  >
+    <BpkIconMarkerBackground
+      disabled={true}
+      interactive={false}
+      selected={false}
+    />
+    <div
+      className="bpk-icon-marker__icon bpk-icon-marker__icon--disabled"
+    >
+      <span>
+        Icon
+      </span>
+    </div>
+  </button>
+</BpkBasicMapMarker>
+`;
+
+exports[`BpkIconMarker should render correctly with a "selected" attribute 1`] = `
+<BpkBasicMapMarker
+  position={
+    Object {
+      "latitude": 41.386947,
+      "longitude": 2.170048,
+    }
+  }
+>
+  <button
+    className="bpk-icon-marker__wrapper bpk-icon-marker__wrapper--selected"
+    disabled={false}
+    onClick={null}
+    type="button"
+  >
+    <BpkIconMarkerBackground
+      disabled={false}
+      interactive={false}
+      selected={true}
+    />
+    <div
+      className="bpk-icon-marker__icon bpk-icon-marker__icon--selected"
+    >
+      <span>
+        Icon
+      </span>
+    </div>
+  </button>
+</BpkBasicMapMarker>
+`;
+
+exports[`BpkIconMarker should render correctly with both a "selected" and "disabled" attribute (disabled takes precedence) 1`] = `
+<BpkBasicMapMarker
+  position={
+    Object {
+      "latitude": 41.386947,
+      "longitude": 2.170048,
+    }
+  }
+>
+  <button
+    className="bpk-icon-marker__wrapper bpk-icon-marker__wrapper--selected"
+    disabled={true}
+    onClick={null}
+    type="button"
+  >
+    <BpkIconMarkerBackground
+      disabled={true}
+      interactive={false}
+      selected={true}
+    />
+    <div
+      className="bpk-icon-marker__icon bpk-icon-marker__icon--disabled bpk-icon-marker__icon--selected"
+    >
+      <span>
+        Icon
+      </span>
+    </div>
+  </button>
+</BpkBasicMapMarker>
+`;
+
+exports[`BpkIconMarker should render properly 1`] = `
+<BpkBasicMapMarker
+  position={
+    Object {
+      "latitude": 41.386947,
+      "longitude": 2.170048,
+    }
+  }
+>
+  <button
+    className="bpk-icon-marker__wrapper"
+    disabled={false}
+    onClick={null}
+    type="button"
+  >
+    <BpkIconMarkerBackground
+      disabled={false}
+      interactive={false}
+      selected={false}
+    />
+    <div
+      className="bpk-icon-marker__icon"
+    >
+      <span>
+        Icon
+      </span>
+    </div>
+  </button>
+</BpkBasicMapMarker>
+`;

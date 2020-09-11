@@ -14,14 +14,13 @@ npm install bpk-component-map --save-dev
 import React from 'react';
 import BpkText from 'bpk-component-text';
 import { withRtlSupport } from 'bpk-component-icon';
-import LandmarkIconLg from 'bpk-component-icon/lg/landmark';
+import LandmarkIconSm from 'bpk-component-icon/sm/landmark';
 import BpkMap, {
-  BpkMapMarker,
+  BpkIconMarker,
   BpkOverlayView,
-  MARKER_TYPES,
 } from 'bpk-component-map';
 
-const AlignedLandmarkIconLg = withRtlSupport(LandmarkIconLg);
+const AlignedLandmarkIconSm = withRtlSupport(LandmarkIconSm);
 
 export default () => (
   <BpkMap
@@ -33,20 +32,22 @@ export default () => (
       longitude: 86.925,
     }}
   >
-    <BpkMapMarker
-      icon={<AlignedLandmarkIconLg />}
-      type={MARKER_TYPES.secondary}
+    <BpkIconMarker
+      icon={<AlignedLandmarkIconSm />}
       position={{ latitude: 27.9881, longitude: 86.925 }}
       onClick={() => {}}
-      large
     />
-    <BpkMapMarker
-      icon={<AlignedLandmarkIconLg />}
-      type={MARKER_TYPES.primary}
+    <BpkIconMarker
+      icon={<AlignedLandmarkIconSm />}
       position={{ latitude: 27.9881, longitude: 86.925 }}
       onClick={() => {}}
-      large
       selected
+    />
+    <BpkIconMarker
+      icon={<AlignedLandmarkIconSm />}
+      position={{ latitude: 27.9881, longitude: 86.927 }}
+      onClick={() => {}}
+      disabled
     />
     <BpkOverlayView position={{ latitude: 27.9881, longitude: 86.925 }}>
       <BpkText>Shibuya Crossing</BpkText>
@@ -154,18 +155,16 @@ When using `withGoogleMapsScript`, some additional props are available:
 | googleMapURL   | string   | true     | -             |
 | loadingElement | node     | false    | BpkSpinner    |
 
-### BpkMapMarker
+### BpkIconMarker
 
 | Property       | PropType                                     | Required | Default Value        |
 | -------------- | -------------------------------------------- | -------- | -------------------- |
 | icon           | node                                         | true     | -                    |
 | position       | shape({latitude: number, longitude: number}) | true     | -                    |
-| arrowClassName | string                                       | false    | null                 |
 | className      | string                                       | false    | null                 |
-| large          | bool                                         | false    | false                |
+| disabled       | bool                                         | false    | false                |
 | onClick        | func                                         | false    | null                 |
 | selected       | bool                                         | false    | false                |
-| type           | oneOf('primary', 'secondary', 'plain')       | false    | MARKER_TYPES.primary |
 | buttonProps    | object                                       | false    | null                 |
 
 ### BpkPriceMarker
@@ -190,17 +189,12 @@ When using `withGoogleMapsScript`, some additional props are available:
 
 ## Theme Props
 
-Primary markers:
+Icon markers:
 
-- `mapMarkerPrimaryBackgroundColor`
-
-Secondary markers:
-
-- `mapMarkerSecondaryBackgroundColor`
-
-Plain markers:
-
-- `mapMarkerPlainBackgroundColor`
+- `iconMarkerDefaultBackgroundColor`
+- `iconMarkerDefaultSelectedColor`
+- `iconMarkerDefaultDisabledBackgroundColor`
+- `iconMarkerDefaultDisabledColor`
 
 Price markers:
 

@@ -22,9 +22,9 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
 
-import BpkMapMarker from './BpkMapMarker';
+import BpkIconMarker from './BpkIconMarker';
 
-describe('BpkMapMarker', () => {
+describe('BpkIconMarker', () => {
   const position = {
     latitude: 41.386947,
     longitude: 2.170048,
@@ -32,27 +32,34 @@ describe('BpkMapMarker', () => {
   const icon = <span>Icon</span>;
 
   it('should render properly', () => {
-    const tree = shallow(<BpkMapMarker position={position} icon={icon} />);
-    expect(toJson(tree)).toMatchSnapshot();
-  });
-
-  it('should render correctly with a "large" attribute', () => {
-    const tree = shallow(
-      <BpkMapMarker position={position} icon={icon} large />,
-    );
+    const tree = shallow(<BpkIconMarker position={position} icon={icon} />);
     expect(toJson(tree)).toMatchSnapshot();
   });
 
   it('should render correctly with a "selected" attribute', () => {
     const tree = shallow(
-      <BpkMapMarker position={position} icon={icon} selected />,
+      <BpkIconMarker position={position} icon={icon} selected />,
+    );
+    expect(toJson(tree)).toMatchSnapshot();
+  });
+
+  it('should render correctly with a "disabled" attribute', () => {
+    const tree = shallow(
+      <BpkIconMarker position={position} icon={icon} disabled />,
+    );
+    expect(toJson(tree)).toMatchSnapshot();
+  });
+
+  it('should render correctly with both a "selected" and "disabled" attribute (disabled takes precedence)', () => {
+    const tree = shallow(
+      <BpkIconMarker position={position} icon={icon} selected disabled />,
     );
     expect(toJson(tree)).toMatchSnapshot();
   });
 
   it('should render correctly with a "className" attribute', () => {
     const tree = shallow(
-      <BpkMapMarker
+      <BpkIconMarker
         position={position}
         icon={icon}
         className="custom-class-1 custom-class-2"
@@ -61,20 +68,9 @@ describe('BpkMapMarker', () => {
     expect(toJson(tree)).toMatchSnapshot();
   });
 
-  it('should render correctly with a "arrowClassName" attribute', () => {
-    const tree = shallow(
-      <BpkMapMarker
-        position={position}
-        icon={icon}
-        arrowClassName="custom-class-1 custom-class-2"
-      />,
-    );
-    expect(toJson(tree)).toMatchSnapshot();
-  });
-
   it('should render correctly with a "buttonProps" attribute', () => {
     const tree = shallow(
-      <BpkMapMarker
+      <BpkIconMarker
         position={position}
         icon={icon}
         buttonProps={{ testId: 'arbitrary value' }}

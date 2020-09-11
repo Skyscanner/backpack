@@ -19,33 +19,27 @@
 /* @flow strict */
 
 import BpkMap from './src/BpkMap';
-import BpkMapMarker, {
-  MARKER_TYPES,
-  type MarkerType,
-} from './src/BpkMapMarker';
+import BpkIconMarker, {
+  type Props as IconMarkerProps,
+} from './src/BpkIconMarker';
 import BpkPriceMarker, { PRICE_MARKER_STATUSES } from './src/BpkPriceMarker';
 import BpkOverlayView from './src/BpkOverlayView';
 import withGoogleMapsScript from './src/withGoogleMapsScript';
 import { type LatLong } from './src/common-types';
 import {
-  primaryMarkerThemeAttributes,
-  secondaryMarkerThemeAttributes,
-  plainMarkerThemeAttributes,
+  defaultIconMarkerThemeAttributes,
   priceMarkerThemeAttributes,
 } from './src/themeAttributes';
 
 export default BpkMap;
 export type BpkMapLatLong = LatLong;
-export type BpkMapMarkerType = MarkerType;
+export type BpkIconMarkerProps = IconMarkerProps;
 export {
-  BpkMapMarker,
+  BpkIconMarker,
   BpkPriceMarker,
   BpkOverlayView,
   withGoogleMapsScript,
-  primaryMarkerThemeAttributes,
-  secondaryMarkerThemeAttributes,
-  plainMarkerThemeAttributes,
+  defaultIconMarkerThemeAttributes,
   priceMarkerThemeAttributes,
-  MARKER_TYPES,
   PRICE_MARKER_STATUSES,
 };
