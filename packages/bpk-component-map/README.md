@@ -167,6 +167,11 @@ When using `withGoogleMapsScript`, some additional props are available:
 | selected       | bool                                         | false    | false                |
 | buttonProps    | object                                       | false    | null                 |
 
+#### `icon`
+
+`BpkIconMarker` only supports small icons from the Backpack icon set. Large icons should not be used with `BpkIconMarker`.
+
+
 ### BpkPriceMarker
 
 | Property       | PropType                                     | Required | Default Value |
