@@ -41,11 +41,11 @@ const BACKPACK_SQUAD_MEMBERS = meta.maintainers.map(
 );
 const author = danger.github.pr.user.login;
 const isPrExternal = !BACKPACK_SQUAD_MEMBERS.includes(author);
+const isPrFromDependabot = author === 'dependabot';
 
 const createdFiles = danger.git.created_files;
 const modifiedFiles = danger.git.modified_files;
 const fileChanges = [...modifiedFiles, ...createdFiles];
-const declaredTrivial = danger.github.pr.title.includes('#trivial');
 const markdownChanges = fileChanges.filter(path => path.endsWith('md'));
 
 const thanksGifs = [
@@ -62,8 +62,22 @@ const thanksGifs = [
   'https://media.giphy.com/media/1lk1IcVgqPLkA/giphy.gif', // Cap salute
 ];
 
-// Be nice to our neighbours.
-if (isPrExternal) {
+if (isPrFromDependabot) {
+  markdown(`
+  # Notes for reviewers about Dependabot PRs
+
+  If CI passes, it's usually ok to merge. We should be confident in CI's ability to catch issues.
+  If a PR passes CI and *does* break something later, we should make tickets to improve CI to cover whatever it missed.
+
+  ## Closing PRs
+
+  If a PR fails CI or is quite old, it's ok to close it. Ideally our dependencies would always be up to date, but
+  it's ok to miss a few dependency versions. As long as we don't get too behind, it's fine.
+
+  When we close a Dependabot PR, it'll make another when a new version is released, so we always get the chance
+  to look at it again.
+  `);
+} else if (isPrExternal) {
   markdown(`
   # Hi ${author}!
 
@@ -79,17 +93,6 @@ if (isPrExternal) {
   `);
 }
 
-// Ensure new components are extensible by consumers.
-const componentIntroduced = createdFiles.some(filePath =>
-  filePath.match(/packages\/bpk-component.+\/src\/.+\.js/),
-);
-
-if (componentIntroduced) {
-  warn(
-    'It looks like you are introducing a new component. Ensure the component style is extensible via `className`.',
-  );
-}
-
 const componentChangedOrCreated = fileChanges.some(filePath =>
   filePath.match(/packages\/bpk-component.+\/src\/.+\.js/),
 );
@@ -98,14 +101,8 @@ if (componentChangedOrCreated) {
   message(`
   ## Browser support
 
-  Please complete this list of browsers that you've checked this works in.
-
-  - [ ] IE11
-  - [ ] Edge
-  - [ ] Safari (iOS)
-  - [ ] Chrome (Android)
-  - [ ] Chrome (Desktop)
-  - [ ] Firefox (Desktop)
+  If this is a significant change, make sure you've tested it in multiple browsers,
+  particularly IE11.
   `);
 }
 
@@ -114,7 +111,7 @@ const unreleasedModified = includes(modifiedFiles, 'UNRELEASED.yaml');
 const packagesModified = fileChanges.some(
   filePath => filePath.startsWith('packages/') && !filePath.endsWith('.md'),
 );
-if (packagesModified && !unreleasedModified && !declaredTrivial) {
+if (packagesModified && !unreleasedModified) {
   warn(
     "One or more packages have changed, but `UNRELEASED.yaml` wasn't updated.",
   );
@@ -136,12 +133,6 @@ if (componentSourceFilesModified && !snapshotsModified) {
   warn(
     "Package source files (e.g. `packages/package-name/src/Component.js`) were updated, but snapshots weren't. Have you checked that the tests still pass?",
   );
-}
-
-// Ensure package-lock changes are intentional.
-const lockFileUpdated = includes(modifiedFiles, 'package-lock.json');
-if (lockFileUpdated) {
-  warn('`package-lock.json` was updated. Ensure that this was intentional.');
 }
 
 // New files should include the Backpack license heading.
