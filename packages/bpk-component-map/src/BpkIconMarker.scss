@@ -19,12 +19,10 @@
 @import '~bpk-mixins';
 
 // Matches the height and width of BpkMapMarkerBackground
-$marker-height: $bpk-spacing-lg;
-$marker-width: $bpk-spacing-base;
-$selected-marker-height: $bpk-spacing-xl;
-$selected-marker-width: $bpk-spacing-lg;
-
-$icon-width: $bpk-icon-size-lg;
+$marker-height: $bpk-spacing-xl;
+$marker-width: $bpk-spacing-lg;
+$selected-marker-height: $bpk-spacing-xxl;
+$selected-marker-width: $bpk-spacing-xl;
 
 .bpk-icon-marker {
   &__wrapper {
