@@ -88,7 +88,9 @@ class BpkHorizontalNavItem extends Component<Props> {
       <a
         href={href}
         className={innerClassNames}
-        aria-disabled={selected || disabled}
+        aria-disabled={disabled}
+        role="tab"
+        aria-selected={selected ? 'true' : 'false'}
         {...rest}
       >
         {children}
@@ -98,22 +100,16 @@ class BpkHorizontalNavItem extends Component<Props> {
       <button
         type="button"
         className={innerClassNames}
-        disabled={selected || disabled}
+        disabled={disabled}
+        role="tab"
+        aria-selected={selected ? 'true' : 'false'}
         {...rest}
       >
         {children}
       </button>
     );
 
-    return (
-      <li
-        role="tab"
-        aria-selected={selected ? 'true' : 'false'}
-        className={classNames}
-      >
-        {clickableElement}
-      </li>
-    );
+    return <div className={classNames}>{clickableElement}</div>;
   }
 }
 
