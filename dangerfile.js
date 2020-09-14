@@ -85,7 +85,7 @@ if (componentChangedOrCreated) {
   message(`
   ## Browser support
 
-  If this is a significant change, make sure you've tested it in multiple browsers,
+  If this is a visual change, make sure you've tested it in multiple browsers,
   particularly IE11.
   `);
 }
