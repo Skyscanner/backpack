@@ -2,20 +2,36 @@
 
 [Unreleased changes](./UNRELEASED.yaml).
 
-# 2020-09-11
+# 2020-09-14 - New `BpkAccordion` prop and updating input placeholder styles
+
+**Breaking:**
+  - bpk-tokens: 33.0.1 => 34.0.0
+    - Removed `$bpk-input-placeholder-font-style` token as this is no longer required or used in the input component.
+      - NOTE - This is not breaking if you are not using this token directly.
+
+**Added:**
+  - bpk-component-accordion: 3.1.83 => 3.2.0
+    - Added new `weight` prop to allow titles to support `bold` and `heavy` font weight.
+
+**Fixed:**
+    - bpk-component-input: 5.0.81 => 5.0.82
+    - bpk-component-textarea: 2.0.80 => 2.0.81
+      - Removed setting placeholder `font-style` to italic.
+
+# 2020-09-11 - Map Marker update and `BpkHorizontalNav` a11y fixes
 
 **Breaking**:
-- bpk-component-map: `4.0.0`
+- bpk-component-map: 3.2.1 => 4.0.0
   - `BpkMapMarker` has been replaced with `BpkIconMarker`. See the [migration guide](https://github.com/Skyscanner/backpack/blob/master/packages/bpk-component-map/docs/migrating-from-v3-to-v4.md) for more information.
 
 **Fixed**:
   - bpk-component-horizontal-nav: `3.2.20`
       - Fixed accessibility issues on the `BpkHorizontalNav` that prevented the component to be functional when using a screen reader to navigate.
 
-# 2020-09-03
+# 2020-09-03 - Removing old non-UIKit tokens
 
 **Breaking**
-  - bpk-tokens:
+  - bpk-tokens: 32.1.0 => 33.0.0
       - Removed non-UIKit aligned iOS tokens
 
 # 2020-09-03 - New `BpkPriceMarker` and drop support for React 15
@@ -25,7 +41,7 @@
       - Packages no longer support a peer-dependency of React 15
 
 **Added:**
-  - bpk-component-map:
+  - bpk-component-map: 3.1.70 => 3.2.0
     - Added `BpkPriceMarker` to display pricing markers on the map.
 
 # 2020-08-31 - Flow upgrades.
