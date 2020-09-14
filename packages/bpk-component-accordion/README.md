@@ -97,6 +97,7 @@ const AlignedStopsIcon = withAlignment(StopsIcon, lineHeightBase, iconSizeSm);
 | children  | node     | true     | -             |
 | id        | string   | true     | -             |
 | title     | string   | true     | -             |
+| weight    | See [`BpkText`](https://backpack.github.io/components/text?platform=web#readme) for valid options     | false    | WEIGHT_STYLES.regular         |
 | expanded  | bool     | false    | false         |
 | icon      | node     | false    | null          |
 | onClick   | func     | false    | () => null    |

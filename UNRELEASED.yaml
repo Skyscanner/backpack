@@ -1,5 +1,9 @@
 # UNRELEASED:
 
+ADDED:
+  - bpk-component-accordion:
+    - Added new `weight` prop to allow titles to support `bold` and `heavy` font weight.
+
 # How to write a good changelog entry:
 #
 #   1. Add 'BREAKING', 'ADDED' OR 'FIXED' depending on if the change will be major, minor or patch according to [semver.org](semver.org).

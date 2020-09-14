@@ -21,6 +21,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import StopsIcon from 'bpk-component-icon/sm/stops';
+import { WEIGHT_STYLES } from 'bpk-component-text';
 
 import BpkAccordionItem from './BpkAccordionItem';
 
@@ -77,10 +78,14 @@ describe('BpkAccordionItem', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  it('should render correctly with "bold" prop set', () => {
+  it('should render correctly with "weight" prop set to bold', () => {
     const tree = renderer
       .create(
-        <BpkAccordionItem id="my-accordion" title="My accordion item" bold>
+        <BpkAccordionItem
+          id="my-accordion"
+          title="My accordion item"
+          weight={WEIGHT_STYLES.heavy}
+        >
           My accordion content
         </BpkAccordionItem>,
       )
