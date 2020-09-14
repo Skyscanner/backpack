@@ -37,6 +37,7 @@ import {
   withSingleItemAccordionState,
   BpkAccordionItem,
   withAccordionItemState,
+  WEIGHT_STYLES,
 } from './index';
 
 const SingleItemAccordion = withSingleItemAccordionState(BpkAccordion);
@@ -289,4 +290,32 @@ storiesOf('bpk-component-accordion', module)
         <AirportsContent />
       </BpkAccordionItem>
     </BpkAccordion>
+  ))
+  .add('With bold titles', () => (
+    <SingleItemAccordion>
+      <BpkAccordionItem
+        id="stops"
+        title="Stops"
+        initiallyExpanded
+        weight={WEIGHT_STYLES.bold}
+      >
+        <StopsContent />
+      </BpkAccordionItem>
+      <BpkAccordionItem
+        id="airlines"
+        title="Airlines"
+        textStyle="lg"
+        weight={WEIGHT_STYLES.bold}
+      >
+        <AirlinesContent />
+      </BpkAccordionItem>
+      <BpkAccordionItem
+        id="airports"
+        title="Airports"
+        textStyle="xl"
+        weight={WEIGHT_STYLES.bold}
+      >
+        <AirportsContent />
+      </BpkAccordionItem>
+    </SingleItemAccordion>
   ));
