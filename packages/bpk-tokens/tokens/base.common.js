@@ -288,7 +288,6 @@ module.exports = {
   inputPaddingX: ".75rem",
   inputPaddingY: ".375rem",
   inputPlaceholderColor: "rgb(104, 105, 127)",
-  inputPlaceholderFontStyle: "italic",
   labelColor: "rgb(17, 18, 54)",
   labelDisabledColor: "rgb(178, 178, 191)",
   labelFontSize: ".75rem",
