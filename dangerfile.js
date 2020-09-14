@@ -41,7 +41,6 @@ const BACKPACK_SQUAD_MEMBERS = meta.maintainers.map(
 );
 const author = danger.github.pr.user.login;
 const isPrExternal = !BACKPACK_SQUAD_MEMBERS.includes(author);
-const isPrFromDependabot = author === 'dependabot';
 
 const createdFiles = danger.git.created_files;
 const modifiedFiles = danger.git.modified_files;
@@ -62,22 +61,7 @@ const thanksGifs = [
   'https://media.giphy.com/media/1lk1IcVgqPLkA/giphy.gif', // Cap salute
 ];
 
-if (isPrFromDependabot) {
-  markdown(`
-  # Notes for reviewers about Dependabot PRs
-
-  If CI passes, it's usually ok to merge. We should be confident in CI's ability to catch issues.
-  If a PR passes CI and *does* break something later, we should make tickets to improve CI to cover whatever it missed.
-
-  ## Closing PRs
-
-  If a PR fails CI or is quite old, it's ok to close it. Ideally our dependencies would always be up to date, but
-  it's ok to miss a few dependency versions. As long as we don't get too behind, it's fine.
-
-  When we close a Dependabot PR, it'll make another when a new version is released, so we always get the chance
-  to look at it again.
-  `);
-} else if (isPrExternal) {
+if (isPrExternal) {
   markdown(`
   # Hi ${author}!
 
