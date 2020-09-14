@@ -286,7 +286,6 @@ export const inputLargeHeight = "2.625rem + .375rem";
 export const inputPaddingX = ".75rem";
 export const inputPaddingY = ".375rem";
 export const inputPlaceholderColor = "rgb(104, 105, 127)";
-export const inputPlaceholderFontStyle = "italic";
 export const labelColor = "rgb(17, 18, 54)";
 export const labelDisabledColor = "rgb(178, 178, 191)";
 export const labelFontSize = ".75rem";
@@ -675,7 +674,6 @@ inputLargeHeight,
 inputPaddingX,
 inputPaddingY,
 inputPlaceholderColor,
-inputPlaceholderFontStyle,
 labelColor,
 labelDisabledColor,
 labelFontSize,

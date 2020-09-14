@@ -50,10 +50,6 @@
       "value": "{!SKY_GRAY_TINT_02}",
       "type": "color"
     },
-    "INPUT_PLACEHOLDER_FONT_STYLE": {
-      "value": "italic",
-      "type": "font-syle"
-    },
     "INPUT_DISABLED_BORDER_COLOR": {
       "value": "{!SKY_GRAY_TINT_07}",
       "type": "color"

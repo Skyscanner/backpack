@@ -1,8 +1,18 @@
 # UNRELEASED:
 
+BREAKING:
+  - bpk-tokens:
+    - Removed `$bpk-input-placeholder-font-style` token as this is no longer required or used in the input component.
+      - NOTE - This is not breaking if you are not using this token directly.
+
 ADDED:
   - bpk-component-accordion:
     - Added new `weight` prop to allow titles to support `bold` and `heavy` font weight.
+
+FIXED:
+    - bpk-component-input:
+    - bpk-component-textarea:
+      - Removed setting placeholder `font-style` to italic.
 
 # How to write a good changelog entry:
 #
