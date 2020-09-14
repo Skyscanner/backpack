@@ -543,7 +543,7 @@ exports[`BpkAccordionItem should render correctly with "weight" prop set to bold
         className="bpk-accordion__flex-container"
       >
         <span
-          className="bpk-text bpk-text--base bpk-accordion__title-text"
+          className="bpk-text bpk-text--base bpk-text--bold bpk-accordion__title-text"
         >
           My accordion item
         </span>

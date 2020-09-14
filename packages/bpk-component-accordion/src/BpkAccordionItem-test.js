@@ -84,7 +84,7 @@ describe('BpkAccordionItem', () => {
         <BpkAccordionItem
           id="my-accordion"
           title="My accordion item"
-          weight={WEIGHT_STYLES.heavy}
+          weight={WEIGHT_STYLES.bold}
         >
           My accordion content
         </BpkAccordionItem>,
