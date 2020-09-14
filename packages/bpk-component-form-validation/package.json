@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-form-validation",
-  "version": "3.0.82",
+  "version": "3.0.83",
   "description": "Backpack form-validation component.",
   "main": "index.js",
   "repository": {
@@ -13,15 +13,15 @@
     "react": "^16.0.0"
   },
   "dependencies": {
-    "bpk-animate-height": "^3.0.37",
-    "bpk-mixins": "^20.0.9",
+    "bpk-animate-height": "^3.0.38",
+    "bpk-mixins": "^20.0.10",
     "bpk-react-utils": "^3.0.6",
     "prop-types": "^15.6.2"
   },
   "devDependencies": {
-    "bpk-component-button": "^3.2.59",
-    "bpk-component-icon": "^8.2.19",
-    "bpk-tokens": "^33.0.1"
+    "bpk-component-button": "^3.2.60",
+    "bpk-component-icon": "^8.2.20",
+    "bpk-tokens": "^34.0.0"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
