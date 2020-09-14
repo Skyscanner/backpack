@@ -25,7 +25,7 @@
 import fs from 'fs';
 
 import { includes } from 'lodash';
-import { danger, fail, warn, message, markdown } from 'danger';
+import { danger, fail, warn, markdown } from 'danger';
 import { commonFileWarnings } from 'danger-plugin-toolbox';
 
 import * as meta from './meta.json';
@@ -82,7 +82,7 @@ const componentChangedOrCreated = fileChanges.some(filePath =>
 );
 
 if (componentChangedOrCreated) {
-  message(`
+  markdown(`
   ## Browser support
 
   If this is a visual change, make sure you've tested it in multiple browsers,
