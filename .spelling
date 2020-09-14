@@ -97,6 +97,8 @@ BpkInteractiveStar
 BpkInteractiveStarRating
 withInteractiveStarRatingState
 
+BpkText
+
 BpkThemeProvider
 
 BpkTicket

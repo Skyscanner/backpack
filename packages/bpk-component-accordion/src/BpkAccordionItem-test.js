@@ -21,9 +21,8 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import StopsIcon from 'bpk-component-icon/sm/stops';
-import { WEIGHT_STYLES } from 'bpk-component-text';
 
-import BpkAccordionItem from './BpkAccordionItem';
+import BpkAccordionItem, { WEIGHT_STYLES } from './BpkAccordionItem';
 
 describe('BpkAccordionItem', () => {
   it('should render correctly', () => {

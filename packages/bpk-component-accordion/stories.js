@@ -31,13 +31,13 @@ import {
   lineHeightBase,
   spacingSm,
 } from 'bpk-tokens/tokens/base.es6';
-import { WEIGHT_STYLES } from 'bpk-component-text';
 
 import {
   BpkAccordion,
   withSingleItemAccordionState,
   BpkAccordionItem,
   withAccordionItemState,
+  WEIGHT_STYLES,
 } from './index';
 
 const SingleItemAccordion = withSingleItemAccordionState(BpkAccordion);

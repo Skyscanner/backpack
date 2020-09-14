@@ -23,7 +23,10 @@ import React, { type Node, type Element } from 'react';
 import AnimateHeight from 'bpk-animate-height';
 import { withButtonAlignment } from 'bpk-component-icon';
 import ChevronDownIcon from 'bpk-component-icon/sm/chevron-down';
-import BpkText, { TEXT_STYLES, WEIGHT_STYLES } from 'bpk-component-text';
+import BpkText, {
+  TEXT_STYLES,
+  WEIGHT_STYLES as weights,
+} from 'bpk-component-text';
 import { cssModules } from 'bpk-react-utils';
 
 import STYLES from './BpkAccordionItem.scss';
@@ -31,6 +34,8 @@ import STYLES from './BpkAccordionItem.scss';
 const getClassName = cssModules(STYLES);
 
 const ExpandIcon = withButtonAlignment(ChevronDownIcon);
+
+export const WEIGHT_STYLES = weights;
 
 type Props = {
   children: Node,
