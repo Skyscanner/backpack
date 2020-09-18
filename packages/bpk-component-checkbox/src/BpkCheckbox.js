@@ -19,7 +19,7 @@
 /* @flow strict */
 
 import PropTypes from 'prop-types';
-import React from 'react';
+import React, { type Node } from 'react';
 import { cssModules } from 'bpk-react-utils';
 
 import STYLES from './BpkCheckbox.scss';
@@ -28,7 +28,7 @@ const getClassName = cssModules(STYLES);
 
 type Props = {
   name: string,
-  label: string,
+  label: Node,
   required: boolean,
   disabled: boolean,
   white: boolean,
