@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-barchart",
-  "version": "3.1.4",
+  "version": "3.1.5",
   "description": "Backpack bar chart component.",
   "main": "index.js",
   "repository": {
@@ -23,7 +23,7 @@
     "prop-types": "^15.6.2"
   },
   "devDependencies": {
-    "bpk-component-breakpoint": "^2.0.81",
+    "bpk-component-breakpoint": "^2.0.82",
     "bpk-component-content-container": "^2.0.81",
     "bpk-component-rtl-toggle": "^2.0.82",
     "bpk-component-text": "^3.1.16"
