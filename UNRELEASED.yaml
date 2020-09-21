@@ -1,11 +1,5 @@
 # UNRELEASED:
 
-FIXED:
-  - bpk-component-breakpoint:
-    - Fixed incorrect flow type for `children` prop.
-  - bpk-component-checkbox:
-    - Fixed incorrect flow type for `label` prop.
-
 # How to write a good changelog entry:
 #
 #   1. Add 'BREAKING', 'ADDED' OR 'FIXED' depending on if the change will be major, minor or patch according to [semver.org](semver.org).

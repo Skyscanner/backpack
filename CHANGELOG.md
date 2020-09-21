@@ -2,6 +2,14 @@
 
 [Unreleased changes](./UNRELEASED.yaml).
 
+# 2020-09-21 - Fixed incorrect flow typing.
+
+**Fixed:**
+  - bpk-component-breakpoint: 2.0.81 => 2.0.82
+    - Fixed incorrect flow type for `children` prop.
+  - bpk-component-checkbox: 2.2.10 => 2.2.11
+    - Fixed incorrect flow type for `label` prop.
+
 # 2020-09-14 - New `BpkAccordion` prop and updating input placeholder styles
 
 **Breaking:**
