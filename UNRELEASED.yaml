@@ -16,11 +16,12 @@
 #     - bpk-svgs:
 #       - Replaced `charmeleon` icon with new `charizard` icon. To upgrade, replace your references to `charmeleon` with `charizard`.
 #       - Upgraded `fire` dependency to `3.0.0`.
-#
-#   ADDED:
-#     - bpk-component-infinity-gauntlet:
-#       - New `timeStone` prop for controlling time. See <link to docs site>.
-#
+
+   ADDED:
+     - bpk-component-datepicker:
+       - New `onClose` prop which is a callback method that will be called when the date picker is closed
+       - The isOpen state can be updated through the isOpen prop
+
 #   FIXED:
 #     - bpk-component-horcrux:
 #       - Fixed issue where `BpkHorcrux` would occasionally possess the living.
