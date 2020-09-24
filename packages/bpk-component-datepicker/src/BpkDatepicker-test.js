@@ -204,6 +204,34 @@ describe('BpkDatepicker', () => {
     expect(datepicker.state('isOpen')).toEqual(true);
   });
 
+  it('should open when the isOpen prop is changed from the outside', () => {
+    const datepicker = mount(
+      <BpkDatepicker
+        id="myDatepicker"
+        closeButtonText="Close"
+        daysOfWeek={weekDays}
+        changeMonthLabel="Change month"
+        title="Departure date"
+        getApplicationElement={() => document.createElement('div')}
+        formatDate={formatDate}
+        formatMonth={formatMonth}
+        formatDateFull={formatDateFull}
+        inputProps={inputProps}
+        minDate={new Date(2010, 1, 15)}
+        maxDate={new Date(2010, 2, 15)}
+        date={new Date(2010, 1, 15)}
+        weekStartsOn={1}
+        isOpen={false}
+      />,
+    );
+
+    expect(datepicker.state('isOpen')).toBeFalsy();
+
+    datepicker.setProps({ isOpen: true });
+
+    expect(datepicker.state('isOpen')).toBeTruthy();
+  });
+
   it('should update state when a date is selected', () => {
     const datepicker = mount(
       <BpkDatepicker

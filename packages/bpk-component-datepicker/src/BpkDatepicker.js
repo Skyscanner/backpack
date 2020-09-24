@@ -40,6 +40,17 @@ class BpkDatepicker extends Component {
     };
   }
 
+  componentDidUpdate(prevProps) {
+    const { isOpen } = this.props;
+
+    if (prevProps.isOpen !== isOpen) {
+      // eslint-disable-next-line react/no-did-update-set-state
+      this.setState({
+        isOpen,
+      });
+    }
+  }
+
   onOpen = () => {
     this.setState({
       isOpen: true,
