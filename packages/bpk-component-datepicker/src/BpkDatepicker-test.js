@@ -233,7 +233,7 @@ describe('BpkDatepicker', () => {
   });
 
   it('should update state when a date is selected', () => {
-    const onOpenChangeHook = jest.fn();
+    const onOpenChangeMock = jest.fn();
 
     const datepicker = mount(
       <BpkDatepicker
@@ -251,22 +251,22 @@ describe('BpkDatepicker', () => {
         minDate={new Date(2010, 1, 15)}
         maxDate={new Date(2010, 2, 15)}
         date={new Date(2010, 1, 15)}
-        onOpenChange={onOpenChangeHook}
+        onOpenChange={onOpenChangeMock}
       />,
     );
 
     datepicker.find('BpkInput').simulate('click');
     expect(datepicker.state('isOpen')).toEqual(true);
-    expect(onOpenChangeHook).toHaveBeenCalledWith(true);
+    expect(onOpenChangeMock).toHaveBeenCalledWith(true);
 
     const date = new Date(2010, 1, 15);
     datepicker.instance().handleDateSelect(date);
     expect(datepicker.state('isOpen')).toEqual(false);
-    expect(onOpenChangeHook).toHaveBeenCalledWith(false);
+    expect(onOpenChangeMock).toHaveBeenCalledWith(false);
   });
 
   it('should close when `onClose` is called', () => {
-    const onOpenChangeHook = jest.fn();
+    const onOpenChangeMock = jest.fn();
 
     const datepicker = mount(
       <BpkDatepicker
@@ -284,16 +284,16 @@ describe('BpkDatepicker', () => {
         minDate={new Date(2010, 1, 15)}
         maxDate={new Date(2010, 2, 15)}
         date={new Date(2010, 1, 15)}
-        onOpenChange={onOpenChangeHook}
+        onOpenChange={onOpenChangeMock}
       />,
     );
 
     datepicker.find('BpkInput').simulate('click');
     expect(datepicker.state('isOpen')).toEqual(true);
-    expect(onOpenChangeHook).toHaveBeenCalledWith(true);
+    expect(onOpenChangeMock).toHaveBeenCalledWith(true);
 
     datepicker.instance().onClose();
     expect(datepicker.state('isOpen')).toEqual(false);
-    expect(onOpenChangeHook).toHaveBeenCalledWith(false);
+    expect(onOpenChangeMock).toHaveBeenCalledWith(false);
   });
 });
