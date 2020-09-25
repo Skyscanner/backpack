@@ -233,6 +233,8 @@ describe('BpkDatepicker', () => {
   });
 
   it('should update state when a date is selected', () => {
+    const onCloseHook = jest.fn();
+
     const datepicker = mount(
       <BpkDatepicker
         id="myDatepicker"
@@ -249,6 +251,7 @@ describe('BpkDatepicker', () => {
         minDate={new Date(2010, 1, 15)}
         maxDate={new Date(2010, 2, 15)}
         date={new Date(2010, 1, 15)}
+        onClose={onCloseHook}
       />,
     );
 
@@ -258,9 +261,12 @@ describe('BpkDatepicker', () => {
     const date = new Date(2010, 1, 15);
     datepicker.instance().handleDateSelect(date);
     expect(datepicker.state('isOpen')).toEqual(false);
+    expect(onCloseHook).toHaveBeenCalledTimes(1);
   });
 
   it('should close when `onClose` is called', () => {
+    const onCloseHook = jest.fn();
+
     const datepicker = mount(
       <BpkDatepicker
         id="myDatepicker"
@@ -277,6 +283,7 @@ describe('BpkDatepicker', () => {
         minDate={new Date(2010, 1, 15)}
         maxDate={new Date(2010, 2, 15)}
         date={new Date(2010, 1, 15)}
+        onClose={onCloseHook}
       />,
     );
 
@@ -285,5 +292,6 @@ describe('BpkDatepicker', () => {
 
     datepicker.instance().onClose();
     expect(datepicker.state('isOpen')).toEqual(false);
+    expect(onCloseHook).toHaveBeenCalledTimes(1);
   });
 });
