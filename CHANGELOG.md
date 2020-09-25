@@ -2,6 +2,13 @@
 
 [Unreleased changes](./UNRELEASED.yaml).
 
+# 2020-09-25
+
+**Added:**
+ - bpk-component-datepicker: 11.2.40 => 11.3.0
+   - New `onOpenChange` prop which is a callback method that will be called when the date picker open state changes
+   - The isOpen state can be updated through the isOpen prop
+
 # 2020-09-21 - Fixed incorrect flow typing.
 
 **Fixed:**
