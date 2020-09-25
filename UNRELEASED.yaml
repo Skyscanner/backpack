@@ -19,7 +19,7 @@
 
    ADDED:
      - bpk-component-datepicker:
-       - New `onClose` prop which is a callback method that will be called when the date picker is closed
+       - New `onOpenChange` prop which is a callback method that will be called when the date picker open state changes
        - The isOpen state can be updated through the isOpen prop
 
 #   FIXED:

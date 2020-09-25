@@ -40,14 +40,15 @@ class BpkDatepicker extends Component {
     };
   }
 
-  componentDidUpdate(prevProps) {
+  componentDidUpdate(prevProps, prevState) {
     const { isOpen } = this.props;
 
-    if (prevProps.isOpen !== isOpen) {
-      // eslint-disable-next-line react/no-did-update-set-state
-      this.setState({
-        isOpen,
-      });
+    if (prevProps.isOpen !== isOpen && prevState.isOpen !== isOpen) {
+      if (isOpen) {
+        this.onOpen();
+      } else {
+        this.onClose();
+      }
     }
   }
 
@@ -55,26 +56,24 @@ class BpkDatepicker extends Component {
     this.setState({
       isOpen: true,
     });
+    if (this.props.onOpenChange) {
+      this.props.onOpenChange(true);
+    }
   };
 
   onClose = () => {
     this.setState({
       isOpen: false,
     });
-    if (this.props.onClose) {
-      this.props.onClose();
+    if (this.props.onOpenChange) {
+      this.props.onOpenChange(false);
     }
   };
 
   handleDateSelect = dateObj => {
-    this.setState({
-      isOpen: false,
-    });
+    this.onClose();
     if (this.props.onDateSelect) {
       this.props.onDateSelect(dateObj);
-    }
-    if (this.props.onClose) {
-      this.props.onClose();
     }
   };
 
@@ -103,15 +102,15 @@ class BpkDatepicker extends Component {
       initiallyFocusedDate,
       renderTarget,
       valid,
-      // onDateSelect, onClose and isOpen are decomposed here so they don't end
-      // up in the rest object
-      onDateSelect,
-      onClose,
-      isOpen,
       ...rest
     } = this.props;
 
     const dateLabel = date ? formatDateFull(date) : '';
+
+    // The following props are not used in render
+    delete rest.onDateSelect;
+    delete rest.onOpenChange;
+    delete rest.isOpen;
 
     const inputComponent = (
       <Input
@@ -212,7 +211,7 @@ BpkDatepicker.propTypes = {
   maxDate: PropTypes.instanceOf(Date),
   minDate: PropTypes.instanceOf(Date),
   onDateSelect: PropTypes.func,
-  onClose: PropTypes.func,
+  onOpenChange: PropTypes.func,
   onMonthChange: PropTypes.func,
   showWeekendSeparator: PropTypes.bool,
   initiallyFocusedDate: PropTypes.instanceOf(Date),
@@ -231,7 +230,7 @@ BpkDatepicker.defaultProps = {
   maxDate: BpkCalendar.defaultProps.maxDate,
   minDate: BpkCalendar.defaultProps.minDate,
   onDateSelect: null,
-  onClose: null,
+  onOpenChange: null,
   onMonthChange: null,
   showWeekendSeparator: BpkCalendar.defaultProps.showWeekendSeparator,
   initiallyFocusedDate: null,

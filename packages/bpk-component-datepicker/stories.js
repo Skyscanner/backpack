@@ -209,9 +209,9 @@ class ReturnDatepicker extends Component {
               }));
               action('Selected return date')(returnDate);
             }}
-            onClose={() => {
+            onOpenChange={isOpen => {
               this.setState({
-                isReturnPickerOpen: false,
+                isReturnPickerOpen: isOpen,
               });
             }}
             onMonthChange={action('Changed month')}
