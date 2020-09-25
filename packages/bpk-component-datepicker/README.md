@@ -147,6 +147,7 @@ For more information on some these props, check the BpkCalendar documentation.
 | initiallyFocusedDate  | Date                  | false    | null                                |
 | renderTarget          | func                  | false    | null                                |
 | isOpen                | bool                  | false    | false                               |
+| onOpenChange          | func                  | false    | null                                |
 | valid                 | bool                  | false    | null                                |
 
 > (\*) Default value is defined on child component

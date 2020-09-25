@@ -144,6 +144,7 @@ class ReturnDatepicker extends Component {
     this.state = {
       departDate: startOfDay(addDays(new Date(), 1)),
       returnDate: startOfDay(addDays(new Date(), 4)),
+      isReturnPickerOpen: false,
     };
   }
 
@@ -175,6 +176,7 @@ class ReturnDatepicker extends Component {
                   departDate,
                   this.maxDate,
                 ),
+                isReturnPickerOpen: true,
               }));
               action('Selected departure date')(departDate);
             }}
@@ -207,7 +209,13 @@ class ReturnDatepicker extends Component {
               }));
               action('Selected return date')(returnDate);
             }}
+            onOpenChange={isOpen => {
+              this.setState({
+                isReturnPickerOpen: isOpen,
+              });
+            }}
             onMonthChange={action('Changed month')}
+            isOpen={this.state.isReturnPickerOpen}
           />
         </div>
       </div>

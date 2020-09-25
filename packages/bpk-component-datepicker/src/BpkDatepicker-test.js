@@ -204,7 +204,37 @@ describe('BpkDatepicker', () => {
     expect(datepicker.state('isOpen')).toEqual(true);
   });
 
+  it('should open when the isOpen prop is changed from the outside', () => {
+    const datepicker = mount(
+      <BpkDatepicker
+        id="myDatepicker"
+        closeButtonText="Close"
+        daysOfWeek={weekDays}
+        changeMonthLabel="Change month"
+        title="Departure date"
+        getApplicationElement={() => document.createElement('div')}
+        formatDate={formatDate}
+        formatMonth={formatMonth}
+        formatDateFull={formatDateFull}
+        inputProps={inputProps}
+        minDate={new Date(2010, 1, 15)}
+        maxDate={new Date(2010, 2, 15)}
+        date={new Date(2010, 1, 15)}
+        weekStartsOn={1}
+        isOpen={false}
+      />,
+    );
+
+    expect(datepicker.state('isOpen')).toBeFalsy();
+
+    datepicker.setProps({ isOpen: true });
+
+    expect(datepicker.state('isOpen')).toBeTruthy();
+  });
+
   it('should update state when a date is selected', () => {
+    const onOpenChangeMock = jest.fn();
+
     const datepicker = mount(
       <BpkDatepicker
         id="myDatepicker"
@@ -221,18 +251,23 @@ describe('BpkDatepicker', () => {
         minDate={new Date(2010, 1, 15)}
         maxDate={new Date(2010, 2, 15)}
         date={new Date(2010, 1, 15)}
+        onOpenChange={onOpenChangeMock}
       />,
     );
 
     datepicker.find('BpkInput').simulate('click');
     expect(datepicker.state('isOpen')).toEqual(true);
+    expect(onOpenChangeMock).toHaveBeenCalledWith(true);
 
     const date = new Date(2010, 1, 15);
     datepicker.instance().handleDateSelect(date);
     expect(datepicker.state('isOpen')).toEqual(false);
+    expect(onOpenChangeMock).toHaveBeenCalledWith(false);
   });
 
   it('should close when `onClose` is called', () => {
+    const onOpenChangeMock = jest.fn();
+
     const datepicker = mount(
       <BpkDatepicker
         id="myDatepicker"
@@ -249,13 +284,16 @@ describe('BpkDatepicker', () => {
         minDate={new Date(2010, 1, 15)}
         maxDate={new Date(2010, 2, 15)}
         date={new Date(2010, 1, 15)}
+        onOpenChange={onOpenChangeMock}
       />,
     );
 
     datepicker.find('BpkInput').simulate('click');
     expect(datepicker.state('isOpen')).toEqual(true);
+    expect(onOpenChangeMock).toHaveBeenCalledWith(true);
 
     datepicker.instance().onClose();
     expect(datepicker.state('isOpen')).toEqual(false);
+    expect(onOpenChangeMock).toHaveBeenCalledWith(false);
   });
 });

@@ -40,22 +40,38 @@ class BpkDatepicker extends Component {
     };
   }
 
+  componentDidUpdate(prevProps, prevState) {
+    const { isOpen } = this.props;
+
+    if (prevProps.isOpen !== isOpen && prevState.isOpen !== isOpen) {
+      if (isOpen) {
+        this.onOpen();
+      } else {
+        this.onClose();
+      }
+    }
+  }
+
   onOpen = () => {
     this.setState({
       isOpen: true,
     });
+    if (this.props.onOpenChange) {
+      this.props.onOpenChange(true);
+    }
   };
 
   onClose = () => {
     this.setState({
       isOpen: false,
     });
+    if (this.props.onOpenChange) {
+      this.props.onOpenChange(false);
+    }
   };
 
   handleDateSelect = dateObj => {
-    this.setState({
-      isOpen: false,
-    });
+    this.onClose();
     if (this.props.onDateSelect) {
       this.props.onDateSelect(dateObj);
     }
@@ -93,6 +109,7 @@ class BpkDatepicker extends Component {
 
     // The following props are not used in render
     delete rest.onDateSelect;
+    delete rest.onOpenChange;
     delete rest.isOpen;
 
     const inputComponent = (
@@ -194,6 +211,7 @@ BpkDatepicker.propTypes = {
   maxDate: PropTypes.instanceOf(Date),
   minDate: PropTypes.instanceOf(Date),
   onDateSelect: PropTypes.func,
+  onOpenChange: PropTypes.func,
   onMonthChange: PropTypes.func,
   showWeekendSeparator: PropTypes.bool,
   initiallyFocusedDate: PropTypes.instanceOf(Date),
@@ -212,6 +230,7 @@ BpkDatepicker.defaultProps = {
   maxDate: BpkCalendar.defaultProps.maxDate,
   minDate: BpkCalendar.defaultProps.minDate,
   onDateSelect: null,
+  onOpenChange: null,
   onMonthChange: null,
   showWeekendSeparator: BpkCalendar.defaultProps.showWeekendSeparator,
   initiallyFocusedDate: null,
