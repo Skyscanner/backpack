@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-datepicker",
-  "version": "11.2.40",
+  "version": "11.3.0",
   "description": "Backpack datepicker component.",
   "main": "index.js",
   "repository": {
