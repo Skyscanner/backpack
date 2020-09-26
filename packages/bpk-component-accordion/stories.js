@@ -19,7 +19,6 @@
 /* @flow strict */
 
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import BpkCheckbox from 'bpk-component-checkbox';
 import { withAlignment } from 'bpk-component-icon';
 import StopsIcon from 'bpk-component-icon/sm/stops';
@@ -159,163 +158,176 @@ const AirportsContent = () => (
   </form>
 );
 
-storiesOf('bpk-component-accordion', module)
-  .add('Single item only', () => (
-    <SingleItemAccordion>
-      <BpkAccordionItem id="stops" title="Stops" initiallyExpanded>
-        <StopsContent />
-      </BpkAccordionItem>
-      <BpkAccordionItem id="airlines" title="Airlines">
-        <AirlinesContent />
-      </BpkAccordionItem>
-      <BpkAccordionItem id="airports" title="Airports">
-        <AirportsContent />
-      </BpkAccordionItem>
-    </SingleItemAccordion>
-  ))
-  .add('Single item only (second item initially expanded)', () => (
-    <SingleItemAccordion>
-      <BpkAccordionItem id="stops" title="Stops">
-        <StopsContent />
-      </BpkAccordionItem>
-      <BpkAccordionItem
-        id="departure-times"
-        title="Departure times"
-        initiallyExpanded
-      >
-        <AirlinesContent />
-      </BpkAccordionItem>
-      <BpkAccordionItem id="journey-duration" title="Journey duration">
-        <AirportsContent />
-      </BpkAccordionItem>
-    </SingleItemAccordion>
-  ))
-  .add('Multiple items open', () => (
-    <BpkAccordion>
-      <StatefulAccordionItem id="stops" title="Stops" initiallyExpanded>
-        <StopsContent />
-      </StatefulAccordionItem>
-      <StatefulAccordionItem
-        id="departure-times"
-        title="Departure times"
-        initiallyExpanded
-      >
-        <AirlinesContent />
-      </StatefulAccordionItem>
-      <StatefulAccordionItem
-        id="journey-duration"
-        title="Journey duration"
-        initiallyExpanded
-      >
-        <AirportsContent />
-      </StatefulAccordionItem>
-    </BpkAccordion>
-  ))
-  .add('Multiple items open (second & third items initially expanded)', () => (
-    <BpkAccordion>
-      <StatefulAccordionItem id="stops" title="Stops">
-        <StopsContent />
-      </StatefulAccordionItem>
-      <StatefulAccordionItem
-        id="departure-times"
-        title="Departure times"
-        initiallyExpanded
-      >
-        <AirlinesContent />
-      </StatefulAccordionItem>
-      <StatefulAccordionItem
-        id="journey-duration"
-        title="Journey duration"
-        initiallyExpanded
-      >
-        <AirportsContent />
-      </StatefulAccordionItem>
-    </BpkAccordion>
-  ))
-  .add('Custom', () => (
-    <BpkAccordion>
-      <BpkAccordionItem id="stops" title="Stops" tagName="h3" expanded>
-        <StopsContent />
-      </BpkAccordionItem>
-      <BpkAccordionItem
-        id="departure-times"
-        title="Departure times"
-        tagName="h2"
-      >
-        <AirlinesContent />
-      </BpkAccordionItem>
-      <BpkAccordionItem id="journey-duration" title="Journey duration" expanded>
-        <AirportsContent />
-      </BpkAccordionItem>
-    </BpkAccordion>
-  ))
-  .add('Custom title textStyle', () => (
-    <SingleItemAccordion>
-      <BpkAccordionItem
-        textStyle="lg"
-        id="stops"
-        title="Stops"
-        initiallyExpanded
-      >
-        <StopsContent />
-      </BpkAccordionItem>
-      <BpkAccordionItem textStyle="lg" id="airlines" title="Airlines">
-        <AirlinesContent />
-      </BpkAccordionItem>
-      <BpkAccordionItem textStyle="lg" id="airports" title="Airports">
-        <AirportsContent />
-      </BpkAccordionItem>
-    </SingleItemAccordion>
-  ))
-  .add('With icons', () => (
-    <BpkAccordion>
-      <BpkAccordionItem
-        id="stops"
-        title="Stops"
-        tagName="h3"
-        expanded
-        icon={<AlignedStopsIcon fill={colorPanjin} />}
-      >
-        <StopsContent />
-      </BpkAccordionItem>
-      <BpkAccordionItem
-        id="departure-times"
-        title="Departure times"
-        tagName="h2"
-        icon={<AlignedTimeIcon fill={colorMonteverde} />}
-      >
-        <AirlinesContent />
-      </BpkAccordionItem>
-      <BpkAccordionItem id="journey-duration" title="Journey duration" expanded>
-        <AirportsContent />
-      </BpkAccordionItem>
-    </BpkAccordion>
-  ))
-  .add('With bold titles', () => (
-    <SingleItemAccordion>
-      <BpkAccordionItem
-        id="stops"
-        title="Stops"
-        initiallyExpanded
-        weight={WEIGHT_STYLES.bold}
-      >
-        <StopsContent />
-      </BpkAccordionItem>
-      <BpkAccordionItem
-        id="airlines"
-        title="Airlines"
-        textStyle="lg"
-        weight={WEIGHT_STYLES.bold}
-      >
-        <AirlinesContent />
-      </BpkAccordionItem>
-      <BpkAccordionItem
-        id="airports"
-        title="Airports"
-        textStyle="xl"
-        weight={WEIGHT_STYLES.bold}
-      >
-        <AirportsContent />
-      </BpkAccordionItem>
-    </SingleItemAccordion>
-  ));
+export default {
+  title: 'bpk-component-accordion',
+};
+
+export const SingleItemOnly = () => (
+  <SingleItemAccordion>
+    <BpkAccordionItem id="stops" title="Stops" initiallyExpanded>
+      <StopsContent />
+    </BpkAccordionItem>
+    <BpkAccordionItem id="airlines" title="Airlines">
+      <AirlinesContent />
+    </BpkAccordionItem>
+    <BpkAccordionItem id="airports" title="Airports">
+      <AirportsContent />
+    </BpkAccordionItem>
+  </SingleItemAccordion>
+);
+
+export const SingleItemOnlySecondItemInitiallyExpanded = () => (
+  <SingleItemAccordion>
+    <BpkAccordionItem id="stops" title="Stops">
+      <StopsContent />
+    </BpkAccordionItem>
+    <BpkAccordionItem
+      id="departure-times"
+      title="Departure times"
+      initiallyExpanded
+    >
+      <AirlinesContent />
+    </BpkAccordionItem>
+    <BpkAccordionItem id="journey-duration" title="Journey duration">
+      <AirportsContent />
+    </BpkAccordionItem>
+  </SingleItemAccordion>
+);
+
+SingleItemOnlySecondItemInitiallyExpanded.story = {
+  name: 'Single Item Only (second item initially expanded)',
+};
+
+export const MultipleItemsOpen = () => (
+  <BpkAccordion>
+    <StatefulAccordionItem id="stops" title="Stops" initiallyExpanded>
+      <StopsContent />
+    </StatefulAccordionItem>
+    <StatefulAccordionItem
+      id="departure-times"
+      title="Departure times"
+      initiallyExpanded
+    >
+      <AirlinesContent />
+    </StatefulAccordionItem>
+    <StatefulAccordionItem
+      id="journey-duration"
+      title="Journey duration"
+      initiallyExpanded
+    >
+      <AirportsContent />
+    </StatefulAccordionItem>
+  </BpkAccordion>
+);
+
+export const MultipleItemsOpenSecondThirdItemsInitiallyExpanded = () => (
+  <BpkAccordion>
+    <StatefulAccordionItem id="stops" title="Stops">
+      <StopsContent />
+    </StatefulAccordionItem>
+    <StatefulAccordionItem
+      id="departure-times"
+      title="Departure times"
+      initiallyExpanded
+    >
+      <AirlinesContent />
+    </StatefulAccordionItem>
+    <StatefulAccordionItem
+      id="journey-duration"
+      title="Journey duration"
+      initiallyExpanded
+    >
+      <AirportsContent />
+    </StatefulAccordionItem>
+  </BpkAccordion>
+);
+
+MultipleItemsOpenSecondThirdItemsInitiallyExpanded.story = {
+  name: 'Multiple Items Open (second & third items initially expanded)',
+};
+
+export const Custom = () => (
+  <BpkAccordion>
+    <BpkAccordionItem id="stops" title="Stops" tagName="h3" expanded>
+      <StopsContent />
+    </BpkAccordionItem>
+    <BpkAccordionItem id="departure-times" title="Departure times" tagName="h2">
+      <AirlinesContent />
+    </BpkAccordionItem>
+    <BpkAccordionItem id="journey-duration" title="Journey duration" expanded>
+      <AirportsContent />
+    </BpkAccordionItem>
+  </BpkAccordion>
+);
+
+export const CustomTitleTextStyle = () => (
+  <SingleItemAccordion>
+    <BpkAccordionItem textStyle="lg" id="stops" title="Stops" initiallyExpanded>
+      <StopsContent />
+    </BpkAccordionItem>
+    <BpkAccordionItem textStyle="lg" id="airlines" title="Airlines">
+      <AirlinesContent />
+    </BpkAccordionItem>
+    <BpkAccordionItem textStyle="lg" id="airports" title="Airports">
+      <AirportsContent />
+    </BpkAccordionItem>
+  </SingleItemAccordion>
+);
+
+CustomTitleTextStyle.story = {
+  name: 'Custom Title textStyle',
+};
+
+export const WithIcons = () => (
+  <BpkAccordion>
+    <BpkAccordionItem
+      id="stops"
+      title="Stops"
+      tagName="h3"
+      expanded
+      icon={<AlignedStopsIcon fill={colorPanjin} />}
+    >
+      <StopsContent />
+    </BpkAccordionItem>
+    <BpkAccordionItem
+      id="departure-times"
+      title="Departure times"
+      tagName="h2"
+      icon={<AlignedTimeIcon fill={colorMonteverde} />}
+    >
+      <AirlinesContent />
+    </BpkAccordionItem>
+    <BpkAccordionItem id="journey-duration" title="Journey duration" expanded>
+      <AirportsContent />
+    </BpkAccordionItem>
+  </BpkAccordion>
+);
+
+export const WithBoldTitles = () => (
+  <SingleItemAccordion>
+    <BpkAccordionItem
+      id="stops"
+      title="Stops"
+      initiallyExpanded
+      weight={WEIGHT_STYLES.bold}
+    >
+      <StopsContent />
+    </BpkAccordionItem>
+    <BpkAccordionItem
+      id="airlines"
+      title="Airlines"
+      textStyle="lg"
+      weight={WEIGHT_STYLES.bold}
+    >
+      <AirlinesContent />
+    </BpkAccordionItem>
+    <BpkAccordionItem
+      id="airports"
+      title="Airports"
+      textStyle="xl"
+      weight={WEIGHT_STYLES.bold}
+    >
+      <AirportsContent />
+    </BpkAccordionItem>
+  </SingleItemAccordion>
+);

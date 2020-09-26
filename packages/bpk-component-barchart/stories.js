@@ -20,7 +20,6 @@
 
 import React from 'react';
 import { number } from 'prop-types';
-import { storiesOf } from '@storybook/react';
 import { cssModules, withDefaultProps } from 'bpk-react-utils';
 import BpkText from 'bpk-component-text';
 import { updateOnDirectionChange } from 'bpk-component-rtl-toggle';
@@ -95,220 +94,240 @@ const Gridlines = ({ size, ...rest }) => (
 
 Gridlines.propTypes = { size: number.isRequired };
 
-storiesOf('bpk-component-barchart', module)
-  .add('Axes and Gridlines', () => {
-    const dataset = [
-      [5, 20],
-      [480, 90],
-      [250, 50],
-      [100, 33],
-      [330, 95],
-      [410, 12],
-      [475, 44],
-      [25, 67],
-      [85, 21],
-      [220, 88],
-    ];
-    const size = 440;
-    const scale = scaleLinear()
-      .domain([5, 480])
-      .range([0, size - 40]);
-    const scale2 = scaleBand()
-      .domain(dataset.map(d => d[0]))
-      .range([0, size - 40]);
+export default {
+  title: 'bpk-component-barchart',
+};
 
-    return (
-      <div>
-        <Heading>Linear scale</Heading>
-        <Gridlines scale={scale} size={size} />
-        <Gridlines scale={scale} size={size} numTicks={2} />
-        <Heading>Band scale</Heading>
-        <Gridlines scale={scale2} size={size} />
-        <Gridlines scale={scale2} size={size} tickEvery={2} />
-        <Gridlines scale={scale2} size={size} tickEvery={2} tickOffset={1} />
-      </div>
-    );
-  })
-  .add('Default', () => (
-    <RtlBarchart
-      initialWidth={500}
-      initialHeight={300}
-      data={data.prices}
-      xScaleDataKey="month"
-      yScaleDataKey="price"
-      style={{
-        maxWidth: '580px',
-        minWidth: '400px',
-      }}
-      xAxisLabel="Month"
-      yAxisLabel="Average Price (£)"
-    />
-  ))
-  .add('Using custom scroll colors', () => (
-    <RtlBarchart
-      initialWidth={500}
-      initialHeight={300}
-      data={data.prices}
-      xScaleDataKey="month"
-      yScaleDataKey="price"
-      style={{
-        maxWidth: '580px',
-        minWidth: '400px',
-      }}
-      xAxisLabel="Month"
-      yAxisLabel="Average Price (£)"
-      className={getClassName('bpk-barchart-custom-scrollers')}
-      leadingScrollIndicatorClassName={getClassName(
-        'bpk-barchart-custom-scrollers--leading',
-      )}
-      trailingScrollIndicatorClassName={getClassName(
-        'bpk-barchart-custom-scrollers--trailing',
-      )}
-    />
-  ))
-  .add('Default disabled data table', () => (
-    <RtlBarchart
-      initialWidth={500}
-      initialHeight={300}
-      data={data.prices}
-      xScaleDataKey="month"
-      yScaleDataKey="price"
-      style={{
-        maxWidth: '580px',
-        minWidth: '400px',
-      }}
-      xAxisLabel="Month"
-      yAxisLabel="Average Price (£)"
-      disableDataTable
-    />
-  ))
-  .add('Interactive', () => (
-    <SelectableBarChart
-      initialWidth={500}
-      initialHeight={300}
-      data={data.prices}
-      xScaleDataKey="month"
-      yScaleDataKey="price"
-      style={{
-        maxWidth: '580px',
-        minWidth: '400px',
-      }}
-      xAxisLabel="Month"
-      yAxisLabel="Average Price (£)"
-    />
-  ))
-  .add('Outliers', () => (
-    <RtlBarchart
-      initialWidth={500}
-      initialHeight={300}
-      data={data.prices2}
-      xScaleDataKey="month"
-      yScaleDataKey="price"
-      style={{
-        maxWidth: '580px',
-      }}
-      xAxisLabel="Month"
-      yAxisLabel="Average Price (£)"
-      outlierPercentage={25}
-    />
-  ))
-  .add('Custom ticks', () => (
-    <RtlBarchart
-      initialWidth={500}
-      initialHeight={300}
-      data={data.prices}
-      xScaleDataKey="month"
-      yScaleDataKey="price"
-      style={{
-        maxWidth: '580px',
-      }}
-      xAxisLabel="Month"
-      yAxisLabel="Average Price (£)"
-      yAxisNumTicks={3}
-      xAxisTickEvery={2}
-      xAxisTickOffset={1}
-    />
-  ))
-  .add('Custom tick labels', () => (
-    <RtlBarchart
-      initialWidth={500}
-      initialHeight={300}
-      data={data.prices}
-      xScaleDataKey="month"
-      yScaleDataKey="price"
-      style={{
-        maxWidth: '580px',
-      }}
-      xAxisLabel="Month"
-      xAxisMargin={3 * remToPx(lineHeightSm) + 12}
-      xAxisTickValue={tick => {
-        let season = '❄️';
-        if (['Mar', 'Apr', 'May'].indexOf(tick) > -1) {
-          season = '🌻';
-        }
-        if (['Jun', 'Jul', 'Aug'].indexOf(tick) > -1) {
-          season = '☀️';
-        }
-        if (['Sep', 'Oct', 'Nov'].indexOf(tick) > -1) {
-          season = '🍁';
-        }
-        return [
-          <tspan x="0" dy="0" style={{ fontWeight: 'bold' }} key="month">
-            {tick}
-          </tspan>,
-          <tspan x="0" dy={remToPx(lineHeightSm)} key="season">
-            {season}
-          </tspan>,
-          <tspan key="ltr">&lrm;</tspan>,
-        ];
-      }}
-      yAxisLabel="Average Price"
-      yAxisMargin={4 * remToPx(lineHeightSm)}
-      yAxisTickValue={v => `£${v}`}
-    />
-  ))
-  .add('Grid lines', () => (
-    <RtlBarchart
-      initialWidth={500}
-      initialHeight={300}
-      data={data.prices}
-      xScaleDataKey="month"
-      yScaleDataKey="price"
-      style={{
-        maxWidth: '580px',
-      }}
-      xAxisLabel="Month"
-      yAxisLabel="Average Price (£)"
-      showGridlines
-    />
-  ))
-  .add('Custom yAxisDomain', () => (
+export const AxesAndGridlines = () => {
+  const dataset = [
+    [5, 20],
+    [480, 90],
+    [250, 50],
+    [100, 33],
+    [330, 95],
+    [410, 12],
+    [475, 44],
+    [25, 67],
+    [85, 21],
+    [220, 88],
+  ];
+  const size = 440;
+  const scale = scaleLinear()
+    .domain([5, 480])
+    .range([0, size - 40]);
+  const scale2 = scaleBand()
+    .domain(dataset.map(d => d[0]))
+    .range([0, size - 40]);
+
+  return (
     <div>
-      <Heading>Domain (0 - 800)</Heading>
-      <RtlBarchart
-        initialWidth={500}
-        initialHeight={300}
-        data={data.prices}
-        xScaleDataKey="month"
-        yScaleDataKey="price"
-        style={{
-          maxWidth: '580px',
-        }}
-        showGridlines
-        yAxisDomain={[0, 800]}
-      />
-      <Heading>Domain (300 - null)</Heading>
-      <RtlBarchart
-        initialWidth={500}
-        initialHeight={300}
-        data={data.prices}
-        xScaleDataKey="month"
-        yScaleDataKey="price"
-        style={{
-          maxWidth: '580px',
-        }}
-        showGridlines
-        yAxisDomain={[300, null]}
-      />
+      <Heading>Linear scale</Heading>
+      <Gridlines scale={scale} size={size} />
+      <Gridlines scale={scale} size={size} numTicks={2} />
+      <Heading>Band scale</Heading>
+      <Gridlines scale={scale2} size={size} />
+      <Gridlines scale={scale2} size={size} tickEvery={2} />
+      <Gridlines scale={scale2} size={size} tickEvery={2} tickOffset={1} />
     </div>
-  ));
+  );
+};
+
+export const Default = () => (
+  <RtlBarchart
+    initialWidth={500}
+    initialHeight={300}
+    data={data.prices}
+    xScaleDataKey="month"
+    yScaleDataKey="price"
+    style={{
+      maxWidth: '580px',
+      minWidth: '400px',
+    }}
+    xAxisLabel="Month"
+    yAxisLabel="Average Price (£)"
+  />
+);
+
+export const UsingCustomScrollColors = () => (
+  <RtlBarchart
+    initialWidth={500}
+    initialHeight={300}
+    data={data.prices}
+    xScaleDataKey="month"
+    yScaleDataKey="price"
+    style={{
+      maxWidth: '580px',
+      minWidth: '400px',
+    }}
+    xAxisLabel="Month"
+    yAxisLabel="Average Price (£)"
+    className={getClassName('bpk-barchart-custom-scrollers')}
+    leadingScrollIndicatorClassName={getClassName(
+      'bpk-barchart-custom-scrollers--leading',
+    )}
+    trailingScrollIndicatorClassName={getClassName(
+      'bpk-barchart-custom-scrollers--trailing',
+    )}
+  />
+);
+
+export const DefaultDisabledDataTable = () => (
+  <RtlBarchart
+    initialWidth={500}
+    initialHeight={300}
+    data={data.prices}
+    xScaleDataKey="month"
+    yScaleDataKey="price"
+    style={{
+      maxWidth: '580px',
+      minWidth: '400px',
+    }}
+    xAxisLabel="Month"
+    yAxisLabel="Average Price (£)"
+    disableDataTable
+  />
+);
+
+export const Interactive = () => (
+  <SelectableBarChart
+    initialWidth={500}
+    initialHeight={300}
+    data={data.prices}
+    xScaleDataKey="month"
+    yScaleDataKey="price"
+    style={{
+      maxWidth: '580px',
+      minWidth: '400px',
+    }}
+    xAxisLabel="Month"
+    yAxisLabel="Average Price (£)"
+  />
+);
+
+export const Outliers = () => (
+  <RtlBarchart
+    initialWidth={500}
+    initialHeight={300}
+    data={data.prices2}
+    xScaleDataKey="month"
+    yScaleDataKey="price"
+    style={{
+      maxWidth: '580px',
+    }}
+    xAxisLabel="Month"
+    yAxisLabel="Average Price (£)"
+    outlierPercentage={25}
+  />
+);
+
+export const CustomTicks = () => (
+  <RtlBarchart
+    initialWidth={500}
+    initialHeight={300}
+    data={data.prices}
+    xScaleDataKey="month"
+    yScaleDataKey="price"
+    style={{
+      maxWidth: '580px',
+    }}
+    xAxisLabel="Month"
+    yAxisLabel="Average Price (£)"
+    yAxisNumTicks={3}
+    xAxisTickEvery={2}
+    xAxisTickOffset={1}
+  />
+);
+
+export const CustomTickLabels = () => (
+  <RtlBarchart
+    initialWidth={500}
+    initialHeight={300}
+    data={data.prices}
+    xScaleDataKey="month"
+    yScaleDataKey="price"
+    style={{
+      maxWidth: '580px',
+    }}
+    xAxisLabel="Month"
+    xAxisMargin={3 * remToPx(lineHeightSm) + 12}
+    xAxisTickValue={tick => {
+      let season = '❄️';
+      if (['Mar', 'Apr', 'May'].indexOf(tick) > -1) {
+        season = '🌻';
+      }
+      if (['Jun', 'Jul', 'Aug'].indexOf(tick) > -1) {
+        season = '☀️';
+      }
+      if (['Sep', 'Oct', 'Nov'].indexOf(tick) > -1) {
+        season = '🍁';
+      }
+      return [
+        <tspan x="0" dy="0" style={{ fontWeight: 'bold' }} key="month">
+          {tick}
+        </tspan>,
+        <tspan x="0" dy={remToPx(lineHeightSm)} key="season">
+          {season}
+        </tspan>,
+        <tspan key="ltr">&lrm;</tspan>,
+      ];
+    }}
+    yAxisLabel="Average Price"
+    yAxisMargin={4 * remToPx(lineHeightSm)}
+    yAxisTickValue={v => `£${v}`}
+  />
+);
+
+export const GridLines = () => (
+  <RtlBarchart
+    initialWidth={500}
+    initialHeight={300}
+    data={data.prices}
+    xScaleDataKey="month"
+    yScaleDataKey="price"
+    style={{
+      maxWidth: '580px',
+    }}
+    xAxisLabel="Month"
+    yAxisLabel="Average Price (£)"
+    showGridlines
+  />
+);
+
+GridLines.story = {
+  name: 'Grid lines',
+};
+
+export const CustomYAxisDomain = () => (
+  <div>
+    <Heading>Domain (0 - 800)</Heading>
+    <RtlBarchart
+      initialWidth={500}
+      initialHeight={300}
+      data={data.prices}
+      xScaleDataKey="month"
+      yScaleDataKey="price"
+      style={{
+        maxWidth: '580px',
+      }}
+      showGridlines
+      yAxisDomain={[0, 800]}
+    />
+    <Heading>Domain (300 - null)</Heading>
+    <RtlBarchart
+      initialWidth={500}
+      initialHeight={300}
+      data={data.prices}
+      xScaleDataKey="month"
+      yScaleDataKey="price"
+      style={{
+        maxWidth: '580px',
+      }}
+      showGridlines
+      yAxisDomain={[300, null]}
+    />
+  </div>
+);
+
+CustomYAxisDomain.story = {
+  name: 'Custom yAxisDomain',
+};

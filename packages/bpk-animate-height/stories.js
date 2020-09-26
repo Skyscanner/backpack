@@ -17,7 +17,6 @@
  */
 
 import BpkButton from 'bpk-component-button';
-import { storiesOf } from '@storybook/react';
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { text } from '@storybook/addon-knobs';
@@ -65,7 +64,11 @@ AnimateHeightContainer.propTypes = {
     .isRequired,
 };
 
-storiesOf('bpk-animate-height', module).add('Example', () => (
+export default {
+  title: 'bpk-animate-height',
+};
+
+export const Example = () => (
   <AnimateHeightContainer fromHeight="auto" toHeight={0} duration={300}>
     {text(
       'Copy',
@@ -74,4 +77,4 @@ ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis
 parturient montes, nascetur ridiculus mus.`,
     )}
   </AnimateHeightContainer>
-));
+);

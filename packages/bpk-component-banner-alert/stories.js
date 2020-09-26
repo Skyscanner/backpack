@@ -18,7 +18,6 @@
 /* @flow strict */
 
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { fontWeightBold } from 'bpk-tokens/tokens/base.es6';
 import CurrencyIcon from 'bpk-component-icon/sm/currency';
@@ -45,87 +44,132 @@ const BpkBannerAlertExpandableState = withBannerAlertState(
   BpkBannerAlertExpandable,
 );
 
-storiesOf('bpk-component-banner-alert', module)
-  .add('Neutral', () => (
-    <BpkBannerAlert message={message} type={ALERT_TYPES.NEUTRAL} />
-  ))
-  .add('Primary', () => (
-    <BpkBannerAlert message={message} type={ALERT_TYPES.PRIMARY} />
-  ))
-  .add('Success', () => (
-    <BpkBannerAlert message={message} type={ALERT_TYPES.SUCCESS} />
-  ))
-  .add('Success (long message)', () => (
-    <BpkBannerAlert message={longMessage} type={ALERT_TYPES.SUCCESS} />
-  ))
-  .add('Success (dismissable)', () => (
-    <BpkBannerAlertDismissable
-      dismissButtonLabel="Dismiss"
-      message={message}
-      type={ALERT_TYPES.SUCCESS}
-      onDismiss={action('dismissed')}
-    />
-  ))
-  .add('Success(expandable)', () => (
-    <BpkBannerAlertExpandable
-      message={message}
-      type={ALERT_TYPES.SUCCESS}
-      toggleButtonLabel="View more"
-    >
-      {longMessage}
-    </BpkBannerAlertExpandable>
-  ))
-  .add('Success (animate on enter)', () => (
-    <BpkBannerAlert
-      animateOnEnter
-      message={message}
-      type={ALERT_TYPES.SUCCESS}
-      onDismiss={action('dismissed')}
-    />
-  ))
-  .add('Success with React rendered message', () => (
-    <BpkBannerAlert
-      message={<span style={{ fontWeight: fontWeightBold }}>{message}</span>}
-      type={ALERT_TYPES.SUCCESS}
-    />
-  ))
-  .add('Warn', () => (
-    <BpkBannerAlert message={message} type={ALERT_TYPES.WARN} />
-  ))
-  .add('Error', () => (
-    <BpkBannerAlert message={message} type={ALERT_TYPES.ERROR} />
-  ))
-  .add('Event', () => (
-    <BpkBannerAlert message={message} type={ALERT_TYPES.EVENT} />
-  ))
-  .add('Success (dismissable behaviour)', () => (
-    <BpkBannerAlertDismissableState
-      dismissButtonLabel="Dismiss"
-      message={message}
-      type={ALERT_TYPES.SUCCESS}
-    />
-  ))
-  .add('Success (expandable behaviour)', () => (
-    <BpkBannerAlertExpandableState
-      message={message}
-      type={ALERT_TYPES.SUCCESS}
-      toggleButtonLabel="View more"
-    >
-      {longMessage}
-    </BpkBannerAlertExpandableState>
-  ))
-  .add('Success (automatically dismissed after 5 seconds)', () => (
-    <BpkBannerAlertDismissableState
-      hideAfter={5}
-      message={message}
-      type={ALERT_TYPES.SUCCESS}
-      dismissButtonLabel="Dismiss"
-    />
-  ))
-  .add('Success with custom icon', () => (
-    <BpkBannerAlert
-      message={message}
-      type={ALERT_TYPES.SUCCESS}
-      icon={CurrencyIcon}
-    />
-  ));
+export default {
+  title: 'bpk-component-banner-alert',
+};
+
+export const Neutral = () => (
+  <BpkBannerAlert message={message} type={ALERT_TYPES.NEUTRAL} />
+);
+
+export const Primary = () => (
+  <BpkBannerAlert message={message} type={ALERT_TYPES.PRIMARY} />
+);
+
+export const Success = () => (
+  <BpkBannerAlert message={message} type={ALERT_TYPES.SUCCESS} />
+);
+
+export const SuccessLongMessage = () => (
+  <BpkBannerAlert message={longMessage} type={ALERT_TYPES.SUCCESS} />
+);
+
+SuccessLongMessage.story = {
+  name: 'Success (long message)',
+};
+
+export const SuccessDismissable = () => (
+  <BpkBannerAlertDismissable
+    dismissButtonLabel="Dismiss"
+    message={message}
+    type={ALERT_TYPES.SUCCESS}
+    onDismiss={action('dismissed')}
+  />
+);
+
+SuccessDismissable.story = {
+  name: 'Success (dismissable)',
+};
+
+export const SuccessExpandable = () => (
+  <BpkBannerAlertExpandable
+    message={message}
+    type={ALERT_TYPES.SUCCESS}
+    toggleButtonLabel="View more"
+  >
+    {longMessage}
+  </BpkBannerAlertExpandable>
+);
+
+SuccessExpandable.story = {
+  name: 'Success (expandable)',
+};
+
+export const SuccessAnimateOnEnter = () => (
+  <BpkBannerAlert
+    animateOnEnter
+    message={message}
+    type={ALERT_TYPES.SUCCESS}
+    onDismiss={action('dismissed')}
+  />
+);
+
+SuccessAnimateOnEnter.story = {
+  name: 'Success (animate on enter)',
+};
+
+export const SuccessWithReactRenderedMessage = () => (
+  <BpkBannerAlert
+    message={<span style={{ fontWeight: fontWeightBold }}>{message}</span>}
+    type={ALERT_TYPES.SUCCESS}
+  />
+);
+
+export const Warn = () => (
+  <BpkBannerAlert message={message} type={ALERT_TYPES.WARN} />
+);
+
+export const Error = () => (
+  <BpkBannerAlert message={message} type={ALERT_TYPES.ERROR} />
+);
+
+export const Event = () => (
+  <BpkBannerAlert message={message} type={ALERT_TYPES.EVENT} />
+);
+
+export const SuccessDismissableBehaviour = () => (
+  <BpkBannerAlertDismissableState
+    dismissButtonLabel="Dismiss"
+    message={message}
+    type={ALERT_TYPES.SUCCESS}
+  />
+);
+
+SuccessDismissableBehaviour.story = {
+  name: 'Success (dismissable behaviour)',
+};
+
+export const SuccessExpandableBehaviour = () => (
+  <BpkBannerAlertExpandableState
+    message={message}
+    type={ALERT_TYPES.SUCCESS}
+    toggleButtonLabel="View more"
+  >
+    {longMessage}
+  </BpkBannerAlertExpandableState>
+);
+
+SuccessExpandableBehaviour.story = {
+  name: 'Success (expandable behaviour)',
+};
+
+export const SuccessAutomaticallyDismissedAfter5Seconds = () => (
+  <BpkBannerAlertDismissableState
+    hideAfter={5}
+    message={message}
+    type={ALERT_TYPES.SUCCESS}
+    dismissButtonLabel="Dismiss"
+  />
+);
+
+SuccessAutomaticallyDismissedAfter5Seconds.story = {
+  name: 'Success (automatically dismissed after 5 seconds)',
+};
+
+export const SuccessWithCustomIcon = () => (
+  <BpkBannerAlert
+    message={message}
+    type={ALERT_TYPES.SUCCESS}
+    icon={CurrencyIcon}
+  />
+);
