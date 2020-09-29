@@ -2,7 +2,13 @@
 
 [Unreleased changes](./UNRELEASED.yaml).
 
-# 2020-09-25
+# 2020-09-29 - README clarification on `BpkChip`
+
+**Fixed:**
+  - bpk-component-chip: 4.0.10 => 4.0.11
+    - Updated docs on usage of component.
+
+# 2020-09-25 - New `onOpenChange` prop for calendar.
 
 **Added:**
  - bpk-component-datepicker: 11.2.40 => 11.3.0
