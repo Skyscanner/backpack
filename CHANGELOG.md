@@ -2,6 +2,12 @@
 
 [Unreleased changes](./UNRELEASED.yaml).
 
+# 2020-09-30 - Flow type fix for horizontal nav
+
+**Fixed:**
+  - bpk-component-horizontal-nav:
+    - Fixed flow types for scroller ref by removing needless `$FlowIgnore`s.
+
 # 2020-09-29 - README clarification on `BpkChip`
 
 **Fixed:**
