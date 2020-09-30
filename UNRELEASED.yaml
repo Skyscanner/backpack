@@ -1,3 +1,7 @@
+FIXED:
+  - bpk-component-horizontal-nav:
+    - Fixed flow types for scroller ref by removing needless `$FlowIgnore`s.
+
 # UNRELEASED:
 
 # How to write a good changelog entry:
