@@ -130,9 +130,7 @@ class BpkHorizontalNav extends Component<Props> {
     const scrollAdjustment = selectedItemPos.left - scrollPos.left;
     // Some browsers don't support smooth scrolling, so in those cases we must fall back to simply setting `scrollLeft`
     if (
-      // We've already checked that `this.scrollRef` is defined
-      // $FlowIgnore[incompatible-type]
-      // $FlowIgnore[incompatible-use]
+      this.scrollRef &&
       this.scrollRef.scroll &&
       typeof this.scrollRef.scroll === 'function' &&
       useSmoothScroll
@@ -141,8 +139,7 @@ class BpkHorizontalNav extends Component<Props> {
         left: scrollAdjustment,
         behavior: 'smooth',
       });
-    } else {
-      // $FlowIgnore[incompatible-use] - we've already checked that `this.scrollRef` is defined
+    } else if (this.scrollRef) {
       this.scrollRef.scrollLeft = scrollAdjustment;
     }
   };
