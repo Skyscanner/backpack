@@ -6,7 +6,6 @@ fast-track
 list
 long-arrow-left
 long-arrow-right
-media
 native-android--back
 native-android--forward
 policy
