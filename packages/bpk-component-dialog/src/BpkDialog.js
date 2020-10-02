@@ -18,7 +18,7 @@
 
 /* @flow strict */
 
-import React from 'react';
+import React, { type Node } from 'react';
 import PropTypes from 'prop-types';
 import { cssModules } from 'bpk-react-utils';
 import BpkCloseButton from 'bpk-component-close-button';
@@ -35,10 +35,11 @@ const getClassName = cssModules(STYLES);
 export type Props = {
   ...$Exact<BpkModalProps>,
   dismissible: boolean,
+  icon: ?Node,
 };
 
 const BpkDialog = (props: Props) => {
-  const { children, dismissible, onClose, closeLabel, ...rest } = props;
+  const { children, closeLabel, dismissible, icon, onClose, ...rest } = props;
 
   return (
     <BpkModal
@@ -50,7 +51,9 @@ const BpkDialog = (props: Props) => {
       closeOnEscPressed={dismissible}
       fullScreenOnMobile={false}
       isIphone={false}
+      contentClassName={icon ? getClassName('bpk-dialog--with-icon') : null}
     >
+      {icon && <div className={getClassName('bpk-dialog__icon')}>Foo</div>}
       {dismissible && (
         <BpkCloseButton
           className={getClassName('bpk-dialog__close-button')}
@@ -76,12 +79,14 @@ BpkDialog.propTypes = {
   ...newModalPropTypes,
   onClose: PropTypes.func,
   dismissible: PropTypes.bool,
+  icon: PropTypes.node,
 };
 
 BpkDialog.defaultProps = {
   ...modalDefaultProps,
   onClose: () => null,
   dismissible: true,
+  icon: null,
 };
 
 export default BpkDialog;

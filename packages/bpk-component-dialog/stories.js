@@ -40,6 +40,7 @@ const Paragraph = withDefaultProps(BpkText, {
 type Props = {
   children: Node,
   dismissible: boolean,
+  icon: ?Node,
 };
 
 type State = {
@@ -49,11 +50,13 @@ type State = {
 class DialogContainer extends Component<Props, State> {
   static propTypes = {
     children: PropTypes.node.isRequired,
-    dismissible: PropTypes.bool.isRequired,
+    dismissible: PropTypes.bool,
+    icon: PropTypes.node,
   };
 
   static defaultProps = {
     dismissible: true,
+    icon: null,
   };
 
   constructor() {
@@ -106,6 +109,15 @@ storiesOf('bpk-component-dialog', module)
     <DialogContainer>
       <Paragraph>
         This is a default dialog. You can put anything you want in here.
+      </Paragraph>
+    </DialogContainer>
+  ))
+
+  .add('With an icon', () => (
+    <DialogContainer icon={<span>Foo</span>}>
+      <Paragraph>
+        This is a default dialog with an icon. You can put anything you want in
+        here.
       </Paragraph>
     </DialogContainer>
   ))
