@@ -12,6 +12,8 @@
   - bpk-component-card:
   - bpk-component-panel:
     - Have been updated to use `border-radius-md` instead of `border-radius-sm` as per the new guidelines.
+  - bpk-component-select:
+    - Images passed to `BpkSelect` now have `aria-hidden` set, preventing them from interfering with screen readers.
 
 ## How to write a good changelog entry
 

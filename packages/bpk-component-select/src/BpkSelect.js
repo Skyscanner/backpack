@@ -85,6 +85,7 @@ const BpkSelect = (props: Props) => {
     return (
       <div className={getClassName('bpk-select-wrapper', wrapperClassName)}>
         {React.cloneElement(image, {
+          'aria-hidden': true,
           className: getClassName(
             'bpk-select-wrapper__image',
             large && 'bpk-select-wrapper__image--large',
