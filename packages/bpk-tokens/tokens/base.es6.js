@@ -39,6 +39,7 @@ export const bannerAlertNeutralColor = "rgb(104, 105, 127)";
 export const bannerAlertPrimaryColor = "rgb(7, 112, 227)";
 export const bannerAlertSuccessColor = "rgb(0, 166, 152)";
 export const bannerAlertWarnColor = "rgb(255, 181, 77)";
+export const borderRadiusMd = ".75rem";
 export const borderRadiusPill = "1.125rem";
 export const borderRadiusPillLg = "1.3125rem";
 export const borderRadiusSm = ".375rem";
@@ -768,6 +769,7 @@ panelBorderColor,
 panelPadding,
 };
 export const radii = {
+borderRadiusMd,
 borderRadiusPill,
 borderRadiusPillLg,
 borderRadiusSm,

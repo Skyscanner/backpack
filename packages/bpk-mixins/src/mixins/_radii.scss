@@ -44,6 +44,17 @@
   border-radius: $bpk-border-radius-sm;
 }
 
+/// Medium border radius.
+///
+/// @example scss
+///   .selector {
+///     @include bpk-border-radius-md();
+///   }
+
+@mixin bpk-border-radius-md {
+  border-radius: $bpk-border-radius-md;
+}
+
 /// Pill shaped border radius.
 ///
 /// @example scss

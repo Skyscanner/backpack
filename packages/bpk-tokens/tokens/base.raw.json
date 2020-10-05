@@ -36,6 +36,9 @@
     "BLACK_TINT_06": {
       "value": "#8E8E93"
     },
+    "BORDER_RADIUS_MD": {
+      "value": ".75rem"
+    },
     "BORDER_RADIUS_PILL": {
       "value": "1.125rem"
     },
@@ -425,6 +428,13 @@
       "type": "color",
       "originalValue": "{!ERFOUD}",
       "name": "BANNER_ALERT_WARN_COLOR"
+    },
+    "BORDER_RADIUS_MD": {
+      "type": "size",
+      "value": ".75rem",
+      "category": "radii",
+      "originalValue": "{!BORDER_RADIUS_MD}",
+      "name": "BORDER_RADIUS_MD"
     },
     "BORDER_RADIUS_PILL": {
       "type": "size",
@@ -3051,6 +3061,7 @@
     "BANNER_ALERT_PRIMARY_COLOR",
     "BANNER_ALERT_SUCCESS_COLOR",
     "BANNER_ALERT_WARN_COLOR",
+    "BORDER_RADIUS_MD",
     "BORDER_RADIUS_PILL",
     "BORDER_RADIUS_PILL_LG",
     "BORDER_RADIUS_SM",

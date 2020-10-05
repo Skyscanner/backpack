@@ -35,6 +35,7 @@
     "SPACING_NONE": "0",
     "BORDER_RADIUS_XS": ".25rem",
     "BORDER_RADIUS_SM": ".375rem",
+    "BORDER_RADIUS_MD": ".75rem",
     "BORDER_RADIUS_PILL": "1.125rem",
     "BORDER_RADIUS_PILL_LG": "1.3125rem",
     "BORDER_SIZE_SM": "1px",

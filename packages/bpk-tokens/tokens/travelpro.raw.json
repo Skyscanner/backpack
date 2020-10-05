@@ -42,6 +42,9 @@
     "BLOOD": {
       "value": "#C5000E"
     },
+    "BORDER_RADIUS_MD": {
+      "value": ".75rem"
+    },
     "BORDER_RADIUS_PILL": {
       "value": "1.125rem"
     },

@@ -14,6 +14,10 @@
       "value": "{!BORDER_RADIUS_SM}",
       "category": "radii"
     },
+    "BORDER_RADIUS_MD": {
+      "value": "{!BORDER_RADIUS_MD}",
+      "category": "radii"
+    },
     "BORDER_RADIUS_PILL": {
       "value": "{!BORDER_RADIUS_PILL}",
       "category": "radii"

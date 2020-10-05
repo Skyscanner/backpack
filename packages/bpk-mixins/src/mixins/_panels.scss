@@ -33,7 +33,7 @@
   background-color: $bpk-panel-background-color;
 
   @include bpk-border-sm($bpk-panel-border-color);
-  @include bpk-border-radius-sm;
+  @include bpk-border-radius-md;
 }
 
 /// Adds padding to panels. Modifies the bpk-panel mixin.
