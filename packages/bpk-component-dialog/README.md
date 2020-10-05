@@ -76,6 +76,8 @@ class App extends Component {
 | closeLabel            | string   | false    | null             |
 | renderTarget          | func     | false    | null             |
 | dismissible           | bool     | false    | true             |
+| headerIcon            | node     | false    | null             |
+| headerIconType        | oneOf(HEADER_ICON_TYPES.primary, HEADER_ICON_TYPES.warning, HEADER_ICON_TYPES.destructive) | false    | HEADER_ICON_TYPES.primary |
 
 ### Prop Details
 

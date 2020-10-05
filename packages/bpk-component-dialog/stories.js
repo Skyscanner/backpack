@@ -22,12 +22,15 @@ import PropTypes from 'prop-types';
 import React, { Component, type Node } from 'react';
 import BpkText from 'bpk-component-text';
 import BpkButton from 'bpk-component-button';
+import TickIcon from 'bpk-component-icon/lg/tick';
+import InfoIcon from 'bpk-component-icon/lg/information-circle';
+import TrashIcon from 'bpk-component-icon/lg/trash';
 import { storiesOf } from '@storybook/react';
 import { cssModules, withDefaultProps } from 'bpk-react-utils';
 
 import STYLES from './stories.scss';
 
-import BpkDialog from './index';
+import BpkDialog, { HEADER_ICON_TYPES } from './index';
 
 const getClassName = cssModules(STYLES);
 
@@ -40,6 +43,7 @@ const Paragraph = withDefaultProps(BpkText, {
 type Props = {
   children: Node,
   dismissible: boolean,
+  headerIcon: ?Node,
 };
 
 type State = {
@@ -49,11 +53,12 @@ type State = {
 class DialogContainer extends Component<Props, State> {
   static propTypes = {
     children: PropTypes.node.isRequired,
-    dismissible: PropTypes.bool.isRequired,
+    dismissible: PropTypes.bool,
   };
 
   static defaultProps = {
     dismissible: true,
+    headerIcon: null,
   };
 
   constructor() {
@@ -91,6 +96,7 @@ class DialogContainer extends Component<Props, State> {
           onClose={this.onClose}
           getApplicationElement={() => document.getElementById('pagewrap')}
           renderTarget={() => document.getElementById('dialog-container')}
+          headerIcon
           {...this.props}
         >
           {this.props.children}
@@ -108,6 +114,48 @@ storiesOf('bpk-component-dialog', module)
         This is a default dialog. You can put anything you want in here.
       </Paragraph>
     </DialogContainer>
+  ))
+
+  .add('With an icon', () => (
+    <div>
+      <div>
+        <span>Default Icon Dialog</span>
+        <DialogContainer headerIcon={<TickIcon />} dismissible={false}>
+          <Paragraph>
+            This is a default dialog with an icon. You can put anything you want
+            in here.
+          </Paragraph>
+        </DialogContainer>
+      </div>
+      <br />
+      <div>
+        <span>Warning Icon Dialog</span>
+        <DialogContainer
+          headerIcon={<InfoIcon />}
+          headerIconType={HEADER_ICON_TYPES.warning}
+          dismissible={false}
+        >
+          <Paragraph>
+            This is a warning dialog with an icon. You can put anything you want
+            in here.
+          </Paragraph>
+        </DialogContainer>
+      </div>
+      <br />
+      <div>
+        <span>Destructive Icon Dialog</span>
+        <DialogContainer
+          headerIcon={<TrashIcon />}
+          headerIconType={HEADER_ICON_TYPES.destructive}
+          dismissible={false}
+        >
+          <Paragraph>
+            This is a destructive dialog with an icon. You can put anything you
+            want in here.
+          </Paragraph>
+        </DialogContainer>
+      </div>
+    </div>
   ))
   .add('Not dismissible', () => (
     <DialogContainer dismissible={false}>

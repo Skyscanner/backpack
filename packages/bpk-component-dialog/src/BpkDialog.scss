@@ -28,4 +28,41 @@
       margin: 0 $bpk-spacing-sm $bpk-spacing-sm 0;
     }
   }
+
+  &--with-icon {
+    margin-top: $bpk-spacing-lg;
+  }
+
+  &__icon {
+    $size: $bpk-spacing-lg * 2;
+
+    position: absolute;
+    top: 0;
+    left: 50%;
+    display: flex;
+    width: $size;
+    height: $size;
+    margin-top: -$size / 2;
+    margin-left: -$size / 2;
+    justify-content: center;
+    align-items: center;
+    border: $bpk-border-size-lg $bpk-color-white solid;
+    border-radius: 50%;
+
+    &--primary {
+      background-color: $bpk-color-monteverde;
+    }
+
+    &--warning {
+      background-color: $bpk-color-kolkata;
+    }
+
+    &--destructive {
+      background-color: $bpk-color-panjin;
+    }
+
+    > svg {
+      fill: $bpk-color-white;
+    }
+  }
 }

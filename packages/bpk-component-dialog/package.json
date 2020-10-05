@@ -19,6 +19,7 @@
   "devDependencies": {
     "bpk-component-button": "^3.2.60",
     "bpk-component-close-button": "^2.0.82",
+    "bpk-component-icon": "^8.2.20",
     "bpk-component-text": "^3.1.16",
     "bpk-mixins": "^20.0.10",
     "bpk-react-utils": "^3.0.6"
