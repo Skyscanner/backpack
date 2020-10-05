@@ -2,19 +2,6 @@
 
 > Place your changes below this line.
 
-**Added:**
-  - bpk-tokens:
-    - New `bpk-border-radius-md` token for use on cards
-  - bpk-mixins:
-    - New `bpk-border-radius-md` mixin to apply the token to `border-radius`
-
-**Fixed:**
-  - bpk-component-card:
-  - bpk-component-panel:
-    - Have been updated to use `border-radius-md` instead of `border-radius-sm` as per the new guidelines.
-  - bpk-component-select:
-    - Images passed to `BpkSelect` now have `aria-hidden` set, preventing them from interfering with screen readers.
-
 ## How to write a good changelog entry
 
 1. Add 'Breaking', 'Added' or 'Fixed' in bold depending on if the change will be major, minor or patch according to [semver](semver.org).

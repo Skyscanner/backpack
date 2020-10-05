@@ -2,6 +2,21 @@
 
 [Unreleased changes](./UNRELEASED.yaml).
 
+# 2020-10-05 - `BpkCard` border radius update and `BpkSelect` a11y fix.
+
+**Added:**
+  - bpk-tokens: 34.0.0 => 34.1.0
+    - New `bpk-border-radius-md` token for use on cards
+  - bpk-mixins: 20.0.11 => 20.1.0
+    - New `bpk-border-radius-md` mixin to apply the token to `border-radius`
+
+**Fixed:**
+  - bpk-component-card: 2.1.11 => 2.1.12
+  - bpk-component-panel: 2.0.82 => 2.0.83
+    - Have been updated to use `border-radius-md` instead of `border-radius-sm` as per the new guidelines.
+  - bpk-component-select: 3.0.82 => 3.0.83
+    - Images passed to `BpkSelect` now have `aria-hidden` set, preventing them from interfering with screen readers.
+
 # 2020-10-05 - New icon variant of `BpkDialog`.
 
 **Added:**
