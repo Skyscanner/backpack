@@ -17,41 +17,43 @@ import BeachIconSm from 'bpk-component-icon/sm/beach';
 
 export default () => (
 
-  // Standard selectable chip.
-  <BpkSelectableChip
-    accessibilityLabel="Press to toggle chip"
-    selected={false}
-    onClick={() => { /* Use state to set 'selected={true}' */ }}
-  >
-    Toggle me
-  </BpkSelectableChip>
+  <div style={{ display: 'flex' }}> // IMPORTANT: Flex styles make sure chips align with each other
+    // Standard selectable chip.
+    <BpkSelectableChip
+      accessibilityLabel="Press to toggle chip"
+      selected={false}
+      onClick={() => { /* Use state to set 'selected={true}' */ }}
+    >
+      Toggle me
+    </BpkSelectableChip>
 
-  // Selectable chip with an icon.
-  <BpkSelectableChip
-    accessibilityLabel="Press to toggle chip"
-    selected={false}
-    onClick={() => { /* Use state to set 'selected={true}' */ }}
-    leadingAccessoryView={<BeachIconSm />}
-  >
-    Toggle me
-  </BpkSelectableChip>
+    // Selectable chip with an icon.
+    <BpkSelectableChip
+      accessibilityLabel="Press to toggle chip"
+      selected={false}
+      onClick={() => { /* Use state to set 'selected={true}' */ }}
+      leadingAccessoryView={<BeachIconSm />}
+    >
+      Toggle me
+    </BpkSelectableChip>
 
-  // Standard dismissible chip.
-  <BpkDismissibleChip
-    accessibilityLabel="Press to dismiss chip"
-    onClick={() => { /* Use state to handle removing this chip. */ }}
-  >
-    Dismiss me
-  </BpkDismissibleChip>
-
-  // Dismissible chip with an icon.
+    // Standard dismissible chip.
     <BpkDismissibleChip
-    accessibilityLabel="Press to dismiss chip"
-    onClick={() => { /* Use state to handle removing this chip. */ }}
-    leadingAccessoryView={<BeachIconSm />}
-  >
-    Dismiss me
-  </BpkDismissibleChip>
+      accessibilityLabel="Press to dismiss chip"
+      onClick={() => { /* Use state to handle removing this chip. */ }}
+    >
+      Dismiss me
+    </BpkDismissibleChip>
+
+    // Dismissible chip with an icon.
+      <BpkDismissibleChip
+      accessibilityLabel="Press to dismiss chip"
+      onClick={() => { /* Use state to handle removing this chip. */ }}
+      leadingAccessoryView={<BeachIconSm />}
+    >
+      Dismiss me
+    </BpkDismissibleChip>
+  </div>
 );
 ```
 
