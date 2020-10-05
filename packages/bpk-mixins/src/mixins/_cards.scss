@@ -38,7 +38,7 @@
   cursor: pointer;
 
   @include bpk-box-shadow-sm;
-  @include bpk-border-radius-sm;
+  @include bpk-border-radius-md;
 
   @include bpk-hover {
     &::after {
@@ -61,7 +61,7 @@
     pointer-events: none; // To prevent the pseudo element absorbing click events
 
     @include bpk-box-shadow-lg;
-    @include bpk-border-radius-sm;
+    @include bpk-border-radius-md;
 
     // pointer-events doesn't work on ie
     @media screen\0 {

@@ -36,6 +36,9 @@
     "BLACK_TINT_06": {
       "value": "#8E8E93"
     },
+    "BORDER_RADIUS_MD": {
+      "value": ".75rem"
+    },
     "BORDER_RADIUS_PILL": {
       "value": "1.125rem"
     },

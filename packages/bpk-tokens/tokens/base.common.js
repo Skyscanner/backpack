@@ -41,6 +41,7 @@ module.exports = {
   bannerAlertPrimaryColor: "rgb(7, 112, 227)",
   bannerAlertSuccessColor: "rgb(0, 166, 152)",
   bannerAlertWarnColor: "rgb(255, 181, 77)",
+  borderRadiusMd: ".75rem",
   borderRadiusPill: "1.125rem",
   borderRadiusPillLg: "1.3125rem",
   borderRadiusSm: ".375rem",
