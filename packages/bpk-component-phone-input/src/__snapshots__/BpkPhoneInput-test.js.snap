@@ -300,6 +300,7 @@ exports[`BpkPhoneInput should render correctly with a dialing code image attribu
     className="bpk-select-wrapper dialing-wrapper"
   >
     <span
+      aria-hidden={true}
       className="bpk-select-wrapper__image"
     />
     <select

@@ -2,6 +2,9 @@
 
 > Place your changes below this line.
 
+- bpk-component-select:
+  - Images passed to `BpkSelect` now have `aria-hidden` set, preventing them from interfering with screen readers.
+
 ## How to write a good changelog entry
 
 1. Add 'Breaking', 'Added' or 'Fixed' in bold depending on if the change will be major, minor or patch according to [semver](semver.org).
