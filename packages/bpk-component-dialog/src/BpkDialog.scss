@@ -46,13 +46,23 @@
     margin-left: -$size / 2;
     justify-content: center;
     align-items: center;
+    border: $bpk-border-size-lg $bpk-color-white solid;
     border-radius: 50%;
-    background-color: $bpk-color-monteverde;
 
-    @include bpk-border-lg($bpk-color-white);
+    &--primary {
+      background-color: $bpk-color-monteverde;
+    }
+
+    &--warning {
+      background-color: $bpk-color-kolkata;
+    }
+
+    &--destructive {
+      background-color: $bpk-color-panjin;
+    }
 
     > svg {
-      fill: currentColor;
+      fill: $bpk-color-white;
     }
   }
 }

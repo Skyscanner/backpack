@@ -32,14 +32,36 @@ import STYLES from './BpkDialog.scss';
 
 const getClassName = cssModules(STYLES);
 
+export const HEADER_ICON_TYPES = {
+  primary: 'primary',
+  warning: 'warning',
+  destructive: 'destructive',
+};
+
 export type Props = {
   ...$Exact<BpkModalProps>,
   dismissible: boolean,
-  icon: ?Node,
+  headerIcon: ?Node,
+  headerIconType: $Keys<typeof HEADER_ICON_TYPES>,
 };
 
 const BpkDialog = (props: Props) => {
-  const { children, closeLabel, dismissible, icon, onClose, ...rest } = props;
+  const {
+    children,
+    closeLabel,
+    dismissible,
+    headerIcon,
+    headerIconType,
+    onClose,
+    ...rest
+  } = props;
+
+  const contentClassNames = getClassName('bpk-dialog--with-icon');
+  const headerIconClassNames = getClassName(
+    'bpk-dialog__icon',
+    `bpk-dialog__icon--${headerIconType}`,
+  );
+  const closeButtonClassNames = getClassName('bpk-dialog__close-button');
 
   return (
     <BpkModal
@@ -51,12 +73,12 @@ const BpkDialog = (props: Props) => {
       closeOnEscPressed={dismissible}
       fullScreenOnMobile={false}
       isIphone={false}
-      contentClassName={icon ? getClassName('bpk-dialog--with-icon') : null}
+      contentClassName={headerIcon ? contentClassNames : null}
     >
-      {icon && <div className={getClassName('bpk-dialog__icon')}>Foo</div>}
+      {headerIcon && <div className={headerIconClassNames}>{headerIcon}</div>}
       {dismissible && (
         <BpkCloseButton
-          className={getClassName('bpk-dialog__close-button')}
+          className={closeButtonClassNames}
           label={closeLabel}
           onClick={onClose}
         />
@@ -79,14 +101,16 @@ BpkDialog.propTypes = {
   ...newModalPropTypes,
   onClose: PropTypes.func,
   dismissible: PropTypes.bool,
-  icon: PropTypes.node,
+  headerIcon: PropTypes.node,
+  headerIconType: PropTypes.oneOf(Object.keys(HEADER_ICON_TYPES)),
 };
 
 BpkDialog.defaultProps = {
   ...modalDefaultProps,
   onClose: () => null,
   dismissible: true,
-  icon: null,
+  headerIcon: null,
+  headerIconType: HEADER_ICON_TYPES.primary,
 };
 
 export default BpkDialog;

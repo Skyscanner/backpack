@@ -78,3 +78,136 @@ exports[`BpkDialog should render correctly when it is not dismissible 2`] = `
   </div>
 </div>
 `;
+
+exports[`BpkDialog should render default icon dialog correctly 1`] = `null`;
+
+exports[`BpkDialog should render default icon dialog correctly 2`] = `
+<div>
+  <div>
+    <div
+      class="bpk-scrim-content bpk-modal__container"
+    >
+      <div
+        class="bpk-scrim"
+        role="presentation"
+      />
+      <section
+        aria-labelledby="bpk-modal-heading-my-modal"
+        class="bpk-modal"
+        id="my-modal"
+        role="dialog"
+        tabindex="-1"
+      >
+        <div
+          class="bpk-modal__content bpk-modal__content--padded bpk-dialog--with-icon"
+        >
+          <div
+            class="bpk-dialog__icon bpk-dialog__icon--primary"
+          >
+            <svg
+              height="24"
+              style="width: 1.5rem; height: 1.5rem;"
+              width="24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M20.713 5.793a1 1 0 0 1 0 1.414l-11 11a1 1 0 0 1-1.414 0l-5-5a1 1 0 0 1 1.39-1.439l.024.025 4.293 4.293L19.3 5.793a1 1 0 0 1 1.414 0z"
+                fill-rule="evenodd"
+              />
+            </svg>
+          </div>
+          Dialog content inside a custom target
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`BpkDialog should render destructive icon dialog correctly 1`] = `null`;
+
+exports[`BpkDialog should render destructive icon dialog correctly 2`] = `
+<div>
+  <div>
+    <div
+      class="bpk-scrim-content bpk-modal__container"
+    >
+      <div
+        class="bpk-scrim"
+        role="presentation"
+      />
+      <section
+        aria-labelledby="bpk-modal-heading-my-modal"
+        class="bpk-modal"
+        id="my-modal"
+        role="dialog"
+        tabindex="-1"
+      >
+        <div
+          class="bpk-modal__content bpk-modal__content--padded bpk-dialog--with-icon"
+        >
+          <div
+            class="bpk-dialog__icon bpk-dialog__icon--destructive"
+          >
+            <svg
+              height="24"
+              style="width: 1.5rem; height: 1.5rem;"
+              width="24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M5 4a1 1 0 0 0 0 2h14a1 1 0 0 0 0-2zm13.91 4.083a1 1 0 0 0-.914-1.08Q17.955 7 17.913 7H6.087a1 1 0 0 0-1 1q0 .041.003.083L6 19a3.226 3.226 0 0 0 3 3h6a3.226 3.226 0 0 0 3-3zM8 3.79V4h8v-.147a.864.864 0 0 0-.324-.699A6.097 6.097 0 0 0 12 2a6.08 6.08 0 0 0-3.74 1.179.77.77 0 0 0-.26.61z"
+              />
+            </svg>
+          </div>
+          Dialog content inside a custom target
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`BpkDialog should render warning icon dialog correctly 1`] = `null`;
+
+exports[`BpkDialog should render warning icon dialog correctly 2`] = `
+<div>
+  <div>
+    <div
+      class="bpk-scrim-content bpk-modal__container"
+    >
+      <div
+        class="bpk-scrim"
+        role="presentation"
+      />
+      <section
+        aria-labelledby="bpk-modal-heading-my-modal"
+        class="bpk-modal"
+        id="my-modal"
+        role="dialog"
+        tabindex="-1"
+      >
+        <div
+          class="bpk-modal__content bpk-modal__content--padded bpk-dialog--with-icon"
+        >
+          <div
+            class="bpk-dialog__icon bpk-dialog__icon--warning"
+          >
+            <svg
+              height="24"
+              style="width: 1.5rem; height: 1.5rem;"
+              width="24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm.993 14.116a1 1 0 0 1-1.986.001L11 16l-.002-5.001.007-.117a1 1 0 0 1 1.986 0l.007.117L13 16zm-.995-7.12a.999.999 0 0 1 0-1.997h.063a.999.999 0 1 1-.063 1.997z"
+              />
+            </svg>
+          </div>
+          Dialog content inside a custom target
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
+`;

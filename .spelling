@@ -311,6 +311,12 @@ ICON_POSITION
 ICON_POSITION.LEADING
 ICON_POSITION.TRAILING
 headerText
+headerIcon
+headerIconType
+HEADER_ICON_TYPES
+HEADER_ICON_TYPES.primary
+HEADER_ICON_TYPES.warning
+HEADER_ICON_TYPES.destructive
 hideOnTouchDevices
 hoverRating
 iconAlignment

@@ -1,5 +1,9 @@
 # UNRELEASED:
 
+ADDED:
+  - bpk-component-dialog
+    - Added new `headerIcon` and `headerIconType` props to allow icon variant of dialog.
+
 # How to write a good changelog entry:
 #
 #   1. Add 'BREAKING', 'ADDED' OR 'FIXED' depending on if the change will be major, minor or patch according to [semver.org](semver.org).

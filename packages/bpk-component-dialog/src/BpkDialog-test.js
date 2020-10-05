@@ -20,8 +20,11 @@
 
 import React from 'react';
 import renderer from 'react-test-renderer';
+import TickIcon from 'bpk-component-icon/lg/tick';
+import InfoIcon from 'bpk-component-icon/lg/information-circle';
+import TrashIcon from 'bpk-component-icon/lg/trash';
 
-import BpkDialog from './BpkDialog';
+import BpkDialog, { HEADER_ICON_TYPES } from './BpkDialog';
 
 describe('BpkDialog', () => {
   it('should render correctly in the given target if renderTarget is supplied', () => {
@@ -61,6 +64,80 @@ describe('BpkDialog', () => {
           isOpen
           renderTarget={() => customRenderTarget}
           dismissible={false}
+        >
+          Dialog content inside a custom target
+        </BpkDialog>,
+      )
+      .toJSON();
+
+    expect(tree).toMatchSnapshot();
+    expect(customRenderTarget).toMatchSnapshot();
+  });
+
+  it('should render default icon dialog correctly', () => {
+    const customRenderTarget = document.createElement('div');
+
+    const tree = renderer
+      .create(
+        <BpkDialog
+          id="my-modal"
+          onClose={jest.fn()}
+          dialogRef={jest.fn()}
+          getApplicationElement={jest.fn()}
+          isOpen
+          renderTarget={() => customRenderTarget}
+          dismissible={false}
+          headerIcon={<TickIcon />}
+        >
+          Dialog content inside a custom target
+        </BpkDialog>,
+      )
+      .toJSON();
+
+    expect(tree).toMatchSnapshot();
+    expect(customRenderTarget).toMatchSnapshot();
+  });
+
+  it('should render warning icon dialog correctly', () => {
+    const customRenderTarget = document.createElement('div');
+
+    const tree = renderer
+      .create(
+        <BpkDialog
+          id="my-modal"
+          onClose={jest.fn()}
+          dialogRef={jest.fn()}
+          getApplicationElement={jest.fn()}
+          isOpen
+          renderTarget={() => customRenderTarget}
+          dismissible={false}
+          headerIcon={<InfoIcon />}
+          headerIconType={HEADER_ICON_TYPES.warning}
+        >
+          Dialog content inside a custom target
+        </BpkDialog>,
+      )
+      .toJSON();
+
+    expect(tree).toMatchSnapshot();
+    expect(customRenderTarget).toMatchSnapshot();
+  });
+
+  it('should render destructive icon dialog correctly', () => {
+    const customRenderTarget = document.createElement('div');
+
+    const tree = renderer
+      .create(
+        <BpkDialog
+          id="my-modal"
+          onClose={jest.fn()}
+          dialogRef={jest.fn()}
+          getApplicationElement={jest.fn()}
+          isOpen
+          renderTarget={() => customRenderTarget}
+          dismissible={false}
+          headerIcon={<TrashIcon />}
+          headerIconType={HEADER_ICON_TYPES.destructive}
         >
           Dialog content inside a custom target
         </BpkDialog>,
