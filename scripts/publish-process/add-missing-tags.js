@@ -38,7 +38,7 @@ const getCommitHash = () =>
       output: process.stdout,
     });
 
-    rl.question('Enter the has of the commit to tag', answer => {
+    rl.question('Enter the hash of the commit to tag', answer => {
       if (!answer.match(GIT_HASH_REGEX)) {
         rl.close();
         resolve(getCommitHash());
