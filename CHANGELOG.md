@@ -2,6 +2,17 @@
 
 [Unreleased changes](./UNRELEASED.yaml).
 
+# 2020-10-05 - New icon variant of `BpkDialog`.
+
+**Added:**
+  - bpk-component-dialog: 2.0.86 => 2.1.0
+    - Added new `headerIcon` and `headerIconType` props to allow icon variant of dialog.
+
+**Fixed:**
+  - bpk-svgs: 12.1.10 => 12.1.11
+      - The media icon was previously flipping in RTL. This has now been fixed.
+
+
 # 2020-09-30 - Flow type fix for horizontal nav
 
 **Fixed:**
