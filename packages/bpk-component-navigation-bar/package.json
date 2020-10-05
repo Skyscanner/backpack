@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-navigation-bar",
-  "version": "2.2.43",
+  "version": "2.2.44",
   "description": "Backpack nativation bar component.",
   "main": "index.js",
   "repository": {
@@ -13,15 +13,15 @@
     "react": "^16.0.0"
   },
   "dependencies": {
-    "bpk-component-close-button": "^2.0.82",
-    "bpk-component-link": "^2.1.10",
-    "bpk-component-text": "^3.1.16",
-    "bpk-mixins": "^20.0.10",
+    "bpk-component-close-button": "^2.0.83",
+    "bpk-component-link": "^2.1.11",
+    "bpk-component-text": "^3.1.17",
+    "bpk-mixins": "^20.0.11",
     "bpk-react-utils": "^3.0.6",
     "prop-types": "^15.6.2"
   },
   "devDependencies": {
-    "bpk-component-icon": "^8.2.20",
+    "bpk-component-icon": "^8.2.21",
     "bpk-tokens": "^34.0.0"
   },
   "publishConfig": {
