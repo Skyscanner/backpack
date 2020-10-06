@@ -165,7 +165,7 @@ storiesOf('bpk-component-dialog', module)
     </DialogContainer>
   ))
   .add('With flare', () => (
-    <DialogContainer flare padded>
+    <DialogContainer flare dismissible={false}>
       <Paragraph>
         This is a default dialog. You can put anything you want in here.
       </Paragraph>
