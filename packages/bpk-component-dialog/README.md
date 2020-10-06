@@ -78,6 +78,8 @@ class App extends Component {
 | dismissible           | bool     | false    | true             |
 | headerIcon            | node     | false    | null             |
 | headerIconType        | oneOf(HEADER_ICON_TYPES.primary, HEADER_ICON_TYPES.warning, HEADER_ICON_TYPES.destructive) | false    | HEADER_ICON_TYPES.primary |
+| flare                 | bool     | false    | false            |
+| flareClassName        | string   | false    | null             |
 
 ### Prop Details
 

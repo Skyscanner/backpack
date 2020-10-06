@@ -299,6 +299,7 @@ dockedMiddle
 dockedLast
 doneLabel
 expandDelay
+flareClassName
 fillStyle
 formatValue
 getApplicationElement

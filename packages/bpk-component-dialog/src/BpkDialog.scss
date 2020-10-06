@@ -29,6 +29,12 @@
     }
   }
 
+  &--with-flare {
+    height: $bpk-spacing-base * 10;
+    border-radius: inherit;
+    background-color: $bpk-color-sky-blue;
+  }
+
   &--with-icon {
     margin-top: $bpk-spacing-lg;
   }

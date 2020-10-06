@@ -13,6 +13,7 @@
     "react": "^16.0.0"
   },
   "dependencies": {
+    "bpk-component-flare": "^1.0.85",
     "bpk-component-modal": "^2.1.83",
     "prop-types": "^15.6.2"
   },

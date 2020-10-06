@@ -147,4 +147,51 @@ describe('BpkDialog', () => {
     expect(tree).toMatchSnapshot();
     expect(customRenderTarget).toMatchSnapshot();
   });
+
+  it('should render with flare dialog', () => {
+    const customRenderTarget = document.createElement('div');
+
+    const tree = renderer
+      .create(
+        <BpkDialog
+          id="my-modal"
+          onClose={jest.fn()}
+          dialogRef={jest.fn()}
+          getApplicationElement={jest.fn()}
+          isOpen
+          renderTarget={() => customRenderTarget}
+          flare
+        >
+          Dialog content inside a custom target
+        </BpkDialog>,
+      )
+      .toJSON();
+
+    expect(tree).toMatchSnapshot();
+    expect(customRenderTarget).toMatchSnapshot();
+  });
+
+  it('should render with flare dialog with flareClassName', () => {
+    const customRenderTarget = document.createElement('div');
+
+    const tree = renderer
+      .create(
+        <BpkDialog
+          id="my-modal"
+          onClose={jest.fn()}
+          dialogRef={jest.fn()}
+          getApplicationElement={jest.fn()}
+          isOpen
+          renderTarget={() => customRenderTarget}
+          flare
+          flareClassName="my-className"
+        >
+          Dialog content inside a custom target
+        </BpkDialog>,
+      )
+      .toJSON();
+
+    expect(tree).toMatchSnapshot();
+    expect(customRenderTarget).toMatchSnapshot();
+  });
 });
