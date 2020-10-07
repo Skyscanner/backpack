@@ -29,8 +29,9 @@
     }
   }
 
-  &--with-flare {
+  &__flare {
     height: $bpk-spacing-base * 10;
+    // We inherit radius from the outer modal so they match and align correctly to the container.
     border-radius: inherit;
     background-color: $bpk-color-sky-blue;
   }

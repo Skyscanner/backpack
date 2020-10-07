@@ -232,7 +232,7 @@ exports[`BpkDialog should render with flare dialog 2`] = `
         tabindex="-1"
       >
         <div
-          class="bpk-content-bubble__wrapper bpk-content-bubble__wrapper--with-pointer bpk-content-bubble__wrapper--rounded bpk-content-bubble__wrapper--rounded--with-pointer bpk-dialog--with-flare"
+          class="bpk-content-bubble__wrapper bpk-content-bubble__wrapper--with-pointer bpk-content-bubble__wrapper--rounded bpk-content-bubble__wrapper--rounded--with-pointer bpk-dialog__flare"
         >
           <div
             class="bpk-content-bubble__container"
@@ -320,7 +320,7 @@ exports[`BpkDialog should render with flare dialog with flareClassName 2`] = `
         tabindex="-1"
       >
         <div
-          class="bpk-content-bubble__wrapper bpk-content-bubble__wrapper--with-pointer bpk-content-bubble__wrapper--rounded bpk-content-bubble__wrapper--rounded--with-pointer bpk-dialog--with-flare my-className"
+          class="bpk-content-bubble__wrapper bpk-content-bubble__wrapper--with-pointer bpk-content-bubble__wrapper--rounded bpk-content-bubble__wrapper--rounded--with-pointer bpk-dialog__flare my-className"
         >
           <div
             class="bpk-content-bubble__container"

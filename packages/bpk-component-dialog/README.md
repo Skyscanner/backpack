@@ -87,6 +87,10 @@ class App extends Component {
 
 This is required unless `dismissible` is false.
 
+#### flareClassName
+
+This will change the style of the default flare view. Should you wish to apply an image to the flare you would pass the image using the CSS property `background-image`.
+
 ## Theme Props
 
 - `linkColor`

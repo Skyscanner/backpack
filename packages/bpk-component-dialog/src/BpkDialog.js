@@ -62,10 +62,7 @@ const BpkDialog = (props: Props) => {
   } = props;
 
   const contentClassNames = getClassName('bpk-dialog--with-icon');
-  const flareClassNames = getClassName(
-    'bpk-dialog--with-flare',
-    flareClassName,
-  );
+  const flareClassNames = getClassName('bpk-dialog__flare', flareClassName);
   const headerIconClassNames = getClassName(
     'bpk-dialog__icon',
     `bpk-dialog__icon--${headerIconType}`,
@@ -83,7 +80,7 @@ const BpkDialog = (props: Props) => {
       fullScreenOnMobile={false}
       isIphone={false}
       contentClassName={headerIcon ? contentClassNames : null}
-      flareComponent={
+      INTERNAL__outerComponent={
         flare ? <BpkContentBubble className={flareClassNames} /> : null
       }
     >
