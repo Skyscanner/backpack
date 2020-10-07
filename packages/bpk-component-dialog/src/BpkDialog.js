@@ -27,6 +27,7 @@ import BpkModal, {
   propTypes as modalPropTypes,
   defaultProps as modalDefaultProps,
 } from 'bpk-component-modal';
+import { BpkContentBubble } from 'bpk-component-flare';
 
 import STYLES from './BpkDialog.scss';
 
@@ -41,6 +42,8 @@ export const HEADER_ICON_TYPES = {
 export type Props = {
   ...$Exact<BpkModalProps>,
   dismissible: boolean,
+  flare: boolean,
+  flareClassName: ?string,
   headerIcon: ?Node,
   headerIconType: $Keys<typeof HEADER_ICON_TYPES>,
 };
@@ -50,6 +53,8 @@ const BpkDialog = (props: Props) => {
     children,
     closeLabel,
     dismissible,
+    flare,
+    flareClassName,
     headerIcon,
     headerIconType,
     onClose,
@@ -57,6 +62,7 @@ const BpkDialog = (props: Props) => {
   } = props;
 
   const contentClassNames = getClassName('bpk-dialog--with-icon');
+  const flareClassNames = getClassName('bpk-dialog__flare', flareClassName);
   const headerIconClassNames = getClassName(
     'bpk-dialog__icon',
     `bpk-dialog__icon--${headerIconType}`,
@@ -74,6 +80,9 @@ const BpkDialog = (props: Props) => {
       fullScreenOnMobile={false}
       isIphone={false}
       contentClassName={headerIcon ? contentClassNames : null}
+      INTERNAL__outerComponent={
+        flare ? <BpkContentBubble className={flareClassNames} /> : null
+      }
     >
       {headerIcon && <div className={headerIconClassNames}>{headerIcon}</div>}
       {dismissible && (
@@ -101,6 +110,8 @@ BpkDialog.propTypes = {
   ...newModalPropTypes,
   onClose: PropTypes.func,
   dismissible: PropTypes.bool,
+  flare: PropTypes.bool,
+  flareClassName: PropTypes.string,
   headerIcon: PropTypes.node,
   headerIconType: PropTypes.oneOf(Object.keys(HEADER_ICON_TYPES)),
 };
@@ -109,6 +120,8 @@ BpkDialog.defaultProps = {
   ...modalDefaultProps,
   onClose: () => null,
   dismissible: true,
+  flare: false,
+  flareClassName: null,
   headerIcon: null,
   headerIconType: HEADER_ICON_TYPES.primary,
 };

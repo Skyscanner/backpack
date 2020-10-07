@@ -115,7 +115,6 @@ storiesOf('bpk-component-dialog', module)
       </Paragraph>
     </DialogContainer>
   ))
-
   .add('With an icon', () => (
     <div>
       <div>
@@ -162,6 +161,13 @@ storiesOf('bpk-component-dialog', module)
       <Paragraph>
         This is not dismissible. To close it you must bind the `onClose`
         function to a component inside the dialog, like the button below.
+      </Paragraph>
+    </DialogContainer>
+  ))
+  .add('With flare', () => (
+    <DialogContainer flare dismissible={false}>
+      <Paragraph>
+        This is a default dialog. You can put anything you want in here.
       </Paragraph>
     </DialogContainer>
   ));
