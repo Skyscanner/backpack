@@ -2,10 +2,6 @@
 
 > Place your changes below this line.
 
-**Added:**
-  - bpk-component-dialog: 2.0.86 => 2.1.0
-    - Added new `flare` and `flareClassName` props to allow flare variant of dialog.
-
 ## How to write a good changelog entry
 
 1. Add 'Breaking', 'Added' or 'Fixed' in bold depending on if the change will be major, minor or patch according to [semver](semver.org).

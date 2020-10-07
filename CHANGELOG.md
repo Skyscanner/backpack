@@ -2,6 +2,12 @@
 
 [Unreleased changes](./UNRELEASED.yaml).
 
+# 2020-10-07 - New flare variant of `BpkDialog`
+
+**Added:**
+  - bpk-component-dialog: 2.1.1 => 2.2.0
+    - Added new `flare` and `flareClassName` props to allow flare variant of dialog.
+
 # 2020-10-05 - `BpkCard` border radius update and `BpkSelect` a11y fix.
 
 **Added:**
