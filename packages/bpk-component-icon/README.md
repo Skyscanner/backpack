@@ -30,7 +30,7 @@ export default () => (
 @import '~bpk-mixins';
 
 .abc-icon__flight {
-  fill: $bpk-color-white;
+  fill: currentColor; // see https://css-tricks.com/currentcolor/
 }
 
 .abc-icon__a11y {
