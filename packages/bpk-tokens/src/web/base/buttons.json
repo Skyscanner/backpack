@@ -27,7 +27,7 @@
       "type": "size"
     },
     "BUTTON_BORDER_RADIUS": {
-      "value": "{!BORDER_RADIUS_XS}",
+      "value": "{!BORDER_RADIUS_SM}",
       "type": "size"
     },
     "BUTTON_BACKGROUND_COLOR": {

@@ -599,9 +599,9 @@
     },
     "BUTTON_BORDER_RADIUS": {
       "category": "buttons",
-      "value": ".25rem",
+      "value": ".375rem",
       "type": "size",
-      "originalValue": "{!BORDER_RADIUS_XS}",
+      "originalValue": "{!BORDER_RADIUS_SM}",
       "name": "BUTTON_BORDER_RADIUS"
     },
     "BUTTON_BOX_SHADOW": {
