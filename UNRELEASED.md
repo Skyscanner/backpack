@@ -2,6 +2,11 @@
 
 > Place your changes below this line.
 
+**Added:**
+- bpk-tokens:
+  - Added new radius tokens for iOS and Android as part of the new guidelines.
+    - For now we are going to keep SM the same value until we have time to fully adopt in our apps - in case anything urgent arises that requires fixing.
+
 **Fixed:**
 - bpk-component-button:
   - `BpkButton` has been updated to use `border-radius-sm` instead of `border-radius-xs` as per the new guidelines.

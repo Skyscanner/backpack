@@ -70,8 +70,10 @@ export const backgroundTertiaryColor = {
 export const backgroundTertiaryDarkColor = "rgb(44, 44, 46)";
 export const backgroundTertiaryLightColor = "rgb(255, 255, 255)";
 export const borderRadiusLg = 24;
+export const borderRadiusMd = 12;
 export const borderRadiusPill = 40;
 export const borderRadiusSm = 4;
+export const borderRadiusXs = 4;
 export const borderSizeLg = 2;
 export const borderSizeSm = 1;
 export const borderSizeXl = 3;
@@ -344,8 +346,10 @@ textXxxlLetterSpacing,
 };
 export const radii = {
 borderRadiusLg,
+borderRadiusMd,
 borderRadiusPill,
 borderRadiusSm,
+borderRadiusXs,
 };
 export const semanticColors = {
 backgroundAlternativeColor,
@@ -419,8 +423,10 @@ export const borderWidthLg = undefined;
 export const borderWidthSm = undefined;
 export const borderWidthXl = undefined;
 export const cornerRadiusLg = undefined;
+export const cornerRadiusMd = undefined;
 export const cornerRadiusPill = undefined;
 export const cornerRadiusSm = undefined;
+export const cornerRadiusXs = undefined;
 export const shadowLgColor = undefined;
 export const shadowLgOffsetHeight = undefined;
 export const shadowLgOffsetWidth = undefined;
