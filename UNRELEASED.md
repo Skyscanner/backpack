@@ -2,6 +2,11 @@
 
 > Place your changes below this line.
 
+**Added:**
+
+- bpk-component-overlay:
+  - New `BpkOverlay` component, used for adding tints to backgrounds. See https://backpack.github.io/components/overlay?platform=web for more.
+
 ## How to write a good changelog entry
 
 1. Add 'Breaking', 'Added' or 'Fixed' in bold depending on if the change will be major, minor or patch according to [semver](semver.org).

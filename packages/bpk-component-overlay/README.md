@@ -1,6 +1,6 @@
 # bpk-component-overlay
 
-> Backpack example component.
+> Backpack overlay component.
 
 ## Installation
 
@@ -12,13 +12,40 @@ npm install bpk-component-overlay --save-dev
 
 ```js
 import React from 'react';
-import BpkOverlay from 'bpk-component-code';
+import BpkText from 'bpk-component-text';
+import BpkOverlay, { BORDER_RADIUS_STYLES, OVERLAY_TYPES } from 'bpk-component-overlay';
 
-export default () => <BpkOverlay />;
+export default () => (
+  <div>
+    { /* Basic example */}
+    <BpkOverlay>
+      <BpkText>Hotels in Canada</BpkText>
+    </BpkOverlay>
+
+    { /* With the tint invisible */}
+    <BpkOverlay overlayType={OVERLAY_TYPES.none}>
+      <BpkText>Hotels in Canada</BpkText>
+    </BpkOverlay>
+
+    { /* With a border radius style */}
+    <BpkOverlay borderRadiusStyle={BORDER_RADIUS_STYLES.sm}>
+      <BpkText>Hotels in Canada</BpkText>
+    </BpkOverlay>
+
+    { /* With foreground content */}
+    <BpkOverlay foregroundContent={<BpkText>Visit Ottawa</BpkText>}>
+      <BpkText>Hotels in Canada</BpkText>
+    </BpkOverlay>
+  </div>
+);
 ```
 
 ## Props
 
 | Property  | PropType | Required | Default Value |
 | --------- | -------- | -------- | ------------- |
-| className | string   | false    | null          |
+| children | Node | true | - |
+| borderRadiusStyle | oneOf(BORDER_RADIUS_STYLES) | false | BORDER_RADIUS_STYLES.none |
+| className | string | false | null |
+| foregroundContent | Node | false | null |
+| overlayType | oneOf(OVERLAY_TYPES) | false | OVERLAY_TYPES.tint |

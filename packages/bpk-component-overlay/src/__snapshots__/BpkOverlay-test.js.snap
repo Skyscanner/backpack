@@ -8,7 +8,7 @@ exports[`BpkOverlay should render correctly 1`] = `
     Backpack
   </span>
   <div
-    className="bpk-overlay__overlay"
+    className="bpk-overlay__overlay bpk-overlay__overlay--tint"
   />
 </div>
 `;
@@ -21,7 +21,7 @@ exports[`BpkOverlay should render correctly with borderRadiusStyle={none} 1`] = 
     Backpack
   </span>
   <div
-    className="bpk-overlay__overlay"
+    className="bpk-overlay__overlay bpk-overlay__overlay--tint"
   />
 </div>
 `;
@@ -34,7 +34,7 @@ exports[`BpkOverlay should render correctly with borderRadiusStyle={sm} 1`] = `
     Backpack
   </span>
   <div
-    className="bpk-overlay__overlay bpk-overlay__overlay--border-radius-sm"
+    className="bpk-overlay__overlay bpk-overlay__overlay--border-radius-sm bpk-overlay__overlay--tint"
   />
 </div>
 `;
@@ -47,10 +47,7 @@ exports[`BpkOverlay should render correctly with foregroundContent 1`] = `
     Backpack
   </span>
   <div
-    className="bpk-overlay__overlay"
-  />
-  <div
-    className="bpk-overlay__foreground"
+    className="bpk-overlay__overlay bpk-overlay__overlay--tint"
   >
     <span>
       Skyscanner
@@ -66,6 +63,9 @@ exports[`BpkOverlay should render correctly with overlayType={none} 1`] = `
   <span>
     Backpack
   </span>
+  <div
+    className="bpk-overlay__overlay"
+  />
 </div>
 `;
 
@@ -77,7 +77,7 @@ exports[`BpkOverlay should render correctly with overlayType={tint} 1`] = `
     Backpack
   </span>
   <div
-    className="bpk-overlay__overlay"
+    className="bpk-overlay__overlay bpk-overlay__overlay--tint"
   />
 </div>
 `;
@@ -91,7 +91,7 @@ exports[`BpkOverlay should support arbitrary props 1`] = `
     Backpack
   </span>
   <div
-    className="bpk-overlay__overlay"
+    className="bpk-overlay__overlay bpk-overlay__overlay--tint"
   />
 </div>
 `;
@@ -104,7 +104,7 @@ exports[`BpkOverlay should support custom class names 1`] = `
     Backpack
   </span>
   <div
-    className="bpk-overlay__overlay"
+    className="bpk-overlay__overlay bpk-overlay__overlay--tint"
   />
 </div>
 `;

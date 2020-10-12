@@ -301,6 +301,7 @@ doneLabel
 expandDelay
 flareClassName
 fillStyle
+foregroundContent
 formatValue
 getApplicationElement
 getArrowPositionCallback
@@ -358,6 +359,9 @@ onRender
 onToggleExpanded
 onValueChange
 overlayStyle
+overlayType
+OVERLAY_TYPES
+OVERLAY_TYPES.tint
 pageCount
 popperModifiers
 portalStyle

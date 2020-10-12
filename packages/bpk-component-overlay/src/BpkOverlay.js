@@ -58,19 +58,14 @@ const BpkOverlay = (props: Props) => {
     'bpk-overlay__overlay',
     borderRadiusStyle === BORDER_RADIUS_STYLES.sm &&
       'bpk-overlay__overlay--border-radius-sm',
+    overlayType === OVERLAY_TYPES.tint && 'bpk-overlay__overlay--tint',
   );
-  const foregroundClassNames = getClassName('bpk-overlay__foreground');
 
   return (
     // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
     <div className={wrapperClassNames} {...rest}>
       {children}
-      {overlayType === OVERLAY_TYPES.tint && (
-        <div className={overlayClassNames} />
-      )}
-      {foregroundContent && (
-        <div className={foregroundClassNames}>{foregroundContent}</div>
-      )}
+      <div className={overlayClassNames}>{foregroundContent}</div>
     </div>
   );
 };

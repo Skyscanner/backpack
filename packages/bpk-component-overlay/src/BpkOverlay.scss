@@ -29,19 +29,13 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: $bpk-color-sky-blue-shade-03;
-    opacity: 0.56;
+
+    &--tint {
+      background: rgba($bpk-color-sky-blue-shade-03, 0.56);
+    }
 
     &--border-radius-sm {
       @include bpk-border-radius-sm;
     }
-  }
-
-  &__foreground {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
   }
 }
