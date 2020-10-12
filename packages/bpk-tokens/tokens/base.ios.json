@@ -506,6 +506,13 @@
     },
     {
       "type": "size",
+      "value": "12",
+      "category": "radii",
+      "originalValue": "{!BORDER_RADIUS_MD}",
+      "name": "cornerRadiusMd"
+    },
+    {
+      "type": "size",
       "value": "40",
       "category": "radii",
       "originalValue": "{!BORDER_RADIUS_PILL}",
@@ -517,6 +524,13 @@
       "category": "radii",
       "originalValue": "{!BORDER_RADIUS_SM}",
       "name": "cornerRadiusSm"
+    },
+    {
+      "type": "size",
+      "value": "4",
+      "category": "radii",
+      "originalValue": "{!BORDER_RADIUS_XS}",
+      "name": "cornerRadiusXs"
     },
     {
       "value": "\"System\"",

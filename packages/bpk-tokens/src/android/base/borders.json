@@ -18,8 +18,16 @@
       "value": "{!BORDER_SIZE_XL}",
       "category": "borders"
     },
+    "BORDER_RADIUS_XS": {
+      "value": "{!BORDER_RADIUS_XS}",
+      "category": "radii"
+    },
     "BORDER_RADIUS_SM": {
       "value": "{!BORDER_RADIUS_SM}",
+      "category": "radii"
+    },
+    "BORDER_RADIUS_MD": {
+      "value": "{!BORDER_RADIUS_MD}",
       "category": "radii"
     },
     "BORDER_RADIUS_LG": {

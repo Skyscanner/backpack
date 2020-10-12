@@ -39,10 +39,16 @@
     "BORDER_RADIUS_LG": {
       "value": 24
     },
+    "BORDER_RADIUS_MD": {
+      "value": 12
+    },
     "BORDER_RADIUS_PILL": {
       "value": 40
     },
     "BORDER_RADIUS_SM": {
+      "value": 4
+    },
+    "BORDER_RADIUS_XS": {
       "value": 4
     },
     "BORDER_SIZE_LG": {
@@ -415,6 +421,13 @@
       "originalValue": "{!BORDER_RADIUS_LG}",
       "name": "BORDER_RADIUS_LG"
     },
+    "BORDER_RADIUS_MD": {
+      "type": "size",
+      "value": "12",
+      "category": "radii",
+      "originalValue": "{!BORDER_RADIUS_MD}",
+      "name": "BORDER_RADIUS_MD"
+    },
     "BORDER_RADIUS_PILL": {
       "type": "size",
       "value": "40",
@@ -428,6 +441,13 @@
       "category": "radii",
       "originalValue": "{!BORDER_RADIUS_SM}",
       "name": "BORDER_RADIUS_SM"
+    },
+    "BORDER_RADIUS_XS": {
+      "type": "size",
+      "value": "4",
+      "category": "radii",
+      "originalValue": "{!BORDER_RADIUS_XS}",
+      "name": "BORDER_RADIUS_XS"
     },
     "BORDER_SIZE_LG": {
       "type": "size",
@@ -1466,8 +1486,10 @@
     "BACKGROUND_TERTIARY_DARK_COLOR",
     "BACKGROUND_TERTIARY_LIGHT_COLOR",
     "BORDER_RADIUS_LG",
+    "BORDER_RADIUS_MD",
     "BORDER_RADIUS_PILL",
     "BORDER_RADIUS_SM",
+    "BORDER_RADIUS_XS",
     "BORDER_SIZE_LG",
     "BORDER_SIZE_SM",
     "BORDER_SIZE_XL",

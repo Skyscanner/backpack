@@ -122,8 +122,10 @@ export const colorTochigi = "rgb(225, 221, 236)";
 export const colorValensole = "rgb(165, 155, 200)";
 export const colorWhite = "rgb(255, 255, 255)";
 export const cornerRadiusLg = 24;
+export const cornerRadiusMd = 12;
 export const cornerRadiusPill = 40;
 export const cornerRadiusSm = 4;
+export const cornerRadiusXs = 4;
 export const fontFamily = "System";
 export const fontSizeBase = 16;
 export const fontSizeCaps = 10;
@@ -355,8 +357,10 @@ textXxxlLetterSpacing,
 };
 export const radii = {
 cornerRadiusLg,
+cornerRadiusMd,
 cornerRadiusPill,
 cornerRadiusSm,
+cornerRadiusXs,
 };
 export const semanticColors = {
 backgroundAlternativeColor,
@@ -430,8 +434,10 @@ lineHeightXxl,
 };
 // Android only tokens
 export const borderRadiusLg = undefined;
+export const borderRadiusMd = undefined;
 export const borderRadiusPill = undefined;
 export const borderRadiusSm = undefined;
+export const borderRadiusXs = undefined;
 export const borderSizeLg = undefined;
 export const borderSizeSm = undefined;
 export const borderSizeXl = undefined;
