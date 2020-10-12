@@ -162,7 +162,12 @@ const createComponent = async (err, { name }) => {
 
     fs.writeFileSync(storybookConfigFile, newStorybookConfigContent, 'utf8');
 
+    // Link everything up with Lerna.
+    console.log(colors.yellow(`Bootsrapping Lerna..`));
+    execSync(`npm run lerna bootstrap`);
+
     // Fix eslint errors and run Prettier.
+    console.log(colors.yellow(`Formatting code using eslint..`));
     execSync(`npx eslint --fix ${newComponentPath} ${storybookConfigFile}`);
 
     console.log(colors.green(`${newComponentPath} has been created! 👍\n`));
