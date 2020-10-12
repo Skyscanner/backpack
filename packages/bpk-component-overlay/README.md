@@ -45,7 +45,7 @@ export default () => (
 | Property  | PropType | Required | Default Value |
 | --------- | -------- | -------- | ------------- |
 | children | Node | true | - |
-| borderRadiusStyle | oneOf(BORDER_RADIUS_STYLES) | false | BORDER_RADIUS_STYLES.none |
+| borderRadiusStyle | oneOf(BORDER_RADIUS_STYLES.none, BORDER_RADIUS_STYLES.sm) | false | BORDER_RADIUS_STYLES.none |
 | className | string | false | null |
 | foregroundContent | Node | false | null |
 | overlayType | oneOf(OVERLAY_TYPES) | false | OVERLAY_TYPES.tint |

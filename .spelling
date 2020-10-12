@@ -263,6 +263,7 @@ borderRadius
 borderRadiusStyle
 BORDER_RADIUS_STYLES
 BORDER_RADIUS_STYLES.none
+BORDER_RADIUS_STYLES.sm
 borderlessBackground
 buttonType
 cellType
