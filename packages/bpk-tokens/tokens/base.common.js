@@ -65,7 +65,7 @@ module.exports = {
   buttonActiveBoxShadow: "none",
   buttonActiveColor: "rgb(255, 255, 255)",
   buttonBackgroundColor: "rgb(0, 166, 152)",
-  buttonBorderRadius: ".25rem",
+  buttonBorderRadius: ".375rem",
   buttonBoxShadow: "none",
   buttonColor: "rgb(255, 255, 255)",
   buttonDestructiveActiveBackgroundColor: "rgb(255, 255, 255)",

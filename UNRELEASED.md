@@ -2,6 +2,10 @@
 
 > Place your changes below this line.
 
+**Fixed:**
+- bpk-component-button:
+  - `BpkButton` has been updated to use `border-radius-sm` instead of `border-radius-xs` as per the new guidelines.
+
 ## How to write a good changelog entry
 
 1. Add 'Breaking', 'Added' or 'Fixed' in bold depending on if the change will be major, minor or patch according to [semver](semver.org).
