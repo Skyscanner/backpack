@@ -28,4 +28,4 @@ All changes to Backpack should
 + Have considered extreme cases such as users with larger text or smaller devices.
 + Be well documented.
 + Be closed for modification of look and feel.
-+ Include an entry in `UNRELEASED.yaml` unless the change is purely internal.
++ Include an entry in `UNRELEASED.md` unless the change is purely internal.

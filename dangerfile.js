@@ -91,13 +91,13 @@ if (componentChangedOrCreated) {
 }
 
 // If any of the packages have changed, the UNRELEASED log should have been updated.
-const unreleasedModified = includes(modifiedFiles, 'UNRELEASED.yaml');
+const unreleasedModified = includes(modifiedFiles, 'UNRELEASED.md');
 const packagesModified = fileChanges.some(
   filePath => filePath.startsWith('packages/') && !filePath.endsWith('.md'),
 );
 if (packagesModified && !unreleasedModified) {
   warn(
-    "One or more packages have changed, but `UNRELEASED.yaml` wasn't updated.",
+    "One or more packages have changed, but `UNRELEASED.md` wasn't updated.",
   );
 }
 
