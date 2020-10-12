@@ -15,12 +15,23 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+/* @flow */
 
-import React from 'react';
+import React, { type AbstractComponent } from 'react';
 import { wrapDisplayName } from 'bpk-react-utils';
 
-export default function withLoadingBehavior(Component) {
-  class WithLoadingBehavior extends React.Component {
+type InjectedProps = {|
+  onLoad: () => mixed,
+  loading: boolean,
+|};
+
+export default function withLoadingBehavior<Config>(
+  Component: AbstractComponent<{| ...Config, ...InjectedProps |}>,
+): AbstractComponent<Config> {
+  class WithLoadingBehavior<C: Config> extends React.Component<
+    C,
+    {| loading: boolean |},
+  > {
     constructor() {
       super();
 
@@ -49,5 +60,6 @@ export default function withLoadingBehavior(Component) {
     Component,
     'withLoadingBehavior',
   );
+
   return WithLoadingBehavior;
 }
