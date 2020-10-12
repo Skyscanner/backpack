@@ -182,7 +182,7 @@ For anything non-trivial, we strongly recommend speaking to somebody from Backpa
 5. Submit a [pull request](https://github.com/Skyscanner/backpack/pulls).
 6. Notify someone in Backpack squad or drop a note in #backpack.
 
-Don't forget to update [`UNRELEASED.yaml`](UNRELEASED.yaml) for any user-facing changes.
+Don't forget to update [`UNRELEASED.md`](UNRELEASED.md) for any user-facing changes.
 
 Bear in mind that small, incremental pull requests are likely to be reviewed faster.
 
@@ -210,7 +210,7 @@ You can also run the tests in 'watch mode', which means the process will continu
 <details>
 <summary>Publish packages (Backpack squad members only)</summary>
 
-- Update the [unreleased changelog](/UNRELEASED.yaml) with every package that has changed, separating out `BRAKING`, `ADDED` and `FIXED` changes (there are examples at the bottom of the file). If you need more details on classification please checkout the [versioning decision](/decisions/versioning-rules.md)).
+- Update the [unreleased changelog](/UNRELEASED.md) with every package that has changed, separating out `BRAKING`, `ADDED` and `FIXED` changes (there are examples at the bottom of the file). If you need more details on classification please checkout the [versioning decision](/decisions/versioning-rules.md)).
   - Some useful commands for determining "what's changed?":
     - `npm run lerna updated`
     - `npm run lerna diff <package-name>`

@@ -1,6 +1,6 @@
 # Backpack changelog
 
-[Unreleased changes](./UNRELEASED.yaml).
+[Unreleased changes](./UNRELEASED.md).
 
 # 2020-10-07 - New flare variant of `BpkDialog`
 
