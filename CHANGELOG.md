@@ -2,6 +2,17 @@
 
 [Unreleased changes](./UNRELEASED.md).
 
+# 2020-10-12 - New radius changes
+
+**Added:**
+- bpk-tokens: 34.1.0 => 34.2.0
+  - Added new radius tokens for iOS and Android as part of the new guidelines.
+    - For now we are going to keep SM the same value until we have time to fully adopt in our apps - in case anything urgent arises that requires fixing.
+
+**Fixed:**
+- bpk-component-button: 3.2.62 => 3.2.63
+  - `BpkButton` has been updated to use `border-radius-sm` instead of `border-radius-xs` as per the new guidelines.
+
 # 2020-10-07 - New flare variant of `BpkDialog`
 
 **Added:**
