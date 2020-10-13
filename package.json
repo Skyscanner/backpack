@@ -175,6 +175,7 @@
       "^.+\\.scss$": "<rootDir>/scripts/stubs/styleStub.js",
       "^.+\\.svg$": "<rootDir>/scripts/stubs/fileStub.js"
     },
+    "coverageReporters": ["text"],
     "coverageThreshold": {
       "global": {
         "statements": 75,
