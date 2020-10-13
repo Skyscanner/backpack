@@ -1,0 +1,110 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BpkOverlay should render correctly 1`] = `
+<div
+  className="bpk-overlay__wrapper"
+>
+  <span>
+    Backpack
+  </span>
+  <div
+    className="bpk-overlay__overlay bpk-overlay__overlay--tint"
+  />
+</div>
+`;
+
+exports[`BpkOverlay should render correctly with borderRadiusStyle={none} 1`] = `
+<div
+  className="bpk-overlay__wrapper"
+>
+  <span>
+    Backpack
+  </span>
+  <div
+    className="bpk-overlay__overlay bpk-overlay__overlay--tint"
+  />
+</div>
+`;
+
+exports[`BpkOverlay should render correctly with borderRadiusStyle={sm} 1`] = `
+<div
+  className="bpk-overlay__wrapper"
+>
+  <span>
+    Backpack
+  </span>
+  <div
+    className="bpk-overlay__overlay bpk-overlay__overlay--border-radius-sm bpk-overlay__overlay--tint"
+  />
+</div>
+`;
+
+exports[`BpkOverlay should render correctly with foregroundContent 1`] = `
+<div
+  className="bpk-overlay__wrapper"
+>
+  <span>
+    Backpack
+  </span>
+  <div
+    className="bpk-overlay__overlay bpk-overlay__overlay--tint"
+  >
+    <span>
+      Skyscanner
+    </span>
+  </div>
+</div>
+`;
+
+exports[`BpkOverlay should render correctly with overlayType={none} 1`] = `
+<div
+  className="bpk-overlay__wrapper"
+>
+  <span>
+    Backpack
+  </span>
+  <div
+    className="bpk-overlay__overlay"
+  />
+</div>
+`;
+
+exports[`BpkOverlay should render correctly with overlayType={tint} 1`] = `
+<div
+  className="bpk-overlay__wrapper"
+>
+  <span>
+    Backpack
+  </span>
+  <div
+    className="bpk-overlay__overlay bpk-overlay__overlay--tint"
+  />
+</div>
+`;
+
+exports[`BpkOverlay should support arbitrary props 1`] = `
+<div
+  className="bpk-overlay__wrapper"
+  testID="123"
+>
+  <span>
+    Backpack
+  </span>
+  <div
+    className="bpk-overlay__overlay bpk-overlay__overlay--tint"
+  />
+</div>
+`;
+
+exports[`BpkOverlay should support custom class names 1`] = `
+<div
+  className="bpk-overlay__wrapper custom-classname"
+>
+  <span>
+    Backpack
+  </span>
+  <div
+    className="bpk-overlay__overlay bpk-overlay__overlay--tint"
+  />
+</div>
+`;

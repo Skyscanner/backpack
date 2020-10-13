@@ -263,6 +263,7 @@ borderRadius
 borderRadiusStyle
 BORDER_RADIUS_STYLES
 BORDER_RADIUS_STYLES.none
+BORDER_RADIUS_STYLES.sm
 borderlessBackground
 buttonType
 cellType
@@ -301,6 +302,7 @@ doneLabel
 expandDelay
 flareClassName
 fillStyle
+foregroundContent
 formatValue
 getApplicationElement
 getArrowPositionCallback
@@ -358,6 +360,9 @@ onRender
 onToggleExpanded
 onValueChange
 overlayStyle
+overlayType
+OVERLAY_TYPES
+OVERLAY_TYPES.tint
 pageCount
 popperModifiers
 portalStyle
@@ -654,6 +659,7 @@ bpk-component-modal
 bpk-component-navigation-bar
 bpk-component-navigation-stack
 bpk-component-nudger
+bpk-component-overlay
 bpk-component-pagination
 bpk-component-panel
 bpk-component-paragraph

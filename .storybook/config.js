@@ -95,6 +95,7 @@ configure(() => {
   require('../packages/bpk-component-modal/stories');
   require('../packages/bpk-component-navigation-bar/stories');
   require('../packages/bpk-component-navigation-stack/stories');
+  require('../packages/bpk-component-overlay/stories');
   require('../packages/bpk-component-nudger/stories');
   require('../packages/bpk-component-pagination/stories');
   require('../packages/bpk-component-panel/stories');
