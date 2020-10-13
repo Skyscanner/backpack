@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-overlay",
-  "version": "0.0.87",
+  "version": "1.0.0",
   "description": "Backpack overlay component.",
   "main": "index.js",
   "repository": {
