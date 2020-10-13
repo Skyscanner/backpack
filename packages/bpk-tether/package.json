@@ -2,18 +2,18 @@
   "name": "bpk-tether",
   "version": "1.0.18",
   "description": "Wrapper and utils for Tether.",
-  "main": "index.js",
+  "license": "Apache-2.0",
   "repository": {
     "type": "git",
     "url": "git@github.com:Skyscanner/backpack.git"
   },
   "author": "Backpack Design System <backpack@skyscanner.net>",
-  "license": "Apache-2.0",
-  "dependencies": {
-    "tether": "^1.4.0"
-  },
+  "main": "index.js",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
-  "gitHead": "6dea0c366b9237ca3a6df91c0f856594d30cc7d8"
+  "gitHead": "6dea0c366b9237ca3a6df91c0f856594d30cc7d8",
+  "dependencies": {
+    "tether": "^1.4.0"
+  }
 }

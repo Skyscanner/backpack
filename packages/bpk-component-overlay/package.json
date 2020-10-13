@@ -2,26 +2,26 @@
   "name": "bpk-component-overlay",
   "version": "0.0.87",
   "description": "Backpack overlay component.",
-  "main": "index.js",
+  "license": "Apache-2.0",
   "repository": {
     "type": "git",
     "url": "git@github.com:Skyscanner/backpack.git"
   },
   "author": "Backpack Design System <backpack@skyscanner.net>",
-  "license": "Apache-2.0",
-  "peerDependencies": {
-    "react": "^16.0.0"
+  "main": "index.js",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
   },
   "dependencies": {
     "bpk-mixins": "^20.1.1",
     "bpk-react-utils": "^3.0.6",
     "prop-types": "^15.5.8"
   },
+  "peerDependencies": {
+    "react": "^16.0.0"
+  },
   "devDependencies": {
     "bpk-component-image": "^4.0.42",
     "bpk-component-text": "^3.1.19"
-  },
-  "publishConfig": {
-    "registry": "https://registry.npmjs.org/"
   }
 }

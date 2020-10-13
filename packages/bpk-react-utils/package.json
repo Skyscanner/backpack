@@ -2,25 +2,25 @@
   "name": "bpk-react-utils",
   "version": "3.0.6",
   "description": "Utilities for Backpack's React components.",
-  "main": "index.js",
+  "license": "Apache-2.0",
   "repository": {
     "type": "git",
     "url": "git@github.com:Skyscanner/backpack.git"
   },
   "author": "Backpack Design System <backpack@skyscanner.net>",
-  "license": "Apache-2.0",
-  "peerDependencies": {
-    "react": "^16.0.0",
-    "react-dom": "^16.0.0"
+  "main": "index.js",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
   },
+  "gitHead": "136d3706ec2f6823e38a2b1e25715b1a280890b5",
   "dependencies": {
     "object-assign": "^4.1.1",
     "prop-types": "^15.6.2",
     "react-transition-group": "^2.5.3",
     "recompose": "^0.30.0"
   },
-  "publishConfig": {
-    "registry": "https://registry.npmjs.org/"
-  },
-  "gitHead": "136d3706ec2f6823e38a2b1e25715b1a280890b5"
+  "peerDependencies": {
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0"
+  }
 }

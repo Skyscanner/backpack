@@ -2,16 +2,17 @@
   "name": "bpk-component-phone-input",
   "version": "4.1.75",
   "description": "Backpack phone input component.",
-  "main": "index.js",
+  "license": "Apache-2.0",
   "repository": {
     "type": "git",
     "url": "git@github.com:Skyscanner/backpack.git"
   },
   "author": "Backpack Design System <backpack@skyscanner.net>",
-  "license": "Apache-2.0",
-  "peerDependencies": {
-    "react": "^16.0.0"
+  "main": "index.js",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
   },
+  "gitHead": "f5452c0331ac90041e38557c771c744d4f5fab66",
   "dependencies": {
     "bpk-component-input": "^5.0.85",
     "bpk-component-label": "^4.0.85",
@@ -22,12 +23,11 @@
     "bpk-tokens": "^34.2.0",
     "prop-types": "^15.6.2"
   },
+  "peerDependencies": {
+    "react": "^16.0.0"
+  },
   "devDependencies": {
     "bpk-component-fieldset": "^2.0.92",
     "bpk-component-image": "^4.0.42"
-  },
-  "publishConfig": {
-    "registry": "https://registry.npmjs.org/"
-  },
-  "gitHead": "f5452c0331ac90041e38557c771c744d4f5fab66"
+  }
 }
