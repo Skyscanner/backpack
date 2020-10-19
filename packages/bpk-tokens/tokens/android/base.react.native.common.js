@@ -41,7 +41,7 @@ module.exports = {
   borderRadiusLg: 24,
   borderRadiusMd: 12,
   borderRadiusPill: 40,
-  borderRadiusSm: 4,
+  borderRadiusSm: 8,
   borderRadiusXs: 4,
   borderSizeLg: 2,
   borderSizeSm: 1,

@@ -2,6 +2,10 @@
 
 > Place your changes below this line.
 
+**Breaking:**
+- bpk-tokens:
+  - `borderRadiusSm` for Android and iOS has changed from `4` to `8`.
+
 **Fixed:**
 - bpk-component-image:
   - Added flow types for `withLoadingBehavior`.
