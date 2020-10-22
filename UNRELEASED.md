@@ -3,8 +3,12 @@
 > Place your changes below this line.
 
 **Fixed:**
-- bpk-component-image:
-  - Added flow types for `withLoadingBehavior`.
+
+ - bpk-component-image:
+   - Added flow types for `withLoadingBehavior`.
+
+ - bpk-tokens:
+   - Reverted the removal of iOS `borderSize` and `borderRadius` tokens as these should still exist for use in React Native.
 
 ## How to write a good changelog entry
 

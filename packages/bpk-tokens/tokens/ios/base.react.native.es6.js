@@ -69,6 +69,14 @@ export const backgroundTertiaryColor = {
 };
 export const backgroundTertiaryDarkColor = "rgb(44, 44, 46)";
 export const backgroundTertiaryLightColor = "rgb(255, 255, 255)";
+export const borderRadiusLg = 24;
+export const borderRadiusMd = 12;
+export const borderRadiusPill = 40;
+export const borderRadiusSm = 4;
+export const borderRadiusXs = 4;
+export const borderSizeLg = 2;
+export const borderSizeSm = 1;
+export const borderSizeXl = 3;
 export const borderWidthLg = 2;
 export const borderWidthSm = 1;
 export const borderWidthXl = 3;
@@ -237,6 +245,9 @@ animationDurationSm,
 animationDurationXs,
 };
 export const borders = {
+borderSizeLg,
+borderSizeSm,
+borderSizeXl,
 borderWidthLg,
 borderWidthSm,
 borderWidthXl,
@@ -356,6 +367,11 @@ textXxlLetterSpacing,
 textXxxlLetterSpacing,
 };
 export const radii = {
+borderRadiusLg,
+borderRadiusMd,
+borderRadiusPill,
+borderRadiusSm,
+borderRadiusXs,
 cornerRadiusLg,
 cornerRadiusMd,
 cornerRadiusPill,
@@ -433,14 +449,6 @@ lineHeightXs,
 lineHeightXxl,
 };
 // Android only tokens
-export const borderRadiusLg = undefined;
-export const borderRadiusMd = undefined;
-export const borderRadiusPill = undefined;
-export const borderRadiusSm = undefined;
-export const borderRadiusXs = undefined;
-export const borderSizeLg = undefined;
-export const borderSizeSm = undefined;
-export const borderSizeXl = undefined;
 export const elevationBase = undefined;
 export const elevationLg = undefined;
 export const elevationSm = undefined;

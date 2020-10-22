@@ -4,6 +4,18 @@
     "type": "size"
   },
   "props": {
+    "BORDER_SIZE_SM": {
+      "value": "{!BORDER_SIZE_SM}",
+      "category": "borders"
+    },
+    "BORDER_SIZE_LG": {
+      "value": "{!BORDER_SIZE_LG}",
+      "category": "borders"
+    },
+    "BORDER_SIZE_XL": {
+      "value": "{!BORDER_SIZE_XL}",
+      "category": "borders"
+    },
     "BORDER_WIDTH_SM": {
       "value": "{!BORDER_SIZE_SM}",
       "category": "borders"
@@ -33,6 +45,26 @@
       "category": "radii"
     },
     "CORNER_RADIUS_PILL": {
+      "value": "{!BORDER_RADIUS_PILL}",
+      "category": "radii"
+    },
+    "BORDER_RADIUS_XS": {
+      "value": "{!BORDER_RADIUS_XS}",
+      "category": "radii"
+    },
+    "BORDER_RADIUS_SM": {
+      "value": "{!BORDER_RADIUS_SM}",
+      "category": "radii"
+    },
+    "BORDER_RADIUS_MD": {
+      "value": "{!BORDER_RADIUS_MD}",
+      "category": "radii"
+    },
+    "BORDER_RADIUS_LG": {
+      "value": "{!BORDER_RADIUS_LG}",
+      "category": "radii"
+    },
+    "BORDER_RADIUS_PILL": {
       "value": "{!BORDER_RADIUS_PILL}",
       "category": "radii"
     }
