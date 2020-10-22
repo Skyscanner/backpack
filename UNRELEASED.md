@@ -2,14 +2,6 @@
 
 > Place your changes below this line.
 
-**Fixed:**
-
- - bpk-component-image:
-   - Added flow types for `withLoadingBehavior`.
-
- - bpk-tokens:
-   - Reverted the removal of iOS `borderSize` and `borderRadius` tokens as these should still exist for use in React Native.
-
 ## How to write a good changelog entry
 
 1. Add 'Breaking', 'Added' or 'Fixed' in bold depending on if the change will be major, minor or patch according to [semver](semver.org).

@@ -2,6 +2,16 @@
 
 [Unreleased changes](./UNRELEASED.md).
 
+# 2020-10-22
+
+**Fixed:**
+
+ - bpk-component-image:
+   - Added flow types for `withLoadingBehavior`.
+
+ - bpk-tokens:
+   - Reverted the removal of iOS `borderSize` and `borderRadius` tokens as these should still exist for use in React Native.
+
 # 2020-10-20
 
 **Breaking:**

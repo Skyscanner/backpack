@@ -23,5 +23,6 @@
   "devDependencies": {
     "bpk-component-image": "^4.0.44",
     "bpk-component-text": "^3.1.21"
-  }
+  },
+  "gitHead": "637cb6bcb0f677761a119d6bd32b1d2f36236b72"
 }
