@@ -24,14 +24,6 @@ import androidTokens from '../tokens/base.raw.android.json';
 import iosTokens from '../tokens/base.raw.ios.json';
 
 const ANDROID_ONLY_PROPS = [
-  'BORDER_RADIUS_LG',
-  'BORDER_RADIUS_MD',
-  'BORDER_RADIUS_PILL',
-  'BORDER_RADIUS_SM',
-  'BORDER_RADIUS_XS',
-  'BORDER_SIZE_LG',
-  'BORDER_SIZE_SM',
-  'BORDER_SIZE_XL',
   'ELEVATION_BASE',
   'ELEVATION_LG',
   'ELEVATION_SM',
