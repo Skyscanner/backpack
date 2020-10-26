@@ -52,6 +52,24 @@ describe('BpkDataTable', () => {
     expect(tree).toMatchSnapshot();
   });
 
+  it('should render correctly when "onRowClick" is set', () => {
+    const tree = renderer
+      .create(
+        <BpkDataTable rows={rows} height={200} onRowClick={() => {}}>
+          <BpkDataTableColumn label="Name" dataKey="name" width={100} />
+          <BpkDataTableColumn
+            label="Description"
+            dataKey="description"
+            width={100}
+            flexGrow={1}
+          />
+          <BpkDataTableColumn label="Bla" dataKey="bla" width={100} />
+        </BpkDataTable>,
+      )
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
   it('should render correctly with no data; only headers', () => {
     const tree = renderer
       .create(

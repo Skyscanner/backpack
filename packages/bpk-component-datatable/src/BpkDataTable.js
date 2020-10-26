@@ -139,6 +139,9 @@ class BpkDataTable extends Component {
     if (this.state.rowSelected === index) {
       classNames.push(getClassName('bpk-data-table__row--selected'));
     }
+    if (this.props.onRowClick !== undefined) {
+      classNames.push(getClassName('bpk-data-table__row--clickable'));
+    }
     if (index === -1) {
       classNames.push(getClassName('bpk-data-table__header-row'));
     }
