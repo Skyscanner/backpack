@@ -4,7 +4,7 @@
 
 **Breaking:**
 - bpk-tokens:
-  - `borderRadiusSm` and `BPKCornerRadiusSm` for iOS has changed from `4` to `8`.
+  - `borderRadiusSm` and `cornerRadiusSm` for iOS have changed from `4` to `8`.
 
 ## How to write a good changelog entry
 
@@ -33,4 +33,3 @@ See [`CHANGELOG.md`](CHANGELOG.md) for real-world examples of good changelog ent
 
  - bpk-component-horcrux:
    - Fixed issue where `BpkHorcrux` would occasionally possess the living.
-
