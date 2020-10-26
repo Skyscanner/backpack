@@ -1,15 +1,16 @@
 # GitHub API token for danger
 
 ## Background
-The `BackpackBot` GitHub account is a completely standalone account on GitHub which has no access to the [Skyscanner organisation](https://github.com/orgs/Skyscanner/) or [Backpack team](https://github.com/orgs/Skyscanner/teams/backpack).
 
-The account has an access token that is limited to `public_repo`. This is used by Danger to add comments on our PRs. It is the smallest scope that Danger needs to be able to comment on PRs.
+The `BackpackBot` GitHub account used to be a completely standalone account on GitHub which had no access to the [Skyscanner organisation](https://github.com/orgs/Skyscanner/) or [Backpack team](https://github.com/orgs/Skyscanner/teams/backpack). However we have decided to use a private Danger token and thus it's now a member of the Backpack team.
+
+The account has an access token that is limited to `public_repo`. This is used by Danger to add comments on our PRs, **this token should be kept secret**.
 
 ## Decision
-In the Travis settings for the `backpack` repo, this token is not hidden, and can therefore appear in public build logs.
+When we use the token for Danger it should be a secret i.e. not visible to forks or in build logs.
 
 ## Thinking
-If we hide the token, Danger will not be able to comment on PRs created from forks.
 
-As the token does not allow access to any code repos within Skyscanner, we do not consider it a risk to expose it via Travis.
+While Danger recommends using a non-hidden token the risk is too great and we rarely if ever gets PRs from forks anyway.
+When we do get PRs from forks we can cherry pick the commits over to our own branch.
 
