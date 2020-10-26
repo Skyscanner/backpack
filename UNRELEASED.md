@@ -2,6 +2,10 @@
 
 > Place your changes below this line.
 
+**Breaking:**
+- bpk-tokens:
+  - `borderRadiusSm` and `BPKCornerRadiusSm` for iOS has changed from `4` to `8`.
+
 ## How to write a good changelog entry
 
 1. Add 'Breaking', 'Added' or 'Fixed' in bold depending on if the change will be major, minor or patch according to [semver](semver.org).

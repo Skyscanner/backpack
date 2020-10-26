@@ -46,7 +46,7 @@
       "value": 40
     },
     "BORDER_RADIUS_SM": {
-      "value": 4
+      "value": 8
     },
     "BORDER_RADIUS_XS": {
       "value": 4
@@ -416,7 +416,7 @@
     },
     "BORDER_RADIUS_SM": {
       "type": "size",
-      "value": "4",
+      "value": "8",
       "category": "radii",
       "originalValue": "{!BORDER_RADIUS_SM}",
       "name": "BORDER_RADIUS_SM"
@@ -836,7 +836,7 @@
     },
     "CORNER_RADIUS_SM": {
       "type": "size",
-      "value": "4",
+      "value": "8",
       "category": "radii",
       "originalValue": "{!BORDER_RADIUS_SM}",
       "name": "CORNER_RADIUS_SM"

@@ -23,7 +23,7 @@
 
 **Breaking:**
 - bpk-tokens:
-  - `borderRadiusSm` for Android and iOS has changed from `4` to `8`.
+  - `borderRadiusSm` for Android has changed from `4` to `8`.
 
 # 2020-10-13 - New overlay component
 
