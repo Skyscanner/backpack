@@ -46,7 +46,7 @@ storiesOf('bpk-component-datatable', module)
       <BpkDataTableColumn label="Bla" dataKey="bla" width={100} />
     </BpkDataTable>
   ))
-  .add('Rows not clickable', () => (
+  .add('Rows not hoverable', () => (
     <BpkDataTable rows={rows} height={300}>
       <BpkDataTableColumn label="Name" dataKey="name" width={100} />
       <BpkDataTableColumn
