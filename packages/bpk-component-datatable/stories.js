@@ -46,6 +46,18 @@ storiesOf('bpk-component-datatable', module)
       <BpkDataTableColumn label="Bla" dataKey="bla" width={100} />
     </BpkDataTable>
   ))
+  .add('Rows not hoverable', () => (
+    <BpkDataTable rows={rows} height={300}>
+      <BpkDataTableColumn label="Name" dataKey="name" width={100} />
+      <BpkDataTableColumn
+        label="Description"
+        dataKey="description"
+        width={100}
+        flexGrow={1}
+      />
+      <BpkDataTableColumn label="Bla" dataKey="bla" width={100} />
+    </BpkDataTable>
+  ))
   .add('Fixed Width Example', () => (
     <BpkDataTable rows={rows} height={300} width={400} onRowClick={onRowClick}>
       <BpkDataTableColumn label="Name" dataKey="name" width={100} />

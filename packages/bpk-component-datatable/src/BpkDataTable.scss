@@ -66,7 +66,7 @@ $bpk-border-size-datatable: $bpk-border-size-xl * 2;
       border-bottom: $bpk-border-size-sm solid $bpk-color-sky-gray-tint-07;
     }
 
-    &:not(.bpk-data-table__header-row):hover {
+    &--clickable:not(.bpk-data-table__header-row):hover {
       background-color: $bpk-color-sky-gray-tint-07;
       cursor: pointer;
 
