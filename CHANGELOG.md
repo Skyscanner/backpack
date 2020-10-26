@@ -2,6 +2,13 @@
 
 [Unreleased changes](./UNRELEASED.md).
 
+# 2020-10-26
+
+**Fixed:**
+
+- bpk-component-datatable:
+  - When `BpkDataTable` doesn't have `onRowClick` set, the hover state won't apply to rows. Previously, the hover state would apply regardless of whether rows were selectable or not.
+
 # 2020-10-22
 
 **Fixed:**
