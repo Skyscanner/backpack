@@ -1,0 +1,38 @@
+# This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
+
+name: CI
+
+on:
+  push:
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    
+    - name: nvm install
+      shell: bash -l {0}
+      run: nvm install
+    
+    - name: nvm use
+      shell: bash -l {0}
+      run: nvm use
+    
+    - name: Install deps
+      run: npm ci
+    
+    - name: Build Backpack
+      run: npm run build
+
+    - name: Check package-lock
+      shell: bash -l {0}
+      run: ./scripts/check-pristine-state package-lock.json
+    
+    - name: Test
+      shell: bash -l {0}
+      run: (set -o pipefail; npm test |& tee test.log)
