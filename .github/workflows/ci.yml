@@ -5,6 +5,7 @@ name: CI
 
 on:
   push:
+    branches: [master]
   pull_request:
     branches: [ master ]
 
@@ -30,9 +31,48 @@ jobs:
       run: npm run build
 
     - name: Check package-lock
-      shell: bash -l {0}
       run: ./scripts/check-pristine-state package-lock.json
     
     - name: Test
-      shell: bash -l {0}
       run: (set -o pipefail; npm test |& tee test.log)
+    
+    - name: Build Storybook
+      if: github.ref == 'refs/heads/master'
+      run: npm run storybook:dist
+    
+    - name: Build Sass docs
+      if: github.ref == 'refs/heads/master'
+      run: npm run sassdoc
+
+    - name: Deploy sassdoc
+      uses: peaceiris/actions-gh-pages@v3
+      if: github.ref == 'refs/heads/master'
+      with:
+        personal_token: ${{ secrets.DEPLOY_TOKEN }}
+        publish_dir: dist-sassdoc/
+        keep_files: true
+        external_repository: backpack/sassdoc
+        publish_branch: master
+    
+    - name: Deploy storybook
+      uses: peaceiris/actions-gh-pages@v3
+      if: github.ref == 'refs/heads/master'
+      with:
+        personal_token: ${{ secrets.DEPLOY_TOKEN }}
+        publish_dir: dist-storybook/
+        keep_files: true
+        external_repository: backpack/storybook
+        publish_branch: master
+
+
+  trigger_docs:
+    name: Trigger docs Travis CI build
+    if: github.ref == 'refs/heads/master'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Trigger docs Travis CI
+        env:
+          TRAVIS_API_KEY: ${{ secrets.TRAVIS_API_KEY }}
+        run: |
+          curl -f -s -X POST -H "Content-Type: application/json" -H "Accept: application/json" -H "Travis-API-Version: 3" -H "Authorization: token $TRAVIS_API_KEY" -d '{"request": {"branch":"master"}}' https://api.travis-ci.org/repo/Skyscanner%2Fbackpack-docs/requests
