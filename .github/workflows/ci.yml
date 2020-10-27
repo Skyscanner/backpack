@@ -31,7 +31,7 @@ jobs:
       run: ./scripts/check-pristine-state package-lock.json
     
     - name: Test
-      run: (set -o pipefail; npm test |& tee test.log)
+      run: npm test
     
     - name: Build Storybook
       if: github.ref == 'refs/heads/master'
