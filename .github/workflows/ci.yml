@@ -60,16 +60,3 @@ jobs:
         keep_files: true
         external_repository: backpack/storybook
         publish_branch: master
-
-
-  trigger_docs:
-    name: Trigger docs Travis CI build
-    if: github.ref == 'refs/heads/master'
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Trigger docs Travis CI
-        env:
-          TRAVIS_API_KEY: ${{ secrets.TRAVIS_API_KEY }}
-        run: |
-          curl -f -s -X POST -H "Content-Type: application/json" -H "Accept: application/json" -H "Travis-API-Version: 3" -H "Authorization: token $TRAVIS_API_KEY" -d '{"request": {"branch":"master"}}' https://api.travis-ci.org/repo/Skyscanner%2Fbackpack-docs/requests
