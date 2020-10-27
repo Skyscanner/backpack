@@ -2,44 +2,54 @@
 
 [Unreleased changes](./UNRELEASED.md).
 
+# 2020-10-27
+
+**Breaking:**
+
+ - bpk-tokens: 35.0.2 => 36.0.0
+   - `borderRadiusSm` and `cornerRadiusSm` for iOS have changed from `4` to `8`.
+
 # 2020-10-26
 
 **Fixed:**
 
-- bpk-component-datatable:
-  - When `BpkDataTable` doesn't have `onRowClick` set, the hover state won't apply to rows. Previously, the hover state would apply regardless of whether rows were selectable or not.
+ - bpk-component-datatable: 2.0.44 => 2.0.45
+   - When `BpkDataTable` doesn't have `onRowClick` set, the hover state won't apply to rows. Previously, the hover state would apply regardless of whether rows were selectable or not.
 
 # 2020-10-22
 
 **Fixed:**
 
- - bpk-component-image:
+ - bpk-component-image: 4.0.45 => 4.0.46
    - Added flow types for `withLoadingBehavior`.
 
- - bpk-tokens:
+ - bpk-tokens: 35.0.0 => 35.0.1
    - Reverted the removal of iOS `borderSize` and `borderRadius` tokens as these should still exist for use in React Native.
 
 # 2020-10-20
 
 **Breaking:**
-- bpk-tokens:
-  - `borderRadiusSm` for Android has changed from `4` to `8`.
+
+ - bpk-tokens: 34.2.0 => 35.0.0
+   - `borderRadiusSm` for Android has changed from `4` to `8`.
 
 # 2020-10-13 - New overlay component
 
 **Added:**
 
-- bpk-component-overlay: 1.0.0
-  - New `BpkOverlay` component, used for adding tints to backgrounds. See https://backpack.github.io/components/overlay?platform=web for more.
+ - bpk-component-overlay: 1.0.0
+   - New `BpkOverlay` component, used for adding tints to backgrounds. See https://backpack.github.io/components/overlay?platform=web for more.
 
 # 2020-10-12 - New radius changes
 
 **Added:**
+
 - bpk-tokens: 34.1.0 => 34.2.0
   - Added new radius tokens for iOS and Android as part of the new guidelines.
     - For now we are going to keep SM the same value until we have time to fully adopt in our apps - in case anything urgent arises that requires fixing.
 
 **Fixed:**
+
 - bpk-component-button: 3.2.62 => 3.2.63
   - `BpkButton` has been updated to use `border-radius-sm` instead of `border-radius-xs` as per the new guidelines.
 
