@@ -55,6 +55,7 @@ export default () => (
 ```
 
 ### withLoadingBehavior
+
 `withLoadingBehavior` is a HOC which provides `loading` state for `BpkImage`. This allows the component to have different behaviour before and after loading completes.
 When the `loading` prop is set true, a spinner will be displayed. When this changes to false, the spinner will fade away and the loaded image and content will fade into view.
 
@@ -111,19 +112,23 @@ export default () => (
 
 ## Props
 
-| Property                     | PropType                         | Required | Default Value             |
-| ---------------------------- | -------------------------------- | -------- | ------------------------- |
-| altText                      | string                           | true     | -                         |
-| height                       | number                           | true     | -                         |
-| src                          | string                           | true     | -                         |
-| width                        | number                           | true     | -                         |
-| borderRadiusStyle            | oneOf(BORDER_RADIUS_STYLES)      | false    | BORDER_RADIUS_STYLES.none |
-| className                    | string                           | false    | null                      |
-| inView                       | bool                             | false    | true                      |
-| loading                      | bool                             | false    | false                     |
-| onLoad                       | func                             | false    | null                      |
-| style                        | object                           | false    | {}                        |
-| suppressHydrationWarnings    | bool                             | false    | false                     |
+| Property                  | PropType                    | Required | Default Value             |
+| ------------------------- | --------------------------- | -------- | ------------------------- |
+| altText                   | string                      | true     | -                         |
+| height                    | number                      | true     | -                         |
+| src                       | string                      | true     | -                         |
+| width                     | number                      | true     | -                         |
+| borderRadiusStyle         | oneOf(BORDER_RADIUS_STYLES) | false    | BORDER_RADIUS_STYLES.none |
+| className                 | string                      | false    | null                      |
+| inView                    | bool                        | false    | true                      |
+| loading                   | bool                        | false    | false                     |
+| onLoad                    | func                        | false    | null                      |
+| style                     | object                      | false    | {}                        |
+| suppressHydrationWarnings | bool                        | false    | false                     |
+
+Note: The `width` and `height` props do not dictate the size that the image is rendered. They should match the dimensions of the source image so that the component knows how much space to preserve during loading. The size of the image can be determined using CSS.
+
+Note: All [standard `img` attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Img#Attributes) including `srcSet` are also supported.
 
 ## BpkBackgroundImage
 
