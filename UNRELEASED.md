@@ -1,6 +1,9 @@
 # Unreleased
 
 > Place your changes below this line.
+**Breaking:**
+ - bpk-component-button:
+   - We've increased the tappable/clickable area around link style buttons to make them easier to interact with. This change should improve accessibility and SEO.
 
 ## How to write a good changelog entry
 
