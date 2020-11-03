@@ -97,8 +97,6 @@ const BpkConfigurableNudger = <T>(props: Props<T>) => {
   return (
     <div className={classNames.join(' ')}>
       <ButtonComponent
-        secondary={buttonType === 'secondary'}
-        outline={buttonType === 'outline'}
         iconOnly
         onClick={() => onChange(decrementValue(value))}
         disabled={minButtonDisabled}
@@ -117,8 +115,6 @@ const BpkConfigurableNudger = <T>(props: Props<T>) => {
         className={inputStyles.join(' ')}
       />
       <ButtonComponent
-        secondary={buttonType === 'secondary'}
-        outline={buttonType === 'outline'}
         iconOnly
         onClick={() => onChange(incrementValue(value))}
         disabled={maxButtonDisabled}
