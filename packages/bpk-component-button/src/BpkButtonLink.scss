@@ -18,6 +18,12 @@
 
 @import '~bpk-mixins/index';
 
-.bpk-button--link {
-  @include bpk-button--link;
+.bpk-button {
+  &--link {
+    @include bpk-button--link;
+  }
+
+  &--padded {
+    @include bpk-button--padded;
+  }
 }

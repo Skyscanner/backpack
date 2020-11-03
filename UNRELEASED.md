@@ -1,9 +1,9 @@
 # Unreleased
 
 > Place your changes below this line.
-**Breaking:**
+**Added:**
  - bpk-component-button:
-   - We've increased the tappable/clickable area around link style buttons to make them easier to interact with. This change should improve accessibility and SEO.
+   - `BpkButtonLink` now has a `padded` prop (false by default) which increases the tappable/clickable area around link style buttons to make them easier to interact with. Enabling this will improve accessibility and SEO.
 
 ## How to write a good changelog entry
 

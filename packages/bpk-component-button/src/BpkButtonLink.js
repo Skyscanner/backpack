@@ -19,17 +19,35 @@
 /* @flow strict */
 
 import React from 'react';
+import PropTypes from 'prop-types';
 
-import { type Props, defaultProps, propTypes } from './common-types';
+import {
+  type Props as CommonProps,
+  defaultProps,
+  propTypes,
+} from './common-types';
 import BpkButtonBase, { cssModules } from './BpkButtonBase';
 import STYLES from './BpkButtonLink.scss';
 
 const getClassName = cssModules(STYLES);
 
+type Props = {
+  ...CommonProps,
+  secondary: boolean,
+  destructive: boolean,
+  featured: boolean,
+  outline: boolean,
+  padded: boolean,
+  link: boolean,
+};
 const BpkButtonLink = (props: Props) => {
-  const { className, ...rest } = props;
+  const { className, padded, ...rest } = props;
 
   const classNames = [getClassName('bpk-button--link')];
+
+  if (padded) {
+    classNames.push(getClassName('bpk-button--padded'));
+  }
 
   if (className) {
     classNames.push(className);
@@ -42,7 +60,7 @@ const BpkButtonLink = (props: Props) => {
   );
 };
 
-BpkButtonLink.propTypes = { ...propTypes };
-BpkButtonLink.defaultProps = { ...defaultProps };
+BpkButtonLink.propTypes = { ...propTypes, padded: PropTypes.bool };
+BpkButtonLink.defaultProps = { ...defaultProps, padded: false };
 
 export default BpkButtonLink;

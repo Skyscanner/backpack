@@ -38,20 +38,23 @@ export default () => (
 | Property    | PropType | Required | Default Value |
 | ----------- | -------- | -------- | ------------- |
 | children    | -        | true     | -             |
+| destructive | bool     | false    | false         |
+| featured    | bool     | false    | false         |
+| link        | bool     | false    | false         |
+| outline     | bool     | false    | false         |
+| secondary   | bool     | false    | false         |
 | blank       | bool     | false    | false         |
 | className   | string   | false    | null          |
 | disabled    | bool     | false    | false         |
-| destructive | bool     | false    | false         |
-| featured    | bool     | false    | false         |
 | href        | string   | false    | null          |
 | iconOnly    | bool     | false    | false         |
 | large       | bool     | false    | false         |
-| link        | bool     | false    | false         |
 | onClick     | func     | false    | null          |
-| outline     | bool     | false    | false         |
+| padded      | bool     | false    | false         |
 | rel         | string   | false    | null          |
-| secondary   | bool     | false    | false         |
 | submit      | bool     | false    | false         |
+
+> Note: The `padded` boolean only applies to link-style buttons
 
 ## Theme Props
 

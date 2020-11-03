@@ -140,6 +140,9 @@ storiesOf('bpk-component-button', module)
   .add('Secondary', () => <ButtonStory wrapped={BpkButtonSecondary} />)
   .add('Destructive', () => <ButtonStory wrapped={BpkButtonDestructive} />)
   .add('Link button', () => <ButtonStory wrapped={BpkButtonLink} />)
+  .add('Link button with padding', () => (
+    <ButtonStory wrapped={props => <BpkButtonLink padded {...props} />} />
+  ))
   .add('Featured', () => <ButtonStory wrapped={BpkButtonFeatured} />)
   .add('Outline', () => (
     <ButtonStory
