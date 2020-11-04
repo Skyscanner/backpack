@@ -392,6 +392,7 @@
 ///   }
 
 @mixin bpk-button--link {
+  padding: 0;
   border-radius: 0;
   background: none; /* stylelint-disable-line order/order, order/properties-order */
   font-weight: normal;
@@ -412,6 +413,21 @@
     color: $bpk-color-sky-gray-tint-04;
     text-decoration: none;
   }
+}
+
+/// Padded button. Modifies the bpk-button mixin.
+///
+/// @require {mixin} bpk-link
+///
+/// @example scss
+///   .selector {
+///     @include bpk-button();
+///     @include bpk-button--link();
+///     @include bpk-button--padded();
+///   }
+
+@mixin bpk-button--padded {
+  padding: $bpk-button-padding-y $bpk-button-padding-x;
 }
 
 /// Icon-only button. Modifies the bpk-button mixin.

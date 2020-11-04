@@ -18,7 +18,7 @@
 
 /* @flow strict */
 
-import React, { type Node } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
 // eslint-disable-next-line import/no-cycle
@@ -31,86 +31,70 @@ import {
   BpkButtonOutline,
 } from '../index';
 
+import {
+  type Props as CommonProps,
+  propTypes,
+  defaultProps,
+} from './common-types';
+
 type Props = {
-  children: Node,
-  href: ?string,
-  className: ?string,
-  disabled: boolean,
-  onClick: ?(event: SyntheticEvent<>) => mixed,
-  submit: boolean,
+  ...CommonProps,
   secondary: boolean,
   destructive: boolean,
   featured: boolean,
   outline: boolean,
-  large: boolean,
   link: boolean,
-  iconOnly: boolean,
-  blank: boolean,
-  rel: ?string,
+  padded: boolean,
 };
 
 const BpkButton = (props: Props) => {
   const {
-    children,
     secondary,
     destructive,
     featured,
     outline,
     link,
+    padded,
     ...rest
   } = props;
 
   if (secondary) {
-    return <BpkButtonSecondary {...rest}>{children}</BpkButtonSecondary>;
+    return <BpkButtonSecondary {...rest} />;
   }
   if (destructive) {
-    return <BpkButtonDestructive {...rest}>{children}</BpkButtonDestructive>;
+    return <BpkButtonDestructive {...rest} />;
   }
   if (featured) {
-    return <BpkButtonFeatured {...rest}>{children}</BpkButtonFeatured>;
+    return <BpkButtonFeatured {...rest} />;
   }
   if (outline) {
-    return <BpkButtonOutline {...rest}>{children}</BpkButtonOutline>;
+    return <BpkButtonOutline {...rest} />;
   }
   if (link) {
-    return <BpkButtonLink {...rest}>{children}</BpkButtonLink>;
+    // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
+    return <BpkButtonLink padded={padded} {...rest} />;
   }
-  return <BpkButtonPrimary {...rest}>{children}</BpkButtonPrimary>;
+  return <BpkButtonPrimary {...rest} />;
 };
 
 BpkButton.propTypes = {
-  children: PropTypes.node.isRequired,
-  href: PropTypes.string,
-  className: PropTypes.string,
-  disabled: PropTypes.bool,
-  onClick: PropTypes.func,
-  submit: PropTypes.bool,
+  ...propTypes,
   secondary: PropTypes.bool,
   destructive: PropTypes.bool,
   featured: PropTypes.bool,
   outline: PropTypes.bool,
-  large: PropTypes.bool,
+  padded: PropTypes.bool,
   link: PropTypes.bool,
-  iconOnly: PropTypes.bool,
-  blank: PropTypes.bool,
-  rel: PropTypes.string,
 };
 
 BpkButton.defaultProps = {
-  href: null,
-  className: null,
-  disabled: false,
-  onClick: null,
-  submit: false,
+  ...defaultProps,
   secondary: false,
   destructive: false,
   featured: false,
   outline: false,
-  large: false,
+  padded: false,
   link: false,
-  iconOnly: false,
-  blank: false,
-  rel: null,
 };
 
 export default BpkButton;
