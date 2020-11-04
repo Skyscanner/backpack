@@ -33,12 +33,7 @@ const getClassName = cssModules(STYLES);
 
 type Props = {
   ...CommonProps,
-  secondary: boolean,
-  destructive: boolean,
-  featured: boolean,
-  outline: boolean,
   padded: boolean,
-  link: boolean,
 };
 const BpkButtonLink = (props: Props) => {
   const { className, padded, ...rest } = props;

@@ -43,8 +43,8 @@ type Props = {
   destructive: boolean,
   featured: boolean,
   outline: boolean,
-  padded: boolean,
   link: boolean,
+  padded: boolean,
 };
 
 const BpkButton = (props: Props) => {
