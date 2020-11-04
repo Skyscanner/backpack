@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-star-rating",
-  "version": "2.1.86",
+  "version": "2.1.87",
   "description": "Backpack rating star component.",
   "license": "Apache-2.0",
   "repository": {
@@ -14,8 +14,8 @@
   },
   "gitHead": "a6910b1b5068590c7ba3691bedeb5818160cc477",
   "dependencies": {
-    "bpk-component-icon": "^8.2.27",
-    "bpk-mixins": "^20.1.5",
+    "bpk-component-icon": "^8.2.28",
+    "bpk-mixins": "^20.1.6",
     "bpk-react-utils": "^3.0.7",
     "prop-types": "^15.6.2"
   },
@@ -23,6 +23,6 @@
     "react": "^16.0.0"
   },
   "devDependencies": {
-    "bpk-component-table": "^2.0.88"
+    "bpk-component-table": "^2.0.89"
   }
 }
