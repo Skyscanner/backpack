@@ -2,7 +2,7 @@
 
 > Backpack is a collection of design resources, reusable components and guidelines for creating Skyscanner's products.
 
-[![Build Status](https://github.com/Skyscanner/backpack/workflows/CI/badge.svg)](https://github.com/Skyscanner/backpack/actions)
+[![Build Status](https://github.com/Skyscanner/backpack/workflows/Backpack%20CI/badge.svg)](https://github.com/Skyscanner/backpack/actions)
 
 
 ## Quick links
