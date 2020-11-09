@@ -1,10 +1,6 @@
 # Unreleased
 
 > Place your changes below this line.
-**Fixed:**
-
- - bpk-component-nudger:
-   - Fixed use of internal props that generated console warnings due to their unneeded usage
 
 ## How to write a good changelog entry
 

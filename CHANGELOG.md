@@ -2,6 +2,13 @@
 
 [Unreleased changes](./UNRELEASED.md).
 
+# 2020-11-09
+
+**Fixed:**
+
+ - bpk-component-nudger: 2.0.92 => 2.0.93
+   - Fixed use of internal props that generated console warnings due to their unneeded usage
+
 # 2020-11-04
 
 **Added:**
