@@ -2,6 +2,12 @@
 
 [Unreleased changes](./UNRELEASED.md).
 
+# 2020-11-04
+
+**Added:**
+ - bpk-component-button: 3.2.67 => 3.3.0
+   - `BpkButtonLink` now has a `padded` prop (false by default) which increases the tappable/clickable area around link style buttons to make them easier to interact with. Enabling this will improve accessibility and SEO.
+
 # 2020-10-27
 
 **Breaking:**
