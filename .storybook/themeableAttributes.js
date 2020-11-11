@@ -32,6 +32,7 @@ import {
 } from '../packages/bpk-component-button';
 import { themeAttributes as calendarThemeAttributes } from '../packages/bpk-component-calendar';
 import { themeAttributes as checkboxThemeAttributes } from '../packages/bpk-component-checkbox';
+import { themeAttributes as chipThemeAttributes } from '../packages/bpk-component-chip';
 import { themeAttributes as datepickerThemeAttributes } from '../packages/bpk-component-datepicker';
 import { themeAttributes as drawerThemeAttributes } from '../packages/bpk-component-drawer';
 import { themeAttributes as fieldsetThemeAttributes } from '../packages/bpk-component-fieldset';
@@ -76,6 +77,7 @@ export default [
   ...destructiveThemeAttributes,
   ...calendarThemeAttributes,
   ...checkboxThemeAttributes,
+  ...chipThemeAttributes,
   ...datepickerThemeAttributes,
   ...drawerThemeAttributes,
   ...fieldsetThemeAttributes,

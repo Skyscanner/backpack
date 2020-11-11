@@ -61,29 +61,51 @@ export default () => (
 
 ### BpkSelectableChip
 
-| Property | PropType | Required | Default Value |
-| - | - | - | - |
-| accessibilityLabel | string | true | - |
-| children | node | true | - |
-| onClick | func | true | - |
-| className | string | false | null |
-| disabled | bool | false | false |
-| leadingAccessoryView | node | false | null |
-| selected | bool | false | false |
-| trailingAccessoryView | node | false | null |
-| type | oneOf(`CHIP_TYPES.light`, `CHIP_TYPES.primary`, `CHIP_TYPES.success`) |
-
+| Property              | PropType                                                              | Required | Default Value |
+| --------------------- | --------------------------------------------------------------------- | -------- | ------------- |
+| accessibilityLabel    | string                                                                | true     | -             |
+| children              | node                                                                  | true     | -             |
+| onClick               | func                                                                  | true     | -             |
+| className             | string                                                                | false    | null          |
+| disabled              | bool                                                                  | false    | false         |
+| leadingAccessoryView  | node                                                                  | false    | null          |
+| selected              | bool                                                                  | false    | false         |
+| trailingAccessoryView | node                                                                  | false    | null          |
+| type                  | oneOf(`CHIP_TYPES.light`, `CHIP_TYPES.primary`, `CHIP_TYPES.success`) |
 
 ### BpkDismissibleChip
 
 Dismissible chips are selectable chips that have been preconfigured to have a 'close' icon trailing accessory view and cannot be selected, so they have the same props as `BpkSelectableChip`, minus `trailingAccessoryView` and `selected`.
 
-| Property | PropType | Required | Default Value |
-| - | - | - | - |
-| accessibilityLabel | string | true | - |
-| children | node | true | - |
-| onClick | func | true | - |
-| className | string | false | null |
-| disabled | bool | false | false |
-| leadingAccessoryView | node | false | null |
-| type | oneOf(`CHIP_TYPES.light`, `CHIP_TYPES.primary`, `CHIP_TYPES.success`) |
+| Property             | PropType                                                              | Required | Default Value |
+| -------------------- | --------------------------------------------------------------------- | -------- | ------------- |
+| accessibilityLabel   | string                                                                | true     | -             |
+| children             | node                                                                  | true     | -             |
+| onClick              | func                                                                  | true     | -             |
+| className            | string                                                                | false    | null          |
+| disabled             | bool                                                                  | false    | false         |
+| leadingAccessoryView | node                                                                  | false    | null          |
+| type                 | oneOf(`CHIP_TYPES.light`, `CHIP_TYPES.primary`, `CHIP_TYPES.success`) |
+
+## Theme Props
+
+### Primary
+
+- `chipPrimarySelectedBackgroundColor`
+- `chipPrimarySelectedHoverBackgroundColor`
+- `chipPrimarySelectedActiveBackgroundColor`
+- `chipPrimarySelectedTextColor`
+
+### Light
+
+- `chipLightSelectedBackgroundColor`
+- `chipLightSelectedHoverBackgroundColor`
+- `chipLightSelectedActiveBackgroundColor`
+- `chipLightSelectedTextColor`
+
+### Success
+
+- `chipSuccessSelectedBackgroundColor`
+- `chipSuccessSelectedHoverBackgroundColor`
+- `chipSuccessSelectedActiveBackgroundColor`
+- `chipSuccessSelectedTextColor`
