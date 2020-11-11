@@ -18,11 +18,9 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: nvm install
-        shell: bash -l {0}
         run: nvm install
 
       - name: nvm use
-        shell: bash -l {0}
         run: nvm use
 
       - name: Install deps
