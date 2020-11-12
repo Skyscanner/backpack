@@ -1,11 +1,6 @@
 # Unreleased
 
 > Place your changes below this line.
-**Added:**
-
- - bpk-component-chip:
-   - Added theming support. Please refer to the [readme](https://github.com/Skyscanner/backpack/blob/master/packages/bpk-component-chip/README.md) for a complete list of theming properties.
-
 
 ## How to write a good changelog entry
 

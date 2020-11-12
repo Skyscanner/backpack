@@ -2,6 +2,14 @@
 
 [Unreleased changes](./UNRELEASED.md).
 
+# 2020-11-12
+
+**Added:**
+
+ - bpk-component-chip: 4.0.19 => 4.1.0
+   - Added theming support. Please refer to the [readme](https://github.com/Skyscanner/backpack/blob/master/packages/bpk-component-chip/README.md) for a complete list of theming properties.
+
+
 # 2020-11-09
 
 **Fixed:**
