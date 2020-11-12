@@ -18,17 +18,17 @@
 
 /* @flow strict */
 
-import BpkSelectableChip, {
-  type Props as SelectableProps,
-} from './src/BpkSelectableChip';
-import BpkDismissibleChip, {
-  type Props as DismissibleProps,
-} from './src/BpkDismissibleChip';
-import { CHIP_TYPES } from './src/commonTypes';
-import themeAttributes from './src/themeAttributes';
-
-export type BpkSelectableChipProps = SelectableProps;
-export type BpkDismissibleChipProps = DismissibleProps;
-
-export default BpkSelectableChip;
-export { BpkDismissibleChip, CHIP_TYPES, themeAttributes };
+export default [
+  'chipPrimarySelectedBackgroundColor',
+  'chipPrimarySelectedHoverBackgroundColor',
+  'chipPrimarySelectedActiveBackgroundColor',
+  'chipPrimarySelectedTextColor',
+  'chipLightSelectedBackgroundColor',
+  'chipLightSelectedHoverBackgroundColor',
+  'chipLightSelectedActiveBackgroundColor',
+  'chipLightSelectedTextColor',
+  'chipSuccessSelectedBackgroundColor',
+  'chipSuccessSelectedHoverBackgroundColor',
+  'chipSuccessSelectedActiveBackgroundColor',
+  'chipSuccessSelectedTextColor',
+];

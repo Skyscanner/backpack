@@ -40,17 +40,32 @@
     }
 
     &-selected {
-      background-color: $bpk-color-sky-blue;
-      color: $bpk-color-white;
-
+      @include bpk-themeable-property(
+        color,
+        --bpk-chip-light-selected-text-color,
+        $bpk-color-white
+      );
+      @include bpk-themeable-property(
+        background-color,
+        --bpk-chip-light-selected-background-color,
+        $bpk-color-sky-blue
+      );
       @include bpk-border-sm(transparent);
 
       @include bpk-hover {
-        background-color: $bpk-color-sky-blue-shade-01;
+        @include bpk-themeable-property(
+          background-color,
+          --bpk-chip-light-selected-hover-background-color,
+          $bpk-color-sky-blue-shade-01
+        );
       }
 
       &:active {
-        background-color: $bpk-color-sky-blue-shade-02;
+        @include bpk-themeable-property(
+          background-color,
+          --bpk-chip-light-selected-active-background-color,
+          $bpk-color-sky-blue-shade-02
+        );
       }
     }
   }
@@ -68,17 +83,32 @@
     }
 
     &-selected {
-      background-color: $bpk-color-sky-blue;
-      color: $bpk-color-white;
-
+      @include bpk-themeable-property(
+        color,
+        --bpk-chip-primary-selected-text-color,
+        $bpk-color-white
+      );
+      @include bpk-themeable-property(
+        background-color,
+        --bpk-chip-primary-selected-background-color,
+        $bpk-color-sky-blue
+      );
       @include bpk-border-sm(transparent);
 
       @include bpk-hover {
-        background-color: $bpk-color-sky-blue-shade-01;
+        @include bpk-themeable-property(
+          background-color,
+          --bpk-chip-primary-selected-hover-background-color,
+          $bpk-color-sky-blue-shade-01
+        );
       }
 
       &:active {
-        background-color: $bpk-color-sky-blue-shade-02;
+        @include bpk-themeable-property(
+          background-color,
+          --bpk-chip-primary-selected-active-background-color,
+          $bpk-color-sky-blue-shade-02
+        );
       }
     }
   }
@@ -96,16 +126,32 @@
     }
 
     &-selected {
-      background-color: $bpk-color-glencoe;
-      color: $bpk-color-sky-gray;
+      @include bpk-themeable-property(
+        color,
+        --bpk-chip-success-selected-text-color,
+        $bpk-color-sky-gray
+      );
+      @include bpk-themeable-property(
+        background-color,
+        --bpk-chip-success-selected-background-color,
+        $bpk-color-glencoe
+      );
 
       @include bpk-hover {
         // There's no suitable token here, so we use darken.
-        background-color: darken($bpk-color-glencoe, 10%);
+        @include bpk-themeable-property(
+          background-color,
+          --bpk-chip-success-selected-hover-background-color,
+          darken($bpk-color-glencoe, 10%)
+        );
       }
 
       &:active {
-        background-color: $bpk-color-monteverde;
+        @include bpk-themeable-property(
+          background-color,
+          --bpk-chip-success-selected-active-background-color,
+          $bpk-color-monteverde
+        );
       }
     }
   }

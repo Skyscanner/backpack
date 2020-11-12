@@ -107,6 +107,21 @@ const generateTheme = ({
   buttonDestructiveHoverBackgroundColor: colorWhite,
   buttonDestructiveActiveBackgroundColor: colorWhite,
 
+  chipPrimarySelectedBackgroundColor: primaryColor500,
+  chipPrimarySelectedHoverBackgroundColor: primaryColor600,
+  chipPrimarySelectedActiveBackgroundColor: primaryColor700,
+  chipPrimarySelectedTextColor: colorWhite,
+
+  chipSuccessSelectedBackgroundColor: secondaryColor500,
+  chipSuccessSelectedHoverBackgroundColor: secondaryColor600,
+  chipSuccessSelectedActiveBackgroundColor: secondaryColor700,
+  chipSuccessSelectedTextColor: colorWhite,
+
+  chipLightSelectedBackgroundColor: primaryColor500,
+  chipLightSelectedHoverBackgroundColor: primaryColor600,
+  chipLightSelectedActiveBackgroundColor: primaryColor700,
+  chipLightSelectedTextColor: colorWhite,
+
   fieldsetLabelTextColor: secondaryColor500,
 
   formValidationIconFill: secondaryColor500,
