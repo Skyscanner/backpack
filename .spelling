@@ -247,15 +247,16 @@ TouchableHighlight
 ViewPropTypes
 
 # Custom prop types
+ALERT_TYPES
 accessibilityLabel
 accessoryView
-appearActiveClassName
-appearClassName
-ALERT_TYPES
 alignToButton
 animateOnEnter
 animateOnLeave
 animationDuration
+appearActiveClassName
+appearClassName
+aspectRatio
 bannerStyle
 BarChart
 beforeClose

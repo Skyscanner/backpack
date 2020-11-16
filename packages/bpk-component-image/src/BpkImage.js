@@ -19,7 +19,7 @@
 
 import React, { type Node, Component } from 'react';
 import PropTypes from 'prop-types';
-import { cssModules } from 'bpk-react-utils';
+import { cssModules, deprecated } from 'bpk-react-utils';
 import { BpkSpinner } from 'bpk-component-spinner';
 import CSSTransition from 'react-transition-group/CSSTransition';
 import { animations } from 'bpk-tokens/tokens/base.es6';
@@ -215,13 +215,19 @@ BpkImage.propTypes = {
   aspectRatio: widthHeightAspectRatioPropType,
   borderRadiusStyle: PropTypes.oneOf(Object.keys(BORDER_RADIUS_STYLES)),
   className: PropTypes.string,
-  height: widthHeightAspectRatioPropType,
   inView: PropTypes.bool,
   loading: PropTypes.bool,
   onLoad: PropTypes.func,
   style: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   suppressHydrationWarning: PropTypes.bool,
-  width: widthHeightAspectRatioPropType,
+  height: deprecated(
+    widthHeightAspectRatioPropType,
+    'Use "aspectRatio" instead of "width" and "height".',
+  ),
+  width: deprecated(
+    widthHeightAspectRatioPropType,
+    'Use "aspectRatio" instead of "width" and "height".',
+  ),
 };
 
 BpkImage.defaultProps = {

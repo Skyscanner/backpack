@@ -19,7 +19,7 @@
 
 import React, { type Node, Component } from 'react';
 import PropTypes from 'prop-types';
-import { cssModules } from 'bpk-react-utils';
+import { cssModules, deprecated } from 'bpk-react-utils';
 import { BpkSpinner } from 'bpk-component-spinner';
 import CSSTransition from 'react-transition-group/CSSTransition';
 import { animations } from 'bpk-tokens/tokens/base.es6';
@@ -163,9 +163,15 @@ class BpkBackgroundImage extends Component<BpkBackgroundImageProps> {
 
 BpkBackgroundImage.propTypes = {
   aspectRatio: widthHeightAspectRatioPropType,
-  height: widthHeightAspectRatioPropType,
+  height: deprecated(
+    widthHeightAspectRatioPropType,
+    'Use "aspectRatio" instead of "width" and "height".',
+  ),
+  width: deprecated(
+    widthHeightAspectRatioPropType,
+    'Use "aspectRatio" instead of "width" and "height".',
+  ),
   src: PropTypes.string.isRequired,
-  width: widthHeightAspectRatioPropType,
   className: PropTypes.string,
   inView: PropTypes.bool,
   loading: PropTypes.bool,
