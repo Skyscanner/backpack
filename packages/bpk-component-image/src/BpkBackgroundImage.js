@@ -24,12 +24,14 @@ import { BpkSpinner } from 'bpk-component-spinner';
 import CSSTransition from 'react-transition-group/CSSTransition';
 import { animations } from 'bpk-tokens/tokens/base.es6';
 
+import { widthHeightAspectRatioPropType } from './customPropTypes';
 import STYLES from './BpkBackgroundImage.scss';
 
 const getClassName = cssModules(STYLES);
 
 type BpkBackgroundImageProps = {
   children: Node,
+  aspectRatio: number,
   height: number,
   inView: boolean,
   loading: boolean,
@@ -86,6 +88,7 @@ class BpkBackgroundImage extends Component<BpkBackgroundImageProps> {
     const {
       width,
       height,
+      aspectRatio,
       children,
       className,
       inView,
@@ -95,8 +98,9 @@ class BpkBackgroundImage extends Component<BpkBackgroundImageProps> {
       style,
     } = this.props;
 
-    const aspectRatio = width / height;
-    const aspectRatioPc = `${100 / aspectRatio}%`;
+    const calculatedAspectRatio =
+      aspectRatio !== null ? aspectRatio : width / height;
+    const aspectRatioPc = `${100 / calculatedAspectRatio}%`;
 
     const classNames = [getClassName('bpk-background-image')];
     const imageClassNames = [getClassName('bpk-background-image__img')];
@@ -158,9 +162,10 @@ class BpkBackgroundImage extends Component<BpkBackgroundImageProps> {
 }
 
 BpkBackgroundImage.propTypes = {
-  height: PropTypes.number.isRequired,
+  aspectRatio: widthHeightAspectRatioPropType,
+  height: widthHeightAspectRatioPropType,
   src: PropTypes.string.isRequired,
-  width: PropTypes.number.isRequired,
+  width: widthHeightAspectRatioPropType,
   className: PropTypes.string,
   inView: PropTypes.bool,
   loading: PropTypes.bool,
@@ -170,6 +175,9 @@ BpkBackgroundImage.propTypes = {
 };
 
 BpkBackgroundImage.defaultProps = {
+  width: null,
+  height: null,
+  aspectRatio: null,
   className: null,
   inView: true,
   loading: false,

@@ -27,6 +27,30 @@ describe('BpkBackgroundImage', () => {
     const tree = renderer
       .create(
         <BpkBackgroundImage
+          aspectRatio={612 / 408}
+          style={{
+            width: '100%',
+            height: '20rem',
+          }}
+          src="./path/to/image.jpg"
+        >
+          <div
+            style={{
+              opacity: 0.7,
+              marginLeft: spacingSm,
+              paddingTop: spacingSm,
+            }}
+          />
+        </BpkBackgroundImage>,
+      )
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('should render correctly using legacy width and height props', () => {
+    const tree = renderer
+      .create(
+        <BpkBackgroundImage
           width={612}
           height={408}
           style={{
@@ -52,8 +76,7 @@ describe('BpkBackgroundImage', () => {
     const tree = renderer
       .create(
         <BpkBackgroundImage
-          width={816}
-          height={544}
+          aspectRatio={816 / 544}
           style={{
             width: '100%',
             height: '20rem',
@@ -72,8 +95,7 @@ describe('BpkBackgroundImage', () => {
       .create(
         <BpkBackgroundImage
           loading
-          width={612}
-          height={408}
+          aspectRatio={612 / 408}
           style={{
             width: '100%',
             height: '20rem',
@@ -97,8 +119,7 @@ describe('BpkBackgroundImage', () => {
       .create(
         <BpkBackgroundImage
           inView={false}
-          width={612}
-          height={408}
+          aspectRatio={612 / 408}
           style={{
             width: '100%',
             height: '20rem',

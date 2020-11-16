@@ -18,8 +18,7 @@ import { breakpointDesktop, breakpointTablet } from 'bpk-tokens/tokens/base.es6'
 export default () => (
   <BpkImage
     altText="image description"
-    width={816}
-    height={544}
+    aspectRatio={816 / 544}
     src="./path/to/image_1640.jpg"
   />
 );
@@ -47,8 +46,7 @@ const LazyLoadedImage = withLazyLoading(BpkImage, documentIfExists);
 export default () => (
   <LazyLoadedImage
     altText="image description"
-    width={816}
-    height={544}
+    aspectRatio={816 / 544}
     src="./path/to/image_1640.jpg"
   />
 );
@@ -70,14 +68,12 @@ export default () => (
   <div>
     <FadingImage
       altText="image description"
-      width={816}
-      height={544}
+      aspectRatio={816 / 544}
       src="./path/to/image_1640.jpg"
     />
     <FadingBackgroundImage
       altText="image description"
-      width={816}
-      height={544}
+      aspectRatio={816 / 544}
       src="./path/to/image_1640.jpg"
       imageStyle={{
         backgroundRepeat: 'no-repeat',
@@ -103,8 +99,7 @@ const FadingLazyLoadedImage = withLoadingBehavior(withLazyLoading(BpkImage, docu
 export default () => (
   <FadingLazyLoadedImage
     altText="image description"
-    width={816}
-    height={544}
+    aspectRatio={816 / 544}
     src="./path/to/image_1640.jpg"
   />
 );
@@ -115,9 +110,8 @@ export default () => (
 | Property                  | PropType                    | Required | Default Value             |
 | ------------------------- | --------------------------- | -------- | ------------------------- |
 | altText                   | string                      | true     | -                         |
-| height                    | number                      | true     | -                         |
 | src                       | string                      | true     | -                         |
-| width                     | number                      | true     | -                         |
+| aspectRatio               | number                      | true     | -                         |
 | borderRadiusStyle         | oneOf(BORDER_RADIUS_STYLES) | false    | BORDER_RADIUS_STYLES.none |
 | className                 | string                      | false    | null                      |
 | inView                    | bool                        | false    | true                      |
@@ -126,7 +120,7 @@ export default () => (
 | style                     | object                      | false    | {}                        |
 | suppressHydrationWarnings | bool                        | false    | false                     |
 
-Note: The `width` and `height` props do not dictate the size that the image is rendered. They should match the dimensions of the source image so that the component knows how much space to preserve during loading. The size of the image can be determined using CSS.
+Note: The `aspectRatio` prop should be calculated as `width/height` of the original src image. It is used by the component to preserve space on screen while the image loads.
 
 Note: All [standard `img` attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Img#Attributes) including `srcSet` are also supported.
 
@@ -136,14 +130,13 @@ The background image component is useful for setting background images in CSS th
 
 ### BpkBackgroundImage props
 
-| Property         | PropType  | Required | Default Value       |
-| ---------------- | --------- | -------- | ------------------- |
-| height           | number    | true     | -                   |
-| src              | string    | true     | -                   |
-| width            | number    | true     | -                   |
-| className        | string    | false    | null                |
-| inView           | bool      | false    | true                |
-| loading          | bool      | false    | false               |
-| onLoad           | func      | false    | null                |
-| style            | object    | false    | {}                  |
-| imageStyle       | object    | false    | {}                  |
+| Property    | PropType | Required | Default Value |
+| ----------- | -------- | -------- | ------------- |
+| src         | string   | true     | -             |
+| aspectRatio | number   | true     | -             |
+| className   | string   | false    | null          |
+| inView      | bool     | false    | true          |
+| loading     | bool     | false    | false         |
+| onLoad      | func     | false    | null          |
+| style       | object   | false    | {}            |
+| imageStyle  | object   | false    | {}            |

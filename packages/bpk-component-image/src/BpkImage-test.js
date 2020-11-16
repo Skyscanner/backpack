@@ -32,6 +32,20 @@ describe('BpkImage', () => {
       .create(
         <BpkImage
           altText="image description"
+          aspectRatio={816 / 544}
+          src="./path/to/image.jpg"
+        />,
+      )
+      .toJSON();
+
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('should render correctly using legacy width and height props', () => {
+    const tree = renderer
+      .create(
+        <BpkImage
+          altText="image description"
           width={816}
           height={544}
           src="./path/to/image.jpg"
@@ -47,8 +61,7 @@ describe('BpkImage', () => {
       .create(
         <BpkImage
           altText="image description"
-          width={816}
-          height={544}
+          aspectRatio={816 / 544}
           style={{ width: spacingSm }}
           src="./path/to/image.jpg"
         />,
@@ -63,8 +76,7 @@ describe('BpkImage', () => {
       .create(
         <BpkImage
           altText="image description"
-          width={816}
-          height={544}
+          aspectRatio={816 / 544}
           style={{ width: spacingSm }}
           className="userland-classname"
           src="./path/to/image.jpg"
@@ -81,8 +93,7 @@ describe('BpkImage', () => {
         <BpkImage
           loading
           altText="image description"
-          width={816}
-          height={544}
+          aspectRatio={816 / 544}
           src="./path/to/image.jpg"
         />,
       )
@@ -97,8 +108,7 @@ describe('BpkImage', () => {
       <BpkImage
         onLoad={onLoad}
         altText="image description"
-        width={816}
-        height={544}
+        aspectRatio={816 / 544}
         src="./path/to/image.jpg"
       />,
     )
@@ -112,8 +122,7 @@ describe('BpkImage', () => {
     const wrapper = mount(
       <BpkImage
         altText="image description"
-        width={816}
-        height={544}
+        aspectRatio={816 / 544}
         src="./path/to/image.jpg"
       />,
     )
@@ -128,8 +137,7 @@ describe('BpkImage', () => {
         <BpkImage
           inView={false}
           altText="image description"
-          width={816}
-          height={544}
+          aspectRatio={816 / 544}
           src="./path/to/image.jpg"
         />,
       )
@@ -147,8 +155,7 @@ describe('BpkImage', () => {
       .create(
         <BpkImage
           altText="image description"
-          width={816}
-          height={544}
+          aspectRatio={816 / 544}
           src="./path/to/image_1640.jpg"
           srcSet={srcSet}
           sizes={sizes}
@@ -164,8 +171,7 @@ describe('BpkImage', () => {
       .create(
         <BpkImage
           altText="image description"
-          width={816}
-          height={544}
+          aspectRatio={816 / 544}
           src="./path/to/image.jpg"
           borderRadiusStyle={BORDER_RADIUS_STYLES.sm}
         />,
