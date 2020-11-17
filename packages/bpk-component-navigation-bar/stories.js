@@ -37,6 +37,50 @@ import BpkNavigationBar, {
 const getClassNames = cssModules(STYLES);
 const ArrowIconWithRtl = withRtlSupport(ArrowIcon);
 
+const NavBarCollection = ({ title }: { title: string }) => {
+  return (
+    <>
+      <BpkNavigationBar id="test-0" title={title} />
+      <BpkNavigationBar
+        id="test-1"
+        title={title}
+        leadingButton={
+          <BpkNavigationBarIconButton
+            onClick={action('back clicked')}
+            icon={ArrowIconWithRtl}
+            label="back"
+          />
+        }
+      />
+      <BpkNavigationBar
+        id="test-2"
+        title={title}
+        trailingButton={
+          <BpkNavigationBarButtonLink onClick={action('done clicked')}>
+            Done
+          </BpkNavigationBarButtonLink>
+        }
+      />
+      <BpkNavigationBar
+        id="test-3"
+        title={title}
+        leadingButton={
+          <BpkNavigationBarIconButton
+            onClick={action('back clicked')}
+            icon={ArrowIconWithRtl}
+            label="back"
+          />
+        }
+        trailingButton={
+          <BpkNavigationBarButtonLink onClick={action('done clicked')}>
+            Done
+          </BpkNavigationBarButtonLink>
+        }
+      />
+    </>
+  );
+};
+
 storiesOf('bpk-component-navigation-bar', module)
   .add('Default', () => (
     <div className={getClassNames('bpk-navigation-bar-story')}>
@@ -108,6 +152,12 @@ storiesOf('bpk-component-navigation-bar', module)
           </BpkNavigationBarButtonLink>
         }
       />
+    </div>
+  ))
+  .add('Combination', () => (
+    <div className={getClassNames('bpk-navigation-bar-story')}>
+      <NavBarCollection title="Short title" />
+      <NavBarCollection title="We have to remember what's important in life: friends, waffles, and work. Or waffles, friends, work. But work has to come third." />
     </div>
   ))
   .add('With logo', () => (

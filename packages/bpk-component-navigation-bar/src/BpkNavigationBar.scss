@@ -24,7 +24,8 @@
   min-height: $bpk-spacing-xxl + $bpk-spacing-xs;
   padding: $bpk-spacing-sm;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-between;
+  align-items: center;
 
   @include bpk-themeable-property(
     background-color,
@@ -41,32 +42,25 @@
     );
   }
 
-  &__leading-item,
-  &__trailing-item {
-    position: absolute;
+  &--centered {
+    justify-content: center;
   }
 
-  &__leading-item {
-    left: $bpk-spacing-sm;
-
-    @include bpk-rtl {
-      right: $bpk-spacing-sm;
-      left: auto;
-    }
-  }
-
-  &__trailing-item {
-    right: $bpk-spacing-sm;
-
-    @include bpk-rtl {
-      right: auto;
-      left: $bpk-spacing-sm;
-    }
-  }
-
-  &__sticky {
+  &--sticky {
     position: sticky;
     top: 0;
     z-index: $bpk-zindex-tooltip - 1; // Allow tooltips/modals/... to be displayed above the navigation bar
+  }
+
+  &__item {
+    &-leading {
+      @include bpk-margin-trailing($bpk-spacing-sm);
+    }
+    &-trailing {
+      @include bpk-margin-leading($bpk-spacing-sm);
+    }
+    &--invisible {
+      visibility: hidden;
+    }
   }
 }

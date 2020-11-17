@@ -36,8 +36,8 @@ export type Props = {
   sticky: ?boolean,
 };
 
-const cloneWithClass = (elem: Element<any>, newStyle: string) => {
-  const className = getClassNames(elem.props.className, newStyle);
+const cloneWithClasses = (elem: Element<any>, newStyles: Array<string>) => {
+  const className = getClassNames(elem.props.className, ...newStyles);
   return React.cloneElement(elem, { ...elem.props, className });
 };
 
@@ -54,19 +54,54 @@ const BpkNavigationBar = (props: Props) => {
 
   const titleId = `${id}-bpk-navigation-bar-title`;
 
+  /*
+  This is a workaround to a problem where we want the title to be centered
+  regardless of the size of the leading and trailing icons.
+
+  There's currently (Nov 2020) no way to do this using flexbox or grid, and absolute
+  positioning is flawed because it causes the buttons to overlap with long titles.
+
+  For the workaround, when only one of leading/trailing is supplied, we clone it and place
+  it on the blank side but make it invisible. This means that the remaining space in the container
+  is equal, allowing the title to be visually centered.
+  */
+  let finalLeadingButton = null;
+  if (leadingButton) {
+    finalLeadingButton = cloneWithClasses(leadingButton, [
+      'bpk-navigation-bar__item-leading',
+    ]);
+  } else if (trailingButton) {
+    finalLeadingButton = cloneWithClasses(trailingButton, [
+      'bpk-navigation-bar__item-leading',
+      'bpk-navigation-bar__item--invisible',
+    ]);
+  }
+
+  let finalTrailingButton = null;
+  if (trailingButton) {
+    finalTrailingButton = cloneWithClasses(trailingButton, [
+      'bpk-navigation-bar__item-trailing',
+    ]);
+  } else if (leadingButton) {
+    finalTrailingButton = cloneWithClasses(leadingButton, [
+      'bpk-navigation-bar__item-trailing',
+      'bpk-navigation-bar__item--invisible',
+    ]);
+  }
+
   return (
     // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
     <nav
       aria-labelledby={titleId}
       className={getClassNames(
         'bpk-navigation-bar',
-        sticky && 'bpk-navigation-bar__sticky',
+        sticky && 'bpk-navigation-bar--sticky',
+        !leadingButton && !trailingButton && 'bpk-navigation-bar--centered',
         className,
       )}
       {...rest}
     >
-      {leadingButton &&
-        cloneWithClass(leadingButton, 'bpk-navigation-bar__leading-item')}
+      {finalLeadingButton}
       {typeof title === 'string' ? (
         <BpkText
           id={titleId}
@@ -78,8 +113,7 @@ const BpkNavigationBar = (props: Props) => {
       ) : (
         title
       )}
-      {trailingButton &&
-        cloneWithClass(trailingButton, 'bpk-navigation-bar__trailing-item')}
+      {finalTrailingButton}
     </nav>
   );
 };

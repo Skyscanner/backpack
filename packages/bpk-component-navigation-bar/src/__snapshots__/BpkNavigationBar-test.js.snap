@@ -3,7 +3,7 @@
 exports[`BpkNavigationBar should render correctly 1`] = `
 <nav
   aria-labelledby="test-bpk-navigation-bar-title"
-  className="bpk-navigation-bar"
+  className="bpk-navigation-bar bpk-navigation-bar--centered"
 >
   <span
     className="bpk-text bpk-text--base bpk-text--bold bpk-navigation-bar__title"
@@ -17,7 +17,7 @@ exports[`BpkNavigationBar should render correctly 1`] = `
 exports[`BpkNavigationBar should render correctly when sticky 1`] = `
 <nav
   aria-labelledby="test-bpk-navigation-bar-title"
-  className="bpk-navigation-bar bpk-navigation-bar__sticky"
+  className="bpk-navigation-bar bpk-navigation-bar--sticky bpk-navigation-bar--centered"
 >
   <span
     className="bpk-text bpk-text--base bpk-text--bold bpk-navigation-bar__title"
@@ -35,7 +35,7 @@ exports[`BpkNavigationBar should render correctly with a "leadingButton" attribu
 >
   <button
     aria-label="test"
-    className="bpk-close-button bpk-navigation-bar-icon-button bpk-navigation-bar__leading-item"
+    className="bpk-close-button bpk-navigation-bar-icon-button bpk-navigation-bar__item-leading"
     onClick={[Function]}
     title="test"
     type="button"
@@ -48,6 +48,15 @@ exports[`BpkNavigationBar should render correctly with a "leadingButton" attribu
   >
     test
   </span>
+  <button
+    aria-label="test"
+    className="bpk-close-button bpk-navigation-bar-icon-button bpk-navigation-bar__item-trailing bpk-navigation-bar__item--invisible"
+    onClick={[Function]}
+    title="test"
+    type="button"
+  >
+    <span />
+  </button>
 </nav>
 `;
 
@@ -56,6 +65,15 @@ exports[`BpkNavigationBar should render correctly with a "traillingButton" attri
   aria-labelledby="test-bpk-navigation-bar-title"
   className="bpk-navigation-bar"
 >
+  <button
+    aria-label="test"
+    className="bpk-close-button bpk-navigation-bar-icon-button bpk-navigation-bar__item-leading bpk-navigation-bar__item--invisible"
+    onClick={[Function]}
+    title="test"
+    type="button"
+  >
+    <span />
+  </button>
   <span
     className="bpk-text bpk-text--base bpk-text--bold bpk-navigation-bar__title"
     id="test-bpk-navigation-bar-title"
@@ -64,7 +82,7 @@ exports[`BpkNavigationBar should render correctly with a "traillingButton" attri
   </span>
   <button
     aria-label="test"
-    className="bpk-close-button bpk-navigation-bar-icon-button bpk-navigation-bar__trailing-item"
+    className="bpk-close-button bpk-navigation-bar-icon-button bpk-navigation-bar__item-trailing"
     onClick={[Function]}
     title="test"
     type="button"
@@ -79,12 +97,21 @@ exports[`BpkNavigationBar should render correctly with an element for the title 
   aria-labelledby="test-bpk-navigation-bar-title"
   className="bpk-navigation-bar"
 >
+  <button
+    aria-label="test"
+    className="bpk-close-button bpk-navigation-bar-icon-button bpk-navigation-bar__item-leading bpk-navigation-bar__item--invisible"
+    onClick={[Function]}
+    title="test"
+    type="button"
+  >
+    <span />
+  </button>
   <span>
     test
   </span>
   <button
     aria-label="test"
-    className="bpk-close-button bpk-navigation-bar-icon-button bpk-navigation-bar__trailing-item"
+    className="bpk-close-button bpk-navigation-bar-icon-button bpk-navigation-bar__item-trailing"
     onClick={[Function]}
     title="test"
     type="button"
@@ -97,7 +124,7 @@ exports[`BpkNavigationBar should render correctly with an element for the title 
 exports[`BpkNavigationBar should render correctly with arbitrary props 1`] = `
 <nav
   aria-labelledby="test-bpk-navigation-bar-title"
-  className="bpk-navigation-bar"
+  className="bpk-navigation-bar bpk-navigation-bar--centered"
   testID="arbitrary value"
 >
   <span
@@ -112,7 +139,7 @@ exports[`BpkNavigationBar should render correctly with arbitrary props 1`] = `
 exports[`BpkNavigationBar should render correctly with custom class 1`] = `
 <nav
   aria-labelledby="test-bpk-navigation-bar-title"
-  className="bpk-navigation-bar my-custom-class"
+  className="bpk-navigation-bar bpk-navigation-bar--centered my-custom-class"
 >
   <span
     className="bpk-text bpk-text--base bpk-text--bold bpk-navigation-bar__title"

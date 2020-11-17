@@ -2,6 +2,12 @@
 
 > Place your changes below this line.
 
+**Fixed:**
+
+- bpk-component-navigation-bar:
+- bpk-component-modal:
+  - Fixed an issue where long titles could overlap with the close button and accessory view.
+
 ## How to write a good changelog entry
 
 1. Add 'Breaking', 'Added' or 'Fixed' in bold depending on if the change will be major, minor or patch according to [semver](semver.org).
