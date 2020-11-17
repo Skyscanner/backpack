@@ -1,11 +1,6 @@
 # Unreleased
 
 > Place your changes below this line.
-**Added:**
-
- - bpk-component-image:
-   - New `aspectRatio` prop for specifying the relative width and height of the src image.
-   - This prop replaces the existing `width` and `height` props which will be removed in a later breaking release.
 
 ## How to write a good changelog entry
 
