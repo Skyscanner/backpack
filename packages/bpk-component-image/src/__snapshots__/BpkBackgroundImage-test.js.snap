@@ -268,3 +268,47 @@ exports[`BpkBackgroundImage should render correctly 1`] = `
   </div>
 </div>
 `;
+
+exports[`BpkBackgroundImage should render correctly using legacy width and height props 1`] = `
+<div
+  className={null}
+  style={
+    Object {
+      "height": "20rem",
+      "width": "100%",
+    }
+  }
+>
+  <div
+    className="bpk-background-image bpk-background-image--no-background"
+    style={
+      Object {
+        "height": 0,
+        "paddingBottom": "66.66666666666667%",
+      }
+    }
+  >
+    <div
+      className="bpk-background-image__img bpk-background-image__img--shown"
+      style={
+        Object {
+          "backgroundImage": "url(./path/to/image.jpg)",
+        }
+      }
+    />
+    <div
+      className="bpk-background-image__content"
+    >
+      <div
+        style={
+          Object {
+            "marginLeft": ".75rem",
+            "opacity": 0.7,
+            "paddingTop": ".75rem",
+          }
+        }
+      />
+    </div>
+  </div>
+</div>
+`;

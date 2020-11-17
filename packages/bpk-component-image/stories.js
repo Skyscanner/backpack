@@ -48,6 +48,14 @@ storiesOf('bpk-component-image', module)
   .add('Default', () => (
     <BpkImage
       altText="image"
+      aspectRatio={612 / 408}
+      style={{ width: imageWidth, height: imageHeight }}
+      src={image}
+    />
+  ))
+  .add('Using legacy width and height props', () => (
+    <BpkImage
+      altText="image"
       width={612}
       height={408}
       style={{ width: imageWidth, height: imageHeight }}
@@ -57,8 +65,7 @@ storiesOf('bpk-component-image', module)
   .add('With Border Radius', () => (
     <BpkImage
       altText="image"
-      width={612}
-      height={408}
+      aspectRatio={612 / 408}
       style={{ width: imageWidth, height: imageHeight }}
       src={image}
       borderRadiusStyle={BORDER_RADIUS_STYLES.sm}
@@ -70,8 +77,7 @@ storiesOf('bpk-component-image', module)
   .add('Using SrcSet', () => (
     <BpkImage
       altText="image"
-      width={612}
-      height={408}
+      aspectRatio={612 / 408}
       src={image}
       srcSet={`${image}?resize=320px:213px&quality=100 320w,
         ${image}?resize=640px:226px&quality=100 640w,
@@ -84,8 +90,7 @@ storiesOf('bpk-component-image', module)
   .add('With Animation', () => (
     <FadingImage
       altText="image"
-      width={612}
-      height={408}
+      aspectRatio={612 / 408}
       style={{ width: imageWidth, height: imageHeight }}
       src={image}
     />
@@ -93,8 +98,7 @@ storiesOf('bpk-component-image', module)
   .add('With Lazy Loading', () => (
     <LazyLoadedImage
       altText="image"
-      width={612}
-      height={408}
+      aspectRatio={612 / 408}
       style={{ width: imageWidth, height: imageHeight }}
       src={image}
     />
@@ -102,8 +106,7 @@ storiesOf('bpk-component-image', module)
   .add('With Lazy Loading and Animation', () => (
     <FadingLazyLoadedImage
       altText="image"
-      width={612}
-      height={408}
+      aspectRatio={612 / 408}
       style={{ width: imageWidth, height: imageHeight }}
       src={image}
     />
@@ -113,22 +116,19 @@ storiesOf('bpk-component-image', module)
       <div style={{ display: 'flex' }}>
         <FadingLazyLoadedImage
           altText="image"
-          width={612}
-          height={408}
+          aspectRatio={612 / 408}
           style={{ width: imageWidth, height: imageHeight }}
           src={image}
         />
         <FadingLazyLoadedImage
           altText="image"
-          width={612}
-          height={408}
+          aspectRatio={612 / 408}
           style={{ width: imageWidth, height: imageHeight }}
           src={image}
         />
         <FadingLazyLoadedImage
           altText="image"
-          width={612}
-          height={408}
+          aspectRatio={612 / 408}
           style={{ width: imageWidth, height: imageHeight }}
           src={image}
         />
@@ -136,6 +136,24 @@ storiesOf('bpk-component-image', module)
     </BpkMobileScrollContainer>
   ))
   .add('Background Image', () => (
+    <BpkBackgroundImage
+      aspectRatio={612 / 408}
+      style={{ width: imageWidth, height: imageHeight }}
+      imageStyle={{
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: 'cover',
+        backgroundPosition: '50% 50%',
+      }}
+      src={image}
+    >
+      <div style={{ marginLeft: spacingSm, paddingTop: spacingSm }}>
+        <BpkText tagName="h2" textStyle="xl">
+          Lorem ipsum dolor sit amet
+        </BpkText>
+      </div>
+    </BpkBackgroundImage>
+  ))
+  .add('Background Image using legacy width and height props', () => (
     <BpkBackgroundImage
       width={612}
       height={408}
@@ -156,8 +174,7 @@ storiesOf('bpk-component-image', module)
   ))
   .add('Background Image with Lazy Loading and Animation', () => (
     <FadingLazyLoadedBackgroundImage
-      width={612}
-      height={408}
+      aspectRatio={612 / 408}
       style={{ width: imageWidth, height: imageHeight }}
       imageStyle={{
         backgroundRepeat: 'no-repeat',
