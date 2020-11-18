@@ -13,7 +13,6 @@ exports[`BpkDialog should render correctly in the given target if renderTarget i
         role="presentation"
       />
       <section
-        aria-labelledby="bpk-modal-heading-my-modal"
         class="bpk-modal"
         id="my-modal"
         role="dialog"
@@ -62,7 +61,6 @@ exports[`BpkDialog should render correctly when it is not dismissible 2`] = `
         role="presentation"
       />
       <section
-        aria-labelledby="bpk-modal-heading-my-modal"
         class="bpk-modal"
         id="my-modal"
         role="dialog"
@@ -92,7 +90,6 @@ exports[`BpkDialog should render default icon dialog correctly 2`] = `
         role="presentation"
       />
       <section
-        aria-labelledby="bpk-modal-heading-my-modal"
         class="bpk-modal"
         id="my-modal"
         role="dialog"
@@ -137,7 +134,6 @@ exports[`BpkDialog should render destructive icon dialog correctly 2`] = `
         role="presentation"
       />
       <section
-        aria-labelledby="bpk-modal-heading-my-modal"
         class="bpk-modal"
         id="my-modal"
         role="dialog"
@@ -181,7 +177,6 @@ exports[`BpkDialog should render warning icon dialog correctly 2`] = `
         role="presentation"
       />
       <section
-        aria-labelledby="bpk-modal-heading-my-modal"
         class="bpk-modal"
         id="my-modal"
         role="dialog"
@@ -225,7 +220,6 @@ exports[`BpkDialog should render with flare dialog 2`] = `
         role="presentation"
       />
       <section
-        aria-labelledby="bpk-modal-heading-my-modal"
         class="bpk-modal"
         id="my-modal"
         role="dialog"
@@ -313,7 +307,6 @@ exports[`BpkDialog should render with flare dialog with flareClassName 2`] = `
         role="presentation"
       />
       <section
-        aria-labelledby="bpk-modal-heading-my-modal"
         class="bpk-modal"
         id="my-modal"
         role="dialog"

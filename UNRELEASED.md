@@ -2,6 +2,13 @@
 
 > Place your changes below this line.
 
+**Fixed:**
+- bpk-component-modal:
+  - Fixed an a11y issue where if the title wasn't supplied `aria-labelledby` would try to attach to a non-existing component and the naming of the title passed to the navigation component didn't match.
+
+- bpk-component-navigation-bar:
+  - Fixed the `id` generation for when a title component is passed vs. a string, so that the `aria-labelledby` matches the id of the title.
+
 ## How to write a good changelog entry
 
 1. Add 'Breaking', 'Added' or 'Fixed' in bold depending on if the change will be major, minor or patch according to [semver](semver.org).

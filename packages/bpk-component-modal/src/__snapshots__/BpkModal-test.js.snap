@@ -23,7 +23,7 @@ exports[`BpkModal should render correctly in the given target if renderTarget is
           class="bpk-modal__header"
         >
           <nav
-            aria-labelledby="bpk-modal-navigation-my-modal-bpk-navigation-bar-title"
+            aria-labelledby="bpk-modal-heading-my-modal"
             class="bpk-navigation-bar bpk-modal__navigation"
           >
             <h2

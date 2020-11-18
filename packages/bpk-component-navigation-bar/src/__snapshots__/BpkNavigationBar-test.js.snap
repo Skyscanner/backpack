@@ -76,7 +76,7 @@ exports[`BpkNavigationBar should render correctly with a "traillingButton" attri
 
 exports[`BpkNavigationBar should render correctly with an element for the title attribute 1`] = `
 <nav
-  aria-labelledby="test-bpk-navigation-bar-title"
+  aria-labelledby="test"
   className="bpk-navigation-bar"
 >
   <span>

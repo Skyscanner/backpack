@@ -230,7 +230,7 @@ storiesOf('bpk-component-modal', module)
       This is a full-screen modal. You can put anything you want in here,
       including other modals!
       <ModalContainer
-        title="Modal title"
+        title="Inner modal title"
         closeLabel="Close modal"
         wrapperProps={{ id: 'inner-modal-container' }}
         buttonLabel="Open another modal from this modal"
