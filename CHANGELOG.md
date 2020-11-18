@@ -2,6 +2,13 @@
 
 [Unreleased changes](./UNRELEASED.md).
 
+# 2020-11-18
+
+**Fixed:**
+
+- bpk-component-modal:
+  - Fixed an issue where long titles could overlap the close button.
+
 # 2020-11-17
 
 **Added:**
