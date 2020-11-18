@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-dialog",
-  "version": "2.2.8",
+  "version": "2.2.9",
   "description": "Backpack dialog component.",
   "license": "Apache-2.0",
   "repository": {
@@ -15,7 +15,7 @@
   "gitHead": "a6910b1b5068590c7ba3691bedeb5818160cc477",
   "dependencies": {
     "bpk-component-flare": "^1.0.92",
-    "bpk-component-modal": "^2.1.92",
+    "bpk-component-modal": "^2.1.93",
     "prop-types": "^15.6.2"
   },
   "peerDependencies": {
