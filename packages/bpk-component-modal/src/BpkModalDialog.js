@@ -117,9 +117,10 @@ const BpkModalDialog = (props: Props) => {
               trailingButton={
                 props.closeText ? (
                   <BpkButtonLink
-                    onClick={props.onClose}
                     className={getClassName('bpk-modal__close-button')}
+                    onClick={props.onClose}
                   >
+                    {/* $FlowIgnore[incompatible-type] this is perfectly good because we're already doing a null check above. THANKS FLOW */}
                     {props.closeText}
                   </BpkButtonLink>
                 ) : (
