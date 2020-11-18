@@ -198,6 +198,14 @@ storiesOf('bpk-component-modal', module)
       This is a default modal. You can put anything you want in here.
     </ModalContainer>
   ))
+  .add('Long title', () => (
+    <ModalContainer
+      title="We have to remember what's important in life: friends, waffles, and work. Or waffles, friends, work. But work has to come third."
+      closeText="Done"
+    >
+      This is a default modal. You can put anything you want in here.
+    </ModalContainer>
+  ))
   .add('Not full screen on mobile', () => (
     <ModalContainer
       title="Modal title"

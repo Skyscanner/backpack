@@ -53,10 +53,7 @@ export type Props = {
 const BpkModalDialog = (props: Props) => {
   const classNames = [getClassName('bpk-modal')];
   const contentClassNames = [getClassName('bpk-modal__content')];
-  const navigationStyles = [
-    getClassName('bpk-modal__navigation'),
-    !props.accessoryView && getClassName('bpk-modal__header--title-only'),
-  ];
+  const navigationStyles = [getClassName('bpk-modal__navigation')];
 
   if (props.wide) {
     classNames.push(getClassName('bpk-modal--wide'));
@@ -81,6 +78,12 @@ const BpkModalDialog = (props: Props) => {
 
   const headingId = `bpk-modal-heading-${props.id}`;
   const navigationId = `bpk-modal-navigation-${props.id}`;
+
+  const accessoryViewFinal = props.accessoryView ? (
+    <span className={getClassName('bpk-modal__accessory-view')}>
+      {props.accessoryView}
+    </span>
+  ) : null;
 
   return (
     <TransitionInitialMount
@@ -110,10 +113,14 @@ const BpkModalDialog = (props: Props) => {
                   {props.title}
                 </h2>
               }
-              leadingButton={props.accessoryView}
+              leadingButton={accessoryViewFinal}
               trailingButton={
                 props.closeText ? (
-                  <BpkButtonLink onClick={props.onClose}>
+                  <BpkButtonLink
+                    className={getClassName('bpk-modal__close-button')}
+                    onClick={props.onClose}
+                  >
+                    {/* $FlowIgnore[incompatible-type] this is perfectly good because we're already doing a null check above. THANKS FLOW */}
                     {props.closeText}
                   </BpkButtonLink>
                 ) : (
