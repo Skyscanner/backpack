@@ -77,7 +77,6 @@ const BpkModalDialog = (props: Props) => {
   }
 
   const headingId = `bpk-modal-heading-${props.id}`;
-  const navigationId = `bpk-modal-navigation-${props.id}`;
 
   const accessoryViewFinal = props.accessoryView ? (
     <span className={getClassName('bpk-modal__accessory-view')}>
@@ -95,7 +94,7 @@ const BpkModalDialog = (props: Props) => {
         id={props.id}
         tabIndex="-1"
         role="dialog"
-        aria-labelledby={headingId}
+        aria-labelledby={props.showHeader ? headingId : null}
         className={classNames.join(' ')}
         ref={props.dialogRef}
       >
@@ -103,7 +102,7 @@ const BpkModalDialog = (props: Props) => {
         {props.showHeader && (
           <header className={getClassName('bpk-modal__header')}>
             <BpkNavigationBar
-              id={navigationId}
+              id={headingId}
               className={navigationStyles.join(' ')}
               title={
                 <h2
