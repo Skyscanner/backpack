@@ -5,6 +5,15 @@
 # 2020-11-18
 
 **Fixed:**
+- bpk-component-modal: 2.1.92 => 2.1.93
+  - Fixed an a11y issue where if the title wasn't supplied `aria-labelledby` would try to attach to a non-existing component and the naming of the title passed to the navigation component didn't match.
+
+- bpk-component-navigation-bar: 2.2.52 => 2.2.53
+  - Fixed the `id` generation for when a title component is passed vs. a string, so that the `aria-labelledby` matches the id of the title.
+
+# 2020-11-18
+
+**Fixed:**
 
 - bpk-component-modal:
   - Fixed an issue where long titles could overlap the close button.
