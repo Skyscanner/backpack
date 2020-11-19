@@ -61,6 +61,9 @@ const thanksGifs = [
   'https://media.giphy.com/media/1lk1IcVgqPLkA/giphy.gif', // Cap salute
 ];
 
+// TODO just for debugging, remove this later
+warn(`Files changed: ${fileChanges.join(', ')}`);
+
 if (isPrExternal) {
   markdown(`
   # Hi ${author}!
