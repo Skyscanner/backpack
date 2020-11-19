@@ -1,0 +1,23 @@
+name: Pull request target
+
+on:
+  pull_request_target:
+
+jobs:
+  test-job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Leave a comment
+        uses: actions/github-script@v2
+        with:
+          #github-token: ${{secrets.DANGER_GITHUB_API_TOKEN}}
+          script: |
+            github.issues.createComment({
+              issue_number: ${{ github.event.number }},
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: '🧱 Hello world'
+            })
