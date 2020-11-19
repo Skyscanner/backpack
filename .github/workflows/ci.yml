@@ -16,6 +16,9 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+        with:
+          ref: ${{github.event.pull_request.head.ref}}
+          repository: ${{github.event.pull_request.head.repo.full_name}}
 
       - name: nvm install
         run: nvm install
@@ -30,7 +33,8 @@ jobs:
 
       - name: Danger
         run: npm run danger
-        env: GITHUB_TOKEN: ${{secrets.DANGER_GITHUB_API_TOKEN}}
+        env:
+          GITHUB_TOKEN: ${{secrets.DANGER_GITHUB_API_TOKEN}}
 
       - name: Build Backpack
         run: |
