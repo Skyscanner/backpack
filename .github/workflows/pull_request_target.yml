@@ -10,6 +10,15 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - name: nvm install
+        run: nvm install
+
+      - name: nvm use
+        run: nvm use
+
+      - name: Danger
+        run: npm run danger
+
       - name: Leave a comment
         uses: actions/github-script@v2
         with:
