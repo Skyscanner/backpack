@@ -18,6 +18,8 @@
 
 /* @flow strict */
 
+/* a comment! */
+
 import BpkAutosuggest from './src/BpkAutosuggest';
 import BpkAutosuggestSuggestion from './src/BpkAutosuggestSuggestion';
 
