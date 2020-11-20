@@ -4,7 +4,7 @@ on:
   push:
     branches: [master]
   pull_request:
-    branches: [master]
+    branches: [master, 'BPK-4289-ci-improvements']
 
 defaults:
   run:
@@ -27,6 +27,29 @@ jobs:
         run: |
           nvm use
           npm ci
+
+      - name: Get file changes
+        id: files
+        uses: futuratrepadeira/changed-files@v3.3.0
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          result-encoding: 'json'
+
+      - name: Print file changes
+        run: echo $FILES
+        env:
+          FILES: '${{ steps.files.outputs.files_updated }} ${{ steps.files.outputs.files_created }}'
+
+      - name: Cultural Linting
+        uses: actions/github-script@v3
+        with:
+          script: |
+            const script = require(`${process.env.GITHUB_WORKSPACE}/dangerfile.js`)
+            console.log(script({
+              author: context.payload.sender.login,
+              createdFiles: ${{ steps.files.outputs.files_created }},
+              modifiedFiles: ${{ steps.files.outputs.files_updated }},
+            }))
 
       - name: Build Backpack
         run: |
