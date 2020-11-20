@@ -1,6 +1,8 @@
 # Unreleased
 
 > Place your changes below this line.
+ - bpk-component-image:
+   - Export `BpkBackgroundImageProps` prop from`BpkBackgroundImage` component and `bpk-component-image` package.
 
 ## How to write a good changelog entry
 

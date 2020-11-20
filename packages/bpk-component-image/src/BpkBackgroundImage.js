@@ -29,7 +29,7 @@ import STYLES from './BpkBackgroundImage.scss';
 
 const getClassName = cssModules(STYLES);
 
-type BpkBackgroundImageProps = {
+export type BpkBackgroundImageProps = {
   children: Node,
   aspectRatio: number,
   height: number,
