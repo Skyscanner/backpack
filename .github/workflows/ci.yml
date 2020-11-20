@@ -35,21 +35,10 @@ jobs:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           result-encoding: 'json'
 
-      - name: Print file changes
-        run: echo $FILES
+      - name: Danger
+        run: npm run danger
         env:
-          FILES: '${{ steps.files.outputs.files_updated }} ${{ steps.files.outputs.files_created }}'
-
-      - name: Cultural Linting
-        uses: actions/github-script@v3
-        with:
-          script: |
-            const script = require(`${process.env.GITHUB_WORKSPACE}/dangerfile.js`)
-            console.log(script({
-              author: context.payload.sender.login,
-              createdFiles: ${{ steps.files.outputs.files_created }},
-              modifiedFiles: ${{ steps.files.outputs.files_updated }},
-            }))
+          DANGER_GITHUB_API_TOKEN: ${{ secrets.DANGER_GITHUB_API_TOKEN }}
 
       - name: Build Backpack
         run: |
