@@ -30,7 +30,7 @@
     "clean:lerna": "lerna clean --yes",
     "clean:node_modules": "rm -rf node_modules",
     "create-component": "node scripts/npm/create-component.js",
-    "danger": "danger ci",
+    "danger": "danger local",
     "fix-bpk-dependencies": "node scripts/npm/check-bpk-dependencies.js --fix",
     "flow": "flow --max-warnings 0",
     "flow-typed": "flow-typed",

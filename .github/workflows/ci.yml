@@ -28,6 +28,9 @@ jobs:
           nvm use
           npm ci
 
+      - name: Run Danger
+        run: npm run danger
+
       - name: Build Backpack
         run: |
           nvm use
