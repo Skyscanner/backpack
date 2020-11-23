@@ -41,11 +41,15 @@ jobs:
 
       - name: Build Storybook
         if: github.ref == 'refs/heads/master'
-        run: npm run storybook:dist
+        run: |
+          nvm use
+          npm run storybook:dist
 
       - name: Build Sass docs
         if: github.ref == 'refs/heads/master'
-        run: npm run sassdoc
+        run: |
+          nvm use
+          npm run sassdoc
 
       - name: Deploy sassdoc
         uses: peaceiris/actions-gh-pages@v3
