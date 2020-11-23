@@ -1,6 +1,10 @@
 # Unreleased
 
 > Place your changes below this line.
+
+ - bpk-component-aria-live:
+   - Added a new `BpkAriaLive` component to simplify adding `aria-live` regions to pages.
+
  - bpk-component-image:
    - Export `BpkBackgroundImageProps` prop from`BpkBackgroundImage` component and `bpk-component-image` package.
 
