@@ -613,6 +613,7 @@ xxxxxl
 
 bpk-animate-height
 bpk-component-accordion
+bpk-component-aria-live
 bpk-component-autosuggest
 bpk-component-badge
 bpk-component-banner-alert
@@ -811,3 +812,4 @@ semver.org
 ROUNDING_TYPES
 ROUNDING_TYPES.down
 onOpenChange
+politenessSetting
