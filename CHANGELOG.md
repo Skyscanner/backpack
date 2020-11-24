@@ -2,6 +2,14 @@
 
 [Unreleased changes](./UNRELEASED.md).
 
+# 2020-11-24
+
+ - bpk-component-aria-live: `1.0.0`
+   - Added a new `BpkAriaLive` component to simplify adding `aria-live` regions to pages.
+
+ - bpk-component-image: `4.1.1 => 4.2.0`
+   - Export `BpkBackgroundImageProps` prop from`BpkBackgroundImage` component and `bpk-component-image` package.
+
 # 2020-11-18
 
 **Fixed:**
