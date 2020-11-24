@@ -25,16 +25,21 @@ import BpkAriaLive from './index';
 
 class StatefulChipsWithAriaLive extends React.Component<
   {},
-  { categories: { Flights: boolean, Hotels: boolean, 'Car hire': boolean } },
+  {
+    categories: { Flights: boolean, Hotels: boolean, 'Car hire': boolean },
+    updates: Array<string>,
+  },
 > {
   constructor() {
     super();
+
     this.state = {
       categories: {
         Flights: true,
         Hotels: true,
         'Car hire': true,
       },
+      updates: [],
     };
   }
 
@@ -42,7 +47,8 @@ class StatefulChipsWithAriaLive extends React.Component<
     this.setState(prevState => {
       const newState = prevState;
       newState.categories[category] = false;
-      return prevState;
+      newState.updates = [...prevState.updates, `${category} chip dismissed`];
+      return newState;
     });
   };
 
@@ -66,17 +72,11 @@ class StatefulChipsWithAriaLive extends React.Component<
         </div>
         <BpkAriaLive visible>
           <p>
-            Usually this would be hidden, but it has the &apos;visible&apos;
-            prop for demonstration purposes.
+            This is an aria-live region. It would usually be visually hidden.
           </p>
-          {Object.keys(this.state.categories).map(
-            category =>
-              this.state.categories[category] && (
-                <p>
-                  <strong>{category}</strong> is enabled.
-                </p>
-              ),
-          )}
+          {this.state.updates.map(update => (
+            <p>{update}</p>
+          ))}
         </BpkAriaLive>
       </div>
     );
