@@ -17,13 +17,10 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: nvm install
-        run: nvm install
+      - name: Set the correct npm version
+        run: nvm install && nvm use
 
-      - name: nvm use
-        run: nvm use
-
-      - name: Install deps
+      - name: Install dependencies from npm
         run: |
           nvm use
           npm ci
@@ -33,10 +30,10 @@ jobs:
           nvm use
           npm run build
 
-      - name: Check package-lock
+      - name: Confirm the build hasn't changed any files
         run: ./scripts/check-pristine-state package-lock.json
 
-      - name: Test
+      - name: Run tests
         run: npm test
 
       - name: Build Storybook
@@ -51,7 +48,7 @@ jobs:
           nvm use
           npm run sassdoc
 
-      - name: Deploy sassdoc
+      - name: Deploy Sass docs to backpack.github.io, if on master branch
         uses: peaceiris/actions-gh-pages@v3
         if: github.ref == 'refs/heads/master'
         with:
@@ -61,7 +58,7 @@ jobs:
           external_repository: backpack/sassdoc
           publish_branch: master
 
-      - name: Deploy storybook
+      - name: Deploy Storybook to backpack.github.io, if on master branch
         uses: peaceiris/actions-gh-pages@v3
         if: github.ref == 'refs/heads/master'
         with:
