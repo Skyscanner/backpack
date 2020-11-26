@@ -2,9 +2,9 @@
 
 > Place your changes below this line.
 
-**Fixed:**
+**Added:**
 - bpk-component-image:
-  - Fixed an issue where `BpkBackgroundImageProps` weren't being exported correctly.
+  - Flow types are now exported from `bpk-component-image`.
 
 ## How to write a good changelog entry
 
