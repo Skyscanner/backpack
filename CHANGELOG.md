@@ -7,7 +7,6 @@
 **Fixed:**
 - bpk-component-datatable: 2.0.47 => 2.0.48
   - The column heading label no longer has `white-space: nowrap;` so it should wrap properly when the title label is too long for the column.
-
 # 2020-11-26
 
 **Added:**

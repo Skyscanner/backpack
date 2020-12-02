@@ -72,7 +72,6 @@ const BpkCheckbox = (props: Props) => {
   const inputClasses: string = getClassName(
     'bpk-checkbox__input',
     white && 'bpk-checkbox__input-white',
-    checked && !indeterminate && 'bpk-checkbox__input-checkmark',
     indeterminate && 'bpk-checkbox__input-indeterminate',
   );
 
