@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-dialog",
-  "version": "2.2.10",
+  "version": "2.2.11",
   "description": "Backpack dialog component.",
   "license": "Apache-2.0",
   "repository": {
@@ -14,19 +14,19 @@
   },
   "gitHead": "9ea9c15278c89af54c0026e813b3866be4016f39",
   "dependencies": {
-    "bpk-component-flare": "^1.0.92",
-    "bpk-component-modal": "^2.1.94",
+    "bpk-component-flare": "^1.0.93",
+    "bpk-component-modal": "^2.1.95",
     "prop-types": "^15.6.2"
   },
   "peerDependencies": {
     "react": "^16.0.0"
   },
   "devDependencies": {
-    "bpk-component-button": "^3.3.1",
-    "bpk-component-close-button": "^2.0.91",
-    "bpk-component-icon": "^8.2.29",
-    "bpk-component-text": "^3.1.25",
-    "bpk-mixins": "^20.1.7",
+    "bpk-component-button": "^3.3.2",
+    "bpk-component-close-button": "^2.0.92",
+    "bpk-component-icon": "^8.2.30",
+    "bpk-component-text": "^3.1.26",
+    "bpk-mixins": "^20.1.8",
     "bpk-react-utils": "^3.0.7"
   }
 }
