@@ -5,6 +5,14 @@
 # 2020-12-02
 
 **Fixed:**
+ - bpk-component-datatable: 2.0.48 => 2.0.49
+   - `rowClassName` will now be applied to the row properly.
+- bpk-component-checkbox: 2.2.20 => 2.2.21
+  - Fixed an issue where checked checkboxes didn't always display the check.
+
+# 2020-12-02
+
+**Fixed:**
 - bpk-component-datatable: 2.0.47 => 2.0.48
   - The column heading label no longer has `white-space: nowrap;` so it should wrap properly when the title label is too long for the column.
 # 2020-11-26
