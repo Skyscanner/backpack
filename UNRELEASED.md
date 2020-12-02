@@ -2,6 +2,10 @@
 
 > Place your changes below this line.
 
+**Fixed:**
+- bpk-component-datatable:
+  - The column heading label no longer has `white-space: nowrap;` so it should wrap properly when the title label is too long for the column.
+
 **Added:**
 - bpk-component-image:
   - Flow types are now exported from `bpk-component-image`.
