@@ -2,6 +2,18 @@
 
 [Unreleased changes](./UNRELEASED.md).
 
+# 2020-12-02
+
+**Fixed:**
+- bpk-component-datatable: 2.0.47 => 2.0.48
+  - The column heading label no longer has `white-space: nowrap;` so it should wrap properly when the title label is too long for the column.
+
+# 2020-11-26
+
+**Added:**
+- bpk-component-image: 4.2.0 => 4.3.0
+  - Flow types are now exported from `bpk-component-image`.
+
 # 2020-11-24
 
  - bpk-component-aria-live: `1.0.0`
