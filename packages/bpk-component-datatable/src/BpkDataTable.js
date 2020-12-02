@@ -134,7 +134,7 @@ class BpkDataTable extends Component {
     });
   };
 
-  rowClassName = ({ index }) => {
+  rowClassName = (consumerClassName, { index }) => {
     const classNames = [getClassName('bpk-data-table__row')];
     if (this.state.rowSelected === index) {
       classNames.push(getClassName('bpk-data-table__row--selected'));
@@ -145,13 +145,22 @@ class BpkDataTable extends Component {
     if (index === -1) {
       classNames.push(getClassName('bpk-data-table__header-row'));
     }
+    if (consumerClassName) {
+      classNames.push(consumerClassName);
+    }
     return classNames;
   };
 
   renderTable(width) {
     const { sortedList, sortDirection, sortBy } = this.state;
 
-    const { children, className, headerClassName, ...restOfProps } = this.props;
+    const {
+      children,
+      className,
+      headerClassName,
+      rowClassName,
+      ...restOfProps
+    } = this.props;
 
     const classNames = [getClassName('bpk-data-table')];
     if (className) {
@@ -171,7 +180,7 @@ class BpkDataTable extends Component {
         rowCount={sortedList.length}
         rowGetter={({ index }) => sortedList[index]}
         headerClassName={headerClassNames.join(' ')}
-        rowClassName={this.rowClassName}
+        rowClassName={row => this.rowClassName(rowClassName, row)}
         onRowClick={this.onRowClicked}
         onHeaderClick={this.onHeaderClick}
         sortBy={sortBy}

@@ -1,6 +1,9 @@
 # Unreleased
 
 > Place your changes below this line.
+**Fixed:**
+ - bpk-component-datatable:
+   - `rowClassName` will now be applied to the row properly.
 
 **Fixed:**
 - bpk-component-checkbox:
