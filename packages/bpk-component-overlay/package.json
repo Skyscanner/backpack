@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-overlay",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "description": "Backpack overlay component.",
   "license": "Apache-2.0",
   "repository": {
@@ -13,7 +13,7 @@
     "registry": "https://registry.npmjs.org/"
   },
   "dependencies": {
-    "bpk-mixins": "^20.1.8",
+    "bpk-mixins": "^20.1.9",
     "bpk-react-utils": "^3.0.7",
     "prop-types": "^15.5.8"
   },
@@ -21,8 +21,8 @@
     "react": "^16.0.0"
   },
   "devDependencies": {
-    "bpk-component-image": "^4.3.1",
-    "bpk-component-text": "^3.1.26"
+    "bpk-component-image": "^4.3.2",
+    "bpk-component-text": "^3.1.27"
   },
   "gitHead": "40557f8ff940a3dc345ec3773d2cdc14d4fe502b"
 }
