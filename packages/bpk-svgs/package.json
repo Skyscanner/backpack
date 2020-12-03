@@ -15,7 +15,7 @@
   "scripts": {
     "svgs": "gulp clean && gulp"
   },
-  "gitHead": "a6910b1b5068590c7ba3691bedeb5818160cc477",
+  "gitHead": "6560b908a434f4def40ac43865627aa23c38fe62",
   "devDependencies": {
     "bpk-tokens": "^36.0.1"
   }

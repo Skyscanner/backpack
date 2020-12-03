@@ -12,7 +12,7 @@
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
-  "gitHead": "a6910b1b5068590c7ba3691bedeb5818160cc477",
+  "gitHead": "6560b908a434f4def40ac43865627aa23c38fe62",
   "dependencies": {
     "@skyscanner/popper.js": "^1.12.9-beta.1",
     "bpk-mixins": "^20.1.9",
