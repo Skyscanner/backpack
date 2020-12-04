@@ -2,6 +2,13 @@
 
 [Unreleased changes](./UNRELEASED.md).
 
+# 2020-12-04
+
+**Fixed:**
+ - bpk-component-icon: 8.3.0 => 8.3.1
+ - bpk-svgs: 12.2.0 => 12.2.1
+   - `price-tag` icon fixed to be centered and correct size.
+
 # 2020-12-03
 
 **Added:**
