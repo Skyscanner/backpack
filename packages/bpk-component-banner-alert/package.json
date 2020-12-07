@@ -21,7 +21,7 @@
     "bpk-react-utils": "^3.0.7",
     "bpk-tokens": "^36.0.1",
     "prop-types": "^15.6.2",
-    "react-transition-group": "^2.5.3"
+    "react-transition-group": "^4.4.1"
   },
   "peerDependencies": {
     "react": "^16.0.0"
