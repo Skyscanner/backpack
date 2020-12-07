@@ -1,6 +1,16 @@
 # Unreleased
 
 > Place your changes below this line.
+**Breaking**
+
+ - bpk-component-banner-alert
+   - Upgrade `react-transition-group` dependency to `4.4.1`
+ - bpk-component-drawer
+   - Upgrade `react-transition-group` dependency to `4.4.1`
+ - bpk-component-image
+   - Upgrade `react-transition-group` dependency to `4.4.1`
+ - bpk-react-utils
+   - Upgrade `react-transition-group` dependency to `4.4.1`
 
 ## How to write a good changelog entry
 
