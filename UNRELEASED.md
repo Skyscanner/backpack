@@ -1,7 +1,7 @@
 # Unreleased
 
 > Place your changes below this line.
-**Breaking**
+**Fixed**
 
  - bpk-component-banner-alert
    - Upgrade `react-transition-group` dependency to `4.4.1`
