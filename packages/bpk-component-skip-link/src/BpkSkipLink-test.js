@@ -24,19 +24,31 @@ import BpkSkipLink from './BpkSkipLink';
 
 describe('BpkSkipLink', () => {
   it('should render correctly', () => {
-    const tree = renderer.create(<BpkSkipLink />).toJSON();
+    const tree = renderer
+      .create(<BpkSkipLink href="#main" label="Skip to main content" />)
+      .toJSON();
     expect(tree).toMatchSnapshot();
   });
 
   it('should support custom class names', () => {
     const tree = renderer
-      .create(<BpkSkipLink className="custom-classname" />)
+      .create(
+        <BpkSkipLink
+          href="#main"
+          label="Skip to main content"
+          className="custom-className"
+        />,
+      )
       .toJSON();
     expect(tree).toMatchSnapshot();
   });
 
   it('should support arbitrary props', () => {
-    const tree = renderer.create(<BpkSkipLink testID="123" />).toJSON();
+    const tree = renderer
+      .create(
+        <BpkSkipLink href="#main" label="Skip to main content" testID="123" />,
+      )
+      .toJSON();
     expect(tree).toMatchSnapshot();
   });
 });

@@ -18,6 +18,8 @@
 /* @flow strict */
 
 import BpkSkipLink, { type Props as BpkSkipLinkProps } from './src/BpkSkipLink';
+import themeAttributes from './src/themeAttributes';
 
 export type { BpkSkipLinkProps };
+export { themeAttributes };
 export default BpkSkipLink;

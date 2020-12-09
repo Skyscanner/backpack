@@ -675,6 +675,7 @@ bpk-component-rtl-toggle
 bpk-component-scrollable-calendar
 bpk-component-section-list
 bpk-component-select
+bpk-component-skip-link
 bpk-component-slider
 bpk-component-spinner
 bpk-component-star-rating

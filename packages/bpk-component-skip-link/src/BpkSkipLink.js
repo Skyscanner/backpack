@@ -35,7 +35,19 @@ export type Props = {
   className: ?string,
 };
 class BpkSkipLink extends Component<Props, State> {
-  constructor(props) {
+  hideTimout: ?function;
+
+  static propTypes = {
+    label: PropTypes.string.isRequired,
+    href: PropTypes.string.isRequired,
+    className: PropTypes.string,
+  };
+
+  static defaultProps = {
+    className: null,
+  };
+
+  constructor(props: Props) {
     super(props);
 
     this.state = { hidden: true };
@@ -52,7 +64,7 @@ class BpkSkipLink extends Component<Props, State> {
     );
 
     return (
-      // $FlowFixMe - inexact rest. See 'decisions/flowfixme.md'.
+      // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
       <a
         onFocus={() => {
           clearTimeout(this.hideTimout);
@@ -75,15 +87,5 @@ class BpkSkipLink extends Component<Props, State> {
     );
   }
 }
-
-BpkSkipLink.propTypes = {
-  label: PropTypes.string.isRequired,
-  href: PropTypes.string.isRequired,
-  className: PropTypes.string,
-};
-
-BpkSkipLink.defaultProps = {
-  className: null,
-};
 
 export default BpkSkipLink;

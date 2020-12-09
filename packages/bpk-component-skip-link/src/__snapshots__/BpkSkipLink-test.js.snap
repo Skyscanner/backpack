@@ -3,24 +3,33 @@
 exports[`BpkSkipLink should render correctly 1`] = `
 <a
   className="bpk-skip-link bpk-skip-link--hidden"
+  href="#main"
   onBlur={[Function]}
   onFocus={[Function]}
-/>
+>
+  Skip to main content
+</a>
 `;
 
 exports[`BpkSkipLink should support arbitrary props 1`] = `
 <a
   className="bpk-skip-link bpk-skip-link--hidden"
+  href="#main"
   onBlur={[Function]}
   onFocus={[Function]}
   testID="123"
-/>
+>
+  Skip to main content
+</a>
 `;
 
 exports[`BpkSkipLink should support custom class names 1`] = `
 <a
-  className="bpk-skip-link bpk-skip-link--hidden custom-classname"
+  className="bpk-skip-link bpk-skip-link--hidden custom-className"
+  href="#main"
   onBlur={[Function]}
   onFocus={[Function]}
-/>
+>
+  Skip to main content
+</a>
 `;

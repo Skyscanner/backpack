@@ -197,6 +197,8 @@ const generateTheme = ({
   priceMarkerViewedBorderColor: primaryColor300,
   priceMarkerViewedColor: colorWhite,
 
+  skipLinkBackgroundColor: secondaryColor500,
+
   navigationBarIconButtonColor: colorWhite,
   navigationBarIconButtonHoverColor: colorWhite,
   navigationBarIconButtonActiveColor: colorWhite,

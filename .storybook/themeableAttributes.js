@@ -56,6 +56,7 @@ import { themeAttributes as radioThemeAttributes } from '../packages/bpk-compone
 import { themeAttributes as ratingThemeAttributes } from '../packages/bpk-component-rating';
 import { themeAttributes as selectThemeAttributes } from '../packages/bpk-component-select';
 import { themeAttributes as sliderThemeAttributes } from '../packages/bpk-component-slider';
+import { themeAttributes as skipLinkThemeAttributes } from '../packages/bpk-component-skip-link';
 import { themeAttributes as spinnerThemeAttributes } from '../packages/bpk-component-spinner';
 import { themeAttributes as starRatingThemeAttributes } from '../packages/bpk-component-star-rating';
 import { themeAttributes as switchThemeAttributes } from '../packages/bpk-component-switch';
@@ -94,6 +95,7 @@ export default [
   ...radioThemeAttributes,
   ...ratingThemeAttributes,
   ...selectThemeAttributes,
+  ...skipLinkThemeAttributes,
   ...sliderThemeAttributes,
   ...spinnerThemeAttributes,
   ...starRatingThemeAttributes,

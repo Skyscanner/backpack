@@ -24,3 +24,7 @@ export default () => <BpkSkipLink href="#main" label="Skip to main content" />;
 | className | string   | false    | null          |
 | label     | string   | true     | -             |
 | href      | string   | true     | -             |
+
+## Theme Props
+
+- `skipLinkBackgroundColor`

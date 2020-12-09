@@ -1,6 +1,9 @@
 # Unreleased
 
 > Place your changes below this line.
+**Added:**
+ - bpk-component-skip-link:
+   - New skip-link component that helps screen-reader users and keyboard-only users navigate faster.
 
 ## How to write a good changelog entry
 

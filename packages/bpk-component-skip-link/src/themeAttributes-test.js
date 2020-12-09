@@ -16,27 +16,10 @@
  * limitations under the License.
  */
 
-@import '~bpk-mixins/index';
+import themeAttributes from './themeAttributes';
 
-.bpk-skip-link {
-  display: inline-block;
-  padding: $bpk-spacing-sm;
-  transition: none;
-  border-radius: $bpk-button-border-radius;
-  color: $bpk-color-white;
-  text-decoration: none;
-  opacity: 1;
-  overflow: hidden;
-
-  @include bpk-themeable-property(
-    background-color,
-    --bpk-skip-link-background-color,
-    $bpk-color-panjin
-  );
-
-  &--hidden {
-    transition: opacity $bpk-duration-sm ease-in-out;
-    opacity: 0;
-    pointer-events: none;
-  }
-}
+describe('themeAttributes', () => {
+  it('should export the correct general theme attributes', () => {
+    expect(themeAttributes).toEqual(['skipLinkBackgroundColor']);
+  });
+});
