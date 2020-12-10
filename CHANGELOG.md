@@ -2,6 +2,11 @@
 
 [Unreleased changes](./UNRELEASED.md).
 
+# 2020-12-10
+
+**Added:**
+ - bpk-component-skip-link:
+   - New skip-link component that helps screen-reader users and keyboard-only users navigate faster.
 # 2020-12-04
 
 **Fixed:**
