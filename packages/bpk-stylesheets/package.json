@@ -1,6 +1,6 @@
 {
   "name": "bpk-stylesheets",
-  "version": "6.0.61",
+  "version": "6.0.62",
   "description": "Backpack's stylesheets.",
   "license": "Apache-2.0",
   "repository": {
@@ -17,7 +17,7 @@
   },
   "gitHead": "35c54a07bc38364c40e90adc19e6fcd42d39ca81",
   "dependencies": {
-    "bpk-mixins": "^20.1.11",
+    "bpk-mixins": "^20.1.12",
     "bpk-tokens": "^36.0.1",
     "normalize.css": "4.2.0"
   }
