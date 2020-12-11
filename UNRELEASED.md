@@ -1,6 +1,9 @@
 # Unreleased
 
 > Place your changes below this line.
+**Fixed:**
+ - bpk-component-close-button:
+   - Fixed the size of focus indicators in Chrome so that they don't touch the close icon.
 
 ## How to write a good changelog entry
 

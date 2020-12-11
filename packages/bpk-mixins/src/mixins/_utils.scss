@@ -234,7 +234,6 @@
 
 @mixin bpk-touch-tappable {
   position: relative;
-  outline-offset: -0.215rem;
 
   &::before {
     position: absolute;
