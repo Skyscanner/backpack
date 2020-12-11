@@ -15,7 +15,7 @@
   "scripts": {
     "tokens": "gulp"
   },
-  "gitHead": "a6910b1b5068590c7ba3691bedeb5818160cc477",
+  "gitHead": "02a5949a3a8de21512e51c9f067087410ac521e6",
   "dependencies": {
     "color": "^3.0.0"
   }
