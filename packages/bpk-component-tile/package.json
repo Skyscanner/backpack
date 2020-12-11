@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-tile",
-  "version": "0.0.234",
+  "version": "0.0.235",
   "description": "Backpack card component.",
   "license": "Apache-2.0",
   "private": true,
@@ -14,8 +14,8 @@
     "registry": "https://registry.npmjs.org/"
   },
   "dependencies": {
-    "bpk-component-icon": "^8.3.3",
-    "bpk-mixins": "^20.1.12",
+    "bpk-component-icon": "^8.3.4",
+    "bpk-mixins": "^20.1.13",
     "prop-types": "^15.6.2"
   },
   "peerDependencies": {
