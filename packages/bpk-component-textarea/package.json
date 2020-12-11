@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-textarea",
-  "version": "2.0.96",
+  "version": "2.0.97",
   "description": "Backpack textarea component.",
   "license": "Apache-2.0",
   "repository": {
@@ -14,8 +14,8 @@
   },
   "gitHead": "35c54a07bc38364c40e90adc19e6fcd42d39ca81",
   "dependencies": {
-    "bpk-mixins": "^20.1.13",
-    "bpk-react-utils": "^3.0.7",
+    "bpk-mixins": "^20.1.14",
+    "bpk-react-utils": "^3.0.8",
     "prop-types": "^15.6.2"
   },
   "peerDependencies": {

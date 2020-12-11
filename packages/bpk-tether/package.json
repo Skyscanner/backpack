@@ -1,6 +1,6 @@
 {
   "name": "bpk-tether",
-  "version": "1.0.19",
+  "version": "1.0.20",
   "description": "Wrapper and utils for Tether.",
   "license": "Apache-2.0",
   "repository": {

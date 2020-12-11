@@ -1,6 +1,6 @@
 {
   "name": "bpk-theming",
-  "version": "2.0.47",
+  "version": "2.0.48",
   "description": "Backpack theming utlities.",
   "license": "Apache-2.0",
   "repository": {
@@ -14,7 +14,7 @@
   },
   "gitHead": "a6910b1b5068590c7ba3691bedeb5818160cc477",
   "dependencies": {
-    "bpk-tokens": "^36.0.1",
+    "bpk-tokens": "^36.0.2",
     "prop-types": "^15.6.2"
   },
   "peerDependencies": {
