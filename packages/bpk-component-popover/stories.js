@@ -186,6 +186,12 @@ storiesOf('bpk-component-popover', module)
       <PopoverContainer id="my-popover" labelAsTitle />
     </Spacer>
   ))
+  .add('Alongside input', () => (
+    <Spacer>
+      <PopoverContainer id="my-popover" labelAsTitle />
+      <input name="input" />
+    </Spacer>
+  ))
   .add('With label as title but close button text', () => (
     <Spacer>
       <PopoverContainer id="my-popover" labelAsTitle closeButtonIcon={false} />
