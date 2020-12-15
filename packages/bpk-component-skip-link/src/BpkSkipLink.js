@@ -18,74 +18,42 @@
 /* @flow strict */
 
 import PropTypes from 'prop-types';
-import React, { Component } from 'react';
+import React from 'react';
 import { cssModules } from 'bpk-react-utils';
 
 import STYLES from './BpkSkipLink.scss';
 
 const getClassName = cssModules(STYLES);
 
-export type State = {
-  hidden: boolean,
-};
-
 export type Props = {
   label: string,
   href: string,
   className: ?string,
 };
-class BpkSkipLink extends Component<Props, State> {
-  hideTimout: ?function;
 
-  static propTypes = {
-    label: PropTypes.string.isRequired,
-    href: PropTypes.string.isRequired,
-    className: PropTypes.string,
-  };
+const BpkSkipLink = (props: Props) => {
+  const { label, href, className, ...rest } = props;
 
-  static defaultProps = {
-    className: null,
-  };
+  return (
+    // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
+    <a
+      href={href}
+      className={getClassName('bpk-skip-link', className)}
+      {...rest}
+    >
+      {label}
+    </a>
+  );
+};
 
-  constructor(props: Props) {
-    super(props);
+BpkSkipLink.propTypes = {
+  label: PropTypes.string.isRequired,
+  href: PropTypes.string.isRequired,
+  className: PropTypes.string,
+};
 
-    this.state = { hidden: true };
-  }
-
-  render() {
-    const { label, href, className, ...rest } = this.props;
-    const { hidden } = this.state;
-
-    const classNames = getClassName(
-      'bpk-skip-link',
-      hidden && getClassName('bpk-skip-link--hidden'),
-      className,
-    );
-
-    return (
-      // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
-      <a
-        onFocus={() => {
-          clearTimeout(this.hideTimout);
-          this.setState({ hidden: false });
-        }}
-        onBlur={() => {
-          // We want the skiplink to remain visible for a short period of time after it is blurred so that
-          // a user tabbing quickly has a chance to see that it appeared
-          this.hideTimout = setTimeout(
-            () => this.setState({ hidden: true }),
-            200,
-          );
-        }}
-        href={href}
-        className={classNames}
-        {...rest}
-      >
-        {label}
-      </a>
-    );
-  }
-}
+BpkSkipLink.defaultProps = {
+  className: null,
+};
 
 export default BpkSkipLink;
