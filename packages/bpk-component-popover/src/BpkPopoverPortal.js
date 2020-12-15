@@ -22,9 +22,9 @@ import Popper from '@skyscanner/popper.js';
 import PropTypes from 'prop-types';
 import React, { Component, type Node } from 'react';
 import focusStore from 'a11y-focus-store';
-import focusScope from 'a11y-focus-scope';
 import { Portal, cssModules } from 'bpk-react-utils';
 
+import keyboardFocusScope from './keyboardFocusScope';
 import STYLES from './BpkPopover.scss';
 import BpkPopover, {
   propTypes as popoverPropTypes,
@@ -87,17 +87,21 @@ class BpkPopoverPortal extends Component<Props> {
     this.position(popoverElement, targetElement);
   };
 
-  beforeClose = (done: () => void) => {
+  onClose = (event: Object, information: { source: string }) => {
+    if (this.props.onClose) {
+      this.props.onClose(event, information);
+    }
+
     if (this.popper) {
       this.popper.destroy();
       this.popper = null;
       this.previousTargetElement = null;
     }
 
-    focusScope.unscopeFocus();
-    focusStore.restoreFocus();
-
-    done();
+    keyboardFocusScope.unscopeFocus();
+    if (information.source !== 'DOCUMENT_CLICK') {
+      focusStore.restoreFocus();
+    }
   };
 
   position(popoverElement: HTMLElement, targetElement: ?HTMLElement) {
@@ -123,7 +127,7 @@ class BpkPopoverPortal extends Component<Props> {
             targetElement.focus();
           }
           focusStore.storeFocus();
-          focusScope.scopeFocus(popoverElement);
+          keyboardFocusScope.scopeFocus(popoverElement);
         },
         modifiers: {
           ...this.props.popperModifiers,
@@ -165,17 +169,16 @@ class BpkPopoverPortal extends Component<Props> {
 
     return (
       <Portal
-        beforeClose={this.beforeClose}
         className={classNames.join(' ')}
         isOpen={isOpen}
-        onClose={onClose}
+        onClose={this.onClose}
         onRender={this.onRender}
         style={portalStyle}
         renderTarget={renderTarget}
         target={target}
       >
         {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
-        <BpkPopover onClose={onClose} {...rest} />
+        <BpkPopover onClose={this.onClose} {...rest} />
       </Portal>
     );
   }
