@@ -70,7 +70,7 @@ jobs:
       - name: Prepare to deploy Storybook (pull request build)
         run: |
           mkdir build
-          mv storybook-dist $PR_NUMBER
+          mv dist-storybook $PR_NUMBER
           cp -R $PR_NUMBER build/
         if: github.ref != 'refs/heads/master'
         env:
@@ -84,7 +84,7 @@ jobs:
           publish_dir: build/
           keep_files: true
           external_repository: backpack/storybook-prs
-          publish_branch: master
+          publish_branch: main
 
       - name: Link to the pull request build
         uses: unsplash/comment-on-pr@master
