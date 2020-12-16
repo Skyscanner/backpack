@@ -53,7 +53,7 @@ jobs:
         with:
           personal_token: ${{ secrets.DEPLOY_TOKEN }}
           publish_dir: dist-sassdoc/
-          keep_files: true
+          keep_files: false
           external_repository: backpack/sassdoc
           publish_branch: master
 
@@ -63,7 +63,7 @@ jobs:
         with:
           personal_token: ${{ secrets.DEPLOY_TOKEN }}
           publish_dir: dist-storybook/
-          keep_files: true
+          keep_files: false
           external_repository: backpack/storybook
           publish_branch: master
 
