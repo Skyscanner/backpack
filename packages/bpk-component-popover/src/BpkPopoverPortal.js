@@ -70,6 +70,8 @@ export const defaultProps = {
 class BpkPopoverPortal extends Component<Props> {
   popper: ?typeof Popper;
 
+  suppressRestoreFocus: boolean;
+
   previousTargetElement: ?HTMLElement;
 
   static propTypes = propTypes;
@@ -88,10 +90,17 @@ class BpkPopoverPortal extends Component<Props> {
   };
 
   onClose = (event: Object, information: { source: string }) => {
+    // If the user has clicked outside the popover then we don't want focus to be restored
+    // otherwise it will be stolen back from the element they clicked on.
+    // Here we suppress restoring focus before the consumer is told about the close and updates state.
+    this.suppressRestoreFocus = information.source === 'DOCUMENT_CLICK';
+
     if (this.props.onClose) {
       this.props.onClose(event, information);
     }
+  };
 
+  beforeClose = (done: () => void) => {
     if (this.popper) {
       this.popper.destroy();
       this.popper = null;
@@ -99,9 +108,12 @@ class BpkPopoverPortal extends Component<Props> {
     }
 
     keyboardFocusScope.unscopeFocus();
-    if (information.source !== 'DOCUMENT_CLICK') {
+    if (!this.suppressRestoreFocus) {
       focusStore.restoreFocus();
+      this.suppressRestoreFocus = false;
     }
+
+    done();
   };
 
   position(popoverElement: HTMLElement, targetElement: ?HTMLElement) {
@@ -169,6 +181,7 @@ class BpkPopoverPortal extends Component<Props> {
 
     return (
       <Portal
+        beforeClose={this.beforeClose}
         className={classNames.join(' ')}
         isOpen={isOpen}
         onClose={this.onClose}
