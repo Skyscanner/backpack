@@ -1,6 +1,9 @@
 # Unreleased
 
 > Place your changes below this line.
+**Fixed:**
+ - bpk-component-skip-link:
+   - Component now works with no client-side JS.
 
 ## How to write a good changelog entry
 
