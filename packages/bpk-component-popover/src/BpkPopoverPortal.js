@@ -89,6 +89,14 @@ class BpkPopoverPortal extends Component<Props> {
     this.position(popoverElement, targetElement);
   };
 
+  // The order of events here is as follows:
+  // - `onClose` is called by `Portal`
+  // - The consumer changes `isOpen` to `false`
+  // - `beforeClose` is called by `Portal`
+  // - `beforeClose` calls the `done` callback which closes the `Portal`
+
+  // `onClose` is called by the `Portal` to inform the consumer that `isOpen` should be made false.
+  // Before we pass this information to the consumer, we want to note if restoring focus should be suppressed
   onClose = (event: Object, information: { source: string }) => {
     // If the user has clicked outside the popover then we don't want focus to be restored
     // otherwise it will be stolen back from the element they clicked on.
@@ -100,6 +108,8 @@ class BpkPopoverPortal extends Component<Props> {
     }
   };
 
+  // `beforeClose` is called by the `Portal` when `isOpen` is changed to false.
+  // As a result, `onClose` is called first, followed by `beforeClose`.
   beforeClose = (done: () => void) => {
     if (this.popper) {
       this.popper.destroy();

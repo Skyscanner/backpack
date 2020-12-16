@@ -1,10 +1,9 @@
 # Unreleased
 
 > Place your changes below this line.
-> **Fixed:**
-
+**Fixed:**
 - bpk-component-popover:
-  - Fixed an issue that prevented using a keyboard click to focus on an element outside the popover.
+  - Fixed an issue that prevented using a mouse click (or tap) to focus on an element outside the popover.
 
 ## How to write a good changelog entry
 

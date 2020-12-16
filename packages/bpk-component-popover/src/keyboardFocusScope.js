@@ -58,6 +58,8 @@ const init = element => {
 
   focus();
 
+  // As we only want to trap focus for keyboard navigation, we enable focus trapping on keydown and disable it again on keyup.
+  // This means that focus is trapped when pressing the tab key, but not trapped for other navigation events such as mouse clicks.
   document.addEventListener('keydown', enableFocusTrapping);
   document.addEventListener('focusin', checkFocus);
   document.addEventListener('keyup', disableFocusTrapping);
