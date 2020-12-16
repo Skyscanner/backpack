@@ -48,11 +48,40 @@ export type BpkBackgroundImageProps = {
 class BpkBackgroundImage extends Component<BpkBackgroundImageProps> {
   trackImg: ?Image;
 
-  onBackgroundImageLoad: () => mixed;
-
   startImageLoad: () => mixed;
 
-  static defaultProps: {};
+  onBackgroundImageLoad: () => mixed;
+
+  static propTypes = {
+    aspectRatio: widthHeightAspectRatioPropType,
+    height: deprecated(
+      widthHeightAspectRatioPropType,
+      'Use "aspectRatio" instead of "width" and "height".',
+    ),
+    width: deprecated(
+      widthHeightAspectRatioPropType,
+      'Use "aspectRatio" instead of "width" and "height".',
+    ),
+    src: PropTypes.string.isRequired,
+    className: PropTypes.string,
+    inView: PropTypes.bool,
+    loading: PropTypes.bool,
+    onLoad: PropTypes.func,
+    style: PropTypes.object, // eslint-disable-line react/forbid-prop-types
+    imageStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
+  };
+
+  static defaultProps = {
+    width: null,
+    height: null,
+    aspectRatio: null,
+    className: null,
+    inView: true,
+    loading: false,
+    onLoad: null,
+    style: {},
+    imageStyle: {},
+  };
 
   constructor(props: BpkBackgroundImageProps) {
     super(props);
@@ -160,36 +189,5 @@ class BpkBackgroundImage extends Component<BpkBackgroundImageProps> {
     );
   }
 }
-
-BpkBackgroundImage.propTypes = {
-  aspectRatio: widthHeightAspectRatioPropType,
-  height: deprecated(
-    widthHeightAspectRatioPropType,
-    'Use "aspectRatio" instead of "width" and "height".',
-  ),
-  width: deprecated(
-    widthHeightAspectRatioPropType,
-    'Use "aspectRatio" instead of "width" and "height".',
-  ),
-  src: PropTypes.string.isRequired,
-  className: PropTypes.string,
-  inView: PropTypes.bool,
-  loading: PropTypes.bool,
-  onLoad: PropTypes.func,
-  style: PropTypes.object, // eslint-disable-line react/forbid-prop-types
-  imageStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
-};
-
-BpkBackgroundImage.defaultProps = {
-  width: null,
-  height: null,
-  aspectRatio: null,
-  className: null,
-  inView: true,
-  loading: false,
-  onLoad: null,
-  style: {},
-  imageStyle: {},
-};
 
 export default BpkBackgroundImage;
