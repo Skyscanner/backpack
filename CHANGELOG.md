@@ -2,6 +2,16 @@
 
 [Unreleased changes](./UNRELEASED.md).
 
+# 2020-12-17
+
+**Fixed:**
+- bpk-component-popover: 3.0.100 => 3.0.101
+  - Fixed an issue that prevented using a mouse click (or tap) to focus on an element outside the popover.
+
+**Fixed:**
+- bpk-component-image: 4.3.7 => 4.3.8
+  - Fixed clash between component `defaultProps` and `defaultProps` flow-type.
+
 # 2020-12-11
 
 **Fixed:**

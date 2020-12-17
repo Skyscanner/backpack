@@ -1,13 +1,6 @@
 # Unreleased
 
 > Place your changes below this line.
-**Fixed:**
-- bpk-component-popover:
-  - Fixed an issue that prevented using a mouse click (or tap) to focus on an element outside the popover.
-
-**Fixed:**
-- bpk-component-image:
-  - Fixed clash between component `defaultProps` and `defaultProps` flow-type.
 
 ## How to write a good changelog entry
 
