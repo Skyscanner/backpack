@@ -2,8 +2,8 @@
 
 > Place your changes below this line.
 **Fixed:**
- - bpk-component-skip-link:
-   - Component now works with no client-side JS.
+- bpk-component-popover:
+  - Fixed an issue that prevented using a mouse click (or tap) to focus on an element outside the popover.
 
 **Fixed:**
 - bpk-component-image:
@@ -23,16 +23,16 @@ See [`CHANGELOG.md`](CHANGELOG.md) for real-world examples of good changelog ent
 
 **Breaking:**
 
- - bpk-svgs:
-   - Replaced `charmeleon` icon with new `charizard` icon. To upgrade, replace your references to `charmeleon` with `charizard`.
-   - Upgraded `fire` dependency to `3.0.0`.
+- bpk-svgs:
+  - Replaced `charmeleon` icon with new `charizard` icon. To upgrade, replace your references to `charmeleon` with `charizard`.
+  - Upgraded `fire` dependency to `3.0.0`.
 
 **Added:**
 
- - bpk-component-infinity-gauntlet:
-   - New `timeStone` prop for controlling time. See &lt;link to docs site&gt;.
+- bpk-component-infinity-gauntlet:
+  - New `timeStone` prop for controlling time. See &lt;link to docs site&gt;.
 
 **Fixed:**
 
- - bpk-component-horcrux:
-   - Fixed issue where `BpkHorcrux` would occasionally possess the living.
+- bpk-component-horcrux:
+  - Fixed issue where `BpkHorcrux` would occasionally possess the living.

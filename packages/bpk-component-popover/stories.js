@@ -56,6 +56,7 @@ type Props = {
   id: string,
   changeProps: boolean,
   targetFunction: ?() => ?HTMLElement,
+  closeProgrammatically: boolean,
 };
 
 type State = {
@@ -71,6 +72,7 @@ class PopoverContainer extends Component<Props, State> {
     id: PropTypes.string.isRequired,
     changeProps: PropTypes.bool,
     targetFunction: PropTypes.func,
+    closeProgrammatically: PropTypes.bool,
   };
 
   static defaultProps = {
@@ -78,6 +80,7 @@ class PopoverContainer extends Component<Props, State> {
     className: null,
     changeProps: false,
     targetFunction: null,
+    closeProgrammatically: false,
   };
 
   constructor() {
@@ -94,6 +97,11 @@ class PopoverContainer extends Component<Props, State> {
     this.setState({
       isOpen: true,
     });
+    if (this.props.closeProgrammatically) {
+      setTimeout(() => {
+        this.closePopover();
+      }, 2000);
+    }
   };
 
   closePopover = () => {
@@ -184,6 +192,17 @@ storiesOf('bpk-component-popover', module)
   .add('With label as title', () => (
     <Spacer>
       <PopoverContainer id="my-popover" labelAsTitle />
+    </Spacer>
+  ))
+  .add('Alongside input', () => (
+    <Spacer>
+      <PopoverContainer id="my-popover" labelAsTitle />
+      <input name="input" />
+    </Spacer>
+  ))
+  .add('Close programmatically', () => (
+    <Spacer>
+      <PopoverContainer id="my-popover" labelAsTitle closeProgrammatically />
     </Spacer>
   ))
   .add('With label as title but close button text', () => (

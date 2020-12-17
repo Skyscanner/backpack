@@ -22,9 +22,9 @@ import Popper from '@skyscanner/popper.js';
 import PropTypes from 'prop-types';
 import React, { Component, type Node } from 'react';
 import focusStore from 'a11y-focus-store';
-import focusScope from 'a11y-focus-scope';
 import { Portal, cssModules } from 'bpk-react-utils';
 
+import keyboardFocusScope from './keyboardFocusScope';
 import STYLES from './BpkPopover.scss';
 import BpkPopover, {
   propTypes as popoverPropTypes,
@@ -70,6 +70,8 @@ export const defaultProps = {
 class BpkPopoverPortal extends Component<Props> {
   popper: ?typeof Popper;
 
+  suppressRestoreFocus: boolean;
+
   previousTargetElement: ?HTMLElement;
 
   static propTypes = propTypes;
@@ -87,6 +89,27 @@ class BpkPopoverPortal extends Component<Props> {
     this.position(popoverElement, targetElement);
   };
 
+  // The order of events here is as follows:
+  // - `onClose` is called by `Portal`
+  // - The consumer changes `isOpen` to `false`
+  // - `beforeClose` is called by `Portal`
+  // - `beforeClose` calls the `done` callback which closes the `Portal`
+
+  // `onClose` is called by the `Portal` to inform the consumer that `isOpen` should be made false.
+  // Before we pass this information to the consumer, we want to note if restoring focus should be suppressed
+  onClose = (event: Object, information: { source: string }) => {
+    // If the user has clicked outside the popover then we don't want focus to be restored
+    // otherwise it will be stolen back from the element they clicked on.
+    // Here we suppress restoring focus before the consumer is told about the close and updates state.
+    this.suppressRestoreFocus = information.source === 'DOCUMENT_CLICK';
+
+    if (this.props.onClose) {
+      this.props.onClose(event, information);
+    }
+  };
+
+  // `beforeClose` is called by the `Portal` when `isOpen` is changed to false.
+  // As a result, `onClose` is called first, followed by `beforeClose`.
   beforeClose = (done: () => void) => {
     if (this.popper) {
       this.popper.destroy();
@@ -94,8 +117,11 @@ class BpkPopoverPortal extends Component<Props> {
       this.previousTargetElement = null;
     }
 
-    focusScope.unscopeFocus();
-    focusStore.restoreFocus();
+    keyboardFocusScope.unscopeFocus();
+    if (!this.suppressRestoreFocus) {
+      focusStore.restoreFocus();
+      this.suppressRestoreFocus = false;
+    }
 
     done();
   };
@@ -123,7 +149,7 @@ class BpkPopoverPortal extends Component<Props> {
             targetElement.focus();
           }
           focusStore.storeFocus();
-          focusScope.scopeFocus(popoverElement);
+          keyboardFocusScope.scopeFocus(popoverElement);
         },
         modifiers: {
           ...this.props.popperModifiers,
@@ -168,14 +194,14 @@ class BpkPopoverPortal extends Component<Props> {
         beforeClose={this.beforeClose}
         className={classNames.join(' ')}
         isOpen={isOpen}
-        onClose={onClose}
+        onClose={this.onClose}
         onRender={this.onRender}
         style={portalStyle}
         renderTarget={renderTarget}
         target={target}
       >
         {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
-        <BpkPopover onClose={onClose} {...rest} />
+        <BpkPopover onClose={this.onClose} {...rest} />
       </Portal>
     );
   }

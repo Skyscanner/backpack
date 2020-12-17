@@ -58,6 +58,9 @@ class Portal extends Component {
     }
   }
 
+  // When the consumer updates `isOpen` to be `false`, we
+  // call their beforeClose function so that they can trigger the close.
+  // If they don't provide `beforeClose` we just call `close` directly.
   componentDidUpdate(prevProps) {
     if (this.props.isOpen) {
       if (!prevProps.isOpen) {
@@ -107,6 +110,8 @@ class Portal extends Component {
     }
 
     if (this.shouldClose) {
+      // `onClose` tells the consumer that they should change `isOpen` to false.
+      // Once the consumer has responded to `onClose`, `beforeClose` and `close` will be called.
       this.props.onClose(event, { source: 'DOCUMENT_CLICK' });
     }
   }
@@ -117,6 +122,8 @@ class Portal extends Component {
       this.props.isOpen &&
       this.props.closeOnEscPressed
     ) {
+      // `onClose` tells the consumer that they should change `isOpen` to false.
+      // Once the consumer has responded to `onClose`, `beforeClose` and `close` will be called.
       this.props.onClose(event, { source: 'ESCAPE' });
     }
   }
