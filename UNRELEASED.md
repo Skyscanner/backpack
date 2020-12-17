@@ -5,6 +5,10 @@
  - bpk-component-skip-link:
    - Component now works with no client-side JS.
 
+**Fixed:**
+- bpk-component-image:
+  - Fixed clash between component `defaultProps` and `defaultProps` flow-type.
+
 ## How to write a good changelog entry
 
 1. Add 'Breaking', 'Added' or 'Fixed' in bold depending on if the change will be major, minor or patch according to [semver](semver.org).

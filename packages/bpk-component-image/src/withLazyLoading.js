@@ -55,7 +55,15 @@ export default function withLazyLoading(
 
     supportsPassiveEvents: () => boolean;
 
-    static defaultProps: {};
+    static propTypes = {
+      style: PropTypes.object, // eslint-disable-line react/forbid-prop-types
+      className: PropTypes.string,
+    };
+
+    static defaultProps = {
+      style: null,
+      className: null,
+    };
 
     constructor(): void {
       super();
@@ -168,16 +176,6 @@ export default function withLazyLoading(
     }
   }
   WithLazyLoading.displayName = wrapDisplayName(Component, 'withLazyLoading');
-
-  WithLazyLoading.propTypes = {
-    style: PropTypes.object, // eslint-disable-line react/forbid-prop-types
-    className: PropTypes.string,
-  };
-
-  WithLazyLoading.defaultProps = {
-    style: null,
-    className: null,
-  };
 
   return WithLazyLoading;
 }
