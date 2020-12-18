@@ -84,13 +84,15 @@ const getIconForType = (
 type ToggleButtonProps = {
   label: ?string,
   expanded: boolean,
+  type: AlertTypeValue,
 };
 
 const ToggleButton = (props: ToggleButtonProps) => {
-  const classNames = [getClassName('bpk-banner-alert__expand-icon')];
-  if (props.expanded) {
-    classNames.push(getClassName('bpk-banner-alert__expand-icon--flipped'));
-  }
+  const classNames = getClassName(
+    `bpk-banner-alert__${props.type}-icon`,
+    'bpk-banner-alert__expand-icon',
+    props.expanded && 'bpk-banner-alert__expand-icon--flipped',
+  );
 
   return (
     <button
@@ -100,7 +102,7 @@ const ToggleButton = (props: ToggleButtonProps) => {
       aria-expanded={props.expanded}
       title={props.label}
     >
-      <ExpandIcon className={classNames.join(' ')} />
+      <ExpandIcon className={classNames} />
     </button>
   );
 };
@@ -166,7 +168,12 @@ const BpkBannerAlertInner = (props: Props) => {
   }
 
   if (isExpandable) {
-    headerClassNames.push(getClassName('bpk-banner-alert__header--expandable'));
+    headerClassNames.push(
+      getClassName(
+        'bpk-banner-alert__header--expandable',
+        `bpk-banner-alert__header--expandable-${type}`,
+      ),
+    );
     ariaRoles.push('button');
   }
 
@@ -200,13 +207,20 @@ const BpkBannerAlertInner = (props: Props) => {
           &nbsp;
           {isExpandable && (
             <span className={getClassName('bpk-banner-alert__toggle')}>
-              <ToggleButton expanded={expanded} label={toggleButtonLabel} />
+              <ToggleButton
+                expanded={expanded}
+                label={toggleButtonLabel}
+                type={type}
+              />
             </span>
           )}
           {dismissable && (
             <span className={getClassName('bpk-banner-alert__toggle')}>
               <BpkCloseButton
-                className={getClassName('bpk-banner-alert__toggle-button')}
+                className={getClassName(
+                  `bpk-banner-alert__${type}-icon`,
+                  'bpk-banner-alert__toggle-button',
+                )}
                 onClick={onBannerDismiss}
                 aria-label={dismissButtonLabel}
                 label={dismissButtonLabel}

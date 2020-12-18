@@ -6,7 +6,7 @@
     "category": "notifications"
   },
   "props": {
-    "BANNER_ALERT_BACKGROUND_COLOR": {
+    "BANNER_ALERT_COLOR": {
       "value": "{!WHITE}",
       "type": "color"
     },
@@ -19,11 +19,11 @@
       "type": "size"
     },
     "BANNER_ALERT_HEADER_EXPANDABLE_HOVER_BACKGROUND_COLOR": {
-      "value": "{!SKY_GRAY_TINT_07}",
+      "value": "{!SKY_GRAY_TINT_02}",
       "type": "color"
     },
     "BANNER_ALERT_HEADER_EXPANDABLE_ACTIVE_BACKGROUND_COLOR": {
-      "value": "{!SKY_GRAY_TINT_06}",
+      "value": "{!SKY_GRAY_TINT_01}",
       "type": "color"
     },
     "BANNER_ALERT_PRIMARY_COLOR": {
@@ -43,7 +43,7 @@
       "type": "color"
     },
     "BANNER_ALERT_NEUTRAL_COLOR": {
-      "value": "{!SKY_GRAY_TINT_02}",
+      "value": "{!SKY_GRAY}",
       "type": "color"
     },
     "BANNER_ALERT_EVENT_COLOR": {

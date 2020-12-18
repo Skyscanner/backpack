@@ -42,13 +42,13 @@ $bpk-badge-padding-x: .375rem;
 /// @group badges
 $bpk-badge-padding-y: 0;
 /// @group notifications
-$bpk-banner-alert-background-color: rgb(255, 255, 255);
-/// @group notifications
 $bpk-banner-alert-children-color: rgb(104, 105, 127);
 /// @group notifications
 $bpk-banner-alert-children-padding-x: .75rem;
 /// @group notifications
 $bpk-banner-alert-children-padding-y: .375rem;
+/// @group notifications
+$bpk-banner-alert-color: rgb(255, 255, 255);
 /// @group notifications
 $bpk-banner-alert-error-color: rgb(209, 67, 91);
 /// @group notifications
@@ -56,15 +56,15 @@ $bpk-banner-alert-event-color: rgb(90, 72, 155);
 /// @group notifications
 $bpk-banner-alert-expand-icon-fill: rgb(68, 69, 96);
 /// @group notifications
-$bpk-banner-alert-header-expandable-active-background-color: rgb(221, 221, 229);
+$bpk-banner-alert-header-expandable-active-background-color: rgb(68, 69, 96);
 /// @group notifications
-$bpk-banner-alert-header-expandable-hover-background-color: rgb(241, 242, 248);
+$bpk-banner-alert-header-expandable-hover-background-color: rgb(104, 105, 127);
 /// @group notifications
 $bpk-banner-alert-header-padding-x: .75rem;
 /// @group notifications
 $bpk-banner-alert-header-padding-y: .375rem;
 /// @group notifications
-$bpk-banner-alert-neutral-color: rgb(104, 105, 127);
+$bpk-banner-alert-neutral-color: rgb(17, 18, 54);
 /// @group notifications
 $bpk-banner-alert-primary-color: rgb(7, 112, 227);
 /// @group notifications

@@ -29,18 +29,18 @@ export const badgeBackgroundColor = "rgb(255, 181, 77)";
 export const badgeCenteredVerticalAlign = "text-bottom";
 export const badgePaddingX = ".375rem";
 export const badgePaddingY = "0";
-export const bannerAlertBackgroundColor = "rgb(255, 255, 255)";
 export const bannerAlertChildrenColor = "rgb(104, 105, 127)";
 export const bannerAlertChildrenPaddingX = ".75rem";
 export const bannerAlertChildrenPaddingY = ".375rem";
+export const bannerAlertColor = "rgb(255, 255, 255)";
 export const bannerAlertErrorColor = "rgb(209, 67, 91)";
 export const bannerAlertEventColor = "rgb(90, 72, 155)";
 export const bannerAlertExpandIconFill = "rgb(68, 69, 96)";
-export const bannerAlertHeaderExpandableActiveBackgroundColor = "rgb(221, 221, 229)";
-export const bannerAlertHeaderExpandableHoverBackgroundColor = "rgb(241, 242, 248)";
+export const bannerAlertHeaderExpandableActiveBackgroundColor = "rgb(68, 69, 96)";
+export const bannerAlertHeaderExpandableHoverBackgroundColor = "rgb(104, 105, 127)";
 export const bannerAlertHeaderPaddingX = ".75rem";
 export const bannerAlertHeaderPaddingY = ".375rem";
-export const bannerAlertNeutralColor = "rgb(104, 105, 127)";
+export const bannerAlertNeutralColor = "rgb(17, 18, 54)";
 export const bannerAlertPrimaryColor = "rgb(7, 112, 227)";
 export const bannerAlertSuccessColor = "rgb(0, 166, 152)";
 export const bannerAlertWarnColor = "rgb(255, 181, 77)";
@@ -763,10 +763,10 @@ modalOpacity,
 modalWideMaxWidth,
 };
 export const notifications = {
-bannerAlertBackgroundColor,
 bannerAlertChildrenColor,
 bannerAlertChildrenPaddingX,
 bannerAlertChildrenPaddingY,
+bannerAlertColor,
 bannerAlertErrorColor,
 bannerAlertEventColor,
 bannerAlertExpandIconFill,

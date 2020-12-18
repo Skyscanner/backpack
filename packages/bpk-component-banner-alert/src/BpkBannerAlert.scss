@@ -19,12 +19,17 @@
 @import '~bpk-mixins/index';
 
 .bpk-banner-alert {
-  background-color: $bpk-banner-alert-background-color;
+  color: $bpk-banner-alert-color;
   overflow: hidden;
 
   @include bpk-border-radius-sm;
 
   &--primary {
+    @include bpk-themeable-property(
+      background-color,
+      --bpk-banner-alert-primary-color,
+      $bpk-banner-alert-primary-color
+    );
     @include bpk-border-sm(
       var(--bpk-banner-alert-primary-color, $bpk-banner-alert-primary-color),
       ''
@@ -32,6 +37,13 @@
   }
 
   &--success {
+    color: $bpk-color-sky-gray;
+
+    @include bpk-themeable-property(
+      background-color,
+      --bpk-banner-alert-success-color,
+      $bpk-banner-alert-success-color
+    );
     @include bpk-border-sm(
       var(--bpk-banner-alert-success-color, $bpk-banner-alert-success-color),
       ''
@@ -39,6 +51,13 @@
   }
 
   &--warn {
+    color: $bpk-color-sky-gray;
+
+    @include bpk-themeable-property(
+      background-color,
+      --bpk-banner-alert-warn-color,
+      $bpk-banner-alert-warn-color
+    );
     @include bpk-border-sm(
       var(--bpk-banner-alert-warn-color, $bpk-banner-alert-warn-color),
       ''
@@ -46,6 +65,11 @@
   }
 
   &--error {
+    @include bpk-themeable-property(
+      background-color,
+      --bpk-banner-alert-error-color,
+      $bpk-banner-alert-error-color
+    );
     @include bpk-border-sm(
       var(--bpk-banner-alert-error-color, $bpk-banner-alert-error-color),
       ''
@@ -53,10 +77,22 @@
   }
 
   &--neutral {
+    @include bpk-themeable-property(
+      background-color,
+      --bpk-banner-alert-neutral-color,
+      $bpk-banner-alert-neutral-color
+    );
     @include bpk-border-sm($bpk-banner-alert-neutral-color, '');
   }
 
   &--event {
+    color: $bpk-color-white;
+
+    @include bpk-themeable-property(
+      background-color,
+      --bpk-banner-alert-event-color,
+      $bpk-banner-alert-event-color
+    );
     @include bpk-border-sm($bpk-banner-alert-event-color, '');
   }
 
@@ -69,12 +105,66 @@
     &--expandable {
       cursor: pointer;
 
-      @include bpk-hover {
-        background-color: $bpk-banner-alert-header-expandable-hover-background-color;
+      &-primary {
+        @include bpk-hover {
+          background-color: $bpk-color-sky-blue-shade-01; // $bpk-banner-alert-header-expandable-hover-background-color;
+
+          @include bpk-border-sm($bpk-color-sky-blue-shade-01);
+        }
+
+        &:active {
+          background-color: $bpk-banner-alert-header-expandable-active-background-color;
+        }
       }
 
-      &:active {
-        background-color: $bpk-banner-alert-header-expandable-active-background-color;
+      &-success {
+        @include bpk-hover {
+          background-color: $bpk-banner-alert-header-expandable-hover-background-color;
+        }
+
+        &:active {
+          background-color: $bpk-banner-alert-header-expandable-active-background-color;
+        }
+      }
+
+      &-warn {
+        @include bpk-hover {
+          background-color: $bpk-banner-alert-header-expandable-hover-background-color;
+        }
+
+        &:active {
+          background-color: $bpk-banner-alert-header-expandable-active-background-color;
+        }
+      }
+
+      &-error {
+        @include bpk-hover {
+          background-color: $bpk-banner-alert-header-expandable-hover-background-color;
+        }
+
+        &:active {
+          background-color: $bpk-banner-alert-header-expandable-active-background-color;
+        }
+      }
+
+      &-neutral {
+        @include bpk-hover {
+          background-color: $bpk-banner-alert-header-expandable-hover-background-color;
+        }
+
+        &:active {
+          background-color: $bpk-banner-alert-header-expandable-active-background-color;
+        }
+      }
+
+      &-event {
+        @include bpk-hover {
+          background-color: $bpk-banner-alert-header-expandable-hover-background-color;
+        }
+
+        &:active {
+          background-color: $bpk-banner-alert-header-expandable-active-background-color;
+        }
       }
     }
   }
@@ -91,6 +181,8 @@
   }
 
   &__primary-icon {
+    fill: $bpk-color-white;
+
     @include bpk-themeable-property(
       fill,
       --bpk-banner-alert-primary-color,
@@ -99,6 +191,8 @@
   }
 
   &__success-icon {
+    fill: $bpk-color-sky-gray;
+
     @include bpk-themeable-property(
       fill,
       --bpk-banner-alert-success-color,
@@ -107,6 +201,8 @@
   }
 
   &__warn-icon {
+    fill: $bpk-color-sky-gray;
+
     @include bpk-themeable-property(
       fill,
       --bpk-banner-alert-warn-color,
@@ -115,6 +211,8 @@
   }
 
   &__error-icon {
+    fill: $bpk-color-white;
+
     @include bpk-themeable-property(
       fill,
       --bpk-banner-alert-error-color,
@@ -124,23 +222,24 @@
 
   &__neutral-icon {
     fill: $bpk-banner-alert-neutral-color;
+    fill: $bpk-color-white;
   }
 
   &__event-icon {
     fill: $bpk-banner-alert-event-color;
+    fill: $bpk-color-white;
   }
 
   &__toggle-button {
     padding: 0;
     border: 0;
     background-color: transparent;
+    color: currentColor;
     cursor: pointer;
     appearance: none;
   }
 
   &__expand-icon {
-    fill: $bpk-banner-alert-expand-icon-fill;
-
     &--flipped {
       transform: scaleY(-1);
     }
@@ -149,6 +248,7 @@
   &__children-container {
     padding: $bpk-banner-alert-children-padding-y
       $bpk-banner-alert-children-padding-x;
+    background-color: $bpk-color-white;
     color: $bpk-banner-alert-children-color;
 
     @include bpk-text;

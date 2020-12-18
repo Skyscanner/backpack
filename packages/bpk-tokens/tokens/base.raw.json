@@ -359,13 +359,6 @@
       "originalValue": "0",
       "name": "BADGE_PADDING_Y"
     },
-    "BANNER_ALERT_BACKGROUND_COLOR": {
-      "category": "notifications",
-      "value": "rgb(255, 255, 255)",
-      "type": "color",
-      "originalValue": "{!WHITE}",
-      "name": "BANNER_ALERT_BACKGROUND_COLOR"
-    },
     "BANNER_ALERT_CHILDREN_COLOR": {
       "category": "notifications",
       "value": "rgb(104, 105, 127)",
@@ -386,6 +379,13 @@
       "type": "size",
       "originalValue": "{!SPACING_XS}",
       "name": "BANNER_ALERT_CHILDREN_PADDING_Y"
+    },
+    "BANNER_ALERT_COLOR": {
+      "category": "notifications",
+      "value": "rgb(255, 255, 255)",
+      "type": "color",
+      "originalValue": "{!WHITE}",
+      "name": "BANNER_ALERT_COLOR"
     },
     "BANNER_ALERT_ERROR_COLOR": {
       "category": "notifications",
@@ -410,16 +410,16 @@
     },
     "BANNER_ALERT_HEADER_EXPANDABLE_ACTIVE_BACKGROUND_COLOR": {
       "category": "notifications",
-      "value": "rgb(221, 221, 229)",
+      "value": "rgb(68, 69, 96)",
       "type": "color",
-      "originalValue": "{!SKY_GRAY_TINT_06}",
+      "originalValue": "{!SKY_GRAY_TINT_01}",
       "name": "BANNER_ALERT_HEADER_EXPANDABLE_ACTIVE_BACKGROUND_COLOR"
     },
     "BANNER_ALERT_HEADER_EXPANDABLE_HOVER_BACKGROUND_COLOR": {
       "category": "notifications",
-      "value": "rgb(241, 242, 248)",
+      "value": "rgb(104, 105, 127)",
       "type": "color",
-      "originalValue": "{!SKY_GRAY_TINT_07}",
+      "originalValue": "{!SKY_GRAY_TINT_02}",
       "name": "BANNER_ALERT_HEADER_EXPANDABLE_HOVER_BACKGROUND_COLOR"
     },
     "BANNER_ALERT_HEADER_PADDING_X": {
@@ -438,9 +438,9 @@
     },
     "BANNER_ALERT_NEUTRAL_COLOR": {
       "category": "notifications",
-      "value": "rgb(104, 105, 127)",
+      "value": "rgb(17, 18, 54)",
       "type": "color",
-      "originalValue": "{!SKY_GRAY_TINT_02}",
+      "originalValue": "{!SKY_GRAY}",
       "name": "BANNER_ALERT_NEUTRAL_COLOR"
     },
     "BANNER_ALERT_PRIMARY_COLOR": {
@@ -3114,10 +3114,10 @@
     "BADGE_CENTERED_VERTICAL_ALIGN",
     "BADGE_PADDING_X",
     "BADGE_PADDING_Y",
-    "BANNER_ALERT_BACKGROUND_COLOR",
     "BANNER_ALERT_CHILDREN_COLOR",
     "BANNER_ALERT_CHILDREN_PADDING_X",
     "BANNER_ALERT_CHILDREN_PADDING_Y",
+    "BANNER_ALERT_COLOR",
     "BANNER_ALERT_ERROR_COLOR",
     "BANNER_ALERT_EVENT_COLOR",
     "BANNER_ALERT_EXPAND_ICON_FILL",
