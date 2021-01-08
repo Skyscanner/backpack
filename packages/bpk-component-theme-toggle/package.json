@@ -12,7 +12,7 @@
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
-  "gitHead": "ea100e475f25012ec587cdff286b58c9ddccd24a",
+  "gitHead": "09fc99e4e67a5b71dc15f41a5409ad412bc139d4",
   "dependencies": {
     "bpk-component-label": "^4.0.100",
     "bpk-component-select": "^3.0.99",

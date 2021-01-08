@@ -2,6 +2,12 @@
 
 [Unreleased changes](./UNRELEASED.md).
 
+# 2021-01-08
+
+**Fixed:**
+ - bpk-component-table: 2.0.98 => 2.0.99
+   - Fixed arrow icons in column header sorting that were inverted
+
 # 2020-12-17
 
 **Fixed:**
