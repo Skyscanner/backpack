@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-breakpoint",
-  "version": "2.0.99",
+  "version": "2.0.100",
   "description": "Backpack breakpoint component.",
   "license": "Apache-2.0",
   "repository": {
@@ -14,7 +14,7 @@
   },
   "gitHead": "ea100e475f25012ec587cdff286b58c9ddccd24a",
   "dependencies": {
-    "bpk-mixins": "^20.1.15",
+    "bpk-mixins": "^20.1.16",
     "prop-types": "^15.6.2",
     "react-responsive": "^5.0.0"
   },
@@ -22,6 +22,6 @@
     "react": "^16.0.0"
   },
   "devDependencies": {
-    "bpk-tokens": "^36.0.3"
+    "bpk-tokens": "^36.0.4"
   }
 }

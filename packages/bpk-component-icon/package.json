@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-icon",
-  "version": "8.3.6",
+  "version": "8.3.7",
   "description": "Backpack icon components.",
   "license": "Apache-2.0",
   "repository": {
@@ -17,10 +17,10 @@
   },
   "gitHead": "ea100e475f25012ec587cdff286b58c9ddccd24a",
   "dependencies": {
-    "bpk-mixins": "^20.1.15",
-    "bpk-react-utils": "^3.0.9",
-    "bpk-svgs": "^12.2.5",
-    "bpk-tokens": "^36.0.3",
+    "bpk-mixins": "^20.1.16",
+    "bpk-react-utils": "^3.0.10",
+    "bpk-svgs": "^12.2.6",
+    "bpk-tokens": "^36.0.4",
     "prop-types": "^15.6.2"
   },
   "peerDependencies": {
