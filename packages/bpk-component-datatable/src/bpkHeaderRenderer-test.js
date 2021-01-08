@@ -47,7 +47,7 @@ describe('bpkHeaderRenderer', () => {
       dataKey: 'dataKey',
       label: 'Label',
       sortBy: 'dataKey',
-      sortDirection: SortDirection.ASC,
+      sortDirection: SortDirection.DESC,
     });
     const tree = renderer.create(<div>{header}</div>);
     expect(tree).toMatchSnapshot();
@@ -57,7 +57,7 @@ describe('bpkHeaderRenderer', () => {
       dataKey: 'dataKey',
       label: 'Label',
       sortBy: 'dataKey',
-      sortDirection: SortDirection.DESC,
+      sortDirection: SortDirection.ASC,
     });
     const tree = renderer.create(<div>{header}</div>);
     expect(tree).toMatchSnapshot();
@@ -76,19 +76,19 @@ describe('bpkHeaderRenderer', () => {
       );
     });
 
-    it('returns DESC for the up icon element', () => {
+    it('returns ASC for the up icon element', () => {
       const upIcon = mounted
         .find('svg')
         .find('.bpk-data-table-column__sort-icon--up');
       const sortDirection = getSortIconDirection(upIcon);
-      expect(sortDirection).toBe(SortDirection.DESC);
+      expect(sortDirection).toBe(SortDirection.ASC);
     });
-    it('returns ASC for the down path element', () => {
+    it('returns DESC for the down path element', () => {
       const downIcon = mounted
         .find('svg')
         .find('.bpk-data-table-column__sort-icon--down');
       const sortDirection = getSortIconDirection(downIcon);
-      expect(sortDirection).toBe(SortDirection.ASC);
+      expect(sortDirection).toBe(SortDirection.DESC);
     });
     it('returns null other things', () => {
       const headerLabel = mounted

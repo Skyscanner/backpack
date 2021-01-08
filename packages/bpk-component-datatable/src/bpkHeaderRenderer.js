@@ -74,7 +74,7 @@ export default ({ dataKey, label, sortBy, sortDirection, disableSort }) => {
     ];
 
     if (sortBy === dataKey) {
-      (sortDirection === SortDirection.DESC
+      (sortDirection === SortDirection.ASC
         ? upIconClassNames
         : downIconClassNames
       ).push(getClassName('bpk-data-table-column__sort-icon--selected'));
