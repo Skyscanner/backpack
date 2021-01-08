@@ -5,7 +5,7 @@
 # 2021-01-08
 
 **Fixed:**
- - bpk-component-table: 2.0.98 => 2.0.99
+ - bpk-component-datatable: 2.0.56 => 2.0.57
    - Fixed arrow icons in column header sorting that were inverted
 
 # 2020-12-17
