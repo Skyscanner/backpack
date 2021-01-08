@@ -40,13 +40,13 @@ export const getSortIconDirection = element => {
     hasClassName(element, upIconClassName) ||
     hasClassName(element.parentNode, upIconClassName)
   ) {
-    return SortDirection.DESC;
+    return SortDirection.ASC;
   }
   if (
     hasClassName(element, downIconClassName) ||
     hasClassName(element.parentNode, downIconClassName)
   ) {
-    return SortDirection.ASC;
+    return SortDirection.DESC;
   }
   return null;
 };
