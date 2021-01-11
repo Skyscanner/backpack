@@ -2,6 +2,12 @@
 
 > Place your changes below this line.
 
+**Added:**
+
+- bpk-tokens
+- bpk-svgs
+  - Added new semantic tokens for web for `Background`, `Text` and `Line`, along with our dark palette colours.
+
 ## How to write a good changelog entry
 
 1. Add 'Breaking', 'Added' or 'Fixed' in bold depending on if the change will be major, minor or patch according to [semver](semver.org).

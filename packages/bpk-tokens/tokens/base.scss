@@ -23,6 +23,38 @@ $bpk-autosuggest-list-background-color: rgb(255, 255, 255);
 $bpk-autosuggest-list-item-active-background-color: rgb(221, 221, 229);
 /// @group autosuggest
 $bpk-autosuggest-list-item-highlighted-background-color: rgb(241, 242, 248);
+/// @group colors
+$bpk-background-alternative-dark-color: rgb(0, 0, 0);
+/// @group colors
+$bpk-background-alternative-light-color: rgb(241, 242, 248);
+/// @group colors
+$bpk-background-alternative-secondary-dark-color: rgb(29, 27, 32);
+/// @group colors
+$bpk-background-alternative-secondary-light-color: rgb(255, 255, 255);
+/// @group colors
+$bpk-background-dark-color: rgb(0, 0, 0);
+/// @group text-colors
+$bpk-background-elevation-01-dark-color: rgb(29, 27, 32);
+/// @group text-colors
+$bpk-background-elevation-01-light-color: rgb(255, 255, 255);
+/// @group text-colors
+$bpk-background-elevation-02-dark-color: rgb(44, 44, 46);
+/// @group text-colors
+$bpk-background-elevation-02-light-color: rgb(255, 255, 255);
+/// @group text-colors
+$bpk-background-elevation-03-dark-color: rgb(58, 58, 60);
+/// @group text-colors
+$bpk-background-elevation-03-light-color: rgb(255, 255, 255);
+/// @group colors
+$bpk-background-light-color: rgb(255, 255, 255);
+/// @group colors
+$bpk-background-secondary-dark-color: rgb(29, 27, 32);
+/// @group colors
+$bpk-background-secondary-light-color: rgb(241, 242, 248);
+/// @group colors
+$bpk-background-tertiary-dark-color: rgb(44, 44, 46);
+/// @group colors
+$bpk-background-tertiary-light-color: rgb(255, 255, 255);
 /// @group badges
 $bpk-badge-background-color: rgb(255, 181, 77);
 /// @group badges
@@ -362,6 +394,20 @@ $bpk-color-abisko: rgb(90, 72, 155);
 /// @group colors
 $bpk-color-bagan: rgb(255, 235, 208);
 /// @group colors
+$bpk-color-black: rgb(0, 0, 0);
+/// @group colors
+$bpk-color-black-tint-01: rgb(29, 27, 32);
+/// @group colors
+$bpk-color-black-tint-02: rgb(44, 44, 46);
+/// @group colors
+$bpk-color-black-tint-03: rgb(58, 58, 60);
+/// @group colors
+$bpk-color-black-tint-04: rgb(72, 72, 74);
+/// @group colors
+$bpk-color-black-tint-05: rgb(99, 99, 102);
+/// @group colors
+$bpk-color-black-tint-06: rgb(142, 142, 147);
+/// @group colors
 $bpk-color-bunol: rgb(255, 123, 89);
 /// @group colors
 $bpk-color-erfoud: rgb(255, 181, 77);
@@ -565,6 +611,8 @@ $bpk-label-disabled-color: rgb(178, 178, 191);
 $bpk-label-font-size: .75rem;
 /// @group forms
 $bpk-label-line-height: 1rem;
+/// @group colors
+$bpk-line-dark-color: rgb(72, 72, 74);
 /// @group typesettings
 $bpk-line-height-base: 1.25rem;
 /// @group typesettings
@@ -583,6 +631,8 @@ $bpk-line-height-xxxl: 2.9375rem;
 $bpk-line-height-xxxxl: 3.4375rem;
 /// @group typesettings
 $bpk-line-height-xxxxxl: 4.875rem;
+/// @group colors
+$bpk-line-light-color: rgb(205, 205, 215);
 /// @group text-colors
 $bpk-link-active-color: rgb(4, 39, 89);
 /// @group text-colors
@@ -646,7 +696,11 @@ $bpk-panel-border-color: rgb(221, 221, 229);
 /// @group panels
 $bpk-panel-padding: .75rem;
 /// @group colors
+$bpk-primary-dark-color: rgb(109, 159, 235);
+/// @group colors
 $bpk-primary-gradient: #0770e3;
+/// @group colors
+$bpk-primary-light-color: rgb(7, 112, 227);
 /// @group spacings
 $bpk-p-margin-bottom: .75rem;
 /// @group spacings

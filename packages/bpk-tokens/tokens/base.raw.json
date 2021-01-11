@@ -296,6 +296,118 @@
       "originalValue": "{!SKY_GRAY_TINT_07}",
       "name": "AUTOSUGGEST_LIST_ITEM_HIGHLIGHTED_BACKGROUND_COLOR"
     },
+    "BACKGROUND_ALTERNATIVE_DARK_COLOR": {
+      "type": "color",
+      "category": "colors",
+      "value": "rgb(0, 0, 0)",
+      "originalValue": "{!BLACK}",
+      "name": "BACKGROUND_ALTERNATIVE_DARK_COLOR"
+    },
+    "BACKGROUND_ALTERNATIVE_LIGHT_COLOR": {
+      "type": "color",
+      "category": "colors",
+      "value": "rgb(241, 242, 248)",
+      "originalValue": "{!SKY_GRAY_TINT_07}",
+      "name": "BACKGROUND_ALTERNATIVE_LIGHT_COLOR"
+    },
+    "BACKGROUND_ALTERNATIVE_SECONDARY_DARK_COLOR": {
+      "type": "color",
+      "category": "colors",
+      "value": "rgb(29, 27, 32)",
+      "originalValue": "{!BLACK_TINT_01}",
+      "name": "BACKGROUND_ALTERNATIVE_SECONDARY_DARK_COLOR"
+    },
+    "BACKGROUND_ALTERNATIVE_SECONDARY_LIGHT_COLOR": {
+      "type": "color",
+      "category": "colors",
+      "value": "rgb(255, 255, 255)",
+      "originalValue": "{!WHITE}",
+      "name": "BACKGROUND_ALTERNATIVE_SECONDARY_LIGHT_COLOR"
+    },
+    "BACKGROUND_DARK_COLOR": {
+      "type": "color",
+      "category": "colors",
+      "value": "rgb(0, 0, 0)",
+      "originalValue": "{!BLACK}",
+      "name": "BACKGROUND_DARK_COLOR"
+    },
+    "BACKGROUND_ELEVATION_01_DARK_COLOR": {
+      "type": "color",
+      "category": "text-colors",
+      "value": "rgb(29, 27, 32)",
+      "originalValue": "{!BLACK_TINT_01}",
+      "name": "BACKGROUND_ELEVATION_01_DARK_COLOR"
+    },
+    "BACKGROUND_ELEVATION_01_LIGHT_COLOR": {
+      "type": "color",
+      "category": "text-colors",
+      "value": "rgb(255, 255, 255)",
+      "originalValue": "{!WHITE}",
+      "name": "BACKGROUND_ELEVATION_01_LIGHT_COLOR"
+    },
+    "BACKGROUND_ELEVATION_02_DARK_COLOR": {
+      "type": "color",
+      "category": "text-colors",
+      "value": "rgb(44, 44, 46)",
+      "originalValue": "{!BLACK_TINT_02}",
+      "name": "BACKGROUND_ELEVATION_02_DARK_COLOR"
+    },
+    "BACKGROUND_ELEVATION_02_LIGHT_COLOR": {
+      "type": "color",
+      "category": "text-colors",
+      "value": "rgb(255, 255, 255)",
+      "originalValue": "{!WHITE}",
+      "name": "BACKGROUND_ELEVATION_02_LIGHT_COLOR"
+    },
+    "BACKGROUND_ELEVATION_03_DARK_COLOR": {
+      "type": "color",
+      "category": "text-colors",
+      "value": "rgb(58, 58, 60)",
+      "originalValue": "{!BLACK_TINT_03}",
+      "name": "BACKGROUND_ELEVATION_03_DARK_COLOR"
+    },
+    "BACKGROUND_ELEVATION_03_LIGHT_COLOR": {
+      "type": "color",
+      "category": "text-colors",
+      "value": "rgb(255, 255, 255)",
+      "originalValue": "{!WHITE}",
+      "name": "BACKGROUND_ELEVATION_03_LIGHT_COLOR"
+    },
+    "BACKGROUND_LIGHT_COLOR": {
+      "type": "color",
+      "category": "colors",
+      "value": "rgb(255, 255, 255)",
+      "originalValue": "{!WHITE}",
+      "name": "BACKGROUND_LIGHT_COLOR"
+    },
+    "BACKGROUND_SECONDARY_DARK_COLOR": {
+      "type": "color",
+      "category": "colors",
+      "value": "rgb(29, 27, 32)",
+      "originalValue": "{!BLACK_TINT_01}",
+      "name": "BACKGROUND_SECONDARY_DARK_COLOR"
+    },
+    "BACKGROUND_SECONDARY_LIGHT_COLOR": {
+      "type": "color",
+      "category": "colors",
+      "value": "rgb(241, 242, 248)",
+      "originalValue": "{!SKY_GRAY_TINT_07}",
+      "name": "BACKGROUND_SECONDARY_LIGHT_COLOR"
+    },
+    "BACKGROUND_TERTIARY_DARK_COLOR": {
+      "type": "color",
+      "category": "colors",
+      "value": "rgb(44, 44, 46)",
+      "originalValue": "{!BLACK_TINT_02}",
+      "name": "BACKGROUND_TERTIARY_DARK_COLOR"
+    },
+    "BACKGROUND_TERTIARY_LIGHT_COLOR": {
+      "type": "color",
+      "category": "colors",
+      "value": "rgb(255, 255, 255)",
+      "originalValue": "{!WHITE}",
+      "name": "BACKGROUND_TERTIARY_LIGHT_COLOR"
+    },
     "BADGE_BACKGROUND_COLOR": {
       "category": "badges",
       "value": "rgb(255, 181, 77)",
@@ -1482,6 +1594,55 @@
       "originalValue": "{!BAGAN}",
       "name": "COLOR_BAGAN"
     },
+    "COLOR_BLACK": {
+      "type": "color",
+      "category": "colors",
+      "value": "rgb(0, 0, 0)",
+      "originalValue": "{!BLACK}",
+      "name": "COLOR_BLACK"
+    },
+    "COLOR_BLACK_TINT_01": {
+      "type": "color",
+      "category": "colors",
+      "value": "rgb(29, 27, 32)",
+      "originalValue": "{!BLACK_TINT_01}",
+      "name": "COLOR_BLACK_TINT_01"
+    },
+    "COLOR_BLACK_TINT_02": {
+      "type": "color",
+      "category": "colors",
+      "value": "rgb(44, 44, 46)",
+      "originalValue": "{!BLACK_TINT_02}",
+      "name": "COLOR_BLACK_TINT_02"
+    },
+    "COLOR_BLACK_TINT_03": {
+      "type": "color",
+      "category": "colors",
+      "value": "rgb(58, 58, 60)",
+      "originalValue": "{!BLACK_TINT_03}",
+      "name": "COLOR_BLACK_TINT_03"
+    },
+    "COLOR_BLACK_TINT_04": {
+      "type": "color",
+      "category": "colors",
+      "value": "rgb(72, 72, 74)",
+      "originalValue": "{!BLACK_TINT_04}",
+      "name": "COLOR_BLACK_TINT_04"
+    },
+    "COLOR_BLACK_TINT_05": {
+      "type": "color",
+      "category": "colors",
+      "value": "rgb(99, 99, 102)",
+      "originalValue": "{!BLACK_TINT_05}",
+      "name": "COLOR_BLACK_TINT_05"
+    },
+    "COLOR_BLACK_TINT_06": {
+      "type": "color",
+      "category": "colors",
+      "value": "rgb(142, 142, 147)",
+      "originalValue": "{!BLACK_TINT_06}",
+      "name": "COLOR_BLACK_TINT_06"
+    },
     "COLOR_BUNOL": {
       "type": "color",
       "category": "colors",
@@ -2197,6 +2358,13 @@
       "originalValue": "{!FONT_LINE_HEIGHT_XS}",
       "name": "LABEL_LINE_HEIGHT"
     },
+    "LINE_DARK_COLOR": {
+      "type": "color",
+      "category": "colors",
+      "value": "rgb(72, 72, 74)",
+      "originalValue": "{!BLACK_TINT_04}",
+      "name": "LINE_DARK_COLOR"
+    },
     "LINE_HEIGHT_BASE": {
       "value": "1.25rem",
       "type": "size",
@@ -2259,6 +2427,13 @@
       "category": "typesettings",
       "originalValue": "{!FONT_LINE_HEIGHT_XXXXXL}",
       "name": "LINE_HEIGHT_XXXXXL"
+    },
+    "LINE_LIGHT_COLOR": {
+      "type": "color",
+      "category": "colors",
+      "value": "rgb(205, 205, 215)",
+      "originalValue": "{!SKY_GRAY_TINT_05}",
+      "name": "LINE_LIGHT_COLOR"
     },
     "LINK_ACTIVE_COLOR": {
       "value": "rgb(4, 39, 89)",
@@ -2477,12 +2652,26 @@
       "originalValue": "{!SPACING_SM}",
       "name": "PANEL_PADDING"
     },
+    "PRIMARY_DARK_COLOR": {
+      "type": "color",
+      "category": "colors",
+      "value": "rgb(109, 159, 235)",
+      "originalValue": "{!SKY_BLUE_TINT_01}",
+      "name": "PRIMARY_DARK_COLOR"
+    },
     "PRIMARY_GRADIENT": {
       "type": "background-image",
       "category": "colors",
       "value": "#0770e3",
       "originalValue": "{!SKY_BLUE}",
       "name": "PRIMARY_GRADIENT"
+    },
+    "PRIMARY_LIGHT_COLOR": {
+      "type": "color",
+      "category": "colors",
+      "value": "rgb(7, 112, 227)",
+      "originalValue": "{!SKY_BLUE}",
+      "name": "PRIMARY_LIGHT_COLOR"
     },
     "P_MARGIN_BOTTOM": {
       "value": ".75rem",
@@ -3036,12 +3225,118 @@
       "value": "900",
       "originalValue": "{!ZINDEX_TOOLTIP}",
       "name": "ZINDEX_TOOLTIP"
+    },
+    "BACKGROUND_ALTERNATIVE_COLOR": {
+      "type": "color",
+      "category": "colors",
+      "value": "rgb(241, 242, 248)",
+      "originalValue": "{!SKY_GRAY_TINT_07}",
+      "name": "BACKGROUND_ALTERNATIVE_COLOR",
+      "darkValue": "rgb(0, 0, 0)",
+      "originalDarkValue": "{!BLACK}"
+    },
+    "BACKGROUND_ALTERNATIVE_SECONDARY_COLOR": {
+      "type": "color",
+      "category": "colors",
+      "value": "rgb(255, 255, 255)",
+      "originalValue": "{!WHITE}",
+      "name": "BACKGROUND_ALTERNATIVE_SECONDARY_COLOR",
+      "darkValue": "rgb(29, 27, 32)",
+      "originalDarkValue": "{!BLACK_TINT_01}"
+    },
+    "BACKGROUND_COLOR": {
+      "type": "color",
+      "category": "colors",
+      "value": "rgb(255, 255, 255)",
+      "originalValue": "{!WHITE}",
+      "name": "BACKGROUND_COLOR",
+      "darkValue": "rgb(0, 0, 0)",
+      "originalDarkValue": "{!BLACK}"
+    },
+    "BACKGROUND_ELEVATION_01_COLOR": {
+      "type": "color",
+      "category": "text-colors",
+      "value": "rgb(255, 255, 255)",
+      "originalValue": "{!WHITE}",
+      "name": "BACKGROUND_ELEVATION_01_COLOR",
+      "darkValue": "rgb(29, 27, 32)",
+      "originalDarkValue": "{!BLACK_TINT_01}"
+    },
+    "BACKGROUND_ELEVATION_02_COLOR": {
+      "type": "color",
+      "category": "text-colors",
+      "value": "rgb(255, 255, 255)",
+      "originalValue": "{!WHITE}",
+      "name": "BACKGROUND_ELEVATION_02_COLOR",
+      "darkValue": "rgb(44, 44, 46)",
+      "originalDarkValue": "{!BLACK_TINT_02}"
+    },
+    "BACKGROUND_ELEVATION_03_COLOR": {
+      "type": "color",
+      "category": "text-colors",
+      "value": "rgb(255, 255, 255)",
+      "originalValue": "{!WHITE}",
+      "name": "BACKGROUND_ELEVATION_03_COLOR",
+      "darkValue": "rgb(58, 58, 60)",
+      "originalDarkValue": "{!BLACK_TINT_03}"
+    },
+    "BACKGROUND_SECONDARY_COLOR": {
+      "type": "color",
+      "category": "colors",
+      "value": "rgb(241, 242, 248)",
+      "originalValue": "{!SKY_GRAY_TINT_07}",
+      "name": "BACKGROUND_SECONDARY_COLOR",
+      "darkValue": "rgb(29, 27, 32)",
+      "originalDarkValue": "{!BLACK_TINT_01}"
+    },
+    "BACKGROUND_TERTIARY_COLOR": {
+      "type": "color",
+      "category": "colors",
+      "value": "rgb(255, 255, 255)",
+      "originalValue": "{!WHITE}",
+      "name": "BACKGROUND_TERTIARY_COLOR",
+      "darkValue": "rgb(44, 44, 46)",
+      "originalDarkValue": "{!BLACK_TINT_02}"
+    },
+    "LINE_COLOR": {
+      "type": "color",
+      "category": "colors",
+      "value": "rgb(205, 205, 215)",
+      "originalValue": "{!SKY_GRAY_TINT_05}",
+      "name": "LINE_COLOR",
+      "darkValue": "rgb(72, 72, 74)",
+      "originalDarkValue": "{!BLACK_TINT_04}"
+    },
+    "PRIMARY_COLOR": {
+      "type": "color",
+      "category": "colors",
+      "value": "rgb(7, 112, 227)",
+      "originalValue": "{!SKY_BLUE}",
+      "name": "PRIMARY_COLOR",
+      "darkValue": "rgb(109, 159, 235)",
+      "originalDarkValue": "{!SKY_BLUE_TINT_01}"
     }
   },
   "propKeys": [
     "AUTOSUGGEST_LIST_BACKGROUND_COLOR",
     "AUTOSUGGEST_LIST_ITEM_ACTIVE_BACKGROUND_COLOR",
     "AUTOSUGGEST_LIST_ITEM_HIGHLIGHTED_BACKGROUND_COLOR",
+    "BACKGROUND_ALTERNATIVE_DARK_COLOR",
+    "BACKGROUND_ALTERNATIVE_LIGHT_COLOR",
+    "BACKGROUND_ALTERNATIVE_SECONDARY_DARK_COLOR",
+    "BACKGROUND_ALTERNATIVE_SECONDARY_LIGHT_COLOR",
+    "BACKGROUND_DARK_COLOR",
+    "BACKGROUND_ELEVATION_01_DARK_COLOR",
+    "BACKGROUND_ELEVATION_01_LIGHT_COLOR",
+    "BACKGROUND_ELEVATION_02_DARK_COLOR",
+    "BACKGROUND_ELEVATION_02_LIGHT_COLOR",
+    "BACKGROUND_ELEVATION_03_DARK_COLOR",
+    "BACKGROUND_ELEVATION_03_LIGHT_COLOR",
+    "BACKGROUND_LIGHT_COLOR",
+    "BACKGROUND_SECONDARY_DARK_COLOR",
+    "BACKGROUND_SECONDARY_LIGHT_COLOR",
+    "BACKGROUND_TERTIARY_DARK_COLOR",
+    "BACKGROUND_TERTIARY_LIGHT_COLOR",
     "BADGE_BACKGROUND_COLOR",
     "BADGE_CENTERED_VERTICAL_ALIGN",
     "BADGE_PADDING_X",
@@ -3211,6 +3506,13 @@
     "CHECKBOX_CHECKED_TICK_COLOR",
     "COLOR_ABISKO",
     "COLOR_BAGAN",
+    "COLOR_BLACK",
+    "COLOR_BLACK_TINT_01",
+    "COLOR_BLACK_TINT_02",
+    "COLOR_BLACK_TINT_03",
+    "COLOR_BLACK_TINT_04",
+    "COLOR_BLACK_TINT_05",
+    "COLOR_BLACK_TINT_06",
     "COLOR_BUNOL",
     "COLOR_ERFOUD",
     "COLOR_GLENCOE",
@@ -3313,6 +3615,7 @@
     "LABEL_DISABLED_COLOR",
     "LABEL_FONT_SIZE",
     "LABEL_LINE_HEIGHT",
+    "LINE_DARK_COLOR",
     "LINE_HEIGHT_BASE",
     "LINE_HEIGHT_LG",
     "LINE_HEIGHT_SM",
@@ -3322,6 +3625,7 @@
     "LINE_HEIGHT_XXXL",
     "LINE_HEIGHT_XXXXL",
     "LINE_HEIGHT_XXXXXL",
+    "LINE_LIGHT_COLOR",
     "LINK_ACTIVE_COLOR",
     "LINK_ALTERNATE_ACTIVE_COLOR",
     "LINK_ALTERNATE_COLOR",
@@ -3353,7 +3657,9 @@
     "PANEL_BACKGROUND_COLOR",
     "PANEL_BORDER_COLOR",
     "PANEL_PADDING",
+    "PRIMARY_DARK_COLOR",
     "PRIMARY_GRADIENT",
+    "PRIMARY_LIGHT_COLOR",
     "P_MARGIN_BOTTOM",
     "P_MARGIN_TOP",
     "RADIO_CHECKED_CIRCLE_COLOR",
@@ -3432,6 +3738,16 @@
     "ZINDEX_MODAL",
     "ZINDEX_POPOVER",
     "ZINDEX_SCRIM",
-    "ZINDEX_TOOLTIP"
+    "ZINDEX_TOOLTIP",
+    "BACKGROUND_ALTERNATIVE_COLOR",
+    "BACKGROUND_ALTERNATIVE_SECONDARY_COLOR",
+    "BACKGROUND_COLOR",
+    "BACKGROUND_ELEVATION_01_COLOR",
+    "BACKGROUND_ELEVATION_02_COLOR",
+    "BACKGROUND_ELEVATION_03_COLOR",
+    "BACKGROUND_SECONDARY_COLOR",
+    "BACKGROUND_TERTIARY_COLOR",
+    "LINE_COLOR",
+    "PRIMARY_COLOR"
   ]
 }
