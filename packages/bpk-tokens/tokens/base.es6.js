@@ -20,21 +20,10 @@
 export const autosuggestListBackgroundColor = "rgb(255, 255, 255)";
 export const autosuggestListItemActiveBackgroundColor = "rgb(221, 221, 229)";
 export const autosuggestListItemHighlightedBackgroundColor = "rgb(241, 242, 248)";
-export const backgroundAlternativeDarkColor = "rgb(0, 0, 0)";
 export const backgroundAlternativeLightColor = "rgb(241, 242, 248)";
-export const backgroundAlternativeSecondaryDarkColor = "rgb(29, 27, 32)";
 export const backgroundAlternativeSecondaryLightColor = "rgb(255, 255, 255)";
-export const backgroundDarkColor = "rgb(0, 0, 0)";
-export const backgroundElevation01DarkColor = "rgb(29, 27, 32)";
-export const backgroundElevation01LightColor = "rgb(255, 255, 255)";
-export const backgroundElevation02DarkColor = "rgb(44, 44, 46)";
-export const backgroundElevation02LightColor = "rgb(255, 255, 255)";
-export const backgroundElevation03DarkColor = "rgb(58, 58, 60)";
-export const backgroundElevation03LightColor = "rgb(255, 255, 255)";
 export const backgroundLightColor = "rgb(255, 255, 255)";
-export const backgroundSecondaryDarkColor = "rgb(29, 27, 32)";
 export const backgroundSecondaryLightColor = "rgb(241, 242, 248)";
-export const backgroundTertiaryDarkColor = "rgb(44, 44, 46)";
 export const backgroundTertiaryLightColor = "rgb(255, 255, 255)";
 export const badgeBackgroundColor = "rgb(255, 181, 77)";
 export const badgeCenteredVerticalAlign = "text-bottom";
@@ -314,7 +303,6 @@ export const labelColor = "rgb(17, 18, 54)";
 export const labelDisabledColor = "rgb(178, 178, 191)";
 export const labelFontSize = ".75rem";
 export const labelLineHeight = "1rem";
-export const lineDarkColor = "rgb(72, 72, 74)";
 export const lineHeightBase = "1.25rem";
 export const lineHeightLg = "1.625rem";
 export const lineHeightSm = "1.125rem";
@@ -356,7 +344,6 @@ export const onePixelRem = ".0625rem";
 export const panelBackgroundColor = "rgb(255, 255, 255)";
 export const panelBorderColor = "rgb(221, 221, 229)";
 export const panelPadding = ".75rem";
-export const primaryDarkColor = "rgb(109, 159, 235)";
 export const primaryGradient = "#0770e3";
 export const primaryLightColor = "rgb(7, 112, 227)";
 export const pMarginBottom = ".75rem";
@@ -405,17 +392,13 @@ export const textLgFontSize = "1.25rem";
 export const textLgFontWeight = "400";
 export const textLgLetterSpacing = "normal";
 export const textLgLineHeight = "1.625rem";
-export const textPrimaryDarkColor = "rgb(255, 255, 255)";
 export const textPrimaryLightColor = "rgb(17, 18, 54)";
-export const textQuaternaryDarkColor = "rgb(142, 142, 147)";
 export const textQuaternaryLightColor = "rgb(143, 144, 160)";
-export const textSecondaryDarkColor = "rgb(142, 142, 147)";
 export const textSecondaryLightColor = "rgb(68, 69, 96)";
 export const textSmFontSize = ".875rem";
 export const textSmFontWeight = "400";
 export const textSmLetterSpacing = "normal";
 export const textSmLineHeight = "1.125rem";
-export const textTertiaryDarkColor = "rgb(142, 142, 147)";
 export const textTertiaryLightColor = "rgb(143, 144, 160)";
 export const textXlFontSize = "1.5rem";
 export const textXlFontWeight = "400";
@@ -614,15 +597,10 @@ cardColor,
 cardPadding,
 };
 export const colors = {
-backgroundAlternativeDarkColor,
 backgroundAlternativeLightColor,
-backgroundAlternativeSecondaryDarkColor,
 backgroundAlternativeSecondaryLightColor,
-backgroundDarkColor,
 backgroundLightColor,
-backgroundSecondaryDarkColor,
 backgroundSecondaryLightColor,
-backgroundTertiaryDarkColor,
 backgroundTertiaryLightColor,
 colorAbisko,
 colorBagan,
@@ -665,9 +643,7 @@ colorSystemRed,
 colorTochigi,
 colorValensole,
 colorWhite,
-lineDarkColor,
 lineLightColor,
-primaryDarkColor,
 primaryGradient,
 primaryLightColor,
 };
@@ -871,12 +847,6 @@ export const states = {
 stateSelectedBackgroundColor,
 };
 export const textColors = {
-backgroundElevation01DarkColor,
-backgroundElevation01LightColor,
-backgroundElevation02DarkColor,
-backgroundElevation02LightColor,
-backgroundElevation03DarkColor,
-backgroundElevation03LightColor,
 fontColorBase,
 linkActiveColor,
 linkAlternateActiveColor,
@@ -890,13 +860,9 @@ linkWhiteActiveColor,
 linkWhiteColor,
 linkWhiteHoverColor,
 linkWhiteVisitedColor,
-textPrimaryDarkColor,
 textPrimaryLightColor,
-textQuaternaryDarkColor,
 textQuaternaryLightColor,
-textSecondaryDarkColor,
 textSecondaryLightColor,
-textTertiaryDarkColor,
 textTertiaryLightColor,
 };
 export const textDecorations = {

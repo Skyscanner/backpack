@@ -24,35 +24,13 @@ $bpk-autosuggest-list-item-active-background-color: rgb(221, 221, 229);
 /// @group autosuggest
 $bpk-autosuggest-list-item-highlighted-background-color: rgb(241, 242, 248);
 /// @group colors
-$bpk-background-alternative-dark-color: rgb(0, 0, 0);
-/// @group colors
 $bpk-background-alternative-light-color: rgb(241, 242, 248);
-/// @group colors
-$bpk-background-alternative-secondary-dark-color: rgb(29, 27, 32);
 /// @group colors
 $bpk-background-alternative-secondary-light-color: rgb(255, 255, 255);
 /// @group colors
-$bpk-background-dark-color: rgb(0, 0, 0);
-/// @group text-colors
-$bpk-background-elevation-01-dark-color: rgb(29, 27, 32);
-/// @group text-colors
-$bpk-background-elevation-01-light-color: rgb(255, 255, 255);
-/// @group text-colors
-$bpk-background-elevation-02-dark-color: rgb(44, 44, 46);
-/// @group text-colors
-$bpk-background-elevation-02-light-color: rgb(255, 255, 255);
-/// @group text-colors
-$bpk-background-elevation-03-dark-color: rgb(58, 58, 60);
-/// @group text-colors
-$bpk-background-elevation-03-light-color: rgb(255, 255, 255);
-/// @group colors
 $bpk-background-light-color: rgb(255, 255, 255);
 /// @group colors
-$bpk-background-secondary-dark-color: rgb(29, 27, 32);
-/// @group colors
 $bpk-background-secondary-light-color: rgb(241, 242, 248);
-/// @group colors
-$bpk-background-tertiary-dark-color: rgb(44, 44, 46);
 /// @group colors
 $bpk-background-tertiary-light-color: rgb(255, 255, 255);
 /// @group badges
@@ -611,8 +589,6 @@ $bpk-label-disabled-color: rgb(178, 178, 191);
 $bpk-label-font-size: .75rem;
 /// @group forms
 $bpk-label-line-height: 1rem;
-/// @group colors
-$bpk-line-dark-color: rgb(72, 72, 74);
 /// @group typesettings
 $bpk-line-height-base: 1.25rem;
 /// @group typesettings
@@ -695,8 +671,6 @@ $bpk-panel-background-color: rgb(255, 255, 255);
 $bpk-panel-border-color: rgb(221, 221, 229);
 /// @group panels
 $bpk-panel-padding: .75rem;
-/// @group colors
-$bpk-primary-dark-color: rgb(109, 159, 235);
 /// @group colors
 $bpk-primary-gradient: #0770e3;
 /// @group colors
@@ -794,15 +768,9 @@ $bpk-text-lg-letter-spacing: normal;
 /// @group line-heights
 $bpk-text-lg-line-height: 1.625rem;
 /// @group text-colors
-$bpk-text-primary-dark-color: rgb(255, 255, 255);
-/// @group text-colors
 $bpk-text-primary-light-color: rgb(17, 18, 54);
 /// @group text-colors
-$bpk-text-quaternary-dark-color: rgb(142, 142, 147);
-/// @group text-colors
 $bpk-text-quaternary-light-color: rgb(143, 144, 160);
-/// @group text-colors
-$bpk-text-secondary-dark-color: rgb(142, 142, 147);
 /// @group text-colors
 $bpk-text-secondary-light-color: rgb(68, 69, 96);
 /// @group font-sizes
@@ -813,8 +781,6 @@ $bpk-text-sm-font-weight: 400;
 $bpk-text-sm-letter-spacing: normal;
 /// @group line-heights
 $bpk-text-sm-line-height: 1.125rem;
-/// @group text-colors
-$bpk-text-tertiary-dark-color: rgb(142, 142, 147);
 /// @group text-colors
 $bpk-text-tertiary-light-color: rgb(143, 144, 160);
 /// @group font-sizes
