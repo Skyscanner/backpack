@@ -58,9 +58,8 @@ const colors = _(tokens.props)
     // We don't want to generate SVGs for colors that begine with Background or Line as these are not meant for icons.
     // We want it for raw colors only.
     if (color.name.startsWith('BACKGROUND') || color.name.startsWith('LINE')) {
-      return;
+      return false;
     }
-    // eslint-disable-next-line consistent-return
     return color;
   })
   .keyBy('name')
