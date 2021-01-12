@@ -2995,12 +2995,40 @@
       "originalValue": "{!FONT_LINE_HEIGHT_LG}",
       "name": "TEXT_LG_LINE_HEIGHT"
     },
+    "TEXT_PRIMARY_DARK_COLOR": {
+      "value": "rgb(255, 255, 255)",
+      "type": "color",
+      "category": "text-colors",
+      "originalValue": "{!WHITE}",
+      "name": "TEXT_PRIMARY_DARK_COLOR"
+    },
     "TEXT_PRIMARY_LIGHT_COLOR": {
       "value": "rgb(17, 18, 54)",
       "type": "color",
       "category": "text-colors",
       "originalValue": "{!SKY_GRAY}",
       "name": "TEXT_PRIMARY_LIGHT_COLOR"
+    },
+    "TEXT_QUATERNARY_DARK_COLOR": {
+      "value": "rgb(142, 142, 147)",
+      "type": "color",
+      "category": "text-colors",
+      "originalValue": "{!BLACK_TINT_06}",
+      "name": "TEXT_QUATERNARY_DARK_COLOR"
+    },
+    "TEXT_QUATERNARY_LIGHT_COLOR": {
+      "value": "rgb(143, 144, 160)",
+      "type": "color",
+      "category": "text-colors",
+      "originalValue": "{!SKY_GRAY_TINT_03}",
+      "name": "TEXT_QUATERNARY_LIGHT_COLOR"
+    },
+    "TEXT_SECONDARY_DARK_COLOR": {
+      "value": "rgb(142, 142, 147)",
+      "type": "color",
+      "category": "text-colors",
+      "originalValue": "{!BLACK_TINT_06}",
+      "name": "TEXT_SECONDARY_DARK_COLOR"
     },
     "TEXT_SECONDARY_LIGHT_COLOR": {
       "value": "rgb(68, 69, 96)",
@@ -3036,6 +3064,20 @@
       "category": "line-heights",
       "originalValue": "{!FONT_LINE_HEIGHT_SM}",
       "name": "TEXT_SM_LINE_HEIGHT"
+    },
+    "TEXT_TERTIARY_DARK_COLOR": {
+      "value": "rgb(142, 142, 147)",
+      "type": "color",
+      "category": "text-colors",
+      "originalValue": "{!BLACK_TINT_06}",
+      "name": "TEXT_TERTIARY_DARK_COLOR"
+    },
+    "TEXT_TERTIARY_LIGHT_COLOR": {
+      "value": "rgb(143, 144, 160)",
+      "type": "color",
+      "category": "text-colors",
+      "originalValue": "{!SKY_GRAY_TINT_03}",
+      "name": "TEXT_TERTIARY_LIGHT_COLOR"
     },
     "TEXT_XL_FONT_SIZE": {
       "value": "1.5rem",
@@ -3315,6 +3357,42 @@
       "name": "PRIMARY_COLOR",
       "darkValue": "rgb(109, 159, 235)",
       "originalDarkValue": "{!SKY_BLUE_TINT_01}"
+    },
+    "TEXT_PRIMARY_COLOR": {
+      "value": "rgb(17, 18, 54)",
+      "type": "color",
+      "category": "text-colors",
+      "originalValue": "{!SKY_GRAY}",
+      "name": "TEXT_PRIMARY_COLOR",
+      "darkValue": "rgb(255, 255, 255)",
+      "originalDarkValue": "{!WHITE}"
+    },
+    "TEXT_QUATERNARY_COLOR": {
+      "value": "rgb(143, 144, 160)",
+      "type": "color",
+      "category": "text-colors",
+      "originalValue": "{!SKY_GRAY_TINT_03}",
+      "name": "TEXT_QUATERNARY_COLOR",
+      "darkValue": "rgb(142, 142, 147)",
+      "originalDarkValue": "{!BLACK_TINT_06}"
+    },
+    "TEXT_SECONDARY_COLOR": {
+      "value": "rgb(68, 69, 96)",
+      "type": "color",
+      "category": "text-colors",
+      "originalValue": "{!SKY_GRAY_TINT_01}",
+      "name": "TEXT_SECONDARY_COLOR",
+      "darkValue": "rgb(142, 142, 147)",
+      "originalDarkValue": "{!BLACK_TINT_06}"
+    },
+    "TEXT_TERTIARY_COLOR": {
+      "value": "rgb(143, 144, 160)",
+      "type": "color",
+      "category": "text-colors",
+      "originalValue": "{!SKY_GRAY_TINT_03}",
+      "name": "TEXT_TERTIARY_COLOR",
+      "darkValue": "rgb(142, 142, 147)",
+      "originalDarkValue": "{!BLACK_TINT_06}"
     }
   },
   "propKeys": [
@@ -3706,12 +3784,18 @@
     "TEXT_LG_FONT_WEIGHT",
     "TEXT_LG_LETTER_SPACING",
     "TEXT_LG_LINE_HEIGHT",
+    "TEXT_PRIMARY_DARK_COLOR",
     "TEXT_PRIMARY_LIGHT_COLOR",
+    "TEXT_QUATERNARY_DARK_COLOR",
+    "TEXT_QUATERNARY_LIGHT_COLOR",
+    "TEXT_SECONDARY_DARK_COLOR",
     "TEXT_SECONDARY_LIGHT_COLOR",
     "TEXT_SM_FONT_SIZE",
     "TEXT_SM_FONT_WEIGHT",
     "TEXT_SM_LETTER_SPACING",
     "TEXT_SM_LINE_HEIGHT",
+    "TEXT_TERTIARY_DARK_COLOR",
+    "TEXT_TERTIARY_LIGHT_COLOR",
     "TEXT_XL_FONT_SIZE",
     "TEXT_XL_FONT_WEIGHT",
     "TEXT_XL_LETTER_SPACING",
@@ -3748,6 +3832,10 @@
     "BACKGROUND_SECONDARY_COLOR",
     "BACKGROUND_TERTIARY_COLOR",
     "LINE_COLOR",
-    "PRIMARY_COLOR"
+    "PRIMARY_COLOR",
+    "TEXT_PRIMARY_COLOR",
+    "TEXT_QUATERNARY_COLOR",
+    "TEXT_SECONDARY_COLOR",
+    "TEXT_TERTIARY_COLOR"
   ]
 }
