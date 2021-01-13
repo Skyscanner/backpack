@@ -2,6 +2,10 @@
 
 > Place your changes below this line.
 
+**Added:**
+ - bpk-component-datatable:
+   - Passing `sort`, `sortBy` and `sortDirection` as props leaves all the sorting to the underlying react-virtualized Table
+
 ## How to write a good changelog entry
 
 1. Add 'Breaking', 'Added' or 'Fixed' in bold depending on if the change will be major, minor or patch according to [semver](semver.org).

@@ -18,78 +18,31 @@
 
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import { Table, AutoSizer, SortDirection } from 'react-virtualized';
+import { Table, AutoSizer } from 'react-virtualized';
 import { cssModules } from 'bpk-react-utils';
-import _sortBy from 'lodash/sortBy';
 import _omit from 'lodash/omit';
 
 import STYLES from './BpkDataTable.scss';
 import BpkDataTableColumn from './BpkDataTableColumn';
 import hasChildrenOfType from './hasChildrenOfType';
-import { getSortIconDirection } from './bpkHeaderRenderer';
+import makeSorter from './sorter';
 
 const getClassName = cssModules(STYLES);
-const omittedTableProps = [
-  'rowGetter',
-  'rowCount',
-  'sortBy',
-  'sortDirection',
-  'sort',
-  'onHeaderClick',
-];
-
-const getSortDirection = (
-  state,
-  newSortBy,
-  newSortDirection,
-  defaultSortDirection,
-) => {
-  const { sortBy, sortDirection } = state;
-  if (newSortDirection !== null) {
-    return newSortDirection;
-  }
-  if (sortBy === newSortBy) {
-    return sortDirection === SortDirection.ASC
-      ? SortDirection.DESC
-      : SortDirection.ASC;
-  }
-  return defaultSortDirection;
-};
-
-const sortList = ({ sortBy, sortDirection, list }) => {
-  const sorted = _sortBy(list, sortBy);
-  if (sortDirection === 'DESC') {
-    sorted.reverse();
-  }
-  return sorted;
-};
+const omittedTableProps = ['rowGetter', 'rowCount', 'onHeaderClick'];
 
 class BpkDataTable extends Component {
-  constructor({ rows, children, defaultColumnSortIndex }) {
+  constructor(props) {
     super();
 
-    const sortBy =
-      children.length > 0
-        ? children[defaultColumnSortIndex].props.dataKey
-        : undefined;
-    const sortDirection =
-      children[defaultColumnSortIndex].props.defaultSortDirection ||
-      SortDirection.ASC;
-    const sortedList = sortList({ sortBy, sortDirection, list: rows });
-
     this.state = {
-      sortedList,
-      sortBy,
-      sortDirection,
+      sorter: makeSorter(props),
       rowSelected: undefined,
     };
   }
 
-  UNSAFE_componentWillReceiveProps({ rows }) {
-    if (rows !== this.props.rows) {
-      const { sortBy, sortDirection } = this.state;
-      const sortedList = sortList({ sortBy, sortDirection, list: rows });
-      this.setState({ sortedList, rowSelected: undefined });
+  UNSAFE_componentWillReceiveProps(nextProps) {
+    if (nextProps.rows !== this.props.rows) {
+      this.state.sorter.propsChange(nextProps);
     }
   }
 
@@ -100,7 +53,7 @@ class BpkDataTable extends Component {
       this.setState({ rowSelected: index });
     }
     if (this.props.onRowClick !== undefined) {
-      this.props.onRowClick(this.state.sortedList[index]);
+      this.props.onRowClick(this.state.sorter.getRow(index));
     }
   };
 
@@ -116,22 +69,9 @@ class BpkDataTable extends Component {
     // See: https://reactjs.org/docs/events.html#event-pooling
     const eventTarget = event.target;
 
-    this.setState(prevState => {
-      const sortDirection = getSortDirection(
-        prevState,
-        sortBy,
-        getSortIconDirection(eventTarget),
-        column.props.defaultSortDirection || SortDirection.ASC,
-      );
-
-      const sortedList = sortList({
-        sortBy,
-        sortDirection,
-        list: this.props.rows,
-      });
-
-      return { sortBy, sortDirection, sortedList };
-    });
+    this.setState(prevState => ({
+      sorter: prevState.sorter.onHeaderClick(sortBy, eventTarget, column),
+    }));
   };
 
   rowClassName = (consumerClassName, { index }) => {
@@ -152,13 +92,12 @@ class BpkDataTable extends Component {
   };
 
   renderTable(width) {
-    const { sortedList, sortDirection, sortBy } = this.state;
-
     const {
       children,
       className,
       headerClassName,
       rowClassName,
+      sort,
       ...restOfProps
     } = this.props;
 
@@ -177,14 +116,13 @@ class BpkDataTable extends Component {
         {...restOfProps}
         className={classNames.join(' ')}
         width={width}
-        rowCount={sortedList.length}
-        rowGetter={({ index }) => sortedList[index]}
+        rowCount={this.state.sorter.rowCount}
+        rowGetter={({ index }) => this.state.sorter.getRow(index)}
         headerClassName={headerClassNames.join(' ')}
         rowClassName={row => this.rowClassName(rowClassName, row)}
         onRowClick={this.onRowClicked}
         onHeaderClick={this.onHeaderClick}
-        sortBy={sortBy}
-        sortDirection={sortDirection}
+        {...this.state.sorter.sortProps}
       >
         {children.map(BpkDataTableColumn.toColumn)}
       </Table>
@@ -212,6 +150,9 @@ BpkDataTable.propTypes = {
   headerHeight: PropTypes.number,
   className: PropTypes.string,
   defaultColumnSortIndex: PropTypes.number,
+  sort: PropTypes.func,
+  sortBy: PropTypes.string,
+  sortDirection: PropTypes.oneOf('ASC', 'DESC'),
 };
 
 BpkDataTable.defaultProps = {
@@ -221,6 +162,9 @@ BpkDataTable.defaultProps = {
   rowHeight: 60,
   gridStyle: { direction: undefined }, // This is required for rows to automatically respect rtl
   defaultColumnSortIndex: 0,
+  sort: null,
+  sortBy: null,
+  sortDirection: null,
 };
 
 export default BpkDataTable;

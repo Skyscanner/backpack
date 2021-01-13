@@ -571,6 +571,8 @@ yAxisDomain
 withAccordionItemState
 weekDayKey
 nameAbbr
+sortBy
+sortDirection
 
 BpkAccordion
 BpkAccordionItem
