@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-panel",
-  "version": "2.0.99",
+  "version": "2.0.100",
   "description": "Backpack panel component.",
   "license": "Apache-2.0",
   "repository": {
@@ -14,8 +14,8 @@
   },
   "gitHead": "09fc99e4e67a5b71dc15f41a5409ad412bc139d4",
   "dependencies": {
-    "bpk-mixins": "^20.1.16",
-    "bpk-react-utils": "^3.0.10",
+    "bpk-mixins": "^20.1.17",
+    "bpk-react-utils": "^3.0.11",
     "prop-types": "^15.6.2"
   },
   "peerDependencies": {
