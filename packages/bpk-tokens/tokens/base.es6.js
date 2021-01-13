@@ -194,13 +194,6 @@ export const cardPadding = ".75rem";
 export const checkboxCheckedTickColor = "rgb(7, 112, 227)";
 export const colorAbisko = "rgb(90, 72, 155)";
 export const colorBagan = "rgb(255, 235, 208)";
-export const colorBlack = "rgb(0, 0, 0)";
-export const colorBlackTint01 = "rgb(29, 27, 32)";
-export const colorBlackTint02 = "rgb(44, 44, 46)";
-export const colorBlackTint03 = "rgb(58, 58, 60)";
-export const colorBlackTint04 = "rgb(72, 72, 74)";
-export const colorBlackTint05 = "rgb(99, 99, 102)";
-export const colorBlackTint06 = "rgb(142, 142, 147)";
 export const colorBunol = "rgb(255, 123, 89)";
 export const colorErfoud = "rgb(255, 181, 77)";
 export const colorGlencoe = "rgb(115, 206, 198)";
@@ -604,13 +597,6 @@ backgroundSecondaryLightColor,
 backgroundTertiaryLightColor,
 colorAbisko,
 colorBagan,
-colorBlack,
-colorBlackTint01,
-colorBlackTint02,
-colorBlackTint03,
-colorBlackTint04,
-colorBlackTint05,
-colorBlackTint06,
 colorBunol,
 colorErfoud,
 colorGlencoe,

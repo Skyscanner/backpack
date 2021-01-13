@@ -1517,55 +1517,6 @@
       "originalValue": "{!BAGAN}",
       "name": "COLOR_BAGAN"
     },
-    "COLOR_BLACK": {
-      "type": "color",
-      "category": "colors",
-      "value": "rgb(0, 0, 0)",
-      "originalValue": "{!BLACK}",
-      "name": "COLOR_BLACK"
-    },
-    "COLOR_BLACK_TINT_01": {
-      "type": "color",
-      "category": "colors",
-      "value": "rgb(29, 27, 32)",
-      "originalValue": "{!BLACK_TINT_01}",
-      "name": "COLOR_BLACK_TINT_01"
-    },
-    "COLOR_BLACK_TINT_02": {
-      "type": "color",
-      "category": "colors",
-      "value": "rgb(44, 44, 46)",
-      "originalValue": "{!BLACK_TINT_02}",
-      "name": "COLOR_BLACK_TINT_02"
-    },
-    "COLOR_BLACK_TINT_03": {
-      "type": "color",
-      "category": "colors",
-      "value": "rgb(58, 58, 60)",
-      "originalValue": "{!BLACK_TINT_03}",
-      "name": "COLOR_BLACK_TINT_03"
-    },
-    "COLOR_BLACK_TINT_04": {
-      "type": "color",
-      "category": "colors",
-      "value": "rgb(72, 72, 74)",
-      "originalValue": "{!BLACK_TINT_04}",
-      "name": "COLOR_BLACK_TINT_04"
-    },
-    "COLOR_BLACK_TINT_05": {
-      "type": "color",
-      "category": "colors",
-      "value": "rgb(99, 99, 102)",
-      "originalValue": "{!BLACK_TINT_05}",
-      "name": "COLOR_BLACK_TINT_05"
-    },
-    "COLOR_BLACK_TINT_06": {
-      "type": "color",
-      "category": "colors",
-      "value": "rgb(142, 142, 147)",
-      "originalValue": "{!BLACK_TINT_06}",
-      "name": "COLOR_BLACK_TINT_06"
-    },
     "COLOR_BUNOL": {
       "type": "color",
       "category": "colors",
@@ -3328,13 +3279,6 @@
     "CHECKBOX_CHECKED_TICK_COLOR",
     "COLOR_ABISKO",
     "COLOR_BAGAN",
-    "COLOR_BLACK",
-    "COLOR_BLACK_TINT_01",
-    "COLOR_BLACK_TINT_02",
-    "COLOR_BLACK_TINT_03",
-    "COLOR_BLACK_TINT_04",
-    "COLOR_BLACK_TINT_05",
-    "COLOR_BLACK_TINT_06",
     "COLOR_BUNOL",
     "COLOR_ERFOUD",
     "COLOR_GLENCOE",
