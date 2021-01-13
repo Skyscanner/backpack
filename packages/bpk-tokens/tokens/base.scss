@@ -23,6 +23,16 @@ $bpk-autosuggest-list-background-color: rgb(255, 255, 255);
 $bpk-autosuggest-list-item-active-background-color: rgb(221, 221, 229);
 /// @group autosuggest
 $bpk-autosuggest-list-item-highlighted-background-color: rgb(241, 242, 248);
+/// @group colors
+$bpk-background-alternative-light-color: rgb(241, 242, 248);
+/// @group colors
+$bpk-background-alternative-secondary-light-color: rgb(255, 255, 255);
+/// @group colors
+$bpk-background-light-color: rgb(255, 255, 255);
+/// @group colors
+$bpk-background-secondary-light-color: rgb(241, 242, 248);
+/// @group colors
+$bpk-background-tertiary-light-color: rgb(255, 255, 255);
 /// @group badges
 $bpk-badge-background-color: rgb(255, 181, 77);
 /// @group badges
@@ -583,6 +593,8 @@ $bpk-line-height-xxxl: 2.9375rem;
 $bpk-line-height-xxxxl: 3.4375rem;
 /// @group typesettings
 $bpk-line-height-xxxxxl: 4.875rem;
+/// @group colors
+$bpk-line-light-color: rgb(205, 205, 215);
 /// @group text-colors
 $bpk-link-active-color: rgb(4, 39, 89);
 /// @group text-colors
@@ -647,6 +659,8 @@ $bpk-panel-border-color: rgb(221, 221, 229);
 $bpk-panel-padding: .75rem;
 /// @group colors
 $bpk-primary-gradient: #0770e3;
+/// @group colors
+$bpk-primary-light-color: rgb(7, 112, 227);
 /// @group spacings
 $bpk-p-margin-bottom: .75rem;
 /// @group spacings
@@ -742,6 +756,8 @@ $bpk-text-lg-line-height: 1.625rem;
 /// @group text-colors
 $bpk-text-primary-light-color: rgb(17, 18, 54);
 /// @group text-colors
+$bpk-text-quaternary-light-color: rgb(143, 144, 160);
+/// @group text-colors
 $bpk-text-secondary-light-color: rgb(68, 69, 96);
 /// @group font-sizes
 $bpk-text-sm-font-size: .875rem;
@@ -751,6 +767,8 @@ $bpk-text-sm-font-weight: 400;
 $bpk-text-sm-letter-spacing: normal;
 /// @group line-heights
 $bpk-text-sm-line-height: 1.125rem;
+/// @group text-colors
+$bpk-text-tertiary-light-color: rgb(143, 144, 160);
 /// @group font-sizes
 $bpk-text-xl-font-size: 1.5rem;
 /// @group font-weights

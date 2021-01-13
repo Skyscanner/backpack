@@ -5,6 +5,27 @@
     "category": "colors"
   },
   "props": {
+    "LINE_LIGHT_COLOR": {
+      "value": "{!SKY_GRAY_TINT_05}"
+    },
+    "PRIMARY_LIGHT_COLOR": {
+      "value": "{!SKY_BLUE}"
+    },
+    "BACKGROUND_LIGHT_COLOR": {
+      "value": "{!WHITE}"
+    },
+    "BACKGROUND_ALTERNATIVE_LIGHT_COLOR": {
+      "value": "{!SKY_GRAY_TINT_07}"
+    },
+    "BACKGROUND_SECONDARY_LIGHT_COLOR": {
+      "value": "{!SKY_GRAY_TINT_07}"
+    },
+    "BACKGROUND_ALTERNATIVE_SECONDARY_LIGHT_COLOR": {
+      "value": "{!WHITE}"
+    },
+    "BACKGROUND_TERTIARY_LIGHT_COLOR": {
+      "value": "{!WHITE}"
+    },
     "COLOR_WHITE": {
       "value": "{!WHITE}"
     },

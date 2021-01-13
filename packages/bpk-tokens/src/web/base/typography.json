@@ -23,6 +23,16 @@
       "type": "color",
       "category": "text-colors"
     },
+    "TEXT_TERTIARY_LIGHT_COLOR": {
+      "value": "{!SKY_GRAY_TINT_03}",
+      "type": "color",
+      "category": "text-colors"
+    },
+    "TEXT_QUATERNARY_LIGHT_COLOR": {
+      "value": "{!SKY_GRAY_TINT_03}",
+      "type": "color",
+      "category": "text-colors"
+    },
     "LINE_HEIGHT_XS": {
       "value": "{!FONT_LINE_HEIGHT_XS}",
       "type": "size",

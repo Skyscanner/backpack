@@ -296,6 +296,41 @@
       "originalValue": "{!SKY_GRAY_TINT_07}",
       "name": "AUTOSUGGEST_LIST_ITEM_HIGHLIGHTED_BACKGROUND_COLOR"
     },
+    "BACKGROUND_ALTERNATIVE_LIGHT_COLOR": {
+      "type": "color",
+      "category": "colors",
+      "value": "rgb(241, 242, 248)",
+      "originalValue": "{!SKY_GRAY_TINT_07}",
+      "name": "BACKGROUND_ALTERNATIVE_LIGHT_COLOR"
+    },
+    "BACKGROUND_ALTERNATIVE_SECONDARY_LIGHT_COLOR": {
+      "type": "color",
+      "category": "colors",
+      "value": "rgb(255, 255, 255)",
+      "originalValue": "{!WHITE}",
+      "name": "BACKGROUND_ALTERNATIVE_SECONDARY_LIGHT_COLOR"
+    },
+    "BACKGROUND_LIGHT_COLOR": {
+      "type": "color",
+      "category": "colors",
+      "value": "rgb(255, 255, 255)",
+      "originalValue": "{!WHITE}",
+      "name": "BACKGROUND_LIGHT_COLOR"
+    },
+    "BACKGROUND_SECONDARY_LIGHT_COLOR": {
+      "type": "color",
+      "category": "colors",
+      "value": "rgb(241, 242, 248)",
+      "originalValue": "{!SKY_GRAY_TINT_07}",
+      "name": "BACKGROUND_SECONDARY_LIGHT_COLOR"
+    },
+    "BACKGROUND_TERTIARY_LIGHT_COLOR": {
+      "type": "color",
+      "category": "colors",
+      "value": "rgb(255, 255, 255)",
+      "originalValue": "{!WHITE}",
+      "name": "BACKGROUND_TERTIARY_LIGHT_COLOR"
+    },
     "BADGE_BACKGROUND_COLOR": {
       "category": "badges",
       "value": "rgb(255, 181, 77)",
@@ -2260,6 +2295,13 @@
       "originalValue": "{!FONT_LINE_HEIGHT_XXXXXL}",
       "name": "LINE_HEIGHT_XXXXXL"
     },
+    "LINE_LIGHT_COLOR": {
+      "type": "color",
+      "category": "colors",
+      "value": "rgb(205, 205, 215)",
+      "originalValue": "{!SKY_GRAY_TINT_05}",
+      "name": "LINE_LIGHT_COLOR"
+    },
     "LINK_ACTIVE_COLOR": {
       "value": "rgb(4, 39, 89)",
       "type": "color",
@@ -2483,6 +2525,13 @@
       "value": "#0770e3",
       "originalValue": "{!SKY_BLUE}",
       "name": "PRIMARY_GRADIENT"
+    },
+    "PRIMARY_LIGHT_COLOR": {
+      "type": "color",
+      "category": "colors",
+      "value": "rgb(7, 112, 227)",
+      "originalValue": "{!SKY_BLUE}",
+      "name": "PRIMARY_LIGHT_COLOR"
     },
     "P_MARGIN_BOTTOM": {
       "value": ".75rem",
@@ -2813,6 +2862,13 @@
       "originalValue": "{!SKY_GRAY}",
       "name": "TEXT_PRIMARY_LIGHT_COLOR"
     },
+    "TEXT_QUATERNARY_LIGHT_COLOR": {
+      "value": "rgb(143, 144, 160)",
+      "type": "color",
+      "category": "text-colors",
+      "originalValue": "{!SKY_GRAY_TINT_03}",
+      "name": "TEXT_QUATERNARY_LIGHT_COLOR"
+    },
     "TEXT_SECONDARY_LIGHT_COLOR": {
       "value": "rgb(68, 69, 96)",
       "type": "color",
@@ -2847,6 +2903,13 @@
       "category": "line-heights",
       "originalValue": "{!FONT_LINE_HEIGHT_SM}",
       "name": "TEXT_SM_LINE_HEIGHT"
+    },
+    "TEXT_TERTIARY_LIGHT_COLOR": {
+      "value": "rgb(143, 144, 160)",
+      "type": "color",
+      "category": "text-colors",
+      "originalValue": "{!SKY_GRAY_TINT_03}",
+      "name": "TEXT_TERTIARY_LIGHT_COLOR"
     },
     "TEXT_XL_FONT_SIZE": {
       "value": "1.5rem",
@@ -3042,6 +3105,11 @@
     "AUTOSUGGEST_LIST_BACKGROUND_COLOR",
     "AUTOSUGGEST_LIST_ITEM_ACTIVE_BACKGROUND_COLOR",
     "AUTOSUGGEST_LIST_ITEM_HIGHLIGHTED_BACKGROUND_COLOR",
+    "BACKGROUND_ALTERNATIVE_LIGHT_COLOR",
+    "BACKGROUND_ALTERNATIVE_SECONDARY_LIGHT_COLOR",
+    "BACKGROUND_LIGHT_COLOR",
+    "BACKGROUND_SECONDARY_LIGHT_COLOR",
+    "BACKGROUND_TERTIARY_LIGHT_COLOR",
     "BADGE_BACKGROUND_COLOR",
     "BADGE_CENTERED_VERTICAL_ALIGN",
     "BADGE_PADDING_X",
@@ -3322,6 +3390,7 @@
     "LINE_HEIGHT_XXXL",
     "LINE_HEIGHT_XXXXL",
     "LINE_HEIGHT_XXXXXL",
+    "LINE_LIGHT_COLOR",
     "LINK_ACTIVE_COLOR",
     "LINK_ALTERNATE_ACTIVE_COLOR",
     "LINK_ALTERNATE_COLOR",
@@ -3354,6 +3423,7 @@
     "PANEL_BORDER_COLOR",
     "PANEL_PADDING",
     "PRIMARY_GRADIENT",
+    "PRIMARY_LIGHT_COLOR",
     "P_MARGIN_BOTTOM",
     "P_MARGIN_TOP",
     "RADIO_CHECKED_CIRCLE_COLOR",
@@ -3401,11 +3471,13 @@
     "TEXT_LG_LETTER_SPACING",
     "TEXT_LG_LINE_HEIGHT",
     "TEXT_PRIMARY_LIGHT_COLOR",
+    "TEXT_QUATERNARY_LIGHT_COLOR",
     "TEXT_SECONDARY_LIGHT_COLOR",
     "TEXT_SM_FONT_SIZE",
     "TEXT_SM_FONT_WEIGHT",
     "TEXT_SM_LETTER_SPACING",
     "TEXT_SM_LINE_HEIGHT",
+    "TEXT_TERTIARY_LIGHT_COLOR",
     "TEXT_XL_FONT_SIZE",
     "TEXT_XL_FONT_WEIGHT",
     "TEXT_XL_LETTER_SPACING",

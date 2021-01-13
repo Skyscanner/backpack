@@ -20,6 +20,11 @@
 export const autosuggestListBackgroundColor = "rgb(255, 255, 255)";
 export const autosuggestListItemActiveBackgroundColor = "rgb(221, 221, 229)";
 export const autosuggestListItemHighlightedBackgroundColor = "rgb(241, 242, 248)";
+export const backgroundAlternativeLightColor = "rgb(241, 242, 248)";
+export const backgroundAlternativeSecondaryLightColor = "rgb(255, 255, 255)";
+export const backgroundLightColor = "rgb(255, 255, 255)";
+export const backgroundSecondaryLightColor = "rgb(241, 242, 248)";
+export const backgroundTertiaryLightColor = "rgb(255, 255, 255)";
 export const badgeBackgroundColor = "rgb(255, 181, 77)";
 export const badgeCenteredVerticalAlign = "text-bottom";
 export const badgePaddingX = ".375rem";
@@ -300,6 +305,7 @@ export const lineHeightXxl = "2.4375rem";
 export const lineHeightXxxl = "2.9375rem";
 export const lineHeightXxxxl = "3.4375rem";
 export const lineHeightXxxxxl = "4.875rem";
+export const lineLightColor = "rgb(205, 205, 215)";
 export const linkActiveColor = "rgb(4, 39, 89)";
 export const linkAlternateActiveColor = "rgb(221, 221, 229)";
 export const linkAlternateColor = "rgb(255, 255, 255)";
@@ -332,6 +338,7 @@ export const panelBackgroundColor = "rgb(255, 255, 255)";
 export const panelBorderColor = "rgb(221, 221, 229)";
 export const panelPadding = ".75rem";
 export const primaryGradient = "#0770e3";
+export const primaryLightColor = "rgb(7, 112, 227)";
 export const pMarginBottom = ".75rem";
 export const pMarginTop = "0";
 export const radioCheckedCircleColor = "rgb(7, 112, 227)";
@@ -379,11 +386,13 @@ export const textLgFontWeight = "400";
 export const textLgLetterSpacing = "normal";
 export const textLgLineHeight = "1.625rem";
 export const textPrimaryLightColor = "rgb(17, 18, 54)";
+export const textQuaternaryLightColor = "rgb(143, 144, 160)";
 export const textSecondaryLightColor = "rgb(68, 69, 96)";
 export const textSmFontSize = ".875rem";
 export const textSmFontWeight = "400";
 export const textSmLetterSpacing = "normal";
 export const textSmLineHeight = "1.125rem";
+export const textTertiaryLightColor = "rgb(143, 144, 160)";
 export const textXlFontSize = "1.5rem";
 export const textXlFontWeight = "400";
 export const textXlLetterSpacing = "normal";
@@ -581,6 +590,11 @@ cardColor,
 cardPadding,
 };
 export const colors = {
+backgroundAlternativeLightColor,
+backgroundAlternativeSecondaryLightColor,
+backgroundLightColor,
+backgroundSecondaryLightColor,
+backgroundTertiaryLightColor,
 colorAbisko,
 colorBagan,
 colorBunol,
@@ -615,7 +629,9 @@ colorSystemRed,
 colorTochigi,
 colorValensole,
 colorWhite,
+lineLightColor,
 primaryGradient,
+primaryLightColor,
 };
 export const flare = {
 flareCornerRadius,
@@ -831,7 +847,9 @@ linkWhiteColor,
 linkWhiteHoverColor,
 linkWhiteVisitedColor,
 textPrimaryLightColor,
+textQuaternaryLightColor,
 textSecondaryLightColor,
+textTertiaryLightColor,
 };
 export const textDecorations = {
 linkHoverTextDecoration,

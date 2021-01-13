@@ -23,6 +23,16 @@ $bpk-autosuggest-list-background-color: rgb(255, 255, 255) !default;
 $bpk-autosuggest-list-item-active-background-color: rgb(221, 221, 229) !default;
 /// @group autosuggest
 $bpk-autosuggest-list-item-highlighted-background-color: rgb(241, 242, 248) !default;
+/// @group colors
+$bpk-background-alternative-light-color: rgb(241, 242, 248) !default;
+/// @group colors
+$bpk-background-alternative-secondary-light-color: rgb(255, 255, 255) !default;
+/// @group colors
+$bpk-background-light-color: rgb(255, 255, 255) !default;
+/// @group colors
+$bpk-background-secondary-light-color: rgb(241, 242, 248) !default;
+/// @group colors
+$bpk-background-tertiary-light-color: rgb(255, 255, 255) !default;
 /// @group badges
 $bpk-badge-background-color: rgb(255, 181, 77) !default;
 /// @group badges
@@ -583,6 +593,8 @@ $bpk-line-height-xxxl: 2.9375rem !default;
 $bpk-line-height-xxxxl: 3.4375rem !default;
 /// @group typesettings
 $bpk-line-height-xxxxxl: 4.875rem !default;
+/// @group colors
+$bpk-line-light-color: rgb(205, 205, 215) !default;
 /// @group text-colors
 $bpk-link-active-color: rgb(4, 39, 89) !default;
 /// @group text-colors
@@ -647,6 +659,8 @@ $bpk-panel-border-color: rgb(221, 221, 229) !default;
 $bpk-panel-padding: .75rem !default;
 /// @group colors
 $bpk-primary-gradient: #0770e3 !default;
+/// @group colors
+$bpk-primary-light-color: rgb(7, 112, 227) !default;
 /// @group spacings
 $bpk-p-margin-bottom: .75rem !default;
 /// @group spacings
@@ -742,6 +756,8 @@ $bpk-text-lg-line-height: 1.625rem !default;
 /// @group text-colors
 $bpk-text-primary-light-color: rgb(17, 18, 54) !default;
 /// @group text-colors
+$bpk-text-quaternary-light-color: rgb(143, 144, 160) !default;
+/// @group text-colors
 $bpk-text-secondary-light-color: rgb(68, 69, 96) !default;
 /// @group font-sizes
 $bpk-text-sm-font-size: .875rem !default;
@@ -751,6 +767,8 @@ $bpk-text-sm-font-weight: 400 !default;
 $bpk-text-sm-letter-spacing: normal !default;
 /// @group line-heights
 $bpk-text-sm-line-height: 1.125rem !default;
+/// @group text-colors
+$bpk-text-tertiary-light-color: rgb(143, 144, 160) !default;
 /// @group font-sizes
 $bpk-text-xl-font-size: 1.5rem !default;
 /// @group font-weights
