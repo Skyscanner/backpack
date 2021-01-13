@@ -20,6 +20,7 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import { mount } from 'enzyme';
 import { SortDirection } from 'react-virtualized/dist/commonjs/Table';
+import _sortBy from 'lodash/sortBy';
 
 import BpkDataTable from './BpkDataTable';
 import BpkDataTableColumn from './BpkDataTableColumn';
@@ -220,6 +221,92 @@ describe('BpkDataTable', () => {
 
     cell = wrapper.find('.bpk-data-table__row .bpk-data-table-column').last();
     expect(cell.text()).toBe('Some guy');
+  });
+
+  it('should sort rows using custom sort when it is passed', () => {
+    let complexRows = [
+      {
+        name: 'Jose',
+        description: 'Software Engineer',
+        seat: { office: 'London', desk: 10 },
+      },
+      {
+        name: 'Rolf',
+        description: 'Some guy',
+        seat: { office: 'Barcelona', desk: 12 },
+      },
+      {
+        name: 'John',
+        description: 'Some other guy',
+        seat: { office: 'Barcelona', desk: 15 },
+      },
+    ];
+    let sortByValue = 'seat';
+    let sortDirectionValue = 'DESC';
+    const sortFunction = ({ sortBy, sortDirection }) => {
+      complexRows = _sortBy(complexRows, [
+        row => row.seat.office,
+        row => row.seat.desk,
+      ]);
+      sortByValue = sortBy;
+      sortDirectionValue = sortDirection;
+    };
+    const wrapper = mount(
+      <BpkDataTable
+        rows={complexRows}
+        height={200}
+        width={400}
+        sort={sortFunction}
+        sortBy={sortByValue}
+        sortDirection={sortDirectionValue}
+      >
+        <BpkDataTableColumn
+          label="Name"
+          dataKey="name"
+          width={100}
+          disableSort
+        />
+        <BpkDataTableColumn
+          label="Description"
+          dataKey="description"
+          width={100}
+        />
+        <BpkDataTableColumn
+          label="Seat"
+          dataKey="seat"
+          width={100}
+          flexGrow={1}
+          cellRenderer={({ cellData }) => (
+            <React.Fragment>
+              {cellData.office} - {cellData.desk}
+            </React.Fragment>
+          )}
+        />
+      </BpkDataTable>,
+    );
+
+    let cell = wrapper
+      .find('.bpk-data-table__row .bpk-data-table-column')
+      .last();
+    expect(cell.text()).toBe('Barcelona - 15');
+
+    wrapper
+      .find('.bpk-data-table-column__header[title="Seat"]')
+      .simulate('click');
+    wrapper.setProps({
+      rows: complexRows,
+      sortBy: sortByValue,
+      sortDirection: sortDirectionValue,
+    });
+
+    cell = wrapper.find('.bpk-data-table__row .bpk-data-table-column').at(2);
+    expect(cell.text()).toBe('Barcelona - 12');
+
+    cell = wrapper.find('.bpk-data-table__row .bpk-data-table-column').at(5);
+    expect(cell.text()).toBe('Barcelona - 15');
+
+    cell = wrapper.find('.bpk-data-table__row .bpk-data-table-column').last();
+    expect(cell.text()).toBe('London - 10');
   });
 
   it('should call the onRowClick callback when a row is clicked', () => {

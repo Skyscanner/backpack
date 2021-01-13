@@ -38,6 +38,82 @@ export default () => (
 );
 ```
 
+By default `BpkDataTable` sorts the column using the value of `dataKey`. For use cases where the data might more complex and requires custom sorting you can pass a `sort` function along with `sortBy` and `sortDirection` and they will be handled as explained in react-virtualized's [docs] (https://github.com/bvaughn/react-virtualized/blob/master/docs/Table.md#prop-types)
+
+```js
+import React from 'react';
+import { BpkDataTable, BpkDataTableColumn } from 'bpk-component-datatable';
+import _sortBy from 'lodash/sortBy';
+
+const complexRows = [
+    {
+      name: 'Jose',
+      description: 'Software Engineer',
+      seat: { office: 'London', desk: 10 },
+    },
+    {
+      name: 'Rolf',
+      description: 'Manager',
+      seat: { office: 'Barcelona', desk: 12 },
+    },
+    {
+      name: 'John',
+      description: 'Software Engineer',
+      seat: { office: 'Barcelona', desk: 15 },
+    },
+];
+
+let sortByValue = 'seat';
+let sortDirectionValue = 'DESC';
+const sortFunction = ({ sortBy, sortDirection }) => {
+  if (sortBy === 'seat') {
+    complexRows = _sortBy(complexRows, [
+      row => row.seat.office,
+      row => row.seat.desk,
+    ]);
+  } else {
+    complexRows = _sortBy(complexRows, sortBy);
+  }
+  if (sortDirection === 'DESC') {
+    complexRows.reverse();
+  }
+  sortByValue = sortBy;
+  sortDirectionValue = sortDirection;
+};
+
+export default () => (
+  <BpkDataTable
+    rows={complexRows}
+    height={200}
+    sort={sortFunction}
+    sortBy={sortByValue}
+    sortDirection={sortDirectionValue}
+  >
+    <BpkDataTableColumn
+      label="Name"
+      dataKey="name"
+      width={100}
+    />
+    <BpkDataTableColumn
+      label="Description"
+      dataKey="description"
+      width={100}
+    />
+    <BpkDataTableColumn
+      label="Seat"
+      dataKey="seat"
+      width={100}
+      flexGrow={1}
+      cellRenderer={({ cellData }) => (
+        <React.Fragment>
+          {cellData.office} - {cellData.desk}
+        </React.Fragment>
+      )}
+    />
+  </BpkDataTable>
+);
+```
+
 ## Props
 
 ### BpkDataTable
@@ -55,6 +131,9 @@ in addition to the following:
 | headerHeight           | number                      | false    | 60                   |
 | rowHeight              | number                      | false    | 60                   |
 | defaultColumnSortIndex | number                      | false    | 0                    |
+| sort                   | func                        | false    | null                 |
+| sortBy                 | string                      | false    | null                 |
+| sortDirection          | oneOf('ASC', 'DESC')        | false    | null                 |
 
 
 ### BpkDataTableColumn
