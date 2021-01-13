@@ -2,6 +2,14 @@
 
 [Unreleased changes](./UNRELEASED.md).
 
+# 2021-01-13
+
+**Added:**
+
+- bpk-svgs: 12.2.6 => 12.3.0
+- bpk-tokens: 36.0.4 => 36.1.0
+  - Added new semantic tokens for web for `Background`, `Text` and `Line`.
+
 # 2021-01-08
 
 **Fixed:**
