@@ -2,6 +2,11 @@
 
 > Place your changes below this line.
 
+**Breaking:**
+
+- bpk-component-autosuggest:
+  - Downgraded `react-autosuggest` to `v9.4.3` to ensure compatibility with older versions of React.
+
 **Added:**
   - bpk-component-datatable:
     - Passing `sort`, `sortBy` and `sortDirection` as props leaves all the sorting to the underlying react-virtualized Table.
