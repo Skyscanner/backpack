@@ -3,8 +3,10 @@
 > Place your changes below this line.
 
 **Added:**
- - bpk-component-datatable:
-   - Passing `sort`, `sortBy` and `sortDirection` as props leaves all the sorting to the underlying react-virtualized Table
+  - bpk-component-datatable:
+    - Passing `sort`, `sortBy` and `sortDirection` as props leaves all the sorting to the underlying react-virtualized Table.
+    - Added flow types.
+
 
 ## How to write a good changelog entry
 

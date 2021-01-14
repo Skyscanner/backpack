@@ -15,10 +15,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+/* @flow strict */
 
-import { Children } from 'react';
+import { Children, type AbstractComponent } from 'react';
 
-export function getDisplayName(Component) {
+export function getDisplayName(Component: AbstractComponent<any>): string {
   return (
     Component.displayName ||
     Component.name ||
@@ -28,11 +29,10 @@ export function getDisplayName(Component) {
   );
 }
 
-const hasChildrenOfType = (type, atLeast = 1) => (
-  props,
-  propType,
-  componentName,
-) => {
+const hasChildrenOfType = (
+  type: AbstractComponent<any>,
+  atLeast: number = 1,
+) => (props: { [string]: any }, propType: string, componentName: string) => {
   if (Children.count(props[propType]) < atLeast) {
     const inflectedNoun = atLeast === 1 ? 'child' : 'children';
     return Error(

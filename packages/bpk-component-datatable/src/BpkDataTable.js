@@ -15,6 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+/* @flow strict */
 
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
@@ -25,13 +26,31 @@ import _omit from 'lodash/omit';
 import STYLES from './BpkDataTable.scss';
 import BpkDataTableColumn from './BpkDataTableColumn';
 import hasChildrenOfType from './hasChildrenOfType';
-import makeSorter from './sorter';
+import makeSorter, { type Sorter } from './sorter';
+import type { Props } from './common-types';
 
 const getClassName = cssModules(STYLES);
 const omittedTableProps = ['rowGetter', 'rowCount', 'onHeaderClick'];
 
-class BpkDataTable extends Component {
-  constructor(props) {
+type State<Row> = {
+  sorter: Sorter<Row>,
+  rowSelected: ?number,
+};
+
+class BpkDataTable<Row> extends Component<Props<Row>, State<Row>> {
+  static defaultProps = {
+    ...Table.defaultProps,
+    width: null,
+    headerHeight: 60,
+    rowHeight: 60,
+    gridStyle: { direction: undefined }, // This is required for rows to automatically respect rtl
+    defaultColumnSortIndex: 0,
+    sort: null,
+    sortBy: null,
+    sortDirection: null,
+  };
+
+  constructor(props: Props<Row>) {
     super();
 
     this.state = {
@@ -40,13 +59,13 @@ class BpkDataTable extends Component {
     };
   }
 
-  UNSAFE_componentWillReceiveProps(nextProps) {
+  UNSAFE_componentWillReceiveProps(nextProps: Props<Row>) {
     if (nextProps.rows !== this.props.rows) {
       this.state.sorter.propsChange(nextProps);
     }
   }
 
-  onRowClicked = ({ index }) => {
+  onRowClicked = ({ index }: { index: number }) => {
     if (this.state.rowSelected === index) {
       this.setState({ rowSelected: undefined });
     } else {
@@ -57,24 +76,34 @@ class BpkDataTable extends Component {
     }
   };
 
-  onHeaderClick = ({ dataKey: sortBy, event }) => {
-    const column = this.props.children.find(
+  onHeaderClick = ({
+    dataKey: sortBy,
+    event,
+  }: {
+    dataKey: string,
+    event: SyntheticEvent<HTMLDivElement>,
+  }) => {
+    const column = React.Children.toArray(this.props.children).find(
       child => child.props.dataKey === sortBy,
     );
+
+    if (!column) {
+      return;
+    }
 
     if (column.props.disableSort === true) {
       return;
     }
 
     // See: https://reactjs.org/docs/events.html#event-pooling
-    const eventTarget = event.target;
+    const eventTarget = event.currentTarget;
 
     this.setState(prevState => ({
       sorter: prevState.sorter.onHeaderClick(sortBy, eventTarget, column),
     }));
   };
 
-  rowClassName = (consumerClassName, { index }) => {
+  rowClassName = (consumerClassName: ?string, { index }: { index: number }) => {
     const classNames = [getClassName('bpk-data-table__row')];
     if (this.state.rowSelected === index) {
       classNames.push(getClassName('bpk-data-table__row--selected'));
@@ -91,7 +120,7 @@ class BpkDataTable extends Component {
     return classNames;
   };
 
-  renderTable(width) {
+  renderTable(width: ?number) {
     const {
       children,
       className,
@@ -112,6 +141,7 @@ class BpkDataTable extends Component {
     }
 
     return (
+      // $FlowFixMe[cannot-spread-inexact]
       <Table
         {...restOfProps}
         className={classNames.join(' ')}
@@ -124,7 +154,7 @@ class BpkDataTable extends Component {
         onHeaderClick={this.onHeaderClick}
         {...this.state.sorter.sortProps}
       >
-        {children.map(BpkDataTableColumn.toColumn)}
+        {React.Children.map(children, BpkDataTableColumn.toColumn)}
       </Table>
     );
   }
@@ -153,18 +183,6 @@ BpkDataTable.propTypes = {
   sort: PropTypes.func,
   sortBy: PropTypes.string,
   sortDirection: PropTypes.oneOf('ASC', 'DESC'),
-};
-
-BpkDataTable.defaultProps = {
-  ...Table.defaultProps,
-  width: null,
-  headerHeight: 60,
-  rowHeight: 60,
-  gridStyle: { direction: undefined }, // This is required for rows to automatically respect rtl
-  defaultColumnSortIndex: 0,
-  sort: null,
-  sortBy: null,
-  sortDirection: null,
 };
 
 export default BpkDataTable;

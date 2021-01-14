@@ -15,16 +15,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 /* @flow strict */
 
-// eslint-disable-next-line import/prefer-default-export
-export const hasClassName = (node: ?Element, className: ?string): boolean => {
-  if (node == null) {
-    return false;
-  }
+// This file exists to break a cycle that would otherwise happen between
+// BpkDataTableColumn.js and common-types.js
+export type SortDirectionType = 'ASC' | ' DESC';
 
-  const nodeClassName = node.getAttribute('class');
-  return (
-    nodeClassName != null && nodeClassName.split(' ').indexOf(className) !== -1
-  );
+export type SortProps = {
+  sortBy: ?string,
+  sortDirection: ?SortDirectionType,
+  sort: ?Function,
 };

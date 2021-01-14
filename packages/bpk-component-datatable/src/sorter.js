@@ -1,16 +1,49 @@
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016-2021 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+/* @flow strict */
+import React from 'react';
 import _sortBy from 'lodash/sortBy';
 import { SortDirection } from 'react-virtualized';
 
 import { getSortIconDirection } from './bpkHeaderRenderer';
+import type { Props, SortProps, SortDirectionType } from './common-types';
+
+export type Sorter<Row> = {
+  rowCount: number,
+  getRow(indext: number): Row,
+  propsChange(props: Props<Row>): void,
+  onHeaderClick(
+    sortBy: string,
+    eventTarget: HTMLElement,
+    column: any,
+  ): Sorter<Row>,
+  sortProps: SortProps,
+};
 
 const getSortDirection = (
-  sortProps,
-  newSortBy,
-  newSortDirection,
-  defaultSortDirection,
-) => {
+  sortProps: SortProps,
+  newSortBy: ?string,
+  newSortDirection: ?SortDirectionType,
+  defaultSortDirection: SortDirectionType,
+): SortDirectionType => {
   const { sortBy, sortDirection } = sortProps;
-  if (newSortDirection !== null) {
+  if (newSortDirection != null) {
     return newSortDirection;
   }
   if (sortBy === newSortBy) {
@@ -21,15 +54,26 @@ const getSortDirection = (
   return defaultSortDirection;
 };
 
-class NaiveSorter {
-  constructor(props) {
+class NaiveSorter<Row> {
+  sortProps: SortProps;
+
+  list: Array<Row>;
+
+  sortedList: Array<Row>;
+
+  rowCount: number;
+
+  constructor(props: Props<Row>) {
+    const children = React.Children.toArray(props.children);
+
     const sortBy =
-      props.children.length > 0
-        ? props.children[props.defaultColumnSortIndex].props.dataKey
+      React.Children.count(props.children) > 0
+        ? children[props.defaultColumnSortIndex].props.dataKey
         : undefined;
     const sortDirection =
-      props.children[props.defaultColumnSortIndex].props.defaultSortDirection ||
+      children[props.defaultColumnSortIndex].props.defaultSortDirection ||
       SortDirection.ASC;
+
     this.sortProps = {
       sortBy,
       sortDirection,
@@ -39,7 +83,7 @@ class NaiveSorter {
     this.sort();
   }
 
-  getRow(index) {
+  getRow(index: number): Row {
     return this.sortedList[index];
   }
 
@@ -52,12 +96,12 @@ class NaiveSorter {
     this.rowCount = this.sortedList.length;
   }
 
-  propsChange(nextProps) {
+  propsChange(nextProps: Props<Row>) {
     this.list = nextProps.rows;
     this.sort();
   }
 
-  onHeaderClick(sortBy, eventTarget, column) {
+  onHeaderClick(sortBy: string, eventTarget: HTMLElement, column): Sorter<Row> {
     const sortDirection = getSortDirection(
       this.sortProps,
       sortBy,
@@ -76,8 +120,14 @@ class NaiveSorter {
   }
 }
 
-class PropSorter {
-  constructor(props) {
+class PropSorter<Row> {
+  sortProps: SortProps;
+
+  list: Array<Row>;
+
+  rowCount: number;
+
+  constructor(props: Props<Row>) {
     this.sortProps = {
       sortBy: props.sortBy,
       sortDirection: props.sortDirection,
@@ -87,11 +137,11 @@ class PropSorter {
     this.rowCount = props.rows.length;
   }
 
-  getRow(index) {
+  getRow(index: number): Row {
     return this.list[index];
   }
 
-  propsChange(nextProps) {
+  propsChange(nextProps: Props<Row>) {
     this.sortProps = {
       sortBy: nextProps.sortBy,
       sortDirection: nextProps.sortDirection,
@@ -100,12 +150,12 @@ class PropSorter {
     this.list = nextProps.rows;
   }
 
-  onHeaderClick() {
+  onHeaderClick(): Sorter<Row> {
     return this;
   }
 }
 
-const makeSorter = props => {
+const makeSorter = <Row>(props: Props<Row>): Sorter<Row> => {
   if (
     props.sort !== null &&
     props.sortBy !== null &&
