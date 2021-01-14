@@ -2,6 +2,18 @@
 
 [Unreleased changes](./UNRELEASED.md).
 
+# 2021-01-14
+
+**Breaking:**
+
+- bpk-component-autosuggest: 4.1.29 => 5.0.0
+  - Downgraded `react-autosuggest` to `v9.4.3` to ensure compatibility with older versions of React.
+
+**Added:**
+- bpk-component-datatable: 2.0.58 => 2.1.0
+  - Passing `sort`, `sortBy` and `sortDirection` as props leaves all the sorting to the underlying react-virtualized Table.
+  - Added flow types.
+
 # 2021-01-13
 
 **Added:**

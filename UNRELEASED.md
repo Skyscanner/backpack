@@ -2,17 +2,6 @@
 
 > Place your changes below this line.
 
-**Breaking:**
-
-- bpk-component-autosuggest:
-  - Downgraded `react-autosuggest` to `v9.4.3` to ensure compatibility with older versions of React.
-
-**Added:**
-  - bpk-component-datatable:
-    - Passing `sort`, `sortBy` and `sortDirection` as props leaves all the sorting to the underlying react-virtualized Table.
-    - Added flow types.
-
-
 ## How to write a good changelog entry
 
 1. Add 'Breaking', 'Added' or 'Fixed' in bold depending on if the change will be major, minor or patch according to [semver](semver.org).
