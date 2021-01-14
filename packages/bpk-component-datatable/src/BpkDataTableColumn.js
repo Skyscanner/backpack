@@ -15,21 +15,34 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+/* @flow strict */
 
-import React from 'react';
+import React, { type Element } from 'react';
 import { Column } from 'react-virtualized';
 import { cssModules } from 'bpk-react-utils';
 
 import bpkHeaderRenderer from './bpkHeaderRenderer';
 import STYLES from './BpkDataTableColumn.scss';
+import { type SortDirectionType } from './sort-types';
+
+export type BpkDataTableColumnProps = {
+  className: ?string,
+  dataKey: string,
+  disableSort: boolean,
+  defaultSortDirection: SortDirectionType,
+};
 
 const getClassName = cssModules(STYLES);
 
 // BpkDataTableColumn is just a props wrapper since Table only accepts Column children
 // BpkDataTable uses BpkDataTableColumn.toColumn to convert BpkDataTableColumn to Columns
-const BpkDataTableColumn = () => null;
+// eslint-disable-next-line no-unused-vars
+const BpkDataTableColumn = (props: BpkDataTableColumnProps) => null;
 
-BpkDataTableColumn.toColumn = (bpkDataTableColumn, key) => {
+BpkDataTableColumn.toColumn = (
+  bpkDataTableColumn: Element<typeof BpkDataTableColumn>,
+  key,
+) => {
   const { className, ...rest } = bpkDataTableColumn.props;
   const classNames = [getClassName('bpk-data-table-column')];
 
@@ -37,6 +50,7 @@ BpkDataTableColumn.toColumn = (bpkDataTableColumn, key) => {
     classNames.push(className);
   }
 
+  // $FlowFixMe[cannot-spread-inexact]
   return <Column className={classNames.join(' ')} key={key} {...rest} />;
 };
 
