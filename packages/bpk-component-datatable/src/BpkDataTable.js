@@ -103,7 +103,10 @@ class BpkDataTable<Row> extends Component<Props<Row>, State<Row>> {
     }));
   };
 
-  rowClassName = (consumerClassName: ?string, { index }: { index: number }) => {
+  rowClassName = (
+    consumerClassName: ?string | ?(({ index: number }) => string),
+    { index }: { index: number },
+  ) => {
     const classNames = [getClassName('bpk-data-table__row')];
     if (this.state.rowSelected === index) {
       classNames.push(getClassName('bpk-data-table__row--selected'));
@@ -115,7 +118,11 @@ class BpkDataTable<Row> extends Component<Props<Row>, State<Row>> {
       classNames.push(getClassName('bpk-data-table__header-row'));
     }
     if (consumerClassName) {
-      classNames.push(consumerClassName);
+      if (typeof consumerClassName === 'function') {
+        classNames.push(consumerClassName({ index }));
+      } else {
+        classNames.push(consumerClassName);
+      }
     }
     return classNames;
   };
