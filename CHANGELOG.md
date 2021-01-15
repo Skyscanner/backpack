@@ -2,6 +2,13 @@
 
 [Unreleased changes](./UNRELEASED.md).
 
+# 2021-01-15
+
+**Added:**
+
+- bpk-component-datatable: 2.1.0 => 2.2.0
+  - `rowClassName` can be a function like in react-virtualized Table.
+
 # 2021-01-14
 
 **Breaking:**
