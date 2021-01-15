@@ -107,13 +107,39 @@ describe('BpkDataTable', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  it('should render correctly with a custom rowClassName', () => {
+  it('should render correctly with a custom rowClassName string', () => {
     const tree = renderer
       .create(
         <BpkDataTable
           rows={rows}
           height={200}
           rowClassName="custom-data-table__row"
+        >
+          <BpkDataTableColumn label="Name" dataKey="name" width={100} />
+          <BpkDataTableColumn
+            label="Description"
+            dataKey="description"
+            width={100}
+            flexGrow={1}
+          />
+          <BpkDataTableColumn label="Bla" dataKey="bla" width={100} />
+        </BpkDataTable>,
+      )
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('should render correctly with a custom rowClassName function', () => {
+    const tree = renderer
+      .create(
+        <BpkDataTable
+          rows={rows}
+          height={200}
+          rowClassName={({ index }) =>
+            index % 2 === 0
+              ? 'custom-data-table__row_even'
+              : 'custom-data-table__row_odd'
+          }
         >
           <BpkDataTableColumn label="Name" dataKey="name" width={100} />
           <BpkDataTableColumn
