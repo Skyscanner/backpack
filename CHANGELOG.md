@@ -2,6 +2,13 @@
 
 [Unreleased changes](./UNRELEASED.md).
 
+# 2021-01-18
+
+**Fixed:**
+
+- bpk-component-datatable: 2.2.0 => 2.2.1
+  - Fixed issue where `rowCount` does not update when props have changed.
+
 # 2021-01-15
 
 **Added:**
