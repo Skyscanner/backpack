@@ -29,3 +29,5 @@ See [`CHANGELOG.md`](CHANGELOG.md) for real-world examples of good changelog ent
 
 - bpk-component-horcrux:
   - Fixed issue where `BpkHorcrux` would occasionally possess the living.
+- bpk-component-datatable:
+  - Fixed issue where `rowCount` does not update when props have changed.

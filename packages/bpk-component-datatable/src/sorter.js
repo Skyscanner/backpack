@@ -148,6 +148,7 @@ class PropSorter<Row> {
       sort: nextProps.sort,
     };
     this.list = nextProps.rows;
+    this.rowCount = nextProps.rows.length;
   }
 
   onHeaderClick(): Sorter<Row> {
