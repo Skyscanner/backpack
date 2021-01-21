@@ -2,6 +2,15 @@
 
 [Unreleased changes](./UNRELEASED.md).
 
+# 2021-01-21
+
+**Fixed**
+- bpk-svgs: 12.3.0 => 12.3.1
+  - Corrected the socially-distanced icon for the iOS font.
+
+- bpk-tokens: 36.1.0 => 36.1.1
+  - Removed Arial to fix fonts for different locales rendering.
+
 # 2021-01-18
 
 **Fixed:**

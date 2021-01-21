@@ -1,13 +1,6 @@
 # Unreleased
 
 > Place your changes below this line.
-
-**Fixed**
- - bpk-svgs:
-   - Corrected the socially-distanced icon for the iOS font.
-
-**Breaking:**
-  - Removed Arial to fix fonts for different locales rendering.
 ## How to write a good changelog entry
 
 1. Add 'Breaking', 'Added' or 'Fixed' in bold depending on if the change will be major, minor or patch according to [semver](semver.org).
