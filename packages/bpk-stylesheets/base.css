@@ -1691,7 +1691,7 @@ html {
 /* stylelint-disable selector-class-pattern */
 body {
   color: #111236;
-  font-family: "Skyscanner Relative", -apple-system, BlinkMacSystemFont, "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Arial", sans-serif;
+  font-family: "Skyscanner Relative", -apple-system, BlinkMacSystemFont, "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   font-size: 1rem;
   line-height: 1.3rem;
   /* stylelint-disable-line scale-unlimited/declaration-strict-value */ }
