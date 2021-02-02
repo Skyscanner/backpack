@@ -18,7 +18,12 @@
     "prop-types": "^15.5.8"
   },
   "devDependencies": {
-    "bpk-component-chip": "^4.1.11"
+    "bpk-component-chip": "^4.1.11",
+    "bpk-component-code": "^2.0.101",
+    "bpk-component-fieldset": "^2.0.112",
+    "bpk-component-paragraph": "^2.0.101",
+    "bpk-component-select": "^3.0.101",
+    "bpk-component-switch": "^1.1.50"
   },
   "peerDependencies": {
     "react": "^16.0.0"

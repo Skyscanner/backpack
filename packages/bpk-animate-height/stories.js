@@ -16,62 +16,25 @@
  * limitations under the License.
  */
 
-import BpkButton from 'bpk-component-button';
+/* @flow strict */
+import React from 'react';
 import { storiesOf } from '@storybook/react';
-import PropTypes from 'prop-types';
-import React, { Component } from 'react';
 import { text } from '@storybook/addon-knobs';
 
-import AnimateHeight from './index';
-
-class AnimateHeightContainer extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      height: this.props.fromHeight,
-    };
-  }
-
-  onClick = () => {
-    this.setState(prevState => {
-      const height =
-        prevState.height !== this.props.fromHeight
-          ? this.props.fromHeight
-          : this.props.toHeight;
-
-      return { height };
-    });
-  };
-
-  render() {
-    const { fromHeight, toHeight, ...rest } = this.props;
-    return (
-      <div>
-        <AnimateHeight {...rest} height={this.state.height} />
-        <br />
-        <BpkButton onClick={this.onClick}>
-          {text('Button copy', 'Toggle height!')}
-        </BpkButton>
-      </div>
-    );
-  }
-}
-
-AnimateHeightContainer.propTypes = {
-  fromHeight: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
-    .isRequired,
-  toHeight: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
-    .isRequired,
-};
+import AnimateHeightExample from './examples';
 
 storiesOf('bpk-animate-height', module).add('Example', () => (
-  <AnimateHeightContainer fromHeight="auto" toHeight={0} duration={300}>
+  <AnimateHeightExample
+    fromHeight="auto"
+    toHeight={0}
+    duration={300}
+    buttonText={text('Button copy', 'Toggle height!')}
+  >
     {text(
       'Copy',
       `Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
 ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis
 parturient montes, nascetur ridiculus mus.`,
     )}
-  </AnimateHeightContainer>
+  </AnimateHeightExample>
 ));

@@ -19,86 +19,9 @@
 
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { BpkDismissibleChip } from 'bpk-component-chip';
 
-import BpkAriaLive from './index';
-
-class StatefulChipsWithAriaLive extends React.Component<
-  {},
-  {
-    categories: { Flights: boolean, Hotels: boolean, 'Car hire': boolean },
-    updates: Array<string>,
-  },
-> {
-  constructor() {
-    super();
-
-    this.state = {
-      categories: {
-        Flights: true,
-        Hotels: true,
-        'Car hire': true,
-      },
-      updates: [],
-    };
-  }
-
-  hideCategory = category => {
-    this.setState(prevState => {
-      const newState = prevState;
-      newState.categories[category] = false;
-      newState.updates = [...prevState.updates, `${category} chip dismissed`];
-      return newState;
-    });
-  };
-
-  render() {
-    return (
-      <div>
-        <div>
-          {Object.keys(this.state.categories).map(
-            category =>
-              this.state.categories[category] && (
-                <BpkDismissibleChip
-                  accessibilityLabel={category}
-                  onClick={() => {
-                    this.hideCategory(category);
-                  }}
-                >
-                  {category}
-                </BpkDismissibleChip>
-              ),
-          )}
-        </div>
-        <BpkAriaLive visible>
-          <p>
-            This is an aria-live region. It would usually be visually hidden.
-          </p>
-          {this.state.updates.map(update => (
-            <p>{update}</p>
-          ))}
-        </BpkAriaLive>
-      </div>
-    );
-  }
-}
+import { ChipsExample, SelectExample } from './examples';
 
 storiesOf('bpk-component-aria-live', module)
-  .add('Default', () => (
-    <div>
-      There is an instance of BpkAriaLive below this text. By default, it&apos;s
-      visually hidden so can only be seen using accessibility tools.
-      <BpkAriaLive>
-        By default the aria-live component is visually hidden and only seen to
-        screen readers.
-      </BpkAriaLive>
-    </div>
-  ))
-  .add('Visible', () => (
-    <BpkAriaLive visible>Some visible aria-live content.</BpkAriaLive>
-  ))
-  .add('Real-world example', () => (
-    <div>
-      <StatefulChipsWithAriaLive />
-    </div>
-  ));
+  .add('Default', () => <ChipsExample />)
+  .add('Visible', () => <SelectExample />);
