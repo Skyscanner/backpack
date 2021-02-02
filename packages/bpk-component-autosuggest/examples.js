@@ -121,13 +121,13 @@ class AutosuggestExample extends React.Component<Props, State> {
     };
   }
 
-  onChange = (e, { newValue }) => {
+  onChange = (e: SyntheticEvent<any>, { newValue }: { newValue: string }) => {
     this.setState({
       value: newValue,
     });
   };
 
-  onSuggestionsFetchRequested = ({ value }) => {
+  onSuggestionsFetchRequested = ({ value }: { value: string }) => {
     this.setState({
       suggestions: getSuggestions(value),
     });
