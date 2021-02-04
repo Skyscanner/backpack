@@ -16,10 +16,18 @@
  * limitations under the License.
  */
 
-import { storiesOf } from '@storybook/react';
+import React from 'react';
 
-import { DefaultExample, ExtraSpaceExample } from './examples';
+import BpkBlockquote from './index';
 
-storiesOf('bpk-component-blockquote', module)
-  .add('Default example', DefaultExample)
-  .add('Example with additional spacing (above and below)', ExtraSpaceExample);
+const textContent = `
+It's your world and we'll help you explore it.
+Find the best prices across millions of flights, hotels and car hire options to create your perfect trip.`;
+
+const DefaultExample = () => <BpkBlockquote>{textContent}</BpkBlockquote>;
+
+const ExtraSpaceExample = () => (
+  <BpkBlockquote extraSpace>{textContent}</BpkBlockquote>
+);
+
+export { DefaultExample, ExtraSpaceExample };
