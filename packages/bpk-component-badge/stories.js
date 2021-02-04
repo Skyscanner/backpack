@@ -18,151 +18,31 @@
 
 /* @flow strict */
 
-import React from 'react';
 import { storiesOf } from '@storybook/react';
-import BpkSmallBeerIcon from 'bpk-component-icon/sm/beer';
-import BpkSmallFlightIcon from 'bpk-component-icon/sm/flight';
-import BpkSmallWeatherIcon from 'bpk-component-icon/sm/weather';
-import BpkSmallTickIcon from 'bpk-component-icon/sm/tick-circle';
-import BpkSmallCloseIcon from 'bpk-component-icon/sm/close-circle';
 
-import BadgeLayout from './BadgeLayout';
-
-import BpkBadge, { BADGE_TYPES } from './index';
+import {
+  DefaultExample,
+  WithIconsExample,
+  CenteredExample,
+  DockedLeadingExample,
+  DockedTrailingExample,
+  WarningExample,
+  SuccessExample,
+  DestructiveExample,
+  LightExample,
+  InverseExample,
+  OutlineExample,
+} from './examples';
 
 storiesOf('bpk-component-badge', module)
-  .add('Default', () => (
-    <BadgeLayout>
-      <div>
-        This is a badge <BpkBadge>Promocionado</BpkBadge>
-      </div>
-    </BadgeLayout>
-  ))
-  .add('With icons', () => (
-    <BadgeLayout>
-      <div>
-        With one icon{' '}
-        <BpkBadge>
-          <BpkSmallFlightIcon />
-          &nbsp;Promocionado
-        </BpkBadge>
-      </div>
-      <div>
-        With multiple icons{' '}
-        <BpkBadge>
-          <BpkSmallWeatherIcon /> + <BpkSmallBeerIcon />
-          &nbsp;Promocionado
-        </BpkBadge>
-      </div>
-      <div>
-        With multiple icons and no text{' '}
-        <BpkBadge>
-          <BpkSmallWeatherIcon /> + <BpkSmallBeerIcon />
-        </BpkBadge>
-      </div>
-    </BadgeLayout>
-  ))
-  .add('Centered', () => (
-    <BadgeLayout>
-      <div>
-        This is a badge <BpkBadge centered>Promocionado</BpkBadge>
-      </div>
-    </BadgeLayout>
-  ))
-  .add('Docked right', () => (
-    <BadgeLayout docked="right">
-      <BpkBadge docked="right">Promocionado</BpkBadge>
-    </BadgeLayout>
-  ))
-  .add('Docked left', () => (
-    <BadgeLayout docked="left">
-      <BpkBadge docked="left">Promocionado</BpkBadge>
-    </BadgeLayout>
-  ))
-  .add('Warning (Default)', () => (
-    <BadgeLayout>
-      <BpkBadge type={BADGE_TYPES.warning}>Warning</BpkBadge>
-      &nbsp;
-      <BpkBadge type={BADGE_TYPES.warning}>
-        <BpkSmallTickIcon /> &nbsp;Warning
-      </BpkBadge>
-      &nbsp;
-      <BpkBadge type={BADGE_TYPES.warning}>
-        Warning&nbsp; <BpkSmallTickIcon />
-      </BpkBadge>
-    </BadgeLayout>
-  ))
-  .add('Success', () => (
-    <BadgeLayout>
-      <BpkBadge type={BADGE_TYPES.success}>Success</BpkBadge>
-      &nbsp;
-      <BpkBadge type={BADGE_TYPES.success}>
-        <BpkSmallTickIcon />
-        &nbsp;Success
-      </BpkBadge>
-      &nbsp;
-      <BpkBadge type={BADGE_TYPES.success}>
-        Success&nbsp;
-        <BpkSmallTickIcon />
-      </BpkBadge>
-    </BadgeLayout>
-  ))
-  .add('Destructive', () => (
-    <BadgeLayout>
-      <BpkBadge type={BADGE_TYPES.destructive}>Destructive</BpkBadge>
-      &nbsp;
-      <BpkBadge type={BADGE_TYPES.destructive}>
-        <BpkSmallCloseIcon />
-        &nbsp;Destructive
-      </BpkBadge>
-      &nbsp;
-      <BpkBadge type={BADGE_TYPES.destructive}>
-        Destructive&nbsp;
-        <BpkSmallCloseIcon />
-      </BpkBadge>
-    </BadgeLayout>
-  ))
-  .add('Light', () => (
-    <BadgeLayout>
-      <BpkBadge type={BADGE_TYPES.light}>Light</BpkBadge>
-      &nbsp;
-      <BpkBadge type={BADGE_TYPES.light}>
-        <BpkSmallTickIcon />
-        &nbsp;Light
-      </BpkBadge>
-      &nbsp;
-      <BpkBadge type={BADGE_TYPES.light}>
-        Light&nbsp;
-        <BpkSmallTickIcon />
-      </BpkBadge>
-    </BadgeLayout>
-  ))
-  .add('Inverse', () => (
-    <BadgeLayout>
-      <BpkBadge type={BADGE_TYPES.inverse}>Inverse</BpkBadge>
-      &nbsp;
-      <BpkBadge type={BADGE_TYPES.inverse}>
-        <BpkSmallTickIcon />
-        &nbsp;Inverse
-      </BpkBadge>
-      &nbsp;
-      <BpkBadge type={BADGE_TYPES.inverse}>
-        Inverse&nbsp;
-        <BpkSmallTickIcon />
-      </BpkBadge>
-    </BadgeLayout>
-  ))
-  .add('Outline', () => (
-    <BadgeLayout>
-      <BpkBadge type={BADGE_TYPES.outline}>Outline</BpkBadge>
-      &nbsp;
-      <BpkBadge type={BADGE_TYPES.outline}>
-        <BpkSmallTickIcon />
-        &nbsp;Outline
-      </BpkBadge>
-      &nbsp;
-      <BpkBadge type={BADGE_TYPES.outline}>
-        Outline&nbsp; <BpkSmallTickIcon />
-      </BpkBadge>
-    </BadgeLayout>
-  ));
+  .add('Default', DefaultExample)
+  .add('With icons', WithIconsExample)
+  .add('Centered', CenteredExample)
+  .add('Docked right', DockedLeadingExample)
+  .add('Docked left', DockedTrailingExample)
+  .add('Warning (Default)', WarningExample)
+  .add('Success', SuccessExample)
+  .add('Destructive', DestructiveExample)
+  .add('Light', LightExample)
+  .add('Inverse', InverseExample)
+  .add('Outline', OutlineExample);
