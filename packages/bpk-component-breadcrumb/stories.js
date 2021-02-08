@@ -18,43 +18,10 @@
 
 /* @flow strict */
 
-import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import BpkBreadcrumb, { BpkBreadcrumbItem } from './index';
+import { DefaultExample, ExtremeExample } from './examples';
 
 storiesOf('bpk-component-breadcrumb', module)
-  .add('Default', () => (
-    <BpkBreadcrumb label="Default breadcrumb">
-      <BpkBreadcrumbItem href="/">Home</BpkBreadcrumbItem>
-      <BpkBreadcrumbItem href="/page-1">Page 1</BpkBreadcrumbItem>
-      <BpkBreadcrumbItem active>Page 2</BpkBreadcrumbItem>
-    </BpkBreadcrumb>
-  ))
-  .add('Extreme', () => (
-    <BpkBreadcrumb label="Extreme breadcrumb">
-      <BpkBreadcrumbItem href="/">Home</BpkBreadcrumbItem>
-      <BpkBreadcrumbItem
-        href="/page-1"
-        id="123"
-        linkProps={{ target: '_blank' }}
-      >
-        Page 1
-      </BpkBreadcrumbItem>
-      <BpkBreadcrumbItem href="/page-2">Page 2</BpkBreadcrumbItem>
-      <BpkBreadcrumbItem href="/page-3">Page 3</BpkBreadcrumbItem>
-      <BpkBreadcrumbItem href="/page-4">Page 4</BpkBreadcrumbItem>
-      <BpkBreadcrumbItem href="/page-5">Page 5</BpkBreadcrumbItem>
-      <BpkBreadcrumbItem href="/page-6">Page 6</BpkBreadcrumbItem>
-      <BpkBreadcrumbItem href="/page-7">Page 7</BpkBreadcrumbItem>
-      <BpkBreadcrumbItem href="/page-8">Page 8</BpkBreadcrumbItem>
-      <BpkBreadcrumbItem href="/page-9">Page 9</BpkBreadcrumbItem>
-      <BpkBreadcrumbItem href="/page-10">Page 10</BpkBreadcrumbItem>
-      <BpkBreadcrumbItem href="/page-11">Page 11</BpkBreadcrumbItem>
-      <BpkBreadcrumbItem href="/page-12">Page 12</BpkBreadcrumbItem>
-      <BpkBreadcrumbItem href="/page-13">Page 13</BpkBreadcrumbItem>
-      <BpkBreadcrumbItem href="/page-14">Page 14</BpkBreadcrumbItem>
-      <BpkBreadcrumbItem href="/page-15">Page 15</BpkBreadcrumbItem>
-      <BpkBreadcrumbItem active>Page 16</BpkBreadcrumbItem>
-    </BpkBreadcrumb>
-  ));
+  .add('Default', DefaultExample)
+  .add('Extreme', ExtremeExample);
