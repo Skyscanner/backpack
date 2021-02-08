@@ -18,162 +18,39 @@
 
 /* @flow strict */
 
-import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { action } from '@storybook/addon-actions';
 
 import {
-  withButtonAlignment,
-  withLargeButtonAlignment,
-  withRtlSupport,
-} from '../bpk-component-icon';
-import SmallLongArrowRightIcon from '../bpk-component-icon/sm/long-arrow-right';
-import LargeLongArrowRightIcon from '../bpk-component-icon/lg/long-arrow-right';
-
-import STYLES from './BpkButtonStory.scss';
-
-import BpkButton, {
-  BpkButtonPrimary,
-  BpkButtonSecondary,
-  BpkButtonDestructive,
-  BpkButtonLink,
-  BpkButtonFeatured,
-  BpkButtonOutline,
-} from './index';
-
-const AlignedSmallLongArrowRightIcon = withButtonAlignment(
-  withRtlSupport(SmallLongArrowRightIcon),
-);
-const AlignedLargeLongArrowRightIcon = withLargeButtonAlignment(
-  withRtlSupport(LargeLongArrowRightIcon),
-);
-
-const cssModules = (styles = {}) => className =>
-  styles[className] ? styles[className] : className;
-
-const getClassName = cssModules(STYLES);
-
-const ButtonStory = ({
-  className,
-  wrapped,
-  ...rest
-}: {
-  className: ?string,
-  wrapped: Object,
-}) => {
-  const Wrapped = wrapped;
-  return (
-    <div
-      className={[getClassName('bpk-button-story-wrapper'), className].join(
-        ' ',
-      )}
-    >
-      &nbsp;
-      {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
-      <Wrapped onClick={action('button clicked')} {...rest}>
-        Button
-      </Wrapped>
-      &nbsp;
-      {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
-      <Wrapped disabled onClick={action('THIS SHOULD NOT HAPPEN')} {...rest}>
-        Disabled
-      </Wrapped>
-      &nbsp;
-      {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
-      <Wrapped large onClick={action('large button clicked')} {...rest}>
-        Button
-      </Wrapped>
-      &nbsp;
-      {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
-      <Wrapped
-        large
-        disabled
-        onClick={action('THIS SHOULD NOT HAPPEN')}
-        {...rest}
-      >
-        Disabled
-      </Wrapped>
-      &nbsp;
-      {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
-      <Wrapped iconOnly onClick={action('iconOnly button clicked')} {...rest}>
-        <AlignedSmallLongArrowRightIcon />
-      </Wrapped>
-      &nbsp;
-      {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
-      <Wrapped
-        iconOnly
-        large
-        onClick={action('large iconOnly button clicked')}
-        {...rest}
-      >
-        <AlignedLargeLongArrowRightIcon />
-      </Wrapped>
-      &nbsp;
-    </div>
-  );
-};
-
-ButtonStory.defaultProps = { className: null };
+  PrimaryExample,
+  SecondaryExample,
+  DestructiveExample,
+  LinkExample,
+  FeaturedExample,
+  OutlineExample,
+  ComponentButtonPrimaryExample,
+  ComponentButtonSecondaryExample,
+  ComponentButtonDestructiveExample,
+  ComponentButtonLinkExample,
+  ComponentButtonLinkWithPaddingExample,
+  ComponentButtonFeaturedExample,
+  ComponentButtonOutlineExample,
+  MixedExample,
+  AnchorTagsExample,
+} from './examples';
 
 storiesOf('bpk-component-button', module)
-  .add('BpkButton (Primary)', () => <ButtonStory primary wrapped={BpkButton} />)
-  .add('BpkButton (Secondary)', () => (
-    <ButtonStory secondary wrapped={BpkButton} />
-  ))
-  .add('BpkButton (Destructive)', () => (
-    <ButtonStory destructive wrapped={BpkButton} />
-  ))
-  .add('BpkButton (Link button)', () => (
-    <ButtonStory link wrapped={BpkButton} />
-  ))
-  .add('BpkButton (Featured)', () => (
-    <ButtonStory featured wrapped={BpkButton} />
-  ))
-  .add('BpkButton (Outline)', () => (
-    <ButtonStory
-      outline
-      wrapped={BpkButton}
-      className={getClassName('bpk-outline-layout')}
-    />
-  ))
-  .add('Primary', () => <ButtonStory wrapped={BpkButtonPrimary} />)
-  .add('Secondary', () => <ButtonStory wrapped={BpkButtonSecondary} />)
-  .add('Destructive', () => <ButtonStory wrapped={BpkButtonDestructive} />)
-  .add('Link button', () => <ButtonStory wrapped={BpkButtonLink} />)
-  .add('Link button with padding', () => (
-    <ButtonStory wrapped={props => <BpkButtonLink padded {...props} />} />
-  ))
-  .add('Featured', () => <ButtonStory wrapped={BpkButtonFeatured} />)
-  .add('Outline', () => (
-    <ButtonStory
-      wrapped={BpkButtonOutline}
-      className={getClassName('bpk-outline-layout')}
-    />
-  ))
-  .add('Mixture', () => (
-    <div>
-      <ButtonStory wrapped={BpkButtonPrimary} />
-      <ButtonStory wrapped={BpkButtonSecondary} />
-      <ButtonStory wrapped={BpkButtonDestructive} />
-      <ButtonStory wrapped={BpkButtonLink} />
-      <ButtonStory wrapped={BpkButtonFeatured} />
-      <ButtonStory
-        wrapped={BpkButtonOutline}
-        className={getClassName('bpk-outline-layout')}
-      />
-    </div>
-  ))
-  .add('Anchor tags', () => (
-    <div>
-      <ButtonStory wrapped={BpkButtonPrimary} href="#" />
-      <ButtonStory wrapped={BpkButtonSecondary} href="#" />
-      <ButtonStory wrapped={BpkButtonDestructive} href="#" />
-      <ButtonStory wrapped={BpkButtonLink} href="#" />
-      <ButtonStory wrapped={BpkButtonFeatured} href="#" />
-      <ButtonStory
-        wrapped={BpkButtonOutline}
-        className={getClassName('bpk-outline-layout')}
-        href="#"
-      />
-    </div>
-  ));
+  .add('BpkButton (Primary)', PrimaryExample)
+  .add('BpkButton (Secondary)', SecondaryExample)
+  .add('BpkButton (Destructive)', DestructiveExample)
+  .add('BpkButton (Link button)', LinkExample)
+  .add('BpkButton (Featured)', FeaturedExample)
+  .add('BpkButton (Outline)', OutlineExample)
+  .add('Primary', ComponentButtonPrimaryExample)
+  .add('Secondary', ComponentButtonSecondaryExample)
+  .add('Destructive', ComponentButtonDestructiveExample)
+  .add('Link button', ComponentButtonLinkExample)
+  .add('Link button with padding', ComponentButtonLinkWithPaddingExample)
+  .add('Featured', () => ComponentButtonFeaturedExample)
+  .add('Outline', ComponentButtonOutlineExample)
+  .add('Mixture', MixedExample)
+  .add('Anchor tags', AnchorTagsExample);
