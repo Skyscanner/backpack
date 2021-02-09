@@ -19,7 +19,6 @@
 /* @flow strict */
 
 import React from 'react';
-import { action } from '@storybook/addon-actions';
 
 import {
   withButtonAlignment,
@@ -69,52 +68,40 @@ const ButtonStory = ({
     >
       &nbsp;
       {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
-      <Wrapped onClick={action('button clicked')} {...rest}>
-        Button
-      </Wrapped>
+      <Wrapped {...rest}>Button</Wrapped>
       &nbsp;
       {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
-      <Wrapped onClick={action('button clicked')} {...rest}>
+      <Wrapped {...rest}>
         Button <AlignedSmallLongArrowRightIcon />
       </Wrapped>
       &nbsp;
       {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
-      <Wrapped disabled onClick={action('THIS SHOULD NOT HAPPEN')} {...rest}>
+      <Wrapped disabled {...rest}>
         Disabled
       </Wrapped>
       &nbsp;
       {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
-      <Wrapped large onClick={action('large button clicked')} {...rest}>
+      <Wrapped large {...rest}>
         Button
       </Wrapped>
       &nbsp;
       {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
-      <Wrapped large onClick={action('large button clicked')} {...rest}>
+      <Wrapped large {...rest}>
         Button <AlignedLargeLongArrowRightIcon />
       </Wrapped>
       &nbsp;
       {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
-      <Wrapped
-        large
-        disabled
-        onClick={action('THIS SHOULD NOT HAPPEN')}
-        {...rest}
-      >
+      <Wrapped large disabled {...rest}>
         Disabled
       </Wrapped>
       &nbsp;
       {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
-      <Wrapped iconOnly onClick={action('iconOnly button clicked')} {...rest}>
+      <Wrapped iconOnly {...rest}>
         <AlignedSmallLongArrowRightIcon />
       </Wrapped>
       &nbsp;
       {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
-      <Wrapped
-        iconOnly
-        large
-        onClick={action('large iconOnly button clicked')}
-        {...rest}
-      >
+      <Wrapped iconOnly large {...rest}>
         <AlignedLargeLongArrowRightIcon />
       </Wrapped>
       &nbsp;
