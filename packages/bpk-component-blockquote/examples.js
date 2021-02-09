@@ -16,12 +16,18 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+import React from 'react';
 
-import { storiesOf } from '@storybook/react';
+import BpkBlockquote from './index';
 
-import { DefaultExample, ExtremeExample } from './examples';
+const textContent = `
+It's your world and we'll help you explore it.
+Find the best prices across millions of flights, hotels and car hire options to create your perfect trip.`;
 
-storiesOf('bpk-component-breadcrumb', module)
-  .add('Default', DefaultExample)
-  .add('Extreme', ExtremeExample);
+const DefaultExample = () => <BpkBlockquote>{textContent}</BpkBlockquote>;
+
+const ExtraSpaceExample = () => (
+  <BpkBlockquote extraSpace>{textContent}</BpkBlockquote>
+);
+
+export { DefaultExample, ExtraSpaceExample };

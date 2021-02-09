@@ -16,12 +16,8 @@
  * limitations under the License.
  */
 /* @flow strict */
-
-import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import BpkBoilerplate from './index';
+import DefaultExample from './examples';
 
-storiesOf('bpk-component-boilerplate', module).add('Default', () => (
-  <BpkBoilerplate />
-));
+storiesOf('bpk-component-boilerplate', module).add('Default', DefaultExample);

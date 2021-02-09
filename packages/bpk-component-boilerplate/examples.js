@@ -15,13 +15,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 /* @flow strict */
 
-import { storiesOf } from '@storybook/react';
+import React from 'react';
 
-import { DefaultExample, ExtremeExample } from './examples';
+import BpkBoilerplate from './index';
 
-storiesOf('bpk-component-breadcrumb', module)
-  .add('Default', DefaultExample)
-  .add('Extreme', ExtremeExample);
+const DefaultExample = () => <BpkBoilerplate />;
+
+export default DefaultExample;
