@@ -122,7 +122,7 @@
     "@storybook/addon-knobs": "^5.3.14",
     "@storybook/addon-links": "^5.3.14",
     "@storybook/addon-viewport": "^5.3.14",
-    "@storybook/react": "^5.3.14",
+    "@storybook/react": "^6.0.0",
     "autoprefixer": "^9.4.7",
     "babel-jest": "^24.9.0",
     "babel-loader": "^8.0.0",
