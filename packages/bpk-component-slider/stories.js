@@ -36,26 +36,41 @@ class SliderContainer extends Component {
     this.setState({ value });
   };
 
+  valueTimeFormatter = value => `12:${value.toString().padStart(2, '0')}pm`;
+
+  valueComponent = (min, max, formatter) => (
+    <p>
+      {formatter ? formatter(min) : min} - {formatter ? formatter(max) : max}
+    </p>
+  );
+
   render() {
-    const valueComponent = (min, max) => (
-      <p>
-        {min} - {max}
-      </p>
-    );
     const min = this.props.min || 0;
+    const time = !!this.props.time;
+
     return (
       <div>
         {this.state.value.length
-          ? valueComponent(this.state.value[0], this.state.value[1])
-          : valueComponent(min, this.state.value)}
+          ? this.valueComponent(
+              this.state.value[0],
+              this.state.value[1],
+              time && this.valueTimeFormatter,
+            )
+          : this.valueComponent(
+              min,
+              this.state.value,
+              time && this.valueTimeFormatter,
+            )}
         <BpkSlider
           min={min}
-          max={100}
+          max={time ? 60 : 100}
           step={1}
           className="bpk-slider"
           onChange={this.handleChange}
           {...this.props}
           value={this.state.value}
+          ariaLabel={['minimum', 'maximum']}
+          ariaValuetext={time ? s => this.valueTimeFormatter(s.value) : null}
         />
         <br />
       </div>
@@ -68,6 +83,7 @@ const EnhancedSlider = updateOnDirectionChange(SliderContainer);
 storiesOf('bpk-component-slider', module)
   .add('Simple slider', () => <EnhancedSlider min={0} value={50} />)
   .add('Simple large slider', () => <EnhancedSlider min={0} value={50} large />)
+  .add('Time slider', () => <EnhancedSlider time min={0} value={50} large />)
   .add('Simple slider with steps', () => (
     <EnhancedSlider min={0} value={50} step={10} />
   ))
@@ -77,9 +93,14 @@ storiesOf('bpk-component-slider', module)
   ));
 
 SliderContainer.propTypes = {
+  time: PropTypes.bool,
   min: PropTypes.number.isRequired,
   value: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.number),
     PropTypes.number,
   ]).isRequired,
+};
+
+SliderContainer.defaultProps = {
+  time: false,
 };
