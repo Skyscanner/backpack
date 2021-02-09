@@ -62,7 +62,7 @@ class SliderContainer extends Component {
             )}
         <BpkSlider
           min={min}
-          max={time ? 60 : 100}
+          max={time ? 59 : 100}
           step={1}
           className="bpk-slider"
           onChange={this.handleChange}
