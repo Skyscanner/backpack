@@ -67,10 +67,8 @@ const ButtonStory = ({
       )}
     >
       &nbsp;
-      {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
       <Wrapped {...rest}>Button</Wrapped>
       &nbsp;
-      {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
       <Wrapped {...rest}>
         Button <AlignedSmallLongArrowRightIcon />
       </Wrapped>
