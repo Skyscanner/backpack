@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-accordion",
-  "version": "2.2.22",
+  "version": "2.2.23",
   "description": "Backpack accordion component.",
   "license": "Apache-2.0",
   "repository": {
@@ -14,7 +14,7 @@
   },
   "gitHead": "09fc99e4e67a5b71dc15f41a5409ad412bc139d4",
   "dependencies": {
-    "bpk-animate-height": "^3.0.58",
+    "bpk-animate-height": "^3.0.59",
     "bpk-component-icon": "^8.3.9",
     "bpk-component-text": "^3.1.36",
     "bpk-mixins": "^20.1.18",

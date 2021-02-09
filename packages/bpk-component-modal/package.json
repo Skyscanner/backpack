@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-modal",
-  "version": "2.1.105",
+  "version": "2.1.106",
   "description": "Backpack modal component.",
   "license": "Apache-2.0",
   "repository": {
@@ -27,7 +27,7 @@
     "react": "^16.0.0"
   },
   "devDependencies": {
-    "bpk-component-button": "^3.3.12",
+    "bpk-component-button": "^3.3.13",
     "bpk-component-text": "^3.1.36"
   }
 }

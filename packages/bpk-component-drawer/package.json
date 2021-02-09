@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-drawer",
-  "version": "3.0.59",
+  "version": "3.0.60",
   "description": "Backpack drawer component.",
   "license": "Apache-2.0",
   "repository": {
@@ -28,7 +28,7 @@
     "react": "^16.0.0"
   },
   "devDependencies": {
-    "bpk-component-button": "^3.3.12",
+    "bpk-component-button": "^3.3.13",
     "bpk-component-text": "^3.1.36"
   }
 }

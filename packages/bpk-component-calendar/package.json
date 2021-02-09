@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-calendar",
-  "version": "7.0.58",
+  "version": "7.0.59",
   "description": "Backpack calendar component.",
   "license": "Apache-2.0",
   "repository": {
@@ -26,7 +26,7 @@
     "react": "^16.0.0"
   },
   "devDependencies": {
-    "bpk-component-button": "^3.3.12",
+    "bpk-component-button": "^3.3.13",
     "bpk-component-text": "^3.1.36"
   }
 }
