@@ -16,91 +16,21 @@
  * limitations under the License.
  */
 
-import PropTypes from 'prop-types';
-import React, { Component } from 'react';
 import { storiesOf } from '@storybook/react';
-import { updateOnDirectionChange } from 'bpk-component-rtl-toggle';
 
-import BpkSlider from './index';
-
-class SliderContainer extends Component {
-  constructor(props) {
-    super();
-
-    this.state = {
-      value: props.value || 50,
-    };
-  }
-
-  handleChange = value => {
-    this.setState({ value });
-  };
-
-  valueTimeFormatter = value => `12:${value.toString().padStart(2, '0')}pm`;
-
-  valueComponent = (min, max, formatter) => (
-    <p>
-      {formatter ? formatter(min) : min} - {formatter ? formatter(max) : max}
-    </p>
-  );
-
-  render() {
-    const min = this.props.min || 0;
-    const time = !!this.props.time;
-
-    return (
-      <div>
-        {this.state.value.length
-          ? this.valueComponent(
-              this.state.value[0],
-              this.state.value[1],
-              time && this.valueTimeFormatter,
-            )
-          : this.valueComponent(
-              min,
-              this.state.value,
-              time && this.valueTimeFormatter,
-            )}
-        <BpkSlider
-          min={min}
-          max={time ? 60 : 100}
-          step={1}
-          className="bpk-slider"
-          onChange={this.handleChange}
-          {...this.props}
-          value={this.state.value}
-          ariaLabel={['minimum', 'maximum']}
-          ariaValuetext={time ? s => this.valueTimeFormatter(s.value) : null}
-        />
-        <br />
-      </div>
-    );
-  }
-}
-
-const EnhancedSlider = updateOnDirectionChange(SliderContainer);
+import {
+  SimpleSlider,
+  SimpleLargeSlider,
+  TimeSlider,
+  SimpleSliderWithSteps,
+  RangeSlider,
+  RangeSliderWithMinimumDistance,
+} from './examples';
 
 storiesOf('bpk-component-slider', module)
-  .add('Simple slider', () => <EnhancedSlider min={0} value={50} />)
-  .add('Simple large slider', () => <EnhancedSlider min={0} value={50} large />)
-  .add('Time slider', () => <EnhancedSlider time min={0} value={50} large />)
-  .add('Simple slider with steps', () => (
-    <EnhancedSlider min={0} value={50} step={10} />
-  ))
-  .add('Range slider', () => <EnhancedSlider min={0} value={[20, 80]} />)
-  .add('Range slider with minimum distance', () => (
-    <EnhancedSlider min={0} value={[20, 80]} minDistance={10} />
-  ));
-
-SliderContainer.propTypes = {
-  time: PropTypes.bool,
-  min: PropTypes.number.isRequired,
-  value: PropTypes.oneOfType([
-    PropTypes.arrayOf(PropTypes.number),
-    PropTypes.number,
-  ]).isRequired,
-};
-
-SliderContainer.defaultProps = {
-  time: false,
-};
+  .add('Simple slider', SimpleSlider)
+  .add('Simple large slider', SimpleLargeSlider)
+  .add('Time slider', TimeSlider)
+  .add('Simple slider with steps', SimpleSliderWithSteps)
+  .add('Range slider', RangeSlider)
+  .add('Range slider with minimum distance', RangeSliderWithMinimumDistance);
