@@ -7,7 +7,7 @@
     },
     "publish": {
       "ignoreChanges": ["bpk-tether", "package-lock.json"],
-      "allowBranch": "master"
+      "allowBranch": "main"
     }
   }
 }

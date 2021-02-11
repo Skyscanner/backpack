@@ -69,19 +69,19 @@ jobs:
       install: npm run bootstrap
       script:
         - npm run docs:dist
-        - if [ "$TRAVIS_BRANCH" == 'master' ] && [ "$TRAVIS_PULL_REQUEST" == 'false' ]; then npm run storybook:dist; fi
+        - if [ "$TRAVIS_BRANCH" == 'main' ] && [ "$TRAVIS_PULL_REQUEST" == 'false' ]; then npm run storybook:dist; fi
         - test -e dist/index.html
         - test -e dist/sassdoc/index.html
       deploy:
         provider: pages
         github_token: $DEPLOY_TOKEN
         on:
-          branch: master
+          branch: main
         local_dir: dist/
         skip_cleanup: true
         detect_encoding: true
         repo: backpack/backpack.github.io
-        target-branch: master
+        target-branch: main
         verbose: true
 
 cache:

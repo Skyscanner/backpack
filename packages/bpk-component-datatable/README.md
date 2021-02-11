@@ -38,7 +38,7 @@ export default () => (
 );
 ```
 
-By default `BpkDataTable` sorts the column using the value of `dataKey`. For use cases where the data might more complex and requires custom sorting you can pass a `sort` function along with `sortBy` and `sortDirection` and they will be handled as explained in react-virtualized's [docs] (https://github.com/bvaughn/react-virtualized/blob/master/docs/Table.md#prop-types)
+By default `BpkDataTable` sorts the column using the value of `dataKey`. For use cases where the data might more complex and requires custom sorting you can pass a `sort` function along with `sortBy` and `sortDirection` and they will be handled as explained in react-virtualized's [docs] (https://github.com/bvaughn/react-virtualized/blob/main/docs/Table.md#prop-types)
 
 ```js
 import React from 'react';
@@ -118,7 +118,7 @@ export default () => (
 
 ### BpkDataTable
 
-Supports all properties defined in [`Table`](https://github.com/bvaughn/react-virtualized/blob/master/docs/Table.md) (from `react-virtualized`),
+Supports all properties defined in [`Table`](https://github.com/bvaughn/react-virtualized/blob/main/docs/Table.md) (from `react-virtualized`),
 in addition to the following:
 
 
@@ -138,4 +138,4 @@ in addition to the following:
 
 ### BpkDataTableColumn
 
-Supports all properties defined in [`Column`](https://github.com/bvaughn/react-virtualized/blob/master/docs/Column.md) (from `react-virtualized`)
+Supports all properties defined in [`Column`](https://github.com/bvaughn/react-virtualized/blob/main/docs/Column.md) (from `react-virtualized`)
