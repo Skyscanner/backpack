@@ -2,9 +2,9 @@ name: Backpack CI
 
 on:
   push:
-    branches: [master]
+    branches: [main]
   pull_request:
-    branches: [master]
+    branches: [main]
 
 defaults:
   run:
@@ -42,43 +42,43 @@ jobs:
           npm run storybook:dist
 
       - name: Build Sass docs
-        if: github.ref == 'refs/heads/master'
+        if: github.ref == 'refs/heads/main'
         run: |
           nvm use
           npm run sassdoc
 
-      - name: Deploy Sass docs to backpack.github.io, if on master branch
+      - name: Deploy Sass docs to backpack.github.io, if on main branch
         uses: peaceiris/actions-gh-pages@v3
-        if: github.ref == 'refs/heads/master'
+        if: github.ref == 'refs/heads/main'
         with:
           personal_token: ${{ secrets.DEPLOY_TOKEN }}
           publish_dir: dist-sassdoc/
           keep_files: false
           external_repository: backpack/sassdoc
-          publish_branch: master
+          publish_branch: main
 
-      - name: Deploy Storybook to backpack.github.io, if on master branch
+      - name: Deploy Storybook to backpack.github.io, if on main branch
         uses: peaceiris/actions-gh-pages@v3
-        if: github.ref == 'refs/heads/master'
+        if: github.ref == 'refs/heads/main'
         with:
           personal_token: ${{ secrets.DEPLOY_TOKEN }}
           publish_dir: dist-storybook/
           keep_files: false
           external_repository: backpack/storybook
-          publish_branch: master
+          publish_branch: main
 
       - name: Prepare to deploy Storybook (pull request build)
         run: |
           mkdir build
           mv dist-storybook $PR_NUMBER
           cp -R $PR_NUMBER build/
-        if: github.ref != 'refs/heads/master'
+        if: github.ref != 'refs/heads/main'
         env:
           PR_NUMBER: ${{ github.event.pull_request.number }}
 
       - name: Deploy Storybook to backpack.github.io/storybook-prs, if a pull request
         uses: peaceiris/actions-gh-pages@v3
-        if: github.ref != 'refs/heads/master'
+        if: github.ref != 'refs/heads/main'
         with:
           personal_token: ${{ secrets.DEPLOY_TOKEN }}
           publish_dir: build/
@@ -87,8 +87,8 @@ jobs:
           publish_branch: main
 
       - name: Link to the pull request build
-        uses: unsplash/comment-on-pr@master
-        if: github.ref != 'refs/heads/master'
+        uses: unsplash/comment-on-pr@main
+        if: github.ref != 'refs/heads/main'
         with:
           msg: "Visit https://backpack.github.io/storybook-prs/${{ env.PR_NUMBER }} to see this build running in a browser."
         env:

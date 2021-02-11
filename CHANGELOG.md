@@ -142,7 +142,7 @@
 **Added:**
 
  - bpk-component-chip: 4.0.19 => 4.1.0
-   - Added theming support. Please refer to the [readme](https://github.com/Skyscanner/backpack/blob/master/packages/bpk-component-chip/README.md) for a complete list of theming properties.
+   - Added theming support. Please refer to the [readme](https://github.com/Skyscanner/backpack/blob/main/packages/bpk-component-chip/README.md) for a complete list of theming properties.
 
 
 # 2020-11-09
@@ -288,7 +288,7 @@
 
 **Breaking**:
 - bpk-component-map: 3.2.1 => 4.0.0
-  - `BpkMapMarker` has been replaced with `BpkIconMarker`. See the [migration guide](https://github.com/Skyscanner/backpack/blob/master/packages/bpk-component-map/docs/migrating-from-v3-to-v4.md) for more information.
+  - `BpkMapMarker` has been replaced with `BpkIconMarker`. See the [migration guide](https://github.com/Skyscanner/backpack/blob/main/packages/bpk-component-map/docs/migrating-from-v3-to-v4.md) for more information.
 
 **Fixed**:
   - bpk-component-horizontal-nav: `3.2.20`
@@ -377,7 +377,7 @@
 
 **Breaking:**
 - bpk-component-chip: 4.0.0
-  - The chip component has been completely rewritten to have a new look, a more modern API and support more use cases easily. See the [migration guide](https://github.com/Skyscanner/backpack/blob/master/packages/bpk-component-chip/docs/migrating-from-v3-to-v4.md) for more information.
+  - The chip component has been completely rewritten to have a new look, a more modern API and support more use cases easily. See the [migration guide](https://github.com/Skyscanner/backpack/blob/main/packages/bpk-component-chip/docs/migrating-from-v3-to-v4.md) for more information.
 - bpk-mixins: 20.0.0
   - The `bpk-chip__label` mixin has been removed, as it's no longer used in the new chip implementation.
 
@@ -2700,14 +2700,14 @@ The following changes are only breaking if you are on a version of React lower t
 
 **Breaking:**
 - react-native-bpk-component-navigation-bar: 3.0.1 => 4.0.0
-  - (iOS only) Navigation bar text now uses `base` text style as the new type scale made these too large. ([See below for type scale changes](https://github.com/Skyscanner/backpack/blob/master/CHANGELOG.md#2018-10-31---new-type-scale))
+  - (iOS only) Navigation bar text now uses `base` text style as the new type scale made these too large. ([See below for type scale changes](https://github.com/Skyscanner/backpack/blob/main/CHANGELOG.md#2018-10-31---new-type-scale))
 
 - react-native-bpk-component-flat-list: 2.0.0 => 3.0.0
 - react-native-bpk-component-phone-input: 2.0.2 => 3.0.0
-  - (iOS only) Flat list now uses `base` text style as the new type scale made these too large. ([See below for type scale changes](https://github.com/Skyscanner/backpack/blob/master/CHANGELOG.md#2018-10-31---new-type-scale))
+  - (iOS only) Flat list now uses `base` text style as the new type scale made these too large. ([See below for type scale changes](https://github.com/Skyscanner/backpack/blob/main/CHANGELOG.md#2018-10-31---new-type-scale))
 
 - react-native-bpk-component-section-list: 2.0.0 => 3.0.0
-  - (iOS only) Section list now uses `base` text style as the new type scale made these too large. ([See below for type scale changes](https://github.com/Skyscanner/backpack/blob/master/CHANGELOG.md#2018-10-31---new-type-scale))
+  - (iOS only) Section list now uses `base` text style as the new type scale made these too large. ([See below for type scale changes](https://github.com/Skyscanner/backpack/blob/main/CHANGELOG.md#2018-10-31---new-type-scale))
 
 
 # 2018-11-02 - Add validation to RN Select component
@@ -3418,7 +3418,7 @@ The following changes are only breaking if you are on a version of React lower t
   - Ability to add a custom class name to inner content e.g. `contentClassName="my-custom-class"`.
 
 - bpk-react-utils: 2.5.1 => 2.6.0
-  - the function returned by cssModules now accepts multiple class names and ignores values other than strings. see: https://github.com/Skyscanner/backpack/tree/master/packages/bpk-react-utils#cssmodulesjs
+  - the function returned by cssModules now accepts multiple class names and ignores values other than strings. see: https://github.com/Skyscanner/backpack/tree/main/packages/bpk-react-utils#cssmodulesjs
 
 # 2018-04-26 - Native banner alerts and button links have a new default height
 
