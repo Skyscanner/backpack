@@ -473,6 +473,7 @@ leadingIndicatorClassName
 leadingAccessoryView
 trailingAccessoryView
 scrollerRef
+showScrollbar
 trailingIndicatorClassName
 googleMapURL
 loadingElement
