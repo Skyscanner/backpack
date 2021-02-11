@@ -71,4 +71,4 @@ export default () => (
 | leadingIndicatorClassName   | string   | false    | null          |
 | scrollerRef                 | func     | false    | null          |
 | trailingIndicatorClassName  | string   | false    | null          |
-
+| showScrollbar               | bool     | false    | false         |
