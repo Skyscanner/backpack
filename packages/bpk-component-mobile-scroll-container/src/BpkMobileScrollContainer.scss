@@ -36,7 +36,9 @@
     overflow-y: hidden;
     -webkit-overflow-scrolling: touch;
     -ms-overflow-style: -ms-autohiding-scrollbar;
+  }
 
+  &__hideScrollbar {
     &::-webkit-scrollbar {
       display: none;
     }
