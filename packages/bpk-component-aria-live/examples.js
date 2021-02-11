@@ -246,4 +246,4 @@ class ChipsExample extends React.Component<
   }
 }
 
-export { ChipsExample, SelectExample };
+export { AriaLiveDemo, ChipsExample, SelectExample };
