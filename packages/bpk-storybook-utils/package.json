@@ -1,0 +1,16 @@
+{
+  "name": "bpk-storybook-utils",
+  "version": "0.0.1",
+  "description": "Backpack storybook-utils component.",
+  "license": "Apache-2.0",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:Skyscanner/backpack.git"
+  },
+  "author": "Backpack Design System <backpack@skyscanner.net>",
+  "main": "index.js",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  }
+}

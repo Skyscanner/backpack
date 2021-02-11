@@ -18,7 +18,7 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { storiesOf } from '@storybook/react';
-import { action } from '@storybook/addon-actions';
+import { action } from 'bpk-storybook-utils';
 import addMonths from 'date-fns/add_months';
 import BpkText from 'bpk-component-text';
 

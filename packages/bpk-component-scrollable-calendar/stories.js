@@ -21,7 +21,7 @@ import React, { Component } from 'react';
 import startOfMonth from 'date-fns/start_of_month';
 import endOfMonth from 'date-fns/end_of_month';
 import { storiesOf } from '@storybook/react';
-import { action } from '@storybook/addon-actions';
+import { action } from 'bpk-storybook-utils';
 import { DateUtils } from 'bpk-component-calendar';
 
 import {

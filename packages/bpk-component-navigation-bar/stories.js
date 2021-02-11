@@ -20,7 +20,7 @@
 
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { action } from '@storybook/addon-actions';
+import { action } from 'bpk-storybook-utils';
 import { withRtlSupport } from 'bpk-component-icon';
 import ArrowIcon from 'bpk-component-icon/sm/long-arrow-left';
 import CloseIcon from 'bpk-component-icon/sm/close';

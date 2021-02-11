@@ -17,6 +17,9 @@
     "bpk-mixins": "^20.1.18",
     "prop-types": "^15.6.2"
   },
+  "devDependencies": {
+    "bpk-storybook-utils": "^0.0.1"
+  },
   "peerDependencies": {
     "react": "^16.0.0"
   }

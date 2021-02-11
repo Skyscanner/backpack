@@ -20,7 +20,7 @@
 
 import React, { Component } from 'react';
 import { storiesOf } from '@storybook/react';
-import { action } from '@storybook/addon-actions';
+import { action } from 'bpk-storybook-utils';
 import BpkLabel from 'bpk-component-label';
 import { cssModules } from 'bpk-react-utils';
 

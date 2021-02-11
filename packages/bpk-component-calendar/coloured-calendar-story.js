@@ -20,7 +20,7 @@
 
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { action } from '@storybook/addon-actions';
+import { action } from 'bpk-storybook-utils';
 
 import {
   BpkCalendarGrid,

@@ -15,15 +15,23 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 /* @flow strict */
 
-import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { action } from 'bpk-storybook-utils';
+/* eslint-disable global-require, no-console, import/no-mutable-exports */
+let action = (...args: Array<any>) => {
+  return () => console.info(args);
+};
 
-import BpkCloseButton from './index';
+try {
+  const storybookAction = require('@storybook/addon-actions').action;
+  if (storybookAction) {
+    action = storybookAction;
+  }
+} catch (e) {
+  console.info(
+    'Storybook action is not available. Falling back to `console.log`.',
+  );
+}
 
-storiesOf('bpk-component-close-button', module).add('Default', () => (
-  <BpkCloseButton label="Close" onClick={action('Close button clicked')} />
-));
+export default { action };
+export { action };

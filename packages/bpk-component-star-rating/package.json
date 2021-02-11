@@ -23,6 +23,7 @@
     "react": "^16.0.0"
   },
   "devDependencies": {
-    "bpk-component-table": "^2.0.101"
+    "bpk-component-table": "^2.0.101",
+    "bpk-storybook-utils": "^0.0.1"
   }
 }

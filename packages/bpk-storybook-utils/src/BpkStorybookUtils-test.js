@@ -15,15 +15,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 /* @flow strict */
 
-import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { action } from 'bpk-storybook-utils';
+/* eslint-disable global-require */
 
-import BpkCloseButton from './index';
-
-storiesOf('bpk-component-close-button', module).add('Default', () => (
-  <BpkCloseButton label="Close" onClick={action('Close button clicked')} />
-));
+describe('BpkStorybookUtils', () => {
+  it('action should use storybook/addon-actions if available', () => {
+    const mockActionFunction = jest.fn();
+    jest.mock('@storybook/addon-actions', () => ({
+      action: mockActionFunction,
+    }));
+    const { action } = require('./BpkStorybookUtils');
+    action('test');
+    expect(mockActionFunction).toHaveBeenCalledTimes(1);
+  });
+});
