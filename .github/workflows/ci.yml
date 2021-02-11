@@ -87,7 +87,7 @@ jobs:
           publish_branch: main
 
       - name: Link to the pull request build
-        uses: unsplash/comment-on-pr@main
+        uses: unsplash/comment-on-pr@master
         if: github.ref != 'refs/heads/main'
         with:
           msg: "Visit https://backpack.github.io/storybook-prs/${{ env.PR_NUMBER }} to see this build running in a browser."
