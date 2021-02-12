@@ -25,6 +25,7 @@
   "devDependencies": {
     "bpk-component-button": "^3.3.13",
     "bpk-component-card": "^2.1.30",
-    "bpk-component-spinner": "^3.1.30"
+    "bpk-component-spinner": "^3.1.30",
+    "bpk-storybook-utils": "^0.0.1"
   }
 }

@@ -27,6 +27,7 @@
   },
   "devDependencies": {
     "bpk-component-button": "^3.3.13",
-    "bpk-component-text": "^3.1.36"
+    "bpk-component-text": "^3.1.36",
+    "bpk-storybook-utils": "^0.0.1"
   }
 }

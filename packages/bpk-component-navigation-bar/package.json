@@ -26,6 +26,7 @@
   },
   "devDependencies": {
     "bpk-component-icon": "^8.3.9",
+    "bpk-storybook-utils": "^0.0.1",
     "bpk-tokens": "^36.1.1"
   }
 }

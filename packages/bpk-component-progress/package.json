@@ -24,6 +24,7 @@
     "react": "^16.0.0"
   },
   "devDependencies": {
-    "bpk-component-button": "^3.3.13"
+    "bpk-component-button": "^3.3.13",
+    "bpk-storybook-utils": "^0.0.1"
   }
 }
