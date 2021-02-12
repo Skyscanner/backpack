@@ -1,6 +1,11 @@
 # Unreleased
 
 > Place your changes below this line.
+**Added:**
+
+- bpk-component-mobile-scroll-container
+  - New `showScrollbar` prop to control showing the scrollbar visible when needed. The default value is set to `false`, making this change backward compatible.
+
 ## How to write a good changelog entry
 
 1. Add 'Breaking', 'Added' or 'Fixed' in bold depending on if the change will be major, minor or patch according to [semver](semver.org).
