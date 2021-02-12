@@ -19,20 +19,12 @@
 /* @flow strict */
 
 import PropTypes from 'prop-types';
-import React, { type Node, Children } from 'react';
+import React, { type Node } from 'react';
 import { cssModules } from 'bpk-react-utils';
 
 import STYLES from './BpkBadgeLayout.scss';
 
-import { BADGE_TYPES } from './index';
-
 const getClassName = cssModules(STYLES);
-
-const LIGHT_BADGES = [
-  BADGE_TYPES.light,
-  BADGE_TYPES.inverse,
-  BADGE_TYPES.outline,
-];
 
 export type Props = {
   docked: ?string,
@@ -43,10 +35,7 @@ const BadgeLayout = (props: Props) => {
   const { docked, children } = props;
   const classNames = [getClassName('bpk-badge-layout__container')];
 
-  if (
-    docked ||
-    LIGHT_BADGES.indexOf(Children.toArray(children)[0].props.type) !== -1
-  ) {
+  if (docked) {
     classNames.push(getClassName('bpk-badge-layout__container--light'));
   }
 

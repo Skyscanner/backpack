@@ -19,6 +19,7 @@
 /* @flow strict */
 
 import React from 'react';
+import { action, BpkDarkExampleWrapper } from 'bpk-storybook-utils';
 
 import {
   withButtonAlignment,
@@ -67,39 +68,48 @@ const ButtonStory = ({
       )}
     >
       &nbsp;
-      <Wrapped {...rest}>Button</Wrapped>
-      &nbsp;
-      <Wrapped {...rest}>
-        Button <AlignedSmallLongArrowRightIcon />
-      </Wrapped>
-      &nbsp;
       {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
-      <Wrapped disabled {...rest}>
-        Disabled
-      </Wrapped>
-      &nbsp;
-      {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
-      <Wrapped large {...rest}>
+      <Wrapped onClick={action('Button clicked')} {...rest}>
         Button
       </Wrapped>
       &nbsp;
       {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
-      <Wrapped large {...rest}>
-        Button <AlignedLargeLongArrowRightIcon />
+      <Wrapped onClick={action('Button clicked')} {...rest}>
+        Button <AlignedSmallLongArrowRightIcon />
       </Wrapped>
       &nbsp;
       {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
-      <Wrapped large disabled {...rest}>
+      <Wrapped disabled onClick={action('THIS SHOULD NEVER HAPPEN')} {...rest}>
         Disabled
       </Wrapped>
       &nbsp;
       {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
-      <Wrapped iconOnly {...rest}>
+      <Wrapped large onClick={action('Button clicked')} {...rest}>
+        Button
+      </Wrapped>
+      &nbsp;
+      {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
+      <Wrapped large onClick={action('Button clicked')} {...rest}>
+        Button <AlignedLargeLongArrowRightIcon />
+      </Wrapped>
+      &nbsp;
+      {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
+      <Wrapped
+        large
+        disabled
+        onClick={action('THIS SHOULD NEVER HAPPEN')}
+        {...rest}
+      >
+        Disabled
+      </Wrapped>
+      &nbsp;
+      {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
+      <Wrapped iconOnly onClick={action('Button clicked')} {...rest}>
         <AlignedSmallLongArrowRightIcon />
       </Wrapped>
       &nbsp;
       {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
-      <Wrapped iconOnly large {...rest}>
+      <Wrapped iconOnly large onClick={action('Button clicked')} {...rest}>
         <AlignedLargeLongArrowRightIcon />
       </Wrapped>
       &nbsp;
@@ -117,65 +127,69 @@ const DestructiveExample = () => (
 const LinkExample = () => <ButtonStory link wrapped={BpkButton} />;
 const FeaturedExample = () => <ButtonStory featured wrapped={BpkButton} />;
 const OutlineExample = () => (
-  <ButtonStory
-    outline
-    wrapped={BpkButton}
-    className={getClassName('bpk-outline-layout')}
-  />
+  <BpkDarkExampleWrapper>
+    <ButtonStory
+      outline
+      wrapped={BpkButton}
+      className={getClassName('bpk-outline-layout')}
+    />
+  </BpkDarkExampleWrapper>
 );
 
-const ComponentButtonPrimaryExample = () => (
-  <ButtonStory wrapped={BpkButtonPrimary} />
+const ComponentButtonPrimaryExample = (props: {}) => (
+  /* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */
+  <ButtonStory wrapped={BpkButtonPrimary} {...props} />
 );
-const ComponentButtonSecondaryExample = () => (
-  <ButtonStory wrapped={BpkButtonSecondary} />
+const ComponentButtonSecondaryExample = (props: {}) => (
+  /* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */
+  <ButtonStory wrapped={BpkButtonSecondary} {...props} />
 );
-const ComponentButtonDestructiveExample = () => (
-  <ButtonStory wrapped={BpkButtonDestructive} />
+const ComponentButtonDestructiveExample = (props: {}) => (
+  /* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */
+  <ButtonStory wrapped={BpkButtonDestructive} {...props} />
 );
-const ComponentButtonLinkExample = () => (
-  <ButtonStory wrapped={BpkButtonLink} />
+const ComponentButtonLinkExample = (props: {}) => (
+  /* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */
+  <ButtonStory wrapped={BpkButtonLink} {...props} />
 );
-const ComponentButtonLinkWithPaddingExample = () => (
-  <ButtonStory wrapped={props => <BpkButtonLink padded {...props} />} />
-);
-const ComponentButtonFeaturedExample = () => (
-  <ButtonStory wrapped={BpkButtonFeatured} />
-);
-const ComponentButtonOutlineExample = () => (
+const ComponentButtonLinkWithPaddingExample = (props: {}) => (
+  /* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */
   <ButtonStory
-    wrapped={BpkButtonOutline}
-    className={getClassName('bpk-outline-layout')}
+    wrapped={wrappedProps => <BpkButtonLink padded {...wrappedProps} />}
+    {...props}
   />
+);
+const ComponentButtonFeaturedExample = (props: {}) => (
+  /* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */
+  <ButtonStory wrapped={BpkButtonFeatured} {...props} />
+);
+const ComponentButtonOutlineExample = (props: {}) => (
+  <BpkDarkExampleWrapper>
+    {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
+    <ButtonStory wrapped={BpkButtonOutline} {...props} />
+  </BpkDarkExampleWrapper>
 );
 
 const MixedExample = () => (
-  <div>
-    <ButtonStory wrapped={BpkButtonPrimary} />
-    <ButtonStory wrapped={BpkButtonSecondary} />
-    <ButtonStory wrapped={BpkButtonDestructive} />
-    <ButtonStory wrapped={BpkButtonLink} />
-    <ButtonStory wrapped={BpkButtonFeatured} />
-    <ButtonStory
-      wrapped={BpkButtonOutline}
-      className={getClassName('bpk-outline-layout')}
-    />
-  </div>
+  <>
+    <ComponentButtonPrimaryExample />
+    <ComponentButtonSecondaryExample />
+    <ComponentButtonDestructiveExample />
+    <ComponentButtonLinkExample />
+    <ComponentButtonFeaturedExample />
+    <ComponentButtonOutlineExample />
+  </>
 );
 
 const AnchorTagsExample = () => (
-  <div>
-    <ButtonStory wrapped={BpkButtonPrimary} href="#" />
-    <ButtonStory wrapped={BpkButtonSecondary} href="#" />
-    <ButtonStory wrapped={BpkButtonDestructive} href="#" />
-    <ButtonStory wrapped={BpkButtonLink} href="#" />
-    <ButtonStory wrapped={BpkButtonFeatured} href="#" />
-    <ButtonStory
-      wrapped={BpkButtonOutline}
-      className={getClassName('bpk-outline-layout')}
-      href="#"
-    />
-  </div>
+  <>
+    <ComponentButtonPrimaryExample href="#" />
+    <ComponentButtonSecondaryExample href="#" />
+    <ComponentButtonDestructiveExample href="#" />
+    <ComponentButtonLinkExample href="#" />
+    <ComponentButtonFeaturedExample href="#" />
+    <ComponentButtonOutlineExample href="#" />
+  </>
 );
 
 export {
