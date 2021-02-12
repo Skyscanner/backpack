@@ -17,8 +17,16 @@
  */
 /* @flow strict */
 
-import { action } from './src/BpkStorybookUtils';
-import BpkDarkExampleWrapper from './src/BpkDarkExampleWrapper';
+import React from 'react';
+import { cssModules } from 'bpk-react-utils';
 
-export default { action, BpkDarkExampleWrapper };
-export { action, BpkDarkExampleWrapper };
+import STYLES from './BpkDarkExampleWrapper.scss';
+
+const getClassName = cssModules(STYLES);
+
+const BpkDarkExampleWrapper = (props: {}) => (
+  /* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */
+  <div className={getClassName('bpk-dark-example-wrapper')} {...props} />
+);
+
+export default BpkDarkExampleWrapper;

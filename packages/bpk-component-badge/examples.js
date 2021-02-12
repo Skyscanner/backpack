@@ -24,6 +24,7 @@ import BpkSmallFlightIcon from 'bpk-component-icon/sm/flight';
 import BpkSmallWeatherIcon from 'bpk-component-icon/sm/weather';
 import BpkSmallTickIcon from 'bpk-component-icon/sm/tick-circle';
 import BpkSmallCloseIcon from 'bpk-component-icon/sm/close-circle';
+import { BpkDarkExampleWrapper } from 'bpk-storybook-utils';
 
 import BadgeLayout from './BadgeLayout';
 
@@ -126,50 +127,56 @@ const DestructiveExample = () => (
 );
 
 const LightExample = () => (
-  <BadgeLayout>
-    <BpkBadge type={BADGE_TYPES.light}>Light</BpkBadge>
-    &nbsp;
-    <BpkBadge type={BADGE_TYPES.light}>
-      <BpkSmallTickIcon />
-      &nbsp;Light
-    </BpkBadge>
-    &nbsp;
-    <BpkBadge type={BADGE_TYPES.light}>
-      Light&nbsp;
-      <BpkSmallTickIcon />
-    </BpkBadge>
-  </BadgeLayout>
+  <BpkDarkExampleWrapper>
+    <BadgeLayout>
+      <BpkBadge type={BADGE_TYPES.light}>Light</BpkBadge>
+      &nbsp;
+      <BpkBadge type={BADGE_TYPES.light}>
+        <BpkSmallTickIcon />
+        &nbsp;Light
+      </BpkBadge>
+      &nbsp;
+      <BpkBadge type={BADGE_TYPES.light}>
+        Light&nbsp;
+        <BpkSmallTickIcon />
+      </BpkBadge>
+    </BadgeLayout>
+  </BpkDarkExampleWrapper>
 );
 
 const InverseExample = () => (
-  <BadgeLayout>
-    <BpkBadge type={BADGE_TYPES.inverse}>Inverse</BpkBadge>
-    &nbsp;
-    <BpkBadge type={BADGE_TYPES.inverse}>
-      <BpkSmallTickIcon />
-      &nbsp;Inverse
-    </BpkBadge>
-    &nbsp;
-    <BpkBadge type={BADGE_TYPES.inverse}>
-      Inverse&nbsp;
-      <BpkSmallTickIcon />
-    </BpkBadge>
-  </BadgeLayout>
+  <BpkDarkExampleWrapper>
+    <BadgeLayout>
+      <BpkBadge type={BADGE_TYPES.inverse}>Inverse</BpkBadge>
+      &nbsp;
+      <BpkBadge type={BADGE_TYPES.inverse}>
+        <BpkSmallTickIcon />
+        &nbsp;Inverse
+      </BpkBadge>
+      &nbsp;
+      <BpkBadge type={BADGE_TYPES.inverse}>
+        Inverse&nbsp;
+        <BpkSmallTickIcon />
+      </BpkBadge>
+    </BadgeLayout>
+  </BpkDarkExampleWrapper>
 );
 
 const OutlineExample = () => (
-  <BadgeLayout>
-    <BpkBadge type={BADGE_TYPES.outline}>Outline</BpkBadge>
-    &nbsp;
-    <BpkBadge type={BADGE_TYPES.outline}>
-      <BpkSmallTickIcon />
-      &nbsp;Outline
-    </BpkBadge>
-    &nbsp;
-    <BpkBadge type={BADGE_TYPES.outline}>
-      Outline&nbsp; <BpkSmallTickIcon />
-    </BpkBadge>
-  </BadgeLayout>
+  <BpkDarkExampleWrapper>
+    <BadgeLayout>
+      <BpkBadge type={BADGE_TYPES.outline}>Outline</BpkBadge>
+      &nbsp;
+      <BpkBadge type={BADGE_TYPES.outline}>
+        <BpkSmallTickIcon />
+        &nbsp;Outline
+      </BpkBadge>
+      &nbsp;
+      <BpkBadge type={BADGE_TYPES.outline}>
+        Outline&nbsp; <BpkSmallTickIcon />
+      </BpkBadge>
+    </BadgeLayout>
+  </BpkDarkExampleWrapper>
 );
 
 export {
