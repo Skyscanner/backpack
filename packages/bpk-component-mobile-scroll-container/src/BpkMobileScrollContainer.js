@@ -200,8 +200,8 @@ class BpkMobileScrollContainer extends Component<Props, State> {
     const scrollerClassNames = [
       getClassName('bpk-mobile-scroll-container__scroller'),
       showScrollbar
-        ? ''
-        : getClassName('bpk-mobile-scroll-container__hideScrollbar'),
+        ? getClassName('bpk-mobile-scroll-container__showScrollbar')
+        : '',
     ];
 
     const InnerContainer = innerContainerTagName;

@@ -36,11 +36,10 @@
     overflow-y: hidden;
     -webkit-overflow-scrolling: touch;
     -ms-overflow-style: -ms-autohiding-scrollbar;
-  }
-
-  &__hideScrollbar {
-    &::-webkit-scrollbar {
-      display: none;
+    &:not(.bpk-mobile-scroll-container__showScrollbar) {
+      &::-webkit-scrollbar {
+        display: none;
+      }
     }
   }
 
