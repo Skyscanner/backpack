@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-checkbox",
-  "version": "2.2.33",
+  "version": "2.2.34",
   "description": "Backpack checkbox component.",
   "license": "Apache-2.0",
   "repository": {
@@ -23,7 +23,7 @@
     "react": "^16.0.0"
   },
   "devDependencies": {
-    "bpk-storybook-utils": "^0.0.3",
+    "bpk-storybook-utils": "^0.0.4",
     "bpk-tokens": "^36.1.1"
   }
 }

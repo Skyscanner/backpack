@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-router-link",
-  "version": "3.0.103",
+  "version": "3.0.104",
   "description": "Backpack link component.",
   "license": "Apache-2.0",
   "repository": {
@@ -19,7 +19,7 @@
     "prop-types": "^15.6.2"
   },
   "devDependencies": {
-    "bpk-storybook-utils": "^0.0.3"
+    "bpk-storybook-utils": "^0.0.4"
   },
   "peerDependencies": {
     "react": "^16.0.0",
