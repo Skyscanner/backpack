@@ -86,7 +86,7 @@ type Props = {
   trailingIndicatorClassName: ?string,
   scrollerRef: ?Function,
   style: ?Object,
-  showScrollbar: ?Boolean,
+  showScrollbar: ?boolean,
 };
 
 type State = {
