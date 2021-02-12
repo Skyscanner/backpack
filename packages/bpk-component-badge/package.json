@@ -22,7 +22,7 @@
     "react": "^16.0.0"
   },
   "devDependencies": {
-    "bpk-storybook-utils": "^0.0.2",
+    "bpk-storybook-utils": "^0.0.3",
     "bpk-component-icon": "^8.3.9",
     "bpk-tokens": "^36.1.1"
   }
