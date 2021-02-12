@@ -19,27 +19,28 @@
 /* @flow strict */
 
 import React, { type Node } from 'react';
-import {
-  spacingBase,
-  colorMonteverde,
-  colorSkyGrayTint06,
-} from 'bpk-tokens/tokens/base.es6';
+import { cssModules } from 'bpk-react-utils';
+
+import STYLES from './examples.scss';
 
 import BpkBreakpoint, { BREAKPOINTS } from './index';
+
+const getClassName = cssModules(STYLES);
 
 const MediaQueryStatus = (props: { children: Node, isActive: boolean }) => {
   const { children, isActive } = props;
 
-  const style = {
-    padding: spacingBase,
-    backgroundColor: isActive ? colorMonteverde : colorSkyGrayTint06,
-  };
+  const className = getClassName(
+    isActive
+      ? 'bpk-breakpoints-demo--active'
+      : 'bpk-breakpoints-demo--inactive',
+  );
 
-  return <div style={style}>{children}</div>;
+  return <div className={className}>{children}</div>;
 };
 
 const DefaultExample = () => (
-  <div>
+  <div className={getClassName('bpk-breakpoints-demo')}>
     <BpkBreakpoint query={BREAKPOINTS.MOBILE}>
       {isActive => (
         <MediaQueryStatus isActive={isActive}>MOBILE</MediaQueryStatus>
