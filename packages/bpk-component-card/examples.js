@@ -17,15 +17,22 @@
  */
 /* @flow strict */
 
-import { storiesOf } from '@storybook/react';
+import React from 'react';
 
-import {
-  DefaultExample,
-  WithHrefExample,
-  WithoutPaddingExample,
-} from './examples';
+import BpkCard from './index';
 
-storiesOf('bpk-component-card', module)
-  .add('Default', DefaultExample)
-  .add('With href', WithHrefExample)
-  .add('Without padding', WithoutPaddingExample);
+const textContent = `It's your world and we'll help you explore it. Find the best prices across millions of flights, hotels and car hire options to create your perfect trip.`;
+
+const DefaultExample = () => <BpkCard>{textContent}</BpkCard>;
+
+const WithHrefExample = () => (
+  <BpkCard href="https://skyscanner.net">
+    Pressing this card will open https://skyscanner.net.
+  </BpkCard>
+);
+
+const WithoutPaddingExample = () => (
+  <BpkCard padded={false}>{textContent}</BpkCard>
+);
+
+export { DefaultExample, WithHrefExample, WithoutPaddingExample };
