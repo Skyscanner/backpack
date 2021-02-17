@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-map",
-  "version": "4.0.24",
+  "version": "4.0.25",
   "description": "Backpack map component.",
   "license": "Apache-2.0",
   "repository": {
@@ -26,7 +26,7 @@
   "devDependencies": {
     "bpk-component-icon": "^8.3.9",
     "bpk-component-text": "^3.1.36",
-    "bpk-storybook-utils": "^0.0.4",
+    "bpk-storybook-utils": "^0.0.5",
     "prop-types": "^15.5.8"
   }
 }
