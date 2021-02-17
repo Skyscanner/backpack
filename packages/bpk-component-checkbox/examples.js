@@ -28,19 +28,20 @@ const loremIpsum = `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Do
 quaerat temporibus ipsam, ut, ipsa, velit sed assumenda suscipit dolore quod similique delectus numquam neque!
 Nesciunt, voluptate, illo.`;
 
-class StatefulCheckbox extends Component<
-  {
-    isChecked: boolean,
-  },
-  {
-    isChecked: boolean,
-  },
-> {
+type Props = {
+  isChecked: boolean,
+};
+
+type State = {
+  isChecked: boolean,
+};
+
+class StatefulCheckbox extends Component<Props, State> {
   static defaultProps = {
     isChecked: false,
   };
 
-  constructor(props) {
+  constructor(props: Props) {
     super(props);
     this.state = {
       isChecked: props.isChecked,
