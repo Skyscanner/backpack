@@ -18,12 +18,20 @@
 /* @flow strict */
 
 // eslint-disable-next-line import/prefer-default-export
-export const hasClassName = (node: ?Element, className: ?string): boolean => {
-  if (node == null) {
+export const hasClassName = (
+  eventTarget: EventTarget,
+  className: ?string,
+): boolean => {
+  if (!eventTarget) {
     return false;
   }
 
-  const nodeClassName = node.getAttribute('class');
+  /* Flow does not work well with EventTarget type, but we need to use it in this case, because we need
+   * event propagation; the eventHadler is placed on the outer Header element, but we want to know when a
+   * click has happened on the inner 'arrowUp' or 'arrowDown' icons, in order to apply the correct sortDirection.
+   */
+  // $FlowFixMe[prop-missing] - see above
+  const nodeClassName = eventTarget.getAttribute('class');
   return (
     nodeClassName != null && nodeClassName.split(' ').indexOf(className) !== -1
   );
