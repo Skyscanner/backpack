@@ -37,24 +37,16 @@ const downIconClassName = getClassName(
   'bpk-data-table-column__sort-icon--down',
 );
 
-export const getSortIconDirection = (
-  eventTarget: EventTarget,
-): ?SortDirectionType => {
-  /* Flow does not work well with EventTarget type, but we need to use it in this case, because we need
-   * event propagation; the eventHadler is placed on the outer Header element, but we want to know when a
-   * click has happened on the inner 'arrowUp' or 'arrowDown' icons, in order to apply the correct sortDirection.
-   */
+export const getSortIconDirection = (element: Element): ?SortDirectionType => {
   if (
-    hasClassName(eventTarget, upIconClassName) ||
-    // $FlowFixMe[prop-missing] - see above
-    hasClassName(eventTarget.parentElement, upIconClassName)
+    hasClassName(element, upIconClassName) ||
+    hasClassName(element.parentElement, upIconClassName)
   ) {
     return SortDirection.ASC;
   }
   if (
-    hasClassName(eventTarget, downIconClassName) ||
-    // $FlowFixMe[prop-missing] - see above
-    hasClassName(eventTarget.parentElement, downIconClassName)
+    hasClassName(element, downIconClassName) ||
+    hasClassName(element.parentElement, downIconClassName)
   ) {
     return SortDirection.DESC;
   }
