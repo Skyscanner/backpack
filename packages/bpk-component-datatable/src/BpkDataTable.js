@@ -97,7 +97,7 @@ class BpkDataTable<Row> extends Component<Props<Row>, State<Row>> {
 
     // See: https://reactjs.org/docs/legacy-event-pooling.html
     const eventTarget = event.target;
-    if (eventTarget instanceof HTMLElement) {
+    if (eventTarget instanceof Element) {
       this.setState(prevState => ({
         sorter: prevState.sorter.onHeaderClick(sortBy, eventTarget, column),
       }));

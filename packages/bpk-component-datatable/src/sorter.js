@@ -28,11 +28,7 @@ export type Sorter<Row> = {
   rowCount: number,
   getRow(indext: number): Row,
   propsChange(props: Props<Row>): void,
-  onHeaderClick(
-    sortBy: string,
-    eventTarget: HTMLElement,
-    column: any,
-  ): Sorter<Row>,
+  onHeaderClick(sortBy: string, eventTarget: Element, column: any): Sorter<Row>,
   sortProps: SortProps,
 };
 
@@ -101,7 +97,7 @@ class NaiveSorter<Row> {
     this.sort();
   }
 
-  onHeaderClick(sortBy: string, eventTarget: HTMLElement, column): Sorter<Row> {
+  onHeaderClick(sortBy: string, eventTarget: Element, column): Sorter<Row> {
     const sortDirection = getSortDirection(
       this.sortProps,
       sortBy,
