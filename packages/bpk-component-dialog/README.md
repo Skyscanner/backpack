@@ -69,6 +69,7 @@ class App extends Component {
 | --------------------- | -------- | -------- | ---------------- |
 | id                    | string   | true     | -                |
 | className             | string   | true     | -                |
+| ariaLabel             | string   | true     | -                |
 | children              | node     | true     | -                |
 | isOpen                | bool     | true     | -                |
 | getApplicationElement | func     | true     | -                |

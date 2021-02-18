@@ -18,7 +18,8 @@
 
 /* @flow strict */
 
-import BpkDialog, { HEADER_ICON_TYPES, type Props } from './src/BpkDialog';
+import BpkDialog from './src/BpkDialog';
+import { HEADER_ICON_TYPES, type Props } from './src/common-types';
 import themeAttributes from './src/themeAttributes';
 
 export type BpkDialogProps = Props;

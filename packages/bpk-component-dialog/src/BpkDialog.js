@@ -18,51 +18,31 @@
 
 /* @flow strict */
 
-import React, { type Node } from 'react';
-import PropTypes from 'prop-types';
-import { cssModules } from 'bpk-react-utils';
+import React from 'react';
+import { cssModules, Portal } from 'bpk-react-utils';
+import { withScrim } from 'bpk-scrim-utils';
 import BpkCloseButton from 'bpk-component-close-button';
-import BpkModal, {
-  type BpkModalProps,
-  propTypes as modalPropTypes,
-  defaultProps as modalDefaultProps,
-} from 'bpk-component-modal';
-import { BpkContentBubble } from 'bpk-component-flare';
 
+import BpkDialogInner from './BpkDialogInner';
+import { type Props, propTypes, defaultProps } from './common-types';
 import STYLES from './BpkDialog.scss';
 
 const getClassName = cssModules(STYLES);
-
-export const HEADER_ICON_TYPES = {
-  primary: 'primary',
-  warning: 'warning',
-  destructive: 'destructive',
-};
-
-export type Props = {
-  ...$Exact<BpkModalProps>,
-  dismissible: boolean,
-  flare: boolean,
-  flareClassName: ?string,
-  headerIcon: ?Node,
-  headerIconType: $Keys<typeof HEADER_ICON_TYPES>,
-};
+const ScrimBpkModalDialog = withScrim(BpkDialogInner);
 
 const BpkDialog = (props: Props) => {
   const {
     children,
     closeLabel,
     dismissible,
-    flare,
-    flareClassName,
     headerIcon,
     headerIconType,
+    isOpen,
     onClose,
     ...rest
   } = props;
 
   const contentClassNames = getClassName('bpk-dialog--with-icon');
-  const flareClassNames = getClassName('bpk-dialog__flare', flareClassName);
   const headerIconClassNames = getClassName(
     'bpk-dialog__icon',
     `bpk-dialog__icon--${headerIconType}`,
@@ -70,60 +50,41 @@ const BpkDialog = (props: Props) => {
   const closeButtonClassNames = getClassName('bpk-dialog__close-button');
 
   return (
-    <BpkModal
-      {...rest}
+    <Portal
+      isOpen={isOpen}
       onClose={onClose}
-      showHeader={false}
-      closeLabel={closeLabel}
-      closeOnScrimClick={dismissible}
+      target={props.target}
+      renderTarget={props.renderTarget}
       closeOnEscPressed={dismissible}
-      fullScreenOnMobile={false}
-      isIphone={false}
-      contentClassName={headerIcon ? contentClassNames : null}
-      INTERNAL__outerComponent={
-        flare ? <BpkContentBubble className={flareClassNames} /> : null
-      }
     >
-      {headerIcon && <div className={headerIconClassNames}>{headerIcon}</div>}
-      {dismissible && (
-        <BpkCloseButton
-          className={closeButtonClassNames}
-          label={closeLabel}
-          onClick={onClose}
-        />
-      )}
-      {children}
-    </BpkModal>
+      {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
+      <ScrimBpkModalDialog
+        onClose={onClose}
+        closeOnScrimClick={dismissible}
+        containerClassName={getClassName('bpk-dialog__container')}
+        contentClassName={headerIcon ? contentClassNames : null}
+        {...rest}
+      >
+        {headerIcon && <div className={headerIconClassNames}>{headerIcon}</div>}
+        {dismissible && (
+          <BpkCloseButton
+            className={closeButtonClassNames}
+            label={closeLabel}
+            onClick={onClose}
+          />
+        )}
+        {children}
+      </ScrimBpkModalDialog>
+    </Portal>
   );
 };
 
-const {
-  title,
-  showHeader,
-  closeOnScrimClick,
-  closeOnEscPressed,
-  fullScreenOnMobile,
-  ...newModalPropTypes
-} = modalPropTypes;
-
 BpkDialog.propTypes = {
-  ...newModalPropTypes,
-  onClose: PropTypes.func,
-  dismissible: PropTypes.bool,
-  flare: PropTypes.bool,
-  flareClassName: PropTypes.string,
-  headerIcon: PropTypes.node,
-  headerIconType: PropTypes.oneOf(Object.keys(HEADER_ICON_TYPES)),
+  ...propTypes,
 };
 
 BpkDialog.defaultProps = {
-  ...modalDefaultProps,
-  onClose: () => null,
-  dismissible: true,
-  flare: false,
-  flareClassName: null,
-  headerIcon: null,
-  headerIconType: HEADER_ICON_TYPES.primary,
+  ...defaultProps,
 };
 
 export default BpkDialog;
