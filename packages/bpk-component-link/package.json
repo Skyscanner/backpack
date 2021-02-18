@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-link",
-  "version": "2.1.30",
+  "version": "2.1.34",
   "description": "Backpack link component.",
   "license": "Apache-2.0",
   "repository": {
@@ -22,6 +22,7 @@
     "react": "^16.0.0"
   },
   "devDependencies": {
+    "bpk-storybook-utils": "^0.0.5",
     "bpk-tokens": "^36.1.1"
   }
 }

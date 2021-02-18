@@ -21,7 +21,7 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { storiesOf } from '@storybook/react';
-import { action } from '@storybook/addon-actions';
+import { action } from 'bpk-storybook-utils';
 import BpkButton from 'bpk-component-button';
 
 import BpkProgress from './index';

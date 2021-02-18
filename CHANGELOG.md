@@ -2,6 +2,12 @@
 
 [Unreleased changes](./UNRELEASED.md).
 
+# 2021-02-12
+
+**Added:**
+- bpk-component-mobile-scroll-container: 2.0.103 => 2.1.0
+  - New `showScrollbar` prop to control showing the scrollbar visible when needed. The default value is set to `false`, making this change backward compatible.
+
 # 2021-01-21
 
 **Fixed**

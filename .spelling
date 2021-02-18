@@ -473,6 +473,7 @@ leadingIndicatorClassName
 leadingAccessoryView
 trailingAccessoryView
 scrollerRef
+showScrollbar
 trailingIndicatorClassName
 googleMapURL
 loadingElement
@@ -693,6 +694,7 @@ bpk-docs
 bpk-mixins
 bpk-react-utils
 bpk-scrim-utils
+bpk-storybook-utils
 bpk-stylesheets
 bpk-svgs
 bpk-tether

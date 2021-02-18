@@ -74,6 +74,19 @@ describe('BpkMobileScrollContainer', () => {
     expect(tree).toMatchSnapshot();
   });
 
+  it('should render correctly when showScrollbar is set to true', () => {
+    const tree = renderer
+      .create(
+        <BpkMobileScrollContainer showScrollbar>
+          Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
+          commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus
+          et magnis dis parturient montes, nascetur ridiculus mus.
+        </BpkMobileScrollContainer>,
+      )
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
   it('should render correctly with a custom "style" attribute', () => {
     const tree = renderer
       .create(

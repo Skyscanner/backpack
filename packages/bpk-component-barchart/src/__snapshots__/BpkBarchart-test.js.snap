@@ -6,6 +6,7 @@ exports[`BpkBarchart should render correctly 1`] = `
   innerContainerTagName="div"
   leadingIndicatorClassName={null}
   scrollerRef={null}
+  showScrollbar={false}
   style={null}
   trailingIndicatorClassName={null}
 >
@@ -209,6 +210,7 @@ exports[`BpkBarchart should render correctly with "className" prop 1`] = `
   innerContainerTagName="div"
   leadingIndicatorClassName={null}
   scrollerRef={null}
+  showScrollbar={false}
   style={null}
   trailingIndicatorClassName={null}
 >
@@ -412,6 +414,7 @@ exports[`BpkBarchart should render correctly with "leadingScrollIndicatorClassNa
   innerContainerTagName="div"
   leadingIndicatorClassName="my-custom-class-name"
   scrollerRef={null}
+  showScrollbar={false}
   style={null}
   trailingIndicatorClassName={null}
 >
@@ -615,6 +618,7 @@ exports[`BpkBarchart should render correctly with "trailingScrollIndicatorClassN
   innerContainerTagName="div"
   leadingIndicatorClassName={null}
   scrollerRef={null}
+  showScrollbar={false}
   style={null}
   trailingIndicatorClassName="my-custom-class-name"
 >
@@ -818,6 +822,7 @@ exports[`BpkBarchart should render correctly with "yAxisDomain" prop 1`] = `
   innerContainerTagName="div"
   leadingIndicatorClassName={null}
   scrollerRef={null}
+  showScrollbar={false}
   style={null}
   trailingIndicatorClassName={null}
 >
@@ -1021,6 +1026,7 @@ exports[`BpkBarchart should render with "disableDataTable" prop 1`] = `
   innerContainerTagName="div"
   leadingIndicatorClassName={null}
   scrollerRef={null}
+  showScrollbar={false}
   style={null}
   trailingIndicatorClassName={null}
 >
@@ -1166,6 +1172,7 @@ exports[`BpkBarchart should render with "getBarLabel" prop 1`] = `
   innerContainerTagName="div"
   leadingIndicatorClassName={null}
   scrollerRef={null}
+  showScrollbar={false}
   style={null}
   trailingIndicatorClassName={null}
 >
@@ -1369,6 +1376,7 @@ exports[`BpkBarchart should render with "hideXAxisLabel" prop 1`] = `
   innerContainerTagName="div"
   leadingIndicatorClassName={null}
   scrollerRef={null}
+  showScrollbar={false}
   style={null}
   trailingIndicatorClassName={null}
 >
@@ -1573,6 +1581,7 @@ exports[`BpkBarchart should render with "hideYAxisLabel" prop 1`] = `
   innerContainerTagName="div"
   leadingIndicatorClassName={null}
   scrollerRef={null}
+  showScrollbar={false}
   style={null}
   trailingIndicatorClassName={null}
 >
@@ -1777,6 +1786,7 @@ exports[`BpkBarchart should render with "onBarClick" prop 1`] = `
   innerContainerTagName="div"
   leadingIndicatorClassName={null}
   scrollerRef={null}
+  showScrollbar={false}
   style={null}
   trailingIndicatorClassName={null}
 >
@@ -1980,6 +1990,7 @@ exports[`BpkBarchart should render with "onBarHover" prop 1`] = `
   innerContainerTagName="div"
   leadingIndicatorClassName={null}
   scrollerRef={null}
+  showScrollbar={false}
   style={null}
   trailingIndicatorClassName={null}
 >
@@ -2183,6 +2194,7 @@ exports[`BpkBarchart should render with "showGridlines" prop 1`] = `
   innerContainerTagName="div"
   leadingIndicatorClassName={null}
   scrollerRef={null}
+  showScrollbar={false}
   style={null}
   trailingIndicatorClassName={null}
 >

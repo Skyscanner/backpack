@@ -39,36 +39,41 @@ import BpkMobileScrollContainer from './index';
 
 const getClassName = cssModules(STYLES);
 
+const table = () => (
+  <BpkTable style={{ minWidth: `calc(500 * ${onePixelRem})` }}>
+    <BpkTableHead>
+      <BpkTableRow>
+        <BpkTableHeadCell>Column 1</BpkTableHeadCell>
+        <BpkTableHeadCell>Column 2</BpkTableHeadCell>
+        <BpkTableHeadCell>Column 3</BpkTableHeadCell>
+      </BpkTableRow>
+    </BpkTableHead>
+    <BpkTableBody>
+      <BpkTableRow>
+        <BpkTableCell>Entry 1</BpkTableCell>
+        <BpkTableCell>Entry 2</BpkTableCell>
+        <BpkTableCell>Entry 3</BpkTableCell>
+      </BpkTableRow>
+      <BpkTableRow>
+        <BpkTableCell>Entry 4</BpkTableCell>
+        <BpkTableCell>Entry 5</BpkTableCell>
+        <BpkTableCell>Entry 6</BpkTableCell>
+      </BpkTableRow>
+      <BpkTableRow>
+        <BpkTableCell>Entry 7</BpkTableCell>
+        <BpkTableCell>Entry 8</BpkTableCell>
+        <BpkTableCell>Entry 9</BpkTableCell>
+      </BpkTableRow>
+    </BpkTableBody>
+  </BpkTable>
+);
+
 storiesOf('bpk-component-mobile-scroll-container', module)
   .add('Default', () => (
-    <BpkMobileScrollContainer>
-      <BpkTable style={{ minWidth: `calc(500 * ${onePixelRem})` }}>
-        <BpkTableHead>
-          <BpkTableRow>
-            <BpkTableHeadCell>Column 1</BpkTableHeadCell>
-            <BpkTableHeadCell>Column 2</BpkTableHeadCell>
-            <BpkTableHeadCell>Column 3</BpkTableHeadCell>
-          </BpkTableRow>
-        </BpkTableHead>
-        <BpkTableBody>
-          <BpkTableRow>
-            <BpkTableCell>Entry 1</BpkTableCell>
-            <BpkTableCell>Entry 2</BpkTableCell>
-            <BpkTableCell>Entry 3</BpkTableCell>
-          </BpkTableRow>
-          <BpkTableRow>
-            <BpkTableCell>Entry 4</BpkTableCell>
-            <BpkTableCell>Entry 5</BpkTableCell>
-            <BpkTableCell>Entry 6</BpkTableCell>
-          </BpkTableRow>
-          <BpkTableRow>
-            <BpkTableCell>Entry 7</BpkTableCell>
-            <BpkTableCell>Entry 8</BpkTableCell>
-            <BpkTableCell>Entry 9</BpkTableCell>
-          </BpkTableRow>
-        </BpkTableBody>
-      </BpkTable>
-    </BpkMobileScrollContainer>
+    <BpkMobileScrollContainer>{table()}</BpkMobileScrollContainer>
+  ))
+  .add('With visible scrollbar', () => (
+    <BpkMobileScrollContainer showScrollbar>{table()}</BpkMobileScrollContainer>
   ))
   .add(
     'Setting leadingIndicatorClassName and trailingIndicatorClassName',
@@ -81,32 +86,7 @@ storiesOf('bpk-component-mobile-scroll-container', module)
           'bpk-stories-mobile-scroll-container__trailing-indicator',
         )}
       >
-        <BpkTable style={{ minWidth: `calc(500 * ${onePixelRem})` }}>
-          <BpkTableHead>
-            <BpkTableRow>
-              <BpkTableHeadCell>Column 1</BpkTableHeadCell>
-              <BpkTableHeadCell>Column 2</BpkTableHeadCell>
-              <BpkTableHeadCell>Column 3</BpkTableHeadCell>
-            </BpkTableRow>
-          </BpkTableHead>
-          <BpkTableBody>
-            <BpkTableRow>
-              <BpkTableCell>Entry 1</BpkTableCell>
-              <BpkTableCell>Entry 2</BpkTableCell>
-              <BpkTableCell>Entry 3</BpkTableCell>
-            </BpkTableRow>
-            <BpkTableRow>
-              <BpkTableCell>Entry 4</BpkTableCell>
-              <BpkTableCell>Entry 5</BpkTableCell>
-              <BpkTableCell>Entry 6</BpkTableCell>
-            </BpkTableRow>
-            <BpkTableRow>
-              <BpkTableCell>Entry 7</BpkTableCell>
-              <BpkTableCell>Entry 8</BpkTableCell>
-              <BpkTableCell>Entry 9</BpkTableCell>
-            </BpkTableRow>
-          </BpkTableBody>
-        </BpkTable>
+        {table()}
       </BpkMobileScrollContainer>
     ),
   )

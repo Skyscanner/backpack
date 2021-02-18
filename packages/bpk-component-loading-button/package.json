@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-loading-button",
-  "version": "3.2.31",
+  "version": "3.2.35",
   "description": "Backpack loading button component.",
   "license": "Apache-2.0",
   "repository": {
@@ -14,12 +14,15 @@
   },
   "gitHead": "09fc99e4e67a5b71dc15f41a5409ad412bc139d4",
   "dependencies": {
-    "bpk-component-button": "^3.3.13",
+    "bpk-component-button": "^3.3.17",
     "bpk-component-icon": "^8.3.9",
     "bpk-component-spinner": "^3.1.30",
     "bpk-mixins": "^20.1.18",
     "bpk-react-utils": "^3.0.11",
     "prop-types": "^15.6.2"
+  },
+  "devDependencies": {
+    "bpk-storybook-utils": "^0.0.5"
   },
   "peerDependencies": {
     "react": "^16.0.0"

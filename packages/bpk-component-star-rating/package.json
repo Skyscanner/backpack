@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-star-rating",
-  "version": "2.1.99",
+  "version": "2.1.103",
   "description": "Backpack rating star component.",
   "license": "Apache-2.0",
   "repository": {
@@ -23,6 +23,7 @@
     "react": "^16.0.0"
   },
   "devDependencies": {
-    "bpk-component-table": "^2.0.101"
+    "bpk-component-table": "^2.0.101",
+    "bpk-storybook-utils": "^0.0.5"
   }
 }

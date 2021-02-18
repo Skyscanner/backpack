@@ -20,7 +20,7 @@
 
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { action } from '@storybook/addon-actions';
+import { action } from 'bpk-storybook-utils';
 import { colorSkyGrayTint01, spacingBase } from 'bpk-tokens/tokens/base.es6';
 
 import BpkLink, { BpkButtonLink } from './index';

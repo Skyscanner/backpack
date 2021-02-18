@@ -86,6 +86,7 @@ type Props = {
   trailingIndicatorClassName: ?string,
   scrollerRef: ?Function,
   style: ?Object,
+  showScrollbar: ?boolean,
 };
 
 type State = {
@@ -106,6 +107,7 @@ class BpkMobileScrollContainer extends Component<Props, State> {
     leadingIndicatorClassName: PropTypes.string,
     trailingIndicatorClassName: PropTypes.string,
     style: PropTypes.object, // eslint-disable-line react/forbid-prop-types
+    showScrollbar: PropTypes.bool,
   };
 
   static defaultProps = {
@@ -115,6 +117,7 @@ class BpkMobileScrollContainer extends Component<Props, State> {
     leadingIndicatorClassName: null,
     trailingIndicatorClassName: null,
     style: null,
+    showScrollbar: false,
   };
 
   constructor() {
@@ -158,6 +161,9 @@ class BpkMobileScrollContainer extends Component<Props, State> {
   };
 
   setScrollBarAwareHeight = () => {
+    if (this.props.showScrollbar) {
+      return;
+    }
     const computedHeight = computeScrollBarAwareHeight(
       this.scrollerEl,
       this.innerEl,
@@ -180,6 +186,7 @@ class BpkMobileScrollContainer extends Component<Props, State> {
       leadingIndicatorClassName,
       trailingIndicatorClassName,
       style,
+      showScrollbar,
       ...rest
     } = this.props;
 
@@ -189,6 +196,11 @@ class BpkMobileScrollContainer extends Component<Props, State> {
     if (this.state.scrollIndicatorClassName) {
       classNames.push(this.state.scrollIndicatorClassName);
     }
+
+    const scrollerClassNames = getClassName(
+      'bpk-mobile-scroll-container__scroller',
+      showScrollbar && 'bpk-mobile-scroll-container__showScrollbar',
+    );
 
     const InnerContainer = innerContainerTagName;
 
@@ -206,7 +218,7 @@ class BpkMobileScrollContainer extends Component<Props, State> {
             this.scrollerEl = el;
           }}
           onScroll={this.setScrollIndicatorClassName}
-          className={getClassName('bpk-mobile-scroll-container__scroller')}
+          className={scrollerClassNames}
         >
           <InnerContainer
             ref={el => {

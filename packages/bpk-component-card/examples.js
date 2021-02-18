@@ -15,19 +15,24 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+/* @flow strict */
 
-@import '~bpk-mixins';
+import React from 'react';
 
-$custom-color: $bpk-color-sagano;
+import BpkCard from './index';
 
-.bpk-chip-stories {
-  &__wrapper {
-    display: flex;
-    flex-wrap: wrap;
-  }
+const textContent = `It's your world and we'll help you explore it. Find the best prices across millions of flights, hotels and car hire options to create your perfect trip.`;
 
-  &__chip {
-    margin-right: $bpk-spacing-xs;
-    margin-bottom: $bpk-spacing-sm;
-  }
-}
+const DefaultExample = () => <BpkCard>{textContent}</BpkCard>;
+
+const WithHrefExample = () => (
+  <BpkCard href="https://skyscanner.net">
+    Pressing this card will open https://skyscanner.net.
+  </BpkCard>
+);
+
+const WithoutPaddingExample = () => (
+  <BpkCard padded={false}>{textContent}</BpkCard>
+);
+
+export { DefaultExample, WithHrefExample, WithoutPaddingExample };

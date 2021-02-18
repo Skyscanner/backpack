@@ -20,7 +20,6 @@
 
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { action } from '@storybook/addon-actions';
 
 import {
   PrimaryExample,
@@ -41,54 +40,20 @@ import {
 } from './examples';
 
 storiesOf('bpk-component-button', () => module)
-  .add('BpkButton (Primary)', () => (
-    <PrimaryExample onClick={action('Primary button clicked')} />
-  ))
-  .add('BpkButton (Secondary)', () => (
-    <SecondaryExample onClick={action('Secondary button clicked')} />
-  ))
-  .add('BpkButton (Destructive)', () => (
-    <DestructiveExample onClick={action('Destructive button clicked')} />
-  ))
-  .add('BpkButton (Link button)', () => (
-    <LinkExample onClick={action('Link button clicked')} />
-  ))
-  .add('BpkButton (Featured)', () => (
-    <FeaturedExample onClick={action('Featured button clicked')} />
-  ))
-  .add('BpkButton (Outline)', () => (
-    <OutlineExample onClick={action('Outline button clicked')} />
-  ))
-  .add('Primary', () => (
-    <ComponentButtonPrimaryExample onClick={action('Primary button clicked')} />
-  ))
-  .add('Secondary', () => (
-    <ComponentButtonSecondaryExample
-      onClick={action('Secondary button clicked')}
-    />
-  ))
-  .add('Destructive', () => (
-    <ComponentButtonDestructiveExample
-      onClick={action('Destructive button clicked')}
-    />
-  ))
-  .add('Link button', () => (
-    <ComponentButtonLinkExample onClick={action('Link button clicked')} />
-  ))
+  .add('BpkButton (Primary)', () => <PrimaryExample />)
+  .add('BpkButton (Secondary)', () => <SecondaryExample />)
+  .add('BpkButton (Destructive)', () => <DestructiveExample />)
+  .add('BpkButton (Link button)', () => <LinkExample />)
+  .add('BpkButton (Featured)', () => <FeaturedExample />)
+  .add('BpkButton (Outline)', () => <OutlineExample />)
+  .add('Primary', () => <ComponentButtonPrimaryExample />)
+  .add('Secondary', () => <ComponentButtonSecondaryExample />)
+  .add('Destructive', () => <ComponentButtonDestructiveExample />)
+  .add('Link button', () => <ComponentButtonLinkExample />)
   .add('Link button with padding', () => (
-    <ComponentButtonLinkWithPaddingExample
-      onClick={action('Link button clicked')}
-    />
+    <ComponentButtonLinkWithPaddingExample />
   ))
-  .add('Featured', () => (
-    <ComponentButtonFeaturedExample
-      onClick={action('Featured button clicked')}
-    />
-  ))
-  .add('Outline', () => (
-    <ComponentButtonOutlineExample onClick={action('Outline button clicked')} />
-  ))
-  .add('Mixture', () => <MixedExample onClick={action('Button clicked')} />)
-  .add('Anchor tags', () => (
-    <AnchorTagsExample onClick={action('Anchor button clicked')} />
-  ));
+  .add('Featured', () => <ComponentButtonFeaturedExample />)
+  .add('Outline', () => <ComponentButtonOutlineExample />)
+  .add('Mixture', () => <MixedExample />)
+  .add('Anchor tags', () => <AnchorTagsExample />);
