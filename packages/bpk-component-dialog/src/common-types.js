@@ -30,8 +30,6 @@ export type DialogInnerProps = {
   ariaLabel: string,
   id: string,
   children: Node,
-  wide: boolean,
-  padded: boolean,
   dialogRef: (ref: ?HTMLElement) => void,
   className: ?string,
   contentClassName: ?string,
@@ -46,19 +44,16 @@ export const dialogInnerPropTypes = {
   id: PropTypes.string.isRequired,
   className: PropTypes.string,
   contentClassName: PropTypes.string,
-  wide: PropTypes.bool,
-  padded: PropTypes.bool,
   flare: PropTypes.bool,
   flareClassName: PropTypes.string,
+  withIcon: PropTypes.bool,
 };
 
 export const dialogInnerDefaultProps = {
   className: null,
-  contentClassName: null,
-  wide: false,
-  padded: true,
   flare: false,
   flareClassName: null,
+  withIcon: false,
 };
 
 // Please remove this type when `withScrim` is flow-typed
@@ -73,10 +68,7 @@ export type Props = {
   // diff will suffice for now.
   ...$Exact<$Diff<DialogInnerProps, ScrimProps>>,
   isOpen: boolean,
-  closeOnScrimClick: boolean,
-  closeOnEscPressed: boolean,
   renderTarget: ?() => ?HTMLElement,
-  target: ?((() => ?HTMLElement) | Element<any>),
   onClose: (event: SyntheticEvent<>) => void | null,
   closeLabel: string,
   dismissible: boolean,
@@ -89,11 +81,7 @@ const { dialogRef, ...newDialogPropTypes } = dialogInnerPropTypes;
 export const propTypes = {
   ...newDialogPropTypes,
   isOpen: PropTypes.bool.isRequired,
-  isIphone: PropTypes.bool,
   renderTarget: PropTypes.func,
-  target: PropTypes.oneOfType([PropTypes.func, PropTypes.element]),
-  closeOnScrimClick: PropTypes.bool,
-  closeOnEscPressed: PropTypes.bool,
   closeLabel: PropTypes.string,
   onClose: PropTypes.func,
   dismissible: PropTypes.bool,
@@ -104,12 +92,6 @@ export const propTypes = {
 export const defaultProps = {
   ...dialogInnerDefaultProps,
   renderTarget: null,
-  target: null,
-  isIphone: /iPhone/i.test(
-    typeof window !== 'undefined' ? window.navigator.platform : '',
-  ),
-  closeOnScrimClick: true,
-  closeOnEscPressed: true,
   closeLabel: '',
   onClose: () => null,
   dismissible: true,

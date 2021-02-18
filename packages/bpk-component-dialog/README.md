@@ -43,6 +43,7 @@ class App extends Component {
           <BpkButton onClick={this.onOpen}>Open dialog</BpkButton>
         </div>
         <BpkDialog
+          ariaLabel="example dialog to showcase component"
           closeLabel="Close dialog"
           id="my-dialog"
           className="my-classname"
@@ -67,20 +68,20 @@ class App extends Component {
 
 | Property              | PropType | Required | Default Value    |
 | --------------------- | -------- | -------- | ---------------- |
-| id                    | string   | true     | -                |
-| className             | string   | true     | -                |
 | ariaLabel             | string   | true     | -                |
 | children              | node     | true     | -                |
-| isOpen                | bool     | true     | -                |
 | getApplicationElement | func     | true     | -                |
-| onClose               | func     | false    | See prop details |
+| id                    | string   | true     | -                |
+| isOpen                | bool     | true     | -                |
+| className             | string   | false    | null             |
 | closeLabel            | string   | false    | null             |
-| renderTarget          | func     | false    | null             |
 | dismissible           | bool     | false    | true             |
-| headerIcon            | node     | false    | null             |
-| headerIconType        | oneOf(HEADER_ICON_TYPES.primary, HEADER_ICON_TYPES.warning, HEADER_ICON_TYPES.destructive) | false    | HEADER_ICON_TYPES.primary |
 | flare                 | bool     | false    | false            |
 | flareClassName        | string   | false    | null             |
+| headerIcon            | node     | false    | null             |
+| headerIconType        | oneOf(HEADER_ICON_TYPES.primary, HEADER_ICON_TYPES.warning, HEADER_ICON_TYPES.destructive) | false    | HEADER_ICON_TYPES.primary |
+| onClose               | func     | false    | See prop details |
+| renderTarget          | func     | false    | null             |
 
 ### Prop Details
 

@@ -20,6 +20,7 @@
 
 import React from 'react';
 import { TransitionInitialMount, cssModules } from 'bpk-react-utils';
+import { withScrim } from 'bpk-scrim-utils';
 import { BpkContentBubble } from 'bpk-component-flare';
 
 import {
@@ -32,20 +33,23 @@ import STYLES from './BpkDialogInner.scss';
 const getClassName = cssModules(STYLES);
 
 const BpkDialogInner = (props: Props) => {
-  const classNames = getClassName(
-    'bpk-dialog',
-    props.wide && 'bpk-dialog--wide',
-    props.className,
-  );
+  const {
+    ariaLabel,
+    children,
+    className,
+    contentClassName,
+    dialogRef,
+    flare,
+    flareClassName,
+    id,
+  } = props;
+
+  const classNames = getClassName('bpk-dialog', className);
   const contentClassNames = getClassName(
     'bpk-dialog__content',
-    props.padded && 'bpk-dialog__content--padded',
-    props.contentClassName,
+    contentClassName,
   );
-  const flareClassNames = getClassName(
-    'bpk-dialog__flare',
-    props.flareClassName,
-  );
+  const flareClassNames = getClassName('bpk-dialog__flare', flareClassName);
 
   return (
     <TransitionInitialMount
@@ -54,15 +58,15 @@ const BpkDialogInner = (props: Props) => {
       transitionTimeout={300}
     >
       <section
-        id={props.id}
+        id={id}
         tabIndex="-1"
         role="dialog"
-        aria-label={props.ariaLabel}
+        aria-label={ariaLabel}
         className={classNames}
-        ref={props.dialogRef}
+        ref={dialogRef}
       >
-        {props.flare && <BpkContentBubble className={flareClassNames} />}
-        <div className={contentClassNames}>{props.children}</div>
+        {flare && <BpkContentBubble className={flareClassNames} />}
+        <div className={contentClassNames}>{children}</div>
       </section>
     </TransitionInitialMount>
   );
@@ -79,4 +83,4 @@ export const defaultProps = {
 BpkDialogInner.propTypes = { ...propTypes };
 BpkDialogInner.defaultProps = { ...defaultProps };
 
-export default BpkDialogInner;
+export default withScrim(BpkDialogInner);

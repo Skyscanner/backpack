@@ -91,6 +91,7 @@ class DialogContainer extends Component<Props, State> {
         <BpkDialog
           closeLabel="Close dialog"
           id="my-dialog"
+          ariaLabel="example dialog to showcase component"
           className="my-classname"
           isOpen={this.state.isOpen}
           onClose={this.onClose}

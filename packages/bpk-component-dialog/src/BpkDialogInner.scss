@@ -35,12 +35,6 @@
   @include bpk-box-shadow-xl;
   @include bpk-border-radius-sm;
 
-  &--wide {
-    @include bpk-breakpoint-above-mobile {
-      max-width: $bpk-modal-wide-max-width;
-    }
-  }
-
   &--appear {
     transform: scale(0.9);
     opacity: $bpk-modal-initial-opacity;
@@ -52,12 +46,9 @@
   }
 
   &__content {
+    padding: $bpk-modal-content-padding;
     flex: 1;
     overflow-y: auto;
-
-    &--padded {
-      padding: $bpk-modal-content-padding;
-    }
   }
 
   &__flare {

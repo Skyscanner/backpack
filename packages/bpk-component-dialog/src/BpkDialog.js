@@ -20,7 +20,6 @@
 
 import React from 'react';
 import { cssModules, Portal } from 'bpk-react-utils';
-import { withScrim } from 'bpk-scrim-utils';
 import BpkCloseButton from 'bpk-component-close-button';
 
 import BpkDialogInner from './BpkDialogInner';
@@ -28,7 +27,6 @@ import { type Props, propTypes, defaultProps } from './common-types';
 import STYLES from './BpkDialog.scss';
 
 const getClassName = cssModules(STYLES);
-const ScrimBpkModalDialog = withScrim(BpkDialogInner);
 
 const BpkDialog = (props: Props) => {
   const {
@@ -39,10 +37,10 @@ const BpkDialog = (props: Props) => {
     headerIconType,
     isOpen,
     onClose,
+    renderTarget,
     ...rest
   } = props;
 
-  const contentClassNames = getClassName('bpk-dialog--with-icon');
   const headerIconClassNames = getClassName(
     'bpk-dialog__icon',
     `bpk-dialog__icon--${headerIconType}`,
@@ -53,16 +51,17 @@ const BpkDialog = (props: Props) => {
     <Portal
       isOpen={isOpen}
       onClose={onClose}
-      target={props.target}
-      renderTarget={props.renderTarget}
+      renderTarget={renderTarget}
       closeOnEscPressed={dismissible}
     >
       {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
-      <ScrimBpkModalDialog
+      <BpkDialogInner
         onClose={onClose}
         closeOnScrimClick={dismissible}
         containerClassName={getClassName('bpk-dialog__container')}
-        contentClassName={headerIcon ? contentClassNames : null}
+        contentClassName={
+          headerIcon ? getClassName('bpk-dialog--with-icon') : null
+        }
         {...rest}
       >
         {headerIcon && <div className={headerIconClassNames}>{headerIcon}</div>}
@@ -74,7 +73,7 @@ const BpkDialog = (props: Props) => {
           />
         )}
         {children}
-      </ScrimBpkModalDialog>
+      </BpkDialogInner>
     </Portal>
   );
 };

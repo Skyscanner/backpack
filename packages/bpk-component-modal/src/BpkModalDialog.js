@@ -36,7 +36,6 @@ export type Props = {
   wide: boolean,
   isIphone: boolean,
   showHeader: boolean,
-  INTERNAL__outerComponent: ?Element<any>,
   fullScreenOnMobile: boolean,
   fullScreen: boolean,
   padded: boolean,
@@ -98,7 +97,6 @@ const BpkModalDialog = (props: Props) => {
         className={classNames.join(' ')}
         ref={props.dialogRef}
       >
-        {props.INTERNAL__outerComponent}
         {props.showHeader && (
           <header className={getClassName('bpk-modal__header')}>
             <BpkNavigationBar
@@ -152,7 +150,6 @@ export const propTypes = {
   closeText: PropTypes.string,
   wide: PropTypes.bool,
   showHeader: PropTypes.bool,
-  INTERNAL__outerComponent: PropTypes.element,
   fullScreenOnMobile: PropTypes.bool,
   fullScreen: PropTypes.bool,
   padded: PropTypes.bool,
@@ -168,7 +165,6 @@ export const defaultProps = {
   closeText: null,
   wide: false,
   showHeader: true,
-  INTERNAL__outerComponent: null,
   fullScreenOnMobile: true,
   fullScreen: false,
   padded: true,
