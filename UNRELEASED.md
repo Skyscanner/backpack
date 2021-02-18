@@ -1,6 +1,7 @@
 # Unreleased
 
 > Place your changes below this line.
+
 ## How to write a good changelog entry
 
 1. Add 'Breaking', 'Added' or 'Fixed' in bold depending on if the change will be major, minor or patch according to [semver](semver.org).
@@ -28,3 +29,5 @@ See [`CHANGELOG.md`](CHANGELOG.md) for real-world examples of good changelog ent
 
 - bpk-component-horcrux:
   - Fixed issue where `BpkHorcrux` would occasionally possess the living.
+- bpk-component-datatable:
+  - Fix issue where clicking on the column header 'Up' or 'Down' icons did not change the sortDirection
