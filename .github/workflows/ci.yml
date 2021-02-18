@@ -72,13 +72,13 @@ jobs:
           mkdir build
           mv dist-storybook $PR_NUMBER
           cp -R $PR_NUMBER build/
-        if: github.ref != 'refs/heads/main'
+        if: github.ref != 'refs/heads/main' || github.repository == github.event.pull_request.head.repo.full_name
         env:
           PR_NUMBER: ${{ github.event.pull_request.number }}
 
       - name: Deploy Storybook to backpack.github.io/storybook-prs, if a pull request
         uses: peaceiris/actions-gh-pages@v3
-        if: github.ref != 'refs/heads/main'
+        if: github.ref != 'refs/heads/main' || github.repository == github.event.pull_request.head.repo.full_name
         with:
           personal_token: ${{ secrets.DEPLOY_TOKEN }}
           publish_dir: build/
@@ -88,7 +88,7 @@ jobs:
 
       - name: Link to the pull request build
         uses: unsplash/comment-on-pr@master
-        if: github.ref != 'refs/heads/main'
+        if: github.ref != 'refs/heads/main' || github.repository == github.event.pull_request.head.repo.full_name
         with:
           msg: "Visit https://backpack.github.io/storybook-prs/${{ env.PR_NUMBER }} to see this build running in a browser."
         env:
