@@ -2,6 +2,13 @@
 
 [Unreleased changes](./UNRELEASED.md).
 
+# 2021-02-19
+
+**Fixed:**
+
+- bpk-component-datatable: 2.2.4 => 2.2.5
+  - Fix issue where clicking on the column header 'Up' or 'Down' icons did not change the sortDirection
+
 # 2021-02-12
 
 **Added:**
