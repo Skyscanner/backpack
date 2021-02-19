@@ -25,7 +25,7 @@ describe('titlePropType', () => {
     const result = titlePropType(
       { showHeader: true },
       'title',
-      'BpkModalDialog',
+      'BpkModalInner',
     );
 
     expect(result).toEqual(expect.any(Error));
@@ -35,7 +35,7 @@ describe('titlePropType', () => {
     const result = titlePropType(
       { title: 'Modal title', showHeader: true },
       'title',
-      'BpkModalDialog',
+      'BpkModalInner',
     );
 
     expect(result).toBeNull();
@@ -45,7 +45,7 @@ describe('titlePropType', () => {
     const result = titlePropType(
       { showHeader: false },
       'title',
-      'BpkModalDialog',
+      'BpkModalInner',
     );
 
     expect(result).toBeNull();
@@ -57,7 +57,7 @@ describe('onClosePropType', () => {
     const result = onClosePropType(
       { showHeader: true },
       'onClose',
-      'BpkModalDialog',
+      'BpkModalInner',
     );
 
     expect(result).toEqual(expect.any(Error));
@@ -67,7 +67,7 @@ describe('onClosePropType', () => {
     const result = onClosePropType(
       { onClose: () => null, showHeader: true },
       'onClose',
-      'BpkModalDialog',
+      'BpkModalInner',
     );
 
     expect(result).toBeNull();
@@ -77,7 +77,7 @@ describe('onClosePropType', () => {
     const result = onClosePropType(
       { showHeader: false },
       'onClose',
-      'BpkModalDialog',
+      'BpkModalInner',
     );
 
     expect(result).toBeNull();

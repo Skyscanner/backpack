@@ -25,7 +25,7 @@ import BpkCloseButton from 'bpk-component-close-button';
 import BpkNavigationBar from 'bpk-component-navigation-bar';
 import { TransitionInitialMount, cssModules } from 'bpk-react-utils';
 
-import STYLES from './BpkModalDialog.scss';
+import STYLES from './BpkModalInner.scss';
 import { titlePropType, onClosePropType } from './customPropTypes';
 
 const getClassName = cssModules(STYLES);
@@ -49,7 +49,7 @@ export type Props = {
   accessoryView: ?Element<any>,
 };
 
-const BpkModalDialog = (props: Props) => {
+const BpkModalInner = (props: Props) => {
   const classNames = [getClassName('bpk-modal')];
   const contentClassNames = [getClassName('bpk-modal__content')];
   const navigationStyles = [getClassName('bpk-modal__navigation')];
@@ -171,7 +171,7 @@ export const defaultProps = {
   accessoryView: null,
 };
 
-BpkModalDialog.propTypes = { ...propTypes };
-BpkModalDialog.defaultProps = { ...defaultProps };
+BpkModalInner.propTypes = { ...propTypes };
+BpkModalInner.defaultProps = { ...defaultProps };
 
-export default BpkModalDialog;
+export default BpkModalInner;

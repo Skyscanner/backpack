@@ -32,7 +32,7 @@ export type DialogInnerProps = {
   children: Node,
   dialogRef: (ref: ?HTMLElement) => void,
   className: ?string,
-  contentClassName: ?string,
+  contentClassName?: ?string,
   flare: boolean,
   flareClassName: ?string,
 };
@@ -58,7 +58,6 @@ export const dialogInnerDefaultProps = {
 
 // Please remove this type when `withScrim` is flow-typed
 type ScrimProps = {
-  isIphone: boolean,
   dialogRef: () => ?HTMLElement,
 };
 

@@ -20,8 +20,7 @@
 
 import BpkDialog from './src/BpkDialog';
 import { HEADER_ICON_TYPES, type Props } from './src/common-types';
-import themeAttributes from './src/themeAttributes';
 
 export type BpkDialogProps = Props;
 export default BpkDialog;
-export { HEADER_ICON_TYPES, themeAttributes };
+export { HEADER_ICON_TYPES };
