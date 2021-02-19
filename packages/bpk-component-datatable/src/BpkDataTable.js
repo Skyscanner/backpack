@@ -95,12 +95,13 @@ class BpkDataTable<Row> extends Component<Props<Row>, State<Row>> {
       return;
     }
 
-    // See: https://reactjs.org/docs/events.html#event-pooling
-    const eventTarget = event.currentTarget;
-
-    this.setState(prevState => ({
-      sorter: prevState.sorter.onHeaderClick(sortBy, eventTarget, column),
-    }));
+    // See: https://reactjs.org/docs/legacy-event-pooling.html
+    const eventTarget = event.target;
+    if (eventTarget instanceof Element) {
+      this.setState(prevState => ({
+        sorter: prevState.sorter.onHeaderClick(sortBy, eventTarget, column),
+      }));
+    }
   };
 
   rowClassName = (
