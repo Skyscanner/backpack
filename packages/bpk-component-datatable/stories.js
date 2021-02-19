@@ -26,8 +26,32 @@ const rows = [
     name: 'Albert',
     description: 'Reaching the end of the alphabet',
     bla: 'Bla',
+    numericValue: 1,
   },
-  { name: 'Rolf', description: 'At the beginning of the alphabet', bla: 'Alb' },
+  {
+    name: 'Rolf',
+    description: 'At the beginning of the alphabet',
+    bla: 'Alb',
+    numericValue: 2,
+  },
+  {
+    name: 'Carl',
+    description: 'Middle of the alphabet',
+    bla: 'Alb',
+    numericValue: 3,
+  },
+  {
+    name: 'Bruno',
+    description: 'Some description',
+    bla: 'Alb',
+    numericValue: 4,
+  },
+  {
+    name: 'David',
+    description: 'Other description',
+    bla: 'Alb',
+    numericValue: 5,
+  },
 ];
 
 // eslint-disable-next-line no-alert
@@ -35,7 +59,7 @@ const onRowClick = row => alert(JSON.stringify(row));
 
 storiesOf('bpk-component-datatable', module)
   .add('Autowidth Example', () => (
-    <BpkDataTable rows={rows} height={300} onRowClick={onRowClick}>
+    <BpkDataTable rows={rows} height={400} onRowClick={onRowClick}>
       <BpkDataTableColumn label="Name" dataKey="name" width={100} />
       <BpkDataTableColumn
         label="Description"
@@ -44,6 +68,11 @@ storiesOf('bpk-component-datatable', module)
         flexGrow={1}
       />
       <BpkDataTableColumn label="Bla" dataKey="bla" width={100} />
+      <BpkDataTableColumn
+        label="Numeric value"
+        dataKey="numericValue"
+        width={100}
+      />
     </BpkDataTable>
   ))
   .add('Rows not hoverable', () => (

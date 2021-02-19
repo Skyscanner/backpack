@@ -219,6 +219,72 @@ describe('BpkDataTable', () => {
     expect(cell.text()).toBe('Software Engineer');
   });
 
+  it('should sort rows ascending if the UpIcon in the header is clicked', () => {
+    const abcRows = [
+      { name: 'Bruno', letter: 'A' },
+      { name: 'Daniela', letter: 'B' },
+      { name: 'Ana', letter: 'C' },
+      { name: 'Carla', letter: 'D' },
+    ];
+    const wrapper = mount(
+      <BpkDataTable
+        rows={abcRows}
+        height={200}
+        width={400}
+        defaultColumnSortIndex={1}
+      >
+        <BpkDataTableColumn label="Name" dataKey="name" width={100} />
+        <BpkDataTableColumn label="Letter" dataKey="letter" width={100} />
+      </BpkDataTable>,
+    );
+
+    let cell = wrapper
+      .find('.bpk-data-table__row .bpk-data-table-column')
+      .first();
+    expect(cell.text()).toBe('Bruno');
+
+    wrapper
+      .find('svg.bpk-data-table-column__sort-icon--up')
+      .first()
+      .simulate('click');
+
+    cell = wrapper.find('.bpk-data-table__row .bpk-data-table-column').first();
+    expect(cell.text()).toBe('Ana');
+  });
+
+  it('should sort rows descending if the DownIcon in the header is clicked', () => {
+    const abcRows = [
+      { name: 'Bruno', letter: 'A' },
+      { name: 'Daniela', letter: 'B' },
+      { name: 'Ana', letter: 'C' },
+      { name: 'Carla', letter: 'D' },
+    ];
+    const wrapper = mount(
+      <BpkDataTable
+        rows={abcRows}
+        height={200}
+        width={400}
+        defaultColumnSortIndex={1}
+      >
+        <BpkDataTableColumn label="Name" dataKey="name" width={100} />
+        <BpkDataTableColumn label="Letter" dataKey="letter" width={100} />
+      </BpkDataTable>,
+    );
+
+    let cell = wrapper
+      .find('.bpk-data-table__row .bpk-data-table-column')
+      .first();
+    expect(cell.text()).toBe('Bruno');
+
+    wrapper
+      .find('svg.bpk-data-table-column__sort-icon--down')
+      .first()
+      .simulate('click');
+
+    cell = wrapper.find('.bpk-data-table__row .bpk-data-table-column').first();
+    expect(cell.text()).toBe('Daniela');
+  });
+
   it('should not sort rows if header with disableSort is clicked', () => {
     const wrapper = mount(
       <BpkDataTable rows={rows} height={200} width={400}>
