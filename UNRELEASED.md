@@ -7,10 +7,6 @@
   - Added new required `ariaLabel` prop to `BpkDialog`
   - Migrated `BpkDialog` from using `BpkModal` dependency for cleaner maintenance and separated functionality.
 
-**Fixed**
-- bpk-component-datatable:
-  - Fix issue where clicking on the column header 'Up' or 'Down' icons did not change the sortDirection
-
 ## How to write a good changelog entry
 
 1. Add 'Breaking', 'Added' or 'Fixed' in bold depending on if the change will be major, minor or patch according to [semver](semver.org).
