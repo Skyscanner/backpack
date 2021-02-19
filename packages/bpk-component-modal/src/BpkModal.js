@@ -24,14 +24,14 @@ import { withScrim } from 'bpk-scrim-utils';
 import { Portal, cssModules } from 'bpk-react-utils';
 
 import STYLES from './BpkModal.scss';
-import BpkModalDialog, {
+import BpkModalInner, {
   propTypes as modalDialogPropTypes,
   defaultProps as modalDialogDefaultProps,
   type Props as ModalDialogProps,
-} from './BpkModalDialog';
+} from './BpkModalInner';
 
 const getClassName = cssModules(STYLES);
-const ScrimBpkModalDialog = withScrim(BpkModalDialog);
+const ScrimBpkModalInner = withScrim(BpkModalInner);
 
 // Please remove this type when `withScrim` is flow-typed
 type ScrimProps = {
@@ -86,7 +86,7 @@ const BpkModal = (props: Props) => {
       closeOnEscPressed={closeOnEscPressed}
     >
       {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
-      <ScrimBpkModalDialog
+      <ScrimBpkModalInner
         onClose={onClose}
         fullScreenOnMobile={fullScreenOnMobile}
         fullScreen={fullScreen}

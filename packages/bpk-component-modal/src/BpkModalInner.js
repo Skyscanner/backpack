@@ -25,7 +25,7 @@ import BpkCloseButton from 'bpk-component-close-button';
 import BpkNavigationBar from 'bpk-component-navigation-bar';
 import { TransitionInitialMount, cssModules } from 'bpk-react-utils';
 
-import STYLES from './BpkModalDialog.scss';
+import STYLES from './BpkModalInner.scss';
 import { titlePropType, onClosePropType } from './customPropTypes';
 
 const getClassName = cssModules(STYLES);
@@ -36,7 +36,6 @@ export type Props = {
   wide: boolean,
   isIphone: boolean,
   showHeader: boolean,
-  INTERNAL__outerComponent: ?Element<any>,
   fullScreenOnMobile: boolean,
   fullScreen: boolean,
   padded: boolean,
@@ -50,7 +49,7 @@ export type Props = {
   accessoryView: ?Element<any>,
 };
 
-const BpkModalDialog = (props: Props) => {
+const BpkModalInner = (props: Props) => {
   const classNames = [getClassName('bpk-modal')];
   const contentClassNames = [getClassName('bpk-modal__content')];
   const navigationStyles = [getClassName('bpk-modal__navigation')];
@@ -98,7 +97,6 @@ const BpkModalDialog = (props: Props) => {
         className={classNames.join(' ')}
         ref={props.dialogRef}
       >
-        {props.INTERNAL__outerComponent}
         {props.showHeader && (
           <header className={getClassName('bpk-modal__header')}>
             <BpkNavigationBar
@@ -152,7 +150,6 @@ export const propTypes = {
   closeText: PropTypes.string,
   wide: PropTypes.bool,
   showHeader: PropTypes.bool,
-  INTERNAL__outerComponent: PropTypes.element,
   fullScreenOnMobile: PropTypes.bool,
   fullScreen: PropTypes.bool,
   padded: PropTypes.bool,
@@ -168,14 +165,13 @@ export const defaultProps = {
   closeText: null,
   wide: false,
   showHeader: true,
-  INTERNAL__outerComponent: null,
   fullScreenOnMobile: true,
   fullScreen: false,
   padded: true,
   accessoryView: null,
 };
 
-BpkModalDialog.propTypes = { ...propTypes };
-BpkModalDialog.defaultProps = { ...defaultProps };
+BpkModalInner.propTypes = { ...propTypes };
+BpkModalInner.defaultProps = { ...defaultProps };
 
-export default BpkModalDialog;
+export default BpkModalInner;

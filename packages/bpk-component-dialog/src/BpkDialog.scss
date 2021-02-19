@@ -19,6 +19,16 @@
 @import '~bpk-mixins/index';
 
 .bpk-dialog {
+  &__container {
+    display: flex;
+    padding: $bpk-spacing-base;
+
+    // IE11 and below hack for buggy flexbox support
+    @media screen\0 {
+      display: block;
+    }
+  }
+
   &__close-button {
     float: right;
     margin: 0 0 $bpk-spacing-sm $bpk-spacing-sm;
@@ -27,13 +37,6 @@
       float: left;
       margin: 0 $bpk-spacing-sm $bpk-spacing-sm 0;
     }
-  }
-
-  &__flare {
-    height: $bpk-spacing-base * 10;
-    // We inherit radius from the outer modal so they match and align correctly to the container.
-    border-radius: inherit;
-    background-color: $bpk-color-sky-blue;
   }
 
   &--with-icon {

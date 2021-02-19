@@ -24,7 +24,8 @@ import TickIcon from 'bpk-component-icon/lg/tick';
 import InfoIcon from 'bpk-component-icon/lg/information-circle';
 import TrashIcon from 'bpk-component-icon/lg/trash';
 
-import BpkDialog, { HEADER_ICON_TYPES } from './BpkDialog';
+import BpkDialog from './BpkDialog';
+import { HEADER_ICON_TYPES } from './common-types';
 
 describe('BpkDialog', () => {
   it('should render correctly in the given target if renderTarget is supplied', () => {
@@ -34,7 +35,7 @@ describe('BpkDialog', () => {
       .create(
         <BpkDialog
           id="my-modal"
-          title="Dialog title"
+          ariaLabel="example dialog to showcase component"
           onClose={jest.fn()}
           closeLabel="Close"
           dialogRef={jest.fn()}
@@ -58,6 +59,7 @@ describe('BpkDialog', () => {
       .create(
         <BpkDialog
           id="my-modal"
+          ariaLabel="example dialog to showcase component"
           onClose={jest.fn()}
           dialogRef={jest.fn()}
           getApplicationElement={jest.fn()}
@@ -81,6 +83,7 @@ describe('BpkDialog', () => {
       .create(
         <BpkDialog
           id="my-modal"
+          ariaLabel="example dialog to showcase component"
           onClose={jest.fn()}
           dialogRef={jest.fn()}
           getApplicationElement={jest.fn()}
@@ -105,6 +108,7 @@ describe('BpkDialog', () => {
       .create(
         <BpkDialog
           id="my-modal"
+          ariaLabel="example dialog to showcase component"
           onClose={jest.fn()}
           dialogRef={jest.fn()}
           getApplicationElement={jest.fn()}
@@ -130,6 +134,7 @@ describe('BpkDialog', () => {
       .create(
         <BpkDialog
           id="my-modal"
+          ariaLabel="example dialog to showcase component"
           onClose={jest.fn()}
           dialogRef={jest.fn()}
           getApplicationElement={jest.fn()}
@@ -155,6 +160,7 @@ describe('BpkDialog', () => {
       .create(
         <BpkDialog
           id="my-modal"
+          ariaLabel="example dialog to showcase component"
           onClose={jest.fn()}
           dialogRef={jest.fn()}
           getApplicationElement={jest.fn()}
@@ -178,6 +184,7 @@ describe('BpkDialog', () => {
       .create(
         <BpkDialog
           id="my-modal"
+          ariaLabel="example dialog to showcase component"
           onClose={jest.fn()}
           dialogRef={jest.fn()}
           getApplicationElement={jest.fn()}

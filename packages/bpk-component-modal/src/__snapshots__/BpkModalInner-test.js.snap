@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`BpkModalDialog should render correctly 1`] = `
+exports[`BpkModalInner should render correctly 1`] = `
 <section
   aria-labelledby="bpk-modal-heading-my-modal"
   className="bpk-modal bpk-modal--full-screen-mobile"
@@ -56,7 +56,7 @@ exports[`BpkModalDialog should render correctly 1`] = `
 </section>
 `;
 
-exports[`BpkModalDialog should render correctly when is iPhone 1`] = `
+exports[`BpkModalInner should render correctly when is iPhone 1`] = `
 <section
   aria-labelledby="bpk-modal-heading-my-modal"
   className="bpk-modal bpk-modal--full-screen"
@@ -112,7 +112,7 @@ exports[`BpkModalDialog should render correctly when is iPhone 1`] = `
 </section>
 `;
 
-exports[`BpkModalDialog should render correctly when it does not fills the screen on mobile 1`] = `
+exports[`BpkModalInner should render correctly when it does not fills the screen on mobile 1`] = `
 <section
   aria-labelledby="bpk-modal-heading-my-modal"
   className="bpk-modal"
@@ -168,7 +168,7 @@ exports[`BpkModalDialog should render correctly when it does not fills the scree
 </section>
 `;
 
-exports[`BpkModalDialog should render correctly when it has a className 1`] = `
+exports[`BpkModalInner should render correctly when it has a className 1`] = `
 <section
   aria-labelledby="bpk-modal-heading-my-modal"
   className="bpk-modal my-classname bpk-modal--full-screen-mobile"
@@ -224,7 +224,7 @@ exports[`BpkModalDialog should render correctly when it has a className 1`] = `
 </section>
 `;
 
-exports[`BpkModalDialog should render correctly when it is fullscreen 1`] = `
+exports[`BpkModalInner should render correctly when it is fullscreen 1`] = `
 <section
   aria-labelledby="bpk-modal-heading-my-modal"
   className="bpk-modal bpk-modal--full-screen"
@@ -280,7 +280,7 @@ exports[`BpkModalDialog should render correctly when it is fullscreen 1`] = `
 </section>
 `;
 
-exports[`BpkModalDialog should render correctly with a custom content classname 1`] = `
+exports[`BpkModalInner should render correctly with a custom content classname 1`] = `
 <section
   aria-labelledby="bpk-modal-heading-my-modal"
   className="bpk-modal bpk-modal--full-screen-mobile"
@@ -336,7 +336,7 @@ exports[`BpkModalDialog should render correctly with a custom content classname 
 </section>
 `;
 
-exports[`BpkModalDialog should render correctly with an accessory view 1`] = `
+exports[`BpkModalInner should render correctly with an accessory view 1`] = `
 <section
   aria-labelledby="bpk-modal-heading-my-modal"
   className="bpk-modal bpk-modal--full-screen-mobile"
@@ -406,7 +406,7 @@ exports[`BpkModalDialog should render correctly with an accessory view 1`] = `
 </section>
 `;
 
-exports[`BpkModalDialog should render correctly with closeText prop 1`] = `
+exports[`BpkModalInner should render correctly with closeText prop 1`] = `
 <section
   aria-labelledby="bpk-modal-heading-my-modal"
   className="bpk-modal bpk-modal--full-screen-mobile"
@@ -444,7 +444,7 @@ exports[`BpkModalDialog should render correctly with closeText prop 1`] = `
 </section>
 `;
 
-exports[`BpkModalDialog should render correctly with no padding 1`] = `
+exports[`BpkModalInner should render correctly with no padding 1`] = `
 <section
   aria-labelledby="bpk-modal-heading-my-modal"
   className="bpk-modal bpk-modal--full-screen-mobile"
@@ -500,7 +500,7 @@ exports[`BpkModalDialog should render correctly with no padding 1`] = `
 </section>
 `;
 
-exports[`BpkModalDialog should render correctly with wide prop 1`] = `
+exports[`BpkModalInner should render correctly with wide prop 1`] = `
 <section
   aria-labelledby="bpk-modal-heading-my-modal"
   className="bpk-modal bpk-modal--wide bpk-modal--full-screen-mobile"

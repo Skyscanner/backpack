@@ -6,20 +6,21 @@ exports[`BpkDialog should render correctly in the given target if renderTarget i
 <div>
   <div>
     <div
-      class="bpk-scrim-content bpk-modal__container"
+      class="bpk-scrim-content bpk-dialog__container"
     >
       <div
         class="bpk-scrim"
         role="presentation"
       />
       <section
-        class="bpk-modal"
+        aria-label="example dialog to showcase component"
+        class="bpk-dialog-inner"
         id="my-modal"
         role="dialog"
         tabindex="-1"
       >
         <div
-          class="bpk-modal__content bpk-modal__content--padded"
+          class="bpk-dialog-inner__content"
         >
           <button
             aria-label="Close"
@@ -54,20 +55,21 @@ exports[`BpkDialog should render correctly when it is not dismissible 2`] = `
 <div>
   <div>
     <div
-      class="bpk-scrim-content bpk-modal__container"
+      class="bpk-scrim-content bpk-dialog__container"
     >
       <div
         class="bpk-scrim"
         role="presentation"
       />
       <section
-        class="bpk-modal"
+        aria-label="example dialog to showcase component"
+        class="bpk-dialog-inner"
         id="my-modal"
         role="dialog"
         tabindex="-1"
       >
         <div
-          class="bpk-modal__content bpk-modal__content--padded"
+          class="bpk-dialog-inner__content"
         >
           Dialog content inside a custom target
         </div>
@@ -83,20 +85,21 @@ exports[`BpkDialog should render default icon dialog correctly 2`] = `
 <div>
   <div>
     <div
-      class="bpk-scrim-content bpk-modal__container"
+      class="bpk-scrim-content bpk-dialog__container"
     >
       <div
         class="bpk-scrim"
         role="presentation"
       />
       <section
-        class="bpk-modal"
+        aria-label="example dialog to showcase component"
+        class="bpk-dialog-inner"
         id="my-modal"
         role="dialog"
         tabindex="-1"
       >
         <div
-          class="bpk-modal__content bpk-modal__content--padded bpk-dialog--with-icon"
+          class="bpk-dialog-inner__content bpk-dialog--with-icon"
         >
           <div
             class="bpk-dialog__icon bpk-dialog__icon--primary"
@@ -127,20 +130,21 @@ exports[`BpkDialog should render destructive icon dialog correctly 2`] = `
 <div>
   <div>
     <div
-      class="bpk-scrim-content bpk-modal__container"
+      class="bpk-scrim-content bpk-dialog__container"
     >
       <div
         class="bpk-scrim"
         role="presentation"
       />
       <section
-        class="bpk-modal"
+        aria-label="example dialog to showcase component"
+        class="bpk-dialog-inner"
         id="my-modal"
         role="dialog"
         tabindex="-1"
       >
         <div
-          class="bpk-modal__content bpk-modal__content--padded bpk-dialog--with-icon"
+          class="bpk-dialog-inner__content bpk-dialog--with-icon"
         >
           <div
             class="bpk-dialog__icon bpk-dialog__icon--destructive"
@@ -170,20 +174,21 @@ exports[`BpkDialog should render warning icon dialog correctly 2`] = `
 <div>
   <div>
     <div
-      class="bpk-scrim-content bpk-modal__container"
+      class="bpk-scrim-content bpk-dialog__container"
     >
       <div
         class="bpk-scrim"
         role="presentation"
       />
       <section
-        class="bpk-modal"
+        aria-label="example dialog to showcase component"
+        class="bpk-dialog-inner"
         id="my-modal"
         role="dialog"
         tabindex="-1"
       >
         <div
-          class="bpk-modal__content bpk-modal__content--padded bpk-dialog--with-icon"
+          class="bpk-dialog-inner__content bpk-dialog--with-icon"
         >
           <div
             class="bpk-dialog__icon bpk-dialog__icon--warning"
@@ -213,20 +218,21 @@ exports[`BpkDialog should render with flare dialog 2`] = `
 <div>
   <div>
     <div
-      class="bpk-scrim-content bpk-modal__container"
+      class="bpk-scrim-content bpk-dialog__container"
     >
       <div
         class="bpk-scrim"
         role="presentation"
       />
       <section
-        class="bpk-modal"
+        aria-label="example dialog to showcase component"
+        class="bpk-dialog-inner"
         id="my-modal"
         role="dialog"
         tabindex="-1"
       >
         <div
-          class="bpk-content-bubble__wrapper bpk-content-bubble__wrapper--with-pointer bpk-content-bubble__wrapper--rounded bpk-content-bubble__wrapper--rounded--with-pointer bpk-dialog__flare"
+          class="bpk-content-bubble__wrapper bpk-content-bubble__wrapper--with-pointer bpk-content-bubble__wrapper--rounded bpk-content-bubble__wrapper--rounded--with-pointer bpk-dialog-inner__flare"
         >
           <div
             class="bpk-content-bubble__container"
@@ -265,7 +271,7 @@ exports[`BpkDialog should render with flare dialog 2`] = `
           </div>
         </div>
         <div
-          class="bpk-modal__content bpk-modal__content--padded"
+          class="bpk-dialog-inner__content"
         >
           <button
             aria-label=""
@@ -300,20 +306,21 @@ exports[`BpkDialog should render with flare dialog with flareClassName 2`] = `
 <div>
   <div>
     <div
-      class="bpk-scrim-content bpk-modal__container"
+      class="bpk-scrim-content bpk-dialog__container"
     >
       <div
         class="bpk-scrim"
         role="presentation"
       />
       <section
-        class="bpk-modal"
+        aria-label="example dialog to showcase component"
+        class="bpk-dialog-inner"
         id="my-modal"
         role="dialog"
         tabindex="-1"
       >
         <div
-          class="bpk-content-bubble__wrapper bpk-content-bubble__wrapper--with-pointer bpk-content-bubble__wrapper--rounded bpk-content-bubble__wrapper--rounded--with-pointer bpk-dialog__flare my-className"
+          class="bpk-content-bubble__wrapper bpk-content-bubble__wrapper--with-pointer bpk-content-bubble__wrapper--rounded bpk-content-bubble__wrapper--rounded--with-pointer bpk-dialog-inner__flare my-className"
         >
           <div
             class="bpk-content-bubble__container"
@@ -352,7 +359,7 @@ exports[`BpkDialog should render with flare dialog with flareClassName 2`] = `
           </div>
         </div>
         <div
-          class="bpk-modal__content bpk-modal__content--padded"
+          class="bpk-dialog-inner__content"
         >
           <button
             aria-label=""

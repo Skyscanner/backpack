@@ -22,13 +22,13 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import { BpkNavigationBarButtonLink } from 'bpk-component-navigation-bar';
 
-import BpkModalDialog from './BpkModalDialog';
+import BpkModalInner from './BpkModalInner';
 
-describe('BpkModalDialog', () => {
+describe('BpkModalInner', () => {
   it('should render correctly', () => {
     const tree = renderer
       .create(
-        <BpkModalDialog
+        <BpkModalInner
           id="my-modal"
           title="Modal title"
           closeLabel="Close"
@@ -37,7 +37,7 @@ describe('BpkModalDialog', () => {
           isIphone={false}
         >
           Modal content
-        </BpkModalDialog>,
+        </BpkModalInner>,
       )
       .toJSON();
     expect(tree).toMatchSnapshot();
@@ -46,7 +46,7 @@ describe('BpkModalDialog', () => {
   it('should render correctly when it has a className', () => {
     const tree = renderer
       .create(
-        <BpkModalDialog
+        <BpkModalInner
           id="my-modal"
           title="Modal title"
           closeLabel="Close"
@@ -56,7 +56,7 @@ describe('BpkModalDialog', () => {
           className="my-classname"
         >
           Modal content
-        </BpkModalDialog>,
+        </BpkModalInner>,
       )
       .toJSON();
     expect(tree).toMatchSnapshot();
@@ -65,7 +65,7 @@ describe('BpkModalDialog', () => {
   it('should render correctly with wide prop', () => {
     const tree = renderer
       .create(
-        <BpkModalDialog
+        <BpkModalInner
           id="my-modal"
           title="Modal title"
           closeLabel="Close"
@@ -75,7 +75,7 @@ describe('BpkModalDialog', () => {
           wide
         >
           Modal content
-        </BpkModalDialog>,
+        </BpkModalInner>,
       )
       .toJSON();
     expect(tree).toMatchSnapshot();
@@ -84,7 +84,7 @@ describe('BpkModalDialog', () => {
   it('should render correctly with closeText prop', () => {
     const tree = renderer
       .create(
-        <BpkModalDialog
+        <BpkModalInner
           id="my-modal"
           title="Modal title"
           dialogRef={jest.fn()}
@@ -93,7 +93,7 @@ describe('BpkModalDialog', () => {
           closeText="Dismiss"
         >
           Modal content
-        </BpkModalDialog>,
+        </BpkModalInner>,
       )
       .toJSON();
     expect(tree).toMatchSnapshot();
@@ -102,7 +102,7 @@ describe('BpkModalDialog', () => {
   it('should render correctly when is iPhone', () => {
     const tree = renderer
       .create(
-        <BpkModalDialog
+        <BpkModalInner
           id="my-modal"
           title="Modal title"
           closeLabel="Close"
@@ -111,7 +111,7 @@ describe('BpkModalDialog', () => {
           isIphone
         >
           Modal content
-        </BpkModalDialog>,
+        </BpkModalInner>,
       )
       .toJSON();
     expect(tree).toMatchSnapshot();
@@ -120,7 +120,7 @@ describe('BpkModalDialog', () => {
   it('should render correctly when it does not fills the screen on mobile', () => {
     const tree = renderer
       .create(
-        <BpkModalDialog
+        <BpkModalInner
           id="my-modal"
           title="Modal title"
           closeLabel="Close"
@@ -130,7 +130,7 @@ describe('BpkModalDialog', () => {
           fullScreenOnMobile={false}
         >
           Modal content
-        </BpkModalDialog>,
+        </BpkModalInner>,
       )
       .toJSON();
     expect(tree).toMatchSnapshot();
@@ -139,7 +139,7 @@ describe('BpkModalDialog', () => {
   it('should render correctly when it is fullscreen', () => {
     const tree = renderer
       .create(
-        <BpkModalDialog
+        <BpkModalInner
           id="my-modal"
           title="Modal title"
           closeLabel="Close"
@@ -149,7 +149,7 @@ describe('BpkModalDialog', () => {
           fullScreen
         >
           Modal content
-        </BpkModalDialog>,
+        </BpkModalInner>,
       )
       .toJSON();
     expect(tree).toMatchSnapshot();
@@ -158,7 +158,7 @@ describe('BpkModalDialog', () => {
   it('should render correctly with no padding', () => {
     const tree = renderer
       .create(
-        <BpkModalDialog
+        <BpkModalInner
           id="my-modal"
           title="Modal title"
           closeLabel="Close"
@@ -168,7 +168,7 @@ describe('BpkModalDialog', () => {
           padded={false}
         >
           Modal content
-        </BpkModalDialog>,
+        </BpkModalInner>,
       )
       .toJSON();
     expect(tree).toMatchSnapshot();
@@ -177,7 +177,7 @@ describe('BpkModalDialog', () => {
   it('should render correctly with a custom content classname', () => {
     const tree = renderer
       .create(
-        <BpkModalDialog
+        <BpkModalInner
           id="my-modal"
           title="Modal title"
           closeLabel="Close"
@@ -187,7 +187,7 @@ describe('BpkModalDialog', () => {
           contentClassName="my-classname"
         >
           Modal content
-        </BpkModalDialog>,
+        </BpkModalInner>,
       )
       .toJSON();
     expect(tree).toMatchSnapshot();
@@ -196,7 +196,7 @@ describe('BpkModalDialog', () => {
   it('should render correctly with an accessory view', () => {
     const tree = renderer
       .create(
-        <BpkModalDialog
+        <BpkModalInner
           id="my-modal"
           title="Modal title"
           closeLabel="Close"
@@ -215,7 +215,7 @@ describe('BpkModalDialog', () => {
           }
         >
           Modal content
-        </BpkModalDialog>,
+        </BpkModalInner>,
       )
       .toJSON();
     expect(tree).toMatchSnapshot();
