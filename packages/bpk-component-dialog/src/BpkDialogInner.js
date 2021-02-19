@@ -44,17 +44,20 @@ const BpkDialogInner = (props: Props) => {
     id,
   } = props;
 
-  const classNames = getClassName('bpk-dialog', className);
+  const classNames = getClassName('bpk-dialog-inner', className);
   const contentClassNames = getClassName(
-    'bpk-dialog__content',
+    'bpk-dialog-inner__content',
     contentClassName,
   );
-  const flareClassNames = getClassName('bpk-dialog__flare', flareClassName);
+  const flareClassNames = getClassName(
+    'bpk-dialog-inner__flare',
+    flareClassName,
+  );
 
   return (
     <TransitionInitialMount
-      appearClassName={getClassName('bpk-dialog--appear')}
-      appearActiveClassName={getClassName('bpk-dialog--appear-active')}
+      appearClassName={getClassName('bpk-dialog-inner--appear')}
+      appearActiveClassName={getClassName('bpk-dialog-inner--appear-active')}
       transitionTimeout={300}
     >
       <section

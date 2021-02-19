@@ -18,7 +18,7 @@
 
 @import '~bpk-mixins/index';
 
-.bpk-dialog {
+.bpk-dialog-inner {
   z-index: $bpk-zindex-modal;
   width: 100%;
   max-width: $bpk-modal-max-width;
