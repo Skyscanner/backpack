@@ -2,6 +2,10 @@
 
 > Place your changes below this line.
 
+- bpk-component-chip:
+- bpk-mixins:
+  - Disabled chips no longer visually change when pressed.
+
 ## How to write a good changelog entry
 
 1. Add 'Breaking', 'Added' or 'Fixed' in bold depending on if the change will be major, minor or patch according to [semver](semver.org).

@@ -35,7 +35,7 @@
       background-color: $bpk-color-sky-gray-tint-07;
     }
 
-    &:active {
+    &:active:not(:disabled) {
       background-color: $bpk-color-sky-gray-tint-06;
     }
 
@@ -60,7 +60,7 @@
         );
       }
 
-      &:active {
+      &:active:not(:disabled) {
         @include bpk-themeable-property(
           background-color,
           --bpk-chip-light-selected-active-background-color,
@@ -78,7 +78,7 @@
       background-color: $bpk-color-sky-gray-tint-05;
     }
 
-    &:active {
+    &:active:not(:disabled) {
       background-color: $bpk-color-sky-gray-tint-04;
     }
 
@@ -103,7 +103,7 @@
         );
       }
 
-      &:active {
+      &:active:not(:disabled) {
         @include bpk-themeable-property(
           background-color,
           --bpk-chip-primary-selected-active-background-color,
@@ -121,7 +121,7 @@
       background-color: $bpk-color-sky-gray-tint-05;
     }
 
-    &:active {
+    &:active:not(:disabled) {
       background-color: $bpk-color-sky-gray-tint-04;
     }
 
@@ -146,7 +146,7 @@
         );
       }
 
-      &:active {
+      &:active:not(:disabled) {
         @include bpk-themeable-property(
           background-color,
           --bpk-chip-success-selected-active-background-color,
