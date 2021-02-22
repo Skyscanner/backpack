@@ -17,17 +17,12 @@
  */
 /* @flow strict */
 
-import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { BpkCode, BpkCodeBlock } from './index';
+import { Inline, InlineAlternate, Block, BlockAlternate } from './examples';
 
 storiesOf('bpk-component-code', module)
-  .add('Inline', () => <BpkCode>npm install react --save</BpkCode>)
-  .add('Inline - Alternate', () => (
-    <BpkCode alternate>npm install react --save</BpkCode>
-  ))
-  .add('Block', () => <BpkCodeBlock>npm install react --save</BpkCodeBlock>)
-  .add('Block - Alternate', () => (
-    <BpkCodeBlock alternate>npm install react --save</BpkCodeBlock>
-  ));
+  .add('Inline', Inline)
+  .add('Inline - Alternate', InlineAlternate)
+  .add('Block', Block)
+  .add('Block - Alternate', BlockAlternate);
