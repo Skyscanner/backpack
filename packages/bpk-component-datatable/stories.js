@@ -16,117 +16,19 @@
  * limitations under the License.
  */
 
-import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { BpkDataTable, BpkDataTableColumn } from './index';
-
-const rows = [
-  {
-    name: 'Albert',
-    description: 'Reaching the end of the alphabet',
-    bla: 'Bla',
-    numericValue: 1,
-  },
-  {
-    name: 'Rolf',
-    description: 'At the beginning of the alphabet',
-    bla: 'Alb',
-    numericValue: 2,
-  },
-  {
-    name: 'Carl',
-    description: 'Middle of the alphabet',
-    bla: 'Alb',
-    numericValue: 3,
-  },
-  {
-    name: 'Bruno',
-    description: 'Some description',
-    bla: 'Alb',
-    numericValue: 4,
-  },
-  {
-    name: 'David',
-    description: 'Other description',
-    bla: 'Alb',
-    numericValue: 5,
-  },
-];
-
-// eslint-disable-next-line no-alert
-const onRowClick = row => alert(JSON.stringify(row));
+import {
+  AutowidthExample,
+  NonHoverRows,
+  FixedWidth,
+  DisabledSort,
+  CustomRowAndHeaderHeights,
+} from './examples';
 
 storiesOf('bpk-component-datatable', module)
-  .add('Autowidth Example', () => (
-    <BpkDataTable rows={rows} height={400} onRowClick={onRowClick}>
-      <BpkDataTableColumn label="Name" dataKey="name" width={100} />
-      <BpkDataTableColumn
-        label="Description"
-        dataKey="description"
-        width={100}
-        flexGrow={1}
-      />
-      <BpkDataTableColumn label="Bla" dataKey="bla" width={100} />
-      <BpkDataTableColumn
-        label="Numeric value"
-        dataKey="numericValue"
-        width={100}
-      />
-    </BpkDataTable>
-  ))
-  .add('Rows not hoverable', () => (
-    <BpkDataTable rows={rows} height={300}>
-      <BpkDataTableColumn label="Name" dataKey="name" width={100} />
-      <BpkDataTableColumn
-        label="Description"
-        dataKey="description"
-        width={100}
-        flexGrow={1}
-      />
-      <BpkDataTableColumn label="Bla" dataKey="bla" width={100} />
-    </BpkDataTable>
-  ))
-  .add('Fixed Width Example', () => (
-    <BpkDataTable rows={rows} height={300} width={400} onRowClick={onRowClick}>
-      <BpkDataTableColumn label="Name" dataKey="name" width={100} />
-      <BpkDataTableColumn
-        label="Description"
-        dataKey="description"
-        width={100}
-        flexGrow={1}
-      />
-      <BpkDataTableColumn label="Bla" dataKey="bla" width={100} />
-    </BpkDataTable>
-  ))
-  .add('Disabled Sort Example', () => (
-    <BpkDataTable rows={rows} height={300} onRowClick={onRowClick}>
-      <BpkDataTableColumn label="Name" dataKey="name" width={100} />
-      <BpkDataTableColumn
-        label="Description (Disabled Sorting)"
-        dataKey="description"
-        width={100}
-        flexGrow={1}
-        disableSort
-      />
-      <BpkDataTableColumn label="Bla" dataKey="bla" width={100} />
-    </BpkDataTable>
-  ))
-  .add('Custom row and header heights', () => (
-    <BpkDataTable
-      rows={rows}
-      height={300}
-      headerHeight={80}
-      rowHeight={30}
-      onRowClick={onRowClick}
-    >
-      <BpkDataTableColumn label="Name" dataKey="name" width={100} />
-      <BpkDataTableColumn
-        label="Description"
-        dataKey="description"
-        width={100}
-        flexGrow={1}
-      />
-      <BpkDataTableColumn label="Bla" dataKey="bla" width={100} />
-    </BpkDataTable>
-  ));
+  .add('Autowidth Example', AutowidthExample)
+  .add('Rows not hoverable', NonHoverRows)
+  .add('Fixed Width Example', FixedWidth)
+  .add('Disabled Sort Example', DisabledSort)
+  .add('Custom row and header heights', CustomRowAndHeaderHeights);
