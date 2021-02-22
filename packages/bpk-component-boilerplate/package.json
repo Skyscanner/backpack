@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-boilerplate",
-  "version": "0.0.106",
+  "version": "0.0.107",
   "description": "Backpack boilerplate component.",
   "license": "Apache-2.0",
   "private": true,
@@ -14,7 +14,7 @@
     "registry": "https://registry.npmjs.org/"
   },
   "dependencies": {
-    "bpk-mixins": "^20.1.18",
+    "bpk-mixins": "^20.1.19",
     "bpk-react-utils": "^3.0.11",
     "prop-types": "^15.5.8"
   },
