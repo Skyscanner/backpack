@@ -18,8 +18,13 @@
 
 /* @flow strict */
 
-import { storiesOf } from '@storybook/react';
+import React from 'react';
+import { action } from 'bpk-storybook-utils';
 
-import DefaultExample from './examples';
+import BpkCloseButton from './index';
 
-storiesOf('bpk-component-close-button', module).add('Default', DefaultExample);
+const DefaultExample = () => (
+  <BpkCloseButton label="Close" onClick={action('Close button clicked')} />
+);
+
+export default DefaultExample;
