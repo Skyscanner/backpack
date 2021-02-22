@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-phone-input",
-  "version": "4.1.103",
+  "version": "4.1.104",
   "description": "Backpack phone input component.",
   "license": "Apache-2.0",
   "repository": {
@@ -27,7 +27,7 @@
     "react": "^16.0.0"
   },
   "devDependencies": {
-    "bpk-component-fieldset": "^2.0.118",
+    "bpk-component-fieldset": "^2.0.119",
     "bpk-component-image": "^4.3.16"
   }
 }

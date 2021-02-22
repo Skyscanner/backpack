@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-fieldset",
-  "version": "2.0.118",
+  "version": "2.0.119",
   "description": "Backpack fieldset component.",
   "license": "Apache-2.0",
   "repository": {
@@ -26,7 +26,7 @@
   "devDependencies": {
     "bpk-component-calendar": "^7.0.64",
     "bpk-component-checkbox": "^2.2.35",
-    "bpk-component-datepicker": "^11.3.31",
+    "bpk-component-datepicker": "^11.3.32",
     "bpk-component-input": "^5.0.106",
     "bpk-component-select": "^3.0.105"
   }
