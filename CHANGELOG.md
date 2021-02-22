@@ -2,6 +2,13 @@
 
 [Unreleased changes](./UNRELEASED.md).
 
+# 2021-02-22
+
+**Breaking:**
+- bpk-component-dialog: 2.2.26 => 3.0.0
+  - Added new required `ariaLabel` prop to `BpkDialog`
+  - Migrated `BpkDialog` from using `BpkModal` dependency for cleaner maintenance and separated functionality.
+
 # 2021-02-19
 
 **Fixed:**
