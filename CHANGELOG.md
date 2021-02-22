@@ -9,6 +9,11 @@
   - Added new required `ariaLabel` prop to `BpkDialog`
   - Migrated `BpkDialog` from using `BpkModal` dependency for cleaner maintenance and separated functionality.
 
+**Fixed:**
+- bpk-component-chip: 4.1.13 => 4.1.14
+- bpk-mixins: 20.1.18 => 20.1.19
+  - Disabled chips no longer visually change when pressed.
+
 # 2021-02-19
 
 **Fixed:**
