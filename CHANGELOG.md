@@ -2,6 +2,12 @@
 
 [Unreleased changes](./UNRELEASED.md).
 
+# 2021-02-23
+
+**Fixed:**
+ - bpk-svgs: 12.3.1 => 12.3.2
+   - Fixed the baggage icons for iOS.
+
 # 2021-02-22
 
 **Breaking:**
