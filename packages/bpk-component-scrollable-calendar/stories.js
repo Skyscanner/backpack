@@ -43,7 +43,7 @@ import BpkScrollableCalendar, {
   BpkScrollableCalendarGridList,
 } from './index';
 
-export default class ScrollableCal extends Component {
+class ScrollableCal extends Component {
   constructor(props) {
     super(props);
 
