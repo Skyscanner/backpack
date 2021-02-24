@@ -21,6 +21,8 @@ import { withKnobs } from '@storybook/addon-knobs';
 import { withA11y } from '@storybook/addon-a11y';
 
 import '../packages/bpk-stylesheets';
+import '../packages/bpk-stylesheets/font';
+
 import TOKENS from '../packages/bpk-tokens/tokens/base.common';
 import BpkGridToggle from '../packages/bpk-component-grid-toggle';
 import BpkRtlToggle from '../packages/bpk-component-rtl-toggle';
