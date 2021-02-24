@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-content-container",
-  "version": "2.0.104",
+  "version": "2.0.105",
   "description": "Backpack content container component.",
   "license": "Apache-2.0",
   "repository": {
@@ -14,7 +14,7 @@
   },
   "gitHead": "c8978bb64de36b375fe7aab26a8b3d1b7a89f1d1",
   "dependencies": {
-    "bpk-mixins": "^20.1.21",
+    "bpk-mixins": "^20.1.22",
     "bpk-react-utils": "^3.0.11",
     "prop-types": "^15.6.2"
   },
