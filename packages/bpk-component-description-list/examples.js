@@ -26,10 +26,23 @@ import {
 
 const DefaultExample = () => (
   <BpkDescriptionList>
-    <BpkDescriptionTerm>Apples</BpkDescriptionTerm>
-    <BpkDescriptionDetails>A fruit</BpkDescriptionDetails>
-    <BpkDescriptionTerm>Pears</BpkDescriptionTerm>
-    <BpkDescriptionDetails>Another fruit</BpkDescriptionDetails>
+    <BpkDescriptionTerm>Airport code</BpkDescriptionTerm>
+    <BpkDescriptionDetails>
+      The three digit code which is unique to a specific airport. eg. LHR for
+      Heathrow or LGW for Gatwick.
+    </BpkDescriptionDetails>
+    <BpkDescriptionTerm>Boarding pass</BpkDescriptionTerm>
+    <BpkDescriptionDetails>
+      A card given to the passenger after check-in which allocates a seat number
+      or indicates a boarding pattern. The stub of the card should be retained
+      after going through the boarding gate to show to the flight crew once
+      reaching the aircraft.
+    </BpkDescriptionDetails>
+    <BpkDescriptionTerm>Charter</BpkDescriptionTerm>
+    <BpkDescriptionDetails>
+      An aircraft which is used by a specific group be it customers of a
+      particular holiday company or an individual party.
+    </BpkDescriptionDetails>
   </BpkDescriptionList>
 );
 

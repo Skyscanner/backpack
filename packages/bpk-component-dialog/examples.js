@@ -169,7 +169,7 @@ const NotDismissibleExample = () => (
 const WithFlareExample = () => (
   <DialogContainer flare dismissible={false}>
     <Paragraph>
-      This is a default dialog. You can put anything you want in here.
+      This is a dialog with a flare view added as the header.
     </Paragraph>
   </DialogContainer>
 );
