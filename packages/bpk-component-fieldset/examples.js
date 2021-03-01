@@ -38,7 +38,11 @@ import { cssModules } from 'bpk-react-utils';
 
 import STYLES from './examples.scss';
 
-import BpkFieldset from './index';
+import BpkFieldset, {
+  type BpkFieldsetProps,
+  propTypes,
+  defaultProps,
+} from './index';
 
 const getClassName = cssModules(STYLES);
 
@@ -114,7 +118,12 @@ const getSuggestionValue = suggestion =>
 
 let instances = 0;
 
-class Autosuggest extends Component {
+type AutosuggestState = {
+  value: string,
+  suggestions: Array<any>,
+};
+
+class Autosuggest extends Component<{}, AutosuggestState> {
   constructor() {
     super();
 
@@ -126,13 +135,16 @@ class Autosuggest extends Component {
     };
   }
 
-  onChange = (e, { newValue }) => {
+  onChange = (
+    e: SyntheticInputEvent<HTMLElement>,
+    { newValue }: { newValue: string },
+  ) => {
     this.setState({
       value: newValue,
     });
   };
 
-  onSuggestionsFetchRequested = ({ value }) => {
+  onSuggestionsFetchRequested = ({ value }: { value: string }) => {
     this.setState({
       suggestions: getSuggestions(value),
     });
@@ -180,7 +192,30 @@ class Autosuggest extends Component {
   }
 }
 
-class FieldsetContainer extends Component {
+type FieldsetProps = {
+  ...$Exact<BpkFieldsetProps>,
+  validStates: Array<mixed>,
+};
+
+type FieldsetState = {
+  value: string,
+  checked: boolean,
+  validState: any,
+  valueDate: ?Date,
+};
+
+class FieldsetContainer extends Component<FieldsetProps, FieldsetState> {
+  static propTypes = {
+    ...propTypes,
+    validStates: PropTypes.array.isRequired, // eslint-disable-line react/forbid-prop-types
+  };
+
+  static defaultProps = {
+    ...defaultProps,
+    isCheckbox: false,
+    disabled: false,
+  };
+
   constructor() {
     super();
 
@@ -192,14 +227,14 @@ class FieldsetContainer extends Component {
     };
   }
 
-  onChange = e => {
+  onChange = (e: SyntheticInputEvent<HTMLElement>) => {
     this.setState({
       value: e.target.value,
       checked: e.target.checked,
     });
   };
 
-  onDateSelect = dt => {
+  onDateSelect = (dt: Date) => {
     this.setState({
       valueDate: dt,
     });
@@ -246,6 +281,7 @@ class FieldsetContainer extends Component {
 
     return (
       <div className={getClassName('bpkdocs-fieldsets-page__container')}>
+        {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
         <BpkFieldset
           className={getClassName('bpkdocs-fieldsets-page__fieldset')}
           isCheckbox={isCheckbox}
@@ -263,18 +299,6 @@ class FieldsetContainer extends Component {
     );
   }
 }
-
-FieldsetContainer.propTypes = {
-  children: PropTypes.node.isRequired,
-  validStates: PropTypes.array.isRequired, // eslint-disable-line react/forbid-prop-types
-  isCheckbox: PropTypes.bool,
-  disabled: PropTypes.bool,
-};
-
-FieldsetContainer.defaultProps = {
-  isCheckbox: false,
-  disabled: false,
-};
 
 const InputExample = () => (
   <FieldsetContainer
@@ -330,7 +354,6 @@ const DatepickerExample = () => {
     <FieldsetContainer
       label="Date"
       validationMessage="Please select the 10th"
-      isDate
       validStates={[null, true, false]}
     >
       <BpkDatepicker
