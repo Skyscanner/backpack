@@ -16,23 +16,11 @@
  * limitations under the License.
  */
 
-import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import {
-  BpkDescriptionList,
-  BpkDescriptionTerm,
-  BpkDescriptionDetails,
-} from './index';
+import DefaultExample from './examples';
 
 storiesOf('bpk-component-description-list', module).add(
   'Description List',
-  () => (
-    <BpkDescriptionList>
-      <BpkDescriptionTerm>Apples</BpkDescriptionTerm>
-      <BpkDescriptionDetails>A fruit</BpkDescriptionDetails>
-      <BpkDescriptionTerm>Pears</BpkDescriptionTerm>
-      <BpkDescriptionDetails>Another fruit</BpkDescriptionDetails>
-    </BpkDescriptionList>
-  ),
+  DefaultExample,
 );
