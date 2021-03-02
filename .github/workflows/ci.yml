@@ -34,7 +34,9 @@ jobs:
         run: ./scripts/check-pristine-state package-lock.json
 
       - name: Run tests
-        run: npm test
+        run: |
+          nvm use
+          npm test
 
       - name: Build Storybook
         run: |
