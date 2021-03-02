@@ -24,10 +24,13 @@
     "react": "^16.0.0"
   },
   "devDependencies": {
+    "bpk-component-autosuggest": "^5.0.10",
+    "bpk-component-button": "^3.3.21",
     "bpk-component-calendar": "^7.0.68",
     "bpk-component-checkbox": "^2.2.39",
     "bpk-component-datepicker": "^11.3.36",
     "bpk-component-input": "^5.0.110",
-    "bpk-component-select": "^3.0.109"
+    "bpk-component-select": "^3.0.109",
+    "bpk-component-textarea": "^2.0.109"
   }
 }
