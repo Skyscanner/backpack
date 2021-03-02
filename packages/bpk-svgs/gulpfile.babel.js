@@ -168,6 +168,7 @@ const optimiseSvgs = size =>
                 'width',
                 'height',
                 'viewBox',
+                'fill-rule',
               ],
             },
           },

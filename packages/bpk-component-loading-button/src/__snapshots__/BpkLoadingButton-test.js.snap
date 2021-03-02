@@ -33,7 +33,6 @@ exports[`BpkLoadingButton should add only bpk specific classes if className prop
     >
       <path
         d="M11.293 19.713a1 1 0 0 0 1.414 0l7-7a1 1 0 0 0 0-1.414l-7-7a1 1 0 0 0-1.438 1.39l.024.024 5.293 5.293H5a1 1 0 0 0 0 2h11.586L11.293 18.3a1 1 0 0 0 0 1.414z"
-        fillRule="evenodd"
       />
     </svg>
   </span>
@@ -74,7 +73,6 @@ exports[`BpkLoadingButton should render correctly 1`] = `
     >
       <path
         d="M2.69 12a1.5 1.5 0 0 0 1.5 1.5h11.379l-4.94 4.94a1.5 1.5 0 0 0 2.122 2.12L21.31 12l-8.56-8.56a1.5 1.5 0 0 0-2.122 2.12l4.94 4.94H4.19a1.5 1.5 0 0 0-1.5 1.5z"
-        fillRule="evenodd"
       />
     </svg>
   </span>
@@ -114,7 +112,6 @@ exports[`BpkLoadingButton should render correctly with "large" and "destructive"
     >
       <path
         d="M11.293 19.713a1 1 0 0 0 1.414 0l7-7a1 1 0 0 0 0-1.414l-7-7a1 1 0 0 0-1.438 1.39l.024.024 5.293 5.293H5a1 1 0 0 0 0 2h11.586L11.293 18.3a1 1 0 0 0 0 1.414z"
-        fillRule="evenodd"
       />
     </svg>
   </span>
@@ -154,7 +151,6 @@ exports[`BpkLoadingButton should render correctly with "large" and "disabled" at
     >
       <path
         d="M11.293 19.713a1 1 0 0 0 1.414 0l7-7a1 1 0 0 0 0-1.414l-7-7a1 1 0 0 0-1.438 1.39l.024.024 5.293 5.293H5a1 1 0 0 0 0 2h11.586L11.293 18.3a1 1 0 0 0 0 1.414z"
-        fillRule="evenodd"
       />
     </svg>
   </span>
@@ -194,7 +190,6 @@ exports[`BpkLoadingButton should render correctly with "large" and "featured" at
     >
       <path
         d="M11.293 19.713a1 1 0 0 0 1.414 0l7-7a1 1 0 0 0 0-1.414l-7-7a1 1 0 0 0-1.438 1.39l.024.024 5.293 5.293H5a1 1 0 0 0 0 2h11.586L11.293 18.3a1 1 0 0 0 0 1.414z"
-        fillRule="evenodd"
       />
     </svg>
   </span>
@@ -238,7 +233,6 @@ exports[`BpkLoadingButton should render correctly with "large" and "iconOnly" at
     >
       <path
         d="M11.293 19.713a1 1 0 0 0 1.414 0l7-7a1 1 0 0 0 0-1.414l-7-7a1 1 0 0 0-1.438 1.39l.024.024 5.293 5.293H5a1 1 0 0 0 0 2h11.586L11.293 18.3a1 1 0 0 0 0 1.414z"
-        fillRule="evenodd"
       />
     </svg>
   </span>
@@ -278,7 +272,6 @@ exports[`BpkLoadingButton should render correctly with "large" and "link" attrib
     >
       <path
         d="M11.293 19.713a1 1 0 0 0 1.414 0l7-7a1 1 0 0 0 0-1.414l-7-7a1 1 0 0 0-1.438 1.39l.024.024 5.293 5.293H5a1 1 0 0 0 0 2h11.586L11.293 18.3a1 1 0 0 0 0 1.414z"
-        fillRule="evenodd"
       />
     </svg>
   </span>
@@ -397,7 +390,6 @@ exports[`BpkLoadingButton should render correctly with "large" and "secondary" a
     >
       <path
         d="M11.293 19.713a1 1 0 0 0 1.414 0l7-7a1 1 0 0 0 0-1.414l-7-7a1 1 0 0 0-1.438 1.39l.024.024 5.293 5.293H5a1 1 0 0 0 0 2h11.586L11.293 18.3a1 1 0 0 0 0 1.414z"
-        fillRule="evenodd"
       />
     </svg>
   </span>
@@ -438,7 +430,6 @@ exports[`BpkLoadingButton should render correctly with a "destructive" attribute
     >
       <path
         d="M2.69 12a1.5 1.5 0 0 0 1.5 1.5h11.379l-4.94 4.94a1.5 1.5 0 0 0 2.122 2.12L21.31 12l-8.56-8.56a1.5 1.5 0 0 0-2.122 2.12l4.94 4.94H4.19a1.5 1.5 0 0 0-1.5 1.5z"
-        fillRule="evenodd"
       />
     </svg>
   </span>
@@ -479,7 +470,6 @@ exports[`BpkLoadingButton should render correctly with a "disabled" attribute 1`
     >
       <path
         d="M2.69 12a1.5 1.5 0 0 0 1.5 1.5h11.379l-4.94 4.94a1.5 1.5 0 0 0 2.122 2.12L21.31 12l-8.56-8.56a1.5 1.5 0 0 0-2.122 2.12l4.94 4.94H4.19a1.5 1.5 0 0 0-1.5 1.5z"
-        fillRule="evenodd"
       />
     </svg>
   </span>
@@ -520,7 +510,6 @@ exports[`BpkLoadingButton should render correctly with a "featured" attribute 1`
     >
       <path
         d="M2.69 12a1.5 1.5 0 0 0 1.5 1.5h11.379l-4.94 4.94a1.5 1.5 0 0 0 2.122 2.12L21.31 12l-8.56-8.56a1.5 1.5 0 0 0-2.122 2.12l4.94 4.94H4.19a1.5 1.5 0 0 0-1.5 1.5z"
-        fillRule="evenodd"
       />
     </svg>
   </span>
@@ -562,7 +551,6 @@ exports[`BpkLoadingButton should render correctly with a "href" attribute 1`] = 
     >
       <path
         d="M2.69 12a1.5 1.5 0 0 0 1.5 1.5h11.379l-4.94 4.94a1.5 1.5 0 0 0 2.122 2.12L21.31 12l-8.56-8.56a1.5 1.5 0 0 0-2.122 2.12l4.94 4.94H4.19a1.5 1.5 0 0 0-1.5 1.5z"
-        fillRule="evenodd"
       />
     </svg>
   </span>
@@ -724,7 +712,6 @@ exports[`BpkLoadingButton should render correctly with a "iconOnly" attribute 1`
     >
       <path
         d="M2.69 12a1.5 1.5 0 0 0 1.5 1.5h11.379l-4.94 4.94a1.5 1.5 0 0 0 2.122 2.12L21.31 12l-8.56-8.56a1.5 1.5 0 0 0-2.122 2.12l4.94 4.94H4.19a1.5 1.5 0 0 0-1.5 1.5z"
-        fillRule="evenodd"
       />
     </svg>
   </span>
@@ -763,7 +750,6 @@ exports[`BpkLoadingButton should render correctly with a "iconPosition=leading" 
     >
       <path
         d="M2.69 12a1.5 1.5 0 0 0 1.5 1.5h11.379l-4.94 4.94a1.5 1.5 0 0 0 2.122 2.12L21.31 12l-8.56-8.56a1.5 1.5 0 0 0-2.122 2.12l4.94 4.94H4.19a1.5 1.5 0 0 0-1.5 1.5z"
-        fillRule="evenodd"
       />
     </svg>
   </span>
@@ -805,7 +791,6 @@ exports[`BpkLoadingButton should render correctly with a "large" attribute 1`] =
     >
       <path
         d="M11.293 19.713a1 1 0 0 0 1.414 0l7-7a1 1 0 0 0 0-1.414l-7-7a1 1 0 0 0-1.438 1.39l.024.024 5.293 5.293H5a1 1 0 0 0 0 2h11.586L11.293 18.3a1 1 0 0 0 0 1.414z"
-        fillRule="evenodd"
       />
     </svg>
   </span>
@@ -846,7 +831,6 @@ exports[`BpkLoadingButton should render correctly with a "link" attribute 1`] = 
     >
       <path
         d="M2.69 12a1.5 1.5 0 0 0 1.5 1.5h11.379l-4.94 4.94a1.5 1.5 0 0 0 2.122 2.12L21.31 12l-8.56-8.56a1.5 1.5 0 0 0-2.122 2.12l4.94 4.94H4.19a1.5 1.5 0 0 0-1.5 1.5z"
-        fillRule="evenodd"
       />
     </svg>
   </span>
@@ -1011,7 +995,6 @@ exports[`BpkLoadingButton should render correctly with a "secondary" attribute 1
     >
       <path
         d="M2.69 12a1.5 1.5 0 0 0 1.5 1.5h11.379l-4.94 4.94a1.5 1.5 0 0 0 2.122 2.12L21.31 12l-8.56-8.56a1.5 1.5 0 0 0-2.122 2.12l4.94 4.94H4.19a1.5 1.5 0 0 0-1.5 1.5z"
-        fillRule="evenodd"
       />
     </svg>
   </span>
@@ -1051,7 +1034,6 @@ exports[`BpkLoadingButton should respect the class names entered as a string 1`]
     >
       <path
         d="M11.293 19.713a1 1 0 0 0 1.414 0l7-7a1 1 0 0 0 0-1.414l-7-7a1 1 0 0 0-1.438 1.39l.024.024 5.293 5.293H5a1 1 0 0 0 0 2h11.586L11.293 18.3a1 1 0 0 0 0 1.414z"
-        fillRule="evenodd"
       />
     </svg>
   </span>
