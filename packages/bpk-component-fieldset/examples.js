@@ -250,7 +250,7 @@ class FieldsetContainer extends Component<FieldsetProps, FieldsetState> {
       }
 
       if (this.props.isCheckbox) {
-        if (prevState.checked === false) {
+        if (prevState.checked === false && nextValidState === 1) {
           isChecked = true;
         } else {
           isChecked = false;
@@ -266,12 +266,13 @@ class FieldsetContainer extends Component<FieldsetProps, FieldsetState> {
 
   render() {
     const { children, isCheckbox, validStates, ...rest } = this.props;
-
     const valid = validStates[this.state.validState];
 
     const dynamicProps = isCheckbox
       ? { checked: this.state.checked }
       : { value: this.state.value, date: this.state.valueDate, valid };
+
+    const dynamicFieldsetProps = isCheckbox ? { valid } : {};
 
     const clonedChildren = cloneElement(children, {
       onChange: this.onChange,
@@ -280,18 +281,19 @@ class FieldsetContainer extends Component<FieldsetProps, FieldsetState> {
     });
 
     return (
-      <div className={getClassName('bpkdocs-fieldsets-page__container')}>
+      <div className={getClassName('bpk-fieldsets__container')}>
         {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
         <BpkFieldset
-          className={getClassName('bpkdocs-fieldsets-page__fieldset')}
+          className={getClassName('bpk-fieldsets__fieldset')}
           isCheckbox={isCheckbox}
           valid={valid}
           {...rest}
+          {...dynamicFieldsetProps}
         >
           {clonedChildren}
         </BpkFieldset>
         {!this.props.disabled && (
-          <div className={getClassName('bpkdocs-fieldsets-page__toggle')}>
+          <div className={getClassName('bpk-fieldsets__toggle')}>
             <BpkButton onClick={this.toggleStates}>Toggle states</BpkButton>
           </div>
         )}
@@ -337,7 +339,7 @@ const SelectExample = () => (
 const CheckboxExample = () => (
   <FieldsetContainer
     validationMessage="Please accept our terms & conditions to continue."
-    validStates={[false, true]}
+    validStates={[null, true, false]}
     isCheckbox
   >
     <BpkCheckbox
