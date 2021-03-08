@@ -4,6 +4,10 @@
 
 # 2021-03-08
 
+**Added:**
+  - bpk-svgs: 12.3.6 => 12.4.0
+    - Added new `undo` and `redo` icons.
+
 **Fixed:**
   - bpk-svgs: 12.3.5 => 12.3.6
     - Fixed the following icons to be rounded: 
