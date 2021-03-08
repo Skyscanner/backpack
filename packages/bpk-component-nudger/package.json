@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-nudger",
-  "version": "2.0.116",
+  "version": "2.0.117",
   "description": "Backpack nudger component.",
   "license": "Apache-2.0",
   "repository": {
@@ -14,9 +14,9 @@
   },
   "gitHead": "79e9426ba627224294d8a6dcf5ecb898f2021cde",
   "dependencies": {
-    "bpk-component-button": "^3.3.23",
-    "bpk-component-icon": "^8.3.15",
-    "bpk-mixins": "^20.1.24",
+    "bpk-component-button": "^3.3.24",
+    "bpk-component-icon": "^8.3.16",
+    "bpk-mixins": "^20.1.25",
     "bpk-react-utils": "^3.0.11",
     "bpk-tokens": "^36.1.1",
     "lodash.clamp": "^4.0.3",
@@ -26,7 +26,7 @@
     "react": "^16.0.0"
   },
   "devDependencies": {
-    "bpk-component-label": "^4.0.108",
-    "bpk-storybook-utils": "^0.0.11"
+    "bpk-component-label": "^4.0.109",
+    "bpk-storybook-utils": "^0.0.12"
   }
 }
