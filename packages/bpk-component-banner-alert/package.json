@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-banner-alert",
-  "version": "4.2.63",
+  "version": "4.2.64",
   "description": "Backpack banner alert component.",
   "license": "Apache-2.0",
   "repository": {
@@ -14,19 +14,19 @@
   },
   "gitHead": "79e9426ba627224294d8a6dcf5ecb898f2021cde",
   "dependencies": {
-    "bpk-animate-height": "^3.0.68",
-    "bpk-component-close-button": "^2.0.111",
-    "bpk-component-icon": "^8.3.14",
-    "bpk-mixins": "^20.1.23",
+    "bpk-animate-height": "^3.0.69",
+    "bpk-component-close-button": "^2.0.112",
+    "bpk-component-icon": "^8.3.15",
+    "bpk-mixins": "^20.1.24",
     "bpk-react-utils": "^3.0.11",
     "bpk-tokens": "^36.1.1",
     "prop-types": "^15.6.2",
     "react-transition-group": "^2.5.3"
   },
   "devDependencies": {
-    "bpk-component-aria-live": "^1.0.27",
-    "bpk-component-button": "^3.3.22",
-    "bpk-storybook-utils": "^0.0.10"
+    "bpk-component-aria-live": "^1.0.28",
+    "bpk-component-button": "^3.3.23",
+    "bpk-storybook-utils": "^0.0.11"
   },
   "peerDependencies": {
     "react": "^16.0.0"
