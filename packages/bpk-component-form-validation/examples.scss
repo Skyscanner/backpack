@@ -1,7 +1,7 @@
 /*
  * Backpack - Skyscanner's Design System
  *
- * Copyright 2016-2021 Skyscanner Ltd
+ * Copyright 2016-2019 Skyscanner Ltd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,10 +16,24 @@
  * limitations under the License.
  */
 
-import { storiesOf } from '@storybook/react';
+@import '~bpk-mixins/index';
 
-import { DefaultExample, FormsExample } from './examples';
+.bpkdocs-forms-page {
+  &__viewport-alert {
+    display: none;
 
-storiesOf('bpk-component-form-validation', module)
-  .add('Default', DefaultExample)
-  .add('With forms', FormsExample);
+    @include bpk-breakpoint-tablet {
+      display: block;
+    }
+  }
+
+  &__form {
+    margin-bottom: $bpk-spacing-sm;
+
+    &--desktop-only {
+      @include bpk-breakpoint-tablet {
+        display: none;
+      }
+    }
+  }
+}
