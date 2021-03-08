@@ -2,10 +2,6 @@
 
 > Place your changes below this line.
 
-- bpk-svgs:
-  - Fixed the following icons to be rounded: 
-    - `call-back`, `depart`, `direct`, `download`, `logout`, `long-arrow-down`, `long-arrow-left`, `long-arrow-right`, `long-arrow-up`, `share--ios`, `sort`, `stops`, `swap--horizontal`, `swap--vertical`, `swap`, `trend--steady`.
-
 ## How to write a good changelog entry
 
 1. Add 'Breaking', 'Added' or 'Fixed' in bold depending on if the change will be major, minor or patch according to [semver](semver.org).
