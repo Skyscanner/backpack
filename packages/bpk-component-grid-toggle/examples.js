@@ -16,17 +16,10 @@
  * limitations under the License.
  */
 
-import { storiesOf } from '@storybook/react';
+import React from 'react';
 
-import {
-  DefaultExample,
-  FullWidthGridExample,
-  HomePageGridExample,
-  DayViewGridExample,
-} from './examples';
+import BpkGridToggle from './index';
 
-storiesOf('bpk-component-grid', module)
-  .add('Example', DefaultExample)
-  .add('Full width example', FullWidthGridExample)
-  .add('Home page example', HomePageGridExample)
-  .add('Day view example', DayViewGridExample);
+const DefaultExample = () => <BpkGridToggle />;
+
+export default DefaultExample;
