@@ -18,117 +18,21 @@
 
 /* @flow strict */
 
-import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { withDefaultProps } from 'bpk-react-utils';
-import BpkText from 'bpk-component-text';
-import { spacingSm, colorMonteverde } from 'bpk-tokens/tokens/base.es6';
 
-import BpkTooltip, { TOOLTIP_TYPES } from './index';
-
-const st = {
-  display: 'flex',
-  justifyContent: 'center',
-  alignItems: 'center',
-  height: '500px',
-  margin: '30px',
-  textAlign: 'center',
-};
-
-const Heading = withDefaultProps(BpkText, {
-  textStyle: 'xxxxl',
-  tagName: 'h1',
-});
+import {
+  DefaultExample,
+  DarkExample,
+  SideExample,
+  NoPaddingExample,
+  LinkExample,
+  PopperModifiersExample,
+} from './examples';
 
 storiesOf('bpk-component-tooltip', module)
-  .add('Default', () => (
-    <div style={st}>
-      <BpkTooltip id="my-tooltip" target={<Heading>£295</Heading>}>
-        This is the cheapest price!
-        <span role="img" aria-label="Thumbs up">
-          👍
-        </span>
-      </BpkTooltip>
-    </div>
-  ))
-  .add('Dark', () => (
-    <div style={st}>
-      <BpkTooltip
-        type={TOOLTIP_TYPES.dark}
-        id="my-tooltip"
-        target={<Heading>£295</Heading>}
-      >
-        This is the cheapest price!
-        <span role="img" aria-label="Thumbs up">
-          👍
-        </span>
-      </BpkTooltip>
-    </div>
-  ))
-  .add('On the side', () => (
-    <div style={st}>
-      <BpkTooltip
-        id="my-tooltip"
-        target={<Heading>£295</Heading>}
-        placement="right"
-      >
-        This is the cheapest price!
-        <span role="img" aria-label="Thumbs up">
-          👍
-        </span>
-      </BpkTooltip>
-    </div>
-  ))
-  .add('Custom content', () => (
-    <div style={{ height: '500px', margin: '30px', textAlign: 'center' }}>
-      <BpkTooltip
-        id="my-tooltip"
-        target={<Heading>£295</Heading>}
-        padded={false}
-      >
-        <div
-          style={{
-            borderBottomWidth: '5px',
-            borderBottomColor: colorMonteverde,
-            borderBottomStyle: 'solid',
-            padding: spacingSm,
-          }}
-        >
-          This is the cheapest price!
-        </div>
-      </BpkTooltip>
-    </div>
-  ))
-  .add('On a link', () => (
-    <div style={st}>
-      <BpkTooltip
-        id="my-tooltip"
-        target={
-          <a href="//skyscanner.net" target="_blank" rel="noopener noreferrer">
-            Click me!
-          </a>
-        }
-      >
-        Find cheap flights here!
-        <span role="img" aria-label="Plane">
-          ✈️
-        </span>
-      </BpkTooltip>
-    </div>
-  ))
-  .add('Popper modifiers', () => (
-    <div style={st}>
-      <BpkTooltip
-        id="my-tooltip"
-        target={<Heading>£295</Heading>}
-        popperModifiers={{
-          flip: { enabled: false },
-        }}
-      >
-        This is the cheapest price!
-        <span role="img" aria-label="Thumbs up">
-          👍
-        </span>
-      </BpkTooltip>
-    </div>
-  ));
+  .add('Default', DefaultExample)
+  .add('Dark', DarkExample)
+  .add('On the side', SideExample)
+  .add('Without padding', NoPaddingExample)
+  .add('On a link', LinkExample)
+  .add('Popper modifiers', PopperModifiersExample);

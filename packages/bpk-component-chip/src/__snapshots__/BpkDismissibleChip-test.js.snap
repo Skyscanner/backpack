@@ -2,7 +2,7 @@
 
 exports[`BpkDismissibleChip should ignore setting a trailing accessory view, resulting in a close icon 1`] = `
 <button
-  aria-checked={false}
+  aria-checked={null}
   className="bpk-chip bpk-chip--primary"
   disabled={false}
   onClick={[Function]}
@@ -36,7 +36,7 @@ exports[`BpkDismissibleChip should ignore setting a trailing accessory view, res
 
 exports[`BpkDismissibleChip should override setting selected={true}, resulting in selected={false} 1`] = `
 <button
-  aria-checked={false}
+  aria-checked={null}
   className="bpk-chip bpk-chip--primary"
   disabled={false}
   onClick={[Function]}
@@ -70,7 +70,7 @@ exports[`BpkDismissibleChip should override setting selected={true}, resulting i
 
 exports[`BpkDismissibleChip should render correctly 1`] = `
 <button
-  aria-checked={false}
+  aria-checked={null}
   className="bpk-chip bpk-chip--primary"
   disabled={false}
   onClick={[Function]}
@@ -104,7 +104,7 @@ exports[`BpkDismissibleChip should render correctly 1`] = `
 
 exports[`BpkDismissibleChip should render correctly with a "className" attribute 1`] = `
 <button
-  aria-checked={false}
+  aria-checked={null}
   className="bpk-chip bpk-chip--primary custom-class"
   disabled={false}
   onClick={[Function]}
@@ -138,7 +138,7 @@ exports[`BpkDismissibleChip should render correctly with a "className" attribute
 
 exports[`BpkDismissibleChip should render correctly with type="light" 1`] = `
 <button
-  aria-checked={false}
+  aria-checked={null}
   className="bpk-chip bpk-chip--light"
   disabled={false}
   onClick={[Function]}
@@ -172,7 +172,7 @@ exports[`BpkDismissibleChip should render correctly with type="light" 1`] = `
 
 exports[`BpkDismissibleChip should render correctly with type="light" and a leading accessory view 1`] = `
 <button
-  aria-checked={false}
+  aria-checked={null}
   className="bpk-chip bpk-chip--light"
   disabled={false}
   onClick={[Function]}
@@ -213,7 +213,7 @@ exports[`BpkDismissibleChip should render correctly with type="light" and a lead
 
 exports[`BpkDismissibleChip should render correctly with type="light" and disabled 1`] = `
 <button
-  aria-checked={false}
+  aria-checked={null}
   className="bpk-chip bpk-chip--light bpk-chip--disabled"
   disabled={true}
   onClick={[Function]}
@@ -247,7 +247,7 @@ exports[`BpkDismissibleChip should render correctly with type="light" and disabl
 
 exports[`BpkDismissibleChip should render correctly with type="primary" 1`] = `
 <button
-  aria-checked={false}
+  aria-checked={null}
   className="bpk-chip bpk-chip--primary"
   disabled={false}
   onClick={[Function]}
@@ -281,7 +281,7 @@ exports[`BpkDismissibleChip should render correctly with type="primary" 1`] = `
 
 exports[`BpkDismissibleChip should render correctly with type="primary" and a leading accessory view 1`] = `
 <button
-  aria-checked={false}
+  aria-checked={null}
   className="bpk-chip bpk-chip--primary"
   disabled={false}
   onClick={[Function]}
@@ -322,7 +322,7 @@ exports[`BpkDismissibleChip should render correctly with type="primary" and a le
 
 exports[`BpkDismissibleChip should render correctly with type="primary" and disabled 1`] = `
 <button
-  aria-checked={false}
+  aria-checked={null}
   className="bpk-chip bpk-chip--primary bpk-chip--disabled"
   disabled={true}
   onClick={[Function]}
@@ -356,7 +356,7 @@ exports[`BpkDismissibleChip should render correctly with type="primary" and disa
 
 exports[`BpkDismissibleChip should render correctly with type="success" 1`] = `
 <button
-  aria-checked={false}
+  aria-checked={null}
   className="bpk-chip bpk-chip--success"
   disabled={false}
   onClick={[Function]}
@@ -390,7 +390,7 @@ exports[`BpkDismissibleChip should render correctly with type="success" 1`] = `
 
 exports[`BpkDismissibleChip should render correctly with type="success" and a leading accessory view 1`] = `
 <button
-  aria-checked={false}
+  aria-checked={null}
   className="bpk-chip bpk-chip--success"
   disabled={false}
   onClick={[Function]}
@@ -431,7 +431,7 @@ exports[`BpkDismissibleChip should render correctly with type="success" and a le
 
 exports[`BpkDismissibleChip should render correctly with type="success" and disabled 1`] = `
 <button
-  aria-checked={false}
+  aria-checked={null}
   className="bpk-chip bpk-chip--success bpk-chip--disabled"
   disabled={true}
   onClick={[Function]}
