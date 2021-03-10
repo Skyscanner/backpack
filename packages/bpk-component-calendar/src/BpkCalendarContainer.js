@@ -41,7 +41,14 @@ const focusedDateHasChanged = (currentProps, nextProps) => {
   const rawNextSelectedDate = nextProps.selectedDate || nextProps.date;
   const rawSelectedDate = currentProps.selectedDate || currentProps.date;
 
-  if (!rawNextSelectedDate) {
+  if (!rawSelectedDate && !rawNextSelectedDate) {
+    return false;
+  }
+
+  if (
+    (rawSelectedDate && !rawNextSelectedDate) ||
+    (!rawSelectedDate && rawNextSelectedDate)
+  ) {
     return true;
   }
 
