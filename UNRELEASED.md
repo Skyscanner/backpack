@@ -2,6 +2,9 @@
 
 > Place your changes below this line.
 
+**Fixed:**
+  - bpk-component-chip:
+    - Fixed an A11y issue with `BpkDismissibleChip` when `role="button"`, `aria-checked` was applied.
 ## How to write a good changelog entry
 
 1. Add 'Breaking', 'Added' or 'Fixed' in bold depending on if the change will be major, minor or patch according to [semver](semver.org).
