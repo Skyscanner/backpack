@@ -57,12 +57,14 @@ class StatefulSelectableChip extends React.Component<
 > {
   static propTypes = {
     ...COMMON_PROP_TYPES,
+    role: PropTypes.string,
     selected: PropTypes.bool,
     trailingAccessoryView: PropTypes.node,
   };
 
   static defaultProps = {
     ...COMMON_DEFAULT_PROPS,
+    role: 'checkbox',
     selected: false,
     trailingAccessoryView: null,
   };

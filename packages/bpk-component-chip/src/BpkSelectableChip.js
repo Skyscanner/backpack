@@ -88,16 +88,16 @@ const BpkSelectableChip = (props: Props) => {
 
 BpkSelectableChip.propTypes = {
   ...COMMON_PROP_TYPES,
+  role: PropTypes.string,
   selected: PropTypes.bool,
   trailingAccessoryView: PropTypes.node,
-  role: PropTypes.string,
 };
 
 BpkSelectableChip.defaultProps = {
   ...COMMON_DEFAULT_PROPS,
+  role: 'checkbox',
   selected: false,
   trailingAccessoryView: null,
-  role: 'checkbox',
 };
 
 export default BpkSelectableChip;
