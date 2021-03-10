@@ -33,6 +33,7 @@ const getClassName = cssModules(STYLES);
 
 export type Props = {
   ...CommonProps,
+  role: string,
   selected: boolean,
   trailingAccessoryView: ?Node,
 };
@@ -44,6 +45,7 @@ const BpkSelectableChip = (props: Props) => {
     className,
     disabled,
     leadingAccessoryView,
+    role,
     selected,
     trailingAccessoryView,
     type,
@@ -61,10 +63,10 @@ const BpkSelectableChip = (props: Props) => {
   return (
     // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'
     <button
-      aria-checked={selected}
+      aria-checked={role === 'button' ? null : selected}
       className={classNames}
       disabled={disabled}
-      role="checkbox"
+      role={role}
       title={accessibilityLabel}
       type="button"
       {...rest}
@@ -88,12 +90,14 @@ BpkSelectableChip.propTypes = {
   ...COMMON_PROP_TYPES,
   selected: PropTypes.bool,
   trailingAccessoryView: PropTypes.node,
+  role: PropTypes.string,
 };
 
 BpkSelectableChip.defaultProps = {
   ...COMMON_DEFAULT_PROPS,
   selected: false,
   trailingAccessoryView: null,
+  role: 'checkbox',
 };
 
 export default BpkSelectableChip;
