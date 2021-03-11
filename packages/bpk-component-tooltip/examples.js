@@ -76,7 +76,6 @@ const SideExample = () => (
 
 const NoPaddingExample = () => (
   <div style={wrapperStyle}>
-    {' '}
     <BpkTooltip
       ariaLabel="Singapore Changi Airport"
       id="my-tooltip"
