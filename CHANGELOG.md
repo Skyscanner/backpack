@@ -2,6 +2,16 @@
 
 [Unreleased changes](./UNRELEASED.md).
 
+# 2021-03-11
+
+**Fixed:**
+
+- bpk-component-calendar: 7.0.71 => 7.0.72
+  - A change from selectedDate from `Date` -> `null` is reflected in focussed date
+
+- bpk-component-chip: 4.1.22 => 4.1.23
+  - Fixed an A11y issue with `BpkDismissibleChip` when `role="button"`, `aria-checked` was applied.
+
 # 2021-03-08
 
 **Added:**
