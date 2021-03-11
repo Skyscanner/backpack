@@ -49,6 +49,8 @@ const App = () => (
 
 Tooltips are invisible to assistive technologies such as screen readers. To improve accessibility, `ariaLabel` is required to describe the content of the tooltip to assistive technologies.
 
+The label will be used on the `target` element, so any existing `aria-label` attached to `target` will be overridden.
+
 #### `popperModifiers`
 
 Please refer to the [documentation](https://github.com/FezVrasta/popper.js/blob/v1.12.9/docs/_includes/popper-documentation.md#modifiers) for the underlying positioning library "Popper.js". You can achieve various behaviours such as allowing the tooltip to overflow the viewport etc.
