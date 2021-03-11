@@ -4,6 +4,11 @@
 
 # 2021-03-11
 
+**Breaking:**
+
+- bpk-component-tooltip: 4.1.65 => 5.0.1
+  - Added a required `ariaLabel` prop to improve accessibility. You **must** include this prop to describe the tooltip's content to assistive technologies. See [the documentation](https://backpack.github.io/components/tooltip/?platform=web#readme) for more information.
+
 **Fixed:**
 
 - bpk-component-calendar: 7.0.71 => 7.0.72
