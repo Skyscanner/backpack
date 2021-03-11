@@ -125,6 +125,34 @@ describe('BpkCalendarContainer', () => {
     expect(onDateSelect.mock.calls[0][0]).toEqual(new Date(2010, 1, 20));
   });
 
+  it('should account for focus state if selectedDate is set to null', () => {
+    const onDateSelect = jest.fn();
+    const initialSelectedDate = new Date(2010, 2, 1);
+    const minDate = new Date(2010, 1, 15);
+    const maxDate = new Date(2010, 2, 15);
+
+    const calendar = mount(
+      <BpkCalendarContainer
+        formatMonth={formatMonth}
+        formatDateFull={formatDateFull}
+        daysOfWeek={weekDays}
+        weekStartsOn={1}
+        changeMonthLabel="Change month"
+        id="myCalendar"
+        minDate={minDate}
+        maxDate={maxDate}
+        selectedDate={initialSelectedDate}
+        onDateSelect={onDateSelect}
+      />,
+    );
+
+    expect(calendar.state('focusedDate')).toEqual(initialSelectedDate);
+
+    calendar.setProps({ selectedDate: null });
+
+    expect(calendar.state('focusedDate')).toEqual(minDate);
+  });
+
   it('should set state only once on date selection', () => {
     const setStateSpy = jest.fn();
     const oldSetState = BpkCalendarContainer.prototype.setState;

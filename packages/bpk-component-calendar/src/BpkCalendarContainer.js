@@ -41,9 +41,18 @@ const focusedDateHasChanged = (currentProps, nextProps) => {
   const rawNextSelectedDate = nextProps.selectedDate || nextProps.date;
   const rawSelectedDate = currentProps.selectedDate || currentProps.date;
 
-  return (
-    rawNextSelectedDate && !isSameDay(rawNextSelectedDate, rawSelectedDate)
-  );
+  if (!rawSelectedDate && !rawNextSelectedDate) {
+    return false;
+  }
+
+  if (
+    (rawSelectedDate && !rawNextSelectedDate) ||
+    (!rawSelectedDate && rawNextSelectedDate)
+  ) {
+    return true;
+  }
+
+  return !isSameDay(rawNextSelectedDate, rawSelectedDate);
 };
 
 const determineFocusedDate = (
