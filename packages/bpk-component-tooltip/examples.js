@@ -27,11 +27,8 @@ import BpkTooltip, { TOOLTIP_TYPES } from './index';
 
 const wrapperStyle = {
   display: 'flex',
-  justifyContent: 'center',
+  justifyContent: 'start',
   alignItems: 'center',
-  height: '500px',
-  margin: '30px',
-  textAlign: 'center',
 };
 
 const Heading = withDefaultProps(BpkText, {
@@ -78,7 +75,8 @@ const SideExample = () => (
 );
 
 const NoPaddingExample = () => (
-  <div style={{ height: '500px', margin: '30px', textAlign: 'center' }}>
+  <div style={wrapperStyle}>
+    {' '}
     <BpkTooltip
       ariaLabel="Singapore Changi Airport"
       id="my-tooltip"
