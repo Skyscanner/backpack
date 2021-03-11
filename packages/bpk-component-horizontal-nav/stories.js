@@ -16,143 +16,29 @@
  * limitations under the License.
  */
 
-import React, { Fragment } from 'react';
 import { storiesOf } from '@storybook/react';
-import { cssModules } from 'bpk-react-utils';
+
 import {
-  spacingXs,
-  spacingSm,
-  onePixelRem,
-  colorSkyGrayTint06,
-} from 'bpk-tokens/tokens/base.es6';
-import BpkText from 'bpk-component-text';
-
-import STYLES from './stories.scss';
-
-import BpkHorizontalNav, {
-  BpkHorizontalNavItem,
-  HORIZONTAL_NAV_TYPES,
-} from './index';
-
-const getClassName = cssModules(STYLES);
-
-const Separator = () => (
-  <span
-    style={{
-      padding: `${spacingXs} ${spacingSm}`,
-    }}
-  >
-    <span
-      style={{
-        display: 'flex',
-        height: '100%',
-        paddingRight: onePixelRem,
-        backgroundColor: colorSkyGrayTint06,
-      }}
-    />
-  </span>
-);
+  DefaultExample,
+  ScrollToSelectedExample,
+  NotUnderlinedExample,
+  LightAppearanceExample,
+  UsingCustomScrollColors,
+  AnchorTagsExample,
+  ExtremeExample,
+  SpacedAroundExample,
+  DisabledItemExample,
+  SeparatorsExample,
+} from './examples';
 
 storiesOf('bpk-component-horizontal-nav', module)
-  .add('Example', () => (
-    <BpkHorizontalNav>
-      <BpkHorizontalNavItem>Flights</BpkHorizontalNavItem>
-      <BpkHorizontalNavItem selected>Hotels</BpkHorizontalNavItem>
-      <BpkHorizontalNavItem>Car hire</BpkHorizontalNavItem>
-    </BpkHorizontalNav>
-  ))
-  .add('Scroll to selected element', () => (
-    <Fragment>
-      <BpkText>
-        Note - this story works best when viewing the storybook frame alone
-      </BpkText>
-      <div
-        className={getClassName('bpk-horizontal-nav-stories__narrow-container')}
-      >
-        <BpkHorizontalNav autoScrollToSelected>
-          <BpkHorizontalNavItem>Flights</BpkHorizontalNavItem>
-          <BpkHorizontalNavItem>Hotels</BpkHorizontalNavItem>
-          <BpkHorizontalNavItem selected>Car hire</BpkHorizontalNavItem>
-        </BpkHorizontalNav>
-      </div>
-    </Fragment>
-  ))
-  .add('Not underlined', () => (
-    <BpkHorizontalNav showUnderline={false}>
-      <BpkHorizontalNavItem>Flights</BpkHorizontalNavItem>
-      <BpkHorizontalNavItem selected>Hotels</BpkHorizontalNavItem>
-      <BpkHorizontalNavItem>Car hire</BpkHorizontalNavItem>
-    </BpkHorizontalNav>
-  ))
-  .add('Light appearance', () => (
-    <div
-      className={getClassName(
-        'bpk-horizontal-nav-stories__light-appearance-wrapper',
-      )}
-    >
-      <BpkHorizontalNav type={HORIZONTAL_NAV_TYPES.light}>
-        <BpkHorizontalNavItem>Flights</BpkHorizontalNavItem>
-        <BpkHorizontalNavItem selected>Hotels</BpkHorizontalNavItem>
-        <BpkHorizontalNavItem>Car hire</BpkHorizontalNavItem>
-      </BpkHorizontalNav>
-    </div>
-  ))
-  .add('Using custom scroll colors', () => (
-    <BpkHorizontalNav
-      className={getClassName('bpk-horizontal-nav-custom-scrollers')}
-      leadingScrollIndicatorClassName={getClassName(
-        'bpk-horizontal-nav-custom-scrollers--leading',
-      )}
-      trailingScrollIndicatorClassName={getClassName(
-        'bpk-horizontal-nav-custom-scrollers--trailing',
-      )}
-    >
-      <BpkHorizontalNavItem>Flights</BpkHorizontalNavItem>
-      <BpkHorizontalNavItem selected>Hotels</BpkHorizontalNavItem>
-      <BpkHorizontalNavItem>Car hire</BpkHorizontalNavItem>
-    </BpkHorizontalNav>
-  ))
-  .add('Anchor tags', () => (
-    <BpkHorizontalNav>
-      <BpkHorizontalNavItem href="#">Flights</BpkHorizontalNavItem>
-      <BpkHorizontalNavItem selected href="#">
-        Hotels
-      </BpkHorizontalNavItem>
-      <BpkHorizontalNavItem href="#">Car hire</BpkHorizontalNavItem>
-    </BpkHorizontalNav>
-  ))
-  .add('Extreme example', () => (
-    <BpkHorizontalNav>
-      <BpkHorizontalNavItem selected>
-        Flights Flights Flights Flights Flights Flights Flights Flights Flights
-        Flights Flights Flights Flights Flights Flights Flights
-      </BpkHorizontalNavItem>
-      <BpkHorizontalNavItem>
-        HotelsHotelsHotelsHotelsHotelsHotels
-      </BpkHorizontalNavItem>
-      <BpkHorizontalNavItem>Car hire</BpkHorizontalNavItem>
-    </BpkHorizontalNav>
-  ))
-  .add('Space around', () => (
-    <BpkHorizontalNav spaceAround>
-      <BpkHorizontalNavItem>Flights</BpkHorizontalNavItem>
-      <BpkHorizontalNavItem>Hotels</BpkHorizontalNavItem>
-      <BpkHorizontalNavItem selected>Car hire</BpkHorizontalNavItem>
-    </BpkHorizontalNav>
-  ))
-  .add('Disabled item', () => (
-    <BpkHorizontalNav>
-      <BpkHorizontalNavItem>Flights</BpkHorizontalNavItem>
-      <BpkHorizontalNavItem>Hotels</BpkHorizontalNavItem>
-      <BpkHorizontalNavItem disabled>Car hire</BpkHorizontalNavItem>
-    </BpkHorizontalNav>
-  ))
-  .add('Separators', () => (
-    <BpkHorizontalNav>
-      <BpkHorizontalNavItem selected>Flights</BpkHorizontalNavItem>
-      <Separator />
-      <BpkHorizontalNavItem>Hotels</BpkHorizontalNavItem>
-      <Separator />
-      <BpkHorizontalNavItem>Car hire</BpkHorizontalNavItem>
-    </BpkHorizontalNav>
-  ));
+  .add('Example', DefaultExample)
+  .add('Scroll to selected element', ScrollToSelectedExample)
+  .add('Not underlined', NotUnderlinedExample)
+  .add('Light appearance', LightAppearanceExample)
+  .add('Using custom scroll colors', UsingCustomScrollColors)
+  .add('Anchor tags', AnchorTagsExample)
+  .add('Extreme example', ExtremeExample)
+  .add('Space around', SpacedAroundExample)
+  .add('Disabled item', DisabledItemExample)
+  .add('Separators', SeparatorsExample);
