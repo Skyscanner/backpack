@@ -2,6 +2,11 @@
 
 > Place your changes below this line.
 
+**Breaking:**
+
+- bpk-component-tooltip:
+  - Added a required `ariaLabel` prop to improve accessibility. You **must** include this prop to describe the tooltip's content to assistive technologies. See [the documentation](https://backpack.github.io/components/tooltip/?platform=web#readme) for more information.
+
 ## How to write a good changelog entry
 
 1. Add 'Breaking', 'Added' or 'Fixed' in bold depending on if the change will be major, minor or patch according to [semver](semver.org).

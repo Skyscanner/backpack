@@ -20,7 +20,7 @@
 
 import Popper from '@skyscanner/popper.js';
 import PropTypes from 'prop-types';
-import React, { Component, type Node } from 'react';
+import React, { Component, type Node, type Element } from 'react';
 import { Portal, cssModules } from 'bpk-react-utils';
 
 import BpkTooltip, {
@@ -42,7 +42,8 @@ const hasTouchSupport = () =>
 
 export type Props = {
   ...$Exact<TooltipProps>,
-  target: Node,
+  ariaLabel: string,
+  target: Element<any>,
   children: Node,
   placement: 'top' | 'right' | 'bottom' | 'left' | 'auto',
   hideOnTouchDevices: boolean,
@@ -63,6 +64,7 @@ class BpkTooltipPortal extends Component<Props, State> {
 
   static propTypes = {
     ...tooltipPropTypes,
+    ariaLabel: PropTypes.string.isRequired,
     target: PropTypes.node.isRequired,
     children: PropTypes.node.isRequired,
     placement: PropTypes.oneOf(Popper.placements),
@@ -98,6 +100,8 @@ class BpkTooltipPortal extends Component<Props, State> {
     if (this.targetRef) {
       const ref = this.targetRef;
 
+      ref.addEventListener('focusin', this.openTooltip);
+      ref.addEventListener('focusout', this.closeTooltip);
       ref.addEventListener('mouseenter', this.openTooltip);
       ref.addEventListener('mouseleave', this.closeTooltip);
     }
@@ -107,6 +111,8 @@ class BpkTooltipPortal extends Component<Props, State> {
     if (this.targetRef) {
       const ref = this.targetRef;
 
+      ref.addEventListener('focusin', this.openTooltip);
+      ref.addEventListener('focusout', this.closeTooltip);
       ref.removeEventListener('mouseenter', this.openTooltip);
       ref.removeEventListener('mouseleave', this.closeTooltip);
     }
@@ -154,6 +160,7 @@ class BpkTooltipPortal extends Component<Props, State> {
 
   render() {
     const {
+      ariaLabel,
       padded,
       target,
       children,
@@ -169,13 +176,18 @@ class BpkTooltipPortal extends Component<Props, State> {
     const classNames = [getClassName('bpk-tooltip-portal')];
     const renderPortal = !hasTouchSupport() || !hideOnTouchDevices;
 
+    const targetWithAccessibilityProps = React.cloneElement(target, {
+      tabIndex: '0',
+      'aria-label': ariaLabel,
+    });
+
     if (portalClassName) {
       classNames.push(portalClassName);
     }
 
     return renderPortal ? (
       <Portal
-        target={target}
+        target={targetWithAccessibilityProps}
         targetRef={targetRef => {
           this.targetRef = targetRef;
         }}
@@ -192,7 +204,7 @@ class BpkTooltipPortal extends Component<Props, State> {
         </BpkTooltip>
       </Portal>
     ) : (
-      target
+      targetWithAccessibilityProps
     );
   }
 }

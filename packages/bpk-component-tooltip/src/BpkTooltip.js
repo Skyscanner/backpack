@@ -18,6 +18,12 @@
 
 /* @flow strict */
 
+/*
+This is the component for the tooltip that is displayed to users.
+
+The actual component that developers create (i.e. the default export from this package) is BpkTooltipPortal.
+*/
+
 import PropTypes from 'prop-types';
 import React, { type Node } from 'react';
 import { TransitionInitialMount, cssModules } from 'bpk-react-utils';

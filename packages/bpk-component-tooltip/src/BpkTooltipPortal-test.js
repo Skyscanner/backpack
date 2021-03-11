@@ -39,7 +39,11 @@ describe('BpkTooltipPortal', () => {
   it('should render correctly', () => {
     const tree = renderer
       .create(
-        <BpkTooltipPortal id="my-tooltip" target={<div>target</div>}>
+        <BpkTooltipPortal
+          ariaLabel="My tooltip content"
+          id="my-tooltip"
+          target={<div>target</div>}
+        >
           My tooltip content
         </BpkTooltipPortal>,
       )
@@ -52,6 +56,7 @@ describe('BpkTooltipPortal', () => {
     const tree = renderer
       .create(
         <BpkTooltipPortal
+          ariaLabel="My tooltip content"
           id="my-tooltip"
           target={<div>target</div>}
           portalClassName="my-custom-class"
@@ -68,6 +73,7 @@ describe('BpkTooltipPortal', () => {
     const tree = renderer
       .create(
         <BpkTooltipPortal
+          ariaLabel="My tooltip content"
           id="my-tooltip"
           target={<div>target</div>}
           className="my-custom-class"
@@ -84,6 +90,7 @@ describe('BpkTooltipPortal', () => {
     const tree = renderer
       .create(
         <BpkTooltipPortal
+          ariaLabel="My tooltip content"
           id="my-tooltip"
           target={<div>target</div>}
           portalStyle={{ color: colorPanjin }}

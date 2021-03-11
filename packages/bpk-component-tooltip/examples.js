@@ -41,7 +41,11 @@ const Heading = withDefaultProps(BpkText, {
 
 const DefaultExample = () => (
   <div style={wrapperStyle}>
-    <BpkTooltip id="my-tooltip" target={<Heading>YUL</Heading>}>
+    <BpkTooltip
+      ariaLabel="Montréal-Trudeau International Airport"
+      id="my-tooltip"
+      target={<Heading>YUL</Heading>}
+    >
       Montréal-Trudeau International Airport
     </BpkTooltip>
   </div>
@@ -50,6 +54,7 @@ const DefaultExample = () => (
 const DarkExample = () => (
   <div style={wrapperStyle}>
     <BpkTooltip
+      ariaLabel="Edinburgh Airport"
       type={TOOLTIP_TYPES.dark}
       id="my-tooltip"
       target={<Heading>EDI</Heading>}
@@ -62,6 +67,7 @@ const DarkExample = () => (
 const SideExample = () => (
   <div style={wrapperStyle}>
     <BpkTooltip
+      ariaLabel="Julius Nyerere International Airport, Dar es Salaam"
       id="my-tooltip"
       target={<Heading>DAR</Heading>}
       placement="right"
@@ -73,7 +79,12 @@ const SideExample = () => (
 
 const NoPaddingExample = () => (
   <div style={{ height: '500px', margin: '30px', textAlign: 'center' }}>
-    <BpkTooltip id="my-tooltip" target={<Heading>SIN</Heading>} padded={false}>
+    <BpkTooltip
+      ariaLabel="Singapore Changi Airport"
+      id="my-tooltip"
+      target={<Heading>SIN</Heading>}
+      padded={false}
+    >
       <div
         style={{
           borderBottomWidth: '5px',
@@ -91,6 +102,7 @@ const NoPaddingExample = () => (
 const LinkExample = () => (
   <div style={wrapperStyle}>
     <BpkTooltip
+      ariaLabel="We do hotels too!"
       id="my-tooltip"
       target={
         <a
@@ -110,6 +122,7 @@ const LinkExample = () => (
 const PopperModifiersExample = () => (
   <div style={wrapperStyle}>
     <BpkTooltip
+      ariaLabel="Berlin Brandenburg Airport"
       id="my-tooltip"
       target={<Heading>BER</Heading>}
       popperModifiers={{
@@ -121,6 +134,42 @@ const PopperModifiersExample = () => (
   </div>
 );
 
+const FocusExample = () => (
+  <div style={wrapperStyle}>
+    <BpkTooltip
+      ariaLabel="Should be focused on first"
+      id="my-tooltip"
+      target={<Heading>One</Heading>}
+    >
+      Should be focused on first
+    </BpkTooltip>
+    <BpkTooltip
+      ariaLabel="Should be focused on second"
+      id="my-tooltip"
+      target={<Heading>Two</Heading>}
+    >
+      Should be focused on second
+    </BpkTooltip>
+    <BpkTooltip
+      ariaLabel="Should be focused on third"
+      id="my-tooltip"
+      target={<Heading>Three</Heading>}
+    >
+      Should be focused on third
+    </BpkTooltip>
+    <button type="button" onClick={() => {}}>
+      Four
+    </button>
+    <BpkTooltip
+      ariaLabel="Should be focused on fifth"
+      id="my-tooltip"
+      target={<Heading>Five</Heading>}
+    >
+      Should be focused on fifth
+    </BpkTooltip>
+  </div>
+);
+
 export {
   DefaultExample,
   DarkExample,
@@ -128,4 +177,5 @@ export {
   NoPaddingExample,
   LinkExample,
   PopperModifiersExample,
+  FocusExample,
 };
