@@ -27,6 +27,7 @@ import {
   NoPaddingExample,
   LinkExample,
   PopperModifiersExample,
+  FocusExample,
 } from './examples';
 
 storiesOf('bpk-component-tooltip', module)
@@ -35,4 +36,5 @@ storiesOf('bpk-component-tooltip', module)
   .add('On the side', SideExample)
   .add('Without padding', NoPaddingExample)
   .add('On a link', LinkExample)
-  .add('Popper modifiers', PopperModifiersExample);
+  .add('Popper modifiers', PopperModifiersExample)
+  .add('Focus example', FocusExample);

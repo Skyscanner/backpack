@@ -9,7 +9,10 @@ exports[`BpkTooltipPortal should render correctly 1`] = `
   renderTarget={null}
   style={null}
   target={
-    <div>
+    <div
+      aria-label="My tooltip content"
+      tabIndex="0"
+    >
       target
     </div>
   }
@@ -44,7 +47,10 @@ exports[`BpkTooltipPortal should render correctly with a custom portal className
   renderTarget={null}
   style={null}
   target={
-    <div>
+    <div
+      aria-label="My tooltip content"
+      tabIndex="0"
+    >
       target
     </div>
   }
@@ -79,7 +85,10 @@ exports[`BpkTooltipPortal should render correctly with a custom tooltip classNam
   renderTarget={null}
   style={null}
   target={
-    <div>
+    <div
+      aria-label="My tooltip content"
+      tabIndex="0"
+    >
       target
     </div>
   }
@@ -118,7 +127,10 @@ exports[`BpkTooltipPortal should render correctly with custom portal style 1`] =
     }
   }
   target={
-    <div>
+    <div
+      aria-label="My tooltip content"
+      tabIndex="0"
+    >
       target
     </div>
   }
