@@ -16,70 +16,27 @@
  * limitations under the License.
  */
 
-import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { colors } from 'bpk-tokens/tokens/base.es6';
-
-import BpkButton from '../bpk-component-button';
-import { BpkList, BpkListItem } from '../bpk-component-list';
-
-import { sm, lg } from './all';
-import SmallLongArrowRightIcon from './sm/long-arrow-right';
-import LargeLongArrowRightIcon from './lg/long-arrow-right';
 
 import {
-  withButtonAlignment,
-  withLargeButtonAlignment,
-  withRtlSupport,
-} from './index';
-
-const AlignedSmallLongArrowRightIcon = withButtonAlignment(
-  SmallLongArrowRightIcon,
-);
-const AlignedLargeLongArrowRightIcon = withLargeButtonAlignment(
-  LargeLongArrowRightIcon,
-);
-const RtlAlignedLargeLongArrowRightIcon = withRtlSupport(
-  withLargeButtonAlignment(LargeLongArrowRightIcon),
-);
+  SmallIconsExample,
+  LargeIconsExample,
+  AlignToBaseTextExample,
+  AlignToLargeTextExample,
+  AlignSmallTextToIconExample,
+  AlignTextToIconExample,
+  AlignToButtonExample,
+  AlignToLargeButtonExample,
+  AlignToLargeButtonRTLExample,
+} from './examples';
 
 storiesOf('bpk-component-icon', module)
-  .add('Small icons', () => (
-    <BpkList>
-      {Object.keys(sm).map(icon => {
-        const Icon = sm[icon];
-        return (
-          <BpkListItem key={icon}>
-            <Icon fill={colors.colorSkyGrayTint01} /> <span>{icon}</span>
-          </BpkListItem>
-        );
-      })}
-    </BpkList>
-  ))
-  .add('Large icons', () => (
-    <BpkList>
-      {Object.keys(lg).map(icon => {
-        const Icon = lg[icon];
-        return (
-          <BpkListItem key={icon}>
-            <Icon fill={colors.colorSkyGrayTint01} /> <span>{icon}</span>
-          </BpkListItem>
-        );
-      })}
-    </BpkList>
-  ))
-  .add('Align to button', () => (
-    <BpkButton>
-      Search <AlignedSmallLongArrowRightIcon fill={colors.colorWhite} />
-    </BpkButton>
-  ))
-  .add('Align to large button', () => (
-    <BpkButton large>
-      Search <AlignedLargeLongArrowRightIcon fill={colors.colorWhite} />
-    </BpkButton>
-  ))
-  .add('Align to large button (RTL support)', () => (
-    <BpkButton large>
-      Search <RtlAlignedLargeLongArrowRightIcon fill={colors.colorWhite} />
-    </BpkButton>
-  ));
+  .add('Small icons', SmallIconsExample)
+  .add('Large icons', LargeIconsExample)
+  .add('Align to text base', AlignToBaseTextExample)
+  .add('Align to large text', AlignToLargeTextExample)
+  .add('Align small text to icon', AlignSmallTextToIconExample)
+  .add('Align text to icon', AlignTextToIconExample)
+  .add('Align to button', AlignToButtonExample)
+  .add('Align to large button', AlignToLargeButtonExample)
+  .add('Align to large button (RTL support)', AlignToLargeButtonRTLExample);
