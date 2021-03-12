@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-pagination",
-  "version": "2.0.115",
+  "version": "2.0.116",
   "description": "Backpack pagination component.",
   "license": "Apache-2.0",
   "repository": {
@@ -23,6 +23,6 @@
     "react": "^16.0.0"
   },
   "devDependencies": {
-    "bpk-component-icon": "^8.3.16"
+    "bpk-component-icon": "^8.3.17"
   }
 }
