@@ -22,8 +22,9 @@
   "peerDependencies": {
     "react": "^16.0.0"
   },
-  "devDependencies": {
-    "bpk-component-text": "^3.1.43",
+  "devDependencies": { 
+    "bpk-component-banner-alert": "4.2.67",
+    "bpk-component-label": "4.0.109",
     "bpk-storybook-utils": "^0.0.12"
   }
 }
