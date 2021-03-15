@@ -30,10 +30,10 @@ Nesciunt, voluptate, illo.`;
 class GroupExample extends React.Component<{}, { value: string }> {
   constructor() {
     super();
-    this.state = { value: 'Apples' };
+    this.state = { value: 'Lagos' };
   }
 
-  updateValue = value => {
+  updateValue = (value: string) => {
     action(`Radio changed. New value: ${value}`);
     this.setState({ value });
   };
@@ -43,19 +43,19 @@ class GroupExample extends React.Component<{}, { value: string }> {
     const { ...rest } = this.props;
     return (
       <div>
-        {['Apples', 'Bananas', 'Strawberries', 'Quince'].map(fruit => (
+        {['Lagos', 'Kano', 'Ibadan', 'Benin City'].map(city => (
           <div>
             <BpkRadio
               {...rest}
-              id={fruit}
-              name={fruit}
-              label={fruit}
+              id={city}
+              name={city}
+              label={city}
               onChange={event => {
                 this.updateValue(event.target.value);
               }}
-              value={fruit}
-              checked={value === fruit}
-              disabled={fruit === 'Quince'}
+              value={city}
+              checked={value === city}
+              disabled={city === 'Benin City'}
             />
           </div>
         ))}

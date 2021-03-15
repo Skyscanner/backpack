@@ -36,19 +36,19 @@ class StatefulBpkSelect extends React.Component {
   render() {
     return (
       <BpkSelect
-        id="fruits"
-        name="fruits"
+        id="destination"
+        name="destination"
         value={this.state.value}
         onChange={event => {
           this.onChange(event.target.value);
         }}
         {...this.props}
       >
-        <option value="apples">Apples</option>
-        <option value="oranges">Oranges</option>
-        <option value="pears">Pears</option>
-        <option value="tomatoes" disabled>
-          Tomatoes
+        <option value="Karachi">Karachi</option>
+        <option value="Lahore">Lahore</option>
+        <option value="Faisalabad">Faisalabad</option>
+        <option value="Islamabad" disabled>
+          Islamabad
         </option>
       </BpkSelect>
     );
