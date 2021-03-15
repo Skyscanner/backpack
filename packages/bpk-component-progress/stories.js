@@ -18,98 +18,11 @@
 
 /* @flow strict */
 
-import PropTypes from 'prop-types';
-import React, { Component } from 'react';
 import { storiesOf } from '@storybook/react';
-import { action } from 'bpk-storybook-utils';
-import BpkButton from 'bpk-component-button';
 
-import BpkProgress from './index';
-
-type Props = {
-  steps: Array<number>,
-};
-
-type State = {
-  progress: number,
-};
-
-class ProgressContainer extends Component<Props, State> {
-  constructor(props) {
-    super();
-
-    this.state = {
-      progress: props.initialValue,
-    };
-  }
-
-  handleChange = progress => {
-    this.setState({ progress });
-  };
-
-  render() {
-    const { steps, ...rest } = this.props;
-
-    // $FlowIgnore[prop-missing] - Ignoring this as this is for an example container
-    delete rest.initialValue;
-
-    return (
-      <div>
-        {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See decisions/flowfixme.md */}
-        <BpkProgress
-          min={0}
-          max={100}
-          value={this.state.progress}
-          onComplete={action('completed')}
-          {...rest}
-        />
-        <br />
-        {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See decisions/flowfixme.md */}
-        <BpkProgress
-          min={0}
-          max={100}
-          value={this.state.progress}
-          small
-          {...rest}
-        />
-        <br />
-        {steps.map(step => (
-          <BpkButton
-            key={step}
-            secondary
-            onClick={() => this.handleChange(step)}
-            selected={step === this.state.progress}
-            style={{ marginRight: '1rem' }}
-          >
-            {step}
-          </BpkButton>
-        ))}
-      </div>
-    );
-  }
-}
-
-ProgressContainer.propTypes = {
-  steps: PropTypes.arrayOf(PropTypes.number).isRequired,
-  initialValue: PropTypes.number.isRequired,
-};
+import { DefaultExample, SmallExample, SteppedExample } from './examples';
 
 storiesOf('bpk-component-progress', module)
-  .add('Default', () => (
-    <ProgressContainer
-      min={0}
-      max={100}
-      initialValue={25}
-      steps={[0, 25, 50, 75, 100]}
-    />
-  ))
-  .add('Stepped', () => (
-    <ProgressContainer
-      min={0}
-      max={5}
-      initialValue={2}
-      steps={[0, 1, 2, 3, 4, 5]}
-      stepped
-      getValueText={(value, min, max) => `Step ${value} of ${max}`}
-    />
-  ));
+  .add('Default', DefaultExample)
+  .add('Small', SmallExample)
+  .add('Stepped', SteppedExample);

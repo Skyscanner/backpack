@@ -89,56 +89,71 @@ class ClearableInput extends Component<Props, State> {
 }
 
 const TextExample = () => (
-  <BpkInput
-    id="text_value"
-    name="text_value"
-    value="Edinburgh"
-    onChange={action('input changed')}
-    placeholder="Enter a country, city or airport"
-  />
+  <form>
+    <BpkLabel htmlFor="text_value">Search country, city or airport</BpkLabel>
+    <BpkInput
+      id="text_value"
+      name="text_value"
+      value="Edinburgh"
+      onChange={action('input changed')}
+      placeholder="Enter a country, city or airport"
+    />
+  </form>
 );
 
 const PlaceholderExample = () => (
-  <BpkInput
-    id="placeholder"
-    name="placeholder"
-    value=""
-    onChange={action('input changed')}
-    placeholder="Enter a country, city or airport"
-  />
+  <form>
+    <BpkLabel htmlFor="placeholder">Search country, city or airport</BpkLabel>
+    <BpkInput
+      id="placeholder"
+      name="placeholder"
+      value=""
+      onChange={action('input changed')}
+      placeholder="Enter a country, city or airport"
+    />
+  </form>
 );
 
 const ValidExample = () => (
-  <BpkInput
-    id="valid"
-    name="valid"
-    value="Edinburgh"
-    onChange={action('input changed')}
-    placeholder="Enter a country, city or airport"
-    valid
-  />
+  <form>
+    <BpkLabel htmlFor="valid">Search country, city or airport</BpkLabel>
+    <BpkInput
+      id="valid"
+      name="valid"
+      value="Edinburgh"
+      onChange={action('input changed')}
+      placeholder="Enter a country, city or airport"
+      valid
+    />
+  </form>
 );
 
 const InvalidExample = () => (
-  <BpkInput
-    id="invalid"
-    name="invalid"
-    value="Edinbrvgh"
-    onChange={action('input changed')}
-    placeholder="Enter a country, city or airport"
-    valid={false}
-  />
+  <form>
+    <BpkLabel htmlFor="invalid">Search country, city or airport</BpkLabel>
+    <BpkInput
+      id="invalid"
+      name="invalid"
+      value="Edinbrvgh"
+      onChange={action('input changed')}
+      placeholder="Enter a country, city or airport"
+      valid={false}
+    />
+  </form>
 );
 
 const DisabledExample = () => (
-  <BpkInput
-    id="disabled"
-    name="disabled"
-    value="Edinburgh"
-    onChange={action('input changed')}
-    placeholder="Enter a country, city or airport"
-    disabled
-  />
+  <form>
+    <BpkLabel htmlFor="disabled">Search country, city or airport</BpkLabel>
+    <BpkInput
+      id="disabled"
+      name="disabled"
+      value="Edinburgh"
+      onChange={action('input changed')}
+      placeholder="Enter a country, city or airport"
+      disabled
+    />
+  </form>
 );
 
 const ClearableExample = () => (
@@ -181,58 +196,73 @@ const ClearableExample = () => (
 );
 
 const EmailInputExample = () => (
-  <BpkInput
-    type={INPUT_TYPES.email}
-    id="email"
-    name="email"
-    value="example@example.com"
-    onChange={action('input changed')}
-    placeholder="example@example.com"
-  />
+  <form>
+    <BpkLabel htmlFor="email">Enter booking email</BpkLabel>
+    <BpkInput
+      type={INPUT_TYPES.email}
+      id="email"
+      name="email"
+      value="example@example.com"
+      onChange={action('input changed')}
+      placeholder="example@example.com"
+    />
+  </form>
 );
 
 const NumberInputExample = () => (
-  <BpkInput
-    type={INPUT_TYPES.number}
-    id="number"
-    name="number"
-    value="0"
-    onChange={action('input changed')}
-    placeholder=""
-  />
+  <form>
+    <BpkLabel htmlFor="number">Enter number of travellers</BpkLabel>
+    <BpkInput
+      type={INPUT_TYPES.number}
+      id="number"
+      name="number"
+      value="0"
+      onChange={action('input changed')}
+      placeholder=""
+    />
+  </form>
 );
 
 const PasswordInputExample = () => (
-  <BpkInput
-    type={INPUT_TYPES.password}
-    id="password"
-    name="password"
-    value="letmein"
-    onChange={action('input changed')}
-    placeholder="Please enter a password"
-  />
+  <form>
+    <BpkLabel htmlFor="password">Enter a password</BpkLabel>
+    <BpkInput
+      type={INPUT_TYPES.password}
+      id="password"
+      name="password"
+      value="letmein"
+      onChange={action('input changed')}
+      placeholder="Please enter a password"
+    />
+  </form>
 );
 
 const TelephoneInputExample = () => (
-  <BpkInput
-    type={INPUT_TYPES.tel}
-    id="telephone"
-    name="telephone"
-    value="+441234567890"
-    onChange={action('input changed')}
-    placeholder="Enter your telephone number"
-  />
+  <form>
+    <BpkLabel htmlFor="telephone">Enter contact telephone number</BpkLabel>
+    <BpkInput
+      type={INPUT_TYPES.tel}
+      id="telephone"
+      name="telephone"
+      value="+441234567890"
+      onChange={action('input changed')}
+      placeholder="Enter your telephone number"
+    />
+  </form>
 );
 
 const LargeInputExample = () => (
-  <BpkInput
-    id="large"
-    name="large"
-    value="Edinburgh"
-    onChange={action('input changed')}
-    placeholder="Enter a country, city or airport"
-    large
-  />
+  <form>
+    <BpkLabel htmlFor="large">Search country, city or airport</BpkLabel>
+    <BpkInput
+      id="large"
+      name="large"
+      value="Edinburgh"
+      onChange={action('input changed')}
+      placeholder="Enter a country, city or airport"
+      large
+    />
+  </form>
 );
 
 const DockedExample = () => (

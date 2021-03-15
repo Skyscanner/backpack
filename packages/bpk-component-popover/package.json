@@ -29,6 +29,7 @@
   },
   "devDependencies": {
     "bpk-component-button": "^3.3.24",
-    "bpk-component-content-container": "^2.0.108"
+    "bpk-component-content-container": "^2.0.108",
+    "bpk-component-input": "^5.0.114"
   }
 }

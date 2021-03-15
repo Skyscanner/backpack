@@ -18,54 +18,15 @@
 
 /* @flow strict */
 
-import React from 'react';
-import { cssModules } from 'bpk-react-utils';
 import { storiesOf } from '@storybook/react';
-import { updateOnDirectionChange } from 'bpk-component-rtl-toggle';
 
-import STYLES from './stories.scss';
 import {
-  View,
-  SimpleNav,
-  NavigationBar,
-  withNavigationBar,
-} from './stories-components';
-
-import BpkNavigationStack, { withNavigationStackState } from './index';
-
-const RtlAwareNavigationStack = updateOnDirectionChange(BpkNavigationStack);
-
-const StatefulNavigationStack = withNavigationStackState(
-  RtlAwareNavigationStack,
-);
-
-const NavigationStackWithBarOutside = withNavigationBar(
-  RtlAwareNavigationStack,
-);
-
-const StatefulNavigationStackWithBarOutside = withNavigationStackState(
-  NavigationStackWithBarOutside,
-  false,
-);
-
-const getClassName = cssModules(STYLES);
+  DefaultExample,
+  WithNavBarExample,
+  WithNavBarOutsideExample,
+} from './examples';
 
 storiesOf('bpk-component-navigation-stack', module)
-  .add('Default', () => (
-    <StatefulNavigationStack
-      className={getClassName('bpk-navigation-stack-story-wrapper')}
-      initialViews={[<View centered>{props => <SimpleNav {...props} />}</View>]}
-    />
-  ))
-  .add('With navigation bar', () => (
-    <StatefulNavigationStack
-      className={getClassName('bpk-navigation-stack-story-wrapper')}
-      initialViews={[<View>{props => <NavigationBar {...props} />}</View>]}
-    />
-  ))
-  .add('With navigation bar outside', () => (
-    <StatefulNavigationStackWithBarOutside
-      className={getClassName('bpk-navigation-stack-story-wrapper')}
-      initialViews={[<View noNavBar>{() => null}</View>]}
-    />
-  ));
+  .add('Default', DefaultExample)
+  .add('With navigation bar', WithNavBarExample)
+  .add('With navigation bar outside', WithNavBarOutsideExample);

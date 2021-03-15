@@ -24,7 +24,6 @@
   },
   "devDependencies": {
     "bpk-component-button": "^3.3.24",
-    "bpk-component-table": "^2.0.108",
     "bpk-tokens": "^36.1.1"
   }
 }

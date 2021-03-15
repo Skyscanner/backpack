@@ -17,103 +17,26 @@
  */
 /* @flow strict */
 
-import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { cssModules } from 'bpk-react-utils';
-import BpkText, { TEXT_STYLES } from 'bpk-component-text';
-import BpkImage, {
-  withLazyLoading,
-  withLoadingBehavior,
-  BORDER_RADIUS_STYLES as IMAGE_BORDER_RADIUS_STYLES,
-} from 'bpk-component-image';
 
-import STYLES from './stories.scss';
-
-import BpkOverlay, { BORDER_RADIUS_STYLES, OVERLAY_TYPES } from './index';
-
-const FadingLazyLoadedImage = withLoadingBehavior(
-  withLazyLoading(BpkImage, document),
-);
-
-const OTTAWA_IMG_SRC =
-  'https://images.unsplash.com/photo-1535046460986-c0084bba76f2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80';
-
-const getClassName = cssModules(STYLES);
+import {
+  DefaultExample,
+  OverlayTypeNoneExample,
+  WithForegroundContentExample,
+  WithBpkImageExample,
+  WithBpkImageNoTintExample,
+  WithBpkImageLazyLoadedExample,
+  TextOverlaidOnImageExample,
+} from './examples';
 
 storiesOf('bpk-component-overlay', module)
-  .add('Default', () => (
-    <BpkOverlay
-      borderRadiusStyle={BORDER_RADIUS_STYLES.sm}
-      className={getClassName('bpk-overlay-stories__text-story')}
-    >
-      <BpkText>Hotels in Canada</BpkText>
-    </BpkOverlay>
-  ))
-  .add('overlayType="none"', () => (
-    <BpkOverlay
-      overlayType={OVERLAY_TYPES.none}
-      className={getClassName('bpk-overlay-stories__text-story')}
-    >
-      <BpkText>Hotels in Canada</BpkText>
-    </BpkOverlay>
-  ))
-  .add('with foreground content', () => (
-    <BpkOverlay
-      borderRadiusStyle={BORDER_RADIUS_STYLES.sm}
-      className={getClassName('bpk-overlay-stories__text-story')}
-      foregroundContent={
-        <BpkText
-          textStyle={TEXT_STYLES.xxl}
-          className={getClassName('bpk-overlay-stories__foreground')}
-        >
-          Visit Ottawa, Canada&apos;s illustrious capital
-        </BpkText>
-      }
-    >
-      <BpkText>Hotels in Canada</BpkText>
-    </BpkOverlay>
-  ))
-  .add('With BpkImage', () => (
-    <BpkOverlay borderRadiusStyle={BORDER_RADIUS_STYLES.sm}>
-      <BpkImage
-        borderRadiusStyle={IMAGE_BORDER_RADIUS_STYLES.sm}
-        src={OTTAWA_IMG_SRC}
-        altText="Canadian Parliament Building in Ottawa"
-        width={300}
-        height={200}
-      />
-    </BpkOverlay>
-  ))
-  .add('With BpkImage, lazy loaded', () => (
-    <BpkOverlay borderRadiusStyle={BORDER_RADIUS_STYLES.sm}>
-      <FadingLazyLoadedImage
-        borderRadiusStyle={IMAGE_BORDER_RADIUS_STYLES.sm}
-        src={OTTAWA_IMG_SRC}
-        altText="Canadian Parliament Building in Ottawa"
-        width={300}
-        height={200}
-      />
-    </BpkOverlay>
-  ))
-  .add('Text overlaid on an image using foreground content', () => (
-    <div>
-      <BpkOverlay
-        borderRadiusStyle={BORDER_RADIUS_STYLES.sm}
-        foregroundContent={
-          <div className={getClassName('bpk-overlay-stories__foreground')}>
-            <BpkText textStyle={TEXT_STYLES.xxl}>
-              Visit Ottawa, Canada&apos;s illustrious capital
-            </BpkText>
-          </div>
-        }
-      >
-        <BpkImage
-          borderRadiusStyle={IMAGE_BORDER_RADIUS_STYLES.sm}
-          src={OTTAWA_IMG_SRC}
-          altText="Canadian Parliament Building in Ottawa"
-          width={300}
-          height={200}
-        />
-      </BpkOverlay>
-    </div>
-  ));
+  .add('Default', DefaultExample)
+  .add('overlayType="none"', OverlayTypeNoneExample)
+  .add('with foreground content', WithForegroundContentExample)
+  .add('With BpkImage', WithBpkImageExample)
+  .add('With BpkImage and overlayType="none"', WithBpkImageNoTintExample)
+  .add('With BpkImage, lazy loaded', WithBpkImageLazyLoadedExample)
+  .add(
+    'Text overlaid on an image using foreground content',
+    TextOverlaidOnImageExample,
+  );

@@ -17,25 +17,19 @@
  */
 /* @flow strict */
 
-import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import BpkLabel from './index';
+import {
+  DefaultExample,
+  RequiredExample,
+  InvalidExample,
+  DisabledExample,
+  InvalidRequiredExample,
+} from './examples';
 
 storiesOf('bpk-component-label', module)
-  .add('Example', () => <BpkLabel htmlFor="origin">Origin</BpkLabel>)
-  .add('Required', () => (
-    <BpkLabel htmlFor="origin" required>
-      Origin
-    </BpkLabel>
-  ))
-  .add('Invalid', () => (
-    <BpkLabel htmlFor="origin" valid={false}>
-      Origin
-    </BpkLabel>
-  ))
-  .add('Invalid required', () => (
-    <BpkLabel htmlFor="origin" required valid={false}>
-      Origin
-    </BpkLabel>
-  ));
+  .add('Example', DefaultExample)
+  .add('Required', RequiredExample)
+  .add('Invalid', InvalidExample)
+  .add('Disabled', DisabledExample)
+  .add('Invalid required', InvalidRequiredExample);

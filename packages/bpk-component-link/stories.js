@@ -18,51 +18,21 @@
 
 /* @flow strict */
 
-import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { action } from 'bpk-storybook-utils';
-import { colorSkyGrayTint01, spacingBase } from 'bpk-tokens/tokens/base.es6';
 
-import BpkLink, { BpkButtonLink } from './index';
+import {
+  LinkExample,
+  ButtonLinkExample,
+  LinkAlternativeExample,
+  ButtonLinkAlternativeExample,
+  CombinedExample,
+  CombinedAlternativeExample,
+} from './examples';
 
 storiesOf('bpk-component-link', module)
-  .add('Example', () => (
-    <div>
-      <BpkLink href="#" onClick={action('#1 clicked')}>
-        Link #1
-      </BpkLink>
-      <br />
-      <BpkLink href="#" onClick={action('#2 clicked')}>
-        Link #2
-      </BpkLink>
-    </div>
-  ))
-  .add('Example (buttons)', () => (
-    <div>
-      <BpkButtonLink onClick={action('#1 clicked')}>Link #1</BpkButtonLink>
-      <br />
-      <BpkButtonLink onClick={action('#2 clicked')}>Link #2</BpkButtonLink>
-    </div>
-  ))
-  .add('Example (alternate)', () => (
-    <div style={{ backgroundColor: colorSkyGrayTint01, padding: spacingBase }}>
-      <BpkLink href="#" onClick={action('#1 clicked')} alternate>
-        Link #1
-      </BpkLink>
-      <br />
-      <BpkLink href="#" onClick={action('#2 clicked')} alternate>
-        Link #2
-      </BpkLink>
-    </div>
-  ))
-  .add('Example (alternate + buttons)', () => (
-    <div style={{ backgroundColor: colorSkyGrayTint01, padding: spacingBase }}>
-      <BpkButtonLink onClick={action('#1 clicked')} alternate>
-        Link #1
-      </BpkButtonLink>
-      <br />
-      <BpkButtonLink onClick={action('#2 clicked')} alternate>
-        Link #2
-      </BpkButtonLink>
-    </div>
-  ));
+  .add('Example', LinkExample)
+  .add('Example (buttons)', ButtonLinkExample)
+  .add('Example (alternate)', LinkAlternativeExample)
+  .add('Example (alternate + buttons)', ButtonLinkAlternativeExample)
+  .add('Combined Example', CombinedExample)
+  .add('Combined Example (alternate)', CombinedAlternativeExample);
