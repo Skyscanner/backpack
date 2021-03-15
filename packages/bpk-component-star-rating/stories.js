@@ -18,144 +18,29 @@
 
 /* @flow strict */
 
-import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { action } from 'bpk-storybook-utils';
+
 import {
-  BpkTable,
-  BpkTableBody,
-  BpkTableRow,
-  BpkTableCell,
-  BpkTableHead,
-  BpkTableHeadCell,
-} from 'bpk-component-table';
-
-import BpkInteractiveStarRating from './src/BpkInteractiveStarRating';
-import withInteractiveStarRatingState from './src/withInteractiveStarRatingState';
-
-import BpkStarRating, { BpkStar, STAR_TYPES, ROUNDING_TYPES } from './index';
-
-const InteractiveStarRating = withInteractiveStarRatingState(
-  BpkInteractiveStarRating,
-);
-const StarRating = props => (
-  <BpkStarRating ratingLabel={(r, m) => `${r} out of ${m} stars`} {...props} />
-);
+  FullExample,
+  FullStars,
+  EmptyStars,
+  ThreeStars,
+  ThreeAndAHalfStars,
+  ThreePointThreeStars,
+  ThreePointEightStars,
+  ThreePointThreeStarsRounded,
+  ThreePointEightStarsRounded,
+  Interactive,
+} from './examples';
 
 storiesOf('bpk-component-star-rating', module)
-  .add('BpkStar examples', () => (
-    <BpkTable>
-      <BpkTableHead>
-        <BpkTableRow>
-          <BpkTableHeadCell>State</BpkTableHeadCell>
-          <BpkTableHeadCell>Small</BpkTableHeadCell>
-          <BpkTableHeadCell>Large</BpkTableHeadCell>
-        </BpkTableRow>
-      </BpkTableHead>
-      <BpkTableBody>
-        <BpkTableRow>
-          <BpkTableCell>Empty</BpkTableCell>
-          <BpkTableCell>
-            <BpkStar type={STAR_TYPES.EMPTY} />
-          </BpkTableCell>
-          <BpkTableCell>
-            <BpkStar type={STAR_TYPES.EMPTY} large />
-          </BpkTableCell>
-        </BpkTableRow>
-        <BpkTableRow>
-          <BpkTableCell>Half</BpkTableCell>
-          <BpkTableCell>
-            <BpkStar type={STAR_TYPES.HALF} />
-          </BpkTableCell>
-          <BpkTableCell>
-            <BpkStar type={STAR_TYPES.HALF} large />
-          </BpkTableCell>
-        </BpkTableRow>
-        <BpkTableRow>
-          <BpkTableCell>Full</BpkTableCell>
-          <BpkTableCell>
-            <BpkStar type={STAR_TYPES.FULL} />
-          </BpkTableCell>
-          <BpkTableCell>
-            <BpkStar type={STAR_TYPES.FULL} large />
-          </BpkTableCell>
-        </BpkTableRow>
-      </BpkTableBody>
-    </BpkTable>
-  ))
-  .add('Full Stars', () => (
-    <div>
-      <StarRating rating={5} />
-      <br />
-      <StarRating rating={5} large />
-    </div>
-  ))
-  .add('Empty Stars', () => (
-    <div>
-      <StarRating rating={0} />
-      <br />
-      <StarRating rating={0} large />
-    </div>
-  ))
-  .add('3 Stars Rating', () => (
-    <div>
-      <StarRating rating={3} />
-      <br />
-      <StarRating rating={3} large />
-    </div>
-  ))
-  .add('3 1/2 Stars Rating', () => (
-    <div>
-      <StarRating rating={3.5} />
-      <br />
-      <StarRating rating={3.5} large />
-    </div>
-  ))
-  .add('3.3 Stars', () => (
-    <div>
-      <StarRating rating={3.3} />
-      <br />
-      <StarRating rating={3.3} large />
-    </div>
-  ))
-  .add('3.8 Stars', () => (
-    <div>
-      <StarRating rating={3.8} />
-      <br />
-      <StarRating rating={3.8} large />
-    </div>
-  ))
-  .add('3.3 Stars Rounded', () => (
-    <div>
-      <StarRating rating={3.3} rounding={ROUNDING_TYPES.nearest} />
-      <br />
-      <StarRating rating={3.3} large rounding={ROUNDING_TYPES.nearest} />
-    </div>
-  ))
-  .add('3.8 Stars Rounded', () => (
-    <div>
-      <StarRating rating={3.8} rounding={ROUNDING_TYPES.nearest} />
-      <br />
-      <StarRating rating={3.8} large rounding={ROUNDING_TYPES.nearest} />
-    </div>
-  ))
-  .add('Interactive', () => (
-    <div>
-      <InteractiveStarRating
-        id="small-star-rating"
-        getStarLabel={(rating, maxRating) =>
-          `${rating} out of ${maxRating} stars`
-        }
-        onRatingSelect={action('rating selected')}
-      />
-      <br />
-      <InteractiveStarRating
-        id="large-star-rating"
-        getStarLabel={(rating, maxRating) =>
-          `${rating} out of ${maxRating} stars`
-        }
-        onRatingSelect={action('large rating selected')}
-        large
-      />
-    </div>
-  ));
+  .add('BpkStar examples', FullExample)
+  .add('Full Stars', FullStars)
+  .add('Empty Stars', EmptyStars)
+  .add('3 Stars Rating', ThreeStars)
+  .add('3 1/2 Stars Rating', ThreeAndAHalfStars)
+  .add('3.3 Stars', ThreePointThreeStars)
+  .add('3.8 Stars', ThreePointEightStars)
+  .add('3.3 Stars Rounded', ThreePointThreeStarsRounded)
+  .add('3.8 Stars Rounded', ThreePointEightStarsRounded)
+  .add('Interactive', Interactive);

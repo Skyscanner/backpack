@@ -16,96 +16,21 @@
  * limitations under the License.
  */
 
-import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { withDefaultProps } from 'bpk-react-utils';
 
-import STYLE from './stories.scss';
-
-import BpkText, { WEIGHT_STYLES } from './index';
-
-const Paragraph = withDefaultProps(BpkText, {
-  textStyle: 'lg',
-  tagName: 'p',
-  className: STYLE['bpk-my-paragraph'],
-});
+import {
+  DefaultExample,
+  HeadingsExample,
+  ParagraphExample,
+  WithDefaultProps,
+  BoldExample,
+  WithWeightsExample,
+} from './examples';
 
 storiesOf('bpk-component-text', module)
-  .add('Default', () => (
-    <BpkText>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
-      imperdiet lobortis tellus, non rhoncus erat tincidunt id. Pellentesque
-      consectetur, dolor nec vulputate vehicula, ex metus mattis ante, non
-      dictum mi ante eu arcu.
-    </BpkText>
-  ))
-  .add('Headings', () => (
-    <div>
-      <BpkText textStyle="xxl" tagName="h1">
-        The quick brown fox jumps over the lazy dog
-      </BpkText>
-      <BpkText textStyle="xl" tagName="h2">
-        The quick brown fox jumps over the lazy dog
-      </BpkText>
-      <BpkText textStyle="lg" tagName="h3">
-        The quick brown fox jumps over the lazy dog
-      </BpkText>
-      <BpkText textStyle="base" tagName="h4">
-        The quick brown fox jumps over the lazy dog
-      </BpkText>
-      <BpkText textStyle="sm" tagName="h5">
-        The quick brown fox jumps over the lazy dog
-      </BpkText>
-      <BpkText textStyle="xs" tagName="h6">
-        The quick brown fox jumps over the lazy dog
-      </BpkText>
-    </div>
-  ))
-  .add('Paragraph', () => (
-    <BpkText textStyle="base" tagName="p">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
-      imperdiet lobortis tellus, non rhoncus erat tincidunt id. Pellentesque
-      consectetur, dolor nec vulputate vehicula, ex metus mattis ante, non
-      dictum mi ante eu arcu.
-    </BpkText>
-  ))
-  .add('using withDefaultProps', () => (
-    <div>
-      <Paragraph>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
-        imperdiet lobortis tellus, non rhoncus erat tincidunt id. Pellentesque
-        consectetur, dolor nec vulputate vehicula, ex metus mattis ante, non
-        dictum mi ante eu arcu.
-      </Paragraph>
-      <Paragraph>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
-        imperdiet lobortis tellus, non rhoncus erat tincidunt id. Pellentesque
-        consectetur, dolor nec vulputate vehicula, ex metus mattis ante, non
-        dictum mi ante eu arcu.
-      </Paragraph>
-    </div>
-  ))
-  .add('bold', () => (
-    <BpkText tagName="p">
-      The man jumped over the shark tank. That was very{' '}
-      <BpkText weight={WEIGHT_STYLES.bold}>bold</BpkText> indeed.
-    </BpkText>
-  ))
-  .add('with weights', () => (
-    <div>
-      <BpkText tagName="p">
-        The man jumped over the shark tank. That was very brave indeed.
-      </BpkText>
-      <BpkText tagName="p">
-        The man jumped over the shark tank. That was very{' '}
-        <BpkText weight={WEIGHT_STYLES.bold}>bold</BpkText> indeed.
-      </BpkText>
-      <BpkText tagName="p">
-        The man jumped over the shark tank. That was a{' '}
-        <BpkText weight={WEIGHT_STYLES.black} textStyle="xl">
-          heavy
-        </BpkText>{' '}
-        shark.
-      </BpkText>
-    </div>
-  ));
+  .add('Default', DefaultExample)
+  .add('Headings', HeadingsExample)
+  .add('Paragraph', ParagraphExample)
+  .add('using withDefaultProps', WithDefaultProps)
+  .add('bold', BoldExample)
+  .add('with weights', WithWeightsExample);

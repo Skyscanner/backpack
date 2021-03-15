@@ -17,11 +17,10 @@
  */
 /* @flow strict */
 
-import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import BpkSwitch, { SWITCH_TYPES } from './index';
+import { DefaultExample, EventExample } from './examples';
 
 storiesOf('bpk-component-switch', module)
-  .add('Default', () => <BpkSwitch label="Backpack" />)
-  .add('Event', () => <BpkSwitch label="Backpack" type={SWITCH_TYPES.event} />);
+  .add('Default', DefaultExample)
+  .add('Event', EventExample);
