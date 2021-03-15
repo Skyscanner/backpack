@@ -179,18 +179,6 @@ const OutlineExample = () => (
   <BpkDarkExampleWrapper>
     <NudgerContainer id="outline-nudger" buttonType="outline" />
   </BpkDarkExampleWrapper>
-  // <div className={getClassName('bpk-nudger-outline')}>
-  //   <BpkNudger
-  //     id="outline-nudger"
-  //     min={1}
-  //     max={99}
-  //     value={3}
-  //     onChange={action('change')}
-  //     decreaseButtonLabel="Decrease"
-  //     increaseButtonLabel="Increase"
-  //     buttonType="outline"
-  //   />
-  // </div>
 );
 
 export {
