@@ -18,37 +18,8 @@
 
 /* @flow strict */
 
-import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { action } from 'bpk-storybook-utils';
 
-import BpkSectionList, {
-  BpkSectionListSection,
-  BpkSectionListItem,
-} from './index';
+import DefaultExample from './examples';
 
-storiesOf('bpk-component-section-list', module).add('BpkSectionList', () => (
-  <BpkSectionList>
-    <BpkSectionListSection>
-      <BpkSectionListItem>Section list item</BpkSectionListItem>
-      <BpkSectionListItem
-        onClick={action('Clickable BpkSectionListItem clicked')}
-      >
-        With onClick prop
-      </BpkSectionListItem>
-      <BpkSectionListItem
-        href="https://skyscanner.net"
-        blank
-        onClick={action('BpkSectionListItem with href clicked')}
-      >
-        With href
-      </BpkSectionListItem>
-    </BpkSectionListSection>
-    <BpkSectionListSection headerText="Cities">
-      <BpkSectionListItem>Tokyo</BpkSectionListItem>
-      <BpkSectionListItem>Rio de Janeiro</BpkSectionListItem>
-      <BpkSectionListItem>London</BpkSectionListItem>
-      <BpkSectionListItem>Beijing</BpkSectionListItem>
-    </BpkSectionListSection>
-  </BpkSectionList>
-));
+storiesOf('bpk-component-section-list', module).add('Default', DefaultExample);

@@ -25,4 +25,8 @@
     --bpk-docs-sidebar-background,
     $bpk-color-sky-blue-shade-02
   );
+
+  &--padded {
+    padding: $bpk-spacing-md;
+  }
 }

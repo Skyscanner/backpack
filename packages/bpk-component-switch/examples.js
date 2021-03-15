@@ -15,7 +15,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+/* @flow strict */
 
-import BpkTile from './src/BpkTile';
+import React from 'react';
 
-export default BpkTile;
+import BpkSwitch, { SWITCH_TYPES } from './index';
+
+const DefaultExample = () => <BpkSwitch label="Backpack" />;
+const EventExample = () => (
+  <BpkSwitch label="Backpack" type={SWITCH_TYPES.event} />
+);
+
+export { DefaultExample, EventExample };

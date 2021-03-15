@@ -24,9 +24,19 @@ import STYLES from './BpkDarkExampleWrapper.scss';
 
 const getClassName = cssModules(STYLES);
 
-const BpkDarkExampleWrapper = (props: {}) => (
+const BpkDarkExampleWrapper = (props: { padded: boolean }) => (
   /* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */
-  <div className={getClassName('bpk-dark-example-wrapper')} {...props} />
+  <div
+    className={getClassName(
+      'bpk-dark-example-wrapper',
+      props.padded && 'bpk-dark-example-wrapper--padded',
+    )}
+    {...props}
+  />
 );
+
+BpkDarkExampleWrapper.defaultProps = {
+  padded: false,
+};
 
 export default BpkDarkExampleWrapper;

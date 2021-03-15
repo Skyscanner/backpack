@@ -18,37 +18,11 @@
 
 /* @flow strict */
 
-import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import SpinnerLayout from './SpinnerLayout';
-
-import {
-  BpkSpinner,
-  BpkLargeSpinner,
-  BpkExtraLargeSpinner,
-  SPINNER_TYPES,
-} from './index';
+import { Small, Large, ExtraLarge } from './examples';
 
 storiesOf('bpk-component-spinner', module)
-  .add('Small', () => (
-    <SpinnerLayout>
-      <BpkSpinner type={SPINNER_TYPES.primary} />
-      <BpkSpinner type={SPINNER_TYPES.dark} />
-      <BpkSpinner type={SPINNER_TYPES.light} />
-    </SpinnerLayout>
-  ))
-  .add('Large', () => (
-    <SpinnerLayout>
-      <BpkLargeSpinner type={SPINNER_TYPES.primary} />
-      <BpkLargeSpinner type={SPINNER_TYPES.dark} />
-      <BpkLargeSpinner type={SPINNER_TYPES.light} />
-    </SpinnerLayout>
-  ))
-  .add('Extra large', () => (
-    <SpinnerLayout>
-      <BpkExtraLargeSpinner type={SPINNER_TYPES.primary} />
-      <BpkExtraLargeSpinner type={SPINNER_TYPES.dark} />
-      <BpkExtraLargeSpinner type={SPINNER_TYPES.light} />
-    </SpinnerLayout>
-  ));
+  .add('Small', Small)
+  .add('Large', Large)
+  .add('Extra large', ExtraLarge);
