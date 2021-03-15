@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-mobile-scroll-container",
-  "version": "2.1.10",
+  "version": "2.1.11",
   "description": "Backpack mobile scroll container component.",
   "license": "Apache-2.0",
   "repository": {
@@ -23,7 +23,7 @@
     "react": "^16.0.0"
   },
   "devDependencies": {
-    "bpk-component-button": "^3.3.24",
+    "bpk-component-button": "^3.3.25",
     "bpk-tokens": "^36.1.1"
   }
 }

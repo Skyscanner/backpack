@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-navigation-stack",
-  "version": "2.0.120",
+  "version": "2.0.121",
   "description": "Backpack navigation stack component.",
   "license": "Apache-2.0",
   "repository": {
@@ -24,9 +24,9 @@
     "react": "^16.0.0"
   },
   "devDependencies": {
-    "bpk-component-button": "^3.3.24",
-    "bpk-component-icon": "^8.3.17",
-    "bpk-component-navigation-bar": "^2.2.77",
-    "bpk-component-rtl-toggle": "^2.0.113"
+    "bpk-component-button": "^3.3.25",
+    "bpk-component-icon": "^8.3.18",
+    "bpk-component-navigation-bar": "^2.2.78",
+    "bpk-component-rtl-toggle": "^2.0.114"
   }
 }

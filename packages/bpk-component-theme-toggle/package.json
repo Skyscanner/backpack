@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-theme-toggle",
-  "version": "2.0.117",
+  "version": "2.0.118",
   "description": "Backpack theme toggle component.",
   "license": "Apache-2.0",
   "repository": {
@@ -14,8 +14,8 @@
   },
   "gitHead": "79e9426ba627224294d8a6dcf5ecb898f2021cde",
   "dependencies": {
-    "bpk-component-label": "^4.0.109",
-    "bpk-component-select": "^3.0.112",
+    "bpk-component-label": "^4.0.110",
+    "bpk-component-select": "^3.0.113",
     "bpk-mixins": "^20.1.25",
     "bpk-react-utils": "^3.0.11",
     "bpk-tokens": "^36.1.1",

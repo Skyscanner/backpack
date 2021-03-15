@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-rating",
-  "version": "2.1.39",
+  "version": "2.1.40",
   "description": "Backpack rating component.",
   "license": "Apache-2.0",
   "repository": {
@@ -23,7 +23,7 @@
     "react": "^16.0.0"
   },
   "devDependencies": {
-    "bpk-component-text": "^3.1.43",
+    "bpk-component-text": "^3.1.44",
     "bpk-tokens": "^36.1.1"
   }
 }
