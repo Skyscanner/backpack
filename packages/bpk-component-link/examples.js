@@ -20,11 +20,7 @@
 
 import React from 'react';
 import { action, BpkDarkExampleWrapper } from 'bpk-storybook-utils';
-import {
-  colorWhite,
-  colorSkyGrayTint01,
-  spacingBase,
-} from 'bpk-tokens/tokens/base.es6';
+import { colorWhite, colorSkyGrayTint04 } from 'bpk-tokens/tokens/base.es6';
 
 import BpkLink, { BpkButtonLink } from './index';
 
@@ -49,7 +45,7 @@ const ButtonLinkExample = () => (
 );
 
 const LinkAlternativeExample = () => (
-  <div style={{ backgroundColor: colorSkyGrayTint01, padding: spacingBase }}>
+  <BpkDarkExampleWrapper>
     <BpkLink href="#" onClick={action('#1 clicked')} alternate>
       Link #1
     </BpkLink>
@@ -57,11 +53,11 @@ const LinkAlternativeExample = () => (
     <BpkLink href="#" onClick={action('#2 clicked')} alternate>
       Link #2
     </BpkLink>
-  </div>
+  </BpkDarkExampleWrapper>
 );
 
 const ButtonLinkAlternativeExample = () => (
-  <div style={{ backgroundColor: colorSkyGrayTint01, padding: spacingBase }}>
+  <BpkDarkExampleWrapper>
     <BpkButtonLink onClick={action('#1 clicked')} alternate>
       Link #1
     </BpkButtonLink>
@@ -69,7 +65,7 @@ const ButtonLinkAlternativeExample = () => (
     <BpkButtonLink onClick={action('#2 clicked')} alternate>
       Link #2
     </BpkButtonLink>
-  </div>
+  </BpkDarkExampleWrapper>
 );
 
 const CombinedExample = () => (
@@ -80,9 +76,16 @@ const CombinedExample = () => (
 );
 
 const CombinedAlternativeExample = () => (
-  <BpkDarkExampleWrapper style={{ padding: spacingBase, color: colorWhite }}>
-    Links can be both <BpkLink href="#">anchor tags</BpkLink> as well as{' '}
-    <BpkButtonLink onClick={() => null}>button tags</BpkButtonLink>.
+  <BpkDarkExampleWrapper style={{ color: colorSkyGrayTint04 }}>
+    Links can be both{' '}
+    <BpkLink href="#" style={{ color: colorWhite }}>
+      anchor tags
+    </BpkLink>{' '}
+    as well as{' '}
+    <BpkButtonLink onClick={() => null} style={{ color: colorWhite }}>
+      button tags
+    </BpkButtonLink>
+    .
   </BpkDarkExampleWrapper>
 );
 

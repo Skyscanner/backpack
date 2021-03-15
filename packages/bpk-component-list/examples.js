@@ -24,32 +24,32 @@ import { BpkList, BpkListItem } from './index';
 
 const UnorderedExample = () => (
   <BpkList>
-    <BpkListItem>Apples</BpkListItem>
-    <BpkListItem>Oranges</BpkListItem>
-    <BpkListItem>Pears</BpkListItem>
+    <BpkListItem>Flights</BpkListItem>
+    <BpkListItem>Hotels</BpkListItem>
+    <BpkListItem>Car Hire</BpkListItem>
   </BpkList>
 );
 
 const OrderedExample = () => (
   <BpkList ordered>
-    <BpkListItem>Apples</BpkListItem>
-    <BpkListItem>Oranges</BpkListItem>
-    <BpkListItem>Pears</BpkListItem>
+    <BpkListItem>Car Hire</BpkListItem>
+    <BpkListItem>Flights</BpkListItem>
+    <BpkListItem>Hotels</BpkListItem>
   </BpkList>
 );
 
 const NestedExample = () => (
   <BpkList>
-    <BpkListItem>Apples</BpkListItem>
+    <BpkListItem>Flights</BpkListItem>
     <BpkListItem>
-      Oranges
+      Hotels
       <BpkList ordered>
-        <BpkListItem>Tangerines</BpkListItem>
-        <BpkListItem>Nectarines</BpkListItem>
-        <BpkListItem>Satsuma</BpkListItem>
+        <BpkListItem>Barcelona Hotels</BpkListItem>
+        <BpkListItem>Edinburgh Hotels</BpkListItem>
+        <BpkListItem>London Hotels</BpkListItem>
       </BpkList>
     </BpkListItem>
-    <BpkListItem>Pears</BpkListItem>
+    <BpkListItem>Car Hire</BpkListItem>
   </BpkList>
 );
 
