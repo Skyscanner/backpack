@@ -16,10 +16,31 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+@import '~bpk-mixins';
 
-import { storiesOf } from '@storybook/react';
+.bpk-stories-mobile-scroll-container {
+  &__leading-indicator {
+    @include bpk-scroll-indicator-left($bpk-color-sky-blue);
+  }
 
-import DefaultExample from './examples';
+  &__trailing-indicator {
+    @include bpk-scroll-indicator-right($bpk-color-sky-blue);
+  }
+}
 
-storiesOf('bpk-component-paragraph', module).add('Example', DefaultExample);
+.bpk-scroll-block {
+  display: flex;
+
+  &__item {
+    display: flex;
+    min-width: $bpk-spacing-xxl * 5;
+    height: $bpk-spacing-xxl * 5;
+    justify-content: center;
+    align-items: center;
+    background-color: $bpk-color-sky-gray-tint-07;
+
+    &--alternate {
+      background-color: $bpk-color-sky-gray-tint-06;
+    }
+  }
+}

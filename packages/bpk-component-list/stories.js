@@ -18,37 +18,11 @@
 
 /* @flow strict */
 
-import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { BpkList, BpkListItem } from './index';
+import { UnorderedExample, OrderedExample, NestedExample } from './examples';
 
 storiesOf('bpk-component-list', module)
-  .add('Unordered', () => (
-    <BpkList>
-      <BpkListItem>Apples</BpkListItem>
-      <BpkListItem>Oranges</BpkListItem>
-      <BpkListItem>Pears</BpkListItem>
-    </BpkList>
-  ))
-  .add('Ordered', () => (
-    <BpkList ordered>
-      <BpkListItem>Apples</BpkListItem>
-      <BpkListItem>Oranges</BpkListItem>
-      <BpkListItem>Pears</BpkListItem>
-    </BpkList>
-  ))
-  .add('Nested', () => (
-    <BpkList>
-      <BpkListItem>Apples</BpkListItem>
-      <BpkListItem>
-        Oranges
-        <BpkList ordered>
-          <BpkListItem>Tangerines</BpkListItem>
-          <BpkListItem>Nectarines</BpkListItem>
-          <BpkListItem>Satsuma</BpkListItem>
-        </BpkList>
-      </BpkListItem>
-      <BpkListItem>Pears</BpkListItem>
-    </BpkList>
-  ));
+  .add('Unordered', UnorderedExample)
+  .add('Ordered', OrderedExample)
+  .add('Nested', NestedExample);

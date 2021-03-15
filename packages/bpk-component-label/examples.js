@@ -15,25 +15,42 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 /* @flow strict */
 
-import { storiesOf } from '@storybook/react';
+import React from 'react';
 
-import {
+import BpkLabel from './index';
+
+const DefaultExample = () => <BpkLabel htmlFor="origin">Origin</BpkLabel>;
+
+const RequiredExample = () => (
+  <BpkLabel htmlFor="origin" required>
+    Origin
+  </BpkLabel>
+);
+
+const InvalidExample = () => (
+  <BpkLabel htmlFor="origin" valid={false}>
+    Origin
+  </BpkLabel>
+);
+
+const DisabledExample = () => (
+  <BpkLabel htmlFor="origin" disabled>
+    Origin
+  </BpkLabel>
+);
+
+const InvalidRequiredExample = () => (
+  <BpkLabel htmlFor="origin" required valid={false}>
+    Origin
+  </BpkLabel>
+);
+
+export {
   DefaultExample,
-  WithVisibleScrollbarExample,
-  SettingLeadingAndTrailingIndicatorClassNameExample,
-  HorizontalNavExample,
-  BarChartExample,
-} from './examples';
-
-storiesOf('bpk-component-mobile-scroll-container', module)
-  .add('Default', DefaultExample)
-  .add('With visible scrollbar', WithVisibleScrollbarExample)
-  .add(
-    'Setting leadingIndicatorClassName and trailingIndicatorClassName',
-    SettingLeadingAndTrailingIndicatorClassNameExample,
-  )
-  .add('Horizontal nav', HorizontalNavExample)
-  .add('Bar chart', BarChartExample);
+  RequiredExample,
+  InvalidExample,
+  DisabledExample,
+  InvalidRequiredExample,
+};

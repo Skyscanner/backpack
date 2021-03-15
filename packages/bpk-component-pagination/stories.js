@@ -16,65 +16,19 @@
  * limitations under the License.
  */
 
-import PropTypes from 'prop-types';
-import React, { Component } from 'react';
 import { storiesOf } from '@storybook/react';
 
-import BpkPagination from './index';
-
-class PaginationContainer extends Component {
-  constructor(props) {
-    super();
-
-    this.state = {
-      pageIndex: props.selectedPageIndex,
-    };
-  }
-
-  handleChange(pageIndex) {
-    this.setState({ pageIndex });
-  }
-
-  render() {
-    const { pageCount, visibleRange } = this.props;
-    return (
-      <div>
-        Page {this.state.pageIndex + 1}
-        <BpkPagination
-          pageCount={pageCount}
-          selectedPageIndex={this.state.pageIndex}
-          onPageChange={pageIndex => {
-            this.handleChange(pageIndex);
-          }}
-          previousLabel="previous"
-          nextLabel="next"
-          visibleRange={visibleRange}
-          paginationLabel="Pagination Navigation"
-          pageLabel={(page, isSelected) =>
-            `Go to page ${page}${
-              isSelected ? ', this is the current page' : ''
-            }.`
-          }
-        />
-      </div>
-    );
-  }
-}
-PaginationContainer.propTypes = {
-  selectedPageIndex: PropTypes.number,
-  pageCount: PropTypes.number.isRequired,
-  visibleRange: PropTypes.number,
-};
-
-PaginationContainer.defaultProps = {
-  visibleRange: 3,
-  selectedPageIndex: 0,
-};
+import {
+  DefaultPaginationExample,
+  FivePagesPaginationExample,
+  TwoPagesPaginationExample,
+  SinglePaginationExample,
+  VisibleRangeExample,
+} from './examples';
 
 storiesOf('bpk-component-pagination', module)
-  .add('Pagination - default', () => <PaginationContainer pageCount={20} />)
-  .add('Pagination - 5 visible pages', () => (
-    <PaginationContainer pageCount={20} visibleRange={5} />
-  ))
-  .add('Pagination - 2 pages', () => <PaginationContainer pageCount={2} />)
-  .add('Pagination - single page', () => <PaginationContainer pageCount={1} />);
+  .add('Pagination - default', DefaultPaginationExample)
+  .add('Pagination - 5 visible pages', FivePagesPaginationExample)
+  .add('Pagination - 2 pages', TwoPagesPaginationExample)
+  .add('Pagination - single page', SinglePaginationExample)
+  .add('Pagination - Visible example', VisibleRangeExample);
