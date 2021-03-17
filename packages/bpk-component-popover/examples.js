@@ -19,7 +19,7 @@
 /* @flow strict */
 
 import PropTypes from 'prop-types';
-import React, { Component } from 'react';
+import React, { Component, type Node } from 'react';
 import { cssModules, withDefaultProps } from 'bpk-react-utils';
 import BpkButton from 'bpk-component-button';
 import BpkText from 'bpk-component-text';
@@ -167,8 +167,8 @@ class PopoverContainer extends Component<Props, State> {
   }
 }
 
-const Spacer = props => (
-  <div className={getClassName('bpk-popover-spacer')} {...props} />
+const Spacer = (props: { children: Node }) => (
+  <div className={getClassName('bpk-popover-spacer')}>{props.children}</div>
 );
 
 const DefaultExample = () => (
