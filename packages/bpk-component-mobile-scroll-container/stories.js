@@ -24,8 +24,6 @@ import {
   DefaultExample,
   WithVisibleScrollbarExample,
   SettingLeadingAndTrailingIndicatorClassNameExample,
-  HorizontalNavExample,
-  BarChartExample,
 } from './examples';
 
 storiesOf('bpk-component-mobile-scroll-container', module)
@@ -34,6 +32,4 @@ storiesOf('bpk-component-mobile-scroll-container', module)
   .add(
     'Setting leadingIndicatorClassName and trailingIndicatorClassName',
     SettingLeadingAndTrailingIndicatorClassNameExample,
-  )
-  .add('Horizontal nav', HorizontalNavExample)
-  .add('Bar chart', BarChartExample);
+  );

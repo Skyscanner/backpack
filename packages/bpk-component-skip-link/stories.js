@@ -17,15 +17,8 @@
  */
 /* @flow strict */
 
-import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import BpkSkipLink from './index';
+import { DefaultExample } from './examples';
 
-storiesOf('bpk-component-skip-link', module).add('Default', () => (
-  <BpkSkipLink
-    style={{ position: 'absolute' }}
-    href="#main"
-    label="Skip to main content"
-  />
-));
+storiesOf('bpk-component-skip-link', module).add('Default', DefaultExample);

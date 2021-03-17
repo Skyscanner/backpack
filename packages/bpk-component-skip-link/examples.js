@@ -15,29 +15,26 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+/* @flow strict */
 
-@import '~bpk-mixins';
+import React from 'react';
 
-.bpk-navigation-stack-story-wrapper {
-  @include bpk-border-sm($bpk-color-sky-gray-tint-06, '');
-}
+import BpkSkipLink from './index';
 
-.bpk-navigation-stack-view {
-  min-height: $bpk-spacing-xxl * 12;
-  flex: 1;
-  background-color: $bpk-color-sky-gray-tint-06;
+const DefaultExample = () => (
+  <BpkSkipLink
+    style={{ position: 'absolute' }}
+    href="#main"
+    label="Skip to main content"
+  />
+);
 
-  &--alternate {
-    background-color: $bpk-color-sky-gray-tint-07;
-  }
+const DocsSiteExample = () => (
+  <BpkSkipLink
+    style={{ position: 'absolute' }}
+    href="#implementation"
+    label="Skip to implementation"
+  />
+);
 
-  &--no-nav-bar {
-    min-height: ($bpk-spacing-xxl * 12) - ($bpk-spacing-base * 2);
-  }
-
-  &--centered {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-}
+export { DefaultExample, DocsSiteExample };

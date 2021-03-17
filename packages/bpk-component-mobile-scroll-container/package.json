@@ -23,7 +23,6 @@
     "react": "^16.0.0"
   },
   "devDependencies": {
-    "bpk-component-button": "^3.3.25",
     "bpk-tokens": "^36.1.1"
   }
 }

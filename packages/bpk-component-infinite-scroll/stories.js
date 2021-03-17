@@ -25,7 +25,7 @@ import {
   StoppingAfterScrollsExample,
   InfiniteListOfElementsExample,
   DifferentNumElementsOnLoadAndScrollExample,
-  LoadTenElementsPerScrollExample,
+  LoadOneElementPerScrollExample,
   CustomLoadingItemExample,
   ForceUpdateDataExample,
   ForceUpdateDataExampleEmptyArrayExample,
@@ -47,13 +47,13 @@ const withScrollReset = story => {
 storiesOf('bpk-component-infinite-scroll', module)
   .addDecorator(withScrollReset)
   .add('Default', DefaultExample)
-  .add('Stopping after 5 scrolls', StoppingAfterScrollsExample)
+  .add('Partial load - load more after 15 items', StoppingAfterScrollsExample)
   .add('Infinite list of elements', InfiniteListOfElementsExample)
   .add(
     'Different no. elements on load and on scroll',
     DifferentNumElementsOnLoadAndScrollExample,
   )
-  .add('Load 10 elements per scroll', LoadTenElementsPerScrollExample)
+  .add('Load 1 element per scroll', LoadOneElementPerScrollExample)
   .add('Custom loading Item', CustomLoadingItemExample)
   .add('Force update data', ForceUpdateDataExample)
   .add(

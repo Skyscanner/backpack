@@ -19,6 +19,7 @@
     "prop-types": "^15.6.2"
   },
   "devDependencies": {
+    "bpk-component-label": "^4.0.110",
     "bpk-storybook-utils": "^0.0.13"
   },
   "peerDependencies": {
