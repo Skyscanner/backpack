@@ -96,58 +96,70 @@ class InfiniteDataSource extends DataSource {
 }
 
 const DefaultExample = () => (
-  <InfiniteList
-    dataSource={new ArrayDataSource(elementsArray)}
-    onScrollFinished={action('scroll finished')}
-    onScroll={action('onScroll')}
-    aria-label="Inifinite list"
-  />
+  <div className={getClassName('bpk-infinite-scroll-stories__fixed-panel')}>
+    <InfiniteList
+      dataSource={new ArrayDataSource(elementsArray)}
+      onScrollFinished={action('scroll finished')}
+      onScroll={action('onScroll')}
+      aria-label="Inifinite list"
+    />
+  </div>
 );
 
 const StoppingAfterScrollsExample = () => (
-  <InfiniteList
-    dataSource={new ArrayDataSource(elementsArray)}
-    elementsPerScroll={5}
-    seeMoreAfter={2}
-    renderSeeMoreComponent={({ onSeeMoreClick }) => (
-      <BpkButton onClick={onSeeMoreClick}>See more</BpkButton>
-    )}
-  />
+  <div className={getClassName('bpk-infinite-scroll-stories__fixed-panel')}>
+    <InfiniteList
+      dataSource={new ArrayDataSource(elementsArray)}
+      elementsPerScroll={5}
+      seeMoreAfter={2}
+      renderSeeMoreComponent={({ onSeeMoreClick }) => (
+        <BpkButton onClick={onSeeMoreClick}>See more</BpkButton>
+      )}
+    />
+  </div>
 );
 
 const InfiniteListOfElementsExample = () => (
-  <InfiniteList dataSource={new InfiniteDataSource()} />
+  <div className={getClassName('bpk-infinite-scroll-stories__fixed-panel')}>
+    <InfiniteList dataSource={new InfiniteDataSource()} />
+  </div>
 );
 
 const DifferentNumElementsOnLoadAndScrollExample = () => (
-  <InfiniteList
-    dataSource={new InfiniteDataSource()}
-    initiallyLoadedElements={4}
-    elementsPerScroll={2}
-  />
+  <div className={getClassName('bpk-infinite-scroll-stories__fixed-panel')}>
+    <InfiniteList
+      dataSource={new InfiniteDataSource()}
+      initiallyLoadedElements={4}
+      elementsPerScroll={2}
+    />
+  </div>
 );
 
 const LoadOneElementPerScrollExample = () => (
-  <InfiniteList
-    dataSource={new ArrayDataSource(elementsArray)}
-    elementsPerScroll={1}
-  />
+  <div className={getClassName('bpk-infinite-scroll-stories__fixed-panel')}>
+    <InfiniteList
+      dataSource={new ArrayDataSource(elementsArray)}
+      elementsPerScroll={1}
+    />
+  </div>
 );
 
 const CustomLoadingItemExample = () => (
-  <InfiniteList
-    dataSource={new DelayedDataSource(elementsArray)}
-    elementsPerScroll={10}
-    renderLoadingComponent={() => (
-      <div
-        className={getClassName(
-          'bpk-infinite-scroll-stories__custom-component',
-        )}
-      >
-        <BpkSpinner type={SPINNER_TYPES.primary} />
-      </div>
-    )}
-  />
+  <div className={getClassName('bpk-infinite-scroll-stories__fixed-panel')}>
+    <InfiniteList
+      dataSource={new DelayedDataSource(elementsArray)}
+      elementsPerScroll={10}
+      renderLoadingComponent={() => (
+        <div
+          className={getClassName(
+            'bpk-infinite-scroll-stories__custom-component',
+          )}
+        >
+          <BpkSpinner type={SPINNER_TYPES.primary} />
+        </div>
+      )}
+    />
+  </div>
 );
 
 const ForceUpdateDataExample = () => {
@@ -166,7 +178,9 @@ const ForceUpdateDataExample = () => {
       >
         Update items
       </BpkButton>
-      <InfiniteList dataSource={dataSource} />
+      <div className={getClassName('bpk-infinite-scroll-stories__fixed-panel')}>
+        <InfiniteList dataSource={dataSource} />
+      </div>
     </div>
   );
 };
@@ -187,14 +201,16 @@ const ForceUpdateDataExampleEmptyArrayExample = () => {
       >
         Update items
       </BpkButton>
-      <InfiniteList
-        dataSource={dataSource}
-        seeMoreAfter={0}
-        elementsPerScroll={5}
-        renderSeeMoreComponent={({ onSeeMoreClick }) => (
-          <BpkButton onClick={onSeeMoreClick}>See more</BpkButton>
-        )}
-      />
+      <div className={getClassName('bpk-infinite-scroll-stories__fixed-panel')}>
+        <InfiniteList
+          dataSource={dataSource}
+          seeMoreAfter={0}
+          elementsPerScroll={5}
+          renderSeeMoreComponent={({ onSeeMoreClick }) => (
+            <BpkButton onClick={onSeeMoreClick}>See more</BpkButton>
+          )}
+        />
+      </div>
     </div>
   );
 };
@@ -217,14 +233,16 @@ const ForceUpdateDataExampleFromNonEmptyToEmptyExample = () => {
       >
         Add data
       </BpkButton>
-      <InfiniteList
-        dataSource={dataSource}
-        seeMoreAfter={0}
-        elementsPerScroll={5}
-        renderSeeMoreComponent={({ onSeeMoreClick }) => (
-          <BpkButton onClick={onSeeMoreClick}>See more</BpkButton>
-        )}
-      />
+      <div className={getClassName('bpk-infinite-scroll-stories__fixed-panel')}>
+        <InfiniteList
+          dataSource={dataSource}
+          seeMoreAfter={0}
+          elementsPerScroll={5}
+          renderSeeMoreComponent={({ onSeeMoreClick }) => (
+            <BpkButton onClick={onSeeMoreClick}>See more</BpkButton>
+          )}
+        />
+      </div>
     </div>
   );
 };
@@ -232,7 +250,7 @@ const ForceUpdateDataExampleFromNonEmptyToEmptyExample = () => {
 const InferDatasourceWhenLessThanRequestElementsExample = () => {
   const raiseLoadingAction = action('loading');
   return (
-    <div>
+    <div className={getClassName('bpk-infinite-scroll-stories__fixed-panel')}>
       <InfiniteList
         dataSource={new DelayedDataSource(elementsArray)}
         seeMoreAfter={20}
