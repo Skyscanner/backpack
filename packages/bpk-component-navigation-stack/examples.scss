@@ -19,8 +19,6 @@
 @import '~bpk-mixins';
 
 .bpk-navigation-stack-story-wrapper {
-  max-width: $bpk-spacing-xxl * 8;
-
   @include bpk-border-sm($bpk-color-sky-gray-tint-06, '');
 }
 

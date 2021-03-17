@@ -20,6 +20,7 @@
 
 import React from 'react';
 import { action } from 'bpk-storybook-utils';
+import BpkLabel from 'bpk-component-label';
 
 import BpkTextarea from './index';
 
@@ -28,45 +29,57 @@ necessitatibus reiciendis, porro temporibus expedita excepturi! Nostrum pariatur
 laudantium quis, tempore iste non, nam magnam.`;
 
 const DefaultExample = () => (
-  <BpkTextarea
-    id="default"
-    name="default"
-    value={loremIpsum}
-    onChange={action('input changed')}
-    placeholder="Please enter some text"
-  />
+  <form>
+    <BpkLabel htmlFor="default">Textarea</BpkLabel>
+    <BpkTextarea
+      id="default"
+      name="default"
+      value={loremIpsum}
+      onChange={action('input changed')}
+      placeholder="Please enter some text"
+    />
+  </form>
 );
 
 const PlaceholderExample = () => (
-  <BpkTextarea
-    id="placeholder"
-    name="placeholder"
-    value=""
-    onChange={action('input changed')}
-    placeholder="Please enter some text"
-  />
+  <form>
+    <BpkLabel htmlFor="placeholder">Textarea</BpkLabel>
+    <BpkTextarea
+      id="placeholder"
+      name="placeholder"
+      value=""
+      onChange={action('input changed')}
+      placeholder="Please enter some text"
+    />
+  </form>
 );
 
 const DisabledExample = () => (
-  <BpkTextarea
-    id="disabled"
-    name="disabled"
-    value=""
-    onChange={action('input changed')}
-    placeholder="Please enter some text"
-    disabled
-  />
+  <form>
+    <BpkLabel htmlFor="disabled">Textarea</BpkLabel>
+    <BpkTextarea
+      id="disabled"
+      name="disabled"
+      value=""
+      onChange={action('input changed')}
+      placeholder="Please enter some text"
+      disabled
+    />
+  </form>
 );
 
 const InvalidExample = () => (
-  <BpkTextarea
-    id="disabled"
-    name="disabled"
-    value=""
-    onChange={action('input changed')}
-    placeholder="Please enter some text"
-    valid={false}
-  />
+  <form>
+    <BpkLabel htmlFor="invalid">Textarea</BpkLabel>
+    <BpkTextarea
+      id="invalid"
+      name="invalid"
+      value=""
+      onChange={action('input changed')}
+      placeholder="Please enter some text"
+      valid={false}
+    />
+  </form>
 );
 
 export { DefaultExample, PlaceholderExample, DisabledExample, InvalidExample };

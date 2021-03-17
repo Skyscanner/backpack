@@ -19,8 +19,6 @@
 /* @flow strict */
 
 import React from 'react';
-import BpkButton from 'bpk-component-button';
-import { linkTo } from '@storybook/addon-links';
 import { cssModules } from 'bpk-react-utils';
 
 import STYLES from './examples.scss';
@@ -73,22 +71,8 @@ const SettingLeadingAndTrailingIndicatorClassNameExample = () => (
   </BpkMobileScrollContainer>
 );
 
-const HorizontalNavExample = () => (
-  <BpkButton onClick={linkTo('bpk-component-horizontal-nav', 'Example')}>
-    See horizontal nav example
-  </BpkButton>
-);
-
-const BarChartExample = () => (
-  <BpkButton onClick={linkTo('bpk-component-barchart', 'Default')}>
-    See bar chart example
-  </BpkButton>
-);
-
 export {
   DefaultExample,
   WithVisibleScrollbarExample,
   SettingLeadingAndTrailingIndicatorClassNameExample,
-  HorizontalNavExample,
-  BarChartExample,
 };

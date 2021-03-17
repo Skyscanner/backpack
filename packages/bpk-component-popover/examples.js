@@ -19,7 +19,7 @@
 /* @flow strict */
 
 import PropTypes from 'prop-types';
-import React, { Component, type Node } from 'react';
+import React, { Component } from 'react';
 import { cssModules, withDefaultProps } from 'bpk-react-utils';
 import BpkButton from 'bpk-component-button';
 import BpkText from 'bpk-component-text';
@@ -28,15 +28,11 @@ import BpkInput, { withOpenEvents } from 'bpk-component-input';
 
 import STYLES from './examples.scss';
 
-import BpkPopover, {
-  bpkPopoverPortalPropTypes,
-  bpkPopoverPortalDefaultProps,
-  type BpkPopoverProps as PopoverProps,
-} from './index';
-
-const EnhancedInput = withOpenEvents(BpkInput);
+import BpkPopover from './index';
 
 const getClassName = cssModules(STYLES);
+
+const EnhancedInput = withOpenEvents(BpkInput);
 
 const Paragraph = withDefaultProps(BpkText, {
   textStyle: 'base',
@@ -44,22 +40,12 @@ const Paragraph = withDefaultProps(BpkText, {
   className: getClassName('bpk-popover-paragraph'),
 });
 
-type IgnoredPopoverProps = {
-  children: Node,
-  closeButtonText: string,
-  isOpen: boolean,
-  label: string,
-  onClose: (event: SyntheticEvent<>, props: { source: string }) => mixed,
-  target: (() => ?HTMLElement) | Node,
-};
-
 type Props = {
-  ...$Diff<PopoverProps, IgnoredPopoverProps>,
   id: string,
   changeProps: boolean,
-  targetFunction: ?() => ?HTMLElement,
   closeProgrammatically: boolean,
-  input?: boolean,
+  inputTrigger: boolean,
+  targetFunction: ?() => ?HTMLElement,
 };
 
 type State = {
@@ -69,20 +55,20 @@ type State = {
 
 class PopoverContainer extends Component<Props, State> {
   static propTypes = {
-    ...bpkPopoverPortalPropTypes,
     className: PropTypes.string,
     id: PropTypes.string.isRequired,
     changeProps: PropTypes.bool,
-    targetFunction: PropTypes.func,
     closeProgrammatically: PropTypes.bool,
+    inputTrigger: PropTypes.bool,
+    targetFunction: PropTypes.func,
   };
 
   static defaultProps = {
-    ...bpkPopoverPortalDefaultProps,
     className: null,
     changeProps: false,
-    targetFunction: null,
     closeProgrammatically: false,
+    inputTrigger: false,
+    targetFunction: null,
   };
 
   constructor() {
@@ -119,27 +105,20 @@ class PopoverContainer extends Component<Props, State> {
   };
 
   render() {
-    const { targetFunction, changeProps, id, input, ...rest } = this.props;
+    const {
+      targetFunction,
+      changeProps,
+      id,
+      inputTrigger,
+      ...rest
+    } = this.props;
     let target = null;
     let openButton = <BpkButton onClick={this.openPopover}> Open </BpkButton>;
-    let inputComponent = (
-      <EnhancedInput
-        id="input"
-        name="input"
-        value="Open"
-        isOpen={this.state.isOpen}
-        onOpen={this.openPopover}
-        onChange={() => null}
-      />
-    );
 
     if (targetFunction != null) {
       target = targetFunction;
     } else if (this.state.changedTarget) {
       target = this.state.changedTarget;
-    } else if (input) {
-      target = inputComponent;
-      inputComponent = null;
     } else {
       target = openButton;
       openButton = null;
@@ -150,9 +129,7 @@ class PopoverContainer extends Component<Props, State> {
 
     return (
       <div id="popover-container">
-        {!input && openButton}
-        {input && inputComponent}
-
+        {openButton}
         {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
         <BpkPopover
           closeButtonText="Close"
@@ -161,21 +138,27 @@ class PopoverContainer extends Component<Props, State> {
           label="My popover"
           onClose={this.closePopover}
           renderTarget={renderTarget}
-          target={target}
+          target={
+            inputTrigger ? (
+              <EnhancedInput
+                id="input"
+                name="input"
+                value="John Smith"
+                isOpen={this.state.isOpen}
+                onOpen={this.openPopover}
+                onChange={() => null}
+              />
+            ) : (
+              target
+            )
+          }
           {...rest}
         >
           <BpkContentContainer>
-            <Paragraph>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
-              pulvinar leo in gravida varius. Mauris eget euismod mi. Ut
-              vulputate ex nec consequat sollicitudin. Pellentesque pulvinar ac
-              dolor vel hendrerit. Maecenas sed felis justo. Proin at tellus in
-              urna molestie blandit. Duis posuere urna nec finibus imperdiet.
-            </Paragraph>
+            <Paragraph>My popover content.</Paragraph>
+            <Paragraph>Some more popover content.</Paragraph>
             {changeProps ? (
-              <Paragraph>
-                <BpkButton onClick={this.changeTarget}>Change target</BpkButton>
-              </Paragraph>
+              <BpkButton onClick={this.changeTarget}>Change target</BpkButton>
             ) : null}
           </BpkContentContainer>
         </BpkPopover>
@@ -184,7 +167,9 @@ class PopoverContainer extends Component<Props, State> {
   }
 }
 
-const Spacer = () => <div className={getClassName('bpk-popover-spacer')} />;
+const Spacer = props => (
+  <div className={getClassName('bpk-popover-spacer')} {...props} />
+);
 
 const DefaultExample = () => (
   <Spacer>
@@ -268,7 +253,7 @@ const PopperModifiersExample = () => (
 
 const InputTriggerExample = () => (
   <Spacer>
-    <PopoverContainer id="my-popover-1" input />
+    <PopoverContainer id="my-popover-1" inputTrigger />
   </Spacer>
 );
 

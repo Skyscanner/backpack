@@ -22,45 +22,49 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { action } from 'bpk-storybook-utils';
 import BpkButton from 'bpk-component-button';
-import BpkCard from 'bpk-component-card';
+import { BpkList, BpkListItem } from 'bpk-component-list';
 import { BpkSpinner, SPINNER_TYPES } from 'bpk-component-spinner';
+import { cssModules } from 'bpk-react-utils';
+
+import STYLES from './examples.scss';
 
 import withInfiniteScroll, { ArrayDataSource, DataSource } from './index';
 
-const elementsArray: Array<any> = [];
+const getClassName = cssModules(STYLES);
 
-for (let i = 0; i < 100; i += 1) {
-  elementsArray.push(`Element ${i}`);
-}
+const elementsArray = [
+  'Item 1',
+  'Item 2',
+  'Item 3',
+  'Item 4',
+  'Item 5',
+  'Item 6',
+  'Item 7',
+  'Item 8',
+  'Item 9',
+  'Item 10',
+  'Item 11',
+  'Item 12',
+  'Item 13',
+  'Item 14',
+  'Item 15',
+  'Item 16',
+  'Item 17',
+  'Item 18',
+  'Item 19',
+  'Item 20',
+];
 
-type ListProps = {
-  elements: Array<any>,
-  'aria-label': ?string, // defined just to test flow definition with extra props
-};
-
-const List = ({ elements, ...rest }: ListProps) => (
-  <div {...rest}>
+const List = ({ elements }) => (
+  <BpkList className={getClassName('bpk-infinite-scroll-stories__list')}>
     {elements.map(element => (
-      <BpkCard
-        style={{
-          margin: '5px',
-          height: '100px',
-        }}
-        key={element}
-      >
-        {element}
-      </BpkCard>
+      <BpkListItem key={element}>{element}</BpkListItem>
     ))}
-  </div>
+  </BpkList>
 );
 
 List.propTypes = {
   elements: PropTypes.arrayOf(PropTypes.any).isRequired,
-  'aria-label': PropTypes.string.isRequired,
-};
-
-List.defaultProps = {
-  'aria-label': null,
 };
 
 const InfiniteList = withInfiniteScroll(List);
@@ -103,12 +107,14 @@ const DefaultExample = () => (
 const StoppingAfterScrollsExample = () => (
   <InfiniteList
     dataSource={new ArrayDataSource(elementsArray)}
-    seeMoreAfter={1}
+    elementsPerScroll={5}
+    seeMoreAfter={2}
     renderSeeMoreComponent={({ onSeeMoreClick }) => (
       <BpkButton onClick={onSeeMoreClick}>See more</BpkButton>
     )}
   />
 );
+
 const InfiniteListOfElementsExample = () => (
   <InfiniteList dataSource={new InfiniteDataSource()} />
 );
@@ -121,10 +127,10 @@ const DifferentNumElementsOnLoadAndScrollExample = () => (
   />
 );
 
-const LoadTenElementsPerScrollExample = () => (
+const LoadOneElementPerScrollExample = () => (
   <InfiniteList
     dataSource={new ArrayDataSource(elementsArray)}
-    elementsPerScroll={10}
+    elementsPerScroll={1}
   />
 );
 
@@ -132,7 +138,15 @@ const CustomLoadingItemExample = () => (
   <InfiniteList
     dataSource={new DelayedDataSource(elementsArray)}
     elementsPerScroll={10}
-    renderLoadingComponent={() => <BpkSpinner type={SPINNER_TYPES.primary} />}
+    renderLoadingComponent={() => (
+      <div
+        className={getClassName(
+          'bpk-infinite-scroll-stories__custom-component',
+        )}
+      >
+        <BpkSpinner type={SPINNER_TYPES.primary} />
+      </div>
+    )}
   />
 );
 
@@ -238,7 +252,7 @@ export {
   StoppingAfterScrollsExample,
   InfiniteListOfElementsExample,
   DifferentNumElementsOnLoadAndScrollExample,
-  LoadTenElementsPerScrollExample,
+  LoadOneElementPerScrollExample,
   CustomLoadingItemExample,
   ForceUpdateDataExample,
   ForceUpdateDataExampleEmptyArrayExample,
