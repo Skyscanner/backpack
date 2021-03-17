@@ -29,4 +29,12 @@ const DefaultExample = () => (
   />
 );
 
-export default DefaultExample;
+const DocsSiteExample = () => (
+  <BpkSkipLink
+    style={{ position: 'absolute' }}
+    href="#implementation"
+    label="Skip to implementation"
+  />
+);
+
+export { DefaultExample, DocsSiteExample };
