@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-image",
-  "version": "4.3.25",
+  "version": "4.3.26",
   "description": "Backpack image component.",
   "license": "Apache-2.0",
   "repository": {
@@ -24,7 +24,7 @@
     "react": "^16.0.0"
   },
   "devDependencies": {
-    "bpk-component-mobile-scroll-container": "^2.1.11",
+    "bpk-component-mobile-scroll-container": "^2.1.12",
     "bpk-component-text": "^3.1.44",
     "bpk-tokens": "^36.1.1"
   }

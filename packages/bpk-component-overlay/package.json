@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-overlay",
-  "version": "1.0.35",
+  "version": "1.0.36",
   "description": "Backpack overlay component.",
   "license": "Apache-2.0",
   "repository": {
@@ -21,7 +21,7 @@
     "react": "^16.0.0"
   },
   "devDependencies": {
-    "bpk-component-image": "^4.3.25",
+    "bpk-component-image": "^4.3.26",
     "bpk-component-text": "^3.1.44"
   },
   "gitHead": "79e9426ba627224294d8a6dcf5ecb898f2021cde"

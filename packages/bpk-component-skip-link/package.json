@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-skip-link",
-  "version": "1.0.14",
+  "version": "1.0.15",
   "description": "Backpack skip-link component.",
   "main": "index.js",
   "repository": {
