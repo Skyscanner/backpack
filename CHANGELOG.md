@@ -2,6 +2,12 @@
 
 [Unreleased changes](./UNRELEASED.md).
 
+
+# 2021-03-18
+
+**Fixed:**
+  - bpk-component-slider: 2.0.117 => 2.0.118
+    - Improved controls colour contrast.
 # 2021-03-11
 
 **Breaking:**
