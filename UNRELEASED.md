@@ -2,13 +2,6 @@
 
 > Place your changes below this line.
 
-**Fixed:**
-
-- bpk-component-datepicker:
-  - Remove `readOnly` prop from input as it is already set by the `withOpenEvents` HOC.
-- bpk-component-input:
-  - Fix input not being able to open on Android devices when rendered with `withOpenEvents`.
-
 ## How to write a good changelog entry
 
 1. Add 'Breaking', 'Added' or 'Fixed' in bold depending on if the change will be major, minor or patch according to [semver](semver.org).

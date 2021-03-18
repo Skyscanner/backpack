@@ -8,6 +8,10 @@
 **Fixed:**
   - bpk-component-slider: 2.0.117 => 2.0.118
     - Improved controls colour contrast.
+  - bpk-component-datepicker: 11.3.43 => 11.3.44
+    - Remove `readOnly` prop from input as it is already set by the `withOpenEvents` HOC.
+  - bpk-component-input: 5.0.116 => 5.0.117
+    - Fix input not being able to open on Android devices when rendered with `withOpenEvents`.  
 # 2021-03-11
 
 **Breaking:**
