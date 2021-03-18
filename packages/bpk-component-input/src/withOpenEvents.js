@@ -115,16 +115,20 @@ const withOpenEvents = InputComponent => {
       };
 
       if (hasTouchSupport) {
-        // Prevents the mobile keyboard from opening (iOS / Android)
+        // Prevents the mobile keyboard from opening (iOS / Android), while not announcing it as 'read only' to a screen reader
         eventHandlers.readOnly = 'readOnly';
+        eventHandlers['aria-readonly'] = false;
+
         eventHandlers.onTouchEnd = withEventHandler(
           this.handleTouchEnd,
           onTouchEnd,
         );
-      } else {
-        eventHandlers.onFocus = withEventHandler(this.handleFocus, onFocus);
-        eventHandlers.onBlur = withEventHandler(this.handleBlur, onBlur);
       }
+
+      // Needed on desktop to allow the intended behaviour of opening on focus
+      // Needed on mobile as some Android devices do not trigger onClick or onTouch when TalkBack is active but do trigger onFocus
+      eventHandlers.onFocus = withEventHandler(this.handleFocus, onFocus);
+      eventHandlers.onBlur = withEventHandler(this.handleBlur, onBlur);
 
       return (
         <InputComponent

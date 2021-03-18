@@ -38,7 +38,6 @@ exports[`BpkDatepicker should render correctly 1`] = `
   onKeyDown={[Function]}
   onKeyUp={[Function]}
   placeholder="placeholder"
-  readOnly={true}
   type="text"
   value="15/02/2010"
 />
@@ -60,7 +59,6 @@ exports[`BpkDatepicker should render correctly when not valid 1`] = `
   onKeyDown={[Function]}
   onKeyUp={[Function]}
   placeholder="placeholder"
-  readOnly={true}
   type="text"
   value="15/02/2010"
 />
