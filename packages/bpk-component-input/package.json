@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-input",
-  "version": "5.0.116",
+  "version": "5.0.117",
   "description": "Backpack input component.",
   "license": "Apache-2.0",
   "repository": {
@@ -23,7 +23,7 @@
     "react": "^16.0.0"
   },
   "devDependencies": {
-    "bpk-component-banner-alert": "^4.2.70",
+    "bpk-component-banner-alert": "^4.2.71",
     "bpk-component-label": "^4.0.110",
     "bpk-storybook-utils": "^0.0.13"
   }

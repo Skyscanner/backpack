@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-popover",
-  "version": "3.0.119",
+  "version": "3.0.120",
   "description": "Backpack popover component.",
   "license": "Apache-2.0",
   "repository": {
@@ -30,6 +30,6 @@
   "devDependencies": {
     "bpk-component-button": "^3.3.25",
     "bpk-component-content-container": "^2.0.108",
-    "bpk-component-input": "^5.0.116"
+    "bpk-component-input": "^5.0.117"
   }
 }
