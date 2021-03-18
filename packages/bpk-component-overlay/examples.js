@@ -30,8 +30,9 @@ import STYLES from './examples.scss';
 
 import BpkOverlay, { BORDER_RADIUS_STYLES, OVERLAY_TYPES } from './index';
 
+const documentIfExists = typeof window !== 'undefined' ? document : null;
 const FadingLazyLoadedImage = withLoadingBehavior(
-  withLazyLoading(BpkImage, document),
+  withLazyLoading(BpkImage, documentIfExists),
 );
 
 const OTTAWA_IMG_SRC =
