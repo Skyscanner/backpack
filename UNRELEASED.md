@@ -6,6 +6,11 @@
 - bpk-svgs:
   - New `center-location` icon.
 
+**Fixed:**
+
+- bpk-component-calendar:
+  - Calendar Grid column headings and out-of-range dates now have aria-hidden applied.
+
 ## How to write a good changelog entry
 
 1. Add 'Breaking', 'Added' or 'Fixed' in bold depending on if the change will be major, minor or patch according to [semver](semver.org).
