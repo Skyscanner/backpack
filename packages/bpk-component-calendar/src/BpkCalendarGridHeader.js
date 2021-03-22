@@ -59,8 +59,8 @@ const WeekDay = props => {
   }
 
   return (
-    <Element className={classNames.join(' ')} title={weekDay.name}>
-      <span aria-hidden="true">{weekDay[weekDayKey]}</span>
+    <Element className={classNames.join(' ')} title={weekDay.name} aria-hidden>
+      <span>{weekDay[weekDayKey]}</span>
     </Element>
   );
 };

@@ -18,72 +18,65 @@ exports[`BpkCalendarGrid should render correctly with "showWeekendSeparator" att
       className="bpk-calendar-header__week"
     >
       <th
+        aria-hidden={true}
         className="bpk-calendar-header__weekday bpk-calendar-header__weekday--weekend"
         title="Sunday"
       >
-        <span
-          aria-hidden="true"
-        >
+        <span>
           Sun
         </span>
       </th>
       <th
+        aria-hidden={true}
         className="bpk-calendar-header__weekday"
         title="Monday"
       >
-        <span
-          aria-hidden="true"
-        >
+        <span>
           Mon
         </span>
       </th>
       <th
+        aria-hidden={true}
         className="bpk-calendar-header__weekday"
         title="Tuesday"
       >
-        <span
-          aria-hidden="true"
-        >
+        <span>
           Tue
         </span>
       </th>
       <th
+        aria-hidden={true}
         className="bpk-calendar-header__weekday"
         title="Wednesday"
       >
-        <span
-          aria-hidden="true"
-        >
+        <span>
           Wed
         </span>
       </th>
       <th
+        aria-hidden={true}
         className="bpk-calendar-header__weekday"
         title="Thursday"
       >
-        <span
-          aria-hidden="true"
-        >
+        <span>
           Thu
         </span>
       </th>
       <th
+        aria-hidden={true}
         className="bpk-calendar-header__weekday"
         title="Friday"
       >
-        <span
-          aria-hidden="true"
-        >
+        <span>
           Fri
         </span>
       </th>
       <th
+        aria-hidden={true}
         className="bpk-calendar-header__weekday bpk-calendar-header__weekday--weekend"
         title="Saturday"
       >
-        <span
-          aria-hidden="true"
-        >
+        <span>
           Sat
         </span>
       </th>
@@ -1060,72 +1053,65 @@ exports[`BpkCalendarGrid should render correctly with "weekDayKey" attribute set
       className="bpk-calendar-header__week"
     >
       <th
+        aria-hidden={true}
         className="bpk-calendar-header__weekday bpk-calendar-header__weekday--weekend"
         title="Sunday"
       >
-        <span
-          aria-hidden="true"
-        >
+        <span>
           Sun
         </span>
       </th>
       <th
+        aria-hidden={true}
         className="bpk-calendar-header__weekday"
         title="Monday"
       >
-        <span
-          aria-hidden="true"
-        >
+        <span>
           Mon
         </span>
       </th>
       <th
+        aria-hidden={true}
         className="bpk-calendar-header__weekday"
         title="Tuesday"
       >
-        <span
-          aria-hidden="true"
-        >
+        <span>
           Tue
         </span>
       </th>
       <th
+        aria-hidden={true}
         className="bpk-calendar-header__weekday"
         title="Wednesday"
       >
-        <span
-          aria-hidden="true"
-        >
+        <span>
           Wed
         </span>
       </th>
       <th
+        aria-hidden={true}
         className="bpk-calendar-header__weekday"
         title="Thursday"
       >
-        <span
-          aria-hidden="true"
-        >
+        <span>
           Thu
         </span>
       </th>
       <th
+        aria-hidden={true}
         className="bpk-calendar-header__weekday"
         title="Friday"
       >
-        <span
-          aria-hidden="true"
-        >
+        <span>
           Fri
         </span>
       </th>
       <th
+        aria-hidden={true}
         className="bpk-calendar-header__weekday bpk-calendar-header__weekday--weekend"
         title="Saturday"
       >
-        <span
-          aria-hidden="true"
-        >
+        <span>
           Sat
         </span>
       </th>
@@ -2102,72 +2088,65 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
       className="bpk-calendar-header__week"
     >
       <th
+        aria-hidden={true}
         className="bpk-calendar-header__weekday"
         title="Monday"
       >
-        <span
-          aria-hidden="true"
-        >
+        <span>
           Mon
         </span>
       </th>
       <th
+        aria-hidden={true}
         className="bpk-calendar-header__weekday"
         title="Tuesday"
       >
-        <span
-          aria-hidden="true"
-        >
+        <span>
           Tue
         </span>
       </th>
       <th
+        aria-hidden={true}
         className="bpk-calendar-header__weekday"
         title="Wednesday"
       >
-        <span
-          aria-hidden="true"
-        >
+        <span>
           Wed
         </span>
       </th>
       <th
+        aria-hidden={true}
         className="bpk-calendar-header__weekday"
         title="Thursday"
       >
-        <span
-          aria-hidden="true"
-        >
+        <span>
           Thu
         </span>
       </th>
       <th
+        aria-hidden={true}
         className="bpk-calendar-header__weekday"
         title="Friday"
       >
-        <span
-          aria-hidden="true"
-        >
+        <span>
           Fri
         </span>
       </th>
       <th
+        aria-hidden={true}
         className="bpk-calendar-header__weekday bpk-calendar-header__weekday--weekend bpk-calendar-header__weekday--weekend-start"
         title="Saturday"
       >
-        <span
-          aria-hidden="true"
-        >
+        <span>
           Sat
         </span>
       </th>
       <th
+        aria-hidden={true}
         className="bpk-calendar-header__weekday bpk-calendar-header__weekday--weekend bpk-calendar-header__weekday--weekend-end"
         title="Sunday"
       >
-        <span
-          aria-hidden="true"
-        >
+        <span>
           Sun
         </span>
       </th>
@@ -3144,72 +3123,65 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
       className="bpk-calendar-header__week"
     >
       <th
+        aria-hidden={true}
         className="bpk-calendar-header__weekday"
         title="Monday"
       >
-        <span
-          aria-hidden="true"
-        >
+        <span>
           Mon
         </span>
       </th>
       <th
+        aria-hidden={true}
         className="bpk-calendar-header__weekday"
         title="Tuesday"
       >
-        <span
-          aria-hidden="true"
-        >
+        <span>
           Tue
         </span>
       </th>
       <th
+        aria-hidden={true}
         className="bpk-calendar-header__weekday"
         title="Wednesday"
       >
-        <span
-          aria-hidden="true"
-        >
+        <span>
           Wed
         </span>
       </th>
       <th
+        aria-hidden={true}
         className="bpk-calendar-header__weekday"
         title="Thursday"
       >
-        <span
-          aria-hidden="true"
-        >
+        <span>
           Thu
         </span>
       </th>
       <th
+        aria-hidden={true}
         className="bpk-calendar-header__weekday"
         title="Friday"
       >
-        <span
-          aria-hidden="true"
-        >
+        <span>
           Fri
         </span>
       </th>
       <th
+        aria-hidden={true}
         className="bpk-calendar-header__weekday bpk-calendar-header__weekday--weekend bpk-calendar-header__weekday--weekend-start"
         title="Saturday"
       >
-        <span
-          aria-hidden="true"
-        >
+        <span>
           Sat
         </span>
       </th>
       <th
+        aria-hidden={true}
         className="bpk-calendar-header__weekday bpk-calendar-header__weekday--weekend bpk-calendar-header__weekday--weekend-end"
         title="Sunday"
       >
-        <span
-          aria-hidden="true"
-        >
+        <span>
           Sun
         </span>
       </th>
@@ -3934,72 +3906,65 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
       className="bpk-calendar-header__week"
     >
       <th
+        aria-hidden={true}
         className="bpk-calendar-header__weekday"
         title="Wednesday"
       >
-        <span
-          aria-hidden="true"
-        >
+        <span>
           Wed
         </span>
       </th>
       <th
+        aria-hidden={true}
         className="bpk-calendar-header__weekday"
         title="Thursday"
       >
-        <span
-          aria-hidden="true"
-        >
+        <span>
           Thu
         </span>
       </th>
       <th
+        aria-hidden={true}
         className="bpk-calendar-header__weekday"
         title="Friday"
       >
-        <span
-          aria-hidden="true"
-        >
+        <span>
           Fri
         </span>
       </th>
       <th
+        aria-hidden={true}
         className="bpk-calendar-header__weekday bpk-calendar-header__weekday--weekend bpk-calendar-header__weekday--weekend-start"
         title="Saturday"
       >
-        <span
-          aria-hidden="true"
-        >
+        <span>
           Sat
         </span>
       </th>
       <th
+        aria-hidden={true}
         className="bpk-calendar-header__weekday bpk-calendar-header__weekday--weekend bpk-calendar-header__weekday--weekend-end"
         title="Sunday"
       >
-        <span
-          aria-hidden="true"
-        >
+        <span>
           Sun
         </span>
       </th>
       <th
+        aria-hidden={true}
         className="bpk-calendar-header__weekday"
         title="Monday"
       >
-        <span
-          aria-hidden="true"
-        >
+        <span>
           Mon
         </span>
       </th>
       <th
+        aria-hidden={true}
         className="bpk-calendar-header__weekday"
         title="Tuesday"
       >
-        <span
-          aria-hidden="true"
-        >
+        <span>
           Tue
         </span>
       </th>
