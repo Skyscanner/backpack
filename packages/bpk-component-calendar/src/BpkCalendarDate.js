@@ -139,7 +139,8 @@ class BpkCalendarDate extends PureComponent {
         type="button"
         style={style}
         className={classNames.join(' ')}
-        aria-label={date.getDate()}
+        aria-hidden={isBlocked}
+        aria-label={isBlocked ? '' : date.getDate()}
         disabled={isBlocked}
         tabIndex={isKeyboardFocusable && isFocused ? '0' : '-1'}
         onClick={() => {

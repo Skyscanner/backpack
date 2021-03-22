@@ -40,6 +40,15 @@ describe('BpkCalendarDate', () => {
     expect(tree).toMatchSnapshot();
   });
 
+  it('should render a disabled and blocked button', () => {
+    const tree = renderer
+      .create(
+        <BpkCalendarDate date={new Date(2010, 1, 15)} disabled isBlocked />,
+      )
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
   it('should render with a click and keyDown handler', () => {
     const tree = renderer
       .create(

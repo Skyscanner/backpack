@@ -2,6 +2,7 @@
 
 exports[`BpkCalendarDate cellType tests should render a disabled button 1`] = `
 <button
+  aria-hidden={false}
   aria-label={15}
   aria-pressed={false}
   className="bpk-calendar-date bpk-calendar-date--colored bpk-calendar-date--colored-default"
@@ -22,6 +23,7 @@ exports[`BpkCalendarDate cellType tests should render a disabled button 1`] = `
 
 exports[`BpkCalendarDate cellType tests should render a focused button with tabIndex 1`] = `
 <button
+  aria-hidden={false}
   aria-label={15}
   aria-pressed={false}
   className="bpk-calendar-date bpk-calendar-date--colored bpk-calendar-date--colored-default"
@@ -43,6 +45,7 @@ exports[`BpkCalendarDate cellType tests should render a focused button with tabI
 
 exports[`BpkCalendarDate cellType tests should render correctly with default style 1`] = `
 <button
+  aria-hidden={false}
   aria-label={15}
   aria-pressed={false}
   className="bpk-calendar-date bpk-calendar-date--colored bpk-calendar-date--colored-default"
@@ -63,6 +66,7 @@ exports[`BpkCalendarDate cellType tests should render correctly with default sty
 
 exports[`BpkCalendarDate cellType tests should render correctly with negative style 1`] = `
 <button
+  aria-hidden={false}
   aria-label={15}
   aria-pressed={false}
   className="bpk-calendar-date bpk-calendar-date--colored bpk-calendar-date--colored-negative"
@@ -83,6 +87,7 @@ exports[`BpkCalendarDate cellType tests should render correctly with negative st
 
 exports[`BpkCalendarDate cellType tests should render correctly with neutral style 1`] = `
 <button
+  aria-hidden={false}
   aria-label={15}
   aria-pressed={false}
   className="bpk-calendar-date bpk-calendar-date--colored bpk-calendar-date--colored-neutral"
@@ -103,6 +108,7 @@ exports[`BpkCalendarDate cellType tests should render correctly with neutral sty
 
 exports[`BpkCalendarDate cellType tests should render correctly with positive style 1`] = `
 <button
+  aria-hidden={false}
   aria-label={15}
   aria-pressed={false}
   className="bpk-calendar-date bpk-calendar-date--colored bpk-calendar-date--colored-positive"
@@ -123,6 +129,7 @@ exports[`BpkCalendarDate cellType tests should render correctly with positive st
 
 exports[`BpkCalendarDate should pass props through to button 1`] = `
 <button
+  aria-hidden={false}
   aria-label="Nothing happened on this day in 2010"
   aria-pressed={false}
   className="bpk-calendar-date"
@@ -141,8 +148,30 @@ exports[`BpkCalendarDate should pass props through to button 1`] = `
 </button>
 `;
 
+exports[`BpkCalendarDate should render a disabled and blocked button 1`] = `
+<button
+  aria-hidden={true}
+  aria-label=""
+  aria-pressed={false}
+  className="bpk-calendar-date bpk-calendar-date--blocked"
+  disabled={true}
+  onClick={[Function]}
+  onKeyDown={null}
+  style={null}
+  tabIndex="-1"
+  type="button"
+>
+  <span
+    aria-hidden="true"
+  >
+    15
+  </span>
+</button>
+`;
+
 exports[`BpkCalendarDate should render a disabled button 1`] = `
 <button
+  aria-hidden={false}
   aria-label={15}
   aria-pressed={false}
   className="bpk-calendar-date"
@@ -163,6 +192,7 @@ exports[`BpkCalendarDate should render a disabled button 1`] = `
 
 exports[`BpkCalendarDate should render a focused button with tabIndex 1`] = `
 <button
+  aria-hidden={false}
   aria-label={15}
   aria-pressed={false}
   className="bpk-calendar-date"
@@ -184,6 +214,7 @@ exports[`BpkCalendarDate should render a focused button with tabIndex 1`] = `
 
 exports[`BpkCalendarDate should render correctly 1`] = `
 <button
+  aria-hidden={false}
   aria-label={15}
   aria-pressed={false}
   className="bpk-calendar-date"
@@ -204,6 +235,7 @@ exports[`BpkCalendarDate should render correctly 1`] = `
 
 exports[`BpkCalendarDate should render with a click and keyDown handler 1`] = `
 <button
+  aria-hidden={false}
   aria-label={15}
   aria-pressed={false}
   className="bpk-calendar-date"
@@ -224,6 +256,7 @@ exports[`BpkCalendarDate should render with a click and keyDown handler 1`] = `
 
 exports[`BpkCalendarDate should set a custom class 1`] = `
 <button
+  aria-hidden={false}
   aria-label={15}
   aria-pressed={false}
   className="bpk-calendar-date userlandClassName"
