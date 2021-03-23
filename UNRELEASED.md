@@ -2,10 +2,6 @@
 
 > Place your changes below this line.
 
-**Added:**
-- bpk-svgs:
-  - New `center-location` icon.
-
 **Fixed:**
 
 - bpk-component-calendar:
