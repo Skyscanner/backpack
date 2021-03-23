@@ -2,6 +2,11 @@
 
 [Unreleased changes](./UNRELEASED.md).
 
+# 2021-03-23
+
+**Added:**
+- bpk-svgs:
+  - New `center-location` icon.
 
 # 2021-03-18
 
@@ -11,7 +16,7 @@
   - bpk-component-datepicker: 11.3.43 => 11.3.44
     - Remove `readOnly` prop from input as it is already set by the `withOpenEvents` HOC.
   - bpk-component-input: 5.0.116 => 5.0.117
-    - Fix input not being able to open on Android devices when rendered with `withOpenEvents`.  
+    - Fix input not being able to open on Android devices when rendered with `withOpenEvents`.
 # 2021-03-11
 
 **Breaking:**
@@ -35,7 +40,7 @@
 
 **Fixed:**
   - bpk-svgs: 12.3.5 => 12.3.6
-    - Fixed the following icons to be rounded: 
+    - Fixed the following icons to be rounded:
       - `call-back`, `depart`, `direct`, `download`, `logout`, `long-arrow-down`, `long-arrow-left`, `long-arrow-right`, `long-arrow-up`, `share--ios`, `sort`, `stops`, `swap--horizontal`, `swap--vertical`, `swap`, `trend--steady`.
 
 
