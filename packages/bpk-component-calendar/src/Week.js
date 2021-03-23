@@ -213,6 +213,7 @@ class Week extends Component {
             <DateContainer
               className={this.props.cellClassName}
               isEmptyCell={!isSameMonth(date, month) && ignoreOutsideDate}
+              isBlocked={isBlocked}
               key={date.getDate()}
               weekendStart={
                 showWeekendSeparator && firstDayOfWeekendIndex === getDay(date)
@@ -302,7 +303,10 @@ const DateContainer = props => {
   }
 
   return (
-    <td aria-hidden={props.isEmptyCell} className={classNames.join(' ')}>
+    <td
+      aria-hidden={props.isEmptyCell || props.isBlocked}
+      className={classNames.join(' ')}
+    >
       {props.children}
     </td>
   );
@@ -313,6 +317,7 @@ DateContainer.propTypes = {
   weekendStart: PropTypes.bool.isRequired,
   weekendEnd: PropTypes.bool.isRequired,
   isEmptyCell: PropTypes.bool.isRequired,
+  isBlocked: PropTypes.bool.isRequired,
   className: PropTypes.string,
 };
 

@@ -279,7 +279,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
             className="bpk-calendar-grid__week"
           >
             <td
-              aria-hidden={false}
+              aria-hidden={true}
               className="bpk-calendar-grid__date"
             >
               <button
@@ -302,7 +302,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
               </button>
             </td>
             <td
-              aria-hidden={false}
+              aria-hidden={true}
               className="bpk-calendar-grid__date"
             >
               <button
@@ -325,7 +325,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
               </button>
             </td>
             <td
-              aria-hidden={false}
+              aria-hidden={true}
               className="bpk-calendar-grid__date"
             >
               <button
@@ -348,7 +348,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
               </button>
             </td>
             <td
-              aria-hidden={false}
+              aria-hidden={true}
               className="bpk-calendar-grid__date"
             >
               <button
@@ -371,7 +371,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
               </button>
             </td>
             <td
-              aria-hidden={false}
+              aria-hidden={true}
               className="bpk-calendar-grid__date"
             >
               <button
@@ -394,7 +394,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
               </button>
             </td>
             <td
-              aria-hidden={false}
+              aria-hidden={true}
               className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-start"
             >
               <button
@@ -417,7 +417,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
               </button>
             </td>
             <td
-              aria-hidden={false}
+              aria-hidden={true}
               className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-end"
             >
               <button
@@ -444,7 +444,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
             className="bpk-calendar-grid__week"
           >
             <td
-              aria-hidden={false}
+              aria-hidden={true}
               className="bpk-calendar-grid__date"
             >
               <button
@@ -467,7 +467,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
               </button>
             </td>
             <td
-              aria-hidden={false}
+              aria-hidden={true}
               className="bpk-calendar-grid__date"
             >
               <button
@@ -490,7 +490,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
               </button>
             </td>
             <td
-              aria-hidden={false}
+              aria-hidden={true}
               className="bpk-calendar-grid__date"
             >
               <button
@@ -513,7 +513,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
               </button>
             </td>
             <td
-              aria-hidden={false}
+              aria-hidden={true}
               className="bpk-calendar-grid__date"
             >
               <button
@@ -536,7 +536,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
               </button>
             </td>
             <td
-              aria-hidden={false}
+              aria-hidden={true}
               className="bpk-calendar-grid__date"
             >
               <button
@@ -559,7 +559,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
               </button>
             </td>
             <td
-              aria-hidden={false}
+              aria-hidden={true}
               className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-start"
             >
               <button
@@ -582,7 +582,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
               </button>
             </td>
             <td
-              aria-hidden={false}
+              aria-hidden={true}
               className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-end"
             >
               <button
@@ -1706,7 +1706,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
               </button>
             </td>
             <td
-              aria-hidden={false}
+              aria-hidden={true}
               className="bpk-calendar-grid__date"
             >
               <button
@@ -1729,7 +1729,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
               </button>
             </td>
             <td
-              aria-hidden={false}
+              aria-hidden={true}
               className="bpk-calendar-grid__date"
             >
               <button
@@ -1752,7 +1752,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
               </button>
             </td>
             <td
-              aria-hidden={false}
+              aria-hidden={true}
               className="bpk-calendar-grid__date"
             >
               <button
@@ -1775,7 +1775,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
               </button>
             </td>
             <td
-              aria-hidden={false}
+              aria-hidden={true}
               className="bpk-calendar-grid__date"
             >
               <button
@@ -1798,7 +1798,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
               </button>
             </td>
             <td
-              aria-hidden={false}
+              aria-hidden={true}
               className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-start"
             >
               <button
@@ -1821,7 +1821,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
               </button>
             </td>
             <td
-              aria-hidden={false}
+              aria-hidden={true}
               className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-end"
             >
               <button
@@ -1848,7 +1848,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
             className="bpk-calendar-grid__week"
           >
             <td
-              aria-hidden={false}
+              aria-hidden={true}
               className="bpk-calendar-grid__date"
             >
               <button
@@ -1871,7 +1871,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
               </button>
             </td>
             <td
-              aria-hidden={false}
+              aria-hidden={true}
               className="bpk-calendar-grid__date"
             >
               <button
@@ -1894,7 +1894,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
               </button>
             </td>
             <td
-              aria-hidden={false}
+              aria-hidden={true}
               className="bpk-calendar-grid__date"
             >
               <button
@@ -1917,7 +1917,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
               </button>
             </td>
             <td
-              aria-hidden={false}
+              aria-hidden={true}
               className="bpk-calendar-grid__date"
             >
               <button
@@ -1940,7 +1940,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
               </button>
             </td>
             <td
-              aria-hidden={false}
+              aria-hidden={true}
               className="bpk-calendar-grid__date"
             >
               <button
@@ -1963,7 +1963,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
               </button>
             </td>
             <td
-              aria-hidden={false}
+              aria-hidden={true}
               className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-start"
             >
               <button
@@ -1986,7 +1986,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
               </button>
             </td>
             <td
-              aria-hidden={false}
+              aria-hidden={true}
               className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-end"
             >
               <button
@@ -2013,7 +2013,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
             className="bpk-calendar-grid__week"
           >
             <td
-              aria-hidden={false}
+              aria-hidden={true}
               className="bpk-calendar-grid__date"
             >
               <button
@@ -2036,7 +2036,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
               </button>
             </td>
             <td
-              aria-hidden={false}
+              aria-hidden={true}
               className="bpk-calendar-grid__date"
             >
               <button
@@ -2059,7 +2059,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
               </button>
             </td>
             <td
-              aria-hidden={false}
+              aria-hidden={true}
               className="bpk-calendar-grid__date"
             >
               <button
@@ -2082,7 +2082,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
               </button>
             </td>
             <td
-              aria-hidden={false}
+              aria-hidden={true}
               className="bpk-calendar-grid__date"
             >
               <button
@@ -2105,7 +2105,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
               </button>
             </td>
             <td
-              aria-hidden={false}
+              aria-hidden={true}
               className="bpk-calendar-grid__date"
             >
               <button
@@ -2128,7 +2128,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
               </button>
             </td>
             <td
-              aria-hidden={false}
+              aria-hidden={true}
               className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-start"
             >
               <button
@@ -2151,7 +2151,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
               </button>
             </td>
             <td
-              aria-hidden={false}
+              aria-hidden={true}
               className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-end"
             >
               <button
@@ -2178,7 +2178,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
             className="bpk-calendar-grid__week"
           >
             <td
-              aria-hidden={false}
+              aria-hidden={true}
               className="bpk-calendar-grid__date"
             >
               <button
@@ -2201,7 +2201,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
               </button>
             </td>
             <td
-              aria-hidden={false}
+              aria-hidden={true}
               className="bpk-calendar-grid__date"
             >
               <button
@@ -2224,7 +2224,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
               </button>
             </td>
             <td
-              aria-hidden={false}
+              aria-hidden={true}
               className="bpk-calendar-grid__date"
             >
               <button
@@ -2247,7 +2247,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
               </button>
             </td>
             <td
-              aria-hidden={false}
+              aria-hidden={true}
               className="bpk-calendar-grid__date"
             >
               <button
@@ -2270,7 +2270,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
               </button>
             </td>
             <td
-              aria-hidden={false}
+              aria-hidden={true}
               className="bpk-calendar-grid__date"
             >
               <button
@@ -2293,7 +2293,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
               </button>
             </td>
             <td
-              aria-hidden={false}
+              aria-hidden={true}
               className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-start"
             >
               <button
@@ -2316,7 +2316,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
               </button>
             </td>
             <td
-              aria-hidden={false}
+              aria-hidden={true}
               className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-end"
             >
               <button
@@ -2625,7 +2625,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
             className="bpk-calendar-grid__week"
           >
             <td
-              aria-hidden={false}
+              aria-hidden={true}
               className="bpk-calendar-grid__date"
             >
               <button
@@ -2648,7 +2648,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
               </button>
             </td>
             <td
-              aria-hidden={false}
+              aria-hidden={true}
               className="bpk-calendar-grid__date"
             >
               <button
@@ -2671,7 +2671,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
               </button>
             </td>
             <td
-              aria-hidden={false}
+              aria-hidden={true}
               className="bpk-calendar-grid__date"
             >
               <button
@@ -2694,7 +2694,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
               </button>
             </td>
             <td
-              aria-hidden={false}
+              aria-hidden={true}
               className="bpk-calendar-grid__date"
             >
               <button
@@ -2717,7 +2717,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
               </button>
             </td>
             <td
-              aria-hidden={false}
+              aria-hidden={true}
               className="bpk-calendar-grid__date"
             >
               <button
@@ -2740,7 +2740,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
               </button>
             </td>
             <td
-              aria-hidden={false}
+              aria-hidden={true}
               className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-start"
             >
               <button
@@ -2763,7 +2763,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
               </button>
             </td>
             <td
-              aria-hidden={false}
+              aria-hidden={true}
               className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-end"
             >
               <button
@@ -2790,7 +2790,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
             className="bpk-calendar-grid__week"
           >
             <td
-              aria-hidden={false}
+              aria-hidden={true}
               className="bpk-calendar-grid__date"
             >
               <button
@@ -2813,7 +2813,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
               </button>
             </td>
             <td
-              aria-hidden={false}
+              aria-hidden={true}
               className="bpk-calendar-grid__date"
             >
               <button
@@ -2836,7 +2836,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
               </button>
             </td>
             <td
-              aria-hidden={false}
+              aria-hidden={true}
               className="bpk-calendar-grid__date"
             >
               <button
@@ -2859,7 +2859,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
               </button>
             </td>
             <td
-              aria-hidden={false}
+              aria-hidden={true}
               className="bpk-calendar-grid__date"
             >
               <button
@@ -2882,7 +2882,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
               </button>
             </td>
             <td
-              aria-hidden={false}
+              aria-hidden={true}
               className="bpk-calendar-grid__date"
             >
               <button
@@ -2905,7 +2905,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
               </button>
             </td>
             <td
-              aria-hidden={false}
+              aria-hidden={true}
               className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-start"
             >
               <button
@@ -2928,7 +2928,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
               </button>
             </td>
             <td
-              aria-hidden={false}
+              aria-hidden={true}
               className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-end"
             >
               <button
@@ -4052,7 +4052,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
               </button>
             </td>
             <td
-              aria-hidden={false}
+              aria-hidden={true}
               className="bpk-calendar-grid__date"
             >
               <button
@@ -4075,7 +4075,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
               </button>
             </td>
             <td
-              aria-hidden={false}
+              aria-hidden={true}
               className="bpk-calendar-grid__date"
             >
               <button
@@ -4098,7 +4098,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
               </button>
             </td>
             <td
-              aria-hidden={false}
+              aria-hidden={true}
               className="bpk-calendar-grid__date"
             >
               <button
@@ -4121,7 +4121,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
               </button>
             </td>
             <td
-              aria-hidden={false}
+              aria-hidden={true}
               className="bpk-calendar-grid__date"
             >
               <button
@@ -4144,7 +4144,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
               </button>
             </td>
             <td
-              aria-hidden={false}
+              aria-hidden={true}
               className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-start"
             >
               <button
@@ -4167,7 +4167,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
               </button>
             </td>
             <td
-              aria-hidden={false}
+              aria-hidden={true}
               className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-end"
             >
               <button
@@ -4194,7 +4194,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
             className="bpk-calendar-grid__week"
           >
             <td
-              aria-hidden={false}
+              aria-hidden={true}
               className="bpk-calendar-grid__date"
             >
               <button
@@ -4217,7 +4217,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
               </button>
             </td>
             <td
-              aria-hidden={false}
+              aria-hidden={true}
               className="bpk-calendar-grid__date"
             >
               <button
@@ -4240,7 +4240,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
               </button>
             </td>
             <td
-              aria-hidden={false}
+              aria-hidden={true}
               className="bpk-calendar-grid__date"
             >
               <button
@@ -4263,7 +4263,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
               </button>
             </td>
             <td
-              aria-hidden={false}
+              aria-hidden={true}
               className="bpk-calendar-grid__date"
             >
               <button
@@ -4286,7 +4286,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
               </button>
             </td>
             <td
-              aria-hidden={false}
+              aria-hidden={true}
               className="bpk-calendar-grid__date"
             >
               <button
@@ -4309,7 +4309,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
               </button>
             </td>
             <td
-              aria-hidden={false}
+              aria-hidden={true}
               className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-start"
             >
               <button
@@ -4332,7 +4332,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
               </button>
             </td>
             <td
-              aria-hidden={false}
+              aria-hidden={true}
               className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-end"
             >
               <button
@@ -4359,7 +4359,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
             className="bpk-calendar-grid__week"
           >
             <td
-              aria-hidden={false}
+              aria-hidden={true}
               className="bpk-calendar-grid__date"
             >
               <button
@@ -4382,7 +4382,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
               </button>
             </td>
             <td
-              aria-hidden={false}
+              aria-hidden={true}
               className="bpk-calendar-grid__date"
             >
               <button
@@ -4405,7 +4405,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
               </button>
             </td>
             <td
-              aria-hidden={false}
+              aria-hidden={true}
               className="bpk-calendar-grid__date"
             >
               <button
@@ -4428,7 +4428,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
               </button>
             </td>
             <td
-              aria-hidden={false}
+              aria-hidden={true}
               className="bpk-calendar-grid__date"
             >
               <button
@@ -4451,7 +4451,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
               </button>
             </td>
             <td
-              aria-hidden={false}
+              aria-hidden={true}
               className="bpk-calendar-grid__date"
             >
               <button
@@ -4474,7 +4474,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
               </button>
             </td>
             <td
-              aria-hidden={false}
+              aria-hidden={true}
               className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-start"
             >
               <button
@@ -4497,7 +4497,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
               </button>
             </td>
             <td
-              aria-hidden={false}
+              aria-hidden={true}
               className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-end"
             >
               <button
@@ -4524,7 +4524,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
             className="bpk-calendar-grid__week"
           >
             <td
-              aria-hidden={false}
+              aria-hidden={true}
               className="bpk-calendar-grid__date"
             >
               <button
@@ -4547,7 +4547,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
               </button>
             </td>
             <td
-              aria-hidden={false}
+              aria-hidden={true}
               className="bpk-calendar-grid__date"
             >
               <button
@@ -4570,7 +4570,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
               </button>
             </td>
             <td
-              aria-hidden={false}
+              aria-hidden={true}
               className="bpk-calendar-grid__date"
             >
               <button
@@ -4593,7 +4593,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
               </button>
             </td>
             <td
-              aria-hidden={false}
+              aria-hidden={true}
               className="bpk-calendar-grid__date"
             >
               <button
@@ -4616,7 +4616,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
               </button>
             </td>
             <td
-              aria-hidden={false}
+              aria-hidden={true}
               className="bpk-calendar-grid__date"
             >
               <button
@@ -4639,7 +4639,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
               </button>
             </td>
             <td
-              aria-hidden={false}
+              aria-hidden={true}
               className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-start"
             >
               <button
@@ -4662,7 +4662,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
               </button>
             </td>
             <td
-              aria-hidden={false}
+              aria-hidden={true}
               className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-end"
             >
               <button
