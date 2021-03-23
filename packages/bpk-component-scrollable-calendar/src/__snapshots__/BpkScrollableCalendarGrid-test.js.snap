@@ -20,13 +20,13 @@ exports[`BpkCalendarScrollGrid should render correctly with "showWeekendSeparato
       October 2016
     </caption>
     <thead
+      aria-hidden={true}
       className="bpk-calendar-header bpk-calendar-header--table-head"
     >
       <tr
         className="bpk-calendar-header__week"
       >
         <th
-          aria-hidden={true}
           className="bpk-calendar-header__weekday bpk-calendar-header__weekday--weekend"
           title="Sunday"
         >
@@ -35,7 +35,6 @@ exports[`BpkCalendarScrollGrid should render correctly with "showWeekendSeparato
           </span>
         </th>
         <th
-          aria-hidden={true}
           className="bpk-calendar-header__weekday"
           title="Monday"
         >
@@ -44,7 +43,6 @@ exports[`BpkCalendarScrollGrid should render correctly with "showWeekendSeparato
           </span>
         </th>
         <th
-          aria-hidden={true}
           className="bpk-calendar-header__weekday"
           title="Tuesday"
         >
@@ -53,7 +51,6 @@ exports[`BpkCalendarScrollGrid should render correctly with "showWeekendSeparato
           </span>
         </th>
         <th
-          aria-hidden={true}
           className="bpk-calendar-header__weekday"
           title="Wednesday"
         >
@@ -62,7 +59,6 @@ exports[`BpkCalendarScrollGrid should render correctly with "showWeekendSeparato
           </span>
         </th>
         <th
-          aria-hidden={true}
           className="bpk-calendar-header__weekday"
           title="Thursday"
         >
@@ -71,7 +67,6 @@ exports[`BpkCalendarScrollGrid should render correctly with "showWeekendSeparato
           </span>
         </th>
         <th
-          aria-hidden={true}
           className="bpk-calendar-header__weekday"
           title="Friday"
         >
@@ -80,7 +75,6 @@ exports[`BpkCalendarScrollGrid should render correctly with "showWeekendSeparato
           </span>
         </th>
         <th
-          aria-hidden={true}
           className="bpk-calendar-header__weekday bpk-calendar-header__weekday--weekend"
           title="Saturday"
         >
@@ -897,13 +891,13 @@ exports[`BpkCalendarScrollGrid should render correctly with a "dateModifiers" at
       October 2016
     </caption>
     <thead
+      aria-hidden={true}
       className="bpk-calendar-header bpk-calendar-header--table-head"
     >
       <tr
         className="bpk-calendar-header__week"
       >
         <th
-          aria-hidden={true}
           className="bpk-calendar-header__weekday"
           title="Monday"
         >
@@ -912,7 +906,6 @@ exports[`BpkCalendarScrollGrid should render correctly with a "dateModifiers" at
           </span>
         </th>
         <th
-          aria-hidden={true}
           className="bpk-calendar-header__weekday"
           title="Tuesday"
         >
@@ -921,7 +914,6 @@ exports[`BpkCalendarScrollGrid should render correctly with a "dateModifiers" at
           </span>
         </th>
         <th
-          aria-hidden={true}
           className="bpk-calendar-header__weekday"
           title="Wednesday"
         >
@@ -930,7 +922,6 @@ exports[`BpkCalendarScrollGrid should render correctly with a "dateModifiers" at
           </span>
         </th>
         <th
-          aria-hidden={true}
           className="bpk-calendar-header__weekday"
           title="Thursday"
         >
@@ -939,7 +930,6 @@ exports[`BpkCalendarScrollGrid should render correctly with a "dateModifiers" at
           </span>
         </th>
         <th
-          aria-hidden={true}
           className="bpk-calendar-header__weekday"
           title="Friday"
         >
@@ -948,7 +938,6 @@ exports[`BpkCalendarScrollGrid should render correctly with a "dateModifiers" at
           </span>
         </th>
         <th
-          aria-hidden={true}
           className="bpk-calendar-header__weekday bpk-calendar-header__weekday--weekend bpk-calendar-header__weekday--weekend-start"
           title="Saturday"
         >
@@ -957,7 +946,6 @@ exports[`BpkCalendarScrollGrid should render correctly with a "dateModifiers" at
           </span>
         </th>
         <th
-          aria-hidden={true}
           className="bpk-calendar-header__weekday bpk-calendar-header__weekday--weekend bpk-calendar-header__weekday--weekend-end"
           title="Sunday"
         >
@@ -1774,13 +1762,13 @@ exports[`BpkCalendarScrollGrid should render correctly with a custom date compon
       October 2016
     </caption>
     <thead
+      aria-hidden={true}
       className="bpk-calendar-header bpk-calendar-header--table-head"
     >
       <tr
         className="bpk-calendar-header__week"
       >
         <th
-          aria-hidden={true}
           className="bpk-calendar-header__weekday"
           title="Monday"
         >
@@ -1789,7 +1777,6 @@ exports[`BpkCalendarScrollGrid should render correctly with a custom date compon
           </span>
         </th>
         <th
-          aria-hidden={true}
           className="bpk-calendar-header__weekday"
           title="Tuesday"
         >
@@ -1798,7 +1785,6 @@ exports[`BpkCalendarScrollGrid should render correctly with a custom date compon
           </span>
         </th>
         <th
-          aria-hidden={true}
           className="bpk-calendar-header__weekday"
           title="Wednesday"
         >
@@ -1807,7 +1793,6 @@ exports[`BpkCalendarScrollGrid should render correctly with a custom date compon
           </span>
         </th>
         <th
-          aria-hidden={true}
           className="bpk-calendar-header__weekday"
           title="Thursday"
         >
@@ -1816,7 +1801,6 @@ exports[`BpkCalendarScrollGrid should render correctly with a custom date compon
           </span>
         </th>
         <th
-          aria-hidden={true}
           className="bpk-calendar-header__weekday"
           title="Friday"
         >
@@ -1825,7 +1809,6 @@ exports[`BpkCalendarScrollGrid should render correctly with a custom date compon
           </span>
         </th>
         <th
-          aria-hidden={true}
           className="bpk-calendar-header__weekday bpk-calendar-header__weekday--weekend bpk-calendar-header__weekday--weekend-start"
           title="Saturday"
         >
@@ -1834,7 +1817,6 @@ exports[`BpkCalendarScrollGrid should render correctly with a custom date compon
           </span>
         </th>
         <th
-          aria-hidden={true}
           className="bpk-calendar-header__weekday bpk-calendar-header__weekday--weekend bpk-calendar-header__weekday--weekend-end"
           title="Sunday"
         >
@@ -2566,13 +2548,13 @@ exports[`BpkCalendarScrollGrid should render correctly with a different "weekSta
       October 2016
     </caption>
     <thead
+      aria-hidden={true}
       className="bpk-calendar-header bpk-calendar-header--table-head"
     >
       <tr
         className="bpk-calendar-header__week"
       >
         <th
-          aria-hidden={true}
           className="bpk-calendar-header__weekday"
           title="Friday"
         >
@@ -2581,7 +2563,6 @@ exports[`BpkCalendarScrollGrid should render correctly with a different "weekSta
           </span>
         </th>
         <th
-          aria-hidden={true}
           className="bpk-calendar-header__weekday bpk-calendar-header__weekday--weekend bpk-calendar-header__weekday--weekend-start"
           title="Saturday"
         >
@@ -2590,7 +2571,6 @@ exports[`BpkCalendarScrollGrid should render correctly with a different "weekSta
           </span>
         </th>
         <th
-          aria-hidden={true}
           className="bpk-calendar-header__weekday bpk-calendar-header__weekday--weekend bpk-calendar-header__weekday--weekend-end"
           title="Sunday"
         >
@@ -2599,7 +2579,6 @@ exports[`BpkCalendarScrollGrid should render correctly with a different "weekSta
           </span>
         </th>
         <th
-          aria-hidden={true}
           className="bpk-calendar-header__weekday"
           title="Monday"
         >
@@ -2608,7 +2587,6 @@ exports[`BpkCalendarScrollGrid should render correctly with a different "weekSta
           </span>
         </th>
         <th
-          aria-hidden={true}
           className="bpk-calendar-header__weekday"
           title="Tuesday"
         >
@@ -2617,7 +2595,6 @@ exports[`BpkCalendarScrollGrid should render correctly with a different "weekSta
           </span>
         </th>
         <th
-          aria-hidden={true}
           className="bpk-calendar-header__weekday"
           title="Wednesday"
         >
@@ -2626,7 +2603,6 @@ exports[`BpkCalendarScrollGrid should render correctly with a different "weekSta
           </span>
         </th>
         <th
-          aria-hidden={true}
           className="bpk-calendar-header__weekday"
           title="Thursday"
         >
@@ -3411,13 +3387,13 @@ exports[`BpkCalendarScrollGrid should render correctly with no optional props se
       October 2016
     </caption>
     <thead
+      aria-hidden={true}
       className="bpk-calendar-header bpk-calendar-header--table-head"
     >
       <tr
         className="bpk-calendar-header__week"
       >
         <th
-          aria-hidden={true}
           className="bpk-calendar-header__weekday"
           title="Monday"
         >
@@ -3426,7 +3402,6 @@ exports[`BpkCalendarScrollGrid should render correctly with no optional props se
           </span>
         </th>
         <th
-          aria-hidden={true}
           className="bpk-calendar-header__weekday"
           title="Tuesday"
         >
@@ -3435,7 +3410,6 @@ exports[`BpkCalendarScrollGrid should render correctly with no optional props se
           </span>
         </th>
         <th
-          aria-hidden={true}
           className="bpk-calendar-header__weekday"
           title="Wednesday"
         >
@@ -3444,7 +3418,6 @@ exports[`BpkCalendarScrollGrid should render correctly with no optional props se
           </span>
         </th>
         <th
-          aria-hidden={true}
           className="bpk-calendar-header__weekday"
           title="Thursday"
         >
@@ -3453,7 +3426,6 @@ exports[`BpkCalendarScrollGrid should render correctly with no optional props se
           </span>
         </th>
         <th
-          aria-hidden={true}
           className="bpk-calendar-header__weekday"
           title="Friday"
         >
@@ -3462,7 +3434,6 @@ exports[`BpkCalendarScrollGrid should render correctly with no optional props se
           </span>
         </th>
         <th
-          aria-hidden={true}
           className="bpk-calendar-header__weekday bpk-calendar-header__weekday--weekend bpk-calendar-header__weekday--weekend-start"
           title="Saturday"
         >
@@ -3471,7 +3442,6 @@ exports[`BpkCalendarScrollGrid should render correctly with no optional props se
           </span>
         </th>
         <th
-          aria-hidden={true}
           className="bpk-calendar-header__weekday bpk-calendar-header__weekday--weekend bpk-calendar-header__weekday--weekend-end"
           title="Sunday"
         >

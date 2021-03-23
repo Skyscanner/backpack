@@ -59,7 +59,7 @@ const WeekDay = props => {
   }
 
   return (
-    <Element className={classNames.join(' ')} title={weekDay.name} aria-hidden>
+    <Element className={classNames.join(' ')} title={weekDay.name}>
       <span>{weekDay[weekDayKey]}</span>
     </Element>
   );
@@ -105,7 +105,7 @@ class BpkCalendarGridHeader extends PureComponent {
     }
 
     return (
-      <Header className={classNames.join(' ')}>
+      <Header className={classNames.join(' ')} aria-hidden>
         <List className={getClassName('bpk-calendar-header__week')}>
           {daysOfWeek.map(weekDay => (
             <WeekDay

@@ -105,13 +105,13 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
     </div>
   </div>
   <header
+    aria-hidden={true}
     className="bpk-calendar-header bpk-calendar__header"
   >
     <ol
       className="bpk-calendar-header__week"
     >
       <li
-        aria-hidden={true}
         className="bpk-calendar-header__weekday"
         title="Monday"
       >
@@ -120,7 +120,6 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
         </span>
       </li>
       <li
-        aria-hidden={true}
         className="bpk-calendar-header__weekday"
         title="Tuesday"
       >
@@ -129,7 +128,6 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
         </span>
       </li>
       <li
-        aria-hidden={true}
         className="bpk-calendar-header__weekday"
         title="Wednesday"
       >
@@ -138,7 +136,6 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
         </span>
       </li>
       <li
-        aria-hidden={true}
         className="bpk-calendar-header__weekday"
         title="Thursday"
       >
@@ -147,7 +144,6 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
         </span>
       </li>
       <li
-        aria-hidden={true}
         className="bpk-calendar-header__weekday"
         title="Friday"
       >
@@ -156,7 +152,6 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
         </span>
       </li>
       <li
-        aria-hidden={true}
         className="bpk-calendar-header__weekday bpk-calendar-header__weekday--weekend bpk-calendar-header__weekday--weekend-start"
         title="Saturday"
       >
@@ -165,7 +160,6 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
         </span>
       </li>
       <li
-        aria-hidden={true}
         className="bpk-calendar-header__weekday bpk-calendar-header__weekday--weekend bpk-calendar-header__weekday--weekend-end"
         title="Sunday"
       >
@@ -204,13 +198,13 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
           February 2010
         </caption>
         <thead
+          aria-hidden={true}
           className="bpk-calendar-header bpk-calendar-header--table-head"
         >
           <tr
             className="bpk-calendar-header__week"
           >
             <th
-              aria-hidden={true}
               className="bpk-calendar-header__weekday"
               title="Monday"
             >
@@ -219,7 +213,6 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
               </span>
             </th>
             <th
-              aria-hidden={true}
               className="bpk-calendar-header__weekday"
               title="Tuesday"
             >
@@ -228,7 +221,6 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
               </span>
             </th>
             <th
-              aria-hidden={true}
               className="bpk-calendar-header__weekday"
               title="Wednesday"
             >
@@ -237,7 +229,6 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
               </span>
             </th>
             <th
-              aria-hidden={true}
               className="bpk-calendar-header__weekday"
               title="Thursday"
             >
@@ -246,7 +237,6 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
               </span>
             </th>
             <th
-              aria-hidden={true}
               className="bpk-calendar-header__weekday"
               title="Friday"
             >
@@ -255,7 +245,6 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
               </span>
             </th>
             <th
-              aria-hidden={true}
               className="bpk-calendar-header__weekday bpk-calendar-header__weekday--weekend bpk-calendar-header__weekday--weekend-start"
               title="Saturday"
             >
@@ -264,7 +253,6 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
               </span>
             </th>
             <th
-              aria-hidden={true}
               className="bpk-calendar-header__weekday bpk-calendar-header__weekday--weekend bpk-calendar-header__weekday--weekend-end"
               title="Sunday"
             >
@@ -1278,13 +1266,13 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
           March 2010
         </caption>
         <thead
+          aria-hidden={true}
           className="bpk-calendar-header bpk-calendar-header--table-head"
         >
           <tr
             className="bpk-calendar-header__week"
           >
             <th
-              aria-hidden={true}
               className="bpk-calendar-header__weekday"
               title="Monday"
             >
@@ -1293,7 +1281,6 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
               </span>
             </th>
             <th
-              aria-hidden={true}
               className="bpk-calendar-header__weekday"
               title="Tuesday"
             >
@@ -1302,7 +1289,6 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
               </span>
             </th>
             <th
-              aria-hidden={true}
               className="bpk-calendar-header__weekday"
               title="Wednesday"
             >
@@ -1311,7 +1297,6 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
               </span>
             </th>
             <th
-              aria-hidden={true}
               className="bpk-calendar-header__weekday"
               title="Thursday"
             >
@@ -1320,7 +1305,6 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
               </span>
             </th>
             <th
-              aria-hidden={true}
               className="bpk-calendar-header__weekday"
               title="Friday"
             >
@@ -1329,7 +1313,6 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
               </span>
             </th>
             <th
-              aria-hidden={true}
               className="bpk-calendar-header__weekday bpk-calendar-header__weekday--weekend bpk-calendar-header__weekday--weekend-start"
               title="Saturday"
             >
@@ -1338,7 +1321,6 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
               </span>
             </th>
             <th
-              aria-hidden={true}
               className="bpk-calendar-header__weekday bpk-calendar-header__weekday--weekend bpk-calendar-header__weekday--weekend-end"
               title="Sunday"
             >
@@ -2451,13 +2433,13 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
     </div>
   </div>
   <header
+    aria-hidden={true}
     className="bpk-calendar-header bpk-calendar__header"
   >
     <ol
       className="bpk-calendar-header__week"
     >
       <li
-        aria-hidden={true}
         className="bpk-calendar-header__weekday"
         title="Monday"
       >
@@ -2466,7 +2448,6 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
         </span>
       </li>
       <li
-        aria-hidden={true}
         className="bpk-calendar-header__weekday"
         title="Tuesday"
       >
@@ -2475,7 +2456,6 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
         </span>
       </li>
       <li
-        aria-hidden={true}
         className="bpk-calendar-header__weekday"
         title="Wednesday"
       >
@@ -2484,7 +2464,6 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
         </span>
       </li>
       <li
-        aria-hidden={true}
         className="bpk-calendar-header__weekday"
         title="Thursday"
       >
@@ -2493,7 +2472,6 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
         </span>
       </li>
       <li
-        aria-hidden={true}
         className="bpk-calendar-header__weekday"
         title="Friday"
       >
@@ -2502,7 +2480,6 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
         </span>
       </li>
       <li
-        aria-hidden={true}
         className="bpk-calendar-header__weekday bpk-calendar-header__weekday--weekend bpk-calendar-header__weekday--weekend-start"
         title="Saturday"
       >
@@ -2511,7 +2488,6 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
         </span>
       </li>
       <li
-        aria-hidden={true}
         className="bpk-calendar-header__weekday bpk-calendar-header__weekday--weekend bpk-calendar-header__weekday--weekend-end"
         title="Sunday"
       >
@@ -2550,13 +2526,13 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
           February 2010
         </caption>
         <thead
+          aria-hidden={true}
           className="bpk-calendar-header bpk-calendar-header--table-head"
         >
           <tr
             className="bpk-calendar-header__week"
           >
             <th
-              aria-hidden={true}
               className="bpk-calendar-header__weekday"
               title="Monday"
             >
@@ -2565,7 +2541,6 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
               </span>
             </th>
             <th
-              aria-hidden={true}
               className="bpk-calendar-header__weekday"
               title="Tuesday"
             >
@@ -2574,7 +2549,6 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
               </span>
             </th>
             <th
-              aria-hidden={true}
               className="bpk-calendar-header__weekday"
               title="Wednesday"
             >
@@ -2583,7 +2557,6 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
               </span>
             </th>
             <th
-              aria-hidden={true}
               className="bpk-calendar-header__weekday"
               title="Thursday"
             >
@@ -2592,7 +2565,6 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
               </span>
             </th>
             <th
-              aria-hidden={true}
               className="bpk-calendar-header__weekday"
               title="Friday"
             >
@@ -2601,7 +2573,6 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
               </span>
             </th>
             <th
-              aria-hidden={true}
               className="bpk-calendar-header__weekday bpk-calendar-header__weekday--weekend bpk-calendar-header__weekday--weekend-start"
               title="Saturday"
             >
@@ -2610,7 +2581,6 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
               </span>
             </th>
             <th
-              aria-hidden={true}
               className="bpk-calendar-header__weekday bpk-calendar-header__weekday--weekend bpk-calendar-header__weekday--weekend-end"
               title="Sunday"
             >
@@ -3624,13 +3594,13 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
           March 2010
         </caption>
         <thead
+          aria-hidden={true}
           className="bpk-calendar-header bpk-calendar-header--table-head"
         >
           <tr
             className="bpk-calendar-header__week"
           >
             <th
-              aria-hidden={true}
               className="bpk-calendar-header__weekday"
               title="Monday"
             >
@@ -3639,7 +3609,6 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
               </span>
             </th>
             <th
-              aria-hidden={true}
               className="bpk-calendar-header__weekday"
               title="Tuesday"
             >
@@ -3648,7 +3617,6 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
               </span>
             </th>
             <th
-              aria-hidden={true}
               className="bpk-calendar-header__weekday"
               title="Wednesday"
             >
@@ -3657,7 +3625,6 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
               </span>
             </th>
             <th
-              aria-hidden={true}
               className="bpk-calendar-header__weekday"
               title="Thursday"
             >
@@ -3666,7 +3633,6 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
               </span>
             </th>
             <th
-              aria-hidden={true}
               className="bpk-calendar-header__weekday"
               title="Friday"
             >
@@ -3675,7 +3641,6 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
               </span>
             </th>
             <th
-              aria-hidden={true}
               className="bpk-calendar-header__weekday bpk-calendar-header__weekday--weekend bpk-calendar-header__weekday--weekend-start"
               title="Saturday"
             >
@@ -3684,7 +3649,6 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
               </span>
             </th>
             <th
-              aria-hidden={true}
               className="bpk-calendar-header__weekday bpk-calendar-header__weekday--weekend bpk-calendar-header__weekday--weekend-end"
               title="Sunday"
             >
