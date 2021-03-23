@@ -9,7 +9,7 @@
 **Fixed:**
 
 - bpk-component-calendar:
-  - Calendar Grid column headings and out-of-range dates now have aria-hidden applied.
+  - Calendar Grid column headings and out-of-range dates are now hidden to assistive technology.
 
 ## How to write a good changelog entry
 
