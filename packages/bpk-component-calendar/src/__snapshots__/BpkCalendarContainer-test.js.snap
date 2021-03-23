@@ -284,7 +284,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
             >
               <button
                 aria-hidden={true}
-                aria-label=""
+                aria-label="Monday, 1st February 2010"
                 aria-pressed={false}
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
@@ -307,7 +307,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
             >
               <button
                 aria-hidden={true}
-                aria-label=""
+                aria-label="Tuesday, 2nd February 2010"
                 aria-pressed={false}
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
@@ -330,7 +330,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
             >
               <button
                 aria-hidden={true}
-                aria-label=""
+                aria-label="Wednesday, 3rd February 2010"
                 aria-pressed={false}
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
@@ -353,7 +353,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
             >
               <button
                 aria-hidden={true}
-                aria-label=""
+                aria-label="Thursday, 4th February 2010"
                 aria-pressed={false}
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
@@ -376,7 +376,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
             >
               <button
                 aria-hidden={true}
-                aria-label=""
+                aria-label="Friday, 5th February 2010"
                 aria-pressed={false}
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
@@ -399,7 +399,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
             >
               <button
                 aria-hidden={true}
-                aria-label=""
+                aria-label="Saturday, 6th February 2010"
                 aria-pressed={false}
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
@@ -422,7 +422,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
             >
               <button
                 aria-hidden={true}
-                aria-label=""
+                aria-label="Sunday, 7th February 2010"
                 aria-pressed={false}
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
@@ -449,7 +449,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
             >
               <button
                 aria-hidden={true}
-                aria-label=""
+                aria-label="Monday, 8th February 2010"
                 aria-pressed={false}
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
@@ -472,7 +472,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
             >
               <button
                 aria-hidden={true}
-                aria-label=""
+                aria-label="Tuesday, 9th February 2010"
                 aria-pressed={false}
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
@@ -495,7 +495,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
             >
               <button
                 aria-hidden={true}
-                aria-label=""
+                aria-label="Wednesday, 10th February 2010"
                 aria-pressed={false}
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
@@ -518,7 +518,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
             >
               <button
                 aria-hidden={true}
-                aria-label=""
+                aria-label="Thursday, 11th February 2010"
                 aria-pressed={false}
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
@@ -541,7 +541,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
             >
               <button
                 aria-hidden={true}
-                aria-label=""
+                aria-label="Friday, 12th February 2010"
                 aria-pressed={false}
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
@@ -564,7 +564,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
             >
               <button
                 aria-hidden={true}
-                aria-label=""
+                aria-label="Saturday, 13th February 2010"
                 aria-pressed={false}
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
@@ -587,7 +587,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
             >
               <button
                 aria-hidden={true}
-                aria-label=""
+                aria-label="Sunday, 14th February 2010"
                 aria-pressed={false}
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
@@ -1711,7 +1711,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
             >
               <button
                 aria-hidden={true}
-                aria-label=""
+                aria-label="Tuesday, 16th March 2010"
                 aria-pressed={false}
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
@@ -1734,7 +1734,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
             >
               <button
                 aria-hidden={true}
-                aria-label=""
+                aria-label="Wednesday, 17th March 2010"
                 aria-pressed={false}
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
@@ -1757,7 +1757,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
             >
               <button
                 aria-hidden={true}
-                aria-label=""
+                aria-label="Thursday, 18th March 2010"
                 aria-pressed={false}
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
@@ -1780,7 +1780,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
             >
               <button
                 aria-hidden={true}
-                aria-label=""
+                aria-label="Friday, 19th March 2010"
                 aria-pressed={false}
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
@@ -1803,7 +1803,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
             >
               <button
                 aria-hidden={true}
-                aria-label=""
+                aria-label="Saturday, 20th March 2010"
                 aria-pressed={false}
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
@@ -1826,7 +1826,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
             >
               <button
                 aria-hidden={true}
-                aria-label=""
+                aria-label="Sunday, 21st March 2010"
                 aria-pressed={false}
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
@@ -1853,7 +1853,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
             >
               <button
                 aria-hidden={true}
-                aria-label=""
+                aria-label="Monday, 22nd March 2010"
                 aria-pressed={false}
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
@@ -1876,7 +1876,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
             >
               <button
                 aria-hidden={true}
-                aria-label=""
+                aria-label="Tuesday, 23rd March 2010"
                 aria-pressed={false}
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
@@ -1899,7 +1899,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
             >
               <button
                 aria-hidden={true}
-                aria-label=""
+                aria-label="Wednesday, 24th March 2010"
                 aria-pressed={false}
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
@@ -1922,7 +1922,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
             >
               <button
                 aria-hidden={true}
-                aria-label=""
+                aria-label="Thursday, 25th March 2010"
                 aria-pressed={false}
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
@@ -1945,7 +1945,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
             >
               <button
                 aria-hidden={true}
-                aria-label=""
+                aria-label="Friday, 26th March 2010"
                 aria-pressed={false}
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
@@ -1968,7 +1968,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
             >
               <button
                 aria-hidden={true}
-                aria-label=""
+                aria-label="Saturday, 27th March 2010"
                 aria-pressed={false}
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
@@ -1991,7 +1991,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
             >
               <button
                 aria-hidden={true}
-                aria-label=""
+                aria-label="Sunday, 28th March 2010"
                 aria-pressed={false}
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
@@ -2018,7 +2018,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
             >
               <button
                 aria-hidden={true}
-                aria-label=""
+                aria-label="Monday, 29th March 2010"
                 aria-pressed={false}
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
@@ -2041,7 +2041,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
             >
               <button
                 aria-hidden={true}
-                aria-label=""
+                aria-label="Tuesday, 30th March 2010"
                 aria-pressed={false}
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
@@ -2064,7 +2064,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
             >
               <button
                 aria-hidden={true}
-                aria-label=""
+                aria-label="Wednesday, 31st March 2010"
                 aria-pressed={false}
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
@@ -2087,7 +2087,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
             >
               <button
                 aria-hidden={true}
-                aria-label=""
+                aria-label="Thursday, 1st April 2010"
                 aria-pressed={false}
                 className="bpk-calendar-date bpk-calendar-date--blocked bpk-calendar-date--outside"
                 disabled={true}
@@ -2110,7 +2110,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
             >
               <button
                 aria-hidden={true}
-                aria-label=""
+                aria-label="Friday, 2nd April 2010"
                 aria-pressed={false}
                 className="bpk-calendar-date bpk-calendar-date--blocked bpk-calendar-date--outside"
                 disabled={true}
@@ -2133,7 +2133,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
             >
               <button
                 aria-hidden={true}
-                aria-label=""
+                aria-label="Saturday, 3rd April 2010"
                 aria-pressed={false}
                 className="bpk-calendar-date bpk-calendar-date--blocked bpk-calendar-date--outside"
                 disabled={true}
@@ -2156,7 +2156,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
             >
               <button
                 aria-hidden={true}
-                aria-label=""
+                aria-label="Sunday, 4th April 2010"
                 aria-pressed={false}
                 className="bpk-calendar-date bpk-calendar-date--blocked bpk-calendar-date--outside"
                 disabled={true}
@@ -2183,7 +2183,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
             >
               <button
                 aria-hidden={true}
-                aria-label=""
+                aria-label="Monday, 5th April 2010"
                 aria-pressed={false}
                 className="bpk-calendar-date bpk-calendar-date--blocked bpk-calendar-date--outside"
                 disabled={true}
@@ -2206,7 +2206,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
             >
               <button
                 aria-hidden={true}
-                aria-label=""
+                aria-label="Tuesday, 6th April 2010"
                 aria-pressed={false}
                 className="bpk-calendar-date bpk-calendar-date--blocked bpk-calendar-date--outside"
                 disabled={true}
@@ -2229,7 +2229,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
             >
               <button
                 aria-hidden={true}
-                aria-label=""
+                aria-label="Wednesday, 7th April 2010"
                 aria-pressed={false}
                 className="bpk-calendar-date bpk-calendar-date--blocked bpk-calendar-date--outside"
                 disabled={true}
@@ -2252,7 +2252,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
             >
               <button
                 aria-hidden={true}
-                aria-label=""
+                aria-label="Thursday, 8th April 2010"
                 aria-pressed={false}
                 className="bpk-calendar-date bpk-calendar-date--blocked bpk-calendar-date--outside"
                 disabled={true}
@@ -2275,7 +2275,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
             >
               <button
                 aria-hidden={true}
-                aria-label=""
+                aria-label="Friday, 9th April 2010"
                 aria-pressed={false}
                 className="bpk-calendar-date bpk-calendar-date--blocked bpk-calendar-date--outside"
                 disabled={true}
@@ -2298,7 +2298,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
             >
               <button
                 aria-hidden={true}
-                aria-label=""
+                aria-label="Saturday, 10th April 2010"
                 aria-pressed={false}
                 className="bpk-calendar-date bpk-calendar-date--blocked bpk-calendar-date--outside"
                 disabled={true}
@@ -2321,7 +2321,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
             >
               <button
                 aria-hidden={true}
-                aria-label=""
+                aria-label="Sunday, 11th April 2010"
                 aria-pressed={false}
                 className="bpk-calendar-date bpk-calendar-date--blocked bpk-calendar-date--outside"
                 disabled={true}
@@ -2630,7 +2630,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
             >
               <button
                 aria-hidden={true}
-                aria-label=""
+                aria-label="Monday, 1st February 2010"
                 aria-pressed={false}
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
@@ -2653,7 +2653,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
             >
               <button
                 aria-hidden={true}
-                aria-label=""
+                aria-label="Tuesday, 2nd February 2010"
                 aria-pressed={false}
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
@@ -2676,7 +2676,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
             >
               <button
                 aria-hidden={true}
-                aria-label=""
+                aria-label="Wednesday, 3rd February 2010"
                 aria-pressed={false}
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
@@ -2699,7 +2699,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
             >
               <button
                 aria-hidden={true}
-                aria-label=""
+                aria-label="Thursday, 4th February 2010"
                 aria-pressed={false}
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
@@ -2722,7 +2722,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
             >
               <button
                 aria-hidden={true}
-                aria-label=""
+                aria-label="Friday, 5th February 2010"
                 aria-pressed={false}
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
@@ -2745,7 +2745,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
             >
               <button
                 aria-hidden={true}
-                aria-label=""
+                aria-label="Saturday, 6th February 2010"
                 aria-pressed={false}
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
@@ -2768,7 +2768,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
             >
               <button
                 aria-hidden={true}
-                aria-label=""
+                aria-label="Sunday, 7th February 2010"
                 aria-pressed={false}
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
@@ -2795,7 +2795,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
             >
               <button
                 aria-hidden={true}
-                aria-label=""
+                aria-label="Monday, 8th February 2010"
                 aria-pressed={false}
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
@@ -2818,7 +2818,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
             >
               <button
                 aria-hidden={true}
-                aria-label=""
+                aria-label="Tuesday, 9th February 2010"
                 aria-pressed={false}
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
@@ -2841,7 +2841,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
             >
               <button
                 aria-hidden={true}
-                aria-label=""
+                aria-label="Wednesday, 10th February 2010"
                 aria-pressed={false}
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
@@ -2864,7 +2864,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
             >
               <button
                 aria-hidden={true}
-                aria-label=""
+                aria-label="Thursday, 11th February 2010"
                 aria-pressed={false}
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
@@ -2887,7 +2887,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
             >
               <button
                 aria-hidden={true}
-                aria-label=""
+                aria-label="Friday, 12th February 2010"
                 aria-pressed={false}
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
@@ -2910,7 +2910,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
             >
               <button
                 aria-hidden={true}
-                aria-label=""
+                aria-label="Saturday, 13th February 2010"
                 aria-pressed={false}
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
@@ -2933,7 +2933,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
             >
               <button
                 aria-hidden={true}
-                aria-label=""
+                aria-label="Sunday, 14th February 2010"
                 aria-pressed={false}
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
@@ -4057,7 +4057,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
             >
               <button
                 aria-hidden={true}
-                aria-label=""
+                aria-label="Tuesday, 16th March 2010"
                 aria-pressed={false}
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
@@ -4080,7 +4080,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
             >
               <button
                 aria-hidden={true}
-                aria-label=""
+                aria-label="Wednesday, 17th March 2010"
                 aria-pressed={false}
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
@@ -4103,7 +4103,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
             >
               <button
                 aria-hidden={true}
-                aria-label=""
+                aria-label="Thursday, 18th March 2010"
                 aria-pressed={false}
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
@@ -4126,7 +4126,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
             >
               <button
                 aria-hidden={true}
-                aria-label=""
+                aria-label="Friday, 19th March 2010"
                 aria-pressed={false}
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
@@ -4149,7 +4149,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
             >
               <button
                 aria-hidden={true}
-                aria-label=""
+                aria-label="Saturday, 20th March 2010"
                 aria-pressed={false}
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
@@ -4172,7 +4172,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
             >
               <button
                 aria-hidden={true}
-                aria-label=""
+                aria-label="Sunday, 21st March 2010"
                 aria-pressed={false}
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
@@ -4199,7 +4199,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
             >
               <button
                 aria-hidden={true}
-                aria-label=""
+                aria-label="Monday, 22nd March 2010"
                 aria-pressed={false}
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
@@ -4222,7 +4222,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
             >
               <button
                 aria-hidden={true}
-                aria-label=""
+                aria-label="Tuesday, 23rd March 2010"
                 aria-pressed={false}
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
@@ -4245,7 +4245,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
             >
               <button
                 aria-hidden={true}
-                aria-label=""
+                aria-label="Wednesday, 24th March 2010"
                 aria-pressed={false}
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
@@ -4268,7 +4268,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
             >
               <button
                 aria-hidden={true}
-                aria-label=""
+                aria-label="Thursday, 25th March 2010"
                 aria-pressed={false}
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
@@ -4291,7 +4291,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
             >
               <button
                 aria-hidden={true}
-                aria-label=""
+                aria-label="Friday, 26th March 2010"
                 aria-pressed={false}
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
@@ -4314,7 +4314,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
             >
               <button
                 aria-hidden={true}
-                aria-label=""
+                aria-label="Saturday, 27th March 2010"
                 aria-pressed={false}
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
@@ -4337,7 +4337,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
             >
               <button
                 aria-hidden={true}
-                aria-label=""
+                aria-label="Sunday, 28th March 2010"
                 aria-pressed={false}
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
@@ -4364,7 +4364,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
             >
               <button
                 aria-hidden={true}
-                aria-label=""
+                aria-label="Monday, 29th March 2010"
                 aria-pressed={false}
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
@@ -4387,7 +4387,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
             >
               <button
                 aria-hidden={true}
-                aria-label=""
+                aria-label="Tuesday, 30th March 2010"
                 aria-pressed={false}
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
@@ -4410,7 +4410,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
             >
               <button
                 aria-hidden={true}
-                aria-label=""
+                aria-label="Wednesday, 31st March 2010"
                 aria-pressed={false}
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
@@ -4433,7 +4433,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
             >
               <button
                 aria-hidden={true}
-                aria-label=""
+                aria-label="Thursday, 1st April 2010"
                 aria-pressed={false}
                 className="bpk-calendar-date bpk-calendar-date--blocked bpk-calendar-date--outside"
                 disabled={true}
@@ -4456,7 +4456,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
             >
               <button
                 aria-hidden={true}
-                aria-label=""
+                aria-label="Friday, 2nd April 2010"
                 aria-pressed={false}
                 className="bpk-calendar-date bpk-calendar-date--blocked bpk-calendar-date--outside"
                 disabled={true}
@@ -4479,7 +4479,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
             >
               <button
                 aria-hidden={true}
-                aria-label=""
+                aria-label="Saturday, 3rd April 2010"
                 aria-pressed={false}
                 className="bpk-calendar-date bpk-calendar-date--blocked bpk-calendar-date--outside"
                 disabled={true}
@@ -4502,7 +4502,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
             >
               <button
                 aria-hidden={true}
-                aria-label=""
+                aria-label="Sunday, 4th April 2010"
                 aria-pressed={false}
                 className="bpk-calendar-date bpk-calendar-date--blocked bpk-calendar-date--outside"
                 disabled={true}
@@ -4529,7 +4529,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
             >
               <button
                 aria-hidden={true}
-                aria-label=""
+                aria-label="Monday, 5th April 2010"
                 aria-pressed={false}
                 className="bpk-calendar-date bpk-calendar-date--blocked bpk-calendar-date--outside"
                 disabled={true}
@@ -4552,7 +4552,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
             >
               <button
                 aria-hidden={true}
-                aria-label=""
+                aria-label="Tuesday, 6th April 2010"
                 aria-pressed={false}
                 className="bpk-calendar-date bpk-calendar-date--blocked bpk-calendar-date--outside"
                 disabled={true}
@@ -4575,7 +4575,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
             >
               <button
                 aria-hidden={true}
-                aria-label=""
+                aria-label="Wednesday, 7th April 2010"
                 aria-pressed={false}
                 className="bpk-calendar-date bpk-calendar-date--blocked bpk-calendar-date--outside"
                 disabled={true}
@@ -4598,7 +4598,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
             >
               <button
                 aria-hidden={true}
-                aria-label=""
+                aria-label="Thursday, 8th April 2010"
                 aria-pressed={false}
                 className="bpk-calendar-date bpk-calendar-date--blocked bpk-calendar-date--outside"
                 disabled={true}
@@ -4621,7 +4621,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
             >
               <button
                 aria-hidden={true}
-                aria-label=""
+                aria-label="Friday, 9th April 2010"
                 aria-pressed={false}
                 className="bpk-calendar-date bpk-calendar-date--blocked bpk-calendar-date--outside"
                 disabled={true}
@@ -4644,7 +4644,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
             >
               <button
                 aria-hidden={true}
-                aria-label=""
+                aria-label="Saturday, 10th April 2010"
                 aria-pressed={false}
                 className="bpk-calendar-date bpk-calendar-date--blocked bpk-calendar-date--outside"
                 disabled={true}
@@ -4667,7 +4667,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
             >
               <button
                 aria-hidden={true}
-                aria-label=""
+                aria-label="Sunday, 11th April 2010"
                 aria-pressed={false}
                 className="bpk-calendar-date bpk-calendar-date--blocked bpk-calendar-date--outside"
                 disabled={true}

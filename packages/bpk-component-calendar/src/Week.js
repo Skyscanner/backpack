@@ -225,8 +225,7 @@ class Week extends Component {
               <DateComponent
                 date={date}
                 modifiers={dateModifiers}
-                aria-hidden={isBlocked}
-                aria-label={isBlocked ? '' : formatDateFull(date)}
+                aria-label={formatDateFull(date)}
                 onClick={onDateClick}
                 onDateKeyDown={onDateKeyDown}
                 preventKeyboardFocus={preventKeyboardFocus}

@@ -151,7 +151,7 @@ exports[`BpkCalendarDate should pass props through to button 1`] = `
 exports[`BpkCalendarDate should render a blocked button as disabled with aria-hidden applied 1`] = `
 <button
   aria-hidden={true}
-  aria-label=""
+  aria-label={15}
   aria-pressed={false}
   className="bpk-calendar-date bpk-calendar-date--blocked"
   disabled={true}
