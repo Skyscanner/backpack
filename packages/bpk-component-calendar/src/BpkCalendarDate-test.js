@@ -40,11 +40,9 @@ describe('BpkCalendarDate', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  it('should render a disabled and blocked button', () => {
+  it('should render a blocked button as disabled with aria-hidden applied', () => {
     const tree = renderer
-      .create(
-        <BpkCalendarDate date={new Date(2010, 1, 15)} disabled isBlocked />,
-      )
+      .create(<BpkCalendarDate date={new Date(2010, 1, 15)} isBlocked />)
       .toJSON();
     expect(tree).toMatchSnapshot();
   });
