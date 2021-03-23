@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-skip-link",
-  "version": "1.0.15",
+  "version": "1.0.16",
   "description": "Backpack skip-link component.",
   "main": "index.js",
   "repository": {
@@ -13,12 +13,12 @@
     "react": "^15.0.0 || ^16.0.0"
   },
   "dependencies": {
-    "bpk-mixins": "^20.1.25",
+    "bpk-mixins": "^20.1.26",
     "bpk-react-utils": "^3.0.11",
     "prop-types": "^15.5.8"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
-  "gitHead": "79e9426ba627224294d8a6dcf5ecb898f2021cde"
+  "gitHead": "d76d34b8182233dce0126ea7cbeb6cdfc516a031"
 }
