@@ -205,39 +205,41 @@ class Week extends Component {
 
     return (
       <tr className={getClassName('bpk-calendar-grid__week')}>
-        {this.props.dates.map(date => (
-          <DateContainer
-            className={this.props.cellClassName}
-            isEmptyCell={!isSameMonth(date, month) && ignoreOutsideDate}
-            key={date.getDate()}
-            weekendStart={
-              showWeekendSeparator && firstDayOfWeekendIndex === getDay(date)
-            }
-            weekendEnd={
-              showWeekendSeparator && lastDayOfWeekendIndex === getDay(date)
-            }
-          >
-            <DateComponent
-              date={date}
-              modifiers={dateModifiers}
-              aria-label={formatDateFull(date)}
-              onClick={onDateClick}
-              onDateKeyDown={onDateKeyDown}
-              preventKeyboardFocus={preventKeyboardFocus}
-              isKeyboardFocusable={isKeyboardFocusable}
-              isFocused={isSameDay(date, focusedDate)}
-              isSelected={isSameDay(date, selectedDate)}
-              isBlocked={
-                minDate && maxDate
-                  ? !isWithinRange(date, minDate, maxDate)
-                  : false
+        {this.props.dates.map(date => {
+          const isBlocked =
+            minDate && maxDate ? !isWithinRange(date, minDate, maxDate) : false;
+
+          return (
+            <DateContainer
+              className={this.props.cellClassName}
+              isEmptyCell={!isSameMonth(date, month) && ignoreOutsideDate}
+              isBlocked={isBlocked}
+              key={date.getDate()}
+              weekendStart={
+                showWeekendSeparator && firstDayOfWeekendIndex === getDay(date)
               }
-              isOutside={markOutsideDays && !isSameMonth(date, month)}
-              isToday={markToday && isToday(date)}
-              {...dateProps}
-            />
-          </DateContainer>
-        ))}
+              weekendEnd={
+                showWeekendSeparator && lastDayOfWeekendIndex === getDay(date)
+              }
+            >
+              <DateComponent
+                date={date}
+                modifiers={dateModifiers}
+                aria-label={formatDateFull(date)}
+                onClick={onDateClick}
+                onDateKeyDown={onDateKeyDown}
+                preventKeyboardFocus={preventKeyboardFocus}
+                isKeyboardFocusable={isKeyboardFocusable}
+                isFocused={isSameDay(date, focusedDate)}
+                isSelected={isSameDay(date, selectedDate)}
+                isBlocked={isBlocked}
+                isOutside={markOutsideDays && !isSameMonth(date, month)}
+                isToday={markToday && isToday(date)}
+                {...dateProps}
+              />
+            </DateContainer>
+          );
+        })}
       </tr>
     );
   }
@@ -300,7 +302,10 @@ const DateContainer = props => {
   }
 
   return (
-    <td aria-hidden={props.isEmptyCell} className={classNames.join(' ')}>
+    <td
+      aria-hidden={props.isEmptyCell || props.isBlocked}
+      className={classNames.join(' ')}
+    >
       {props.children}
     </td>
   );
@@ -311,6 +316,7 @@ DateContainer.propTypes = {
   weekendStart: PropTypes.bool.isRequired,
   weekendEnd: PropTypes.bool.isRequired,
   isEmptyCell: PropTypes.bool.isRequired,
+  isBlocked: PropTypes.bool.isRequired,
   className: PropTypes.string,
 };
 
