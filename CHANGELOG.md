@@ -2,6 +2,13 @@
 
 [Unreleased changes](./UNRELEASED.md).
 
+# 2021-03-24
+
+**Fixed:**
+
+- bpk-component-calendar:
+  - Calendar Grid column headings and out-of-range dates are now hidden to assistive technology.
+
 # 2021-03-23
 
 **Added:**
