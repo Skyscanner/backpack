@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-rtl-toggle",
-  "version": "2.0.115",
+  "version": "2.0.116",
   "description": "Backpack RTL toggle component.",
   "license": "Apache-2.0",
   "repository": {
@@ -14,7 +14,7 @@
   },
   "gitHead": "d76d34b8182233dce0126ea7cbeb6cdfc516a031",
   "dependencies": {
-    "bpk-component-link": "^2.1.43",
+    "bpk-component-link": "^2.1.44",
     "bpk-react-utils": "^3.0.11",
     "prop-types": "^15.6.2"
   },
