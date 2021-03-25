@@ -17,5 +17,5 @@ backpack.iml
 yarn.lock
 /packages/*/changelog.md
 
-# Incase the script does not fully remove this we don't want to push to git
+# On postpublish, we clone and run some scripts on the backpack-docs repo. This ensures we don't accidentally commit it.
 backpack-docs
