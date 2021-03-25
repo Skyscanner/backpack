@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-label",
-  "version": "4.0.112",
+  "version": "4.0.113",
   "description": "Backpack label component.",
   "license": "Apache-2.0",
   "repository": {
@@ -14,7 +14,7 @@
   },
   "gitHead": "6b6b8e2511c9f50354ba6eca5331e093901400fe",
   "dependencies": {
-    "bpk-mixins": "^20.1.27",
+    "bpk-mixins": "^20.1.28",
     "bpk-react-utils": "^3.0.11",
     "prop-types": "^15.6.2"
   },
