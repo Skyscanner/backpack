@@ -49,7 +49,7 @@
     "postinstall": "npm run bootstrap",
     "preinstall": "npx ensure-node-env",
     "prettier": "prettier --config .prettierrc --write \"**/*.js\"",
-    "publish": "npm run check-pristine && npm run check-owners && npm run build && git pull --rebase && flow stop && npm run test && lerna publish && npm run publish:css",
+    "publish": "npm run check-pristine && npm run check-owners && npm run build && git pull --rebase && flow stop && npm run test && lerna publish && npm run publish:css && ./scripts/publish/process/update-docs-deps.sh",
     "publish:css": "node ./scripts/publish-process/transform-js-scss-css-imports.js && node ./scripts/publish-process/transform-bpk-imports.js && node ./scripts/publish-process/publish-css-tagged-packages.js && git reset --hard HEAD",
     "release": "npm run publish",
     "sassdoc": "sassdoc {packages/bpk-mixins/src/**/*,packages/bpk-svgs/dist/*,packages/bpk-tokens/tokens/base.default}.scss -d dist-sassdoc -v --strict",

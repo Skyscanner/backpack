@@ -16,3 +16,6 @@ sassdoc-data.json
 backpack.iml
 yarn.lock
 /packages/*/changelog.md
+
+# Incase the script does not fully remove this we don't want to push to git
+backpack-docs
