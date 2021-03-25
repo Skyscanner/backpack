@@ -18,25 +18,27 @@
 
 BRANCH_NAME="autobump-upgrade-bpk-dependencies"
 
-echo "---Cloning Backpack docs---"
+echo "--- Cloning Backpack docs ---"
 git clone git@github.com:skyscanner/backpack-docs.git
 
 cd backpack-docs
 
-echo "---Checkout upgrade branch---"
+echo "--- Checkout upgrade branch ---"
 git checkout -b $BRANCH_NAME
 
-echo "---Updating bpk dependencies---"
+echo "--- Updating bpk dependencies ---"
 npx npm-check-updates "/^bpk\\-(.*)$/" -u && npm i
 
-echo "---Commiting to GitHub---"
+echo "--- Commiting to GitHub ---"
 git add .
 git commit -m "Automated upgrade of bpk dependencies"
 git push --set-upstream origin $BRANCH_NAME
 
-echo "---Create PR on GitHub---"
-gh pr create --title "Automated bump for Backpack dependencies" --body "This is an automated PR generated as part of the publish process of Backpack"
+echo "--- Create PR on GitHub ---"
+gh pr create --title "Automated bump for Backpack dependencies" --body "This is an automated PR generated as part of the publish process in Backpack"
 
-echo "---A PR has automatically been created for you in the docs site repo---"
+echo "--- A PR has automatically been created for you in the docs site repo ---"
 
-
+echo "--- Cleaning up ---"
+cd ..
+rm -rf backpack-docs
