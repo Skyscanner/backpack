@@ -16,7 +16,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-BRANCH_NAME="autobump-upgrade-bpk-dependencies"
+BRANCH_NAME="autobump-bpk-dependencies-`date +%Y-%m-%d.%H%M`"
 
 echo "--- Cloning Backpack docs ---"
 git clone git@github.com:skyscanner/backpack-docs.git
@@ -27,16 +27,15 @@ echo "--- Checkout upgrade branch ---"
 git checkout -b $BRANCH_NAME
 
 echo "--- Updating bpk dependencies ---"
-npx npm-check-updates "/^bpk\\-(.*)$/" -u && npm i
+npm run update-bpk-dependencies
 
 echo "--- Commiting to GitHub ---"
 git add .
-git commit -m "Automated upgrade of bpk dependencies"
+git commit -m "Automated upgrade of Backpack dependencies"
 git push --set-upstream origin $BRANCH_NAME
 
 echo "--- Create PR on GitHub ---"
-gh pr create --title "Automated bump for Backpack dependencies" --body "This is an automated PR generated as part of the publish process in Backpack"
-
+gh pr create --body "This is an automated PR generated as part of the publish process in Backpack"
 echo "--- A PR has automatically been created for you in the docs site repo ---"
 
 echo "--- Cleaning up ---"
