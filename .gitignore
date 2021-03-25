@@ -16,3 +16,6 @@ sassdoc-data.json
 backpack.iml
 yarn.lock
 /packages/*/changelog.md
+
+# On postpublish, we clone and run some scripts on the backpack-docs repo. This ensures we don't accidentally commit it.
+backpack-docs
