@@ -23,14 +23,11 @@ import { render } from '@testing-library/react';
 
 import BpkButton from './BpkButton';
 
-const defaultTestProps = {
-  onClick: () => {},
-  children: 'My button',
-};
-
 describe('BpkButton accessibility tests', () => {
   it('should not have programmatically detectable accessibility issues', async () => {
-    const { container } = render(<BpkButton {...defaultTestProps} />);
+    const { container } = render(
+      <BpkButton onClick={() => {}}>My button</BpkButton>,
+    );
     const results = await axe(container);
     expect(results).toHaveNoViolations();
   });
