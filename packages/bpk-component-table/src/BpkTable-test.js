@@ -19,41 +19,35 @@
 /* @flow strict */
 
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 
 import BpkTable from './BpkTable';
 
 describe('BpkTable', () => {
   it('should render correctly', () => {
-    const tree = renderer
-      .create(
-        <BpkTable>
-          <tbody />
-        </BpkTable>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkTable>
+        <tbody />
+      </BpkTable>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with "alternate" attribute', () => {
-    const tree = renderer
-      .create(
-        <BpkTable alternate>
-          <tbody />
-        </BpkTable>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkTable alternate>
+        <tbody />
+      </BpkTable>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with custom class', () => {
-    const tree = renderer
-      .create(
-        <BpkTable className="my-table">
-          <tbody />
-        </BpkTable>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkTable className="my-table">
+        <tbody />
+      </BpkTable>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 });

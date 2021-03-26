@@ -17,7 +17,7 @@
  */
 
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import { mount } from 'enzyme';
 
 import { weekDays, formatDateFull, formatMonth } from '../test-utils';
@@ -31,43 +31,39 @@ const createNodeMock = () => ({
 
 describe('BpkCalendarContainer', () => {
   it('should render correctly', () => {
-    const tree = renderer
-      .create(
-        <BpkCalendarContainer
-          formatMonth={formatMonth}
-          formatDateFull={formatDateFull}
-          daysOfWeek={weekDays}
-          weekStartsOn={1}
-          changeMonthLabel="Change month"
-          id="myCalendar"
-          minDate={new Date(2010, 1, 15)}
-          maxDate={new Date(2010, 2, 15)}
-          selectedDate={new Date(2010, 1, 15)}
-        />,
-        { createNodeMock },
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkCalendarContainer
+        formatMonth={formatMonth}
+        formatDateFull={formatDateFull}
+        daysOfWeek={weekDays}
+        weekStartsOn={1}
+        changeMonthLabel="Change month"
+        id="myCalendar"
+        minDate={new Date(2010, 1, 15)}
+        maxDate={new Date(2010, 2, 15)}
+        selectedDate={new Date(2010, 1, 15)}
+      />,
+      { createNodeMock },
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should focus the correct date when `initiallyFocusedDate` is set and selected date is not', () => {
-    const tree = renderer
-      .create(
-        <BpkCalendarContainer
-          formatMonth={formatMonth}
-          formatDateFull={formatDateFull}
-          daysOfWeek={weekDays}
-          weekStartsOn={1}
-          changeMonthLabel="Change month"
-          id="myCalendar"
-          minDate={new Date(2010, 1, 15)}
-          maxDate={new Date(2010, 2, 15)}
-          initiallyFocusedDate={new Date(2010, 1, 28)}
-        />,
-        { createNodeMock },
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkCalendarContainer
+        formatMonth={formatMonth}
+        formatDateFull={formatDateFull}
+        daysOfWeek={weekDays}
+        weekStartsOn={1}
+        changeMonthLabel="Change month"
+        id="myCalendar"
+        minDate={new Date(2010, 1, 15)}
+        maxDate={new Date(2010, 2, 15)}
+        initiallyFocusedDate={new Date(2010, 1, 28)}
+      />,
+      { createNodeMock },
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should change the month', () => {

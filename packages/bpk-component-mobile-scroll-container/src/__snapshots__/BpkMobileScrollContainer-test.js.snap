@@ -1,90 +1,77 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`BpkMobileScrollContainer should render correctly 1`] = `
-<div
-  className="bpk-mobile-scroll-container"
-  style={
-    Object {
-      "height": "auto",
-    }
-  }
->
+<DocumentFragment>
   <div
-    className="bpk-mobile-scroll-container__scroller"
-    onScroll={[Function]}
+    class="bpk-mobile-scroll-container"
+    style="height: auto;"
   >
     <div
-      className="bpk-mobile-scroll-container__inner"
+      class="bpk-mobile-scroll-container__scroller"
     >
-      Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+      <div
+        class="bpk-mobile-scroll-container__inner"
+      >
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+      </div>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`BpkMobileScrollContainer should render correctly when showScrollbar is set to true 1`] = `
-<div
-  className="bpk-mobile-scroll-container"
-  style={
-    Object {
-      "height": "auto",
-    }
-  }
->
+<DocumentFragment>
   <div
-    className="bpk-mobile-scroll-container__scroller bpk-mobile-scroll-container__showScrollbar"
-    onScroll={[Function]}
+    class="bpk-mobile-scroll-container"
+    style="height: auto;"
   >
     <div
-      className="bpk-mobile-scroll-container__inner"
+      class="bpk-mobile-scroll-container__scroller bpk-mobile-scroll-container__showScrollbar"
     >
-      Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+      <div
+        class="bpk-mobile-scroll-container__inner"
+      >
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+      </div>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`BpkMobileScrollContainer should render correctly with a custom "className" attribute 1`] = `
-<div
-  className="bpk-mobile-scroll-container my-custom-class"
-  style={
-    Object {
-      "height": "auto",
-    }
-  }
->
+<DocumentFragment>
   <div
-    className="bpk-mobile-scroll-container__scroller"
-    onScroll={[Function]}
+    class="bpk-mobile-scroll-container my-custom-class"
+    style="height: auto;"
   >
     <div
-      className="bpk-mobile-scroll-container__inner"
+      class="bpk-mobile-scroll-container__scroller"
     >
-      Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+      <div
+        class="bpk-mobile-scroll-container__inner"
+      >
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+      </div>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`BpkMobileScrollContainer should render correctly with a custom "style" attribute 1`] = `
-<div
-  className="bpk-mobile-scroll-container"
-  style={
-    Object {
-      "backgroundColor": "rgb(209, 67, 91)",
-      "height": "auto",
-    }
-  }
->
+<DocumentFragment>
   <div
-    className="bpk-mobile-scroll-container__scroller"
-    onScroll={[Function]}
+    class="bpk-mobile-scroll-container"
+    style="background-color: rgb(209, 67, 91); height: auto;"
   >
     <div
-      className="bpk-mobile-scroll-container__inner"
+      class="bpk-mobile-scroll-container__scroller"
     >
-      Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+      <div
+        class="bpk-mobile-scroll-container__inner"
+      >
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+      </div>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;

@@ -18,7 +18,7 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import { mount } from 'enzyme';
 
 import updateOnThemeChange from './updateOnThemeChange';
@@ -30,14 +30,12 @@ const EnhancedComponent = updateOnThemeChange(Dummy);
 
 describe('EnhancedComponent', () => {
   it('should render correctly', () => {
-    const tree = renderer
-      .create(
-        <EnhancedComponent>
-          <p>Children</p>
-        </EnhancedComponent>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <EnhancedComponent>
+        <p>Children</p>
+      </EnhancedComponent>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should force an update when receiving a theme change event', () => {

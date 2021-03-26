@@ -19,31 +19,27 @@
 /* @flow strict */
 
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 
 import BpkSectionList from './BpkSectionList';
 
 describe('BpkSectionList', () => {
   it('should render correctly', () => {
-    const tree = renderer
-      .create(<BpkSectionList>Hello world</BpkSectionList>)
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(<BpkSectionList>Hello world</BpkSectionList>);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with a custom className', () => {
-    const tree = renderer
-      .create(
-        <BpkSectionList className="custom-class">Hello world</BpkSectionList>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkSectionList className="custom-class">Hello world</BpkSectionList>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with arbitrary props', () => {
-    const tree = renderer
-      .create(<BpkSectionList testId="123">Hello world</BpkSectionList>)
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkSectionList testId="123">Hello world</BpkSectionList>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 });

@@ -19,41 +19,35 @@
 /* @flow strict */
 
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 
 import BpkTableBody from './BpkTableBody';
 
 describe('BpkTableBody', () => {
   it('should render correctly', () => {
-    const tree = renderer
-      .create(
-        <BpkTableBody>
-          <tr />
-        </BpkTableBody>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkTableBody>
+        <tr />
+      </BpkTableBody>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with custom class', () => {
-    const tree = renderer
-      .create(
-        <BpkTableBody className="my-custom-class">
-          <tr />
-        </BpkTableBody>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkTableBody className="my-custom-class">
+        <tr />
+      </BpkTableBody>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with arbitrary props', () => {
-    const tree = renderer
-      .create(
-        <BpkTableBody id="my-custom-id" data-foo="bar">
-          <tr />
-        </BpkTableBody>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkTableBody id="my-custom-id" data-foo="bar">
+        <tr />
+      </BpkTableBody>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 });

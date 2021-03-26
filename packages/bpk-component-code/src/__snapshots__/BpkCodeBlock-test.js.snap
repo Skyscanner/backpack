@@ -1,37 +1,43 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`BpkCodeBlock should render correctly 1`] = `
-<pre
-  className="bpk-code__pre"
->
-  <code
-    className="bpk-code bpk-code--block"
+<DocumentFragment>
+  <pre
+    class="bpk-code__pre"
   >
-    npm install react --save-dev
-  </code>
-</pre>
+    <code
+      class="bpk-code bpk-code--block"
+    >
+      npm install react --save-dev
+    </code>
+  </pre>
+</DocumentFragment>
 `;
 
 exports[`BpkCodeBlock should render correctly with "alternate" 1`] = `
-<pre
-  className="bpk-code__pre bpk-code__pre--alternate"
->
-  <code
-    className="bpk-code bpk-code--block"
+<DocumentFragment>
+  <pre
+    class="bpk-code__pre bpk-code__pre--alternate"
   >
-    npm install react --save-dev
-  </code>
-</pre>
+    <code
+      class="bpk-code bpk-code--block"
+    >
+      npm install react --save-dev
+    </code>
+  </pre>
+</DocumentFragment>
 `;
 
 exports[`BpkCodeBlock should render correctly with custom "className" 1`] = `
-<pre
-  className="bpk-code__pre my-custom-class"
->
-  <code
-    className="bpk-code bpk-code--block"
+<DocumentFragment>
+  <pre
+    class="bpk-code__pre my-custom-class"
   >
-    npm install react --save-dev
-  </code>
-</pre>
+    <code
+      class="bpk-code bpk-code--block"
+    >
+      npm install react --save-dev
+    </code>
+  </pre>
+</DocumentFragment>
 `;

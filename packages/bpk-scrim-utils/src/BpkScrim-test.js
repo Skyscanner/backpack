@@ -17,18 +17,18 @@
  */
 
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 
 import BpkScrim from './BpkScrim';
 
 describe('BpkScrim', () => {
   it('should render correctly', () => {
-    const tree = renderer.create(<BpkScrim />).toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(<BpkScrim />);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with dark="true"', () => {
-    const tree = renderer.create(<BpkScrim dark />).toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(<BpkScrim dark />);
+    expect(asFragment()).toMatchSnapshot();
   });
 });

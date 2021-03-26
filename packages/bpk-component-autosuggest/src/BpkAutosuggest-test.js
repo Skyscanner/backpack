@@ -20,7 +20,7 @@
 
 import React from 'react';
 import ReactTestUtils from 'react-dom/test-utils';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 
 import BpkAutosuggest from './BpkAutosuggest';
 
@@ -38,36 +38,32 @@ const inputProps = {
 
 describe('BpkAutosuggest', () => {
   it('should render correctly', () => {
-    const tree = renderer
-      .create(
-        <BpkAutosuggest
-          suggestions={suggestions}
-          onSuggestionsFetchRequested={onSuggestionsFetchRequested}
-          onSuggestionsClearRequested={onSuggestionsClearRequested}
-          getSuggestionValue={getSuggestionValue}
-          renderSuggestion={renderSuggestion}
-          inputProps={inputProps}
-        />,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkAutosuggest
+        suggestions={suggestions}
+        onSuggestionsFetchRequested={onSuggestionsFetchRequested}
+        onSuggestionsClearRequested={onSuggestionsClearRequested}
+        getSuggestionValue={getSuggestionValue}
+        renderSuggestion={renderSuggestion}
+        inputProps={inputProps}
+      />,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with an "alwaysRenderSuggestions" attribute', () => {
-    const tree = renderer
-      .create(
-        <BpkAutosuggest
-          suggestions={suggestions}
-          onSuggestionsFetchRequested={onSuggestionsFetchRequested}
-          onSuggestionsClearRequested={onSuggestionsClearRequested}
-          getSuggestionValue={getSuggestionValue}
-          renderSuggestion={renderSuggestion}
-          inputProps={inputProps}
-          alwaysRenderSuggestions
-        />,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkAutosuggest
+        suggestions={suggestions}
+        onSuggestionsFetchRequested={onSuggestionsFetchRequested}
+        onSuggestionsClearRequested={onSuggestionsClearRequested}
+        getSuggestionValue={getSuggestionValue}
+        renderSuggestion={renderSuggestion}
+        inputProps={inputProps}
+        alwaysRenderSuggestions
+      />,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should set the input reference', () => {

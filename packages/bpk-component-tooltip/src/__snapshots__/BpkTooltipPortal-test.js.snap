@@ -1,157 +1,110 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`BpkTooltipPortal should render correctly 1`] = `
-<Portal
-  className="bpk-tooltip-portal"
-  isOpen={false}
-  onClose={[Function]}
-  onOpen={[Function]}
-  renderTarget={null}
-  style={null}
-  target={
-    <div
-      aria-label="My tooltip content"
-      tabIndex="0"
-    >
-      target
-    </div>
-  }
-  targetRef={[Function]}
->
-  <section
-    className="bpk-tooltip"
-    id="my-tooltip"
-    role="dialog"
-    tabIndex="-1"
+<DocumentFragment>
+  <portal
+    class="bpk-tooltip-portal"
+    target="[object Object]"
   >
-    <span
-      className="bpk-tooltip__arrow"
-      id="js-bpk-popover-arrow"
-      role="presentation"
-    />
-    <div
-      className="bpk-tooltip__inner bpk-tooltip__inner--padded"
+    <section
+      class="bpk-tooltip"
+      id="my-tooltip"
+      role="dialog"
+      tabindex="-1"
     >
-      My tooltip content
-    </div>
-  </section>
-</Portal>
+      <span
+        class="bpk-tooltip__arrow"
+        id="js-bpk-popover-arrow"
+        role="presentation"
+      />
+      <div
+        class="bpk-tooltip__inner bpk-tooltip__inner--padded"
+      >
+        My tooltip content
+      </div>
+    </section>
+  </portal>
+</DocumentFragment>
 `;
 
 exports[`BpkTooltipPortal should render correctly with a custom portal className 1`] = `
-<Portal
-  className="bpk-tooltip-portal my-custom-class"
-  isOpen={false}
-  onClose={[Function]}
-  onOpen={[Function]}
-  renderTarget={null}
-  style={null}
-  target={
-    <div
-      aria-label="My tooltip content"
-      tabIndex="0"
-    >
-      target
-    </div>
-  }
-  targetRef={[Function]}
->
-  <section
-    className="bpk-tooltip"
-    id="my-tooltip"
-    role="dialog"
-    tabIndex="-1"
+<DocumentFragment>
+  <portal
+    class="bpk-tooltip-portal my-custom-class"
+    target="[object Object]"
   >
-    <span
-      className="bpk-tooltip__arrow"
-      id="js-bpk-popover-arrow"
-      role="presentation"
-    />
-    <div
-      className="bpk-tooltip__inner bpk-tooltip__inner--padded"
+    <section
+      class="bpk-tooltip"
+      id="my-tooltip"
+      role="dialog"
+      tabindex="-1"
     >
-      My tooltip content
-    </div>
-  </section>
-</Portal>
+      <span
+        class="bpk-tooltip__arrow"
+        id="js-bpk-popover-arrow"
+        role="presentation"
+      />
+      <div
+        class="bpk-tooltip__inner bpk-tooltip__inner--padded"
+      >
+        My tooltip content
+      </div>
+    </section>
+  </portal>
+</DocumentFragment>
 `;
 
 exports[`BpkTooltipPortal should render correctly with a custom tooltip className 1`] = `
-<Portal
-  className="bpk-tooltip-portal"
-  isOpen={false}
-  onClose={[Function]}
-  onOpen={[Function]}
-  renderTarget={null}
-  style={null}
-  target={
-    <div
-      aria-label="My tooltip content"
-      tabIndex="0"
-    >
-      target
-    </div>
-  }
-  targetRef={[Function]}
->
-  <section
-    className="bpk-tooltip my-custom-class"
-    id="my-tooltip"
-    role="dialog"
-    tabIndex="-1"
+<DocumentFragment>
+  <portal
+    class="bpk-tooltip-portal"
+    target="[object Object]"
   >
-    <span
-      className="bpk-tooltip__arrow"
-      id="js-bpk-popover-arrow"
-      role="presentation"
-    />
-    <div
-      className="bpk-tooltip__inner bpk-tooltip__inner--padded"
+    <section
+      class="bpk-tooltip my-custom-class"
+      id="my-tooltip"
+      role="dialog"
+      tabindex="-1"
     >
-      My tooltip content
-    </div>
-  </section>
-</Portal>
+      <span
+        class="bpk-tooltip__arrow"
+        id="js-bpk-popover-arrow"
+        role="presentation"
+      />
+      <div
+        class="bpk-tooltip__inner bpk-tooltip__inner--padded"
+      >
+        My tooltip content
+      </div>
+    </section>
+  </portal>
+</DocumentFragment>
 `;
 
 exports[`BpkTooltipPortal should render correctly with custom portal style 1`] = `
-<Portal
-  className="bpk-tooltip-portal"
-  isOpen={false}
-  onClose={[Function]}
-  onOpen={[Function]}
-  renderTarget={null}
-  style={
-    Object {
-      "color": "rgb(209, 67, 91)",
-    }
-  }
-  target={
-    <div
-      aria-label="My tooltip content"
-      tabIndex="0"
-    >
-      target
-    </div>
-  }
-  targetRef={[Function]}
->
-  <section
-    className="bpk-tooltip"
-    id="my-tooltip"
-    role="dialog"
-    tabIndex="-1"
+<DocumentFragment>
+  <portal
+    class="bpk-tooltip-portal"
+    style="color: rgb(209, 67, 91);"
+    target="[object Object]"
   >
-    <span
-      className="bpk-tooltip__arrow"
-      id="js-bpk-popover-arrow"
-      role="presentation"
-    />
-    <div
-      className="bpk-tooltip__inner bpk-tooltip__inner--padded"
+    <section
+      class="bpk-tooltip"
+      id="my-tooltip"
+      role="dialog"
+      tabindex="-1"
     >
-      My tooltip content
-    </div>
-  </section>
-</Portal>
+      <span
+        class="bpk-tooltip__arrow"
+        id="js-bpk-popover-arrow"
+        role="presentation"
+      />
+      <div
+        class="bpk-tooltip__inner bpk-tooltip__inner--padded"
+      >
+        My tooltip content
+      </div>
+    </section>
+  </portal>
+</DocumentFragment>
 `;

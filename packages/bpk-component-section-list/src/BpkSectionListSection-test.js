@@ -19,35 +19,31 @@
 /* @flow strict */
 
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 
 import BpkSectionListSection from './BpkSectionListSection';
 
 describe('BpkSectionListSection', () => {
   it('should render correctly', () => {
-    const tree = renderer
-      .create(<BpkSectionListSection>Hello world</BpkSectionListSection>)
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkSectionListSection>Hello world</BpkSectionListSection>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with "headerText" prop', () => {
-    const tree = renderer
-      .create(
-        <BpkSectionListSection headerText="Heading">
-          Hello world
-        </BpkSectionListSection>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkSectionListSection headerText="Heading">
+        Hello world
+      </BpkSectionListSection>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with arbitrary props', () => {
-    const tree = renderer
-      .create(
-        <BpkSectionListSection testId="123">Hello world</BpkSectionListSection>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkSectionListSection testId="123">Hello world</BpkSectionListSection>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 });

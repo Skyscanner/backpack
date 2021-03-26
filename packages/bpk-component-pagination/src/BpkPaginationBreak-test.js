@@ -17,20 +17,18 @@
  */
 
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 
 import BpkPaginationBreak from './BpkPaginationBreak';
 
 describe('BpkPaginationBreak', () => {
   it('default', () => {
-    const tree = renderer.create(<BpkPaginationBreak />).toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(<BpkPaginationBreak />);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should display custom break label', () => {
-    const tree = renderer
-      .create(<BpkPaginationBreak breakLabel="|" />)
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(<BpkPaginationBreak breakLabel="|" />);
+    expect(asFragment()).toMatchSnapshot();
   });
 });

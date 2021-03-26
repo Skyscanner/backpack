@@ -1,3 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`BpkRtlToggle should render correctly 1`] = `<div />`;
+exports[`BpkRtlToggle should render correctly 1`] = `
+<DocumentFragment>
+  <div />
+</DocumentFragment>
+`;

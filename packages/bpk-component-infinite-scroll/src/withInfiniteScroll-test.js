@@ -18,7 +18,7 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import { mount } from 'enzyme';
 import toJson from 'enzyme-to-json';
 
@@ -73,11 +73,11 @@ describe('withInfiniteScroll', () => {
   });
 
   it('renders an empty list for the first render', () => {
-    const tree = renderer.create(
+    const { asFragment } = render(
       <InfiniteList dataSource={new ArrayDataSource(elementsArray)} />,
     );
 
-    expect(tree).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('renders items after the first render', async () => {

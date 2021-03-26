@@ -19,35 +19,35 @@
 /* @flow strict */
 
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 
 import SPINNER_TYPES from './spinnerTypes';
 import BpkExtraLargeSpinner from './BpkExtraLargeSpinner';
 
 describe('BpkExtraLargeSpinner', () => {
   it('should render correctly', () => {
-    const tree = renderer.create(<BpkExtraLargeSpinner />).toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(<BpkExtraLargeSpinner />);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with type as light', () => {
-    const tree = renderer
-      .create(<BpkExtraLargeSpinner type={SPINNER_TYPES.light} />)
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkExtraLargeSpinner type={SPINNER_TYPES.light} />,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with type as primary', () => {
-    const tree = renderer
-      .create(<BpkExtraLargeSpinner type={SPINNER_TYPES.primary} />)
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkExtraLargeSpinner type={SPINNER_TYPES.primary} />,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with a "className" attribute', () => {
-    const tree = renderer
-      .create(<BpkExtraLargeSpinner className="my-custom-class" />)
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkExtraLargeSpinner className="my-custom-class" />,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 });

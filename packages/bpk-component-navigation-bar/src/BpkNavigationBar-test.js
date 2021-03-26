@@ -19,111 +19,99 @@
 /* @flow strict */
 
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 
 import BpkNavigationBar from './BpkNavigationBar';
 import BpkNavigationIconButton from './BpkNavigationBarIconButton';
 
 describe('BpkNavigationBar', () => {
   it('should render correctly', () => {
-    const tree = renderer
-      .create(<BpkNavigationBar id="test" title="test" />)
-      .toJSON();
+    const { asFragment } = render(<BpkNavigationBar id="test" title="test" />);
 
-    expect(tree).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with custom class', () => {
-    const tree = renderer
-      .create(
-        <BpkNavigationBar id="test" title="test" className="my-custom-class" />,
-      )
-      .toJSON();
+    const { asFragment } = render(
+      <BpkNavigationBar id="test" title="test" className="my-custom-class" />,
+    );
 
-    expect(tree).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with arbitrary props', () => {
-    const tree = renderer
-      .create(
-        <BpkNavigationBar id="test" title="test" testID="arbitrary value" />,
-      )
-      .toJSON();
+    const { asFragment } = render(
+      <BpkNavigationBar id="test" title="test" testID="arbitrary value" />,
+    );
 
-    expect(tree).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with a "leadingButton" attribute', () => {
-    const tree = renderer
-      .create(
-        <BpkNavigationBar
-          id="test"
-          title="test"
-          leadingButton={
-            <BpkNavigationIconButton
-              icon={() => <span />}
-              label="test"
-              onClick={() => {}}
-            >
-              Click Here
-            </BpkNavigationIconButton>
-          }
-        />,
-      )
-      .toJSON();
+    const { asFragment } = render(
+      <BpkNavigationBar
+        id="test"
+        title="test"
+        leadingButton={
+          <BpkNavigationIconButton
+            icon={() => <span />}
+            label="test"
+            onClick={() => {}}
+          >
+            Click Here
+          </BpkNavigationIconButton>
+        }
+      />,
+    );
 
-    expect(tree).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with a "traillingButton" attribute', () => {
-    const tree = renderer
-      .create(
-        <BpkNavigationBar
-          id="test"
-          title="test"
-          trailingButton={
-            <BpkNavigationIconButton
-              icon={() => <span />}
-              label="test"
-              onClick={() => {}}
-            >
-              Click Here
-            </BpkNavigationIconButton>
-          }
-        />,
-      )
-      .toJSON();
+    const { asFragment } = render(
+      <BpkNavigationBar
+        id="test"
+        title="test"
+        trailingButton={
+          <BpkNavigationIconButton
+            icon={() => <span />}
+            label="test"
+            onClick={() => {}}
+          >
+            Click Here
+          </BpkNavigationIconButton>
+        }
+      />,
+    );
 
-    expect(tree).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with an element for the title attribute', () => {
-    const tree = renderer
-      .create(
-        <BpkNavigationBar
-          id="test"
-          title={<span>test</span>}
-          trailingButton={
-            <BpkNavigationIconButton
-              icon={() => <span />}
-              label="test"
-              onClick={() => {}}
-            >
-              Click Here
-            </BpkNavigationIconButton>
-          }
-        />,
-      )
-      .toJSON();
+    const { asFragment } = render(
+      <BpkNavigationBar
+        id="test"
+        title={<span>test</span>}
+        trailingButton={
+          <BpkNavigationIconButton
+            icon={() => <span />}
+            label="test"
+            onClick={() => {}}
+          >
+            Click Here
+          </BpkNavigationIconButton>
+        }
+      />,
+    );
 
-    expect(tree).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly when sticky', () => {
-    const tree = renderer
-      .create(<BpkNavigationBar id="test" title="test" sticky />)
-      .toJSON();
+    const { asFragment } = render(
+      <BpkNavigationBar id="test" title="test" sticky />,
+    );
 
-    expect(tree).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 });

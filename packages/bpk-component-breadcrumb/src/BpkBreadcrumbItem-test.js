@@ -19,72 +19,64 @@
 /* @flow strict */
 
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 
 import BpkBreadcrumbItem from './BpkBreadcrumbItem';
 
 describe('BpkBreadcrumbItem', () => {
   it('should render correctly', () => {
-    const tree = renderer
-      .create(
-        <BpkBreadcrumbItem href="https://backpack.github.io/">
-          Backpack
-        </BpkBreadcrumbItem>,
-      )
-      .toJSON();
+    const { asFragment } = render(
+      <BpkBreadcrumbItem href="https://backpack.github.io/">
+        Backpack
+      </BpkBreadcrumbItem>,
+    );
 
-    expect(tree).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with a "active" prop', () => {
-    const tree = renderer
-      .create(<BpkBreadcrumbItem active>Backpack</BpkBreadcrumbItem>)
-      .toJSON();
+    const { asFragment } = render(
+      <BpkBreadcrumbItem active>Backpack</BpkBreadcrumbItem>,
+    );
 
-    expect(tree).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with a custom class name', () => {
-    const tree = renderer
-      .create(
-        <BpkBreadcrumbItem
-          href="https://backpack.github.io/"
-          className="my-custom-class"
-        >
-          Backpack
-        </BpkBreadcrumbItem>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkBreadcrumbItem
+        href="https://backpack.github.io/"
+        className="my-custom-class"
+      >
+        Backpack
+      </BpkBreadcrumbItem>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with arbitrary props', () => {
-    const tree = renderer
-      .create(
-        <BpkBreadcrumbItem
-          href="https://backpack.github.io/"
-          testID="arbitrary value" // <-- arbitrary prop
-        >
-          Backpack
-        </BpkBreadcrumbItem>,
-      )
-      .toJSON();
+    const { asFragment } = render(
+      <BpkBreadcrumbItem
+        href="https://backpack.github.io/"
+        testID="arbitrary value" // <-- arbitrary prop
+      >
+        Backpack
+      </BpkBreadcrumbItem>,
+    );
 
-    expect(tree).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with with "linkProps" attribute', () => {
-    const tree = renderer
-      .create(
-        <BpkBreadcrumbItem
-          href="https://backpack.github.io/"
-          linkProps={{ testID: 'arbitrary value' }} // <-- arbitrary prop
-        >
-          Backpack
-        </BpkBreadcrumbItem>,
-      )
-      .toJSON();
+    const { asFragment } = render(
+      <BpkBreadcrumbItem
+        href="https://backpack.github.io/"
+        linkProps={{ testID: 'arbitrary value' }} // <-- arbitrary prop
+      >
+        Backpack
+      </BpkBreadcrumbItem>,
+    );
 
-    expect(tree).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 });

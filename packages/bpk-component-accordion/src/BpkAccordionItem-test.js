@@ -19,121 +19,105 @@
 /* @flow strict */
 
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import StopsIcon from 'bpk-component-icon/sm/stops';
 
 import BpkAccordionItem, { WEIGHT_STYLES } from './BpkAccordionItem';
 
 describe('BpkAccordionItem', () => {
   it('should render correctly', () => {
-    const tree = renderer
-      .create(
-        <BpkAccordionItem id="my-accordion" title="My accordion item">
-          My accordion content
-        </BpkAccordionItem>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkAccordionItem id="my-accordion" title="My accordion item">
+        My accordion content
+      </BpkAccordionItem>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with "expanded" prop', () => {
-    const tree = renderer
-      .create(
-        <BpkAccordionItem id="my-accordion" title="My accordion item" expanded>
-          My accordion content
-        </BpkAccordionItem>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkAccordionItem id="my-accordion" title="My accordion item" expanded>
+        My accordion content
+      </BpkAccordionItem>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with "tagName" prop set', () => {
-    const tree = renderer
-      .create(
-        <BpkAccordionItem
-          id="my-accordion"
-          title="My accordion item"
-          tagName="h3"
-        >
-          My accordion content
-        </BpkAccordionItem>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkAccordionItem
+        id="my-accordion"
+        title="My accordion item"
+        tagName="h3"
+      >
+        My accordion content
+      </BpkAccordionItem>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with "textStyle" prop set', () => {
-    const tree = renderer
-      .create(
-        <BpkAccordionItem
-          id="my-accordion"
-          title="My accordion item"
-          textStyle="xl"
-        >
-          My accordion content
-        </BpkAccordionItem>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkAccordionItem
+        id="my-accordion"
+        title="My accordion item"
+        textStyle="xl"
+      >
+        My accordion content
+      </BpkAccordionItem>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with "weight" prop set to bold', () => {
-    const tree = renderer
-      .create(
-        <BpkAccordionItem
-          id="my-accordion"
-          title="My accordion item"
-          weight={WEIGHT_STYLES.bold}
-        >
-          My accordion content
-        </BpkAccordionItem>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkAccordionItem
+        id="my-accordion"
+        title="My accordion item"
+        weight={WEIGHT_STYLES.bold}
+      >
+        My accordion content
+      </BpkAccordionItem>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with "className" prop', () => {
-    const tree = renderer
-      .create(
-        <BpkAccordionItem
-          id="my-accordion"
-          title="My accordion item"
-          className="my-custom-class"
-        >
-          My accordion content
-        </BpkAccordionItem>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkAccordionItem
+        id="my-accordion"
+        title="My accordion item"
+        className="my-custom-class"
+      >
+        My accordion content
+      </BpkAccordionItem>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should not render an "initiallyExpanded" attribute on the html node', () => {
-    const tree = renderer
-      .create(
-        <BpkAccordionItem
-          id="my-accordion"
-          title="My accordion item"
-          initiallyExpanded
-        >
-          My accordion content
-        </BpkAccordionItem>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkAccordionItem
+        id="my-accordion"
+        title="My accordion item"
+        initiallyExpanded
+      >
+        My accordion content
+      </BpkAccordionItem>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with an icon set', () => {
-    const tree = renderer
-      .create(
-        <BpkAccordionItem
-          id="my-accordion"
-          title="My accordion item"
-          icon={<StopsIcon />}
-        >
-          My accordion content
-        </BpkAccordionItem>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkAccordionItem
+        id="my-accordion"
+        title="My accordion item"
+        icon={<StopsIcon />}
+      >
+        My accordion content
+      </BpkAccordionItem>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 });

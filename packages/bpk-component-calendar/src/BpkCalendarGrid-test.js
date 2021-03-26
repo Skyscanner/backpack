@@ -18,7 +18,7 @@
 
 import PropTypes from 'prop-types';
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import { mount } from 'enzyme';
 import isWeekend from 'date-fns/is_weekend';
 import { colorMonteverde, colorPanjin } from 'bpk-tokens/tokens/base.es6';
@@ -30,58 +30,52 @@ import BpkCalendarDate from './BpkCalendarDate';
 
 describe('BpkCalendarGrid', () => {
   it('should render correctly with "showWeekendSeparator" attribute set to false', () => {
-    const tree = renderer
-      .create(
-        <BpkCalendarGrid
-          month={new Date('2016-10')}
-          formatMonth={formatMonth}
-          formatDateFull={formatDateFull}
-          DateComponent={BpkCalendarDate}
-          daysOfWeek={weekDays}
-          weekStartsOn={0}
-          showWeekendSeparator={false}
-        />,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkCalendarGrid
+        month={new Date('2016-10')}
+        formatMonth={formatMonth}
+        formatDateFull={formatDateFull}
+        DateComponent={BpkCalendarDate}
+        daysOfWeek={weekDays}
+        weekStartsOn={0}
+        showWeekendSeparator={false}
+      />,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with a different "weekStartsOn" attribute', () => {
-    const tree = renderer
-      .create(
-        <BpkCalendarGrid
-          month={new Date('2016-10')}
-          formatMonth={formatMonth}
-          formatDateFull={formatDateFull}
-          DateComponent={BpkCalendarDate}
-          daysOfWeek={weekDays}
-          weekStartsOn={3}
-          showWeekendSeparator
-        />,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkCalendarGrid
+        month={new Date('2016-10')}
+        formatMonth={formatMonth}
+        formatDateFull={formatDateFull}
+        DateComponent={BpkCalendarDate}
+        daysOfWeek={weekDays}
+        weekStartsOn={3}
+        showWeekendSeparator
+      />,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with a "dateModifiers" attribute', () => {
     const modifiers = {
       someClass: () => true,
     };
-    const tree = renderer
-      .create(
-        <BpkCalendarGrid
-          month={new Date('2016-10')}
-          formatMonth={formatMonth}
-          formatDateFull={formatDateFull}
-          DateComponent={BpkCalendarDate}
-          daysOfWeek={weekDays}
-          weekStartsOn={1}
-          dateModifiers={modifiers}
-          showWeekendSeparator
-        />,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkCalendarGrid
+        month={new Date('2016-10')}
+        formatMonth={formatMonth}
+        formatDateFull={formatDateFull}
+        DateComponent={BpkCalendarDate}
+        daysOfWeek={weekDays}
+        weekStartsOn={1}
+        dateModifiers={modifiers}
+        showWeekendSeparator
+      />,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with a custom date component', () => {
@@ -101,20 +95,18 @@ describe('BpkCalendarGrid', () => {
     MyCustomDate.propTypes = {
       date: PropTypes.instanceOf(Date).isRequired,
     };
-    const tree = renderer
-      .create(
-        <BpkCalendarGrid
-          month={new Date('2016-10')}
-          formatMonth={formatMonth}
-          formatDateFull={formatDateFull}
-          DateComponent={MyCustomDate}
-          daysOfWeek={weekDays}
-          weekStartsOn={1}
-          showWeekendSeparator
-        />,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkCalendarGrid
+        month={new Date('2016-10')}
+        formatMonth={formatMonth}
+        formatDateFull={formatDateFull}
+        DateComponent={MyCustomDate}
+        daysOfWeek={weekDays}
+        weekStartsOn={1}
+        showWeekendSeparator
+      />,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should call the onDateClick callback', () => {
@@ -151,20 +143,18 @@ describe('BpkCalendarGrid', () => {
   });
 
   it('should render correctly with "weekDayKey" attribute set to nameNarrow', () => {
-    const tree = renderer
-      .create(
-        <BpkCalendarGrid
-          month={new Date('2016-10')}
-          formatMonth={formatMonth}
-          formatDateFull={formatDateFull}
-          DateComponent={BpkCalendarDate}
-          daysOfWeek={weekDays}
-          weekStartsOn={0}
-          showWeekendSeparator={false}
-          weekDayKey="nameNarrow"
-        />,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkCalendarGrid
+        month={new Date('2016-10')}
+        formatMonth={formatMonth}
+        formatDateFull={formatDateFull}
+        DateComponent={BpkCalendarDate}
+        daysOfWeek={weekDays}
+        weekStartsOn={0}
+        showWeekendSeparator={false}
+        weekDayKey="nameNarrow"
+      />,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 });

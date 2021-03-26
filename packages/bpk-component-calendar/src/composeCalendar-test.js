@@ -17,7 +17,7 @@
  */
 
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 
 import { weekDays, formatMonth, formatDateFull } from '../test-utils';
 
@@ -35,105 +35,95 @@ const HeaderAndGridCalendar = composeCalendar('Nav', null, 'Grid', 'Date');
 
 describe('composeCalendar', () => {
   it('should compose a nav, header, grid and date component correctly', () => {
-    const tree = renderer
-      .create(
-        <CalendarComponent
-          id="myCalendar"
-          formatMonth={formatMonth}
-          formatDateFull={formatDateFull}
-          daysOfWeek={weekDays}
-          weekStartsOn={1}
-          changeMonthLabel="Change month"
-          minDate={new Date(Date.UTC(2010, 1, 15))}
-          maxDate={new Date(Date.UTC(2010, 2, 15))}
-          month={new Date(Date.UTC(2010, 1, 15))}
-        />,
-        { createNodeMock },
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <CalendarComponent
+        id="myCalendar"
+        formatMonth={formatMonth}
+        formatDateFull={formatDateFull}
+        daysOfWeek={weekDays}
+        weekStartsOn={1}
+        changeMonthLabel="Change month"
+        minDate={new Date(Date.UTC(2010, 1, 15))}
+        maxDate={new Date(Date.UTC(2010, 2, 15))}
+        month={new Date(Date.UTC(2010, 1, 15))}
+      />,
+      { createNodeMock },
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render with custom className prop correctly', () => {
-    const tree = renderer
-      .create(
-        <CalendarComponent
-          id="myCalendar"
-          formatMonth={formatMonth}
-          formatDateFull={formatDateFull}
-          daysOfWeek={weekDays}
-          weekStartsOn={1}
-          changeMonthLabel="Change month"
-          minDate={new Date(Date.UTC(2010, 1, 15))}
-          maxDate={new Date(Date.UTC(2010, 2, 15))}
-          month={new Date(Date.UTC(2010, 1, 15))}
-          className="my-custom-class"
-        />,
-        { createNodeMock },
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <CalendarComponent
+        id="myCalendar"
+        formatMonth={formatMonth}
+        formatDateFull={formatDateFull}
+        daysOfWeek={weekDays}
+        weekStartsOn={1}
+        changeMonthLabel="Change month"
+        minDate={new Date(Date.UTC(2010, 1, 15))}
+        maxDate={new Date(Date.UTC(2010, 2, 15))}
+        month={new Date(Date.UTC(2010, 1, 15))}
+        className="my-custom-class"
+      />,
+      { createNodeMock },
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render with "fixedWidth" set to false', () => {
-    const tree = renderer
-      .create(
-        <CalendarComponent
-          id="myCalendar"
-          formatMonth={formatMonth}
-          formatDateFull={formatDateFull}
-          daysOfWeek={weekDays}
-          weekStartsOn={1}
-          changeMonthLabel="Change month"
-          minDate={new Date(Date.UTC(2010, 1, 15))}
-          maxDate={new Date(Date.UTC(2010, 2, 15))}
-          month={new Date(Date.UTC(2010, 1, 15))}
-          fixedWidth={false}
-        />,
-        { createNodeMock },
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <CalendarComponent
+        id="myCalendar"
+        formatMonth={formatMonth}
+        formatDateFull={formatDateFull}
+        daysOfWeek={weekDays}
+        weekStartsOn={1}
+        changeMonthLabel="Change month"
+        minDate={new Date(Date.UTC(2010, 1, 15))}
+        maxDate={new Date(Date.UTC(2010, 2, 15))}
+        month={new Date(Date.UTC(2010, 1, 15))}
+        fixedWidth={false}
+      />,
+      { createNodeMock },
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render without a nav or header element', () => {
-    const tree = renderer
-      .create(
-        <CustomCalendarComponent
-          id="myCalendar"
-          formatMonth={formatMonth}
-          formatDateFull={formatDateFull}
-          daysOfWeek={weekDays}
-          weekStartsOn={1}
-          changeMonthLabel="Change month"
-          minDate={new Date(Date.UTC(2010, 1, 15))}
-          maxDate={new Date(Date.UTC(2010, 2, 15))}
-          month={new Date(Date.UTC(2010, 1, 15))}
-        />,
-        { createNodeMock },
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <CustomCalendarComponent
+        id="myCalendar"
+        formatMonth={formatMonth}
+        formatDateFull={formatDateFull}
+        daysOfWeek={weekDays}
+        weekStartsOn={1}
+        changeMonthLabel="Change month"
+        minDate={new Date(Date.UTC(2010, 1, 15))}
+        maxDate={new Date(Date.UTC(2010, 2, 15))}
+        month={new Date(Date.UTC(2010, 1, 15))}
+      />,
+      { createNodeMock },
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render without a header element', () => {
-    const tree = renderer
-      .create(
-        <HeaderAndGridCalendar
-          id="myCalendar"
-          formatMonth={formatMonth}
-          formatDateFull={formatDateFull}
-          daysOfWeek={weekDays}
-          weekStartsOn={1}
-          changeMonthLabel="Change month"
-          minDate={new Date(Date.UTC(2010, 1, 15))}
-          maxDate={new Date(Date.UTC(2010, 2, 15))}
-          month={new Date(Date.UTC(2010, 1, 15))}
-        />,
-        { createNodeMock },
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <HeaderAndGridCalendar
+        id="myCalendar"
+        formatMonth={formatMonth}
+        formatDateFull={formatDateFull}
+        daysOfWeek={weekDays}
+        weekStartsOn={1}
+        changeMonthLabel="Change month"
+        minDate={new Date(Date.UTC(2010, 1, 15))}
+        maxDate={new Date(Date.UTC(2010, 2, 15))}
+        month={new Date(Date.UTC(2010, 1, 15))}
+      />,
+      { createNodeMock },
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should pass props to their respective components', () => {
@@ -149,26 +139,24 @@ describe('composeCalendar', () => {
       props => props.name,
     );
 
-    const tree = renderer
-      .create(
-        <PropsBasedCalendarComponent
-          id="myCalendar"
-          formatMonth={formatMonth}
-          formatDateFull={formatDateFull}
-          daysOfWeek={weekDays}
-          weekStartsOn={1}
-          changeMonthLabel="Change month"
-          minDate={new Date(Date.UTC(2010, 1, 15))}
-          maxDate={new Date(Date.UTC(2010, 2, 15))}
-          month={new Date(Date.UTC(2010, 1, 15))}
-          navProps={{ name: 'Nav' }}
-          headerProps={{ name: 'Header' }}
-          gridProps={{ name: 'Grid' }}
-          dateProps={{ name: 'Date' }}
-        />,
-        { createNodeMock },
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <PropsBasedCalendarComponent
+        id="myCalendar"
+        formatMonth={formatMonth}
+        formatDateFull={formatDateFull}
+        daysOfWeek={weekDays}
+        weekStartsOn={1}
+        changeMonthLabel="Change month"
+        minDate={new Date(Date.UTC(2010, 1, 15))}
+        maxDate={new Date(Date.UTC(2010, 2, 15))}
+        month={new Date(Date.UTC(2010, 1, 15))}
+        navProps={{ name: 'Nav' }}
+        headerProps={{ name: 'Header' }}
+        gridProps={{ name: 'Grid' }}
+        dateProps={{ name: 'Date' }}
+      />,
+      { createNodeMock },
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 });

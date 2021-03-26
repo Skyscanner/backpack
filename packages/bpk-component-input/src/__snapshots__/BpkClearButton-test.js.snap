@@ -1,81 +1,59 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`BpkClearButton should render correctly 1`] = `
-<button
-  aria-label="Clear"
-  className="bpk-clear-button"
-  onClick={[Function]}
-  title="Clear"
-  type="button"
->
-  <span
-    style={
-      Object {
-        "display": "inline-block",
-        "lineHeight": "1.125rem",
-        "marginTop": "0.1875rem",
-        "verticalAlign": "top",
-      }
-    }
+<DocumentFragment>
+  <button
+    aria-label="Clear"
+    class="bpk-clear-button"
+    title="Clear"
+    type="button"
   >
-    <svg
-      className="bpk-clear-button__icon"
-      focusable="false"
-      height="18"
-      style={
-        Object {
-          "height": "1.125rem",
-          "width": "1.125rem",
-        }
-      }
-      viewBox="0 0 24 24"
-      width="18"
-      xmlns="http://www.w3.org/2000/svg"
+    <span
+      style="line-height: 1.125rem; display: inline-block; margin-top: 0.1875rem; vertical-align: top;"
     >
-      <path
-        d="M12 22.5A10.5 10.5 0 1 0 1.5 12 10.5 10.5 0 0 0 12 22.5zM7.938 7.94h.002a1.5 1.5 0 0 1 2.12 0L12 9.878l1.94-1.94a1.5 1.5 0 0 1 2.12 2.122L14.122 12l1.94 1.94a1.5 1.5 0 0 1-2.122 2.12L12 14.122l-1.94 1.94a1.5 1.5 0 0 1-2.12-2.122L9.878 12l-1.94-1.94a1.5 1.5 0 0 1 0-2.12z"
-      />
-    </svg>
-  </span>
-</button>
+      <svg
+        class="bpk-clear-button__icon"
+        focusable="false"
+        height="18"
+        style="width: 1.125rem; height: 1.125rem;"
+        viewBox="0 0 24 24"
+        width="18"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M12 22.5A10.5 10.5 0 1 0 1.5 12 10.5 10.5 0 0 0 12 22.5zM7.938 7.94h.002a1.5 1.5 0 0 1 2.12 0L12 9.878l1.94-1.94a1.5 1.5 0 0 1 2.12 2.122L14.122 12l1.94 1.94a1.5 1.5 0 0 1-2.122 2.12L12 14.122l-1.94 1.94a1.5 1.5 0 0 1-2.12-2.122L9.878 12l-1.94-1.94a1.5 1.5 0 0 1 0-2.12z"
+        />
+      </svg>
+    </span>
+  </button>
+</DocumentFragment>
 `;
 
 exports[`BpkClearButton should render correctly with a custom class 1`] = `
-<button
-  aria-label="Clear"
-  className="bpk-clear-button foo-class"
-  onClick={[Function]}
-  title="Clear"
-  type="button"
->
-  <span
-    style={
-      Object {
-        "display": "inline-block",
-        "lineHeight": "1.125rem",
-        "marginTop": "0.1875rem",
-        "verticalAlign": "top",
-      }
-    }
+<DocumentFragment>
+  <button
+    aria-label="Clear"
+    class="bpk-clear-button foo-class"
+    title="Clear"
+    type="button"
   >
-    <svg
-      className="bpk-clear-button__icon"
-      focusable="false"
-      height="18"
-      style={
-        Object {
-          "height": "1.125rem",
-          "width": "1.125rem",
-        }
-      }
-      viewBox="0 0 24 24"
-      width="18"
-      xmlns="http://www.w3.org/2000/svg"
+    <span
+      style="line-height: 1.125rem; display: inline-block; margin-top: 0.1875rem; vertical-align: top;"
     >
-      <path
-        d="M12 22.5A10.5 10.5 0 1 0 1.5 12 10.5 10.5 0 0 0 12 22.5zM7.938 7.94h.002a1.5 1.5 0 0 1 2.12 0L12 9.878l1.94-1.94a1.5 1.5 0 0 1 2.12 2.122L14.122 12l1.94 1.94a1.5 1.5 0 0 1-2.122 2.12L12 14.122l-1.94 1.94a1.5 1.5 0 0 1-2.12-2.122L9.878 12l-1.94-1.94a1.5 1.5 0 0 1 0-2.12z"
-      />
-    </svg>
-  </span>
-</button>
+      <svg
+        class="bpk-clear-button__icon"
+        focusable="false"
+        height="18"
+        style="width: 1.125rem; height: 1.125rem;"
+        viewBox="0 0 24 24"
+        width="18"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M12 22.5A10.5 10.5 0 1 0 1.5 12 10.5 10.5 0 0 0 12 22.5zM7.938 7.94h.002a1.5 1.5 0 0 1 2.12 0L12 9.878l1.94-1.94a1.5 1.5 0 0 1 2.12 2.122L14.122 12l1.94 1.94a1.5 1.5 0 0 1-2.122 2.12L12 14.122l-1.94 1.94a1.5 1.5 0 0 1-2.12-2.122L9.878 12l-1.94-1.94a1.5 1.5 0 0 1 0-2.12z"
+        />
+      </svg>
+    </span>
+  </button>
+</DocumentFragment>
 `;

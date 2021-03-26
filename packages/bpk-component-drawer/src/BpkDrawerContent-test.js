@@ -19,7 +19,7 @@
 /* @flow strict */
 
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 
 import BpkDrawerContent from './BpkDrawerContent';
 
@@ -29,96 +29,86 @@ jest.mock('react-transition-group/Transition', () => ({ children }) =>
 
 describe('BpkDrawerContent', () => {
   it('should render correctly', () => {
-    const tree = renderer
-      .create(
-        <BpkDrawerContent
-          id="my-drawer"
-          title="Drawer title"
-          onClose={jest.fn()}
-          onCloseAnimationComplete={jest.fn()}
-          closeLabel="Close"
-          dialogRef={jest.fn()}
-        >
-          Drawer content
-        </BpkDrawerContent>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkDrawerContent
+        id="my-drawer"
+        title="Drawer title"
+        onClose={jest.fn()}
+        onCloseAnimationComplete={jest.fn()}
+        closeLabel="Close"
+        dialogRef={jest.fn()}
+      >
+        Drawer content
+      </BpkDrawerContent>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly when it has a className', () => {
-    const tree = renderer
-      .create(
-        <BpkDrawerContent
-          id="my-drawer"
-          className="my-classname"
-          title="Drawer title"
-          onClose={jest.fn()}
-          onCloseAnimationComplete={jest.fn()}
-          closeLabel="Close"
-          dialogRef={jest.fn()}
-        >
-          Drawer content
-        </BpkDrawerContent>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkDrawerContent
+        id="my-drawer"
+        className="my-classname"
+        title="Drawer title"
+        onClose={jest.fn()}
+        onCloseAnimationComplete={jest.fn()}
+        closeLabel="Close"
+        dialogRef={jest.fn()}
+      >
+        Drawer content
+      </BpkDrawerContent>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly when it has a contentClassName', () => {
-    const tree = renderer
-      .create(
-        <BpkDrawerContent
-          id="my-drawer"
-          contentClassName="my-classname"
-          title="Drawer title"
-          onClose={jest.fn()}
-          onCloseAnimationComplete={jest.fn()}
-          closeLabel="Close"
-          dialogRef={jest.fn()}
-        >
-          Drawer content
-        </BpkDrawerContent>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkDrawerContent
+        id="my-drawer"
+        contentClassName="my-classname"
+        title="Drawer title"
+        onClose={jest.fn()}
+        onCloseAnimationComplete={jest.fn()}
+        closeLabel="Close"
+        dialogRef={jest.fn()}
+      >
+        Drawer content
+      </BpkDrawerContent>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with hideTitle', () => {
-    const tree = renderer
-      .create(
-        <BpkDrawerContent
-          id="my-drawer"
-          title="Drawer title"
-          onClose={jest.fn()}
-          onCloseAnimationComplete={jest.fn()}
-          closeLabel="Close"
-          dialogRef={jest.fn()}
-          hideTitle
-        >
-          Drawer content
-        </BpkDrawerContent>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkDrawerContent
+        id="my-drawer"
+        title="Drawer title"
+        onClose={jest.fn()}
+        onCloseAnimationComplete={jest.fn()}
+        closeLabel="Close"
+        dialogRef={jest.fn()}
+        hideTitle
+      >
+        Drawer content
+      </BpkDrawerContent>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with arbitrary attributes', () => {
-    const tree = renderer
-      .create(
-        <BpkDrawerContent
-          id="my-drawer"
-          title="Drawer title"
-          onClose={jest.fn()}
-          onCloseAnimationComplete={jest.fn()}
-          closeLabel="Close"
-          dialogRef={jest.fn()}
-          data-arbitrary="prop"
-        >
-          Drawer content
-        </BpkDrawerContent>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkDrawerContent
+        id="my-drawer"
+        title="Drawer title"
+        onClose={jest.fn()}
+        onCloseAnimationComplete={jest.fn()}
+        closeLabel="Close"
+        dialogRef={jest.fn()}
+        data-arbitrary="prop"
+      >
+        Drawer content
+      </BpkDrawerContent>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 });

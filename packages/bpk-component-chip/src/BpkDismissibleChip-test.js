@@ -19,7 +19,7 @@
 /* @flow strict */
 
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 
 import BpkDismissibleChip from './BpkDismissibleChip';
 import { CHIP_TYPES } from './commonTypes';
@@ -38,46 +38,46 @@ const TestChip = ({ ...rest }) => (
 
 describe('BpkDismissibleChip', () => {
   it('should render correctly', () => {
-    const tree = renderer.create(<TestChip />).toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(<TestChip />);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it(`should override setting selected={true}, resulting in selected={false}`, () => {
-    const tree = renderer.create(<TestChip selected />);
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(<TestChip selected />);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it(`should ignore setting a trailing accessory view, resulting in a close icon`, () => {
-    const tree = renderer.create(
+    const { asFragment } = render(
       <TestChip trailingAccessoryView={<span>trailing</span>} />,
     );
-    expect(tree).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   Object.keys(CHIP_TYPES).forEach(chipType => {
     it(`should render correctly with type="${chipType}"`, () => {
-      const tree = renderer.create(<TestChip type={chipType} />);
-      expect(tree).toMatchSnapshot();
+      const { asFragment } = render(<TestChip type={chipType} />);
+      expect(asFragment()).toMatchSnapshot();
     });
 
     it(`should render correctly with type="${chipType}" and disabled`, () => {
-      const tree = renderer.create(<TestChip type={chipType} disabled />);
-      expect(tree).toMatchSnapshot();
+      const { asFragment } = render(<TestChip type={chipType} disabled />);
+      expect(asFragment()).toMatchSnapshot();
     });
 
     it(`should render correctly with type="${chipType}" and a leading accessory view`, () => {
-      const tree = renderer.create(
+      const { asFragment } = render(
         <TestChip
           type={chipType}
           leadingAccessoryView={<span>Leading</span>}
         />,
       );
-      expect(tree).toMatchSnapshot();
+      expect(asFragment()).toMatchSnapshot();
     });
   });
 
   it('should render correctly with a "className" attribute', () => {
-    const tree = renderer.create(<TestChip className="custom-class" />);
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(<TestChip className="custom-class" />);
+    expect(asFragment()).toMatchSnapshot();
   });
 });

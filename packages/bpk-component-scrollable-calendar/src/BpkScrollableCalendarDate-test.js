@@ -17,7 +17,7 @@
  */
 
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 
 import BpkScrollableCalendarDate from './BpkScrollableCalendarDate';
 
@@ -29,60 +29,58 @@ const createNodeMock = () => ({
 
 describe('BpkScrollableCalendarDate', () => {
   it('should render correctly', () => {
-    const tree = renderer
-      .create(<BpkScrollableCalendarDate date={testDate} />)
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkScrollableCalendarDate date={testDate} />,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render a disabled button', () => {
-    const tree = renderer
-      .create(<BpkScrollableCalendarDate date={testDate} disabled />)
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkScrollableCalendarDate date={testDate} disabled />,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render with a click and keyDown handler', () => {
-    const tree = renderer
-      .create(
-        <BpkScrollableCalendarDate
-          date={testDate}
-          onClick={() => null}
-          onKeyDown={() => null}
-        />,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkScrollableCalendarDate
+        date={testDate}
+        onClick={() => null}
+        onKeyDown={() => null}
+      />,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render a focused button with tabIndex', () => {
-    const tree = renderer
-      .create(<BpkScrollableCalendarDate date={testDate} focused />, {
+    const { asFragment } = render(
+      <BpkScrollableCalendarDate date={testDate} focused />,
+      {
         createNodeMock,
-      })
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+      },
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should pass props through to button', () => {
-    const tree = renderer
-      .create(
-        <BpkScrollableCalendarDate
-          date={testDate}
-          aria-label="Nothing happened on this day in 2010"
-        />,
-        { createNodeMock },
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkScrollableCalendarDate
+        date={testDate}
+        aria-label="Nothing happened on this day in 2010"
+      />,
+      { createNodeMock },
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should return null when isOutside is true', () => {
-    const tree = renderer
-      .create(<BpkScrollableCalendarDate date={testDate} isOutside />, {
+    const { asFragment } = render(
+      <BpkScrollableCalendarDate date={testDate} isOutside />,
+      {
         createNodeMock,
-      })
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+      },
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 });

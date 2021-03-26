@@ -19,7 +19,7 @@
 /* @flow strict */
 
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 
 import BpkModal from './BpkModal';
 
@@ -27,25 +27,23 @@ describe('BpkModal', () => {
   it('should render correctly in the given target if renderTarget is supplied', () => {
     const customRenderTarget = document.createElement('div');
 
-    const tree = renderer
-      .create(
-        <BpkModal
-          id="my-modal"
-          title="Modal title"
-          onClose={jest.fn()}
-          closeLabel="Close"
-          dialogRef={jest.fn()}
-          isIphone={false}
-          getApplicationElement={jest.fn()}
-          isOpen
-          renderTarget={() => customRenderTarget}
-        >
-          Modal content inside a custom target
-        </BpkModal>,
-      )
-      .toJSON();
+    const { asFragment } = render(
+      <BpkModal
+        id="my-modal"
+        title="Modal title"
+        onClose={jest.fn()}
+        closeLabel="Close"
+        dialogRef={jest.fn()}
+        isIphone={false}
+        getApplicationElement={jest.fn()}
+        isOpen
+        renderTarget={() => customRenderTarget}
+      >
+        Modal content inside a custom target
+      </BpkModal>,
+    );
 
-    expect(tree).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
     expect(customRenderTarget).toMatchSnapshot();
   });
 });

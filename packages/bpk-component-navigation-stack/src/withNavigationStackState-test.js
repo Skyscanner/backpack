@@ -20,7 +20,7 @@
 
 import React, { type Element } from 'react';
 import { mount } from 'enzyme';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 
 import withNavigationStackState from './withNavigationStackState';
 
@@ -41,17 +41,14 @@ describe('withNavigationStackState', () => {
   it('should render correctly', () => {
     const WithState = withNavigationStackState(Stack);
 
-    const tree = renderer
-      .create(
-        <WithState
-          className="test"
-          aria-hidden="false"
-          initialViews={[<View key="a" />]}
-        />,
-      )
-      .toJSON();
-
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <WithState
+        className="test"
+        aria-hidden="false"
+        initialViews={[<View key="a" />]}
+      />,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should assign push and pop callbacks to children', () => {

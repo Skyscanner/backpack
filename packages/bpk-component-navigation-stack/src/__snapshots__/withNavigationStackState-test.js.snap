@@ -1,10 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`withNavigationStackState should render correctly 1`] = `
-<div
-  aria-hidden="false"
-  className="test"
->
-  <div />
-</div>
+<DocumentFragment>
+  <div
+    aria-hidden="false"
+    class="test"
+  >
+    <div />
+  </div>
+</DocumentFragment>
 `;

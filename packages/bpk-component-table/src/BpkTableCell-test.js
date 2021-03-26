@@ -19,22 +19,20 @@
 /* @flow strict */
 
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 
 import BpkTableCell from './BpkTableCell';
 
 describe('BpkTableCell', () => {
   it('should render correctly', () => {
-    const tree = renderer
-      .create(<BpkTableCell>Tabular data</BpkTableCell>)
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(<BpkTableCell>Tabular data</BpkTableCell>);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with custom class', () => {
-    const tree = renderer
-      .create(<BpkTableCell className="test">Tabular data</BpkTableCell>)
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkTableCell className="test">Tabular data</BpkTableCell>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 });

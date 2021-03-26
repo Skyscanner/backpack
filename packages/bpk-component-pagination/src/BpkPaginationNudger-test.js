@@ -17,28 +17,26 @@
  */
 
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 
 import BpkPaginationNudger from './BpkPaginationNudger';
 
 describe('BpkPaginationNudger', () => {
   it('should display backward nudger', () => {
-    const tree = renderer
-      .create(
-        <BpkPaginationNudger
-          label="previous"
-          onNudge={() => null}
-          forward={false}
-        />,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkPaginationNudger
+        label="previous"
+        onNudge={() => null}
+        forward={false}
+      />,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should display forward nudger', () => {
-    const tree = renderer
-      .create(<BpkPaginationNudger label="next" onNudge={() => null} forward />)
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkPaginationNudger label="next" onNudge={() => null} forward />,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 });

@@ -1,105 +1,74 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`withSingleItemAccordionState(BpkAccordion) should render correctly 1`] = `
-<dl
-  className="bpk-accordion"
->
-  <div
-    expanded={false}
-    onClick={[Function]}
+<DocumentFragment>
+  <dl
+    class="bpk-accordion"
   >
-    Accordion Item 1
-  </div>
-  <div
-    expanded={false}
-    onClick={[Function]}
-  >
-    Accordion Item 2
-  </div>
-  <div
-    expanded={false}
-    onClick={[Function]}
-  >
-    Accordion Item 3
-  </div>
-</dl>
+    <div>
+      Accordion Item 1
+    </div>
+    <div>
+      Accordion Item 2
+    </div>
+    <div>
+      Accordion Item 3
+    </div>
+  </dl>
+</DocumentFragment>
 `;
 
 exports[`withSingleItemAccordionState(BpkAccordion) should render correctly even when multiple items are marked as initially expanded 1`] = `
-<dl
-  className="bpk-accordion"
->
-  <div
-    expanded={false}
-    onClick={[Function]}
+<DocumentFragment>
+  <dl
+    class="bpk-accordion"
   >
-    Accordion Item 1
-  </div>
-  <div
-    expanded={true}
-    initiallyExpanded={true}
-    onClick={[Function]}
-  >
-    Accordion Item 2
-  </div>
-  <div
-    expanded={false}
-    initiallyExpanded={true}
-    onClick={[Function]}
-  >
-    Accordion Item 3
-  </div>
-</dl>
+    <div>
+      Accordion Item 1
+    </div>
+    <div>
+      Accordion Item 2
+    </div>
+    <div>
+      Accordion Item 3
+    </div>
+  </dl>
+</DocumentFragment>
 `;
 
 exports[`withSingleItemAccordionState(BpkAccordion) should render correctly with arbitrary props 1`] = `
-<dl
-  className="bpk-accordion someClass"
-  foo="bar"
->
-  <div
-    expanded={false}
-    onClick={[Function]}
+<DocumentFragment>
+  <dl
+    class="bpk-accordion someClass"
+    foo="bar"
   >
-    Accordion Item 1
-  </div>
-  <div
-    expanded={false}
-    onClick={[Function]}
-  >
-    Accordion Item 2
-  </div>
-  <div
-    expanded={false}
-    onClick={[Function]}
-  >
-    Accordion Item 3
-  </div>
-</dl>
+    <div>
+      Accordion Item 1
+    </div>
+    <div>
+      Accordion Item 2
+    </div>
+    <div>
+      Accordion Item 3
+    </div>
+  </dl>
+</DocumentFragment>
 `;
 
 exports[`withSingleItemAccordionState(BpkAccordion) should render correctly with custom initially expanded item 1`] = `
-<dl
-  className="bpk-accordion"
->
-  <div
-    expanded={false}
-    onClick={[Function]}
+<DocumentFragment>
+  <dl
+    class="bpk-accordion"
   >
-    Accordion Item 1
-  </div>
-  <div
-    expanded={true}
-    initiallyExpanded={true}
-    onClick={[Function]}
-  >
-    Accordion Item 2
-  </div>
-  <div
-    expanded={false}
-    onClick={[Function]}
-  >
-    Accordion Item 3
-  </div>
-</dl>
+    <div>
+      Accordion Item 1
+    </div>
+    <div>
+      Accordion Item 2
+    </div>
+    <div>
+      Accordion Item 3
+    </div>
+  </dl>
+</DocumentFragment>
 `;

@@ -1,77 +1,57 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`BpkScrim render should render correctly 1`] = `
-<div
-  className="bpk-scrim-content"
->
+<DocumentFragment>
   <div
-    className="bpk-scrim"
-    onMouseDown={[MockFunction]}
-    onTouchStart={[MockFunction]}
-    role="presentation"
-  />
-  <TestComponent
-    dialogRef={[Function]}
-    isIpad={false}
-    isIphone={false}
-    onClose={[MockFunction]}
-  />
-</div>
+    class="bpk-scrim-content"
+  >
+    <div
+      class="bpk-scrim"
+      role="presentation"
+    />
+    <testcomponent />
+  </div>
+</DocumentFragment>
 `;
 
 exports[`BpkScrim render should render correctly when is iPhone 1`] = `
-<div
-  className="bpk-scrim-content"
->
+<DocumentFragment>
   <div
-    className="bpk-scrim"
-    onMouseDown={[MockFunction]}
-    onTouchStart={[MockFunction]}
-    role="presentation"
-  />
-  <TestComponent
-    dialogRef={[Function]}
-    isIpad={false}
-    isIphone={true}
-    onClose={[MockFunction]}
-  />
-</div>
+    class="bpk-scrim-content"
+  >
+    <div
+      class="bpk-scrim"
+      role="presentation"
+    />
+    <testcomponent />
+  </div>
+</DocumentFragment>
 `;
 
 exports[`BpkScrim render should render correctly with closeOnScrimClick as false 1`] = `
-<div
-  className="bpk-scrim-content"
->
+<DocumentFragment>
   <div
-    className="bpk-scrim"
-    onMouseDown={null}
-    onTouchStart={null}
-    role="presentation"
-  />
-  <TestComponent
-    dialogRef={[Function]}
-    isIpad={false}
-    isIphone={false}
-    onClose={[MockFunction]}
-  />
-</div>
+    class="bpk-scrim-content"
+  >
+    <div
+      class="bpk-scrim"
+      role="presentation"
+    />
+    <testcomponent />
+  </div>
+</DocumentFragment>
 `;
 
 exports[`BpkScrim render should render correctly with containerClassName 1`] = `
-<div
-  className="bpk-scrim-content containerClassName"
->
+<DocumentFragment>
   <div
-    className="bpk-scrim"
-    onMouseDown={[MockFunction]}
-    onTouchStart={[MockFunction]}
-    role="presentation"
-  />
-  <TestComponent
-    dialogRef={[Function]}
-    isIpad={false}
-    isIphone={false}
-    onClose={[MockFunction]}
-  />
-</div>
+    class="bpk-scrim-content containerClassName"
+  >
+    <div
+      class="bpk-scrim"
+      role="presentation"
+    />
+    <testcomponent />
+  </div>
+</DocumentFragment>
 `;

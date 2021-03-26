@@ -1,206 +1,185 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`BpkHorizontalNav should render correctly 1`] = `
-<div
-  className="bpk-mobile-scroll-container bpk-horizontal-nav bpk-horizontal-nav--show-default-underline"
-  style={
-    Object {
-      "height": "auto",
-    }
-  }
->
+<DocumentFragment>
   <div
-    className="bpk-mobile-scroll-container__scroller"
-    onScroll={[Function]}
+    class="bpk-mobile-scroll-container bpk-horizontal-nav bpk-horizontal-nav--show-default-underline"
+    style="height: auto;"
   >
-    <nav
-      className="bpk-mobile-scroll-container__inner"
+    <div
+      class="bpk-mobile-scroll-container__scroller"
     >
-      <div
-        className="bpk-horizontal-nav__list"
-        role="tablist"
+      <nav
+        class="bpk-mobile-scroll-container__inner"
       >
-        My nav content.
-      </div>
-    </nav>
+        <div
+          class="bpk-horizontal-nav__list"
+          role="tablist"
+        >
+          My nav content.
+        </div>
+      </nav>
+    </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`BpkHorizontalNav should render correctly with "showUnderline" set to false 1`] = `
-<div
-  className="bpk-mobile-scroll-container bpk-horizontal-nav"
-  style={
-    Object {
-      "height": "auto",
-    }
-  }
->
+<DocumentFragment>
   <div
-    className="bpk-mobile-scroll-container__scroller"
-    onScroll={[Function]}
+    class="bpk-mobile-scroll-container bpk-horizontal-nav"
+    style="height: auto;"
   >
-    <nav
-      className="bpk-mobile-scroll-container__inner"
+    <div
+      class="bpk-mobile-scroll-container__scroller"
     >
-      <div
-        className="bpk-horizontal-nav__list"
-        role="tablist"
+      <nav
+        class="bpk-mobile-scroll-container__inner"
       >
-        My nav content.
-      </div>
-    </nav>
+        <div
+          class="bpk-horizontal-nav__list"
+          role="tablist"
+        >
+          My nav content.
+        </div>
+      </nav>
+    </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`BpkHorizontalNav should render correctly with "type" prop 1`] = `
-<div
-  className="bpk-mobile-scroll-container bpk-horizontal-nav bpk-horizontal-nav--show-light-underline"
-  style={
-    Object {
-      "height": "auto",
-    }
-  }
->
+<DocumentFragment>
   <div
-    className="bpk-mobile-scroll-container__scroller"
-    onScroll={[Function]}
+    class="bpk-mobile-scroll-container bpk-horizontal-nav bpk-horizontal-nav--show-light-underline"
+    style="height: auto;"
   >
-    <nav
-      className="bpk-mobile-scroll-container__inner"
+    <div
+      class="bpk-mobile-scroll-container__scroller"
     >
-      <div
-        className="bpk-horizontal-nav__list"
-        role="tablist"
+      <nav
+        class="bpk-mobile-scroll-container__inner"
       >
-        <li
-          type="light"
+        <div
+          class="bpk-horizontal-nav__list"
+          role="tablist"
         >
-          One
-        </li>
-        <li
-          type="light"
-        >
-          Two
-        </li>
-        <li
-          type="light"
-        >
-          Three
-        </li>
-      </div>
-    </nav>
+          <li
+            type="light"
+          >
+            One
+          </li>
+          <li
+            type="light"
+          >
+            Two
+          </li>
+          <li
+            type="light"
+          >
+            Three
+          </li>
+        </div>
+      </nav>
+    </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`BpkHorizontalNav should render correctly with arbitrary props 1`] = `
-<div
-  className="bpk-mobile-scroll-container bpk-horizontal-nav bpk-horizontal-nav--show-default-underline"
-  data-arbitrary-1="arbirary-value-1"
-  data-arbitrary-2="arbirary-value-2"
-  style={
-    Object {
-      "height": "auto",
-    }
-  }
->
+<DocumentFragment>
   <div
-    className="bpk-mobile-scroll-container__scroller"
-    onScroll={[Function]}
+    class="bpk-mobile-scroll-container bpk-horizontal-nav bpk-horizontal-nav--show-default-underline"
+    data-arbitrary-1="arbirary-value-1"
+    data-arbitrary-2="arbirary-value-2"
+    style="height: auto;"
   >
-    <nav
-      className="bpk-mobile-scroll-container__inner"
+    <div
+      class="bpk-mobile-scroll-container__scroller"
     >
-      <div
-        className="bpk-horizontal-nav__list"
-        role="tablist"
+      <nav
+        class="bpk-mobile-scroll-container__inner"
       >
-        My nav content.
-      </div>
-    </nav>
+        <div
+          class="bpk-horizontal-nav__list"
+          role="tablist"
+        >
+          My nav content.
+        </div>
+      </nav>
+    </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`BpkHorizontalNav should render correctly with custom "className" prop 1`] = `
-<div
-  className="bpk-mobile-scroll-container bpk-horizontal-nav bpk-horizontal-nav--show-default-underline my-custom-class-name"
-  style={
-    Object {
-      "height": "auto",
-    }
-  }
->
+<DocumentFragment>
   <div
-    className="bpk-mobile-scroll-container__scroller"
-    onScroll={[Function]}
+    class="bpk-mobile-scroll-container bpk-horizontal-nav bpk-horizontal-nav--show-default-underline my-custom-class-name"
+    style="height: auto;"
   >
-    <nav
-      className="bpk-mobile-scroll-container__inner"
+    <div
+      class="bpk-mobile-scroll-container__scroller"
     >
-      <div
-        className="bpk-horizontal-nav__list"
-        role="tablist"
+      <nav
+        class="bpk-mobile-scroll-container__inner"
       >
-        My nav content.
-      </div>
-    </nav>
+        <div
+          class="bpk-horizontal-nav__list"
+          role="tablist"
+        >
+          My nav content.
+        </div>
+      </nav>
+    </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`BpkHorizontalNav should render correctly with custom "leadingScrollIndicatorClassName" prop 1`] = `
-<div
-  className="bpk-mobile-scroll-container bpk-horizontal-nav bpk-horizontal-nav--show-default-underline"
-  style={
-    Object {
-      "height": "auto",
-    }
-  }
->
+<DocumentFragment>
   <div
-    className="bpk-mobile-scroll-container__scroller"
-    onScroll={[Function]}
+    class="bpk-mobile-scroll-container bpk-horizontal-nav bpk-horizontal-nav--show-default-underline"
+    style="height: auto;"
   >
-    <nav
-      className="bpk-mobile-scroll-container__inner"
+    <div
+      class="bpk-mobile-scroll-container__scroller"
     >
-      <div
-        className="bpk-horizontal-nav__list"
-        role="tablist"
+      <nav
+        class="bpk-mobile-scroll-container__inner"
       >
-        My nav content.
-      </div>
-    </nav>
+        <div
+          class="bpk-horizontal-nav__list"
+          role="tablist"
+        >
+          My nav content.
+        </div>
+      </nav>
+    </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`BpkHorizontalNav should render correctly with custom "trailingScrollIndicatorClassName" prop 1`] = `
-<div
-  className="bpk-mobile-scroll-container bpk-horizontal-nav bpk-horizontal-nav--show-default-underline"
-  style={
-    Object {
-      "height": "auto",
-    }
-  }
->
+<DocumentFragment>
   <div
-    className="bpk-mobile-scroll-container__scroller"
-    onScroll={[Function]}
+    class="bpk-mobile-scroll-container bpk-horizontal-nav bpk-horizontal-nav--show-default-underline"
+    style="height: auto;"
   >
-    <nav
-      className="bpk-mobile-scroll-container__inner"
+    <div
+      class="bpk-mobile-scroll-container__scroller"
     >
-      <div
-        className="bpk-horizontal-nav__list"
-        role="tablist"
+      <nav
+        class="bpk-mobile-scroll-container__inner"
       >
-        My nav content.
-      </div>
-    </nav>
+        <div
+          class="bpk-horizontal-nav__list"
+          role="tablist"
+        >
+          My nav content.
+        </div>
+      </nav>
+    </div>
   </div>
-</div>
+</DocumentFragment>
 `;

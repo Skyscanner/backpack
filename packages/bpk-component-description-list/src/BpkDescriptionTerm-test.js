@@ -17,33 +17,29 @@
  */
 
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 
 import BpkDescriptionTerm from './BpkDescriptionTerm';
 
 describe('BpkDescriptionTerm', () => {
   it('should render correctly', () => {
-    const tree = renderer
-      .create(<BpkDescriptionTerm>Term</BpkDescriptionTerm>)
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkDescriptionTerm>Term</BpkDescriptionTerm>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with a "className" attribute', () => {
-    const tree = renderer
-      .create(
-        <BpkDescriptionTerm className="test-term">Term</BpkDescriptionTerm>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkDescriptionTerm className="test-term">Term</BpkDescriptionTerm>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with a other attributes', () => {
-    const tree = renderer
-      .create(
-        <BpkDescriptionTerm title="this is a term">Term</BpkDescriptionTerm>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkDescriptionTerm title="this is a term">Term</BpkDescriptionTerm>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 });

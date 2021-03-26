@@ -19,48 +19,42 @@
 /* @flow strict */
 
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 
 import BpkBreadcrumb from './BpkBreadcrumb';
 
 describe('BpkBreadcrumb', () => {
   it('should render correctly', () => {
-    const tree = renderer
-      .create(
-        <BpkBreadcrumb label="My breadcrumbs">
-          <div>Anything can go in here</div>
-        </BpkBreadcrumb>,
-      )
-      .toJSON();
+    const { asFragment } = render(
+      <BpkBreadcrumb label="My breadcrumbs">
+        <div>Anything can go in here</div>
+      </BpkBreadcrumb>,
+    );
 
-    expect(tree).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with a custom class name', () => {
-    const tree = renderer
-      .create(
-        <BpkBreadcrumb label="My breadcrumbs" className="my-custom-class">
-          <div>Anything can go in here</div>
-        </BpkBreadcrumb>,
-      )
-      .toJSON();
+    const { asFragment } = render(
+      <BpkBreadcrumb label="My breadcrumbs" className="my-custom-class">
+        <div>Anything can go in here</div>
+      </BpkBreadcrumb>,
+    );
 
-    expect(tree).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with arbitrary props', () => {
-    const tree = renderer
-      .create(
-        <BpkBreadcrumb
-          label="My breadcrumbs"
-          testID="arbitrary value" // <-- arbitrary prop
-        >
-          <div>Anything can go in here</div>
-        </BpkBreadcrumb>,
-      )
-      .toJSON();
+    const { asFragment } = render(
+      <BpkBreadcrumb
+        label="My breadcrumbs"
+        testID="arbitrary value" // <-- arbitrary prop
+      >
+        <div>Anything can go in here</div>
+      </BpkBreadcrumb>,
+    );
 
-    expect(tree).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with schema meta data', () => {
@@ -74,14 +68,12 @@ describe('BpkBreadcrumb', () => {
         label: 'hotels',
       },
     ];
-    const tree = renderer
-      .create(
-        <BpkBreadcrumb label="My breadcrumbs" schemaMetaData={schemaMetaData}>
-          <div>Anything can go in here</div>
-        </BpkBreadcrumb>,
-      )
-      .toJSON();
+    const { asFragment } = render(
+      <BpkBreadcrumb label="My breadcrumbs" schemaMetaData={schemaMetaData}>
+        <div>Anything can go in here</div>
+      </BpkBreadcrumb>,
+    );
 
-    expect(tree).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 });

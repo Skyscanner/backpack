@@ -20,7 +20,7 @@
 
 import React from 'react';
 import { shallow } from 'enzyme';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 
 import BpkAccordion from './BpkAccordion';
 import withSingleItemAccordionState from './withSingleItemAccordionState';
@@ -29,55 +29,47 @@ const EnhancedComponent = withSingleItemAccordionState(BpkAccordion);
 
 describe('withSingleItemAccordionState(BpkAccordion)', () => {
   it('should render correctly', () => {
-    const tree = renderer
-      .create(
-        <EnhancedComponent>
-          <div>Accordion Item 1</div>
-          <div>Accordion Item 2</div>
-          <div>Accordion Item 3</div>
-        </EnhancedComponent>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <EnhancedComponent>
+        <div>Accordion Item 1</div>
+        <div>Accordion Item 2</div>
+        <div>Accordion Item 3</div>
+      </EnhancedComponent>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with arbitrary props', () => {
-    const tree = renderer
-      .create(
-        <EnhancedComponent className="someClass" foo="bar">
-          <div>Accordion Item 1</div>
-          <div>Accordion Item 2</div>
-          <div>Accordion Item 3</div>
-        </EnhancedComponent>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <EnhancedComponent className="someClass" foo="bar">
+        <div>Accordion Item 1</div>
+        <div>Accordion Item 2</div>
+        <div>Accordion Item 3</div>
+      </EnhancedComponent>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with custom initially expanded item', () => {
-    const tree = renderer
-      .create(
-        <EnhancedComponent>
-          <div>Accordion Item 1</div>
-          <div initiallyExpanded>Accordion Item 2</div>
-          <div>Accordion Item 3</div>
-        </EnhancedComponent>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <EnhancedComponent>
+        <div>Accordion Item 1</div>
+        <div initiallyExpanded>Accordion Item 2</div>
+        <div>Accordion Item 3</div>
+      </EnhancedComponent>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly even when multiple items are marked as initially expanded', () => {
-    const tree = renderer
-      .create(
-        <EnhancedComponent>
-          <div>Accordion Item 1</div>
-          <div initiallyExpanded>Accordion Item 2</div>
-          <div initiallyExpanded>Accordion Item 3</div>
-        </EnhancedComponent>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <EnhancedComponent>
+        <div>Accordion Item 1</div>
+        <div initiallyExpanded>Accordion Item 2</div>
+        <div initiallyExpanded>Accordion Item 3</div>
+      </EnhancedComponent>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should update "expanded" value with key of clicked child', () => {

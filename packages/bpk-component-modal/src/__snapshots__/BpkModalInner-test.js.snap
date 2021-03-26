@@ -1,557 +1,521 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`BpkModalInner should render correctly 1`] = `
-<section
-  aria-labelledby="bpk-modal-heading-my-modal"
-  className="bpk-modal bpk-modal--full-screen-mobile"
-  id="my-modal"
-  role="dialog"
-  tabIndex="-1"
->
-  <header
-    className="bpk-modal__header"
+<DocumentFragment>
+  <section
+    aria-labelledby="bpk-modal-heading-my-modal"
+    class="bpk-modal bpk-modal--full-screen-mobile"
+    id="my-modal"
+    role="dialog"
+    tabindex="-1"
   >
-    <nav
-      aria-labelledby="bpk-modal-heading-my-modal"
-      className="bpk-navigation-bar bpk-modal__navigation"
+    <header
+      class="bpk-modal__header"
     >
-      <h2
-        className="bpk-modal__heading"
-        id="bpk-modal-heading-my-modal"
+      <nav
+        aria-labelledby="bpk-modal-heading-my-modal"
+        class="bpk-navigation-bar bpk-modal__navigation"
       >
-        Modal title
-      </h2>
-      <button
-        aria-label="Close"
-        className="bpk-close-button bpk-modal__close-button bpk-navigation-bar__trailing-item"
-        onClick={[MockFunction]}
-        title="Close"
-        type="button"
-      >
-        <svg
-          className="bpk-close-button__icon"
-          height="18"
-          style={
-            Object {
-              "height": "1.125rem",
-              "width": "1.125rem",
-            }
-          }
-          viewBox="0 0 24 24"
-          width="18"
-          xmlns="http://www.w3.org/2000/svg"
+        <h2
+          class="bpk-modal__heading"
+          id="bpk-modal-heading-my-modal"
         >
-          <path
-            d="M5.587 3.467a1.5 1.5 0 1 0-2.194 2.046q.036.038.074.074l6.438 6.44-6.44 6.44a1.5 1.5 0 0 0 2.122 2.12l6.44-6.438 6.44 6.44a1.5 1.5 0 0 0 2.12-2.122l-6.438-6.44 6.44-6.44a1.5 1.5 0 0 0-2.122-2.12l-6.44 6.438-6.44-6.44z"
-          />
-        </svg>
-      </button>
-    </nav>
-  </header>
-  <div
-    className="bpk-modal__content bpk-modal__content--padded"
-  >
-    Modal content
-  </div>
-</section>
+          Modal title
+        </h2>
+        <button
+          aria-label="Close"
+          class="bpk-close-button bpk-modal__close-button bpk-navigation-bar__trailing-item"
+          title="Close"
+          type="button"
+        >
+          <svg
+            class="bpk-close-button__icon"
+            height="18"
+            style="width: 1.125rem; height: 1.125rem;"
+            viewBox="0 0 24 24"
+            width="18"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M5.587 3.467a1.5 1.5 0 1 0-2.194 2.046q.036.038.074.074l6.438 6.44-6.44 6.44a1.5 1.5 0 0 0 2.122 2.12l6.44-6.438 6.44 6.44a1.5 1.5 0 0 0 2.12-2.122l-6.438-6.44 6.44-6.44a1.5 1.5 0 0 0-2.122-2.12l-6.44 6.438-6.44-6.44z"
+            />
+          </svg>
+        </button>
+      </nav>
+    </header>
+    <div
+      class="bpk-modal__content bpk-modal__content--padded"
+    >
+      Modal content
+    </div>
+  </section>
+</DocumentFragment>
 `;
 
 exports[`BpkModalInner should render correctly when is iPhone 1`] = `
-<section
-  aria-labelledby="bpk-modal-heading-my-modal"
-  className="bpk-modal bpk-modal--full-screen"
-  id="my-modal"
-  role="dialog"
-  tabIndex="-1"
->
-  <header
-    className="bpk-modal__header"
+<DocumentFragment>
+  <section
+    aria-labelledby="bpk-modal-heading-my-modal"
+    class="bpk-modal bpk-modal--full-screen"
+    id="my-modal"
+    role="dialog"
+    tabindex="-1"
   >
-    <nav
-      aria-labelledby="bpk-modal-heading-my-modal"
-      className="bpk-navigation-bar bpk-modal__navigation"
+    <header
+      class="bpk-modal__header"
     >
-      <h2
-        className="bpk-modal__heading"
-        id="bpk-modal-heading-my-modal"
+      <nav
+        aria-labelledby="bpk-modal-heading-my-modal"
+        class="bpk-navigation-bar bpk-modal__navigation"
       >
-        Modal title
-      </h2>
-      <button
-        aria-label="Close"
-        className="bpk-close-button bpk-modal__close-button bpk-navigation-bar__trailing-item"
-        onClick={[MockFunction]}
-        title="Close"
-        type="button"
-      >
-        <svg
-          className="bpk-close-button__icon"
-          height="18"
-          style={
-            Object {
-              "height": "1.125rem",
-              "width": "1.125rem",
-            }
-          }
-          viewBox="0 0 24 24"
-          width="18"
-          xmlns="http://www.w3.org/2000/svg"
+        <h2
+          class="bpk-modal__heading"
+          id="bpk-modal-heading-my-modal"
         >
-          <path
-            d="M5.587 3.467a1.5 1.5 0 1 0-2.194 2.046q.036.038.074.074l6.438 6.44-6.44 6.44a1.5 1.5 0 0 0 2.122 2.12l6.44-6.438 6.44 6.44a1.5 1.5 0 0 0 2.12-2.122l-6.438-6.44 6.44-6.44a1.5 1.5 0 0 0-2.122-2.12l-6.44 6.438-6.44-6.44z"
-          />
-        </svg>
-      </button>
-    </nav>
-  </header>
-  <div
-    className="bpk-modal__content bpk-modal__content--padded"
-  >
-    Modal content
-  </div>
-</section>
+          Modal title
+        </h2>
+        <button
+          aria-label="Close"
+          class="bpk-close-button bpk-modal__close-button bpk-navigation-bar__trailing-item"
+          title="Close"
+          type="button"
+        >
+          <svg
+            class="bpk-close-button__icon"
+            height="18"
+            style="width: 1.125rem; height: 1.125rem;"
+            viewBox="0 0 24 24"
+            width="18"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M5.587 3.467a1.5 1.5 0 1 0-2.194 2.046q.036.038.074.074l6.438 6.44-6.44 6.44a1.5 1.5 0 0 0 2.122 2.12l6.44-6.438 6.44 6.44a1.5 1.5 0 0 0 2.12-2.122l-6.438-6.44 6.44-6.44a1.5 1.5 0 0 0-2.122-2.12l-6.44 6.438-6.44-6.44z"
+            />
+          </svg>
+        </button>
+      </nav>
+    </header>
+    <div
+      class="bpk-modal__content bpk-modal__content--padded"
+    >
+      Modal content
+    </div>
+  </section>
+</DocumentFragment>
 `;
 
 exports[`BpkModalInner should render correctly when it does not fills the screen on mobile 1`] = `
-<section
-  aria-labelledby="bpk-modal-heading-my-modal"
-  className="bpk-modal"
-  id="my-modal"
-  role="dialog"
-  tabIndex="-1"
->
-  <header
-    className="bpk-modal__header"
+<DocumentFragment>
+  <section
+    aria-labelledby="bpk-modal-heading-my-modal"
+    class="bpk-modal"
+    id="my-modal"
+    role="dialog"
+    tabindex="-1"
   >
-    <nav
-      aria-labelledby="bpk-modal-heading-my-modal"
-      className="bpk-navigation-bar bpk-modal__navigation"
+    <header
+      class="bpk-modal__header"
     >
-      <h2
-        className="bpk-modal__heading"
-        id="bpk-modal-heading-my-modal"
+      <nav
+        aria-labelledby="bpk-modal-heading-my-modal"
+        class="bpk-navigation-bar bpk-modal__navigation"
       >
-        Modal title
-      </h2>
-      <button
-        aria-label="Close"
-        className="bpk-close-button bpk-modal__close-button bpk-navigation-bar__trailing-item"
-        onClick={[MockFunction]}
-        title="Close"
-        type="button"
-      >
-        <svg
-          className="bpk-close-button__icon"
-          height="18"
-          style={
-            Object {
-              "height": "1.125rem",
-              "width": "1.125rem",
-            }
-          }
-          viewBox="0 0 24 24"
-          width="18"
-          xmlns="http://www.w3.org/2000/svg"
+        <h2
+          class="bpk-modal__heading"
+          id="bpk-modal-heading-my-modal"
         >
-          <path
-            d="M5.587 3.467a1.5 1.5 0 1 0-2.194 2.046q.036.038.074.074l6.438 6.44-6.44 6.44a1.5 1.5 0 0 0 2.122 2.12l6.44-6.438 6.44 6.44a1.5 1.5 0 0 0 2.12-2.122l-6.438-6.44 6.44-6.44a1.5 1.5 0 0 0-2.122-2.12l-6.44 6.438-6.44-6.44z"
-          />
-        </svg>
-      </button>
-    </nav>
-  </header>
-  <div
-    className="bpk-modal__content bpk-modal__content--padded"
-  >
-    Modal content
-  </div>
-</section>
+          Modal title
+        </h2>
+        <button
+          aria-label="Close"
+          class="bpk-close-button bpk-modal__close-button bpk-navigation-bar__trailing-item"
+          title="Close"
+          type="button"
+        >
+          <svg
+            class="bpk-close-button__icon"
+            height="18"
+            style="width: 1.125rem; height: 1.125rem;"
+            viewBox="0 0 24 24"
+            width="18"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M5.587 3.467a1.5 1.5 0 1 0-2.194 2.046q.036.038.074.074l6.438 6.44-6.44 6.44a1.5 1.5 0 0 0 2.122 2.12l6.44-6.438 6.44 6.44a1.5 1.5 0 0 0 2.12-2.122l-6.438-6.44 6.44-6.44a1.5 1.5 0 0 0-2.122-2.12l-6.44 6.438-6.44-6.44z"
+            />
+          </svg>
+        </button>
+      </nav>
+    </header>
+    <div
+      class="bpk-modal__content bpk-modal__content--padded"
+    >
+      Modal content
+    </div>
+  </section>
+</DocumentFragment>
 `;
 
 exports[`BpkModalInner should render correctly when it has a className 1`] = `
-<section
-  aria-labelledby="bpk-modal-heading-my-modal"
-  className="bpk-modal my-classname bpk-modal--full-screen-mobile"
-  id="my-modal"
-  role="dialog"
-  tabIndex="-1"
->
-  <header
-    className="bpk-modal__header"
+<DocumentFragment>
+  <section
+    aria-labelledby="bpk-modal-heading-my-modal"
+    class="bpk-modal my-classname bpk-modal--full-screen-mobile"
+    id="my-modal"
+    role="dialog"
+    tabindex="-1"
   >
-    <nav
-      aria-labelledby="bpk-modal-heading-my-modal"
-      className="bpk-navigation-bar bpk-modal__navigation"
+    <header
+      class="bpk-modal__header"
     >
-      <h2
-        className="bpk-modal__heading"
-        id="bpk-modal-heading-my-modal"
+      <nav
+        aria-labelledby="bpk-modal-heading-my-modal"
+        class="bpk-navigation-bar bpk-modal__navigation"
       >
-        Modal title
-      </h2>
-      <button
-        aria-label="Close"
-        className="bpk-close-button bpk-modal__close-button bpk-navigation-bar__trailing-item"
-        onClick={[MockFunction]}
-        title="Close"
-        type="button"
-      >
-        <svg
-          className="bpk-close-button__icon"
-          height="18"
-          style={
-            Object {
-              "height": "1.125rem",
-              "width": "1.125rem",
-            }
-          }
-          viewBox="0 0 24 24"
-          width="18"
-          xmlns="http://www.w3.org/2000/svg"
+        <h2
+          class="bpk-modal__heading"
+          id="bpk-modal-heading-my-modal"
         >
-          <path
-            d="M5.587 3.467a1.5 1.5 0 1 0-2.194 2.046q.036.038.074.074l6.438 6.44-6.44 6.44a1.5 1.5 0 0 0 2.122 2.12l6.44-6.438 6.44 6.44a1.5 1.5 0 0 0 2.12-2.122l-6.438-6.44 6.44-6.44a1.5 1.5 0 0 0-2.122-2.12l-6.44 6.438-6.44-6.44z"
-          />
-        </svg>
-      </button>
-    </nav>
-  </header>
-  <div
-    className="bpk-modal__content bpk-modal__content--padded"
-  >
-    Modal content
-  </div>
-</section>
+          Modal title
+        </h2>
+        <button
+          aria-label="Close"
+          class="bpk-close-button bpk-modal__close-button bpk-navigation-bar__trailing-item"
+          title="Close"
+          type="button"
+        >
+          <svg
+            class="bpk-close-button__icon"
+            height="18"
+            style="width: 1.125rem; height: 1.125rem;"
+            viewBox="0 0 24 24"
+            width="18"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M5.587 3.467a1.5 1.5 0 1 0-2.194 2.046q.036.038.074.074l6.438 6.44-6.44 6.44a1.5 1.5 0 0 0 2.122 2.12l6.44-6.438 6.44 6.44a1.5 1.5 0 0 0 2.12-2.122l-6.438-6.44 6.44-6.44a1.5 1.5 0 0 0-2.122-2.12l-6.44 6.438-6.44-6.44z"
+            />
+          </svg>
+        </button>
+      </nav>
+    </header>
+    <div
+      class="bpk-modal__content bpk-modal__content--padded"
+    >
+      Modal content
+    </div>
+  </section>
+</DocumentFragment>
 `;
 
 exports[`BpkModalInner should render correctly when it is fullscreen 1`] = `
-<section
-  aria-labelledby="bpk-modal-heading-my-modal"
-  className="bpk-modal bpk-modal--full-screen"
-  id="my-modal"
-  role="dialog"
-  tabIndex="-1"
->
-  <header
-    className="bpk-modal__header"
+<DocumentFragment>
+  <section
+    aria-labelledby="bpk-modal-heading-my-modal"
+    class="bpk-modal bpk-modal--full-screen"
+    id="my-modal"
+    role="dialog"
+    tabindex="-1"
   >
-    <nav
-      aria-labelledby="bpk-modal-heading-my-modal"
-      className="bpk-navigation-bar bpk-modal__navigation"
+    <header
+      class="bpk-modal__header"
     >
-      <h2
-        className="bpk-modal__heading"
-        id="bpk-modal-heading-my-modal"
+      <nav
+        aria-labelledby="bpk-modal-heading-my-modal"
+        class="bpk-navigation-bar bpk-modal__navigation"
       >
-        Modal title
-      </h2>
-      <button
-        aria-label="Close"
-        className="bpk-close-button bpk-modal__close-button bpk-navigation-bar__trailing-item"
-        onClick={[MockFunction]}
-        title="Close"
-        type="button"
-      >
-        <svg
-          className="bpk-close-button__icon"
-          height="18"
-          style={
-            Object {
-              "height": "1.125rem",
-              "width": "1.125rem",
-            }
-          }
-          viewBox="0 0 24 24"
-          width="18"
-          xmlns="http://www.w3.org/2000/svg"
+        <h2
+          class="bpk-modal__heading"
+          id="bpk-modal-heading-my-modal"
         >
-          <path
-            d="M5.587 3.467a1.5 1.5 0 1 0-2.194 2.046q.036.038.074.074l6.438 6.44-6.44 6.44a1.5 1.5 0 0 0 2.122 2.12l6.44-6.438 6.44 6.44a1.5 1.5 0 0 0 2.12-2.122l-6.438-6.44 6.44-6.44a1.5 1.5 0 0 0-2.122-2.12l-6.44 6.438-6.44-6.44z"
-          />
-        </svg>
-      </button>
-    </nav>
-  </header>
-  <div
-    className="bpk-modal__content bpk-modal__content--padded"
-  >
-    Modal content
-  </div>
-</section>
+          Modal title
+        </h2>
+        <button
+          aria-label="Close"
+          class="bpk-close-button bpk-modal__close-button bpk-navigation-bar__trailing-item"
+          title="Close"
+          type="button"
+        >
+          <svg
+            class="bpk-close-button__icon"
+            height="18"
+            style="width: 1.125rem; height: 1.125rem;"
+            viewBox="0 0 24 24"
+            width="18"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M5.587 3.467a1.5 1.5 0 1 0-2.194 2.046q.036.038.074.074l6.438 6.44-6.44 6.44a1.5 1.5 0 0 0 2.122 2.12l6.44-6.438 6.44 6.44a1.5 1.5 0 0 0 2.12-2.122l-6.438-6.44 6.44-6.44a1.5 1.5 0 0 0-2.122-2.12l-6.44 6.438-6.44-6.44z"
+            />
+          </svg>
+        </button>
+      </nav>
+    </header>
+    <div
+      class="bpk-modal__content bpk-modal__content--padded"
+    >
+      Modal content
+    </div>
+  </section>
+</DocumentFragment>
 `;
 
 exports[`BpkModalInner should render correctly with a custom content classname 1`] = `
-<section
-  aria-labelledby="bpk-modal-heading-my-modal"
-  className="bpk-modal bpk-modal--full-screen-mobile"
-  id="my-modal"
-  role="dialog"
-  tabIndex="-1"
->
-  <header
-    className="bpk-modal__header"
+<DocumentFragment>
+  <section
+    aria-labelledby="bpk-modal-heading-my-modal"
+    class="bpk-modal bpk-modal--full-screen-mobile"
+    id="my-modal"
+    role="dialog"
+    tabindex="-1"
   >
-    <nav
-      aria-labelledby="bpk-modal-heading-my-modal"
-      className="bpk-navigation-bar bpk-modal__navigation"
+    <header
+      class="bpk-modal__header"
     >
-      <h2
-        className="bpk-modal__heading"
-        id="bpk-modal-heading-my-modal"
+      <nav
+        aria-labelledby="bpk-modal-heading-my-modal"
+        class="bpk-navigation-bar bpk-modal__navigation"
       >
-        Modal title
-      </h2>
-      <button
-        aria-label="Close"
-        className="bpk-close-button bpk-modal__close-button bpk-navigation-bar__trailing-item"
-        onClick={[MockFunction]}
-        title="Close"
-        type="button"
-      >
-        <svg
-          className="bpk-close-button__icon"
-          height="18"
-          style={
-            Object {
-              "height": "1.125rem",
-              "width": "1.125rem",
-            }
-          }
-          viewBox="0 0 24 24"
-          width="18"
-          xmlns="http://www.w3.org/2000/svg"
+        <h2
+          class="bpk-modal__heading"
+          id="bpk-modal-heading-my-modal"
         >
-          <path
-            d="M5.587 3.467a1.5 1.5 0 1 0-2.194 2.046q.036.038.074.074l6.438 6.44-6.44 6.44a1.5 1.5 0 0 0 2.122 2.12l6.44-6.438 6.44 6.44a1.5 1.5 0 0 0 2.12-2.122l-6.438-6.44 6.44-6.44a1.5 1.5 0 0 0-2.122-2.12l-6.44 6.438-6.44-6.44z"
-          />
-        </svg>
-      </button>
-    </nav>
-  </header>
-  <div
-    className="bpk-modal__content bpk-modal__content--padded my-classname"
-  >
-    Modal content
-  </div>
-</section>
+          Modal title
+        </h2>
+        <button
+          aria-label="Close"
+          class="bpk-close-button bpk-modal__close-button bpk-navigation-bar__trailing-item"
+          title="Close"
+          type="button"
+        >
+          <svg
+            class="bpk-close-button__icon"
+            height="18"
+            style="width: 1.125rem; height: 1.125rem;"
+            viewBox="0 0 24 24"
+            width="18"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M5.587 3.467a1.5 1.5 0 1 0-2.194 2.046q.036.038.074.074l6.438 6.44-6.44 6.44a1.5 1.5 0 0 0 2.122 2.12l6.44-6.438 6.44 6.44a1.5 1.5 0 0 0 2.12-2.122l-6.438-6.44 6.44-6.44a1.5 1.5 0 0 0-2.122-2.12l-6.44 6.438-6.44-6.44z"
+            />
+          </svg>
+        </button>
+      </nav>
+    </header>
+    <div
+      class="bpk-modal__content bpk-modal__content--padded my-classname"
+    >
+      Modal content
+    </div>
+  </section>
+</DocumentFragment>
 `;
 
 exports[`BpkModalInner should render correctly with an accessory view 1`] = `
-<section
-  aria-labelledby="bpk-modal-heading-my-modal"
-  className="bpk-modal bpk-modal--full-screen-mobile"
-  id="my-modal"
-  role="dialog"
-  tabIndex="-1"
->
-  <header
-    className="bpk-modal__header"
+<DocumentFragment>
+  <section
+    aria-labelledby="bpk-modal-heading-my-modal"
+    class="bpk-modal bpk-modal--full-screen-mobile"
+    id="my-modal"
+    role="dialog"
+    tabindex="-1"
   >
-    <nav
-      aria-labelledby="bpk-modal-heading-my-modal"
-      className="bpk-navigation-bar bpk-modal__navigation"
+    <header
+      class="bpk-modal__header"
     >
-      <span
-        className="bpk-modal__accessory-view bpk-navigation-bar__leading-item"
+      <nav
+        aria-labelledby="bpk-modal-heading-my-modal"
+        class="bpk-navigation-bar bpk-modal__navigation"
       >
+        <span
+          class="bpk-modal__accessory-view bpk-navigation-bar__leading-item"
+        >
+          <button
+            class="bpk-link bpk-navigation-bar-button-link bpk-modal__leading-button"
+            label="Close"
+            type="button"
+          >
+            <div>
+              Testing
+            </div>
+          </button>
+        </span>
+        <h2
+          class="bpk-modal__heading"
+          id="bpk-modal-heading-my-modal"
+        >
+          Modal title
+        </h2>
         <button
-          className="bpk-link bpk-navigation-bar-button-link bpk-modal__leading-button"
-          label="Close"
-          onClick={[MockFunction]}
+          aria-label="Close"
+          class="bpk-close-button bpk-modal__close-button bpk-navigation-bar__trailing-item"
+          title="Close"
           type="button"
         >
-          <div>
-            Testing
-          </div>
+          <svg
+            class="bpk-close-button__icon"
+            height="18"
+            style="width: 1.125rem; height: 1.125rem;"
+            viewBox="0 0 24 24"
+            width="18"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M5.587 3.467a1.5 1.5 0 1 0-2.194 2.046q.036.038.074.074l6.438 6.44-6.44 6.44a1.5 1.5 0 0 0 2.122 2.12l6.44-6.438 6.44 6.44a1.5 1.5 0 0 0 2.12-2.122l-6.438-6.44 6.44-6.44a1.5 1.5 0 0 0-2.122-2.12l-6.44 6.438-6.44-6.44z"
+            />
+          </svg>
         </button>
-      </span>
-      <h2
-        className="bpk-modal__heading"
-        id="bpk-modal-heading-my-modal"
-      >
-        Modal title
-      </h2>
-      <button
-        aria-label="Close"
-        className="bpk-close-button bpk-modal__close-button bpk-navigation-bar__trailing-item"
-        onClick={[MockFunction]}
-        title="Close"
-        type="button"
-      >
-        <svg
-          className="bpk-close-button__icon"
-          height="18"
-          style={
-            Object {
-              "height": "1.125rem",
-              "width": "1.125rem",
-            }
-          }
-          viewBox="0 0 24 24"
-          width="18"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M5.587 3.467a1.5 1.5 0 1 0-2.194 2.046q.036.038.074.074l6.438 6.44-6.44 6.44a1.5 1.5 0 0 0 2.122 2.12l6.44-6.438 6.44 6.44a1.5 1.5 0 0 0 2.12-2.122l-6.438-6.44 6.44-6.44a1.5 1.5 0 0 0-2.122-2.12l-6.44 6.438-6.44-6.44z"
-          />
-        </svg>
-      </button>
-    </nav>
-  </header>
-  <div
-    className="bpk-modal__content bpk-modal__content--padded my-classname"
-  >
-    Modal content
-  </div>
-</section>
+      </nav>
+    </header>
+    <div
+      class="bpk-modal__content bpk-modal__content--padded my-classname"
+    >
+      Modal content
+    </div>
+  </section>
+</DocumentFragment>
 `;
 
 exports[`BpkModalInner should render correctly with closeText prop 1`] = `
-<section
-  aria-labelledby="bpk-modal-heading-my-modal"
-  className="bpk-modal bpk-modal--full-screen-mobile"
-  id="my-modal"
-  role="dialog"
-  tabIndex="-1"
->
-  <header
-    className="bpk-modal__header"
+<DocumentFragment>
+  <section
+    aria-labelledby="bpk-modal-heading-my-modal"
+    class="bpk-modal bpk-modal--full-screen-mobile"
+    id="my-modal"
+    role="dialog"
+    tabindex="-1"
   >
-    <nav
-      aria-labelledby="bpk-modal-heading-my-modal"
-      className="bpk-navigation-bar bpk-modal__navigation"
+    <header
+      class="bpk-modal__header"
     >
-      <h2
-        className="bpk-modal__heading"
-        id="bpk-modal-heading-my-modal"
+      <nav
+        aria-labelledby="bpk-modal-heading-my-modal"
+        class="bpk-navigation-bar bpk-modal__navigation"
       >
-        Modal title
-      </h2>
-      <button
-        className="bpk-link bpk-modal__close-button bpk-navigation-bar__trailing-item"
-        onClick={[MockFunction]}
-        type="button"
-      >
-        Dismiss
-      </button>
-    </nav>
-  </header>
-  <div
-    className="bpk-modal__content bpk-modal__content--padded"
-  >
-    Modal content
-  </div>
-</section>
+        <h2
+          class="bpk-modal__heading"
+          id="bpk-modal-heading-my-modal"
+        >
+          Modal title
+        </h2>
+        <button
+          class="bpk-link bpk-modal__close-button bpk-navigation-bar__trailing-item"
+          type="button"
+        >
+          Dismiss
+        </button>
+      </nav>
+    </header>
+    <div
+      class="bpk-modal__content bpk-modal__content--padded"
+    >
+      Modal content
+    </div>
+  </section>
+</DocumentFragment>
 `;
 
 exports[`BpkModalInner should render correctly with no padding 1`] = `
-<section
-  aria-labelledby="bpk-modal-heading-my-modal"
-  className="bpk-modal bpk-modal--full-screen-mobile"
-  id="my-modal"
-  role="dialog"
-  tabIndex="-1"
->
-  <header
-    className="bpk-modal__header"
+<DocumentFragment>
+  <section
+    aria-labelledby="bpk-modal-heading-my-modal"
+    class="bpk-modal bpk-modal--full-screen-mobile"
+    id="my-modal"
+    role="dialog"
+    tabindex="-1"
   >
-    <nav
-      aria-labelledby="bpk-modal-heading-my-modal"
-      className="bpk-navigation-bar bpk-modal__navigation"
+    <header
+      class="bpk-modal__header"
     >
-      <h2
-        className="bpk-modal__heading"
-        id="bpk-modal-heading-my-modal"
+      <nav
+        aria-labelledby="bpk-modal-heading-my-modal"
+        class="bpk-navigation-bar bpk-modal__navigation"
       >
-        Modal title
-      </h2>
-      <button
-        aria-label="Close"
-        className="bpk-close-button bpk-modal__close-button bpk-navigation-bar__trailing-item"
-        onClick={[MockFunction]}
-        title="Close"
-        type="button"
-      >
-        <svg
-          className="bpk-close-button__icon"
-          height="18"
-          style={
-            Object {
-              "height": "1.125rem",
-              "width": "1.125rem",
-            }
-          }
-          viewBox="0 0 24 24"
-          width="18"
-          xmlns="http://www.w3.org/2000/svg"
+        <h2
+          class="bpk-modal__heading"
+          id="bpk-modal-heading-my-modal"
         >
-          <path
-            d="M5.587 3.467a1.5 1.5 0 1 0-2.194 2.046q.036.038.074.074l6.438 6.44-6.44 6.44a1.5 1.5 0 0 0 2.122 2.12l6.44-6.438 6.44 6.44a1.5 1.5 0 0 0 2.12-2.122l-6.438-6.44 6.44-6.44a1.5 1.5 0 0 0-2.122-2.12l-6.44 6.438-6.44-6.44z"
-          />
-        </svg>
-      </button>
-    </nav>
-  </header>
-  <div
-    className="bpk-modal__content"
-  >
-    Modal content
-  </div>
-</section>
+          Modal title
+        </h2>
+        <button
+          aria-label="Close"
+          class="bpk-close-button bpk-modal__close-button bpk-navigation-bar__trailing-item"
+          title="Close"
+          type="button"
+        >
+          <svg
+            class="bpk-close-button__icon"
+            height="18"
+            style="width: 1.125rem; height: 1.125rem;"
+            viewBox="0 0 24 24"
+            width="18"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M5.587 3.467a1.5 1.5 0 1 0-2.194 2.046q.036.038.074.074l6.438 6.44-6.44 6.44a1.5 1.5 0 0 0 2.122 2.12l6.44-6.438 6.44 6.44a1.5 1.5 0 0 0 2.12-2.122l-6.438-6.44 6.44-6.44a1.5 1.5 0 0 0-2.122-2.12l-6.44 6.438-6.44-6.44z"
+            />
+          </svg>
+        </button>
+      </nav>
+    </header>
+    <div
+      class="bpk-modal__content"
+    >
+      Modal content
+    </div>
+  </section>
+</DocumentFragment>
 `;
 
 exports[`BpkModalInner should render correctly with wide prop 1`] = `
-<section
-  aria-labelledby="bpk-modal-heading-my-modal"
-  className="bpk-modal bpk-modal--wide bpk-modal--full-screen-mobile"
-  id="my-modal"
-  role="dialog"
-  tabIndex="-1"
->
-  <header
-    className="bpk-modal__header"
+<DocumentFragment>
+  <section
+    aria-labelledby="bpk-modal-heading-my-modal"
+    class="bpk-modal bpk-modal--wide bpk-modal--full-screen-mobile"
+    id="my-modal"
+    role="dialog"
+    tabindex="-1"
   >
-    <nav
-      aria-labelledby="bpk-modal-heading-my-modal"
-      className="bpk-navigation-bar bpk-modal__navigation"
+    <header
+      class="bpk-modal__header"
     >
-      <h2
-        className="bpk-modal__heading"
-        id="bpk-modal-heading-my-modal"
+      <nav
+        aria-labelledby="bpk-modal-heading-my-modal"
+        class="bpk-navigation-bar bpk-modal__navigation"
       >
-        Modal title
-      </h2>
-      <button
-        aria-label="Close"
-        className="bpk-close-button bpk-modal__close-button bpk-navigation-bar__trailing-item"
-        onClick={[MockFunction]}
-        title="Close"
-        type="button"
-      >
-        <svg
-          className="bpk-close-button__icon"
-          height="18"
-          style={
-            Object {
-              "height": "1.125rem",
-              "width": "1.125rem",
-            }
-          }
-          viewBox="0 0 24 24"
-          width="18"
-          xmlns="http://www.w3.org/2000/svg"
+        <h2
+          class="bpk-modal__heading"
+          id="bpk-modal-heading-my-modal"
         >
-          <path
-            d="M5.587 3.467a1.5 1.5 0 1 0-2.194 2.046q.036.038.074.074l6.438 6.44-6.44 6.44a1.5 1.5 0 0 0 2.122 2.12l6.44-6.438 6.44 6.44a1.5 1.5 0 0 0 2.12-2.122l-6.438-6.44 6.44-6.44a1.5 1.5 0 0 0-2.122-2.12l-6.44 6.438-6.44-6.44z"
-          />
-        </svg>
-      </button>
-    </nav>
-  </header>
-  <div
-    className="bpk-modal__content bpk-modal__content--padded"
-  >
-    Modal content
-  </div>
-</section>
+          Modal title
+        </h2>
+        <button
+          aria-label="Close"
+          class="bpk-close-button bpk-modal__close-button bpk-navigation-bar__trailing-item"
+          title="Close"
+          type="button"
+        >
+          <svg
+            class="bpk-close-button__icon"
+            height="18"
+            style="width: 1.125rem; height: 1.125rem;"
+            viewBox="0 0 24 24"
+            width="18"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M5.587 3.467a1.5 1.5 0 1 0-2.194 2.046q.036.038.074.074l6.438 6.44-6.44 6.44a1.5 1.5 0 0 0 2.122 2.12l6.44-6.438 6.44 6.44a1.5 1.5 0 0 0 2.12-2.122l-6.438-6.44 6.44-6.44a1.5 1.5 0 0 0-2.122-2.12l-6.44 6.438-6.44-6.44z"
+            />
+          </svg>
+        </button>
+      </nav>
+    </header>
+    <div
+      class="bpk-modal__content bpk-modal__content--padded"
+    >
+      Modal content
+    </div>
+  </section>
+</DocumentFragment>
 `;

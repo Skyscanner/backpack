@@ -19,27 +19,23 @@
 /* @flow strict */
 
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 
 import BpkNavigationStack from './BpkNavigationStack';
 
 describe('BpkNavigationStack', () => {
   it('should render correctly', () => {
-    const tree = renderer
-      .create(<BpkNavigationStack views={[<div />, <div />]} />)
-      .toJSON();
-
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkNavigationStack views={[<div />, <div />]} />,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with a "className" attribute', () => {
-    const tree = renderer
-      .create(
-        <BpkNavigationStack className="test" views={[<div />, <div />]} />,
-      )
-      .toJSON();
-
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkNavigationStack className="test" views={[<div />, <div />]} />,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   describe('rtl', () => {
@@ -56,11 +52,10 @@ describe('BpkNavigationStack', () => {
     });
 
     it('should render correctly', () => {
-      const tree = renderer
-        .create(<BpkNavigationStack views={[<div />, <div />]} />)
-        .toJSON();
-
-      expect(tree).toMatchSnapshot();
+      const { asFragment } = render(
+        <BpkNavigationStack views={[<div />, <div />]} />,
+      );
+      expect(asFragment()).toMatchSnapshot();
     });
   });
 });

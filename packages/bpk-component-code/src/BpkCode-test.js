@@ -18,31 +18,29 @@
 /* @flow strict */
 
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 
 import BpkCode from './BpkCode';
 
 describe('BpkCode', () => {
   it('should render correctly', () => {
-    const tree = renderer
-      .create(<BpkCode>npm install react --save-dev</BpkCode>)
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkCode>npm install react --save-dev</BpkCode>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with "alternate"', () => {
-    const tree = renderer
-      .create(<BpkCode alternate>npm install react --save-dev</BpkCode>)
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkCode alternate>npm install react --save-dev</BpkCode>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with custom "className"', () => {
-    const tree = renderer
-      .create(
-        <BpkCode className="my-class">npm install react --save-dev</BpkCode>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkCode className="my-class">npm install react --save-dev</BpkCode>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 });

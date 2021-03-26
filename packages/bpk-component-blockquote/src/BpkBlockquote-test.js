@@ -17,33 +17,29 @@
  */
 
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 
 import BpkBlockquote from './BpkBlockquote';
 
 describe('BpkBlockquote', () => {
   it('should render correctly', () => {
-    const tree = renderer
-      .create(
-        <BpkBlockquote>
-          Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
-          commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus
-          et magnis dis parturient montes, nascetur ridiculus mus.
-        </BpkBlockquote>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkBlockquote>
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
+        ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis
+        dis parturient montes, nascetur ridiculus mus.
+      </BpkBlockquote>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
   it('should render correctly with additional spacing', () => {
-    const tree = renderer
-      .create(
-        <BpkBlockquote extraSpace>
-          Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
-          commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus
-          et magnis dis parturient montes, nascetur ridiculus mus.
-        </BpkBlockquote>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkBlockquote extraSpace>
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
+        ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis
+        dis parturient montes, nascetur ridiculus mus.
+      </BpkBlockquote>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 });

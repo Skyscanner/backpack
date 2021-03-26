@@ -19,41 +19,35 @@
 /* @flow strict */
 
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 
 import BpkList from './BpkList';
 
 describe('BpkList', () => {
   it('should render correctly', () => {
-    const tree = renderer
-      .create(
-        <BpkList>
-          <li>list item</li>
-        </BpkList>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkList>
+        <li>list item</li>
+      </BpkList>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with a "ordered" attribute', () => {
-    const tree = renderer
-      .create(
-        <BpkList ordered>
-          <li>list item</li>
-        </BpkList>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkList ordered>
+        <li>list item</li>
+      </BpkList>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with a "className" attribute', () => {
-    const tree = renderer
-      .create(
-        <BpkList className="test-list">
-          <li>list item</li>
-        </BpkList>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkList className="test-list">
+        <li>list item</li>
+      </BpkList>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 });

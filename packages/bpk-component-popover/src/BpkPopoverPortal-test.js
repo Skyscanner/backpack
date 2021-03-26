@@ -21,7 +21,7 @@
 import React from 'react';
 import Shallow from 'react-test-renderer/shallow';
 import { mount } from 'enzyme';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 
 jest.mock(
   '@skyscanner/popper.js',
@@ -50,44 +50,38 @@ import BpkPopoverPortal from './BpkPopoverPortal';
 
 describe('BpkPopoverPortal', () => {
   it('should render correctly', () => {
-    const tree = renderer
-      .create(
-        <BpkPopoverPortal
-          id="my-popover"
-          target={<div>target</div>}
-          isOpen={false}
-          onClose={() => null}
-          label="My popover"
-          closeButtonText="Close"
-        >
-          <div>My popover content</div>
-        </BpkPopoverPortal>,
-      )
-      .toJSON();
-
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkPopoverPortal
+        id="my-popover"
+        target={<div>target</div>}
+        isOpen={false}
+        onClose={() => null}
+        label="My popover"
+        closeButtonText="Close"
+      >
+        <div>My popover content</div>
+      </BpkPopoverPortal>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should not render anything if target is a function', () => {
-    const tree = renderer
-      .create(
-        <BpkPopoverPortal
-          id="my-popover"
-          // Ignoring this warning because Flow doesn't yet support a secondary
-          // argument for document.createElement.
-          // $FlowFixMe[incompatible-call]
-          target={() => document.createElement('button', { type: 'button' })}
-          isOpen={false}
-          onClose={() => null}
-          label="My popover"
-          closeButtonText="Close"
-        >
-          <div>My popover content</div>
-        </BpkPopoverPortal>,
-      )
-      .toJSON();
-
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkPopoverPortal
+        id="my-popover"
+        // Ignoring this warning because Flow doesn't yet support a secondary
+        // argument for document.createElement.
+        // $FlowFixMe[incompatible-call]
+        target={() => document.createElement('button', { type: 'button' })}
+        isOpen={false}
+        onClose={() => null}
+        label="My popover"
+        closeButtonText="Close"
+      >
+        <div>My popover content</div>
+      </BpkPopoverPortal>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   describe('Custom Portal props', () => {

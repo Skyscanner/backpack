@@ -17,7 +17,7 @@
  */
 
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import { StaticRouter } from 'react-router-dom';
 
 import BpkRouterLink from './BpkRouterLink';
@@ -26,42 +26,36 @@ const context = {};
 
 describe('BpkRouterLink', () => {
   it('should render correctly with a "to" attribute', () => {
-    const tree = renderer
-      .create(
-        <StaticRouter location="/" context={context}>
-          <BpkRouterLink to="/home">Link</BpkRouterLink>
-        </StaticRouter>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <StaticRouter location="/" context={context}>
+        <BpkRouterLink to="/home">Link</BpkRouterLink>
+      </StaticRouter>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with a "className" attribute', () => {
-    const tree = renderer
-      .create(
-        <StaticRouter location="/" context={context}>
-          <BpkRouterLink
-            to="/home"
-            className="my-custom-class-1 my-custom-class-2"
-          >
-            Link
-          </BpkRouterLink>
-        </StaticRouter>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <StaticRouter location="/" context={context}>
+        <BpkRouterLink
+          to="/home"
+          className="my-custom-class-1 my-custom-class-2"
+        >
+          Link
+        </BpkRouterLink>
+      </StaticRouter>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with arbitrary attributes', () => {
-    const tree = renderer
-      .create(
-        <StaticRouter location="/" context={context}>
-          <BpkRouterLink to="/home" target="_blank">
-            Link
-          </BpkRouterLink>
-        </StaticRouter>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <StaticRouter location="/" context={context}>
+        <BpkRouterLink to="/home" target="_blank">
+          Link
+        </BpkRouterLink>
+      </StaticRouter>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 });

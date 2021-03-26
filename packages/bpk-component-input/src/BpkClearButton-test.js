@@ -18,28 +18,26 @@
 /* @flow strict */
 
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 
 import BpkClearButton from './BpkClearButton';
 
 describe('BpkClearButton', () => {
   it('should render correctly', () => {
-    const tree = renderer
-      .create(<BpkClearButton label="Clear" onClick={() => null} />)
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkClearButton label="Clear" onClick={() => null} />,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with a custom class', () => {
-    const tree = renderer
-      .create(
-        <BpkClearButton
-          label="Clear"
-          onClick={() => null}
-          className="foo-class"
-        />,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkClearButton
+        label="Clear"
+        onClick={() => null}
+        className="foo-class"
+      />,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 });

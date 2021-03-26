@@ -19,19 +19,17 @@
 /* @flow strict */
 
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 
 import BpkNavigationBarButtonLink from './BpkNavigationBarButtonLink';
 
 describe('BpkNavigationButtonLink', () => {
   it('should render correctly', () => {
-    const tree = renderer
-      .create(
-        <BpkNavigationBarButtonLink onClick={() => {}} className="some-class">
-          Test
-        </BpkNavigationBarButtonLink>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkNavigationBarButtonLink onClick={() => {}} className="some-class">
+        Test
+      </BpkNavigationBarButtonLink>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 });

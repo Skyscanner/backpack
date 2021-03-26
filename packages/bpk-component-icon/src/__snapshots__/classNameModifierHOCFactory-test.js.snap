@@ -1,41 +1,51 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`classNameModifierHOCFactory should render correctly 1`] = `
-<div
-  className="test-class"
->
-  test
-</div>
+<DocumentFragment>
+  <div
+    class="test-class"
+  >
+    test
+  </div>
+</DocumentFragment>
 `;
 
 exports[`classNameModifierHOCFactory should render correctly with additional className 1`] = `
-<div
-  className="additional-test-class test-class"
->
-  test
-</div>
+<DocumentFragment>
+  <div
+    class="additional-test-class test-class"
+  >
+    test
+  </div>
+</DocumentFragment>
 `;
 
 exports[`classNameModifierHOCFactory should render correctly with multiple classNames 1`] = `
-<div
-  className="test-class-1 test-class-2"
->
-  test
-</div>
+<DocumentFragment>
+  <div
+    class="test-class-1 test-class-2"
+  >
+    test
+  </div>
+</DocumentFragment>
 `;
 
 exports[`classNameModifierHOCFactory should render correctly with multiple classNames and additional className 1`] = `
-<div
-  className="additional-test-class test-class-1 test-class-2"
->
-  test
-</div>
+<DocumentFragment>
+  <div
+    class="additional-test-class test-class-1 test-class-2"
+  >
+    test
+  </div>
+</DocumentFragment>
 `;
 
 exports[`classNameModifierHOCFactory should render correctly with no classNames 1`] = `
-<div
-  className=""
->
-  test
-</div>
+<DocumentFragment>
+  <div
+    class=""
+  >
+    test
+  </div>
+</DocumentFragment>
 `;

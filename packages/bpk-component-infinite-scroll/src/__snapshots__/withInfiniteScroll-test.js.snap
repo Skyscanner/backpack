@@ -1,14 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`withInfiniteScroll renders an empty list for the first render 1`] = `
-<div>
-  <div
-    id="list"
-  />
-  <div
-    className="bpk-sentinel"
-  />
-</div>
+<DocumentFragment>
+  <div>
+    <div
+      id="list"
+    />
+    <div
+      class="bpk-sentinel"
+    />
+  </div>
+</DocumentFragment>
 `;
 
 exports[`withInfiniteScroll renders correctly with different initial and onScroll numbers 1`] = `

@@ -1,25 +1,31 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`BpkTable should render correctly 1`] = `
-<table
-  className="bpk-table"
->
-  <tbody />
-</table>
+<DocumentFragment>
+  <table
+    class="bpk-table"
+  >
+    <tbody />
+  </table>
+</DocumentFragment>
 `;
 
 exports[`BpkTable should render correctly with "alternate" attribute 1`] = `
-<table
-  className="bpk-table bpk-table--alternate"
->
-  <tbody />
-</table>
+<DocumentFragment>
+  <table
+    class="bpk-table bpk-table--alternate"
+  >
+    <tbody />
+  </table>
+</DocumentFragment>
 `;
 
 exports[`BpkTable should render correctly with custom class 1`] = `
-<table
-  className="bpk-table my-table"
->
-  <tbody />
-</table>
+<DocumentFragment>
+  <table
+    class="bpk-table my-table"
+  >
+    <tbody />
+  </table>
+</DocumentFragment>
 `;

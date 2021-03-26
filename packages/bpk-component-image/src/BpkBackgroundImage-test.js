@@ -17,124 +17,113 @@
  */
 
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import { spacingSm } from 'bpk-tokens/tokens/base.es6';
 
 import BpkBackgroundImage from './BpkBackgroundImage';
 
 describe('BpkBackgroundImage', () => {
   it('should render correctly', () => {
-    const tree = renderer
-      .create(
-        <BpkBackgroundImage
-          aspectRatio={612 / 408}
+    const { asFragment } = render(
+      <BpkBackgroundImage
+        aspectRatio={612 / 408}
+        style={{
+          width: '100%',
+          height: '20rem',
+        }}
+        src="./path/to/image.jpg"
+      >
+        <div
           style={{
-            width: '100%',
-            height: '20rem',
+            opacity: 0.7,
+            marginLeft: spacingSm,
+            paddingTop: spacingSm,
           }}
-          src="./path/to/image.jpg"
-        >
-          <div
-            style={{
-              opacity: 0.7,
-              marginLeft: spacingSm,
-              paddingTop: spacingSm,
-            }}
-          />
-        </BpkBackgroundImage>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+        />
+      </BpkBackgroundImage>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly using legacy width and height props', () => {
-    const tree = renderer
-      .create(
-        <BpkBackgroundImage
-          width={612}
-          height={408}
+    const { asFragment } = render(
+      <BpkBackgroundImage
+        width={612}
+        height={408}
+        style={{
+          width: '100%',
+          height: '20rem',
+        }}
+        src="./path/to/image.jpg"
+      >
+        <div
           style={{
-            width: '100%',
-            height: '20rem',
+            opacity: 0.7,
+            marginLeft: spacingSm,
+            paddingTop: spacingSm,
           }}
-          src="./path/to/image.jpg"
-        >
-          <div
-            style={{
-              opacity: 0.7,
-              marginLeft: spacingSm,
-              paddingTop: spacingSm,
-            }}
-          />
-        </BpkBackgroundImage>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+        />
+      </BpkBackgroundImage>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should accept userland className', () => {
-    const tree = renderer
-      .create(
-        <BpkBackgroundImage
-          aspectRatio={816 / 544}
-          style={{
-            width: '100%',
-            height: '20rem',
-          }}
-          className="userland-classname"
-          src="./path/to/image.jpg"
-        />,
-      )
-      .toJSON();
-
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkBackgroundImage
+        aspectRatio={816 / 544}
+        style={{
+          width: '100%',
+          height: '20rem',
+        }}
+        className="userland-classname"
+        src="./path/to/image.jpg"
+      />,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should have loading behavior', () => {
-    const tree = renderer
-      .create(
-        <BpkBackgroundImage
-          loading
-          aspectRatio={612 / 408}
-          style={{
-            width: '100%',
-            height: '20rem',
-          }}
-          imageStyle={{
-            width: '100%',
-            height: '100%',
-            backgroundRepeat: 'no-repeat',
-            backgroundSize: 'cover',
-            backgroundPosition: '50% 50%',
-          }}
-          src="./path/to/image.jpg"
-        />,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkBackgroundImage
+        loading
+        aspectRatio={612 / 408}
+        style={{
+          width: '100%',
+          height: '20rem',
+        }}
+        imageStyle={{
+          width: '100%',
+          height: '100%',
+          backgroundRepeat: 'no-repeat',
+          backgroundSize: 'cover',
+          backgroundPosition: '50% 50%',
+        }}
+        src="./path/to/image.jpg"
+      />,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should have inView behavior', () => {
-    const tree = renderer
-      .create(
-        <BpkBackgroundImage
-          inView={false}
-          aspectRatio={612 / 408}
-          style={{
-            width: '100%',
-            height: '20rem',
-          }}
-          imageStyle={{
-            width: '100%',
-            height: '100%',
-            backgroundRepeat: 'no-repeat',
-            backgroundSize: 'cover',
-            backgroundPosition: '50% 50%',
-          }}
-          src="./path/to/image.jpg"
-        />,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkBackgroundImage
+        inView={false}
+        aspectRatio={612 / 408}
+        style={{
+          width: '100%',
+          height: '20rem',
+        }}
+        imageStyle={{
+          width: '100%',
+          height: '100%',
+          backgroundRepeat: 'no-repeat',
+          backgroundSize: 'cover',
+          backgroundPosition: '50% 50%',
+        }}
+        src="./path/to/image.jpg"
+      />,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 });

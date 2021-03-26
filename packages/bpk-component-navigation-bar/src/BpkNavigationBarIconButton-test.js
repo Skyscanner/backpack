@@ -19,7 +19,7 @@
 /* @flow strict */
 
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 
 import BpkNavigationIconButton from './BpkNavigationBarIconButton';
 
@@ -27,16 +27,14 @@ describe('BpkNavigationIconButton', () => {
   const Icon = props => <span {...props} />;
 
   it('should render correctly', () => {
-    const tree = renderer
-      .create(
-        <BpkNavigationIconButton
-          icon={Icon}
-          label="test"
-          onClick={() => {}}
-          className="some-class"
-        />,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkNavigationIconButton
+        icon={Icon}
+        label="test"
+        onClick={() => {}}
+        className="some-class"
+      />,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 });

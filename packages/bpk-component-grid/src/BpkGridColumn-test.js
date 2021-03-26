@@ -17,169 +17,143 @@
  */
 
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 
 import BpkGridColumn from './BpkGridColumn';
 
 describe('BpkGridColumn', () => {
   it('should render correctly', () => {
-    const tree = renderer
-      .create(<BpkGridColumn width={6}>Contents</BpkGridColumn>)
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkGridColumn width={6}>Contents</BpkGridColumn>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with "width" attribute set to 0', () => {
-    const tree = renderer
-      .create(<BpkGridColumn width={0}>Contents</BpkGridColumn>)
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkGridColumn width={0}>Contents</BpkGridColumn>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with "debug" attribute', () => {
-    const tree = renderer
-      .create(
-        <BpkGridColumn width={6} debug>
-          Contents
-        </BpkGridColumn>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkGridColumn width={6} debug>
+        Contents
+      </BpkGridColumn>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with "mobileWidth" attribute', () => {
-    const tree = renderer
-      .create(
-        <BpkGridColumn width={6} mobileWidth={6} debug>
-          Contents
-        </BpkGridColumn>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkGridColumn width={6} mobileWidth={6} debug>
+        Contents
+      </BpkGridColumn>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with "mobileWidth" attribute set to 0', () => {
-    const tree = renderer
-      .create(
-        <BpkGridColumn width={0} mobileWidth={0}>
-          Contents
-        </BpkGridColumn>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkGridColumn width={0} mobileWidth={0}>
+        Contents
+      </BpkGridColumn>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with "tabletWidth" attribute', () => {
-    const tree = renderer
-      .create(
-        <BpkGridColumn width={6} tabletWidth={6} debug>
-          Contents
-        </BpkGridColumn>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkGridColumn width={6} tabletWidth={6} debug>
+        Contents
+      </BpkGridColumn>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with "tabletWidth" attribute set to 0', () => {
-    const tree = renderer
-      .create(
-        <BpkGridColumn width={0} tabletWidth={0}>
-          Contents
-        </BpkGridColumn>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkGridColumn width={0} tabletWidth={0}>
+        Contents
+      </BpkGridColumn>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with "offset" attribute', () => {
-    const tree = renderer
-      .create(
-        <BpkGridColumn width={6} offset={6} debug>
-          Contents
-        </BpkGridColumn>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkGridColumn width={6} offset={6} debug>
+        Contents
+      </BpkGridColumn>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with "offset" attribute set to 0', () => {
-    const tree = renderer
-      .create(
-        <BpkGridColumn width={0} offset={0}>
-          Contents
-        </BpkGridColumn>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkGridColumn width={0} offset={0}>
+        Contents
+      </BpkGridColumn>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with "mobileOffset" attribute', () => {
-    const tree = renderer
-      .create(
-        <BpkGridColumn width={6} mobileOffset={6} debug>
-          Contents
-        </BpkGridColumn>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkGridColumn width={6} mobileOffset={6} debug>
+        Contents
+      </BpkGridColumn>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with "mobileOffset" attribute set to 0', () => {
-    const tree = renderer
-      .create(
-        <BpkGridColumn width={0} mobileOffset={0}>
-          Contents
-        </BpkGridColumn>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkGridColumn width={0} mobileOffset={0}>
+        Contents
+      </BpkGridColumn>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with "tabletOffset" attribute', () => {
-    const tree = renderer
-      .create(
-        <BpkGridColumn width={6} tabletOffset={6} debug>
-          Contents
-        </BpkGridColumn>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkGridColumn width={6} tabletOffset={6} debug>
+        Contents
+      </BpkGridColumn>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with "tabletOffset" attribute set to 0', () => {
-    const tree = renderer
-      .create(
-        <BpkGridColumn width={0} tabletOffset={0}>
-          Contents
-        </BpkGridColumn>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkGridColumn width={0} tabletOffset={0}>
+        Contents
+      </BpkGridColumn>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with "className" attribute', () => {
-    const tree = renderer
-      .create(
-        <BpkGridColumn width={0} className="my-custom-class">
-          Contents
-        </BpkGridColumn>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkGridColumn width={0} className="my-custom-class">
+        Contents
+      </BpkGridColumn>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with arbitrary attributes', () => {
-    const tree = renderer
-      .create(
-        <BpkGridColumn
-          width={0}
-          data-arbitrary-1="my-arbitrary-data"
-          data-arbitrary-2="my-arbitrary-data"
-        >
-          Contents
-        </BpkGridColumn>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkGridColumn
+        width={0}
+        data-arbitrary-1="my-arbitrary-data"
+        data-arbitrary-2="my-arbitrary-data"
+      >
+        Contents
+      </BpkGridColumn>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 });

@@ -19,51 +19,45 @@
 /* @flow strict */
 
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 
 import BpkSectionListItem from './BpkSectionListItem';
 
 describe('BpkSectionListItem', () => {
   it('should render correctly', () => {
-    const tree = renderer
-      .create(<BpkSectionListItem>Hello world</BpkSectionListItem>)
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkSectionListItem>Hello world</BpkSectionListItem>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with a "href" prop', () => {
-    const tree = renderer
-      .create(<BpkSectionListItem href="#">Hello world</BpkSectionListItem>)
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkSectionListItem href="#">Hello world</BpkSectionListItem>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with an "onClick" prop', () => {
-    const tree = renderer
-      .create(
-        <BpkSectionListItem onClick={jest.fn()}>
-          Hello world
-        </BpkSectionListItem>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkSectionListItem onClick={jest.fn()}>Hello world</BpkSectionListItem>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with a custom className', () => {
-    const tree = renderer
-      .create(
-        <BpkSectionListItem className="custom-class">
-          Hello world
-        </BpkSectionListItem>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkSectionListItem className="custom-class">
+        Hello world
+      </BpkSectionListItem>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with arbitrary props', () => {
-    const tree = renderer
-      .create(<BpkSectionListItem testId="123">Hello world</BpkSectionListItem>)
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkSectionListItem testId="123">Hello world</BpkSectionListItem>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 });

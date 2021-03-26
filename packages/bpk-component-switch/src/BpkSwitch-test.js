@@ -18,39 +18,37 @@
 /* @flow strict */
 
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 
 import BpkSwitch, { SWITCH_TYPES } from './BpkSwitch';
 
 describe('BpkSwitch', () => {
   it('should render correctly', () => {
-    const tree = renderer.create(<BpkSwitch label="Switch" />).toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(<BpkSwitch label="Switch" />);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render event type', () => {
-    const tree = renderer
-      .create(<BpkSwitch label="Switch" type={SWITCH_TYPES.event} />)
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkSwitch label="Switch" type={SWITCH_TYPES.event} />,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly when checked', () => {
-    const tree = renderer.create(<BpkSwitch checked label="Switch" />).toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(<BpkSwitch checked label="Switch" />);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should support custom class names', () => {
-    const tree = renderer
-      .create(<BpkSwitch label="Switch" className="custom-classname" />)
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkSwitch label="Switch" className="custom-classname" />,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should support arbitrary props', () => {
-    const tree = renderer
-      .create(<BpkSwitch label="Switch" testID="123" />)
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(<BpkSwitch label="Switch" testID="123" />);
+    expect(asFragment()).toMatchSnapshot();
   });
 });

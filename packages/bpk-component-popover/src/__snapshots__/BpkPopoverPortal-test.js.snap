@@ -76,10 +76,12 @@ exports[`BpkPopoverPortal Custom Portal props should render correctly with porta
 </Portal>
 `;
 
-exports[`BpkPopoverPortal should not render anything if target is a function 1`] = `null`;
+exports[`BpkPopoverPortal should not render anything if target is a function 1`] = `<DocumentFragment />`;
 
 exports[`BpkPopoverPortal should render correctly 1`] = `
-<div>
-  target
-</div>
+<DocumentFragment>
+  <div>
+    target
+  </div>
+</DocumentFragment>
 `;

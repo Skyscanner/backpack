@@ -1,1466 +1,955 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`BpkBannerAlertInner should render correctly with "type" attribute equal to "error" 1`] = `
-<div
-  className={null}
-  onTransitionEnd={[Function]}
-  style={
-    Object {
-      "MozTransition": "height 200ms ease ",
-      "OTransition": "height 200ms ease ",
-      "WebkitTransition": "height 200ms ease ",
-      "height": "auto",
-      "msTransition": "height 200ms ease ",
-      "overflow": "visible",
-      "transition": "height 200ms ease ",
-    }
-  }
->
-  <div>
-    <div
-      onTransitionEnd={[Function]}
-    >
-      <section
-        className="bpk-banner-alert bpk-banner-alert--error"
-      >
-        <header
-          className="bpk-banner-alert__header"
-          onClick={[Function]}
-          role="alert"
+<DocumentFragment>
+  <div
+    style="height: auto; overflow: visible; transition: height 200ms ease;"
+  >
+    <div>
+      <div>
+        <section
+          class="bpk-banner-alert bpk-banner-alert--error"
         >
-          <span
-            className="bpk-banner-alert__icon"
+          <header
+            class="bpk-banner-alert__header"
+            role="alert"
           >
             <span
-              style={
-                Object {
-                  "display": "inline-block",
-                  "lineHeight": "1.125rem",
-                  "marginTop": "0.1875rem",
-                  "verticalAlign": "top",
-                }
-              }
+              class="bpk-banner-alert__icon"
             >
-              <svg
-                className="bpk-banner-alert__error-icon"
-                height="18"
-                style={
-                  Object {
-                    "height": "1.125rem",
-                    "width": "1.125rem",
-                  }
-                }
-                viewBox="0 0 24 24"
-                width="18"
-                xmlns="http://www.w3.org/2000/svg"
+              <span
+                style="line-height: 1.125rem; display: inline-block; margin-top: 0.1875rem; vertical-align: top;"
               >
-                <path
-                  d="M12 1.5A10.5 10.5 0 1 0 22.5 12 10.5 10.5 0 0 0 12 1.5zM12 6a1.498 1.498 0 1 1-1.498 1.498A1.498 1.498 0 0 1 12 6zm1.493 10.676a1.5 1.5 0 0 1-2.98.001l-.01-.175-.003-4.501.01-.176a1.5 1.5 0 0 1 2.98 0l.01.175.003 4.501z"
-                />
-              </svg>
+                <svg
+                  class="bpk-banner-alert__error-icon"
+                  height="18"
+                  style="width: 1.125rem; height: 1.125rem;"
+                  viewBox="0 0 24 24"
+                  width="18"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M12 1.5A10.5 10.5 0 1 0 22.5 12 10.5 10.5 0 0 0 12 1.5zM12 6a1.498 1.498 0 1 1-1.498 1.498A1.498 1.498 0 0 1 12 6zm1.493 10.676a1.5 1.5 0 0 1-2.98.001l-.01-.175-.003-4.501.01-.176a1.5 1.5 0 0 1 2.98 0l.01.175.003 4.501z"
+                  />
+                </svg>
+              </span>
             </span>
-          </span>
-           
-          <span
-            className="bpk-banner-alert__message"
+             
+            <span
+              class="bpk-banner-alert__message"
+            >
+              Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+            </span>
+             
+          </header>
+          <div
+            style="height: 0px; overflow: hidden; transition: height 200ms ease;"
           >
-            Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-          </span>
-           
-        </header>
-        <div
-          onTransitionEnd={[Function]}
-          style={
-            Object {
-              "MozTransition": "height 200ms ease ",
-              "OTransition": "height 200ms ease ",
-              "WebkitTransition": "height 200ms ease ",
-              "height": 0,
-              "msTransition": "height 200ms ease ",
-              "overflow": "hidden",
-              "transition": "height 200ms ease ",
-            }
-          }
-        >
-          <div>
             <div
-              className="bpk-banner-alert__children-container"
-            />
+              style="display: none;"
+            >
+              <div
+                class="bpk-banner-alert__children-container"
+              />
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </div>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`BpkBannerAlertInner should render correctly with "type" attribute equal to "error" and "icon" equal to CurrencyIcon 1`] = `
-<div
-  className={null}
-  onTransitionEnd={[Function]}
-  style={
-    Object {
-      "MozTransition": "height 200ms ease ",
-      "OTransition": "height 200ms ease ",
-      "WebkitTransition": "height 200ms ease ",
-      "height": "auto",
-      "msTransition": "height 200ms ease ",
-      "overflow": "visible",
-      "transition": "height 200ms ease ",
-    }
-  }
->
-  <div>
-    <div
-      onTransitionEnd={[Function]}
-    >
-      <section
-        className="bpk-banner-alert bpk-banner-alert--error"
-      >
-        <header
-          className="bpk-banner-alert__header"
-          onClick={[Function]}
-          role="alert"
+<DocumentFragment>
+  <div
+    style="height: auto; overflow: visible; transition: height 200ms ease;"
+  >
+    <div>
+      <div>
+        <section
+          class="bpk-banner-alert bpk-banner-alert--error"
         >
-          <span
-            className="bpk-banner-alert__icon"
+          <header
+            class="bpk-banner-alert__header"
+            role="alert"
           >
             <span
-              style={
-                Object {
-                  "display": "inline-block",
-                  "lineHeight": "1.125rem",
-                  "marginTop": "0.1875rem",
-                  "verticalAlign": "top",
-                }
-              }
+              class="bpk-banner-alert__icon"
             >
-              <svg
-                className="bpk-banner-alert__error-icon"
-                height="18"
-                style={
-                  Object {
-                    "height": "1.125rem",
-                    "width": "1.125rem",
-                  }
-                }
-                viewBox="0 0 24 24"
-                width="18"
-                xmlns="http://www.w3.org/2000/svg"
+              <span
+                style="line-height: 1.125rem; display: inline-block; margin-top: 0.1875rem; vertical-align: top;"
               >
-                <path
-                  d="M12 10.5c5.8 0 10.5-2.015 10.5-4.5S17.8 1.5 12 1.5C6.201 1.5 1.5 3.515 1.5 6s4.701 4.5 10.5 4.5zM1.658 12.83a1.5 1.5 0 0 1 2.012-.673l.001.001C4.886 12.766 7.628 13.5 12 13.5s7.114-.734 8.33-1.342a1.5 1.5 0 0 1 1.36 2.674l-.02.01c-1.785.892-5.042 1.658-9.67 1.658s-7.886-.766-9.67-1.658a1.5 1.5 0 0 1-.673-2.012l.001-.001zm2.012 5.328a1.5 1.5 0 0 0-1.36 2.674l.02.01C4.113 21.734 7.371 22.5 12 22.5s7.886-.766 9.67-1.658a1.5 1.5 0 1 0-1.32-2.694l-.02.01c-1.216.608-3.958 1.342-8.33 1.342s-7.114-.734-8.33-1.342z"
-                />
-              </svg>
+                <svg
+                  class="bpk-banner-alert__error-icon"
+                  height="18"
+                  style="width: 1.125rem; height: 1.125rem;"
+                  viewBox="0 0 24 24"
+                  width="18"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M12 10.5c5.8 0 10.5-2.015 10.5-4.5S17.8 1.5 12 1.5C6.201 1.5 1.5 3.515 1.5 6s4.701 4.5 10.5 4.5zM1.658 12.83a1.5 1.5 0 0 1 2.012-.673l.001.001C4.886 12.766 7.628 13.5 12 13.5s7.114-.734 8.33-1.342a1.5 1.5 0 0 1 1.36 2.674l-.02.01c-1.785.892-5.042 1.658-9.67 1.658s-7.886-.766-9.67-1.658a1.5 1.5 0 0 1-.673-2.012l.001-.001zm2.012 5.328a1.5 1.5 0 0 0-1.36 2.674l.02.01C4.113 21.734 7.371 22.5 12 22.5s7.886-.766 9.67-1.658a1.5 1.5 0 1 0-1.32-2.694l-.02.01c-1.216.608-3.958 1.342-8.33 1.342s-7.114-.734-8.33-1.342z"
+                  />
+                </svg>
+              </span>
             </span>
-          </span>
-           
-          <span
-            className="bpk-banner-alert__message"
+             
+            <span
+              class="bpk-banner-alert__message"
+            >
+              Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+            </span>
+             
+          </header>
+          <div
+            style="height: 0px; overflow: hidden; transition: height 200ms ease;"
           >
-            Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-          </span>
-           
-        </header>
-        <div
-          onTransitionEnd={[Function]}
-          style={
-            Object {
-              "MozTransition": "height 200ms ease ",
-              "OTransition": "height 200ms ease ",
-              "WebkitTransition": "height 200ms ease ",
-              "height": 0,
-              "msTransition": "height 200ms ease ",
-              "overflow": "hidden",
-              "transition": "height 200ms ease ",
-            }
-          }
-        >
-          <div>
             <div
-              className="bpk-banner-alert__children-container"
-            />
+              style="display: none;"
+            >
+              <div
+                class="bpk-banner-alert__children-container"
+              />
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </div>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`BpkBannerAlertInner should render correctly with "type" attribute equal to "event" 1`] = `
-<div
-  className={null}
-  onTransitionEnd={[Function]}
-  style={
-    Object {
-      "MozTransition": "height 200ms ease ",
-      "OTransition": "height 200ms ease ",
-      "WebkitTransition": "height 200ms ease ",
-      "height": "auto",
-      "msTransition": "height 200ms ease ",
-      "overflow": "visible",
-      "transition": "height 200ms ease ",
-    }
-  }
->
-  <div>
-    <div
-      onTransitionEnd={[Function]}
-    >
-      <section
-        className="bpk-banner-alert bpk-banner-alert--event"
-      >
-        <header
-          className="bpk-banner-alert__header"
-          onClick={[Function]}
-          role="alert"
+<DocumentFragment>
+  <div
+    style="height: auto; overflow: visible; transition: height 200ms ease;"
+  >
+    <div>
+      <div>
+        <section
+          class="bpk-banner-alert bpk-banner-alert--event"
         >
-          <span
-            className="bpk-banner-alert__icon"
+          <header
+            class="bpk-banner-alert__header"
+            role="alert"
           >
             <span
-              style={
-                Object {
-                  "display": "inline-block",
-                  "lineHeight": "1.125rem",
-                  "marginTop": "0.1875rem",
-                  "verticalAlign": "top",
-                }
-              }
+              class="bpk-banner-alert__icon"
             >
-              <svg
-                className="bpk-banner-alert__event-icon"
-                height="18"
-                style={
-                  Object {
-                    "height": "1.125rem",
-                    "width": "1.125rem",
-                  }
-                }
-                viewBox="0 0 24 24"
-                width="18"
-                xmlns="http://www.w3.org/2000/svg"
+              <span
+                style="line-height: 1.125rem; display: inline-block; margin-top: 0.1875rem; vertical-align: top;"
               >
-                <path
-                  d="M12 1.5A10.5 10.5 0 1 0 22.5 12 10.5 10.5 0 0 0 12 1.5zM12 6a1.498 1.498 0 1 1-1.498 1.498A1.498 1.498 0 0 1 12 6zm1.493 10.676a1.5 1.5 0 0 1-2.98.001l-.01-.175-.003-4.501.01-.176a1.5 1.5 0 0 1 2.98 0l.01.175.003 4.501z"
-                />
-              </svg>
+                <svg
+                  class="bpk-banner-alert__event-icon"
+                  height="18"
+                  style="width: 1.125rem; height: 1.125rem;"
+                  viewBox="0 0 24 24"
+                  width="18"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M12 1.5A10.5 10.5 0 1 0 22.5 12 10.5 10.5 0 0 0 12 1.5zM12 6a1.498 1.498 0 1 1-1.498 1.498A1.498 1.498 0 0 1 12 6zm1.493 10.676a1.5 1.5 0 0 1-2.98.001l-.01-.175-.003-4.501.01-.176a1.5 1.5 0 0 1 2.98 0l.01.175.003 4.501z"
+                  />
+                </svg>
+              </span>
             </span>
-          </span>
-           
-          <span
-            className="bpk-banner-alert__message"
+             
+            <span
+              class="bpk-banner-alert__message"
+            >
+              Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+            </span>
+             
+          </header>
+          <div
+            style="height: 0px; overflow: hidden; transition: height 200ms ease;"
           >
-            Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-          </span>
-           
-        </header>
-        <div
-          onTransitionEnd={[Function]}
-          style={
-            Object {
-              "MozTransition": "height 200ms ease ",
-              "OTransition": "height 200ms ease ",
-              "WebkitTransition": "height 200ms ease ",
-              "height": 0,
-              "msTransition": "height 200ms ease ",
-              "overflow": "hidden",
-              "transition": "height 200ms ease ",
-            }
-          }
-        >
-          <div>
             <div
-              className="bpk-banner-alert__children-container"
-            />
+              style="display: none;"
+            >
+              <div
+                class="bpk-banner-alert__children-container"
+              />
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </div>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`BpkBannerAlertInner should render correctly with "type" attribute equal to "neutral" 1`] = `
-<div
-  className={null}
-  onTransitionEnd={[Function]}
-  style={
-    Object {
-      "MozTransition": "height 200ms ease ",
-      "OTransition": "height 200ms ease ",
-      "WebkitTransition": "height 200ms ease ",
-      "height": "auto",
-      "msTransition": "height 200ms ease ",
-      "overflow": "visible",
-      "transition": "height 200ms ease ",
-    }
-  }
->
-  <div>
-    <div
-      onTransitionEnd={[Function]}
-    >
-      <section
-        className="bpk-banner-alert bpk-banner-alert--neutral"
-      >
-        <header
-          className="bpk-banner-alert__header"
-          onClick={[Function]}
-          role="alert"
+<DocumentFragment>
+  <div
+    style="height: auto; overflow: visible; transition: height 200ms ease;"
+  >
+    <div>
+      <div>
+        <section
+          class="bpk-banner-alert bpk-banner-alert--neutral"
         >
-          <span
-            className="bpk-banner-alert__icon"
+          <header
+            class="bpk-banner-alert__header"
+            role="alert"
           >
             <span
-              style={
-                Object {
-                  "display": "inline-block",
-                  "lineHeight": "1.125rem",
-                  "marginTop": "0.1875rem",
-                  "verticalAlign": "top",
-                }
-              }
+              class="bpk-banner-alert__icon"
             >
-              <svg
-                className="bpk-banner-alert__neutral-icon"
-                height="18"
-                style={
-                  Object {
-                    "height": "1.125rem",
-                    "width": "1.125rem",
-                  }
-                }
-                viewBox="0 0 24 24"
-                width="18"
-                xmlns="http://www.w3.org/2000/svg"
+              <span
+                style="line-height: 1.125rem; display: inline-block; margin-top: 0.1875rem; vertical-align: top;"
               >
-                <path
-                  d="M12 1.5A10.5 10.5 0 1 0 22.5 12 10.5 10.5 0 0 0 12 1.5zM12 6a1.498 1.498 0 1 1-1.498 1.498A1.498 1.498 0 0 1 12 6zm1.493 10.676a1.5 1.5 0 0 1-2.98.001l-.01-.175-.003-4.501.01-.176a1.5 1.5 0 0 1 2.98 0l.01.175.003 4.501z"
-                />
-              </svg>
+                <svg
+                  class="bpk-banner-alert__neutral-icon"
+                  height="18"
+                  style="width: 1.125rem; height: 1.125rem;"
+                  viewBox="0 0 24 24"
+                  width="18"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M12 1.5A10.5 10.5 0 1 0 22.5 12 10.5 10.5 0 0 0 12 1.5zM12 6a1.498 1.498 0 1 1-1.498 1.498A1.498 1.498 0 0 1 12 6zm1.493 10.676a1.5 1.5 0 0 1-2.98.001l-.01-.175-.003-4.501.01-.176a1.5 1.5 0 0 1 2.98 0l.01.175.003 4.501z"
+                  />
+                </svg>
+              </span>
             </span>
-          </span>
-           
-          <span
-            className="bpk-banner-alert__message"
+             
+            <span
+              class="bpk-banner-alert__message"
+            >
+              Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+            </span>
+             
+          </header>
+          <div
+            style="height: 0px; overflow: hidden; transition: height 200ms ease;"
           >
-            Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-          </span>
-           
-        </header>
-        <div
-          onTransitionEnd={[Function]}
-          style={
-            Object {
-              "MozTransition": "height 200ms ease ",
-              "OTransition": "height 200ms ease ",
-              "WebkitTransition": "height 200ms ease ",
-              "height": 0,
-              "msTransition": "height 200ms ease ",
-              "overflow": "hidden",
-              "transition": "height 200ms ease ",
-            }
-          }
-        >
-          <div>
             <div
-              className="bpk-banner-alert__children-container"
-            />
+              style="display: none;"
+            >
+              <div
+                class="bpk-banner-alert__children-container"
+              />
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </div>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`BpkBannerAlertInner should render correctly with "type" attribute equal to "primary" 1`] = `
-<div
-  className={null}
-  onTransitionEnd={[Function]}
-  style={
-    Object {
-      "MozTransition": "height 200ms ease ",
-      "OTransition": "height 200ms ease ",
-      "WebkitTransition": "height 200ms ease ",
-      "height": "auto",
-      "msTransition": "height 200ms ease ",
-      "overflow": "visible",
-      "transition": "height 200ms ease ",
-    }
-  }
->
-  <div>
-    <div
-      onTransitionEnd={[Function]}
-    >
-      <section
-        className="bpk-banner-alert bpk-banner-alert--primary"
-      >
-        <header
-          className="bpk-banner-alert__header"
-          onClick={[Function]}
-          role="alert"
+<DocumentFragment>
+  <div
+    style="height: auto; overflow: visible; transition: height 200ms ease;"
+  >
+    <div>
+      <div>
+        <section
+          class="bpk-banner-alert bpk-banner-alert--primary"
         >
-          <span
-            className="bpk-banner-alert__icon"
+          <header
+            class="bpk-banner-alert__header"
+            role="alert"
           >
             <span
-              style={
-                Object {
-                  "display": "inline-block",
-                  "lineHeight": "1.125rem",
-                  "marginTop": "0.1875rem",
-                  "verticalAlign": "top",
-                }
-              }
+              class="bpk-banner-alert__icon"
             >
-              <svg
-                className="bpk-banner-alert__primary-icon"
-                height="18"
-                style={
-                  Object {
-                    "height": "1.125rem",
-                    "width": "1.125rem",
-                  }
-                }
-                viewBox="0 0 24 24"
-                width="18"
-                xmlns="http://www.w3.org/2000/svg"
+              <span
+                style="line-height: 1.125rem; display: inline-block; margin-top: 0.1875rem; vertical-align: top;"
               >
-                <path
-                  d="M12 1.5A10.5 10.5 0 1 0 22.5 12 10.5 10.5 0 0 0 12 1.5zM12 6a1.498 1.498 0 1 1-1.498 1.498A1.498 1.498 0 0 1 12 6zm1.493 10.676a1.5 1.5 0 0 1-2.98.001l-.01-.175-.003-4.501.01-.176a1.5 1.5 0 0 1 2.98 0l.01.175.003 4.501z"
-                />
-              </svg>
+                <svg
+                  class="bpk-banner-alert__primary-icon"
+                  height="18"
+                  style="width: 1.125rem; height: 1.125rem;"
+                  viewBox="0 0 24 24"
+                  width="18"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M12 1.5A10.5 10.5 0 1 0 22.5 12 10.5 10.5 0 0 0 12 1.5zM12 6a1.498 1.498 0 1 1-1.498 1.498A1.498 1.498 0 0 1 12 6zm1.493 10.676a1.5 1.5 0 0 1-2.98.001l-.01-.175-.003-4.501.01-.176a1.5 1.5 0 0 1 2.98 0l.01.175.003 4.501z"
+                  />
+                </svg>
+              </span>
             </span>
-          </span>
-           
-          <span
-            className="bpk-banner-alert__message"
+             
+            <span
+              class="bpk-banner-alert__message"
+            >
+              Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+            </span>
+             
+          </header>
+          <div
+            style="height: 0px; overflow: hidden; transition: height 200ms ease;"
           >
-            Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-          </span>
-           
-        </header>
-        <div
-          onTransitionEnd={[Function]}
-          style={
-            Object {
-              "MozTransition": "height 200ms ease ",
-              "OTransition": "height 200ms ease ",
-              "WebkitTransition": "height 200ms ease ",
-              "height": 0,
-              "msTransition": "height 200ms ease ",
-              "overflow": "hidden",
-              "transition": "height 200ms ease ",
-            }
-          }
-        >
-          <div>
             <div
-              className="bpk-banner-alert__children-container"
-            />
+              style="display: none;"
+            >
+              <div
+                class="bpk-banner-alert__children-container"
+              />
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </div>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`BpkBannerAlertInner should render correctly with "type" attribute equal to "success" 1`] = `
-<div
-  className={null}
-  onTransitionEnd={[Function]}
-  style={
-    Object {
-      "MozTransition": "height 200ms ease ",
-      "OTransition": "height 200ms ease ",
-      "WebkitTransition": "height 200ms ease ",
-      "height": "auto",
-      "msTransition": "height 200ms ease ",
-      "overflow": "visible",
-      "transition": "height 200ms ease ",
-    }
-  }
->
-  <div>
-    <div
-      onTransitionEnd={[Function]}
-    >
-      <section
-        className="bpk-banner-alert bpk-banner-alert--success"
-      >
-        <header
-          className="bpk-banner-alert__header"
-          onClick={[Function]}
-          role="alert"
+<DocumentFragment>
+  <div
+    style="height: auto; overflow: visible; transition: height 200ms ease;"
+  >
+    <div>
+      <div>
+        <section
+          class="bpk-banner-alert bpk-banner-alert--success"
         >
-          <span
-            className="bpk-banner-alert__icon"
+          <header
+            class="bpk-banner-alert__header"
+            role="alert"
           >
             <span
-              style={
-                Object {
-                  "display": "inline-block",
-                  "lineHeight": "1.125rem",
-                  "marginTop": "0.1875rem",
-                  "verticalAlign": "top",
-                }
-              }
+              class="bpk-banner-alert__icon"
             >
-              <svg
-                className="bpk-banner-alert__success-icon"
-                height="18"
-                style={
-                  Object {
-                    "height": "1.125rem",
-                    "width": "1.125rem",
-                  }
-                }
-                viewBox="0 0 24 24"
-                width="18"
-                xmlns="http://www.w3.org/2000/svg"
+              <span
+                style="line-height: 1.125rem; display: inline-block; margin-top: 0.1875rem; vertical-align: top;"
               >
-                <path
-                  d="M12 1.5A10.5 10.5 0 1 0 22.5 12 10.53 10.53 0 0 0 12 1.5zm5.526 8.63h-.001l-6.624 6.37-4.523-4.948a1.535 1.535 0 0 1 .124-2.147l.021-.019a1.486 1.486 0 0 1 2.097.145l2.478 2.614 4.376-4.234.02-.019a1.486 1.486 0 0 1 2.1.088 1.536 1.536 0 0 1-.068 2.15z"
-                />
-              </svg>
+                <svg
+                  class="bpk-banner-alert__success-icon"
+                  height="18"
+                  style="width: 1.125rem; height: 1.125rem;"
+                  viewBox="0 0 24 24"
+                  width="18"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M12 1.5A10.5 10.5 0 1 0 22.5 12 10.53 10.53 0 0 0 12 1.5zm5.526 8.63h-.001l-6.624 6.37-4.523-4.948a1.535 1.535 0 0 1 .124-2.147l.021-.019a1.486 1.486 0 0 1 2.097.145l2.478 2.614 4.376-4.234.02-.019a1.486 1.486 0 0 1 2.1.088 1.536 1.536 0 0 1-.068 2.15z"
+                  />
+                </svg>
+              </span>
             </span>
-          </span>
-           
-          <span
-            className="bpk-banner-alert__message"
+             
+            <span
+              class="bpk-banner-alert__message"
+            >
+              Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+            </span>
+             
+          </header>
+          <div
+            style="height: 0px; overflow: hidden; transition: height 200ms ease;"
           >
-            Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-          </span>
-           
-        </header>
-        <div
-          onTransitionEnd={[Function]}
-          style={
-            Object {
-              "MozTransition": "height 200ms ease ",
-              "OTransition": "height 200ms ease ",
-              "WebkitTransition": "height 200ms ease ",
-              "height": 0,
-              "msTransition": "height 200ms ease ",
-              "overflow": "hidden",
-              "transition": "height 200ms ease ",
-            }
-          }
-        >
-          <div>
             <div
-              className="bpk-banner-alert__children-container"
-            />
+              style="display: none;"
+            >
+              <div
+                class="bpk-banner-alert__children-container"
+              />
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </div>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`BpkBannerAlertInner should render correctly with "type" attribute equal to "warn" 1`] = `
-<div
-  className={null}
-  onTransitionEnd={[Function]}
-  style={
-    Object {
-      "MozTransition": "height 200ms ease ",
-      "OTransition": "height 200ms ease ",
-      "WebkitTransition": "height 200ms ease ",
-      "height": "auto",
-      "msTransition": "height 200ms ease ",
-      "overflow": "visible",
-      "transition": "height 200ms ease ",
-    }
-  }
->
-  <div>
-    <div
-      onTransitionEnd={[Function]}
-    >
-      <section
-        className="bpk-banner-alert bpk-banner-alert--warn"
-      >
-        <header
-          className="bpk-banner-alert__header"
-          onClick={[Function]}
-          role="alert"
+<DocumentFragment>
+  <div
+    style="height: auto; overflow: visible; transition: height 200ms ease;"
+  >
+    <div>
+      <div>
+        <section
+          class="bpk-banner-alert bpk-banner-alert--warn"
         >
-          <span
-            className="bpk-banner-alert__icon"
+          <header
+            class="bpk-banner-alert__header"
+            role="alert"
           >
             <span
-              style={
-                Object {
-                  "display": "inline-block",
-                  "lineHeight": "1.125rem",
-                  "marginTop": "0.1875rem",
-                  "verticalAlign": "top",
-                }
-              }
+              class="bpk-banner-alert__icon"
             >
-              <svg
-                className="bpk-banner-alert__warn-icon"
-                height="18"
-                style={
-                  Object {
-                    "height": "1.125rem",
-                    "width": "1.125rem",
-                  }
-                }
-                viewBox="0 0 24 24"
-                width="18"
-                xmlns="http://www.w3.org/2000/svg"
+              <span
+                style="line-height: 1.125rem; display: inline-block; margin-top: 0.1875rem; vertical-align: top;"
               >
-                <path
-                  d="M12 1.5A10.5 10.5 0 1 0 22.5 12 10.5 10.5 0 0 0 12 1.5zM12 6a1.498 1.498 0 1 1-1.498 1.498A1.498 1.498 0 0 1 12 6zm1.493 10.676a1.5 1.5 0 0 1-2.98.001l-.01-.175-.003-4.501.01-.176a1.5 1.5 0 0 1 2.98 0l.01.175.003 4.501z"
-                />
-              </svg>
+                <svg
+                  class="bpk-banner-alert__warn-icon"
+                  height="18"
+                  style="width: 1.125rem; height: 1.125rem;"
+                  viewBox="0 0 24 24"
+                  width="18"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M12 1.5A10.5 10.5 0 1 0 22.5 12 10.5 10.5 0 0 0 12 1.5zM12 6a1.498 1.498 0 1 1-1.498 1.498A1.498 1.498 0 0 1 12 6zm1.493 10.676a1.5 1.5 0 0 1-2.98.001l-.01-.175-.003-4.501.01-.176a1.5 1.5 0 0 1 2.98 0l.01.175.003 4.501z"
+                  />
+                </svg>
+              </span>
             </span>
-          </span>
-           
-          <span
-            className="bpk-banner-alert__message"
+             
+            <span
+              class="bpk-banner-alert__message"
+            >
+              Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+            </span>
+             
+          </header>
+          <div
+            style="height: 0px; overflow: hidden; transition: height 200ms ease;"
           >
-            Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-          </span>
-           
-        </header>
-        <div
-          onTransitionEnd={[Function]}
-          style={
-            Object {
-              "MozTransition": "height 200ms ease ",
-              "OTransition": "height 200ms ease ",
-              "WebkitTransition": "height 200ms ease ",
-              "height": 0,
-              "msTransition": "height 200ms ease ",
-              "overflow": "hidden",
-              "transition": "height 200ms ease ",
-            }
-          }
-        >
-          <div>
             <div
-              className="bpk-banner-alert__children-container"
-            />
+              style="display: none;"
+            >
+              <div
+                class="bpk-banner-alert__children-container"
+              />
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </div>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`BpkBannerAlertInner should render correctly with a custom banner-alert class name 1`] = `
-<div
-  className={null}
-  onTransitionEnd={[Function]}
-  style={
-    Object {
-      "MozTransition": "height 200ms ease ",
-      "OTransition": "height 200ms ease ",
-      "WebkitTransition": "height 200ms ease ",
-      "height": "auto",
-      "msTransition": "height 200ms ease ",
-      "overflow": "visible",
-      "transition": "height 200ms ease ",
-    }
-  }
->
-  <div>
-    <div
-      onTransitionEnd={[Function]}
-    >
-      <section
-        className="bpk-banner-alert bpk-banner-alert--warn custom-class"
-      >
-        <header
-          className="bpk-banner-alert__header"
-          onClick={[Function]}
-          role="alert"
+<DocumentFragment>
+  <div
+    style="height: auto; overflow: visible; transition: height 200ms ease;"
+  >
+    <div>
+      <div>
+        <section
+          class="bpk-banner-alert bpk-banner-alert--warn custom-class"
         >
-          <span
-            className="bpk-banner-alert__icon"
+          <header
+            class="bpk-banner-alert__header"
+            role="alert"
           >
             <span
-              style={
-                Object {
-                  "display": "inline-block",
-                  "lineHeight": "1.125rem",
-                  "marginTop": "0.1875rem",
-                  "verticalAlign": "top",
-                }
-              }
+              class="bpk-banner-alert__icon"
             >
-              <svg
-                className="bpk-banner-alert__warn-icon"
-                height="18"
-                style={
-                  Object {
-                    "height": "1.125rem",
-                    "width": "1.125rem",
-                  }
-                }
-                viewBox="0 0 24 24"
-                width="18"
-                xmlns="http://www.w3.org/2000/svg"
+              <span
+                style="line-height: 1.125rem; display: inline-block; margin-top: 0.1875rem; vertical-align: top;"
               >
-                <path
-                  d="M12 1.5A10.5 10.5 0 1 0 22.5 12 10.5 10.5 0 0 0 12 1.5zM12 6a1.498 1.498 0 1 1-1.498 1.498A1.498 1.498 0 0 1 12 6zm1.493 10.676a1.5 1.5 0 0 1-2.98.001l-.01-.175-.003-4.501.01-.176a1.5 1.5 0 0 1 2.98 0l.01.175.003 4.501z"
-                />
-              </svg>
+                <svg
+                  class="bpk-banner-alert__warn-icon"
+                  height="18"
+                  style="width: 1.125rem; height: 1.125rem;"
+                  viewBox="0 0 24 24"
+                  width="18"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M12 1.5A10.5 10.5 0 1 0 22.5 12 10.5 10.5 0 0 0 12 1.5zM12 6a1.498 1.498 0 1 1-1.498 1.498A1.498 1.498 0 0 1 12 6zm1.493 10.676a1.5 1.5 0 0 1-2.98.001l-.01-.175-.003-4.501.01-.176a1.5 1.5 0 0 1 2.98 0l.01.175.003 4.501z"
+                  />
+                </svg>
+              </span>
             </span>
-          </span>
-           
-          <span
-            className="bpk-banner-alert__message"
+             
+            <span
+              class="bpk-banner-alert__message"
+            >
+              Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+            </span>
+             
+          </header>
+          <div
+            style="height: 0px; overflow: hidden; transition: height 200ms ease;"
           >
-            Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-          </span>
-           
-        </header>
-        <div
-          onTransitionEnd={[Function]}
-          style={
-            Object {
-              "MozTransition": "height 200ms ease ",
-              "OTransition": "height 200ms ease ",
-              "WebkitTransition": "height 200ms ease ",
-              "height": 0,
-              "msTransition": "height 200ms ease ",
-              "overflow": "hidden",
-              "transition": "height 200ms ease ",
-            }
-          }
-        >
-          <div>
             <div
-              className="bpk-banner-alert__children-container"
-            />
+              style="display: none;"
+            >
+              <div
+                class="bpk-banner-alert__children-container"
+              />
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </div>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`BpkBannerAlertInner should render correctly with a custom class name 1`] = `
-<div
-  className="custom-class"
-  onTransitionEnd={[Function]}
-  style={
-    Object {
-      "MozTransition": "height 200ms ease ",
-      "OTransition": "height 200ms ease ",
-      "WebkitTransition": "height 200ms ease ",
-      "height": "auto",
-      "msTransition": "height 200ms ease ",
-      "overflow": "visible",
-      "transition": "height 200ms ease ",
-    }
-  }
->
-  <div>
-    <div
-      onTransitionEnd={[Function]}
-    >
-      <section
-        className="bpk-banner-alert bpk-banner-alert--warn"
-      >
-        <header
-          className="bpk-banner-alert__header"
-          onClick={[Function]}
-          role="alert"
+<DocumentFragment>
+  <div
+    class="custom-class"
+    style="height: auto; overflow: visible; transition: height 200ms ease;"
+  >
+    <div>
+      <div>
+        <section
+          class="bpk-banner-alert bpk-banner-alert--warn"
         >
-          <span
-            className="bpk-banner-alert__icon"
+          <header
+            class="bpk-banner-alert__header"
+            role="alert"
           >
             <span
-              style={
-                Object {
-                  "display": "inline-block",
-                  "lineHeight": "1.125rem",
-                  "marginTop": "0.1875rem",
-                  "verticalAlign": "top",
-                }
-              }
+              class="bpk-banner-alert__icon"
             >
-              <svg
-                className="bpk-banner-alert__warn-icon"
-                height="18"
-                style={
-                  Object {
-                    "height": "1.125rem",
-                    "width": "1.125rem",
-                  }
-                }
-                viewBox="0 0 24 24"
-                width="18"
-                xmlns="http://www.w3.org/2000/svg"
+              <span
+                style="line-height: 1.125rem; display: inline-block; margin-top: 0.1875rem; vertical-align: top;"
               >
-                <path
-                  d="M12 1.5A10.5 10.5 0 1 0 22.5 12 10.5 10.5 0 0 0 12 1.5zM12 6a1.498 1.498 0 1 1-1.498 1.498A1.498 1.498 0 0 1 12 6zm1.493 10.676a1.5 1.5 0 0 1-2.98.001l-.01-.175-.003-4.501.01-.176a1.5 1.5 0 0 1 2.98 0l.01.175.003 4.501z"
-                />
-              </svg>
+                <svg
+                  class="bpk-banner-alert__warn-icon"
+                  height="18"
+                  style="width: 1.125rem; height: 1.125rem;"
+                  viewBox="0 0 24 24"
+                  width="18"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M12 1.5A10.5 10.5 0 1 0 22.5 12 10.5 10.5 0 0 0 12 1.5zM12 6a1.498 1.498 0 1 1-1.498 1.498A1.498 1.498 0 0 1 12 6zm1.493 10.676a1.5 1.5 0 0 1-2.98.001l-.01-.175-.003-4.501.01-.176a1.5 1.5 0 0 1 2.98 0l.01.175.003 4.501z"
+                  />
+                </svg>
+              </span>
             </span>
-          </span>
-           
-          <span
-            className="bpk-banner-alert__message"
+             
+            <span
+              class="bpk-banner-alert__message"
+            >
+              Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+            </span>
+             
+          </header>
+          <div
+            style="height: 0px; overflow: hidden; transition: height 200ms ease;"
           >
-            Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-          </span>
-           
-        </header>
-        <div
-          onTransitionEnd={[Function]}
-          style={
-            Object {
-              "MozTransition": "height 200ms ease ",
-              "OTransition": "height 200ms ease ",
-              "WebkitTransition": "height 200ms ease ",
-              "height": 0,
-              "msTransition": "height 200ms ease ",
-              "overflow": "hidden",
-              "transition": "height 200ms ease ",
-            }
-          }
-        >
-          <div>
             <div
-              className="bpk-banner-alert__children-container"
-            />
+              style="display: none;"
+            >
+              <div
+                class="bpk-banner-alert__children-container"
+              />
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </div>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`BpkBannerAlertInner should render correctly with a element based message 1`] = `
-<div
-  className={null}
-  onTransitionEnd={[Function]}
-  style={
-    Object {
-      "MozTransition": "height 200ms ease ",
-      "OTransition": "height 200ms ease ",
-      "WebkitTransition": "height 200ms ease ",
-      "height": "auto",
-      "msTransition": "height 200ms ease ",
-      "overflow": "visible",
-      "transition": "height 200ms ease ",
-    }
-  }
->
-  <div>
-    <div
-      onTransitionEnd={[Function]}
-    >
-      <section
-        className="bpk-banner-alert bpk-banner-alert--success"
-      >
-        <header
-          className="bpk-banner-alert__header bpk-banner-alert__header--expandable"
-          onClick={[Function]}
-          role="alert button"
+<DocumentFragment>
+  <div
+    style="height: auto; overflow: visible; transition: height 200ms ease;"
+  >
+    <div>
+      <div>
+        <section
+          class="bpk-banner-alert bpk-banner-alert--success"
         >
-          <span
-            className="bpk-banner-alert__icon"
+          <header
+            class="bpk-banner-alert__header bpk-banner-alert__header--expandable"
+            role="alert button"
           >
             <span
-              style={
-                Object {
-                  "display": "inline-block",
-                  "lineHeight": "1.125rem",
-                  "marginTop": "0.1875rem",
-                  "verticalAlign": "top",
-                }
-              }
-            >
-              <svg
-                className="bpk-banner-alert__success-icon"
-                height="18"
-                style={
-                  Object {
-                    "height": "1.125rem",
-                    "width": "1.125rem",
-                  }
-                }
-                viewBox="0 0 24 24"
-                width="18"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M12 1.5A10.5 10.5 0 1 0 22.5 12 10.53 10.53 0 0 0 12 1.5zm5.526 8.63h-.001l-6.624 6.37-4.523-4.948a1.535 1.535 0 0 1 .124-2.147l.021-.019a1.486 1.486 0 0 1 2.097.145l2.478 2.614 4.376-4.234.02-.019a1.486 1.486 0 0 1 2.1.088 1.536 1.536 0 0 1-.068 2.15z"
-                />
-              </svg>
-            </span>
-          </span>
-           
-          <span
-            className="bpk-banner-alert__message"
-          >
-            <p>
-              All 
-              <span>
-                good
-              </span>
-            </p>
-          </span>
-           
-          <span
-            className="bpk-banner-alert__toggle"
-          >
-            <button
-              aria-expanded={false}
-              aria-label="View more"
-              className="bpk-banner-alert__toggle-button"
-              title="View more"
-              type="button"
+              class="bpk-banner-alert__icon"
             >
               <span
-                style={
-                  Object {
-                    "display": "inline-block",
-                    "lineHeight": "1.125rem",
-                    "marginTop": "0.1875rem",
-                    "verticalAlign": "top",
-                  }
-                }
+                style="line-height: 1.125rem; display: inline-block; margin-top: 0.1875rem; vertical-align: top;"
               >
                 <svg
-                  className="bpk-banner-alert__expand-icon"
+                  class="bpk-banner-alert__success-icon"
                   height="18"
-                  style={
-                    Object {
-                      "height": "1.125rem",
-                      "width": "1.125rem",
-                    }
-                  }
+                  style="width: 1.125rem; height: 1.125rem;"
                   viewBox="0 0 24 24"
                   width="18"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    d="M19.113 8.095a1.496 1.496 0 0 1 0 2.008l-6.397 5.948a1 1 0 0 1-1.358.003l-6.532-6.01a1.427 1.427 0 0 1 .138-1.949 1.572 1.572 0 0 1 1.997-.103l5.078 4.638 4.97-4.535a1.72 1.72 0 0 1 2.104 0z"
+                    d="M12 1.5A10.5 10.5 0 1 0 22.5 12 10.53 10.53 0 0 0 12 1.5zm5.526 8.63h-.001l-6.624 6.37-4.523-4.948a1.535 1.535 0 0 1 .124-2.147l.021-.019a1.486 1.486 0 0 1 2.097.145l2.478 2.614 4.376-4.234.02-.019a1.486 1.486 0 0 1 2.1.088 1.536 1.536 0 0 1-.068 2.15z"
                   />
                 </svg>
               </span>
-            </button>
-          </span>
-        </header>
-        <div
-          onTransitionEnd={[Function]}
-          style={
-            Object {
-              "MozTransition": "height 200ms ease ",
-              "OTransition": "height 200ms ease ",
-              "WebkitTransition": "height 200ms ease ",
-              "height": 0,
-              "msTransition": "height 200ms ease ",
-              "overflow": "hidden",
-              "transition": "height 200ms ease ",
-            }
-          }
-        >
-          <div>
-            <div
-              className="bpk-banner-alert__children-container"
+            </span>
+             
+            <span
+              class="bpk-banner-alert__message"
             >
-              Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+              <p>
+                All 
+                <span>
+                  good
+                </span>
+              </p>
+            </span>
+             
+            <span
+              class="bpk-banner-alert__toggle"
+            >
+              <button
+                aria-expanded="false"
+                aria-label="View more"
+                class="bpk-banner-alert__toggle-button"
+                title="View more"
+                type="button"
+              >
+                <span
+                  style="line-height: 1.125rem; display: inline-block; margin-top: 0.1875rem; vertical-align: top;"
+                >
+                  <svg
+                    class="bpk-banner-alert__expand-icon"
+                    height="18"
+                    style="width: 1.125rem; height: 1.125rem;"
+                    viewBox="0 0 24 24"
+                    width="18"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M19.113 8.095a1.496 1.496 0 0 1 0 2.008l-6.397 5.948a1 1 0 0 1-1.358.003l-6.532-6.01a1.427 1.427 0 0 1 .138-1.949 1.572 1.572 0 0 1 1.997-.103l5.078 4.638 4.97-4.535a1.72 1.72 0 0 1 2.104 0z"
+                    />
+                  </svg>
+                </span>
+              </button>
+            </span>
+          </header>
+          <div
+            style="height: 0px; overflow: hidden; transition: height 200ms ease;"
+          >
+            <div
+              style="display: none;"
+            >
+              <div
+                class="bpk-banner-alert__children-container"
+              >
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </div>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`BpkBannerAlertInner should render correctly with animateOnLeave 1`] = `
-<div
-  className={null}
-  onTransitionEnd={[Function]}
-  style={
-    Object {
-      "MozTransition": "height 200ms ease ",
-      "OTransition": "height 200ms ease ",
-      "WebkitTransition": "height 200ms ease ",
-      "height": "auto",
-      "msTransition": "height 200ms ease ",
-      "overflow": "visible",
-      "transition": "height 200ms ease ",
-    }
-  }
->
-  <div>
-    <div
-      onTransitionEnd={[Function]}
-    >
-      <section
-        className="bpk-banner-alert bpk-banner-alert--warn"
-      >
-        <header
-          className="bpk-banner-alert__header"
-          onClick={[Function]}
-          role="alert"
+<DocumentFragment>
+  <div
+    style="height: auto; overflow: visible; transition: height 200ms ease;"
+  >
+    <div>
+      <div>
+        <section
+          class="bpk-banner-alert bpk-banner-alert--warn"
         >
-          <span
-            className="bpk-banner-alert__icon"
+          <header
+            class="bpk-banner-alert__header"
+            role="alert"
           >
             <span
-              style={
-                Object {
-                  "display": "inline-block",
-                  "lineHeight": "1.125rem",
-                  "marginTop": "0.1875rem",
-                  "verticalAlign": "top",
-                }
-              }
-            >
-              <svg
-                className="bpk-banner-alert__warn-icon"
-                height="18"
-                style={
-                  Object {
-                    "height": "1.125rem",
-                    "width": "1.125rem",
-                  }
-                }
-                viewBox="0 0 24 24"
-                width="18"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M12 1.5A10.5 10.5 0 1 0 22.5 12 10.5 10.5 0 0 0 12 1.5zM12 6a1.498 1.498 0 1 1-1.498 1.498A1.498 1.498 0 0 1 12 6zm1.493 10.676a1.5 1.5 0 0 1-2.98.001l-.01-.175-.003-4.501.01-.176a1.5 1.5 0 0 1 2.98 0l.01.175.003 4.501z"
-                />
-              </svg>
-            </span>
-          </span>
-           
-          <span
-            className="bpk-banner-alert__message"
-          >
-            Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-          </span>
-           
-          <span
-            className="bpk-banner-alert__toggle"
-          >
-            <button
-              aria-label="Dismiss"
-              className="bpk-close-button bpk-banner-alert__toggle-button"
-              onClick={[Function]}
-              title="Dismiss"
-              type="button"
-            >
-              <svg
-                className="bpk-close-button__icon"
-                height="18"
-                style={
-                  Object {
-                    "height": "1.125rem",
-                    "width": "1.125rem",
-                  }
-                }
-                viewBox="0 0 24 24"
-                width="18"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M5.587 3.467a1.5 1.5 0 1 0-2.194 2.046q.036.038.074.074l6.438 6.44-6.44 6.44a1.5 1.5 0 0 0 2.122 2.12l6.44-6.438 6.44 6.44a1.5 1.5 0 0 0 2.12-2.122l-6.438-6.44 6.44-6.44a1.5 1.5 0 0 0-2.122-2.12l-6.44 6.438-6.44-6.44z"
-                />
-              </svg>
-            </button>
-          </span>
-        </header>
-        <div
-          onTransitionEnd={[Function]}
-          style={
-            Object {
-              "MozTransition": "height 200ms ease ",
-              "OTransition": "height 200ms ease ",
-              "WebkitTransition": "height 200ms ease ",
-              "height": 0,
-              "msTransition": "height 200ms ease ",
-              "overflow": "hidden",
-              "transition": "height 200ms ease ",
-            }
-          }
-        >
-          <div>
-            <div
-              className="bpk-banner-alert__children-container"
-            />
-          </div>
-        </div>
-      </section>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`BpkBannerAlertInner should render correctly with arbitrary props 1`] = `
-<div
-  className={null}
-  onTransitionEnd={[Function]}
-  style={
-    Object {
-      "MozTransition": "height 200ms ease ",
-      "OTransition": "height 200ms ease ",
-      "WebkitTransition": "height 200ms ease ",
-      "height": "auto",
-      "msTransition": "height 200ms ease ",
-      "overflow": "visible",
-      "transition": "height 200ms ease ",
-    }
-  }
->
-  <div>
-    <div
-      onTransitionEnd={[Function]}
-    >
-      <section
-        className="bpk-banner-alert bpk-banner-alert--warn"
-      >
-        <header
-          className="bpk-banner-alert__header"
-          onClick={[Function]}
-          role="alert"
-        >
-          <span
-            className="bpk-banner-alert__icon"
-          >
-            <span
-              style={
-                Object {
-                  "display": "inline-block",
-                  "lineHeight": "1.125rem",
-                  "marginTop": "0.1875rem",
-                  "verticalAlign": "top",
-                }
-              }
-            >
-              <svg
-                className="bpk-banner-alert__warn-icon"
-                height="18"
-                style={
-                  Object {
-                    "height": "1.125rem",
-                    "width": "1.125rem",
-                  }
-                }
-                viewBox="0 0 24 24"
-                width="18"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M12 1.5A10.5 10.5 0 1 0 22.5 12 10.5 10.5 0 0 0 12 1.5zM12 6a1.498 1.498 0 1 1-1.498 1.498A1.498 1.498 0 0 1 12 6zm1.493 10.676a1.5 1.5 0 0 1-2.98.001l-.01-.175-.003-4.501.01-.176a1.5 1.5 0 0 1 2.98 0l.01.175.003 4.501z"
-                />
-              </svg>
-            </span>
-          </span>
-           
-          <span
-            className="bpk-banner-alert__message"
-          >
-            Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-          </span>
-           
-        </header>
-        <div
-          onTransitionEnd={[Function]}
-          style={
-            Object {
-              "MozTransition": "height 200ms ease ",
-              "OTransition": "height 200ms ease ",
-              "WebkitTransition": "height 200ms ease ",
-              "height": 0,
-              "msTransition": "height 200ms ease ",
-              "overflow": "hidden",
-              "transition": "height 200ms ease ",
-            }
-          }
-        >
-          <div>
-            <div
-              className="bpk-banner-alert__children-container"
-            />
-          </div>
-        </div>
-      </section>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`BpkBannerAlertInner should render correctly with child nodes 1`] = `
-<div
-  className={null}
-  onTransitionEnd={[Function]}
-  style={
-    Object {
-      "MozTransition": "height 200ms ease ",
-      "OTransition": "height 200ms ease ",
-      "WebkitTransition": "height 200ms ease ",
-      "height": "auto",
-      "msTransition": "height 200ms ease ",
-      "overflow": "visible",
-      "transition": "height 200ms ease ",
-    }
-  }
->
-  <div>
-    <div
-      onTransitionEnd={[Function]}
-    >
-      <section
-        className="bpk-banner-alert bpk-banner-alert--success"
-      >
-        <header
-          className="bpk-banner-alert__header bpk-banner-alert__header--expandable"
-          onClick={[Function]}
-          role="alert button"
-        >
-          <span
-            className="bpk-banner-alert__icon"
-          >
-            <span
-              style={
-                Object {
-                  "display": "inline-block",
-                  "lineHeight": "1.125rem",
-                  "marginTop": "0.1875rem",
-                  "verticalAlign": "top",
-                }
-              }
-            >
-              <svg
-                className="bpk-banner-alert__success-icon"
-                height="18"
-                style={
-                  Object {
-                    "height": "1.125rem",
-                    "width": "1.125rem",
-                  }
-                }
-                viewBox="0 0 24 24"
-                width="18"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M12 1.5A10.5 10.5 0 1 0 22.5 12 10.53 10.53 0 0 0 12 1.5zm5.526 8.63h-.001l-6.624 6.37-4.523-4.948a1.535 1.535 0 0 1 .124-2.147l.021-.019a1.486 1.486 0 0 1 2.097.145l2.478 2.614 4.376-4.234.02-.019a1.486 1.486 0 0 1 2.1.088 1.536 1.536 0 0 1-.068 2.15z"
-                />
-              </svg>
-            </span>
-          </span>
-           
-          <span
-            className="bpk-banner-alert__message"
-          >
-            Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-          </span>
-           
-          <span
-            className="bpk-banner-alert__toggle"
-          >
-            <button
-              aria-expanded={false}
-              aria-label="View more"
-              className="bpk-banner-alert__toggle-button"
-              title="View more"
-              type="button"
+              class="bpk-banner-alert__icon"
             >
               <span
-                style={
-                  Object {
-                    "display": "inline-block",
-                    "lineHeight": "1.125rem",
-                    "marginTop": "0.1875rem",
-                    "verticalAlign": "top",
-                  }
-                }
+                style="line-height: 1.125rem; display: inline-block; margin-top: 0.1875rem; vertical-align: top;"
               >
                 <svg
-                  className="bpk-banner-alert__expand-icon"
+                  class="bpk-banner-alert__warn-icon"
                   height="18"
-                  style={
-                    Object {
-                      "height": "1.125rem",
-                      "width": "1.125rem",
-                    }
-                  }
+                  style="width: 1.125rem; height: 1.125rem;"
                   viewBox="0 0 24 24"
                   width="18"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    d="M19.113 8.095a1.496 1.496 0 0 1 0 2.008l-6.397 5.948a1 1 0 0 1-1.358.003l-6.532-6.01a1.427 1.427 0 0 1 .138-1.949 1.572 1.572 0 0 1 1.997-.103l5.078 4.638 4.97-4.535a1.72 1.72 0 0 1 2.104 0z"
+                    d="M12 1.5A10.5 10.5 0 1 0 22.5 12 10.5 10.5 0 0 0 12 1.5zM12 6a1.498 1.498 0 1 1-1.498 1.498A1.498 1.498 0 0 1 12 6zm1.493 10.676a1.5 1.5 0 0 1-2.98.001l-.01-.175-.003-4.501.01-.176a1.5 1.5 0 0 1 2.98 0l.01.175.003 4.501z"
                   />
                 </svg>
               </span>
-            </button>
-          </span>
-        </header>
-        <div
-          onTransitionEnd={[Function]}
-          style={
-            Object {
-              "MozTransition": "height 200ms ease ",
-              "OTransition": "height 200ms ease ",
-              "WebkitTransition": "height 200ms ease ",
-              "height": 0,
-              "msTransition": "height 200ms ease ",
-              "overflow": "hidden",
-              "transition": "height 200ms ease ",
-            }
-          }
-        >
-          <div>
-            <div
-              className="bpk-banner-alert__children-container"
+            </span>
+             
+            <span
+              class="bpk-banner-alert__message"
             >
               Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+            </span>
+             
+            <span
+              class="bpk-banner-alert__toggle"
+            >
+              <button
+                aria-label="Dismiss"
+                class="bpk-close-button bpk-banner-alert__toggle-button"
+                title="Dismiss"
+                type="button"
+              >
+                <svg
+                  class="bpk-close-button__icon"
+                  height="18"
+                  style="width: 1.125rem; height: 1.125rem;"
+                  viewBox="0 0 24 24"
+                  width="18"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M5.587 3.467a1.5 1.5 0 1 0-2.194 2.046q.036.038.074.074l6.438 6.44-6.44 6.44a1.5 1.5 0 0 0 2.122 2.12l6.44-6.438 6.44 6.44a1.5 1.5 0 0 0 2.12-2.122l-6.438-6.44 6.44-6.44a1.5 1.5 0 0 0-2.122-2.12l-6.44 6.438-6.44-6.44z"
+                  />
+                </svg>
+              </button>
+            </span>
+          </header>
+          <div
+            style="height: 0px; overflow: hidden; transition: height 200ms ease;"
+          >
+            <div
+              style="display: none;"
+            >
+              <div
+                class="bpk-banner-alert__children-container"
+              />
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </div>
     </div>
   </div>
-</div>
+</DocumentFragment>
+`;
+
+exports[`BpkBannerAlertInner should render correctly with arbitrary props 1`] = `
+<DocumentFragment>
+  <div
+    style="height: auto; overflow: visible; transition: height 200ms ease;"
+  >
+    <div>
+      <div>
+        <section
+          class="bpk-banner-alert bpk-banner-alert--warn"
+        >
+          <header
+            class="bpk-banner-alert__header"
+            role="alert"
+          >
+            <span
+              class="bpk-banner-alert__icon"
+            >
+              <span
+                style="line-height: 1.125rem; display: inline-block; margin-top: 0.1875rem; vertical-align: top;"
+              >
+                <svg
+                  class="bpk-banner-alert__warn-icon"
+                  height="18"
+                  style="width: 1.125rem; height: 1.125rem;"
+                  viewBox="0 0 24 24"
+                  width="18"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M12 1.5A10.5 10.5 0 1 0 22.5 12 10.5 10.5 0 0 0 12 1.5zM12 6a1.498 1.498 0 1 1-1.498 1.498A1.498 1.498 0 0 1 12 6zm1.493 10.676a1.5 1.5 0 0 1-2.98.001l-.01-.175-.003-4.501.01-.176a1.5 1.5 0 0 1 2.98 0l.01.175.003 4.501z"
+                  />
+                </svg>
+              </span>
+            </span>
+             
+            <span
+              class="bpk-banner-alert__message"
+            >
+              Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+            </span>
+             
+          </header>
+          <div
+            style="height: 0px; overflow: hidden; transition: height 200ms ease;"
+          >
+            <div
+              style="display: none;"
+            >
+              <div
+                class="bpk-banner-alert__children-container"
+              />
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`BpkBannerAlertInner should render correctly with child nodes 1`] = `
+<DocumentFragment>
+  <div
+    style="height: auto; overflow: visible; transition: height 200ms ease;"
+  >
+    <div>
+      <div>
+        <section
+          class="bpk-banner-alert bpk-banner-alert--success"
+        >
+          <header
+            class="bpk-banner-alert__header bpk-banner-alert__header--expandable"
+            role="alert button"
+          >
+            <span
+              class="bpk-banner-alert__icon"
+            >
+              <span
+                style="line-height: 1.125rem; display: inline-block; margin-top: 0.1875rem; vertical-align: top;"
+              >
+                <svg
+                  class="bpk-banner-alert__success-icon"
+                  height="18"
+                  style="width: 1.125rem; height: 1.125rem;"
+                  viewBox="0 0 24 24"
+                  width="18"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M12 1.5A10.5 10.5 0 1 0 22.5 12 10.53 10.53 0 0 0 12 1.5zm5.526 8.63h-.001l-6.624 6.37-4.523-4.948a1.535 1.535 0 0 1 .124-2.147l.021-.019a1.486 1.486 0 0 1 2.097.145l2.478 2.614 4.376-4.234.02-.019a1.486 1.486 0 0 1 2.1.088 1.536 1.536 0 0 1-.068 2.15z"
+                  />
+                </svg>
+              </span>
+            </span>
+             
+            <span
+              class="bpk-banner-alert__message"
+            >
+              Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+            </span>
+             
+            <span
+              class="bpk-banner-alert__toggle"
+            >
+              <button
+                aria-expanded="false"
+                aria-label="View more"
+                class="bpk-banner-alert__toggle-button"
+                title="View more"
+                type="button"
+              >
+                <span
+                  style="line-height: 1.125rem; display: inline-block; margin-top: 0.1875rem; vertical-align: top;"
+                >
+                  <svg
+                    class="bpk-banner-alert__expand-icon"
+                    height="18"
+                    style="width: 1.125rem; height: 1.125rem;"
+                    viewBox="0 0 24 24"
+                    width="18"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M19.113 8.095a1.496 1.496 0 0 1 0 2.008l-6.397 5.948a1 1 0 0 1-1.358.003l-6.532-6.01a1.427 1.427 0 0 1 .138-1.949 1.572 1.572 0 0 1 1.997-.103l5.078 4.638 4.97-4.535a1.72 1.72 0 0 1 2.104 0z"
+                    />
+                  </svg>
+                </span>
+              </button>
+            </span>
+          </header>
+          <div
+            style="height: 0px; overflow: hidden; transition: height 200ms ease;"
+          >
+            <div
+              style="display: none;"
+            >
+              <div
+                class="bpk-banner-alert__children-container"
+              >
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
 `;
 
 exports[`BpkBannerAlertInner should render correctly with dismissable option 1`] = `
-<div
-  className={null}
-  onTransitionEnd={[Function]}
-  style={
-    Object {
-      "MozTransition": "height 200ms ease ",
-      "OTransition": "height 200ms ease ",
-      "WebkitTransition": "height 200ms ease ",
-      "height": "auto",
-      "msTransition": "height 200ms ease ",
-      "overflow": "visible",
-      "transition": "height 200ms ease ",
-    }
-  }
->
-  <div>
-    <div
-      onTransitionEnd={[Function]}
-    >
-      <section
-        className="bpk-banner-alert bpk-banner-alert--warn"
-      >
-        <header
-          className="bpk-banner-alert__header"
-          onClick={[Function]}
-          role="alert"
+<DocumentFragment>
+  <div
+    style="height: auto; overflow: visible; transition: height 200ms ease;"
+  >
+    <div>
+      <div>
+        <section
+          class="bpk-banner-alert bpk-banner-alert--warn"
         >
-          <span
-            className="bpk-banner-alert__icon"
+          <header
+            class="bpk-banner-alert__header"
+            role="alert"
           >
             <span
-              style={
-                Object {
-                  "display": "inline-block",
-                  "lineHeight": "1.125rem",
-                  "marginTop": "0.1875rem",
-                  "verticalAlign": "top",
-                }
-              }
+              class="bpk-banner-alert__icon"
             >
-              <svg
-                className="bpk-banner-alert__warn-icon"
-                height="18"
-                style={
-                  Object {
-                    "height": "1.125rem",
-                    "width": "1.125rem",
-                  }
-                }
-                viewBox="0 0 24 24"
-                width="18"
-                xmlns="http://www.w3.org/2000/svg"
+              <span
+                style="line-height: 1.125rem; display: inline-block; margin-top: 0.1875rem; vertical-align: top;"
               >
-                <path
-                  d="M12 1.5A10.5 10.5 0 1 0 22.5 12 10.5 10.5 0 0 0 12 1.5zM12 6a1.498 1.498 0 1 1-1.498 1.498A1.498 1.498 0 0 1 12 6zm1.493 10.676a1.5 1.5 0 0 1-2.98.001l-.01-.175-.003-4.501.01-.176a1.5 1.5 0 0 1 2.98 0l.01.175.003 4.501z"
-                />
-              </svg>
+                <svg
+                  class="bpk-banner-alert__warn-icon"
+                  height="18"
+                  style="width: 1.125rem; height: 1.125rem;"
+                  viewBox="0 0 24 24"
+                  width="18"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M12 1.5A10.5 10.5 0 1 0 22.5 12 10.5 10.5 0 0 0 12 1.5zM12 6a1.498 1.498 0 1 1-1.498 1.498A1.498 1.498 0 0 1 12 6zm1.493 10.676a1.5 1.5 0 0 1-2.98.001l-.01-.175-.003-4.501.01-.176a1.5 1.5 0 0 1 2.98 0l.01.175.003 4.501z"
+                  />
+                </svg>
+              </span>
             </span>
-          </span>
-           
-          <span
-            className="bpk-banner-alert__message"
-          >
-            Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-          </span>
-           
-          <span
-            className="bpk-banner-alert__toggle"
-          >
-            <button
-              aria-label="Dismiss"
-              className="bpk-close-button bpk-banner-alert__toggle-button"
-              onClick={[Function]}
-              title="Dismiss"
-              type="button"
+             
+            <span
+              class="bpk-banner-alert__message"
             >
-              <svg
-                className="bpk-close-button__icon"
-                height="18"
-                style={
-                  Object {
-                    "height": "1.125rem",
-                    "width": "1.125rem",
-                  }
-                }
-                viewBox="0 0 24 24"
-                width="18"
-                xmlns="http://www.w3.org/2000/svg"
+              Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+            </span>
+             
+            <span
+              class="bpk-banner-alert__toggle"
+            >
+              <button
+                aria-label="Dismiss"
+                class="bpk-close-button bpk-banner-alert__toggle-button"
+                title="Dismiss"
+                type="button"
               >
-                <path
-                  d="M5.587 3.467a1.5 1.5 0 1 0-2.194 2.046q.036.038.074.074l6.438 6.44-6.44 6.44a1.5 1.5 0 0 0 2.122 2.12l6.44-6.438 6.44 6.44a1.5 1.5 0 0 0 2.12-2.122l-6.438-6.44 6.44-6.44a1.5 1.5 0 0 0-2.122-2.12l-6.44 6.438-6.44-6.44z"
-                />
-              </svg>
-            </button>
-          </span>
-        </header>
-        <div
-          onTransitionEnd={[Function]}
-          style={
-            Object {
-              "MozTransition": "height 200ms ease ",
-              "OTransition": "height 200ms ease ",
-              "WebkitTransition": "height 200ms ease ",
-              "height": 0,
-              "msTransition": "height 200ms ease ",
-              "overflow": "hidden",
-              "transition": "height 200ms ease ",
-            }
-          }
-        >
-          <div>
+                <svg
+                  class="bpk-close-button__icon"
+                  height="18"
+                  style="width: 1.125rem; height: 1.125rem;"
+                  viewBox="0 0 24 24"
+                  width="18"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M5.587 3.467a1.5 1.5 0 1 0-2.194 2.046q.036.038.074.074l6.438 6.44-6.44 6.44a1.5 1.5 0 0 0 2.122 2.12l6.44-6.438 6.44 6.44a1.5 1.5 0 0 0 2.12-2.122l-6.438-6.44 6.44-6.44a1.5 1.5 0 0 0-2.122-2.12l-6.44 6.438-6.44-6.44z"
+                  />
+                </svg>
+              </button>
+            </span>
+          </header>
+          <div
+            style="height: 0px; overflow: hidden; transition: height 200ms ease;"
+          >
             <div
-              className="bpk-banner-alert__children-container"
-            />
+              style="display: none;"
+            >
+              <div
+                class="bpk-banner-alert__children-container"
+              />
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </div>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
-exports[`BpkBannerAlertInner should render correctly with show set false 1`] = `null`;
+exports[`BpkBannerAlertInner should render correctly with show set false 1`] = `<DocumentFragment />`;

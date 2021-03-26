@@ -19,42 +19,38 @@
 /* @flow strict */
 
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import CustomCloseIcon from 'bpk-component-icon/sm/close-circle';
 
 import BpkCloseButton from './BpkCloseButton';
 
 describe('BpkCloseButton', () => {
   it('should render correctly', () => {
-    const tree = renderer
-      .create(<BpkCloseButton label="Close" onClick={() => null} />)
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkCloseButton label="Close" onClick={() => null} />,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with a custom icon', () => {
-    const tree = renderer
-      .create(
-        <BpkCloseButton
-          label="Close"
-          onClick={() => null}
-          customIcon={CustomCloseIcon}
-        />,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkCloseButton
+        label="Close"
+        onClick={() => null}
+        customIcon={CustomCloseIcon}
+      />,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with a custom className', () => {
-    const tree = renderer
-      .create(
-        <BpkCloseButton
-          label="Close"
-          onClick={() => null}
-          className="my-custom-classname"
-        />,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkCloseButton
+        label="Close"
+        onClick={() => null}
+        className="my-custom-classname"
+      />,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 });

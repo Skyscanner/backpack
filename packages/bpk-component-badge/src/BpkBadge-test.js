@@ -17,56 +17,52 @@
  */
 
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import BpkSmallFlightIcon from 'bpk-component-icon/sm/flight';
 
 import BpkBadge, { BADGE_TYPES } from './BpkBadge';
 
 describe('BpkBadge', () => {
   it('should render correctly', () => {
-    const tree = renderer.create(<BpkBadge>Promociando</BpkBadge>).toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(<BpkBadge>Promociando</BpkBadge>);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with a "centered"', () => {
-    const tree = renderer
-      .create(<BpkBadge centered>Promociando</BpkBadge>)
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(<BpkBadge centered>Promociando</BpkBadge>);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with an icon', () => {
-    const tree = renderer
-      .create(
-        <BpkBadge>
-          <BpkSmallFlightIcon />
-          Promociando
-        </BpkBadge>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkBadge>
+        <BpkSmallFlightIcon />
+        Promociando
+      </BpkBadge>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with a "docked" attribute value equal to "right"', () => {
-    const tree = renderer
-      .create(<BpkBadge docked="right">Promociando</BpkBadge>)
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkBadge docked="right">Promociando</BpkBadge>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with a "docked" attribute value equal to "left"', () => {
-    const tree = renderer
-      .create(<BpkBadge docked="left">Promociando</BpkBadge>)
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkBadge docked="left">Promociando</BpkBadge>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   Object.keys(BADGE_TYPES).forEach(badgeType => {
     it(`should render correctly with type="${badgeType}"`, () => {
-      const tree = renderer
-        .create(<BpkBadge type={badgeType}>Promociando</BpkBadge>)
-        .toJSON();
-      expect(tree).toMatchSnapshot();
+      const { asFragment } = render(
+        <BpkBadge type={badgeType}>Promociando</BpkBadge>,
+      );
+      expect(asFragment()).toMatchSnapshot();
     });
   });
 });
