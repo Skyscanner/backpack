@@ -97,7 +97,7 @@
       "^.+\\.svg$": "<rootDir>/scripts/stubs/fileStub.js",
       "react-transition-group/CSSTransition": "<rootDir>/scripts/stubs/cssTransitionStub.js"
     },
-    "setupFiles": [
+    "setupFilesAfterEnv": [
       "<rootDir>/scripts/jest/setup.js"
     ],
     "testPathIgnorePatterns": [
@@ -124,6 +124,7 @@
     "@storybook/addon-links": "^5.3.14",
     "@storybook/addon-viewport": "^5.3.14",
     "@storybook/react": "^5.3.14",
+    "@testing-library/react": "^11.2.5",
     "autoprefixer": "^9.4.7",
     "babel-jest": "^24.9.0",
     "babel-loader": "^8.0.0",
@@ -159,6 +160,7 @@
     "gulp-theo": "^2.0.0",
     "husky": "^4.0.2",
     "jest": "^24.8.0",
+    "jest-axe": "^4.1.0",
     "js-yaml": "^3.13.1",
     "lerna": "^3.15.0",
     "lint-staged": "^10.0.6",

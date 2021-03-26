@@ -16,6 +16,7 @@
  * limitations under the License.
  */
 
+import 'jest-axe/extend-expect';
 import 'raf/polyfill';
 import { configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
