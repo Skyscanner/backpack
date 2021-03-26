@@ -17,64 +17,58 @@
  */
 
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 
 import BpkContentBubble from './BpkContentBubble';
 
 describe('BpkContentBubble', () => {
   it('renders correctly with required props', () => {
     const content = <div>Test</div>;
-    const tree = renderer
-      .create(<BpkContentBubble showPointer content={content} />)
-      .toJSON();
+    const { asFragment } = render(
+      <BpkContentBubble showPointer content={content} />,
+    );
 
-    expect(tree).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('renders correctly with a custom className', () => {
     const content = <div>Test</div>;
-    const tree = renderer
-      .create(
-        <BpkContentBubble
-          showPointer
-          content={content}
-          className="my-custom-class"
-          contentClassName="my-custom-content-class"
-        />,
-      )
-      .toJSON();
+    const { asFragment } = render(
+      <BpkContentBubble
+        showPointer
+        content={content}
+        className="my-custom-class"
+        contentClassName="my-custom-content-class"
+      />,
+    );
 
-    expect(tree).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('renders correctly with flareProps', () => {
     const content = <div>Test</div>;
-    const tree = renderer
-      .create(
-        <BpkContentBubble
-          showPointer
-          content={content}
-          rounded={false}
-          flareProps={{ rounded: false }}
-        />,
-      )
-      .toJSON();
+    const { asFragment } = render(
+      <BpkContentBubble
+        showPointer
+        content={content}
+        rounded={false}
+        flareProps={{ rounded: false }}
+      />,
+    );
 
-    expect(tree).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('renders correctly without pointer', () => {
     const content = <div>Test</div>;
-    const tree = renderer
-      .create(
-        <BpkContentBubble
-          content={content}
-          rounded={false}
-          flareProps={{ rounded: false }}
-        />,
-      )
-      .toJSON();
+    const { asFragment } = render(
+      <BpkContentBubble
+        content={content}
+        rounded={false}
+        flareProps={{ rounded: false }}
+      />,
+    );
 
-    expect(tree).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 });

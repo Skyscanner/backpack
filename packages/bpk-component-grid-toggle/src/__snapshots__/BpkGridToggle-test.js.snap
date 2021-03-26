@@ -1,37 +1,25 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`BpkGridToggle should render correctly 1`] = `
-<button
-  className="bpk-link"
-  onClick={[Function]}
-  title="Keyboard Shortcut: ctrl + cmd + g"
-  type="button"
->
-  Baseline grid 
-  on
-</button>
-`;
-
-exports[`BpkGridToggle should render correctly when toggled 1`] = `
-<button
-  className="bpk-link"
-  onClick={[Function]}
-  title="Keyboard Shortcut: ctrl + cmd + g"
-  type="button"
->
-  Baseline grid 
-  off
-</button>
+<DocumentFragment>
+  <button
+    class="bpk-link"
+    title="Keyboard Shortcut: ctrl + cmd + g"
+    type="button"
+  >
+    Baseline grid on
+  </button>
+</DocumentFragment>
 `;
 
 exports[`BpkGridToggle should render correctly with the className prop 1`] = `
-<button
-  className="bpk-link foo"
-  onClick={[Function]}
-  title="Keyboard Shortcut: ctrl + cmd + g"
-  type="button"
->
-  Baseline grid 
-  on
-</button>
+<DocumentFragment>
+  <button
+    class="bpk-link foo"
+    title="Keyboard Shortcut: ctrl + cmd + g"
+    type="button"
+  >
+    Baseline grid on
+  </button>
+</DocumentFragment>
 `;

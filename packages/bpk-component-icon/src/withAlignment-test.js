@@ -17,8 +17,7 @@
  */
 
 import React from 'react';
-import renderer from 'react-test-renderer';
-import ReactShallowRenderer from 'react-test-renderer/shallow';
+import { render } from '@testing-library/react';
 import {
   lineHeightSm,
   lineHeightBase,
@@ -55,8 +54,8 @@ describe('withAlignment', () => {
           iconSizes[i],
         );
 
-        const tree = renderer.create(<MyAlignedComponent />).toJSON();
-        expect(tree).toMatchSnapshot();
+        const { asFragment } = render(<MyAlignedComponent />);
+        expect(asFragment()).toMatchSnapshot();
       }
     }
   });
@@ -73,14 +72,13 @@ describe('withAlignment', () => {
       iconSizeSm,
     );
 
-    const tree = renderer
-      .create(<AlignedFloatingComponent style={{ float: 'right' }} />)
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <AlignedFloatingComponent style={{ float: 'right' }} />,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should wrap the component display name', () => {
-    const shallowRenderer = new ReactShallowRenderer();
     const AlignedComponent = withAlignment(
       props => <div {...props}>test</div>,
       lineHeightLg,
@@ -92,7 +90,7 @@ describe('withAlignment', () => {
       </div>
     );
 
-    const tree = shallowRenderer.render(<Wrapper />);
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(<Wrapper />);
+    expect(asFragment()).toMatchSnapshot();
   });
 });

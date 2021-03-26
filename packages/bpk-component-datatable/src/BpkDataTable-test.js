@@ -17,17 +17,13 @@
  */
 
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import { mount } from 'enzyme';
 import { SortDirection } from 'react-virtualized/dist/commonjs/Table';
 import _sortBy from 'lodash/sortBy';
 
 import BpkDataTable from './BpkDataTable';
 import BpkDataTableColumn from './BpkDataTableColumn';
-
-jest.mock('react-dom', () => ({
-  findDOMNode: () => ({}),
-}));
 
 const rows = [
   { name: 'Jose', description: 'Software Engineer', bla: 'Bla' },
@@ -36,162 +32,146 @@ const rows = [
 
 describe('BpkDataTable', () => {
   it('should render correctly with multiple columns', () => {
-    const tree = renderer
-      .create(
-        <BpkDataTable rows={rows} height={200}>
-          <BpkDataTableColumn label="Name" dataKey="name" width={100} />
-          <BpkDataTableColumn
-            label="Description"
-            dataKey="description"
-            width={100}
-            flexGrow={1}
-          />
-          <BpkDataTableColumn label="Bla" dataKey="bla" width={100} />
-        </BpkDataTable>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkDataTable rows={rows} height={200}>
+        <BpkDataTableColumn label="Name" dataKey="name" width={100} />
+        <BpkDataTableColumn
+          label="Description"
+          dataKey="description"
+          width={100}
+          flexGrow={1}
+        />
+        <BpkDataTableColumn label="Bla" dataKey="bla" width={100} />
+      </BpkDataTable>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly when "onRowClick" is set', () => {
-    const tree = renderer
-      .create(
-        <BpkDataTable rows={rows} height={200} onRowClick={() => {}}>
-          <BpkDataTableColumn label="Name" dataKey="name" width={100} />
-          <BpkDataTableColumn
-            label="Description"
-            dataKey="description"
-            width={100}
-            flexGrow={1}
-          />
-          <BpkDataTableColumn label="Bla" dataKey="bla" width={100} />
-        </BpkDataTable>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkDataTable rows={rows} height={200} onRowClick={() => {}}>
+        <BpkDataTableColumn label="Name" dataKey="name" width={100} />
+        <BpkDataTableColumn
+          label="Description"
+          dataKey="description"
+          width={100}
+          flexGrow={1}
+        />
+        <BpkDataTableColumn label="Bla" dataKey="bla" width={100} />
+      </BpkDataTable>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with no data; only headers', () => {
-    const tree = renderer
-      .create(
-        <BpkDataTable rows={[]} height={200}>
-          <BpkDataTableColumn label="Name" dataKey="name" width={100} />
-          <BpkDataTableColumn
-            label="Description"
-            dataKey="description"
-            width={100}
-            flexGrow={1}
-          />
-          <BpkDataTableColumn label="Bla" dataKey="bla" width={100} />
-        </BpkDataTable>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkDataTable rows={[]} height={200}>
+        <BpkDataTableColumn label="Name" dataKey="name" width={100} />
+        <BpkDataTableColumn
+          label="Description"
+          dataKey="description"
+          width={100}
+          flexGrow={1}
+        />
+        <BpkDataTableColumn label="Bla" dataKey="bla" width={100} />
+      </BpkDataTable>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with a specified width', () => {
-    const tree = renderer
-      .create(
-        <BpkDataTable rows={rows} height={200} width={400}>
-          <BpkDataTableColumn label="Name" dataKey="name" width={100} />
-          <BpkDataTableColumn
-            label="Description"
-            dataKey="description"
-            width={100}
-            flexGrow={1}
-          />
-          <BpkDataTableColumn label="Bla" dataKey="bla" width={100} />
-        </BpkDataTable>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkDataTable rows={rows} height={200} width={400}>
+        <BpkDataTableColumn label="Name" dataKey="name" width={100} />
+        <BpkDataTableColumn
+          label="Description"
+          dataKey="description"
+          width={100}
+          flexGrow={1}
+        />
+        <BpkDataTableColumn label="Bla" dataKey="bla" width={100} />
+      </BpkDataTable>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with a custom rowClassName string', () => {
-    const tree = renderer
-      .create(
-        <BpkDataTable
-          rows={rows}
-          height={200}
-          rowClassName="custom-data-table__row"
-        >
-          <BpkDataTableColumn label="Name" dataKey="name" width={100} />
-          <BpkDataTableColumn
-            label="Description"
-            dataKey="description"
-            width={100}
-            flexGrow={1}
-          />
-          <BpkDataTableColumn label="Bla" dataKey="bla" width={100} />
-        </BpkDataTable>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkDataTable
+        rows={rows}
+        height={200}
+        rowClassName="custom-data-table__row"
+      >
+        <BpkDataTableColumn label="Name" dataKey="name" width={100} />
+        <BpkDataTableColumn
+          label="Description"
+          dataKey="description"
+          width={100}
+          flexGrow={1}
+        />
+        <BpkDataTableColumn label="Bla" dataKey="bla" width={100} />
+      </BpkDataTable>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with a custom rowClassName function', () => {
-    const tree = renderer
-      .create(
-        <BpkDataTable
-          rows={rows}
-          height={200}
-          rowClassName={({ index }) =>
-            index % 2 === 0
-              ? 'custom-data-table__row_even'
-              : 'custom-data-table__row_odd'
-          }
-        >
-          <BpkDataTableColumn label="Name" dataKey="name" width={100} />
-          <BpkDataTableColumn
-            label="Description"
-            dataKey="description"
-            width={100}
-            flexGrow={1}
-          />
-          <BpkDataTableColumn label="Bla" dataKey="bla" width={100} />
-        </BpkDataTable>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkDataTable
+        rows={rows}
+        height={200}
+        rowClassName={({ index }) =>
+          index % 2 === 0
+            ? 'custom-data-table__row_even'
+            : 'custom-data-table__row_odd'
+        }
+      >
+        <BpkDataTableColumn label="Name" dataKey="name" width={100} />
+        <BpkDataTableColumn
+          label="Description"
+          dataKey="description"
+          width={100}
+          flexGrow={1}
+        />
+        <BpkDataTableColumn label="Bla" dataKey="bla" width={100} />
+      </BpkDataTable>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with a custom headerClassName', () => {
-    const tree = renderer
-      .create(
-        <BpkDataTable
-          rows={rows}
-          height={200}
-          headerClassName="custom-data-table__header"
-        >
-          <BpkDataTableColumn label="Name" dataKey="name" width={100} />
-          <BpkDataTableColumn
-            label="Description"
-            dataKey="description"
-            width={100}
-            flexGrow={1}
-          />
-          <BpkDataTableColumn label="Bla" dataKey="bla" width={100} />
-        </BpkDataTable>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkDataTable
+        rows={rows}
+        height={200}
+        headerClassName="custom-data-table__header"
+      >
+        <BpkDataTableColumn label="Name" dataKey="name" width={100} />
+        <BpkDataTableColumn
+          label="Description"
+          dataKey="description"
+          width={100}
+          flexGrow={1}
+        />
+        <BpkDataTableColumn label="Bla" dataKey="bla" width={100} />
+      </BpkDataTable>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
   it('should render correctly with a custom className', () => {
-    const tree = renderer
-      .create(
-        <BpkDataTable rows={rows} height={200} className="custom-data-table">
-          <BpkDataTableColumn label="Name" dataKey="name" width={100} />
-          <BpkDataTableColumn
-            label="Description"
-            dataKey="description"
-            width={100}
-            flexGrow={1}
-          />
-          <BpkDataTableColumn label="Bla" dataKey="bla" width={100} />
-        </BpkDataTable>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkDataTable rows={rows} height={200} className="custom-data-table">
+        <BpkDataTableColumn label="Name" dataKey="name" width={100} />
+        <BpkDataTableColumn
+          label="Description"
+          dataKey="description"
+          width={100}
+          flexGrow={1}
+        />
+        <BpkDataTableColumn label="Bla" dataKey="bla" width={100} />
+      </BpkDataTable>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should sort rows if header is clicked', () => {

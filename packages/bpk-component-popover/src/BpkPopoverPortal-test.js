@@ -19,9 +19,9 @@
 /* @flow strict */
 
 import React from 'react';
-import Shallow from 'react-test-renderer/shallow';
-import { mount } from 'enzyme';
+import { mount, shallow } from 'enzyme';
 import { render } from '@testing-library/react';
+import toJson from 'enzyme-to-json';
 
 jest.mock(
   '@skyscanner/popper.js',
@@ -90,8 +90,7 @@ describe('BpkPopoverPortal', () => {
     // are passed to the <Portal> component.
 
     it('should render correctly with portalClassName added to portal component', () => {
-      const shallowRenderer = Shallow.createRenderer();
-      const result = shallowRenderer.render(
+      const result = shallow(
         <BpkPopoverPortal
           id="my-popover"
           target={<div>target</div>}
@@ -104,13 +103,12 @@ describe('BpkPopoverPortal', () => {
           <div>My popover content</div>
         </BpkPopoverPortal>,
       );
-      expect(result).toMatchSnapshot();
+      expect(toJson(result)).toMatchSnapshot();
     });
 
     it('should render correctly with portalStyle added to portal component', () => {
-      const shallowRenderer = Shallow.createRenderer();
       const customStyle: ?Object = { color: 'red' }; // eslint-disable-line  backpack/use-tokens
-      const result = shallowRenderer.render(
+      const result = shallow(
         <BpkPopoverPortal
           id="my-popover"
           target={<div>target</div>}
@@ -124,7 +122,7 @@ describe('BpkPopoverPortal', () => {
         </BpkPopoverPortal>,
       );
 
-      expect(result).toMatchSnapshot();
+      expect(toJson(result)).toMatchSnapshot();
     });
   });
 

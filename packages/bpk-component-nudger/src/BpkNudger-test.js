@@ -17,45 +17,44 @@
  */
 
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { mount } from 'enzyme';
+import { render } from '@testing-library/react';
 
 import BpkConfigurableNudger from './BpkConfigurableNudger';
 import BpkNudger from './BpkNudger';
 
 describe('BpkNudger', () => {
   it('should render correctly', () => {
-    const tree = renderer
-      .create(
-        <BpkNudger
-          id="nudger"
-          min={1}
-          max={9}
-          value={2}
-          onChange={() => null}
-          decreaseButtonLabel="Decrease"
-          increaseButtonLabel="Increase"
-        />,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkNudger
+        id="nudger"
+        min={1}
+        max={9}
+        value={2}
+        onChange={() => null}
+        decreaseButtonLabel="Decrease"
+        increaseButtonLabel="Increase"
+      />,
+    );
+
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render as an outline nudger correctly', () => {
-    const tree = renderer
-      .create(
-        <BpkNudger
-          id="nudger"
-          min={1}
-          max={9}
-          value={2}
-          onChange={() => null}
-          decreaseButtonLabel="Decrease"
-          increaseButtonLabel="Increase"
-          buttonType="outline"
-        />,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkNudger
+        id="nudger"
+        min={1}
+        max={9}
+        value={2}
+        onChange={() => null}
+        decreaseButtonLabel="Decrease"
+        increaseButtonLabel="Increase"
+        buttonType="outline"
+      />,
+    );
+
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render as a configurable nudger correctly', () => {
@@ -79,132 +78,121 @@ describe('BpkNudger', () => {
 
     const formatValue = a => a.toString();
 
-    const tree = renderer
-      .create(
-        <BpkConfigurableNudger
-          id="nudger"
-          min="economy"
-          max="first"
-          value="premium"
-          onChange={() => null}
-          decreaseButtonLabel="Decrease"
-          increaseButtonLabel="Increase"
-          compareValues={compareValues}
-          incrementValue={incrementValue}
-          decrementValue={decrementValue}
-          formatValue={formatValue}
-        />,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkConfigurableNudger
+        id="nudger"
+        min="economy"
+        max="first"
+        value="premium"
+        onChange={() => null}
+        decreaseButtonLabel="Decrease"
+        increaseButtonLabel="Increase"
+        compareValues={compareValues}
+        incrementValue={incrementValue}
+        decrementValue={decrementValue}
+        formatValue={formatValue}
+      />,
+    );
+
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with a "className" attribute', () => {
-    const tree = renderer
-      .create(
-        <BpkNudger
-          id="nudger"
-          min={1}
-          max={9}
-          value={2}
-          onChange={() => null}
-          decreaseButtonLabel="Decrease"
-          increaseButtonLabel="Increase"
-          className="my-nudger"
-        />,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkNudger
+        id="nudger"
+        min={1}
+        max={9}
+        value={2}
+        onChange={() => null}
+        decreaseButtonLabel="Decrease"
+        increaseButtonLabel="Increase"
+        className="my-nudger"
+      />,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with a value = min', () => {
-    const tree = renderer
-      .create(
-        <BpkNudger
-          id="nudger"
-          min={1}
-          max={9}
-          value={1}
-          onChange={() => null}
-          decreaseButtonLabel="Decrease"
-          increaseButtonLabel="Increase"
-        />,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkNudger
+        id="nudger"
+        min={1}
+        max={9}
+        value={1}
+        onChange={() => null}
+        decreaseButtonLabel="Decrease"
+        increaseButtonLabel="Increase"
+      />,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with a value = max', () => {
-    const tree = renderer
-      .create(
-        <BpkNudger
-          id="nudger"
-          min={1}
-          max={9}
-          value={9}
-          onChange={() => null}
-          decreaseButtonLabel="Decrease"
-          increaseButtonLabel="Increase"
-        />,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkNudger
+        id="nudger"
+        min={1}
+        max={9}
+        value={9}
+        onChange={() => null}
+        decreaseButtonLabel="Decrease"
+        increaseButtonLabel="Increase"
+      />,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with a value < min', () => {
-    const tree = renderer
-      .create(
-        <BpkNudger
-          id="nudger"
-          min={1}
-          max={9}
-          value={0}
-          onChange={() => null}
-          decreaseButtonLabel="Decrease"
-          increaseButtonLabel="Increase"
-        />,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkNudger
+        id="nudger"
+        min={1}
+        max={9}
+        value={0}
+        onChange={() => null}
+        decreaseButtonLabel="Decrease"
+        increaseButtonLabel="Increase"
+      />,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with a value > max', () => {
-    const tree = renderer
-      .create(
-        <BpkNudger
-          id="nudger"
-          min={1}
-          max={9}
-          value={10}
-          onChange={() => null}
-          decreaseButtonLabel="Decrease"
-          increaseButtonLabel="Increase"
-        />,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkNudger
+        id="nudger"
+        min={1}
+        max={9}
+        value={10}
+        onChange={() => null}
+        decreaseButtonLabel="Decrease"
+        increaseButtonLabel="Increase"
+      />,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should return a number up/down on change', () => {
     const onChangeSpy = jest.fn();
-    const tree = renderer
-      .create(
-        <BpkNudger
-          id="nudger"
-          min={1}
-          max={9}
-          value={3}
-          onChange={onChangeSpy}
-          decreaseButtonLabel="Decrease"
-          increaseButtonLabel="Increase"
-        />,
-      )
-      .toJSON();
+    const nudger = mount(
+      <BpkNudger
+        id="nudger"
+        min={1}
+        max={9}
+        value={3}
+        onChange={onChangeSpy}
+        decreaseButtonLabel="Decrease"
+        increaseButtonLabel="Increase"
+      />,
+    );
 
-    tree.children[0].props.onClick();
+    const minusButton = nudger.find('button').first();
+    minusButton.simulate('click');
     expect(onChangeSpy).toHaveBeenCalledWith(2);
 
-    tree.children[2].props.onClick();
+    const plusButton = nudger.find('button').last();
+    plusButton.simulate('click');
     expect(onChangeSpy).toHaveBeenCalledWith(4);
   });
 });

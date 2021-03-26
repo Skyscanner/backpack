@@ -1,2001 +1,1406 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`BpkDataTable should render correctly when "onRowClick" is set 1`] = `
-<div
-  style={
-    Object {
-      "overflow": "visible",
-      "width": 0,
-    }
-  }
->
+<DocumentFragment>
   <div
-    className="ReactVirtualized__Table bpk-data-table"
-    role="grid"
-    style={Object {}}
+    style="overflow: visible; width: 0px;"
   >
     <div
-      className="ReactVirtualized__Table__headerRow bpk-data-table__row bpk-data-table__row--clickable bpk-data-table__header-row"
-      role="row"
-      style={
-        Object {
-          "height": 60,
-          "overflow": "hidden",
-          "paddingRight": 0,
-          "width": 0,
-        }
-      }
+      class="ReactVirtualized__Table bpk-data-table"
+      role="grid"
     >
       <div
-        aria-label="Name"
-        aria-sort="ascending"
-        className="ReactVirtualized__Table__headerColumn bpk-data-table__header-column"
-        onClick={[Function]}
-        onKeyDown={[Function]}
-        role="columnheader"
-        style={
-          Object {
-            "WebkitFlex": "0 1 100px",
-            "flex": "0 1 100px",
-            "msFlex": "0 1 100px",
-          }
-        }
-        tabIndex={0}
+        class="ReactVirtualized__Table__headerRow bpk-data-table__row bpk-data-table__row--clickable bpk-data-table__header-row"
+        role="row"
+        style="height: 60px; overflow: hidden; padding-right: 0px; width: 0px;"
       >
-        <span
-          className="bpk-data-table-column__header"
-          title="Name"
-        >
-          Name
-        </span>
         <div
-          className="bpk-data-table-column__sort-icons"
+          aria-label="Name"
+          aria-sort="ascending"
+          class="ReactVirtualized__Table__headerColumn bpk-data-table__header-column"
+          role="columnheader"
+          style="flex: 0 1 100px;"
+          tabindex="0"
         >
-          <svg
-            className="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--up bpk-data-table-column__sort-icon--selected bpk-icon--rtl-support"
-            height="18"
-            style={
-              Object {
-                "height": "1.125rem",
-                "width": "1.125rem",
-              }
-            }
-            viewBox="0 0 24 24"
-            width="18"
-            xmlns="http://www.w3.org/2000/svg"
+          <span
+            class="bpk-data-table-column__header"
+            title="Name"
           >
-            <path
-              d="M7.463 15.75h9.074a1.358 1.358 0 0 0 1.11-2.251l-4.354-4.77a1.53 1.53 0 0 0-2.184-.04l-4.718 4.77a1.357 1.357 0 0 0 1.072 2.291z"
-            />
-          </svg>
-          <svg
-            className="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--down bpk-icon--rtl-support"
-            height="18"
-            style={
-              Object {
-                "height": "1.125rem",
-                "width": "1.125rem",
-              }
-            }
-            viewBox="0 0 24 24"
-            width="18"
-            xmlns="http://www.w3.org/2000/svg"
+            Name
+          </span>
+          <div
+            class="bpk-data-table-column__sort-icons"
           >
-            <path
-              d="M16.537 8.25H7.463a1.358 1.358 0 0 0-1.11 2.251l4.354 4.77a1.53 1.53 0 0 0 2.184.04l4.718-4.77a1.357 1.357 0 0 0-1.072-2.291z"
-            />
-          </svg>
+            <svg
+              class="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--up bpk-data-table-column__sort-icon--selected bpk-icon--rtl-support"
+              height="18"
+              style="width: 1.125rem; height: 1.125rem;"
+              viewBox="0 0 24 24"
+              width="18"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M7.463 15.75h9.074a1.358 1.358 0 0 0 1.11-2.251l-4.354-4.77a1.53 1.53 0 0 0-2.184-.04l-4.718 4.77a1.357 1.357 0 0 0 1.072 2.291z"
+              />
+            </svg>
+            <svg
+              class="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--down bpk-icon--rtl-support"
+              height="18"
+              style="width: 1.125rem; height: 1.125rem;"
+              viewBox="0 0 24 24"
+              width="18"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M16.537 8.25H7.463a1.358 1.358 0 0 0-1.11 2.251l4.354 4.77a1.53 1.53 0 0 0 2.184.04l4.718-4.77a1.357 1.357 0 0 0-1.072-2.291z"
+              />
+            </svg>
+          </div>
+        </div>
+        <div
+          aria-label="Description"
+          class="ReactVirtualized__Table__headerColumn bpk-data-table__header-column"
+          role="columnheader"
+          style="flex: 1 1 100px;"
+          tabindex="0"
+        >
+          <span
+            class="bpk-data-table-column__header"
+            title="Description"
+          >
+            Description
+          </span>
+          <div
+            class="bpk-data-table-column__sort-icons"
+          >
+            <svg
+              class="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--up bpk-icon--rtl-support"
+              height="18"
+              style="width: 1.125rem; height: 1.125rem;"
+              viewBox="0 0 24 24"
+              width="18"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M7.463 15.75h9.074a1.358 1.358 0 0 0 1.11-2.251l-4.354-4.77a1.53 1.53 0 0 0-2.184-.04l-4.718 4.77a1.357 1.357 0 0 0 1.072 2.291z"
+              />
+            </svg>
+            <svg
+              class="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--down bpk-icon--rtl-support"
+              height="18"
+              style="width: 1.125rem; height: 1.125rem;"
+              viewBox="0 0 24 24"
+              width="18"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M16.537 8.25H7.463a1.358 1.358 0 0 0-1.11 2.251l4.354 4.77a1.53 1.53 0 0 0 2.184.04l4.718-4.77a1.357 1.357 0 0 0-1.072-2.291z"
+              />
+            </svg>
+          </div>
+        </div>
+        <div
+          aria-label="Bla"
+          class="ReactVirtualized__Table__headerColumn bpk-data-table__header-column"
+          role="columnheader"
+          style="flex: 0 1 100px;"
+          tabindex="0"
+        >
+          <span
+            class="bpk-data-table-column__header"
+            title="Bla"
+          >
+            Bla
+          </span>
+          <div
+            class="bpk-data-table-column__sort-icons"
+          >
+            <svg
+              class="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--up bpk-icon--rtl-support"
+              height="18"
+              style="width: 1.125rem; height: 1.125rem;"
+              viewBox="0 0 24 24"
+              width="18"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M7.463 15.75h9.074a1.358 1.358 0 0 0 1.11-2.251l-4.354-4.77a1.53 1.53 0 0 0-2.184-.04l-4.718 4.77a1.357 1.357 0 0 0 1.072 2.291z"
+              />
+            </svg>
+            <svg
+              class="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--down bpk-icon--rtl-support"
+              height="18"
+              style="width: 1.125rem; height: 1.125rem;"
+              viewBox="0 0 24 24"
+              width="18"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M16.537 8.25H7.463a1.358 1.358 0 0 0-1.11 2.251l4.354 4.77a1.53 1.53 0 0 0 2.184.04l4.718-4.77a1.357 1.357 0 0 0-1.072-2.291z"
+              />
+            </svg>
+          </div>
         </div>
       </div>
       <div
-        aria-label="Description"
-        className="ReactVirtualized__Table__headerColumn bpk-data-table__header-column"
-        onClick={[Function]}
-        onKeyDown={[Function]}
-        role="columnheader"
-        style={
-          Object {
-            "WebkitFlex": "1 1 100px",
-            "flex": "1 1 100px",
-            "msFlex": "1 1 100px",
-          }
-        }
-        tabIndex={0}
-      >
-        <span
-          className="bpk-data-table-column__header"
-          title="Description"
-        >
-          Description
-        </span>
-        <div
-          className="bpk-data-table-column__sort-icons"
-        >
-          <svg
-            className="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--up bpk-icon--rtl-support"
-            height="18"
-            style={
-              Object {
-                "height": "1.125rem",
-                "width": "1.125rem",
-              }
-            }
-            viewBox="0 0 24 24"
-            width="18"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M7.463 15.75h9.074a1.358 1.358 0 0 0 1.11-2.251l-4.354-4.77a1.53 1.53 0 0 0-2.184-.04l-4.718 4.77a1.357 1.357 0 0 0 1.072 2.291z"
-            />
-          </svg>
-          <svg
-            className="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--down bpk-icon--rtl-support"
-            height="18"
-            style={
-              Object {
-                "height": "1.125rem",
-                "width": "1.125rem",
-              }
-            }
-            viewBox="0 0 24 24"
-            width="18"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M16.537 8.25H7.463a1.358 1.358 0 0 0-1.11 2.251l4.354 4.77a1.53 1.53 0 0 0 2.184.04l4.718-4.77a1.357 1.357 0 0 0-1.072-2.291z"
-            />
-          </svg>
-        </div>
-      </div>
+        aria-label="grid"
+        aria-readonly="true"
+        class="ReactVirtualized__Grid ReactVirtualized__Table__Grid"
+        role="rowgroup"
+        style="box-sizing: border-box; height: 140px; position: relative; width: 0px; will-change: transform; overflow-x: hidden; overflow-y: hidden;"
+        tabindex="0"
+      />
+    </div>
+  </div>
+  <div
+    class="resize-triggers"
+  >
+    <div
+      class="expand-trigger"
+    >
       <div
-        aria-label="Bla"
-        className="ReactVirtualized__Table__headerColumn bpk-data-table__header-column"
-        onClick={[Function]}
-        onKeyDown={[Function]}
-        role="columnheader"
-        style={
-          Object {
-            "WebkitFlex": "0 1 100px",
-            "flex": "0 1 100px",
-            "msFlex": "0 1 100px",
-          }
-        }
-        tabIndex={0}
-      >
-        <span
-          className="bpk-data-table-column__header"
-          title="Bla"
-        >
-          Bla
-        </span>
-        <div
-          className="bpk-data-table-column__sort-icons"
-        >
-          <svg
-            className="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--up bpk-icon--rtl-support"
-            height="18"
-            style={
-              Object {
-                "height": "1.125rem",
-                "width": "1.125rem",
-              }
-            }
-            viewBox="0 0 24 24"
-            width="18"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M7.463 15.75h9.074a1.358 1.358 0 0 0 1.11-2.251l-4.354-4.77a1.53 1.53 0 0 0-2.184-.04l-4.718 4.77a1.357 1.357 0 0 0 1.072 2.291z"
-            />
-          </svg>
-          <svg
-            className="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--down bpk-icon--rtl-support"
-            height="18"
-            style={
-              Object {
-                "height": "1.125rem",
-                "width": "1.125rem",
-              }
-            }
-            viewBox="0 0 24 24"
-            width="18"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M16.537 8.25H7.463a1.358 1.358 0 0 0-1.11 2.251l4.354 4.77a1.53 1.53 0 0 0 2.184.04l4.718-4.77a1.357 1.357 0 0 0-1.072-2.291z"
-            />
-          </svg>
-        </div>
-      </div>
+        style="width: 1px; height: 1px;"
+      />
     </div>
     <div
-      aria-label="grid"
-      aria-readonly={true}
-      className="ReactVirtualized__Grid ReactVirtualized__Table__Grid"
-      onScroll={[Function]}
-      role="rowgroup"
-      style={
-        Object {
-          "WebkitOverflowScrolling": "touch",
-          "boxSizing": "border-box",
-          "direction": undefined,
-          "height": 140,
-          "overflowX": "hidden",
-          "overflowY": "hidden",
-          "position": "relative",
-          "width": 0,
-          "willChange": "transform",
-        }
-      }
-      tabIndex={0}
+      class="contract-trigger"
     />
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`BpkDataTable should render correctly with a custom className 1`] = `
-<div
-  style={
-    Object {
-      "overflow": "visible",
-      "width": 0,
-    }
-  }
->
+<DocumentFragment>
   <div
-    className="ReactVirtualized__Table bpk-data-table custom-data-table"
-    role="grid"
-    style={Object {}}
+    style="overflow: visible; width: 0px;"
   >
     <div
-      className="ReactVirtualized__Table__headerRow bpk-data-table__row bpk-data-table__header-row"
-      role="row"
-      style={
-        Object {
-          "height": 60,
-          "overflow": "hidden",
-          "paddingRight": 0,
-          "width": 0,
-        }
-      }
+      class="ReactVirtualized__Table bpk-data-table custom-data-table"
+      role="grid"
     >
       <div
-        aria-label="Name"
-        aria-sort="ascending"
-        className="ReactVirtualized__Table__headerColumn bpk-data-table__header-column"
-        onClick={[Function]}
-        onKeyDown={[Function]}
-        role="columnheader"
-        style={
-          Object {
-            "WebkitFlex": "0 1 100px",
-            "flex": "0 1 100px",
-            "msFlex": "0 1 100px",
-          }
-        }
-        tabIndex={0}
+        class="ReactVirtualized__Table__headerRow bpk-data-table__row bpk-data-table__header-row"
+        role="row"
+        style="height: 60px; overflow: hidden; padding-right: 0px; width: 0px;"
       >
-        <span
-          className="bpk-data-table-column__header"
-          title="Name"
-        >
-          Name
-        </span>
         <div
-          className="bpk-data-table-column__sort-icons"
+          aria-label="Name"
+          aria-sort="ascending"
+          class="ReactVirtualized__Table__headerColumn bpk-data-table__header-column"
+          role="columnheader"
+          style="flex: 0 1 100px;"
+          tabindex="0"
         >
-          <svg
-            className="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--up bpk-data-table-column__sort-icon--selected bpk-icon--rtl-support"
-            height="18"
-            style={
-              Object {
-                "height": "1.125rem",
-                "width": "1.125rem",
-              }
-            }
-            viewBox="0 0 24 24"
-            width="18"
-            xmlns="http://www.w3.org/2000/svg"
+          <span
+            class="bpk-data-table-column__header"
+            title="Name"
           >
-            <path
-              d="M7.463 15.75h9.074a1.358 1.358 0 0 0 1.11-2.251l-4.354-4.77a1.53 1.53 0 0 0-2.184-.04l-4.718 4.77a1.357 1.357 0 0 0 1.072 2.291z"
-            />
-          </svg>
-          <svg
-            className="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--down bpk-icon--rtl-support"
-            height="18"
-            style={
-              Object {
-                "height": "1.125rem",
-                "width": "1.125rem",
-              }
-            }
-            viewBox="0 0 24 24"
-            width="18"
-            xmlns="http://www.w3.org/2000/svg"
+            Name
+          </span>
+          <div
+            class="bpk-data-table-column__sort-icons"
           >
-            <path
-              d="M16.537 8.25H7.463a1.358 1.358 0 0 0-1.11 2.251l4.354 4.77a1.53 1.53 0 0 0 2.184.04l4.718-4.77a1.357 1.357 0 0 0-1.072-2.291z"
-            />
-          </svg>
+            <svg
+              class="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--up bpk-data-table-column__sort-icon--selected bpk-icon--rtl-support"
+              height="18"
+              style="width: 1.125rem; height: 1.125rem;"
+              viewBox="0 0 24 24"
+              width="18"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M7.463 15.75h9.074a1.358 1.358 0 0 0 1.11-2.251l-4.354-4.77a1.53 1.53 0 0 0-2.184-.04l-4.718 4.77a1.357 1.357 0 0 0 1.072 2.291z"
+              />
+            </svg>
+            <svg
+              class="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--down bpk-icon--rtl-support"
+              height="18"
+              style="width: 1.125rem; height: 1.125rem;"
+              viewBox="0 0 24 24"
+              width="18"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M16.537 8.25H7.463a1.358 1.358 0 0 0-1.11 2.251l4.354 4.77a1.53 1.53 0 0 0 2.184.04l4.718-4.77a1.357 1.357 0 0 0-1.072-2.291z"
+              />
+            </svg>
+          </div>
+        </div>
+        <div
+          aria-label="Description"
+          class="ReactVirtualized__Table__headerColumn bpk-data-table__header-column"
+          role="columnheader"
+          style="flex: 1 1 100px;"
+          tabindex="0"
+        >
+          <span
+            class="bpk-data-table-column__header"
+            title="Description"
+          >
+            Description
+          </span>
+          <div
+            class="bpk-data-table-column__sort-icons"
+          >
+            <svg
+              class="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--up bpk-icon--rtl-support"
+              height="18"
+              style="width: 1.125rem; height: 1.125rem;"
+              viewBox="0 0 24 24"
+              width="18"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M7.463 15.75h9.074a1.358 1.358 0 0 0 1.11-2.251l-4.354-4.77a1.53 1.53 0 0 0-2.184-.04l-4.718 4.77a1.357 1.357 0 0 0 1.072 2.291z"
+              />
+            </svg>
+            <svg
+              class="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--down bpk-icon--rtl-support"
+              height="18"
+              style="width: 1.125rem; height: 1.125rem;"
+              viewBox="0 0 24 24"
+              width="18"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M16.537 8.25H7.463a1.358 1.358 0 0 0-1.11 2.251l4.354 4.77a1.53 1.53 0 0 0 2.184.04l4.718-4.77a1.357 1.357 0 0 0-1.072-2.291z"
+              />
+            </svg>
+          </div>
+        </div>
+        <div
+          aria-label="Bla"
+          class="ReactVirtualized__Table__headerColumn bpk-data-table__header-column"
+          role="columnheader"
+          style="flex: 0 1 100px;"
+          tabindex="0"
+        >
+          <span
+            class="bpk-data-table-column__header"
+            title="Bla"
+          >
+            Bla
+          </span>
+          <div
+            class="bpk-data-table-column__sort-icons"
+          >
+            <svg
+              class="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--up bpk-icon--rtl-support"
+              height="18"
+              style="width: 1.125rem; height: 1.125rem;"
+              viewBox="0 0 24 24"
+              width="18"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M7.463 15.75h9.074a1.358 1.358 0 0 0 1.11-2.251l-4.354-4.77a1.53 1.53 0 0 0-2.184-.04l-4.718 4.77a1.357 1.357 0 0 0 1.072 2.291z"
+              />
+            </svg>
+            <svg
+              class="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--down bpk-icon--rtl-support"
+              height="18"
+              style="width: 1.125rem; height: 1.125rem;"
+              viewBox="0 0 24 24"
+              width="18"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M16.537 8.25H7.463a1.358 1.358 0 0 0-1.11 2.251l4.354 4.77a1.53 1.53 0 0 0 2.184.04l4.718-4.77a1.357 1.357 0 0 0-1.072-2.291z"
+              />
+            </svg>
+          </div>
         </div>
       </div>
       <div
-        aria-label="Description"
-        className="ReactVirtualized__Table__headerColumn bpk-data-table__header-column"
-        onClick={[Function]}
-        onKeyDown={[Function]}
-        role="columnheader"
-        style={
-          Object {
-            "WebkitFlex": "1 1 100px",
-            "flex": "1 1 100px",
-            "msFlex": "1 1 100px",
-          }
-        }
-        tabIndex={0}
-      >
-        <span
-          className="bpk-data-table-column__header"
-          title="Description"
-        >
-          Description
-        </span>
-        <div
-          className="bpk-data-table-column__sort-icons"
-        >
-          <svg
-            className="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--up bpk-icon--rtl-support"
-            height="18"
-            style={
-              Object {
-                "height": "1.125rem",
-                "width": "1.125rem",
-              }
-            }
-            viewBox="0 0 24 24"
-            width="18"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M7.463 15.75h9.074a1.358 1.358 0 0 0 1.11-2.251l-4.354-4.77a1.53 1.53 0 0 0-2.184-.04l-4.718 4.77a1.357 1.357 0 0 0 1.072 2.291z"
-            />
-          </svg>
-          <svg
-            className="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--down bpk-icon--rtl-support"
-            height="18"
-            style={
-              Object {
-                "height": "1.125rem",
-                "width": "1.125rem",
-              }
-            }
-            viewBox="0 0 24 24"
-            width="18"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M16.537 8.25H7.463a1.358 1.358 0 0 0-1.11 2.251l4.354 4.77a1.53 1.53 0 0 0 2.184.04l4.718-4.77a1.357 1.357 0 0 0-1.072-2.291z"
-            />
-          </svg>
-        </div>
-      </div>
+        aria-label="grid"
+        aria-readonly="true"
+        class="ReactVirtualized__Grid ReactVirtualized__Table__Grid"
+        role="rowgroup"
+        style="box-sizing: border-box; height: 140px; position: relative; width: 0px; will-change: transform; overflow-x: hidden; overflow-y: hidden;"
+        tabindex="0"
+      />
+    </div>
+  </div>
+  <div
+    class="resize-triggers"
+  >
+    <div
+      class="expand-trigger"
+    >
       <div
-        aria-label="Bla"
-        className="ReactVirtualized__Table__headerColumn bpk-data-table__header-column"
-        onClick={[Function]}
-        onKeyDown={[Function]}
-        role="columnheader"
-        style={
-          Object {
-            "WebkitFlex": "0 1 100px",
-            "flex": "0 1 100px",
-            "msFlex": "0 1 100px",
-          }
-        }
-        tabIndex={0}
-      >
-        <span
-          className="bpk-data-table-column__header"
-          title="Bla"
-        >
-          Bla
-        </span>
-        <div
-          className="bpk-data-table-column__sort-icons"
-        >
-          <svg
-            className="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--up bpk-icon--rtl-support"
-            height="18"
-            style={
-              Object {
-                "height": "1.125rem",
-                "width": "1.125rem",
-              }
-            }
-            viewBox="0 0 24 24"
-            width="18"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M7.463 15.75h9.074a1.358 1.358 0 0 0 1.11-2.251l-4.354-4.77a1.53 1.53 0 0 0-2.184-.04l-4.718 4.77a1.357 1.357 0 0 0 1.072 2.291z"
-            />
-          </svg>
-          <svg
-            className="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--down bpk-icon--rtl-support"
-            height="18"
-            style={
-              Object {
-                "height": "1.125rem",
-                "width": "1.125rem",
-              }
-            }
-            viewBox="0 0 24 24"
-            width="18"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M16.537 8.25H7.463a1.358 1.358 0 0 0-1.11 2.251l4.354 4.77a1.53 1.53 0 0 0 2.184.04l4.718-4.77a1.357 1.357 0 0 0-1.072-2.291z"
-            />
-          </svg>
-        </div>
-      </div>
+        style="width: 1px; height: 1px;"
+      />
     </div>
     <div
-      aria-label="grid"
-      aria-readonly={true}
-      className="ReactVirtualized__Grid ReactVirtualized__Table__Grid"
-      onScroll={[Function]}
-      role="rowgroup"
-      style={
-        Object {
-          "WebkitOverflowScrolling": "touch",
-          "boxSizing": "border-box",
-          "direction": undefined,
-          "height": 140,
-          "overflowX": "hidden",
-          "overflowY": "hidden",
-          "position": "relative",
-          "width": 0,
-          "willChange": "transform",
-        }
-      }
-      tabIndex={0}
+      class="contract-trigger"
     />
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`BpkDataTable should render correctly with a custom headerClassName 1`] = `
-<div
-  style={
-    Object {
-      "overflow": "visible",
-      "width": 0,
-    }
-  }
->
+<DocumentFragment>
   <div
-    className="ReactVirtualized__Table bpk-data-table"
-    role="grid"
-    style={Object {}}
+    style="overflow: visible; width: 0px;"
   >
     <div
-      className="ReactVirtualized__Table__headerRow bpk-data-table__row bpk-data-table__header-row"
-      role="row"
-      style={
-        Object {
-          "height": 60,
-          "overflow": "hidden",
-          "paddingRight": 0,
-          "width": 0,
-        }
-      }
+      class="ReactVirtualized__Table bpk-data-table"
+      role="grid"
     >
       <div
-        aria-label="Name"
-        aria-sort="ascending"
-        className="ReactVirtualized__Table__headerColumn bpk-data-table__header-column custom-data-table__header"
-        onClick={[Function]}
-        onKeyDown={[Function]}
-        role="columnheader"
-        style={
-          Object {
-            "WebkitFlex": "0 1 100px",
-            "flex": "0 1 100px",
-            "msFlex": "0 1 100px",
-          }
-        }
-        tabIndex={0}
+        class="ReactVirtualized__Table__headerRow bpk-data-table__row bpk-data-table__header-row"
+        role="row"
+        style="height: 60px; overflow: hidden; padding-right: 0px; width: 0px;"
       >
-        <span
-          className="bpk-data-table-column__header"
-          title="Name"
-        >
-          Name
-        </span>
         <div
-          className="bpk-data-table-column__sort-icons"
+          aria-label="Name"
+          aria-sort="ascending"
+          class="ReactVirtualized__Table__headerColumn bpk-data-table__header-column custom-data-table__header"
+          role="columnheader"
+          style="flex: 0 1 100px;"
+          tabindex="0"
         >
-          <svg
-            className="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--up bpk-data-table-column__sort-icon--selected bpk-icon--rtl-support"
-            height="18"
-            style={
-              Object {
-                "height": "1.125rem",
-                "width": "1.125rem",
-              }
-            }
-            viewBox="0 0 24 24"
-            width="18"
-            xmlns="http://www.w3.org/2000/svg"
+          <span
+            class="bpk-data-table-column__header"
+            title="Name"
           >
-            <path
-              d="M7.463 15.75h9.074a1.358 1.358 0 0 0 1.11-2.251l-4.354-4.77a1.53 1.53 0 0 0-2.184-.04l-4.718 4.77a1.357 1.357 0 0 0 1.072 2.291z"
-            />
-          </svg>
-          <svg
-            className="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--down bpk-icon--rtl-support"
-            height="18"
-            style={
-              Object {
-                "height": "1.125rem",
-                "width": "1.125rem",
-              }
-            }
-            viewBox="0 0 24 24"
-            width="18"
-            xmlns="http://www.w3.org/2000/svg"
+            Name
+          </span>
+          <div
+            class="bpk-data-table-column__sort-icons"
           >
-            <path
-              d="M16.537 8.25H7.463a1.358 1.358 0 0 0-1.11 2.251l4.354 4.77a1.53 1.53 0 0 0 2.184.04l4.718-4.77a1.357 1.357 0 0 0-1.072-2.291z"
-            />
-          </svg>
+            <svg
+              class="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--up bpk-data-table-column__sort-icon--selected bpk-icon--rtl-support"
+              height="18"
+              style="width: 1.125rem; height: 1.125rem;"
+              viewBox="0 0 24 24"
+              width="18"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M7.463 15.75h9.074a1.358 1.358 0 0 0 1.11-2.251l-4.354-4.77a1.53 1.53 0 0 0-2.184-.04l-4.718 4.77a1.357 1.357 0 0 0 1.072 2.291z"
+              />
+            </svg>
+            <svg
+              class="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--down bpk-icon--rtl-support"
+              height="18"
+              style="width: 1.125rem; height: 1.125rem;"
+              viewBox="0 0 24 24"
+              width="18"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M16.537 8.25H7.463a1.358 1.358 0 0 0-1.11 2.251l4.354 4.77a1.53 1.53 0 0 0 2.184.04l4.718-4.77a1.357 1.357 0 0 0-1.072-2.291z"
+              />
+            </svg>
+          </div>
+        </div>
+        <div
+          aria-label="Description"
+          class="ReactVirtualized__Table__headerColumn bpk-data-table__header-column custom-data-table__header"
+          role="columnheader"
+          style="flex: 1 1 100px;"
+          tabindex="0"
+        >
+          <span
+            class="bpk-data-table-column__header"
+            title="Description"
+          >
+            Description
+          </span>
+          <div
+            class="bpk-data-table-column__sort-icons"
+          >
+            <svg
+              class="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--up bpk-icon--rtl-support"
+              height="18"
+              style="width: 1.125rem; height: 1.125rem;"
+              viewBox="0 0 24 24"
+              width="18"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M7.463 15.75h9.074a1.358 1.358 0 0 0 1.11-2.251l-4.354-4.77a1.53 1.53 0 0 0-2.184-.04l-4.718 4.77a1.357 1.357 0 0 0 1.072 2.291z"
+              />
+            </svg>
+            <svg
+              class="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--down bpk-icon--rtl-support"
+              height="18"
+              style="width: 1.125rem; height: 1.125rem;"
+              viewBox="0 0 24 24"
+              width="18"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M16.537 8.25H7.463a1.358 1.358 0 0 0-1.11 2.251l4.354 4.77a1.53 1.53 0 0 0 2.184.04l4.718-4.77a1.357 1.357 0 0 0-1.072-2.291z"
+              />
+            </svg>
+          </div>
+        </div>
+        <div
+          aria-label="Bla"
+          class="ReactVirtualized__Table__headerColumn bpk-data-table__header-column custom-data-table__header"
+          role="columnheader"
+          style="flex: 0 1 100px;"
+          tabindex="0"
+        >
+          <span
+            class="bpk-data-table-column__header"
+            title="Bla"
+          >
+            Bla
+          </span>
+          <div
+            class="bpk-data-table-column__sort-icons"
+          >
+            <svg
+              class="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--up bpk-icon--rtl-support"
+              height="18"
+              style="width: 1.125rem; height: 1.125rem;"
+              viewBox="0 0 24 24"
+              width="18"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M7.463 15.75h9.074a1.358 1.358 0 0 0 1.11-2.251l-4.354-4.77a1.53 1.53 0 0 0-2.184-.04l-4.718 4.77a1.357 1.357 0 0 0 1.072 2.291z"
+              />
+            </svg>
+            <svg
+              class="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--down bpk-icon--rtl-support"
+              height="18"
+              style="width: 1.125rem; height: 1.125rem;"
+              viewBox="0 0 24 24"
+              width="18"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M16.537 8.25H7.463a1.358 1.358 0 0 0-1.11 2.251l4.354 4.77a1.53 1.53 0 0 0 2.184.04l4.718-4.77a1.357 1.357 0 0 0-1.072-2.291z"
+              />
+            </svg>
+          </div>
         </div>
       </div>
       <div
-        aria-label="Description"
-        className="ReactVirtualized__Table__headerColumn bpk-data-table__header-column custom-data-table__header"
-        onClick={[Function]}
-        onKeyDown={[Function]}
-        role="columnheader"
-        style={
-          Object {
-            "WebkitFlex": "1 1 100px",
-            "flex": "1 1 100px",
-            "msFlex": "1 1 100px",
-          }
-        }
-        tabIndex={0}
-      >
-        <span
-          className="bpk-data-table-column__header"
-          title="Description"
-        >
-          Description
-        </span>
-        <div
-          className="bpk-data-table-column__sort-icons"
-        >
-          <svg
-            className="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--up bpk-icon--rtl-support"
-            height="18"
-            style={
-              Object {
-                "height": "1.125rem",
-                "width": "1.125rem",
-              }
-            }
-            viewBox="0 0 24 24"
-            width="18"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M7.463 15.75h9.074a1.358 1.358 0 0 0 1.11-2.251l-4.354-4.77a1.53 1.53 0 0 0-2.184-.04l-4.718 4.77a1.357 1.357 0 0 0 1.072 2.291z"
-            />
-          </svg>
-          <svg
-            className="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--down bpk-icon--rtl-support"
-            height="18"
-            style={
-              Object {
-                "height": "1.125rem",
-                "width": "1.125rem",
-              }
-            }
-            viewBox="0 0 24 24"
-            width="18"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M16.537 8.25H7.463a1.358 1.358 0 0 0-1.11 2.251l4.354 4.77a1.53 1.53 0 0 0 2.184.04l4.718-4.77a1.357 1.357 0 0 0-1.072-2.291z"
-            />
-          </svg>
-        </div>
-      </div>
+        aria-label="grid"
+        aria-readonly="true"
+        class="ReactVirtualized__Grid ReactVirtualized__Table__Grid"
+        role="rowgroup"
+        style="box-sizing: border-box; height: 140px; position: relative; width: 0px; will-change: transform; overflow-x: hidden; overflow-y: hidden;"
+        tabindex="0"
+      />
+    </div>
+  </div>
+  <div
+    class="resize-triggers"
+  >
+    <div
+      class="expand-trigger"
+    >
       <div
-        aria-label="Bla"
-        className="ReactVirtualized__Table__headerColumn bpk-data-table__header-column custom-data-table__header"
-        onClick={[Function]}
-        onKeyDown={[Function]}
-        role="columnheader"
-        style={
-          Object {
-            "WebkitFlex": "0 1 100px",
-            "flex": "0 1 100px",
-            "msFlex": "0 1 100px",
-          }
-        }
-        tabIndex={0}
-      >
-        <span
-          className="bpk-data-table-column__header"
-          title="Bla"
-        >
-          Bla
-        </span>
-        <div
-          className="bpk-data-table-column__sort-icons"
-        >
-          <svg
-            className="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--up bpk-icon--rtl-support"
-            height="18"
-            style={
-              Object {
-                "height": "1.125rem",
-                "width": "1.125rem",
-              }
-            }
-            viewBox="0 0 24 24"
-            width="18"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M7.463 15.75h9.074a1.358 1.358 0 0 0 1.11-2.251l-4.354-4.77a1.53 1.53 0 0 0-2.184-.04l-4.718 4.77a1.357 1.357 0 0 0 1.072 2.291z"
-            />
-          </svg>
-          <svg
-            className="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--down bpk-icon--rtl-support"
-            height="18"
-            style={
-              Object {
-                "height": "1.125rem",
-                "width": "1.125rem",
-              }
-            }
-            viewBox="0 0 24 24"
-            width="18"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M16.537 8.25H7.463a1.358 1.358 0 0 0-1.11 2.251l4.354 4.77a1.53 1.53 0 0 0 2.184.04l4.718-4.77a1.357 1.357 0 0 0-1.072-2.291z"
-            />
-          </svg>
-        </div>
-      </div>
+        style="width: 1px; height: 1px;"
+      />
     </div>
     <div
-      aria-label="grid"
-      aria-readonly={true}
-      className="ReactVirtualized__Grid ReactVirtualized__Table__Grid"
-      onScroll={[Function]}
-      role="rowgroup"
-      style={
-        Object {
-          "WebkitOverflowScrolling": "touch",
-          "boxSizing": "border-box",
-          "direction": undefined,
-          "height": 140,
-          "overflowX": "hidden",
-          "overflowY": "hidden",
-          "position": "relative",
-          "width": 0,
-          "willChange": "transform",
-        }
-      }
-      tabIndex={0}
+      class="contract-trigger"
     />
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`BpkDataTable should render correctly with a custom rowClassName function 1`] = `
-<div
-  style={
-    Object {
-      "overflow": "visible",
-      "width": 0,
-    }
-  }
->
+<DocumentFragment>
   <div
-    className="ReactVirtualized__Table bpk-data-table"
-    role="grid"
-    style={Object {}}
+    style="overflow: visible; width: 0px;"
   >
     <div
-      className="ReactVirtualized__Table__headerRow bpk-data-table__row bpk-data-table__header-row custom-data-table__row_odd"
-      role="row"
-      style={
-        Object {
-          "height": 60,
-          "overflow": "hidden",
-          "paddingRight": 0,
-          "width": 0,
-        }
-      }
+      class="ReactVirtualized__Table bpk-data-table"
+      role="grid"
     >
       <div
-        aria-label="Name"
-        aria-sort="ascending"
-        className="ReactVirtualized__Table__headerColumn bpk-data-table__header-column"
-        onClick={[Function]}
-        onKeyDown={[Function]}
-        role="columnheader"
-        style={
-          Object {
-            "WebkitFlex": "0 1 100px",
-            "flex": "0 1 100px",
-            "msFlex": "0 1 100px",
-          }
-        }
-        tabIndex={0}
+        class="ReactVirtualized__Table__headerRow bpk-data-table__row bpk-data-table__header-row custom-data-table__row_odd"
+        role="row"
+        style="height: 60px; overflow: hidden; padding-right: 0px; width: 0px;"
       >
-        <span
-          className="bpk-data-table-column__header"
-          title="Name"
-        >
-          Name
-        </span>
         <div
-          className="bpk-data-table-column__sort-icons"
+          aria-label="Name"
+          aria-sort="ascending"
+          class="ReactVirtualized__Table__headerColumn bpk-data-table__header-column"
+          role="columnheader"
+          style="flex: 0 1 100px;"
+          tabindex="0"
         >
-          <svg
-            className="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--up bpk-data-table-column__sort-icon--selected bpk-icon--rtl-support"
-            height="18"
-            style={
-              Object {
-                "height": "1.125rem",
-                "width": "1.125rem",
-              }
-            }
-            viewBox="0 0 24 24"
-            width="18"
-            xmlns="http://www.w3.org/2000/svg"
+          <span
+            class="bpk-data-table-column__header"
+            title="Name"
           >
-            <path
-              d="M7.463 15.75h9.074a1.358 1.358 0 0 0 1.11-2.251l-4.354-4.77a1.53 1.53 0 0 0-2.184-.04l-4.718 4.77a1.357 1.357 0 0 0 1.072 2.291z"
-            />
-          </svg>
-          <svg
-            className="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--down bpk-icon--rtl-support"
-            height="18"
-            style={
-              Object {
-                "height": "1.125rem",
-                "width": "1.125rem",
-              }
-            }
-            viewBox="0 0 24 24"
-            width="18"
-            xmlns="http://www.w3.org/2000/svg"
+            Name
+          </span>
+          <div
+            class="bpk-data-table-column__sort-icons"
           >
-            <path
-              d="M16.537 8.25H7.463a1.358 1.358 0 0 0-1.11 2.251l4.354 4.77a1.53 1.53 0 0 0 2.184.04l4.718-4.77a1.357 1.357 0 0 0-1.072-2.291z"
-            />
-          </svg>
+            <svg
+              class="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--up bpk-data-table-column__sort-icon--selected bpk-icon--rtl-support"
+              height="18"
+              style="width: 1.125rem; height: 1.125rem;"
+              viewBox="0 0 24 24"
+              width="18"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M7.463 15.75h9.074a1.358 1.358 0 0 0 1.11-2.251l-4.354-4.77a1.53 1.53 0 0 0-2.184-.04l-4.718 4.77a1.357 1.357 0 0 0 1.072 2.291z"
+              />
+            </svg>
+            <svg
+              class="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--down bpk-icon--rtl-support"
+              height="18"
+              style="width: 1.125rem; height: 1.125rem;"
+              viewBox="0 0 24 24"
+              width="18"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M16.537 8.25H7.463a1.358 1.358 0 0 0-1.11 2.251l4.354 4.77a1.53 1.53 0 0 0 2.184.04l4.718-4.77a1.357 1.357 0 0 0-1.072-2.291z"
+              />
+            </svg>
+          </div>
+        </div>
+        <div
+          aria-label="Description"
+          class="ReactVirtualized__Table__headerColumn bpk-data-table__header-column"
+          role="columnheader"
+          style="flex: 1 1 100px;"
+          tabindex="0"
+        >
+          <span
+            class="bpk-data-table-column__header"
+            title="Description"
+          >
+            Description
+          </span>
+          <div
+            class="bpk-data-table-column__sort-icons"
+          >
+            <svg
+              class="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--up bpk-icon--rtl-support"
+              height="18"
+              style="width: 1.125rem; height: 1.125rem;"
+              viewBox="0 0 24 24"
+              width="18"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M7.463 15.75h9.074a1.358 1.358 0 0 0 1.11-2.251l-4.354-4.77a1.53 1.53 0 0 0-2.184-.04l-4.718 4.77a1.357 1.357 0 0 0 1.072 2.291z"
+              />
+            </svg>
+            <svg
+              class="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--down bpk-icon--rtl-support"
+              height="18"
+              style="width: 1.125rem; height: 1.125rem;"
+              viewBox="0 0 24 24"
+              width="18"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M16.537 8.25H7.463a1.358 1.358 0 0 0-1.11 2.251l4.354 4.77a1.53 1.53 0 0 0 2.184.04l4.718-4.77a1.357 1.357 0 0 0-1.072-2.291z"
+              />
+            </svg>
+          </div>
+        </div>
+        <div
+          aria-label="Bla"
+          class="ReactVirtualized__Table__headerColumn bpk-data-table__header-column"
+          role="columnheader"
+          style="flex: 0 1 100px;"
+          tabindex="0"
+        >
+          <span
+            class="bpk-data-table-column__header"
+            title="Bla"
+          >
+            Bla
+          </span>
+          <div
+            class="bpk-data-table-column__sort-icons"
+          >
+            <svg
+              class="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--up bpk-icon--rtl-support"
+              height="18"
+              style="width: 1.125rem; height: 1.125rem;"
+              viewBox="0 0 24 24"
+              width="18"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M7.463 15.75h9.074a1.358 1.358 0 0 0 1.11-2.251l-4.354-4.77a1.53 1.53 0 0 0-2.184-.04l-4.718 4.77a1.357 1.357 0 0 0 1.072 2.291z"
+              />
+            </svg>
+            <svg
+              class="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--down bpk-icon--rtl-support"
+              height="18"
+              style="width: 1.125rem; height: 1.125rem;"
+              viewBox="0 0 24 24"
+              width="18"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M16.537 8.25H7.463a1.358 1.358 0 0 0-1.11 2.251l4.354 4.77a1.53 1.53 0 0 0 2.184.04l4.718-4.77a1.357 1.357 0 0 0-1.072-2.291z"
+              />
+            </svg>
+          </div>
         </div>
       </div>
       <div
-        aria-label="Description"
-        className="ReactVirtualized__Table__headerColumn bpk-data-table__header-column"
-        onClick={[Function]}
-        onKeyDown={[Function]}
-        role="columnheader"
-        style={
-          Object {
-            "WebkitFlex": "1 1 100px",
-            "flex": "1 1 100px",
-            "msFlex": "1 1 100px",
-          }
-        }
-        tabIndex={0}
-      >
-        <span
-          className="bpk-data-table-column__header"
-          title="Description"
-        >
-          Description
-        </span>
-        <div
-          className="bpk-data-table-column__sort-icons"
-        >
-          <svg
-            className="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--up bpk-icon--rtl-support"
-            height="18"
-            style={
-              Object {
-                "height": "1.125rem",
-                "width": "1.125rem",
-              }
-            }
-            viewBox="0 0 24 24"
-            width="18"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M7.463 15.75h9.074a1.358 1.358 0 0 0 1.11-2.251l-4.354-4.77a1.53 1.53 0 0 0-2.184-.04l-4.718 4.77a1.357 1.357 0 0 0 1.072 2.291z"
-            />
-          </svg>
-          <svg
-            className="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--down bpk-icon--rtl-support"
-            height="18"
-            style={
-              Object {
-                "height": "1.125rem",
-                "width": "1.125rem",
-              }
-            }
-            viewBox="0 0 24 24"
-            width="18"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M16.537 8.25H7.463a1.358 1.358 0 0 0-1.11 2.251l4.354 4.77a1.53 1.53 0 0 0 2.184.04l4.718-4.77a1.357 1.357 0 0 0-1.072-2.291z"
-            />
-          </svg>
-        </div>
-      </div>
+        aria-label="grid"
+        aria-readonly="true"
+        class="ReactVirtualized__Grid ReactVirtualized__Table__Grid"
+        role="rowgroup"
+        style="box-sizing: border-box; height: 140px; position: relative; width: 0px; will-change: transform; overflow-x: hidden; overflow-y: hidden;"
+        tabindex="0"
+      />
+    </div>
+  </div>
+  <div
+    class="resize-triggers"
+  >
+    <div
+      class="expand-trigger"
+    >
       <div
-        aria-label="Bla"
-        className="ReactVirtualized__Table__headerColumn bpk-data-table__header-column"
-        onClick={[Function]}
-        onKeyDown={[Function]}
-        role="columnheader"
-        style={
-          Object {
-            "WebkitFlex": "0 1 100px",
-            "flex": "0 1 100px",
-            "msFlex": "0 1 100px",
-          }
-        }
-        tabIndex={0}
-      >
-        <span
-          className="bpk-data-table-column__header"
-          title="Bla"
-        >
-          Bla
-        </span>
-        <div
-          className="bpk-data-table-column__sort-icons"
-        >
-          <svg
-            className="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--up bpk-icon--rtl-support"
-            height="18"
-            style={
-              Object {
-                "height": "1.125rem",
-                "width": "1.125rem",
-              }
-            }
-            viewBox="0 0 24 24"
-            width="18"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M7.463 15.75h9.074a1.358 1.358 0 0 0 1.11-2.251l-4.354-4.77a1.53 1.53 0 0 0-2.184-.04l-4.718 4.77a1.357 1.357 0 0 0 1.072 2.291z"
-            />
-          </svg>
-          <svg
-            className="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--down bpk-icon--rtl-support"
-            height="18"
-            style={
-              Object {
-                "height": "1.125rem",
-                "width": "1.125rem",
-              }
-            }
-            viewBox="0 0 24 24"
-            width="18"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M16.537 8.25H7.463a1.358 1.358 0 0 0-1.11 2.251l4.354 4.77a1.53 1.53 0 0 0 2.184.04l4.718-4.77a1.357 1.357 0 0 0-1.072-2.291z"
-            />
-          </svg>
-        </div>
-      </div>
+        style="width: 1px; height: 1px;"
+      />
     </div>
     <div
-      aria-label="grid"
-      aria-readonly={true}
-      className="ReactVirtualized__Grid ReactVirtualized__Table__Grid"
-      onScroll={[Function]}
-      role="rowgroup"
-      style={
-        Object {
-          "WebkitOverflowScrolling": "touch",
-          "boxSizing": "border-box",
-          "direction": undefined,
-          "height": 140,
-          "overflowX": "hidden",
-          "overflowY": "hidden",
-          "position": "relative",
-          "width": 0,
-          "willChange": "transform",
-        }
-      }
-      tabIndex={0}
+      class="contract-trigger"
     />
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`BpkDataTable should render correctly with a custom rowClassName string 1`] = `
-<div
-  style={
-    Object {
-      "overflow": "visible",
-      "width": 0,
-    }
-  }
->
+<DocumentFragment>
   <div
-    className="ReactVirtualized__Table bpk-data-table"
-    role="grid"
-    style={Object {}}
+    style="overflow: visible; width: 0px;"
   >
     <div
-      className="ReactVirtualized__Table__headerRow bpk-data-table__row bpk-data-table__header-row custom-data-table__row"
-      role="row"
-      style={
-        Object {
-          "height": 60,
-          "overflow": "hidden",
-          "paddingRight": 0,
-          "width": 0,
-        }
-      }
+      class="ReactVirtualized__Table bpk-data-table"
+      role="grid"
     >
       <div
-        aria-label="Name"
-        aria-sort="ascending"
-        className="ReactVirtualized__Table__headerColumn bpk-data-table__header-column"
-        onClick={[Function]}
-        onKeyDown={[Function]}
-        role="columnheader"
-        style={
-          Object {
-            "WebkitFlex": "0 1 100px",
-            "flex": "0 1 100px",
-            "msFlex": "0 1 100px",
-          }
-        }
-        tabIndex={0}
+        class="ReactVirtualized__Table__headerRow bpk-data-table__row bpk-data-table__header-row custom-data-table__row"
+        role="row"
+        style="height: 60px; overflow: hidden; padding-right: 0px; width: 0px;"
       >
-        <span
-          className="bpk-data-table-column__header"
-          title="Name"
-        >
-          Name
-        </span>
         <div
-          className="bpk-data-table-column__sort-icons"
+          aria-label="Name"
+          aria-sort="ascending"
+          class="ReactVirtualized__Table__headerColumn bpk-data-table__header-column"
+          role="columnheader"
+          style="flex: 0 1 100px;"
+          tabindex="0"
         >
-          <svg
-            className="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--up bpk-data-table-column__sort-icon--selected bpk-icon--rtl-support"
-            height="18"
-            style={
-              Object {
-                "height": "1.125rem",
-                "width": "1.125rem",
-              }
-            }
-            viewBox="0 0 24 24"
-            width="18"
-            xmlns="http://www.w3.org/2000/svg"
+          <span
+            class="bpk-data-table-column__header"
+            title="Name"
           >
-            <path
-              d="M7.463 15.75h9.074a1.358 1.358 0 0 0 1.11-2.251l-4.354-4.77a1.53 1.53 0 0 0-2.184-.04l-4.718 4.77a1.357 1.357 0 0 0 1.072 2.291z"
-            />
-          </svg>
-          <svg
-            className="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--down bpk-icon--rtl-support"
-            height="18"
-            style={
-              Object {
-                "height": "1.125rem",
-                "width": "1.125rem",
-              }
-            }
-            viewBox="0 0 24 24"
-            width="18"
-            xmlns="http://www.w3.org/2000/svg"
+            Name
+          </span>
+          <div
+            class="bpk-data-table-column__sort-icons"
           >
-            <path
-              d="M16.537 8.25H7.463a1.358 1.358 0 0 0-1.11 2.251l4.354 4.77a1.53 1.53 0 0 0 2.184.04l4.718-4.77a1.357 1.357 0 0 0-1.072-2.291z"
-            />
-          </svg>
+            <svg
+              class="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--up bpk-data-table-column__sort-icon--selected bpk-icon--rtl-support"
+              height="18"
+              style="width: 1.125rem; height: 1.125rem;"
+              viewBox="0 0 24 24"
+              width="18"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M7.463 15.75h9.074a1.358 1.358 0 0 0 1.11-2.251l-4.354-4.77a1.53 1.53 0 0 0-2.184-.04l-4.718 4.77a1.357 1.357 0 0 0 1.072 2.291z"
+              />
+            </svg>
+            <svg
+              class="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--down bpk-icon--rtl-support"
+              height="18"
+              style="width: 1.125rem; height: 1.125rem;"
+              viewBox="0 0 24 24"
+              width="18"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M16.537 8.25H7.463a1.358 1.358 0 0 0-1.11 2.251l4.354 4.77a1.53 1.53 0 0 0 2.184.04l4.718-4.77a1.357 1.357 0 0 0-1.072-2.291z"
+              />
+            </svg>
+          </div>
+        </div>
+        <div
+          aria-label="Description"
+          class="ReactVirtualized__Table__headerColumn bpk-data-table__header-column"
+          role="columnheader"
+          style="flex: 1 1 100px;"
+          tabindex="0"
+        >
+          <span
+            class="bpk-data-table-column__header"
+            title="Description"
+          >
+            Description
+          </span>
+          <div
+            class="bpk-data-table-column__sort-icons"
+          >
+            <svg
+              class="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--up bpk-icon--rtl-support"
+              height="18"
+              style="width: 1.125rem; height: 1.125rem;"
+              viewBox="0 0 24 24"
+              width="18"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M7.463 15.75h9.074a1.358 1.358 0 0 0 1.11-2.251l-4.354-4.77a1.53 1.53 0 0 0-2.184-.04l-4.718 4.77a1.357 1.357 0 0 0 1.072 2.291z"
+              />
+            </svg>
+            <svg
+              class="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--down bpk-icon--rtl-support"
+              height="18"
+              style="width: 1.125rem; height: 1.125rem;"
+              viewBox="0 0 24 24"
+              width="18"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M16.537 8.25H7.463a1.358 1.358 0 0 0-1.11 2.251l4.354 4.77a1.53 1.53 0 0 0 2.184.04l4.718-4.77a1.357 1.357 0 0 0-1.072-2.291z"
+              />
+            </svg>
+          </div>
+        </div>
+        <div
+          aria-label="Bla"
+          class="ReactVirtualized__Table__headerColumn bpk-data-table__header-column"
+          role="columnheader"
+          style="flex: 0 1 100px;"
+          tabindex="0"
+        >
+          <span
+            class="bpk-data-table-column__header"
+            title="Bla"
+          >
+            Bla
+          </span>
+          <div
+            class="bpk-data-table-column__sort-icons"
+          >
+            <svg
+              class="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--up bpk-icon--rtl-support"
+              height="18"
+              style="width: 1.125rem; height: 1.125rem;"
+              viewBox="0 0 24 24"
+              width="18"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M7.463 15.75h9.074a1.358 1.358 0 0 0 1.11-2.251l-4.354-4.77a1.53 1.53 0 0 0-2.184-.04l-4.718 4.77a1.357 1.357 0 0 0 1.072 2.291z"
+              />
+            </svg>
+            <svg
+              class="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--down bpk-icon--rtl-support"
+              height="18"
+              style="width: 1.125rem; height: 1.125rem;"
+              viewBox="0 0 24 24"
+              width="18"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M16.537 8.25H7.463a1.358 1.358 0 0 0-1.11 2.251l4.354 4.77a1.53 1.53 0 0 0 2.184.04l4.718-4.77a1.357 1.357 0 0 0-1.072-2.291z"
+              />
+            </svg>
+          </div>
         </div>
       </div>
       <div
-        aria-label="Description"
-        className="ReactVirtualized__Table__headerColumn bpk-data-table__header-column"
-        onClick={[Function]}
-        onKeyDown={[Function]}
-        role="columnheader"
-        style={
-          Object {
-            "WebkitFlex": "1 1 100px",
-            "flex": "1 1 100px",
-            "msFlex": "1 1 100px",
-          }
-        }
-        tabIndex={0}
-      >
-        <span
-          className="bpk-data-table-column__header"
-          title="Description"
-        >
-          Description
-        </span>
-        <div
-          className="bpk-data-table-column__sort-icons"
-        >
-          <svg
-            className="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--up bpk-icon--rtl-support"
-            height="18"
-            style={
-              Object {
-                "height": "1.125rem",
-                "width": "1.125rem",
-              }
-            }
-            viewBox="0 0 24 24"
-            width="18"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M7.463 15.75h9.074a1.358 1.358 0 0 0 1.11-2.251l-4.354-4.77a1.53 1.53 0 0 0-2.184-.04l-4.718 4.77a1.357 1.357 0 0 0 1.072 2.291z"
-            />
-          </svg>
-          <svg
-            className="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--down bpk-icon--rtl-support"
-            height="18"
-            style={
-              Object {
-                "height": "1.125rem",
-                "width": "1.125rem",
-              }
-            }
-            viewBox="0 0 24 24"
-            width="18"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M16.537 8.25H7.463a1.358 1.358 0 0 0-1.11 2.251l4.354 4.77a1.53 1.53 0 0 0 2.184.04l4.718-4.77a1.357 1.357 0 0 0-1.072-2.291z"
-            />
-          </svg>
-        </div>
-      </div>
+        aria-label="grid"
+        aria-readonly="true"
+        class="ReactVirtualized__Grid ReactVirtualized__Table__Grid"
+        role="rowgroup"
+        style="box-sizing: border-box; height: 140px; position: relative; width: 0px; will-change: transform; overflow-x: hidden; overflow-y: hidden;"
+        tabindex="0"
+      />
+    </div>
+  </div>
+  <div
+    class="resize-triggers"
+  >
+    <div
+      class="expand-trigger"
+    >
       <div
-        aria-label="Bla"
-        className="ReactVirtualized__Table__headerColumn bpk-data-table__header-column"
-        onClick={[Function]}
-        onKeyDown={[Function]}
-        role="columnheader"
-        style={
-          Object {
-            "WebkitFlex": "0 1 100px",
-            "flex": "0 1 100px",
-            "msFlex": "0 1 100px",
-          }
-        }
-        tabIndex={0}
-      >
-        <span
-          className="bpk-data-table-column__header"
-          title="Bla"
-        >
-          Bla
-        </span>
-        <div
-          className="bpk-data-table-column__sort-icons"
-        >
-          <svg
-            className="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--up bpk-icon--rtl-support"
-            height="18"
-            style={
-              Object {
-                "height": "1.125rem",
-                "width": "1.125rem",
-              }
-            }
-            viewBox="0 0 24 24"
-            width="18"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M7.463 15.75h9.074a1.358 1.358 0 0 0 1.11-2.251l-4.354-4.77a1.53 1.53 0 0 0-2.184-.04l-4.718 4.77a1.357 1.357 0 0 0 1.072 2.291z"
-            />
-          </svg>
-          <svg
-            className="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--down bpk-icon--rtl-support"
-            height="18"
-            style={
-              Object {
-                "height": "1.125rem",
-                "width": "1.125rem",
-              }
-            }
-            viewBox="0 0 24 24"
-            width="18"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M16.537 8.25H7.463a1.358 1.358 0 0 0-1.11 2.251l4.354 4.77a1.53 1.53 0 0 0 2.184.04l4.718-4.77a1.357 1.357 0 0 0-1.072-2.291z"
-            />
-          </svg>
-        </div>
-      </div>
+        style="width: 1px; height: 1px;"
+      />
     </div>
     <div
-      aria-label="grid"
-      aria-readonly={true}
-      className="ReactVirtualized__Grid ReactVirtualized__Table__Grid"
-      onScroll={[Function]}
-      role="rowgroup"
-      style={
-        Object {
-          "WebkitOverflowScrolling": "touch",
-          "boxSizing": "border-box",
-          "direction": undefined,
-          "height": 140,
-          "overflowX": "hidden",
-          "overflowY": "hidden",
-          "position": "relative",
-          "width": 0,
-          "willChange": "transform",
-        }
-      }
-      tabIndex={0}
+      class="contract-trigger"
     />
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`BpkDataTable should render correctly with a specified width 1`] = `
-<div
-  className="ReactVirtualized__Table bpk-data-table"
-  role="grid"
-  style={Object {}}
->
+<DocumentFragment>
   <div
-    className="ReactVirtualized__Table__headerRow bpk-data-table__row bpk-data-table__header-row"
-    role="row"
-    style={
-      Object {
-        "height": 60,
-        "overflow": "hidden",
-        "paddingRight": 0,
-        "width": 400,
-      }
-    }
+    class="ReactVirtualized__Table bpk-data-table"
+    role="grid"
   >
     <div
-      aria-label="Name"
-      aria-sort="ascending"
-      className="ReactVirtualized__Table__headerColumn bpk-data-table__header-column"
-      onClick={[Function]}
-      onKeyDown={[Function]}
-      role="columnheader"
-      style={
-        Object {
-          "WebkitFlex": "0 1 100px",
-          "flex": "0 1 100px",
-          "msFlex": "0 1 100px",
-        }
-      }
-      tabIndex={0}
+      class="ReactVirtualized__Table__headerRow bpk-data-table__row bpk-data-table__header-row"
+      role="row"
+      style="height: 60px; overflow: hidden; padding-right: 0px; width: 400px;"
     >
-      <span
-        className="bpk-data-table-column__header"
-        title="Name"
-      >
-        Name
-      </span>
       <div
-        className="bpk-data-table-column__sort-icons"
+        aria-label="Name"
+        aria-sort="ascending"
+        class="ReactVirtualized__Table__headerColumn bpk-data-table__header-column"
+        role="columnheader"
+        style="flex: 0 1 100px;"
+        tabindex="0"
       >
-        <svg
-          className="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--up bpk-data-table-column__sort-icon--selected bpk-icon--rtl-support"
-          height="18"
-          style={
-            Object {
-              "height": "1.125rem",
-              "width": "1.125rem",
-            }
-          }
-          viewBox="0 0 24 24"
-          width="18"
-          xmlns="http://www.w3.org/2000/svg"
+        <span
+          class="bpk-data-table-column__header"
+          title="Name"
         >
-          <path
-            d="M7.463 15.75h9.074a1.358 1.358 0 0 0 1.11-2.251l-4.354-4.77a1.53 1.53 0 0 0-2.184-.04l-4.718 4.77a1.357 1.357 0 0 0 1.072 2.291z"
-          />
-        </svg>
-        <svg
-          className="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--down bpk-icon--rtl-support"
-          height="18"
-          style={
-            Object {
-              "height": "1.125rem",
-              "width": "1.125rem",
-            }
-          }
-          viewBox="0 0 24 24"
-          width="18"
-          xmlns="http://www.w3.org/2000/svg"
+          Name
+        </span>
+        <div
+          class="bpk-data-table-column__sort-icons"
         >
-          <path
-            d="M16.537 8.25H7.463a1.358 1.358 0 0 0-1.11 2.251l4.354 4.77a1.53 1.53 0 0 0 2.184.04l4.718-4.77a1.357 1.357 0 0 0-1.072-2.291z"
-          />
-        </svg>
+          <svg
+            class="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--up bpk-data-table-column__sort-icon--selected bpk-icon--rtl-support"
+            height="18"
+            style="width: 1.125rem; height: 1.125rem;"
+            viewBox="0 0 24 24"
+            width="18"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M7.463 15.75h9.074a1.358 1.358 0 0 0 1.11-2.251l-4.354-4.77a1.53 1.53 0 0 0-2.184-.04l-4.718 4.77a1.357 1.357 0 0 0 1.072 2.291z"
+            />
+          </svg>
+          <svg
+            class="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--down bpk-icon--rtl-support"
+            height="18"
+            style="width: 1.125rem; height: 1.125rem;"
+            viewBox="0 0 24 24"
+            width="18"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M16.537 8.25H7.463a1.358 1.358 0 0 0-1.11 2.251l4.354 4.77a1.53 1.53 0 0 0 2.184.04l4.718-4.77a1.357 1.357 0 0 0-1.072-2.291z"
+            />
+          </svg>
+        </div>
+      </div>
+      <div
+        aria-label="Description"
+        class="ReactVirtualized__Table__headerColumn bpk-data-table__header-column"
+        role="columnheader"
+        style="flex: 1 1 100px;"
+        tabindex="0"
+      >
+        <span
+          class="bpk-data-table-column__header"
+          title="Description"
+        >
+          Description
+        </span>
+        <div
+          class="bpk-data-table-column__sort-icons"
+        >
+          <svg
+            class="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--up bpk-icon--rtl-support"
+            height="18"
+            style="width: 1.125rem; height: 1.125rem;"
+            viewBox="0 0 24 24"
+            width="18"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M7.463 15.75h9.074a1.358 1.358 0 0 0 1.11-2.251l-4.354-4.77a1.53 1.53 0 0 0-2.184-.04l-4.718 4.77a1.357 1.357 0 0 0 1.072 2.291z"
+            />
+          </svg>
+          <svg
+            class="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--down bpk-icon--rtl-support"
+            height="18"
+            style="width: 1.125rem; height: 1.125rem;"
+            viewBox="0 0 24 24"
+            width="18"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M16.537 8.25H7.463a1.358 1.358 0 0 0-1.11 2.251l4.354 4.77a1.53 1.53 0 0 0 2.184.04l4.718-4.77a1.357 1.357 0 0 0-1.072-2.291z"
+            />
+          </svg>
+        </div>
+      </div>
+      <div
+        aria-label="Bla"
+        class="ReactVirtualized__Table__headerColumn bpk-data-table__header-column"
+        role="columnheader"
+        style="flex: 0 1 100px;"
+        tabindex="0"
+      >
+        <span
+          class="bpk-data-table-column__header"
+          title="Bla"
+        >
+          Bla
+        </span>
+        <div
+          class="bpk-data-table-column__sort-icons"
+        >
+          <svg
+            class="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--up bpk-icon--rtl-support"
+            height="18"
+            style="width: 1.125rem; height: 1.125rem;"
+            viewBox="0 0 24 24"
+            width="18"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M7.463 15.75h9.074a1.358 1.358 0 0 0 1.11-2.251l-4.354-4.77a1.53 1.53 0 0 0-2.184-.04l-4.718 4.77a1.357 1.357 0 0 0 1.072 2.291z"
+            />
+          </svg>
+          <svg
+            class="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--down bpk-icon--rtl-support"
+            height="18"
+            style="width: 1.125rem; height: 1.125rem;"
+            viewBox="0 0 24 24"
+            width="18"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M16.537 8.25H7.463a1.358 1.358 0 0 0-1.11 2.251l4.354 4.77a1.53 1.53 0 0 0 2.184.04l4.718-4.77a1.357 1.357 0 0 0-1.072-2.291z"
+            />
+          </svg>
+        </div>
       </div>
     </div>
     <div
-      aria-label="Description"
-      className="ReactVirtualized__Table__headerColumn bpk-data-table__header-column"
-      onClick={[Function]}
-      onKeyDown={[Function]}
-      role="columnheader"
-      style={
-        Object {
-          "WebkitFlex": "1 1 100px",
-          "flex": "1 1 100px",
-          "msFlex": "1 1 100px",
-        }
-      }
-      tabIndex={0}
-    >
-      <span
-        className="bpk-data-table-column__header"
-        title="Description"
-      >
-        Description
-      </span>
-      <div
-        className="bpk-data-table-column__sort-icons"
-      >
-        <svg
-          className="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--up bpk-icon--rtl-support"
-          height="18"
-          style={
-            Object {
-              "height": "1.125rem",
-              "width": "1.125rem",
-            }
-          }
-          viewBox="0 0 24 24"
-          width="18"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M7.463 15.75h9.074a1.358 1.358 0 0 0 1.11-2.251l-4.354-4.77a1.53 1.53 0 0 0-2.184-.04l-4.718 4.77a1.357 1.357 0 0 0 1.072 2.291z"
-          />
-        </svg>
-        <svg
-          className="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--down bpk-icon--rtl-support"
-          height="18"
-          style={
-            Object {
-              "height": "1.125rem",
-              "width": "1.125rem",
-            }
-          }
-          viewBox="0 0 24 24"
-          width="18"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M16.537 8.25H7.463a1.358 1.358 0 0 0-1.11 2.251l4.354 4.77a1.53 1.53 0 0 0 2.184.04l4.718-4.77a1.357 1.357 0 0 0-1.072-2.291z"
-          />
-        </svg>
-      </div>
-    </div>
-    <div
-      aria-label="Bla"
-      className="ReactVirtualized__Table__headerColumn bpk-data-table__header-column"
-      onClick={[Function]}
-      onKeyDown={[Function]}
-      role="columnheader"
-      style={
-        Object {
-          "WebkitFlex": "0 1 100px",
-          "flex": "0 1 100px",
-          "msFlex": "0 1 100px",
-        }
-      }
-      tabIndex={0}
-    >
-      <span
-        className="bpk-data-table-column__header"
-        title="Bla"
-      >
-        Bla
-      </span>
-      <div
-        className="bpk-data-table-column__sort-icons"
-      >
-        <svg
-          className="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--up bpk-icon--rtl-support"
-          height="18"
-          style={
-            Object {
-              "height": "1.125rem",
-              "width": "1.125rem",
-            }
-          }
-          viewBox="0 0 24 24"
-          width="18"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M7.463 15.75h9.074a1.358 1.358 0 0 0 1.11-2.251l-4.354-4.77a1.53 1.53 0 0 0-2.184-.04l-4.718 4.77a1.357 1.357 0 0 0 1.072 2.291z"
-          />
-        </svg>
-        <svg
-          className="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--down bpk-icon--rtl-support"
-          height="18"
-          style={
-            Object {
-              "height": "1.125rem",
-              "width": "1.125rem",
-            }
-          }
-          viewBox="0 0 24 24"
-          width="18"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M16.537 8.25H7.463a1.358 1.358 0 0 0-1.11 2.251l4.354 4.77a1.53 1.53 0 0 0 2.184.04l4.718-4.77a1.357 1.357 0 0 0-1.072-2.291z"
-          />
-        </svg>
-      </div>
-    </div>
-  </div>
-  <div
-    aria-label="grid"
-    aria-readonly={true}
-    className="ReactVirtualized__Grid ReactVirtualized__Table__Grid"
-    onScroll={[Function]}
-    role="rowgroup"
-    style={
-      Object {
-        "WebkitOverflowScrolling": "touch",
-        "boxSizing": "border-box",
-        "direction": undefined,
-        "height": 140,
-        "overflowX": "hidden",
-        "overflowY": "hidden",
-        "position": "relative",
-        "width": 400,
-        "willChange": "transform",
-      }
-    }
-    tabIndex={0}
-  >
-    <div
-      className="ReactVirtualized__Grid__innerScrollContainer"
+      aria-label="grid"
+      aria-readonly="true"
+      class="ReactVirtualized__Grid ReactVirtualized__Table__Grid"
       role="rowgroup"
-      style={
-        Object {
-          "height": 120,
-          "maxHeight": 120,
-          "maxWidth": 400,
-          "overflow": "hidden",
-          "pointerEvents": "",
-          "position": "relative",
-          "width": "auto",
-        }
-      }
+      style="box-sizing: border-box; height: 140px; position: relative; width: 400px; will-change: transform; overflow-x: hidden; overflow-y: hidden;"
+      tabindex="0"
     >
       <div
-        aria-label="row"
-        className="ReactVirtualized__Table__row bpk-data-table__row"
-        onClick={[Function]}
-        role="row"
-        style={
-          Object {
-            "height": 60,
-            "left": 0,
-            "overflow": "hidden",
-            "paddingRight": 0,
-            "position": "absolute",
-            "top": 0,
-            "width": 400,
-          }
-        }
-        tabIndex={0}
+        class="ReactVirtualized__Grid__innerScrollContainer"
+        role="rowgroup"
+        style="width: auto; height: 120px; max-width: 400px; max-height: 120px; overflow: hidden; position: relative;"
       >
         <div
-          className="ReactVirtualized__Table__rowColumn bpk-data-table-column"
-          role="gridcell"
-          style={
-            Object {
-              "WebkitFlex": "0 1 100px",
-              "flex": "0 1 100px",
-              "msFlex": "0 1 100px",
-              "overflow": "hidden",
-            }
-          }
-          title="Jose"
+          aria-label="row"
+          class="ReactVirtualized__Table__row bpk-data-table__row"
+          role="row"
+          style="height: 60px; left: 0px; position: absolute; top: 0px; width: 400px; overflow: hidden; padding-right: 0px;"
+          tabindex="0"
         >
-          Jose
+          <div
+            class="ReactVirtualized__Table__rowColumn bpk-data-table-column"
+            role="gridcell"
+            style="flex: 0 1 100px; overflow: hidden;"
+            title="Jose"
+          >
+            Jose
+          </div>
+          <div
+            class="ReactVirtualized__Table__rowColumn bpk-data-table-column"
+            role="gridcell"
+            style="flex: 1 1 100px; overflow: hidden;"
+            title="Software Engineer"
+          >
+            Software Engineer
+          </div>
+          <div
+            class="ReactVirtualized__Table__rowColumn bpk-data-table-column"
+            role="gridcell"
+            style="flex: 0 1 100px; overflow: hidden;"
+            title="Bla"
+          >
+            Bla
+          </div>
         </div>
         <div
-          className="ReactVirtualized__Table__rowColumn bpk-data-table-column"
-          role="gridcell"
-          style={
-            Object {
-              "WebkitFlex": "1 1 100px",
-              "flex": "1 1 100px",
-              "msFlex": "1 1 100px",
-              "overflow": "hidden",
-            }
-          }
-          title="Software Engineer"
+          aria-label="row"
+          class="ReactVirtualized__Table__row bpk-data-table__row"
+          role="row"
+          style="height: 60px; left: 0px; position: absolute; top: 60px; width: 400px; overflow: hidden; padding-right: 0px;"
+          tabindex="0"
         >
-          Software Engineer
-        </div>
-        <div
-          className="ReactVirtualized__Table__rowColumn bpk-data-table-column"
-          role="gridcell"
-          style={
-            Object {
-              "WebkitFlex": "0 1 100px",
-              "flex": "0 1 100px",
-              "msFlex": "0 1 100px",
-              "overflow": "hidden",
-            }
-          }
-          title="Bla"
-        >
-          Bla
-        </div>
-      </div>
-      <div
-        aria-label="row"
-        className="ReactVirtualized__Table__row bpk-data-table__row"
-        onClick={[Function]}
-        role="row"
-        style={
-          Object {
-            "height": 60,
-            "left": 0,
-            "overflow": "hidden",
-            "paddingRight": 0,
-            "position": "absolute",
-            "top": 60,
-            "width": 400,
-          }
-        }
-        tabIndex={0}
-      >
-        <div
-          className="ReactVirtualized__Table__rowColumn bpk-data-table-column"
-          role="gridcell"
-          style={
-            Object {
-              "WebkitFlex": "0 1 100px",
-              "flex": "0 1 100px",
-              "msFlex": "0 1 100px",
-              "overflow": "hidden",
-            }
-          }
-          title="Rolf"
-        >
-          Rolf
-        </div>
-        <div
-          className="ReactVirtualized__Table__rowColumn bpk-data-table-column"
-          role="gridcell"
-          style={
-            Object {
-              "WebkitFlex": "1 1 100px",
-              "flex": "1 1 100px",
-              "msFlex": "1 1 100px",
-              "overflow": "hidden",
-            }
-          }
-          title="Some guy"
-        >
-          Some guy
-        </div>
-        <div
-          className="ReactVirtualized__Table__rowColumn bpk-data-table-column"
-          role="gridcell"
-          style={
-            Object {
-              "WebkitFlex": "0 1 100px",
-              "flex": "0 1 100px",
-              "msFlex": "0 1 100px",
-              "overflow": "hidden",
-            }
-          }
-          title="Bla"
-        >
-          Bla
+          <div
+            class="ReactVirtualized__Table__rowColumn bpk-data-table-column"
+            role="gridcell"
+            style="flex: 0 1 100px; overflow: hidden;"
+            title="Rolf"
+          >
+            Rolf
+          </div>
+          <div
+            class="ReactVirtualized__Table__rowColumn bpk-data-table-column"
+            role="gridcell"
+            style="flex: 1 1 100px; overflow: hidden;"
+            title="Some guy"
+          >
+            Some guy
+          </div>
+          <div
+            class="ReactVirtualized__Table__rowColumn bpk-data-table-column"
+            role="gridcell"
+            style="flex: 0 1 100px; overflow: hidden;"
+            title="Bla"
+          >
+            Bla
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`BpkDataTable should render correctly with multiple columns 1`] = `
-<div
-  style={
-    Object {
-      "overflow": "visible",
-      "width": 0,
-    }
-  }
->
+<DocumentFragment>
   <div
-    className="ReactVirtualized__Table bpk-data-table"
-    role="grid"
-    style={Object {}}
+    style="overflow: visible; width: 0px;"
   >
     <div
-      className="ReactVirtualized__Table__headerRow bpk-data-table__row bpk-data-table__header-row"
-      role="row"
-      style={
-        Object {
-          "height": 60,
-          "overflow": "hidden",
-          "paddingRight": 0,
-          "width": 0,
-        }
-      }
+      class="ReactVirtualized__Table bpk-data-table"
+      role="grid"
     >
       <div
-        aria-label="Name"
-        aria-sort="ascending"
-        className="ReactVirtualized__Table__headerColumn bpk-data-table__header-column"
-        onClick={[Function]}
-        onKeyDown={[Function]}
-        role="columnheader"
-        style={
-          Object {
-            "WebkitFlex": "0 1 100px",
-            "flex": "0 1 100px",
-            "msFlex": "0 1 100px",
-          }
-        }
-        tabIndex={0}
+        class="ReactVirtualized__Table__headerRow bpk-data-table__row bpk-data-table__header-row"
+        role="row"
+        style="height: 60px; overflow: hidden; padding-right: 0px; width: 0px;"
       >
-        <span
-          className="bpk-data-table-column__header"
-          title="Name"
-        >
-          Name
-        </span>
         <div
-          className="bpk-data-table-column__sort-icons"
+          aria-label="Name"
+          aria-sort="ascending"
+          class="ReactVirtualized__Table__headerColumn bpk-data-table__header-column"
+          role="columnheader"
+          style="flex: 0 1 100px;"
+          tabindex="0"
         >
-          <svg
-            className="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--up bpk-data-table-column__sort-icon--selected bpk-icon--rtl-support"
-            height="18"
-            style={
-              Object {
-                "height": "1.125rem",
-                "width": "1.125rem",
-              }
-            }
-            viewBox="0 0 24 24"
-            width="18"
-            xmlns="http://www.w3.org/2000/svg"
+          <span
+            class="bpk-data-table-column__header"
+            title="Name"
           >
-            <path
-              d="M7.463 15.75h9.074a1.358 1.358 0 0 0 1.11-2.251l-4.354-4.77a1.53 1.53 0 0 0-2.184-.04l-4.718 4.77a1.357 1.357 0 0 0 1.072 2.291z"
-            />
-          </svg>
-          <svg
-            className="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--down bpk-icon--rtl-support"
-            height="18"
-            style={
-              Object {
-                "height": "1.125rem",
-                "width": "1.125rem",
-              }
-            }
-            viewBox="0 0 24 24"
-            width="18"
-            xmlns="http://www.w3.org/2000/svg"
+            Name
+          </span>
+          <div
+            class="bpk-data-table-column__sort-icons"
           >
-            <path
-              d="M16.537 8.25H7.463a1.358 1.358 0 0 0-1.11 2.251l4.354 4.77a1.53 1.53 0 0 0 2.184.04l4.718-4.77a1.357 1.357 0 0 0-1.072-2.291z"
-            />
-          </svg>
+            <svg
+              class="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--up bpk-data-table-column__sort-icon--selected bpk-icon--rtl-support"
+              height="18"
+              style="width: 1.125rem; height: 1.125rem;"
+              viewBox="0 0 24 24"
+              width="18"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M7.463 15.75h9.074a1.358 1.358 0 0 0 1.11-2.251l-4.354-4.77a1.53 1.53 0 0 0-2.184-.04l-4.718 4.77a1.357 1.357 0 0 0 1.072 2.291z"
+              />
+            </svg>
+            <svg
+              class="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--down bpk-icon--rtl-support"
+              height="18"
+              style="width: 1.125rem; height: 1.125rem;"
+              viewBox="0 0 24 24"
+              width="18"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M16.537 8.25H7.463a1.358 1.358 0 0 0-1.11 2.251l4.354 4.77a1.53 1.53 0 0 0 2.184.04l4.718-4.77a1.357 1.357 0 0 0-1.072-2.291z"
+              />
+            </svg>
+          </div>
+        </div>
+        <div
+          aria-label="Description"
+          class="ReactVirtualized__Table__headerColumn bpk-data-table__header-column"
+          role="columnheader"
+          style="flex: 1 1 100px;"
+          tabindex="0"
+        >
+          <span
+            class="bpk-data-table-column__header"
+            title="Description"
+          >
+            Description
+          </span>
+          <div
+            class="bpk-data-table-column__sort-icons"
+          >
+            <svg
+              class="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--up bpk-icon--rtl-support"
+              height="18"
+              style="width: 1.125rem; height: 1.125rem;"
+              viewBox="0 0 24 24"
+              width="18"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M7.463 15.75h9.074a1.358 1.358 0 0 0 1.11-2.251l-4.354-4.77a1.53 1.53 0 0 0-2.184-.04l-4.718 4.77a1.357 1.357 0 0 0 1.072 2.291z"
+              />
+            </svg>
+            <svg
+              class="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--down bpk-icon--rtl-support"
+              height="18"
+              style="width: 1.125rem; height: 1.125rem;"
+              viewBox="0 0 24 24"
+              width="18"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M16.537 8.25H7.463a1.358 1.358 0 0 0-1.11 2.251l4.354 4.77a1.53 1.53 0 0 0 2.184.04l4.718-4.77a1.357 1.357 0 0 0-1.072-2.291z"
+              />
+            </svg>
+          </div>
+        </div>
+        <div
+          aria-label="Bla"
+          class="ReactVirtualized__Table__headerColumn bpk-data-table__header-column"
+          role="columnheader"
+          style="flex: 0 1 100px;"
+          tabindex="0"
+        >
+          <span
+            class="bpk-data-table-column__header"
+            title="Bla"
+          >
+            Bla
+          </span>
+          <div
+            class="bpk-data-table-column__sort-icons"
+          >
+            <svg
+              class="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--up bpk-icon--rtl-support"
+              height="18"
+              style="width: 1.125rem; height: 1.125rem;"
+              viewBox="0 0 24 24"
+              width="18"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M7.463 15.75h9.074a1.358 1.358 0 0 0 1.11-2.251l-4.354-4.77a1.53 1.53 0 0 0-2.184-.04l-4.718 4.77a1.357 1.357 0 0 0 1.072 2.291z"
+              />
+            </svg>
+            <svg
+              class="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--down bpk-icon--rtl-support"
+              height="18"
+              style="width: 1.125rem; height: 1.125rem;"
+              viewBox="0 0 24 24"
+              width="18"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M16.537 8.25H7.463a1.358 1.358 0 0 0-1.11 2.251l4.354 4.77a1.53 1.53 0 0 0 2.184.04l4.718-4.77a1.357 1.357 0 0 0-1.072-2.291z"
+              />
+            </svg>
+          </div>
         </div>
       </div>
       <div
-        aria-label="Description"
-        className="ReactVirtualized__Table__headerColumn bpk-data-table__header-column"
-        onClick={[Function]}
-        onKeyDown={[Function]}
-        role="columnheader"
-        style={
-          Object {
-            "WebkitFlex": "1 1 100px",
-            "flex": "1 1 100px",
-            "msFlex": "1 1 100px",
-          }
-        }
-        tabIndex={0}
-      >
-        <span
-          className="bpk-data-table-column__header"
-          title="Description"
-        >
-          Description
-        </span>
-        <div
-          className="bpk-data-table-column__sort-icons"
-        >
-          <svg
-            className="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--up bpk-icon--rtl-support"
-            height="18"
-            style={
-              Object {
-                "height": "1.125rem",
-                "width": "1.125rem",
-              }
-            }
-            viewBox="0 0 24 24"
-            width="18"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M7.463 15.75h9.074a1.358 1.358 0 0 0 1.11-2.251l-4.354-4.77a1.53 1.53 0 0 0-2.184-.04l-4.718 4.77a1.357 1.357 0 0 0 1.072 2.291z"
-            />
-          </svg>
-          <svg
-            className="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--down bpk-icon--rtl-support"
-            height="18"
-            style={
-              Object {
-                "height": "1.125rem",
-                "width": "1.125rem",
-              }
-            }
-            viewBox="0 0 24 24"
-            width="18"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M16.537 8.25H7.463a1.358 1.358 0 0 0-1.11 2.251l4.354 4.77a1.53 1.53 0 0 0 2.184.04l4.718-4.77a1.357 1.357 0 0 0-1.072-2.291z"
-            />
-          </svg>
-        </div>
-      </div>
+        aria-label="grid"
+        aria-readonly="true"
+        class="ReactVirtualized__Grid ReactVirtualized__Table__Grid"
+        role="rowgroup"
+        style="box-sizing: border-box; height: 140px; position: relative; width: 0px; will-change: transform; overflow-x: hidden; overflow-y: hidden;"
+        tabindex="0"
+      />
+    </div>
+  </div>
+  <div
+    class="resize-triggers"
+  >
+    <div
+      class="expand-trigger"
+    >
       <div
-        aria-label="Bla"
-        className="ReactVirtualized__Table__headerColumn bpk-data-table__header-column"
-        onClick={[Function]}
-        onKeyDown={[Function]}
-        role="columnheader"
-        style={
-          Object {
-            "WebkitFlex": "0 1 100px",
-            "flex": "0 1 100px",
-            "msFlex": "0 1 100px",
-          }
-        }
-        tabIndex={0}
-      >
-        <span
-          className="bpk-data-table-column__header"
-          title="Bla"
-        >
-          Bla
-        </span>
-        <div
-          className="bpk-data-table-column__sort-icons"
-        >
-          <svg
-            className="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--up bpk-icon--rtl-support"
-            height="18"
-            style={
-              Object {
-                "height": "1.125rem",
-                "width": "1.125rem",
-              }
-            }
-            viewBox="0 0 24 24"
-            width="18"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M7.463 15.75h9.074a1.358 1.358 0 0 0 1.11-2.251l-4.354-4.77a1.53 1.53 0 0 0-2.184-.04l-4.718 4.77a1.357 1.357 0 0 0 1.072 2.291z"
-            />
-          </svg>
-          <svg
-            className="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--down bpk-icon--rtl-support"
-            height="18"
-            style={
-              Object {
-                "height": "1.125rem",
-                "width": "1.125rem",
-              }
-            }
-            viewBox="0 0 24 24"
-            width="18"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M16.537 8.25H7.463a1.358 1.358 0 0 0-1.11 2.251l4.354 4.77a1.53 1.53 0 0 0 2.184.04l4.718-4.77a1.357 1.357 0 0 0-1.072-2.291z"
-            />
-          </svg>
-        </div>
-      </div>
+        style="width: 1px; height: 1px;"
+      />
     </div>
     <div
-      aria-label="grid"
-      aria-readonly={true}
-      className="ReactVirtualized__Grid ReactVirtualized__Table__Grid"
-      onScroll={[Function]}
-      role="rowgroup"
-      style={
-        Object {
-          "WebkitOverflowScrolling": "touch",
-          "boxSizing": "border-box",
-          "direction": undefined,
-          "height": 140,
-          "overflowX": "hidden",
-          "overflowY": "hidden",
-          "position": "relative",
-          "width": 0,
-          "willChange": "transform",
-        }
-      }
-      tabIndex={0}
+      class="contract-trigger"
     />
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`BpkDataTable should render correctly with no data; only headers 1`] = `
-<div
-  style={
-    Object {
-      "overflow": "visible",
-      "width": 0,
-    }
-  }
->
+<DocumentFragment>
   <div
-    className="ReactVirtualized__Table bpk-data-table"
-    role="grid"
-    style={Object {}}
+    style="overflow: visible; width: 0px;"
   >
     <div
-      className="ReactVirtualized__Table__headerRow bpk-data-table__row bpk-data-table__header-row"
-      role="row"
-      style={
-        Object {
-          "height": 60,
-          "overflow": "hidden",
-          "paddingRight": 0,
-          "width": 0,
-        }
-      }
+      class="ReactVirtualized__Table bpk-data-table"
+      role="grid"
     >
       <div
-        aria-label="Name"
-        aria-sort="ascending"
-        className="ReactVirtualized__Table__headerColumn bpk-data-table__header-column"
-        onClick={[Function]}
-        onKeyDown={[Function]}
-        role="columnheader"
-        style={
-          Object {
-            "WebkitFlex": "0 1 100px",
-            "flex": "0 1 100px",
-            "msFlex": "0 1 100px",
-          }
-        }
-        tabIndex={0}
+        class="ReactVirtualized__Table__headerRow bpk-data-table__row bpk-data-table__header-row"
+        role="row"
+        style="height: 60px; overflow: hidden; padding-right: 0px; width: 0px;"
       >
-        <span
-          className="bpk-data-table-column__header"
-          title="Name"
-        >
-          Name
-        </span>
         <div
-          className="bpk-data-table-column__sort-icons"
+          aria-label="Name"
+          aria-sort="ascending"
+          class="ReactVirtualized__Table__headerColumn bpk-data-table__header-column"
+          role="columnheader"
+          style="flex: 0 1 100px;"
+          tabindex="0"
         >
-          <svg
-            className="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--up bpk-data-table-column__sort-icon--selected bpk-icon--rtl-support"
-            height="18"
-            style={
-              Object {
-                "height": "1.125rem",
-                "width": "1.125rem",
-              }
-            }
-            viewBox="0 0 24 24"
-            width="18"
-            xmlns="http://www.w3.org/2000/svg"
+          <span
+            class="bpk-data-table-column__header"
+            title="Name"
           >
-            <path
-              d="M7.463 15.75h9.074a1.358 1.358 0 0 0 1.11-2.251l-4.354-4.77a1.53 1.53 0 0 0-2.184-.04l-4.718 4.77a1.357 1.357 0 0 0 1.072 2.291z"
-            />
-          </svg>
-          <svg
-            className="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--down bpk-icon--rtl-support"
-            height="18"
-            style={
-              Object {
-                "height": "1.125rem",
-                "width": "1.125rem",
-              }
-            }
-            viewBox="0 0 24 24"
-            width="18"
-            xmlns="http://www.w3.org/2000/svg"
+            Name
+          </span>
+          <div
+            class="bpk-data-table-column__sort-icons"
           >
-            <path
-              d="M16.537 8.25H7.463a1.358 1.358 0 0 0-1.11 2.251l4.354 4.77a1.53 1.53 0 0 0 2.184.04l4.718-4.77a1.357 1.357 0 0 0-1.072-2.291z"
-            />
-          </svg>
+            <svg
+              class="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--up bpk-data-table-column__sort-icon--selected bpk-icon--rtl-support"
+              height="18"
+              style="width: 1.125rem; height: 1.125rem;"
+              viewBox="0 0 24 24"
+              width="18"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M7.463 15.75h9.074a1.358 1.358 0 0 0 1.11-2.251l-4.354-4.77a1.53 1.53 0 0 0-2.184-.04l-4.718 4.77a1.357 1.357 0 0 0 1.072 2.291z"
+              />
+            </svg>
+            <svg
+              class="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--down bpk-icon--rtl-support"
+              height="18"
+              style="width: 1.125rem; height: 1.125rem;"
+              viewBox="0 0 24 24"
+              width="18"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M16.537 8.25H7.463a1.358 1.358 0 0 0-1.11 2.251l4.354 4.77a1.53 1.53 0 0 0 2.184.04l4.718-4.77a1.357 1.357 0 0 0-1.072-2.291z"
+              />
+            </svg>
+          </div>
+        </div>
+        <div
+          aria-label="Description"
+          class="ReactVirtualized__Table__headerColumn bpk-data-table__header-column"
+          role="columnheader"
+          style="flex: 1 1 100px;"
+          tabindex="0"
+        >
+          <span
+            class="bpk-data-table-column__header"
+            title="Description"
+          >
+            Description
+          </span>
+          <div
+            class="bpk-data-table-column__sort-icons"
+          >
+            <svg
+              class="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--up bpk-icon--rtl-support"
+              height="18"
+              style="width: 1.125rem; height: 1.125rem;"
+              viewBox="0 0 24 24"
+              width="18"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M7.463 15.75h9.074a1.358 1.358 0 0 0 1.11-2.251l-4.354-4.77a1.53 1.53 0 0 0-2.184-.04l-4.718 4.77a1.357 1.357 0 0 0 1.072 2.291z"
+              />
+            </svg>
+            <svg
+              class="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--down bpk-icon--rtl-support"
+              height="18"
+              style="width: 1.125rem; height: 1.125rem;"
+              viewBox="0 0 24 24"
+              width="18"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M16.537 8.25H7.463a1.358 1.358 0 0 0-1.11 2.251l4.354 4.77a1.53 1.53 0 0 0 2.184.04l4.718-4.77a1.357 1.357 0 0 0-1.072-2.291z"
+              />
+            </svg>
+          </div>
+        </div>
+        <div
+          aria-label="Bla"
+          class="ReactVirtualized__Table__headerColumn bpk-data-table__header-column"
+          role="columnheader"
+          style="flex: 0 1 100px;"
+          tabindex="0"
+        >
+          <span
+            class="bpk-data-table-column__header"
+            title="Bla"
+          >
+            Bla
+          </span>
+          <div
+            class="bpk-data-table-column__sort-icons"
+          >
+            <svg
+              class="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--up bpk-icon--rtl-support"
+              height="18"
+              style="width: 1.125rem; height: 1.125rem;"
+              viewBox="0 0 24 24"
+              width="18"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M7.463 15.75h9.074a1.358 1.358 0 0 0 1.11-2.251l-4.354-4.77a1.53 1.53 0 0 0-2.184-.04l-4.718 4.77a1.357 1.357 0 0 0 1.072 2.291z"
+              />
+            </svg>
+            <svg
+              class="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--down bpk-icon--rtl-support"
+              height="18"
+              style="width: 1.125rem; height: 1.125rem;"
+              viewBox="0 0 24 24"
+              width="18"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M16.537 8.25H7.463a1.358 1.358 0 0 0-1.11 2.251l4.354 4.77a1.53 1.53 0 0 0 2.184.04l4.718-4.77a1.357 1.357 0 0 0-1.072-2.291z"
+              />
+            </svg>
+          </div>
         </div>
       </div>
       <div
-        aria-label="Description"
-        className="ReactVirtualized__Table__headerColumn bpk-data-table__header-column"
-        onClick={[Function]}
-        onKeyDown={[Function]}
-        role="columnheader"
-        style={
-          Object {
-            "WebkitFlex": "1 1 100px",
-            "flex": "1 1 100px",
-            "msFlex": "1 1 100px",
-          }
-        }
-        tabIndex={0}
-      >
-        <span
-          className="bpk-data-table-column__header"
-          title="Description"
-        >
-          Description
-        </span>
-        <div
-          className="bpk-data-table-column__sort-icons"
-        >
-          <svg
-            className="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--up bpk-icon--rtl-support"
-            height="18"
-            style={
-              Object {
-                "height": "1.125rem",
-                "width": "1.125rem",
-              }
-            }
-            viewBox="0 0 24 24"
-            width="18"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M7.463 15.75h9.074a1.358 1.358 0 0 0 1.11-2.251l-4.354-4.77a1.53 1.53 0 0 0-2.184-.04l-4.718 4.77a1.357 1.357 0 0 0 1.072 2.291z"
-            />
-          </svg>
-          <svg
-            className="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--down bpk-icon--rtl-support"
-            height="18"
-            style={
-              Object {
-                "height": "1.125rem",
-                "width": "1.125rem",
-              }
-            }
-            viewBox="0 0 24 24"
-            width="18"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M16.537 8.25H7.463a1.358 1.358 0 0 0-1.11 2.251l4.354 4.77a1.53 1.53 0 0 0 2.184.04l4.718-4.77a1.357 1.357 0 0 0-1.072-2.291z"
-            />
-          </svg>
-        </div>
-      </div>
+        aria-label="grid"
+        aria-readonly="true"
+        class="ReactVirtualized__Grid ReactVirtualized__Table__Grid"
+        role="rowgroup"
+        style="box-sizing: border-box; height: 140px; position: relative; width: 0px; will-change: transform; overflow-x: hidden; overflow-y: hidden;"
+        tabindex="0"
+      />
+    </div>
+  </div>
+  <div
+    class="resize-triggers"
+  >
+    <div
+      class="expand-trigger"
+    >
       <div
-        aria-label="Bla"
-        className="ReactVirtualized__Table__headerColumn bpk-data-table__header-column"
-        onClick={[Function]}
-        onKeyDown={[Function]}
-        role="columnheader"
-        style={
-          Object {
-            "WebkitFlex": "0 1 100px",
-            "flex": "0 1 100px",
-            "msFlex": "0 1 100px",
-          }
-        }
-        tabIndex={0}
-      >
-        <span
-          className="bpk-data-table-column__header"
-          title="Bla"
-        >
-          Bla
-        </span>
-        <div
-          className="bpk-data-table-column__sort-icons"
-        >
-          <svg
-            className="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--up bpk-icon--rtl-support"
-            height="18"
-            style={
-              Object {
-                "height": "1.125rem",
-                "width": "1.125rem",
-              }
-            }
-            viewBox="0 0 24 24"
-            width="18"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M7.463 15.75h9.074a1.358 1.358 0 0 0 1.11-2.251l-4.354-4.77a1.53 1.53 0 0 0-2.184-.04l-4.718 4.77a1.357 1.357 0 0 0 1.072 2.291z"
-            />
-          </svg>
-          <svg
-            className="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--down bpk-icon--rtl-support"
-            height="18"
-            style={
-              Object {
-                "height": "1.125rem",
-                "width": "1.125rem",
-              }
-            }
-            viewBox="0 0 24 24"
-            width="18"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M16.537 8.25H7.463a1.358 1.358 0 0 0-1.11 2.251l4.354 4.77a1.53 1.53 0 0 0 2.184.04l4.718-4.77a1.357 1.357 0 0 0-1.072-2.291z"
-            />
-          </svg>
-        </div>
-      </div>
+        style="width: 1px; height: 1px;"
+      />
     </div>
     <div
-      aria-label="grid"
-      aria-readonly={true}
-      className="ReactVirtualized__Grid ReactVirtualized__Table__Grid"
-      onScroll={[Function]}
-      role="rowgroup"
-      style={
-        Object {
-          "WebkitOverflowScrolling": "touch",
-          "boxSizing": "border-box",
-          "direction": undefined,
-          "height": 140,
-          "overflowX": "hidden",
-          "overflowY": "hidden",
-          "position": "relative",
-          "width": 0,
-          "willChange": "transform",
-        }
-      }
-      tabIndex={0}
+      class="contract-trigger"
     />
   </div>
-</div>
+</DocumentFragment>
 `;

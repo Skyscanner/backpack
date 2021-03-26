@@ -18,8 +18,8 @@
 
 import React from 'react';
 import { mount } from 'enzyme';
-import renderer from 'react-test-renderer';
-import { render, unmountComponentAtNode } from 'react-dom';
+import { render } from '@testing-library/react';
+import { render as reactDomRender, unmountComponentAtNode } from 'react-dom';
 
 import Portal from './Portal';
 
@@ -29,37 +29,33 @@ const KEYCODES = {
 
 describe('Portal', () => {
   it('should render correctly with no target', () => {
-    const tree = renderer
-      .create(
-        <Portal isOpen={false}>
-          <div>My portal content</div>
-        </Portal>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <Portal isOpen={false}>
+        <div>My portal content</div>
+      </Portal>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with target', () => {
-    const tree = renderer
-      .create(
-        <Portal isOpen={false} target={<div>Target</div>}>
-          <div>My portal content</div>
-        </Portal>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <Portal isOpen={false} target={<div>Target</div>}>
+        <div>My portal content</div>
+      </Portal>,
+    );
+
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with renderTarget', () => {
     const div = document.createElement('div');
-    const tree = renderer
-      .create(
-        <Portal isOpen renderTarget={() => div}>
-          <div>My portal content</div>
-        </Portal>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <Portal isOpen renderTarget={() => div}>
+        <div>My portal content</div>
+      </Portal>,
+    );
+
+    expect(asFragment()).toMatchSnapshot();
     expect(div).toMatchSnapshot();
   });
 
@@ -219,7 +215,7 @@ describe('Portal', () => {
 
     const onCloseSpy = jest.fn();
 
-    render(
+    reactDomRender(
       <Portal isOpen onClose={onCloseSpy} target={<div>target</div>}>
         <div>My portal content</div>
       </Portal>,
@@ -240,7 +236,7 @@ describe('Portal', () => {
 
     const onCloseSpy = jest.fn();
 
-    render(
+    reactDomRender(
       <Portal
         isOpen
         onClose={onCloseSpy}
@@ -266,7 +262,7 @@ describe('Portal', () => {
 
     const onCloseSpy = jest.fn();
 
-    render(
+    reactDomRender(
       <Portal isOpen onClose={onCloseSpy} target={<div>target</div>}>
         <div>My portal content</div>
       </Portal>,
@@ -288,7 +284,7 @@ describe('Portal', () => {
 
     const onCloseSpy = jest.fn();
 
-    render(
+    reactDomRender(
       <Portal isOpen={false} onClose={onCloseSpy} target={<div>target</div>}>
         <div>My portal content</div>
       </Portal>,
@@ -309,7 +305,7 @@ describe('Portal', () => {
 
     const onCloseSpy = jest.fn();
 
-    render(
+    reactDomRender(
       <Portal isOpen onClose={onCloseSpy} target={<div>target</div>}>
         <div>My portal content</div>
       </Portal>,
