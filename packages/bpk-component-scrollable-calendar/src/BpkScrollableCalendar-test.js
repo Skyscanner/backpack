@@ -77,7 +77,7 @@ describe('BpkScrollableCalendar', () => {
         // Subtract one day from today's date to make today selectable by default
         minDate={DateUtils.addDays(testDate, -1)}
         maxDate={DateUtils.addMonths(testDate, 12)}
-        testID="123"
+        testid="123"
       />,
     );
     expect(toJson(tree)).toMatchSnapshot();

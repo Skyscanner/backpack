@@ -36,7 +36,9 @@ describe('BpkSwitch', () => {
   });
 
   it('should render correctly when checked', () => {
-    const { asFragment } = render(<BpkSwitch checked label="Switch" />);
+    const { asFragment } = render(
+      <BpkSwitch checked onChange={() => {}} label="Switch" />,
+    );
     expect(asFragment()).toMatchSnapshot();
   });
 
@@ -48,7 +50,7 @@ describe('BpkSwitch', () => {
   });
 
   it('should support arbitrary props', () => {
-    const { asFragment } = render(<BpkSwitch label="Switch" testID="123" />);
+    const { asFragment } = render(<BpkSwitch label="Switch" testid="123" />);
     expect(asFragment()).toMatchSnapshot();
   });
 });

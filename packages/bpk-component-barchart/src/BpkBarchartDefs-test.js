@@ -25,7 +25,11 @@ import BpkBarchartDefs from './BpkBarchartDefs';
 
 describe('BpkBarchartDefs', () => {
   it('should render correctly', () => {
-    const { asFragment } = render(<BpkBarchartDefs />);
+    const { asFragment } = render(
+      <svg>
+        <BpkBarchartDefs />
+      </svg>,
+    );
     expect(asFragment()).toMatchSnapshot();
   });
 });

@@ -40,7 +40,12 @@ describe('BpkCheckbox', () => {
 
   it('should render correctly with checked attribute', () => {
     const { asFragment } = render(
-      <BpkCheckbox name="checkbox" label="Prefer directs" checked />,
+      <BpkCheckbox
+        name="checkbox"
+        label="Prefer directs"
+        checked
+        onChange={() => {}}
+      />,
     );
     expect(asFragment()).toMatchSnapshot();
   });
@@ -101,6 +106,7 @@ describe('BpkCheckbox', () => {
         label="Prefer directs"
         indeterminate
         checked
+        onChange={() => {}}
       />,
     );
     expect(asFragment()).toMatchSnapshot();

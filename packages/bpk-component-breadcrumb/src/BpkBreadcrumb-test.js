@@ -48,7 +48,7 @@ describe('BpkBreadcrumb', () => {
     const { asFragment } = render(
       <BpkBreadcrumb
         label="My breadcrumbs"
-        testID="arbitrary value" // <-- arbitrary prop
+        testid="arbitrary value" // <-- arbitrary prop
       >
         <div>Anything can go in here</div>
       </BpkBreadcrumb>,

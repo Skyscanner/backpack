@@ -26,8 +26,8 @@ exports[`BpkCalendarDate cellType tests should render a focused button with tabI
     aria-hidden="false"
     aria-label="15"
     aria-pressed="false"
-    class="bpk-calendar-date bpk-calendar-date--colored bpk-calendar-date--colored-default"
-    tabindex="-1"
+    class="bpk-calendar-date bpk-calendar-date--colored bpk-calendar-date--colored-default bpk-calendar-date--focused"
+    tabindex="0"
     type="button"
   >
     <span
@@ -180,8 +180,8 @@ exports[`BpkCalendarDate should render a focused button with tabIndex 1`] = `
     aria-hidden="false"
     aria-label="15"
     aria-pressed="false"
-    class="bpk-calendar-date"
-    tabindex="-1"
+    class="bpk-calendar-date bpk-calendar-date--focused"
+    tabindex="0"
     type="button"
   >
     <span

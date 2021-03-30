@@ -36,7 +36,7 @@ describe('BpkBoilerplate', () => {
   });
 
   it('should support arbitrary props', () => {
-    const { asFragment } = render(<BpkBoilerplate testID="123" />);
+    const { asFragment } = render(<BpkBoilerplate testid="123" />);
     expect(asFragment()).toMatchSnapshot();
   });
 });

@@ -2,29 +2,41 @@
 
 exports[`BpkTableRow should render correctly 1`] = `
 <DocumentFragment>
-  <tr>
-    <td />
-  </tr>
+  <table>
+    <tbody>
+      <tr>
+        <td />
+      </tr>
+    </tbody>
+  </table>
 </DocumentFragment>
 `;
 
 exports[`BpkTableRow should render correctly with arbitrary props 1`] = `
 <DocumentFragment>
-  <tr
-    data-foo="bar"
-    id="my-custom-id"
-  >
-    <td />
-  </tr>
+  <table>
+    <tbody>
+      <tr
+        data-foo="bar"
+        id="my-custom-id"
+      >
+        <td />
+      </tr>
+    </tbody>
+  </table>
 </DocumentFragment>
 `;
 
 exports[`BpkTableRow should render correctly with custom class 1`] = `
 <DocumentFragment>
-  <tr
-    class="my-custom-class"
-  >
-    <td />
-  </tr>
+  <table>
+    <tbody>
+      <tr
+        class="my-custom-class"
+      >
+        <td />
+      </tr>
+    </tbody>
+  </table>
 </DocumentFragment>
 `;

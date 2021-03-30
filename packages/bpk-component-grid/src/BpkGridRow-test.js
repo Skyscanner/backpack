@@ -27,11 +27,6 @@ describe('BpkGridRow', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('should render correctly with "debug" attribute', () => {
-    const { asFragment } = render(<BpkGridRow debug>Contents</BpkGridRow>);
-    expect(asFragment()).toMatchSnapshot();
-  });
-
   it('should render correctly with "className" attribute', () => {
     const { asFragment } = render(
       <BpkGridRow className="my-custom-class">Contents</BpkGridRow>,

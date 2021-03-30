@@ -45,8 +45,8 @@ exports[`BpkScrollableCalendarDate should render a focused button with tabIndex 
     aria-hidden="false"
     aria-label="15"
     aria-pressed="false"
-    class="bpk-calendar-date"
-    tabindex="-1"
+    class="bpk-calendar-date bpk-calendar-date--focused"
+    tabindex="0"
     type="button"
   >
     <span

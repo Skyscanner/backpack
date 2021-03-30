@@ -26,92 +26,106 @@ import BpkBarchartBar from './BpkBarchartBar';
 describe('BpkBarchartBar', () => {
   it('should render correctly', () => {
     const { asFragment } = render(
-      <BpkBarchartBar x={10} y={10} width={20} height={100} label="Bar" />,
+      <svg>
+        <BpkBarchartBar x={10} y={10} width={20} height={100} label="Bar" />
+      </svg>,
     );
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render with an onClick handler', () => {
     const { asFragment } = render(
-      <BpkBarchartBar
-        x={10}
-        y={10}
-        width={20}
-        height={100}
-        label="Bar"
-        onClick={() => null}
-      />,
+      <svg>
+        <BpkBarchartBar
+          x={10}
+          y={10}
+          width={20}
+          height={100}
+          label="Bar"
+          onClick={() => null}
+        />
+      </svg>,
     );
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render with an onHover handler', () => {
     const { asFragment } = render(
-      <BpkBarchartBar
-        x={10}
-        y={10}
-        width={20}
-        height={100}
-        label="Bar"
-        onHover={() => null}
-      />,
+      <svg>
+        <BpkBarchartBar
+          x={10}
+          y={10}
+          width={20}
+          height={100}
+          label="Bar"
+          onHover={() => null}
+        />
+      </svg>,
     );
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render as an outlier', () => {
     const { asFragment } = render(
-      <BpkBarchartBar
-        x={10}
-        y={10}
-        width={20}
-        height={100}
-        label="Bar"
-        outlier
-      />,
+      <svg>
+        <BpkBarchartBar
+          x={10}
+          y={10}
+          width={20}
+          height={100}
+          label="Bar"
+          outlier
+        />
+      </svg>,
     );
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render as selected', () => {
     const { asFragment } = render(
-      <BpkBarchartBar
-        x={10}
-        y={10}
-        width={20}
-        height={100}
-        label="Bar"
-        selected
-      />,
+      <svg>
+        <BpkBarchartBar
+          x={10}
+          y={10}
+          width={20}
+          height={100}
+          label="Bar"
+          selected
+        />
+      </svg>,
     );
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render as aria-pressed if onClick present and selected', () => {
     const { asFragment } = render(
-      <BpkBarchartBar
-        x={10}
-        y={10}
-        width={20}
-        height={100}
-        label="Bar"
-        selected
-        onClick={() => null}
-      />,
+      <svg>
+        <BpkBarchartBar
+          x={10}
+          y={10}
+          width={20}
+          height={100}
+          label="Bar"
+          selected
+          onClick={() => null}
+        />
+      </svg>,
     );
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render with "padding" prop', () => {
     const { asFragment } = render(
-      <BpkBarchartBar
-        x={10}
-        y={10}
-        width={20}
-        height={100}
-        label="Bar"
-        padding={0.2}
-      />,
+      <svg>
+        <BpkBarchartBar
+          x={10}
+          y={10}
+          width={20}
+          height={100}
+          label="Bar"
+          padding={0.2}
+        />
+      </svg>,
     );
     expect(asFragment()).toMatchSnapshot();
   });

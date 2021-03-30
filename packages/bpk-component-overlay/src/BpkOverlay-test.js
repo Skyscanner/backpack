@@ -74,7 +74,7 @@ describe('BpkOverlay', () => {
 
   it('should support arbitrary props', () => {
     const { asFragment } = render(
-      <BpkOverlay testID="123">
+      <BpkOverlay testid="123">
         <span>Backpack</span>
       </BpkOverlay>,
     );

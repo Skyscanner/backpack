@@ -25,33 +25,57 @@ import BpkTableHeadCell from './BpkTableHeadCell';
 
 describe('BpkTableHeadCell', () => {
   it('should render correctly', () => {
-    const { asFragment } = render(<BpkTableHeadCell>Heading</BpkTableHeadCell>);
+    const { asFragment } = render(
+      <table>
+        <thead>
+          <tr>
+            <BpkTableHeadCell>Heading</BpkTableHeadCell>
+          </tr>
+        </thead>
+      </table>,
+    );
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with "alternate"', () => {
     const { asFragment } = render(
-      <BpkTableHeadCell alternate>
-        <th>Skyscanner</th>
-      </BpkTableHeadCell>,
+      <table>
+        <thead>
+          <tr>
+            <BpkTableHeadCell alternate>Skyscanner</BpkTableHeadCell>
+          </tr>
+        </thead>
+      </table>,
     );
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with custom class', () => {
     const { asFragment } = render(
-      <BpkTableHeadCell className="my-custom-class">
-        <th>Skyscanner</th>
-      </BpkTableHeadCell>,
+      <table>
+        <thead>
+          <tr>
+            <BpkTableHeadCell className="my-custom-class">
+              Skyscanner
+            </BpkTableHeadCell>
+          </tr>
+        </thead>
+      </table>,
     );
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with arbitrary props', () => {
     const { asFragment } = render(
-      <BpkTableHeadCell id="my-custom-id" data-foo="bar">
-        <th>Skyscanner</th>
-      </BpkTableHeadCell>,
+      <table>
+        <thead>
+          <tr>
+            <BpkTableHeadCell id="my-custom-id" data-foo="bar">
+              Skyscanner
+            </BpkTableHeadCell>
+          </tr>
+        </thead>
+      </table>,
     );
     expect(asFragment()).toMatchSnapshot();
   });

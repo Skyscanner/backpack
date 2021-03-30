@@ -55,83 +55,95 @@ describe('BpkChartAxis', () => {
   describe('X', () => {
     it('should render linear scale', () => {
       const { asFragment } = render(
-        <BpkChartAxis
-          width={size}
-          height={size}
-          margin={margin}
-          scale={linearScale}
-          orientation={ORIENTATION_X}
-        />,
+        <svg>
+          <BpkChartAxis
+            width={size}
+            height={size}
+            margin={margin}
+            scale={linearScale}
+            orientation={ORIENTATION_X}
+          />
+        </svg>,
       );
       expect(asFragment()).toMatchSnapshot();
     });
 
     it('should render linear scale with "numTicks" attribute', () => {
       const { asFragment } = render(
-        <BpkChartAxis
-          width={size}
-          height={size}
-          margin={margin}
-          scale={linearScale}
-          orientation={ORIENTATION_X}
-          numTicks={2}
-        />,
+        <svg>
+          <BpkChartAxis
+            width={size}
+            height={size}
+            margin={margin}
+            scale={linearScale}
+            orientation={ORIENTATION_X}
+            numTicks={2}
+          />
+        </svg>,
       );
       expect(asFragment()).toMatchSnapshot();
     });
 
     it('should render band scale', () => {
       const { asFragment } = render(
-        <BpkChartAxis
-          width={size}
-          height={size}
-          margin={margin}
-          scale={bandScale}
-          orientation={ORIENTATION_X}
-        />,
+        <svg>
+          <BpkChartAxis
+            width={size}
+            height={size}
+            margin={margin}
+            scale={bandScale}
+            orientation={ORIENTATION_X}
+          />
+        </svg>,
       );
       expect(asFragment()).toMatchSnapshot();
     });
 
     it('should render band scale with "tickEvery" attribute', () => {
       const { asFragment } = render(
-        <BpkChartAxis
-          width={size}
-          height={size}
-          margin={margin}
-          scale={bandScale}
-          orientation={ORIENTATION_X}
-          tickEvery={2}
-        />,
+        <svg>
+          <BpkChartAxis
+            width={size}
+            height={size}
+            margin={margin}
+            scale={bandScale}
+            orientation={ORIENTATION_X}
+            tickEvery={2}
+          />
+        </svg>,
       );
       expect(asFragment()).toMatchSnapshot();
     });
 
     it('should render band scale with "tickEvery" and "tickOffset" attributes', () => {
       const { asFragment } = render(
-        <BpkChartAxis
-          width={size}
-          height={size}
-          margin={margin}
-          scale={bandScale}
-          orientation={ORIENTATION_X}
-          tickEvery={2}
-          tickOffset={1}
-        />,
+        <svg>
+          <BpkChartAxis
+            width={size}
+            height={size}
+            margin={margin}
+            scale={bandScale}
+            orientation={ORIENTATION_X}
+            tickEvery={2}
+            tickOffset={1}
+          />
+        </svg>,
       );
       expect(asFragment()).toMatchSnapshot();
     });
 
     it('should render with label', () => {
       const { asFragment } = render(
-        <BpkChartAxis
-          width={size}
-          height={size}
-          margin={margin}
-          scale={linearScale}
-          orientation={ORIENTATION_X}
-          label="X axis label"
-        />,
+        <svg>
+          <BpkChartAxis
+            width={size}
+            height={size}
+            margin={margin}
+            scale={linearScale}
+            orientation={ORIENTATION_X}
+            label="X axis label"
+          />
+        </svg>,
       );
       expect(asFragment()).toMatchSnapshot();
     });
@@ -140,83 +152,95 @@ describe('BpkChartAxis', () => {
   describe('Y', () => {
     it('should render linear scale', () => {
       const { asFragment } = render(
-        <BpkChartAxis
-          width={size}
-          height={size}
-          margin={margin}
-          scale={linearScale}
-          orientation={ORIENTATION_Y}
-        />,
+        <svg>
+          <BpkChartAxis
+            width={size}
+            height={size}
+            margin={margin}
+            scale={linearScale}
+            orientation={ORIENTATION_Y}
+          />
+        </svg>,
       );
       expect(asFragment()).toMatchSnapshot();
     });
 
     it('should render linear scale with "numTicks" attribute', () => {
       const { asFragment } = render(
-        <BpkChartAxis
-          width={size}
-          height={size}
-          margin={margin}
-          scale={linearScale}
-          orientation={ORIENTATION_Y}
-          numTicks={2}
-        />,
+        <svg>
+          <BpkChartAxis
+            width={size}
+            height={size}
+            margin={margin}
+            scale={linearScale}
+            orientation={ORIENTATION_Y}
+            numTicks={2}
+          />
+        </svg>,
       );
       expect(asFragment()).toMatchSnapshot();
     });
 
     it('should render band scale', () => {
       const { asFragment } = render(
-        <BpkChartAxis
-          width={size}
-          height={size}
-          margin={margin}
-          scale={bandScale}
-          orientation={ORIENTATION_Y}
-        />,
+        <svg>
+          <BpkChartAxis
+            width={size}
+            height={size}
+            margin={margin}
+            scale={bandScale}
+            orientation={ORIENTATION_Y}
+          />
+        </svg>,
       );
       expect(asFragment()).toMatchSnapshot();
     });
 
     it('should render band scale with "tickEvery" attribute', () => {
       const { asFragment } = render(
-        <BpkChartAxis
-          width={size}
-          height={size}
-          margin={margin}
-          scale={bandScale}
-          orientation={ORIENTATION_Y}
-          tickEvery={2}
-        />,
+        <svg>
+          <BpkChartAxis
+            width={size}
+            height={size}
+            margin={margin}
+            scale={bandScale}
+            orientation={ORIENTATION_Y}
+            tickEvery={2}
+          />
+        </svg>,
       );
       expect(asFragment()).toMatchSnapshot();
     });
 
     it('should render band scale with "tickEvery" and "tickOffset" attributes', () => {
       const { asFragment } = render(
-        <BpkChartAxis
-          width={size}
-          height={size}
-          margin={margin}
-          scale={bandScale}
-          orientation={ORIENTATION_Y}
-          tickEvery={2}
-          tickOffset={1}
-        />,
+        <svg>
+          <BpkChartAxis
+            width={size}
+            height={size}
+            margin={margin}
+            scale={bandScale}
+            orientation={ORIENTATION_Y}
+            tickEvery={2}
+            tickOffset={1}
+          />
+        </svg>,
       );
       expect(asFragment()).toMatchSnapshot();
     });
 
     it('should render with label', () => {
       const { asFragment } = render(
-        <BpkChartAxis
-          width={size}
-          height={size}
-          margin={margin}
-          scale={linearScale}
-          orientation={ORIENTATION_Y}
-          label="Y axis label"
-        />,
+        <svg>
+          <BpkChartAxis
+            width={size}
+            height={size}
+            margin={margin}
+            scale={linearScale}
+            orientation={ORIENTATION_Y}
+            label="Y axis label"
+          />
+        </svg>,
       );
       expect(asFragment()).toMatchSnapshot();
     });

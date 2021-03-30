@@ -26,27 +26,39 @@ import BpkTableHead from './BpkTableHead';
 describe('BpkTableHead', () => {
   it('should render correctly', () => {
     const { asFragment } = render(
-      <BpkTableHead>
-        <th>Skyscanner</th>
-      </BpkTableHead>,
+      <table>
+        <BpkTableHead>
+          <tr>
+            <th>Skyscanner</th>
+          </tr>
+        </BpkTableHead>
+      </table>,
     );
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with custom class', () => {
     const { asFragment } = render(
-      <BpkTableHead className="my-custom-class">
-        <th>Skyscanner</th>
-      </BpkTableHead>,
+      <table>
+        <BpkTableHead className="my-custom-class">
+          <tr>
+            <th>Skyscanner</th>
+          </tr>
+        </BpkTableHead>
+      </table>,
     );
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with arbitrary props', () => {
     const { asFragment } = render(
-      <BpkTableHead id="my-custom-id" data-foo="bar">
-        <th>Skyscanner</th>
-      </BpkTableHead>,
+      <table>
+        <BpkTableHead id="my-custom-id" data-foo="bar">
+          <tr>
+            <th>Skyscanner</th>
+          </tr>
+        </BpkTableHead>
+      </table>,
     );
     expect(asFragment()).toMatchSnapshot();
   });

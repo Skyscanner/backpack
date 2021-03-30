@@ -18,6 +18,11 @@
 
 /* @flow strict */
 
+/*
+Note: The tests here are wrapped in table > tr to avoid a validation
+warning (that <td> elements must be inside tables) when running tests.
+*/
+
 import React from 'react';
 import { render } from '@testing-library/react';
 
@@ -25,13 +30,27 @@ import BpkTableCell from './BpkTableCell';
 
 describe('BpkTableCell', () => {
   it('should render correctly', () => {
-    const { asFragment } = render(<BpkTableCell>Tabular data</BpkTableCell>);
+    const { asFragment } = render(
+      <table>
+        <tbody>
+          <tr>
+            <BpkTableCell>Tabular data</BpkTableCell>
+          </tr>
+        </tbody>
+      </table>,
+    );
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with custom class', () => {
     const { asFragment } = render(
-      <BpkTableCell className="test">Tabular data</BpkTableCell>,
+      <table>
+        <tbody>
+          <tr>
+            <BpkTableCell className="test">Tabular data</BpkTableCell>
+          </tr>
+        </tbody>
+      </table>,
     );
     expect(asFragment()).toMatchSnapshot();
   });

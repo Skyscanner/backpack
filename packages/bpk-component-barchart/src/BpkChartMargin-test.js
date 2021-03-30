@@ -34,7 +34,9 @@ const margin = {
 describe('BpkChartMargin', () => {
   it('should render correctly', () => {
     const { asFragment } = render(
-      <BpkChartMargin margin={margin}>Children</BpkChartMargin>,
+      <svg>
+        <BpkChartMargin margin={margin}>Children</BpkChartMargin>
+      </svg>,
     );
     expect(asFragment()).toMatchSnapshot();
   });

@@ -58,7 +58,7 @@ describe('BpkBreadcrumbItem', () => {
     const { asFragment } = render(
       <BpkBreadcrumbItem
         href="https://backpack.github.io/"
-        testID="arbitrary value" // <-- arbitrary prop
+        testid="arbitrary value" // <-- arbitrary prop
       >
         Backpack
       </BpkBreadcrumbItem>,
@@ -71,7 +71,7 @@ describe('BpkBreadcrumbItem', () => {
     const { asFragment } = render(
       <BpkBreadcrumbItem
         href="https://backpack.github.io/"
-        linkProps={{ testID: 'arbitrary value' }} // <-- arbitrary prop
+        linkProps={{ testid: 'arbitrary value' }} // <-- arbitrary prop
       >
         Backpack
       </BpkBreadcrumbItem>,

@@ -20,16 +20,6 @@ exports[`BpkGridRow should render correctly with "className" attribute 1`] = `
 </DocumentFragment>
 `;
 
-exports[`BpkGridRow should render correctly with "debug" attribute 1`] = `
-<DocumentFragment>
-  <div
-    class="bpk-grid__row bpk-grid__row--padded"
-  >
-    Contents
-  </div>
-</DocumentFragment>
-`;
-
 exports[`BpkGridRow should render correctly with arbitrary attributes 1`] = `
 <DocumentFragment>
   <div

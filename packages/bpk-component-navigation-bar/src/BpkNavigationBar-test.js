@@ -41,7 +41,7 @@ describe('BpkNavigationBar', () => {
 
   it('should render correctly with arbitrary props', () => {
     const { asFragment } = render(
-      <BpkNavigationBar id="test" title="test" testID="arbitrary value" />,
+      <BpkNavigationBar id="test" title="test" testid="arbitrary value" />,
     );
 
     expect(asFragment()).toMatchSnapshot();

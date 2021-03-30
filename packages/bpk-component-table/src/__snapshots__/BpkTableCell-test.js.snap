@@ -2,20 +2,32 @@
 
 exports[`BpkTableCell should render correctly 1`] = `
 <DocumentFragment>
-  <td
-    class="bpk-table__cell"
-  >
-    Tabular data
-  </td>
+  <table>
+    <tbody>
+      <tr>
+        <td
+          class="bpk-table__cell"
+        >
+          Tabular data
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </DocumentFragment>
 `;
 
 exports[`BpkTableCell should render correctly with custom class 1`] = `
 <DocumentFragment>
-  <td
-    class="bpk-table__cell test"
-  >
-    Tabular data
-  </td>
+  <table>
+    <tbody>
+      <tr>
+        <td
+          class="bpk-table__cell test"
+        >
+          Tabular data
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </DocumentFragment>
 `;

@@ -2,10 +2,12 @@
 
 exports[`BpkChartMargin should render correctly 1`] = `
 <DocumentFragment>
-  <g
-    transform="translate(.75rem, .75rem)"
-  >
-    Children
-  </g>
+  <svg>
+    <g
+      transform="translate(.75rem, .75rem)"
+    >
+      Children
+    </g>
+  </svg>
 </DocumentFragment>
 `;

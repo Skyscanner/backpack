@@ -26,7 +26,9 @@ import { INPUT_TYPES } from './common-types';
 
 describe('BpkInput', () => {
   it('should render correctly', () => {
-    const { asFragment } = render(<BpkInput id="test" name="test" value="" />);
+    const { asFragment } = render(
+      <BpkInput id="test" name="test" value="" onChange={() => {}} />,
+    );
     expect(asFragment()).toMatchSnapshot();
   });
 
@@ -45,21 +47,27 @@ describe('BpkInput', () => {
 
   it('should render correctly with value', () => {
     const { asFragment } = render(
-      <BpkInput id="test" name="test" value="My value" />,
+      <BpkInput id="test" name="test" value="My value" onChange={() => {}} />,
     );
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with valid attribute set to "true"', () => {
     const { asFragment } = render(
-      <BpkInput id="test" name="test" value="" valid />,
+      <BpkInput id="test" name="test" value="" valid onChange={() => {}} />,
     );
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with valid attribute set to "false"', () => {
     const { asFragment } = render(
-      <BpkInput id="test" name="test" value="" valid={false} />,
+      <BpkInput
+        id="test"
+        name="test"
+        value=""
+        valid={false}
+        onChange={() => {}}
+      />,
     );
     expect(asFragment()).toMatchSnapshot();
   });
@@ -74,6 +82,7 @@ describe('BpkInput', () => {
         name="test"
         value=""
         clearButtonMode="whileEditing"
+        onChange={() => {}}
       />,
     );
     expect(asFragment()).toMatchSnapshot();
@@ -84,21 +93,39 @@ describe('BpkInput', () => {
     // are missing. Swallow that as it's tested in customPropTypes-test.js.
     jest.spyOn(console, 'error').mockImplementation(() => jest.fn());
     const { asFragment } = render(
-      <BpkInput id="test" name="test" value="" clearButtonMode="always" />,
+      <BpkInput
+        id="test"
+        name="test"
+        value=""
+        clearButtonMode="always"
+        onChange={() => {}}
+      />,
     );
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with "onClear" attribute', () => {
     const { asFragment } = render(
-      <BpkInput id="test" name="test" value="" onClear={() => {}} />,
+      <BpkInput
+        id="test"
+        name="test"
+        value=""
+        onClear={() => {}}
+        onChange={() => {}}
+      />,
     );
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with "clearButtonLabel" attribute', () => {
     const { asFragment } = render(
-      <BpkInput id="test" name="test" value="" clearButtonLabel="test" />,
+      <BpkInput
+        id="test"
+        name="test"
+        value=""
+        clearButtonLabel="test"
+        onChange={() => {}}
+      />,
     );
     expect(asFragment()).toMatchSnapshot();
   });
@@ -112,6 +139,7 @@ describe('BpkInput', () => {
         clearButtonMode="whileEditing"
         onClear={() => {}}
         clearButtonLabel="test"
+        onChange={() => {}}
       />,
     );
     expect(asFragment()).toMatchSnapshot();
@@ -119,42 +147,66 @@ describe('BpkInput', () => {
 
   it('should render correctly with type attribute', () => {
     const { asFragment } = render(
-      <BpkInput type={INPUT_TYPES.password} id="test" name="test" value="" />,
+      <BpkInput
+        type={INPUT_TYPES.password}
+        id="test"
+        name="test"
+        value=""
+        onChange={() => {}}
+      />,
     );
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with "large" attribute', () => {
     const { asFragment } = render(
-      <BpkInput id="test" name="test" value="" large />,
+      <BpkInput id="test" name="test" value="" large onChange={() => {}} />,
     );
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with "docked" attribute', () => {
     const { asFragment } = render(
-      <BpkInput id="test" name="test" value="" docked />,
+      <BpkInput id="test" name="test" value="" docked onChange={() => {}} />,
     );
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with "dockedFirst" attribute', () => {
     const { asFragment } = render(
-      <BpkInput id="test" name="test" value="" dockedFirst />,
+      <BpkInput
+        id="test"
+        name="test"
+        value=""
+        dockedFirst
+        onChange={() => {}}
+      />,
     );
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with "dockedMiddle" attribute', () => {
     const { asFragment } = render(
-      <BpkInput id="test" name="test" value="" dockedMiddle />,
+      <BpkInput
+        id="test"
+        name="test"
+        value=""
+        dockedMiddle
+        onChange={() => {}}
+      />,
     );
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with "dockedLast" attribute', () => {
     const { asFragment } = render(
-      <BpkInput id="test" name="test" value="" dockedLast />,
+      <BpkInput
+        id="test"
+        name="test"
+        value=""
+        dockedLast
+        onChange={() => {}}
+      />,
     );
     expect(asFragment()).toMatchSnapshot();
   });
@@ -170,6 +222,7 @@ describe('BpkInput', () => {
         name="test"
         value=""
         inputRef={storeInputReference}
+        onChange={() => {}}
       />,
     );
     const input = tree
@@ -192,6 +245,7 @@ describe('BpkInput', () => {
         clearButtonMode="always"
         onClear={onClear}
         clearButtonLabel="clear"
+        onChange={() => {}}
       />,
     );
 

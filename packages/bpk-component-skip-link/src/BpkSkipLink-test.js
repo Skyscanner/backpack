@@ -43,7 +43,7 @@ describe('BpkSkipLink', () => {
 
   it('should support arbitrary props', () => {
     const { asFragment } = render(
-      <BpkSkipLink href="#main" label="Skip to main content" testID="123" />,
+      <BpkSkipLink href="#main" label="Skip to main content" testid="123" />,
     );
     expect(asFragment()).toMatchSnapshot();
   });

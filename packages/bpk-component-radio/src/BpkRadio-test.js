@@ -45,7 +45,7 @@ describe('BpkRadio', () => {
 
   it('should render correctly with checked attribute', () => {
     const { asFragment } = render(
-      <BpkRadio name="radio" label="Direct" checked />,
+      <BpkRadio name="radio" label="Direct" checked onChange={() => {}} />,
     );
     expect(asFragment()).toMatchSnapshot();
   });

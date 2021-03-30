@@ -53,7 +53,7 @@ describe('BpkAriaLive', () => {
 
   it('should support arbitrary props', () => {
     const { asFragment } = render(
-      <BpkAriaLive testID="123">Backpack</BpkAriaLive>,
+      <BpkAriaLive testid="123">Backpack</BpkAriaLive>,
     );
     expect(asFragment()).toMatchSnapshot();
   });

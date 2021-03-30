@@ -26,27 +26,33 @@ import BpkTableBody from './BpkTableBody';
 describe('BpkTableBody', () => {
   it('should render correctly', () => {
     const { asFragment } = render(
-      <BpkTableBody>
-        <tr />
-      </BpkTableBody>,
+      <table>
+        <BpkTableBody>
+          <tr />
+        </BpkTableBody>
+      </table>,
     );
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with custom class', () => {
     const { asFragment } = render(
-      <BpkTableBody className="my-custom-class">
-        <tr />
-      </BpkTableBody>,
+      <table>
+        <BpkTableBody className="my-custom-class">
+          <tr />
+        </BpkTableBody>
+      </table>,
     );
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with arbitrary props', () => {
     const { asFragment } = render(
-      <BpkTableBody id="my-custom-id" data-foo="bar">
-        <tr />
-      </BpkTableBody>,
+      <table>
+        <BpkTableBody id="my-custom-id" data-foo="bar">
+          <tr />
+        </BpkTableBody>
+      </table>,
     );
     expect(asFragment()).toMatchSnapshot();
   });

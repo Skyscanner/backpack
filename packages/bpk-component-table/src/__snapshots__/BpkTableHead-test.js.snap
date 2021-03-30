@@ -2,41 +2,47 @@
 
 exports[`BpkTableHead should render correctly 1`] = `
 <DocumentFragment>
-  <thead>
-    <tr>
-      <th>
-        Skyscanner
-      </th>
-    </tr>
-  </thead>
+  <table>
+    <thead>
+      <tr>
+        <th>
+          Skyscanner
+        </th>
+      </tr>
+    </thead>
+  </table>
 </DocumentFragment>
 `;
 
 exports[`BpkTableHead should render correctly with arbitrary props 1`] = `
 <DocumentFragment>
-  <thead
-    data-foo="bar"
-    id="my-custom-id"
-  >
-    <tr>
-      <th>
-        Skyscanner
-      </th>
-    </tr>
-  </thead>
+  <table>
+    <thead
+      data-foo="bar"
+      id="my-custom-id"
+    >
+      <tr>
+        <th>
+          Skyscanner
+        </th>
+      </tr>
+    </thead>
+  </table>
 </DocumentFragment>
 `;
 
 exports[`BpkTableHead should render correctly with custom class 1`] = `
 <DocumentFragment>
-  <thead
-    class="my-custom-class"
-  >
-    <tr>
-      <th>
-        Skyscanner
-      </th>
-    </tr>
-  </thead>
+  <table>
+    <thead
+      class="my-custom-class"
+    >
+      <tr>
+        <th>
+          Skyscanner
+        </th>
+      </tr>
+    </thead>
+  </table>
 </DocumentFragment>
 `;

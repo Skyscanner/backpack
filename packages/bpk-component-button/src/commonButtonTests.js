@@ -56,7 +56,7 @@ const commonButtonTests = ButtonToTest => {
 
     it('should respect the class names entered as a string', () => {
       const { asFragment } = render(
-        <ButtonToTest large secondary className="custom-class-1 custom-class-2">
+        <ButtonToTest large className="custom-class-1 custom-class-2">
           My button
         </ButtonToTest>,
       );

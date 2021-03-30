@@ -55,7 +55,7 @@ describe('BpkScrollableCalendarDate', () => {
 
   it('should render a focused button with tabIndex', () => {
     const { asFragment } = render(
-      <BpkScrollableCalendarDate date={testDate} focused />,
+      <BpkScrollableCalendarDate date={testDate} isFocused />,
       {
         createNodeMock,
       },
