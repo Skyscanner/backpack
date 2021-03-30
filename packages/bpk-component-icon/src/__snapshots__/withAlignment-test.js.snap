@@ -1,233 +1,149 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`withAlignment should keep wrapped-component styling 1`] = `
-<span
-  style={
-    Object {
-      "display": "inline-block",
-      "lineHeight": "1.125rem",
-      "marginTop": "0.25rem",
-      "verticalAlign": "top",
-    }
-  }
->
-  <div
-    style={
-      Object {
-        "float": "right",
-      }
-    }
+<DocumentFragment>
+  <span
+    style="line-height: 1.125rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
   >
-    test lineHeight 
-    1.625rem
-     and iconsSize 
-    1.125rem
-  </div>
-</span>
+    <div
+      style="float: right;"
+    >
+      test lineHeight 1.625rem and iconsSize 1.125rem
+    </div>
+  </span>
+</DocumentFragment>
 `;
 
 exports[`withAlignment should render correctly 1`] = `
-<span
-  style={
-    Object {
-      "display": "inline-block",
-      "lineHeight": "1.125rem",
-      "marginTop": "0rem",
-      "verticalAlign": "top",
-    }
-  }
->
-  <div>
-    test lineHeight 
-    1.125rem
-     and iconsSize 
-    1.125rem
-  </div>
-</span>
+<DocumentFragment>
+  <span
+    style="line-height: 1.125rem; display: inline-block; margin-top: 0rem; vertical-align: top;"
+  >
+    <div>
+      test lineHeight 1.125rem and iconsSize 1.125rem
+    </div>
+  </span>
+</DocumentFragment>
 `;
 
 exports[`withAlignment should render correctly 2`] = `
-<span
-  style={
-    Object {
-      "display": "inline-block",
-      "lineHeight": "1.5rem",
-      "marginTop": "0rem",
-      "verticalAlign": "top",
-    }
-  }
->
-  <div>
-    test lineHeight 
-    1.125rem
-     and iconsSize 
-    1.5rem
-  </div>
-</span>
+<DocumentFragment>
+  <span
+    style="line-height: 1.5rem; display: inline-block; margin-top: 0rem; vertical-align: top;"
+  >
+    <div>
+      test lineHeight 1.125rem and iconsSize 1.5rem
+    </div>
+  </span>
+</DocumentFragment>
 `;
 
 exports[`withAlignment should render correctly 3`] = `
-<span
-  style={
-    Object {
-      "display": "inline-block",
-      "lineHeight": "1.125rem",
-      "marginTop": "0.0625rem",
-      "verticalAlign": "top",
-    }
-  }
->
-  <div>
-    test lineHeight 
-    1.25rem
-     and iconsSize 
-    1.125rem
-  </div>
-</span>
+<DocumentFragment>
+  <span
+    style="line-height: 1.125rem; display: inline-block; margin-top: 0.0625rem; vertical-align: top;"
+  >
+    <div>
+      test lineHeight 1.25rem and iconsSize 1.125rem
+    </div>
+  </span>
+</DocumentFragment>
 `;
 
 exports[`withAlignment should render correctly 4`] = `
-<span
-  style={
-    Object {
-      "display": "inline-block",
-      "lineHeight": "1.5rem",
-      "marginTop": "0rem",
-      "verticalAlign": "top",
-    }
-  }
->
-  <div>
-    test lineHeight 
-    1.25rem
-     and iconsSize 
-    1.5rem
-  </div>
-</span>
+<DocumentFragment>
+  <span
+    style="line-height: 1.5rem; display: inline-block; margin-top: 0rem; vertical-align: top;"
+  >
+    <div>
+      test lineHeight 1.25rem and iconsSize 1.5rem
+    </div>
+  </span>
+</DocumentFragment>
 `;
 
 exports[`withAlignment should render correctly 5`] = `
-<span
-  style={
-    Object {
-      "display": "inline-block",
-      "lineHeight": "1.125rem",
-      "marginTop": "0.25rem",
-      "verticalAlign": "top",
-    }
-  }
->
-  <div>
-    test lineHeight 
-    1.625rem
-     and iconsSize 
-    1.125rem
-  </div>
-</span>
+<DocumentFragment>
+  <span
+    style="line-height: 1.125rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
+  >
+    <div>
+      test lineHeight 1.625rem and iconsSize 1.125rem
+    </div>
+  </span>
+</DocumentFragment>
 `;
 
 exports[`withAlignment should render correctly 6`] = `
-<span
-  style={
-    Object {
-      "display": "inline-block",
-      "lineHeight": "1.5rem",
-      "marginTop": "0.0625rem",
-      "verticalAlign": "top",
-    }
-  }
->
-  <div>
-    test lineHeight 
-    1.625rem
-     and iconsSize 
-    1.5rem
-  </div>
-</span>
+<DocumentFragment>
+  <span
+    style="line-height: 1.5rem; display: inline-block; margin-top: 0.0625rem; vertical-align: top;"
+  >
+    <div>
+      test lineHeight 1.625rem and iconsSize 1.5rem
+    </div>
+  </span>
+</DocumentFragment>
 `;
 
 exports[`withAlignment should render correctly 7`] = `
-<span
-  style={
-    Object {
-      "display": "inline-block",
-      "lineHeight": "1.125rem",
-      "marginTop": "0.40625rem",
-      "verticalAlign": "top",
-    }
-  }
->
-  <div>
-    test lineHeight 
-    1.9375rem
-     and iconsSize 
-    1.125rem
-  </div>
-</span>
+<DocumentFragment>
+  <span
+    style="line-height: 1.125rem; display: inline-block; margin-top: 0.40625rem; vertical-align: top;"
+  >
+    <div>
+      test lineHeight 1.9375rem and iconsSize 1.125rem
+    </div>
+  </span>
+</DocumentFragment>
 `;
 
 exports[`withAlignment should render correctly 8`] = `
-<span
-  style={
-    Object {
-      "display": "inline-block",
-      "lineHeight": "1.5rem",
-      "marginTop": "0.21875rem",
-      "verticalAlign": "top",
-    }
-  }
->
-  <div>
-    test lineHeight 
-    1.9375rem
-     and iconsSize 
-    1.5rem
-  </div>
-</span>
+<DocumentFragment>
+  <span
+    style="line-height: 1.5rem; display: inline-block; margin-top: 0.21875rem; vertical-align: top;"
+  >
+    <div>
+      test lineHeight 1.9375rem and iconsSize 1.5rem
+    </div>
+  </span>
+</DocumentFragment>
 `;
 
 exports[`withAlignment should render correctly 9`] = `
-<span
-  style={
-    Object {
-      "display": "inline-block",
-      "lineHeight": "1.125rem",
-      "marginTop": "0.65625rem",
-      "verticalAlign": "top",
-    }
-  }
->
-  <div>
-    test lineHeight 
-    2.4375rem
-     and iconsSize 
-    1.125rem
-  </div>
-</span>
+<DocumentFragment>
+  <span
+    style="line-height: 1.125rem; display: inline-block; margin-top: 0.65625rem; vertical-align: top;"
+  >
+    <div>
+      test lineHeight 2.4375rem and iconsSize 1.125rem
+    </div>
+  </span>
+</DocumentFragment>
 `;
 
 exports[`withAlignment should render correctly 10`] = `
-<span
-  style={
-    Object {
-      "display": "inline-block",
-      "lineHeight": "1.5rem",
-      "marginTop": "0.46875rem",
-      "verticalAlign": "top",
-    }
-  }
->
-  <div>
-    test lineHeight 
-    2.4375rem
-     and iconsSize 
-    1.5rem
-  </div>
-</span>
+<DocumentFragment>
+  <span
+    style="line-height: 1.5rem; display: inline-block; margin-top: 0.46875rem; vertical-align: top;"
+  >
+    <div>
+      test lineHeight 2.4375rem and iconsSize 1.5rem
+    </div>
+  </span>
+</DocumentFragment>
 `;
 
 exports[`withAlignment should wrap the component display name 1`] = `
-<div>
-  <withAlignment(Component) />
-</div>
+<DocumentFragment>
+  <div>
+    <span
+      style="line-height: 1.125rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
+    >
+      <div>
+        test
+      </div>
+    </span>
+  </div>
+</DocumentFragment>
 `;

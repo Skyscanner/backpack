@@ -17,7 +17,7 @@
  */
 
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import { shallow } from 'enzyme';
 
 import BpkCalendarGridTransition, {
@@ -29,17 +29,15 @@ const TransitioningMyComponent = addCalendarGridTransition(MyComponent);
 
 describe('BpkCalendar', () => {
   it('should render correctly', () => {
-    const tree = renderer
-      .create(
-        <TransitioningMyComponent
-          TransitionComponent={MyComponent}
-          minDate={new Date(Date.UTC(2009, 1))}
-          maxDate={new Date(Date.UTC(2011, 1))}
-          month={new Date(Date.UTC(2010, 1))}
-        />,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <TransitioningMyComponent
+        TransitionComponent={MyComponent}
+        minDate={new Date(Date.UTC(2009, 1))}
+        maxDate={new Date(Date.UTC(2011, 1))}
+        month={new Date(Date.UTC(2010, 1))}
+      />,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should transition to the next month', () => {

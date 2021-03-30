@@ -1,219 +1,224 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`BpkRadio should render correctly 1`] = `
-<label
-  className="bpk-radio"
->
-  <input
-    aria-invalid={false}
-    aria-label="Direct"
-    className="bpk-radio__input"
-    disabled={false}
-    name="radio"
-    type="radio"
-  />
-  <div
-    className="bpk-radio__circle"
-  />
-  <span
-    aria-hidden="true"
+<DocumentFragment>
+  <label
+    class="bpk-radio"
   >
-    Direct
-  </span>
-</label>
+    <input
+      aria-invalid="false"
+      aria-label="Direct"
+      class="bpk-radio__input"
+      name="radio"
+      type="radio"
+    />
+    <div
+      class="bpk-radio__circle"
+    />
+    <span
+      aria-hidden="true"
+    >
+      Direct
+    </span>
+  </label>
+</DocumentFragment>
 `;
 
 exports[`BpkRadio should render correctly when invalid 1`] = `
-<label
-  className="bpk-radio bpk-radio--invalid"
->
-  <input
-    aria-invalid={true}
-    aria-label="Direct"
-    className="bpk-radio__input"
-    disabled={false}
-    name="radio"
-    type="radio"
-    value="my-value"
-  />
-  <div
-    className="bpk-radio__circle"
-  />
-  <span
-    aria-hidden="true"
+<DocumentFragment>
+  <label
+    class="bpk-radio bpk-radio--invalid"
   >
-    Direct
-  </span>
-</label>
+    <input
+      aria-invalid="true"
+      aria-label="Direct"
+      class="bpk-radio__input"
+      name="radio"
+      type="radio"
+      value="my-value"
+    />
+    <div
+      class="bpk-radio__circle"
+    />
+    <span
+      aria-hidden="true"
+    >
+      Direct
+    </span>
+  </label>
+</DocumentFragment>
 `;
 
 exports[`BpkRadio should render correctly when label is a node 1`] = `
-<label
-  className="bpk-radio"
->
-  <input
-    aria-invalid={false}
-    aria-label={
+<DocumentFragment>
+  <label
+    class="bpk-radio"
+  >
+    <input
+      aria-invalid="false"
+      aria-label="[object Object]"
+      class="bpk-radio__input"
+      name="radio"
+      type="radio"
+    />
+    <div
+      class="bpk-radio__circle"
+    />
+    <span
+      aria-hidden="true"
+    >
       <span>
         Direct
       </span>
-    }
-    className="bpk-radio__input"
-    disabled={false}
-    name="radio"
-    type="radio"
-  />
-  <div
-    className="bpk-radio__circle"
-  />
-  <span
-    aria-hidden="true"
-  >
-    <span>
-      Direct
     </span>
-  </span>
-</label>
+  </label>
+</DocumentFragment>
 `;
 
 exports[`BpkRadio should render correctly with ariaLabel attribute 1`] = `
-<label
-  className="bpk-radio"
->
-  <input
-    aria-invalid={false}
-    aria-label="Is this direct"
-    className="bpk-radio__input"
-    disabled={false}
-    id="radio"
-    name="radio"
-    type="radio"
-  />
-  <div
-    className="bpk-radio__circle"
-  />
-  <span
-    aria-hidden="true"
+<DocumentFragment>
+  <label
+    class="bpk-radio"
   >
-    Direct
-  </span>
-</label>
+    <input
+      aria-invalid="false"
+      aria-label="Is this direct"
+      class="bpk-radio__input"
+      id="radio"
+      name="radio"
+      type="radio"
+    />
+    <div
+      class="bpk-radio__circle"
+    />
+    <span
+      aria-hidden="true"
+    >
+      Direct
+    </span>
+  </label>
+</DocumentFragment>
 `;
 
 exports[`BpkRadio should render correctly with checked attribute 1`] = `
-<label
-  className="bpk-radio"
->
-  <input
-    aria-invalid={false}
-    aria-label="Direct"
-    checked={true}
-    className="bpk-radio__input"
-    disabled={false}
-    name="radio"
-    type="radio"
-  />
-  <div
-    className="bpk-radio__circle"
-  />
-  <span
-    aria-hidden="true"
+<DocumentFragment>
+  <label
+    class="bpk-radio"
   >
-    Direct
-  </span>
-</label>
+    <input
+      aria-invalid="false"
+      aria-label="Direct"
+      class="bpk-radio__input"
+      name="radio"
+      type="radio"
+    />
+    <div
+      class="bpk-radio__circle"
+    />
+    <span
+      aria-hidden="true"
+    >
+      Direct
+    </span>
+  </label>
+</DocumentFragment>
 `;
 
 exports[`BpkRadio should render correctly with disabled attribute 1`] = `
-<label
-  className="bpk-radio bpk-radio--disabled"
->
-  <input
-    aria-invalid={false}
-    aria-label="Direct"
-    className="bpk-radio__input"
-    disabled={true}
-    name="radio"
-    type="radio"
-  />
-  <div
-    className="bpk-radio__circle"
-  />
-  <span
-    aria-hidden="true"
+<DocumentFragment>
+  <label
+    class="bpk-radio bpk-radio--disabled"
   >
-    Direct
-  </span>
-</label>
+    <input
+      aria-invalid="false"
+      aria-label="Direct"
+      class="bpk-radio__input"
+      disabled=""
+      name="radio"
+      type="radio"
+    />
+    <div
+      class="bpk-radio__circle"
+    />
+    <span
+      aria-hidden="true"
+    >
+      Direct
+    </span>
+  </label>
+</DocumentFragment>
 `;
 
 exports[`BpkRadio should render correctly with id attribute 1`] = `
-<label
-  className="bpk-radio"
->
-  <input
-    aria-invalid={false}
-    aria-label="Direct"
-    className="bpk-radio__input"
-    disabled={false}
-    id="radio"
-    name="radio"
-    type="radio"
-  />
-  <div
-    className="bpk-radio__circle"
-  />
-  <span
-    aria-hidden="true"
+<DocumentFragment>
+  <label
+    class="bpk-radio"
   >
-    Direct
-  </span>
-</label>
+    <input
+      aria-invalid="false"
+      aria-label="Direct"
+      class="bpk-radio__input"
+      id="radio"
+      name="radio"
+      type="radio"
+    />
+    <div
+      class="bpk-radio__circle"
+    />
+    <span
+      aria-hidden="true"
+    >
+      Direct
+    </span>
+  </label>
+</DocumentFragment>
 `;
 
 exports[`BpkRadio should render correctly with value attribute 1`] = `
-<label
-  className="bpk-radio"
->
-  <input
-    aria-invalid={false}
-    aria-label="Direct"
-    className="bpk-radio__input"
-    disabled={false}
-    name="radio"
-    type="radio"
-    value="my-value"
-  />
-  <div
-    className="bpk-radio__circle"
-  />
-  <span
-    aria-hidden="true"
+<DocumentFragment>
+  <label
+    class="bpk-radio"
   >
-    Direct
-  </span>
-</label>
+    <input
+      aria-invalid="false"
+      aria-label="Direct"
+      class="bpk-radio__input"
+      name="radio"
+      type="radio"
+      value="my-value"
+    />
+    <div
+      class="bpk-radio__circle"
+    />
+    <span
+      aria-hidden="true"
+    >
+      Direct
+    </span>
+  </label>
+</DocumentFragment>
 `;
 
 exports[`BpkRadio should render correctly with white attribute 1`] = `
-<label
-  className="bpk-radio bpk-radio--white"
->
-  <input
-    aria-invalid={false}
-    aria-label="Direct"
-    className="bpk-radio__input"
-    disabled={false}
-    name="radio"
-    type="radio"
-  />
-  <div
-    className="bpk-radio__circle"
-  />
-  <span
-    aria-hidden="true"
+<DocumentFragment>
+  <label
+    class="bpk-radio bpk-radio--white"
   >
-    Direct
-  </span>
-</label>
+    <input
+      aria-invalid="false"
+      aria-label="Direct"
+      class="bpk-radio__input"
+      name="radio"
+      type="radio"
+    />
+    <div
+      class="bpk-radio__circle"
+    />
+    <span
+      aria-hidden="true"
+    >
+      Direct
+    </span>
+  </label>
+</DocumentFragment>
 `;

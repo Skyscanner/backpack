@@ -19,7 +19,7 @@
 /* @flow strict */
 
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import { colorPanjin } from 'bpk-tokens/tokens/base.es6';
 
 import BpkMobileScrollContainer, {
@@ -49,55 +49,47 @@ const makeMockInnerEl = (offsetHeight): HTMLElement => {
 
 describe('BpkMobileScrollContainer', () => {
   it('should render correctly', () => {
-    const tree = renderer
-      .create(
-        <BpkMobileScrollContainer>
-          Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
-          commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus
-          et magnis dis parturient montes, nascetur ridiculus mus.
-        </BpkMobileScrollContainer>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkMobileScrollContainer>
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
+        ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis
+        dis parturient montes, nascetur ridiculus mus.
+      </BpkMobileScrollContainer>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with a custom "className" attribute', () => {
-    const tree = renderer
-      .create(
-        <BpkMobileScrollContainer className="my-custom-class">
-          Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
-          commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus
-          et magnis dis parturient montes, nascetur ridiculus mus.
-        </BpkMobileScrollContainer>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkMobileScrollContainer className="my-custom-class">
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
+        ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis
+        dis parturient montes, nascetur ridiculus mus.
+      </BpkMobileScrollContainer>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly when showScrollbar is set to true', () => {
-    const tree = renderer
-      .create(
-        <BpkMobileScrollContainer showScrollbar>
-          Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
-          commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus
-          et magnis dis parturient montes, nascetur ridiculus mus.
-        </BpkMobileScrollContainer>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkMobileScrollContainer showScrollbar>
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
+        ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis
+        dis parturient montes, nascetur ridiculus mus.
+      </BpkMobileScrollContainer>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with a custom "style" attribute', () => {
-    const tree = renderer
-      .create(
-        <BpkMobileScrollContainer style={{ backgroundColor: colorPanjin }}>
-          Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
-          commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus
-          et magnis dis parturient montes, nascetur ridiculus mus.
-        </BpkMobileScrollContainer>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkMobileScrollContainer style={{ backgroundColor: colorPanjin }}>
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
+        ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis
+        dis parturient montes, nascetur ridiculus mus.
+      </BpkMobileScrollContainer>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   describe('functions', () => {

@@ -23,7 +23,7 @@
 /* eslint-disable backpack/use-tokens */
 
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import { scaleLinear, scaleBand } from 'd3-scale';
 
 import BpkChartAxis from './BpkChartAxis';
@@ -54,23 +54,23 @@ const bandScale = scaleBand()
 describe('BpkChartAxis', () => {
   describe('X', () => {
     it('should render linear scale', () => {
-      const tree = renderer
-        .create(
+      const { asFragment } = render(
+        <svg>
           <BpkChartAxis
             width={size}
             height={size}
             margin={margin}
             scale={linearScale}
             orientation={ORIENTATION_X}
-          />,
-        )
-        .toJSON();
-      expect(tree).toMatchSnapshot();
+          />
+        </svg>,
+      );
+      expect(asFragment()).toMatchSnapshot();
     });
 
     it('should render linear scale with "numTicks" attribute', () => {
-      const tree = renderer
-        .create(
+      const { asFragment } = render(
+        <svg>
           <BpkChartAxis
             width={size}
             height={size}
@@ -78,30 +78,30 @@ describe('BpkChartAxis', () => {
             scale={linearScale}
             orientation={ORIENTATION_X}
             numTicks={2}
-          />,
-        )
-        .toJSON();
-      expect(tree).toMatchSnapshot();
+          />
+        </svg>,
+      );
+      expect(asFragment()).toMatchSnapshot();
     });
 
     it('should render band scale', () => {
-      const tree = renderer
-        .create(
+      const { asFragment } = render(
+        <svg>
           <BpkChartAxis
             width={size}
             height={size}
             margin={margin}
             scale={bandScale}
             orientation={ORIENTATION_X}
-          />,
-        )
-        .toJSON();
-      expect(tree).toMatchSnapshot();
+          />
+        </svg>,
+      );
+      expect(asFragment()).toMatchSnapshot();
     });
 
     it('should render band scale with "tickEvery" attribute', () => {
-      const tree = renderer
-        .create(
+      const { asFragment } = render(
+        <svg>
           <BpkChartAxis
             width={size}
             height={size}
@@ -109,15 +109,15 @@ describe('BpkChartAxis', () => {
             scale={bandScale}
             orientation={ORIENTATION_X}
             tickEvery={2}
-          />,
-        )
-        .toJSON();
-      expect(tree).toMatchSnapshot();
+          />
+        </svg>,
+      );
+      expect(asFragment()).toMatchSnapshot();
     });
 
     it('should render band scale with "tickEvery" and "tickOffset" attributes', () => {
-      const tree = renderer
-        .create(
+      const { asFragment } = render(
+        <svg>
           <BpkChartAxis
             width={size}
             height={size}
@@ -126,15 +126,15 @@ describe('BpkChartAxis', () => {
             orientation={ORIENTATION_X}
             tickEvery={2}
             tickOffset={1}
-          />,
-        )
-        .toJSON();
-      expect(tree).toMatchSnapshot();
+          />
+        </svg>,
+      );
+      expect(asFragment()).toMatchSnapshot();
     });
 
     it('should render with label', () => {
-      const tree = renderer
-        .create(
+      const { asFragment } = render(
+        <svg>
           <BpkChartAxis
             width={size}
             height={size}
@@ -142,32 +142,32 @@ describe('BpkChartAxis', () => {
             scale={linearScale}
             orientation={ORIENTATION_X}
             label="X axis label"
-          />,
-        )
-        .toJSON();
-      expect(tree).toMatchSnapshot();
+          />
+        </svg>,
+      );
+      expect(asFragment()).toMatchSnapshot();
     });
   });
 
   describe('Y', () => {
     it('should render linear scale', () => {
-      const tree = renderer
-        .create(
+      const { asFragment } = render(
+        <svg>
           <BpkChartAxis
             width={size}
             height={size}
             margin={margin}
             scale={linearScale}
             orientation={ORIENTATION_Y}
-          />,
-        )
-        .toJSON();
-      expect(tree).toMatchSnapshot();
+          />
+        </svg>,
+      );
+      expect(asFragment()).toMatchSnapshot();
     });
 
     it('should render linear scale with "numTicks" attribute', () => {
-      const tree = renderer
-        .create(
+      const { asFragment } = render(
+        <svg>
           <BpkChartAxis
             width={size}
             height={size}
@@ -175,30 +175,30 @@ describe('BpkChartAxis', () => {
             scale={linearScale}
             orientation={ORIENTATION_Y}
             numTicks={2}
-          />,
-        )
-        .toJSON();
-      expect(tree).toMatchSnapshot();
+          />
+        </svg>,
+      );
+      expect(asFragment()).toMatchSnapshot();
     });
 
     it('should render band scale', () => {
-      const tree = renderer
-        .create(
+      const { asFragment } = render(
+        <svg>
           <BpkChartAxis
             width={size}
             height={size}
             margin={margin}
             scale={bandScale}
             orientation={ORIENTATION_Y}
-          />,
-        )
-        .toJSON();
-      expect(tree).toMatchSnapshot();
+          />
+        </svg>,
+      );
+      expect(asFragment()).toMatchSnapshot();
     });
 
     it('should render band scale with "tickEvery" attribute', () => {
-      const tree = renderer
-        .create(
+      const { asFragment } = render(
+        <svg>
           <BpkChartAxis
             width={size}
             height={size}
@@ -206,15 +206,15 @@ describe('BpkChartAxis', () => {
             scale={bandScale}
             orientation={ORIENTATION_Y}
             tickEvery={2}
-          />,
-        )
-        .toJSON();
-      expect(tree).toMatchSnapshot();
+          />
+        </svg>,
+      );
+      expect(asFragment()).toMatchSnapshot();
     });
 
     it('should render band scale with "tickEvery" and "tickOffset" attributes', () => {
-      const tree = renderer
-        .create(
+      const { asFragment } = render(
+        <svg>
           <BpkChartAxis
             width={size}
             height={size}
@@ -223,15 +223,15 @@ describe('BpkChartAxis', () => {
             orientation={ORIENTATION_Y}
             tickEvery={2}
             tickOffset={1}
-          />,
-        )
-        .toJSON();
-      expect(tree).toMatchSnapshot();
+          />
+        </svg>,
+      );
+      expect(asFragment()).toMatchSnapshot();
     });
 
     it('should render with label', () => {
-      const tree = renderer
-        .create(
+      const { asFragment } = render(
+        <svg>
           <BpkChartAxis
             width={size}
             height={size}
@@ -239,10 +239,10 @@ describe('BpkChartAxis', () => {
             scale={linearScale}
             orientation={ORIENTATION_Y}
             label="Y axis label"
-          />,
-        )
-        .toJSON();
-      expect(tree).toMatchSnapshot();
+          />
+        </svg>,
+      );
+      expect(asFragment()).toMatchSnapshot();
     });
   });
 });

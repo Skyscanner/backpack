@@ -1,30 +1,48 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`BpkTableHead should render correctly 1`] = `
-<thead>
-  <th>
-    Skyscanner
-  </th>
-</thead>
+<DocumentFragment>
+  <table>
+    <thead>
+      <tr>
+        <th>
+          Skyscanner
+        </th>
+      </tr>
+    </thead>
+  </table>
+</DocumentFragment>
 `;
 
 exports[`BpkTableHead should render correctly with arbitrary props 1`] = `
-<thead
-  data-foo="bar"
-  id="my-custom-id"
->
-  <th>
-    Skyscanner
-  </th>
-</thead>
+<DocumentFragment>
+  <table>
+    <thead
+      data-foo="bar"
+      id="my-custom-id"
+    >
+      <tr>
+        <th>
+          Skyscanner
+        </th>
+      </tr>
+    </thead>
+  </table>
+</DocumentFragment>
 `;
 
 exports[`BpkTableHead should render correctly with custom class 1`] = `
-<thead
-  className="my-custom-class"
->
-  <th>
-    Skyscanner
-  </th>
-</thead>
+<DocumentFragment>
+  <table>
+    <thead
+      class="my-custom-class"
+    >
+      <tr>
+        <th>
+          Skyscanner
+        </th>
+      </tr>
+    </thead>
+  </table>
+</DocumentFragment>
 `;

@@ -17,41 +17,32 @@
  */
 
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 
 import BpkGridRow from './BpkGridRow';
 
 describe('BpkGridRow', () => {
   it('should render correctly', () => {
-    const tree = renderer.create(<BpkGridRow>Contents</BpkGridRow>).toJSON();
-    expect(tree).toMatchSnapshot();
-  });
-
-  it('should render correctly with "debug" attribute', () => {
-    const tree = renderer
-      .create(<BpkGridRow debug>Contents</BpkGridRow>)
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(<BpkGridRow>Contents</BpkGridRow>);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with "className" attribute', () => {
-    const tree = renderer
-      .create(<BpkGridRow className="my-custom-class">Contents</BpkGridRow>)
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkGridRow className="my-custom-class">Contents</BpkGridRow>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with arbitrary attributes', () => {
-    const tree = renderer
-      .create(
-        <BpkGridRow
-          data-arbitrary-1="my-arbitrary-data"
-          data-arbitrary-2="my-arbitrary-data"
-        >
-          Contents
-        </BpkGridRow>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkGridRow
+        data-arbitrary-1="my-arbitrary-data"
+        data-arbitrary-2="my-arbitrary-data"
+      >
+        Contents
+      </BpkGridRow>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 });

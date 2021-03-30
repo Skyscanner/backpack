@@ -19,13 +19,17 @@
 /* @flow strict */
 
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 
 import BpkBarchartDefs from './BpkBarchartDefs';
 
 describe('BpkBarchartDefs', () => {
   it('should render correctly', () => {
-    const tree = renderer.create(<BpkBarchartDefs />).toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <svg>
+        <BpkBarchartDefs />
+      </svg>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 });

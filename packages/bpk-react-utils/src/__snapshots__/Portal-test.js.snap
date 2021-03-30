@@ -1,8 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Portal should render correctly with no target 1`] = `null`;
+exports[`Portal should render correctly with no target 1`] = `<DocumentFragment />`;
 
-exports[`Portal should render correctly with renderTarget 1`] = `null`;
+exports[`Portal should render correctly with renderTarget 1`] = `<DocumentFragment />`;
 
 exports[`Portal should render correctly with renderTarget 2`] = `
 <div>
@@ -15,7 +15,9 @@ exports[`Portal should render correctly with renderTarget 2`] = `
 `;
 
 exports[`Portal should render correctly with target 1`] = `
-<div>
-  Target
-</div>
+<DocumentFragment>
+  <div>
+    Target
+  </div>
+</DocumentFragment>
 `;

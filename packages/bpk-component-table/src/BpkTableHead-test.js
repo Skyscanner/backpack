@@ -19,41 +19,47 @@
 /* @flow strict */
 
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 
 import BpkTableHead from './BpkTableHead';
 
 describe('BpkTableHead', () => {
   it('should render correctly', () => {
-    const tree = renderer
-      .create(
+    const { asFragment } = render(
+      <table>
         <BpkTableHead>
-          <th>Skyscanner</th>
-        </BpkTableHead>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+          <tr>
+            <th>Skyscanner</th>
+          </tr>
+        </BpkTableHead>
+      </table>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with custom class', () => {
-    const tree = renderer
-      .create(
+    const { asFragment } = render(
+      <table>
         <BpkTableHead className="my-custom-class">
-          <th>Skyscanner</th>
-        </BpkTableHead>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+          <tr>
+            <th>Skyscanner</th>
+          </tr>
+        </BpkTableHead>
+      </table>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with arbitrary props', () => {
-    const tree = renderer
-      .create(
+    const { asFragment } = render(
+      <table>
         <BpkTableHead id="my-custom-id" data-foo="bar">
-          <th>Skyscanner</th>
-        </BpkTableHead>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+          <tr>
+            <th>Skyscanner</th>
+          </tr>
+        </BpkTableHead>
+      </table>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 });

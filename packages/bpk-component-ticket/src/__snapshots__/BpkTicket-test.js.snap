@@ -1,304 +1,324 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`BpkTicket should render correctly 1`] = `
-<div
-  className="bpk-ticket bpk-ticket--with-notches"
-  role="button"
->
+<DocumentFragment>
   <div
-    className="bpk-ticket__paper bpk-ticket__main bpk-ticket__main--padded bpk-ticket__main--horizontal bpk-ticket__paper--with-notches"
-  >
-    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-  </div>
-  <div
-    aria-hidden="true"
-    className="bpk-ticket__punchline bpk-ticket__punchline--vertical-with-notches"
-    role="presentation"
+    class="bpk-ticket bpk-ticket--with-notches"
+    role="button"
   >
     <div
-      className="bpk-ticket__notch bpk-ticket__notch--top"
-    />
+      class="bpk-ticket__paper bpk-ticket__main bpk-ticket__main--padded bpk-ticket__main--horizontal bpk-ticket__paper--with-notches"
+    >
+      Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+    </div>
     <div
-      className="bpk-ticket__notch bpk-ticket__notch--bottom"
-    />
+      aria-hidden="true"
+      class="bpk-ticket__punchline bpk-ticket__punchline--vertical-with-notches"
+      role="presentation"
+    >
+      <div
+        class="bpk-ticket__notch bpk-ticket__notch--top"
+      />
+      <div
+        class="bpk-ticket__notch bpk-ticket__notch--bottom"
+      />
+    </div>
+    <div
+      class="bpk-ticket__paper bpk-ticket__stub bpk-ticket__stub--padded bpk-ticket__stub--horizontal bpk-ticket__paper--with-notches"
+    >
+      Ticket stub
+    </div>
   </div>
-  <div
-    className="bpk-ticket__paper bpk-ticket__stub bpk-ticket__stub--padded bpk-ticket__stub--horizontal bpk-ticket__paper--with-notches"
-  >
-    Ticket stub
-  </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`BpkTicket should render correctly with "padded" attribute equal to "false" 1`] = `
-<div
-  className="bpk-ticket bpk-ticket--with-notches"
-  role="button"
->
+<DocumentFragment>
   <div
-    className="bpk-ticket__paper bpk-ticket__main bpk-ticket__main--horizontal bpk-ticket__paper--with-notches"
+    class="bpk-ticket bpk-ticket--with-notches"
+    role="button"
   >
     <div
-      className="bpk-ticket__main-inner bpk-ticket__main-inner--horizontal"
+      class="bpk-ticket__paper bpk-ticket__main bpk-ticket__main--horizontal bpk-ticket__paper--with-notches"
     >
-      Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+      <div
+        class="bpk-ticket__main-inner bpk-ticket__main-inner--horizontal"
+      >
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+      </div>
+    </div>
+    <div
+      aria-hidden="true"
+      class="bpk-ticket__punchline bpk-ticket__punchline--vertical-with-notches"
+      role="presentation"
+    >
+      <div
+        class="bpk-ticket__notch bpk-ticket__notch--top"
+      />
+      <div
+        class="bpk-ticket__notch bpk-ticket__notch--bottom"
+      />
+    </div>
+    <div
+      class="bpk-ticket__paper bpk-ticket__stub bpk-ticket__stub--horizontal bpk-ticket__paper--with-notches"
+    >
+      <div
+        class="bpk-ticket__stub-inner bpk-ticket__stub-inner--horizontal"
+      >
+        Ticket stub
+      </div>
     </div>
   </div>
-  <div
-    aria-hidden="true"
-    className="bpk-ticket__punchline bpk-ticket__punchline--vertical-with-notches"
-    role="presentation"
-  >
-    <div
-      className="bpk-ticket__notch bpk-ticket__notch--top"
-    />
-    <div
-      className="bpk-ticket__notch bpk-ticket__notch--bottom"
-    />
-  </div>
-  <div
-    className="bpk-ticket__paper bpk-ticket__stub bpk-ticket__stub--horizontal bpk-ticket__paper--with-notches"
-  >
-    <div
-      className="bpk-ticket__stub-inner bpk-ticket__stub-inner--horizontal"
-    >
-      Ticket stub
-    </div>
-  </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`BpkTicket should render correctly with "padded" attribute equal to "false" and a "vertical" attribute 1`] = `
-<div
-  className="bpk-ticket bpk-ticket--vertical bpk-ticket--with-notches"
-  role="button"
->
+<DocumentFragment>
   <div
-    className="bpk-ticket__paper bpk-ticket__main bpk-ticket__main--vertical bpk-ticket__paper--with-notches"
+    class="bpk-ticket bpk-ticket--vertical bpk-ticket--with-notches"
+    role="button"
   >
     <div
-      className="bpk-ticket__main-inner bpk-ticket__main-inner--vertical"
+      class="bpk-ticket__paper bpk-ticket__main bpk-ticket__main--vertical bpk-ticket__paper--with-notches"
+    >
+      <div
+        class="bpk-ticket__main-inner bpk-ticket__main-inner--vertical"
+      >
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+      </div>
+    </div>
+    <div
+      aria-hidden="true"
+      class="bpk-ticket__punchline bpk-ticket__punchline--horizontal-with-notches"
+      role="presentation"
+    >
+      <div
+        class="bpk-ticket__notch bpk-ticket__notch--left"
+      />
+      <div
+        class="bpk-ticket__notch bpk-ticket__notch--right"
+      />
+    </div>
+    <div
+      class="bpk-ticket__paper bpk-ticket__stub bpk-ticket__stub--vertical bpk-ticket__paper--with-notches"
+    >
+      <div
+        class="bpk-ticket__stub-inner bpk-ticket__stub-inner--vertical"
+      >
+        Ticket stub
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`BpkTicket should render correctly with "withNotches" attribute equal to "false" 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-ticket"
+    role="button"
+  >
+    <div
+      class="bpk-ticket__paper bpk-ticket__main bpk-ticket__main--padded bpk-ticket__main--horizontal"
     >
       Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
     </div>
-  </div>
-  <div
-    aria-hidden="true"
-    className="bpk-ticket__punchline bpk-ticket__punchline--horizontal-with-notches"
-    role="presentation"
-  >
     <div
-      className="bpk-ticket__notch bpk-ticket__notch--left"
+      aria-hidden="true"
+      class="bpk-ticket__punchline bpk-ticket__punchline--vertical"
+      role="presentation"
     />
     <div
-      className="bpk-ticket__notch bpk-ticket__notch--right"
-    />
-  </div>
-  <div
-    className="bpk-ticket__paper bpk-ticket__stub bpk-ticket__stub--vertical bpk-ticket__paper--with-notches"
-  >
-    <div
-      className="bpk-ticket__stub-inner bpk-ticket__stub-inner--vertical"
+      class="bpk-ticket__paper bpk-ticket__stub bpk-ticket__stub--padded bpk-ticket__stub--horizontal"
     >
       Ticket stub
     </div>
   </div>
-</div>
-`;
-
-exports[`BpkTicket should render correctly with "withNotches" attribute equal to "false" 1`] = `
-<div
-  className="bpk-ticket"
-  role="button"
->
-  <div
-    className="bpk-ticket__paper bpk-ticket__main bpk-ticket__main--padded bpk-ticket__main--horizontal"
-  >
-    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-  </div>
-  <div
-    aria-hidden="true"
-    className="bpk-ticket__punchline bpk-ticket__punchline--vertical"
-    role="presentation"
-  />
-  <div
-    className="bpk-ticket__paper bpk-ticket__stub bpk-ticket__stub--padded bpk-ticket__stub--horizontal"
-  >
-    Ticket stub
-  </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`BpkTicket should render correctly with "withNotches" attribute equal to "false" and a "vertical" attribute 1`] = `
-<div
-  className="bpk-ticket bpk-ticket--vertical"
-  role="button"
->
+<DocumentFragment>
   <div
-    className="bpk-ticket__paper bpk-ticket__main bpk-ticket__main--padded bpk-ticket__main--vertical"
+    class="bpk-ticket bpk-ticket--vertical"
+    role="button"
   >
-    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+    <div
+      class="bpk-ticket__paper bpk-ticket__main bpk-ticket__main--padded bpk-ticket__main--vertical"
+    >
+      Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+    </div>
+    <div
+      aria-hidden="true"
+      class="bpk-ticket__punchline bpk-ticket__punchline--horizontal"
+      role="presentation"
+    />
+    <div
+      class="bpk-ticket__paper bpk-ticket__stub bpk-ticket__stub--padded bpk-ticket__stub--vertical"
+    >
+      Ticket stub
+    </div>
   </div>
-  <div
-    aria-hidden="true"
-    className="bpk-ticket__punchline bpk-ticket__punchline--horizontal"
-    role="presentation"
-  />
-  <div
-    className="bpk-ticket__paper bpk-ticket__stub bpk-ticket__stub--padded bpk-ticket__stub--vertical"
-  >
-    Ticket stub
-  </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`BpkTicket should render correctly with a "className" attribute 1`] = `
-<div
-  className="bpk-ticket custom-class bpk-ticket--with-notches"
-  role="button"
->
+<DocumentFragment>
   <div
-    className="bpk-ticket__paper bpk-ticket__main bpk-ticket__main--padded bpk-ticket__main--horizontal bpk-ticket__paper--with-notches"
-  >
-    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-  </div>
-  <div
-    aria-hidden="true"
-    className="bpk-ticket__punchline bpk-ticket__punchline--vertical-with-notches"
-    role="presentation"
+    class="bpk-ticket custom-class bpk-ticket--with-notches"
+    role="button"
   >
     <div
-      className="bpk-ticket__notch bpk-ticket__notch--top"
-    />
+      class="bpk-ticket__paper bpk-ticket__main bpk-ticket__main--padded bpk-ticket__main--horizontal bpk-ticket__paper--with-notches"
+    >
+      Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+    </div>
     <div
-      className="bpk-ticket__notch bpk-ticket__notch--bottom"
-    />
+      aria-hidden="true"
+      class="bpk-ticket__punchline bpk-ticket__punchline--vertical-with-notches"
+      role="presentation"
+    >
+      <div
+        class="bpk-ticket__notch bpk-ticket__notch--top"
+      />
+      <div
+        class="bpk-ticket__notch bpk-ticket__notch--bottom"
+      />
+    </div>
+    <div
+      class="bpk-ticket__paper bpk-ticket__stub bpk-ticket__stub--padded bpk-ticket__stub--horizontal bpk-ticket__paper--with-notches"
+    >
+      Ticket stub
+    </div>
   </div>
-  <div
-    className="bpk-ticket__paper bpk-ticket__stub bpk-ticket__stub--padded bpk-ticket__stub--horizontal bpk-ticket__paper--with-notches"
-  >
-    Ticket stub
-  </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`BpkTicket should render correctly with a "stubClassName" attribute 1`] = `
-<div
-  className="bpk-ticket bpk-ticket--with-notches"
-  role="button"
->
+<DocumentFragment>
   <div
-    className="bpk-ticket__paper bpk-ticket__main bpk-ticket__main--padded bpk-ticket__main--horizontal bpk-ticket__paper--with-notches"
-  >
-    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-  </div>
-  <div
-    aria-hidden="true"
-    className="bpk-ticket__punchline bpk-ticket__punchline--vertical-with-notches"
-    role="presentation"
+    class="bpk-ticket bpk-ticket--with-notches"
+    role="button"
   >
     <div
-      className="bpk-ticket__notch bpk-ticket__notch--top"
-    />
+      class="bpk-ticket__paper bpk-ticket__main bpk-ticket__main--padded bpk-ticket__main--horizontal bpk-ticket__paper--with-notches"
+    >
+      Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+    </div>
     <div
-      className="bpk-ticket__notch bpk-ticket__notch--bottom"
-    />
+      aria-hidden="true"
+      class="bpk-ticket__punchline bpk-ticket__punchline--vertical-with-notches"
+      role="presentation"
+    >
+      <div
+        class="bpk-ticket__notch bpk-ticket__notch--top"
+      />
+      <div
+        class="bpk-ticket__notch bpk-ticket__notch--bottom"
+      />
+    </div>
+    <div
+      class="bpk-ticket__paper bpk-ticket__stub custom-class bpk-ticket__stub--padded bpk-ticket__stub--horizontal bpk-ticket__paper--with-notches"
+    >
+      Ticket stub
+    </div>
   </div>
-  <div
-    className="bpk-ticket__paper bpk-ticket__stub custom-class bpk-ticket__stub--padded bpk-ticket__stub--horizontal bpk-ticket__paper--with-notches"
-  >
-    Ticket stub
-  </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`BpkTicket should render correctly with a "stubProps" attribute 1`] = `
-<div
-  className="bpk-ticket bpk-ticket--with-notches"
-  role="button"
->
+<DocumentFragment>
   <div
-    className="bpk-ticket__paper bpk-ticket__main bpk-ticket__main--padded bpk-ticket__main--horizontal bpk-ticket__paper--with-notches"
-  >
-    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-  </div>
-  <div
-    aria-hidden="true"
-    className="bpk-ticket__punchline bpk-ticket__punchline--vertical-with-notches"
-    role="presentation"
+    class="bpk-ticket bpk-ticket--with-notches"
+    role="button"
   >
     <div
-      className="bpk-ticket__notch bpk-ticket__notch--top"
-    />
+      class="bpk-ticket__paper bpk-ticket__main bpk-ticket__main--padded bpk-ticket__main--horizontal bpk-ticket__paper--with-notches"
+    >
+      Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+    </div>
     <div
-      className="bpk-ticket__notch bpk-ticket__notch--bottom"
-    />
+      aria-hidden="true"
+      class="bpk-ticket__punchline bpk-ticket__punchline--vertical-with-notches"
+      role="presentation"
+    >
+      <div
+        class="bpk-ticket__notch bpk-ticket__notch--top"
+      />
+      <div
+        class="bpk-ticket__notch bpk-ticket__notch--bottom"
+      />
+    </div>
+    <div
+      class="bpk-ticket__paper bpk-ticket__stub custom-class bpk-ticket__stub--padded bpk-ticket__stub--horizontal bpk-ticket__paper--with-notches"
+      foo="bar"
+    >
+      Ticket stub
+    </div>
   </div>
-  <div
-    className="bpk-ticket__paper bpk-ticket__stub custom-class bpk-ticket__stub--padded bpk-ticket__stub--horizontal bpk-ticket__paper--with-notches"
-    foo="bar"
-  >
-    Ticket stub
-  </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`BpkTicket should render correctly with a "vertical" attribute 1`] = `
-<div
-  className="bpk-ticket bpk-ticket--vertical bpk-ticket--with-notches"
-  role="button"
->
+<DocumentFragment>
   <div
-    className="bpk-ticket__paper bpk-ticket__main bpk-ticket__main--padded bpk-ticket__main--vertical bpk-ticket__paper--with-notches"
-  >
-    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-  </div>
-  <div
-    aria-hidden="true"
-    className="bpk-ticket__punchline bpk-ticket__punchline--horizontal-with-notches"
-    role="presentation"
+    class="bpk-ticket bpk-ticket--vertical bpk-ticket--with-notches"
+    role="button"
   >
     <div
-      className="bpk-ticket__notch bpk-ticket__notch--left"
-    />
+      class="bpk-ticket__paper bpk-ticket__main bpk-ticket__main--padded bpk-ticket__main--vertical bpk-ticket__paper--with-notches"
+    >
+      Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+    </div>
     <div
-      className="bpk-ticket__notch bpk-ticket__notch--right"
-    />
+      aria-hidden="true"
+      class="bpk-ticket__punchline bpk-ticket__punchline--horizontal-with-notches"
+      role="presentation"
+    >
+      <div
+        class="bpk-ticket__notch bpk-ticket__notch--left"
+      />
+      <div
+        class="bpk-ticket__notch bpk-ticket__notch--right"
+      />
+    </div>
+    <div
+      class="bpk-ticket__paper bpk-ticket__stub bpk-ticket__stub--padded bpk-ticket__stub--vertical bpk-ticket__paper--with-notches"
+    >
+      Ticket stub
+    </div>
   </div>
-  <div
-    className="bpk-ticket__paper bpk-ticket__stub bpk-ticket__stub--padded bpk-ticket__stub--vertical bpk-ticket__paper--with-notches"
-  >
-    Ticket stub
-  </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`BpkTicket should render correctly with an "href" attribute 1`] = `
-<a
-  className="bpk-ticket bpk-ticket--with-notches"
-  href="//www.skyscanner.net"
->
-  <div
-    className="bpk-ticket__paper bpk-ticket__main bpk-ticket__main--padded bpk-ticket__main--horizontal bpk-ticket__paper--with-notches"
-  >
-    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-  </div>
-  <div
-    aria-hidden="true"
-    className="bpk-ticket__punchline bpk-ticket__punchline--vertical-with-notches"
-    role="presentation"
+<DocumentFragment>
+  <a
+    class="bpk-ticket bpk-ticket--with-notches"
+    href="//www.skyscanner.net"
   >
     <div
-      className="bpk-ticket__notch bpk-ticket__notch--top"
-    />
+      class="bpk-ticket__paper bpk-ticket__main bpk-ticket__main--padded bpk-ticket__main--horizontal bpk-ticket__paper--with-notches"
+    >
+      Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+    </div>
     <div
-      className="bpk-ticket__notch bpk-ticket__notch--bottom"
-    />
-  </div>
-  <div
-    className="bpk-ticket__paper bpk-ticket__stub bpk-ticket__stub--padded bpk-ticket__stub--horizontal bpk-ticket__paper--with-notches"
-  >
-    Ticket stub
-  </div>
-</a>
+      aria-hidden="true"
+      class="bpk-ticket__punchline bpk-ticket__punchline--vertical-with-notches"
+      role="presentation"
+    >
+      <div
+        class="bpk-ticket__notch bpk-ticket__notch--top"
+      />
+      <div
+        class="bpk-ticket__notch bpk-ticket__notch--bottom"
+      />
+    </div>
+    <div
+      class="bpk-ticket__paper bpk-ticket__stub bpk-ticket__stub--padded bpk-ticket__stub--horizontal bpk-ticket__paper--with-notches"
+    >
+      Ticket stub
+    </div>
+  </a>
+</DocumentFragment>
 `;

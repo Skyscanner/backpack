@@ -1,24 +1,42 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`BpkTableRow should render correctly 1`] = `
-<tr>
-  <td />
-</tr>
+<DocumentFragment>
+  <table>
+    <tbody>
+      <tr>
+        <td />
+      </tr>
+    </tbody>
+  </table>
+</DocumentFragment>
 `;
 
 exports[`BpkTableRow should render correctly with arbitrary props 1`] = `
-<tr
-  data-foo="bar"
-  id="my-custom-id"
->
-  <td />
-</tr>
+<DocumentFragment>
+  <table>
+    <tbody>
+      <tr
+        data-foo="bar"
+        id="my-custom-id"
+      >
+        <td />
+      </tr>
+    </tbody>
+  </table>
+</DocumentFragment>
 `;
 
 exports[`BpkTableRow should render correctly with custom class 1`] = `
-<tr
-  className="my-custom-class"
->
-  <td />
-</tr>
+<DocumentFragment>
+  <table>
+    <tbody>
+      <tr
+        class="my-custom-class"
+      >
+        <td />
+      </tr>
+    </tbody>
+  </table>
+</DocumentFragment>
 `;

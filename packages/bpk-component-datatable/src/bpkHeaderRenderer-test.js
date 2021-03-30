@@ -17,7 +17,7 @@
  */
 
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import { mount } from 'enzyme';
 import { SortDirection } from 'react-virtualized';
 
@@ -30,8 +30,8 @@ jest.mock('./utils', () => ({
 describe('bpkHeaderRenderer', () => {
   it('renders sort icons', () => {
     const header = bpkHeaderRenderer({ dataKey: 'dataKey', label: 'Label' });
-    const tree = renderer.create(<div>{header}</div>);
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(<div>{header}</div>);
+    expect(asFragment()).toMatchSnapshot();
   });
   it('does not render sort icons if sorting disabled', () => {
     const header = bpkHeaderRenderer({
@@ -39,8 +39,8 @@ describe('bpkHeaderRenderer', () => {
       label: 'Label',
       disableSort: true,
     });
-    const tree = renderer.create(<div>{header}</div>);
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(<div>{header}</div>);
+    expect(asFragment()).toMatchSnapshot();
   });
   it('renders sort icon with down icon selected', () => {
     const header = bpkHeaderRenderer({
@@ -49,8 +49,8 @@ describe('bpkHeaderRenderer', () => {
       sortBy: 'dataKey',
       sortDirection: SortDirection.DESC,
     });
-    const tree = renderer.create(<div>{header}</div>);
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(<div>{header}</div>);
+    expect(asFragment()).toMatchSnapshot();
   });
   it('renders sort icon with up icon selected', () => {
     const header = bpkHeaderRenderer({
@@ -59,8 +59,8 @@ describe('bpkHeaderRenderer', () => {
       sortBy: 'dataKey',
       sortDirection: SortDirection.ASC,
     });
-    const tree = renderer.create(<div>{header}</div>);
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(<div>{header}</div>);
+    expect(asFragment()).toMatchSnapshot();
   });
   describe('getSortIconDirection', () => {
     let mounted;

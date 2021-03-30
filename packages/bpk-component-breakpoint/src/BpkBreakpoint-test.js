@@ -19,7 +19,7 @@
 /* @flow strict */
 
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import { mount } from 'enzyme';
 
 import { BREAKPOINTS } from './BpkBreakpoint';
@@ -30,16 +30,12 @@ describe('BpkBreakpoint', () => {
     const BpkBreakpoint = require('./BpkBreakpoint').default; // eslint-disable-line global-require
     jest.mock('react-responsive', () => props => props.children(true));
 
-    const tree = renderer
-      .create(
-        <BpkBreakpoint query={BREAKPOINTS.MOBILE}>
-          {matches =>
-            matches ? <div>matches</div> : <div>does not match</div>
-          }
-        </BpkBreakpoint>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkBreakpoint query={BREAKPOINTS.MOBILE}>
+        {matches => (matches ? <div>matches</div> : <div>does not match</div>)}
+      </BpkBreakpoint>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render if the breakpoint is not matched', () => {
@@ -47,16 +43,12 @@ describe('BpkBreakpoint', () => {
     const BpkBreakpoint = require('./BpkBreakpoint').default; // eslint-disable-line global-require
     jest.mock('react-responsive', () => props => props.children(false));
 
-    const tree = renderer
-      .create(
-        <BpkBreakpoint query={BREAKPOINTS.MOBILE}>
-          {matches =>
-            matches ? <div>matches</div> : <div>does not match</div>
-          }
-        </BpkBreakpoint>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkBreakpoint query={BREAKPOINTS.MOBILE}>
+        {matches => (matches ? <div>matches</div> : <div>does not match</div>)}
+      </BpkBreakpoint>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   describe('PropType validation', () => {

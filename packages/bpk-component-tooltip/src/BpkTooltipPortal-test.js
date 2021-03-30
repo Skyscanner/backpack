@@ -19,7 +19,7 @@
 /* @flow strict */
 
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import { colorPanjin } from 'bpk-tokens/tokens/base.es6';
 
 jest.mock('bpk-react-utils', () => {
@@ -37,69 +37,61 @@ import BpkTooltipPortal from './BpkTooltipPortal';
 
 describe('BpkTooltipPortal', () => {
   it('should render correctly', () => {
-    const tree = renderer
-      .create(
-        <BpkTooltipPortal
-          ariaLabel="My tooltip content"
-          id="my-tooltip"
-          target={<div>target</div>}
-        >
-          My tooltip content
-        </BpkTooltipPortal>,
-      )
-      .toJSON();
+    const { asFragment } = render(
+      <BpkTooltipPortal
+        ariaLabel="My tooltip content"
+        id="my-tooltip"
+        target={<div>target</div>}
+      >
+        My tooltip content
+      </BpkTooltipPortal>,
+    );
 
-    expect(tree).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with a custom portal className', () => {
-    const tree = renderer
-      .create(
-        <BpkTooltipPortal
-          ariaLabel="My tooltip content"
-          id="my-tooltip"
-          target={<div>target</div>}
-          portalClassName="my-custom-class"
-        >
-          My tooltip content
-        </BpkTooltipPortal>,
-      )
-      .toJSON();
+    const { asFragment } = render(
+      <BpkTooltipPortal
+        ariaLabel="My tooltip content"
+        id="my-tooltip"
+        target={<div>target</div>}
+        portalClassName="my-custom-class"
+      >
+        My tooltip content
+      </BpkTooltipPortal>,
+    );
 
-    expect(tree).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with a custom tooltip className', () => {
-    const tree = renderer
-      .create(
-        <BpkTooltipPortal
-          ariaLabel="My tooltip content"
-          id="my-tooltip"
-          target={<div>target</div>}
-          className="my-custom-class"
-        >
-          My tooltip content
-        </BpkTooltipPortal>,
-      )
-      .toJSON();
+    const { asFragment } = render(
+      <BpkTooltipPortal
+        ariaLabel="My tooltip content"
+        id="my-tooltip"
+        target={<div>target</div>}
+        className="my-custom-class"
+      >
+        My tooltip content
+      </BpkTooltipPortal>,
+    );
 
-    expect(tree).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with custom portal style', () => {
-    const tree = renderer
-      .create(
-        <BpkTooltipPortal
-          ariaLabel="My tooltip content"
-          id="my-tooltip"
-          target={<div>target</div>}
-          portalStyle={{ color: colorPanjin }}
-        >
-          My tooltip content
-        </BpkTooltipPortal>,
-      )
-      .toJSON();
+    const { asFragment } = render(
+      <BpkTooltipPortal
+        ariaLabel="My tooltip content"
+        id="my-tooltip"
+        target={<div>target</div>}
+        portalStyle={{ color: colorPanjin }}
+      >
+        My tooltip content
+      </BpkTooltipPortal>,
+    );
 
-    expect(tree).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 });

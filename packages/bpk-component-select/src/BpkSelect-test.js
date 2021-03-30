@@ -17,7 +17,7 @@
  */
 
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 
 import BpkSelect from './BpkSelect';
 
@@ -28,246 +28,218 @@ const selectImage = (
 
 describe('BpkSelect', () => {
   it('should render correctly', () => {
-    const tree = renderer
-      .create(
-        <BpkSelect
-          id="fruits"
-          name="fruits"
-          value="oranges"
-          onChange={() => null}
-        >
-          <option value="apples">Apples</option>
-          <option value="oranges">Oranges</option>
-          <option value="pears">Pears</option>
-          <option value="tomatoes" disabled>
-            Tomatoes
-          </option>
-        </BpkSelect>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkSelect
+        id="fruits"
+        name="fruits"
+        value="oranges"
+        onChange={() => null}
+      >
+        <option value="apples">Apples</option>
+        <option value="oranges">Oranges</option>
+        <option value="pears">Pears</option>
+        <option value="tomatoes" disabled>
+          Tomatoes
+        </option>
+      </BpkSelect>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with image', () => {
-    const tree = renderer
-      .create(
-        <BpkSelect
-          id="fruits"
-          name="fruits"
-          value="oranges"
-          image={selectImage}
-          onChange={() => null}
-        >
-          <option value="apples">Apples</option>
-          <option value="oranges">Oranges</option>
-          <option value="pears">Pears</option>
-          <option value="tomatoes" disabled>
-            Tomatoes
-          </option>
-        </BpkSelect>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkSelect
+        id="fruits"
+        name="fruits"
+        value="oranges"
+        image={selectImage}
+        onChange={() => null}
+      >
+        <option value="apples">Apples</option>
+        <option value="oranges">Oranges</option>
+        <option value="pears">Pears</option>
+        <option value="tomatoes" disabled>
+          Tomatoes
+        </option>
+      </BpkSelect>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with image and custom classes', () => {
-    const tree = renderer
-      .create(
-        <BpkSelect
-          id="fruits"
-          name="fruits"
-          value="oranges"
-          wrapperClassName="wrapperClass--test"
-          image={selectImage}
-          onChange={() => null}
-        >
-          <option value="apples">Apples</option>
-          <option value="oranges">Oranges</option>
-          <option value="pears">Pears</option>
-          <option value="tomatoes" disabled>
-            Tomatoes
-          </option>
-        </BpkSelect>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkSelect
+        id="fruits"
+        name="fruits"
+        value="oranges"
+        wrapperClassName="wrapperClass--test"
+        image={selectImage}
+        onChange={() => null}
+      >
+        <option value="apples">Apples</option>
+        <option value="oranges">Oranges</option>
+        <option value="pears">Pears</option>
+        <option value="tomatoes" disabled>
+          Tomatoes
+        </option>
+      </BpkSelect>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with image and "disabled" property', () => {
-    const tree = renderer
-      .create(
-        <BpkSelect
-          id="fruits"
-          name="fruits"
-          value="oranges"
-          wrapperClassName="wrapperClass--test"
-          image={selectImage}
-          disabled
-          onChange={() => null}
-        >
-          <option value="apples">Apples</option>
-          <option value="oranges">Oranges</option>
-          <option value="pears">Pears</option>
-          <option value="tomatoes" disabled>
-            Tomatoes
-          </option>
-        </BpkSelect>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkSelect
+        id="fruits"
+        name="fruits"
+        value="oranges"
+        wrapperClassName="wrapperClass--test"
+        image={selectImage}
+        disabled
+        onChange={() => null}
+      >
+        <option value="apples">Apples</option>
+        <option value="oranges">Oranges</option>
+        <option value="pears">Pears</option>
+        <option value="tomatoes" disabled>
+          Tomatoes
+        </option>
+      </BpkSelect>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with "className" attribute', () => {
-    const tree = renderer
-      .create(
-        <BpkSelect
-          id="fruits"
-          name="fruits"
-          value="oranges"
-          onChange={() => null}
-          className="test"
-        >
-          <option value="apples">Apples</option>
-          <option value="oranges">Oranges</option>
-          <option value="pears">Pears</option>
-          <option value="tomatoes" disabled>
-            Tomatoes
-          </option>
-        </BpkSelect>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkSelect
+        id="fruits"
+        name="fruits"
+        value="oranges"
+        onChange={() => null}
+        className="test"
+      >
+        <option value="apples">Apples</option>
+        <option value="oranges">Oranges</option>
+        <option value="pears">Pears</option>
+        <option value="tomatoes" disabled>
+          Tomatoes
+        </option>
+      </BpkSelect>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with a "valid" attribute equal to false', () => {
-    const tree = renderer
-      .create(
-        <BpkSelect
-          id="fruits"
-          name="fruits"
-          value="oranges"
-          onChange={() => null}
-          valid={false}
-        >
-          <option value="apples">Apples</option>
-          <option value="oranges">Oranges</option>
-          <option value="pears">Pears</option>
-          <option value="tomatoes" disabled>
-            Tomatoes
-          </option>
-        </BpkSelect>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkSelect
+        id="fruits"
+        name="fruits"
+        value="oranges"
+        onChange={() => null}
+        valid={false}
+      >
+        <option value="apples">Apples</option>
+        <option value="oranges">Oranges</option>
+        <option value="pears">Pears</option>
+        <option value="tomatoes" disabled>
+          Tomatoes
+        </option>
+      </BpkSelect>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with "large" attribute', () => {
-    const tree = renderer
-      .create(
-        <BpkSelect
-          id="fruits"
-          name="fruits"
-          value=""
-          onChange={() => null}
-          large
-        >
-          <option value="apples">Apples</option>
-          <option value="oranges">Oranges</option>
-          <option value="pears">Pears</option>
-          <option value="tomatoes" disabled>
-            Tomatoes
-          </option>
-        </BpkSelect>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkSelect id="fruits" name="fruits" value="" onChange={() => null} large>
+        <option value="apples">Apples</option>
+        <option value="oranges">Oranges</option>
+        <option value="pears">Pears</option>
+        <option value="tomatoes" disabled>
+          Tomatoes
+        </option>
+      </BpkSelect>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with "docked" attribute', () => {
-    const tree = renderer
-      .create(
-        <BpkSelect
-          id="fruits"
-          name="fruits"
-          value=""
-          onChange={() => null}
-          docked
-        >
-          <option value="apples">Apples</option>
-          <option value="oranges">Oranges</option>
-          <option value="pears">Pears</option>
-          <option value="tomatoes" disabled>
-            Tomatoes
-          </option>
-        </BpkSelect>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkSelect
+        id="fruits"
+        name="fruits"
+        value=""
+        onChange={() => null}
+        docked
+      >
+        <option value="apples">Apples</option>
+        <option value="oranges">Oranges</option>
+        <option value="pears">Pears</option>
+        <option value="tomatoes" disabled>
+          Tomatoes
+        </option>
+      </BpkSelect>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with "dockedFirst" attribute', () => {
-    const tree = renderer
-      .create(
-        <BpkSelect
-          id="fruits"
-          name="fruits"
-          value=""
-          onChange={() => null}
-          dockedFirst
-        >
-          <option value="apples">Apples</option>
-          <option value="oranges">Oranges</option>
-          <option value="pears">Pears</option>
-          <option value="tomatoes" disabled>
-            tomatos
-          </option>
-        </BpkSelect>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkSelect
+        id="fruits"
+        name="fruits"
+        value=""
+        onChange={() => null}
+        dockedFirst
+      >
+        <option value="apples">Apples</option>
+        <option value="oranges">Oranges</option>
+        <option value="pears">Pears</option>
+        <option value="tomatoes" disabled>
+          tomatos
+        </option>
+      </BpkSelect>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with "dockedMiddle" attribute', () => {
-    const tree = renderer
-      .create(
-        <BpkSelect
-          id="fruits"
-          name="fruits"
-          value=""
-          onChange={() => null}
-          dockedMiddle
-        >
-          <option value="apples">Apples</option>
-          <option value="oranges">Oranges</option>
-          <option value="pears">Pears</option>
-          <option value="tomatoes" disabled>
-            Tomatoes
-          </option>
-        </BpkSelect>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkSelect
+        id="fruits"
+        name="fruits"
+        value=""
+        onChange={() => null}
+        dockedMiddle
+      >
+        <option value="apples">Apples</option>
+        <option value="oranges">Oranges</option>
+        <option value="pears">Pears</option>
+        <option value="tomatoes" disabled>
+          Tomatoes
+        </option>
+      </BpkSelect>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with "dockedLast" attribute', () => {
-    const tree = renderer
-      .create(
-        <BpkSelect
-          id="fruits"
-          name="fruits"
-          value=""
-          onChange={() => null}
-          dockedLast
-        >
-          <option value="apples">Apples</option>
-          <option value="oranges">Oranges</option>
-          <option value="pears">Pears</option>
-          <option value="tomatoes" disabled>
-            Tomatoes
-          </option>
-        </BpkSelect>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkSelect
+        id="fruits"
+        name="fruits"
+        value=""
+        onChange={() => null}
+        dockedLast
+      >
+        <option value="apples">Apples</option>
+        <option value="oranges">Oranges</option>
+        <option value="pears">Pears</option>
+        <option value="tomatoes" disabled>
+          Tomatoes
+        </option>
+      </BpkSelect>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 });

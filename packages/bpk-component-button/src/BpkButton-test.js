@@ -18,7 +18,6 @@
 
 import React from 'react';
 import { axe } from 'jest-axe';
-import renderer from 'react-test-renderer';
 import { render } from '@testing-library/react';
 
 import BpkButton from './BpkButton';
@@ -35,140 +34,110 @@ describe('BpkButton accessibility tests', () => {
 
 describe('BpkButton', () => {
   it('should render correctly', () => {
-    const tree = renderer.create(<BpkButton>My button</BpkButton>).toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(<BpkButton>My button</BpkButton>);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with a "href" attribute', () => {
-    const tree = renderer
-      .create(<BpkButton href="#">My button</BpkButton>)
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(<BpkButton href="#">My button</BpkButton>);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with a "secondary" attribute', () => {
-    const tree = renderer
-      .create(<BpkButton secondary>My button</BpkButton>)
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(<BpkButton secondary>My button</BpkButton>);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with a "destructive" attribute', () => {
-    const tree = renderer
-      .create(<BpkButton destructive>My button</BpkButton>)
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(<BpkButton destructive>My button</BpkButton>);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with a "disabled" attribute', () => {
-    const tree = renderer
-      .create(<BpkButton disabled>My button</BpkButton>)
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(<BpkButton disabled>My button</BpkButton>);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with a "large" attribute', () => {
-    const tree = renderer
-      .create(<BpkButton large>My button</BpkButton>)
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(<BpkButton large>My button</BpkButton>);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with a "link" attribute', () => {
-    const tree = renderer
-      .create(<BpkButton link>My button</BpkButton>)
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(<BpkButton link>My button</BpkButton>);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with an "outline" attribute', () => {
-    const tree = renderer
-      .create(<BpkButton outline>My button</BpkButton>)
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(<BpkButton outline>My button</BpkButton>);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with an "iconOnly" attribute', () => {
-    const tree = renderer
-      .create(<BpkButton iconOnly>My button</BpkButton>)
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(<BpkButton iconOnly>My button</BpkButton>);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with "large" and "secondary" attributes', () => {
-    const tree = renderer
-      .create(
-        <BpkButton large secondary>
-          My button
-        </BpkButton>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkButton large secondary>
+        My button
+      </BpkButton>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should respect the class names entered as a string', () => {
-    const tree = renderer
-      .create(
-        <BpkButton large secondary className="custom-class-1 custom-class-2">
-          My button
-        </BpkButton>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkButton large secondary className="custom-class-1 custom-class-2">
+        My button
+      </BpkButton>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should add only bpk specific classes if className prop is set to empty string', () => {
-    const tree = renderer
-      .create(
-        <BpkButton large secondary className="">
-          My button
-        </BpkButton>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkButton large secondary className="">
+        My button
+      </BpkButton>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with "blank" attribute', () => {
-    const tree = renderer
-      .create(
-        <BpkButton href="#" blank>
-          My button
-        </BpkButton>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkButton href="#" blank>
+        My button
+      </BpkButton>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with "rel" attribute', () => {
-    const tree = renderer
-      .create(
-        <BpkButton href="#" rel="rel-attr">
-          My button
-        </BpkButton>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkButton href="#" rel="rel-attr">
+        My button
+      </BpkButton>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with "blank" and "rel" attributes', () => {
-    const tree = renderer
-      .create(
-        <BpkButton href="#" blank rel="rel-overwrite">
-          My button
-        </BpkButton>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkButton href="#" blank rel="rel-overwrite">
+        My button
+      </BpkButton>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with "disabled" and "href" attributes', () => {
-    const tree = renderer
-      .create(
-        <BpkButton href="#" disabled>
-          My button
-        </BpkButton>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkButton href="#" disabled>
+        My button
+      </BpkButton>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 });

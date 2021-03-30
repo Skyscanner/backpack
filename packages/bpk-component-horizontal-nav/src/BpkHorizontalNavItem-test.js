@@ -17,92 +17,74 @@
  */
 
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 
 import BpkHorizontalNavItem, { themeAttributes } from './BpkHorizontalNavItem';
 
 describe('BpkHorizontalNavItem', () => {
   it('should render correctly', () => {
-    const tree = renderer
-      .create(<BpkHorizontalNavItem>My nav item content</BpkHorizontalNavItem>)
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkHorizontalNavItem>My nav item content</BpkHorizontalNavItem>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with custom "className" prop', () => {
-    const tree = renderer
-      .create(
-        <BpkHorizontalNavItem className="my-custom-class">
-          My nav item content
-        </BpkHorizontalNavItem>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkHorizontalNavItem className="my-custom-class">
+        My nav item content
+      </BpkHorizontalNavItem>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with "type" prop', () => {
-    const tree = renderer
-      .create(<BpkHorizontalNavItem type="light">One</BpkHorizontalNavItem>)
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkHorizontalNavItem type="light">One</BpkHorizontalNavItem>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with an "href" prop', () => {
-    const tree = renderer
-      .create(
-        <BpkHorizontalNavItem href="#">
-          My nav item content
-        </BpkHorizontalNavItem>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkHorizontalNavItem href="#">My nav item content</BpkHorizontalNavItem>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with "selected" prop', () => {
-    const tree = renderer
-      .create(
-        <BpkHorizontalNavItem selected>
-          My nav item content
-        </BpkHorizontalNavItem>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkHorizontalNavItem selected>My nav item content</BpkHorizontalNavItem>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with "disabled" prop', () => {
-    const tree = renderer
-      .create(
-        <BpkHorizontalNavItem disabled>
-          My nav item content
-        </BpkHorizontalNavItem>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkHorizontalNavItem disabled>My nav item content</BpkHorizontalNavItem>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with "spaceAround" prop', () => {
-    const tree = renderer
-      .create(
-        <BpkHorizontalNavItem spaceAround>
-          My nav item content.
-        </BpkHorizontalNavItem>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkHorizontalNavItem spaceAround>
+        My nav item content.
+      </BpkHorizontalNavItem>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with arbitrary props', () => {
-    const tree = renderer
-      .create(
-        <BpkHorizontalNavItem
-          data-arbitrary-1="arbirary-value-1"
-          data-arbitrary-2="arbirary-value-2"
-        >
-          My nav content.
-        </BpkHorizontalNavItem>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkHorizontalNavItem
+        data-arbitrary-1="arbirary-value-1"
+        data-arbitrary-2="arbirary-value-2"
+      >
+        My nav content.
+      </BpkHorizontalNavItem>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   describe('themeAttributes', () => {

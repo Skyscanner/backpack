@@ -19,53 +19,47 @@
 /* @flow strict */
 
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 
 import BpkTooltip from './BpkTooltip';
 import { TOOLTIP_TYPES } from './constants';
 
 describe('BpkTooltip', () => {
   it('should render correctly', () => {
-    const tree = renderer
-      .create(<BpkTooltip id="my-popover">My tooltip content</BpkTooltip>)
-      .toJSON();
+    const { asFragment } = render(
+      <BpkTooltip id="my-popover">My tooltip content</BpkTooltip>,
+    );
 
-    expect(tree).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with type=dark', () => {
-    const tree = renderer
-      .create(
-        <BpkTooltip type={TOOLTIP_TYPES.dark} id="my-popover">
-          My tooltip content
-        </BpkTooltip>,
-      )
-      .toJSON();
+    const { asFragment } = render(
+      <BpkTooltip type={TOOLTIP_TYPES.dark} id="my-popover">
+        My tooltip content
+      </BpkTooltip>,
+    );
 
-    expect(tree).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with "padded" attribute equal to false', () => {
-    const tree = renderer
-      .create(
-        <BpkTooltip id="my-tooltip" padded={false}>
-          My tooltip content
-        </BpkTooltip>,
-      )
-      .toJSON();
+    const { asFragment } = render(
+      <BpkTooltip id="my-tooltip" padded={false}>
+        My tooltip content
+      </BpkTooltip>,
+    );
 
-    expect(tree).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with "className" attribute', () => {
-    const tree = renderer
-      .create(
-        <BpkTooltip id="my-tooltip" className="my-custom-class">
-          My tooltip content
-        </BpkTooltip>,
-      )
-      .toJSON();
+    const { asFragment } = render(
+      <BpkTooltip id="my-tooltip" className="my-custom-class">
+        My tooltip content
+      </BpkTooltip>,
+    );
 
-    expect(tree).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 });

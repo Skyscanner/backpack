@@ -17,7 +17,7 @@
  */
 
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 
 import classNameModifierHOCFactory from './classNameModifierHOCFactory';
 
@@ -29,8 +29,8 @@ describe('classNameModifierHOCFactory', () => {
     const MyComponent = props => <div {...props}>test</div>;
     const MyTestClassComponent = withTestClass(MyComponent);
 
-    const tree = renderer.create(<MyTestClassComponent />).toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(<MyTestClassComponent />);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with multiple classNames', () => {
@@ -41,8 +41,8 @@ describe('classNameModifierHOCFactory', () => {
     const MyComponent = props => <div {...props}>test</div>;
     const MyTestClassComponent = withTestClass(MyComponent);
 
-    const tree = renderer.create(<MyTestClassComponent />).toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(<MyTestClassComponent />);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with additional className', () => {
@@ -52,10 +52,10 @@ describe('classNameModifierHOCFactory', () => {
     const MyComponent = props => <div {...props}>test</div>;
     const MyTestClassComponent = withTestClass(MyComponent);
 
-    const tree = renderer
-      .create(<MyTestClassComponent className="additional-test-class" />)
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <MyTestClassComponent className="additional-test-class" />,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with multiple classNames and additional className', () => {
@@ -66,10 +66,10 @@ describe('classNameModifierHOCFactory', () => {
     const MyComponent = props => <div {...props}>test</div>;
     const MyTestClassComponent = withTestClass(MyComponent);
 
-    const tree = renderer
-      .create(<MyTestClassComponent className="additional-test-class" />)
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <MyTestClassComponent className="additional-test-class" />,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with no classNames', () => {
@@ -77,7 +77,7 @@ describe('classNameModifierHOCFactory', () => {
     const MyComponent = props => <div {...props}>test</div>;
     const MyTestClassComponent = withTestClass(MyComponent);
 
-    const tree = renderer.create(<MyTestClassComponent />).toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(<MyTestClassComponent />);
+    expect(asFragment()).toMatchSnapshot();
   });
 });

@@ -19,61 +19,50 @@
 /* @flow strict */
 
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import { shallow } from 'enzyme';
 
 import BpkProgress from './BpkProgress';
 
 describe('BpkProgress', () => {
   it('should render correctly', () => {
-    const tree = renderer
-      .create(<BpkProgress min={0} max={100} value={25} />)
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(<BpkProgress min={0} max={100} value={25} />);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with a "className" attribute', () => {
-    const tree = renderer
-      .create(
-        <BpkProgress
-          min={0}
-          max={100}
-          value={25}
-          className="my-progress-bar"
-        />,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkProgress min={0} max={100} value={25} className="my-progress-bar" />,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with a "small" attribute', () => {
-    const tree = renderer
-      .create(<BpkProgress min={0} max={9} value={2} small />)
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkProgress min={0} max={9} value={2} small />,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with a "stepped" attribute', () => {
-    const tree = renderer
-      .create(<BpkProgress min={0} max={9} value={2} stepped />)
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkProgress min={0} max={9} value={2} stepped />,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with a "stepColor" attribute', () => {
-    const tree = renderer
-      .create(
-        <BpkProgress min={0} max={9} value={2} stepped stepColor="blue" />,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkProgress min={0} max={9} value={2} stepped stepColor="blue" />,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with "small" and "stepped" attributes', () => {
-    const tree = renderer
-      .create(<BpkProgress min={0} max={9} value={2} small stepped />)
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkProgress min={0} max={9} value={2} small stepped />,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should call "onComplete" when "value" is set to be >= "max"', () => {

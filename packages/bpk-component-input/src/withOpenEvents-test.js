@@ -18,7 +18,7 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import { mount } from 'enzyme';
 
 import withOpenEvents from './withOpenEvents';
@@ -28,48 +28,42 @@ const Input = withOpenEvents(BpkInput);
 
 describe('withOpenEvents', () => {
   it('should render correctly', () => {
-    const tree = renderer
-      .create(
-        <Input
-          id="my-input"
-          name="my-input"
-          value="value"
-          hasTouchSupport={false}
-          onChange={() => null}
-        />,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <Input
+        id="my-input"
+        name="my-input"
+        value="value"
+        hasTouchSupport={false}
+        onChange={() => null}
+      />,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should attach different event handlers when touch is supported', () => {
-    const tree = renderer
-      .create(
-        <Input
-          id="my-input"
-          name="my-input"
-          value="value"
-          hasTouchSupport
-          onChange={() => null}
-        />,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <Input
+        id="my-input"
+        name="my-input"
+        value="value"
+        hasTouchSupport
+        onChange={() => null}
+      />,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with "className" prop', () => {
-    const tree = renderer
-      .create(
-        <Input
-          id="my-input"
-          name="my-input"
-          value="value"
-          className="my-custom-class"
-          onChange={() => null}
-        />,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <Input
+        id="my-input"
+        name="my-input"
+        value="value"
+        className="my-custom-class"
+        onChange={() => null}
+      />,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should open on click', () => {

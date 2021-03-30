@@ -1,85 +1,73 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`BpkCloseButton should render correctly 1`] = `
-<button
-  aria-label="Close"
-  className="bpk-close-button"
-  onClick={[Function]}
-  title="Close"
-  type="button"
->
-  <svg
-    className="bpk-close-button__icon"
-    height="18"
-    style={
-      Object {
-        "height": "1.125rem",
-        "width": "1.125rem",
-      }
-    }
-    viewBox="0 0 24 24"
-    width="18"
-    xmlns="http://www.w3.org/2000/svg"
+<DocumentFragment>
+  <button
+    aria-label="Close"
+    class="bpk-close-button"
+    title="Close"
+    type="button"
   >
-    <path
-      d="M5.587 3.467a1.5 1.5 0 1 0-2.194 2.046q.036.038.074.074l6.438 6.44-6.44 6.44a1.5 1.5 0 0 0 2.122 2.12l6.44-6.438 6.44 6.44a1.5 1.5 0 0 0 2.12-2.122l-6.438-6.44 6.44-6.44a1.5 1.5 0 0 0-2.122-2.12l-6.44 6.438-6.44-6.44z"
-    />
-  </svg>
-</button>
+    <svg
+      class="bpk-close-button__icon"
+      height="18"
+      style="width: 1.125rem; height: 1.125rem;"
+      viewBox="0 0 24 24"
+      width="18"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M5.587 3.467a1.5 1.5 0 1 0-2.194 2.046q.036.038.074.074l6.438 6.44-6.44 6.44a1.5 1.5 0 0 0 2.122 2.12l6.44-6.438 6.44 6.44a1.5 1.5 0 0 0 2.12-2.122l-6.438-6.44 6.44-6.44a1.5 1.5 0 0 0-2.122-2.12l-6.44 6.438-6.44-6.44z"
+      />
+    </svg>
+  </button>
+</DocumentFragment>
 `;
 
 exports[`BpkCloseButton should render correctly with a custom className 1`] = `
-<button
-  aria-label="Close"
-  className="bpk-close-button my-custom-classname"
-  onClick={[Function]}
-  title="Close"
-  type="button"
->
-  <svg
-    className="bpk-close-button__icon"
-    height="18"
-    style={
-      Object {
-        "height": "1.125rem",
-        "width": "1.125rem",
-      }
-    }
-    viewBox="0 0 24 24"
-    width="18"
-    xmlns="http://www.w3.org/2000/svg"
+<DocumentFragment>
+  <button
+    aria-label="Close"
+    class="bpk-close-button my-custom-classname"
+    title="Close"
+    type="button"
   >
-    <path
-      d="M5.587 3.467a1.5 1.5 0 1 0-2.194 2.046q.036.038.074.074l6.438 6.44-6.44 6.44a1.5 1.5 0 0 0 2.122 2.12l6.44-6.438 6.44 6.44a1.5 1.5 0 0 0 2.12-2.122l-6.438-6.44 6.44-6.44a1.5 1.5 0 0 0-2.122-2.12l-6.44 6.438-6.44-6.44z"
-    />
-  </svg>
-</button>
+    <svg
+      class="bpk-close-button__icon"
+      height="18"
+      style="width: 1.125rem; height: 1.125rem;"
+      viewBox="0 0 24 24"
+      width="18"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M5.587 3.467a1.5 1.5 0 1 0-2.194 2.046q.036.038.074.074l6.438 6.44-6.44 6.44a1.5 1.5 0 0 0 2.122 2.12l6.44-6.438 6.44 6.44a1.5 1.5 0 0 0 2.12-2.122l-6.438-6.44 6.44-6.44a1.5 1.5 0 0 0-2.122-2.12l-6.44 6.438-6.44-6.44z"
+      />
+    </svg>
+  </button>
+</DocumentFragment>
 `;
 
 exports[`BpkCloseButton should render correctly with a custom icon 1`] = `
-<button
-  aria-label="Close"
-  className="bpk-close-button"
-  onClick={[Function]}
-  title="Close"
-  type="button"
->
-  <svg
-    className="bpk-close-button__icon"
-    height="18"
-    style={
-      Object {
-        "height": "1.125rem",
-        "width": "1.125rem",
-      }
-    }
-    viewBox="0 0 24 24"
-    width="18"
-    xmlns="http://www.w3.org/2000/svg"
+<DocumentFragment>
+  <button
+    aria-label="Close"
+    class="bpk-close-button"
+    title="Close"
+    type="button"
   >
-    <path
-      d="M12 22.5A10.5 10.5 0 1 0 1.5 12 10.5 10.5 0 0 0 12 22.5zM7.938 7.94h.002a1.5 1.5 0 0 1 2.12 0L12 9.878l1.94-1.94a1.5 1.5 0 0 1 2.12 2.122L14.122 12l1.94 1.94a1.5 1.5 0 0 1-2.122 2.12L12 14.122l-1.94 1.94a1.5 1.5 0 0 1-2.12-2.122L9.878 12l-1.94-1.94a1.5 1.5 0 0 1 0-2.12z"
-    />
-  </svg>
-</button>
+    <svg
+      class="bpk-close-button__icon"
+      height="18"
+      style="width: 1.125rem; height: 1.125rem;"
+      viewBox="0 0 24 24"
+      width="18"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M12 22.5A10.5 10.5 0 1 0 1.5 12 10.5 10.5 0 0 0 12 22.5zM7.938 7.94h.002a1.5 1.5 0 0 1 2.12 0L12 9.878l1.94-1.94a1.5 1.5 0 0 1 2.12 2.122L14.122 12l1.94 1.94a1.5 1.5 0 0 1-2.122 2.12L12 14.122l-1.94 1.94a1.5 1.5 0 0 1-2.12-2.122L9.878 12l-1.94-1.94a1.5 1.5 0 0 1 0-2.12z"
+      />
+    </svg>
+  </button>
+</DocumentFragment>
 `;

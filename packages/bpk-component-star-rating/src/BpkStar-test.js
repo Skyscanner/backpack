@@ -19,51 +19,45 @@
 /* @flow strict */
 
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 
 import BpkStar, { STAR_TYPES } from './BpkStar';
 
 describe('BpkStar', () => {
   it('should render correctly with empty star', () => {
-    const tree = renderer.create(<BpkStar type={STAR_TYPES.EMPTY} />).toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(<BpkStar type={STAR_TYPES.EMPTY} />);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with half star', () => {
-    const tree = renderer.create(<BpkStar type={STAR_TYPES.HALF} />).toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(<BpkStar type={STAR_TYPES.HALF} />);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with full star', () => {
-    const tree = renderer.create(<BpkStar type={STAR_TYPES.FULL} />).toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(<BpkStar type={STAR_TYPES.FULL} />);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with a large empty star', () => {
-    const tree = renderer
-      .create(<BpkStar type={STAR_TYPES.EMPTY} large />)
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(<BpkStar type={STAR_TYPES.EMPTY} large />);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with a large half star', () => {
-    const tree = renderer
-      .create(<BpkStar type={STAR_TYPES.HALF} large />)
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(<BpkStar type={STAR_TYPES.HALF} large />);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with a large full star', () => {
-    const tree = renderer
-      .create(<BpkStar type={STAR_TYPES.FULL} large />)
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(<BpkStar type={STAR_TYPES.FULL} large />);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with a "className" prop', () => {
-    const tree = renderer
-      .create(<BpkStar type={STAR_TYPES.FULL} className="my-class" />)
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkStar type={STAR_TYPES.FULL} className="my-class" />,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 });

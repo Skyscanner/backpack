@@ -1,9 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`EnhancedComponent should render correctly 1`] = `
-<div>
-  <p>
-    Children
-  </p>
-</div>
+<DocumentFragment>
+  <div>
+    <p>
+      Children
+    </p>
+  </div>
+</DocumentFragment>
 `;

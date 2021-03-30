@@ -18,78 +18,66 @@
 /* @flow strict */
 
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 
 import BpkOverlay, { BORDER_RADIUS_STYLES, OVERLAY_TYPES } from './BpkOverlay';
 
 describe('BpkOverlay', () => {
   it('should render correctly', () => {
-    const tree = renderer
-      .create(
-        <BpkOverlay>
-          <span>Backpack</span>
-        </BpkOverlay>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkOverlay>
+        <span>Backpack</span>
+      </BpkOverlay>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with foregroundContent', () => {
-    const tree = renderer
-      .create(
-        <BpkOverlay foregroundContent={<span>Skyscanner</span>}>
-          <span>Backpack</span>
-        </BpkOverlay>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkOverlay foregroundContent={<span>Skyscanner</span>}>
+        <span>Backpack</span>
+      </BpkOverlay>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   Object.keys(OVERLAY_TYPES).map(overlayType =>
     it(`should render correctly with overlayType={${overlayType}}`, () => {
-      const tree = renderer
-        .create(
-          <BpkOverlay overlayType={overlayType}>
-            <span>Backpack</span>
-          </BpkOverlay>,
-        )
-        .toJSON();
-      expect(tree).toMatchSnapshot();
+      const { asFragment } = render(
+        <BpkOverlay overlayType={overlayType}>
+          <span>Backpack</span>
+        </BpkOverlay>,
+      );
+      expect(asFragment()).toMatchSnapshot();
     }),
   );
 
   Object.keys(BORDER_RADIUS_STYLES).map(borderRadiusStyle =>
     it(`should render correctly with borderRadiusStyle={${borderRadiusStyle}}`, () => {
-      const tree = renderer
-        .create(
-          <BpkOverlay borderRadiusStyle={borderRadiusStyle}>
-            <span>Backpack</span>
-          </BpkOverlay>,
-        )
-        .toJSON();
-      expect(tree).toMatchSnapshot();
+      const { asFragment } = render(
+        <BpkOverlay borderRadiusStyle={borderRadiusStyle}>
+          <span>Backpack</span>
+        </BpkOverlay>,
+      );
+      expect(asFragment()).toMatchSnapshot();
     }),
   );
 
   it('should support custom class names', () => {
-    const tree = renderer
-      .create(
-        <BpkOverlay className="custom-classname">
-          <span>Backpack</span>
-        </BpkOverlay>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkOverlay className="custom-classname">
+        <span>Backpack</span>
+      </BpkOverlay>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should support arbitrary props', () => {
-    const tree = renderer
-      .create(
-        <BpkOverlay testID="123">
-          <span>Backpack</span>
-        </BpkOverlay>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkOverlay testid="123">
+        <span>Backpack</span>
+      </BpkOverlay>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 });

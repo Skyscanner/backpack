@@ -17,44 +17,38 @@
  */
 
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 
 import BpkDescriptionList from './BpkDescriptionList';
 
 describe('BpkDescriptionList', () => {
   it('should render correctly', () => {
-    const tree = renderer
-      .create(
-        <BpkDescriptionList>
-          <dt>term</dt>
-          <dd>description</dd>
-        </BpkDescriptionList>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkDescriptionList>
+        <dt>term</dt>
+        <dd>description</dd>
+      </BpkDescriptionList>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with a "className" attribute', () => {
-    const tree = renderer
-      .create(
-        <BpkDescriptionList className="test-description-list">
-          <dt>term</dt>
-          <dd>description</dd>
-        </BpkDescriptionList>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkDescriptionList className="test-description-list">
+        <dt>term</dt>
+        <dd>description</dd>
+      </BpkDescriptionList>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with other attributes', () => {
-    const tree = renderer
-      .create(
-        <BpkDescriptionList title="this is a description list">
-          <dt>term</dt>
-          <dd>description</dd>
-        </BpkDescriptionList>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkDescriptionList title="this is a description list">
+        <dt>term</dt>
+        <dd>description</dd>
+      </BpkDescriptionList>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 });

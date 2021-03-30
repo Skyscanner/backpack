@@ -19,91 +19,77 @@
 /* @flow strict */
 
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 
 import BpkLink, { themeAttributes } from './BpkLink';
 
 describe('BpkLink', () => {
   it('should render correctly with a "href" attribute', () => {
-    const tree = renderer.create(<BpkLink href="#">Link</BpkLink>).toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(<BpkLink href="#">Link</BpkLink>);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with a "className" attribute', () => {
-    const tree = renderer
-      .create(
-        <BpkLink href="#" className="test-class">
-          Link
-        </BpkLink>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkLink href="#" className="test-class">
+        Link
+      </BpkLink>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with a "blank" attribute', () => {
-    const tree = renderer
-      .create(
-        <BpkLink href="#" blank>
-          Link (new window)
-        </BpkLink>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkLink href="#" blank>
+        Link (new window)
+      </BpkLink>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with a "rel" attribute', () => {
-    const tree = renderer
-      .create(
-        <BpkLink href="#" blank rel="rel-attr">
-          Link (new window)
-        </BpkLink>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkLink href="#" blank rel="rel-attr">
+        Link (new window)
+      </BpkLink>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with "blank" and "rel" attributes', () => {
-    const tree = renderer
-      .create(
-        <BpkLink href="#" blank rel="rel-overwrite">
-          Link (new window)
-        </BpkLink>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkLink href="#" blank rel="rel-overwrite">
+        Link (new window)
+      </BpkLink>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with a "white" attribute', () => {
-    const tree = renderer
-      .create(
-        <BpkLink href="#" white>
-          Link
-        </BpkLink>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkLink href="#" white>
+        Link
+      </BpkLink>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with a "alternate" attribute', () => {
-    const tree = renderer
-      .create(
-        <BpkLink href="#" alternate>
-          Link
-        </BpkLink>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkLink href="#" alternate>
+        Link
+      </BpkLink>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with arbitrary attributes', () => {
-    const tree = renderer
-      .create(
-        <BpkLink href="#" id="test-id">
-          Link
-        </BpkLink>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkLink href="#" id="test-id">
+        Link
+      </BpkLink>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   describe('themeAttributes', () => {

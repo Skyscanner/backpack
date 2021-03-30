@@ -1,65 +1,79 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`BpkAriaLive should render correctly 1`] = `
-<div
-  aria-live="polite"
-  className="bpk-aria-live bpk-aria-live--invisible"
->
-  Backpack
-</div>
+<DocumentFragment>
+  <div
+    aria-live="polite"
+    class="bpk-aria-live bpk-aria-live--invisible"
+  >
+    Backpack
+  </div>
+</DocumentFragment>
 `;
 
 exports[`BpkAriaLive should render correctly with politenessSetting="assertive" 1`] = `
-<div
-  aria-live="assertive"
-  className="bpk-aria-live bpk-aria-live--invisible"
->
-  Backpack
-</div>
+<DocumentFragment>
+  <div
+    aria-live="assertive"
+    class="bpk-aria-live bpk-aria-live--invisible"
+  >
+    Backpack
+  </div>
+</DocumentFragment>
 `;
 
 exports[`BpkAriaLive should render correctly with politenessSetting="off" 1`] = `
-<div
-  aria-live="off"
-  className="bpk-aria-live bpk-aria-live--invisible"
->
-  Backpack
-</div>
+<DocumentFragment>
+  <div
+    aria-live="off"
+    class="bpk-aria-live bpk-aria-live--invisible"
+  >
+    Backpack
+  </div>
+</DocumentFragment>
 `;
 
 exports[`BpkAriaLive should render correctly with politenessSetting="polite" 1`] = `
-<div
-  aria-live="polite"
-  className="bpk-aria-live bpk-aria-live--invisible"
->
-  Backpack
-</div>
+<DocumentFragment>
+  <div
+    aria-live="polite"
+    class="bpk-aria-live bpk-aria-live--invisible"
+  >
+    Backpack
+  </div>
+</DocumentFragment>
 `;
 
 exports[`BpkAriaLive should render correctly with the "visible" prop 1`] = `
-<div
-  aria-live="polite"
-  className="bpk-aria-live"
->
-  Backpack
-</div>
+<DocumentFragment>
+  <div
+    aria-live="polite"
+    class="bpk-aria-live"
+  >
+    Backpack
+  </div>
+</DocumentFragment>
 `;
 
 exports[`BpkAriaLive should support arbitrary props 1`] = `
-<div
-  aria-live="polite"
-  className="bpk-aria-live bpk-aria-live--invisible"
-  testID="123"
->
-  Backpack
-</div>
+<DocumentFragment>
+  <div
+    aria-live="polite"
+    class="bpk-aria-live bpk-aria-live--invisible"
+    testid="123"
+  >
+    Backpack
+  </div>
+</DocumentFragment>
 `;
 
 exports[`BpkAriaLive should support custom class names 1`] = `
-<div
-  aria-live="polite"
-  className="bpk-aria-live bpk-aria-live--invisible custom-classname"
->
-  Backpack
-</div>
+<DocumentFragment>
+  <div
+    aria-live="polite"
+    class="bpk-aria-live bpk-aria-live--invisible custom-classname"
+  >
+    Backpack
+  </div>
+</DocumentFragment>
 `;

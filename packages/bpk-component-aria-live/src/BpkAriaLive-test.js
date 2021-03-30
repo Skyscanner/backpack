@@ -18,47 +18,43 @@
 /* @flow strict */
 
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 
 import BpkAriaLive, { POLITENESS_SETTINGS } from './BpkAriaLive';
 
 describe('BpkAriaLive', () => {
   it('should render correctly', () => {
-    const tree = renderer.create(<BpkAriaLive>Backpack</BpkAriaLive>).toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(<BpkAriaLive>Backpack</BpkAriaLive>);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   Object.keys(POLITENESS_SETTINGS).forEach(politenessSetting => {
     it(`should render correctly with politenessSetting="${politenessSetting}"`, () => {
-      const tree = renderer
-        .create(
-          <BpkAriaLive politenessSetting={politenessSetting}>
-            Backpack
-          </BpkAriaLive>,
-        )
-        .toJSON();
-      expect(tree).toMatchSnapshot();
+      const { asFragment } = render(
+        <BpkAriaLive politenessSetting={politenessSetting}>
+          Backpack
+        </BpkAriaLive>,
+      );
+      expect(asFragment()).toMatchSnapshot();
     });
   });
 
   it('should render correctly with the "visible" prop', () => {
-    const tree = renderer
-      .create(<BpkAriaLive visible>Backpack</BpkAriaLive>)
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(<BpkAriaLive visible>Backpack</BpkAriaLive>);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should support custom class names', () => {
-    const tree = renderer
-      .create(<BpkAriaLive className="custom-classname">Backpack</BpkAriaLive>)
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkAriaLive className="custom-classname">Backpack</BpkAriaLive>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should support arbitrary props', () => {
-    const tree = renderer
-      .create(<BpkAriaLive testID="123">Backpack</BpkAriaLive>)
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkAriaLive testid="123">Backpack</BpkAriaLive>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 });

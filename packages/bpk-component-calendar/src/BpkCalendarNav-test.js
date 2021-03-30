@@ -17,7 +17,7 @@
  */
 
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import { shallow } from 'enzyme';
 import format from 'date-fns/format';
 
@@ -27,36 +27,32 @@ const formatMonth = date => format(date, 'MMMM YYYY');
 
 describe('BpkCalendarNav', () => {
   it('should render correctly', () => {
-    const tree = renderer
-      .create(
-        <BpkCalendarNav
-          month={new Date(2010, 1, 1)}
-          minDate={new Date(2010, 1, 1)}
-          maxDate={new Date(2010, 2, 1)}
-          formatMonth={formatMonth}
-          changeMonthLabel="Change month"
-          id="myCalendarNav"
-        />,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkCalendarNav
+        month={new Date(2010, 1, 1)}
+        minDate={new Date(2010, 1, 1)}
+        maxDate={new Date(2010, 2, 1)}
+        formatMonth={formatMonth}
+        changeMonthLabel="Change month"
+        id="myCalendarNav"
+      />,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should disable inputs when disabled', () => {
-    const tree = renderer
-      .create(
-        <BpkCalendarNav
-          month={new Date(2010, 1, 1)}
-          minDate={new Date(2010, 1, 1)}
-          maxDate={new Date(2010, 2, 1)}
-          formatMonth={formatMonth}
-          changeMonthLabel="Change month"
-          disabled
-          id="myCalendarNav"
-        />,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkCalendarNav
+        month={new Date(2010, 1, 1)}
+        minDate={new Date(2010, 1, 1)}
+        maxDate={new Date(2010, 2, 1)}
+        formatMonth={formatMonth}
+        changeMonthLabel="Change month"
+        disabled
+        id="myCalendarNav"
+      />,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should call the onMonthChange callback when nudging/selecting month', () => {

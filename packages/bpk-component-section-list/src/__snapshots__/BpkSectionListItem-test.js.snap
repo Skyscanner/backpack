@@ -1,79 +1,76 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`BpkSectionListItem should render correctly 1`] = `
-<div
-  className="bpk-section-list-item"
->
-  Hello world
-</div>
+<DocumentFragment>
+  <div
+    class="bpk-section-list-item"
+  >
+    Hello world
+  </div>
+</DocumentFragment>
 `;
 
 exports[`BpkSectionListItem should render correctly with a "href" prop 1`] = `
-<a
-  className="bpk-section-list-item bpk-section-list-item--interactive"
-  href="#"
-  onClick={null}
-  target={null}
->
-  Hello world
-  <svg
-    className="bpk-section-list-item__chevron bpk-icon--rtl-support"
-    height="24"
-    style={
-      Object {
-        "height": "1.5rem",
-        "width": "1.5rem",
-      }
-    }
-    width="24"
-    xmlns="http://www.w3.org/2000/svg"
+<DocumentFragment>
+  <a
+    class="bpk-section-list-item bpk-section-list-item--interactive"
+    href="#"
   >
-    <path
-      d="M7.8 4.287a1 1 0 0 0 0 1.414l6.292 6.293L7.8 18.287a1 1 0 0 0 1.39 1.438l.024-.024 7-7a1 1 0 0 0 0-1.414l-7-7a1 1 0 0 0-1.414 0z"
-    />
-  </svg>
-</a>
+    Hello world
+    <svg
+      class="bpk-section-list-item__chevron bpk-icon--rtl-support"
+      height="24"
+      style="width: 1.5rem; height: 1.5rem;"
+      width="24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M7.8 4.287a1 1 0 0 0 0 1.414l6.292 6.293L7.8 18.287a1 1 0 0 0 1.39 1.438l.024-.024 7-7a1 1 0 0 0 0-1.414l-7-7a1 1 0 0 0-1.414 0z"
+      />
+    </svg>
+  </a>
+</DocumentFragment>
 `;
 
 exports[`BpkSectionListItem should render correctly with a custom className 1`] = `
-<div
-  className="bpk-section-list-item custom-class"
->
-  Hello world
-</div>
+<DocumentFragment>
+  <div
+    class="bpk-section-list-item custom-class"
+  >
+    Hello world
+  </div>
+</DocumentFragment>
 `;
 
 exports[`BpkSectionListItem should render correctly with an "onClick" prop 1`] = `
-<button
-  className="bpk-section-list-item bpk-section-list-item--interactive"
-  onClick={[MockFunction]}
-  type="button"
->
-  Hello world
-  <svg
-    className="bpk-section-list-item__chevron bpk-icon--rtl-support"
-    height="24"
-    style={
-      Object {
-        "height": "1.5rem",
-        "width": "1.5rem",
-      }
-    }
-    width="24"
-    xmlns="http://www.w3.org/2000/svg"
+<DocumentFragment>
+  <button
+    class="bpk-section-list-item bpk-section-list-item--interactive"
+    type="button"
   >
-    <path
-      d="M7.8 4.287a1 1 0 0 0 0 1.414l6.292 6.293L7.8 18.287a1 1 0 0 0 1.39 1.438l.024-.024 7-7a1 1 0 0 0 0-1.414l-7-7a1 1 0 0 0-1.414 0z"
-    />
-  </svg>
-</button>
+    Hello world
+    <svg
+      class="bpk-section-list-item__chevron bpk-icon--rtl-support"
+      height="24"
+      style="width: 1.5rem; height: 1.5rem;"
+      width="24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M7.8 4.287a1 1 0 0 0 0 1.414l6.292 6.293L7.8 18.287a1 1 0 0 0 1.39 1.438l.024-.024 7-7a1 1 0 0 0 0-1.414l-7-7a1 1 0 0 0-1.414 0z"
+      />
+    </svg>
+  </button>
+</DocumentFragment>
 `;
 
 exports[`BpkSectionListItem should render correctly with arbitrary props 1`] = `
-<div
-  className="bpk-section-list-item"
-  testId="123"
->
-  Hello world
-</div>
+<DocumentFragment>
+  <div
+    class="bpk-section-list-item"
+    testid="123"
+  >
+    Hello world
+  </div>
+</DocumentFragment>
 `;

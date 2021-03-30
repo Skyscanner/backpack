@@ -17,26 +17,18 @@
  */
 
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 
 import BpkRtlToggle from './BpkRtlToggle';
 
 describe('BpkRtlToggle', () => {
   it('should render correctly', () => {
-    const tree = renderer.create(<BpkRtlToggle />).toJSON();
-    expect(tree).toMatchSnapshot();
-  });
-
-  it('should render correctly when toggled', () => {
-    const component = renderer.create(<BpkRtlToggle />);
-    let tree = component.toJSON();
-    tree.props.onClick({ preventDefault: () => null });
-    tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(<BpkRtlToggle />);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with the className prop', () => {
-    const tree = renderer.create(<BpkRtlToggle className="foo" />).toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(<BpkRtlToggle className="foo" />);
+    expect(asFragment()).toMatchSnapshot();
   });
 });

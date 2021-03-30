@@ -1,64 +1,72 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`BpkHeading should render correctly with a "id" attribute 1`] = `
-<h1
-  className="bpk-heading-h1"
-  id="my-id"
->
-  My heading
-</h1>
+<DocumentFragment>
+  <h1
+    class="bpk-heading-h1"
+    id="my-id"
+  >
+    My heading
+  </h1>
+</DocumentFragment>
 `;
 
 exports[`BpkHeading should render correctly with a "level" attribute equal to "h1" 1`] = `
-<h1
-  className="bpk-heading-h1"
-  id={null}
->
-  My heading
-</h1>
+<DocumentFragment>
+  <h1
+    class="bpk-heading-h1"
+  >
+    My heading
+  </h1>
+</DocumentFragment>
 `;
 
 exports[`BpkHeading should render correctly with a "level" attribute equal to "h2" 1`] = `
-<h2
-  className="bpk-heading-h2"
-  id={null}
->
-  My heading
-</h2>
+<DocumentFragment>
+  <h2
+    class="bpk-heading-h2"
+  >
+    My heading
+  </h2>
+</DocumentFragment>
 `;
 
 exports[`BpkHeading should render correctly with a "level" attribute equal to "h3" 1`] = `
-<h3
-  className="bpk-heading-h3"
-  id={null}
->
-  My heading
-</h3>
+<DocumentFragment>
+  <h3
+    class="bpk-heading-h3"
+  >
+    My heading
+  </h3>
+</DocumentFragment>
 `;
 
 exports[`BpkHeading should render correctly with a "level" attribute equal to "h4" 1`] = `
-<h4
-  className="bpk-heading-h4"
-  id={null}
->
-  My heading
-</h4>
+<DocumentFragment>
+  <h4
+    class="bpk-heading-h4"
+  >
+    My heading
+  </h4>
+</DocumentFragment>
 `;
 
 exports[`BpkHeading should render correctly with a "level" attribute equal to "h5" 1`] = `
-<h5
-  className="bpk-heading-h5"
-  id={null}
->
-  My heading
-</h5>
+<DocumentFragment>
+  <h5
+    class="bpk-heading-h5"
+  >
+    My heading
+  </h5>
+</DocumentFragment>
 `;
 
 exports[`BpkHeading should render correctly with a "level" attribute equal to "h6" 1`] = `
-<h6
-  className="bpk-heading-h6"
-  id={null}
->
-  My heading
-</h6>
+<DocumentFragment>
+  <h6
+    class="bpk-heading-h6"
+  >
+    My heading
+  </h6>
+</DocumentFragment>
 `;

@@ -19,26 +19,20 @@
 /* @flow strict */
 
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 
 import BpkAccordion from './BpkAccordion';
 
 describe('BpkAccordion', () => {
   it('should render correctly', () => {
-    const tree = renderer
-      .create(<BpkAccordion>Accordion child</BpkAccordion>)
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(<BpkAccordion>Accordion child</BpkAccordion>);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with custom "className" prop', () => {
-    const tree = renderer
-      .create(
-        <BpkAccordion className="my-custom-class">
-          Accordion child
-        </BpkAccordion>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkAccordion className="my-custom-class">Accordion child</BpkAccordion>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 });

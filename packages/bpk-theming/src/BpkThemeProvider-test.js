@@ -18,7 +18,7 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import { colorWhite } from 'bpk-tokens/tokens/base.es6';
 
 import BpkThemeProvider from './BpkThemeProvider';
@@ -45,133 +45,115 @@ CustomComponentClass.propTypes = {
 
 describe('BpkThemeProvider', () => {
   it('should render correctly', () => {
-    const tree = renderer
-      .create(
-        <BpkThemeProvider
-          theme={{ color: colorWhite }}
-          themeAttributes={['color']}
-        >
-          <p>Lorem Ipsum</p>
-        </BpkThemeProvider>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkThemeProvider
+        theme={{ color: colorWhite }}
+        themeAttributes={['color']}
+      >
+        <p>Lorem Ipsum</p>
+      </BpkThemeProvider>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with custom native component', () => {
-    const tree = renderer
-      .create(
-        <BpkThemeProvider
-          theme={{ color: colorWhite }}
-          themeAttributes={['color']}
-          component="header"
-        >
-          <p>Lorem Ipsum</p>
-        </BpkThemeProvider>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkThemeProvider
+        theme={{ color: colorWhite }}
+        themeAttributes={['color']}
+        component="header"
+      >
+        <p>Lorem Ipsum</p>
+      </BpkThemeProvider>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with custom component function', () => {
-    const tree = renderer
-      .create(
-        <BpkThemeProvider
-          theme={{ color: colorWhite }}
-          themeAttributes={['color']}
-          component={CustomComponentFunction}
-        >
-          <p>Lorem Ipsum</p>
-        </BpkThemeProvider>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkThemeProvider
+        theme={{ color: colorWhite }}
+        themeAttributes={['color']}
+        component={CustomComponentFunction}
+      >
+        <p>Lorem Ipsum</p>
+      </BpkThemeProvider>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with custom component', () => {
-    const tree = renderer
-      .create(
-        <BpkThemeProvider
-          theme={{ color: colorWhite }}
-          themeAttributes={['color']}
-          component={CustomComponentClass}
-        >
-          <p>Lorem Ipsum</p>
-        </BpkThemeProvider>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkThemeProvider
+        theme={{ color: colorWhite }}
+        themeAttributes={['color']}
+        component={CustomComponentClass}
+      >
+        <p>Lorem Ipsum</p>
+      </BpkThemeProvider>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with arbitrary props', () => {
-    const tree = renderer
-      .create(
-        <BpkThemeProvider
-          theme={{ color: colorWhite }}
-          themeAttributes={['color']}
-          id="arbitrary"
-        >
-          <p>Lorem Ipsum</p>
-        </BpkThemeProvider>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkThemeProvider
+        theme={{ color: colorWhite }}
+        themeAttributes={['color']}
+        id="arbitrary"
+      >
+        <p>Lorem Ipsum</p>
+      </BpkThemeProvider>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with arbitrary user defined style', () => {
-    const tree = renderer
-      .create(
-        <BpkThemeProvider
-          theme={{ color: colorWhite }}
-          themeAttributes={['color']}
-          style={{ content: 'user defined' }}
-        >
-          <p>Lorem Ipsum</p>
-        </BpkThemeProvider>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkThemeProvider
+        theme={{ color: colorWhite }}
+        themeAttributes={['color']}
+        style={{ content: 'user defined' }}
+      >
+        <p>Lorem Ipsum</p>
+      </BpkThemeProvider>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should correctly flatten the themeAttribute prop', () => {
-    const tree = renderer
-      .create(
-        <BpkThemeProvider
-          theme={{ color: colorWhite, background: 'black' }}
-          themeAttributes={[['color'], ['background']]}
-        >
-          <p>Lorem Ipsum</p>
-        </BpkThemeProvider>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkThemeProvider
+        theme={{ color: colorWhite, background: 'black' }}
+        themeAttributes={[['color'], ['background']]}
+      >
+        <p>Lorem Ipsum</p>
+      </BpkThemeProvider>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render without theming when theme is missing attributes', () => {
     jest.spyOn(console, 'error').mockImplementation(() => jest.fn());
-    const tree = renderer
-      .create(
-        <BpkThemeProvider theme={{}} themeAttributes={['color']}>
-          <p>Lorem Ipsum</p>
-        </BpkThemeProvider>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkThemeProvider theme={{}} themeAttributes={['color']}>
+        <p>Lorem Ipsum</p>
+      </BpkThemeProvider>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should strip out extraneous theme attributes', () => {
     jest.spyOn(console, 'error').mockImplementation(() => jest.fn());
-    const tree = renderer
-      .create(
-        <BpkThemeProvider
-          theme={{ a: 'a', color: colorWhite }}
-          themeAttributes={['color']}
-        >
-          <p>Lorem Ipsum</p>
-        </BpkThemeProvider>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkThemeProvider
+        theme={{ a: 'a', color: colorWhite }}
+        themeAttributes={['color']}
+      >
+        <p>Lorem Ipsum</p>
+      </BpkThemeProvider>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should warn about missing theme attributes', () => {

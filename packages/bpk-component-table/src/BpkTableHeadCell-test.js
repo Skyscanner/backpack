@@ -19,48 +19,64 @@
 /* @flow strict */
 
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 
 import BpkTableHeadCell from './BpkTableHeadCell';
 
 describe('BpkTableHeadCell', () => {
   it('should render correctly', () => {
-    const tree = renderer
-      .create(<BpkTableHeadCell>Heading</BpkTableHeadCell>)
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <table>
+        <thead>
+          <tr>
+            <BpkTableHeadCell>Heading</BpkTableHeadCell>
+          </tr>
+        </thead>
+      </table>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with "alternate"', () => {
-    const tree = renderer
-      .create(
-        <BpkTableHeadCell alternate>
-          <th>Skyscanner</th>
-        </BpkTableHeadCell>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <table>
+        <thead>
+          <tr>
+            <BpkTableHeadCell alternate>Skyscanner</BpkTableHeadCell>
+          </tr>
+        </thead>
+      </table>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with custom class', () => {
-    const tree = renderer
-      .create(
-        <BpkTableHeadCell className="my-custom-class">
-          <th>Skyscanner</th>
-        </BpkTableHeadCell>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <table>
+        <thead>
+          <tr>
+            <BpkTableHeadCell className="my-custom-class">
+              Skyscanner
+            </BpkTableHeadCell>
+          </tr>
+        </thead>
+      </table>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with arbitrary props', () => {
-    const tree = renderer
-      .create(
-        <BpkTableHeadCell id="my-custom-id" data-foo="bar">
-          <th>Skyscanner</th>
-        </BpkTableHeadCell>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <table>
+        <thead>
+          <tr>
+            <BpkTableHeadCell id="my-custom-id" data-foo="bar">
+              Skyscanner
+            </BpkTableHeadCell>
+          </tr>
+        </thead>
+      </table>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 });

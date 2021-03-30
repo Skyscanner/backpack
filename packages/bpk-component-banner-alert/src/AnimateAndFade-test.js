@@ -18,7 +18,7 @@
 /* @flow strict */
 
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 
 import AnimateAndFade from './AnimateAndFade';
 
@@ -28,17 +28,17 @@ const message = (
 
 describe('AnimateAndFade', () => {
   it('should render correctly', () => {
-    const tree = renderer
-      .create(<AnimateAndFade show={false}>{message}</AnimateAndFade>)
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <AnimateAndFade show={false}>{message}</AnimateAndFade>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly when shown', () => {
-    const tree = renderer
-      .create(<AnimateAndFade show>{message}</AnimateAndFade>)
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <AnimateAndFade show>{message}</AnimateAndFade>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with animateOnEnter', () => {
@@ -48,26 +48,22 @@ describe('AnimateAndFade', () => {
     return;
     /* eslint-disable no-unreachable */
     // $FlowFixMe[unreachable-code]
-    const tree = renderer
-      .create(
-        <AnimateAndFade show animateOnEnter>
-          {message}
-        </AnimateAndFade>,
-      )
-      .toJSON();
+    const { asFragment } = render(
+      <AnimateAndFade show animateOnEnter>
+        {message}
+      </AnimateAndFade>,
+    );
     // $FlowFixMe[unreachable-code]
-    expect(tree).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
     /* eslint-enable */
   });
 
   it('should render correctly with userland className', () => {
-    const tree = renderer
-      .create(
-        <AnimateAndFade className="userland-class-name" show>
-          {message}
-        </AnimateAndFade>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <AnimateAndFade className="userland-class-name" show>
+        {message}
+      </AnimateAndFade>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 });

@@ -19,134 +19,116 @@
 /* @flow strict */
 
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 
 import BpkText, { WEIGHT_STYLES } from './BpkText';
 
 describe('BpkText', () => {
   it('should render correctly', () => {
-    const tree = renderer
-      .create(
-        <BpkText>
-          Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
-          commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus
-          et magnis dis parturient montes, nascetur ridiculus mus.
-        </BpkText>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkText>
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
+        ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis
+        dis parturient montes, nascetur ridiculus mus.
+      </BpkText>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with deprecated `bold` prop', () => {
     const consoleWarnFn = jest.fn();
     jest.spyOn(console, 'warn').mockImplementation(consoleWarnFn);
-    const tree = renderer
-      .create(
-        <BpkText bold>
-          Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
-          commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus
-          et magnis dis parturient montes, nascetur ridiculus mus.
-        </BpkText>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkText bold>
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
+        ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis
+        dis parturient montes, nascetur ridiculus mus.
+      </BpkText>,
+    );
+    expect(asFragment()).toMatchSnapshot();
     expect(consoleWarnFn.mock.calls.length).toBe(1);
   });
 
   it('should render correctly with tageName="h1", textStyle="xxl"', () => {
-    const tree = renderer
-      .create(
-        <BpkText textStyle="xxl" tagName="h1">
-          Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
-          commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus
-          et magnis dis parturient montes, nascetur ridiculus mus.
-        </BpkText>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkText textStyle="xxl" tagName="h1">
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
+        ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis
+        dis parturient montes, nascetur ridiculus mus.
+      </BpkText>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with tageName="text"', () => {
-    const tree = renderer
-      .create(
-        <BpkText tagName="text">
-          Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
-          commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus
-          et magnis dis parturient montes, nascetur ridiculus mus.
-        </BpkText>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkText tagName="text">
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
+        ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis
+        dis parturient montes, nascetur ridiculus mus.
+      </BpkText>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with weight="bold"', () => {
-    const tree = renderer
-      .create(
-        <BpkText weight={WEIGHT_STYLES.bold}>
-          Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
-          commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus
-          et magnis dis parturient montes, nascetur ridiculus mus.
-        </BpkText>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkText weight={WEIGHT_STYLES.bold}>
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
+        ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis
+        dis parturient montes, nascetur ridiculus mus.
+      </BpkText>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   ['xl', 'xxl', 'xxxl', 'xxxxl', 'xxxxxl'].forEach(textStyle => {
     it(`should render correctly with weight="black" and supported textStyle="${textStyle}"`, () => {
-      const tree = renderer
-        .create(
-          <BpkText textStyle={textStyle} weight={WEIGHT_STYLES.black}>
-            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
-            commodo ligula eget dolor. Aenean massa. Cum sociis natoque
-            penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-          </BpkText>,
-        )
-        .toJSON();
-      expect(tree).toMatchSnapshot();
+      const { asFragment } = render(
+        <BpkText textStyle={textStyle} weight={WEIGHT_STYLES.black}>
+          Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
+          commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus
+          et magnis dis parturient montes, nascetur ridiculus mus.
+        </BpkText>,
+      );
+      expect(asFragment()).toMatchSnapshot();
     });
   });
 
   it('should not apply black styles when weight="black" and not an xl textStyle', () => {
-    const tree = renderer
-      .create(
-        <BpkText weight={WEIGHT_STYLES.black}>
-          Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
-          commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus
-          et magnis dis parturient montes, nascetur ridiculus mus.
-        </BpkText>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkText weight={WEIGHT_STYLES.black}>
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
+        ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis
+        dis parturient montes, nascetur ridiculus mus.
+      </BpkText>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should pass down unknown props', () => {
-    const tree = renderer
-      .create(
-        // eslint-disable-next-line backpack/use-tokens
-        <BpkText style={{ color: 'red' }}>
-          Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
-          commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus
-          et magnis dis parturient montes, nascetur ridiculus mus.
-        </BpkText>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      // eslint-disable-next-line backpack/use-tokens
+      <BpkText style={{ color: 'red' }}>
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
+        ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis
+        dis parturient montes, nascetur ridiculus mus.
+      </BpkText>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   ['xs', 'sm', 'base', 'lg', 'xl', 'xxl', 'xxxl', 'xxxxl', 'xxxxxl'].forEach(
     textStyle => {
       it(`should render correctly with textStyle="${textStyle}"`, () => {
-        const tree = renderer
-          .create(
-            <BpkText textStyle={textStyle}>
-              Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
-              commodo ligula eget dolor. Aenean massa. Cum sociis natoque
-              penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-            </BpkText>,
-          )
-          .toJSON();
-        expect(tree).toMatchSnapshot();
+        const { asFragment } = render(
+          <BpkText textStyle={textStyle}>
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
+            commodo ligula eget dolor. Aenean massa. Cum sociis natoque
+            penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+          </BpkText>,
+        );
+        expect(asFragment()).toMatchSnapshot();
       });
     },
   );

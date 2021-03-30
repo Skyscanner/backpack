@@ -17,7 +17,7 @@
  */
 
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import { mount } from 'enzyme';
 import toJson from 'enzyme-to-json';
 import * as BREAKPOINTS from 'bpk-tokens/tokens/breakpoints.es6';
@@ -28,78 +28,63 @@ import BORDER_RADIUS_STYLES from './BpkImageBorderRadiusStyles';
 
 describe('BpkImage', () => {
   it('should render correctly', () => {
-    const tree = renderer
-      .create(
-        <BpkImage
-          altText="image description"
-          aspectRatio={816 / 544}
-          src="./path/to/image.jpg"
-        />,
-      )
-      .toJSON();
-
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkImage
+        altText="image description"
+        aspectRatio={816 / 544}
+        src="./path/to/image.jpg"
+      />,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly using legacy width and height props', () => {
-    const tree = renderer
-      .create(
-        <BpkImage
-          altText="image description"
-          width={816}
-          height={544}
-          src="./path/to/image.jpg"
-        />,
-      )
-      .toJSON();
-
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkImage
+        altText="image description"
+        width={816}
+        height={544}
+        src="./path/to/image.jpg"
+      />,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should accept userland styling', () => {
-    const tree = renderer
-      .create(
-        <BpkImage
-          altText="image description"
-          aspectRatio={816 / 544}
-          style={{ width: spacingSm }}
-          src="./path/to/image.jpg"
-        />,
-      )
-      .toJSON();
-
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkImage
+        altText="image description"
+        aspectRatio={816 / 544}
+        style={{ width: spacingSm }}
+        src="./path/to/image.jpg"
+      />,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should accept userland className', () => {
-    const tree = renderer
-      .create(
-        <BpkImage
-          altText="image description"
-          aspectRatio={816 / 544}
-          style={{ width: spacingSm }}
-          className="userland-classname"
-          src="./path/to/image.jpg"
-        />,
-      )
-      .toJSON();
-
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkImage
+        altText="image description"
+        aspectRatio={816 / 544}
+        style={{ width: spacingSm }}
+        className="userland-classname"
+        src="./path/to/image.jpg"
+      />,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should have loading behavior', () => {
-    const tree = renderer
-      .create(
-        <BpkImage
-          loading
-          altText="image description"
-          aspectRatio={816 / 544}
-          src="./path/to/image.jpg"
-        />,
-      )
-      .toJSON();
-
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkImage
+        loading
+        altText="image description"
+        aspectRatio={816 / 544}
+        src="./path/to/image.jpg"
+      />,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should call onLoadCallback', () => {
@@ -132,18 +117,15 @@ describe('BpkImage', () => {
   });
 
   it('should have !inView behavior', () => {
-    const tree = renderer
-      .create(
-        <BpkImage
-          inView={false}
-          altText="image description"
-          aspectRatio={816 / 544}
-          src="./path/to/image.jpg"
-        />,
-      )
-      .toJSON();
-
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkImage
+        inView={false}
+        altText="image description"
+        aspectRatio={816 / 544}
+        src="./path/to/image.jpg"
+      />,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should support srcSet', () => {
@@ -151,33 +133,27 @@ describe('BpkImage', () => {
       './path/to/image_320px.jpg 320w, ./path/to/image_640px.jpg 640w, ./path/to/image_1640px.jpg 1640w, ./path/to/image_3200px.jpg 3200w';
     const sizes = `(min-width: ${BREAKPOINTS.breakpointDesktop}) 48rem, (min-width: ${BREAKPOINTS.breakpointTablet}) calc(100vw - 18rem), calc(100vw - 4.5rem)`;
 
-    const tree = renderer
-      .create(
-        <BpkImage
-          altText="image description"
-          aspectRatio={816 / 544}
-          src="./path/to/image_1640.jpg"
-          srcSet={srcSet}
-          sizes={sizes}
-        />,
-      )
-      .toJSON();
-
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkImage
+        altText="image description"
+        aspectRatio={816 / 544}
+        src="./path/to/image_1640.jpg"
+        srcSet={srcSet}
+        sizes={sizes}
+      />,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should apply borderRadius', () => {
-    const tree = renderer
-      .create(
-        <BpkImage
-          altText="image description"
-          aspectRatio={816 / 544}
-          src="./path/to/image.jpg"
-          borderRadiusStyle={BORDER_RADIUS_STYLES.sm}
-        />,
-      )
-      .toJSON();
-
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkImage
+        altText="image description"
+        aspectRatio={816 / 544}
+        src="./path/to/image.jpg"
+        borderRadiusStyle={BORDER_RADIUS_STYLES.sm}
+      />,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 });

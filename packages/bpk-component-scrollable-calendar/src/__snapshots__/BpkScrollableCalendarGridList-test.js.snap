@@ -75,7 +75,7 @@ exports[`BpkCalendarScrollGridList should render correctly with "showWeekendSepa
     useIsScrolling={false}
     width="100%"
   >
-    [Function]
+    <Component />
   </List>
 </div>
 `;
@@ -158,7 +158,7 @@ exports[`BpkCalendarScrollGridList should render correctly with a "dateModifiers
     useIsScrolling={false}
     width="100%"
   >
-    [Function]
+    <Component />
   </List>
 </div>
 `;
@@ -238,7 +238,7 @@ exports[`BpkCalendarScrollGridList should render correctly with a custom date co
     useIsScrolling={false}
     width="100%"
   >
-    [Function]
+    <Component />
   </List>
 </div>
 `;
@@ -318,7 +318,7 @@ exports[`BpkCalendarScrollGridList should render correctly with a different "wee
     useIsScrolling={false}
     width="100%"
   >
-    [Function]
+    <Component />
   </List>
 </div>
 `;
@@ -397,7 +397,7 @@ exports[`BpkCalendarScrollGridList should render correctly with no optional prop
     useIsScrolling={false}
     width="100%"
   >
-    [Function]
+    <Component />
   </List>
 </div>
 `;

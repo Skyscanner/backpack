@@ -19,80 +19,74 @@
 /* @flow strict */
 
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 
 import BpkRadio from './BpkRadio';
 
 describe('BpkRadio', () => {
   it('should render correctly', () => {
-    const tree = renderer
-      .create(<BpkRadio name="radio" label="Direct" />)
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(<BpkRadio name="radio" label="Direct" />);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly when label is a node', () => {
-    const tree = renderer
-      .create(<BpkRadio name="radio" label={<span>Direct</span>} />)
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkRadio name="radio" label={<span>Direct</span>} />,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with id attribute', () => {
-    const tree = renderer
-      .create(<BpkRadio id="radio" name="radio" label="Direct" />)
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkRadio id="radio" name="radio" label="Direct" />,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with checked attribute', () => {
-    const tree = renderer
-      .create(<BpkRadio name="radio" label="Direct" checked />)
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkRadio name="radio" label="Direct" checked onChange={() => {}} />,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with disabled attribute', () => {
-    const tree = renderer
-      .create(<BpkRadio name="radio" label="Direct" disabled />)
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkRadio name="radio" label="Direct" disabled />,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with white attribute', () => {
-    const tree = renderer
-      .create(<BpkRadio name="radio" label="Direct" white />)
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkRadio name="radio" label="Direct" white />,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with value attribute', () => {
-    const tree = renderer
-      .create(<BpkRadio name="radio" label="Direct" value="my-value" />)
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkRadio name="radio" label="Direct" value="my-value" />,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly when invalid', () => {
-    const tree = renderer
-      .create(
-        <BpkRadio name="radio" label="Direct" value="my-value" valid={false} />,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkRadio name="radio" label="Direct" value="my-value" valid={false} />,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with ariaLabel attribute', () => {
-    const tree = renderer
-      .create(
-        <BpkRadio
-          id="radio"
-          name="radio"
-          label="Direct"
-          ariaLabel="Is this direct"
-        />,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkRadio
+        id="radio"
+        name="radio"
+        label="Direct"
+        ariaLabel="Is this direct"
+      />,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 });

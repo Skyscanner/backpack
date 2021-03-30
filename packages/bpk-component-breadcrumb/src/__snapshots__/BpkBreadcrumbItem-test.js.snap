@@ -1,144 +1,122 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`BpkBreadcrumbItem should render correctly 1`] = `
-<li
-  className="bpk-breadcrumb-item"
->
-  <a
-    className="bpk-link bpk-breadcrumb-item__link"
-    href="https://backpack.github.io/"
-    onClick={null}
-    rel={null}
-    target={null}
+<DocumentFragment>
+  <li
+    class="bpk-breadcrumb-item"
   >
-    Backpack
-  </a>
-  <svg
-    className="bpk-breadcrumb-item__arrow bpk-icon--rtl-support"
-    height="24"
-    style={
-      Object {
-        "height": "1.5rem",
-        "width": "1.5rem",
-      }
-    }
-    width="24"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <path
-      d="M7.5 17.293V6.707a1.632 1.632 0 0 1 2.701-1.296l5.724 5.081a1.75 1.75 0 0 1 .121 2.472q-.035.039-.072.075l-5.724 5.505a1.632 1.632 0 0 1-2.75-1.251z"
-    />
-  </svg>
-</li>
+    <a
+      class="bpk-link bpk-breadcrumb-item__link"
+      href="https://backpack.github.io/"
+    >
+      Backpack
+    </a>
+    <svg
+      class="bpk-breadcrumb-item__arrow bpk-icon--rtl-support"
+      height="24"
+      style="width: 1.5rem; height: 1.5rem;"
+      width="24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M7.5 17.293V6.707a1.632 1.632 0 0 1 2.701-1.296l5.724 5.081a1.75 1.75 0 0 1 .121 2.472q-.035.039-.072.075l-5.724 5.505a1.632 1.632 0 0 1-2.75-1.251z"
+      />
+    </svg>
+  </li>
+</DocumentFragment>
 `;
 
 exports[`BpkBreadcrumbItem should render correctly with a "active" prop 1`] = `
-<li
-  className="bpk-breadcrumb-item"
->
-  <span
-    aria-current="page"
-    className="bpk-text bpk-text--base bpk-breadcrumb-item__active-item"
+<DocumentFragment>
+  <li
+    class="bpk-breadcrumb-item"
   >
-    Backpack
-  </span>
-</li>
+    <span
+      aria-current="page"
+      class="bpk-text bpk-text--base bpk-breadcrumb-item__active-item"
+    >
+      Backpack
+    </span>
+  </li>
+</DocumentFragment>
 `;
 
 exports[`BpkBreadcrumbItem should render correctly with a custom class name 1`] = `
-<li
-  className="bpk-breadcrumb-item my-custom-class"
->
-  <a
-    className="bpk-link bpk-breadcrumb-item__link"
-    href="https://backpack.github.io/"
-    onClick={null}
-    rel={null}
-    target={null}
+<DocumentFragment>
+  <li
+    class="bpk-breadcrumb-item my-custom-class"
   >
-    Backpack
-  </a>
-  <svg
-    className="bpk-breadcrumb-item__arrow bpk-icon--rtl-support"
-    height="24"
-    style={
-      Object {
-        "height": "1.5rem",
-        "width": "1.5rem",
-      }
-    }
-    width="24"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <path
-      d="M7.5 17.293V6.707a1.632 1.632 0 0 1 2.701-1.296l5.724 5.081a1.75 1.75 0 0 1 .121 2.472q-.035.039-.072.075l-5.724 5.505a1.632 1.632 0 0 1-2.75-1.251z"
-    />
-  </svg>
-</li>
+    <a
+      class="bpk-link bpk-breadcrumb-item__link"
+      href="https://backpack.github.io/"
+    >
+      Backpack
+    </a>
+    <svg
+      class="bpk-breadcrumb-item__arrow bpk-icon--rtl-support"
+      height="24"
+      style="width: 1.5rem; height: 1.5rem;"
+      width="24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M7.5 17.293V6.707a1.632 1.632 0 0 1 2.701-1.296l5.724 5.081a1.75 1.75 0 0 1 .121 2.472q-.035.039-.072.075l-5.724 5.505a1.632 1.632 0 0 1-2.75-1.251z"
+      />
+    </svg>
+  </li>
+</DocumentFragment>
 `;
 
 exports[`BpkBreadcrumbItem should render correctly with arbitrary props 1`] = `
-<li
-  className="bpk-breadcrumb-item"
-  testID="arbitrary value"
->
-  <a
-    className="bpk-link bpk-breadcrumb-item__link"
-    href="https://backpack.github.io/"
-    onClick={null}
-    rel={null}
-    target={null}
+<DocumentFragment>
+  <li
+    class="bpk-breadcrumb-item"
+    testid="arbitrary value"
   >
-    Backpack
-  </a>
-  <svg
-    className="bpk-breadcrumb-item__arrow bpk-icon--rtl-support"
-    height="24"
-    style={
-      Object {
-        "height": "1.5rem",
-        "width": "1.5rem",
-      }
-    }
-    width="24"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <path
-      d="M7.5 17.293V6.707a1.632 1.632 0 0 1 2.701-1.296l5.724 5.081a1.75 1.75 0 0 1 .121 2.472q-.035.039-.072.075l-5.724 5.505a1.632 1.632 0 0 1-2.75-1.251z"
-    />
-  </svg>
-</li>
+    <a
+      class="bpk-link bpk-breadcrumb-item__link"
+      href="https://backpack.github.io/"
+    >
+      Backpack
+    </a>
+    <svg
+      class="bpk-breadcrumb-item__arrow bpk-icon--rtl-support"
+      height="24"
+      style="width: 1.5rem; height: 1.5rem;"
+      width="24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M7.5 17.293V6.707a1.632 1.632 0 0 1 2.701-1.296l5.724 5.081a1.75 1.75 0 0 1 .121 2.472q-.035.039-.072.075l-5.724 5.505a1.632 1.632 0 0 1-2.75-1.251z"
+      />
+    </svg>
+  </li>
+</DocumentFragment>
 `;
 
 exports[`BpkBreadcrumbItem should render correctly with with "linkProps" attribute 1`] = `
-<li
-  className="bpk-breadcrumb-item"
->
-  <a
-    className="bpk-link bpk-breadcrumb-item__link"
-    href="https://backpack.github.io/"
-    onClick={null}
-    rel={null}
-    target={null}
-    testID="arbitrary value"
+<DocumentFragment>
+  <li
+    class="bpk-breadcrumb-item"
   >
-    Backpack
-  </a>
-  <svg
-    className="bpk-breadcrumb-item__arrow bpk-icon--rtl-support"
-    height="24"
-    style={
-      Object {
-        "height": "1.5rem",
-        "width": "1.5rem",
-      }
-    }
-    width="24"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <path
-      d="M7.5 17.293V6.707a1.632 1.632 0 0 1 2.701-1.296l5.724 5.081a1.75 1.75 0 0 1 .121 2.472q-.035.039-.072.075l-5.724 5.505a1.632 1.632 0 0 1-2.75-1.251z"
-    />
-  </svg>
-</li>
+    <a
+      class="bpk-link bpk-breadcrumb-item__link"
+      href="https://backpack.github.io/"
+      testid="arbitrary value"
+    >
+      Backpack
+    </a>
+    <svg
+      class="bpk-breadcrumb-item__arrow bpk-icon--rtl-support"
+      height="24"
+      style="width: 1.5rem; height: 1.5rem;"
+      width="24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M7.5 17.293V6.707a1.632 1.632 0 0 1 2.701-1.296l5.724 5.081a1.75 1.75 0 0 1 .121 2.472q-.035.039-.072.075l-5.724 5.505a1.632 1.632 0 0 1-2.75-1.251z"
+      />
+    </svg>
+  </li>
+</DocumentFragment>
 `;

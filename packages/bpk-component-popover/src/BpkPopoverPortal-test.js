@@ -19,9 +19,9 @@
 /* @flow strict */
 
 import React from 'react';
-import Shallow from 'react-test-renderer/shallow';
-import { mount } from 'enzyme';
-import renderer from 'react-test-renderer';
+import { mount, shallow } from 'enzyme';
+import { render } from '@testing-library/react';
+import toJson from 'enzyme-to-json';
 
 jest.mock(
   '@skyscanner/popper.js',
@@ -50,44 +50,38 @@ import BpkPopoverPortal from './BpkPopoverPortal';
 
 describe('BpkPopoverPortal', () => {
   it('should render correctly', () => {
-    const tree = renderer
-      .create(
-        <BpkPopoverPortal
-          id="my-popover"
-          target={<div>target</div>}
-          isOpen={false}
-          onClose={() => null}
-          label="My popover"
-          closeButtonText="Close"
-        >
-          <div>My popover content</div>
-        </BpkPopoverPortal>,
-      )
-      .toJSON();
-
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkPopoverPortal
+        id="my-popover"
+        target={<div>target</div>}
+        isOpen={false}
+        onClose={() => null}
+        label="My popover"
+        closeButtonText="Close"
+      >
+        <div>My popover content</div>
+      </BpkPopoverPortal>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should not render anything if target is a function', () => {
-    const tree = renderer
-      .create(
-        <BpkPopoverPortal
-          id="my-popover"
-          // Ignoring this warning because Flow doesn't yet support a secondary
-          // argument for document.createElement.
-          // $FlowFixMe[incompatible-call]
-          target={() => document.createElement('button', { type: 'button' })}
-          isOpen={false}
-          onClose={() => null}
-          label="My popover"
-          closeButtonText="Close"
-        >
-          <div>My popover content</div>
-        </BpkPopoverPortal>,
-      )
-      .toJSON();
-
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkPopoverPortal
+        id="my-popover"
+        // Ignoring this warning because Flow doesn't yet support a secondary
+        // argument for document.createElement.
+        // $FlowFixMe[incompatible-call]
+        target={() => document.createElement('button', { type: 'button' })}
+        isOpen={false}
+        onClose={() => null}
+        label="My popover"
+        closeButtonText="Close"
+      >
+        <div>My popover content</div>
+      </BpkPopoverPortal>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   describe('Custom Portal props', () => {
@@ -96,8 +90,7 @@ describe('BpkPopoverPortal', () => {
     // are passed to the <Portal> component.
 
     it('should render correctly with portalClassName added to portal component', () => {
-      const shallowRenderer = Shallow.createRenderer();
-      const result = shallowRenderer.render(
+      const result = shallow(
         <BpkPopoverPortal
           id="my-popover"
           target={<div>target</div>}
@@ -110,13 +103,12 @@ describe('BpkPopoverPortal', () => {
           <div>My popover content</div>
         </BpkPopoverPortal>,
       );
-      expect(result).toMatchSnapshot();
+      expect(toJson(result)).toMatchSnapshot();
     });
 
     it('should render correctly with portalStyle added to portal component', () => {
-      const shallowRenderer = Shallow.createRenderer();
       const customStyle: ?Object = { color: 'red' }; // eslint-disable-line  backpack/use-tokens
-      const result = shallowRenderer.render(
+      const result = shallow(
         <BpkPopoverPortal
           id="my-popover"
           target={<div>target</div>}
@@ -130,7 +122,7 @@ describe('BpkPopoverPortal', () => {
         </BpkPopoverPortal>,
       );
 
-      expect(result).toMatchSnapshot();
+      expect(toJson(result)).toMatchSnapshot();
     });
   });
 

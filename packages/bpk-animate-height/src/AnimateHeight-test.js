@@ -18,32 +18,28 @@
 
 import React from 'react';
 import { mount } from 'enzyme';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import { spacingSm } from 'bpk-tokens/tokens/base.es6';
 
 import AnimateHeight from './AnimateHeight';
 
 describe('AnimateHeight', () => {
   it('should render correctly with "height" attribute equal to "auto"', () => {
-    const tree = renderer
-      .create(
-        <AnimateHeight duration={200} height="auto">
-          Content.
-        </AnimateHeight>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <AnimateHeight duration={200} height="auto">
+        Content.
+      </AnimateHeight>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with "height" attribute equal to "200"', () => {
-    const tree = renderer
-      .create(
-        <AnimateHeight duration={200} height={200}>
-          Content.
-        </AnimateHeight>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <AnimateHeight duration={200} height={200}>
+        Content.
+      </AnimateHeight>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should set "display: none;" on contentElement if height is 0', () => {
@@ -62,13 +58,11 @@ describe('AnimateHeight', () => {
   });
 
   it('should render correctly with "transitionOverflow" attribute equal to "visible"', () => {
-    const tree = renderer
-      .create(
-        <AnimateHeight duration={200} height={200} transitionOverflow="visible">
-          Content.
-        </AnimateHeight>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <AnimateHeight duration={200} height={200} transitionOverflow="visible">
+        Content.
+      </AnimateHeight>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 });

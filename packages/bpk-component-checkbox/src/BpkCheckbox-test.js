@@ -19,114 +19,103 @@
 /* @flow strict */
 
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 
 import BpkCheckbox from './BpkCheckbox';
 
 describe('BpkCheckbox', () => {
   it('should render correctly', () => {
-    const tree = renderer
-      .create(<BpkCheckbox name="checkbox" label="Prefer directs" />)
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkCheckbox name="checkbox" label="Prefer directs" />,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with id attribute', () => {
-    const tree = renderer
-      .create(
-        <BpkCheckbox name="checkbox" label="Prefer directs" id="checkbox" />,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkCheckbox name="checkbox" label="Prefer directs" id="checkbox" />,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with checked attribute', () => {
-    const tree = renderer
-      .create(<BpkCheckbox name="checkbox" label="Prefer directs" checked />)
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkCheckbox
+        name="checkbox"
+        label="Prefer directs"
+        checked
+        onChange={() => {}}
+      />,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with disabled attribute', () => {
-    const tree = renderer
-      .create(<BpkCheckbox name="checkbox" label="Prefer directs" disabled />)
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkCheckbox name="checkbox" label="Prefer directs" disabled />,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with white attribute', () => {
-    const tree = renderer
-      .create(<BpkCheckbox name="checkbox" label="Prefer directs" white />)
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkCheckbox name="checkbox" label="Prefer directs" white />,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with valid=false attribute', () => {
-    const tree = renderer
-      .create(
-        <BpkCheckbox name="checkbox" label="Prefer directs" valid={false} />,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkCheckbox name="checkbox" label="Prefer directs" valid={false} />,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with required attribute', () => {
-    const tree = renderer
-      .create(<BpkCheckbox name="checkbox" label="Prefer directs" required />)
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkCheckbox name="checkbox" label="Prefer directs" required />,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with value attribute', () => {
-    const tree = renderer
-      .create(
-        <BpkCheckbox name="checkbox" label="Prefer directs" value="my-value" />,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkCheckbox name="checkbox" label="Prefer directs" value="my-value" />,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with a small label', () => {
-    const tree = renderer
-      .create(<BpkCheckbox name="checkbox" label="Prefer directs" smallLabel />)
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkCheckbox name="checkbox" label="Prefer directs" smallLabel />,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with indeterminate attribute', () => {
-    const tree = renderer
-      .create(
-        <BpkCheckbox name="checkbox" label="Prefer directs" indeterminate />,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkCheckbox name="checkbox" label="Prefer directs" indeterminate />,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with indeterminate state when both checked and indeterminate attributes', () => {
-    const tree = renderer
-      .create(
-        <BpkCheckbox
-          name="checkbox"
-          label="Prefer directs"
-          indeterminate
-          checked
-        />,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkCheckbox
+        name="checkbox"
+        label="Prefer directs"
+        indeterminate
+        checked
+        onChange={() => {}}
+      />,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render as disabled when required and disabled', () => {
-    const tree = renderer
-      .create(
-        <BpkCheckbox
-          name="checkbox"
-          label="Prefer directs"
-          required
-          disabled
-        />,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkCheckbox name="checkbox" label="Prefer directs" required disabled />,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 });

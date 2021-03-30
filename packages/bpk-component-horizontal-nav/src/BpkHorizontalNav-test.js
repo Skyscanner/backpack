@@ -17,86 +17,74 @@
  */
 
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 
 import BpkHorizontalNav from './BpkHorizontalNav';
 
 describe('BpkHorizontalNav', () => {
   it('should render correctly', () => {
-    const tree = renderer
-      .create(<BpkHorizontalNav>My nav content.</BpkHorizontalNav>)
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkHorizontalNav>My nav content.</BpkHorizontalNav>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with "type" prop', () => {
-    const tree = renderer
-      .create(
-        <BpkHorizontalNav type="light">
-          <li>One</li>
-          <li>Two</li>
-          <li>Three</li>
-        </BpkHorizontalNav>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkHorizontalNav type="light">
+        <li>One</li>
+        <li>Two</li>
+        <li>Three</li>
+      </BpkHorizontalNav>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with custom "className" prop', () => {
-    const tree = renderer
-      .create(
-        <BpkHorizontalNav className="my-custom-class-name">
-          My nav content.
-        </BpkHorizontalNav>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkHorizontalNav className="my-custom-class-name">
+        My nav content.
+      </BpkHorizontalNav>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with custom "leadingScrollIndicatorClassName" prop', () => {
-    const tree = renderer
-      .create(
-        <BpkHorizontalNav leadingScrollIndicatorClassName="my-custom-class-name">
-          My nav content.
-        </BpkHorizontalNav>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkHorizontalNav leadingScrollIndicatorClassName="my-custom-class-name">
+        My nav content.
+      </BpkHorizontalNav>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with custom "trailingScrollIndicatorClassName" prop', () => {
-    const tree = renderer
-      .create(
-        <BpkHorizontalNav trailingScrollIndicatorClassName="my-custom-class-name">
-          My nav content.
-        </BpkHorizontalNav>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkHorizontalNav trailingScrollIndicatorClassName="my-custom-class-name">
+        My nav content.
+      </BpkHorizontalNav>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with "showUnderline" set to false', () => {
-    const tree = renderer
-      .create(
-        <BpkHorizontalNav showUnderline={false}>
-          My nav content.
-        </BpkHorizontalNav>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkHorizontalNav showUnderline={false}>
+        My nav content.
+      </BpkHorizontalNav>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with arbitrary props', () => {
-    const tree = renderer
-      .create(
-        <BpkHorizontalNav
-          data-arbitrary-1="arbirary-value-1"
-          data-arbitrary-2="arbirary-value-2"
-        >
-          My nav content.
-        </BpkHorizontalNav>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkHorizontalNav
+        data-arbitrary-1="arbirary-value-1"
+        data-arbitrary-2="arbirary-value-2"
+      >
+        My nav content.
+      </BpkHorizontalNav>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 });

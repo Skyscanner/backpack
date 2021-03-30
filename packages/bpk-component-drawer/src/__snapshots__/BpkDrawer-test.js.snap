@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`BpkDrawer should render correctly in the given target if renderTarget is supplied 1`] = `null`;
+exports[`BpkDrawer should render correctly in the given target if renderTarget is supplied 1`] = `<DocumentFragment />`;
 
 exports[`BpkDrawer should render correctly in the given target if renderTarget is supplied 2`] = `
 <div>

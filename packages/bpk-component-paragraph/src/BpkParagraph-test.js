@@ -19,15 +19,13 @@
 /* @flow strict */
 
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 
 import BpkParagraph from './BpkParagraph';
 
 describe('BpkParagraph', () => {
   it('should render correctly', () => {
-    const tree = renderer
-      .create(<BpkParagraph>My paragraph</BpkParagraph>)
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(<BpkParagraph>My paragraph</BpkParagraph>);
+    expect(asFragment()).toMatchSnapshot();
   });
 });

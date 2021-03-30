@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`BpkDialog should render correctly in the given target if renderTarget is supplied 1`] = `null`;
+exports[`BpkDialog should render correctly in the given target if renderTarget is supplied 1`] = `<DocumentFragment />`;
 
 exports[`BpkDialog should render correctly in the given target if renderTarget is supplied 2`] = `
 <div>
@@ -49,7 +49,7 @@ exports[`BpkDialog should render correctly in the given target if renderTarget i
 </div>
 `;
 
-exports[`BpkDialog should render correctly when it is not dismissible 1`] = `null`;
+exports[`BpkDialog should render correctly when it is not dismissible 1`] = `<DocumentFragment />`;
 
 exports[`BpkDialog should render correctly when it is not dismissible 2`] = `
 <div>
@@ -79,7 +79,7 @@ exports[`BpkDialog should render correctly when it is not dismissible 2`] = `
 </div>
 `;
 
-exports[`BpkDialog should render default icon dialog correctly 1`] = `null`;
+exports[`BpkDialog should render default icon dialog correctly 1`] = `<DocumentFragment />`;
 
 exports[`BpkDialog should render default icon dialog correctly 2`] = `
 <div>
@@ -123,7 +123,7 @@ exports[`BpkDialog should render default icon dialog correctly 2`] = `
 </div>
 `;
 
-exports[`BpkDialog should render destructive icon dialog correctly 1`] = `null`;
+exports[`BpkDialog should render destructive icon dialog correctly 1`] = `<DocumentFragment />`;
 
 exports[`BpkDialog should render destructive icon dialog correctly 2`] = `
 <div>
@@ -167,7 +167,7 @@ exports[`BpkDialog should render destructive icon dialog correctly 2`] = `
 </div>
 `;
 
-exports[`BpkDialog should render warning icon dialog correctly 1`] = `null`;
+exports[`BpkDialog should render warning icon dialog correctly 1`] = `<DocumentFragment />`;
 
 exports[`BpkDialog should render warning icon dialog correctly 2`] = `
 <div>
@@ -211,7 +211,7 @@ exports[`BpkDialog should render warning icon dialog correctly 2`] = `
 </div>
 `;
 
-exports[`BpkDialog should render with flare dialog 1`] = `null`;
+exports[`BpkDialog should render with flare dialog 1`] = `<DocumentFragment />`;
 
 exports[`BpkDialog should render with flare dialog 2`] = `
 <div>
@@ -299,7 +299,7 @@ exports[`BpkDialog should render with flare dialog 2`] = `
 </div>
 `;
 
-exports[`BpkDialog should render with flare dialog with flareClassName 1`] = `null`;
+exports[`BpkDialog should render with flare dialog with flareClassName 1`] = `<DocumentFragment />`;
 
 exports[`BpkDialog should render with flare dialog with flareClassName 2`] = `
 <div>

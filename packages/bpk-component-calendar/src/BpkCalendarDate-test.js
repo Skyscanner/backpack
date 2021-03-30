@@ -17,7 +17,7 @@
  */
 
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 
 import BpkCalendarDate, { CELL_TYPES } from './BpkCalendarDate';
 
@@ -27,149 +27,132 @@ const createNodeMock = () => ({
 
 describe('BpkCalendarDate', () => {
   it('should render correctly', () => {
-    const tree = renderer
-      .create(<BpkCalendarDate date={new Date(2010, 1, 15)} />)
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkCalendarDate date={new Date(2010, 1, 15)} />,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render a disabled button', () => {
-    const tree = renderer
-      .create(<BpkCalendarDate date={new Date(2010, 1, 15)} disabled />)
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkCalendarDate date={new Date(2010, 1, 15)} disabled />,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render a blocked button as disabled with aria-hidden applied', () => {
-    const tree = renderer
-      .create(<BpkCalendarDate date={new Date(2010, 1, 15)} isBlocked />)
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkCalendarDate date={new Date(2010, 1, 15)} isBlocked />,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render with a click and keyDown handler', () => {
-    const tree = renderer
-      .create(
-        <BpkCalendarDate
-          date={new Date(2010, 1, 15)}
-          onClick={() => null}
-          onKeyDown={() => null}
-        />,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkCalendarDate
+        date={new Date(2010, 1, 15)}
+        onClick={() => null}
+        onKeyDown={() => null}
+      />,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render a focused button with tabIndex', () => {
-    const tree = renderer
-      .create(<BpkCalendarDate date={new Date(2010, 1, 15)} focused />, {
+    const { asFragment } = render(
+      <BpkCalendarDate date={new Date(2010, 1, 15)} isFocused />,
+      {
         createNodeMock,
-      })
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+      },
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should pass props through to button', () => {
-    const tree = renderer
-      .create(
-        <BpkCalendarDate
-          date={new Date(2010, 1, 15)}
-          aria-label="Nothing happened on this day in 2010"
-        />,
-        { createNodeMock },
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkCalendarDate
+        date={new Date(2010, 1, 15)}
+        aria-label="Nothing happened on this day in 2010"
+      />,
+      { createNodeMock },
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should set a custom class', () => {
-    const tree = renderer
-      .create(
-        <BpkCalendarDate
-          date={new Date(2010, 1, 15)}
-          className="userlandClassName"
-        />,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkCalendarDate
+        date={new Date(2010, 1, 15)}
+        className="userlandClassName"
+      />,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   describe('cellType tests', () => {
     it('should render correctly with default style', () => {
-      const tree = renderer
-        .create(
-          <BpkCalendarDate
-            cellType={CELL_TYPES.default}
-            date={new Date(2010, 1, 15)}
-          />,
-        )
-        .toJSON();
-      expect(tree).toMatchSnapshot();
+      const { asFragment } = render(
+        <BpkCalendarDate
+          cellType={CELL_TYPES.default}
+          date={new Date(2010, 1, 15)}
+        />,
+      );
+      expect(asFragment()).toMatchSnapshot();
     });
 
     it('should render correctly with positive style', () => {
-      const tree = renderer
-        .create(
-          <BpkCalendarDate
-            cellType={CELL_TYPES.positive}
-            date={new Date(2010, 1, 15)}
-          />,
-        )
-        .toJSON();
-      expect(tree).toMatchSnapshot();
+      const { asFragment } = render(
+        <BpkCalendarDate
+          cellType={CELL_TYPES.positive}
+          date={new Date(2010, 1, 15)}
+        />,
+      );
+      expect(asFragment()).toMatchSnapshot();
     });
 
     it('should render correctly with neutral style', () => {
-      const tree = renderer
-        .create(
-          <BpkCalendarDate
-            cellType={CELL_TYPES.neutral}
-            date={new Date(2010, 1, 15)}
-          />,
-        )
-        .toJSON();
-      expect(tree).toMatchSnapshot();
+      const { asFragment } = render(
+        <BpkCalendarDate
+          cellType={CELL_TYPES.neutral}
+          date={new Date(2010, 1, 15)}
+        />,
+      );
+      expect(asFragment()).toMatchSnapshot();
     });
 
     it('should render correctly with negative style', () => {
-      const tree = renderer
-        .create(
-          <BpkCalendarDate
-            cellType={CELL_TYPES.negative}
-            date={new Date(2010, 1, 15)}
-          />,
-        )
-        .toJSON();
-      expect(tree).toMatchSnapshot();
+      const { asFragment } = render(
+        <BpkCalendarDate
+          cellType={CELL_TYPES.negative}
+          date={new Date(2010, 1, 15)}
+        />,
+      );
+      expect(asFragment()).toMatchSnapshot();
     });
 
     it('should render a disabled button', () => {
-      const tree = renderer
-        .create(
-          <BpkCalendarDate
-            cellType={CELL_TYPES.default}
-            date={new Date(2010, 1, 15)}
-            disabled
-          />,
-        )
-        .toJSON();
-      expect(tree).toMatchSnapshot();
+      const { asFragment } = render(
+        <BpkCalendarDate
+          cellType={CELL_TYPES.default}
+          date={new Date(2010, 1, 15)}
+          disabled
+        />,
+      );
+      expect(asFragment()).toMatchSnapshot();
     });
 
     it('should render a focused button with tabIndex', () => {
-      const tree = renderer
-        .create(
-          <BpkCalendarDate
-            cellType={CELL_TYPES.default}
-            date={new Date(2010, 1, 15)}
-            focused
-          />,
-          {
-            createNodeMock,
-          },
-        )
-        .toJSON();
-      expect(tree).toMatchSnapshot();
+      const { asFragment } = render(
+        <BpkCalendarDate
+          cellType={CELL_TYPES.default}
+          date={new Date(2010, 1, 15)}
+          isFocused
+        />,
+        {
+          createNodeMock,
+        },
+      );
+      expect(asFragment()).toMatchSnapshot();
     });
   });
 });

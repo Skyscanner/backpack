@@ -17,113 +17,96 @@
  */
 
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 
 const commonButtonTests = ButtonToTest => {
   describe('ButtonToTest', () => {
     it('should render correctly', () => {
-      const tree = renderer
-        .create(<ButtonToTest>My button</ButtonToTest>)
-        .toJSON();
-      expect(tree).toMatchSnapshot();
+      const { asFragment } = render(<ButtonToTest>My button</ButtonToTest>);
+      expect(asFragment()).toMatchSnapshot();
     });
 
     it('should render correctly with a "href" attribute', () => {
-      const tree = renderer
-        .create(<ButtonToTest href="#">My button</ButtonToTest>)
-        .toJSON();
-      expect(tree).toMatchSnapshot();
+      const { asFragment } = render(
+        <ButtonToTest href="#">My button</ButtonToTest>,
+      );
+      expect(asFragment()).toMatchSnapshot();
     });
 
     it('should render correctly with a "disabled" attribute', () => {
-      const tree = renderer
-        .create(<ButtonToTest disabled>My button</ButtonToTest>)
-        .toJSON();
-      expect(tree).toMatchSnapshot();
+      const { asFragment } = render(
+        <ButtonToTest disabled>My button</ButtonToTest>,
+      );
+      expect(asFragment()).toMatchSnapshot();
     });
 
     it('should render correctly with a "large" attribute', () => {
-      const tree = renderer
-        .create(<ButtonToTest large>My button</ButtonToTest>)
-        .toJSON();
-      expect(tree).toMatchSnapshot();
+      const { asFragment } = render(
+        <ButtonToTest large>My button</ButtonToTest>,
+      );
+      expect(asFragment()).toMatchSnapshot();
     });
 
     it('should render correctly with an "iconOnly" attribute', () => {
-      const tree = renderer
-        .create(<ButtonToTest iconOnly>My button</ButtonToTest>)
-        .toJSON();
-      expect(tree).toMatchSnapshot();
+      const { asFragment } = render(
+        <ButtonToTest iconOnly>My button</ButtonToTest>,
+      );
+      expect(asFragment()).toMatchSnapshot();
     });
 
     it('should respect the class names entered as a string', () => {
-      const tree = renderer
-        .create(
-          <ButtonToTest
-            large
-            secondary
-            className="custom-class-1 custom-class-2"
-          >
-            My button
-          </ButtonToTest>,
-        )
-        .toJSON();
-      expect(tree).toMatchSnapshot();
+      const { asFragment } = render(
+        <ButtonToTest large className="custom-class-1 custom-class-2">
+          My button
+        </ButtonToTest>,
+      );
+      expect(asFragment()).toMatchSnapshot();
     });
 
     it('should add only bpk specific classes if className prop is set to empty string', () => {
-      const tree = renderer
-        .create(
-          <ButtonToTest large className="">
-            My button
-          </ButtonToTest>,
-        )
-        .toJSON();
-      expect(tree).toMatchSnapshot();
+      const { asFragment } = render(
+        <ButtonToTest large className="">
+          My button
+        </ButtonToTest>,
+      );
+      expect(asFragment()).toMatchSnapshot();
     });
 
     it('should render correctly with "blank" attribute', () => {
-      const tree = renderer
-        .create(
-          <ButtonToTest href="#" blank>
-            My button
-          </ButtonToTest>,
-        )
-        .toJSON();
-      expect(tree).toMatchSnapshot();
+      const { asFragment } = render(
+        <ButtonToTest href="#" blank>
+          My button
+        </ButtonToTest>,
+      );
+      expect(asFragment()).toMatchSnapshot();
     });
 
     it('should render correctly with "rel" attribute', () => {
-      const tree = renderer
-        .create(
-          <ButtonToTest href="#" rel="rel-attr">
-            My button
-          </ButtonToTest>,
-        )
-        .toJSON();
-      expect(tree).toMatchSnapshot();
+      const { asFragment } = render(
+        <ButtonToTest href="#" rel="rel-attr">
+          My button
+        </ButtonToTest>,
+      );
+      expect(asFragment()).toMatchSnapshot();
     });
 
     it('should render correctly with "blank" and "rel" attributes', () => {
-      const tree = renderer
-        .create(
-          <ButtonToTest href="#" blank rel="rel-overwrite">
-            My button
-          </ButtonToTest>,
-        )
-        .toJSON();
-      expect(tree).toMatchSnapshot();
+      const { asFragment } = render(
+        <ButtonToTest href="#" blank rel="rel-overwrite">
+          My button
+        </ButtonToTest>,
+      );
+      expect(asFragment()).toMatchSnapshot();
     });
 
     it('should render correctly with "disabled" and "href" attributes', () => {
-      const tree = renderer
-        .create(
-          <ButtonToTest href="#" disabled>
-            My button
-          </ButtonToTest>,
-        )
-        .toJSON();
-      expect(tree).toMatchSnapshot();
+      const { asFragment } = render(
+        <ButtonToTest href="#" disabled>
+          My button
+        </ButtonToTest>,
+      );
+
+      expect(asFragment()).toMatchSnapshot();
     });
   });
 };

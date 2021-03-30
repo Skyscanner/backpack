@@ -1,93 +1,69 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`BpkPaginationNudger should display backward nudger 1`] = `
-<div
-  className="bpk-pagination-nudger"
->
-  <button
-    className="bpk-pagination-nudger__button"
-    disabled={false}
-    onClick={[Function]}
-    type="button"
+<DocumentFragment>
+  <div
+    class="bpk-pagination-nudger"
   >
-    <span
-      style={
-        Object {
-          "display": "inline-block",
-          "lineHeight": "1.125rem",
-          "marginTop": "0.1875rem",
-          "verticalAlign": "top",
-        }
-      }
+    <button
+      class="bpk-pagination-nudger__button"
+      type="button"
     >
-      <svg
-        className="bpk-pagination-nudger__icon bpk-icon--rtl-support"
-        height="24"
-        style={
-          Object {
-            "height": "1.5rem",
-            "width": "1.5rem",
-          }
-        }
-        width="24"
-        xmlns="http://www.w3.org/2000/svg"
+      <span
+        style="line-height: 1.125rem; display: inline-block; margin-top: 0.1875rem; vertical-align: top;"
       >
-        <path
-          d="M16.5 17.293V6.707a1.632 1.632 0 0 0-2.701-1.296l-5.724 5.081a1.75 1.75 0 0 0-.121 2.472q.035.039.072.075l5.724 5.505a1.632 1.632 0 0 0 2.75-1.251z"
-        />
-      </svg>
-    </span>
-    <span
-      className="bpk-pagination-nudger__text--hidden"
-    >
-      previous
-    </span>
-  </button>
-</div>
+        <svg
+          class="bpk-pagination-nudger__icon bpk-icon--rtl-support"
+          height="24"
+          style="width: 1.5rem; height: 1.5rem;"
+          width="24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M16.5 17.293V6.707a1.632 1.632 0 0 0-2.701-1.296l-5.724 5.081a1.75 1.75 0 0 0-.121 2.472q.035.039.072.075l5.724 5.505a1.632 1.632 0 0 0 2.75-1.251z"
+          />
+        </svg>
+      </span>
+      <span
+        class="bpk-pagination-nudger__text--hidden"
+      >
+        previous
+      </span>
+    </button>
+  </div>
+</DocumentFragment>
 `;
 
 exports[`BpkPaginationNudger should display forward nudger 1`] = `
-<div
-  className="bpk-pagination-nudger"
->
-  <button
-    className="bpk-pagination-nudger__button"
-    disabled={false}
-    onClick={[Function]}
-    type="button"
+<DocumentFragment>
+  <div
+    class="bpk-pagination-nudger"
   >
-    <span
-      style={
-        Object {
-          "display": "inline-block",
-          "lineHeight": "1.125rem",
-          "marginTop": "0.1875rem",
-          "verticalAlign": "top",
-        }
-      }
+    <button
+      class="bpk-pagination-nudger__button"
+      type="button"
     >
-      <svg
-        className="bpk-pagination-nudger__icon bpk-icon--rtl-support"
-        height="24"
-        style={
-          Object {
-            "height": "1.5rem",
-            "width": "1.5rem",
-          }
-        }
-        width="24"
-        xmlns="http://www.w3.org/2000/svg"
+      <span
+        style="line-height: 1.125rem; display: inline-block; margin-top: 0.1875rem; vertical-align: top;"
       >
-        <path
-          d="M7.5 17.293V6.707a1.632 1.632 0 0 1 2.701-1.296l5.724 5.081a1.75 1.75 0 0 1 .121 2.472q-.035.039-.072.075l-5.724 5.505a1.632 1.632 0 0 1-2.75-1.251z"
-        />
-      </svg>
-    </span>
-    <span
-      className="bpk-pagination-nudger__text--hidden"
-    >
-      next
-    </span>
-  </button>
-</div>
+        <svg
+          class="bpk-pagination-nudger__icon bpk-icon--rtl-support"
+          height="24"
+          style="width: 1.5rem; height: 1.5rem;"
+          width="24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M7.5 17.293V6.707a1.632 1.632 0 0 1 2.701-1.296l5.724 5.081a1.75 1.75 0 0 1 .121 2.472q-.035.039-.072.075l-5.724 5.505a1.632 1.632 0 0 1-2.75-1.251z"
+          />
+        </svg>
+      </span>
+      <span
+        class="bpk-pagination-nudger__text--hidden"
+      >
+        next
+      </span>
+    </button>
+  </div>
+</DocumentFragment>
 `;

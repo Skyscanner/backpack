@@ -18,25 +18,25 @@
 /* @flow strict */
 
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 
 import BpkBoilerplate from './BpkBoilerplate';
 
 describe('BpkBoilerplate', () => {
   it('should render correctly', () => {
-    const tree = renderer.create(<BpkBoilerplate />).toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(<BpkBoilerplate />);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should support custom class names', () => {
-    const tree = renderer
-      .create(<BpkBoilerplate className="custom-classname" />)
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkBoilerplate className="custom-classname" />,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should support arbitrary props', () => {
-    const tree = renderer.create(<BpkBoilerplate testID="123" />).toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(<BpkBoilerplate testid="123" />);
+    expect(asFragment()).toMatchSnapshot();
   });
 });

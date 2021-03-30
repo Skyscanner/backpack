@@ -17,36 +17,34 @@
  */
 
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 
 import BpkFlareBar from './BpkFlareBar';
 
 describe('BpkFlareBar', () => {
   it('should render correctly', () => {
-    const tree = renderer.create(<BpkFlareBar />).toJSON();
+    const { asFragment } = render(<BpkFlareBar />);
 
-    expect(tree).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with a "className" attribute', () => {
-    const tree = renderer
-      .create(<BpkFlareBar className="my-custom-class" />)
-      .toJSON();
+    const { asFragment } = render(<BpkFlareBar className="my-custom-class" />);
 
-    expect(tree).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with a "svgClassName" attribute', () => {
-    const tree = renderer
-      .create(<BpkFlareBar svgClassName="my-custom-class" />)
-      .toJSON();
+    const { asFragment } = render(
+      <BpkFlareBar svgClassName="my-custom-class" />,
+    );
 
-    expect(tree).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with "rounded" set to `false`', () => {
-    const tree = renderer.create(<BpkFlareBar rounded={false} />).toJSON();
+    const { asFragment } = render(<BpkFlareBar rounded={false} />);
 
-    expect(tree).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 });

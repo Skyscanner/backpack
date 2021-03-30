@@ -19,40 +19,34 @@
 /* @flow strict */
 
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 
 import BpkSpinner from './BpkSpinner';
 import SPINNER_TYPES from './spinnerTypes';
 
 describe('BpkSpinner', () => {
   it('should render correctly', () => {
-    const tree = renderer.create(<BpkSpinner />).toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(<BpkSpinner />);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with type as light', () => {
-    const tree = renderer
-      .create(<BpkSpinner type={SPINNER_TYPES.light} />)
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(<BpkSpinner type={SPINNER_TYPES.light} />);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with type as primary', () => {
-    const tree = renderer
-      .create(<BpkSpinner type={SPINNER_TYPES.primary} />)
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(<BpkSpinner type={SPINNER_TYPES.primary} />);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with a "className" attribute', () => {
-    const tree = renderer
-      .create(<BpkSpinner className="my-custom-class" />)
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(<BpkSpinner className="my-custom-class" />);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with a "alignToButton" attribute', () => {
-    const tree = renderer.create(<BpkSpinner alignToButton />).toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(<BpkSpinner alignToButton />);
+    expect(asFragment()).toMatchSnapshot();
   });
 });

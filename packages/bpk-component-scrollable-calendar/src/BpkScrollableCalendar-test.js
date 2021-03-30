@@ -18,8 +18,9 @@
 /* @flow strict */
 
 import React from 'react';
-import Shallow from 'react-test-renderer/shallow';
 import { DateUtils } from 'bpk-component-calendar';
+import { shallow } from 'enzyme';
+import toJson from 'enzyme-to-json';
 
 import { weekDays, formatDateFull, formatMonth } from '../test-utils';
 
@@ -30,8 +31,7 @@ const id = 'scrollableCalendar';
 
 describe('BpkScrollableCalendar', () => {
   it('should render correctly', () => {
-    const shallowRenderer = Shallow.createRenderer();
-    const tree = shallowRenderer.render(
+    const tree = shallow(
       <BpkScrollableCalendar
         id={id}
         weekStartsOn={1}
@@ -44,12 +44,11 @@ describe('BpkScrollableCalendar', () => {
         maxDate={DateUtils.addMonths(testDate, 12)}
       />,
     );
-    expect(tree).toMatchSnapshot();
+    expect(toJson(tree)).toMatchSnapshot();
   });
 
   it('should support custom class names', () => {
-    const shallowRenderer = Shallow.createRenderer();
-    const tree = shallowRenderer.render(
+    const tree = shallow(
       <BpkScrollableCalendar
         id={id}
         weekStartsOn={1}
@@ -63,12 +62,11 @@ describe('BpkScrollableCalendar', () => {
         className="custom-classname"
       />,
     );
-    expect(tree).toMatchSnapshot();
+    expect(toJson(tree)).toMatchSnapshot();
   });
 
   it('should support arbitrary props', () => {
-    const shallowRenderer = Shallow.createRenderer();
-    const tree = shallowRenderer.render(
+    const tree = shallow(
       <BpkScrollableCalendar
         id={id}
         weekStartsOn={1}
@@ -79,9 +77,9 @@ describe('BpkScrollableCalendar', () => {
         // Subtract one day from today's date to make today selectable by default
         minDate={DateUtils.addDays(testDate, -1)}
         maxDate={DateUtils.addMonths(testDate, 12)}
-        testID="123"
+        testid="123"
       />,
     );
-    expect(tree).toMatchSnapshot();
+    expect(toJson(tree)).toMatchSnapshot();
   });
 });

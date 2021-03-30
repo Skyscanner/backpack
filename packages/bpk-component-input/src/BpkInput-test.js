@@ -19,158 +19,196 @@
 
 import React from 'react';
 import { mount } from 'enzyme';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 
 import BpkInput from './BpkInput';
 import { INPUT_TYPES } from './common-types';
 
 describe('BpkInput', () => {
   it('should render correctly', () => {
-    const tree = renderer
-      .create(<BpkInput id="test" name="test" value="" />)
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkInput id="test" name="test" value="" onChange={() => {}} />,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with additional props', () => {
-    const tree = renderer
-      .create(
-        <BpkInput
-          id="test"
-          name="test"
-          value=""
-          placeholder="Enter a country, city or airport"
-          onChange={() => null}
-        />,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkInput
+        id="test"
+        name="test"
+        value=""
+        placeholder="Enter a country, city or airport"
+        onChange={() => null}
+      />,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with value', () => {
-    const tree = renderer
-      .create(<BpkInput id="test" name="test" value="My value" />)
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkInput id="test" name="test" value="My value" onChange={() => {}} />,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with valid attribute set to "true"', () => {
-    const tree = renderer
-      .create(<BpkInput id="test" name="test" value="" valid />)
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkInput id="test" name="test" value="" valid onChange={() => {}} />,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with valid attribute set to "false"', () => {
-    const tree = renderer
-      .create(<BpkInput id="test" name="test" value="" valid={false} />)
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkInput
+        id="test"
+        name="test"
+        value=""
+        valid={false}
+        onChange={() => {}}
+      />,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with "clearButtonMode=whileEditing" attribute', () => {
     // Will report a proptypes error because 'onClear' and 'clearButtonLabel'
     // are missing. Swallow that as it's tested in customPropTypes-test.js.
     jest.spyOn(console, 'error').mockImplementation(() => jest.fn());
-    const tree = renderer
-      .create(
-        <BpkInput
-          id="test"
-          name="test"
-          value=""
-          clearButtonMode="whileEditing"
-        />,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkInput
+        id="test"
+        name="test"
+        value=""
+        clearButtonMode="whileEditing"
+        onChange={() => {}}
+      />,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with "clearButtonMode=always" attribute', () => {
     // Will report a proptypes error because 'onClear' and 'clearButtonLabel'
     // are missing. Swallow that as it's tested in customPropTypes-test.js.
     jest.spyOn(console, 'error').mockImplementation(() => jest.fn());
-    const tree = renderer
-      .create(
-        <BpkInput id="test" name="test" value="" clearButtonMode="always" />,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkInput
+        id="test"
+        name="test"
+        value=""
+        clearButtonMode="always"
+        onChange={() => {}}
+      />,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with "onClear" attribute', () => {
-    const tree = renderer
-      .create(<BpkInput id="test" name="test" value="" onClear={() => {}} />)
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkInput
+        id="test"
+        name="test"
+        value=""
+        onClear={() => {}}
+        onChange={() => {}}
+      />,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with "clearButtonLabel" attribute', () => {
-    const tree = renderer
-      .create(
-        <BpkInput id="test" name="test" value="" clearButtonLabel="test" />,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkInput
+        id="test"
+        name="test"
+        value=""
+        clearButtonLabel="test"
+        onChange={() => {}}
+      />,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with "clearable", "onClear" and "clearButtonLabel" attributes', () => {
-    const tree = renderer
-      .create(
-        <BpkInput
-          id="test"
-          name="test"
-          value=""
-          clearButtonMode="whileEditing"
-          onClear={() => {}}
-          clearButtonLabel="test"
-        />,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkInput
+        id="test"
+        name="test"
+        value=""
+        clearButtonMode="whileEditing"
+        onClear={() => {}}
+        clearButtonLabel="test"
+        onChange={() => {}}
+      />,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with type attribute', () => {
-    const tree = renderer
-      .create(
-        <BpkInput type={INPUT_TYPES.password} id="test" name="test" value="" />,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkInput
+        type={INPUT_TYPES.password}
+        id="test"
+        name="test"
+        value=""
+        onChange={() => {}}
+      />,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with "large" attribute', () => {
-    const tree = renderer
-      .create(<BpkInput id="test" name="test" value="" large />)
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkInput id="test" name="test" value="" large onChange={() => {}} />,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with "docked" attribute', () => {
-    const tree = renderer
-      .create(<BpkInput id="test" name="test" value="" docked />)
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkInput id="test" name="test" value="" docked onChange={() => {}} />,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with "dockedFirst" attribute', () => {
-    const tree = renderer
-      .create(<BpkInput id="test" name="test" value="" dockedFirst />)
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkInput
+        id="test"
+        name="test"
+        value=""
+        dockedFirst
+        onChange={() => {}}
+      />,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with "dockedMiddle" attribute', () => {
-    const tree = renderer
-      .create(<BpkInput id="test" name="test" value="" dockedMiddle />)
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkInput
+        id="test"
+        name="test"
+        value=""
+        dockedMiddle
+        onChange={() => {}}
+      />,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with "dockedLast" attribute', () => {
-    const tree = renderer
-      .create(<BpkInput id="test" name="test" value="" dockedLast />)
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkInput
+        id="test"
+        name="test"
+        value=""
+        dockedLast
+        onChange={() => {}}
+      />,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should expose input reference to parent components', () => {
@@ -184,6 +222,7 @@ describe('BpkInput', () => {
         name="test"
         value=""
         inputRef={storeInputReference}
+        onChange={() => {}}
       />,
     );
     const input = tree
@@ -206,6 +245,7 @@ describe('BpkInput', () => {
         clearButtonMode="always"
         onClear={onClear}
         clearButtonLabel="clear"
+        onChange={() => {}}
       />,
     );
 

@@ -19,7 +19,7 @@
 /* @flow strict */
 
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 
 import withDefaultProps from './withDefaultProps';
 
@@ -32,16 +32,14 @@ describe('withDefaultProps', () => {
       b: 2,
       c: { d: 3 },
     });
-    const tree = renderer
-      .create(
-        <Component>
-          Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
-          commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus
-          et magnis dis parturient montes, nascetur ridiculus mus.
-        </Component>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <Component>
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
+        ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis
+        dis parturient montes, nascetur ridiculus mus.
+      </Component>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should merge classNames', () => {
@@ -51,15 +49,13 @@ describe('withDefaultProps', () => {
       c: { d: 3 },
       className: 'a',
     });
-    const tree = renderer
-      .create(
-        <Component className="b">
-          Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
-          commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus
-          et magnis dis parturient montes, nascetur ridiculus mus.
-        </Component>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <Component className="b">
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
+        ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis
+        dis parturient montes, nascetur ridiculus mus.
+      </Component>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 });

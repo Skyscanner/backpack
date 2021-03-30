@@ -1,1022 +1,824 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`BpkFieldset should render as disabled when checkbox component is disabled and required 1`] = `
-<fieldset
-  className="bpk-fieldset"
->
-  <label
-    className="bpk-checkbox bpk-checkbox--disabled"
+<DocumentFragment>
+  <fieldset
+    class="bpk-fieldset"
   >
-    <input
-      aria-invalid={false}
-      aria-label="I accept the terms and conditions"
-      checked={false}
-      className="bpk-checkbox__input"
-      data-indeterminate={false}
-      disabled={true}
-      id="terms_and_conditions_checkbox"
-      name="terms_and_conditions"
-      type="checkbox"
-    />
-    <span
-      aria-hidden="true"
-      className="bpk-checkbox__label"
+    <label
+      class="bpk-checkbox bpk-checkbox--disabled"
     >
-      I accept the terms and conditions
-    </span>
-  </label>
-</fieldset>
+      <input
+        aria-invalid="false"
+        aria-label="I accept the terms and conditions"
+        class="bpk-checkbox__input"
+        data-indeterminate="false"
+        disabled=""
+        id="terms_and_conditions_checkbox"
+        name="terms_and_conditions"
+        type="checkbox"
+      />
+      <span
+        aria-hidden="true"
+        class="bpk-checkbox__label"
+      >
+        I accept the terms and conditions
+      </span>
+    </label>
+  </fieldset>
+</DocumentFragment>
 `;
 
 exports[`BpkFieldset should render as disabled when input component is disabled and required 1`] = `
-<fieldset
-  className="bpk-fieldset"
->
-  <label
-    className="bpk-label bpk-label--disabled"
-    htmlFor="name_input"
+<DocumentFragment>
+  <fieldset
+    class="bpk-fieldset"
   >
-    Name
-  </label>
-  <input
-    aria-invalid={false}
-    aria-required={true}
-    className="bpk-input"
-    disabled={true}
-    id="name_input"
-    name="name"
-    placeholder="e.g. Joe Bloggs"
-    type="text"
-    value=""
-  />
-</fieldset>
+    <label
+      class="bpk-label bpk-label--disabled"
+      for="name_input"
+    >
+      Name
+    </label>
+    <input
+      aria-invalid="false"
+      aria-required="true"
+      class="bpk-input"
+      disabled=""
+      id="name_input"
+      name="name"
+      placeholder="e.g. Joe Bloggs"
+      type="text"
+      value=""
+    />
+  </fieldset>
+</DocumentFragment>
 `;
 
 exports[`BpkFieldset should render as disabled when select component is disabled and required 1`] = `
-<fieldset
-  className="bpk-fieldset"
->
-  <label
-    className="bpk-label bpk-label--disabled"
-    htmlFor="fruits_select"
+<DocumentFragment>
+  <fieldset
+    class="bpk-fieldset"
   >
-    Fruits
-  </label>
-  <select
-    aria-invalid={false}
-    aria-required={true}
-    className="bpk-select"
-    disabled={true}
-    id="fruits_select"
-    name="fruits"
-    value=""
-  >
-    <option
-      value=""
+    <label
+      class="bpk-label bpk-label--disabled"
+      for="fruits_select"
     >
-      Please select...
-    </option>
-    <option
-      value="apples"
+      Fruits
+    </label>
+    <select
+      aria-invalid="false"
+      aria-required="true"
+      class="bpk-select"
+      disabled=""
+      id="fruits_select"
+      name="fruits"
     >
-      Apples
-    </option>
-    <option
-      value="oranges"
-    >
-      Oranges
-    </option>
-    <option
-      value="pears"
-    >
-      Pears
-    </option>
-    <option
-      disabled={true}
-      value="tomato"
-    >
-      Tomato
-    </option>
-  </select>
-</fieldset>
+      <option
+        value=""
+      >
+        Please select...
+      </option>
+      <option
+        value="apples"
+      >
+        Apples
+      </option>
+      <option
+        value="oranges"
+      >
+        Oranges
+      </option>
+      <option
+        value="pears"
+      >
+        Pears
+      </option>
+      <option
+        disabled=""
+        value="tomato"
+      >
+        Tomato
+      </option>
+    </select>
+  </fieldset>
+</DocumentFragment>
 `;
 
 exports[`BpkFieldset should render correctly when disabled with input component and "valid" attribute 1`] = `
-<fieldset
-  className="bpk-fieldset"
->
-  <label
-    className="bpk-label bpk-label--disabled"
-    htmlFor="name_input"
+<DocumentFragment>
+  <fieldset
+    class="bpk-fieldset"
   >
-    Name
-  </label>
-  <input
-    aria-invalid={false}
-    aria-required={false}
-    className="bpk-input bpk-input--valid"
-    disabled={true}
-    id="name_input"
-    name="name"
-    placeholder="e.g. Joe Bloggs"
-    type="text"
-    value=""
-  />
-</fieldset>
+    <label
+      class="bpk-label bpk-label--disabled"
+      for="name_input"
+    >
+      Name
+    </label>
+    <input
+      aria-invalid="false"
+      aria-required="false"
+      class="bpk-input bpk-input--valid"
+      disabled=""
+      id="name_input"
+      name="name"
+      placeholder="e.g. Joe Bloggs"
+      type="text"
+      value=""
+    />
+  </fieldset>
+</DocumentFragment>
 `;
 
 exports[`BpkFieldset should render correctly when disabled with input component and "valid" attribute equal to false 1`] = `
-<fieldset
-  className="bpk-fieldset"
->
-  <label
-    className="bpk-label bpk-label--invalid bpk-label--disabled"
-    htmlFor="name_input"
+<DocumentFragment>
+  <fieldset
+    class="bpk-fieldset"
   >
-    Name
-  </label>
-  <input
-    aria-describedby="name_input_validation_message"
-    aria-invalid={true}
-    aria-required={false}
-    className="bpk-input bpk-input--invalid"
-    disabled={true}
-    id="name_input"
-    name="name"
-    placeholder="e.g. Joe Bloggs"
-    type="text"
-    value=""
-  />
-</fieldset>
+    <label
+      class="bpk-label bpk-label--invalid bpk-label--disabled"
+      for="name_input"
+    >
+      Name
+    </label>
+    <input
+      aria-describedby="name_input_validation_message"
+      aria-invalid="true"
+      aria-required="false"
+      class="bpk-input bpk-input--invalid"
+      disabled=""
+      id="name_input"
+      name="name"
+      placeholder="e.g. Joe Bloggs"
+      type="text"
+      value=""
+    />
+  </fieldset>
+</DocumentFragment>
 `;
 
 exports[`BpkFieldset should render correctly with checkbox component 1`] = `
-<fieldset
-  className="bpk-fieldset"
->
-  <label
-    className="bpk-checkbox"
+<DocumentFragment>
+  <fieldset
+    class="bpk-fieldset"
   >
-    <input
-      aria-invalid={false}
-      aria-label="I accept the terms and conditions"
-      checked={false}
-      className="bpk-checkbox__input"
-      data-indeterminate={false}
-      disabled={false}
-      id="terms_and_conditions_checkbox"
-      name="terms_and_conditions"
-      type="checkbox"
-    />
-    <span
-      aria-hidden="true"
-      className="bpk-checkbox__label"
+    <label
+      class="bpk-checkbox"
     >
-      I accept the terms and conditions
-    </span>
-  </label>
-  <div
-    onTransitionEnd={[Function]}
-    style={
-      Object {
-        "MozTransition": "height 200ms ease ",
-        "OTransition": "height 200ms ease ",
-        "WebkitTransition": "height 200ms ease ",
-        "height": 0,
-        "msTransition": "height 200ms ease ",
-        "overflow": "visible",
-        "transition": "height 200ms ease ",
-      }
-    }
-  >
-    <div>
+      <input
+        aria-invalid="false"
+        aria-label="I accept the terms and conditions"
+        class="bpk-checkbox__input"
+        data-indeterminate="false"
+        id="terms_and_conditions_checkbox"
+        name="terms_and_conditions"
+        type="checkbox"
+      />
+      <span
+        aria-hidden="true"
+        class="bpk-checkbox__label"
+      >
+        I accept the terms and conditions
+      </span>
+    </label>
+    <div
+      style="height: 0px; overflow: visible; transition: height 200ms ease;"
+    >
       <div
-        className="bpk-form-validation__container"
+        style="display: none;"
       >
         <div
-          className="bpk-form-validation bpk-form-validation--is-checkbox"
-          id="terms_and_conditions_checkbox_validation_message"
+          class="bpk-form-validation__container"
         >
-          <span
-            style={
-              Object {
-                "display": "inline-block",
-                "lineHeight": "1.125rem",
-                "marginTop": "0.0625rem",
-                "verticalAlign": "top",
-              }
-            }
+          <div
+            class="bpk-form-validation bpk-form-validation--is-checkbox"
+            id="terms_and_conditions_checkbox_validation_message"
           >
-            <svg
-              className="bpk-form-validation__icon"
-              height="18"
-              style={
-                Object {
-                  "height": "1.125rem",
-                  "width": "1.125rem",
-                }
-              }
-              viewBox="0 0 24 24"
-              width="18"
-              xmlns="http://www.w3.org/2000/svg"
+            <span
+              style="line-height: 1.125rem; display: inline-block; margin-top: 0.0625rem; vertical-align: top;"
             >
-              <path
-                d="M12 1.5A10.5 10.5 0 1 0 22.5 12 10.5 10.5 0 0 0 12 1.5zM12 18a1.5 1.5 0 1 1 1.5-1.5A1.5 1.5 0 0 1 12 18zm1.5-6a1.5 1.5 0 0 1-3 0V7.5a1.5 1.5 0 0 1 3 0z"
-              />
-            </svg>
-          </span>
-          You must accept the terms and conditions to continue
+              <svg
+                class="bpk-form-validation__icon"
+                height="18"
+                style="width: 1.125rem; height: 1.125rem;"
+                viewBox="0 0 24 24"
+                width="18"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M12 1.5A10.5 10.5 0 1 0 22.5 12 10.5 10.5 0 0 0 12 1.5zM12 18a1.5 1.5 0 1 1 1.5-1.5A1.5 1.5 0 0 1 12 18zm1.5-6a1.5 1.5 0 0 1-3 0V7.5a1.5 1.5 0 0 1 3 0z"
+                />
+              </svg>
+            </span>
+            You must accept the terms and conditions to continue
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</fieldset>
+  </fieldset>
+</DocumentFragment>
 `;
 
 exports[`BpkFieldset should render correctly with checkbox component and "required" attribute 1`] = `
-<fieldset
-  className="bpk-fieldset"
->
-  <label
-    className="bpk-checkbox"
+<DocumentFragment>
+  <fieldset
+    class="bpk-fieldset"
   >
-    <input
-      aria-invalid={false}
-      aria-label="I accept the terms and conditions"
-      checked={false}
-      className="bpk-checkbox__input"
-      data-indeterminate={false}
-      disabled={false}
-      id="terms_and_conditions_checkbox"
-      name="terms_and_conditions"
-      type="checkbox"
-    />
-    <span
-      aria-hidden="true"
-      className="bpk-checkbox__label"
+    <label
+      class="bpk-checkbox"
     >
-      I accept the terms and conditions
+      <input
+        aria-invalid="false"
+        aria-label="I accept the terms and conditions"
+        class="bpk-checkbox__input"
+        data-indeterminate="false"
+        id="terms_and_conditions_checkbox"
+        name="terms_and_conditions"
+        type="checkbox"
+      />
       <span
-        className="bpk-checkbox__asterisk"
+        aria-hidden="true"
+        class="bpk-checkbox__label"
       >
-        *
+        I accept the terms and conditions
+        <span
+          class="bpk-checkbox__asterisk"
+        >
+          *
+        </span>
       </span>
-    </span>
-  </label>
-  <div
-    onTransitionEnd={[Function]}
-    style={
-      Object {
-        "MozTransition": "height 200ms ease ",
-        "OTransition": "height 200ms ease ",
-        "WebkitTransition": "height 200ms ease ",
-        "height": 0,
-        "msTransition": "height 200ms ease ",
-        "overflow": "visible",
-        "transition": "height 200ms ease ",
-      }
-    }
-  >
-    <div>
+    </label>
+    <div
+      style="height: 0px; overflow: visible; transition: height 200ms ease;"
+    >
       <div
-        className="bpk-form-validation__container"
+        style="display: none;"
       >
         <div
-          className="bpk-form-validation bpk-form-validation--is-checkbox"
-          id="terms_and_conditions_checkbox_validation_message"
+          class="bpk-form-validation__container"
         >
-          <span
-            style={
-              Object {
-                "display": "inline-block",
-                "lineHeight": "1.125rem",
-                "marginTop": "0.0625rem",
-                "verticalAlign": "top",
-              }
-            }
+          <div
+            class="bpk-form-validation bpk-form-validation--is-checkbox"
+            id="terms_and_conditions_checkbox_validation_message"
           >
-            <svg
-              className="bpk-form-validation__icon"
-              height="18"
-              style={
-                Object {
-                  "height": "1.125rem",
-                  "width": "1.125rem",
-                }
-              }
-              viewBox="0 0 24 24"
-              width="18"
-              xmlns="http://www.w3.org/2000/svg"
+            <span
+              style="line-height: 1.125rem; display: inline-block; margin-top: 0.0625rem; vertical-align: top;"
             >
-              <path
-                d="M12 1.5A10.5 10.5 0 1 0 22.5 12 10.5 10.5 0 0 0 12 1.5zM12 18a1.5 1.5 0 1 1 1.5-1.5A1.5 1.5 0 0 1 12 18zm1.5-6a1.5 1.5 0 0 1-3 0V7.5a1.5 1.5 0 0 1 3 0z"
-              />
-            </svg>
-          </span>
-          You must accept the terms and conditions to continue
+              <svg
+                class="bpk-form-validation__icon"
+                height="18"
+                style="width: 1.125rem; height: 1.125rem;"
+                viewBox="0 0 24 24"
+                width="18"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M12 1.5A10.5 10.5 0 1 0 22.5 12 10.5 10.5 0 0 0 12 1.5zM12 18a1.5 1.5 0 1 1 1.5-1.5A1.5 1.5 0 0 1 12 18zm1.5-6a1.5 1.5 0 0 1-3 0V7.5a1.5 1.5 0 0 1 3 0z"
+                />
+              </svg>
+            </span>
+            You must accept the terms and conditions to continue
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</fieldset>
+  </fieldset>
+</DocumentFragment>
 `;
 
 exports[`BpkFieldset should render correctly with input component 1`] = `
-<fieldset
-  className="bpk-fieldset"
->
-  <label
-    className="bpk-label"
-    htmlFor="name_input"
+<DocumentFragment>
+  <fieldset
+    class="bpk-fieldset"
   >
-    Name
-  </label>
-  <input
-    aria-invalid={false}
-    aria-required={false}
-    className="bpk-input"
-    disabled={false}
-    id="name_input"
-    name="name"
-    placeholder="e.g. Joe Bloggs"
-    type="text"
-    value=""
-  />
-  <div
-    onTransitionEnd={[Function]}
-    style={
-      Object {
-        "MozTransition": "height 200ms ease ",
-        "OTransition": "height 200ms ease ",
-        "WebkitTransition": "height 200ms ease ",
-        "height": 0,
-        "msTransition": "height 200ms ease ",
-        "overflow": "visible",
-        "transition": "height 200ms ease ",
-      }
-    }
-  >
-    <div>
+    <label
+      class="bpk-label"
+      for="name_input"
+    >
+      Name
+    </label>
+    <input
+      aria-invalid="false"
+      aria-required="false"
+      class="bpk-input"
+      id="name_input"
+      name="name"
+      placeholder="e.g. Joe Bloggs"
+      type="text"
+      value=""
+    />
+    <div
+      style="height: 0px; overflow: visible; transition: height 200ms ease;"
+    >
       <div
-        className="bpk-form-validation__container"
+        style="display: none;"
       >
         <div
-          className="bpk-form-validation"
-          id="name_input_validation_message"
+          class="bpk-form-validation__container"
         >
-          <span
-            style={
-              Object {
-                "display": "inline-block",
-                "lineHeight": "1.125rem",
-                "marginTop": "0.0625rem",
-                "verticalAlign": "top",
-              }
-            }
+          <div
+            class="bpk-form-validation"
+            id="name_input_validation_message"
           >
-            <svg
-              className="bpk-form-validation__icon"
-              height="18"
-              style={
-                Object {
-                  "height": "1.125rem",
-                  "width": "1.125rem",
-                }
-              }
-              viewBox="0 0 24 24"
-              width="18"
-              xmlns="http://www.w3.org/2000/svg"
+            <span
+              style="line-height: 1.125rem; display: inline-block; margin-top: 0.0625rem; vertical-align: top;"
             >
-              <path
-                d="M12 1.5A10.5 10.5 0 1 0 22.5 12 10.5 10.5 0 0 0 12 1.5zM12 18a1.5 1.5 0 1 1 1.5-1.5A1.5 1.5 0 0 1 12 18zm1.5-6a1.5 1.5 0 0 1-3 0V7.5a1.5 1.5 0 0 1 3 0z"
-              />
-            </svg>
-          </span>
-          Please enter a name
+              <svg
+                class="bpk-form-validation__icon"
+                height="18"
+                style="width: 1.125rem; height: 1.125rem;"
+                viewBox="0 0 24 24"
+                width="18"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M12 1.5A10.5 10.5 0 1 0 22.5 12 10.5 10.5 0 0 0 12 1.5zM12 18a1.5 1.5 0 1 1 1.5-1.5A1.5 1.5 0 0 1 12 18zm1.5-6a1.5 1.5 0 0 1-3 0V7.5a1.5 1.5 0 0 1 3 0z"
+                />
+              </svg>
+            </span>
+            Please enter a name
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</fieldset>
+  </fieldset>
+</DocumentFragment>
 `;
 
 exports[`BpkFieldset should render correctly with input component and "description" attribute 1`] = `
-<fieldset
-  className="bpk-fieldset"
->
-  <label
-    className="bpk-label"
-    htmlFor="name_input"
+<DocumentFragment>
+  <fieldset
+    class="bpk-fieldset"
   >
-    Name
-  </label>
-  <input
-    aria-describedby="name_input_description"
-    aria-invalid={false}
-    aria-required={false}
-    className="bpk-input"
-    disabled={false}
-    id="name_input"
-    name="name"
-    placeholder="e.g. Joe Bloggs"
-    type="text"
-    value=""
-  />
-  <span
-    className="bpk-fieldset__description"
-    id="name_input_description"
-  >
-    Your full name exactly as stated in your passport.
-  </span>
-  <div
-    onTransitionEnd={[Function]}
-    style={
-      Object {
-        "MozTransition": "height 200ms ease ",
-        "OTransition": "height 200ms ease ",
-        "WebkitTransition": "height 200ms ease ",
-        "height": 0,
-        "msTransition": "height 200ms ease ",
-        "overflow": "visible",
-        "transition": "height 200ms ease ",
-      }
-    }
-  >
-    <div>
+    <label
+      class="bpk-label"
+      for="name_input"
+    >
+      Name
+    </label>
+    <input
+      aria-describedby="name_input_description"
+      aria-invalid="false"
+      aria-required="false"
+      class="bpk-input"
+      id="name_input"
+      name="name"
+      placeholder="e.g. Joe Bloggs"
+      type="text"
+      value=""
+    />
+    <span
+      class="bpk-fieldset__description"
+      id="name_input_description"
+    >
+      Your full name exactly as stated in your passport.
+    </span>
+    <div
+      style="height: 0px; overflow: visible; transition: height 200ms ease;"
+    >
       <div
-        className="bpk-form-validation__container"
+        style="display: none;"
       >
         <div
-          className="bpk-form-validation"
-          id="name_input_validation_message"
+          class="bpk-form-validation__container"
         >
-          <span
-            style={
-              Object {
-                "display": "inline-block",
-                "lineHeight": "1.125rem",
-                "marginTop": "0.0625rem",
-                "verticalAlign": "top",
-              }
-            }
+          <div
+            class="bpk-form-validation"
+            id="name_input_validation_message"
           >
-            <svg
-              className="bpk-form-validation__icon"
-              height="18"
-              style={
-                Object {
-                  "height": "1.125rem",
-                  "width": "1.125rem",
-                }
-              }
-              viewBox="0 0 24 24"
-              width="18"
-              xmlns="http://www.w3.org/2000/svg"
+            <span
+              style="line-height: 1.125rem; display: inline-block; margin-top: 0.0625rem; vertical-align: top;"
             >
-              <path
-                d="M12 1.5A10.5 10.5 0 1 0 22.5 12 10.5 10.5 0 0 0 12 1.5zM12 18a1.5 1.5 0 1 1 1.5-1.5A1.5 1.5 0 0 1 12 18zm1.5-6a1.5 1.5 0 0 1-3 0V7.5a1.5 1.5 0 0 1 3 0z"
-              />
-            </svg>
-          </span>
-          Please enter a name
+              <svg
+                class="bpk-form-validation__icon"
+                height="18"
+                style="width: 1.125rem; height: 1.125rem;"
+                viewBox="0 0 24 24"
+                width="18"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M12 1.5A10.5 10.5 0 1 0 22.5 12 10.5 10.5 0 0 0 12 1.5zM12 18a1.5 1.5 0 1 1 1.5-1.5A1.5 1.5 0 0 1 12 18zm1.5-6a1.5 1.5 0 0 1-3 0V7.5a1.5 1.5 0 0 1 3 0z"
+                />
+              </svg>
+            </span>
+            Please enter a name
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</fieldset>
+  </fieldset>
+</DocumentFragment>
 `;
 
 exports[`BpkFieldset should render correctly with input component and "disabled" attribute 1`] = `
-<fieldset
-  className="bpk-fieldset"
->
-  <label
-    className="bpk-label"
-    htmlFor="name_input"
+<DocumentFragment>
+  <fieldset
+    class="bpk-fieldset"
   >
-    Name
-  </label>
-  <input
-    aria-invalid={false}
-    aria-required={false}
-    className="bpk-input"
-    disabled={false}
-    id="name_input"
-    name="name"
-    placeholder="e.g. Joe Bloggs"
-    type="text"
-    value=""
-  />
-  <div
-    onTransitionEnd={[Function]}
-    style={
-      Object {
-        "MozTransition": "height 200ms ease ",
-        "OTransition": "height 200ms ease ",
-        "WebkitTransition": "height 200ms ease ",
-        "height": 0,
-        "msTransition": "height 200ms ease ",
-        "overflow": "visible",
-        "transition": "height 200ms ease ",
-      }
-    }
-  >
-    <div>
+    <label
+      class="bpk-label"
+      for="name_input"
+    >
+      Name
+    </label>
+    <input
+      aria-invalid="false"
+      aria-required="false"
+      class="bpk-input"
+      id="name_input"
+      name="name"
+      placeholder="e.g. Joe Bloggs"
+      type="text"
+      value=""
+    />
+    <div
+      style="height: 0px; overflow: visible; transition: height 200ms ease;"
+    >
       <div
-        className="bpk-form-validation__container"
+        style="display: none;"
       >
         <div
-          className="bpk-form-validation"
-          id="name_input_validation_message"
+          class="bpk-form-validation__container"
         >
-          <span
-            style={
-              Object {
-                "display": "inline-block",
-                "lineHeight": "1.125rem",
-                "marginTop": "0.0625rem",
-                "verticalAlign": "top",
-              }
-            }
+          <div
+            class="bpk-form-validation"
+            id="name_input_validation_message"
           >
-            <svg
-              className="bpk-form-validation__icon"
-              height="18"
-              style={
-                Object {
-                  "height": "1.125rem",
-                  "width": "1.125rem",
-                }
-              }
-              viewBox="0 0 24 24"
-              width="18"
-              xmlns="http://www.w3.org/2000/svg"
+            <span
+              style="line-height: 1.125rem; display: inline-block; margin-top: 0.0625rem; vertical-align: top;"
             >
-              <path
-                d="M12 1.5A10.5 10.5 0 1 0 22.5 12 10.5 10.5 0 0 0 12 1.5zM12 18a1.5 1.5 0 1 1 1.5-1.5A1.5 1.5 0 0 1 12 18zm1.5-6a1.5 1.5 0 0 1-3 0V7.5a1.5 1.5 0 0 1 3 0z"
-              />
-            </svg>
-          </span>
-          Please enter a name
+              <svg
+                class="bpk-form-validation__icon"
+                height="18"
+                style="width: 1.125rem; height: 1.125rem;"
+                viewBox="0 0 24 24"
+                width="18"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M12 1.5A10.5 10.5 0 1 0 22.5 12 10.5 10.5 0 0 0 12 1.5zM12 18a1.5 1.5 0 1 1 1.5-1.5A1.5 1.5 0 0 1 12 18zm1.5-6a1.5 1.5 0 0 1-3 0V7.5a1.5 1.5 0 0 1 3 0z"
+                />
+              </svg>
+            </span>
+            Please enter a name
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</fieldset>
+  </fieldset>
+</DocumentFragment>
 `;
 
 exports[`BpkFieldset should render correctly with input component and "required" attribute 1`] = `
-<fieldset
-  className="bpk-fieldset"
->
-  <label
-    className="bpk-label"
-    htmlFor="name_input"
+<DocumentFragment>
+  <fieldset
+    class="bpk-fieldset"
   >
-    Name
-    <span
-      className="bpk-label__asterisk"
+    <label
+      class="bpk-label"
+      for="name_input"
     >
-      *
-    </span>
-  </label>
-  <input
-    aria-invalid={false}
-    aria-required={true}
-    className="bpk-input bpk-input--valid"
-    disabled={false}
-    id="name_input"
-    name="name"
-    placeholder="e.g. Joe Bloggs"
-    type="text"
-    value=""
-  />
-  <div
-    onTransitionEnd={[Function]}
-    style={
-      Object {
-        "MozTransition": "height 200ms ease ",
-        "OTransition": "height 200ms ease ",
-        "WebkitTransition": "height 200ms ease ",
-        "height": 0,
-        "msTransition": "height 200ms ease ",
-        "overflow": "visible",
-        "transition": "height 200ms ease ",
-      }
-    }
-  >
-    <div>
+      Name
+      <span
+        class="bpk-label__asterisk"
+      >
+        *
+      </span>
+    </label>
+    <input
+      aria-invalid="false"
+      aria-required="true"
+      class="bpk-input bpk-input--valid"
+      id="name_input"
+      name="name"
+      placeholder="e.g. Joe Bloggs"
+      type="text"
+      value=""
+    />
+    <div
+      style="height: 0px; overflow: visible; transition: height 200ms ease;"
+    >
       <div
-        className="bpk-form-validation__container"
+        style="display: none;"
       >
         <div
-          className="bpk-form-validation"
-          id="name_input_validation_message"
+          class="bpk-form-validation__container"
         >
-          <span
-            style={
-              Object {
-                "display": "inline-block",
-                "lineHeight": "1.125rem",
-                "marginTop": "0.0625rem",
-                "verticalAlign": "top",
-              }
-            }
+          <div
+            class="bpk-form-validation"
+            id="name_input_validation_message"
           >
-            <svg
-              className="bpk-form-validation__icon"
-              height="18"
-              style={
-                Object {
-                  "height": "1.125rem",
-                  "width": "1.125rem",
-                }
-              }
-              viewBox="0 0 24 24"
-              width="18"
-              xmlns="http://www.w3.org/2000/svg"
+            <span
+              style="line-height: 1.125rem; display: inline-block; margin-top: 0.0625rem; vertical-align: top;"
             >
-              <path
-                d="M12 1.5A10.5 10.5 0 1 0 22.5 12 10.5 10.5 0 0 0 12 1.5zM12 18a1.5 1.5 0 1 1 1.5-1.5A1.5 1.5 0 0 1 12 18zm1.5-6a1.5 1.5 0 0 1-3 0V7.5a1.5 1.5 0 0 1 3 0z"
-              />
-            </svg>
-          </span>
-          Please enter a name
+              <svg
+                class="bpk-form-validation__icon"
+                height="18"
+                style="width: 1.125rem; height: 1.125rem;"
+                viewBox="0 0 24 24"
+                width="18"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M12 1.5A10.5 10.5 0 1 0 22.5 12 10.5 10.5 0 0 0 12 1.5zM12 18a1.5 1.5 0 1 1 1.5-1.5A1.5 1.5 0 0 1 12 18zm1.5-6a1.5 1.5 0 0 1-3 0V7.5a1.5 1.5 0 0 1 3 0z"
+                />
+              </svg>
+            </span>
+            Please enter a name
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</fieldset>
+  </fieldset>
+</DocumentFragment>
 `;
 
 exports[`BpkFieldset should render correctly with input component and "valid" attribute 1`] = `
-<fieldset
-  className="bpk-fieldset"
->
-  <label
-    className="bpk-label"
-    htmlFor="name_input"
+<DocumentFragment>
+  <fieldset
+    class="bpk-fieldset"
   >
-    Name
-  </label>
-  <input
-    aria-invalid={false}
-    aria-required={false}
-    className="bpk-input bpk-input--valid"
-    disabled={false}
-    id="name_input"
-    name="name"
-    placeholder="e.g. Joe Bloggs"
-    type="text"
-    value=""
-  />
-  <div
-    onTransitionEnd={[Function]}
-    style={
-      Object {
-        "MozTransition": "height 200ms ease ",
-        "OTransition": "height 200ms ease ",
-        "WebkitTransition": "height 200ms ease ",
-        "height": 0,
-        "msTransition": "height 200ms ease ",
-        "overflow": "visible",
-        "transition": "height 200ms ease ",
-      }
-    }
-  >
-    <div>
+    <label
+      class="bpk-label"
+      for="name_input"
+    >
+      Name
+    </label>
+    <input
+      aria-invalid="false"
+      aria-required="false"
+      class="bpk-input bpk-input--valid"
+      id="name_input"
+      name="name"
+      placeholder="e.g. Joe Bloggs"
+      type="text"
+      value=""
+    />
+    <div
+      style="height: 0px; overflow: visible; transition: height 200ms ease;"
+    >
       <div
-        className="bpk-form-validation__container"
+        style="display: none;"
       >
         <div
-          className="bpk-form-validation"
-          id="name_input_validation_message"
+          class="bpk-form-validation__container"
         >
-          <span
-            style={
-              Object {
-                "display": "inline-block",
-                "lineHeight": "1.125rem",
-                "marginTop": "0.0625rem",
-                "verticalAlign": "top",
-              }
-            }
+          <div
+            class="bpk-form-validation"
+            id="name_input_validation_message"
           >
-            <svg
-              className="bpk-form-validation__icon"
-              height="18"
-              style={
-                Object {
-                  "height": "1.125rem",
-                  "width": "1.125rem",
-                }
-              }
-              viewBox="0 0 24 24"
-              width="18"
-              xmlns="http://www.w3.org/2000/svg"
+            <span
+              style="line-height: 1.125rem; display: inline-block; margin-top: 0.0625rem; vertical-align: top;"
             >
-              <path
-                d="M12 1.5A10.5 10.5 0 1 0 22.5 12 10.5 10.5 0 0 0 12 1.5zM12 18a1.5 1.5 0 1 1 1.5-1.5A1.5 1.5 0 0 1 12 18zm1.5-6a1.5 1.5 0 0 1-3 0V7.5a1.5 1.5 0 0 1 3 0z"
-              />
-            </svg>
-          </span>
-          Please enter a name
+              <svg
+                class="bpk-form-validation__icon"
+                height="18"
+                style="width: 1.125rem; height: 1.125rem;"
+                viewBox="0 0 24 24"
+                width="18"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M12 1.5A10.5 10.5 0 1 0 22.5 12 10.5 10.5 0 0 0 12 1.5zM12 18a1.5 1.5 0 1 1 1.5-1.5A1.5 1.5 0 0 1 12 18zm1.5-6a1.5 1.5 0 0 1-3 0V7.5a1.5 1.5 0 0 1 3 0z"
+                />
+              </svg>
+            </span>
+            Please enter a name
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</fieldset>
+  </fieldset>
+</DocumentFragment>
 `;
 
 exports[`BpkFieldset should render correctly with input component and "valid" attribute equal to false 1`] = `
-<fieldset
-  className="bpk-fieldset"
->
-  <label
-    className="bpk-label bpk-label--invalid"
-    htmlFor="name_input"
+<DocumentFragment>
+  <fieldset
+    class="bpk-fieldset"
   >
-    Name
-  </label>
-  <input
-    aria-describedby="name_input_validation_message"
-    aria-invalid={true}
-    aria-required={false}
-    className="bpk-input bpk-input--invalid"
-    disabled={false}
-    id="name_input"
-    name="name"
-    placeholder="e.g. Joe Bloggs"
-    type="text"
-    value=""
-  />
-  <div
-    onTransitionEnd={[Function]}
-    style={
-      Object {
-        "MozTransition": "height 200ms ease ",
-        "OTransition": "height 200ms ease ",
-        "WebkitTransition": "height 200ms ease ",
-        "height": "auto",
-        "msTransition": "height 200ms ease ",
-        "overflow": "visible",
-        "transition": "height 200ms ease ",
-      }
-    }
-  >
-    <div>
-      <div
-        className="bpk-form-validation__container"
-      >
+    <label
+      class="bpk-label bpk-label--invalid"
+      for="name_input"
+    >
+      Name
+    </label>
+    <input
+      aria-describedby="name_input_validation_message"
+      aria-invalid="true"
+      aria-required="false"
+      class="bpk-input bpk-input--invalid"
+      id="name_input"
+      name="name"
+      placeholder="e.g. Joe Bloggs"
+      type="text"
+      value=""
+    />
+    <div
+      style="height: auto; overflow: visible; transition: height 200ms ease;"
+    >
+      <div>
         <div
-          className="bpk-form-validation bpk-form-validation--appear"
-          id="name_input_validation_message"
+          class="bpk-form-validation__container"
         >
-          <span
-            style={
-              Object {
-                "display": "inline-block",
-                "lineHeight": "1.125rem",
-                "marginTop": "0.0625rem",
-                "verticalAlign": "top",
-              }
-            }
+          <div
+            class="bpk-form-validation bpk-form-validation--appear"
+            id="name_input_validation_message"
           >
-            <svg
-              className="bpk-form-validation__icon"
-              height="18"
-              style={
-                Object {
-                  "height": "1.125rem",
-                  "width": "1.125rem",
-                }
-              }
-              viewBox="0 0 24 24"
-              width="18"
-              xmlns="http://www.w3.org/2000/svg"
+            <span
+              style="line-height: 1.125rem; display: inline-block; margin-top: 0.0625rem; vertical-align: top;"
             >
-              <path
-                d="M12 1.5A10.5 10.5 0 1 0 22.5 12 10.5 10.5 0 0 0 12 1.5zM12 18a1.5 1.5 0 1 1 1.5-1.5A1.5 1.5 0 0 1 12 18zm1.5-6a1.5 1.5 0 0 1-3 0V7.5a1.5 1.5 0 0 1 3 0z"
-              />
-            </svg>
-          </span>
-          Please enter a name
+              <svg
+                class="bpk-form-validation__icon"
+                height="18"
+                style="width: 1.125rem; height: 1.125rem;"
+                viewBox="0 0 24 24"
+                width="18"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M12 1.5A10.5 10.5 0 1 0 22.5 12 10.5 10.5 0 0 0 12 1.5zM12 18a1.5 1.5 0 1 1 1.5-1.5A1.5 1.5 0 0 1 12 18zm1.5-6a1.5 1.5 0 0 1-3 0V7.5a1.5 1.5 0 0 1 3 0z"
+                />
+              </svg>
+            </span>
+            Please enter a name
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</fieldset>
+  </fieldset>
+</DocumentFragment>
 `;
 
 exports[`BpkFieldset should render correctly with select component 1`] = `
-<fieldset
-  className="bpk-fieldset"
->
-  <label
-    className="bpk-label"
-    htmlFor="fruits_select"
+<DocumentFragment>
+  <fieldset
+    class="bpk-fieldset"
   >
-    Fruits
-  </label>
-  <select
-    aria-invalid={false}
-    aria-required={false}
-    className="bpk-select"
-    disabled={false}
-    id="fruits_select"
-    name="fruits"
-    value=""
-  >
-    <option
-      value=""
+    <label
+      class="bpk-label"
+      for="fruits_select"
     >
-      Please select...
-    </option>
-    <option
-      value="apples"
+      Fruits
+    </label>
+    <select
+      aria-invalid="false"
+      aria-required="false"
+      class="bpk-select"
+      id="fruits_select"
+      name="fruits"
     >
-      Apples
-    </option>
-    <option
-      value="oranges"
+      <option
+        value=""
+      >
+        Please select...
+      </option>
+      <option
+        value="apples"
+      >
+        Apples
+      </option>
+      <option
+        value="oranges"
+      >
+        Oranges
+      </option>
+      <option
+        value="pears"
+      >
+        Pears
+      </option>
+      <option
+        disabled=""
+        value="tomato"
+      >
+        Tomato
+      </option>
+    </select>
+    <div
+      style="height: 0px; overflow: visible; transition: height 200ms ease;"
     >
-      Oranges
-    </option>
-    <option
-      value="pears"
-    >
-      Pears
-    </option>
-    <option
-      disabled={true}
-      value="tomato"
-    >
-      Tomato
-    </option>
-  </select>
-  <div
-    onTransitionEnd={[Function]}
-    style={
-      Object {
-        "MozTransition": "height 200ms ease ",
-        "OTransition": "height 200ms ease ",
-        "WebkitTransition": "height 200ms ease ",
-        "height": 0,
-        "msTransition": "height 200ms ease ",
-        "overflow": "visible",
-        "transition": "height 200ms ease ",
-      }
-    }
-  >
-    <div>
       <div
-        className="bpk-form-validation__container"
+        style="display: none;"
       >
         <div
-          className="bpk-form-validation"
-          id="fruits_select_validation_message"
+          class="bpk-form-validation__container"
         >
-          <span
-            style={
-              Object {
-                "display": "inline-block",
-                "lineHeight": "1.125rem",
-                "marginTop": "0.0625rem",
-                "verticalAlign": "top",
-              }
-            }
+          <div
+            class="bpk-form-validation"
+            id="fruits_select_validation_message"
           >
-            <svg
-              className="bpk-form-validation__icon"
-              height="18"
-              style={
-                Object {
-                  "height": "1.125rem",
-                  "width": "1.125rem",
-                }
-              }
-              viewBox="0 0 24 24"
-              width="18"
-              xmlns="http://www.w3.org/2000/svg"
+            <span
+              style="line-height: 1.125rem; display: inline-block; margin-top: 0.0625rem; vertical-align: top;"
             >
-              <path
-                d="M12 1.5A10.5 10.5 0 1 0 22.5 12 10.5 10.5 0 0 0 12 1.5zM12 18a1.5 1.5 0 1 1 1.5-1.5A1.5 1.5 0 0 1 12 18zm1.5-6a1.5 1.5 0 0 1-3 0V7.5a1.5 1.5 0 0 1 3 0z"
-              />
-            </svg>
-          </span>
-          Please select a fruit
+              <svg
+                class="bpk-form-validation__icon"
+                height="18"
+                style="width: 1.125rem; height: 1.125rem;"
+                viewBox="0 0 24 24"
+                width="18"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M12 1.5A10.5 10.5 0 1 0 22.5 12 10.5 10.5 0 0 0 12 1.5zM12 18a1.5 1.5 0 1 1 1.5-1.5A1.5 1.5 0 0 1 12 18zm1.5-6a1.5 1.5 0 0 1-3 0V7.5a1.5 1.5 0 0 1 3 0z"
+                />
+              </svg>
+            </span>
+            Please select a fruit
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</fieldset>
+  </fieldset>
+</DocumentFragment>
 `;
 
 exports[`BpkFieldset should render correctly with select component and "required" attribute 1`] = `
-<fieldset
-  className="bpk-fieldset"
->
-  <label
-    className="bpk-label"
-    htmlFor="fruits_select"
+<DocumentFragment>
+  <fieldset
+    class="bpk-fieldset"
   >
-    Fruits
-    <span
-      className="bpk-label__asterisk"
+    <label
+      class="bpk-label"
+      for="fruits_select"
     >
-      *
-    </span>
-  </label>
-  <select
-    aria-invalid={false}
-    aria-required={true}
-    className="bpk-select"
-    disabled={false}
-    id="fruits_select"
-    name="fruits"
-    value=""
-  >
-    <option
-      value=""
+      Fruits
+      <span
+        class="bpk-label__asterisk"
+      >
+        *
+      </span>
+    </label>
+    <select
+      aria-invalid="false"
+      aria-required="true"
+      class="bpk-select"
+      id="fruits_select"
+      name="fruits"
     >
-      Please select...
-    </option>
-    <option
-      value="apples"
+      <option
+        value=""
+      >
+        Please select...
+      </option>
+      <option
+        value="apples"
+      >
+        Apples
+      </option>
+      <option
+        value="oranges"
+      >
+        Oranges
+      </option>
+      <option
+        value="pears"
+      >
+        Pears
+      </option>
+      <option
+        disabled=""
+        value="tomato"
+      >
+        Tomato
+      </option>
+    </select>
+    <div
+      style="height: 0px; overflow: visible; transition: height 200ms ease;"
     >
-      Apples
-    </option>
-    <option
-      value="oranges"
-    >
-      Oranges
-    </option>
-    <option
-      value="pears"
-    >
-      Pears
-    </option>
-    <option
-      disabled={true}
-      value="tomato"
-    >
-      Tomato
-    </option>
-  </select>
-  <div
-    onTransitionEnd={[Function]}
-    style={
-      Object {
-        "MozTransition": "height 200ms ease ",
-        "OTransition": "height 200ms ease ",
-        "WebkitTransition": "height 200ms ease ",
-        "height": 0,
-        "msTransition": "height 200ms ease ",
-        "overflow": "visible",
-        "transition": "height 200ms ease ",
-      }
-    }
-  >
-    <div>
       <div
-        className="bpk-form-validation__container"
+        style="display: none;"
       >
         <div
-          className="bpk-form-validation"
-          id="fruits_select_validation_message"
+          class="bpk-form-validation__container"
         >
-          <span
-            style={
-              Object {
-                "display": "inline-block",
-                "lineHeight": "1.125rem",
-                "marginTop": "0.0625rem",
-                "verticalAlign": "top",
-              }
-            }
+          <div
+            class="bpk-form-validation"
+            id="fruits_select_validation_message"
           >
-            <svg
-              className="bpk-form-validation__icon"
-              height="18"
-              style={
-                Object {
-                  "height": "1.125rem",
-                  "width": "1.125rem",
-                }
-              }
-              viewBox="0 0 24 24"
-              width="18"
-              xmlns="http://www.w3.org/2000/svg"
+            <span
+              style="line-height: 1.125rem; display: inline-block; margin-top: 0.0625rem; vertical-align: top;"
             >
-              <path
-                d="M12 1.5A10.5 10.5 0 1 0 22.5 12 10.5 10.5 0 0 0 12 1.5zM12 18a1.5 1.5 0 1 1 1.5-1.5A1.5 1.5 0 0 1 12 18zm1.5-6a1.5 1.5 0 0 1-3 0V7.5a1.5 1.5 0 0 1 3 0z"
-              />
-            </svg>
-          </span>
-          Please select a fruit
+              <svg
+                class="bpk-form-validation__icon"
+                height="18"
+                style="width: 1.125rem; height: 1.125rem;"
+                viewBox="0 0 24 24"
+                width="18"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M12 1.5A10.5 10.5 0 1 0 22.5 12 10.5 10.5 0 0 0 12 1.5zM12 18a1.5 1.5 0 1 1 1.5-1.5A1.5 1.5 0 0 1 12 18zm1.5-6a1.5 1.5 0 0 1-3 0V7.5a1.5 1.5 0 0 1 3 0z"
+                />
+              </svg>
+            </span>
+            Please select a fruit
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</fieldset>
+  </fieldset>
+</DocumentFragment>
 `;

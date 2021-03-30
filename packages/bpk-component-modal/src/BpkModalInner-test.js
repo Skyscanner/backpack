@@ -19,205 +19,185 @@
 /* @flow strict */
 
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import { BpkNavigationBarButtonLink } from 'bpk-component-navigation-bar';
 
 import BpkModalInner from './BpkModalInner';
 
 describe('BpkModalInner', () => {
   it('should render correctly', () => {
-    const tree = renderer
-      .create(
-        <BpkModalInner
-          id="my-modal"
-          title="Modal title"
-          closeLabel="Close"
-          dialogRef={jest.fn()}
-          onClose={jest.fn()}
-          isIphone={false}
-        >
-          Modal content
-        </BpkModalInner>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkModalInner
+        id="my-modal"
+        title="Modal title"
+        closeLabel="Close"
+        dialogRef={jest.fn()}
+        onClose={jest.fn()}
+        isIphone={false}
+      >
+        Modal content
+      </BpkModalInner>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly when it has a className', () => {
-    const tree = renderer
-      .create(
-        <BpkModalInner
-          id="my-modal"
-          title="Modal title"
-          closeLabel="Close"
-          dialogRef={jest.fn()}
-          onClose={jest.fn()}
-          isIphone={false}
-          className="my-classname"
-        >
-          Modal content
-        </BpkModalInner>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkModalInner
+        id="my-modal"
+        title="Modal title"
+        closeLabel="Close"
+        dialogRef={jest.fn()}
+        onClose={jest.fn()}
+        isIphone={false}
+        className="my-classname"
+      >
+        Modal content
+      </BpkModalInner>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with wide prop', () => {
-    const tree = renderer
-      .create(
-        <BpkModalInner
-          id="my-modal"
-          title="Modal title"
-          closeLabel="Close"
-          dialogRef={jest.fn()}
-          onClose={jest.fn()}
-          isIphone={false}
-          wide
-        >
-          Modal content
-        </BpkModalInner>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkModalInner
+        id="my-modal"
+        title="Modal title"
+        closeLabel="Close"
+        dialogRef={jest.fn()}
+        onClose={jest.fn()}
+        isIphone={false}
+        wide
+      >
+        Modal content
+      </BpkModalInner>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with closeText prop', () => {
-    const tree = renderer
-      .create(
-        <BpkModalInner
-          id="my-modal"
-          title="Modal title"
-          dialogRef={jest.fn()}
-          onClose={jest.fn()}
-          isIphone={false}
-          closeText="Dismiss"
-        >
-          Modal content
-        </BpkModalInner>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkModalInner
+        id="my-modal"
+        title="Modal title"
+        dialogRef={jest.fn()}
+        onClose={jest.fn()}
+        isIphone={false}
+        closeText="Dismiss"
+      >
+        Modal content
+      </BpkModalInner>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly when is iPhone', () => {
-    const tree = renderer
-      .create(
-        <BpkModalInner
-          id="my-modal"
-          title="Modal title"
-          closeLabel="Close"
-          dialogRef={jest.fn()}
-          onClose={jest.fn()}
-          isIphone
-        >
-          Modal content
-        </BpkModalInner>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkModalInner
+        id="my-modal"
+        title="Modal title"
+        closeLabel="Close"
+        dialogRef={jest.fn()}
+        onClose={jest.fn()}
+        isIphone
+      >
+        Modal content
+      </BpkModalInner>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly when it does not fills the screen on mobile', () => {
-    const tree = renderer
-      .create(
-        <BpkModalInner
-          id="my-modal"
-          title="Modal title"
-          closeLabel="Close"
-          dialogRef={jest.fn()}
-          onClose={jest.fn()}
-          isIphone={false}
-          fullScreenOnMobile={false}
-        >
-          Modal content
-        </BpkModalInner>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkModalInner
+        id="my-modal"
+        title="Modal title"
+        closeLabel="Close"
+        dialogRef={jest.fn()}
+        onClose={jest.fn()}
+        isIphone={false}
+        fullScreenOnMobile={false}
+      >
+        Modal content
+      </BpkModalInner>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly when it is fullscreen', () => {
-    const tree = renderer
-      .create(
-        <BpkModalInner
-          id="my-modal"
-          title="Modal title"
-          closeLabel="Close"
-          dialogRef={jest.fn()}
-          onClose={jest.fn()}
-          isIphone={false}
-          fullScreen
-        >
-          Modal content
-        </BpkModalInner>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkModalInner
+        id="my-modal"
+        title="Modal title"
+        closeLabel="Close"
+        dialogRef={jest.fn()}
+        onClose={jest.fn()}
+        isIphone={false}
+        fullScreen
+      >
+        Modal content
+      </BpkModalInner>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with no padding', () => {
-    const tree = renderer
-      .create(
-        <BpkModalInner
-          id="my-modal"
-          title="Modal title"
-          closeLabel="Close"
-          dialogRef={jest.fn()}
-          onClose={jest.fn()}
-          isIphone={false}
-          padded={false}
-        >
-          Modal content
-        </BpkModalInner>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkModalInner
+        id="my-modal"
+        title="Modal title"
+        closeLabel="Close"
+        dialogRef={jest.fn()}
+        onClose={jest.fn()}
+        isIphone={false}
+        padded={false}
+      >
+        Modal content
+      </BpkModalInner>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with a custom content classname', () => {
-    const tree = renderer
-      .create(
-        <BpkModalInner
-          id="my-modal"
-          title="Modal title"
-          closeLabel="Close"
-          dialogRef={jest.fn()}
-          onClose={jest.fn()}
-          isIphone={false}
-          contentClassName="my-classname"
-        >
-          Modal content
-        </BpkModalInner>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkModalInner
+        id="my-modal"
+        title="Modal title"
+        closeLabel="Close"
+        dialogRef={jest.fn()}
+        onClose={jest.fn()}
+        isIphone={false}
+        contentClassName="my-classname"
+      >
+        Modal content
+      </BpkModalInner>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with an accessory view', () => {
-    const tree = renderer
-      .create(
-        <BpkModalInner
-          id="my-modal"
-          title="Modal title"
-          closeLabel="Close"
-          dialogRef={jest.fn()}
-          onClose={jest.fn()}
-          isIphone={false}
-          contentClassName="my-classname"
-          accessoryView={
-            <BpkNavigationBarButtonLink
-              label="Close"
-              onClick={jest.fn()}
-              className="bpk-modal__leading-button"
-            >
-              <div>Testing</div>
-            </BpkNavigationBarButtonLink>
-          }
-        >
-          Modal content
-        </BpkModalInner>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkModalInner
+        id="my-modal"
+        title="Modal title"
+        closeLabel="Close"
+        dialogRef={jest.fn()}
+        onClose={jest.fn()}
+        isIphone={false}
+        contentClassName="my-classname"
+        accessoryView={
+          <BpkNavigationBarButtonLink
+            label="Close"
+            onClick={jest.fn()}
+            className="bpk-modal__leading-button"
+          >
+            <div>Testing</div>
+          </BpkNavigationBarButtonLink>
+        }
+      >
+        Modal content
+      </BpkModalInner>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 });

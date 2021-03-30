@@ -1,19 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`BpkScrim should render correctly 1`] = `
-<div
-  className="bpk-scrim"
-  onMouseDown={null}
-  onTouchStart={null}
-  role="presentation"
-/>
+<DocumentFragment>
+  <div
+    class="bpk-scrim"
+    role="presentation"
+  />
+</DocumentFragment>
 `;
 
 exports[`BpkScrim should render correctly with dark="true" 1`] = `
-<div
-  className="bpk-scrim bpk-scrim--dark"
-  onMouseDown={null}
-  onTouchStart={null}
-  role="presentation"
-/>
+<DocumentFragment>
+  <div
+    class="bpk-scrim bpk-scrim--dark"
+    role="presentation"
+  />
+</DocumentFragment>
 `;

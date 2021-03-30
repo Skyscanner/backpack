@@ -17,76 +17,68 @@
  */
 
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 
 import BpkContentContainer from './BpkContentContainer';
 
 describe('BpkContentContainer', () => {
   it('should render correctly', () => {
-    const tree = renderer
-      .create(
-        <BpkContentContainer>
-          <h1>Heading</h1>
-          <p>My paragraph.</p>
-          <ul>
-            <li>Item 1</li>
-            <li>Item 2</li>
-            <li>Item 3</li>
-          </ul>
-        </BpkContentContainer>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkContentContainer>
+        <h1>Heading</h1>
+        <p>My paragraph.</p>
+        <ul>
+          <li>Item 1</li>
+          <li>Item 2</li>
+          <li>Item 3</li>
+        </ul>
+      </BpkContentContainer>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with a "bareHtml" attribute ', () => {
-    const tree = renderer
-      .create(
-        <BpkContentContainer bareHtml>
-          <h1>Heading</h1>
-          <p>My paragraph.</p>
-          <ul>
-            <li>Item 1</li>
-            <li>Item 2</li>
-            <li>Item 3</li>
-          </ul>
-        </BpkContentContainer>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkContentContainer bareHtml>
+        <h1>Heading</h1>
+        <p>My paragraph.</p>
+        <ul>
+          <li>Item 1</li>
+          <li>Item 2</li>
+          <li>Item 3</li>
+        </ul>
+      </BpkContentContainer>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with a "bareHtml" and "alternate" attributes', () => {
-    const tree = renderer
-      .create(
-        <BpkContentContainer bareHtml alternate>
-          <h1>Heading</h1>
-          <p>My paragraph.</p>
-          <ul>
-            <li>Item 1</li>
-            <li>Item 2</li>
-            <li>Item 3</li>
-          </ul>
-        </BpkContentContainer>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkContentContainer bareHtml alternate>
+        <h1>Heading</h1>
+        <p>My paragraph.</p>
+        <ul>
+          <li>Item 1</li>
+          <li>Item 2</li>
+          <li>Item 3</li>
+        </ul>
+      </BpkContentContainer>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with a custom "className" attribute ', () => {
-    const tree = renderer
-      .create(
-        <BpkContentContainer className="my-test-class">
-          <h1>Heading</h1>
-          <p>My paragraph.</p>
-          <ul>
-            <li>Item 1</li>
-            <li>Item 2</li>
-            <li>Item 3</li>
-          </ul>
-        </BpkContentContainer>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkContentContainer className="my-test-class">
+        <h1>Heading</h1>
+        <p>My paragraph.</p>
+        <ul>
+          <li>Item 1</li>
+          <li>Item 2</li>
+          <li>Item 3</li>
+        </ul>
+      </BpkContentContainer>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 });

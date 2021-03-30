@@ -17,13 +17,13 @@
  */
 
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 
 import BpkThemeToggle from './BpkThemeToggle';
 
 describe('BpkThemeToggle', () => {
   it('should render correctly', () => {
-    const tree = renderer.create(<BpkThemeToggle />).toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(<BpkThemeToggle />);
+    expect(asFragment()).toMatchSnapshot();
   });
 });

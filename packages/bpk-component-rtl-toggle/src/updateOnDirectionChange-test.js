@@ -17,7 +17,7 @@
  */
 
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import { mount } from 'enzyme';
 
 import updateOnDirectionChange from './updateOnDirectionChange';
@@ -27,8 +27,8 @@ const EnhancedComponent = updateOnDirectionChange('div');
 
 describe('BpkRtlToggle', () => {
   it('should render correctly', () => {
-    const tree = renderer.create(<EnhancedComponent />).toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(<EnhancedComponent />);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should force an update when receiving a direction change event', () => {

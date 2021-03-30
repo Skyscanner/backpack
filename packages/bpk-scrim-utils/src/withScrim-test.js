@@ -17,7 +17,7 @@
  */
 
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import { mount } from 'enzyme';
 import focusScope from 'a11y-focus-scope';
 import focusStore from 'a11y-focus-store';
@@ -58,55 +58,47 @@ describe('BpkScrim', () => {
     });
 
     it('should render correctly', () => {
-      const tree = renderer
-        .create(
-          <Component
-            onClose={jest.fn()}
-            getApplicationElement={jest.fn()}
-            isIphone={false}
-          />,
-        )
-        .toJSON();
-      expect(tree).toMatchSnapshot();
+      const { asFragment } = render(
+        <Component
+          onClose={jest.fn()}
+          getApplicationElement={jest.fn()}
+          isIphone={false}
+        />,
+      );
+      expect(asFragment()).toMatchSnapshot();
     });
 
     it('should render correctly when is iPhone', () => {
-      const tree = renderer
-        .create(
-          <Component
-            onClose={jest.fn()}
-            getApplicationElement={jest.fn()}
-            isIphone
-          />,
-        )
-        .toJSON();
-      expect(tree).toMatchSnapshot();
+      const { asFragment } = render(
+        <Component
+          onClose={jest.fn()}
+          getApplicationElement={jest.fn()}
+          isIphone
+        />,
+      );
+      expect(asFragment()).toMatchSnapshot();
     });
 
     it('should render correctly with containerClassName', () => {
-      const tree = renderer
-        .create(
-          <Component
-            onClose={jest.fn()}
-            getApplicationElement={jest.fn()}
-            containerClassName="containerClassName"
-          />,
-        )
-        .toJSON();
-      expect(tree).toMatchSnapshot();
+      const { asFragment } = render(
+        <Component
+          onClose={jest.fn()}
+          getApplicationElement={jest.fn()}
+          containerClassName="containerClassName"
+        />,
+      );
+      expect(asFragment()).toMatchSnapshot();
     });
 
     it('should render correctly with closeOnScrimClick as false', () => {
-      const tree = renderer
-        .create(
-          <Component
-            onClose={jest.fn()}
-            getApplicationElement={jest.fn()}
-            closeOnScrimClick={false}
-          />,
-        )
-        .toJSON();
-      expect(tree).toMatchSnapshot();
+      const { asFragment } = render(
+        <Component
+          onClose={jest.fn()}
+          getApplicationElement={jest.fn()}
+          closeOnScrimClick={false}
+        />,
+      );
+      expect(asFragment()).toMatchSnapshot();
     });
   });
 

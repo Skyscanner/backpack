@@ -17,37 +17,33 @@
  */
 
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 
 import BpkDescriptionDetails from './BpkDescriptionDetails';
 
 describe('BpkDescriptionDetails', () => {
   it('should render correctly', () => {
-    const tree = renderer
-      .create(<BpkDescriptionDetails>Description</BpkDescriptionDetails>)
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkDescriptionDetails>Description</BpkDescriptionDetails>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with a "className" attribute', () => {
-    const tree = renderer
-      .create(
-        <BpkDescriptionDetails className="test-description">
-          Description
-        </BpkDescriptionDetails>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkDescriptionDetails className="test-description">
+        Description
+      </BpkDescriptionDetails>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with other attributes', () => {
-    const tree = renderer
-      .create(
-        <BpkDescriptionDetails title="this is the description">
-          Description
-        </BpkDescriptionDetails>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkDescriptionDetails title="this is the description">
+        Description
+      </BpkDescriptionDetails>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 });

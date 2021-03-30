@@ -19,20 +19,20 @@
 /* @flow strict */
 
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 
 import BpkListItem from './BpkListItem';
 
 describe('BpkListItem', () => {
   it('should render correctly', () => {
-    const tree = renderer.create(<BpkListItem>List item</BpkListItem>).toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(<BpkListItem>List item</BpkListItem>);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with a "className" attribute', () => {
-    const tree = renderer
-      .create(<BpkListItem className="test-list-item">List item</BpkListItem>)
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkListItem className="test-list-item">List item</BpkListItem>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 });

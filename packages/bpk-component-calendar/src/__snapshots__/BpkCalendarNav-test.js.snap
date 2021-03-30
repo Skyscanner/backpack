@@ -1,207 +1,181 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`BpkCalendarNav should disable inputs when disabled 1`] = `
-<div
-  className="bpk-calendar-nav"
->
+<DocumentFragment>
   <div
-    className="bpk-calendar-nav__nudger"
+    class="bpk-calendar-nav"
   >
-    <button
-      className="bpk-calendar-nav__button"
-      disabled={true}
-      id="myCalendarNav_month_nudger_previous"
-      onClick={[Function]}
-      type="button"
+    <div
+      class="bpk-calendar-nav__nudger"
     >
-      <svg
-        className="bpk-calendar-nav__icon"
-        height="24"
-        style={
-          Object {
-            "height": "1.5rem",
-            "width": "1.5rem",
-          }
-        }
-        width="24"
-        xmlns="http://www.w3.org/2000/svg"
+      <button
+        class="bpk-calendar-nav__button"
+        disabled=""
+        id="myCalendarNav_month_nudger_previous"
+        type="button"
       >
-        <path
-          d="M16.5 17.293V6.707a1.632 1.632 0 0 0-2.701-1.296l-5.724 5.081a1.75 1.75 0 0 0-.121 2.472q.035.039.072.075l5.724 5.505a1.632 1.632 0 0 0 2.75-1.251z"
-        />
-      </svg>
-      <span
-        className="bpk-calendar-nav__text--hidden"
+        <svg
+          class="bpk-calendar-nav__icon"
+          height="24"
+          style="width: 1.5rem; height: 1.5rem;"
+          width="24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M16.5 17.293V6.707a1.632 1.632 0 0 0-2.701-1.296l-5.724 5.081a1.75 1.75 0 0 0-.121 2.472q.035.039.072.075l5.724 5.505a1.632 1.632 0 0 0 2.75-1.251z"
+          />
+        </svg>
+        <span
+          class="bpk-calendar-nav__text--hidden"
+        >
+          January 2010
+        </span>
+      </button>
+    </div>
+    <div
+      class="bpk-calendar-nav__month"
+    >
+      <label
+        class="bpk-calendar-nav__text--hidden"
+        for="myCalendarNav_select"
       >
-        January 2010
-      </span>
-    </button>
+        Change month
+      </label>
+      <select
+        aria-invalid="false"
+        class="bpk-select"
+        disabled=""
+        id="myCalendarNav_select"
+        name="months"
+      >
+        <option
+          value="2010-02"
+        >
+          February 2010
+        </option>
+        <option
+          value="2010-03"
+        >
+          March 2010
+        </option>
+      </select>
+    </div>
+    <div
+      class="bpk-calendar-nav__nudger"
+    >
+      <button
+        class="bpk-calendar-nav__button"
+        disabled=""
+        id="myCalendarNav_month_nudger_next"
+        type="button"
+      >
+        <svg
+          class="bpk-calendar-nav__icon"
+          height="24"
+          style="width: 1.5rem; height: 1.5rem;"
+          width="24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M7.5 17.293V6.707a1.632 1.632 0 0 1 2.701-1.296l5.724 5.081a1.75 1.75 0 0 1 .121 2.472q-.035.039-.072.075l-5.724 5.505a1.632 1.632 0 0 1-2.75-1.251z"
+          />
+        </svg>
+        <span
+          class="bpk-calendar-nav__text--hidden"
+        >
+          March 2010
+        </span>
+      </button>
+    </div>
   </div>
-  <div
-    className="bpk-calendar-nav__month"
-  >
-    <label
-      className="bpk-calendar-nav__text--hidden"
-      htmlFor="myCalendarNav_select"
-    >
-      Change month
-    </label>
-    <select
-      aria-invalid={false}
-      className="bpk-select"
-      disabled={true}
-      id="myCalendarNav_select"
-      name="months"
-      onChange={[Function]}
-      value="2010-02"
-    >
-      <option
-        value="2010-02"
-      >
-        February 2010
-      </option>
-      <option
-        value="2010-03"
-      >
-        March 2010
-      </option>
-    </select>
-  </div>
-  <div
-    className="bpk-calendar-nav__nudger"
-  >
-    <button
-      className="bpk-calendar-nav__button"
-      disabled={true}
-      id="myCalendarNav_month_nudger_next"
-      onClick={[Function]}
-      type="button"
-    >
-      <svg
-        className="bpk-calendar-nav__icon"
-        height="24"
-        style={
-          Object {
-            "height": "1.5rem",
-            "width": "1.5rem",
-          }
-        }
-        width="24"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M7.5 17.293V6.707a1.632 1.632 0 0 1 2.701-1.296l5.724 5.081a1.75 1.75 0 0 1 .121 2.472q-.035.039-.072.075l-5.724 5.505a1.632 1.632 0 0 1-2.75-1.251z"
-        />
-      </svg>
-      <span
-        className="bpk-calendar-nav__text--hidden"
-      >
-        March 2010
-      </span>
-    </button>
-  </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`BpkCalendarNav should render correctly 1`] = `
-<div
-  className="bpk-calendar-nav"
->
+<DocumentFragment>
   <div
-    className="bpk-calendar-nav__nudger"
+    class="bpk-calendar-nav"
   >
-    <button
-      className="bpk-calendar-nav__button"
-      disabled={true}
-      id="myCalendarNav_month_nudger_previous"
-      onClick={[Function]}
-      type="button"
+    <div
+      class="bpk-calendar-nav__nudger"
     >
-      <svg
-        className="bpk-calendar-nav__icon"
-        height="24"
-        style={
-          Object {
-            "height": "1.5rem",
-            "width": "1.5rem",
-          }
-        }
-        width="24"
-        xmlns="http://www.w3.org/2000/svg"
+      <button
+        class="bpk-calendar-nav__button"
+        disabled=""
+        id="myCalendarNav_month_nudger_previous"
+        type="button"
       >
-        <path
-          d="M16.5 17.293V6.707a1.632 1.632 0 0 0-2.701-1.296l-5.724 5.081a1.75 1.75 0 0 0-.121 2.472q.035.039.072.075l5.724 5.505a1.632 1.632 0 0 0 2.75-1.251z"
-        />
-      </svg>
-      <span
-        className="bpk-calendar-nav__text--hidden"
+        <svg
+          class="bpk-calendar-nav__icon"
+          height="24"
+          style="width: 1.5rem; height: 1.5rem;"
+          width="24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M16.5 17.293V6.707a1.632 1.632 0 0 0-2.701-1.296l-5.724 5.081a1.75 1.75 0 0 0-.121 2.472q.035.039.072.075l5.724 5.505a1.632 1.632 0 0 0 2.75-1.251z"
+          />
+        </svg>
+        <span
+          class="bpk-calendar-nav__text--hidden"
+        >
+          January 2010
+        </span>
+      </button>
+    </div>
+    <div
+      class="bpk-calendar-nav__month"
+    >
+      <label
+        class="bpk-calendar-nav__text--hidden"
+        for="myCalendarNav_select"
       >
-        January 2010
-      </span>
-    </button>
+        Change month
+      </label>
+      <select
+        aria-invalid="false"
+        class="bpk-select"
+        id="myCalendarNav_select"
+        name="months"
+      >
+        <option
+          value="2010-02"
+        >
+          February 2010
+        </option>
+        <option
+          value="2010-03"
+        >
+          March 2010
+        </option>
+      </select>
+    </div>
+    <div
+      class="bpk-calendar-nav__nudger"
+    >
+      <button
+        class="bpk-calendar-nav__button"
+        id="myCalendarNav_month_nudger_next"
+        type="button"
+      >
+        <svg
+          class="bpk-calendar-nav__icon"
+          height="24"
+          style="width: 1.5rem; height: 1.5rem;"
+          width="24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M7.5 17.293V6.707a1.632 1.632 0 0 1 2.701-1.296l5.724 5.081a1.75 1.75 0 0 1 .121 2.472q-.035.039-.072.075l-5.724 5.505a1.632 1.632 0 0 1-2.75-1.251z"
+          />
+        </svg>
+        <span
+          class="bpk-calendar-nav__text--hidden"
+        >
+          March 2010
+        </span>
+      </button>
+    </div>
   </div>
-  <div
-    className="bpk-calendar-nav__month"
-  >
-    <label
-      className="bpk-calendar-nav__text--hidden"
-      htmlFor="myCalendarNav_select"
-    >
-      Change month
-    </label>
-    <select
-      aria-invalid={false}
-      className="bpk-select"
-      disabled={false}
-      id="myCalendarNav_select"
-      name="months"
-      onChange={[Function]}
-      value="2010-02"
-    >
-      <option
-        value="2010-02"
-      >
-        February 2010
-      </option>
-      <option
-        value="2010-03"
-      >
-        March 2010
-      </option>
-    </select>
-  </div>
-  <div
-    className="bpk-calendar-nav__nudger"
-  >
-    <button
-      className="bpk-calendar-nav__button"
-      disabled={false}
-      id="myCalendarNav_month_nudger_next"
-      onClick={[Function]}
-      type="button"
-    >
-      <svg
-        className="bpk-calendar-nav__icon"
-        height="24"
-        style={
-          Object {
-            "height": "1.5rem",
-            "width": "1.5rem",
-          }
-        }
-        width="24"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M7.5 17.293V6.707a1.632 1.632 0 0 1 2.701-1.296l5.724 5.081a1.75 1.75 0 0 1 .121 2.472q-.035.039-.072.075l-5.724 5.505a1.632 1.632 0 0 1-2.75-1.251z"
-        />
-      </svg>
-      <span
-        className="bpk-calendar-nav__text--hidden"
-      >
-        March 2010
-      </span>
-    </button>
-  </div>
-</div>
+</DocumentFragment>
 `;

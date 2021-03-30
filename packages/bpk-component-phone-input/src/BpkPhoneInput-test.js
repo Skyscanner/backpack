@@ -17,7 +17,7 @@
  */
 
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import { shallow } from 'enzyme';
 import BpkInput from 'bpk-component-input';
 import BpkSelect from 'bpk-component-select';
@@ -52,60 +52,50 @@ const defaultProps = {
 
 describe('BpkPhoneInput', () => {
   it('should render correctly', () => {
-    const tree = renderer.create(<BpkPhoneInput {...defaultProps} />).toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(<BpkPhoneInput {...defaultProps} />);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with a "large" attribute', () => {
-    const tree = renderer
-      .create(<BpkPhoneInput {...defaultProps} large />)
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(<BpkPhoneInput {...defaultProps} large />);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with the "dialingCodeMask" attribute', () => {
-    const tree = renderer
-      .create(<BpkPhoneInput {...defaultProps} dialingCodeMask />)
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkPhoneInput {...defaultProps} dialingCodeMask />,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with a "disabled" attribute', () => {
-    const tree = renderer
-      .create(<BpkPhoneInput {...defaultProps} disabled />)
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(<BpkPhoneInput {...defaultProps} disabled />);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with a "valid" attribute', () => {
-    const tree = renderer
-      .create(<BpkPhoneInput {...defaultProps} valid />)
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(<BpkPhoneInput {...defaultProps} valid />);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with a "wrapperProps" attribute', () => {
-    const tree = renderer
-      .create(
-        <BpkPhoneInput
-          {...defaultProps}
-          wrapperProps={{ className: 'container', 'aria-label': 'container' }}
-        />,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkPhoneInput
+        {...defaultProps}
+        wrapperProps={{ className: 'container', 'aria-label': 'container' }}
+      />,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with a dialing code image attribute', () => {
-    const tree = renderer
-      .create(
-        <BpkPhoneInput
-          {...defaultProps}
-          dialingCodeProps={{ image: <span />, ...dialingCodeProps }}
-        />,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <BpkPhoneInput
+        {...defaultProps}
+        dialingCodeProps={{ image: <span />, ...dialingCodeProps }}
+      />,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should call "onChange" when phone number changes', () => {

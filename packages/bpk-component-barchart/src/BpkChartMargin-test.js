@@ -19,7 +19,7 @@
 /* @flow strict */
 
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import { spacingSm } from 'bpk-tokens/tokens/base.es6';
 
 import BpkChartMargin from './BpkChartMargin';
@@ -33,9 +33,11 @@ const margin = {
 
 describe('BpkChartMargin', () => {
   it('should render correctly', () => {
-    const tree = renderer
-      .create(<BpkChartMargin margin={margin}>Children</BpkChartMargin>)
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <svg>
+        <BpkChartMargin margin={margin}>Children</BpkChartMargin>
+      </svg>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 });
