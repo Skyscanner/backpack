@@ -26,6 +26,7 @@
     "react": "^16.0.0"
   },
   "devDependencies": {
+    "bpk-component-aria-live": "^1.0.38",
     "bpk-component-button": "^3.3.28",
     "bpk-component-text": "^3.1.47",
     "bpk-storybook-utils": "^0.0.16"

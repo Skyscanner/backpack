@@ -22,6 +22,7 @@ import ArrowLeftIcon from 'bpk-component-icon/lg/arrow-left';
 import ArrowRightIcon from 'bpk-component-icon/lg/arrow-right';
 import BpkSelect from 'bpk-component-select';
 import { cssModules } from 'bpk-react-utils';
+import BpkAriaLive from 'bpk-component-aria-live';
 
 import {
   addMonths,
@@ -55,6 +56,8 @@ const BpkCalendarNav = props => {
     onMonthChange,
     changeMonthLabel,
     disabled,
+    previousMonthLabel,
+    nextMonthLabel,
   } = props;
 
   const baseMonth = startOfMonth(month);
@@ -81,7 +84,7 @@ const BpkCalendarNav = props => {
         >
           <ArrowLeftIcon className={getClassName('bpk-calendar-nav__icon')} />
           <span className={getClassName('bpk-calendar-nav__text--hidden')}>
-            {formatMonth(addMonths(baseMonth, -1))}
+            {previousMonthLabel || formatMonth(prevMonth)}
           </span>
         </button>
       </div>
@@ -89,9 +92,12 @@ const BpkCalendarNav = props => {
         <label
           htmlFor={`${id}_select`}
           className={getClassName('bpk-calendar-nav__text--hidden')}
+          aria-hidden="true"
         >
           {changeMonthLabel}
         </label>
+
+        <BpkAriaLive aria-hidden="true">{formatMonth(baseMonth)}</BpkAriaLive>
         <BpkSelect
           id={`${id}_select`}
           name="months"
@@ -130,7 +136,7 @@ const BpkCalendarNav = props => {
         >
           <ArrowRightIcon className={getClassName('bpk-calendar-nav__icon')} />
           <span className={getClassName('bpk-calendar-nav__text--hidden')}>
-            {formatMonth(addMonths(baseMonth, 1))}
+            {nextMonthLabel || formatMonth(nextMonth)}
           </span>
         </button>
       </div>
@@ -149,11 +155,15 @@ BpkCalendarNav.propTypes = {
   // Optional
   onMonthChange: PropTypes.func,
   disabled: PropTypes.bool,
+  previousMonthLabel: PropTypes.string,
+  nextMonthLabel: PropTypes.string,
 };
 
 BpkCalendarNav.defaultProps = {
   onMonthChange: null,
   disabled: false,
+  previousMonthLabel: null,
+  nextMonthLabel: null,
 };
 
 export default BpkCalendarNav;
