@@ -39,11 +39,19 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
         class="bpk-calendar-nav__month"
       >
         <label
+          aria-hidden="true"
           class="bpk-calendar-nav__text--hidden"
           for="myCalendar__bpk_calendar_nav_select"
         >
           Change month
         </label>
+        <div
+          aria-hidden="true"
+          aria-live="polite"
+          class="bpk-aria-live bpk-aria-live--invisible"
+        >
+          February 2010
+        </div>
         <select
           aria-invalid="false"
           class="bpk-select"
@@ -2050,11 +2058,19 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
         class="bpk-calendar-nav__month"
       >
         <label
+          aria-hidden="true"
           class="bpk-calendar-nav__text--hidden"
           for="myCalendar__bpk_calendar_nav_select"
         >
           Change month
         </label>
+        <div
+          aria-hidden="true"
+          aria-live="polite"
+          class="bpk-aria-live bpk-aria-live--invisible"
+        >
+          February 2010
+        </div>
         <select
           aria-invalid="false"
           class="bpk-select"
