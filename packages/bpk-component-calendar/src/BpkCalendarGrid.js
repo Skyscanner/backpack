@@ -215,9 +215,7 @@ BpkCalendarGrid.defaultProps = {
   cellClassName: null,
 };
 
-const BpkCalendarGridWithTransition = addCalendarGridTransition(
-  BpkCalendarGrid,
-);
+const BpkCalendarGridWithTransition = BpkCalendarGrid;
 
 export default BpkCalendarGrid;
 export { BpkCalendarGridWithTransition };

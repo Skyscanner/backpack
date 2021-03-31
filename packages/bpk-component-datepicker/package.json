@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-datepicker",
-  "version": "11.3.49",
+  "version": "11.3.50-alpha.0",
   "description": "Backpack datepicker component.",
   "license": "Apache-2.0",
   "repository": {
@@ -15,7 +15,7 @@
   "gitHead": "c2217d61875a1f3aa2bb9ed9583c50e3f1523501",
   "dependencies": {
     "bpk-component-breakpoint": "^2.0.116",
-    "bpk-component-calendar": "^7.1.1",
+    "bpk-component-calendar": "7.1.2-alpha.0",
     "bpk-component-input": "^5.0.122",
     "bpk-component-modal": "^2.1.125",
     "bpk-component-popover": "^3.0.125",
