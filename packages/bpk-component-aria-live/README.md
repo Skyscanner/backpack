@@ -40,3 +40,5 @@ export default () => (
 `aria-relevant` determines what sort of changes should be read out. By default it is `additions` but can be `removals` or `all`. [Read more about `aria-relevant` on MDN](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-relevant_attribute).
 
 `aria-atomic` is a boolean which determines whether changes should be read out, or the whole region should be read out. [Read more about `aria-atomic` on MDN](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Live_Regions#Use_Case:_Clock).
+
+`aria-hidden` is a boolean which determines if a screen-reader should be able to navigate to a component. Depending on your use-case, it may make sense to apply `aria-hidden="true"` to`BpkAriaLive` so that screen-reader users can't navigate to it.
