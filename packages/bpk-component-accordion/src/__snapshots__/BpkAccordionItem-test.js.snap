@@ -7,7 +7,6 @@ exports[`BpkAccordionItem should not render an "initiallyExpanded" attribute on 
   >
     <dt
       aria-labelledby="my-accordion"
-      aria-level="3"
       class="bpk-accordion__title"
     >
       <button
@@ -73,7 +72,6 @@ exports[`BpkAccordionItem should render correctly 1`] = `
   >
     <dt
       aria-labelledby="my-accordion"
-      aria-level="3"
       class="bpk-accordion__title"
     >
       <button
@@ -140,7 +138,6 @@ exports[`BpkAccordionItem should render correctly with "className" prop 1`] = `
   >
     <dt
       aria-labelledby="my-accordion"
-      aria-level="3"
       class="bpk-accordion__title"
     >
       <button
@@ -206,7 +203,6 @@ exports[`BpkAccordionItem should render correctly with "expanded" prop 1`] = `
   >
     <dt
       aria-labelledby="my-accordion"
-      aria-level="3"
       class="bpk-accordion__title"
     >
       <button
@@ -270,7 +266,6 @@ exports[`BpkAccordionItem should render correctly with "tagName" prop set 1`] = 
   >
     <dt
       aria-labelledby="my-accordion"
-      aria-level="3"
       class="bpk-accordion__title"
     >
       <button
@@ -336,7 +331,6 @@ exports[`BpkAccordionItem should render correctly with "textStyle" prop set 1`] 
   >
     <dt
       aria-labelledby="my-accordion"
-      aria-level="3"
       class="bpk-accordion__title"
     >
       <button
@@ -402,7 +396,6 @@ exports[`BpkAccordionItem should render correctly with "weight" prop set to bold
   >
     <dt
       aria-labelledby="my-accordion"
-      aria-level="3"
       class="bpk-accordion__title"
     >
       <button
@@ -468,7 +461,6 @@ exports[`BpkAccordionItem should render correctly with an icon set 1`] = `
   >
     <dt
       aria-labelledby="my-accordion"
-      aria-level="3"
       class="bpk-accordion__title"
     >
       <button
