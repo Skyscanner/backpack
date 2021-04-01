@@ -56,8 +56,8 @@ const BpkCalendarNav = props => {
     onMonthChange,
     changeMonthLabel,
     disabled,
-    previousMonthLabel,
     nextMonthLabel,
+    previousMonthLabel,
   } = props;
 
   const baseMonth = startOfMonth(month);
@@ -84,7 +84,7 @@ const BpkCalendarNav = props => {
         >
           <ArrowLeftIcon className={getClassName('bpk-calendar-nav__icon')} />
           <span className={getClassName('bpk-calendar-nav__text--hidden')}>
-            {previousMonthLabel || formatMonth(prevMonth)}
+            {previousMonthLabel}
           </span>
         </button>
       </div>
@@ -136,7 +136,7 @@ const BpkCalendarNav = props => {
         >
           <ArrowRightIcon className={getClassName('bpk-calendar-nav__icon')} />
           <span className={getClassName('bpk-calendar-nav__text--hidden')}>
-            {nextMonthLabel || formatMonth(nextMonth)}
+            {nextMonthLabel}
           </span>
         </button>
       </div>
@@ -152,18 +152,16 @@ BpkCalendarNav.propTypes = {
   maxDate: PropTypes.instanceOf(Date).isRequired,
   minDate: PropTypes.instanceOf(Date).isRequired,
   month: PropTypes.instanceOf(Date).isRequired,
+  nextMonthLabel: PropTypes.string.isRequired,
+  previousMonthLabel: PropTypes.string.isRequired,
   // Optional
   onMonthChange: PropTypes.func,
   disabled: PropTypes.bool,
-  previousMonthLabel: PropTypes.string,
-  nextMonthLabel: PropTypes.string,
 };
 
 BpkCalendarNav.defaultProps = {
   onMonthChange: null,
   disabled: false,
-  previousMonthLabel: null,
-  nextMonthLabel: null,
 };
 
 export default BpkCalendarNav;

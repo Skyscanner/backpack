@@ -82,6 +82,8 @@ const CalendarNavExample = () => (
   <BpkCalendarNav
     month={new Date()}
     changeMonthLabel="Change month"
+    previousMonthLabel="Go to previous month"
+    nextMonthLabel="Go to next month"
     onMonthChange={action('Changed month')}
     minDate={new Date()}
     maxDate={addMonths(new Date(), 12)}
@@ -127,6 +129,8 @@ const DefaultExample = () => (
     daysOfWeek={weekDays}
     weekStartsOn={1}
     changeMonthLabel="Change month"
+    previousMonthLabel="Go to previous month"
+    nextMonthLabel="Go to next month"
   />
 );
 
@@ -138,6 +142,8 @@ const MinDateInThePastExample = () => (
     daysOfWeek={weekDays}
     weekStartsOn={1}
     changeMonthLabel="Change month"
+    previousMonthLabel="Go to previous month"
+    nextMonthLabel="Go to next month"
     minDate={new Date(2011, 1, 1)}
     selectTodaysDate={false}
     initiallyFocusedDate={new Date()}
@@ -152,6 +158,8 @@ const NoWeekendSeparatorExample = () => (
     daysOfWeek={weekDays}
     weekStartsOn={1}
     changeMonthLabel="Change month"
+    previousMonthLabel="Go to previous month"
+    nextMonthLabel="Go to next month"
     showWeekendSeparator={false}
   />
 );
@@ -164,6 +172,8 @@ const WeekStartsOnSundayExample = () => (
     daysOfWeek={weekDays}
     weekStartsOn={0}
     changeMonthLabel="Change month"
+    previousMonthLabel="Go to previous month"
+    nextMonthLabel="Go to next month"
   />
 );
 
@@ -175,6 +185,8 @@ const HonestWeekendExample = () => (
     daysOfWeek={weekDaysMoreWeekend}
     weekStartsOn={1}
     changeMonthLabel="Change month"
+    previousMonthLabel="Go to previous month"
+    nextMonthLabel="Go to next month"
   />
 );
 
@@ -186,6 +198,8 @@ const WeekdayKeyIsNameNarrow = () => (
     daysOfWeek={weekDays}
     weekStartsOn={0}
     changeMonthLabel="Change month"
+    previousMonthLabel="Go to previous month"
+    nextMonthLabel="Go to next month"
     weekDayKey="nameNarrow"
   />
 );
@@ -209,6 +223,8 @@ const JapaneseExample = () => (
     daysOfWeek={weekDaysJapanese}
     weekStartsOn={0}
     changeMonthLabel="Change month"
+    previousMonthLabel="Go to previous month"
+    nextMonthLabel="Go to next month"
   />
 );
 
@@ -220,6 +236,8 @@ const MinAndMaxDate = () => (
     daysOfWeek={weekDays}
     weekStartsOn={1}
     changeMonthLabel="Change month"
+    previousMonthLabel="Go to previous month"
+    nextMonthLabel="Go to next month"
     minDate={new Date(2020, 4, 15)}
     maxDate={new Date(2020, 5, 15)}
   />
@@ -233,6 +251,8 @@ const MarkTodayFalseExample = () => (
     daysOfWeek={weekDays}
     weekStartsOn={1}
     changeMonthLabel="Change month"
+    previousMonthLabel="Go to previous month"
+    nextMonthLabel="Go to next month"
     markToday={false}
   />
 );
@@ -245,6 +265,8 @@ const MarkOutsideDaysFalseExample = () => (
     daysOfWeek={weekDays}
     weekStartsOn={1}
     changeMonthLabel="Change month"
+    previousMonthLabel="Go to previous month"
+    nextMonthLabel="Go to next month"
     markOutsideDays={false}
   />
 );

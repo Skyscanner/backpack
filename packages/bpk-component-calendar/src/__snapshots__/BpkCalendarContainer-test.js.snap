@@ -31,7 +31,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
           <span
             class="bpk-calendar-nav__text--hidden"
           >
-            January 2010
+            Go to previous month
           </span>
         </button>
       </div>
@@ -92,7 +92,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
           <span
             class="bpk-calendar-nav__text--hidden"
           >
-            March 2010
+            Go to next month
           </span>
         </button>
       </div>
@@ -2050,7 +2050,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
           <span
             class="bpk-calendar-nav__text--hidden"
           >
-            January 2010
+            Go to previous month
           </span>
         </button>
       </div>
@@ -2111,7 +2111,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
           <span
             class="bpk-calendar-nav__text--hidden"
           >
-            March 2010
+            Go to next month
           </span>
         </button>
       </div>

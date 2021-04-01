@@ -34,6 +34,8 @@ describe('BpkCalendarNav', () => {
         maxDate={new Date(2010, 2, 1)}
         formatMonth={formatMonth}
         changeMonthLabel="Change month"
+        previousMonthLabel="Go to previous month"
+        nextMonthLabel="Go to next month"
         id="myCalendarNav"
       />,
     );
@@ -48,6 +50,8 @@ describe('BpkCalendarNav', () => {
         maxDate={new Date(2010, 2, 1)}
         formatMonth={formatMonth}
         changeMonthLabel="Change month"
+        previousMonthLabel="Go to previous month"
+        nextMonthLabel="Go to next month"
         disabled
         id="myCalendarNav"
       />,
@@ -63,23 +67,8 @@ describe('BpkCalendarNav', () => {
         maxDate={new Date(2010, 2, 1)}
         formatMonth={formatMonth}
         changeMonthLabel="Change month"
-        previousMonthLabel="previousMockLabel"
-        nextMonthLabel="nextMockLabel"
-        disabled
-        id="myCalendarNav"
-      />,
-    );
-    expect(asFragment()).toMatchSnapshot();
-  });
-
-  it('should default to month names when previous/next labels are not given', () => {
-    const { asFragment } = render(
-      <BpkCalendarNav
-        month={new Date(2010, 1, 1)}
-        minDate={new Date(2010, 1, 1)}
-        maxDate={new Date(2010, 2, 1)}
-        formatMonth={formatMonth}
-        changeMonthLabel="Change month"
+        previousMonthLabel="Go to previous month"
+        nextMonthLabel="Go to next month"
         disabled
         id="myCalendarNav"
       />,
@@ -97,6 +86,8 @@ describe('BpkCalendarNav', () => {
         maxDate={new Date(2010, 2, 1)}
         formatMonth={formatMonth}
         changeMonthLabel="Change month"
+        previousMonthLabel="Go to previous month"
+        nextMonthLabel="Go to next month"
         onMonthChange={onMonthChange}
         id="myCalendarNav"
       />,

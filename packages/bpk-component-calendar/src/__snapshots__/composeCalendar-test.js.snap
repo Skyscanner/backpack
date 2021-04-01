@@ -11,6 +11,8 @@ exports[`composeCalendar should compose a nav, header, grid and date component c
       maxdate="Mon Mar 15 2010 00:00:00 GMT+0000 (Coordinated Universal Time)"
       mindate="Mon Feb 15 2010 00:00:00 GMT+0000 (Coordinated Universal Time)"
       month="Mon Feb 15 2010 00:00:00 GMT+0000 (Coordinated Universal Time)"
+      nextmonthlabel="Go to next month"
+      previousmonthlabel="Go to previous month"
     />
     <header
       class="bpk-calendar__header"
@@ -59,6 +61,8 @@ exports[`composeCalendar should render with "fixedWidth" set to false 1`] = `
       maxdate="Mon Mar 15 2010 00:00:00 GMT+0000 (Coordinated Universal Time)"
       mindate="Mon Feb 15 2010 00:00:00 GMT+0000 (Coordinated Universal Time)"
       month="Mon Feb 15 2010 00:00:00 GMT+0000 (Coordinated Universal Time)"
+      nextmonthlabel="Go to next month"
+      previousmonthlabel="Go to previous month"
     />
     <header
       class="bpk-calendar__header"
@@ -91,6 +95,8 @@ exports[`composeCalendar should render with custom className prop correctly 1`] 
       maxdate="Mon Mar 15 2010 00:00:00 GMT+0000 (Coordinated Universal Time)"
       mindate="Mon Feb 15 2010 00:00:00 GMT+0000 (Coordinated Universal Time)"
       month="Mon Feb 15 2010 00:00:00 GMT+0000 (Coordinated Universal Time)"
+      nextmonthlabel="Go to next month"
+      previousmonthlabel="Go to previous month"
     />
     <header
       class="bpk-calendar__header"
@@ -123,6 +129,8 @@ exports[`composeCalendar should render without a header element 1`] = `
       maxdate="Mon Mar 15 2010 00:00:00 GMT+0000 (Coordinated Universal Time)"
       mindate="Mon Feb 15 2010 00:00:00 GMT+0000 (Coordinated Universal Time)"
       month="Mon Feb 15 2010 00:00:00 GMT+0000 (Coordinated Universal Time)"
+      nextmonthlabel="Go to next month"
+      previousmonthlabel="Go to previous month"
     />
     <grid
       class="bpk-calendar__grid"
