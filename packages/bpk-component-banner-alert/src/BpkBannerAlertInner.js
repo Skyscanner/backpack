@@ -185,7 +185,7 @@ const BpkBannerAlertInner = (props: Props) => {
       {...rest}
     >
       <section className={sectionClassNames.join(' ')}>
-        <header
+        <div
           role={ariaRoles.join(' ')}
           className={headerClassNames.join(' ')}
           onClick={onBannerExpandToggle}
@@ -213,7 +213,7 @@ const BpkBannerAlertInner = (props: Props) => {
               />
             </span>
           )}
-        </header>
+        </div>
         <BpkAnimateHeight
           duration={parseInt(durationSm, 10)}
           height={showChildren ? 'auto' : 0}

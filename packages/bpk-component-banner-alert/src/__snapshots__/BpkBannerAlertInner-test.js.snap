@@ -10,7 +10,7 @@ exports[`BpkBannerAlertInner should render correctly with "type" attribute equal
         <section
           class="bpk-banner-alert bpk-banner-alert--error"
         >
-          <header
+          <div
             class="bpk-banner-alert__header"
             role="alert"
           >
@@ -41,7 +41,7 @@ exports[`BpkBannerAlertInner should render correctly with "type" attribute equal
               Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
             </span>
              
-          </header>
+          </div>
           <div
             style="height: 0px; overflow: hidden; transition: height 200ms ease;"
           >
@@ -70,7 +70,7 @@ exports[`BpkBannerAlertInner should render correctly with "type" attribute equal
         <section
           class="bpk-banner-alert bpk-banner-alert--error"
         >
-          <header
+          <div
             class="bpk-banner-alert__header"
             role="alert"
           >
@@ -101,7 +101,7 @@ exports[`BpkBannerAlertInner should render correctly with "type" attribute equal
               Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
             </span>
              
-          </header>
+          </div>
           <div
             style="height: 0px; overflow: hidden; transition: height 200ms ease;"
           >
@@ -130,7 +130,7 @@ exports[`BpkBannerAlertInner should render correctly with "type" attribute equal
         <section
           class="bpk-banner-alert bpk-banner-alert--event"
         >
-          <header
+          <div
             class="bpk-banner-alert__header"
             role="alert"
           >
@@ -161,7 +161,7 @@ exports[`BpkBannerAlertInner should render correctly with "type" attribute equal
               Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
             </span>
              
-          </header>
+          </div>
           <div
             style="height: 0px; overflow: hidden; transition: height 200ms ease;"
           >
@@ -190,7 +190,7 @@ exports[`BpkBannerAlertInner should render correctly with "type" attribute equal
         <section
           class="bpk-banner-alert bpk-banner-alert--neutral"
         >
-          <header
+          <div
             class="bpk-banner-alert__header"
             role="alert"
           >
@@ -221,7 +221,7 @@ exports[`BpkBannerAlertInner should render correctly with "type" attribute equal
               Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
             </span>
              
-          </header>
+          </div>
           <div
             style="height: 0px; overflow: hidden; transition: height 200ms ease;"
           >
@@ -250,7 +250,7 @@ exports[`BpkBannerAlertInner should render correctly with "type" attribute equal
         <section
           class="bpk-banner-alert bpk-banner-alert--primary"
         >
-          <header
+          <div
             class="bpk-banner-alert__header"
             role="alert"
           >
@@ -281,7 +281,7 @@ exports[`BpkBannerAlertInner should render correctly with "type" attribute equal
               Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
             </span>
              
-          </header>
+          </div>
           <div
             style="height: 0px; overflow: hidden; transition: height 200ms ease;"
           >
@@ -310,7 +310,7 @@ exports[`BpkBannerAlertInner should render correctly with "type" attribute equal
         <section
           class="bpk-banner-alert bpk-banner-alert--success"
         >
-          <header
+          <div
             class="bpk-banner-alert__header"
             role="alert"
           >
@@ -341,7 +341,7 @@ exports[`BpkBannerAlertInner should render correctly with "type" attribute equal
               Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
             </span>
              
-          </header>
+          </div>
           <div
             style="height: 0px; overflow: hidden; transition: height 200ms ease;"
           >
@@ -370,7 +370,7 @@ exports[`BpkBannerAlertInner should render correctly with "type" attribute equal
         <section
           class="bpk-banner-alert bpk-banner-alert--warn"
         >
-          <header
+          <div
             class="bpk-banner-alert__header"
             role="alert"
           >
@@ -401,7 +401,7 @@ exports[`BpkBannerAlertInner should render correctly with "type" attribute equal
               Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
             </span>
              
-          </header>
+          </div>
           <div
             style="height: 0px; overflow: hidden; transition: height 200ms ease;"
           >
@@ -430,7 +430,7 @@ exports[`BpkBannerAlertInner should render correctly with a custom banner-alert 
         <section
           class="bpk-banner-alert bpk-banner-alert--warn custom-class"
         >
-          <header
+          <div
             class="bpk-banner-alert__header"
             role="alert"
           >
@@ -461,7 +461,7 @@ exports[`BpkBannerAlertInner should render correctly with a custom banner-alert 
               Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
             </span>
              
-          </header>
+          </div>
           <div
             style="height: 0px; overflow: hidden; transition: height 200ms ease;"
           >
@@ -491,7 +491,7 @@ exports[`BpkBannerAlertInner should render correctly with a custom class name 1`
         <section
           class="bpk-banner-alert bpk-banner-alert--warn"
         >
-          <header
+          <div
             class="bpk-banner-alert__header"
             role="alert"
           >
@@ -522,7 +522,7 @@ exports[`BpkBannerAlertInner should render correctly with a custom class name 1`
               Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
             </span>
              
-          </header>
+          </div>
           <div
             style="height: 0px; overflow: hidden; transition: height 200ms ease;"
           >
@@ -551,7 +551,7 @@ exports[`BpkBannerAlertInner should render correctly with a element based messag
         <section
           class="bpk-banner-alert bpk-banner-alert--success"
         >
-          <header
+          <div
             class="bpk-banner-alert__header bpk-banner-alert__header--expandable"
             role="alert button"
           >
@@ -615,7 +615,7 @@ exports[`BpkBannerAlertInner should render correctly with a element based messag
                 </span>
               </button>
             </span>
-          </header>
+          </div>
           <div
             style="height: 0px; overflow: hidden; transition: height 200ms ease;"
           >
@@ -646,7 +646,7 @@ exports[`BpkBannerAlertInner should render correctly with animateOnLeave 1`] = `
         <section
           class="bpk-banner-alert bpk-banner-alert--warn"
         >
-          <header
+          <div
             class="bpk-banner-alert__header"
             role="alert"
           >
@@ -700,7 +700,7 @@ exports[`BpkBannerAlertInner should render correctly with animateOnLeave 1`] = `
                 </svg>
               </button>
             </span>
-          </header>
+          </div>
           <div
             style="height: 0px; overflow: hidden; transition: height 200ms ease;"
           >
@@ -729,7 +729,7 @@ exports[`BpkBannerAlertInner should render correctly with arbitrary props 1`] = 
         <section
           class="bpk-banner-alert bpk-banner-alert--warn"
         >
-          <header
+          <div
             class="bpk-banner-alert__header"
             role="alert"
           >
@@ -760,7 +760,7 @@ exports[`BpkBannerAlertInner should render correctly with arbitrary props 1`] = 
               Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
             </span>
              
-          </header>
+          </div>
           <div
             style="height: 0px; overflow: hidden; transition: height 200ms ease;"
           >
@@ -789,7 +789,7 @@ exports[`BpkBannerAlertInner should render correctly with child nodes 1`] = `
         <section
           class="bpk-banner-alert bpk-banner-alert--success"
         >
-          <header
+          <div
             class="bpk-banner-alert__header bpk-banner-alert__header--expandable"
             role="alert button"
           >
@@ -848,7 +848,7 @@ exports[`BpkBannerAlertInner should render correctly with child nodes 1`] = `
                 </span>
               </button>
             </span>
-          </header>
+          </div>
           <div
             style="height: 0px; overflow: hidden; transition: height 200ms ease;"
           >
@@ -879,7 +879,7 @@ exports[`BpkBannerAlertInner should render correctly with dismissable option 1`]
         <section
           class="bpk-banner-alert bpk-banner-alert--warn"
         >
-          <header
+          <div
             class="bpk-banner-alert__header"
             role="alert"
           >
@@ -933,7 +933,7 @@ exports[`BpkBannerAlertInner should render correctly with dismissable option 1`]
                 </svg>
               </button>
             </span>
-          </header>
+          </div>
           <div
             style="height: 0px; overflow: hidden; transition: height 200ms ease;"
           >
