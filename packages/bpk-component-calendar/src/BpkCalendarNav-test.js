@@ -36,6 +36,7 @@ describe('BpkCalendarNav', () => {
         changeMonthLabel="Change month"
         previousMonthLabel="Go to previous month"
         nextMonthLabel="Go to next month"
+        nowDisplayingLabel="Displaying month"
         id="myCalendarNav"
       />,
     );
@@ -52,6 +53,7 @@ describe('BpkCalendarNav', () => {
         changeMonthLabel="Change month"
         previousMonthLabel="Go to previous month"
         nextMonthLabel="Go to next month"
+        nowDisplayingLabel="Displaying month"
         disabled
         id="myCalendarNav"
       />,
@@ -69,6 +71,7 @@ describe('BpkCalendarNav', () => {
         changeMonthLabel="Change month"
         previousMonthLabel="Go to previous month"
         nextMonthLabel="Go to next month"
+        nowDisplayingLabel="Displaying month"
         disabled
         id="myCalendarNav"
       />,
@@ -88,6 +91,7 @@ describe('BpkCalendarNav', () => {
         changeMonthLabel="Change month"
         previousMonthLabel="Go to previous month"
         nextMonthLabel="Go to next month"
+        nowDisplayingLabel="Displaying month"
         onMonthChange={onMonthChange}
         id="myCalendarNav"
       />,

@@ -57,6 +57,7 @@ const BpkCalendarNav = props => {
     changeMonthLabel,
     disabled,
     nextMonthLabel,
+    nowDisplayingLabel,
     previousMonthLabel,
   } = props;
 
@@ -97,7 +98,6 @@ const BpkCalendarNav = props => {
           {changeMonthLabel}
         </label>
 
-        <BpkAriaLive aria-hidden="true">{formatMonth(baseMonth)}</BpkAriaLive>
         <BpkSelect
           id={`${id}_select`}
           name="months"
@@ -140,6 +140,10 @@ const BpkCalendarNav = props => {
           </span>
         </button>
       </div>
+
+      <BpkAriaLive>
+        {`${nowDisplayingLabel} ${formatMonth(baseMonth)}`}
+      </BpkAriaLive>
     </div>
   );
 };
@@ -153,6 +157,7 @@ BpkCalendarNav.propTypes = {
   minDate: PropTypes.instanceOf(Date).isRequired,
   month: PropTypes.instanceOf(Date).isRequired,
   nextMonthLabel: PropTypes.string.isRequired,
+  nowDisplayingLabel: PropTypes.string.isRequired,
   previousMonthLabel: PropTypes.string.isRequired,
   // Optional
   onMonthChange: PropTypes.func,

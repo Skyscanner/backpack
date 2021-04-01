@@ -366,6 +366,7 @@ const DatepickerExample = () => {
         changeMonthLabel="Change month"
         previousMonthLabel="Go to previous month"
         nextMonthLabel="Go to next month"
+        nowDisplayingLabel="Displaying month"
         title="Date"
         weekStartsOn={1}
         getApplicationElement={() => document.createElement('div')}

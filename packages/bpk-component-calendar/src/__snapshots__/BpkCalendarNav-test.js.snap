@@ -42,13 +42,6 @@ exports[`BpkCalendarNav should disable inputs when disabled 1`] = `
       >
         Change month
       </label>
-      <div
-        aria-hidden="true"
-        aria-live="polite"
-        class="bpk-aria-live bpk-aria-live--invisible"
-      >
-        February 2010
-      </div>
       <select
         aria-invalid="false"
         class="bpk-select"
@@ -94,6 +87,12 @@ exports[`BpkCalendarNav should disable inputs when disabled 1`] = `
           Go to next month
         </span>
       </button>
+    </div>
+    <div
+      aria-live="polite"
+      class="bpk-aria-live bpk-aria-live--invisible"
+    >
+      Displaying month February 2010
     </div>
   </div>
 </DocumentFragment>
@@ -141,13 +140,6 @@ exports[`BpkCalendarNav should render correctly 1`] = `
       >
         Change month
       </label>
-      <div
-        aria-hidden="true"
-        aria-live="polite"
-        class="bpk-aria-live bpk-aria-live--invisible"
-      >
-        February 2010
-      </div>
       <select
         aria-invalid="false"
         class="bpk-select"
@@ -191,6 +183,12 @@ exports[`BpkCalendarNav should render correctly 1`] = `
           Go to next month
         </span>
       </button>
+    </div>
+    <div
+      aria-live="polite"
+      class="bpk-aria-live bpk-aria-live--invisible"
+    >
+      Displaying month February 2010
     </div>
   </div>
 </DocumentFragment>
@@ -238,13 +236,6 @@ exports[`BpkCalendarNav should use given previousMonth and nextMonth labels corr
       >
         Change month
       </label>
-      <div
-        aria-hidden="true"
-        aria-live="polite"
-        class="bpk-aria-live bpk-aria-live--invisible"
-      >
-        February 2010
-      </div>
       <select
         aria-invalid="false"
         class="bpk-select"
@@ -290,6 +281,12 @@ exports[`BpkCalendarNav should use given previousMonth and nextMonth labels corr
           Go to next month
         </span>
       </button>
+    </div>
+    <div
+      aria-live="polite"
+      class="bpk-aria-live bpk-aria-live--invisible"
+    >
+      Displaying month February 2010
     </div>
   </div>
 </DocumentFragment>

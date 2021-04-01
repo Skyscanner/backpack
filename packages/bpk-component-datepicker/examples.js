@@ -159,6 +159,7 @@ class ReturnDatepicker extends Component {
             changeMonthLabel="Change month"
             previousMonthLabel="Go to previous month"
             nextMonthLabel="Go to next month"
+            nowDisplayingLabel="Displaying month"
             title="Departure date"
             getApplicationElement={() =>
               document.getElementById('application-element')
@@ -191,6 +192,7 @@ class ReturnDatepicker extends Component {
             changeMonthLabel="Change month"
             previousMonthLabel="Go to previous month"
             nextMonthLabel="Go to next month"
+            nowDisplayingLabel="Displaying month"
             title="Return date"
             getApplicationElement={() =>
               document.getElementById('application-element')
@@ -236,6 +238,7 @@ const DefaultExample = () => (
       changeMonthLabel="Change month"
       previousMonthLabel="Go to previous month"
       nextMonthLabel="Go to next month"
+      nowDisplayingLabel="Displaying month"
       title="Departure date"
       formatDate={formatDate}
       formatMonth={formatMonth}
@@ -255,6 +258,7 @@ const OpenOnRender = () => (
       changeMonthLabel="Change month"
       previousMonthLabel="Go to previous month"
       nextMonthLabel="Go to next month"
+      nowDisplayingLabel="Displaying month"
       title="Departure date"
       formatDate={formatDate}
       formatMonth={formatMonth}
@@ -275,6 +279,7 @@ const MinDateInPast = () => (
       changeMonthLabel="Change month"
       previousMonthLabel="Go to previous month"
       nextMonthLabel="Go to next month"
+      nowDisplayingLabel="Displaying month"
       title="Departure date"
       formatDate={formatDate}
       formatMonth={formatMonth}
@@ -295,6 +300,7 @@ const WithoutDateSet = () => (
       changeMonthLabel="Change month"
       previousMonthLabel="Go to previous month"
       nextMonthLabel="Go to next month"
+      nowDisplayingLabel="Displaying month"
       title="Departure date"
       formatDate={formatDate}
       formatMonth={formatMonth}
@@ -313,6 +319,7 @@ const PassingProps = () => (
       changeMonthLabel="Change month"
       previousMonthLabel="Go to previous month"
       nextMonthLabel="Go to next month"
+      nowDisplayingLabel="Displaying month"
       title="Departure date"
       formatDate={formatDate}
       formatMonth={formatMonth}
@@ -344,6 +351,7 @@ const CustomComponent = () => {
         changeMonthLabel="Change month"
         previousMonthLabel="Go to previous month"
         nextMonthLabel="Go to next month"
+        nowDisplayingLabel="Displaying month"
         title="Departure date"
         formatDate={formatDate}
         formatMonth={formatMonth}
@@ -364,6 +372,7 @@ const InvalidExample = () => (
       changeMonthLabel="Change month"
       previousMonthLabel="Go to previous month"
       nextMonthLabel="Go to next month"
+      nowDisplayingLabel="Displaying month"
       title="Departure date"
       formatDate={formatDate}
       formatMonth={formatMonth}
