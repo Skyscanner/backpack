@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-rating",
-  "version": "2.1.43",
+  "version": "2.1.44",
   "description": "Backpack rating component.",
   "license": "Apache-2.0",
   "repository": {
@@ -14,8 +14,8 @@
   },
   "gitHead": "6b6b8e2511c9f50354ba6eca5331e093901400fe",
   "dependencies": {
-    "bpk-mixins": "^20.1.28",
-    "bpk-react-utils": "^3.0.11",
+    "bpk-mixins": "^20.1.29",
+    "bpk-react-utils": "^3.0.12",
     "lodash.clamp": "^4.0.3",
     "prop-types": "^15.5.8"
   },
@@ -23,7 +23,7 @@
     "react": "^16.0.0"
   },
   "devDependencies": {
-    "bpk-component-text": "^3.1.47",
+    "bpk-component-text": "^3.1.48",
     "bpk-tokens": "^36.1.1"
   }
 }

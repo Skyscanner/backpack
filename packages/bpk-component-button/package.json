@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-button",
-  "version": "3.3.28",
+  "version": "3.3.29",
   "description": "Backpack button component.",
   "license": "Apache-2.0",
   "repository": {
@@ -14,11 +14,11 @@
   },
   "gitHead": "6b6b8e2511c9f50354ba6eca5331e093901400fe",
   "dependencies": {
-    "bpk-mixins": "^20.1.28",
+    "bpk-mixins": "^20.1.29",
     "prop-types": "^15.6.2"
   },
   "devDependencies": {
-    "bpk-storybook-utils": "^0.0.16"
+    "bpk-storybook-utils": "^0.0.17"
   },
   "peerDependencies": {
     "react": "^16.0.0"
