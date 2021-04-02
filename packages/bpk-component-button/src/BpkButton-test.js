@@ -17,20 +17,9 @@
  */
 
 import React from 'react';
-import { axe } from 'jest-axe';
 import { render } from '@testing-library/react';
 
 import BpkButton from './BpkButton';
-
-describe('BpkButton accessibility tests', () => {
-  it('should not have programmatically detectable accessibility issues', async () => {
-    const { container } = render(
-      <BpkButton onClick={() => {}}>My button</BpkButton>,
-    );
-    const results = await axe(container);
-    expect(results).toHaveNoViolations();
-  });
-});
 
 describe('BpkButton', () => {
   it('should render correctly', () => {
