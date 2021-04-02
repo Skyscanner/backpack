@@ -16,31 +16,26 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
 import React from 'react';
 import { render } from '@testing-library/react';
 import { axe } from 'jest-axe';
 
-import BpkDismissibleChip from './BpkDismissibleChip';
-import BpkSelectableChip from './BpkSelectableChip';
+import BpkFlareBar from './BpkFlareBar';
+import BpkContentBubble from './BpkContentBubble';
 
-describe('BpkChip accessibility tests', () => {
-  it('should not have programmatically-detectable accessibility issues – BpkDismissibleChip', async () => {
-    const { container } = render(
-      <BpkDismissibleChip onClick={() => null} accessibilityLabel="Dismiss">
-        Dismiss me
-      </BpkDismissibleChip>,
-    );
+describe('BpkFlareBar accessibility tests', () => {
+  it('should not have programmatically-detectable accessibility issues', async () => {
+    const { container } = render(<BpkFlareBar />);
     const results = await axe(container);
     expect(results).toHaveNoViolations();
   });
+});
 
-  it('should not have programmatically-detectable accessibility issues – BpkSelectableChip', async () => {
+describe('BpkContentBubble accessibility tests', () => {
+  it('should not have programmatically-detectable accessibility issues', async () => {
+    const content = <div>Test</div>;
     const { container } = render(
-      <BpkSelectableChip onClick={() => null} accessibilityLabel="Toggle">
-        Toggle me
-      </BpkSelectableChip>,
+      <BpkContentBubble showPointer content={content} />,
     );
     const results = await axe(container);
     expect(results).toHaveNoViolations();

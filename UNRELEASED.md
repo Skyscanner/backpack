@@ -6,7 +6,9 @@
 - bpk-component-accordion:
   - Improved accessibility by removing invalid `aria-level="3"` attribute on `BpkAccordionItem`.
 - bpk-component-banner-alert:
-  - Improved accessibility by changing banner alerts to use `div` instead `header`, which was invalid.
+  - Improved accessibility by replacing an internal `header` (invalid element for accessibility) to `div`.
+- bpk-component-datatable:
+  - Fixed a prop type that was incorrectly defined.
 
 ## How to write a good changelog entry
 

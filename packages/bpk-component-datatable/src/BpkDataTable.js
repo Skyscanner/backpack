@@ -190,7 +190,7 @@ BpkDataTable.propTypes = {
   defaultColumnSortIndex: PropTypes.number,
   sort: PropTypes.func,
   sortBy: PropTypes.string,
-  sortDirection: PropTypes.oneOf('ASC', 'DESC'),
+  sortDirection: PropTypes.oneOf(['ASC', 'DESC']),
 };
 
 export default BpkDataTable;
