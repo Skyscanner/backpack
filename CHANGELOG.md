@@ -1,7 +1,3 @@
-# Backpack changelog
-
-[Unreleased changes](./UNRELEASED.md).
-
 # 2021-04-02
 
 **Added:**

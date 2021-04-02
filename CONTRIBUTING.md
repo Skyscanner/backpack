@@ -210,7 +210,7 @@ You can also run the tests in 'watch mode', which means the process will continu
 <details>
 <summary>Publish packages (Backpack squad members only)</summary>
 
-- Update the [unreleased changelog](/UNRELEASED.md) with every package that has changed, separating out `BRAKING`, `ADDED` and `FIXED` changes (there are examples at the bottom of the file). If you need more details on classification please checkout the [versioning decision](/decisions/versioning-rules.md)).
+- Update the [unreleased changelog](/UNRELEASED.md) with every package that has changed, separating out `BRAKING`, `ADDED` and `FIXED` changes. See `CHANGELOG_FORMAT.md` for tips.
   - Some useful commands for determining "what's changed?":
     - `npm run lerna updated`
     - `npm run lerna diff <package-name>`
