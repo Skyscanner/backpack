@@ -57,7 +57,6 @@ describe('BpkDatepicker', () => {
         changeMonthLabel="Change month"
         previousMonthLabel="Go to previous month"
         nextMonthLabel="Go to next month"
-        nowDisplayingLabel="Displaying month"
         title="Departure date"
         weekStartsOn={1}
         getApplicationElement={() => document.createElement('div')}
@@ -83,7 +82,6 @@ describe('BpkDatepicker', () => {
         changeMonthLabel="Change month"
         previousMonthLabel="Go to previous month"
         nextMonthLabel="Go to next month"
-        nowDisplayingLabel="Displaying month"
         title="Departure date"
         weekStartsOn={1}
         getApplicationElement={() => document.createElement('div')}
@@ -108,7 +106,6 @@ describe('BpkDatepicker', () => {
         changeMonthLabel="Change month"
         previousMonthLabel="Go to previous month"
         nextMonthLabel="Go to next month"
-        nowDisplayingLabel="Displaying month"
         title="Departure date"
         weekStartsOn={1}
         getApplicationElement={() => document.createElement('div')}
@@ -139,7 +136,6 @@ describe('BpkDatepicker', () => {
         changeMonthLabel="Change month"
         previousMonthLabel="Go to previous month"
         nextMonthLabel="Go to next month"
-        nowDisplayingLabel="Displaying month"
         title="Departure date"
         weekStartsOn={1}
         getApplicationElement={() => document.createElement('div')}
@@ -164,7 +160,6 @@ describe('BpkDatepicker', () => {
         changeMonthLabel="Change month"
         previousMonthLabel="Go to previous month"
         nextMonthLabel="Go to next month"
-        nowDisplayingLabel="Displaying month"
         title="Departure date"
         weekStartsOn={1}
         getApplicationElement={() => document.createElement('div')}
@@ -193,7 +188,6 @@ describe('BpkDatepicker', () => {
         changeMonthLabel="Change month"
         previousMonthLabel="Go to previous month"
         nextMonthLabel="Go to next month"
-        nowDisplayingLabel="Displaying month"
         title="Departure date"
         getApplicationElement={() => document.createElement('div')}
         formatDate={formatDate}
@@ -222,7 +216,6 @@ describe('BpkDatepicker', () => {
         changeMonthLabel="Change month"
         previousMonthLabel="Go to previous month"
         nextMonthLabel="Go to next month"
-        nowDisplayingLabel="Displaying month"
         title="Departure date"
         getApplicationElement={() => document.createElement('div')}
         formatDate={formatDate}
@@ -255,7 +248,6 @@ describe('BpkDatepicker', () => {
         changeMonthLabel="Change month"
         previousMonthLabel="Go to previous month"
         nextMonthLabel="Go to next month"
-        nowDisplayingLabel="Displaying month"
         title="Departure date"
         getApplicationElement={() => document.createElement('div')}
         formatDate={formatDate}
@@ -291,7 +283,6 @@ describe('BpkDatepicker', () => {
         changeMonthLabel="Change month"
         previousMonthLabel="Go to previous month"
         nextMonthLabel="Go to next month"
-        nowDisplayingLabel="Displaying month"
         title="Departure date"
         weekStartsOn={1}
         getApplicationElement={() => document.createElement('div')}

@@ -182,7 +182,6 @@ class MonthViewCalendar extends Component {
           changeMonthLabel="Change month"
           previousMonthLabel="Go to previous month"
           nextMonthLabel="Go to next month"
-          nowDisplayingLabel="displaying month"
           date={this.state.departDate}
           fixedWidth={false}
           onDateSelect={departDate => {
@@ -212,7 +211,6 @@ class MonthViewCalendar extends Component {
           changeMonthLabel="Change month"
           previousMonthLabel="Go to previous month"
           nextMonthLabel="Go to next month"
-          nowDisplayingLabel="displaying month"
           date={this.state.returnDate}
           fixedWidth={false}
           onDateSelect={returnDate => {

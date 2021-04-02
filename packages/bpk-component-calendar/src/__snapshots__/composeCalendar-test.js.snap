@@ -12,7 +12,6 @@ exports[`composeCalendar should compose a nav, header, grid and date component c
       mindate="Mon Feb 15 2010 00:00:00 GMT+0000 (Coordinated Universal Time)"
       month="Mon Feb 15 2010 00:00:00 GMT+0000 (Coordinated Universal Time)"
       nextmonthlabel="Go to next month"
-      nowdisplayinglabel="Displaying month"
       previousmonthlabel="Go to previous month"
     />
     <header
@@ -63,7 +62,6 @@ exports[`composeCalendar should render with "fixedWidth" set to false 1`] = `
       mindate="Mon Feb 15 2010 00:00:00 GMT+0000 (Coordinated Universal Time)"
       month="Mon Feb 15 2010 00:00:00 GMT+0000 (Coordinated Universal Time)"
       nextmonthlabel="Go to next month"
-      nowdisplayinglabel="Displaying month"
       previousmonthlabel="Go to previous month"
     />
     <header
@@ -98,7 +96,6 @@ exports[`composeCalendar should render with custom className prop correctly 1`] 
       mindate="Mon Feb 15 2010 00:00:00 GMT+0000 (Coordinated Universal Time)"
       month="Mon Feb 15 2010 00:00:00 GMT+0000 (Coordinated Universal Time)"
       nextmonthlabel="Go to next month"
-      nowdisplayinglabel="Displaying month"
       previousmonthlabel="Go to previous month"
     />
     <header
@@ -133,7 +130,6 @@ exports[`composeCalendar should render without a header element 1`] = `
       mindate="Mon Feb 15 2010 00:00:00 GMT+0000 (Coordinated Universal Time)"
       month="Mon Feb 15 2010 00:00:00 GMT+0000 (Coordinated Universal Time)"
       nextmonthlabel="Go to next month"
-      nowdisplayinglabel="Displaying month"
       previousmonthlabel="Go to previous month"
     />
     <grid

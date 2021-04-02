@@ -44,7 +44,6 @@ const composeCalendar = (Nav, GridHeader, Grid, CalendarDate) => {
       minDate,
       month,
       nextMonthLabel,
-      nowDisplayingLabel,
       onDateClick,
       onDateKeyDown,
       onMonthChange,
@@ -97,7 +96,6 @@ const composeCalendar = (Nav, GridHeader, Grid, CalendarDate) => {
             minDate={minDate}
             month={month}
             nextMonthLabel={nextMonthLabel}
-            nowDisplayingLabel={nowDisplayingLabel}
             onMonthChange={onMonthChange}
             previousMonthLabel={previousMonthLabel}
             {...navProps}
@@ -150,7 +148,6 @@ const composeCalendar = (Nav, GridHeader, Grid, CalendarDate) => {
     minDate: PropTypes.instanceOf(Date).isRequired,
     month: PropTypes.instanceOf(Date).isRequired,
     nextMonthLabel: Nav ? PropTypes.string.isRequired : PropTypes.string,
-    nowDisplayingLabel: Nav ? PropTypes.string.isRequired : PropTypes.string,
     previousMonthLabel: Nav ? PropTypes.string.isRequired : PropTypes.string,
     weekStartsOn: PropTypes.number.isRequired,
     // Optional
@@ -185,7 +182,6 @@ const composeCalendar = (Nav, GridHeader, Grid, CalendarDate) => {
     markOutsideDays: true,
     markToday: true,
     nextMonthLabel: null,
-    nowDisplayingLabel: null,
     onMonthChange: () => null,
     onDateClick: () => null,
     onDateKeyDown: () => null,

@@ -84,7 +84,6 @@ const CalendarNavExample = () => (
     changeMonthLabel="Change month"
     previousMonthLabel="Go to previous month"
     nextMonthLabel="Go to next month"
-    nowDisplayingLabel="Displaying month"
     onMonthChange={action('Changed month')}
     minDate={new Date()}
     maxDate={addMonths(new Date(), 12)}
@@ -132,7 +131,6 @@ const DefaultExample = () => (
     changeMonthLabel="Change month"
     previousMonthLabel="Go to previous month"
     nextMonthLabel="Go to next month"
-    nowDisplayingLabel="Displaying month"
   />
 );
 
@@ -146,7 +144,6 @@ const MinDateInThePastExample = () => (
     changeMonthLabel="Change month"
     previousMonthLabel="Go to previous month"
     nextMonthLabel="Go to next month"
-    nowDisplayingLabel="Displaying month"
     minDate={new Date(2011, 1, 1)}
     selectTodaysDate={false}
     initiallyFocusedDate={new Date()}
@@ -163,7 +160,6 @@ const NoWeekendSeparatorExample = () => (
     changeMonthLabel="Change month"
     previousMonthLabel="Go to previous month"
     nextMonthLabel="Go to next month"
-    nowDisplayingLabel="Displaying month"
     showWeekendSeparator={false}
   />
 );
@@ -178,7 +174,6 @@ const WeekStartsOnSundayExample = () => (
     changeMonthLabel="Change month"
     previousMonthLabel="Go to previous month"
     nextMonthLabel="Go to next month"
-    nowDisplayingLabel="Displaying month"
   />
 );
 
@@ -192,7 +187,6 @@ const HonestWeekendExample = () => (
     changeMonthLabel="Change month"
     previousMonthLabel="Go to previous month"
     nextMonthLabel="Go to next month"
-    nowDisplayingLabel="Displaying month"
   />
 );
 
@@ -206,7 +200,6 @@ const WeekdayKeyIsNameNarrow = () => (
     changeMonthLabel="Change month"
     previousMonthLabel="Go to previous month"
     nextMonthLabel="Go to next month"
-    nowDisplayingLabel="Displaying month"
     weekDayKey="nameNarrow"
   />
 );
@@ -219,9 +212,6 @@ const ArabicExample = () => (
     daysOfWeek={weekDaysArabic}
     weekStartsOn={6}
     changeMonthLabel="Change month"
-    previousMonthLabel="Go to previous month"
-    nextMonthLabel="Go to next month"
-    nowDisplayingLabel="Displaying month"
   />
 );
 
@@ -235,7 +225,6 @@ const JapaneseExample = () => (
     changeMonthLabel="Change month"
     previousMonthLabel="Go to previous month"
     nextMonthLabel="Go to next month"
-    nowDisplayingLabel="Displaying month"
   />
 );
 
@@ -249,7 +238,6 @@ const MinAndMaxDate = () => (
     changeMonthLabel="Change month"
     previousMonthLabel="Go to previous month"
     nextMonthLabel="Go to next month"
-    nowDisplayingLabel="Displaying month"
     minDate={new Date(2020, 4, 15)}
     maxDate={new Date(2020, 5, 15)}
   />
@@ -265,7 +253,6 @@ const MarkTodayFalseExample = () => (
     changeMonthLabel="Change month"
     previousMonthLabel="Go to previous month"
     nextMonthLabel="Go to next month"
-    nowDisplayingLabel="Displaying month"
     markToday={false}
   />
 );
@@ -280,7 +267,6 @@ const MarkOutsideDaysFalseExample = () => (
     changeMonthLabel="Change month"
     previousMonthLabel="Go to previous month"
     nextMonthLabel="Go to next month"
-    nowDisplayingLabel="Displaying month"
     markOutsideDays={false}
   />
 );
