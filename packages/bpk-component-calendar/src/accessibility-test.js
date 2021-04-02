@@ -41,6 +41,8 @@ describe('BpkCalendar accessibility tests', () => {
         minDate={new Date(2010, 1, 15)}
         maxDate={new Date(2010, 2, 15)}
         selectedDate={new Date(2010, 1, 15)}
+        previousMonthLabel="Go to previous month"
+        nextMonthLabel="Go to next month"
       />,
       { createNodeMock },
     );
