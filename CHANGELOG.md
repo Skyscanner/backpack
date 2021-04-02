@@ -1,11 +1,6 @@
 # Backpack changelog
 
 [Unreleased changes](./UNRELEASED.md).
-# 2021-04-02
-
-**Added:**
-- bpk-component-calendar:
-  - Calendar Nav updated to use labels for nudgers and month aria-live region added for assistive technology.
 
 # 2021-03-25
 

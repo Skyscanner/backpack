@@ -2,6 +2,10 @@
 
 > Place your changes below this line.
 
+**Added:**
+- bpk-component-calendar:
+  - Calendar Nav updated to use labels for next and previous buttons and `aria-live` region added for assistive technology.
+
 **Fixed:**
 - bpk-component-accordion:
   - Improved accessibility by removing invalid `aria-level="3"` attribute on `BpkAccordionItem`.
