@@ -2,18 +2,6 @@
 
 > Place your changes below this line.
 
-**Added:**
-- bpk-component-calendar:
-  - Calendar Nav updated to use labels for next and previous buttons and `aria-live` region added for assistive technology.
-
-**Fixed:**
-- bpk-component-accordion:
-  - Improved accessibility by removing invalid `aria-level="3"` attribute on `BpkAccordionItem`.
-- bpk-component-banner-alert:
-  - Improved accessibility by replacing an internal `header` (invalid element for accessibility) to `div`.
-- bpk-component-datatable:
-  - Fixed a prop type that was incorrectly defined.
-
 ## How to write a good changelog entry
 
 1. Add 'Breaking', 'Added' or 'Fixed' in bold depending on if the change will be major, minor or patch according to [semver](semver.org).

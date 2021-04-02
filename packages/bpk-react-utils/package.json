@@ -12,7 +12,7 @@
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
-  "gitHead": "09fc99e4e67a5b71dc15f41a5409ad412bc139d4",
+  "gitHead": "cb956fcebacca28ee51adcf5b28068af87aaf0ff",
   "dependencies": {
     "object-assign": "^4.1.1",
     "prop-types": "^15.6.2",
