@@ -157,6 +157,8 @@ class ReturnDatepicker extends Component {
             daysOfWeek={weekDays}
             weekStartsOn={1}
             changeMonthLabel="Change month"
+            previousMonthLabel="Go to previous month"
+            nextMonthLabel="Go to next month"
             title="Departure date"
             getApplicationElement={() =>
               document.getElementById('application-element')
@@ -187,6 +189,8 @@ class ReturnDatepicker extends Component {
             daysOfWeek={weekDays}
             weekStartsOn={1}
             changeMonthLabel="Change month"
+            previousMonthLabel="Go to previous month"
+            nextMonthLabel="Go to next month"
             title="Return date"
             getApplicationElement={() =>
               document.getElementById('application-element')
@@ -230,6 +234,8 @@ const DefaultExample = () => (
       daysOfWeek={weekDays}
       weekStartsOn={1}
       changeMonthLabel="Change month"
+      previousMonthLabel="Go to previous month"
+      nextMonthLabel="Go to next month"
       title="Departure date"
       formatDate={formatDate}
       formatMonth={formatMonth}
@@ -247,6 +253,8 @@ const OpenOnRender = () => (
       daysOfWeek={weekDays}
       weekStartsOn={1}
       changeMonthLabel="Change month"
+      previousMonthLabel="Go to previous month"
+      nextMonthLabel="Go to next month"
       title="Departure date"
       formatDate={formatDate}
       formatMonth={formatMonth}
@@ -265,6 +273,8 @@ const MinDateInPast = () => (
       daysOfWeek={weekDays}
       weekStartsOn={1}
       changeMonthLabel="Change month"
+      previousMonthLabel="Go to previous month"
+      nextMonthLabel="Go to next month"
       title="Departure date"
       formatDate={formatDate}
       formatMonth={formatMonth}
@@ -283,6 +293,8 @@ const WithoutDateSet = () => (
       daysOfWeek={weekDays}
       weekStartsOn={1}
       changeMonthLabel="Change month"
+      previousMonthLabel="Go to previous month"
+      nextMonthLabel="Go to next month"
       title="Departure date"
       formatDate={formatDate}
       formatMonth={formatMonth}
@@ -299,6 +311,8 @@ const PassingProps = () => (
       daysOfWeek={weekDays}
       weekStartsOn={1}
       changeMonthLabel="Change month"
+      previousMonthLabel="Go to previous month"
+      nextMonthLabel="Go to next month"
       title="Departure date"
       formatDate={formatDate}
       formatMonth={formatMonth}
@@ -328,6 +342,8 @@ const CustomComponent = () => {
         daysOfWeek={weekDays}
         weekStartsOn={1}
         changeMonthLabel="Change month"
+        previousMonthLabel="Go to previous month"
+        nextMonthLabel="Go to next month"
         title="Departure date"
         formatDate={formatDate}
         formatMonth={formatMonth}
@@ -346,6 +362,8 @@ const InvalidExample = () => (
       daysOfWeek={weekDays}
       weekStartsOn={1}
       changeMonthLabel="Change month"
+      previousMonthLabel="Go to previous month"
+      nextMonthLabel="Go to next month"
       title="Departure date"
       formatDate={formatDate}
       formatMonth={formatMonth}

@@ -43,10 +43,12 @@ const composeCalendar = (Nav, GridHeader, Grid, CalendarDate) => {
       maxDate,
       minDate,
       month,
+      nextMonthLabel,
       onDateClick,
       onDateKeyDown,
       onMonthChange,
       preventKeyboardFocus,
+      previousMonthLabel,
       selectedDate,
       showWeekendSeparator,
       weekStartsOn,
@@ -93,7 +95,9 @@ const composeCalendar = (Nav, GridHeader, Grid, CalendarDate) => {
             maxDate={maxDate}
             minDate={minDate}
             month={month}
+            nextMonthLabel={nextMonthLabel}
             onMonthChange={onMonthChange}
+            previousMonthLabel={previousMonthLabel}
             {...navProps}
           />
         )}
@@ -143,6 +147,8 @@ const composeCalendar = (Nav, GridHeader, Grid, CalendarDate) => {
     maxDate: PropTypes.instanceOf(Date).isRequired,
     minDate: PropTypes.instanceOf(Date).isRequired,
     month: PropTypes.instanceOf(Date).isRequired,
+    nextMonthLabel: Nav ? PropTypes.string.isRequired : PropTypes.string,
+    previousMonthLabel: Nav ? PropTypes.string.isRequired : PropTypes.string,
     weekStartsOn: PropTypes.number.isRequired,
     // Optional
     className: PropTypes.string,
@@ -175,10 +181,12 @@ const composeCalendar = (Nav, GridHeader, Grid, CalendarDate) => {
     focusedDate: null,
     markOutsideDays: true,
     markToday: true,
+    nextMonthLabel: null,
     onMonthChange: () => null,
     onDateClick: () => null,
     onDateKeyDown: () => null,
     preventKeyboardFocus: false,
+    previousMonthLabel: null,
     selectedDate: null,
     showWeekendSeparator: true,
     gridClassName: null,

@@ -7,6 +7,7 @@
 **Fixed:**
 - bpk-component-star-rating:
   - Tweaked the colours to be slightly darker to improve contrast.
+
 # 2021-03-24
 
 **Fixed:**

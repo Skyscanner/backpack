@@ -22,6 +22,7 @@ import ArrowLeftIcon from 'bpk-component-icon/lg/arrow-left';
 import ArrowRightIcon from 'bpk-component-icon/lg/arrow-right';
 import BpkSelect from 'bpk-component-select';
 import { cssModules } from 'bpk-react-utils';
+import BpkAriaLive from 'bpk-component-aria-live';
 
 import {
   addMonths,
@@ -55,6 +56,8 @@ const BpkCalendarNav = props => {
     onMonthChange,
     changeMonthLabel,
     disabled,
+    nextMonthLabel,
+    previousMonthLabel,
   } = props;
 
   const baseMonth = startOfMonth(month);
@@ -81,7 +84,7 @@ const BpkCalendarNav = props => {
         >
           <ArrowLeftIcon className={getClassName('bpk-calendar-nav__icon')} />
           <span className={getClassName('bpk-calendar-nav__text--hidden')}>
-            {formatMonth(addMonths(baseMonth, -1))}
+            {previousMonthLabel}
           </span>
         </button>
       </div>
@@ -89,9 +92,11 @@ const BpkCalendarNav = props => {
         <label
           htmlFor={`${id}_select`}
           className={getClassName('bpk-calendar-nav__text--hidden')}
+          aria-hidden="true"
         >
           {changeMonthLabel}
         </label>
+
         <BpkSelect
           id={`${id}_select`}
           name="months"
@@ -130,10 +135,11 @@ const BpkCalendarNav = props => {
         >
           <ArrowRightIcon className={getClassName('bpk-calendar-nav__icon')} />
           <span className={getClassName('bpk-calendar-nav__text--hidden')}>
-            {formatMonth(addMonths(baseMonth, 1))}
+            {nextMonthLabel}
           </span>
         </button>
       </div>
+      <BpkAriaLive>{formatMonth(baseMonth)}</BpkAriaLive>
     </div>
   );
 };
@@ -146,6 +152,8 @@ BpkCalendarNav.propTypes = {
   maxDate: PropTypes.instanceOf(Date).isRequired,
   minDate: PropTypes.instanceOf(Date).isRequired,
   month: PropTypes.instanceOf(Date).isRequired,
+  nextMonthLabel: PropTypes.string.isRequired,
+  previousMonthLabel: PropTypes.string.isRequired,
   // Optional
   onMonthChange: PropTypes.func,
   disabled: PropTypes.bool,
