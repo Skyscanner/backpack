@@ -97,7 +97,6 @@ const BpkCalendarNav = props => {
           {changeMonthLabel}
         </label>
 
-        <BpkAriaLive aria-hidden="true">{formatMonth(baseMonth)}</BpkAriaLive>
         <BpkSelect
           id={`${id}_select`}
           name="months"
@@ -140,6 +139,7 @@ const BpkCalendarNav = props => {
           </span>
         </button>
       </div>
+      <BpkAriaLive>{formatMonth(baseMonth)}</BpkAriaLive>
     </div>
   );
 };
