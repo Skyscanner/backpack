@@ -40,6 +40,7 @@
     "jest": "TZ=Etc/UTC jest --coverage",
     "jest:update": "TZ=Etc/UTC jest --updateSnapshot",
     "jest:watch": "TZ=Etc/UTC jest --watch",
+    "jest:accessibility": "jest --testRegex accessibility-test",
     "lerna": "lerna",
     "lint": "npm run lint:js && npm run lint:scss",
     "lint:js": "eslint . .storybook --ext .js,.jsx",

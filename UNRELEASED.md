@@ -1,0 +1,2 @@
+- bpk-component-calendar:
+  - Removed `aria-hidden` from the month selector label, as it was violating [automated accessibility testing](https://dequeuniversity.com/rules/axe/4.1/select-name?application=axeAPI).

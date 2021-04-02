@@ -92,7 +92,6 @@ const BpkCalendarNav = props => {
         <label
           htmlFor={`${id}_select`}
           className={getClassName('bpk-calendar-nav__text--hidden')}
-          aria-hidden="true"
         >
           {changeMonthLabel}
         </label>

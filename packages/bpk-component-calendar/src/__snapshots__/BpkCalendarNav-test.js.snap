@@ -36,7 +36,6 @@ exports[`BpkCalendarNav should disable inputs when disabled 1`] = `
       class="bpk-calendar-nav__month"
     >
       <label
-        aria-hidden="true"
         class="bpk-calendar-nav__text--hidden"
         for="myCalendarNav_select"
       >
@@ -134,7 +133,6 @@ exports[`BpkCalendarNav should render correctly 1`] = `
       class="bpk-calendar-nav__month"
     >
       <label
-        aria-hidden="true"
         class="bpk-calendar-nav__text--hidden"
         for="myCalendarNav_select"
       >
@@ -230,7 +228,6 @@ exports[`BpkCalendarNav should use given previousMonth and nextMonth labels corr
       class="bpk-calendar-nav__month"
     >
       <label
-        aria-hidden="true"
         class="bpk-calendar-nav__text--hidden"
         for="myCalendarNav_select"
       >
