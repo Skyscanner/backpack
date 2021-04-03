@@ -1,4 +1,4 @@
-- bpk-component-calendar:
+- bpk-component-datepicker:
   - Add parameters to link the datepicker previous and next month parameters to the calendar and calendar nav.
 
 - bpk-component-calendar:
