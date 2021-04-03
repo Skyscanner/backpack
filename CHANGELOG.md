@@ -1,36 +1,45 @@
+# 2021-04-03
+
+**Fixed:**
+- bpk-component-datepicker 11.3.48 => 11.3.49:
+  - Add parameters to link the datepicker previous and next month parameters to the calendar and calendar nav.
+
+- bpk-component-calendar 7.1.0 => 7.1.1:
+  - Removed `aria-hidden` from the month selector label, as it was violating [automated accessibility testing](https://dequeuniversity.com/rules/axe/4.1/select-name?application=axeAPI).
+
 # 2021-04-02
 
 **Added:**
-- bpk-component-calendar:
+- bpk-component-calendar 7.0.77 => 7.1.0:
   - Calendar Nav updated to use labels for next and previous buttons and `aria-live` region added for assistive technology.
 
 **Fixed:**
-- bpk-component-accordion:
+- bpk-component-accordion 2.2.39 => 2.2.40:
   - Improved accessibility by removing invalid `aria-level="3"` attribute on `BpkAccordionItem`.
 
-- bpk-component-banner-alert:
+- bpk-component-banner-alert 4.2.74 => 4.2.75:
   - Improved accessibility by replacing an internal `header` (invalid element for accessibility) to `div`.
 
-- bpk-component-datatable:
+- bpk-component-datatable 2.2.17 => 2.2.18:
   - Fixed a prop type that was incorrectly defined.
 
 # 2021-03-25
 
 **Fixed:**
-- bpk-component-star-rating:
+- bpk-component-star-rating 2.1.114 => 2.1.115:
   - Tweaked the colours to be slightly darker to improve contrast.
 
 # 2021-03-24
 
 **Fixed:**
 
-- bpk-component-calendar:
+- bpk-component-calendar 7.0.75 => 7.0.76:
   - Calendar Grid column headings and out-of-range dates are now hidden to assistive technology.
 
 # 2021-03-23
 
 **Added:**
-- bpk-svgs:
+- bpk-svgs 12.4.0 => 12.5.0:
   - New `center-location` icon.
 
 # 2021-03-18
