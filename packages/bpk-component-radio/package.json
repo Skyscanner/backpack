@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-radio",
-  "version": "2.0.117",
+  "version": "2.0.118",
   "description": "Backpack radio button component.",
   "license": "Apache-2.0",
   "repository": {
@@ -14,15 +14,15 @@
   },
   "gitHead": "cb956fcebacca28ee51adcf5b28068af87aaf0ff",
   "dependencies": {
-    "bpk-mixins": "^20.1.29",
-    "bpk-react-utils": "^3.0.12",
+    "bpk-mixins": "^20.1.30",
+    "bpk-react-utils": "^3.0.13",
     "prop-types": "^15.6.2"
   },
   "peerDependencies": {
     "react": "^16.0.0"
   },
   "devDependencies": {
-    "bpk-storybook-utils": "^0.0.17",
+    "bpk-storybook-utils": "^0.0.18",
     "bpk-tokens": "^36.1.1"
   }
 }

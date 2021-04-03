@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-breadcrumb",
-  "version": "2.1.85",
+  "version": "2.1.86",
   "description": "Backpack breadcrumb component.",
   "license": "Apache-2.0",
   "repository": {
@@ -14,11 +14,11 @@
   },
   "gitHead": "cb956fcebacca28ee51adcf5b28068af87aaf0ff",
   "dependencies": {
-    "bpk-component-icon": "^8.3.22",
-    "bpk-component-link": "^2.1.46",
-    "bpk-component-text": "^3.1.48",
-    "bpk-mixins": "^20.1.29",
-    "bpk-react-utils": "^3.0.12",
+    "bpk-component-icon": "^8.3.23",
+    "bpk-component-link": "^2.1.47",
+    "bpk-component-text": "^3.1.49",
+    "bpk-mixins": "^20.1.30",
+    "bpk-react-utils": "^3.0.13",
     "prop-types": "^15.6.2"
   },
   "peerDependencies": {
