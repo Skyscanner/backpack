@@ -18,28 +18,22 @@
 /* @flow strict */
 
 import React from 'react';
-import { cssModules } from 'bpk-react-utils';
+import { render } from '@testing-library/react';
+import { axe } from 'jest-axe';
 
-import STYLES from './BpkDarkExampleWrapper.scss';
+import BpkRating from '../index';
 
-const getClassName = cssModules(STYLES);
-
-const BpkDarkExampleWrapper = (props: { padded: boolean }) => {
-  const { padded, ...rest } = props;
-  return (
-    /* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */
-    <div
-      className={getClassName(
-        'bpk-dark-example-wrapper',
-        padded && 'bpk-dark-example-wrapper--padded',
-      )}
-      {...rest}
-    />
-  );
-};
-
-BpkDarkExampleWrapper.defaultProps = {
-  padded: false,
-};
-
-export default BpkDarkExampleWrapper;
+describe('BpkRating accessibility tests', () => {
+  it('should not have programmatically-detectable accessibility issues', async () => {
+    const { container } = render(
+      <BpkRating
+        ariaLabel="6.7 Average might recommend"
+        title="Average"
+        subtitle="Might recommend"
+        value={6.7}
+      />,
+    );
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+  });
+});

@@ -18,28 +18,18 @@
 /* @flow strict */
 
 import React from 'react';
-import { cssModules } from 'bpk-react-utils';
+import { render } from '@testing-library/react';
 
-import STYLES from './BpkDarkExampleWrapper.scss';
+import BpkDarkExampleWrapper from './BpkDarkExampleWrapper';
 
-const getClassName = cssModules(STYLES);
+describe('BpkDarkExampleWrapper', () => {
+  it('should render correctly', () => {
+    const { asFragment } = render(<BpkDarkExampleWrapper />);
+    expect(asFragment()).toMatchSnapshot();
+  });
 
-const BpkDarkExampleWrapper = (props: { padded: boolean }) => {
-  const { padded, ...rest } = props;
-  return (
-    /* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */
-    <div
-      className={getClassName(
-        'bpk-dark-example-wrapper',
-        padded && 'bpk-dark-example-wrapper--padded',
-      )}
-      {...rest}
-    />
-  );
-};
-
-BpkDarkExampleWrapper.defaultProps = {
-  padded: false,
-};
-
-export default BpkDarkExampleWrapper;
+  it('should render correctly with padded={true}', () => {
+    const { asFragment } = render(<BpkDarkExampleWrapper padded />);
+    expect(asFragment()).toMatchSnapshot();
+  });
+});
