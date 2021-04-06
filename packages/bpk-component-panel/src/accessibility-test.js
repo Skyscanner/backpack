@@ -15,31 +15,23 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* @flow strict */
 
 import React from 'react';
-import { cssModules } from 'bpk-react-utils';
+import { render } from '@testing-library/react';
+import { axe } from 'jest-axe';
 
-import STYLES from './BpkDarkExampleWrapper.scss';
+import BpkPanel from './BpkPanel';
 
-const getClassName = cssModules(STYLES);
-
-const BpkDarkExampleWrapper = (props: { padded: boolean }) => {
-  const { padded, ...rest } = props;
-  return (
-    /* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */
-    <div
-      className={getClassName(
-        'bpk-dark-example-wrapper',
-        padded && 'bpk-dark-example-wrapper--padded',
-      )}
-      {...rest}
-    />
-  );
-};
-
-BpkDarkExampleWrapper.defaultProps = {
-  padded: false,
-};
-
-export default BpkDarkExampleWrapper;
+describe('BpkPanel accessibility tests', () => {
+  it('should not have programmatically-detectable accessibility issues', async () => {
+    const { container } = render(
+      <BpkPanel>
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
+        ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis
+        dis parturient montes, nascetur ridiculus mus.
+      </BpkPanel>,
+    );
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+  });
+});

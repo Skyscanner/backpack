@@ -18,28 +18,21 @@
 /* @flow strict */
 
 import React from 'react';
-import { cssModules } from 'bpk-react-utils';
+import { render } from '@testing-library/react';
+import { axe } from 'jest-axe';
 
-import STYLES from './BpkDarkExampleWrapper.scss';
+import BpkInput from './BpkInput';
 
-const getClassName = cssModules(STYLES);
-
-const BpkDarkExampleWrapper = (props: { padded: boolean }) => {
-  const { padded, ...rest } = props;
-  return (
-    /* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */
-    <div
-      className={getClassName(
-        'bpk-dark-example-wrapper',
-        padded && 'bpk-dark-example-wrapper--padded',
-      )}
-      {...rest}
-    />
-  );
-};
-
-BpkDarkExampleWrapper.defaultProps = {
-  padded: false,
-};
-
-export default BpkDarkExampleWrapper;
+describe('BpkInput accessibility tests', () => {
+  it('should not have programmatically-detectable accessibility issues', async () => {
+    const { container } = render(
+      <div>
+        {/* Adding a label to ensure it meets accessibility. */}
+        <label htmlFor="test">Label</label>
+        <BpkInput id="test" name="test" value="" onChange={() => {}} />,
+      </div>,
+    );
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+  });
+});
