@@ -24,6 +24,7 @@ import Portal from './src/Portal';
 import TransitionInitialMount from './src/TransitionInitialMount';
 import cssModules from './src/cssModules';
 import deprecated from './src/deprecated';
+import { isIphone, isIpad, isIos } from './src/deviceDetection';
 import withDefaultProps from './src/withDefaultProps';
 import isRTL from './src/isRTL';
 
@@ -34,6 +35,9 @@ export {
   deprecated,
   withDefaultProps,
   wrapDisplayName,
+  isIphone,
+  isIpad,
+  isIos,
   isRTL,
 };
 export default {
@@ -43,5 +47,8 @@ export default {
   deprecated,
   withDefaultProps,
   wrapDisplayName,
+  isIphone,
+  isIpad,
+  isIos,
   isRTL,
 };

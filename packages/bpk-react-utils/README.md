@@ -198,3 +198,54 @@ if (isRTL()) {
   // do LTR stuff
 }
 ```
+
+## `isIphone`
+
+Returns true if the device is an iPhone.
+
+### Usage
+
+```js
+import React from 'react';
+import { isIphone } from 'bpk-react-utils';
+
+if (isIphone()) {
+  // do iPhone specific stuff
+} else {
+  // do other browser/device stuff
+}
+```
+
+## `isIpad`
+
+Returns true if the device is an iPad.
+
+### Usage
+
+```js
+import React from 'react';
+import { isIpad } from 'bpk-react-utils';
+
+if (isIpad()) {
+  // do iPad specific stuff
+} else {
+  // do other browser/device stuff
+}
+```
+
+## `isIos`
+
+Returns true if the platform is iOS (iPhone/iPad).
+
+### Usage
+
+```js
+import React from 'react';
+import { isIos } from 'bpk-react-utils';
+
+if (isIos()) {
+  // do iOS specific stuff
+} else {
+  // do other browser/device stuff
+}
+```
