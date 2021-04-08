@@ -95,6 +95,7 @@
     @include bpk-rtl {
       left: auto;
       margin-right: $bpk-spacing-sm;
+      margin-left: $bpk-spacing-none;
     }
   }
 
