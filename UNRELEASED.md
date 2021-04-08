@@ -1,6 +1,6 @@
 **Added:**
 - bpk-react-utils
-  - Added new functions `isIphone`, `isIpad` and `isIos`, to enable detection if device is iOS to allow platform specific implementations.
+  - Extracted out and added new functions `isIphone`, `isIpad` and `isIos`, to enable detection if device is iOS to apply platform specific behaviour.
 
 **Fixed:**
 - bpk-component-modal
