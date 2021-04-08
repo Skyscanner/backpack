@@ -90,12 +90,11 @@
   &__close-button {
     position: relative; // Override position: absolute coming from BpkNavigationBar
     right: auto;
-    margin-left: $bpk-spacing-sm;
+
+    @include bpk-margin-leading($bpk-spacing-sm);
 
     @include bpk-rtl {
       left: auto;
-      margin-right: $bpk-spacing-sm;
-      margin-left: $bpk-spacing-none;
     }
   }
 
