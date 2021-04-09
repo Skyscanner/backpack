@@ -20,7 +20,12 @@ import focusScope from 'a11y-focus-scope';
 import focusStore from 'a11y-focus-store';
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import { cssModules, wrapDisplayName } from 'bpk-react-utils';
+import {
+  cssModules,
+  isDeviceIpad,
+  isDeviceIphone,
+  wrapDisplayName,
+} from 'bpk-react-utils';
 
 import BpkScrim from './BpkScrim';
 import {
@@ -51,12 +56,8 @@ const withScrim = WrappedComponent => {
     static defaultProps = {
       dark: false,
       onClose: null,
-      isIphone: /iPhone/i.test(
-        typeof window !== 'undefined' ? window.navigator.platform : '',
-      ),
-      isIpad: /iPad/i.test(
-        typeof window !== 'undefined' ? window.navigator.platform : '',
-      ),
+      isIphone: isDeviceIphone(),
+      isIpad: isDeviceIpad(),
       containerClassName: null,
       closeOnScrimClick: true,
     };
