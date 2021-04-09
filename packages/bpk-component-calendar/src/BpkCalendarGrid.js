@@ -215,6 +215,7 @@ BpkCalendarGrid.defaultProps = {
   cellClassName: null,
 };
 
+// On iOS, having transitions causes accessibility issues, so we disable it (KOA-4467).
 const BpkCalendarGridWithTransition = isDeviceIos()
   ? BpkCalendarGrid
   : addCalendarGridTransition(BpkCalendarGrid);
