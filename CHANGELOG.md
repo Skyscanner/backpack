@@ -1,3 +1,20 @@
+# 2021-04-09
+
+**Added:**
+- bpk-react-utils: 3.0.13 => 3.1.0
+  - Extracted out and added new functions `isDeviceIphone`, `isDeviceIpad` and `isDeviceIos`, to enable detection if device is iOS to apply platform specific behaviour.
+
+**Fixed:**
+- bpk-component-modal: 2.1.125 => 2.1.126
+  - Fixed an RTL bug where the close button had additional spacing on the left.
+  - Changed default property `isIphone` to use the `bpk-react-utils` function.
+
+- bpk-scrim-utils: 4.0.113 => 4.0.114
+  - Changed default properties `isIphone` and `isIpad` to use the `bpk-react-utils` function.
+
+- bpk-mixins: 20.1.30 => 20.1.31
+  - Fixed docs for `bpk-margin-leading` and `bpk-margin-trailing` mixins - where the default value for `$resetOppositeMargin` was stated as `false` instead of `true`.
+
 # 2021-04-03
 
 **Fixed:**
