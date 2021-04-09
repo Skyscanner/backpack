@@ -119,7 +119,7 @@ const verifyMaintainers = data => {
 console.log(`Maintainers are:\n  ${owners.join('\n  ')}\n`);
 
 readdir('packages/')
-  .then(packages => packages.filter(i => !i.startsWith('.')))
+  .then(packages => packages.filter(i => i !== 'bpk-component-boilerplate'))
   .then(packages => {
     bar.start(packages.length, 0);
     return packages;
