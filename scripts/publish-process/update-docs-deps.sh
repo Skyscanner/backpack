@@ -35,7 +35,7 @@ git commit -m "Automated upgrade of Backpack dependencies"
 git push --set-upstream origin $BRANCH_NAME
 
 echo "--- Create PR on GitHub ---"
-gh pr create --title "Automated upgrade of Backpack dependencies" --body "This is an automated PR generated as part of the publish process in Backpack"
+gh pr create --title "Automated upgrade of Backpack dependencies" --body "This is an automated PR generated as part of the publish process in Backpack.\n\nIf CI passes, it's generally safe to merge this without waiting for approval."
 echo "--- A PR has automatically been created for you in the docs site repo ---"
 
 echo "--- Cleaning up ---"
