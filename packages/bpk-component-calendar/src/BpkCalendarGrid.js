@@ -215,7 +215,7 @@ BpkCalendarGrid.defaultProps = {
   cellClassName: null,
 };
 
-const BpkCalendarGridWithTransition = isDeviceIos
+const BpkCalendarGridWithTransition = isDeviceIos()
   ? BpkCalendarGrid
   : addCalendarGridTransition(BpkCalendarGrid);
 
