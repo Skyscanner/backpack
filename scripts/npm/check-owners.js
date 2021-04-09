@@ -118,8 +118,10 @@ const verifyMaintainers = data => {
 
 console.log(`Maintainers are:\n  ${owners.join('\n  ')}\n`);
 
+const privatePackages = ['bpk-component-boilerplate'];
+
 readdir('packages/')
-  .then(packages => packages.filter(i => i !== 'bpk-component-boilerplate'))
+  .then(packages => packages.filter(i => !privatePackages.includes(i)))
   .then(packages => {
     bar.start(packages.length, 0);
     return packages;
