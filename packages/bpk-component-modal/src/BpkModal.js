@@ -21,7 +21,7 @@
 import PropTypes from 'prop-types';
 import React, { type Element } from 'react';
 import { withScrim } from 'bpk-scrim-utils';
-import { Portal, cssModules } from 'bpk-react-utils';
+import { Portal, cssModules, isDeviceIphone } from 'bpk-react-utils';
 
 import STYLES from './BpkModal.scss';
 import BpkModalInner, {
@@ -117,9 +117,7 @@ export const defaultProps = {
   onClose: () => null,
   renderTarget: null,
   target: null,
-  isIphone: /iPhone/i.test(
-    typeof window !== 'undefined' ? window.navigator.platform : '',
-  ),
+  isIphone: isDeviceIphone(),
   closeOnScrimClick: true,
   closeOnEscPressed: true,
 };

@@ -18,20 +18,20 @@
 
 /* @flow strict */
 
-const isIphone = () => {
+const isDeviceIphone = () => {
   return /iPhone/i.test(
     typeof window !== 'undefined' ? window.navigator.platform : '',
   );
 };
 
-const isIpad = () => {
+const isDeviceIpad = () => {
   return /iPad/i.test(
     typeof window !== 'undefined' ? window.navigator.platform : '',
   );
 };
 
-const isIos = () => {
-  return isIphone() || isIpad();
+const isDeviceIos = () => {
+  return isDeviceIphone() || isDeviceIpad();
 };
 
-export { isIphone, isIpad, isIos };
+export { isDeviceIphone, isDeviceIpad, isDeviceIos };

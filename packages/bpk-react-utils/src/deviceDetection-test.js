@@ -18,7 +18,7 @@
 
 /* @flow strict */
 
-import { isIphone, isIpad, isIos } from './deviceDetection';
+import { isDeviceIphone, isDeviceIpad, isDeviceIos } from './deviceDetection';
 
 describe('isIphone tests', () => {
   beforeEach(() => {
@@ -26,11 +26,11 @@ describe('isIphone tests', () => {
   });
 
   it('should return a boolean', () => {
-    expect(typeof isIphone()).toBe('boolean');
+    expect(typeof isDeviceIphone()).toBe('boolean');
   });
 
   it('should return false by default', () => {
-    expect(isIphone()).toBe(false);
+    expect(isDeviceIphone()).toBe(false);
   });
 
   it('should return true if an iPhone', () => {
@@ -38,7 +38,7 @@ describe('isIphone tests', () => {
     const platform = jest.spyOn(window.navigator, 'platform', 'get');
     platform.mockReturnValue('iPhone');
 
-    expect(isIphone()).toBe(true);
+    expect(isDeviceIphone()).toBe(true);
   });
 });
 
@@ -48,11 +48,11 @@ describe('isIpad tests', () => {
   });
 
   it('should return a boolean', () => {
-    expect(typeof isIpad()).toBe('boolean');
+    expect(typeof isDeviceIpad()).toBe('boolean');
   });
 
   it('should return false by default', () => {
-    expect(isIpad()).toBe(false);
+    expect(isDeviceIpad()).toBe(false);
   });
 
   it('should return true if an iPad', () => {
@@ -60,7 +60,7 @@ describe('isIpad tests', () => {
     const platform = jest.spyOn(window.navigator, 'platform', 'get');
     platform.mockReturnValue('iPad');
 
-    expect(isIpad()).toBe(true);
+    expect(isDeviceIpad()).toBe(true);
   });
 });
 
@@ -70,7 +70,7 @@ describe('isIos tests', () => {
   });
 
   it('should return a boolean', () => {
-    expect(typeof isIos()).toBe('boolean');
+    expect(typeof isDeviceIos()).toBe('boolean');
   });
 
   it('should return false by default', () => {
@@ -78,7 +78,7 @@ describe('isIos tests', () => {
     const platform = jest.spyOn(window.navigator, 'platform', 'get');
     platform.mockReturnValue('Mac');
 
-    expect(isIos()).toBe(false);
+    expect(isDeviceIos()).toBe(false);
   });
 
   it('should return true if an iPhone', () => {
@@ -86,7 +86,7 @@ describe('isIos tests', () => {
     const platform = jest.spyOn(window.navigator, 'platform', 'get');
     platform.mockReturnValue('iPhone');
 
-    expect(isIos()).toBe(true);
+    expect(isDeviceIos()).toBe(true);
   });
 
   it('should return true if an iPad', () => {
@@ -94,6 +94,6 @@ describe('isIos tests', () => {
     const platform = jest.spyOn(window.navigator, 'platform', 'get');
     platform.mockReturnValue('iPad');
 
-    expect(isIos()).toBe(true);
+    expect(isDeviceIos()).toBe(true);
   });
 });

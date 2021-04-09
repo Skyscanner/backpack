@@ -199,7 +199,7 @@ if (isRTL()) {
 }
 ```
 
-## `isIphone`
+## `isDeviceIphone`
 
 Returns true if the device is an iPhone.
 
@@ -207,16 +207,16 @@ Returns true if the device is an iPhone.
 
 ```js
 import React from 'react';
-import { isIphone } from 'bpk-react-utils';
+import { isDeviceIphone } from 'bpk-react-utils';
 
-if (isIphone()) {
+if (isDeviceIphone()) {
   // do iPhone specific stuff
 } else {
   // do other browser/device stuff
 }
 ```
 
-## `isIpad`
+## `isDeviceIpad`
 
 Returns true if the device is an iPad.
 
@@ -224,16 +224,16 @@ Returns true if the device is an iPad.
 
 ```js
 import React from 'react';
-import { isIpad } from 'bpk-react-utils';
+import { isDeviceIpad } from 'bpk-react-utils';
 
-if (isIpad()) {
+if (isDeviceIpad()) {
   // do iPad specific stuff
 } else {
   // do other browser/device stuff
 }
 ```
 
-## `isIos`
+## `isDeviceIos`
 
 Returns true if the platform is iOS (iPhone/iPad).
 
@@ -241,9 +241,9 @@ Returns true if the platform is iOS (iPhone/iPad).
 
 ```js
 import React from 'react';
-import { isIos } from 'bpk-react-utils';
+import { isDeviceIos } from 'bpk-react-utils';
 
-if (isIos()) {
+if (isDeviceIos()) {
   // do iOS specific stuff
 } else {
   // do other browser/device stuff
