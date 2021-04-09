@@ -1,6 +1,6 @@
 {
   "name": "bpk-mixins",
-  "version": "20.1.30",
+  "version": "20.1.31",
   "description": "Sass mixins and variables for Backpack.",
   "license": "Apache-2.0",
   "repository": {
@@ -21,6 +21,6 @@
     "node-sass": "^4.12.0"
   },
   "devDependencies": {
-    "bpk-react-utils": "^3.0.13"
+    "bpk-react-utils": "^3.1.0"
   }
 }
