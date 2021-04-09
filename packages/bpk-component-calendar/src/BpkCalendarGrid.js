@@ -18,7 +18,7 @@
 
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import { cssModules } from 'bpk-react-utils';
+import { cssModules, isDeviceIos } from 'bpk-react-utils';
 
 import BpkCalendarGridHeader from './BpkCalendarGridHeader';
 import Week from './Week';
@@ -215,9 +215,9 @@ BpkCalendarGrid.defaultProps = {
   cellClassName: null,
 };
 
-const BpkCalendarGridWithTransition = addCalendarGridTransition(
-  BpkCalendarGrid,
-);
+const BpkCalendarGridWithTransition = isDeviceIos
+  ? BpkCalendarGrid
+  : addCalendarGridTransition(BpkCalendarGrid);
 
 export default BpkCalendarGrid;
 export { BpkCalendarGridWithTransition };
