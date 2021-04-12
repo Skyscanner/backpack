@@ -23,7 +23,7 @@
     "react": "^16.0.0"
   },
   "devDependencies": {
-    "bpk-component-aria-live": "^1.0.41",
+    "bpk-component-aria-live": "^1.0.42",
     "bpk-component-text": "^3.1.50"
   }
 }

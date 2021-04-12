@@ -24,7 +24,7 @@
     "react-transition-group": "^2.5.3"
   },
   "devDependencies": {
-    "bpk-component-aria-live": "^1.0.41",
+    "bpk-component-aria-live": "^1.0.42",
     "bpk-component-button": "^3.3.31",
     "bpk-storybook-utils": "^0.0.19"
   },
