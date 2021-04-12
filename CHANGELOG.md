@@ -1,3 +1,11 @@
+# 2021-04-12
+
+**Fixed:**
+- bpk-component-calendar: 7.1.2 => 7.1.3
+- bpk-component-datepicker: 11.3.50 => 11.3.51
+- bpk-component-scrollable-calendar: 2.0.127 => 2.0.128
+  - Fixed an issue when AT changed the month from the calendar navigation drop down, users could not navigate dates outside the current week.
+
 # 2021-04-09
 
 **Added:**
