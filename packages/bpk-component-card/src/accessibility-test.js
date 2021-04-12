@@ -36,4 +36,16 @@ describe('BpkCard accessibility tests', () => {
     const results = await axe(container);
     expect(results).toHaveNoViolations();
   });
+
+  it('should not have programmatically-detectable accessibility issues with href', async () => {
+    const { container } = render(
+      <BpkCard href="https://www.skyscanner.net/">
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
+        ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis
+        dis parturient montes, nascetur ridiculus mus.
+      </BpkCard>,
+    );
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+  });
 });

@@ -5,6 +5,7 @@ exports[`BpkCard should render correctly 1`] = `
   <div
     class="bpk-card bpk-card--padded"
     role="button"
+    tabindex="0"
   >
     Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
   </div>
@@ -29,6 +30,7 @@ exports[`BpkCard should render correctly with "padded" attribute equal to "false
   <div
     class="bpk-card"
     role="button"
+    tabindex="0"
   >
     Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
   </div>
@@ -40,6 +42,7 @@ exports[`BpkCard should render correctly with a "className" attribute 1`] = `
   <div
     class="bpk-card bpk-card--padded custom-class"
     role="button"
+    tabindex="0"
   >
     Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
   </div>
