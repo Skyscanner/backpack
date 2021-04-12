@@ -1,6 +1,12 @@
 # 2021-04-12
 
 **Fixed:**
+- bpk-component-card: 2.1.44 => 2.1.45
+  - Fixed an issue that prevented accessing a card with a keyboard.
+
+# 2021-04-12
+
+**Fixed:**
 - bpk-component-calendar: 7.1.2 => 7.1.3
 - bpk-component-datepicker: 11.3.50 => 11.3.51
 - bpk-component-scrollable-calendar: 2.0.127 => 2.0.128
