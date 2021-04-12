@@ -64,7 +64,7 @@ const BpkCard = (props: Props) => {
 
   return (
     // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
-    <div role="button" className={classNameFinal} {...rest}>
+    <div tabIndex={0} role="button" className={classNameFinal} {...rest}>
       {children}
     </div>
   );
