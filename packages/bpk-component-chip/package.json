@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-chip",
-  "version": "4.1.35",
+  "version": "4.1.36",
   "description": "Backpack chip component.",
   "license": "Apache-2.0",
   "repository": {
@@ -23,7 +23,7 @@
     "react": "^16.0.0"
   },
   "devDependencies": {
-    "bpk-component-aria-live": "^1.0.45",
+    "bpk-component-aria-live": "^1.0.46",
     "bpk-component-text": "^3.1.50"
   }
 }

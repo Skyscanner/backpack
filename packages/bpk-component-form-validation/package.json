@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-form-validation",
-  "version": "3.0.128",
+  "version": "3.0.129",
   "description": "Backpack form-validation component.",
   "license": "Apache-2.0",
   "repository": {
@@ -26,7 +26,7 @@
     "bpk-component-button": "^3.3.31",
     "bpk-component-checkbox": "^2.2.50",
     "bpk-component-icon": "^8.3.24",
-    "bpk-component-input": "^5.0.125",
+    "bpk-component-input": "^5.0.126",
     "bpk-component-select": "^3.0.119",
     "bpk-component-textarea": "^2.0.120",
     "bpk-tokens": "^36.1.1"
