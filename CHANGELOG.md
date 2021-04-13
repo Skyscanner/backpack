@@ -1,3 +1,9 @@
+# 2021-04-13
+
+**Fixed:**
+- bpk-component-modal: 2.1.126 => 2.1.127
+  - Fixed square appearance of the modal top corners.
+
 # 2021-04-12
 
 **Fixed:**
