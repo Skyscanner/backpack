@@ -37,6 +37,8 @@
   outline: 0;
   background-color: $bpk-modal-background-color;
   opacity: $bpk-modal-opacity;
+  // required to prevent the header extending beyond the rounded corners
+  overflow: hidden;
   // FIX: Prevents ugly flickering when tapping inside the modal in Mobile Safari
   -webkit-tap-highlight-color: transparent;
 
