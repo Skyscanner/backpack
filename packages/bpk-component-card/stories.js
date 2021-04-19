@@ -23,9 +23,13 @@ import {
   DefaultExample,
   WithHrefExample,
   WithoutPaddingExample,
+  NonAtomicExample,
+  NonAtomicHrefExample,
 } from './examples';
 
 storiesOf('bpk-component-card', module)
   .add('Default', DefaultExample)
   .add('With href', WithHrefExample)
-  .add('Without padding', WithoutPaddingExample);
+  .add('Without padding', WithoutPaddingExample)
+  .add('Non-atomic', NonAtomicExample)
+  .add('Non-atomic with href', NonAtomicHrefExample);

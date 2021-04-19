@@ -30,4 +30,5 @@ export default () => (
 | children  | -        | true     | -             |
 | className | string   | false    | null          |
 | href      | string   | false    | null          |
+| atomic    | bool     | false    | true          |
 | padded    | bool     | false    | true          |

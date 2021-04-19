@@ -12,6 +12,16 @@ exports[`BpkCard should render correctly 1`] = `
 </DocumentFragment>
 `;
 
+exports[`BpkCard should render correctly when non-atomic 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-card bpk-card--padded"
+  >
+    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+  </div>
+</DocumentFragment>
+`;
+
 exports[`BpkCard should render correctly with "href" and "blank" attributes 1`] = `
 <DocumentFragment>
   <a
@@ -54,6 +64,19 @@ exports[`BpkCard should render correctly with an "href" attribute 1`] = `
   <a
     class="bpk-card bpk-card--padded"
     href="//www.skyscanner.net"
+  >
+    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+  </a>
+</DocumentFragment>
+`;
+
+exports[`BpkCard should render correctly with an "href" attribute when non-atomic 1`] = `
+<DocumentFragment>
+  <a
+    class="bpk-card bpk-card--padded"
+    href="//www.skyscanner.net"
+    role="presentation"
+    tabindex="-1"
   >
     Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
   </a>

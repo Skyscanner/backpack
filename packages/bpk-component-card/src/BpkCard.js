@@ -32,10 +32,11 @@ type Props = {
   href: ?string,
   padded: boolean,
   blank: boolean,
+  atomic: boolean,
 };
 
 const BpkCard = (props: Props) => {
-  const { children, className, href, padded, blank, ...rest } = props;
+  const { children, className, href, padded, blank, atomic, ...rest } = props;
 
   const classNames = [getClassName('bpk-card')];
   if (padded) {
@@ -47,6 +48,8 @@ const BpkCard = (props: Props) => {
 
   const classNameFinal = classNames.join(' ');
 
+  const atomicProps: { tabIndex: ?number, role: ?string } = {};
+
   if (href) {
     let blankProps = {};
 
@@ -54,17 +57,35 @@ const BpkCard = (props: Props) => {
       blankProps = { target: '_blank', rel: 'noopener noreferrer' };
     }
 
+    // If the link is non-atomic, disable keyboard focus and make the screen-reader ignore the outer element.
+    if (!atomic) {
+      atomicProps.tabIndex = -1;
+      atomicProps.role = 'presentation';
+    }
+
     return (
       // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
-      <a href={href} className={classNameFinal} {...blankProps} {...rest}>
+      <a
+        href={href}
+        className={classNameFinal}
+        {...atomicProps}
+        {...blankProps}
+        {...rest}
+      >
         {children}
       </a>
     );
   }
 
+  // If the card is atomic, we need to enable keyboard focus and provide an appropriate role.
+  if (atomic) {
+    atomicProps.tabIndex = 0;
+    atomicProps.role = 'button';
+  }
+
   return (
     // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
-    <div tabIndex={0} role="button" className={classNameFinal} {...rest}>
+    <div {...atomicProps} className={classNameFinal} {...rest}>
       {children}
     </div>
   );
@@ -76,6 +97,7 @@ BpkCard.propTypes = {
   href: PropTypes.string,
   padded: PropTypes.bool,
   blank: PropTypes.bool,
+  atomic: PropTypes.bool,
 };
 
 BpkCard.defaultProps = {
@@ -83,6 +105,7 @@ BpkCard.defaultProps = {
   href: null,
   padded: true,
   blank: false,
+  atomic: true,
 };
 
 export default BpkCard;
