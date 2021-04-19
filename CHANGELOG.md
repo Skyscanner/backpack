@@ -1,3 +1,10 @@
+# 2021-04-19
+
+**Added:**
+
+- bpk-component-card: 2.1.47 => 2.2.0
+  - New `atomic` prop which can be set false to make the card appear to AT as a simple container.
+
 # 2021-04-13
 
 **Fixed:**
