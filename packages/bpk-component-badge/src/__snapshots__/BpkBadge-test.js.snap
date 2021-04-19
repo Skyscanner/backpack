@@ -46,10 +46,10 @@ exports[`BpkBadge should render correctly with an icon 1`] = `
     class="bpk-badge "
   >
     <svg
-      height="18"
-      style="width: 1.125rem; height: 1.125rem;"
-      viewBox="0 0 24 24"
-      width="18"
+      height="8"
+      style="width: .5rem; height: .5rem;"
+      viewBox="0 0 16 16"
+      width="8"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path

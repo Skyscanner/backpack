@@ -30,10 +30,10 @@ exports[`BpkModalInner should render correctly 1`] = `
         >
           <svg
             class="bpk-close-button__icon"
-            height="18"
-            style="width: 1.125rem; height: 1.125rem;"
-            viewBox="0 0 24 24"
-            width="18"
+            height="8"
+            style="width: .5rem; height: .5rem;"
+            viewBox="0 0 16 16"
+            width="8"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
@@ -82,10 +82,10 @@ exports[`BpkModalInner should render correctly when is iPhone 1`] = `
         >
           <svg
             class="bpk-close-button__icon"
-            height="18"
-            style="width: 1.125rem; height: 1.125rem;"
-            viewBox="0 0 24 24"
-            width="18"
+            height="8"
+            style="width: .5rem; height: .5rem;"
+            viewBox="0 0 16 16"
+            width="8"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
@@ -134,10 +134,10 @@ exports[`BpkModalInner should render correctly when it does not fills the screen
         >
           <svg
             class="bpk-close-button__icon"
-            height="18"
-            style="width: 1.125rem; height: 1.125rem;"
-            viewBox="0 0 24 24"
-            width="18"
+            height="8"
+            style="width: .5rem; height: .5rem;"
+            viewBox="0 0 16 16"
+            width="8"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
@@ -186,10 +186,10 @@ exports[`BpkModalInner should render correctly when it has a className 1`] = `
         >
           <svg
             class="bpk-close-button__icon"
-            height="18"
-            style="width: 1.125rem; height: 1.125rem;"
-            viewBox="0 0 24 24"
-            width="18"
+            height="8"
+            style="width: .5rem; height: .5rem;"
+            viewBox="0 0 16 16"
+            width="8"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
@@ -238,10 +238,10 @@ exports[`BpkModalInner should render correctly when it is fullscreen 1`] = `
         >
           <svg
             class="bpk-close-button__icon"
-            height="18"
-            style="width: 1.125rem; height: 1.125rem;"
-            viewBox="0 0 24 24"
-            width="18"
+            height="8"
+            style="width: .5rem; height: .5rem;"
+            viewBox="0 0 16 16"
+            width="8"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
@@ -290,10 +290,10 @@ exports[`BpkModalInner should render correctly with a custom content classname 1
         >
           <svg
             class="bpk-close-button__icon"
-            height="18"
-            style="width: 1.125rem; height: 1.125rem;"
-            viewBox="0 0 24 24"
-            width="18"
+            height="8"
+            style="width: .5rem; height: .5rem;"
+            viewBox="0 0 16 16"
+            width="8"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
@@ -355,10 +355,10 @@ exports[`BpkModalInner should render correctly with an accessory view 1`] = `
         >
           <svg
             class="bpk-close-button__icon"
-            height="18"
-            style="width: 1.125rem; height: 1.125rem;"
-            viewBox="0 0 24 24"
-            width="18"
+            height="8"
+            style="width: .5rem; height: .5rem;"
+            viewBox="0 0 16 16"
+            width="8"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
@@ -446,10 +446,10 @@ exports[`BpkModalInner should render correctly with no padding 1`] = `
         >
           <svg
             class="bpk-close-button__icon"
-            height="18"
-            style="width: 1.125rem; height: 1.125rem;"
-            viewBox="0 0 24 24"
-            width="18"
+            height="8"
+            style="width: .5rem; height: .5rem;"
+            viewBox="0 0 16 16"
+            width="8"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
@@ -498,10 +498,10 @@ exports[`BpkModalInner should render correctly with wide prop 1`] = `
         >
           <svg
             class="bpk-close-button__icon"
-            height="18"
-            style="width: 1.125rem; height: 1.125rem;"
-            viewBox="0 0 24 24"
-            width="18"
+            height="8"
+            style="width: .5rem; height: .5rem;"
+            viewBox="0 0 16 16"
+            width="8"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path

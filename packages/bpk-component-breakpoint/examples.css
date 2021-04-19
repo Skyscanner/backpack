@@ -1,0 +1,1 @@
+@keyframes bpk-keyframe-spin{100%{transform:rotate(1turn)}}.bpk-breakpoints-demo{border-radius:.25rem;overflow:hidden}.bpk-breakpoints-demo--active{padding:1rem;color:#fff;background-color:#0770e3;background-color:var(--bpk-primary-color, #0770e3)}.bpk-breakpoints-demo--inactive{padding:1rem;background-color:#dddde5}

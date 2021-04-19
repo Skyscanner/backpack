@@ -9,15 +9,15 @@ exports[`BpkClearButton should render correctly 1`] = `
     type="button"
   >
     <span
-      style="line-height: 1.125rem; display: inline-block; margin-top: 0.1875rem; vertical-align: top;"
+      style="line-height: .5rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
     >
       <svg
         class="bpk-clear-button__icon"
         focusable="false"
-        height="18"
-        style="width: 1.125rem; height: 1.125rem;"
-        viewBox="0 0 24 24"
-        width="18"
+        height="8"
+        style="width: .5rem; height: .5rem;"
+        viewBox="0 0 16 16"
+        width="8"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -38,15 +38,15 @@ exports[`BpkClearButton should render correctly with a custom class 1`] = `
     type="button"
   >
     <span
-      style="line-height: 1.125rem; display: inline-block; margin-top: 0.1875rem; vertical-align: top;"
+      style="line-height: .5rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
     >
       <svg
         class="bpk-clear-button__icon"
         focusable="false"
-        height="18"
-        style="width: 1.125rem; height: 1.125rem;"
-        viewBox="0 0 24 24"
-        width="18"
+        height="8"
+        style="width: .5rem; height: .5rem;"
+        viewBox="0 0 16 16"
+        width="8"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
