@@ -1,3 +1,10 @@
+# 2021-04-20
+
+**Fixed:**
+
+- bpk-component-card: 2.2.0 => 2.2.1
+  - Changed non-atomic role to `group` to ensure the link is not exposed to AT.
+
 # 2021-04-19
 
 **Added:**
