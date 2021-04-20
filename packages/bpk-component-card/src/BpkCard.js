@@ -60,7 +60,7 @@ const BpkCard = (props: Props) => {
     // If the link is non-atomic, disable keyboard focus and make the screen-reader ignore the outer element.
     if (!atomic) {
       atomicProps.tabIndex = -1;
-      atomicProps.role = 'presentation';
+      atomicProps.role = 'group';
     }
 
     return (
