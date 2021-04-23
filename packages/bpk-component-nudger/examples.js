@@ -58,13 +58,14 @@ class NudgerContainer extends Component<
           Number of passengers
         </BpkLabel>
         <BpkNudger
+          aria-label={`${this.state.value} passengers`}
           id={id}
           min={1}
           max={10}
           value={this.state.value}
           onChange={this.handleChange}
-          decreaseButtonLabel="Decrease"
-          increaseButtonLabel="Increase"
+          decreaseButtonLabel="Remove passenger"
+          increaseButtonLabel="Add passenger"
           buttonType={buttonType}
         />
       </div>
