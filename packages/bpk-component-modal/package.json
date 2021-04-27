@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-modal",
-  "version": "2.1.127",
+  "version": "2.1.128",
   "description": "Backpack modal component.",
   "license": "Apache-2.0",
   "repository": {
@@ -14,20 +14,20 @@
   },
   "gitHead": "c2217d61875a1f3aa2bb9ed9583c50e3f1523501",
   "dependencies": {
-    "bpk-component-close-button": "^2.0.121",
-    "bpk-component-icon": "^8.3.24",
-    "bpk-component-link": "^2.1.48",
-    "bpk-component-navigation-bar": "^2.2.84",
-    "bpk-mixins": "^20.1.31",
+    "bpk-component-close-button": "^2.0.122",
+    "bpk-component-icon": "^8.3.25",
+    "bpk-component-link": "^2.1.49",
+    "bpk-component-navigation-bar": "^2.2.85",
+    "bpk-mixins": "^20.1.32",
     "bpk-react-utils": "^3.1.0",
-    "bpk-scrim-utils": "^4.0.114",
+    "bpk-scrim-utils": "^4.0.115",
     "prop-types": "^15.6.2"
   },
   "peerDependencies": {
     "react": "^16.0.0"
   },
   "devDependencies": {
-    "bpk-component-button": "^3.3.31",
-    "bpk-component-text": "^3.1.50"
+    "bpk-component-button": "^3.3.32",
+    "bpk-component-text": "^3.1.51"
   }
 }

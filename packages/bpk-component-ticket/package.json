@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-ticket",
-  "version": "3.0.123",
+  "version": "3.0.124",
   "description": "Backpack ticket component.",
   "license": "Apache-2.0",
   "repository": {
@@ -14,7 +14,7 @@
   },
   "gitHead": "c2217d61875a1f3aa2bb9ed9583c50e3f1523501",
   "dependencies": {
-    "bpk-mixins": "^20.1.31",
+    "bpk-mixins": "^20.1.32",
     "bpk-react-utils": "^3.1.0",
     "prop-types": "^15.6.2"
   },
@@ -22,7 +22,7 @@
     "react": "^16.0.0"
   },
   "devDependencies": {
-    "bpk-component-button": "^3.3.31",
-    "bpk-component-icon": "^8.3.24"
+    "bpk-component-button": "^3.3.32",
+    "bpk-component-icon": "^8.3.25"
   }
 }
